@@ -88,14 +88,14 @@ This project operates on a two-week development cycle. I guess they’d be calle
 4. Deploy on production site
 5. Gather user and contributor feedback for next cycle
 
-Some tasks may supercede this development cycle, such as fixes for critical issues or data and ranking updates for newly released Pokemon, moves, or mechanics. Some tasks, such as new tools or features, may also take longer than a single cycle. In this case, we’ll do our best to segment that task into individual milestone that can be completed in a two-week period.
+Some tasks may supercede this development cycle, such as fixes for critical issues or data and ranking updates for newly released Pokemon, moves, or mechanics. Some tasks, such as new tools or features, may also take longer than a single cycle. In this case, we’ll do our best to segment that task into individual milestones that can be completed in a two-week period.
 
 ### Examples
 
 Here are examples of some things that would be appealing code contributions and readily fit within the development cycle:
 
-* **Bug fixes.** Check out our active [issue tracker](#) or if there’s an issue you’ve identified and have ideas for how to solve, let us know!
-* **Data entry.** The Game Master file isn’t complete yet, so we’d greatly appreciate help adding game data for Pokemon that aren’t relevant for the existing leagues.
+* **Bug fixes.** Check out our active [issue tracker](https://github.com/pvpoke/pvpoke/issues) or if there’s an issue you’ve identified and have ideas for how to solve, let us know!
+* **Data entry.** The Game Master file isn’t complete yet, so we’d greatly appreciate help adding game data.
 * **Performance improvements.** The tool functions have more loops than a Knot Tying Convention, and if you can help them process more efficiently, you are better off doing that than going to the convention. I still tie my shoes in bunny ears.
 * **Algorithm improvements.** Help us make our battle and ranking algorithms more accurate and representative of gameplay.
 * **Minor code refactoring.** “It just works,” but maybe it could work just a bit better. Just kidding, the code’s perfect. But if you’d like to move things around in a way that makes more sense, go for it and share with us what you think.
