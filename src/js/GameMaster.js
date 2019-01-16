@@ -1,0 +1,102 @@
+// JavaScript Document
+
+var GameMaster = (function () {
+    var instance;
+ 
+    function createInstance(interface) {
+        var object = new Object();
+		
+		object.data = {};
+		object.rankings = [];
+		object.loadedData = 0;
+		
+		$.getJSON( webRoot+"data/gamemaster.json?v=3", function( data ){
+			object.data = data;
+			
+			// Sort Pokemon alphabetically for searching
+			object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+			
+			InterfaceMaster.getInstance().init(object);
+		});
+		
+		// Return a Pokemon object given species ID
+		
+		object.getPokemonById = function(id){
+			var pokemon;
+			
+			$.each(object.data.pokemon, function(index, poke){
+				
+				if(poke.speciesId == id){
+					pokemon = poke;
+					return;
+				}
+			});
+			
+			return pokemon;
+		}
+		
+		// Return a move object from the GameMaster file given move ID
+		
+		object.getMoveById = function(id){
+			var move;
+			
+			$.each(object.data.moves, function(index, m){
+				
+				if(m.moveId == id){
+					move = {
+						moveId: m.moveId,
+						name: m.name,
+						type: m.type,
+						power: m.power,
+						energy: m.energy,
+						energyGain: m.energyGain,
+						damageWindow: m.damageWindow,
+						cooldown: m.cooldown / 2
+					};
+					
+					if(move.damageWindow >= move.cooldown){
+						move.damageWindow = move.cooldown - 100;
+					}
+					
+					return;
+				}
+			});
+			
+			if(!move){
+				console.log(id + " missing");
+			}
+			
+			return move;
+		}
+		
+		object.loadRankingData = function(caller, category, league, cup){
+			
+			var key = cup + "" + category + "" + league;
+			
+			if(! object.rankings[key]){
+				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=14";
+				
+				$.getJSON( file, function( data ){
+					object.rankings[key] = data;
+					object.loadedData++;
+					
+					caller.displayRankingData(data);
+				});
+			} else{
+				caller.displayRankingData(object.rankings[key]);
+			}
+		}
+		
+		
+        return object;
+    }
+ 
+    return {
+        getInstance: function (interface) {
+            if (!instance) {
+                instance = createInstance(interface);
+            }
+            return instance;
+        }
+    };
+})();

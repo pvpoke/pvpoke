@@ -1,0 +1,19 @@
+{
+  "short_name": "PvPoke",
+  "name": "PvPoke: Battle Simulator, Rankings & More",
+  "icons": [
+    {
+      "src": "../img/app_192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "../img/app_512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/",
+  "display": "browser",
+  "orientation": "portrait"
+}
