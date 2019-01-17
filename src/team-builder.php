@@ -70,7 +70,7 @@ require_once 'header.php';
 </div>
 
 <!--test-->
-<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=4"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=5"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/TeamInterface.js?v=3"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js"></script>

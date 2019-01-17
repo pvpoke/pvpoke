@@ -7171,7 +7171,7 @@
 			"speciesName": "Grotle",
 			"speciesId": "grotle",
 			"baseStats": { "atk": 157, "def": 143, "hp": 181 },
-			"types": ["grass", "ground"],
+			"types": ["grass","none"],
 			"fastMoves": ["RAZOR_LEAF", "BITE"],
 			"chargedMoves": ["SOLAR_BEAM", "ENERGY_BALL", "BODY_SLAM"]
 		},
