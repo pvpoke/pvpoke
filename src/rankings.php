@@ -124,7 +124,7 @@ require_once 'header.php';
 </div>
 
 <!--test-->
-<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=5"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=6"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=2"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/RankingInterface.js?v=2"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=2"></script>

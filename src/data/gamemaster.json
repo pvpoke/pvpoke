@@ -3216,10 +3216,10 @@
                 "none"
             ],
             "fastMoves":[
-
+				"THUNDER_SHOCK","QUICK_ATTACK"
             ],
             "chargedMoves":[
-
+				"THUNDERBOLT","THUNDER_PUNCH","DISARMING_VOICE"
             ],
 			"legacyMoves": ["QUICK_ATTACK"]
         },
@@ -3237,10 +3237,10 @@
                 "none"
             ],
             "fastMoves":[
-
+				"POUND","ZEN_HEADBUTT"
             ],
             "chargedMoves":[
-
+				"GRASS_KNOT","PSYSHOCK","BODY_SLAM","SIGNAL_BEAM","PSYCHIC"
             ],
 			"legacyMoves": ["PSYCHIC","BODY_SLAM"]
         },
@@ -3258,16 +3258,16 @@
                 "fairy"
             ],
             "fastMoves":[
-
+				"POUND","FEINT_ATTACK"
             ],
             "chargedMoves":[
-
+				"SHADOW_BALL","WILD_CHARGE","BODY_SLAM","PSYCHIC"
             ],
 			"legacyMoves": ["BODY_SLAM"]
         },
         {
             "dex":175,
-            "speciesName":"Togepi",
+            "speciesName":"ty",
             "speciesId":"togepi",
             "baseStats":{
                 "atk":67,
@@ -3279,11 +3279,12 @@
                 "none"
             ],
             "fastMoves":[
-
+				"PECK","ZEN_HEADBUTT","HIDDEN_POWER_FIGHTING","HIDDEN_POWER_FLYING","HIDDEN_POWER_POISON","HIDDEN_POWER_GROUND","HIDDEN_POWER_ROCK","HIDDEN_POWER_BUG","HIDDEN_POWER_GHOST","HIDDEN_POWER_STEEL","HIDDEN_POWER_FIRE","HIDDEN_POWER_WATER","HIDDEN_POWER_GRASS","HIDDEN_POWER_ELECTRIC","HIDDEN_POWER_PSYCHIC","HIDDEN_POWER_ICE","HIDDEN_POWER_DRAGON","HIDDEN_POWER_DARK"
             ],
             "chargedMoves":[
-
-            ]
+				"DAZZLING_GLEAM","PSYSHOCK","ANCIENT_POWER"
+            ],
+			"legacyMoves":["ZEN_HEADBUTT"]
         },
         {
             "dex":176,
@@ -4136,10 +4137,10 @@
                 "rock"
             ],
             "fastMoves":[
-
+				"BUBBLE","TACKLE"
             ],
             "chargedMoves":[
-
+				"POWER_GEM","ROCK_BLAST","BUBBLE_BEAM"
             ]
         },
 		
@@ -4383,10 +4384,10 @@
                 "none"
             ],
             "fastMoves":[
-
+				"ROCK_SMASH","TACKLE"
             ],
             "chargedMoves":[
-
+				"ROCK_SLIDE","BRICK_BREAK","LOW_SWEEP"
             ]
         },
         {
@@ -4423,10 +4424,10 @@
                 "psychic"
             ],
             "fastMoves":[
-
+				"FROST_BREATH","POUND","POWDER_SNOW"
             ],
             "chargedMoves":[
-
+				"ICE_BEAM","PSYSHOCK","ICE_PUNCH"
             ],
 			"legacyMoves": ["FROST_BREATH"]
         },
@@ -4444,10 +4445,10 @@
                 "none"
             ],
             "fastMoves":[
-
+				"THUNDER_SHOCK","LOW_KICK"
             ],
             "chargedMoves":[
-
+				"THUNDERBOLT","DISCHARGE","THUNDER_PUNCH","BRICK_BREAK"
             ],
 			"legacyMoves": ["THUNDERBOLT"]
         },
@@ -4465,10 +4466,10 @@
                 "none"
             ],
             "fastMoves":[
-
+				"KARATE_CHOP","EMBER"
             ],
             "chargedMoves":[
-
+				"FLAMETHROWER","FIRE_PUNCH","FLAME_BURST","BRICK_BREAK"
             ],
 			"legacyMoves": ["FLAMETHROWER"]
         },
@@ -5480,10 +5481,10 @@
                 "fairy"
             ],
             "fastMoves":[
-
+				"BUBBLE","SPLASH"
             ],
             "chargedMoves":[
-
+				"BODY_SLAM","ICE_BEAM","BUBBLE_BEAM"
             ]
         },
         {
@@ -6746,10 +6747,10 @@
                 "none"
             ],
             "fastMoves":[
-
+				"COUNTER","SPLASH"
             ],
             "chargedMoves":[
-
+				"MIRROR_COAT"
             ]
         },
         {
@@ -7338,6 +7339,27 @@
 		},
 
 		{
+			"dex": 430,
+			"speciesName": "Honchkrow",
+			"speciesId": "honchkrow",
+			"baseStats": { "atk": 243, "def": 103, "hp": 225 },
+			"types": ["dark", "flying"],
+			"fastMoves": ["SNARL","PECK"],
+			"chargedMoves": ["BRAVE_BIRD","DARK_PULSE","PSYCHIC"]
+		},
+
+		{
+			"dex": 433,
+			"speciesName": "Chingling",
+			"speciesId": "chingling",
+			"baseStats": { "atk": 114, "def": 94, "hp": 128 },
+			"types": ["psychic", "none"],
+			"fastMoves": ["ZEN_HEADBUTT"],
+			"chargedMoves": ["WRAP","SHADOW_BALL","PSYSHOCK"]
+		},
+
+
+		{
 			"dex": 435,
 			"speciesName": "Skuntank",
 			"speciesId": "skuntank",
@@ -7446,6 +7468,16 @@
 			"fastMoves": ["WATER_GUN"],
 			"chargedMoves": ["WATER_PULSE","BLIZZARD","SILVER_WIND"]
 		},
+
+		{
+			"dex": 458,
+			"speciesName": "Mantyke",
+			"speciesId": "mantyke",
+			"baseStats": { "atk": 105, "def": 179, "hp": 128 },
+			"types": ["flying", "water"],
+			"fastMoves": ["BUBBLE","TACKLE"],
+			"chargedMoves": ["WATER_PULSE","ICE_BEAM","AERIAL_ACE"]
+		},
 		
 		{
 			"dex": 460,
@@ -7485,6 +7517,16 @@
 			"types": ["normal", "none"],
 			"fastMoves": ["LICK","ZEN_HEADBUTT"],
 			"chargedMoves": ["SOLAR_BEAM","HYPER_BEAM","EARTHQUAKE"]
+		},
+
+		{
+			"dex": 464,
+			"speciesName": "Rhyperior",
+			"speciesId": "rhyperior",
+			"baseStats": { "atk": 241, "def": 190, "hp": 251 },
+			"types": ["ground", "rock"],
+			"fastMoves": ["SMACK_DOWN","MUD_SLAP"],
+			"chargedMoves": ["STONE_EDGE","SURF","EARTHQUAKE"]
 		},
 
 		{
