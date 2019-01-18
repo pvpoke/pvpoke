@@ -242,11 +242,14 @@ function Pokemon(id, i){
 			move.dpe = move.damage / Math.pow(move.energy, 2);
 		}
 		
-		chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
-		
-		for(var i = 0; i < count-1; i++){
-			self.chargedMoves.push(chargedMoves[i]);
+		if(chargedMoves.length > 0){
+			chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
+
+			for(var i = 0; i < count-1; i++){
+				self.chargedMoves.push(chargedMoves[i]);
+			}
 		}
+
 	}
 	
 	// Given a type string, move id, and charged move index, set a specific move

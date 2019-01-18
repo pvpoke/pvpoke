@@ -183,10 +183,10 @@
                 "none"
             ],
             "fastMoves":[
-
+				"BUG_BITE","TACKLE"
             ],
             "chargedMoves":[
-
+				"STRUGGLE"
             ]
         },
         {
@@ -858,10 +858,10 @@
                 "poison"
             ],
             "fastMoves":[
-
+				"ACID","RAZOR_LEAF"
             ],
             "chargedMoves":[
-
+				"SLUDGE_WAVE","MOONBLAST","PETAL_BLIZZARD"
             ]
         },
         {
@@ -4985,10 +4985,10 @@
                 "grass"
             ],
             "fastMoves":[
-
+				"BUBBLE","RAZOR_LEAF"
             ],
             "chargedMoves":[
-
+				"GRASS_KNOT","ICE_BEAM","BUBBLE_BEAM"
             ]
         },
         {
@@ -5045,10 +5045,10 @@
                 "dark"
             ],
             "fastMoves":[
-
+				"FEINT_ATTACK","RAZOR_LEAF"
             ],
             "chargedMoves":[
-
+				"GRASS_KNOT","LEAF_BLADE","FOUL_PLAY"
             ]
         },
         {
@@ -9650,6 +9650,16 @@
 "type": "ground",
 "power": 80,
 "energy": 60,
+"energyGain": 0,
+"damageWindow": 2700,
+"cooldown": 2900
+},
+{
+"moveId": "STRUGGLE",
+"name": "Struggle",
+"type": "normal",
+"power": 35,
+"energy": 100,
 "energyGain": 0,
 "damageWindow": 2700,
 "cooldown": 2900

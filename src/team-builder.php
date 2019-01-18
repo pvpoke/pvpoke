@@ -69,13 +69,13 @@ require_once 'header.php';
 	</div>
 </div>
 
-<!--test-->
-<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=6"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js"></script>
+<!--test 4-->
+<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=9"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=3"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/TeamInterface.js?v=3"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=4"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TeamRanker.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/Main.js"></script>
 
