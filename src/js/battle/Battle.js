@@ -172,7 +172,7 @@ var BattleMaster = (function () {
 						
 					case "ghost":
 						traits = { resistances: ["poison", "bug"],
-						  weaknesses: ["ghost"],
+						  weaknesses: ["ghost","dark"],
 						  immunities: ["normal", "fighting"] };
 						break;
 						
@@ -399,7 +399,7 @@ var BattleMaster = (function () {
 
 					type = "charged " + move.type;
 					
-					attacker.energy = 0;
+					attacker.energy -= move.energy;
 					
 					// If defender has a shield, use it
 					
