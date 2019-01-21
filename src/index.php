@@ -19,7 +19,37 @@
 		<h2 class="icon-contribute">Contribute</h2>
 		<p>Check out the source code on Github or lend your support through Patreon.</p>
 	</a>
+	
+	<h3>What's New</h3>
+	<h4>v1.1.0 (January 21, 2019)</h4>
+	<ul>
+		<li>New Articles section for tips and analysis</li>
+		<li>Shields now correctly reduce damage to 1 instead of 0</li>
+		<li>Fixed a bug where Pokemon wouldn't always use an available Charged Move before fainting</li>
+		<li>Rankings updated with the above changes</li>
+		<ul>
+			<li>Causes only a small percentage of change, the most affected Pokemon are ones with closely timed Charged Moves</li>
+		</ul>
+	</ul>
+	
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>
+	
+	<h3>Latest Article</h3>
+	
+	<div class="article-item flex">
+		<div class="col-3">
+			<a href="<?php echo $WEB_ROOT; ?>articles/hoenn-pokemon-hunt-pvp/">
+				<img src="<?php echo $WEB_ROOT; ?>assets/articles/hoenn-thumb.jpg" />
+			</a>
+		</div>
+		<div class="col-9">
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/hoenn-pokemon-hunt-pvp/">Hoenn Pokemon to Hunt for PvP</a></h4>
+			<div class="date">January 21, 2019</div>
+			<p>Which Hoenn Pokemon should you keep an eye out for to use in PvP during the Hoenn event? Take a look at this list to prepare for your Pokemon hunts!</p>
+		</div>
+		
+	</div>
+	
 </div>
 
 <?php require_once 'footer.php'; ?>

@@ -328,7 +328,7 @@ var BattleMaster = (function () {
 										
 										// Don't use charged move if also about to get charged move
 										
-										if((poke.energy >= poke.chargedMoves[0].energy - poke.fastMove.energyGain)&&(poke.fastMove.cooldown <= opponent.cooldown)){
+										if((poke.energy >= poke.bestChargedMove.energy - poke.fastMove.energyGain)&&(poke.fastMove.cooldown <= opponent.cooldown)&&(poke.index == 1)){
 											nearDeath = false;
 										}
 									}
@@ -405,7 +405,7 @@ var BattleMaster = (function () {
 					
 					if(defender.shields > 0){
 						timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+1500, damage));
-						damage = 0;
+						damage = 1;
 						defender.shields--;
 						shieldUsed = true;
 						

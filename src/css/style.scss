@@ -112,6 +112,10 @@ body{
 	display:none;
 }
 
+.mobile{
+	display:none;
+}
+
 header{
 	padding:5px;
 	box-sizing:border-box;
@@ -279,6 +283,10 @@ footer{
 	background-image:url('../img/icon_contribute.png');
 }
 
+.icon-articles{
+	background-image:url('../img/icon_articles.png');
+}
+
 .icon-twitter{
 	background-image:url('../img/icon_twitter.png');
 	min-height:18px;
@@ -286,6 +294,13 @@ footer{
 	span{ display:none; }
 }
 
+.flex{
+	display:flex;
+	
+	&.cols-3 > div{
+		flex-basis:33%;
+	}
+}
 
 /* POKEMON SELECT */
 
@@ -977,16 +992,21 @@ select, input{
 }
 
 .summary{
-	span{
-		padding: 2px 5px;
-		border-radius: 8px;
-		font-weight: bold;
-	}
-	
 	li{
 		line-height:24px;
 		margin-bottom:10px;
 	}
+}
+
+.summary span,
+.article span.type{
+	padding: 2px 5px;
+	border-radius: 8px;
+	font-weight: bold;
+}
+
+.article span.type{
+	font-weight:normal;
 }
 	
 .typeRating{
@@ -1084,6 +1104,70 @@ select, input{
 	}
 }
 
+/* ARTICLE */
+
+.article{
+	
+	p:first-of-type{
+		margin-top:1em;
+	}
+	
+	.article-section{
+		
+		h3{
+			font-weight:normal;
+		}
+	}
+	
+	h2{
+		font-size: 22px;
+		margin-bottom: 10px;
+	}
+	
+	h3.article-header,
+	.tip{
+		background: rgba(0,0,0,.5);
+		padding: 10px;
+		border-radius: 8px;
+		color:$color-off-white;
+	}
+}
+
+.article-item{
+	.col-9{
+		padding: 0 10px;
+	}
+	
+	img{
+		display:block;
+		border:1px solid #000;
+	}
+	
+	h4{
+		margin-top:0;
+	}
+}
+
+.article, .article-item{
+	
+	.date{
+		margin-bottom:1em;
+		font-size:14px;
+	}
+	
+	h1:first-of-type,
+	h4:first-of-type{
+		margin:0;
+	}
+	
+	img{
+		display:block;
+		max-width:100%;
+		border:1px solid #000;
+	}
+	
+}
+
 /* TEXTS & FONTS */
 
 h1.title{
@@ -1138,6 +1222,10 @@ a.toggle{
 /* RESPONSIVE */
 
 @media only screen and (max-width: 720px) {
+	
+	.mobile{
+		display:block;
+	}
 	
 	header{
 			
@@ -1239,6 +1327,15 @@ a.toggle{
 			width:100%;
 			max-width:600px;
 			margin:20px auto;
+		}
+	}
+	
+	.flex{
+		.col-3{
+			flex-basis:25%;
+		}
+		.col-9{
+			flex-basis:75%;
 		}
 	}
 }

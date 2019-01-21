@@ -21,6 +21,9 @@ body {
 .hide {
   display: none; }
 
+.mobile {
+  display: none; }
+
 header {
   padding: 5px;
   box-sizing: border-box; }
@@ -141,11 +144,19 @@ footer {
 .icon-contribute {
   background-image: url("../img/icon_contribute.png"); }
 
+.icon-articles {
+  background-image: url("../img/icon_articles.png"); }
+
 .icon-twitter {
   background-image: url("../img/icon_twitter.png");
   min-height: 18px; }
   .icon-twitter span {
     display: none; }
+
+.flex {
+  display: flex; }
+  .flex.cols-3 > div {
+    flex-basis: 33%; }
 
 /* POKEMON SELECT */
 .poke:first-of-type {
@@ -637,13 +648,18 @@ select, input {
         display: block;
         width: 120px; }
 
-.summary span {
-  padding: 2px 5px;
-  border-radius: 8px;
-  font-weight: bold; }
 .summary li {
   line-height: 24px;
   margin-bottom: 10px; }
+
+.summary span,
+.article span.type {
+  padding: 2px 5px;
+  border-radius: 8px;
+  font-weight: bold; }
+
+.article span.type {
+  font-weight: normal; }
 
 .typeRating {
   border: 2px solid #000;
@@ -708,6 +724,41 @@ select, input {
       border: 1px solid #000;
       padding: 5px;
       display: none; }
+
+/* ARTICLE */
+.article p:first-of-type {
+  margin-top: 1em; }
+.article .article-section h3 {
+  font-weight: normal; }
+.article h2 {
+  font-size: 22px;
+  margin-bottom: 10px; }
+.article h3.article-header,
+.article .tip {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 8px;
+  color: #eee; }
+
+.article-item .col-9 {
+  padding: 0 10px; }
+.article-item img {
+  display: block;
+  border: 1px solid #000; }
+.article-item h4 {
+  margin-top: 0; }
+
+.article .date, .article-item .date {
+  margin-bottom: 1em;
+  font-size: 14px; }
+.article h1:first-of-type,
+.article h4:first-of-type, .article-item h1:first-of-type,
+.article-item h4:first-of-type {
+  margin: 0; }
+.article img, .article-item img {
+  display: block;
+  max-width: 100%;
+  border: 1px solid #000; }
 
 /* TEXTS & FONTS */
 h1.title {
@@ -913,6 +964,9 @@ a.toggle {
 
 /* RESPONSIVE */
 @media only screen and (max-width: 720px) {
+  .mobile {
+    display: block; }
+
   header {
     background: #eabd49;
     position: fixed;
@@ -975,4 +1029,11 @@ a.toggle {
     .histograms .histogram {
       width: 100%;
       max-width: 600px;
-      margin: 20px auto; } }
+      margin: 20px auto; }
+
+  .flex .col-3 {
+    flex-basis: 25%; }
+  .flex .col-9 {
+    flex-basis: 75%; } }
+
+/*# sourceMappingURL=style.css.map */

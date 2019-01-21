@@ -23,6 +23,8 @@ RewriteRule contribute.?$ contribute.php [L,QSA]
 
 RewriteRule privacy.?$ privacy.php [L,QSA]
 
+RewriteRule articles/(.*)/$ articles/$1.php [L,QSA]
+
 # Redirect index.php to /
 
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.*)index\.php($|\ |\?)
