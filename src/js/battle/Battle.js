@@ -262,6 +262,13 @@ var BattleMaster = (function () {
 					var roundChargedMoveUsed = false;
 					var roundShieldUsed = false;
 					
+					// Reduce cooldown for both POkemon
+					
+					for(var i = 0; i < 2; i++){
+						var poke = pokemon[i];			
+						poke.cooldown = Math.max(0, poke.cooldown - deltaTime); // Reduce cooldown
+					}
+					
 					// Process actions for both Pokemon
 					
 					for(var i = 0; i < 2; i++){
@@ -270,8 +277,6 @@ var BattleMaster = (function () {
 						var opponent = this.getOpponent(i);
 						
 						var currentShields = poke.shields + opponent.shields;
-						
-						poke.cooldown = Math.max(0, poke.cooldown - deltaTime); // Reduce cooldown
 						
 						// If Pokemon can take action
 												
@@ -282,9 +287,27 @@ var BattleMaster = (function () {
 							// Use primary charged move if available
 							
 							if((poke.bestChargedMove) && (poke.energy >= poke.bestChargedMove.energy)){
-								time = this.useMove(poke, opponent, poke.bestChargedMove, timeline, time, chargedMoveUsed);
-								roundChargedMoveUsed = true;
-								chargedMoveUsed = true;
+								
+								// Use maximum number of Fast Moves before opponent can act
+								
+								var useChargedMove = true;
+								
+								if(opponent.cooldown == 0){
+									if(opponent.fastMove.cooldown > poke.fastMove.cooldown){
+										useChargedMove = false;
+									}
+								} else{
+									if(opponent.cooldown > poke.fastMove.cooldown){
+										useChargedMove = false;
+									}
+								}
+								
+								if(useChargedMove){
+									time = this.useMove(poke, opponent, poke.bestChargedMove, timeline, time, chargedMoveUsed);
+									roundChargedMoveUsed = true;
+									chargedMoveUsed = true;
+								}
+
 							}
 							
 							// Process any available charged move
@@ -314,25 +337,61 @@ var BattleMaster = (function () {
 									
 									var nearDeath = false;
 									
-									var futureFastDamage = Math.ceil(poke.fastMove.cooldown / opponent.fastMove.cooldown) * opponent.fastMove.damage;
+									// Will this Pokemon be knocked out this round?
 									
-									if(poke.hp <= futureFastDamage){
+									if(poke.index == 0){
+										
+										if(opponent.cooldown == 0){
+											// Will a Fast Move knock it out?
+											if(poke.hp <= opponent.fastMove.damage){
+												nearDeath = true;
+											}
+											
+											// Will a Charged Move knock it out?
+
+											for(var j = 0; j < opponent.chargedMoves.length; j++){
+
+												if((opponent.energy >= opponent.chargedMoves[j].energy) && (poke.hp <= opponent.chargedMoves[j].damage)){
+													nearDeath = true;
+												}
+											}
+										}
+									} else if(poke.hp <= 0){
 										nearDeath = true;
 									}
 									
-									for(var j = 0; j < opponent.chargedMoves.length; j++){
+									// If this Pokemon uses a Fast Move, will it be knocked out while on cooldown?
+									
+									if( ((opponent.cooldown > 0) && (opponent.cooldown < poke.fastMove.cooldown)) || ((opponent.cooldown == 0) && (opponent.fastMove.cooldown < poke.fastMove.cooldown))){
 										
-										if((opponent.energy >= opponent.chargedMoves[j].energy) && (poke.hp <= opponent.chargedMoves[j].damage)){
+										// Can this Pokemon be knocked out by future Fast Moves?
+										
+										var availableTime = poke.fastMove.cooldown - opponent.cooldown;
+										var futureActions = Math.floor(availableTime / opponent.fastMove.cooldown);
+										
+										if(roundChargedMoveUsed){
+											futureActions = 0;
+										}
+										
+										var futureFastDamage = futureActions * opponent.fastMove.damage;
+										
+										if(poke.hp <= futureFastDamage){
 											nearDeath = true;
 										}
 										
-										// Don't use charged move if also about to get charged move
+										// Can this Pokemon be knocked out by future Charged Moves
+
+										var futureEffectiveEnergy = opponent.energy + (opponent.fastMove.energyGain * futureActions);
+										var futureEffectiveHP = poke.hp - futureActions * opponent.fastMove.damage;
 										
-										if((poke.energy >= poke.bestChargedMove.energy - poke.fastMove.energyGain)&&(poke.fastMove.cooldown <= opponent.cooldown)&&(poke.index == 1)){
-											nearDeath = false;
+										for(var j = 0; j < opponent.chargedMoves.length; j++){
+
+											if((futureEffectiveEnergy >= opponent.chargedMoves[j].energy) && (futureEffectiveHP <= opponent.chargedMoves[j].damage)){
+												nearDeath = true;
+											}
 										}
 									}
-									
+
 									if((nearDeath)&&(!chargedMoveUsed)){
 										time = this.useMove(poke, opponent, move, timeline, time, roundShieldUsed);
 										roundChargedMoveUsed = true;
@@ -381,6 +440,7 @@ var BattleMaster = (function () {
 					}
 					
 				}
+				
 				return timeline;
 			}
 			

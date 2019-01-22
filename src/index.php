@@ -21,14 +21,14 @@
 	</a>
 	
 	<h3>What's New</h3>
-	<h4>v1.1.0 (January 21, 2019)</h4>
+	<h4>v1.1.1 (January 22, 2019)</h4>
 	<ul>
-		<li>New Articles section for tips and analysis</li>
-		<li>Shields now correctly reduce damage to 1 instead of 0</li>
-		<li>Fixed a bug where Pokemon wouldn't always use an available Charged Move before fainting</li>
+		<li>Fixed Alolan Raticate's typing</li>
+		<li>Rewrote Charged Move decision making to be consistent regardless of Pokemon order</li>
+		<li>Pokemon now make slightly more optimal choices by using Fast Moves for as long as possible while the opponent is on cooldown</li>
 		<li>Rankings updated with the above changes</li>
 		<ul>
-			<li>Causes only a small percentage of change, the most affected Pokemon are ones with closely timed Charged Moves</li>
+			<li>Mostly minor changes but Pokemon with quick Fast Moves benefit more from the update</li>
 		</ul>
 	</ul>
 	

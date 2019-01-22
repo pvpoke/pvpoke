@@ -387,7 +387,7 @@
             },
             "types":[
                 "normal",
-                "none"
+                "dark"
             ],
             "fastMoves":[
 				"BITE", "QUICK_ATTACK"
@@ -9376,7 +9376,7 @@
 },
 {
 "moveId": "NIGHT_SLASH",
-"name": "Nigh Slash",
+"name": "Night Slash",
 "type": "dark",
 "power": 50,
 "energy": 40,
