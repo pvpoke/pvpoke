@@ -4304,7 +4304,7 @@
 			"dex": 232,
 			"speciesName": "Donphan",
 			"speciesId": "donphan",
-			"baseStats": { "atk": 232, "def": 185, "hp": 207 },
+			"baseStats": { "atk": 214, "def": 185, "hp": 207 },
 			"types": ["ground", "none"],
 			"fastMoves": ["COUNTER", "TACKLE"],
 			"chargedMoves": ["EARTHQUAKE", "PLAY_ROUGH", "HEAVY_SLAM"]
@@ -7259,16 +7259,6 @@
 		},
 		
 		{
-			"dex": 487,
-			"speciesName": "Giratina (Altered)",
-			"speciesId": "giratina_altered",
-			"baseStats": { "atk": 187, "def": 225, "hp": 284 },
-			"types": ["ghost", "dragon"],
-			"fastMoves": ["SHADOW_CLAW", "DRAGON_BREATH"],
-			"chargedMoves": ["DRAGON_CLAW", "SHADOW_SNEAK", "ANCIENT_POWER"]
-		},
-		
-		{
 			"dex": 401,
 			"speciesName": "Kricketune",
 			"speciesId": "kricketune",
@@ -7664,7 +7654,7 @@
 			"dex": 484,
 			"speciesName": "Palkia",
 			"speciesId": "palkia",
-			"baseStats": { "atk": 275, "def": 211, "hp": 204 },
+			"baseStats": { "atk": 280, "def": 215, "hp": 188 },
 			"types": ["dragon", "water"],
 			"fastMoves": ["DRAGON_BREATH","DRAGON_TAIL"],
 			"chargedMoves": ["DRACO_METEOR","FIRE_BLAST","HYDRO_PUMP"]
@@ -7679,6 +7669,27 @@
 			"fastMoves": ["BUG_BITE","FIRE_SPIN"],
 			"chargedMoves": ["FIRE_BLAST","IRON_HEAD","STONE_EDGE"]
 		},
+		
+		
+		{
+			"dex": 487,
+			"speciesName": "Giratina (Origin)",
+			"speciesId": "giratina_origin",
+			"baseStats": { "atk": 225, "def": 187, "hp": 284 },
+			"types": ["ghost", "dragon"],
+			"fastMoves": ["SHADOW_CLAW", "DRAGON_BREATH"],
+			"chargedMoves": ["DRAGON_CLAW", "SHADOW_SNEAK", "ANCIENT_POWER"]
+		},
+		
+		{
+			"dex": 487,
+			"speciesName": "Giratina (Altered)",
+			"speciesId": "giratina_altered",
+			"baseStats": { "atk": 187, "def": 225, "hp": 284 },
+			"types": ["ghost", "dragon"],
+			"fastMoves": ["SHADOW_CLAW", "DRAGON_BREATH"],
+			"chargedMoves": ["DRAGON_CLAW", "SHADOW_SNEAK", "ANCIENT_POWER"]
+		},
 
 		{
 			"dex": 488,
@@ -7690,6 +7701,15 @@
 			"chargedMoves": ["FUTURE_SIGHT","AURORA_BEAM","MOONBLAST"]
 		},
 		
+		{
+			"dex": 491,
+			"speciesName": "Darkrai",
+			"speciesId": "darkrai",
+			"baseStats": { "atk": 285, "def": 198, "hp": 172 },
+			"types": ["dark", "none"],
+			"fastMoves": ["SNARL","FEINT_ATTACK"],
+			"chargedMoves": ["FOCUS_BLAST","SHADOW_BALL","DARK_PULSE"]
+		},
 
 		{
 			"dex": 809,
