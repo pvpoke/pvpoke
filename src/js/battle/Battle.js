@@ -348,11 +348,12 @@ var BattleMaster = (function () {
 											}
 											
 											// Will a Charged Move knock it out?
+											if(poke.shields == 0){
+												for(var j = 0; j < opponent.chargedMoves.length; j++){
 
-											for(var j = 0; j < opponent.chargedMoves.length; j++){
-
-												if((opponent.energy >= opponent.chargedMoves[j].energy) && (poke.hp <= opponent.chargedMoves[j].damage)){
-													nearDeath = true;
+													if((opponent.energy >= opponent.chargedMoves[j].energy) && (poke.hp <= opponent.chargedMoves[j].damage)){
+														nearDeath = true;
+													}
 												}
 											}
 										}
@@ -380,14 +381,15 @@ var BattleMaster = (function () {
 										}
 										
 										// Can this Pokemon be knocked out by future Charged Moves
+										if(poke.shields == 0){
+											var futureEffectiveEnergy = opponent.energy + (opponent.fastMove.energyGain * futureActions);
+											var futureEffectiveHP = poke.hp - futureActions * opponent.fastMove.damage;
 
-										var futureEffectiveEnergy = opponent.energy + (opponent.fastMove.energyGain * futureActions);
-										var futureEffectiveHP = poke.hp - futureActions * opponent.fastMove.damage;
-										
-										for(var j = 0; j < opponent.chargedMoves.length; j++){
+											for(var j = 0; j < opponent.chargedMoves.length; j++){
 
-											if((futureEffectiveEnergy >= opponent.chargedMoves[j].energy) && (futureEffectiveHP <= opponent.chargedMoves[j].damage)){
-												nearDeath = true;
+												if((futureEffectiveEnergy >= opponent.chargedMoves[j].energy) && (futureEffectiveHP <= opponent.chargedMoves[j].damage)){
+													nearDeath = true;
+												}
 											}
 										}
 									}
