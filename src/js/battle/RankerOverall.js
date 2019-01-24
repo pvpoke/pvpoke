@@ -73,6 +73,9 @@ var RankerMaster = (function () {
 							rankObj.scores = [rankObj.score];
 							rankObj.score = rankObj.score;
 							
+							rankObj.score = Math.pow(rankObj.scores[0] * rankObj.scores[1])
+							
+							
 							// Sort moves by id
 							
 							rankObj.moves.fastMoves.sort((a,b) => (a.moveId > b.moveId) ? -1 : ((b.moveId > a.moveId) ? 1 : 0));
@@ -103,8 +106,23 @@ var RankerMaster = (function () {
 				// Produce final rankings
 				
 				for(var i = 0; i < rankings.length; i++){
-					// This is a geometric mean Root(A * B* C) because the existing scores are percentages
-					rankings[i].score = Math.floor(Math.pow(rankings[i].score, 1 / categories.length)*10) / 10;
+							
+					/* Let's try a different approach to calculating overall score.
+					* Weigh the top 2 ratings by 9/20 and the bottom 2 ratings by 1/20.
+					* This will better represent specialized Pokemon.
+					*/
+
+					var sortedScores = [];
+					
+					for(var n = 0; n < rankings[i].scores.length; n++){
+						sortedScores.push(rankings[i].scores[n]);
+					}
+					
+					sortedScores.sort((a,b) => (a > b) ? -1 : ((b > a) ? 1 : 0));
+					
+					rankings[i].score = Math.pow( Math.pow(sortedScores[0], 9) * Math.pow(sortedScores[1], 9) * Math.pow(sortedScores[2], 1) * Math.pow(sortedScores[3], 1), (1/20));
+					
+					rankings[i].score = Math.floor(rankings[i].score*10) / 10;
 				}
 				
 				rankings.sort((a,b) => (a.score > b.score) ? -1 : ((b.score > a.score) ? 1 : 0));

@@ -23,7 +23,7 @@ var RankerMaster = (function () {
 			this.rankLoop = function(){
 				
 				var leagues = [1500];
-				var shields = [ [0,0] ];
+				var shields = [ [2,2] ];
 				
 				for(var i = 0; i < leagues.length; i++){
 					for(var n = 0; n < shields.length; n++){

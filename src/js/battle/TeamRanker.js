@@ -132,7 +132,7 @@ var RankerMaster = (function () {
 						
 						var rating = Math.floor( (healthRating + damageRating) * 500);
 						var opRating = Math.floor( (opHealthRating + opDamageRating) * 500);
-						
+
 						avg += rating;
 						
 						teamRatings[n].push(opRating);

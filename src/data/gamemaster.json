@@ -1488,10 +1488,10 @@
                 "ground"
             ],
             "fastMoves":[
-				"MUD_SLAP","ROCK_THROW"
+				"MUD_SLAP","ROCK_THROW","MUD_SHOT"
             ],
             "chargedMoves":[
-				"DIG","ROCK_BLAST","STONE_EDGE"
+				"DIG","ROCK_BLAST","STONE_EDGE","ROCK_SLIDE"
             ],
 			"legacyMoves": ["MUD_SHOT","ROCK_SLIDE"]
         },
@@ -1647,7 +1647,7 @@
 				"SPARK","CHARGE_BEAM","THUNDER_SHOCK"
             ],
             "chargedMoves":[
-				"ZAP_CANNON","DISCHARGE","MAGNET_BOMB"
+				"ZAP_CANNON","DISCHARGE","MAGNET_BOMB","FLASH_CANNON"
             ],
 			"legacyMoves": ["THUNDER_SHOCK","DISCHARGE"]
         },
@@ -3797,10 +3797,10 @@
                 "none"
             ],
             "fastMoves":[
-
+				"COUNTER","SPLASH"
             ],
             "chargedMoves":[
-
+				"MIRROR_COAT"
             ]
         },
         {
@@ -7465,7 +7465,7 @@
 			"speciesId": "lumineon",
 			"baseStats": { "atk": 142, "def": 170, "hp": 170 },
 			"types": ["water", "none"],
-			"fastMoves": ["WATER_GUN"],
+			"fastMoves": ["WATER_GUN","WATERFALL"],
 			"chargedMoves": ["WATER_PULSE","BLIZZARD","SILVER_WIND"]
 		},
 

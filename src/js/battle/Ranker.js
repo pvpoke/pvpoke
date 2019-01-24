@@ -269,7 +269,7 @@ var RankerMaster = (function () {
 				
 				// Weigh all Pokemon matchups by their opponent's average rating
 				
-				var iterations = 8;
+				var iterations = 1;
 				
 				// Doesn't make sense to weight which attackers can beat which other attackers, so don't weight those
 				
@@ -298,10 +298,13 @@ var RankerMaster = (function () {
 						var score = 0;
 						
 						var matches = rankings[i].matches;
+						var weights = 0;
 						
 						for(var j = 0; j < matches.length; j++){
 							
 							var sc = matches[j].rating * rankings[j].scores[n];
+							
+							weights += rankings[j].scores[n];
 							
 							/* Factor overall score by moveset consistency again, if this doesn't happen
 							* Pokemon with Hidden Power will filter to the top because they technically beat
@@ -318,7 +321,7 @@ var RankerMaster = (function () {
 							score += sc;
 						}
 						
-						var avgScore = Math.floor(score / matches.length);
+						var avgScore = Math.floor(score / weights);
 
 						rankings[i].scores.push(avgScore);
 					}

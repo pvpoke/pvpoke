@@ -302,6 +302,16 @@ var BattleMaster = (function () {
 									}
 								}
 								
+								// Don't use a charged move if fast moves will result in a KO
+								
+								if(opponent.hp <= poke.fastMove.damage){
+									useChargedMove = false;
+								}
+								
+								if((opponent.shields > 0)&&(opponent.hp <= (poke.fastMove.damage * (opponent.fastMove.cooldown / poke.fastMove.cooldown)))){
+									useChargedMove = false;
+								}
+								
 								if(useChargedMove){
 									time = this.useMove(poke, opponent, poke.bestChargedMove, timeline, time, chargedMoveUsed);
 									roundChargedMoveUsed = true;
@@ -319,7 +329,7 @@ var BattleMaster = (function () {
 									
 									// Use charged move if it would KO the opponent
 									
-									if((move.damage >= opponent.hp) && (!chargedMoveUsed)){
+									if((move.damage >= opponent.hp) && (opponent.shields == 0) && (!chargedMoveUsed)){
 										time = this.useMove(poke, opponent, move, timeline, time, roundShieldUsed);
 										roundChargedMoveUsed = true;
 										chargedMoveUsed = true;
@@ -328,9 +338,14 @@ var BattleMaster = (function () {
 									// Use charged move if the opponent has a shield
 									
 									if((opponent.shields > 0)  && (!chargedMoveUsed)){
-										time = this.useMove(poke, opponent, move, timeline, time, roundShieldUsed);
-										roundChargedMoveUsed = true;
-										chargedMoveUsed = true;
+										
+										// Don't use a charged move if a fast move will result in a KO
+										
+										if((opponent.hp > poke.fastMove.damage)&&(opponent.hp > (poke.fastMove.damage * (opponent.fastMove.cooldown / poke.fastMove.cooldown)))){
+											time = this.useMove(poke, opponent, move, timeline, time, roundShieldUsed);
+											roundChargedMoveUsed = true;
+											chargedMoveUsed = true;
+										}
 									}
 									
 									// Use charged move if about to be KO'd
@@ -393,7 +408,13 @@ var BattleMaster = (function () {
 											}
 										}
 									}
-
+									
+									// Don't use a Charged Move if the opponent is shielded and a Fast Move will result in a KO
+									
+									if((opponent.shields > 0)&&(opponent.hp <= poke.fastMove.damage)){
+										nearDeath = false;
+									}
+	
 									if((nearDeath)&&(!chargedMoveUsed)){
 										time = this.useMove(poke, opponent, move, timeline, time, roundShieldUsed);
 										roundChargedMoveUsed = true;
