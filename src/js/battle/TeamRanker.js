@@ -49,7 +49,7 @@ var RankerMaster = (function () {
 					minCP = 1500;
 				}
 				
-				var bannedList = ["mewtwo","ho-oh","lugia","giratina_altered","groudon","kyogre","garchomp","latios","latias","palkia","dialga","heatran","regice","regirock"];
+				var bannedList = ["mewtwo","ho-oh","lugia","giratina_altered","groudon","kyogre","garchomp","latios","latias","palkia","dialga","heatran","regice","regirock","giratina_origin"];
 				var allowedList = [];
 
 				for(var i = 0; i < gm.data.pokemon.length; i++){

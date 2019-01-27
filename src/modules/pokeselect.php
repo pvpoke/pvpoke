@@ -1,4 +1,5 @@
 <div class="poke">
+	<a class="random" href="#">Random</a>
 	<input class="poke-search" type="text" placeholder="Search name">
 	<select class="poke-select">
 		<option disabled selected value="">Select a Pokemon</option>

@@ -76,6 +76,13 @@ var InterfaceMaster = (function () {
 				$(".rank").on("click", selectPokemon);
 				
 				
+				// If search string exists, process it
+				
+				if($(".poke-search").val() != ''){
+					$(".poke-search").trigger("keyup");
+				}
+				
+				
 				// If a Pokemon has been selected via URL parameters, jump to it
 				
 				if(jumpToPoke){

@@ -6,7 +6,8 @@
 	
 	"cups" : {
 		"all": [],
-		"boulder": ["rock","steel","fighting","ground"]
+		"boulder": ["rock","steel","fighting","ground"],
+		"twilight": ["dark","poison","fairy","ghost"]
 	},
 	
 	"pokemon": [
@@ -1270,10 +1271,10 @@
                 "none"
             ],
             "fastMoves":[
-
+				"ZEN_HEADBUTT","CHARGE_BEAM"
             ],
             "chargedMoves":[
-
+				"PSYSHOCK","SHADOW_BALL","SIGNAL_BEAM"
             ]
         },
         {
@@ -1505,8 +1506,8 @@
                 "hp":146
             },
             "types":[
-                "rock",
-                "ground"
+                "electric",
+                "rock"
             ],
             "fastMoves":[
 				"VOLT_SWITCH","ROCK_THROW"
@@ -1770,10 +1771,32 @@
                 "none"
             ],
             "fastMoves":[
-
+				"MUD_SLAP","POISON_JAB","ACID"
             ],
             "chargedMoves":[
-
+				"MUD_BOMB","SLUDGE","SLUDGE_BOMB"
+            ],
+			"legacyMoves": ["ACID"]
+        },
+		
+        {
+            "dex":88,
+            "speciesName":"Grimer (Alolan)",
+            "speciesId":"grimer_alolan",
+            "baseStats":{
+                "atk":135,
+                "def":90,
+                "hp":190
+            },
+            "types":[
+                "poison",
+                "dark"
+            ],
+            "fastMoves":[
+				"BITE","POISON_JAB"
+            ],
+            "chargedMoves":[
+				"CRUNCH","GUNK_SHOT","SLUDGE_BOMB"
             ],
 			"legacyMoves": ["ACID"]
         },
@@ -5501,10 +5524,10 @@
                 "none"
             ],
             "fastMoves":[
-
+				"ROCK_THROW","SPARK"
             ],
             "chargedMoves":[
-
+				"ROCK_SLIDE","THUNDERBOLT","ROCK_BLAST"
             ]
         },
         {
@@ -7243,7 +7266,7 @@
 			"speciesName": "Bibarel",
 			"speciesId": "bibarel",
 			"baseStats": { "atk": 162, "def": 119, "hp": 188 },
-			"types": ["normal", "none"],
+			"types": ["normal", "water"],
 			"fastMoves": ["WATER_GUN", "TAKE_DOWN"],
 			"chargedMoves": ["HYPER_BEAM", "HYPER_FANG", "SURF"]
 		},
@@ -7618,6 +7641,16 @@
 			"types": ["psychic", "fighting"],
 			"fastMoves": ["CONFUSION","LOW_KICK"],
 			"chargedMoves": ["CLOSE_COMBAT","PSYCHIC","LEAF_BLADE"]
+		},
+		
+		{
+			"dex": 476,
+			"speciesName": "Probopass",
+			"speciesId": "probopass",
+			"baseStats": { "atk": 135, "def": 275, "hp": 155 },
+			"types": ["rock", "steel"],
+			"fastMoves": ["ROCK_THROW","SPARK"],
+			"chargedMoves": ["MAGNET_BOMB","ROCK_SLIDE","THUNDERBOLT"]
 		},
 		
 		{

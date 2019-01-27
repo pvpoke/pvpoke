@@ -509,6 +509,19 @@ footer{
 	.options{
 		margin: 20px 0;
 	}
+	
+	a.random{
+		font-size: 10px;
+		text-decoration: none;
+		color: #003748;
+		padding: 3px 3px 3px 16px;
+		background: rgba(255,255,255,.75);
+		display: inline-block;
+		background-image:url('../img/random.png');
+		background-repeat: no-repeat;
+		background-position: 3px center;
+		border-radius:8px;
+	}
 
 }
 

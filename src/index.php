@@ -21,15 +21,13 @@
 	</a>
 	
 	<h3>What's New</h3>
-	<h4>v1.1.1 (January 22, 2019)</h4>
+	<h4>v1.1.3 (January 24, 2019)</h4>
 	<ul>
-		<li>Fixed Alolan Raticate's typing</li>
-		<li>Rewrote Charged Move decision making to be consistent regardless of Pokemon order</li>
-		<li>Pokemon now make slightly more optimal choices by using Fast Moves for as long as possible while the opponent is on cooldown</li>
-		<li>Rankings updated with the above changes</li>
-		<ul>
-			<li>Mostly minor changes but Pokemon with quick Fast Moves benefit more from the update</li>
-		</ul>
+		<li>Added support for <a href="/rankings/twilight/1500/overall/">Twilight Cup</a<</li>
+		<li>Fixed typing issue where Poison didn't correctly resist Grass</li>
+		<li>You can now select random Pokemon in the Battle and Team Builder pages</li>
+		<li>Searches now carry over on the Rankings page when switching between leagues or cups</li>
+		<li>On desktop, the Pokemon select dropdowns now filter by cup types</li>
 	</ul>
 	
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>

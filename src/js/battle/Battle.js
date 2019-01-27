@@ -147,7 +147,7 @@ var BattleMaster = (function () {
 						break;
 						
 					case "poison":
-						traits = { resistances: ["fighting", "poison", "bug", "fairy"],
+						traits = { resistances: ["fighting", "poison", "bug", "fairy","grass"],
 						  weaknesses: ["ground", "psychic"],
 						  immunities: [] };
 						break;

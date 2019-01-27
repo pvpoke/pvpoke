@@ -61,7 +61,7 @@ var RankerMaster = (function () {
 				
 				// Don't allow these Pokemon into the Great League. They can't be trusted.
 				
-				var bannedList = ["mewtwo","giratina_altered","groudon","kyogre","garchomp","latios","latias","palkia","dialga","heatran","regice","regirock"];
+				var bannedList = ["mewtwo","giratina_altered","groudon","kyogre","garchomp","latios","latias","palkia","dialga","heatran","regice","regirock","giratina_origin","darkrai"];
 				
 				// If you want to rank specfic Pokemon, you can enter their species id's here
 				

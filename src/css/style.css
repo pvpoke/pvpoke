@@ -295,6 +295,17 @@ footer {
   margin-top: 10px; }
 .poke .options {
   margin: 20px 0; }
+.poke a.random {
+  font-size: 10px;
+  text-decoration: none;
+  color: #003748;
+  padding: 3px 3px 3px 16px;
+  background: rgba(255, 255, 255, 0.75);
+  display: inline-block;
+  background-image: url("../img/random.png");
+  background-repeat: no-repeat;
+  background-position: 3px center;
+  border-radius: 8px; }
 
 .arrow-up {
   display: none; }
@@ -1035,5 +1046,3 @@ a.toggle {
     flex-basis: 25%; }
   .flex .col-9 {
     flex-basis: 75%; } }
-
-/*# sourceMappingURL=style.css.map */

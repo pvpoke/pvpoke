@@ -45,8 +45,6 @@ var InterfaceMaster = (function () {
 			function selectCup(e){
 				var cup = $(".cup-select option:selected").val();
 				battle.setCup(cup);
-				
-				console.log(battle.getCup());
 			}
 			
 			// Run simulation

@@ -9,7 +9,8 @@ var InterfaceMaster = (function () {
         var object = new interfaceObject();
 		
 		function interfaceObject(){
-				
+			
+			var gm;
 			var battle;
 			var pokeSelectors = [];
 			var self = this;
@@ -20,8 +21,10 @@ var InterfaceMaster = (function () {
 			this.context = "team";
 
 			this.init = function(){
-
-				var data = GameMaster.getInstance().data;
+				
+				gm = GameMaster.getInstance();
+				var data = gm.data;
+				
 				// Initialize selectors and push Pokemon data
 
 				$(".poke-select-container .poke").each(function(index, value){
@@ -622,6 +625,16 @@ var InterfaceMaster = (function () {
 			function selectCup(e){
 				var cup = $(".cup-select option:selected").val();
 				battle.setCup(cup);
+				
+				// Filter PokeSelect options by type
+				
+				console.log(gm);
+				
+				var cupTypes = gm.data.cups[cup];
+				
+				for(var i = 0; i < pokeSelectors.length; i++){
+					pokeSelectors[i].filterByTypes(cupTypes);
+				}
 			}
 			
 			// Event handler for clicking the rate button

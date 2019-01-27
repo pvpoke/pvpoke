@@ -19,7 +19,7 @@ function PokeSelect(element, i){
 		
 		$.each(pokemon, function(n, poke){
 			if(poke.fastMoves.length > 0){
-				$pokeSelect.append("<option value=\""+poke.speciesId+"\">"+poke.speciesName+"</option");
+				$pokeSelect.append("<option value=\""+poke.speciesId+"\" type-1=\""+poke.types[0]+"\" type-2=\""+poke.types[1]+"\">"+poke.speciesName+"</option");
 			}
 		});
 		
@@ -148,6 +148,23 @@ function PokeSelect(element, i){
 	this.setPokemon = function(id){
 		$pokeSelect.find("option[value=\""+id+"\"]").prop("selected","selected");
 		$pokeSelect.trigger("change");
+	}
+	
+	// Show or hide Pokemon select options given array of types
+	
+	this.filterByTypes = function(types){
+		
+		$pokeSelect.find("option").removeClass("hide");
+		
+		if(types.length > 0){
+			$pokeSelect.find("option").each(function(index, value){
+				if((types.indexOf($(this).attr("type-1")) > -1) || (types.indexOf($(this).attr("type-2")) > -1)){
+					$(this).removeClass("hide");
+				} else{
+					$(this).addClass("hide");
+				}
+			});
+		}
 	}
 	
 	// Select different Pokemon
@@ -289,5 +306,17 @@ function PokeSelect(element, i){
 		e.preventDefault();
 		
 		self.clear();
+	});
+	
+	// Randomize selection
+	
+	$el.find(".random").on("click", function(e){
+		e.preventDefault();
+		
+		var list = $pokeSelect.find("option").not(".hide");
+		var index = Math.floor(Math.random() * list.length);
+		
+		self.setPokemon($(list).eq(index).val());
+		
 	});
 }
