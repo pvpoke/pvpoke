@@ -121,6 +121,7 @@ function PokeSelect(element, i){
 		selectedPokemon = null;
 		
 		$el.find(".poke-stats").hide();
+		$el.find(".poke-search").val('');
 		$pokeSelect.find("option").first().prop("selected", "selected");
 	}
 	
@@ -133,6 +134,11 @@ function PokeSelect(element, i){
 		}
 		
 		selectedPokemon.initialize(cp);
+		
+		// Set an existing level and iv options
+		
+		$el.find("input.level").trigger("keyup");
+		$el.find("input.iv").trigger("keyup");
 		
 		self.update();
 	}

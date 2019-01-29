@@ -1,12 +1,17 @@
 <?php
 
 $cp = '1500';
+$cup = 'all';
 
 if(isset($_GET['cp'])){
 	$cp = $_GET['cp'];
 }
 
-$CANONICAL = '/rankings/' . $cp . '/';
+if(isset($_GET['cup'])){
+	$cup = $_GET['cup'];
+}
+
+$CANONICAL = '/rankings/' . $cup . '/' . $cp . '/';
 
 $league = 'Great League';
 
@@ -21,6 +26,16 @@ switch($cp){
 		
 	case "10000":
 		$league = 'Master League';
+		break;
+}
+
+switch($cup){
+	case "boulder":
+		$league = 'Boulder Cup';
+		break;
+		
+	case "twilight":
+		$league = 'Twilight Cup';
 		break;
 }
 
@@ -124,11 +139,11 @@ require_once 'header.php';
 </div>
 
 <!--test 2-->
-<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=20"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=23"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=3"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/RankingInterface.js?v=2"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/RankingInterface.js?v=5"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=2"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=9"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=10"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/RankingMain.js"></script>
 
 <?php require_once 'footer.php'; ?>

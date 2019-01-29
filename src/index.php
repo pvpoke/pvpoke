@@ -1,7 +1,7 @@
 <?php require_once 'header.php'; ?>
 
 <div class="section home white">
-	<p>Welcome to PvPoke.com! We're an open-source tool for simulating, ranking, and building teams for Pokemon GO PvP (player versus player)&amp; battles. Check out the links below to get started.</p>
+	<p>Welcome to PvPoke.com! We're an open-source tool for simulating, ranking, and building teams for Pokemon GO PvP (player versus player) battles. Check out the links below to get started.</p>
 	
 	<a href="<?php echo $WEB_ROOT; ?>battle/" class="button">
 		<h2 class="icon-battle">Battle</h2>
@@ -20,14 +20,13 @@
 		<p>Check out the source code on Github or lend your support through Patreon.</p>
 	</a>
 	
+	<!--Update section for updates-->
 	<h3>What's New</h3>
-	<h4>v1.1.3 (January 24, 2019)</h4>
+	<h4>v1.1.4 (January 29, 2019)</h4>
 	<ul>
-		<li>Added support for <a href="/rankings/twilight/1500/overall/">Twilight Cup</a<</li>
-		<li>Fixed typing issue where Poison didn't correctly resist Grass</li>
-		<li>You can now select random Pokemon in the Battle and Team Builder pages</li>
-		<li>Searches now carry over on the Rankings page when switching between leagues or cups</li>
-		<li>On desktop, the Pokemon select dropdowns now filter by cup types</li>
+		<li>Fixed an issue in some fringe matchups where Pokemon sometimes didn't anticipate getting knocked out by Fast Moves correctly.</li>
+		<li>Clearing a Pokemon selection now clears the search bar as well.</li>
+		<li>Pokemon now retain custom level and IV's when switching between leagues.</li>
 	</ul>
 	
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>

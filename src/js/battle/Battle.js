@@ -383,7 +383,7 @@ var BattleMaster = (function () {
 										// Can this Pokemon be knocked out by future Fast Moves?
 										
 										var availableTime = poke.fastMove.cooldown - opponent.cooldown;
-										var futureActions = Math.floor(availableTime / opponent.fastMove.cooldown);
+										var futureActions = Math.ceil(availableTime / opponent.fastMove.cooldown);
 										
 										if(roundChargedMoveUsed){
 											futureActions = 0;
