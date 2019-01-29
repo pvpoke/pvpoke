@@ -107,7 +107,7 @@ require_once 'header.php';
 <!--test 3-->
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=23"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=3"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/Interface.js?v=2"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/Interface.js?v=3"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=4"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=2"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=10"></script>

@@ -11,7 +11,7 @@ if(isset($_GET['cup'])){
 	$cup = $_GET['cup'];
 }
 
-$CANONICAL = '/rankings/' . $cup . '/' . $cp . '/';
+$CANONICAL = '/rankings/' . $cup . '/' . $cp . '/overall/';
 
 $league = 'Great League';
 

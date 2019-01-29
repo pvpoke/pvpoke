@@ -266,7 +266,7 @@ var InterfaceMaster = (function () {
 					battle.setCP(cp);
 					
 					for(var i = 0; i < pokeSelectors.length; i++){
-						pokeSelectors[i].update();
+						pokeSelectors[i].setCP(cp);
 					}
 				}
 				
