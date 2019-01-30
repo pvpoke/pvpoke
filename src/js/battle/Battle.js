@@ -451,7 +451,7 @@ var BattleMaster = (function () {
 						var poke = pokemon[i];
 	
 						if(poke.hp <= 0){
-							timeline.push(new TimelineEvent("faint", "Faint", poke.index, time, 0));
+							timeline.push(new TimelineEvent("faint", "Faint", poke.index, time));
 						}
 						
 						// Reset after a charged move
@@ -487,7 +487,7 @@ var BattleMaster = (function () {
 					// If defender has a shield, use it
 					
 					if(defender.shields > 0){
-						timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+1500, damage));
+						timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+1500, [damage]));
 						damage = 1;
 						defender.shields--;
 						shieldUsed = true;
@@ -514,7 +514,15 @@ var BattleMaster = (function () {
 					displayTime -= 1500;
 				}
 				
-				timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, damage));
+				// Set energy value for TimelineEvent
+				
+				var energyValue = move.energyGain;
+				
+				if(move.energy > 0){
+					energyValue = -move.energy;
+				}
+				
+				timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, [damage, energyValue]));
 
 				return time;
 				

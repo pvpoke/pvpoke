@@ -87,10 +87,22 @@ function PokeSelect(element, i){
 
 			$el.find(".move-select.fast option[value='"+selectedPokemon.fastMove.moveId+"']").prop("selected","selected");			
 			
+			// Display charged moves
+			
+			$el.find(".move-bar").hide();
+			
 			for(var i = 0; i < $el.find(".move-select.charged").length; i++){
 				if(i < selectedPokemon.chargedMoves.length){
-					$el.find(".move-select.charged").eq(i).find("option[value='"+selectedPokemon.chargedMoves[i].moveId+"']").prop("selected","selected");
-					$el.find(".move-select.charged").eq(i).attr("class", "move-select charged " + selectedPokemon.chargedMoves[i].type);
+					var chargedMove = selectedPokemon.chargedMoves[i];
+					
+					$el.find(".move-select.charged").eq(i).find("option[value='"+chargedMove.moveId+"']").prop("selected","selected");
+					$el.find(".move-select.charged").eq(i).attr("class", "move-select charged " + chargedMove.type);
+					
+					$el.find(".move-bar").eq(i).show();
+					$el.find(".move-bar").eq(i).find(".label").html(chargedMove.abbreviation);
+					$el.find(".move-bar").eq(i).find(".bar").css("height","100%");
+					$el.find(".move-bar").eq(i).find(".bar").attr("class","bar " + chargedMove.type);
+					$el.find(".move-bar").eq(i).find(".bar-back").attr("class","bar-back " + chargedMove.type);
 				} else{
 					$el.find(".move-select.charged").eq(i).attr("class", "move-select charged");
 					$el.find(".move-select.charged").eq(i).find("option").first().prop("selected","selected");
@@ -99,11 +111,28 @@ function PokeSelect(element, i){
 		}
 	}
 	
+	// During timeline playback, animate the health bar
+	
 	this.animateHealth = function(amount){
 		var health = Math.max(0, selectedPokemon.startHp - amount);
 		
 		$el.find(".hp .bar").css("width", ((health / selectedPokemon.stats.hp)*100)+"%");
 		$el.find(".hp .stat").html(health+" / "+selectedPokemon.stats.hp);
+	}
+	
+	// During timeline playback, animate the energy bar
+	
+	this.animateEnergy = function(index, amount){
+		var energy = selectedPokemon.startEnergy + amount;
+		var $bar = $el.find(".move-bar").eq(index);
+		
+		$bar.find(".bar").css("height", ((energy / selectedPokemon.chargedMoves[index].energy)*100)+"%");
+		
+		if(energy >= selectedPokemon.chargedMoves[index].energy){
+			$bar.addClass("active");
+		} else{
+			$bar.removeClass("active");
+		}
 	}
 	
 	// Reset IV and Level input fields, and other options when switching Pokemon

@@ -80,5 +80,18 @@
 			<div class="bar"></div>
 			<div class="stat"></div>
 		</div>
+		
+		<div class="move-bars">
+			<div class="move-bar">
+				<div class="label">CM</div>
+				<div class="bar"></div>
+				<div class="bar-back"></div>
+			</div>
+			<div class="move-bar">
+				<div class="label">CM</div>
+				<div class="bar"></div>
+				<div class="bar-back"></div>
+			</div>
+		</div>
 	</div>
 </div>

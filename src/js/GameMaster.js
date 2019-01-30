@@ -43,9 +43,20 @@ var GameMaster = (function () {
 			$.each(object.data.moves, function(index, m){
 				
 				if(m.moveId == id){
+					
+					// Generate move abbreviation
+					
+					var arr = m.moveId.split('_');
+					var abbreviation = '';
+					
+					for(var i = 0; i < arr.length; i++){
+						abbreviation += arr[i].charAt(0);
+					}
+					
 					move = {
 						moveId: m.moveId,
 						name: m.name,
+						abbreviation: abbreviation,
 						type: m.type,
 						power: m.power,
 						energy: m.energy,

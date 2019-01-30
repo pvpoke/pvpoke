@@ -34,14 +34,25 @@ require_once 'header.php';
 
 <div class="section battle">
 	<button class="battle-btn button">Battle</button>
+	<div class="tooltip"><h3 class="name"></h3><div class="details"></div></div>
 	<div class="battle-results">
+		<div class="tip">Hover over or tap the timeline for details</div>
 		<div class="timeline-container">
 			<div class="timeline"></div>
 			<div class="timeline"></div>
-			<div class="tooltip"><h3 class="name"></h3><div class="details"></div></div>
 			<div class="tracker"></div>
 		</div>
-		<div class="tip">Hover over or tap the timeline for details</div>
+		<div class="playback section white">
+			<div class="playback-btn replay"></div>
+			<div class="playback-btn play"></div>
+			<select class="playback-speed">
+				<option value="1">1x speed</option>
+				<option value="2">2x speed</option>
+				<option value="4">4x speed</option>
+				<option value="8" selected >8x speed</option>
+				<option value="16">16x speed</option>
+			</select>
+		</div>
 		<div class="summary section white"></div>
 		<div class="share-link-container">
 			<p>Share this battle:</p>

@@ -15,6 +15,9 @@ var InterfaceMaster = (function () {
 			var animating = false;
 			var self = this;
 			
+			var time = 0;
+			var timelineInterval;
+			
 			this.context = "battle";
 
 			this.init = function(){
@@ -34,6 +37,13 @@ var InterfaceMaster = (function () {
 				$(".timeline-container").on("mousemove",".item",timelineEventHover);
 				$("body").on("mousemove",mainMouseMove);
 				$("body").on("mousedown",mainMouseMove);
+				
+				// Timeline playback
+				
+				$(".playback .play").click(timelinePlay);
+				$(".playback .replay").click(timelineReplay);
+				$(".playback-speed").change(timelineSpeedChange);
+				
 				battle = BattleMaster.getInstance();
 				
 				// If get data exists, load settings
@@ -51,6 +61,7 @@ var InterfaceMaster = (function () {
 			
 			this.displayCumulativeDamage = function(timeline, time){
 				var cumulativeDamage = [0,0];
+				var cumulativeEnergy = [0,0];
 				
 				for(var i = 0; i < timeline.length; i++){
 					var event = timeline[i];
@@ -59,9 +70,11 @@ var InterfaceMaster = (function () {
 
 						if((event.type.indexOf("fast") >= 0) || (event.type.indexOf("charged") >= 0)){
 							if(event.actor == 0){
-								cumulativeDamage[1] += event.value;
+								cumulativeDamage[1] += event.values[0];
+								cumulativeEnergy[0] += event.values[1];
 							} else{
-								cumulativeDamage[0] += event.value;
+								cumulativeDamage[0] += event.values[0];
+								cumulativeEnergy[1] += event.values[1];
 							}
 						}
 					}
@@ -69,6 +82,11 @@ var InterfaceMaster = (function () {
 				
 				for(var n = 0; n < pokeSelectors.length; n++){
 					pokeSelectors[n].animateHealth(cumulativeDamage[n]);
+					
+					for(i = 0; i < pokeSelectors[n].getPokemon().chargedMoves.length; i++){
+						pokeSelectors[n].animateEnergy(i, cumulativeEnergy[n]);
+					}
+					
 				}
 				
 				var left = ((time+1000) / (battle.getDuration()+2000) * 100)+"%";
@@ -89,7 +107,7 @@ var InterfaceMaster = (function () {
 					var event = timeline[i];
 					var position = ((event.time+1000) / (duration+1000) * 100)+"%";
 					
-					var $item = $("<div class=\"item-container\"><div class=\"item "+event.type+"\" index=\""+i+"\" name=\""+event.name+"\" value=\""+event.value+"\"></div></div>");
+					var $item = $("<div class=\"item-container\"><div class=\"item "+event.type+"\" index=\""+i+"\" name=\""+event.name+"\" values=\""+event.values.join(',')+"\"></div></div>");
 					$item.css("left", position);
 					
 					$(".timeline").eq(event.actor).append($item);
@@ -116,25 +134,12 @@ var InterfaceMaster = (function () {
 				$("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, 500);
 				
 				// Animate timelines
-				
-				animating = true;
-				
+
 				$(".timeline .item").removeClass("active");
 				
 				var intMs = Math.floor(duration / 62);
 				
-				var time = -intMs * 15;
-				
-				var interval = setInterval(function(){
-					time += intMs;
-					
-					self.displayCumulativeDamage(timeline, time);
-
-					if(time > duration){
-						animating = false;
-						clearInterval(interval);
-					}
-				}, 16);
+				self.animateTimeline(-intMs * 15, intMs);
 				
 				// Generate and display share link
 				
@@ -171,6 +176,35 @@ var InterfaceMaster = (function () {
 				// Send Google Analytics pageview
 				
 				gtag('config', UA_ID, {page_location: (host+url), page_path: url});
+			}
+			
+			// Animate timeline playback given a start time and rate in ms
+			
+			this.animateTimeline = function(startTime, timeRate){
+				
+				if(animating){
+					return false;
+				}
+								
+				animating = true;
+				
+				clearInterval(timelineInterval);
+				
+				time = startTime;
+
+				timelineInterval = setInterval(function(){
+					time += timeRate;
+					
+					self.displayCumulativeDamage(battle.getTimeline(), time);
+
+					if(time > battle.getDuration()){
+						animating = false;
+						clearInterval(timelineInterval);
+						
+						$(".playback .play").removeClass("active");
+					}
+				}, 17);
+				
 			}
 			
 			// Given JSON of get parameters, load these settings
@@ -285,7 +319,7 @@ var InterfaceMaster = (function () {
 			
 			function timelineEventHover(e){
 				
-				var $tooltip = $(".timeline-container .tooltip");
+				var $tooltip = $(".tooltip");
 				
 				$tooltip.show();
 				
@@ -295,34 +329,88 @@ var InterfaceMaster = (function () {
 				$tooltip.find(".details").html('');
 			
 				if(($(this).hasClass("fast")) || ($(this).hasClass("charged"))){
-					$tooltip.find(".details").html($(this).attr("value") + " damage");
+					
+					var values = $(this).attr("values").split(',');
+					
+					$tooltip.find(".details").html(values[0] + " damage<br>" + values[1] + " energy");
 				}
 				
 				var width = $tooltip.width();
-				var left = e.pageX - $(".timeline-container").offset().left + 10;
-				var top = e.pageY - $(".timeline-container").offset().top - 20;
+				var left = (e.pageX - $(".section").first().offset().left) + 10;
+				var top = e.pageY - 20;
 				
 				if( left > ($(".timeline-container").width() - width - 10) ){
-					left -= (width + 30);
+					left -= width;
 				}
 				
 				$tooltip.css("left",left+"px");
 				$tooltip.css("top",top+"px");
 			}
 			
+			// Click play or pause button
+			
+			function timelinePlay(e){
+				$(".playback .play").toggleClass("active");
+				
+				if(animating){
+					clearInterval(timelineInterval);
+					
+					animating = false;
+				} else{
+					
+					var rate = 17 * parseInt($(".playback-speed option:selected").val());
+					
+					if(time >= battle.getDuration()){
+						self.animateTimeline(0, rate);
+					} else{
+						self.animateTimeline(time, rate);
+					}
+				}
+			}
+			
+			// Click replay button
+			
+			function timelineReplay(e){
+				$(".playback .play").addClass("active");
+				
+				if(animating){
+					clearInterval(timelineInterval);
+					
+					animating = false;
+				}
+					
+				var rate = 17 * parseInt($(".playback-speed option:selected").val());
+
+				self.animateTimeline(0, rate);
+			}
+			
+			// Change playback speed during animation
+			
+			function timelineSpeedChange(e){
+				
+				if(animating){
+					clearInterval(timelineInterval);
+					animating = false;
+
+					var rate = 17 * parseInt($(".playback-speed option:selected").val());
+
+					self.animateTimeline(time, rate);
+				}
+			}
+			
 			function mainMouseMove(e){
 				if($(".timeline .item:hover").length == 0){
-					$(".timeline-container .tooltip").hide();
+					$(".tooltip").hide();
 				}
 				
 				if(($(".timeline-container:hover").length > 0)&&(! animating)){
 					var offsetX = ($(window).width() - $(".timeline-container").width()) / 2;
 					var posX = e.clientX - offsetX;
-					var time = ((battle.getDuration()+2000) * (posX / $(".timeline-container").width()))-1000;
+					var hoverTime = ((battle.getDuration()+2000) * (posX / $(".timeline-container").width()))-1000;
+					
+					time = hoverTime;
 					
 					self.displayCumulativeDamage(battle.getTimeline(), time);
-				} else if(($(".timeline-container").is(":visible"))&&(!animating)){
-					self.displayCumulativeDamage(battle.getTimeline(), battle.getDuration());
 				}
 			}
 		};
