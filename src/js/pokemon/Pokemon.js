@@ -22,6 +22,7 @@ function Pokemon(id, i){
 	this.cp = 0;
 	this.hp = 0;
 	this.startHp = 0;
+	this.startEnergy = 0;
 	this.level = 40;
 	this.cpm = 0.79030001;
 	this.fastMovePool = [];
@@ -341,9 +342,9 @@ function Pokemon(id, i){
 	this.reset = function(){
 		
 		this.resetMoves();
-		this.hp = this.stats.hp;
-		this.startHp = this.hp;
-		this.energy = 0;
+		this.startHp = this.stats.hp;
+		this.hp = this.startHp;
+		this.energy = this.startEnergy;
 		this.cooldown = 0;
 		this.damageWindow = 0;
 		this.shields = this.startingShields;
@@ -375,5 +376,17 @@ function Pokemon(id, i){
 		}
 		
 		this.initialize(false);
+	}
+	
+	// Return battle rating for this Pokemon
+	
+	this.getBattleRating = function(){
+		var opponent = battle.getOpponent(self.index);
+		
+		if(! opponent){
+			return 0;
+		}
+		
+		return Math.floor( (500 * ((opponent.stats.hp - opponent.hp) / opponent.stats.hp)) + (500 * (self.hp / self.stats.hp)))
 	}
 }
