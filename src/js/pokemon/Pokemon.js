@@ -377,4 +377,16 @@ function Pokemon(id, i){
 		
 		this.initialize(false);
 	}
+	
+	// Return battle rating for this Pokemon
+	
+	this.getBattleRating = function(){
+		var opponent = battle.getOpponent(self.index);
+		
+		if(! opponent){
+			return 0;
+		}
+		
+		return Math.floor( (500 * ((opponent.stats.hp - opponent.hp) / opponent.stats.hp)) + (500 * (self.hp / self.stats.hp)))
+	}
 }

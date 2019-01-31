@@ -249,6 +249,7 @@ var BattleMaster = (function () {
 				}
 				
 				var time = 0;
+				var turns = 0;
 				timeline = [];
 				
 				var deltaTime = 500;
@@ -268,6 +269,8 @@ var BattleMaster = (function () {
 						var poke = pokemon[i];			
 						poke.cooldown = Math.max(0, poke.cooldown - deltaTime); // Reduce cooldown
 					}
+					
+					turns++;
 					
 					// Process actions for both Pokemon
 					
@@ -313,7 +316,7 @@ var BattleMaster = (function () {
 								}
 								
 								if(useChargedMove){
-									time = this.useMove(poke, opponent, poke.bestChargedMove, timeline, time, chargedMoveUsed);
+									time = this.useMove(poke, opponent, poke.bestChargedMove, timeline, time, turns, chargedMoveUsed);
 									roundChargedMoveUsed = true;
 									chargedMoveUsed = true;
 								}
@@ -330,7 +333,7 @@ var BattleMaster = (function () {
 									// Use charged move if it would KO the opponent
 									
 									if((move.damage >= opponent.hp) && (opponent.shields == 0) && (!chargedMoveUsed)){
-										time = this.useMove(poke, opponent, move, timeline, time, roundShieldUsed);
+										time = this.useMove(poke, opponent, move, timeline, time, turns, roundShieldUsed);
 										roundChargedMoveUsed = true;
 										chargedMoveUsed = true;
 									}
@@ -342,7 +345,7 @@ var BattleMaster = (function () {
 										// Don't use a charged move if a fast move will result in a KO
 										
 										if((opponent.hp > poke.fastMove.damage)&&(opponent.hp > (poke.fastMove.damage * (opponent.fastMove.cooldown / poke.fastMove.cooldown)))){
-											time = this.useMove(poke, opponent, move, timeline, time, roundShieldUsed);
+											time = this.useMove(poke, opponent, move, timeline, time, turns, roundShieldUsed);
 											roundChargedMoveUsed = true;
 											chargedMoveUsed = true;
 										}
@@ -426,7 +429,7 @@ var BattleMaster = (function () {
 							// Otherwise, use fast move
 							
 							if(! chargedMoveUsed){
-								time = this.useMove(poke, opponent, poke.fastMove, timeline, time, roundShieldUsed);
+								time = this.useMove(poke, opponent, poke.fastMove, timeline, time, turns, roundShieldUsed);
 							}
 
 						}
@@ -441,7 +444,12 @@ var BattleMaster = (function () {
 						time += deltaTime;
 					} else{
 						// This is for display purposes only
-						time += 3000;
+						if(roundShieldUsed){
+							time += 2000;
+						} else{
+							time += 7500;
+						}
+						
 					}
 				
 					duration = time;
@@ -451,7 +459,7 @@ var BattleMaster = (function () {
 						var poke = pokemon[i];
 	
 						if(poke.hp <= 0){
-							timeline.push(new TimelineEvent("faint", "Faint", poke.index, time));
+							timeline.push(new TimelineEvent("faint", "Faint", poke.index, time, turns));
 						}
 						
 						// Reset after a charged move
@@ -469,7 +477,7 @@ var BattleMaster = (function () {
 			
 			// Use a move on an opposing Pokemon and produce a Timeline Event
 			
-			this.useMove = function(attacker, defender, move, timeline, time, shieldUsed){
+			this.useMove = function(attacker, defender, move, timeline, time, turns, shieldUsed){
 				
 				var type = "fast " + move.type;
 				var damage = move.damage;
@@ -484,16 +492,22 @@ var BattleMaster = (function () {
 					
 					attacker.energy -= move.energy;
 					
+					// Add tap events for display
+					
+					for(var i = 0; i < 5; i++){
+						timeline.push(new TimelineEvent("tap "+move.type, "Tap", attacker.index, time+(1000*i), turns, [i]));
+					}
+					
 					// If defender has a shield, use it
 					
 					if(defender.shields > 0){
-						timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+1500, [damage]));
+						timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+5500, turns, [damage-1]));
 						damage = 1;
 						defender.shields--;
 						shieldUsed = true;
 						
 						// If a shield has already been used, add time so events don't visually overlap
-						time+=1500;
+						time+=7500;
 					}
 					
 				} else{
@@ -509,9 +523,9 @@ var BattleMaster = (function () {
 				// This was really hard for my little brain to figure out so like really don't touch it
 				
 				if(move.energy > 0){
-					displayTime += 1500;
+					displayTime += 5500;
 				} else if(shieldUsed){
-					displayTime -= 1500;
+					displayTime -= 7500;
 				}
 				
 				// Set energy value for TimelineEvent
@@ -522,7 +536,7 @@ var BattleMaster = (function () {
 					energyValue = -move.energy;
 				}
 				
-				timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, [damage, energyValue]));
+				timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, turns, [damage, energyValue]));
 
 				return time;
 				
@@ -550,6 +564,37 @@ var BattleMaster = (function () {
 				}
 				
 				return winner;
+			}
+			
+			// Return a battle rating RGB color given a rating
+			
+			this.getRatingColor = function(rating){
+				var winColors = [
+					[93,71,165],
+					[0,143,187]
+				]; // rgb
+				var lossColors = [
+					[186,0,143],
+					[93,71,165]
+				]; // rgb
+
+				// Apply a gradient to bar color
+				var colors = (rating <= 500) ? lossColors : winColors;
+				var color = [ colors[0][0], colors[0][1], colors[0][2] ];
+
+				for(var j = 0; j < color.length; j++){
+					var range = colors[1][j] - color[j];
+					var base = color[j];
+					var ratio = rating / 500;
+
+					if(ratio > 1){
+						ratio -= 1;
+					}
+
+					color[j] = Math.floor(base + (range * ratio));
+				}
+				
+				return color;
 			}
 
 			this.getDuration = function(){

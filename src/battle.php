@@ -43,15 +43,17 @@ require_once 'header.php';
 			<div class="tracker"></div>
 		</div>
 		<div class="playback section white">
-			<div class="playback-btn replay"></div>
-			<div class="playback-btn play"></div>
-			<select class="playback-speed">
-				<option value="1">1x speed</option>
-				<option value="2">2x speed</option>
-				<option value="4">4x speed</option>
-				<option value="8" selected >8x speed</option>
-				<option value="16">16x speed</option>
-			</select>
+			<div class="flex">
+				<div class="playback-btn replay"></div>
+				<div class="playback-btn play"></div>
+				<select class="playback-speed">
+					<option value="1">1x speed*</option>
+					<option value="4">4x speed</option>
+					<option value="8" selected >8x speed</option>
+					<option value="16">16x speed</option>
+				</select>
+			</div>
+			<div class="disclaimer">* Results may differ from actual gameplay depending on connectivity, device, player decisions, or other factors.</div>
 		</div>
 		<div class="summary section white"></div>
 		<div class="share-link-container">
@@ -59,6 +61,88 @@ require_once 'header.php';
 			<div class="share-link">
 				<input type="text" value="" readonly>
 				<div class="copy">Copy</div>
+			</div>
+		</div>
+		
+		<div class="section white battle-details">
+			<a class="toggle active" href="#">Matchup Details <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+			
+			<div class="toggle-content active">
+				<h2 class="center"><span class="name-1">Pokemon</span>'s Matchups vs. <span class="name-2">Pokemon</span></h2>
+				<table class="rating-table" cellspacing="0">
+					<tr>
+						<td></td>
+						<td></td>
+						<td colspan="3"><span class="name name-2">Pokemon</span></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td><span class="shield shield-none"></span></td>
+						<td><span class="shield"></span></td>
+						<td><span class="shield shield-double"></span></td>
+					</tr>
+					<tr>
+						<td rowspan="3"><span class="name name-1">Pokemon</span></td>
+						<td><span class="shield shield-none"></span></td>
+						<td><a href="#" class="rating star battle-0-0" shields="0,0">100</a></td>
+						<td><a href="#" class="rating star battle-1-0" shields="1,0">100</a></td>
+						<td><a href="#" class="rating star battle-2-0" shields="2,0">100</a></td>
+					</tr>
+					<tr>
+						<td><span class="shield"></span></td>
+						<td><a href="#" class="rating star battle-0-1" shields="0,1">100</a></td>
+						<td><a href="#" class="rating star battle-1-1" shields="1,1">100</a></td>
+						<td><a href="#" class="rating star battle-2-1" shields="2,1">100</a></td>
+					</tr>
+					<tr>
+						<td><span class="shield shield-double"></td>
+						<td><a href="#" class="rating star battle-0-2" shields="0,2">100</a></td>
+						<td><a href="#" class="rating star battle-1-2" shields="1,2">100</a></td>
+						<td><a href="#" class="rating star battle-2-2" shields="2,2">100</a></td>
+					</tr>
+				</table>
+				<p class="center">Click or tap to view battles.</p>
+				
+				<h2 class="center">Battle Stats</h2>
+				
+				<table class="stats-table" cellspacing="0">
+					<tr>
+						<td></td>
+						<td><span class="name name-1">Pokemon</span></td>
+						<td><span class="name name-2">Pokemon</span></td>
+					</tr>
+					<tr>
+						<td class="label">Battle Rating</td>
+						<td class="stat-battle-rating"><span class="rating star">100</span></td>
+						<td class="stat-battle-rating"><span class="rating star">100</span></td>
+					</tr>
+					<tr>
+						<td class="label">Total Damage</td>
+						<td class="stat-total-damage">100</td>
+						<td class="stat-total-damage">100</td>
+					</tr>
+					<tr>
+						<td class="label">Fast Move Damage</td>
+						<td class="stat-fast-damage">100</td>
+						<td class="stat-fast-damage">100</td>
+					</tr>
+					<tr>
+						<td class="label">Charged Move Damage</td>
+						<td class="stat-charged-damage">100</td>
+						<td class="stat-charged-damage">100</td>
+					</tr>
+					<tr>
+						<td class="label">Damage Blocked</td>
+						<td class="stat-damage-blocked">100</td>
+						<td class="stat-damage-blocked">100</td>
+					</tr>
+					<tr>
+						<td class="label">Turns to First Charged Move</td>
+						<td class="stat-charged-time">-</td>
+						<td class="stat-charged-time">-</td>
+					</tr>
+				</table>
 			</div>
 		</div>
 		
