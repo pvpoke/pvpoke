@@ -260,7 +260,7 @@ var BattleMaster = (function () {
 					
 					// For display purposes, need to track whether a Pokemon has used a charged move or shield each round
 					
-					var roundChargedMoveUsed = false;
+					var roundChargedMoveUsed = 0;
 					var roundShieldUsed = false;
 					
 					// Reduce cooldown for both POkemon
@@ -317,7 +317,7 @@ var BattleMaster = (function () {
 								
 								if(useChargedMove){
 									time = this.useMove(poke, opponent, poke.bestChargedMove, timeline, time, turns, chargedMoveUsed);
-									roundChargedMoveUsed = true;
+									roundChargedMoveUsed++;
 									chargedMoveUsed = true;
 								}
 
@@ -334,7 +334,7 @@ var BattleMaster = (function () {
 									
 									if((move.damage >= opponent.hp) && (opponent.shields == 0) && (!chargedMoveUsed)){
 										time = this.useMove(poke, opponent, move, timeline, time, turns, roundShieldUsed);
-										roundChargedMoveUsed = true;
+										roundChargedMoveUsed++;
 										chargedMoveUsed = true;
 									}
 									
@@ -346,7 +346,7 @@ var BattleMaster = (function () {
 										
 										if((opponent.hp > poke.fastMove.damage)&&(opponent.hp > (poke.fastMove.damage * (opponent.fastMove.cooldown / poke.fastMove.cooldown)))){
 											time = this.useMove(poke, opponent, move, timeline, time, turns, roundShieldUsed);
-											roundChargedMoveUsed = true;
+											roundChargedMoveUsed++;
 											chargedMoveUsed = true;
 										}
 									}
@@ -388,7 +388,7 @@ var BattleMaster = (function () {
 										var availableTime = poke.fastMove.cooldown - opponent.cooldown;
 										var futureActions = Math.ceil(availableTime / opponent.fastMove.cooldown);
 										
-										if(roundChargedMoveUsed){
+										if(roundChargedMoveUsed > 0){
 											futureActions = 0;
 										}
 										
@@ -420,7 +420,7 @@ var BattleMaster = (function () {
 	
 									if((nearDeath)&&(!chargedMoveUsed)){
 										time = this.useMove(poke, opponent, move, timeline, time, roundShieldUsed);
-										roundChargedMoveUsed = true;
+										roundChargedMoveUsed++;
 										chargedMoveUsed = true;
 									}
 								}
@@ -440,14 +440,14 @@ var BattleMaster = (function () {
 						
 					}
 					
-					if(! roundChargedMoveUsed){
+					if(roundChargedMoveUsed == 0){
 						time += deltaTime;
 					} else{
 						// This is for display purposes only
 						if(roundShieldUsed){
-							time += 2000;
+							time += (2000+(7500*(roundChargedMoveUsed-1)));
 						} else{
-							time += 7500;
+							time += (7500*roundChargedMoveUsed);
 						}
 						
 					}
@@ -464,7 +464,7 @@ var BattleMaster = (function () {
 						
 						// Reset after a charged move
 						
-						if(roundChargedMoveUsed){
+						if(roundChargedMoveUsed > 0){
 							poke.cooldown = 0;
 							poke.damageWindow = 0;
 						}
