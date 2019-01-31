@@ -22,11 +22,22 @@
 	
 	<!--Update section for updates-->
 	<h3>What's New</h3>
-	<h4>v1.1.4 (January 29, 2019)</h4>
+	<h4>v1.2.1 (January 31, 2019)</h4>
 	<ul>
-		<li>Fixed an issue in some fringe matchups where Pokemon sometimes didn't anticipate getting knocked out by Fast Moves correctly.</li>
-		<li>Clearing a Pokemon selection now clears the search bar as well.</li>
-		<li>Pokemon now retain custom level and IV's when switching between leagues.</li>
+		<li>Fixed some visual issues with the Battle timeline</li>
+		<li>Battle links on the Rankings page now open in a new tab</li>
+	</ul>
+	<h4>v1.2.0 (January 30, 2019)</h4>
+	<ul>
+		<li>New Battle page features:</li>
+		<ul>
+			<li>Charged Move meters that animate with the timeline</li>
+			<li>Playback controls to play the timeline in accelerated or real time</li>
+			<li>Charged Moves on the timeline adjusted to better match in-game timing</li>
+			<li>Timeline markings to better indicate when Charged Moves are being powered up</li>
+			<li>Matchup Details section with a table of battle results for all shield combinations, and battle stats</li>
+		</ul>
+		<li>Fixed Girafarig's typing</li>
 	</ul>
 	
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>

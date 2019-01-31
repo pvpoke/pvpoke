@@ -18,6 +18,9 @@ var RankerMaster = (function () {
 			var battle = BattleMaster.getInstance();
 			
 			var rankings = [];
+			var rankingCombinations = [];
+			
+			var self = this;
 			
 			// Run all ranking sets at once
 			
@@ -25,12 +28,25 @@ var RankerMaster = (function () {
 				
 				var leagues = [1500,2500,10000];
 				var shields = [ [0,0],[2,2],[0,2],[2,0]];
-				
+
 				for(var i = 0; i < leagues.length; i++){
 					for(var n = 0; n < shields.length; n++){
-						this.rank(leagues[i], shields[n]);
+						rankingCombinations.push({league: leagues[i], shields: shields[n]});
+
 					}
 				}
+				
+				var currentRankings = rankingCombinations.length;
+				
+				var rankingInterval = setInterval(function(){
+					if((rankingCombinations.length == currentRankings)&&(rankingCombinations.length > 0)){
+						currentRankings--;
+						
+						self.rank(rankingCombinations[0].league, rankingCombinations[0].shields);
+						
+						rankingCombinations.splice(0, 1);
+					}
+				}, 1000);
 				
 			}		
 			

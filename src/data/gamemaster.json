@@ -3837,7 +3837,7 @@
             },
             "types":[
                 "normal",
-                "none"
+                "psychic"
             ],
             "fastMoves":[
 				"CONFUSION","TACKLE"
@@ -4968,10 +4968,10 @@
                 "poison"
             ],
             "fastMoves":[
-
+				"CONFUSION","STRUGGLE_BUG"
             ],
             "chargedMoves":[
-
+				"SLUDGE_BOMB","BUG_BUZZ","SLUDGE_BOMB"
             ]
         },
         {
@@ -5208,10 +5208,10 @@
                 "fairy"
             ],
             "fastMoves":[
-
+				"CONFUSION","CHARGE_BEAM"
             ],
             "chargedMoves":[
-
+				"PSYCHIC","DISARMING_VOICE","SHADOW_SNEAK"
             ]
         },
 		
