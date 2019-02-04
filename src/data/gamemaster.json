@@ -839,7 +839,7 @@
     {
       "dex": 29,
       "speciesName": "Nidoran♀",
-      "speciesId": "nidoran♀",
+      "speciesId": "nidoran_female",
       "baseStats": {
         "atk": 86,
         "def": 89,
@@ -908,7 +908,7 @@
     {
       "dex": 32,
       "speciesName": "Nidoran♂",
-      "speciesId": "nidoran♂",
+      "speciesId": "nidoran_male",
       "baseStats": {
         "atk": 105,
         "def": 76,
@@ -2428,7 +2428,7 @@
     {
       "dex": 83,
       "speciesName": "Farfetch'd",
-      "speciesId": "farfetch'd",
+      "speciesId": "farfetchd",
       "baseStats": {
         "atk": 124,
         "def": 115,
@@ -3600,7 +3600,7 @@
     {
       "dex": 122,
       "speciesName": "Mr. Mime",
-      "speciesId": "mr. mime",
+      "speciesId": "mr_mime",
       "baseStats": {
         "atk": 192,
         "def": 205,
