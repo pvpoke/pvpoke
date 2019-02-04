@@ -1,3 +1,4 @@
+
 {
   "options": {
     "partySize": 3
@@ -648,7 +649,8 @@
       ],
       "fastMoves": [
         "ACID",
-        "BITE"
+        "BITE",
+        "DRAGON_TAIL"
       ],
       "chargedMoves": [
         "DARK_PULSE",
@@ -1020,6 +1022,7 @@
       ],
       "chargedMoves": [
         "DAZZLING_GLEAM",
+        "METEOR_MASH",
         "MOONBLAST",
         "PSYCHIC"
       ],
@@ -1096,6 +1099,7 @@
         "FLAMETHROWER",
         "HEAT_WAVE",
         "OVERHEAT",
+        "PSYSHOCK",
         "SOLAR_BEAM"
       ],
       "legacyMoves": [
@@ -1124,7 +1128,8 @@
       "chargedMoves": [
         "BLIZZARD",
         "DAZZLING_GLEAM",
-        "ICE_BEAM"
+        "ICE_BEAM",
+        "PSYSHOCK"
       ]
     },
     {
@@ -1176,6 +1181,7 @@
       "chargedMoves": [
         "DAZZLING_GLEAM",
         "HYPER_BEAM",
+        "ICE_BEAM",
         "PLAY_ROUGH"
       ]
     },
@@ -1900,6 +1906,7 @@
       ],
       "chargedMoves": [
         "DAZZLING_GLEAM",
+        "FIRE_PUNCH",
         "FOCUS_BLAST",
         "FUTURE_SIGHT",
         "PSYCHIC",
@@ -1987,6 +1994,7 @@
         "CROSS_CHOP",
         "DYNAMIC_PUNCH",
         "HEAVY_SLAM",
+        "ROCK_SLIDE",
         "STONE_EDGE",
         "SUBMISSION"
       ],
@@ -2635,7 +2643,8 @@
       "chargedMoves": [
         "DARK_PULSE",
         "GUNK_SHOT",
-        "SLUDGE_WAVE"
+        "SLUDGE_WAVE",
+        "THUNDER_PUNCH"
       ],
       "legacyMoves": [
         "ACID",
@@ -2657,7 +2666,8 @@
       ],
       "fastMoves": [
         "BITE",
-        "POISON_JAB"
+        "POISON_JAB",
+        "SNARL"
       ],
       "chargedMoves": [
         "DARK_PULSE",
@@ -3269,7 +3279,8 @@
       "chargedMoves": [
         "DARK_PULSE",
         "SHADOW_BALL",
-        "SLUDGE_BOMB"
+        "SLUDGE_BOMB",
+        "THUNDERBOLT"
       ],
       "legacyMoves": [
         "ACID"
@@ -3575,9 +3586,11 @@
       ],
       "chargedMoves": [
         "HYDRO_PUMP",
+        "ICE_BEAM",
         "POWER_GEM",
         "PSYBEAM",
-        "PSYCHIC"
+        "PSYCHIC",
+        "THUNDER"
       ],
       "legacyMoves": [
         "PSYBEAM",
@@ -3658,6 +3671,7 @@
       "chargedMoves": [
         "AVALANCHE",
         "DRAINING_KISS",
+        "FOCUS_BLAST",
         "ICE_PUNCH",
         "PSYSHOCK"
       ],
@@ -4127,7 +4141,8 @@
       "fastMoves": [
         "FURY_CUTTER",
         "MUD_SHOT",
-        "ROCK_SMASH"
+        "ROCK_SMASH",
+        "WATERFALL"
       ],
       "chargedMoves": [
         "ANCIENT_POWER",
@@ -4158,7 +4173,8 @@
       "chargedMoves": [
         "ANCIENT_POWER",
         "HYPER_BEAM",
-        "IRON_HEAD"
+        "IRON_HEAD",
+        "ROCK_SLIDE"
       ]
     },
     {
@@ -4182,7 +4198,8 @@
         "BODY_SLAM",
         "EARTHQUAKE",
         "HEAVY_SLAM",
-        "HYPER_BEAM"
+        "HYPER_BEAM",
+        "OUTRAGE"
       ],
       "legacyMoves": [
         "BODY_SLAM"
@@ -5191,6 +5208,7 @@
       "chargedMoves": [
         "DRAGON_PULSE",
         "FOCUS_BLAST",
+        "POWER_GEM",
         "THUNDER",
         "ZAP_CANNON"
       ],
@@ -6039,7 +6057,8 @@
       ],
       "fastMoves": [
         "COUNTER",
-        "METAL_CLAW"
+        "METAL_CLAW",
+        "SHADOW_CLAW"
       ],
       "chargedMoves": [
         "CLOSE_COMBAT",
@@ -6251,6 +6270,7 @@
       ],
       "fastMoves": [
         "BUBBLE",
+        "BULLET_SEED",
         "WING_ATTACK"
       ],
       "chargedMoves": [
@@ -6325,6 +6345,7 @@
       "chargedMoves": [
         "CRUNCH",
         "FIRE_BLAST",
+        "FLAMETHROWER",
         "FOUL_PLAY"
       ]
     },
@@ -6393,6 +6414,7 @@
       ],
       "fastMoves": [
         "COUNTER",
+        "MUD_SLAP",
         "TACKLE"
       ],
       "chargedMoves": [
@@ -6629,7 +6651,9 @@
       "chargedMoves": [
         "BODY_SLAM",
         "GYRO_BALL",
-        "STOMP"
+        "ICE_BEAM",
+        "STOMP",
+        "THUNDERBOLT"
       ]
     },
     {
@@ -6673,6 +6697,7 @@
         "VOLT_SWITCH"
       ],
       "chargedMoves": [
+        "SHADOW_BALL",
         "THUNDER",
         "THUNDERBOLT",
         "WILD_CHARGE"
@@ -6698,6 +6723,7 @@
       "chargedMoves": [
         "FIRE_BLAST",
         "FLAMETHROWER",
+        "IRON_HEAD",
         "OVERHEAT"
       ]
     },
@@ -6737,6 +6763,7 @@
       "chargedMoves": [
         "BUBBLE_BEAM",
         "HYDRO_PUMP",
+        "ICE_BEAM",
         "WATER_PULSE"
       ],
       "legacyMoves": [
@@ -6869,6 +6896,22 @@
       ],
       "fastMoves": [
         "EXTRASENSORY",
+        "HIDDEN_POWER_BUG",
+        "HIDDEN_POWER_DARK",
+        "HIDDEN_POWER_DRAGON",
+        "HIDDEN_POWER_ELECTRIC",
+        "HIDDEN_POWER_FIGHTING",
+        "HIDDEN_POWER_FIRE",
+        "HIDDEN_POWER_FLYING",
+        "HIDDEN_POWER_GHOST",
+        "HIDDEN_POWER_GRASS",
+        "HIDDEN_POWER_GROUND",
+        "HIDDEN_POWER_ICE",
+        "HIDDEN_POWER_POISON",
+        "HIDDEN_POWER_PSYCHIC",
+        "HIDDEN_POWER_ROCK",
+        "HIDDEN_POWER_STEEL",
+        "HIDDEN_POWER_WATER",
         "STEEL_WING"
       ],
       "chargedMoves": [
@@ -7377,6 +7420,7 @@
       "chargedMoves": [
         "BLIZZARD",
         "HYDRO_PUMP",
+        "ICE_BEAM",
         "SOLAR_BEAM"
       ]
     },
@@ -9761,6 +9805,7 @@
         "flying"
       ],
       "fastMoves": [
+        "BITE",
         "DRAGON_TAIL",
         "FIRE_FANG"
       ],
@@ -10112,7 +10157,7 @@
       "chargedMoves": [
         "PSYCHO_BOOST",
         "ROCK_SLIDE",
-        "ZAP_CANNON"
+        "THUNDERBOLT"
       ]
     },
     {
@@ -10135,7 +10180,7 @@
       "chargedMoves": [
         "PSYCHO_BOOST",
         "SWIFT",
-        "ZAP_CANNON"
+        "THUNDERBOLT"
       ]
     },
     {
@@ -10563,6 +10608,22 @@
         "none"
       ],
       "fastMoves": [
+        "HIDDEN_POWER_BUG",
+        "HIDDEN_POWER_DARK",
+        "HIDDEN_POWER_DRAGON",
+        "HIDDEN_POWER_ELECTRIC",
+        "HIDDEN_POWER_FIGHTING",
+        "HIDDEN_POWER_FIRE",
+        "HIDDEN_POWER_FLYING",
+        "HIDDEN_POWER_GHOST",
+        "HIDDEN_POWER_GRASS",
+        "HIDDEN_POWER_GROUND",
+        "HIDDEN_POWER_ICE",
+        "HIDDEN_POWER_POISON",
+        "HIDDEN_POWER_PSYCHIC",
+        "HIDDEN_POWER_ROCK",
+        "HIDDEN_POWER_STEEL",
+        "HIDDEN_POWER_WATER",
         "SNARL",
         "SPARK"
       ],
@@ -10628,6 +10689,7 @@
       ],
       "chargedMoves": [
         "DAZZLING_GLEAM",
+        "GRASS_KNOT",
         "SLUDGE_BOMB",
         "SOLAR_BEAM"
       ]
@@ -10643,7 +10705,7 @@
       },
       "types": [
         "rock",
-        "rock"
+        "none"
       ],
       "fastMoves": [
         "TAKE_DOWN",
@@ -10666,7 +10728,7 @@
       },
       "types": [
         "rock",
-        "rock"
+        "none"
       ],
       "fastMoves": [
         "SMACK_DOWN",
@@ -11369,7 +11431,8 @@
       "chargedMoves": [
         "BRAVE_BIRD",
         "DARK_PULSE",
-        "PSYCHIC"
+        "PSYCHIC",
+        "SKY_ATTACK"
       ]
     },
     {
@@ -11867,6 +11930,7 @@
         "dark"
       ],
       "fastMoves": [
+        "BITE",
         "INFESTATION",
         "POISON_STING"
       ],
@@ -12218,7 +12282,8 @@
       "chargedMoves": [
         "BRICK_BREAK",
         "FIRE_BLAST",
-        "FIRE_PUNCH"
+        "FIRE_PUNCH",
+        "PSYCHIC"
       ]
     },
     {
@@ -12256,7 +12321,8 @@
       "chargedMoves": [
         "AERIAL_ACE",
         "ANCIENT_POWER",
-        "DAZZLING_GLEAM"
+        "DAZZLING_GLEAM",
+        "FLAMETHROWER"
       ]
     },
     {
@@ -12407,6 +12473,7 @@
         "HIDDEN_POWER_WATER"
       ],
       "chargedMoves": [
+        "BLIZZARD",
         "HYPER_BEAM",
         "SOLAR_BEAM",
         "ZAP_CANNON"
@@ -13588,7 +13655,7 @@
       "moveId": "BODY_SLAM",
       "name": "Body Slam",
       "type": "normal",
-      "power": 50,
+      "power": 60,
       "energy": 35,
       "energyGain": 0
     },
@@ -13704,7 +13771,7 @@
       "moveId": "CONFUSION",
       "name": "Confusion",
       "type": "psychic",
-      "power": 12,
+      "power": 16,
       "energy": 0,
       "energyGain": 12,
       "cooldown": 4000
@@ -13762,7 +13829,7 @@
       "moveId": "DAZZLING_GLEAM",
       "name": "Dazzling Gleam",
       "type": "fairy",
-      "power": 100,
+      "power": 110,
       "energy": 70,
       "energyGain": 0
     },
@@ -13976,8 +14043,8 @@
       "moveId": "FLAMETHROWER",
       "name": "Flamethrower",
       "type": "fire",
-      "power": 70,
-      "energy": 50,
+      "power": 90,
+      "energy": 55,
       "energyGain": 0
     },
     {
@@ -14016,7 +14083,7 @@
       "moveId": "FROST_BREATH",
       "name": "Frost Breath",
       "type": "ice",
-      "power": 6,
+      "power": 7,
       "energy": 0,
       "energyGain": 5,
       "cooldown": 2000
@@ -14314,7 +14381,7 @@
       "moveId": "ICE_PUNCH",
       "name": "Ice Punch",
       "type": "ice",
-      "power": 50,
+      "power": 55,
       "energy": 40,
       "energyGain": 0
     },
@@ -14322,7 +14389,7 @@
       "moveId": "ICE_SHARD",
       "name": "Ice Shard",
       "type": "ice",
-      "power": 8,
+      "power": 9,
       "energy": 0,
       "energyGain": 10,
       "cooldown": 3000
@@ -14348,7 +14415,7 @@
       "moveId": "IRON_HEAD",
       "name": "Iron Head",
       "type": "steel",
-      "power": 60,
+      "power": 70,
       "energy": 50,
       "energyGain": 0
     },
@@ -14689,7 +14756,7 @@
       "moveId": "PSYSHOCK",
       "name": "Psyshock",
       "type": "psychic",
-      "power": 65,
+      "power": 70,
       "energy": 45,
       "energyGain": 0
     },
@@ -14714,7 +14781,7 @@
       "moveId": "RAZOR_LEAF",
       "name": "Razor Leaf",
       "type": "grass",
-      "power": 8,
+      "power": 11,
       "energy": 0,
       "energyGain": 4,
       "cooldown": 2000
@@ -14823,7 +14890,7 @@
       "type": "ghost",
       "power": 6,
       "energy": 0,
-      "energyGain": 7,
+      "energyGain": 8,
       "cooldown": 2000
     },
     {
@@ -14894,7 +14961,7 @@
       "moveId": "SMACK_DOWN",
       "name": "Smack Down",
       "type": "rock",
-      "power": 10,
+      "power": 12,
       "energy": 0,
       "energyGain": 8,
       "cooldown": 3000
@@ -15038,8 +15105,8 @@
       "moveId": "THUNDER_PUNCH",
       "name": "Thunder Punch",
       "type": "electric",
-      "power": 45,
-      "energy": 35,
+      "power": 55,
+      "energy": 40,
       "energyGain": 0
     },
     {
@@ -15055,8 +15122,8 @@
       "moveId": "THUNDERBOLT",
       "name": "Thunderbolt",
       "type": "electric",
-      "power": 80,
-      "energy": 45,
+      "power": 90,
+      "energy": 55,
       "energyGain": 0
     },
     {
@@ -15131,7 +15198,7 @@
       "moveId": "WATERFALL",
       "name": "Waterfall",
       "type": "water",
-      "power": 10,
+      "power": 12,
       "energy": 0,
       "energyGain": 8,
       "cooldown": 3000
