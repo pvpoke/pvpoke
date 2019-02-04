@@ -1,4 +1,3 @@
-
 {
   "options": {
     "partySize": 3
@@ -13551,7 +13550,7 @@
       "power": 6,
       "energy": 0,
       "energyGain": 5,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "AERIAL_ACE",
@@ -13559,7 +13558,8 @@
       "type": "flying",
       "power": 55,
       "energy": 45,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "AIR_CUTTER",
@@ -13567,7 +13567,8 @@
       "type": "flying",
       "power": 60,
       "energy": 55,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "AIR_SLASH",
@@ -13576,7 +13577,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 9,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "ANCIENT_POWER",
@@ -13584,7 +13585,8 @@
       "type": "rock",
       "power": 70,
       "energy": 45,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "AQUA_JET",
@@ -13592,7 +13594,8 @@
       "type": "water",
       "power": 45,
       "energy": 45,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "AQUA_TAIL",
@@ -13600,7 +13603,8 @@
       "type": "water",
       "power": 50,
       "energy": 35,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "ASTONISH",
@@ -13609,7 +13613,7 @@
       "power": 5,
       "energy": 0,
       "energyGain": 9,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "AURORA_BEAM",
@@ -13617,7 +13621,8 @@
       "type": "ice",
       "power": 80,
       "energy": 60,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "AVALANCHE",
@@ -13625,7 +13630,8 @@
       "type": "ice",
       "power": 90,
       "energy": 45,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "BITE",
@@ -13633,7 +13639,8 @@
       "type": "dark",
       "power": 4,
       "energy": 0,
-      "energyGain": 2
+      "energyGain": 2,
+      "cooldown": 500
     },
     {
       "moveId": "BLAST_BURN",
@@ -13641,7 +13648,8 @@
       "type": "fire",
       "power": 110,
       "energy": 50,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "BLIZZARD",
@@ -13649,7 +13657,8 @@
       "type": "ice",
       "power": 130,
       "energy": 75,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "BODY_SLAM",
@@ -13657,7 +13666,8 @@
       "type": "normal",
       "power": 60,
       "energy": 35,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "BONE_CLUB",
@@ -13665,7 +13675,8 @@
       "type": "ground",
       "power": 40,
       "energy": 35,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "BRAVE_BIRD",
@@ -13673,7 +13684,8 @@
       "type": "flying",
       "power": 90,
       "energy": 55,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "BRICK_BREAK",
@@ -13681,7 +13693,8 @@
       "type": "fighting",
       "power": 40,
       "energy": 35,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "BRINE",
@@ -13689,7 +13702,8 @@
       "type": "water",
       "power": 60,
       "energy": 50,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "BUBBLE",
@@ -13698,7 +13712,7 @@
       "power": 8,
       "energy": 0,
       "energyGain": 11,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "BUBBLE_BEAM",
@@ -13706,7 +13720,8 @@
       "type": "water",
       "power": 45,
       "energy": 40,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "BUG_BITE",
@@ -13714,7 +13729,8 @@
       "type": "bug",
       "power": 3,
       "energy": 0,
-      "energyGain": 3
+      "energyGain": 3,
+      "cooldown": 500
     },
     {
       "moveId": "BUG_BUZZ",
@@ -13722,7 +13738,8 @@
       "type": "bug",
       "power": 90,
       "energy": 60,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "BULLDOZE",
@@ -13730,7 +13747,8 @@
       "type": "ground",
       "power": 80,
       "energy": 60,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "BULLET_PUNCH",
@@ -13739,7 +13757,7 @@
       "power": 6,
       "energy": 0,
       "energyGain": 7,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "BULLET_SEED",
@@ -13748,7 +13766,7 @@
       "power": 5,
       "energy": 0,
       "energyGain": 11,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "CHARGE_BEAM",
@@ -13757,7 +13775,7 @@
       "power": 5,
       "energy": 0,
       "energyGain": 11,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "CLOSE_COMBAT",
@@ -13765,7 +13783,8 @@
       "type": "fighting",
       "power": 100,
       "energy": 60,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "CONFUSION",
@@ -13774,7 +13793,7 @@
       "power": 16,
       "energy": 0,
       "energyGain": 12,
-      "cooldown": 4000
+      "cooldown": 2000
     },
     {
       "moveId": "COUNTER",
@@ -13783,7 +13802,7 @@
       "power": 8,
       "energy": 0,
       "energyGain": 7,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "CROSS_CHOP",
@@ -13791,7 +13810,8 @@
       "type": "fighting",
       "power": 50,
       "energy": 35,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "CROSS_POISON",
@@ -13799,7 +13819,8 @@
       "type": "poison",
       "power": 40,
       "energy": 35,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "CRUNCH",
@@ -13807,7 +13828,8 @@
       "type": "dark",
       "power": 70,
       "energy": 45,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "CUT",
@@ -13815,7 +13837,8 @@
       "type": "normal",
       "power": 3,
       "energy": 0,
-      "energyGain": 2
+      "energyGain": 2,
+      "cooldown": 500
     },
     {
       "moveId": "DARK_PULSE",
@@ -13823,7 +13846,8 @@
       "type": "dark",
       "power": 80,
       "energy": 50,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "DAZZLING_GLEAM",
@@ -13831,7 +13855,8 @@
       "type": "fairy",
       "power": 110,
       "energy": 70,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "DIG",
@@ -13839,7 +13864,8 @@
       "type": "ground",
       "power": 100,
       "energy": 80,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "DISARMING_VOICE",
@@ -13847,7 +13873,8 @@
       "type": "fairy",
       "power": 70,
       "energy": 45,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "DISCHARGE",
@@ -13855,7 +13882,8 @@
       "type": "electric",
       "power": 65,
       "energy": 45,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "DOOM_DESIRE",
@@ -13863,7 +13891,8 @@
       "type": "steel",
       "power": 80,
       "energy": 35,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "DRACO_METEOR",
@@ -13871,7 +13900,8 @@
       "type": "dragon",
       "power": 150,
       "energy": 75,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "DRAGON_BREATH",
@@ -13879,7 +13909,8 @@
       "type": "dragon",
       "power": 4,
       "energy": 0,
-      "energyGain": 3
+      "energyGain": 3,
+      "cooldown": 500
     },
     {
       "moveId": "DRAGON_CLAW",
@@ -13887,7 +13918,8 @@
       "type": "dragon",
       "power": 50,
       "energy": 35,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "DRAGON_PULSE",
@@ -13895,7 +13927,8 @@
       "type": "dragon",
       "power": 90,
       "energy": 60,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "DRAGON_TAIL",
@@ -13904,7 +13937,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 10,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "DRAINING_KISS",
@@ -13912,7 +13945,8 @@
       "type": "fairy",
       "power": 60,
       "energy": 55,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "DRILL_PECK",
@@ -13920,7 +13954,8 @@
       "type": "flying",
       "power": 60,
       "energy": 40,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "DRILL_RUN",
@@ -13928,7 +13963,8 @@
       "type": "ground",
       "power": 80,
       "energy": 55,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "DYNAMIC_PUNCH",
@@ -13936,7 +13972,8 @@
       "type": "fighting",
       "power": 90,
       "energy": 50,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "EARTHQUAKE",
@@ -13944,7 +13981,8 @@
       "type": "ground",
       "power": 120,
       "energy": 65,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "EMBER",
@@ -13953,7 +13991,7 @@
       "power": 6,
       "energy": 0,
       "energyGain": 6,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "ENERGY_BALL",
@@ -13961,7 +13999,8 @@
       "type": "grass",
       "power": 90,
       "energy": 60,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "EXTRASENSORY",
@@ -13970,7 +14009,7 @@
       "power": 8,
       "energy": 0,
       "energyGain": 10,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "FEINT_ATTACK",
@@ -13979,7 +14018,7 @@
       "power": 6,
       "energy": 0,
       "energyGain": 6,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "FIRE_BLAST",
@@ -13987,7 +14026,8 @@
       "type": "fire",
       "power": 140,
       "energy": 80,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "FIRE_FANG",
@@ -13996,7 +14036,7 @@
       "power": 7,
       "energy": 0,
       "energyGain": 5,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "FIRE_PUNCH",
@@ -14004,7 +14044,8 @@
       "type": "fire",
       "power": 55,
       "energy": 40,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "FIRE_SPIN",
@@ -14013,7 +14054,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 10,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "FLAME_BURST",
@@ -14021,7 +14062,8 @@
       "type": "fire",
       "power": 70,
       "energy": 55,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "FLAME_CHARGE",
@@ -14029,7 +14071,8 @@
       "type": "fire",
       "power": 70,
       "energy": 50,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "FLAME_WHEEL",
@@ -14037,7 +14080,8 @@
       "type": "fire",
       "power": 60,
       "energy": 55,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "FLAMETHROWER",
@@ -14045,7 +14089,8 @@
       "type": "fire",
       "power": 90,
       "energy": 55,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "FLASH_CANNON",
@@ -14053,7 +14098,8 @@
       "type": "steel",
       "power": 110,
       "energy": 65,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "FOCUS_BLAST",
@@ -14061,7 +14107,8 @@
       "type": "fighting",
       "power": 150,
       "energy": 75,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "FOUL_PLAY",
@@ -14069,7 +14116,8 @@
       "type": "dark",
       "power": 70,
       "energy": 45,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "FRENZY_PLANT",
@@ -14077,7 +14125,8 @@
       "type": "grass",
       "power": 100,
       "energy": 45,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "FROST_BREATH",
@@ -14086,7 +14135,7 @@
       "power": 7,
       "energy": 0,
       "energyGain": 5,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "FURY_CUTTER",
@@ -14094,7 +14143,8 @@
       "type": "bug",
       "power": 2,
       "energy": 0,
-      "energyGain": 4
+      "energyGain": 4,
+      "cooldown": 500
     },
     {
       "moveId": "FUTURE_SIGHT",
@@ -14102,7 +14152,8 @@
       "type": "psychic",
       "power": 120,
       "energy": 65,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "GIGA_DRAIN",
@@ -14110,7 +14161,8 @@
       "type": "grass",
       "power": 50,
       "energy": 80,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "GRASS_KNOT",
@@ -14118,7 +14170,8 @@
       "type": "grass",
       "power": 90,
       "energy": 50,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "GUNK_SHOT",
@@ -14126,7 +14179,8 @@
       "type": "poison",
       "power": 130,
       "energy": 75,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "GYRO_BALL",
@@ -14134,7 +14188,8 @@
       "type": "steel",
       "power": 80,
       "energy": 60,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "HEART_STAMP",
@@ -14142,7 +14197,8 @@
       "type": "psychic",
       "power": 40,
       "energy": 40,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "HEAT_WAVE",
@@ -14150,7 +14206,8 @@
       "type": "fire",
       "power": 95,
       "energy": 75,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "HEAVY_SLAM",
@@ -14158,7 +14215,8 @@
       "type": "steel",
       "power": 70,
       "energy": 50,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "HEX",
@@ -14167,7 +14225,7 @@
       "power": 6,
       "energy": 0,
       "energyGain": 11,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "HIDDEN_POWER_BUG",
@@ -14176,7 +14234,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "HIDDEN_POWER_DARK",
@@ -14185,7 +14243,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "HIDDEN_POWER_DRAGON",
@@ -14194,7 +14252,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "HIDDEN_POWER_ELECTRIC",
@@ -14203,7 +14261,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "HIDDEN_POWER_FIGHTING",
@@ -14212,7 +14270,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "HIDDEN_POWER_FIRE",
@@ -14221,7 +14279,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "HIDDEN_POWER_FLYING",
@@ -14230,7 +14288,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "HIDDEN_POWER_GHOST",
@@ -14239,7 +14297,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "HIDDEN_POWER_GRASS",
@@ -14248,7 +14306,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "HIDDEN_POWER_GROUND",
@@ -14257,7 +14315,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "HIDDEN_POWER_ICE",
@@ -14266,7 +14324,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "HIDDEN_POWER_POISON",
@@ -14275,7 +14333,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "HIDDEN_POWER_PSYCHIC",
@@ -14284,7 +14342,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "HIDDEN_POWER_ROCK",
@@ -14293,7 +14351,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "HIDDEN_POWER_STEEL",
@@ -14302,7 +14360,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "HIDDEN_POWER_WATER",
@@ -14311,7 +14369,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "HORN_ATTACK",
@@ -14319,7 +14377,8 @@
       "type": "normal",
       "power": 40,
       "energy": 35,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "HURRICANE",
@@ -14327,7 +14386,8 @@
       "type": "flying",
       "power": 110,
       "energy": 65,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "HYDRO_CANNON",
@@ -14335,7 +14395,8 @@
       "type": "water",
       "power": 90,
       "energy": 40,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "HYDRO_PUMP",
@@ -14343,7 +14404,8 @@
       "type": "water",
       "power": 130,
       "energy": 75,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "HYDRO_PUMP_BLASTOISE",
@@ -14351,7 +14413,8 @@
       "type": "water",
       "power": 90,
       "energy": 80,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "HYPER_BEAM",
@@ -14359,7 +14422,8 @@
       "type": "normal",
       "power": 150,
       "energy": 80,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "HYPER_FANG",
@@ -14367,7 +14431,8 @@
       "type": "normal",
       "power": 80,
       "energy": 50,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "ICE_BEAM",
@@ -14375,7 +14440,8 @@
       "type": "ice",
       "power": 90,
       "energy": 55,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "ICE_PUNCH",
@@ -14383,7 +14449,8 @@
       "type": "ice",
       "power": 55,
       "energy": 40,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "ICE_SHARD",
@@ -14392,7 +14459,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 10,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "ICY_WIND",
@@ -14400,7 +14467,8 @@
       "type": "ice",
       "power": 60,
       "energy": 45,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "INFESTATION",
@@ -14409,7 +14477,7 @@
       "power": 6,
       "energy": 0,
       "energyGain": 11,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "IRON_HEAD",
@@ -14417,7 +14485,8 @@
       "type": "steel",
       "power": 70,
       "energy": 50,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "IRON_TAIL",
@@ -14426,7 +14495,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 6,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "KARATE_CHOP",
@@ -14435,7 +14504,7 @@
       "power": 5,
       "energy": 0,
       "energyGain": 7,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "LAST_RESORT",
@@ -14443,7 +14512,8 @@
       "type": "normal",
       "power": 90,
       "energy": 55,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "LEAF_BLADE",
@@ -14451,7 +14521,8 @@
       "type": "grass",
       "power": 70,
       "energy": 35,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "LICK",
@@ -14459,7 +14530,8 @@
       "type": "ghost",
       "power": 3,
       "energy": 0,
-      "energyGain": 3
+      "energyGain": 3,
+      "cooldown": 500
     },
     {
       "moveId": "LOW_KICK",
@@ -14468,7 +14540,7 @@
       "power": 4,
       "energy": 0,
       "energyGain": 5,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "LOW_SWEEP",
@@ -14476,7 +14548,8 @@
       "type": "fighting",
       "power": 40,
       "energy": 40,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "MAGNET_BOMB",
@@ -14484,7 +14557,8 @@
       "type": "steel",
       "power": 70,
       "energy": 45,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "MEGA_DRAIN",
@@ -14492,7 +14566,8 @@
       "type": "grass",
       "power": 25,
       "energy": 55,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "MEGAHORN",
@@ -14500,7 +14575,8 @@
       "type": "bug",
       "power": 90,
       "energy": 55,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "METAL_CLAW",
@@ -14509,7 +14585,7 @@
       "power": 5,
       "energy": 0,
       "energyGain": 6,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "METEOR_MASH",
@@ -14517,7 +14593,8 @@
       "type": "steel",
       "power": 100,
       "energy": 50,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "MIRROR_COAT",
@@ -14525,7 +14602,8 @@
       "type": "psychic",
       "power": 60,
       "energy": 55,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "MOONBLAST",
@@ -14533,7 +14611,8 @@
       "type": "fairy",
       "power": 130,
       "energy": 70,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "MUD_BOMB",
@@ -14541,7 +14620,8 @@
       "type": "ground",
       "power": 55,
       "energy": 40,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "MUD_SHOT",
@@ -14550,7 +14630,7 @@
       "power": 3,
       "energy": 0,
       "energyGain": 9,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "MUD_SLAP",
@@ -14559,7 +14639,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "NIGHT_SHADE",
@@ -14567,7 +14647,8 @@
       "type": "ghost",
       "power": 60,
       "energy": 55,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "NIGHT_SLASH",
@@ -14575,7 +14656,8 @@
       "type": "dark",
       "power": 50,
       "energy": 40,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "OMINOUS_WIND",
@@ -14583,7 +14665,8 @@
       "type": "ghost",
       "power": 50,
       "energy": 40,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "ORIGIN_PULSE",
@@ -14591,7 +14674,8 @@
       "type": "water",
       "power": 130,
       "energy": 60,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "OUTRAGE",
@@ -14599,7 +14683,8 @@
       "type": "dragon",
       "power": 110,
       "energy": 60,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "OVERHEAT",
@@ -14607,7 +14692,8 @@
       "type": "fire",
       "power": 150,
       "energy": 80,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "PARABOLIC_CHARGE",
@@ -14615,7 +14701,8 @@
       "type": "electric",
       "power": 25,
       "energy": 55,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "PECK",
@@ -14624,7 +14711,7 @@
       "power": 6,
       "energy": 0,
       "energyGain": 5,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "PETAL_BLIZZARD",
@@ -14632,7 +14719,8 @@
       "type": "grass",
       "power": 110,
       "energy": 65,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "PLAY_ROUGH",
@@ -14640,7 +14728,8 @@
       "type": "fairy",
       "power": 90,
       "energy": 60,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "POISON_FANG",
@@ -14648,7 +14737,8 @@
       "type": "poison",
       "power": 40,
       "energy": 35,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "POISON_JAB",
@@ -14657,7 +14747,7 @@
       "power": 6,
       "energy": 0,
       "energyGain": 7,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "POISON_STING",
@@ -14666,7 +14756,7 @@
       "power": 3,
       "energy": 0,
       "energyGain": 6,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "POUND",
@@ -14675,7 +14765,7 @@
       "power": 5,
       "energy": 0,
       "energyGain": 4,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "POWDER_SNOW",
@@ -14684,7 +14774,7 @@
       "power": 4,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "POWER_GEM",
@@ -14692,7 +14782,8 @@
       "type": "rock",
       "power": 80,
       "energy": 60,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "POWER_WHIP",
@@ -14700,7 +14791,8 @@
       "type": "grass",
       "power": 90,
       "energy": 50,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "PRECIPICE_BLADES",
@@ -14708,7 +14800,8 @@
       "type": "ground",
       "power": 130,
       "energy": 60,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "PRESENT",
@@ -14717,7 +14810,7 @@
       "power": 3,
       "energy": 0,
       "energyGain": 12,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "PSYBEAM",
@@ -14725,7 +14818,8 @@
       "type": "psychic",
       "power": 70,
       "energy": 60,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "PSYCHIC",
@@ -14733,7 +14827,8 @@
       "type": "psychic",
       "power": 100,
       "energy": 70,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "PSYCHO_BOOST",
@@ -14741,7 +14836,8 @@
       "type": "psychic",
       "power": 70,
       "energy": 40,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "PSYCHO_CUT",
@@ -14750,7 +14846,7 @@
       "power": 3,
       "energy": 0,
       "energyGain": 9,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "PSYSHOCK",
@@ -14758,7 +14854,8 @@
       "type": "psychic",
       "power": 70,
       "energy": 45,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "PSYSTRIKE",
@@ -14766,7 +14863,8 @@
       "type": "psychic",
       "power": 100,
       "energy": 55,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "QUICK_ATTACK",
@@ -14775,7 +14873,7 @@
       "power": 5,
       "energy": 0,
       "energyGain": 7,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "RAZOR_LEAF",
@@ -14784,7 +14882,7 @@
       "power": 11,
       "energy": 0,
       "energyGain": 4,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "REST",
@@ -14792,7 +14890,8 @@
       "type": "normal",
       "power": 50,
       "energy": 35,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "ROCK_BLAST",
@@ -14800,7 +14899,8 @@
       "type": "rock",
       "power": 50,
       "energy": 40,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "ROCK_SLIDE",
@@ -14808,7 +14908,8 @@
       "type": "rock",
       "power": 80,
       "energy": 45,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "ROCK_SMASH",
@@ -14817,7 +14918,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 7,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "ROCK_THROW",
@@ -14826,7 +14927,7 @@
       "power": 8,
       "energy": 0,
       "energyGain": 5,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "ROCK_TOMB",
@@ -14834,7 +14935,8 @@
       "type": "rock",
       "power": 70,
       "energy": 60,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "SAND_TOMB",
@@ -14842,7 +14944,8 @@
       "type": "ground",
       "power": 80,
       "energy": 60,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "SCALD",
@@ -14850,7 +14953,8 @@
       "type": "water",
       "power": 80,
       "energy": 60,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "SCALD_BLASTOISE",
@@ -14858,7 +14962,8 @@
       "type": "water",
       "power": 50,
       "energy": 80,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "SCRATCH",
@@ -14866,7 +14971,8 @@
       "type": "normal",
       "power": 4,
       "energy": 0,
-      "energyGain": 2
+      "energyGain": 2,
+      "cooldown": 500
     },
     {
       "moveId": "SEED_BOMB",
@@ -14874,7 +14980,8 @@
       "type": "grass",
       "power": 55,
       "energy": 40,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "SHADOW_BALL",
@@ -14882,7 +14989,8 @@
       "type": "ghost",
       "power": 100,
       "energy": 55,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "SHADOW_CLAW",
@@ -14891,7 +14999,7 @@
       "power": 6,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "SHADOW_PUNCH",
@@ -14899,7 +15007,8 @@
       "type": "ghost",
       "power": 40,
       "energy": 35,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "SHADOW_SNEAK",
@@ -14907,7 +15016,8 @@
       "type": "ghost",
       "power": 50,
       "energy": 45,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "SIGNAL_BEAM",
@@ -14915,7 +15025,8 @@
       "type": "bug",
       "power": 75,
       "energy": 55,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "SILVER_WIND",
@@ -14923,7 +15034,8 @@
       "type": "bug",
       "power": 70,
       "energy": 45,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "SKY_ATTACK",
@@ -14931,7 +15043,8 @@
       "type": "flying",
       "power": 80,
       "energy": 45,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "SLUDGE",
@@ -14939,7 +15052,8 @@
       "type": "poison",
       "power": 50,
       "energy": 40,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "SLUDGE_BOMB",
@@ -14947,7 +15061,8 @@
       "type": "poison",
       "power": 80,
       "energy": 50,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "SLUDGE_WAVE",
@@ -14955,7 +15070,8 @@
       "type": "poison",
       "power": 110,
       "energy": 65,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "SMACK_DOWN",
@@ -14964,7 +15080,7 @@
       "power": 12,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "SNARL",
@@ -14973,7 +15089,7 @@
       "power": 8,
       "energy": 0,
       "energyGain": 10,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "SOLAR_BEAM",
@@ -14981,7 +15097,8 @@
       "type": "grass",
       "power": 150,
       "energy": 80,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "SPARK",
@@ -14990,7 +15107,7 @@
       "power": 4,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "SPLASH",
@@ -14999,7 +15116,7 @@
       "power": 0,
       "energy": 0,
       "energyGain": 12,
-      "cooldown": 4000
+      "cooldown": 2000
     },
     {
       "moveId": "STEEL_WING",
@@ -15008,7 +15125,7 @@
       "power": 7,
       "energy": 0,
       "energyGain": 5,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "STOMP",
@@ -15016,7 +15133,8 @@
       "type": "normal",
       "power": 55,
       "energy": 40,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "STONE_EDGE",
@@ -15024,7 +15142,8 @@
       "type": "rock",
       "power": 100,
       "energy": 55,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "STRUGGLE",
@@ -15032,7 +15151,8 @@
       "type": "normal",
       "power": 35,
       "energy": 100,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "STRUGGLE_BUG",
@@ -15041,7 +15161,7 @@
       "power": 9,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "SUBMISSION",
@@ -15049,7 +15169,8 @@
       "type": "fighting",
       "power": 60,
       "energy": 50,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "SUCKER_PUNCH",
@@ -15058,7 +15179,7 @@
       "power": 5,
       "energy": 0,
       "energyGain": 7,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "SURF",
@@ -15066,7 +15187,8 @@
       "type": "water",
       "power": 65,
       "energy": 40,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "SWIFT",
@@ -15074,7 +15196,8 @@
       "type": "normal",
       "power": 60,
       "energy": 55,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "TACKLE",
@@ -15082,7 +15205,8 @@
       "type": "normal",
       "power": 3,
       "energy": 0,
-      "energyGain": 2
+      "energyGain": 2,
+      "cooldown": 500
     },
     {
       "moveId": "TAKE_DOWN",
@@ -15091,7 +15215,7 @@
       "power": 5,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "THUNDER",
@@ -15099,7 +15223,8 @@
       "type": "electric",
       "power": 100,
       "energy": 60,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "THUNDER_PUNCH",
@@ -15107,7 +15232,8 @@
       "type": "electric",
       "power": 55,
       "energy": 40,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "THUNDER_SHOCK",
@@ -15116,7 +15242,7 @@
       "power": 3,
       "energy": 0,
       "energyGain": 9,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "THUNDERBOLT",
@@ -15124,7 +15250,8 @@
       "type": "electric",
       "power": 90,
       "energy": 55,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "TRANSFORM",
@@ -15133,7 +15260,7 @@
       "power": 0,
       "energy": 0,
       "energyGain": 0,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "TWISTER",
@@ -15141,7 +15268,8 @@
       "type": "dragon",
       "power": 45,
       "energy": 45,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "VICE_GRIP",
@@ -15149,7 +15277,8 @@
       "type": "normal",
       "power": 40,
       "energy": 40,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "VINE_WHIP",
@@ -15158,7 +15287,7 @@
       "power": 5,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "VOLT_SWITCH",
@@ -15167,7 +15296,7 @@
       "power": 12,
       "energy": 0,
       "energyGain": 10,
-      "cooldown": 5000
+      "cooldown": 2500
     },
     {
       "moveId": "WATER_GUN",
@@ -15175,7 +15304,8 @@
       "type": "water",
       "power": 3,
       "energy": 0,
-      "energyGain": 3
+      "energyGain": 3,
+      "cooldown": 500
     },
     {
       "moveId": "WATER_GUN_FAST_BLASTOISE",
@@ -15184,7 +15314,7 @@
       "power": 6,
       "energy": 0,
       "energyGain": 4,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "WATER_PULSE",
@@ -15192,7 +15322,8 @@
       "type": "water",
       "power": 70,
       "energy": 60,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "WATERFALL",
@@ -15201,7 +15332,7 @@
       "power": 12,
       "energy": 0,
       "energyGain": 8,
-      "cooldown": 3000
+      "cooldown": 1500
     },
     {
       "moveId": "WEATHER_BALL_FIRE",
@@ -15209,7 +15340,8 @@
       "type": "fire",
       "power": 60,
       "energy": 35,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "WEATHER_BALL_ICE",
@@ -15217,7 +15349,8 @@
       "type": "ice",
       "power": 60,
       "energy": 35,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "WEATHER_BALL_ROCK",
@@ -15225,7 +15358,8 @@
       "type": "rock",
       "power": 60,
       "energy": 35,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "WEATHER_BALL_WATER",
@@ -15233,7 +15367,8 @@
       "type": "water",
       "power": 60,
       "energy": 35,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "WILD_CHARGE",
@@ -15241,7 +15376,8 @@
       "type": "electric",
       "power": 90,
       "energy": 50,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "WING_ATTACK",
@@ -15250,7 +15386,7 @@
       "power": 5,
       "energy": 0,
       "energyGain": 7,
-      "cooldown": 2000
+      "cooldown": 1000
     },
     {
       "moveId": "WRAP",
@@ -15258,7 +15394,8 @@
       "type": "normal",
       "power": 60,
       "energy": 45,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "WRAP_GREEN",
@@ -15266,7 +15403,8 @@
       "type": "normal",
       "power": 25,
       "energy": 45,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "WRAP_PINK",
@@ -15274,7 +15412,8 @@
       "type": "normal",
       "power": 25,
       "energy": 45,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "X_SCISSOR",
@@ -15282,7 +15421,8 @@
       "type": "bug",
       "power": 45,
       "energy": 35,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "YAWN",
@@ -15291,7 +15431,7 @@
       "power": 0,
       "energy": 0,
       "energyGain": 12,
-      "cooldown": 4000
+      "cooldown": 2000
     },
     {
       "moveId": "ZAP_CANNON",
@@ -15299,7 +15439,8 @@
       "type": "electric",
       "power": 150,
       "energy": 80,
-      "energyGain": 0
+      "energyGain": 0,
+      "cooldown": 500
     },
     {
       "moveId": "ZEN_HEADBUTT",
@@ -15308,7 +15449,7 @@
       "power": 8,
       "energy": 0,
       "energyGain": 6,
-      "cooldown": 3000
+      "cooldown": 1500
     }
   ]
 }
