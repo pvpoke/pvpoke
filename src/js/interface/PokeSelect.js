@@ -18,6 +18,7 @@ function PokeSelect(element, i){
 		pokemon = pokes;
 		
 		$.each(pokemon, function(n, poke){
+			
 			if(poke.fastMoves.length > 0){
 				$pokeSelect.append("<option value=\""+poke.speciesId+"\" type-1=\""+poke.types[0]+"\" type-2=\""+poke.types[1]+"\">"+poke.speciesName+"</option");
 			}
@@ -85,7 +86,8 @@ function PokeSelect(element, i){
 				});
 			}
 
-			$el.find(".move-select.fast option[value='"+selectedPokemon.fastMove.moveId+"']").prop("selected","selected");			
+			$fastSelect.find("option[value='"+selectedPokemon.fastMove.moveId+"']").prop("selected","selected");
+			$fastSelect.attr("class", "move-select fast " + selectedPokemon.fastMove.type);
 			
 			// Display charged moves
 			
@@ -248,7 +250,7 @@ function PokeSelect(element, i){
 		if(searchStr == '')
 			return;
 
-		$pokeSelect.find("option").each(function(index, value){
+		$pokeSelect.find("option").not(".hide").each(function(index, value){
 			var pokeName = $(this).html().toLowerCase();
 
 			if(pokeName.startsWith(searchStr)){
@@ -347,6 +349,8 @@ function PokeSelect(element, i){
 	
 	$el.find(".random").on("click", function(e){
 		e.preventDefault();
+		
+		self.clear();
 		
 		var list = $pokeSelect.find("option").not(".hide");
 		var index = Math.floor(Math.random() * list.length);

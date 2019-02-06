@@ -20,6 +20,7 @@ var BattleMaster = (function () {
 			var cup = {name: "all", types: []}; // List of allowed types
 			
 			var decisionLog = []; // For debugging
+			var debug = false;
 			
 			this.init = function(){
 				interface = InterfaceMaster.getInterface();
@@ -649,6 +650,11 @@ var BattleMaster = (function () {
 			// Output debug log to console
 			
 			this.debug = function(){
+				
+				if(! debug){
+					return;
+				}
+				
 				for(var i = 0; i < decisionLog.length; i++){
 					var log = decisionLog[i];
 					

@@ -5,6 +5,10 @@ $color-attack:#ed6774;
 $color-defense:#6696ed;
 $color-hp:#0088a6;
 
+$color-move-power:#a60087;
+$color-move-energy:#0087a6;
+$color-move-duration:#87a600;
+
 $color-faint:#ff0000;
 $color-shield:#df46e5;
 
@@ -211,6 +215,10 @@ footer{
 	
 	p:first-of-type{
 		margin-top:0;
+	}
+	
+	.toggle-content p:first-of-type{
+		margin:1em 0;
 	}
 	
 	p.description{
@@ -574,7 +582,67 @@ footer{
 			}
 		}
 	}
+	
+	.move-details{
+		font-size:12px;
+		min-height:15px;
+		text-align: left;
+		
+		.move-stat{
+			
+			color:$color-off-black;
+		
+			.stat{
+				width: 15px;
+				height: 14px;
+				background: #999;
+				display: inline-block;
+				border-radius: 15px;
+				text-align: center;
+				padding-top: 1px;
+				color:$color-off-white;
+				font-weight:bold;
+				background:$color-off-black;
+			}
+		}
+	}
+	
+	&.multi{
+		display:none;
+		float:right;
+		
+		.poke-stats{
+			display:block;
+		}
+		
+		.cup-select{
+			margin-top:62px;
+			width:100%;
+		}
+	}
 
+}
+
+.poke-select-container{
+	&.single{
+		.poke:nth-of-type(2){
+			display: block;
+		}
+		.poke:nth-of-type(3){
+			display: none;
+		}
+	}
+	
+	&.multi{
+		.poke:nth-of-type(2),
+		.hp.bar-back,
+		.move-bars{
+			display: none;
+		}
+		.poke:nth-of-type(3){
+			display: block;
+		}
+	}
 }
 
 .arrow-up{
@@ -601,7 +669,8 @@ select, input{
 }
 
 .league-select,
-.cup-select{
+.cup-select,
+.mode-select{
     font-size: 18px;
     width: auto;
     background: none;
@@ -807,6 +876,14 @@ select, input{
 			}
 		}
 	}
+	
+	&.multi{
+		text-align: left;
+		
+		.poke-search{
+			margin-top:15px;
+		}
+	}
 }
 
 .timeline{
@@ -961,7 +1038,19 @@ select, input{
 			background-color: rgba(0,0,0,.6);
 			border-radius: 8px;
 			text-align: right;
-		}	
+		}
+		
+		a{
+			display:inline-block;
+			width:32px;
+			height:28px;
+			background-image:url('../img/eye.png');
+			background-repeat: no-repeat;
+			background-position: 0 center;
+			margin-right:10px;
+			float:right;
+			opacity: .5;
+		}
 	}
 	
 	.moveset{
@@ -1036,18 +1125,6 @@ select, input{
 		}
 		
 		h2{ margin: 0 0 5px 0; }
-		
-		a{
-			display:inline-block;
-			width:32px;
-			height:28px;
-			background-image:url('../img/eye.png');
-			background-repeat: no-repeat;
-			background-position: 0 center;
-			margin-right:10px;
-			float:right;
-			opacity: .5;
-		}
 	}
 }
 
@@ -1218,8 +1295,11 @@ select, input{
     justify-content: space-around;
 	
 	.histogram{
+		position:relative;
 		width:31%;
 		text-align: center;
+		padding-left:20px;
+		box-sizing:border-box;
 
 		.chart{
 			height:200px;
@@ -1279,6 +1359,21 @@ select, input{
 			border: 1px solid #000;
 			padding: 5px;
 			display: none;
+		}
+		
+		.label-x-axis{
+			position:absolute;
+			left:-20px;
+			top:50%;
+			
+			@include transform(rotate(270deg));
+		}
+		
+		.stats{
+			text-align: left;
+			margin: 10px 0;
+			display:flex;
+			font-size:12px;
 		}
 
 	}
@@ -1504,7 +1599,7 @@ a.toggle{
 		display:block;
 		
 		.histogram{
-			width:100%;
+			width:80%;
 			max-width:600px;
 			margin:20px auto;
 		}
@@ -1517,5 +1612,9 @@ a.toggle{
 		.col-9{
 			flex-basis:75%;
 		}
+	}
+	
+	.league-select {
+		max-width:50%;
 	}
 }

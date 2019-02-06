@@ -18,8 +18,14 @@ var RankerMaster = (function () {
 		function rankerObject(){
 			var gm = GameMaster.getInstance();
 			var battle = BattleMaster.getInstance();
+			var self = this;
 			
 			var rankings = [];
+			
+			var shieldOverride = 0;
+			var chargedMoveCountOverride = 2;
+			
+			this.context = "team-builder";
 
 			// Run an individual rank set
 			
@@ -50,7 +56,7 @@ var RankerMaster = (function () {
 				}
 				
 				var bannedList = ["mewtwo","ho-oh","lugia","giratina_altered","groudon","kyogre","garchomp","latios","latias","palkia","dialga","heatran","regice","regirock","giratina_origin"];
-				var permaBannedList = ["burmy_trash","burmy_sandy","burmy_plant","wormadam_plant","wormadam_sandy","wormadam_trash","mothim","cherubi","cherrim_overcast","cherrim_sunny","shellos_east_sea","shellos_west_sea","grastrodon_east_sea","gastrodon_west_sea","hippopotas","hippowdon","leafeon","glaceon","rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","uxie","azelf","mesprit","regigigas","giratina_origin","phione","manaphy","darkrai","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","jirachi"]; // Don't rank these Pokemon at all yet
+				var permaBannedList = ["burmy_trash","burmy_sandy","burmy_plant","wormadam_plant","wormadam_sandy","wormadam_trash","mothim","cherubi","cherrim_overcast","cherrim_sunny","shellos_east_sea","shellos_west_sea","gastrodon_east_sea","gastrodon_west_sea","hippopotas","hippowdon","leafeon","glaceon","rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","uxie","azelf","mesprit","regigigas","giratina_origin","phione","manaphy","darkrai","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","jirachi"]; // Don't rank these Pokemon at all yet
 				var allowedList = [];
 
 				for(var i = 0; i < gm.data.pokemon.length; i++){
@@ -95,10 +101,12 @@ var RankerMaster = (function () {
 						speciesId: pokemon.speciesId,
 						speciesName: pokemon.speciesName,
 						types: pokemon.types,
-						rating: 0
+						rating: 0,
+						opRating: 0
 					};
 					
 					var avg = 0;
+					var opponentRating = 0;
 					
 					// Simulate battle against each Pokemon
 					
@@ -121,11 +129,13 @@ var RankerMaster = (function () {
 						
 						// Force best moves on counters but not on the user's selected Pokemon
 						
-						pokemon.autoSelectMoves();
+						pokemon.autoSelectMoves(chargedMoveCountOverride);
 						
 						if(team.length > 3){
-							opponent.autoSelectMoves();
+							opponent.autoSelectMoves(chargedMoveCountOverride);
 						}
+						
+						pokemon.setShields(shieldOverride);
 						
 						battle.simulate();
 						
@@ -139,6 +149,7 @@ var RankerMaster = (function () {
 						var opRating = Math.floor( (opHealthRating + opDamageRating) * 500);
 
 						avg += rating;
+						opponentRating = opRating;
 						
 						teamRatings[n].push(opRating);
 					}
@@ -146,12 +157,18 @@ var RankerMaster = (function () {
 					avg = Math.floor(avg / team.length);
 					
 					rankObj.rating = avg;
+					rankObj.opRating = opponentRating;
 					rankings.push(rankObj);
 				}
 				
-				// Sort rankings by best to worst
+				// Sort rankings
 				
-				rankings.sort((a,b) => (a.rating > b.rating) ? -1 : ((b.rating > a.rating) ? 1 : 0));
+				if(self.context == "team-builder"){
+					rankings.sort((a,b) => (a.rating > b.rating) ? -1 : ((b.rating > a.rating) ? 1 : 0));
+				} else if(self.context == "battle"){
+					rankings.sort((a,b) => (a.rating > b.rating) ? 1 : ((b.rating > a.rating) ? -1 : 0));
+				}
+				
 				
 				// Sort team's matchups by best to worst
 				
@@ -162,6 +179,18 @@ var RankerMaster = (function () {
 				battle.clearPokemon(); // Prevents associated Pokemon objects from being altered by future battles
 				
 				return {rankings: rankings, teamRatings: teamRatings};
+			}
+			
+			// Override Pokemon shield settings with the provided value
+			
+			this.setShields = function(value){
+				shieldOverride = value;
+			}
+			
+			// Override charged move count with the provided value
+			
+			this.setChargedMoveCount = function(value){
+				chargedMoveCountOverride = value;
 			}
 
 		};

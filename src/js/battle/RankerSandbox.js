@@ -19,7 +19,7 @@ var RankerMaster = (function () {
 			this.rankLoop = function(){
 				
 				var leagues = [1500];
-				var shields = [ [0,0] ];
+				var shields = [ [1,1], [2,2] ];
 				
 				for(var i = 0; i < leagues.length; i++){
 					for(var n = 0; n < shields.length; n++){
@@ -38,6 +38,8 @@ var RankerMaster = (function () {
 				var pokemonList = [];
 				
 				var shieldCounts = shields;
+				
+				var cup = battle.getCup();
 				
 				rankings = [];
 				
@@ -69,6 +71,10 @@ var RankerMaster = (function () {
 							}
 							
 							if((allowedList.length > 0) && (allowedList.indexOf(pokemon.speciesId) == -1)){
+								continue;
+							}
+							
+							if((cup.types.length > 0) && (cup.types.indexOf(pokemon.types[0]) < 0) && (cup.types.indexOf(pokemon.types[1]) < 0) ){	
 								continue;
 							}
 							
@@ -111,8 +117,8 @@ var RankerMaster = (function () {
 								
 								rankObj.matches.push({
 									opponent: opponent.speciesId,
-									rating: rankings[n].matches[i].opRating,
-									opRating: rankings[n].matches[i].rating,
+									healthRemaining: rankings[n].matches[i].opponentHealthRemaining,
+									opponentHealthRemaining: rankings[n].matches[i].healthRemaining,
 									moveSet: rankings[n].matches[i].oppMoveSet,
 									oppMoveSet: rankings[n].matches[i].moveSet
 								})
@@ -128,8 +134,8 @@ var RankerMaster = (function () {
 						battle.setNewPokemon(pokemon, 0);
 						battle.setNewPokemon(opponent, 1);
 						
-						pokemon.autoSelectMoves(1);
-						opponent.autoSelectMoves(1);
+						pokemon.autoSelectMoves();
+						opponent.autoSelectMoves();
 						
 						pokemon.setShields(shieldCounts[0]);
 						opponent.setShields(shieldCounts[1]);
@@ -144,17 +150,6 @@ var RankerMaster = (function () {
 						
 						var rating = Math.floor( (healthRating + damageRating) * 500);
 						var opRating = Math.floor( (opHealthRating + opDamageRating) * 500);
-						
-						if((opponent.hp == 0) && (pokemon.hp > 0)){
-							rating = 1000;
-							opRating = 0;
-						} else if((opponent.hp > 0) && (pokemon.hp == 0)){
-							rating = 0;
-							opRating = 1000;
-						} else if((opponent.hp == 0) && (pokemon.hp == 0)){
-							rating = 500;
-							opRating = 500;
-						}
 						
 						// Search the timeline and store whether or not each charged move was used
 						
@@ -189,16 +184,8 @@ var RankerMaster = (function () {
 						
 						rankObj.matches.push({
 							opponent: opponent.speciesId,
-							rating: rating,
-							opRating: opRating,
-							moveSet: {
-								fastMove: pokemon.fastMove.moveId,
-								chargedMoves: chargedMovesList
-							},
-							oppMoveSet: {
-								fastMove: opponent.fastMove.moveId,
-								chargedMoves: oppChargedMovesList
-							}
+							healthRemaining: healthRating,
+							opponentHealthRemaining: opHealthRating
 						});
 						
 						rms += Math.pow(rating,2);
@@ -213,7 +200,7 @@ var RankerMaster = (function () {
 					var fastMoves = [];
 					var chargedMoves = [];
 					
-					for(var j = 0; j < rankObj.matches.length; j++){
+					for(var j = 0; j < 0; j++){
 						var moveset = rankObj.matches[j].moveSet;
 						var fastMoveIndex = -1;
 						
@@ -247,11 +234,6 @@ var RankerMaster = (function () {
 							}
 						}
 					}
-					
-					fastMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
-					chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
-					
-					rankObj.moves = {fastMoves: fastMoves, chargedMoves: chargedMoves}
 					
 					rankings.push(rankObj);
 				}
@@ -288,13 +270,13 @@ var RankerMaster = (function () {
 				
 				// Determine final score and sort matches
 				
-				for(var i = 0; i < rankCount; i++){
+				for(var i = 0; i < 0; i++){
 					
 					// rankings[i].score = (rankings[i].scores[rankings[i].scores.length-1] - 500) * 2;
 					
-					rankings[i].score = rankings[i].scores[rankings[i].scores.length-1];
+					// rankings[i].score = rankings[i].scores[rankings[i].scores.length-1];
 					
-					delete rankings[i].scores;
+					// delete rankings[i].scores;
 					
 					// Set top matchups and counters
 					
@@ -302,9 +284,9 @@ var RankerMaster = (function () {
 					
 					var matches = rankings[i].matches;
 					
-					rankings[i].matches.sort((a,b) => (a.rating > b.rating) ? -1 : ((b.rating > a.rating) ? 1 : 0));
+					// rankings[i].matches.sort((a,b) => (a.rating > b.rating) ? -1 : ((b.rating > a.rating) ? 1 : 0));
 					
-					var matchupCount = 5;
+					// var matchupCount = 5;
 					
 					// Gather 5 worst matchups for counters
 					
@@ -339,15 +321,15 @@ var RankerMaster = (function () {
 				
 				// Sort rankings by best to worst
 				
-				rankings.sort((a,b) => (a.score > b.score) ? -1 : ((b.score > a.score) ? 1 : 0));
+				// rankings.sort((a,b) => (a.score > b.score) ? -1 : ((b.score > a.score) ? 1 : 0));
 				
 				// Scale all scores on scale of 100;
 				
-				var highest = rankings[0].score;
+				/*var highest = rankings[0].score;
 				
 				for(var i = 0; i < rankings.length; i++){
 					rankings[i].score = Math.floor((rankings[i].score / highest) * 1000) / 10;
-				}
+				}*/
 				
 				// Write rankings to file
 				

@@ -1,4 +1,4 @@
-<div class="poke">
+<div class="poke single">
 	<a class="random" href="#">Random</a>
 	<input class="poke-search" type="text" placeholder="Search name">
 	<select class="poke-select">
@@ -57,13 +57,18 @@
 			</div>
 		</div>
 		
-		<h3 class="section-title">Moves</h3>
+		<div class="move-select-container">
+			<h3 class="section-title">Fast Move</h3>
 
-		<select class="move-select fast"></select>
-		<select class="move-select charged"></select>
-		<select class="move-select charged"></select>
-		<button class="auto-select">Auto Select</button>
-		<div class="legacy">* Legacy Move</div>
+			<select class="move-select fast"></select>
+
+			<h3 class="section-title">Charged Moves</h3>
+
+			<select class="move-select charged"></select>
+			<select class="move-select charged"></select>
+			<button class="auto-select">Auto Select Moves</button>
+			<div class="legacy">* Legacy Move</div>
+		</div>
 		
 		<div class="options">
 			<h3 class="section-title">Options</h3>

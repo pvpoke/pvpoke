@@ -3,6 +3,7 @@ RewriteEngine On
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 
+RewriteRule battle/multi/(\d+)/([a-zA-Z_]+)/([a-zA-Z_]+)/(\d+)/(\d+)/(\d+).*$ battle.php?mode=multi&cp=$1&cup=$2&p1=$3&s=$4&m1=$5&cms=$6 [L,QSA]
 RewriteRule battle/(\d+)/([a-zA-Z_]+)/([a-zA-Z_]+)/(\d+)/(\d+)/(\d+).*$ battle.php?cp=$1&p1=$2&p2=$3&s=$4&m1=$5&m2=$6 [L,QSA]
 RewriteRule battle/(\d+)/([a-zA-Z_]+)/([a-zA-Z_]+)/(\d+).*$ battle.php?cp=$1&p1=$2&p2=$3&s=$4 [L,QSA]
 RewriteRule battle.?$ battle.php [L,QSA]

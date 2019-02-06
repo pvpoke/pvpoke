@@ -22,20 +22,27 @@ require_once 'header.php';
 <h1>Battle</h1>
 
 <div class="section league-select-container white">
-	<p>Select two Pokemon from any league below to fight in a simulated battle. You can customize movesets, levels, IV's, and shields.</p>
 	<?php require 'modules/leagueselect.php'; ?>
+	<select class="mode-select">
+		<option value="single">Single Battle</option>
+		<option value="multi">Multi Battle</option>
+	</select>
+	<p class="description single">Select two Pokemon from any league to fight a simulated battle. Customize movesets, levels, IV's, and shields.</p>
+	<p class="description multi hide">Battle one Pokemon against an entire league or cup. Explore overall performance or individual matchups.</p>
 </div>
 
-<div class="section poke-select-container">
+<div class="section poke-select-container single">
 	<?php require 'modules/pokeselect.php'; ?>
 	<?php require 'modules/pokeselect.php'; ?>
+	<?php require 'modules/pokemultiselect.php'; ?>
 	<div class="clear"></div>
 </div>
 
 <div class="section battle">
 	<button class="battle-btn button">Battle</button>
 	<div class="tooltip"><h3 class="name"></h3><div class="details"></div></div>
-	<div class="battle-results">
+	
+	<div class="battle-results single">
 		<div class="tip">Hover over or tap the timeline for details</div>
 		<div class="timeline-container">
 			<div class="timeline"></div>
@@ -56,6 +63,7 @@ require_once 'header.php';
 			<div class="disclaimer">* Results may differ from actual gameplay depending on connectivity, device, player decisions, or other factors.</div>
 		</div>
 		<div class="summary section white"></div>
+		
 		<div class="share-link-container">
 			<p>Share this battle:</p>
 			<div class="share-link">
@@ -197,15 +205,53 @@ require_once 'header.php';
 		</div>
 		
 	</div>
+	
+		
+	<div class="section white battle-results multi">
+		<a class="toggle active" href="#">Overall Results <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+
+		<div class="toggle-content">
+
+			<p>The histogram below shows how many winning and losing matchups your Pokemon has. You can see previous results to compare Pokemon, movesets, or shield scenarios.</p>
+		
+			<div class="histograms">
+				<div class="histogram"></div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="section white battle-results multi">
+		<a class="toggle active" href="#">Individual Matchups <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+
+		<div class="toggle-content">
+			<input class="poke-search" type="text" placeholder="Search Pokemon Name or Type" />
+			<div class="ranking-header">Opponent</div>
+			<div class="ranking-header right">Battle Rating</div>
+			<div class="rankings-container clear"></div>
+		</div>
+	</div>
+	
+	<div class="battle-results multi">
+		<div class="share-link-container">
+			<p>Share this battle:</p>
+			<div class="share-link">
+				<input type="text" value="" readonly>
+				<div class="copy">Copy</div>
+			</div>
+		</div>
+	</div>
 </div>
 
 <!--test 3-->
-<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=25"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=4"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/Interface.js?v=5"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=5"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=3"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=15"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=32"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=5"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/Interface.js?v=6"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=6"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/BattleHistogram.js"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=4"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=16"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/TeamRanker.js?v=5"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/Main.js?v=2"></script>
 
 <?php require_once 'footer.php'; ?>

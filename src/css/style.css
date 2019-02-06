@@ -95,6 +95,8 @@ footer {
     text-align: center; }
   .section p:first-of-type {
     margin-top: 0; }
+  .section .toggle-content p:first-of-type {
+    margin: 1em 0; }
   .section p.description {
     margin: 1em 0; }
   .section h2 {
@@ -347,6 +349,42 @@ footer {
       transition: height 0.2s ease-out 0s; }
     .poke .move-bars .move-bar .bar-back {
       opacity: .3; }
+.poke .move-details {
+  font-size: 12px;
+  min-height: 15px;
+  text-align: left; }
+  .poke .move-details .move-stat {
+    color: #333; }
+    .poke .move-details .move-stat .stat {
+      width: 15px;
+      height: 14px;
+      background: #999;
+      display: inline-block;
+      border-radius: 15px;
+      text-align: center;
+      padding-top: 1px;
+      color: #eee;
+      font-weight: bold;
+      background: #333; }
+.poke.multi {
+  display: none;
+  float: right; }
+  .poke.multi .poke-stats {
+    display: block; }
+  .poke.multi .cup-select {
+    margin-top: 62px;
+    width: 100%; }
+
+.poke-select-container.single .poke:nth-of-type(2) {
+  display: block; }
+.poke-select-container.single .poke:nth-of-type(3) {
+  display: none; }
+.poke-select-container.multi .poke:nth-of-type(2),
+.poke-select-container.multi .hp.bar-back,
+.poke-select-container.multi .move-bars {
+  display: none; }
+.poke-select-container.multi .poke:nth-of-type(3) {
+  display: block; }
 
 .arrow-up {
   display: none; }
@@ -364,7 +402,8 @@ select, input {
   width: 100%; }
 
 .league-select,
-.cup-select {
+.cup-select,
+.mode-select {
   font-size: 18px;
   width: auto;
   background: none;
@@ -511,6 +550,10 @@ select, input {
       background: rgba(0, 0, 0, 0.15); }
     .battle-results .battle-details .stats-table td {
       padding: 5px; }
+  .battle-results.multi {
+    text-align: left; }
+    .battle-results.multi .poke-search {
+      margin-top: 15px; }
 
 .timeline {
   border-top: 1px dashed #000;
@@ -627,6 +670,16 @@ select, input {
     background-color: rgba(0, 0, 0, 0.6);
     border-radius: 8px;
     text-align: right; }
+  .rank .rating-container a {
+    display: inline-block;
+    width: 32px;
+    height: 28px;
+    background-image: url("../img/eye.png");
+    background-repeat: no-repeat;
+    background-position: 0 center;
+    margin-right: 10px;
+    float: right;
+    opacity: .5; }
   .rank .moveset .rating {
     background: rgba(0, 0, 0, 0.7);
     padding: 5px; }
@@ -673,16 +726,6 @@ select, input {
         background-color: rgba(0, 0, 0, 0.35); }
     .rank .details h2 {
       margin: 0 0 5px 0; }
-    .rank .details a {
-      display: inline-block;
-      width: 32px;
-      height: 28px;
-      background-image: url("../img/eye.png");
-      background-repeat: no-repeat;
-      background-position: 0 center;
-      margin-right: 10px;
-      float: right;
-      opacity: .5; }
 
 .rankings-container > .rank,
 .rankings-container > .rank > .rating-container {
@@ -805,8 +848,11 @@ select, input {
   display: flex;
   justify-content: space-around; }
   .histograms .histogram {
+    position: relative;
     width: 31%;
-    text-align: center; }
+    text-align: center;
+    padding-left: 20px;
+    box-sizing: border-box; }
     .histograms .histogram .chart {
       height: 200px;
       border: 1px solid #00171c;
@@ -847,6 +893,20 @@ select, input {
       border: 1px solid #000;
       padding: 5px;
       display: none; }
+    .histograms .histogram .label-x-axis {
+      position: absolute;
+      left: -20px;
+      top: 50%;
+      -moz-transform: rotate(270deg);
+      -webkit-transform: rotate(270deg);
+      -o-transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+      transform: rotate(270deg); }
+    .histograms .histogram .stats {
+      text-align: left;
+      margin: 10px 0;
+      display: flex;
+      font-size: 12px; }
 
 /* ARTICLE */
 .article p:first-of-type {
@@ -1150,11 +1210,14 @@ a.toggle {
   .histograms {
     display: block; }
     .histograms .histogram {
-      width: 100%;
+      width: 80%;
       max-width: 600px;
       margin: 20px auto; }
 
   .flex .col-3 {
     flex-basis: 25%; }
   .flex .col-9 {
-    flex-basis: 75%; } }
+    flex-basis: 75%; }
+
+  .league-select {
+    max-width: 50%; } }

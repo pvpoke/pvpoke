@@ -43,7 +43,11 @@ require_once 'header.php';
 	<a href="#" class="toggle active">Battle Histograms <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content">
 		<p>The charts below show how many good or bad matchups each Pokemon has among all matchups possible. A Battle Rating below 500 is a loss, and a Battle Rating above 500 is a win. You can compare previous results to examine different Pokemon, movesets, or stats.</p>
-		<div class="histograms"></div>	
+		<div class="histograms">
+			<div class="histogram"></div>
+			<div class="histogram"></div>
+			<div class="histogram"></div>
+		</div>	
 	</div>
 	
 	<a href="#" class="toggle active">Potential Threats <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
@@ -70,13 +74,14 @@ require_once 'header.php';
 </div>
 
 <!--test 4-->
-<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=25"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=4"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/TeamInterface.js?v=5"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=5"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=3"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=15"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/TeamRanker.js?v=3"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=31"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=5"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/TeamInterface.js?v=6"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=7"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/BattleHistogram.js"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=4"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=16"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/TeamRanker.js?v=5"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/Main.js"></script>
 
 <?php require_once 'footer.php'; ?>

@@ -15,8 +15,7 @@ var InterfaceMaster = (function () {
 			var pokeSelectors = [];
 			var self = this;
 			
-			var currentHistograms = [];
-			var previousHistograms = [];
+			var histograms = [];
 			
 			this.context = "team";
 
@@ -37,7 +36,6 @@ var InterfaceMaster = (function () {
 				$(".league-select").on("change", selectLeague);
 				$(".cup-select").on("change", selectCup);
 				$(".rate-btn").on("click", rateClick);
-				$("body").on("click",".histogram .button", histogramButtonClick);
 				
 				battle = BattleMaster.getInstance();
 				
@@ -213,103 +211,16 @@ var InterfaceMaster = (function () {
 				var counterTeam = [];
 				
 				// Let's start with the histograms, because they're kinda neat
-				
-				$(".histograms").html('');
-				
-				if(currentHistograms){
-					previousHistograms = currentHistograms; // Save previous for comparison
-				}
-				
-				currentHistograms = [];
-				
-				var divisions = 20;
-				var increment = 1000 / divisions; // Max Battle Rating of 1000, so divide that into equal chunks
-				
+
 				for(var i = 0; i < team.length; i++){
-					
-					var histogramCounts = []; // Stores the number of matchups in each bracket
-					
-					for(var n = 0; n < divisions; n++){
-						histogramCounts.push(0);
+					if(histograms.length <= i){
+						var histogram = new BattleHistogram($(".histogram").eq(i));
+						histogram.generate(team[i], teamRatings[i]);
+						
+						histograms.push(histogram);
+					} else{
+						histograms[i].generate(team[i], teamRatings[i]);
 					}
-					
-					// Bucket individual battle ratings into the histogram segments
-					
-					var ratings = teamRatings[i];
-					
-					for(var n = 0; n < ratings.length; n++){
-						var division = Math.ceil(ratings[n] / increment) - 1; // Ensures a range of 0 to the number of divisions
-						
-						histogramCounts[division]++;
-					}
-					
-					// Generate list of moves so it can be referenced above the chart
-					
-					var moveStr = team[i].fastMove.name;
-					
-					for(var n = 0; n < team[i].chargedMoves.length; n++){
-						moveStr += ", " + team[i].chargedMoves[n].name;
-					}
-					
-					var $histogram = $("<div class=\"histogram\"><h2>"+team[i].speciesName+"</h2><div class=\"move-label\">"+moveStr+"</div><div class=\"chart\"></div><div class=\"x-axis\"><div>0</div><div>500</div><div>1000</div></div><div class=\"label rating star\">Battle Rating</div><div class=\"button previous\">See Previous</div></div>");
-					
-					var scale = Math.floor(ratings.length / 4);
-					var winColors = [
-						[93,71,165],
-						[0,143,187]
-					]; // rgb
-					var lossColors = [
-						[186,0,143],
-						[93,71,165]
-					]; // rgb
-					
-					var barHeights = [];
-					
-					for(var n = 0; n < histogramCounts.length; n++){
-						var height = (histogramCounts[n] / scale) * 100;
-						var width = 100 / divisions;
-						var $segment = $("<div class=\"segment\"><div class=\"bar\"></div></div>");
-						
-						barHeights.push(height);
-						
-						$segment.css("width", width+"%");
-						$segment.find(".bar").css("height", height+"%");
-												
-						// Apply a gradient to bar color
-						var colors = (n <= histogramCounts.length / 2) ? lossColors : winColors;
-						var color = [ colors[0][0], colors[0][1], colors[0][2] ];
-						
-						for(var j = 0; j < color.length; j++){
-							var range = colors[1][j] - color[j];
-							var base = color[j];
-							var ratio = (n / (histogramCounts.length / 2));
-							
-							if(ratio > 1){
-								ratio -= 1;
-							}
-							
-							color[j] = Math.floor(base + (range * ratio));
-						}
-						
-						$segment.find(".bar").css("background", "rgb("+color[0]+","+color[1]+","+color[2]+")");
-						
-						$histogram.find(".chart").append($segment);
-						
-						if(previousHistograms.length > i){
-							$histogram.find(".button").html("See Previous: " + previousHistograms[i].name);
-							$histogram.find(".button").css("display","block");
-						}
-					}
-					
-					$(".histograms").append($histogram);
-					
-					// Store histogram for later comparison
-					
-					currentHistograms.push({
-						name: team[i].speciesName,
-						moves: moveStr,
-						bars: barHeights
-					});
 				}
 				
 				$(".rankings-container").html('');
@@ -333,7 +244,6 @@ var InterfaceMaster = (function () {
 					var r = altRankings[i];
 					
 					var pokemon = new Pokemon(r.speciesId);
-					counterTeam.push(pokemon);
 					
 					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star\">"+r.rating+"</span></div><div class=\"clear\"></div></div><div class=\"details\"></div>");
 
@@ -628,8 +538,6 @@ var InterfaceMaster = (function () {
 				
 				// Filter PokeSelect options by type
 				
-				console.log(gm);
-				
 				var cupTypes = gm.data.cups[cup];
 				
 				for(var i = 0; i < pokeSelectors.length; i++){
@@ -735,35 +643,6 @@ var InterfaceMaster = (function () {
 
 					},10);
 
-			}
-			
-			// Animate a previous or current histogram
-			
-			function histogramButtonClick(e){
-				var index = $(".histogram .button").index($(e.target));
-				var $histogram = $(".histogram").eq(index);
-				
-				var data = previousHistograms[index];
-				
-				if($(e.target).hasClass("current")){
-					data = currentHistograms[index];
-					
-					$(e.target).html("See Previous: " + previousHistograms[index].name);
-				} else{
-					$(e.target).html("See Current: " + currentHistograms[index].name);
-				}
-				
-				$(e.target).toggleClass("current");
-				$(e.target).toggleClass("previous");
-				
-				$histogram.find("h2").html(data.name);
-				$histogram.find(".move-label").html(data.moves);
-				
-				// Animate each bar
-				
-				for(var i = 0; i < data.bars.length; i++){
-					$histogram.find(".bar").eq(i).css("height", data.bars[i]+"%");
-				}
 			}
 			
 		};

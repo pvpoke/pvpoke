@@ -24,13 +24,18 @@
 	<h3>What's New</h3>
 	<p>Pokemon movesets and move stats have been updated!</p>
 	
-	<h4>v1.2.2 (February 4, 2019)</h4>
+	<h4>v1.3.0 (February 6, 2019)</h4>
 	<ul>
-		<li>Gamemaster file is now completely synched with in-game data</li>
+		<li>New Multi Battle feature on the Battle page allows you to simulate one Pokemon versus a whole league or cup.</li>
 		<ul>
-			<li>All Pokemon in the Pokemon GO gamemaster can now be selected for battle</li>
-			<li>Fixed some Pokemon and move stat errors</li>
+			<li>Customize shields and the number of charged moves</li>
+			<li>See win percentage and a histogram of overall performance</li>
+			<li>Search individual matchups by Pokemon or type</li>
 		</ul>
+		<li>Fast and Charged Move dropdowns are now separated, and all colored by type.</li>
+		<li>Fixed an issue where Pokemon with no Charged Moves selected would sometimes use Charged Moves.</li>
+		<li>Fixed an issue where battle links involving Pokemon with no selected Charged Moves didn't set moves correctly.</li>
+		<li>Randomizing a Pokemon selection now clears the search bar.</li>
 	</ul>
 	
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>

@@ -18,14 +18,21 @@ var InterfaceMaster = (function () {
 			var time = 0;
 			var timelineInterval;
 			
+			var histogram;
+			
 			this.context = "battle";
+			this.battleMode = "single";
+			
+			var ranker = RankerMaster.getInstance();
+			ranker.context = this.context;
 
 			this.init = function(){
 
 				var data = GameMaster.getInstance().data;
+				
 				// Initialize selectors and push Pokemon data
 
-				$(".poke-select-container .poke").each(function(index, value){
+				$(".poke-select-container .poke.single").each(function(index, value){
 					var selector = new PokeSelect($(this), index);
 					pokeSelectors.push(selector);
 
@@ -33,6 +40,7 @@ var InterfaceMaster = (function () {
 				});
 				
 				$(".league-select").on("change", selectLeague);
+				$(".mode-select").on("change", selectMode);
 				$(".battle-btn").on("click", startBattle);
 				$(".timeline-container").on("mousemove",".item",timelineEventHover);
 				$("body").on("mousemove",mainMouseMove);
@@ -104,7 +112,7 @@ var InterfaceMaster = (function () {
 				var timeline = b.getTimeline();
 				var duration = b.getDuration()+1000;
 				
-				$(".battle-results").show();
+				$(".battle-results.single").show();
 				$(".timeline").html('');
 				
 				for(var i = 0; i < timeline.length; i++){
@@ -142,10 +150,6 @@ var InterfaceMaster = (function () {
 					$(".battle-results .summary").html("Simultaneous knockout in <span class=\"time\">"+durationSeconds+"s</span>");
 				}
 				
-				// Scroll to timeline
-				
-				$("html, body").animate({ scrollTop: $(".battle-results").offset().top - 185 }, 500);
-				
 				// Animate timelines
 
 				$(".timeline .item").removeClass("active");
@@ -162,11 +166,7 @@ var InterfaceMaster = (function () {
 				var moveStrs = [];
 				
 				for(var i = 0; i < pokes.length; i++){
-					var fastMoveIndex = pokes[i].fastMovePool.indexOf(pokes[i].fastMove);
-					var chargedMove1Index = pokes[i].chargedMovePool.indexOf(pokes[i].chargedMoves[0])+1;
-					var chargedMove2Index = pokes[i].chargedMovePool.indexOf(pokes[i].chargedMoves[1])+1;
-					
-					moveStrs.push(fastMoveIndex + "" + chargedMove1Index + "" + chargedMove2Index);
+					moveStrs.push(generateURLMoveStr(pokes[i]));
 				}
 				
 				var battleStr = "battle/"+cp+"/"+pokes[0].speciesId+"/"+pokes[1].speciesId+"/"+pokes[0].startingShields+pokes[1].startingShields+"/"+moveStrs[0]+"/"+moveStrs[1]+"/";
@@ -176,7 +176,9 @@ var InterfaceMaster = (function () {
 				
 				// Push state to browser history so it can be navigated, only if not from URL parameters
 				
-				if((get)&&(get.p1 == pokes[0].speciesId)&&(get.p2 == pokes[1].speciesId)){
+				if(get){
+					get = false;
+					
 					return;
 				}
 				
@@ -344,6 +346,99 @@ var InterfaceMaster = (function () {
 				
 			}
 			
+			// Process selected Pokemon through the team ranker
+			
+			this.generateMultiBattleResults = function(){
+				
+				// Set settings
+
+				var cup = $(".cup-select option:selected").val();
+				var opponentShields = parseInt($(".poke.multi .shield-select option:selected").val());
+				var chargedMoveCount = parseInt($(".poke.multi .charged-count-select option:selected").val());
+
+				battle.setCup(cup);
+				ranker.setShields(opponentShields);
+				ranker.setChargedMoveCount(chargedMoveCount);
+				
+				var team = [];
+				var poke = pokeSelectors[0].getPokemon();
+				
+				if(poke){
+					team.push(poke);
+				} else{
+					return;
+				}
+				
+				// Run battles through the ranker
+				
+				var data = ranker.rank(team, battle.getCP());
+				var rankings = data.rankings;
+				var shieldStr = poke.startingShields + "" + opponentShields;
+				var moveStr = generateURLMoveStr(poke);
+				
+				$(".rankings-container").html('');
+				
+				battle.setNewPokemon(poke, 0, false);
+				
+				for(var i = 0; i < rankings.length; i++){
+					var r = rankings[i];
+					
+					var pokemon = new Pokemon(r.speciesId);
+					
+					// Generate moves for link
+					
+					battle.setNewPokemon(pokemon, 1, true);
+					pokemon.autoSelectMoves(chargedMoveCount);
+					
+					var opMoveStr = generateURLMoveStr(pokemon);
+					
+					var battleLink = host+"battle/"+battle.getCP()+"/"+poke.speciesId+"/"+r.speciesId+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
+					
+					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star\">"+r.opRating+"</span></div><a target=\"_blank\" href=\""+battleLink+"\"></a><div class=\"clear\"></div></div><div class=\"details\"></div>");
+
+					$(".rankings-container").append($el);
+				}
+				
+				// Generate and display histogram
+				
+				if(! histogram){
+					histogram = new BattleHistogram($(".battle-results.multi .histogram"));
+					histogram.generate(poke, data.teamRatings[0]);
+				} else{
+					histogram.generate(poke, data.teamRatings[0]);
+				}
+				
+				$(".battle-results.multi").show();
+				
+				// Generate and display share link
+				
+				var cp = battle.getCP();
+				
+				var battleStr = "battle/multi/"+cp+"/"+cup+"/"+poke.speciesId+"/"+poke.startingShields+opponentShields+"/"+moveStr+"/"+chargedMoveCount+"/";
+				var link = host + battleStr;
+				
+				$(".share-link input").val(link);
+				
+				// Push state to browser history so it can be navigated, only if not from URL parameters
+				
+				if(get){
+					get = false;
+					
+					return;
+				}
+				
+				var url = webRoot+battleStr;
+				
+				var data = {cp: cp, p1: poke.speciesId, cup:cup, s: poke.startingShields+""+opponentShields, m1: moveStr, cms: chargedMoveCount, mode: self.battleMode};
+				
+				window.history.pushState(data, "Battle", url);
+				
+				// Send Google Analytics pageview
+				
+				gtag('config', UA_ID, {page_location: (host+url), page_path: url});
+				
+			}
+			
 			// Given JSON of get parameters, load these settings
 			
 			this.loadGetData = function(){
@@ -381,15 +476,6 @@ var InterfaceMaster = (function () {
 								$(".league-select").trigger("change");
 								break;
 								
-							case "s":
-								var arr = val.split('');
-								
-								for(var i = 0; i < Math.min(arr.length, 2); i++){
-									$(".shield-select").eq(i).find("option[value=\""+arr[i]+"\"]").prop("selected", "selected");
-									pokeSelectors[i].getPokemon().setShields(arr[i]);
-								}
-								break;
-								
 							case "m1":
 							case "m2":
 								var index = 0;
@@ -406,11 +492,47 @@ var InterfaceMaster = (function () {
 								
 								for(var i = 1; i < arr.length; i++){
 									var moveId = $(".poke").eq(index).find(".move-select.charged").eq(i-1).find("option").eq(parseInt(arr[i])).val();
-
-									poke.selectMove("charged", moveId, i-1);
+									
+									if(moveId != "none"){
+										poke.selectMove("charged", moveId, i-1);
+									} else{
+										poke.selectMove("charged", moveId, 0); // Always deselect the first move because removing it pops the 2nd move up
+									}
+									
 								}
 								
 								break;
+								
+							case "s":
+								var arr = val.split('');
+
+								for(var i = 0; i < Math.min(arr.length, 2); i++){
+
+									if((i == 0)||((i == 1)&&(self.battleMode == "single"))){
+										$(".shield-select").eq(i).find("option[value=\""+arr[i]+"\"]").prop("selected", "selected");
+										pokeSelectors[i].getPokemon().setShields(arr[i]);
+									} else if((i == 1)&&(self.battleMode == "multi")){
+										$(".poke.multi .shield-select").find("option[value=\""+arr[i]+"\"]").prop("selected", "selected");
+									}
+
+								}
+								break;
+								
+							case "mode":
+								$(".mode-select option[value=\""+val+"\"]").prop("selected","selected");
+								$(".mode-select").trigger("change");
+								break;
+								
+							case "cup":
+								$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
+								$(".cup-select").trigger("change");
+								break;
+								
+							case "cms":
+								$(".charged-count-select option[value=\""+val+"\"]").prop("selected","selected");
+								$(".charged-count-select").trigger("change");
+								break;
+								
 						}
 					}
 					
@@ -443,6 +565,23 @@ var InterfaceMaster = (function () {
 				
 			}
 			
+			// Event handler for changing the battle mode
+			
+			function selectMode(e){
+				self.battleMode = $(e.target).find("option:selected").val();
+				
+				$("p.description").hide();
+				$("p."+self.battleMode).show();
+				
+				$(".poke-select-container").removeClass("single multi");
+				$(".poke-select-container").addClass(self.battleMode);
+				
+				if(self.battleMode == "single"){
+					pokeSelectors[0].setPokemon(pokeSelectors[0].getPokemon().speciesId);
+					pokeSelectors[1].setPokemon(pokeSelectors[1].getPokemon().speciesId);
+				}
+			}
+			
 			// Run simulation
 			
 			function startBattle(){
@@ -450,12 +589,35 @@ var InterfaceMaster = (function () {
 				// Hide advanced sections so they don't push the timeline down
 				
 				$(".advanced-section").removeClass("active");
+				$(".battle-results").hide();
+				$(".battle-btn").html("Generating...");
 				
-				if((battle.validate())&&(! animating)){
-					battle.simulate();
-					self.displayTimeline(battle);
-					self.generateMatchupDetails(battle);
-				}
+				// This is stupid but the visual updates won't execute until Javascript has completed the entire thread
+				
+				setTimeout(function(){
+					
+					if(self.battleMode == "single"){
+
+						// Begin a single battle
+
+						if((battle.validate())&&(! animating)){
+							battle.simulate();
+							battle.debug();
+							self.displayTimeline(battle);
+							self.generateMatchupDetails(battle);
+						}
+
+					} else if(self.battleMode == "multi"){					
+						self.generateMultiBattleResults();
+					}
+
+					// Scroll to results
+
+					$("html, body").animate({ scrollTop: $(".battle-results."+self.battleMode).offset().top - 185 }, 500);
+					
+					$(".battle-btn").html("Battle");
+					
+				}, 10);
 			}
 			
 			// Event handler for timeline hover and click
@@ -584,6 +746,20 @@ var InterfaceMaster = (function () {
 				$(".shield-select").eq(1).trigger("change");
 				
 				startBattle();
+			}
+			
+			// Given a Pokemon output a string of numbers for URL building
+			
+			function generateURLMoveStr(pokemon){
+				var moveStr = '';
+
+				var fastMoveIndex = pokemon.fastMovePool.indexOf(pokemon.fastMove);
+				var chargedMove1Index = pokemon.chargedMovePool.indexOf(pokemon.chargedMoves[0])+1;
+				var chargedMove2Index = pokemon.chargedMovePool.indexOf(pokemon.chargedMoves[1])+1;
+					
+				moveStr = fastMoveIndex + "" + chargedMove1Index + "" + chargedMove2Index;
+				
+				return moveStr;
 			}
 		};
 		

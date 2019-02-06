@@ -151,6 +151,8 @@ function Pokemon(id, i){
 					self.bestChargedMove = self.chargedMoves[i];
 				}
 			}
+		} else{
+			self.bestChargedMove = null;
 		}
 		
 	}
