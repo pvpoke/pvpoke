@@ -496,7 +496,11 @@ var InterfaceMaster = (function () {
 									if(moveId != "none"){
 										poke.selectMove("charged", moveId, i-1);
 									} else{
-										poke.selectMove("charged", moveId, 0); // Always deselect the first move because removing it pops the 2nd move up
+										if((arr[1] == "0")&&(arr[2] == "0")){
+											poke.selectMove("charged", moveId, 0); // Always deselect the first move because removing it pops the 2nd move up
+										} else{
+											poke.selectMove("charged", moveId, i-1);
+										}
 									}
 									
 								}
