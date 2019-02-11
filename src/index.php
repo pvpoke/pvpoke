@@ -28,6 +28,7 @@
 	<ul>
 		<li>New battle options for starting HP and energy.</li>
 		<li>Added battle stats for energy used, gained, and remaining.</li>
+		<li>Pokemon Attack and Defense stats are no longer floored.</li>
 		<li>Updated Contributors page featuring new supporters.</li>
 		<li>Fixed an issue with battle links for Pokemon with large movesets.</li>
 	</ul>

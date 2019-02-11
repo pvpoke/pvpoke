@@ -77,11 +77,11 @@ require_once 'header.php';
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=33"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=6"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/TeamInterface.js?v=6"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=8"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=15"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BattleHistogram.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=4"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=17"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/TeamRanker.js?v=6"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/TeamRanker.js?v=10"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/Main.js"></script>
 
 <?php require_once 'footer.php'; ?>

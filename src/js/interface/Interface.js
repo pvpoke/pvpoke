@@ -515,12 +515,14 @@ var InterfaceMaster = (function () {
 								
 								var poke = pokeSelectors[index].getPokemon();
 								var arr = val.split('-');
-								
+
 								// Legacy move construction
 								
 								if(arr.length <= 1){
 									arr = val.split('');
 								}
+
+								console.log(arr);
 								
 								var fastMoveId = $(".poke").eq(index).find(".move-select.fast option").eq(parseInt(arr[0])).val();
 								poke.selectMove("fast", fastMoveId, 0);
