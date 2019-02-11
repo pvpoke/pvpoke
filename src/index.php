@@ -24,7 +24,7 @@
 	<h3>What's New</h3>
 	<p>Pokemon movesets and move stats have been updated!</p>
 	
-	<h4>v1.3.1 (February 6, 2019)</h4>
+	<h4>v1.3.1 (February 10, 2019)</h4>
 	<ul>
 		<li>New battle options for starting HP and energy.</li>
 		<li>Added battle stats for energy used, gained, and remaining.</li>
