@@ -1,7 +1,12 @@
-<?php require_once 'header.php'; ?>
+<?php
+$META_TITLE='Contribute';
+
+$META_DESCRIPTION='Help support the site or check out the source code!';
+
+require_once 'header.php'; ?>
 
 <h1>Contribute</h1>
-<div class="section home white">
+<div class="section contribute home white">
 	<p>This project is run by and for Pokemon GO fans! Help support us so we can keep it running and develop new resources and features.</p>
 	
 	<a href="https://github.com/pvpoke/pvpoke" class="button">
@@ -15,6 +20,19 @@
 		<h2 class="no-logo">Patreon</h2>
 		<p>Make a pledge to help support the site.</p>
 	</a>
+	
+	<h2 class="center">Ultra Supporters</h2>
+	
+	<div class="supporters flex center">
+		<div class="supporter">Mushromking</div>
+	</div>
+	
+	<h2 class="center">Master Supporters</h2>
+	
+	<div class="supporters flex center">
+		<div class="supporter"><a href="https://www.youtube.com/channel/UCz0vZmmKHbGa1ZVNgJEw2bw" target="_blank">Elite Four TV</a></div>
+		<div class="supporter"><a href="https://discord.gg/fbczGXZ" target="_blank">Pokemon GO PVP Discord</a></div>
+	</div>
 </div>
 
 <?php require_once 'footer.php'; ?>

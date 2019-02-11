@@ -74,14 +74,14 @@ require_once 'header.php';
 </div>
 
 <!--test 4-->
-<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=31"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=5"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=33"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=6"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/TeamInterface.js?v=6"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=7"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=8"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BattleHistogram.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=4"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=16"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/TeamRanker.js?v=5"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=17"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/TeamRanker.js?v=6"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/Main.js"></script>
 
 <?php require_once 'footer.php'; ?>

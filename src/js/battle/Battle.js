@@ -91,10 +91,14 @@ var BattleMaster = (function () {
 			this.calculateDamage = function(attacker, defender, move){
 							
 				var bonusMultiplier = 1.3;
-
 				var effectiveness = this.getEffectiveness(move.type, defender.types);
 				
-				var damage = Math.floor(move.power * move.stab * (attacker.stats.atk / defender.stats.def) * this.getEffectiveness(move.type, defender.types) * 0.5 * bonusMultiplier) + 1;
+				var buffDivisor = gm.data.settings.buffDivisor;
+				var attackMultiplier = (buffDivisor + attacker.statBuffs[0]) / buffDivisor;
+				var defenseMultiplier = (buffDivisor + defender.statBuffs[1]) / buffDivisor;
+				
+				
+				var damage = Math.floor(move.power * move.stab * ( (attacker.stats.atk * attackMultiplier) / (defender.stats.def * defenseMultiplier)) * this.getEffectiveness(move.type, defender.types) * 0.5 * bonusMultiplier) + 1;
 
 				return damage;
 			}
@@ -513,7 +517,7 @@ var BattleMaster = (function () {
 			this.useMove = function(attacker, defender, move, timeline, time, turns, shieldUsed, roundChargedMoveUsed){
 				
 				var type = "fast " + move.type;
-				var damage = move.damage;
+				var damage = self.calculateDamage(attacker, defender, move);
 				
 				var displayTime = time;
 				
@@ -566,6 +570,20 @@ var BattleMaster = (function () {
 					displayTime += 5500;
 				} else if(shieldUsed){
 					displayTime -= 7500;
+				}
+				
+				// Apply move buffs and debuffs
+				
+				if(move.buffs){
+					
+					var buffTarget = attacker;
+					
+					if(move.buffTarget == "opponent"){
+						buffTarget = opponent;
+					}
+					
+					buffTarget.applyStatBuffs(move.buffs);
+					
 				}
 				
 				// Set energy value for TimelineEvent

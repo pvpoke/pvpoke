@@ -200,7 +200,7 @@ footer {
     font-size: 10px;
     color: #333; }
     .poke .poke-stats .stat-container .stat-label {
-      width: 65px;
+      width: 80px;
       float: left; }
       .poke .poke-stats .stat-container .stat-label .label-name {
         display: inline-block;
@@ -299,6 +299,11 @@ footer {
   margin-top: 10px; }
 .poke .options {
   margin: 20px 0; }
+  .poke .options .start-hp,
+  .poke .options .start-energy {
+    margin: 5px 0; }
+  .poke .options .label {
+    margin: 5px 5px 5px 0; }
 .poke a.random {
   font-size: 10px;
   text-decoration: none;
@@ -319,7 +324,7 @@ footer {
     border-radius: 40px;
     position: relative;
     overflow: hidden;
-    border: 2px solid transparent;
+    border: 2px solid rgba(0, 0, 0, 0);
     box-sizing: border-box;
     color: #eee;
     margin-top: 5px;
@@ -942,6 +947,17 @@ select, input {
   display: block;
   max-width: 100%;
   border: 1px solid #000; }
+
+/* CONTRIBUTORS */
+.contribute h2 {
+  font-size: 20px; }
+.contribute .supporters {
+  justify-content: center; }
+  .contribute .supporters .supporter {
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 5px; }
 
 /* TEXTS & FONTS */
 h1.title {

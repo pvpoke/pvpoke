@@ -17,6 +17,7 @@ function Pokemon(id, i){
 
 	this.baseStats = { atk: data.baseStats.atk, def: data.baseStats.def, hp: data.baseStats.hp};
 	this.stats = { atk: 0, def: 0, hp: 0 };
+	this.statBuffs = [ 0, 0 ]; // 0 - attack, 1 - defense
 	this.ivs = { atk: 0, def: 0, hp: 0 };
 	this.types = [ data.types[0], data.types[1] ];
 	this.cp = 0;
@@ -98,10 +99,11 @@ function Pokemon(id, i){
 
 		//Set effective stats
 
-		this.stats.atk = Math.floor(this.cpm * (this.baseStats.atk+this.ivs.atk));
-		this.stats.def = Math.floor(this.cpm * (this.baseStats.def+this.ivs.def));
+		this.stats.atk = this.cpm * (this.baseStats.atk+this.ivs.atk);
+		this.stats.def = this.cpm * (this.baseStats.def+this.ivs.def);
 		this.stats.hp = Math.floor(this.cpm * (this.baseStats.hp+this.ivs.hp));
 		this.hp = this.stats.hp;
+		this.startHp = this.hp;
 		
 		this.cp = Math.floor(( (this.baseStats.atk+this.ivs.atk) * Math.pow(this.baseStats.def+this.ivs.def, 0.5) * Math.pow(this.baseStats.hp+this.ivs.hp, 0.5) * Math.pow(this.cpm, 2) ) / 10);
 		
@@ -344,16 +346,32 @@ function Pokemon(id, i){
 	this.reset = function(){
 		
 		this.resetMoves();
-		this.startHp = this.stats.hp;
 		this.hp = this.startHp;
 		this.energy = this.startEnergy;
 		this.cooldown = 0;
 		this.damageWindow = 0;
 		this.shields = this.startingShields;
+		this.statBuffs = [0, 0];
 	}
 	
 	this.setShields = function(amount){
 		this.startingShields = parseInt(amount);
+	}
+	
+	this.setStartHp = function(amount){
+		this.startHp = Math.min(amount, this.stats.hp);
+		
+		if(! amount){
+			this.startHp = this.stats.hp;
+		}
+	}
+	
+	this.setStartEnergy = function(amount){
+		this.startEnergy = Math.min(amount, 100);
+		
+		if(! amount){
+			this.startEnergy = 0;
+		}
 	}
 	
 	this.setLevel = function(amount){
@@ -378,6 +396,21 @@ function Pokemon(id, i){
 		}
 		
 		this.initialize(false);
+	}
+	
+	// Buff or debuff stats given an array of buffs
+	
+	this.applyStatBuffs = function(buffs){
+
+		var maxBuffStages = gm.data.settings.maxBuffStages;
+		
+		for(var i = 0; i < buffs.length; i++){
+			self.statBuffs[i] += buffs[i];
+
+			self.statBuffs[i] = Math.min(self.statBuffs[i], maxBuffStages);
+			self.statBuffs[i] = Math.max(self.statBuffs[i], -maxBuffStages);
+		}
+
 	}
 	
 	// Return battle rating for this Pokemon

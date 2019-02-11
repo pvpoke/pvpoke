@@ -1,6 +1,8 @@
 {
-  "options": {
-    "partySize": 3
+  "settings": {
+    "partySize": 3,
+	"maxBuffStages": 6,
+	"buffDivisor": 2
   },
   "cups": {
     "all": [],

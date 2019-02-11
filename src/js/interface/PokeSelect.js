@@ -32,8 +32,8 @@ function PokeSelect(element, i){
 		if(selectedPokemon){
 			$el.find(".poke-stats").show();
 
-			$el.find(".attack .stat").html(selectedPokemon.stats.atk);
-			$el.find(".defense .stat").html(selectedPokemon.stats.def);
+			$el.find(".attack .stat").html(Math.round(selectedPokemon.stats.atk*10)/10);
+			$el.find(".defense .stat").html(Math.round(selectedPokemon.stats.def*10)/10);
 			$el.find(".stamina .stat").html(selectedPokemon.stats.hp);
 			$el.find(".overall .stat").html(Math.floor((selectedPokemon.stats.hp * selectedPokemon.stats.atk * selectedPokemon.stats.def) / 1000));
 
@@ -110,6 +110,18 @@ function PokeSelect(element, i){
 					$el.find(".move-select.charged").eq(i).find("option").first().prop("selected","selected");
 				}
 			}
+			
+			// Display starting HP
+
+			if(selectedPokemon.startHp < selectedPokemon.stats.hp){
+				self.animateHealth(0);
+			}
+
+			if(selectedPokemon.startEnergy > 0){
+				for(var i = 0; i < 2; i++){
+					self.animateEnergy(i, 0);
+				}
+			}
 		}
 	}
 	
@@ -125,6 +137,11 @@ function PokeSelect(element, i){
 	// During timeline playback, animate the energy bar
 	
 	this.animateEnergy = function(index, amount){
+		
+		if(selectedPokemon.chargedMoves.length <= index){
+			return;
+		}
+		
 		var energy = selectedPokemon.startEnergy + amount;
 		var $bar = $el.find(".move-bar").eq(index);
 		
@@ -142,6 +159,8 @@ function PokeSelect(element, i){
 	this.reset = function(){
 		$el.find("input.level").val('');
 		$el.find("input.iv").val('');
+		$el.find(".start-hp").val('');
+		$el.find(".start-energy").val('');
 		$el.find(".move-select").html('');
 		$el.find(".starting-health").val(selectedPokemon.stats.hp);
 	}
@@ -153,6 +172,8 @@ function PokeSelect(element, i){
 		
 		$el.find(".poke-stats").hide();
 		$el.find(".poke-search").val('');
+		$el.find(".start-hp").val('');
+		$el.find(".start-energy").val('');
 		$pokeSelect.find("option").first().prop("selected", "selected");
 	}
 	
@@ -296,6 +317,28 @@ function PokeSelect(element, i){
 		var value = parseInt($el.find(".shield-select option:selected").val());
 		
 		selectedPokemon.setShields(value);
+		
+		self.update();
+	});
+	
+	// Enter starting HP
+	
+	$el.find(".start-hp").on("keyup change", function(e){
+		
+		var value = parseInt($el.find(".start-hp").val());
+		
+		selectedPokemon.setStartHp(value);
+		
+		self.update();
+	});
+	
+	// Enter starting energy
+	
+	$el.find(".start-energy").on("keyup change", function(e){
+		
+		var value = parseInt($el.find(".start-energy").val());
+		
+		selectedPokemon.setStartEnergy(value);
 		
 		self.update();
 	});

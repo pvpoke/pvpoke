@@ -45,8 +45,6 @@ var RankerMaster = (function () {
 				// Gather all eligible Pokemon
 				var cup = battle.getCup();
 				
-				battle.setCP(league);
-				
 				var minCP = 2000;
 				
 				if(battle.getCP() == 1500){

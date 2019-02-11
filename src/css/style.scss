@@ -371,7 +371,7 @@ footer{
 			color:$color-off-black;
 			
 			.stat-label{
-				width:65px;
+				width:80px;
 				float:left;
 				
 				.label-name{
@@ -520,6 +520,15 @@ footer{
 	
 	.options{
 		margin: 20px 0;
+		
+		.start-hp,
+		.start-energy{
+			margin:5px 0;
+		}
+		
+		.label{
+			margin:5px 5px 5px 0;
+		}
 	}
 	
 	a.random{
@@ -1442,6 +1451,28 @@ select, input{
 	}
 	
 }
+
+
+/* CONTRIBUTORS */
+
+.contribute{
+	
+	h2{
+		font-size:20px;
+	}
+	
+	.supporters{
+		justify-content: center;
+
+		.supporter{
+			background:#fff;
+			border-radius:8px;
+			padding:10px;
+			margin:5px;
+		}
+	}
+}
+
 
 /* TEXTS & FONTS */
 

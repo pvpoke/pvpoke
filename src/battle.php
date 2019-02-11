@@ -150,6 +150,21 @@ require_once 'header.php';
 						<td class="stat-charged-time">-</td>
 						<td class="stat-charged-time">-</td>
 					</tr>
+					<tr>
+						<td class="label">Energy Gained</td>
+						<td class="stat-energy-gained">-</td>
+						<td class="stat-energy-gained">-</td>
+					</tr>
+					<tr>
+						<td class="label">Energy Used</td>
+						<td class="stat-energy-used">-</td>
+						<td class="stat-energy-used">-</td>
+					</tr>
+					<tr>
+						<td class="label">Energy Remaining</td>
+						<td class="stat-energy-remaining">-</td>
+						<td class="stat-energy-remaining">-</td>
+					</tr>
 				</table>
 			</div>
 		</div>
@@ -243,15 +258,15 @@ require_once 'header.php';
 </div>
 
 <!--test 3-->
-<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=32"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=5"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/Interface.js?v=6"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=33"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=6"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/Interface.js?v=7"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=6"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=7"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BattleHistogram.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=4"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=16"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/TeamRanker.js?v=5"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=17"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/TeamRanker.js?v=6"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/Main.js?v=2"></script>
 
 <?php require_once 'footer.php'; ?>

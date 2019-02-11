@@ -77,6 +77,12 @@
 				<option value="1">1 shield</option>
 				<option value="2">2 shields</option>
 			</select>
+			<div class="flex">
+				<div class="label">HP:</div><input class="start-hp" type="number" min="0" placeholder="Starting HP" />
+			</div>
+			<div class="flex">
+				<div class="label">Energy:</div><input class="start-energy" type="number" min="0" max="100" placeholder="Starting Energy" />
+			</div>
 		</div>
 		
 		<a href="#" class="clear-selection">Clear Selection</a>

@@ -170,6 +170,13 @@ var InterfaceMaster = (function () {
 				}
 				
 				var battleStr = "battle/"+cp+"/"+pokes[0].speciesId+"/"+pokes[1].speciesId+"/"+pokes[0].startingShields+pokes[1].startingShields+"/"+moveStrs[0]+"/"+moveStrs[1]+"/";
+				
+				// Append extra options
+				
+				if( (pokes[0].startHp != pokes[0].stats.hp) || (pokes[1].startHp != pokes[1].stats.hp) || (pokes[0].startEnergy != 0) || (pokes[1].startEnergy != 0) ){
+					battleStr += pokes[0].startHp + "-" + pokes[1].startHp + "/" + pokes[0].startEnergy + "-" + pokes[1].startEnergy + "/";
+				}
+				
 				var link = host + battleStr;
 				
 				$(".share-link input").val(link);
@@ -184,7 +191,7 @@ var InterfaceMaster = (function () {
 				
 				var url = webRoot+battleStr;
 				
-				var data = {cp: cp, p1: pokes[0].speciesId, p2: pokes[1].speciesId, s: pokes[0].startingShields+""+pokes[1].startingShields, m1: moveStrs[0], m2: moveStrs[1] };
+				var data = {cp: cp, p1: pokes[0].speciesId, p2: pokes[1].speciesId, s: pokes[0].startingShields+""+pokes[1].startingShields, m1: moveStrs[0], m2: moveStrs[1], h1: pokes[0].startHp, h2: pokes[1].startHp, e1: pokes[0].startEnergy, e2: pokes[1].startEnergy };
 				
 				window.history.pushState(data, "Battle", url);
 				
@@ -295,6 +302,8 @@ var InterfaceMaster = (function () {
 				var damageBlocked = [0,0];
 				var turnsToChargedMove = [0,0];
 				var energy = [0,0];
+				var energyGained = [0,0];
+				var energyUsed = [0,0];
 				
 				for(var i = 0; i < timeline.length; i++){
 					var event = timeline[i];
@@ -305,12 +314,14 @@ var InterfaceMaster = (function () {
 							totalDamage[event.actor] += event.values[0];
 							fastDamage[event.actor] += event.values[0];
 							energy[event.actor] += event.values[1];
+							energyGained[event.actor] += event.values[1];
 							break;
 							
 						case "charged":
 							totalDamage[event.actor] += event.values[0];
 							chargedDamage[event.actor] += event.values[0];
 							energy[event.actor] += event.values[1];
+							energyUsed[event.actor] -= event.values[1];
 							break;
 							
 						case "shield":
@@ -338,6 +349,11 @@ var InterfaceMaster = (function () {
 					
 					$(".stats-table .stat-fast-damage").eq(i).html(fastDamage[i]+" ("+fastPercentage+"%)");
 					$(".stats-table .stat-charged-damage").eq(i).html(chargedDamage[i]+" ("+chargedPercentage+"%)");
+					
+					$(".stats-table .stat-energy-gained").eq(i).html(energyGained[i]);
+					$(".stats-table .stat-energy-used").eq(i).html(energyUsed[i]);
+					
+					$(".stats-table .stat-energy-remaining").eq(i).html(pokemon[i].energy);
 					
 					if(turnsToChargedMove[i] > 0){
 						$(".stats-table .stat-charged-time").eq(i).html(turnsToChargedMove[i]+" ("+(turnsToChargedMove[i]*.5)+"s)");
@@ -394,6 +410,12 @@ var InterfaceMaster = (function () {
 					
 					var battleLink = host+"battle/"+battle.getCP()+"/"+poke.speciesId+"/"+r.speciesId+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
 					
+					// Append extra options
+
+					if( (poke.startHp != poke.stats.hp) || (poke.startEnergy != 0) ){
+						battleLink += poke.startHp +  "/" + poke.startEnergy + "/";
+					}
+					
 					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star\">"+r.opRating+"</span></div><a target=\"_blank\" href=\""+battleLink+"\"></a><div class=\"clear\"></div></div><div class=\"details\"></div>");
 
 					$(".rankings-container").append($el);
@@ -413,8 +435,15 @@ var InterfaceMaster = (function () {
 				// Generate and display share link
 				
 				var cp = battle.getCP();
-				
 				var battleStr = "battle/multi/"+cp+"/"+cup+"/"+poke.speciesId+"/"+poke.startingShields+opponentShields+"/"+moveStr+"/"+chargedMoveCount+"/";
+				
+				// Append extra options
+				
+				if( (poke.startHp != poke.stats.hp) || (poke.startEnergy != 0) ){
+					battleStr += poke.startHp +  "/" + poke.startEnergy + "/";
+				}
+				
+				
 				var link = host + battleStr;
 				
 				$(".share-link input").val(link);
@@ -485,7 +514,13 @@ var InterfaceMaster = (function () {
 								}
 								
 								var poke = pokeSelectors[index].getPokemon();
-								var arr = val.split('');
+								var arr = val.split('-');
+								
+								// Legacy move construction
+								
+								if(arr.length <= 1){
+									arr = val.split('');
+								}
 								
 								var fastMoveId = $(".poke").eq(index).find(".move-select.fast option").eq(parseInt(arr[0])).val();
 								poke.selectMove("fast", fastMoveId, 0);
@@ -521,6 +556,27 @@ var InterfaceMaster = (function () {
 
 								}
 								break;
+								
+							case "h":
+								var arr = val.split('-');
+								
+								for(var i = 0; i < arr.length; i++){
+									$(".start-hp").eq(i).val(arr[i]);
+									$(".start-hp").eq(i).trigger("change");
+								}
+								
+								break;
+								
+							case "e":
+								var arr = val.split('-');
+								
+								for(var i = 0; i < arr.length; i++){
+									$(".start-energy").eq(i).val(arr[i]);
+									$(".start-energy").eq(i).trigger("change");
+								}
+
+								break;
+																
 								
 							case "mode":
 								$(".mode-select option[value=\""+val+"\"]").prop("selected","selected");
@@ -761,7 +817,7 @@ var InterfaceMaster = (function () {
 				var chargedMove1Index = pokemon.chargedMovePool.indexOf(pokemon.chargedMoves[0])+1;
 				var chargedMove2Index = pokemon.chargedMovePool.indexOf(pokemon.chargedMoves[1])+1;
 					
-				moveStr = fastMoveIndex + "" + chargedMove1Index + "" + chargedMove2Index;
+				moveStr = fastMoveIndex + "-" + chargedMove1Index + "-" + chargedMove2Index;
 				
 				return moveStr;
 			}
