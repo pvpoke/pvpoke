@@ -24,7 +24,7 @@ var InterfaceMaster = (function () {
 				$(".cup-select").on("change", selectCup);
 				$(".simulate").on("click", startRanker);
 				
-				battle = BattleMaster.getInstance();
+				battle = new Battle();
 
 			};
 			
@@ -53,7 +53,7 @@ var InterfaceMaster = (function () {
 				
 				ranker = RankerMaster.getInstance();
 				
-				ranker.rankLoop();
+				ranker.rankLoop(battle.getCup());
 			}
 		};
 		

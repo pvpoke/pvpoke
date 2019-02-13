@@ -15,7 +15,7 @@ var RankerMaster = (function () {
 		
 		function rankerObject(){
 			var gm = GameMaster.getInstance();
-			var battle = BattleMaster.getInstance();
+			var battle = new Battle();
 			
 			var rankings = [];
 			var rankingCombinations = [];
@@ -24,7 +24,9 @@ var RankerMaster = (function () {
 			
 			// Run all ranking sets at once
 			
-			this.rankLoop = function(){
+			this.rankLoop = function(cup){
+				
+				battle.setCup(cup);
 				
 				var leagues = [1500,2500,10000];
 				var shields = [ [0,0],[2,2],[0,2],[2,0]];
@@ -87,7 +89,7 @@ var RankerMaster = (function () {
 				for(var i = 0; i < gm.data.pokemon.length; i++){
 					
 					if(gm.data.pokemon[i].fastMoves.length > 0){ // Only add Pokemon that have move data
-						var pokemon = new Pokemon(gm.data.pokemon[i].speciesId, 0);
+						var pokemon = new Pokemon(gm.data.pokemon[i].speciesId, 0, battle);
 
 						pokemon.initialize(battle.getCP());
 

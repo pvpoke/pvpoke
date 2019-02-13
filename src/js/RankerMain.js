@@ -2,14 +2,12 @@
 
 function Main(){
 	
-	var battle;
 	var interface;
 	var gm;
 	
 	init();
 	
 	function init(){
-		var battle = BattleMaster.getInstance();
 		var gm = GameMaster.getInstance();
 	}
 	

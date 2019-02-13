@@ -17,7 +17,7 @@ var RankerMaster = (function () {
 		
 		function rankerObject(){
 			var gm = GameMaster.getInstance();
-			var battle = BattleMaster.getInstance();
+			var battle;
 			var self = this;
 			
 			var rankings = [];
@@ -29,9 +29,13 @@ var RankerMaster = (function () {
 
 			// Run an individual rank set
 			
-			this.rank = function(team, league){
+			this.rank = function(team, league, cup){
 				
 				var totalBattles = 0;
+				
+				battle = new Battle();
+				battle.setCP(league);
+				battle.setCup(cup);
 				
 				var pokemonList = [];
 				var teamRatings = [];
@@ -43,7 +47,6 @@ var RankerMaster = (function () {
 				rankings = [];
 				
 				// Gather all eligible Pokemon
-				var cup = battle.getCup();
 				
 				var minCP = 2000;
 				
@@ -60,9 +63,10 @@ var RankerMaster = (function () {
 				for(var i = 0; i < gm.data.pokemon.length; i++){
 					
 					if(gm.data.pokemon[i].fastMoves.length > 0){
-						var pokemon = new Pokemon(gm.data.pokemon[i].speciesId, 0);
+						var pokemon = new Pokemon(gm.data.pokemon[i].speciesId, 0, battle);
 
 						pokemon.initialize(battle.getCP());
+						
 						
 						if(pokemon.cp >= minCP){
 							
@@ -93,7 +97,7 @@ var RankerMaster = (function () {
 				
 				for(var i = 0; i < rankCount; i++){
 					
-					var pokemon = new Pokemon(pokemonList[i], 0);
+					var pokemon = new Pokemon(pokemonList[i], 0, battle);
 						
 					var rankObj = {
 						speciesId: pokemon.speciesId,

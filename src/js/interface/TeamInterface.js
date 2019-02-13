@@ -23,6 +23,8 @@ var InterfaceMaster = (function () {
 				
 				gm = GameMaster.getInstance();
 				var data = gm.data;
+					
+				battle = new Battle();
 				
 				// Initialize selectors and push Pokemon data
 
@@ -30,14 +32,12 @@ var InterfaceMaster = (function () {
 					var selector = new PokeSelect($(this), index);
 					pokeSelectors.push(selector);
 
-					selector.init(data.pokemon);
+					selector.init(data.pokemon, battle);
 				});
 				
 				$(".league-select").on("change", selectLeague);
 				$(".cup-select").on("change", selectCup);
 				$(".rate-btn").on("click", rateClick);
-				
-				battle = BattleMaster.getInstance();
 				
 				// If get data exists, load settings
 
@@ -205,7 +205,7 @@ var InterfaceMaster = (function () {
 				// Generate counters and histograms, and display that, too
 				
 				var ranker = RankerMaster.getInstance();				
-				var data = ranker.rank(team, battle.getCP());
+				var data = ranker.rank(team, battle.getCP(), battle.getCup());
 				var counterRankings = data.rankings;
 				var teamRatings = data.teamRatings;
 				var counterTeam = [];
@@ -238,7 +238,7 @@ var InterfaceMaster = (function () {
 				
 				// And for kicks, generate the counters to those counters
 				
-				var altRankings = ranker.rank(counterTeam, battle.getCP()).rankings;
+				var altRankings = ranker.rank(counterTeam, battle.getCP(), battle.getCup()).rankings;
 				
 				for(var i = 0; i < 10; i++){
 					var r = altRankings[i];
@@ -283,10 +283,10 @@ var InterfaceMaster = (function () {
 			}
 			
 			// Array of all types
-			
+
 			this.getAllTypes = function(){			
 				var types = ["Bug","Dark","Dragon","Electric","Fairy","Fighting","Fire","Flying","Ghost","Grass","Ground","Ice","Normal","Poison","Psychic","Rock","Steel","Water"];
-				
+
 				return types;
 			}
 			

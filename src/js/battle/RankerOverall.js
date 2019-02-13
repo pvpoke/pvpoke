@@ -14,28 +14,49 @@ var RankerMaster = (function () {
 		
 		function rankerObject(){
 			var gm = GameMaster.getInstance();
-			var battle = BattleMaster.getInstance();
+			var battle = new Battle();
 			
 			var rankings = [];
+			var rankingCombinations = [];
 			
 			var self = this;
 			
 			// Hook for interface
 			
-			this.rankLoop = function(){
-				this.rank();
+			this.rankLoop = function(cup){
+				
+								
+				battle.setCup(cup);
+				
+				var leagues = [1500,2500,10000];
+
+				for(var i = 0; i < leagues.length; i++){
+					rankingCombinations.push({league: leagues[i]});
+				}
+				
+				var currentRankings = rankingCombinations.length;
+				
+				var rankingInterval = setInterval(function(){
+					if((rankingCombinations.length == currentRankings)&&(rankingCombinations.length > 0)){
+						currentRankings--;
+						
+						battle.setCP(rankingCombinations[0].league);
+						
+						self.rank(battle.getCup(), rankingCombinations[0].league);
+						
+						rankingCombinations.splice(0, 1);
+					}
+				}, 1000);
 			}
 			
 			// Load existing ranking data
 			
-			this.rank = function(){
+			this.rank = function(cup, league){
 				
-				var cup = battle.getCup().name;
-				var league = String(battle.getCP());
 				var categories = ["leads","closers","attackers","defenders"];
 				
 				for(var i = 0; i < categories.length; i++){
-					gm.loadRankingData(self, categories[i], league, cup);
+					gm.loadRankingData(self, categories[i], league, cup.name);
 				}
 			}
 			

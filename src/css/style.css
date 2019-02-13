@@ -520,6 +520,9 @@ select, input {
     .battle-results .summary span.time,
     .battle-results .summary span.name {
       padding: 0; }
+    .battle-results .summary .disclaimer {
+      margin-top: 10px;
+      font-size: 14px; }
   .battle-results .tip {
     text-align: center; }
   .battle-results .battle-details {
@@ -617,6 +620,32 @@ select, input {
         background: #000;
         cursor: initial;
         opacity: .5; }
+      .timeline .item-container .item.buff {
+        background-image: url("../img/move_buff.png") !important;
+        background-position: center -50% !important;
+        background-repeat: no-repeat !important;
+        -webkit-animation: BUFF-ANIMATION 1.5s infinite;
+        /* Safari 4+ */
+        -moz-animation: BUFF-ANIMATION 1.5s infinite;
+        /* Fx 5+ */
+        -o-animation: BUFF-ANIMATION 1.5s infinite;
+        /* Opera 12+ */
+        animation: BUFF-ANIMATION 1.5s infinite;
+        /* IE 10+, Fx 29+ */
+        animation-timing-function: linear; }
+      .timeline .item-container .item.debuff {
+        background-image: url("../img/move_debuff.png");
+        background-position: center 150%;
+        background-repeat: no-repeat;
+        -webkit-animation: DEBUFF-ANIMATION 1.5s infinite;
+        /* Safari 4+ */
+        -moz-animation: DEBUFF-ANIMATION 1.5s infinite;
+        /* Fx 5+ */
+        -o-animation: DEBUFF-ANIMATION 1.5s infinite;
+        /* Opera 12+ */
+        animation: DEBUFF-ANIMATION 1.5s infinite;
+        /* IE 10+, Fx 29+ */
+        animation-timing-function: linear; }
       .timeline .item-container .item.active {
         -moz-transform: scale(1, 1);
         -webkit-transform: scale(1, 1);
@@ -624,6 +653,47 @@ select, input {
         -ms-transform: scale(1, 1);
         transform: scale(1, 1); }
 
+/* Buff and debuff background animations */
+@-webkit-keyframes BUFF-ANIMATION {
+  0% {
+    background-position: center -50%; }
+  100% {
+    background-position: center 150%; } }
+@-moz-keyframes BUFF-ANIMATION {
+  0% {
+    background-position: center -50%; }
+  100% {
+    background-position: center 150%; } }
+@-o-keyframes BUFF-ANIMATION {
+  0% {
+    background-position: center -50%; }
+  100% {
+    background-position: center 150%; } }
+@keyframes BUFF-ANIMATION {
+  0% {
+    background-position: center -50%; }
+  100% {
+    background-position: center 150%; } }
+@-webkit-keyframes DEBUFF-ANIMATION {
+  0% {
+    background-position: center 150%; }
+  100% {
+    background-position: center -50%; } }
+@-moz-keyframes DEBUFF-ANIMATION {
+  0% {
+    background-position: center 150%; }
+  100% {
+    background-position: center -50%; } }
+@-o-keyframes DEBUFF-ANIMATION {
+  0% {
+    background-position: center 150%; }
+  100% {
+    background-position: center -50%; } }
+@keyframes DEBUFF-ANIMATION {
+  0% {
+    background-position: center 150%; }
+  100% {
+    background-position: center -50%; } }
 .tooltip {
   position: absolute;
   border-radius: 8px;
@@ -1160,6 +1230,43 @@ a.toggle {
 
 .dark > .name-container, .dragon > .name-container, .ghost > .name-container {
   color: #eee; }
+
+.buff.bug, .debuff.bug {
+  background-color: #9bc231 !important; }
+.buff.dark, .debuff.dark {
+  background-color: #52505e !important; }
+.buff.dragon, .debuff.dragon {
+  background-color: #1065b6 !important; }
+.buff.electric, .debuff.electric {
+  background-color: #f3d43e !important; }
+.buff.fairy, .debuff.fairy {
+  background-color: #eb8de1 !important; }
+.buff.fighting, .debuff.fighting {
+  background-color: #ce3d64 !important; }
+.buff.fire, .debuff.fire {
+  background-color: #fe9d59 !important; }
+.buff.flying, .debuff.flying {
+  background-color: #91a8de !important; }
+.buff.ghost, .debuff.ghost {
+  background-color: #5069ac !important; }
+.buff.grass, .debuff.grass {
+  background-color: #5fbb50 !important; }
+.buff.ground, .debuff.ground {
+  background-color: #d87b40 !important; }
+.buff.ice, .debuff.ice {
+  background-color: #74d3bd !important; }
+.buff.normal, .debuff.normal {
+  background-color: #909aa3 !important; }
+.buff.poison, .debuff.poison {
+  background-color: #c662d6 !important; }
+.buff.psychic, .debuff.psychic {
+  background-color: #f2726f !important; }
+.buff.rock, .debuff.rock {
+  background-color: #c7b98c !important; }
+.buff.steel, .debuff.steel {
+  background-color: #50879c !important; }
+.buff.water, .debuff.water {
+  background-color: #4f91db !important; }
 
 /* RESPONSIVE */
 @media only screen and (max-width: 720px) {

@@ -4,11 +4,11 @@
 * The main Pokemon class used to represent individual Pokemon in battle
 */
 
-function Pokemon(id, i){
+function Pokemon(id, i, b){
 
 	var gm = GameMaster.getInstance();
 	var data = gm.getPokemonById(id);
-	var battle = BattleMaster.getInstance();
+	var battle = b;
 	var self = this;
 
 	// Base properties
@@ -29,6 +29,8 @@ function Pokemon(id, i){
 	this.fastMovePool = [];
 	this.chargedMovePool = [];
 	this.legacyMoves = [];
+	
+	this.typeEffectiveness;
 	
 	this.fastMove = null;
 	this.chargedMoves = [];
@@ -110,6 +112,10 @@ function Pokemon(id, i){
 		if(this.cp < 10){
 			this.cp = 10;
 		}
+		
+		// Set type effectiveness array
+		
+		self.typeEffectiveness = self.getTypeEffectivenessArray();
 		
 		// Set moves if unset
 		
@@ -341,6 +347,51 @@ function Pokemon(id, i){
 		return tdo;
 	}
 	
+	// Return whether or not this Pokemon has a move with buff or debuff effects
+	
+	this.hasBuffMove = function(){
+		var hasBuffMove = false;
+		
+		if(self.fastMove.buffs){
+			hasBuffMove = true;
+		}
+		
+		for(var i = 0; i < self.chargedMoves.length; i++){
+			if(self.chargedMoves[i].buffs){
+				hasBuffMove = true;
+			}
+		}
+		
+		return hasBuffMove;
+	}
+	
+	// Return effectiveness array for offense or defense
+
+	this.getTypeEffectivenessArray = function(){
+		var arr = [];
+
+		var allTypes = self.getAllTypes();
+
+		for(var n = 0; n < allTypes.length; n++){
+			effectiveness = battle.getEffectiveness(allTypes[n], self.types);
+
+			// Round to nearest thousandths to avoid Javascript floating point wonkiness
+
+			effectiveness = Math.floor(effectiveness * 1000) / 1000;
+			arr[allTypes[n].toLowerCase()] = effectiveness;
+		}
+
+		return arr;
+	}
+	
+	// Array of all types
+
+	this.getAllTypes = function(){			
+		var types = ["Bug","Dark","Dragon","Electric","Fairy","Fighting","Fire","Flying","Ghost","Grass","Ground","Ice","Normal","Poison","Psychic","Rock","Steel","Water"];
+
+		return types;
+	}
+	
 	// Resets Pokemon prior to battle
 	
 	this.reset = function(){
@@ -396,6 +447,12 @@ function Pokemon(id, i){
 		}
 		
 		this.initialize(false);
+	}
+	
+	// Set battle reference object
+	
+	this.setBattle = function(b){
+		battle = b;
 	}
 	
 	// Buff or debuff stats given an array of buffs

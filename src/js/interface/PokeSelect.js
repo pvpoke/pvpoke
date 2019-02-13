@@ -7,15 +7,16 @@ function PokeSelect(element, i){
 	var $pokeSelect = $el.find("select.poke-select");
 	var $input = $el.find("input");
 	var gm = GameMaster.getInstance();
-	var battle = BattleMaster.getInstance();
+	var battle;
 	var index = i;
 	var pokemon = [];
 	var selectedPokemon;
 	var self = this;
 	var interface;
 	
-	this.init = function(pokes){
+	this.init = function(pokes, b){
 		pokemon = pokes;
+		battle = b;
 		
 		$.each(pokemon, function(n, poke){
 			
@@ -208,6 +209,12 @@ function PokeSelect(element, i){
 		$pokeSelect.trigger("change");
 	}
 	
+	// Update battle reference object with new instance
+	
+	this.setBattle = function(b){
+		battle = b;
+	}
+	
 	// Show or hide Pokemon select options given array of types
 	
 	this.filterByTypes = function(types){
@@ -229,7 +236,7 @@ function PokeSelect(element, i){
 	
 	$pokeSelect.on("change", function(e){
 		var id = $pokeSelect.find("option:selected").val();
-		selectedPokemon = new Pokemon(id, index);
+		selectedPokemon = new Pokemon(id, index, battle);
 		
 		if($(".team-build").length == 0){
 			battle.setNewPokemon(selectedPokemon, index);
@@ -283,7 +290,7 @@ function PokeSelect(element, i){
 		});
 		
 		var id = $pokeSelect.find("option:selected").val();
-		selectedPokemon = new Pokemon(id, index);
+		selectedPokemon = new Pokemon(id, index, battle);
 		
 		if($(".team-build").length == 0){
 			battle.setNewPokemon(selectedPokemon, index);

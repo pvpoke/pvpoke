@@ -64,6 +64,12 @@ var GameMaster = (function () {
 						cooldown: m.cooldown
 					};
 					
+					if(m.buffs){
+						move.buffs = m.buffs;
+						move.buffApplyChance = parseFloat(m.buffApplyChance);
+						move.buffTarget = m.buffTarget;
+					}
+					
 					return;
 				}
 			});

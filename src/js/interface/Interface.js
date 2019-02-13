@@ -31,12 +31,15 @@ var InterfaceMaster = (function () {
 				var data = GameMaster.getInstance().data;
 				
 				// Initialize selectors and push Pokemon data
+								
+				battle = new Battle();
+				battle.setBuffChanceModifier(0);
 
 				$(".poke-select-container .poke.single").each(function(index, value){
 					var selector = new PokeSelect($(this), index);
 					pokeSelectors.push(selector);
 
-					selector.init(data.pokemon);
+					selector.init(data.pokemon, battle);
 				});
 				
 				$(".league-select").on("change", selectLeague);
@@ -55,8 +58,6 @@ var InterfaceMaster = (function () {
 				// Details battle viewing
 				
 				$("body").on("click", "a.rating.star", viewShieldBattle);
-				
-				battle = BattleMaster.getInstance();
 				
 				// If get data exists, load settings
 
@@ -107,7 +108,7 @@ var InterfaceMaster = (function () {
 			
 			// Display battle timeline
 			
-			this.displayTimeline = function(b){
+			this.displayTimeline = function(b, bulkSim){
 				
 				var timeline = b.getTimeline();
 				var duration = b.getDuration()+1000;
@@ -140,9 +141,13 @@ var InterfaceMaster = (function () {
 				var winner = b.getWinner();
 				var durationSeconds = Math.floor(duration / 100) / 10;
 
-				if(winner){
-					var winnerRating = winner.getBattleRating();
-					$(".battle-results .summary").html("<span class=\"name\">"+winner.speciesName+"</span> wins in <span class=\"time\">"+durationSeconds+"s</span> with a battle rating of <span class=\"rating star\">"+winnerRating+"</span>");
+				if(winner.pokemon){
+					var winnerRating = winner.rating;
+					$(".battle-results .summary").html("<span class=\"name\">"+winner.pokemon.speciesName+"</span> wins in <span class=\"time\">"+durationSeconds+"s</span> with a battle rating of <span class=\"rating star\">"+winnerRating+"</span>");
+					
+					if(bulkSim){
+						$(".battle-results .summary").append("<div class=\"disclaimer\">This matchup contains moves that have a chance to buff or debuff stats. The timeline above is a median result of 500 simulations. Results may vary.</div>");
+					}
 					
 					var color = battle.getRatingColor(winnerRating);
 					$(".battle-results .summary .rating").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
@@ -252,10 +257,14 @@ var InterfaceMaster = (function () {
 						pokemon[0].setShields(n);
 						pokemon[1].setShields(i);
 						
-						battle.simulate();
+						var b = new Battle;
+						b.setNewPokemon(pokemon[0], 0);
+						b.setNewPokemon(pokemon[1], 1);
 						
-						var rating = pokemon[0].getBattleRating();
-						var color = battle.getRatingColor(rating);
+						b.simulate();
+						
+						var rating = b.getBattleRatings()[0];
+						var color = b.getRatingColor(rating);
 						
 						$(".rating-table .battle-"+i+"-"+n).html(rating);
 						$(".rating-table .battle-"+i+"-"+n).css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
@@ -268,10 +277,9 @@ var InterfaceMaster = (function () {
 					}
 				}
 				
-				// Simulate original battle so duration and timeline data is preserved
+				// Reset shields for future battles
 				
 				$(".shield-select").trigger("change");
-				battle.simulate();
 				
 				// Calculate stats
 				
@@ -279,7 +287,7 @@ var InterfaceMaster = (function () {
 				
 				for(var i = 0; i < 2; i++){
 					
-					rating = pokemon[i].getBattleRating();
+					rating = battle.getBattleRatings()[i];
 					color = battle.getRatingColor(rating);
 					
 				
@@ -387,7 +395,7 @@ var InterfaceMaster = (function () {
 				
 				// Run battles through the ranker
 				
-				var data = ranker.rank(team, battle.getCP());
+				var data = ranker.rank(team, battle.getCP(), battle.getCup());
 				var rankings = data.rankings;
 				var shieldStr = poke.startingShields + "" + opponentShields;
 				var moveStr = generateURLMoveStr(poke);
@@ -468,6 +476,37 @@ var InterfaceMaster = (function () {
 				
 			}
 			
+			// For battles with buffs or debuffs, run bulk sims and return median match
+			
+			this.generateMedianSim = function(battle){
+				
+				var results = [];
+				var simCount = 500;
+				
+				for(var i = 0; i < simCount; i++){
+					var b = new Battle();
+					b.setCP(battle.getCP());
+					b.setCup(battle.getCup());
+					b.setBuffChanceModifier(0);
+					
+					b.setNewPokemon(pokeSelectors[0].getPokemon(), 0, false);
+					b.setNewPokemon(pokeSelectors[1].getPokemon(), 1, false);
+					
+					b.simulate();
+					
+					results.push({rating: b.getPokemon()[0].getBattleRating(), battle: b});
+				}
+				
+				// Sort results by battle rating
+				
+				results.sort((a,b) => (a.rating > b.rating) ? 1 : ((b.rating > a.rating) ? -1 : 0));
+				
+				var index = Math.floor(simCount / 2);
+				
+				return results[index].battle;
+				
+			}
+			
 			// Given JSON of get parameters, load these settings
 			
 			this.loadGetData = function(){
@@ -521,8 +560,6 @@ var InterfaceMaster = (function () {
 								if(arr.length <= 1){
 									arr = val.split('');
 								}
-
-								console.log(arr);
 								
 								var fastMoveId = $(".poke").eq(index).find(".move-select.fast option").eq(parseInt(arr[0])).val();
 								poke.selectMove("fast", fastMoveId, 0);
@@ -663,9 +700,30 @@ var InterfaceMaster = (function () {
 						// Begin a single battle
 
 						if((battle.validate())&&(! animating)){
-							battle.simulate();
-							battle.debug();
-							self.displayTimeline(battle);
+							
+							// Does this matchup contain buffs or debuffs?
+							
+							if((! pokeSelectors[0].getPokemon().hasBuffMove()) && (! pokeSelectors[1].getPokemon().hasBuffMove())){
+								
+								// If no, do a single sim
+								
+								battle.simulate();
+								self.displayTimeline(battle, false);
+							} else{
+								
+								// If yes, bulk sim and display median battle
+								
+								battle = self.generateMedianSim(battle);
+								
+								// Update PokeSelectors with new battle instance
+								
+								for(var i = 0; i < pokeSelectors.length; i++){
+									pokeSelectors[i].setBattle(battle);
+								}
+								
+								self.displayTimeline(battle, true);
+							}
+							
 							self.generateMatchupDetails(battle);
 						}
 

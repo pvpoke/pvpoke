@@ -820,6 +820,11 @@ select, input{
 		span.name{
 			padding:0;
 		}
+		
+		.disclaimer{
+			margin-top:10px;
+			font-size:14px;
+		}
 	}
 	
 	.tip{
@@ -962,12 +967,73 @@ select, input{
 				opacity: .5;
 			}
 			
+			&.buff{
+				background-image:url('../img/move_buff.png') !important;
+				background-position: center -50% !important;
+				background-repeat: no-repeat !important;
+				
+				-webkit-animation: BUFF-ANIMATION 1.5s infinite; /* Safari 4+ */
+				-moz-animation:    BUFF-ANIMATION 1.5s infinite; /* Fx 5+ */
+				-o-animation:      BUFF-ANIMATION 1.5s infinite; /* Opera 12+ */
+				animation:         BUFF-ANIMATION 1.5s infinite; /* IE 10+, Fx 29+ */
+				animation-timing-function: linear;
+			}
+			
+			&.debuff{
+				background-image:url('../img/move_debuff.png');
+				background-position: center 150%;
+				background-repeat: no-repeat;
+				
+				-webkit-animation: DEBUFF-ANIMATION 1.5s infinite; /* Safari 4+ */
+				-moz-animation:    DEBUFF-ANIMATION 1.5s infinite; /* Fx 5+ */
+				-o-animation:      DEBUFF-ANIMATION 1.5s infinite; /* Opera 12+ */
+				animation:         DEBUFF-ANIMATION 1.5s infinite; /* IE 10+, Fx 29+ */
+				animation-timing-function: linear;
+			}
+			
 			&.active{
 				@include transform(scale(1, 1));
 			}
 
 		}
 	}
+}
+
+/* Buff and debuff background animations */
+
+@-webkit-keyframes BUFF-ANIMATION {
+  0%   { background-position: center -50%; }
+  100% { background-position: center 150%; }
+}
+@-moz-keyframes BUFF-ANIMATION {
+  0%   { background-position: center -50%; }
+  100% { background-position: center 150%; }
+}
+@-o-keyframes BUFF-ANIMATION {
+  0%   { background-position: center -50%; }
+  100% { background-position: center 150%; }
+}
+@keyframes BUFF-ANIMATION {
+  0%   { background-position: center -50%; }
+  100% { background-position: center 150%; }
+}
+
+
+@-webkit-keyframes DEBUFF-ANIMATION {
+  0%   { background-position: center 150%; }
+  100% { background-position: center -50%; }
+}
+@-moz-keyframes DEBUFF-ANIMATION {
+  0%   { background-position: center 150%; }
+  100% { background-position: center -50%; }
+}
+@-o-keyframes DEBUFF-ANIMATION {
+  0%   { background-position: center 150%; }
+  100% { background-position: center -50%; }
+}
+@keyframes DEBUFF-ANIMATION {
+  0%   { background-position: center 150%; }
+  100% { background-position: center -50%; }
 }
 
 
@@ -1523,6 +1589,28 @@ a.toggle{
 		color:$color-off-white;
 	}
 	
+}
+
+.buff, .debuff{
+	&.bug{ background-color:$color-bug-dark !important; }
+	&.dark{ background-color:$color-dark-dark !important; }
+	&.dragon{ background-color:$color-dragon-dark !important; }
+	&.electric{ background-color:$color-electric-dark !important; }
+	&.fairy{ background-color:$color-fairy-dark !important; }
+	&.fighting{ background-color:$color-fighting-dark !important; }
+	&.fire{ background-color:$color-fire-dark !important; }
+	&.flying{ background-color:$color-flying-dark !important; }
+	&.ghost{ background-color:$color-ghost-dark !important; }
+	&.grass{ background-color:$color-grass-dark !important; }
+	&.ground{ background-color:$color-ground-dark !important; }
+	&.ice{ background-color:$color-ice-dark !important; }
+	&.normal{ background-color:$color-normal-dark !important; }
+	&.poison{ background-color:$color-poison-dark !important; }
+	&.psychic{ background-color:$color-psychic-dark !important; }
+	&.rock{ background-color:$color-rock-dark !important; }
+	&.steel{ background-color:$color-steel-dark !important; }
+	&.water{ background-color:$color-water-dark !important; }
+
 }
 
 /* RESPONSIVE */
