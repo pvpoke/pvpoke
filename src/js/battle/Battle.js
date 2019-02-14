@@ -32,6 +32,8 @@ function Battle(){
 		if(initialize){
 			poke.initialize(cp);
 		}
+		
+		poke.index = index;
 
 		pokemon[index] = poke;
 	}

@@ -35,7 +35,7 @@ var RankerMaster = (function () {
 				
 				battle = new Battle();
 				battle.setCP(league);
-				battle.setCup(cup);
+				battle.setCup(cup.name);
 				
 				var pokemonList = [];
 				var teamRatings = [];
@@ -48,12 +48,12 @@ var RankerMaster = (function () {
 				
 				// Gather all eligible Pokemon
 				
-				var minCP = 2000;
+				var minStats = 3000; // You must be this tall to ride this ride
 				
 				if(battle.getCP() == 1500){
-					minCP = 1200;
+					minStats = 1300;
 				} else if(battle.getCP() == 2500){
-					minCP = 1500;
+					minStats = 2000;
 				}
 				
 				var bannedList = ["mewtwo","ho-oh","lugia","giratina_altered","groudon","kyogre","garchomp","latios","latias","palkia","dialga","heatran","regice","regirock","giratina_origin"];
@@ -67,8 +67,9 @@ var RankerMaster = (function () {
 
 						pokemon.initialize(battle.getCP());
 						
-						
-						if(pokemon.cp >= minCP){
+						var stats = (pokemon.stats.hp * pokemon.stats.atk * pokemon.stats.def) / 1000;
+
+						if(stats >= minStats){
 							
 							if((battle.getCP() == 1500)&&(bannedList.indexOf(pokemon.speciesId) > -1)){
 								continue;
@@ -86,7 +87,7 @@ var RankerMaster = (function () {
 								continue;
 							}
 							
-							pokemonList.push(pokemon.speciesId);
+							pokemonList.push(pokemon);
 						}
 					}
 				}
@@ -97,7 +98,7 @@ var RankerMaster = (function () {
 				
 				for(var i = 0; i < rankCount; i++){
 					
-					var pokemon = new Pokemon(pokemonList[i], 0, battle);
+					var pokemon = pokemonList[i];
 						
 					var rankObj = {
 						speciesId: pokemon.speciesId,

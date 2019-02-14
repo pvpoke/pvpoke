@@ -26,10 +26,10 @@ var RankerMaster = (function () {
 			
 			this.rankLoop = function(cup){
 				
-				battle.setCup(cup);
+				battle.setCup(cup.name);
 				
-				var leagues = [1500,2500,10000];
-				var shields = [ [0,0],[2,2],[0,2],[2,0]];
+				var leagues = [1500, 2500, 10000];
+				var shields = [ [0,0], [2,2], [0,2], [2,0]];
 
 				for(var i = 0; i < leagues.length; i++){
 					for(var n = 0; n < shields.length; n++){
@@ -69,12 +69,12 @@ var RankerMaster = (function () {
 				// Gather all eligible Pokemon
 				battle.setCP(league);
 				
-				var minCP = 2000; // You must be this tall to ride this ride
+				var minStats = 3000; // You must be this tall to ride this ride
 				
 				if(battle.getCP() == 1500){
-					minCP = 1200;
+					minStats = 1300;
 				} else if(battle.getCP() == 2500){
-					minCP = 1500;
+					minStats = 2000;
 				}
 				
 				// Don't allow these Pokemon into the Great League. They can't be trusted.
@@ -92,8 +92,10 @@ var RankerMaster = (function () {
 						var pokemon = new Pokemon(gm.data.pokemon[i].speciesId, 0, battle);
 
 						pokemon.initialize(battle.getCP());
+						
+						var stats = (pokemon.stats.hp * pokemon.stats.atk * pokemon.stats.def) / 1000;
 
-						if(pokemon.cp >= minCP){
+						if(stats >= minStats){
 							
 							if((battle.getCP() == 1500)&&(bannedList.indexOf(pokemon.speciesId) > -1)){
 								continue;
@@ -111,7 +113,7 @@ var RankerMaster = (function () {
 								continue;
 							}
 							
-							pokemonList.push(pokemon.speciesId);
+							pokemonList.push(pokemon);
 						}
 					}
 				}
@@ -122,7 +124,7 @@ var RankerMaster = (function () {
 				
 				for(var i = 0; i < rankCount; i++){
 					
-					var pokemon = new Pokemon(pokemonList[i], 0);
+					var pokemon = pokemonList[i];
 					
 					// Start with a blank rank object
 					
@@ -140,9 +142,9 @@ var RankerMaster = (function () {
 					
 					// Simulate battle against each Pokemon
 					
-					for(var n = 0; n < rankCount; n++){	
+					for(var n = 0; n < rankCount; n++){
 						
-						var opponent = new Pokemon(pokemonList[n], 1);
+						var opponent = pokemonList[n];
 						
 						// If battle has already been simulated, skip
 							
