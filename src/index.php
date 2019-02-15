@@ -22,15 +22,39 @@
 	
 	<!--Update section for updates-->
 	<h3>What's New</h3>
-	<p>Pokemon movesets and move stats have been updated!</p>
-	
-	<h4>v1.3.1 (February 10, 2019)</h4>
+	<p>Stat buffs and debuffs are here! Stat buff mechanics are now working on the following pages:</p>
 	<ul>
-		<li>New battle options for starting HP and energy.</li>
-		<li>Added battle stats for energy used, gained, and remaining.</li>
-		<li>Pokemon Attack and Defense stats are no longer floored.</li>
-		<li>Updated Contributors page featuring new supporters.</li>
-		<li>Fixed an issue with battle links for Pokemon with large movesets.</li>
+		<li>Single battles</li>
+		<li>Multi battles (as a preset only)</li>
+		<li>Team Builder (as a preset only)</li>
+	</ul>
+	<p>Please note that stat buffing moves and mechanics are currently <i>not</i> implemented in the following:</p>
+	<ul>
+		<li>Rankings</li>
+		<li>Multi battle simulations</li>
+		<li>Team Builder simulations</li>
+		<li>Auto move selection and use</li>
+		<ul>
+			<li>Optimal play involving stat-buffing moves still needs to be analyzed, so currently Pokemon aren't any more likely to select or use stat-buffing moves than before. If you want to look at these moves in particular, consider selecting only these moves.</li>
+		</ul>
+	</ul>
+	
+	<p></p>
+	<p>Pardon the dust, and thanks for your patience as these changes are implemented throughout the site!</p>
+	
+	<h4>v1.4.0 (February 15, 2019)</h4>
+	<ul>
+		<li>Initial implementation for stat-buffing moves (see above)</li>
+		<li>Option to enter starting stat buffs/debuffs in the "Advanced" stat section (note that at this time these settings won't carry over when sharing links, sorry for the inconvenience!)</li>
+		<li>Ranking algorithm updates:</li>
+		<ul>
+			<li>Pokemon are now excluded by minimum base stat product instead of minimum CP. This includes Pokemon like Wobbuffet who didn't meet the previous CP cutoff but have similar bast stat products to viable Pokemon.</li>
+			<li>Pokemon in the Lead, Attacker, and Defender categories are now awarded extra points based on the number of shields they both keep and remove. This emphasizes Pokemon who use fewer shields or remove more shields when they win.</li>
+		</ul>
+		<li>Pokemon Select search has been tweaked to select the first matching Pokemon</li>
+		<ul>
+			<li>This ensures Pokemon that come alphabetically first are selected (e.g. Giratina Altered instead of Giratina Origin)</li>
+		</ul>
 	</ul>
 	
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>

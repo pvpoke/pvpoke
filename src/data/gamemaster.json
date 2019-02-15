@@ -2,7 +2,7 @@
   "settings": {
     "partySize": 3,
 	"maxBuffStages": 4,
-	"buffDivisor": 2
+	"buffDivisor": 4
   },
   "cups": {
     "all": [],
@@ -13591,7 +13591,10 @@
       "power": 70,
       "energy": 45,
       "energyGain": 0,
-      "cooldown": 500
+      "cooldown": 500,
+	  "buffs": [2, 2],
+	  "buffTarget": "self",
+	  "buffApplyChance": ".1"
     },
     {
       "moveId": "AQUA_JET",
@@ -14671,7 +14674,10 @@
       "power": 50,
       "energy": 40,
       "energyGain": 0,
-      "cooldown": 500
+      "cooldown": 500,
+	  "buffs": [2, 2],
+	  "buffTarget": "self",
+	  "buffApplyChance": ".1"
     },
     {
       "moveId": "ORIGIN_PULSE",
@@ -15040,7 +15046,10 @@
       "power": 70,
       "energy": 45,
       "energyGain": 0,
-      "cooldown": 500
+      "cooldown": 500,
+	  "buffs": [2, 2],
+	  "buffTarget": "self",
+	  "buffApplyChance": ".1"
     },
     {
       "moveId": "SKY_ATTACK",

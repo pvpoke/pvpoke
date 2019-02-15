@@ -31,12 +31,39 @@ function PokeSelect(element, i){
 	this.update = function(){
 		
 		if(selectedPokemon){
+			
+			selectedPokemon.reset();
+			
 			$el.find(".poke-stats").show();
+			
+			$el.find(".stat").removeClass("buff debuff");
 
-			$el.find(".attack .stat").html(Math.round(selectedPokemon.stats.atk*10)/10);
-			$el.find(".defense .stat").html(Math.round(selectedPokemon.stats.def*10)/10);
+			$el.find(".attack .stat").html(Math.round(selectedPokemon.getEffectiveStat(0)*10)/10);
+			$el.find(".defense .stat").html(Math.round(selectedPokemon.getEffectiveStat(1)*10)/10);
 			$el.find(".stamina .stat").html(selectedPokemon.stats.hp);
-			$el.find(".overall .stat").html(Math.floor((selectedPokemon.stats.hp * selectedPokemon.stats.atk * selectedPokemon.stats.def) / 1000));
+			
+			if(selectedPokemon.statBuffs[0] > 0){
+				$el.find(".attack .stat").addClass("buff");
+			} else if(selectedPokemon.statBuffs[0] < 0){
+				$el.find(".attack .stat").addClass("debuff");
+			}
+			
+			if(selectedPokemon.statBuffs[1] > 0){
+				$el.find(".defense .stat").addClass("buff");
+			} else if(selectedPokemon.statBuffs[1] < 0){
+				$el.find(".defense .stat").addClass("debuff");
+			}
+			
+			var overall = Math.round((selectedPokemon.stats.hp * selectedPokemon.stats.atk * selectedPokemon.stats.def) / 1000);
+			var effectiveOverall = Math.round((selectedPokemon.stats.hp * selectedPokemon.getEffectiveStat(0) * selectedPokemon.getEffectiveStat(1)) / 1000);
+			
+			$el.find(".overall .stat").html(effectiveOverall);
+			
+			if(effectiveOverall > overall){
+				$el.find(".overall .stat").addClass("buff");
+			} else if(effectiveOverall < overall){
+				$el.find(".overall .stat").addClass("debuff");
+			}
 
 			$el.find(".attack .bar").css("width", (selectedPokemon.stats.atk / 4)+"%");
 			$el.find(".defense .bar").css("width", (selectedPokemon.stats.def / 4)+"%");
@@ -160,6 +187,7 @@ function PokeSelect(element, i){
 	this.reset = function(){
 		$el.find("input.level").val('');
 		$el.find("input.iv").val('');
+		$el.find("input.stat-mod").val('');
 		$el.find(".start-hp").val('');
 		$el.find(".start-energy").val('');
 		$el.find(".move-select").html('');
@@ -277,13 +305,17 @@ function PokeSelect(element, i){
 
 		if(searchStr == '')
 			return;
+		
+		var found = false;
 
 		$pokeSelect.find("option").not(".hide").each(function(index, value){
 			var pokeName = $(this).html().toLowerCase();
 
-			if(pokeName.startsWith(searchStr)){
+			if((pokeName.startsWith(searchStr))&&(! found)){
 				
 				$(this).prop("selected", "selected");
+				
+				found = true;
 
 				return true;
 			}
@@ -382,6 +414,34 @@ function PokeSelect(element, i){
 			// Valid level
 			
 			selectedPokemon.setIV($(this).attr("iv"), value);
+		}
+		
+		self.update();
+	});
+	
+	// Change stat modifier input
+	
+	$el.find("input.stat-mod").on("keyup", function(e){
+		
+		var value = parseInt($(this).val());
+		
+		if(! value){
+			value = 0;
+		}
+		
+		if((value >= -4) && (value <=4) && (value % 1 == 0)){
+			// Valid level
+			
+			var attackValue = parseInt($el.find("input.stat-mod[iv='atk']").val());
+			var defenseValue = parseInt($el.find("input.stat-mod[iv='def']").val());
+			
+			if(! attackValue)
+				attackValue = 0;
+			
+			if(! defenseValue)
+				defenseValue = 0;
+			
+			selectedPokemon.setStartBuffs([attackValue, defenseValue]);
 		}
 		
 		self.update();

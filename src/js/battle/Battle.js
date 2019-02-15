@@ -101,12 +101,8 @@ function Battle(){
 		var bonusMultiplier = 1.3;
 		var effectiveness = defender.typeEffectiveness[move.type];
 
-		var buffDivisor = gm.data.settings.buffDivisor;
-		var attackMultiplier = (buffDivisor + attacker.statBuffs[0]) / buffDivisor;
-		var defenseMultiplier = (buffDivisor + defender.statBuffs[1]) / buffDivisor;
 
-
-		var damage = Math.floor(move.power * move.stab * ( (attacker.stats.atk * attackMultiplier) / (defender.stats.def * defenseMultiplier)) * this.getEffectiveness(move.type, defender.types) * 0.5 * bonusMultiplier) + 1;
+		var damage = Math.floor(move.power * move.stab * ( attacker.getEffectiveStat(0) / defender.getEffectiveStat(1)) * effectiveness * 0.5 * bonusMultiplier) + 1;
 
 		return damage;
 	}
@@ -335,11 +331,24 @@ function Battle(){
 							self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because a fast move will knock out the opponent");
 						}
 
-						if((opponent.shields > 0)&&(opponent.hp <= (poke.fastMove.damage * (opponent.fastMove.cooldown / poke.fastMove.cooldown)))){
-							useChargedMove = false;
+						if(opponent.shields > 0){
+						   
+						   if(opponent.hp <= (poke.fastMove.damage * (opponent.fastMove.cooldown / poke.fastMove.cooldown))){
+								useChargedMove = false;
 
-							self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because opponent has shields and fast moves will knock them out before their cooldown completes");
+								self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because opponent has shields and fast moves will knock them out before their cooldown completes");
+							}
+						
+							// Don't use best charged move if opponent has shields and a cheaper move is charged
+							
+							for(var n = 0; n < poke.chargedMoves.length; n++){
+								if((poke.energy >= poke.chargedMoves[n].energy) && (poke.chargedMoves[n].energy < poke.bestChargedMove.energy)){
+									useChargedMove = false;
+								}
+							}
 						}
+						
+						
 
 						if(useChargedMove){
 							time = this.useMove(poke, opponent, poke.bestChargedMove, timeline, time, turns, roundShieldUsed, roundChargedMoveUsed);
@@ -353,6 +362,12 @@ function Battle(){
 
 					for(var n = 0; n < poke.chargedMoves.length; n++){
 						var move = poke.chargedMoves[n];
+						
+						// Skip if this move has been processed already
+						
+						if(move == poke.bestChargedMove){
+							continue;
+						}
 
 						if((poke.energy >= move.energy)&&(!chargedMoveUsed)){
 
@@ -375,7 +390,7 @@ function Battle(){
 								// Don't use a charged move if a fast move will result in a KO
 
 								if((opponent.hp > poke.fastMove.damage)&&(opponent.hp > (poke.fastMove.damage *(opponent.fastMove.cooldown / poke.fastMove.cooldown)))){
-
+									
 									self.logDecision(turns, poke, " wants to remove shields with " + move.name + " and opponent won't faint from fast move damage before next cooldown");
 
 									time = this.useMove(poke, opponent, move, timeline, time, turns, roundShieldUsed, roundChargedMoveUsed);
@@ -441,8 +456,8 @@ function Battle(){
 
 								// Can this Pokemon be knocked out by future Charged Moves
 								if(poke.shields == 0){
-									var futureEffectiveEnergy = opponent.energy + (opponent.fastMove.energyGain * futureActions);
-									var futureEffectiveHP = poke.hp - futureActions * opponent.fastMove.damage;
+									var futureEffectiveEnergy = opponent.energy + (opponent.fastMove.energyGain * (futureActions-1));
+									var futureEffectiveHP = poke.hp - ((futureActions-1) * opponent.fastMove.damage);
 
 									for(var j = 0; j < opponent.chargedMoves.length; j++){
 
@@ -540,7 +555,7 @@ function Battle(){
 		var damage = self.calculateDamage(attacker, defender, move);
 
 		var displayTime = time;
-		var applyDefenderBuff = true;
+		var shieldBuffModifier = 0;
 
 		self.logDecision(turns, attacker, " uses " + move.name);
 
@@ -565,7 +580,7 @@ function Battle(){
 				damage = 1;
 				defender.shields--;
 				shieldUsed = true;
-				applyDefenderBuff = false; // Don't apply debuffs to a Pokemon if it shields
+				shieldBuffModifier = -1; // Don't buffs or debuffs if it shields
 
 				self.logDecision(turns, defender, " blocks with a shield");
 
@@ -634,8 +649,27 @@ function Battle(){
 		if(move.energy > 0){
 			energyValue = -move.energy;
 		}
-
-		timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, turns, [damage, energyValue]));
+		
+		if(! buffApplied){
+			timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, turns, [damage, energyValue]));
+		} else{
+			var buffStr = "Attack ";
+			
+			if(move.buffs[0] > 0){
+				buffStr += "+";
+			}
+			
+			buffStr += move.buffs[0] + " Defense ";
+			
+			if(move.buffs[0] > 0){
+				buffStr += "+";
+			}
+			
+			buffStr += move.buffs[1];
+			
+			timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, turns, [damage, energyValue, buffStr]));
+		}
+		
 
 		return time;
 
@@ -707,10 +741,6 @@ function Battle(){
 	// Output debug log to console
 
 	this.debug = function(){
-
-		if(! debug){
-			return;
-		}
 
 		for(var i = 0; i < decisionLog.length; i++){
 			var log = decisionLog[i];

@@ -26,7 +26,7 @@ var RankerMaster = (function () {
 			this.rankLoop = function(cup){
 				
 								
-				battle.setCup(cup);
+				battle.setCup(cup.name);
 				
 				var leagues = [1500,2500,10000];
 

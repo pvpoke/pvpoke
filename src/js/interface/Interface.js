@@ -15,10 +15,14 @@ var InterfaceMaster = (function () {
 			var animating = false;
 			var self = this;
 			
+			var bulkResults;
+			
 			var time = 0;
 			var timelineInterval;
 			
 			var histogram;
+			var bulkHistogram;
+			var bulkResults;
 			
 			this.context = "battle";
 			this.battleMode = "single";
@@ -57,7 +61,8 @@ var InterfaceMaster = (function () {
 				
 				// Details battle viewing
 				
-				$("body").on("click", "a.rating.star", viewShieldBattle);
+				$("body").on("click", ".rating-table a.rating.star", viewShieldBattle);
+				$("body").on("click", ".section.summary a.rating.star", viewBulkBattle);
 				
 				// If get data exists, load settings
 
@@ -108,7 +113,7 @@ var InterfaceMaster = (function () {
 			
 			// Display battle timeline
 			
-			this.displayTimeline = function(b, bulkSim){
+			this.displayTimeline = function(b, bulkRatings){
 				
 				var timeline = b.getTimeline();
 				var duration = b.getDuration()+1000;
@@ -145,16 +150,45 @@ var InterfaceMaster = (function () {
 					var winnerRating = winner.rating;
 					$(".battle-results .summary").html("<span class=\"name\">"+winner.pokemon.speciesName+"</span> wins in <span class=\"time\">"+durationSeconds+"s</span> with a battle rating of <span class=\"rating star\">"+winnerRating+"</span>");
 					
-					if(bulkSim){
-						$(".battle-results .summary").append("<div class=\"disclaimer\">This matchup contains moves that have a chance to buff or debuff stats. The timeline above is a median result of 500 simulations. Results may vary.</div>");
-					}
-					
 					var color = battle.getRatingColor(winnerRating);
-					$(".battle-results .summary .rating").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
+					$(".battle-results .summary .rating").first().css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
 				} else{
 					$(".battle-results .summary").html("Simultaneous knockout in <span class=\"time\">"+durationSeconds+"s</span>");
 				}
 				
+				// Display bulk sim data
+
+				if(bulkRatings){
+					
+					var pokemon = pokeSelectors[0].getPokemon();
+					
+					$(".battle-results .summary").append("<div class=\"disclaimer\">This matchup contains moves that have a chance to buff or debuff stats. These results are generated from 500 simulations, and may vary.</div>");
+					
+					var bestRating = bulkResults.best.getBattleRatings()[0];
+					var bestColor = battle.getRatingColor(bestRating);
+					
+					var medianRating = bulkResults.median.getBattleRatings()[0];
+					var medianColor = battle.getRatingColor(medianRating);
+					
+					var worstRating = bulkResults.worst.getBattleRatings()[0];
+					var worstColor = battle.getRatingColor(worstRating);
+
+					$(".battle-results .summary").append("<p>"+pokemon.speciesName+"'s best battle rating is <a href=\"#\" class=\"rating star best\">"+bestRating+"</a></p>");
+					$(".battle-results .summary").append("<p>"+pokemon.speciesName+"'s median battle rating is <a href=\"#\" class=\"rating star median\">"+medianRating+"</a></p>");
+					$(".battle-results .summary").append("<p>"+pokemon.speciesName+"'s worst battle rating is <a href=\"#\" class=\"rating star worst\">"+worstRating+"</a></p>");
+					
+					$(".battle-results .summary .rating").eq(1).css("background-color", "rgb("+bestColor[0]+","+bestColor[1]+","+bestColor[2]+")");
+					$(".battle-results .summary .rating").eq(2).css("background-color", "rgb("+medianColor[0]+","+medianColor[1]+","+medianColor[2]+")");
+					$(".battle-results .summary .rating").eq(3).css("background-color", "rgb("+worstColor[0]+","+worstColor[1]+","+worstColor[2]+")");
+
+					$(".battle-results .summary").append("<div class=\"histograms\"><div class=\"histogram\"></div></div>");
+
+					// Generate and display histogram
+
+					bulkHistogram = new BattleHistogram($(".battle-results .summary .histogram"));
+					bulkHistogram.generate(pokeSelectors[0].getPokemon(), bulkRatings, 400);
+				}
+
 				// Animate timelines
 
 				$(".timeline .item").removeClass("active");
@@ -236,7 +270,7 @@ var InterfaceMaster = (function () {
 			
 			// Generate matchup details after main battle has been simulated
 			
-			this.generateMatchupDetails = function(battle){
+			this.generateMatchupDetails = function(battle, doBulk){
 				
 				// Run simulations for every shield matchup
 				
@@ -250,6 +284,8 @@ var InterfaceMaster = (function () {
 				$(".rating-table .name-1.name").html(pokemon[0].speciesName.charAt(0)+".");
 				$(".battle-details .name-2").html(pokemon[1].speciesName);
 				
+				var originalShields = [pokemon[0].startingShields, pokemon[1].startingShields];
+				
 				for(var i = 0; i < 3; i++){
 					
 					for(var n = 0; n < 3; n++){
@@ -257,14 +293,27 @@ var InterfaceMaster = (function () {
 						pokemon[0].setShields(n);
 						pokemon[1].setShields(i);
 						
-						var b = new Battle;
-						b.setNewPokemon(pokemon[0], 0);
-						b.setNewPokemon(pokemon[1], 1);
+						// Don't do this battle if it's already been simmed
+						var rating;
+						var color;
 						
-						b.simulate();
-						
-						var rating = b.getBattleRatings()[0];
-						var color = b.getRatingColor(rating);
+						if(! ((n == originalShields[0]) && (i == originalShields[1])) ) {
+							var b = new Battle();
+							b.setNewPokemon(pokemon[0], 0);
+							b.setNewPokemon(pokemon[1], 1);
+
+							if(doBulk){
+								b = self.generateBulkSims(b).median;
+							} else{
+								b.simulate();
+							}
+
+							rating = b.getBattleRatings()[0];
+							color = b.getRatingColor(rating);
+						} else{
+							rating = battle.getBattleRatings()[0];
+							color = battle.getRatingColor(rating);
+						}
 						
 						$(".rating-table .battle-"+i+"-"+n).html(rating);
 						$(".rating-table .battle-"+i+"-"+n).css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
@@ -478,9 +527,10 @@ var InterfaceMaster = (function () {
 			
 			// For battles with buffs or debuffs, run bulk sims and return median match
 			
-			this.generateMedianSim = function(battle){
+			this.generateBulkSims = function(battle){
 				
-				var results = [];
+				var battles = [];
+				var ratings = [];
 				var simCount = 500;
 				
 				for(var i = 0; i < simCount; i++){
@@ -494,17 +544,24 @@ var InterfaceMaster = (function () {
 					
 					b.simulate();
 					
-					results.push({rating: b.getPokemon()[0].getBattleRating(), battle: b});
+					var rating = b.getPokemon()[0].getBattleRating();
+					
+					battles.push({rating: rating, battle: b});
+					ratings.push(rating);
 				}
 				
 				// Sort results by battle rating
 				
-				results.sort((a,b) => (a.rating > b.rating) ? 1 : ((b.rating > a.rating) ? -1 : 0));
+				battles.sort((a,b) => (a.rating > b.rating) ? -1 : ((b.rating > a.rating) ? 1 : 0));
 				
-				var index = Math.floor(simCount / 2);
+				var medianIndex = Math.floor(simCount / 2);
 				
-				return results[index].battle;
-				
+				return {
+					best: battles[0].battle,
+					median: battles[medianIndex].battle,
+					worst: battles[battles.length-1].battle,
+					ratings: ratings
+				};
 			}
 			
 			// Given JSON of get parameters, load these settings
@@ -526,7 +583,19 @@ var InterfaceMaster = (function () {
 						
 						switch(key){
 							case "p1":
-								pokeSelectors[0].setPokemon(val);
+								var arr = val.split("_");
+								
+								if(arr.length == 1){
+									pokeSelectors[0].setPokemon(val);
+								} else{
+									pokeSelectors[0].setPokemon(arr[0]);
+									
+									$(".stat-mod[iv='atk']").eq(0).val(parseInt(arr[1]));
+									$(".stat-mod[iv='def']").eq(1).val(parseInt(arr[2]));
+									
+									$(".stat-mod[iv='atk']").eq(0).trigger("keyup");
+								}
+								
 								break;
 								
 							case "p2":
@@ -703,17 +772,20 @@ var InterfaceMaster = (function () {
 							
 							// Does this matchup contain buffs or debuffs?
 							
-							if((! pokeSelectors[0].getPokemon().hasBuffMove()) && (! pokeSelectors[1].getPokemon().hasBuffMove())){
+							var usesBuffs = ((pokeSelectors[0].getPokemon().hasBuffMove()) || (pokeSelectors[1].getPokemon().hasBuffMove()))
+							
+							if(! usesBuffs){
 								
 								// If no, do a single sim
 								
 								battle.simulate();
-								self.displayTimeline(battle, false);
+								self.displayTimeline(battle);
 							} else{
 								
 								// If yes, bulk sim and display median battle
 								
-								battle = self.generateMedianSim(battle);
+								bulkResults = self.generateBulkSims(battle);
+								battle = bulkResults.median;
 								
 								// Update PokeSelectors with new battle instance
 								
@@ -721,10 +793,13 @@ var InterfaceMaster = (function () {
 									pokeSelectors[i].setBattle(battle);
 								}
 								
-								self.displayTimeline(battle, true);
+								self.displayTimeline(battle, bulkResults.ratings);
+								
 							}
 							
-							self.generateMatchupDetails(battle);
+							
+							
+							self.generateMatchupDetails(battle, usesBuffs);
 						}
 
 					} else if(self.battleMode == "multi"){					
@@ -737,7 +812,7 @@ var InterfaceMaster = (function () {
 					
 					$(".battle-btn").html("Battle");
 					
-				}, 10);
+				}, 17);
 			}
 			
 			// Event handler for timeline hover and click
@@ -762,6 +837,11 @@ var InterfaceMaster = (function () {
 					var values = $(this).attr("values").split(',');
 					
 					$tooltip.find(".details").html(values[0] + " damage<br>" + values[1] + " energy");
+					
+					if(values.length == 3){
+						$tooltip.find(".details").append("<br>"+values[2]);
+					}
+					
 				}
 				
 				var width = $tooltip.width();
@@ -866,6 +946,32 @@ var InterfaceMaster = (function () {
 				$(".shield-select").eq(1).trigger("change");
 				
 				startBattle();
+			}
+			
+			// View best or worst battle from bulk results
+			
+			function viewBulkBattle(e){
+				e.preventDefault();
+				
+				if($(e.target).hasClass("best")){
+					battle = bulkResults.best;
+				} else if($(e.target).hasClass("worst")){
+					battle = bulkResults.worst;
+				} else if($(e.target).hasClass("median")){
+					battle = bulkResults.median;
+				}
+				// Update PokeSelectors with new battle instance
+
+				for(var i = 0; i < pokeSelectors.length; i++){
+					pokeSelectors[i].setBattle(battle);
+				}
+
+				self.displayTimeline(battle, bulkResults.ratings);
+				
+				// Scroll to results
+
+				$("html, body").animate({ scrollTop: $(".battle-results."+self.battleMode).offset().top - 185 }, 500);
+				
 			}
 			
 			// Given a Pokemon output a string of numbers for URL building

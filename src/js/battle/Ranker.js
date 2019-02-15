@@ -157,12 +157,14 @@ var RankerMaster = (function () {
 								rankObj.matches.push({
 									opponent: opponent.speciesId,
 									rating: rankings[n].matches[i].opRating,
+									adjRating: rankings[n].matches[i].adjOpRating,
 									opRating: rankings[n].matches[i].rating,
+									adjOpRating: rankings[n].matches[i].adjRating,
 									moveSet: rankings[n].matches[i].oppMoveSet,
 									oppMoveSet: rankings[n].matches[i].moveSet
 								})
 					
-								avg += rankings[n].matches[i].opRating;
+								avg += rankings[n].matches[i].adjOpRating;
 
 								continue;
 							}
@@ -193,6 +195,20 @@ var RankerMaster = (function () {
 						
 						var rating = Math.floor( (healthRating + damageRating) * 500);
 						var opRating = Math.floor( (opHealthRating + opDamageRating) * 500);
+						
+						// Modify ratings by shields burned and shields remaining
+						
+						var winMultiplier = 1;
+						var opWinMultiplier = 1;
+						
+						if(rating > opRating){
+							opWinMultiplier = 0;
+						} else{
+							winMultiplier = 0;
+						}
+						
+						var adjRating = rating + ( (100 * (opponent.startingShields - opponent.shields) * winMultiplier) + (100 * pokemon.shields * winMultiplier));
+						var adjOpRating = opRating + ( (100 * (pokemon.startingShields - pokemon.shields) * opWinMultiplier) + (100 * opponent.shields * opWinMultiplier));
 						
 						// Search the timeline and store whether or not each charged move was used
 						
@@ -229,7 +245,9 @@ var RankerMaster = (function () {
 						rankObj.matches.push({
 							opponent: opponent.speciesId,
 							rating: rating,
+							adjRating: adjRating,
 							opRating: opRating,
+							adjOpRating: adjOpRating,
 							moveSet: {
 								fastMove: pokemon.fastMove.moveId,
 								chargedMoves: chargedMovesList
@@ -240,7 +258,7 @@ var RankerMaster = (function () {
 							}
 						});
 						
-						avg += rating;
+						avg += adjRating;
 					}
 					
 					avg = Math.floor(avg / rankCount);
@@ -327,7 +345,7 @@ var RankerMaster = (function () {
 						
 						for(var j = 0; j < matches.length; j++){
 							
-							var sc = matches[j].rating * rankings[j].scores[n];
+							var sc = matches[j].adjRating * rankings[j].scores[n];
 							
 							weights += rankings[j].scores[n];
 							
@@ -378,6 +396,8 @@ var RankerMaster = (function () {
 						delete match.moveSet;
 						delete match.oppMoveSet;
 						delete match.score;
+						delete match.adjRating;
+						delete match.adjOpRating;
 						
 						rankings[i].counters.push(rankings[i].matches[j]);
 					}
@@ -392,6 +412,8 @@ var RankerMaster = (function () {
 						delete match.moveSet;
 						delete match.oppMoveSet;
 						delete match.score;
+						delete match.adjRating;
+						delete match.adjOpRating;
 						
 						rankings[i].matchups.push(rankings[i].matches[j]);
 					}

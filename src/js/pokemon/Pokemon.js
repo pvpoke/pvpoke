@@ -18,6 +18,8 @@ function Pokemon(id, i, b){
 	this.baseStats = { atk: data.baseStats.atk, def: data.baseStats.def, hp: data.baseStats.hp};
 	this.stats = { atk: 0, def: 0, hp: 0 };
 	this.statBuffs = [ 0, 0 ]; // 0 - attack, 1 - defense
+	this.startStatBuffs = [ 0, 0 ];
+	this.buffChanceModifier = 0;
 	this.ivs = { atk: 0, def: 0, hp: 0 };
 	this.types = [ data.types[0], data.types[1] ];
 	this.cp = 0;
@@ -396,13 +398,13 @@ function Pokemon(id, i, b){
 	
 	this.reset = function(){
 		
-		this.resetMoves();
-		this.hp = this.startHp;
-		this.energy = this.startEnergy;
-		this.cooldown = 0;
-		this.damageWindow = 0;
-		this.shields = this.startingShields;
-		this.statBuffs = [0, 0];
+		self.resetMoves();
+		self.hp = self.startHp;
+		self.energy = self.startEnergy;
+		self.cooldown = 0;
+		self.damageWindow = 0;
+		self.shields = self.startingShields;
+		self.statBuffs = [self.startStatBuffs[0], self.startStatBuffs[1]];
 	}
 	
 	this.setShields = function(amount){
@@ -423,6 +425,11 @@ function Pokemon(id, i, b){
 		if(! amount){
 			this.startEnergy = 0;
 		}
+	}
+	
+	this.setStartBuffs = function(buffs){	
+		this.startStatBuffs = buffs;
+		this.statBuffs = [buffs[0], buffs[1]];
 	}
 	
 	this.setLevel = function(amount){
@@ -468,6 +475,27 @@ function Pokemon(id, i, b){
 			self.statBuffs[i] = Math.max(self.statBuffs[i], -maxBuffStages);
 		}
 
+	}
+
+	// Return effective stat after applying modifier, 0 - attack, 1 - defense
+	
+	this.getEffectiveStat = function(index){
+		var buffDivisor = gm.data.settings.buffDivisor;
+		var multiplier;
+		
+		if(self.statBuffs[index] > 0){
+			multiplier = (buffDivisor + self.statBuffs[index]) / buffDivisor;
+		} else{
+			multiplier = buffDivisor / (buffDivisor - self.statBuffs[index]);
+		}
+		
+		if(index == 0){
+			return self.stats.atk * multiplier;
+		} else if(index == 1){
+			return self.stats.def * multiplier;
+		}
+		
+		return false;
 	}
 	
 	// Return battle rating for this Pokemon

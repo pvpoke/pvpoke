@@ -64,6 +64,9 @@ $color-purple-dark:#3b1f52;
 $color-off-white:#eee;
 $color-off-black:#333;
 
+$color-stat-buff:#f1841c;
+$color-stat-debuff:#0158d0;
+
 
 /* MIXINS */
 
@@ -383,6 +386,14 @@ footer{
 					display: inline-block;
 					font-size:14px;
 					font-weight: bold;
+					
+					&.buff{
+						color:$color-stat-buff;
+					}
+					
+					&.debuff{
+						color:$color-stat-debuff;
+					}
 				}
 			}
 			
@@ -491,8 +502,14 @@ footer{
 					width:33%;
 					max-width:66px;
 				}
+			
+				.stat-modifiers input{
+					float:left;
+					width:50%;
+				}
 				
-				.ivs h3{
+				.ivs h3,
+				.stat-modifiers h3{
 					font-size: 14px;
 					text-align: center;
 					font-weight: bold;
@@ -1219,6 +1236,7 @@ select, input{
 	padding: 5px 5px 5px 36px;
 	font-weight: bold;
 	width:auto;
+	text-decoration: none;
 }	
 
 .rankings-container > .rank > .rating-container > .rating{

@@ -54,6 +54,11 @@
 					<input class="iv" iv="def" type="number" placeholder="Def" min="0" max="15" step="1" />
 					<input class="iv" iv="hp" type="number" placeholder="HP" min="0" max="15" step="1" />
 				</div>
+				<div class="stat-modifiers">
+					<h3>Stat Modifiers (-4 to 4)</h3>
+					<input class="stat-mod" iv="atk" type="number" placeholder="Atk" min="-4" max="4" step="1" />
+					<input class="stat-mod" iv="def" type="number" placeholder="Def" min="-4" max="4" step="1" />
+				</div>
 			</div>
 		</div>
 		

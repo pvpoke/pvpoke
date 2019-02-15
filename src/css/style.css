@@ -209,6 +209,10 @@ footer {
         display: inline-block;
         font-size: 14px;
         font-weight: bold; }
+        .poke .poke-stats .stat-container .stat-label .stat.buff {
+          color: #f1841c; }
+        .poke .poke-stats .stat-container .stat-label .stat.debuff {
+          color: #0158d0; }
     .poke .poke-stats .stat-container.overall .stat-label {
       width: auto;
       margin-top: 5px;
@@ -286,7 +290,11 @@ footer {
       float: left;
       width: 33%;
       max-width: 66px; }
-    .poke .poke-stats .advanced-section .fields .ivs h3 {
+    .poke .poke-stats .advanced-section .fields .stat-modifiers input {
+      float: left;
+      width: 50%; }
+    .poke .poke-stats .advanced-section .fields .ivs h3,
+    .poke .poke-stats .advanced-section .fields .stat-modifiers h3 {
       font-size: 14px;
       text-align: center;
       font-weight: bold; }
@@ -816,7 +824,8 @@ select, input {
   border-radius: 8px;
   padding: 5px 5px 5px 36px;
   font-weight: bold;
-  width: auto; }
+  width: auto;
+  text-decoration: none; }
 
 .rankings-container > .rank > .rating-container > .rating {
   background-image: none;
