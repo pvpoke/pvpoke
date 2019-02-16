@@ -299,8 +299,9 @@ var InterfaceMaster = (function () {
 						
 						if(! ((n == originalShields[0]) && (i == originalShields[1])) ) {
 							var b = new Battle();
-							b.setNewPokemon(pokemon[0], 0);
-							b.setNewPokemon(pokemon[1], 1);
+							b.setCP(battle.getCP());
+							b.setNewPokemon(pokemon[0], 0, false);
+							b.setNewPokemon(pokemon[1], 1, false);
 
 							if(doBulk){
 								b = self.generateBulkSims(b).median;
@@ -410,7 +411,7 @@ var InterfaceMaster = (function () {
 					$(".stats-table .stat-energy-gained").eq(i).html(energyGained[i]);
 					$(".stats-table .stat-energy-used").eq(i).html(energyUsed[i]);
 					
-					$(".stats-table .stat-energy-remaining").eq(i).html(pokemon[i].energy);
+					$(".stats-table .stat-energy-remaining").eq(i).html(energyGained[i] - energyUsed[i]);
 					
 					if(turnsToChargedMove[i] > 0){
 						$(".stats-table .stat-charged-time").eq(i).html(turnsToChargedMove[i]+" ("+(turnsToChargedMove[i]*.5)+"s)");

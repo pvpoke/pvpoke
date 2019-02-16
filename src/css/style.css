@@ -529,7 +529,9 @@ select, input {
     .battle-results .summary span.name {
       padding: 0; }
     .battle-results .summary .disclaimer {
-      margin-top: 10px;
+      margin: 15px 0;
+      font-size: 14px; }
+    .battle-results .summary p {
       font-size: 14px; }
   .battle-results .tip {
     text-align: center; }

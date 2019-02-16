@@ -258,9 +258,9 @@ require_once 'header.php';
 </div>
 
 <!--test-->
-<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=35"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=36"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=7"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/Interface.js?v=21"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/Interface.js?v=24"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=16"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BattleHistogram.js?v=2"></script>
