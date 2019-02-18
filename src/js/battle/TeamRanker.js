@@ -51,7 +51,7 @@ var RankerMaster = (function () {
 				var minStats = 3000; // You must be this tall to ride this ride
 				
 				if(battle.getCP() == 1500){
-					minStats = 1300;
+					minStats = 1250;
 				} else if(battle.getCP() == 2500){
 					minStats = 2000;
 				}

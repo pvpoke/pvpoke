@@ -41,6 +41,7 @@ var InterfaceMaster = (function () {
 
 				$(".poke-select-container .poke.single").each(function(index, value){
 					var selector = new PokeSelect($(this), index);
+					selector.setBattle(battle);
 					pokeSelectors.push(selector);
 
 					selector.init(data.pokemon, battle);
@@ -584,19 +585,7 @@ var InterfaceMaster = (function () {
 						
 						switch(key){
 							case "p1":
-								var arr = val.split("_");
-								
-								if(arr.length == 1){
-									pokeSelectors[0].setPokemon(val);
-								} else{
-									pokeSelectors[0].setPokemon(arr[0]);
-									
-									$(".stat-mod[iv='atk']").eq(0).val(parseInt(arr[1]));
-									$(".stat-mod[iv='def']").eq(1).val(parseInt(arr[2]));
-									
-									$(".stat-mod[iv='atk']").eq(0).trigger("keyup");
-								}
-								
+								pokeSelectors[0].setPokemon(val);								
 								break;
 								
 							case "p2":
@@ -779,6 +768,13 @@ var InterfaceMaster = (function () {
 								
 								// If no, do a single sim
 								
+								// Update PokeSelectors with new battle instance
+								
+								for(var i = 0; i < pokeSelectors.length; i++){
+									
+									pokeSelectors[i].setBattle(battle);
+								}
+								
 								battle.simulate();
 								self.displayTimeline(battle);
 							} else{
@@ -797,8 +793,6 @@ var InterfaceMaster = (function () {
 								self.displayTimeline(battle, bulkResults.ratings);
 								
 							}
-							
-							
 							
 							self.generateMatchupDetails(battle, usesBuffs);
 						}

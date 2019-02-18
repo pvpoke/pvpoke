@@ -3,6 +3,12 @@ RewriteEngine On
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
 
+# RewriteCond %{HTTPS} !=on
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# RewriteCond %{HTTP_HOST} ^www\.pvpoke\.com [NC]
+# RewriteRule ^(.*)$ https://pvpoke.com/$1 [L,R=301]
+
 RewriteRule battle/multi/(\d+)/([a-zA-Z_]+)/([a-zA-Z_]+)/([\d-]+)/([\d-]+)/(\d+)/(\d+)/(\d+).*$ battle.php?mode=multi&cp=$1&cup=$2&p1=$3&s=$4&m1=$5&cms=$6&h=$7&e=$8 [L,QSA]
 RewriteRule battle/multi/(\d+)/([a-zA-Z_]+)/([a-zA-Z_]+)/([\d-]+)/([\d-]+)/(\d+).*$ battle.php?mode=multi&cp=$1&cup=$2&p1=$3&s=$4&m1=$5&cms=$6 [L,QSA]
 

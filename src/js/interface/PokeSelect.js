@@ -241,6 +241,10 @@ function PokeSelect(element, i){
 	
 	this.setBattle = function(b){
 		battle = b;
+		
+		if(selectedPokemon){
+			selectedPokemon.setBattle(battle);
+		}
 	}
 	
 	// Show or hide Pokemon select options given array of types
@@ -322,21 +326,25 @@ function PokeSelect(element, i){
 		});
 		
 		var id = $pokeSelect.find("option:selected").val();
-		selectedPokemon = new Pokemon(id, index, battle);
 		
-		if($(".team-build").length == 0){
-			battle.setNewPokemon(selectedPokemon, index);
-		} else{
-			selectedPokemon.initialize(battle.getCP());
+		if(id){
+			selectedPokemon = new Pokemon(id, index, battle);
+
+			if($(".team-build").length == 0){
+				battle.setNewPokemon(selectedPokemon, index);
+			} else{
+				selectedPokemon.initialize(battle.getCP());
+			}
+
+			var value = parseInt($el.find(".shield-select option:selected").val());
+
+			selectedPokemon.setShields(value);
+
+			self.reset();
+
+			self.update();
 		}
-		
-		var value = parseInt($el.find(".shield-select option:selected").val());
-		
-		selectedPokemon.setShields(value);
-		
-		self.reset();
-		
-		self.update();
+
 	});
 	
 	// Auto select Pokemon moves

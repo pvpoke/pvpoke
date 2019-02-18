@@ -36,6 +36,7 @@ function Pokemon(id, i, b){
 	
 	this.fastMove = null;
 	this.chargedMoves = [];
+	this.chargedMoves = [];
 	
 	this.index = i;
 	
@@ -153,6 +154,8 @@ function Pokemon(id, i, b){
 	
 		// Set best DPE charged move
 		
+		self.activeChargedMoves = []; // Keep a list of charged moves sorted by energy
+		
 		if(this.chargedMoves.length > 0){
 			self.bestChargedMove = self.chargedMoves[0];
 			
@@ -160,11 +163,14 @@ function Pokemon(id, i, b){
 				if(self.chargedMoves[i].dpe > self.bestChargedMove.dpe){
 					self.bestChargedMove = self.chargedMoves[i];
 				}
+				
+				self.activeChargedMoves.push(self.chargedMoves[i]);
 			}
 		} else{
 			self.bestChargedMove = null;
 		}
 		
+		self.activeChargedMoves.sort((a,b) => (a.energy > b.energy) ? 1 : ((b.energy > a.energy) ? -1 : 0));		
 	}
 	
 	// Set a moves stab and damage traits given an opponent
@@ -462,6 +468,12 @@ function Pokemon(id, i, b){
 		battle = b;
 	}
 	
+	// Get battle reference object
+	
+	this.getBattle = function(){
+		return battle;
+	}
+	
 	// Buff or debuff stats given an array of buffs
 	
 	this.applyStatBuffs = function(buffs){
@@ -506,7 +518,7 @@ function Pokemon(id, i, b){
 		if(! opponent){
 			return 0;
 		}
-		
+
 		return Math.floor( (500 * ((opponent.stats.hp - opponent.hp) / opponent.stats.hp)) + (500 * (self.hp / self.stats.hp)))
 	}
 }

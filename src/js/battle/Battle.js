@@ -309,8 +309,9 @@ function Battle(){
 
 						self.logDecision(turns, poke, "'s best charged move is charged (" + poke.bestChargedMove.name + ")");
 
-						if(opponent.cooldown == 0){
-							if(opponent.fastMove.cooldown > poke.fastMove.cooldown){
+						if((opponent.cooldown == 0)||(opponent.cooldown == opponent.fastMove.cooldown)){
+							
+							if((opponent.fastMove.cooldown > poke.fastMove.cooldown)){
 								useChargedMove = false;
 
 								self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because opponent isn't on cooldown and its fast move is faster");
@@ -344,6 +345,8 @@ function Battle(){
 							for(var n = 0; n < poke.chargedMoves.length; n++){
 								if((poke.energy >= poke.chargedMoves[n].energy) && (poke.chargedMoves[n].energy < poke.bestChargedMove.energy)){
 									useChargedMove = false;
+									
+								self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because it has a cheaper move to remove shields");
 								}
 							}
 						}
@@ -358,16 +361,8 @@ function Battle(){
 
 					}
 
-					// Process any available charged move
-
-					for(var n = 0; n < poke.chargedMoves.length; n++){
-						var move = poke.chargedMoves[n];
-						
-						// Skip if this move has been processed already
-						
-						if(move == poke.bestChargedMove){
-							continue;
-						}
+					for(var n = 0; n < poke.activeChargedMoves.length; n++){
+						var move = poke.activeChargedMoves[n];
 
 						if((poke.energy >= move.energy)&&(!chargedMoveUsed)){
 
@@ -375,7 +370,7 @@ function Battle(){
 
 							// Use charged move if it would KO the opponent
 
-							if((move.damage >= opponent.hp) && (opponent.shields == 0) && (!chargedMoveUsed)){
+							if((move.damage >= opponent.hp) && (opponent.hp > poke.fastMove.damage) && (opponent.shields == 0) && (!chargedMoveUsed)){
 								time = this.useMove(poke, opponent, move, timeline, time, turns, roundShieldUsed, roundChargedMoveUsed);
 								roundChargedMoveUsed++;
 								chargedMoveUsed = true;
@@ -476,6 +471,14 @@ function Battle(){
 								nearDeath = false;
 
 								self.logDecision(turns, poke, " doesn't use " + move.name + " because opponent has shields and will faint from a fast move this turn");
+							}
+							
+							// Don't use this Charged Move is a better one is available
+
+							if((poke.bestChargedMove)&&(poke.energy >= poke.bestChargedMove.energy)&&(move.damage < poke.bestChargedMove.damage)){
+								nearDeath = false;
+								
+								self.logDecision(turns, poke, " doesn't use " + move.name + " because a better move is available");
 							}
 
 							if((nearDeath)&&(!chargedMoveUsed)){
