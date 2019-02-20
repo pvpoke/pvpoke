@@ -9,7 +9,8 @@ var InterfaceMaster = (function () {
         var object = new interfaceObject();
 		
 		function interfaceObject(){
-				
+			
+			var gm = GameMaster.getInstance();
 			var battle;
 			var pokeSelectors = [];
 			var animating = false;
@@ -32,7 +33,7 @@ var InterfaceMaster = (function () {
 
 			this.init = function(){
 
-				var data = GameMaster.getInstance().data;
+				var data = gm.data;
 				
 				// Initialize selectors and push Pokemon data
 								
@@ -203,13 +204,15 @@ var InterfaceMaster = (function () {
 				var cp = b.getCP();
 				var pokes = b.getPokemon();
 				
+				var pokeStrs = [];
 				var moveStrs = [];
 				
 				for(var i = 0; i < pokes.length; i++){
+					pokeStrs.push(generateURLPokeStr(pokes[i], i));
 					moveStrs.push(generateURLMoveStr(pokes[i]));
 				}
 				
-				var battleStr = "battle/"+cp+"/"+pokes[0].speciesId+"/"+pokes[1].speciesId+"/"+pokes[0].startingShields+pokes[1].startingShields+"/"+moveStrs[0]+"/"+moveStrs[1]+"/";
+				var battleStr = "battle/"+cp+"/"+pokeStrs[0]+"/"+pokeStrs[1]+"/"+pokes[0].startingShields+pokes[1].startingShields+"/"+moveStrs[0]+"/"+moveStrs[1]+"/";
 				
 				// Append extra options
 				
@@ -412,7 +415,7 @@ var InterfaceMaster = (function () {
 					$(".stats-table .stat-energy-gained").eq(i).html(energyGained[i]);
 					$(".stats-table .stat-energy-used").eq(i).html(energyUsed[i]);
 					
-					$(".stats-table .stat-energy-remaining").eq(i).html(energyGained[i] - energyUsed[i]);
+					$(".stats-table .stat-energy-remaining").eq(i).html((energyGained[i] - energyUsed[i])+pokemon[i].startEnergy);
 					
 					if(turnsToChargedMove[i] > 0){
 						$(".stats-table .stat-charged-time").eq(i).html(turnsToChargedMove[i]+" ("+(turnsToChargedMove[i]*.5)+"s)");
@@ -449,6 +452,7 @@ var InterfaceMaster = (function () {
 				var data = ranker.rank(team, battle.getCP(), battle.getCup());
 				var rankings = data.rankings;
 				var shieldStr = poke.startingShields + "" + opponentShields;
+				var pokeStr = generateURLPokeStr(poke, 0);
 				var moveStr = generateURLMoveStr(poke);
 				
 				$(".rankings-container").html('');
@@ -467,7 +471,7 @@ var InterfaceMaster = (function () {
 					
 					var opMoveStr = generateURLMoveStr(pokemon);
 					
-					var battleLink = host+"battle/"+battle.getCP()+"/"+poke.speciesId+"/"+r.speciesId+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
+					var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+r.speciesId+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
 					
 					// Append extra options
 
@@ -494,7 +498,7 @@ var InterfaceMaster = (function () {
 				// Generate and display share link
 				
 				var cp = battle.getCP();
-				var battleStr = "battle/multi/"+cp+"/"+cup+"/"+poke.speciesId+"/"+poke.startingShields+opponentShields+"/"+moveStr+"/"+chargedMoveCount+"/";
+				var battleStr = "battle/multi/"+cp+"/"+cup+"/"+pokeStr+"/"+poke.startingShields+opponentShields+"/"+moveStr+"/"+chargedMoveCount+"/";
 				
 				// Append extra options
 				
@@ -585,11 +589,46 @@ var InterfaceMaster = (function () {
 						
 						switch(key){
 							case "p1":
-								pokeSelectors[0].setPokemon(val);								
+								var arr = val.split('-');
+
+								if(arr.length == 1){
+									pokeSelectors[0].setPokemon(val);
+								} else{
+									pokeSelectors[0].setPokemon(arr[0]);
+									
+									$("input.level").eq(0).val(arr[1]);
+									$("input.iv[iv='atk']").eq(0).val(arr[2]);
+									$("input.iv[iv='def']").eq(0).val(arr[3]);
+									$("input.iv[iv='hp']").eq(0).val(arr[4]);
+									$("input.stat-mod[iv='atk']").eq(0).val(parseInt(arr[5]) - 4);
+									$("input.stat-mod[iv='def']").eq(0).val(parseInt(arr[6]) - 4);
+									
+									$("input.level").eq(0).trigger("keyup");
+									$("input.iv").trigger("keyup");
+									$("input.stat-mod[iv='atk']").eq(0).trigger("keyup");
+								}
+																
 								break;
 								
-							case "p2":
-								pokeSelectors[1].setPokemon(val);
+							case "p2":		
+								var arr = val.split('-');
+								
+								if(arr.length == 1){
+									pokeSelectors[1].setPokemon(val);
+								} else{
+									pokeSelectors[1].setPokemon(arr[0]);
+									
+									$("input.level").eq(1).val(arr[1]);
+									$("input.iv[iv='atk']").eq(1).val(arr[2]);
+									$("input.iv[iv='def']").eq(1).val(arr[3]);
+									$("input.iv[iv='hp']").eq(1).val(arr[4]);
+									$("input.stat-mod[iv='atk']").eq(1).val(parseInt(arr[5]) - 4);
+									$("input.stat-mod[iv='def']").eq(1).val(parseInt(arr[6]) - 4);
+									
+									$("input.level").eq(1).trigger("keyup");
+									$("input.iv").trigger("keyup");
+									$("input.stat-mod[iv='atk']").eq(1).trigger("keyup");
+								}
 				
 								// Auto select moves for both Pokemon
 
@@ -969,7 +1008,7 @@ var InterfaceMaster = (function () {
 				
 			}
 			
-			// Given a Pokemon output a string of numbers for URL building
+			// Given a Pokemon, output a string of numbers for URL building
 			
 			function generateURLMoveStr(pokemon){
 				var moveStr = '';
@@ -981,6 +1020,26 @@ var InterfaceMaster = (function () {
 				moveStr = fastMoveIndex + "-" + chargedMove1Index + "-" + chargedMove2Index;
 				
 				return moveStr;
+			}
+			
+			// Given a Pokemon, output a string of numbers for URL building
+			
+			function generateURLPokeStr(pokemon, index){
+				var pokeStr = pokemon.speciesId;
+				
+				if(pokeSelectors[index].isCustom()){
+					var arr = [pokemon.level];
+					
+					arr.push(pokemon.ivs.atk, pokemon.ivs.def, pokemon.ivs.hp, pokemon.startStatBuffs[0]+gm.data.settings.maxBuffStages, pokemon.startStatBuffs[1]+gm.data.settings.maxBuffStages);
+					
+					// Stat buffs are increased by 4 so the URL doesn't have to deal with parsing negative numbers
+					
+					var str = arr.join("-");
+					
+					pokeStr += "-" + str;
+				}
+				
+				return pokeStr;
 			}
 		};
 		

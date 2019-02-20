@@ -143,12 +143,12 @@ require_once 'header.php';
 </div>
 
 <!--test 2-->
-<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=38"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=7"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=41"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=9"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/RankingInterface.js?v=9"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js?v=2"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=5"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=18"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=19"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/RankingMain.js?v=2"></script>
 
 <?php require_once 'footer.php'; ?>

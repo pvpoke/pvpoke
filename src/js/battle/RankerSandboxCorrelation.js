@@ -21,7 +21,7 @@ var RankerMaster = (function () {
 				battle.setCup(cup.name);
 				
 				var leagues = [1500];
-				var shields = [ [0,0], [1,1], [2,2] ];
+				var shields = [ [0,0] ];
 				
 				for(var i = 0; i < leagues.length; i++){
 					for(var n = 0; n < shields.length; n++){
@@ -57,6 +57,7 @@ var RankerMaster = (function () {
 				}
 				
 				var bannedList = ["mewtwo","ho-oh","lugia","giratina_altered","groudon","kyogre","garchomp","latios","latias","palkia","dialga","heatran","regice","regirock"];
+				var permaBannedList = ["burmy_trash","burmy_sandy","burmy_plant","wormadam_plant","wormadam_sandy","wormadam_trash","mothim","cherubi","cherrim_overcast","cherrim_sunny","shellos_east_sea","shellos_west_sea","gastrodon_east_sea","gastrodon_west_sea","hippopotas","hippowdon","leafeon","glaceon","rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","uxie","azelf","mesprit","regigigas","giratina_origin","phione","manaphy","darkrai","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","jirachi"]; // Don't rank these Pokemon at all yet
 				var allowedList = [];
 				
 				for(var i = 0; i < gm.data.pokemon.length; i++){
@@ -74,6 +75,10 @@ var RankerMaster = (function () {
 								continue;
 							}
 							
+							if(permaBannedList.indexOf(pokemon.speciesId) > -1){
+								continue;
+							}
+							
 							if((allowedList.length > 0) && (allowedList.indexOf(pokemon.speciesId) == -1)){
 								continue;
 							}
@@ -82,7 +87,7 @@ var RankerMaster = (function () {
 								continue;
 							}
 							
-							pokemonList.push(pokemon.speciesId);
+							pokemonList.push(pokemon);
 						}
 					}
 				}
@@ -93,7 +98,7 @@ var RankerMaster = (function () {
 				
 				for(var i = 0; i < rankCount; i++){
 					
-					var pokemon = new Pokemon(pokemonList[i], 0, battle);
+					var pokemon = pokemonList[i];
 						
 					var rankObj = {
 						speciesId: pokemon.speciesId,
@@ -111,7 +116,7 @@ var RankerMaster = (function () {
 					
 					for(var n = 0; n < rankCount; n++){	
 						
-						var opponent = new Pokemon(pokemonList[n], 1, battle);
+						var opponent = pokemonList[n];
 						
 						// If battle has already been simulated, skip
 							
@@ -121,8 +126,8 @@ var RankerMaster = (function () {
 								
 								rankObj.matches.push({
 									opponent: opponent.speciesId,
-									hp: rankings[n].matches[i].opponentHealthRemaining,
-									opponentHp: rankings[n].matches[i].healthRemaining,
+									rating: rankings[n].matches[i].opRating,
+									opRating: rankings[n].matches[i].rating,
 									moveSet: rankings[n].matches[i].oppMoveSet,
 									oppMoveSet: rankings[n].matches[i].moveSet
 								})
@@ -188,8 +193,8 @@ var RankerMaster = (function () {
 						
 						rankObj.matches.push({
 							opponent: opponent.speciesId,
-							hp: healthRating,
-							opponentHp: opHealthRating
+							rating: rating,
+							opRating: opRating
 						});
 						
 						rms += Math.pow(rating,2);
@@ -272,54 +277,111 @@ var RankerMaster = (function () {
 					}
 				}
 				
+				// Determine correlation scores
+				var csvStr = '0';
+				
+				for(var i = 0; i < rankings.length; i++){
+					
+										
+					if(rankings[i].rating > 400){
+					
+						var correlations = [];
+
+						csvStr += ',' + rankings[i].speciesId;
+
+						for(var n = 0; n < rankings.length; n++){
+							
+							if(rankings[n].rating > 400){
+								var avg = 0;
+
+								for(var j = 0; j < rankings.length; j++){
+									var correlation = 1000 - Math.abs(rankings[i].matches[j].rating - rankings[n].matches[j].rating);
+
+									avg += correlation;
+								}
+
+								avg = avg / rankings.length;
+
+								correlations.push({speciesId: rankings[n].speciesId, correlation: avg});
+							}
+						}
+
+						rankings[i].correlations = correlations;
+						
+					}
+				}
+				
+				// Determine groups
+				
+				var groups = [];
+				
+				for(var i = 0; i < rankings.length; i++){
+					
+					if(! rankings[i].correlations){
+						continue;
+					}
+					
+					var group = [];
+					
+					for(var n = 0; n < rankings[i].correlations.length; n++){
+						if(rankings[i].correlations[n].correlation > 850){
+							group.push(rankings[i].correlations[n].speciesId);
+						}
+					}
+					
+					// Search to see if a similar group exists
+					var groupExists = false;
+					
+					for(var n = 0; n < groups.length; n++){
+						var sharedCount = 0;
+						
+						for(var j = 0; j < group.length; j++){
+							if(groups[n].indexOf(group[j]) > -1){
+								sharedCount++;
+							}
+						}
+						
+						if(sharedCount > groups[n].length / 4){
+							groupExists = true;
+							
+							if(groups[n].indexOf(rankings[i].speciesId) == -1){
+								groups[n].push(rankings[i].speciesId);
+							}
+						}
+					}
+					
+					if((! groupExists)&&(group.length > 3)){
+						groups.push(group);
+					}
+				}
+				
+				console.log(groups);
+				
+				csvStr += '\n';
+				
+				for(var i = 0; i < rankings.length; i++){
+					
+					if(rankings[i].rating > 400){
+
+						csvStr += rankings[i].speciesId;
+
+						for(var n = 0; n < rankings[i].correlations.length; n++){
+							csvStr += ',' + rankings[i].correlations[n].correlation;
+						}
+
+						csvStr += '\n';
+					}
+				}
+				
+				console.log(csvStr);
+				
 				// Determine final score and sort matches
 				
-				for(var i = 0; i < 0; i++){
+				for(var i = 0; i < rankings.length; i++){
 					
-					// rankings[i].score = (rankings[i].scores[rankings[i].scores.length-1] - 500) * 2;
-					
-					// rankings[i].score = rankings[i].scores[rankings[i].scores.length-1];
-					
-					// delete rankings[i].scores;
-					
-					// Set top matchups and counters
-					
-					// Weight matches by opponent rank
-					
-					var matches = rankings[i].matches;
-					
-					// rankings[i].matches.sort((a,b) => (a.rating > b.rating) ? -1 : ((b.rating > a.rating) ? 1 : 0));
-					
-					// var matchupCount = 5;
-					
-					// Gather 5 worst matchups for counters
-					
-					for(var j = rankObj.matches.length - 1; j > rankings[i].matches.length - matchupCount - 1; j--){
-						var match = rankings[i].matches[j];
-						
-						delete match.moveSet;
-						delete match.oppMoveSet;
-						delete match.score;
-						
-						rankings[i].counters.push(rankings[i].matches[j]);
-					}
-					
-					// Gather 5 best matchups, weighted by opponent rank
-					
-					rankings[i].matches.sort((a,b) => (a.score > b.score) ? -1 : ((b.score > a.score) ? 1 : 0));
-					
-					for(var j = 0; j < matchupCount; j++){
-						var match = rankings[i].matches[j];
-						
-						delete match.moveSet;
-						delete match.oppMoveSet;
-						delete match.score;
-						
-						rankings[i].matchups.push(rankings[i].matches[j]);
-					}
-					
+					delete rankings[i].scores;
 					delete rankings[i].matches;
-					//delete rankings[i].movesets;
+					delete rankings[i].movesets;
 					
 				}
 				

@@ -13,6 +13,20 @@ require_once '../header.php';
 	
 	<div class="article-item flex">
 		<div class="col-3">
+			<a href="<?php echo $WEB_ROOT; ?>articles/early-2019-update-highlights/">
+				<img src="<?php echo $WEB_ROOT; ?>assets/articles/2019-update-thumb.jpg" />
+			</a>
+		</div>
+		<div class="col-9">
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/early-2019-update-highlights/">Highlights of the Early 2019 Updates</a></h4>
+			<div class="date">February 20, 2019</div>
+			<p>Just how powerful is Razor Leaf? What's the best way to use stat-boosting moves? This article highlights some of the recent PvP updates and what you should keep your eyes on.</p>
+		</div>
+		
+	</div>
+	
+	<div class="article-item flex">
+		<div class="col-3">
 			<a href="<?php echo $WEB_ROOT; ?>articles/hoenn-pokemon-hunt-pvp/">
 				<img src="<?php echo $WEB_ROOT; ?>assets/articles/hoenn-thumb.jpg" />
 			</a>

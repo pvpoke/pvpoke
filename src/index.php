@@ -42,6 +42,12 @@
 	<p></p>
 	<p>Pardon the dust, and thanks for your patience as these changes are implemented throughout the site!</p>
 	
+	<h4>v1.4.2 (February 20, 2019)</h4>
+	<ul>
+		<li>Custom level, IVs, and stat modifiers now persist in shared links</li>
+		<li>Removed Rayquaza from Great League and Tempest Cup</li>
+	</ul>
+	
 	<h4>v1.4.0 (February 15, 2019)</h4>
 	<ul>
 		<li>Initial implementation for stat-buffing moves (see above)</li>
@@ -63,14 +69,14 @@
 	
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/hoenn-pokemon-hunt-pvp/">
-				<img src="<?php echo $WEB_ROOT; ?>assets/articles/hoenn-thumb.jpg" />
+			<a href="<?php echo $WEB_ROOT; ?>articles/early-2019-update-highlights/">
+				<img src="<?php echo $WEB_ROOT; ?>assets/articles/2019-update-thumb.jpg" />
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/hoenn-pokemon-hunt-pvp/">Hoenn Pokemon to Hunt for PvP</a></h4>
-			<div class="date">January 21, 2019</div>
-			<p>Which Hoenn Pokemon should you keep an eye out for to use in PvP during the Hoenn event? Take a look at this list to prepare for your Pokemon hunts!</p>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/early-2019-update-highlights/">Highlights of the Early 2019 Updates</a></h4>
+			<div class="date">February 20, 2019</div>
+			<p>Just how powerful is Razor Leaf? What's the best way to use stat-boosting moves? This article highlights some of the recent PvP updates and what you should keep your eyes on.</p>
 		</div>
 		
 	</div>

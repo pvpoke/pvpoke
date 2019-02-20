@@ -997,6 +997,8 @@ select, input {
 /* ARTICLE */
 .article p:first-of-type {
   margin-top: 1em; }
+.article p {
+  line-height: 26px; }
 .article .article-section h3 {
   font-weight: normal; }
 .article h2 {
@@ -1008,6 +1010,16 @@ select, input {
   padding: 10px;
   border-radius: 8px;
   color: #eee; }
+.article table {
+  border: none;
+  margin: 0 auto; }
+  .article table td {
+    padding: 5px;
+    vertical-align: top; }
+    .article table td.buff {
+      color: #f1841c; }
+  .article table tr:nth-of-type(2n) {
+    background: rgba(0, 0, 0, 0.1); }
 
 .article-item .col-9 {
   padding: 0 10px; }

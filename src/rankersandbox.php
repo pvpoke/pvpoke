@@ -9,7 +9,7 @@
 	<div class="output"></div>
 </div>
 
-<script src="js/GameMaster.js?v=30"></script>
+<script src="js/GameMaster.js?v=50"></script>
 <script src="js/pokemon/Pokemon.js"></script>
 <script src="js/interface/RankerInterface.js"></script>
 <script src="js/battle/TimelineEvent.js"></script>

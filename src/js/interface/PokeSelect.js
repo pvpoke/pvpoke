@@ -13,6 +13,7 @@ function PokeSelect(element, i){
 	var selectedPokemon;
 	var self = this;
 	var interface;
+	var isCustom = false; // Whether or not the Pokemon has custom-set level, IVs, or traits
 	
 	this.init = function(pokes, b){
 		pokemon = pokes;
@@ -192,6 +193,8 @@ function PokeSelect(element, i){
 		$el.find(".start-energy").val('');
 		$el.find(".move-select").html('');
 		$el.find(".starting-health").val(selectedPokemon.stats.hp);
+		
+		isCustom = false;
 	}
 	
 	// Remove the currently selected Pokemon
@@ -204,6 +207,8 @@ function PokeSelect(element, i){
 		$el.find(".start-hp").val('');
 		$el.find(".start-energy").val('');
 		$pokeSelect.find("option").first().prop("selected", "selected");
+		
+		isCustom = false;
 	}
 	
 	// Set CP of the selected Pokemon, used in the team interface to circumvent the Battle class
@@ -245,6 +250,12 @@ function PokeSelect(element, i){
 		if(selectedPokemon){
 			selectedPokemon.setBattle(battle);
 		}
+	}
+	
+	// Return whether or not the selected Pokemon has custom options set
+	
+	this.isCustom = function(){
+		return isCustom;
 	}
 	
 	// Show or hide Pokemon select options given array of types
@@ -409,6 +420,8 @@ function PokeSelect(element, i){
 			selectedPokemon.setLevel(value);
 		}
 		
+		isCustom = true;
+		
 		self.update();
 	});
 	
@@ -423,6 +436,8 @@ function PokeSelect(element, i){
 			
 			selectedPokemon.setIV($(this).attr("iv"), value);
 		}
+		
+		isCustom = true;
 		
 		self.update();
 	});
@@ -451,6 +466,8 @@ function PokeSelect(element, i){
 			
 			selectedPokemon.setStartBuffs([attackValue, defenseValue]);
 		}
+		
+		isCustom = true;
 		
 		self.update();
 	});

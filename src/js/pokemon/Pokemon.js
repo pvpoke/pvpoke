@@ -152,7 +152,7 @@ function Pokemon(id, i, b){
 			this.initializeMove(this.chargedMovePool[i]);
 		}
 	
-		// Set best DPE charged move
+		// Set best charged move
 		
 		self.activeChargedMoves = []; // Keep a list of charged moves sorted by energy
 		
@@ -160,17 +160,28 @@ function Pokemon(id, i, b){
 			self.bestChargedMove = self.chargedMoves[0];
 			
 			for(var i = 0; i < self.chargedMoves.length; i++){
+				
 				if(self.chargedMoves[i].dpe > self.bestChargedMove.dpe){
 					self.bestChargedMove = self.chargedMoves[i];
 				}
 				
 				self.activeChargedMoves.push(self.chargedMoves[i]);
 			}
+			
+			self.activeChargedMoves.sort((a,b) => (a.energy > b.energy) ? 1 : ((b.energy > a.energy) ? -1 : 0));
+			
+			/*for(var i = 0; i < self.activeChargedMoves.length; i++){
+				var move = self.activeChargedMoves[i];
+				
+				if(move.dpe - self.bestChargedMove.dpe > 0){
+					self.bestChargedMove = self.activeChargedMoves[i];
+				}
+			}*/
+			
+
 		} else{
 			self.bestChargedMove = null;
-		}
-		
-		self.activeChargedMoves.sort((a,b) => (a.energy > b.energy) ? 1 : ((b.energy > a.energy) ? -1 : 0));		
+		}		
 	}
 	
 	// Set a moves stab and damage traits given an opponent

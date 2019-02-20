@@ -1484,6 +1484,10 @@ select, input{
 		margin-top:1em;
 	}
 	
+	p{
+		line-height:26px;
+	}
+	
 	.article-section{
 		
 		h3{
@@ -1502,6 +1506,24 @@ select, input{
 		padding: 10px;
 		border-radius: 8px;
 		color:$color-off-white;
+	}
+	
+	table{
+		border:none;
+		margin:0 auto;
+		
+		td{
+			padding:5px;
+			vertical-align: top;
+			
+			&.buff{
+				color:$color-stat-buff;
+			}
+		}
+		
+		tr:nth-of-type(2n){
+			background:rgba(0,0,0,.1);
+		}
 	}
 }
 

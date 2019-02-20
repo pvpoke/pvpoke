@@ -67,6 +67,8 @@ var RankerMaster = (function () {
 				var league = battle.getCP().toString();
 				var cup = battle.getCup().name;
 				var categories = ["leads","closers","attackers","defenders"];
+				
+				console.log(cup);
 
 				if(gm.loadedData < categories.length){
 					return;
