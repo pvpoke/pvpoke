@@ -43,12 +43,20 @@ require_once 'header.php';
 	<div class="tooltip"><h3 class="name"></h3><div class="details"></div></div>
 	
 	<div class="battle-results single">
-		<div class="tip">Hover over or tap the timeline for details</div>
+		<div class="sandbox-btn-container">
+			<div class="sandbox-btn" alt="Manually edit the timeline">
+				<span>Sandbox Mode</span>
+				<div class="btn-background"></div>
+			</div>
+		</div>
+		<div class="clear"></div>
+		
 		<div class="timeline-container">
 			<div class="timeline"></div>
 			<div class="timeline"></div>
 			<div class="tracker"></div>
 		</div>
+		<div class="tip">Hover over or tap the timeline for details</div>
 		<div class="playback section white">
 			<div class="flex">
 				<div class="playback-btn replay"></div>
@@ -265,6 +273,7 @@ require_once 'header.php';
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=18"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BattleHistogram.js?v=2"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=5"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineAction.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=19"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TeamRanker.js?v=12"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/Main.js?v=3"></script>

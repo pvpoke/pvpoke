@@ -493,8 +493,45 @@ select, input {
       height: 100%;
       border-left: 1px solid #000;
       top: 0; }
+    .battle-results .timeline-container.sandbox {
+      background-color: rgba(234, 189, 73, 0.5);
+      border: 1px solid #b99027; }
+  .battle-results .sandbox-btn-container {
+    max-width: 95%;
+    margin: 0 auto; }
+    .battle-results .sandbox-btn-container .sandbox-btn {
+      position: relative;
+      background: #333;
+      color: #eee;
+      border-radius: 12px;
+      font-size: 14px;
+      text-decoration: none;
+      cursor: pointer;
+      padding: 1px 5px 1px 28px;
+      margin-bottom: 5px;
+      float: right;
+      overflow: hidden; }
+      .battle-results .sandbox-btn-container .sandbox-btn .btn-background {
+        -webkit-transition: left 0.25s ease-out 0s;
+        -moz-transition: left 0.25s ease-out 0s;
+        -o-transition: left 0.25s ease-out 0s;
+        transition: left 0.25s ease-out 0s;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: #eabd49;
+        border-radius: 8px;
+        left: -85%;
+        top: 0; }
+      .battle-results .sandbox-btn-container .sandbox-btn span {
+        position: relative;
+        z-index: 5; }
+      .battle-results .sandbox-btn-container .sandbox-btn.active {
+        color: #333; }
+        .battle-results .sandbox-btn-container .sandbox-btn.active .btn-background {
+          left: 0; }
   .battle-results .playback {
-    max-width: 200px;
+    max-width: 300px;
     margin: 10px auto;
     padding: 2px 10px; }
     .battle-results .playback .flex {

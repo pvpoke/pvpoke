@@ -730,6 +730,56 @@ function Battle(){
 
 		return color;
 	}
+	
+	// Convert timeine to user-editable actions
+	
+	this.convertTimelineToActions = function(){
+		var actions = [];
+		
+		// Iterate through timeline events
+		
+		for(var i = 0; i < timeline.length; i++){
+			var event = timeline[i];
+			
+			// Fast moves are the default so only process charged moves
+			
+			if(event.type.indexOf("charged") > -1){
+				
+				// Determine which attack is being used
+				
+				var index = 0;
+				
+				for(var n = 0; n < pokemon[event.actor].chargedMoves.length; n++){
+					if(pokemon[event.actor].chargedMoves[n].name == event.name){
+						index = n + 1;
+					}
+				}
+				
+				// Is the very previous event a shield event?
+				
+				var shielded = false;
+				
+				if((timeline[i-1])&&(timeline[i-1].type == "shield")&&(timeline[i-1].actor != event.actor)){
+					shielded = true;
+				}
+				
+				var buffs = (event.values[3] !== undefined); // Check to see if any buff or debuff values are associated with this event
+				
+				actions.push(new TimelineAction(
+					"charged",
+					event.actor,
+					event.turn,
+					index,
+					{
+						shielded: shielded,
+						buffs: buffs
+					}
+				));
+			}
+		}
+		
+		return actions;
+	}
 
 	// Add a decision to the debug log
 

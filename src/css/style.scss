@@ -782,10 +782,59 @@ select, input{
 			border-left:1px solid #000;
 			top:0;
 		}
+		
+		&.sandbox{
+			background-color: rgba(234, 189, 73, .5);
+			border: 1px solid #b99027;
+		}
+	}
+	
+	.sandbox-btn-container{
+		max-width:95%;
+		margin: 0 auto;
+		
+		.sandbox-btn{
+			position: relative;
+			background:$color-off-black;
+			color:$color-off-white;
+			border-radius: 12px;
+			font-size:14px;
+			text-decoration: none;
+			cursor: pointer;
+			padding: 1px 5px 1px 28px;
+			margin-bottom:5px;
+			float:right;
+			overflow:hidden;
+			
+			.btn-background{
+				@include transition(left, .25s, ease-out, 0s);
+				
+				position: absolute;
+				height:100%;
+				width:100%;
+				background:$color-gold;
+				border-radius:8px;
+				left:-85%;
+				top:0;
+			}
+			
+			span{
+				position: relative;
+				z-index:5;
+			}
+			
+			&.active{
+				color:$color-off-black;
+				
+				.btn-background{
+					left:0;
+				}
+			}
+		}
 	}
 	
 	.playback{
-		max-width: 200px;
+		max-width: 300px;
     	margin: 10px auto;
 		padding: 2px 10px;
 		

@@ -28,6 +28,9 @@ var InterfaceMaster = (function () {
 			this.context = "battle";
 			this.battleMode = "single";
 			
+			this.sandbox = false;
+			this.actions = [];
+			
 			var ranker = RankerMaster.getInstance();
 			ranker.context = this.context;
 
@@ -65,6 +68,10 @@ var InterfaceMaster = (function () {
 				
 				$("body").on("click", ".rating-table a.rating.star", viewShieldBattle);
 				$("body").on("click", ".section.summary a.rating.star", viewBulkBattle);
+				
+				// Sandbox mode
+				
+				$(".sandbox-btn").click(toggleSandboxMode);
 				
 				// If get data exists, load settings
 
@@ -1040,6 +1047,21 @@ var InterfaceMaster = (function () {
 				}
 				
 				return pokeStr;
+			}
+			
+			// Toggle Sandbox Mode on or off
+			
+			function toggleSandboxMode(e){
+				$(this).toggleClass("active");
+				$(".timeline-container").toggleClass("sandbox");
+				
+				sandbox = $(this).hasClass("active");
+				
+				if(sandbox){
+					actions = battle.convertTimelineToActions();
+					
+					console.log(actions);
+				}
 			}
 		};
 		
