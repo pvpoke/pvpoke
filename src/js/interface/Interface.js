@@ -1057,6 +1057,8 @@ var InterfaceMaster = (function () {
 				
 				sandbox = $(this).hasClass("active");
 				
+				battle.setSandboxMode(sandbox);
+				
 				if(sandbox){
 					actions = battle.convertTimelineToActions();
 					
