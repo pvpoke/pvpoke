@@ -314,7 +314,15 @@ function Battle(){
 					if(! sandbox){
 						self.decideAction(poke, opponent);
 					} else{
+						// Check for actions on this turn
 						
+						for(var n = 0; n < actions.length; n++){
+							var action = actions[n];
+							
+							if((action.actor == i)&&(action.turn == turns)){
+								self.processAction(action, poke, opponent);
+							}
+						}
 					}
 					
 					
@@ -379,7 +387,7 @@ function Battle(){
 		return timeline;
 	}
 	
-	
+	// Run AI decision making to determine battle action this turn
 	
 	this.decideAction = function(poke, opponent){
 		
@@ -574,10 +582,26 @@ function Battle(){
 		}
 		
 	}
+	
+	// Process and apply a set battle action
+	
+	this.processAction = function(action, poke, opponent){
+		
+		switch(action.type){
+			case "charged":
+				
+				var move = poke.chargedMoves[action.value];
+				roundChargedMoveUsed++;
+				
+				self.useMove(poke, opponent, move, action.settings.shielded, action.settings.buffs);
+				
+				break;
+		}
+	}
 
 	// Use a move on an opposing Pokemon and produce a Timeline Event
 
-	this.useMove = function(attacker, defender, move){
+	this.useMove = function(attacker, defender, move, forceShields, forceBuff){
 
 		var type = "fast " + move.type;
 		var damage = self.calculateDamage(attacker, defender, move);
@@ -603,7 +627,7 @@ function Battle(){
 
 			// If defender has a shield, use it
 
-			if(defender.shields > 0){
+			if( ((! sandbox) || (forceShields)) && (defender.shields > 0)){
 				timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+5500, turns, [damage-1]));
 				damage = 1;
 				defender.shields--;
@@ -646,6 +670,10 @@ function Battle(){
 			// Roll against the buff chance to see if it applies
 			
 			var buffRoll = Math.random() + buffChanceModifier; // Totally not Really Random but just to get off the ground for now
+			
+			if(forceBuff){
+				buffRoll += 1;
+			}
 			
 			if((buffRoll > 1 - move.buffApplyChance)&&( (move.buffTarget == "self") || ((move.buffTarget == "opponent") && (applyDefenderBuff)) )){
 				
@@ -777,7 +805,7 @@ function Battle(){
 				
 				for(var n = 0; n < pokemon[event.actor].chargedMoves.length; n++){
 					if(pokemon[event.actor].chargedMoves[n].name == event.name){
-						index = n + 1;
+						index = n;
 					}
 				}
 				
@@ -813,10 +841,20 @@ function Battle(){
 		actions = arr;
 	}
 	
+	// Return actions
+	
+	this.getActions = function(){
+		return actions;
+	}
+	
 	// Set whether or not the simulator will follow user input
 	
 	this.setSandboxMode = function(val){
 		sandbox = val;
+		
+		if(val){
+			actions = self.convertTimelineToActions();
+		}
 	}
 
 	// Add a decision to the debug log

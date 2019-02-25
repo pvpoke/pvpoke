@@ -759,6 +759,36 @@ select, input{
 }
 
 
+.check{
+	margin-top:10px;
+	cursor: pointer;
+
+	span{
+		display: block;
+		width: 17px;
+		height: 17px;
+		border-radius: 8px;
+		background: $color-off-black;
+		border: 2px solid $color-off-black;
+		box-sizing:border-box;
+		margin: 0px 5px 0 0;
+		float: left;
+	}
+
+	&.on{
+		span{
+			@include gradient($color-gold, $color-gold-dark);
+		}
+	}
+	
+	&:hover:not(.on){
+		span{
+			background:#555;
+		}
+	}
+}
+
+
 /* BATTLE TIMELINE */
 
 .battle-results{
@@ -783,9 +813,14 @@ select, input{
 			top:0;
 		}
 		
-		&.sandbox{
+		&.sandbox-mode{
 			background-color: rgba(234, 189, 73, .5);
 			border: 1px solid #b99027;
+			
+			.item:hover{
+				@include gradient($color-gold, $color-gold-dark);
+				border-color:$color-gold-dark;
+			}
 		}
 	}
 	
@@ -993,7 +1028,7 @@ select, input{
 			@include transition(transform, 0.3s, cubic-bezier(0.64, 0.57, 0.67, 1.53), 0s);
 
 			&.fast{
-				width:4px;
+				width:7px;
 				height:8px;
 				top:-5px;
 				border:1px solid #000;
@@ -1031,10 +1066,12 @@ select, input{
 			&.tap{
 				width:6px;
 				height:2px;
-				top:-1px;
+				top:-2px;
 				background:#000;
 				cursor:initial;
-				opacity: .5;
+				border:2px solid #000;
+				border-radius:12px;
+				background:none !important;
 			}
 			
 			&.buff{
@@ -1067,6 +1104,10 @@ select, input{
 
 		}
 	}
+}
+
+.sandbox{
+	display:none;
 }
 
 /* Buff and debuff background animations */
@@ -1632,6 +1673,82 @@ select, input{
 	}
 }
 
+/* MODAL WINDOW */
+
+.modal{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,.5);
+	z-index:20;
+	padding:10px;
+	box-sizing:border-box;
+	
+	.modal-container{
+		position:relative;
+		background: rgba(255, 255, 255, 0.96);
+		margin: 0 auto;
+		max-width: 400px;
+		vertical-align: middle;
+		margin-top: 50px;
+		border-radius: 8px;
+		overflow:hidden;
+		
+		.modal-header{
+			padding:10px;
+			background:$color-gold;
+			font-size:24px;
+			font-weight: bold;
+		}
+		
+		.modal-close{
+			
+			position: absolute;
+			top:0;
+			right:0;
+			padding:10px;
+			cursor:pointer;
+			
+			&:after{
+				content:"X";
+			}
+		}
+		
+		.modal-content{
+			padding:10px;
+		}
+	}
+	
+	.move-select{
+		font-size:18px;
+		margin-bottom:10px;
+	}
+	
+	.move-stats{
+		flex-wrap:wrap;
+		justify-content: space-around;
+		text-align:center;
+		
+		&> div{
+			padding:10px;
+			
+		}
+		
+		span.stat{
+			display:block;
+			font-weight:bold;
+		}
+	}
+	
+	.button.apply{
+		margin:25px auto 0 auto;
+		display:inline-block;
+	}
+
+}
+
 
 /* TEXTS & FONTS */
 
@@ -1703,6 +1820,28 @@ a.toggle{
 	&.rock{ background-color:$color-rock-dark !important; }
 	&.steel{ background-color:$color-steel-dark !important; }
 	&.water{ background-color:$color-water-dark !important; }
+
+}
+
+.tap{
+	&.bug{ border-color:$color-bug-dark !important; }
+	&.dark{ border-color:$color-dark-dark !important; }
+	&.dragon{ border-color:$color-dragon-dark !important; }
+	&.electric{ border-color:$color-electric-dark !important; }
+	&.fairy{ border-color:$color-fairy-dark !important; }
+	&.fighting{ border-color:$color-fighting-dark !important; }
+	&.fire{ border-color:$color-fire-dark !important; }
+	&.flying{ border-color:$color-flying-dark !important; }
+	&.ghost{ border-color:$color-ghost-dark !important; }
+	&.grass{ border-color:$color-grass-dark !important; }
+	&.ground{ border-color:$color-ground-dark !important; }
+	&.ice{ border-color:$color-ice-dark !important; }
+	&.normal{ border-color:$color-normal-dark !important; }
+	&.poison{ border-color:$color-poison-dark !important; }
+	&.psychic{ border-color:$color-psychic-dark !important; }
+	&.rock{ border-color:$color-rock-dark !important; }
+	&.steel{ border-color:$color-steel-dark !important; }
+	&.water{ border-color:$color-water-dark !important; }
 
 }
 

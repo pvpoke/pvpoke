@@ -28,8 +28,10 @@ var InterfaceMaster = (function () {
 			this.context = "battle";
 			this.battleMode = "single";
 			
-			this.sandbox = false;
-			this.actions = [];
+			var sandbox = false;
+			var actions = [];
+			var sandboxPokemon;
+			var sandboxAction;
 			
 			var ranker = RankerMaster.getInstance();
 			ranker.context = this.context;
@@ -57,6 +59,7 @@ var InterfaceMaster = (function () {
 				$(".timeline-container").on("mousemove",".item",timelineEventHover);
 				$("body").on("mousemove",mainMouseMove);
 				$("body").on("mousedown",mainMouseMove);
+				$("body").on("click", ".check", checkBox);
 				
 				// Timeline playback
 				
@@ -72,6 +75,8 @@ var InterfaceMaster = (function () {
 				// Sandbox mode
 				
 				$(".sandbox-btn").click(toggleSandboxMode);
+				$(".timeline-container").on("click",".item",timelineEventClick);
+				$("body").on("change", ".modal .move-select", selectSandboxMove);
 				
 				// If get data exists, load settings
 
@@ -134,13 +139,14 @@ var InterfaceMaster = (function () {
 					var event = timeline[i];
 					var position = ((event.time+1000) / (duration+1000) * 100)+"%";
 					
-					var $item = $("<div class=\"item-container\"><div class=\"item "+event.type+"\" index=\""+i+"\" name=\""+event.name+"\" values=\""+event.values.join(',')+"\"></div></div>");
+					var $item = $("<div class=\"item-container\"><div class=\"item "+event.type+"\" index=\""+i+"\" actor=\""+event.actor+"\" name=\""+event.name+"\" values=\""+event.values.join(',')+"\"></div></div>");
 					$item.css("left", position);
 					
 					if(event.type.indexOf("tap") > -1){
-						var height = 2 + (2 * event.values[0]);
+						var height = 4 + (2 * event.values[0]);
 						$item.find(".item").css("height", height+"px");
-						$item.find(".item").css("top", -(height/2)+"px");
+						$item.find(".item").css("width", height+"px");
+						$item.find(".item").css("top", -(((height+2)/2)+1)+"px");
 					}
 					
 					$(".timeline").eq(event.actor).append($item);
@@ -1053,18 +1059,105 @@ var InterfaceMaster = (function () {
 			
 			function toggleSandboxMode(e){
 				$(this).toggleClass("active");
-				$(".timeline-container").toggleClass("sandbox");
+				$(".timeline-container").toggleClass("sandbox-mode");
+				$(".sandbox, .automated").toggle();
 				
 				sandbox = $(this).hasClass("active");
 				
 				battle.setSandboxMode(sandbox);
 				
 				if(sandbox){
-					actions = battle.convertTimelineToActions();
-					
-					console.log(actions);
+					actions = battle.getActions();
 				}
 			}
+			
+			// Clicking on a timeline event to edit
+			
+			function timelineEventClick(e){
+				
+				if(! sandbox){
+					return;
+				}
+				
+				if((! $(this).hasClass("charged"))&&(! $(this).hasClass("fast"))){
+					return;
+				}
+
+				modalWindow("Select Move", $(".sandbox-move-select"));
+				
+				// Populate move select form;
+				
+				var actor = parseInt($(this).attr("actor"));
+				var pokemon = pokeSelectors[actor].getPokemon();
+				
+				sandboxPokemon = pokemon;
+				
+				$(".modal .move-select").append("<option class=\""+pokemon.fastMove.type+"\" name=\""+pokemon.fastMove.name+"\" value=\""+pokemon.fastMove.moveId+"\">"+pokemon.fastMove.name+"</option>");
+				
+				for(var i = 0; i < pokemon.chargedMoves.length; i++){
+					$(".modal .move-select").append("<option class=\""+pokemon.chargedMoves[i].type+"\" name=\""+pokemon.chargedMoves[i].name+"\" value=\""+pokemon.chargedMoves[i].moveId+"\">"+pokemon.chargedMoves[i].name+"</option>");
+				}
+				
+				// Select clicked move
+				
+				var moveName = $(this).attr("name");
+				
+				$(".modal .move-select option[name=\""+moveName+"\"]").prop("selected", "selected");
+				$(".modal .move-select").trigger("change");
+			}
+			
+			// Change display info for sandbox move selection
+			
+			function selectSandboxMove(e){
+				
+				if(! sandboxPokemon){
+					return;
+				}
+				
+				var moveId = $(".modal .move-select option:selected").val();
+				var move;
+				
+				
+				if(moveId == sandboxPokemon.fastMove.moveId){
+					move = sandboxPokemon.fastMove;
+					
+					$(".modal .fast").show();
+					$(".modal .charged").hide();
+				} else{
+					for(var i = 0; i < sandboxPokemon.chargedMoves.length; i++){
+						if(moveId == sandboxPokemon.chargedMoves[i].moveId){
+							move = sandboxPokemon.chargedMoves[i];
+							
+							$(".modal .fast").hide();
+							$(".modal .charged").show();
+						}
+					}
+				}
+				
+				$(".modal .move-select").attr("class", "move-select " + move.type);
+				
+				// Fill in move stats
+				
+				$(".modal .stat-dmg span").html(move.damage);
+				
+				if(move.energyGain > 0){
+					$(".modal .stat-energy span").html("+"+move.energyGain);
+					$(".modal .stat-duration span").html(move.cooldown / 500);
+					$(".modal .stat-dpt span").html(Math.round( (move.damage / (move.cooldown / 500)) * 100) / 100);
+					$(".modal .stat-ept span").html(Math.round( (move.energyGain / (move.cooldown / 500)) * 100) / 100);
+				} else{
+					$(".modal .stat-energy span").html("-"+move.energy);
+					$(".modal .stat-dpe span").html(Math.round( (move.damage / move.energy) * 100) / 100);
+				}
+				
+			}
+			
+			// Turn checkboxes on and off
+			
+			function checkBox(e){
+				$(this).toggleClass("on");
+			}
+			
 		};
 		
         return object;

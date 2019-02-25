@@ -56,7 +56,8 @@ require_once 'header.php';
 			<div class="timeline"></div>
 			<div class="tracker"></div>
 		</div>
-		<div class="tip">Hover over or tap the timeline for details</div>
+		<div class="tip automated">Hover over or tap the timeline for details</div>
+		<div class="tip sandbox">Click or tap the timeline events to edit actions</div>
 		<div class="playback section white">
 			<div class="flex">
 				<div class="playback-btn replay"></div>
@@ -265,6 +266,28 @@ require_once 'header.php';
 	</div>
 </div>
 
+<!--Sandbox forms-->
+
+<div class="sandbox-move-select hide">
+	<select class="move-select"></select>
+	
+	<div class="move-stats flex">
+		<div class="stat-dmg"><span class="stat"></span> damage</div>
+		<div class="stat-energy"><span class="stat"></span> energy</div>
+		<div class="stat-duration fast"><span class="stat"></span> turn(s)</div>
+		<div class="stat-dpt fast"><span class="stat"></span> dpt</div>
+		<div class="stat-ept fast"><span class="stat"></span> ept</div>
+		<div class="stat-dpe charged"><span class="stat"></span> dpe</div>
+	</div>
+	
+	<div class="check shields charged"><span></span>Use shields</div>
+	<div class="check buffs charged"><span></span>Apply buffs/debuffs</div>
+	
+	<div class="center">
+		<div class="button apply">Apply Changes</div>
+	</div>
+</div>
+
 <!--test-->
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=41"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=9"></script>
@@ -272,6 +295,7 @@ require_once 'header.php';
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=18"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BattleHistogram.js?v=2"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=5"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineAction.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=19"></script>
