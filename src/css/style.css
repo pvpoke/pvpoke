@@ -519,9 +519,10 @@ select, input {
       border-left: 1px solid #000;
       top: 0; }
     .battle-results .timeline-container.sandbox-mode {
-      background-color: rgba(234, 189, 73, 0.5);
-      border: 1px solid #b99027; }
-      .battle-results .timeline-container.sandbox-mode .item:hover {
+      background-color: rgba(255, 240, 200, 0.75);
+      border: 1px solid #eabd49; }
+      .battle-results .timeline-container.sandbox-mode .item.charged:hover,
+      .battle-results .timeline-container.sandbox-mode .item.fast:not(.disabled):hover {
         background: #b99027;
         /* Old browsers */
         background: -moz-linear-gradient(top, #eabd49 30%, #b99027 99%) !important;
@@ -531,6 +532,10 @@ select, input {
         background: linear-gradient(to bottom, #eabd49 30%, #b99027 99%) !important;
         /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         border-color: #b99027; }
+      .battle-results .timeline-container.sandbox-mode .item.disabled {
+        background: none !important; }
+        .battle-results .timeline-container.sandbox-mode .item.disabled:hover {
+          cursor: initial; }
   .battle-results .sandbox-btn-container {
     max-width: 95%;
     margin: 0 auto; }
@@ -545,7 +550,20 @@ select, input {
       padding: 1px 5px 1px 28px;
       margin-bottom: 5px;
       float: right;
-      overflow: hidden; }
+      overflow: hidden;
+      -webkit-touch-callout: none;
+      /* iOS Safari */
+      -webkit-user-select: none;
+      /* Safari */
+      -khtml-user-select: none;
+      /* Konqueror HTML */
+      -moz-user-select: none;
+      /* Firefox */
+      -ms-user-select: none;
+      /* Internet Explorer/Edge */
+      user-select: none;
+                   /* Non-prefixed version, currently
+					  supported by Chrome and Opera */ }
       .battle-results .sandbox-btn-container .sandbox-btn .btn-background {
         -webkit-transition: left 0.25s ease-out 0s;
         -moz-transition: left 0.25s ease-out 0s;

@@ -32,6 +32,8 @@ var InterfaceMaster = (function () {
 			var actions = [];
 			var sandboxPokemon;
 			var sandboxAction;
+			var sandboxActionIndex;
+			var sandboxTurn;
 			
 			var ranker = RankerMaster.getInstance();
 			ranker.context = this.context;
@@ -77,6 +79,7 @@ var InterfaceMaster = (function () {
 				$(".sandbox-btn").click(toggleSandboxMode);
 				$(".timeline-container").on("click",".item",timelineEventClick);
 				$("body").on("change", ".modal .move-select", selectSandboxMove);
+				$("body").on("click", ".modal .button.apply", applyActionChanges);
 				
 				// If get data exists, load settings
 
@@ -127,10 +130,15 @@ var InterfaceMaster = (function () {
 			
 			// Display battle timeline
 			
-			this.displayTimeline = function(b, bulkRatings){
+			this.displayTimeline = function(b, bulkRatings, animate){
+				
+				bulkRatings = typeof bulkRatings !== 'undefined' ? bulkRatings : false;
+				animate = typeof animate !== 'undefined' ? animate : true;
 				
 				var timeline = b.getTimeline();
 				var duration = b.getDuration()+1000;
+				var pokemon = b.getPokemon();
+				var energy = [pokemon[0].startEnergy, pokemon[1].startEnergy]; // Store energy so valid editable moves can be displayed
 				
 				$(".battle-results.single").show();
 				$(".timeline").html('');
@@ -139,8 +147,34 @@ var InterfaceMaster = (function () {
 					var event = timeline[i];
 					var position = ((event.time+1000) / (duration+1000) * 100)+"%";
 					
-					var $item = $("<div class=\"item-container\"><div class=\"item "+event.type+"\" index=\""+i+"\" actor=\""+event.actor+"\" name=\""+event.name+"\" values=\""+event.values.join(',')+"\"></div></div>");
+					var $item = $("<div class=\"item-container\"><div class=\"item "+event.type+"\" index=\""+i+"\" actor=\""+event.actor+"\" turn=\""+event.turn+"\" name=\""+event.name+"\" values=\""+event.values.join(',')+"\"></div></div>");
+
 					$item.css("left", position);
+					
+					if(! animate){
+						$item.find(".item").addClass("active");
+					}
+					
+					// Calculate whether or not can be used on this turn for sandbox mode
+					
+					if(event.type.indexOf("fast") > -1){
+						
+						var canUseChargedMove = false;
+						
+						for(var n = 0; n < pokemon[event.actor].chargedMoves.length; n++){
+							if(energy[event.actor] >= pokemon[event.actor].chargedMoves[n].energy){
+								canUseChargedMove = true;
+							}
+						}
+						
+						if(! canUseChargedMove){
+							$item.find(".item").addClass("disabled");
+						}
+					}
+					
+					if(event.values[1]){
+						energy[event.actor] += event.values[1];
+					}
 					
 					if(event.type.indexOf("tap") > -1){
 						var height = 4 + (2 * event.values[0]);
@@ -205,21 +239,24 @@ var InterfaceMaster = (function () {
 				}
 
 				// Animate timelines
+				
+				if(animate){
 
-				$(".timeline .item").removeClass("active");
-				
-				var intMs = Math.floor(duration / 62);
-				
-				self.animateTimeline(-intMs * 15, intMs);
+					$(".timeline .item").removeClass("active");
+
+					var intMs = Math.floor(duration / 62);
+
+					self.animateTimeline(-intMs * 15, intMs);
+				}
 				
 				// Generate and display share link
-				
+
 				var cp = b.getCP();
 				var pokes = b.getPokemon();
-				
+
 				var pokeStrs = [];
 				var moveStrs = [];
-				
+
 				for(var i = 0; i < pokes.length; i++){
 					pokeStrs.push(generateURLPokeStr(pokes[i], i));
 					moveStrs.push(generateURLMoveStr(pokes[i]));
@@ -1079,6 +1116,10 @@ var InterfaceMaster = (function () {
 					return;
 				}
 				
+				if($(this).hasClass("disabled")){
+					return;
+				}
+				
 				if((! $(this).hasClass("charged"))&&(! $(this).hasClass("fast"))){
 					return;
 				}
@@ -1104,6 +1145,28 @@ var InterfaceMaster = (function () {
 				
 				$(".modal .move-select option[name=\""+moveName+"\"]").prop("selected", "selected");
 				$(".modal .move-select").trigger("change");
+				
+				// Identify corresponding action
+				
+				sandboxAction = null;
+				sandboxTurn = parseInt($(this).attr("turn"));
+				
+				if($(this).hasClass("charged")){
+					for(var i = 0; i < actions.length; i++){
+						if((actions[i].actor == actor)&&(actions[i].turn == parseInt($(this).attr("turn")))){
+							sandboxAction = actions[i];
+							sandboxActionIndex = i;
+						}
+					}
+					
+					if(sandboxAction.settings.shielded){
+						$(".modal .check.shields").addClass("on");
+					}
+					
+					if(sandboxAction.settings.buffs){
+						$(".modal .check.buffs").addClass("on");
+					}
+				}
 			}
 			
 			// Change display info for sandbox move selection
@@ -1148,8 +1211,72 @@ var InterfaceMaster = (function () {
 				} else{
 					$(".modal .stat-energy span").html("-"+move.energy);
 					$(".modal .stat-dpe span").html(Math.round( (move.damage / move.energy) * 100) / 100);
+				}	
+			}
+			
+			// Submit sandbox action changes
+			
+			function applyActionChanges(e){
+				
+				// If this is changing a charged move to a fast move, remove the action
+				
+				var selectedIndex = $(".modal .move-select")[0].selectedIndex;
+				
+				if((sandboxAction)&&(selectedIndex == 0)){
+					for(var i = 0; i < actions.length; i++){
+						if(actions[i] == sandboxAction){
+							actions.splice(i, 1);
+							break;
+						}
+					}
 				}
 				
+				// Charged move selection
+				
+				if(selectedIndex > 0){
+					
+					var shielded = $(".modal .check.shields").hasClass("on");
+					
+					if(! sandboxAction){
+
+						// Insert new action
+
+						actions.push(new TimelineAction(
+							"charged",
+							sandboxPokemon.index,
+							sandboxTurn,
+							selectedIndex-1,
+							{
+								shielded: $(".modal .check.shields").hasClass("on"),
+								buffs: $(".modal .check.buffs").hasClass("on")
+							}
+						));
+					} else{
+						
+						// Modify existing action
+						
+						actions[sandboxActionIndex] = new TimelineAction(
+							"charged",
+							sandboxPokemon.index,
+							sandboxTurn,
+							selectedIndex-1,
+							{
+								shielded: $(".modal .check.shields").hasClass("on"),
+								buffs: $(".modal .check.buffs").hasClass("on")
+							}
+						);
+						
+					}
+				}
+				
+				// Rerun battle
+				
+				closeModalWindow();
+				
+				battle.setActions(actions);
+				battle.simulate();
+				self.displayTimeline(battle, false, false);
+
 			}
 			
 			// Turn checkboxes on and off

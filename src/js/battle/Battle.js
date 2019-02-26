@@ -591,9 +591,17 @@ function Battle(){
 			case "charged":
 				
 				var move = poke.chargedMoves[action.value];
-				roundChargedMoveUsed++;
+				
+				// Validate this move can be used
+				
+				if(poke.energy < move.energy){
+					return;
+				}
 				
 				self.useMove(poke, opponent, move, action.settings.shielded, action.settings.buffs);
+				
+				chargedMoveUsed = true;
+				roundChargedMoveUsed++;
 				
 				break;
 		}
@@ -627,7 +635,7 @@ function Battle(){
 
 			// If defender has a shield, use it
 
-			if( ((! sandbox) || (forceShields)) && (defender.shields > 0)){
+			if( ((sandbox) && (forceShields)) || ((! sandbox) && (defender.shields > 0)) ){
 				timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+5500, turns, [damage-1]));
 				damage = 1;
 				defender.shields--;

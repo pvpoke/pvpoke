@@ -814,12 +814,21 @@ select, input{
 		}
 		
 		&.sandbox-mode{
-			background-color: rgba(234, 189, 73, .5);
-			border: 1px solid #b99027;
+			background-color: rgba(255, 240, 200, 0.75);
+			border: 1px solid $color-gold;
 			
-			.item:hover{
+			.item.charged:hover,
+			.item.fast:not(.disabled):hover{
 				@include gradient($color-gold, $color-gold-dark);
 				border-color:$color-gold-dark;
+			}
+			
+			.item.disabled{
+				background:none !important;
+				
+				&:hover{
+					cursor:initial;
+				}
 			}
 		}
 	}
@@ -840,6 +849,14 @@ select, input{
 			margin-bottom:5px;
 			float:right;
 			overflow:hidden;
+
+		  -webkit-touch-callout: none; /* iOS Safari */
+			-webkit-user-select: none; /* Safari */
+			 -khtml-user-select: none; /* Konqueror HTML */
+			   -moz-user-select: none; /* Firefox */
+				-ms-user-select: none; /* Internet Explorer/Edge */
+					user-select: none; /* Non-prefixed version, currently
+										  supported by Chrome and Opera */
 			
 			.btn-background{
 				@include transition(left, .25s, ease-out, 0s);

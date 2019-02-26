@@ -18,13 +18,17 @@ function modalWindow(header, content){
 // Close the window on clicking the X or clicking outside the window
 
 $("body").on("click", ".modal-close", function(e){
-	$(".modal").remove();
+	closeModalWindow();
 });
 
 
 $("body").on("click", ".modal", function(e){
 	
 	if($(".modal-container:hover").length == 0){
-		$(".modal").remove();
+		closeModalWindow();
 	}
 });
+
+function closeModalWindow(){
+	$(".modal").remove();
+}
