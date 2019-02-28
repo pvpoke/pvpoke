@@ -828,7 +828,8 @@ select, input {
   padding: 5px;
   width: 100px;
   text-align: left;
-  z-index: 20; }
+  z-index: 20;
+  pointer-events: none; }
   .tooltip.faint {
     background: #ff0000; }
   .tooltip.shield {

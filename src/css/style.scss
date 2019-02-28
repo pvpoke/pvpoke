@@ -1192,6 +1192,7 @@ select, input{
 	width:100px;
 	text-align: left;
 	z-index:20;
+	pointer-events: none;
 
 	&.faint{
 		background:$color-faint;

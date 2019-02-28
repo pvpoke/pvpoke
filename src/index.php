@@ -22,45 +22,19 @@
 	
 	<!--Update section for updates-->
 	<h3>What's New</h3>
-	<p>Stat buffs and debuffs are here! Stat buff mechanics are now working on the following pages:</p>
-	<ul>
-		<li>Single battles</li>
-		<li>Multi battles (as a preset only)</li>
-		<li>Team Builder (as a preset only)</li>
-	</ul>
-	<p>Please note that stat buffing moves and mechanics are currently <i>not</i> implemented in the following:</p>
-	<ul>
-		<li>Rankings</li>
-		<li>Multi battle simulations</li>
-		<li>Team Builder simulations</li>
-		<li>Auto move selection and use</li>
-		<ul>
-			<li>Optimal play involving stat-buffing moves still needs to be analyzed, so currently Pokemon aren't any more likely to select or use stat-buffing moves than before. If you want to look at these moves in particular, consider selecting only these moves.</li>
-		</ul>
-	</ul>
 	
-	<p></p>
-	<p>Pardon the dust, and thanks for your patience as these changes are implemented throughout the site!</p>
-	
-	<h4>v1.4.2 (February 20, 2019)</h4>
+	<h4>v1.5.0 (February 28, 2019)</h4>
 	<ul>
-		<li>Custom level, IVs, and stat modifiers now persist in shared links</li>
-		<li>Removed Rayquaza from Great League and Tempest Cup</li>
-	</ul>
-	
-	<h4>v1.4.0 (February 15, 2019)</h4>
-	<ul>
-		<li>Initial implementation for stat-buffing moves (see above)</li>
-		<li>Option to enter starting stat buffs/debuffs in the "Advanced" stat section (note that at this time these settings won't carry over when sharing links, sorry for the inconvenience!)</li>
-		<li>Ranking algorithm updates:</li>
+		<li>Sandbox Mode</li>
 		<ul>
-			<li>Pokemon are now excluded by minimum base stat product instead of minimum CP. This includes Pokemon like Wobbuffet who didn't meet the previous CP cutoff but have similar bast stat products to viable Pokemon.</li>
-			<li>Pokemon in the Lead, Attacker, and Defender categories are now awarded extra points based on the number of shields they both keep and remove. This emphasizes Pokemon who use fewer shields or remove more shields when they win.</li>
+			<li>Edit the timeline with custom actions</li>
+			<li>Set exactly when moves and shields are used</li>
 		</ul>
-		<li>Pokemon Select search has been tweaked to select the first matching Pokemon</li>
+		<li>Timeline now has a zoom option in the playback controls</li>
 		<ul>
-			<li>This ensures Pokemon that come alphabetically first are selected (e.g. Giratina Altered instead of Giratina Origin)</li>
+			<li>This makes it easier to inspect and interact with extended battles</li>
 		</ul>
+		<li>Page title now updates to the current battle</li>
 	</ul>
 	
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>

@@ -36,6 +36,8 @@ var InterfaceMaster = (function () {
 			var sandboxActionIndex;
 			var sandboxTurn;
 			
+			var settingGetParams = false; // Flag to keep certain functions from running
+			
 			var ranker = RankerMaster.getInstance();
 			ranker.context = this.context;
 
@@ -81,7 +83,7 @@ var InterfaceMaster = (function () {
 				$(".sandbox-btn").click(toggleSandboxMode);
 				$(".timeline-container").on("click",".item",timelineEventClick);
 				$("body").on("change", ".modal .move-select", selectSandboxMove);
-				$("body").on("click", ".modal .button.apply", applyActionChanges);
+				$("body").on("mousedown", ".modal .button.apply", applyActionChanges);
 				$(".sandbox.clear-btn").click(clearSandboxClick);
 				$("body").on("click", ".modal .sandbox-clear-confirm .button", confirmClearSandbox);
 				
@@ -307,6 +309,10 @@ var InterfaceMaster = (function () {
 					var link = host + battleStr;
 
 					$(".share-link input").val(link);
+					
+					// Set document title
+
+					document.title = "Battle - " + pokes[0].speciesName + " vs. " + pokes[1].speciesName + " | PvPoke";
 
 					// Push state to browser history so it can be navigated, only if not from URL parameters
 
@@ -360,30 +366,38 @@ var InterfaceMaster = (function () {
 				
 				if(sandbox){
 					// Convert valid actions into parseable string
-					var actionStr = "";
-					
-					for(var i = 0; i < actions.length; i++){
-						if(actions[i].valid){
-							var str = "";
-							
-							if(actionStr != ""){
-								str += "-";
-							}
-							
-							str += actions[i].turn + "." + actions[i].actor + actions[i].value + (actions[i].settings.shielded ? 1 : 0) + (actions[i].settings.buffs ? 1 : 0);
-							
-							actionStr += str;
-						}
-					}
-					
-					if(actionStr == ""){
-						actionStr = "0";
-					}
+					var actionStr = self.generateActionStr();
 					
 					battleStr += actionStr + "/";
 				}
 				
 				return battleStr;
+			}
+			
+			// Return a concatenated string of actions
+			
+			this.generateActionStr = function(){
+				var actionStr = "";
+
+				for(var i = 0; i < actions.length; i++){
+					if(actions[i].valid){
+						var str = "";
+
+						if(actionStr != ""){
+							str += "-";
+						}
+
+						str += actions[i].turn + ".1" + actions[i].actor + actions[i].value + (actions[i].settings.shielded ? 1 : 0) + (actions[i].settings.buffs ? 1 : 0);
+
+						actionStr += str;
+					}
+				}
+
+				if(actionStr == ""){
+					actionStr = "0";
+				}
+				
+				return actionStr;
 			}
 			
 			// Animate timeline playback given a start time and rate in ms
@@ -723,9 +737,12 @@ var InterfaceMaster = (function () {
 					return false;
 				}
 				
+				settingGetParams = true;
+				
 				// Cycle through parameters and set them
 				
 				for(var key in get){
+					
 					if(get.hasOwnProperty(key)){
 						
 						var val = get[key];
@@ -858,7 +875,49 @@ var InterfaceMaster = (function () {
 								}
 
 								break;
-																
+								
+								
+							case "sandbox":
+								if(! sandbox){
+									$(".sandbox-btn").trigger("click");
+								}
+								break;
+
+							case "a":
+								// Parse action string into custom actions
+								
+								actions = [];
+								
+								if(val != "0"){
+									var arr = val.split("-");
+									
+									for(var i = 0; i < arr.length; i++){
+										
+										// Individual actions are formatted like "5.10010"
+										
+										var turnArr = arr[i].split(".");
+										var turn = parseInt(turnArr[0]);
+										var str = turnArr[1];
+										
+										var paramsArr = str.split("");
+										
+										actions.push(new TimelineAction(
+											"charged",
+											parseInt(paramsArr[1]),
+											turn,
+											parseInt(paramsArr[2]),
+											{
+												shielded: (parseInt(paramsArr[3]) == 1 ? true : false),
+												buffs: (parseInt(paramsArr[4]) == 1 ? true : false)
+											}
+										));
+										
+									}
+									
+									battle.setActions(actions);
+								}
+								
+								break;								
 								
 							case "mode":
 								$(".mode-select option[value=\""+val+"\"]").prop("selected","selected");
@@ -885,10 +944,81 @@ var InterfaceMaster = (function () {
 				for(var i = 0; i < pokeSelectors.length; i++){
 					pokeSelectors[i].update();
 				}
+				
+				if((sandbox)&&(! get.hasOwnProperty("sandbox"))){
+					$(".sandbox-btn").trigger("click");
+				}
+				
+				settingGetParams = false;
 					
 				// Auto run the battle
 
 				$(".battle-btn").trigger("click");
+				
+				if(sandbox){
+					self.runSandboxSim();
+				}
+				
+			}
+			
+			// Clear the sandbox timeline
+			
+			this.resetSandbox = function(){
+				if((sandbox)&&(! settingGetParams)){
+					actions = [];
+					self.runSandboxSim();
+				}
+			}
+			
+			this.runSandboxSim = function(){
+				
+				if(! sandbox){
+					return;
+				}
+				
+				
+				battle.setActions(actions);
+				battle.simulate();
+				self.displayTimeline(battle, false, false);
+				self.generateMatchupDetails(battle, false);
+				
+				// Retrieve any invalid actions
+				
+				actions = battle.getActions();
+				
+				// Generate and display share link
+				
+				var pokes = battle.getPokemon();
+				var cp = battle.getCP();
+				var moveStrs = [];
+
+				for(var i = 0; i < pokes.length; i++){
+					moveStrs.push(generateURLMoveStr(pokes[i]));
+				}
+				
+				var battleStr = self.generateSingleBattleLinkString(true);
+				
+				var link = host + battleStr;
+				
+				$(".share-link input").val(link);
+				
+				// Push state to browser history so it can be navigated, only if not from URL parameters
+				
+				if(get){
+					get = false;
+					
+					return;
+				}
+				
+				// Set document title
+				
+				document.title = "Battle - " + pokes[0].speciesName + " vs. " + pokes[1].speciesName + " | PvPoke";
+				
+				var url = webRoot+battleStr;
+				
+				var data = {cp: cp, p1: pokes[0].speciesId, p2: pokes[1].speciesId, s: pokes[0].startingShields+""+pokes[1].startingShields, m1: moveStrs[0], m2: moveStrs[1], h1: pokes[0].startHp, h2: pokes[1].startHp, e1: pokes[0].startEnergy, e2: pokes[1].startEnergy, sandbox: 1, a: self.generateActionStr() };
+				
+				window.history.pushState(data, "Battle", url);
 			}
 			
 			// Event handler for changing the league select
@@ -946,7 +1076,11 @@ var InterfaceMaster = (function () {
 							
 							// Does this matchup contain buffs or debuffs?
 							
-							var usesBuffs = ((pokeSelectors[0].getPokemon().hasBuffMove()) || (pokeSelectors[1].getPokemon().hasBuffMove()))
+							var usesBuffs = ((pokeSelectors[0].getPokemon().hasBuffMove()) || (pokeSelectors[1].getPokemon().hasBuffMove()));
+							
+							if(sandbox){
+								usesBuffs = false;
+							}
 							
 							if(! usesBuffs){
 								
@@ -1245,6 +1379,8 @@ var InterfaceMaster = (function () {
 					$(".battle-btn").css("visibility","hidden");
 				} else{
 					// Update both Pokemon selectors
+					
+					$(".shield-select").trigger("change");
 
 					for(var i = 0; i < pokeSelectors.length; i++){
 						pokeSelectors[i].update();
@@ -1270,7 +1406,7 @@ var InterfaceMaster = (function () {
 					return;
 				}
 
-				modalWindow("Select Move", $(".sandbox-move-select"));
+				modalWindow("Select Move (Turn "+$(this).attr("turn")+")", $(".sandbox-move-select"));
 				
 				// Populate move select form;
 				
@@ -1431,48 +1567,7 @@ var InterfaceMaster = (function () {
 				
 				closeModalWindow();
 				
-				runSandboxSim();
-			}
-			
-			function runSandboxSim(){
-				battle.setActions(actions);
-				battle.simulate();
-				self.displayTimeline(battle, false, false);
-				self.generateMatchupDetails(battle, false);
-				
-				// Retrieve any invalid actions
-				
-				actions = battle.getActions();
-				
-				// Generate and display share link
-				
-				var pokes = battle.getPokemon();
-				var cp = battle.getCP();
-				var moveStrs = [];
-
-				for(var i = 0; i < pokes.length; i++){
-					moveStrs.push(generateURLMoveStr(pokes[i]));
-				}
-				
-				var battleStr = self.generateSingleBattleLinkString(true);
-				
-				var link = host + battleStr;
-				
-				$(".share-link input").val(link);
-				
-				// Push state to browser history so it can be navigated, only if not from URL parameters
-				
-				if(get){
-					get = false;
-					
-					return;
-				}
-				
-				var url = webRoot+battleStr;
-				
-				var data = {cp: cp, p1: pokes[0].speciesId, p2: pokes[1].speciesId, s: pokes[0].startingShields+""+pokes[1].startingShields, m1: moveStrs[0], m2: moveStrs[1], h1: pokes[0].startHp, h2: pokes[1].startHp, e1: pokes[0].startEnergy, e2: pokes[1].startEnergy };
-				
-				window.history.pushState(data, "Battle", url);
+				self.runSandboxSim();
 			}
 			
 			// Bring up the confirmation window for clearing the timeline
@@ -1488,9 +1583,7 @@ var InterfaceMaster = (function () {
 				if($(this).hasClass("no")){
 					closeModalWindow();
 				} else{
-					actions = [];
-					runSandboxSim();
-					
+					self.resetSandbox();
 					closeModalWindow();
 				}
 				

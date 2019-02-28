@@ -319,16 +319,15 @@ function Battle(){
 						for(var n = 0; n < actions.length; n++){
 							var action = actions[n];
 							
-							if((action.actor == i)&&(action.turn == turns)){
+							if((action.actor == i)&&(action.turn == turns)&&(poke.chargedMoves.length > action.value)){
 								
 								var move = poke.chargedMoves[action.value];
 								
 								if(poke.energy >= move.energy){
+									action.valid = true;
+									
 									self.processAction(action, poke, opponent);
-								} else{
-									action.valid = false;
 								}
-								
 							}
 						}
 					}
@@ -379,8 +378,6 @@ function Battle(){
 			}
 
 		}
-		
-		console.log(actions);
 		
 		battleRatings = [pokemon[0].getBattleRating(), pokemon[1].getBattleRating()];
 		
@@ -859,6 +856,12 @@ function Battle(){
 	
 	this.setActions = function(arr){
 		actions = arr;
+		
+		// Reset action validation
+		
+		for(var i = 0; i < actions.length; i++){
+			actions[i].valid = false;
+		}
 	}
 	
 	// Return actions

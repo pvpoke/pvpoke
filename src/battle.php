@@ -287,7 +287,7 @@ require_once 'header.php';
 		<div class="stat-dpe charged"><span class="stat"></span> dpe</div>
 	</div>
 	
-	<div class="check shields charged"><span></span>Use shields</div>
+	<div class="check shields charged"><span></span>Shield this attack</div>
 	<div class="check buffs charged"><span></span>Apply buffs/debuffs</div>
 	
 	<div class="center">

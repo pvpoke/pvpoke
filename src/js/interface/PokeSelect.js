@@ -195,6 +195,10 @@ function PokeSelect(element, i){
 		$el.find(".starting-health").val(selectedPokemon.stats.hp);
 		
 		isCustom = false;
+		
+		if(interface.resetSandbox){
+			interface.resetSandbox();
+		}
 	}
 	
 	// Remove the currently selected Pokemon
@@ -388,6 +392,10 @@ function PokeSelect(element, i){
 		selectedPokemon.setStartHp(value);
 		
 		self.update();
+		
+		if(interface.runSandboxSim){
+			interface.runSandboxSim();
+		}
 	});
 	
 	// Enter starting energy
@@ -399,6 +407,10 @@ function PokeSelect(element, i){
 		selectedPokemon.setStartEnergy(value);
 		
 		self.update();
+		
+		if(interface.runSandboxSim){
+			interface.runSandboxSim();
+		}
 	});
 	
 	// Toggle the advanced options drawer
