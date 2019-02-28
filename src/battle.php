@@ -44,14 +44,15 @@ require_once 'header.php';
 	
 	<div class="battle-results single">
 		<div class="sandbox-btn-container">
-			<div class="sandbox-btn" alt="Manually edit the timeline">
+			<div class="sandbox-btn" title="Manually edit the timeline">
 				<span>Sandbox Mode</span>
 				<div class="btn-background"></div>
 			</div>
+			<div class="sandbox clear-btn" title="Clear Timeline"></div>
 		</div>
 		<div class="clear"></div>
 		
-		<div class="timeline-container">
+		<div class="timeline-container scale">
 			<div class="timeline"></div>
 			<div class="timeline"></div>
 			<div class="tracker"></div>
@@ -67,6 +68,10 @@ require_once 'header.php';
 					<option value="4">4x speed</option>
 					<option value="8" selected >8x speed</option>
 					<option value="16">16x speed</option>
+				</select>
+				<select class="playback-scale">
+					<option value="fit" selected>Scale to fit</option>
+					<option value="zoom">Zoom in</option>
 				</select>
 			</div>
 			<div class="disclaimer">* Results may differ from actual gameplay depending on connectivity, device, player decisions, or other factors.</div>
@@ -85,41 +90,43 @@ require_once 'header.php';
 			<a class="toggle active" href="#">Matchup Details <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 			
 			<div class="toggle-content active">
-				<h2 class="center"><span class="name-1">Pokemon</span>'s Matchups vs. <span class="name-2">Pokemon</span></h2>
-				<table class="rating-table" cellspacing="0">
-					<tr>
-						<td></td>
-						<td></td>
-						<td colspan="3"><span class="name name-2">Pokemon</span></td>
-					</tr>
-					<tr>
-						<td></td>
-						<td></td>
-						<td><span class="shield shield-none"></span></td>
-						<td><span class="shield"></span></td>
-						<td><span class="shield shield-double"></span></td>
-					</tr>
-					<tr>
-						<td rowspan="3"><span class="name name-1">Pokemon</span></td>
-						<td><span class="shield shield-none"></span></td>
-						<td><a href="#" class="rating star battle-0-0" shields="0,0">100</a></td>
-						<td><a href="#" class="rating star battle-1-0" shields="1,0">100</a></td>
-						<td><a href="#" class="rating star battle-2-0" shields="2,0">100</a></td>
-					</tr>
-					<tr>
-						<td><span class="shield"></span></td>
-						<td><a href="#" class="rating star battle-0-1" shields="0,1">100</a></td>
-						<td><a href="#" class="rating star battle-1-1" shields="1,1">100</a></td>
-						<td><a href="#" class="rating star battle-2-1" shields="2,1">100</a></td>
-					</tr>
-					<tr>
-						<td><span class="shield shield-double"></td>
-						<td><a href="#" class="rating star battle-0-2" shields="0,2">100</a></td>
-						<td><a href="#" class="rating star battle-1-2" shields="1,2">100</a></td>
-						<td><a href="#" class="rating star battle-2-2" shields="2,2">100</a></td>
-					</tr>
-				</table>
-				<p class="center">Click or tap to view battles.</p>
+				<div class="matchup-detail-section">
+					<h2 class="center"><span class="name-1">Pokemon</span>'s Matchups vs. <span class="name-2">Pokemon</span></h2>
+					<table class="rating-table" cellspacing="0">
+						<tr>
+							<td></td>
+							<td></td>
+							<td colspan="3"><span class="name name-2">Pokemon</span></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td><span class="shield shield-none"></span></td>
+							<td><span class="shield"></span></td>
+							<td><span class="shield shield-double"></span></td>
+						</tr>
+						<tr>
+							<td rowspan="3"><span class="name name-1">Pokemon</span></td>
+							<td><span class="shield shield-none"></span></td>
+							<td><a href="#" class="rating star battle-0-0" shields="0,0">100</a></td>
+							<td><a href="#" class="rating star battle-1-0" shields="1,0">100</a></td>
+							<td><a href="#" class="rating star battle-2-0" shields="2,0">100</a></td>
+						</tr>
+						<tr>
+							<td><span class="shield"></span></td>
+							<td><a href="#" class="rating star battle-0-1" shields="0,1">100</a></td>
+							<td><a href="#" class="rating star battle-1-1" shields="1,1">100</a></td>
+							<td><a href="#" class="rating star battle-2-1" shields="2,1">100</a></td>
+						</tr>
+						<tr>
+							<td><span class="shield shield-double"></td>
+							<td><a href="#" class="rating star battle-0-2" shields="0,2">100</a></td>
+							<td><a href="#" class="rating star battle-1-2" shields="1,2">100</a></td>
+							<td><a href="#" class="rating star battle-2-2" shields="2,2">100</a></td>
+						</tr>
+					</table>
+					<p class="center">Click or tap to view battles.</p>
+				</div>
 				
 				<h2 class="center">Battle Stats</h2>
 				
@@ -285,6 +292,15 @@ require_once 'header.php';
 	
 	<div class="center">
 		<div class="button apply">Apply Changes</div>
+	</div>
+</div>
+
+<div class="sandbox-clear-confirm hide">
+	<p>Clear all custom actions from the timeline? This will reset the battle to Fast Moves only so you can start from a clean slate.</p>
+	
+	<div class="center flex">
+		<div class="button yes">Yes</div>
+		<div class="button no">No</div>
 	</div>
 </div>
 

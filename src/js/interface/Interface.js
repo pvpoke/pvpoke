@@ -20,6 +20,7 @@ var InterfaceMaster = (function () {
 			
 			var time = 0;
 			var timelineInterval;
+			var timelineScaleMode = "fit";
 			
 			var histogram;
 			var bulkHistogram;
@@ -68,6 +69,7 @@ var InterfaceMaster = (function () {
 				$(".playback .play").click(timelinePlay);
 				$(".playback .replay").click(timelineReplay);
 				$(".playback-speed").change(timelineSpeedChange);
+				$(".playback-scale").change(timelineScaleChange);
 				
 				// Details battle viewing
 				
@@ -80,6 +82,8 @@ var InterfaceMaster = (function () {
 				$(".timeline-container").on("click",".item",timelineEventClick);
 				$("body").on("change", ".modal .move-select", selectSandboxMove);
 				$("body").on("click", ".modal .button.apply", applyActionChanges);
+				$(".sandbox.clear-btn").click(clearSandboxClick);
+				$("body").on("click", ".modal .sandbox-clear-confirm .button", confirmClearSandbox);
 				
 				// If get data exists, load settings
 
@@ -124,7 +128,26 @@ var InterfaceMaster = (function () {
 					
 				}
 				
-				var left = ((time+1000) / (battle.getDuration()+2000) * 100)+"%";
+				var left;
+				
+				if(timelineScaleMode == "fit"){
+					left = ((time+1000) / (battle.getDuration()+2000) * 100)+"%";
+				} else if(timelineScaleMode == "zoom"){
+					left = (((time+1000) / 1000)*50);
+					
+					if(animating){
+						if(left > $(".timeline-container").scrollLeft() - 100){
+							$(".timeline-container").scrollLeft((left - $(".timeline-container").width())+100);
+						}
+
+						if(left < $(".timeline-container").scrollLeft()){
+							$(".timeline-container").scrollLeft(left)
+						}
+					}
+					
+					left += "px";
+					
+				}
 				$(".timeline-container .tracker").css("left", left);
 			}
 			
@@ -147,7 +170,11 @@ var InterfaceMaster = (function () {
 					var event = timeline[i];
 					var position = ((event.time+1000) / (duration+1000) * 100)+"%";
 					
-					var $item = $("<div class=\"item-container\"><div class=\"item "+event.type+"\" index=\""+i+"\" actor=\""+event.actor+"\" turn=\""+event.turn+"\" name=\""+event.name+"\" values=\""+event.values.join(',')+"\"></div></div>");
+					if(timelineScaleMode == "zoom"){
+						position = ( ((event.time+1000)/1000)*50)+"px";
+					}
+					
+					var $item = $("<div class=\"item-container\"><div class=\"item "+event.type+"\" index=\""+i+"\" actor=\""+event.actor+"\" turn=\""+event.turn+"\" name=\""+event.name+"\" energy=\""+energy[event.actor]+"\" values=\""+event.values.join(',')+"\"></div></div>");
 
 					$item.css("left", position);
 					
@@ -186,6 +213,16 @@ var InterfaceMaster = (function () {
 					$(".timeline").eq(event.actor).append($item);
 				}
 				
+				// Scale both timelines
+				
+				if(timelineScaleMode == "fit"){
+					$(".timeline").css("width","100%");
+				} else if(timelineScaleMode == "zoom"){
+					var width = $(".timeline-container .item-container").last().position().left;
+					
+					$(".timeline").css("width",(width+100)+"px");
+				}
+				
 				for(var i = 0; i < pokeSelectors.length; i++){
 					pokeSelectors[i].update();
 				}
@@ -211,7 +248,9 @@ var InterfaceMaster = (function () {
 					
 					var pokemon = pokeSelectors[0].getPokemon();
 					
-					$(".battle-results .summary").append("<div class=\"disclaimer\">This matchup contains moves that have a chance to buff or debuff stats. These results are generated from 500 simulations, and may vary.</div>");
+					$(".battle-results .summary").append("<div class=\"bulk-summary\"></div>");
+					
+					$(".battle-results .bulk-summary").append("<div class=\"disclaimer\">This matchup contains moves that have a chance to buff or debuff stats. These results are generated from 500 simulations, and may vary.</div>");
 					
 					var bestRating = bulkResults.best.getBattleRatings()[0];
 					var bestColor = battle.getRatingColor(bestRating);
@@ -222,19 +261,19 @@ var InterfaceMaster = (function () {
 					var worstRating = bulkResults.worst.getBattleRatings()[0];
 					var worstColor = battle.getRatingColor(worstRating);
 
-					$(".battle-results .summary").append("<p>"+pokemon.speciesName+"'s best battle rating is <a href=\"#\" class=\"rating star best\">"+bestRating+"</a></p>");
-					$(".battle-results .summary").append("<p>"+pokemon.speciesName+"'s median battle rating is <a href=\"#\" class=\"rating star median\">"+medianRating+"</a></p>");
-					$(".battle-results .summary").append("<p>"+pokemon.speciesName+"'s worst battle rating is <a href=\"#\" class=\"rating star worst\">"+worstRating+"</a></p>");
+					$(".battle-results .bulk-summary").append("<p>"+pokemon.speciesName+"'s best battle rating is <a href=\"#\" class=\"rating star best\">"+bestRating+"</a></p>");
+					$(".battle-results .bulk-summary").append("<p>"+pokemon.speciesName+"'s median battle rating is <a href=\"#\" class=\"rating star median\">"+medianRating+"</a></p>");
+					$(".battle-results .bulk-summary").append("<p>"+pokemon.speciesName+"'s worst battle rating is <a href=\"#\" class=\"rating star worst\">"+worstRating+"</a></p>");
 					
-					$(".battle-results .summary .rating").eq(1).css("background-color", "rgb("+bestColor[0]+","+bestColor[1]+","+bestColor[2]+")");
-					$(".battle-results .summary .rating").eq(2).css("background-color", "rgb("+medianColor[0]+","+medianColor[1]+","+medianColor[2]+")");
-					$(".battle-results .summary .rating").eq(3).css("background-color", "rgb("+worstColor[0]+","+worstColor[1]+","+worstColor[2]+")");
+					$(".battle-results .bulk-summary .rating").eq(0).css("background-color", "rgb("+bestColor[0]+","+bestColor[1]+","+bestColor[2]+")");
+					$(".battle-results .bulk-summary .rating").eq(1).css("background-color", "rgb("+medianColor[0]+","+medianColor[1]+","+medianColor[2]+")");
+					$(".battle-results .bulk-summary .rating").eq(2).css("background-color", "rgb("+worstColor[0]+","+worstColor[1]+","+worstColor[2]+")");
 
-					$(".battle-results .summary").append("<div class=\"histograms\"><div class=\"histogram\"></div></div>");
+					$(".battle-results .bulk-summary").append("<div class=\"histograms\"><div class=\"histogram\"></div></div>");
 
 					// Generate and display histogram
 
-					bulkHistogram = new BattleHistogram($(".battle-results .summary .histogram"));
+					bulkHistogram = new BattleHistogram($(".battle-results .bulk-summary .histogram"));
 					bulkHistogram.generate(pokeSelectors[0].getPokemon(), bulkRatings, 400);
 				}
 
@@ -247,12 +286,55 @@ var InterfaceMaster = (function () {
 					var intMs = Math.floor(duration / 62);
 
 					self.animateTimeline(-intMs * 15, intMs);
+				} else{
+					// Reset timeline visual properties
+
+					self.displayCumulativeDamage(battle.getTimeline(), battle.getDuration());
 				}
 				
 				// Generate and display share link
+				
+				if(! sandbox){
+					var pokes = b.getPokemon();
+					var cp = b.getCP();
+					var moveStrs = [];
 
-				var cp = b.getCP();
-				var pokes = b.getPokemon();
+					for(var i = 0; i < pokes.length; i++){
+						moveStrs.push(generateURLMoveStr(pokes[i]));
+					}
+
+					var battleStr = self.generateSingleBattleLinkString(false);
+					var link = host + battleStr;
+
+					$(".share-link input").val(link);
+
+					// Push state to browser history so it can be navigated, only if not from URL parameters
+
+					if(get){
+						get = false;
+
+						return;
+					}
+
+					var url = webRoot+battleStr;
+
+					var data = {cp: cp, p1: pokes[0].speciesId, p2: pokes[1].speciesId, s: pokes[0].startingShields+""+pokes[1].startingShields, m1: moveStrs[0], m2: moveStrs[1], h1: pokes[0].startHp, h2: pokes[1].startHp, e1: pokes[0].startEnergy, e2: pokes[1].startEnergy };
+
+					window.history.pushState(data, "Battle", url);
+
+					// Send Google Analytics pageview
+
+					gtag('config', UA_ID, {page_location: (host+url), page_path: url});
+				}
+			}
+			
+			// Returns a string to be used in single battle links
+			
+			this.generateSingleBattleLinkString = function(sandbox){
+				// Generate and display share link
+
+				var cp = battle.getCP();
+				var pokes = battle.getPokemon();
 
 				var pokeStrs = [];
 				var moveStrs = [];
@@ -262,7 +344,13 @@ var InterfaceMaster = (function () {
 					moveStrs.push(generateURLMoveStr(pokes[i]));
 				}
 				
-				var battleStr = "battle/"+cp+"/"+pokeStrs[0]+"/"+pokeStrs[1]+"/"+pokes[0].startingShields+pokes[1].startingShields+"/"+moveStrs[0]+"/"+moveStrs[1]+"/";
+				var battleStr = "battle/";
+				
+				if(sandbox){
+					battleStr += "sandbox/";
+				}
+				
+				battleStr += cp+"/"+pokeStrs[0]+"/"+pokeStrs[1]+"/"+pokes[0].startingShields+pokes[1].startingShields+"/"+moveStrs[0]+"/"+moveStrs[1]+"/";
 				
 				// Append extra options
 				
@@ -270,27 +358,32 @@ var InterfaceMaster = (function () {
 					battleStr += pokes[0].startHp + "-" + pokes[1].startHp + "/" + pokes[0].startEnergy + "-" + pokes[1].startEnergy + "/";
 				}
 				
-				var link = host + battleStr;
-				
-				$(".share-link input").val(link);
-				
-				// Push state to browser history so it can be navigated, only if not from URL parameters
-				
-				if(get){
-					get = false;
+				if(sandbox){
+					// Convert valid actions into parseable string
+					var actionStr = "";
 					
-					return;
+					for(var i = 0; i < actions.length; i++){
+						if(actions[i].valid){
+							var str = "";
+							
+							if(actionStr != ""){
+								str += "-";
+							}
+							
+							str += actions[i].turn + "." + actions[i].actor + actions[i].value + (actions[i].settings.shielded ? 1 : 0) + (actions[i].settings.buffs ? 1 : 0);
+							
+							actionStr += str;
+						}
+					}
+					
+					if(actionStr == ""){
+						actionStr = "0";
+					}
+					
+					battleStr += actionStr + "/";
 				}
 				
-				var url = webRoot+battleStr;
-				
-				var data = {cp: cp, p1: pokes[0].speciesId, p2: pokes[1].speciesId, s: pokes[0].startingShields+""+pokes[1].startingShields, m1: moveStrs[0], m2: moveStrs[1], h1: pokes[0].startHp, h2: pokes[1].startHp, e1: pokes[0].startEnergy, e2: pokes[1].startEnergy };
-				
-				window.history.pushState(data, "Battle", url);
-				
-				// Send Google Analytics pageview
-				
-				gtag('config', UA_ID, {page_location: (host+url), page_path: url});
+				return battleStr;
 			}
 			
 			// Animate timeline playback given a start time and rate in ms
@@ -338,52 +431,54 @@ var InterfaceMaster = (function () {
 				$(".rating-table .name-1.name").html(pokemon[0].speciesName.charAt(0)+".");
 				$(".battle-details .name-2").html(pokemon[1].speciesName);
 				
-				var originalShields = [pokemon[0].startingShields, pokemon[1].startingShields];
-				
-				for(var i = 0; i < 3; i++){
-					
-					for(var n = 0; n < 3; n++){
-						
-						pokemon[0].setShields(n);
-						pokemon[1].setShields(i);
-						
-						// Don't do this battle if it's already been simmed
-						var rating;
-						var color;
-						
-						if(! ((n == originalShields[0]) && (i == originalShields[1])) ) {
-							var b = new Battle();
-							b.setCP(battle.getCP());
-							b.setNewPokemon(pokemon[0], 0, false);
-							b.setNewPokemon(pokemon[1], 1, false);
+				if(! sandbox){
+					var originalShields = [pokemon[0].startingShields, pokemon[1].startingShields];
 
-							if(doBulk){
-								b = self.generateBulkSims(b).median;
+					for(var i = 0; i < 3; i++){
+
+						for(var n = 0; n < 3; n++){
+
+							pokemon[0].setShields(n);
+							pokemon[1].setShields(i);
+
+							// Don't do this battle if it's already been simmed
+							var rating;
+							var color;
+
+							if(! ((n == originalShields[0]) && (i == originalShields[1])) ) {
+								var b = new Battle();
+								b.setCP(battle.getCP());
+								b.setNewPokemon(pokemon[0], 0, false);
+								b.setNewPokemon(pokemon[1], 1, false);
+
+								if(doBulk){
+									b = self.generateBulkSims(b).median;
+								} else{
+									b.simulate();
+								}
+
+								rating = b.getBattleRatings()[0];
+								color = b.getRatingColor(rating);
 							} else{
-								b.simulate();
+								rating = battle.getBattleRatings()[0];
+								color = battle.getRatingColor(rating);
 							}
 
-							rating = b.getBattleRatings()[0];
-							color = b.getRatingColor(rating);
-						} else{
-							rating = battle.getBattleRatings()[0];
-							color = battle.getRatingColor(rating);
-						}
-						
-						$(".rating-table .battle-"+i+"-"+n).html(rating);
-						$(".rating-table .battle-"+i+"-"+n).css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
-						
-						if(rating > 500){
-							$(".rating-table .battle-"+i+"-"+n).addClass("win");
-						} else{
-							$(".rating-table .battle-"+i+"-"+n).removeClass("win");
+							$(".rating-table .battle-"+i+"-"+n).html(rating);
+							$(".rating-table .battle-"+i+"-"+n).css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
+
+							if(rating > 500){
+								$(".rating-table .battle-"+i+"-"+n).addClass("win");
+							} else{
+								$(".rating-table .battle-"+i+"-"+n).removeClass("win");
+							}
 						}
 					}
+
+					// Reset shields for future battles
+
+					$(".shield-select").trigger("change");
 				}
-				
-				// Reset shields for future battles
-				
-				$(".shield-select").trigger("change");
 				
 				// Calculate stats
 				
@@ -999,6 +1094,29 @@ var InterfaceMaster = (function () {
 				}
 			}
 			
+			// Change playback scale
+			
+			function timelineScaleChange(e){
+				
+				timelineScaleMode = $(".playback-scale option:selected").val();
+				
+				$(".timeline-container").toggleClass("zoom");
+				$(".timeline-container").toggleClass("fit");
+				
+				if(animating){
+					clearInterval(timelineInterval);
+					animating = false;
+					$(".playback .play").removeClass("active");
+				}
+				
+				if(timelineScaleMode == "fit"){
+					$(".timeline-container").scrollLeft(0);
+					$(".timeline").css("width","100%");
+				}
+
+				self.displayTimeline(battle, false, false);
+			}
+			
 			// Process tooltips and timeline hover
 			
 			function mainMouseMove(e){
@@ -1009,7 +1127,14 @@ var InterfaceMaster = (function () {
 				if(($(".timeline-container:hover").length > 0)&&(! animating)){
 					var offsetX = ($(window).width() - $(".timeline-container").width()) / 2;
 					var posX = e.clientX - offsetX;
-					var hoverTime = ((battle.getDuration()+2000) * (posX / $(".timeline-container").width()))-1000;
+					var hoverTime;
+					
+					if(timelineScaleMode == "fit"){
+						hoverTime = ((battle.getDuration()+2000) * (posX / $(".timeline-container").width()))-1000;
+					} else if(timelineScaleMode == "zoom"){
+						hoverTime = ((posX - 50 + $(".timeline-container").scrollLeft())/50) * 1000;
+					}
+					
 					
 					time = hoverTime;
 					
@@ -1098,6 +1223,9 @@ var InterfaceMaster = (function () {
 				$(this).toggleClass("active");
 				$(".timeline-container").toggleClass("sandbox-mode");
 				$(".sandbox, .automated").toggle();
+				$(".sandbox-btn-container .sandbox").toggleClass("active");
+				$(".matchup-detail-section").toggle();
+				$(".bulk-summary").toggle();
 				
 				sandbox = $(this).hasClass("active");
 				
@@ -1105,6 +1233,24 @@ var InterfaceMaster = (function () {
 				
 				if(sandbox){
 					actions = battle.getActions();
+					
+					// Give both Pokemon access to shields
+
+					for(var i = 0; i < pokeSelectors.length; i++){
+						if(pokeSelectors[i].getPokemon()){
+							pokeSelectors[i].getPokemon().setShields(2);
+						}
+					}
+					
+					$(".battle-btn").css("visibility","hidden");
+				} else{
+					// Update both Pokemon selectors
+
+					for(var i = 0; i < pokeSelectors.length; i++){
+						pokeSelectors[i].update();
+					}
+					
+					$(".battle-btn").css("visibility","visible");
 				}
 			}
 			
@@ -1137,6 +1283,12 @@ var InterfaceMaster = (function () {
 				
 				for(var i = 0; i < pokemon.chargedMoves.length; i++){
 					$(".modal .move-select").append("<option class=\""+pokemon.chargedMoves[i].type+"\" name=\""+pokemon.chargedMoves[i].name+"\" value=\""+pokemon.chargedMoves[i].moveId+"\">"+pokemon.chargedMoves[i].name+"</option>");
+					
+					// Disable if the Pokemon can't use this move at that time
+					
+					if(parseInt($(this).attr("energy")) < pokemon.chargedMoves[i].energy){
+						$(".modal .move-select option").last().prop("disabled","disabled");
+					}
 				}
 				
 				// Select clicked move
@@ -1211,7 +1363,13 @@ var InterfaceMaster = (function () {
 				} else{
 					$(".modal .stat-energy span").html("-"+move.energy);
 					$(".modal .stat-dpe span").html(Math.round( (move.damage / move.energy) * 100) / 100);
-				}	
+				}
+				
+				if(move.buffs){
+					$(".modal .check.buffs").show();
+				} else{
+					$(".modal .check.buffs").hide();
+				}
 			}
 			
 			// Submit sandbox action changes
@@ -1273,10 +1431,69 @@ var InterfaceMaster = (function () {
 				
 				closeModalWindow();
 				
+				runSandboxSim();
+			}
+			
+			function runSandboxSim(){
 				battle.setActions(actions);
 				battle.simulate();
 				self.displayTimeline(battle, false, false);
+				self.generateMatchupDetails(battle, false);
+				
+				// Retrieve any invalid actions
+				
+				actions = battle.getActions();
+				
+				// Generate and display share link
+				
+				var pokes = battle.getPokemon();
+				var cp = battle.getCP();
+				var moveStrs = [];
 
+				for(var i = 0; i < pokes.length; i++){
+					moveStrs.push(generateURLMoveStr(pokes[i]));
+				}
+				
+				var battleStr = self.generateSingleBattleLinkString(true);
+				
+				var link = host + battleStr;
+				
+				$(".share-link input").val(link);
+				
+				// Push state to browser history so it can be navigated, only if not from URL parameters
+				
+				if(get){
+					get = false;
+					
+					return;
+				}
+				
+				var url = webRoot+battleStr;
+				
+				var data = {cp: cp, p1: pokes[0].speciesId, p2: pokes[1].speciesId, s: pokes[0].startingShields+""+pokes[1].startingShields, m1: moveStrs[0], m2: moveStrs[1], h1: pokes[0].startHp, h2: pokes[1].startHp, e1: pokes[0].startEnergy, e2: pokes[1].startEnergy };
+				
+				window.history.pushState(data, "Battle", url);
+			}
+			
+			// Bring up the confirmation window for clearing the timeline
+			
+			function clearSandboxClick(e){
+				modalWindow("Reset Timeline?", $(".sandbox-clear-confirm"));
+			}
+			
+			// Clear timeline or close window
+			
+			function confirmClearSandbox(e){
+				
+				if($(this).hasClass("no")){
+					closeModalWindow();
+				} else{
+					actions = [];
+					runSandboxSim();
+					
+					closeModalWindow();
+				}
+				
 			}
 			
 			// Turn checkboxes on and off

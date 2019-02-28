@@ -831,6 +831,11 @@ select, input{
 				}
 			}
 		}
+		
+		&.zoom{
+			height:90px;
+			overflow-x:scroll;
+		}
 	}
 	
 	.sandbox-btn-container{
@@ -838,14 +843,18 @@ select, input{
 		margin: 0 auto;
 		
 		.sandbox-btn{
+			@include transition(background, 0.25s, 0s, ease-out);
+			
+			
 			position: relative;
-			background:$color-off-black;
+			background:#888;
 			color:$color-off-white;
 			border-radius: 12px;
-			font-size:14px;
+			font-size:17px;
+			line-height:16px;
 			text-decoration: none;
 			cursor: pointer;
-			padding: 1px 5px 1px 28px;
+			padding: 1px 8px;
 			margin-bottom:5px;
 			float:right;
 			overflow:hidden;
@@ -858,18 +867,6 @@ select, input{
 					user-select: none; /* Non-prefixed version, currently
 										  supported by Chrome and Opera */
 			
-			.btn-background{
-				@include transition(left, .25s, ease-out, 0s);
-				
-				position: absolute;
-				height:100%;
-				width:100%;
-				background:$color-gold;
-				border-radius:8px;
-				left:-85%;
-				top:0;
-			}
-			
 			span{
 				position: relative;
 				z-index:5;
@@ -877,11 +874,33 @@ select, input{
 			
 			&.active{
 				color:$color-off-black;
+				background:$color-gold;
 				
 				.btn-background{
 					left:0;
 				}
 			}
+		}
+		
+		.sandbox{
+			width:19px;
+			height:19px;
+			border-radius:12px;
+			background:$color-gold;
+			float:right;
+			margin: 0 10px;
+			cursor:pointer;
+			
+			@include transform(scale(0, 0));
+			@include transition(transform, 0.3s, cubic-bezier(0.64, 0.57, 0.67, 1.53), 0s);
+			
+			&.active{
+				@include transform(scale(1, 1));
+			}
+		}
+		
+		.clear-btn:after{
+			content:"\021BB";
 		}
 	}
 	
@@ -914,7 +933,8 @@ select, input{
 			}
 		}
 		
-		.playback-speed{
+		.playback-speed,
+		.playback-scale{
 			padding: 0;
 			background: none;
 			border-radius: 8px;

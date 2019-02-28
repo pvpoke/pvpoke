@@ -536,18 +536,26 @@ select, input {
         background: none !important; }
         .battle-results .timeline-container.sandbox-mode .item.disabled:hover {
           cursor: initial; }
+    .battle-results .timeline-container.zoom {
+      height: 90px;
+      overflow-x: scroll; }
   .battle-results .sandbox-btn-container {
     max-width: 95%;
     margin: 0 auto; }
     .battle-results .sandbox-btn-container .sandbox-btn {
+      -webkit-transition: background 0.25s 0s ease-out;
+      -moz-transition: background 0.25s 0s ease-out;
+      -o-transition: background 0.25s 0s ease-out;
+      transition: background 0.25s 0s ease-out;
       position: relative;
-      background: #333;
+      background: #888;
       color: #eee;
       border-radius: 12px;
-      font-size: 14px;
+      font-size: 17px;
+      line-height: 16px;
       text-decoration: none;
       cursor: pointer;
-      padding: 1px 5px 1px 28px;
+      padding: 1px 8px;
       margin-bottom: 5px;
       float: right;
       overflow: hidden;
@@ -564,25 +572,39 @@ select, input {
       user-select: none;
                    /* Non-prefixed version, currently
 					  supported by Chrome and Opera */ }
-      .battle-results .sandbox-btn-container .sandbox-btn .btn-background {
-        -webkit-transition: left 0.25s ease-out 0s;
-        -moz-transition: left 0.25s ease-out 0s;
-        -o-transition: left 0.25s ease-out 0s;
-        transition: left 0.25s ease-out 0s;
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        background: #eabd49;
-        border-radius: 8px;
-        left: -85%;
-        top: 0; }
       .battle-results .sandbox-btn-container .sandbox-btn span {
         position: relative;
         z-index: 5; }
       .battle-results .sandbox-btn-container .sandbox-btn.active {
-        color: #333; }
+        color: #333;
+        background: #eabd49; }
         .battle-results .sandbox-btn-container .sandbox-btn.active .btn-background {
           left: 0; }
+    .battle-results .sandbox-btn-container .sandbox {
+      width: 19px;
+      height: 19px;
+      border-radius: 12px;
+      background: #eabd49;
+      float: right;
+      margin: 0 10px;
+      cursor: pointer;
+      -moz-transform: scale(0, 0);
+      -webkit-transform: scale(0, 0);
+      -o-transform: scale(0, 0);
+      -ms-transform: scale(0, 0);
+      transform: scale(0, 0);
+      -webkit-transition: transform 0.3s cubic-bezier(0.64, 0.57, 0.67, 1.53) 0s;
+      -moz-transition: transform 0.3s cubic-bezier(0.64, 0.57, 0.67, 1.53) 0s;
+      -o-transition: transform 0.3s cubic-bezier(0.64, 0.57, 0.67, 1.53) 0s;
+      transition: transform 0.3s cubic-bezier(0.64, 0.57, 0.67, 1.53) 0s; }
+      .battle-results .sandbox-btn-container .sandbox.active {
+        -moz-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        -o-transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        transform: scale(1, 1); }
+    .battle-results .sandbox-btn-container .clear-btn:after {
+      content: "\021BB"; }
   .battle-results .playback {
     max-width: 300px;
     margin: 10px auto;
@@ -601,7 +623,8 @@ select, input {
         background-image: url("../img/playback_pause.png"); }
       .battle-results .playback .playback-btn.replay {
         background-image: url("../img/playback_replay.png"); }
-    .battle-results .playback .playback-speed {
+    .battle-results .playback .playback-speed,
+    .battle-results .playback .playback-scale {
       padding: 0;
       background: none;
       border-radius: 8px;

@@ -320,7 +320,15 @@ function Battle(){
 							var action = actions[n];
 							
 							if((action.actor == i)&&(action.turn == turns)){
-								self.processAction(action, poke, opponent);
+								
+								var move = poke.chargedMoves[action.value];
+								
+								if(poke.energy >= move.energy){
+									self.processAction(action, poke, opponent);
+								} else{
+									action.valid = false;
+								}
+								
 							}
 						}
 					}
@@ -371,6 +379,8 @@ function Battle(){
 			}
 
 		}
+		
+		console.log(actions);
 		
 		battleRatings = [pokemon[0].getBattleRating(), pokemon[1].getBattleRating()];
 		
@@ -594,14 +604,12 @@ function Battle(){
 				
 				// Validate this move can be used
 				
-				if(poke.energy < move.energy){
-					return;
+				if(poke.energy >= move.energy){
+					self.useMove(poke, opponent, move, action.settings.shielded, action.settings.buffs);
+
+					chargedMoveUsed = true;
+					roundChargedMoveUsed++;
 				}
-				
-				self.useMove(poke, opponent, move, action.settings.shielded, action.settings.buffs);
-				
-				chargedMoveUsed = true;
-				roundChargedMoveUsed++;
 				
 				break;
 		}
@@ -635,7 +643,7 @@ function Battle(){
 
 			// If defender has a shield, use it
 
-			if( ((sandbox) && (forceShields)) || ((! sandbox) && (defender.shields > 0)) ){
+			if( ((sandbox) && (forceShields) && (defender.shields > 0)) || ((! sandbox) && (defender.shields > 0)) ){
 				timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+5500, turns, [damage-1]));
 				damage = 1;
 				defender.shields--;
@@ -656,6 +664,10 @@ function Battle(){
 
 			attacker.energy += attacker.fastMove.energyGain;
 			attacker.cooldown = move.cooldown;
+			
+			if(attacker.energy > 100){
+				attacker.energy = 100;
+			}
 		}
 
 		defender.hp = Math.max(0, defender.hp-damage);
@@ -718,19 +730,19 @@ function Battle(){
 		if(! buffApplied){
 			timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, turns, [damage, energyValue]));
 		} else{
-			var buffStr = "Attack ";
+			var buffStr = "";
 			
 			if(move.buffs[0] > 0){
 				buffStr += "+";
 			}
 			
-			buffStr += move.buffs[0] + " Defense ";
+			buffStr += move.buffs[0] + " Attack<br>";
 			
-			if(move.buffs[0] > 0){
+			if(move.buffs[1] > 0){
 				buffStr += "+";
 			}
 			
-			buffStr += move.buffs[1];
+			buffStr += move.buffs[1] + " Defense";
 			
 			timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, turns, [damage, energyValue, buffStr]));
 		}
