@@ -20,6 +20,7 @@ var InterfaceMaster = (function () {
 			
 			var time = 0;
 			var timelineInterval;
+			var timelineScaleMode = "fit";
 			
 			var histogram;
 			var bulkHistogram;
@@ -27,6 +28,15 @@ var InterfaceMaster = (function () {
 			
 			this.context = "battle";
 			this.battleMode = "single";
+			
+			var sandbox = false;
+			var actions = [];
+			var sandboxPokemon;
+			var sandboxAction;
+			var sandboxActionIndex;
+			var sandboxTurn;
+			
+			var settingGetParams = false; // Flag to keep certain functions from running
 			
 			var ranker = RankerMaster.getInstance();
 			ranker.context = this.context;
@@ -54,17 +64,28 @@ var InterfaceMaster = (function () {
 				$(".timeline-container").on("mousemove",".item",timelineEventHover);
 				$("body").on("mousemove",mainMouseMove);
 				$("body").on("mousedown",mainMouseMove);
+				$("body").on("click", ".check", checkBox);
 				
 				// Timeline playback
 				
 				$(".playback .play").click(timelinePlay);
 				$(".playback .replay").click(timelineReplay);
 				$(".playback-speed").change(timelineSpeedChange);
+				$(".playback-scale").change(timelineScaleChange);
 				
 				// Details battle viewing
 				
 				$("body").on("click", ".rating-table a.rating.star", viewShieldBattle);
 				$("body").on("click", ".section.summary a.rating.star", viewBulkBattle);
+				
+				// Sandbox mode
+				
+				$(".sandbox-btn").click(toggleSandboxMode);
+				$(".timeline-container").on("click",".item",timelineEventClick);
+				$("body").on("change", ".modal .move-select", selectSandboxMove);
+				$("body").on("mousedown", ".modal .button.apply", applyActionChanges);
+				$(".sandbox.clear-btn").click(clearSandboxClick);
+				$("body").on("click", ".modal .sandbox-clear-confirm .button", confirmClearSandbox);
 				
 				// If get data exists, load settings
 
@@ -109,16 +130,40 @@ var InterfaceMaster = (function () {
 					
 				}
 				
-				var left = ((time+1000) / (battle.getDuration()+2000) * 100)+"%";
+				var left;
+				
+				if(timelineScaleMode == "fit"){
+					left = ((time+1000) / (battle.getDuration()+2000) * 100)+"%";
+				} else if(timelineScaleMode == "zoom"){
+					left = (((time+1000) / 1000)*50);
+					
+					if(animating){
+						if(left > $(".timeline-container").scrollLeft() - 100){
+							$(".timeline-container").scrollLeft((left - $(".timeline-container").width())+100);
+						}
+
+						if(left < $(".timeline-container").scrollLeft()){
+							$(".timeline-container").scrollLeft(left)
+						}
+					}
+					
+					left += "px";
+					
+				}
 				$(".timeline-container .tracker").css("left", left);
 			}
 			
 			// Display battle timeline
 			
-			this.displayTimeline = function(b, bulkRatings){
+			this.displayTimeline = function(b, bulkRatings, animate){
+				
+				bulkRatings = typeof bulkRatings !== 'undefined' ? bulkRatings : false;
+				animate = typeof animate !== 'undefined' ? animate : true;
 				
 				var timeline = b.getTimeline();
 				var duration = b.getDuration()+1000;
+				var pokemon = b.getPokemon();
+				var energy = [pokemon[0].startEnergy, pokemon[1].startEnergy]; // Store energy so valid editable moves can be displayed
 				
 				$(".battle-results.single").show();
 				$(".timeline").html('');
@@ -127,16 +172,57 @@ var InterfaceMaster = (function () {
 					var event = timeline[i];
 					var position = ((event.time+1000) / (duration+1000) * 100)+"%";
 					
-					var $item = $("<div class=\"item-container\"><div class=\"item "+event.type+"\" index=\""+i+"\" name=\""+event.name+"\" values=\""+event.values.join(',')+"\"></div></div>");
+					if(timelineScaleMode == "zoom"){
+						position = ( ((event.time+1000)/1000)*50)+"px";
+					}
+					
+					var $item = $("<div class=\"item-container\"><div class=\"item "+event.type+"\" index=\""+i+"\" actor=\""+event.actor+"\" turn=\""+event.turn+"\" name=\""+event.name+"\" energy=\""+energy[event.actor]+"\" values=\""+event.values.join(',')+"\"></div></div>");
+
 					$item.css("left", position);
 					
+					if(! animate){
+						$item.find(".item").addClass("active");
+					}
+					
+					// Calculate whether or not can be used on this turn for sandbox mode
+					
+					if(event.type.indexOf("fast") > -1){
+						
+						var canUseChargedMove = false;
+						
+						for(var n = 0; n < pokemon[event.actor].chargedMoves.length; n++){
+							if(energy[event.actor] >= pokemon[event.actor].chargedMoves[n].energy){
+								canUseChargedMove = true;
+							}
+						}
+						
+						if(! canUseChargedMove){
+							$item.find(".item").addClass("disabled");
+						}
+					}
+					
+					if(event.values[1]){
+						energy[event.actor] += event.values[1];
+					}
+					
 					if(event.type.indexOf("tap") > -1){
-						var height = 2 + (2 * event.values[0]);
+						var height = 4 + (2 * event.values[0]);
 						$item.find(".item").css("height", height+"px");
-						$item.find(".item").css("top", -(height/2)+"px");
+						$item.find(".item").css("width", height+"px");
+						$item.find(".item").css("top", -(((height+2)/2)+1)+"px");
 					}
 					
 					$(".timeline").eq(event.actor).append($item);
+				}
+				
+				// Scale both timelines
+				
+				if(timelineScaleMode == "fit"){
+					$(".timeline").css("width","100%");
+				} else if(timelineScaleMode == "zoom"){
+					var width = $(".timeline-container .item-container").last().position().left;
+					
+					$(".timeline").css("width",(width+100)+"px");
 				}
 				
 				for(var i = 0; i < pokeSelectors.length; i++){
@@ -164,7 +250,9 @@ var InterfaceMaster = (function () {
 					
 					var pokemon = pokeSelectors[0].getPokemon();
 					
-					$(".battle-results .summary").append("<div class=\"disclaimer\">This matchup contains moves that have a chance to buff or debuff stats. These results are generated from 500 simulations, and may vary.</div>");
+					$(".battle-results .summary").append("<div class=\"bulk-summary\"></div>");
+					
+					$(".battle-results .bulk-summary").append("<div class=\"disclaimer\">This matchup contains moves that have a chance to buff or debuff stats. These results are generated from 500 simulations, and may vary.</div>");
 					
 					var bestRating = bulkResults.best.getBattleRatings()[0];
 					var bestColor = battle.getRatingColor(bestRating);
@@ -175,44 +263,100 @@ var InterfaceMaster = (function () {
 					var worstRating = bulkResults.worst.getBattleRatings()[0];
 					var worstColor = battle.getRatingColor(worstRating);
 
-					$(".battle-results .summary").append("<p>"+pokemon.speciesName+"'s best battle rating is <a href=\"#\" class=\"rating star best\">"+bestRating+"</a></p>");
-					$(".battle-results .summary").append("<p>"+pokemon.speciesName+"'s median battle rating is <a href=\"#\" class=\"rating star median\">"+medianRating+"</a></p>");
-					$(".battle-results .summary").append("<p>"+pokemon.speciesName+"'s worst battle rating is <a href=\"#\" class=\"rating star worst\">"+worstRating+"</a></p>");
+					$(".battle-results .bulk-summary").append("<p>"+pokemon.speciesName+"'s best battle rating is <a href=\"#\" class=\"rating star best\">"+bestRating+"</a></p>");
+					$(".battle-results .bulk-summary").append("<p>"+pokemon.speciesName+"'s median battle rating is <a href=\"#\" class=\"rating star median\">"+medianRating+"</a></p>");
+					$(".battle-results .bulk-summary").append("<p>"+pokemon.speciesName+"'s worst battle rating is <a href=\"#\" class=\"rating star worst\">"+worstRating+"</a></p>");
 					
-					$(".battle-results .summary .rating").eq(1).css("background-color", "rgb("+bestColor[0]+","+bestColor[1]+","+bestColor[2]+")");
-					$(".battle-results .summary .rating").eq(2).css("background-color", "rgb("+medianColor[0]+","+medianColor[1]+","+medianColor[2]+")");
-					$(".battle-results .summary .rating").eq(3).css("background-color", "rgb("+worstColor[0]+","+worstColor[1]+","+worstColor[2]+")");
+					$(".battle-results .bulk-summary .rating").eq(0).css("background-color", "rgb("+bestColor[0]+","+bestColor[1]+","+bestColor[2]+")");
+					$(".battle-results .bulk-summary .rating").eq(1).css("background-color", "rgb("+medianColor[0]+","+medianColor[1]+","+medianColor[2]+")");
+					$(".battle-results .bulk-summary .rating").eq(2).css("background-color", "rgb("+worstColor[0]+","+worstColor[1]+","+worstColor[2]+")");
 
-					$(".battle-results .summary").append("<div class=\"histograms\"><div class=\"histogram\"></div></div>");
+					$(".battle-results .bulk-summary").append("<div class=\"histograms\"><div class=\"histogram\"></div></div>");
 
 					// Generate and display histogram
 
-					bulkHistogram = new BattleHistogram($(".battle-results .summary .histogram"));
+					bulkHistogram = new BattleHistogram($(".battle-results .bulk-summary .histogram"));
 					bulkHistogram.generate(pokeSelectors[0].getPokemon(), bulkRatings, 400);
 				}
 
 				// Animate timelines
+				
+				if(animate){
 
-				$(".timeline .item").removeClass("active");
-				
-				var intMs = Math.floor(duration / 62);
-				
-				self.animateTimeline(-intMs * 15, intMs);
+					$(".timeline .item").removeClass("active");
+
+					var intMs = Math.floor(duration / 62);
+
+					self.animateTimeline(-intMs * 15, intMs);
+				} else{
+					// Reset timeline visual properties
+
+					self.displayCumulativeDamage(battle.getTimeline(), battle.getDuration());
+				}
 				
 				// Generate and display share link
 				
-				var cp = b.getCP();
-				var pokes = b.getPokemon();
-				
+				if(! sandbox){
+					var pokes = b.getPokemon();
+					var cp = b.getCP();
+					var moveStrs = [];
+
+					for(var i = 0; i < pokes.length; i++){
+						moveStrs.push(generateURLMoveStr(pokes[i]));
+					}
+
+					var battleStr = self.generateSingleBattleLinkString(false);
+					var link = host + battleStr;
+
+					$(".share-link input").val(link);
+					
+					// Set document title
+
+					document.title = "Battle - " + pokes[0].speciesName + " vs. " + pokes[1].speciesName + " | PvPoke";
+
+					// Push state to browser history so it can be navigated, only if not from URL parameters
+
+					if(get){
+						get = false;
+
+						return;
+					}
+
+					var url = webRoot+battleStr;
+
+					var data = {cp: cp, p1: pokes[0].speciesId, p2: pokes[1].speciesId, s: pokes[0].startingShields+""+pokes[1].startingShields, m1: moveStrs[0], m2: moveStrs[1], h1: pokes[0].startHp, h2: pokes[1].startHp, e1: pokes[0].startEnergy, e2: pokes[1].startEnergy };
+
+					window.history.pushState(data, "Battle", url);
+
+					// Send Google Analytics pageview
+
+					gtag('config', UA_ID, {page_location: (host+url), page_path: url});
+				}
+			}
+			
+			// Returns a string to be used in single battle links
+			
+			this.generateSingleBattleLinkString = function(sandbox){
+				// Generate and display share link
+
+				var cp = battle.getCP();
+				var pokes = battle.getPokemon();
+
 				var pokeStrs = [];
 				var moveStrs = [];
-				
+
 				for(var i = 0; i < pokes.length; i++){
 					pokeStrs.push(generateURLPokeStr(pokes[i], i));
 					moveStrs.push(generateURLMoveStr(pokes[i]));
 				}
 				
-				var battleStr = "battle/"+cp+"/"+pokeStrs[0]+"/"+pokeStrs[1]+"/"+pokes[0].startingShields+pokes[1].startingShields+"/"+moveStrs[0]+"/"+moveStrs[1]+"/";
+				var battleStr = "battle/";
+				
+				if(sandbox){
+					battleStr += "sandbox/";
+				}
+				
+				battleStr += cp+"/"+pokeStrs[0]+"/"+pokeStrs[1]+"/"+pokes[0].startingShields+pokes[1].startingShields+"/"+moveStrs[0]+"/"+moveStrs[1]+"/";
 				
 				// Append extra options
 				
@@ -220,27 +364,40 @@ var InterfaceMaster = (function () {
 					battleStr += pokes[0].startHp + "-" + pokes[1].startHp + "/" + pokes[0].startEnergy + "-" + pokes[1].startEnergy + "/";
 				}
 				
-				var link = host + battleStr;
-				
-				$(".share-link input").val(link);
-				
-				// Push state to browser history so it can be navigated, only if not from URL parameters
-				
-				if(get){
-					get = false;
+				if(sandbox){
+					// Convert valid actions into parseable string
+					var actionStr = self.generateActionStr();
 					
-					return;
+					battleStr += actionStr + "/";
 				}
 				
-				var url = webRoot+battleStr;
+				return battleStr;
+			}
+			
+			// Return a concatenated string of actions
+			
+			this.generateActionStr = function(){
+				var actionStr = "";
+
+				for(var i = 0; i < actions.length; i++){
+					if(actions[i].valid){
+						var str = "";
+
+						if(actionStr != ""){
+							str += "-";
+						}
+
+						str += actions[i].turn + ".1" + actions[i].actor + actions[i].value + (actions[i].settings.shielded ? 1 : 0) + (actions[i].settings.buffs ? 1 : 0);
+
+						actionStr += str;
+					}
+				}
+
+				if(actionStr == ""){
+					actionStr = "0";
+				}
 				
-				var data = {cp: cp, p1: pokes[0].speciesId, p2: pokes[1].speciesId, s: pokes[0].startingShields+""+pokes[1].startingShields, m1: moveStrs[0], m2: moveStrs[1], h1: pokes[0].startHp, h2: pokes[1].startHp, e1: pokes[0].startEnergy, e2: pokes[1].startEnergy };
-				
-				window.history.pushState(data, "Battle", url);
-				
-				// Send Google Analytics pageview
-				
-				gtag('config', UA_ID, {page_location: (host+url), page_path: url});
+				return actionStr;
 			}
 			
 			// Animate timeline playback given a start time and rate in ms
@@ -288,52 +445,54 @@ var InterfaceMaster = (function () {
 				$(".rating-table .name-1.name").html(pokemon[0].speciesName.charAt(0)+".");
 				$(".battle-details .name-2").html(pokemon[1].speciesName);
 				
-				var originalShields = [pokemon[0].startingShields, pokemon[1].startingShields];
-				
-				for(var i = 0; i < 3; i++){
-					
-					for(var n = 0; n < 3; n++){
-						
-						pokemon[0].setShields(n);
-						pokemon[1].setShields(i);
-						
-						// Don't do this battle if it's already been simmed
-						var rating;
-						var color;
-						
-						if(! ((n == originalShields[0]) && (i == originalShields[1])) ) {
-							var b = new Battle();
-							b.setCP(battle.getCP());
-							b.setNewPokemon(pokemon[0], 0, false);
-							b.setNewPokemon(pokemon[1], 1, false);
+				if(! sandbox){
+					var originalShields = [pokemon[0].startingShields, pokemon[1].startingShields];
 
-							if(doBulk){
-								b = self.generateBulkSims(b).median;
+					for(var i = 0; i < 3; i++){
+
+						for(var n = 0; n < 3; n++){
+
+							pokemon[0].setShields(n);
+							pokemon[1].setShields(i);
+
+							// Don't do this battle if it's already been simmed
+							var rating;
+							var color;
+
+							if(! ((n == originalShields[0]) && (i == originalShields[1])) ) {
+								var b = new Battle();
+								b.setCP(battle.getCP());
+								b.setNewPokemon(pokemon[0], 0, false);
+								b.setNewPokemon(pokemon[1], 1, false);
+
+								if(doBulk){
+									b = self.generateBulkSims(b).median;
+								} else{
+									b.simulate();
+								}
+
+								rating = b.getBattleRatings()[0];
+								color = b.getRatingColor(rating);
 							} else{
-								b.simulate();
+								rating = battle.getBattleRatings()[0];
+								color = battle.getRatingColor(rating);
 							}
 
-							rating = b.getBattleRatings()[0];
-							color = b.getRatingColor(rating);
-						} else{
-							rating = battle.getBattleRatings()[0];
-							color = battle.getRatingColor(rating);
-						}
-						
-						$(".rating-table .battle-"+i+"-"+n).html(rating);
-						$(".rating-table .battle-"+i+"-"+n).css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
-						
-						if(rating > 500){
-							$(".rating-table .battle-"+i+"-"+n).addClass("win");
-						} else{
-							$(".rating-table .battle-"+i+"-"+n).removeClass("win");
+							$(".rating-table .battle-"+i+"-"+n).html(rating);
+							$(".rating-table .battle-"+i+"-"+n).css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
+
+							if(rating > 500){
+								$(".rating-table .battle-"+i+"-"+n).addClass("win");
+							} else{
+								$(".rating-table .battle-"+i+"-"+n).removeClass("win");
+							}
 						}
 					}
+
+					// Reset shields for future battles
+
+					$(".shield-select").trigger("change");
 				}
-				
-				// Reset shields for future battles
-				
-				$(".shield-select").trigger("change");
 				
 				// Calculate stats
 				
@@ -578,9 +737,12 @@ var InterfaceMaster = (function () {
 					return false;
 				}
 				
+				settingGetParams = true;
+				
 				// Cycle through parameters and set them
 				
 				for(var key in get){
+					
 					if(get.hasOwnProperty(key)){
 						
 						var val = get[key];
@@ -713,7 +875,49 @@ var InterfaceMaster = (function () {
 								}
 
 								break;
-																
+								
+								
+							case "sandbox":
+								if(! sandbox){
+									$(".sandbox-btn").trigger("click");
+								}
+								break;
+
+							case "a":
+								// Parse action string into custom actions
+								
+								actions = [];
+								
+								if(val != "0"){
+									var arr = val.split("-");
+									
+									for(var i = 0; i < arr.length; i++){
+										
+										// Individual actions are formatted like "5.10010"
+										
+										var turnArr = arr[i].split(".");
+										var turn = parseInt(turnArr[0]);
+										var str = turnArr[1];
+										
+										var paramsArr = str.split("");
+										
+										actions.push(new TimelineAction(
+											"charged",
+											parseInt(paramsArr[1]),
+											turn,
+											parseInt(paramsArr[2]),
+											{
+												shielded: (parseInt(paramsArr[3]) == 1 ? true : false),
+												buffs: (parseInt(paramsArr[4]) == 1 ? true : false)
+											}
+										));
+										
+									}
+									
+									battle.setActions(actions);
+								}
+								
+								break;								
 								
 							case "mode":
 								$(".mode-select option[value=\""+val+"\"]").prop("selected","selected");
@@ -740,10 +944,81 @@ var InterfaceMaster = (function () {
 				for(var i = 0; i < pokeSelectors.length; i++){
 					pokeSelectors[i].update();
 				}
+				
+				if((sandbox)&&(! get.hasOwnProperty("sandbox"))){
+					$(".sandbox-btn").trigger("click");
+				}
+				
+				settingGetParams = false;
 					
 				// Auto run the battle
 
 				$(".battle-btn").trigger("click");
+				
+				if(sandbox){
+					self.runSandboxSim();
+				}
+				
+			}
+			
+			// Clear the sandbox timeline
+			
+			this.resetSandbox = function(){
+				if((sandbox)&&(! settingGetParams)){
+					actions = [];
+					self.runSandboxSim();
+				}
+			}
+			
+			this.runSandboxSim = function(){
+				
+				if(! sandbox){
+					return;
+				}
+				
+				
+				battle.setActions(actions);
+				battle.simulate();
+				self.displayTimeline(battle, false, false);
+				self.generateMatchupDetails(battle, false);
+				
+				// Retrieve any invalid actions
+				
+				actions = battle.getActions();
+				
+				// Generate and display share link
+				
+				var pokes = battle.getPokemon();
+				var cp = battle.getCP();
+				var moveStrs = [];
+
+				for(var i = 0; i < pokes.length; i++){
+					moveStrs.push(generateURLMoveStr(pokes[i]));
+				}
+				
+				var battleStr = self.generateSingleBattleLinkString(true);
+				
+				var link = host + battleStr;
+				
+				$(".share-link input").val(link);
+				
+				// Push state to browser history so it can be navigated, only if not from URL parameters
+				
+				if(get){
+					get = false;
+					
+					return;
+				}
+				
+				// Set document title
+				
+				document.title = "Battle - " + pokes[0].speciesName + " vs. " + pokes[1].speciesName + " | PvPoke";
+				
+				var url = webRoot+battleStr;
+				
+				var data = {cp: cp, p1: pokes[0].speciesId, p2: pokes[1].speciesId, s: pokes[0].startingShields+""+pokes[1].startingShields, m1: moveStrs[0], m2: moveStrs[1], h1: pokes[0].startHp, h2: pokes[1].startHp, e1: pokes[0].startEnergy, e2: pokes[1].startEnergy, sandbox: 1, a: self.generateActionStr() };
+				
+				window.history.pushState(data, "Battle", url);
 			}
 			
 			// Event handler for changing the league select
@@ -801,7 +1076,11 @@ var InterfaceMaster = (function () {
 							
 							// Does this matchup contain buffs or debuffs?
 							
-							var usesBuffs = ((pokeSelectors[0].getPokemon().hasBuffMove()) || (pokeSelectors[1].getPokemon().hasBuffMove()))
+							var usesBuffs = ((pokeSelectors[0].getPokemon().hasBuffMove()) || (pokeSelectors[1].getPokemon().hasBuffMove()));
+							
+							if(sandbox){
+								usesBuffs = false;
+							}
 							
 							if(! usesBuffs){
 								
@@ -949,6 +1228,29 @@ var InterfaceMaster = (function () {
 				}
 			}
 			
+			// Change playback scale
+			
+			function timelineScaleChange(e){
+				
+				timelineScaleMode = $(".playback-scale option:selected").val();
+				
+				$(".timeline-container").toggleClass("zoom");
+				$(".timeline-container").toggleClass("fit");
+				
+				if(animating){
+					clearInterval(timelineInterval);
+					animating = false;
+					$(".playback .play").removeClass("active");
+				}
+				
+				if(timelineScaleMode == "fit"){
+					$(".timeline-container").scrollLeft(0);
+					$(".timeline").css("width","100%");
+				}
+
+				self.displayTimeline(battle, false, false);
+			}
+			
 			// Process tooltips and timeline hover
 			
 			function mainMouseMove(e){
@@ -959,7 +1261,14 @@ var InterfaceMaster = (function () {
 				if(($(".timeline-container:hover").length > 0)&&(! animating)){
 					var offsetX = ($(window).width() - $(".timeline-container").width()) / 2;
 					var posX = e.clientX - offsetX;
-					var hoverTime = ((battle.getDuration()+2000) * (posX / $(".timeline-container").width()))-1000;
+					var hoverTime;
+					
+					if(timelineScaleMode == "fit"){
+						hoverTime = ((battle.getDuration()+2000) * (posX / $(".timeline-container").width()))-1000;
+					} else if(timelineScaleMode == "zoom"){
+						hoverTime = ((posX - 50 + $(".timeline-container").scrollLeft())/50) * 1000;
+					}
+					
 					
 					time = hoverTime;
 					
@@ -1041,6 +1350,251 @@ var InterfaceMaster = (function () {
 				
 				return pokeStr;
 			}
+			
+			// Toggle Sandbox Mode on or off
+			
+			function toggleSandboxMode(e){
+				$(this).toggleClass("active");
+				$(".timeline-container").toggleClass("sandbox-mode");
+				$(".sandbox, .automated").toggle();
+				$(".sandbox-btn-container .sandbox").toggleClass("active");
+				$(".matchup-detail-section").toggle();
+				$(".bulk-summary").toggle();
+				
+				sandbox = $(this).hasClass("active");
+				
+				battle.setSandboxMode(sandbox);
+				
+				if(sandbox){
+					actions = battle.getActions();
+					
+					// Give both Pokemon access to shields
+
+					for(var i = 0; i < pokeSelectors.length; i++){
+						if(pokeSelectors[i].getPokemon()){
+							pokeSelectors[i].getPokemon().setShields(2);
+						}
+					}
+					
+					$(".battle-btn").css("visibility","hidden");
+				} else{
+					// Update both Pokemon selectors
+					
+					$(".shield-select").trigger("change");
+
+					for(var i = 0; i < pokeSelectors.length; i++){
+						pokeSelectors[i].update();
+					}
+					
+					$(".battle-btn").css("visibility","visible");
+				}
+			}
+			
+			// Clicking on a timeline event to edit
+			
+			function timelineEventClick(e){
+				
+				if(! sandbox){
+					return;
+				}
+				
+				if($(this).hasClass("disabled")){
+					return;
+				}
+				
+				if((! $(this).hasClass("charged"))&&(! $(this).hasClass("fast"))){
+					return;
+				}
+
+				modalWindow("Select Move (Turn "+$(this).attr("turn")+")", $(".sandbox-move-select"));
+				
+				// Populate move select form;
+				
+				var actor = parseInt($(this).attr("actor"));
+				var pokemon = pokeSelectors[actor].getPokemon();
+				
+				sandboxPokemon = pokemon;
+				
+				$(".modal .move-select").append("<option class=\""+pokemon.fastMove.type+"\" name=\""+pokemon.fastMove.name+"\" value=\""+pokemon.fastMove.moveId+"\">"+pokemon.fastMove.name+"</option>");
+				
+				for(var i = 0; i < pokemon.chargedMoves.length; i++){
+					$(".modal .move-select").append("<option class=\""+pokemon.chargedMoves[i].type+"\" name=\""+pokemon.chargedMoves[i].name+"\" value=\""+pokemon.chargedMoves[i].moveId+"\">"+pokemon.chargedMoves[i].name+"</option>");
+					
+					// Disable if the Pokemon can't use this move at that time
+					
+					if(parseInt($(this).attr("energy")) < pokemon.chargedMoves[i].energy){
+						$(".modal .move-select option").last().prop("disabled","disabled");
+					}
+				}
+				
+				// Select clicked move
+				
+				var moveName = $(this).attr("name");
+				
+				$(".modal .move-select option[name=\""+moveName+"\"]").prop("selected", "selected");
+				$(".modal .move-select").trigger("change");
+				
+				// Identify corresponding action
+				
+				sandboxAction = null;
+				sandboxTurn = parseInt($(this).attr("turn"));
+				
+				if($(this).hasClass("charged")){
+					for(var i = 0; i < actions.length; i++){
+						if((actions[i].actor == actor)&&(actions[i].turn == parseInt($(this).attr("turn")))){
+							sandboxAction = actions[i];
+							sandboxActionIndex = i;
+						}
+					}
+					
+					if(sandboxAction.settings.shielded){
+						$(".modal .check.shields").addClass("on");
+					}
+					
+					if(sandboxAction.settings.buffs){
+						$(".modal .check.buffs").addClass("on");
+					}
+				}
+			}
+			
+			// Change display info for sandbox move selection
+			
+			function selectSandboxMove(e){
+				
+				if(! sandboxPokemon){
+					return;
+				}
+				
+				var moveId = $(".modal .move-select option:selected").val();
+				var move;
+				
+				
+				if(moveId == sandboxPokemon.fastMove.moveId){
+					move = sandboxPokemon.fastMove;
+					
+					$(".modal .fast").show();
+					$(".modal .charged").hide();
+				} else{
+					for(var i = 0; i < sandboxPokemon.chargedMoves.length; i++){
+						if(moveId == sandboxPokemon.chargedMoves[i].moveId){
+							move = sandboxPokemon.chargedMoves[i];
+							
+							$(".modal .fast").hide();
+							$(".modal .charged").show();
+						}
+					}
+				}
+				
+				$(".modal .move-select").attr("class", "move-select " + move.type);
+				
+				// Fill in move stats
+				
+				$(".modal .stat-dmg span").html(move.damage);
+				
+				if(move.energyGain > 0){
+					$(".modal .stat-energy span").html("+"+move.energyGain);
+					$(".modal .stat-duration span").html(move.cooldown / 500);
+					$(".modal .stat-dpt span").html(Math.round( (move.damage / (move.cooldown / 500)) * 100) / 100);
+					$(".modal .stat-ept span").html(Math.round( (move.energyGain / (move.cooldown / 500)) * 100) / 100);
+				} else{
+					$(".modal .stat-energy span").html("-"+move.energy);
+					$(".modal .stat-dpe span").html(Math.round( (move.damage / move.energy) * 100) / 100);
+				}
+				
+				if(move.buffs){
+					$(".modal .check.buffs").show();
+				} else{
+					$(".modal .check.buffs").hide();
+				}
+			}
+			
+			// Submit sandbox action changes
+			
+			function applyActionChanges(e){
+				
+				// If this is changing a charged move to a fast move, remove the action
+				
+				var selectedIndex = $(".modal .move-select")[0].selectedIndex;
+				
+				if((sandboxAction)&&(selectedIndex == 0)){
+					for(var i = 0; i < actions.length; i++){
+						if(actions[i] == sandboxAction){
+							actions.splice(i, 1);
+							break;
+						}
+					}
+				}
+				
+				// Charged move selection
+				
+				if(selectedIndex > 0){
+					
+					var shielded = $(".modal .check.shields").hasClass("on");
+					
+					if(! sandboxAction){
+
+						// Insert new action
+
+						actions.push(new TimelineAction(
+							"charged",
+							sandboxPokemon.index,
+							sandboxTurn,
+							selectedIndex-1,
+							{
+								shielded: $(".modal .check.shields").hasClass("on"),
+								buffs: $(".modal .check.buffs").hasClass("on")
+							}
+						));
+					} else{
+						
+						// Modify existing action
+						
+						actions[sandboxActionIndex] = new TimelineAction(
+							"charged",
+							sandboxPokemon.index,
+							sandboxTurn,
+							selectedIndex-1,
+							{
+								shielded: $(".modal .check.shields").hasClass("on"),
+								buffs: $(".modal .check.buffs").hasClass("on")
+							}
+						);
+						
+					}
+				}
+				
+				// Rerun battle
+				
+				closeModalWindow();
+				
+				self.runSandboxSim();
+			}
+			
+			// Bring up the confirmation window for clearing the timeline
+			
+			function clearSandboxClick(e){
+				modalWindow("Reset Timeline?", $(".sandbox-clear-confirm"));
+			}
+			
+			// Clear timeline or close window
+			
+			function confirmClearSandbox(e){
+				
+				if($(this).hasClass("no")){
+					closeModalWindow();
+				} else{
+					self.resetSandbox();
+					closeModalWindow();
+				}
+				
+			}
+			
+			// Turn checkboxes on and off
+			
+			function checkBox(e){
+				$(this).toggleClass("on");
+			}
+			
 		};
 		
         return object;
