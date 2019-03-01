@@ -30,7 +30,12 @@
 			<li>Edit the timeline with custom actions</li>
 			<li>Set exactly when moves and shields are used</li>
 		</ul>
-		<li>Timeline now has a zoom option in the playback controls</li>
+		<li>Timeline adjustments</li>
+		<ul>
+			<li>Adjusted charging visuals so it's more clear when Charged Moves are activated</li>
+			<li>Fast Move icons are now bigger to make them easier to select</li>
+			<li>Timeline playback now has a scale option to either fit or zoom in, making it easier to edit extended battles</li>
+		</ul>
 		<ul>
 			<li>This makes it easier to inspect and interact with extended battles</li>
 		</ul>
