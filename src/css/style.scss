@@ -644,6 +644,65 @@ footer{
 		.cup-select{
 			margin-top:62px;
 			width:100%;
+			
+			option[value="custom"]{
+				display:block;
+			}
+		}
+		
+		.custom-options{
+			display:none;
+			
+			.add-poke-btn{
+				font-size: 14px;
+				width: 100%;
+				margin-bottom: 0;
+			}
+		}
+		
+		.rankings-container{
+			
+			max-height:360px;
+			
+			.rank{
+				padding: 0 5px;
+				position:relative;
+				
+				&:hover{
+					border-left:none;
+					box-shadow:0px 2px;
+				}
+				
+				.name-container{
+					float:none;
+				}
+				
+				.moves{
+					display:block;
+					font-size:12px;
+				}
+				
+				.remove{
+					
+					position:absolute;
+					top:2px;
+					right: 5px;
+					font-weight: bold;
+					background:$color-off-black;
+					color:$color-off-white;
+					border-radius: 4px;
+					padding: 0 4px;
+					font-size: 12px;
+					
+					&:after{
+						content:"x";
+					}
+					
+					&:hover{
+						background:#ff0000;
+					}
+				}
+			}
 		}
 	}
 
@@ -701,6 +760,10 @@ select, input{
     width: auto;
     background: none;
     font-weight: bold;
+}
+
+.cup-select option[value="custom"]{
+	display:none;
 }
 
 .button{
@@ -1225,7 +1288,7 @@ select, input{
 .rankings-container {
 	
 	margin-top:20px;
-	height:400px;
+	max-height:400px;
 	overflow-y:scroll;
 	
 	&.threats,
@@ -1757,30 +1820,53 @@ select, input{
 		.modal-content{
 			padding:10px;
 		}
-	}
-	
-	.move-select{
-		font-size:18px;
-		margin-bottom:10px;
-	}
-	
-	.move-stats{
-		flex-wrap:wrap;
-		justify-content: space-around;
-		text-align:center;
 		
-		&> div{
-			padding:10px;
+		.poke.single{
+			float:none;
+			margin:0 auto;
+			max-width:200px;
 			
-		}
-		
-		span.stat{
-			display:block;
-			font-weight:bold;
+			.poke-stats{
+				background:none;
+			}
+			
+			.clear-selection,
+			.hp.bar-back,
+			.move-bars,
+			.random,
+			.stat-container,
+			.auto-select,
+			.options{
+				display:none;
+			}
 		}
 	}
 	
-	.button.apply{
+	.sandbox-move-select{
+		.move-select{
+			font-size:18px;
+			margin-bottom:10px;
+		}
+
+		.move-stats{
+			flex-wrap:wrap;
+			justify-content: space-around;
+			text-align:center;
+
+			&> div{
+				padding:10px;
+
+			}
+
+			span.stat{
+				display:block;
+				font-weight:bold;
+			}
+		}
+	}
+	
+
+	.button{
 		margin:25px auto 0 auto;
 		display:inline-block;
 	}

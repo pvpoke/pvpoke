@@ -1,6 +1,6 @@
 // Search input handler
 
-$(".poke-search").on("keyup", function(e){
+$(".poke-search[context='ranking-search']").on("keyup", function(e){
 
 	var types = ["bug","dark","dragon","electric","fairy","fighting","fire","flying","ghost","grass","ground","ice","normal","poison","psychic","rock","steel","water"];
 

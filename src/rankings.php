@@ -78,7 +78,7 @@ require_once 'header.php';
 
 	<p>Click or tap the rankings below for more details.</p>
 	
-	<input class="poke-search" type="text" placeholder="Search Pokemon Name or Type" />
+	<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon Name or Type" />
 	
 	<div class="ranking-header">Pokemon</div>
 	<div class="ranking-header right">Score</div>

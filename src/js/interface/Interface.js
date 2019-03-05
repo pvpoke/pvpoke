@@ -13,6 +13,7 @@ var InterfaceMaster = (function () {
 			var gm = GameMaster.getInstance();
 			var battle;
 			var pokeSelectors = [];
+			var multiSelector;
 			var animating = false;
 			var self = this;
 			
@@ -57,6 +58,9 @@ var InterfaceMaster = (function () {
 
 					selector.init(data.pokemon, battle);
 				});
+				
+				multiSelector = new PokeMultiSelect($(".poke.multi"));
+				multiSelector.init(data.pokemon, battle);
 				
 				$(".league-select").on("change", selectLeague);
 				$(".mode-select").on("change", selectMode);
@@ -614,7 +618,7 @@ var InterfaceMaster = (function () {
 				var pokeStr = generateURLPokeStr(poke, 0);
 				var moveStr = generateURLMoveStr(poke);
 				
-				$(".rankings-container").html('');
+				$(".battle-results .rankings-container").html('');
 				
 				battle.setNewPokemon(poke, 0, false);
 				
@@ -640,7 +644,7 @@ var InterfaceMaster = (function () {
 					
 					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star\">"+r.opRating+"</span></div><a target=\"_blank\" href=\""+battleLink+"\"></a><div class=\"clear\"></div></div><div class=\"details\"></div>");
 
-					$(".rankings-container").append($el);
+					$(".battle-results .rankings-container").append($el);
 				}
 				
 				// Generate and display histogram

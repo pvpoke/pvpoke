@@ -387,6 +387,41 @@ footer {
   .poke.multi .cup-select {
     margin-top: 62px;
     width: 100%; }
+    .poke.multi .cup-select option[value="custom"] {
+      display: block; }
+  .poke.multi .custom-options {
+    display: none; }
+    .poke.multi .custom-options .add-poke-btn {
+      font-size: 14px;
+      width: 100%;
+      margin-bottom: 0; }
+  .poke.multi .rankings-container {
+    max-height: 360px; }
+    .poke.multi .rankings-container .rank {
+      padding: 0 5px;
+      position: relative; }
+      .poke.multi .rankings-container .rank:hover {
+        border-left: none;
+        box-shadow: 0px 2px; }
+      .poke.multi .rankings-container .rank .name-container {
+        float: none; }
+      .poke.multi .rankings-container .rank .moves {
+        display: block;
+        font-size: 12px; }
+      .poke.multi .rankings-container .rank .remove {
+        position: absolute;
+        top: 2px;
+        right: 5px;
+        font-weight: bold;
+        background: #333;
+        color: #eee;
+        border-radius: 4px;
+        padding: 0 4px;
+        font-size: 12px; }
+        .poke.multi .rankings-container .rank .remove:after {
+          content: "x"; }
+        .poke.multi .rankings-container .rank .remove:hover {
+          background: #ff0000; }
 
 .poke-select-container.single .poke:nth-of-type(2) {
   display: block; }
@@ -421,6 +456,9 @@ select, input {
   width: auto;
   background: none;
   font-weight: bold; }
+
+.cup-select option[value="custom"] {
+  display: none; }
 
 .button {
   display: block;
@@ -850,7 +888,7 @@ select, input {
 
 .rankings-container {
   margin-top: 20px;
-  height: 400px;
+  max-height: 400px;
   overflow-y: scroll; }
   .rankings-container.threats, .rankings-container.alternatives {
     overflow-y: initial; }
@@ -1206,19 +1244,33 @@ select, input {
         content: "X"; }
     .modal .modal-container .modal-content {
       padding: 10px; }
-  .modal .move-select {
+    .modal .modal-container .poke.single {
+      float: none;
+      margin: 0 auto;
+      max-width: 200px; }
+      .modal .modal-container .poke.single .poke-stats {
+        background: none; }
+      .modal .modal-container .poke.single .clear-selection,
+      .modal .modal-container .poke.single .hp.bar-back,
+      .modal .modal-container .poke.single .move-bars,
+      .modal .modal-container .poke.single .random,
+      .modal .modal-container .poke.single .stat-container,
+      .modal .modal-container .poke.single .auto-select,
+      .modal .modal-container .poke.single .options {
+        display: none; }
+  .modal .sandbox-move-select .move-select {
     font-size: 18px;
     margin-bottom: 10px; }
-  .modal .move-stats {
+  .modal .sandbox-move-select .move-stats {
     flex-wrap: wrap;
     justify-content: space-around;
     text-align: center; }
-    .modal .move-stats > div {
+    .modal .sandbox-move-select .move-stats > div {
       padding: 10px; }
-    .modal .move-stats span.stat {
+    .modal .sandbox-move-select .move-stats span.stat {
       display: block;
       font-weight: bold; }
-  .modal .button.apply {
+  .modal .button {
     margin: 25px auto 0 auto;
     display: inline-block; }
 

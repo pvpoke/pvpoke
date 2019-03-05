@@ -255,7 +255,7 @@ require_once 'header.php';
 		<a class="toggle active" href="#">Individual Matchups <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 
 		<div class="toggle-content">
-			<input class="poke-search" type="text" placeholder="Search Pokemon Name or Type" />
+			<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon Name or Type" />
 			<div class="ranking-header">Opponent</div>
 			<div class="ranking-header right">Battle Rating</div>
 			<div class="rankings-container clear"></div>
@@ -310,6 +310,7 @@ require_once 'header.php';
 <script src="<?php echo $WEB_ROOT; ?>js/interface/Interface.js?v=28"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=19"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeMultiSelect.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BattleHistogram.js?v=2"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=6"></script>

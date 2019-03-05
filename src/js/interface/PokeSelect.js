@@ -215,6 +215,14 @@ function PokeSelect(element, i){
 		isCustom = false;
 	}
 	
+	// Manually set the selected Pokemon with a specific Pokemon
+	
+	this.setSelectedPokemon = function(poke){
+		selectedPokemon = poke;
+		$pokeSelect.find("option[value=\""+poke.speciesId+"\"]").prop("selected","selected");
+		self.update();
+	}
+	
 	// Set CP of the selected Pokemon, used in the team interface to circumvent the Battle class
 	
 	this.setCP = function(cp){
