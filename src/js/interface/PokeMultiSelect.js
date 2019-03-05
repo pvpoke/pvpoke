@@ -62,17 +62,47 @@ function PokeMultiSelect(element){
 
 			var $item = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\"><div class=\"name-container\"><span class=\"name\">"+pokemon.speciesName+"</span><span class=\"moves\"></span></div><div class=\"remove\"></div></div>");
 			
-			var moveStr = pokemon.fastMove.name;
+			var moveList = [pokemon.fastMove];
 			
 			for(var n = 0; n < pokemon.chargedMoves.length; n++){
-				moveStr += ", " + pokemon.chargedMoves[n].name;
+				moveList.push(pokemon.chargedMoves[n]);
 			}
 			
-			$item.find(".moves").html(moveStr);
+			for(var n = 0; n < moveList.length; n++){
+				// Code for move icons, but I think the move names work better for readability
+				
+				// $item.find(".moves").append("<div class=\"move " + moveList[n].type + "\">"+moveList[n].name+"</div>");
+				
+				if(n > 0){
+					$item.find(".moves").append(", ");
+				}
+				
+				$item.find(".moves").append(moveList[n].name);
+			}
 
 			$el.find(".rankings-container").append($item);
 		}
 		
+	}
+	
+	// After loading from the GameMaster, fill in a preset group
+	
+	self.quickFillGroup = function(data){
+		
+		pokemonList = [];
+		
+		for(var i = 0; i < data.length; i++){
+			var pokemon = new Pokemon(data[i].speciesId, 1, battle);
+			pokemon.selectMove("fast", data[i].fastMove);
+			
+			for(var n = 0; n < data[i].chargedMoves.length; n++){
+				pokemon.selectMove("charged", data[i].chargedMoves[n], n);
+			}
+			
+			pokemonList.push(pokemon);
+		}
+		
+		self.updateListDisplay();
 	}
 	
 	// Show or hide custom options when changing the cup select
@@ -136,6 +166,44 @@ function PokeMultiSelect(element){
 		
 		self.updateListDisplay();
 		
+	});
+	
+	
+	// Bring up the modal window to remove a Pokemon
+	
+	$("body").on("click", ".poke.multi .rankings-container .remove", function(e){
+		
+		selectedIndex = $el.find(".rankings-container .rank").index($(this).closest(".rank"));
+		
+		modalWindow("Remove Pokemon", $(".remove-poke-confirm"));
+		
+		$(".modal .name").html(pokemonList[selectedIndex].speciesName);
+	});
+	
+	// Confirm to remove Pokemon
+	
+	$("body").on("click", ".modal .remove-poke-confirm .yes", function(e){
+		pokemonList.splice(selectedIndex, 1);
+		self.updateListDisplay();
+		closeModalWindow();
+	});
+	
+	// Decline confirmation
+	
+	$("body").on("click", ".modal .no", function(e){
+		closeModalWindow();
+	});
+	
+	// Select a quick fill group
+	
+	$el.find(".quick-fill-select").change(function(e){
+		var val = $(this).find("option:selected").val();
+		
+		// Load a preset group from data files
+		
+		if(val.indexOf("custom") == -1){
+			gm.loadGroupData(self, val);
+		}
 	});
 	
 	// Return the list of selected Pokemon

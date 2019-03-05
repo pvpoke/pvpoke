@@ -8,9 +8,10 @@ var GameMaster = (function () {
 		
 		object.data = {};
 		object.rankings = [];
+		object.groups = [];
 		object.loadedData = 0;
 		
-		$.getJSON( webRoot+"data/gamemaster.json?v=53", function( data ){
+		$.getJSON( webRoot+"data/gamemaster.json?v=54", function( data ){
 			object.data = data;
 			
 			// Sort Pokemon alphabetically for searching
@@ -81,12 +82,14 @@ var GameMaster = (function () {
 			return move;
 		}
 		
+		// Load and return ranking data JSON
+		
 		object.loadRankingData = function(caller, category, league, cup){
 			
 			var key = cup + "" + category + "" + league;
 			
 			if(! object.rankings[key]){
-				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=53";
+				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=54";
 				
 				$.getJSON( file, function( data ){
 					object.rankings[key] = data;
@@ -96,6 +99,29 @@ var GameMaster = (function () {
 				});
 			} else{
 				caller.displayRankingData(object.rankings[key]);
+			}
+		}
+		
+		// Load quick fill group JSON
+		
+		object.loadGroupData = function(caller, group){
+			
+			var key = group;
+			
+			if(! object.groups[key]){
+				var file = webRoot+"data/groups/"+group+".json?v=54";
+				
+				$.getJSON( file, function( data ){
+					
+					// Sort alphabetically
+					
+					data.sort((a,b) => (a.speciesId > b.speciesId) ? 1 : ((b.speciesId > a.speciesId) ? -1 : 0));
+					
+					object.groups[key] = data;
+					caller.quickFillGroup(data);
+				});
+			} else{
+				caller.quickFillGroup(object.groups[key]);
 			}
 		}
 		

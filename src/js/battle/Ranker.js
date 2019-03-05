@@ -74,7 +74,7 @@ var RankerMaster = (function () {
 				if(battle.getCP() == 1500){
 					minStats = 1250;
 				} else if(battle.getCP() == 2500){
-					minStats = 2000;
+					minStats = 2500;
 				}
 				
 				// Don't allow these Pokemon into the Great League. They can't be trusted.

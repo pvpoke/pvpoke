@@ -20,6 +20,8 @@ var RankerMaster = (function () {
 			var battle;
 			var self = this;
 			
+			var targets = []; // Set targets to rank against
+			
 			var rankings = [];
 			
 			var shieldOverride = 0;
@@ -46,51 +48,63 @@ var RankerMaster = (function () {
 				
 				rankings = [];
 				
-				// Gather all eligible Pokemon
-				
-				var minStats = 3000; // You must be this tall to ride this ride
-				
-				if(battle.getCP() == 1500){
-					minStats = 1250;
-				} else if(battle.getCP() == 2500){
-					minStats = 2000;
-				}
-				
-				var bannedList = ["mewtwo","ho-oh","lugia","giratina_altered","groudon","kyogre","rayquaza","garchomp","latios","latias","palkia","dialga","heatran","giratina_origin"];
-				var permaBannedList = ["burmy_trash","burmy_sandy","burmy_plant","wormadam_plant","wormadam_sandy","wormadam_trash","mothim","cherubi","cherrim_overcast","cherrim_sunny","shellos_east_sea","shellos_west_sea","gastrodon_east_sea","gastrodon_west_sea","hippopotas","hippowdon","leafeon","glaceon","rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","uxie","azelf","mesprit","regigigas","giratina_origin","phione","manaphy","darkrai","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","jirachi"]; // Don't rank these Pokemon at all yet
-				var allowedList = [];
-
-				for(var i = 0; i < gm.data.pokemon.length; i++){
+				if((targets.length == 0)||(cup.name != "custom")){
 					
-					if(gm.data.pokemon[i].fastMoves.length > 0){
-						var pokemon = new Pokemon(gm.data.pokemon[i].speciesId, 0, battle);
+					// Gather all eligible Pokemon
 
-						pokemon.initialize(battle.getCP());
-						
-						var stats = (pokemon.stats.hp * pokemon.stats.atk * pokemon.stats.def) / 1000;
+					var minStats = 3000; // You must be this tall to ride this ride
 
-						if(stats >= minStats){
-							
-							if((battle.getCP() == 1500)&&(bannedList.indexOf(pokemon.speciesId) > -1)){
-								continue;
+					if(battle.getCP() == 1500){
+						minStats = 1250;
+					} else if(battle.getCP() == 2500){
+						minStats = 2000;
+					}
+
+					var bannedList = ["mewtwo","ho-oh","lugia","giratina_altered","groudon","kyogre","rayquaza","garchomp","latios","latias","palkia","dialga","heatran","giratina_origin"];
+					var permaBannedList = ["burmy_trash","burmy_sandy","burmy_plant","wormadam_plant","wormadam_sandy","wormadam_trash","mothim","cherubi","cherrim_overcast","cherrim_sunny","shellos_east_sea","shellos_west_sea","gastrodon_east_sea","gastrodon_west_sea","hippopotas","hippowdon","leafeon","glaceon","rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","uxie","azelf","mesprit","regigigas","giratina_origin","phione","manaphy","darkrai","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","jirachi"]; // Don't rank these Pokemon at all yet
+					var allowedList = [];
+					
+					for(var i = 0; i < gm.data.pokemon.length; i++){
+
+						if(gm.data.pokemon[i].fastMoves.length > 0){
+							var pokemon = new Pokemon(gm.data.pokemon[i].speciesId, 0, battle);
+
+							pokemon.initialize(battle.getCP());
+
+							var stats = (pokemon.stats.hp * pokemon.stats.atk * pokemon.stats.def) / 1000;
+
+							if(stats >= minStats){
+
+								if((battle.getCP() == 1500)&&(bannedList.indexOf(pokemon.speciesId) > -1)){
+									continue;
+								}
+
+								if((allowedList.length > 0) && (allowedList.indexOf(pokemon.speciesId) == -1)){
+									continue;
+								}
+
+								if(permaBannedList.indexOf(pokemon.speciesId) > -1){
+									continue;
+								}
+
+								if((cup.types.length > 0) && (cup.types.indexOf(pokemon.types[0]) < 0) && (cup.types.indexOf(pokemon.types[1]) < 0) ){	
+									continue;
+								}
+
+								pokemonList.push(pokemon);
 							}
-							
-							if((allowedList.length > 0) && (allowedList.indexOf(pokemon.speciesId) == -1)){
-								continue;
-							}
-							
-							if(permaBannedList.indexOf(pokemon.speciesId) > -1){
-								continue;
-							}
-							
-							if((cup.types.length > 0) && (cup.types.indexOf(pokemon.types[0]) < 0) && (cup.types.indexOf(pokemon.types[1]) < 0) ){	
-								continue;
-							}
-							
-							pokemonList.push(pokemon);
 						}
 					}
+					
+				} else{
+					
+					// Otherwise, push all set targets into the list
+					
+					for(var i = 0; i < targets.length; i++){
+						pokemonList.push(targets[i]);
+					}
 				}
+
 				
 				// For all eligible Pokemon, simulate battles and gather rating data
 				
@@ -107,6 +121,19 @@ var RankerMaster = (function () {
 						rating: 0,
 						opRating: 0
 					};
+					
+					if(targets.length > 0){
+						var moveset = {
+							fastMove: pokemon.fastMove,
+							chargedMoves: []
+						};
+						
+						for(var n = 0; n < pokemon.chargedMoves.length; n++){
+							moveset.chargedMoves.push(pokemon.chargedMoves[n]);
+						}
+						
+						rankObj.moveset = moveset;
+					}
 					
 					var avg = 0;
 					var opponentRating = 0;
@@ -132,8 +159,10 @@ var RankerMaster = (function () {
 						
 						// Force best moves on counters but not on the user's selected Pokemon
 						
-						pokemon.autoSelectMoves(chargedMoveCountOverride);
-						
+						if(targets.length == 0){
+							pokemon.autoSelectMoves(chargedMoveCountOverride);
+						}
+	
 						if(team.length > 3){
 							opponent.autoSelectMoves(chargedMoveCountOverride);
 						}
@@ -194,6 +223,12 @@ var RankerMaster = (function () {
 			
 			this.setChargedMoveCount = function(value){
 				chargedMoveCountOverride = value;
+			}
+			
+			// Set the targets to rank against
+			
+			this.setTargets = function(arr){
+				targets = arr;
 			}
 
 		};

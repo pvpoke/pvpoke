@@ -692,6 +692,10 @@ function Battle(){
 				buffRoll += 1;
 			}
 			
+			if(move.buffApplyChance == 1){
+				buffRoll += 1; // Force guaranteed buffs even when they're disabled
+			}
+			
 			if((buffRoll > 1 - move.buffApplyChance)&&( (move.buffTarget == "self") || ((move.buffTarget == "opponent") && (applyDefenderBuff)) )){
 				
 				var buffTarget = attacker;

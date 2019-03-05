@@ -678,8 +678,23 @@ footer{
 				}
 				
 				.moves{
-					display:block;
+					display:flex;
 					font-size:12px;
+					
+					.move{
+						width: 16px;
+						height: 16px;
+						border: 1px solid #000;
+						border-radius: 12px;
+						padding: 3px;
+						line-height: 16px;
+						text-align: center;
+						margin-right:5px;
+						
+						&:first-of-type{
+							border:none;
+						}
+					}
 				}
 				
 				.remove{

@@ -6,6 +6,7 @@
   },
   "cups": {
     "all": [],
+    "custom": [],
     "boulder": [
       "rock",
       "steel",
@@ -1841,7 +1842,8 @@
         "DYNAMIC_PUNCH",
         "HYDRO_PUMP",
         "ICE_PUNCH",
-        "SUBMISSION"
+        "SUBMISSION",
+		"POWER_UP_PUNCH"
       ],
       "legacyMoves": [
         "MUD_SHOT",
@@ -3208,7 +3210,8 @@
         "CLOSE_COMBAT",
         "FIRE_PUNCH",
         "ICE_PUNCH",
-        "THUNDER_PUNCH"
+        "THUNDER_PUNCH",
+		"POWER_UP_PUNCH"
       ],
       "legacyMoves": [
         "BRICK_BREAK",
@@ -3419,7 +3422,8 @@
         "CRUNCH",
         "EARTHQUAKE",
         "OUTRAGE",
-        "STOMP"
+        "STOMP",
+		"POWER_UP_PUNCH"
       ],
       "legacyMoves": [
         "BRICK_BREAK",
@@ -8258,7 +8262,8 @@
       "chargedMoves": [
         "DYNAMIC_PUNCH",
         "ICE_PUNCH",
-        "PSYCHIC"
+        "PSYCHIC",
+		"POWER_UP_PUNCH"
       ]
     },
     {
@@ -11850,7 +11855,8 @@
       "chargedMoves": [
         "CLOSE_COMBAT",
         "FLASH_CANNON",
-        "SHADOW_BALL"
+        "SHADOW_BALL",
+		"POWER_UP_PUNCH"
       ]
     },
     {
@@ -14798,6 +14804,18 @@
       "energy": 60,
       "energyGain": 0,
       "cooldown": 500
+    },
+    {
+      "moveId": "POWER_UP_PUNCH",
+      "name": "Power-Up Punch",
+      "type": "fighting",
+      "power": 40,
+      "energy": 35,
+      "energyGain": 0,
+      "cooldown": 500,
+	  "buffs": [1, 0],
+	  "buffTarget": "self",
+	  "buffApplyChance": "1"
     },
     {
       "moveId": "POWER_WHIP",

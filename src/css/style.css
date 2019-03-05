@@ -406,8 +406,19 @@ footer {
       .poke.multi .rankings-container .rank .name-container {
         float: none; }
       .poke.multi .rankings-container .rank .moves {
-        display: block;
+        display: flex;
         font-size: 12px; }
+        .poke.multi .rankings-container .rank .moves .move {
+          width: 16px;
+          height: 16px;
+          border: 1px solid #000;
+          border-radius: 12px;
+          padding: 3px;
+          line-height: 16px;
+          text-align: center;
+          margin-right: 5px; }
+          .poke.multi .rankings-container .rank .moves .move:first-of-type {
+            border: none; }
       .poke.multi .rankings-container .rank .remove {
         position: absolute;
         top: 2px;

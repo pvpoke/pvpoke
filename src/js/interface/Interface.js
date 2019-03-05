@@ -610,6 +610,10 @@ var InterfaceMaster = (function () {
 					return;
 				}
 				
+				// Set multi selected Pokemon if available
+				
+				ranker.setTargets(multiSelector.getPokemonList());
+				
 				// Run battles through the ranker
 				
 				var data = ranker.rank(team, battle.getCP(), battle.getCup());
@@ -630,7 +634,19 @@ var InterfaceMaster = (function () {
 					// Generate moves for link
 					
 					battle.setNewPokemon(pokemon, 1, true);
-					pokemon.autoSelectMoves(chargedMoveCount);
+					
+					
+					// Manually set moves if previously selected, otherwise autoselect
+					
+					if(r.moveset){
+						pokemon.selectMove("fast", r.moveset.fastMove.moveId);
+						
+						for(var n = 0; n < r.moveset.chargedMoves.length; n++){
+							pokemon.selectMove("charged", r.moveset.chargedMoves[n].moveId, n);
+						}
+					} else{
+						pokemon.autoSelectMoves(chargedMoveCount);
+					}
 					
 					var opMoveStr = generateURLMoveStr(pokemon);
 					
