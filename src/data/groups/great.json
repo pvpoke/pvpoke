@@ -17,7 +17,7 @@
 	{
 		"speciesId":"medicham",
 		"fastMove":"COUNTER",
-		"chargedMoves":["DYNAMIC_PUNCH","ICE_PUNCH"]
+		"chargedMoves":["POWER_UP_PUNCH","ICE_PUNCH"]
 	},
 	{
 		"speciesId":"grotle",
@@ -95,6 +95,11 @@
 		"chargedMoves":["MUD_BOMB","BLIZZARD"]
 	},
 	{
+		"speciesId":"quagsire",
+		"fastMove":"MUD_SHOT",
+		"chargedMoves":["EARTHQUAKE","STONE_EDGE"]
+	},
+	{
 		"speciesId":"forretress",
 		"fastMove":"BUG_BITE",
 		"chargedMoves":["HEAVY_SLAM","EARTHQUAKE"]
@@ -118,6 +123,16 @@
 		"speciesId":"sableye",
 		"fastMove":"SHADOW_CLAW",
 		"chargedMoves":["FOUL_PLAY","POWER_GEM"]
+	},
+	{
+		"speciesId":"marowak_alolan",
+		"fastMove":"HEX",
+		"chargedMoves":["SHADOW_BALL","FIRE_BLAST"]
+	},
+	{
+		"speciesId":"dusclops",
+		"fastMove":"HEX",
+		"chargedMoves":["SHADOW_PUNCH","FIRE_PUNCH"]
 	},
 	{
 		"speciesId":"magneton",

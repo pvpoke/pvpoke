@@ -637,12 +637,17 @@ var InterfaceMaster = (function () {
 					
 					
 					// Manually set moves if previously selected, otherwise autoselect
+					var moveNameStr = '';
 					
 					if(r.moveset){
 						pokemon.selectMove("fast", r.moveset.fastMove.moveId);
 						
+						moveNameStr = r.moveset.fastMove.name;
+						
 						for(var n = 0; n < r.moveset.chargedMoves.length; n++){
 							pokemon.selectMove("charged", r.moveset.chargedMoves[n].moveId, n);
+							
+							moveNameStr += ", " + r.moveset.chargedMoves[n].name;
 						}
 					} else{
 						pokemon.autoSelectMoves(chargedMoveCount);
@@ -659,6 +664,12 @@ var InterfaceMaster = (function () {
 					}
 					
 					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star\">"+r.opRating+"</span></div><a target=\"_blank\" href=\""+battleLink+"\"></a><div class=\"clear\"></div></div><div class=\"details\"></div>");
+					
+					// Add moveset details if set
+					
+					if(r.moveset){				
+						$el.find(".name-container").append("<div class=\"moves\">"+moveNameStr+"</div>");
+					}
 
 					$(".battle-results .rankings-container").append($el);
 				}
@@ -1053,6 +1064,8 @@ var InterfaceMaster = (function () {
 					for(var i = 0; i < pokeSelectors.length; i++){
 						pokeSelectors[i].setCP(cp);
 					}
+					
+					multiSelector.updateLeague(cp);
 				}
 				
 			}

@@ -406,19 +406,7 @@ footer {
       .poke.multi .rankings-container .rank .name-container {
         float: none; }
       .poke.multi .rankings-container .rank .moves {
-        display: flex;
-        font-size: 12px; }
-        .poke.multi .rankings-container .rank .moves .move {
-          width: 16px;
-          height: 16px;
-          border: 1px solid #000;
-          border-radius: 12px;
-          padding: 3px;
-          line-height: 16px;
-          text-align: center;
-          margin-right: 5px; }
-          .poke.multi .rankings-container .rank .moves .move:first-of-type {
-            border: none; }
+        margin-left: 0; }
       .poke.multi .rankings-container .rank .remove {
         position: absolute;
         top: 2px;
@@ -433,6 +421,8 @@ footer {
           content: "x"; }
         .poke.multi .rankings-container .rank .remove:hover {
           background: #ff0000; }
+  .poke.multi .quick-fill-buttons {
+    justify-content: space-around; }
 
 .poke-select-container.single .poke:nth-of-type(2) {
   display: block; }
@@ -933,6 +923,20 @@ select, input {
     margin-right: 10px;
     float: right;
     opacity: .5; }
+  .rank .moves {
+    display: flex;
+    font-size: 12px; }
+    .rank .moves .move {
+      width: 16px;
+      height: 16px;
+      border: 1px solid #000;
+      border-radius: 12px;
+      padding: 3px;
+      line-height: 16px;
+      text-align: center;
+      margin-right: 5px; }
+      .rank .moves .move:first-of-type {
+        border: none; }
   .rank .moveset .rating {
     background: rgba(0, 0, 0, 0.7);
     padding: 5px; }
@@ -1281,6 +1285,20 @@ select, input {
     .modal .sandbox-move-select .move-stats span.stat {
       display: block;
       font-weight: bold; }
+  .modal .list-export .list-text {
+    width: 100%;
+    height: 200px; }
+  .modal .list-export .copy {
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+    background: #004c66;
+    color: #eee;
+    padding: 5px;
+    border-radius: 8px;
+    margin: 5px 0; }
+  .modal .save-list input {
+    font-size: 18px; }
   .modal .button {
     margin: 25px auto 0 auto;
     display: inline-block; }
@@ -1620,6 +1638,8 @@ a.toggle {
       margin-right: 0; }
   .rank .details .detail-section .name {
     font-size: 14px; }
+  .rank .moves {
+    max-width: 180px; }
   .rank .rating-container .rating {
     width: auto !important; }
 

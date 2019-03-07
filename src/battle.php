@@ -310,7 +310,7 @@ require_once 'header.php';
 <script src="<?php echo $WEB_ROOT; ?>js/interface/Interface.js?v=28"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=19"></script>
-<!--<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeMultiSelect.js"></script>-->
+<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeMultiSelect.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BattleHistogram.js?v=2"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=6"></script>

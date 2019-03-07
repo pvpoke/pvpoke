@@ -48,11 +48,13 @@ function PokeMultiSelect(element){
 			$(".modal-content").append("<div class=\"center\"><div class=\"save-poke button\">Save Changes</div></div>");
 		}
 		
+		$(".modal .poke-search").focus();
+		
 	}
 	
 	// Display the selected Pokemon list
 	
-	self.updateListDisplay = function(){
+	this.updateListDisplay = function(){
 		
 		$el.find(".rankings-container").html('');
 		
@@ -87,7 +89,7 @@ function PokeMultiSelect(element){
 	
 	// After loading from the GameMaster, fill in a preset group
 	
-	self.quickFillGroup = function(data){
+	this.quickFillGroup = function(data){
 		
 		pokemonList = [];
 		
@@ -103,6 +105,57 @@ function PokeMultiSelect(element){
 		}
 		
 		self.updateListDisplay();
+	}
+	
+	// Update the custom group selections when changing league
+	
+	this.updateLeague = function(cp){
+		$el.find(".quick-fill-select option").hide();
+
+		switch(cp){
+			case 1500:
+				// Show all except Ultra and Master
+				$el.find(".quick-fill-select option").show();
+				$el.find(".quick-fill-select option[value='ultra']").hide();
+				$el.find(".quick-fill-select option[value='master']").hide();
+				break;
+				
+			case 2500:
+				$el.find(".quick-fill-select option[value='ultra']").show();
+				break;
+				
+			case 10000:
+				$el.find(".quick-fill-select option[value='master']").show();
+				break;
+		}
+		
+		$el.find(".quick-fill-select option").each(function(index, value){
+			if($(this).val().indexOf("custom") > -1){
+				$(this).show();
+			}
+		});
+	}
+	
+	// Convert the current Pokemon list into exportable and savable JSON
+	
+	this.convertListToJSON = function(){
+		var arr = [];
+		
+		for(var i = 0; i < pokemonList.length; i++){
+			var obj = {
+				speciesId: pokemonList[i].speciesId,
+				fastMove: pokemonList[i].fastMove.moveId,
+				chargedMoves: []
+			};
+			
+			for(var n = 0; n < pokemonList[i].chargedMoves.length; n++){
+				obj.chargedMoves.push(pokemonList[i].chargedMoves[n].moveId);
+			}
+			
+			arr.push(obj);
+		}
+		
+		return JSON.stringify(arr);
 	}
 	
 	// Show or hide custom options when changing the cup select
@@ -206,6 +259,79 @@ function PokeMultiSelect(element){
 		}
 	});
 	
+	// Open the import/export window
+	
+	$el.find(".export-btn").click(function(e){
+		modalWindow("Import/Export Custom Group", $(".list-export"));
+		
+		var json = self.convertListToJSON();
+		
+		$(".modal .list-text").html(json);
+	});
+	
+	// Auto select list text to copy
+
+	$("body").on("click", ".modal textarea.list-text", function(e){
+		this.setSelectionRange(0, this.value.length);
+	});
+
+	// Copy list text
+
+	$("body").on("click", ".modal .list-export .copy", function(e){
+		var el = $(e.target).prev()[0];
+		el.focus();
+		el.setSelectionRange(0, el.value.length);
+		document.execCommand("copy");
+	});
+	
+	// Import list text
+	
+	$("body").on("click", ".modal .button.import", function(e){
+		var data = JSON.parse($(".modal textarea.list-text").val());
+		
+		self.quickFillGroup(data);
+		
+		closeModalWindow();
+	});
+	
+	// Open the save window
+	
+	$el.find(".save-btn").click(function(e){
+		modalWindow("Save Group", $(".save-list"));
+	});
+	
+	// Save data to cookie
+	
+	$("body").on("click", ".modal .button.save", function(e){
+		var json = self.convertListToJSON();
+		var name = $(".modal input.list-name").val();
+		
+		if(name == ''){
+			return;
+		}
+		
+		$.ajax({
+
+			url : host+'data/groupCookie.php',
+			type : 'POST',
+			data : {
+				'name' : name,
+				'data' : json
+			},
+			dataType:'json',
+			success : function(data) {              
+				console.log(data);
+			},
+			error : function(request,error)
+			{
+				console.log("Request: "+JSON.stringify(request));
+				console.log(error);
+			}
+		});
+		
+		closeModalWindow();
+	});
+
 	// Return the list of selected Pokemon
 	
 	this.getPokemonList = function(){
