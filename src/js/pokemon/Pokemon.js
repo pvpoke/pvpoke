@@ -38,6 +38,8 @@ function Pokemon(id, i, b){
 	this.chargedMoves = [];
 	this.chargedMoves = [];
 	
+	this.isCustom = false; // Does this Pokemon have custom set levels and IV's?
+	
 	this.index = i;
 	
 	this.dps = 10; // Used later to calculate TDO
@@ -457,7 +459,7 @@ function Pokemon(id, i, b){
 		var index = (amount - 1) * 2;
 		
 		this.cpm = cpms[index];
-		
+		this.isCustom = true;
 		this.initialize(false);
 	}
 	
@@ -470,6 +472,7 @@ function Pokemon(id, i, b){
 			this.ivs.hp = parseInt(amount);
 		}
 		
+		this.isCustom = true;
 		this.initialize(false);
 	}
 	

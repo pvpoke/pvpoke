@@ -626,14 +626,25 @@ var InterfaceMaster = (function () {
 				
 				battle.setNewPokemon(poke, 0, false);
 				
+				var pokemonList = multiSelector.getPokemonList();
+				var custom = (battle.getCup().name == "custom");
+				var initialize = (custom == false);
+				
 				for(var i = 0; i < rankings.length; i++){
 					var r = rankings[i];
 					
-					var pokemon = new Pokemon(r.speciesId);
+					var pokemon;
+					
+					if(pokemonList.length > r.index){
+						pokemon = pokemonList[r.index];
+					} else{
+						pokemon = new Pokemon(r.speciesId);
+					}
+					
 					
 					// Generate moves for link
 					
-					battle.setNewPokemon(pokemon, 1, true);
+					battle.setNewPokemon(pokemon, 1, initialize);
 					
 					
 					// Manually set moves if previously selected, otherwise autoselect
@@ -653,9 +664,14 @@ var InterfaceMaster = (function () {
 						pokemon.autoSelectMoves(chargedMoveCount);
 					}
 					
+					var opPokeStr = r.speciesId;
 					var opMoveStr = generateURLMoveStr(pokemon);
 					
-					var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+r.speciesId+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
+					if(pokemon.isCustom){
+						opPokeStr += "-" + pokemon.level + "-" + pokemon.ivs.atk + "-" + pokemon.ivs.def + "-" + pokemon.ivs.hp + "-" + (pokemon.startStatBuffs[0]+4) + "-" + (pokemon.startStatBuffs[1]+4);
+					}
+					
+					var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
 					
 					// Append extra options
 
@@ -789,15 +805,15 @@ var InterfaceMaster = (function () {
 								} else{
 									pokeSelectors[0].setPokemon(arr[0]);
 									
-									$("input.level").eq(0).val(arr[1]);
-									$("input.iv[iv='atk']").eq(0).val(arr[2]);
-									$("input.iv[iv='def']").eq(0).val(arr[3]);
-									$("input.iv[iv='hp']").eq(0).val(arr[4]);
+									var pokemon = pokeSelectors[0].getPokemon();
+									pokemon.setLevel(arr[1]);
+									pokemon.setIV("atk", arr[2]);
+									pokemon.setIV("def", arr[3]);
+									pokemon.setIV("hp", arr[4]);
+
 									$("input.stat-mod[iv='atk']").eq(0).val(parseInt(arr[5]) - 4);
 									$("input.stat-mod[iv='def']").eq(0).val(parseInt(arr[6]) - 4);
 									
-									$("input.level").eq(0).trigger("keyup");
-									$("input.iv").trigger("keyup");
 									$("input.stat-mod[iv='atk']").eq(0).trigger("keyup");
 								}
 																
@@ -811,15 +827,15 @@ var InterfaceMaster = (function () {
 								} else{
 									pokeSelectors[1].setPokemon(arr[0]);
 									
-									$("input.level").eq(1).val(arr[1]);
-									$("input.iv[iv='atk']").eq(1).val(arr[2]);
-									$("input.iv[iv='def']").eq(1).val(arr[3]);
-									$("input.iv[iv='hp']").eq(1).val(arr[4]);
+									var pokemon = pokeSelectors[1].getPokemon();
+									pokemon.setLevel(arr[1]);
+									pokemon.setIV("atk", arr[2]);
+									pokemon.setIV("def", arr[3]);
+									pokemon.setIV("hp", arr[4]);
+
 									$("input.stat-mod[iv='atk']").eq(1).val(parseInt(arr[5]) - 4);
 									$("input.stat-mod[iv='def']").eq(1).val(parseInt(arr[6]) - 4);
 									
-									$("input.level").eq(1).trigger("keyup");
-									$("input.iv").trigger("keyup");
 									$("input.stat-mod[iv='atk']").eq(1).trigger("keyup");
 								}
 				

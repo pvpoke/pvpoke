@@ -17,19 +17,33 @@
 		</div>
 		
 		<div class="custom-options">
+			<h3 class="section-title">Pokemon (<span class="poke-count">0</span> / 50)</h3>
 			<p>Create or select a group of custom Pokemon below.</p>
 			<div class="rankings-container clear"></div>
 			<button class="add-poke-btn button">+ Add Pokemon</button>
 			
 			<h3 class="section-title">Quick Fill</h3>
 			<select class="quick-fill-select">
-				<option value="" selected disabled>Choose a preset group</option>
+				<option value="new">New Custom Group</option>
 				<option value="great">Great League Meta</option>
 				<option value="ultra" class="hide">Ultra League Meta</option>
 				<option value="master" class="hide">Master League Meta</option>
 				<option value="boulder">Boulder Cup Meta</option>
 				<option value="twilight">Twilight Cup Meta</option>
 				<option value="tempest">Tempest Cup Meta</option>
+				
+				<?php
+				// Display custom groups
+				
+				foreach($_COOKIE as $key=>$value){
+					if(strpos($key, 'custom_group') !== false){
+						$data = json_decode($value, true);
+						
+						echo '<option value="'.$key.'" data="'.$data["data"].'">'.$data['name'].'</option>';
+					}
+				}
+				
+				?>
 			</select>
 			<div class="flex quick-fill-buttons">
 				<button class="save-btn">Save</button>

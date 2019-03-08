@@ -16,6 +16,9 @@ function PokeMultiSelect(element){
 	var selectedIndex = -1;
 	var pokeSelector;
 	
+	var maxPokemonCount = 50;
+	var selectedGroup = "";
+	
 	this.init = function(pokes, b){
 		pokemon = pokes;
 		battle = b;
@@ -85,6 +88,14 @@ function PokeMultiSelect(element){
 			$el.find(".rankings-container").append($item);
 		}
 		
+		$el.find(".section-title .poke-count").html(pokemonList.length);
+		
+		if(pokemonList.length >= maxPokemonCount){
+			$el.find(".add-poke-btn").hide();
+		} else{
+			$el.find(".add-poke-btn").show();
+		}
+		
 	}
 	
 	// After loading from the GameMaster, fill in a preset group
@@ -94,11 +105,57 @@ function PokeMultiSelect(element){
 		pokemonList = [];
 		
 		for(var i = 0; i < data.length; i++){
+			if(pokemonList.length >= maxPokemonCount){
+				break;
+			}
+			
 			var pokemon = new Pokemon(data[i].speciesId, 1, battle);
+			pokemon.initialize(battle.getCP());
 			pokemon.selectMove("fast", data[i].fastMove);
 			
 			for(var n = 0; n < data[i].chargedMoves.length; n++){
 				pokemon.selectMove("charged", data[i].chargedMoves[n], n);
+			}
+			
+			pokemonList.push(pokemon);
+		}
+		
+		self.updateListDisplay();
+	}
+	
+	// After loading from the GameMaster, fill in a preset group
+	
+	this.quickFillCSV = function(csv){
+		
+		var arr = csv.split('\n');
+		
+		pokemonList = [];
+		
+		for(var i = 0; i < arr.length; i++){
+			if(pokemonList.length >= maxPokemonCount){
+				break;
+			}
+			
+			var poke = arr[i].split(',');
+			
+			var pokemon = new Pokemon(poke[0], 1, battle);
+			pokemon.initialize(battle.getCP());
+			
+			// Set moves
+			
+			pokemon.selectMove("fast", poke[1]);
+			pokemon.selectMove("charged", poke[2], 0);
+			pokemon.selectMove("charged", poke[3], 1);
+			
+			// Set any custom levels or ivs
+			
+			if(poke.length > 3){
+				pokemon.isCustom = true;
+				
+				pokemon.setLevel(parseFloat(poke[4]));
+				pokemon.setIV("atk", parseFloat(poke[5]));
+				pokemon.setIV("def", parseFloat(poke[6]));
+				pokemon.setIV("hp", parseFloat(poke[7]));
 			}
 			
 			pokemonList.push(pokemon);
@@ -158,6 +215,68 @@ function PokeMultiSelect(element){
 		return JSON.stringify(arr);
 	}
 	
+	// Convert the current Pokemon list into exportable and savable JSON
+	
+	this.convertListToCSV = function(){
+		var arr = [];
+		
+		var csv = '';
+		
+		for(var i = 0; i < pokemonList.length; i++){
+			
+			if(i > 0){
+				csv += '\n';
+			}
+			
+			csv += pokemonList[i].speciesId + ',' + pokemonList[i].fastMove.moveId;
+			
+			for(var n = 0; n < pokemonList[i].chargedMoves.length; n++){
+				csv += ',' + pokemonList[i].chargedMoves[n].moveId
+			}
+			
+			for(var n = 0; n < 1 - pokemonList[i].chargedMoves.length; n++){
+				csv += ',none';
+			}
+			
+			if(pokemonList[i].isCustom){
+				csv += ',' + pokemonList[i].level + ',' + pokemonList[i].ivs.atk + ',' + pokemonList[i].ivs.def + ',' + pokemonList[i].ivs.hp
+			}
+		}
+		
+		return csv;
+	}
+	
+	// Given a name, save current list to a cookie
+	
+	this.saveListToCookie = function(name, isNew){
+		var csv = self.convertListToCSV();
+		
+		if(name == ''){
+			return;
+		}
+		
+		$.ajax({
+
+			url : host+'data/groupCookie.php',
+			type : 'POST',
+			data : {
+				'name' : name,
+				'data' : csv
+			},
+			dataType:'json',
+			success : function(data) {              
+				if(! isNew){
+					modalWindow("Custom Group Saved", $("<p><b>"+name+"</b> has been updated.</p>"))
+				}
+			},
+			error : function(request,error)
+			{
+				console.log("Request: "+JSON.stringify(request));
+				console.log(error);
+			}
+		});
+	}
+	
 	// Show or hide custom options when changing the cup select
 	
 	$el.find(".cup-select").change(function(e){
@@ -173,7 +292,10 @@ function PokeMultiSelect(element){
 	// Click the add new Pokemon button
 	
 	$el.find(".add-poke-btn").click(function(e){
-		self.openPokeSelect(-1);
+		
+		if(pokemonList.length < maxPokemonCount){
+			self.openPokeSelect(-1);
+		}
 	});
 	
 	// Click a Pokemon in the list to edit
@@ -254,9 +376,26 @@ function PokeMultiSelect(element){
 		
 		// Load a preset group from data files
 		
-		if(val.indexOf("custom") == -1){
+		if((val.indexOf("custom") == -1)&&(val != "new")){
 			gm.loadGroupData(self, val);
 		}
+		
+		// Create a new group
+		
+		if(val == "new"){
+			pokemonList = [];
+			
+			self.updateListDisplay();
+		}
+		
+		// Populate from a custom group
+		
+		if(val.indexOf("custom") > -1){
+			self.quickFillCSV($(this).find("option:selected").attr("data"));
+		}
+		
+		selectedGroup = val;
+		
 	});
 	
 	// Open the import/export window
@@ -264,9 +403,9 @@ function PokeMultiSelect(element){
 	$el.find(".export-btn").click(function(e){
 		modalWindow("Import/Export Custom Group", $(".list-export"));
 		
-		var json = self.convertListToJSON();
+		var csv = self.convertListToCSV();
 		
-		$(".modal .list-text").html(json);
+		$(".modal .list-text").html(csv);
 	});
 	
 	// Auto select list text to copy
@@ -287,9 +426,9 @@ function PokeMultiSelect(element){
 	// Import list text
 	
 	$("body").on("click", ".modal .button.import", function(e){
-		var data = JSON.parse($(".modal textarea.list-text").val());
+		var data = $(".modal textarea.list-text").val();
 		
-		self.quickFillGroup(data);
+		self.quickFillCSV(data);
 		
 		closeModalWindow();
 	});
@@ -297,37 +436,23 @@ function PokeMultiSelect(element){
 	// Open the save window
 	
 	$el.find(".save-btn").click(function(e){
-		modalWindow("Save Group", $(".save-list"));
+		
+		if(selectedGroup.indexOf("custom") == -1){
+			// Prompt to save a new group if a custom one isn't selected
+			modalWindow("Save Group", $(".save-list"));
+		} else{
+			var name= $el.find(".quick-fill-select option:selected").html();
+			
+			self.saveListToCookie(name, false);
+		}
+		
 	});
 	
 	// Save data to cookie
 	
 	$("body").on("click", ".modal .button.save", function(e){
-		var json = self.convertListToJSON();
-		var name = $(".modal input.list-name").val();
 		
-		if(name == ''){
-			return;
-		}
-		
-		$.ajax({
-
-			url : host+'data/groupCookie.php',
-			type : 'POST',
-			data : {
-				'name' : name,
-				'data' : json
-			},
-			dataType:'json',
-			success : function(data) {              
-				console.log(data);
-			},
-			error : function(request,error)
-			{
-				console.log("Request: "+JSON.stringify(request));
-				console.log(error);
-			}
-		});
+		self.saveListToCookie($(".modal input.list-name").val(), true);
 		
 		closeModalWindow();
 	});

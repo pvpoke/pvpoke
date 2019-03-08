@@ -2,40 +2,27 @@
 
 /*
 * Given JSON data, write to the custom group cookie.
-* Alternatively, read and return the custom group cookie.
 */
 
-// Read
+if(! isset($_POST['name'])){
+	$response = [
+		'response' => 'error'
+		];
 
-$data = [];
-
-if(isset($_COOKIE['custom_groups'])){
-	$data = json_decode($_COOKIE['custom_groups']);
+	echo json_encode($response);
+	
+	exit();
 }
 
-if((isset($_POST['data']))&&(isset($_POST['name']))){
-	
-	// Write
-	
-	$groupFound = false;
-	
-	foreach($data as &$group){
-		if($group['name'] == $_POST['name']){
-			
-			$groupFound = true;
-			
-			$group['data'] = $_POST['data'];
-		}
-	}
-	
-	if(! $groupFound){
-		array_push($data, ['name' => $_POST['name'], 'data' => $_POST['data']]);
-	}
-	
-	// Write to cookie
-	
-	$_COOKIE['custom_groups'] = json_encode($data);
-	
+$data = [
+	'name'=>$_POST['name'],
+	'data'=>$_POST['data']
+];
+
+$slug = strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', '_', $_POST['name'])));
+
+if(isset($_POST['data'])){
+	setCookie('custom_group_' . $slug, json_encode($data), time() + (5 * 365 * 24 * 60 * 60), '/');
 }
 
 // Return a JSON response

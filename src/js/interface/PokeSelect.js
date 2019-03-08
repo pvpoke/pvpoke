@@ -151,6 +151,15 @@ function PokeSelect(element, i){
 					self.animateEnergy(i, 0);
 				}
 			}
+			
+			// If set from variables, display custom level and ivs
+			
+			if((selectedPokemon.isCustom)&&($("input:focus").length == 0)){
+				$el.find("input.level").val(selectedPokemon.level);
+				$el.find("input.iv[iv='atk']").val(selectedPokemon.ivs.atk);
+				$el.find("input.iv[iv='def']").val(selectedPokemon.ivs.def);
+				$el.find("input.iv[iv='hp']").val(selectedPokemon.ivs.hp);
+			}
 		}
 	}
 	
@@ -441,6 +450,7 @@ function PokeSelect(element, i){
 		}
 		
 		isCustom = true;
+		selectedPokemon.isCustom = true;
 		
 		self.update();
 	});
