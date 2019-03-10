@@ -32,7 +32,7 @@ function Pokemon(id, i, b){
 	this.chargedMovePool = [];
 	this.legacyMoves = [];
 	
-	this.typeEffectiveness;
+	this.typeEffectiveness = getTypeEffectivenessArray(b);
 	
 	this.fastMove = null;
 	this.chargedMoves = [];
@@ -51,6 +51,8 @@ function Pokemon(id, i, b){
 	this.damageWindow = 0;
 	this.shields = 0;
 	this.startingShields = 0;
+	
+	this.baitShields = true; // Use low energy attacks to bait shields
 
 	// Set legacy moves
 	
@@ -84,7 +86,17 @@ function Pokemon(id, i, b){
 	
 	this.initialize = function(targetCP){
 		
-		if(targetCP){
+		this.cp = self.calculateCP();
+		
+		var maxCP = 10000;
+		
+		if(battle){
+			maxCP = battle.getCP();
+		}
+		
+		if((targetCP)||(this.cp > maxCP)){
+			
+			targetCP = maxCP;
 			
 		
 			// Scale Pokemon to selected CP
@@ -112,15 +124,11 @@ function Pokemon(id, i, b){
 		this.hp = this.stats.hp;
 		this.startHp = this.hp;
 		
-		this.cp = Math.floor(( (this.baseStats.atk+this.ivs.atk) * Math.pow(this.baseStats.def+this.ivs.def, 0.5) * Math.pow(this.baseStats.hp+this.ivs.hp, 0.5) * Math.pow(this.cpm, 2) ) / 10);
+		this.cp = self.calculateCP();
 		
 		if(this.cp < 10){
 			this.cp = 10;
 		}
-		
-		// Set type effectiveness array
-		
-		self.typeEffectiveness = self.getTypeEffectivenessArray();
 		
 		// Set moves if unset
 		
@@ -130,6 +138,14 @@ function Pokemon(id, i, b){
 			
 			self.autoSelectMoves();
 		}
+	}
+	
+	// Calculate and return the Pokemon's CP
+	
+	this.calculateCP = function(){
+		var cp = Math.floor(( (this.baseStats.atk+this.ivs.atk) * Math.pow(this.baseStats.def+this.ivs.def, 0.5) * Math.pow(this.baseStats.hp+this.ivs.hp, 0.5) * Math.pow(this.cpm, 2) ) / 10);
+		
+		return cp;
 	}
 	
 	// The benevolent cousin to this.getStabbed()
@@ -159,26 +175,22 @@ function Pokemon(id, i, b){
 		self.activeChargedMoves = []; // Keep a list of charged moves sorted by energy
 		
 		if(this.chargedMoves.length > 0){
-			self.bestChargedMove = self.chargedMoves[0];
 			
-			for(var i = 0; i < self.chargedMoves.length; i++){
-				
-				if(self.chargedMoves[i].dpe > self.bestChargedMove.dpe){
-					self.bestChargedMove = self.chargedMoves[i];
-				}
-				
+			for(var i = 0; i < self.chargedMoves.length; i++){				
 				self.activeChargedMoves.push(self.chargedMoves[i]);
 			}
 			
 			self.activeChargedMoves.sort((a,b) => (a.energy > b.energy) ? 1 : ((b.energy > a.energy) ? -1 : 0));
+	
+			self.bestChargedMove = self.activeChargedMoves[0];
 			
-			/*for(var i = 0; i < self.activeChargedMoves.length; i++){
+			for(var i = 0; i < self.activeChargedMoves.length; i++){
 				var move = self.activeChargedMoves[i];
 				
-				if(move.dpe - self.bestChargedMove.dpe > 0){
+				if(move.dpe - self.bestChargedMove.dpe > .03){
 					self.bestChargedMove = self.activeChargedMoves[i];
 				}
-			}*/
+			}
 			
 
 		} else{
@@ -203,6 +215,14 @@ function Pokemon(id, i, b){
 		
 		if(move.energy > 0){
 			move.dpe = move.damage / move.energy;
+			
+			// If move buffs attack, apply that
+			
+			if((move.buffs)&&(move.buffs[0] > 0)){
+				var multiplier = ( (gm.data.settings.buffDivisor +(move.buffs[0]* move.buffApplyChance)) / gm.data.settings.buffDivisor);
+				
+				move.dpe *= multiplier;
+			}
 		} else{
 			move.eps = move.energyGain / (move.cooldown / 500);
 			move.deps = move.dps * move.eps;
@@ -387,11 +407,26 @@ function Pokemon(id, i, b){
 	}
 	
 	// Return effectiveness array for offense or defense
+	
+	/*
+	* So this is really weird. Javascript functions declared like this can't be called until
+	* after the declaration. I need to call this in the constructor. So instead of moving
+	* the one line of code beneath the function declaration, I chose ... this.
+	*/
+	
+	self.getTypeEffectivenessArray = function(){
+		return getTypeEffectivenessArray(self.battle);
+	}
 
-	this.getTypeEffectivenessArray = function(){
+	function getTypeEffectivenessArray(battle){
+		
+		if(! battle){
+			return;
+		}
+		
 		var arr = [];
 
-		var allTypes = self.getAllTypes();
+		var allTypes = getAllTypes();
 
 		for(var n = 0; n < allTypes.length; n++){
 			effectiveness = battle.getEffectiveness(allTypes[n], self.types);
@@ -407,7 +442,7 @@ function Pokemon(id, i, b){
 	
 	// Array of all types
 
-	this.getAllTypes = function(){			
+	function getAllTypes(){			
 		var types = ["Bug","Dark","Dragon","Electric","Fairy","Fighting","Fire","Flying","Ghost","Grass","Ground","Ice","Normal","Poison","Psychic","Rock","Steel","Water"];
 
 		return types;

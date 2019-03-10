@@ -39,6 +39,8 @@ var InterfaceMaster = (function () {
 			
 			var settingGetParams = false; // Flag to keep certain functions from running
 			
+			var isLoadingPreset = false; // Flag that lets the sim know if it should wait for a preset list to finish loading
+			
 			var ranker = RankerMaster.getInstance();
 			ranker.context = this.context;
 
@@ -81,6 +83,10 @@ var InterfaceMaster = (function () {
 				
 				$("body").on("click", ".rating-table a.rating.star", viewShieldBattle);
 				$("body").on("click", ".section.summary a.rating.star", viewBulkBattle);
+				
+				// Multi Battle CSV download
+				
+				$(".button.download-csv").click(downloadMultiResultCSV);
 				
 				// Sandbox mode
 				
@@ -638,7 +644,7 @@ var InterfaceMaster = (function () {
 					if(pokemonList.length > r.index){
 						pokemon = pokemonList[r.index];
 					} else{
-						pokemon = new Pokemon(r.speciesId);
+						pokemon = new Pokemon(r.speciesId, 1, battle);
 					}
 					
 					
@@ -664,12 +670,8 @@ var InterfaceMaster = (function () {
 						pokemon.autoSelectMoves(chargedMoveCount);
 					}
 					
-					var opPokeStr = r.speciesId;
+					var opPokeStr = generateURLPokeStr(pokemon, 1);
 					var opMoveStr = generateURLMoveStr(pokemon);
-					
-					if(pokemon.isCustom){
-						opPokeStr += "-" + pokemon.level + "-" + pokemon.ivs.atk + "-" + pokemon.ivs.def + "-" + pokemon.ivs.hp + "-" + (pokemon.startStatBuffs[0]+4) + "-" + (pokemon.startStatBuffs[1]+4);
-					}
 					
 					var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
 					
@@ -710,6 +712,16 @@ var InterfaceMaster = (function () {
 				
 				if( (poke.startHp != poke.stats.hp) || (poke.startEnergy != 0) ){
 					battleStr += poke.startHp +  "/" + poke.startEnergy + "/";
+				}
+				
+				// Add preset group to URL if available
+				
+				if(cup == "custom"){
+					var groupName = multiSelector.getSelectedGroup();
+					
+					if(groupName.indexOf("custom") == -1){
+						battleStr += groupName + "/";
+					}
 				}
 				
 				
@@ -814,6 +826,14 @@ var InterfaceMaster = (function () {
 									$("input.stat-mod[iv='atk']").eq(0).val(parseInt(arr[5]) - 4);
 									$("input.stat-mod[iv='def']").eq(0).val(parseInt(arr[6]) - 4);
 									
+									if(arr[7]){
+										pokemon.baitShields = (parseInt(arr[7]) == 1);
+										
+										if(! pokemon.baitShields){
+											$(".poke.single .shield-baiting").eq(0).removeClass("on");
+										}
+									}
+
 									$("input.stat-mod[iv='atk']").eq(0).trigger("keyup");
 								}
 																
@@ -835,6 +855,14 @@ var InterfaceMaster = (function () {
 
 									$("input.stat-mod[iv='atk']").eq(1).val(parseInt(arr[5]) - 4);
 									$("input.stat-mod[iv='def']").eq(1).val(parseInt(arr[6]) - 4);
+									
+									if(arr[7]){
+										pokemon.baitShields = (parseInt(arr[7]) == 1);
+										
+										if(! pokemon.baitShields){
+											$(".poke.single .shield-baiting").eq(1).removeClass("on");
+										}
+									}
 									
 									$("input.stat-mod[iv='atk']").eq(1).trigger("keyup");
 								}
@@ -981,6 +1009,11 @@ var InterfaceMaster = (function () {
 								$(".charged-count-select").trigger("change");
 								break;
 								
+							case "g1":
+								multiSelector.selectGroup(val);
+								isLoadingPreset = true;
+								break;
+								
 						}
 					}
 					
@@ -999,8 +1032,19 @@ var InterfaceMaster = (function () {
 				settingGetParams = false;
 					
 				// Auto run the battle
+				
+				if(! isLoadingPreset){
+					$(".battle-btn").trigger("click");
+				} else{
+					// Oh yeah, this is top level programming right here
+					// Super bandaid fix to give preset lists time to load
+					
+					setTimeout(function(){
+						$(".battle-btn").trigger("click");
+					}, 500);
+				}
 
-				$(".battle-btn").trigger("click");
+				
 				
 				if(sandbox){
 					self.runSandboxSim();
@@ -1388,7 +1432,7 @@ var InterfaceMaster = (function () {
 				if(pokeSelectors[index].isCustom()){
 					var arr = [pokemon.level];
 					
-					arr.push(pokemon.ivs.atk, pokemon.ivs.def, pokemon.ivs.hp, pokemon.startStatBuffs[0]+gm.data.settings.maxBuffStages, pokemon.startStatBuffs[1]+gm.data.settings.maxBuffStages);
+					arr.push(pokemon.ivs.atk, pokemon.ivs.def, pokemon.ivs.hp, pokemon.startStatBuffs[0]+gm.data.settings.maxBuffStages, pokemon.startStatBuffs[1]+gm.data.settings.maxBuffStages, pokemon.baitShields ? 1 : 0);
 					
 					// Stat buffs are increased by 4 so the URL doesn't have to deal with parsing negative numbers
 					
@@ -1416,6 +1460,8 @@ var InterfaceMaster = (function () {
 				
 				if(sandbox){
 					actions = battle.getActions();
+					
+					console.log(actions);
 					
 					// Give both Pokemon access to shields
 
@@ -1634,6 +1680,36 @@ var InterfaceMaster = (function () {
 				} else{
 					self.resetSandbox();
 					closeModalWindow();
+				}
+				
+			}
+			
+			// Download multi battle result CSV
+			
+			function downloadMultiResultCSV(e){
+				// Generate CSV data from HTML elements because we're scrappy like that
+				
+				var csv = 'Pokemon,Battle Rating';
+				var count = 0;
+				
+				$(".battle-results.multi .rank").each(function(index, value){					
+					csv += '\n' + $(this).find(".name").html() + ',' + $(this).find(".rating.star").html();
+					count++;
+				});
+				
+				if(count > 0){
+					var filename = pokeSelectors[0].getPokemon().speciesName + " vs " + $(".poke.multi .cup-select option:selected").html() + ".csv";
+
+					if (!csv.match(/^data:text\/csv/i)) {
+						csv = 'data:text/csv;charset=utf-8,' + csv;
+					}
+					
+					data = encodeURI(csv);
+
+					link = document.createElement('a');
+					link.setAttribute('href', data);
+					link.setAttribute('download', filename);
+					link.click();
 				}
 				
 			}

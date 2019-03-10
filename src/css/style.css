@@ -309,7 +309,13 @@ footer {
   margin: 20px 0; }
   .poke .options .start-hp,
   .poke .options .start-energy {
-    margin: 5px 0; }
+    margin: 5px 0;
+    max-width: 129px; }
+  .poke .options .flex {
+    justify-content: space-between; }
+  .poke .options .shield-baiting {
+    text-align: left;
+    font-size: 14px; }
   .poke .options .label {
     margin: 5px 5px 5px 0; }
 .poke a.random {
@@ -395,6 +401,8 @@ footer {
       font-size: 14px;
       width: 100%;
       margin-bottom: 0; }
+    .poke.multi .custom-options .export-btn {
+      margin-top: 15px; }
   .poke.multi .rankings-container {
     max-height: 295px; }
     .poke.multi .rankings-container .rank {
@@ -724,6 +732,8 @@ select, input {
     text-align: left; }
     .battle-results.multi .poke-search {
       margin-top: 15px; }
+    .battle-results.multi .button {
+      display: inline-block; }
 
 .timeline {
   border-top: 1px dashed #000;

@@ -479,7 +479,7 @@ function Battle(){
 
 				// Use charged move if the opponent has a shield
 
-				if((opponent.shields > 0)  && (!chargedMoveUsed)){
+				if((opponent.shields > 0)  && (!chargedMoveUsed) && (poke.baitShields)){
 
 					// Don't use a charged move if a fast move will result in a KO
 
@@ -692,7 +692,7 @@ function Battle(){
 				buffRoll += 1;
 			}
 			
-			if(move.buffApplyChance == 1){
+			if((move.buffApplyChance == 1)&&(! sandbox)){
 				buffRoll += 1; // Force guaranteed buffs even when they're disabled
 			}
 			
@@ -838,7 +838,9 @@ function Battle(){
 					shielded = true;
 				}
 				
-				var buffs = (event.values[3] !== undefined); // Check to see if any buff or debuff values are associated with this event
+				var buffs = (event.values[2] !== undefined); // Check to see if any buff or debuff values are associated with this event
+				
+				console.log(event.values);
 				
 				actions.push(new TimelineAction(
 					"charged",

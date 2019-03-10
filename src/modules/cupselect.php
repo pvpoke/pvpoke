@@ -3,5 +3,5 @@
 	<option value="boulder">Boulder Cup</option>
 	<option value="twilight">Twilight Cup</option>
 	<option value="tempest">Tempest Cup</option>
-	<option value="custom">Custom...</option>
+	<option value="custom">Custom</option>
 </select>

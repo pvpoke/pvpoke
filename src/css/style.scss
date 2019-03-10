@@ -541,6 +541,16 @@ footer{
 		.start-hp,
 		.start-energy{
 			margin:5px 0;
+			max-width:129px;
+		}
+		
+		.flex{
+			justify-content: space-between;
+		}
+		
+		.shield-baiting{
+			text-align: left;
+			font-size:14px;
 		}
 		
 		.label{
@@ -657,6 +667,10 @@ footer{
 				font-size: 14px;
 				width: 100%;
 				margin-bottom: 0;
+			}
+			
+			.export-btn{
+				margin-top:15px;
 			}
 		}
 		
@@ -1104,6 +1118,10 @@ select, input{
 		
 		.poke-search{
 			margin-top:15px;
+		}
+		
+		.button{
+			display:inline-block;
 		}
 	}
 }

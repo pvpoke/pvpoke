@@ -16,6 +16,11 @@
 		// If $_GET request exists, output as JSON into Javascript
 		
 		<?php
+		foreach($_GET as &$param){
+			$param = htmlspecialchars($param);
+		}
+		
+		
 		if($_GET){
 			echo 'var get = ' . json_encode($_GET) . ';';
 		} else{

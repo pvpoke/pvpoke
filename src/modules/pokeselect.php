@@ -88,6 +88,7 @@
 			<div class="flex">
 				<div class="label">Energy:</div><input class="start-energy" type="number" min="0" max="100" placeholder="Starting Energy" />
 			</div>
+			<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
 		</div>
 		
 		<a href="#" class="clear-selection">Clear Selection</a>

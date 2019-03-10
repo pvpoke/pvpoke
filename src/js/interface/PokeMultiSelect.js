@@ -131,6 +131,8 @@ function PokeMultiSelect(element){
 		
 		pokemonList = [];
 		
+		var cp = battle.getCP();
+		
 		for(var i = 0; i < arr.length; i++){
 			if(pokemonList.length >= maxPokemonCount){
 				break;
@@ -139,7 +141,8 @@ function PokeMultiSelect(element){
 			var poke = arr[i].split(',');
 			
 			var pokemon = new Pokemon(poke[0], 1, battle);
-			pokemon.initialize(battle.getCP());
+			
+			pokemon.initialize(cp);
 			
 			// Set moves
 			
@@ -147,9 +150,15 @@ function PokeMultiSelect(element){
 			pokemon.selectMove("charged", poke[2], 0);
 			pokemon.selectMove("charged", poke[3], 1);
 			
+			// Set first slot to none if both are none
+			
+			if(poke[3] == 'none'){
+				pokemon.selectMove("charged", poke[3], 0);
+			}
+			
 			// Set any custom levels or ivs
 			
-			if(poke.length > 3){
+			if(poke.length > 4){
 				pokemon.isCustom = true;
 				
 				pokemon.setLevel(parseFloat(poke[4]));
@@ -234,7 +243,7 @@ function PokeMultiSelect(element){
 				csv += ',' + pokemonList[i].chargedMoves[n].moveId
 			}
 			
-			for(var n = 0; n < 1 - pokemonList[i].chargedMoves.length; n++){
+			for(var n = 0; n < 2 - pokemonList[i].chargedMoves.length; n++){
 				csv += ',none';
 			}
 			
@@ -267,6 +276,15 @@ function PokeMultiSelect(element){
 			success : function(data) {              
 				if(! isNew){
 					modalWindow("Custom Group Saved", $("<p><b>"+name+"</b> has been updated.</p>"))
+				} else{
+					// Add new group to all dropdowns
+					
+					$(".quick-fill-select").append($("<option value=\"custom\" data=\""+csv+"\">"+name+"</option>"));
+					$el.find(".quick-fill-select option").last().prop("selected", "selected");
+					
+					$el.find(".save-as").hide();
+					$el.find(".save-custom").show();
+					$el.find(".delete-btn").show();
 				}
 			},
 			error : function(request,error)
@@ -378,6 +396,12 @@ function PokeMultiSelect(element){
 		
 		if((val.indexOf("custom") == -1)&&(val != "new")){
 			gm.loadGroupData(self, val);
+			
+			// Show the save as button
+			
+			$el.find(".save-as").show();
+			$el.find(".save-custom").hide();
+			$el.find(".delete-btn").hide();
 		}
 		
 		// Create a new group
@@ -386,12 +410,24 @@ function PokeMultiSelect(element){
 			pokemonList = [];
 			
 			self.updateListDisplay();
+			
+			// Show the save button
+			
+			$el.find(".save-as").hide();
+			$el.find(".save-custom").show();
+			$el.find(".delete-btn").hide();
 		}
 		
 		// Populate from a custom group
 		
 		if(val.indexOf("custom") > -1){
 			self.quickFillCSV($(this).find("option:selected").attr("data"));
+			
+			// Show the save and delete buttons
+			
+			$el.find(".save-as").hide();
+			$el.find(".save-custom").show();
+			$el.find(".delete-btn").show();
 		}
 		
 		selectedGroup = val;
@@ -441,7 +477,7 @@ function PokeMultiSelect(element){
 			// Prompt to save a new group if a custom one isn't selected
 			modalWindow("Save Group", $(".save-list"));
 		} else{
-			var name= $el.find(".quick-fill-select option:selected").html();
+			var name = $el.find(".quick-fill-select option:selected").html();
 			
 			self.saveListToCookie(name, false);
 		}
@@ -456,10 +492,67 @@ function PokeMultiSelect(element){
 		
 		closeModalWindow();
 	});
+	
+	// Open the delete group window
+	
+	$el.find(".delete-btn").click(function(e){
+		var name = $el.find(".quick-fill-select option:selected").html();
+		
+		modalWindow("Delete Group", $(".delete-list-confirm"));
+		
+		$(".modal .name").html(name);
+	});
+	
+	// Delete group cookie
+	
+	$("body").on("click", ".modal .delete-list-confirm .button.yes", function(e){
+		
+		var name = $el.find(".quick-fill-select option:selected").html();
+		var csv = self.convertListToCSV();
+		
+		$.ajax({
+
+			url : host+'data/groupCookie.php',
+			type : 'POST',
+			data : {
+				'name' : name,
+				'data' : csv,
+				'delete' : 1
+			},
+			dataType:'json',
+			success : function(data) {              
+				closeModalWindow();
+				
+				// Remove option from quick fill selects
+				
+				$(".quick-fill-select option[value='"+selectedGroup+"']").remove();
+				$el.find(".quick-fill-select option").first().prop("selected", "selected");
+				$el.find(".quick-fill-select").trigger("change");
+			},
+			error : function(request,error)
+			{
+				console.log("Request: "+JSON.stringify(request));
+				console.log(error);
+			}
+		});
+	});
 
 	// Return the list of selected Pokemon
 	
 	this.getPokemonList = function(){
 		return pokemonList;
+	}
+	
+	// Return the id of the selected custom group
+	
+	this.getSelectedGroup = function(){
+		return selectedGroup;
+	}
+	
+	// Force a group selection
+	
+	this.selectGroup = function(id){
+		$el.find(".quick-fill-select option[value='"+id+"']").prop("selected", "selected");
+		$el.find(".quick-fill-select").trigger("change");
 	}
 }

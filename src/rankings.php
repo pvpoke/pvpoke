@@ -4,11 +4,11 @@ $cp = '1500';
 $cup = 'all';
 
 if(isset($_GET['cp'])){
-	$cp = $_GET['cp'];
+	$cp = htmlspecialchars($_GET['cp']);
 }
 
 if(isset($_GET['cup'])){
-	$cup = $_GET['cup'];
+	$cup = htmlspecialchars($_GET['cup']);
 }
 
 $CANONICAL = '/rankings/' . $cup . '/' . $cp . '/overall/';

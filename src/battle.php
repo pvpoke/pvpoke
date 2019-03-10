@@ -9,8 +9,8 @@ $CANONICAL = '/battle/';
 if(isset($_GET['p1']) && (isset($_GET['p2']))){
 	// Put Pokemon names in the meta title
 	
-	$name1 = ucwords(str_replace('_',' ',$_GET['p1']));
-	$name2 = ucwords(str_replace('_',' ',$_GET['p2']));
+	$name1 = ucwords(str_replace('_',' ',htmlspecialchars($_GET['p1'])));
+	$name2 = ucwords(str_replace('_',' ',htmlspecialchars($_GET['p2'])));
 	
 	$META_TITLE = 'Battle - ' . $name1 . ' vs. ' . $name2;
 }
@@ -259,6 +259,7 @@ require_once 'header.php';
 			<div class="ranking-header">Opponent</div>
 			<div class="ranking-header right">Battle Rating</div>
 			<div class="rankings-container clear"></div>
+			<div class="button download-csv">Export to CSV</div>
 		</div>
 	</div>
 	

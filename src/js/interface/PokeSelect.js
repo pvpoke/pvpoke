@@ -27,6 +27,8 @@ function PokeSelect(element, i){
 		});
 		
 		interface = InterfaceMaster.getInstance();
+		
+		self.clear();
 	}
 	
 	this.update = function(){
@@ -215,10 +217,14 @@ function PokeSelect(element, i){
 	this.clear = function(){
 		selectedPokemon = null;
 		
-		$el.find(".poke-stats").hide();
-		$el.find(".poke-search").val('');
+		$el.find("input.level").val('');
+		$el.find("input.iv").val('');
+		$el.find("input.stat-mod").val('');
 		$el.find(".start-hp").val('');
 		$el.find(".start-energy").val('');
+		$el.find(".move-select").html('');
+		$el.find(".start-energy").val('');
+		$el.find(".poke-stats").hide();
 		$pokeSelect.find("option").first().prop("selected", "selected");
 		
 		isCustom = false;
@@ -428,6 +434,14 @@ function PokeSelect(element, i){
 		if(interface.runSandboxSim){
 			interface.runSandboxSim();
 		}
+	});
+	
+	// Turn shield baiting on and off
+	
+	$el.find(".check.shield-baiting").on("click", function(e){
+		selectedPokemon.baitShields = (! selectedPokemon.baitShields);
+		
+		isCustom = true;
 	});
 	
 	// Toggle the advanced options drawer
