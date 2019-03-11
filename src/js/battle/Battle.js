@@ -840,8 +840,6 @@ function Battle(){
 				
 				var buffs = (event.values[2] !== undefined); // Check to see if any buff or debuff values are associated with this event
 				
-				console.log(event.values);
-				
 				actions.push(new TimelineAction(
 					"charged",
 					event.actor,

@@ -186,7 +186,7 @@ var InterfaceMaster = (function () {
 						position = ( ((event.time+1000)/1000)*50)+"px";
 					}
 					
-					var $item = $("<div class=\"item-container\"><div class=\"item "+event.type+"\" index=\""+i+"\" actor=\""+event.actor+"\" turn=\""+event.turn+"\" name=\""+event.name+"\" energy=\""+energy[event.actor]+"\" values=\""+event.values.join(',')+"\"></div></div>");
+					var $item = $("<div class=\"item-container\"><div class=\"item "+event.type+"\" index=\""+i+"\" actor=\""+event.actor+"\" turn=\""+event.turn+"\" name=\""+event.name+"\" energy=\""+energy[event.actor]+"\" values=\""+event.values.join(',')+"\" onClick=\"\"></div></div>");
 
 					$item.css("left", position);
 					
@@ -584,7 +584,7 @@ var InterfaceMaster = (function () {
 					$(".stats-table .stat-energy-gained").eq(i).html(energyGained[i]);
 					$(".stats-table .stat-energy-used").eq(i).html(energyUsed[i]);
 					
-					$(".stats-table .stat-energy-remaining").eq(i).html((energyGained[i] - energyUsed[i])+pokemon[i].startEnergy);
+					$(".stats-table .stat-energy-remaining").eq(i).html(Math.min( (energyGained[i] - energyUsed[i])+pokemon[i].startEnergy, 100));
 					
 					if(turnsToChargedMove[i] > 0){
 						$(".stats-table .stat-charged-time").eq(i).html(turnsToChargedMove[i]+" ("+(turnsToChargedMove[i]*.5)+"s)");
@@ -602,10 +602,12 @@ var InterfaceMaster = (function () {
 				var cup = $(".cup-select option:selected").val();
 				var opponentShields = parseInt($(".poke.multi .shield-select option:selected").val());
 				var chargedMoveCount = parseInt($(".poke.multi .charged-count-select option:selected").val());
+				var shieldBaiting = $(".poke.multi .check.shield-baiting").hasClass("on") ? 1 : 0;
 
 				battle.setCup(cup);
 				ranker.setShields(opponentShields);
 				ranker.setChargedMoveCount(chargedMoveCount);
+				ranker.setShieldBaitOverride($(".poke.multi .check.shield-baiting").hasClass("on"));
 				
 				var team = [];
 				var poke = pokeSelectors[0].getPokemon();
@@ -670,6 +672,11 @@ var InterfaceMaster = (function () {
 						pokemon.autoSelectMoves(chargedMoveCount);
 					}
 					
+					if(! $(".poke.multi .check.shield-baiting").hasClass("on")){
+						pokemon.baitShields = false;
+						pokemon.isCustom = true;
+					}
+					
 					var opPokeStr = generateURLPokeStr(pokemon, 1);
 					var opMoveStr = generateURLMoveStr(pokemon);
 					
@@ -706,7 +713,7 @@ var InterfaceMaster = (function () {
 				// Generate and display share link
 				
 				var cp = battle.getCP();
-				var battleStr = "battle/multi/"+cp+"/"+cup+"/"+pokeStr+"/"+poke.startingShields+opponentShields+"/"+moveStr+"/"+chargedMoveCount+"/";
+				var battleStr = "battle/multi/"+cp+"/"+cup+"/"+pokeStr+"/"+poke.startingShields+opponentShields+"/"+moveStr+"/"+chargedMoveCount+"-"+shieldBaiting+"/";
 				
 				// Append extra options
 				
@@ -1005,8 +1012,18 @@ var InterfaceMaster = (function () {
 								break;
 								
 							case "cms":
-								$(".charged-count-select option[value=\""+val+"\"]").prop("selected","selected");
+								var arr = val.split("-");
+								
+								$(".charged-count-select option[value=\""+arr[0]+"\"]").prop("selected","selected");
 								$(".charged-count-select").trigger("change");
+								
+								if(arr.length > 1){
+									if(parseInt(arr[1]) == 0){
+										$(".poke.multi .check.shield-baiting").removeClass("on");
+									}
+								}
+								
+								
 								break;
 								
 							case "g1":
@@ -1429,7 +1446,7 @@ var InterfaceMaster = (function () {
 			function generateURLPokeStr(pokemon, index){
 				var pokeStr = pokemon.speciesId;
 				
-				if(pokeSelectors[index].isCustom()){
+				if(pokemon.isCustom){
 					var arr = [pokemon.level];
 					
 					arr.push(pokemon.ivs.atk, pokemon.ivs.def, pokemon.ivs.hp, pokemon.startStatBuffs[0]+gm.data.settings.maxBuffStages, pokemon.startStatBuffs[1]+gm.data.settings.maxBuffStages, pokemon.baitShields ? 1 : 0);
@@ -1460,8 +1477,6 @@ var InterfaceMaster = (function () {
 				
 				if(sandbox){
 					actions = battle.getActions();
-					
-					console.log(actions);
 					
 					// Give both Pokemon access to shields
 
@@ -1494,6 +1509,16 @@ var InterfaceMaster = (function () {
 				}
 				
 				if($(this).hasClass("disabled")){
+					return;
+				}
+				
+				if($(this).hasClass("shield")){
+					// Select the associated charged move
+					
+					var turn = $(this).attr("turn");
+					var actor = ($(this).attr("actor") == 0) ? 1 : 0;
+					
+					$(".timeline .charged[turn='"+turn+"'][actor='"+actor+"']").trigger("click");
 					return;
 				}
 				
@@ -1692,8 +1717,51 @@ var InterfaceMaster = (function () {
 				var csv = 'Pokemon,Battle Rating';
 				var count = 0;
 				
-				$(".battle-results.multi .rank").each(function(index, value){					
-					csv += '\n' + $(this).find(".name").html() + ',' + $(this).find(".rating.star").html();
+				$(".battle-results.multi .rank").each(function(index, value){
+					
+					var name = $(this).find(".name").html();
+					
+					// List specified move abbreviations
+					
+					if($(this).find(".name-container .moves").length > 0){
+						var moves = $(this).find(".name-container .moves").html().split(', ');
+						var abbreviations = [];
+						
+						for(var i = 0; i < moves.length; i++){
+							var id = moves[i].replace(/[ -]/g, '_');
+							var arr = id.split('_');
+							
+							var abbreviation = '';
+							
+							for(var n = 0; n < arr.length; n++){
+								abbreviation += arr[n].charAt(0);
+							}
+							
+							abbreviations.push(abbreviation);
+						}
+						
+						var moveStr = '(' + abbreviations[0];
+						
+						if(abbreviations.length > 1){
+							moveStr += '+';
+							
+							for(var i = 1; i < abbreviations.length; i++){
+								if(i > 1){
+									moveStr += '/';
+								}
+								
+								moveStr += abbreviations[i];
+							}
+						}
+						
+						moveStr += ')';
+						
+						name += ' ' + moveStr;
+						
+						console.log(name);
+					}
+					
+					csv += '\n' + name + ',' + $(this).find(".rating.star").html();
 					count++;
 				});
 				

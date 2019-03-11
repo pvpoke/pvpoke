@@ -26,6 +26,7 @@ var RankerMaster = (function () {
 			
 			var shieldOverride = 0;
 			var chargedMoveCountOverride = 2;
+			var shieldBaitOverride = true;
 			
 			this.context = "team-builder";
 
@@ -175,6 +176,8 @@ var RankerMaster = (function () {
 							opponent.autoSelectMoves(chargedMoveCountOverride);
 						}
 						
+						pokemon.baitShields = shieldBaitOverride;
+						
 						pokemon.setShields(shieldOverride);
 						
 						battle.simulate();
@@ -231,6 +234,12 @@ var RankerMaster = (function () {
 			
 			this.setChargedMoveCount = function(value){
 				chargedMoveCountOverride = value;
+			}
+			
+			// Override whether or not to bait shields
+			
+			this.setShieldBaitOverride = function(value){
+				shieldBaitOverride = value;
 			}
 			
 			// Set the targets to rank against

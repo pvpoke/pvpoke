@@ -23,23 +23,33 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 	
-	<h4>v1.5.0 (February 28, 2019)</h4>
+	<h4>v1.6.0 (March 11, 2019)</h4>
 	<ul>
-		<li>Sandbox Mode</li>
+		<li>Multi-Battle now supports custom Pokemon groups</li>
 		<ul>
-			<li>Edit the timeline with custom actions</li>
-			<li>Set exactly when moves and shields are used</li>
+			<li>Get started quickly with preset groups for each cup and league</li>
+			<li>Add up to 50 Pokemon with specific movesets or IVs</li>
+			<li>Save your groups locally or export them in text format</li>
 		</ul>
-		<li>Timeline adjustments</li>
+		<li>Multi-Battle results can now be exported in CSV format</li>
+		<li>Battle adjustments</li>
 		<ul>
-			<li>Adjusted charging visuals so it's more clear when Charged Moves are activated</li>
-			<li>Fast Move icons are now bigger to make them easier to select</li>
-			<li>Timeline playback now has a scale option to either fit or zoom in, making it easier to edit extended battles</li>
+			<li>Auto move selection and use now include stat buffs in DPE calculations</li>
+			<ul>
+				<li>This is a simple tweak that causes a Pokemon like Hitmonchan to use Power-Up Punch over Brick Break when both have identical stats.</li>
+			</ul>
+			<li>Pokemon now favor lower energy moves when DPE is within a very close margin</li>
+			<li>Added an option to turn shield baiting on or off</li>
+			<ul>
+				<li>When on, Pokemon always use low-energy moves against opponent shields. When off, Pokemon will only use their most efficient (highest DPE) move. This will help show which Pokemon rely on a shield bait to win their matchups.</li>
+			</ul>
+			<li>Pokemon option section is now toggleable to reduce clutter</li>
 		</ul>
+		<li>Sandbox Mode Fixes</li>
 		<ul>
-			<li>This makes it easier to inspect and interact with extended battles</li>
+			<li>Fixed an issue where the "Apply buffs/debuffs" checkbox wasn't behaving correctly, esp. with Power-Up Punch</li>
+			<li>Clicking a shield icon now brings up the edit window for the associated Charged Move</li>
 		</ul>
-		<li>Page title now updates to the current battle</li>
 	</ul>
 	
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>

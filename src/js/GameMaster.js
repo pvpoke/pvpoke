@@ -11,7 +11,7 @@ var GameMaster = (function () {
 		object.groups = [];
 		object.loadedData = 0;
 		
-		$.getJSON( webRoot+"data/gamemaster.json?v=54", function( data ){
+		$.getJSON( webRoot+"data/gamemaster.json?v=55", function( data ){
 			object.data = data;
 			
 			// Sort Pokemon alphabetically for searching
@@ -109,7 +109,7 @@ var GameMaster = (function () {
 			var key = group;
 			
 			if(! object.groups[key]){
-				var file = webRoot+"data/groups/"+group+".json?v=54";
+				var file = webRoot+"data/groups/"+group+".json?v=55";
 				
 				$.getJSON( file, function( data ){
 					

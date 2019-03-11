@@ -13,6 +13,7 @@
 				<option value="1">1 Charged Move</option>
 				<option value="2" selected>2 Charged Moves</option>
 			</select>
+			<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
 		</div>
 		
 		<div class="custom-options">
@@ -40,7 +41,7 @@
 					if(strpos($key, 'custom_group') !== false){
 						$data = json_decode($value, true);
 						
-						echo '<option value="'.$key.'" data="'.$data["data"].'">'.$data['name'].'</option>';
+						echo '<option value="'.$key.'" data="'.$data["data"].'">'.htmlspecialchars($data['name']).'</option>';
 					}
 				}
 				

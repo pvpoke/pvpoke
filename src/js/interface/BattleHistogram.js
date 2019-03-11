@@ -51,8 +51,7 @@ function BattleHistogram($element){
 		
 		if(currentData){
 			previousData = currentData; // Save previous for comparison
-		}
-		
+		}		
 		
 		var histogramCounts = []; // Stores the number of matchups in each bracket
 
