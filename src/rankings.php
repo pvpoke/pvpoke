@@ -148,7 +148,7 @@ require_once 'header.php';
 <script src="<?php echo $WEB_ROOT; ?>js/interface/RankingInterface.js?v=10"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js?v=2"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=6"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=22"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=24"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/RankingMain.js?v=2"></script>
 
 <?php require_once 'footer.php'; ?>

@@ -37,6 +37,8 @@ var InterfaceMaster = (function () {
 			var sandboxActionIndex;
 			var sandboxTurn;
 			
+			var csv; // Store the CSV from last results
+			
 			var settingGetParams = false; // Flag to keep certain functions from running
 			
 			var isLoadingPreset = false; // Flag that lets the sim know if it should wait for a preset list to finish loading
@@ -629,6 +631,8 @@ var InterfaceMaster = (function () {
 				var shieldStr = poke.startingShields + "" + opponentShields;
 				var pokeStr = generateURLPokeStr(poke, 0);
 				var moveStr = generateURLMoveStr(poke);
+				
+				csv = data.csv;
 				
 				$(".battle-results .rankings-container").html('');
 				
@@ -1712,60 +1716,8 @@ var InterfaceMaster = (function () {
 			// Download multi battle result CSV
 			
 			function downloadMultiResultCSV(e){
-				// Generate CSV data from HTML elements because we're scrappy like that
-				
-				var csv = 'Pokemon,Battle Rating';
-				var count = 0;
-				
-				$(".battle-results.multi .rank").each(function(index, value){
-					
-					var name = $(this).find(".name").html();
-					
-					// List specified move abbreviations
-					
-					if($(this).find(".name-container .moves").length > 0){
-						var moves = $(this).find(".name-container .moves").html().split(', ');
-						var abbreviations = [];
-						
-						for(var i = 0; i < moves.length; i++){
-							var id = moves[i].replace(/[ -]/g, '_');
-							var arr = id.split('_');
-							
-							var abbreviation = '';
-							
-							for(var n = 0; n < arr.length; n++){
-								abbreviation += arr[n].charAt(0);
-							}
-							
-							abbreviations.push(abbreviation);
-						}
-						
-						var moveStr = '(' + abbreviations[0];
-						
-						if(abbreviations.length > 1){
-							moveStr += '+';
-							
-							for(var i = 1; i < abbreviations.length; i++){
-								if(i > 1){
-									moveStr += '/';
-								}
-								
-								moveStr += abbreviations[i];
-							}
-						}
-						
-						moveStr += ')';
-						
-						name += ' ' + moveStr;
-						
-						console.log(name);
-					}
-					
-					csv += '\n' + name + ',' + $(this).find(".rating.star").html();
-					count++;
-				});
-				
-				if(count > 0){
+
+				if(csv){
 					var filename = pokeSelectors[0].getPokemon().speciesName + " vs " + $(".poke.multi .cup-select option:selected").html() + ".csv";
 
 					if (!csv.match(/^data:text\/csv/i)) {

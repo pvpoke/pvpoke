@@ -440,12 +440,14 @@ function Battle(){
 				}
 
 				// Don't use best charged move if opponent has shields and a cheaper move is charged
+				
+				if(poke.shieldBaiting){
+					for(var n = 0; n < poke.chargedMoves.length; n++){
+						if((poke.energy >= poke.chargedMoves[n].energy) && (poke.chargedMoves[n].energy < poke.bestChargedMove.energy)){
+							useChargedMove = false;
 
-				for(var n = 0; n < poke.chargedMoves.length; n++){
-					if((poke.energy >= poke.chargedMoves[n].energy) && (poke.chargedMoves[n].energy < poke.bestChargedMove.energy)){
-						useChargedMove = false;
-
-					self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because it has a cheaper move to remove shields");
+						self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because it has a cheaper move to remove shields");
+						}
 					}
 				}
 			}

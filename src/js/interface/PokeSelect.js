@@ -441,6 +441,7 @@ function PokeSelect(element, i){
 	$el.find(".check.shield-baiting").on("click", function(e){
 		selectedPokemon.baitShields = (! selectedPokemon.baitShields);
 		
+		selectedPokemon.isCustom = true;
 		isCustom = true;
 	});
 	

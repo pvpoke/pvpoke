@@ -42,6 +42,9 @@ function PokeMultiSelect(element){
 			pokeSelector.clear();
 			
 			$(".modal-content").append("<div class=\"center\"><div class=\"save-poke button\">Add Pokemon</div></div>");
+			
+					
+			$(".modal .poke-search").focus();
 		} else{
 			
 			// Edit existing Pokemon
@@ -50,8 +53,6 @@ function PokeMultiSelect(element){
 			
 			$(".modal-content").append("<div class=\"center\"><div class=\"save-poke button\">Save Changes</div></div>");
 		}
-		
-		$(".modal .poke-search").focus();
 		
 	}
 	

@@ -9,8 +9,8 @@ $CANONICAL = '/battle/';
 if(isset($_GET['p1']) && (isset($_GET['p2']))){
 	// Put Pokemon names in the meta title
 	
-	$name1 = ucwords(str_replace('_',' ',htmlspecialchars($_GET['p1'])));
-	$name2 = ucwords(str_replace('_',' ',htmlspecialchars($_GET['p2'])));
+	$name1 = ucwords(str_replace('_',' ', explode('-', htmlspecialchars($_GET['p1']))[0]));
+	$name2 = ucwords(str_replace('_',' ', explode('-', htmlspecialchars($_GET['p2']))[0]));
 	
 	$META_TITLE = 'Battle - ' . $name1 . ' vs. ' . $name2;
 }
@@ -308,16 +308,16 @@ require_once 'header.php';
 <!--test-->
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=46"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=11"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/Interface.js?v=29"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/Interface.js?v=30"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=20"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeMultiSelect.js?=2"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=21"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeMultiSelect.js?=4"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BattleHistogram.js?v=2"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=6"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineAction.js"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=22"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/TeamRanker.js?v=15"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=24"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/TeamRanker.js?v=16"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/Main.js?v=3"></script>
 
 <?php require_once 'footer.php'; ?>

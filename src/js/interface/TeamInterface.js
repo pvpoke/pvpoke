@@ -228,7 +228,7 @@ var InterfaceMaster = (function () {
 				for(var i = 0; i < 10; i++){
 					var r = counterRankings[i];
 					
-					var pokemon = new Pokemon(r.speciesId);
+					var pokemon = new Pokemon(r.speciesId, 1, battle);
 					counterTeam.push(pokemon);
 					
 					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star\">"+r.rating+"</span></div><div class=\"clear\"></div></div><div class=\"details\"></div>");
@@ -243,7 +243,7 @@ var InterfaceMaster = (function () {
 				for(var i = 0; i < 10; i++){
 					var r = altRankings[i];
 					
-					var pokemon = new Pokemon(r.speciesId);
+					var pokemon = new Pokemon(r.speciesId, 1, battle);
 					
 					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star\">"+r.rating+"</span></div><div class=\"clear\"></div></div><div class=\"details\"></div>");
 

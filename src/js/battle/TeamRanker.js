@@ -28,6 +28,8 @@ var RankerMaster = (function () {
 			var chargedMoveCountOverride = 2;
 			var shieldBaitOverride = true;
 			
+			var csv = '';
+			
 			this.context = "team-builder";
 
 			// Run an individual rank set
@@ -48,6 +50,10 @@ var RankerMaster = (function () {
 				}
 				
 				rankings = [];
+				
+				if(team.length == 1){
+					csv = 'Pokemon,Battle Rating'
+				}
 				
 				if((targets.length == 0)||(cup.name != "custom")){
 					
@@ -124,18 +130,39 @@ var RankerMaster = (function () {
 						index: i
 					};
 					
+					// Add to CSV
+					
+					var name = pokemon.speciesName;
+
 					if(targets.length > 0){
 						var moveset = {
 							fastMove: pokemon.fastMove,
 							chargedMoves: []
 						};
 						
+						name += ' (' + pokemon.fastMove.abbreviation;
+						
+						if(pokemon.chargedMoves.length > 0){
+							name += '+';
+						}
+						
 						for(var n = 0; n < pokemon.chargedMoves.length; n++){
 							moveset.chargedMoves.push(pokemon.chargedMoves[n]);
+							
+							if(n > 0){
+								name += '/';
+							}
+							
+							name += pokemon.chargedMoves[n].abbreviation;
 						}
 						
 						rankObj.moveset = moveset;
+						
+						name += ')';
+						
 					}
+					
+					csv += '\n' + name;
 					
 					var avg = 0;
 					var opponentRating = 0;
@@ -190,6 +217,8 @@ var RankerMaster = (function () {
 						
 						var rating = Math.floor( (healthRating + damageRating) * 500);
 						var opRating = Math.floor( (opHealthRating + opDamageRating) * 500);
+						
+						csv += ',' + opRating;
 
 						avg += rating;
 						opponentRating = opRating;
@@ -221,7 +250,7 @@ var RankerMaster = (function () {
 								
 				battle.clearPokemon(); // Prevents associated Pokemon objects from being altered by future battles
 				
-				return {rankings: rankings, teamRatings: teamRatings};
+				return {rankings: rankings, teamRatings: teamRatings, csv: csv};
 			}
 			
 			// Override Pokemon shield settings with the provided value
