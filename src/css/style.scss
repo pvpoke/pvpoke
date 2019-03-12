@@ -1123,6 +1123,13 @@ select, input{
 		.button{
 			display:inline-block;
 		}
+		
+		.rankings-container{
+			.rank:hover{
+				border-left:none;
+				cursor:initial;
+			}
+		}
 	}
 }
 
@@ -1806,6 +1813,24 @@ select, input{
 	
 	.supporters{
 		justify-content: center;
+		flex-wrap:wrap;
+		
+		.supporter-container{
+			
+			margin-bottom:15px;
+			
+			img{
+				display:block;
+				max-height:85px;
+				margin: 0 auto;
+			}
+			
+			.space{
+				width:85px;
+				height:85px;
+			}
+			
+		}
 
 		.supporter{
 			background:#fff;

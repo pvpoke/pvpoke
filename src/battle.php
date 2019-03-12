@@ -307,7 +307,7 @@ require_once 'header.php';
 
 <!--test-->
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=46"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=11"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=12"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/Interface.js?v=30"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=21"></script>

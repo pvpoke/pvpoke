@@ -734,6 +734,9 @@ select, input {
       margin-top: 15px; }
     .battle-results.multi .button {
       display: inline-block; }
+    .battle-results.multi .rankings-container .rank:hover {
+      border-left: none;
+      cursor: initial; }
 
 .timeline {
   border-top: 1px dashed #000;
@@ -1227,7 +1230,17 @@ select, input {
 .contribute h2 {
   font-size: 20px; }
 .contribute .supporters {
-  justify-content: center; }
+  justify-content: center;
+  flex-wrap: wrap; }
+  .contribute .supporters .supporter-container {
+    margin-bottom: 15px; }
+    .contribute .supporters .supporter-container img {
+      display: block;
+      max-height: 85px;
+      margin: 0 auto; }
+    .contribute .supporters .supporter-container .space {
+      width: 85px;
+      height: 85px; }
   .contribute .supporters .supporter {
     background: #fff;
     border-radius: 8px;

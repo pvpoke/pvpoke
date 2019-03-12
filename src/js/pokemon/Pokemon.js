@@ -94,7 +94,15 @@ function Pokemon(id, i, b){
 			maxCP = battle.getCP();
 		}
 		
-		if((targetCP)||(this.cp > maxCP)){
+		// Bandaid fix for scenarios where Pokemon who have shield baiting or stat boost settings are considered custom
+		
+		var isDefault = false;
+		
+		if((this.level == 40)&&(this.ivs.atk == this.ivs.def == this.ivs.hp == 0)){
+			isDefault = true;
+		}
+		
+		if((targetCP)||((this.cp > maxCP)&&(isDefault))){
 			
 			targetCP = maxCP;
 			

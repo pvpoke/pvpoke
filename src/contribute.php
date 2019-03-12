@@ -30,8 +30,20 @@ require_once 'header.php'; ?>
 	<h2 class="center">Master Supporters</h2>
 	
 	<div class="supporters flex center">
-		<div class="supporter"><a href="https://www.youtube.com/channel/UCz0vZmmKHbGa1ZVNgJEw2bw" target="_blank">Elite Four TV</a></div>
-		<div class="supporter"><a href="https://discord.gg/fbczGXZ" target="_blank">Pokemon GO PVP Discord</a></div>
+		<div class="supporter-container">
+			<div class="space"></div>
+			<div class="supporter"><a href="https://www.youtube.com/channel/UCz0vZmmKHbGa1ZVNgJEw2bw" target="_blank">Elite Four TV</a></div>
+		</div>
+		<div class="supporter-container">
+			<div class="space"></div>
+			<div class="supporter"><a href="https://discord.gg/fbczGXZ" target="_blank">Pokemon GO PVP Discord</a></div>
+		</div>
+		
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/pokenavbot.png" />
+			<div class="supporter"><a href="https://pokenavbot.com/" target="_blank">PokeNav Discord Bot</a></div>
+		</div>
+		
 	</div>
 </div>
 

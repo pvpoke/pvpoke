@@ -23,6 +23,15 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 	
+	<h4>v1.6.1 (March 12, 2019)</h4>
+	<ul>
+		<li>Fixed some visual issues in the multi-battle results on mobile that caused the layout to shift</li>
+		<li>Removed the CP cap from manually entered IV's</li>
+		<ul>
+			<li>There was an issue in battle links that sometimes pushed Pokemon over the CP limit, but this fix caused usability issues. This has been adjusted to mostly fix the battle link issue while leaving manually inputted IV's unaffected.</li>
+		</ul>
+	</ul>
+	
 	<h4>v1.6.0 (March 11, 2019)</h4>
 	<ul>
 		<li>Multi-Battle now supports custom Pokemon groups</li>
