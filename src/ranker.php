@@ -17,7 +17,7 @@
 <script src="js/interface/RankerInterface.js?v=2"></script>
 <script src="js/battle/TimelineEvent.js?v=2"></script>
 <script src="js/battle/Battle.js?v=2"></script>
-<script src="js/battle/Ranker.js?v=2"></script>
+<script src="js/battle/RankerSandboxWeighting.js"></script>
 <script src="js/RankerMain.js"></script>
 
 <?php require_once 'footer.php'; ?>

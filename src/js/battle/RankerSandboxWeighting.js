@@ -20,8 +20,6 @@ var RankerMaster = (function () {
 			var rankings = [];
 			var rankingCombinations = [];
 			
-			var mode = "all"; // All or top
-			
 			var self = this;
 			
 			// Run all ranking sets at once
@@ -30,8 +28,8 @@ var RankerMaster = (function () {
 				
 				battle.setCup(cup.name);
 				
-				var leagues = [1500];
-				var shields = [ [0,0], [2,2], [0,2], [2,0]];
+				var leagues = [1500, 2500, 10000];
+				var shields = [ [0,0], [1,1], [0,1], [1,0]];
 
 				for(var i = 0; i < leagues.length; i++){
 					for(var n = 0; n < shields.length; n++){
@@ -76,7 +74,7 @@ var RankerMaster = (function () {
 				if(battle.getCP() == 1500){
 					minStats = 1250;
 				} else if(battle.getCP() == 2500){
-					minStats = 2000;
+					minStats = 2500;
 				}
 				
 				// Don't allow these Pokemon into the Great League. They can't be trusted.
@@ -115,11 +113,7 @@ var RankerMaster = (function () {
 								continue;
 							}
 							
-							// Push Pokemon list and all eligible fast moves
-							
-							for(var n = 0; n < pokemon.fastMovePool.length; n++){
-								pokemonList.push({pokemon: pokemon, fastMove: pokemon.fastMovePool[n].moveId});
-							}
+							pokemonList.push(pokemon);
 						}
 					}
 				}
@@ -130,7 +124,7 @@ var RankerMaster = (function () {
 				
 				for(var i = 0; i < rankCount; i++){
 					
-					var pokemon = pokemonList[i].pokemon;
+					var pokemon = pokemonList[i];
 					
 					// Start with a blank rank object
 					
@@ -150,7 +144,7 @@ var RankerMaster = (function () {
 					
 					for(var n = 0; n < rankCount; n++){
 						
-						var opponent = pokemonList[n].pokemon;
+						var opponent = pokemonList[n];
 						
 						// If battle has already been simulated, skip
 							
@@ -186,9 +180,6 @@ var RankerMaster = (function () {
 						pokemon.autoSelectMoves();
 						opponent.autoSelectMoves();
 						
-						pokemon.selectMove("fast", pokemonList[i].fastMove);
-						opponent.selectMove("fast", pokemonList[n].fastMove);
-						
 						pokemon.setShields(shieldCounts[0]);
 						opponent.setShields(shieldCounts[1]);
 						
@@ -207,8 +198,8 @@ var RankerMaster = (function () {
 						
 						// Modify ratings by shields burned and shields remaining
 						
-						var winMultiplier = 0;
-						var opWinMultiplier = 0;
+						var winMultiplier = 1;
+						var opWinMultiplier = 1;
 						
 						if(rating > opRating){
 							opWinMultiplier = 0;
@@ -323,10 +314,6 @@ var RankerMaster = (function () {
 				
 				var iterations = 10;
 				
-				if(mode == "top"){
-					iterations = 4;
-				}
-				
 				// Doesn't make sense to weight which attackers can beat which other attackers, so don't weight those
 				
 				if(shieldCounts[0] != shieldCounts[1]){
@@ -335,6 +322,14 @@ var RankerMaster = (function () {
 				
 				for(var i = 0; i < rankCount; i++){
 					var rating = rankings[i].rating;
+					
+					// Factor overall score by moveset consistency, this keeps things like Mew and Togetic from being artificially high
+
+					var fastMovePercentage = rankings[i].moves.fastMoves[0].uses / rankings.length;
+
+					if(fastMovePercentage < .5){
+						rating *= Math.pow(fastMovePercentage, .125);
+					}
 					
 					rankings[i].scores = [rating];
 				}
@@ -353,23 +348,25 @@ var RankerMaster = (function () {
 						
 						for(var j = 0; j < matches.length; j++){
 							
-							// var weight = rankings[j].scores[n] * Math.pow( Math.max((rankings[j].scores[n] / bestScore) - (.5 + (.1 * n)), 0), 2);
-							
-							/*var weight = 1;
-							
-							if(rankings[j].scores[n] / bestScore < .5 + (.05 * n)){
-								weight = 0;
-							}*/
-							
-							var weight = (1 / pokemonList[j].pokemon.fastMovePool.length) * Math.pow( Math.max((rankings[j].scores[n] / bestScore) - (.1 + (.05 * n)), 0), 0.5);
-							
-							/*if(rankings[j].scores[n] / bestScore < .5 + (.1 * n)){
-								weight = 0;
-							}*/
+							var weight = Math.pow( Math.max((rankings[j].scores[n] / bestScore) - (.1 + (.05 * n)), 0), 0.5);
 							
 							var sc = matches[j].adjRating * weight;
 							
+							if(rankings[j].scores[n] / bestScore < .1 + (.05 * n)){
+								weight = 0;
+							}
+
 							weights += weight;
+							
+							/* Factor overall score by moveset consistency again, if this doesn't happen
+							* Pokemon with Hidden Power will filter to the top because they technically beat
+							* a lot of top opponents */
+
+							var fastMovePercentage = rankings[i].moves.fastMoves[0].uses / rankings.length;
+
+							if(fastMovePercentage < .5){
+								sc *= Math.pow(fastMovePercentage, .125);
+							}
 							
 							matches[j].score = sc;
 
@@ -453,11 +450,11 @@ var RankerMaster = (function () {
 				
 				if((shieldCounts[0] == 0) && (shieldCounts[1] == 0)){
 					category = "closers";
-				} else if((shieldCounts[0] == 2) && (shieldCounts[1] == 2)){
+				} else if((shieldCounts[0] == 1) && (shieldCounts[1] == 1)){
 					category = "leads";
-				} else if((shieldCounts[0] == 2) && (shieldCounts[1] == 0)){
+				} else if((shieldCounts[0] == 1) && (shieldCounts[1] == 0)){
 					category = "defenders";
-				} else if((shieldCounts[0] == 0) && (shieldCounts[1] == 2)){
+				} else if((shieldCounts[0] == 0) && (shieldCounts[1] == 1)){
 					category = "attackers";
 				}
 				
