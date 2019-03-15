@@ -719,15 +719,6 @@ select, input {
         background-image: url("../img/shield_none.png"); }
       .battle-results .battle-details .rating-table .shield.shield-double {
         width: 36px; }
-    .battle-results .battle-details .stats-table .label {
-      max-width: 85px;
-      text-align: left;
-      font-weight: bold;
-      font-size: 12px; }
-    .battle-results .battle-details .stats-table tr:nth-child(2n) {
-      background: rgba(0, 0, 0, 0.15); }
-    .battle-results .battle-details .stats-table td {
-      padding: 5px; }
   .battle-results.multi {
     text-align: left; }
     .battle-results.multi .poke-search {
@@ -832,6 +823,50 @@ select, input {
 
 .sandbox {
   display: none; }
+
+.stats-table .label {
+  max-width: 85px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 12px; }
+  .stats-table .label span:after {
+    font-size: 14px;
+    content: "\025B4";
+    visibility: hidden; }
+  .stats-table .label.asc span:after {
+    visibility: visible;
+    content: "\025B4"; }
+  .stats-table .label.desc span:after {
+    visibility: visible;
+    content: "\025BE"; }
+.stats-table tr:nth-child(2n) {
+  background: rgba(0, 0, 0, 0.15); }
+.stats-table td {
+  padding: 5px; }
+.stats-table span.type {
+  display: block;
+  border-radius: 8px;
+  padding: 2px 4px;
+  text-align: center; }
+  .stats-table span.type.dark, .stats-table span.type.dragon {
+    color: #eee; }
+.stats-table.sortable-table {
+  margin: 0 auto; }
+  .stats-table.sortable-table .label {
+    cursor: pointer;
+    -webkit-touch-callout: none;
+    /* iOS Safari */
+    -webkit-user-select: none;
+    /* Safari */
+    -khtml-user-select: none;
+    /* Konqueror HTML */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+                   /* Non-prefixed version, currently
+					  supported by Chrome and Opera */ }
 
 /* Buff and debuff background animations */
 @-webkit-keyframes BUFF-ANIMATION {
