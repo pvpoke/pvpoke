@@ -24,6 +24,12 @@
       "ice",
       "flying",
       "ground"
+    ],
+    "kingdom": [
+      "fire",
+      "ice",
+      "dragon",
+	  "steel"
     ]
   },
   "pokemon": [
@@ -663,7 +669,8 @@
       "chargedMoves": [
         "DARK_PULSE",
         "GUNK_SHOT",
-        "SLUDGE_WAVE"
+        "SLUDGE_WAVE",
+		"ACID_SPRAY"
       ]
     },
     {
@@ -2084,7 +2091,9 @@
       "chargedMoves": [
         "LEAF_BLADE",
         "SLUDGE_BOMB",
-        "SOLAR_BEAM"
+        "SOLAR_BEAM",
+		"ACID_SPRAY",
+		"LEAF_TORNADO"
       ]
     },
     {
@@ -2130,7 +2139,8 @@
       "chargedMoves": [
         "BLIZZARD",
         "HYDRO_PUMP",
-        "SLUDGE_WAVE"
+        "SLUDGE_WAVE",
+		"ACID_SPRAY"
       ]
     },
     {
@@ -2653,7 +2663,8 @@
         "DARK_PULSE",
         "GUNK_SHOT",
         "SLUDGE_WAVE",
-        "THUNDER_PUNCH"
+        "THUNDER_PUNCH",
+		"ACID_SPRAY"
       ],
       "legacyMoves": [
         "ACID",
@@ -2681,7 +2692,8 @@
       "chargedMoves": [
         "DARK_PULSE",
         "GUNK_SHOT",
-        "SLUDGE_WAVE"
+        "SLUDGE_WAVE",
+		"ACID_SPRAY"
       ]
     },
     {
@@ -5549,7 +5561,8 @@
       "chargedMoves": [
         "EARTHQUAKE",
         "SLUDGE_BOMB",
-        "STONE_EDGE"
+        "STONE_EDGE",
+		"ACID_SPRAY"
       ]
     },
     {
@@ -5934,7 +5947,8 @@
       "chargedMoves": [
         "AQUA_TAIL",
         "ICE_BEAM",
-        "SLUDGE_WAVE"
+        "SLUDGE_WAVE",
+		"ACID_SPRAY"
       ]
     },
     {
@@ -6234,7 +6248,8 @@
       "chargedMoves": [
         "AURORA_BEAM",
         "GUNK_SHOT",
-        "WATER_PULSE"
+        "WATER_PULSE",
+		"ACID_SPRAY"
       ]
     },
     {
@@ -7499,7 +7514,8 @@
       "chargedMoves": [
         "FOUL_PLAY",
         "HURRICANE",
-        "LEAF_BLADE"
+        "LEAF_BLADE",
+		"LEAF_TORNADO"
       ]
     },
     {
@@ -8470,7 +8486,8 @@
       "chargedMoves": [
         "GUNK_SHOT",
         "ICE_BEAM",
-        "SLUDGE_BOMB"
+        "SLUDGE_BOMB",
+		"ACID_SPRAY"
       ]
     },
     {
@@ -13567,6 +13584,18 @@
       "cooldown": 1000
     },
     {
+      "moveId": "ACID_SPRAY",
+      "name": "Acid Spray",
+      "type": "poison",
+      "power": 20,
+      "energy": 50,
+      "energyGain": 0,
+      "cooldown": 500,
+	  "buffs": [0, -2],
+	  "buffTarget": "opponent",
+	  "buffApplyChance": "1"
+    },
+    {
       "moveId": "AERIAL_ACE",
       "name": "Aerial Ace",
       "type": "flying",
@@ -14540,6 +14569,18 @@
       "energy": 35,
       "energyGain": 0,
       "cooldown": 500
+    },
+    {
+      "moveId": "LEAF_TORNADO",
+      "name": "Leaf Tornado",
+      "type": "grass",
+      "power": 45,
+      "energy": 40,
+      "energyGain": 0,
+      "cooldown": 500,
+	  "buffs": [-1, 0],
+	  "buffTarget": "opponent",
+	  "buffApplyChance": ".5"
     },
     {
       "moveId": "LICK",

@@ -481,7 +481,7 @@ function Battle(){
 
 				// Use charged move if the opponent has a shield
 
-				if((opponent.shields > 0)  && (!chargedMoveUsed) && (poke.baitShields)){
+				if((opponent.shields > 0)  && (!chargedMoveUsed) && ((move == poke.bestChargedMove)||(poke.baitShields))){
 
 					// Don't use a charged move if a fast move will result in a KO
 
@@ -647,7 +647,12 @@ function Battle(){
 				damage = 1;
 				defender.shields--;
 				roundShieldUsed = true;
-				shieldBuffModifier = -1; // Don't buffs or debuffs if it shields
+				
+				// Don't debuff if it shields
+				
+				if((move.buffs)&&(move.buffTarget == "opponent")){
+					shieldBuffModifier = 0;
+				}
 
 				self.logDecision(turns, defender, " blocks with a shield");
 
@@ -688,7 +693,7 @@ function Battle(){
 			
 			// Roll against the buff chance to see if it applies
 			
-			var buffRoll = Math.random() + buffChanceModifier; // Totally not Really Random but just to get off the ground for now
+			var buffRoll = Math.random() + buffChanceModifier + shieldBuffModifier; // Totally not Really Random but just to get off the ground for now
 			
 			if(forceBuff){
 				buffRoll += 1;
@@ -698,12 +703,12 @@ function Battle(){
 				buffRoll += 1; // Force guaranteed buffs even when they're disabled
 			}
 			
-			if((buffRoll > 1 - move.buffApplyChance)&&( (move.buffTarget == "self") || ((move.buffTarget == "opponent") && (applyDefenderBuff)) )){
+			if(buffRoll > 1 - move.buffApplyChance){
 				
 				var buffTarget = attacker;
 
 				if(move.buffTarget == "opponent"){
-					buffTarget = opponent;
+					buffTarget = defender;
 				}
 
 				buffTarget.applyStatBuffs(move.buffs);

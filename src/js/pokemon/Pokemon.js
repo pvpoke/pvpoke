@@ -226,8 +226,16 @@ function Pokemon(id, i, b){
 			
 			// If move buffs attack, apply that
 			
-			if((move.buffs)&&(move.buffs[0] > 0)){
-				var multiplier = ( (gm.data.settings.buffDivisor +(move.buffs[0]* move.buffApplyChance)) / gm.data.settings.buffDivisor);
+			if(move.buffs){
+				var buffEffect = 0;
+				
+				if((move.buffTarget == "self")&&(move.buffs[0] > 0)){
+					buffEffect = move.buffs[0] * (80 / move.energy); // Factor in a rough number of times the move will be used in battle
+				} else if((move.buffTarget == "opponent")&&(move.buffs[1] < 0)){
+					buffEffect = Math.abs(move.buffs[1]) * (80 / move.energy);
+				}
+				
+				var multiplier = ( (gm.data.settings.buffDivisor +(buffEffect* move.buffApplyChance)) / gm.data.settings.buffDivisor);
 				
 				move.dpe *= multiplier;
 			}
@@ -290,16 +298,19 @@ function Pokemon(id, i, b){
 		
 		self.chargedMoves = [];
 		
-		self.chargedMoves.push(chargedMoves[0]);
-		
-		chargedMoves.splice(0,1);
+		if(count > 0){
+			self.chargedMoves.push(chargedMoves[0]);
+
+			chargedMoves.splice(0,1);
+		}
+
 		
 		// Sort remaining charged moves by dpe, weighted by energy
 		
 		for(var i = 0; i < chargedMoves.length; i++){
 			var move = chargedMoves[i];
 			
-			move.dpe = move.damage / Math.pow(move.energy, 2);
+			move.dpe *= 1 / move.energy;
 		}
 		
 		if(chargedMoves.length > 0){

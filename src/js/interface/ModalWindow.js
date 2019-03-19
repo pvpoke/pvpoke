@@ -1,7 +1,9 @@
 // JavaScript Document
+	
+var closePrevention = false; // Prevents closing the window during certain interactions
 
 function modalWindow(header, content){
-	
+
 	var $content = $(content).clone();
 	$content.removeClass("hide");
 	
@@ -12,23 +14,36 @@ function modalWindow(header, content){
 	$modal.find(".modal-content").append($content);
 	
 	$("body").append($modal);
+	
+	// Prevent the window from closing for a period of time
+	
 
+	
+	// Close the window on clicking the X or clicking outside the window
+
+	$(".modal-close").click(function(e){
+		closeModalWindow();
+	});
+
+
+	$(".modal").click(function(e){
+
+		if($(".modal-container:hover").length == 0){
+			closeModalWindow();
+		}
+	});
 }
 
-// Close the window on clicking the X or clicking outside the window
+function setModalClosePrevention(time){
+	closePrevention = true;
 
-$("body").on("click", ".modal-close", function(e){
-	closeModalWindow();
-});
-
-
-$("body").on("click", ".modal", function(e){
-	
-	if($(".modal-container:hover").length == 0){
-		closeModalWindow();
-	}
-});
+	setTimeout(function(){
+		closePrevention = false;
+	}, time);
+}
 
 function closeModalWindow(){
-	$(".modal").remove();
+	if(! closePrevention){
+		$(".modal").remove();
+	}
 }

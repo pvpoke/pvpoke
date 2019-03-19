@@ -454,7 +454,7 @@ function PokeSelect(element, i){
 	
 	// Change level input
 	
-	$el.find("input.level").on("keyup", function(e){
+	$el.find("input.level").on("keyup change", function(e){
 		
 		var value = parseFloat($el.find("input.level").val());
 		
@@ -472,7 +472,7 @@ function PokeSelect(element, i){
 	
 	// Change level input
 	
-	$el.find("input.iv").on("keyup", function(e){
+	$el.find("input.iv").on("keyup change", function(e){
 		
 		var value = parseFloat($(this).val());
 		
@@ -489,7 +489,7 @@ function PokeSelect(element, i){
 	
 	// Change stat modifier input
 	
-	$el.find("input.stat-mod").on("keyup", function(e){
+	$el.find("input.stat-mod").on("keyup change", function(e){
 		
 		var value = parseInt($(this).val());
 		

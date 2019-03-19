@@ -23,42 +23,24 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 	
-	<h4>v1.6.1 (March 12, 2019)</h4>
+	<h4>v1.6.2 (March 18, 2019)</h4>
 	<ul>
-		<li>Fixed some visual issues in the multi-battle results on mobile that caused the layout to shift</li>
-		<li>Removed the CP cap from manually entered IV's</li>
+		<li>Kingdom Cup support</li>
+		<li>Ranking algorithm updates</li>
 		<ul>
-			<li>There was an issue in battle links that sometimes pushed Pokemon over the CP limit, but this fix caused usability issues. This has been adjusted to mostly fix the battle link issue while leaving manually inputted IV's unaffected.</li>
-		</ul>
-	</ul>
-	
-	<h4>v1.6.0 (March 11, 2019)</h4>
-	<ul>
-		<li>Multi-Battle now supports custom Pokemon groups</li>
-		<ul>
-			<li>Get started quickly with preset groups for each cup and league</li>
-			<li>Add up to 50 Pokemon with specific movesets or IVs</li>
-			<li>Save your groups locally or export them in text format</li>
-		</ul>
-		<li>Multi-Battle results can now be exported in CSV format</li>
-		<li>Battle adjustments</li>
-		<ul>
-			<li>Auto move selection and use now include stat buffs in DPE calculations</li>
+			<li>The lead, attacker, and defender scenarios now use 1 vs 1 shields, 0 vs 1 shields, and 1 vs 0 shields respectively (was previously 2 vs 2, 0 vs 2, 0 vs 2)</li>
 			<ul>
-				<li>This is a simple tweak that causes a Pokemon like Hitmonchan to use Power-Up Punch over Brick Break when both have identical stats.</li>
+				<li>This change better reflects likely in-game scenarios and shield usage. It also demphasizes Razor Leaf, which previously had significant power in 2-shield scenarios.</li>
 			</ul>
-			<li>Pokemon now favor lower energy moves when DPE is within a very close margin</li>
-			<li>Added an option to turn shield baiting on or off</li>
+			<li>Rankings now iterate multiple times through an updated weighting function.</li>
 			<ul>
-				<li>When on, Pokemon always use low-energy moves against opponent shields. When off, Pokemon will only use their most efficient (highest DPE) move. This will help show which Pokemon rely on a shield bait to win their matchups.</li>
+				<li>This weighting function removes the bottom Pokemon each iteration until the final iteration scores each Pokemon's performance against the remaining top Pokemon.</li>
+				<li>Previously, Pokemon who performed broadly well but didn't perform well against the top would still rank highly. Rankings should now better represent the top Pokemon, and the Pokemon who beat them.</li>
+				<li>Move usage is also now gathered from matchups against the top.</li>
 			</ul>
-			<li>Pokemon option section is now toggleable to reduce clutter</li>
 		</ul>
-		<li>Sandbox Mode Fixes</li>
-		<ul>
-			<li>Fixed an issue where the "Apply buffs/debuffs" checkbox wasn't behaving correctly, esp. with Power-Up Punch</li>
-			<li>Clicking a shield icon now brings up the edit window for the associated Charged Move</li>
-		</ul>
+		<li>Adjusted the modal window to prevent accidental closes in Sandbox Mode</li>
+		<li>Fixed a battle logic issue that caused minor discrepancies with the shield baiting toggle</li>
 	</ul>
 	
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>

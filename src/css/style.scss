@@ -1130,6 +1130,7 @@ select, input{
 		
 	
 		.item{
+			display:block;
 			cursor:pointer;
 			position:relative;
 			left:-50%;
@@ -1198,9 +1199,9 @@ select, input{
 			}
 			
 			&.debuff{
-				background-image:url('../img/move_debuff.png');
-				background-position: center 150%;
-				background-repeat: no-repeat;
+				background-image:url('../img/move_debuff.png') !important;
+				background-position: center 150% !important;
+				background-repeat: no-repeat !important;
 				
 				-webkit-animation: DEBUFF-ANIMATION 1.5s infinite; /* Safari 4+ */
 				-moz-animation:    DEBUFF-ANIMATION 1.5s infinite; /* Fx 5+ */

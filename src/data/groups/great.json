@@ -143,5 +143,10 @@
 		"speciesId":"mew",
 		"fastMove":"SHADOW_CLAW",
 		"chargedMoves":["ICE_BEAM","GRASS_KNOT"]
+	},
+	{
+		"speciesId":"deoxys_defense",
+		"fastMove":"COUNTER",
+		"chargedMoves":["PSYCHO_BOOST","ROCK_SLIDE"]
 	}
 ]

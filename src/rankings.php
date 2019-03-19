@@ -41,6 +41,10 @@ switch($cup){
 	case "tempest":
 		$league = 'Tempest Cup';
 		break;
+		
+	case "kingdom":
+		$league = 'Kingdom Cup';
+		break;
 }
 
 $META_TITLE = $league . ' PvP Rankings';
@@ -143,12 +147,12 @@ require_once 'header.php';
 </div>
 
 <!--test 2-->
-<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=46"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=12"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/RankingInterface.js?v=10"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=47"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=14"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/RankingInterface.js?v=11"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js?v=2"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=6"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=24"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=25"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/RankingMain.js?v=2"></script>
 
 <?php require_once 'footer.php'; ?>

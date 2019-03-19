@@ -343,11 +343,11 @@ var InterfaceMaster = (function () {
 				var cp = $(".league-select option:selected").val();
 				var category = $(".ranking-categories a.selected").attr("data");
 				var shieldStrs = {
-					"overall": "/22/",
+					"overall": "/11/",
 					"closers": "/00/",
-					"leads": "/22/",
-					"attackers": "/02/",
-					"defenders": "/20/"
+					"leads": "/11/",
+					"attackers": "/01/",
+					"defenders": "/10/"
 				}
 				
 				// Display key matchups

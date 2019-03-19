@@ -37,6 +37,8 @@ var InterfaceMaster = (function () {
 			var sandboxActionIndex;
 			var sandboxTurn;
 			
+			var modal;
+			
 			var csv; // Store the CSV from last results
 			
 			var settingGetParams = false; // Flag to keep certain functions from running
@@ -188,7 +190,7 @@ var InterfaceMaster = (function () {
 						position = ( ((event.time+1000)/1000)*50)+"px";
 					}
 					
-					var $item = $("<div class=\"item-container\"><div class=\"item "+event.type+"\" index=\""+i+"\" actor=\""+event.actor+"\" turn=\""+event.turn+"\" name=\""+event.name+"\" energy=\""+energy[event.actor]+"\" values=\""+event.values.join(',')+"\" onClick=\"\"></div></div>");
+					var $item = $("<div class=\"item-container\"><a href=\"#\" class=\"item "+event.type+"\" index=\""+i+"\" actor=\""+event.actor+"\" turn=\""+event.turn+"\" name=\""+event.name+"\" energy=\""+energy[event.actor]+"\" values=\""+event.values.join(',')+"\" onClick=\"\"></a></div>");
 
 					$item.css("left", position);
 					
@@ -1208,6 +1210,7 @@ var InterfaceMaster = (function () {
 								}
 								
 								battle.simulate();
+								battle.debug();
 								self.displayTimeline(battle);
 							} else{
 								
@@ -1508,6 +1511,8 @@ var InterfaceMaster = (function () {
 			
 			function timelineEventClick(e){
 				
+				e.preventDefault();
+				
 				if(! sandbox){
 					return;
 				}
@@ -1530,7 +1535,7 @@ var InterfaceMaster = (function () {
 					return;
 				}
 
-				modalWindow("Select Move (Turn "+$(this).attr("turn")+")", $(".sandbox-move-select"));
+				modal = new modalWindow("Select Move (Turn "+$(this).attr("turn")+")", $(".sandbox-move-select"));
 				
 				// Populate move select form;
 				
@@ -1630,6 +1635,10 @@ var InterfaceMaster = (function () {
 				} else{
 					$(".modal .check.buffs").hide();
 				}
+				
+				// Briefly prevent the modal window from closing by accident
+				
+				setModalClosePrevention(100);
 			}
 			
 			// Submit sandbox action changes

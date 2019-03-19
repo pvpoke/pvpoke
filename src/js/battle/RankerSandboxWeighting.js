@@ -303,7 +303,7 @@ var RankerMaster = (function () {
 					fastMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
 					chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
 					
-					rankObj.moves = {fastMoves: fastMoves, chargedMoves: chargedMoves}
+					rankObj.moves = {fastMoves: fastMoves, chargedMoves: chargedMoves};
 					
 					rankings.push(rankObj);
 				}
@@ -317,7 +317,7 @@ var RankerMaster = (function () {
 				// Doesn't make sense to weight which attackers can beat which other attackers, so don't weight those
 				
 				if(shieldCounts[0] != shieldCounts[1]){
-					iterations = 0;
+					// iterations = 0;
 				}
 				
 				for(var i = 0; i < rankCount; i++){
@@ -326,10 +326,16 @@ var RankerMaster = (function () {
 					// Factor overall score by moveset consistency, this keeps things like Mew and Togetic from being artificially high
 
 					var fastMovePercentage = rankings[i].moves.fastMoves[0].uses / rankings.length;
+					var chargedMovePercentage = rankings[i].moves.chargedMoves[0].uses / rankings.length;
+					var moveFactor = 1;
 
-					if(fastMovePercentage < .5){
-						rating *= Math.pow(fastMovePercentage, .125);
+					if((fastMovePercentage < .5)||(chargedMovePercentage < .3)){
+						var lowestPercentage = Math.min(fastMovePercentage, chargedMovePercentage);
+
+						moveFactor = Math.pow(fastMovePercentage, .125);
 					}
+					
+					rankings[i].moveFactor = moveFactor;
 					
 					rankings[i].scores = [rating];
 				}
@@ -350,7 +356,7 @@ var RankerMaster = (function () {
 							
 							var weight = Math.pow( Math.max((rankings[j].scores[n] / bestScore) - (.1 + (.05 * n)), 0), 0.5);
 							
-							var sc = matches[j].adjRating * weight;
+							var sc = matches[j].adjRating * rankings[i].moveFactor * weight;
 							
 							if(rankings[j].scores[n] / bestScore < .1 + (.05 * n)){
 								weight = 0;
@@ -383,7 +389,49 @@ var RankerMaster = (function () {
 				
 				for(var i = 0; i < rankCount; i++){
 					
-					// rankings[i].score = (rankings[i].scores[rankings[i].scores.length-1] - 500) * 2;
+					var pokemon = pokemonList[i];
+					
+					// Count up all the moves again but only include those against the top
+					
+					var fastMoves = [];
+					var chargedMoves = [];
+					
+					for(var j = 0; j < pokemon.fastMovePool.length; j++){
+						fastMoves.push({moveId: pokemon.fastMovePool[j].moveId, uses: 0});
+					}
+					
+					for(var j = 0; j < pokemon.chargedMovePool.length; j++){
+						chargedMoves.push({moveId: pokemon.chargedMovePool[j].moveId, uses: 0});
+					}
+					
+					// Assign special rating to movesets and determine best overall moveset
+					
+					for(var j = 0; j < rankings[i].matches.length; j++){
+						if(rankings[i].matches[j].score > 0){
+							var moveset = rankings[i].matches[j].moveSet;
+
+							for(var k = 0; k < fastMoves.length; k++){
+								if(fastMoves[k].moveId == moveset.fastMove){
+									fastMoves[k].uses += 1;
+								}
+							}
+
+							for(var k = 0; k < chargedMoves.length; k++){
+								for(var l = 0; l < moveset.chargedMoves.length; l++){
+									if(chargedMoves[k].moveId == moveset.chargedMoves[l].moveId){
+										chargedMoves[k].uses += moveset.chargedMoves[l].uses;
+									}
+								}
+							}
+						}
+					}
+					
+					// Sort move arrays and add them to the rank object
+					
+					fastMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+					chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+					
+					rankings[i].moves = {fastMoves: fastMoves, chargedMoves: chargedMoves};
 					
 					rankings[i].score = rankings[i].scores[rankings[i].scores.length-1];
 
