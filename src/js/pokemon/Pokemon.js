@@ -412,12 +412,12 @@ function Pokemon(id, i, b){
 	this.hasBuffMove = function(){
 		var hasBuffMove = false;
 		
-		if(self.fastMove.buffs){
+		if((self.fastMove.buffs)&&(self.fastMove.buffApplyChance < 1)){
 			hasBuffMove = true;
 		}
 		
 		for(var i = 0; i < self.chargedMoves.length; i++){
-			if(self.chargedMoves[i].buffs){
+			if((self.chargedMoves[i].buffs)&&(self.chargedMoves[i].buffApplyChance < 1)){
 				hasBuffMove = true;
 			}
 		}

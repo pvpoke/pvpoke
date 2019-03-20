@@ -441,7 +441,8 @@ function Battle(){
 
 				// Don't use best charged move if opponent has shields and a cheaper move is charged
 				
-				if(poke.shieldBaiting){
+				if(poke.baitShields){
+					
 					for(var n = 0; n < poke.chargedMoves.length; n++){
 						if((poke.energy >= poke.chargedMoves[n].energy) && (poke.chargedMoves[n].energy < poke.bestChargedMove.energy)){
 							useChargedMove = false;

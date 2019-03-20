@@ -1473,6 +1473,7 @@ var InterfaceMaster = (function () {
 			function toggleSandboxMode(e){
 				$(this).toggleClass("active");
 				$(".timeline-container").toggleClass("sandbox-mode");
+				$(".tooltip").toggleClass("sandbox");
 				$(".sandbox, .automated").toggle();
 				$(".sandbox-btn-container .sandbox").toggleClass("active");
 				$(".matchup-detail-section").toggle();

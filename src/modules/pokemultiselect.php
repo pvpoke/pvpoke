@@ -34,6 +34,7 @@
 				<option value="boulder">Boulder Cup Meta</option>
 				<option value="twilight">Twilight Cup Meta</option>
 				<option value="tempest">Tempest Cup Meta</option>
+				<option value="kingdom">Kingdom Cup Meta</option>
 				
 				<?php
 				// Display custom groups

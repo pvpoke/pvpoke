@@ -23,7 +23,17 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 	
-	<h4>v1.6.2 (March 18, 2019)</h4>
+	<h4>v1.6.2 (March 20, 2019)</h4>
+	<ul>
+		<li>Fixed an issue that prevented iOS users from selecting actions in Sandbox Mode</li>
+		<li>Fixed an issue where Pokemon didn't always bait shields correctly</li>
+		<li>Fixed an issue where the shield bait checkbox didn't reset properly when selecting Pokemon</li>
+		<li>Battles that involve stat-boosting moves with a 100% activation chance no longer produce unnecessary bulk results</li>
+		<li>Added a preset custom list for Kingdom Cup meta in Multi-Battle</li>
+		<li>Added Frenzy Plant for Sceptile</li>
+	</ul>
+	
+	<h4>v1.6.1 (March 18, 2019)</h4>
 	<ul>
 		<li>Kingdom Cup support</li>
 		<li>Ranking algorithm updates</li>

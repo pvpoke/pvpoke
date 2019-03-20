@@ -1135,6 +1135,7 @@ select, input{
 			position:relative;
 			left:-50%;
 			z-index:10;
+			text-decoration:none;
 			
 			@include transform(scale(0, 0));
 			@include transition(transform, 0.3s, cubic-bezier(0.64, 0.57, 0.67, 1.53), 0s);
@@ -2163,6 +2164,10 @@ a.toggle{
 		& > h1{
 		font-size:26px;
 		}
+	}
+	
+	.tooltip.sandbox{
+		display:none !important;
 	}
 	
 	.poke{

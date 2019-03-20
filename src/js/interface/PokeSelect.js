@@ -204,6 +204,7 @@ function PokeSelect(element, i){
 		$el.find(".start-energy").val('');
 		$el.find(".move-select").html('');
 		$el.find(".starting-health").val(selectedPokemon.stats.hp);
+		$el.find(".check.shield-baiting").addClass("on");
 		
 		isCustom = false;
 		

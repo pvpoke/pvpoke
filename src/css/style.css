@@ -745,6 +745,7 @@ select, input {
       position: relative;
       left: -50%;
       z-index: 10;
+      text-decoration: none;
       -moz-transform: scale(0, 0);
       -webkit-transform: scale(0, 0);
       -o-transform: scale(0, 0);
@@ -1678,6 +1679,9 @@ a.toggle {
     padding-top: 45px; }
     #main > h1 {
       font-size: 26px; }
+
+  .tooltip.sandbox {
+    display: none !important; }
 
   .poke {
     width: 49%; }
