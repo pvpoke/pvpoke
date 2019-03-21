@@ -74,14 +74,14 @@ require_once 'header.php';
 </div>
 
 <!--test 4-->
-<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=50"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=51"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=15"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/TeamInterface.js?v=9"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=23"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BattleHistogram.js?v=2"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=5"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=27"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/TeamRanker.js?v=16"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/TeamRanker.js?v=17"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/Main.js?v=3"></script>
 
 <?php require_once 'footer.php'; ?>

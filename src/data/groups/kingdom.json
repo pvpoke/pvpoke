@@ -70,9 +70,14 @@
 		"chargedMoves":["METEOR_MASH","EARTHQUAKE"]
 	},
 	{
+		"speciesId":"steelix",
+		"fastMove":"DRAGON_TAIL",
+		"chargedMoves":["CRUNCH","EARTHQUAKE"]
+	},
+	{
 		"speciesId":"torkoal",
 		"fastMove":"FIRE_SPIN",
-		"chargedMoves":["OVERHEAT","EARTHQUAKE"]
+		"chargedMoves":["EARTHQUAKE","SOLAR_BEAM"]
 	},
 	{
 		"speciesId":"infernape",

@@ -1258,6 +1258,11 @@ var InterfaceMaster = (function () {
 				$tooltip.show();
 				
 				$tooltip.attr("class","tooltip");
+				
+				if(sandbox){
+					$tooltip.attr("class","tooltip sandbox");
+				}
+				
 				$tooltip.find(".name").html($(this).attr("name"));
 				$tooltip.addClass($(this).attr("class"));
 				$tooltip.find(".details").html('');
