@@ -47,6 +47,7 @@
 		<div class="advanced-section">
 			<a class="advanced" href="#">Advanced <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 			<div class="fields">
+			    <button class="maximize-stats">Maximize overall stat</button>
 				<input class="level" type="number" placeholder="Level" min="1" max="40" step=".5" />
 				<div class="ivs">
 					<h3>IV's</h3>
