@@ -9267,7 +9267,8 @@
       ],
       "chargedMoves": [
         "ENERGY_BALL",
-        "HURRICANE"
+        "HURRICANE",
+		"WEATHER_BALL_ROCK"
       ]
     },
     {
@@ -9289,7 +9290,8 @@
       ],
       "chargedMoves": [
         "HYDRO_PUMP",
-        "THUNDER"
+        "THUNDER",
+		"WEATHER_BALL_WATER"
       ]
     },
     {
@@ -9311,7 +9313,8 @@
       ],
       "chargedMoves": [
         "BLIZZARD",
-        "ICE_BEAM"
+        "ICE_BEAM",
+		"WEATHER_BALL_ICE"
       ]
     },
     {
@@ -9333,7 +9336,8 @@
       ],
       "chargedMoves": [
         "FIRE_BLAST",
-        "SOLAR_BEAM"
+        "SOLAR_BEAM",
+		"WEATHER_BALL_FIRE"
       ]
     },
     {

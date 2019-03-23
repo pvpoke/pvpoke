@@ -384,11 +384,26 @@ function Battle(){
 		// Set winner
 		
 		if(battleRatings[0] > battleRatings[1]){
-			winner = {pokemon: pokemon[0], rating: battleRatings[0]};
+			winner = {
+				pokemon: pokemon[0],
+				rating: battleRatings[0],
+				hp: pokemon[0].hp,
+				energy: pokemon[0].energy,
+				buffs: [pokemon[0].statBuffs[0], pokemon[0].statBuffs[1]]
+			};
 		} else if(battleRatings[1] > battleRatings[0]){
-			winner = {pokemon: pokemon[1], rating: battleRatings[1]};
+			winner = {
+				pokemon: pokemon[1],
+				rating: battleRatings[1],
+				hp: pokemon[1].hp,
+				energy: pokemon[1].energy,
+				buffs: [pokemon[1].statBuffs[0], pokemon[1].statBuffs[1]]
+			};
 		} else if(battleRatings[1] == battleRatings[0]){
-			winner = {pokemon: false, rating: battleRatings[0]};
+			winner = {
+				pokemon: false,
+				rating: battleRatings[0]
+			};
 		}
 
 		return timeline;

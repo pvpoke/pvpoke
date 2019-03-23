@@ -77,7 +77,6 @@ require_once 'header.php';
 			<div class="disclaimer">* Results may differ from actual gameplay depending on connectivity, device, player decisions, or other factors.</div>
 		</div>
 		<div class="summary section white"></div>
-		
 		<div class="share-link-container">
 			<p>Share this battle:</p>
 			<div class="share-link">
@@ -85,7 +84,7 @@ require_once 'header.php';
 				<div class="copy">Copy</div>
 			</div>
 		</div>
-		
+	
 		<div class="section white battle-details">
 			<a class="toggle active" href="#">Matchup Details <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 			

@@ -23,6 +23,12 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 	
+	<h4>v1.6.3 (March 22, 2019)</h4>
+	<ul>
+		<li>Added Weather Ball for Castform</li>
+		<li>Added a "Maximize Stats" button in the Advanced stats section that calculates level and IV's for maximizing overall stat product</li>
+	</ul>
+	
 	<h4>v1.6.2 (March 20, 2019)</h4>
 	<ul>
 		<li>Fixed an issue that prevented iOS users from selecting actions in Sandbox Mode</li>

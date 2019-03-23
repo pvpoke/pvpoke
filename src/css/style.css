@@ -298,6 +298,8 @@ footer {
       font-size: 14px;
       text-align: center;
       font-weight: bold; }
+    .poke .poke-stats .advanced-section .fields .maximize-stats {
+      margin-bottom: 5px; }
   .poke .poke-stats .advanced-section.active .fields {
     display: block; }
   .poke .poke-stats .move-select.fast {
