@@ -452,6 +452,17 @@ function PokeSelect(element, i){
 		e.preventDefault();
 		$el.find(".advanced-section").toggleClass("active");
 	});
+
+	// Turn maximize stats on and off
+
+    $el.find(".maximize-stats").on("click", function(e){
+        selectedPokemon.maximizeStats(battle.getCP());
+
+        selectedPokemon.isCustom = true;
+        isCustom = true;
+
+        self.update();
+    });
 	
 	// Change level input
 	
