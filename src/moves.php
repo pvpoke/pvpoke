@@ -15,9 +15,36 @@ require_once 'header.php';
 	<select class="mode-select">
 		<option value="fast">Fast Moves</option>
 		<option value="charged">Charged Moves</option>
-		<option value="charged">Moveset Explorer</option>
+		<option value="explore">Moveset Explorer</option>
 	</select>
 	<p>The table below lists every move in the game, their stats, and which Pokemon can learn them. Sort or filter, or experiment with a custom moveset.</p>
+	<table class="stats-table" cellpadding="0" cellspacing="0">
+		<tr>
+			<td class="label">D</td>
+			<td>Damage</td>
+		</tr>
+		<tr>
+			<td class="label">E</td>
+			<td>Energy</td>
+		</tr>
+		<tr class="fast">
+			<td class="label">T</td>
+			<td>Turns</td>
+		</tr>
+		<tr class="fast">
+			<td class="label">DPT</td>
+			<td>Damage Per Turn</td>
+		</tr>
+		<tr class="fast">
+			<td class="label">DPT</td>
+			<td>Energy Per Turn</td>
+		</tr>
+		<tr class="hide"></tr>
+		<tr class="charged hide">
+			<td class="label">DPE</td>
+			<td>Damage Per Energy</td>
+		</tr>
+	</table>
 	<h2 class="loading">Loading data...</h2>
 	<table class="sortable-table stats-table moves" cellpadding="0" cellspacing="0"></table>
 </div>

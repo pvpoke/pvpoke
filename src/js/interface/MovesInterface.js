@@ -38,12 +38,12 @@ var InterfaceMaster = (function () {
 			this.displayMoves = function(){
 				
 				var data = [];
-				var headers = ["Move","Type","Damage"];
+				var headers = ["Move","Type","D"];
 				
 				if(mode == "fast"){
-					headers.push("Energy", "Duration", "Damage/Turn", "Energy/Turn");
+					headers.push("E", "T", "DPT", "EPT");
 				} else{
-					headers.push("Energy", "Damage/Energy");
+					headers.push("E", "DPE");
 				}
 				
 				for(var i = 0; i < gm.data.moves.length; i++){
@@ -84,7 +84,7 @@ var InterfaceMaster = (function () {
 						}
 					}
 					
-					if((move.moveId == "TRANSFORM") || (move.moveId.indexOf("BLASTOISE") > -1) || (move.moveId.indexOf("WEATHER_BALL") > -1)){
+					if((move.moveId == "TRANSFORM") || (move.moveId.indexOf("BLASTOISE") > -1) ){
 						valid = false;
 					}
 					
@@ -219,6 +219,9 @@ var InterfaceMaster = (function () {
 			
 			function selectMode(e){
 				mode = $(".mode-select option:selected").val();
+				
+				$(".stats-table .charged, .stats-table .fast").hide();
+				$(".stats-table ."+mode).show();
 				
 				self.displayMoves();
 				
