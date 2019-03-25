@@ -28,6 +28,11 @@ function Battle(){
 	var roundChargedMoveUsed;
 	var roundShieldUsed;
 	
+	var startingValues = [
+		{hp: 0, energy: 0},
+		{hp: 0, energy: 0}
+	];
+	
 	// Buff parameters
 	
 	var buffChanceModifier = -1; // -1 prevents buffs, 1 guarantees buffs
@@ -98,6 +103,12 @@ function Battle(){
 		} else{
 			return pokemon[0];
 		}
+	}
+	
+	// Return the starting values of the battle.
+	
+	this.getStartingValues = function(){
+		return startingValues;
 	}
 	
 	// Set the modifier for buff apply chance, -1 prevents buffs and 1 guarantees them
@@ -270,6 +281,9 @@ function Battle(){
 
 		for(var i = 0; i < pokemon.length; i++){
 			pokemon[i].reset();
+			
+			startingValues[i].hp = pokemon[i].hp;
+			startingValues[i].energy = pokemon[i].energy;
 		}
 
 		time = 0;
@@ -389,7 +403,8 @@ function Battle(){
 				rating: battleRatings[0],
 				hp: pokemon[0].hp,
 				energy: pokemon[0].energy,
-				buffs: [pokemon[0].statBuffs[0], pokemon[0].statBuffs[1]]
+				buffs: [pokemon[0].statBuffs[0], pokemon[0].statBuffs[1]],
+				shields: pokemon[0].shields
 			};
 		} else if(battleRatings[1] > battleRatings[0]){
 			winner = {
@@ -397,7 +412,8 @@ function Battle(){
 				rating: battleRatings[1],
 				hp: pokemon[1].hp,
 				energy: pokemon[1].energy,
-				buffs: [pokemon[1].statBuffs[0], pokemon[1].statBuffs[1]]
+				buffs: [pokemon[1].statBuffs[0], pokemon[1].statBuffs[1]],
+				shields: pokemon[0].shields
 			};
 		} else if(battleRatings[1] == battleRatings[0]){
 			winner = {
@@ -497,7 +513,7 @@ function Battle(){
 
 				// Use charged move if the opponent has a shield
 
-				if((opponent.shields > 0)  && (!chargedMoveUsed) && ((move == poke.bestChargedMove)||(poke.baitShields))){
+				if((opponent.shields > 0)  && (!chargedMoveUsed) && ((move == poke.bestChargedMove)||( (poke.baitShields) && (poke.energy >= poke.bestChargedMove.energy) ))){
 
 					// Don't use a charged move if a fast move will result in a KO
 
@@ -659,23 +675,68 @@ function Battle(){
 			// If defender has a shield, use it
 
 			if( ((sandbox) && (forceShields) && (defender.shields > 0)) || ((! sandbox) && (defender.shields > 0)) ){
-				timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+5500, turns, [damage-1]));
-				damage = 1;
-				defender.shields--;
-				roundShieldUsed = true;
+				var useShield = true;
 				
-				// Don't debuff if it shields
+				// For PuP and similar moves, don't shield if it's survivable
 				
-				if((move.buffs)&&(move.buffTarget == "opponent")){
-					shieldBuffModifier = 0;
+				if((! sandbox)&&(move.buffs)&&(move.buffs[0] > 0)&&(move.buffApplyChance == 1)){
+					useShield = false;
+					
+					var postMoveHP = defender.hp - damage; // How much HP will be left after the attack
+					var currentBuffs = [attacker.statBuffs[0], attacker.statBuffs[1]]; // Capture this to reset later
+					attacker.applyStatBuffs(move.buffs);
+					
+					var fastDamage = self.calculateDamage(attacker, defender, attacker.fastMove);
+					
+					// Determine how much damage will be dealt per cycle to see if the defender will survive to shield the next cycle
+					
+					for (var i = 0; i < attacker.chargedMoves.length; i++){
+						var chargedMove = attacker.chargedMoves[i];
+						var fastAttacks = Math.ceil(Math.max(chargedMove.energy - attacker.energy, 0) / attacker.fastMove.energyGain);
+						var fastAttackDamage = fastAttacks * fastDamage;
+						var chargedDamage = self.calculateDamage(attacker, defender, chargedMove);
+						var cycleDamage = fastAttackDamage + 1;
+						
+						if(postMoveHP <= cycleDamage){					
+							useShield = true;
+						}
+					}
+					
+					attacker.statBuffs = [currentBuffs[0], currentBuffs[1]]; // Reset to original
+
+					// If the defender can't afford to let a charged move connect, block
+
+					for (var i = 0; i < attacker.chargedMoves.length; i++){
+						var chargedMove = attacker.chargedMoves[i];
+						var chargedDamage = self.calculateDamage(attacker, defender, chargedMove);
+						
+						if(chargedDamage >= defender.hp / 2){					
+							useShield = true;
+						}
+					}
 				}
+				
+				if(useShield){
 
-				self.logDecision(turns, defender, " blocks with a shield");
+					timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+5500, turns, [damage-1]));
+					damage = 1;
+					defender.shields--;
+					roundShieldUsed = true;
 
-				// If a shield has already been used, add time so events don't visually overlap
+					// Don't debuff if it shields
 
-				if(roundChargedMoveUsed == 0){
-					time+=7500;
+					if((move.buffs)&&(move.buffTarget == "opponent")){
+						shieldBuffModifier = 0;
+					}
+
+					self.logDecision(turns, defender, " blocks with a shield");
+
+					// If a shield has already been used, add time so events don't visually overlap
+
+					if(roundChargedMoveUsed == 0){
+						time+=7500;
+					}
+					
 				}
 			}
 

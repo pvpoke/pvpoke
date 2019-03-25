@@ -220,26 +220,26 @@ var InterfaceMaster = (function () {
 			
 			function selectPokemon(e){
 
-				// Only activate if direct click on the rank element, don't want it opening and closing when the user clicks on internal elements
+				// Don't collapse when clicking links or the share button
 				
-				var $validTargets = $(".rankings-container > .rank, .rankings-container > .rank > .rating-container");
-				
-				if($validTargets.index($(e.target))>=0){
-					$(this).toggleClass("selected");
-					$(this).find(".details").toggleClass("active");
-				} else{
+				if(! $(e.target).is(".rank, .rank > .rating-container, .rank > .rating-container *, .rank > .name-container, .rank > .name-container *")){
 					return;
 				}
+				
+				var $rank = $(this).closest(".rank");
 
-				var index = $(".rankings-container > .rank").index($(this));
+				
+				$rank.toggleClass("selected");
+				$rank.find(".details").toggleClass("active");
+
+				var index = $(".rankings-container > .rank").index($rank);
 				var $details = $(".details").eq(index);
 				
 				if($details.html() != ''){
 					return;
 				}
 				
-				var r = data[index];
-				
+				var r = data[index];				
 				var pokemon = new Pokemon(r.speciesId);
 				
 				// If overall, display score for each category

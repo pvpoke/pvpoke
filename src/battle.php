@@ -84,6 +84,10 @@ require_once 'header.php';
 				<div class="copy">Copy</div>
 			</div>
 		</div>
+		<div class="continue-container">
+			<p>Continue with <span class="name">Pokemon</span> against another opponent:</p>
+			<div class="button">Continue Battling</div>
+		</div>
 	
 		<div class="section white battle-details">
 			<a class="toggle active" href="#">Matchup Details <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
@@ -305,11 +309,11 @@ require_once 'header.php';
 </div>
 
 <!--test 2-->
-<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=51"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=15"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=52"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=16"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/Interface.js?v=34"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=23"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=24"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeMultiSelect.js?=4"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BattleHistogram.js?v=2"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=2"></script>

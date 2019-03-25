@@ -71,6 +71,7 @@ var InterfaceMaster = (function () {
 				$(".league-select").on("change", selectLeague);
 				$(".mode-select").on("change", selectMode);
 				$(".battle-btn").on("click", startBattle);
+				$(".continue-container .button").on("click", continueBattle);
 				$(".timeline-container").on("mousemove",".item",timelineEventHover);
 				$("body").on("mousemove",mainMouseMove);
 				$("body").on("mousedown",mainMouseMove);
@@ -117,6 +118,7 @@ var InterfaceMaster = (function () {
 			this.displayCumulativeDamage = function(timeline, time){
 				var cumulativeDamage = [0,0];
 				var cumulativeEnergy = [0,0];
+				var startingValues = battle.getStartingValues();
 				
 				for(var i = 0; i < timeline.length; i++){
 					var event = timeline[i];
@@ -136,6 +138,12 @@ var InterfaceMaster = (function () {
 				}
 				
 				for(var n = 0; n < pokeSelectors.length; n++){
+					
+					// Adjust the values in case starting values have been changed since the sim was run
+					
+					cumulativeDamage[n] += pokeSelectors[n].getPokemon().startHp - startingValues[n].hp;
+					cumulativeEnergy[n] -= pokeSelectors[n].getPokemon().startEnergy - startingValues[n].energy;
+
 					pokeSelectors[n].animateHealth(cumulativeDamage[n]);
 					
 					for(i = 0; i < pokeSelectors[n].getPokemon().chargedMoves.length; i++){
@@ -254,8 +262,12 @@ var InterfaceMaster = (function () {
 					
 					var color = battle.getRatingColor(winnerRating);
 					$(".battle-results .summary .rating").first().css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
+					
+					$(".continue-container").show();
+					$(".continue-container .name").html(winner.pokemon.speciesName);
 				} else{
 					$(".battle-results .summary").html("Simultaneous knockout in <span class=\"time\">"+durationSeconds+"s</span>");
+					$(".continue-container").hide();
 				}
 				
 				// Display bulk sim data
@@ -1243,6 +1255,36 @@ var InterfaceMaster = (function () {
 					$(".battle-btn").html("Battle");
 					
 				}, 17);
+			}
+			
+			// Use the winner's remaining HP, energy, and stat buffs for the next fight
+			
+			function continueBattle(e){
+				var winner = battle.getWinner();
+				var index = winner.pokemon.index;
+				
+				$(".poke.single").eq(index).find(".start-hp").val(winner.hp);
+				$(".poke.single").eq(index).find(".start-energy").val(winner.energy);
+				$(".poke.single").eq(index).find(".stat-mod").eq(0).val(winner.buffs[0]);
+				$(".poke.single").eq(index).find(".stat-mod").eq(1).val(winner.buffs[1]);
+				$(".poke.single").eq(index).find(".shield-select option[value='"+winner.shields+"']").prop("selected","selected");
+				
+				
+				$(".poke.single").eq(index).find(".start-hp").trigger("keyup");
+				$(".poke.single").eq(index).find(".start-energy").trigger("keyup");
+				$(".poke.single").eq(index).find(".stat-mod").trigger("keyup");
+				
+				$(".poke.single").eq(index).find(".options .toggle").addClass("active");
+				
+				// Turn off sandbox mode if on
+				
+				if(sandbox){
+					$(".sandbox-btn").trigger("click");
+				}
+				
+				// Scroll to inputs
+
+				$("html, body").animate({ scrollTop: $(".poke.single").offset().top-25 }, 500);
 			}
 			
 			// Event handler for timeline hover and click

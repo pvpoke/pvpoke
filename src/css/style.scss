@@ -842,6 +842,23 @@ select, input{
 	}
 }
 
+.continue-container{
+	margin:15px auto;
+	
+	p{
+		margin:0;
+	}
+	
+	.name{
+		font-weight:bold;
+	}
+	
+	.button{
+		display:inline-block;
+		margin:5px auto;
+	}
+}
+
 
 .check{
 	margin-top:10px;
