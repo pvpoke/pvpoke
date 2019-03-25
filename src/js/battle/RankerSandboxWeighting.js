@@ -177,6 +177,9 @@ var RankerMaster = (function () {
 						battle.setNewPokemon(pokemon, 0);
 						battle.setNewPokemon(opponent, 1);
 						
+						pokemon.reset();
+						opponent.reset();
+						
 						pokemon.autoSelectMoves();
 						opponent.autoSelectMoves();
 						

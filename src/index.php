@@ -23,40 +23,23 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 	
-	<h4>v1.6.3 (March 22, 2019)</h4>
+	<h4>v1.6.4 (March 25, 2019)</h4>
 	<ul>
-		<li>Added Weather Ball for Castform</li>
-		<li>Added a "Maximize Stats" button in the Advanced stats section that calculates level and IV's for maximizing overall stat product</li>
-	</ul>
-	
-	<h4>v1.6.2 (March 20, 2019)</h4>
-	<ul>
-		<li>Fixed an issue that prevented iOS users from selecting actions in Sandbox Mode</li>
-		<li>Fixed an issue where Pokemon didn't always bait shields correctly</li>
-		<li>Fixed an issue where the shield bait checkbox didn't reset properly when selecting Pokemon</li>
-		<li>Battles that involve stat-boosting moves with a 100% activation chance no longer produce unnecessary bulk results</li>
-		<li>Added a preset custom list for Kingdom Cup meta in Multi-Battle</li>
-		<li>Added Frenzy Plant for Sceptile</li>
-	</ul>
-	
-	<h4>v1.6.1 (March 18, 2019)</h4>
-	<ul>
-		<li>Kingdom Cup support</li>
-		<li>Ranking algorithm updates</li>
+		<li>Ranking items are easier to open and close</li>
+		<li>Fixed some niche battle logic issues</li>
 		<ul>
-			<li>The lead, attacker, and defender scenarios now use 1 vs 1 shields, 0 vs 1 shields, and 1 vs 0 shields respectively (was previously 2 vs 2, 0 vs 2, 0 vs 2)</li>
-			<ul>
-				<li>This change better reflects likely in-game scenarios and shield usage. It also demphasizes Razor Leaf, which previously had significant power in 2-shield scenarios.</li>
-			</ul>
-			<li>Rankings now iterate multiple times through an updated weighting function.</li>
-			<ul>
-				<li>This weighting function removes the bottom Pokemon each iteration until the final iteration scores each Pokemon's performance against the remaining top Pokemon.</li>
-				<li>Previously, Pokemon who performed broadly well but didn't perform well against the top would still rank highly. Rankings should now better represent the top Pokemon, and the Pokemon who beat them.</li>
-				<li>Move usage is also now gathered from matchups against the top.</li>
-			</ul>
+			<li>Shield baiting and near faint calculations were sometimes being done incorrectly</li>
 		</ul>
-		<li>Adjusted the modal window to prevent accidental closes in Sandbox Mode</li>
-		<li>Fixed a battle logic issue that caused minor discrepancies with the shield baiting toggle</li>
+		<li>Pokemon now bait shields with low-energy attacks when both of their charged moves are charged</li>
+		<ul>
+			<li>This lines up with how shield baiting is done in actual play</li>
+		</ul>
+		<li>Pokemon now shield against stat-boosting moves like Power-Up Punch more methodically</li>
+		<ul>
+			<li>Pokemon who can withstand Power-Up Punch will let early attacks go through and shield boosted ones later</li>
+			<li>Pokemon who are threatened by a coverage move like Ice Punch or Shadow Ball will continue to block Power-Up Punch as the safest option</li>
+			<li>Pokemon who bait shields with Power-Up Punch will continue using it until they successfully break shields</li>
+		</ul>
 	</ul>
 	
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>

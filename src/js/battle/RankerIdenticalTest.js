@@ -23,7 +23,7 @@ var RankerMaster = (function () {
 			this.rankLoop = function(){
 				
 				var leagues = [1500];
-				var shields = [ [2,2] ];
+				var shields = [ [1,1] ];
 				
 				for(var i = 0; i < leagues.length; i++){
 					for(var n = 0; n < shields.length; n++){
@@ -87,7 +87,7 @@ var RankerMaster = (function () {
 								continue;
 							}
 							
-							pokemonList.push(pokemon.speciesId);
+							pokemonList.push(pokemon);
 						}
 					}
 				}
@@ -98,7 +98,7 @@ var RankerMaster = (function () {
 				
 				for(var i = 0; i < rankCount; i++){
 					
-					var pokemon = new Pokemon(pokemonList[i], 0);
+					var pokemon = pokemonList[i];
 					
 					// Start with a blank rank object
 					
@@ -118,7 +118,7 @@ var RankerMaster = (function () {
 					
 					for(var n = 0; n < rankCount; n++){	
 						
-						var opponent = new Pokemon(pokemonList[n], 1);
+						var opponent = pokemonList[n];
 						
 						// If battle has already been simulated, skip
 							

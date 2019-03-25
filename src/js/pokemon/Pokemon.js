@@ -110,7 +110,6 @@ function Pokemon(id, i, b){
 			
 			targetCP = maxCP;
 			
-		
 			// Scale Pokemon to selected CP
 			// If the Pokemon can't reach the CP limit without IV's, increment until it reaches the CP limit or 15/15/15
 			

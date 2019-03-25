@@ -264,7 +264,7 @@ var InterfaceMaster = (function () {
 					$(".battle-results .summary .rating").first().css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
 					
 					$(".continue-container").show();
-					$(".continue-container .name").html(winner.pokemon.speciesName);
+					$(".continue-container .name").html(winner.pokemon.speciesName + " (" + winner.hp + " HP)");
 				} else{
 					$(".battle-results .summary").html("Simultaneous knockout in <span class=\"time\">"+durationSeconds+"s</span>");
 					$(".continue-container").hide();
@@ -1230,6 +1230,7 @@ var InterfaceMaster = (function () {
 								
 								bulkResults = self.generateBulkSims(battle);
 								battle = bulkResults.median;
+								battle.debug();
 								
 								// Update PokeSelectors with new battle instance
 								
@@ -1262,6 +1263,7 @@ var InterfaceMaster = (function () {
 			function continueBattle(e){
 				var winner = battle.getWinner();
 				var index = winner.pokemon.index;
+				var loserIndex = (index == 0) ? 1 : 0;
 				
 				$(".poke.single").eq(index).find(".start-hp").val(winner.hp);
 				$(".poke.single").eq(index).find(".start-energy").val(winner.energy);
@@ -1275,6 +1277,10 @@ var InterfaceMaster = (function () {
 				$(".poke.single").eq(index).find(".stat-mod").trigger("keyup");
 				
 				$(".poke.single").eq(index).find(".options .toggle").addClass("active");
+				
+				// Clear other selector
+				
+				pokeSelectors[loserIndex].clear();
 				
 				// Turn off sandbox mode if on
 				

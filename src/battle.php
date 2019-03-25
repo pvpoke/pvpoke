@@ -309,9 +309,9 @@ require_once 'header.php';
 </div>
 
 <!--test 2-->
-<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=52"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=54"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=16"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/Interface.js?v=34"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/Interface.js?v=36"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=24"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeMultiSelect.js?=4"></script>
@@ -319,7 +319,7 @@ require_once 'header.php';
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=2"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=6"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineAction.js"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=27"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=29"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TeamRanker.js?v=17"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/Main.js?v=3"></script>
 

@@ -222,7 +222,7 @@ var InterfaceMaster = (function () {
 
 				// Don't collapse when clicking links or the share button
 				
-				if(! $(e.target).is(".rank, .rank > .rating-container, .rank > .rating-container *, .rank > .name-container, .rank > .name-container *")){
+				if(! $(e.target).is(".rank, .rank > .rating-container, .rank > .rating-container *, .rank > .name-container, .rank > .name-container *")||($(e.target).is("a"))){
 					return;
 				}
 				

@@ -436,7 +436,7 @@ function Battle(){
 			// Use maximum number of Fast Moves before opponent can act
 
 			var useChargedMove = true;
-
+			
 			self.logDecision(turns, poke, "'s best charged move is charged (" + poke.bestChargedMove.name + ")");
 
 			if((opponent.cooldown == 0)||(opponent.cooldown == opponent.fastMove.cooldown)){
@@ -484,8 +484,6 @@ function Battle(){
 				}
 			}
 
-
-
 			if(useChargedMove){
 				time = this.useMove(poke, opponent, poke.bestChargedMove);
 				roundChargedMoveUsed++;
@@ -498,6 +496,8 @@ function Battle(){
 			var move = poke.activeChargedMoves[n];
 
 			if((poke.energy >= move.energy)&&(!chargedMoveUsed)){
+				
+				move.damage = self.calculateDamage(poke, opponent, move);
 
 				self.logDecision(turns, poke, " has " + move.name + " charged");
 
@@ -518,12 +518,16 @@ function Battle(){
 					// Don't use a charged move if a fast move will result in a KO
 
 					if((opponent.hp > poke.fastMove.damage)&&(opponent.hp > (poke.fastMove.damage *(opponent.fastMove.cooldown / poke.fastMove.cooldown)))){
-
+						
 						self.logDecision(turns, poke, " wants to remove shields with " + move.name + " and opponent won't faint from fast move damage before next cooldown");
-
-						time = this.useMove(poke, opponent, move);
-						roundChargedMoveUsed++;
-						chargedMoveUsed = true;
+						
+						if( ((opponent.cooldown == 0)||(opponent.cooldown == opponent.fastMove.cooldown)) && (opponent.fastMove.cooldown > poke.fastMove.cooldown) ){
+							self.logDecision(turns, poke, " doesn't use " + move.name + " because opponent isn't on cooldown and its fast move is faster");
+						} else{
+							time = this.useMove(poke, opponent, move);
+							roundChargedMoveUsed++;
+							chargedMoveUsed = true;
+						}
 					}
 				}
 
@@ -547,7 +551,7 @@ function Battle(){
 						if(poke.shields == 0){
 							for(var j = 0; j < opponent.chargedMoves.length; j++){
 
-								if((opponent.energy >= opponent.chargedMoves[j].energy) && (poke.hp <= opponent.chargedMoves[j].damage)){
+								if((opponent.energy >= opponent.chargedMoves[j].energy) && (poke.hp <= self.calculateDamage(opponent, poke, opponent.chargedMoves[j]))){
 									nearDeath = true;
 
 									self.logDecision(turns, poke, " doesn't have shields and will by knocked out by opponent's " + opponent.chargedMoves[j].name + " this turn");
@@ -563,7 +567,7 @@ function Battle(){
 
 				// If this Pokemon uses a Fast Move, will it be knocked out while on cooldown?
 
-				if( ((opponent.cooldown > 0) && (opponent.cooldown < poke.fastMove.cooldown)) || ((opponent.cooldown == 0) && (opponent.fastMove.cooldown < poke.fastMove.cooldown))){
+				if( (((opponent.cooldown > 0) && (opponent.cooldown < poke.fastMove.cooldown)) || ((opponent.cooldown == 0) && (opponent.fastMove.cooldown < poke.fastMove.cooldown))) && (roundChargedMoveUsed == 0)){
 
 					// Can this Pokemon be knocked out by future Fast Moves?
 
@@ -652,6 +656,7 @@ function Battle(){
 
 		var type = "fast " + move.type;
 		var damage = self.calculateDamage(attacker, defender, move);
+		move.damage = damage;
 
 		var displayTime = time;
 		var shieldBuffModifier = 0;
@@ -692,7 +697,7 @@ function Battle(){
 					
 					for (var i = 0; i < attacker.chargedMoves.length; i++){
 						var chargedMove = attacker.chargedMoves[i];
-						var fastAttacks = Math.ceil(Math.max(chargedMove.energy - attacker.energy, 0) / attacker.fastMove.energyGain);
+						var fastAttacks = Math.ceil(Math.max(chargedMove.energy - attacker.energy, 0) / attacker.fastMove.energyGain) + 2; // Give some margin for error here
 						var fastAttackDamage = fastAttacks * fastDamage;
 						var chargedDamage = self.calculateDamage(attacker, defender, chargedMove);
 						var cycleDamage = fastAttackDamage + 1;
@@ -737,6 +742,8 @@ function Battle(){
 						time+=7500;
 					}
 					
+				} else{
+					self.logDecision(turns, defender, " doesn't shield because it can withstand the attack and is saving shields for later, boosted attacks");
 				}
 			}
 
