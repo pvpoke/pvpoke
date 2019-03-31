@@ -15417,7 +15417,7 @@
     },
     {
       "moveId": "WEATHER_BALL_FIRE",
-      "name": "Weather Ball Fire",
+      "name": "Weather Ball (Fire)",
       "type": "fire",
       "power": 60,
       "energy": 35,
@@ -15426,7 +15426,7 @@
     },
     {
       "moveId": "WEATHER_BALL_ICE",
-      "name": "Weather Ball Ice",
+      "name": "Weather Ball (Ice)",
       "type": "ice",
       "power": 60,
       "energy": 35,
@@ -15435,8 +15435,8 @@
     },
     {
       "moveId": "WEATHER_BALL_ROCK",
-      "name": "Weather Ball Rock",
-      "type": "rock",
+      "name": "Weather Ball (Normal)",
+      "type": "normal",
       "power": 60,
       "energy": 35,
       "energyGain": 0,
@@ -15444,7 +15444,7 @@
     },
     {
       "moveId": "WEATHER_BALL_WATER",
-      "name": "Weather Ball Water",
+      "name": "Weather Ball (Water)",
       "type": "water",
       "power": 60,
       "energy": 35,
