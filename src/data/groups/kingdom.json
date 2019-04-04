@@ -45,11 +45,6 @@
 		"chargedMoves":["FOCUS_BLAST","BRAVE_BIRD"]
 	},
 	{
-		"speciesId":"dugtrio_alolan",
-		"fastMove":"MUD_SLAP",
-		"chargedMoves":["MUD_BOMB","IRON_HEAD"]
-	},
-	{
 		"speciesId":"flygon",
 		"fastMove":"MUD_SHOT",
 		"chargedMoves":["DRAGON_CLAW","EARTHQUAKE"]
@@ -65,11 +60,6 @@
 		"chargedMoves":["DRAGON_PULSE","AQUA_TAIL"]
 	},
 	{
-		"speciesId":"metagross",
-		"fastMove":"BULLET_PUNCH",
-		"chargedMoves":["METEOR_MASH","EARTHQUAKE"]
-	},
-	{
 		"speciesId":"steelix",
 		"fastMove":"DRAGON_TAIL",
 		"chargedMoves":["CRUNCH","EARTHQUAKE"]
@@ -80,13 +70,13 @@
 		"chargedMoves":["EARTHQUAKE","SOLAR_BEAM"]
 	},
 	{
-		"speciesId":"infernape",
-		"fastMove":"FIRE_SPIN",
-		"chargedMoves":["CLOSE_COMBAT","FLAMETHROWER"]
+		"speciesId":"bronzong",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["HEAVY_SLAM","FLASH_CANNON"]
 	},
 	{
-		"speciesId":"monferno",
-		"fastMove":"ROCK_SMASH",
-		"chargedMoves":["FLAMETHROWER","LOW_SWEEP"]
+		"speciesId":"empoleon",
+		"fastMove":"WATERFALL",
+		"chargedMoves":["HYDRO_PUMP","BLIZZARD"]
 	}
 ]

@@ -1289,7 +1289,6 @@ select, input{
 	}
 	
 	&.sortable-table{
-		margin: 0 auto;
 		
 		.label{
 			cursor:pointer;
@@ -1904,6 +1903,82 @@ select, input{
 			border-radius:8px;
 			padding:10px;
 			margin:5px;
+		}
+	}
+}
+
+/* MOVES PAGE */
+
+.move-table-container{
+	max-width: 400px;
+	margin: 0 auto;
+	
+	.poke-search{
+		margin-top:15px;
+	}
+}
+
+.move-explore-container{
+	max-width:500px;
+	margin:0 auto;
+	
+	.move-select-container{
+		justify-content: space-between;
+		
+		.move-select-item{
+			max-width:180px;
+		}
+		
+		.poke-search{
+			margin-bottom:5px;
+		}
+		
+		.check{
+			font-size:14px;
+		}
+		
+		h3{
+			font-size:14px;
+		}
+	}
+	
+	.moveset-stats{
+		flex-wrap:wrap;
+		justify-content: center;
+		text-align: center;
+		
+		.stat{
+			margin:0 10px;
+			
+			h3{
+				font-size:14px;
+			}
+		}
+	}
+	
+	.explore-results{
+		
+		h2 + div{
+			font-size:14px;
+		}
+		
+		.rankings-container{
+			margin-top:10px;
+		}
+		
+		a.rank{
+			display:block;
+			text-decoration: none;
+			color:#000;
+			
+			&:hover{
+				border-left:none;
+			}
+			
+			.name-container{
+				pointer-events: none;
+				float: none;
+			}
 		}
 	}
 }

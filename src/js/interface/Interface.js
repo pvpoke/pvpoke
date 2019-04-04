@@ -636,7 +636,12 @@ var InterfaceMaster = (function () {
 				
 				// Set multi selected Pokemon if available
 				
-				ranker.setTargets(multiSelector.getPokemonList());
+				if(cup == "custom"){
+					ranker.setTargets(multiSelector.getPokemonList());
+				} else{
+					ranker.setTargets([]);
+				}
+				
 				
 				// Run battles through the ranker
 				

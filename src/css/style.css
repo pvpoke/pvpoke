@@ -864,21 +864,19 @@ select, input {
   text-align: center; }
   .stats-table span.type.dark, .stats-table span.type.dragon {
     color: #eee; }
-.stats-table.sortable-table {
-  margin: 0 auto; }
-  .stats-table.sortable-table .label {
-    cursor: pointer;
-    -webkit-touch-callout: none;
-    /* iOS Safari */
-    -webkit-user-select: none;
-    /* Safari */
-    -khtml-user-select: none;
-    /* Konqueror HTML */
-    -moz-user-select: none;
-    /* Firefox */
-    -ms-user-select: none;
-    /* Internet Explorer/Edge */
-    user-select: none;
+.stats-table.sortable-table .label {
+  cursor: pointer;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
                    /* Non-prefixed version, currently
 					  supported by Chrome and Opera */ }
 
@@ -1295,6 +1293,48 @@ select, input {
     border-radius: 8px;
     padding: 10px;
     margin: 5px; }
+
+/* MOVES PAGE */
+.move-table-container {
+  max-width: 400px;
+  margin: 0 auto; }
+  .move-table-container .poke-search {
+    margin-top: 15px; }
+
+.move-explore-container {
+  max-width: 500px;
+  margin: 0 auto; }
+  .move-explore-container .move-select-container {
+    justify-content: space-between; }
+    .move-explore-container .move-select-container .move-select-item {
+      max-width: 180px; }
+    .move-explore-container .move-select-container .poke-search {
+      margin-bottom: 5px; }
+    .move-explore-container .move-select-container .check {
+      font-size: 14px; }
+    .move-explore-container .move-select-container h3 {
+      font-size: 14px; }
+  .move-explore-container .moveset-stats {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center; }
+    .move-explore-container .moveset-stats .stat {
+      margin: 0 10px; }
+      .move-explore-container .moveset-stats .stat h3 {
+        font-size: 14px; }
+  .move-explore-container .explore-results h2 + div {
+    font-size: 14px; }
+  .move-explore-container .explore-results .rankings-container {
+    margin-top: 10px; }
+  .move-explore-container .explore-results a.rank {
+    display: block;
+    text-decoration: none;
+    color: #000; }
+    .move-explore-container .explore-results a.rank:hover {
+      border-left: none; }
+    .move-explore-container .explore-results a.rank .name-container {
+      pointer-events: none;
+      float: none; }
 
 /* MODAL WINDOW */
 .modal {

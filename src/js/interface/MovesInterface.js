@@ -24,8 +24,25 @@ var InterfaceMaster = (function () {
 					this.loadGetData();
 				}
 				
+				// Add moves to select options
+				
+				for(var i = 0; i < gm.data.moves.length; i++){
+					var move = gm.data.moves[i];
+					var $option = $("<option type=\""+move.type+"\" value=\""+move.moveId+"\">"+move.name+"</option>");
+					
+					if(move.energyGain > 0){
+						$(".move-select.fast").append($option);
+					} else{
+						$(".move-select.charged").append($option);
+					}
+				}
+				
 				
 				$(".mode-select").on("change", selectMode);
+				$(".poke-search").on("keyup change", searchMove);
+				$(".move-select").on("change", selectMove);
+				$(".effectiveness-select").on("change", self.generateExploreResults);
+				$(".check").on("click", checkBox);
 				
 				window.addEventListener('popstate', function(e) {
 					get = e.state;
@@ -93,60 +110,18 @@ var InterfaceMaster = (function () {
 					}
 				}
 				
-				table = new SortableTable($(".sortable-table.moves"), headers, data);
+				table = new SortableTable($(".sortable-table.moves"), headers, data, self.tableSortCallback);
 				table.sortAndDisplayData("name", true);
 				
-				$(".loading").hide();
-			}
-			
-			// Displays the grabbed data. Showoff.
-			
-			this.displayRankingData = function(rankings){
-				
-				var gm = GameMaster.getInstance();
-				
-				data = rankings;
-				
-				// Create an element for each ranked Pokemon
-				
-				for(var i = 0; i < rankings.length; i++){
-					var r = rankings[i];
-					
-					var pokemon = new Pokemon(r.speciesId);
-					
-					// Is this the best way to add HTML content? I'm gonna go with no here. But does it work? Yes!
-					
-					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating\">"+r.score+"</span></div><div class=\"clear\"></div></div><div class=\"details\"></div>");
-
-					$(".rankings-container").append($el);
-				}
-				
-				$(".loading").hide();
-				$(".rank").on("click", selectPokemon);
-				
-				
-				// If search string exists, process it
+				// Filter table if search string is set
 				
 				if($(".poke-search").val() != ''){
 					$(".poke-search").trigger("keyup");
 				}
 				
-				
-				// If a Pokemon has been selected via URL parameters, jump to it
-				
-				if(jumpToPoke){
-					var $el = $(".rank[data=\""+jumpToPoke+"\"]")
-					$el.trigger("click");
-					
-					// Scroll to element
-					
-					$("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, 500);
-					$(".rankings-container").scrollTop($el.position().top-$(".rankings-container").position().top-20);
-					
-					jumpToPoke = false;
-				}
+				$(".loading").hide();
 			}
-			
+
 			// Given JSON of get parameters, load these settings
 			
 			this.loadGetData = function(){
@@ -168,37 +143,14 @@ var InterfaceMaster = (function () {
 								
 							// Don't process default values so data doesn't needlessly reload
 	
-							case "cp":
-								$(".league-select option[value=\""+val+"\"]").prop("selected","selected");
+							case "mode":
+								$(".mode-select option[value=\""+val+"\"]").prop("selected","selected");
 								
-								break;
-								
-							case "cat":
-								$(".ranking-categories a").removeClass("selected");
-								$(".ranking-categories a[data=\""+val+"\"]").addClass("selected");
-								break;
-								
-							case "cup":
-								$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
-								
-								break;
-								
-							case "p":
-								// We have to wait for the data to load before we can jump to a Pokemon, so store this for later
-								jumpToPoke = val;
-								break;
-								
+								setTimeout(function(){$(".mode-select").trigger("change")}, 50);
+								break;									
 						}
 					}
 				}
-				
-				// Load data via existing change function
-				
-				var cp = $(".league-select option:selected").val();
-				var category = $(".ranking-categories a.selected").attr("data");
-				var cup = $(".cup-select option:selected").val();
-				
-				self.displayRankings(category, cp, cup, null);
 			}
 			
 			// When the view state changes, push to browser history so it can be navigated forward or back
@@ -215,17 +167,227 @@ var InterfaceMaster = (function () {
 				gtag('config', UA_ID, {page_location: (host+url), page_path: url});
 			}
 			
+			// Refilter moves after being sorted
+			
+			this.tableSortCallback = function(){				
+				if($(".poke-search").val() != ''){
+					$(".poke-search").trigger("keyup");
+				}
+			}
+			
+			// When moves are selected, show the resulting data
+			
+			this.generateExploreResults = function(moveChange = false){
+				
+				var fastMoveId = $(".move-select.fast option:selected").val();
+				var chargedMoveId = $(".move-select.charged option:selected").val();
+				var selectedCount = 0;
+				
+				if((fastMoveId != '') || (chargedMoveId != '')){
+					selectedCount = 1;
+					
+					if((fastMoveId != '') && (chargedMoveId != '')){
+						selectedCount = 2;
+					}
+				}
+				
+				// Return if no moves are selected
+				
+				if(selectedCount == 0){
+					$(".explore-results").hide();
+					return false;
+				}
+				
+				$(".explore-results").show();
+				$(".explore-results .moveset-stats").html('');
+				
+				// Gather all relevant moveset stats and push them over here
+				
+				var movesetStats = [];
+				
+				if(selectedCount == 2){
+					var fastMove = gm.getMoveById(fastMoveId);
+					var chargedMove = gm.getMoveById(chargedMoveId);
+					
+					var fastMultipliers = parseFloat($(".effectiveness-select.fast option:selected").val()) * ($(".stab.check.fast").hasClass("on") ? 1.2 : 1);
+					var chargedMultipliers = parseFloat($(".effectiveness-select.fast option:selected").val()) * ($(".stab.check.fast").hasClass("on") ? 1.2 : 1);
+					
+					var fastMovesPerCycle = Math.ceil(chargedMove.energy / fastMove.energyGain);
+					var cycleDuration = (fastMovesPerCycle * fastMove.cooldown) + 500;
+					var cycleDurationStr = (cycleDuration / 500) + " turns (" + (cycleDuration / 1000) + " s)";
+					var fastDamage = Math.round( (fastMovesPerCycle * fastMove.power * fastMultipliers) * 10) / 10;
+					var chargedDamage = Math.round( (chargedMove.power * chargedMultipliers) * 10) / 10;
+					var cycleDamage = Math.round( (fastDamage + chargedDamage) * 10) / 10;
+					var cycleDPT = Math.round( (cycleDamage / (cycleDuration / 500)) * 100) / 100;
+					
+					movesetStats.push({ title: "Fast Damage", value: fastDamage});
+					movesetStats.push({ title: "Charged Damage", value: chargedDamage});
+					movesetStats.push({ title: "Total Damage", value: cycleDamage});
+					movesetStats.push({ title: "Speed", value: cycleDurationStr});
+					movesetStats.push({ title: "Damage Per Turn", value: cycleDPT});
+				}
+				
+				// Display moveset stats
+				
+				for(var i = 0; i < movesetStats.length; i++){
+					var $stat = $("<div class=\"stat\"><h3>"+movesetStats[i].title+"</h3>"+"<span>"+movesetStats[i].value+"</span></div>");
+					$(".explore-results .moveset-stats").append($stat);
+				}
+				
+				// Search for all Pokemon who know these moves
+				
+				if(moveChange){
+					$(".explore-results .rankings-container").html('');
+					
+					for(var i = 0; i < gm.data.pokemon.length; i++){
+						var pokemon = gm.data.pokemon[i];
+						var valid = true;
+						
+						if((fastMoveId != '')&&(pokemon.fastMoves.indexOf(fastMoveId) == -1)){
+							valid = false;
+						}
+						
+						if((chargedMoveId != '')&&(pokemon.chargedMoves.indexOf(chargedMoveId) == -1)){
+							valid = false;
+						}
+						
+						var isLegacy = false;
+						
+						if((pokemon.legacyMoves) && ( (pokemon.legacyMoves.indexOf(fastMoveId) > -1) || (pokemon.legacyMoves.indexOf(chargedMoveId) > -1) )){
+							isLegacy = true;
+						}
+						
+						if(valid){
+							var rankLink = host+"rankings/all/1500/overall/"+pokemon.speciesId;
+							
+							var $rank = $("<a href=\""+rankLink+"\" target=\"_blank\" class=\"rank "+pokemon.types[0]+"\"><div class=\"name-container\"><span class=\"name\">"+pokemon.speciesName+" "+(isLegacy ? "*" : "")+"</span></div></a>");
+							
+							$(".explore-results .rankings-container").append($rank);
+						}
+					}
+				}			
+				
+			}
+			
 			// Event handler for changing the league select
 			
 			function selectMode(e){
 				mode = $(".mode-select option:selected").val();
 				
-				$(".stats-table .charged, .stats-table .fast").hide();
-				$(".stats-table ."+mode).show();
+				if(mode != "explore"){
+					$(".explore").hide();
+					$(".stats-table .charged, .stats-table .fast").hide();
+					$(".stats-table ."+mode).show();
+					$(".move-table-container").show();
 				
-				self.displayMoves();
+					self.displayMoves();
 				
+				} else{
+					$(".move-table-container").hide();
+					$(".explore").show();
+					$(".loading").hide();
+				}
+
 				self.pushHistoryState(mode);
+			}
+			
+			// Search for a move in the table or to select
+			
+			function searchMove(e){
+									
+				var val = $(this).val().toLowerCase();
+				
+				if((mode == 'fast') || (mode == 'charged')){
+					// Search for a move in the table
+					
+					$(".stats-table.moves tr").each(function(index, value){
+						
+						// Don't filter out the headers
+						
+						if(index == 0){
+							return;
+						}
+						
+						var show = false;
+						var types = ["bug","dark","dragon","electric","fairy","fighting","fire","flying","ghost","grass","ground","ice","normal","poison","psychic","rock","steel","water"];
+						
+						if(types.indexOf(val) == -1){
+							// Name search
+							var moveName = $(this).find("td").first().html().toLowerCase();
+
+							if(moveName.startsWith(val)){
+								show = true;
+							}
+						} else{
+							// Type search
+
+							if(($(this).find("td").eq(1).find("span").html().toLocaleLowerCase() == val)){
+								show = true;
+							}
+						}
+						
+						if(show){
+							$(this).show();
+						} else{
+							$(this).hide();
+						}
+						
+						
+					});
+				}
+				
+				// Explorer move search
+				
+				if(mode == 'explore'){
+					var $select = $(this).next(".move-select");
+
+					$select.find("option").each(function(index, value){
+						var moveName = $(this).html().toLowerCase();
+						
+						if(moveName.startsWith(val)){
+							$(this).prop("selected","selected");
+							$select.trigger("change");
+							return false;
+						}
+					});
+				}
+			}
+			
+			// Select a move in the move explorer dropdown
+			
+			function selectMove(e){
+				
+				if(mode != "explore"){
+					return;
+				}
+				
+				var val = $(this).find("option:selected").val();
+				var type = $(this).find("option:selected").attr("type");
+				
+				// Reset classes
+				
+				if($(this).hasClass("fast")){
+					$(this).attr("class","move-select fast");
+				} else{
+					$(this).attr("class","move-select charged");
+				}
+				
+				// Add class for the move's type
+				
+				$(this).addClass(type);
+				
+				self.generateExploreResults(true);
+				
+			}
+			
+			// Turn checkboxes on and off
+			
+			function checkBox(e){
+				$(this).toggleClass("on");
+				
+				if($(this).hasClass("stab")){
+					self.generateExploreResults(false);
+				}
 			}
 			
 		}

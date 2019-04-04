@@ -1,6 +1,6 @@
 // This class outputs a sortable table given a base element and data
 
-function SortableTable($element, headers, data){
+function SortableTable($element, headers, data, sortCallback){
 	
 	var $el = $element;
 	var data = data;
@@ -98,6 +98,8 @@ function SortableTable($element, headers, data){
 		}
 		
 		self.sortAndDisplayData(keyMap[index], asc);
+		
+		sortCallback();
 		
 	}
 	
