@@ -23,23 +23,14 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 	
-	<h4>v1.6.4 (March 25, 2019)</h4>
+	<h4>v1.7.0 (April 5, 2019)</h4>
 	<ul>
-		<li>Ranking items are easier to open and close</li>
-		<li>Fixed some niche battle logic issues</li>
+		<li>Added Moves page with reference tables for Fast and Charges moves, and a moveset explorer</li>
+		<li>Reorganized some header links under a submenu</li>
 		<ul>
-			<li>Shield baiting and near faint calculations were sometimes being done incorrectly</li>
+			<li>It's free real estate</li>
 		</ul>
-		<li>Pokemon now bait shields with low-energy attacks when both of their charged moves are charged</li>
-		<ul>
-			<li>This lines up with how shield baiting is done in actual play</li>
-		</ul>
-		<li>Pokemon now shield against stat-boosting moves like Power-Up Punch more methodically</li>
-		<ul>
-			<li>Pokemon who can withstand Power-Up Punch will let early attacks go through and shield boosted ones later</li>
-			<li>Pokemon who are threatened by a coverage move like Ice Punch or Shadow Ball will continue to block Power-Up Punch as the safest option</li>
-			<li>Pokemon who bait shields with Power-Up Punch will continue using it until they successfully break shields</li>
-		</ul>
+		<li>Fixed a bug in Multi-Battle where switching between custom and other cup options would cause incorrect movesets to be displayed in the results</li>
 	</ul>
 	
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>

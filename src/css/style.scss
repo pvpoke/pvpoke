@@ -191,9 +191,14 @@ footer{
 	}
 }
 
-#main, header{
+#main{
 	position:relative;
 	z-index: 10;
+}
+
+header{
+	position:relative;
+	z-index:25;	
 }
 
 .background{
@@ -300,6 +305,10 @@ footer{
 
 .icon-articles{
 	background-image:url('../img/icon_articles.png');
+}
+
+.icon-moves{
+	background-image:url('../img/icon_moves.png');
 }
 
 .icon-twitter{
@@ -1948,15 +1957,22 @@ select, input{
 		text-align: center;
 		
 		.stat{
-			margin:0 10px;
+			margin:10px 15px;
 			
 			h3{
+				margin-top:0;
 				font-size:14px;
 			}
 		}
 	}
 	
 	.explore-results{
+		
+		margin-top:30px;
+		
+		h2{
+			margin-top:30px;
+		}
 		
 		h2 + div{
 			font-size:14px;
@@ -1980,6 +1996,12 @@ select, input{
 				float: none;
 			}
 		}
+	}
+}
+
+.moves{
+	p:first-of-type{
+		margin-top:1em;
 	}
 }
 
@@ -2338,4 +2360,52 @@ a.toggle{
 	.league-select {
 		max-width:50%;
 	}
+}
+
+@media only screen and (min-width: 721px) {
+	.menu{
+		position:relative;
+		
+		.more{
+			font-size:40px;
+			font-family:serif;
+			line-height:0;
+			padding:0;
+			
+			&:after{
+				content:"...";
+			}
+		}
+		
+		.submenu{
+			padding-top:10px;
+			max-width:200px;
+			position: absolute;
+			right: 0;
+			top: 12px;
+			height:0;
+			overflow: hidden;
+			pointer-events: none;
+			
+			@include transition(all, .125s, linear, 0s);
+			
+			&.active{
+				display:block;
+				height:150px;
+				pointer-events: auto;
+			}
+			
+			.submenu-wrap{
+				padding:2px 5px;
+				background:$color-gold;
+			}
+			
+			a{
+				float:none;
+				margin: 6px 0;
+				width: 120px;
+			}
+		}
+	}
+	
 }

@@ -75,9 +75,13 @@ footer {
   #main > h1 {
     margin: 0; }
 
-#main, header {
+#main {
   position: relative;
   z-index: 10; }
+
+header {
+  position: relative;
+  z-index: 25; }
 
 .background {
   position: fixed;
@@ -150,6 +154,9 @@ footer {
 
 .icon-articles {
   background-image: url("../img/icon_articles.png"); }
+
+.icon-moves {
+  background-image: url("../img/icon_moves.png"); }
 
 .icon-twitter {
   background-image: url("../img/icon_twitter.png");
@@ -1319,22 +1326,30 @@ select, input {
     justify-content: center;
     text-align: center; }
     .move-explore-container .moveset-stats .stat {
-      margin: 0 10px; }
+      margin: 10px 15px; }
       .move-explore-container .moveset-stats .stat h3 {
+        margin-top: 0;
         font-size: 14px; }
-  .move-explore-container .explore-results h2 + div {
-    font-size: 14px; }
-  .move-explore-container .explore-results .rankings-container {
-    margin-top: 10px; }
-  .move-explore-container .explore-results a.rank {
-    display: block;
-    text-decoration: none;
-    color: #000; }
-    .move-explore-container .explore-results a.rank:hover {
-      border-left: none; }
-    .move-explore-container .explore-results a.rank .name-container {
-      pointer-events: none;
-      float: none; }
+  .move-explore-container .explore-results {
+    margin-top: 30px; }
+    .move-explore-container .explore-results h2 {
+      margin-top: 30px; }
+    .move-explore-container .explore-results h2 + div {
+      font-size: 14px; }
+    .move-explore-container .explore-results .rankings-container {
+      margin-top: 10px; }
+    .move-explore-container .explore-results a.rank {
+      display: block;
+      text-decoration: none;
+      color: #000; }
+      .move-explore-container .explore-results a.rank:hover {
+        border-left: none; }
+      .move-explore-container .explore-results a.rank .name-container {
+        pointer-events: none;
+        float: none; }
+
+.moves p:first-of-type {
+  margin-top: 1em; }
 
 /* MODAL WINDOW */
 .modal {
@@ -1775,3 +1790,37 @@ a.toggle {
 
   .league-select {
     max-width: 50%; } }
+@media only screen and (min-width: 721px) {
+  .menu {
+    position: relative; }
+    .menu .more {
+      font-size: 40px;
+      font-family: serif;
+      line-height: 0;
+      padding: 0; }
+      .menu .more:after {
+        content: "..."; }
+    .menu .submenu {
+      padding-top: 10px;
+      max-width: 200px;
+      position: absolute;
+      right: 0;
+      top: 12px;
+      height: 0;
+      overflow: hidden;
+      pointer-events: none;
+      -webkit-transition: all 0.125s linear 0s;
+      -moz-transition: all 0.125s linear 0s;
+      -o-transition: all 0.125s linear 0s;
+      transition: all 0.125s linear 0s; }
+      .menu .submenu.active {
+        display: block;
+        height: 150px;
+        pointer-events: auto; }
+      .menu .submenu .submenu-wrap {
+        padding: 2px 5px;
+        background: #eabd49; }
+      .menu .submenu a {
+        float: none;
+        margin: 6px 0;
+        width: 120px; } }

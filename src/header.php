@@ -37,7 +37,7 @@ if(! isset($OG_IMAGE)){
 <link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json">
 
 <link rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=25">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=26">
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>
 
 <?php require_once('modules/analytics.php'); ?>
@@ -65,9 +65,15 @@ if(! isset($OG_IMAGE)){
 				<a class="icon-battle" href="<?php echo $WEB_ROOT; ?>battle/">Battle</a>
 				<a class="icon-rankings" href="<?php echo $WEB_ROOT; ?>rankings/">Rankings</a>
 				<a class="icon-team" href="<?php echo $WEB_ROOT; ?>team-builder/">Team Builder</a>
-				<a class="icon-articles" href="<?php echo $WEB_ROOT; ?>articles/"><span>Articles</a>
-				<a class="icon-contribute" href="<?php echo $WEB_ROOT; ?>contribute/">Contribute</a>
-				<a class="icon-twitter" href="https://twitter.com/pvpoke" target="_blank"><span>Follow on Twitter!</span></a>
+				<a class="more desktop" href="#"></a>
+				<div class="submenu">
+					<div class="submenu-wrap">
+						<a class="icon-moves" href="<?php echo $WEB_ROOT; ?>moves/"><span>Moves</a>
+						<a class="icon-articles" href="<?php echo $WEB_ROOT; ?>articles/"><span>Articles</a>
+						<a class="icon-contribute" href="<?php echo $WEB_ROOT; ?>contribute/">Contribute</a>
+						<a class="icon-twitter" href="https://twitter.com/pvpoke" target="_blank">Twitter</a>
+					</div>
+				</div>
 			</div>
 			<div class="clear"></div>
 		</div>

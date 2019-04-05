@@ -1,4 +1,6 @@
-// JavaScript Document
+/*
+* Interface functionality for move list and explorer
+*/
 
 var InterfaceMaster = (function () {
     var instance;
@@ -210,7 +212,7 @@ var InterfaceMaster = (function () {
 					var chargedMove = gm.getMoveById(chargedMoveId);
 					
 					var fastMultipliers = parseFloat($(".effectiveness-select.fast option:selected").val()) * ($(".stab.check.fast").hasClass("on") ? 1.2 : 1);
-					var chargedMultipliers = parseFloat($(".effectiveness-select.fast option:selected").val()) * ($(".stab.check.fast").hasClass("on") ? 1.2 : 1);
+					var chargedMultipliers = parseFloat($(".effectiveness-select.fast option:selected").val()) * ($(".stab.check.charged").hasClass("on") ? 1.2 : 1);
 					
 					var fastMovesPerCycle = Math.ceil(chargedMove.energy / fastMove.energyGain);
 					var cycleDuration = (fastMovesPerCycle * fastMove.cooldown) + 500;
