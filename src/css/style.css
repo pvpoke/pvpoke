@@ -728,16 +728,6 @@ select, input {
         text-decoration: none; }
         .battle-results .battle-details table .rating.star.win {
           background-image: url("../img/starburst.png"); }
-    .battle-results .battle-details .rating-table .shield {
-      display: inline-block;
-      width: 17px;
-      height: 16px;
-      background-size: contain;
-      background-image: url("../img/shield.png"); }
-      .battle-results .battle-details .rating-table .shield.shield-none {
-        background-image: url("../img/shield_none.png"); }
-      .battle-results .battle-details .rating-table .shield.shield-double {
-        width: 36px; }
   .battle-results.multi {
     text-align: left; }
     .battle-results.multi .poke-search {
@@ -747,6 +737,21 @@ select, input {
     .battle-results.multi .rankings-container .rank:hover {
       border-left: none;
       cursor: initial; }
+
+.rating-table {
+  text-align: center; }
+  .rating-table tr {
+    background: none; }
+  .rating-table .shield {
+    display: inline-block;
+    width: 17px;
+    height: 16px;
+    background-size: contain;
+    background-image: url("../img/shield.png"); }
+    .rating-table .shield.shield-none {
+      background-image: url("../img/shield_none.png"); }
+    .rating-table .shield.shield-double {
+      width: 36px; }
 
 .timeline {
   border-top: 1px dashed #000;
@@ -1259,6 +1264,57 @@ select, input {
       color: #f1841c; }
   .article table tr:nth-of-type(2n) {
     background: rgba(0, 0, 0, 0.1); }
+.article .rating-table td {
+  padding: 1px; }
+.article .rating-table a {
+  display: block;
+  padding: 5px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  /*
+  *	|	||
+  *	||	|_
+  */ }
+  .article .rating-table a span {
+    display: block;
+    margin: 0 auto;
+    width: 18px;
+    height: 18px; }
+  .article .rating-table a.win {
+    background-color: #018dba; }
+    .article .rating-table a.win span {
+      border-radius: 20px;
+      background: #fff6d4; }
+  .article .rating-table a.close-win {
+    background-color: #3f5eac; }
+    .article .rating-table a.close-win span {
+      border-radius: 20px;
+      border: 2px solid #fff6d4;
+      box-sizing: border-box; }
+  .article .rating-table a.close-loss {
+    background-color: #72369f; }
+    .article .rating-table a.close-loss span {
+      color: #ffacdb; }
+      .article .rating-table a.close-loss span:after {
+        content: "x"; }
+  .article .rating-table a.loss {
+    background-color: #b9008f; }
+    .article .rating-table a.loss span {
+      color: #ff6abe;
+      font-size: 18px;
+      font-weight: bold; }
+      .article .rating-table a.loss span:after {
+        content: "X"; }
+  .article .rating-table a.tie {
+    background-color: #5d47a5; }
+    .article .rating-table a.tie span {
+      color: #fff6d4; }
+      .article .rating-table a.tie span:after {
+        content: "-"; }
+.article .rating-table td.name {
+  vertical-align: middle;
+  text-align: left;
+  padding-right: 10px; }
 
 .article-item .col-9 {
   padding: 0 10px; }

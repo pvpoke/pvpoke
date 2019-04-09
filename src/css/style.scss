@@ -1105,25 +1105,6 @@ select, input{
 				}
 			}
 		}
-		
-		.rating-table{
-
-			.shield{
-				display:inline-block;
-				width:17px;
-				height:16px;
-				background-size:contain;
-				background-image:url('../img/shield.png');
-				
-				&.shield-none{
-					background-image:url('../img/shield_none.png');
-				}
-				
-				&.shield-double{
-					width:36px;
-				}
-			}
-		}
 	}
 	
 	&.multi{
@@ -1142,6 +1123,31 @@ select, input{
 				border-left:none;
 				cursor:initial;
 			}
+		}
+	}
+}
+
+.rating-table{
+	
+	text-align: center;
+	
+	tr{
+		background:none;
+	}
+
+	.shield{
+		display:inline-block;
+		width:17px;
+		height:16px;
+		background-size:contain;
+		background-image:url('../img/shield.png');
+
+		&.shield-none{
+			background-image:url('../img/shield_none.png');
+		}
+
+		&.shield-double{
+			width:36px;
 		}
 	}
 }
@@ -1838,6 +1844,95 @@ select, input{
 		
 		tr:nth-of-type(2n){
 			background:rgba(0,0,0,.1);
+		}
+	}
+	
+	.rating-table{
+		
+		td{
+			padding: 1px;
+		}
+		
+		a{
+			display:block;
+			padding:5px 12px;
+			border-radius:8px;
+			text-decoration: none;
+			
+			span{
+				display:block;
+				margin:0 auto;
+				width:18px;
+				height:18px;
+			}
+	
+			&.win{
+				background-color: rgb(1, 141, 186);
+				
+				span{
+					border-radius:20px;
+					background:#fff6d4;
+				}
+			}
+			
+			&.close-win{
+				background-color: rgba(63, 94, 172, 1);
+				
+				span{
+					border-radius:20px;
+					border:2px solid #fff6d4;
+					box-sizing:border-box;
+				}
+			}
+			
+			&.close-loss{
+				background-color: rgba(114, 54, 159, 1);
+				
+				span{
+					color:#ffacdb;
+					
+					&:after{
+						content:"x";
+					}
+				}
+			}
+			
+			/*
+			*	|	||
+			*	||	|_
+			*/
+			
+			&.loss{
+				background-color: rgb(185, 0, 143);
+				
+				span{
+					color:#ff6abe;
+					font-size:18px;
+					font-weight:bold;
+					
+					&:after{
+						content:"X";
+					}
+				}
+			}
+			
+			&.tie{
+				background-color: rgb(93, 71, 165);
+				
+				span{
+					color:#fff6d4;
+					
+					&:after{
+						content:"-";
+					}
+				}
+			}
+		}
+		
+		td.name{
+			vertical-align: middle;
+			text-align: left;
+			padding-right:10px;
 		}
 	}
 }
