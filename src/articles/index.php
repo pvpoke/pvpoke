@@ -13,6 +13,20 @@ require_once '../header.php';
 	
 	<div class="article-item flex">
 		<div class="col-3">
+			<a href="<?php echo $WEB_ROOT; ?>articles/freefolk-guide-kingdom-cup/">
+				<img src="<?php echo $WEB_ROOT; ?>assets/articles/kingdom-cup-thumb.jpg" />
+			</a>
+		</div>
+		<div class="col-9">
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/freefolk-guide-kingdom-cup/">The Freefolk's Guide to Kingdom Cup</a></h4>
+			<div class="date"> April 11, 2019</div>
+			<p>How do you make do without Bastiodon and Lucario? This guide explores your options to help you build a competitive Kingdom Cup team.</p>
+		</div>
+		
+	</div>
+	
+	<div class="article-item flex">
+		<div class="col-3">
 			<a href="<?php echo $WEB_ROOT; ?>articles/early-2019-update-highlights/">
 				<img src="<?php echo $WEB_ROOT; ?>assets/articles/2019-update-thumb.jpg" />
 			</a>

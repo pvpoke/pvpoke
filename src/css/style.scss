@@ -1934,6 +1934,19 @@ select, input{
 			text-align: left;
 			padding-right:10px;
 		}
+	
+		&.legend{
+			margin:0;
+			text-align: left;
+
+			td{
+				padding:5px;
+			}
+
+			a.rating{
+				text-align: center;
+			}
+		}
 	}
 }
 
