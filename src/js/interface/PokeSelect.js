@@ -5,6 +5,7 @@
 function PokeSelect(element, i){
 	var $el = element;
 	var $pokeSelect = $el.find("select.poke-select");
+	var $tooltip = $el.find(".tooltip");
 	var $input = $el.find("input");
 	var gm = GameMaster.getInstance();
 	var battle;
@@ -153,15 +154,6 @@ function PokeSelect(element, i){
 					self.animateEnergy(i, 0);
 				}
 			}
-			
-			// If set from variables, display custom level and ivs
-			
-			if((selectedPokemon.isCustom)&&($("input:focus").length == 0)){
-				$el.find("input.level").val(selectedPokemon.level);
-				$el.find("input.iv[iv='atk']").val(selectedPokemon.ivs.atk);
-				$el.find("input.iv[iv='def']").val(selectedPokemon.ivs.def);
-				$el.find("input.iv[iv='hp']").val(selectedPokemon.ivs.hp);
-			}
 		}
 	}
 	
@@ -236,6 +228,16 @@ function PokeSelect(element, i){
 	this.setSelectedPokemon = function(poke){
 		selectedPokemon = poke;
 		$pokeSelect.find("option[value=\""+poke.speciesId+"\"]").prop("selected","selected");
+		
+		// If custom, set level and IV fields to current values
+		
+		if(poke.isCustom){
+			$el.find("input.level").val(poke.level);
+			$el.find("input.iv[iv='atk']").val(poke.ivs.atk);
+			$el.find("input.iv[iv='def']").val(poke.ivs.def);
+			$el.find("input.iv[iv='hp']").val(poke.ivs.hp);
+		}
+		
 		self.update();
 	}
 	
@@ -248,11 +250,6 @@ function PokeSelect(element, i){
 		}
 		
 		selectedPokemon.initialize(cp);
-		
-		// Set an existing level and iv options
-		
-		$el.find("input.level").trigger("keyup");
-		$el.find("input.iv").trigger("keyup");
 		
 		self.update();
 	}
@@ -322,6 +319,10 @@ function PokeSelect(element, i){
 		self.reset();
 		
 		self.update();
+		
+		if(interface.resetSelectedPokemon){
+			interface.resetSelectedPokemon();
+		}
 	});
 	
 	// Select different move
@@ -382,6 +383,10 @@ function PokeSelect(element, i){
 			self.reset();
 
 			self.update();
+			
+			if(interface.resetSelectedPokemon){
+				interface.resetSelectedPokemon();
+			}
 		}
 
 	});
@@ -462,6 +467,10 @@ function PokeSelect(element, i){
         isCustom = true;
 
         self.update();
+		
+		if(interface.resetSelectedPokemon){
+			interface.resetSelectedPokemon();
+		}
     });
 	
 	// Change level input
@@ -480,6 +489,10 @@ function PokeSelect(element, i){
 		selectedPokemon.isCustom = true;
 		
 		self.update();
+		
+		if(interface.resetSelectedPokemon){
+			interface.resetSelectedPokemon();
+		}
 	});
 	
 	// Change level input
@@ -497,6 +510,10 @@ function PokeSelect(element, i){
 		isCustom = true;
 		
 		self.update();
+		
+		if(interface.resetSelectedPokemon){
+			interface.resetSelectedPokemon();
+		}
 	});
 	
 	// Change stat modifier input
@@ -527,6 +544,50 @@ function PokeSelect(element, i){
 		isCustom = true;
 		
 		self.update();
+		
+		if(interface.resetSelectedPokemon){
+			interface.resetSelectedPokemon();
+		}
+	});
+	
+	// Show move stats on hover	
+	
+	$el.on("mousemove", ".move-bar", function(e){
+
+		$tooltip.show();
+
+		$tooltip.attr("class","tooltip");
+		
+		var index = $el.find(".move-bar").index($(e.target).closest(".move-bar"));
+		var move = selectedPokemon.chargedMoves[index];
+		var dpe = Math.floor( (move.damage / move.energy) * 100) / 100;
+
+		$tooltip.find(".name").html(move.name);
+		$tooltip.addClass(move.type);
+		$tooltip.find(".details").html(move.damage + ' damage<br>' + move.energy + ' energy<br>' + dpe + ' dpe');
+
+		var width = $tooltip.width();
+		var left = (e.pageX - $(".section").first().offset().left) + 10;
+		var top = e.pageY - 20;
+
+		if( left > ($(".timeline-container").width() - width - 10) ){
+			left -= width;
+		}
+		
+		if(left < 100){
+			left = e.pageX;
+		}
+
+		$tooltip.css("left",left+"px");
+		$tooltip.css("top",top+"px");
+	});
+	
+	// Hide tooltip when mousing over other elements
+	
+	$("body").on("mousemove", function(e){
+		if($el.find(".move-bar:hover").length == 0){
+			$tooltip.hide();
+		}
 	});
 	
 	// Clear selection on click

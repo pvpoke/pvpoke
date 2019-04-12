@@ -23,14 +23,19 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 	
-	<h4>v1.7.0 (April 5, 2019)</h4>
+	<h4>v1.7.1 (April 12, 2019)</h4>
 	<ul>
-		<li>Added Moves page with reference tables for Fast and Charges moves, and a moveset explorer</li>
-		<li>Reorganized some header links under a submenu</li>
+		<li>A move stats tooltip now appears when hovering over a Pokemon's Charged Move meters</li>
+		<li>Added a Team Leader Pokemon custom group to help narrow down potential IV combinations</li>
 		<ul>
-			<li>It's free real estate</li>
+			<li>Run your potential IV combinations against the Team Leader Pokemon custom group and compare to see if any matchups differ. This may be easiest by downloading the results.</li>
 		</ul>
-		<li>Fixed a bug in Multi-Battle where switching between custom and other cup options would cause incorrect movesets to be displayed in the results</li>
+		<li>Fixed a bug where Pokemon CP sometimes wouldn't update when switching between leagues</li>
+		<li>Fixed a bug where clicking battle links in the Matchup Details grid while a battle was animating would break the interface</li>
+		<li>Updated how the interface processes Pokemon level and IV's to be much more user-friendly</li>
+		<ul>
+			<li>Previously, certain functions made custom level and IV input difficult or wonky</li>
+		</ul>
 	</ul>
 	
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>

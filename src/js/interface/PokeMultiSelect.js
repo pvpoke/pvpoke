@@ -114,8 +114,24 @@ function PokeMultiSelect(element){
 			pokemon.initialize(battle.getCP());
 			pokemon.selectMove("fast", data[i].fastMove);
 			
-			for(var n = 0; n < data[i].chargedMoves.length; n++){
-				pokemon.selectMove("charged", data[i].chargedMoves[n], n);
+			for(var n = 0; n < 2; n++){
+				
+				if(n < data[i].chargedMoves.length){
+					pokemon.selectMove("charged", data[i].chargedMoves[n], n);
+				} else{
+					pokemon.selectMove("charged", "none", 0);
+				}
+				
+			}
+
+			if(data[i].ivs){
+				pokemon.setIV("atk", data[i].ivs[0]);
+				pokemon.setIV("def", data[i].ivs[1]);
+				pokemon.setIV("hp", data[i].ivs[2]);
+			}
+			
+			if(data[i].level){
+				pokemon.setLevel(data[i].level);
 			}
 			
 			pokemonList.push(pokemon);
@@ -195,6 +211,8 @@ function PokeMultiSelect(element){
 				$el.find(".quick-fill-select option[value='master']").show();
 				break;
 		}
+		
+		$el.find(".quick-fill-select option[value='leaders']").show();
 		
 		$el.find(".quick-fill-select option").each(function(index, value){
 			if($(this).val().indexOf("custom") > -1){

@@ -599,6 +599,7 @@ header{
 			color:$color-off-white;
 			margin-top:5px;
 			display:none;
+			cursor:pointer;
 			
 			@include transition(border, 0.2s, ease-out, 0s);
 			

@@ -440,6 +440,7 @@ header {
   color: #eee;
   margin-top: 5px;
   display: none;
+  cursor: pointer;
   -webkit-transition: border 0.2s ease-out 0s;
   -moz-transition: border 0.2s ease-out 0s;
   -o-transition: border 0.2s ease-out 0s;

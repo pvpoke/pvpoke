@@ -114,4 +114,8 @@
 			</div>
 		</div>
 	</div>
+	<div class="tooltip">
+		<h3 class="name"></h3>
+		<div class="details"></div>
+	</div>
 </div>

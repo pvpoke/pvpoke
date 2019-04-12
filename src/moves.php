@@ -109,7 +109,7 @@ require_once 'header.php';
 
 <!--test 2-->
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=59"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=16"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=17"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/SortableTable.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/MovesInterface.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=6"></script>

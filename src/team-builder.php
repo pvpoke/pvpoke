@@ -75,9 +75,9 @@ require_once 'header.php';
 
 <!--test 4-->
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=59"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=16"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=17"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/TeamInterface.js?v=9"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=24"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=26"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BattleHistogram.js?v=2"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=5"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=29"></script>

@@ -102,11 +102,11 @@ function Pokemon(id, i, b){
 		
 		var isDefault = false;
 		
-		if((this.level == 40)&&(this.ivs.atk == this.ivs.def == this.ivs.hp == 0)){
+		if((this.level == 40)&&(this.ivs.atk == 0) && (this.ivs.def == 0) && (this.ivs.hp == 0)){
 			isDefault = true;
 		}
 		
-		if((targetCP)||((this.cp > maxCP)&&(isDefault))){
+		if(((targetCP)&&(! self.isCustom))||((this.cp > maxCP)&&(isDefault))){
 			
 			targetCP = maxCP;
 			

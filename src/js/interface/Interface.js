@@ -113,6 +113,16 @@ var InterfaceMaster = (function () {
 
 			};
 			
+			// If the opposing Pokemon is changed or updated, update both so damage numbers are accurate
+			
+			this.resetSelectedPokemon = function(){
+				for(var i = 0; i < pokeSelectors.length; i++){
+					if(pokeSelectors[i].getPokemon()){
+						pokeSelectors[i].getPokemon().reset();
+					}
+				}
+			}
+			
 			// Display HP gven a point in a timeline
 			
 			this.displayCumulativeDamage = function(timeline, time){
@@ -840,68 +850,53 @@ var InterfaceMaster = (function () {
 						
 						switch(key){
 							case "p1":
+							case "p2":
 								var arr = val.split('-');
+								var index = 0;
+								
+								if(key == "p2"){
+									index = 1;
+								}
 
 								if(arr.length == 1){
-									pokeSelectors[0].setPokemon(val);
+									pokeSelectors[index].setPokemon(val);
 								} else{
-									pokeSelectors[0].setPokemon(arr[0]);
+									pokeSelectors[index].setPokemon(arr[0]);
 									
-									var pokemon = pokeSelectors[0].getPokemon();
-									pokemon.setLevel(arr[1]);
+									var pokemon = pokeSelectors[index].getPokemon();
+
 									pokemon.setIV("atk", arr[2]);
 									pokemon.setIV("def", arr[3]);
 									pokemon.setIV("hp", arr[4]);
+									pokemon.setLevel(arr[1]);
+									
+									$("input.level").eq(index).val(pokemon.level);
+									$("input.iv[iv='atk']").eq(index).val(pokemon.ivs.atk);
+									$("input.iv[iv='def']").eq(index).val(pokemon.ivs.def);
+									$("input.iv[iv='hp']").eq(index).val(pokemon.ivs.hp);
 
-									$("input.stat-mod[iv='atk']").eq(0).val(parseInt(arr[5]) - 4);
-									$("input.stat-mod[iv='def']").eq(0).val(parseInt(arr[6]) - 4);
+									$("input.stat-mod[iv='atk']").eq(index).val(parseInt(arr[5]) - 4);
+									$("input.stat-mod[iv='def']").eq(index).val(parseInt(arr[6]) - 4);
 									
 									if(arr[7]){
 										pokemon.baitShields = (parseInt(arr[7]) == 1);
 										
 										if(! pokemon.baitShields){
-											$(".poke.single .shield-baiting").eq(0).removeClass("on");
+											$(".poke.single .shield-baiting").eq(index).removeClass("on");
 										}
 									}
 
-									$("input.stat-mod[iv='atk']").eq(0).trigger("keyup");
+									$("input.stat-mod[iv='atk']").eq(index).trigger("keyup");
+								}
+								
+								if(index == 1){
+									// Auto select moves for both Pokemon
+
+									for(var i = 0; i < pokeSelectors.length; i++){
+										pokeSelectors[i].getPokemon().autoSelectMoves();
+									}
 								}
 																
-								break;
-								
-							case "p2":		
-								var arr = val.split('-');
-								
-								if(arr.length == 1){
-									pokeSelectors[1].setPokemon(val);
-								} else{
-									pokeSelectors[1].setPokemon(arr[0]);
-									
-									var pokemon = pokeSelectors[1].getPokemon();
-									pokemon.setLevel(arr[1]);
-									pokemon.setIV("atk", arr[2]);
-									pokemon.setIV("def", arr[3]);
-									pokemon.setIV("hp", arr[4]);
-
-									$("input.stat-mod[iv='atk']").eq(1).val(parseInt(arr[5]) - 4);
-									$("input.stat-mod[iv='def']").eq(1).val(parseInt(arr[6]) - 4);
-									
-									if(arr[7]){
-										pokemon.baitShields = (parseInt(arr[7]) == 1);
-										
-										if(! pokemon.baitShields){
-											$(".poke.single .shield-baiting").eq(1).removeClass("on");
-										}
-									}
-									
-									$("input.stat-mod[iv='atk']").eq(1).trigger("keyup");
-								}
-				
-								// Auto select moves for both Pokemon
-
-								for(var i = 0; i < pokeSelectors.length; i++){
-									pokeSelectors[i].getPokemon().autoSelectMoves();
-								}
 								break;
 								
 							case "cp":
@@ -1162,6 +1157,7 @@ var InterfaceMaster = (function () {
 					battle.setCP(cp);
 					
 					for(var i = 0; i < pokeSelectors.length; i++){
+						pokeSelectors[i].setBattle(battle);
 						pokeSelectors[i].setCP(cp);
 					}
 					
@@ -1306,7 +1302,7 @@ var InterfaceMaster = (function () {
 					return;
 				}
 				
-				var $tooltip = $(".tooltip");
+				var $tooltip = $(".battle .tooltip");
 				
 				$tooltip.show();
 				
@@ -1430,7 +1426,7 @@ var InterfaceMaster = (function () {
 			
 			function mainMouseMove(e){
 				if($(".timeline .item:hover").length == 0){
-					$(".tooltip").hide();
+					$(".battle .tooltip").hide();
 				}
 				
 				if(($(".timeline-container:hover").length > 0)&&(! animating)){
@@ -1455,6 +1451,12 @@ var InterfaceMaster = (function () {
 			
 			function viewShieldBattle(e){
 				e.preventDefault();
+				
+				if(animating){
+					clearInterval(timelineInterval);
+					
+					animating = false;
+				}
 				
 				var shields = $(e.target).attr("shields").split(",");
 
@@ -1511,7 +1513,7 @@ var InterfaceMaster = (function () {
 			function generateURLPokeStr(pokemon, index){
 				var pokeStr = pokemon.speciesId;
 				
-				if(pokemon.isCustom){
+				if((pokemon.isCustom)||(pokemon.startStatBuffs[0] != 0)||(pokemon.startStatBuffs[1] != 0)){
 					var arr = [pokemon.level];
 					
 					arr.push(pokemon.ivs.atk, pokemon.ivs.def, pokemon.ivs.hp, pokemon.startStatBuffs[0]+gm.data.settings.maxBuffStages, pokemon.startStatBuffs[1]+gm.data.settings.maxBuffStages, pokemon.baitShields ? 1 : 0);
@@ -1531,7 +1533,7 @@ var InterfaceMaster = (function () {
 			function toggleSandboxMode(e){
 				$(this).toggleClass("active");
 				$(".timeline-container").toggleClass("sandbox-mode");
-				$(".tooltip").toggleClass("sandbox");
+				$(".battle .tooltip").toggleClass("sandbox");
 				$(".sandbox, .automated").toggle();
 				$(".sandbox-btn-container .sandbox").toggleClass("active");
 				$(".matchup-detail-section").toggle();
