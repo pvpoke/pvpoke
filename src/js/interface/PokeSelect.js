@@ -574,7 +574,7 @@ function PokeSelect(element, i){
 			left -= width;
 		}
 		
-		if(left < 100){
+		if((left < 100)&&($(window).width() <= 480)){
 			left = e.pageX;
 		}
 
