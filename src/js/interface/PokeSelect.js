@@ -468,6 +468,11 @@ function PokeSelect(element, i){
 
         self.update();
 		
+		$("input.level").eq(index).val(selectedPokemon.level);
+		$("input.iv[iv='atk']").eq(index).val(selectedPokemon.ivs.atk);
+		$("input.iv[iv='def']").eq(index).val(selectedPokemon.ivs.def);
+		$("input.iv[iv='hp']").eq(index).val(selectedPokemon.ivs.hp);
+		
 		if(interface.resetSelectedPokemon){
 			interface.resetSelectedPokemon();
 		}
