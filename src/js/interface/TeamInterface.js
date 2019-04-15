@@ -204,7 +204,9 @@ var InterfaceMaster = (function () {
 				
 				// Generate counters and histograms, and display that, too
 				
-				var ranker = RankerMaster.getInstance();				
+				var ranker = RankerMaster.getInstance();
+				ranker.setShieldMode("average");
+				
 				var data = ranker.rank(team, battle.getCP(), battle.getCup());
 				var counterRankings = data.rankings;
 				var teamRatings = data.teamRatings;
@@ -238,7 +240,13 @@ var InterfaceMaster = (function () {
 				
 				// And for kicks, generate the counters to those counters
 				
-				var altRankings = ranker.rank(counterTeam, battle.getCP(), battle.getCup()).rankings;
+				var exclusionList = []; // Exclude the current team from the alternative results
+				
+				for(var i = 0; i < team.length; i++){
+					exclusionList.push(team[i].speciesId);
+				}
+				
+				var altRankings = ranker.rank(counterTeam, battle.getCP(), battle.getCup(), exclusionList).rankings;
 				
 				for(var i = 0; i < 10; i++){
 					var r = altRankings[i];

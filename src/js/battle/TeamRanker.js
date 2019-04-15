@@ -25,6 +25,7 @@ var RankerMaster = (function () {
 			var rankings = [];
 			
 			var shieldOverride = 0;
+			var shieldMode = 'single'; // single - sim specific shield scenarios, average - sim average of 0 and 1 shields each
 			var chargedMoveCountOverride = 2;
 			var shieldBaitOverride = true;
 			
@@ -34,7 +35,7 @@ var RankerMaster = (function () {
 
 			// Run an individual rank set
 			
-			this.rank = function(team, league, cup){
+			this.rank = function(team, league, cup, exclusionList){
 				
 				var totalBattles = 0;
 				
@@ -70,6 +71,10 @@ var RankerMaster = (function () {
 					var bannedList = ["mewtwo","giratina_altered","groudon","kyogre","rayquaza","garchomp","latios","latias","palkia","dialga","heatran","giratina_origin"];
 					var permaBannedList = ["burmy_trash","burmy_sandy","burmy_plant","wormadam_plant","wormadam_sandy","wormadam_trash","mothim","cherubi","cherrim_overcast","cherrim_sunny","shellos_east_sea","shellos_west_sea","gastrodon_east_sea","gastrodon_west_sea","hippopotas","hippowdon","leafeon","glaceon","rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","uxie","azelf","mesprit","regigigas","phione","manaphy","darkrai","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","jirachi"]; // Don't rank these Pokemon at all yet
 					var allowedList = [];
+					
+					if(exclusionList){
+						bannedList = bannedList.concat(exclusionList);
+					}
 					
 					for(var i = 0; i < gm.data.pokemon.length; i++){
 
@@ -192,7 +197,6 @@ var RankerMaster = (function () {
 							battle.setNewPokemon(opponent, 1, false); // Keep settings for selected Pokemon
 						}
 						
-						
 						// Force best moves on counters but not on the user's selected Pokemon
 						
 						if(targets.length == 0){
@@ -205,25 +209,48 @@ var RankerMaster = (function () {
 						
 						pokemon.baitShields = shieldBaitOverride;
 						
-						pokemon.setShields(shieldOverride);
+						var shieldTestArr = []; // Array of shield scenarios to test
 						
-						battle.simulate();
+						if(shieldMode == 'single'){
+							shieldTestArr.push(shieldOverride);
+						} else if(shieldMode == 'average'){
+							shieldTestArr.push(0, 1);
+						}
 						
-						var healthRating = (pokemon.hp / pokemon.stats.hp);
-						var damageRating = ((opponent.stats.hp - opponent.hp) / (opponent.stats.hp));
+						var avgPokeRating = 0;
+						var avgOpRating = 0;
 						
-						var opHealthRating = (opponent.hp / opponent.stats.hp);
-						var opDamageRating = ((pokemon.stats.hp - pokemon.hp) / (pokemon.stats.hp));
-						
-						var rating = Math.floor( (healthRating + damageRating) * 500);
-						var opRating = Math.floor( (opHealthRating + opDamageRating) * 500);
-						
-						csv += ',' + opRating;
+						for(var j = 0; j < shieldTestArr.length; j++){
+							pokemon.setShields(shieldTestArr[j]);
+							
+							if(shieldMode == 'average'){
+								opponent.setShields(shieldTestArr[j]);
+							}
 
-						avg += rating;
-						opponentRating = opRating;
+							battle.simulate();
+
+							var healthRating = (pokemon.hp / pokemon.stats.hp);
+							var damageRating = ((opponent.stats.hp - opponent.hp) / (opponent.stats.hp));
+
+							var opHealthRating = (opponent.hp / opponent.stats.hp);
+							var opDamageRating = ((pokemon.stats.hp - pokemon.hp) / (pokemon.stats.hp));
+
+							var rating = Math.floor( (healthRating + damageRating) * 500);
+							var opRating = Math.floor( (opHealthRating + opDamageRating) * 500);
+							
+							avgPokeRating += rating;
+							avgOpRating += opRating;
+						}
 						
-						teamRatings[n].push(opRating);
+						avgPokeRating = Math.floor(avgPokeRating / shieldTestArr.length);
+						avgOpRating = Math.floor(avgOpRating / shieldTestArr.length);
+						
+						csv += ',' + avgOpRating;
+
+						avg += avgPokeRating;
+						opponentRating = avgOpRating;
+						
+						teamRatings[n].push(avgOpRating);
 					}
 					
 					avg = Math.floor(avg / team.length);
@@ -275,6 +302,12 @@ var RankerMaster = (function () {
 			
 			this.setTargets = function(arr){
 				targets = arr;
+			}
+			
+			// Set how to handle multiple shield scenarios
+			
+			this.setShieldMode = function(value){
+				shieldMode = value;
 			}
 
 		};

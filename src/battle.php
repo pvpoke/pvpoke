@@ -309,18 +309,18 @@ require_once 'header.php';
 </div>
 
 <!--test 2-->
-<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=59"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=17"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/Interface.js?v=38"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=29"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeMultiSelect.js?=5"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/BattleHistogram.js?v=2"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=2"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=6"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineAction.js"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=29"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/battle/TeamRanker.js?v=17"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/Main.js?v=3"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/Interface.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeMultiSelect.js?=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/BattleHistogram.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineAction.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/TeamRanker.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/Main.js?v=<?php echo $SITE_VERSION; ?>"></script>
 
 <?php require_once 'footer.php'; ?>

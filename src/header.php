@@ -1,4 +1,6 @@
-<?php require_once 'modules/config.php'; ?>
+<?php require_once 'modules/config.php'; 
+$SITE_VERSION = '1.7.2';
+?>
 <!doctype html>
 <html>
 <head>

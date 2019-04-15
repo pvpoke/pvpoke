@@ -23,18 +23,12 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 	
-	<h4>v1.7.1 (April 12, 2019)</h4>
+	<h4>v1.7.2 (April 12, 2019)</h4>
 	<ul>
-		<li>A move stats tooltip now appears when hovering over a Pokemon's Charged Move meters</li>
-		<li>Added a Team Leader Pokemon custom group to help narrow down potential IV combinations</li>
+		<li>Team Builder updates</li>
 		<ul>
-			<li>Run your potential IV combinations against the Team Leader Pokemon custom group and compare to see if any matchups differ. This may be easiest by downloading the results.</li>
-		</ul>
-		<li>Fixed a bug where Pokemon CP sometimes wouldn't update when switching between leagues</li>
-		<li>Fixed a bug where clicking battle links in the Matchup Details grid while a battle was animating would break the interface</li>
-		<li>Updated how the interface processes Pokemon level and IV's to be much more user-friendly</li>
-		<ul>
-			<li>Previously, certain functions made custom level and IV input difficult or wonky</li>
+			<li>The results are now averaged from 0 and 1 shield scenarios. Previously, all results were with 0 shields. This should produce a wider and more realistic variety in the results.</li>
+			<li>Pokemon already in your team will no longer appear as potential alternatives</li>
 		</ul>
 	</ul>
 	
