@@ -89,10 +89,6 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".rating-table a.rating.star", viewShieldBattle);
 				$("body").on("click", ".section.summary a.rating.star", viewBulkBattle);
 				
-				// Multi Battle CSV download
-				
-				$(".button.download-csv").click(downloadMultiResultCSV);
-				
 				// Sandbox mode
 				
 				$(".sandbox-btn").click(toggleSandboxMode);
@@ -768,6 +764,20 @@ var InterfaceMaster = (function () {
 				var link = host + battleStr;
 				
 				$(".share-link input").val(link);
+
+				// Update download link with new data
+				
+				var filename = pokeSelectors[0].getPokemon().speciesName + " vs " + $(".poke.multi .cup-select option:selected").html() + ".csv";
+				var filedata = '';
+				
+				if (!csv.match(/^data:text\/csv/i)) {
+					filedata = 'data:text/csv;charset=utf-8,' + csv;
+				}
+
+				filedata = encodeURI(filedata);
+				
+				$(".button.download-csv").attr("href", filedata);
+				$(".button.download-csv").attr("download", filename);	
 				
 				// Push state to browser history so it can be navigated, only if not from URL parameters
 				
@@ -785,8 +795,7 @@ var InterfaceMaster = (function () {
 				
 				// Send Google Analytics pageview
 				
-				gtag('config', UA_ID, {page_location: (host+url), page_path: url});
-				
+				gtag('config', UA_ID, {page_location: (host+url), page_path: url});			
 			}
 			
 			// For battles with buffs or debuffs, run bulk sims and return median match
@@ -1799,6 +1808,7 @@ var InterfaceMaster = (function () {
 					link = document.createElement('a');
 					link.setAttribute('href', data);
 					link.setAttribute('download', filename);
+					link.innerHTML = 'TEST LINK';
 					link.click();
 				}
 				

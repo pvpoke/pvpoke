@@ -805,6 +805,8 @@ select, input{
     border: 2px solid #000;
     padding: 10px;
     cursor: pointer;
+	text-decoration: none;
+	color:#000;
 	
 	@include gradient($color-gold, $color-gold-dark);
 }

@@ -262,7 +262,7 @@ require_once 'header.php';
 			<div class="ranking-header">Opponent</div>
 			<div class="ranking-header right">Battle Rating</div>
 			<div class="rankings-container clear"></div>
-			<div class="button download-csv">Export to CSV</div>
+			<a href="#" class="button download-csv">Export to CSV</a>
 		</div>
 	</div>
 	

@@ -610,6 +610,8 @@ select, input {
   border: 2px solid #000;
   padding: 10px;
   cursor: pointer;
+  text-decoration: none;
+  color: #000;
   background: #b99027;
   /* Old browsers */
   background: -moz-linear-gradient(top, #eabd49 30%, #b99027 99%) !important;
