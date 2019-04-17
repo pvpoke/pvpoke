@@ -168,6 +168,8 @@ var RankerMaster = (function () {
 										if(chargedMoves.length > 1){
 											pokemon.selectMove("charged", chargedMoves[1].moveId, 1);
 										}
+										
+										self.overrideMoveset(pokemon, league, cup.name);
 									}
 								}
 							}
@@ -587,6 +589,37 @@ var RankerMaster = (function () {
 				});
 				
 				return rankings;
+			}
+			
+			// Override a Pokemon's moveset to be used in the rankings
+			
+			this.overrideMoveset = function(pokemon, league, cup){
+				
+				switch(league){
+					case 1500:
+						
+						switch(cup){
+							
+							case "kingdom":
+								
+								switch(pokemon.speciesId){
+									case "blaziken":
+										pokemon.selectMove("charged", "BRAVE_BIRD", 0);
+										pokemon.selectMove("charged", "FOCUS_BLAST", 1);
+										break;
+										
+									case "flygon":
+										pokemon.selectMove("charged", "DRAGON_CLAW", 0);
+										pokemon.selectMove("charged", "EARTHQUAKE", 1);
+										break;
+								}
+								
+								break;
+						}
+						
+						
+						break;
+				}
 			}
 			
 			// Given a Pokemon, output a string of numbers for URL building
