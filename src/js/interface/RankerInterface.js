@@ -53,7 +53,7 @@ var InterfaceMaster = (function () {
 				
 				ranker = RankerMaster.getInstance();
 				
-				ranker.rankLoop(battle.getCup());
+				ranker.rankLoop(battle.getCP(), battle.getCup());
 			}
 		};
 		

@@ -20,22 +20,55 @@ var RankerMaster = (function () {
 			var rankings = [];
 			var rankingCombinations = [];
 			
+			var moveSelectMode = "force";
+			var rankingData;
+
+			var leagues = [1500];
+			var shields = [ [0,0], [1,1], [0,1], [1,0]];
+			var currentLeagueIndex = 0;
+			var currentShieldsIndex = 0;
+			
 			var self = this;
+			
+			// Load existing rankings to get best movesets
+			
+			this.displayRankingData = function(data){
+				rankingData = data;
+				
+				console.log(rankingData);
+
+				currentShieldsIndex = 0;
+				
+				for(var currentShieldsIndex = 0; currentShieldsIndex < shields.length; currentShieldsIndex++){
+					self.rank(leagues[currentLeagueIndex], shields[currentShieldsIndex]);
+				}
+			}
 			
 			// Run all ranking sets at once
 			
-			this.rankLoop = function(cup){
+			this.rankLoop = function(cp, cup){
 				
 				battle.setCup(cup.name);
 				
-				var leagues = [1500, 2500, 10000];
-				var shields = [ [0,0], [1,1], [0,1], [1,0]];
+				currentLeagueIndex = 0;
+				currentShieldsIndex = 0;
+				
+				leagues = [cp];
 
-				for(var i = 0; i < leagues.length; i++){
-					for(var n = 0; n < shields.length; n++){
-						rankingCombinations.push({league: leagues[i], shields: shields[n]});
+				for(var currentLeagueIndex = 0; currentLeagueIndex < leagues.length; currentLeagueIndex++){
+					
+					if(moveSelectMode == "auto"){
 
+						for(var currentShieldsIndex = 0; currentShieldsIndex < shields.length; currentShieldsIndex++){
+							rankingCombinations.push({league: leagues[currentLeagueIndex], shields: shields[currentShieldsIndex]});
+						}
+
+					} else if(moveSelectMode == "force"){
+						// Load existing ranking data first
+
+						gm.loadRankingData(self, "overall", leagues[currentLeagueIndex], cup.name);
 					}
+
 				}
 				
 				var currentRankings = rankingCombinations.length;
@@ -113,6 +146,32 @@ var RankerMaster = (function () {
 								continue;
 							}
 							
+							// If data is available, force "best" moveset
+							
+							if((moveSelectMode == "force")&&(rankingData)){
+								
+								// Find Pokemon in existing rankings
+								
+								for(var n = 0; n < rankingData.length; n++){
+									if(pokemon.speciesId == rankingData[n].speciesId){
+										
+										// Sort by uses
+										var fastMoves = rankingData[n].moves.fastMoves;
+										var chargedMoves = rankingData[n].moves.chargedMoves;
+										
+										fastMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+										chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));								
+										
+										pokemon.selectMove("fast", fastMoves[0].moveId);
+										pokemon.selectMove("charged", chargedMoves[0].moveId, 0);
+										
+										if(chargedMoves.length > 1){
+											pokemon.selectMove("charged", chargedMoves[1].moveId, 1);
+										}
+									}
+								}
+							}
+							
 							pokemonList.push(pokemon);
 						}
 					}
@@ -180,8 +239,10 @@ var RankerMaster = (function () {
 						pokemon.reset();
 						opponent.reset();
 						
-						pokemon.autoSelectMoves();
-						opponent.autoSelectMoves();
+						if(moveSelectMode == "auto"){
+							pokemon.autoSelectMoves();
+							opponent.autoSelectMoves();
+						}
 						
 						pokemon.setShields(shieldCounts[0]);
 						opponent.setShields(shieldCounts[1]);
@@ -324,22 +385,7 @@ var RankerMaster = (function () {
 				}
 				
 				for(var i = 0; i < rankCount; i++){
-					var rating = rankings[i].rating;
-					
-					// Factor overall score by moveset consistency, this keeps things like Mew and Togetic from being artificially high
-
-					var fastMovePercentage = rankings[i].moves.fastMoves[0].uses / rankings.length;
-					var chargedMovePercentage = rankings[i].moves.chargedMoves[0].uses / rankings.length;
-					var moveFactor = 1;
-
-					if((fastMovePercentage < .5)||(chargedMovePercentage < .3)){
-						var lowestPercentage = Math.min(fastMovePercentage, chargedMovePercentage);
-
-						moveFactor = Math.pow(fastMovePercentage, .125);
-					}
-					
-					rankings[i].moveFactor = moveFactor;
-					
+					var rating = rankings[i].rating;					
 					rankings[i].scores = [rating];
 				}
 				
@@ -359,26 +405,14 @@ var RankerMaster = (function () {
 							
 							var weight = Math.pow( Math.max((rankings[j].scores[n] / bestScore) - (.1 + (.05 * n)), 0), 0.5);
 							
-							var sc = matches[j].adjRating * rankings[i].moveFactor * weight;
+							var sc = matches[j].adjRating * weight;
 							
 							if(rankings[j].scores[n] / bestScore < .1 + (.05 * n)){
 								weight = 0;
 							}
 
 							weights += weight;
-							
-							/* Factor overall score by moveset consistency again, if this doesn't happen
-							* Pokemon with Hidden Power will filter to the top because they technically beat
-							* a lot of top opponents */
-
-							var fastMovePercentage = rankings[i].moves.fastMoves[0].uses / rankings.length;
-
-							if(fastMovePercentage < .5){
-								sc *= Math.pow(fastMovePercentage, .125);
-							}
-							
 							matches[j].score = sc;
-
 							score += sc;
 						}
 						
@@ -429,12 +463,28 @@ var RankerMaster = (function () {
 						}
 					}
 					
-					// Sort move arrays and add them to the rank object
+					// If data is available, take existing move use data
+
+					if((moveSelectMode == "force")&&(rankingData)){
+
+						// Find Pokemon in existing rankings
+
+						for(var k = 0; k < rankingData.length; k++){
+							if(pokemon.speciesId == rankingData[k].speciesId){
+								rankings[i].moves = rankingData[k].moves;
+							}
+						}
+					} else{
+											
+						// Sort move arrays and add them to the rank object
 					
-					fastMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
-					chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+						fastMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+						chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+
+						rankings[i].moves = {fastMoves: fastMoves, chargedMoves: chargedMoves};
+					}
 					
-					rankings[i].moves = {fastMoves: fastMoves, chargedMoves: chargedMoves};
+					rankings[i].moveStr = generateURLMoveStr(pokemon);
 					
 					rankings[i].score = rankings[i].scores[rankings[i].scores.length-1];
 
@@ -537,6 +587,20 @@ var RankerMaster = (function () {
 				});
 				
 				return rankings;
+			}
+			
+			// Given a Pokemon, output a string of numbers for URL building
+			
+			function generateURLMoveStr(pokemon){
+				var moveStr = '';
+
+				var fastMoveIndex = pokemon.fastMovePool.indexOf(pokemon.fastMove);
+				var chargedMove1Index = pokemon.chargedMovePool.indexOf(pokemon.chargedMoves[0])+1;
+				var chargedMove2Index = pokemon.chargedMovePool.indexOf(pokemon.chargedMoves[1])+1;
+					
+				moveStr = fastMoveIndex + "-" + chargedMove1Index + "-" + chargedMove2Index;
+				
+				return moveStr;
 			}
 
 		};

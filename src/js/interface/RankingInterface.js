@@ -41,6 +41,14 @@ var InterfaceMaster = (function () {
 				$(".rankings-container").html('');
 				$(".loading").show();
 				
+				// Force 1500 if not general
+				
+				if(cup != 'all'){
+					league = 1500;
+					
+					$(".league-select option[value=\"1500\"]").prop("selected","selected");
+				}
+				
 				/* This timeout allows the interface to display the loading message before 
 				being thrown into the data loading loop */
 				
@@ -355,7 +363,17 @@ var InterfaceMaster = (function () {
 				for(var n = 0; n < r.matchups.length; n++){
 					var m = r.matchups[n];
 					var opponent = new Pokemon(m.opponent);
-					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+shieldStrs[category];
+					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+shieldStrs[category]+'/'+r.moveStr+'/';
+					
+					// Append opponent's move string
+					
+					for(var j = 0; j < data.length; j++){
+						
+						if(data[j].speciesId == opponent.speciesId){
+							battleLink += data[j].moveStr + '/';					
+							break;
+						}
+					}
 
 					var $item = $("<div class=\"rank " + opponent.types[0] + "\"><div class=\"name-container\"><span class=\"number\">#"+(n+1)+"</span><span class=\"name\">"+opponent.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star\">"+m.rating+"</span></div><a target=\"_blank\" href=\""+battleLink+"\"></a><div class=\"clear\"></div></div>");
 
@@ -367,7 +385,17 @@ var InterfaceMaster = (function () {
 				for(var n = 0; n < r.counters.length; n++){
 					var c = r.counters[n];
 					var opponent = new Pokemon(c.opponent);
-					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+shieldStrs[category];
+					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+shieldStrs[category]+'/'+r.moveStr+'/';
+					
+					// Append opponent's move string
+					
+					for(var j = 0; j < data.length; j++){
+						
+						if(data[j].speciesId == opponent.speciesId){
+							battleLink += data[j].moveStr + '/';					
+							break;
+						}
+					}
 
 					var $item = $("<div class=\"rank " + opponent.types[0] + "\"><div class=\"name-container\"><span class=\"number\">#"+(n+1)+"</span><span class=\"name\">"+opponent.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star\">"+c.opRating+"</span></div><a target=\"_blank\" href=\""+battleLink+"\"></a><div class=\"clear\"></div></div>");
 

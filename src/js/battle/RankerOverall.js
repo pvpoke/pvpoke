@@ -23,12 +23,12 @@ var RankerMaster = (function () {
 			
 			// Hook for interface
 			
-			this.rankLoop = function(cup){
+			this.rankLoop = function(cp, cup){
 				
 								
 				battle.setCup(cup.name);
 				
-				var leagues = [1500,2500,10000];
+				var leagues = [cp];
 
 				for(var i = 0; i < leagues.length; i++){
 					rankingCombinations.push({league: leagues[i]});
