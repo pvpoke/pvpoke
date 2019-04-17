@@ -599,6 +599,32 @@ var RankerMaster = (function () {
 					case 1500:
 						
 						switch(cup){
+								
+							case "all":
+								
+								switch(pokemon.speciesId){
+									case "cresselia":
+										pokemon.selectMove("charged", "FUTURE_SIGHT", 0);
+										pokemon.selectMove("charged", "MOONBLAST", 1);
+										break;
+										
+									case "umbreon":
+										pokemon.selectMove("charged", "FOUL_PLAY", 0);
+										pokemon.selectMove("charged", "LAST_RESORT", 1);
+										break;
+										
+									case "flygon":
+										pokemon.selectMove("charged", "DRAGON_CLAW", 0);
+										pokemon.selectMove("charged", "EARTHQUAKE", 1);
+										break;
+										
+									case "lapras":
+										pokemon.selectMove("charged", "SURF", 0);
+										pokemon.selectMove("charged", "ICE_BEAM", 1);
+										break;
+								}
+								
+								break;
 							
 							case "kingdom":
 								
@@ -612,11 +638,51 @@ var RankerMaster = (function () {
 										pokemon.selectMove("charged", "DRAGON_CLAW", 0);
 										pokemon.selectMove("charged", "EARTHQUAKE", 1);
 										break;
+										
+									case "lapras":
+										pokemon.selectMove("charged", "SURF", 0);
+										pokemon.selectMove("charged", "ICE_BEAM", 1);
+										break;
 								}
 								
 								break;
 						}
 						
+						
+						break;
+						
+					case 2500:
+
+						switch(cup){
+
+							case "all":
+								switch(pokemon.speciesId){
+									case "giratina_altered":
+										pokemon.selectMove("fast", "SHADOW_CLAW");
+										break;
+
+									case "poliwrath":
+										pokemon.selectMove("charged", "POWER_UP_PUNCH", 0);
+										pokemon.selectMove("charged", "ICE_PUNCH", 1);
+										break;
+								}
+								break;
+						}
+						
+						break;
+						
+					case 10000:
+
+						switch(cup){
+
+							case "all":
+								switch(pokemon.speciesId){
+									case "giratina_altered":
+										pokemon.selectMove("fast", "SHADOW_CLAW");
+										break;
+								}
+								break;
+						}
 						
 						break;
 				}

@@ -73,9 +73,21 @@ var InterfaceMaster = (function () {
 					
 					var pokemon = new Pokemon(r.speciesId);
 					
+					// Get names of of ranking moves
+					
+					var moveNameStr = '';
+					
+					var arr = r.moveStr.split("-");
+
+					moveNameStr = pokemon.fastMovePool[arr[0]].name + ", " + pokemon.chargedMovePool[arr[1]-1].name;
+					
+					if((arr.length > 2)&&(arr[2] != "0")){
+						moveNameStr += ", " + pokemon.chargedMovePool[arr[2]-1].name;
+					}
+					
 					// Is this the best way to add HTML content? I'm gonna go with no here. But does it work? Yes!
 					
-					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating\">"+r.score+"</span></div><div class=\"clear\"></div></div><div class=\"details\"></div>");
+					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span><div class=\"moves\">"+moveNameStr+"</div></div><div class=\"rating-container\"><div class=\"rating\">"+r.score+"</span></div><div class=\"clear\"></div></div><div class=\"details\"></div>");
 
 					$(".rankings-container").append($el);
 				}

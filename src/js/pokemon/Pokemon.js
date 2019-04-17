@@ -85,6 +85,11 @@ function Pokemon(id, i, b){
 			this.chargedMovePool.push(move);
 		}
 	}
+
+	// Sort moves by ID for consistent order
+
+	self.fastMovePool.sort((a,b) => (a.moveId > b.moveId) ? 1 : ((b.moveId > a.moveId) ? -1 : 0));
+	self.chargedMovePool.sort((a,b) => (a.moveId > b.moveId) ? 1 : ((b.moveId > a.moveId) ? -1 : 0));
 	
 	// Given a target CP, scale to CP, set actual stats, and initialize moves
 	
@@ -330,11 +335,6 @@ function Pokemon(id, i, b){
 		// First, initialize all moves to get updated damage numbers
 		
 		this.resetMoves();
-		
-		// Sort moves by ID for consistent order
-		
-		self.fastMovePool.sort((a,b) => (a.moveId > b.moveId) ? 1 : ((b.moveId > a.moveId) ? -1 : 0));
-		self.chargedMovePool.sort((a,b) => (a.moveId > b.moveId) ? 1 : ((b.moveId > a.moveId) ? -1 : 0));
 		
 		// Feed move pools into new arrays so they can be manipulated without affecting the originals
 		
