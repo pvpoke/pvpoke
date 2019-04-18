@@ -115,6 +115,11 @@ var RankerMaster = (function () {
 				var bannedList = ["mewtwo","giratina_altered","groudon","kyogre","rayquaza","garchomp","latios","latias","palkia","dialga","heatran","giratina_origin","darkrai"];
 				var permaBannedList = ["burmy_trash","burmy_sandy","burmy_plant","wormadam_plant","wormadam_sandy","wormadam_trash","mothim","cherubi","cherrim_overcast","cherrim_sunny","shellos_east_sea","shellos_west_sea","gastrodon_east_sea","gastrodon_west_sea","hippopotas","hippowdon","leafeon","glaceon","rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","uxie","azelf","mesprit","regigigas","phione","manaphy","darkrai","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","jirachi","kecleon"]; // Don't rank these Pokemon at all yet
 				
+							
+				if(cup.name == "nightmare"){
+					permaBannedList = permaBannedList.concat(["medicham","sableye","lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi"]);
+				}
+				
 				// If you want to rank specfic Pokemon, you can enter their species id's here
 				
 				var allowedList = [];
@@ -625,6 +630,20 @@ var RankerMaster = (function () {
 								}
 								
 								break;
+								
+							case "tempest":
+								
+								switch(pokemon.speciesId){
+									case "lapras":
+										pokemon.selectMove("fast", "ICE_SHARD");
+										break;
+										
+									case "sealeo":
+										pokemon.selectMove("fast", "POWDER_SNOW");
+										break;
+								}
+								
+								break;
 							
 							case "kingdom":
 								
@@ -642,6 +661,27 @@ var RankerMaster = (function () {
 									case "lapras":
 										pokemon.selectMove("charged", "SURF", 0);
 										pokemon.selectMove("charged", "ICE_BEAM", 1);
+										break;
+								}
+								
+								break;
+								
+							case "nightmare":
+								
+								switch(pokemon.speciesId){
+									case "blaziken":
+										pokemon.selectMove("charged", "BRAVE_BIRD", 0);
+										pokemon.selectMove("charged", "FOCUS_BLAST", 1);
+										break;
+										
+									case "medicham":
+										pokemon.selectMove("charged", "POWER_UP_PUNCH", 0);
+										pokemon.selectMove("charged", "ICE_PUNCH", 1);
+										break;
+										
+									case "hypno":
+										pokemon.selectMove("charged", "SHADOW_BALL", 0);
+										pokemon.selectMove("charged", "FOCUS_BLAST", 1);
 										break;
 								}
 								

@@ -23,12 +23,16 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 	
-	<h4>v1.7.2 (April 12, 2019)</h4>
+	<h4>v1.7.3 (April 17, 2019)</h4>
 	<ul>
-		<li>Team Builder updates</li>
+		<li>Nightmare Cup support</li>
+		<li>Major rankings update</li>
 		<ul>
-			<li>The results are now averaged from 0 and 1 shield scenarios. Previously, all results were with 0 shields. This should produce a wider and more realistic variety in the results.</li>
-			<li>Pokemon already in your team will no longer appear as potential alternatives</li>
+			<li>Rankings are now generated in a 2-step process. The first simulates every matchup with auto-selected moves, gathering which moves are used the most (this how rankings were generated previously). The second step simulates every matchup using each Pokemon's most used moveset.</li>
+			<ul>
+				<li>Previously, Pokemon were ranked as if they effectively had access to every move in their move pool. This artificially boosted Pokemon with wide movepools. This change should produce much more relevant results.</li>
+			</ul>
+			<li>Moveset usage data is still listed for reference</li>
 		</ul>
 	</ul>
 	
