@@ -683,6 +683,39 @@ var RankerMaster = (function () {
 										pokemon.selectMove("charged", "SHADOW_BALL", 0);
 										pokemon.selectMove("charged", "FOCUS_BLAST", 1);
 										break;
+										
+									case "skuntank":
+										pokemon.selectMove("charged", "CRUNCH", 0);
+										pokemon.selectMove("charged", "FLAMETHROWER", 1);
+										break;
+										
+									case "gardevoir":
+										pokemon.selectMove("fast", "CONFUSION");
+										break;
+										
+									case "slowbro":
+										pokemon.selectMove("fast", "CONFUSION");
+										break;
+										
+									case "slowking":
+										pokemon.selectMove("fast", "CONFUSION");
+										break;
+										
+									case "claydol":
+										pokemon.selectMove("fast", "CONFUSION");
+										break;
+										
+									case "solrock":
+										pokemon.selectMove("fast", "CONFUSION");
+										break;
+										
+									case "lunatone":
+										pokemon.selectMove("fast", "CONFUSION");
+										break;
+										
+									case "bronzong":
+										pokemon.selectMove("fast", "CONFUSION");
+										break;
 								}
 								
 								break;

@@ -89,7 +89,7 @@ var GameMaster = (function () {
 			var key = cup + "" + category + "" + league;
 			
 			if(! object.rankings[key]){
-				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=70";
+				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=71";
 				
 				$.getJSON( file, function( data ){
 					object.rankings[key] = data;
@@ -109,7 +109,7 @@ var GameMaster = (function () {
 			var key = group;
 			
 			if(! object.groups[key]){
-				var file = webRoot+"data/groups/"+group+".json?v=70";
+				var file = webRoot+"data/groups/"+group+".json?v=71";
 				
 				$.getJSON( file, function( data ){
 					
