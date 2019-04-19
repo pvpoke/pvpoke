@@ -25,6 +25,7 @@ require_once 'header.php'; ?>
 	
 	<div class="supporters flex center">
 		<div class="supporter">Mushromking</div>
+		<div class="supporter">traderfrog</div>
 	</div>
 	
 	<h2 class="center">Master Supporters</h2>
