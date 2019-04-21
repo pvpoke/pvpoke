@@ -417,7 +417,7 @@ var RankerMaster = (function () {
 						
 						for(var j = 0; j < matches.length; j++){
 							
-							var weight = Math.pow( Math.max((rankings[j].scores[n] / bestScore) - (.1 + (.05 * n)), 0), 0.5);
+							var weight = Math.pow( Math.max((rankings[j].scores[n] / bestScore) - (.1 + (.05 * n)), 0), 0.75);
 							
 							var sc = matches[j].adjRating * weight;
 							
@@ -635,10 +635,19 @@ var RankerMaster = (function () {
 										pokemon.selectMove("charged", "ICE_BEAM", 1);
 										break;
 										
-										
+									case "medicham":
+										pokemon.selectMove("charged", "POWER_UP_PUNCH", 0);
+										pokemon.selectMove("charged", "ICE_PUNCH", 1);
+										break;
+	
 									case "hypno":
-										pokemon.selectMove("charged", "SHAODW_BALL", 0);
+										pokemon.selectMove("charged", "SHADOW_BALL", 0);
 										pokemon.selectMove("charged", "FOCUS_BLAST", 1);
+										break;
+										
+									case "dragonite":
+										pokemon.selectMove("charged", "DRAGON_CLAW", 0);
+										pokemon.selectMove("charged", "OUTRAGE", 1);
 										break;
 								}
 								
@@ -761,6 +770,11 @@ var RankerMaster = (function () {
 										pokemon.selectMove("charged", "POWER_UP_PUNCH", 0);
 										pokemon.selectMove("charged", "ICE_PUNCH", 1);
 										break;
+										
+									case "dragonite":
+										pokemon.selectMove("charged", "DRAGON_CLAW", 0);
+										pokemon.selectMove("charged", "OUTRAGE", 1);
+										break;
 								}
 								break;
 						}
@@ -775,6 +789,11 @@ var RankerMaster = (function () {
 								switch(pokemon.speciesId){
 									case "giratina_altered":
 										pokemon.selectMove("fast", "SHADOW_CLAW");
+										break;
+										
+									case "dragonite":
+										pokemon.selectMove("charged", "DRAGON_CLAW", 0);
+										pokemon.selectMove("charged", "OUTRAGE", 1);
 										break;
 								}
 								break;
