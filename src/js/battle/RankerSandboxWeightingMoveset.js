@@ -267,6 +267,10 @@ var RankerMaster = (function () {
 						var rating = Math.floor( (healthRating + damageRating) * 500);
 						var opRating = Math.floor( (opHealthRating + opDamageRating) * 500);
 						
+						var turnsToWin = battle.getTurnsToWin();
+						var turnRatio = turnsToWin[0] / turnsToWin[1];
+						var opTurnRatio = turnsToWin[1] / turnsToWin[0];
+						
 						// Modify ratings by shields burned and shields remaining
 						
 						var winMultiplier = 1;
@@ -280,6 +284,9 @@ var RankerMaster = (function () {
 						
 						var adjRating = rating + ( (100 * (opponent.startingShields - opponent.shields) * winMultiplier) + (100 * pokemon.shields * winMultiplier));
 						var adjOpRating = opRating + ( (100 * (pokemon.startingShields - pokemon.shields) * opWinMultiplier) + (100 * opponent.shields * opWinMultiplier));
+						
+						//adjRating = turnRatio * 1000;
+						//adjOpRating = opTurnRatio * 1000;
 						
 						// Search the timeline and store whether or not each charged move was used
 						
@@ -627,6 +634,12 @@ var RankerMaster = (function () {
 										pokemon.selectMove("charged", "SURF", 0);
 										pokemon.selectMove("charged", "ICE_BEAM", 1);
 										break;
+										
+										
+									case "hypno":
+										pokemon.selectMove("charged", "SHAODW_BALL", 0);
+										pokemon.selectMove("charged", "FOCUS_BLAST", 1);
+										break;
 								}
 								
 								break;
@@ -684,9 +697,19 @@ var RankerMaster = (function () {
 										pokemon.selectMove("charged", "FOCUS_BLAST", 1);
 										break;
 										
+									case "hitmonchan":
+										pokemon.selectMove("charged", "POWER_UP_PUNCH", 0);
+										pokemon.selectMove("charged", "ICE_PUNCH", 1);
+										break;
+										
 									case "skuntank":
 										pokemon.selectMove("charged", "CRUNCH", 0);
 										pokemon.selectMove("charged", "FLAMETHROWER", 1);
+										break;
+										
+									case "drapion":
+										pokemon.selectMove("charged", "AQUA_TAIL", 0);
+										pokemon.selectMove("charged", "CRUNCH", 1);
 										break;
 										
 									case "gardevoir":

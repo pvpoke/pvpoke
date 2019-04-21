@@ -23,7 +23,10 @@ function Battle(){
 	
 	var duration = 0;
 	var battleRatings = [];
+	var turnsToWin = [0, 0];
 	var winner;
+	
+	var battleEndMode = "first"; // first - end the battle on the first faint, both - end the battle once both Pokemon faint
 	
 	var roundChargedMoveUsed;
 	var roundShieldUsed;
@@ -288,13 +291,16 @@ function Battle(){
 
 		time = 0;
 		turns = 0;
+		turnsToWin = [0, 0];
 		timeline = [];
 
 		var deltaTime = 500;
 
 		// Main battle loop
+		
+		var continueBattle = true;
 
-		while((pokemon[0].hp > 0) && (pokemon[1].hp > 0)){
+		while(continueBattle){
 
 			// For display purposes, need to track whether a Pokemon has used a charged move or shield each round
 
@@ -381,6 +387,12 @@ function Battle(){
 
 				if(poke.hp <= 0){
 					timeline.push(new TimelineEvent("faint", "Faint", poke.index, time, turns));
+					
+					var opponentIndex = (i == 0) ? 0 : 1;
+										
+					if(turnsToWin[opponentIndex] == 0){
+						turnsToWin[opponentIndex] = turns;
+					}
 				}
 
 				// Reset after a charged move
@@ -389,6 +401,12 @@ function Battle(){
 					poke.cooldown = 0;
 					poke.damageWindow = 0;
 				}
+			}
+			
+			continueBattle = ((pokemon[0].hp > 0) && (pokemon[1].hp > 0));
+
+			if(battleEndMode == "both"){
+				continueBattle = ((pokemon[0].hp > 0) || (pokemon[1].hp > 0));
 			}
 
 		}
@@ -616,6 +634,12 @@ function Battle(){
 					nearDeath = false;
 
 					self.logDecision(turns, poke, " doesn't use " + move.name + " because a better move is available");
+				}
+				
+				// Don't process this if battle continues until both Pokemon faint
+				
+				if(battleEndMode == "both"){
+					nearDeath = false;
 				}
 
 				if((nearDeath)&&(!chargedMoveUsed)){
@@ -864,6 +888,12 @@ function Battle(){
 
 	this.getBattleRatings = function(){
 		return battleRatings;
+	}
+	
+	// Return turns to win
+
+	this.getTurnsToWin = function(){
+		return turnsToWin;
 	}
 
 	// Return a battle rating RGB color given a rating
