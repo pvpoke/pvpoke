@@ -113,7 +113,7 @@ var RankerMaster = (function () {
 				// Don't allow these Pokemon into the Great League. They can't be trusted.
 				
 				var bannedList = ["mewtwo","giratina_altered","groudon","kyogre","rayquaza","garchomp","latios","latias","palkia","dialga","heatran","giratina_origin","darkrai"];
-				var permaBannedList = ["burmy_trash","burmy_sandy","burmy_plant","wormadam_plant","wormadam_sandy","wormadam_trash","mothim","cherubi","cherrim_overcast","cherrim_sunny","shellos_east_sea","shellos_west_sea","gastrodon_east_sea","gastrodon_west_sea","hippopotas","hippowdon","leafeon","glaceon","rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","uxie","azelf","mesprit","regigigas","phione","manaphy","darkrai","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","jirachi","kecleon"]; // Don't rank these Pokemon at all yet
+				var permaBannedList = ["burmy_trash","burmy_sandy","burmy_plant","wormadam_plant","wormadam_sandy","wormadam_trash","mothim","cherubi","cherrim_overcast","cherrim_sunny","shellos_east_sea","shellos_west_sea","gastrodon_east_sea","gastrodon_west_sea","hippopotas","hippowdon","leafeon","glaceon","rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","uxie","azelf","mesprit","regigigas","phione","manaphy","darkrai","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","jirachi","kecleon","probopass"]; // Don't rank these Pokemon at all yet
 				
 							
 				if(cup.name == "nightmare"){
@@ -695,12 +695,7 @@ var RankerMaster = (function () {
 										pokemon.selectMove("charged", "BRAVE_BIRD", 0);
 										pokemon.selectMove("charged", "FOCUS_BLAST", 1);
 										break;
-										
-									case "medicham":
-										pokemon.selectMove("charged", "POWER_UP_PUNCH", 0);
-										pokemon.selectMove("charged", "ICE_PUNCH", 1);
-										break;
-										
+
 									case "hypno":
 										pokemon.selectMove("charged", "SHADOW_BALL", 0);
 										pokemon.selectMove("charged", "FOCUS_BLAST", 1);
@@ -709,6 +704,11 @@ var RankerMaster = (function () {
 									case "hitmonchan":
 										pokemon.selectMove("charged", "POWER_UP_PUNCH", 0);
 										pokemon.selectMove("charged", "ICE_PUNCH", 1);
+										break;
+										
+									case "toxicroak":
+										pokemon.selectMove("charged", "MUD_BOMB", 0);
+										pokemon.selectMove("charged", "SLUDGE_BOMB", 1);
 										break;
 										
 									case "skuntank":
@@ -747,6 +747,38 @@ var RankerMaster = (function () {
 										
 									case "bronzong":
 										pokemon.selectMove("fast", "CONFUSION");
+										break;
+								}
+								
+								break;
+								
+							case "regionals-1":
+								
+								switch(pokemon.speciesId){
+										
+									case "umbreon":
+										pokemon.selectMove("charged", "FOUL_PLAY", 0);
+										pokemon.selectMove("charged", "LAST_RESORT", 1);
+										break;
+	
+									case "hypno":
+										pokemon.selectMove("charged", "SHADOW_BALL", 0);
+										pokemon.selectMove("charged", "FOCUS_BLAST", 1);
+										break;
+										
+									case "dragonite":
+										pokemon.selectMove("charged", "DRAGON_CLAW", 0);
+										pokemon.selectMove("charged", "OUTRAGE", 1);
+										break;
+										
+									case "medicham":
+										pokemon.selectMove("charged", "POWER_UP_PUNCH", 0);
+										pokemon.selectMove("charged", "ICE_PUNCH", 1);
+										break;
+										
+									case "hitmonchan":
+										pokemon.selectMove("charged", "POWER_UP_PUNCH", 0);
+										pokemon.selectMove("charged", "ICE_PUNCH", 1);
 										break;
 								}
 								
