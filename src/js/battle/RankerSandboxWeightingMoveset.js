@@ -405,6 +405,14 @@ var RankerMaster = (function () {
 				
 				// Iterate through the rankings and weigh each matchup Battle Rating by the average rating of the opponent
 				
+				var rankCutoffIncrease = 0.06;
+				var rankWeightExponent = 1.65;
+				
+				if(cup.name == "kingdom"){
+					rankCutoffIncrease = 0.05;
+					rankWeightExponent = 1.5;
+				}
+				
 				for(var n = 0; n < iterations; n++){
 					
 					var bestScore = Math.max.apply(Math, rankings.map(function(o) { return o.scores[n]; }))
@@ -417,7 +425,7 @@ var RankerMaster = (function () {
 						
 						for(var j = 0; j < matches.length; j++){
 							
-							var weight = Math.pow( Math.max((rankings[j].scores[n] / bestScore) - (.1 + (.06 * n)), 0), 1.65);
+							var weight = Math.pow( Math.max((rankings[j].scores[n] / bestScore) - (.1 + (rankCutoffIncrease * n)), 0), rankWeightExponent);
 							
 							// Don't score Pokemon in the mirror match
 							
@@ -427,7 +435,7 @@ var RankerMaster = (function () {
 							
 							var sc = matches[j].adjRating * weight;
 							
-							if(rankings[j].scores[n] / bestScore < .1 + (.06 * n)){
+							if(rankings[j].scores[n] / bestScore < .1 + (rankCutoffIncrease * n)){
 								weight = 0;
 							}
 
@@ -536,7 +544,9 @@ var RankerMaster = (function () {
 					
 					rankings[i].matches.sort((a,b) => (a.score > b.score) ? -1 : ((b.score > a.score) ? 1 : 0));
 					
-					for(var j = 0; j < matchupCount; j++){
+					var keyMatchupsCount = 0;
+					
+					for(var j = 0; j < rankings[i].matches.length; j++){
 						var match = rankings[i].matches[j];
 						
 						delete match.moveSet;
@@ -545,7 +555,14 @@ var RankerMaster = (function () {
 						delete match.adjRating;
 						delete match.adjOpRating;
 						
-						rankings[i].matchups.push(rankings[i].matches[j]);
+						if(match.rating > 500){
+							rankings[i].matchups.push(match);
+							keyMatchupsCount++;
+							
+							if(keyMatchupsCount >= matchupCount){
+								break;
+							}
+						}
 					}
 					
 					delete rankings[i].matches;
