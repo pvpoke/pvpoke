@@ -400,12 +400,6 @@ function PokeMultiSelect(element){
 		closeModalWindow();
 	});
 	
-	// Decline confirmation
-	
-	$("body").on("click", ".modal .no", function(e){
-		closeModalWindow();
-	});
-	
 	// Select a quick fill group
 	
 	$el.find(".quick-fill-select").change(function(e){

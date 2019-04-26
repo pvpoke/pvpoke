@@ -23,17 +23,12 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 	
-	<h4>v1.7.3 (April 17, 2019)</h4>
+	<h4>v1.7.4 (April 26, 2019)</h4>
 	<ul>
-		<li>Nightmare Cup support</li>
-		<li>Major rankings update</li>
-		<ul>
-			<li>Rankings are now generated in a 2-step process. The first simulates every matchup with auto-selected moves, gathering which moves are used the most (this how rankings were generated previously). The second step simulates every matchup using each Pokemon's most used moveset.</li>
-			<ul>
-				<li>Previously, Pokemon were ranked as if they effectively had access to every move in their move pool. This artificially boosted Pokemon with wide movepools. This change should produce much more relevant results.</li>
-			</ul>
-			<li>Moveset usage data is still listed for reference</li>
-		</ul>
+		<li>Added ability to swap the left and right selected Pokemon</li>
+		<li>Clearing a selected Pokemon now brings up a confirmation window</li>
+		<li>Preliminary lists are available in custom Multi-Battle for Nightmare Cup meta and Season 1 Regionals meta</li>
+		<li>Minor styling fixes</li>
 	</ul>
 	
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>

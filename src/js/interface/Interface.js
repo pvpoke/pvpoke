@@ -73,6 +73,7 @@ var InterfaceMaster = (function () {
 				$(".battle-btn").on("click", startBattle);
 				$(".continue-container .button").on("click", continueBattle);
 				$(".timeline-container").on("mousemove",".item",timelineEventHover);
+				$(".poke a.swap").on("click", swapSelectedPokemon);
 				$("body").on("mousemove",mainMouseMove);
 				$("body").on("mousedown",mainMouseMove);
 				$("body").on("click", ".check", checkBox);
@@ -1189,6 +1190,20 @@ var InterfaceMaster = (function () {
 				if(self.battleMode == "single"){
 					pokeSelectors[0].setPokemon(pokeSelectors[0].getPokemon().speciesId);
 					pokeSelectors[1].setPokemon(pokeSelectors[1].getPokemon().speciesId);
+				}
+			}
+			
+			// Swap the selected Pokemon between the left and right Pokemon selectors
+			
+			function swapSelectedPokemon(e){
+				e.preventDefault();
+				
+				var pokemonA = pokeSelectors[0].getPokemon();
+				var pokemonB = pokeSelectors[1].getPokemon();
+				
+				if(pokemonA && pokemonB){
+					pokeSelectors[0].setSelectedPokemon(pokemonB);
+					pokeSelectors[1].setSelectedPokemon(pokemonA);
 				}
 			}
 			

@@ -24,6 +24,12 @@ function modalWindow(header, content){
 	$(".modal-close").click(function(e){
 		closeModalWindow();
 	});
+	
+	// Decline confirmation
+	
+	$(".modal .no").click(function(e){
+		closeModalWindow();
+	});
 
 
 	$(".modal").click(function(e){

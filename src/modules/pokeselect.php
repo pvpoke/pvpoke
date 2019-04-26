@@ -1,5 +1,6 @@
 <div class="poke single">
 	<a class="random" href="#">Random</a>
+	<a class="swap" href="#">Swap</a>
 	<input class="poke-search" type="text" placeholder="Search name">
 	<select class="poke-select">
 		<option disabled selected value="">Select a Pokemon</option>
@@ -117,5 +118,14 @@
 	<div class="tooltip">
 		<h3 class="name"></h3>
 		<div class="details"></div>
+	</div>
+	
+	<div class="clear-confirm hide">
+		<p>Clear <b><span class="name"></span></b> from the selection?</p>
+
+		<div class="center flex">
+			<div class="button yes">Yes</div>
+			<div class="button no">No</div>
+		</div>
 	</div>
 </div>

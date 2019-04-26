@@ -330,6 +330,8 @@ header{
 
 .poke{
 	
+	max-width:200px;
+	
 	&:first-of-type{
 		float:left;
 	}
@@ -349,6 +351,10 @@ header{
 				
 				@include transform(scale(-1, 1));
 			}
+		}
+		
+		a.swap{
+			display:none;
 		}
 	}
 	
@@ -571,7 +577,8 @@ header{
 		}
 	}
 	
-	a.random{
+	a.random,
+	a.swap{
 		font-size: 10px;
 		text-decoration: none;
 		color: #003748;
@@ -582,6 +589,12 @@ header{
 		background-repeat: no-repeat;
 		background-position: 3px center;
 		border-radius:8px;
+		margin-bottom:10px;
+	}
+	
+	a.swap{
+		padding-left:18px;
+		background-image:url('../img/swap.png');
 	}
 	
 	.move-bars{
@@ -741,8 +754,26 @@ header{
 
 .poke-select-container{
 	&.single{
+		
+		.poke:nth-of-type(1){
+			a.random{
+				float:left;
+			}
+			a.swap{
+				float:right;
+			}
+		}
+		
 		.poke:nth-of-type(2){
 			display: block;
+			
+			a.random{
+				float:right;
+			}
+			
+			a.swap{
+				float:left;
+			}
 		}
 		.poke:nth-of-type(3){
 			display: none;
@@ -1610,6 +1641,14 @@ select, input{
 	
 	.poke{		
 		
+		a.random{
+			margin-bottom: 0;
+		}
+		
+		a.swap{
+			display:none;
+		}
+		
 		&:nth-of-type(2){
 
 			.poke-stats{
@@ -2176,6 +2215,7 @@ select, input{
 			.hp.bar-back,
 			.move-bars,
 			.random,
+			.swap,
 			.stat-container,
 			.auto-select,
 			.options{
@@ -2468,8 +2508,9 @@ a.toggle{
 		}
 	}
 	
-	.league-select {
-		max-width:50%;
+	.league-select,
+	.cup-select{
+		max-width:49%;
 	}
 }
 

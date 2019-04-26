@@ -20,34 +20,14 @@
 		"chargedMoves":["POWER_UP_PUNCH","ICE_PUNCH"]
 	},
 	{
-		"speciesId":"grotle",
-		"fastMove":"RAZOR_LEAF",
-		"chargedMoves":["BODY_SLAM","ENERGY_BALL"]
-	},
-	{
 		"speciesId":"skarmory",
 		"fastMove":"AIR_SLASH",
 		"chargedMoves":["SKY_ATTACK","FLASH_CANNON"]
 	},
 	{
-		"speciesId":"blastoise",
-		"fastMove":"WATER_GUN",
-		"chargedMoves":["HYDRO_CANNON","ICE_BEAM"]
-	},
-	{
-		"speciesId":"vigoroth",
-		"fastMove":"COUNTER",
-		"chargedMoves":["BODY_SLAM","BULLDOZE"]
-	},
-	{
 		"speciesId":"venusaur",
 		"fastMove":"VINE_WHIP",
 		"chargedMoves":["FRENZY_PLANT","SLUDGE_BOMB"]
-	},
-	{
-		"speciesId":"meganium",
-		"fastMove":"VINE_WHIP",
-		"chargedMoves":["FRENZY_PLANT","EARTHQUAKE"]
 	},
 	{
 		"speciesId":"lanturn",
@@ -70,19 +50,9 @@
 		"chargedMoves":["CRUNCH","EARTHQUAKE"]
 	},
 	{
-		"speciesId":"cresselia",
-		"fastMove":"PSYCHO_CUT",
-		"chargedMoves":["FUTURE_SIGHT","MOONBLAST"]
-	},
-	{
 		"speciesId":"umbreon",
 		"fastMove":"SNARL",
 		"chargedMoves":["FOUL_PLAY","LAST_RESORT"]
-	},
-	{
-		"speciesId":"kingdra",
-		"fastMove":"DRAGON_BREATH",
-		"chargedMoves":["OUTRAGE","HYDRO_PUMP"]
 	},
 	{
 		"speciesId":"whiscash",
@@ -110,9 +80,9 @@
 		"chargedMoves":["DARK_PULSE","SLUDGE_WAVE"]
 	},
 	{
-		"speciesId":"drapion",
-		"fastMove":"BITE",
-		"chargedMoves":["AQUA_TAIL","SLUDGE_BOMB"]
+		"speciesId":"skuntank",
+		"fastMove":"POISON_JAB",
+		"chargedMoves":["FLAMETHROWER","SLUDGE_BOMB"]
 	},
 	{
 		"speciesId":"sableye",
@@ -125,18 +95,23 @@
 		"chargedMoves":["SHADOW_BALL","BONE_CLUB"]
 	},
 	{
+		"speciesId":"haunter",
+		"fastMove":"SHADOW_CLAW",
+		"chargedMoves":["SHADOW_PUNCH","SLUDGE_BOMB"]
+	},
+	{
 		"speciesId":"magneton",
 		"fastMove":"THUNDER_SHOCK",
 		"chargedMoves":["DISCHARGE","MAGNET_BOMB"]
 	},
 	{
-		"speciesId":"mew",
-		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["ICE_BEAM","GRASS_KNOT"]
+		"speciesId":"charizard",
+		"fastMove":"FIRE_SPIN",
+		"chargedMoves":["DRAGON_CLAW","BLAST_BURN"]
 	},
 	{
-		"speciesId":"deoxys_defense",
-		"fastMove":"COUNTER",
-		"chargedMoves":["PSYCHO_BOOST","ROCK_SLIDE"]
+		"speciesId":"bronzong",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["HEAVY_SLAM","FLASH_CANNON"]
 	}
 ]

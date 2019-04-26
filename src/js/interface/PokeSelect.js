@@ -227,6 +227,13 @@ function PokeSelect(element, i){
 	
 	this.setSelectedPokemon = function(poke){
 		selectedPokemon = poke;
+		
+		battle.setNewPokemon(selectedPokemon, index, false);
+		
+		// Clear current custom values
+		
+		$el.find("input.level, input.iv, input.stat-mod, input.start-hp, input.start-energy").val("");
+		
 		$pokeSelect.find("option[value=\""+poke.speciesId+"\"]").prop("selected","selected");
 		
 		// If custom, set level and IV fields to current values
@@ -237,6 +244,23 @@ function PokeSelect(element, i){
 			$el.find("input.iv[iv='def']").val(poke.ivs.def);
 			$el.find("input.iv[iv='hp']").val(poke.ivs.hp);
 		}
+		
+		if((poke.startStatBuffs[0] != 0)||(poke.startStatBuffs[1] != 0)){
+			$el.find("input.stat-mod[iv='atk']").val(poke.startStatBuffs[0]);
+			$el.find("input.stat-mod[iv='def']").val(poke.startStatBuffs[1]);
+		}
+
+		if(poke.startHp != poke.stats.hp){
+			$el.find("input.start-hp").val(poke.startHp);
+		}
+		
+		if(poke.startEnergy != 0){
+			$el.find("input.start-energy").val(poke.startEnergy);
+		}
+		
+		// Set shields to correct amount
+		
+		$el.find(".shield-select option[value=\""+poke.startingShields+"\"]").prop("selected","selected");
 		
 		self.update();
 	}
@@ -595,12 +619,20 @@ function PokeSelect(element, i){
 		}
 	});
 	
-	// Clear selection on click
+	// Open the clear confirmation window
 	
 	$el.find(".clear-selection").on("click", function(e){
 		e.preventDefault();
 		
-		self.clear();
+		modalWindow("Clear Selection", $el.find(".clear-confirm"));
+		
+		$(".modal .name").html(selectedPokemon.speciesName);
+		
+		$(".modal .clear-confirm .yes").click(function(e){
+			closeModalWindow();
+			self.clear();
+		});
+		
 	});
 	
 	// Randomize selection
