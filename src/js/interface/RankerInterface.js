@@ -11,7 +11,7 @@ var InterfaceMaster = (function () {
 		function interfaceObject(){
 				
 			var battle;
-			var ranker;
+			var ranker = RankerMaster.getInstance();
 			var pokeSelectors = [];
 			var animating = false;
 			var self = this;
@@ -49,10 +49,7 @@ var InterfaceMaster = (function () {
 			
 			// Run simulation
 			
-			function startRanker(){
-				
-				ranker = RankerMaster.getInstance();
-				
+			function startRanker(){				
 				ranker.rankLoop(battle.getCP(), battle.getCup());
 			}
 		};

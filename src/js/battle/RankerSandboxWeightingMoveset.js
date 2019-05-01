@@ -10,7 +10,6 @@ var RankerMaster = (function () {
  
     function createInstance() {
 		
-		
         var object = new rankerObject();
 		
 		function rankerObject(){
@@ -29,6 +28,19 @@ var RankerMaster = (function () {
 			var currentShieldsIndex = 0;
 			
 			var self = this;
+			
+			// Load override data
+			
+			var file = webRoot+"data/rankingoverrides.json";
+			var overrides = [];
+
+			$.getJSON( file, function( data ){
+
+				// Sort alphabetically
+
+				overrides = data;
+				console.log("Ranking overrides loaded [" + overrides.length + "]");
+			});
 			
 			// Load existing rankings to get best movesets
 			
@@ -117,7 +129,7 @@ var RankerMaster = (function () {
 				
 							
 				if(cup.name == "nightmare"){
-					permaBannedList = permaBannedList.concat(["medicham","sableye","lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi","latios","latias"]);
+					permaBannedList = permaBannedList.concat(["medicham","sableye","lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi","latios","latias","uxie","mesprit","azelf"]);
 				}
 				
 				// If you want to rank specfic Pokemon, you can enter their species id's here
@@ -169,6 +181,8 @@ var RankerMaster = (function () {
 										
 										pokemon.selectMove("fast", fastMoves[0].moveId);
 										pokemon.selectMove("charged", chargedMoves[0].moveId, 0);
+										
+										pokemon.weightModifier = 1;
 										
 										if(chargedMoves.length > 1){
 											pokemon.selectMove("charged", chargedMoves[1].moveId, 1);
@@ -433,6 +447,10 @@ var RankerMaster = (function () {
 								weight = 0;
 							}
 							
+							if(pokemonList[j].weightModifier){
+								weight *= pokemonList[j].weightModifier;
+							}
+							
 							var sc = matches[j].adjRating * weight;
 							
 							if(rankings[j].scores[n] / bestScore < .1 + (rankCutoffIncrease * n)){
@@ -630,247 +648,46 @@ var RankerMaster = (function () {
 			
 			this.overrideMoveset = function(pokemon, league, cup){
 				
-				switch(league){
-					case 1500:
+				// Search eligible leagues and cups
+				
+				for(var i = 0; i < overrides.length; i++){
+					
+					if((overrides[i].league == league)&&(overrides[i].cup == cup)){
 						
-						switch(cup){
-								
-							case "all":
-								
-								switch(pokemon.speciesId){
-									case "cresselia":
-										pokemon.selectMove("charged", "FUTURE_SIGHT", 0);
-										pokemon.selectMove("charged", "MOONBLAST", 1);
-										break;
-										
-									case "umbreon":
-										pokemon.selectMove("charged", "FOUL_PLAY", 0);
-										pokemon.selectMove("charged", "LAST_RESORT", 1);
-										break;
-										
-									case "flygon":
-										pokemon.selectMove("charged", "DRAGON_CLAW", 0);
-										pokemon.selectMove("charged", "EARTHQUAKE", 1);
-										break;
-										
-									case "lapras":
-										pokemon.selectMove("charged", "SURF", 0);
-										pokemon.selectMove("charged", "ICE_BEAM", 1);
-										break;
-										
-									case "medicham":
-										pokemon.selectMove("charged", "POWER_UP_PUNCH", 0);
-										pokemon.selectMove("charged", "ICE_PUNCH", 1);
-										break;
-	
-									case "hypno":
-										pokemon.selectMove("charged", "SHADOW_BALL", 0);
-										pokemon.selectMove("charged", "FOCUS_BLAST", 1);
-										break;
-										
-									case "dragonite":
-										pokemon.selectMove("charged", "DRAGON_CLAW", 0);
-										pokemon.selectMove("charged", "OUTRAGE", 1);
-										break;
-								}
-								
-								break;
-								
-							case "boulder":
-								
-								switch(pokemon.speciesId){
-									case "medicham":
-										pokemon.selectMove("charged", "POWER_UP_PUNCH", 0);
-										pokemon.selectMove("charged", "ICE_PUNCH", 1);
-										break;
-								}
-								
-								break;
-								
-							case "tempest":
-								
-								switch(pokemon.speciesId){
-									case "lapras":
-										pokemon.selectMove("fast", "ICE_SHARD");
-										break;
-										
-									case "sealeo":
-										pokemon.selectMove("fast", "POWDER_SNOW");
-										break;
-								}
-								
-								break;
-							
-							case "kingdom":
-								
-								switch(pokemon.speciesId){
-									case "blaziken":
-										pokemon.selectMove("charged", "BRAVE_BIRD", 0);
-										pokemon.selectMove("charged", "FOCUS_BLAST", 1);
-										break;
-										
-									case "flygon":
-										pokemon.selectMove("charged", "DRAGON_CLAW", 0);
-										pokemon.selectMove("charged", "EARTHQUAKE", 1);
-										break;
-										
-									case "lapras":
-										pokemon.selectMove("charged", "SURF", 0);
-										pokemon.selectMove("charged", "ICE_BEAM", 1);
-										break;
-										
-									case "moltres":
-										pokemon.selectMove("charged", "OVERHEAT", 0);
-										pokemon.selectMove("charged", "FIRE_BLAST", 1);
-										break;
-								}
-								
-								break;
-								
-							case "nightmare":
-								
-								switch(pokemon.speciesId){
-									case "blaziken":
-										pokemon.selectMove("charged", "BRAVE_BIRD", 0);
-										pokemon.selectMove("charged", "FOCUS_BLAST", 1);
-										break;
-
-									case "hypno":
-										pokemon.selectMove("charged", "SHADOW_BALL", 0);
-										pokemon.selectMove("charged", "FOCUS_BLAST", 1);
-										break;
-										
-									case "hitmonchan":
-										pokemon.selectMove("charged", "POWER_UP_PUNCH", 0);
-										pokemon.selectMove("charged", "ICE_PUNCH", 1);
-										break;
-										
-									case "toxicroak":
-										pokemon.selectMove("charged", "MUD_BOMB", 0);
-										pokemon.selectMove("charged", "SLUDGE_BOMB", 1);
-										break;
-										
-									case "skuntank":
-										pokemon.selectMove("charged", "CRUNCH", 0);
-										pokemon.selectMove("charged", "FLAMETHROWER", 1);
-										break;
-										
-									case "drapion":
-										pokemon.selectMove("charged", "AQUA_TAIL", 0);
-										pokemon.selectMove("charged", "CRUNCH", 1);
-										break;
-										
-									case "gardevoir":
-										pokemon.selectMove("fast", "CONFUSION");
-										break;
-										
-									case "slowbro":
-										pokemon.selectMove("fast", "CONFUSION");
-										break;
-										
-									case "slowking":
-										pokemon.selectMove("fast", "CONFUSION");
-										break;
-										
-									case "claydol":
-										pokemon.selectMove("fast", "CONFUSION");
-										break;
-										
-									case "solrock":
-										pokemon.selectMove("fast", "CONFUSION");
-										break;
-										
-									case "lunatone":
-										pokemon.selectMove("fast", "CONFUSION");
-										break;
-										
-									case "bronzong":
-										pokemon.selectMove("fast", "CONFUSION");
-										break;
-								}
-								
-								break;
-								
-							case "regionals-1":
-								
-								switch(pokemon.speciesId){
-										
-									case "umbreon":
-										pokemon.selectMove("charged", "FOUL_PLAY", 0);
-										pokemon.selectMove("charged", "LAST_RESORT", 1);
-										break;
-	
-									case "hypno":
-										pokemon.selectMove("charged", "SHADOW_BALL", 0);
-										pokemon.selectMove("charged", "FOCUS_BLAST", 1);
-										break;
-										
-									case "dragonite":
-										pokemon.selectMove("charged", "DRAGON_CLAW", 0);
-										pokemon.selectMove("charged", "OUTRAGE", 1);
-										break;
-										
-									case "medicham":
-										pokemon.selectMove("charged", "POWER_UP_PUNCH", 0);
-										pokemon.selectMove("charged", "ICE_PUNCH", 1);
-										break;
-										
-									case "hitmonchan":
-										pokemon.selectMove("charged", "POWER_UP_PUNCH", 0);
-										pokemon.selectMove("charged", "ICE_PUNCH", 1);
-										break;
-								}
-								
-								break;
-						}
+						// Iterate through Pokemon
 						
+						var pokemonList = overrides[i].pokemon;
 						
-						break;
-						
-					case 2500:
-
-						switch(cup){
-
-							case "all":
-								switch(pokemon.speciesId){
-									case "giratina_altered":
-										pokemon.selectMove("fast", "SHADOW_CLAW");
-										break;
-
-									case "poliwrath":
-										pokemon.selectMove("charged", "POWER_UP_PUNCH", 0);
-										pokemon.selectMove("charged", "ICE_PUNCH", 1);
-										break;
-										
-									case "dragonite":
-										pokemon.selectMove("charged", "DRAGON_CLAW", 0);
-										pokemon.selectMove("charged", "OUTRAGE", 1);
-										break;
+						for(var n = 0; n < pokemonList.length; n++){
+							if(pokemonList[n].speciesId == pokemon.speciesId){
+								
+								// Set Fast Move
+								
+								if(pokemonList[n].fastMove){
+									pokemon.selectMove("fast", pokemonList[n].fastMove);
 								}
+								
+								// Set Charged Moves
+								
+								if(pokemonList[n].chargedMoves){
+									for(var j = 0; j < pokemonList[n].chargedMoves.length; j++){
+										pokemon.selectMove("charged", pokemonList[n].chargedMoves[j], j);
+									}
+									
+								}
+								
+								// Set weight modifier
+								
+								if(pokemonList[n].weight){
+									pokemon.weightModifier = pokemonList[n].weight;
+								}
+								
 								break;
+							}
 						}
 						
 						break;
-						
-					case 10000:
-
-						switch(cup){
-
-							case "all":
-								switch(pokemon.speciesId){
-									case "giratina_altered":
-										pokemon.selectMove("fast", "SHADOW_CLAW");
-										break;
-										
-									case "dragonite":
-										pokemon.selectMove("charged", "DRAGON_CLAW", 0);
-										pokemon.selectMove("charged", "OUTRAGE", 1);
-										break;
-								}
-								break;
-						}
-						
-						break;
+					}
 				}
 			}
 			

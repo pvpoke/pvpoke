@@ -1,0 +1,202 @@
+[
+	{
+		"league": 1500,
+		"cup": "all",
+		"pokemon": [
+			{
+				"speciesId": "cresselia",
+				"chargedMoves": ["FUTURE_SIGHT", "MOONBLAST"]
+			},
+			{
+				"speciesId": "umbreon",
+				"chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
+			},
+			{
+				"speciesId": "flygon",
+				"chargedMoves": ["DRAGON_CLAW", "EARTHQUAKE"]
+			},
+			{
+				"speciesId": "lapras",
+				"chargedMoves": ["SURF", "ICE_BEAM"]
+			},
+			{
+				"speciesId": "medicham",
+				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "hypno",
+				"chargedMoves": ["SHADOW_BALL", "FOCUS_BLAST"]
+			},
+			{
+				"speciesId": "dragonite",
+				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
+			}
+		]
+	},
+	{
+		"league": 1500,
+		"cup": "boulder",
+		"pokemon": [
+			{
+				"speciesId": "medicham",
+				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
+			}
+		]
+	},
+	{
+		"league": 1500,
+		"cup": "tempest",
+		"pokemon": [
+			{
+				"speciesId": "larpas",
+				"fastMove": "ICE_SHARD"
+			},
+			{
+				"speciesId": "sealeo",
+				"fastMove": "POWDER_SNOW"
+			}
+		]
+	},
+	{
+		"league": 1500,
+		"cup": "kingdom",
+		"pokemon": [
+			{
+				"speciesId": "blaziken",
+				"chargedMoves": ["BRAVE_BIRD", "FOCUS_BLAST"]
+			},
+			{
+				"speciesId": "flygon",
+				"chargedMoves": ["DRAGON_CLAW", "EARTHQUAKE"]
+			},
+			{
+				"speciesId": "lapras",
+				"chargedMoves": ["SURF", "ICE_BEAM"]
+			},
+			{
+				"speciesId": "moltres",
+				"chargedMoves": ["OVERHEAT", "FIRE_BLAST"]
+			}
+		]
+	},
+	{
+		"league": 1500,
+		"cup": "nightmare",
+		"pokemon": [
+			{
+				"speciesId": "blaziken",
+				"chargedMoves": ["BRAVE_BIRD", "FOCUS_BLAST"]
+			},
+			{
+				"speciesId": "hypno",
+				"chargedMoves": ["SHADOW_BALL", "FOCUS_BLAST"]
+			},
+			{
+				"speciesId": "hitmonchan",
+				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "toxicroak",
+				"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "skuntank",
+				"chargedMoves": ["CRUNCH", "FLAMETHROWER"]
+			},
+			{
+				"speciesId": "drapion",
+				"chargedMoves": ["AQUA_TAIL", "CRUNCH"]
+			},
+			{
+				"speciesId": "gardevoir",
+				"fastMove": "CONFUSION"
+			},
+			{
+				"speciesId": "slowbro",
+				"fastMove": "CONFUSION"
+			},
+			{
+				"speciesId": "slowking",
+				"fastMove": "CONFUSION"
+			},
+			{
+				"speciesId": "claydol",
+				"fastMove": "CONFUSION"
+			},
+			{
+				"speciesId": "solrock",
+				"fastMove": "CONFUSION"
+			},
+			{
+				"speciesId": "lunatone",
+				"fastMove": "CONFUSION"
+			},
+			{
+				"speciesId": "bronzong",
+				"fastMove": "CONFUSION"
+			}
+		]
+	},
+	{
+		"league": 1500,
+		"cup": "regionals-1",
+		"pokemon": [
+			{
+				"speciesId": "cresselia",
+				"chargedMoves": ["FUTURE_SIGHT", "MOONBLAST"]
+			},
+			{
+				"speciesId": "umbreon",
+				"chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
+			},
+			{
+				"speciesId": "medicham",
+				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "hitmonchan",
+				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "hypno",
+				"chargedMoves": ["SHADOW_BALL", "FOCUS_BLAST"]
+			},
+			{
+				"speciesId": "dragonite",
+				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
+			}
+		]
+	},
+	{
+		"league": 2500,
+		"cup": "all",
+		"pokemon": [
+			{
+				"speciesId": "giratina_altered",
+				"fastMove": ["SHADOW_CLAW"]
+			},
+			{
+				"speciesId": "poliwrath",
+				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "dragonite",
+				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
+			}
+		]
+	},
+	{
+		"league": 10000,
+		"cup": "all",
+		"pokemon": [
+			{
+				"speciesId": "giratina_altered",
+				"fastMove": ["SHADOW_CLAW"]
+			},
+			{
+				"speciesId": "dragonite",
+				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
+			}
+		]
+	}
+]
