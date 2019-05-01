@@ -104,6 +104,8 @@ function PokeSelect(element, i){
 					$fastSelect.append("<option value=\""+move.moveId+"\">"+move.name+(move.legacy === false ? "" : " *")+"</option");
 				}
 				
+				$fastSelect.append("<option value=\"custom\">Other ...</option");
+				
 			
 				$el.find(".move-select.charged").each(function(index, value){
 					
@@ -115,6 +117,8 @@ function PokeSelect(element, i){
 
 						$(this).append("<option value=\""+move.moveId+"\">"+move.name+(move.legacy === false ? "" : " *")+"</option");
 					}
+					
+					$(this).append("<option value=\"custom\">Other ...</option");
 				});
 			}
 
@@ -354,15 +358,67 @@ function PokeSelect(element, i){
 	$el.find(".move-select").on("change", function(e){
 		
 		var moveId = $(this).find("option:selected").val();
-		
-		if($(this).hasClass("fast")){
-			selectedPokemon.selectMove("fast", moveId, 0);
-		} else if ($(this).hasClass("charged")){
-			var i = $el.find(".move-select.charged").index($(this));
-			selectedPokemon.selectMove("charged", moveId, i);
+		var moveSlotIndex = $el.find(".move-select.charged").index($(this));
+
+		if(moveId != "custom"){
+			// Add existing move
+			
+			if($(this).hasClass("fast")){
+				selectedPokemon.selectMove("fast", moveId, 0);
+			} else if ($(this).hasClass("charged")){
+				selectedPokemon.selectMove("charged", moveId, moveSlotIndex);
+			}
+
+			self.update();
+		} else{
+			// Add custom move
+			
+			modalWindow("Add Custom Move", $el.find(".custom-move"));
+			
+			$(".modal .name").html(selectedPokemon.speciesName);
+			
+			var isFastMove = $(e.target).hasClass("fast");
+			
+			// Add moves to select option
+
+			for(var i = 0; i < gm.data.moves.length; i++){
+				var move = gm.data.moves[i];
+				
+				if( (((isFastMove)&&(move.energyGain > 0))||((! isFastMove)&&(move.energyGain == 0))) && ( (selectedPokemon.fastMovePool.indexOf(move.moveId) == -1) && (selectedPokemon.chargedMovePool.indexOf(move.moveId) == -1))){
+					var $option = $("<option type=\""+move.type+"\" value=\""+move.moveId+"\">"+move.name+"</option>");
+					
+					// Edge cases
+					
+					if((move.moveId != "TRANSFORM") && (move.moveId.indexOf("BLASTOISE") == -1) ){
+						$(".modal .move-select").append($option);
+					}
+				}
+			}
+			
+			$(".modal .move-select").on("change", function(e){
+				var type = $(this).find("option:selected").attr("type");
+				
+				$(this).attr("class", "move-select " + type);
+			});
+			
+			$(".modal .move-select").trigger("change");
+			
+			// Add the custom move
+			
+			$(".modal .add-move").on("click", function(e){
+				var moveId = $(".modal .move-select option:selected").val();
+				var moveType = (isFastMove) ? "fast" : "charged";
+				
+				var pool = (isFastMove) ? selectedPokemon.fastMovePool : selectedPokemon.chargedMovePool;
+				
+				selectedPokemon.addNewMove(moveId, pool, true, moveType, moveSlotIndex)
+				
+				closeModalWindow();
+				
+				self.update();
+			});
 		}
-		
-		self.update();		
+
 	});
 	
     // Search select Pokemon

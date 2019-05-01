@@ -125,6 +125,25 @@ var GameMaster = (function () {
 			}
 		}
 		
+		// Modify a Pokemon data entry
+		
+		object.modifyPokemonEntry = function(id, type, props){
+			$.each(object.data.pokemon, function(index, poke){
+				
+				if(poke.speciesId == id){
+					
+					switch(type){
+						case "movepool":
+							
+							var movepool = (props.moveType == "fast") ? poke.fastMoves : poke.chargedMoves;
+							movepool.push(props.moveId);
+							
+							break;
+					}
+				}
+			});
+		}
+		
 		
         return object;
     }

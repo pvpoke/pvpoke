@@ -148,11 +148,11 @@ function Pokemon(id, i, b){
 		
 		// Set moves if unset
 		
-		this.resetMoves();
-		
-		if(! self.fastMove){
-			
+
+		if(! self.fastMove){	
 			self.autoSelectMoves();
+		} else{
+			this.resetMoves();
 		}
 	}
 	
@@ -454,6 +454,27 @@ function Pokemon(id, i, b){
 				}
 			}
 		}
+	}
+	
+	// Add new move to the supplied move pool, with a flag to automatically select the new move
+	
+	this.addNewMove = function(id, movepool, selectNewMove, moveType, index){
+		var move = gm.getMoveById(id);
+		
+		movepool.push(move);
+		
+		if(selectNewMove){
+			self.selectMove(moveType, id, index)
+		}
+		
+		var props = {
+			moveType: moveType,
+			moveId: id
+		};
+		
+		gm.modifyPokemonEntry(self.speciesId, "movepool", props);
+		
+		self.resetMoves();
 	}
 	
 	// This function calculates TDO given moveset and opponent, used for move selection

@@ -128,4 +128,16 @@
 			<div class="button no">No</div>
 		</div>
 	</div>
+	
+	<div class="custom-move hide">
+		<p>Add a custom move for <b><span class="name"></span></b>:</p>
+		
+		<select class="move-select">
+			<option selected disabled value="">Select a Move</option>
+		</select>
+		
+		<div class="center flex">
+			<div class="button add-move">Add move</div>
+		</div>
+	</div>
 </div>

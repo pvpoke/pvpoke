@@ -34,7 +34,7 @@ function modalWindow(header, content){
 
 	$(".modal").click(function(e){
 
-		if($(".modal-container:hover").length == 0){
+		if($(".modal-container:hover, option:hover").length == 0){
 			closeModalWindow();
 		}
 	});

@@ -73,7 +73,7 @@ var RankerMaster = (function () {
 					var allowedList = [];
 					
 					if(cup.name == "nightmare"){
-						permaBannedList = permaBannedList.concat(["sableye","medicham","lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi","latios","latias"]);
+						permaBannedList = permaBannedList.concat(["sableye","medicham","lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi","latios","latias","uxie","azelf","mesprit"]);
 					}
 				
 					
