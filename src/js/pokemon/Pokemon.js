@@ -461,6 +461,8 @@ function Pokemon(id, i, b){
 	this.addNewMove = function(id, movepool, selectNewMove, moveType, index){
 		var move = gm.getMoveById(id);
 		
+		move.isCustom = true;
+		
 		movepool.push(move);
 		
 		if(selectNewMove){

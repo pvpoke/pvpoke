@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php'; 
-$SITE_VERSION = '1.7.4.1';
+$SITE_VERSION = '1.7.4.2';
 ?>
 <!doctype html>
 <html>

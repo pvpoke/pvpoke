@@ -931,6 +931,18 @@ var InterfaceMaster = (function () {
 									arr = val.split('');
 								}
 								
+								// Search string for any custom moves to add
+								
+								for(var i = 0; i < arr.length; i++){
+									if(arr[i].match('([A-Z_]+)')){
+										var move = gm.getMoveById(arr[i]);
+										var movePool = (move.energyGain > 0) ? poke.fastMovePool : poke.chargedMovePool;
+										
+										poke.addNewMove(arr[i], movePool);
+									}
+								}
+								
+								
 								var fastMoveId = $(".poke").eq(index).find(".move-select.fast option").eq(parseInt(arr[0])).val();
 								poke.selectMove("fast", fastMoveId, 0);
 								
@@ -1188,8 +1200,8 @@ var InterfaceMaster = (function () {
 				$(".poke-select-container").addClass(self.battleMode);
 				
 				if(self.battleMode == "single"){
-					pokeSelectors[0].setPokemon(pokeSelectors[0].getPokemon().speciesId);
-					pokeSelectors[1].setPokemon(pokeSelectors[1].getPokemon().speciesId);
+					pokeSelectors[0].setSelectedPokemon(pokeSelectors[0].getPokemon());
+					pokeSelectors[1].setSelectedPokemon(pokeSelectors[1].getPokemon());
 				}
 			}
 			
@@ -1528,6 +1540,18 @@ var InterfaceMaster = (function () {
 				var chargedMove2Index = pokemon.chargedMovePool.indexOf(pokemon.chargedMoves[1])+1;
 					
 				moveStr = fastMoveIndex + "-" + chargedMove1Index + "-" + chargedMove2Index;
+				
+				// Check for any custom moves;
+				
+				if(pokemon.fastMove.isCustom){
+					moveStr += "-" + pokemon.fastMove.moveId;
+				}
+				
+				for(var i = 0; i < pokemon.chargedMoves.length; i++){
+					if(pokemon.chargedMoves[i].isCustom){
+						moveStr += "-" + pokemon.chargedMoves[i].moveId + "-" + i;
+					}
+				}
 				
 				return moveStr;
 			}
