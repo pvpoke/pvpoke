@@ -109,15 +109,56 @@ var InterfaceMaster = (function () {
 								}
 								
 								var poke = pokeSelectors[index].getPokemon();
-								var arr = val.split('');
+								var arr = val.split('-');
+
+								// Legacy move construction
+								
+								if(arr.length <= 1){
+									arr = val.split('');
+								}
+								
+								// Search string for any custom moves to add
+								var customMoveIndexes = [];
+								
+								for(var i = 0; i < arr.length; i++){
+									if(arr[i].match('([A-Z_]+)')){
+										var move = gm.getMoveById(arr[i]);
+										var movePool = (move.energyGain > 0) ? poke.fastMovePool : poke.chargedMovePool;
+										var moveType = (move.energyGain > 0) ? "fast" : "charged";
+										var moveIndex = 0;
+										
+										if(arr[i+1]){
+											moveIndex = parseInt(arr[i+1]);
+										}
+										
+										poke.addNewMove(arr[i], movePool, true, moveType, moveIndex);
+										customMoveIndexes.push(moveIndex);
+									}
+								}
+								
 								
 								var fastMoveId = $(".poke").eq(index).find(".move-select.fast option").eq(parseInt(arr[0])).val();
 								poke.selectMove("fast", fastMoveId, 0);
 								
 								for(var i = 1; i < arr.length; i++){
+									// Don't set this move if already set as a custom move
+									
+									if(customMoveIndexes.indexOf(i-1) > -1){
+										continue;
+									}
+									
 									var moveId = $(".poke").eq(index).find(".move-select.charged").eq(i-1).find("option").eq(parseInt(arr[i])).val();
 									
-									poke.selectMove("charged", moveId, i-1);
+									if(moveId != "none"){
+										poke.selectMove("charged", moveId, i-1);
+									} else{
+										if((arr[1] == "0")&&(arr[2] == "0")){
+											poke.selectMove("charged", moveId, 0); // Always deselect the first move because removing it pops the 2nd move up
+										} else{
+											poke.selectMove("charged", moveId, i-1);
+										}
+									}
+									
 								}
 								
 								break;
@@ -591,12 +632,8 @@ var InterfaceMaster = (function () {
 						}
 						
 						pokes.push(poke);
-						
-						var fastMoveIndex = pokes[i].fastMovePool.indexOf(pokes[i].fastMove);
-						var chargedMove1Index = pokes[i].chargedMovePool.indexOf(pokes[i].chargedMoves[0])+1;
-						var chargedMove2Index = pokes[i].chargedMovePool.indexOf(pokes[i].chargedMoves[1])+1;
 
-						moveStrs.push(fastMoveIndex + "" + chargedMove1Index + "" + chargedMove2Index);
+						moveStrs.push(generateURLMoveStr(poke));
 						
 						teamStr += pokes[i].speciesId + "/";
 					}
@@ -653,6 +690,31 @@ var InterfaceMaster = (function () {
 
 			}
 			
+			// Gemerate a URL moveset string given a Pokemon
+			
+			function generateURLMoveStr(pokemon){
+				var moveStr = '';
+
+				var fastMoveIndex = pokemon.fastMovePool.indexOf(pokemon.fastMove);
+				var chargedMove1Index = pokemon.chargedMovePool.indexOf(pokemon.chargedMoves[0])+1;
+				var chargedMove2Index = pokemon.chargedMovePool.indexOf(pokemon.chargedMoves[1])+1;
+					
+				moveStr = fastMoveIndex + "-" + chargedMove1Index + "-" + chargedMove2Index;
+				
+				// Check for any custom moves;
+				
+				if(pokemon.fastMove.isCustom){
+					moveStr += "-" + pokemon.fastMove.moveId;
+				}
+				
+				for(var i = 0; i < pokemon.chargedMoves.length; i++){
+					if(pokemon.chargedMoves[i].isCustom){
+						moveStr += "-" + pokemon.chargedMoves[i].moveId + "-" + i;
+					}
+				}
+				
+				return moveStr;
+			}
 		};
 		
         return object;

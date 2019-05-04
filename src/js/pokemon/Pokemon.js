@@ -474,7 +474,9 @@ function Pokemon(id, i, b){
 			moveId: id
 		};
 		
-		gm.modifyPokemonEntry(self.speciesId, "movepool", props);
+		// Don't do this yet, since it breaks Multi-Battle links
+		
+		// gm.modifyPokemonEntry(self.speciesId, "movepool", props);
 		
 		self.resetMoves();
 	}

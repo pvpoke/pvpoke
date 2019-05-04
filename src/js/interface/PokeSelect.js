@@ -15,6 +15,7 @@ function PokeSelect(element, i){
 	var self = this;
 	var interface;
 	var isCustom = false; // Whether or not the Pokemon has custom-set level, IVs, or traits
+	var context = "main";
 	
 	this.init = function(pokes, b){
 		pokemon = pokes;
@@ -104,7 +105,9 @@ function PokeSelect(element, i){
 					$fastSelect.append("<option value=\""+move.moveId+"\">"+move.name+(move.legacy === false ? "" : " *")+"</option");
 				}
 				
-				$fastSelect.append("<option value=\"custom\">Other ...</option");
+				if(context == "main"){
+					$fastSelect.append("<option value=\"custom\">Custom ...</option");
+				}
 				
 			
 				$el.find(".move-select.charged").each(function(index, value){
@@ -118,7 +121,10 @@ function PokeSelect(element, i){
 						$(this).append("<option value=\""+move.moveId+"\">"+move.name+(move.legacy === false ? "" : " *")+"</option");
 					}
 					
-					$(this).append("<option value=\"custom\">Other ...</option");
+					if(context == "main"){
+						$(this).append("<option value=\"custom\">Other ...</option");
+					}
+					
 				});
 			}
 
@@ -305,6 +311,12 @@ function PokeSelect(element, i){
 		}
 	}
 	
+	// Set the context for this selector
+	
+	this.setContext = function(value){
+		context = value;
+	}
+	
 	// Return whether or not the selected Pokemon has custom options set
 	
 	this.isCustom = function(){
@@ -402,6 +414,23 @@ function PokeSelect(element, i){
 			});
 			
 			$(".modal .move-select").trigger("change");
+			
+			// Search for a move
+			
+			$(".modal .poke-search").on("keyup", function(e){
+				var val = $(this).val().toLocaleLowerCase();
+				var $select = $(this).next(".move-select");
+
+				$select.find("option").each(function(index, value){
+					var moveName = $(this).html().toLowerCase();
+
+					if(moveName.startsWith(val)){
+						$(this).prop("selected","selected");
+						$select.trigger("change");
+						return false;
+					}
+				});
+			});
 			
 			// Add the custom move
 			

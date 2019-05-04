@@ -132,6 +132,7 @@
 	<div class="custom-move hide">
 		<p>Add a custom move for <b><span class="name"></span></b>:</p>
 		
+		<input class="poke-search" context="move-search" type="text" placeholder="Search move"/>
 		<select class="move-select">
 			<option selected disabled value="">Select a Move</option>
 		</select>

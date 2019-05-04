@@ -34,6 +34,7 @@ function PokeMultiSelect(element){
 		modalWindow("Select Pokemon", $(".poke").first());
 		
 		pokeSelector = new PokeSelect($(".modal .poke"), 1);
+		pokeSelector.setContext("modal");
 		pokeSelector.init(pokemon, battle);
 		
 		if(index == -1){

@@ -1488,6 +1488,10 @@ select, input {
       .modal .modal-container .poke.single .auto-select,
       .modal .modal-container .poke.single .options {
         display: none; }
+    .modal .modal-container .poke-search {
+      margin-bottom: 5px; }
+    .modal .modal-container .move-select {
+      max-width: 200px; }
   .modal .sandbox-move-select .move-select {
     font-size: 18px;
     margin-bottom: 10px; }

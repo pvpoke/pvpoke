@@ -932,13 +932,21 @@ var InterfaceMaster = (function () {
 								}
 								
 								// Search string for any custom moves to add
+								var customMoveIndexes = [];
 								
 								for(var i = 0; i < arr.length; i++){
 									if(arr[i].match('([A-Z_]+)')){
 										var move = gm.getMoveById(arr[i]);
 										var movePool = (move.energyGain > 0) ? poke.fastMovePool : poke.chargedMovePool;
+										var moveType = (move.energyGain > 0) ? "fast" : "charged";
+										var moveIndex = 0;
 										
-										poke.addNewMove(arr[i], movePool);
+										if(arr[i+1]){
+											moveIndex = parseInt(arr[i+1]);
+										}
+										
+										poke.addNewMove(arr[i], movePool, true, moveType, moveIndex);
+										customMoveIndexes.push(moveIndex);
 									}
 								}
 								
@@ -947,6 +955,12 @@ var InterfaceMaster = (function () {
 								poke.selectMove("fast", fastMoveId, 0);
 								
 								for(var i = 1; i < arr.length; i++){
+									// Don't set this move if already set as a custom move
+									
+									if(customMoveIndexes.indexOf(i-1) > -1){
+										continue;
+									}
+									
 									var moveId = $(".poke").eq(index).find(".move-select.charged").eq(i-1).find("option").eq(parseInt(arr[i])).val();
 									
 									if(moveId != "none"){
