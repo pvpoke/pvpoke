@@ -571,13 +571,13 @@ function Pokemon(id, i, b){
 	
 	this.reset = function(){
 		
-		self.resetMoves();
 		self.hp = self.startHp;
 		self.energy = self.startEnergy;
 		self.cooldown = 0;
 		self.damageWindow = 0;
 		self.shields = self.startingShields;
 		self.statBuffs = [self.startStatBuffs[0], self.startStatBuffs[1]];
+		self.resetMoves();
 	}
 	
 	this.setShields = function(amount){

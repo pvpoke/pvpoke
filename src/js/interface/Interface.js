@@ -504,7 +504,7 @@ var InterfaceMaster = (function () {
 									b.simulate();
 								}
 
-								rating = b.getBattleRatings()[0];
+								rating = b.getBattleRatings()[0];								
 								color = b.getRatingColor(rating);
 							} else{
 								rating = battle.getBattleRatings()[0];
@@ -772,12 +772,11 @@ var InterfaceMaster = (function () {
 				var filedata = '';
 				
 				if (!csv.match(/^data:text\/csv/i)) {
-					filedata = 'data:text/csv;charset=utf-8,' + csv;
+					filedata = [csv];
+					filedata = new Blob(filedata, { type: 'text/csv'});
 				}
-
-				filedata = encodeURI(filedata);
 				
-				$(".button.download-csv").attr("href", filedata);
+				$(".button.download-csv").attr("href", window.URL.createObjectURL(filedata));
 				$(".button.download-csv").attr("download", filename);	
 				
 				// Push state to browser history so it can be navigated, only if not from URL parameters
@@ -1841,28 +1840,6 @@ var InterfaceMaster = (function () {
 				} else{
 					self.resetSandbox();
 					closeModalWindow();
-				}
-				
-			}
-			
-			// Download multi battle result CSV
-			
-			function downloadMultiResultCSV(e){
-
-				if(csv){
-					var filename = pokeSelectors[0].getPokemon().speciesName + " vs " + $(".poke.multi .cup-select option:selected").html() + ".csv";
-
-					if (!csv.match(/^data:text\/csv/i)) {
-						csv = 'data:text/csv;charset=utf-8,' + csv;
-					}
-					
-					data = encodeURI(csv);
-
-					link = document.createElement('a');
-					link.setAttribute('href', data);
-					link.setAttribute('download', filename);
-					link.innerHTML = 'TEST LINK';
-					link.click();
 				}
 				
 			}
