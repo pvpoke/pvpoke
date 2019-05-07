@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php'; 
-$SITE_VERSION = '1.7.4.2';
+$SITE_VERSION = '1.7.6';
 ?>
 <!doctype html>
 <html>
@@ -39,7 +39,7 @@ if(! isset($OG_IMAGE)){
 <link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json">
 
 <link rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=31">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=32">
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>
 
 <?php require_once('modules/analytics.php'); ?>
@@ -70,8 +70,8 @@ if(! isset($OG_IMAGE)){
 				<a class="more desktop" href="#"></a>
 				<div class="submenu">
 					<div class="submenu-wrap">
-						<a class="icon-moves" href="<?php echo $WEB_ROOT; ?>moves/"><span>Moves</a>
-						<a class="icon-articles" href="<?php echo $WEB_ROOT; ?>articles/"><span>Articles</a>
+						<a class="icon-moves" href="<?php echo $WEB_ROOT; ?>moves/">Moves</a>
+						<a class="icon-articles" href="<?php echo $WEB_ROOT; ?>articles/">Articles</a>
 						<a class="icon-contribute" href="<?php echo $WEB_ROOT; ?>contribute/">Contribute</a>
 						<a class="icon-twitter" href="https://twitter.com/pvpoke" target="_blank">Twitter</a>
 					</div>

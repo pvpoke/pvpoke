@@ -104,25 +104,25 @@ require_once 'header.php';
 						<tr>
 							<td></td>
 							<td></td>
-							<td><span class="shield shield-none"></span></td>
-							<td><span class="shield"></span></td>
-							<td><span class="shield shield-double"></span></td>
+							<td>0 <span class="shield shield-none"></span></td>
+							<td>1 <span class="shield"></span></td>
+							<td>2 <span class="shield shield"></span></td>
 						</tr>
 						<tr>
 							<td rowspan="3"><span class="name name-1">Pokemon</span></td>
-							<td><span class="shield shield-none"></span></td>
+							<td>0 <span class="shield shield-none"></span></td>
 							<td><a href="#" class="rating star battle-0-0" shields="0,0">100</a></td>
 							<td><a href="#" class="rating star battle-1-0" shields="1,0">100</a></td>
 							<td><a href="#" class="rating star battle-2-0" shields="2,0">100</a></td>
 						</tr>
 						<tr>
-							<td><span class="shield"></span></td>
+							<td>1 <span class="shield"></span></td>
 							<td><a href="#" class="rating star battle-0-1" shields="0,1">100</a></td>
 							<td><a href="#" class="rating star battle-1-1" shields="1,1">100</a></td>
 							<td><a href="#" class="rating star battle-2-1" shields="2,1">100</a></td>
 						</tr>
 						<tr>
-							<td><span class="shield shield-double"></td>
+							<td>2 <span class="shield shield"></span></td>
 							<td><a href="#" class="rating star battle-0-2" shields="0,2">100</a></td>
 							<td><a href="#" class="rating star battle-1-2" shields="1,2">100</a></td>
 							<td><a href="#" class="rating star battle-2-2" shields="2,2">100</a></td>
@@ -194,7 +194,7 @@ require_once 'header.php';
 				<p>Can Pokemon A beat Pokemon B, and by how much? The battle simulator seeks to calculate and illustrate the answer to that question. It displays a timeline of what each Pokemon does, and how much damage they deal. While the simulator strives to paint as accurate a picture as possible, note that various factors may affect the outcome of an actual battle, such as Pokemon stats, latency, device performance, and human decision-making. We hope the simulator can serve as a helpful guide for real-world battles.</p>
 				<p>Below are details for how the battle simulator works.</p>
 				<h2>Battle Rating</h2>
-				<p>Battle Rating</a> is a metric used to represent each battle's outcome. It is the backbone of PvPoke's rankings. The Battle Rating formula is:</p>
+				<p>Battle Rating is a metric used to represent each battle's outcome. It is the backbone of PvPoke's rankings. The Battle Rating formula is:</p>
 				<p class="center"><span class="rating star">Battle Rating</span> = (500 x (Damage Dealt / Opponent's HP)) + (500 x (HP Remaining / HP))</p>
 				<p>In other words, a Pokemon gets up to 500 points for the percentage of HP it damages in battle and up to 500 points for the percentage of HP it survives with. Battle Rating has a hypothetical maximum of 1000 (victory with no damage taken) and a hypothetical minimum of 0 (loss with no damage dealt). Victories will always have a minimum Battle Rating of 500</p>
 				<p>Battle Rating is a way of measuring battles beyond simply "win" and "loss"; it may be valuable to know not only which Pokemon can win, but which can do so while sustaining the least amount of damage, leaving them in a better position for the next fight.</p>
