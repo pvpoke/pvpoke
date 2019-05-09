@@ -76,7 +76,7 @@ if(! isset($OG_IMAGE)){
 				<a class="icon-battle" href="<?php echo $WEB_ROOT; ?>battle/">Battle</a>
 				<a class="icon-rankings" href="<?php echo $WEB_ROOT; ?>rankings/">Rankings</a>
 				<a class="icon-team" href="<?php echo $WEB_ROOT; ?>team-builder/">Team Builder</a>
-				<a class="icon-team" href="https://www.patreon.com/oauth2/authorize?response_type=code&client_id=ASO3rd12Lsb2tvCHHpuHNGucwtvMljljY3OZmyQEYVnI-GsaraWacYz9fzroizs6&redirect_uri=https://pvpoke.com">Patreon</a>
+				<a class="icon-team" href="https://www.patreon.com/oauth2/authorize?response_type=code&client_id=<?php echo $patreon_client_id; ?>&redirect_uri=https://pvpoke.com">Patreon</a>
 				<a class="more desktop" href="#"></a>
 				<div class="submenu">
 					<div class="submenu-wrap">
