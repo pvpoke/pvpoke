@@ -1,5 +1,14 @@
-<?php require_once 'modules/config.php'; 
+<?php
+require_once 'modules/config.php';
 $SITE_VERSION = '1.7.6';
+
+// Handle Patreon login if variables are present
+
+if(isset($_GET['code'])){
+	require_once 'modules/loginhandler.php';
+}
+
+
 ?>
 <!doctype html>
 <html>
@@ -16,7 +25,7 @@ if(! isset($META_TITLE)){
 if(! isset($META_DESCRIPTION)){
 	$META_DESCRIPTION = 'Looking for an edge in Pokemon GO Trainer Battles? Become a master with our open-source Pokemon battle simulator, explore the top Pokemon rankings, and get your team rated for PvP battles.';
 }
-	
+
 if(! isset($OG_IMAGE)){
 	$OG_IMAGE = 'https://pvpoke.com/img/og.jpg';
 }
@@ -67,6 +76,7 @@ if(! isset($OG_IMAGE)){
 				<a class="icon-battle" href="<?php echo $WEB_ROOT; ?>battle/">Battle</a>
 				<a class="icon-rankings" href="<?php echo $WEB_ROOT; ?>rankings/">Rankings</a>
 				<a class="icon-team" href="<?php echo $WEB_ROOT; ?>team-builder/">Team Builder</a>
+				<a class="icon-team" href="https://www.patreon.com/oauth2/authorize?response_type=code&client_id=ASO3rd12Lsb2tvCHHpuHNGucwtvMljljY3OZmyQEYVnI-GsaraWacYz9fzroizs6&redirect_uri=https://pvpoke.com">Patreon</a>
 				<a class="more desktop" href="#"></a>
 				<div class="submenu">
 					<div class="submenu-wrap">
