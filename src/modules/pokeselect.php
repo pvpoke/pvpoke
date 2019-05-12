@@ -63,7 +63,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 		<div class="move-select-container">
 			<h3 class="section-title">Fast Move</h3>
 
@@ -76,7 +76,7 @@
 			<button class="auto-select">Auto Select Moves</button>
 			<div class="legacy">* Legacy Move</div>
 		</div>
-		
+
 		<div class="options">
 			<a href="#" class="section-title toggle">Options <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 			<div class="toggle-content">
@@ -92,16 +92,17 @@
 					<div class="label">Energy:</div><input class="start-energy" type="number" min="0" max="100" placeholder="Starting Energy" />
 				</div>
 				<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
+				<div class="check priority"><span></span>Charged Move priority</div>
 			</div>
 		</div>
-		
+
 		<a href="#" class="clear-selection">Clear Selection</a>
 
 		<div class="hp bar-back">
 			<div class="bar"></div>
 			<div class="stat"></div>
 		</div>
-		
+
 		<div class="move-bars">
 			<div class="move-bar">
 				<div class="label">CM</div>
@@ -119,7 +120,7 @@
 		<h3 class="name"></h3>
 		<div class="details"></div>
 	</div>
-	
+
 	<div class="clear-confirm hide">
 		<p>Clear <b><span class="name"></span></b> from the selection?</p>
 
@@ -128,15 +129,15 @@
 			<div class="button no">No</div>
 		</div>
 	</div>
-	
+
 	<div class="custom-move hide">
 		<p>Add a custom move for <b><span class="name"></span></b>:</p>
-		
+
 		<input class="poke-search" context="move-search" type="text" placeholder="Search move"/>
 		<select class="move-select">
 			<option selected disabled value="">Select a Move</option>
 		</select>
-		
+
 		<div class="center flex">
 			<div class="button add-move">Add move</div>
 		</div>

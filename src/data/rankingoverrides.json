@@ -133,7 +133,8 @@
 			},
 			{
 				"speciesId": "bronzong",
-				"fastMove": "CONFUSION"
+				"fastMove": "CONFUSION",
+				"weight": 0.5
 			}
 		]
 	},
@@ -164,7 +165,15 @@
 			{
 				"speciesId": "dragonite",
 				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
-			}
+			},
+			{
+				"speciesId": "toxicroak",
+				"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "tentacruel",
+				"chargedMoves": ["ACID_SPRAY", "HYDRO_PUMP"]
+			}			
 		]
 	},
 	{

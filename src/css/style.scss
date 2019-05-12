@@ -126,18 +126,18 @@ body{
 header{
 	padding:5px;
 	box-sizing:border-box;
-	
+
 	.header-wrap{
 		max-width:800px;
 		margin:0 auto;
 	}
-	
+
 	.title{
 		font-size: 18px;
 		margin: 0;
 		display: inline-block;
 		font-weight: normal;
-			
+
 		a{
 			background-image: url(../img/app_192.png);
 			background-size: contain;
@@ -148,11 +148,11 @@ header{
 			display: block;
 		}
 	}
-	
+
 	.menu{
 		padding:3px 0;
 		float:right;
-		
+
 		a{
 			display:block;
 			float: left;
@@ -174,7 +174,7 @@ footer{
 	text-align: center;
 	font-size:12px;
 	margin:0 auto;
-	
+
 	p:first-of-type{
 		margin-top:0;
 	}
@@ -185,7 +185,7 @@ footer{
 	margin: auto;
 	padding:10px;
     border-radius: 12px;
-	
+
 	& > h1{
 		margin:0;
 	}
@@ -198,7 +198,7 @@ footer{
 
 header{
 	position:relative;
-	z-index:25;	
+	z-index:25;
 }
 
 .background{
@@ -209,30 +209,30 @@ header{
 
 .section{
 	margin:10px 0;
-	
+
 	&.white{
 		background: rgba(255,255,255,0.85);
 		padding: 10px;
 		border-radius: 8px;
 	}
-	
+
 	&.error{
 		display:none;
 		text-align: center;
 	}
-	
+
 	p:first-of-type{
 		margin-top:0;
 	}
-	
+
 	.toggle-content p:first-of-type{
 		margin:1em 0;
 	}
-	
+
 	p.description{
 		margin:1em 0;
 	}
-	
+
 	h2{
 		font-size:18px;
 	}
@@ -240,7 +240,7 @@ header{
 
 .section.about{
 	text-align: left;
-	
+
 	p{
 		margin:1em 0;
 	}
@@ -266,7 +266,7 @@ header{
 		padding:10px;
 		box-sizing:border-box;
 		max-width:400px;
-		
+
 		h2{
 			margin:0;
 			font-size:32px;
@@ -279,7 +279,7 @@ header{
 				padding-left:0;
 			}
 		}
-		
+
 		p{
 			margin:0;
 			font-size:14px;
@@ -314,13 +314,13 @@ header{
 .icon-twitter{
 	background-image:url('../img/icon_twitter.png');
 	min-height:18px;
-	
+
 	span{ display:none; }
 }
 
 .flex{
 	display:flex;
-	
+
 	&.cols-3 > div{
 		flex-basis:33%;
 	}
@@ -329,52 +329,52 @@ header{
 /* POKEMON SELECT */
 
 .poke{
-	
+
 	max-width:200px;
-	
+
 	&:first-of-type{
 		float:left;
 	}
-	
+
 	&:nth-of-type(2){
 		float:right;
-		
+
 		.poke-stats{
 			text-align: right;
-			
+
 			.stat-label{
 				float:right !important;
 			}
-			
+
 			.stat-container .bar-back{
 				float:right;
-				
+
 				@include transform(scale(-1, 1));
 			}
 		}
-		
+
 		a.swap{
 			display:none;
 		}
 	}
-	
+
 	input, select{
 		display:block;
 		margin:10px 0;
 		max-width:200px;
 		background: $color-off-white;
 		border: 1px solid $color-off-black;
-		
+
 		&.poke-select{
 			font-size:18px;
 			font-weight:bold;
 		}
-		
+
 		&.charged{
 			font-weight:bold;
 		}
 	}
-	
+
 	.poke-stats{
 		box-sizing:border-box;
 		border-radius: 8px;
@@ -382,71 +382,71 @@ header{
 		max-width:200px;
 		background:rgba(255, 255, 255, 0.75);
 		display:none;
-		
+
 		.stat-container {
 			font-size:10px;
-			
+
 			color:$color-off-black;
-			
+
 			.stat-label{
 				width:80px;
 				float:left;
-				
+
 				.label-name{
 					display:inline-block;
 					width:35px;
 				}
-				
+
 				.stat{
 					display: inline-block;
 					font-size:14px;
 					font-weight: bold;
-					
+
 					&.buff{
 						color:$color-stat-buff;
 					}
-					
+
 					&.debuff{
 						color:$color-stat-debuff;
 					}
 				}
 			}
-			
+
 			&.overall .stat-label{
 				width:auto;
 				margin-top: 5px;
 				border-top: 1px solid #666;
 				padding-top: 5px;
 			}
-			
+
 			.bar-back{
 				width:100px;
 				height:4px;
 				border-radius:8px;
 				float:left;
-				
+
 				.bar{
 					width:100%;
 					height:100%;
 					border-radius:8px;
 					margin-top:7px;
 					background:rgba(0,0,0,0.6);
-					
+
 					@include transition(width, 150ms, cubic-bezier(0.47, 0, 0.745, 0.715), 0s);
 				}
 			}
 		}
-		
+
 		.types {
 			text-align: center;
-			
+
 			.type{
 				display:inline-block;
 				border-radius: 8px;
 				padding: 2px 5px;
 				margin: 0 2px;
 				font-size:12px;
-			}	
+			}
 		}
 
 		.hp.bar-back{
@@ -463,10 +463,10 @@ header{
 				width:100%;
 				height:100%;
 				background-color:$color-hp;
-				
+
 				@include transition(width, 0.2s, ease-out, 0s);
 			}
-			
+
 			.stat{
 				position:absolute;
 				width:100%;
@@ -477,15 +477,15 @@ header{
 				font-weight:bold;
 			}
 		}
-		
+
 		h3{
 			margin:0;
 			font-weight:normal;
-			
+
 			&.cp{
 				text-align:center;
 			}
-			
+
 			&.section-title{
 				font-size: 14px;
 				font-weight: bold;
@@ -493,90 +493,91 @@ header{
 				margin-top: 20px;
 			}
 		}
-		
-		
+
+
 		a{
 			font-size:14px;
 			text-decoration:none;
 			color:$color-links;
 			display:block;
 			margin:5px 0;
-			
+
 			&.clear-selection{
 				margin-top:10px;
 			}
 		}
-		
+
 		.advanced-section{
-			
+
 			.fields{
 				display:none;
-				
+
 				.ivs input{
 					float:left;
 					width:33%;
 					max-width:66px;
 				}
-			
+
 				.stat-modifiers input{
 					float:left;
 					width:50%;
 				}
-				
+
 				.ivs h3,
 				.stat-modifiers h3{
 					font-size: 14px;
 					text-align: center;
 					font-weight: bold;
 				}
-				
+
 				.maximize-stats{
 					margin-bottom:5px;
 				}
 			}
-			
+
 			&.active{
-				
+
 				.fields{
 					display:block;
 				}
 			}
 		}
-		
+
 		.move-select.fast{
 			margin-top:5px;
 		}
 
 	}
-	
+
 	.legacy{
 		font-size:12px;
 		margin-top:10px;
 	}
-	
+
 	.options{
 		margin: 20px 0;
-		
+
 		.start-hp,
 		.start-energy{
 			margin:5px 0;
 			max-width:129px;
 		}
-		
+
 		.flex{
 			justify-content: space-between;
 		}
-		
-		.shield-baiting{
+
+		.shield-baiting,
+		.priority{
 			text-align: left;
 			font-size:14px;
 		}
-		
+
 		.label{
 			margin:5px 5px 5px 0;
 		}
 	}
-	
+
 	a.random,
 	a.swap{
 		font-size: 10px;
@@ -591,16 +592,16 @@ header{
 		border-radius:8px;
 		margin-bottom:10px;
 	}
-	
+
 	a.swap{
 		padding-left:18px;
 		background-image:url('../img/swap.png');
 	}
-	
+
 	.move-bars{
 		display:flex;
 		justify-content: space-around;
-		
+
 		.move-bar{
 			width: 40px;
 			height: 40px;
@@ -613,13 +614,13 @@ header{
 			margin-top:5px;
 			display:none;
 			cursor:pointer;
-			
+
 			@include transition(border, 0.2s, ease-out, 0s);
-			
+
 			&.active{
 				border:2px solid rgba(0,0,0,1);
 			}
-			
+
 			.label{
 				position: relative;
 				z-index: 10;
@@ -627,7 +628,7 @@ header{
 				padding-top: 10px;
 				font-weight: bold;
 			}
-			
+
 			.bar, .bar-back{
 				position: absolute;
 				bottom: 0;
@@ -635,26 +636,26 @@ header{
 				width: 100%;
 				height: 100%;
 			}
-			
+
 			.bar{
 				@include transition(height, 0.2s, ease-out, 0s);
 			}
-			
+
 			.bar-back{
 				opacity:.3;
 			}
 		}
 	}
-	
+
 	.move-details{
 		font-size:12px;
 		min-height:15px;
 		text-align: left;
-		
+
 		.move-stat{
-			
+
 			color:$color-off-black;
-		
+
 			.stat{
 				width: 15px;
 				height: 14px;
@@ -669,61 +670,61 @@ header{
 			}
 		}
 	}
-	
+
 	&.multi{
 		display:none;
 		float:right;
-		
+
 		.poke-stats{
 			display:block;
 		}
-		
+
 		.cup-select{
 			margin-top:62px;
 			width:100%;
-			
+
 			option[value="custom"]{
 				display:block;
 			}
 		}
-		
+
 		.custom-options{
 			display:none;
-			
+
 			.add-poke-btn{
 				font-size: 14px;
 				width: 100%;
 				margin-bottom: 0;
 			}
-			
+
 			.export-btn{
 				margin-top:15px;
 			}
 		}
-		
+
 		.rankings-container{
-			
+
 			max-height:295px;
-			
+
 			.rank{
 				padding: 0 5px;
 				position:relative;
-				
+
 				&:hover{
 					border-left:none;
 					box-shadow:0px 2px;
 				}
-				
+
 				.name-container{
 					float:none;
 				}
-				
+
 				.moves{
 					margin-left:0;
 				}
-				
+
 				.remove{
-					
+
 					position:absolute;
 					top:2px;
 					right: 5px;
@@ -733,18 +734,18 @@ header{
 					border-radius: 4px;
 					padding: 0 4px;
 					font-size: 12px;
-					
+
 					&:after{
 						content:"x";
 					}
-					
+
 					&:hover{
 						background:#ff0000;
 					}
 				}
 			}
 		}
-		
+
 		.quick-fill-buttons{
 			justify-content: space-around;
 		}
@@ -754,7 +755,7 @@ header{
 
 .poke-select-container{
 	&.single{
-		
+
 		.poke:nth-of-type(1){
 			a.random{
 				float:left;
@@ -763,14 +764,14 @@ header{
 				float:right;
 			}
 		}
-		
+
 		.poke:nth-of-type(2){
 			display: block;
-			
+
 			a.random{
 				float:right;
 			}
-			
+
 			a.swap{
 				float:left;
 			}
@@ -779,7 +780,7 @@ header{
 			display: none;
 		}
 	}
-	
+
 	&.multi{
 		.poke:nth-of-type(2),
 		.hp.bar-back,
@@ -803,7 +804,7 @@ header{
 
 	.arrow-down{
 		display:none;
-	}	
+	}
 }
 
 /* GENERAL FORM STYLING */
@@ -838,7 +839,7 @@ select, input{
     cursor: pointer;
 	text-decoration: none;
 	color:#000;
-	
+
 	@include gradient($color-gold, $color-gold-dark);
 }
 
@@ -846,7 +847,7 @@ select, input{
 
 	text-align: center;
 	margin-top:20px;
-	
+
 	p{
 		margin:0;
 	}
@@ -887,15 +888,15 @@ select, input{
 
 .continue-container{
 	margin:15px auto;
-	
+
 	p{
 		margin:0;
 	}
-	
+
 	.name{
 		font-weight:bold;
 	}
-	
+
 	.button{
 		display:inline-block;
 		margin:5px auto;
@@ -924,7 +925,7 @@ select, input{
 			@include gradient($color-gold, $color-gold-dark);
 		}
 	}
-	
+
 	&:hover:not(.on){
 		span{
 			background:#555;
@@ -956,40 +957,40 @@ select, input{
 			border-left:1px solid #000;
 			top:0;
 		}
-		
+
 		&.sandbox-mode{
 			background-color: rgba(255, 240, 200, 0.75);
 			border: 1px solid $color-gold;
-			
+
 			.item.charged:hover,
 			.item.fast:not(.disabled):hover{
 				@include gradient($color-gold, $color-gold-dark);
 				border-color:$color-gold-dark;
 			}
-			
+
 			.item.disabled{
 				background:none !important;
-				
+
 				&:hover{
 					cursor:initial;
 				}
 			}
 		}
-		
+
 		&.zoom{
 			height:90px;
 			overflow-x:scroll;
 		}
 	}
-	
+
 	.sandbox-btn-container{
 		max-width:95%;
 		margin: 0 auto;
-		
+
 		.sandbox-btn{
 			@include transition(background, 0.25s, 0s, ease-out);
-			
-			
+
+
 			position: relative;
 			background:#888;
 			color:$color-off-white;
@@ -1010,22 +1011,22 @@ select, input{
 				-ms-user-select: none; /* Internet Explorer/Edge */
 					user-select: none; /* Non-prefixed version, currently
 										  supported by Chrome and Opera */
-			
+
 			span{
 				position: relative;
 				z-index:5;
 			}
-			
+
 			&.active{
 				color:$color-off-black;
 				background:$color-gold;
-				
+
 				.btn-background{
 					left:0;
 				}
 			}
 		}
-		
+
 		.sandbox{
 			width:19px;
 			height:19px;
@@ -1034,49 +1035,49 @@ select, input{
 			float:right;
 			margin: 0 10px;
 			cursor:pointer;
-			
+
 			@include transform(scale(0, 0));
 			@include transition(transform, 0.3s, cubic-bezier(0.64, 0.57, 0.67, 1.53), 0s);
-			
+
 			&.active{
 				@include transform(scale(1, 1));
 			}
 		}
-		
+
 		.clear-btn:after{
 			content:"\021BB";
 		}
 	}
-	
+
 	.playback{
 		max-width: 300px;
     	margin: 10px auto;
 		padding: 2px 10px;
-		
+
 		.flex{
 			display:flex;
 			justify-content: space-between;
 		}
-		
+
 		.playback-btn{
 			width:16px;
 			height:19px;
 			background-position: center center;
 			background-repeat:no-repeat;
-			
+
 			&.play{
 				background-image:url('../img/playback_play.png');
 			}
-			
+
 			&.play.active{
 				background-image:url('../img/playback_pause.png');
 			}
-			
+
 			&.replay{
 				background-image:url('../img/playback_replay.png');
 			}
 		}
-		
+
 		.playback-speed,
 		.playback-scale{
 			padding: 0;
@@ -1084,46 +1085,46 @@ select, input{
 			border-radius: 8px;
 			width: 85px;
 		}
-		
+
 		.disclaimer{
 			display:none;
 			font-size: 12px;
 			margin-top:10px;
 		}
 	}
-	
+
 	.summary{
 		display:inline-block;
 		margin:15px auto;
 		font-size:18px;
 		line-height: 26px;
-		
+
 		span.time,
 		span.name{
 			padding:0;
 		}
-		
+
 		.disclaimer{
 			margin:15px 0;
 			font-size:14px;
 		}
-		
+
 		p{
 			font-size:14px;
 		}
 	}
-	
+
 	.tip{
 		text-align:center;
 	}
-	
+
 	.battle-details{
 		text-align: left;
-		
+
 		table{
 			margin: 10px auto 0 auto;
 			text-align: center;
-			
+
 			.name{
 				font-size:14px;
 				font-weight: bold;
@@ -1133,25 +1134,25 @@ select, input{
 				display: block;
 				background-image:url('../img/starburst_red.png');
 				text-decoration: none;
-				
+
 				&.win{
 					background-image:url('../img/starburst.png');
 				}
 			}
 		}
 	}
-	
+
 	&.multi{
 		text-align: left;
-		
+
 		.poke-search{
 			margin-top:15px;
 		}
-		
+
 		.button{
 			display:inline-block;
 		}
-		
+
 		.rankings-container{
 			.rank:hover{
 				border-left:none;
@@ -1162,9 +1163,9 @@ select, input{
 }
 
 .rating-table{
-	
+
 	text-align: center;
-	
+
 	tr{
 		background:none;
 	}
@@ -1193,12 +1194,12 @@ select, input{
 	margin: 25px 0;
 	top:0;
 	left:0;
-	
+
 	.item-container{
 		position:absolute;
 		top:0;
-		
-	
+
+
 		.item{
 			display:block;
 			cursor:pointer;
@@ -1206,7 +1207,7 @@ select, input{
 			left:-50%;
 			z-index:10;
 			text-decoration:none;
-			
+
 			@include transform(scale(0, 0));
 			@include transition(transform, 0.3s, cubic-bezier(0.64, 0.57, 0.67, 1.53), 0s);
 
@@ -1226,7 +1227,7 @@ select, input{
 				border:2px solid #000;
 				z-index: 10;
 			}
-			
+
 			&.shield{
 				width:22px;
 				height:20px;
@@ -1234,18 +1235,18 @@ select, input{
 				background:url('../img/shield.png');
 				z-index: 10;
 			}
-			
+
 			&.faint{
 				color:$color-faint;
 				font-size:20px;
 				top: -11px;
 				font-weight: bold;
 			}
-			
+
 			&.faint::after{
 				content:"X";
 			}
-			
+
 			&.tap{
 				width:6px;
 				height:2px;
@@ -1256,31 +1257,31 @@ select, input{
 				border-radius:12px;
 				background:none !important;
 			}
-			
+
 			&.buff{
 				background-image:url('../img/move_buff.png') !important;
 				background-position: center -50% !important;
 				background-repeat: no-repeat !important;
-				
+
 				-webkit-animation: BUFF-ANIMATION 1.5s infinite; /* Safari 4+ */
 				-moz-animation:    BUFF-ANIMATION 1.5s infinite; /* Fx 5+ */
 				-o-animation:      BUFF-ANIMATION 1.5s infinite; /* Opera 12+ */
 				animation:         BUFF-ANIMATION 1.5s infinite; /* IE 10+, Fx 29+ */
 				animation-timing-function: linear;
 			}
-			
+
 			&.debuff{
 				background-image:url('../img/move_debuff.png') !important;
 				background-position: center 150% !important;
 				background-repeat: no-repeat !important;
-				
+
 				-webkit-animation: DEBUFF-ANIMATION 1.5s infinite; /* Safari 4+ */
 				-moz-animation:    DEBUFF-ANIMATION 1.5s infinite; /* Fx 5+ */
 				-o-animation:      DEBUFF-ANIMATION 1.5s infinite; /* Opera 12+ */
 				animation:         DEBUFF-ANIMATION 1.5s infinite; /* IE 10+, Fx 29+ */
 				animation-timing-function: linear;
 			}
-			
+
 			&.active{
 				@include transform(scale(1, 1));
 			}
@@ -1299,18 +1300,18 @@ select, input{
 		text-align: left;
 		font-weight: bold;
 		font-size:12px;
-		
+
 		span:after{
 			font-size:14px;
 			content:"\025B4";
 			visibility: hidden;
 		}
-		
+
 		&.asc span:after{
 			visibility: visible;
 			content:"\025B4";
 		}
-		
+
 		&.desc span:after{
 			visibility: visible;
 			content:"\025BE";
@@ -1324,24 +1325,24 @@ select, input{
 	td{
 		padding:5px;
 	}
-	
+
 	span.type{
 		display:block;
 		border-radius:8px;
 		padding:2px 4px;
 		text-align: center;
-		
+
 		&.dark,
 		&.dragon{
 			color:$color-off-white;
 		}
 	}
-	
+
 	&.sortable-table{
-		
+
 		.label{
 			cursor:pointer;
-			
+
 			-webkit-touch-callout: none; /* iOS Safari */
 			-webkit-user-select: none; /* Safari */
 			-khtml-user-select: none; /* Konqueror HTML */
@@ -1422,23 +1423,23 @@ select, input{
 	font-weight: bold;
 	padding:5px 10px;
 	box-sizing:border-box;
-	
+
 	&.right{
 		text-align: right;
 	}
 }
 
 .rankings-container {
-	
+
 	margin-top:20px;
 	max-height:400px;
 	overflow-y:scroll;
-	
+
 	&.threats,
 	&.alternatives{
 		overflow-y:initial;
 	}
-	
+
 	& > .rank:hover, > .rank.selected{
 		border-left:10px solid $color-highlight;
 	}
@@ -1448,20 +1449,20 @@ select, input{
 	padding:5px 10px;
 	border-radius:8px;
 	margin-bottom:5px;
-	
+
 	.name-container{
 		float:left;
 		padding:5px 0;
 	}
-	
+
 	.number{
 		padding-right:10px;
 	}
 	.name{
 		font-weight:bold;
 	}
-	
-	.rating-container{		
+
+	.rating-container{
 		.rating{
 			float:right;
 			color:$color-ranking;
@@ -1469,7 +1470,7 @@ select, input{
 			border-radius: 8px;
 			text-align: right;
 		}
-		
+
 		a{
 			display:inline-block;
 			width:32px;
@@ -1482,7 +1483,7 @@ select, input{
 			opacity: .5;
 		}
 	}
-	
+
 
 	.moves{
 		display:flex;
@@ -1503,14 +1504,14 @@ select, input{
 			}
 		}
 	}
-	
+
 	.moveset{
 		.rating{
 			background: rgba(0,0,0,.7);
 			padding:5px;
 		}
 	}
-	
+
 	.details{
 		display:none;
 		cursor:initial;
@@ -1519,34 +1520,34 @@ select, input{
 			display:flex;
 			flex-wrap:wrap;
 		}
-		
+
 		.detail-section{
 			background:rgba(255,255,255,0.8);
 			padding:5px;
 			border-radius:8px;
 			box-sizing: border-box;
 			margin-top:5px;
-			
+
 			&.float{
 				width: 49.5%;
-				
+
 				&.margin{
 					margin-right:1%;
 				}
 			}
-			
+
 			&.overall{
 				width: 100%;
 				display: flex;
 				justify-content: space-around;
-				
+
 				.rating-container{
 					text-align:center;
-					
+
 					.ranking-header{
 						float:none;
 					}
-					
+
 					.rating{
 						padding: 5px;
 						display: inline-block;
@@ -1558,23 +1559,23 @@ select, input{
 					}
 				}
 			}
-			
+
 			.move{
 				display:inline-block;
 				padding:5px;
 				margin-right:5px;
 				border-radius:8px;
-				
+
 				&.charged{
 					font-weight:bold;
 				}
 			}
-			
+
 			.rating-container .rating{
 				background-color: rgba(0,0,0,.35);
 			}
 		}
-		
+
 		h2{ margin: 0 0 5px 0; }
 	}
 }
@@ -1596,7 +1597,7 @@ select, input{
 	font-weight: bold;
 	width:auto;
 	text-decoration: none;
-}	
+}
 
 .rankings-container > .rank > .rating-container > .rating{
 	background-image:none;
@@ -1608,14 +1609,14 @@ select, input{
 
 .ranking-categories{
 	float:right;
-	
+
 	a{
 		text-decoration: none;
 		color:$color-off-black;
 		padding:10px;
 		border-radius:8px;
 		display:inline-block;
-		
+
 		&.selected{
 			background:#fff;
 			font-weight:bold;
@@ -1635,20 +1636,20 @@ select, input{
 /* TEAM BUILD STYLING */
 
 .team-build{
-	
+
 	display:flex;
 	justify-content: space-between;
-	
-	.poke{		
-		
+
+	.poke{
+
 		a.random{
 			margin-bottom: 0;
 		}
-		
+
 		a.swap{
 			display:none;
 		}
-		
+
 		&:nth-of-type(2){
 
 			.poke-stats{
@@ -1662,26 +1663,26 @@ select, input{
 					@include transform(scale(1, 1));
 				}
 
-				.hp.bar-back .stat{			
+				.hp.bar-back .stat{
 					@include transform(scale(1, 1));
 				}
 			}
 		}
-		
+
 		.options, .bar-back, .move-bars{
 			display:none;
 		}
-	}	
+	}
 }
 
-.typings{ 
+.typings{
 	display:none;
-	
+
 	a.toggle{
 		font-size:1.17em;
 		font-weight:bold;
 		margin:1em 0;
-		
+
 		&:first-of-type{
 			margin-top:0;
 		}
@@ -1725,7 +1726,7 @@ select, input{
 .article span.type{
 	font-weight:normal;
 }
-	
+
 .typeRating{
 	border:2px solid #000;
 	border-radius:8px;
@@ -1743,7 +1744,7 @@ select, input{
 .alternatives.rankings-container{
 	.rank{
 		cursor:initial;
-		
+
 		&:hover{
 			border-left:none;
 		}
@@ -1753,7 +1754,7 @@ select, input{
 .histograms{
     display: flex;
     justify-content: space-around;
-	
+
 	.histogram{
 		position:relative;
 		width:31%;
@@ -1772,63 +1773,63 @@ select, input{
 				position:relative;
 				height:100%;
 				box-sizing:border-box;
-				
+
 				&:nth-of-type(10){
 					border-right: 1px dashed rgba(0, 0, 0, .5);
 				}
-				
+
 				.bar{
 					position: absolute;
 					bottom:0;
 					width:100%;
-					
+
 					@include transition(height, 0.3s, ease-out, 0s);
 				}
 			}
 		}
-		
+
 		h2{
 			font-size:18px;
 		}
-		
+
 		.move-label{
 			font-size:12px;
 		}
-		
+
 		.star.rating{
 			font-size: 14px;
     		display: inline-block;
 		}
-		
+
 		.x-axis{
 			display: flex;
 			justify-content: space-between;
-			
+
 			div{
 				font-size:12px;
 				width:27px;
-				
+
 				&:first-of-type{
 					text-align:left;
 				}
 			}
 		}
-		
+
 		.button{
 			font-size: 12px;
 			border: 1px solid #000;
 			padding: 5px;
 			display: none;
 		}
-		
+
 		.label-x-axis{
 			position:absolute;
 			left:-20px;
 			top:50%;
-			
+
 			@include transform(rotate(270deg));
 		}
-		
+
 		.stats{
 			text-align: left;
 			margin: 10px 0;
@@ -1842,27 +1843,27 @@ select, input{
 /* ARTICLE */
 
 .article{
-	
+
 	p:first-of-type{
 		margin-top:1em;
 	}
-	
+
 	p{
 		line-height:26px;
 	}
-	
+
 	.article-section{
-		
+
 		h3{
 			font-weight:normal;
 		}
 	}
-	
+
 	h2{
 		font-size: 22px;
 		margin-bottom: 10px;
 	}
-	
+
 	h3.article-header,
 	.tip{
 		background: rgba(0,0,0,.5);
@@ -1870,113 +1871,113 @@ select, input{
 		border-radius: 8px;
 		color:$color-off-white;
 	}
-	
+
 	table{
 		border:none;
 		margin:0 auto;
-		
+
 		td{
 			padding:5px;
 			vertical-align: top;
-			
+
 			&.buff{
 				color:$color-stat-buff;
 			}
 		}
-		
+
 		tr:nth-of-type(2n){
 			background:rgba(0,0,0,.1);
 		}
 	}
-	
+
 	.rating-table{
-		
+
 		td{
 			padding: 1px;
 		}
-		
+
 		a{
 			display:block;
 			padding:5px 12px;
 			border-radius:8px;
 			text-decoration: none;
-			
+
 			span{
 				display:block;
 				margin:0 auto;
 				width:18px;
 				height:18px;
 			}
-	
+
 			&.win{
 				background-color: rgb(1, 141, 186);
-				
+
 				span{
 					border-radius:20px;
 					background:#fff6d4;
 				}
 			}
-			
+
 			&.close-win{
 				background-color: rgba(63, 94, 172, 1);
-				
+
 				span{
 					border-radius:20px;
 					border:2px solid #fff6d4;
 					box-sizing:border-box;
 				}
 			}
-			
+
 			&.close-loss{
 				background-color: rgba(114, 54, 159, 1);
-				
+
 				span{
 					color:#ffacdb;
-					
+
 					&:after{
 						content:"x";
 					}
 				}
 			}
-			
+
 			/*
 			*	|	||
 			*	||	|_
 			*/
-			
+
 			&.loss{
 				background-color: rgb(185, 0, 143);
-				
+
 				span{
 					color:#ff6abe;
 					font-size:18px;
 					font-weight:bold;
-					
+
 					&:after{
 						content:"X";
 					}
 				}
 			}
-			
+
 			&.tie{
 				background-color: rgb(93, 71, 165);
-				
+
 				span{
 					color:#fff6d4;
-					
+
 					&:after{
 						content:"-";
 					}
 				}
 			}
 		}
-		
+
 		td.name{
 			vertical-align: middle;
 			text-align: left;
 			padding-right:10px;
 		}
-	
+
 		&.legend{
 			margin:0;
 			text-align: left;
@@ -1996,65 +1997,65 @@ select, input{
 	.col-9{
 		padding: 0 10px;
 	}
-	
+
 	img{
 		display:block;
 		border:1px solid #000;
 	}
-	
+
 	h4{
 		margin-top:0;
 	}
 }
 
 .article, .article-item{
-	
+
 	.date{
 		margin-bottom:1em;
 		font-size:14px;
 	}
-	
+
 	h1:first-of-type,
 	h4:first-of-type{
 		margin:0;
 	}
-	
+
 	img{
 		display:block;
 		max-width:100%;
 		border:1px solid #000;
 	}
-	
+
 }
 
 
 /* CONTRIBUTORS */
 
 .contribute{
-	
+
 	h2{
 		font-size:20px;
 	}
-	
+
 	.supporters{
 		justify-content: center;
 		flex-wrap:wrap;
-		
+
 		.supporter-container{
-			
+
 			margin-bottom:15px;
-			
+
 			img{
 				display:block;
 				max-height:85px;
 				margin: 0 auto;
 			}
-			
+
 			.space{
 				width:85px;
 				height:85px;
 			}
-			
+
 		}
 
 		.supporter{
@@ -2071,7 +2072,7 @@ select, input{
 .move-table-container{
 	max-width: 400px;
 	margin: 0 auto;
-	
+
 	.poke-search{
 		margin-top:15px;
 	}
@@ -2080,67 +2081,67 @@ select, input{
 .move-explore-container{
 	max-width:500px;
 	margin:0 auto;
-	
+
 	.move-select-container{
 		justify-content: space-between;
-		
+
 		.move-select-item{
 			max-width:180px;
 		}
-		
+
 		.poke-search{
 			margin-bottom:5px;
 		}
-		
+
 		.check{
 			font-size:14px;
 		}
-		
+
 		h3{
 			font-size:14px;
 		}
 	}
-	
+
 	.moveset-stats{
 		flex-wrap:wrap;
 		justify-content: center;
 		text-align: center;
-		
+
 		.stat{
 			margin:10px 15px;
-			
+
 			h3{
 				margin-top:0;
 				font-size:14px;
 			}
 		}
 	}
-	
+
 	.explore-results{
-		
+
 		margin-top:30px;
-		
+
 		h2{
 			margin-top:30px;
 		}
-		
+
 		h2 + div{
 			font-size:14px;
 		}
-		
+
 		.rankings-container{
 			margin-top:10px;
 		}
-		
+
 		a.rank{
 			display:block;
 			text-decoration: none;
 			color:#000;
-			
+
 			&:hover{
 				border-left:none;
 			}
-			
+
 			.name-container{
 				pointer-events: none;
 				float: none;
@@ -2167,7 +2168,7 @@ select, input{
 	z-index:20;
 	padding:10px;
 	box-sizing:border-box;
-	
+
 	.modal-container{
 		position:relative;
 		background: rgba(255, 255, 255, 0.96);
@@ -2177,40 +2178,40 @@ select, input{
 		margin-top: 50px;
 		border-radius: 8px;
 		overflow:hidden;
-		
+
 		.modal-header{
 			padding:10px;
 			background:$color-gold;
 			font-size:24px;
 			font-weight: bold;
 		}
-		
+
 		.modal-close{
-			
+
 			position: absolute;
 			top:0;
 			right:0;
 			padding:10px;
 			cursor:pointer;
-			
+
 			&:after{
 				content:"X";
 			}
 		}
-		
+
 		.modal-content{
 			padding:10px;
 		}
-		
+
 		.poke.single{
 			float:none;
 			margin:0 auto;
 			max-width:200px;
-			
+
 			.poke-stats{
 				background:none;
 			}
-			
+
 			.clear-selection,
 			.hp.bar-back,
 			.move-bars,
@@ -2222,16 +2223,16 @@ select, input{
 				display:none;
 			}
 		}
-		
+
 		.poke-search{
 			margin-bottom:5px;
 		}
-		
+
 		.move-select{
 			max-width:200px;
 		}
 	}
-	
+
 	.sandbox-move-select{
 		.move-select{
 			font-size:18px;
@@ -2254,14 +2255,14 @@ select, input{
 			}
 		}
 	}
-	
+
 	.list-export{
-		
+
 		.list-text{
 			width:100%;
 			height:200px;
 		}
-		
+
 		.copy{
 			display:inline-block;
 			cursor: pointer;
@@ -2273,13 +2274,13 @@ select, input{
 			margin:5px 0;
 		}
 	}
-	
+
 	.save-list{
 		input{
 			font-size:18px;
 		}
 	}
-	
+
 
 	.button{
 		margin:25px auto 0 auto;
@@ -2337,7 +2338,7 @@ a.toggle{
 	> .name-container{
 		color:$color-off-white;
 	}
-	
+
 }
 
 .buff, .debuff{
@@ -2387,23 +2388,23 @@ a.toggle{
 /* RESPONSIVE */
 
 @media only screen and (max-width: 720px) {
-	
+
 	.mobile{
 		display:block;
 	}
-	
+
 	header{
-			
+
 		background:$color-gold;
 		position:fixed;
 		width:100%;
 		z-index:50;
-		
+
 		.title{
 			float:none;
 			text-align: center;
 		}
-		
+
 		.menu{
 			display:none;
 			float:none;
@@ -2417,14 +2418,14 @@ a.toggle{
 				padding-left: 34px;
 				font-size: 22px;
 			}
-			
+
 			.icon-twitter span{ display:inline-block; }
 		}
-		
+
 		.hamburger{
 			display:block;
 			float:right;
-			
+
 			.meat{
 				width: 30px;
 				height: 5px;
@@ -2434,39 +2435,39 @@ a.toggle{
 			}
 		}
 	}
-	
+
 	#main{
-		padding-top:45px;		
-		
+		padding-top:45px;
+
 		& > h1{
 		font-size:26px;
 		}
 	}
-	
+
 	.tooltip.sandbox{
 		display:none !important;
 	}
-	
+
 	.stats-table.sortable-table{
 		font-size:14px;
 	}
-	
+
 	.poke{
 		width:49%;
-		
+
 		.poke-stats{
 			max-width:100%;
 		}
-		
+
 		input, select, .bar-back{
 			max-width:100%;
 		}
-		
+
 		.poke-stats .stat-container .bar-back{
 			width:60px;
 		}
 	}
-	
+
 	.rank{
 		.details .detail-section{
 
@@ -2487,7 +2488,7 @@ a.toggle{
 				font-size:14px;
 			}
 		}
-		
+
 		.moves{
 			max-width:180px;
 		}
@@ -2496,17 +2497,17 @@ a.toggle{
 			width:auto !important;
 		}
 	}
-	
+
 	.histograms{
 		display:block;
-		
+
 		.histogram{
 			width:80%;
 			max-width:600px;
 			margin:20px auto;
 		}
 	}
-	
+
 	.flex{
 		.col-3{
 			flex-basis:25%;
@@ -2515,7 +2516,7 @@ a.toggle{
 			flex-basis:75%;
 		}
 	}
-	
+
 	.league-select,
 	.cup-select{
 		max-width:49%;
@@ -2525,18 +2526,18 @@ a.toggle{
 @media only screen and (min-width: 721px) {
 	.menu{
 		position:relative;
-		
+
 		.more{
 			font-size:40px;
 			font-family:serif;
 			line-height:0;
 			padding:0;
-			
+
 			&:after{
 				content:"...";
 			}
 		}
-		
+
 		.submenu{
 			padding-top:10px;
 			max-width:200px;
@@ -2546,20 +2547,20 @@ a.toggle{
 			height:0;
 			overflow: hidden;
 			pointer-events: none;
-			
+
 			@include transition(all, .125s, linear, 0s);
-			
+
 			&.active{
 				display:block;
 				height:150px;
 				pointer-events: auto;
 			}
-			
+
 			.submenu-wrap{
 				padding:2px 5px;
 				background:$color-gold;
 			}
-			
+
 			a{
 				float:none;
 				margin: 6px 0;
@@ -2567,5 +2568,5 @@ a.toggle{
 			}
 		}
 	}
-	
+
 }

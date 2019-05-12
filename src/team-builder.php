@@ -33,13 +33,13 @@ require_once 'header.php';
 		<div class="summary defense-summary"></div>
 		<div class="defense"></div>
 	</div>
-	
+
 	<a href="#" class="toggle active">Offense <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content">
 		<div class="summary offense-summary"></div>
 		<div class="offense"></div>
 	</div>
-	
+
 	<a href="#" class="toggle active">Battle Histograms <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content">
 		<p>The charts below show how many good or bad matchups each Pokemon has among all matchups possible. A Battle Rating below 500 is a loss, and a Battle Rating above 500 is a win. You can compare previous results to examine different Pokemon, movesets, or stats.</p>
@@ -47,9 +47,9 @@ require_once 'header.php';
 			<div class="histogram"></div>
 			<div class="histogram"></div>
 			<div class="histogram"></div>
-		</div>	
+		</div>
 	</div>
-	
+
 	<a href="#" class="toggle active">Potential Threats <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content">
 		<p>The Pokemon below have the best overall matchups against this team.</p>
@@ -63,7 +63,7 @@ require_once 'header.php';
 		<div class="alternatives rankings-container"></div>
 		<div class="clear"></div>
 	</div>
-	
+
 	<div class="share-link-container">
 		<p>Share this team:</p>
 		<div class="share-link">
@@ -81,6 +81,7 @@ require_once 'header.php';
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BattleHistogram.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineAction.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TeamRanker.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/Main.js?v=3"></script>

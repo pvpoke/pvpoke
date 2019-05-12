@@ -1,5 +1,5 @@
-<?php require_once 'modules/config.php'; 
-$SITE_VERSION = '1.7.6';
+<?php require_once 'modules/config.php';
+$SITE_VERSION = '1.7.7';
 ?>
 <!doctype html>
 <html>
@@ -16,7 +16,7 @@ if(! isset($META_TITLE)){
 if(! isset($META_DESCRIPTION)){
 	$META_DESCRIPTION = 'Looking for an edge in Pokemon GO Trainer Battles? Become a master with our open-source Pokemon battle simulator, explore the top Pokemon rankings, and get your team rated for PvP battles.';
 }
-	
+
 if(! isset($OG_IMAGE)){
 	$OG_IMAGE = 'https://pvpoke.com/img/og.jpg';
 }

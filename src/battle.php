@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 $META_TITLE = 'Battle';
 
@@ -8,10 +8,10 @@ $CANONICAL = '/battle/';
 
 if(isset($_GET['p1']) && (isset($_GET['p2']))){
 	// Put Pokemon names in the meta title
-	
+
 	$name1 = ucwords(str_replace('_',' ', explode('-', htmlspecialchars($_GET['p1']))[0]));
 	$name2 = ucwords(str_replace('_',' ', explode('-', htmlspecialchars($_GET['p2']))[0]));
-	
+
 	$META_TITLE = 'Battle - ' . $name1 . ' vs. ' . $name2;
 }
 
@@ -41,7 +41,7 @@ require_once 'header.php';
 <div class="section battle">
 	<button class="battle-btn button">Battle</button>
 	<div class="tooltip"><h3 class="name"></h3><div class="details"></div></div>
-	
+
 	<div class="battle-results single">
 		<div class="sandbox-btn-container">
 			<div class="sandbox-btn" title="Manually edit the timeline">
@@ -51,7 +51,7 @@ require_once 'header.php';
 			<div class="sandbox clear-btn" title="Clear Timeline"></div>
 		</div>
 		<div class="clear"></div>
-		
+
 		<div class="timeline-container scale">
 			<div class="timeline"></div>
 			<div class="timeline"></div>
@@ -88,10 +88,10 @@ require_once 'header.php';
 			<p>Continue with <span class="name">Pokemon</span> against another opponent:</p>
 			<div class="button">Continue Battling</div>
 		</div>
-	
+
 		<div class="section white battle-details">
 			<a class="toggle active" href="#">Matchup Details <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
-			
+
 			<div class="toggle-content active">
 				<div class="matchup-detail-section">
 					<h2 class="center"><span class="name-1">Pokemon</span>'s Matchups vs. <span class="name-2">Pokemon</span></h2>
@@ -130,9 +130,9 @@ require_once 'header.php';
 					</table>
 					<p class="center">Click or tap to view battles.</p>
 				</div>
-				
+
 				<h2 class="center">Battle Stats</h2>
-				
+
 				<table class="stats-table" cellspacing="0">
 					<tr>
 						<td></td>
@@ -187,7 +187,7 @@ require_once 'header.php';
 				</table>
 			</div>
 		</div>
-		
+
 		<div class="section about white">
 			<a class="toggle" href="#">About the Battle Simulator <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 			<div class="toggle-content">
@@ -237,23 +237,23 @@ require_once 'header.php';
 				<p>This can result in a battle simulation where two Pokemon knock each other out simultaneously. In these scenarios, bear in mind that the outcome of an actual battle may vary and, in the case of simultaneous Charged Moves, is heavily dependent on which goes first.</p>
 			</div>
 		</div>
-		
+
 	</div>
-	
-		
+
+
 	<div class="section white battle-results multi">
 		<a class="toggle active" href="#">Overall Results <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 
 		<div class="toggle-content">
 
 			<p>The histogram below shows how many winning and losing matchups your Pokemon has. You can see previous results to compare Pokemon, movesets, or shield scenarios.</p>
-		
+
 			<div class="histograms">
 				<div class="histogram"></div>
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="section white battle-results multi">
 		<a class="toggle active" href="#">Individual Matchups <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 
@@ -265,7 +265,7 @@ require_once 'header.php';
 			<a href="#" class="button download-csv">Export to CSV</a>
 		</div>
 	</div>
-	
+
 	<div class="battle-results multi">
 		<div class="share-link-container">
 			<p>Share this battle:</p>
@@ -281,7 +281,7 @@ require_once 'header.php';
 
 <div class="sandbox-move-select hide">
 	<select class="move-select"></select>
-	
+
 	<div class="move-stats flex">
 		<div class="stat-dmg"><span class="stat"></span> damage</div>
 		<div class="stat-energy"><span class="stat"></span> energy</div>
@@ -290,10 +290,10 @@ require_once 'header.php';
 		<div class="stat-ept fast"><span class="stat"></span> ept</div>
 		<div class="stat-dpe charged"><span class="stat"></span> dpe</div>
 	</div>
-	
+
 	<div class="check shields charged"><span></span>Shield this attack</div>
 	<div class="check buffs charged"><span></span>Apply buffs/debuffs</div>
-	
+
 	<div class="center">
 		<div class="button apply">Apply Changes</div>
 	</div>
@@ -301,7 +301,7 @@ require_once 'header.php';
 
 <div class="sandbox-clear-confirm hide">
 	<p>Clear all custom actions from the timeline? This will reset the battle to Fast Moves only so you can start from a clean slate.</p>
-	
+
 	<div class="center flex">
 		<div class="button yes">Yes</div>
 		<div class="button no">No</div>
