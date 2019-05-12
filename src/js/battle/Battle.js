@@ -443,6 +443,12 @@ function Battle(){
 				}
 
 				self.processAction(action, poke, opponent);
+
+				// Add extra time to space out prioritized charged moves
+
+				if((n == 0)&&(action.type == "charged")&&(turnActions.length > 1)&&(! roundShieldUsed)&&(turnActions[n+1].type == "charged")&&(pokemon[1].hp > 0)){
+					time += 7500;
+				}
 			}
 
 			// Set previous turn Actions
@@ -456,7 +462,7 @@ function Battle(){
 
 				if(roundShieldUsed){
 					time += 7500 * (roundChargedMoveUsed-1);
-				} else if((! usePriority)||((pokemon[0].hp > 0)&&(pokemon[1].hp > 0))){
+				} else{
 					time += 7500;
 				}
 
@@ -883,10 +889,6 @@ function Battle(){
 
 					self.logDecision(turns, defender, " doesn't shield because it can withstand the attack and is saving shields for later, boosted attacks");
 				}
-			}
-
-			if((usePriority)&&(roundChargedMoveUsed==0)&&(! useShield)){
-				time+=7500;
 			}
 
 		} else{
