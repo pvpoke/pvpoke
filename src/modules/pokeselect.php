@@ -92,6 +92,7 @@
 					<div class="label">Energy:</div><input class="start-energy" type="number" min="0" max="100" placeholder="Starting Energy" />
 				</div>
 				<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
+				<div class="check negate-fast-moves"><span></span>Negate Fast Moves between Charged Moves</div>
 				<div class="check priority"><span></span>Charged Move priority</div>
 			</div>
 		</div>

@@ -410,20 +410,22 @@ function Battle(){
 					case "fast":
 						action.valid = true;
 
-						// Check for a charged move last turn and this turn
-						var chargedMoveLastTurn = false;
+						if(poke.negateFastMoves){
+							// Check for a charged move last turn and this turn
+							var chargedMoveLastTurn = false;
 
-						for(var j = 0; j < previousTurnActions.length; j++){
-							var a = previousTurnActions[j];
+							for(var j = 0; j < previousTurnActions.length; j++){
+								var a = previousTurnActions[j];
 
-							if(a.type == "charged"){
-								chargedMoveLastTurn = true;
+								if(a.type == "charged"){
+									chargedMoveLastTurn = true;
+								}
 							}
-						}
 
 
-						if((chargedMoveLastTurn)&&(chargedMoveThisTurn > 0)){
-							action.valid = false;
+							if((chargedMoveLastTurn)&&(chargedMoveThisTurn > 0)){
+								action.valid = false;
+							}
 						}
 						break;
 

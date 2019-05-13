@@ -164,6 +164,16 @@ function PokeSelect(element, i){
 					self.animateEnergy(i, 0);
 				}
 			}
+
+			// Update checkbox options to match current settings
+
+			if(selectedPokemon.priority == 1){
+				$el.find(".check.priority").addClass("on");
+			}
+
+			if(! selectedPokemon.negateFastMoves){
+				$el.find(".check.negate-fast-moves").removeClass("on");
+			}
 		}
 	}
 
@@ -208,6 +218,7 @@ function PokeSelect(element, i){
 		$el.find(".starting-health").val(selectedPokemon.stats.hp);
 		$el.find(".check.shield-baiting").addClass("on");
 		$el.find(".check.priority").removeClass("on");
+		$el.find(".check.negate-fast-moves").addClass("on");
 
 		isCustom = false;
 
@@ -570,8 +581,12 @@ function PokeSelect(element, i){
 		battle.overridePriority( (index == 0) ? 1 : 0, 0);
 
 		selectedPokemon.priority = ($(e.target).hasClass("on")) ? 0 : 1;
+	});
 
-		console.log(selectedPokemon.priority);
+	// Toggle fast move negating
+
+	$el.find(".check.negate-fast-moves").on("click", function(e){
+		selectedPokemon.negateFastMoves = ($(e.target).hasClass("on")) ? 0 : 1;
 	});
 
 	// Toggle the advanced options drawer
