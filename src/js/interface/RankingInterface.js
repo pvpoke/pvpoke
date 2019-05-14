@@ -2,12 +2,12 @@
 
 var InterfaceMaster = (function () {
     var instance;
- 
+
     function createInstance() {
-		
-		
+
+
         var object = new interfaceObject();
-		
+
 		function interfaceObject(){
 
 			var self = this;
@@ -20,264 +20,268 @@ var InterfaceMaster = (function () {
 				} else{
 					this.loadGetData();
 				}
-				
-				
+
+
 				$(".league-select").on("change", selectLeague);
 				$(".cup-select").on("change", selectCup);
 				$(".ranking-categories a").on("click", selectCategory);
-				
+
 				window.addEventListener('popstate', function(e) {
 					get = e.state;
 					self.loadGetData();
 				});
 			};
-			
+
 			// Grabs ranking data from the Game Master
-			
+
 			this.displayRankings = function(category, league, cup){
-				
+
 				var gm = GameMaster.getInstance();
-								
+
 				$(".rankings-container").html('');
 				$(".loading").show();
-				
+
 				// Force 1500 if not general
-				
+
 				if(cup != 'all'){
 					league = 1500;
-					
+
 					$(".league-select option[value=\"1500\"]").prop("selected","selected");
 				}
-				
-				/* This timeout allows the interface to display the loading message before 
+
+				/* This timeout allows the interface to display the loading message before
 				being thrown into the data loading loop */
-				
+
 				setTimeout(function(){
 					gm.loadRankingData(self, category, league, cup);
 				}, 50);
-				
+
 			}
-			
+
 			// Displays the grabbed data. Showoff.
-			
+
 			this.displayRankingData = function(rankings){
-				
+
 				var gm = GameMaster.getInstance();
-				
+
 				data = rankings;
-				
+
 				// Create an element for each ranked Pokemon
-				
+
 				for(var i = 0; i < rankings.length; i++){
 					var r = rankings[i];
-					
+
 					var pokemon = new Pokemon(r.speciesId);
-					
+
 					// Get names of of ranking moves
-					
+
 					var moveNameStr = '';
-					
+
 					var arr = r.moveStr.split("-");
 
 					moveNameStr = pokemon.fastMovePool[arr[0]].name + ", " + pokemon.chargedMovePool[arr[1]-1].name;
-					
+
 					if((arr.length > 2)&&(arr[2] != "0")){
 						moveNameStr += ", " + pokemon.chargedMovePool[arr[2]-1].name;
 					}
-					
+
 					// Is this the best way to add HTML content? I'm gonna go with no here. But does it work? Yes!
-					
+
 					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span><div class=\"moves\">"+moveNameStr+"</div></div><div class=\"rating-container\"><div class=\"rating\">"+r.score+"</span></div><div class=\"clear\"></div></div><div class=\"details\"></div>");
 
 					$(".rankings-container").append($el);
 				}
-				
+
 				$(".loading").hide();
 				$(".rank").on("click", selectPokemon);
-				
-				
+
+
 				// If search string exists, process it
-				
+
 				if($(".poke-search").val() != ''){
 					$(".poke-search").trigger("keyup");
 				}
-				
-				
+
+
 				// If a Pokemon has been selected via URL parameters, jump to it
-				
+
 				if(jumpToPoke){
 					var $el = $(".rank[data=\""+jumpToPoke+"\"]")
 					$el.trigger("click");
-					
+
 					// Scroll to element
-					
+
 					$("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, 500);
 					$(".rankings-container").scrollTop($el.position().top-$(".rankings-container").position().top-20);
-					
+
 					jumpToPoke = false;
 				}
 			}
-			
+
 			// Given JSON of get parameters, load these settings
-			
+
 			this.loadGetData = function(){
-				
+
 				if(! get){
 					return false;
 				}
-				
+
 				// Cycle through parameters and set them
-				
+
 				for(var key in get){
 					if(get.hasOwnProperty(key)){
-						
+
 						var val = get[key];
-						
+
 						// Process each type of parameter
-						
+
 						switch(key){
-								
+
 							// Don't process default values so data doesn't needlessly reload
-	
+
 							case "cp":
 								$(".league-select option[value=\""+val+"\"]").prop("selected","selected");
-								
+
 								break;
-								
+
 							case "cat":
 								$(".ranking-categories a").removeClass("selected");
 								$(".ranking-categories a[data=\""+val+"\"]").addClass("selected");
 								break;
-								
+
 							case "cup":
 								$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
-								
+
 								break;
-								
+
 							case "p":
 								// We have to wait for the data to load before we can jump to a Pokemon, so store this for later
 								jumpToPoke = val;
 								break;
-								
+
 						}
 					}
 				}
-				
+
 				// Load data via existing change function
-				
+
 				var cp = $(".league-select option:selected").val();
 				var category = $(".ranking-categories a.selected").attr("data");
 				var cup = $(".cup-select option:selected").val();
-				
+
 				self.displayRankings(category, cp, cup, null);
 			}
-			
+
 			// When the view state changes, push to browser history so it can be navigated forward or back
-			
+
 			this.pushHistoryState = function(cup, cp, category, speciesId){
 				var url = webRoot+"rankings/"+cup+"/"+cp+"/"+category+"/";
-				
+
 				if(speciesId){
 					url += speciesId+"/";
 				}
-				
+
 				var data = {cup: cup, cp: cp, cat: category, p: speciesId };
-				
+
 				window.history.pushState(data, "Rankings", url);
-				
+
 				// Send Google Analytics pageview
-				
+
 				gtag('config', UA_ID, {page_location: (host+url), page_path: url});
+				gtag('event', 'Lookup', {
+				  'event_category' : 'Rankings',
+				  'event_label' : speciesId
+				});
 			}
-			
+
 			// Event handler for changing the league select
-			
+
 			function selectLeague(e){
 				var cp = $(".league-select option:selected").val();
 				var category = $(".ranking-categories a.selected").attr("data");
 				var cup = $(".cup-select option:selected").val();
-				
+
 				self.displayRankings(category, cp, cup);
-				
+
 				self.pushHistoryState(cup, cp, category, null);
 			}
-			
+
 			// Event handler for changing the cup select
-			
+
 			function selectCup(e){
 				var cp = $(".league-select option:selected").val();
 				var category = $(".ranking-categories a.selected").attr("data");
 				var cup = $(".cup-select option:selected").val();
-				
+
 				self.displayRankings(category, cp, cup);
-				
+
 				self.pushHistoryState(cup, cp, category, null);
 			}
-			
+
 			// Event handler for selecting ranking category
-			
+
 			function selectCategory(e){
-				
+
 				e.preventDefault();
-				
+
 				$(".ranking-categories a").removeClass("selected");
-				
+
 				$(e.target).addClass("selected");
-				
+
 				var cp = $(".league-select option:selected").val();
 				var category = $(".ranking-categories a.selected").attr("data");
 				var cup = $(".cup-select option:selected").val();
-				
+
 				$(".description").hide();
 				$(".description."+category).show();
-				
+
 				self.displayRankings(category, cp, cup);
-				
+
 				self.pushHistoryState(cup, cp, category, null);
 			}
-			
+
 			// Event handler clicking on a Pokemon item, load detail data
-			
+
 			function selectPokemon(e){
 
 				// Don't collapse when clicking links or the share button
-				
+
 				if(! $(e.target).is(".rank, .rank > .rating-container, .rank > .rating-container *, .rank > .name-container, .rank > .name-container *")||($(e.target).is("a"))){
 					return;
 				}
-				
+
 				var $rank = $(this).closest(".rank");
 
-				
+
 				$rank.toggleClass("selected");
 				$rank.find(".details").toggleClass("active");
 
 				var index = $(".rankings-container > .rank").index($rank);
 				var $details = $(".details").eq(index);
-				
+
 				if($details.html() != ''){
 					return;
 				}
-				
-				var r = data[index];				
+
+				var r = data[index];
 				var pokemon = new Pokemon(r.speciesId);
-				
+
 				// If overall, display score for each category
-				
+
 				if(r.scores){
 					var categories = ["Lead","Closer","Attacker","Defender"];
-					
+
 					var $section = $("<div class=\"detail-section overall\"></div>");
-					
+
 					for(var i = 0; i < r.scores.length; i++){
 						var $item = $("<div class=\"rating-container\"><div class=\"ranking-header\">"+categories[i]+"</div><div class=\"rating\">"+r.scores[i]+"</div></div>");
-						
+
 						$section.append($item);
 					}
-					
+
 					$details.append($section);
 				}
-				
+
 				// Display move data
 
 				var fastMoves = pokemon.fastMovePool;
@@ -309,21 +313,21 @@ var InterfaceMaster = (function () {
 
 				fastMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
 				chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
-				
+
 				// Buckle up, this is gonna get messy. This is the main detail HTML.
-				
+
 				$details.append("<div class=\"detail-section float margin\"><div class=\"ranking-header\">Fast Moves</div><div class=\"ranking-header right\">Usage</div><div class=\"moveset fast clear\"></div></div><div class=\"detail-section float\"><div class=\"ranking-header\">Charged Moves</div><div class=\"ranking-header right\">Usage</div><div class=\"moveset charged clear\"></div></div><div class=\"detail-section float margin\">	<div class=\"ranking-header\">Key Matchups</div><div class=\"ranking-header right\">Battle Rating</div><div class=\"matchups clear\"></div></div><div class=\"detail-section float\"><div class=\"ranking-header\">Top Counters</div><div class=\"ranking-header right\">Battle Rating</div><div class=\"counters clear\"></div></div><div class=\"clear\"></div><div class=\"share-link detail-section\"><input type=\"text\" readonly><div class=\"copy\">Copy</div></div></div>");
-				
+
 				// Need to calculate percentages
-				
+
 				var totalFastUses = 0;
 
 				for(var n = 0; n < fastMoves.length; n++){
 					totalFastUses += fastMoves[n].uses;
 				}
-				
+
 				// Display fast moves
-				
+
 				for(var n = 0; n < fastMoves.length; n++){
 					var percentStr = (Math.floor((fastMoves[n].uses / totalFastUses) * 1000) / 10) + "%";
 					var displayWidth = (Math.floor((fastMoves[n].uses / totalFastUses) * 1000) / 20);
@@ -336,7 +340,7 @@ var InterfaceMaster = (function () {
 
 					$details.find(".moveset.fast").append("<div class=\"rank " + fastMoves[n].type + "\"><div class=\"name-container\"><span class=\"number\">#"+(n+1)+"</span><span class=\"name\">"+fastMoves[n].name+(fastMoves[n].legacy === false ? "" : " *")+"</span></div><div class=\"rating-container\"><div class=\"rating\" style=\"width:"+displayWidth+"\">"+percentStr+"</span></div><div class=\"clear\"></div></div>");
 				}
-				
+
 				// Display charged moves
 
 				var totalChargedUses = 0;
@@ -357,9 +361,9 @@ var InterfaceMaster = (function () {
 
 					$details.find(".moveset.charged").append("<div class=\"rank " + chargedMoves[n].type + "\"><div class=\"name-container\"><span class=\"number\">#"+(n+1)+"</span><span class=\"name\">"+chargedMoves[n].name+(chargedMoves[n].legacy === false ? "" : " *")+"</span></div><div class=\"rating-container\"><div class=\"rating\" style=\"width:"+displayWidth+"\">"+percentStr+"</span></div><div class=\"clear\"></div></div>");
 				}
-				
+
 				// Helper variables for displaying matchups and link URL
-				
+
 				var cp = $(".league-select option:selected").val();
 				var category = $(".ranking-categories a.selected").attr("data");
 				var shieldStrs = {
@@ -369,20 +373,20 @@ var InterfaceMaster = (function () {
 					"attackers": "/01/",
 					"defenders": "/10/"
 				}
-				
+
 				// Display key matchups
 
 				for(var n = 0; n < r.matchups.length; n++){
 					var m = r.matchups[n];
 					var opponent = new Pokemon(m.opponent);
 					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+shieldStrs[category]+'/'+r.moveStr+'/';
-					
+
 					// Append opponent's move string
-					
+
 					for(var j = 0; j < data.length; j++){
-						
+
 						if(data[j].speciesId == opponent.speciesId){
-							battleLink += data[j].moveStr + '/';					
+							battleLink += data[j].moveStr + '/';
 							break;
 						}
 					}
@@ -391,20 +395,20 @@ var InterfaceMaster = (function () {
 
 					$details.find(".matchups").append($item);
 				}
-				
+
 				// Display top counters
 
 				for(var n = 0; n < r.counters.length; n++){
 					var c = r.counters[n];
 					var opponent = new Pokemon(c.opponent);
 					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+shieldStrs[category]+'/'+r.moveStr+'/';
-					
+
 					// Append opponent's move string
-					
+
 					for(var j = 0; j < data.length; j++){
-						
+
 						if(data[j].speciesId == opponent.speciesId){
-							battleLink += data[j].moveStr + '/';					
+							battleLink += data[j].moveStr + '/';
 							break;
 						}
 					}
@@ -413,27 +417,27 @@ var InterfaceMaster = (function () {
 
 					$details.find(".counters").append($item);
 				}
-				
-				// Show share link		
+
+				// Show share link
 				var cup = $(".cup-select option:selected").val();
-				
+
 				var link = host + "rankings/"+cup+"/"+cp+"/"+category+"/"+pokemon.speciesId+"/";
-				
+
 				$details.find(".share-link input").val(link);
-				
+
 				// Only execute if this was a direct action and not loaded from URL parameters, otherwise pushes infinite states when the user navigates back
-				
+
 				if((get)&&(get.p == pokemon.speciesId)){
 					return;
 				}
-				
+
 				self.pushHistoryState(cup, cp, category, pokemon.speciesId);
 			}
 		};
-		
+
         return object;
     }
- 
+
     return {
         getInstance: function () {
             if (!instance) {

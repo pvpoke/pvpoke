@@ -349,6 +349,15 @@ var InterfaceMaster = (function () {
 
 					// Push state to browser history so it can be navigated, only if not from URL parameters
 
+					gtag('event', 'Lookup', {
+					  'event_category' : 'Simulation',
+					  'event_label' : pokemon[0].speciesId
+					});
+					gtag('event', 'Lookup', {
+					  'event_category' : 'Simulation',
+					  'event_label' : pokemon[1].speciesId
+					});
+
 					if(get){
 						get = false;
 
@@ -780,6 +789,11 @@ var InterfaceMaster = (function () {
 				$(".button.download-csv").attr("download", filename);
 
 				// Push state to browser history so it can be navigated, only if not from URL parameters
+
+				gtag('event', 'Lookup', {
+				  'event_category' : 'Simulation',
+				  'event_label' : pokemon.speciesId
+				});
 
 				if(get){
 					get = false;
