@@ -233,11 +233,7 @@ var RankerMaster = (function () {
 							}
 
 							battle.simulate();
-
-							if(pokemon.speciesId == "zapdos"){
-								battle.debug();
-							}
-
+							
 							var healthRating = (pokemon.hp / pokemon.stats.hp);
 							var damageRating = ((opponent.stats.hp - opponent.hp) / (opponent.stats.hp));
 

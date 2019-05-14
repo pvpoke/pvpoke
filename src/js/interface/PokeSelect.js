@@ -169,10 +169,14 @@ function PokeSelect(element, i){
 
 			if(selectedPokemon.priority == 1){
 				$el.find(".check.priority").addClass("on");
+			} else{
+				$el.find(".check.priority").removeClass("on");
 			}
 
 			if(! selectedPokemon.negateFastMoves){
 				$el.find(".check.negate-fast-moves").removeClass("on");
+			} else{
+				$el.find(".check.negate-fast-moves").addClass("on");
 			}
 		}
 	}

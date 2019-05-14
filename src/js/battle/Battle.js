@@ -355,6 +355,10 @@ function Battle(){
 
 							if((a.actor == i)&&(a.turn == turns)&&(poke.chargedMoves.length > a.value)){
 								action = a;
+
+								// Apply priority
+
+								action.settings.priority = poke.priority;
 							}
 						}
 					}
@@ -448,7 +452,7 @@ function Battle(){
 
 				// Add extra time to space out prioritized charged moves
 
-				if((n == 0)&&(action.type == "charged")&&(turnActions.length > 1)&&(! roundShieldUsed)&&(turnActions[n+1].type == "charged")&&(pokemon[1].hp > 0)){
+				if((n == 0)&&(action.type == "charged")&&(turnActions.length > 1)&&(! roundShieldUsed)&&(turnActions[n+1].type == "charged")&&(pokemon[0].hp > 0)&&(pokemon[1].hp > 0)){
 					time += 7500;
 				}
 			}
