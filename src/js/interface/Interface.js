@@ -351,11 +351,11 @@ var InterfaceMaster = (function () {
 
 					gtag('event', 'Lookup', {
 					  'event_category' : 'Simulation',
-					  'event_label' : pokemon[0].speciesId
+					  'event_label' : pokes[0].speciesId
 					});
 					gtag('event', 'Lookup', {
 					  'event_category' : 'Simulation',
-					  'event_label' : pokemon[1].speciesId
+					  'event_label' : pokes[1].speciesId
 					});
 
 					if(get){
