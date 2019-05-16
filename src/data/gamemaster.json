@@ -7112,10 +7112,13 @@
         "BRAVE_BIRD",
         "FOCUS_BLAST",
         "OVERHEAT",
-        "STONE_EDGE"
+        "STONE_EDGE",
+		"BLAST_BURN",
+		"BLAZE_KICK"
       ],
       "legacyMoves": [
-        "STONE_EDGE"
+        "STONE_EDGE",
+		"BLAST_BURN"
       ]
     },
     {
@@ -14101,6 +14104,15 @@
     {
       "moveId": "FIRE_PUNCH",
       "name": "Fire Punch",
+      "type": "fire",
+      "power": 55,
+      "energy": 40,
+      "energyGain": 0,
+      "cooldown": 500
+    },
+	{
+      "moveId": "BLAZE_KICK",
+      "name": "Blaze Kick",
       "type": "fire",
       "power": 55,
       "energy": 40,
