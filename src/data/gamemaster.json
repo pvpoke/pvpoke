@@ -926,7 +926,8 @@
       "chargedMoves": [
         "EARTHQUAKE",
         "SLUDGE_WAVE",
-        "STONE_EDGE"
+        "STONE_EDGE",
+		"EARTH_POWER"
       ]
     },
     {
@@ -996,7 +997,8 @@
       "chargedMoves": [
         "EARTHQUAKE",
         "MEGAHORN",
-        "SLUDGE_WAVE"
+        "SLUDGE_WAVE",
+		"EARTH_POWER"
       ],
       "legacyMoves": [
         "FURY_CUTTER"
@@ -4206,7 +4208,8 @@
         "ANCIENT_POWER",
         "HYPER_BEAM",
         "IRON_HEAD",
-        "ROCK_SLIDE"
+        "ROCK_SLIDE",
+		"EARTH_POWER"
       ]
     },
     {
@@ -8637,7 +8640,8 @@
       "chargedMoves": [
         "EARTHQUAKE",
         "OVERHEAT",
-        "SOLAR_BEAM"
+        "SOLAR_BEAM",
+		"EARTH_POWER"
       ]
     },
     {
@@ -9120,7 +9124,8 @@
       "chargedMoves": [
         "EARTHQUAKE",
         "GYRO_BALL",
-        "PSYCHIC"
+        "PSYCHIC",
+		"EARTH_POWER"
       ]
     },
     {
@@ -11278,7 +11283,8 @@
       "chargedMoves": [
         "BODY_SLAM",
         "EARTHQUAKE",
-        "WATER_PULSE"
+        "WATER_PULSE",
+		"EARTH_POWER"
       ]
     },
     {
@@ -11316,7 +11322,8 @@
       "chargedMoves": [
         "BODY_SLAM",
         "EARTHQUAKE",
-        "WATER_PULSE"
+        "WATER_PULSE",
+		"EARTH_POWER"
       ]
     },
     {
@@ -11936,7 +11943,8 @@
       "chargedMoves": [
         "BODY_SLAM",
         "EARTHQUAKE",
-        "STONE_EDGE"
+        "STONE_EDGE",
+		"EARTH_POWER"
       ]
     },
     {
@@ -14046,6 +14054,18 @@
       "energy": 65,
       "energyGain": 0,
       "cooldown": 500
+    },
+    {
+      "moveId": "EARTH_POWER",
+      "name": "Earth Power",
+      "type": "ground",
+      "power": 90,
+      "energy": 55,
+      "energyGain": 0,
+      "cooldown": 500,
+	  "buffs": [0, -1],
+	  "buffTarget": "opponent",
+	  "buffApplyChance": ".1"
     },
     {
       "moveId": "EMBER",

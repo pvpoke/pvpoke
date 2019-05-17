@@ -125,8 +125,7 @@
 			},
 			{
 				"speciesId": "bronzong",
-				"fastMove": "CONFUSION",
-				"weight": 0.5
+				"fastMove": "CONFUSION"
 			}
 		]
 	},
@@ -165,6 +164,23 @@
 			{
 				"speciesId": "tentacruel",
 				"chargedMoves": ["ACID_SPRAY", "HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "probopass",
+				"fastMove": "SPARK",
+				"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
+			},
+			{
+				"speciesId": "machamp",
+				"weight": 0.5
+			},
+			{
+				"speciesId": "lucario",
+				"weight": 0.5
+			},
+			{
+				"speciesId": "swampert",
+				"weight": 0.5
 			}
 		]
 	},

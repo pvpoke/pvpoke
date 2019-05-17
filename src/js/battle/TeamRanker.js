@@ -68,8 +68,8 @@ var RankerMaster = (function () {
 						minStats = 2000;
 					}
 
-					var bannedList = ["mewtwo","giratina_altered","groudon","kyogre","rayquaza","garchomp","palkia","dialga","heatran","giratina_origin"];
-					var permaBannedList = ["burmy_trash","burmy_sandy","burmy_plant","wormadam_plant","wormadam_sandy","wormadam_trash","mothim","cherubi","cherrim_overcast","cherrim_sunny","hippopotas","hippowdon","leafeon","glaceon","rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","regigigas","phione","manaphy","darkrai","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","jirachi","kecleon"]; // Don't rank these Pokemon at all yet
+					var bannedList = ["mewtwo","giratina_altered","groudon","kyogre","rayquaza","palkia","dialga","heatran","giratina_origin"];
+					var permaBannedList = ["rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","regigigas","phione","manaphy","darkrai","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","jirachi","kecleon"]; // Don't rank these Pokemon at all yet
 					var allowedList = [];
 
 					if(cup.name == "nightmare"){
