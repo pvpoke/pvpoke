@@ -62,10 +62,6 @@
 		"cup": "kingdom",
 		"pokemon": [
 			{
-				"speciesId": "blaziken",
-				"chargedMoves": ["BRAVE_BIRD", "FOCUS_BLAST"]
-			},
-			{
 				"speciesId": "flygon",
 				"chargedMoves": ["DRAGON_CLAW", "EARTHQUAKE"]
 			},
@@ -83,10 +79,6 @@
 		"league": 1500,
 		"cup": "nightmare",
 		"pokemon": [
-			{
-				"speciesId": "blaziken",
-				"chargedMoves": ["BRAVE_BIRD", "FOCUS_BLAST"]
-			},
 			{
 				"speciesId": "hypno",
 				"chargedMoves": ["SHADOW_BALL", "FOCUS_BLAST"]
@@ -173,7 +165,7 @@
 			{
 				"speciesId": "tentacruel",
 				"chargedMoves": ["ACID_SPRAY", "HYDRO_PUMP"]
-			}			
+			}
 		]
 	},
 	{
@@ -205,6 +197,14 @@
 			{
 				"speciesId": "dragonite",
 				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
+			},
+			{
+				"speciesId": "blaziken",
+				"chargedMoves": ["BLAZE_KICK", "BLAST_BURN"]
+			},
+			{
+				"speciesId": "machamp",
+				"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
 			}
 		]
 	}
