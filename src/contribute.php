@@ -45,6 +45,11 @@ require_once 'header.php'; ?>
 			<div class="supporter"><a href="https://pokenavbot.com/" target="_blank">PokeNav Discord Bot</a></div>
 		</div>
 		
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/circle_Logo.png" />
+			<div class="supporter"><a href="https://www.youtube.com/channel/UCZojcYclMVVsBob2IstepEA" target="_blank">Bestinwest</a></div>
+		</div>
+		
 	</div>
 </div>
 
