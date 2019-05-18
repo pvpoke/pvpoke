@@ -113,7 +113,8 @@
 			},
 			{
 				"speciesId": "claydol",
-				"fastMove": "CONFUSION"
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["EARTH_POWER","GYRO_BALL"]
 			},
 			{
 				"speciesId": "solrock",
