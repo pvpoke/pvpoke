@@ -6,6 +6,7 @@
 	<option value="kingdom">Kingdom Cup</option>
 	<option value="nightmare">Nightmare Cup</option>
 	<option value="regionals-1">Season 1 Regionals</option>
+	<option value="rainbow">Rainbow Cup</option>
 	
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'battle') !== false): ?>
 		<option value="custom">Custom</option>

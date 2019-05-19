@@ -186,6 +186,32 @@
 		]
 	},
 	{
+		"league": 1500,
+		"cup": "rainbow",
+		"pokemon": [
+			{
+				"speciesId": "magneton",
+				"chargedMoves": ["DISCHARGE", "MAGNET_BOMB"]
+			},
+			{
+				"speciesId": "moltres",
+				"chargedMoves": ["OVERHEAT", "FIRE_BLAST"]
+			},
+			{
+				"speciesId": "tentacruel",
+				"chargedMoves": ["ACID_SPRAY", "HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "lanturn",
+				"chargedMoves": ["THUNDERBOLT", "HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "zapdos",
+				"fastMove": "CHARGE_BEAM"
+			}
+		]
+	},
+	{
 		"league": 2500,
 		"cup": "all",
 		"pokemon": [

@@ -109,6 +109,10 @@ var RankerMaster = (function () {
 								continue;
 							}
 							
+							if((cup.name == "rainbow")&&( (pokemon.dex > 251) || (pokemon.speciesId.indexOf("alolan") > -1))){
+								continue;
+							}
+							
 							if((cup.types.length > 0) && (cup.types.indexOf(pokemon.types[0]) < 0) && (cup.types.indexOf(pokemon.types[1]) < 0) ){	
 								continue;
 							}

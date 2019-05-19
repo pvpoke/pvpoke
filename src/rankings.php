@@ -53,6 +53,10 @@ switch($cup){
 	case "regionals-1":
 		$league = 'Season 1 Regionals';
 		break;
+		
+	case "rainbow":
+		$league = 'Rainbow Cup';
+		break;
 }
 
 $META_TITLE = $league . ' PvP Rankings';
