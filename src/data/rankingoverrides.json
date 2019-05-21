@@ -208,6 +208,26 @@
 			{
 				"speciesId": "zapdos",
 				"fastMove": "CHARGE_BEAM"
+			},
+			{
+				"speciesId": "venomoth",
+				"fastMove": "CONFUSION"
+			},
+			{
+				"speciesId": "quagsire",
+				"chargedMoves": ["ACID_SPRAY", "STONE_EDGE"]
+			},
+			{
+				"speciesId": "forretress",
+				"chargedMoves": ["ROCK_TOMB", "EARTHQUAKE"]
+			},
+			{
+				"speciesId": "heracross",
+				"chargedMoves": ["MEGAHORN", "EARTHQUAKE"]
+			},
+			{
+				"speciesId": "mantine",
+				"chargedMoves": ["AERIAL_ACE", "WATER_PULSE"]
 			}
 		]
 	},

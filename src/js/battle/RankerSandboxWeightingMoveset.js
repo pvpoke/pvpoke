@@ -158,7 +158,7 @@ var RankerMaster = (function () {
 							if(permaBannedList.indexOf(pokemon.speciesId) > -1){
 								continue;
 							}
-							
+
 							if((cup.name == "rainbow")&&( (pokemon.dex > 251) || (pokemon.speciesId.indexOf("alolan") > -1))){
 								continue;
 							}
