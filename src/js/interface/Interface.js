@@ -98,6 +98,7 @@ var InterfaceMaster = (function () {
 				$("body").on("mousedown", ".modal .button.apply", applyActionChanges);
 				$(".sandbox.clear-btn").click(clearSandboxClick);
 				$("body").on("click", ".modal .sandbox-clear-confirm .button", confirmClearSandbox);
+				$(".update-btn").on("click", self.runSandboxSim);
 
 				// If get data exists, load settings
 
@@ -217,16 +218,20 @@ var InterfaceMaster = (function () {
 
 					if(event.type.indexOf("fast") > -1){
 
-						var canUseChargedMove = false;
+						var usableChargedMoves = 0;;
 
 						for(var n = 0; n < pokemon[event.actor].chargedMoves.length; n++){
 							if(energy[event.actor] >= pokemon[event.actor].chargedMoves[n].energy){
-								canUseChargedMove = true;
+								usableChargedMoves++;
 							}
 						}
+						
+						// Show differently whether 0, 1, or 2 Charged Moves are ready
 
-						if(! canUseChargedMove){
+						if(usableChargedMoves == 0){
 							$item.find(".item").addClass("disabled");
+						} else if(usableChargedMoves == 2){
+							$item.find(".item").addClass("both");
 						}
 					}
 
@@ -271,7 +276,7 @@ var InterfaceMaster = (function () {
 					$(".battle-results .summary .rating").first().css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
 
 					$(".continue-container").show();
-					$(".continue-container .name").html(winner.pokemon.speciesName + " (" + winner.hp + " HP)");
+					$(".continue-container .name").html(winner.pokemon.speciesName + " (" + winner.hp + " HP, " + winner.energy + " energy)");
 				} else{
 					$(".battle-results .summary").html("Simultaneous knockout in <span class=\"time\">"+durationSeconds+"s</span>");
 					$(".continue-container").hide();
@@ -1652,7 +1657,8 @@ var InterfaceMaster = (function () {
 						}
 					}
 
-					$(".battle-btn").css("visibility","hidden");
+					$(".battle-btn").hide();
+					$(".update-btn").css("display","block");
 				} else{
 					// Update both Pokemon selectors
 
@@ -1662,7 +1668,8 @@ var InterfaceMaster = (function () {
 						pokeSelectors[i].update();
 					}
 
-					$(".battle-btn").css("visibility","visible");
+					$(".battle-btn").show();
+					$(".update-btn").css("display","none");
 				}
 			}
 

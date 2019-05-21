@@ -573,6 +573,10 @@ header{
 			text-align: left;
 			font-size:14px;
 		}
+		
+		.pull-from-timeline{
+			margin-bottom:15px;
+		}
 
 		.label{
 			margin:5px 5px 5px 0;
@@ -842,6 +846,10 @@ select, input{
 	color:#000;
 
 	@include gradient($color-gold, $color-gold-dark);
+	
+	&.update-btn{
+		display:none;
+	}
 }
 
 .share-link-container{
@@ -975,6 +983,11 @@ select, input{
 				&:hover{
 					cursor:initial;
 				}
+			}
+			
+			.item.both{
+				border:2px solid #000;
+				top:-6px;
 			}
 		}
 
@@ -1574,6 +1587,22 @@ select, input{
 
 			.rating-container .rating{
 				background-color: rgba(0,0,0,.35);
+			}
+		}
+		
+		.multi-battle-link{
+			width:100%;
+			margin:10px 0;
+			text-align: center;
+			
+			p{
+				margin: 0;
+			}
+			
+			a.button{
+				font-size:16px;
+				display:inline-block;
+				margin: 0;
 			}
 		}
 

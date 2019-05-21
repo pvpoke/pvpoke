@@ -78,19 +78,21 @@
 		</div>
 
 		<div class="options">
+			<h3 class="section-title">Shields</h3>
+			<select class="shield-select">
+				<option value="0">No shields</option>
+				<option value="1">1 shield</option>
+				<option value="2">2 shields</option>
+			</select>
 			<a href="#" class="section-title toggle">Options <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 			<div class="toggle-content">
-				<select class="shield-select">
-					<option value="0">No shields</option>
-					<option value="1">1 shield</option>
-					<option value="2">2 shields</option>
-				</select>
 				<div class="flex">
 					<div class="label">HP:</div><input class="start-hp" type="number" min="0" placeholder="Starting HP" />
 				</div>
 				<div class="flex">
 					<div class="label">Energy:</div><input class="start-energy" type="number" min="0" max="100" placeholder="Starting Energy" />
 				</div>
+				<button class="pull-from-timeline">Pull from timeline</button>
 				<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
 				<div class="check negate-fast-moves"><span></span>Negate Fast Moves between Charged Moves</div>
 				<div class="check priority"><span></span>Charged Move priority</div>

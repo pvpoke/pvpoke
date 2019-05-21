@@ -16,6 +16,9 @@ function PokeSelect(element, i){
 	var interface;
 	var isCustom = false; // Whether or not the Pokemon has custom-set level, IVs, or traits
 	var context = "main";
+	
+	var currentHP; // The currently animated HP
+	var currentEnergy; // The currently animated energy
 
 	this.init = function(pokes, b){
 		pokemon = pokes;
@@ -188,6 +191,8 @@ function PokeSelect(element, i){
 
 		$el.find(".hp .bar").css("width", ((health / selectedPokemon.stats.hp)*100)+"%");
 		$el.find(".hp .stat").html(health+" / "+selectedPokemon.stats.hp);
+		
+		currentHP = health;
 	}
 
 	// During timeline playback, animate the energy bar
@@ -208,6 +213,8 @@ function PokeSelect(element, i){
 		} else{
 			$bar.removeClass("active");
 		}
+		
+		currentEnergy = energy;
 	}
 
 	// Reset IV and Level input fields, and other options when switching Pokemon
@@ -546,10 +553,6 @@ function PokeSelect(element, i){
 		selectedPokemon.setStartHp(value);
 
 		self.update();
-
-		if(interface.runSandboxSim){
-			interface.runSandboxSim();
-		}
 	});
 
 	// Enter starting energy
@@ -561,10 +564,6 @@ function PokeSelect(element, i){
 		selectedPokemon.setStartEnergy(value);
 
 		self.update();
-
-		if(interface.runSandboxSim){
-			interface.runSandboxSim();
-		}
 	});
 
 	// Turn shield baiting on and off
@@ -751,6 +750,14 @@ function PokeSelect(element, i){
 			self.clear();
 		});
 
+	});
+	
+	// use the currently animated HP and Energy
+
+	$el.find(".pull-from-timeline").on("click", function(e){
+		$el.find(".start-hp").val(currentHP);
+		$el.find(".start-energy").val(currentEnergy);
+		$el.find(".start-hp").trigger("keyup");
 	});
 
 	// Randomize selection

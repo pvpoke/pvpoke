@@ -40,6 +40,7 @@ require_once 'header.php';
 
 <div class="section battle">
 	<button class="battle-btn button">Battle</button>
+	<button class="update-btn button">Update</button>
 	<div class="tooltip"><h3 class="name"></h3><div class="details"></div></div>
 
 	<div class="battle-results single">

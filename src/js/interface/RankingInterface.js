@@ -420,10 +420,17 @@ var InterfaceMaster = (function () {
 
 				// Show share link
 				var cup = $(".cup-select option:selected").val();
+				var cupName = $(".cup-select option:selected").html();
 
 				var link = host + "rankings/"+cup+"/"+cp+"/"+category+"/"+pokemon.speciesId+"/";
 
 				$details.find(".share-link input").val(link);
+				
+				// Add multi-battle link
+				
+				var multiBattleLink = host+"battle/multi/"+cp+"/"+cup+"/"+pokemon.speciesId+shieldStrs[category]+"/"+r.moveStr+"/2-1/";
+				
+				$details.find(".share-link").before($("<div class=\"multi-battle-link\"><p>See all of <b>" + pokemon.speciesName + "'s</b> matchups:</p><a target=\"_blank\" class=\"button\" href=\""+multiBattleLink+"\">"+pokemon.speciesName+" vs. " + cupName +"</a></div>"));
 
 				// Only execute if this was a direct action and not loaded from URL parameters, otherwise pushes infinite states when the user navigates back
 

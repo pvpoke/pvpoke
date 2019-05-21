@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.7.7.10';
+$SITE_VERSION = '1.7.8';
 ?>
 <!doctype html>
 <html>
@@ -39,7 +39,7 @@ if(! isset($OG_IMAGE)){
 <link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json">
 
 <link rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=33">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=34">
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>
 
 <?php require_once('modules/analytics.php'); ?>

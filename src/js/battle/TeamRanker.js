@@ -53,7 +53,7 @@ var RankerMaster = (function () {
 				rankings = [];
 
 				if(team.length == 1){
-					csv = 'Pokemon,Battle Rating'
+					csv = 'Pokemon,Battle Rating,HP Remaining,Energy Remaining'
 				}
 
 				if((targets.length == 0)||(cup.name != "custom")){
@@ -254,7 +254,7 @@ var RankerMaster = (function () {
 						avgPokeRating = Math.floor(avgPokeRating / shieldTestArr.length);
 						avgOpRating = Math.floor(avgOpRating / shieldTestArr.length);
 
-						csv += ',' + avgOpRating;
+						csv += ',' + avgOpRating + ',' + opponent.hp + ',' + opponent.energy;
 
 						avg += avgPokeRating;
 						opponentRating = avgOpRating;

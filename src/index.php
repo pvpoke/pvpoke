@@ -22,18 +22,23 @@
 
 	<!--Update section for updates-->
 	<h3>What's New</h3>
-
-	<h4>v1.7.7 (May 13, 2019)</h4>
+	
+	<h4>v1.7.8 (May 21, 2019)</h4>
 	<ul>
-		<li>You can now assign Charged Move Priority</li>
+		<li>Shield dropdown has been moved out of the options section</li>
 		<ul>
-			<li>By default, the sim allows Charged Moves to fire simultaneously so you can see a neutral glimpse of the matchup. When you assign priority, it will fire that Pokemon's Charged Moves ahead of the other's.</li>
+			<li>This is by the far the most frequently accessed option, and having it hidden caused some confusion on the Multi-Battle page.</li>
 		</ul>
-		<li>Some niche Fast Move behavior has been updated to match in-game mechanics:</li>
+		<li>Added a "Pull from timeline" button for starting HP and Energy</li>
 		<ul>
-			<li>Fast Moves that occur between two consecutive Charged Moves may be lost or negated.</li>
-			<li>This happens often but not consistently, so a toggle is available if you want to see a matchup without this factored in.</li>
-			<li>Rankings have been updated accordingly.</li>
+			<li>This will use the Pokemon's HP and Energy from the currently selected point in the battle timeline</li>
+		</ul>
+		<li>Ranking entries now link to a Multi-Battle so you can see all matchups for that Pokemon</li>
+		<li>Multi-Battle CSV export now includes HP and Energy remaining for each matchup</li>
+		<li>Sandbox Mode updates:</li>
+		<ul>
+			<li>Added an "Update" button so you can manually refresh the battle results after changing settings or IV's</li>
+			<li>Fast Move icons now appear with a thicker border where a Pokemon has both Charged Moves ready. This should make it easier to lay out shield baiting and other scenarios.</li>
 		</ul>
 	</ul>
 
