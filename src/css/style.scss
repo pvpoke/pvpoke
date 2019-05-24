@@ -573,7 +573,7 @@ header{
 			text-align: left;
 			font-size:14px;
 		}
-		
+
 		.pull-from-timeline{
 			margin-bottom:15px;
 		}
@@ -846,7 +846,7 @@ select, input{
 	color:#000;
 
 	@include gradient($color-gold, $color-gold-dark);
-	
+
 	&.update-btn{
 		display:none;
 	}
@@ -984,7 +984,7 @@ select, input{
 					cursor:initial;
 				}
 			}
-			
+
 			.item.both{
 				border:2px solid #000;
 				top:-6px;
@@ -1208,7 +1208,7 @@ select, input{
 	margin: 25px 0 30px 0;
 	top:0;
 	left:0;
-	
+
 	&:nth-of-type(2){
 		margin: 30px 0 25px 0;
 	}
@@ -1274,6 +1274,10 @@ select, input{
 				border:2px solid #000;
 				border-radius:12px;
 				background:none !important;
+
+				&.fast{
+					border:2px solid #666;
+				}
 			}
 
 			&.buff{
@@ -1426,7 +1430,7 @@ select, input{
 	&.shield{
 		background:$color-shield;
 	}
-	
+
 	&.tap{
 		background:#eee;
 	}
@@ -1597,16 +1601,16 @@ select, input{
 				background-color: rgba(0,0,0,.35);
 			}
 		}
-		
+
 		.multi-battle-link{
 			width:100%;
 			margin:10px 0;
 			text-align: center;
-			
+
 			p{
 				margin: 0;
 			}
-			
+
 			a.button{
 				font-size:16px;
 				display:inline-block;
