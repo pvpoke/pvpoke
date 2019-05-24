@@ -244,6 +244,10 @@ var InterfaceMaster = (function () {
 						$item.find(".item").css("height", height+"px");
 						$item.find(".item").css("width", height+"px");
 						$item.find(".item").css("top", -(((height+2)/2)+1)+"px");
+						
+						if(event.type.indexOf("fast") > -1){
+							$item.find(".item").css("top", -(((height+2)/2)+15)+"px");
+						}
 					}
 
 					$(".timeline").eq(event.actor).append($item);
@@ -1381,10 +1385,6 @@ var InterfaceMaster = (function () {
 
 			function timelineEventHover(e){
 
-				if($(this).hasClass("tap")){
-					return;
-				}
-
 				var $tooltip = $(".battle .tooltip");
 
 				$tooltip.show();
@@ -1399,7 +1399,7 @@ var InterfaceMaster = (function () {
 				$tooltip.addClass($(this).attr("class"));
 				$tooltip.find(".details").html('');
 
-				if(($(this).hasClass("fast")) || ($(this).hasClass("charged"))){
+				if((($(this).hasClass("fast")) || ($(this).hasClass("charged")))&&(! $(this).hasClass("tap"))){
 
 					var values = $(this).attr("values").split(',');
 

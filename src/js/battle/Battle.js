@@ -14,6 +14,7 @@ function Battle(){
 
 	var actions = []; // User defined actions
 	var previousTurnActions = [] // Actions from the previous turn
+	var queuedActions = []; // Input registered from previous turns to be processed on future turns
 	var sandbox = false; // Is this automated or following user instructions?
 
 	// Battle properties
@@ -302,6 +303,7 @@ function Battle(){
 		turns = 0;
 		turnsToWin = [0, 0];
 		timeline = [];
+		queuedActions = [];
 
 		var deltaTime = 500;
 
@@ -330,6 +332,7 @@ function Battle(){
 			turns++;
 
 			// Determine actions for both Pokemon
+			var actionsThisTurn = false;
 
 			for(var i = 0; i < 2; i++){
 
@@ -341,9 +344,14 @@ function Battle(){
 				// If Pokemon can take action
 
 				chargedMoveUsed = false; // Flag so Pokemon only uses one Charged Move per round
+				
+									
+				console.log(poke.speciesId + " here " + poke.cooldown);
 
 				if(poke.cooldown == 0){
 					var action = null;
+					
+					console.log(poke.speciesId + " can act");
 
 					if(! sandbox){
 						action = self.decideAction(poke, opponent);
@@ -368,12 +376,38 @@ function Battle(){
 					if(! action){
 						action = new TimelineAction("fast", i, turns, 0, {priority: poke.priority});
 					}
-
-					turnActions.push(action);
+					
+					// Set cooldown
+					
+					if(action.type == "fast"){
+						poke.cooldown = poke.fastMove.cooldown;
+						actionsThisTurn = true;
+						timeline.push(new TimelineEvent("tap fast", "Tap", poke.index, time, turns, [1,0]));
+					}
+					
+					queuedActions.push(action);
 				}
 
 				if(poke.shields + opponent.shields < currentShields){
 					roundShieldUsed = true;
+				}
+			}
+			
+			// Push queued actions to turn actions to be processed now
+			for(var i = 0; i < queuedActions.length; i++){
+				var action = queuedActions[i];
+				var valid = false;
+				
+				if((action.type == "fast")&&(actionsThisTurn)&&(action.turn != turns)){
+					valid = true;
+				}
+				if(action.type == "charged"){
+					valid = true;
+				}
+				if(valid){
+					turnActions.push(action);
+					queuedActions.splice(i, 1);
+					i--;
 				}
 			}
 
@@ -901,7 +935,6 @@ function Battle(){
 			// If Fast Move
 
 			attacker.energy += attacker.fastMove.energyGain;
-			attacker.cooldown = move.cooldown;
 
 			if(attacker.energy > 100){
 				attacker.energy = 100;
