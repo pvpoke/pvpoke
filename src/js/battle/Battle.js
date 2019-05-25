@@ -380,6 +380,16 @@ function Battle(){
 						timeline.push(new TimelineEvent("tap fast", "Tap", poke.index, time, turns, [1,0]));
 					}
 
+					if(action.type == "charged"){
+						// Reset all cooldowns
+						if(opponent.cooldown > 0){
+							action.settings.priority += 2;
+						}
+						poke.cooldown = 0;
+						opponent.cooldown = 0;
+						action.settings.priority += 10;
+					}
+
 					queuedActions.push(action);
 				}
 
@@ -479,7 +489,7 @@ function Battle(){
 
 						// Check if knocked out from a priority move
 
-						if((usePriority)&&(poke.hp <= 0)&&(poke.priority == 0)&&(priorityChargedMoveThisTurn)){
+						if((usePriority)&&(poke.hp <= 0)){
 							action.valid = false;
 						}
 						break;
