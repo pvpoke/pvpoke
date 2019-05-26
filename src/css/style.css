@@ -1045,7 +1045,7 @@ select, input {
   border-radius: 12px;
   background: none !important;
 }
-.timeline .item-container .item.tap.fast {
+.timeline .item-container .item.tap.interaction {
   border: 2px solid #666;
 }
 .timeline .item-container .item.buff {

@@ -338,63 +338,13 @@ function Battle(){
 
 				var poke = pokemon[i];
 				var opponent = this.getOpponent(i);
+				var action = self.determineTurnAction(poke, opponent);
 
-				var currentShields = poke.shields + opponent.shields;
-
-				// If Pokemon can take action
-
-				chargedMoveUsed = false; // Flag so Pokemon only uses one Charged Move per round
-
-				if(poke.cooldown == 0){
-					var action = null;
-
-					if(! sandbox){
-						action = self.decideAction(poke, opponent);
-					} else{
-						// Search for a charged move action
-
-						for(var n = 0; n < actions.length; n++){
-							var a = actions[n];
-
-							if((a.actor == i)&&(a.turn == turns)&&(poke.chargedMoves.length > a.value)){
-								action = a;
-
-								// Apply priority
-
-								action.settings.priority = poke.priority;
-							}
-						}
-					}
-
-					// If no other action set, use a fast move
-
-					if(! action){
-						action = new TimelineAction("fast", i, turns, 0, {priority: poke.priority});
-					}
-
-					// Set cooldown
-
+				if(action){
 					if(action.type == "fast"){
-						poke.cooldown = poke.fastMove.cooldown;
 						actionsThisTurn = true;
-						timeline.push(new TimelineEvent("tap fast", "Tap", poke.index, time, turns, [1,0]));
 					}
-
-					if(action.type == "charged"){
-						// Reset all cooldowns
-						if(opponent.cooldown > 0){
-							action.settings.priority += 2;
-						}
-						poke.cooldown = 0;
-						opponent.cooldown = 0;
-						action.settings.priority += 10;
-					}
-
 					queuedActions.push(action);
-				}
-
-				if(poke.shields + opponent.shields < currentShields){
-					roundShieldUsed = true;
 				}
 			}
 
@@ -588,6 +538,72 @@ function Battle(){
 		}
 
 		return timeline;
+	}
+
+	this.determineTurnAction = function(poke, opponent){
+		var action = null;
+		var currentShields = poke.shields + opponent.shields;
+
+		// If Pokemon can take action
+
+		chargedMoveUsed = false; // Flag so Pokemon only uses one Charged Move per round
+
+		if(poke.cooldown == 0){
+
+			if(! sandbox){
+				action = self.decideAction(poke, opponent);
+			} else{
+				// Search for a charged move action
+
+				for(var n = 0; n < actions.length; n++){
+					var a = actions[n];
+
+					if((a.actor == i)&&(a.turn == turns)&&(poke.chargedMoves.length > a.value)){
+						action = a;
+
+						// Apply priority
+
+						action.settings.priority = poke.priority;
+					}
+				}
+			}
+
+			// If no other action set, use a fast move
+
+			if(! action){
+				action = new TimelineAction("fast", poke.index, turns, 0, {priority: poke.priority});
+			}
+
+			// Set cooldown
+
+			if(action.type == "fast"){
+				poke.cooldown = poke.fastMove.cooldown;
+				timeline.push(new TimelineEvent("tap interaction", "Tap", poke.index, time, turns, [1,0]));
+			}
+
+			if(action.type == "charged"){
+				// Reset all cooldowns
+				if(opponent.cooldown > 0){
+					action.settings.priority += 2;
+					opponent.cooldown = 0;
+
+					var a = self.determineTurnAction(opponent, poke);
+					if(a.type == "charged"){
+						queuedActions.push(a);
+					}
+				}
+				poke.cooldown = 0;
+				action.settings.priority += 10;
+			}
+		}
+
+		return action;
+
+		if(poke.shields + opponent.shields < currentShields){
+			roundShieldUsed = true;
+		}
+
+
 	}
 
 	// Run AI decision making to determine battle action this turn, and return the resulting action

@@ -225,7 +225,7 @@ var InterfaceMaster = (function () {
 								usableChargedMoves++;
 							}
 						}
-						
+
 						// Show differently whether 0, 1, or 2 Charged Moves are ready
 
 						if(usableChargedMoves == 0){
@@ -244,8 +244,8 @@ var InterfaceMaster = (function () {
 						$item.find(".item").css("height", height+"px");
 						$item.find(".item").css("width", height+"px");
 						$item.find(".item").css("top", -(((height+2)/2)+1)+"px");
-						
-						if(event.type.indexOf("fast") > -1){
+
+						if(event.type.indexOf("interaction") > -1){
 							$item.find(".item").css("top", -(((height+2)/2)+15)+"px");
 						}
 					}
