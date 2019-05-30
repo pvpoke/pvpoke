@@ -444,12 +444,22 @@ function Battle(){
 						}
 						break;
 				}
+				
+				// Search for fatal queued Fast Move damage this turn
+				
+				for(var j = 0; j < turnActions.length; j++){
+					var a = turnActions[j];
+					if((a.type == "fast")&&(a.actor != action.actor)&&(opponent.fastMove.damage >= poke.hp)&&(action.type=="charged")){
+						// If not a simultaneous knockout
+						action.valid = false;
+					}
+				}
 
 				self.processAction(action, poke, opponent);
 
 				// Add extra time to space out prioritized charged moves
 
-				if((n == 0)&&(action.type == "charged")&&(turnActions.length > 1)&&(! roundShieldUsed)&&(turnActions[n+1].type == "charged")&&(pokemon[0].hp > 0)&&(pokemon[1].hp > 0)){
+				if((usePriority)&&(n == 0)&&(action.type == "charged")&&(turnActions.length > 1)&&(! roundShieldUsed)&&(turnActions[n+1].type == "charged")&&(pokemon[0].hp > 0)&&(pokemon[1].hp > 0)){
 					time += 7500;
 				}
 			}
@@ -588,9 +598,7 @@ function Battle(){
 					opponent.cooldown = 0;
 
 					var a = self.determineTurnAction(opponent, poke);
-					if(a.type == "charged"){
-						queuedActions.push(a);
-					}
+					queuedActions.push(a);
 				}
 				poke.cooldown = 0;
 				action.settings.priority += 10;
