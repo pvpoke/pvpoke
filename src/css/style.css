@@ -764,6 +764,7 @@ select, input {
   border: 1px solid #eabd49;
 }
 .battle-results .timeline-container.sandbox-mode .item.charged:hover,
+.battle-results .timeline-container.sandbox-mode .item.interaction:hover,
 .battle-results .timeline-container.sandbox-mode .item.fast:not(.disabled):hover {
   background: #b99027;
   /* Old browsers */
@@ -780,6 +781,18 @@ select, input {
 }
 .battle-results .timeline-container.sandbox-mode .item.disabled:hover {
   cursor: initial;
+}
+.battle-results .timeline-container.sandbox-mode .item.interaction {
+  display: block !important;
+  border: 2px solid #000;
+  cursor: pointer;
+}
+.battle-results .timeline-container.sandbox-mode .item.interaction.disabled {
+  cursor: pointer;
+  border: 2px solid #666;
+}
+.battle-results .timeline-container.sandbox-mode .item.interaction.wait {
+  border-style: dotted;
 }
 .battle-results .timeline-container.sandbox-mode .item.both {
   border: 2px solid #000;
@@ -1046,7 +1059,7 @@ select, input {
   background: none !important;
 }
 .timeline .item-container .item.tap.interaction {
-  border: 2px solid #666;
+  display: none;
 }
 .timeline .item-container .item.buff {
   background-image: url("../img/move_buff.png") !important;

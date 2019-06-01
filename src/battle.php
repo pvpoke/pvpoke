@@ -291,6 +291,7 @@ require_once 'header.php';
 		<div class="stat-ept fast"><span class="stat"></span> ept</div>
 		<div class="stat-dpe charged"><span class="stat"></span> dpe</div>
 	</div>
+	<p class="wait hide">This Pokemon will take no action this turn.</p>
 
 	<div class="check shields charged"><span></span>Shield this attack</div>
 	<div class="check buffs charged"><span></span>Apply buffs/debuffs</div>

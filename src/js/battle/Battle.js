@@ -400,6 +400,11 @@ function Battle(){
 				if(action.type == "charged"){
 					valid = true;
 				}
+
+				if(action.type == "wait"){
+					valid = true;
+				}
+
 				if(valid){
 					turnActions.push(action);
 					queuedActions.splice(i, 1);
@@ -443,10 +448,14 @@ function Battle(){
 							action.valid = false;
 						}
 						break;
+
+					case "wait":
+						action.valid = true;
+						break;
 				}
-				
+
 				// Search for fatal queued Fast Move damage this turn
-				
+
 				for(var j = 0; j < turnActions.length; j++){
 					var a = turnActions[j];
 					if((a.type == "fast")&&(a.actor != action.actor)&&(opponent.fastMove.damage >= poke.hp)&&(action.type=="charged")){
@@ -568,7 +577,7 @@ function Battle(){
 				for(var n = 0; n < actions.length; n++){
 					var a = actions[n];
 
-					if((a.actor == i)&&(a.turn == turns)&&(poke.chargedMoves.length > a.value)){
+					if((a.actor == poke.index)&&(a.turn == turns)){
 						action = a;
 
 						// Apply priority
@@ -588,7 +597,7 @@ function Battle(){
 
 			if(action.type == "fast"){
 				poke.cooldown = poke.fastMove.cooldown;
-				timeline.push(new TimelineEvent("tap interaction", "Tap", poke.index, time, turns, [1,0]));
+				timeline.push(new TimelineEvent("tap interaction", "Tap", poke.index, time, turns, [2,0]));
 			}
 
 			if(action.type == "charged"){
@@ -878,6 +887,14 @@ function Battle(){
 					chargedMoveUsed = true;
 					roundChargedMoveUsed++;
 				}
+				break;
+
+			case "wait":
+				var displayTime = time;
+				if(roundShieldUsed){
+					displayTime -= 7500;
+				}
+				timeline.push(new TimelineEvent("tap interaction wait", "Wait", poke.index, displayTime, turns, [2,0]));
 				break;
 		}
 	}

@@ -972,6 +972,7 @@ select, input{
 			border: 1px solid $color-gold;
 
 			.item.charged:hover,
+			.item.interaction:hover,
 			.item.fast:not(.disabled):hover{
 				@include gradient($color-gold, $color-gold-dark);
 				border-color:$color-gold-dark;
@@ -982,6 +983,21 @@ select, input{
 
 				&:hover{
 					cursor:initial;
+				}
+			}
+
+			.item.interaction{
+				display: block !important;
+				border:2px solid #000;
+				cursor:pointer;
+
+				&.disabled{
+					cursor:pointer;
+					border:2px solid #666;
+				}
+
+				&.wait{
+					border-style:dotted;
 				}
 			}
 
@@ -1276,7 +1292,7 @@ select, input{
 				background:none !important;
 
 				&.interaction{
-					border:2px solid #666;
+					display:none;
 				}
 			}
 
