@@ -327,6 +327,7 @@ function Battle(){
 			for(var i = 0; i < 2; i++){
 				var poke = pokemon[i];
 				poke.cooldown = Math.max(0, poke.cooldown - deltaTime); // Reduce cooldown
+				poke.hasActed = false;
 			}
 
 			turns++;
@@ -339,6 +340,42 @@ function Battle(){
 				var poke = pokemon[i];
 				var opponent = this.getOpponent(i);
 				var action = self.determineTurnAction(poke, opponent);
+
+				if((poke.negateFastMoves)&&(action)&&(action.type=="fast")){
+					var chargedMoveThisTurn = false;
+					var priorityChargedMoveThisTurn = false;
+					var chargedActor = -1;
+
+					for(var j = 0; j < queuedActions.length; j++){
+						var a = queuedActions[j];
+
+						if(a.type == "charged"){
+							chargedMoveThisTurn = true;
+							chargedActor = a.actor;
+
+							if(a.settings.priority > 0){
+								priorityChargedMoveThisTurn = true;
+							}
+						}
+					}
+
+					// Check for a charged move last turn and this turn
+					var chargedMoveLastTurn = false;
+
+					for(var j = 0; j < previousTurnActions.length; j++){
+						var a = previousTurnActions[j];
+
+						if(a.type == "charged"){
+							chargedMoveLastTurn = true;
+						}
+					}
+
+					if((chargedMoveLastTurn)&&(chargedMoveThisTurn > 0)){
+						if(action.actor != chargedActor){
+							action = null;
+						}
+					}
+				}
 
 				if(action){
 					if(action.type == "fast"){
@@ -355,46 +392,6 @@ function Battle(){
 
 				if((action.type == "fast")&&(actionsThisTurn)&&( (turns - action.turn + 1) * 500 >= pokemon[action.actor].fastMove.cooldown)){
 					valid = true;
-
-					/*if(poke.negateFastMoves){
-						var chargedMoveThisTurn = false;
-						var priorityChargedMoveThisTurn = false;
-						var chargedActor = -1;
-
-						for(var j = 0; j < queuedActions.length; j++){
-							var a = queuedActions[j];
-
-							if(a.type == "charged"){
-								chargedMoveThisTurn = true;
-								chargedActor = a.actor;
-
-								if(a.settings.priority > 0){
-									priorityChargedMoveThisTurn = true;
-								}
-							}
-						}
-
-						// Check for a charged move last turn and this turn
-						var chargedMoveLastTurn = false;
-
-						for(var j = 0; j < previousTurnActions.length; j++){
-							var a = previousTurnActions[j];
-
-							if(a.type == "charged"){
-								chargedMoveLastTurn = true;
-							}
-						}
-
-						if((chargedMoveLastTurn)&&(chargedMoveThisTurn > 0)){
-							if(action.actor != chargedActor){
-								valid = false;
-								queuedActions.splice(i, 1);
-								i--;
-
-								timeline.push(new TimelineEvent("tap fast dragon", "Tap", poke.index, time, turns, [1,0]));
-							}
-						}
-					}*/
 				}
 
 				if(action.type == "charged"){
@@ -567,7 +564,8 @@ function Battle(){
 
 		chargedMoveUsed = false; // Flag so Pokemon only uses one Charged Move per round
 
-		if(poke.cooldown == 0){
+		if((poke.cooldown == 0)&&(! poke.hasActed)){
+			poke.hasActed = true;
 
 			if(! sandbox){
 				action = self.decideAction(poke, opponent);
@@ -583,6 +581,12 @@ function Battle(){
 						// Apply priority
 
 						action.settings.priority = poke.priority;
+
+						// Don't do action if not enough energy
+
+						if((action.type == "charged")&&(poke.energy < poke.chargedMoves[action.value].energy)){
+							action = null;
+						}
 					}
 				}
 			}
@@ -602,12 +606,14 @@ function Battle(){
 
 			if(action.type == "charged"){
 				// Reset all cooldowns
-				if(opponent.cooldown > 0){
+				if((opponent.cooldown > 0)&&(! opponent.hasActed)){
 					action.settings.priority += 2;
 					opponent.cooldown = 0;
 
 					var a = self.determineTurnAction(opponent, poke);
-					queuedActions.push(a);
+					if(a){
+						queuedActions.push(a);
+					}
 				}
 				poke.cooldown = 0;
 				action.settings.priority += 10;

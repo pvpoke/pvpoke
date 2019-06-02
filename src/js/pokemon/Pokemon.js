@@ -60,6 +60,7 @@ function Pokemon(id, i, b){
 	this.startingShields = 0;
 
 	this.baitShields = true; // Use low energy attacks to bait shields
+	this.hasActed = false;
 
 	// Set legacy moves
 

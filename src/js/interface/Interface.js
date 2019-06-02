@@ -1195,7 +1195,6 @@ var InterfaceMaster = (function () {
 					return;
 				}
 
-
 				battle.setActions(actions);
 				battle.simulate();
 				self.displayTimeline(battle, false, false);
