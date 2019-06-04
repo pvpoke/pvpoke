@@ -76,6 +76,10 @@ var RankerMaster = (function () {
 						permaBannedList = permaBannedList.concat(["sableye","medicham","lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi","latios","latias","uxie","azelf","mesprit"]);
 					}
 
+					if(cup.name == "championships-1"){
+						permaBannedList = permaBannedList.concat(["lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi","latios","latias","uxie","mesprit","azelf","melmetal","celebi","zapdos","articuno","moltres","suicune","entei","raikou","regirock","registeel","regice","ho-oh"]);
+					}
+
 
 					if(exclusionList){
 						bannedList = bannedList.concat(exclusionList);
@@ -103,7 +107,7 @@ var RankerMaster = (function () {
 								if(permaBannedList.indexOf(pokemon.speciesId) > -1){
 									continue;
 								}
-								
+
 								if((cup.name == "rainbow")&&( (pokemon.dex > 251) || (pokemon.speciesId.indexOf("alolan") > -1))){
 									continue;
 								}
@@ -237,7 +241,7 @@ var RankerMaster = (function () {
 							}
 
 							battle.simulate();
-							
+
 							var healthRating = (pokemon.hp / pokemon.stats.hp);
 							var damageRating = ((opponent.stats.hp - opponent.hp) / (opponent.stats.hp));
 

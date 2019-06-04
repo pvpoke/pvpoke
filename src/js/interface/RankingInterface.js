@@ -13,6 +13,7 @@ var InterfaceMaster = (function () {
 			var self = this;
 			var data;
 			var jumpToPoke = false;
+			var limitedPokemon = [];
 
 			this.init = function(){
 				if(! get){
@@ -25,6 +26,8 @@ var InterfaceMaster = (function () {
 				$(".league-select").on("change", selectLeague);
 				$(".cup-select").on("change", selectCup);
 				$(".ranking-categories a").on("click", selectCategory);
+				$("body").on("click", ".check", checkBox);
+				$("body").on("click", ".check.limited", toggleLimitedPokemon);
 
 				window.addEventListener('popstate', function(e) {
 					get = e.state;
@@ -66,6 +69,19 @@ var InterfaceMaster = (function () {
 
 				data = rankings;
 
+				// Show any restrictions
+				var cup = $(".cup-select option:selected").val();
+				$(".limited").hide();
+				limitedPokemon = [];
+
+				if(cup == "championships-1"){
+					$(".limited").show();
+					$(".check.limited").addClass("on");
+
+					limitedPokemon = ["medicham","lucario","venusaur","meganium","skarmory","altaria","bastiodon","probopass","tropius","azumarill"]
+				}
+
+
 				// Create an element for each ranked Pokemon
 
 				for(var i = 0; i < rankings.length; i++){
@@ -88,6 +104,10 @@ var InterfaceMaster = (function () {
 					// Is this the best way to add HTML content? I'm gonna go with no here. But does it work? Yes!
 
 					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span><div class=\"moves\">"+moveNameStr+"</div></div><div class=\"rating-container\"><div class=\"rating\">"+r.score+"</span></div><div class=\"clear\"></div></div><div class=\"details\"></div>");
+
+					if(limitedPokemon.indexOf(pokemon.speciesId) > -1){
+						$el.addClass("limited-rank");
+					}
 
 					$(".rankings-container").append($el);
 				}
@@ -425,11 +445,11 @@ var InterfaceMaster = (function () {
 				var link = host + "rankings/"+cup+"/"+cp+"/"+category+"/"+pokemon.speciesId+"/";
 
 				$details.find(".share-link input").val(link);
-				
+
 				// Add multi-battle link
-				
+
 				var multiBattleLink = host+"battle/multi/"+cp+"/"+cup+"/"+pokemon.speciesId+shieldStrs[category]+"/"+r.moveStr+"/2-1/";
-				
+
 				$details.find(".share-link").before($("<div class=\"multi-battle-link\"><p>See all of <b>" + pokemon.speciesName + "'s</b> matchups:</p><a target=\"_blank\" class=\"button\" href=\""+multiBattleLink+"\">"+pokemon.speciesName+" vs. " + cupName +"</a></div>"));
 
 				// Only execute if this was a direct action and not loaded from URL parameters, otherwise pushes infinite states when the user navigates back
@@ -439,6 +459,20 @@ var InterfaceMaster = (function () {
 				}
 
 				self.pushHistoryState(cup, cp, category, pokemon.speciesId);
+			}
+
+			// Turn checkboxes on and off
+
+			function checkBox(e){
+				$(this).toggleClass("on");
+			}
+
+			// Toggle the limited Pokemon from the Rankings
+
+			function toggleLimitedPokemon(e){
+				for(var i = 0; i < limitedPokemon.length; i++){
+					$(".rank[data='"+limitedPokemon[i]+"']").toggleClass("hide");
+				}
 			}
 		};
 

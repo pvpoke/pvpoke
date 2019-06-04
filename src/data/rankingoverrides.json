@@ -187,6 +187,57 @@
 	},
 	{
 		"league": 1500,
+		"cup": "championships-1",
+		"pokemon": [
+			{
+				"speciesId": "umbreon",
+				"chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
+			},
+			{
+				"speciesId": "medicham",
+				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "hitmonchan",
+				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "hypno",
+				"chargedMoves": ["SHADOW_BALL", "FOCUS_BLAST"]
+			},
+			{
+				"speciesId": "dragonite",
+				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
+			},
+			{
+				"speciesId": "tentacruel",
+				"chargedMoves": ["ACID_SPRAY", "HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "toxicroak",
+				"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "probopass",
+				"fastMove": "SPARK",
+				"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
+			},
+			{
+				"speciesId": "raticate_alolan",
+				"chargedMoves": ["CRUNCH", "HYPER_FANG"]
+			},
+			{
+				"speciesId": "sceptile",
+				"chargedMoves": ["LEAF_BLADE", "AERIAL_ACE"]
+			},
+			{
+				"speciesId": "grotle",
+				"chargedMoves": ["BODY_SLAM", "ENERGY_BALL"]
+			},
+		]
+	},
+	{
+		"league": 1500,
 		"cup": "rainbow",
 		"pokemon": [
 			{

@@ -573,7 +573,7 @@ header{
 			text-align: left;
 			font-size:14px;
 		}
-		
+
 		.pull-from-timeline{
 			margin-bottom:15px;
 		}
@@ -846,7 +846,7 @@ select, input{
 	color:#000;
 
 	@include gradient($color-gold, $color-gold-dark);
-	
+
 	&.update-btn{
 		display:none;
 	}
@@ -984,7 +984,7 @@ select, input{
 					cursor:initial;
 				}
 			}
-			
+
 			.item.both{
 				border:2px solid #000;
 				top:-6px;
@@ -1464,6 +1464,10 @@ select, input{
 	border-radius:8px;
 	margin-bottom:5px;
 
+	&.hide{
+		display:none !important;
+	}
+
 	.name-container{
 		float:left;
 		padding:5px 0;
@@ -1589,16 +1593,16 @@ select, input{
 				background-color: rgba(0,0,0,.35);
 			}
 		}
-		
+
 		.multi-battle-link{
 			width:100%;
 			margin:10px 0;
 			text-align: center;
-			
+
 			p{
 				margin: 0;
 			}
-			
+
 			a.button{
 				font-size:16px;
 				display:inline-block;
@@ -1661,6 +1665,31 @@ select, input{
 
 .options{
 	margin: 40px 0 20px 0;
+}
+
+.check.limited{
+	.limited-title{
+		display: inline;
+	}
+}
+
+.limited-title{
+	color:$color-gold;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-weight: bold;
+}
+
+.rankings-container .limited-rank{
+	@include gradient($color-gold, $color-gold-dark);
+
+	.name-container{
+		color:#000;
+	}
+}
+
+.asterisk{
+	font-size:12px;
+	margin-bottom:15px;
 }
 
 /* TEAM BUILD STYLING */

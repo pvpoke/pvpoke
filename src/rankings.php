@@ -19,11 +19,11 @@ switch($cp){
 	case "1500":
 		$league = 'Great League';
 		break;
-		
+
 	case "2500":
 		$league = 'Ultra League';
 		break;
-		
+
 	case "10000":
 		$league = 'Master League';
 		break;
@@ -33,27 +33,31 @@ switch($cup){
 	case "boulder":
 		$league = 'Boulder Cup';
 		break;
-		
+
 	case "twilight":
 		$league = 'Twilight Cup';
 		break;
-		
+
 	case "tempest":
 		$league = 'Tempest Cup';
 		break;
-		
+
 	case "kingdom":
 		$league = 'Kingdom Cup';
 		break;
-		
+
 	case "nightmare":
 		$league = 'Nightmare Cup';
 		break;
-		
+
 	case "regionals-1":
 		$league = 'Season 1 Regionals';
 		break;
-		
+
+	case "championships-1":
+		$league = 'Season 1 Championships';
+		break;
+
 	case "rainbow":
 		$league = 'Rainbow Cup';
 		break;
@@ -71,7 +75,7 @@ require_once 'header.php';
 <div class="section league-select-container white">
 	<?php require 'modules/leagueselect.php'; ?>
 	<?php require 'modules/cupselect.php'; ?>
-	
+
 	<div class="ranking-categories">
 		<a class="selected" href="#" data="overall">Overall</a>
 		<a href="#" data="leads">Leads</a>
@@ -79,26 +83,29 @@ require_once 'header.php';
 		<a href="#" data="attackers">Attackers</a>
 		<a href="#" data="defenders">Defenders</a>
 	</div>
-	
+
 	<div class="clear"></div>
-	
-	<p class="description overall"><b>The best Pokemon against top opponents in multiple roles.</b> They have the typing, moves, and stats to succeed in the most matchups and scenarios.</p>
-	
+
+	<p class="description overall"><b>The best Pokemon against top opponents in multiple roles.</b> They have the typing, moves, and stats to succeed against the top Pokemon in multiple scenarios.</p>
+
 	<p class="description closers hide"><b>The best Pokemon with no shields in play.</b> Good typing, stats, and efficient moves give them the advantage.</p>
-	
-	<p class="description leads hide"><b>The best Pokemon with all shields in play.</b> Capable of pressuring the opponent with good coverage or resistances, they're ideal leads in battle.</p>
-	
+
+	<p class="description leads hide"><b>The best Pokemon with shields in play.</b> Capable of pressuring the opponent with good coverage or resistances, they're ideal leads in battle.</p>
+
 	<p class="description attackers hide"><b>The best Pokemon against shielded opponents, while unshielded.</b> Their natural bulk, resistances, and strong attacks allow them to succeed against sturdy defenses.</p>
-	
-	<p class="description defenders hide"><b>The best Pokemon while shielded, against unshielded opponents.</b> Able to absorb incredible damage, they can emerge victorious in a huge number of matchups.</p>
+
+	<p class="description defenders hide"><b>The best Pokemon while shielded, against unshielded opponents.</b> Able to absorb incredible damage, they can emerge victorious against top opponents.</p>
 
 	<p>Click or tap the rankings below for more details.</p>
-	
+
+	<div class="check on limited hide"><span></span>Show <div class="limited-title">Limited Pokemon</div>*</div>
+	<div class="asterisk limited hide">* Only a limited number of these Pokemon can be selected per team.</div>
+
 	<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon Name or Type" />
-	
+
 	<div class="ranking-header">Pokemon</div>
 	<div class="ranking-header right">Score</div>
-	
+
 	<h2 class="loading">Loading data...</h2>
 	<div class="rankings-container clear"></div>
 </div>
