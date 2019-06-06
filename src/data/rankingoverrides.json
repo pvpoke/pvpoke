@@ -194,6 +194,10 @@
 				"chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
 			},
 			{
+				"speciesId": "azumarill",
+				"chargedMoves": ["PLAY_ROUGH", "HYDRO_PUMP"]
+			},
+			{
 				"speciesId": "medicham",
 				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
 			},
@@ -233,7 +237,7 @@
 			{
 				"speciesId": "grotle",
 				"chargedMoves": ["BODY_SLAM", "ENERGY_BALL"]
-			},
+			}
 		]
 	},
 	{
