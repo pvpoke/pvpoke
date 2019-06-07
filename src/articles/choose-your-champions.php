@@ -31,7 +31,7 @@ require_once '../header.php';
 	  		<li><a href="#closing">Closing Thoughts</a></li>
   </ol>
 	</p>
-	
+
   <a name="azumarill"></a>
   <h3 class="article-header">Azumarill</h3>
 	<div class="article-section">
@@ -236,7 +236,7 @@ require_once '../header.php';
         <strong>Counters: </strong>Medicham,  Lucario, Whiscash, Quagsire, Steelix, Meganium </p>
       <p>Bastiodon has Chansey and Blissey levels of raw  bulk plus excellent typing to boot. It beats almost every Flying Pokemon it can  encounter (Gligar and Gliscor wave in the meta-irrelevant distance). Where other anti-Flying Pokemon may  need to use Charged Attacks to do the job, Bastiodon is more capable of farming  and can hurt the next Pokemon with its decent coverage. </p>
       <p>Both Stone Edge and Flamethrower cost the same  energy, so this can make Bastiodon one-dimensional. It isn&rsquo;t going to pull off  any trick plays, but it doesn&rsquo;t need to. Bulk wins the day. It&rsquo;s this bulk that  makes Bastiodon a valuable anti-anti-meta weapon as well. Whichever wild picks  your opponent throws your way, Bastiodon is a safety net against the  unexpected. This key advantage over its alternatives is yet another reason to  consider it for one of your restricted Pokemon. </p>
- 
+
 		<h3>Probopass</h3>
       <p>
         <strong>Type: </strong><span class="type rock">Rock</span><span class="type steel">Steel</span> <br>
@@ -245,7 +245,7 @@ require_once '../header.php';
         <strong>Counters: </strong>Medicham,  Lucario, Whiscash, Quagsire, Steelix, Meganium </p>
       <p>Probopass uses Electric instead of Rock attacks  that allow it to beat Flying Pokemon but also take on Bastiodon as well. It  doesn&rsquo;t have quite as much bulk, but a faster moveset gives it more punch. You  can choose to go for Thunderbolt for the knockout, or build up some energy and  spam Rock Slide. </p>
       <p>Hydro Pump is still a threat but Probopass can  challenge it much better with its Electric moves. This key difference helps  separate it from Bastiodon. Probopass struggles against similar opponents, such  as Ground and Fighting types, and Grass types who resist the Electric attacks. </p>
-		
+
 		<h3>Steelix</h3>
       <p>
         <strong>Type: </strong><span class="type steel">Steel</span><span class="type ground">Ground</span> <br>
@@ -257,23 +257,23 @@ require_once '../header.php';
 
 		<h3>Lanturn</h3>
       <p>
-        <strong>Type: </strong><span class="type water">water</span><span class="type electric">Electric</span> <br>
+        <strong>Type: </strong><span class="type water">Water</span><span class="type electric">Electric</span> <br>
         <strong>Moves: </strong>Water Gun +  Thunderbolt/Hydro Pump <br>
         <strong>Key Matchups: </strong>Skarmory,  Noctowl, Azumarill <br>
         <strong>Counters: </strong>Venusaur,  Meganium, Tropius, Whiscash </p>
       <p>Lanturn has been an anti-Flying staple for a  long time, and here it can fulfill the same role as Probopass and in some ways  improve upon it. Lanturn has a slightly more convincing Azumarill matchup and  while it's still beaten by most Fighting options, it isn&rsquo;t completely toothless. </p>
       <p>Where Probopass hits Bastiodon with neutral  damage from Spark, Lanturn can go super effective with Water Gun. Water Gun  also lays the hurt on Steelix. Lanturn, however, is particularly vulnerable to  Grass types, making it prohibitive to run on the same team as Azumarill. It&rsquo;s  also much slower than you'd like it to be.</p>
       <p>Nevertheless, Lanturn has excellent matchups  against several core Pokemon, so anticipate seeing it on many rosters. </p>
-		<h3>Alolan Raichu</h3>
-		
+
 		<h3>Magneton</h3>
       <p>
-        <strong>Type: </strong><span class="type electric">Electric</span><span class="type steel">STeel</span> <br>
+        <strong>Type: </strong><span class="type electric">Electric</span><span class="type steel">Steel</span> <br>
         <strong>Moves: </strong>Thunder Shock +  Discharge/Magnet Bomb <br>
         <strong>Key Matchups: </strong>Skarmory,  Altaria, Noctowl, Blastoise <br>
         <strong>Counters: </strong>Medicham,  Lucario, Whiscash, Quagsire, Alolan Marowak, Meganium, Venusaur </p>
       <p>Legacy Magneton has paper-thin defensive stats,  but double-resisting Flying definitely helps. It takes out Flying Pokemon like Skarmory at ridiculous speed. Unfortunately for Magneton, it can&rsquo;t double  resist everything, and it&rsquo;ll find itself quickly overpowered in neutral  matchups. One positive is it can take on Water types like Blastoise where  Bastiodon and Steelix would struggle. </p>
-		
+
+		<h3>Alolan Raichu</h3>
       <p>
         <strong>Type: </strong><span class="type electric">Electric</span><span class="type psychic">Psychic</span> <br>
         <strong>Moves: </strong>Spark + Thunder  Punch/Wild Charge <br>
@@ -360,7 +360,7 @@ require_once '../header.php';
       <p>Grotle stands alongside Bellossom and Bayleaf as  a  pure-Grass Razor Leaf. The other options are bulkier and certainly worth consideration.  One nich draw for Grotle is extra Attack that allows hit to hit a <a href="https://pvpoke.com/battle/1500/grotle-31-8-6-6-4-4-1/probopass-29-0-15-4-4-4-1/11/1-0-0/1-2-3/">valuable  breakpoint against Probopass</a> (Grotle will want around 121.7 Attack to guarantee the breakpoint). </p>
       <p>Unless you&rsquo;re purposefully looking to burn shields, Grotle should stick to Razor Leaf in most of its matchups and use its  built up energy to Body Slam the next opponent.  </p>
   </div>
-		
+
 	<a name="closing"></a>
 	<h3 class="article-header">Closing Thoughts</h3>
 	<div class="article-section">
@@ -378,45 +378,45 @@ require_once '../header.php';
 </div>
 <script>
 	// Generate scorecards from data
-	
+
 	$(document).ready(function(e){
-		
+
 		$(".rating-data").each(function(){
-			
+
 			var $data = $(this);
 			var $table = $(".rating-table-template").clone().removeClass("rating-table-template hide");
 			var id = $(this).attr("data-id");
 			var moveset = $(this).attr("data-moveset");
-			
+
 			var classes = ["loss","close-loss","tie","close-win","win"];
-			
+
 			$data.find("div").each(function(index, value){
 				var $row = $table.find("tr.hide").clone().removeClass("hide");
 				var opId = $(this).attr("data-id");
 				var opMoveset = $(this).attr("data-moveset");
 				var ratings = $(this).attr("data-ratings").split(",");
-				
+
 				$row.find(".name").html($(this).attr("data-name"));
-				
+
 				for(var i = 0; i < ratings.length; i++){
-	
+
 					var rating = parseInt(ratings[i]);
 					var className = classes[rating + 2];
 					var battleLink = "<?php echo $WEB_ROOT; ?>battle/1500/"+id+"/"+opId+"/"+i+""+i+"/"+moveset+"/"+opMoveset+"/";
-					
+
 					$row.find("a").eq(i).addClass(className);
 					$row.find("a").eq(i).attr("href", battleLink);
 				}
-				
+
 				$table.find("tbody").append($row);
 			});
-			
+
 			$table.find("tr.hide").remove();
-			
+
 			$table.insertAfter($(this));
-			
+
 		});
-		
+
 	});
 
 </script>
