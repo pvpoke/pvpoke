@@ -13,6 +13,20 @@ require_once '../header.php';
 	
 	<div class="article-item flex">
 		<div class="col-3">
+			<a href="<?php echo $WEB_ROOT; ?>articles/choose-your-champions/">
+				<img src="<?php echo $WEB_ROOT; ?>assets/articles/championships-thumb.jpg?v=2" />
+			</a>
+		</div>
+		<div class="col-9">
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/choose-your-champions/">Choose Your Champions</a></h4>
+			<div class="date"> June 7, 2019</div>
+			<p>Whether your spectating or competing, read up on the restricted picks for the Season 1 Championships and which alternate Pokemon could be in the running.</p>
+		</div>
+
+	</div>
+	
+	<div class="article-item flex">
+		<div class="col-3">
 			<a href="<?php echo $WEB_ROOT; ?>articles/freefolk-guide-kingdom-cup/">
 				<img src="<?php echo $WEB_ROOT; ?>assets/articles/kingdom-cup-thumb.jpg" />
 			</a>
