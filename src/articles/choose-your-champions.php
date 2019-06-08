@@ -194,7 +194,7 @@ require_once '../header.php';
 		<h3>Altaria</h3>
       <p>
         <strong>Type: </strong><span class="type dragon">Dragon</span><span class="type flying">Flying</span> <br>
-        <strong>Moves: </strong>Dragon Breath + Sky  Attack/Flash Cannon <br>
+        <strong>Moves: </strong>Dragon Breath + Sky  Attack/Dragon Pulse <br>
         <strong>Key Matchups: </strong>Tropius,  Venusaur, Meganium, Lanturn, Haunter <br>
         <strong>Counters: </strong>Bastiodon,  Probopass, Azumarill </p>
       <p>Altaria&rsquo;s secret ingredient is Dragon Breath,  one of the strongest Fast Moves in the game that gives it the ability to power  through a ton of matchups. Unfortunately Dragon Breath is resisted by a number  of key Pokemon like Azumarill and Bastiodon, but Altaria can still apply  pressure in lots of other matchups. It&rsquo;s also one of the bulkiest Flying types,  so it can take an Ice Punch and still put up a fight. </p>
