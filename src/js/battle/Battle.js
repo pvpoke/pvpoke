@@ -378,9 +378,8 @@ function Battle(){
 				}
 
 				if(action){
-					if(action.type == "fast"){
-						actionsThisTurn = true;
-					}
+					actionsThisTurn = true;
+
 					queuedActions.push(action);
 				}
 			}
@@ -391,6 +390,7 @@ function Battle(){
 				var valid = false;
 
 				if((action.type == "fast")&&(actionsThisTurn)&&( (turns - action.turn + 1) * 500 >= pokemon[action.actor].fastMove.cooldown)){
+					action.priority += 20;
 					valid = true;
 				}
 
@@ -411,13 +411,14 @@ function Battle(){
 
 			// Sort actions by priority
 
-			if(turnActions.length > 1){
+			turnActions.sort((a,b) => (a.settings.priority > b.settings.priority) ? -1 : ((b.settings.priority > a.settings.priority) ? 1 : 0));
+			/*if(turnActions.length > 1){
 				if(turnActions[1].settings.priority > turnActions[0].settings.priority){
 					var firstAction = turnActions[0];
 					turnActions.splice(0, 1);
 					turnActions.push(firstAction);
 				}
-			}
+			}*/
 
 			// Process actions on this turn
 
