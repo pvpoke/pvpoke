@@ -30,6 +30,10 @@
 			{
 				"speciesId": "dragonite",
 				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
+			},
+			{
+				"speciesId": "jirachi",
+				"chargedMoves": ["DOOM_DESIRE", "DAZZLING_GLEAM"]
 			}
 		]
 	},
@@ -269,10 +273,6 @@
 				"fastMove": "CONFUSION"
 			},
 			{
-				"speciesId": "quagsire",
-				"chargedMoves": ["ACID_SPRAY", "STONE_EDGE"]
-			},
-			{
 				"speciesId": "forretress",
 				"chargedMoves": ["ROCK_TOMB", "EARTHQUAKE"]
 			},
@@ -281,8 +281,64 @@
 				"chargedMoves": ["MEGAHORN", "EARTHQUAKE"]
 			},
 			{
-				"speciesId": "mantine",
-				"chargedMoves": ["AERIAL_ACE", "WATER_PULSE"]
+				"speciesId": "exeggutor",
+				"chargedMoves": ["SEED_BOMB", "PSYCHIC"]
+			},
+			{
+				"speciesId": "ninetales",
+				"chargedMoves": ["PSYSHOCK", "SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "quagsire",
+				"chargedMoves": ["EARTHQUAKE", "STONE_EDGE"]
+			},
+			{
+				"speciesId": "lapras",
+				"fastMove": "ICE_SHARD"
+			},
+			{
+				"speciesId": "charizard",
+				"weight": 2
+			},
+			{
+				"speciesId": "venusaur",
+				"weight": 1.5
+			},
+			{
+				"speciesId": "weepinbell",
+				"weight": 0.25
+			},
+			{
+				"speciesId": "sunflora",
+				"weight": 0.25
+			},
+			{
+				"speciesId": "gloom",
+				"weight": 0.25
+			},
+			{
+				"speciesId": "vileplume",
+				"weight": 0.25
+			},
+			{
+				"speciesId": "bellossom",
+				"weight": 0.25
+			},
+			{
+				"speciesId": "bayleaf",
+				"weight": 0.25
+			},
+			{
+				"speciesId": "electabuzz",
+				"weight": 0.5
+			},
+			{
+				"speciesId": "magneton",
+				"weight": 0.5
+			},
+			{
+				"speciesId": "raikou",
+				"weight": 0.5
 			}
 		]
 	},
