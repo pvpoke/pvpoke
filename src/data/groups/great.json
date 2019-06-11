@@ -20,11 +20,6 @@
 		"chargedMoves":["POWER_UP_PUNCH","ICE_PUNCH"]
 	},
 	{
-		"speciesId":"grotle",
-		"fastMove":"RAZOR_LEAF",
-		"chargedMoves":["BODY_SLAM","ENERGY_BALL"]
-	},
-	{
 		"speciesId":"skarmory",
 		"fastMove":"AIR_SLASH",
 		"chargedMoves":["SKY_ATTACK","FLASH_CANNON"]
@@ -33,11 +28,6 @@
 		"speciesId":"blastoise",
 		"fastMove":"WATER_GUN",
 		"chargedMoves":["HYDRO_CANNON","ICE_BEAM"]
-	},
-	{
-		"speciesId":"vigoroth",
-		"fastMove":"COUNTER",
-		"chargedMoves":["BODY_SLAM","BULLDOZE"]
 	},
 	{
 		"speciesId":"venusaur",
@@ -51,13 +41,23 @@
 	},
 	{
 		"speciesId":"lanturn",
-		"fastMove":"CHARGE_BEAM",
+		"fastMove":"WATER_GUN",
 		"chargedMoves":["THUNDERBOLT","HYDRO_PUMP"]
 	},
 	{
 		"speciesId":"bastiodon",
 		"fastMove":"SMACK_DOWN",
 		"chargedMoves":["STONE_EDGE","FLAMETHROWER"]
+	},
+	{
+		"speciesId":"probopass",
+		"fastMove":"SPARK",
+		"chargedMoves":["ROCK_SLIDE","THUNDERBOLT"]
+	},
+	{
+		"speciesId":"jirachi",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["DOOM_DESIRE","DAZZLING_GLEAM"]
 	},
 	{
 		"speciesId":"melmetal",
@@ -110,11 +110,6 @@
 		"chargedMoves":["DARK_PULSE","SLUDGE_WAVE"]
 	},
 	{
-		"speciesId":"drapion",
-		"fastMove":"BITE",
-		"chargedMoves":["AQUA_TAIL","SLUDGE_BOMB"]
-	},
-	{
 		"speciesId":"sableye",
 		"fastMove":"SHADOW_CLAW",
 		"chargedMoves":["FOUL_PLAY","POWER_GEM"]
@@ -138,5 +133,10 @@
 		"speciesId":"deoxys_defense",
 		"fastMove":"COUNTER",
 		"chargedMoves":["PSYCHO_BOOST","ROCK_SLIDE"]
+	},
+	{
+		"speciesId":"haunter",
+		"fastMove":"SHADOW_CLAW",
+		"chargedMoves":["SHADOW_PUNCH","SHADOW_BALL"]
 	}
 ]

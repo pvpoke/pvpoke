@@ -17,7 +17,7 @@
 	{
 		"speciesId":"quagsire",
 		"fastMove":"MUD_SHOT",
-		"chargedMoves":["ACID_SPRAY","STONE_EDGE"]
+		"chargedMoves":["EARTHQUAKE","STONE_EDGE"]
 	},
 	{
 		"speciesId":"forretress",
@@ -25,19 +25,9 @@
 		"chargedMoves":["ROCK_TOMB","EARTHQUAKE"]
 	},
 	{
-		"speciesId":"magneton",
-		"fastMove":"THUNDER_SHOCK",
-		"chargedMoves":["DISCHARGE","MAGNET_BOMB"]
-	},
-	{
 		"speciesId":"charizard",
 		"fastMove":"FIRE_SPIN",
 		"chargedMoves":["DRAGON_CLAW","BLAST_BURN"]
-	},
-	{
-		"speciesId":"typhlosion",
-		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["BLAST_BURN","SOLAR_BEAM"]
 	},
 	{
 		"speciesId":"meganium",
@@ -52,7 +42,7 @@
 	{
 		"speciesId":"ninetales",
 		"fastMove":"FIRE_SPIN",
-		"chargedMoves":["FLAMETHROWER","PSYSHOCK"]
+		"chargedMoves":["SOLAR_BEAM","PSYSHOCK"]
 	},
 	{
 		"speciesId":"raichu",
@@ -63,11 +53,6 @@
 		"speciesId":"venomoth",
 		"fastMove":"CONFUSION",
 		"chargedMoves":["POISON_FANG","SILVER_WIND"]
-	},
-	{
-		"speciesId":"raikou",
-		"fastMove":"THUNDER_SHOCK",
-		"chargedMoves":["WILD_CHARGE","SHADOW_BALL"]
 	},
 	{
 		"speciesId":"blastoise",
@@ -85,24 +70,19 @@
 		"chargedMoves":["SEED_BOMB","PSYCHIC"]
 	},
 	{
+		"speciesId":"exeggcute",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["SEED_BOMB","ANCIENT_POWER"]
+	},
+	{
 		"speciesId":"slowbro",
 		"fastMove":"CONFUSION",
 		"chargedMoves":["ICE_BEAM","PSYCHIC"]
 	},
 	{
-		"speciesId":"slowpoke",
-		"fastMove":"CONFUSION",
-		"chargedMoves":["PSYSHOCK","WATER_PULSE"]
-	},
-	{
-		"speciesId":"omastar",
-		"fastMove":"MUD_SHOT",
-		"chargedMoves":["ROCK_SLIDE","ANCIENT_POWER"]
-	},
-	{
 		"speciesId":"mantine",
 		"fastMove":"WING_ATTACK",
-		"chargedMoves":["AERIAL_ACE","WATER_PULSE"]
+		"chargedMoves":["AERIAL_ACE","ICE_BEAM"]
 	},
 	{
 		"speciesId":"kingdra",
@@ -118,5 +98,10 @@
 		"speciesId":"victreebel",
 		"fastMove":"RAZOR_LEAF",
 		"chargedMoves":["LEAF_BLADE","ACID_SPRAY"]
+	},
+	{
+		"speciesId":"ivysaur",
+		"fastMove":"RAZOR_LEAF",
+		"chargedMoves":["POWER_WHIP","SLUDGE_BOMB"]
 	}
 ]
