@@ -334,6 +334,7 @@ function Battle(){
 
 			// Determine actions for both Pokemon
 			var actionsThisTurn = false;
+			var chargedMoveThisTurn = false;
 
 			for(var i = 0; i < 2; i++){
 
@@ -341,57 +342,55 @@ function Battle(){
 				var opponent = this.getOpponent(i);
 				var action = self.determineTurnAction(poke, opponent);
 
-				if((poke.negateFastMoves)&&(action)&&(action.type=="fast")){
-					var chargedMoveThisTurn = false;
-					var priorityChargedMoveThisTurn = false;
-					var chargedActor = -1;
-
-					for(var j = 0; j < queuedActions.length; j++){
-						var a = queuedActions[j];
-
-						if(a.type == "charged"){
-							chargedMoveThisTurn = true;
-							chargedActor = a.actor;
-
-							if(a.settings.priority > 0){
-								priorityChargedMoveThisTurn = true;
-							}
-						}
-					}
-
-					// Check for a charged move last turn and this turn
-					var chargedMoveLastTurn = false;
-
-					for(var j = 0; j < previousTurnActions.length; j++){
-						var a = previousTurnActions[j];
-
-						if(a.type == "charged"){
-							chargedMoveLastTurn = true;
-						}
-					}
-
-					if((chargedMoveLastTurn)&&(chargedMoveThisTurn > 0)){
-						if(action.actor != chargedActor){
-							action = null;
-						}
-					}
-				}
-
 				if(action){
 					actionsThisTurn = true;
+					if(action.type == "charged"){
+						chargedMoveThisTurn = true;
+					}
 
 					queuedActions.push(action);
 				}
 			}
+			
 
 			// Push queued actions to turn actions to be processed now
 			for(var i = 0; i < queuedActions.length; i++){
 				var action = queuedActions[i];
 				var valid = false;
 
-				if((action.type == "fast")&&(actionsThisTurn)&&( (turns - action.turn + 1) * 500 >= pokemon[action.actor].fastMove.cooldown)){
-					action.priority += 20;
-					valid = true;
+				if(action.type == "fast"){
+					
+					// Was this queued on a previous turn? See if it's eligible
+					if((actionsThisTurn)&&( (turns - action.turn + 1) * 500 >= pokemon[action.actor].fastMove.cooldown)){
+						action.settings.priority += 20;
+						valid = true;
+					}
+
+					
+					// Was this queued this turn? Let's check for piggybacking
+					if(action.turn == turns){
+
+						// Check for a charged move last turn and this turn
+						var chargedMoveLastTurn = false;
+						var fastMoveRegisteredLastTurn = false;
+
+						for(var j = 0; j < previousTurnActions.length; j++){
+							var a = previousTurnActions[j];
+
+							if(a.type == "charged"){
+								chargedMoveLastTurn = true;
+							}
+							if((a.type == "fast")&&(a.actor == action.actor)){
+								fastMoveRegisteredLastTurn = true;
+							}
+						}
+
+						if((chargedMoveLastTurn)&&(fastMoveRegisteredLastTurn)&&(chargedMoveThisTurn)){
+							valid = false;
+							queuedActions.splice(i, 1);
+							i--;
+						}
+					}				
 				}
 
 				if(action.type == "charged"){
