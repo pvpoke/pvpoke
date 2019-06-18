@@ -34,6 +34,10 @@
 			{
 				"speciesId": "jirachi",
 				"chargedMoves": ["DOOM_DESIRE", "DAZZLING_GLEAM"]
+			},
+			{
+				"speciesId": "pidgeot",
+				"chargedMoves": ["AERIAL_ACE", "BRAVE_BIRD"]
 			}
 		]
 	},
@@ -379,6 +383,84 @@
 			{
 				"speciesId": "machamp",
 				"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
+			}
+		]
+	},
+	{
+		"league": 1500,
+		"cup": "jungle",
+		"pokemon": [
+			{
+				"speciesId": "magneton",
+				"chargedMoves": ["DISCHARGE", "MAGNET_BOMB"]
+			},
+			{
+				"speciesId": "noctowl",
+				"chargedMoves": ["SKY_ATTACK", "NIGHT_SHADE"]
+			},
+			{
+				"speciesId": "vigoroth"
+			},
+			{
+				"speciesId": "pidgeot",
+				"chargedMoves": ["AERIAL_ACE", "BRAVE_BIRD"]
+			},
+			{
+				"speciesId": "ninjask",
+				"chargedMoves": ["AERIAL_ACE", "SHADOW_BALL"]
+			},
+			{
+				"speciesId": "scyther",
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["AERIAL_ACE", "X_SCISSOR"]
+			},
+			{
+				"speciesId": "kricketune",
+				"chargedMoves": ["X_SCISSOR", "AERIAL_ACE"]
+			},
+			{
+				"speciesId": "victreebel",
+				"fastMove": "RAZOR_LEAF"
+			},
+			{
+				"speciesId": "gloom",
+				"fastMove": "RAZOR_LEAF"
+			},
+			{
+				"speciesId": "abomasnow",
+				"fastMove": "RAZOR_LEAF"
+			},
+			{
+				"speciesId": "beautifly",
+				"fastMove": "INFESTATION"
+			},
+			{
+				"speciesId": "zapdos",
+				"fastMove": "CHARGE_BEAM"
+			},
+			{
+				"speciesId": "torterra",
+				"fastMove": "RAZOR_LEAF"
+			},
+			{
+				"speciesId": "plusle",
+				"weight": 0.5
+			},
+			{
+				"speciesId": "luxray",
+				"weight": 0.5
+			},
+			{
+				"speciesId": "electivire",
+				"weight": 0.5
+			},
+			{
+				"speciesId": "manectric",
+				"weight": 0.5
+			},
+			{
+				"speciesId": "luxio",
+				"weight": 0.5
 			}
 		]
 	}

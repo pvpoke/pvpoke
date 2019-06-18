@@ -8,6 +8,7 @@
 	<option value="regionals-1">Season 1 Regionals</option>
 	<option value="championships-1">Season 1 Championships</option>
 	<option value="rainbow">Rainbow Cup</option>
+	<option value="jungle">Jungle Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'battle') !== false): ?>
 		<option value="custom">Custom</option>
