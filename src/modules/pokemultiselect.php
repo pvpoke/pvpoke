@@ -31,13 +31,14 @@
 				<option value="great">Great League Meta</option>
 				<option value="ultra" class="hide">Ultra League Meta</option>
 				<option value="master" class="hide">Master League Meta</option>
-				<option value="boulder">Boulder Cup Meta</option>
-				<option value="twilight">Twilight Cup Meta</option>
-				<option value="tempest">Tempest Cup Meta</option>
-				<option value="kingdom">Kingdom Cup Meta</option>
-				<option value="nightmare">Nightmare Cup Meta</option>
-				<option value="regionals-1">Season 1 Regionals Meta</option>
+				<option value="jungle">Jungle Cup Meta</option>
 				<option value="rainbow">Rainbow Cup Meta</option>
+				<option value="regionals-1">Season 1 Regionals Meta</option>
+				<option value="nightmare">Nightmare Cup Meta</option>
+				<option value="kingdom">Kingdom Cup Meta</option>
+				<option value="tempest">Tempest Cup Meta</option>
+				<option value="twilight">Twilight Cup Meta</option>
+				<option value="boulder">Boulder Cup Meta</option>			
 				<option value="leaders">Team Leader Pokemon</option>
 
 				<?php

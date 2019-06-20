@@ -427,6 +427,15 @@
 				"chargedMoves": ["ROCK_BLAST", "THUNDERBOLT"]
 			},
 			{
+				"speciesId": "porygon",
+				"fastMove": "HIDDEN_POWER_FIRE",
+				"chargedMoves": ["DISCHARGE", "HYPER_BEAM"]
+			},
+			{
+				"speciesId": "ludicolo",
+				"fastMove": "RAZOR_LEAF"
+			},
+			{
 				"speciesId": "staravia",
 				"fastMove": "WING_ATTACK"
 			},
