@@ -326,7 +326,7 @@ function Battle(){
 
 			for(var i = 0; i < 2; i++){
 				var poke = pokemon[i];
-				poke.cooldown = Math.max(0, poke.cooldown - deltaTime); // Reduce cooldown
+				poke.cooldown = Math.max(0, poke.cooldown - deltaTime);
 				poke.hasActed = false;
 			}
 
@@ -340,7 +340,7 @@ function Battle(){
 
 				var poke = pokemon[i];
 				var opponent = this.getOpponent(i);
-				var action = self.determineTurnAction(poke, opponent);
+				var action = self.getTurnAction(poke, opponent);
 
 				if(action){
 					actionsThisTurn = true;
@@ -351,23 +351,24 @@ function Battle(){
 					queuedActions.push(action);
 				}
 			}
-			
 
-			// Push queued actions to turn actions to be processed now
+
+			// Take actions from the queue to be processed now
 			for(var i = 0; i < queuedActions.length; i++){
 				var action = queuedActions[i];
 				var valid = false;
 
+				// Is there a fast move that's eligible to be processed this turn?
 				if(action.type == "fast"){
-					
+
 					// Was this queued on a previous turn? See if it's eligible
-					if((actionsThisTurn)&&( (turns - action.turn + 1) * 500 >= pokemon[action.actor].fastMove.cooldown)){
+					var timeSinceActivated = (turns - action.turn) * 500;
+					if((actionsThisTurn)&&(timeSinceActivated >= pokemon[action.actor].fastMove.cooldown - 500)){
 						action.settings.priority += 20;
 						valid = true;
 					}
 
-					
-					// Was this queued this turn? Let's check for piggybacking
+					// Was this queued this turn? Let's check for piggybacking. Boy was this a headache.
 					if(action.turn == turns){
 
 						// Check for a charged move last turn and this turn
@@ -390,7 +391,7 @@ function Battle(){
 							queuedActions.splice(i, 1);
 							i--;
 						}
-					}				
+					}
 				}
 
 				if(action.type == "charged"){
@@ -409,15 +410,7 @@ function Battle(){
 			}
 
 			// Sort actions by priority
-
 			turnActions.sort((a,b) => (a.settings.priority > b.settings.priority) ? -1 : ((b.settings.priority > a.settings.priority) ? 1 : 0));
-			/*if(turnActions.length > 1){
-				if(turnActions[1].settings.priority > turnActions[0].settings.priority){
-					var firstAction = turnActions[0];
-					turnActions.splice(0, 1);
-					turnActions.push(firstAction);
-				}
-			}*/
 
 			// Process actions on this turn
 
@@ -455,18 +448,29 @@ function Battle(){
 
 				for(var j = 0; j < turnActions.length; j++){
 					var a = turnActions[j];
-					if((a.type == "fast")&&(a.actor != action.actor)&&(opponent.fastMove.damage >= poke.hp)&&(action.type=="charged")){
-						// If not a simultaneous knockout
-						action.valid = false;
+
+					// Was this action performed by the opponent?
+					if((a.type == "fast")&&(a.actor != action.actor)){
+						// Will this move faint us and are we using a charged move?
+						if((opponent.fastMove.damage >= poke.hp)&&(action.type=="charged")){
+							// If not a simultaneous knockout
+							action.valid = false;
+						}
 					}
 				}
 
 				self.processAction(action, poke, opponent);
 
-				// Add extra time to space out prioritized charged moves
+				// Add extra time to space out prioritized charged moves, this was a nightmare so do not touch
 
-				if((usePriority)&&(n == 0)&&(action.type == "charged")&&(turnActions.length > 1)&&(! roundShieldUsed)&&(turnActions[n+1].type == "charged")&&(pokemon[0].hp > 0)&&(pokemon[1].hp > 0)){
-					time += 7500;
+				if((usePriority)&&(n == 0)&&(action.type == "charged")){
+					// Was a charged move used this turn that didn't involve shields?
+					if((turnActions.length > 1)&&(! roundShieldUsed)&&(turnActions[n+1].type == "charged")){
+						// Are both Pokemon still alive?
+						if((pokemon[0].hp > 0)&&(pokemon[1].hp > 0)){
+							time += 7500;
+						}
+					}
 				}
 			}
 
@@ -556,7 +560,9 @@ function Battle(){
 		return timeline;
 	}
 
-	this.determineTurnAction = function(poke, opponent){
+	// Isolated function that returns an action a pokemon will perform this turn
+
+	this.getTurnAction = function(poke, opponent){
 		var action = null;
 		var currentShields = poke.shields + opponent.shields;
 
@@ -610,8 +616,8 @@ function Battle(){
 					action.settings.priority += 2;
 					opponent.cooldown = 0;
 
-					var a = self.determineTurnAction(opponent, poke);
-					if(a){
+					var a = self.getTurnAction(opponent, poke);
+					if((a)&&(a.type == "charged")){
 						queuedActions.push(a);
 					}
 				}
