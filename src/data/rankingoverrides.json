@@ -436,6 +436,26 @@
 				"fastMove": "RAZOR_LEAF"
 			},
 			{
+				"speciesId": "venomoth",
+				"fastMove": "CONFUSION"
+			},
+			{
+				"speciesId": "shiftry",
+				"fastMove": "RAZOR_LEAF"
+			},
+			{
+				"speciesId": "snorlax",
+				"chargedMoves": ["BODY_SLAM","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "parasect",
+				"chargedMoves": ["X_SCISSOR","CROSS_POISON"]
+			},
+			{
+				"speciesId": "raticate_alolan",
+				"chargedMoves": ["CRUNCH","HYPER_FANG"]
+			},
+			{
 				"speciesId": "staravia",
 				"fastMove": "WING_ATTACK"
 			},
