@@ -27,6 +27,7 @@ require_once 'header.php'; ?>
 		<div class="supporter">Mushromking</div>
 		<div class="supporter">traderfrog</div>
 		<div class="supporter">ShinyHunterBen</div>
+		<div class="supporter">ElnetoCC</div>
 	</div>
 
 	<h2 class="center">Master Supporters</h2>
