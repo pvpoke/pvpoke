@@ -930,10 +930,6 @@ var InterfaceMaster = (function () {
 											case "p":
 												pokemon.priority = 1;
 												break;
-
-											case "nfm0":
-												pokemon.negateFastMoves = false;
-												break;
 										}
 									}
 
@@ -1641,10 +1637,6 @@ var InterfaceMaster = (function () {
 
 				if(pokemon.priority != 0){
 					pokeStr += "-p";
-				}
-
-				if(! pokemon.negateFastMoves){
-					pokeStr += "-nfm0";
 				}
 
 				return pokeStr;

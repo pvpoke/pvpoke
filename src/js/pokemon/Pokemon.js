@@ -43,8 +43,6 @@ function Pokemon(id, i, b){
 	this.fastMove = null;
 	this.chargedMoves = [];
 
-	this.negateFastMoves = true; // Whether or not to negate Fast Moves between back to back Charged Moves
-
 	this.isCustom = false; // Does this Pokemon have custom set levels and IV's?
 
 	this.index = i;

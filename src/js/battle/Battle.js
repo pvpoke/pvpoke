@@ -33,6 +33,8 @@ function Battle(){
 	var roundChargedMoveUsed;
 	var roundShieldUsed;
 
+	var chargedMinigameTime = 8000;
+
 	var usePriority = false;
 
 	var startingValues = [
@@ -294,6 +296,7 @@ function Battle(){
 		}
 
 		// Determine if charged move priority should be used
+		usePriority = false;
 
 		if(pokemon[0].priority != pokemon[1].priority){
 			usePriority = true;
@@ -452,7 +455,7 @@ function Battle(){
 					// Was this action performed by the opponent?
 					if((a.type == "fast")&&(a.actor != action.actor)){
 						// Will this move faint us and are we using a charged move?
-						if((opponent.fastMove.damage >= poke.hp)&&(action.type=="charged")){
+						if((opponent.fastMove.damage >= poke.hp)&&(poke.hp > 0)&&(action.type=="charged")){
 							// If not a simultaneous knockout
 							action.valid = false;
 						}
@@ -468,7 +471,7 @@ function Battle(){
 					if((turnActions.length > 1)&&(! roundShieldUsed)&&(turnActions[n+1].type == "charged")){
 						// Are both Pokemon still alive?
 						if((pokemon[0].hp > 0)&&(pokemon[1].hp > 0)){
-							time += 7500;
+
 						}
 					}
 				}
@@ -484,9 +487,9 @@ function Battle(){
 				// This is for display purposes only
 
 				if(roundShieldUsed){
-					time += 7500 * (roundChargedMoveUsed-1);
+					time += chargedMinigameTime * (roundChargedMoveUsed-1);
 				} else{
-					time += 7500;
+					time += chargedMinigameTime;
 				}
 
 			}
@@ -904,7 +907,7 @@ function Battle(){
 			case "wait":
 				var displayTime = time;
 				if(roundShieldUsed){
-					displayTime -= 7500;
+					displayTime -= chargedMinigameTime;
 				}
 				timeline.push(new TimelineEvent("tap interaction wait", "Wait", poke.index, displayTime, turns, [2,0]));
 				break;
@@ -932,9 +935,14 @@ function Battle(){
 
 			attacker.energy -= move.energy;
 
+
+			if((usePriority)&&(roundChargedMoveUsed > 0)&&(roundShieldUsed == 0)){
+				time+=chargedMinigameTime;
+			}
+
 			// Add tap events for display
 
-			for(var i = 0; i < 5; i++){
+			for(var i = 0; i < 6; i++){
 				timeline.push(new TimelineEvent("tap "+move.type, "Tap", attacker.index, time+(1000*i), turns, [i]));
 			}
 
@@ -984,7 +992,7 @@ function Battle(){
 
 				if(useShield){
 
-					timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+5500, turns, [damage-1]));
+					timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+6500, turns, [damage-1]));
 					damage = 1;
 					defender.shields--;
 					roundShieldUsed = true;
@@ -1000,7 +1008,7 @@ function Battle(){
 					// If a shield has already been used, add time so events don't visually overlap
 
 					if(roundChargedMoveUsed == 0){
-						time+=7500;
+						time+=chargedMinigameTime;
 					}
 
 				} else{
@@ -1025,9 +1033,13 @@ function Battle(){
 		// This was really hard for my little brain to figure out so like really don't touch it
 
 		if(move.energy > 0){
-			displayTime += 5500;
+			displayTime += 6500;
+
+			if((usePriority)&&(roundChargedMoveUsed > 0)&&(! roundShieldUsed)){
+				displayTime += chargedMinigameTime;
+			}
 		} else if(roundShieldUsed){
-			displayTime -= 7500;
+			displayTime -= chargedMinigameTime;
 		}
 
 		// Apply move buffs and debuffs
