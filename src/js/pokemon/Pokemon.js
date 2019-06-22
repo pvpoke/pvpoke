@@ -193,16 +193,19 @@ function Pokemon(id, i, b){
             }
             hpIV = 15;
             while (hpIV >= 0) {
-                defIV = hpIV;
+                defIV = 15;
                 while (defIV >= 0) {
                     atkIV = 15;
                     while (atkIV >= 0) {
                         calcCP = this.calculateCP(cpm, atkIV, defIV, hpIV);
+						
                         if (calcCP <= targetCP) {
-                            let atk = cpm * (this.baseStats.atk + atkIV);
-                            let def = cpm * (this.baseStats.def + defIV);
-                            let hp = Math.floor(cpm * (this.baseStats.hp + hpIV));
-                            overall = Math.round((hp * atk * def) / 1000);
+                            let atk = cpm * (self.baseStats.atk + atkIV);
+                            let def = cpm * (self.baseStats.def + defIV);
+                            let hp = Math.floor(cpm * (self.baseStats.hp + hpIV));
+                            overall = (hp * atk * def) + 50;
+
+
                             iv_options.push(atkIV, defIV, hpIV);
                             level_options.push(level);
                             overall_options.push(overall);
