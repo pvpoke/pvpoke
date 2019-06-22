@@ -777,7 +777,7 @@ select, input {
   border-color: #b99027;
 }
 .battle-results .timeline-container.sandbox-mode .item.disabled {
-  background: none !important;
+  opacity: 0.5;
 }
 .battle-results .timeline-container.sandbox-mode .item.disabled:hover {
   cursor: initial;
@@ -790,6 +790,9 @@ select, input {
 .battle-results .timeline-container.sandbox-mode .item.interaction.disabled {
   cursor: pointer;
   border: 2px solid #666;
+}
+.battle-results .timeline-container.sandbox-mode .item.interaction.both {
+  border: 3px solid #000;
 }
 .battle-results .timeline-container.sandbox-mode .item.interaction.wait {
   border-style: dotted;

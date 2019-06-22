@@ -59,7 +59,7 @@ require_once 'header.php';
 			<div class="tracker"></div>
 		</div>
 		<div class="tip automated">Hover over or tap the timeline for details</div>
-		<div class="tip sandbox">Click or tap the timeline events to edit actions</div>
+		<div class="tip sandbox">Click the circles to edit actions</div>
 		<div class="playback section white">
 			<div class="flex">
 				<div class="playback-btn replay"></div>

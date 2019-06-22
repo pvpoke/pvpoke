@@ -16,7 +16,7 @@ function PokeSelect(element, i){
 	var interface;
 	var isCustom = false; // Whether or not the Pokemon has custom-set level, IVs, or traits
 	var context = "main";
-	
+
 	var currentHP; // The currently animated HP
 	var currentEnergy; // The currently animated energy
 
@@ -191,7 +191,7 @@ function PokeSelect(element, i){
 
 		$el.find(".hp .bar").css("width", ((health / selectedPokemon.stats.hp)*100)+"%");
 		$el.find(".hp .stat").html(health+" / "+selectedPokemon.stats.hp);
-		
+
 		currentHP = health;
 	}
 
@@ -213,7 +213,7 @@ function PokeSelect(element, i){
 		} else{
 			$bar.removeClass("active");
 		}
-		
+
 		currentEnergy = energy;
 	}
 
@@ -751,13 +751,14 @@ function PokeSelect(element, i){
 		});
 
 	});
-	
+
 	// use the currently animated HP and Energy
 
 	$el.find(".pull-from-timeline").on("click", function(e){
 		$el.find(".start-hp").val(currentHP);
 		$el.find(".start-energy").val(currentEnergy);
 		$el.find(".start-hp").trigger("keyup");
+		$el.find(".start-energy").trigger("keyup");
 	});
 
 	// Randomize selection

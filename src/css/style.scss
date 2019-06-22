@@ -979,7 +979,7 @@ select, input{
 			}
 
 			.item.disabled{
-				background:none !important;
+				opacity: 0.5;
 
 				&:hover{
 					cursor:initial;
@@ -994,6 +994,10 @@ select, input{
 				&.disabled{
 					cursor:pointer;
 					border:2px solid #666;
+				}
+
+				&.both{
+					border: 3px solid #000;
 				}
 
 				&.wait{

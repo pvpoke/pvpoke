@@ -250,7 +250,11 @@ var InterfaceMaster = (function () {
 						$item.find(".item").css("top", -(((height+2)/2)+1)+"px");
 
 						if(event.type.indexOf("interaction") > -1){
-							$item.find(".item").css("top", -(((height+2)/2)+15)+"px");
+							if($item.find(".item").hasClass("both")){
+								$item.find(".item").css("top", -(((height+2)/2)+16)+"px");
+							} else{
+								$item.find(".item").css("top", -(((height+2)/2)+15)+"px");
+							}
 						}
 					}
 
@@ -1384,12 +1388,6 @@ var InterfaceMaster = (function () {
 				// Clear other selector
 
 				pokeSelectors[loserIndex].clear();
-
-				// Turn off sandbox mode if on
-
-				if(sandbox){
-					$(".sandbox-btn").trigger("click");
-				}
 
 				// Scroll to inputs
 
