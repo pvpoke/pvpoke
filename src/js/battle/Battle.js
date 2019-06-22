@@ -436,9 +436,15 @@ function Battle(){
 						}
 
 						// Check if knocked out from a priority move
-
 						if((usePriority)&&(poke.hp <= 0)){
 							action.valid = false;
+						}
+
+						// Check if knocked out by a fast move
+						for(var j = 0; j < turnActions.length; j++){
+							if((turnActions[j].type == "fast")&&(turnActions[j].actor != action.actor)&&(poke.hp <= pokemon[turnActions[j].actor].fastMove.damage)){
+								action.valid = false;
+							}
 						}
 						break;
 
@@ -652,23 +658,6 @@ function Battle(){
 
 			self.logDecision(turns, poke, "'s best charged move is charged (" + poke.bestChargedMove.name + ")");
 
-			// Axing this stuff for now
-
-			/*if((opponent.cooldown == 0)||(opponent.cooldown == opponent.fastMove.cooldown)){
-
-				if((opponent.fastMove.cooldown > poke.fastMove.cooldown)){
-					useChargedMove = false;
-
-					self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because opponent isn't on cooldown and its fast move is faster");
-				}
-			} else{
-				if(opponent.cooldown > poke.fastMove.cooldown){
-					useChargedMove = false;
-
-					self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because opponent will still be on cooldown after a fast move");
-				}
-			}*/
-
 			// Don't use a charged move if fast moves will result in a KO
 
 			if(opponent.hp <= poke.fastMove.damage){
@@ -724,7 +713,7 @@ function Battle(){
 
 				// Use charged move if it would KO the opponent
 
-				if((move.damage >= opponent.hp) && (opponent.hp > poke.fastMove.damage) && (opponent.shields == 0) && (!chargedMoveUsed)){
+				if((move.damage >= opponent.hp) && (opponent.hp > poke.fastMove.damage) && (!chargedMoveUsed)){
 					action = new TimelineAction(
 						"charged",
 						poke.index,
@@ -755,20 +744,6 @@ function Battle(){
 
 						chargedMoveUsed = true;
 						return action;
-
-						/*if( ((opponent.cooldown == 0)||(opponent.cooldown == opponent.fastMove.cooldown)) && (opponent.fastMove.cooldown > poke.fastMove.cooldown) ){
-							self.logDecision(turns, poke, " doesn't use " + move.name + " because opponent isn't on cooldown and its fast move is faster");
-						} else{
-							action = new TimelineAction(
-								"charged",
-								poke.index,
-								turns,
-								moveIndex,
-								{shielded: false, buffs: false, priority:poke.priority});
-
-							chargedMoveUsed = true;
-							return action;
-						}*/
 					}
 				}
 
@@ -778,9 +753,9 @@ function Battle(){
 
 				// Will this Pokemon be knocked out this round?
 
-				if(opponent.cooldown == 0){
+				//if(opponent.cooldown == 0){
 					// Will a Fast Move knock it out?
-					if(poke.hp <= opponent.fastMove.damage){
+					if((poke.hp <= opponent.fastMove.damage * 2)&&(opponent.cooldown / poke.fastMove.cooldown < 3)){
 						nearDeath = true;
 
 						self.logDecision(turns, poke, " will be knocked out by opponent's fast move this turn");
@@ -797,7 +772,7 @@ function Battle(){
 							}
 						}
 					}
-				}
+				//}
 
 				// If this Pokemon uses a Fast Move, will it be knocked out while on cooldown?
 
