@@ -459,7 +459,6 @@ function Battle(){
 						}
 
 						if((lethalFastMove)&&(! opponentChargedMoveThisTurn)){
-							console.log(poke.speciesName + " " + poke.hp);
 							action.valid = false;
 						}
 						break;
