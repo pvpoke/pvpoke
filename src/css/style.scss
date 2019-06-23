@@ -985,7 +985,7 @@ select, input{
 					cursor:initial;
 				}
 			}
-
+      
 			.item.interaction{
 				display: block !important;
 				border:2px solid #000;
@@ -1003,11 +1003,6 @@ select, input{
 				&.wait{
 					border-style:dotted;
 				}
-			}
-
-			.item.both{
-				border:2px solid #000;
-				top:-6px;
 			}
 		}
 
@@ -1496,6 +1491,10 @@ select, input{
 	border-radius:8px;
 	margin-bottom:5px;
 
+	&.hide{
+		display:none !important;
+	}
+
 	.name-container{
 		float:left;
 		padding:5px 0;
@@ -1693,6 +1692,31 @@ select, input{
 
 .options{
 	margin: 40px 0 20px 0;
+}
+
+.check.limited{
+	.limited-title{
+		display: inline;
+	}
+}
+
+.limited-title{
+	color:$color-gold;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    font-weight: bold;
+}
+
+.rankings-container .limited-rank{
+	@include gradient($color-gold, $color-gold-dark);
+
+	.name-container{
+		color:#000;
+	}
+}
+
+.asterisk{
+	font-size:12px;
+	margin-bottom:15px;
 }
 
 /* TEAM BUILD STYLING */

@@ -797,10 +797,7 @@ select, input {
 .battle-results .timeline-container.sandbox-mode .item.interaction.wait {
   border-style: dotted;
 }
-.battle-results .timeline-container.sandbox-mode .item.both {
-  border: 2px solid #000;
-  top: -6px;
-}
+
 .battle-results .timeline-container.zoom {
   height: 90px;
   overflow-x: scroll;
@@ -1061,9 +1058,11 @@ select, input {
   border-radius: 12px;
   background: none !important;
 }
+
 .timeline .item-container .item.tap.interaction {
   display: none;
 }
+
 .timeline .item-container .item.buff {
   background-image: url("../img/move_buff.png") !important;
   background-position: center -50% !important;
@@ -1235,9 +1234,11 @@ select, input {
 .tooltip.shield {
   background: #df46e5;
 }
+
 .tooltip.tap {
   background: #eee;
 }
+
 .tooltip h3 {
   margin: 0;
   font-size: 14px;
@@ -1272,6 +1273,11 @@ select, input {
   border-radius: 8px;
   margin-bottom: 5px;
 }
+
+.rank.hide {
+  display: none !important;
+}
+
 .rank .name-container {
   float: left;
   padding: 5px 0;
@@ -1440,6 +1446,35 @@ select, input {
 
 .options {
   margin: 40px 0 20px 0;
+}
+
+.check.limited .limited-title {
+  display: inline;
+}
+
+.limited-title {
+  color: #eabd49;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  font-weight: bold;
+}
+
+.rankings-container .limited-rank {
+  background: #b99027;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #eabd49 30%, #b99027 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #eabd49 30%, #b99027 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #eabd49 30%, #b99027 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.rankings-container .limited-rank .name-container {
+  color: #000;
+}
+
+.asterisk {
+  font-size: 12px;
+  margin-bottom: 15px;
 }
 
 /* TEAM BUILD STYLING */

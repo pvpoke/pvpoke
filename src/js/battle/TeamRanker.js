@@ -69,13 +69,20 @@ var RankerMaster = (function () {
 					}
 
 					var bannedList = ["mewtwo","giratina_altered","groudon","kyogre","rayquaza","palkia","dialga","heatran","giratina_origin"];
-					var permaBannedList = ["rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","regigigas","phione","manaphy","darkrai","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","jirachi","kecleon"]; // Don't rank these Pokemon at all yet
+					var permaBannedList = ["rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","regigigas","phione","manaphy","darkrai","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","kecleon"]; // Don't rank these Pokemon at all yet
 					var allowedList = [];
 
 					if(cup.name == "nightmare"){
-						permaBannedList = permaBannedList.concat(["sableye","medicham","lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi","latios","latias","uxie","azelf","mesprit"]);
+						permaBannedList = permaBannedList.concat(["sableye","medicham","lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi","latios","latias","uxie","azelf","mesprit","jirachi"]);
 					}
 
+					if(cup.name == "championships-1"){
+						permaBannedList = permaBannedList.concat(["lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi","latios","latias","uxie","mesprit","azelf","melmetal","celebi","zapdos","articuno","moltres","suicune","entei","raikou","regirock","registeel","regice","ho_oh","jirachi"]);
+					}
+					
+					if(cup.name == "jungle"){
+						permaBannedList = permaBannedList.concat(["tropius","wormadam_sandy","wormadam_plant","wormadam_trash","mothim"]);
+					}
 
 					if(exclusionList){
 						bannedList = bannedList.concat(exclusionList);
@@ -103,7 +110,7 @@ var RankerMaster = (function () {
 								if(permaBannedList.indexOf(pokemon.speciesId) > -1){
 									continue;
 								}
-								
+
 								if((cup.name == "rainbow")&&( (pokemon.dex > 251) || (pokemon.speciesId.indexOf("alolan") > -1))){
 									continue;
 								}
@@ -237,7 +244,7 @@ var RankerMaster = (function () {
 							}
 
 							battle.simulate();
-							
+
 							var healthRating = (pokemon.hp / pokemon.stats.hp);
 							var damageRating = ((opponent.stats.hp - opponent.hp) / (opponent.stats.hp));
 

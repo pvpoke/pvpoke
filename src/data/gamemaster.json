@@ -41,7 +41,11 @@
     ],
     "rainbow": [
       "fire","water","grass","electric","bug"
-    ]
+  	],
+    "championships-1": [],
+    "jungle": [
+		"normal","grass","electric","bug"
+  	]
   },
   "pokemon": [
     {
@@ -4230,7 +4234,8 @@
       ],
       "fastMoves": [
         "LICK",
-        "ZEN_HEADBUTT"
+        "ZEN_HEADBUTT",
+		"YAWN"
       ],
       "chargedMoves": [
         "BODY_SLAM",
@@ -13851,6 +13856,15 @@
       "cooldown": 1500
     },
     {
+      "moveId": "CHARM",
+      "name": "Charm",
+      "type": "fairy",
+      "power": 16,
+      "energy": 0,
+      "energyGain": 6,
+      "cooldown": 1500
+    },
+    {
       "moveId": "CLOSE_COMBAT",
       "name": "Close Combat",
       "type": "fighting",
@@ -13962,8 +13976,8 @@
       "moveId": "DOOM_DESIRE",
       "name": "Doom Desire",
       "type": "steel",
-      "power": 80,
-      "energy": 35,
+      "power": 70,
+      "energy": 40,
       "energyGain": 0,
       "cooldown": 500
     },
