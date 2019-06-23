@@ -441,10 +441,26 @@ function Battle(){
 						}
 
 						// Check if knocked out by a fast move
+						var lethalFastMove = false;
+						var opponentChargedMoveThisTurn = false;
+
 						for(var j = 0; j < turnActions.length; j++){
-							if((turnActions[j].type == "fast")&&(turnActions[j].actor != action.actor)&&(poke.hp <= pokemon[turnActions[j].actor].fastMove.damage)){
-								action.valid = false;
+							if(turnActions[j].actor != action.actor){
+								if(turnActions[j].type == "fast"){
+									// Need to check if the damage has already been applied this turn
+									if(((opponent.cooldown == 0)&&(poke.hp <= pokemon[turnActions[j].actor].fastMove.damage)) || (poke.hp < 1)){
+										lethalFastMove = true;
+									}
+
+								} else if(turnActions[j].type == "charged"){
+									opponentChargedMoveThisTurn = true;
+								}
 							}
+						}
+
+						if((lethalFastMove)&&(! opponentChargedMoveThisTurn)){
+							console.log(poke.speciesName + " " + poke.hp);
+							action.valid = false;
 						}
 						break;
 
@@ -453,34 +469,7 @@ function Battle(){
 						break;
 				}
 
-				// Search for fatal queued Fast Move damage this turn
-
-				for(var j = 0; j < turnActions.length; j++){
-					var a = turnActions[j];
-
-					// Was this action performed by the opponent?
-					if((a.type == "fast")&&(a.actor != action.actor)){
-						// Will this move faint us and are we using a charged move?
-						if((opponent.fastMove.damage >= poke.hp)&&(poke.hp > 0)&&(action.type=="charged")){
-							// If not a simultaneous knockout
-							action.valid = false;
-						}
-					}
-				}
-
 				self.processAction(action, poke, opponent);
-
-				// Add extra time to space out prioritized charged moves, this was a nightmare so do not touch
-
-				if((usePriority)&&(n == 0)&&(action.type == "charged")){
-					// Was a charged move used this turn that didn't involve shields?
-					if((turnActions.length > 1)&&(! roundShieldUsed)&&(turnActions[n+1].type == "charged")){
-						// Are both Pokemon still alive?
-						if((pokemon[0].hp > 0)&&(pokemon[1].hp > 0)){
-
-						}
-					}
-				}
 			}
 
 			// Set previous turn Actions
@@ -751,28 +740,24 @@ function Battle(){
 
 				var nearDeath = false;
 
-				// Will this Pokemon be knocked out this round?
+				// Will a Fast Move knock it out?
+				if((poke.hp <= opponent.fastMove.damage * 2)&&(opponent.cooldown / poke.fastMove.cooldown < 3)){
+					nearDeath = true;
 
-				//if(opponent.cooldown == 0){
-					// Will a Fast Move knock it out?
-					if((poke.hp <= opponent.fastMove.damage * 2)&&(opponent.cooldown / poke.fastMove.cooldown < 3)){
-						nearDeath = true;
+					self.logDecision(turns, poke, " will be knocked out by opponent's fast move this turn");
+				}
 
-						self.logDecision(turns, poke, " will be knocked out by opponent's fast move this turn");
-					}
+				// Will a Charged Move knock it out?
+				if(poke.shields == 0){
+					for(var j = 0; j < opponent.chargedMoves.length; j++){
 
-					// Will a Charged Move knock it out?
-					if(poke.shields == 0){
-						for(var j = 0; j < opponent.chargedMoves.length; j++){
+						if((opponent.energy >= opponent.chargedMoves[j].energy) && (poke.hp <= self.calculateDamage(opponent, poke, opponent.chargedMoves[j]))){
+							nearDeath = true;
 
-							if((opponent.energy >= opponent.chargedMoves[j].energy) && (poke.hp <= self.calculateDamage(opponent, poke, opponent.chargedMoves[j]))){
-								nearDeath = true;
-
-								self.logDecision(turns, poke, " doesn't have shields and will by knocked out by opponent's " + opponent.chargedMoves[j].name + " this turn");
-							}
+							self.logDecision(turns, poke, " doesn't have shields and will by knocked out by opponent's " + opponent.chargedMoves[j].name + " this turn");
 						}
 					}
-				//}
+				}
 
 				// If this Pokemon uses a Fast Move, will it be knocked out while on cooldown?
 
