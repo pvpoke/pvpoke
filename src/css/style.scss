@@ -972,22 +972,37 @@ select, input{
 			border: 1px solid $color-gold;
 
 			.item.charged:hover,
+			.item.interaction:hover,
 			.item.fast:not(.disabled):hover{
 				@include gradient($color-gold, $color-gold-dark);
 				border-color:$color-gold-dark;
 			}
 
 			.item.disabled{
-				background:none !important;
+				opacity: 0.5;
 
 				&:hover{
 					cursor:initial;
 				}
 			}
-
-			.item.both{
+      
+			.item.interaction{
+				display: block !important;
 				border:2px solid #000;
-				top:-6px;
+				cursor:pointer;
+
+				&.disabled{
+					cursor:pointer;
+					border:2px solid #666;
+				}
+
+				&.both{
+					border: 3px solid #000;
+				}
+
+				&.wait{
+					border-style:dotted;
+				}
 			}
 		}
 
@@ -1205,9 +1220,13 @@ select, input{
 	border-top:1px dashed #000;
 	position:relative;
 	width:100%;
-	margin: 25px 0;
+	margin: 25px 0 30px 0;
 	top:0;
 	left:0;
+
+	&:nth-of-type(2){
+		margin: 30px 0 25px 0;
+	}
 
 	.item-container{
 		position:absolute;
@@ -1270,6 +1289,10 @@ select, input{
 				border:2px solid #000;
 				border-radius:12px;
 				background:none !important;
+
+				&.interaction{
+					display:none;
+				}
 			}
 
 			&.buff{
@@ -1421,6 +1444,10 @@ select, input{
 
 	&.shield{
 		background:$color-shield;
+	}
+
+	&.tap{
+		background:#eee;
 	}
 
 	h3{

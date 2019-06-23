@@ -59,7 +59,7 @@ require_once 'header.php';
 			<div class="tracker"></div>
 		</div>
 		<div class="tip automated">Hover over or tap the timeline for details</div>
-		<div class="tip sandbox">Click or tap the timeline events to edit actions</div>
+		<div class="tip sandbox">Click the circles to edit actions</div>
 		<div class="playback section white">
 			<div class="flex">
 				<div class="playback-btn replay"></div>
@@ -291,6 +291,7 @@ require_once 'header.php';
 		<div class="stat-ept fast"><span class="stat"></span> ept</div>
 		<div class="stat-dpe charged"><span class="stat"></span> dpe</div>
 	</div>
+	<p class="wait hide">This Pokemon will take no action this turn.</p>
 
 	<div class="check shields charged"><span></span>Shield this attack</div>
 	<div class="check buffs charged"><span></span>Apply buffs/debuffs</div>

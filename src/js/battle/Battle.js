@@ -14,6 +14,7 @@ function Battle(){
 
 	var actions = []; // User defined actions
 	var previousTurnActions = [] // Actions from the previous turn
+	var queuedActions = []; // Input registered from previous turns to be processed on future turns
 	var sandbox = false; // Is this automated or following user instructions?
 
 	// Battle properties
@@ -31,6 +32,8 @@ function Battle(){
 
 	var roundChargedMoveUsed;
 	var roundShieldUsed;
+
+	var chargedMinigameTime = 8000;
 
 	var usePriority = false;
 
@@ -293,6 +296,7 @@ function Battle(){
 		}
 
 		// Determine if charged move priority should be used
+		usePriority = false;
 
 		if(pokemon[0].priority != pokemon[1].priority){
 			usePriority = true;
@@ -302,6 +306,7 @@ function Battle(){
 		turns = 0;
 		turnsToWin = [0, 0];
 		timeline = [];
+		queuedActions = [];
 
 		var deltaTime = 500;
 
@@ -324,68 +329,91 @@ function Battle(){
 
 			for(var i = 0; i < 2; i++){
 				var poke = pokemon[i];
-				poke.cooldown = Math.max(0, poke.cooldown - deltaTime); // Reduce cooldown
+				poke.cooldown = Math.max(0, poke.cooldown - deltaTime);
+				poke.hasActed = false;
 			}
 
 			turns++;
 
 			// Determine actions for both Pokemon
+			var actionsThisTurn = false;
+			var chargedMoveThisTurn = false;
 
 			for(var i = 0; i < 2; i++){
 
 				var poke = pokemon[i];
 				var opponent = this.getOpponent(i);
+				var action = self.getTurnAction(poke, opponent);
 
-				var currentShields = poke.shields + opponent.shields;
+				if(action){
+					actionsThisTurn = true;
+					if(action.type == "charged"){
+						chargedMoveThisTurn = true;
+					}
 
-				// If Pokemon can take action
+					queuedActions.push(action);
+				}
+			}
 
-				chargedMoveUsed = false; // Flag so Pokemon only uses one Charged Move per round
 
-				if(poke.cooldown == 0){
-					var action = null;
+			// Take actions from the queue to be processed now
+			for(var i = 0; i < queuedActions.length; i++){
+				var action = queuedActions[i];
+				var valid = false;
 
-					if(! sandbox){
-						action = self.decideAction(poke, opponent);
-					} else{
-						// Search for a charged move action
+				// Is there a fast move that's eligible to be processed this turn?
+				if(action.type == "fast"){
 
-						for(var n = 0; n < actions.length; n++){
-							var a = actions[n];
+					// Was this queued on a previous turn? See if it's eligible
+					var timeSinceActivated = (turns - action.turn) * 500;
+					if((actionsThisTurn)&&(timeSinceActivated >= pokemon[action.actor].fastMove.cooldown - 500)){
+						action.settings.priority += 20;
+						valid = true;
+					}
 
-							if((a.actor == i)&&(a.turn == turns)&&(poke.chargedMoves.length > a.value)){
-								action = a;
+					// Was this queued this turn? Let's check for piggybacking. Boy was this a headache.
+					if(action.turn == turns){
 
-								// Apply priority
+						// Check for a charged move last turn and this turn
+						var chargedMoveLastTurn = false;
+						var fastMoveRegisteredLastTurn = false;
 
-								action.settings.priority = poke.priority;
+						for(var j = 0; j < previousTurnActions.length; j++){
+							var a = previousTurnActions[j];
+
+							if(a.type == "charged"){
+								chargedMoveLastTurn = true;
+							}
+							if((a.type == "fast")&&(a.actor == action.actor)){
+								fastMoveRegisteredLastTurn = true;
 							}
 						}
+
+						if((chargedMoveLastTurn)&&(fastMoveRegisteredLastTurn)&&(chargedMoveThisTurn)){
+							valid = false;
+							queuedActions.splice(i, 1);
+							i--;
+						}
 					}
-
-					// If no other action set, use a fast move
-
-					if(! action){
-						action = new TimelineAction("fast", i, turns, 0, {priority: poke.priority});
-					}
-
-					turnActions.push(action);
 				}
 
-				if(poke.shields + opponent.shields < currentShields){
-					roundShieldUsed = true;
+				if(action.type == "charged"){
+					valid = true;
+				}
+
+				if(action.type == "wait"){
+					valid = true;
+				}
+
+				if(valid){
+					turnActions.push(action);
+					queuedActions.splice(i, 1);
+					i--;
 				}
 			}
 
 			// Sort actions by priority
-
-			if(turnActions.length > 1){
-				if(turnActions[1].settings.priority > turnActions[0].settings.priority){
-					var firstAction = turnActions[0];
-					turnActions.splice(0, 1);
-					turnActions.push(firstAction);
-				}
-			}
+			turnActions.sort((a,b) => (a.settings.priority > b.settings.priority) ? -1 : ((b.settings.priority > a.settings.priority) ? 1 : 0));
 
 			// Process actions on this turn
 
@@ -394,43 +422,10 @@ function Battle(){
 				var poke = pokemon[action.actor];
 				var opponent = pokemon[ (action.actor == 0) ? 1 : 0 ];
 
-				var chargedMoveThisTurn = false;
-				var priorityChargedMoveThisTurn = false;
-
-				for(var j = 0; j < turnActions.length; j++){
-					var a = turnActions[j];
-
-					if(a.type == "charged"){
-						chargedMoveThisTurn = true;
-
-						if(a.settings.priority > 0){
-							priorityChargedMoveThisTurn = true;
-						}
-					}
-				}
-
 				switch(action.type){
 
 					case "fast":
 						action.valid = true;
-
-						if(poke.negateFastMoves){
-							// Check for a charged move last turn and this turn
-							var chargedMoveLastTurn = false;
-
-							for(var j = 0; j < previousTurnActions.length; j++){
-								var a = previousTurnActions[j];
-
-								if(a.type == "charged"){
-									chargedMoveLastTurn = true;
-								}
-							}
-
-
-							if((chargedMoveLastTurn)&&(chargedMoveThisTurn > 0)){
-								action.valid = false;
-							}
-						}
 						break;
 
 					case "charged":
@@ -441,20 +436,39 @@ function Battle(){
 						}
 
 						// Check if knocked out from a priority move
-
-						if((usePriority)&&(poke.hp <= 0)&&(poke.priority == 0)&&(priorityChargedMoveThisTurn)){
+						if((usePriority)&&(poke.hp <= 0)){
 							action.valid = false;
 						}
+
+						// Check if knocked out by a fast move
+						var lethalFastMove = false;
+						var opponentChargedMoveThisTurn = false;
+
+						for(var j = 0; j < turnActions.length; j++){
+							if(turnActions[j].actor != action.actor){
+								if(turnActions[j].type == "fast"){
+									// Need to check if the damage has already been applied this turn
+									if(((opponent.cooldown == 0)&&(poke.hp <= pokemon[turnActions[j].actor].fastMove.damage)) || (poke.hp < 1)){
+										lethalFastMove = true;
+									}
+
+								} else if(turnActions[j].type == "charged"){
+									opponentChargedMoveThisTurn = true;
+								}
+							}
+						}
+
+						if((lethalFastMove)&&(! opponentChargedMoveThisTurn)){
+							action.valid = false;
+						}
+						break;
+
+					case "wait":
+						action.valid = true;
 						break;
 				}
 
 				self.processAction(action, poke, opponent);
-
-				// Add extra time to space out prioritized charged moves
-
-				if((n == 0)&&(action.type == "charged")&&(turnActions.length > 1)&&(! roundShieldUsed)&&(turnActions[n+1].type == "charged")&&(pokemon[0].hp > 0)&&(pokemon[1].hp > 0)){
-					time += 7500;
-				}
 			}
 
 			// Set previous turn Actions
@@ -467,9 +481,9 @@ function Battle(){
 				// This is for display purposes only
 
 				if(roundShieldUsed){
-					time += 7500 * (roundChargedMoveUsed-1);
+					time += chargedMinigameTime * (roundChargedMoveUsed-1);
 				} else{
-					time += 7500;
+					time += chargedMinigameTime;
 				}
 
 			}
@@ -543,6 +557,81 @@ function Battle(){
 		return timeline;
 	}
 
+	// Isolated function that returns an action a pokemon will perform this turn
+
+	this.getTurnAction = function(poke, opponent){
+		var action = null;
+		var currentShields = poke.shields + opponent.shields;
+
+		// If Pokemon can take action
+
+		chargedMoveUsed = false; // Flag so Pokemon only uses one Charged Move per round
+
+		if((poke.cooldown == 0)&&(! poke.hasActed)){
+			poke.hasActed = true;
+
+			if(! sandbox){
+				action = self.decideAction(poke, opponent);
+			} else{
+				// Search for a charged move action
+
+				for(var n = 0; n < actions.length; n++){
+					var a = actions[n];
+
+					if((a.actor == poke.index)&&(a.turn == turns)){
+						action = a;
+
+						// Apply priority
+
+						action.settings.priority = poke.priority;
+
+						// Don't do action if not enough energy
+
+						if((action.type == "charged")&&(poke.energy < poke.chargedMoves[action.value].energy)){
+							action = null;
+						}
+					}
+				}
+			}
+
+			// If no other action set, use a fast move
+
+			if(! action){
+				action = new TimelineAction("fast", poke.index, turns, 0, {priority: poke.priority});
+			}
+
+			// Set cooldown
+
+			if(action.type == "fast"){
+				poke.cooldown = poke.fastMove.cooldown;
+				timeline.push(new TimelineEvent("tap interaction", "Tap", poke.index, time, turns, [2,0]));
+			}
+
+			if(action.type == "charged"){
+				// Reset all cooldowns
+				if((opponent.cooldown > 0)&&(! opponent.hasActed)){
+					action.settings.priority += 2;
+					opponent.cooldown = 0;
+
+					var a = self.getTurnAction(opponent, poke);
+					if((a)&&(a.type == "charged")){
+						queuedActions.push(a);
+					}
+				}
+				poke.cooldown = 0;
+				action.settings.priority += 10;
+			}
+		}
+
+		return action;
+
+		if(poke.shields + opponent.shields < currentShields){
+			roundShieldUsed = true;
+		}
+
+
+	}
+
 	// Run AI decision making to determine battle action this turn, and return the resulting action
 
 	this.decideAction = function(poke, opponent){
@@ -556,21 +645,6 @@ function Battle(){
 			var useChargedMove = true;
 
 			self.logDecision(turns, poke, "'s best charged move is charged (" + poke.bestChargedMove.name + ")");
-
-			if((opponent.cooldown == 0)||(opponent.cooldown == opponent.fastMove.cooldown)){
-
-				if((opponent.fastMove.cooldown > poke.fastMove.cooldown)){
-					useChargedMove = false;
-
-					self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because opponent isn't on cooldown and its fast move is faster");
-				}
-			} else{
-				if(opponent.cooldown > poke.fastMove.cooldown){
-					useChargedMove = false;
-
-					self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because opponent will still be on cooldown after a fast move");
-				}
-			}
 
 			// Don't use a charged move if fast moves will result in a KO
 
@@ -627,7 +701,7 @@ function Battle(){
 
 				// Use charged move if it would KO the opponent
 
-				if((move.damage >= opponent.hp) && (opponent.hp > poke.fastMove.damage) && (opponent.shields == 0) && (!chargedMoveUsed)){
+				if((move.damage >= opponent.hp) && (opponent.hp > poke.fastMove.damage) && (!chargedMoveUsed)){
 					action = new TimelineAction(
 						"charged",
 						poke.index,
@@ -649,19 +723,15 @@ function Battle(){
 					if((opponent.hp > poke.fastMove.damage)&&(opponent.hp > (poke.fastMove.damage *(opponent.fastMove.cooldown / poke.fastMove.cooldown)))){
 						self.logDecision(turns, poke, " wants to remove shields with " + move.name + " and opponent won't faint from fast move damage before next cooldown");
 
-						if( ((opponent.cooldown == 0)||(opponent.cooldown == opponent.fastMove.cooldown)) && (opponent.fastMove.cooldown > poke.fastMove.cooldown) ){
-							self.logDecision(turns, poke, " doesn't use " + move.name + " because opponent isn't on cooldown and its fast move is faster");
-						} else{
-							action = new TimelineAction(
-								"charged",
-								poke.index,
-								turns,
-								moveIndex,
-								{shielded: false, buffs: false, priority:poke.priority});
+						action = new TimelineAction(
+							"charged",
+							poke.index,
+							turns,
+							moveIndex,
+							{shielded: false, buffs: false, priority:poke.priority});
 
-							chargedMoveUsed = true;
-							return action;
-						}
+						chargedMoveUsed = true;
+						return action;
 					}
 				}
 
@@ -669,25 +739,21 @@ function Battle(){
 
 				var nearDeath = false;
 
-				// Will this Pokemon be knocked out this round?
+				// Will a Fast Move knock it out?
+				if((poke.hp <= opponent.fastMove.damage * 2)&&(opponent.cooldown / poke.fastMove.cooldown < 3)){
+					nearDeath = true;
 
-				if(opponent.cooldown == 0){
-					// Will a Fast Move knock it out?
-					if(poke.hp <= opponent.fastMove.damage){
-						nearDeath = true;
+					self.logDecision(turns, poke, " will be knocked out by opponent's fast move this turn");
+				}
 
-						self.logDecision(turns, poke, " will be knocked out by opponent's fast move this turn");
-					}
+				// Will a Charged Move knock it out?
+				if(poke.shields == 0){
+					for(var j = 0; j < opponent.chargedMoves.length; j++){
 
-					// Will a Charged Move knock it out?
-					if(poke.shields == 0){
-						for(var j = 0; j < opponent.chargedMoves.length; j++){
+						if((opponent.energy >= opponent.chargedMoves[j].energy) && (poke.hp <= self.calculateDamage(opponent, poke, opponent.chargedMoves[j]))){
+							nearDeath = true;
 
-							if((opponent.energy >= opponent.chargedMoves[j].energy) && (poke.hp <= self.calculateDamage(opponent, poke, opponent.chargedMoves[j]))){
-								nearDeath = true;
-
-								self.logDecision(turns, poke, " doesn't have shields and will by knocked out by opponent's " + opponent.chargedMoves[j].name + " this turn");
-							}
+							self.logDecision(turns, poke, " doesn't have shields and will by knocked out by opponent's " + opponent.chargedMoves[j].name + " this turn");
 						}
 					}
 				}
@@ -796,6 +862,14 @@ function Battle(){
 					roundChargedMoveUsed++;
 				}
 				break;
+
+			case "wait":
+				var displayTime = time;
+				if(roundShieldUsed){
+					displayTime -= chargedMinigameTime;
+				}
+				timeline.push(new TimelineEvent("tap interaction wait", "Wait", poke.index, displayTime, turns, [2,0]));
+				break;
 		}
 	}
 
@@ -820,9 +894,14 @@ function Battle(){
 
 			attacker.energy -= move.energy;
 
+
+			if((usePriority)&&(roundChargedMoveUsed > 0)&&(roundShieldUsed == 0)){
+				time+=chargedMinigameTime;
+			}
+
 			// Add tap events for display
 
-			for(var i = 0; i < 5; i++){
+			for(var i = 0; i < 6; i++){
 				timeline.push(new TimelineEvent("tap "+move.type, "Tap", attacker.index, time+(1000*i), turns, [i]));
 			}
 
@@ -872,7 +951,7 @@ function Battle(){
 
 				if(useShield){
 
-					timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+5500, turns, [damage-1]));
+					timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+6500, turns, [damage-1]));
 					damage = 1;
 					defender.shields--;
 					roundShieldUsed = true;
@@ -888,7 +967,7 @@ function Battle(){
 					// If a shield has already been used, add time so events don't visually overlap
 
 					if(roundChargedMoveUsed == 0){
-						time+=7500;
+						time+=chargedMinigameTime;
 					}
 
 				} else{
@@ -901,7 +980,6 @@ function Battle(){
 			// If Fast Move
 
 			attacker.energy += attacker.fastMove.energyGain;
-			attacker.cooldown = move.cooldown;
 
 			if(attacker.energy > 100){
 				attacker.energy = 100;
@@ -914,9 +992,13 @@ function Battle(){
 		// This was really hard for my little brain to figure out so like really don't touch it
 
 		if(move.energy > 0){
-			displayTime += 5500;
+			displayTime += 6500;
+
+			if((usePriority)&&(roundChargedMoveUsed > 0)&&(! roundShieldUsed)){
+				displayTime += chargedMinigameTime;
+			}
 		} else if(roundShieldUsed){
-			displayTime -= 7500;
+			displayTime -= chargedMinigameTime;
 		}
 
 		// Apply move buffs and debuffs

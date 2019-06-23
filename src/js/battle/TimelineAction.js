@@ -7,4 +7,20 @@ function TimelineAction(type, actor, turn, value, settings){
 	this.value = value; // Index of charged move
 	this.settings = settings;
 	this.valid = false;
+	var self = this;
+
+	this.typeToInt = function(){
+		switch(self.type){
+			case "fast":
+			case "charged":
+				return 1;
+				break;
+
+			case "wait":
+				return 2;
+				break;
+		}
+
+		return 0;
+	}
 }

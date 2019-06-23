@@ -764,6 +764,7 @@ select, input {
   border: 1px solid #eabd49;
 }
 .battle-results .timeline-container.sandbox-mode .item.charged:hover,
+.battle-results .timeline-container.sandbox-mode .item.interaction:hover,
 .battle-results .timeline-container.sandbox-mode .item.fast:not(.disabled):hover {
   background: #b99027;
   /* Old browsers */
@@ -776,15 +777,27 @@ select, input {
   border-color: #b99027;
 }
 .battle-results .timeline-container.sandbox-mode .item.disabled {
-  background: none !important;
+  opacity: 0.5;
 }
 .battle-results .timeline-container.sandbox-mode .item.disabled:hover {
   cursor: initial;
 }
-.battle-results .timeline-container.sandbox-mode .item.both {
+.battle-results .timeline-container.sandbox-mode .item.interaction {
+  display: block !important;
   border: 2px solid #000;
-  top: -6px;
+  cursor: pointer;
 }
+.battle-results .timeline-container.sandbox-mode .item.interaction.disabled {
+  cursor: pointer;
+  border: 2px solid #666;
+}
+.battle-results .timeline-container.sandbox-mode .item.interaction.both {
+  border: 3px solid #000;
+}
+.battle-results .timeline-container.sandbox-mode .item.interaction.wait {
+  border-style: dotted;
+}
+
 .battle-results .timeline-container.zoom {
   height: 90px;
   overflow-x: scroll;
@@ -976,9 +989,12 @@ select, input {
   border-top: 1px dashed #000;
   position: relative;
   width: 100%;
-  margin: 25px 0;
+  margin: 25px 0 30px 0;
   top: 0;
   left: 0;
+}
+.timeline:nth-of-type(2) {
+  margin: 30px 0 25px 0;
 }
 .timeline .item-container {
   position: absolute;
@@ -1042,6 +1058,11 @@ select, input {
   border-radius: 12px;
   background: none !important;
 }
+
+.timeline .item-container .item.tap.interaction {
+  display: none;
+}
+
 .timeline .item-container .item.buff {
   background-image: url("../img/move_buff.png") !important;
   background-position: center -50% !important;
@@ -1213,6 +1234,11 @@ select, input {
 .tooltip.shield {
   background: #df46e5;
 }
+
+.tooltip.tap {
+  background: #eee;
+}
+
 .tooltip h3 {
   margin: 0;
   font-size: 14px;
@@ -1247,9 +1273,11 @@ select, input {
   border-radius: 8px;
   margin-bottom: 5px;
 }
+
 .rank.hide {
   display: none !important;
 }
+
 .rank .name-container {
   float: left;
   padding: 5px 0;

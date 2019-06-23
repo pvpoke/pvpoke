@@ -217,6 +217,10 @@ var InterfaceMaster = (function () {
 					// Calculate whether or not can be used on this turn for sandbox mode
 
 					if(event.type.indexOf("fast") > -1){
+						$item.find(".item").addClass("disabled");
+					}
+
+					if(event.type.indexOf("interaction") > -1){
 
 						var usableChargedMoves = 0;;
 
@@ -225,7 +229,7 @@ var InterfaceMaster = (function () {
 								usableChargedMoves++;
 							}
 						}
-						
+
 						// Show differently whether 0, 1, or 2 Charged Moves are ready
 
 						if(usableChargedMoves == 0){
@@ -244,6 +248,14 @@ var InterfaceMaster = (function () {
 						$item.find(".item").css("height", height+"px");
 						$item.find(".item").css("width", height+"px");
 						$item.find(".item").css("top", -(((height+2)/2)+1)+"px");
+
+						if(event.type.indexOf("interaction") > -1){
+							if($item.find(".item").hasClass("both")){
+								$item.find(".item").css("top", -(((height+2)/2)+16)+"px");
+							} else{
+								$item.find(".item").css("top", -(((height+2)/2)+15)+"px");
+							}
+						}
 					}
 
 					$(".timeline").eq(event.actor).append($item);
@@ -434,7 +446,7 @@ var InterfaceMaster = (function () {
 							str += "-";
 						}
 
-						str += actions[i].turn + ".1" + actions[i].actor + actions[i].value + (actions[i].settings.shielded ? 1 : 0) + (actions[i].settings.buffs ? 1 : 0);
+						str += actions[i].turn + "." + actions[i].typeToInt() + actions[i].actor + actions[i].value + (actions[i].settings.shielded ? 1 : 0) + (actions[i].settings.buffs ? 1 : 0);
 
 						actionStr += str;
 					}
@@ -922,10 +934,6 @@ var InterfaceMaster = (function () {
 											case "p":
 												pokemon.priority = 1;
 												break;
-
-											case "nfm0":
-												pokemon.negateFastMoves = false;
-												break;
 										}
 									}
 
@@ -1070,16 +1078,32 @@ var InterfaceMaster = (function () {
 
 										var paramsArr = str.split("");
 
-										actions.push(new TimelineAction(
-											"charged",
-											parseInt(paramsArr[1]),
-											turn,
-											parseInt(paramsArr[2]),
-											{
-												shielded: (parseInt(paramsArr[3]) == 1 ? true : false),
-												buffs: (parseInt(paramsArr[4]) == 1 ? true : false)
-											}
-										));
+										switch(paramsArr[0]){
+											case "1":
+												actions.push(new TimelineAction(
+													"charged",
+													parseInt(paramsArr[1]),
+													turn,
+													parseInt(paramsArr[2]),
+													{
+														shielded: (parseInt(paramsArr[3]) == 1 ? true : false),
+														buffs: (parseInt(paramsArr[4]) == 1 ? true : false)
+													}
+												));
+												break;
+
+												case "2":
+													actions.push(new TimelineAction(
+														"wait",
+														parseInt(paramsArr[1]),
+														turn,
+														parseInt(paramsArr[2]),
+														{
+														}
+													));
+													break;
+										}
+
 
 									}
 
@@ -1170,7 +1194,6 @@ var InterfaceMaster = (function () {
 				if(! sandbox){
 					return;
 				}
-
 
 				battle.setActions(actions);
 				battle.simulate();
@@ -1366,12 +1389,6 @@ var InterfaceMaster = (function () {
 
 				pokeSelectors[loserIndex].clear();
 
-				// Turn off sandbox mode if on
-
-				if(sandbox){
-					$(".sandbox-btn").trigger("click");
-				}
-
 				// Scroll to inputs
 
 				$("html, body").animate({ scrollTop: $(".poke.single").offset().top-25 }, 500);
@@ -1380,10 +1397,6 @@ var InterfaceMaster = (function () {
 			// Event handler for timeline hover and click
 
 			function timelineEventHover(e){
-
-				if($(this).hasClass("tap")){
-					return;
-				}
 
 				var $tooltip = $(".battle .tooltip");
 
@@ -1399,7 +1412,7 @@ var InterfaceMaster = (function () {
 				$tooltip.addClass($(this).attr("class"));
 				$tooltip.find(".details").html('');
 
-				if(($(this).hasClass("fast")) || ($(this).hasClass("charged"))){
+				if((($(this).hasClass("fast")) || ($(this).hasClass("charged")))&&(! $(this).hasClass("tap"))){
 
 					var values = $(this).attr("values").split(',');
 
@@ -1624,10 +1637,6 @@ var InterfaceMaster = (function () {
 					pokeStr += "-p";
 				}
 
-				if(! pokemon.negateFastMoves){
-					pokeStr += "-nfm0";
-				}
-
 				return pokeStr;
 			}
 
@@ -1683,10 +1692,6 @@ var InterfaceMaster = (function () {
 					return;
 				}
 
-				if($(this).hasClass("disabled")){
-					return;
-				}
-
 				if($(this).hasClass("shield")){
 					// Select the associated charged move
 
@@ -1697,7 +1702,7 @@ var InterfaceMaster = (function () {
 					return;
 				}
 
-				if((! $(this).hasClass("charged"))&&(! $(this).hasClass("fast"))){
+				if((! $(this).hasClass("charged"))&&(! $(this).hasClass("interaction"))){
 					return;
 				}
 
@@ -1722,9 +1727,15 @@ var InterfaceMaster = (function () {
 					}
 				}
 
+				$(".modal .move-select").append("<option class=\"none\" name=\"Wait\" value=\"wait\">Wait</option>");
+
 				// Select clicked move
 
 				var moveName = $(this).attr("name");
+
+				if(moveName == "Tap"){
+					moveName = pokemon.fastMove.name;
+				}
 
 				$(".modal .move-select option[name=\""+moveName+"\"]").prop("selected", "selected");
 				$(".modal .move-select").trigger("change");
@@ -1734,7 +1745,7 @@ var InterfaceMaster = (function () {
 				sandboxAction = null;
 				sandboxTurn = parseInt($(this).attr("turn"));
 
-				if($(this).hasClass("charged")){
+				if(($(this).hasClass("charged"))||($(this).hasClass("wait"))){
 					for(var i = 0; i < actions.length; i++){
 						if((actions[i].actor == actor)&&(actions[i].turn == parseInt($(this).attr("turn")))){
 							sandboxAction = actions[i];
@@ -1780,27 +1791,37 @@ var InterfaceMaster = (function () {
 					}
 				}
 
-				$(".modal .move-select").attr("class", "move-select " + move.type);
+				if(moveId != "wait"){
+					$(".modal .move-stats").show();
+					$(".modal .wait").hide();
+					$(".modal .move-select").attr("class", "move-select " + move.type);
 
-				// Fill in move stats
+					// Fill in move stats
 
-				$(".modal .stat-dmg span").html(move.damage);
+					$(".modal .stat-dmg span").html(move.damage);
 
-				if(move.energyGain > 0){
-					$(".modal .stat-energy span").html("+"+move.energyGain);
-					$(".modal .stat-duration span").html(move.cooldown / 500);
-					$(".modal .stat-dpt span").html(Math.round( (move.damage / (move.cooldown / 500)) * 100) / 100);
-					$(".modal .stat-ept span").html(Math.round( (move.energyGain / (move.cooldown / 500)) * 100) / 100);
+					if(move.energyGain > 0){
+						$(".modal .stat-energy span").html("+"+move.energyGain);
+						$(".modal .stat-duration span").html(move.cooldown / 500);
+						$(".modal .stat-dpt span").html(Math.round( (move.damage / (move.cooldown / 500)) * 100) / 100);
+						$(".modal .stat-ept span").html(Math.round( (move.energyGain / (move.cooldown / 500)) * 100) / 100);
+					} else{
+						$(".modal .stat-energy span").html("-"+move.energy);
+						$(".modal .stat-dpe span").html(Math.round( (move.damage / move.energy) * 100) / 100);
+					}
+
+					if(move.buffs){
+						$(".modal .check.buffs").show();
+					} else{
+						$(".modal .check.buffs").hide();
+					}
 				} else{
-					$(".modal .stat-energy span").html("-"+move.energy);
-					$(".modal .stat-dpe span").html(Math.round( (move.damage / move.energy) * 100) / 100);
+					$(".modal .move-select").attr("class", "move-select");
+					$(".modal .check").hide();
+					$(".modal .move-stats").hide();
+					$(".modal .wait").show();
 				}
 
-				if(move.buffs){
-					$(".modal .check.buffs").show();
-				} else{
-					$(".modal .check.buffs").hide();
-				}
 
 				// Briefly prevent the modal window from closing by accident
 
@@ -1814,6 +1835,7 @@ var InterfaceMaster = (function () {
 				// If this is changing a charged move to a fast move, remove the action
 
 				var selectedIndex = $(".modal .move-select")[0].selectedIndex;
+				var selectedValue = $(".modal .move-select option:selected").val();
 
 				if((sandboxAction)&&(selectedIndex == 0)){
 					for(var i = 0; i < actions.length; i++){
@@ -1834,30 +1856,51 @@ var InterfaceMaster = (function () {
 
 						// Insert new action
 
-						actions.push(new TimelineAction(
-							"charged",
-							sandboxPokemon.index,
-							sandboxTurn,
-							selectedIndex-1,
-							{
-								shielded: $(".modal .check.shields").hasClass("on"),
-								buffs: $(".modal .check.buffs").hasClass("on")
-							}
-						));
+						if(selectedValue != "wait"){
+							actions.push(new TimelineAction(
+								"charged",
+								sandboxPokemon.index,
+								sandboxTurn,
+								selectedIndex-1,
+								{
+									shielded: $(".modal .check.shields").hasClass("on"),
+									buffs: $(".modal .check.buffs").hasClass("on")
+								}
+							));
+						} else{
+							actions.push(new TimelineAction(
+								"wait",
+								sandboxPokemon.index,
+								sandboxTurn,
+								0,
+								{}
+							));
+						}
+
 					} else{
 
 						// Modify existing action
 
-						actions[sandboxActionIndex] = new TimelineAction(
-							"charged",
-							sandboxPokemon.index,
-							sandboxTurn,
-							selectedIndex-1,
-							{
-								shielded: $(".modal .check.shields").hasClass("on"),
-								buffs: $(".modal .check.buffs").hasClass("on")
-							}
-						);
+						if(selectedValue != "wait"){
+							actions[sandboxActionIndex] = new TimelineAction(
+								"charged",
+								sandboxPokemon.index,
+								sandboxTurn,
+								selectedIndex-1,
+								{
+									shielded: $(".modal .check.shields").hasClass("on"),
+									buffs: $(".modal .check.buffs").hasClass("on")
+								}
+							);
+						} else{
+							actions[sandboxActionIndex] = new TimelineAction(
+								"wait",
+								sandboxPokemon.index,
+								sandboxTurn,
+								0,
+								{}
+							);
+						}
 
 					}
 				}

@@ -94,7 +94,6 @@
 				</div>
 				<button class="pull-from-timeline">Pull from timeline</button>
 				<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
-				<div class="check negate-fast-moves"><span></span>Negate Fast Moves between Charged Moves</div>
 				<div class="check priority"><span></span>Charged Move priority</div>
 			</div>
 		</div>

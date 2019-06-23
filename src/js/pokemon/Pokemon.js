@@ -43,8 +43,6 @@ function Pokemon(id, i, b){
 	this.fastMove = null;
 	this.chargedMoves = [];
 
-	this.negateFastMoves = true; // Whether or not to negate Fast Moves between back to back Charged Moves
-
 	this.isCustom = false; // Does this Pokemon have custom set levels and IV's?
 
 	this.index = i;
@@ -60,6 +58,7 @@ function Pokemon(id, i, b){
 	this.startingShields = 0;
 
 	this.baitShields = true; // Use low energy attacks to bait shields
+	this.hasActed = false;
 
 	// Set legacy moves
 
