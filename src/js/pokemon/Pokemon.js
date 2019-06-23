@@ -117,10 +117,12 @@ function Pokemon(id, i, b){
 
 			targetCP = maxCP;
 
+			self.maximizeStats(maxCP);
+
 			// Scale Pokemon to selected CP
 			// If the Pokemon can't reach the CP limit without IV's, increment until it reaches the CP limit or 15/15/15
 
-			var targetCPM = 1;
+			/*var targetCPM = 1;
 			var iv = -1;
 
 			while((iv < 15) && (targetCPM > .7903)){
@@ -131,7 +133,7 @@ function Pokemon(id, i, b){
 
 			this.ivs.atk = this.ivs.def = this.ivs.hp = iv;
 
-			this.cpm = Math.min(targetCPM, .7903);
+			this.cpm = Math.min(targetCPM, .7903);*/
 		}
 
 		//Set effective stats
@@ -177,6 +179,7 @@ function Pokemon(id, i, b){
         var minLevelCP = 0;
         var maxLevelCP = 0;
         var overall = 0;
+		var bestOverall = 0;
         var cpm = 0;
         var iv_options = [];
         var level_options = [];
@@ -197,17 +200,21 @@ function Pokemon(id, i, b){
                     atkIV = 15;
                     while (atkIV >= 0) {
                         calcCP = this.calculateCP(cpm, atkIV, defIV, hpIV);
-						
+
                         if (calcCP <= targetCP) {
                             let atk = cpm * (self.baseStats.atk + atkIV);
                             let def = cpm * (self.baseStats.def + defIV);
                             let hp = Math.floor(cpm * (self.baseStats.hp + hpIV));
                             overall = (hp * atk * def) + 50;
 
+							if(overall > bestOverall){
+								iv_options.push(atkIV, defIV, hpIV);
+	                            level_options.push(level);
+	                            overall_options.push(overall);
 
-                            iv_options.push(atkIV, defIV, hpIV);
-                            level_options.push(level);
-                            overall_options.push(overall);
+								bestOverall = overall;
+							}
+
                         }
                         atkIV--;
                     }
@@ -224,7 +231,6 @@ function Pokemon(id, i, b){
             this.ivs.def = iv_options[index * 3 + 1];
             this.ivs.hp = iv_options[index * 3 + 2];
             this.level = level_options[index];
-            overall_options.sort();
         } else {
             this.ivs.atk = 15;
             this.ivs.def = 15;

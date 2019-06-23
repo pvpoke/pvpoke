@@ -797,7 +797,6 @@ select, input {
 .battle-results .timeline-container.sandbox-mode .item.interaction.wait {
   border-style: dotted;
 }
-
 .battle-results .timeline-container.zoom {
   height: 90px;
   overflow-x: scroll;
@@ -1058,11 +1057,9 @@ select, input {
   border-radius: 12px;
   background: none !important;
 }
-
 .timeline .item-container .item.tap.interaction {
   display: none;
 }
-
 .timeline .item-container .item.buff {
   background-image: url("../img/move_buff.png") !important;
   background-position: center -50% !important;
@@ -1234,11 +1231,9 @@ select, input {
 .tooltip.shield {
   background: #df46e5;
 }
-
 .tooltip.tap {
   background: #eee;
 }
-
 .tooltip h3 {
   margin: 0;
   font-size: 14px;
@@ -1273,11 +1268,9 @@ select, input {
   border-radius: 8px;
   margin-bottom: 5px;
 }
-
 .rank.hide {
   display: none !important;
 }
-
 .rank .name-container {
   float: left;
   padding: 5px 0;

@@ -51,7 +51,7 @@ var InterfaceMaster = (function () {
 			this.init = function(){
 
 				var data = gm.data;
-
+				
 				// Initialize selectors and push Pokemon data
 
 				battle = new Battle();

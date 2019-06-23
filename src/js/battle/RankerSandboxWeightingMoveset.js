@@ -27,6 +27,8 @@ var RankerMaster = (function () {
 			var currentLeagueIndex = 0;
 			var currentShieldsIndex = 0;
 
+			var pokemonList = [];
+
 			var self = this;
 
 			// Load override data
@@ -49,6 +51,8 @@ var RankerMaster = (function () {
 
 				console.log(rankingData);
 
+				self.initPokemonList(battle.getCP());
+
 				currentShieldsIndex = 0;
 
 				for(var currentShieldsIndex = 0; currentShieldsIndex < shields.length; currentShieldsIndex++){
@@ -56,63 +60,12 @@ var RankerMaster = (function () {
 				}
 			}
 
-			// Run all ranking sets at once
-
-			this.rankLoop = function(cp, cup){
-
-				battle.setCup(cup.name);
-
-				currentLeagueIndex = 0;
-				currentShieldsIndex = 0;
-
-				leagues = [cp];
-
-				for(var currentLeagueIndex = 0; currentLeagueIndex < leagues.length; currentLeagueIndex++){
-
-					if(moveSelectMode == "auto"){
-
-						for(var currentShieldsIndex = 0; currentShieldsIndex < shields.length; currentShieldsIndex++){
-							rankingCombinations.push({league: leagues[currentLeagueIndex], shields: shields[currentShieldsIndex]});
-						}
-
-					} else if(moveSelectMode == "force"){
-						// Load existing ranking data first
-
-						gm.loadRankingData(self, "overall", leagues[currentLeagueIndex], cup.name);
-					}
-
-				}
-
-				var currentRankings = rankingCombinations.length;
-
-				var rankingInterval = setInterval(function(){
-					if((rankingCombinations.length == currentRankings)&&(rankingCombinations.length > 0)){
-						currentRankings--;
-
-						self.rank(rankingCombinations[0].league, rankingCombinations[0].shields);
-
-						rankingCombinations.splice(0, 1);
-					}
-				}, 1000);
-
-			}
-
-			// Run an individual rank set
-
-			this.rank = function(league, shields){
-
-				var totalBattles = 0;
-
-				var pokemonList = [];
-
-				var shieldCounts = shields;
-
+			this.initPokemonList = function(cp){
+				pokemonList = [];
 				var cup = battle.getCup();
 
-				rankings = [];
-
 				// Gather all eligible Pokemon
-				battle.setCP(league);
+				battle.setCP(cp);
 
 				var minStats = 3000; // You must be this tall to ride this ride
 
@@ -135,7 +88,7 @@ var RankerMaster = (function () {
 				if(cup.name == "championships-1"){
 					permaBannedList = permaBannedList.concat(["lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi","latios","latias","uxie","mesprit","azelf","melmetal","celebi","zapdos","articuno","moltres","suicune","entei","raikou","regirock","registeel","regice","ho_oh","jirachi"]);
 				}
-				
+
 				if(cup.name == "jungle"){
 					permaBannedList = permaBannedList.concat(["tropius","wormadam_sandy","wormadam_plant","wormadam_trash","mothim"]);
 				}
@@ -201,7 +154,7 @@ var RankerMaster = (function () {
 											pokemon.selectMove("charged", chargedMoves[1].moveId, 1);
 										}
 
-										self.overrideMoveset(pokemon, league, cup.name);
+										self.overrideMoveset(pokemon, cp, cup.name);
 									}
 								}
 							}
@@ -210,6 +163,61 @@ var RankerMaster = (function () {
 						}
 					}
 				}
+			}
+
+			// Run all ranking sets at once
+
+			this.rankLoop = function(cp, cup){
+
+				battle.setCP(cp);
+				battle.setCup(cup.name);
+
+				currentLeagueIndex = 0;
+				currentShieldsIndex = 0;
+
+				leagues = [cp];
+
+				for(var currentLeagueIndex = 0; currentLeagueIndex < leagues.length; currentLeagueIndex++){
+
+					if(moveSelectMode == "auto"){
+
+						self.initPokemonList(cp);
+
+						for(var currentShieldsIndex = 0; currentShieldsIndex < shields.length; currentShieldsIndex++){
+							rankingCombinations.push({league: leagues[currentLeagueIndex], shields: shields[currentShieldsIndex]});
+						}
+
+					} else if(moveSelectMode == "force"){
+						// Load existing ranking data first
+
+						gm.loadRankingData(self, "overall", leagues[currentLeagueIndex], cup.name);
+					}
+
+				}
+
+				var currentRankings = rankingCombinations.length;
+
+				var rankingInterval = setInterval(function(){
+					if((rankingCombinations.length == currentRankings)&&(rankingCombinations.length > 0)){
+						currentRankings--;
+
+						self.rank(rankingCombinations[0].league, rankingCombinations[0].shields);
+
+						rankingCombinations.splice(0, 1);
+					}
+				}, 1000);
+
+			}
+
+			// Run an individual rank set
+
+			this.rank = function(league, shields){
+
+				var cup = battle.getCup();
+				var totalBattles = 0;
+				var shieldCounts = shields;
+
+				rankings = [];
 
 				// For all eligible Pokemon, simulate battles and gather rating data
 
@@ -267,8 +275,8 @@ var RankerMaster = (function () {
 
 						// Set both Pokemon and auto select their moves
 
-						battle.setNewPokemon(pokemon, 0);
-						battle.setNewPokemon(opponent, 1);
+						battle.setNewPokemon(pokemon, 0, false);
+						battle.setNewPokemon(opponent, 1, false);
 
 						pokemon.reset();
 						opponent.reset();
@@ -413,6 +421,7 @@ var RankerMaster = (function () {
 					rankings.push(rankObj);
 				}
 
+
 				console.log("total battles " + totalBattles);
 
 				// Weigh all Pokemon matchups by their opponent's average rating
@@ -438,6 +447,10 @@ var RankerMaster = (function () {
 				if(cup.name == "kingdom"){
 					rankCutoffIncrease = 0.05;
 					rankWeightExponent = 1.5;
+				}
+
+				if(cup.name == "tempest"){
+					rankWeightExponent = 1.25;
 				}
 
 				for(var n = 0; n < iterations; n++){

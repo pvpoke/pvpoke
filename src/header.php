@@ -1,5 +1,10 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.7.9.8';
+$SITE_VERSION = '1.8.0';
+
+// This prevents caching on local testing
+if (strpos($WEB_ROOT, 'src') !== false) {
+    $SITE_VERSION = rand(1,1000) . '.' . rand(1,1000) . '.' . rand(1,1000);
+}
 ?>
 <!doctype html>
 <html>

@@ -56,7 +56,11 @@
 		"cup": "tempest",
 		"pokemon": [
 			{
-				"speciesId": "larpas",
+				"speciesId": "abomasnow",
+				"weight": 1.5
+			},
+			{
+				"speciesId": "lapras",
 				"fastMove": "ICE_SHARD"
 			},
 			{
@@ -301,12 +305,10 @@
 				"fastMove": "ICE_SHARD"
 			},
 			{
-				"speciesId": "charizard",
-				"weight": 2
+				"speciesId": "charizard"
 			},
 			{
-				"speciesId": "venusaur",
-				"weight": 1.5
+				"speciesId": "venusaur"
 			},
 			{
 				"speciesId": "weepinbell",
