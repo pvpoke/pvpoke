@@ -58,8 +58,8 @@ require_once 'header.php';
 			<div class="timeline"></div>
 			<div class="tracker"></div>
 		</div>
-		<div class="tip automated">Hover over or tap the timeline for details</div>
-		<div class="tip sandbox">Click the circles to edit actions</div>
+		<div class="tip automated">Hover over or tap the timeline for details. <a href="<?php echo $WEB_ROOT; ?>articles/guide-to-fast-move-registration/">Read more</a> about the timeline.</div>
+		<div class="tip sandbox">Click the circles to edit actions.</div>
 		<div class="playback section white">
 			<div class="flex">
 				<div class="playback-btn replay"></div>
@@ -201,7 +201,7 @@ require_once 'header.php';
 				<p>Battle Rating is a way of measuring battles beyond simply "win" and "loss"; it may be valuable to know not only which Pokemon can win, but which can do so while sustaining the least amount of damage, leaving them in a better position for the next fight.</p>
 				<h2>Pokemon Stats</h2>
 				<p>A Pokemon's actual stats are a result of its base stats, IV's, and a CP multiplier (determined by level). The stats shown are a Pokemon's actual stats at the given CP or level. "Overall" is a product of the three stats and gives a general idea for performance, mostly useful for comparing Pokemon of the same or similar species.</p>
-				<p>By default, Pokemon have IV's of 0 and are automatically scaled to meet the exact CP by solving for CP multiplier. If a Pokemon can't reach the CP limit at level 40, its IV's are incremented by 1 until it does reach the CP limit or until it has IV's of 15. This process results in Pokemon having a level/CP multiplier that isn't usually attainable. However, it best represents each Pokemon's natural ability with no other factors involved.</p>
+				<p>By default, Pokemon use the "maximum stat product" IV combination, which optimizes for the maximum amount of stats possible within the given CP limit.</p>
 				<h2>Move Selection</h2>
 				<p>When using the auto select option, the simulator calculates which moves would be optimal in the current matchup. It does this in the steps below:</p>
 				<ol>

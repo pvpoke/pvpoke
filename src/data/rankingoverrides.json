@@ -42,6 +42,10 @@
 			{
 				"speciesId": "medicham",
 				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "probopass",
+				"fastMove": "SPARK"
 			}
 		]
 	},
@@ -429,10 +433,6 @@
 				"chargedMoves": ["X_SCISSOR", "POWER_GEM"]
 			},
 			{
-				"speciesId": "graveler_alolan",
-				"chargedMoves": ["ROCK_BLAST", "THUNDERBOLT"]
-			},
-			{
 				"speciesId": "porygon",
 				"fastMove": "HIDDEN_POWER_FIRE",
 				"chargedMoves": ["DISCHARGE", "HYPER_BEAM"]
@@ -464,6 +464,10 @@
 			{
 				"speciesId": "tangrowth",
 				"chargedMoves": ["ANCIENT_POWER","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "magnezone",
+				"chargedMoves": ["WILD_CHARGE","FLASH_CANNON"]
 			},
 			{
 				"speciesId": "staravia",
