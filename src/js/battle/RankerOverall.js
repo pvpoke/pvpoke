@@ -139,15 +139,27 @@ var RankerMaster = (function () {
 					* This will better represent specialized Pokemon.
 					*/
 
+					var scores = [];
 					var sortedScores = [];
 
 					for(var n = 0; n < rankings[i].scores.length; n++){
-						sortedScores.push(rankings[i].scores[n]);
+						scores.push(rankings[i].scores[n]);
 					}
-
+					
+					var bestScore = Math.max(scores[0], scores[1]);
+					sortedScores.push(
+						Math.min(scores[0], scores[1]),
+						scores[2],
+						scores[3]
+						);
+					
 					sortedScores.sort((a,b) => (a > b) ? -1 : ((b > a) ? 1 : 0));
+					
+					// Old Formula
 
-					rankings[i].score = Math.pow( Math.pow(sortedScores[0], 9) * Math.pow(sortedScores[1], 9) * Math.pow(sortedScores[2], 1) * Math.pow(sortedScores[3], 1), (1/20));
+					// rankings[i].score = Math.pow( Math.pow(sortedScores[0], 9) * Math.pow(sortedScores[1], 9) * Math.pow(sortedScores[2], 1) * Math.pow(sortedScores[3], 1), (1/20));
+					
+					rankings[i].score = Math.pow( Math.pow(bestScore, 12) * Math.pow(sortedScores[0], 6) * Math.pow(sortedScores[1], 1) * Math.pow(sortedScores[2], 1), (1/20));
 
 					rankings[i].score = Math.floor(rankings[i].score*10) / 10;
 				}
