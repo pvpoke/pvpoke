@@ -72,16 +72,15 @@
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/choose-your-champions/">
-				<img src="<?php echo $WEB_ROOT; ?>assets/articles/championships-thumb.jpg?v=2" />
+			<a href="<?php echo $WEB_ROOT; ?>articles/guide-to-fast-move-registration/">
+				<img src="<?php echo $WEB_ROOT; ?>assets/articles/mechanics-thumb.jpg?v=2" />
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/choose-your-champions/">Choose Your Champions</a></h4>
-			<div class="date"> June 7, 2019</div>
-			<p>Whether your spectating or competing, read up on the restricted picks for the Season 1 Championships and which alternate Pokemon could be in the running.</p>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/guide-to-fast-move-registration/">Guide to Fast Move Mechanics</a></h4>
+			<div class="date"> June 24, 2019</div>
+			<p>How exactly do Fast Moves work and register? This guide will walk through some of PvP's mysterious nuts and bolts.</p>
 		</div>
-
 	</div>
 
 </div>

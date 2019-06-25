@@ -5,7 +5,7 @@ $META_TITLE = 'Guide to Fast Move Mechanics';
 
 $META_DESCRIPTION = 'How exactly do Fast Moves work and register? This guide will walk you through the basics of understanding the nuts and bolts of Trainer Battles.';
 
-$OG_IMAGE = 'https://pvpoke.com/assets/articles/championships-infographic.jpg';
+$OG_IMAGE = 'https://pvpoke.com/assets/articles/mechanics-og.jpg';
 
 require_once '../header.php';
 
@@ -13,8 +13,9 @@ require_once '../header.php';
 
 <div class="section article white">
 	<h1>Guide to Fast Move Mechanics</h1>
+	<p><img src="<?php echo $WEB_ROOT; ?>assets/articles/mechanics-banner.jpg" style="border:none;"/></p>
 	<div class="date">Last updated June 24th, 2019</div>
-	<p>Have you ever missed a Charged Move you were  furiously tapping? Why do Pokemon sometimes launch into an extra Fast Move when  you have enough energy? And in the sims, why don&rsquo;t Fast Moves sometimes happen  at irregular intervals? In this article, we&rsquo;ll go over the mysterious mechanics  behind these phenomena and how they impact gameplay. </p>
+	<p>Have you ever missed a Charged Move you were  furiously tapping? Why do Pokemon sometimes launch into an extra Fast Move when  you have enough energy? And in the sims, why do Fast Moves sometimes happen  at irregular intervals? In this article, we&rsquo;ll go over the mysterious mechanics  behind these phenomena and how they impact gameplay. </p>
     <p>Special thanks to FlarkeFiasco and GarretK19383  for bringing these mechanics to my attention and helping to compile and explore  video evidence for all sorts of scenarios! This was an incredibly challenging  puzzle to solve and it couldn&rsquo;t have been done without their help.</p>
 	  <p>Jump to a section:
 	  <ol>
@@ -24,14 +25,17 @@ require_once '../header.php';
 				<li><a href="#sandbox">Sandbox Mode</a></li>
 				<li><a href="#videos">Video Examples</a></li>
 	  </ol>
+	<a name="turns"></a>
 	<h3 class="article-header">Turns</h3>
 	<p>
       Trainer Battles are broken up into turns. <strong>Each  turn lasts 0.5 seconds</strong>. On a typical turn, each Pokemon can take one action  - a Fast Move, a Charged Move, or a switch. Let&rsquo;s take a look at how Fast Moves  use of turns and interact with one another. </p>
+	<a name="duration"></a>
 		<h3 class="article-header">Fast Move Duration</h3>
 	<p>
       Each Fast Move lasts a certain number of turns,  usually referred to as its &ldquo;duration&rdquo; or &ldquo;cooldown&rdquo;. <strong>Duration determines the  amount of time between your Fast Moves.</strong> The timelines below illustrate  different Fast Moves and their durations. Each circle represents a new action. </p>
 	<p><img src="<?php echo $WEB_ROOT; ?>assets/articles/mechanics-duration-timeline.png" style="border:none;"/></p>
 	<p>As you can see, a shorter duration allows more  frequent actions. </p>
+	<a name="registration"></a>
 	<h3 class="article-header"> Fast Move Registration</h3>
 	<div class="article-section">
 		<p>
@@ -58,19 +62,32 @@ require_once '../header.php';
 <p><img src="<?php echo $WEB_ROOT; ?>assets/articles/mechanics-register-2-3.png" style="border:none;"/></p>
 		  Things get even more different here! Instead of  registering at even intervals, energy and damage occur in a staggered pattern.  This is because the 2-turn and 3-turn moves alternate between falling on  different turns and on the same turn. Energy and damage can be difficult to  anticipate in this kind of matchup. </p>
 	</div>
+<a name="sandbox"></a>
 		<h3 class="article-header">Sandbox Mode</h3>
 	<p>
       If you&rsquo;re a fan of Sandbox Mode, you&rsquo;ll find it  works the same as before with a few tweaks. When you enter Sandbox Mode, circle  icons appear above the timeline to indicate when each players can use an  action, like what&rsquo;s been shown in the article so far. These appear at regular  intervals like you might be used to, dictated by Fast Move duration. <strong>Click  on the circular Tap icons to select an action for that turn.</strong></p>
     <p>You can select one of the following actions: </p>
     <ul type="disc">
       <li><strong>Fast Move - </strong>This player will use a Fast       Move. This action will register any outstanding Fast Moves that qualify       and queue a new Fast Move to be registered as described in this article.<strong></strong></li>
-      <li><strong>Charged Move - </strong>This player       will use one of their Charged Moves. This will register any outstanding       Fast Moves. Note that Fast Moves register before a Charged Move occurs, so       a Charged Move will fail if it registers damage that faints the user.<strong></strong></li>
+      <li><strong>Charged Move - </strong>This player       will use one of their Charged Moves. This will register any outstanding       Fast Moves. Note that a Charged Move will fail if it registers damage that faints the user.<strong></strong></li>
       <li><strong>Wait - </strong>This player will take no action       on the selected turn. This can delay Fast Moves from registering or       prevent you from using an unnecessary Fast Move if the opponent registers       enough energy for you to use a Charged Move the next turn.<strong></strong></li>
     </ul>
+<a name="videos"></a>
 	<h3 class="article-header">Video Examples</h3>
 	<p>
       Now, it&rsquo;s time to put this all together. Below  are video examples of real-world battles with their corresponding simulations.  Hopefully these help illustrate the mechanics at play and ground the  simulations as you explore them. </p>
-
+	<p class="center">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/WKcO_b_29tY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</p>
+	<p>In the example above, Drapion and Xatu both have 3-turn moves (Infestation and Air Slash) so they gain energy and deal damage in step with one another. Mathematically, Drapion should be able to use Crunch after 5 Infestations, but it needs to use a 6th because the energy from its 5th Infestation doesn't register until both Pokemon use a 6th Fast Move.</p>
+	<p class="center">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/sBKWcxWSmws" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</p>
+	<p>Here we have Hypno with a 4-turn move (Confusion) and Venusaur with a 2-turn move (Vine Whip). Venusaur gets 2 Vine Whips for every Confusion. Because they land evenly with one another, Hypno needs to use 6 Confusions to reach Shadow Ball.</p>
+	<p class="center">
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/t9mR8RTdyTI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	</p>
+	<p>This example pulls out all the bells and whistles. Alolan Raichu has a 2-turn move (Spark) against a 3-turn move (Infestation), so energy and damage register in a staggered pattern. While Drapion beats Raichu to the first Charged Move, it also registers Raichu's energy early enough for Raichu to beat it to the next. Because of how these two moves interact, Raichu isn't dependent on registering its own attack.</p>
 	<div class="share-link-container">
 		<p>Share this article:</p>
 		<div class="share-link">
