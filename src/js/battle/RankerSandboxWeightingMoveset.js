@@ -544,6 +544,10 @@ var RankerMaster = (function () {
 						for(var k = 0; k < rankingData.length; k++){
 							if(pokemon.speciesId == rankingData[k].speciesId){
 								rankings[i].moves = rankingData[k].moves;
+								
+								if(pokemon.speciesId == "vigoroth"){
+									console.log(rankingData[k].moves);
+								}
 							}
 						}
 					} else{

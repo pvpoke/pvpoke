@@ -18,6 +18,8 @@ var RankerMaster = (function () {
 
 			var rankings = [];
 			var rankingCombinations = [];
+			
+			var moveUsageMode = "single";
 
 			var self = this;
 
@@ -113,18 +115,20 @@ var RankerMaster = (function () {
 						} else{
 							rankings[n].score *= rankObj.score;
 							rankings[n].scores.push(rankObj.score);
+							
+							if(moveUsageMode == "aggregate"){
+								// Add move usage for all moves
 
-							// Add move usage for all moves
+								rankObj.moves.fastMoves.sort((a,b) => (a.moveId > b.moveId) ? -1 : ((b.moveId > a.moveId) ? 1 : 0));
+								rankObj.moves.chargedMoves.sort((a,b) => (a.moveId > b.moveId) ? -1 : ((b.moveId > a.moveId) ? 1 : 0));
 
-							rankObj.moves.fastMoves.sort((a,b) => (a.moveId > b.moveId) ? -1 : ((b.moveId > a.moveId) ? 1 : 0));
-							rankObj.moves.chargedMoves.sort((a,b) => (a.moveId > b.moveId) ? -1 : ((b.moveId > a.moveId) ? 1 : 0));
+								for(var j = 0; j < rankObj.moves.fastMoves.length; j++){
+									rankings[n].moves.fastMoves[j].uses += rankObj.moves.fastMoves[j].uses;
+								}
 
-							for(var j = 0; j < rankObj.moves.fastMoves.length; j++){
-								rankings[n].moves.fastMoves[j].uses += rankObj.moves.fastMoves[j].uses;
-							}
-
-							for(var j = 0; j < rankObj.moves.chargedMoves.length; j++){
-								rankings[n].moves.chargedMoves[j].uses += rankObj.moves.chargedMoves[j].uses;
+								for(var j = 0; j < rankObj.moves.chargedMoves.length; j++){
+									rankings[n].moves.chargedMoves[j].uses += rankObj.moves.chargedMoves[j].uses;
+								}
 							}
 						}
 					}

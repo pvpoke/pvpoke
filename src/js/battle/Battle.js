@@ -366,9 +366,23 @@ function Battle(){
 
 					// Was this queued on a previous turn? See if it's eligible
 					var timeSinceActivated = (turns - action.turn) * 500;
-					if((actionsThisTurn)&&(timeSinceActivated >= pokemon[action.actor].fastMove.cooldown - 500)){
-						action.settings.priority += 20;
-						valid = true;
+					var chargedMoveLastTurn = false;
+					
+					for(var n = 0; n < previousTurnActions.length; n++){
+						if(previousTurnActions[n].type == "charged"){
+							chargedMoveLastTurn = true;
+						}
+					}			
+					
+					if(actionsThisTurn){
+						if(timeSinceActivated >= pokemon[action.actor].fastMove.cooldown - 500){
+							action.settings.priority += 20;
+							valid = true;
+						}
+						if((timeSinceActivated >= 500)&&(chargedMoveLastTurn)){
+							action.settings.priority += 20;
+							valid = true;
+						}
 					}
 
 					// Was this queued this turn? Let's check for piggybacking. Boy was this a headache.
