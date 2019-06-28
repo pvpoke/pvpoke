@@ -205,13 +205,8 @@ var RankerMaster = (function () {
 						}
 
 						battle.setNewPokemon(pokemon, 0, false);
+						battle.setNewPokemon(opponent, 1, false);
 
-
-						if(team.length > 3){
-							battle.setNewPokemon(opponent, 1, false);
-						} else{
-							battle.setNewPokemon(opponent, 1, false); // Keep settings for selected Pokemon
-						}
 
 						// Force best moves on counters but not on the user's selected Pokemon
 
@@ -253,6 +248,12 @@ var RankerMaster = (function () {
 
 							var rating = Math.floor( (healthRating + damageRating) * 500);
 							var opRating = Math.floor( (opHealthRating + opDamageRating) * 500);
+							
+
+							if(isNaN(avgPokeRating)){
+								console.log(battle.getPokemon());
+								return false;
+							}
 
 							avgPokeRating += rating;
 							avgOpRating += opRating;

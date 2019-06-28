@@ -95,7 +95,7 @@ function Pokemon(id, i, b){
 
 	// Given a target CP, scale to CP, set actual stats, and initialize moves
 
-	this.initialize = function(targetCP){
+	this.initialize = function(targetCP, defaultMode){
 
 		this.cp = self.calculateCP();
 
@@ -115,25 +115,30 @@ function Pokemon(id, i, b){
 
 		if(((targetCP)&&(! self.isCustom))||((this.cp > maxCP)&&(isDefault))){
 
-			targetCP = maxCP;
+			if(defaultMode == "scale"){
 
-			self.maximizeStats(maxCP);
+				// Scale Pokemon to selected CP
+				// If the Pokemon can't reach the CP limit without IV's, increment until it reaches the CP limit or 15/15/15
 
-			// Scale Pokemon to selected CP
-			// If the Pokemon can't reach the CP limit without IV's, increment until it reaches the CP limit or 15/15/15
+				var targetCPM = 1;
+				var iv = -1;
 
-			/*var targetCPM = 1;
-			var iv = -1;
+				while((iv < 15) && (targetCPM > .7903)){
+					iv++;
 
-			while((iv < 15) && (targetCPM > .7903)){
-				iv++;
+					targetCPM = Math.sqrt( (targetCP * 10) / ((this.baseStats.atk+iv) * Math.pow(this.baseStats.def+iv, 0.5) * Math.pow(this.baseStats.hp+iv, 0.5)));
+				}
 
-				targetCPM = Math.sqrt( (targetCP * 10) / ((this.baseStats.atk+iv) * Math.pow(this.baseStats.def+iv, 0.5) * Math.pow(this.baseStats.hp+iv, 0.5)));
+				this.ivs.atk = this.ivs.def = this.ivs.hp = iv;
+
+				this.cpm = Math.min(targetCPM, .7903);
+			} else{
+				targetCP = maxCP;
+
+				self.maximizeStats(maxCP);
 			}
 
-			this.ivs.atk = this.ivs.def = this.ivs.hp = iv;
 
-			this.cpm = Math.min(targetCPM, .7903);*/
 		}
 
 		//Set effective stats
