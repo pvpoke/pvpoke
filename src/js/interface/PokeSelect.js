@@ -597,12 +597,20 @@ function PokeSelect(element, i){
 	$el.find(".advanced-section a").on("click", function(e){
 		e.preventDefault();
 		$el.find(".advanced-section").toggleClass("active");
+
+		// If default IV's aren't filled in yet, show them
+		if($el.find("input.level").val() == ""){
+			$el.find("input.level").val(selectedPokemon.level);
+			$el.find("input.iv[iv='atk']").val(selectedPokemon.ivs.atk);
+			$el.find("input.iv[iv='def']").val(selectedPokemon.ivs.def);
+			$el.find("input.iv[iv='hp']").val(selectedPokemon.ivs.hp);
+		}
 	});
 
 	// Turn maximize stats on and off
 
     $el.find(".maximize-stats").on("click", function(e){
-        selectedPokemon.maximizeStats(battle.getCP());
+        selectedPokemon.maximizeStat("overall");
 
         selectedPokemon.isCustom = true;
         isCustom = true;

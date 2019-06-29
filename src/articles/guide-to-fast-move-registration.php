@@ -47,6 +47,38 @@ require_once '../header.php';
 		</ol>
 		<p>An action from either player will ultimately  trigger a Fast Move to register after enough turns have passed. A Fast Move  won&rsquo;t register if neither player acts on that turn. </p>
 		<p>Check out to the table below for move durations,  the number of turns that need to pass before they register, and example moves.  Note that 1-turn moves register immediately on the turn they are used. </p>
+		<table cellspacing="0">
+			<tr>
+				<td><b>Duration</b></td>
+				<td><b>Turns to Register</b></td>
+				<td><b>Examples</b></td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>0</td>
+				<td>Water Gun, Dragon Breath, Bug Bite</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>1</td>
+				<td>Counter, Vine Whip, Mud Shot</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>2</td>
+				<td>Air Slash, Fire Spin, Bubble</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>3</td>
+				<td>Confusion</td>
+			</tr>
+			<tr>
+				<td>5</td>
+				<td>4</td>
+				<td>Volt Switch</td>
+			</tr>
+		</table>
 		<p>So what does this look like in action? The  examples below show circles for when you tap to use a Fast Move and squares for  when the move actually hits. </p>
 		  <h3>2-Turn Move vs. 2-Turn Move</h3>
 		<p><img src="<?php echo $WEB_ROOT; ?>assets/articles/mechanics-register-2-2.png" style="border:none;" /></p>

@@ -95,7 +95,7 @@ function Pokemon(id, i, b){
 
 	// Given a target CP, scale to CP, set actual stats, and initialize moves
 
-	this.initialize = function(targetCP, defaultMode){
+	this.initialize = function(targetCP, defaultMode="gamemaster"){
 
 		this.cp = self.calculateCP();
 
@@ -115,29 +115,44 @@ function Pokemon(id, i, b){
 
 		if(((targetCP)&&(! self.isCustom))||((this.cp > maxCP)&&(isDefault))){
 
-			if(defaultMode == "scale"){
+			switch(defaultMode){
+				case "scale":
+					// Scale Pokemon to selected CP
+					// If the Pokemon can't reach the CP limit without IV's, increment until it reaches the CP limit or 15/15/15
 
-				// Scale Pokemon to selected CP
-				// If the Pokemon can't reach the CP limit without IV's, increment until it reaches the CP limit or 15/15/15
+					var targetCPM = 1;
+					var iv = -1;
 
-				var targetCPM = 1;
-				var iv = -1;
+					while((iv < 15) && (targetCPM > .7903)){
+						iv++;
 
-				while((iv < 15) && (targetCPM > .7903)){
-					iv++;
+						targetCPM = Math.sqrt( (targetCP * 10) / ((this.baseStats.atk+iv) * Math.pow(this.baseStats.def+iv, 0.5) * Math.pow(this.baseStats.hp+iv, 0.5)));
+					}
 
-					targetCPM = Math.sqrt( (targetCP * 10) / ((this.baseStats.atk+iv) * Math.pow(this.baseStats.def+iv, 0.5) * Math.pow(this.baseStats.hp+iv, 0.5)));
-				}
+					this.ivs.atk = this.ivs.def = this.ivs.hp = iv;
 
-				this.ivs.atk = this.ivs.def = this.ivs.hp = iv;
+					this.cpm = Math.min(targetCPM, .7903);
+				break;
 
-				this.cpm = Math.min(targetCPM, .7903);
-			} else{
-				targetCP = maxCP;
+				case "maximize":
+					self.maximizeStat("overall");
+				break;
 
-				self.maximizeStats(maxCP);
+				case "gamemaster":
+					if(maxCP == 10000){
+						self.ivs.atk = self.ivs.def = self.ivs.hp = 15;
+						self.level = 40;
+						self.cpm = cpms[(self.level - 1) * 2];
+					} else{
+						var combination = data.defaultIVs["cp"+maxCP];
+						self.level = combination[0];
+						self.ivs.atk = combination[1];
+						self.ivs.def = combination[2];
+						self.ivs.hp = combination[3];
+						self.cpm = cpms[(self.level - 1) * 2];
+					}
+				break;
 			}
-
 
 		}
 
@@ -167,75 +182,22 @@ function Pokemon(id, i, b){
 
 	// Calculate and return the Pokemon's CP
 
-	this.calculateCP = function(cpm = this.cpm, atk = this.ivs.atk, def = this.ivs.def, hp = this.ivs.hp){
-		var cp = Math.floor(( (this.baseStats.atk+atk) * Math.pow(this.baseStats.def+def, 0.5) * Math.pow(this.baseStats.hp+hp, 0.5) * Math.pow(cpm, 2) ) / 10);
+	this.calculateCP = function(cpm = self.cpm, atk = self.ivs.atk, def = self.ivs.def, hp = self.ivs.hp){
+		var cp = Math.floor(( (self.baseStats.atk+atk) * Math.pow(self.baseStats.def+def, 0.5) * Math.pow(self.baseStats.hp+hp, 0.5) * Math.pow(cpm, 2) ) / 10);
 
 		return cp;
 	}
 
-	// Maximize the stats based on a maximum CP
+	// Set an IV combination that maximizes atk, def, hp, or overall
 
-	this.maximizeStats = function(targetCP) {
-        var atkIV = 15;
-        var defIV = 15;
-        var hpIV = 15;
-        var level = 40;
-        var calcCP = 0;
-        var minLevelCP = 0;
-        var maxLevelCP = 0;
-        var overall = 0;
-		var bestOverall = 0;
-        var cpm = 0;
-        var iv_options = [];
-        var level_options = [];
-        var overall_options = [];
+	this.maximizeStat = function(sortStat) {
+		combinations = self.generateIVCombinations(sortStat, 1, 1);
 
-        while (level >= 1) {
-            cpm = cpms[(level - 1) * 2];
-            minLevelCP = this.calculateCP(cpm, 0, 0, 0);
-            maxLevelCP = this.calculateCP(cpm, 15, 15, 15);
-            if (maxLevelCP < targetCP || minLevelCP > targetCP) {
-                level -= 0.5;
-                continue;
-            }
-            hpIV = 15;
-            while (hpIV >= 0) {
-                defIV = 15;
-                while (defIV >= 0) {
-                    atkIV = 15;
-                    while (atkIV >= 0) {
-                        calcCP = this.calculateCP(cpm, atkIV, defIV, hpIV);
-
-                        if (calcCP <= targetCP) {
-                            let atk = cpm * (self.baseStats.atk + atkIV);
-                            let def = cpm * (self.baseStats.def + defIV);
-                            let hp = Math.floor(cpm * (self.baseStats.hp + hpIV));
-                            overall = (hp * atk * def) + 50;
-
-							if(overall > bestOverall){
-								iv_options.push(atkIV, defIV, hpIV);
-	                            level_options.push(level);
-	                            overall_options.push(overall);
-
-								bestOverall = overall;
-							}
-
-                        }
-                        atkIV--;
-                    }
-                    defIV--;
-                }
-                hpIV--;
-            }
-            level -= 0.5;
-        }
-
-        if (overall_options.length > 0) {
-            let index = overall_options.indexOf(Math.max.apply(Math, overall_options));
-            this.ivs.atk = iv_options[index * 3];
-            this.ivs.def = iv_options[index * 3 + 1];
-            this.ivs.hp = iv_options[index * 3 + 2];
-            this.level = level_options[index];
+        if (combinations.length > 0) {
+            this.ivs.atk = combinations[0].ivs.atk;
+            this.ivs.def = combinations[0].ivs.def;
+            this.ivs.hp = combinations[0].ivs.hp;
+            this.level = combinations[0].level;
         } else {
             this.ivs.atk = 15;
             this.ivs.def = 15;
@@ -250,6 +212,81 @@ function Pokemon(id, i, b){
         this.startHp = this.hp;
 
         this.cp = self.calculateCP();
+	}
+
+	// Generate an array of IV combinations sorted by stat
+
+	this.generateIVCombinations = function(sortStat, sortDirection, resultCount) {
+		var targetCP = battle.getCP();
+		var level = 40;
+        var atkIV = 15;
+        var defIV = 15;
+        var hpIV = 15;
+        var calcCP = 0;
+        var overall = 0;
+		var bestStat = 0;
+        var cpm = 0;
+        var combinations = [];
+
+        hpIV = 15;
+        while (hpIV >= 0) {
+            defIV = 15;
+            while (defIV >= 0) {
+                atkIV = 15;
+                while (atkIV >= 0) {
+					level = 0.5;
+					calcCP = 0;
+
+					while((level < 40)&&(calcCP < targetCP)){
+						level += 0.5;
+						cpm = cpms[(level - 1) * 2];
+						calcCP = self.calculateCP(cpm, atkIV, defIV, hpIV);
+					}
+
+					if(calcCP > targetCP){
+						level -= 0.5;
+						cpm = cpms[(level - 1) * 2];
+						calcCP = this.calculateCP(cpm, atkIV, defIV, hpIV);
+					}
+
+                    if (calcCP <= targetCP) {
+                        let atk = cpm * (self.baseStats.atk + atkIV);
+                        let def = cpm * (self.baseStats.def + defIV);
+                        let hp = Math.floor(cpm * (self.baseStats.hp + hpIV));
+                        overall = (hp * atk * def);
+
+						var combination = {
+							level: level,
+							ivs: {
+								atk: atkIV,
+								def: defIV,
+								hp: hpIV
+							},
+							atk: atk,
+							def: def,
+							hp: hp,
+							overall: overall
+						};
+
+						if((combination[sortStat] > bestStat)&&(resultCount == 1)){
+							combinations.push(combination);
+
+							bestStat = combination[sortStat];
+						} else{
+							combinations.push(combination);
+						}
+                    }
+                    atkIV--;
+                }
+                defIV--;
+            }
+            hpIV--;
+        }
+
+		combinations.sort((a,b) => (a[sortStat] > b[sortStat]) ? (-1 * sortDirection) : ((b[sortStat] > a[sortStat]) ? (1 * sortDirection) : 0));
+		results = combinations.splice(0, resultCount);
+
+		return results;
 	}
 
 	// The benevolent cousin to this.getStabbed()

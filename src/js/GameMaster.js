@@ -37,17 +37,43 @@ var GameMaster = (function () {
 		}
 
 		object.generateDefaultIVs = function(){
-			var arr = [];
 
 			$.each(object.data.pokemon, function(index, poke){
-				var pokemon = new Pokemon(poke.speciesId);
-				pokemon.maximizeStats();
+				var leagues = [1500,2500];
+				var battle = new Battle();
 
-				var ivs = [pokemon.level, pokemon.ivs.atk, pokemon.ivs.def, pokemon.ivs.hp];
-				arr.push(ivs);
+				var pokemon = new Pokemon(poke.speciesId, 0, battle);
+				var entry = object.getPokemonById(poke.speciesId);
+				battle.setNewPokemon(pokemon, 0, false);
+
+				var defaultIVs = {
+					cp1500: [],
+					cp2500: []
+				};
+
+				for(var i = 0; i < leagues.length; i++){
+					battle.setCP(leagues[i]);
+
+					var cp = pokemon.calculateCP(.79030001, 15, 15, 15);
+
+					if(cp > leagues[i]){
+						var combinations = pokemon.generateIVCombinations("overall", 1, 500);
+						var level = combinations[combinations.length-1].level;
+						var ivs = combinations[combinations.length-1].ivs;
+						var combination = [level, ivs.atk, ivs.def, ivs.hp];
+
+						defaultIVs["cp"+leagues[i]] = combination;
+					} else{
+						defaultIVs["cp"+leagues[i]] = [40, 15, 15, 15];
+					}
+				}
+
+				entry.defaultIVs = defaultIVs;
 			});
 
-			console.log(arr);
+			var json = JSON.stringify(object.data);
+
+			console.log(json);
 		}
 
 		// Return a move object from the GameMaster file given move ID
