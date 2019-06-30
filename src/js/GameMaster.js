@@ -57,9 +57,11 @@ var GameMaster = (function () {
 					var cp = pokemon.calculateCP(.79030001, 15, 15, 15);
 
 					if(cp > leagues[i]){
-						var combinations = pokemon.generateIVCombinations("overall", 1, 500);
-						var level = combinations[combinations.length-1].level;
-						var ivs = combinations[combinations.length-1].ivs;
+						var combinations = pokemon.generateIVCombinations("overall", 1, 4096);
+						var defaultIndex = Math.floor(combinations.length * .12207);
+
+						var level = combinations[defaultIndex].level;
+						var ivs = combinations[defaultIndex].ivs;
 						var combination = [level, ivs.atk, ivs.def, ivs.hp];
 
 						defaultIVs["cp"+leagues[i]] = combination;

@@ -53,6 +53,7 @@ var InterfaceMaster = (function () {
 				var data = gm.data;
 
 				// Initialize selectors and push Pokemon data
+				//gm.generateDefaultIVs();
 
 				battle = new Battle();
 				battle.setBuffChanceModifier(0);

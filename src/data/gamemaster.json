@@ -1271,8 +1271,8 @@
         "fastMoves": ["CHARGE_BEAM", "CONFUSION"],
         "chargedMoves": ["DAZZLING_GLEAM", "HYPER_BEAM", "PSYCHIC"],
         "defaultIVs": {
-            "cp1500": [17.5, 0, 2, 15],
-            "cp2500": [28.5, 0, 12, 14]
+            "cp1500": [16.5, 13, 11, 11],
+            "cp2500": [27.5, 12, 14, 10]
         }
     }, {
         "dex": 113,
@@ -1854,8 +1854,8 @@
         "fastMoves": ["CHARGE_BEAM", "ZEN_HEADBUTT"],
         "chargedMoves": ["HYPER_BEAM", "PSYCHO_BOOST", "THUNDERBOLT"],
         "defaultIVs": {
-            "cp1500": [18, 2, 8, 8],
-            "cp2500": [29, 3, 15, 8]
+            "cp1500": [17, 10, 13, 13],
+            "cp2500": [28, 13, 15, 12]
         }
     }, {
         "dex": 386,
@@ -1870,8 +1870,8 @@
         "fastMoves": ["POISON_JAB", "ZEN_HEADBUTT"],
         "chargedMoves": ["DARK_PULSE", "PSYCHO_BOOST", "ZAP_CANNON"],
         "defaultIVs": {
-            "cp1500": [22, 6, 8, 15],
-            "cp2500": [40, 15, 12, 9]
+            "cp1500": [21, 11, 13, 13],
+            "cp2500": [38, 14, 15, 14]
         }
     }, {
         "dex": 386,
@@ -1886,7 +1886,7 @@
         "fastMoves": ["COUNTER", "ZEN_HEADBUTT"],
         "chargedMoves": ["PSYCHO_BOOST", "ROCK_SLIDE", "THUNDERBOLT"],
         "defaultIVs": {
-            "cp1500": [25.5, 3, 0, 14],
+            "cp1500": [23.5, 13, 14, 13],
             "cp2500": [40, 15, 15, 15]
         }
     }, {
@@ -1902,8 +1902,8 @@
         "fastMoves": ["CHARGE_BEAM", "ZEN_HEADBUTT"],
         "chargedMoves": ["PSYCHO_BOOST", "SWIFT", "THUNDERBOLT"],
         "defaultIVs": {
-            "cp1500": [19, 9, 6, 15],
-            "cp2500": [36, 3, 10, 8]
+            "cp1500": [18.5, 12, 14, 14],
+            "cp2500": [31, 15, 13, 15]
         }
     }, {
         "dex": 87,
@@ -3708,8 +3708,8 @@
         "fastMoves": ["CHARGE_BEAM", "CONFUSION"],
         "chargedMoves": ["DAZZLING_GLEAM", "DOOM_DESIRE", "PSYCHIC"],
         "defaultIVs": {
-            "cp1500": [17.5, 0, 2, 15],
-            "cp2500": [28.5, 0, 12, 14]
+            "cp1500": [16.5, 13, 11, 11],
+            "cp2500": [27.5, 12, 14, 10]
         }
     }, {
         "dex": 135,
@@ -4989,8 +4989,8 @@
         "fastMoves": ["CHARGE_BEAM", "CUT", "DRAGON_TAIL", "FROST_BREATH", "INFESTATION", "POISON_JAB", "POUND", "ROCK_SMASH", "SHADOW_CLAW", "SNARL", "STEEL_WING", "STRUGGLE_BUG", "VOLT_SWITCH", "WATERFALL"],
         "chargedMoves": ["ANCIENT_POWER", "BLIZZARD", "BULLDOZE", "DARK_PULSE", "DAZZLING_GLEAM", "DRAGON_CLAW", "ENERGY_BALL", "FLAME_CHARGE", "FLASH_CANNON", "FOCUS_BLAST", "GRASS_KNOT", "GYRO_BALL", "HYPER_BEAM", "ICE_BEAM", "LOW_SWEEP", "OVERHEAT", "PSYCHIC", "PSYSHOCK", "ROCK_SLIDE", "SOLAR_BEAM", "STONE_EDGE", "SURF", "THUNDER", "THUNDERBOLT", "WILD_CHARGE"],
         "defaultIVs": {
-            "cp1500": [17.5, 0, 2, 15],
-            "cp2500": [28.5, 0, 12, 14]
+            "cp1500": [16.5, 13, 11, 11],
+            "cp2500": [27.5, 12, 14, 10]
         }
     }, {
         "dex": 150,

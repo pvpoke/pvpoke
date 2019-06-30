@@ -216,7 +216,7 @@ function Pokemon(id, i, b){
 
 	// Generate an array of IV combinations sorted by stat
 
-	this.generateIVCombinations = function(sortStat, sortDirection, resultCount) {
+	this.generateIVCombinations = function(sortStat, sortDirection, resultCount, filterPrettyCombos) {
 		var targetCP = battle.getCP();
 		var level = 40;
         var atkIV = 15;
@@ -228,12 +228,21 @@ function Pokemon(id, i, b){
         var cpm = 0;
         var combinations = [];
 
+		var floor = 0;
+
+		var untradables = ["mew","celebi","deoxys_attack","deoxys_defense","deoxys_speed","deoxys","jirachi"];
+
+		if(untradables.indexOf(self.speciesId) > -1){
+			floor = 10;
+		}
+
+
         hpIV = 15;
-        while (hpIV >= 0) {
+        while (hpIV >= floor) {
             defIV = 15;
-            while (defIV >= 0) {
+            while (defIV >= floor) {
                 atkIV = 15;
-                while (atkIV >= 0) {
+                while (atkIV >= floor) {
 					level = 0.5;
 					calcCP = 0;
 
@@ -265,14 +274,27 @@ function Pokemon(id, i, b){
 							atk: atk,
 							def: def,
 							hp: hp,
-							overall: overall
+							overall: overall,
+							cp: calcCP
 						};
 
-						if((combination[sortStat] > bestStat)&&(resultCount == 1)){
-							combinations.push(combination);
+						var valid = true;
 
-							bestStat = combination[sortStat];
-						} else{
+						if(filterPrettyCombos){
+							if((targetCP - combination.cp > 10)||( (combination.ivs.atk > combination.ivs.def) || (combination.ivs.atk > combination.ivs.hp))){
+								valid = false;
+							}
+						}
+
+						if(resultCount == 1){
+							if(combination[sortStat] < bestStat){
+								valid = false;
+							} else {
+								bestStat = combination[sortStat];
+							}
+						}
+
+						if(valid){
 							combinations.push(combination);
 						}
                     }
