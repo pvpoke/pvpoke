@@ -610,7 +610,9 @@ function PokeSelect(element, i){
 	// Turn maximize stats on and off
 
     $el.find(".maximize-stats").on("click", function(e){
-        selectedPokemon.maximizeStat("overall");
+		var sortStat = $(".maximize-section .check.on").first().attr("value");
+
+        selectedPokemon.maximizeStat(sortStat);
 
         selectedPokemon.isCustom = true;
         isCustom = true;
@@ -626,6 +628,12 @@ function PokeSelect(element, i){
 			interface.resetSelectedPokemon();
 		}
     });
+
+	// Select an option from the maximize section
+
+	$el.find(".maximize-section .check").on("click", function(e){
+		$el.find(".maximize-section .check").removeClass("on");
+	});
 
 	// Change level input
 

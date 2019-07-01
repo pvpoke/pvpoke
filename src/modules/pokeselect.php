@@ -55,7 +55,14 @@
 					<input class="iv" iv="def" type="number" placeholder="Def" min="0" max="15" step="1" />
 					<input class="iv" iv="hp" type="number" placeholder="HP" min="0" max="15" step="1" />
 				</div>
-				<button class="maximize-stats">Maximize Stats</button>
+				<div class="maximize-section">
+					<div class="check-group">
+						<div class="check on" value="overall"><span></span>Overall</div>
+						<div class="check" value="atk"><span></span>Atk</div>
+						<div class="check" value="def"><span></span>Def</div>
+					</div>
+					<button class="maximize-stats">Maximize</button>
+				</div>
 				<div class="stat-modifiers">
 					<h3>Stat Modifiers (-4 to 4)</h3>
 					<input class="stat-mod" iv="atk" type="number" placeholder="Atk" min="-4" max="4" step="1" />

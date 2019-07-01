@@ -535,6 +535,22 @@ header{
 				}
 			}
 
+			.maximize-section{
+				border: 1px solid #888;
+			    border-radius: 8px;
+			    padding: 5px;
+				margin-bottom:0;
+				clear:both;
+
+				.check{
+					display: inline-block;
+				    font-size: 14px;
+				    margin-right: 5px;
+				    margin-bottom: 5px;
+					margin-top:0;
+				}
+			}
+
 			&.active{
 
 				.fields{
@@ -985,7 +1001,7 @@ select, input{
 					cursor:initial;
 				}
 			}
-      
+
 			.item.interaction{
 				display: block !important;
 				border:2px solid #000;
