@@ -216,7 +216,7 @@ function Pokemon(id, i, b){
 
 	// Generate an array of IV combinations sorted by stat
 
-	this.generateIVCombinations = function(sortStat, sortDirection, resultCount, filterPrettyCombos) {
+	this.generateIVCombinations = function(sortStat, sortDirection, resultCount, minStat, minValue) {
 		var targetCP = battle.getCP();
 		var level = 40;
         var atkIV = 15;
@@ -227,6 +227,10 @@ function Pokemon(id, i, b){
 		var bestStat = 0;
         var cpm = 0;
         var combinations = [];
+		
+		if(sortDirection == -1){
+			bestStat = 10000;
+		}
 
 		var floor = 0;
 
@@ -279,18 +283,30 @@ function Pokemon(id, i, b){
 						};
 
 						var valid = true;
-
-						if(filterPrettyCombos){
-							if((targetCP - combination.cp > 10)||( (combination.ivs.atk > combination.ivs.def) || (combination.ivs.atk > combination.ivs.hp))){
-								valid = false;
-							}
-						}
+						
+						// This whole jumble won't include combinations that don't beat our best or worst if we just want one result
 
 						if(resultCount == 1){
-							if(combination[sortStat] < bestStat){
-								valid = false;
-							} else {
+							if(sortDirection == 1){
+								if(combination[sortStat] < bestStat){
+									valid = false;
+								}
+							} else if(sortDirection == -1){
+								if(combination[sortStat] > bestStat){
+									valid = false;
+								}
+							}
+							
+							if(valid){
 								bestStat = combination[sortStat];
+							}
+						}
+						
+						// Check if a minimum value must be reached
+						
+						if(minStat){
+							if(combination[minStat] < minValue){
+								valid = false;
 							}
 						}
 
@@ -309,6 +325,50 @@ function Pokemon(id, i, b){
 		results = combinations.splice(0, resultCount);
 
 		return results;
+	}
+	
+	// Given a defender, generate a list of Attack values that reach certain breakpoints
+	
+	this.calculateBreakpoints = function(defender){
+		var effectiveness = defender.typeEffectiveness[self.fastMove.type];
+		var minAttack = self.generateIVCombinations("atk", -1, 1)[0].atk;
+		var maxAttack = self.generateIVCombinations("atk", 1, 1)[0].atk;
+		var minDamage = battle.calculateDamageByStats(minAttack, defender.stats.def, effectiveness, self.fastMove);
+		var maxDamage = battle.calculateDamageByStats(maxAttack, defender.stats.def, effectiveness, self.fastMove);
+		
+		var breakpoints = [];
+		
+		for(var i = minDamage; i <= maxDamage; i++){
+			var breakpoint = battle.calculateBreakpoint(i, defender.stats.def, effectiveness, self.fastMove);
+			breakpoints.push({
+				damage: i,
+				attack: breakpoint
+			});
+		}
+		
+		return breakpoints;
+	}
+	
+	// Given an attacker, generate a list of Defense values that reach certain bulkpoints
+	
+	this.calculateBulkpoints = function(attacker){
+		var effectiveness = self.typeEffectiveness[attacker.fastMove.type];
+		var minDefense = self.generateIVCombinations("def", -1, 1)[0].def;
+		var maxDefense = self.generateIVCombinations("def", 1, 1)[0].def;
+		var minDamage = battle.calculateDamageByStats(attacker.stats.atk, maxDefense, effectiveness, attacker.fastMove);
+		var maxDamage = battle.calculateDamageByStats(attacker.stats.atk, maxDefense, effectiveness, attacker.fastMove);
+		
+		var breakpoints = [];
+		
+		for(var i = minDamage; i <= maxDamage; i++){
+			var bulkpoint = battle.calculateBulkpoint(i, attacker.stats.atk, effectiveness, self.fastMove);
+			breakpoints.push({
+				damage: i,
+				defense: bulkpoint
+			});
+		}
+		
+		return breakpoints;
 	}
 
 	// The benevolent cousin to this.getStabbed()

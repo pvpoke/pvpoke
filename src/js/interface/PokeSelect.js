@@ -269,15 +269,6 @@ function PokeSelect(element, i){
 
 		$pokeSelect.find("option[value=\""+poke.speciesId+"\"]").prop("selected","selected");
 
-		// If custom, set level and IV fields to current values
-
-		if(poke.isCustom){
-			$el.find("input.level").val(poke.level);
-			$el.find("input.iv[iv='atk']").val(poke.ivs.atk);
-			$el.find("input.iv[iv='def']").val(poke.ivs.def);
-			$el.find("input.iv[iv='hp']").val(poke.ivs.hp);
-		}
-
 		if((poke.startStatBuffs[0] != 0)||(poke.startStatBuffs[1] != 0)){
 			$el.find("input.stat-mod[iv='atk']").val(poke.startStatBuffs[0]);
 			$el.find("input.stat-mod[iv='def']").val(poke.startStatBuffs[1]);
@@ -294,6 +285,12 @@ function PokeSelect(element, i){
 		// Set shields to correct amount
 
 		$el.find(".shield-select option[value=\""+poke.startingShields+"\"]").prop("selected","selected");
+		
+		// Set level and iv fields		
+		$el.find("input.level").val(selectedPokemon.level);
+		$el.find("input.iv[iv='atk']").val(selectedPokemon.ivs.atk);
+		$el.find("input.iv[iv='def']").val(selectedPokemon.ivs.def);
+		$el.find("input.iv[iv='hp']").val(selectedPokemon.ivs.hp);
 
 		self.update();
 	}
@@ -386,6 +383,12 @@ function PokeSelect(element, i){
 		if(interface.resetSelectedPokemon){
 			interface.resetSelectedPokemon();
 		}
+		
+		// Set level and iv fields		
+		$el.find("input.level").val(selectedPokemon.level);
+		$el.find("input.iv[iv='atk']").val(selectedPokemon.ivs.atk);
+		$el.find("input.iv[iv='def']").val(selectedPokemon.ivs.def);
+		$el.find("input.iv[iv='hp']").val(selectedPokemon.ivs.hp);
 	});
 
 	// Select different move
@@ -519,6 +522,13 @@ function PokeSelect(element, i){
 			if(interface.resetSelectedPokemon){
 				interface.resetSelectedPokemon();
 			}
+			
+			
+			// Set level and iv fields		
+			$el.find("input.level").val(selectedPokemon.level);
+			$el.find("input.iv[iv='atk']").val(selectedPokemon.ivs.atk);
+			$el.find("input.iv[iv='def']").val(selectedPokemon.ivs.def);
+			$el.find("input.iv[iv='hp']").val(selectedPokemon.ivs.hp);
 		}
 
 	});
@@ -597,14 +607,6 @@ function PokeSelect(element, i){
 	$el.find(".advanced-section a").on("click", function(e){
 		e.preventDefault();
 		$el.find(".advanced-section").toggleClass("active");
-
-		// If default IV's aren't filled in yet, show them
-		if($el.find("input.level").val() == ""){
-			$el.find("input.level").val(selectedPokemon.level);
-			$el.find("input.iv[iv='atk']").val(selectedPokemon.ivs.atk);
-			$el.find("input.iv[iv='def']").val(selectedPokemon.ivs.def);
-			$el.find("input.iv[iv='hp']").val(selectedPokemon.ivs.hp);
-		}
 	});
 
 	// Turn maximize stats on and off
@@ -634,6 +636,25 @@ function PokeSelect(element, i){
 	$el.find(".maximize-section .check").on("click", function(e){
 		$el.find(".maximize-section .check").removeClass("on");
 	});
+	
+	// Restore default IV's
+
+    $el.find(".restore-default").on("click", function(e){
+        selectedPokemon.isCustom = false;
+        isCustom = false;
+        selectedPokemon.initialize(battle.getCP());
+
+        self.update();
+
+		$("input.level").eq(index).val(selectedPokemon.level);
+		$("input.iv[iv='atk']").eq(index).val(selectedPokemon.ivs.atk);
+		$("input.iv[iv='def']").eq(index).val(selectedPokemon.ivs.def);
+		$("input.iv[iv='hp']").eq(index).val(selectedPokemon.ivs.hp);
+
+		if(interface.resetSelectedPokemon){
+			interface.resetSelectedPokemon();
+		}
+    });
 
 	// Change level input
 

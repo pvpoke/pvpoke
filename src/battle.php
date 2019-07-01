@@ -131,6 +131,23 @@ require_once 'header.php';
 					</table>
 					<p class="center">Click or tap to view battles.</p>
 				</div>
+				
+				<h2 class="center">Breakpoints &amp; Bulkpoints</h2>
+				
+				<div class="breakpoints-section">
+					<p><span class="name-attacker">Pokemon</span> can reach the following breakpoints against this <span class="name-defender">Pokemon</span>:</p>
+					
+					<table class="stats-table breakpoints" cellspacing="0">
+						<tr>
+							<td><span class="name name-fast">Move</span></td>
+							<td><span class="name">Minimum Attack</span></td>
+							<td><span class="name">Best Level &amp; IV's</span></td>
+						</tr>
+						<tbody class="output">
+						</tbody>
+					</table>
+					
+				</div>
 
 				<h2 class="center">Battle Stats</h2>
 

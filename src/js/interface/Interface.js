@@ -53,7 +53,6 @@ var InterfaceMaster = (function () {
 				var data = gm.data;
 
 				// Initialize selectors and push Pokemon data
-				//gm.generateDefaultIVs();
 
 				battle = new Battle();
 				battle.setBuffChanceModifier(0);
@@ -90,6 +89,7 @@ var InterfaceMaster = (function () {
 
 				$("body").on("click", ".rating-table a.rating.star", viewShieldBattle);
 				$("body").on("click", ".section.summary a.rating.star", viewBulkBattle);
+				$("body").on("click", ".breakpoints-section .stats-table .button", selectBreakpointIVs);
 
 				// Sandbox mode
 
@@ -640,6 +640,35 @@ var InterfaceMaster = (function () {
 						$(".stats-table .stat-charged-time").eq(i).html(turnsToChargedMove[i]+" ("+(turnsToChargedMove[i]*.5)+"s)");
 					}
 				}
+				
+				// Calculate breakpoints and bulkpoints
+				
+				var breakpoints = pokemon[0].calculateBreakpoints(pokemon[1]);
+				
+				// Output to table
+				
+				$(".breakpoints-section .name-attacker").html(pokemon[0].speciesName);
+				$(".breakpoints-section .name-defender").html(pokemon[1].speciesName);
+				$(".stats-table.breakpoints .name-fast").html(pokemon[0].fastMove.name + " Damage");
+				$(".stats-table.breakpoints .output").html('<tr></tr>');
+				
+				for(var i = breakpoints.length-1; i >= 0; i--){
+					var attack = Math.round(breakpoints[i].attack * 100) / 100;
+
+					// Find the best combinations that reaches this value
+					var combinations = pokemon[0].generateIVCombinations("overall", 1, 2, "atk", attack);
+					
+					$(".stats-table.breakpoints .output").append("<tr class=\"toggle\"><td>"+breakpoints[i].damage+"</td><td>"+attack+"</td><td class=\"ivs\"><div class=\"button\" level=\""+combinations[0].level+"\" atk=\""+combinations[0].ivs.atk+"\" def=\""+combinations[0].ivs.def+"\" hp=\""+combinations[0].ivs.hp+"\">"+combinations[0].level+ " "+combinations[0].ivs.atk+"/"+combinations[0].ivs.def+"/"+combinations[0].ivs.hp+"</div></td></tr>");
+					
+					if(breakpoints[i].damage == pokemon[0].fastMove.damage){
+						$(".stats-table.breakpoints .output tr").last().addClass("bold");
+					}
+
+				}
+				
+				var bulkponts = pokemon[0].calculateBulkpoints(pokemon[1]);
+				
+				console.log(bulkponts);
 
 			}
 
@@ -1588,6 +1617,36 @@ var InterfaceMaster = (function () {
 				// Scroll to results
 
 				$("html, body").animate({ scrollTop: $(".battle-results."+self.battleMode).offset().top - 185 }, 500);
+
+			}
+			
+			// Select and enter an IV combination displayed in the breakpoint table
+
+			function selectBreakpointIVs(e){
+				$(".poke.single").first().find(".advanced-section").addClass("active");
+				
+				var level = parseFloat($(e.target).attr("level"));
+				var atk = parseInt($(e.target).attr("atk"));
+				var def = parseInt($(e.target).attr("def"));
+				var hp = parseInt($(e.target).attr("hp"));
+				
+				var pokemon = pokeSelectors[0].getPokemon();
+				
+				if(pokemon){
+					pokemon.setLevel(level);
+					pokemon.setIV("atk", atk);
+					pokemon.setIV("def", def);
+					pokemon.setIV("hp", hp);
+					pokeSelectors[0].update();
+					
+					// Set level and iv fields		
+					$(".poke.single").first().find("input.level").val(pokemon.level);
+					$(".poke.single").first().find("input.iv[iv='atk']").val(pokemon.ivs.atk);
+					$(".poke.single").first().find("input.iv[iv='def']").val(pokemon.ivs.def);
+					$(".poke.single").first().find("input.iv[iv='hp']").val(pokemon.ivs.hp);
+				}
+
+				$("html, body").animate({ scrollTop: $(".poke").offset().top - 30 }, 500);
 
 			}
 

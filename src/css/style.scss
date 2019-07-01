@@ -511,11 +511,36 @@ header{
 
 			.fields{
 				display:none;
-
+				
 				.ivs input{
-					float:left;
-					width:33%;
+					display:inline;
+					width:25%;
 					max-width:66px;
+					background:none;
+					border:none;
+					border-bottom:1px solid #888;
+					border-radius:0px;
+					height: 22px;
+					-moz-appearance:textfield; /* Firefox */
+					
+					&::-webkit-outer-spin-button,
+					&::-webkit-inner-spin-button {
+						/* display: none; <- Crashes Chrome on hover */
+						-webkit-appearance: none;
+						margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+					}
+					
+					&:focus{
+						outline: none;
+						border-bottom: 3px solid $color-gold;
+					}
+				}
+				
+				.ivs-group{
+					width:75%;
+					float:right;
+					text-align:right;
+					height:42px;
 				}
 
 				.stat-modifiers input{
@@ -529,25 +554,31 @@ header{
 					text-align: center;
 					font-weight: bold;
 				}
-
-				.maximize-stats{
-					margin-bottom:5px;
-				}
 			}
 
 			.maximize-section{
 				border: 1px solid #888;
 			    border-radius: 8px;
 			    padding: 5px;
-				margin-bottom:0;
+				margin-bottom:15px;
 				clear:both;
 
 				.check{
 					display: inline-block;
-				    font-size: 14px;
+				    font-size: 12px;
 				    margin-right: 5px;
 				    margin-bottom: 5px;
 					margin-top:0;
+				}
+				
+
+				.maximize-stats{
+					font-size:12px;
+					margin-top:5px;
+				}
+				
+				.restore-default{
+					font-size:12px;
 				}
 			}
 
@@ -1183,6 +1214,22 @@ select, input{
 				&.win{
 					background-image:url('../img/starburst.png');
 				}
+			}
+		}
+		
+		.breakpoints-section{
+			max-width:340px;
+			margin: 0 auto;
+			
+			.bold{
+				font-weight:bold;
+			}
+			
+			.ivs .button{
+				font-size:14px;
+				margin:0;
+				padding: 5px;
+				border: 1px solid #000;
 			}
 		}
 	}

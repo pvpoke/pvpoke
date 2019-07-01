@@ -138,6 +138,39 @@ function Battle(){
 
 		return damage;
 	}
+	
+	// Calculate damage given stats and effectiveness
+
+	this.calculateDamageByStats = function(attack, defense, effectiveness, move){
+
+		var bonusMultiplier = 1.3;
+
+		var damage = Math.floor(move.power * move.stab * (attack/defense) * effectiveness * 0.5 * bonusMultiplier) + 1;
+
+		return damage;
+	}
+	
+	// Solve for Attack given the damage, defense, effectiveness, and move
+
+	this.calculateBreakpoint = function(damage, defense, effectiveness, move){
+
+		var bonusMultiplier = 1.3;
+		
+		var attack = ((damage - 1) * defense) / (move.power * move.stab * effectiveness * 0.5 * bonusMultiplier);
+
+		return attack;
+	}
+	
+	// Solve for Defense given the damage, attack, effectiveness, and move
+
+	this.calculateBulkpoint = function(damage, attack, effectiveness, move){
+
+		var bonusMultiplier = 1.3;
+		
+		var defense = (damage - 1) / (move.power * move.stab * effectiveness * 0.5 * bonusMultiplier * attack);
+
+		return defense;
+	}
 
 	// Given a move type and array of defensive types, return the final type effectiveness multiplier
 
