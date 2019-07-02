@@ -303,38 +303,41 @@ var InterfaceMaster = (function () {
 				if((mode == 'fast') || (mode == 'charged')){
 					// Search for a move in the table
 					
+					var searches = $(this).val().toLowerCase().split(",");
+					
+					$(".stats-table.moves tr").hide();
+					
 					$(".stats-table.moves tr").each(function(index, value){
 						
-						// Don't filter out the headers
-						
-						if(index == 0){
-							return;
-						}
-						
-						var show = false;
-						var types = ["bug","dark","dragon","electric","fairy","fighting","fire","flying","ghost","grass","ground","ice","normal","poison","psychic","rock","steel","water"];
-						
-						if(types.indexOf(val) == -1){
-							// Name search
-							var moveName = $(this).find("td").first().html().toLowerCase();
+						for(var i = 0; i < searches.length; i++){
+							// Don't filter out the headers
 
-							if(moveName.startsWith(val)){
-								show = true;
+							if(index == 0){
+								return;
 							}
-						} else{
-							// Type search
 
-							if(($(this).find("td").eq(1).find("span").html().toLocaleLowerCase() == val)){
-								show = true;
+							var show = false;
+							var types = ["bug","dark","dragon","electric","fairy","fighting","fire","flying","ghost","grass","ground","ice","normal","poison","psychic","rock","steel","water"];
+
+							if(types.indexOf(searches[i]) == -1){
+								// Name search
+								var moveName = $(this).find("td").first().html().toLowerCase();
+
+								if(moveName.startsWith(searches[i])){
+									show = true;
+								}
+							} else{
+								// Type search
+
+								if(($(this).find("td").eq(1).find("span").html().toLocaleLowerCase() == searches[i])){
+									show = true;
+								}
 							}
-						}
-						
-						if(show){
-							$(this).show();
-						} else{
-							$(this).hide();
-						}
-						
+
+							if(show){
+								$(this).show();
+							}
+						}						
 						
 					});
 				}

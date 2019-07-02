@@ -95,7 +95,9 @@ function Pokemon(id, i, b){
 
 	// Given a target CP, scale to CP, set actual stats, and initialize moves
 
-	this.initialize = function(targetCP, defaultMode="gamemaster"){
+	this.initialize = function(targetCP, defaultMode){
+		
+		defaultMode = typeof defaultMode !== 'undefined' ? defaultMode : "gamemaster";
 
 		this.cp = self.calculateCP();
 
@@ -212,6 +214,8 @@ function Pokemon(id, i, b){
         this.startHp = this.hp;
 
         this.cp = self.calculateCP();
+		
+		self.isCustom = true;
 	}
 
 	// Generate an array of IV combinations sorted by stat

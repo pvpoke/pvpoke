@@ -1368,7 +1368,8 @@
         },
         "types": ["grass", "none"],
         "fastMoves": ["BULLET_SEED", "RAZOR_LEAF"],
-        "chargedMoves": ["DAZZLING_GLEAM", "HYPER_BEAM", "SOLAR_BEAM"],
+        "chargedMoves": ["DAZZLING_GLEAM", "HYPER_BEAM", "SOLAR_BEAM", "POWER_WHIP"],
+		"legacyMoves": ["POWER_WHIP"],
         "defaultIVs": {
             "cp1500": [27.5, 4, 11, 13],
             "cp2500": [40, 15, 15, 15]
@@ -1384,7 +1385,8 @@
         },
         "types": ["grass", "none"],
         "fastMoves": ["BULLET_SEED", "RAZOR_LEAF"],
-        "chargedMoves": ["DAZZLING_GLEAM", "HYPER_BEAM", "SOLAR_BEAM"],
+        "chargedMoves": ["DAZZLING_GLEAM", "HYPER_BEAM", "SOLAR_BEAM", "POWER_WHIP"],
+		"legacyMoves": ["POWER_WHIP"],
         "defaultIVs": {
             "cp1500": [27.5, 4, 11, 13],
             "cp2500": [40, 15, 15, 15]

@@ -311,6 +311,10 @@ header{
 	background-image:url('../img/icon_moves.png');
 }
 
+.icon-settings{
+	background-image:url('../img/icon_settings.png');
+}
+
 .icon-twitter{
 	background-image:url('../img/icon_twitter.png');
 	min-height:18px;
@@ -2682,6 +2686,20 @@ a.toggle{
 	.league-select,
 	.cup-select{
 		max-width:49%;
+	}
+}
+
+
+/* SETTINGS */
+
+.settings{
+	select{
+		max-width:200px;
+	}
+	
+	.button.save{
+		display:inline-block;
+		margin-top:30px;
 	}
 }
 

@@ -303,7 +303,7 @@ function PokeSelect(element, i){
 			return;
 		}
 
-		selectedPokemon.initialize(cp);
+		selectedPokemon.initialize(cp, settings.defaultIVs);
 
 		self.update();
 	}
@@ -318,7 +318,7 @@ function PokeSelect(element, i){
 
 	this.setPokemon = function(id){
 		$pokeSelect.find("option[value=\""+id+"\"]").prop("selected","selected");
-		$pokeSelect.trigger("change");
+		$pokeSelect.trigger("change", true);
 	}
 
 	// Update battle reference object with new instance
@@ -362,14 +362,19 @@ function PokeSelect(element, i){
 
 	// Select different Pokemon
 
-	$pokeSelect.on("change", function(e){
+	$pokeSelect.on("change", function(e, fromURL){
 		var id = $pokeSelect.find("option:selected").val();
 		selectedPokemon = new Pokemon(id, index, battle);
+		
+		if(fromURL){
+			selectedPokemon.initialize(battle.getCP());
+		} else{
+			selectedPokemon.initialize(battle.getCP(), settings.defaultIVs);
+		}
+		
 
 		if($(".team-build").length == 0){
 			battle.setNewPokemon(selectedPokemon, index);
-		} else{
-			selectedPokemon.initialize(battle.getCP());
 		}
 
 		var value = parseInt($el.find(".shield-select option:selected").val());
@@ -504,11 +509,10 @@ function PokeSelect(element, i){
 
 		if(id){
 			selectedPokemon = new Pokemon(id, index, battle);
+			selectedPokemon.initialize(battle.getCP(), settings.defaultIVs);
 
 			if($(".team-build").length == 0){
 				battle.setNewPokemon(selectedPokemon, index);
-			} else{
-				selectedPokemon.initialize(battle.getCP());
 			}
 
 			var value = parseInt($el.find(".shield-select option:selected").val());

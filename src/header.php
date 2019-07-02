@@ -44,7 +44,7 @@ if(! isset($OG_IMAGE)){
 <link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json">
 
 <link rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=35">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=36">
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>
 
 <?php require_once('modules/analytics.php'); ?>
@@ -54,6 +54,23 @@ if(! isset($OG_IMAGE)){
 
 	var host = "<?php echo $WEB_HOST; ?>";
 	var webRoot = "<?php echo $WEB_ROOT; ?>";
+	
+	<?php if(isset($_COOKIE['settings'])) : 
+		$_SETTINGS = json_decode($_COOKIE['settings']);
+	
+		?>
+		var settings = {
+			defaultIVs: "<?php echo htmlspecialchars($_SETTINGS->defaultIVs); ?>",
+			animateTimeline: <?php echo htmlspecialchars($_SETTINGS->animateTimeline); ?>
+		};
+	<?php else: ?>
+	
+		var settings = {
+			defaultIVs: "maximize",
+			animateTimeline: 0
+		};
+	
+	<?php endif; ?>
 </script>
 
 </head>
@@ -78,6 +95,7 @@ if(! isset($OG_IMAGE)){
 						<a class="icon-moves" href="<?php echo $WEB_ROOT; ?>moves/">Moves</a>
 						<a class="icon-articles" href="<?php echo $WEB_ROOT; ?>articles/">Articles</a>
 						<a class="icon-contribute" href="<?php echo $WEB_ROOT; ?>contribute/">Contribute</a>
+						<a class="icon-settings" href="<?php echo $WEB_ROOT; ?>settings/">Settings</a>
 						<a class="icon-twitter" href="https://twitter.com/pvpoke" target="_blank">Twitter</a>
 					</div>
 				</div>

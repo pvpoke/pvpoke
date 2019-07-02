@@ -23,46 +23,28 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.8.0 (June 24, 2019)</h4>
+	<h4>v1.8.1 (July 2, 2019)</h4>
 	<ul>
-		<li>Updated battle simulator to be more accurate with in-game mechanics and scenarios:</li>
+		<li>Adjusted Pokemon default IV's</li>
 		<ul>
-			<li>Fast Moves now register after a certain number of turns have passed. See <a href="<?php echo $WEB_ROOT; ?>articles/guide-to-fast-move-registration/">this article</a> for full details.</li>
-			<li>Pokemon cannot use a Charged Move if they are fainted by a Fast Move on the same turn.</li>
-			<li>Cooldowns reset immediately before a Charged Move. This allows an opposing Pokemon to use a Charged Move on the same turn if they have one available.</li>
+			<li>In the last update, Pokemon were assigned "rank 1" IV's by default, which maximized overall stats. However most players will not have rank 1 Pokemon and the default sims tended to differ from typical play.</li>
+			<li>Pokemon now have a pregenerated set of default IV's that are roughly equivalent to "rank 500" out of 4,096 possible combinations. This provides a more realistic benchmark to prepare against while also trending toward the upper end for competitive play.</li>
+			<li>Pokemon that can't be traded like Mew, Jirachi, and Deoxys now obey their respective IV limits when generating IV combinations.</li>
 		</ul>
-	</ul>
-	<ul>
-		<li>Sandbox Mode adjustments and fixes:</li>
+		<li>Adjusted Pokemon level and IV entry and added advanced options</li>
 		<ul>
-			<li>When you enter Sandbox Mode, circle "Tap" icons will appear where a Pokemon can take an action. Click these to assign and edit actions.</li>
-			<ul>
-				<li>Previously, you clicked on Fast or Charged Move icons to edit actions. Fast Moves may not always register on the turn where they're used, so it didn't feel intuitive to keep using them this way.</li>
-			</ul>
-			<li>Added a new "Wait" action that will make the Pokemon skip a turn.</li>
-			<li>Added an "Update" button that will force the Sandbox simulation to rerun.</li>
-			<ul>
-				<li>Previously, the simulation would automatically rerun when adjusting Pokemon settings but there was no manual way to rerun the simulation.</li>
-			</ul>
-			<li>Fixed an issue where the "Continue Battling" button wouldn't work in Sandbox Mode.</li>
-			<li>Fixed an issue where the "Pull From Timeline" button wouldn't correctly apply starting energy.</li>
+			<li>You can now choose to maximize overall stats, Attack, or Defense</li>
 		</ul>
-	</ul>
-	<ul>
-		<li>Pokemon now use the "maximum stat product" IV combination by default.</li>
+		<li>Added Breakpoint &amp; Bulkpoint section in the matchup details</li>
 		<ul>
-			<li>Previously, Pokemon were perfectly scaled to 1500 CP using their base stats. The purpose of this was to represent base Pokemon better and reduce the effect of IV's, but resulted in stats that weren't always possible. While there are other feasible options here and it may not be optimal for every Pokemon, making "best" IV's the default was a frequent request and is the goal most players are aiming for.</li>
-			<li>You may notice the Team Builder and Multi-Battle tools take a little longer to run because of this change. I am hoping to optimize this further in the future!</li>
+			<li>Breakpoints and bulkpoints are calculated for the left Pokemon against the specific right Pokemon. You may wish to explore multiple IV spreads for the defending Pokemon to identify which stat ranges you should target.</li>
+			<li>Clicking any of the level &amp; IV combinations in the tables will enter them for the respective Pokemon.</li>
+			<li>Where possible, this report will show an IV combination that reaches both the best breakpoint and best bulkpoint.</li>
 		</ul>
-	</ul>
-	<ul>
-		<li>Rankings updated and tweaked:</li>
+		<li>Added Settings page where you can adjust the following preferences:</li>
 		<ul>
-			<li>All rankings have been regenerated with updated results.</li>
-			<li>The overall score formula has been adjusted slightly to favor the Lead and Closer categories over the Attacker and Defender categories.</li>
-			<ul>
-				<li>Good closers are naturally good defenders, for example, so this tweak favors more well rounded Pokemon without having too negative effects on specialized Pokemon. The overall change is minor but should produce slightly more realistic results.</li>
-			</ul>
+			<li>Default IV combination (for Pokemon that you select)</li>
+			<li>Enable or diable timeline animations</li>
 		</ul>
 	</ul>
 

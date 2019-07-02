@@ -211,7 +211,7 @@ var InterfaceMaster = (function () {
 
 					$item.css("left", position);
 
-					if(! animate){
+					if((! animate)||(settings.animateTimeline === 0)){
 						$item.find(".item").addClass("active");
 					}
 
@@ -697,7 +697,7 @@ var InterfaceMaster = (function () {
 				$(".breakpoints-section .golden-combination").html('');
 				
 				if((combinations.length > 0)&&(breakpoints.length > 1)&&(bulkpoints.length > 1)){
-					$(".breakpoints-section .golden-combination").append("<p><div class=\"button\" level=\""+combinations[0].level+"\" atk=\""+combinations[0].ivs.atk+"\" def=\""+combinations[0].ivs.def+"\" hp=\""+combinations[0].ivs.hp+"\">"+combinations[0].level+ " "+combinations[0].ivs.atk+"/"+combinations[0].ivs.def+"/"+combinations[0].ivs.hp+"</div> "+pokemon[0].speciesName+" reaches its best breakpoint and best bulkpoint.</p>");
+					$(".breakpoints-section .golden-combination").append("<p><div class=\"button\" level=\""+combinations[0].level+"\" atk=\""+combinations[0].ivs.atk+"\" def=\""+combinations[0].ivs.def+"\" hp=\""+combinations[0].ivs.hp+"\">"+combinations[0].level+ " "+combinations[0].ivs.atk+"/"+combinations[0].ivs.def+"/"+combinations[0].ivs.hp+"</div> "+pokemon[0].speciesName+" reaches the best breakpoint and bulkpoint against this "+pokemon[1].speciesName+".</p>");
 				}
 
 			}
@@ -1390,7 +1390,7 @@ var InterfaceMaster = (function () {
 
 								battle.simulate();
 								battle.debug();
-								self.displayTimeline(battle);
+								self.displayTimeline(battle, false, (settings.animateTimeline != 0));
 							} else{
 
 								// If yes, bulk sim and display median battle
