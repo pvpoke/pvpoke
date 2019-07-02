@@ -1229,7 +1229,20 @@ select, input{
 				font-size:14px;
 				margin:0;
 				padding: 5px;
-				border: 1px solid #000;
+				border: none;
+				background:$color-off-black !important;
+				color:$color-off-white;
+			}
+			
+			.golden-combination .button{
+				display:inline-block;
+				font-size:14px;
+				padding: 5px 15px;
+				margin:0;
+				font-weight:bold;
+				border: none;
+				background:$color-off-black !important;
+				color:$color-off-white;
 			}
 		}
 	}

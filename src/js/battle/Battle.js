@@ -167,7 +167,7 @@ function Battle(){
 
 		var bonusMultiplier = 1.3;
 		
-		var defense = (damage - 1) / (move.power * move.stab * effectiveness * 0.5 * bonusMultiplier * attack);
+		var defense =  (move.power * move.stab * effectiveness * 0.5 * bonusMultiplier * attack) / (damage);
 
 		return defense;
 	}

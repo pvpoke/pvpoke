@@ -612,7 +612,7 @@ function PokeSelect(element, i){
 	// Turn maximize stats on and off
 
     $el.find(".maximize-stats").on("click", function(e){
-		var sortStat = $(".maximize-section .check.on").first().attr("value");
+		var sortStat = $el.find(".maximize-section .check.on").first().attr("value");
 
         selectedPokemon.maximizeStat(sortStat);
 

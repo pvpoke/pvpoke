@@ -216,7 +216,7 @@ function Pokemon(id, i, b){
 
 	// Generate an array of IV combinations sorted by stat
 
-	this.generateIVCombinations = function(sortStat, sortDirection, resultCount, minStat, minValue) {
+	this.generateIVCombinations = function(sortStat, sortDirection, resultCount, filters) {
 		var targetCP = battle.getCP();
 		var level = 40;
         var atkIV = 15;
@@ -304,9 +304,11 @@ function Pokemon(id, i, b){
 						
 						// Check if a minimum value must be reached
 						
-						if(minStat){
-							if(combination[minStat] < minValue){
-								valid = false;
+						if(filters){
+							for(var i = 0; i < filters.length; i++){
+								if(combination[filters[i].stat] < filters[i].value){
+									valid = false;
+								}
 							}
 						}
 
@@ -356,12 +358,12 @@ function Pokemon(id, i, b){
 		var minDefense = self.generateIVCombinations("def", -1, 1)[0].def;
 		var maxDefense = self.generateIVCombinations("def", 1, 1)[0].def;
 		var minDamage = battle.calculateDamageByStats(attacker.stats.atk, maxDefense, effectiveness, attacker.fastMove);
-		var maxDamage = battle.calculateDamageByStats(attacker.stats.atk, maxDefense, effectiveness, attacker.fastMove);
+		var maxDamage = battle.calculateDamageByStats(attacker.stats.atk, minDefense, effectiveness, attacker.fastMove);
 		
 		var breakpoints = [];
 		
 		for(var i = minDamage; i <= maxDamage; i++){
-			var bulkpoint = battle.calculateBulkpoint(i, attacker.stats.atk, effectiveness, self.fastMove);
+			var bulkpoint = battle.calculateBulkpoint(i, attacker.stats.atk, effectiveness, attacker.fastMove);
 			breakpoints.push({
 				damage: i,
 				defense: bulkpoint

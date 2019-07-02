@@ -89,7 +89,7 @@ var InterfaceMaster = (function () {
 
 				$("body").on("click", ".rating-table a.rating.star", viewShieldBattle);
 				$("body").on("click", ".section.summary a.rating.star", viewBulkBattle);
-				$("body").on("click", ".breakpoints-section .stats-table .button", selectBreakpointIVs);
+				$("body").on("click", ".breakpoints-section .button", selectBreakpointIVs);
 
 				// Sandbox mode
 
@@ -656,7 +656,7 @@ var InterfaceMaster = (function () {
 					var attack = Math.round(breakpoints[i].attack * 100) / 100;
 
 					// Find the best combinations that reaches this value
-					var combinations = pokemon[0].generateIVCombinations("overall", 1, 2, "atk", attack);
+					var combinations = pokemon[0].generateIVCombinations("overall", 1, 2, [{stat: "atk", value: breakpoints[i].attack}]);
 					
 					$(".stats-table.breakpoints .output").append("<tr class=\"toggle\"><td>"+breakpoints[i].damage+"</td><td>"+attack+"</td><td class=\"ivs\"><div class=\"button\" level=\""+combinations[0].level+"\" atk=\""+combinations[0].ivs.atk+"\" def=\""+combinations[0].ivs.def+"\" hp=\""+combinations[0].ivs.hp+"\">"+combinations[0].level+ " "+combinations[0].ivs.atk+"/"+combinations[0].ivs.def+"/"+combinations[0].ivs.hp+"</div></td></tr>");
 					
@@ -666,9 +666,39 @@ var InterfaceMaster = (function () {
 
 				}
 				
-				var bulkponts = pokemon[0].calculateBulkpoints(pokemon[1]);
+				var bulkpoints = pokemon[0].calculateBulkpoints(pokemon[1]);
+
+				$(".stats-table.bulkpoints .name-fast").html(pokemon[1].fastMove.name + " Damage");
+				$(".stats-table.bulkpoints .output").html('<tr></tr>');
 				
-				console.log(bulkponts);
+				for(var i = 0; i < bulkpoints.length; i++){
+					var defense = Math.round(bulkpoints[i].defense * 100) / 100;
+
+					// Find the best combinations that reaches this value
+					var combinations = pokemon[0].generateIVCombinations("overall", 1, 2, [{stat: "def", value: bulkpoints[i].defense}]);
+					
+					$(".stats-table.bulkpoints .output").append("<tr class=\"toggle\"><td>"+bulkpoints[i].damage+"</td><td>"+defense+"</td><td class=\"ivs\"><div class=\"button\" level=\""+combinations[0].level+"\" atk=\""+combinations[0].ivs.atk+"\" def=\""+combinations[0].ivs.def+"\" hp=\""+combinations[0].ivs.hp+"\">"+combinations[0].level+ " "+combinations[0].ivs.atk+"/"+combinations[0].ivs.def+"/"+combinations[0].ivs.hp+"</div></td></tr>");
+					
+					if(bulkpoints[i].damage == pokemon[1].fastMove.damage){
+						$(".stats-table.bulkpoints .output tr").last().addClass("bold");
+					}
+
+				}
+				
+				// Find a golden combination that reaches the best breakpoint and bulkpoint if one exists
+				
+				var bestAttack = breakpoints[breakpoints.length-1].attack;
+				var bestDefense = bulkpoints[0].defense;
+				var combinations = pokemon[0].generateIVCombinations("overall", 1, 2, [
+					{stat: "atk", value: bestAttack},
+					{stat: "def", value: bestDefense}
+				]);
+				
+				$(".breakpoints-section .golden-combination").html('');
+				
+				if((combinations.length > 0)&&(breakpoints.length > 1)&&(bulkpoints.length > 1)){
+					$(".breakpoints-section .golden-combination").append("<p><div class=\"button\" level=\""+combinations[0].level+"\" atk=\""+combinations[0].ivs.atk+"\" def=\""+combinations[0].ivs.def+"\" hp=\""+combinations[0].ivs.hp+"\">"+combinations[0].level+ " "+combinations[0].ivs.atk+"/"+combinations[0].ivs.def+"/"+combinations[0].ivs.hp+"</div> "+pokemon[0].speciesName+" reaches its best breakpoint and best bulkpoint.</p>");
+				}
 
 			}
 

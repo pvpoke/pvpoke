@@ -141,12 +141,24 @@ require_once 'header.php';
 						<tr>
 							<td><span class="name name-fast">Move</span></td>
 							<td><span class="name">Minimum Attack</span></td>
-							<td><span class="name">Best Level &amp; IV's</span></td>
+							<td><span class="name">Top Level &amp; IV's</span></td>
 						</tr>
 						<tbody class="output">
 						</tbody>
 					</table>
 					
+					<p><span class="name-attacker">Pokemon</span> can reach the following bulkpoints against this <span class="name-defender">Pokemon</span>:</p>
+					
+					<table class="stats-table bulkpoints" cellspacing="0">
+						<tr>
+							<td><span class="name name-fast">Move</span></td>
+							<td><span class="name">Minimum Defense</span></td>
+							<td><span class="name">Top Level &amp; IV's</span></td>
+						</tr>
+						<tbody class="output">
+						</tbody>
+					</table>
+					<div class="golden-combination"></div>
 				</div>
 
 				<h2 class="center">Battle Stats</h2>
