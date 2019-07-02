@@ -66,8 +66,8 @@ if(! isset($OG_IMAGE)){
 	<?php else: ?>
 	
 		var settings = {
-			defaultIVs: "maximize",
-			animateTimeline: 0
+			defaultIVs: "gamemaster",
+			animateTimeline: 1
 		};
 	
 	<?php endif; ?>

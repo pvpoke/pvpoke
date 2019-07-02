@@ -1390,7 +1390,7 @@ var InterfaceMaster = (function () {
 
 								battle.simulate();
 								battle.debug();
-								self.displayTimeline(battle, false, (settings.animateTimeline != 0));
+								self.displayTimeline(battle, false, (settings.animateTimeline !== 0));
 							} else{
 
 								// If yes, bulk sim and display median battle
