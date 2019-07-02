@@ -54,22 +54,28 @@ if(! isset($OG_IMAGE)){
 
 	var host = "<?php echo $WEB_HOST; ?>";
 	var webRoot = "<?php echo $WEB_ROOT; ?>";
-	
-	<?php if(isset($_COOKIE['settings'])) : 
+
+	<?php if(isset($_COOKIE['settings'])) :
 		$_SETTINGS = json_decode($_COOKIE['settings']);
-	
+
 		?>
 		var settings = {
 			defaultIVs: "<?php echo htmlspecialchars($_SETTINGS->defaultIVs); ?>",
 			animateTimeline: <?php echo htmlspecialchars($_SETTINGS->animateTimeline); ?>
 		};
-	<?php else: ?>
-	
+	<?php else:
+
+		$_SETTINGS = (object) [
+			'defaultIVs' => "gamemaster",
+			'animateTimeline' => 1
+		];
+		?>
+
 		var settings = {
 			defaultIVs: "gamemaster",
 			animateTimeline: 1
 		};
-	
+
 	<?php endif; ?>
 </script>
 
