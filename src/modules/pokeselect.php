@@ -48,7 +48,7 @@
 		<div class="advanced-section">
 			<a class="advanced" href="#">Advanced <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 			<div class="fields">
-				
+
 				<div class="ivs">
 					<h3>Level &amp; IV's</h3>
 					<input class="level" type="number" placeholder="Level" min="1" max="40" step=".5" />
@@ -65,7 +65,7 @@
 						<div class="check" value="def"><span></span>Def</div>
 					</div>
 					<button class="maximize-stats">Maximize</button>
-					<button class="restore-default">Restore Default</button>
+					<button class="restore-default">Default</button>
 				</div>
 				<div class="stat-modifiers">
 					<h3>Stat Modifiers (-4 to 4)</h3>

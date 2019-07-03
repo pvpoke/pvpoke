@@ -515,10 +515,10 @@ header{
 
 			.fields{
 				display:none;
-				
+
 				.ivs input{
 					display:inline;
-					width:25%;
+					width:27%;
 					max-width:66px;
 					background:none;
 					border:none;
@@ -526,20 +526,24 @@ header{
 					border-radius:0px;
 					height: 22px;
 					-moz-appearance:textfield; /* Firefox */
-					
+
 					&::-webkit-outer-spin-button,
 					&::-webkit-inner-spin-button {
 						/* display: none; <- Crashes Chrome on hover */
 						-webkit-appearance: none;
 						margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 					}
-					
+
 					&:focus{
 						outline: none;
 						border-bottom: 3px solid $color-gold;
 					}
 				}
-				
+
+				input.level{
+					width:25%;
+				}
+
 				.ivs-group{
 					width:75%;
 					float:right;
@@ -570,17 +574,22 @@ header{
 				.check{
 					display: inline-block;
 				    font-size: 12px;
-				    margin-right: 5px;
+				    margin-right: 3px;
 				    margin-bottom: 5px;
 					margin-top:0;
+
+					span{
+						width:12px;
+						height:12px;
+					}
 				}
-				
+
 
 				.maximize-stats{
 					font-size:12px;
 					margin-top:5px;
 				}
-				
+
 				.restore-default{
 					font-size:12px;
 				}
@@ -1220,15 +1229,15 @@ select, input{
 				}
 			}
 		}
-		
+
 		.breakpoints-section{
 			max-width:340px;
 			margin: 0 auto;
-			
+
 			.bold{
 				font-weight:bold;
 			}
-			
+
 			.ivs .button{
 				font-size:14px;
 				margin:0;
@@ -1237,7 +1246,7 @@ select, input{
 				background:$color-off-black !important;
 				color:$color-off-white;
 			}
-			
+
 			.golden-combination .button{
 				display:inline-block;
 				font-size:14px;
@@ -2696,7 +2705,7 @@ a.toggle{
 	select{
 		max-width:200px;
 	}
-	
+
 	.button.save{
 		display:inline-block;
 		margin-top:30px;
