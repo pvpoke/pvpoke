@@ -22,6 +22,12 @@
 
 	<!--Update section for updates-->
 	<h3>What's New</h3>
+	
+	<h4>v1.8.2 (July 3, 2019)</h4>
+	<ul>
+		<li>Fixed a bug that caused headers to disappear when searching on the Moves page</li>
+		<li>Breakpoint and bulkpoint calculations now also check against max Defense and max Attack, respectively, and show which Attack or Defense values will guarantee a certain breakpoint or bulkpoint against that opponent.</li>
+	</ul>
 
 	<h4>v1.8.1 (July 2, 2019)</h4>
 	<ul>

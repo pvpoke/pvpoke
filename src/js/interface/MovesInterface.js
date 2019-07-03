@@ -306,6 +306,7 @@ var InterfaceMaster = (function () {
 					var searches = $(this).val().toLowerCase().split(",");
 					
 					$(".stats-table.moves tr").hide();
+					$(".stats-table.moves tr").eq(0).show();
 					
 					$(".stats-table.moves tr").each(function(index, value){
 						

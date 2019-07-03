@@ -135,12 +135,14 @@ require_once 'header.php';
 				<h2 class="center">Breakpoints &amp; Bulkpoints</h2>
 				
 				<div class="breakpoints-section">
+					<p>In Pokemon GO, damage is dealt in whole numbers. A breakpoint is when a Pokemon has high enough Attack to deal 1 more damage with their Fast Move. A bulkpoint is when a Pokemon has high enough Defense to take 1 less damage from their opponent's Fast Move.</p>
 					<p><span class="name-attacker">Pokemon</span> can reach the following breakpoints against this <span class="name-defender">Pokemon</span>:</p>
 					
 					<table class="stats-table breakpoints" cellspacing="0">
 						<tr>
 							<td><span class="name name-fast">Move</span></td>
 							<td><span class="name">Minimum Attack</span></td>
+							<td><span class="name">Attack to Guarantee</span></td>
 							<td><span class="name">Top Level &amp; IV's</span></td>
 						</tr>
 						<tbody class="output">
@@ -153,6 +155,7 @@ require_once 'header.php';
 						<tr>
 							<td><span class="name name-fast">Move</span></td>
 							<td><span class="name">Minimum Defense</span></td>
+							<td><span class="name">Defense to Guarantee</span></td>
 							<td><span class="name">Top Level &amp; IV's</span></td>
 						</tr>
 						<tbody class="output">

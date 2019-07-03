@@ -654,11 +654,16 @@ var InterfaceMaster = (function () {
 				
 				for(var i = breakpoints.length-1; i >= 0; i--){
 					var attack = Math.round(breakpoints[i].attack * 100) / 100;
+					var guaranteedAttack = Math.round(breakpoints[i].guaranteedAttack * 100) / 100;
+					
+					if(guaranteedAttack == -1){
+						guaranteedAttack = "-";
+					}
 
 					// Find the best combinations that reaches this value
 					var combinations = pokemon[0].generateIVCombinations("overall", 1, 2, [{stat: "atk", value: breakpoints[i].attack}]);
 					
-					$(".stats-table.breakpoints .output").append("<tr class=\"toggle\"><td>"+breakpoints[i].damage+"</td><td>"+attack+"</td><td class=\"ivs\"><div class=\"button\" level=\""+combinations[0].level+"\" atk=\""+combinations[0].ivs.atk+"\" def=\""+combinations[0].ivs.def+"\" hp=\""+combinations[0].ivs.hp+"\">"+combinations[0].level+ " "+combinations[0].ivs.atk+"/"+combinations[0].ivs.def+"/"+combinations[0].ivs.hp+"</div></td></tr>");
+					$(".stats-table.breakpoints .output").append("<tr class=\"toggle\"><td>"+breakpoints[i].damage+"</td><td>"+attack+"</td><td>"+guaranteedAttack+"</td><td class=\"ivs\"><div class=\"button\" level=\""+combinations[0].level+"\" atk=\""+combinations[0].ivs.atk+"\" def=\""+combinations[0].ivs.def+"\" hp=\""+combinations[0].ivs.hp+"\">"+combinations[0].level+ " "+combinations[0].ivs.atk+"/"+combinations[0].ivs.def+"/"+combinations[0].ivs.hp+"</div></td></tr>");
 					
 					if(breakpoints[i].damage == pokemon[0].fastMove.damage){
 						$(".stats-table.breakpoints .output tr").last().addClass("bold");
@@ -673,11 +678,17 @@ var InterfaceMaster = (function () {
 				
 				for(var i = 0; i < bulkpoints.length; i++){
 					var defense = Math.round(bulkpoints[i].defense * 100) / 100;
+					var guaranteedDefense = Math.round(bulkpoints[i].guaranteedDefense * 100) / 100;
+					
+					if(guaranteedDefense == -1){
+						guaranteedDefense = "-";
+					}
+					
 
 					// Find the best combinations that reaches this value
 					var combinations = pokemon[0].generateIVCombinations("overall", 1, 2, [{stat: "def", value: bulkpoints[i].defense}]);
 					
-					$(".stats-table.bulkpoints .output").append("<tr class=\"toggle\"><td>"+bulkpoints[i].damage+"</td><td>"+defense+"</td><td class=\"ivs\"><div class=\"button\" level=\""+combinations[0].level+"\" atk=\""+combinations[0].ivs.atk+"\" def=\""+combinations[0].ivs.def+"\" hp=\""+combinations[0].ivs.hp+"\">"+combinations[0].level+ " "+combinations[0].ivs.atk+"/"+combinations[0].ivs.def+"/"+combinations[0].ivs.hp+"</div></td></tr>");
+					$(".stats-table.bulkpoints .output").append("<tr class=\"toggle\"><td>"+bulkpoints[i].damage+"</td><td>"+defense+"</td><td>"+guaranteedDefense+"</td><td class=\"ivs\"><div class=\"button\" level=\""+combinations[0].level+"\" atk=\""+combinations[0].ivs.atk+"\" def=\""+combinations[0].ivs.def+"\" hp=\""+combinations[0].ivs.hp+"\">"+combinations[0].level+ " "+combinations[0].ivs.atk+"/"+combinations[0].ivs.def+"/"+combinations[0].ivs.hp+"</div></td></tr>");
 					
 					if(bulkpoints[i].damage == pokemon[1].fastMove.damage){
 						$(".stats-table.bulkpoints .output tr").last().addClass("bold");

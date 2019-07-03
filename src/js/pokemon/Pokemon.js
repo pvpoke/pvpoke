@@ -339,6 +339,7 @@ function Pokemon(id, i, b){
 		var effectiveness = defender.typeEffectiveness[self.fastMove.type];
 		var minAttack = self.generateIVCombinations("atk", -1, 1)[0].atk;
 		var maxAttack = self.generateIVCombinations("atk", 1, 1)[0].atk;
+		var maxDefense = defender.generateIVCombinations("def", 1, 1)[0].def;
 		var minDamage = battle.calculateDamageByStats(minAttack, defender.stats.def, effectiveness, self.fastMove);
 		var maxDamage = battle.calculateDamageByStats(maxAttack, defender.stats.def, effectiveness, self.fastMove);
 		
@@ -346,9 +347,16 @@ function Pokemon(id, i, b){
 		
 		for(var i = minDamage; i <= maxDamage; i++){
 			var breakpoint = battle.calculateBreakpoint(i, defender.stats.def, effectiveness, self.fastMove);
+			var maxDefenseBreakpoint = battle.calculateBreakpoint(i, maxDefense, effectiveness, self.fastMove);
+			
+			if(maxDefenseBreakpoint > maxAttack){
+				maxDefenseBreakpoint = -1;
+			}
+			
 			breakpoints.push({
 				damage: i,
-				attack: breakpoint
+				attack: breakpoint,
+				guaranteedAttack: maxDefenseBreakpoint
 			});
 		}
 		
@@ -361,6 +369,7 @@ function Pokemon(id, i, b){
 		var effectiveness = self.typeEffectiveness[attacker.fastMove.type];
 		var minDefense = self.generateIVCombinations("def", -1, 1)[0].def;
 		var maxDefense = self.generateIVCombinations("def", 1, 1)[0].def;
+		var maxAttack = attacker.generateIVCombinations("atk", 1, 1)[0].atk;
 		var minDamage = battle.calculateDamageByStats(attacker.stats.atk, maxDefense, effectiveness, attacker.fastMove);
 		var maxDamage = battle.calculateDamageByStats(attacker.stats.atk, minDefense, effectiveness, attacker.fastMove);
 		
@@ -368,9 +377,16 @@ function Pokemon(id, i, b){
 		
 		for(var i = minDamage; i <= maxDamage; i++){
 			var bulkpoint = battle.calculateBulkpoint(i, attacker.stats.atk, effectiveness, attacker.fastMove);
+			var maxAttackBulkpoint = battle.calculateBulkpoint(i, maxAttack, effectiveness, attacker.fastMove);
+			
+			if(maxAttackBulkpoint > maxDefense){
+				maxAttackBulkpoint = -1;
+			}
+			
 			breakpoints.push({
 				damage: i,
-				defense: bulkpoint
+				defense: bulkpoint,
+				guaranteedDefense: maxAttackBulkpoint
 			});
 		}
 		

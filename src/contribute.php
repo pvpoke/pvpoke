@@ -57,6 +57,16 @@ require_once 'header.php'; ?>
 			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/zyonik.png" />
 			<div class="supporter"><a href="https://www.youtube.com/channel/UCi6snlTgnjOrADLCEGvbU6A" target="_blank">ZyoniK</a></div>
 		</div>
+		
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/wyvvyrn.png" />
+			<div class="supporter"><a href="https://www.youtube.com/channel/UCCa2F5r46fMpmk976svFbwQ" target="_blank">Wyvvyrn</a></div>
+		</div>
+		
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/goranger.png" />
+			<div class="supporter"><a href="https://goranger.app" target="_blank">GO Ranger</a></div>
+		</div>
 
 	</div>
 </div>
