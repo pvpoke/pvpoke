@@ -167,6 +167,25 @@ var GameMaster = (function () {
 			}
 		}
 
+		// Load team pool JSON for AI team generation
+
+		object.loadTeamData = function(league, cup, callback){
+
+			var key = league + "" + cup;
+
+			if(! object.teamPools[key]){
+				var file = webRoot+"data/training/teams/"+cup+"/"+league+".json?v=86";
+
+				$.getJSON( file, function( data ){
+					object.teamPools[key] = data;
+					callback(league, cup, data);
+				});
+			} else{
+				callback(league, cup, data);
+			}
+		}
+
+
 		// Modify a Pokemon data entry
 
 		object.modifyPokemonEntry = function(id, type, props){

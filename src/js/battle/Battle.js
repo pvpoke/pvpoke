@@ -6,6 +6,7 @@ function Battle(){
 
 	var self = this;
 	var pokemon = [null, null];
+	var players = [];
 	var cp = 1500;
 	var cup = {name: "all", types: []}; // List of allowed types
 
@@ -14,14 +15,17 @@ function Battle(){
 
 	var actions = []; // User defined actions
 	var previousTurnActions = [] // Actions from the previous turn
+	var turnActions = []; // Actions to be performed this turn
 	var queuedActions = []; // Input registered from previous turns to be processed on future turns
 	var sandbox = false; // Is this automated or following user instructions?
+	var mode = "simulate"; // Simulate or emulate?
 
 	// Battle properties
 
 	var timeline = [];
 	var time;
 	var turns;
+	var deltaTime = 500;
 
 	var duration = 0;
 	var battleRatings = [];
@@ -29,6 +33,10 @@ function Battle(){
 	var winner;
 
 	var battleEndMode = "first"; // first - end the battle on the first faint, both - end the battle once both Pokemon faint
+	var phase = "neutral";
+	var phaseProps; // A collection of properties associated with the current phase
+	var phaseTimeout; // Used to trigger the end of certain phases like charging up and switching
+	var mainLoopInterval;
 
 	var roundChargedMoveUsed;
 	var roundShieldUsed;
@@ -36,6 +44,9 @@ function Battle(){
 	var chargedMinigameTime = 8000;
 
 	var usePriority = false;
+
+	var chargeAmount = 0; // Multiplier used in emulated battles
+	var playerUseShield = false; // Flag for a player to use an available shield in emulated battles
 
 	var startingValues = [
 		{hp: 0, energy: 0},
@@ -45,6 +56,10 @@ function Battle(){
 	// Buff parameters
 
 	var buffChanceModifier = -1; // -1 prevents buffs, 1 guarantees buffs
+
+	// Callback for inteface to updated
+
+	var updateCallback;
 
 	this.init = function(){
 		interface = InterfaceMaster.getInterface();
@@ -60,8 +75,27 @@ function Battle(){
 		}
 
 		poke.index = index;
-
 		pokemon[index] = poke;
+
+		// Set shields for corresponding player
+
+		if(mode == "emulate"){
+
+			poke.shields = players[index].getShields();
+			poke.startingShields = players[index].getShields();
+			poke.priority = players[index].getPriority();
+
+			// Evaluate AI
+			if((pokemon[0])&&(pokemon[1])){
+				for(var i = 0; i < pokemon.length; i++){
+					pokemon[i].resetMoves();
+				}
+
+				if(players[1].getAI()){
+					players[1].getAI().evaluateMatchup(turns, pokemon[1], pokemon[0], players[0]);
+				}
+			}
+		}
 	}
 
 	this.getPokemon = function(){
@@ -72,6 +106,12 @@ function Battle(){
 
 	this.clearPokemon = function(){
 		pokemon = [null, null];
+	}
+
+	// Set the active players
+
+	this.setPlayers = function(arr){
+		players = arr;
 	}
 
 	this.getCP = function(){
@@ -128,17 +168,25 @@ function Battle(){
 
 	// Calculate damage given an attacker, defender, and move, requires move to be initialized first
 
-	this.calculateDamage = function(attacker, defender, move){
+	this.calculateDamage = function(attacker, defender, move, forceFullCharge){
 
 		var bonusMultiplier = 1.3;
 		var effectiveness = defender.typeEffectiveness[move.type];
 
+		// Fully charge moves in regular simulation or if the opponent is an AI
+		if(mode == "simulate"){
+			chargeAmount = 1;
+		} else if(mode == "emulate"){
+			if((move.energyGain > 0)||(players[attacker.index].ai)||(forceFullCharge)){
+				chargeAmount = 1;
+			}
+		}
 
-		var damage = Math.floor(move.power * move.stab * ( attacker.getEffectiveStat(0) / defender.getEffectiveStat(1)) * effectiveness * 0.5 * bonusMultiplier) + 1;
+		var damage = Math.floor(move.power * move.stab * ( attacker.getEffectiveStat(0) / defender.getEffectiveStat(1)) * effectiveness * chargeAmount * 0.5 * bonusMultiplier) + 1;
 
 		return damage;
 	}
-	
+
 	// Calculate damage given stats and effectiveness
 
 	this.calculateDamageByStats = function(attack, defense, effectiveness, move){
@@ -149,24 +197,24 @@ function Battle(){
 
 		return damage;
 	}
-	
+
 	// Solve for Attack given the damage, defense, effectiveness, and move
 
 	this.calculateBreakpoint = function(damage, defense, effectiveness, move){
 
 		var bonusMultiplier = 1.3;
-		
+
 		var attack = ((damage - 1) * defense) / (move.power * move.stab * effectiveness * 0.5 * bonusMultiplier);
 
 		return attack;
 	}
-	
+
 	// Solve for Defense given the damage, attack, effectiveness, and move
 
 	this.calculateBulkpoint = function(damage, attack, effectiveness, move){
 
 		var bonusMultiplier = 1.3;
-		
+
 		var defense =  (move.power * move.stab * effectiveness * 0.5 * bonusMultiplier * attack) / (damage);
 
 		return defense;
@@ -317,10 +365,9 @@ function Battle(){
 		return traits;
 	}
 
-	// This is the meat of the pie. Runs the battle simulation and returns an array of timeline events
+	// Reset all battle components and initiate the battle
 
-	this.simulate = function(){
-
+	this.start = function(){
 		for(var i = 0; i < pokemon.length; i++){
 			pokemon[i].reset();
 
@@ -336,12 +383,326 @@ function Battle(){
 		}
 
 		time = 0;
-		turns = 0;
+		turns = 1;
 		turnsToWin = [0, 0];
 		timeline = [];
 		queuedActions = [];
+		turnActions = [];
+	}
 
-		var deltaTime = 500;
+	// Process a turn
+
+	this.step = function(){
+		// For display purposes, need to track whether a Pokemon has used a charged move or shield each round
+
+		roundChargedMoveUsed = 0;
+		roundShieldUsed = false;
+
+		// Hold the actions for both Pokemon this turn
+
+		turnActions = [];
+
+		// Reduce cooldown for both Pokemon
+
+		for(var i = 0; i < 2; i++){
+			var poke = pokemon[i];
+			poke.cooldown = Math.max(0, poke.cooldown - deltaTime); // Reduce cooldown
+			poke.hasActed = false;
+		}
+
+		// Reduce switch timer for both players
+
+		for(var i = 0; i < players.length; i++){
+			players[i].decrementSwitchTimer(deltaTime);
+		}
+
+		// Exit if not regular battle phase
+
+		if(phase != "neutral"){
+			return false;
+		}
+
+		// Determine actions for both Pokemon
+		var actionsThisTurn = false;
+		var chargedMoveThisTurn = false;
+
+		for(var i = 0; i < 2; i++){
+
+			var poke = pokemon[i];
+			var opponent = this.getOpponent(i);
+			var action = self.getTurnAction(poke, opponent);
+
+			if(action){
+				actionsThisTurn = true;
+				if(action.type == "charged"){
+					chargedMoveThisTurn = true;
+				}
+
+				queuedActions.push(action);
+			}
+		}
+
+		// Take actions from the queue to be processed now
+		for(var i = 0; i < queuedActions.length; i++){
+			var action = queuedActions[i];
+			var valid = false;
+
+			// Is there a fast move that's eligible to be processed this turn?
+			if(action.type == "fast"){
+
+				// Was this queued on a previous turn? See if it's eligible
+				var timeSinceActivated = (turns - action.turn) * 500;
+				var chargedMoveLastTurn = false;
+
+				for(var n = 0; n < previousTurnActions.length; n++){
+					if(previousTurnActions[n].type == "charged"){
+						chargedMoveLastTurn = true;
+					}
+				}
+
+				if(actionsThisTurn){
+					if(timeSinceActivated >= pokemon[action.actor].fastMove.cooldown - 500){
+						action.settings.priority += 20;
+						valid = true;
+					}
+					if((timeSinceActivated >= 500)&&(chargedMoveLastTurn)){
+						action.settings.priority += 20;
+						valid = true;
+					}
+				}
+
+				// Was this queued this turn? Let's check for piggybacking. Boy was this a headache.
+				if(action.turn == turns){
+
+					// Check for a charged move last turn and this turn
+					var chargedMoveLastTurn = false;
+					var fastMoveRegisteredLastTurn = false;
+
+					for(var j = 0; j < previousTurnActions.length; j++){
+						var a = previousTurnActions[j];
+
+						if(a.type == "charged"){
+							chargedMoveLastTurn = true;
+						}
+						if((a.type == "fast")&&(a.actor == action.actor)){
+							fastMoveRegisteredLastTurn = true;
+						}
+					}
+
+					if((chargedMoveLastTurn)&&(fastMoveRegisteredLastTurn)&&(chargedMoveThisTurn)){
+						valid = false;
+						queuedActions.splice(i, 1);
+						i--;
+					}
+				}
+			}
+
+			if(action.type == "charged"){
+				valid = true;
+			}
+
+			if(action.type == "wait"){
+				valid = true;
+			}
+
+			if(valid){
+				turnActions.push(action);
+				queuedActions.splice(i, 1);
+				i--;
+			}
+		}
+
+		// Sort actions by priority
+		turnActions.sort((a,b) => (a.settings.priority > b.settings.priority) ? -1 : ((b.settings.priority > a.settings.priority) ? 1 : 0));
+
+		// Process actions on this turn
+
+		for(var n = 0; n < turnActions.length; n++){
+			// Return here if we've reached a suspended state
+			if(phase != "neutral"){
+				return false;
+			}
+
+			var action = turnActions[n];
+			var poke = pokemon[action.actor];
+			var opponent = pokemon[ (action.actor == 0) ? 1 : 0 ];
+
+			var chargedMoveThisTurn = false;
+			var priorityChargedMoveThisTurn = false;
+
+			for(var j = 0; j < turnActions.length; j++){
+				var a = turnActions[j];
+
+				if(a.type == "charged"){
+					chargedMoveThisTurn = true;
+
+					if(a.settings.priority > 0){
+						priorityChargedMoveThisTurn = true;
+					}
+				}
+			}
+
+			switch(action.type){
+
+				case "fast":
+					action.valid = true;
+
+					if(opponent.hp < 1){
+						action.valid = false;
+					}
+					break;
+
+				case "charged":
+					var move = poke.chargedMoves[action.value];
+
+					if(! move){
+						console.log("ERROR: Can't find move " + action.value);
+					} else{
+						if(poke.energy >= move.energy){
+							action.valid = true;
+						}
+
+						// Check if knocked out from a priority move
+
+						if((usePriority)&&(poke.hp <= 0)&&(poke.priority == 0)&&(priorityChargedMoveThisTurn)){
+							action.valid = false;
+						}
+					}
+
+					// Check if knocked out from a priority move
+					if((usePriority)&&(poke.hp <= 0)){
+						action.valid = false;
+					}
+
+					// Check if knocked out by a fast move
+					var lethalFastMove = false;
+					var opponentChargedMoveThisTurn = false;
+
+					for(var j = 0; j < turnActions.length; j++){
+						if(turnActions[j].actor != action.actor){
+							if(turnActions[j].type == "fast"){
+								// Need to check if the damage has already been applied this turn
+								if(((opponent.cooldown == 0)&&(poke.hp <= pokemon[turnActions[j].actor].fastMove.damage)) || (poke.hp < 1)){
+									lethalFastMove = true;
+								}
+
+							} else if(turnActions[j].type == "charged"){
+								opponentChargedMoveThisTurn = true;
+							}
+						}
+					}
+
+					if((lethalFastMove)&&(! opponentChargedMoveThisTurn)){
+						action.valid = false;
+					}
+
+					break;
+
+				case "wait":
+					action.valid = true;
+					break;
+
+				case "switch":
+					if(((poke.cooldown == 0)&&(players[poke.index].getSwitchTimer() == 0))||(poke.hp < 1)){
+						action.valid = true;
+					}
+					break;
+			}
+
+			self.processAction(action, poke, opponent);
+		}
+
+		// Set previous turn actions and clear the current turn
+
+		previousTurnActions = turnActions;
+		turnActions = [];
+
+		if(mode == "emulate"){
+			actions = [];
+		}
+
+		if(roundChargedMoveUsed == 0){
+			time += deltaTime;
+		} else{
+			// This is for display purposes only
+
+			if(roundShieldUsed){
+				time += chargedMinigameTime * (roundChargedMoveUsed-1);
+			} else{
+				time += chargedMinigameTime;
+			}
+
+		}
+
+		duration = time;
+		turns++;
+
+		// Check for faint
+		var faintedPokemonIndexes = [];
+
+		for(var i = 0; i < 2; i++){
+			var poke = pokemon[i];
+			poke.hasActed = false;
+
+			if(poke.hp <= 0){
+				timeline.push(new TimelineEvent("faint", "Faint", poke.index, time, turns));
+
+				var opponentIndex = (i == 0) ? 0 : 1;
+
+				if(turnsToWin[opponentIndex] == 0){
+					turnsToWin[opponentIndex] = turns;
+				}
+
+				faintedPokemonIndexes.push(poke.index);
+			}
+
+			// Reset after a charged move
+
+			if(roundChargedMoveUsed){
+				poke.damageWindow = 0;
+				poke.cooldown = 0;
+			}
+		}
+
+		if((mode == "emulate")&&(faintedPokemonIndexes.length > 0)){
+
+			// Are all Pokemon fainted or should the battle continue?
+
+			if((players[0].getRemainingPokemon() > 0)&&(players[1].getRemainingPokemon() > 0)){
+				phase = "suspend_switch";
+				phaseProps = {
+					actors: faintedPokemonIndexes
+				};
+
+				phaseTimeout = setTimeout(self.forceSwitch,	13000);
+
+				// AI switch
+				if(phaseProps.actors.indexOf(1) > -1){
+					var switchChoice = players[1].getAI().decideSwitch();
+					self.queueAction(1, "switch", switchChoice);
+				}
+			} else{
+				var result = "tie";
+				phase = "game_over";
+
+				if(players[0].getRemainingPokemon() > players[1].getRemainingPokemon()){
+					result = "win";
+				} else{
+					result = "loss";
+				}
+
+				self.dispatchUpdate({ result: result });
+				clearInterval(mainLoopInterval);
+			}
+		}
+	}
+
+	// This is the meat of the pie. Runs the battle simulation and returns an array of timeline events
+
+	this.simulate = function(){
+
+		mode = "simulate";
+		self.start();
 
 		// Main battle loop
 
@@ -349,215 +710,7 @@ function Battle(){
 
 		while(continueBattle){
 
-			// For display purposes, need to track whether a Pokemon has used a charged move or shield each round
-
-			roundChargedMoveUsed = 0;
-			roundShieldUsed = false;
-
-			// Hold the actions for both Pokemon this turn
-
-			var turnActions = [];
-
-			// Reduce cooldown for both POkemon
-
-			for(var i = 0; i < 2; i++){
-				var poke = pokemon[i];
-				poke.cooldown = Math.max(0, poke.cooldown - deltaTime);
-				poke.hasActed = false;
-			}
-
-			turns++;
-
-			// Determine actions for both Pokemon
-			var actionsThisTurn = false;
-			var chargedMoveThisTurn = false;
-
-			for(var i = 0; i < 2; i++){
-
-				var poke = pokemon[i];
-				var opponent = this.getOpponent(i);
-				var action = self.getTurnAction(poke, opponent);
-
-				if(action){
-					actionsThisTurn = true;
-					if(action.type == "charged"){
-						chargedMoveThisTurn = true;
-					}
-
-					queuedActions.push(action);
-				}
-			}
-
-
-			// Take actions from the queue to be processed now
-			for(var i = 0; i < queuedActions.length; i++){
-				var action = queuedActions[i];
-				var valid = false;
-
-				// Is there a fast move that's eligible to be processed this turn?
-				if(action.type == "fast"){
-
-					// Was this queued on a previous turn? See if it's eligible
-					var timeSinceActivated = (turns - action.turn) * 500;
-					var chargedMoveLastTurn = false;
-					
-					for(var n = 0; n < previousTurnActions.length; n++){
-						if(previousTurnActions[n].type == "charged"){
-							chargedMoveLastTurn = true;
-						}
-					}			
-					
-					if(actionsThisTurn){
-						if(timeSinceActivated >= pokemon[action.actor].fastMove.cooldown - 500){
-							action.settings.priority += 20;
-							valid = true;
-						}
-						if((timeSinceActivated >= 500)&&(chargedMoveLastTurn)){
-							action.settings.priority += 20;
-							valid = true;
-						}
-					}
-
-					// Was this queued this turn? Let's check for piggybacking. Boy was this a headache.
-					if(action.turn == turns){
-
-						// Check for a charged move last turn and this turn
-						var chargedMoveLastTurn = false;
-						var fastMoveRegisteredLastTurn = false;
-
-						for(var j = 0; j < previousTurnActions.length; j++){
-							var a = previousTurnActions[j];
-
-							if(a.type == "charged"){
-								chargedMoveLastTurn = true;
-							}
-							if((a.type == "fast")&&(a.actor == action.actor)){
-								fastMoveRegisteredLastTurn = true;
-							}
-						}
-
-						if((chargedMoveLastTurn)&&(fastMoveRegisteredLastTurn)&&(chargedMoveThisTurn)){
-							valid = false;
-							queuedActions.splice(i, 1);
-							i--;
-						}
-					}
-				}
-
-				if(action.type == "charged"){
-					valid = true;
-				}
-
-				if(action.type == "wait"){
-					valid = true;
-				}
-
-				if(valid){
-					turnActions.push(action);
-					queuedActions.splice(i, 1);
-					i--;
-				}
-			}
-
-			// Sort actions by priority
-			turnActions.sort((a,b) => (a.settings.priority > b.settings.priority) ? -1 : ((b.settings.priority > a.settings.priority) ? 1 : 0));
-
-			// Process actions on this turn
-
-			for(var n = 0; n < turnActions.length; n++){
-				var action = turnActions[n];
-				var poke = pokemon[action.actor];
-				var opponent = pokemon[ (action.actor == 0) ? 1 : 0 ];
-
-				switch(action.type){
-
-					case "fast":
-						action.valid = true;
-						break;
-
-					case "charged":
-						var move = poke.chargedMoves[action.value];
-
-						if(poke.energy >= move.energy){
-							action.valid = true;
-						}
-
-						// Check if knocked out from a priority move
-						if((usePriority)&&(poke.hp <= 0)){
-							action.valid = false;
-						}
-
-						// Check if knocked out by a fast move
-						var lethalFastMove = false;
-						var opponentChargedMoveThisTurn = false;
-
-						for(var j = 0; j < turnActions.length; j++){
-							if(turnActions[j].actor != action.actor){
-								if(turnActions[j].type == "fast"){
-									// Need to check if the damage has already been applied this turn
-									if(((opponent.cooldown == 0)&&(poke.hp <= pokemon[turnActions[j].actor].fastMove.damage)) || (poke.hp < 1)){
-										lethalFastMove = true;
-									}
-
-								} else if(turnActions[j].type == "charged"){
-									opponentChargedMoveThisTurn = true;
-								}
-							}
-						}
-
-						if((lethalFastMove)&&(! opponentChargedMoveThisTurn)){
-							action.valid = false;
-						}
-						break;
-
-					case "wait":
-						action.valid = true;
-						break;
-				}
-
-				self.processAction(action, poke, opponent);
-			}
-
-			// Set previous turn Actions
-
-			previousTurnActions = turnActions;
-
-			if(roundChargedMoveUsed == 0){
-				time += deltaTime;
-			} else{
-				// This is for display purposes only
-
-				if(roundShieldUsed){
-					time += chargedMinigameTime * (roundChargedMoveUsed-1);
-				} else{
-					time += chargedMinigameTime;
-				}
-
-			}
-
-			duration = time;
-
-			// Check for faint
-			for(var i = 0; i < 2; i++){
-				var poke = pokemon[i];
-
-				if(poke.hp <= 0){
-					timeline.push(new TimelineEvent("faint", "Faint", poke.index, time, turns));
-
-					var opponentIndex = (i == 0) ? 0 : 1;
-
-					if(turnsToWin[opponentIndex] == 0){
-						turnsToWin[opponentIndex] = turns;
-					}
-				}
-
-				// Reset after a charged move
-
-				if(roundChargedMoveUsed){
-					poke.cooldown = 0;
-					poke.damageWindow = 0;
-				}
-			}
+			self.step();
 
 			continueBattle = ((pokemon[0].hp > 0) && (pokemon[1].hp > 0));
 
@@ -604,79 +757,122 @@ function Battle(){
 		return timeline;
 	}
 
+	// Send a battle update to the interface
+
+	this.dispatchUpdate = function(props){
+
+		if(! updateCallback){
+			return false;
+		}
+
+		var data = {
+			turn: turns,
+			phase: phase,
+			pokemon: pokemon,
+			players: players,
+			messages: turnMessages
+		};
+
+		if((phase == "suspend_charged")||(phase == "suspend_switch")){
+			props = phaseProps;
+		}
+
+		// Merge additional properties supplied in parameters
+
+		for (var prop in props){
+			data[prop] = props[prop];
+		}
+
+		updateCallback(data);
+
+		// Clear turn messages so they aren't displayed multiple times
+
+		turnMessages = [];
+	}
+
 	// Isolated function that returns an action a pokemon will perform this turn
 
 	this.getTurnAction = function(poke, opponent){
 		var action = null;
-		var currentShields = poke.shields + opponent.shields;
 
 		// If Pokemon can take action
 
 		chargedMoveUsed = false; // Flag so Pokemon only uses one Charged Move per round
 
 		if((poke.cooldown == 0)&&(! poke.hasActed)){
-			poke.hasActed = true;
+			if((! sandbox)||((mode == "emulate")&&(poke.index==1)&&(poke.hp > 0))){
+				poke.hasActed = true;
 
-			if(! sandbox){
-				action = self.decideAction(poke, opponent);
-			} else{
-				// Search for a charged move action
+				if(! sandbox){
+					if(mode == "simulate"){
+						action = self.decideAction(poke, opponent);
+					} else{
+						action = players[poke.index].getAI().decideAction(turns, poke, opponent);
+					}
+				} else{
+					// Search for a charged move action
 
-				for(var n = 0; n < actions.length; n++){
-					var a = actions[n];
+					for(var n = 0; n < actions.length; n++){
+						var a = actions[n];
 
-					if((a.actor == poke.index)&&(a.turn == turns)){
-						action = a;
+						if( ((mode == "simulate")&&(a.actor == poke.index)&&(a.turn == turns)&&(poke.chargedMoves.length > a.value))
+						   || ( (mode == "emulate") && (a.actor == poke.index) && (! poke.hasActed) ) ){
+							action = a;
 
-						// Apply priority
+							// Apply priority
 
-						action.settings.priority = poke.priority;
+							action.settings.priority = poke.priority;
 
-						// Don't do action if not enough energy
+							// Don't do action if not enough energy
 
-						if((action.type == "charged")&&(poke.energy < poke.chargedMoves[action.value].energy)){
-							action = null;
+							if((action.type == "charged")&&(poke.energy < poke.chargedMoves[action.value].energy)){
+								action = null;
+							}
+
+							poke.hasActed = true;
 						}
 					}
 				}
-			}
 
-			// If no other action set, use a fast move
+				// If no other action set, use a fast move
+				if((! action)&&( (mode == "simulate") || ((mode == "emulate")&&(poke.index == 1)))){
+					action = new TimelineAction("fast", poke.index, turns, 0, {priority: poke.priority});
+				}
 
-			if(! action){
-				action = new TimelineAction("fast", poke.index, turns, 0, {priority: poke.priority});
-			}
+				// Set cooldown
 
-			// Set cooldown
+				if(action.type == "fast"){
+					poke.cooldown = poke.fastMove.cooldown;
+					timeline.push(new TimelineEvent("tap interaction", "Tap", poke.index, time, turns, [2,0]));
+				}
 
-			if(action.type == "fast"){
-				poke.cooldown = poke.fastMove.cooldown;
-				timeline.push(new TimelineEvent("tap interaction", "Tap", poke.index, time, turns, [2,0]));
-			}
+				// Adjust priority
 
-			if(action.type == "charged"){
-				// Reset all cooldowns
-				if((opponent.cooldown > 0)&&(! opponent.hasActed)){
-					action.settings.priority += 2;
-					opponent.cooldown = 0;
+				if(action){
+					if(action.type == "charged"){
+						// Reset all cooldowns
+						if((opponent.cooldown > 0)&&(! opponent.hasActed)){
+							action.settings.priority += 2;
+							opponent.cooldown = 0;
 
-					var a = self.getTurnAction(opponent, poke);
-					if((a)&&(a.type == "charged")){
-						queuedActions.push(a);
+							var a = self.getTurnAction(opponent, poke);
+							if((a)&&(a.type == "charged")){
+								queuedActions.push(a);
+							}
+						}
+						poke.cooldown = 0;
+						action.settings.priority += 10;
+					}
+
+					if(action.type == "switch"){
+						action.settings.priority += 20;
 					}
 				}
-				poke.cooldown = 0;
-				action.settings.priority += 10;
+
 			}
 		}
 
 		return action;
-
-		if(poke.shields + opponent.shields < currentShields){
-			roundShieldUsed = true;
-		}
-
-
 	}
 
 	// Run AI decision making to determine battle action this turn, and return the resulting action
@@ -879,6 +1075,50 @@ function Battle(){
 		}
 
 	}
+
+	// Queue an action to be processed on the next available turn
+
+	this.queueAction = function(actor, type, value){
+		// First, clear any existing actions that belong to the current actor
+
+		for(var i = 0; i < actions.length; i++){
+			if(actions[i].actor == actor){
+				actions.splice(i, 1);
+				break;
+			}
+		}
+
+		// Insert a new action
+
+		var action = new TimelineAction(
+			type,
+			actor,
+			turns,
+			value,
+			{ shielded: false, buffs: false, priority: pokemon[actor].priority }
+			);
+
+		actions.push(action);
+
+		if((type=="switch")&&(phase == "suspend_switch")){
+			// If all required switches have been answered, resume the battle
+			var switchesAnswered = 0;
+
+			for(var i = 0; i < phaseProps.actors.length; i++){
+				for(var n = 0; n < actions.length; n++){
+					if((actions[n].type == "switch")&&(actions[n].actor == phaseProps.actors[i])){
+						switchesAnswered++;
+					}
+				}
+			}
+
+			if(switchesAnswered == phaseProps.actors.length){
+				clearTimeout(phaseTimeout);
+				phase = "neutral";
+			}
+		}
+	}
+
 
 	// Process and apply a set battle action
 

@@ -55,10 +55,10 @@ function Pokemon(id, i, b){
 	this.cooldown = 0;
 	this.damageWindow = 0;
 	this.shields = 0;
-	this.startingShields = 0;
+	this.hasActed = false; // This Pokemon has acted this turn
 
 	this.baitShields = true; // Use low energy attacks to bait shields
-	this.hasActed = false;
+	this.farmEnergy = false; // use fast moves only
 
 	// Set legacy moves
 
@@ -96,7 +96,7 @@ function Pokemon(id, i, b){
 	// Given a target CP, scale to CP, set actual stats, and initialize moves
 
 	this.initialize = function(targetCP, defaultMode){
-		
+
 		defaultMode = typeof defaultMode !== 'undefined' ? defaultMode : "gamemaster";
 
 		this.cp = self.calculateCP();
@@ -214,7 +214,7 @@ function Pokemon(id, i, b){
         this.startHp = this.hp;
 
         this.cp = self.calculateCP();
-		
+
 		self.isCustom = true;
 	}
 
@@ -231,7 +231,7 @@ function Pokemon(id, i, b){
 		var bestStat = 0;
         var cpm = 0;
         var combinations = [];
-		
+
 		if(sortDirection == -1){
 			bestStat = 10000;
 		}
@@ -287,7 +287,7 @@ function Pokemon(id, i, b){
 						};
 
 						var valid = true;
-						
+
 						// This whole jumble won't include combinations that don't beat our best or worst if we just want one result
 
 						if(resultCount == 1){
@@ -300,14 +300,14 @@ function Pokemon(id, i, b){
 									valid = false;
 								}
 							}
-							
+
 							if(valid){
 								bestStat = combination[sortStat];
 							}
 						}
-						
+
 						// Check if a minimum value must be reached
-						
+
 						if(filters){
 							for(var i = 0; i < filters.length; i++){
 								if(combination[filters[i].stat] < filters[i].value){
@@ -332,9 +332,9 @@ function Pokemon(id, i, b){
 
 		return results;
 	}
-	
+
 	// Given a defender, generate a list of Attack values that reach certain breakpoints
-	
+
 	this.calculateBreakpoints = function(defender){
 		var effectiveness = defender.typeEffectiveness[self.fastMove.type];
 		var minAttack = self.generateIVCombinations("atk", -1, 1)[0].atk;
@@ -342,29 +342,29 @@ function Pokemon(id, i, b){
 		var maxDefense = defender.generateIVCombinations("def", 1, 1)[0].def;
 		var minDamage = battle.calculateDamageByStats(minAttack, defender.stats.def, effectiveness, self.fastMove);
 		var maxDamage = battle.calculateDamageByStats(maxAttack, defender.stats.def, effectiveness, self.fastMove);
-		
+
 		var breakpoints = [];
-		
+
 		for(var i = minDamage; i <= maxDamage; i++){
 			var breakpoint = battle.calculateBreakpoint(i, defender.stats.def, effectiveness, self.fastMove);
 			var maxDefenseBreakpoint = battle.calculateBreakpoint(i, maxDefense, effectiveness, self.fastMove);
-			
+
 			if(maxDefenseBreakpoint > maxAttack){
 				maxDefenseBreakpoint = -1;
 			}
-			
+
 			breakpoints.push({
 				damage: i,
 				attack: breakpoint,
 				guaranteedAttack: maxDefenseBreakpoint
 			});
 		}
-		
+
 		return breakpoints;
 	}
-	
+
 	// Given an attacker, generate a list of Defense values that reach certain bulkpoints
-	
+
 	this.calculateBulkpoints = function(attacker){
 		var effectiveness = self.typeEffectiveness[attacker.fastMove.type];
 		var minDefense = self.generateIVCombinations("def", -1, 1)[0].def;
@@ -372,24 +372,24 @@ function Pokemon(id, i, b){
 		var maxAttack = attacker.generateIVCombinations("atk", 1, 1)[0].atk;
 		var minDamage = battle.calculateDamageByStats(attacker.stats.atk, maxDefense, effectiveness, attacker.fastMove);
 		var maxDamage = battle.calculateDamageByStats(attacker.stats.atk, minDefense, effectiveness, attacker.fastMove);
-		
+
 		var breakpoints = [];
-		
+
 		for(var i = minDamage; i <= maxDamage; i++){
 			var bulkpoint = battle.calculateBulkpoint(i, attacker.stats.atk, effectiveness, attacker.fastMove);
 			var maxAttackBulkpoint = battle.calculateBulkpoint(i, maxAttack, effectiveness, attacker.fastMove);
-			
+
 			if(maxAttackBulkpoint > maxDefense){
 				maxAttackBulkpoint = -1;
 			}
-			
+
 			breakpoints.push({
 				damage: i,
 				defense: bulkpoint,
 				guaranteedDefense: maxAttackBulkpoint
 			});
 		}
-		
+
 		return breakpoints;
 	}
 
@@ -446,9 +446,9 @@ function Pokemon(id, i, b){
 	// Set a moves stab and damage traits given an opponent
 
 	this.initializeMove = function(move){
-		var opponent = battle.getOpponent(this.index);
+		var opponent = battle.getOpponent(self.index);
 
-		move.stab = this.getStab(move);
+		move.stab = self.getStab(move);
 
 		if(opponent){
 			move.damage = battle.calculateDamage(self, opponent, move);

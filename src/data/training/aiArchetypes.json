@@ -1,0 +1,61 @@
+[
+	{
+		"name": "Novice",
+		"level": 0,
+		"chargedMoveCount": 1,
+		"energyGuessRange": 15,
+		"moveGuessCertainty": 1,
+		"reactionTime": 12,
+		"strategies": [
+			"DEFAULT",
+			"SHIELD"
+		]
+	},
+	{
+		"name": "Rival",
+		"level": 1,
+		"chargedMoveCount": 2,
+		"energyGuessRange": 10,
+		"moveGuessCertainty": 2,
+		"reactionTime": 8,
+		"strategies": [
+			"DEFAULT",
+			"SHIELD",
+			"SWITCH_BASIC"
+		]
+	},
+	{
+		"name": "Elite",
+		"level": 2,
+		"chargedMoveCount": 2,
+		"energyGuessRange": 5,
+		"moveGuessCertainty": 3,
+		"reactionTime": 6,
+		"strategies": [
+			"DEFAULT",
+			"SHIELD",
+			"SWITCH_BASIC",
+			"SWITCH_FARM",
+			"FARM_ENERGY",
+			"BAIT_SHIELDS"
+		]
+	},
+	{
+		"name": "Champion",
+		"level": 3,
+		"chargedMoveCount": 2,
+		"energyGuessRange": 0,
+		"moveGuessCertainty": 4,
+		"reactionTime": 0,
+		"strategies": [
+			"DEFAULT",
+			"SHIELD",
+			"SWITCH_BASIC",
+			"SWITCH_FARM",
+			"SWITCH_DUCK",
+			"FARM_ENERGY",
+			"BAIT_SHIELDS",
+			"PIGGYBACK"
+		]
+	}
+]
