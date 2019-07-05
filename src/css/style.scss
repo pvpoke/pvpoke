@@ -453,35 +453,6 @@ header{
 			}
 		}
 
-		.hp.bar-back{
-			position:relative;
-			border:3px solid #666;
-			padding:2px;
-			width:100%;
-			height:30px;
-			box-sizing:border-box;
-			margin-top:20px;
-			background: $color-blue-dark;
-
-			.bar{
-				width:100%;
-				height:100%;
-				background-color:$color-hp;
-
-				@include transition(width, 0.2s, ease-out, 0s);
-			}
-
-			.stat{
-				position:absolute;
-				width:100%;
-				left:0;
-				top:4px;
-				text-align:center;
-				color:#fff;
-				font-weight:bold;
-			}
-		}
-
 		h3{
 			margin:0;
 			font-weight:normal;
@@ -663,55 +634,6 @@ header{
 		background-image:url('../img/swap.png');
 	}
 
-	.move-bars{
-		display:flex;
-		justify-content: space-around;
-
-		.move-bar{
-			width: 40px;
-			height: 40px;
-			border-radius: 40px;
-			position: relative;
-			overflow: hidden;
-			border: 2px solid rgba(0,0,0,0);
-			box-sizing: border-box;
-			color:$color-off-white;
-			margin-top:5px;
-			display:none;
-			cursor:pointer;
-
-			@include transition(border, 0.2s, ease-out, 0s);
-
-			&.active{
-				border:2px solid rgba(0,0,0,1);
-			}
-
-			.label{
-				position: relative;
-				z-index: 10;
-				text-align: center;
-				padding-top: 10px;
-				font-weight: bold;
-			}
-
-			.bar, .bar-back{
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-			}
-
-			.bar{
-				@include transition(height, 0.2s, ease-out, 0s);
-			}
-
-			.bar-back{
-				opacity:.3;
-			}
-		}
-	}
-
 	.move-details{
 		font-size:12px;
 		min-height:15px;
@@ -816,6 +738,85 @@ header{
 		}
 	}
 
+}
+
+.hp.bar-back{
+	position:relative;
+	border:3px solid #666;
+	padding:2px;
+	width:100%;
+	height:30px;
+	box-sizing:border-box;
+	margin-top:20px;
+	background: $color-blue-dark;
+
+	.bar{
+		width:100%;
+		height:100%;
+		background-color:$color-hp;
+
+		@include transition(width, 0.2s, ease-out, 0s);
+	}
+
+	.stat{
+		position:absolute;
+		width:100%;
+		left:0;
+		top:4px;
+		text-align:center;
+		color:#fff;
+		font-weight:bold;
+	}
+}
+
+
+.move-bars{
+	display:flex;
+	justify-content: space-around;
+
+	.move-bar{
+		width: 40px;
+		height: 40px;
+		border-radius: 40px;
+		position: relative;
+		overflow: hidden;
+		border: 2px solid rgba(0,0,0,0);
+		box-sizing: border-box;
+		color:$color-off-white;
+		margin-top:5px;
+		display:none;
+		cursor:pointer;
+
+		@include transition(border, 0.2s, ease-out, 0s);
+
+		&.active{
+			border:2px solid rgba(0,0,0,1);
+		}
+
+		.label{
+			position: relative;
+			z-index: 10;
+			text-align: center;
+			padding-top: 10px;
+			font-weight: bold;
+		}
+
+		.bar, .bar-back{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		.bar{
+			@include transition(height, 0.2s, ease-out, 0s);
+		}
+
+		.bar-back{
+			opacity:.3;
+		}
+	}
 }
 
 .poke-select-container{

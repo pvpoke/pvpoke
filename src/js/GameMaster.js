@@ -9,6 +9,7 @@ var GameMaster = (function () {
 		object.data = {};
 		object.rankings = [];
 		object.groups = [];
+		object.teamPools = [];
 		object.loadedData = 0;
 
 		$.getJSON( webRoot+"data/gamemaster.json?v=113", function( data ){

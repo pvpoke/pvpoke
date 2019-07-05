@@ -1,0 +1,520 @@
+/* MIXINS */
+.train .poke {
+  display: block;
+  width: 100%;
+}
+.train .poke:first-of-type {
+  float: left;
+}
+.train .poke:last-of-type {
+  float: right;
+}
+.train .poke.ai-options {
+  float: right;
+}
+.train .poke h3:first-of-type {
+  margin: 0;
+}
+.train .poke .options {
+  display: none;
+}
+.train .poke .custom-options,
+.train .poke .poke-stats {
+  display: block;
+}
+.train .poke .poke.multi {
+  float: none;
+  display: none;
+}
+.train .poke .poke.multi .poke-stats {
+  background: none;
+  padding: 0;
+}
+
+.section.battle {
+  text-align: center;
+}
+
+.battle-active .battle-window {
+  display: inline-block;
+}
+.battle-active header {
+  display: none;
+}
+
+.battle-window {
+  display: none;
+  background: rgba(255, 255, 255, 0.75);
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0px 5px 15px;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+     supported by Chrome and Opera */
+}
+.battle-window[phase=game_over] {
+  display: inline-block;
+}
+.battle-window .img-block {
+  visibility: hidden;
+  max-width: 100%;
+}
+.battle-window .top {
+  padding-top: 10px;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+}
+.battle-window .top .timer {
+  display: none;
+  color: #eee;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  background: rgba(0, 0, 0, 0.75);
+  margin: 0 auto;
+}
+.battle-window .top .timer .text {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 28px;
+}
+.battle-window .top .shields {
+  position: absolute;
+  top: 55px;
+  background-size: contain;
+  background-image: url("../img/shield.png");
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+.battle-window .top .shields.left {
+  left: 6%;
+}
+.battle-window .top .shields.right {
+  right: 6%;
+}
+.battle-window .top .shields.no-shields {
+  color: #ff0000;
+}
+.battle-window .top .team-indicator {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 40px;
+  display: flex;
+  top: 25px;
+  padding: 0 5px;
+}
+.battle-window .top .team-indicator.left {
+  left: 5%;
+}
+.battle-window .top .team-indicator.right {
+  right: 5%;
+}
+.battle-window .top .team-indicator .ball {
+  width: 20px;
+  height: 20px;
+  border-radius: 40px;
+  background: #ff0000;
+  margin: 3px 4px;
+}
+.battle-window .top .team-indicator .ball.fainted {
+  background: #000;
+}
+.battle-window .scene {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  left: -25%;
+  top: -25%;
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.battle-window .scene .background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+.battle-window .scene .pokemon-container {
+  position: absolute;
+  width: 37.5%;
+}
+.battle-window .scene .pokemon-container.self {
+  bottom: 30%;
+  left: 20%;
+}
+.battle-window .scene .pokemon-container.opponent {
+  bottom: 55%;
+  right: 25%;
+}
+.battle-window .scene .pokemon-container h3 {
+  margin: 0;
+  text-align: center;
+}
+.battle-window .scene .pokemon-container .messages {
+  text-align: center;
+}
+.battle-window .scene .pokemon-container .pokemon {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #000;
+  margin: 0 auto;
+}
+.battle-window .scene .pokemon-container .hp.bar-back {
+  border: 2px solid #666;
+  height: 20px;
+  width: 90%;
+  margin: 0 auto 20px auto;
+}
+.battle-window .scene .pokemon-container .hp.bar-back .bar {
+  position: relative;
+  top: -12px;
+}
+.battle-window .scene .pokemon-container .hp.bar-back .bar.damage {
+  background: #ff5115;
+  position: relative;
+  top: 0px;
+  -webkit-transition: width 0.2s ease 0.5s;
+  -moz-transition: width 0.2s ease 0.5s;
+  -o-transition: width 0.2s ease 0.5s;
+  transition: width 0.2s ease 0.5s;
+}
+.battle-window .controls {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background: rgba(0, 0, 0, 0.85);
+  /* Old browsers */
+  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.85) 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.85) 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 30%, rgba(0, 0, 0, 0.85) 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.battle-window .controls .move-bars {
+  position: absolute;
+  bottom: 25%;
+  width: 100%;
+}
+.battle-window .controls .move-bars .move-bar {
+  display: block;
+  width: 70px;
+  height: 70px;
+  -webkit-transition: all 0.2s ease 0s;
+  -moz-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+}
+.battle-window .controls .move-bars .move-bar .label {
+  font-size: 24px;
+  padding-top: 18px;
+  pointer-events: none;
+}
+.battle-window .controls .move-bars .move-bar.active {
+  border: 3px solid #000;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+  -moz-transform: scale(1.25, 1.25);
+  -webkit-transform: scale(1.25, 1.25);
+  -o-transform: scale(1.25, 1.25);
+  -ms-transform: scale(1.25, 1.25);
+  transform: scale(1.25, 1.25);
+}
+.battle-window .controls .move-bars .move-bar.active:active {
+  -moz-transform: scale(1.15, 1.15);
+  -webkit-transform: scale(1.15, 1.15);
+  -o-transform: scale(1.15, 1.15);
+  -ms-transform: scale(1.15, 1.15);
+  transform: scale(1.15, 1.15);
+}
+.battle-window .controls .switch-btn {
+  width: 40px;
+  height: 35px;
+  border-radius: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid #000;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  z-index: 25;
+  bottom: 5%;
+  right: 5%;
+  -webkit-text-fill-color: #eee;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000;
+}
+.battle-window .controls .switch-btn.active {
+  background: #eee;
+}
+.battle-window .shield-window {
+  width: 100%;
+  height: 40%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+}
+.battle-window .shield-window.closed {
+  pointer-events: none;
+  bottom: -50%;
+}
+.battle-window .shield-window .container .close {
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.battle-window .shield-window .container .shield {
+  width: 100px;
+  height: 100px;
+  margin: 1em auto;
+  cursor: pointer;
+  background: #cc3388;
+}
+.battle-window .shield-window, .battle-window .switch-window, .battle-window .charge-window {
+  position: absolute;
+  height: 50%;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  color: #eee;
+  opacity: 0;
+  pointer-events: none;
+}
+.battle-window .shield-window .container,
+.battle-window .switch-window .container {
+  width: 90%;
+  margin: 0 auto;
+  height: 100%;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #eee;
+  text-align: center;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.battle-window .charge-window {
+  -webkit-transition: all 0.25s ease 0.25s;
+  -moz-transition: all 0.25s ease 0.25s;
+  -o-transition: all 0.25s ease 0.25s;
+  transition: all 0.25s ease 0.25s;
+}
+.battle-window .charge-window .container p {
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.5);
+}
+.battle-window .charge-window .container .move-bar {
+  display: block;
+  width: 120px;
+  height: 120px;
+  border-radius: 120px;
+  border: 6px solid #eee;
+}
+.battle-window .charge-window .container .move-bar .label {
+  font-size: 60px;
+  padding-top: 22px;
+}
+.battle-window .charge-window .rings {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: 50%;
+  bottom: -25%;
+  margin-left: -250px;
+}
+.battle-window .charge-window .rings .ring-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.battle-window .charge-window .rings .ring-container .ring {
+  border: 4px solid #eee;
+  border-radius: 500px;
+}
+.battle-window .charge-window .rings .ring-container:nth-of-type(1) .ring {
+  max-width: 90%;
+  max-height: 90%;
+}
+.battle-window .charge-window .rings .ring-container:nth-of-type(2) .ring {
+  max-width: 95%;
+  max-height: 95%;
+}
+.battle-window .charge-window .rings .ring-container:nth-of-type(3) .ring {
+  max-width: 100%;
+  max-height: 100%;
+}
+.battle-window .switch-window {
+  height: 30%;
+  opacity: 1;
+  text-align: center;
+  z-index: 20;
+  bottom: -30%;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+}
+.battle-window .switch-window.active {
+  bottom: 0;
+  pointer-events: all;
+}
+.battle-window .switch-window p {
+  margin-top: 0;
+}
+.battle-window .switch-window .container {
+  padding: 15px 30px;
+}
+.battle-window .switch-window .pokemon-container {
+  display: flex;
+  justify-content: space-around;
+}
+.battle-window .switch-window .pokemon-container .img-container {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  background: #888;
+  margin: 0 auto;
+  opacity: 0.25;
+}
+.battle-window .switch-window .pokemon-container .pokemon.active .img-container {
+  opacity: 1;
+}
+.battle-window .animate-message {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 47%;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transition: all 0.25s ease 0.25s;
+  -moz-transition: all 0.25s ease 0.25s;
+  -o-transition: all 0.25s ease 0.25s;
+  transition: all 0.25s ease 0.25s;
+}
+.battle-window .animate-message .text {
+  margin: 0 auto;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.5);
+  color: #eee;
+  padding: 10px;
+  border-radius: 12px;
+  font-size: 18px;
+}
+.battle-window .countdown {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+.battle-window .countdown .text {
+  font-size: 300px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #eee;
+}
+.battle-window .countdown.animate .text {
+  font-size: 72px;
+  -webkit-transition: all 0.9s ease 0s;
+  -moz-transition: all 0.9s ease 0s;
+  -o-transition: all 0.9s ease 0s;
+  transition: all 0.9s ease 0s;
+}
+.battle-window[phase=suspend_charged_shield] .timer {
+  display: table;
+}
+.battle-window[phase=suspend_charged_shield] .shield-window {
+  opacity: 1;
+  pointer-events: all;
+}
+.battle-window[phase=suspend_charged_shield] .controls .move-bars {
+  display: none;
+}
+.battle-window[phase=suspend_charged_shield] .scene {
+  -moz-transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+  -o-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+}
+.battle-window[phase=suspend_charged_attack] .timer {
+  display: table;
+}
+.battle-window[phase=suspend_charged_attack] .charge-window {
+  opacity: 1;
+  pointer-events: all;
+}
+.battle-window[phase=suspend_charged_attack] .controls .move-bars {
+  display: none;
+}
+.battle-window[phase=suspend_charged_attack] .scene {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
+}
+.battle-window[phase=suspend_switch_self] .timer {
+  display: table;
+}
+.battle-window[phase=suspend_switch_self] .switch-window {
+  bottom: 0;
+  pointer-events: all;
+}
+.battle-window[phase=animating] .animate-message {
+  opacity: 1;
+}
+.battle-window[phase=countdown] .top, .battle-window[phase=countdown] .controls {
+  display: none;
+}
+.battle-window[phase=countdown] .countdown {
+  display: flex;
+}
+
+@media only screen and (max-width: 720px) {
+  .train .poke {
+    width: 49%;
+  }
+}
+
+/*# sourceMappingURL=train.css.map */

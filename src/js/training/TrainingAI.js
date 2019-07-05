@@ -364,8 +364,8 @@ function TrainingAI(l, p, b){
 		var action = null;
 
 		console.log(poke.speciesId + " " + currentStrategy);
-		
-		poke.setBattle(battle);		
+
+		poke.setBattle(battle);
 		poke.resetMoves();
 
 		if((currentStrategy.indexOf("SWITCH") > -1) && (player.getSwitchTimer() == 0)){
@@ -397,10 +397,8 @@ function TrainingAI(l, p, b){
 				action = new TimelineAction("switch", player.getIndex(), turn, switchChoice, {priority: poke.priority});
 			}
 		}
-		
-		poke.resetMoves(true);
-		console.log(poke.chargedMoves);
 
+		poke.resetMoves(true);
 
 		if(! action){
 			action = battle.decideAction(poke, opponent);
@@ -510,11 +508,11 @@ function TrainingAI(l, p, b){
 		}
 
 		// How many Pokemon do I have left compared to shields?
-		
+
 		if(yesWeight - noWeight > -3){
 			yesWeight += (3 - player.getRemainingPokemon()) * 3;
 		}
-		
+
 		var options = [];
 		options.push(new DecisionOption(true, yesWeight));
 		options.push(new DecisionOption(false, noWeight));

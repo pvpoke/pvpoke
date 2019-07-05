@@ -55,6 +55,7 @@ function Pokemon(id, i, b){
 	this.cooldown = 0;
 	this.damageWindow = 0;
 	this.shields = 0;
+	this.startingShields = 0;
 	this.hasActed = false; // This Pokemon has acted this turn
 
 	this.baitShields = true; // Use low energy attacks to bait shields

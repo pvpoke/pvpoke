@@ -77,7 +77,7 @@ function Player(i, ai, b){
 	this.getSwitchTimer = function(){
 		return switchTimer;
 	}
-	
+
 	// Set the switch timer to its maximum value
 
 	this.startSwitchTimer = function(){
@@ -101,24 +101,24 @@ function Player(i, ai, b){
 	this.getIndex = function(){
 		return index;
 	}
-	
+
 	// Return this player's priority
 
 	this.getPriority = function(){
 		return priority;
 	}
-	
+
 	// Return the number of available Pokemon
-	
+
 	this.getRemainingPokemon = function(){
 		var count = 0;
-		
+
 		for(var i = 0; i < team.length; i++){
 			if(team[i].hp > 0){
 				count++;
 			}
 		}
-		
+
 		return count;
 	}
 
