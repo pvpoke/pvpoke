@@ -95,7 +95,7 @@
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
-	
+
 	&[phase="game_over"]{
 		display:inline-block;
 	}
@@ -224,6 +224,8 @@
 			}
 
 			.pokemon{
+				@include transition(all, 1s, ease, 0s);
+
 				width:100px;
 				height:100px;
 				border:3px solid #000;
@@ -495,7 +497,7 @@
 		.text{
 			margin: 0 auto;
 			display: inline-block;
-			background: rgba(0,0,0,0.5);
+			background: rgba(0,0,0,0.65);
 			color: #eee;
 			padding: 10px;
 			border-radius: 12px;
@@ -593,6 +595,56 @@
 
 		.countdown{
 			display:flex;
+		}
+	}
+
+}
+
+/* ANIMATIONS */
+
+.battle-window .scene .pokemon-container{
+
+	&[cooldown="500"]{
+		@include transition(all, 0.25s, ease-out, 0s);
+	}
+
+	&[cooldown="1000"]{
+		@include transition(all, 0.75s, ease-out, 0s);
+	}
+
+	&[cooldown="1500"]{
+		@include transition(all, 1.25s, ease-out, 0s);
+	}
+
+	&[cooldown="2000"]{
+		@include transition(all, 1.75s, ease-out, 0s);
+	}
+
+	&[cooldown="2500"]{
+		@include transition(all, 2.25s, ease-out, 0s);
+	}
+
+	&.animate-fast{
+		@include transition(all, 0.25s, ease-out, 0s);
+
+		&.self{
+			bottom:31%;
+			left:21%;
+		}
+
+		&.opponent{
+			bottom:54%;
+			right:26%;
+		}
+	}
+
+	&.animate-switch{
+		.pokemon{
+			@include transform(scale(0, 0));
+		}
+
+		.hp, .name, .messages{
+			display:none;
 		}
 	}
 

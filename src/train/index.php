@@ -50,7 +50,7 @@ require_once '../header.php';
 </div>
 
 <div class="section battle">
-	<div class="battle-window">
+	<div class="battle-window" style="display:inline-block;">
 		<img class="img-block" src="<?php echo $WEB_ROOT; ?>img/train/battle-window-block.png" />
 		<div class="top">
 			<div class="timer">

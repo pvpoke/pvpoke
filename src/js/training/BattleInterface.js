@@ -55,8 +55,6 @@ var BattlerMaster = (function () {
 				battle.setNewPokemon(players[0].getTeam()[0], 0, false);
 				battle.setNewPokemon(players[1].getTeam()[0], 1, false);
 				battle.emulate(self.update);
-				
-				console.log(battle.getPokemon());
 
 				$("body").addClass("battle-active");
 			};
@@ -132,7 +130,12 @@ var BattlerMaster = (function () {
 					// If a switch has occured, update the Pokemon display and Charged Move buttons
 					if((activePokemon.length < i)||(activePokemon[i] != pokemon)){
 						$poke.find(".name").html(pokemon.speciesName);
-						$poke.find(".pokemon").attr("class", "pokemon " + pokemon.types[0]);
+						$poke.attr("cooldown", pokemon.fastMove.cooldown);
+
+						// Show both Pokemon at the start
+						if(response.turn == 1){
+							$poke.find(".pokemon").attr("class", "pokemon " + pokemon.types[0]);
+						}
 
 						if(i == 0){
 							$(".move-bar").hide();
@@ -252,6 +255,36 @@ var BattlerMaster = (function () {
 						$(this).remove();
 					}
 				});
+
+				// Display any new animations
+
+				for(var i = 0; i < response.animations.length; i++){
+					var animation = response.animations[i];
+					var fastAnimationOccurred = false;
+
+					switch(animation.type){
+						case "fast":
+							fastAnimationOccurred = true;
+							$(".battle-window .pokemon-container").eq(animation.actor).addClass("animate-fast");
+							break;
+
+						case "switch":
+							var actor = animation.actor;
+							$(".battle-window .pokemon-container").eq(animation.actor).addClass("animate-switch");
+
+							setTimeout(function(){
+								$(".battle-window .pokemon-container").eq(actor).removeClass("animate-switch");
+								self.completeSwitchAnimation(actor);
+							}, 1000);
+							break;
+					}
+
+					if(fastAnimationOccurred){
+						setTimeout(function(){
+							$(".battle-window .pokemon-container").removeClass("animate-fast");
+						}, 250);
+					}
+				}
 			}
 
 
@@ -286,6 +319,12 @@ var BattlerMaster = (function () {
 						index++;
 					}
 				}
+			}
+
+			// When a switch animation has completed, fill in the updated sprite
+
+			self.completeSwitchAnimation = function(index){
+				$(".battle-window .pokemon-container").eq(index).find(".pokemon").attr("class", "pokemon " + activePokemon[index].types[0]);
 			}
 
 			// Handler for the charge up interval

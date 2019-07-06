@@ -16,6 +16,7 @@ function Battle(){
 	var actions = []; // User defined actions
 	var previousTurnActions = [] // Actions from the previous turn
 	var turnMessages = []; // Array of messages to be displayed by the emulator for specific Pokemon
+	var turnAnimations = []; // Animations to be displayed by the front end this turn
 	var turnActions = []; // Actions to be performed this turn
 	var queuedActions = []; // Input registered from previous turns to be processed on future turns
 	var sandbox = false; // Is this automated or following user instructions?
@@ -437,6 +438,12 @@ function Battle(){
 				actionsThisTurn = true;
 				if(action.type == "charged"){
 					chargedMoveThisTurn = true;
+				}
+
+
+				if((action.type=="fast")&&(mode == "emulate")){
+					// Submit an animation to be played
+					self.pushAnimation(poke.index, "fast", pokemon[action.actor].fastMove.cooldown / 500);
 				}
 
 				queuedActions.push(action);
@@ -1225,6 +1232,11 @@ function Battle(){
 						player.startSwitchTimer();
 					}
 					self.setNewPokemon(newPokemon, poke.index, false);
+
+					if(mode == "emulate"){
+						// Submit an animation to be played
+						self.pushAnimation(poke.index, "switch", false);
+					}
 				}
 				break;
 		}
@@ -1479,7 +1491,8 @@ function Battle(){
 			phase: phase,
 			pokemon: pokemon,
 			players: players,
-			messages: turnMessages
+			messages: turnMessages,
+			animations: turnAnimations
 		};
 
 		if((phase == "suspend_charged")||(phase == "suspend_switch")){
@@ -1497,6 +1510,7 @@ function Battle(){
 		// Clear turn messages so they aren't displayed multiple times
 
 		turnMessages = [];
+		turnAnimations = [];
 	}
 
 	// Set a charge multiplier in emulated Battles
@@ -1654,6 +1668,16 @@ function Battle(){
 				}
 			}
 		}
+	}
+
+	// For the emulator, push an animation into the list of animations from this turn
+
+	this.pushAnimation = function(actor, type, value){
+		turnAnimations.push({
+			actor: actor,
+			type: type,
+			value: value
+		});
 	}
 
 	// Set whether to emulate or simulate

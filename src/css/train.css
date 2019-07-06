@@ -178,6 +178,10 @@
   text-align: center;
 }
 .battle-window .scene .pokemon-container .pokemon {
+  -webkit-transition: all 1s ease 0s;
+  -moz-transition: all 1s ease 0s;
+  -o-transition: all 1s ease 0s;
+  transition: all 1s ease 0s;
   width: 100px;
   height: 100px;
   border: 3px solid #000;
@@ -429,7 +433,7 @@
 .battle-window .animate-message .text {
   margin: 0 auto;
   display: inline-block;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.65);
   color: #eee;
   padding: 10px;
   border-radius: 12px;
@@ -509,6 +513,62 @@
 }
 .battle-window[phase=countdown] .countdown {
   display: flex;
+}
+
+/* ANIMATIONS */
+.battle-window .scene .pokemon-container[cooldown="500"] {
+  -webkit-transition: all 0.25s ease-out 0s;
+  -moz-transition: all 0.25s ease-out 0s;
+  -o-transition: all 0.25s ease-out 0s;
+  transition: all 0.25s ease-out 0s;
+}
+.battle-window .scene .pokemon-container[cooldown="1000"] {
+  -webkit-transition: all 0.75s ease-out 0s;
+  -moz-transition: all 0.75s ease-out 0s;
+  -o-transition: all 0.75s ease-out 0s;
+  transition: all 0.75s ease-out 0s;
+}
+.battle-window .scene .pokemon-container[cooldown="1500"] {
+  -webkit-transition: all 1.25s ease-out 0s;
+  -moz-transition: all 1.25s ease-out 0s;
+  -o-transition: all 1.25s ease-out 0s;
+  transition: all 1.25s ease-out 0s;
+}
+.battle-window .scene .pokemon-container[cooldown="2000"] {
+  -webkit-transition: all 1.75s ease-out 0s;
+  -moz-transition: all 1.75s ease-out 0s;
+  -o-transition: all 1.75s ease-out 0s;
+  transition: all 1.75s ease-out 0s;
+}
+.battle-window .scene .pokemon-container[cooldown="2500"] {
+  -webkit-transition: all 2.25s ease-out 0s;
+  -moz-transition: all 2.25s ease-out 0s;
+  -o-transition: all 2.25s ease-out 0s;
+  transition: all 2.25s ease-out 0s;
+}
+.battle-window .scene .pokemon-container.animate-fast {
+  -webkit-transition: all 0.25s ease-out 0s;
+  -moz-transition: all 0.25s ease-out 0s;
+  -o-transition: all 0.25s ease-out 0s;
+  transition: all 0.25s ease-out 0s;
+}
+.battle-window .scene .pokemon-container.animate-fast.self {
+  bottom: 31%;
+  left: 21%;
+}
+.battle-window .scene .pokemon-container.animate-fast.opponent {
+  bottom: 54%;
+  right: 26%;
+}
+.battle-window .scene .pokemon-container.animate-switch .pokemon {
+  -moz-transform: scale(0, 0);
+  -webkit-transform: scale(0, 0);
+  -o-transform: scale(0, 0);
+  -ms-transform: scale(0, 0);
+  transform: scale(0, 0);
+}
+.battle-window .scene .pokemon-container.animate-switch .hp, .battle-window .scene .pokemon-container.animate-switch .name, .battle-window .scene .pokemon-container.animate-switch .messages {
+  display: none;
 }
 
 @media only screen and (max-width: 720px) {
