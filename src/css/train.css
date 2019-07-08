@@ -67,9 +67,6 @@
   /* Non-prefixed version, currently
      supported by Chrome and Opera */
 }
-.battle-window[phase=game_over] {
-  display: inline-block;
-}
 .battle-window .img-block {
   visibility: hidden;
   max-width: 100%;
@@ -514,13 +511,23 @@
 .battle-window[phase=countdown] .countdown {
   display: flex;
 }
+.battle-window[phase=game_over] {
+  display: inline-block;
+}
+.battle-window[phase=game_over] .end-screen-container {
+  bottom: -10px;
+}
 
 /* END SCREEN */
 .end-screen-container {
+  -webkit-transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
   position: absolute;
   z-index: 50;
   width: 100%;
-  bottom: -10px;
+  bottom: -100%;
 }
 .end-screen-container .end-screen {
   width: 90%;

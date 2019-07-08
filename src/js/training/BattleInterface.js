@@ -112,8 +112,9 @@ var BattlerMaster = (function () {
 							break;
 
 						case "game_over":
-							console.log(response);
 							$("body").removeClass("battle-active");
+
+							self.displayEndGameStats();
 							break;
 					}
 				}
@@ -325,6 +326,24 @@ var BattlerMaster = (function () {
 
 			self.completeSwitchAnimation = function(index){
 				$(".battle-window .pokemon-container").eq(index).find(".pokemon").attr("class", "pokemon " + activePokemon[index].types[0]);
+			}
+
+			// At the end of the game, show relevant battle stats
+
+			self.displayEndGameStats = function(){
+				var team = players[0].getTeam();
+				var maxScore = 300;
+
+				console.log(team);
+
+				for(var i = 0; i < team.length; i++){
+					var pokemon = team[i];
+					var width = (pokemon.battleStats.damage / maxScore) * 100;
+
+					$(".battle-stats .damage .pokemon-entry .name").eq(i).html(pokemon.speciesId);
+					$(".battle-stats .damage .pokemon-entry .damage-bar").eq(i).css("width", width+"%");
+				}
+
 			}
 
 			// Handler for the charge up interval

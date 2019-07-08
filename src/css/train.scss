@@ -96,10 +96,6 @@
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 
-	&[phase="game_over"]{
-		display:inline-block;
-	}
-
 	.img-block{
 		visibility: hidden;
 		max-width:100%;
@@ -599,7 +595,9 @@
 	}
 
 	&[phase="game_over"]{
-		.end_screen_container{
+		display:inline-block;
+
+		.end-screen-container{
 			bottom:-10px;
 		}
 	}
@@ -614,7 +612,7 @@
 	position:absolute;
 	z-index:50;
 	width:100%;
-	bottom:100%;
+	bottom:-100%;
 
 	.end-screen{
 		width:90%;
