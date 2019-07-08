@@ -165,6 +165,49 @@ require_once '../header.php';
 			<div class="text"></div>
 		</div>
 
+		<div class="end-screen-container">
+			<div class="end-screen section white">
+				<h3 class="result">You won!</h3>
+				<div class="battle-stats">
+					<div class="tab-section damage">
+						<div class="pokemon-entry">
+							<div class="poke-icon">
+								<div class="name">Azumarill</div>
+								<div class="image"></div>
+							</div>
+							<div class="damage-container">
+								<div class="damage-bar"></div>
+							</div>
+						</div>
+						<div class="pokemon-entry">
+							<div class="poke-icon">
+								<div class="name">Azumarill</div>
+								<div class="image"></div>
+							</div>
+							<div class="damage-container">
+								<div class="damage-bar"></div>
+							</div>
+						</div>
+						<div class="pokemon-entry">
+							<div class="poke-icon">
+								<div class="name">Azumarill</div>
+								<div class="image"></div>
+							</div>
+							<div class="damage-container">
+								<div class="damage-bar"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="buttons">
+					<div class="button replay">Replay</div>
+					<div class="button new-match">New Match</div>
+				</div>
+			</div>
+		</div>
+
+
 	</div>
 </div>
 

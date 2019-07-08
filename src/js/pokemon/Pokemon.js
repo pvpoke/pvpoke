@@ -61,6 +61,11 @@ function Pokemon(id, i, b){
 	this.baitShields = true; // Use low energy attacks to bait shields
 	this.farmEnergy = false; // use fast moves only
 
+	// Training battle statistics
+
+	this.battleStats = {};
+	this.roundStats = {};
+
 	// Set legacy moves
 
 	if(data.legacyMoves){
@@ -736,6 +741,13 @@ function Pokemon(id, i, b){
 		self.shields = self.startingShields;
 		self.statBuffs = [self.startStatBuffs[0], self.startStatBuffs[1]];
 		self.resetMoves();
+
+		// Reset battle stats
+		self.battleStats = {
+			damage: 0,
+			shieldsBurned: 0,
+			shieldsUsed: 0
+		};
 	}
 
 	this.setShields = function(amount){

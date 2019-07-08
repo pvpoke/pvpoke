@@ -1343,6 +1343,13 @@ function Battle(){
 						time+=chargedMinigameTime;
 					}
 
+					// Accumulate battle stats
+
+					if(mode == "emulate"){
+						attacker.battleStats.shieldsBurned++;
+						defender.battleStats.shieldsUsed++;
+					}
+
 				} else{
 
 					self.logDecision(turns, defender, " doesn't shield because it can withstand the attack and is saving shields for later, boosted attacks");
@@ -1472,6 +1479,12 @@ function Battle(){
 
 		if((defender.hp < 1)&&(mode == "emulate")){
 			turnActions = [];
+		}
+
+		// In the emulator, accumulate battle stats
+
+		if(mode == "emulate"){
+			attacker.battleStats.damage += Math.round( (damage / defender.stats.hp) * 100);
 		}
 
 		return time;
