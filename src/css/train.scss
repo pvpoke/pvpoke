@@ -203,6 +203,10 @@
 			&.self{
 				bottom: 30%;
 				left: 20%;
+				
+				.pokemon{
+					@include transform(scaleX(-1));
+				}
 			}
 
 			&.opponent{
@@ -221,11 +225,29 @@
 
 			.pokemon{
 				@include transition(all, 1s, ease, 0s);
-
+				
+				position:relative;
 				width:100px;
 				height:100px;
-				border:3px solid #000;
 				margin: 0 auto;
+				
+				.main-sprite,
+				.secondary-sprite{
+					position:absolute;
+					top:0;
+					left:0;
+					width:100%;
+					height:100%;
+					background-size:600% 300%;
+				}
+				
+				.main-sprite{
+					background-image:url('../img/train/substitute-sprite-main.png');
+				}
+				
+				.secondary-sprite{
+					background-image:url('../img/train/substitute-sprite-secondary.png');
+				}
 			}
 
 			.hp.bar-back{
@@ -630,6 +652,11 @@
 	.pokemon-entry{
 		display:flex;
 		margin-bottom:15px;
+		
+		.name{
+			text-align: left;
+			font-size:12px;
+		}
 
 		.poke-icon{
 			width:25%;
@@ -646,6 +673,98 @@
 			}
 		}
 	}
+}
+
+/* POKEMON SPRITES */
+
+.pokemon[type-1="bug"] .main-sprite,
+.pokemon[type-2="bug"] .secondary-sprite{
+	background-position: 0 0;
+}
+
+.pokemon[type-1="dark"] .main-sprite,
+.pokemon[type-2="dark"] .secondary-sprite{
+	background-position: -100% 0;
+}
+
+.pokemon[type-1="dragon"] .main-sprite,
+.pokemon[type-2="dragon"] .secondary-sprite{
+	background-position: -200% 0;
+}
+
+.pokemon[type-1="electric"] .main-sprite,
+.pokemon[type-2="electric"] .secondary-sprite{
+	background-position: -300% 0;
+}
+
+.pokemon[type-1="fairy"] .main-sprite,
+.pokemon[type-2="fairy"] .secondary-sprite{
+	background-position: -400% 0;
+}
+
+.pokemon[type-1="fighting"] .main-sprite,
+.pokemon[type-2="fighting"] .secondary-sprite{
+	background-position: -500% 0;
+}
+
+.pokemon[type-1="fire"] .main-sprite,
+.pokemon[type-2="fire"] .secondary-sprite{
+	background-position: 0% -100%;
+}
+
+.pokemon[type-1="flying"] .main-sprite,
+.pokemon[type-2="flying"] .secondary-sprite{
+	background-position: -100% -100%;
+}
+
+.pokemon[type-1="ghost"] .main-sprite,
+.pokemon[type-2="ghost"] .secondary-sprite{
+	background-position: -200% -100%;
+}
+
+.pokemon[type-1="grass"] .main-sprite,
+.pokemon[type-2="grass"] .secondary-sprite{
+	background-position: -300% -100%;
+}
+
+.pokemon[type-1="ground"] .main-sprite,
+.pokemon[type-2="ground"] .secondary-sprite{
+	background-position: -400% -100%;
+}
+
+.pokemon[type-1="ice"] .main-sprite,
+.pokemon[type-2="ice"] .secondary-sprite{
+	background-position: -500% -100%;
+}
+
+.pokemon[type-1="normal"] .main-sprite,
+.pokemon[type-2="normal"] .secondary-sprite{
+	background-position: 0% -200%;
+}
+
+.pokemon[type-1="poison"] .main-sprite,
+.pokemon[type-2="poison"] .secondary-sprite{
+	background-position: -100% -200%;
+}
+
+.pokemon[type-1="psychic"] .main-sprite,
+.pokemon[type-2="psychic"] .secondary-sprite{
+	background-position: -200% -200%;
+}
+
+.pokemon[type-1="rock"] .main-sprite,
+.pokemon[type-2="rock"] .secondary-sprite{
+	background-position: -300% -200%;
+}
+
+.pokemon[type-1="steel"] .main-sprite,
+.pokemon[type-2="steel"] .secondary-sprite{
+	background-position: -400% -200%;
+}
+
+.pokemon[type-1="water"] .main-sprite,
+.pokemon[type-2="water"] .secondary-sprite{
+	background-position: -500% -200%;
 }
 
 /* ANIMATIONS */

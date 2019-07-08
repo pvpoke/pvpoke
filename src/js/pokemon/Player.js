@@ -53,6 +53,12 @@ function Player(i, ai, b){
 
 	this.setTeam = function(val){
 		team = val;
+		
+		// Reset battle stats
+		
+		for(var i = 0; i < team.length; i++){
+			team[i].resetBattleStats();
+		}
 	}
 
 	// Get current number of shields

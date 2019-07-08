@@ -733,7 +733,6 @@ function Pokemon(id, i, b){
 	// Resets Pokemon prior to battle
 
 	this.reset = function(){
-
 		self.hp = self.startHp;
 		self.energy = self.startEnergy;
 		self.cooldown = 0;
@@ -741,8 +740,11 @@ function Pokemon(id, i, b){
 		self.shields = self.startingShields;
 		self.statBuffs = [self.startStatBuffs[0], self.startStatBuffs[1]];
 		self.resetMoves();
-
-		// Reset battle stats
+	}
+	
+	// Reset stats for emulated battles
+	
+	this.resetBattleStats = function(){
 		self.battleStats = {
 			damage: 0,
 			shieldsBurned: 0,

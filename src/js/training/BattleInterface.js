@@ -48,6 +48,7 @@ var BattlerMaster = (function () {
 				$("body").on("click", ".charge-window .move-bar", chargeUpClick);
 				$(".shield-window .close").on("click", closeShieldClick);
 				$(".shield-window .shield").on("click", useShieldClick);
+				$(".end-screen .replay").on("click", replayBattle);
 
 				// Set lead pokemon
 				battle.setBattleMode("emulate");
@@ -135,7 +136,13 @@ var BattlerMaster = (function () {
 
 						// Show both Pokemon at the start
 						if(response.turn == 1){
-							$poke.find(".pokemon").attr("class", "pokemon " + pokemon.types[0]);
+							$poke.find(".pokemon").attr("type-1", pokemon.types[0]);
+							
+							if(pokemon.types[1] != "none"){
+								$poke.find(".pokemon").attr("type-2", pokemon.types[1]);
+							} else{
+								$poke.find(".pokemon").attr("type-2", pokemon.types[0]);
+							}
 						}
 
 						if(i == 0){
@@ -325,7 +332,13 @@ var BattlerMaster = (function () {
 			// When a switch animation has completed, fill in the updated sprite
 
 			self.completeSwitchAnimation = function(index){
-				$(".battle-window .pokemon-container").eq(index).find(".pokemon").attr("class", "pokemon " + activePokemon[index].types[0]);
+				$(".battle-window .pokemon-container").eq(index).find(".pokemon").attr("type-1", activePokemon[index].types[0]);
+
+				if(activePokemon[index].types[1] != "none"){
+					$(".battle-window .pokemon-container").eq(index).find(".pokemon").attr("type-2", activePokemon[index].types[1]);
+				} else{
+					$(".battle-window .pokemon-container").eq(index).find(".pokemon").attr("type-2", activePokemon[index].types[0]);
+				}
 			}
 
 			// At the end of the game, show relevant battle stats
@@ -445,6 +458,12 @@ var BattlerMaster = (function () {
 					$(".battle-window .shield-window").addClass("closed");
 					battle.setPlayerUseShield(true);
 				}
+			}
+			
+			// At the end of a 3v3 match, replay the same battle
+			
+			function replayBattle(e){
+				handler.startBattle();
 			}
 
 			// Handler for the the use shield timer

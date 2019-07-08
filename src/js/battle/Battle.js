@@ -1376,6 +1376,20 @@ function Battle(){
 				attacker.energy = 100;
 			}
 		}
+		
+
+		// In the emulator, accumulate battle stats
+
+		if(mode == "emulate"){
+			attacker.battleStats.damage += (Math.min(damage, defender.hp) / defender.stats.hp) * 100;
+			
+			if(attacker.index == 0){
+				console.log("+"+((Math.min(damage, defender.hp) / defender.stats.hp) * 100))
+				console.log(attacker.battleStats.damage);
+			}
+		}
+		
+		// Inflict damage
 
 		defender.hp = Math.max(0, defender.hp-damage);
 
@@ -1479,12 +1493,6 @@ function Battle(){
 
 		if((defender.hp < 1)&&(mode == "emulate")){
 			turnActions = [];
-		}
-
-		// In the emulator, accumulate battle stats
-
-		if(mode == "emulate"){
-			attacker.battleStats.damage += Math.round( (damage / defender.stats.hp) * 100);
 		}
 
 		return time;

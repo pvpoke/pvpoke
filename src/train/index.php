@@ -79,7 +79,10 @@ require_once '../header.php';
 					<div class="bar damage"></div>
 					<div class="bar"></div>
 				</div>
-				<div class="pokemon grass"></div>
+				<div class="pokemon">
+					<div class="main-sprite"></div>
+					<div class="secondary-sprite"></div>
+				</div>
 			</div>
 
 			<div class="pokemon-container opponent">
@@ -89,7 +92,10 @@ require_once '../header.php';
 					<div class="bar damage"></div>
 					<div class="bar"></div>
 				</div>
-				<div class="pokemon steel"></div>
+				<div class="pokemon">
+					<div class="main-sprite"></div>
+					<div class="secondary-sprite"></div>
+				</div>
 			</div>
 		</div>
 
