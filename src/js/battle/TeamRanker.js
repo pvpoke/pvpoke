@@ -285,7 +285,6 @@ var RankerMaster = (function () {
 					rankings.sort((a,b) => (a.rating > b.rating) ? 1 : ((b.rating > a.rating) ? -1 : 0));
 				}
 
-
 				// Sort team's matchups by best to worst
 
 				for(var i = 0; i < teamRatings.length; i++){

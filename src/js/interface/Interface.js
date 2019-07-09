@@ -764,6 +764,10 @@ var InterfaceMaster = (function () {
 				var pokemonList = multiSelector.getPokemonList();
 				var custom = (battle.getCup().name == "custom");
 				var initialize = (custom == false);
+				
+				if(! custom){
+					pokemonList = [];
+				}
 
 				for(var i = 0; i < rankings.length; i++){
 					var r = rankings[i];

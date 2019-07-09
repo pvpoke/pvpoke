@@ -23,6 +23,15 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 	
+	<h4>v1.8.3 (July 9, 2019)</h4>
+	<ul>
+		<li>Pokemon now correctly have a minimum HP of 10</li>
+		<li>Fixed an issue in Multi-Battle that would sometimes display incorrect results</li>
+		<ul>
+			<li>This happened when switching from custom to regular Multi-Battle, and regular Multi-Battle would display the custom Pokemon over the regular Multi-Battle results.</li>
+		</ul>
+	</ul>
+	
 	<h4>v1.8.2 (July 3, 2019)</h4>
 	<ul>
 		<li>Fixed a bug that caused headers to disappear when searching on the Moves page</li>
