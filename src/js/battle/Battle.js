@@ -907,8 +907,13 @@ function Battle(){
 			self.logDecision(turns, poke, "'s best charged move is charged (" + poke.bestChargedMove.name + ")");
 
 			// Don't use a charged move if fast moves will result in a KO
+			var faintThreshold = poke.fastMove.damage;
 
-			if(opponent.hp <= poke.fastMove.damage){
+			if(mode == "emulate"){
+				faintThreshold = poke.fastMove.damage * 2;
+			}
+
+			if(opponent.hp <= faintThreshold){
 				useChargedMove = false;
 
 				self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because a fast move will knock out the opponent");
@@ -1099,9 +1104,14 @@ function Battle(){
 		// First, clear any existing actions that belong to the current actor
 
 		for(var i = 0; i < actions.length; i++){
+			// Don't override a switch
 			if(actions[i].actor == actor){
-				actions.splice(i, 1);
-				break;
+				if(actions[i].type != "switch"){
+					actions.splice(i, 1);
+					break;
+				} else{
+					return false;
+				}
 			}
 		}
 
@@ -1376,19 +1386,19 @@ function Battle(){
 				attacker.energy = 100;
 			}
 		}
-		
+
 
 		// In the emulator, accumulate battle stats
 
 		if(mode == "emulate"){
 			attacker.battleStats.damage += (Math.min(damage, defender.hp) / defender.stats.hp) * 100;
-			
+
 			if(attacker.index == 0){
 				console.log("+"+((Math.min(damage, defender.hp) / defender.stats.hp) * 100))
 				console.log(attacker.battleStats.damage);
 			}
 		}
-		
+
 		// Inflict damage
 
 		defender.hp = Math.max(0, defender.hp-damage);
@@ -1493,6 +1503,7 @@ function Battle(){
 
 		if((defender.hp < 1)&&(mode == "emulate")){
 			turnActions = [];
+			queuedActions = [];
 		}
 
 		return time;

@@ -137,7 +137,7 @@ var BattlerMaster = (function () {
 						// Show both Pokemon at the start
 						if(response.turn == 1){
 							$poke.find(".pokemon").attr("type-1", pokemon.types[0]);
-							
+
 							if(pokemon.types[1] != "none"){
 								$poke.find(".pokemon").attr("type-2", pokemon.types[1]);
 							} else{
@@ -362,7 +362,10 @@ var BattlerMaster = (function () {
 			// Handler for the charge up interval
 
 			function chargeUpStep(){
-				charge = Math.max(charge - chargeDecayRate, 0);
+				// Lock charge at 100 once user reaches 100
+				if(charge < 100){
+					charge = Math.max(charge - chargeDecayRate, 0);
+				}
 
 				// Update rings
 				var percent = (charge / maxCharge) * 100;
@@ -459,9 +462,9 @@ var BattlerMaster = (function () {
 					battle.setPlayerUseShield(true);
 				}
 			}
-			
+
 			// At the end of a 3v3 match, replay the same battle
-			
+
 			function replayBattle(e){
 				handler.startBattle();
 			}
