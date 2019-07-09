@@ -72,7 +72,7 @@ var RankerMaster = (function () {
 					var permaBannedList = ["rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","regigigas","phione","manaphy","darkrai","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","kecleon"]; // Don't rank these Pokemon at all yet
 					var allowedList = [];
 
-					if(cup.name == "nightmare"){
+					/*if(cup.name == "nightmare"){
 						permaBannedList = permaBannedList.concat(["sableye","medicham","lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi","latios","latias","uxie","azelf","mesprit","jirachi"]);
 					}
 
@@ -86,41 +86,64 @@ var RankerMaster = (function () {
 
 					if(exclusionList){
 						bannedList = bannedList.concat(exclusionList);
-					}
+					}*/
+					
+					// Aggregate filters
+					
+					var filterLists = [
+						cup.include,
+						cup.exclude
+					];
 
 					for(var i = 0; i < gm.data.pokemon.length; i++){
 
-						if(gm.data.pokemon[i].fastMoves.length > 0){
-							var pokemon = new Pokemon(gm.data.pokemon[i].speciesId, 0, battle);
+						var pokemon = new Pokemon(gm.data.pokemon[i].speciesId, 0, battle);
+						pokemon.initialize(battle.getCP());
 
-							pokemon.initialize(battle.getCP());
+						var stats = (pokemon.stats.hp * pokemon.stats.atk * pokemon.stats.def) / 1000;
 
-							var stats = (pokemon.stats.hp * pokemon.stats.atk * pokemon.stats.def) / 1000;
-
-							if(stats >= minStats){
-
-								if((battle.getCP() == 1500)&&(bannedList.indexOf(pokemon.speciesId) > -1)){
-									continue;
+						if(stats >= minStats){
+							// Process all filters
+							var allowed = true;
+							
+							for(var n = 0; n < filterLists.length; n++){
+								var filters = filterLists[n];
+								var include = (n == 0);
+								
+								for(var j = 0; j < filters.length; j++){
+									var filter = filters[j];
+									
+									switch(filter.filterType){
+										case "type":
+											if(filter.values.indexOf(pokemon.types[0] < 0) && (pokemon.types[1])){
+												allowed = (include != allowed);
+											}
+											break;
+									}
 								}
-
-								if((allowedList.length > 0) && (allowedList.indexOf(pokemon.speciesId) == -1)){
-									continue;
-								}
-
-								if(permaBannedList.indexOf(pokemon.speciesId) > -1){
-									continue;
-								}
-
-								if((cup.name == "rainbow")&&( (pokemon.dex > 251) || (pokemon.speciesId.indexOf("alolan") > -1))){
-									continue;
-								}
-
-								if((cup.types.length > 0) && (cup.types.indexOf(pokemon.types[0]) < 0) && (cup.types.indexOf(pokemon.types[1]) < 0) ){
-									continue;
-								}
-
-								pokemonList.push(pokemon);
 							}
+							
+							if((battle.getCP() == 1500)&&(bannedList.indexOf(pokemon.speciesId) > -1)){
+								allowed = false;
+							}
+
+							if((allowedList.length > 0) && (allowedList.indexOf(pokemon.speciesId) == -1)){
+								allowed = false;
+							}
+
+							if(permaBannedList.indexOf(pokemon.speciesId) > -1){
+								allowed = false;
+							}
+
+							if((cup.name == "rainbow")&&( (pokemon.dex > 251) || (pokemon.speciesId.indexOf("alolan") > -1))){
+								allowed = false;
+							}
+
+							if((cup.types.length > 0) && (cup.types.indexOf(pokemon.types[0]) < 0) && (cup.types.indexOf(pokemon.types[1]) < 0) ){
+								allowed = false;
+							}
+
+							pokemonList.push(pokemon);
 						}
 					}
 

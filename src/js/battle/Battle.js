@@ -91,11 +91,7 @@ function Battle(){
 	// Set allowed types from GameMaster data
 
 	this.setCup = function(cupName){
-
-		if(gm.data.cups[cupName]){
-			cup.name = cupName;
-			cup.types = gm.data.cups[cupName];
-		}
+		cup = gm.getCupById(cupName);
 	}
 
 	// Return object with a name and array of allowed types

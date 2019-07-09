@@ -123,6 +123,21 @@ var GameMaster = (function () {
 
 			return move;
 		}
+		
+		// Return a cup object given an id name
+
+		object.getCupById = function(id){
+			var cup;
+			
+			$.each(object.data.cups, function(index, c){
+
+				if(c.name == id){
+					cup = c;
+				}
+			});
+			
+			return cup;
+		}
 
 		// Load and return ranking data JSON
 

@@ -4,19 +4,138 @@
         "maxBuffStages": 4,
         "buffDivisor": 4
     },
-    "cups": {
-        "all": [],
-        "custom": [],
-        "boulder": ["rock", "steel", "fighting", "ground"],
-        "twilight": ["dark", "poison", "fairy", "ghost"],
-        "tempest": ["electric", "ice", "flying", "ground"],
-        "kingdom": ["fire", "ice", "dragon", "steel"],
-        "nightmare": ["psychic", "dark", "fighting"],
-        "regionals-1": ["rock", "steel", "fighting", "ground", "dark", "poison", "fairy", "ghost", "electric", "ice", "flying", "fire", "dragon"],
-        "rainbow": ["fire", "water", "grass", "electric", "bug"],
-        "championships-1": [],
-        "jungle": ["normal", "grass", "electric", "bug"]
-    },
+    "cups": [
+		{
+			"name": "all",
+			"title": "All Pokemon",
+			"include": [],
+			"exclude": []
+		},
+		{
+			"name": "boulder",
+			"title": "Boulder Cup",
+			"include": [
+				{
+					"filterType": "type",
+					"values": [
+						"rock", "steel", "fighting", "ground"
+					]
+				}
+			],
+			"exclude": []
+		},
+		{
+			"name": "twilight",
+			"title": "Twilight Cup",
+			"include": [
+				{
+					"filterType": "type",
+					"values": [
+						"dark", "poison", "fairy", "ghost"
+					]
+				}
+			],
+			"exclude": []
+		},
+		{
+			"name": "tempest",
+			"title": "Tempest Cup",
+			"include": [
+				{
+					"filterType": "type",
+					"values": [
+						"electric", "ice", "flying", "ground"
+					]
+				}
+			],
+			"exclude": []
+		},
+		{
+			"name": "kingdom",
+			"title": "Kingdom Cup",
+			"include": [
+				{
+					"filterType": "type",
+					"values": [
+						"fire", "ice", "dragon", "steel"
+					]
+				}
+			],
+			"exclude": []
+		},
+		{
+			"name": "nightmare",
+			"title": "Nightmare Cup",
+			"include": [
+				{
+					"filterType": "type",
+					"values": [
+						"psychic", "dark", "fighting"
+					]
+				}
+			],
+			"exclude": [
+				{
+					"filterType": "tag",
+					"values": [
+						"mythic","legendary"
+					]
+				},
+				{
+					"filterType": "id",
+					"values": [
+						"medicham","sableye"
+					]
+				}
+			]
+		},
+		{
+			"name": "regionals-1",
+			"title": "Season 1 Regionals",
+			"include": [
+				{
+					"filterType": "type",
+					"values": [
+						"rock", "steel", "fighting", "ground", "dark", "poison", "fairy", "ghost", "electric", "ice", "flying", "fire", "dragon"
+					]
+				}
+			],
+			"exclude": []
+		},
+		{
+			"name": "championships-1",
+			"title": "Season 1 Championships",
+			"include": [],
+			"exclude": [
+				{
+					"filterType": "tag",
+					"values": [
+						"mythic","legendary"
+					]
+				}
+			]
+		},
+		{
+			"name": "rainbow",
+			"title": "Rainbow Cup",
+			"include": [
+				{
+					"filterType": "type",
+					"values": [
+						"fire", "water", "electric", "grass", "bug"
+					]
+				}
+			],
+			"exclude": [
+				{
+					"filterType": "dex",
+					"values": [
+						1, 251
+					]
+				}
+			]
+		}
+	],
     "pokemon": [{
         "dex": 460,
         "speciesName": "Abomasnow",
