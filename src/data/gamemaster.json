@@ -78,7 +78,7 @@
 				{
 					"filterType": "tag",
 					"values": [
-						"mythic","legendary"
+						"mythical","legendary"
 					]
 				},
 				{
@@ -124,13 +124,39 @@
 					"values": [
 						"fire", "water", "electric", "grass", "bug"
 					]
-				}
-			],
-			"exclude": [
+				},
 				{
 					"filterType": "dex",
 					"values": [
 						1, 251
+					]
+				}
+			],
+			"exclude": [
+				{
+					"filterType": "tag",
+					"values": [
+						"alolan"
+					]
+				}
+			]
+		},
+		{
+			"name": "jungle",
+			"title": "Jungle Cup",
+			"include": [
+				{
+					"filterType": "type",
+					"values": [
+						"normal", "grass", "bug", "electric"
+					]
+				}
+			],
+			"exclude": [
+				{
+					"filterType": "id",
+					"values": [
+						"tropius","wormadam_trash","wormadam_sandy","wormadam_plant","mothim"
 					]
 				}
 			]
@@ -362,7 +388,8 @@
         "defaultIVs": {
             "cp1500": [13.5, 5, 15, 14],
             "cp2500": [23, 4, 15, 9]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 493,
         "speciesName": "Arceus (Bug)",
@@ -378,7 +405,8 @@
         "defaultIVs": {
             "cp1500": [13.5, 5, 15, 14],
             "cp2500": [23, 4, 15, 9]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 493,
         "speciesName": "Arceus (Dark)",
@@ -394,7 +422,8 @@
         "defaultIVs": {
             "cp1500": [13.5, 5, 15, 14],
             "cp2500": [23, 4, 15, 9]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 493,
         "speciesName": "Arceus (Dragon)",
@@ -410,7 +439,8 @@
         "defaultIVs": {
             "cp1500": [13.5, 5, 15, 14],
             "cp2500": [23, 4, 15, 9]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 493,
         "speciesName": "Arceus (Electric)",
@@ -426,7 +456,8 @@
         "defaultIVs": {
             "cp1500": [13.5, 5, 15, 14],
             "cp2500": [23, 4, 15, 9]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 493,
         "speciesName": "Arceus (Fairy)",
@@ -442,7 +473,8 @@
         "defaultIVs": {
             "cp1500": [13.5, 5, 15, 14],
             "cp2500": [23, 4, 15, 9]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 493,
         "speciesName": "Arceus (Fighting)",
@@ -458,7 +490,8 @@
         "defaultIVs": {
             "cp1500": [13.5, 5, 15, 14],
             "cp2500": [23, 4, 15, 9]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 493,
         "speciesName": "Arceus (Fire)",
@@ -474,7 +507,8 @@
         "defaultIVs": {
             "cp1500": [13.5, 5, 15, 14],
             "cp2500": [23, 4, 15, 9]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 493,
         "speciesName": "Arceus (Flying)",
@@ -490,7 +524,8 @@
         "defaultIVs": {
             "cp1500": [13.5, 5, 15, 14],
             "cp2500": [23, 4, 15, 9]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 493,
         "speciesName": "Arceus (Ghost)",
@@ -506,7 +541,8 @@
         "defaultIVs": {
             "cp1500": [13.5, 5, 15, 14],
             "cp2500": [23, 4, 15, 9]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 493,
         "speciesName": "Arceus (Grass)",
@@ -522,7 +558,8 @@
         "defaultIVs": {
             "cp1500": [13.5, 5, 15, 14],
             "cp2500": [23, 4, 15, 9]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 493,
         "speciesName": "Arceus (Ground)",
@@ -538,7 +575,8 @@
         "defaultIVs": {
             "cp1500": [13.5, 5, 15, 14],
             "cp2500": [23, 4, 15, 9]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 493,
         "speciesName": "Arceus (Ice)",
@@ -554,7 +592,8 @@
         "defaultIVs": {
             "cp1500": [13.5, 5, 15, 14],
             "cp2500": [23, 4, 15, 9]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 493,
         "speciesName": "Arceus (Poison)",
@@ -570,7 +609,8 @@
         "defaultIVs": {
             "cp1500": [13.5, 5, 15, 14],
             "cp2500": [23, 4, 15, 9]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 493,
         "speciesName": "Arceus (Psychic)",
@@ -586,7 +626,8 @@
         "defaultIVs": {
             "cp1500": [13.5, 5, 15, 14],
             "cp2500": [23, 4, 15, 9]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 493,
         "speciesName": "Arceus (Rock)",
@@ -602,7 +643,8 @@
         "defaultIVs": {
             "cp1500": [13.5, 5, 15, 14],
             "cp2500": [23, 4, 15, 9]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 493,
         "speciesName": "Arceus (Steel)",
@@ -618,7 +660,8 @@
         "defaultIVs": {
             "cp1500": [13.5, 5, 15, 14],
             "cp2500": [23, 4, 15, 9]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 493,
         "speciesName": "Arceus (Water)",
@@ -634,7 +677,8 @@
         "defaultIVs": {
             "cp1500": [13.5, 5, 15, 14],
             "cp2500": [23, 4, 15, 9]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 168,
         "speciesName": "Ariados",
@@ -699,7 +743,8 @@
         "defaultIVs": {
             "cp1500": [19, 1, 12, 1],
             "cp2500": [33.5, 1, 2, 11]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 482,
         "speciesName": "Azelf",
@@ -715,7 +760,8 @@
         "defaultIVs": {
             "cp1500": [17, 3, 15, 11],
             "cp2500": [30, 1, 4, 10]
-        }
+        },
+		"tags": ["legendary", "regional"]
     }, {
         "dex": 184,
         "speciesName": "Azumarill",
@@ -1264,7 +1310,8 @@
         "defaultIVs": {
             "cp1500": [26.5, 3, 10, 10],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["regional"]
     }, {
         "dex": 318,
         "speciesName": "Carvanha",
@@ -1392,7 +1439,8 @@
         "defaultIVs": {
             "cp1500": [16.5, 13, 11, 11],
             "cp2500": [27.5, 12, 14, 10]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 113,
         "speciesName": "Chansey",
@@ -1475,7 +1523,8 @@
         "defaultIVs": {
             "cp1500": [36.5, 0, 10, 5],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["regional"]
     }, {
         "dex": 421,
         "speciesName": "Cherrim (Overcast)",
@@ -1768,7 +1817,8 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["regional"]
     }, {
         "dex": 346,
         "speciesName": "Cradily",
@@ -1832,7 +1882,8 @@
         "defaultIVs": {
             "cp1500": [20.5, 2, 3, 8],
             "cp2500": [38, 2, 2, 14]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 453,
         "speciesName": "Croagunk",
@@ -1928,7 +1979,8 @@
         "defaultIVs": {
             "cp1500": [14.5, 2, 14, 14],
             "cp2500": [24, 9, 12, 13]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 301,
         "speciesName": "Delcatty",
@@ -1977,7 +2029,8 @@
         "defaultIVs": {
             "cp1500": [17, 10, 13, 13],
             "cp2500": [28, 13, 15, 12]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 386,
         "speciesName": "Deoxys (Attack)",
@@ -1993,7 +2046,8 @@
         "defaultIVs": {
             "cp1500": [21, 11, 13, 13],
             "cp2500": [38, 14, 15, 14]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 386,
         "speciesName": "Deoxys (Defense)",
@@ -2009,7 +2063,8 @@
         "defaultIVs": {
             "cp1500": [23.5, 13, 14, 13],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 386,
         "speciesName": "Deoxys (Speed)",
@@ -2025,7 +2080,8 @@
         "defaultIVs": {
             "cp1500": [18.5, 12, 14, 14],
             "cp2500": [31, 15, 13, 15]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 87,
         "speciesName": "Dewgong",
@@ -2058,7 +2114,8 @@
         "defaultIVs": {
             "cp1500": [14, 2, 2, 13],
             "cp2500": [24, 0, 1, 7]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 50,
         "speciesName": "Diglett",
@@ -2091,7 +2148,8 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["alolan"]
     }, {
         "dex": 132,
         "speciesName": "Ditto",
@@ -2303,7 +2361,8 @@
         "defaultIVs": {
             "cp1500": [31.5, 1, 15, 5],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["alolan"]
     }, {
         "dex": 206,
         "speciesName": "Dunsparce",
@@ -2531,7 +2590,8 @@
         "defaultIVs": {
             "cp1500": [16.5, 4, 9, 0],
             "cp2500": [27, 5, 9, 7]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 196,
         "speciesName": "Espeon",
@@ -2597,7 +2657,8 @@
         "defaultIVs": {
             "cp1500": [19.5, 0, 2, 9],
             "cp2500": [30.5, 5, 13, 15]
-        }
+        },
+		"tags": ["alolan"]
     }, {
         "dex": 295,
         "speciesName": "Exploud",
@@ -2630,7 +2691,8 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["regional"]
     }, {
         "dex": 22,
         "speciesName": "Fearow",
@@ -2971,7 +3033,8 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["alolan"]
     }, {
         "dex": 443,
         "speciesName": "Gible",
@@ -3019,7 +3082,8 @@
         "defaultIVs": {
             "cp1500": [17, 3, 8, 4],
             "cp2500": [27, 8, 11, 15]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 487,
         "speciesName": "Giratina (Origin)",
@@ -3035,7 +3099,8 @@
         "defaultIVs": {
             "cp1500": [15, 3, 14, 8],
             "cp2500": [25, 4, 11, 13]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 471,
         "speciesName": "Glaceon",
@@ -3213,7 +3278,8 @@
         "defaultIVs": {
             "cp1500": [18.5, 7, 13, 13],
             "cp2500": [35.5, 2, 14, 0]
-        }
+        },
+		"tags": ["alolan"]
     }, {
         "dex": 368,
         "speciesName": "Gorebyss",
@@ -3278,7 +3344,8 @@
         "defaultIVs": {
             "cp1500": [29.5, 5, 11, 14],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["alolan"]
     }, {
         "dex": 88,
         "speciesName": "Grimer",
@@ -3312,7 +3379,8 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["alolan"]
     }, {
         "dex": 388,
         "speciesName": "Grotle",
@@ -3344,7 +3412,8 @@
         "defaultIVs": {
             "cp1500": [13.5, 2, 10, 9],
             "cp2500": [23, 4, 7, 5]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 253,
         "speciesName": "Grovyle",
@@ -3490,7 +3559,8 @@
         "defaultIVs": {
             "cp1500": [14.5, 4, 12, 15],
             "cp2500": [24.5, 2, 15, 9]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 214,
         "speciesName": "Heracross",
@@ -3506,7 +3576,8 @@
         "defaultIVs": {
             "cp1500": [18.5, 4, 10, 3],
             "cp2500": [31, 3, 3, 15]
-        }
+        },
+		"tags": ["regional"]
     }, {
         "dex": 449,
         "speciesName": "Hippopotas",
@@ -3604,7 +3675,8 @@
         "defaultIVs": {
             "cp1500": [14, 5, 15, 14],
             "cp2500": [25, 1, 5, 4]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 430,
         "speciesName": "Honchkrow",
@@ -3766,7 +3838,8 @@
         "defaultIVs": {
             "cp1500": [36.5, 1, 8, 12],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["regional"]
     }, {
         "dex": 392,
         "speciesName": "Infernape",
@@ -3831,7 +3904,8 @@
         "defaultIVs": {
             "cp1500": [16.5, 13, 11, 11],
             "cp2500": [27.5, 12, 14, 10]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 135,
         "speciesName": "Jolteon",
@@ -3963,7 +4037,8 @@
         "defaultIVs": {
             "cp1500": [21.5, 6, 14, 9],
             "cp2500": [40, 9, 10, 13]
-        }
+        },
+		"tags": ["regional"]
     }, {
         "dex": 352,
         "speciesName": "Kecleon",
@@ -4110,7 +4185,8 @@
         "defaultIVs": {
             "cp1500": [13.5, 2, 10, 9],
             "cp2500": [23, 4, 7, 5]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 305,
         "speciesName": "Lairon",
@@ -4191,7 +4267,8 @@
         "defaultIVs": {
             "cp1500": [16, 6, 8, 7],
             "cp2500": [27.5, 2, 7, 3]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 381,
         "speciesName": "Latios",
@@ -4207,7 +4284,8 @@
         "defaultIVs": {
             "cp1500": [14, 11, 11, 15],
             "cp2500": [25, 3, 3, 8]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 470,
         "speciesName": "Leafeon",
@@ -4223,7 +4301,8 @@
         "defaultIVs": {
             "cp1500": [18.5, 11, 15, 8],
             "cp2500": [35, 1, 11, 7]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 166,
         "speciesName": "Ledian",
@@ -4432,7 +4511,8 @@
         "defaultIVs": {
             "cp1500": [15.5, 0, 5, 10],
             "cp2500": [25.5, 2, 8, 11]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 457,
         "speciesName": "Lumineon",
@@ -4464,7 +4544,8 @@
         "defaultIVs": {
             "cp1500": [25, 2, 11, 4],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["regional"]
     }, {
         "dex": 370,
         "speciesName": "Luvdisc",
@@ -4869,7 +4950,8 @@
         "defaultIVs": {
             "cp1500": [36, 0, 4, 9],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["alolan"]
     }, {
         "dex": 259,
         "speciesName": "Marshtomp",
@@ -4982,7 +5064,8 @@
         "defaultIVs": {
             "cp1500": [15.5, 1, 13, 8],
             "cp2500": [25.5, 7, 11, 11]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 808,
         "speciesName": "Meltan",
@@ -4998,7 +5081,8 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 52,
         "speciesName": "Meowth",
@@ -5031,7 +5115,8 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["alolan"]
     }, {
         "dex": 481,
         "speciesName": "Mesprit",
@@ -5047,7 +5132,8 @@
         "defaultIVs": {
             "cp1500": [18.5, 6, 2, 13],
             "cp2500": [31, 3, 9, 14]
-        }
+        },
+		"tags": ["legendary", "regional"]
     }, {
         "dex": 376,
         "speciesName": "Metagross",
@@ -5112,7 +5198,8 @@
         "defaultIVs": {
             "cp1500": [16.5, 13, 11, 11],
             "cp2500": [27.5, 12, 14, 10]
-        }
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 150,
         "speciesName": "Mewtwo",
@@ -5129,7 +5216,8 @@
         "defaultIVs": {
             "cp1500": [13.5, 3, 12, 0],
             "cp2500": [22, 5, 10, 10]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 262,
         "speciesName": "Mightyena",
@@ -5258,7 +5346,8 @@
         "defaultIVs": {
             "cp1500": [16, 8, 12, 6],
             "cp2500": [26, 10, 15, 10]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 391,
         "speciesName": "Monferno",
@@ -5306,7 +5395,8 @@
         "defaultIVs": {
             "cp1500": [26, 0, 6, 11],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["regional"]
     }, {
         "dex": 258,
         "speciesName": "Mudkip",
@@ -5355,7 +5445,8 @@
         "defaultIVs": {
             "cp1500": [19.5, 12, 13, 13],
             "cp2500": [39, 3, 14, 4]
-        }
+        },
+		"tags": ["alolan"]
     }, {
         "dex": 446,
         "speciesName": "Munchlax",
@@ -5549,7 +5640,8 @@
         "defaultIVs": {
             "cp1500": [25.5, 2, 0, 12],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["alolan"]
     }, {
         "dex": 291,
         "speciesName": "Ninjask",
@@ -5728,7 +5820,8 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["regional"]
     }, {
         "dex": 484,
         "speciesName": "Palkia",
@@ -5744,7 +5837,8 @@
         "defaultIVs": {
             "cp1500": [14, 5, 1, 15],
             "cp2500": [23.5, 1, 8, 10]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 46,
         "speciesName": "Paras",
@@ -5826,7 +5920,8 @@
         "defaultIVs": {
             "cp1500": [37.5, 0, 7, 9],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["alolan"]
     }, {
         "dex": 231,
         "speciesName": "Phanpy",
@@ -6349,7 +6444,8 @@
         "defaultIVs": {
             "cp1500": [25, 0, 12, 9],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["alolan"]
     }, {
         "dex": 243,
         "speciesName": "Raikou",
@@ -6365,7 +6461,8 @@
         "defaultIVs": {
             "cp1500": [15.5, 10, 13, 15],
             "cp2500": [26.5, 3, 13, 13]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 280,
         "speciesName": "Ralts",
@@ -6446,7 +6543,8 @@
         "defaultIVs": {
             "cp1500": [38.5, 4, 13, 5],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["alolan"]
     }, {
         "dex": 19,
         "speciesName": "Rattata",
@@ -6478,7 +6576,8 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["alolan"]
     }, {
         "dex": 384,
         "speciesName": "Rayquaza",
@@ -6494,7 +6593,8 @@
         "defaultIVs": {
             "cp1500": [14.5, 8, 14, 0],
             "cp2500": [24.5, 5, 4, 11]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 378,
         "speciesName": "Regice",
@@ -6510,7 +6610,8 @@
         "defaultIVs": {
             "cp1500": [17.5, 8, 13, 13],
             "cp2500": [30, 3, 9, 14]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 486,
         "speciesName": "Regigigas",
@@ -6526,7 +6627,8 @@
         "defaultIVs": {
             "cp1500": [12.5, 4, 14, 10],
             "cp2500": [22, 0, 9, 2]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 377,
         "speciesName": "Regirock",
@@ -6542,7 +6644,8 @@
         "defaultIVs": {
             "cp1500": [17.5, 8, 13, 13],
             "cp2500": [30, 3, 9, 14]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 379,
         "speciesName": "Registeel",
@@ -6558,7 +6661,8 @@
         "defaultIVs": {
             "cp1500": [23, 6, 13, 10],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 369,
         "speciesName": "Relicanth",
@@ -6574,7 +6678,8 @@
         "defaultIVs": {
             "cp1500": [22.5, 1, 13, 11],
             "cp2500": [40, 15, 3, 13]
-        }
+        },
+		"tags": ["regional"]
     }, {
         "dex": 223,
         "speciesName": "Remoraid",
@@ -6848,7 +6953,8 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["alolan"]
     }, {
         "dex": 28,
         "speciesName": "Sandslash",
@@ -6880,7 +6986,8 @@
         "defaultIVs": {
             "cp1500": [24, 2, 11, 3],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["alolan"]
     }, {
         "dex": 254,
         "speciesName": "Sceptile",
@@ -7044,7 +7151,8 @@
         "defaultIVs": {
             "cp1500": [27, 3, 11, 9],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["regional"]
     }, {
         "dex": 319,
         "speciesName": "Sharpedo",
@@ -7590,7 +7698,8 @@
         "defaultIVs": {
             "cp1500": [25, 2, 11, 4],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["regional"]
     }, {
         "dex": 21,
         "speciesName": "Spearow",
@@ -7866,7 +7975,8 @@
         "defaultIVs": {
             "cp1500": [18.5, 8, 10, 12],
             "cp2500": [31.5, 5, 15, 14]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 192,
         "speciesName": "Sunflora",
@@ -8059,7 +8169,8 @@
         "defaultIVs": {
             "cp1500": [21.5, 6, 13, 6],
             "cp2500": [39.5, 12, 8, 11]
-        }
+        },
+		"tags": ["regional"]
     }, {
         "dex": 216,
         "speciesName": "Teddiursa",
@@ -8189,7 +8300,8 @@
         "defaultIVs": {
             "cp1500": [28.5, 0, 12, 3],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["regional"]
     }, {
         "dex": 389,
         "speciesName": "Torterra",
@@ -8285,7 +8397,8 @@
         "defaultIVs": {
             "cp1500": [32, 1, 3, 12],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["regional"]
     }, {
         "dex": 387,
         "speciesName": "Turtwig",
@@ -8416,7 +8529,8 @@
         "defaultIVs": {
             "cp1500": [22, 6, 11, 15],
             "cp2500": [40, 10, 14, 9]
-        }
+        },
+		"tags": ["legendary", "regional"]
     }, {
         "dex": 134,
         "speciesName": "Vaporeon",
@@ -8579,7 +8693,8 @@
         "defaultIVs": {
             "cp1500": [36.5, 1, 8, 12],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["regional"]
     }, {
         "dex": 100,
         "speciesName": "Voltorb",
@@ -8628,7 +8743,8 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["alolan"]
     }, {
         "dex": 320,
         "speciesName": "Wailmer",
@@ -8998,7 +9114,8 @@
         "defaultIVs": {
             "cp1500": [23.5, 6, 6, 12],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["regional"]
     }, {
         "dex": 145,
         "speciesName": "Zapdos",
@@ -9015,7 +9132,8 @@
         "defaultIVs": {
             "cp1500": [16, 2, 13, 4],
             "cp2500": [26.5, 6, 9, 7]
-        }
+        },
+		"tags": ["legendary"]
     }, {
         "dex": 263,
         "speciesName": "Zigzagoon",

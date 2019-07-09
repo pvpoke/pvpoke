@@ -65,6 +65,14 @@ function Pokemon(id, i, b){
 	if(data.legacyMoves){
 		this.legacyMoves = data.legacyMoves;
 	}
+	
+	// Set tags
+	
+	this.tags = [];
+	
+	if(data.tags){
+		this.tags = data.tags;
+	}
 
 	// Set battle moves
 
@@ -842,5 +850,11 @@ function Pokemon(id, i, b){
 		}
 
 		return Math.floor( (500 * ((opponent.stats.hp - opponent.hp) / opponent.stats.hp)) + (500 * (self.hp / self.stats.hp)))
+	}
+	
+	// Return whether or not this Pokemon has a specific tag
+	
+	this.hasTag = function(tag){
+		return (self.tags.indexOf(tag) > -1);
 	}
 }
