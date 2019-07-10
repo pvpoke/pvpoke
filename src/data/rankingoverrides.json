@@ -28,16 +28,16 @@
 				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
 			},
 			{
-				"speciesId": "hypno",
-				"chargedMoves": ["SHADOW_BALL", "FOCUS_BLAST"]
-			},
-			{
 				"speciesId": "dragonite",
 				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
 			},
 			{
 				"speciesId": "jirachi",
 				"chargedMoves": ["DOOM_DESIRE", "DAZZLING_GLEAM"]
+			},
+			{
+				"speciesId": "hypno",
+				"chargedMoves": ["SHADOW_BALL", "THUNDER_PUNCH"]
 			},
 			{
 				"speciesId": "pidgeot",
@@ -50,6 +50,14 @@
 			{
 				"speciesId": "probopass",
 				"fastMove": "SPARK"
+			},
+			{
+				"speciesId": "gardevoir",
+				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "togekiss",
+				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
 			}
 		]
 	},
@@ -103,10 +111,6 @@
 		"league": 1500,
 		"cup": "nightmare",
 		"pokemon": [
-			{
-				"speciesId": "hypno",
-				"chargedMoves": ["SHADOW_BALL", "FOCUS_BLAST"]
-			},
 			{
 				"speciesId": "hitmonchan",
 				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
@@ -175,10 +179,6 @@
 				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
 			},
 			{
-				"speciesId": "hypno",
-				"chargedMoves": ["SHADOW_BALL", "FOCUS_BLAST"]
-			},
-			{
 				"speciesId": "dragonite",
 				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
 			},
@@ -194,6 +194,14 @@
 				"speciesId": "probopass",
 				"fastMove": "SPARK",
 				"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
+			},
+			{
+				"speciesId": "togekiss",
+				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
+			},
+			{
+				"speciesId": "gardevoir",
+				"fastMove": "CHARM"
 			},
 			{
 				"speciesId": "machamp",
@@ -230,10 +238,6 @@
 				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
 			},
 			{
-				"speciesId": "hypno",
-				"chargedMoves": ["SHADOW_BALL", "FOCUS_BLAST"]
-			},
-			{
 				"speciesId": "dragonite",
 				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
 			},
@@ -255,12 +259,20 @@
 				"chargedMoves": ["CRUNCH", "HYPER_FANG"]
 			},
 			{
-				"speciesId": "sceptile",
-				"chargedMoves": ["LEAF_BLADE", "EARTHQUAKE"]
-			},
-			{
 				"speciesId": "grotle",
 				"chargedMoves": ["BODY_SLAM", "ENERGY_BALL"]
+			},
+			{
+				"speciesId": "togekiss",
+				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
+			},
+			{
+				"speciesId": "hypno",
+				"chargedMoves": ["SHADOW_BALL", "THUNDER_PUNCH"]
+			},
+			{
+				"speciesId": "gardevoir",
+				"fastMove": "CHARM"
 			}
 		]
 	},
@@ -375,6 +387,18 @@
 			{
 				"speciesId": "dragonite",
 				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
+			},
+			{
+				"speciesId": "gardevoir",
+				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "togekiss",
+				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
+			},
+			{
+				"speciesId": "mewtwo_armored",
+				"chargedMoves": ["ROCK_SLIDE","DYNAMIC_PUNCH"]
 			}
 		]
 	},
@@ -397,6 +421,18 @@
 			{
 				"speciesId": "machamp",
 				"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
+			},
+			{
+				"speciesId": "gardevoir",
+				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "togekiss",
+				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
+			},
+			{
+				"speciesId": "mewtwo_armored",
+				"chargedMoves": ["ROCK_SLIDE","DYNAMIC_PUNCH"]
 			}
 		]
 	},

@@ -127,6 +127,8 @@ var RankerMaster = (function () {
 				var totalBattles = 0;
 				var shieldCounts = shields;
 
+				console.log(shieldCounts);
+
 				rankings = [];
 
 				// For all eligible Pokemon, simulate battles and gather rating data
@@ -454,7 +456,7 @@ var RankerMaster = (function () {
 						for(var k = 0; k < rankingData.length; k++){
 							if(pokemon.speciesId == rankingData[k].speciesId){
 								rankings[i].moves = rankingData[k].moves;
-								
+
 								if(pokemon.speciesId == "vigoroth"){
 									console.log(rankingData[k].moves);
 								}
