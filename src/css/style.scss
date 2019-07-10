@@ -2717,29 +2717,59 @@ a.toggle{
 .custom-rankings{
 	.include,
 	.exclude{
-		padding:10px;
-		border-radius:12px;
 		margin-bottom:15px;
 		
-		h3:first-of-type{
+		& > h3:first-of-type{
 			margin:0;
 		}
 		
-		p:first-of-type{
+		& > p:first-of-type{
 			margin-top:0;
 		}
 	}
 	
 	.include{
-		background:#c9ebf5;
+		.filter{
+			background:#c9ebf5;
+		}
+		
 	}
 	
 	.exclude{
-		background:#f1b9b9;
+		.filter{
+			background:#f1b9b9;
+		}
 	}
 	
 	.filters{
 		margin-bottom:5px;
+		
+		.filter{
+			padding: 10px;
+			border-radius: 12px;
+			margin-bottom:5px;
+			
+			.toggle-content{
+				margin-top:10px;
+				padding-top:10px;
+				border-top:1px solid rgba(0,0,0,0.25);
+			}
+			
+			.field-container{
+				display:flex;
+			}
+			
+			label{
+				font-weight:bold;
+				font-size:14px;
+				padding-top:4px;
+				margin-right:10px;
+			}
+			
+			select{
+				max-width:150px;
+			}
+		}
 	}
 }
 

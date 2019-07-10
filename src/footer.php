@@ -58,10 +58,10 @@
 		
 		// Toggleable sections
 		
-		$(".toggle").click(function(e){
+		$("body").on("click", ".toggle", function(e){
 			e.preventDefault();
 			
-			$(this).toggleClass("active");
+			$(e.target).closest(".toggle").toggleClass("active");
 		});
 		
 	</script>

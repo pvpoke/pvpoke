@@ -2017,21 +2017,36 @@ a.toggle {
 /* CUSTOM RANKINGS */
 .custom-rankings .include,
 .custom-rankings .exclude {
-  padding: 10px;
-  border-radius: 12px;
   margin-bottom: 15px; }
-  .custom-rankings .include h3:first-of-type,
-  .custom-rankings .exclude h3:first-of-type {
+  .custom-rankings .include > h3:first-of-type,
+  .custom-rankings .exclude > h3:first-of-type {
     margin: 0; }
-  .custom-rankings .include p:first-of-type,
-  .custom-rankings .exclude p:first-of-type {
+  .custom-rankings .include > p:first-of-type,
+  .custom-rankings .exclude > p:first-of-type {
     margin-top: 0; }
-.custom-rankings .include {
+.custom-rankings .include .filter {
   background: #c9ebf5; }
-.custom-rankings .exclude {
+.custom-rankings .exclude .filter {
   background: #f1b9b9; }
 .custom-rankings .filters {
   margin-bottom: 5px; }
+  .custom-rankings .filters .filter {
+    padding: 10px;
+    border-radius: 12px;
+    margin-bottom: 5px; }
+    .custom-rankings .filters .filter .toggle-content {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(0, 0, 0, 0.25); }
+    .custom-rankings .filters .filter .field-container {
+      display: flex; }
+    .custom-rankings .filters .filter label {
+      font-weight: bold;
+      font-size: 14px;
+      padding-top: 4px;
+      margin-right: 10px; }
+    .custom-rankings .filters .filter select {
+      max-width: 150px; }
 
 @media only screen and (min-width: 721px) {
   .menu {
