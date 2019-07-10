@@ -1820,7 +1820,7 @@
             "hp": 172
         },
         "types": ["normal", "none"],
-        "fastMoves": ["FEINT_ATTACK", "ZEN_HEADBUTT"],
+        "fastMoves": ["CHARM","FEINT_ATTACK", "ZEN_HEADBUTT"],
         "chargedMoves": ["DISARMING_VOICE", "PLAY_ROUGH", "WILD_CHARGE"],
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
