@@ -7,7 +7,7 @@ function Battle(){
 	var self = this;
 	var pokemon = [null, null];
 	var cp = 1500;
-	var cup = {name: "all", types: []}; // List of allowed types
+	var cup = {name: "all", include: [], exclude: []}; // List of allowed types
 
 	var decisionLog = []; // For debugging
 	var debug = false;
@@ -88,10 +88,16 @@ function Battle(){
 		}
 	}
 
-	// Set allowed types from GameMaster data
+	// Set cup object from Game Master
 
 	this.setCup = function(cupName){
 		cup = gm.getCupById(cupName);
+	}
+	
+	// Set a custom cup object
+
+	this.setCustomCup = function(customCup){
+		cup = customCup;
 	}
 
 	// Return object with a name and array of allowed types

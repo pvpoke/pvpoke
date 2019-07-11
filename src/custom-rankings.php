@@ -43,12 +43,82 @@ require_once 'header.php'; ?>
 					<option value="dex">Pokedex Number</option>
 				</select>
 			</div>
+			<div class="field-section type">
+				<p>Select one or more Pokemon types below. A Pokemon will be included or excluded if it has any of these types.</p>
+				<div class="field-container">
+					<div class="check" value="bug"><span></span> Bug</div>
+					<div class="check" value="dark"><span></span> Dark</div>
+					<div class="check" value="dragon"><span></span> Dragon</div>
+					<div class="check" value="electric"><span></span> Electric</div>
+					<div class="check" value="fairy"><span></span> Fairy</div>
+					<div class="check" value="fighting"><span></span> Fighting</div>
+					<div class="check" value="fire"><span></span> Fire</div>
+					<div class="check" value="flying"><span></span> Flying</div>
+					<div class="check" value="ghost"><span></span> Ghost</div>
+					<div class="check" value="grass"><span></span> Grass</div>
+					<div class="check" value="ground"><span></span> Ground</div>
+					<div class="check" value="ice"><span></span> Ice</div>
+					<div class="check" value="normal"><span></span> Normal</div>
+					<div class="check" value="poison"><span></span> Poison</div>
+					<div class="check" value="psychic"><span></span> Psychic</div>
+					<div class="check" value="rock"><span></span> Rock</div>
+					<div class="check" value="steel"><span></span> Steel</div>
+					<div class="check" value="water"><span></span> Water</div>
+					<div class="check" value="none"><span></span> Mono-type</div>
+				</div>
+				<div class="field-container">
+					<button class="select-all">Select All</button>
+					<button class="deselect-all">Deselect All</button>
+				</div>
+			</div>
+			
+			<div class="field-section tag">
+				<p>Select one or more Pokemon categories below. A Pokemon will be included or excluded if it fits any of these requirements.</p>
+				<div class="field-container">
+					<div class="check" value="legendary"><span></span> Legendary</div>
+					<div class="check" value="mythical"><span></span> Mythical</div>
+					<div class="check" value="alolan"><span></span> Alolan</div>
+					<div class="check" value="regional"><span></span> Regional</div>
+				</div>
+			</div>
+			
+			<div class="field-section species">
+				<p>Enter a list of Pokemon ID's below, separated by comma (no spaces). Pokemon ID's are lowercase. Some examples:</p>
+				<ul>
+					<li><em>pikachu</em></li>
+					<li><em>raichu_alolan</em></li>
+					<li><em>giratina_altered</em></li>
+					<li><em>deoxys_defense</em></li>
+				</ul>
+				<div class="field-container">
+					<input class="ids" placeholder="Pokemon ID's" />
+				</div>
+			</div>
+			
+			<div class="field-section dex">
+				<p>Enter a range (inclusive) of Pokedex entry numbers to filter. Below are example ranges:</p>
+				<ul>
+					<li><strong>Generation 1:</strong> 1-151</li>
+					<li><strong>Generation 2:</strong> 152-251</li>
+					<li><strong>Generation 3:</strong> 252-386</li>
+					<li><strong>Generation 4:</strong> 387-488</li>
+				</ul>
+				<div class="field-container">
+					<input class="start-range" placeholder="Start #" />
+					<input class="end-range" placeholder="End #" />
+				</div>
+			</div>
 		</div>
 	</div>
 
 	<button class="simulate">Simulate</button>
 
 	<div class="output"></div>
+</div>
+
+<div class="section white custom-rankings-list">
+	<h3>Pokemon List (<span class="pokemon-count">0</span>)</h3>
+	<textarea class="pokemon-list"></textarea>
 </div>
 
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>

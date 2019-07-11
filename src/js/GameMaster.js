@@ -134,7 +134,7 @@ var GameMaster = (function () {
 					cup = c;
 				}
 			});
-			
+
 			return cup;
 		}
 

@@ -2757,6 +2757,7 @@ a.toggle{
 			
 			.field-container{
 				display:flex;
+				flex-wrap:wrap;
 			}
 			
 			label{
@@ -2769,7 +2770,57 @@ a.toggle{
 			select{
 				max-width:150px;
 			}
+			
+			.field-section{
+				display:none;
+				
+				&.type,
+				&.tag{
+					.check{
+						margin: 10px 5px;
+					}
+
+					.select-all{
+						margin-right:10px;
+					}
+				}
+				
+				&.dex{
+					input{
+						max-width:100px;
+						margin-right:10px;
+					}
+				}
+			}
+			
+			&[type="type"] .field-section.type{
+				display:block;
+			}
+			
+			&[type="tag"] .field-section.tag{
+				display:block;
+			}
+			
+			&[type="species"] .field-section.species{
+				display:block;
+			}
+			
+			&[type="dex"] .field-section.dex{
+				display:block;
+			}
 		}
+	}
+}
+
+.custom-rankings-list{
+	h3:first-of-type{
+		margin-top:0;
+	}
+	
+	textarea.pokemon-list{
+		width:100%;
+		height:150px;
+		font-family:sans-serif;
 	}
 }
 

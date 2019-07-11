@@ -587,9 +587,15 @@ var InterfaceMaster = (function () {
 				battle.setCup(cup);
 				
 				// Filter PokeSelect options by type
+				var cupTypes = [];
+				cup = battle.getCup();
 				
-				var cupTypes = gm.data.cups[cup];
-				
+				for(var i = 0; i < cup.include.length; i++){
+					if(cup.include[i].filterType == "type"){
+						cupTypes = cup.include[i].values;
+					}
+				}
+
 				for(var i = 0; i < pokeSelectors.length; i++){
 					pokeSelectors[i].filterByTypes(cupTypes);
 				}

@@ -25,8 +25,11 @@ var RankerMaster = (function () {
 			// Run all ranking sets at once
 			
 			this.rankLoop = function(cup){
-				
-				battle.setCup(cup.name);
+				if(cup.name != "custom"){
+					battle.setCup(cup.name);
+				} else{
+					battle.setCustomCup(cup);
+				}
 				
 				var leagues = [1500, 2500, 10000];
 				var shields = [ [0,0], [2,2], [0,2], [2,0]];

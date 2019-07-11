@@ -2039,7 +2039,8 @@ a.toggle {
       padding-top: 10px;
       border-top: 1px solid rgba(0, 0, 0, 0.25); }
     .custom-rankings .filters .filter .field-container {
-      display: flex; }
+      display: flex;
+      flex-wrap: wrap; }
     .custom-rankings .filters .filter label {
       font-weight: bold;
       font-size: 14px;
@@ -2047,6 +2048,30 @@ a.toggle {
       margin-right: 10px; }
     .custom-rankings .filters .filter select {
       max-width: 150px; }
+    .custom-rankings .filters .filter .field-section {
+      display: none; }
+      .custom-rankings .filters .filter .field-section.type .check, .custom-rankings .filters .filter .field-section.tag .check {
+        margin: 10px 5px; }
+      .custom-rankings .filters .filter .field-section.type .select-all, .custom-rankings .filters .filter .field-section.tag .select-all {
+        margin-right: 10px; }
+      .custom-rankings .filters .filter .field-section.dex input {
+        max-width: 100px;
+        margin-right: 10px; }
+    .custom-rankings .filters .filter[type="type"] .field-section.type {
+      display: block; }
+    .custom-rankings .filters .filter[type="tag"] .field-section.tag {
+      display: block; }
+    .custom-rankings .filters .filter[type="species"] .field-section.species {
+      display: block; }
+    .custom-rankings .filters .filter[type="dex"] .field-section.dex {
+      display: block; }
+
+.custom-rankings-list h3:first-of-type {
+  margin-top: 0; }
+.custom-rankings-list textarea.pokemon-list {
+  width: 100%;
+  height: 150px;
+  font-family: sans-serif; }
 
 @media only screen and (min-width: 721px) {
   .menu {

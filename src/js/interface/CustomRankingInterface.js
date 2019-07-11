@@ -11,16 +11,23 @@ var InterfaceMaster = (function () {
 		function interfaceObject(){
 				
 			var battle;
+			var gm = GameMaster.getInstance();
 			var ranker = RankerMaster.getInstance();
 			var pokeSelectors = [];
 			var animating = false;
 			var self = this;
 			
+			var cup = {
+				name: "custom",
+				title: "Custom",
+				include: [],
+				exclude: []
+			}
+			
+			var pokemonList = [];
+			
 			// Filter lists			
-			var filterLists = [
-				[],
-				[]
-			]; // 0 - include, 1 - exclude
+			var filterLists = [ cup.include, cup.exclude ]; // Array for easy reference
 
 			this.init = function(){
 
@@ -30,6 +37,10 @@ var InterfaceMaster = (function () {
 				$(".simulate").on("click", startRanker);
 				$(".add-filter").on("click", addFilter);
 				$("body").on("change", ".filter-type", changeFilterType);
+				$("body").on("click", ".check", checkBox);
+				$("body").on("click", ".field-section .check", filterCheckBox);
+				$("body").on("keyup", ".field-section input", filterInput);
+				$("body").on("click", ".field-section.type .select-all, .field-section.type .deselect-all", typeSelectAll);
 				
 				battle = new Battle();
 			};
@@ -49,6 +60,7 @@ var InterfaceMaster = (function () {
 							$filter.removeClass("hide clone");
 							$filter.attr("index", i);
 							$filter.find("a.toggle .name").html(filters[i].name);
+							$filter.attr("type", filters[i].filterType);
 							
 							$el.append($filter);
 						}
@@ -57,6 +69,64 @@ var InterfaceMaster = (function () {
 					}
 					
 				});
+			}
+			
+			// Update filter values from UI
+			
+			this.updateFilterValues = function($el){
+				var listIndex = $el.closest(".filters").attr("list-index");
+				var filter = filterLists[listIndex][parseInt($el.attr("index"))];
+				
+				// Set filter type and name
+				filter.filterType = $el.find(".filter-type option:selected").val();
+				filter.name = $el.find(".filter-type option:selected").html();
+				
+				// Set filter values
+				
+				filter.values = [];
+				
+				switch(filter.filterType){
+					case "type":
+						$el.find(".type .check.on").each(function(index, value){
+							filter.values.push($(this).attr("value"));
+						});
+						break;
+						
+					case "tag":
+						$el.find(".tag .check.on").each(function(index, value){
+							filter.values.push($(this).attr("value"));
+						});
+						break;
+						
+					case "species":
+						filter.values = $el.find("input.ids").val().split(",");
+						break;
+						
+					case "dex":
+						filter.values = [parseInt($el.find("input.start-range").val()), parseInt($el.find("input.end-range").val())];
+						break;
+				}
+				
+				self.updatePokemonList();
+			}
+			
+			// Updated the list of valid Pokemon
+			
+			this.updatePokemonList = function(){
+				var listStr = "";
+				pokemonList = gm.generateFilteredPokemonList(battle, cup.include, cup.exclude);
+				
+				for(var i = 0; i < pokemonList.length; i++){
+					if(i > 0){
+						listStr += ", ";
+					}
+					
+					listStr += pokemonList[i].speciesName;
+				}
+				
+				
+				$(".pokemon-list").html(listStr);
+				$(".pokemon-count").html(pokemonList.length);
 			}
 			
 			// Add a new filter to the include or exclude settings
@@ -80,15 +150,12 @@ var InterfaceMaster = (function () {
 			
 			function changeFilterType(e){
 				var $el = $(e.target).closest(".filter");
-				var listIndex = $(e.target).closest(".filters").attr("list-index");
+				var listIndex = $el.closest(".filters").attr("list-index");
 				var filter = filterLists[listIndex][parseInt($el.attr("index"))];
-				var selectedType = $(e.target).find("option:selected").val();
-				var selectedName = $(e.target).find("option:selected").html();
 				
-				filter.filterType = selectedType;
-				filter.name = selectedName;
-				
-				self.updateFilterDisplay();
+				self.updateFilterValues($el);
+				$el.find("a.toggle .name").html(filter.name);
+				$el.attr("type",filter.filterType);
 			}
 			
 			// Event handler for changing the league select
@@ -100,7 +167,6 @@ var InterfaceMaster = (function () {
 				if(allowed.indexOf(cp) > -1){
 					battle.setCP(cp);
 				}
-				
 			}
 			
 			// Run simulation
@@ -108,6 +174,41 @@ var InterfaceMaster = (function () {
 			function startRanker(){				
 				ranker.rankLoop(battle.getCP(), battle.getCup());
 			}
+			
+			// Turn a filter's checkbox on or off
+
+			function filterCheckBox(e){
+				self.updateFilterValues($(e.target).closest(".filter"));
+			}
+			
+			// Change a filter's input field
+
+			function filterInput(e){
+				self.updateFilterValues($(e.target).closest(".filter"));
+			}
+			
+			// Select or deselect all types
+			
+			function typeSelectAll(e){
+				var $el = $(e.target).closest(".filter");
+				var listIndex = $el.closest(".filters").attr("list-index");
+				var filter = filterLists[listIndex][parseInt($el.attr("index"))];
+				
+				if($(e.target).hasClass("select-all")){
+					$el.find(".type .check").addClass("on");
+				} else{
+					$el.find(".type .check").removeClass("on");
+				}
+				
+				self.updateFilterValues($el);
+			}
+			
+			// Turn checkboxes on and off
+
+			function checkBox(e){
+				$(this).toggleClass("on");
+			}
+
 		};
 		
         return object;

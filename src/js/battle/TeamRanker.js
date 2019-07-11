@@ -41,7 +41,12 @@ var RankerMaster = (function () {
 				
 				battle = new Battle();
 				battle.setCP(league);
-				battle.setCup(cup.name);
+				if(cup.name != "custom"){
+					battle.setCup(cup.name);
+				} else{
+					battle.setCustomCup(cup);
+				}
+				
 
 
 				var pokemonList = [];
