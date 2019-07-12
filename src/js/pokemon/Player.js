@@ -93,7 +93,17 @@ function Player(i, ai, b){
 	// Get current switch timer in milliseconds
 
 	this.decrementSwitchTimer = function(deltaTime){
+		// Evaluate the matchup when the switch clock completes
+		var evaluateMatchup = false;
+		if((switchTimer <= deltaTime)&&(switchTimer > 0)){
+			evaluateMatchup = true;
+		}
+		
 		switchTimer = Math.max(switchTimer-deltaTime, 0);
+		
+		if((index == 1)&&(evaluateMatchup)){
+			ai.evaluateMatchup(battle.getTurns(), battle.getPokemon()[1], battle.getPokemon()[0], battle.getPlayers()[0]);
+		}
 	}
 
 	// Return the AI controlling this player

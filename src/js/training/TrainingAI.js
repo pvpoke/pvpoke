@@ -148,6 +148,7 @@ function TrainingAI(l, p, b){
 		pokemon.startHp = pokemon.hp;
 		pokemon.startEnergy = pokemon.energy;
 		pokemon.startStatBuffs = [pokemon.statBuffs[0], pokemon.statBuffs[1]];
+		pokemon.startCooldown = pokemon.cooldown;
 		pokemon.startingShields = pokemon.shields;
 		pokemon.baitShields = true;
 		pokemon.farmEnergy = false;
@@ -155,6 +156,7 @@ function TrainingAI(l, p, b){
 		opponent.startHp = opponent.hp;
 		opponent.startEnergy = opponent.energy;
 		opponent.startStatBuffs = [opponent.statBuffs[0], opponent.statBuffs[1]];
+		opponent.startCooldown = opponent.cooldown;
 		opponent.startingShields = opponent.shields;
 		opponent.baitShields = true;
 		opponent.farmEnergy = false;

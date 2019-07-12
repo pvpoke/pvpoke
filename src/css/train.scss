@@ -506,7 +506,7 @@
 		position: absolute;
 		width: 100%;
 		text-align: center;
-		top: 47%;
+		top: 40%;
 		opacity:0;
 		pointer-events: none;
 
@@ -597,6 +597,12 @@
 		.switch-window{
 			bottom:0;
 			pointer-events: all;
+		}
+	}
+	
+	&[phase="suspend_switch"]{
+		.animate-message{
+			opacity:1;
 		}
 	}
 

@@ -31,6 +31,7 @@ function Pokemon(id, i, b){
 	this.hp = 0;
 	this.startHp = 0;
 	this.startEnergy = 0;
+	this.startCooldown = 0;
 	this.level = 40;
 	this.cpm = 0.79030001;
 	this.priority = 0; // Charged move priority
@@ -735,7 +736,7 @@ function Pokemon(id, i, b){
 	this.reset = function(){
 		self.hp = self.startHp;
 		self.energy = self.startEnergy;
-		self.cooldown = 0;
+		self.cooldown = self.startCooldown;
 		self.damageWindow = 0;
 		self.shields = self.startingShields;
 		self.statBuffs = [self.startStatBuffs[0], self.startStatBuffs[1]];

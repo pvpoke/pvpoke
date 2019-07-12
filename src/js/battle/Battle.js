@@ -440,13 +440,16 @@ function Battle(){
 					chargedMoveThisTurn = true;
 				}
 
+				// Are both Pokemon alive?
+				
+				if((action.type == "switch")||((action.type != "switch")&&(poke.hp > 0)&&(opponent.hp > 0))){
+					if((action.type=="fast")&&(mode == "emulate")){
+						// Submit an animation to be played
+						self.pushAnimation(poke.index, "fast", pokemon[action.actor].fastMove.cooldown / 500);
+					}
 
-				if((action.type=="fast")&&(mode == "emulate")){
-					// Submit an animation to be played
-					self.pushAnimation(poke.index, "fast", pokemon[action.actor].fastMove.cooldown / 500);
+					queuedActions.push(action);
 				}
-
-				queuedActions.push(action);
 			}
 		}
 
@@ -667,6 +670,10 @@ function Battle(){
 				}
 
 				faintedPokemonIndexes.push(poke.index);
+				
+				if(mode == "emulate"){
+					self.pushAnimation(poke.index, "switch", true);
+				}
 			}
 
 			// Reset after a charged move
@@ -692,7 +699,17 @@ function Battle(){
 				// AI switch
 				if(phaseProps.actors.indexOf(1) > -1){
 					var switchChoice = players[1].getAI().decideSwitch();
-					self.queueAction(1, "switch", switchChoice);
+					var waitTime = 500;
+					
+					if((players[1].getAI().hasStrategy("WAIT_CLOCK"))&&(players[1].getSwitchTimer() > 0)&&(players[1].getRemainingPokemon() > 1)){
+						waitTime = players[1].getSwitchTimer() - 1000;
+					}
+					
+					setTimeout(function(){
+						self.queueAction(1, "switch", switchChoice);
+					}, waitTime);
+					
+					
 				}
 			} else{
 				var result = "tie";
@@ -935,6 +952,10 @@ function Battle(){
 					}
 				}
 			}
+			
+			if(poke.farmEnergy){
+				useChargedMove = false;
+			}
 
 			if(useChargedMove){
 				action = new TimelineAction(
@@ -961,7 +982,7 @@ function Battle(){
 
 				// Use charged move if it would KO the opponent
 
-				if((move.damage >= opponent.hp) && (opponent.hp > poke.fastMove.damage) && (!chargedMoveUsed)){
+				if((move.damage >= opponent.hp) && (opponent.hp > poke.fastMove.damage) && (! poke.farmEnergy) && (!chargedMoveUsed)){
 					action = new TimelineAction(
 						"charged",
 						poke.index,
@@ -976,7 +997,7 @@ function Battle(){
 
 				// Use charged move if the opponent has a shield
 
-				if((opponent.shields > 0)  && (!chargedMoveUsed) && ((move == poke.bestChargedMove)||( (poke.baitShields) && (poke.energy >= poke.bestChargedMove.energy) ))){
+				if((opponent.shields > 0)  && (!chargedMoveUsed) && (! poke.farmEnergy) && ((move == poke.bestChargedMove)||( (poke.baitShields) && (poke.energy >= poke.bestChargedMove.energy) ))){
 
 					// Don't use a charged move if a fast move will result in a KO
 
@@ -1172,7 +1193,7 @@ function Battle(){
 							power: 1,
 							shield: false
 						};
-
+						
 						chargeAmount = 0;
 						playerUseShield = false;
 
@@ -1245,7 +1266,6 @@ function Battle(){
 	// Use a move on an opposing Pokemon and produce a Timeline Event
 
 	this.useMove = function(attacker, defender, move, forceShields, forceBuff){
-
 		var type = "fast " + move.type;
 		var damage = self.calculateDamage(attacker, defender, move);
 		move.damage = damage;
@@ -1382,11 +1402,6 @@ function Battle(){
 
 		if(mode == "emulate"){
 			attacker.battleStats.damage += (Math.min(damage, defender.hp) / defender.stats.hp) * 100;
-			
-			if(attacker.index == 0){
-				console.log("+"+((Math.min(damage, defender.hp) / defender.stats.hp) * 100))
-				console.log(attacker.battleStats.damage);
-			}
 		}
 		
 		// Inflict damage
@@ -1572,6 +1587,18 @@ function Battle(){
 
 	this.getTurnsToWin = function(){
 		return turnsToWin;
+	}
+	
+	// Return the current turn number
+
+	this.getTurns = function(){
+		return turns;
+	}
+	
+	// Return the current players
+
+	this.getPlayers = function(){
+		return players;
 	}
 
 	// Return a battle rating RGB color given a rating

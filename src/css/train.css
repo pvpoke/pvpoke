@@ -369,7 +369,7 @@
     position: absolute;
     width: 100%;
     text-align: center;
-    top: 47%;
+    top: 40%;
     opacity: 0;
     pointer-events: none;
     -webkit-transition: all 0.25s ease 0.25s;
@@ -437,6 +437,8 @@
   .battle-window[phase="suspend_switch_self"] .switch-window {
     bottom: 0;
     pointer-events: all; }
+  .battle-window[phase="suspend_switch"] .animate-message {
+    opacity: 1; }
   .battle-window[phase="animating"] .animate-message {
     opacity: 1; }
   .battle-window[phase="countdown"] .top, .battle-window[phase="countdown"] .controls {

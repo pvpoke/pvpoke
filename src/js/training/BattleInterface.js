@@ -104,6 +104,10 @@ var BattlerMaster = (function () {
 						case "animating":
 							$(".animate-message .text").html(activePokemon[response.actor].speciesName + " used " + response.moveName);
 							break;
+							
+						case "suspend_switch":
+							$(".animate-message .text").html("Opponent is selecting a Pokemon");
+							break;
 
 						case "suspend_switch_self":
 							phaseTimer = switchTime;
@@ -279,11 +283,20 @@ var BattlerMaster = (function () {
 						case "switch":
 							var actor = animation.actor;
 							$(".battle-window .pokemon-container").eq(animation.actor).addClass("animate-switch");
+							
+							if(animation.value === false){
+								var delayTime = 1000;
+								
+								if(phase == "suspend_switch"){
+									delayTime = 30;
+								}
+								
+								setTimeout(function(){
+									$(".battle-window .pokemon-container").eq(actor).removeClass("animate-switch");
+									self.completeSwitchAnimation(actor);
+								}, delayTime);
+							}
 
-							setTimeout(function(){
-								$(".battle-window .pokemon-container").eq(actor).removeClass("animate-switch");
-								self.completeSwitchAnimation(actor);
-							}, 1000);
 							break;
 					}
 
@@ -362,8 +375,10 @@ var BattlerMaster = (function () {
 			// Handler for the charge up interval
 
 			function chargeUpStep(){
-				charge = Math.max(charge - chargeDecayRate, 0);
-
+				if(charge < maxCharge){
+					charge = Math.max(charge - chargeDecayRate, 0);
+				}
+				
 				// Update rings
 				var percent = (charge / maxCharge) * 100;
 

@@ -30,7 +30,7 @@
 		"chargedMoveCount": 2,
 		"energyGuessRange": 5,
 		"moveGuessCertainty": 3,
-		"reactionTime": 6,
+		"reactionTime": 4,
 		"strategies": [
 			"DEFAULT",
 			"SHIELD",
@@ -55,6 +55,7 @@
 			"SWITCH_DUCK",
 			"FARM_ENERGY",
 			"BAIT_SHIELDS",
+			"WAIT_CLOCK",
 			"PIGGYBACK"
 		]
 	}
