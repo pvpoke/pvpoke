@@ -39,7 +39,7 @@ require_once 'header.php'; ?>
 				<select class="filter-type">
 					<option value="type">Type</option>
 					<option value="tag">Tag</option>
-					<option value="species">Species</option>
+					<option value="id">Species</option>
 					<option value="dex">Pokedex Number</option>
 				</select>
 			</div>
@@ -82,7 +82,7 @@ require_once 'header.php'; ?>
 				</div>
 			</div>
 			
-			<div class="field-section species">
+			<div class="field-section id">
 				<p>Enter a list of Pokemon ID's below, separated by comma (no spaces). Pokemon ID's are lowercase. Some examples:</p>
 				<ul>
 					<li><em>pikachu</em></li>
@@ -111,9 +111,20 @@ require_once 'header.php'; ?>
 		</div>
 	</div>
 
-	<button class="simulate">Simulate</button>
+	<button class="simulate button">Simulate</button>
 
 	<div class="output"></div>
+</div>
+
+<div class="section white custom-rankings-results">
+	<h3>Rankings</h3>
+
+	<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon Name or Type" />
+
+	<div class="ranking-header">Pokemon</div>
+	<div class="ranking-header right">Score</div>
+
+	<div class="rankings-container clear"></div>
 </div>
 
 <div class="section white custom-rankings-list">
@@ -123,11 +134,13 @@ require_once 'header.php'; ?>
 
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/CustomRankingInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineAction.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/RankerSandboxWeightingMoveset.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/RankerMain.js"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/RankingInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/CustomRankingInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
 
 <?php require_once 'footer.php'; ?>

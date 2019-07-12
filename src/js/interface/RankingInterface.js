@@ -14,6 +14,7 @@ var InterfaceMaster = (function () {
 			var data;
 			var jumpToPoke = false;
 			var limitedPokemon = [];
+			var context = "rankings";
 
 			this.init = function(){
 				if(! get){
@@ -80,14 +81,17 @@ var InterfaceMaster = (function () {
 
 					limitedPokemon = ["medicham","lucario","venusaur","meganium","skarmory","altaria","bastiodon","probopass","tropius","azumarill"]
 				}
-
+				
+				var battle = new Battle();
+				
+				$(".rankings-container").html('');
 
 				// Create an element for each ranked Pokemon
 
 				for(var i = 0; i < rankings.length; i++){
 					var r = rankings[i];
 
-					var pokemon = new Pokemon(r.speciesId);
+					var pokemon = new Pokemon(r.speciesId, 0, battle);
 
 					// Get names of of ranking moves
 
@@ -195,6 +199,10 @@ var InterfaceMaster = (function () {
 			// When the view state changes, push to browser history so it can be navigated forward or back
 
 			this.pushHistoryState = function(cup, cp, category, speciesId){
+				if(context == "custom"){
+					return false;
+				}
+				
 				var url = webRoot+"rankings/"+cup+"/"+cp+"/"+category+"/";
 
 				if(speciesId){
@@ -212,6 +220,12 @@ var InterfaceMaster = (function () {
 				  'event_category' : 'Rankings',
 				  'event_label' : speciesId
 				});
+			}
+			
+			// Set a context so this interface can add or skip functionality
+			
+			this.setContext = function(value){
+				context = value;
 			}
 
 			// Event handler for changing the league select
@@ -391,7 +405,12 @@ var InterfaceMaster = (function () {
 					"closers": "/00/",
 					"leads": "/11/",
 					"attackers": "/01/",
-					"defenders": "/10/"
+					"defenders": "/10/",
+					"custom": "/11/"
+				}
+				
+				if(context == "custom"){
+					category = context;
 				}
 
 				// Display key matchups
@@ -465,6 +484,7 @@ var InterfaceMaster = (function () {
 
 			function checkBox(e){
 				$(this).toggleClass("on");
+				$(this).trigger("stateChange");
 			}
 
 			// Toggle the limited Pokemon from the Rankings

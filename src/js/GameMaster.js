@@ -240,6 +240,7 @@ var GameMaster = (function () {
 						var filters = filterLists[n];
 						var include = (n == 0);
 						var filtersMatched = 0;
+						var requiredFilters = filters.length;
 
 						for(var j = 0; j < filters.length; j++){
 							var filter = filters[j];
@@ -267,6 +268,10 @@ var GameMaster = (function () {
 									break;
 
 								case "id":
+									if(include){
+										requiredFilters--;
+									}
+									
 									if(filter.values.indexOf(pokemon.speciesId) > -1){
 										filtersMatched += filters.length; // If a Pokemon is explicitly included, ignore all other filters
 									}
@@ -276,7 +281,7 @@ var GameMaster = (function () {
 
 						// Only include Pokemon that match all of the include filters
 
-						if((include)&&(filtersMatched >= filters.length)){
+						if((include)&&(filtersMatched >= requiredFilters)){
 							allowed = true;
 						}
 

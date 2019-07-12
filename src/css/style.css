@@ -2061,7 +2061,7 @@ a.toggle {
       display: block; }
     .custom-rankings .filters .filter[type="tag"] .field-section.tag {
       display: block; }
-    .custom-rankings .filters .filter[type="species"] .field-section.species {
+    .custom-rankings .filters .filter[type="id"] .field-section.id {
       display: block; }
     .custom-rankings .filters .filter[type="dex"] .field-section.dex {
       display: block; }
@@ -2072,6 +2072,11 @@ a.toggle {
   width: 100%;
   height: 150px;
   font-family: sans-serif; }
+
+.custom-rankings-results {
+  display: none; }
+  .custom-rankings-results h3:first-of-type {
+    margin-top: 0; }
 
 @media only screen and (min-width: 721px) {
   .menu {

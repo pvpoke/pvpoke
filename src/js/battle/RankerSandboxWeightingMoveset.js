@@ -21,6 +21,7 @@ var RankerMaster = (function () {
 
 			var moveSelectMode = "force";
 			var rankingData;
+			var allResults = []; // Array of all ranking results
 
 			var leagues = [1500];
 			var shields = [ [0,0], [1,1], [0,1], [1,0]];
@@ -46,18 +47,19 @@ var RankerMaster = (function () {
 
 			// Load existing rankings to get best movesets
 
-			this.displayRankingData = function(data){
+			this.displayRankingData = function(data, callback){
 				rankingData = data;
-
-				console.log(rankingData);
 
 				self.initPokemonList(battle.getCP());
 
 				currentShieldsIndex = 0;
 
 				for(var currentShieldsIndex = 0; currentShieldsIndex < shields.length; currentShieldsIndex++){
-					self.rank(leagues[currentLeagueIndex], shields[currentShieldsIndex]);
+					var r = self.rank(leagues[currentLeagueIndex], shields[currentShieldsIndex]);
+					allResults.push(r);
 				}
+				
+				callback(allResults);
 			}
 
 			this.initPokemonList = function(cp){
@@ -77,15 +79,26 @@ var RankerMaster = (function () {
 
 			// Run all ranking sets at once
 
-			this.rankLoop = function(cp, cup){
+			this.rankLoop = function(cp, cup, callback, data){
 
 				battle.setCP(cp);
-				battle.setCup(cup.name);
+				if(cup.name != "custom"){
+					battle.setCup(cup.name);
+				} else{
+					battle.setCustomCup(cup);
+				}
+				
 
 				currentLeagueIndex = 0;
 				currentShieldsIndex = 0;
 
 				leagues = [cp];
+				
+				if(cup.name == "custom"){
+					shields = [ [1,1] ];
+				}
+				
+				allResults = [];
 
 				for(var currentLeagueIndex = 0; currentLeagueIndex < leagues.length; currentLeagueIndex++){
 
@@ -99,8 +112,13 @@ var RankerMaster = (function () {
 
 					} else if(moveSelectMode == "force"){
 						// Load existing ranking data first
-
-						gm.loadRankingData(self, "overall", leagues[currentLeagueIndex], cup.name);
+						
+						if(! data){
+							gm.loadRankingData(self, "overall", leagues[currentLeagueIndex], cup.name);
+						} else{
+							self.displayRankingData(data, callback);
+						}
+						
 					}
 
 				}
@@ -111,9 +129,14 @@ var RankerMaster = (function () {
 					if((rankingCombinations.length == currentRankings)&&(rankingCombinations.length > 0)){
 						currentRankings--;
 
-						self.rank(rankingCombinations[0].league, rankingCombinations[0].shields);
+						var r = self.rank(rankingCombinations[0].league, rankingCombinations[0].shields);
+						allResults.push(r);
 
 						rankingCombinations.splice(0, 1);
+						
+						if(rankingCombinations.length == 0){
+							callback(allResults);
+						}
 					}
 				}, 1000);
 
@@ -126,8 +149,6 @@ var RankerMaster = (function () {
 				var cup = battle.getCup();
 				var totalBattles = 0;
 				var shieldCounts = shields;
-
-				console.log(shieldCounts);
 
 				rankings = [];
 
@@ -543,47 +564,61 @@ var RankerMaster = (function () {
 				}
 
 				// Write rankings to file
+				if(cup.name != "custom"){
 
-				var category = "overall";
+					var category = "overall";
 
-				if((shieldCounts[0] == 0) && (shieldCounts[1] == 0)){
-					category = "closers";
-				} else if((shieldCounts[0] == 1) && (shieldCounts[1] == 1)){
-					category = "leads";
-				} else if((shieldCounts[0] == 1) && (shieldCounts[1] == 0)){
-					category = "defenders";
-				} else if((shieldCounts[0] == 0) && (shieldCounts[1] == 1)){
-					category = "attackers";
+					if((shieldCounts[0] == 0) && (shieldCounts[1] == 0)){
+						category = "closers";
+					} else if((shieldCounts[0] == 1) && (shieldCounts[1] == 1)){
+						category = "leads";
+					} else if((shieldCounts[0] == 1) && (shieldCounts[1] == 0)){
+						category = "defenders";
+					} else if((shieldCounts[0] == 0) && (shieldCounts[1] == 1)){
+						category = "attackers";
+					}
+
+					var json = JSON.stringify(rankings);
+					var league = battle.getCP();
+
+					console.log(json);
+					console.log("/"+cup.name+"/"+category+"/rankings-"+league+".json");
+
+					$.ajax({
+
+						url : 'data/write.php',
+						type : 'POST',
+						data : {
+							'data' : json,
+							'league' : league,
+							'category' : category,
+							'cup': cup.name
+						},
+						dataType:'json',
+						success : function(data) {
+							console.log(data);
+						},
+						error : function(request,error)
+						{
+							console.log("Request: "+JSON.stringify(request));
+							console.log(error);
+						}
+					});
 				}
 
-				var json = JSON.stringify(rankings);
-				var league = battle.getCP();
-
-				console.log(json);
-				console.log("/"+cup.name+"/"+category+"/rankings-"+league+".json");
-
-				$.ajax({
-
-					url : 'data/write.php',
-					type : 'POST',
-					data : {
-						'data' : json,
-						'league' : league,
-						'category' : category,
-						'cup': cup.name
-					},
-					dataType:'json',
-					success : function(data) {
-						console.log(data);
-					},
-					error : function(request,error)
-					{
-						console.log("Request: "+JSON.stringify(request));
-						console.log(error);
-					}
-				});
-
 				return rankings;
+			}
+			
+			// Set whether to autoselect moves or force a best moveset
+			
+			this.setMoveSelectMode = function(value){
+				moveSelectMode = value;
+			}
+			
+			// Return the current move select mode
+			
+			this.getMoveSelectMode = function(){
+				return moveSelectMode;
 			}
 
 			// Given a Pokemon, output a string of numbers for URL building

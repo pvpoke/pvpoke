@@ -2801,7 +2801,7 @@ a.toggle{
 				display:block;
 			}
 			
-			&[type="species"] .field-section.species{
+			&[type="id"] .field-section.id{
 				display:block;
 			}
 			
@@ -2821,6 +2821,14 @@ a.toggle{
 		width:100%;
 		height:150px;
 		font-family:sans-serif;
+	}
+}
+
+.custom-rankings-results{
+	display:none;
+	
+	h3:first-of-type{
+		margin-top:0;
 	}
 }
 
