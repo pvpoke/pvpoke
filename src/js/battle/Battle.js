@@ -441,7 +441,7 @@ function Battle(){
 				}
 
 				// Are both Pokemon alive?
-				
+
 				if((action.type == "switch")||((action.type != "switch")&&(poke.hp > 0)&&(opponent.hp > 0))){
 					if((action.type=="fast")&&(mode == "emulate")){
 						// Submit an animation to be played
@@ -670,7 +670,7 @@ function Battle(){
 				}
 
 				faintedPokemonIndexes.push(poke.index);
-				
+
 				if(mode == "emulate"){
 					self.pushAnimation(poke.index, "switch", true);
 				}
@@ -700,16 +700,16 @@ function Battle(){
 				if(phaseProps.actors.indexOf(1) > -1){
 					var switchChoice = players[1].getAI().decideSwitch();
 					var waitTime = 500;
-					
+
 					if((players[1].getAI().hasStrategy("WAIT_CLOCK"))&&(players[1].getSwitchTimer() > 0)&&(players[1].getRemainingPokemon() > 1)){
 						waitTime = players[1].getSwitchTimer() - 1000;
 					}
-					
+
 					setTimeout(function(){
 						self.queueAction(1, "switch", switchChoice);
 					}, waitTime);
-					
-					
+
+
 				}
 			} else{
 				var result = "tie";
@@ -794,6 +794,15 @@ function Battle(){
 		updateCallback = callback;
 
 		// Sort and reset Pokemon
+		for(var i = 0; i < players.length; i++){
+			players[i].reset();
+
+			var team = players[i].getTeam();
+
+			for(var n = 0; n < team.length; n++){
+				team[n].fullReset();
+			}
+		}
 
 		for(var i = 0; i < pokemon.length; i++){
 			pokemon[i].setBattle(self);
@@ -957,7 +966,7 @@ function Battle(){
 					}
 				}
 			}
-			
+
 			if(poke.farmEnergy){
 				useChargedMove = false;
 			}
@@ -1203,7 +1212,7 @@ function Battle(){
 							power: 1,
 							shield: false
 						};
-						
+
 						chargeAmount = 0;
 						playerUseShield = false;
 
@@ -1599,13 +1608,13 @@ function Battle(){
 	this.getTurnsToWin = function(){
 		return turnsToWin;
 	}
-	
+
 	// Return the current turn number
 
 	this.getTurns = function(){
 		return turns;
 	}
-	
+
 	// Return the current players
 
 	this.getPlayers = function(){

@@ -25,6 +25,7 @@ function Player(i, ai, b){
 
 	this.reset = function(){
 		shields = 2;
+		switchTimer = 0;
 
 		for(var i = 0; i < roster.length; i++){
 			roster[i].reset();
@@ -53,9 +54,9 @@ function Player(i, ai, b){
 
 	this.setTeam = function(val){
 		team = val;
-		
+
 		// Reset battle stats
-		
+
 		for(var i = 0; i < team.length; i++){
 			team[i].resetBattleStats();
 		}
@@ -98,9 +99,9 @@ function Player(i, ai, b){
 		if((switchTimer <= deltaTime)&&(switchTimer > 0)){
 			evaluateMatchup = true;
 		}
-		
+
 		switchTimer = Math.max(switchTimer-deltaTime, 0);
-		
+
 		if((index == 1)&&(evaluateMatchup)){
 			ai.evaluateMatchup(battle.getTurns(), battle.getPokemon()[1], battle.getPokemon()[0], battle.getPlayers()[0]);
 		}

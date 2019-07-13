@@ -325,6 +325,12 @@ function TrainingAI(l, p, b){
 			}
 		}
 
+		// If all options have 0 weight, just toss the first option in there
+
+		if(optionBucket.length == 0){
+			optionBucket.push(options[0].name);
+		}
+
 		var index = Math.floor(Math.random() * optionBucket.length);
 		var optionName = optionBucket[index];
 		var option = options.filter(obj => {

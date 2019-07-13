@@ -34,6 +34,7 @@ var BattlerMaster = (function () {
 			var countdown = 0;
 
 			var interfaceLockout = 0; // Prevent clicking the shield or switch options too early
+			var listenersInitialized = false; // Prevent event listeners from being added twice
 
 			// Kick off the setup and the battle
 
@@ -43,12 +44,16 @@ var BattlerMaster = (function () {
 				phase = "countdown";
 
 				// Event listeners
+				if(! listenersInitialized){
+					$(".battle-window").on("click", battleWindowClick);
+					$(".shield-window .close").on("click", closeShieldClick);
+					$(".shield-window .shield").on("click", useShieldClick);
+					$(".end-screen .replay").on("click", replayBattleClick);
+					$(".end-screen .new-match").on("click", newMatchClick);
 
-				$(".battle-window").on("click", battleWindowClick);
-				$("body").on("click", ".charge-window .move-bar", chargeUpClick);
-				$(".shield-window .close").on("click", closeShieldClick);
-				$(".shield-window .shield").on("click", useShieldClick);
-				$(".end-screen .replay").on("click", replayBattle);
+					listenersInitialized = true;
+				}
+
 
 				// Set lead pokemon
 				battle.setBattleMode("emulate");
@@ -56,6 +61,13 @@ var BattlerMaster = (function () {
 				battle.setNewPokemon(players[0].getTeam()[0], 0, false);
 				battle.setNewPokemon(players[1].getTeam()[0], 1, false);
 				battle.emulate(self.update);
+
+				// Reset interface for new battle
+
+				$(".battle-window .switch-btn").removeClass("active");
+				$(".battle-window .pokemon-container").removeClass("animate-switch");
+				$(".battle-window .pokemon-container .messages").html("");
+				$(".battle-window .countdown .text").html("");
 
 				$("body").addClass("battle-active");
 			};
@@ -104,7 +116,7 @@ var BattlerMaster = (function () {
 						case "animating":
 							$(".animate-message .text").html(activePokemon[response.actor].speciesName + " used " + response.moveName);
 							break;
-							
+
 						case "suspend_switch":
 							$(".animate-message .text").html("Opponent is selecting a Pokemon");
 							break;
@@ -117,9 +129,11 @@ var BattlerMaster = (function () {
 							break;
 
 						case "game_over":
-							$("body").removeClass("battle-active");
+							setTimeout(function(){
+								$("body").removeClass("battle-active");
+								self.displayEndGameStats();
+							}, 1000);
 
-							self.displayEndGameStats();
 							break;
 					}
 				}
@@ -283,14 +297,14 @@ var BattlerMaster = (function () {
 						case "switch":
 							var actor = animation.actor;
 							$(".battle-window .pokemon-container").eq(animation.actor).addClass("animate-switch");
-							
+
 							if(animation.value === false){
 								var delayTime = 1000;
-								
+
 								if(phase == "suspend_switch"){
 									delayTime = 30;
 								}
-								
+
 								setTimeout(function(){
 									$(".battle-window .pokemon-container").eq(actor).removeClass("animate-switch");
 									self.completeSwitchAnimation(actor);
@@ -446,16 +460,16 @@ var BattlerMaster = (function () {
 					var index = $(".battle-window .controls .move-bar").index($target); // Getting the index of the move
 					battle.queueAction(0, "charged", index);
 				}
+
+				// Charge up a Charged Move
+				if(phase == "suspend_charged_attack"){
+					chargeUpClick(e);
+				}
 			}
 
 			// Click handler for sending input to the Battle object
 
 			function chargeUpClick(e){
-				if(phase != "suspend_charged_attack"){
-					return false;
-				}
-
-				// We have to let it overshoot a little because the decay happens after the charge
 				charge = Math.min(charge + chargeRate, maxCharge + (chargeDecayRate * 10));
 			}
 
@@ -478,8 +492,14 @@ var BattlerMaster = (function () {
 
 			// At the end of a 3v3 match, replay the same battle
 
-			function replayBattle(e){
+			function replayBattleClick(e){
 				handler.startBattle();
+			}
+
+			// Go back to the settings page
+
+			function newMatchClick(e){
+				handler.returnToSetup();
 			}
 
 			// Handler for the the use shield timer

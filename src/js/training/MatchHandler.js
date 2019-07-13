@@ -37,7 +37,7 @@ function MatchHandler(){
 
 		var opponent = new Player(1, props.difficulty, battle);
 		players.push(opponent);
-		
+
 		if(props.teamSelectMethod == "manual"){
 			opponent.setRoster(props.teams[1]);
 			self.startBattle();
@@ -45,30 +45,38 @@ function MatchHandler(){
 			opponent.generateRoster(props.partySize, self.rosterReady);
 		}
 	}
-	
+
+	// Initiate a new battle
+
 	this.startBattle = function(){
 		var player = players[0];
 		var opponent = players[1];
-		
+
 		if(properties.mode == "single"){
-			
+
 			if(properties.teamSelectMethod == "manual"){
 				opponent.setRoster(properties.teams[1]);
 				opponent.setTeam(properties.teams[1]);
 			} else{
 				opponent.generateTeam(player.getRoster());
 			}
-			
+
 			player.setTeam(properties.teams[0]);
-			
+
 			interface.close();
 			battler.init(properties, battle, players);
 		}
 	}
-	
+
+	// Return to the setup interface
+
+	this.returnToSetup = function(){
+		interface.open();
+	}
+
 	// Callback that lets MatchHandler know the AI's roster is ready to begin play
-	
-	this.rosterReady = function(){	
+
+	this.rosterReady = function(){
 		self.startBattle();
 	}
 }

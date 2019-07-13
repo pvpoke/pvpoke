@@ -742,9 +742,20 @@ function Pokemon(id, i, b){
 		self.statBuffs = [self.startStatBuffs[0], self.startStatBuffs[1]];
 		self.resetMoves();
 	}
-	
+
+	// Fully reset all Pokemon stats
+
+	this.fullReset = function(){
+		self.startHp = self.stats.hp;
+		self.startEnergy = 0;
+		self.startCooldown = 0;
+		self.startStatBuffs = [0, 0];
+
+		self.reset();
+	}
+
 	// Reset stats for emulated battles
-	
+
 	this.resetBattleStats = function(){
 		self.battleStats = {
 			damage: 0,
