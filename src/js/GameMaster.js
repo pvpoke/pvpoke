@@ -182,7 +182,7 @@ var GameMaster = (function () {
 					callback(league, cup, data);
 				});
 			} else{
-				callback(league, cup, data);
+				callback(league, cup, object.teamPools[key]);
 			}
 		}
 

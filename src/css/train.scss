@@ -203,7 +203,7 @@
 			&.self{
 				bottom: 30%;
 				left: 20%;
-				
+
 				.pokemon{
 					@include transform(scaleX(-1));
 				}
@@ -215,8 +215,12 @@
 			}
 
 			h3{
-				margin:0;
+				display: inline-block;
+			    padding: 5px;
+			    margin: 0 0 5px 0;
+			    border-radius: 12px;
 				text-align: center;
+
 			}
 
 			.messages{
@@ -225,12 +229,12 @@
 
 			.pokemon{
 				@include transition(all, 1s, ease, 0s);
-				
+
 				position:relative;
 				width:100px;
 				height:100px;
 				margin: 0 auto;
-				
+
 				.main-sprite,
 				.secondary-sprite{
 					position:absolute;
@@ -240,11 +244,11 @@
 					height:100%;
 					background-size:600% 300%;
 				}
-				
+
 				.main-sprite{
 					background-image:url('../img/train/substitute-sprite-main.png');
 				}
-				
+
 				.secondary-sprite{
 					background-image:url('../img/train/substitute-sprite-secondary.png');
 				}
@@ -506,7 +510,7 @@
 		position: absolute;
 		width: 100%;
 		text-align: center;
-		top: 40%;
+		top: 37%;
 		opacity:0;
 		pointer-events: none;
 
@@ -575,6 +579,10 @@
 			display:table;
 		}
 
+		.animate-message{
+			opacity:1;
+		}
+
 		.charge-window{
 			opacity: 1;
 			pointer-events: all;
@@ -599,7 +607,7 @@
 			pointer-events: all;
 		}
 	}
-	
+
 	&[phase="suspend_switch"]{
 		.animate-message{
 			opacity:1;
@@ -622,7 +630,7 @@
 		}
 	}
 
-	&[phase="game_over"]{
+	&[phase="game_over_screen"]{
 		display:inline-block;
 
 		.end-screen-container{
@@ -658,7 +666,7 @@
 	.pokemon-entry{
 		display:flex;
 		margin-bottom:15px;
-		
+
 		.name{
 			text-align: left;
 			font-size:12px;

@@ -36,7 +36,7 @@ function TrainingAI(l, p, b){
 
 		var league = battle.getCP();
 		var cup = battle.getCup().name;
-
+		
 		if(! teamPool[league+""+cup]){
 			gm.loadTeamData(league, cup, self.setTeamPool);
 			return;

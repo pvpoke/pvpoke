@@ -11,7 +11,8 @@ require_once '../header.php';
 <div class="section home white">
 	<?php require '../modules/leagueselect.php'; ?>
 	<?php require '../modules/cupselect.php'; ?>
-	<p>Select your team and options below to battle against an AI opponent.</p>
+	<p>Select your team and options below to battle against a CPU opponent.</p>
+	<p>This tool is designed to supplement your in-game battles. Gain experience or try new lineups in a pressure free environment, and against an engaging AI that can grow with you.</p>
 </div>
 
 <div class="hide">
@@ -126,7 +127,6 @@ require_once '../header.php';
 
 		<div class="charge-window">
 			<div class="container">
-				<p>Tap quickly to charge up <span class="name">move</span>!</p>
 				<div class="rings">
 					<div class="ring-container">
 						<div class="ring"></div>

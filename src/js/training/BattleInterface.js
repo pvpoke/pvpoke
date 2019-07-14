@@ -32,6 +32,8 @@ var BattlerMaster = (function () {
 			var switchTime = 13000;
 			var phaseTimer = 4000;
 			var countdown = 0;
+			var turn = 0;
+			var time = 0;
 
 			var interfaceLockout = 0; // Prevent clicking the shield or switch options too early
 			var listenersInitialized = false; // Prevent event listeners from being added twice
@@ -42,6 +44,8 @@ var BattlerMaster = (function () {
 				battle = b;
 				players = p;
 				phase = "countdown";
+				turn = 0;
+				time = 0;
 
 				// Event listeners
 				if(! listenersInitialized){
@@ -75,6 +79,8 @@ var BattlerMaster = (function () {
 			// Given an update object, update the battle interface
 
 			this.update = function(response){
+				turn = response.turn;
+				time += 500;
 
 				// Interpret phase for player
 
@@ -99,6 +105,7 @@ var BattlerMaster = (function () {
 						case "suspend_charged_attack":
 							$(".charge-window .move-bars").html('');
 							$(".charge-window .move-bars").append($(".controls .move-bar").eq(response.move).clone());
+							$(".battle-window .animate-message .text").html("Tap to charge up "+activePokemon[0].chargedMoves[response.move].name+"!");
 							$(".switch-window").removeClass("active");
 
 							charge = 0;
@@ -131,6 +138,7 @@ var BattlerMaster = (function () {
 						case "game_over":
 							setTimeout(function(){
 								$("body").removeClass("battle-active");
+								$(".battle-window").attr("phase","game_over_screen");
 								self.displayEndGameStats();
 							}, 1000);
 
@@ -150,6 +158,7 @@ var BattlerMaster = (function () {
 					// If a switch has occured, update the Pokemon display and Charged Move buttons
 					if((activePokemon.length < i)||(activePokemon[i] != pokemon)){
 						$poke.find(".name").html(pokemon.speciesName);
+						$poke.find(".name").attr("class", "name " + pokemon.types[0]);
 						$poke.attr("cooldown", pokemon.fastMove.cooldown);
 
 						// Show both Pokemon at the start
@@ -297,18 +306,17 @@ var BattlerMaster = (function () {
 						case "switch":
 							var actor = animation.actor;
 							$(".battle-window .pokemon-container").eq(animation.actor).addClass("animate-switch");
+							$(".battle-window .pokemon-container").eq(animation.actor).attr("animation-time", time);
 
 							if(animation.value === false){
-								var delayTime = 1000;
+								var duration = 1000;
 
 								if(phase == "suspend_switch"){
-									delayTime = 30;
+
+									duration = 0;
 								}
 
-								setTimeout(function(){
-									$(".battle-window .pokemon-container").eq(actor).removeClass("animate-switch");
-									self.completeSwitchAnimation(actor);
-								}, delayTime);
+								$(".battle-window .pokemon-container").eq(animation.actor).attr("animation-duration", duration);
 							}
 
 							break;
@@ -320,6 +328,9 @@ var BattlerMaster = (function () {
 						}, 250);
 					}
 				}
+
+				// Complete any outstanding switch animations
+				self.completeSwitchAnimation();
 			}
 
 
@@ -358,14 +369,25 @@ var BattlerMaster = (function () {
 
 			// When a switch animation has completed, fill in the updated sprite
 
-			self.completeSwitchAnimation = function(index){
-				$(".battle-window .pokemon-container").eq(index).find(".pokemon").attr("type-1", activePokemon[index].types[0]);
+			self.completeSwitchAnimation = function(){
 
-				if(activePokemon[index].types[1] != "none"){
-					$(".battle-window .pokemon-container").eq(index).find(".pokemon").attr("type-2", activePokemon[index].types[1]);
-				} else{
-					$(".battle-window .pokemon-container").eq(index).find(".pokemon").attr("type-2", activePokemon[index].types[0]);
-				}
+				$(".battle-window .pokemon-container.animate-switch").each(function(index, value){
+					var timePassed = time - parseInt($(this).attr("animation-time"));
+					var index = ($(this).hasClass("opponent")) ? 1 : 0;
+
+					if( (timePassed >= parseInt($(this).attr("animation-duration")))&&(activePokemon[index].hp > 0)){
+						$(this).removeClass("animate-switch");
+						$(this).find(".pokemon").attr("type-1", activePokemon[index].types[0]);
+						$(this).eq(index).find(".name").attr("class", "name " + activePokemon[index].types[0]);
+
+						if(activePokemon[index].types[1] != "none"){
+							$(this).find(".pokemon").attr("type-2", activePokemon[index].types[1]);
+						} else{
+							$(this).find(".pokemon").attr("type-2", activePokemon[index].types[0]);
+						}
+					}
+				});
+
 			}
 
 			// At the end of the game, show relevant battle stats
@@ -374,13 +396,11 @@ var BattlerMaster = (function () {
 				var team = players[0].getTeam();
 				var maxScore = 300;
 
-				console.log(team);
-
 				for(var i = 0; i < team.length; i++){
 					var pokemon = team[i];
 					var width = (pokemon.battleStats.damage / maxScore) * 100;
 
-					$(".battle-stats .damage .pokemon-entry .name").eq(i).html(pokemon.speciesId);
+					$(".battle-stats .damage .pokemon-entry .name").eq(i).html(pokemon.speciesName);
 					$(".battle-stats .damage .pokemon-entry .damage-bar").eq(i).css("width", width+"%");
 				}
 
