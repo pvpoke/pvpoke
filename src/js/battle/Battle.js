@@ -138,7 +138,7 @@ function Battle(){
 
 		return damage;
 	}
-	
+
 	// Calculate damage given stats and effectiveness
 
 	this.calculateDamageByStats = function(attack, defense, effectiveness, move){
@@ -149,24 +149,24 @@ function Battle(){
 
 		return damage;
 	}
-	
+
 	// Solve for Attack given the damage, defense, effectiveness, and move
 
 	this.calculateBreakpoint = function(damage, defense, effectiveness, move){
 
 		var bonusMultiplier = 1.3;
-		
+
 		var attack = ((damage - 1) * defense) / (move.power * move.stab * effectiveness * 0.5 * bonusMultiplier);
 
 		return attack;
 	}
-	
+
 	// Solve for Defense given the damage, attack, effectiveness, and move
 
 	this.calculateBulkpoint = function(damage, attack, effectiveness, move){
 
 		var bonusMultiplier = 1.3;
-		
+
 		var defense =  (move.power * move.stab * effectiveness * 0.5 * bonusMultiplier * attack) / (damage);
 
 		return defense;
@@ -379,7 +379,10 @@ function Battle(){
 				var action = self.getTurnAction(poke, opponent);
 
 				if(action){
-					actionsThisTurn = true;
+					if(action.type != "wait"){
+						actionsThisTurn = true;
+					}
+
 					if(action.type == "charged"){
 						chargedMoveThisTurn = true;
 					}
@@ -400,13 +403,13 @@ function Battle(){
 					// Was this queued on a previous turn? See if it's eligible
 					var timeSinceActivated = (turns - action.turn) * 500;
 					var chargedMoveLastTurn = false;
-					
+
 					for(var n = 0; n < previousTurnActions.length; n++){
 						if(previousTurnActions[n].type == "charged"){
 							chargedMoveLastTurn = true;
 						}
-					}			
-					
+					}
+
 					if(actionsThisTurn){
 						if(timeSinceActivated >= pokemon[action.actor].fastMove.cooldown - 500){
 							action.settings.priority += 20;
