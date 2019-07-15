@@ -69,8 +69,8 @@ var BattlerMaster = (function () {
 				// Reset interface for new battle
 
 				$(".battle-window .switch-btn").removeClass("active");
-				$(".battle-window .pokemon-container").removeClass("animate-switch");
-				$(".battle-window .pokemon-container .messages").html("");
+				$(".battle-window .scene .pokemon-container").removeClass("animate-switch");
+				$(".battle-window .scene .pokemon-container .messages").html("");
 				$(".battle-window .countdown .text").html("");
 
 				$("body").addClass("battle-active");
@@ -151,7 +151,7 @@ var BattlerMaster = (function () {
 				for(var i = 0; i < response.pokemon.length; i++){
 					var pokemon = response.pokemon[i];
 
-					var $poke = $(".pokemon-container").eq(i);
+					var $poke = $(".scene .pokemon-container").eq(i);
 					var percent = (pokemon.hp / pokemon.stats.hp) * 100;
 
 					$poke.find(".hp .bar").css("width", percent+"%" );
@@ -287,7 +287,7 @@ var BattlerMaster = (function () {
 				for(var i = 0; i < response.messages.length; i++){
 					var message = response.messages[i];
 					var $messageItem = $("<div turn=\""+response.turn+"\">"+message.str+"</div>");
-					$(".battle-window .pokemon-container").eq(message.index).find(".messages").append($messageItem);
+					$(".battle-window .scene .pokemon-container").eq(message.index).find(".messages").append($messageItem);
 				}
 
 				// Clear any messages past the expiry time
@@ -308,13 +308,13 @@ var BattlerMaster = (function () {
 					switch(animation.type){
 						case "fast":
 							fastAnimationOccurred = true;
-							$(".battle-window .pokemon-container").eq(animation.actor).addClass("animate-fast");
+							$(".battle-window .scene .pokemon-container").eq(animation.actor).addClass("animate-fast");
 							break;
 
 						case "switch":
 							var actor = animation.actor;
-							$(".battle-window .pokemon-container").eq(animation.actor).addClass("animate-switch");
-							$(".battle-window .pokemon-container").eq(animation.actor).attr("animation-time", time);
+							$(".battle-window .scene .pokemon-container").eq(animation.actor).addClass("animate-switch");
+							$(".battle-window .scene .pokemon-container").eq(animation.actor).attr("animation-time", time);
 
 							if(animation.value === false){
 								var duration = 1000;
@@ -324,7 +324,7 @@ var BattlerMaster = (function () {
 									duration = 0;
 								}
 
-								$(".battle-window .pokemon-container").eq(animation.actor).attr("animation-duration", duration);
+								$(".battle-window .scene .pokemon-container").eq(animation.actor).attr("animation-duration", duration);
 							}
 
 							break;
@@ -332,7 +332,7 @@ var BattlerMaster = (function () {
 
 					if(fastAnimationOccurred){
 						setTimeout(function(){
-							$(".battle-window .pokemon-container").removeClass("animate-fast");
+							$(".battle-window .scene .pokemon-container").removeClass("animate-fast");
 						}, 250);
 					}
 				}

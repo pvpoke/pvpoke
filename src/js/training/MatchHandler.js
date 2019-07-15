@@ -65,6 +65,8 @@ function MatchHandler(){
 
 			interface.close();
 			battler.init(properties, battle, players);
+		} else if(properties.mode == "tournament"){
+			interface.openTeamSelect(players);
 		}
 	}
 

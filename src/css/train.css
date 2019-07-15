@@ -358,17 +358,6 @@
       margin-top: 0; }
     .battle-window .switch-window .container {
       padding: 15px 30px; }
-    .battle-window .switch-window .pokemon-container {
-      display: flex;
-      justify-content: space-around; }
-      .battle-window .switch-window .pokemon-container .sprite-container {
-        opacity: 0.25; }
-      .battle-window .switch-window .pokemon-container .name {
-        padding: 5px;
-        border-radius: 12px;
-        margin-top: 5px; }
-      .battle-window .switch-window .pokemon-container .pokemon.active .sprite-container {
-        opacity: 1; }
   .battle-window .animate-message {
     position: absolute;
     width: 100%;
@@ -456,6 +445,62 @@
     display: inline-block; }
     .battle-window[phase="game_over_screen"] .end-screen-container {
       bottom: -10px; }
+
+.team-select .pokemon-container,
+.switch-window .pokemon-container {
+  display: flex;
+  justify-content: space-around; }
+  .team-select .pokemon-container .sprite-container,
+  .switch-window .pokemon-container .sprite-container {
+    opacity: 0.25;
+    overflow: hidden; }
+  .team-select .pokemon-container .name,
+  .switch-window .pokemon-container .name {
+    padding: 5px;
+    border-radius: 12px;
+    margin-top: 5px;
+    max-width: 100px;
+    font-weight: bold; }
+  .team-select .pokemon-container .name, .team-select .pokemon-container .cp,
+  .switch-window .pokemon-container .name,
+  .switch-window .pokemon-container .cp {
+    text-align: center; }
+  .team-select .pokemon-container .pokemon.active .sprite-container,
+  .switch-window .pokemon-container .pokemon.active .sprite-container {
+    opacity: 1; }
+
+.team-select {
+  display: none; }
+  .team-select .pokemon-container {
+    justify-content: space-between;
+    flex-wrap: wrap; }
+    .team-select .pokemon-container .pokemon {
+      width: 100px;
+      margin-bottom: 10px; }
+      .team-select .pokemon-container .pokemon .number {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #0088a6;
+        color: #eee;
+        font-weight: bold;
+        display: none; }
+      .team-select .pokemon-container .pokemon.selected .number {
+        display: block;
+        opacity: 0.9;
+        font-size: 40px;
+        text-align: center;
+        padding-top: 5px; }
+  .team-select .self {
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 12px;
+    padding: 10px 0; }
+    .team-select .self h3 {
+      margin-top: 0; }
+    .team-select .self .pokemon {
+      cursor: pointer; }
 
 /* END SCREEN */
 .end-screen-container {

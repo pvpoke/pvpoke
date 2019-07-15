@@ -50,6 +50,20 @@ require_once '../header.php';
 	<button class="battle-btn button">Battle</button>
 </div>
 
+<div class="section team-select">
+	<div class="opponent">
+		<h3 class="center">Opponent's Roster</h3>
+		<div class="roster pokemon-container"></div>
+	</div>
+	<h3 class="center">vs.</h3>
+	<div class="self">
+		<h3 class="center">Your Roster</h3>
+		<div class="roster pokemon-container"></div>
+		<p class="center">Select and order your team of 3 for battle!</p>
+	</div>
+	<button class="lets-go-btn button">Let's Go!</button>
+</div>
+
 <div class="section battle">
 	<div class="battle-window" style="display:inline-block;">
 		<img class="img-block" src="<?php echo $WEB_ROOT; ?>img/train/battle-window-block.png" />

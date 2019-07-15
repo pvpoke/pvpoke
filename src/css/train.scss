@@ -488,25 +488,6 @@
 		.container{
 			padding: 15px 30px;
 		}
-
-		.pokemon-container{
-			display:flex;
-			justify-content:space-around;
-
-			.sprite-container{
-				opacity:0.25;
-			}
-			
-			.name{
-				padding:5px;
-				border-radius:12px;
-				margin-top:5px;
-			}
-
-			.pokemon.active .sprite-container{
-				opacity:1;
-			}
-		}
 	}
 
 	.animate-message{
@@ -642,6 +623,83 @@
 		}
 	}
 
+}
+
+.team-select .pokemon-container,
+.switch-window .pokemon-container{
+	display:flex;
+	justify-content:space-around;
+
+	.sprite-container{
+		opacity:0.25;
+		overflow:hidden;
+	}
+
+	.name{
+		padding:5px;
+		border-radius:12px;
+		margin-top:5px;
+		max-width:100px;
+		font-weight:bold;
+	}
+	
+	.name, .cp{
+		text-align:center;
+	}
+
+	.pokemon.active .sprite-container{
+		opacity:1;
+	}
+}
+
+.team-select{
+	display:none;
+	
+	.pokemon-container{
+		justify-content: space-between;
+		flex-wrap: wrap;
+		
+		.pokemon{
+			width:100px;
+			margin-bottom:10px;
+			
+			.number{
+				width:100%;
+				height:100%;
+				position:absolute;
+				top:0;
+				left:0;
+				background:#0088a6;
+				color:#eee;
+				font-weight: bold;
+				display:none;
+			}
+			
+			&.selected{
+				.number{
+					display:block;
+					opacity: 0.9;
+					font-size: 40px;
+					text-align: center;
+					padding-top: 5px;
+				}
+			}
+		}
+	}
+	
+	.self{
+		background:rgba(255,255,255,0.75);
+		border-radius:12px;
+		padding: 10px 0;
+		
+		h3{
+			margin-top:0;
+		}
+		
+		.pokemon{
+			cursor:pointer;
+		}
+	}
 }
 
 /* END SCREEN */

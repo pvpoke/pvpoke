@@ -18,7 +18,7 @@
 		</div>
 
 		<div class="custom-options">
-			<h3 class="section-title">Pokemon (<span class="poke-count">0</span> / 50)</h3>
+			<h3 class="section-title">Pokemon (<span class="poke-count">0</span> / <span class="poke-max-count">50</span>)</h3>
 			<p>Create or select a group of custom Pokemon below.</p>
 			<div class="rankings-container clear"></div>
 			<button class="add-poke-btn button">+ Add Pokemon</button>
