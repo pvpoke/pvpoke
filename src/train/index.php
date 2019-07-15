@@ -81,6 +81,7 @@ require_once '../header.php';
 					<div class="bar"></div>
 				</div>
 				<div class="pokemon">
+					<div class="shadow"></div>
 					<div class="main-sprite"></div>
 					<div class="secondary-sprite"></div>
 				</div>
@@ -94,6 +95,7 @@ require_once '../header.php';
 					<div class="bar"></div>
 				</div>
 				<div class="pokemon">
+					<div class="shadow"></div>
 					<div class="main-sprite"></div>
 					<div class="secondary-sprite"></div>
 				</div>
@@ -151,12 +153,18 @@ require_once '../header.php';
 				<div class="pokemon-container">
 					<div class="pokemon">
 						<div class="cp">cp 1500</div>
-						<div class="img-container"></div>
+						<div class="sprite-container">
+							<div class="main-sprite"></div>
+							<div class="secondary-sprite"></div>
+						</div>
 						<div class="name">Pokemon 1</div>
 					</div>
 					<div class="pokemon">
 						<div class="cp">cp 1500</div>
-						<div class="img-container"></div>
+						<div class="sprite-container">
+							<div class="main-sprite"></div>
+							<div class="secondary-sprite"></div>
+						</div>
 						<div class="name">Pokemon 2</div>
 					</div>
 				</div>

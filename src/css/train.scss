@@ -191,7 +191,7 @@
 			left:0;
 			width:100%;
 			height:100%;
-			background-image: url('../img/bg.jpg');
+			background-image: url('../img/train/pvp-bg.jpg');
 			background-repeat: no-repeat;
 			background-position: center bottom;
 		}
@@ -234,23 +234,18 @@
 				width:100px;
 				height:100px;
 				margin: 0 auto;
-
-				.main-sprite,
-				.secondary-sprite{
-					position:absolute;
-					top:0;
-					left:0;
-					width:100%;
-					height:100%;
-					background-size:600% 300%;
-				}
-
-				.main-sprite{
-					background-image:url('../img/train/substitute-sprite-main.png');
-				}
-
-				.secondary-sprite{
-					background-image:url('../img/train/substitute-sprite-secondary.png');
+				
+				.shadow{
+					width:151px;
+					height:62px;
+					background:url('../img/train/sprite-shadow.png');
+					background-size:100%;
+					background-repeat: no-repeat;
+					position: absolute;
+					z-index: 5;
+					top: 65px;
+					left: -25px;
+					opacity: 0.45;
 				}
 			}
 
@@ -271,6 +266,14 @@
 
 						@include transition(width, 0.2s, ease, 0.5s);
 					}
+					
+					&[color="yellow"]{
+						background:#eabd49;
+					}
+					
+					&[color="red"]{
+						background:#ea4949;
+					}
 				}
 			}
 		}
@@ -280,13 +283,13 @@
 		position:absolute;
 		bottom:0;
 		width:100%;
-		height:50%;
+		height:40%;
 
 		@include gradient(rgba(0,0,0,0), rgba(0,0,0,.85));
 
 		.move-bars{
 			position:absolute;
-			bottom:25%;
+			bottom:35%;
 			width:100%;
 
 			.move-bar{
@@ -490,17 +493,17 @@
 			display:flex;
 			justify-content:space-around;
 
-			.img-container{
-				width:70px;
-				height:70px;
-				border-radius:8px;
-				border:2px solid #ccc;
-				background:#888;
-				margin: 0 auto;
+			.sprite-container{
 				opacity:0.25;
 			}
+			
+			.name{
+				padding:5px;
+				border-radius:12px;
+				margin-top:5px;
+			}
 
-			.pokemon.active .img-container{
+			.pokemon.active .sprite-container{
 				opacity:1;
 			}
 		}
@@ -513,6 +516,7 @@
 		top: 37%;
 		opacity:0;
 		pointer-events: none;
+		z-index:15;
 
 		@include transition(all, 0.25s, ease, 0.25s);
 
@@ -690,6 +694,34 @@
 }
 
 /* POKEMON SPRITES */
+.sprite-container{
+	width:36px;
+	height:36px;
+	border:1px solid #0088a6;
+	border-radius:12px;
+	padding:10px;
+	background:#333;
+	margin: 0 auto;
+	position:relative;
+}
+
+.main-sprite,
+.secondary-sprite{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background-size:600% 300%;
+}
+
+.main-sprite{
+	background-image:url('../img/train/substitute-sprite-main.png');
+}
+
+.secondary-sprite{
+	background-image:url('../img/train/substitute-sprite-secondary.png');
+}
 
 .pokemon[type-1="bug"] .main-sprite,
 .pokemon[type-2="bug"] .secondary-sprite{

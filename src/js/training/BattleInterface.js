@@ -152,8 +152,16 @@ var BattlerMaster = (function () {
 					var pokemon = response.pokemon[i];
 
 					var $poke = $(".pokemon-container").eq(i);
+					var percent = (pokemon.hp / pokemon.stats.hp) * 100;
 
-					$poke.find(".hp .bar").css("width", ((pokemon.hp / pokemon.stats.hp) * 100)+"%" );
+					$poke.find(".hp .bar").css("width", percent+"%" );
+					if(percent <= 25){
+						$poke.find(".hp .bar").eq(1).attr("color", "red");
+					} else if(percent <= 50){
+						$poke.find(".hp .bar").eq(1).attr("color", "yellow");
+					} else{
+						$poke.find(".hp .bar").eq(1).attr("color", "green");
+					}
 
 					// If a switch has occured, update the Pokemon display and Charged Move buttons
 					if((activePokemon.length < i)||(activePokemon[i] != pokemon)){
@@ -355,8 +363,15 @@ var BattlerMaster = (function () {
 					if(team[i] != activePokemon[0]){
 						$(".switch-window .pokemon").eq(index).find(".cp").html(team[i].cp);
 						$(".switch-window .pokemon").eq(index).find(".name").html(team[i].speciesName);
+						$(".switch-window .pokemon").eq(index).find(".name").attr("class", "name " + team[i].types[0]);
 						$(".switch-window .pokemon").eq(index).attr("index", i);
-						$(".switch-window .pokemon").eq(index).find(".img-container").attr("class", "img-container " + team[i].types[0]);
+						$(".switch-window .pokemon").eq(index).attr("type-1", team[i].types[0]);
+						if(team[i].types[1] == "none"){
+							$(".switch-window .pokemon").eq(index).attr("type-2", team[i].types[0]);
+						} else{
+							$(".switch-window .pokemon").eq(index).attr("type-2", team[i].types[1]);
+						}
+						
 						if(team[i].hp > 0){
 							$(".switch-window .pokemon").eq(index).addClass("active");
 						} else{
