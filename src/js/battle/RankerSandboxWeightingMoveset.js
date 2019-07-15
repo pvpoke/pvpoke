@@ -98,6 +98,13 @@ var RankerMaster = (function () {
 
 				var allowedList = [];
 
+				if(cup.name == "hoenn"){
+					allowedList = ["sceptile", "grovyle", "combusken", "blaziken", "marshtomp", "swampert", "mightyena", "linoone", "beautifly", "dustox", "ludicolo", "shiftry", "swellow", "pelipper", "kirlia", "gardevoir", "masquerain", "breloom", "vigoroth", "slaking", "exploud", "shedinja", "hariyama", "nosepass", "delcatty", "sableye", "mawile", "lairon", "aggron", "medicham", "manectric", "plusle", "minun", "volbeat", "illumise", "roselia", "swalot", "sharpedo", "wailord", "camerupt", "torkoal", "grumpig", "vibrava", "flygon", "cacturne", "altaria", "zangoose", "serviper", "lunatone", "solrock", "whiscash", "crawdaunt", "claydol", "cradily", "armaldo", "milotic", "castform", "castfor_sunny", "castform_rainy", "castform_snowy", "banette", "dusclops", "tropius", "chimecho", "absol", "glalie", "sealeo", "walrein", "huntail", "gorebyss", "relicanth", "luvdisc", "shelgon", "salamence", "metang", "metagross", "regirock", "regice", "registeel", "latias", "latios", "kyogre", "groudon", "rayquaza", "deoxys_defense"]
+					// allowedList = ["sceptile", "grovyle", "combusken", "blaziken", "marshtomp", "swampert", "mightyena", "linoone", "beautifly", "dustox", " ludicolo", "shiftry"] //, " swellow", " pelipper", " kirlia", " gardevoir", " masquerain", " breloom", " vigoroth", " slaking", " exploud", " shedinja", " hariyama", " nosepass", " delcatty", " sableye", " mawile", " lairon", " aggron", " medicham", " manectric", " plusle", " minun", " volbeat", " illumise", " roselia", " swalot", " sharpedo", " wailord", " camerupt", " torkoal", " grumpig", " vibrava", " flygon", " cacturne", " altaria", " zangoose", " serviper", " lunatone", " solrock", "  whiscash", " crawdaunt", " claydol", " cradily", " armaldo", " milotic", " castform", " castfor_sunny", " castform_rainy", " castform_snowy", " banette", " dusclops", " tropius", " chimecho", " absol", " glalie", " sealeo", " walrein", " huntail", " gorebyss", " relicanth", " luvdisc", " shelgon", " salamence", " metang", " metagross", " regirock", " regice", " registeel", " latias", " latios", " kyogre", " groudon", " rayquaza", " deoxys_defense"];
+					// console.log('using HOENN allowed list');
+					
+				}
+
 				for(var i = 0; i < gm.data.pokemon.length; i++){
 
 					if(gm.data.pokemon[i].fastMoves.length > 0){ // Only add Pokemon that have move data
