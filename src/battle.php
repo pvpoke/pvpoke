@@ -131,13 +131,13 @@ require_once 'header.php';
 					</table>
 					<p class="center">Click or tap to view battles.</p>
 				</div>
-				
+
 				<h2 class="center">Breakpoints &amp; Bulkpoints</h2>
-				
+
 				<div class="breakpoints-section">
 					<p>In Pokemon GO, damage is dealt in whole numbers. A breakpoint is when a Pokemon has high enough Attack to deal 1 more damage with their Fast Move. A bulkpoint is when a Pokemon has high enough Defense to take 1 less damage from their opponent's Fast Move.</p>
 					<p><span class="name-attacker">Pokemon</span> can reach the following breakpoints against this <span class="name-defender">Pokemon</span>:</p>
-					
+
 					<table class="stats-table breakpoints" cellspacing="0">
 						<tr>
 							<td><span class="name name-fast">Move</span></td>
@@ -148,9 +148,9 @@ require_once 'header.php';
 						<tbody class="output">
 						</tbody>
 					</table>
-					
+
 					<p><span class="name-attacker">Pokemon</span> can reach the following bulkpoints against this <span class="name-defender">Pokemon</span>:</p>
-					
+
 					<table class="stats-table bulkpoints" cellspacing="0">
 						<tr>
 							<td><span class="name name-fast">Move</span></td>
@@ -324,6 +324,22 @@ require_once 'header.php';
 		<div class="stat-dpe charged"><span class="stat"></span> dpe</div>
 	</div>
 	<p class="wait hide">This Pokemon will take no action this turn.</p>
+
+	<select class="charge-select charged">
+		<option value="12">100% Charge (12/12)</option>
+		<option value="11">92% Charge (11/12)</option>
+		<option value="10">83% Charge (10/12)</option>
+		<option value="9">75% Charge (9/12)</option>
+		<option value="8">67% Charge (8/12)</option>
+		<option value="7">58% Charge (7/12)</option>
+		<option value="6">50% Charge (6/12)</option>
+		<option value="5">42% Charge (5/12)</option>
+		<option value="4">33% Charge (4/12)</option>
+		<option value="3">25% Charge (3/12)</option>
+		<option value="2">17% Charge (2/12)</option>
+		<option value="1">8% Charge (1/12)</option>
+		<option value="0">0% Charge (0/12)</option>
+	</select>
 
 	<div class="check shields charged"><span></span>Shield this attack</div>
 	<div class="check buffs charged"><span></span>Apply buffs/debuffs</div>

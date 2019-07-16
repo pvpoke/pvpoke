@@ -96,6 +96,7 @@ var InterfaceMaster = (function () {
 				$(".sandbox-btn").click(toggleSandboxMode);
 				$(".timeline-container").on("click",".item",timelineEventClick);
 				$("body").on("change", ".modal .move-select", selectSandboxMove);
+				$("body").on("change", ".modal .charge-select", selectSandboxChargePower);
 				$("body").on("mousedown", ".modal .button.apply", applyActionChanges);
 				$(".sandbox.clear-btn").click(clearSandboxClick);
 				$("body").on("click", ".modal .sandbox-clear-confirm .button", confirmClearSandbox);
@@ -640,73 +641,73 @@ var InterfaceMaster = (function () {
 						$(".stats-table .stat-charged-time").eq(i).html(turnsToChargedMove[i]+" ("+(turnsToChargedMove[i]*.5)+"s)");
 					}
 				}
-				
+
 				// Calculate breakpoints and bulkpoints
-				
+
 				var breakpoints = pokemon[0].calculateBreakpoints(pokemon[1]);
-				
+
 				// Output to table
-				
+
 				$(".breakpoints-section .name-attacker").html(pokemon[0].speciesName);
 				$(".breakpoints-section .name-defender").html(pokemon[1].speciesName);
 				$(".stats-table.breakpoints .name-fast").html(pokemon[0].fastMove.name + " Damage");
 				$(".stats-table.breakpoints .output").html('<tr></tr>');
-				
+
 				for(var i = breakpoints.length-1; i >= 0; i--){
 					var attack = Math.round(breakpoints[i].attack * 100) / 100;
 					var guaranteedAttack = Math.round(breakpoints[i].guaranteedAttack * 100) / 100;
-					
+
 					if(guaranteedAttack == -1){
 						guaranteedAttack = "-";
 					}
 
 					// Find the best combinations that reaches this value
 					var combinations = pokemon[0].generateIVCombinations("overall", 1, 2, [{stat: "atk", value: breakpoints[i].attack}]);
-					
+
 					$(".stats-table.breakpoints .output").append("<tr class=\"toggle\"><td>"+breakpoints[i].damage+"</td><td>"+attack+"</td><td>"+guaranteedAttack+"</td><td class=\"ivs\"><div class=\"button\" level=\""+combinations[0].level+"\" atk=\""+combinations[0].ivs.atk+"\" def=\""+combinations[0].ivs.def+"\" hp=\""+combinations[0].ivs.hp+"\">"+combinations[0].level+ " "+combinations[0].ivs.atk+"/"+combinations[0].ivs.def+"/"+combinations[0].ivs.hp+"</div></td></tr>");
-					
+
 					if(breakpoints[i].damage == pokemon[0].fastMove.damage){
 						$(".stats-table.breakpoints .output tr").last().addClass("bold");
 					}
 
 				}
-				
+
 				var bulkpoints = pokemon[0].calculateBulkpoints(pokemon[1]);
 
 				$(".stats-table.bulkpoints .name-fast").html(pokemon[1].fastMove.name + " Damage");
 				$(".stats-table.bulkpoints .output").html('<tr></tr>');
-				
+
 				for(var i = 0; i < bulkpoints.length; i++){
 					var defense = Math.round(bulkpoints[i].defense * 100) / 100;
 					var guaranteedDefense = Math.round(bulkpoints[i].guaranteedDefense * 100) / 100;
-					
+
 					if(guaranteedDefense == -1){
 						guaranteedDefense = "-";
 					}
-					
+
 
 					// Find the best combinations that reaches this value
 					var combinations = pokemon[0].generateIVCombinations("overall", 1, 2, [{stat: "def", value: bulkpoints[i].defense}]);
-					
+
 					$(".stats-table.bulkpoints .output").append("<tr class=\"toggle\"><td>"+bulkpoints[i].damage+"</td><td>"+defense+"</td><td>"+guaranteedDefense+"</td><td class=\"ivs\"><div class=\"button\" level=\""+combinations[0].level+"\" atk=\""+combinations[0].ivs.atk+"\" def=\""+combinations[0].ivs.def+"\" hp=\""+combinations[0].ivs.hp+"\">"+combinations[0].level+ " "+combinations[0].ivs.atk+"/"+combinations[0].ivs.def+"/"+combinations[0].ivs.hp+"</div></td></tr>");
-					
+
 					if(bulkpoints[i].damage == pokemon[1].fastMove.damage){
 						$(".stats-table.bulkpoints .output tr").last().addClass("bold");
 					}
 
 				}
-				
+
 				// Find a golden combination that reaches the best breakpoint and bulkpoint if one exists
-				
+
 				var bestAttack = breakpoints[breakpoints.length-1].attack;
 				var bestDefense = bulkpoints[0].defense;
 				var combinations = pokemon[0].generateIVCombinations("overall", 1, 2, [
 					{stat: "atk", value: bestAttack},
 					{stat: "def", value: bestDefense}
 				]);
-				
+
 				$(".breakpoints-section .golden-combination").html('');
-				
+
 				if((combinations.length > 0)&&(breakpoints.length > 1)&&(bulkpoints.length > 1)){
 					$(".breakpoints-section .golden-combination").append("<p><div class=\"button\" level=\""+combinations[0].level+"\" atk=\""+combinations[0].ivs.atk+"\" def=\""+combinations[0].ivs.def+"\" hp=\""+combinations[0].ivs.hp+"\">"+combinations[0].level+ " "+combinations[0].ivs.atk+"/"+combinations[0].ivs.def+"/"+combinations[0].ivs.hp+"</div> "+pokemon[0].speciesName+" reaches the best breakpoint and bulkpoint against this "+pokemon[1].speciesName+".</p>");
 				}
@@ -764,7 +765,7 @@ var InterfaceMaster = (function () {
 				var pokemonList = multiSelector.getPokemonList();
 				var custom = (battle.getCup().name == "custom");
 				var initialize = (custom == false);
-				
+
 				if(! custom){
 					pokemonList = [];
 				}
@@ -1664,27 +1665,27 @@ var InterfaceMaster = (function () {
 				$("html, body").animate({ scrollTop: $(".battle-results."+self.battleMode).offset().top - 185 }, 500);
 
 			}
-			
+
 			// Select and enter an IV combination displayed in the breakpoint table
 
 			function selectBreakpointIVs(e){
 				$(".poke.single").first().find(".advanced-section").addClass("active");
-				
+
 				var level = parseFloat($(e.target).attr("level"));
 				var atk = parseInt($(e.target).attr("atk"));
 				var def = parseInt($(e.target).attr("def"));
 				var hp = parseInt($(e.target).attr("hp"));
-				
+
 				var pokemon = pokeSelectors[0].getPokemon();
-				
+
 				if(pokemon){
 					pokemon.setLevel(level);
 					pokemon.setIV("atk", atk);
 					pokemon.setIV("def", def);
 					pokemon.setIV("hp", hp);
 					pokeSelectors[0].update();
-					
-					// Set level and iv fields		
+
+					// Set level and iv fields
 					$(".poke.single").first().find("input.level").val(pokemon.level);
 					$(".poke.single").first().find("input.iv[iv='atk']").val(pokemon.ivs.atk);
 					$(".poke.single").first().find("input.iv[iv='def']").val(pokemon.ivs.def);
@@ -1933,6 +1934,35 @@ var InterfaceMaster = (function () {
 				setModalClosePrevention(100);
 			}
 
+			// Change display info for sandbox move selection
+
+			function selectSandboxChargePower(e){
+
+				if(! sandboxPokemon){
+					return;
+				}
+
+				var moveId = $(".modal .move-select option:selected").val();
+				var chargeMultiplier = parseInt($(".modal .charge-select option:selected").val()) / 12;
+				var move;
+
+				for(var i = 0; i < sandboxPokemon.chargedMoves.length; i++){
+					if(moveId == sandboxPokemon.chargedMoves[i].moveId){
+						move = sandboxPokemon.chargedMoves[i];
+					}
+				}
+
+				// Fill in move stats
+				var damage = Math.floor((move.damage-1)*chargeMultiplier)+1;
+
+				$(".modal .stat-dmg span").html(damage);
+				$(".modal .stat-dpe span").html(Math.round( (damage / move.energy) * 100) / 100);
+
+				// Briefly prevent the modal window from closing by accident
+
+				setModalClosePrevention(100);
+			}
+
 			// Submit sandbox action changes
 
 			function applyActionChanges(e){
@@ -1962,6 +1992,7 @@ var InterfaceMaster = (function () {
 						// Insert new action
 
 						if(selectedValue != "wait"){
+							var charge = parseInt($(".modal .charge-select option:selected").val() / 12);
 							actions.push(new TimelineAction(
 								"charged",
 								sandboxPokemon.index,
@@ -1969,7 +2000,8 @@ var InterfaceMaster = (function () {
 								selectedIndex-1,
 								{
 									shielded: $(".modal .check.shields").hasClass("on"),
-									buffs: $(".modal .check.buffs").hasClass("on")
+									buffs: $(".modal .check.buffs").hasClass("on"),
+									charge: charge
 								}
 							));
 						} else{

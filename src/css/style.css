@@ -437,11 +437,11 @@ header {
   height: 12px;
 }
 .poke .poke-stats .advanced-section .maximize-section .maximize-stats {
-  font-size: 11px;
+  font-size: 12px;
   margin-top: 5px;
 }
 .poke .poke-stats .advanced-section .maximize-section .restore-default {
-  font-size: 11px;
+  font-size: 12px;
 }
 .poke .poke-stats .advanced-section.active .fields {
   display: block;
@@ -2030,6 +2030,10 @@ select, input {
 }
 .modal .sandbox-move-select .move-select {
   font-size: 18px;
+  margin-bottom: 10px;
+}
+.modal .sandbox-move-select .charge-select {
+  max-width: 200px;
   margin-bottom: 10px;
 }
 .modal .sandbox-move-select .move-stats {
