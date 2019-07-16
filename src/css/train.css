@@ -493,14 +493,16 @@
         font-size: 40px;
         text-align: center;
         padding-top: 5px; }
-  .team-select .self {
+  .team-select .self, .team-select .opponent {
     background: rgba(255, 255, 255, 0.75);
     border-radius: 12px;
     padding: 10px 0; }
-    .team-select .self h3 {
+    .team-select .self h3, .team-select .opponent h3 {
       margin-top: 0; }
-    .team-select .self .pokemon {
+    .team-select .self .pokemon, .team-select .opponent .pokemon {
       cursor: pointer; }
+  .team-select .lets-go-btn {
+    display: none; }
 
 /* END SCREEN */
 .end-screen-container {

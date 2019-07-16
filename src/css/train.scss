@@ -687,7 +687,7 @@
 		}
 	}
 	
-	.self{
+	.self, .opponent{
 		background:rgba(255,255,255,0.75);
 		border-radius:12px;
 		padding: 10px 0;
@@ -699,6 +699,10 @@
 		.pokemon{
 			cursor:pointer;
 		}
+	}
+	
+	.lets-go-btn{
+		display:none;
 	}
 }
 

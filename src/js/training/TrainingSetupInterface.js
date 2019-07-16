@@ -46,13 +46,14 @@ var InterfaceMaster = (function () {
 				$(".mode-select").on("change", selectMode);
 				$(".team-method-select").on("change", selectTeamMethod);
 				$(".battle-btn").on("click", startBattle);
+				$(".lets-go-btn").on("click", startTournamentBattle);
 				$("body").on("click", ".self .roster .pokemon", selectRosterPokemon);
 			};
 
 			// Hide setup after initiating battle
 
 			this.close = function(){
-				for(var i = 0; i < 3; i++){
+				for(var i = 0; i < 4; i++){
 					$(".section").eq(i).slideUp(500);
 				}
 
@@ -170,18 +171,73 @@ var InterfaceMaster = (function () {
 				var $el = $(e.target).closest(".pokemon")
 				var index = $el.attr("index");
 				
-				// Insert or replace Pokemon on the team selection
-				if(currentTeamIndex >= currentTeam.length){
-					currentTeam.push(playerRoster[currentTeamIndex]);
+				
+				if(! $el.hasClass("selected")){
+					// Remove class and attributes from previously selected Pokemon of the same index
+					$(".self .roster .pokemon[team-index="+currentTeamIndex+"]").removeClass("selected");
+
+					// Insert or replace Pokemon on the team selection
+					if(currentTeamIndex >= currentTeam.length){
+						currentTeam.push(playerRoster[index]);
+					} else{
+						currentTeam.splice(currentTeamIndex, 1, playerRoster[index]);
+					}
+
+					$el.addClass("selected");
+					$el.attr("team-index", currentTeamIndex);
+					$el.find(".number").html((currentTeamIndex+1));
+
+					currentTeamIndex = Math.min(currentTeamIndex+1, 2);
 				} else{
-					currentTeam.splice(index, 1, playerRoster[currentTeamIndex]);
+					// Deselect a Pokemon
+					
+					$el.removeClass("selected");
+					currentTeam[parseInt($el.attr("team-index"))] = null;
+					currentTeamIndex = parseInt($el.attr("team-index"));
+				}
+
+				// Check to see if a full team is selected to show the continue button
+				var teamCount = 0;
+				
+				for(var i = 0; i < currentTeam.length; i++){
+					if(currentTeam[i] !== null){
+						teamCount++;
+					}
 				}
 				
-				$el.addClass("selected");
-				$el.find(".number").html(currentTeamIndex+1);
+				if(teamCount == 3){
+					$(".team-select .lets-go-btn").css("display","block");
+				} else{
+					$(".team-select .lets-go-btn").hide();
+				}
+			}
+			
+			// Start a tournament battle after selecting a team
+			
+			function startTournamentBattle(e){
+				var teams = [
+					 multiSelectors[0].getPokemonList(),
+					 multiSelectors[1].getPokemonList()
+					];
+				var difficulty = $(".difficulty-select option:selected").val();
+
+				if((teams[0].length < partySize)||((teamSelectMethod == "manual")&&(teams[1].length < partySize))){
+					modalWindow("Select Teams", $("<p>Please select a full team.</p>"));
+
+					return false;
+				}
+
+				var props = {
+					teams: teams,
+					mode: mode,
+					difficulty: difficulty,
+					teamSelectMethod: teamSelectMethod,
+					partySize: partySize,
+					league: battle.getCP(),
+					cup: battle.getCup().name
+					};
 				
-				currentTeamIndex = Math.min(currentTeamIndex+1, 2);
-				
+				handler.startTournamentBattle(currentTeam, props);
 			}
 
 			// Event handler for changing the league select

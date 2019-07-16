@@ -12,7 +12,7 @@ require_once '../header.php';
 	<?php require '../modules/leagueselect.php'; ?>
 	<?php require '../modules/cupselect.php'; ?>
 	<p>Select your team and options below to battle against a CPU opponent.</p>
-	<p>This tool is designed to supplement your in-game battles. Gain experience or try new lineups in a pressure free environment, and against an engaging AI that can grow with you.</p>
+	<p>This tool is a training and learning resource intended to supplement your in-game battles. Experiment with new lineups or practice in a pressure free enviornment against a difficulty of your choice.</p>
 </div>
 
 <div class="hide">
@@ -65,7 +65,7 @@ require_once '../header.php';
 </div>
 
 <div class="section battle">
-	<div class="battle-window" style="display:inline-block;">
+	<div class="battle-window">
 		<img class="img-block" src="<?php echo $WEB_ROOT; ?>img/train/battle-window-block.png" />
 		<div class="top">
 			<div class="timer">

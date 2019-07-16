@@ -69,6 +69,19 @@ function MatchHandler(){
 			interface.openTeamSelect(players);
 		}
 	}
+	
+	// Initiate a new tournament battle
+
+	this.startTournamentBattle = function(team, properties){
+		var player = players[0];
+		var opponent = players[1];
+		
+		player.setTeam(team);
+		opponent.generateTeam(player.getRoster());
+
+		interface.close();
+		battler.init(properties, battle, players);
+	}
 
 	// Return to the setup interface
 
