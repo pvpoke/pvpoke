@@ -46,11 +46,11 @@ var InterfaceMaster = (function () {
 
 				// Force 1500 if not general
 
-				if(cup != 'all'){
-					league = 1500;
+				// if(cup != 'all'){
+				// 	league = 1500;
 
-					$(".league-select option[value=\"1500\"]").prop("selected","selected");
-				}
+				// 	$(".league-select option[value=\"1500\"]").prop("selected","selected");
+				// }
 
 				/* This timeout allows the interface to display the loading message before
 				being thrown into the data loading loop */
