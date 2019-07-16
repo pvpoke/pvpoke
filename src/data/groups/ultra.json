@@ -96,8 +96,8 @@
 	},
 	{
 		"speciesId":"muk_alolan",
-		"fastMove":"SNARL",
-		"chargedMoves":["DARK_PULSE","GUNK_SHOT"]
+		"fastMove":"POISON_JAB",
+		"chargedMoves":["DARK_PULSE","ACID_SPRAY"]
 	},
 	{
 		"speciesId":"snorlax",
@@ -113,6 +113,11 @@
 		"speciesId":"mewtwo",
 		"fastMove":"PSYCHO_CUT",
 		"chargedMoves":["SHADOW_BALL","FOCUS_BLAST"]
+	},
+	{
+		"speciesId":"mewtwo_armored",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["ROCK_SLIDE","DYNAMIC_PUNCH"]
 	},
 	{
 		"speciesId":"mew",
@@ -148,5 +153,10 @@
 		"speciesId":"magneton",
 		"fastMove":"THUNDER_SHOCK",
 		"chargedMoves":["DISCHARGE","MAGNET_BOMB"]
+	},
+	{
+		"speciesId":"togekiss",
+		"fastMove":"CHARM",
+		"chargedMoves":["ANCIENT_POWER","FLAMETHROWER"]
 	}
 ]

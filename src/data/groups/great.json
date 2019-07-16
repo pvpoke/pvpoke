@@ -25,11 +25,6 @@
 		"chargedMoves":["SKY_ATTACK","FLASH_CANNON"]
 	},
 	{
-		"speciesId":"blastoise",
-		"fastMove":"WATER_GUN",
-		"chargedMoves":["HYDRO_CANNON","ICE_BEAM"]
-	},
-	{
 		"speciesId":"venusaur",
 		"fastMove":"VINE_WHIP",
 		"chargedMoves":["FRENZY_PLANT","SLUDGE_BOMB"]
@@ -80,11 +75,6 @@
 		"chargedMoves":["FOUL_PLAY","LAST_RESORT"]
 	},
 	{
-		"speciesId":"kingdra",
-		"fastMove":"DRAGON_BREATH",
-		"chargedMoves":["OUTRAGE","HYDRO_PUMP"]
-	},
-	{
 		"speciesId":"whiscash",
 		"fastMove":"MUD_SHOT",
 		"chargedMoves":["MUD_BOMB","BLIZZARD"]
@@ -92,7 +82,7 @@
 	{
 		"speciesId":"quagsire",
 		"fastMove":"MUD_SHOT",
-		"chargedMoves":["EARTHQUAKE","STONE_EDGE"]
+		"chargedMoves":["ACID_SPRAY","STONE_EDGE"]
 	},
 	{
 		"speciesId":"forretress",
@@ -107,12 +97,12 @@
 	{
 		"speciesId":"muk_alolan",
 		"fastMove":"POISON_JAB",
-		"chargedMoves":["DARK_PULSE","SLUDGE_WAVE"]
+		"chargedMoves":["DARK_PULSE","ACID_SPRAY"]
 	},
 	{
 		"speciesId":"sableye",
 		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["FOUL_PLAY","POWER_GEM"]
+		"chargedMoves":["FOUL_PLAY","SHADOW_SNEAKS"]
 	},
 	{
 		"speciesId":"marowak_alolan",
@@ -138,5 +128,40 @@
 		"speciesId":"haunter",
 		"fastMove":"SHADOW_CLAW",
 		"chargedMoves":["SHADOW_PUNCH","SHADOW_BALL"]
+	},
+	{
+		"speciesId":"toxicroak",
+		"fastMove":"COUNTER",
+		"chargedMoves":["MUD_BOMB","SLUDGE_BOMB"]
+	},
+	{
+		"speciesId":"clefable",
+		"fastMove":"CHARM",
+		"chargedMoves":["METEOR_MASH","PSYCHIC"]
+	},
+	{
+		"speciesId":"hypno",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["SHADOW_BALL","THUNDER_PUNCH"]
+	},
+	{
+		"speciesId":"bronzong",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["PSYSHOCK","FLASH_CANNON"]
+	},
+	{
+		"speciesId":"wormadam_trash",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["IRON_HEAD","BUG_BUZZ"]
+	},
+	{
+		"speciesId":"togekiss",
+		"fastMove":"CHARM",
+		"chargedMoves":["ANCIENT_POWER","FLAMETHROWER"]
+	},
+	{
+		"speciesId":"lugia",
+		"fastMove":"DRAGON_TAIL",
+		"chargedMoves":["SKY_ATTACK","FUTURE_SIGHT"]
 	}
 ]

@@ -128,13 +128,15 @@ function Battle(){
 
 	// Calculate damage given an attacker, defender, and move, requires move to be initialized first
 
-	this.calculateDamage = function(attacker, defender, move){
-
+	this.calculateDamage = function(attacker, defender, move, charge){
+		charge = typeof charge !== 'undefined' ? charge : 1;
+		
 		var bonusMultiplier = 1.3;
 		var effectiveness = defender.typeEffectiveness[move.type];
+		var chargeMultiplier = charge; // The amount of charge for a Charged Move
 
 
-		var damage = Math.floor(move.power * move.stab * ( attacker.getEffectiveStat(0) / defender.getEffectiveStat(1)) * effectiveness * 0.5 * bonusMultiplier) + 1;
+		var damage = Math.floor(move.power * move.stab * ( attacker.getEffectiveStat(0) / defender.getEffectiveStat(1)) * effectiveness * chargeMultiplier * 0.5 * bonusMultiplier) + 1;
 
 		return damage;
 	}
@@ -906,7 +908,7 @@ function Battle(){
 				// Validate this move can be used
 
 				if(poke.energy >= move.energy){
-					self.useMove(poke, opponent, move, action.settings.shielded, action.settings.buffs);
+					self.useMove(poke, opponent, move, action.settings.shielded, action.settings.buffs, action.settings.charge);
 
 					chargedMoveUsed = true;
 					roundChargedMoveUsed++;
@@ -925,10 +927,11 @@ function Battle(){
 
 	// Use a move on an opposing Pokemon and produce a Timeline Event
 
-	this.useMove = function(attacker, defender, move, forceShields, forceBuff){
-
+	this.useMove = function(attacker, defender, move, forceShields, forceBuff, charge){
+		charge = typeof charge !== 'undefined' ? charge : 1;
+		
 		var type = "fast " + move.type;
-		var damage = self.calculateDamage(attacker, defender, move);
+		var damage = self.calculateDamage(attacker, defender, move, charge);
 		move.damage = damage;
 
 		var displayTime = time;
@@ -1227,6 +1230,7 @@ function Battle(){
 					{
 						shielded: shielded,
 						buffs: buffs,
+						charge: 1,
 						priority: pokemon[event.actor].priority
 					}
 				));

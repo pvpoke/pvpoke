@@ -1866,6 +1866,11 @@ var InterfaceMaster = (function () {
 					if(sandboxAction.settings.buffs){
 						$(".modal .check.buffs").addClass("on");
 					}
+					
+					if(sandboxAction.settings.charge){
+						var chargeInt = parseInt(sandboxAction.settings.charge * 12);
+						$(".modal .charge-select option[value=\""+chargeInt+"\"]").prop("selected", "selected");
+					}
 				}
 			}
 
@@ -1992,7 +1997,7 @@ var InterfaceMaster = (function () {
 						// Insert new action
 
 						if(selectedValue != "wait"){
-							var charge = parseInt($(".modal .charge-select option:selected").val() / 12);
+							var charge = parseInt($(".modal .charge-select option:selected").val()) / 12;
 							actions.push(new TimelineAction(
 								"charged",
 								sandboxPokemon.index,
@@ -2019,6 +2024,8 @@ var InterfaceMaster = (function () {
 						// Modify existing action
 
 						if(selectedValue != "wait"){
+							var charge = parseInt($(".modal .charge-select option:selected").val()) / 12;
+							
 							actions[sandboxActionIndex] = new TimelineAction(
 								"charged",
 								sandboxPokemon.index,
@@ -2026,7 +2033,8 @@ var InterfaceMaster = (function () {
 								selectedIndex-1,
 								{
 									shielded: $(".modal .check.shields").hasClass("on"),
-									buffs: $(".modal .check.buffs").hasClass("on")
+									buffs: $(".modal .check.buffs").hasClass("on"),
+									charge: charge
 								}
 							);
 						} else{
