@@ -42,6 +42,12 @@ function Player(i, ai, b){
 
 	this.setRoster = function(val){
 		roster = val;
+		
+		// For team generation purposes, give each Pokemon 2 shields and fully reset
+		for(var i = 0; i < roster.length; i++){
+			roster[i].setShields(2);
+			roster[i].fullReset();
+		}
 	}
 
 	// Get current team
