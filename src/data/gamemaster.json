@@ -7855,7 +7855,7 @@
         },
         "types": ["water", "ground"],
         "fastMoves": ["MUD_SHOT", "WATER_GUN"],
-        "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "SURF"],
+        "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "SURF", "HYDRO_CANNON", "MUDDY_WATER"],
         "defaultIVs": {
             "cp1500": [19, 3, 15, 2],
             "cp2500": [36, 0, 9, 1]
@@ -9960,7 +9960,7 @@
         "energyGain": 0,
         "cooldown": 500
     }, {
-        "moveId": "MUDDY_WATTER",
+        "moveId": "MUDDY_WATER",
         "name": "Muddy Water",
         "type": "water",
         "power": 35,
