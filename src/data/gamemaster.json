@@ -9960,6 +9960,17 @@
         "energyGain": 0,
         "cooldown": 500
     }, {
+        "moveId": "MUDDY_WATTER",
+        "name": "Muddy Water",
+        "type": "water",
+        "power": 35,
+        "energy": 35,
+        "energyGain": 0,
+        "cooldown": 1000,
+		"buffs": [-1, 0],
+        "buffTarget": "opponent",
+        "buffApplyChance": ".3"
+    }, {
         "moveId": "MUD_SHOT",
         "name": "Mud Shot",
         "type": "ground",
