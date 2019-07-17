@@ -6,6 +6,7 @@
 		"energyGuessRange": 15,
 		"moveGuessCertainty": 1,
 		"reactionTime": 12,
+		"ivComboRange": 3000,
 		"strategies": [
 			"DEFAULT",
 			"SHIELD"
@@ -18,6 +19,7 @@
 		"energyGuessRange": 10,
 		"moveGuessCertainty": 2,
 		"reactionTime": 8,
+		"ivComboRange": 2000,
 		"strategies": [
 			"DEFAULT",
 			"SHIELD",
@@ -31,6 +33,7 @@
 		"energyGuessRange": 5,
 		"moveGuessCertainty": 3,
 		"reactionTime": 4,
+		"ivComboRange": 1000,
 		"strategies": [
 			"DEFAULT",
 			"SHIELD",
@@ -47,6 +50,7 @@
 		"energyGuessRange": 0,
 		"moveGuessCertainty": 4,
 		"reactionTime": 0,
+		"ivComboRange": 250,
 		"strategies": [
 			"DEFAULT",
 			"SHIELD",
@@ -56,7 +60,7 @@
 			"FARM_ENERGY",
 			"BAIT_SHIELDS",
 			"WAIT_CLOCK",
-			"PROTECT_SWITCH_ADVANTAGE",
+			"PRESERVE_SWITCH_ADVANTAGE",
 			"PIGGYBACK"
 		]
 	}

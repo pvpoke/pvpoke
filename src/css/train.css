@@ -139,9 +139,13 @@
           -o-transform: scaleX(-1);
           -ms-transform: scaleX(-1);
           transform: scaleX(-1); }
+          .battle-window .scene .pokemon-container.self .pokemon .main-sprite, .battle-window .scene .pokemon-container.self .pokemon .secondary-sprite {
+            z-index: 10; }
       .battle-window .scene .pokemon-container.opponent {
         bottom: 55%;
         right: 25%; }
+        .battle-window .scene .pokemon-container.opponent .shield-sprite {
+          z-index: 20; }
       .battle-window .scene .pokemon-container h3 {
         display: inline-block;
         padding: 5px;
@@ -170,6 +174,46 @@
           top: 65px;
           left: -25px;
           opacity: 0.45; }
+        .battle-window .scene .pokemon-container .pokemon .shield-sprite-container {
+          position: absolute;
+          top: 0;
+          left: 0; }
+          .battle-window .scene .pokemon-container .pokemon .shield-sprite-container.active .shield-sprite {
+            opacity: .85; }
+          .battle-window .scene .pokemon-container .pokemon .shield-sprite-container .shield-sprite {
+            width: 65px;
+            height: 55px;
+            background: url("../img/train/shield.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: absolute;
+            opacity: 0; }
+            .battle-window .scene .pokemon-container .pokemon .shield-sprite-container .shield-sprite:nth-of-type(1) {
+              -webkit-transition: all 0.75s ease 0s;
+              -moz-transition: all 0.75s ease 0s;
+              -o-transition: all 0.75s ease 0s;
+              transition: all 0.75s ease 0s;
+              top: -15px; }
+            .battle-window .scene .pokemon-container .pokemon .shield-sprite-container .shield-sprite:nth-of-type(2) {
+              -webkit-transition: all 0.75s ease 0.05s;
+              -moz-transition: all 0.75s ease 0.05s;
+              -o-transition: all 0.75s ease 0.05s;
+              transition: all 0.75s ease 0.05s;
+              top: 15px;
+              left: 52px; }
+            .battle-window .scene .pokemon-container .pokemon .shield-sprite-container .shield-sprite:nth-of-type(3) {
+              -webkit-transition: all 0.75s ease 0.15s;
+              -moz-transition: all 0.75s ease 0.15s;
+              -o-transition: all 0.75s ease 0.15s;
+              transition: all 0.75s ease 0.15s;
+              top: 45px; }
+            .battle-window .scene .pokemon-container .pokemon .shield-sprite-container .shield-sprite:nth-of-type(4) {
+              -webkit-transition: all 0.75s ease 0.2s;
+              -moz-transition: all 0.75s ease 0.2s;
+              -o-transition: all 0.75s ease 0.2s;
+              transition: all 0.75s ease 0.2s;
+              top: 15px;
+              left: -52px; }
       .battle-window .scene .pokemon-container .hp.bar-back {
         border: 2px solid #666;
         height: 20px;
@@ -272,11 +316,12 @@
       text-transform: uppercase;
       cursor: pointer; }
     .battle-window .shield-window .container .shield {
-      width: 100px;
-      height: 100px;
+      width: 109px;
+      height: 94px;
       margin: 1em auto;
       cursor: pointer;
-      background: #cc3388; }
+      background: url("../img/train/shield.png");
+      background-size: contain; }
   .battle-window .shield-window, .battle-window .switch-window, .battle-window .charge-window {
     position: absolute;
     height: 50%;
@@ -365,7 +410,7 @@
     top: 37%;
     opacity: 0;
     pointer-events: none;
-    z-index: 15;
+    z-index: 25;
     -webkit-transition: all 0.25s ease 0.25s;
     -moz-transition: all 0.25s ease 0.25s;
     -o-transition: all 0.25s ease 0.25s;
@@ -408,6 +453,16 @@
   .battle-window[phase="suspend_charged_shield"] .controls .move-bars {
     display: none; }
   .battle-window[phase="suspend_charged_shield"] .scene {
+    -moz-transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    transform: scale(0.8); }
+  .battle-window[phase="suspend_charged_no_shields"] .animate-message {
+    opacity: 1; }
+  .battle-window[phase="suspend_charged_no_shields"] .controls .move-bars {
+    display: none; }
+  .battle-window[phase="suspend_charged_no_shields"] .scene {
     -moz-transform: scale(0.8);
     -webkit-transform: scale(0.8);
     -o-transform: scale(0.8);
@@ -551,7 +606,8 @@
   position: relative; }
 
 .main-sprite,
-.secondary-sprite {
+.secondary-sprite,
+.white-sprite {
   position: absolute;
   top: 0;
   left: 0;
@@ -564,6 +620,17 @@
 
 .secondary-sprite {
   background-image: url("../img/train/substitute-sprite-secondary.png"); }
+
+.white-sprite {
+  -webkit-transition: opacity 0.75s ease 0s;
+  -moz-transition: opacity 0.75s ease 0s;
+  -o-transition: opacity 0.75s ease 0s;
+  transition: opacity 0.75s ease 0s;
+  background-image: url("../img/train/substitute-sprite-white.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity: 0;
+  z-index: 25; }
 
 .pokemon[type-1="bug"] .main-sprite,
 .pokemon[type-2="bug"] .secondary-sprite {
@@ -680,6 +747,10 @@
   -o-transform: scale(0, 0);
   -ms-transform: scale(0, 0);
   transform: scale(0, 0); }
+  .battle-window .scene .pokemon-container.animate-switch .pokemon .white-sprite {
+    opacity: 1; }
+  .battle-window .scene .pokemon-container.animate-switch .pokemon .shadow {
+    display: none; }
 .battle-window .scene .pokemon-container.animate-switch .hp, .battle-window .scene .pokemon-container.animate-switch .name, .battle-window .scene .pokemon-container.animate-switch .messages {
   display: none; }
 

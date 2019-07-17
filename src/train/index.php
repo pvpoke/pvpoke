@@ -98,6 +98,13 @@ require_once '../header.php';
 					<div class="shadow"></div>
 					<div class="main-sprite"></div>
 					<div class="secondary-sprite"></div>
+					<div class="white-sprite"></div>
+					<div class="shield-sprite-container">
+						<div class="shield-sprite"></div>
+						<div class="shield-sprite"></div>
+						<div class="shield-sprite"></div>
+						<div class="shield-sprite"></div>
+					</div>
 				</div>
 			</div>
 
@@ -112,6 +119,13 @@ require_once '../header.php';
 					<div class="shadow"></div>
 					<div class="main-sprite"></div>
 					<div class="secondary-sprite"></div>
+					<div class="white-sprite"></div>
+					<div class="shield-sprite-container">
+						<div class="shield-sprite"></div>
+						<div class="shield-sprite"></div>
+						<div class="shield-sprite"></div>
+						<div class="shield-sprite"></div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -229,7 +243,7 @@ require_once '../header.php';
 				</div>
 
 				<div class="buttons">
-					<div class="button replay">Replay</div>
+					<div class="button replay">Play Again</div>
 					<div class="button new-match">New Match</div>
 				</div>
 			</div>

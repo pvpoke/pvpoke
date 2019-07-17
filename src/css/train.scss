@@ -206,12 +206,20 @@
 
 				.pokemon{
 					@include transform(scaleX(-1));
+					
+					.main-sprite, .secondary-sprite{
+						z-index:10;
+					}
 				}
 			}
 
 			&.opponent{
 				bottom: 55%;
 				right: 25%;
+				
+				.shield-sprite{
+					z-index:20;
+				}
 			}
 
 			h3{
@@ -246,6 +254,47 @@
 					top: 65px;
 					left: -25px;
 					opacity: 0.45;
+				}
+				
+				.shield-sprite-container{
+					position:absolute;
+					top:0;
+					left:0;
+					
+					&.active{
+						.shield-sprite{
+							opacity:.85;
+						}
+					}
+					
+					.shield-sprite{
+						width:65px;
+						height:55px;
+						background:url('../img/train/shield.png');
+						background-size:cover;
+						background-repeat: no-repeat;
+						position:absolute;
+						opacity:0;
+						
+						&:nth-of-type(1){
+							@include transition(all, .75s, ease, 0s);
+							top:-15px;
+						}
+						&:nth-of-type(2){
+							@include transition(all, .75s, ease, .05s);
+							top: 15px;
+							left: 52px;
+						}
+						&:nth-of-type(3){
+							@include transition(all, .75s, ease, .15s);
+							top: 45px;
+						}
+						&:nth-of-type(4){
+							@include transition(all, .75s, ease, .2s);
+							top: 15px;
+						    left: -52px;
+						}
+					}
 				}
 			}
 
@@ -369,11 +418,12 @@
 			}
 
 			.shield{
-				width:100px;
-				height:100px;
+				width:109px;
+				height:94px;
 				margin: 1em auto;
 				cursor:pointer;
-				background:#cc3388;
+				background:url('../img/train/shield.png');
+				background-size:contain;
 			}
 		}
 	}
@@ -497,7 +547,7 @@
 		top: 37%;
 		opacity:0;
 		pointer-events: none;
-		z-index:15;
+		z-index:25;
 
 		@include transition(all, 0.25s, ease, 0.25s);
 
@@ -554,6 +604,20 @@
 			display:none;
 		}
 
+		.scene{
+			@include transform(scale(0.8));
+		}
+	}
+	
+	&[phase="suspend_charged_no_shields"]{
+		.animate-message{
+			opacity:1;
+		}
+		
+		.controls .move-bars{
+			display:none;
+		}
+		
 		.scene{
 			@include transform(scale(0.8));
 		}
@@ -768,7 +832,8 @@
 }
 
 .main-sprite,
-.secondary-sprite{
+.secondary-sprite,
+.white-sprite{
 	position:absolute;
 	top:0;
 	left:0;
@@ -783,6 +848,15 @@
 
 .secondary-sprite{
 	background-image:url('../img/train/substitute-sprite-secondary.png');
+}
+
+.white-sprite{
+	@include transition(opacity, .75s, ease, 0s);
+	background-image:url('../img/train/substitute-sprite-white.png');
+	background-size:100%;
+	background-repeat: no-repeat;
+	opacity:0;
+	z-index:25;
 }
 
 .pokemon[type-1="bug"] .main-sprite,
@@ -916,6 +990,14 @@
 	&.animate-switch{
 		.pokemon{
 			@include transform(scale(0, 0));
+			
+			.white-sprite{
+				opacity: 1;
+			}
+			
+			.shadow{
+				display:none;
+			}
 		}
 
 		.hp, .name, .messages{

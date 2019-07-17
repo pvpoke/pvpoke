@@ -107,10 +107,29 @@ function TrainingAI(l, p, b){
 
 			var pokemon = new Pokemon(poke.speciesId, player.index, battle);
 			pokemon.initialize(battle.getCP());
+			
+			// Select a random IV spread according to difficulty
+			var ivCombos = pokemon.generateIVCombinations("overall", 1, props.ivComboRange);
+			var rank = Math.floor(Math.random() * ivCombos.length);
+			
+			// If this Pokemon maxes under or near 1500, make sure it's close to 1500
+			if(ivCombos[0].level >= 39){
+				rank = Math.floor(Math.random() * 50 * (props.ivComboRange  / 4000));
+			}
+			var combo = ivCombos[rank];
+			
+			pokemon.setIV("atk", combo.ivs.atk);
+			pokemon.setIV("def", combo.ivs.def);
+			pokemon.setIV("hp", combo.ivs.hp);
+			pokemon.setLevel(combo.level);
 
 			pokemon.selectMove("fast", poke.fastMove);
 			for(var n = 0; n < props.chargedMoveCount; n++){
 				pokemon.selectMove("charged", poke.chargedMoves[n], n);
+			}
+			
+			if(props.chargedMoveCount == 1){
+				pokemon.selectMove("charged", "none", 1);
 			}
 
 			roster.push(pokemon);
@@ -355,6 +374,9 @@ function TrainingAI(l, p, b){
 
 			if(self.hasStrategy("FARM_ENERGY")){
 				var farmWeight = Math.round( (scenarios.farm.average - 600) / 20);
+				if(opponentPlayer.getRemainingPokemon() < 2){
+					farmWeight = 0;
+				}
 				options.push(new DecisionOption("FARM", farmWeight));
 			}
 		}
@@ -550,13 +572,13 @@ function TrainingAI(l, p, b){
 				// Check to see if the opposing Pokemon is close to a damaging Charged Move
 				var potentialDamage = self.calculatePotentialDamage(opponent, poke, opponent.energy);
 
-				// How much potential damage with they have after one more Fast Move?
+				// How much potential damage will they have after one more Fast Move?
 
 				var extraFastMoves = Math.floor((poke.fastMove.cooldown - opponent.cooldown) / (opponent.fastMove.cooldown))
 				var futureEnergy = opponent.energy + (extraFastMoves * opponent.fastMove.energyGain);
 				var futureDamage = self.calculatePotentialDamage(opponent, poke, futureEnergy);
 
-				if((futureDamage >= poke.hp)||(futureDamage >= poke.stats.hp * .25)){
+				if((futureDamage >= poke.hp)||(futureDamage >= poke.stats.hp * .15)){
 					performSwitch = true;
 				}
 

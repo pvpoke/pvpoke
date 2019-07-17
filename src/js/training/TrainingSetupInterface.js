@@ -186,8 +186,16 @@ var InterfaceMaster = (function () {
 					$el.addClass("selected");
 					$el.attr("team-index", currentTeamIndex);
 					$el.find(".number").html((currentTeamIndex+1));
-
-					currentTeamIndex = Math.min(currentTeamIndex+1, 2);
+					
+					// Search for the next available team index
+					for(currentTeamIndex = 0; currentTeamIndex < currentTeam.length; currentTeamIndex++){
+						if(currentTeam[currentTeamIndex] === null){
+							break;
+						}
+					}
+					
+					currentTeamIndex = Math.min(currentTeamIndex, 2);
+					
 				} else{
 					// Deselect a Pokemon
 					

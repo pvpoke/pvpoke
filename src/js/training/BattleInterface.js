@@ -88,7 +88,12 @@ var BattlerMaster = (function () {
 					if(response.actor == 0){
 						response.phase = "suspend_charged_attack";
 					} else{
-						response.phase = "suspend_charged_shield";
+						if(response.players[0].getShields() > 0){
+							response.phase = "suspend_charged_shield";
+						} else{
+							response.phase = "suspend_charged_no_shields";
+						}
+						
 					}
 				}
 
@@ -101,6 +106,7 @@ var BattlerMaster = (function () {
 				// Handle phase change
 
 				if(phase != response.phase){
+					// Transition into this phase
 					switch(response.phase){
 						case "suspend_charged_attack":
 							$(".charge-window .move-bars").html('');
@@ -113,12 +119,17 @@ var BattlerMaster = (function () {
 							phaseInterval = setInterval(chargeUpStep, 1000 / 60);
 							break;
 
-							case "suspend_charged_shield":
-								$(".shield-window").removeClass("closed");
-								phaseTimer = chargeTime;
-								phaseInterval = setInterval(phaseStep, 1000 / 60);
-								interfaceLockout = 500;
-								break;
+						case "suspend_charged_shield":
+							$(".shield-window").removeClass("closed");
+							phaseTimer = chargeTime;
+							phaseInterval = setInterval(phaseStep, 1000 / 60);
+							interfaceLockout = 500;
+							break;
+							
+						case "suspend_charged_no_shields":
+							$(".battle-window .animate-message .text").html("No Protect shields remaining");
+							break;
+
 
 						case "animating":
 							$(".animate-message .text").html(activePokemon[response.actor].speciesName + " used " + response.moveName);
@@ -142,6 +153,13 @@ var BattlerMaster = (function () {
 								self.displayEndGameStats();
 							}, 1000);
 
+							break;
+					}
+					
+					// Transition out of this phase
+					switch(phase){
+						case "animating":
+							$(".battle-window .pokemon-container .shield-sprite-container").removeClass("active");
 							break;
 					}
 				}
@@ -288,6 +306,11 @@ var BattlerMaster = (function () {
 					var message = response.messages[i];
 					var $messageItem = $("<div turn=\""+response.turn+"\">"+message.str+"</div>");
 					$(".battle-window .scene .pokemon-container").eq(message.index).find(".messages").append($messageItem);
+					
+					// Animate an opponent's shield when they shield
+					if((message.index == 1)&&(message.str == "Blocked!")){
+						$(".battle-window .pokemon-container.opponent .shield-sprite-container").addClass("active");
+					}
 				}
 
 				// Clear any messages past the expiry time
@@ -521,6 +544,7 @@ var BattlerMaster = (function () {
 			function useShieldClick(){
 				if(interfaceLockout == 0){
 					$(".battle-window .shield-window").addClass("closed");
+					$(".battle-window .pokemon-container.self .shield-sprite-container").addClass("active");
 					battle.setPlayerUseShield(true);
 				}
 			}
