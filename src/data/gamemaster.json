@@ -8682,7 +8682,7 @@
             "hp": 295
         },
         "types": ["normal", "fairy"],
-        "fastMoves": ["FEINT_ATTACK", "POUND"],
+        "fastMoves": ["FEINT_ATTACK", "POUND", "CHARM"],
         "chargedMoves": ["DAZZLING_GLEAM", "HYPER_BEAM", "ICE_BEAM", "PLAY_ROUGH"],
         "defaultIVs": {
             "cp1500": [30, 5, 8, 14],

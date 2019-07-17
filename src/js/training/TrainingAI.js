@@ -36,7 +36,7 @@ function TrainingAI(l, p, b){
 
 		var league = battle.getCP();
 		var cup = battle.getCup().name;
-		
+
 		if(! teamPool[league+""+cup]){
 			gm.loadTeamData(league, cup, self.setTeamPool);
 			return;
@@ -126,18 +126,18 @@ function TrainingAI(l, p, b){
 	this.generateTeam = function(opponentRoster){
 		var roster = player.getRoster();
 		var team = [];
-		
+
 		// Choose a pick strategy
 		var pickStrategyOptions = [];
 		pickStrategyOptions.push(new DecisionOption("BASIC", 1));
 		pickStrategyOptions.push(new DecisionOption("BEST", 4));
 		pickStrategyOptions.push(new DecisionOption("COUNTER", 4));
 		pickStrategyOptions.push(new DecisionOption("UNBALANCED", 2));
-		
+
 		var pickStrategy = self.chooseOption(pickStrategyOptions).name;
-		
+
 		console.log(pickStrategy);
-		
+
 		switch(pickStrategy){
 			// Choose a random set of 3 from the roster
 			case "BASIC":
@@ -146,22 +146,22 @@ function TrainingAI(l, p, b){
 					team.push(roster[startIndex + i]);
 				}
 				break;
-				
+
 			// Choose a team that has the best average matchups against the opponent's roster
 			case "BEST":
 				var teamPerformance = self.calculateAverageRosterPerformance(roster, opponentRoster);
-				
+
 				// Lead with the best average Pokemon
 				team.push(teamPerformance[0].pokemon);
-				
+
 				// Next, let's give it a bodyguard
 				var scenarios = teamPerformance[0].scenarios;
 				scenarios.sort((a,b) => (a.average > b.average) ? 1 : ((b.average > a.average) ? -1 : 0)); // Sort by worst to best
-				
+
 				var targets = [scenarios[0].opponent, scenarios[1].opponent];
-				
+
 				teamPerformance = self.calculateAverageRosterPerformance(roster, targets);
-				
+
 				// Add the best bodyguard that isn't the currently selected Pokemon
 				for(var i = 0; i < teamPerformance.length; i++){
 					if(team.indexOf(teamPerformance[i].pokemon) == -1){
@@ -169,11 +169,11 @@ function TrainingAI(l, p, b){
 						break;
 					}
 				}
-				
+
 				// Finally, let's round them out with a Pokemon that does best against their collective counters
 				teamPerformance = self.calculateAverageRosterPerformance(opponentRoster, team);
 				targets = [teamPerformance[0].pokemon, teamPerformance[1].pokemon];
-				
+
 				teamPerformance = self.calculateAverageRosterPerformance(roster, targets);
 				// Add the best bodyguard that isn't the currently selected Pokemon
 				for(var i = 0; i < teamPerformance.length; i++){
@@ -182,27 +182,27 @@ function TrainingAI(l, p, b){
 						break;
 					}
 				}
-				
+
 				break;
-				
+
 			// Choose a team that counter's the opponent's best Pokemon
 			case "COUNTER":
 				var teamPerformance = self.calculateAverageRosterPerformance(opponentRoster, roster);
 				var scenarios = teamPerformance[0].scenarios;
-				
+
 				scenarios.sort((a,b) => (a.average > b.average) ? 1 : ((b.average > a.average) ? -1 : 0)); // Sort by worst to best
-				
+
 				// Lead with the best counter
 				team.push(scenarios[0].opponent);
-				
+
 				// Next, let's give it a bodyguard
 				var scenarios = self.runBulkScenarios("NO_BAIT", team[0], opponentRoster);
 				scenarios.sort((a,b) => (a.average > b.average) ? 1 : ((b.average > a.average) ? -1 : 0)); // Sort by worst to last
-				
+
 				var targets = [scenarios[0].opponent, scenarios[1].opponent];
-				
+
 				teamPerformance = self.calculateAverageRosterPerformance(roster, targets);
-				
+
 				// Add the best bodyguard that isn't the currently selected Pokemon
 				for(var i = 0; i < teamPerformance.length; i++){
 					if(team.indexOf(teamPerformance[i].pokemon) == -1){
@@ -210,11 +210,11 @@ function TrainingAI(l, p, b){
 						break;
 					}
 				}
-				
+
 				// Finally, let's round them out with a Pokemon that does best against their collective counters
 				teamPerformance = self.calculateAverageRosterPerformance(opponentRoster, team);
 				targets = [teamPerformance[0].pokemon, teamPerformance[1].pokemon];
-				
+
 				teamPerformance = self.calculateAverageRosterPerformance(roster, targets);
 				// Add the best bodyguard that isn't the currently selected Pokemon
 				for(var i = 0; i < teamPerformance.length; i++){
@@ -223,20 +223,20 @@ function TrainingAI(l, p, b){
 						break;
 					}
 				}
-				
+
 				break;
-				
+
 			// Choose two high performance Pokemon and lead with a bodyguard
 			case "UNBALANCED":
 				var teamPerformance = self.calculateAverageRosterPerformance(roster, opponentRoster);
-				
+
 				// Choose the best two average Pokemon
 				team.push(teamPerformance[0].pokemon, teamPerformance[1].pokemon);
-				
+
 				// Finally, let's round lead with a Pokemon that does best against their collective counters
 				teamPerformance = self.calculateAverageRosterPerformance(opponentRoster, team);
 				targets = [teamPerformance[0].pokemon, teamPerformance[1].pokemon];
-				
+
 				teamPerformance = self.calculateAverageRosterPerformance(roster, targets);
 				// Add the best bodyguard that isn't the currently selected Pokemon
 				for(var i = 0; i < teamPerformance.length; i++){
@@ -245,36 +245,36 @@ function TrainingAI(l, p, b){
 						break;
 					}
 				}
-				
+
 				break;
 		}
 		console.log(team);
 
 		player.setTeam(team);
 	}
-	
+
 	// Return an array of average performances of team A against team B
-	
+
 	this.calculateAverageRosterPerformance = function(teamA, teamB){
 		var results = [];
-		
+
 		for(var i = 0; i < teamA.length; i++){
 			var scenarios = self.runBulkScenarios("NO_BAIT", teamA[i], teamB);
 			var average = 0;
-			
+
 			for(var n = 0; n < scenarios.length; n++){
 				average += scenarios[n].average;
 			}
-			
+
 			average /= scenarios.length;
-			
+
 			results.push({
 				pokemon: teamA[i],
 				scenarios: scenarios,
 				average: average
 			});
 		}
-		
+
 		// Sort by average rating
 		results.sort((a,b) => (a.average > b.average) ? -1 : ((b.average > a.average) ? 1 : 0));
 		return results;
@@ -323,6 +323,11 @@ function TrainingAI(l, p, b){
 
 		if((self.hasStrategy("SWITCH_BASIC"))&&(player.getSwitchTimer() == 0)&&(player.getRemainingPokemon() > 1)){
 			var switchWeight = Math.floor(Math.max((500 - overallRating) / 10, 0));
+
+			// Don't switch Pokemon when HP is low
+			if((self.hasStrategy("PRESERVE_SWITCH_ADVANTAGE"))&&(opponentPlayer.getSwitchTimer() - player.getSwitchTimer() < 30)&&(pokemon.hp / pokemon.stats.hp <= .25)&&(opponentPlayer.getRemainingPokemon() > 1)){
+				switchWeight = 0;
+			}
 			options.push(new DecisionOption("SWITCH_BASIC", switchWeight));
 
 			totalSwitchWeight += switchWeight;
@@ -459,15 +464,15 @@ function TrainingAI(l, p, b){
 
 		return scenario;
 	}
-	
+
 	this.runBulkScenarios = function(type, pokemon, opponents){
 		var scenarios = [];
-		
+
 		for(var i = 0; i < opponents.length; i++){
 			var scenario = self.runScenario(type, pokemon, opponents[i]);
 			scenarios.push(scenario);
 		}
-		
+
 		return scenarios;
 	}
 
