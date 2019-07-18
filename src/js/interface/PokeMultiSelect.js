@@ -221,6 +221,13 @@ function PokeMultiSelect(element){
 		self.updateListDisplay();
 	}
 
+	// After loading from the GameMaster, fill in a preset group
+
+	this.setPokemonList = function(list){
+		pokemonList = list;
+		self.updateListDisplay();
+	}
+
 	// Update the custom group selections when changing league
 
 	this.updateLeague = function(cp){

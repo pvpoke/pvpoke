@@ -702,7 +702,8 @@ function Battle(){
 					var waitTime = 500;
 
 					if((players[1].getAI().hasStrategy("WAIT_CLOCK"))&&(players[1].getSwitchTimer() > 0)&&(players[1].getRemainingPokemon() > 1)){
-						waitTime = players[1].getSwitchTimer() - 1000;
+						waitTime = Math.min(players[1].getSwitchTimer() - 1000, 5000);
+						waitTime = Math.floor(Math.random() * waitTime) + 2000;
 					}
 
 					setTimeout(function(){

@@ -267,7 +267,7 @@
 				"speciesId": "scizor",
 				"fastMove": "FURY_CUTTER",
 				"chargedMoves": ["IRON_HEAD","X_SCISSOR"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":3
 			}
 		]
@@ -283,6 +283,13 @@
 				"chargedMoves": ["ICE_BEAM","PLAY_ROUGH"],
 				"difficulty": 2,
 				"weight":10
+			},
+			{
+				"speciesId": "delcatty",
+				"fastMove": "CHARM",
+				"chargedMoves": ["WILD_CHARGE","PLAY_ROUGH"],
+				"difficulty": 0,
+				"weight":3
 			}
 		]
 	},

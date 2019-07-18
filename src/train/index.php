@@ -9,10 +9,8 @@ require_once '../header.php';
 ?>
 <h1>Training Battle</h1>
 <div class="section home white">
-	<?php require '../modules/leagueselect.php'; ?>
-	<?php require '../modules/cupselect.php'; ?>
 	<p>Select your team and options below to battle against a CPU opponent.</p>
-	<p>This tool is a training and learning resource intended to supplement your in-game battles. Experiment with new lineups or practice in a pressure free enviornment against a difficulty of your choice.</p>
+	<p>This tool is a training and learning resource intended to supplement your in-game battles. Experiment with new lineups or practice in a pressure free environment against a difficulty of your choice.</p>
 </div>
 
 <div class="hide">
@@ -20,13 +18,25 @@ require_once '../header.php';
 </div>
 
 <div class="section poke-select-container train">
-	<?php require '../modules/pokemultiselect.php'; ?>
+	<div class="poke">
+		<h3>Your Team</h3>
+		<?php require '../modules/pokemultiselect.php'; ?>
+		<a class="random" href="#">Random</a>
+	</div>
 
 	<div class="poke ai-options">
+		<h3>Settings</h3>
 		<div class="poke-stats">
 			<select class="mode-select">
 				<option value="single">Single (3v3)</option>
 				<option value="tournament">Tournament (6v6)</option>
+			</select>
+			<h3 class="section-title">League &amp; Cup</h3>
+			<select class="league-cup-select">
+				<option value="1500 all">Great League</option>
+				<option value="2500 all">Ultra League</option>
+				<option value="10000 all">Master League</option>
+				<option value="1500 jungle">Jungle Cup</option>
 			</select>
 			<h3 class="section-title">Difficulty</h3>
 			<select class="difficulty-select">
@@ -244,6 +254,7 @@ require_once '../header.php';
 
 				<div class="buttons">
 					<div class="button replay">Play Again</div>
+					<div class="button next-round">Next Round</div>
 					<div class="button new-match">New Match</div>
 				</div>
 			</div>

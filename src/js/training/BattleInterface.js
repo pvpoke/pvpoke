@@ -72,6 +72,7 @@ var BattlerMaster = (function () {
 				$(".battle-window .scene .pokemon-container").removeClass("animate-switch");
 				$(".battle-window .scene .pokemon-container .messages").html("");
 				$(".battle-window .countdown .text").html("");
+				$(".battle-window").attr("mode", props.mode);
 
 				$("body").addClass("battle-active");
 			};
@@ -93,7 +94,7 @@ var BattlerMaster = (function () {
 						} else{
 							response.phase = "suspend_charged_no_shields";
 						}
-						
+
 					}
 				}
 
@@ -125,7 +126,7 @@ var BattlerMaster = (function () {
 							phaseInterval = setInterval(phaseStep, 1000 / 60);
 							interfaceLockout = 500;
 							break;
-							
+
 						case "suspend_charged_no_shields":
 							$(".battle-window .animate-message .text").html("No Protect shields remaining");
 							break;
@@ -147,6 +148,21 @@ var BattlerMaster = (function () {
 							break;
 
 						case "game_over":
+							switch(response.result){
+								case "win":
+									$(".battle-window .end-screen .result").html("You won! Way to go!")
+									break;
+
+								case "loss":
+									$(".battle-window .end-screen .result").html("You were defeated. Let's see what we can learn!")
+									break;
+
+								case "tie":
+									$(".battle-window .end-screen .result").html("A tie? No way!")
+									break;
+
+							}
+
 							setTimeout(function(){
 								$("body").removeClass("battle-active");
 								$(".battle-window").attr("phase","game_over_screen");
@@ -155,7 +171,7 @@ var BattlerMaster = (function () {
 
 							break;
 					}
-					
+
 					// Transition out of this phase
 					switch(phase){
 						case "animating":
@@ -306,7 +322,7 @@ var BattlerMaster = (function () {
 					var message = response.messages[i];
 					var $messageItem = $("<div turn=\""+response.turn+"\">"+message.str+"</div>");
 					$(".battle-window .scene .pokemon-container").eq(message.index).find(".messages").append($messageItem);
-					
+
 					// Animate an opponent's shield when they shield
 					if((message.index == 1)&&(message.str == "Blocked!")){
 						$(".battle-window .pokemon-container.opponent .shield-sprite-container").addClass("active");
@@ -394,7 +410,7 @@ var BattlerMaster = (function () {
 						} else{
 							$(".switch-window .pokemon").eq(index).attr("type-2", team[i].types[1]);
 						}
-						
+
 						if(team[i].hp > 0){
 							$(".switch-window .pokemon").eq(index).addClass("active");
 						} else{

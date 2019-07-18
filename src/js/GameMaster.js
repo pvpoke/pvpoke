@@ -175,7 +175,7 @@ var GameMaster = (function () {
 			var key = league + "" + cup;
 
 			if(! object.teamPools[key]){
-				var file = webRoot+"data/training/teams/"+cup+"/"+league+".json?v=86";
+				var file = webRoot+"data/training/teams/"+cup+"/"+league+".json?v=87";
 
 				$.getJSON( file, function( data ){
 					object.teamPools[key] = data;

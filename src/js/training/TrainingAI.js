@@ -92,7 +92,6 @@ function TrainingAI(l, p, b){
 
 			for(var n = 0; n < slotPool.length; n++){
 				var poke = slotPool[n];
-
 				// Is this Pokemon valid to be added to the team?
 				if((selectedIds.indexOf(poke.speciesId) === -1)&&(Math.abs(poke.difficulty - level) <= 1)){
 					for(var j = 0; j < poke.weight; j++){
@@ -104,20 +103,19 @@ function TrainingAI(l, p, b){
 			// Select a random poke from the bucket
 			var index = Math.floor(Math.random() * pokeBucket.length);
 			var poke = pokeBucket[index];
-
 			var pokemon = new Pokemon(poke.speciesId, player.index, battle);
 			pokemon.initialize(battle.getCP());
-			
+
 			// Select a random IV spread according to difficulty
 			var ivCombos = pokemon.generateIVCombinations("overall", 1, props.ivComboRange);
 			var rank = Math.floor(Math.random() * ivCombos.length);
-			
+
 			// If this Pokemon maxes under or near 1500, make sure it's close to 1500
 			if(ivCombos[0].level >= 39){
 				rank = Math.floor(Math.random() * 50 * (props.ivComboRange  / 4000));
 			}
 			var combo = ivCombos[rank];
-			
+
 			pokemon.setIV("atk", combo.ivs.atk);
 			pokemon.setIV("def", combo.ivs.def);
 			pokemon.setIV("hp", combo.ivs.hp);
@@ -127,7 +125,7 @@ function TrainingAI(l, p, b){
 			for(var n = 0; n < props.chargedMoveCount; n++){
 				pokemon.selectMove("charged", poke.chargedMoves[n], n);
 			}
-			
+
 			if(props.chargedMoveCount == 1){
 				pokemon.selectMove("charged", "none", 1);
 			}
@@ -137,7 +135,7 @@ function TrainingAI(l, p, b){
 		}
 
 		player.setRoster(roster);
-		generateRosterCallback();
+		generateRosterCallback(roster);
 	}
 
 	// With a set roster, produce a team of 3

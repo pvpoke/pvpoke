@@ -22,6 +22,10 @@
 	transform: $property;
 }
 
+.multi .cup-select{
+	display:none;
+}
+
 .train{
 	.poke{
 		display:block;
@@ -52,16 +56,24 @@
 			display:block;
 		}
 
-		.poke.multi{
-			float:none;
-			display:none;
-
-			.poke-stats{
-				background:none;
-				padding:0;
-			}
+		.section-title{
+			text-align: left;
 		}
 	}
+}
+
+.ai-options .poke.multi{
+	float:none;
+	display:none;
+
+	.poke-stats{
+		background:none;
+		padding:0;
+	}
+}
+
+a.random{
+	margin-top:5px;
 }
 
 .section.battle{
@@ -206,7 +218,7 @@
 
 				.pokemon{
 					@include transform(scaleX(-1));
-					
+
 					.main-sprite, .secondary-sprite{
 						z-index:10;
 					}
@@ -216,7 +228,7 @@
 			&.opponent{
 				bottom: 55%;
 				right: 25%;
-				
+
 				.shield-sprite{
 					z-index:20;
 				}
@@ -242,7 +254,7 @@
 				width:100px;
 				height:100px;
 				margin: 0 auto;
-				
+
 				.shadow{
 					width:151px;
 					height:62px;
@@ -255,18 +267,18 @@
 					left: -25px;
 					opacity: 0.45;
 				}
-				
+
 				.shield-sprite-container{
 					position:absolute;
 					top:0;
 					left:0;
-					
+
 					&.active{
 						.shield-sprite{
 							opacity:.85;
 						}
 					}
-					
+
 					.shield-sprite{
 						width:65px;
 						height:55px;
@@ -275,7 +287,7 @@
 						background-repeat: no-repeat;
 						position:absolute;
 						opacity:0;
-						
+
 						&:nth-of-type(1){
 							@include transition(all, .75s, ease, 0s);
 							top:-15px;
@@ -315,11 +327,11 @@
 
 						@include transition(width, 0.2s, ease, 0.5s);
 					}
-					
+
 					&[color="yellow"]{
 						background:#eabd49;
 					}
-					
+
 					&[color="red"]{
 						background:#ea4949;
 					}
@@ -608,16 +620,16 @@
 			@include transform(scale(0.8));
 		}
 	}
-	
+
 	&[phase="suspend_charged_no_shields"]{
 		.animate-message{
 			opacity:1;
 		}
-		
+
 		.controls .move-bars{
 			display:none;
 		}
-		
+
 		.scene{
 			@include transform(scale(0.8));
 		}
@@ -687,6 +699,18 @@
 		}
 	}
 
+	&[mode="single"]{
+		.button.next-round{
+			display:none;
+		}
+	}
+
+	&[mode="tournament"]{
+		.button.replay{
+			display:none;
+		}
+	}
+
 }
 
 .team-select .pokemon-container,
@@ -706,7 +730,7 @@
 		max-width:100px;
 		font-weight:bold;
 	}
-	
+
 	.name, .cp{
 		text-align:center;
 	}
@@ -718,15 +742,15 @@
 
 .team-select{
 	display:none;
-	
+
 	.pokemon-container{
 		justify-content: space-between;
 		flex-wrap: wrap;
-		
+
 		.pokemon{
 			width:100px;
 			margin-bottom:10px;
-			
+
 			.number{
 				width:100%;
 				height:100%;
@@ -738,7 +762,7 @@
 				font-weight: bold;
 				display:none;
 			}
-			
+
 			&.selected{
 				.number{
 					display:block;
@@ -750,21 +774,21 @@
 			}
 		}
 	}
-	
+
 	.self, .opponent{
 		background:rgba(255,255,255,0.75);
 		border-radius:12px;
 		padding: 10px 0;
-		
+
 		h3{
 			margin-top:0;
 		}
-		
+
 		.pokemon{
 			cursor:pointer;
 		}
 	}
-	
+
 	.lets-go-btn{
 		display:none;
 	}
@@ -990,11 +1014,11 @@
 	&.animate-switch{
 		.pokemon{
 			@include transform(scale(0, 0));
-			
+
 			.white-sprite{
 				opacity: 1;
 			}
-			
+
 			.shadow{
 				display:none;
 			}
@@ -1008,7 +1032,7 @@
 }
 
 @media only screen and (max-width: 720px) {
-	.train .poke{
+	.train > .poke{
 		width:49%;
 	}
 }
