@@ -72,14 +72,12 @@ var RankerMaster = (function () {
 					var permaBannedList = ["rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","regigigas","phione","manaphy","darkrai","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","kecleon"]; // Don't rank these Pokemon at all yet
 					var allowedList = [];
 
-					
-				// if(cup.name == "hoenn"){
-				// 	allowedList = ["sceptile", "grovyle", "combusken", "blaziken", "marshtomp", "swampert", "mightyena", "linoone", "beautifly", "dustox", "ludicolo", "shiftry", "swellow", "pelipper", "kirlia", "gardevoir", "masquerain", "breloom", "vigoroth", "slaking", "exploud", "shedinja", "hariyama", "nosepass", "delcatty", "sableye", "mawile", "lairon", "aggron", "medicham", "manectric", "plusle", "minun", "volbeat", "illumise", "roselia", "swalot", "sharpedo", "wailord", "camerupt", "torkoal", "grumpig", "vibrava", "flygon", "cacturne", "altaria", "zangoose", "seviper", "lunatone", "solrock", "whiscash", "crawdaunt", "claydol", "cradily", "armaldo", "milotic", "castform", "castfor_sunny", "castform_rainy", "castform_snowy", "banette", "dusclops", "tropius", "chimecho", "absol", "glalie", "sealeo", "walrein", "huntail", "gorebyss", "relicanth", "luvdisc", "shelgon", "salamence", "metang", "metagross", "regirock", "regice", "registeel", "latias", "latios", "kyogre", "groudon", "rayquaza", "deoxys_defense"]
-				// }
-
-				if (cup.allowedList.length > 0) {
-					allowedList = cup.allowedList;
-				}
+					if (cup.allowedList.length > 0) {
+						allowedList = cup.allowedList;
+					}
+					if (cup.bannedList.length > 0) {
+						permaBannedList = permaBannedList.concat(cup.bannedList);
+					}
 
 					if(cup.name == "nightmare"){
 						permaBannedList = permaBannedList.concat(["sableye","medicham","lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi","latios","latias","uxie","azelf","mesprit","jirachi"]);

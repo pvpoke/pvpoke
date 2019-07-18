@@ -10,7 +10,8 @@ function Battle(){
 	var cup = {
 		name: "all",
 		types: [],        // List of allowed types
-		allowedList: []   // List of allowed pokémon
+		allowedList: [],  // List of allowed pokémon
+		bannedList: []    // List of banned pokémon
 	}; 
 
 	var decisionLog = []; // For debugging
@@ -101,7 +102,8 @@ function Battle(){
 			cup.types = gm.data.cups[cupName];
 		}
 		if (gm.cups[cupName]) {
-			cup.allowedList = gm.cups[cupName].allowedList;
+			if (gm.cups[cupName].allowedList) { cup.allowedList = gm.cups[cupName].allowedList; }
+			if (gm.cups[cupName].bannedList) { cup.bannedList = gm.cups[cupName].bannedList; }
 		}
 	}
 

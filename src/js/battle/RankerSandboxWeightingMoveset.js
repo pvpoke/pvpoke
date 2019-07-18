@@ -102,6 +102,9 @@ var RankerMaster = (function () {
 				if (cup.allowedList.length > 0) {
 					allowedList = cup.allowedList;
 				}
+				if (cup.bannedList.length > 0) {
+					permaBannedList = permaBannedList.concat(cup.bannedList);
+				}
 				console.log('cup:');
 				console.log(cup);
 				

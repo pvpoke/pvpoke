@@ -314,7 +314,6 @@
       "hariyama",
       "huntail",
       "illumise",
-      "jirachi",
       "kecleon",
       "kirlia",
       "kyogre",
@@ -402,7 +401,8 @@
       "wynaut",
       "zangoose",
       "zigzagoon"
-    ]
+    ],
+    "bannedList": []
   },
   "sinnoh": {
     "allowedList": [
@@ -544,6 +544,45 @@
       "wormadam_sandy",
       "wormadam_trash",
       "yanmega"
+    ]
+  },
+  "uc": {
+    "allowedList": [],
+    "bannedList": [
+      "lugia",
+      "cresselia",
+      "deoxys",
+      "deoxys_attack",
+      "deoxys_defense",
+      "deoxys_speed",
+      "mew",
+      "mewtwo",
+      "mewtwo_armored",
+      "celebi",
+      "latios",
+      "latias",
+      "uxie",
+      "mesprit",
+      "azelf",
+      "melmetal",
+      "meltan",
+      "celebi",
+      "zapdos",
+      "articuno",
+      "moltres",
+      "suicune",
+      "entei",
+      "raikou",
+      "regirock",
+      "registeel",
+      "regice",
+      "ho_oh",
+      "jirachi",
+      "giratina_altered",
+      "giratina_origin",
+      "heatran",
+      "dialga",
+      "rayquaza"
     ]
   }
 }
