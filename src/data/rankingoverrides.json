@@ -73,6 +73,32 @@
 	},
 	{
 		"league": 1500,
+		"cup": "twilight",
+		"pokemon": [
+			{
+				"speciesId": "azumarill",
+				"chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
+			},
+			{
+				"speciesId": "muk_alolan",
+				"chargedMoves": ["DARK_PULSE", "ACID_SPRAY"]
+			},
+			{
+				"speciesId": "tentacruel",
+				"chargedMoves": ["ACID_SPRAY", "HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "victreebel",
+				"chargedMoves": ["LEAF_BLADE", "ACID_SPRAY"]
+			},
+			{
+				"speciesId": "qwilfish",
+				"chargedMoves": ["AQUA_TAIL", "SLUDGE_WAVE"]
+			}
+		]
+	},
+	{
+		"league": 1500,
 		"cup": "tempest",
 		"pokemon": [
 			{
@@ -103,7 +129,11 @@
 			},
 			{
 				"speciesId": "moltres",
-				"chargedMoves": ["OVERHEAT", "FIRE_BLAST"]
+				"chargedMoves": ["OVERHEAT", "ANCIENT_POWER"]
+			},
+			{
+				"speciesId": "blaziken",
+				"chargedMoves": ["BLAST_BURN", "BLAZE_KICK"]
 			}
 		]
 	},
@@ -126,10 +156,6 @@
 			{
 				"speciesId": "drapion",
 				"chargedMoves": ["AQUA_TAIL", "CRUNCH"]
-			},
-			{
-				"speciesId": "gardevoir",
-				"fastMove": "CONFUSION"
 			},
 			{
 				"speciesId": "slowbro",
