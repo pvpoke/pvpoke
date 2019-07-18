@@ -13,6 +13,7 @@
 	<option value="johto">Johto Cup</option>
 	<option value="hoenn">Hoenn Cup</option>
 	<option value="uc">Ultra Counter</option>
+	<option value="liguinha3">Liguinha 3</option>
 	
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'battle') !== false): ?>
 		<option value="custom">Custom</option>
