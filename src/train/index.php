@@ -253,7 +253,7 @@ require_once '../header.php';
 				</div>
 
 				<div class="buttons">
-					<div class="button replay">Play Again</div>
+					<div class="button replay">Rematch</div>
 					<div class="button next-round">Next Round</div>
 					<div class="button new-match">New Match</div>
 				</div>

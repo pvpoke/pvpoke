@@ -34,6 +34,7 @@ var BattlerMaster = (function () {
 			var countdown = 0;
 			var turn = 0;
 			var time = 0;
+			var properties;
 
 			var interfaceLockout = 0; // Prevent clicking the shield or switch options too early
 			var listenersInitialized = false; // Prevent event listeners from being added twice
@@ -41,6 +42,7 @@ var BattlerMaster = (function () {
 			// Kick off the setup and the battle
 
 			this.init = function(props, b, p){
+				properties = props;
 				battle = b;
 				players = p;
 				phase = "countdown";
@@ -568,7 +570,10 @@ var BattlerMaster = (function () {
 			// At the end of a 3v3 match, replay the same battle
 
 			function replayBattleClick(e){
-				handler.startBattle();
+				// Manually set the previous team
+				properties.teamSelectMethod = "manual";
+				properties.teams[1] = players[1].getTeam();
+				handler.initBattle(properties);
 			}
 
 			// Go back to the settings page
