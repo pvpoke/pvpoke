@@ -99,9 +99,16 @@ var RankerMaster = (function () {
 
 				var allowedList = [];
 
-				if(cup.name == "hoenn"){
-					allowedList = ["sceptile", "grovyle", "combusken", "blaziken", "marshtomp", "swampert", "mightyena", "linoone", "beautifly", "dustox", "ludicolo", "shiftry", "swellow", "pelipper", "kirlia", "gardevoir", "masquerain", "breloom", "vigoroth", "slaking", "exploud", "shedinja", "hariyama", "nosepass", "delcatty", "sableye", "mawile", "lairon", "aggron", "medicham", "manectric", "plusle", "minun", "volbeat", "illumise", "roselia", "swalot", "sharpedo", "wailord", "camerupt", "torkoal", "grumpig", "vibrava", "flygon", "cacturne", "altaria", "zangoose", "seviper", "lunatone", "solrock", "whiscash", "crawdaunt", "claydol", "cradily", "armaldo", "milotic", "castform", "castfor_sunny", "castform_rainy", "castform_snowy", "banette", "dusclops", "tropius", "chimecho", "absol", "glalie", "sealeo", "walrein", "huntail", "gorebyss", "relicanth", "luvdisc", "shelgon", "salamence", "metang", "metagross", "regirock", "regice", "registeel", "latias", "latios", "kyogre", "groudon", "rayquaza", "deoxys_defense"]
+				if (cup.allowedList.length > 0) {
+					allowedList = cup.allowedList;
 				}
+				console.log('cup:');
+				console.log(cup);
+				
+
+				// if(cup.name == "hoenn"){
+				// 	allowedList = ["sceptile", "grovyle", "combusken", "blaziken", "marshtomp", "swampert", "mightyena", "linoone", "beautifly", "dustox", "ludicolo", "shiftry", "swellow", "pelipper", "kirlia", "gardevoir", "masquerain", "breloom", "vigoroth", "slaking", "exploud", "shedinja", "hariyama", "nosepass", "delcatty", "sableye", "mawile", "lairon", "aggron", "medicham", "manectric", "plusle", "minun", "volbeat", "illumise", "roselia", "swalot", "sharpedo", "wailord", "camerupt", "torkoal", "grumpig", "vibrava", "flygon", "cacturne", "altaria", "zangoose", "seviper", "lunatone", "solrock", "whiscash", "crawdaunt", "claydol", "cradily", "armaldo", "milotic", "castform", "castfor_sunny", "castform_rainy", "castform_snowy", "banette", "dusclops", "tropius", "chimecho", "absol", "glalie", "sealeo", "walrein", "huntail", "gorebyss", "relicanth", "luvdisc", "shelgon", "salamence", "metang", "metagross", "regirock", "regice", "registeel", "latias", "latios", "kyogre", "groudon", "rayquaza", "deoxys_defense"]
+				// }
 
 				for(var i = 0; i < gm.data.pokemon.length; i++){
 
@@ -297,6 +304,11 @@ var RankerMaster = (function () {
 						opponent.setShields(shieldCounts[1]);
 
 						battle.simulate();
+						// ;;;;vib
+						// if (shieldCounts[0] == 1 && shieldCounts[1] == 1) {
+						// 	console.log('simulating battle: ' + pokemon.speciesId + ' vs ' + opponent.speciesId);
+						// }
+						
 
 						// Calculate Battle Rating for each Pokemon
 
@@ -426,10 +438,17 @@ var RankerMaster = (function () {
 					rankObj.moves = {fastMoves: fastMoves, chargedMoves: chargedMoves};
 
 					rankings.push(rankObj);
+					// ;;;;vib
+					// if (shieldCounts[0] == 1 && shieldCounts[1] == 1) {
+					// 		// console.log('simulating battle: ' + pokemon.speciesId + ' vs ' + opponent.speciesId);
+					// 		console.log(pokemon);
+					// 		console.log(rankObj.matches);
+					// 	}
 				}
 
 
 				console.log("total battles " + totalBattles);
+				
 
 				// Weigh all Pokemon matchups by their opponent's average rating
 
@@ -523,7 +542,7 @@ var RankerMaster = (function () {
 					// Assign special rating to movesets and determine best overall moveset
 
 					for(var j = 0; j < rankings[i].matches.length; j++){
-						if(rankings[i].matches[j].score > 0){
+						if(rankings[i].matches[j].score > 0 || true){ //;;;;vib
 							var moveset = rankings[i].matches[j].moveSet;
 
 							for(var k = 0; k < fastMoves.length; k++){

@@ -7,7 +7,11 @@ function Battle(){
 	var self = this;
 	var pokemon = [null, null];
 	var cp = 1500;
-	var cup = {name: "all", types: []}; // List of allowed types
+	var cup = {
+		name: "all",
+		types: [],        // List of allowed types
+		allowedList: []   // List of allowed pokémon
+	}; 
 
 	var decisionLog = []; // For debugging
 	var debug = false;
@@ -91,10 +95,13 @@ function Battle(){
 	// Set allowed types from GameMaster data
 
 	this.setCup = function(cupName){
+		cup.name = cupName;
 
-		if(gm.data.cups[cupName]){
-			cup.name = cupName;
+		if (gm.data.cups[cupName]) {
 			cup.types = gm.data.cups[cupName];
+		}
+		if (gm.cups[cupName]) {
+			cup.allowedList = gm.cups[cupName].allowedList;
 		}
 	}
 
