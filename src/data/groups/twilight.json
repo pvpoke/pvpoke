@@ -32,7 +32,7 @@
 	{
 		"speciesId":"muk_alolan",
 		"fastMove":"POISON_JAB",
-		"chargedMoves":["DARK_PULSE","GUNK_SHOT"]
+		"chargedMoves":["DARK_PULSE","ACID_SPRAY"]
 	},
 	{
 		"speciesId":"drapion",
@@ -80,9 +80,9 @@
 		"chargedMoves":["CRUNCH","STONE_EDGE"]
 	},
 	{
-		"speciesId":"togetic",
-		"fastMove":"EXTRASENSORY",
-		"chargedMoves":["ANCIENT_POWER","DAZZLING_GLEAM"]
+		"speciesId":"togekiss",
+		"fastMove":"CHARM",
+		"chargedMoves":["ANCIENT_POWER","AERIAL_ACE"]
 	},
 	{
 		"speciesId":"qwilfish",
@@ -107,7 +107,12 @@
 	{
 		"speciesId":"tentacruel",
 		"fastMove":"POISON_JAB",
-		"chargedMoves":["HYDRO_PUMP","SLUDGE_WAVE"]
+		"chargedMoves":["HYDRO_PUMP","ACID_SPRAY"]
+	},
+	{
+		"speciesId":"nidoqueen",
+		"fastMove":"POISON_JAB",
+		"chargedMoves":["EARTH_POWER","STONE_EDGE"]
 	},
 	{
 		"speciesId":"haunter",

@@ -68,6 +68,10 @@
 			{
 				"speciesId": "medicham",
 				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "probopass",
+				"chargedMoves": ["MAGNET_BOMB", "THUNDERBOLT"]
 			}
 		]
 	},
@@ -94,6 +98,10 @@
 			{
 				"speciesId": "qwilfish",
 				"chargedMoves": ["AQUA_TAIL", "SLUDGE_WAVE"]
+			},
+			{
+				"speciesId": "gardevoir",
+				"fastMove": "CHARM"
 			}
 		]
 	},
@@ -128,6 +136,10 @@
 				"chargedMoves": ["SURF", "ICE_BEAM"]
 			},
 			{
+				"speciesId": "probopass",
+				"fastMove": "SPARK"
+			},
+			{
 				"speciesId": "moltres",
 				"chargedMoves": ["OVERHEAT", "ANCIENT_POWER"]
 			},
@@ -152,6 +164,10 @@
 			{
 				"speciesId": "skuntank",
 				"chargedMoves": ["CRUNCH", "FLAMETHROWER"]
+			},
+			{
+				"speciesId": "gardevoir",
+				"chargedMoves": ["SHADOW_BALL", "DAZZLING_GLEAM"]
 			},
 			{
 				"speciesId": "drapion",
@@ -180,6 +196,10 @@
 			},
 			{
 				"speciesId": "bronzong",
+				"fastMove": "CONFUSION"
+			},
+			{
+				"speciesId": "gardevoir",
 				"fastMove": "CONFUSION"
 			}
 		]

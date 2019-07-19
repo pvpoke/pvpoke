@@ -10,13 +10,18 @@
 		"chargedMoves":["CRUNCH","HYPER_FANG"]
 	},
 	{
+		"speciesId":"gardevoir",
+		"fastMove":"CHARM",
+		"chargedMoves":["SHADOW_BALL","DAZZLING_GLEAM"]
+	},
+	{
 		"speciesId":"muk_alolan",
 		"fastMove":"POISON_JAB",
 		"chargedMoves":["DARK_PULSE","SLUDGE_WAVE"]
 	},
 	{
 		"speciesId":"drapion",
-		"fastMove":"INFESTATION",
+		"fastMove":"BITE",
 		"chargedMoves":["AQUA_TAIL","CRUNCH"]
 	},
 	{
@@ -55,14 +60,14 @@
 		"chargedMoves":["THUNDER_PUNCH","WILD_CHARGE"]
 	},
 	{
-		"speciesId":"shiftry",
-		"fastMove":"RAZOR_LEAF",
-		"chargedMoves":["LEAF_BLADE","FOUL_PLAY"]
-	},
-	{
 		"speciesId":"xatu",
 		"fastMove":"AIR_SLASH",
 		"chargedMoves":["AERIAL_ACE","OMINOUS_WIND"]
+	},
+	{
+		"speciesId":"metagross",
+		"fastMove":"BULLET_PUNCH",
+		"chargedMoves":["METEOR_MASH","EARTHQUAKE"]
 	},
 	{
 		"speciesId":"hypno",
