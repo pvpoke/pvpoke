@@ -11,6 +11,8 @@ function MatchHandler(){
 	var properties;
 
 	var roundRecord = [0, 0];
+	var previousRoundResult = null;
+	var previousRoundTeams = [];
 
 	// Initialize handler
 
@@ -86,7 +88,10 @@ function MatchHandler(){
 		var opponent = players[1];
 
 		player.setTeam(team);
-		opponent.generateTeam(player.getRoster());
+		opponent.generateTeam(player.getRoster(), previousRoundResult, previousRoundTeams);
+		
+		console.log(player.getTeam());
+		console.log(opponent.getTeam());
 
 		interface.close();
 		battler.init(props, battle, players);
@@ -96,11 +101,36 @@ function MatchHandler(){
 
 	this.nextTournamentRoundSetup = function(result){
 		$(".battle-window").attr("phase","");
-		interface.openTeamSelect(players);
+		
+		switch(result){
+			case "win":
+				roundRecord[0]++;
+				break;
+			case "loss":
+				roundRecord[1]++;
+				break;	
+		}
+		
+		// Compile the teams used in the previous round
+		previousRoundResult = result;
+		previousRoundTeams = [];
+		
+		for(var i = 0; i < players.length; i++){
+			var team = players[i].getTeam();
+			var list = [];
+			for(var n = 0; n < team.length; n++){
+				list.push(team[n]);
+			}
+			
+			previousRoundTeams.push(list);
+		}	
+		interface.openTeamSelect(players, result);
 	}
 
 	this.startTournamentRound = function(team, props){
 		roundRecord = [0, 0];
+		previousRoundResult = null;
+		previousRoundTeams = [];
 		self.startTournamentBattle(team, properties);
 	}
 

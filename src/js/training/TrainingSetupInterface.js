@@ -109,17 +109,18 @@ var InterfaceMaster = (function () {
 
 						// Check to see if this Pokemon was selected for a previous round
 						if((i == 0)&&(currentTeam.length == 3)){
-							if(pokemon == currentTeam[currentTeamIndex]){
-								$el.addClass("selected");
-								$el.attr("team-index", currentTeamIndex);
-								$el.find(".number").html((currentTeamIndex+1));
-								currentTeamIndex++;
+							for(var j = 0; j < currentTeam.length; j++){
+								if(pokemon == currentTeam[j]){
+									$el.addClass("selected");
+									$el.attr("team-index", j);
+									$el.find(".number").html((j+1));
+								}
 							}
+							
+							currentTeamIndex = 2;
 						}
 					}
 				}
-
-				currentTeamIndex = 0;
 			}
 
 			// Callback for importing a randomly generated roster

@@ -32,9 +32,12 @@ var BattlerMaster = (function () {
 			var switchTime = 13000;
 			var phaseTimer = 4000;
 			var countdown = 0;
+			
+			// Helper variables
 			var turn = 0;
 			var time = 0;
 			var properties;
+			var battleResult;
 
 			var interfaceLockout = 0; // Prevent clicking the shield or switch options too early
 			var listenersInitialized = false; // Prevent event listeners from being added twice
@@ -151,6 +154,8 @@ var BattlerMaster = (function () {
 							break;
 
 						case "game_over":
+							battleResult = response.result;
+							
 							switch(response.result){
 								case "win":
 									$(".battle-window .end-screen .result").html("You won! Way to go!")
@@ -586,7 +591,7 @@ var BattlerMaster = (function () {
 			// Go back to team select for a new round
 
 			function nextRoundClick(e){
-				handler.nextTournamentRoundSetup();
+				handler.nextTournamentRoundSetup(battleResult);
 			}
 
 			// Handler for the the use shield timer
