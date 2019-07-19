@@ -56,6 +56,7 @@ var BattlerMaster = (function () {
 					$(".shield-window .shield").on("click", useShieldClick);
 					$(".end-screen .replay").on("click", replayBattleClick);
 					$(".end-screen .new-match").on("click", newMatchClick);
+					$(".end-screen .next-round").on("click", nextRoundClick);
 
 					listenersInitialized = true;
 				}
@@ -580,6 +581,12 @@ var BattlerMaster = (function () {
 
 			function newMatchClick(e){
 				handler.returnToSetup();
+			}
+
+			// Go back to team select for a new round
+
+			function nextRoundClick(e){
+				handler.nextTournamentRoundSetup();
 			}
 
 			// Handler for the the use shield timer

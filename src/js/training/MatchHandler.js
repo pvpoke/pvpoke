@@ -10,6 +10,8 @@ function MatchHandler(){
 	var players = [];
 	var properties;
 
+	var roundRecord = [0, 0];
+
 	// Initialize handler
 
 	this.init = function(){
@@ -72,7 +74,14 @@ function MatchHandler(){
 
 	// Initiate a new tournament battle
 
-	this.startTournamentBattle = function(team, properties){
+	this.startTournamentRound = function(team, props){
+		roundRecord = [0, 0];
+		self.startTournamentBattle(team, properties);
+	}
+
+	// Initiate a new tournament battle
+
+	this.startTournamentBattle = function(team, props){
 		var player = players[0];
 		var opponent = players[1];
 
@@ -80,7 +89,19 @@ function MatchHandler(){
 		opponent.generateTeam(player.getRoster());
 
 		interface.close();
-		battler.init(properties, battle, players);
+		battler.init(props, battle, players);
+	}
+
+	// Continue to the next round
+
+	this.nextTournamentRoundSetup = function(result){
+		$(".battle-window").attr("phase","");
+		interface.openTeamSelect(players);
+	}
+
+	this.startTournamentRound = function(team, props){
+		roundRecord = [0, 0];
+		self.startTournamentBattle(team, properties);
 	}
 
 	// Return to the setup interface

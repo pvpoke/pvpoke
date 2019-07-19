@@ -72,6 +72,7 @@ var InterfaceMaster = (function () {
 
 			this.openTeamSelect = function(players){
 				playerRoster = players[0].getRoster();
+				currentTeamIndex = 0;
 
 				self.close();
 				$(".section.team-select").show();
@@ -87,7 +88,7 @@ var InterfaceMaster = (function () {
 						var pokemon = roster[n];
 						var $el = $(".switch-window .pokemon").first().clone();
 
-						$el.find(".name").attr("css","name");
+						$el.find(".name").attr("class","name");
 						$el.attr("type-1", pokemon.types[0]);
 						if(pokemon.types[1] == "none"){
 							$el.attr("type-2", pokemon.types[0]);
@@ -105,6 +106,16 @@ var InterfaceMaster = (function () {
 						}
 
 						$(".team-select .roster").eq(1-i).append($el);
+
+						// Check to see if this Pokemon was selected for a previous round
+						if((i == 0)&&(currentTeam.length == 3)){
+							if(pokemon == currentTeam[currentTeamIndex]){
+								$el.addClass("selected");
+								$el.attr("team-index", currentTeamIndex);
+								$el.find(".number").html((currentTeamIndex+1));
+								currentTeamIndex++;
+							}
+						}
 					}
 				}
 
@@ -252,7 +263,7 @@ var InterfaceMaster = (function () {
 					cup: battle.getCup().name
 					};
 
-				handler.startTournamentBattle(currentTeam, props);
+				handler.startTournamentRound(currentTeam, props);
 			}
 
 			// Event handler for changing the league select
