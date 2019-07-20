@@ -42,7 +42,7 @@ function Player(i, ai, b){
 
 	this.setRoster = function(val){
 		roster = val;
-		
+
 		// For team generation purposes, give each Pokemon 2 shields and fully reset
 		for(var i = 0; i < roster.length; i++){
 			roster[i].setShields(2);
@@ -153,7 +153,12 @@ function Player(i, ai, b){
 
 	// Generate a team of 3 with an established roster
 
-	this.generateTeam = function(opponentRoster){
-		ai.generateTeam(opponentRoster);
+	this.generateTeam = function(opponentRoster, previousResult, previousTeams){
+		if(! previousResult){
+			ai.generateTeam(opponentRoster);
+		} else{
+			ai.generateTeam(opponentRoster, previousResult, previousTeams);
+		}
+
 	}
 }

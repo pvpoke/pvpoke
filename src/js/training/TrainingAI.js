@@ -140,16 +140,24 @@ function TrainingAI(l, p, b){
 
 	// With a set roster, produce a team of 3
 
-	this.generateTeam = function(opponentRoster){
+	this.generateTeam = function(opponentRoster, previousResult, previousTeams){
 		var roster = player.getRoster();
 		var team = [];
 
 		// Choose a pick strategy
 		var pickStrategyOptions = [];
-		pickStrategyOptions.push(new DecisionOption("BASIC", 1));
-		pickStrategyOptions.push(new DecisionOption("BEST", 4));
-		pickStrategyOptions.push(new DecisionOption("COUNTER", 4));
-		pickStrategyOptions.push(new DecisionOption("UNBALANCED", 2));
+
+		if(! previousResult){
+			// If this is a fresh round, use these strategies
+			pickStrategyOptions.push(new DecisionOption("BASIC", 1));
+			pickStrategyOptions.push(new DecisionOption("BEST", 4));
+			pickStrategyOptions.push(new DecisionOption("COUNTER", 4));
+			pickStrategyOptions.push(new DecisionOption("UNBALANCED", 2));
+		} else{
+			// If this is subsequent round, use these strategies
+			pickStrategyOptions.push(new DecisionOption("SAME_TEAM", 2));
+		}
+
 
 		var pickStrategy = self.chooseOption(pickStrategyOptions).name;
 
@@ -263,6 +271,15 @@ function TrainingAI(l, p, b){
 					}
 				}
 
+				break;
+
+			// Use the same team as last time
+			case "SAME_TEAM":
+				var previousTeam = previousTeams[1];
+
+				for(var i = 0; i < previousTeam.length; i++){
+					team.push(previousTeam[i]);
+				}
 				break;
 		}
 		console.log(team);

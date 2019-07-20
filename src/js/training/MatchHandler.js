@@ -89,7 +89,7 @@ function MatchHandler(){
 
 		player.setTeam(team);
 		opponent.generateTeam(player.getRoster(), previousRoundResult, previousRoundTeams);
-		
+
 		console.log(player.getTeam());
 		console.log(opponent.getTeam());
 
@@ -100,31 +100,35 @@ function MatchHandler(){
 	// Continue to the next round
 
 	this.nextTournamentRoundSetup = function(result){
+		console.log("result: " + result);
 		$(".battle-window").attr("phase","");
-		
+
 		switch(result){
 			case "win":
 				roundRecord[0]++;
 				break;
 			case "loss":
 				roundRecord[1]++;
-				break;	
+				break;
 		}
-		
+
+		// Set the round number in the interface
+		interface.setRoundNumber(roundRecord[0]+roundRecord[1]);
+
 		// Compile the teams used in the previous round
 		previousRoundResult = result;
 		previousRoundTeams = [];
-		
+
 		for(var i = 0; i < players.length; i++){
 			var team = players[i].getTeam();
 			var list = [];
 			for(var n = 0; n < team.length; n++){
 				list.push(team[n]);
 			}
-			
+
 			previousRoundTeams.push(list);
-		}	
-		interface.openTeamSelect(players, result);
+		}
+		interface.openTeamSelect(players);
 	}
 
 	this.startTournamentRound = function(team, props){

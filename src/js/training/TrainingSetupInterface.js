@@ -24,6 +24,7 @@ var InterfaceMaster = (function () {
 			var playerRoster;
 			var currentTeam = [];
 			var currentTeamIndex = 0;
+			var roundNumber = 0;
 
 			var multiSelectors = [];
 
@@ -116,7 +117,7 @@ var InterfaceMaster = (function () {
 									$el.find(".number").html((j+1));
 								}
 							}
-							
+
 							currentTeamIndex = 2;
 						}
 					}
@@ -127,6 +128,12 @@ var InterfaceMaster = (function () {
 
 			this.importRandomizedRoster = function(roster){
 				multiSelectors[0].setPokemonList(roster.slice(0, partySize));
+			}
+
+			// Set the current tournament round number for reference
+
+			this.setRoundNumber = function(val){
+				roundNumber = val;
 			}
 
 			// Dispatch battle start to the MatchHandler with provided options
@@ -143,6 +150,9 @@ var InterfaceMaster = (function () {
 
 					return false;
 				}
+
+				// Set the round number to 0 for tournament mode
+				roundNumber = 0;
 
 				var props = {
 					teams: teams,
@@ -264,7 +274,12 @@ var InterfaceMaster = (function () {
 					cup: battle.getCup().name
 					};
 
-				handler.startTournamentRound(currentTeam, props);
+				if(roundNumber == 0){
+					handler.startTournamentRound(currentTeam, props);
+				} else{
+					handler.startTournamentBattle(currentTeam, props);
+				}
+
 			}
 
 			// Event handler for changing the league select
