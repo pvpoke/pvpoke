@@ -114,6 +114,10 @@ function Battle(){
 
 	this.setPlayers = function(arr){
 		players = arr;
+
+		for(var i = 0; i < players.length; i++){
+			players[i].reset();
+		}
 	}
 
 	this.getCP = function(){
@@ -1608,6 +1612,12 @@ function Battle(){
 
 	this.getTurnsToWin = function(){
 		return turnsToWin;
+	}
+
+	// Reset the current turn number
+
+	this.setTurns = function(val){
+		turns = val;
 	}
 
 	// Return the current turn number

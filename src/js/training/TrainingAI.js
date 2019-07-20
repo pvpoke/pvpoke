@@ -155,7 +155,19 @@ function TrainingAI(l, p, b){
 			pickStrategyOptions.push(new DecisionOption("UNBALANCED", 2));
 		} else{
 			// If this is subsequent round, use these strategies
-			pickStrategyOptions.push(new DecisionOption("SAME_TEAM", 2));
+			var winStratWeight = 2;
+			var loseStratWeight = 2;
+
+			if(previousResult == "win"){
+				loseStratWeight = 6;
+			} else if(previousResult == "loss"){
+				winStratWeight = 6;
+			}
+
+			pickStrategyOptions.push(new DecisionOption("SAME_TEAM", winStratWeight));
+			pickStrategyOptions.push(new DecisionOption("SAME_TEAM_DIFFERENT_LEAD", winStratWeight));
+			pickStrategyOptions.push(new DecisionOption("COUNTER_LAST_LEAD", loseStratWeight));
+			pickStrategyOptions.push(new DecisionOption("COUNTER", loseStratWeight));
 		}
 
 
@@ -281,6 +293,61 @@ function TrainingAI(l, p, b){
 					team.push(previousTeam[i]);
 				}
 				break;
+
+			// Use the same team as last time but with the previous lead's bodyguard as the lead
+			case "SAME_TEAM_DIFFERENT_LEAD":
+				var previousTeam = previousTeams[1];
+
+				team.push(previousTeam[1]);
+				previousTeam.splice(1,1);
+
+				for(var i = 0; i < previousTeam.length; i++){
+					team.push(previousTeam[i]);
+				}
+				break;
+
+			// Choose a team that counter's the opponent's previous lead
+			case "COUNTER_LAST_LEAD":
+				var opponentPreviousLead = previousTeams[0][0];
+
+				var teamPerformance = self.calculateAverageRosterPerformance([opponentPreviousLead], roster);
+				var scenarios = teamPerformance[0].scenarios;
+
+				scenarios.sort((a,b) => (a.average > b.average) ? 1 : ((b.average > a.average) ? -1 : 0)); // Sort by worst to best
+
+				// Lead with the best counter
+				team.push(scenarios[0].opponent);
+
+				// Next, let's give it a bodyguard
+				var scenarios = self.runBulkScenarios("NO_BAIT", team[0], opponentRoster);
+				scenarios.sort((a,b) => (a.average > b.average) ? 1 : ((b.average > a.average) ? -1 : 0)); // Sort by worst to last
+
+				var targets = [scenarios[0].opponent, scenarios[1].opponent];
+
+				teamPerformance = self.calculateAverageRosterPerformance(roster, targets);
+
+				// Add the best bodyguard that isn't the currently selected Pokemon
+				for(var i = 0; i < teamPerformance.length; i++){
+					if(team.indexOf(teamPerformance[i].pokemon) == -1){
+						team.push(teamPerformance[i].pokemon);
+						break;
+					}
+				}
+
+				// Finally, let's round them out with a Pokemon that does best against their collective counters
+				teamPerformance = self.calculateAverageRosterPerformance(opponentRoster, team);
+				targets = [teamPerformance[0].pokemon, teamPerformance[1].pokemon];
+
+				teamPerformance = self.calculateAverageRosterPerformance(roster, targets);
+				// Add the best bodyguard that isn't the currently selected Pokemon
+				for(var i = 0; i < teamPerformance.length; i++){
+					if(team.indexOf(teamPerformance[i].pokemon) == -1){
+						team.push(teamPerformance[i].pokemon);
+						break;
+					}
+				}
+
+				break;
 		}
 		console.log(team);
 
@@ -401,7 +468,7 @@ function TrainingAI(l, p, b){
 		self.processStrategy(option.name);
 
 		if(turn !== undefined){
-			turnLastEvaluated = turn;
+			turnLastEvaluated = battle.getTurns();
 		} else{
 			turnLastEvaluated = 1;
 		}
@@ -724,9 +791,6 @@ function TrainingAI(l, p, b){
 		var options = [];
 		options.push(new DecisionOption(true, yesWeight));
 		options.push(new DecisionOption(false, noWeight));
-
-		console.log("Yes: " + options[0].weight);
-		console.log("No: " + options[1].weight);
 
 		var decision = self.chooseOption(options).name;
 

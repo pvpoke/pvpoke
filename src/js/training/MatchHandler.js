@@ -90,9 +90,6 @@ function MatchHandler(){
 		player.setTeam(team);
 		opponent.generateTeam(player.getRoster(), previousRoundResult, previousRoundTeams);
 
-		console.log(player.getTeam());
-		console.log(opponent.getTeam());
-
 		interface.close();
 		battler.init(props, battle, players);
 	}
@@ -100,7 +97,6 @@ function MatchHandler(){
 	// Continue to the next round
 
 	this.nextTournamentRoundSetup = function(result){
-		console.log("result: " + result);
 		$(".battle-window").attr("phase","");
 
 		switch(result){
