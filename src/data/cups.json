@@ -1,4 +1,40 @@
 {
+  "all": {
+    "types": []
+  },
+  "custom": {
+    "types": []
+  },
+  "boulder": {
+    "types": ["rock", "steel", "fighting", "ground"]
+  },
+  "twilight": {
+    "types": ["dark", "poison", "fairy", "ghost"]
+  },
+  "tempest": {
+    "types": ["electric", "ice", "flying", "ground"]
+  },
+  "kingdom": {
+    "types": ["fire", "ice", "dragon", "steel"]
+  },
+  "nightmare": {
+    "types": ["psychic", "dark", "fighting"],
+    "bannedList": ["medicham","sableye","lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi","latios","latias","uxie","mesprit","azelf","jirachi"]
+  },
+  "regionals-1": {
+    "types": ["rock", "steel", "fighting", "ground", "dark", "poison", "fairy", "ghost", "electric", "ice", "flying", "fire", "dragon"]
+  },
+  "rainbow": {
+    "types": ["fire", "water", "grass", "electric", "bug"]
+  },
+  "championships-1": {
+    "types": [],
+    "bannedList": ["lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi","latios","latias","uxie","mesprit","azelf","melmetal","celebi","zapdos","articuno","moltres","suicune","entei","raikou","regirock","registeel","regice","ho_oh","jirachi"]
+  },
+  "jungle": {
+    "types": ["normal", "grass", "electric", "bug"],
+    "bannedList": ["tropius","wormadam_sandy","wormadam_plant","wormadam_trash","mothim"]
+  },
   "kanto": {
     "allowedList": [
       "abra",
@@ -153,7 +189,8 @@
       "wigglytuff",
       "zapdos",
       "zubat"
-    ]
+    ],
+    "leagues": [1500, 2500, 10000]
   },
   "johto": {
     "allowedList": [
@@ -257,7 +294,8 @@
       "wooper",
       "xatu",
       "yanma"
-    ]
+    ],
+    "leagues": [1500, 2500, 10000]
   },
   "hoenn": {
     "allowedList": [
@@ -402,7 +440,8 @@
       "zangoose",
       "zigzagoon"
     ],
-    "bannedList": []
+    "bannedList": [],
+    "leagues": [1500, 2500, 10000]
   },
   "sinnoh": {
     "allowedList": [
@@ -544,7 +583,8 @@
       "wormadam_sandy",
       "wormadam_trash",
       "yanmega"
-    ]
+    ],
+    "leagues": [1500, 2500, 10000]
   },
   "uc": {
     "allowedList": [],
@@ -583,7 +623,8 @@
       "heatran",
       "dialga",
       "rayquaza"
-    ]
+    ],
+    "leagues": [2500]
   },
   "liguinha3": {
     "allowedList": [

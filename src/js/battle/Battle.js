@@ -98,10 +98,8 @@ function Battle(){
 	this.setCup = function(cupName){
 		cup.name = cupName;
 
-		if (gm.data.cups[cupName]) {
-			cup.types = gm.data.cups[cupName];
-		}
 		if (gm.cups[cupName]) {
+			if (gm.cups[cupName].types) { cup.types = gm.cups[cupName].types; }
 			if (gm.cups[cupName].allowedList) { cup.allowedList = gm.cups[cupName].allowedList; }
 			if (gm.cups[cupName].bannedList) { cup.bannedList = gm.cups[cupName].bannedList; }
 		}

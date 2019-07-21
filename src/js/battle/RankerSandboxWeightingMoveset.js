@@ -82,19 +82,6 @@ var RankerMaster = (function () {
 				var permaBannedList = ["rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","regigigas","phione","manaphy","darkrai","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","kecleon"]; // Don't rank these Pokemon at all yet
 
 
-				if(cup.name == "nightmare"){
-					permaBannedList = permaBannedList.concat(["medicham","sableye","lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi","latios","latias","uxie","mesprit","azelf","jirachi"]);
-				}
-
-				if(cup.name == "championships-1"){
-					permaBannedList = permaBannedList.concat(["lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi","latios","latias","uxie","mesprit","azelf","melmetal","celebi","zapdos","articuno","moltres","suicune","entei","raikou","regirock","registeel","regice","ho_oh","jirachi"]);
-				}
-
-				if(cup.name == "jungle"){
-					permaBannedList = permaBannedList.concat(["tropius","wormadam_sandy","wormadam_plant","wormadam_trash","mothim"]);
-				}
-
-
 				// If you want to rank specfic Pokemon, you can enter their species id's here
 
 				var allowedList = [];
@@ -107,11 +94,6 @@ var RankerMaster = (function () {
 				}
 				console.log('cup:');
 				console.log(cup);
-				
-
-				// if(cup.name == "hoenn"){
-				// 	allowedList = ["sceptile", "grovyle", "combusken", "blaziken", "marshtomp", "swampert", "mightyena", "linoone", "beautifly", "dustox", "ludicolo", "shiftry", "swellow", "pelipper", "kirlia", "gardevoir", "masquerain", "breloom", "vigoroth", "slaking", "exploud", "shedinja", "hariyama", "nosepass", "delcatty", "sableye", "mawile", "lairon", "aggron", "medicham", "manectric", "plusle", "minun", "volbeat", "illumise", "roselia", "swalot", "sharpedo", "wailord", "camerupt", "torkoal", "grumpig", "vibrava", "flygon", "cacturne", "altaria", "zangoose", "seviper", "lunatone", "solrock", "whiscash", "crawdaunt", "claydol", "cradily", "armaldo", "milotic", "castform", "castfor_sunny", "castform_rainy", "castform_snowy", "banette", "dusclops", "tropius", "chimecho", "absol", "glalie", "sealeo", "walrein", "huntail", "gorebyss", "relicanth", "luvdisc", "shelgon", "salamence", "metang", "metagross", "regirock", "regice", "registeel", "latias", "latios", "kyogre", "groudon", "rayquaza", "deoxys_defense"]
-				// }
 
 				for(var i = 0; i < gm.data.pokemon.length; i++){
 
@@ -307,11 +289,6 @@ var RankerMaster = (function () {
 						opponent.setShields(shieldCounts[1]);
 
 						battle.simulate();
-						// ;;;;vib
-						// if (shieldCounts[0] == 1 && shieldCounts[1] == 1) {
-						// 	console.log('simulating battle: ' + pokemon.speciesId + ' vs ' + opponent.speciesId);
-						// }
-						
 
 						// Calculate Battle Rating for each Pokemon
 
@@ -441,12 +418,6 @@ var RankerMaster = (function () {
 					rankObj.moves = {fastMoves: fastMoves, chargedMoves: chargedMoves};
 
 					rankings.push(rankObj);
-					// ;;;;vib
-					// if (shieldCounts[0] == 1 && shieldCounts[1] == 1) {
-					// 		// console.log('simulating battle: ' + pokemon.speciesId + ' vs ' + opponent.speciesId);
-					// 		console.log(pokemon);
-					// 		console.log(rankObj.matches);
-					// 	}
 				}
 
 
@@ -545,7 +516,12 @@ var RankerMaster = (function () {
 					// Assign special rating to movesets and determine best overall moveset
 
 					for(var j = 0; j < rankings[i].matches.length; j++){
-						if(rankings[i].matches[j].score > 0 || true){ //;;;;vib
+						//;;;;vib
+						// I temporarily disabled this because it breaks kanto - master league
+						// it causes most pokémon to score zero and consequently most movesets are removed
+						// TODO figure out why this breaks kanto - master
+						// if(rankings[i].matches[j].score > 0 || true){ 
+						if(rankings[i].matches[j].score > 0){ 
 							var moveset = rankings[i].matches[j].moveSet;
 
 							for(var k = 0; k < fastMoves.length; k++){
