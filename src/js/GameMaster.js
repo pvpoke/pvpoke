@@ -7,9 +7,14 @@ var GameMaster = (function () {
         var object = new Object();
 
 		object.data = {};
+		object.cups = {};
 		object.rankings = [];
 		object.groups = [];
 		object.loadedData = 0;
+
+		$.getJSON( webRoot+"data/cups.json", function( data ){
+			object.cups = data;
+		});
 
 		$.getJSON( webRoot+"data/gamemaster.json?v=123", function( data ){
 			object.data = data;

@@ -44,12 +44,23 @@ var InterfaceMaster = (function () {
 				$(".rankings-container").html('');
 				$(".loading").show();
 
-				// Force 1500 if not general
-
-				if(cup != 'all'){
-					league = 1500;
-
-					$(".league-select option[value=\"1500\"]").prop("selected","selected");
+				// if this cup does not allow the chosen league,
+				// then force the first league it does allow
+				var allowedLeagues;
+				try {
+					allowedLeagues = gm.cups[cup].leagues;
+					if (!allowedLeagues.includes(+league) && allowedLeagues.length > 0) {
+						league = allowedLeagues[0];
+						$(`.league-select option[value=\"${league}\"]`).prop("selected","selected");
+					}
+				} catch (e) {
+					// if this cup does not specify which leagues it allows
+					// Force 1500 if not general
+					if(cup != 'all'){
+						league = 1500;
+	
+						$(".league-select option[value=\"1500\"]").prop("selected","selected");
+					}
 				}
 
 				/* This timeout allows the interface to display the loading message before

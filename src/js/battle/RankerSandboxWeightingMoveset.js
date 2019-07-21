@@ -19,7 +19,8 @@ var RankerMaster = (function () {
 			var rankings = [];
 			var rankingCombinations = [];
 
-			var moveSelectMode = "force";
+			// var moveSelectMode = "force";
+			var moveSelectMode = "auto";
 			var rankingData;
 
 			var leagues = [1500];
@@ -81,22 +82,18 @@ var RankerMaster = (function () {
 				var permaBannedList = ["rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","regigigas","phione","manaphy","darkrai","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","kecleon"]; // Don't rank these Pokemon at all yet
 
 
-				if(cup.name == "nightmare"){
-					permaBannedList = permaBannedList.concat(["medicham","sableye","lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi","latios","latias","uxie","mesprit","azelf","jirachi"]);
-				}
-
-				if(cup.name == "championships-1"){
-					permaBannedList = permaBannedList.concat(["lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi","latios","latias","uxie","mesprit","azelf","melmetal","celebi","zapdos","articuno","moltres","suicune","entei","raikou","regirock","registeel","regice","ho_oh","jirachi"]);
-				}
-
-				if(cup.name == "jungle"){
-					permaBannedList = permaBannedList.concat(["tropius","wormadam_sandy","wormadam_plant","wormadam_trash","mothim"]);
-				}
-
-
 				// If you want to rank specfic Pokemon, you can enter their species id's here
 
 				var allowedList = [];
+
+				if (cup.allowedList.length > 0) {
+					allowedList = cup.allowedList;
+				}
+				if (cup.bannedList.length > 0) {
+					permaBannedList = permaBannedList.concat(cup.bannedList);
+				}
+				console.log('cup:');
+				console.log(cup);
 
 				for(var i = 0; i < gm.data.pokemon.length; i++){
 
@@ -425,6 +422,7 @@ var RankerMaster = (function () {
 
 
 				console.log("total battles " + totalBattles);
+				
 
 				// Weigh all Pokemon matchups by their opponent's average rating
 
@@ -518,7 +516,12 @@ var RankerMaster = (function () {
 					// Assign special rating to movesets and determine best overall moveset
 
 					for(var j = 0; j < rankings[i].matches.length; j++){
-						if(rankings[i].matches[j].score > 0){
+						//;;;;vib
+						// I temporarily disabled this because it breaks kanto - master league
+						// it causes most pokémon to score zero and consequently most movesets are removed
+						// TODO figure out why this breaks kanto - master
+						// if(rankings[i].matches[j].score > 0 || true){ 
+						if(rankings[i].matches[j].score > 0){ 
 							var moveset = rankings[i].matches[j].moveSet;
 
 							for(var k = 0; k < fastMoves.length; k++){

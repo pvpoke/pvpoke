@@ -72,16 +72,11 @@ var RankerMaster = (function () {
 					var permaBannedList = ["rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","regigigas","phione","manaphy","darkrai","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","kecleon"]; // Don't rank these Pokemon at all yet
 					var allowedList = [];
 
-					if(cup.name == "nightmare"){
-						permaBannedList = permaBannedList.concat(["sableye","medicham","lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi","latios","latias","uxie","azelf","mesprit","jirachi"]);
+					if (cup.allowedList.length > 0) {
+						allowedList = cup.allowedList;
 					}
-
-					if(cup.name == "championships-1"){
-						permaBannedList = permaBannedList.concat(["lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi","latios","latias","uxie","mesprit","azelf","melmetal","celebi","zapdos","articuno","moltres","suicune","entei","raikou","regirock","registeel","regice","ho_oh","jirachi"]);
-					}
-
-					if(cup.name == "jungle"){
-						permaBannedList = permaBannedList.concat(["tropius","wormadam_sandy","wormadam_plant","wormadam_trash","mothim"]);
+					if (cup.bannedList.length > 0) {
+						permaBannedList = permaBannedList.concat(cup.bannedList);
 					}
 
 					if(exclusionList){
