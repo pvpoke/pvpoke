@@ -15,6 +15,11 @@
 		"chargedMoves":["STONE_EDGE","FLAMETHROWER"]
 	},
 	{
+		"speciesId":"probopass",
+		"fastMove":"SPARK",
+		"chargedMoves":["ROCK_SLIDE","MAGNET_BOMB"]
+	},
+	{
 		"speciesId":"melmetal",
 		"fastMove":"THUNDER_SHOCK",
 		"chargedMoves":["ROCK_SLIDE","THUNDERBOLT"]
@@ -42,7 +47,7 @@
 	{
 		"speciesId":"blaziken",
 		"fastMove":"COUNTER",
-		"chargedMoves":["FOCUS_BLAST","BRAVE_BIRD"]
+		"chargedMoves":["BLAZE_KICK","BLAST_BURN"]
 	},
 	{
 		"speciesId":"flygon",
