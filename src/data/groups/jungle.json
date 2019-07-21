@@ -35,11 +35,6 @@
 		"chargedMoves":["LEAF_BLADE","ACID_SPRAY"]
 	},
 	{
-		"speciesId":"ivysaur",
-		"fastMove":"RAZOR_LEAF",
-		"chargedMoves":["POWER_WHIP","SLUDGE_BOMB"]
-	},
-	{
 		"speciesId":"vigoroth",
 		"fastMove":"COUNTER",
 		"chargedMoves":["BODY_SLAM","BULLDOZE"]
@@ -48,16 +43,6 @@
 		"speciesId":"noctowl",
 		"fastMove":"WING_ATTACK",
 		"chargedMoves":["SKY_ATTACK","NIGHT_SHADE"]
-	},
-	{
-		"speciesId":"pidgeot",
-		"fastMove":"WING_ATTACK",
-		"chargedMoves":["AERIAL_ACE","BRAVE_BIRD"]
-	},
-	{
-		"speciesId":"scyther",
-		"fastMove":"AIR_SLASH",
-		"chargedMoves":["AERIAL_ACE","X_SCISSOR"]
 	},
 	{
 		"speciesId":"scizor",
@@ -77,7 +62,7 @@
 	{
 		"speciesId":"graveler_alolan",
 		"fastMove":"ROCK_THROW",
-		"chargedMoves":["ROCK_BLAST","THUNDERBOLT"]
+		"chargedMoves":["ROCK_BLAST","STONE_EDGE"]
 	},
 	{
 		"speciesId":"golem_alolan",
@@ -95,18 +80,8 @@
 		"chargedMoves":["WILD_CHARGE","FLASH_CANNON"]
 	},
 	{
-		"speciesId":"heracross",
-		"fastMove":"COUNTER",
-		"chargedMoves":["MEGAHORN","CLOSE_COMBAT"]
-	},
-	{
-		"speciesId":"breloom",
-		"fastMove":"COUNTER",
-		"chargedMoves":["DYNAMIC_PUNCH","SLUDGE_BOMB"]
-	},
-	{
-		"speciesId":"cradily",
-		"fastMove":"INFESTATION",
-		"chargedMoves":["STONE_EDGE","GRASS_KNOT"]
+		"speciesId":"wigglytuff",
+		"fastMove":"CHARM",
+		"chargedMoves":["ICE_BEAM","PLAY_ROUGH"]
 	}
 ]

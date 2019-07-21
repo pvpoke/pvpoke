@@ -16,7 +16,7 @@ var GameMaster = (function () {
 			object.cups = data;
 		});
 
-		$.getJSON( webRoot+"data/gamemaster.json?v=116", function( data ){
+		$.getJSON( webRoot+"data/gamemaster.json?v=120", function( data ){
 			object.data = data;
 
 			// Sort Pokemon alphabetically for searching
@@ -136,7 +136,7 @@ var GameMaster = (function () {
 			var key = cup + "" + category + "" + league;
 
 			if(! object.rankings[key]){
-				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=116";
+				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=120";
 
 				$.getJSON( file, function( data ){
 					object.rankings[key] = data;
@@ -156,7 +156,7 @@ var GameMaster = (function () {
 			var key = group;
 
 			if(! object.groups[key]){
-				var file = webRoot+"data/groups/"+group+".json?v=116";
+				var file = webRoot+"data/groups/"+group+".json?v=120";
 
 				$.getJSON( file, function( data ){
 

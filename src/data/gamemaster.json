@@ -7856,7 +7856,7 @@
         },
         "types": ["water", "ground"],
         "fastMoves": ["MUD_SHOT", "WATER_GUN"],
-        "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "SURF", "HYDRO_CANNON"],
+        "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "SURF", "HYDRO_CANNON", "MUDDY_WATER"],
         "legacyMoves": ["HYDRO_CANNON"],
         "defaultIVs": {
             "cp1500": [19, 3, 15, 2],
@@ -9961,6 +9961,17 @@
         "energy": 40,
         "energyGain": 0,
         "cooldown": 500
+    }, {
+        "moveId": "MUDDY_WATER",
+        "name": "Muddy Water",
+        "type": "water",
+        "power": 35,
+        "energy": 35,
+        "energyGain": 0,
+        "cooldown": 1000,
+		"buffs": [-1, 0],
+        "buffTarget": "opponent",
+        "buffApplyChance": ".3"
     }, {
         "moveId": "MUD_SHOT",
         "name": "Mud Shot",
