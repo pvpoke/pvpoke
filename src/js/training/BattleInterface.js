@@ -28,7 +28,7 @@ var BattlerMaster = (function () {
 			var chargeRate = 20;
 			var chargeDecayRate = 0.5;
 			var phaseInterval;
-			var chargeTime = 4000;
+			var chargeTime = 6000;
 			var switchTime = 13000;
 			var phaseTimer = 4000;
 			var countdown = 0;
@@ -159,17 +159,19 @@ var BattlerMaster = (function () {
 
 							switch(response.result){
 								case "win":
-									$(".battle-window .end-screen .result").html("You won! Way to go!")
+									$(".battle-window .end-screen .result").html("You won")
+									$(".battle-window .end-screen .subtitle").html("Way to go!")
 									break;
 
 								case "loss":
-									$(".battle-window .end-screen .result").html("You were defeated. Let's see what we can learn!")
+									$(".battle-window .end-screen .result").html("You were defeated")
+									$(".battle-window .end-screen .subtitle").html("Let's see what we can learn!")
 									break;
 
 								case "tie":
-									$(".battle-window .end-screen .result").html("A tie? No way!")
+									$(".battle-window .end-screen .result").html("Tie game")
+									$(".battle-window .end-screen .subtitle").html("What? No way!")
 									break;
-
 							}
 
 							setTimeout(function(){
@@ -221,6 +223,9 @@ var BattlerMaster = (function () {
 							} else{
 								$poke.find(".pokemon").attr("type-2", pokemon.types[0]);
 							}
+
+							$(".team-indicator").eq(i).find(".name").html(pokemon.speciesName);
+							$(".team-indicator").eq(i).find(".cp").html(pokemon.cp);
 						}
 
 						if(i == 0){
@@ -443,6 +448,9 @@ var BattlerMaster = (function () {
 						$(this).find(".pokemon").attr("type-1", activePokemon[index].types[0]);
 						$(this).eq(index).find(".name").attr("class", "name " + activePokemon[index].types[0]);
 
+						$(".team-indicator").eq(index).find(".name").html(activePokemon[index].speciesName);
+						$(".team-indicator").eq(index).find(".cp").html(activePokemon[index].cp);
+
 						if(activePokemon[index].types[1] != "none"){
 							$(this).find(".pokemon").attr("type-2", activePokemon[index].types[1]);
 						} else{
@@ -456,16 +464,25 @@ var BattlerMaster = (function () {
 			// At the end of the game, show relevant battle stats
 
 			self.displayEndGameStats = function(){
-				var team = players[0].getTeam();
-				var maxScore = 300;
 
-				for(var i = 0; i < team.length; i++){
-					var pokemon = team[i];
-					var width = (pokemon.battleStats.damage / maxScore) * 100;
+				var maxScore = 400;
 
-					$(".battle-stats .damage .pokemon-entry .name").eq(i).html(pokemon.speciesName);
-					$(".battle-stats .damage .pokemon-entry .damage-bar").eq(i).css("width", width+"%");
+				for(var k = 0; k < players.length; k++){
+					var team = players[k].getTeam();
+
+					for(var i = 0; i < team.length; i++){
+						var pokemon = team[i];
+						var width = (pokemon.battleStats.damage / maxScore) * 100;
+
+						$(".battle-stats .damage-section").eq(k).find(".pokemon-entry .name").eq(i).html(pokemon.speciesName);
+						$(".battle-stats .damage-section").eq(k).find(".pokemon-entry .damage-bar").eq(i).css("width", width+"%");
+						$(".battle-stats .damage-section").eq(k).find(".pokemon-entry").eq(i).find(".shield-bar").css("width", "0");
+						for(var n = 0; n < pokemon.battleStats.shieldsBurned; n++){
+							$(".battle-stats .damage-section").eq(k).find(".pokemon-entry").eq(i).find(".shield-bar").eq(n).css("width", ((50/maxScore) * 100)+"%");
+						}
+					}
 				}
+
 
 			}
 

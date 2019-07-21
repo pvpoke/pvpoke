@@ -490,12 +490,14 @@ function TrainingAI(l, p, b){
 			{
 				shields: pokemon.startingShields,
 				hp: pokemon.hp,
-				energy: pokemon.energy
+				energy: pokemon.energy,
+				cooldown: pokemon.cooldown
 			},
 			{
 				shields: opponent.startingShields,
 				hp: opponent.hp,
-				energy: opponent.energy
+				energy: opponent.energy,
+				cooldown: opponent.cooldown
 			}
 		];
 
@@ -554,10 +556,12 @@ function TrainingAI(l, p, b){
 		pokemon.startingShields = startStats[0].shields;
 		pokemon.startHp = startStats[0].hp;
 		pokemon.startEnergy = startStats[0].energy;
+		pokemon.cooldown = startStats[0].cooldown;
 
 		opponent.startingShields = startStats[1].shields;
 		opponent.startHp = startStats[1].hp;
 		opponent.startEnergy = startStats[1].energy;
+		opponent.cooldown = startStats[1].cooldown;
 
 		pokemon.reset();
 		opponent.reset();

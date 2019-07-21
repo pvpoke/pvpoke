@@ -43,7 +43,7 @@ function Battle(){
 	var roundChargedMoveUsed;
 	var roundShieldUsed;
 
-	var chargedMinigameTime = 8000;
+	var chargedMinigameTime = 10000;
 
 	var usePriority = false;
 
@@ -813,6 +813,8 @@ function Battle(){
 			pokemon[i].setBattle(self);
 		}
 
+		players[1].getAI().evaluateMatchup(turns, pokemon[1], pokemon[0], players[0]);
+
 		self.start();
 
 		var countdown = 5;
@@ -1234,7 +1236,7 @@ function Battle(){
 								moveName: move.name,
 								moveType: move.type
 							});
-						}, 4000);
+						}, 6000);
 
 						// Execute this move after a set amount of time
 						setTimeout(function(){
@@ -1246,12 +1248,12 @@ function Battle(){
 									players[1].getAI().evaluateMatchup(turns, pokemon[1], pokemon[0], players[0]);
 								}
 							}
-						}, 6000);
+						}, 8000);
 
 						// Return the game to the neutral phase
 						phaseTimeout = setTimeout(function(){
 							phase = "neutral";
-						}, 8000);
+						}, 10000);
 
 					}
 

@@ -82,17 +82,26 @@ require_once '../header.php';
 				<div class="text">12</div>
 			</div>
 			<div class="team-indicator left">
-				<div class="ball"></div>
-				<div class="ball"></div>
-				<div class="ball"></div>
+				<div class="name">Venusaur</div>
+				<div class="cp">CP 1500</div>
+				<div class="balls">
+					<div class="ball"></div>
+					<div class="ball"></div>
+					<div class="ball"></div>
+				</div>
+				<div class="shields left">2</div>
 			</div>
-			<div class="shields left">2</div>
+
 			<div class="team-indicator right">
-				<div class="ball"></div>
-				<div class="ball"></div>
-				<div class="ball"></div>
+				<div class="cp">CP 1500</div>
+				<div class="name">Venusaur</div>
+				<div class="shields right">2</div>
+				<div class="balls">
+					<div class="ball"></div>
+					<div class="ball"></div>
+					<div class="ball"></div>
+				</div>
 			</div>
-			<div class="shields right">2</div>
 		</div>
 
 		<div class="scene">
@@ -220,33 +229,79 @@ require_once '../header.php';
 		<div class="end-screen-container">
 			<div class="end-screen section white">
 				<h3 class="result">You won!</h3>
+				<p class="subtitle"></p>
 				<div class="battle-stats">
 					<div class="tab-section damage">
-						<div class="pokemon-entry">
-							<div class="poke-icon">
-								<div class="name">Azumarill</div>
-								<div class="image"></div>
+						<h3>Your Damage &amp; Shields Drawn</h3>
+						<div class="damage-section self">
+							<div class="pokemon-entry">
+								<div class="poke-icon">
+									<div class="name">Azumarill</div>
+									<div class="image"></div>
+								</div>
+								<div class="damage-container">
+									<div class="damage-bar"></div>
+									<div class="shield-bar"></div>
+									<div class="shield-bar"></div>
+								</div>
 							</div>
-							<div class="damage-container">
-								<div class="damage-bar"></div>
+							<div class="pokemon-entry">
+								<div class="poke-icon">
+									<div class="name">Azumarill</div>
+									<div class="image"></div>
+								</div>
+								<div class="damage-container">
+									<div class="damage-bar"></div>
+									<div class="shield-bar"></div>
+									<div class="shield-bar"></div>
+								</div>
+							</div>
+							<div class="pokemon-entry">
+								<div class="poke-icon">
+									<div class="name">Azumarill</div>
+									<div class="image"></div>
+								</div>
+								<div class="damage-container">
+									<div class="damage-bar"></div>
+									<div class="shield-bar"></div>
+									<div class="shield-bar"></div>
+								</div>
 							</div>
 						</div>
-						<div class="pokemon-entry">
-							<div class="poke-icon">
-								<div class="name">Azumarill</div>
-								<div class="image"></div>
+						<h3>Opponent's Damage &amp; Shields Drawn</h3>
+						<div class="damage-section opponent">
+							<div class="pokemon-entry">
+								<div class="poke-icon">
+									<div class="name">Azumarill</div>
+									<div class="image"></div>
+								</div>
+								<div class="damage-container">
+									<div class="damage-bar"></div>
+									<div class="shield-bar"></div>
+									<div class="shield-bar"></div>
+								</div>
 							</div>
-							<div class="damage-container">
-								<div class="damage-bar"></div>
+							<div class="pokemon-entry">
+								<div class="poke-icon">
+									<div class="name">Azumarill</div>
+									<div class="image"></div>
+								</div>
+								<div class="damage-container">
+									<div class="damage-bar"></div>
+									<div class="shield-bar"></div>
+									<div class="shield-bar"></div>
+								</div>
 							</div>
-						</div>
-						<div class="pokemon-entry">
-							<div class="poke-icon">
-								<div class="name">Azumarill</div>
-								<div class="image"></div>
-							</div>
-							<div class="damage-container">
-								<div class="damage-bar"></div>
+							<div class="pokemon-entry">
+								<div class="poke-icon">
+									<div class="name">Azumarill</div>
+									<div class="image"></div>
+								</div>
+								<div class="damage-container">
+									<div class="damage-bar"></div>
+									<div class="shield-bar"></div>
+									<div class="shield-bar"></div>
+								</div>
 							</div>
 						</div>
 					</div>

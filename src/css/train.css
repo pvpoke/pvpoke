@@ -85,7 +85,7 @@ a.random {
   max-width: 100%;
 }
 .battle-window .top {
-  padding-top: 10px;
+  padding-top: 5px;
   text-align: center;
   position: absolute;
   width: 100%;
@@ -107,12 +107,13 @@ a.random {
   font-size: 28px;
 }
 .battle-window .top .shields {
-  position: absolute;
-  top: 55px;
   background-size: contain;
   background-image: url("../img/shield.png");
   background-repeat: no-repeat;
   padding-left: 24px;
+  font-size: 14px;
+  height: 15px;
+  margin-top: 2px;
 }
 .battle-window .top .shields.left {
   left: 6%;
@@ -125,24 +126,45 @@ a.random {
 }
 .battle-window .top .team-indicator {
   position: absolute;
-  background: rgba(0, 0, 0, 0.75);
-  border-radius: 40px;
+  background: white;
+  border-radius: 8px;
   display: flex;
-  top: 25px;
-  padding: 0 5px;
+  flex-wrap: wrap;
+  top: 15px;
+  padding: 3px;
+  max-width: 35%;
+  justify-content: space-between;
 }
 .battle-window .top .team-indicator.left {
-  left: 5%;
+  left: 2.5%;
 }
 .battle-window .top .team-indicator.right {
-  right: 5%;
+  right: 2.5%;
+}
+.battle-window .top .team-indicator.right .cp {
+  text-align: left;
+}
+.battle-window .top .team-indicator.right .name {
+  text-align: right;
+}
+.battle-window .top .team-indicator .name, .battle-window .top .team-indicator .cp, .battle-window .top .team-indicator .balls {
+  width: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: left;
+}
+.battle-window .top .team-indicator .cp {
+  text-align: right;
+}
+.battle-window .top .team-indicator .balls {
+  display: flex;
 }
 .battle-window .top .team-indicator .ball {
-  width: 20px;
-  height: 20px;
+  width: 14px;
+  height: 14px;
   border-radius: 40px;
   background: #ff0000;
-  margin: 3px 4px;
+  margin: 3px 3px;
 }
 .battle-window .top .team-indicator .ball.fainted {
   background: #000;
@@ -197,6 +219,7 @@ a.random {
   display: inline-block;
   padding: 5px;
   margin: 0 0 5px 0;
+  line-height: 18px;
   border-radius: 12px;
   text-align: center;
 }
@@ -715,7 +738,12 @@ a.random {
   background: rgba(255, 255, 255, 0.95);
 }
 .end-screen-container .end-screen h3:first-of-type {
-  margin-top: 0;
+  margin: 0;
+}
+.end-screen-container .damage h3 {
+  text-align: left;
+  font-size: 16px;
+  margin-bottom: 10px;
 }
 .end-screen-container .pokemon-entry {
   display: flex;
@@ -730,12 +758,18 @@ a.random {
 }
 .end-screen-container .pokemon-entry .damage-container {
   width: 75%;
+  display: flex;
 }
-.end-screen-container .pokemon-entry .damage-container .damage-bar {
+.end-screen-container .pokemon-entry .damage-container .damage-bar,
+.end-screen-container .pokemon-entry .damage-container .shield-bar {
   width: 100%;
   height: 12px;
   border-radius: 12px;
   background: #000;
+}
+.end-screen-container .pokemon-entry .damage-container .shield-bar {
+  background: #de34eb;
+  margin-left: 2px;
 }
 
 /* POKEMON SPRITES */
