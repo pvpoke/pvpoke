@@ -60,6 +60,7 @@ var BattlerMaster = (function () {
 					$(".end-screen .replay").on("click", replayBattleClick);
 					$(".end-screen .new-match").on("click", newMatchClick);
 					$(".end-screen .next-round").on("click", nextRoundClick);
+					$(".end-screen a.tab").on("click", tabClick);
 
 					listenersInitialized = true;
 				}
@@ -482,8 +483,13 @@ var BattlerMaster = (function () {
 						}
 					}
 				}
-
-
+				
+				// Reset tabs
+				
+				$(".end-screen .a.tab").removeClass("active");
+				$(".end-screen .tab-section").hide();
+				$(".end-screen .a.tab").eq(0).addClass("active");
+				$(".end-screen .tab-section").eq(0).show();
 			}
 
 			// Handler for the charge up interval
@@ -610,6 +616,18 @@ var BattlerMaster = (function () {
 
 			function nextRoundClick(e){
 				handler.nextTournamentRoundSetup(battleResult);
+			}
+			
+			// Select a new tab on the end screen
+
+			function tabClick(e){
+				e.preventDefault();
+				
+				$(".end-screen a.tab").removeClass("active");
+				$(".end-screen .tab-section").hide();
+				$(e.target).addClass("active");
+				$(".end-screen .tab-section."+$(e.target).attr("href")).show();
+				
 			}
 
 			// Handler for the the use shield timer

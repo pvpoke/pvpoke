@@ -162,7 +162,7 @@ a.random{
 
 		.team-indicator{
 			position:absolute;
-			background: rgba(255,255,255.75);
+			background: rgba(255,255,255,.75);
 			border-radius:8px;
 			display:flex;
 			flex-wrap:wrap;
@@ -644,6 +644,10 @@ a.random{
 		.controls .move-bars{
 			display:none;
 		}
+		
+		.team-indicator{
+			display:none;
+		}
 
 		.scene{
 			@include transform(scale(0.8));
@@ -656,6 +660,10 @@ a.random{
 		}
 
 		.controls .move-bars{
+			display:none;
+		}
+		
+		.team-indicator{
 			display:none;
 		}
 
@@ -682,6 +690,10 @@ a.random{
 			display:none;
 		}
 
+		.team-indicator{
+			display:none;
+		}
+		
 		.scene{
 			@include transform(scale(1.1));
 		}
@@ -707,6 +719,10 @@ a.random{
 	&[phase="animating"]{
 		.animate-message{
 			opacity:1;
+		}
+		
+		.team-indicator{
+			display:none;
 		}
 	}
 
@@ -845,18 +861,92 @@ a.random{
 			margin:0;
 		}
 	}
+	
+	.tabs{
+		display:flex;
+		
+		a.tab{
+			display: block;
+			width: 33%;
+			text-align: center;
+			text-decoration: none;
+			font-weight: bold;
+			text-transform: uppercase;
+			font-size: 14px;
+			padding: 5px;
+
+			&[href="damage"]{
+				color:#ed4f34;
+
+				&.active{
+					background:#ed4f34;
+					color:#eee;
+				}
+			}
+
+			&[href="shields"]{
+				color:#cb28c1;
+
+				&.active{
+					background:#cb28c1;
+					color:#eee;
+				}
+			}
+			
+			&[href="energy"]{
+				color:#aecb28;
+
+				&.active{
+					background:#aecb28;
+					color:#eee;
+				}
+			}
+		}
+	}
+	
+	.tab-section{
+		display:none;
+	}
+	
+	p.description{
+		font-size:12px;
+	}
 
 	.damage{
 		h3{
-			text-align: left;
 		    font-size: 16px;
 		    margin-bottom: 10px;
+		}
+	
+		.damage-section{
+			padding:10px;
+			border-radius:12px;
+			background:#eee;
+			position:relative;
+			
+			.avg-line{
+				height: 100%;
+				width: 0px;
+				border: 1px dotted rgba(0,0,0,.5);
+				position: absolute;
+				top: 0;
+				left: 49.75%;
+			}
+		}
+		
+		.avg-label{
+			display:inline-block;
+			font-size:12px;
 		}
 	}
 
 	.pokemon-entry{
 		display:flex;
 		margin-bottom:15px;
+		
+		&:last-of-type{
+			margin-bottom:0;
+		}
 
 		.name{
 			text-align: left;
@@ -876,11 +966,19 @@ a.random{
 				width:100%;
 				height:12px;
 				border-radius:12px;
-				background:#000;
+				position: relative;
+				z-index:5px;
+			}
+			
+			.damage-bar{
+				background: url('../img/train/damage-bar-bg.jpg');
+   		 		background-position: -40px 0;
 			}
 
 			.shield-bar{
-				background:#de34eb;
+				background: url(../img/train/shield-bar-bg.jpg);
+				background-size: 200%;
+				background-position: 70% 0;
 				margin-left:2px;
 			}
 		}

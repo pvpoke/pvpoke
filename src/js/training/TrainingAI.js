@@ -832,5 +832,30 @@ function TrainingAI(l, p, b){
 	this.hasStrategy = function(strategy){
 		return (props.strategies.indexOf(strategy) > -1);
 	}
+	
+	// Return the name of the difficulty level
+	this.difficultyToString = function(){
+		var name = "AI";
+		
+		switch(level){
+			case 0:
+				name = "Novice";
+				break;
+				
+			case 1:
+				name = "Rival";
+				break;
+				
+			case 2:
+				name = "Elite";
+				break;
+				
+			case 3:
+				name = "Champion";
+				break;
+		}
+		
+		return name;
+	}
 
 }
