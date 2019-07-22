@@ -9517,6 +9517,14 @@
         "energyGain": 5,
         "cooldown": 1000
     }, {
+        "moveId": "FRUSTRATION",
+        "name": "Frustration",
+        "type": "normal",
+        "power": 10,
+        "energy": 40,
+        "energyGain": 0,
+        "cooldown": 500
+    }, {
         "moveId": "FURY_CUTTER",
         "name": "Fury Cutter",
         "type": "bug",
@@ -10222,6 +10230,14 @@
         "type": "normal",
         "power": 50,
         "energy": 35,
+        "energyGain": 0,
+        "cooldown": 500
+    }, {
+        "moveId": "RETURN",
+        "name": "Return",
+        "type": "normal",
+        "power": 50,
+        "energy": 40,
         "energyGain": 0,
         "cooldown": 500
     }, {
