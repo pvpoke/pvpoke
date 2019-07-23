@@ -412,6 +412,7 @@ function Battle(){
 
 		for(var i = 0; i < 2; i++){
 			var poke = pokemon[i];
+
 			poke.cooldown = Math.max(0, poke.cooldown - deltaTime); // Reduce cooldown
 			poke.hasActed = false;
 		}
@@ -895,7 +896,7 @@ function Battle(){
 
 			if((action)&&(action.type == "fast")){
 				poke.cooldown = poke.fastMove.cooldown;
-				timeline.push(new TimelineEvent("tap interaction", "Tap", poke.index, time, turns, [2,0]));
+				timeline.push(new TimelineEvent("tap interaction", "Tap", poke.index, time, turns, [2,0]));		
 			}
 
 			// Adjust priority
@@ -1394,6 +1395,10 @@ function Battle(){
 					if(mode == "emulate"){
 						attacker.battleStats.shieldsBurned++;
 						defender.battleStats.shieldsUsed++;
+						
+						if(attacker.battleStats.shieldsUsed > 0){
+							attacker.battleStats.shieldsFromShields++;
+						}
 					}
 
 				} else{
@@ -1428,6 +1433,11 @@ function Battle(){
 
 		if(mode == "emulate"){
 			attacker.battleStats.damage += (Math.min(damage, defender.hp) / defender.stats.hp) * 100;
+			
+						
+			if(attacker.battleStats.shieldsUsed > 0){
+				attacker.battleStats.damageFromShields += (Math.min(damage, defender.hp) / defender.stats.hp) * 100;
+			}
 		}
 
 		// Inflict damage

@@ -760,7 +760,9 @@ function Pokemon(id, i, b){
 		self.battleStats = {
 			damage: 0,
 			shieldsBurned: 0,
-			shieldsUsed: 0
+			shieldsUsed: 0,
+			damageFromShields: 0,
+			shieldsFromShields: 0
 		};
 	}
 

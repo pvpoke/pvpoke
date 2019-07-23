@@ -616,8 +616,6 @@ a.random {
     min-height: 450px;
     box-shadow: #000 0px 0px 15px;
     background: rgba(255, 255, 255, 0.95); }
-    .end-screen-container .end-screen h3:first-of-type {
-      margin: 0; }
   .end-screen-container .tabs {
     display: flex; }
     .end-screen-container .tabs a.tab {
@@ -644,13 +642,24 @@ a.random {
         .end-screen-container .tabs a.tab[href="energy"].active {
           background: #aecb28;
           color: #eee; }
+  .end-screen-container h3.result {
+    margin: 0; }
   .end-screen-container .tab-section {
     display: none; }
+  .end-screen-container .tab-content-container {
+    height: 300px;
+    overflow-y: scroll;
+    margin-top: 10px; }
   .end-screen-container p.description {
     font-size: 12px; }
+    .end-screen-container p.description:first-of-type {
+      margin-top: 0; }
   .end-screen-container .damage h3 {
-    font-size: 16px;
-    margin-bottom: 10px; }
+    font-size: 14px;
+    margin: 0;
+    text-align: left; }
+    .end-screen-container .damage h3.center {
+      text-align: center; }
   .end-screen-container .damage .damage-section {
     padding: 10px;
     border-radius: 12px;

@@ -856,10 +856,6 @@ a.random{
 		min-height:450px;
 		box-shadow: #000 0px 0px 15px;
 		background: rgba(255,255,255,.95);
-
-		h3:first-of-type{
-			margin:0;
-		}
 	}
 	
 	.tabs{
@@ -904,20 +900,39 @@ a.random{
 		}
 	}
 	
+	h3.result{
+		margin:0;
+	}
+	
 	.tab-section{
 		display:none;
 	}
 	
+	.tab-content-container{
+		height: 300px;
+		overflow-y: scroll;
+		margin-top:10px;
+	}
+	
 	p.description{
 		font-size:12px;
+		
+		&:first-of-type{
+			margin-top:0;
+		}
 	}
 
 	.damage{
 		h3{
-		    font-size: 16px;
-		    margin-bottom: 10px;
+			font-size:14px;
+			margin: 0;
+			text-align: left;
+			
+			&.center{
+				text-align: center;
+			}
 		}
-	
+
 		.damage-section{
 			padding:10px;
 			border-radius:12px;

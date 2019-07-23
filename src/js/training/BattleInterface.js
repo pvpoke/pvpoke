@@ -467,13 +467,17 @@ var BattlerMaster = (function () {
 			self.displayEndGameStats = function(){
 
 				var maxScore = 400;
+				var totalDamage = 0;
 
+				// Display damage stats
+				
 				for(var k = 0; k < players.length; k++){
 					var team = players[k].getTeam();
 
 					for(var i = 0; i < team.length; i++){
 						var pokemon = team[i];
 						var width = (pokemon.battleStats.damage / maxScore) * 100;
+						totalDamage += pokemon.battleStats.damage;
 
 						$(".battle-stats .damage-section").eq(k).find(".pokemon-entry .name").eq(i).html(pokemon.speciesName);
 						$(".battle-stats .damage-section").eq(k).find(".pokemon-entry .damage-bar").eq(i).css("width", width+"%");
@@ -483,6 +487,30 @@ var BattlerMaster = (function () {
 						}
 					}
 				}
+				
+				totalDamage = Math.round(totalDamage);
+				
+				// Display shield stats
+				
+				var team = players[0].getTeam();
+				var damageFromShields = 0;
+				var shieldsFromShields = 0;
+				var shieldsUsed = 2 - players[0].getShields();
+				
+				for(var i = 0; i < team.length; i++){
+					var pokemon = team[i];
+					
+					damageFromShields += Math.round(pokemon.battleStats.damageFromShields) + " ("+(Math.round( (pokemon.battleStats.damageFromShields / totalDamage) * 1000) / 10)+"%)";
+					shieldsFromShields += pokemon.battleStats.shieldsFromShields;
+				}
+				
+				$(".battle-stats .tab-section.shields .stat-shields-used").html(shieldsUsed);
+				$(".battle-stats .tab-section.shields .stat-damage-dealt").html(damageFromShields);
+				$(".battle-stats .tab-section.shields .stat-shields-drawn").html(shieldsFromShields);
+				
+				
+				// Display AI difficulty
+				$(".end-screen .difficulty-name").html(players[1].getAI().difficultyToString());
 				
 				// Reset tabs
 				

@@ -8,86 +8,109 @@
 				<a href="shields" class="tab">Shields</a>
 				<a href="energy" class="tab">Energy</a>
 			</div>
-			<p class="description">The charts below show damage dealt and shields drawn by each team and Pokemon.</p>
-			<h3>You</h3>
-			<div class="tab-section damage">
-				<div class="damage-section self">
-					<div class="avg-line"></div>
-					<div class="pokemon-entry">
-						<div class="poke-icon">
-							<div class="name">Azumarill</div>
-							<div class="image"></div>
+			
+			<div class="tab-content-container">
+				<div class="tab-section damage">
+					<p class="description">The charts below show damage dealt and shields drawn by each team and Pokemon.</p>
+					<h3>You</h3>
+					<div class="damage-section self">
+						<div class="avg-line"></div>
+						<div class="pokemon-entry">
+							<div class="poke-icon">
+								<div class="name">Azumarill</div>
+								<div class="image"></div>
+							</div>
+							<div class="damage-container">
+								<div class="damage-bar"></div>
+								<div class="shield-bar"></div>
+								<div class="shield-bar"></div>
+							</div>
 						</div>
-						<div class="damage-container">
-							<div class="damage-bar"></div>
-							<div class="shield-bar"></div>
-							<div class="shield-bar"></div>
+						<div class="pokemon-entry">
+							<div class="poke-icon">
+								<div class="name">Azumarill</div>
+								<div class="image"></div>
+							</div>
+							<div class="damage-container">
+								<div class="damage-bar"></div>
+								<div class="shield-bar"></div>
+								<div class="shield-bar"></div>
+							</div>
+						</div>
+						<div class="pokemon-entry">
+							<div class="poke-icon">
+								<div class="name">Azumarill</div>
+								<div class="image"></div>
+							</div>
+							<div class="damage-container">
+								<div class="damage-bar"></div>
+								<div class="shield-bar"></div>
+								<div class="shield-bar"></div>
+							</div>
 						</div>
 					</div>
-					<div class="pokemon-entry">
-						<div class="poke-icon">
-							<div class="name">Azumarill</div>
-							<div class="image"></div>
+					<h3 class="center">vs.</h3>
+					<h3>Opponent (<span class="difficulty-name"></span>)</h3>
+					<div class="damage-section opponent">
+						<div class="avg-line"></div>
+						<div class="pokemon-entry">
+							<div class="poke-icon">
+								<div class="name">Azumarill</div>
+								<div class="image"></div>
+							</div>
+							<div class="damage-container">
+								<div class="damage-bar"></div>
+								<div class="shield-bar"></div>
+								<div class="shield-bar"></div>
+							</div>
 						</div>
-						<div class="damage-container">
-							<div class="damage-bar"></div>
-							<div class="shield-bar"></div>
-							<div class="shield-bar"></div>
+						<div class="pokemon-entry">
+							<div class="poke-icon">
+								<div class="name">Azumarill</div>
+								<div class="image"></div>
+							</div>
+							<div class="damage-container">
+								<div class="damage-bar"></div>
+								<div class="shield-bar"></div>
+								<div class="shield-bar"></div>
+							</div>
+						</div>
+						<div class="pokemon-entry">
+							<div class="poke-icon">
+								<div class="name">Azumarill</div>
+								<div class="image"></div>
+							</div>
+							<div class="damage-container">
+								<div class="damage-bar"></div>
+								<div class="shield-bar"></div>
+								<div class="shield-bar"></div>
+							</div>
 						</div>
 					</div>
-					<div class="pokemon-entry">
-						<div class="poke-icon">
-							<div class="name">Azumarill</div>
-							<div class="image"></div>
-						</div>
-						<div class="damage-container">
-							<div class="damage-bar"></div>
-							<div class="shield-bar"></div>
-							<div class="shield-bar"></div>
-						</div>
-					</div>
+					<div class="avg-label">avg.</div>
+				</div><!--end damage section-->
+
+
+				<div class="tab-section shields">
+					<p class="description">The table below show damage dealt and shields drawn by Pokemon you shielded.</p>
+					<table class="stats-table" cellspacing="0">
+						<tr>
+							<td class="label">Shields Used</td>
+							<td class="stat-shields-used"></td>
+						</tr>
+						<tr>
+							<td class="label">Damage Dealt</td>
+							<td class="stat-damage-dealt"></td>
+						</tr>
+						<tr>
+							<td class="label">Shields Drawn</td>
+							<td class="stat-shields-drawn"></td>
+						</tr>
+					</table>
 				</div>
-				<h3 class="center">vs.</h3>
-				<h3>Opponent (<span class="difficulty-name"></span>)</h3>
-				<div class="damage-section opponent">
-					<div class="avg-line"></div>
-					<div class="pokemon-entry">
-						<div class="poke-icon">
-							<div class="name">Azumarill</div>
-							<div class="image"></div>
-						</div>
-						<div class="damage-container">
-							<div class="damage-bar"></div>
-							<div class="shield-bar"></div>
-							<div class="shield-bar"></div>
-						</div>
-					</div>
-					<div class="pokemon-entry">
-						<div class="poke-icon">
-							<div class="name">Azumarill</div>
-							<div class="image"></div>
-						</div>
-						<div class="damage-container">
-							<div class="damage-bar"></div>
-							<div class="shield-bar"></div>
-							<div class="shield-bar"></div>
-						</div>
-					</div>
-					<div class="pokemon-entry">
-						<div class="poke-icon">
-							<div class="name">Azumarill</div>
-							<div class="image"></div>
-						</div>
-						<div class="damage-container">
-							<div class="damage-bar"></div>
-							<div class="shield-bar"></div>
-							<div class="shield-bar"></div>
-						</div>
-					</div>
-				</div>
-				<div class="avg-label">avg.</div>
-			</div>
-		</div>
+			</div>	
+		</div><!--end tab content container-->
+
 
 		<div class="buttons">
 			<div class="button replay">Rematch</div>

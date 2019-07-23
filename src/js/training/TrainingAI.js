@@ -556,12 +556,12 @@ function TrainingAI(l, p, b){
 		pokemon.startingShields = startStats[0].shields;
 		pokemon.startHp = startStats[0].hp;
 		pokemon.startEnergy = startStats[0].energy;
-		pokemon.cooldown = startStats[0].cooldown;
+		pokemon.startCooldown = startStats[0].cooldown;
 
 		opponent.startingShields = startStats[1].shields;
 		opponent.startHp = startStats[1].hp;
 		opponent.startEnergy = startStats[1].energy;
-		opponent.cooldown = startStats[1].cooldown;
+		opponent.startCooldown = startStats[1].cooldown;
 
 		pokemon.reset();
 		opponent.reset();
