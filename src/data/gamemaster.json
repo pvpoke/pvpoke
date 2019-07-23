@@ -850,7 +850,7 @@
         "types": ["water", "none"],
         "fastMoves": ["BITE", "WATER_GUN"],
         "chargedMoves": ["FLASH_CANNON", "HYDRO_CANNON", "HYDRO_PUMP", "ICE_BEAM", "SKULL_BASH", "RETURN", "FRUSTRATION"],
-        "legacyMoves": ["HYDRO_CANNON", "RETURN", "FRUSTRATION", "SKULL_BASH"],
+        "legacyMoves": ["HYDRO_CANNON", "RETURN", "FRUSTRATION"],
         "defaultIVs": {
             "cp1500": [23.5, 3, 11, 4],
             "cp2500": [40, 15, 15, 15]
@@ -2053,7 +2053,8 @@
         },
         "types": ["dragon", "none"],
         "fastMoves": ["DRAGON_BREATH", "IRON_TAIL"],
-        "chargedMoves": ["AQUA_TAIL", "DRAGON_PULSE", "WRAP"],
+        "chargedMoves": ["AQUA_TAIL", "DRAGON_PULSE", "WRAP","RETURN","FRUSTRATION"],
+		"legacyMoves": ["RETURN","FRUSTRATION"],
         "defaultIVs": {
             "cp1500": [37, 0, 5, 12],
             "cp2500": [40, 15, 15, 15]
@@ -2069,8 +2070,8 @@
         },
         "types": ["dragon", "flying"],
         "fastMoves": ["DRAGON_BREATH", "DRAGON_TAIL", "STEEL_WING"],
-        "chargedMoves": ["DRACO_METEOR", "DRAGON_CLAW", "DRAGON_PULSE", "HURRICANE", "HYPER_BEAM", "OUTRAGE"],
-        "legacyMoves": ["DRACO_METEOR", "DRAGON_BREATH", "DRAGON_CLAW", "DRAGON_PULSE"],
+        "chargedMoves": ["DRACO_METEOR", "DRAGON_CLAW", "DRAGON_PULSE", "HURRICANE", "HYPER_BEAM", "OUTRAGE", "RETURN","FRUSTRATION"],
+        "legacyMoves": ["DRACO_METEOR", "DRAGON_BREATH", "DRAGON_CLAW", "DRAGON_PULSE", "RETURN","FRUSTRATION"],
         "defaultIVs": {
             "cp1500": [14.5, 9, 12, 6],
             "cp2500": [24, 7, 10, 13]
@@ -2102,7 +2103,8 @@
         },
         "types": ["dragon", "none"],
         "fastMoves": ["DRAGON_BREATH", "IRON_TAIL"],
-        "chargedMoves": ["AQUA_TAIL", "TWISTER", "WRAP"],
+        "chargedMoves": ["AQUA_TAIL", "TWISTER", "WRAP", "RETURN","FRUSTRATION"],
+		"legacyMoves": ["RETURN","FRUSTRATION"],
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
@@ -7424,8 +7426,8 @@
         },
         "types": ["normal", "none"],
         "fastMoves": ["LICK", "ZEN_HEADBUTT", "YAWN"],
-        "chargedMoves": ["BODY_SLAM", "EARTHQUAKE", "HEAVY_SLAM", "HYPER_BEAM", "OUTRAGE","SKULL_BASH", "RETURN"],
-        "legacyMoves": ["BODY_SLAM", "SKULL_BASH"],
+        "chargedMoves": ["BODY_SLAM", "EARTHQUAKE", "HEAVY_SLAM", "HYPER_BEAM", "OUTRAGE","SKULL_BASH", "RETURN","FRUSTRATION"],
+        "legacyMoves": ["BODY_SLAM", "SKULL_BASH", "RETURN","FRUSTRATION"],
         "defaultIVs": {
             "cp1500": [17.5, 3, 15, 1],
             "cp2500": [29, 0, 13, 14]
