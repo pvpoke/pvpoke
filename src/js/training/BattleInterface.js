@@ -160,17 +160,17 @@ var BattlerMaster = (function () {
 
 							switch(response.result){
 								case "win":
-									$(".battle-window .end-screen .result").html("You won")
+									$(".battle-window .end-screen .result").html("Victory!")
 									$(".battle-window .end-screen .subtitle").html("Way to go!")
 									break;
 
 								case "loss":
-									$(".battle-window .end-screen .result").html("You were defeated")
+									$(".battle-window .end-screen .result").html("Defeat")
 									$(".battle-window .end-screen .subtitle").html("Let's see what we can learn!")
 									break;
 
 								case "tie":
-									$(".battle-window .end-screen .result").html("Tie game")
+									$(".battle-window .end-screen .result").html("Tie")
 									$(".battle-window .end-screen .subtitle").html("What? No way!")
 									break;
 							}
@@ -470,7 +470,7 @@ var BattlerMaster = (function () {
 				var totalDamage = 0;
 
 				// Display damage stats
-				
+
 				for(var k = 0; k < players.length; k++){
 					var team = players[k].getTeam();
 
@@ -487,36 +487,36 @@ var BattlerMaster = (function () {
 						}
 					}
 				}
-				
+
 				totalDamage = Math.round(totalDamage);
-				
+
 				// Display shield stats
-				
+
 				var team = players[0].getTeam();
 				var damageFromShields = 0;
 				var shieldsFromShields = 0;
 				var shieldsUsed = 2 - players[0].getShields();
-				
+
 				for(var i = 0; i < team.length; i++){
 					var pokemon = team[i];
-					
-					damageFromShields += Math.round(pokemon.battleStats.damageFromShields) + " ("+(Math.round( (pokemon.battleStats.damageFromShields / totalDamage) * 1000) / 10)+"%)";
+
+					damageFromShields += Math.round(pokemon.battleStats.damageFromShields);
 					shieldsFromShields += pokemon.battleStats.shieldsFromShields;
 				}
-				
+
 				$(".battle-stats .tab-section.shields .stat-shields-used").html(shieldsUsed);
-				$(".battle-stats .tab-section.shields .stat-damage-dealt").html(damageFromShields);
+				$(".battle-stats .tab-section.shields .stat-damage-dealt").html(damageFromShields+  " ("+(Math.round( (damageFromShields / totalDamage) * 1000) / 10)+"%)");
 				$(".battle-stats .tab-section.shields .stat-shields-drawn").html(shieldsFromShields);
-				
-				
+
+
 				// Display AI difficulty
 				$(".end-screen .difficulty-name").html(players[1].getAI().difficultyToString());
-				
+
 				// Reset tabs
-				
-				$(".end-screen .a.tab").removeClass("active");
+
+				$(".end-screen a.tab").removeClass("active");
 				$(".end-screen .tab-section").hide();
-				$(".end-screen .a.tab").eq(0).addClass("active");
+				$(".end-screen a.tab").eq(0).addClass("active");
 				$(".end-screen .tab-section").eq(0).show();
 			}
 
@@ -645,17 +645,17 @@ var BattlerMaster = (function () {
 			function nextRoundClick(e){
 				handler.nextTournamentRoundSetup(battleResult);
 			}
-			
+
 			// Select a new tab on the end screen
 
 			function tabClick(e){
 				e.preventDefault();
-				
+
 				$(".end-screen a.tab").removeClass("active");
 				$(".end-screen .tab-section").hide();
 				$(e.target).addClass("active");
 				$(".end-screen .tab-section."+$(e.target).attr("href")).show();
-				
+
 			}
 
 			// Handler for the the use shield timer

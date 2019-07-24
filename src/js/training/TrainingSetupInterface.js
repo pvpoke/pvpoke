@@ -110,15 +110,20 @@ var InterfaceMaster = (function () {
 
 						// Check to see if this Pokemon was selected for a previous round
 						if((i == 0)&&(currentTeam.length == 3)){
+							var selectedCount = 0;
+
 							for(var j = 0; j < currentTeam.length; j++){
 								if(pokemon == currentTeam[j]){
 									$el.addClass("selected");
 									$el.attr("team-index", j);
 									$el.find(".number").html((j+1));
+									selectedCount++;
 								}
 							}
 
-							currentTeamIndex = 2;
+							if(selectedCount > 0){
+								currentTeamIndex = 2;
+							}
 						}
 					}
 				}
