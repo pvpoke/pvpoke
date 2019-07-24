@@ -239,9 +239,14 @@ function Pokemon(id, i, b){
 		var floor = 0;
 
 		var untradables = ["mew","celebi","deoxys_attack","deoxys_defense","deoxys_speed","deoxys","jirachi"];
+		var maxNear1500 = ["bastiodon"]
 
 		if(untradables.indexOf(self.speciesId) > -1){
 			floor = 10;
+		}
+		
+		if(maxNear1500.indexOf(self.speciesId) > -1){
+			floor = 12;
 		}
 
 

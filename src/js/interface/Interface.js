@@ -36,6 +36,8 @@ var InterfaceMaster = (function () {
 			var sandboxAction;
 			var sandboxActionIndex;
 			var sandboxTurn;
+			
+			var chargeMultipliers = [1, .95, .75, .5, .25]; // Array of potential charge multipliers between full and minimum charge
 
 			var modal;
 
@@ -448,7 +450,7 @@ var InterfaceMaster = (function () {
 							str += "-";
 						}
 
-						str += actions[i].turn + "." + actions[i].typeToInt() + actions[i].actor + actions[i].value + (actions[i].settings.shielded ? 1 : 0) + (actions[i].settings.buffs ? 1 : 0);
+						str += actions[i].turn + "." + actions[i].typeToInt() + actions[i].actor + actions[i].value + (actions[i].settings.shielded ? 1 : 0) + (actions[i].settings.buffs ? 1 : 0) + (actions[i].settings.charge ? chargeMultipliers.indexOf(actions[i].settings.charge) : 0);
 
 						actionStr += str;
 					}
@@ -1156,6 +1158,12 @@ var InterfaceMaster = (function () {
 
 										switch(paramsArr[0]){
 											case "1":
+												// Protect legacy links from breaking
+												var charge = 1;
+												if(paramsArr[5]){
+													charge = chargeMultipliers[paramsArr[5]];
+												}
+												
 												actions.push(new TimelineAction(
 													"charged",
 													parseInt(paramsArr[1]),
@@ -1163,7 +1171,8 @@ var InterfaceMaster = (function () {
 													parseInt(paramsArr[2]),
 													{
 														shielded: (parseInt(paramsArr[3]) == 1 ? true : false),
-														buffs: (parseInt(paramsArr[4]) == 1 ? true : false)
+														buffs: (parseInt(paramsArr[4]) == 1 ? true : false),
+														charge: charge
 													}
 												));
 												break;
@@ -1948,7 +1957,8 @@ var InterfaceMaster = (function () {
 				}
 
 				var moveId = $(".modal .move-select option:selected").val();
-				var chargeMultiplier = parseInt($(".modal .charge-select option:selected").val()) / 12;
+				var chargeIndex = parseInt($(".modal .charge-select option:selected").val());
+				var chargeMultiplier = chargeMultipliers[chargeIndex];
 				var move;
 
 				for(var i = 0; i < sandboxPokemon.chargedMoves.length; i++){
@@ -1997,7 +2007,9 @@ var InterfaceMaster = (function () {
 						// Insert new action
 
 						if(selectedValue != "wait"){
-							var charge = parseInt($(".modal .charge-select option:selected").val()) / 12;
+							var chargeIndex = parseInt($(".modal .charge-select option:selected").val());
+							var charge = chargeMultipliers[chargeIndex];
+							
 							actions.push(new TimelineAction(
 								"charged",
 								sandboxPokemon.index,
@@ -2024,7 +2036,8 @@ var InterfaceMaster = (function () {
 						// Modify existing action
 
 						if(selectedValue != "wait"){
-							var charge = parseInt($(".modal .charge-select option:selected").val()) / 12;
+							var chargeIndex = parseInt($(".modal .charge-select option:selected").val());
+							var charge = chargeMultipliers[chargeIndex];
 							
 							actions[sandboxActionIndex] = new TimelineAction(
 								"charged",

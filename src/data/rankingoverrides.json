@@ -48,6 +48,10 @@
 				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
 			},
 			{
+				"speciesId": "deoxys_defense",
+				"chargedMoves": ["PSYCHO_BOOST", "THUNDERBOLT"]
+			},
+			{
 				"speciesId": "probopass",
 				"fastMove": "SPARK"
 			},
@@ -58,6 +62,10 @@
 			{
 				"speciesId": "togekiss",
 				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
+			},
+			{
+				"speciesId": "crobat",
+				"chargedMoves": ["SLUDGE_BOMB","SHADOW_BALL"]
 			}
 		]
 	},
@@ -110,6 +118,10 @@
 			{
 				"speciesId": "gardevoir",
 				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "crobat",
+				"chargedMoves": ["SLUDGE_BOMB","SHADOW_BALL"]
 			}
 		]
 	},
@@ -128,6 +140,10 @@
 			{
 				"speciesId": "sealeo",
 				"fastMove": "POWDER_SNOW"
+			},
+			{
+				"speciesId": "magneton",
+				"chargedMoves": ["DISCHARGE","MAGNET_BOMB"]
 			}
 		]
 	},

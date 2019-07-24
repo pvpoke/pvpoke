@@ -23,44 +23,14 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 	
-	<h4>v1.8.3 (July 9, 2019)</h4>
+	<h4>v1.8.4 (July 24, 2019)</h4>
 	<ul>
-		<li>Pokemon now correctly have a minimum HP of 10</li>
-		<li>Fixed an issue in Multi-Battle that would sometimes display incorrect results</li>
+		<li>Piggybacking is now disabled, following discoveries that it was patched in the latest Charged Move mechanic update</li>
 		<ul>
-			<li>This happened when switching from custom to regular Multi-Battle, and regular Multi-Battle would display the custom Pokemon over the regular Multi-Battle results.</li>
+			<li>Previously a quirk existed where you could cancel an opponent's Fast Move by performing a Charged Move immediately after another Charged Move. This technique was known as "piggybacking" and no longer works since the Charged Move minigame update.</li>
 		</ul>
-	</ul>
-	
-	<h4>v1.8.2 (July 3, 2019)</h4>
-	<ul>
-		<li>Fixed a bug that caused headers to disappear when searching on the Moves page</li>
-		<li>Breakpoint and bulkpoint calculations now also check against max Defense and max Attack, respectively, and show which Attack or Defense values will guarantee a certain breakpoint or bulkpoint against that opponent.</li>
-	</ul>
-
-	<h4>v1.8.1 (July 2, 2019)</h4>
-	<ul>
-		<li>Adjusted Pokemon default IV's</li>
-		<ul>
-			<li>In the last update, Pokemon were assigned "rank 1" IV's by default, which maximized overall stats. However most players will not have rank 1 Pokemon and the default sims tended to differ from typical play.</li>
-			<li>Pokemon now have a pregenerated set of default IV's that are roughly equivalent to "rank 500" out of 4,096 possible combinations. This provides a more realistic benchmark to prepare against while also trending toward the upper end for competitive play.</li>
-			<li>Pokemon that can't be traded like Mew, Jirachi, and Deoxys now obey their respective IV limits when generating IV combinations.</li>
-		</ul>
-		<li>Adjusted Pokemon level and IV entry and added advanced options</li>
-		<ul>
-			<li>You can now choose to maximize overall stats, Attack, or Defense</li>
-		</ul>
-		<li>Added Breakpoint &amp; Bulkpoint section in the matchup details</li>
-		<ul>
-			<li>Breakpoints and bulkpoints are calculated for the left Pokemon against the specific right Pokemon. You may wish to explore multiple IV spreads for the defending Pokemon to identify which stat ranges you should target.</li>
-			<li>Clicking any of the level &amp; IV combinations in the tables will enter them for the respective Pokemon.</li>
-			<li>Where possible, this report will show an IV combination that reaches both the best breakpoint and best bulkpoint.</li>
-		</ul>
-		<li>Added Settings page where you can adjust the following preferences:</li>
-		<ul>
-			<li>Default IV combination (for Pokemon that you select)</li>
-			<li>Enable or diable timeline animations</li>
-		</ul>
+		<li>Added a charge dropdown in Sandbox Mode so you can select whether a Charged Move deals full or partial damage</li>
+		<li>Adjusted Bastiodon's default IV's to be more realistic</li>
 	</ul>
 
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>

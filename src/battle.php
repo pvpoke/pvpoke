@@ -326,19 +326,11 @@ require_once 'header.php';
 	<p class="wait hide">This Pokemon will take no action this turn.</p>
 
 	<select class="charge-select charged">
-		<option value="12">100% Charge (12/12)</option>
-		<option value="11">92% Charge (11/12)</option>
-		<option value="10">83% Charge (10/12)</option>
-		<option value="9">75% Charge (9/12)</option>
-		<option value="8">67% Charge (8/12)</option>
-		<option value="7">58% Charge (7/12)</option>
-		<option value="6">50% Charge (6/12)</option>
-		<option value="5">42% Charge (5/12)</option>
-		<option value="4">33% Charge (4/12)</option>
-		<option value="3">25% Charge (3/12)</option>
-		<option value="2">17% Charge (2/12)</option>
-		<option value="1">8% Charge (1/12)</option>
-		<option value="0">0% Charge (0/12)</option>
+		<option value="0">100% Charge</option>
+		<option value="1">95% Charge</option>
+		<option value="2">75% Charge</option>
+		<option value="3">50% Charge</option>
+		<option value="4">25% Charge</option>
 	</select>
 
 	<div class="check shields charged"><span></span>Shield this attack</div>

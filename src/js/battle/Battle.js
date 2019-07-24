@@ -424,7 +424,9 @@ function Battle(){
 					}
 
 					// Was this queued this turn? Let's check for piggybacking. Boy was this a headache.
-					if(action.turn == turns){
+					// RIP piggybacking
+					
+					/*if(action.turn == turns){
 
 						// Check for a charged move last turn and this turn
 						var chargedMoveLastTurn = false;
@@ -446,7 +448,7 @@ function Battle(){
 							queuedActions.splice(i, 1);
 							i--;
 						}
-					}
+					}*/
 				}
 
 				if(action.type == "charged"){
