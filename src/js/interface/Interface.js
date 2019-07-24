@@ -1877,7 +1877,7 @@ var InterfaceMaster = (function () {
 					}
 					
 					if(sandboxAction.settings.charge){
-						var chargeInt = parseInt(sandboxAction.settings.charge * 12);
+						var chargeInt = chargeMultipliers.indexOf(sandboxAction.settings.charge);
 						$(".modal .charge-select option[value=\""+chargeInt+"\"]").prop("selected", "selected");
 					}
 				}
