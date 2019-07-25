@@ -761,8 +761,13 @@ function Pokemon(id, i, b){
 			damage: 0,
 			shieldsBurned: 0,
 			shieldsUsed: 0,
+			damageBlocked: 0,
 			damageFromShields: 0,
-			shieldsFromShields: 0
+			shieldsFromShields: 0,
+			switchAdvantages: 0,
+			energyGained: 0,
+			energyUsed: 0,
+			chargedDamage: 0
 		};
 	}
 

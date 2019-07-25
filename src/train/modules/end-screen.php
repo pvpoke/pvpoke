@@ -90,24 +90,49 @@
 					<div class="avg-label">avg.</div>
 				</div><!--end damage section-->
 
-
 				<div class="tab-section shields">
-					<p class="description">The table below show damage dealt and shields drawn by Pokemon you shielded.</p>
+					<p class="description">The table below show battle statistics related to your shield usage.</p>
 					<table class="stats-table" cellspacing="0">
 						<tr>
 							<td class="label">Shields Used</td>
 							<td class="stat-shields-used"></td>
 						</tr>
 						<tr>
-							<td class="label">Damage Dealt</td>
+							<td class="label">Damage Blocked</td>
+							<td class="stat-damage-blocked"></td>
+						</tr>
+						<tr>
+							<td class="label">Damage Dealt by<br>Shielded Pokemon</td>
 							<td class="stat-damage-dealt"></td>
 						</tr>
 						<tr>
-							<td class="label">Shields Drawn</td>
+							<td class="label">Shields Drawn by<br>Shielded Pokemon</td>
 							<td class="stat-shields-drawn"></td>
 						</tr>
 					</table>
-				</div>
+				</div><!--end shield section-->
+				
+				<div class="tab-section energy">
+					<p class="description">The table below show damage dealt and shields drawn by Pokemon you shielded.</p>
+					<table class="stats-table" cellspacing="0">
+						<tr>
+							<td class="label">Energy Gained</td>
+							<td class="stat-energy-gained"></td>
+						</tr>
+						<tr>
+							<td class="label">Energy Used</td>
+							<td class="stat-energy-used"></td>
+						</tr>
+						<tr>
+							<td class="label">Energy Lost</td>
+							<td class="stat-energy-lost"></td>
+						</tr>
+						<tr>
+							<td class="label">Avg. Damage per Energy</td>
+							<td class="stat-avg-dpe"></td>
+						</tr>
+					</table>
+				</div><!--end shield section-->
 			</div>	
 		</div><!--end tab content container-->
 

@@ -1379,8 +1379,9 @@ function Battle(){
 				}
 
 				if(useShield){
-
-					timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+6500, turns, [damage-1]));
+					var damageBlocked = damage-1;
+					
+					timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+6500, turns, [damageBlocked]));
 					damage = 1;
 					defender.shields--;
 					roundShieldUsed = true;
@@ -1410,6 +1411,7 @@ function Battle(){
 					if(mode == "emulate"){
 						attacker.battleStats.shieldsBurned++;
 						defender.battleStats.shieldsUsed++;
+						defender.battleStats.damageBlocked += damageBlocked;
 
 						if(attacker.battleStats.shieldsUsed > 0){
 							attacker.battleStats.shieldsFromShields++;
@@ -1430,11 +1432,24 @@ function Battle(){
 					} else if(effectiveness < 1){
 						turnMessages.push({ index: defender.index, str: "Not very effective..."});
 					}
+					
+					if((defender.hp <= damage)&&(players[0].getSwitchTimer() == 0)&&(players[1].getSwitchTimer()==0)){
+						attacker.battleStats.switchAdvantages++;
+					}
 				}
+			}
+
+			if(mode == "emulate"){
+				attacker.battleStats.energyUsed += move.energy
+				attacker.battleStats.chargedDamage += damage;
 			}
 
 		} else{
 			// If Fast Move
+
+			if(mode == "emulate"){
+				attacker.battleStats.energyGained += Math.min(move.energy, 100 - attacker.energy);
+			}
 
 			attacker.energy += attacker.fastMove.energyGain;
 

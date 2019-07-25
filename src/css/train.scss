@@ -82,11 +82,26 @@ a.random{
 }
 
 .battle-active{
+	
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -moz-tap-highlight-color: rgba(0, 0, 0, 0);
+  	-webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+	
 	.battle-window{
 		display:inline-block;
 	}
 	header{
 		display: none;
+	}
+	
+	#main{
+		padding-top:0;
 	}
 }
 
@@ -99,15 +114,6 @@ a.random{
     box-shadow: 0px 5px 15px;
 	cursor:pointer;
 	touch-action: manipulation;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-    -moz-tap-highlight-color: rgba(0, 0, 0, 0);
-  	-webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
 
 	.img-block{
 		visibility: hidden;
@@ -1002,6 +1008,10 @@ a.random{
 			}
 		}
 	}
+	
+	.stats-table{
+		width:100%;
+	}
 }
 
 /* POKEMON SPRITES */
@@ -1196,4 +1206,42 @@ a.random{
 	.train > .poke{
 		width:49%;
 	}
+	
+	.team-select{
+		
+		&.self, &.opponent{
+			padding: 5px 0;
+		}
+
+		h3.center{
+			margin:5px 0;
+			font-size:16px;
+		}
+		
+		h4{
+			margin-bottom:0;
+		}
+		
+		.roster .pokemon{
+			.sprite-container{
+				width:25px;
+				height:25px;
+			}
+
+			.cp{
+				font-size:12px;
+			}
+
+			.name{
+				margin-top:0;
+				font-size:14px;
+				line-height:14px;
+			}
+		}
+		
+		.number{
+			padding-top:2px !important;
+		}
+	}
+
 }

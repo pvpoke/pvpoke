@@ -83,6 +83,9 @@ var BattlerMaster = (function () {
 				$(".battle-window").attr("mode", props.mode);
 
 				$("body").addClass("battle-active");
+
+				// Scroll to the top of the page
+				$("html, body").animate({ scrollTop: 0 }, 500);
 			};
 
 			// Given an update object, update the battle interface
@@ -468,6 +471,11 @@ var BattlerMaster = (function () {
 
 				var maxScore = 400;
 				var totalDamage = 0;
+				var totalDamageBlocked = 0;
+				var totalEnergyGained = 0;
+				var totalEnergyUsed = 0;
+				var totalEnergyLost = 0;
+				var totalChargedDamage = 0;
 
 				// Display damage stats
 
@@ -477,7 +485,18 @@ var BattlerMaster = (function () {
 					for(var i = 0; i < team.length; i++){
 						var pokemon = team[i];
 						var width = (pokemon.battleStats.damage / maxScore) * 100;
-						totalDamage += pokemon.battleStats.damage;
+						
+						if(k == 0){
+							totalDamage += pokemon.battleStats.damage;
+							totalDamageBlocked += pokemon.battleStats.damageBlocked;
+							totalEnergyGained += pokemon.battleStats.energyGained;
+							totalEnergyUsed += pokemon.battleStats.energyUsed;
+							totalChargedDamage += pokemon.battleStats.chargedDamage;
+							
+							if(pokemon.hp <= 0){
+								totalEnergyLost += pokemon.energy;
+							}
+						}
 
 						$(".battle-stats .damage-section").eq(k).find(".pokemon-entry .name").eq(i).html(pokemon.speciesName);
 						$(".battle-stats .damage-section").eq(k).find(".pokemon-entry .damage-bar").eq(i).css("width", width+"%");
@@ -505,9 +524,16 @@ var BattlerMaster = (function () {
 				}
 
 				$(".battle-stats .tab-section.shields .stat-shields-used").html(shieldsUsed);
-				$(".battle-stats .tab-section.shields .stat-damage-dealt").html(damageFromShields+  " ("+(Math.round( (damageFromShields / totalDamage) * 1000) / 10)+"%)");
+				$(".battle-stats .tab-section.shields .stat-damage-dealt").html((Math.round( (damageFromShields / totalDamage) * 1000) / 10)+"%");
 				$(".battle-stats .tab-section.shields .stat-shields-drawn").html(shieldsFromShields);
+				$(".battle-stats .tab-section.shields .stat-damage-blocked").html(totalDamageBlocked);
+				
+				// Display energy stats
 
+				$(".battle-stats .tab-section.energy .stat-energy-gained").html(totalEnergyGained);
+				$(".battle-stats .tab-section.energy .stat-energy-used").html(totalEnergyUsed);
+				$(".battle-stats .tab-section.energy .stat-energy-lost").html(totalEnergyLost);
+				$(".battle-stats .tab-section.energy .stat-avg-dpe").html(Math.round( (totalChargedDamage / totalEnergyUsed) * 1000) / 10);
 
 				// Display AI difficulty
 				$(".end-screen .difficulty-name").html(players[1].getAI().difficultyToString());
