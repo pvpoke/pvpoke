@@ -33,7 +33,7 @@ function Battle(){
 	var roundChargedMoveUsed;
 	var roundShieldUsed;
 
-	var chargedMinigameTime = 8000;
+	var chargedMinigameTime = 10000;
 
 	var usePriority = false;
 
@@ -956,8 +956,8 @@ function Battle(){
 
 			// Add tap events for display
 
-			for(var i = 0; i < 6; i++){
-				timeline.push(new TimelineEvent("tap "+move.type, "Tap", attacker.index, time+(1000*i), turns, [i]));
+			for(var i = 0; i < 8; i++){
+				timeline.push(new TimelineEvent("tap "+move.type, "Swipe", attacker.index, time+(1000*i), turns, [i]));
 			}
 
 			// If defender has a shield, use it
@@ -1006,7 +1006,7 @@ function Battle(){
 
 				if(useShield){
 
-					timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+6500, turns, [damage-1]));
+					timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+8500, turns, [damage-1]));
 					damage = 1;
 					defender.shields--;
 					roundShieldUsed = true;
@@ -1047,7 +1047,7 @@ function Battle(){
 		// This was really hard for my little brain to figure out so like really don't touch it
 
 		if(move.energy > 0){
-			displayTime += 6500;
+			displayTime += 8500;
 
 			if((usePriority)&&(roundChargedMoveUsed > 0)&&(! roundShieldUsed)){
 				displayTime += chargedMinigameTime;
