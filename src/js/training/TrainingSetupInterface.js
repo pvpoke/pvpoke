@@ -71,7 +71,7 @@ var InterfaceMaster = (function () {
 				$("#main h1").slideDown(500);
 			}
 
-			this.openTeamSelect = function(players){
+			this.openTeamSelect = function(players, roundRecord){
 				playerRoster = players[0].getRoster();
 				currentTeamIndex = 0;
 
@@ -127,6 +127,9 @@ var InterfaceMaster = (function () {
 						}
 					}
 				}
+
+				// Show the current round record
+				$(".round-record").html(roundRecord[0] + "-" + roundRecord[1]);
 			}
 
 			// Callback for importing a randomly generated roster
@@ -236,6 +239,11 @@ var InterfaceMaster = (function () {
 					$el.removeClass("selected");
 					currentTeam[parseInt($el.attr("team-index"))] = null;
 					currentTeamIndex = parseInt($el.attr("team-index"));
+
+					// Reset the index to 0 if nothing is selected
+					if($(".self .roster .pokemon.selected").length == 0){
+						currentTeamIndex = 0;
+					}
 				}
 
 				// Check to see if a full team is selected to show the continue button

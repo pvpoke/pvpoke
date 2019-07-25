@@ -70,7 +70,7 @@ function MatchHandler(){
 			interface.close();
 			battler.init(properties, battle, players);
 		} else if(properties.mode == "tournament"){
-			interface.openTeamSelect(players);
+			interface.openTeamSelect(players, roundRecord);
 		}
 	}
 
@@ -124,7 +124,7 @@ function MatchHandler(){
 
 			previousRoundTeams.push(list);
 		}
-		interface.openTeamSelect(players);
+		interface.openTeamSelect(players, roundRecord);
 	}
 
 	this.startTournamentRound = function(team, props){

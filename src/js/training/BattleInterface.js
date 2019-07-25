@@ -26,7 +26,7 @@ var BattlerMaster = (function () {
 			var charge = 0;
 			var maxCharge = 100;
 			var chargeRate = 20;
-			var chargeDecayRate = 0;
+			var chargeDecayRate = 0.5;
 			var phaseInterval;
 			var chargeTime = 6000;
 			var switchTime = 13000;

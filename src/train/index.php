@@ -70,6 +70,7 @@ require_once '../header.php';
 		<h3 class="center">Your Roster</h3>
 		<div class="roster pokemon-container"></div>
 		<p class="center">Select and order your team of 3 for battle!</p>
+		<h4 class="center">Current Round: <span class="round-record"></span></h4>
 	</div>
 	<button class="lets-go-btn button">Let's Go!</button>
 </div>
@@ -88,7 +89,7 @@ require_once '../header.php';
 		<div class="animate-message">
 			<div class="text"></div>
 		</div>
-		
+
 		<?php require_once 'modules/end-screen.php'; ?>
 	</div>
 </div>

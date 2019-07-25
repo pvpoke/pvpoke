@@ -644,7 +644,7 @@ a.random{
 		.controls .move-bars{
 			display:none;
 		}
-		
+
 		.team-indicator{
 			display:none;
 		}
@@ -662,7 +662,7 @@ a.random{
 		.controls .move-bars{
 			display:none;
 		}
-		
+
 		.team-indicator{
 			display:none;
 		}
@@ -693,7 +693,7 @@ a.random{
 		.team-indicator{
 			display:none;
 		}
-		
+
 		.scene{
 			@include transform(scale(1.1));
 		}
@@ -720,7 +720,7 @@ a.random{
 		.animate-message{
 			opacity:1;
 		}
-		
+
 		.team-indicator{
 			display:none;
 		}
@@ -857,10 +857,14 @@ a.random{
 		box-shadow: #000 0px 0px 15px;
 		background: rgba(255,255,255,.95);
 	}
-	
+
+	.buttons{
+		display: flex;
+	}
+
 	.tabs{
 		display:flex;
-		
+
 		a.tab{
 			display: block;
 			width: 33%;
@@ -888,7 +892,7 @@ a.random{
 					color:#eee;
 				}
 			}
-			
+
 			&[href="energy"]{
 				color:#aecb28;
 
@@ -899,24 +903,24 @@ a.random{
 			}
 		}
 	}
-	
+
 	h3.result{
 		margin:0;
 	}
-	
+
 	.tab-section{
 		display:none;
 	}
-	
+
 	.tab-content-container{
 		height: 300px;
 		overflow-y: scroll;
 		margin-top:10px;
 	}
-	
+
 	p.description{
 		font-size:12px;
-		
+
 		&:first-of-type{
 			margin-top:0;
 		}
@@ -927,7 +931,7 @@ a.random{
 			font-size:14px;
 			margin: 0;
 			text-align: left;
-			
+
 			&.center{
 				text-align: center;
 			}
@@ -938,7 +942,7 @@ a.random{
 			border-radius:12px;
 			background:#eee;
 			position:relative;
-			
+
 			.avg-line{
 				height: 100%;
 				width: 0px;
@@ -948,7 +952,7 @@ a.random{
 				left: 49.75%;
 			}
 		}
-		
+
 		.avg-label{
 			display:inline-block;
 			font-size:12px;
@@ -958,7 +962,7 @@ a.random{
 	.pokemon-entry{
 		display:flex;
 		margin-bottom:15px;
-		
+
 		&:last-of-type{
 			margin-bottom:0;
 		}
@@ -984,7 +988,7 @@ a.random{
 				position: relative;
 				z-index:5px;
 			}
-			
+
 			.damage-bar{
 				background: url('../img/train/damage-bar-bg.jpg');
    		 		background-position: -40px 0;

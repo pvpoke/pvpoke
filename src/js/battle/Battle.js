@@ -699,7 +699,13 @@ function Battle(){
 					actors: faintedPokemonIndexes
 				};
 
-				phaseTimeout = setTimeout(self.forceSwitch,	13000);
+				if(players[0].getRemainingPokemon() > 1){
+					phaseTimeout = setTimeout(self.forceSwitch,	13000);
+				} else{
+					self.forceSwitch();
+				}
+
+
 
 				// AI switch
 				if(phaseProps.actors.indexOf(1) > -1){
@@ -896,7 +902,7 @@ function Battle(){
 
 			if((action)&&(action.type == "fast")){
 				poke.cooldown = poke.fastMove.cooldown;
-				timeline.push(new TimelineEvent("tap interaction", "Tap", poke.index, time, turns, [2,0]));		
+				timeline.push(new TimelineEvent("tap interaction", "Tap", poke.index, time, turns, [2,0]));
 			}
 
 			// Adjust priority
@@ -963,16 +969,25 @@ function Battle(){
 
 				// Don't use best charged move if opponent has shields and a cheaper move is charged
 
-				if(poke.baitShields){
+				for(var n = 0; n < poke.chargedMoves.length; n++){
 
-					for(var n = 0; n < poke.chargedMoves.length; n++){
-						if((poke.energy >= poke.chargedMoves[n].energy) && (poke.chargedMoves[n].energy < poke.bestChargedMove.energy)){
+					// Don't use best charged moves if a cheaper move is available to bait or faint
+					if((poke.energy >= poke.chargedMoves[n].energy) && (poke.chargedMoves[n].energy < poke.bestChargedMove.energy)){
+						if(poke.baitShields){
 							useChargedMove = false;
 
 							self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because it has a cheaper move to remove shields");
 						}
+
+						if(opponent.hp <= poke.chargedMoves[n].damage){
+							useChargedMove = false;
+
+							self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because it has a cheaper move to faint");
+						}
 					}
 				}
+
+
 			}
 
 			if(poke.farmEnergy){
@@ -1395,7 +1410,7 @@ function Battle(){
 					if(mode == "emulate"){
 						attacker.battleStats.shieldsBurned++;
 						defender.battleStats.shieldsUsed++;
-						
+
 						if(attacker.battleStats.shieldsUsed > 0){
 							attacker.battleStats.shieldsFromShields++;
 						}
@@ -1433,8 +1448,8 @@ function Battle(){
 
 		if(mode == "emulate"){
 			attacker.battleStats.damage += (Math.min(damage, defender.hp) / defender.stats.hp) * 100;
-			
-						
+
+
 			if(attacker.battleStats.shieldsUsed > 0){
 				attacker.battleStats.damageFromShields += (Math.min(damage, defender.hp) / defender.stats.hp) * 100;
 			}
