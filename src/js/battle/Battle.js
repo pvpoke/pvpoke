@@ -1380,7 +1380,7 @@ function Battle(){
 
 				if(useShield){
 					var damageBlocked = damage-1;
-					
+
 					timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+6500, turns, [damageBlocked]));
 					damage = 1;
 					defender.shields--;
@@ -1432,7 +1432,7 @@ function Battle(){
 					} else if(effectiveness < 1){
 						turnMessages.push({ index: defender.index, str: "Not very effective..."});
 					}
-					
+
 					if((defender.hp <= damage)&&(players[0].getSwitchTimer() == 0)&&(players[1].getSwitchTimer()==0)){
 						attacker.battleStats.switchAdvantages++;
 					}
@@ -1448,7 +1448,7 @@ function Battle(){
 			// If Fast Move
 
 			if(mode == "emulate"){
-				attacker.battleStats.energyGained += Math.min(move.energy, 100 - attacker.energy);
+				attacker.battleStats.energyGained += Math.min(move.energyGain, 100 - attacker.energy);
 			}
 
 			attacker.energy += attacker.fastMove.energyGain;

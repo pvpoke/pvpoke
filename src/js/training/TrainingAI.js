@@ -451,6 +451,14 @@ function TrainingAI(l, p, b){
 
 			if((self.hasStrategy("BAIT_SHIELDS"))&&(opponent.shields > 0)){
 				var baitWeight = Math.round( (scenarios.bothBait.average - scenarios.noBait.average) / 20);
+
+				// If this Pokemon's moves are very close in DPE, prefer the shorter energy move
+				if((scenarios.bothBait.average >= 500)&&(pokemon.chargedMoves.length == 2)){
+					if(Math.abs(pokemon.chargedMoves[0].dpe - pokemon.chargedMoves[1].dpe) <= .1){
+						baitWeight += 5;
+					}
+				}
+
 				options.push(new DecisionOption("BAIT_SHIELDS", baitWeight));
 			}
 
@@ -832,29 +840,29 @@ function TrainingAI(l, p, b){
 	this.hasStrategy = function(strategy){
 		return (props.strategies.indexOf(strategy) > -1);
 	}
-	
+
 	// Return the name of the difficulty level
 	this.difficultyToString = function(){
 		var name = "AI";
-		
+
 		switch(level){
 			case 0:
 				name = "Novice";
 				break;
-				
+
 			case 1:
 				name = "Rival";
 				break;
-				
+
 			case 2:
 				name = "Elite";
 				break;
-				
+
 			case 3:
 				name = "Champion";
 				break;
 		}
-		
+
 		return name;
 	}
 
