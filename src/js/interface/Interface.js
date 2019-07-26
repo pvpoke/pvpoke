@@ -872,7 +872,7 @@ var InterfaceMaster = (function () {
 
 				// Update download link with new data
 
-				var filename = pokeSelectors[0].getPokemon().speciesName + " vs " + $(".poke.multi .cup-select option:selected").html() + ".csv";
+				var filename = pokeSelectors[0].getPokemon().speciesName + " vs " + $(".poke.multi .cup-select option:selected").html() + "-" + shieldStr + ".csv";
 				var filedata = '';
 
 				if (!csv.match(/^data:text\/csv/i)) {
