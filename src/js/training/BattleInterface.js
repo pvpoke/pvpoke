@@ -485,14 +485,14 @@ var BattlerMaster = (function () {
 					for(var i = 0; i < team.length; i++){
 						var pokemon = team[i];
 						var width = (pokemon.battleStats.damage / maxScore) * 100;
-						
+
 						if(k == 0){
 							totalDamage += pokemon.battleStats.damage;
 							totalDamageBlocked += pokemon.battleStats.damageBlocked;
 							totalEnergyGained += pokemon.battleStats.energyGained;
 							totalEnergyUsed += pokemon.battleStats.energyUsed;
 							totalChargedDamage += pokemon.battleStats.chargedDamage;
-							
+
 							if(pokemon.hp <= 0){
 								totalEnergyLost += pokemon.energy;
 							}
@@ -527,13 +527,13 @@ var BattlerMaster = (function () {
 				$(".battle-stats .tab-section.shields .stat-damage-dealt").html((Math.round( (damageFromShields / totalDamage) * 1000) / 10)+"%");
 				$(".battle-stats .tab-section.shields .stat-shields-drawn").html(shieldsFromShields);
 				$(".battle-stats .tab-section.shields .stat-damage-blocked").html(totalDamageBlocked);
-				
+
 				// Display energy stats
 
 				$(".battle-stats .tab-section.energy .stat-energy-gained").html(totalEnergyGained);
 				$(".battle-stats .tab-section.energy .stat-energy-used").html(totalEnergyUsed);
 				$(".battle-stats .tab-section.energy .stat-energy-lost").html(totalEnergyLost);
-				$(".battle-stats .tab-section.energy .stat-avg-dpe").html(Math.round( (totalChargedDamage / totalEnergyUsed) * 1000) / 10);
+				$(".battle-stats .tab-section.energy .stat-avg-dpe").html(Math.round( (totalChargedDamage / totalEnergyUsed) * 1000) / 100);
 
 				// Display AI difficulty
 				$(".end-screen .difficulty-name").html(players[1].getAI().difficultyToString());
