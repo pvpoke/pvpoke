@@ -11,6 +11,7 @@
 			<div class="ball"></div>
 		</div>
 		<div class="shields left">2</div>
+		<div class="cmp">CMP</div>
 	</div>
 
 	<div class="team-indicator right">
@@ -22,5 +23,6 @@
 			<div class="ball"></div>
 			<div class="ball"></div>
 		</div>
+		<div class="cmp">CMP</div>
 	</div>
 </div>

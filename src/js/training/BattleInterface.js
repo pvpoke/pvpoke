@@ -41,6 +41,8 @@ var BattlerMaster = (function () {
 
 			var interfaceLockout = 0; // Prevent clicking the shield or switch options too early
 			var listenersInitialized = false; // Prevent event listeners from being added twice
+			
+			var priorityAssignment = 1;
 
 			// Kick off the setup and the battle
 
@@ -64,7 +66,20 @@ var BattlerMaster = (function () {
 
 					listenersInitialized = true;
 				}
-
+				
+				// Alternate CMP
+				priorityAssignment = (priorityAssignment == 1) ? 0 : 1;
+				
+				for(var i = 0; i < players.length; i++){
+					if(i == priorityAssignment){
+						players[i].setPriority(1);
+					} else{
+						players[i].setPriority(0);
+					}
+				}
+				
+				$(".team-indicator .cmp").hide();
+				$(".team-indicator .cmp").eq(priorityAssignment).show();
 
 				// Set lead pokemon
 				battle.setBattleMode("emulate");

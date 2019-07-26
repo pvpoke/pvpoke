@@ -121,6 +121,8 @@ a.random {
           text-align: left; }
         .battle-window .top .team-indicator.right .name {
           text-align: right; }
+        .battle-window .top .team-indicator.right .cmp {
+          right: 0; }
       .battle-window .top .team-indicator .name, .battle-window .top .team-indicator .cp, .battle-window .top .team-indicator .balls {
         width: 50%;
         font-size: 12px;
@@ -138,6 +140,15 @@ a.random {
         margin: 3px 3px; }
         .battle-window .top .team-indicator .ball.fainted {
           background: #000; }
+      .battle-window .top .team-indicator .cmp {
+        position: absolute;
+        top: 110%;
+        font-weight: bold;
+        font-size: 12px;
+        padding: 5px;
+        background: rgba(0, 0, 0, 0.25);
+        color: #eee;
+        border-radius: 12px; }
   .battle-window .scene {
     position: absolute;
     width: 150%;

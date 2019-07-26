@@ -191,6 +191,10 @@ a.random{
 				.name{
 					text-align: right;
 				}
+				
+				.cmp{
+					right:0;
+				}
 			}
 
 			.name, .cp, .balls{
@@ -218,6 +222,17 @@ a.random{
 				&.fainted{
 					background:#000;
 				}
+			}
+			
+			.cmp{
+				position: absolute;
+				top: 110%;
+				font-weight: bold;
+				font-size: 12px;
+				padding: 5px;
+				background: rgba(0,0,0,0.25);
+				color: #eee;
+				border-radius: 12px;
 			}
 		}
 	}
