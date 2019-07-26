@@ -871,8 +871,18 @@ var InterfaceMaster = (function () {
 				$(".share-link input").val(link);
 
 				// Update download link with new data
+				var poke = pokeSelectors[0].getPokemon();
+				var moveAbbreviationStr = poke.fastMove.abbreviation;
+				
+				for(var i = 0; i < poke.chargedMoves.length; i++){
+					if(i == 0){
+						moveAbbreviationStr += "+" + poke.chargedMoves[i].abbreviation;
+					} else{
+						moveAbbreviationStr += "+" + poke.chargedMoves[i].abbreviation;
+					}
+				}
 
-				var filename = pokeSelectors[0].getPokemon().speciesName + " vs " + $(".poke.multi .cup-select option:selected").html() + ".csv";
+				var filename = pokeSelectors[0].getPokemon().speciesName + " " + moveAbbreviationStr + " vs " + $(".poke.multi .cup-select option:selected").html() + " " + poke.startingShields + "-" + opponentShields + " shields.csv";
 				var filedata = '';
 
 				if (!csv.match(/^data:text\/csv/i)) {

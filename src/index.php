@@ -23,6 +23,11 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 	
+	<h4>v1.8.5 (July 26, 2019)</h4>
+	<ul>
+		<li>Edited file names for CSV export to be more descriptive with information about moveset and shields</li>
+	</ul>
+	
 	<h4>v1.8.4 (July 24, 2019)</h4>
 	<ul>
 		<li>Piggybacking is now disabled, following discoveries that it was patched in the latest Charged Move mechanic update</li>
