@@ -9,7 +9,7 @@ $.getJSON( file, function( data ){
 });
 
 function TrainingAI(l, p, b){
-	var level = l;
+	var level = parseInt(l);
 	var player = p;
 	var battle = b;
 	var gm = GameMaster.getInstance();
@@ -839,6 +839,12 @@ function TrainingAI(l, p, b){
 	// Return whether not this AI can run the provided strategy
 	this.hasStrategy = function(strategy){
 		return (props.strategies.indexOf(strategy) > -1);
+	}
+	
+	// Return the AI's difficulty level
+	
+	this.getLevel = function(){
+		return level;
 	}
 
 	// Return the name of the difficulty level
