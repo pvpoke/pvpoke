@@ -37,6 +37,7 @@ require_once '../header.php';
 				<option value="2500 all">Ultra League</option>
 				<option value="10000 all">Master League</option>
 				<option value="1500 jungle">Jungle Cup</option>
+				<option value="1500 regionals-1">Season 1 Regionals</option>
 			</select>
 			<h3 class="section-title">Difficulty</h3>
 			<select class="difficulty-select">

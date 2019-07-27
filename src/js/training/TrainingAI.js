@@ -840,9 +840,9 @@ function TrainingAI(l, p, b){
 	this.hasStrategy = function(strategy){
 		return (props.strategies.indexOf(strategy) > -1);
 	}
-	
+
 	// Return the AI's difficulty level
-	
+
 	this.getLevel = function(){
 		return level;
 	}
