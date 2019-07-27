@@ -41,7 +41,7 @@ var BattlerMaster = (function () {
 
 			var interfaceLockout = 0; // Prevent clicking the shield or switch options too early
 			var listenersInitialized = false; // Prevent event listeners from being added twice
-			
+
 			var priorityAssignment = 1;
 
 			// Kick off the setup and the battle
@@ -66,10 +66,10 @@ var BattlerMaster = (function () {
 
 					listenersInitialized = true;
 				}
-				
+
 				// Alternate CMP
 				priorityAssignment = (priorityAssignment == 1) ? 0 : 1;
-				
+
 				for(var i = 0; i < players.length; i++){
 					if(i == priorityAssignment){
 						players[i].setPriority(1);
@@ -77,7 +77,7 @@ var BattlerMaster = (function () {
 						players[i].setPriority(0);
 					}
 				}
-				
+
 				$(".team-indicator .cmp").hide();
 				$(".team-indicator .cmp").eq(priorityAssignment).show();
 
@@ -561,37 +561,37 @@ var BattlerMaster = (function () {
 				$(".end-screen a.tab").eq(0).addClass("active");
 				$(".end-screen .tab-section").eq(0).show();
 			}
-			
+
 			// Report battle results to Google Analytics
-			
+
 			this.reportBattleAnalytics = function(result){
-				
+
 				var battleSummaryStr = battle.getCup().name + " " + battle.getCP() + " difficulty " + (players[1].getAI().getLevel()+1);
-				
+
 				// Report the overall battle result
-				
+
 				gtag('event', battleSummaryStr, {
 				  'event_category' : 'Training Battle',
 				  'event_label' : battleResult
 				});
-				
+
 				// Report each Pokemon
-				
+
 				for(var i = 0; i < players.length; i++){
 					var team = players[i].getTeam();
-					
+
 					for(var n = 0; n < team.length; n++){
 						var pokemon = team[n];
 						var pokeStr = pokemon.speciesName + ' ' + pokemon.fastMove.abbreviation;
 						var chargedMoveAbbrevations = [];
-						
+
 						for(var k = 0; k < pokemon.chargedMoves.length; k++){
 							chargedMoveAbbrevations.push(pokemon.chargedMoves[k].abbreviation);
 						}
-						
+
 						// Sort alphabetically
 						chargedMoveAbbrevations.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
-						
+
 						for(var k = 0; k < chargedMoveAbbrevations.length; k++){
 							if(k == 0){
 								pokeStr += "+" + chargedMoveAbbrevations[k];
@@ -599,11 +599,15 @@ var BattlerMaster = (function () {
 								pokeStr += "/" + chargedMoveAbbrevations[k];
 							}
 						}
-						
+
+						// Assign this Pokemon's score in battle, damage done plus shields broken
+
+						var score = Math.round(pokemon.battleStats.damage + (50 * pokemon.battleStats.shieldsBurned));
+
 						gtag('event', battleSummaryStr, {
 						  'event_category' : 'Training Pokemon',
 						  'event_label' : pokeStr,
-						  'value' : Math.round(pokemon.battleStats.damage),
+						  'value' : score
 						});
 					}
 				}
