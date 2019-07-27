@@ -513,44 +513,27 @@ function Battle(){
 					}
 
 					// Was this queued this turn? Let's check for piggybacking. Boy was this a headache.
-					// RIP piggybacking
 
-					/*if(action.turn == turns){
+					// Check for a charged move last turn and this turn
+					var chargedMoveLastTurn = false;
+					var fastMoveRegisteredLastTurn = false;
 
-						// Check for a charged move last turn and this turn
-						var chargedMoveLastTurn = false;
-						var fastMoveRegisteredLastTurn = false;
+					for(var j = 0; j < previousTurnActions.length; j++){
+						var a = previousTurnActions[j];
 
-						for(var j = 0; j < previousTurnActions.length; j++){
-							var a = previousTurnActions[j];
-
-							if(a.type == "charged"){
-								chargedMoveLastTurn = true;
-							}
-							if((a.type == "fast")&&(a.actor == action.actor)){
-								fastMoveRegisteredLastTurn = true;
-							}
+						if((a.type == "charged")&&(a.actor != action.actor)){
+							chargedMoveLastTurn = true;
 						}
-
-						if((chargedMoveLastTurn)&&(fastMoveRegisteredLastTurn)&&(chargedMoveThisTurn)){
-							valid = false;
-							queuedActions.splice(i, 1);
-							i--;
+						if((a.type == "fast")&&(a.actor == action.actor)){
+							fastMoveRegisteredLastTurn = true;
 						}
-					}*/
+					}
 
-					// Was this queued this turn? Let's check for piggybacking. Boy was this a headache.
-					// RIP piggybacking
-
-					/*if(action.turn == turns){
-
-
-						if((chargedMoveLastTurn)&&(fastMoveRegisteredLastTurn)&&(chargedMoveThisTurn)){
-							valid = false;
-							queuedActions.splice(i, 1);
-							i--;
-						}
-					}*/
+					if((chargedMoveLastTurn)&&(fastMoveRegisteredLastTurn)&&(chargedMoveThisTurn)){
+						valid = false;
+						queuedActions.splice(i, 1);
+						i--;
+					}
 				}
 			}
 

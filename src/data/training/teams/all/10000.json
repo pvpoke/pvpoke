@@ -2,7 +2,7 @@
 	{
 		"slot": "Steel",
 		"synergies": ["Flying","Psychic"],
-		"weight": 35,
+		"weight": 14,
 		"pokemon": [
 			{
 				"speciesId": "dialga",
@@ -79,7 +79,7 @@
 	{
 		"slot": "Giratina",
 		"synergies": ["Fighting","Anti-Flying"],
-		"weight": 14,
+		"weight": 10,
 		"pokemon": [
 			{
 				"speciesId": "giratina_origin",
@@ -219,7 +219,7 @@
 	{
 		"slot": "Psychic",
 		"synergies": ["Fighting","Ground"],
-		"weight": 4,
+		"weight": 3,
 		"pokemon": [
 			{
 				"speciesId": "lugia",
@@ -338,7 +338,7 @@
 	{
 		"slot": "Fighting",
 		"synergies": ["Anti-Flying","Dark"],
-		"weight": 12,
+		"weight": 10,
 		"pokemon": [
 			{
 				"speciesId": "machamp",
@@ -394,7 +394,7 @@
 	{
 		"slot": "Dark",
 		"synergies": ["Flying","Giratina"],
-		"weight": 15,
+		"weight": 8,
 		"pokemon": [
 			{
 				"speciesId": "tyranitar",
@@ -412,17 +412,10 @@
 			},
 			{
 				"speciesId": "muk_alolan",
-				"fastMove": "POISON_JAB",
-				"chargedMoves": ["DARK_PULSE","ACID_SPRAY"],
-				"difficulty": 2,
-				"weight":4
-			},
-			{
-				"speciesId": "muk_alolan",
 				"fastMove": "SNARL",
 				"chargedMoves": ["DARK_PULSE","ACID_SPRAY"],
 				"difficulty": 2,
-				"weight":2
+				"weight":6
 			},
 			{
 				"speciesId": "snorlax",
@@ -456,7 +449,7 @@
 	},
 	{
 		"slot": "Anti-Flying",
-		"weight": 8,
+		"weight": 6,
 		"synergies": ["Flying","Psychic","Giratina"],
 		"pokemon": [
 			{
@@ -568,7 +561,7 @@
 	},
 	{
 		"slot": "Water",
-		"weight": 3,
+		"weight": 1,
 		"synergies": ["Steel","Ground"],
 		"pokemon": [
 			{
