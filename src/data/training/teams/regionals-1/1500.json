@@ -322,7 +322,7 @@
 			{
 				"speciesId": "togekiss",
 				"fastMove": "AIR_SLASH",
-				"chargedMoves": ["AERIAL_ACE","ANCEINT_POWER"],
+				"chargedMoves": ["AERIAL_ACE","ANCIENT_POWER"],
 				"difficulty": 0,
 				"weight":1
 			}
@@ -728,7 +728,7 @@
 			{
 				"speciesId": "togekiss",
 				"fastMove": "CHARM",
-				"chargedMoves": ["ANCEINT_POWER","AERIAL_ACE"],
+				"chargedMoves": ["ANCIENT_POWER","AERIAL_ACE"],
 				"difficulty": 3,
 				"weight":1
 			},

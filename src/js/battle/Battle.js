@@ -1058,8 +1058,14 @@ function Battle(){
 				self.logDecision(turns, poke, " has " + move.name + " charged");
 
 				// Use charged move if it would KO the opponent
+				var unregisteredDamage = 0; // Search for any unregistered attacks to take into account for opponent's effective HP
+				for(var k = 0; k < queuedActions.length; k++){
+					if((queuedActions[k].actor == poke.index)&&(queuedActions[k].type == "fast")){
+						unregisteredDamage += poke.fastMove.damage;
+					}
+				}
 
-				if((move.damage >= opponent.hp) && (opponent.hp > poke.fastMove.damage) && (! poke.farmEnergy) && (!chargedMoveUsed)){
+				if((move.damage + unregisteredDamage >= opponent.hp) && (opponent.hp > poke.fastMove.damage) && (! poke.farmEnergy) && (!chargedMoveUsed)){
 					action = new TimelineAction(
 						"charged",
 						poke.index,

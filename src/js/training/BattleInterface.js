@@ -245,7 +245,7 @@ var BattlerMaster = (function () {
 							}
 
 							$(".team-indicator").eq(i).find(".name").html(pokemon.speciesName);
-							$(".team-indicator").eq(i).find(".cp").html(pokemon.cp);
+							$(".team-indicator").eq(i).find(".cp").html("CP " + pokemon.cp);
 						}
 
 						if(i == 0){
