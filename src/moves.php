@@ -26,7 +26,7 @@ require_once 'header.php';
 		<option value="explore">Moveset Explorer</option>
 	</select>
 	<p>Sort or filter the moves below, or experiment with a custom moveset.</p>
-	
+
 	<h2 class="loading">Loading data...</h2>
 	<div class="move-table-container fast charged">
 		<table class="stats-table" cellpadding="0" cellspacing="0">
@@ -59,7 +59,7 @@ require_once 'header.php';
 		<input class="poke-search" context="move-search" type="text" placeholder="Search Move or Type" />
 		<table class="sortable-table stats-table moves" cellpadding="0" cellspacing="0"></table>
 	</div>
-	
+
 	<div class="move-explore-container explore hide">
 		<div class="move-select-container flex">
 			<div class="move-select-item" >
@@ -84,7 +84,7 @@ require_once 'header.php';
 					<option selected disabled value="">Select a Charged Move</option>
 				</select>
 				<h3>Options</h3>
-				<select class="effectiveness-select fast">
+				<select class="effectiveness-select charged">
 					<option selected value=".244140625">Triple resisted (x0.24)</option>
 					<option selected value=".390625">Double resisted (x0.39)</option>
 					<option selected value=".625">Resisted (x0.625)</option>
@@ -95,14 +95,14 @@ require_once 'header.php';
 				<div class="stab charged check on"><span></span>Same type attack bonus</div>
 			</div>
 		</div>
-		
+
 		<div class="explore-results hide">
 			<div class="moveset-stats flex"></div>
 			<h2>Pokemon with this moveset:</h2>
 			<div>* Legacy moveset</div>
 			<div class="rankings-container clear"></div>
 		</div>
-		
+
 	</div>
 </div>
 

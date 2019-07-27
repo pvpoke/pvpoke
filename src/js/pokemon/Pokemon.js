@@ -169,7 +169,7 @@ function Pokemon(id, i, b){
 
 		this.stats.atk = this.cpm * (this.baseStats.atk+this.ivs.atk);
 		this.stats.def = this.cpm * (this.baseStats.def+this.ivs.def);
-		this.stats.hp = Math.floor(this.cpm * (this.baseStats.hp+this.ivs.hp));
+		this.stats.hp = Math.max(Math.floor(this.cpm * (this.baseStats.hp+this.ivs.hp)), 10);
 		this.hp = this.stats.hp;
 		this.startHp = this.hp;
 
@@ -216,7 +216,7 @@ function Pokemon(id, i, b){
         this.cpm = cpms[(this.level - 1) * 2];
         this.stats.atk = this.cpm * (this.baseStats.atk+this.ivs.atk);
         this.stats.def = this.cpm * (this.baseStats.def+this.ivs.def);
-        this.stats.hp = Math.floor(this.cpm * (this.baseStats.hp+this.ivs.hp));
+        this.stats.hp = Math.max(Math.floor(this.cpm * (this.baseStats.hp+this.ivs.hp)), 10);
         this.hp = this.stats.hp;
         this.startHp = this.hp;
 
@@ -246,9 +246,14 @@ function Pokemon(id, i, b){
 		var floor = 0;
 
 		var untradables = ["mew","celebi","deoxys_attack","deoxys_defense","deoxys_speed","deoxys","jirachi"];
+		var maxNear1500 = ["bastiodon"]
 
 		if(untradables.indexOf(self.speciesId) > -1){
 			floor = 10;
+		}
+		
+		if(maxNear1500.indexOf(self.speciesId) > -1){
+			floor = 12;
 		}
 
 

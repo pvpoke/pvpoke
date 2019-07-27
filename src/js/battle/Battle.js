@@ -174,21 +174,23 @@ function Battle(){
 
 	// Calculate damage given an attacker, defender, and move, requires move to be initialized first
 
-	this.calculateDamage = function(attacker, defender, move, forceFullCharge){
+	this.calculateDamage = function(attacker, defender, move, charge){
+		charge = typeof charge !== 'undefined' ? charge : 1;
 
 		var bonusMultiplier = 1.3;
 		var effectiveness = defender.typeEffectiveness[move.type];
+		var chargeMultiplier = charge; // The amount of charge for a Charged Move
 
 		// Fully charge moves in regular simulation or if the opponent is an AI
-		if(mode == "simulate"){
-			chargeAmount = 1;
-		} else if(mode == "emulate"){
-			if((move.energyGain > 0)||(attacker.index == 1)||(forceFullCharge)){
+		if(mode == "emulate"){
+			if((move.energyGain > 0)||(attacker.index == 1)){
 				chargeAmount = 1;
 			}
+
+			chargeMultiplier = chargeAmount;
 		}
 
-		var damage = Math.floor(move.power * move.stab * ( attacker.getEffectiveStat(0) / defender.getEffectiveStat(1)) * effectiveness * chargeAmount * 0.5 * bonusMultiplier) + 1;
+		var damage = Math.floor(move.power * move.stab * ( attacker.getEffectiveStat(0) / defender.getEffectiveStat(1)) * effectiveness * chargeMultiplier * 0.5 * bonusMultiplier) + 1;
 
 		return damage;
 	}
@@ -492,24 +494,63 @@ function Battle(){
 
 					// Check for a charged move last turn and this turn
 					var chargedMoveLastTurn = false;
-					var fastMoveRegisteredLastTurn = false;
 
-					for(var j = 0; j < previousTurnActions.length; j++){
-						var a = previousTurnActions[j];
-
-						if(a.type == "charged"){
+					for(var n = 0; n < previousTurnActions.length; n++){
+						if(previousTurnActions[n].type == "charged"){
 							chargedMoveLastTurn = true;
 						}
-						if((a.type == "fast")&&(a.actor == action.actor)){
-							fastMoveRegisteredLastTurn = true;
+					}
+
+					if(actionsThisTurn){
+						if(timeSinceActivated >= pokemon[action.actor].fastMove.cooldown - 500){
+							action.settings.priority += 20;
+							valid = true;
+						}
+						if((timeSinceActivated >= 500)&&(chargedMoveLastTurn)){
+							action.settings.priority += 20;
+							valid = true;
 						}
 					}
 
-					if((chargedMoveLastTurn)&&(fastMoveRegisteredLastTurn)&&(chargedMoveThisTurn)){
-						valid = false;
-						queuedActions.splice(i, 1);
-						i--;
-					}
+					// Was this queued this turn? Let's check for piggybacking. Boy was this a headache.
+					// RIP piggybacking
+
+					/*if(action.turn == turns){
+
+						// Check for a charged move last turn and this turn
+						var chargedMoveLastTurn = false;
+						var fastMoveRegisteredLastTurn = false;
+
+						for(var j = 0; j < previousTurnActions.length; j++){
+							var a = previousTurnActions[j];
+
+							if(a.type == "charged"){
+								chargedMoveLastTurn = true;
+							}
+							if((a.type == "fast")&&(a.actor == action.actor)){
+								fastMoveRegisteredLastTurn = true;
+							}
+						}
+
+						if((chargedMoveLastTurn)&&(fastMoveRegisteredLastTurn)&&(chargedMoveThisTurn)){
+							valid = false;
+							queuedActions.splice(i, 1);
+							i--;
+						}
+					}*/
+
+					// Was this queued this turn? Let's check for piggybacking. Boy was this a headache.
+					// RIP piggybacking
+
+					/*if(action.turn == turns){
+
+
+						if((chargedMoveLastTurn)&&(fastMoveRegisteredLastTurn)&&(chargedMoveThisTurn)){
+							valid = false;
+							queuedActions.splice(i, 1);
+							i--;
+						}
+					}*/
 				}
 			}
 
@@ -524,7 +565,6 @@ function Battle(){
 			if(action.type == "switch"){
 				valid = true;
 			}
-
 
 			if(valid){
 				turnActions.push(action);
@@ -1224,7 +1264,7 @@ function Battle(){
 
 				if(poke.energy >= move.energy){
 					if(mode == "simulate"){
-						self.useMove(poke, opponent, move, action.settings.shielded, action.settings.buffs);
+						self.useMove(poke, opponent, move, action.settings.shielded, action.settings.buffs, action.settings.charge);
 					} else if(mode == "emulate"){
 						// Initiate the suspended phase
 
@@ -1307,9 +1347,11 @@ function Battle(){
 
 	// Use a move on an opposing Pokemon and produce a Timeline Event
 
-	this.useMove = function(attacker, defender, move, forceShields, forceBuff){
+	this.useMove = function(attacker, defender, move, forceShields, forceBuff, charge){
+		charge = typeof charge !== 'undefined' ? charge : 1;
+
 		var type = "fast " + move.type;
-		var damage = self.calculateDamage(attacker, defender, move);
+		var damage = self.calculateDamage(attacker, defender, move, charge);
 		move.damage = damage;
 
 		var displayTime = time;
@@ -1330,8 +1372,8 @@ function Battle(){
 
 			// Add tap events for display
 
-			for(var i = 0; i < 6; i++){
-				timeline.push(new TimelineEvent("tap "+move.type, "Tap", attacker.index, time+(1000*i), turns, [i]));
+			for(var i = 0; i < 8; i++){
+				timeline.push(new TimelineEvent("tap "+move.type, "Swipe", attacker.index, time+(1000*i), turns, [i]));
 			}
 
 			// If defender has a shield, use it
@@ -1381,7 +1423,7 @@ function Battle(){
 				if(useShield){
 					var damageBlocked = damage-1;
 
-					timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+6500, turns, [damageBlocked]));
+					timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+8500, turns, [damageBlocked]));
 					damage = 1;
 					defender.shields--;
 					roundShieldUsed = true;
@@ -1478,7 +1520,7 @@ function Battle(){
 		// This was really hard for my little brain to figure out so like really don't touch it
 
 		if(move.energy > 0){
-			displayTime += 6500;
+			displayTime += 8500;
 
 			if((usePriority)&&(roundChargedMoveUsed > 0)&&(! roundShieldUsed)){
 				displayTime += chargedMinigameTime;
@@ -1747,6 +1789,7 @@ function Battle(){
 					{
 						shielded: shielded,
 						buffs: buffs,
+						charge: 1,
 						priority: pokemon[event.actor].priority
 					}
 				));

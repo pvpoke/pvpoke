@@ -20,6 +20,16 @@
 		"chargedMoves":["LEAF_BLADE","CLOSE_COMBAT"]
 	},
 	{
+		"speciesId":"bronzong",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["HEAVY_SLAM","BULLDOZE"]
+	},
+	{
+		"speciesId":"jirachi",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["DOOM_DESIRE","PSYCHIC"]
+	},
+	{
 		"speciesId":"toxicroak",
 		"fastMove":"COUNTER",
 		"chargedMoves":["MUD_BOMB","DYNAMIC_PUNCH"]
@@ -50,14 +60,14 @@
 		"chargedMoves":["MUD_BOMB","BLIZZARD"]
 	},
 	{
+		"speciesId":"swampert",
+		"fastMove":"MUD_SHOT",
+		"chargedMoves":["HYDRO_CANNON","EARTHQUAKE"]
+	},
+	{
 		"speciesId":"marshtomp",
 		"fastMove":"MUD_SHOT",
 		"chargedMoves":["MUD_BOMB","SURF"]
-	},
-	{
-		"speciesId":"breloom",
-		"fastMove":"COUNTER",
-		"chargedMoves":["SEED_BOMB","DYNAMIC_PUNCH"]
 	},
 	{
 		"speciesId":"torterra",

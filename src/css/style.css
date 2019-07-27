@@ -2034,6 +2034,10 @@ select, input {
   font-size: 18px;
   margin-bottom: 10px;
 }
+.modal .sandbox-move-select .charge-select {
+  max-width: 200px;
+  margin-bottom: 10px;
+}
 .modal .sandbox-move-select .move-stats {
   flex-wrap: wrap;
   justify-content: space-around;

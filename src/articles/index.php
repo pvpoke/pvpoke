@@ -12,6 +12,18 @@ require_once '../header.php';
 <div class="section home white">
 	<div class="article-item flex">
 		<div class="col-3">
+			<a href="<?php echo $WEB_ROOT; ?>articles/mirror-cup-past-metas/">
+				<img src="<?php echo $WEB_ROOT; ?>assets/articles/mirror-thumb.jpg?v=2" />
+			</a>
+		</div>
+		<div class="col-9">
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/mirror-cup-past-metas/">Mirror Cup: Glimpse at Past Metas</a></h4>
+			<div class="date"> July 18, 2019</div>
+			<p>The Mirror Cup is here! We get to look back at past cups with all the new Pokemon and movesets. What's changed and how can you prepare?</p>
+		</div>
+	</div>
+	<div class="article-item flex">
+		<div class="col-3">
 			<a href="<?php echo $WEB_ROOT; ?>articles/guide-to-fast-move-registration/">
 				<img src="<?php echo $WEB_ROOT; ?>assets/articles/mechanics-thumb.jpg?v=2" />
 			</a>

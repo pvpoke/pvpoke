@@ -56,7 +56,7 @@
 	},
 	{
 		"speciesId":"tyranitar",
-		"fastMove":"BITE",
+		"fastMove":"SMACK_DOWN",
 		"chargedMoves":["CRUNCH","STONE_EDGE"]
 	},
 	{
@@ -97,7 +97,7 @@
 	{
 		"speciesId":"swampert",
 		"fastMove":"MUD_SHOT",
-		"chargedMoves":["SURF","EARTHQUAKE"]
+		"chargedMoves":["HYDRO_CANNON","EARTHQUAKE"]
 	},
 	{
 		"speciesId":"lucario",
@@ -141,8 +141,8 @@
 	},
 	{
 		"speciesId":"togekiss",
-		"fastMove":"AIR_SLASH",
-		"chargedMoves":["ANCIENT_POWER","DAZZLING_GLEAM"]
+		"fastMove":"CHARM",
+		"chargedMoves":["ANCIENT_POWER","FLAMETHROWER"]
 	},
 	{
 		"speciesId":"weavile",
