@@ -8,6 +8,9 @@
 			<div class="bar"></div>
 		</div>
 		<div class="pokemon">
+			<div class="fast-move-circle-container">
+				<div class="fast-move-circle"></div>
+			</div>
 			<div class="shadow"></div>
 			<div class="main-sprite"></div>
 			<div class="secondary-sprite"></div>
@@ -29,6 +32,9 @@
 			<div class="bar"></div>
 		</div>
 		<div class="pokemon">
+			<div class="fast-move-circle-container">
+				<div class="fast-move-circle"></div>
+			</div>
 			<div class="shadow"></div>
 			<div class="main-sprite"></div>
 			<div class="secondary-sprite"></div>

@@ -276,6 +276,13 @@
 				"chargedMoves": ["EARTHQUAKE","PLAY_ROUGH"],
 				"difficulty": 0,
 				"weight":4
+			},
+			{
+				"speciesId": "gligar",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["DIG","AERIAL_ACE"],
+				"difficulty": 0,
+				"weight":2
 			}
 		]
 	},

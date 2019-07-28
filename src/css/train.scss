@@ -82,7 +82,7 @@ a.random{
 }
 
 .battle-active{
-	
+
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -moz-tap-highlight-color: rgba(0, 0, 0, 0);
   	-webkit-touch-callout: none; /* iOS Safari */
@@ -92,14 +92,14 @@ a.random{
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
-	
+
 	.battle-window{
 		display:inline-block;
 	}
 	header{
 		display: none;
 	}
-	
+
 	#main{
 		padding-top:0;
 	}
@@ -191,7 +191,7 @@ a.random{
 				.name{
 					text-align: right;
 				}
-				
+
 				.cmp{
 					right:0;
 				}
@@ -223,7 +223,7 @@ a.random{
 					background:#000;
 				}
 			}
-			
+
 			.cmp{
 				position: absolute;
 				top: 110%;
@@ -272,6 +272,11 @@ a.random{
 						z-index:10;
 					}
 				}
+
+				.fast-move-circle-container{
+					top: -10px;
+					left: -70px;
+				}
 			}
 
 			&.opponent{
@@ -280,6 +285,12 @@ a.random{
 
 				.shield-sprite{
 					z-index:20;
+				}
+
+				.fast-move-circle-container{
+					top: 25px;
+					left: -60px;
+					z-index:25;
 				}
 			}
 
@@ -304,6 +315,22 @@ a.random{
 				width:100px;
 				height:100px;
 				margin: 0 auto;
+
+				.fast-move-circle-container{
+					position: absolute;
+					width:100px;
+					height:100px;
+				    display: flex;
+				    justify-content: center;
+				    align-items: center;
+				}
+
+				.fast-move-circle{
+					width: 100px;
+				    height: 100px;
+				    border-radius: 300px;
+					opacity: 0;
+				}
 
 				.shadow{
 					width:151px;
@@ -1023,7 +1050,7 @@ a.random{
 			}
 		}
 	}
-	
+
 	.stats-table{
 		width:100%;
 	}
@@ -1165,22 +1192,42 @@ a.random{
 
 	&[cooldown="500"]{
 		@include transition(all, 0.25s, ease-out, 0s);
+
+		.fast-move-circle{
+			@include transition(all, 0.25s, ease-out, 0s);
+		}
 	}
 
 	&[cooldown="1000"]{
 		@include transition(all, 0.75s, ease-out, 0s);
+
+		.fast-move-circle{
+			@include transition(all, 0.5s, ease-out, 0s);
+		}
 	}
 
 	&[cooldown="1500"]{
 		@include transition(all, 1.25s, ease-out, 0s);
+
+		.fast-move-circle{
+			@include transition(all, 1s, ease-out, 0s);
+		}
 	}
 
 	&[cooldown="2000"]{
 		@include transition(all, 1.75s, ease-out, 0s);
+
+		.fast-move-circle{
+			@include transition(all, 1.5s, ease-out, 0s);
+		}
 	}
 
 	&[cooldown="2500"]{
 		@include transition(all, 2.25s, ease-out, 0s);
+
+		.fast-move-circle{
+			@include transition(all, 2s, ease-out, 0s);
+		}
 	}
 
 	&.animate-fast{
@@ -1194,6 +1241,13 @@ a.random{
 		&.opponent{
 			bottom:54%;
 			right:26%;
+		}
+
+		.fast-move-circle{
+			@include transition(all, 0s, ease-out, 0s);
+			width:20px;
+			height:20px;
+			opacity:1;
 		}
 	}
 
@@ -1221,9 +1275,9 @@ a.random{
 	.train > .poke{
 		width:49%;
 	}
-	
+
 	.team-select{
-		
+
 		&.self, &.opponent{
 			padding: 5px 0;
 		}
@@ -1232,11 +1286,11 @@ a.random{
 			margin:5px 0;
 			font-size:16px;
 		}
-		
+
 		h4{
 			margin-bottom:0;
 		}
-		
+
 		.roster .pokemon{
 			.sprite-container{
 				width:25px;
@@ -1253,7 +1307,7 @@ a.random{
 				line-height:14px;
 			}
 		}
-		
+
 		.number{
 			padding-top:2px !important;
 		}

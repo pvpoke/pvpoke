@@ -381,6 +381,7 @@ var BattlerMaster = (function () {
 					switch(animation.type){
 						case "fast":
 							fastAnimationOccurred = true;
+							$(".battle-window .scene .pokemon-container").eq(animation.actor).find(".fast-move-circle").attr("class", "fast-move-circle " + activePokemon[animation.actor].fastMove.type);
 							$(".battle-window .scene .pokemon-container").eq(animation.actor).addClass("animate-fast");
 							break;
 
