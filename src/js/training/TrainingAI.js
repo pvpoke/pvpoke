@@ -143,6 +143,16 @@ function TrainingAI(l, p, b){
 	this.generateTeam = function(opponentRoster, previousResult, previousTeams){
 		var roster = player.getRoster();
 		var team = [];
+		
+		// Reset all Pokemon involves
+		
+		for(var i = 0; i < opponentRoster.length; i++){
+			opponentRoster[i].fullReset();
+		}
+		
+		for(var i = 0; i < roster.length; i++){
+			roster[i].fullReset();
+		}
 
 		// Choose a pick strategy
 		var pickStrategyOptions = [];
@@ -169,7 +179,6 @@ function TrainingAI(l, p, b){
 			pickStrategyOptions.push(new DecisionOption("COUNTER_LAST_LEAD", loseStratWeight));
 			pickStrategyOptions.push(new DecisionOption("COUNTER", loseStratWeight));
 		}
-
 
 		var pickStrategy = self.chooseOption(pickStrategyOptions).name;
 
