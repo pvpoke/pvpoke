@@ -476,6 +476,9 @@ function TrainingAI(l, p, b){
 				if(opponentPlayer.getRemainingPokemon() < 2){
 					farmWeight = 0;
 				}
+				if((opponent.energy < 10)&&(scenarios.farm.average > 550)){
+					farmWeight += 2;
+				}
 				options.push(new DecisionOption("FARM", farmWeight));
 			}
 		}
@@ -737,7 +740,7 @@ function TrainingAI(l, p, b){
 		var currentScenario = self.runScenario("NO_BAIT", defender, attacker);
 		var currentRating = currentScenario.average;
 		var currentHp = defender.hp;
-		var estimatedEnergy = defender.energy + (Math.floor(Math.random() * (props.energyGuessRange * 2)) - props.energyGuessRange);
+		var estimatedEnergy = attacker.energy + (Math.floor(Math.random() * (props.energyGuessRange * 2)) - props.energyGuessRange);
 		var potentialDamage = 0;
 		var potentialHp = defender.hp - potentialDamage;
 
@@ -754,7 +757,6 @@ function TrainingAI(l, p, b){
 				}
 			}
 
-
 			if(estimatedEnergy >= attacker.chargedMoves[i].energy){
 				attacker.chargedMoves.damage = battle.calculateDamage(attacker, defender, attacker.chargedMoves[i], true);
 				moves.push(attacker.chargedMoves[i]);
@@ -763,15 +765,21 @@ function TrainingAI(l, p, b){
 
 		// Sort moves by damage
 
-		moves.sort((a,b) => (a.damage > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+		moves.sort((a,b) => (a.damage > b.damage) ? -1 : ((b.damage > a.damage) ? 1 : 0));
 
 		var moveGuessOptions = [];
 
 		for(var i = 0; i < moves.length; i++){
 			var moveWeight = 1;
-			// Is this the actual move being used? Cheat a little bit and give the AI some heads up
-			if(moves[i].name == m.name){
-				moveWeight += props.moveGuessCertainty;
+			
+			// Is the opponent low on HP? Probably the higher damage move
+			if((i == 0)&&(attacker.hp / attacker.stats.hp <= .25)){
+				moveWeight += 4;
+			}
+			
+			// Is this move lower damage and higher energy? Definitely the other one, then
+			if((i == 1)&&(moves[i].damage < moves[0].damage)&&(moves[i].energy > moves[0].energy)){
+				moveGuessOptions[0].weight += 20;
 			}
 			moveGuessOptions.push(new DecisionOption(i, moveWeight));
 		}
@@ -794,7 +802,7 @@ function TrainingAI(l, p, b){
 		}
 
 		// Is this move going to knock me out?
-		if(move.damage >= defender.hp){
+		if(move.damage + (attacker.fastMove.damage * 2) >= defender.hp){
 			// How good of a matchup is this for us?
 			if(currentRating > 500){
 				yesWeight += Math.round((currentRating - 500) / 10)
@@ -802,12 +810,30 @@ function TrainingAI(l, p, b){
 				noWeight += Math.round((500 - currentRating) / 10)
 			}
 		}
+		
+		// Monkey see, monkey do
+		if((defender.battleStats.shieldsUsed > 0)&&(damageWeight > 2)){
+			yesWeight += 2;
+		}
+		
+		// Is this Pokemon close to a move that will faint or seriously injure the attacker?
+		for(var i = 0; i < defender.chargedMoves.length; i++){
+			var move = defender.chargedMoves[i];
+			var turnsAway = Math.ceil( (move.energy - defender.energy) / defender.fastMove.energyGain ) * defender.fastMove.cooldown;
+			
+			if((move.damage >= attacker.stats.hp * 75)&&(turnsAway < 4)){
+				yesWeight += 2;
+			}
+		}
 
 		// How many Pokemon do I have left compared to shields?
 
 		if(yesWeight - noWeight > -3){
-			yesWeight += (3 - player.getRemainingPokemon()) * 3;
+			yesWeight += (3 - player.getRemainingPokemon()) * 4;
 		}
+		
+		console.log("yes: " + yesWeight);
+		console.log("no: " + noWeight);
 
 		var options = [];
 		options.push(new DecisionOption(true, yesWeight));
