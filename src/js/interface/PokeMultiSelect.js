@@ -467,7 +467,7 @@ function PokeMultiSelect(element){
 	// Open the import/export window
 
 	$el.find(".export-btn").click(function(e){
-		modalWindow("Import/Export Custom Group", $(".list-export"));
+		modalWindow("Import/Export Custom Group", $(".list-export").eq(0));
 
 		var csv = self.convertListToCSV();
 
@@ -505,7 +505,7 @@ function PokeMultiSelect(element){
 
 		if(selectedGroup.indexOf("custom") == -1){
 			// Prompt to save a new group if a custom one isn't selected
-			modalWindow("Save Group", $(".save-list"));
+			modalWindow("Save Group", $(".save-list").eq(0));
 		} else{
 			var name = $el.find(".quick-fill-select option:selected").html();
 

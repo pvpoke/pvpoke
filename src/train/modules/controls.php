@@ -12,6 +12,10 @@
 		</div>
 	</div>
 	<div class="switch-btn active"></div>
+	<div class="auto-tap-container">
+		<div class="auto-tap">Autotap</div>
+	</div>
+	
 </div>
 
 <div class="shield-window">

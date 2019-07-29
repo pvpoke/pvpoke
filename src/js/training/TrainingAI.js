@@ -812,7 +812,7 @@ function TrainingAI(l, p, b){
 		}
 		
 		// Monkey see, monkey do
-		if((defender.battleStats.shieldsUsed > 0)&&(damageWeight > 2)){
+		if((attacker.battleStats.shieldsUsed > 0)&&(damageWeight > 2)){
 			yesWeight += 2;
 		}
 		
@@ -821,7 +821,7 @@ function TrainingAI(l, p, b){
 			var move = defender.chargedMoves[i];
 			var turnsAway = Math.ceil( (move.energy - defender.energy) / defender.fastMove.energyGain ) * defender.fastMove.cooldown;
 			
-			if((move.damage >= attacker.stats.hp * 75)&&(turnsAway < 4)){
+			if( ((move.damage >= attacker.hp)||((move.damage >= attacker.stats.hp * .75)))&&(turnsAway < 4)){
 				yesWeight += 2;
 			}
 		}

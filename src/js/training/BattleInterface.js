@@ -42,7 +42,9 @@ var BattlerMaster = (function () {
 			var interfaceLockout = 0; // Prevent clicking the shield or switch options too early
 			var listenersInitialized = false; // Prevent event listeners from being added twice
 
-			var priorityAssignment = 1;
+			var priorityAssignment = 1; // Assign priority to a player
+			
+			var autotap = false; // Whether or not to automatically register fast moves
 
 			// Kick off the setup and the battle
 
@@ -410,6 +412,16 @@ var BattlerMaster = (function () {
 						}, 250);
 					}
 				}
+				
+				// Update the autotap button and queue an action
+
+				if(autotap){
+					$(".controls .auto-tap").addClass("active");
+					// Queue a fast move
+					battle.queueAction(0, "fast", 0);
+				} else{
+					$(".controls .auto-tap").removeClass("active");
+				}
 
 				// Complete any outstanding switch animations
 				self.completeSwitchAnimation();
@@ -670,6 +682,21 @@ var BattlerMaster = (function () {
 						clearInterval(phaseInterval);
 					}
 
+					return;
+				}
+				
+				// Turn autotap on or off
+				if($(".controls .auto-tap:hover").length > 0){
+					autotap = (! autotap);
+					
+
+					if(autotap){
+						$(".controls .auto-tap").addClass("active");
+						// Queue a fast move
+						battle.queueAction(0, "fast", 0);
+					} else{
+						$(".controls .auto-tap").removeClass("active");
+					}
 					return;
 				}
 
