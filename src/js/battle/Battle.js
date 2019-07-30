@@ -27,6 +27,7 @@ function Battle(){
 	var timeline = [];
 	var time;
 	var turns;
+	var lastProcessedTurn = 0; // Preserve the turn number so Pokemon don't act twice during Charged Move sequence
 	var deltaTime = 500;
 
 	var duration = 0;
@@ -392,6 +393,7 @@ function Battle(){
 
 		time = 0;
 		turns = 1;
+		lastProcessedTurn = 0;
 		turnsToWin = [0, 0];
 		timeline = [];
 		queuedActions = [];
@@ -407,16 +409,19 @@ function Battle(){
 		roundShieldUsed = false;
 
 		// Hold the actions for both Pokemon this turn
-
-		turnActions = [];
+		
+		if(turns > lastProcessedTurn){
+			turnActions = [];
+		}
 
 		// Reduce cooldown for both Pokemon
 
 		for(var i = 0; i < 2; i++){
 			var poke = pokemon[i];
-
 			poke.cooldown = Math.max(0, poke.cooldown - deltaTime); // Reduce cooldown
-			poke.hasActed = false;
+			if(turns > lastProcessedTurn){				
+				poke.hasActed = false;
+			}
 		}
 
 		// Reduce switch timer for both players
@@ -449,12 +454,11 @@ function Battle(){
 
 				// Are both Pokemon alive?
 
-				if((action.type == "switch")||((action.type != "switch")&&(poke.hp > 0)&&(opponent.hp > 0))){
+				if((action.type == "switch")||((action.type != "switch")&&(poke.hp > 0)&&(opponent.hp > 0))){				
 					if((action.type=="fast")&&(mode == "emulate")){
 						// Submit an animation to be played
 						self.pushAnimation(poke.index, "fast", pokemon[action.actor].fastMove.cooldown / 500);
 					}
-
 					queuedActions.push(action);
 				}
 			}
@@ -655,7 +659,6 @@ function Battle(){
 
 			self.processAction(action, poke, opponent);
 		}
-
 		// Set previous turn actions and clear the current turn
 
 		previousTurnActions = turnActions;
@@ -679,6 +682,7 @@ function Battle(){
 		}
 
 		duration = time;
+		lastProcessedTurn = turns;
 		turns++;
 
 		// Check for faint
@@ -686,7 +690,6 @@ function Battle(){
 
 		for(var i = 0; i < 2; i++){
 			var poke = pokemon[i];
-			poke.hasActed = false;
 
 			if(poke.hp <= 0){
 				timeline.push(new TimelineEvent("faint", "Faint", poke.index, time, turns));
@@ -1256,6 +1259,19 @@ function Battle(){
 						self.useMove(poke, opponent, move, action.settings.shielded, action.settings.buffs, action.settings.charge);
 					} else if(mode == "emulate"){
 						// Initiate the suspended phase
+						
+						// If multiple charged moves are being used on this turn, set the turn counter back
+						var continueSameTurn = false;
+						
+						for(var i = 0; i < turnActions.length; i++){
+							if((turnActions[i].type == "charged")&&(turnActions[i].actor != poke.index)){
+								continueSameTurn = true;
+							}
+						}
+						
+						if(continueSameTurn){
+							turns--;
+						}
 
 						phase = "suspend_charged";
 						phaseProps = {

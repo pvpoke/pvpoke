@@ -153,16 +153,23 @@ function TrainingAI(l, p, b){
 		for(var i = 0; i < roster.length; i++){
 			roster[i].fullReset();
 		}
+		
+		// In Single 3v3 mode, use the Basic option most of the time depending on difficulty
+		var basicWeight = 1;
+		
+		if(opponentRoster.length < 6){
+			basicWeight = (8 * (3 - level)) + 3;
+		}
 
 		// Choose a pick strategy
 		var pickStrategyOptions = [];
 
 		if(! previousResult){
 			// If this is a fresh round, use these strategies
-			pickStrategyOptions.push(new DecisionOption("BASIC", 1));
-			pickStrategyOptions.push(new DecisionOption("BEST", 4));
-			pickStrategyOptions.push(new DecisionOption("COUNTER", 4));
-			pickStrategyOptions.push(new DecisionOption("UNBALANCED", 2));
+			pickStrategyOptions.push(new DecisionOption("BASIC", basicWeight));
+			pickStrategyOptions.push(new DecisionOption("BEST", 6));
+			pickStrategyOptions.push(new DecisionOption("COUNTER", 6));
+			pickStrategyOptions.push(new DecisionOption("UNBALANCED", 3));
 		} else{
 			// If this is subsequent round, use these strategies
 			var winStratWeight = 2;

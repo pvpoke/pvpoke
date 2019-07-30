@@ -152,7 +152,7 @@ var BattlerMaster = (function () {
 							$(".shield-window").removeClass("closed");
 							phaseTimer = chargeTime;
 							phaseInterval = setInterval(phaseStep, 1000 / 60);
-							interfaceLockout = 500;
+							interfaceLockout = 750;
 							break;
 
 						case "suspend_charged_no_shields":
@@ -172,7 +172,7 @@ var BattlerMaster = (function () {
 							phaseTimer = switchTime;
 							phaseInterval = setInterval(phaseStep, 1000 / 60);
 							self.openSwitchWindow();
-							interfaceLockout = 500;
+							interfaceLockout = 750;
 							break;
 
 						case "game_over":
@@ -597,6 +597,11 @@ var BattlerMaster = (function () {
 						var pokemon = team[n];
 						var pokeStr = pokemon.speciesName + ' ' + pokemon.fastMove.abbreviation;
 						var chargedMoveAbbrevations = [];
+						
+						// Only report this Pokemon if it was used in battle
+						if(pokemon.hp == pokemon.stats.hp){
+							continue;
+						}
 
 						for(var k = 0; k < pokemon.chargedMoves.length; k++){
 							chargedMoveAbbrevations.push(pokemon.chargedMoves[k].abbreviation);
