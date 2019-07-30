@@ -100,7 +100,14 @@
 				"fastMove": "COUNTER",
 				"chargedMoves": ["ROCK_SLIDE","PSYCHO_BOOST"],
 				"difficulty": 3,
-				"weight":15
+				"weight":5
+			},
+			{
+				"speciesId": "deoxys_defense",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["THUNDERBOLT","PSYCHO_BOOST"],
+				"difficulty": 3,
+				"weight":10
 			},
 			{
 				"speciesId": "toxicroak",
@@ -169,7 +176,7 @@
 				"speciesId": "melmetal",
 				"fastMove": "THUNDER_SHOCK",
 				"chargedMoves": ["ROCK_SLIDE","FLASH_CANNON"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":2
 			},
 			{
@@ -177,13 +184,13 @@
 				"fastMove": "THUNDER_SHOCK",
 				"chargedMoves": ["THUNDERBOLT","ROCK_SLIDE"],
 				"difficulty": 2,
-				"weight":3
+				"weight":2
 			},
 			{
 				"speciesId": "probopass",
 				"fastMove": "SPARK",
 				"chargedMoves": ["THUNDERBOLT","ROCK_SLIDE"],
-				"difficulty": 1,
+				"difficulty": 2,
 				"weight":8
 			},
 			{
@@ -302,7 +309,7 @@
 				"speciesId": "tropius",
 				"fastMove": "AIR_SLASH",
 				"chargedMoves": ["AERIAL_ACE","LEAF_BLADE"],
-				"difficulty": 1,
+				"difficulty": 2,
 				"weight":1
 			},
 			{
@@ -344,7 +351,7 @@
 				"speciesId": "gliscor",
 				"fastMove": "FURY_CUTTER",
 				"chargedMoves": ["AERIAL_ACE","EARTHQUAKE"],
-				"difficulty": 1,
+				"difficulty": 0,
 				"weight":1
 			},
 			{
