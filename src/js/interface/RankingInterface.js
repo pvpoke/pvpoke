@@ -387,11 +387,11 @@ var InterfaceMaster = (function () {
 				var cp = $(".league-select option:selected").val();
 				var category = $(".ranking-categories a.selected").attr("data");
 				var shieldStrs = {
-					"overall": "/11/",
-					"closers": "/00/",
-					"leads": "/11/",
-					"attackers": "/01/",
-					"defenders": "/10/"
+					"overall": "11",
+					"closers": "00",
+					"leads": "11",
+					"attackers": "01",
+					"defenders": "10"
 				}
 
 				// Display key matchups
@@ -399,7 +399,7 @@ var InterfaceMaster = (function () {
 				for(var n = 0; n < r.matchups.length; n++){
 					var m = r.matchups[n];
 					var opponent = new Pokemon(m.opponent);
-					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+shieldStrs[category]+'/'+r.moveStr+'/';
+					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+"/"+shieldStrs[category]+"/"+r.moveStr+"/";
 
 					// Append opponent's move string
 
@@ -421,7 +421,7 @@ var InterfaceMaster = (function () {
 				for(var n = 0; n < r.counters.length; n++){
 					var c = r.counters[n];
 					var opponent = new Pokemon(c.opponent);
-					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+shieldStrs[category]+'/'+r.moveStr+'/';
+					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+"/"+shieldStrs[category]+"/"+r.moveStr+"/";
 
 					// Append opponent's move string
 
@@ -448,7 +448,7 @@ var InterfaceMaster = (function () {
 
 				// Add multi-battle link
 
-				var multiBattleLink = host+"battle/multi/"+cp+"/"+cup+"/"+pokemon.speciesId+shieldStrs[category]+"/"+r.moveStr+"/2-1/";
+				var multiBattleLink = host+"battle/multi/"+cp+"/"+cup+"/"+pokemon.speciesId+"/"+shieldStrs[category]+"/"+r.moveStr+"/2-1/";
 
 				$details.find(".share-link").before($("<div class=\"multi-battle-link\"><p>See all of <b>" + pokemon.speciesName + "'s</b> matchups:</p><a target=\"_blank\" class=\"button\" href=\""+multiBattleLink+"\">"+pokemon.speciesName+" vs. " + cupName +"</a></div>"));
 
