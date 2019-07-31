@@ -12,6 +12,18 @@ require_once '../header.php';
 <div class="section home white">
 	<div class="article-item flex">
 		<div class="col-3">
+			<a href="<?php echo $WEB_ROOT; ?>articles/developing-trainer-battle-ai/">
+				<img src="<?php echo $WEB_ROOT; ?>assets/articles/ai-thumb.jpg?v=2" />
+			</a>
+		</div>
+		<div class="col-9">
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/developing-trainer-battle-ai/">Developing an AI for Pokemon GO Trainer Battles</a></h4>
+			<div class="date"> July 30, 2019</div>
+			<p>How does the AI on the site's training battles work? Read all about how I approached development and strategies the AI uses to mimic player behavior.</p>
+		</div>
+	</div>
+	<div class="article-item flex">
+		<div class="col-3">
 			<a href="<?php echo $WEB_ROOT; ?>articles/mirror-cup-past-metas/">
 				<img src="<?php echo $WEB_ROOT; ?>assets/articles/mirror-thumb.jpg?v=2" />
 			</a>
@@ -47,7 +59,7 @@ require_once '../header.php';
 		</div>
 
 	</div>
-	
+
 	<div class="article-item flex">
 		<div class="col-3">
 			<a href="<?php echo $WEB_ROOT; ?>articles/freefolk-guide-kingdom-cup/">
@@ -59,9 +71,9 @@ require_once '../header.php';
 			<div class="date"> April 11, 2019</div>
 			<p>How do you make do without Bastiodon and Lucario? This guide explores your options to help you build a competitive Kingdom Cup team.</p>
 		</div>
-		
+
 	</div>
-	
+
 	<div class="article-item flex">
 		<div class="col-3">
 			<a href="<?php echo $WEB_ROOT; ?>articles/early-2019-update-highlights/">
@@ -73,9 +85,9 @@ require_once '../header.php';
 			<div class="date">February 20, 2019</div>
 			<p>Just how powerful is Razor Leaf? What's the best way to use stat-boosting moves? This article highlights some of the recent PvP updates and what you should keep your eyes on.</p>
 		</div>
-		
+
 	</div>
-	
+
 	<div class="article-item flex">
 		<div class="col-3">
 			<a href="<?php echo $WEB_ROOT; ?>articles/hoenn-pokemon-hunt-pvp/">
@@ -87,9 +99,9 @@ require_once '../header.php';
 			<div class="date">January 21, 2019</div>
 			<p>Which Hoenn Pokemon should you keep an eye out for to use in PvP during the Hoenn event? Take a look at this list to prepare for your Pokemon hunts!</p>
 		</div>
-		
+
 	</div>
-	
+
 </div>
 
 <?php require_once '../footer.php'; ?>

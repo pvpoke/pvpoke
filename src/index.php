@@ -22,12 +22,12 @@
 
 	<!--Update section for updates-->
 	<h3>What's New</h3>
-	
+
 	<h4>v1.8.5 (July 26, 2019)</h4>
 	<ul>
 		<li>Edited file names for CSV export to be more descriptive with information about moveset and shields</li>
 	</ul>
-	
+
 	<h4>v1.8.4 (July 24, 2019)</h4>
 	<ul>
 		<li>Piggybacking is now disabled, following discoveries that it was patched in the latest Charged Move mechanic update</li>
@@ -44,14 +44,14 @@
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/mirror-cup-past-metas/">
-				<img src="<?php echo $WEB_ROOT; ?>assets/articles/mirror-thumb.jpg?v=2" />
+			<a href="<?php echo $WEB_ROOT; ?>articles/developing-trainer-battle-ai/">
+				<img src="<?php echo $WEB_ROOT; ?>assets/articles/ai-thumb.jpg?v=2" />
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/mirror-cup-past-metas/">Mirror Cup: Glimpse at Past Metas</a></h4>
-			<div class="date"> July 18, 2019</div>
-			<p>The Mirror Cup is here! We get to look back at past cups with all the new Pokemon and movesets. What's changed and how can you prepare?</p>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/developing-trainer-battle-ai/">Developing an AI for Pokemon GO Trainer Battles</a></h4>
+			<div class="date"> July 30, 2019</div>
+			<p>How does the AI on the site's training battles work? Read all about how I approached development and strategies the AI uses to mimic player behavior.</p>
 		</div>
 	</div>
 

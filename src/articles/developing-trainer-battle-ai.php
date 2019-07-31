@@ -13,13 +13,14 @@ require_once '../header.php';
 	<h1>Developing an AI for Pokemon GO Trainer Battles</h1>
 	<div class="date">Last updated July 30th, 2019</div>
 	<img src="<?php echo $WEB_ROOT;?>assets/articles/ai-banner.jpg" />
-	<p>The site now features Training Battles, real-time battle simulations against an AI opponent! This was a huge endeavor, and I was  really excited for the chance to create an engaging practice tool that would  give people valuable battle experience anytime, anywhere. Pokemon GO Trainer  Battles have a lot of complexity - from team compositions to in-game battle  tactics like baiting shields and switching. Developing an AI to play the game  might seem like a daunting task, but there are two core systems I designed to  keep it elegant and engaging at the same time. </p>
+	<p>The site now features Training Battles, real-time battle simulations against an AI opponent! This was a huge endeavor and I was really excited to create an engaging practice tool that people could use anytime, anywhere. Pokemon GO Trainer  Battles have a lot of complexity - from team compositions to in-game battle  tactics like baiting shields and switching. Developing an AI to play the game  might seem like a daunting task, but there are two core systems I designed to  keep it elegant and engaging at the same time. </p>
 <p>Jump to a section:
   <ol>
 				<li><a href="#goals">Design Goals</a></li>
 				<li><a href="#evaluation">Matchup Evaluation</a></li>
 				<li><a href="#decisions">Decision Making</a></li>
 				<li><a href="#teams">Team Selection</a></li>
+				<li><a href="#closing">Closing Thoughts</a></li>
 	  </ol>
 	<a name="goals"></a>
 <h3 class="article-header"><strong>Design Goals</strong></h3>
@@ -43,12 +44,71 @@ require_once '../header.php';
   </li>
 </ul>
 <p dir="ltr">One of my first steps was to catalogue as many player strategies as I could and organize them in an algorithmic way (&ldquo;if this, do that&rdquo;). If my opponent is low on HP, let&rsquo;s faint them down and farm some energy. If my opponent is about to get a Charged Move that will be bad for me, let&rsquo;s duck out of there and absorb it with another Pokemon.</p>
-<p dir="ltr">Below is a table of some example strategies and the difficulty levels that employ them:</p>
+<p dir="ltr">Below is a table of some example strategies or traits, and the difficulty levels that employ them:</p>
+<table class="stats-table" cellspacing="0">
+	<tr>
+		<td class="title"></td>
+		<td class="label">Novice</td>
+		<td class="label">Rival</td>
+		<td class="label">Elite</td>
+		<td class="label">Champion</td>
+	</tr>
+	<tr>
+		<td>Shielding</td>
+		<td class="center">&#10004;</td>
+		<td class="center">&#10004;</td>
+		<td class="center">&#10004;</td>
+		<td class="center">&#10004;</td>
+	</tr>
+	<tr>
+		<td>2 Charged Moves</td>
+		<td class="center"></td>
+		<td class="center">&#10004;</td>
+		<td class="center">&#10004;</td>
+		<td class="center">&#10004;</td>
+	</tr>
+	<tr>
+		<td>Basic Switching</td>
+		<td class="center"></td>
+		<td class="center">&#10004;</td>
+		<td class="center">&#10004;</td>
+		<td class="center">&#10004;</td>
+	</tr>
+	<tr>
+		<td>Energy Farming</td>
+		<td class="center"></td>
+		<td class="center"></td>
+		<td class="center">&#10004;</td>
+		<td class="center">&#10004;</td>
+	</tr>
+	<tr>
+		<td>Shield Baiting</td>
+		<td class="center"></td>
+		<td class="center"></td>
+		<td class="center">&#10004;</td>
+		<td class="center">&#10004;</td>
+	</tr>
+	<tr>
+		<td>Advanced Switching</td>
+		<td class="center"></td>
+		<td class="center"></td>
+		<td class="center"></td>
+		<td class="center">&#10004;</td>
+	</tr>
+	<tr>
+		<td>Switch Clock Management</td>
+		<td class="center"></td>
+		<td class="center"></td>
+		<td class="center"></td>
+		<td class="center">&#10004;</td>
+	</tr>
+
+</table>
 <p dir="ltr">So how is this all implemented? Let&rsquo;s take a look at the two core systems that make the AI tick!</p>
 <p><a name="evaluation"></a>
 </p>
 <h3 class="article-header"><strong>Matchup Evaluation</strong></h3>
-<p>There are so many variables to take into account  when considering matchups, from typing to shields to energy. Different people  have different ways to learn what beats what, but in general players head into  their matches with some idea of the relevant matchups (either from studying or  practicing). </p>
+<p>There are so many variables to take into account  when considering matchups, from typing to shields to energy. Practiced players will know the relevant matchups and what beats what.</p>
 <p>Beating at the AI&rsquo;s heart is the simulator you  already know. It pits Pokemon with their current HP and energy against each  other to obtain approximate knowledge of current or potential matchups. When it  does this, the AI runs four different scenarios: </p>
 <ul type="disc">
   <li><strong>Both Bait:</strong> Will I win this if my opponent       and I successfully bait shields?</li>

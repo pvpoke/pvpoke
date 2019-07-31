@@ -1843,7 +1843,11 @@ select, input {
   text-align: center;
 }
 
+.article-item {
+  margin-bottom: 10px;
+}
 .article-item .col-9 {
+  width: 75%;
   padding: 0 10px;
 }
 .article-item img {
