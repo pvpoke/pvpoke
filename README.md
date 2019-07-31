@@ -107,7 +107,6 @@ Meanwhile, here are some example items that would be out of scope or don’t ali
 * **Third-party libraries, frameworks, or dependencies.** Some things are necessary, like seatbelts and salt on rice, but the simpler, the better. Weigh any functionality or performance benefit with the effort it would take to implement and maintain.
 * **Platform or technology overhauls.** Could the site run better as a PolitodeJS 0.5.3 virtual machine webapp? How should I know, I’m the one throwing out technobabble. Anyway, let’s stick to what we’ve got and if something would provide a serious improvement, we can see.
 * **User accounts.** This is a can of Wormadam that I’m not looking to open at this time. Before considering this, I would want a convincing set of features that wouldn’t be possible without it.
-* **Battle emulation.** That is, actually playing out battles in real time. Especially if it’s multiplayer. It would simply be out of scope, and I feel it would toe the line between being an educational resource and the recipient of a C&D.
 * **Non-responsive tools or pages.** Pokemon GO is a mobile game, so everything on the site should be built for mobile.
 
 I appreciate your understanding if a request is rejected. A rejection doesn’t mean that your code or idea is bad, just that it might not fit the current project. I will likely be taking things slow at the start. If you have any thoughts or ideas, I’d be happy to discuss them prior to development so we can work out what might fit best!
