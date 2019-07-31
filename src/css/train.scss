@@ -271,6 +271,10 @@ a.random{
 					.main-sprite, .secondary-sprite{
 						z-index:10;
 					}
+
+					.shadow{
+						z-index:20;
+					}
 				}
 
 				.fast-move-circle-container{
@@ -480,21 +484,21 @@ a.random{
 				background:#eee;
 			}
 		}
-		
+
 		.auto-tap-container{
 			position: absolute;
 			width: 100%;
 			bottom: 10px;
-			
+
 			.auto-tap{
 				@include transition(all, 0.2s, ease, 0s);
-				
+
 				display: inline-block;
 				background: #888;
 				padding: 5px;
 				border-radius: 12px;
 				font-weight: bold;
-				
+
 				&.active{
 					background:#ee2222;
 					color:#eee;

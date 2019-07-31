@@ -12,13 +12,16 @@ require_once '../header.php';
 <div class="section article white">
 	<h1>Developing an AI for Pokemon GO Trainer Battles</h1>
 	<div class="date">Last updated July 30th, 2019</div>
-	<p>The site now features Training Battles, playable  simulated battles against an AI opponent! This was a huge endeavor, and I was  really excited for the chance to create an engaging practice tool that would  give people valuable battle experience anytime, anywhere. Pokemon GO Trainer  Battles have a lot of complexity - from team compositions to in-game battle  tactics like baiting shields and switching. Developing an AI to play the game  might seem like a daunting task, but there are two core systems I designed to  keep it elegant and engaging at the same time. </p>
+	<img src="<?php echo $WEB_ROOT;?>assets/articles/ai-banner.jpg" />
+	<p>The site now features Training Battles, real-time battle simulations against an AI opponent! This was a huge endeavor, and I was  really excited for the chance to create an engaging practice tool that would  give people valuable battle experience anytime, anywhere. Pokemon GO Trainer  Battles have a lot of complexity - from team compositions to in-game battle  tactics like baiting shields and switching. Developing an AI to play the game  might seem like a daunting task, but there are two core systems I designed to  keep it elegant and engaging at the same time. </p>
 <p>Jump to a section:
   <ol>
-				<li><a href="#boulder">Boulder Cup</a></li>
-				<li><a href="#twilight">Twilight Cup</a></li>
+				<li><a href="#goals">Design Goals</a></li>
+				<li><a href="#evaluation">Matchup Evaluation</a></li>
+				<li><a href="#decisions">Decision Making</a></li>
+				<li><a href="#teams">Team Selection</a></li>
 	  </ol>
-	<a name="boulder"></a>
+	<a name="goals"></a>
 <h3 class="article-header"><strong>Design Goals</strong></h3>
 <p dir="ltr">When I set out to create the AI, I primarily wanted to design an adversary that would play like a human opponent, and that you would beat the same way you would beat a human player. Especially when it comes to difficulty, this meant following a few bullet points:</p>
 <ul>
@@ -42,7 +45,7 @@ require_once '../header.php';
 <p dir="ltr">One of my first steps was to catalogue as many player strategies as I could and organize them in an algorithmic way (&ldquo;if this, do that&rdquo;). If my opponent is low on HP, let&rsquo;s faint them down and farm some energy. If my opponent is about to get a Charged Move that will be bad for me, let&rsquo;s duck out of there and absorb it with another Pokemon.</p>
 <p dir="ltr">Below is a table of some example strategies and the difficulty levels that employ them:</p>
 <p dir="ltr">So how is this all implemented? Let&rsquo;s take a look at the two core systems that make the AI tick!</p>
-<p><a name="twilight"></a>
+<p><a name="evaluation"></a>
 </p>
 <h3 class="article-header"><strong>Matchup Evaluation</strong></h3>
 <p>There are so many variables to take into account  when considering matchups, from typing to shields to energy. Different people  have different ways to learn what beats what, but in general players head into  their matches with some idea of the relevant matchups (either from studying or  practicing). </p>
@@ -62,14 +65,14 @@ require_once '../header.php';
   <li>After each Charged Move</li>
 </ul>
 <p>This results in a tendency for the AI to switch  after Charged Moves, which lines up with real player behavior of queuing a  switch during Charged Moves. Evaluating matchups on every turn was also a  possibility but resulted in erratic behavior; here the AI is better able to  commit to a strategy. </p>
-<a name="tempest"></a>
-  <h3 class="article-header"><strong>Informed Decision-Making</strong></h3>
+<a name="decisions"></a>
+  <h3 class="article-header"><strong>Decision Making</strong></h3>
       <p dir="ltr">Once the AI has gathered all of this information, how does it decide what to do? The AI&rsquo;s second core system is here to help! Everything the AI chooses or does originates from a pseudo-random decision making function. Simply put, this function acts as a lottery for different choices, and the AI&rsquo;s available information determines each options&rsquo; weight, or how many times that option entered into the &ldquo;drawing&rdquo;.      </p>
 	<p><img src="<?php echo $WEB_ROOT; ?>assets/articles/ai-graphic-options.jpg" /></p>
       <p dir="ltr">As shown above, the AI will randomly choose between several options, and the likelihood of selecting any particular option depends on its weight value. The AI adjusts these weight values to help itself make the &ldquo;right&rdquo; choice but the door is always open for something unconventional.  </p>
   <p dir="ltr">This pseudo-randomness was an important part of my design goals - I didn&rsquo;t want the AI to always play the same matchups the same way, and I wanted to add a touch of unpredictability. With this system, the AI is open to mistakes and misplays, while at the same time capable of stumbling backwards into genius that wouldn&rsquo;t be possible in a more rigid decision-making system.</p>
   <p dir="ltr">Literally everything the AI does passes through this system - from roster picks to choosing strategies, switches, or whether or not to shield incoming attacks.
-	<a name="kingdom"></a>  </p>
+	<a name="teams"></a>  </p>
   <h3 class="article-header">Team Selection</h3>
   <p>If you&rsquo;re trying to make a challenging AI, you  also need to give it a challenging team. There are a few different ways I could  have gone about this - one simple solution, for example, would be to make a  list of preset teams for the AI to pick from. This would have been fine, but I  wanted a high amount of a variability so players can really sharpen their own  picking skills. How do you generate random teams that are also balanced and  competitive, and vary by difficulty? </p>
   <p>The answer I went with is a slot system. Picks  are categorized into several slots (&ldquo;Tank&rdquo;, &ldquo;Grass,&rdquo; Mudboi,&rdquo; etc.), and the AI  uses the pseudo-random decision making described above to select a slot and  then select a Pokemon within that slot. Once a slot and Pokemon are picked,  they can&rsquo;t be picked again, and the AI repeats this until all 6 of its roster spots  are filled. </p>
@@ -90,7 +93,7 @@ require_once '../header.php';
   <p>In this way, the AI picks similarly to  conventional players and hopefully makes for good practice when it comes to  picking in a tournament! </p>
 	<a name="closing"></a>
 	<h3 class="article-header">Closing Thoughts</h3>
-	<p>This project was a huge passion and effort. I hope it enhances your enjoyment of the game and helps you develop a winning skillset! Big picture, it's also my hope that these training battles might inspire other fans, developers, and if they should see them, Niantic themselves. Here's hoping for a bright and exciting future!</p>
+	<p>This project was a huge passion and effort. I hope it enhances your enjoyment of the game and helps you develop a winning skillset! Big picture, it's also my hope that these training battles might inspire newcomers to PvP, other developers, and if they should see them, Niantic themselves. Here's hoping for a bright and exciting future!</p>
 	<div class="share-link-container">
 		<p>Share this article:</p>
 		<div class="share-link">

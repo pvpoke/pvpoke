@@ -9,8 +9,8 @@ require_once '../header.php';
 ?>
 <h1>Training Battle</h1>
 <div class="section home white">
-	<p>Select your team and options below to battle against a CPU opponent.</p>
-	<p>This tool is a training and learning resource intended to supplement your in-game battles. Experiment with new lineups or practice in a pressure free environment against a difficulty of your choice.</p>
+	<p>Select your team and options below to battle in a real-time simulation against a CPU opponent.</p>
+	<p>This tool is a training and learning resource intended to supplement your in-game battles. Experiment with new lineups or practice in a pressure free environment against a difficulty of your choice!</p>
 </div>
 
 <div class="hide">

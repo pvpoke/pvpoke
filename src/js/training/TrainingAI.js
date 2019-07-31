@@ -143,20 +143,20 @@ function TrainingAI(l, p, b){
 	this.generateTeam = function(opponentRoster, previousResult, previousTeams){
 		var roster = player.getRoster();
 		var team = [];
-		
+
 		// Reset all Pokemon involves
-		
+
 		for(var i = 0; i < opponentRoster.length; i++){
 			opponentRoster[i].fullReset();
 		}
-		
+
 		for(var i = 0; i < roster.length; i++){
 			roster[i].fullReset();
 		}
-		
+
 		// In Single 3v3 mode, use the Basic option most of the time depending on difficulty
 		var basicWeight = 1;
-		
+
 		if(opponentRoster.length < 6){
 			basicWeight = (8 * (3 - level)) + 3;
 		}
@@ -188,8 +188,6 @@ function TrainingAI(l, p, b){
 		}
 
 		var pickStrategy = self.chooseOption(pickStrategyOptions).name;
-
-		console.log(pickStrategy);
 
 		switch(pickStrategy){
 			// Choose a random set of 3 from the roster
@@ -238,7 +236,7 @@ function TrainingAI(l, p, b){
 
 				break;
 
-			// Choose a team that counter's the opponent's best Pokemon
+			// Choose a team that counters the opponent's best Pokemon
 			case "COUNTER":
 				var teamPerformance = self.calculateAverageRosterPerformance(opponentRoster, roster);
 				var scenarios = teamPerformance[0].scenarios;
@@ -322,7 +320,7 @@ function TrainingAI(l, p, b){
 				}
 				break;
 
-			// Choose a team that counter's the opponent's previous lead
+			// Choose a team that counters the opponent's previous lead
 			case "COUNTER_LAST_LEAD":
 				var opponentPreviousLead = previousTeams[0][0];
 
@@ -365,7 +363,6 @@ function TrainingAI(l, p, b){
 
 				break;
 		}
-		console.log(team);
 
 		player.setTeam(team);
 	}
@@ -669,8 +666,6 @@ function TrainingAI(l, p, b){
 	this.decideAction = function(turn, poke, opponent){
 		var action = null;
 
-		console.log(poke.speciesId + " " + currentStrategy);
-
 		poke.setBattle(battle);
 		poke.resetMoves();
 
@@ -778,12 +773,12 @@ function TrainingAI(l, p, b){
 
 		for(var i = 0; i < moves.length; i++){
 			var moveWeight = 1;
-			
+
 			// Is the opponent low on HP? Probably the higher damage move
 			if((i == 0)&&(attacker.hp / attacker.stats.hp <= .25)){
 				moveWeight += 4;
 			}
-			
+
 			// Is this move lower damage and higher energy? Definitely the other one, then
 			if((i == 1)&&(moves[i].damage < moves[0].damage)&&(moves[i].energy > moves[0].energy)){
 				moveGuessOptions[0].weight += 20;
@@ -817,17 +812,17 @@ function TrainingAI(l, p, b){
 				noWeight += Math.round((500 - currentRating) / 10)
 			}
 		}
-		
+
 		// Monkey see, monkey do
 		if((attacker.battleStats.shieldsUsed > 0)&&(damageWeight > 2)){
 			yesWeight += 2;
 		}
-		
+
 		// Is this Pokemon close to a move that will faint or seriously injure the attacker?
 		for(var i = 0; i < defender.chargedMoves.length; i++){
 			var move = defender.chargedMoves[i];
 			var turnsAway = Math.ceil( (move.energy - defender.energy) / defender.fastMove.energyGain ) * defender.fastMove.cooldown;
-			
+
 			if( ((move.damage >= attacker.hp)||((move.damage >= attacker.stats.hp * .75)))&&(turnsAway < 4)){
 				yesWeight += 2;
 			}
@@ -838,9 +833,6 @@ function TrainingAI(l, p, b){
 		if(yesWeight - noWeight > -3){
 			yesWeight += (3 - player.getRemainingPokemon()) * 4;
 		}
-		
-		console.log("yes: " + yesWeight);
-		console.log("no: " + noWeight);
 
 		var options = [];
 		options.push(new DecisionOption(true, yesWeight));
