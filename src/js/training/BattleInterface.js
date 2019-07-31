@@ -562,7 +562,7 @@ var BattlerMaster = (function () {
 				$(".battle-stats .tab-section.energy .stat-energy-gained").html(totalEnergyGained);
 				$(".battle-stats .tab-section.energy .stat-energy-used").html(totalEnergyUsed);
 				$(".battle-stats .tab-section.energy .stat-energy-lost").html(totalEnergyLost);
-				$(".battle-stats .tab-section.energy .stat-avg-dpe").html(Math.round( (totalChargedDamage / totalEnergyUsed) * 1000) / 100);
+				$(".battle-stats .tab-section.energy .stat-avg-dpe").html(Math.round( (totalChargedDamage / totalEnergyUsed) * 100) / 100);
 
 				// Display AI difficulty
 				$(".end-screen .difficulty-name").html(players[1].getAI().difficultyToString());

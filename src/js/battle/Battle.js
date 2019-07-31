@@ -937,7 +937,7 @@ function Battle(){
 				if(action.type == "charged"){
 					// Reset all cooldowns
 					if((opponent.cooldown > 0)&&(! opponent.hasActed)){
-						action.settings.priority += 2;
+						action.settings.priority += 4;
 						opponent.cooldown = 0;
 
 						var a = self.getTurnAction(opponent, poke);
