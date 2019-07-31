@@ -7,6 +7,10 @@
 		<h2 class="icon-battle">Battle</h2>
 		<p>Simulate a battle between two custom Pokemon.</p>
 	</a>
+	<a href="<?php echo $WEB_ROOT; ?>train/" class="button">
+		<h2 class="icon-train">Train</h2>
+		<p>Play real-time battle simulations against a CPU opponent.</p>
+	</a>
 	<a href="<?php echo $WEB_ROOT; ?>rankings/" class="button">
 		<h2 class="icon-rankings">Rankings</h2>
 		<p>Explore the rankings, movesets, and counters for the top Pokemon in each league.</p>
@@ -23,19 +27,20 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.8.5 (July 26, 2019)</h4>
+	<h4>v1.9.0 (August 1, 2019)</h4>
 	<ul>
-		<li>Edited file names for CSV export to be more descriptive with information about moveset and shields</li>
-	</ul>
-
-	<h4>v1.8.4 (July 24, 2019)</h4>
-	<ul>
-		<li>Piggybacking is now disabled, following discoveries that it was patched in the latest Charged Move mechanic update</li>
+		<li>Play real-time battle simulations against a CPU opponent with the new Training Battle feature, anytime and anywhere</li>
 		<ul>
-			<li>Previously a quirk existed where you could cancel an opponent's Fast Move by performing a Charged Move immediately after another Charged Move. This technique was known as "piggybacking" and no longer works since the Charged Move minigame update.</li>
+			<li>Practice with your teams or try new Pokemon before you invest</li>
+			<li>Challenge four difficulty levels: Novice, Rival, Elite, and Champion</li>
+			<ul>
+				<li>Practice at your own pace in a pressure-free environment and against an opponent with your experience level</li>
+			</ul>
+			<li>Play in Great, Ultra, or Master League, or in any of The Silph Arena's Season 1 cups</li>
+			<li>Play in Single Mode (blind 3v3) or Tournament Mode (pick 6, play 3, multiple rounds)</li>
+			<li>Learn from your battles with advanced post-game stats</li>
 		</ul>
-		<li>Added a charge dropdown in Sandbox Mode so you can select whether a Charged Move deals full or partial damage</li>
-		<li>Adjusted Bastiodon's default IV's to be more realistic</li>
+		<li>Piggybacking is now reenabled for "self-piggybacking"; performing two Charged Moves in a row has the opportunity to negate the opponent's Fast Move</li>
 	</ul>
 
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>

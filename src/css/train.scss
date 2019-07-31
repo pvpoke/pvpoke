@@ -22,8 +22,14 @@
 	transform: $property;
 }
 
-.multi .cup-select{
-	display:none;
+.multi{
+	.quick-fill-select option.multi-battle{
+		display:none !important;
+	}
+	
+	.cup-select{
+		display:none;
+	}
 }
 
 .train{
@@ -414,7 +420,7 @@ a.random{
 					}
 
 					&[color="red"]{
-						background:#ea4949;
+						background:#e11414;
 					}
 				}
 			}

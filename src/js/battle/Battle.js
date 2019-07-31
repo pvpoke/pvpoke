@@ -463,6 +463,7 @@ function Battle(){
 				}
 			}
 		}
+		
 
 		// Take actions from the queue to be processed now
 		for(var i = 0; i < queuedActions.length; i++){
@@ -909,7 +910,6 @@ function Battle(){
 						action.settings.priority = poke.priority;
 
 						// Don't do action if not enough energy
-
 						if((action.type == "charged")&&(poke.energy < poke.chargedMoves[action.value].energy)){
 							action = null;
 						}

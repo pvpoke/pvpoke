@@ -706,7 +706,7 @@ var BattlerMaster = (function () {
 				}
 
 
-				if($(".battle-window .controls .move-bar.active:hover").length == 0){
+				if(($(".battle-window .controls .move-bar.active:hover").length == 0)&&($(".battle-window .switch-window:hover").length == 0)){
 					// Fast move
 					battle.queueAction(0, "fast", 0);
 				} else{
@@ -718,7 +718,9 @@ var BattlerMaster = (function () {
 					}
 
 					var index = $(".battle-window .controls .move-bar").index($target); // Getting the index of the move
-					battle.queueAction(0, "charged", index);
+					if((index >= 0)&&(index < activePokemon[0].chargedMoves.length)){
+						battle.queueAction(0, "charged", index);
+					}
 				}
 
 				// Charge up a Charged Move
@@ -754,6 +756,9 @@ var BattlerMaster = (function () {
 			// At the end of a 3v3 match, replay the same battle
 
 			function replayBattleClick(e){
+				// Alternate CMP so it remains the same on rematch
+				priorityAssignment = (priorityAssignment == 1) ? 0 : 1;
+				
 				// Manually set the previous team
 				properties.teamSelectMethod = "manual";
 				properties.teams[1] = players[1].getTeam();
