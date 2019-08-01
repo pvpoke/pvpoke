@@ -582,8 +582,6 @@ a.random {
     opacity: 1; }
   .battle-window[phase="animating"] .animate-message {
     opacity: 1; }
-  .battle-window[phase="animating"] .controls .move-bars {
-    display: none; }
   .battle-window[phase="animating"] .team-indicator {
     display: none; }
   .battle-window[phase="countdown"] .top, .battle-window[phase="countdown"] .controls {

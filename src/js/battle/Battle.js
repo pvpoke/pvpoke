@@ -1242,10 +1242,13 @@ function Battle(){
 
 		// Don't run this action if it's invalidated
 
-		if(! action.valid){
+		if((! action.valid)||(action.processed)){
 			return false;
 		}
-
+		
+		// Set porcessed to true so it isn't processed twice
+		action.processed = true;
+		
 		switch(action.type){
 
 			case "fast":
@@ -1494,6 +1497,12 @@ function Battle(){
 				attacker.battleStats.energyUsed += move.energy
 				attacker.battleStats.chargedDamage += damage;
 			}
+			
+			// Clear the queue if defender if fainted by a Charged Move
+			if((mode == "emulate")&&(defender.hp <= 0)){
+				turnActions = [];
+				queuedActions = [];
+			}
 
 		} else{
 			// If Fast Move
@@ -1619,6 +1628,13 @@ function Battle(){
 			buffStr += move.buffs[1] + " Defense";
 
 			timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, turns, [damage, energyValue, buffStr]));
+		}
+
+		// If a Pokemon has fainted, clear the action queue
+
+		if((defender.hp < 1)&&(mode == "emulate")){
+			turnActions = [];
+			queuedActions = [];
 		}
 
 		return time;

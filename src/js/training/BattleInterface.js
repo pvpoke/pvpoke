@@ -97,6 +97,7 @@ var BattlerMaster = (function () {
 				$(".battle-window .scene .pokemon-container").removeClass("animate-switch");
 				$(".battle-window .scene .pokemon-container .messages").html("");
 				$(".battle-window .countdown .text").html("");
+				$(".battle-window .switch-btn").show();
 				$(".battle-window").attr("mode", props.mode);
 
 				$("body").addClass("battle-active");
@@ -421,6 +422,12 @@ var BattlerMaster = (function () {
 					battle.queueAction(0, "fast", 0);
 				} else{
 					$(".controls .auto-tap").removeClass("active");
+				}
+				
+				// Hide the switch button if only one Pokemon remains
+				
+				if(players[0].getRemainingPokemon() == 1){
+					$(".battle-window .switch-btn").hide();
 				}
 
 				// Complete any outstanding switch animations
