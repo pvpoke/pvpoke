@@ -763,6 +763,10 @@ function Battle(){
 				self.dispatchUpdate({ result: result });
 				clearInterval(mainLoopInterval);
 			}
+			
+			// If a Pokemon has fainted, clear the action queue
+			turnActions = [];
+			queuedActions = [];
 		}
 	}
 
@@ -1615,13 +1619,6 @@ function Battle(){
 			buffStr += move.buffs[1] + " Defense";
 
 			timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, turns, [damage, energyValue, buffStr]));
-		}
-
-		// If a Pokemon has fainted, clear the action queue
-
-		if((defender.hp < 1)&&(mode == "emulate")){
-			turnActions = [];
-			queuedActions = [];
 		}
 
 		return time;
