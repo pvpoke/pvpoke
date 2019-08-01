@@ -185,6 +185,10 @@ a.random{
 
 			&.left{
 				left:2.5%;
+				
+				.cmp{
+					left:0;
+				}
 			}
 
 			&.right{

@@ -472,31 +472,32 @@ function PokeMultiSelect(element){
 		var csv = self.convertListToCSV();
 
 		$(".modal .list-text").html(csv);
+		
+
+		// Copy list text
+
+		$(".modal .list-export .copy").click(function(e){
+			var el = $(e.target).prev()[0];
+			el.focus();
+			el.setSelectionRange(0, el.value.length);
+			document.execCommand("copy");
+		});
+
+		// Import list text
+
+		$(".modal .button.import").on("click", function(e){
+			var data = $(".modal textarea.list-text").val();
+
+			self.quickFillCSV(data);
+
+			closeModalWindow();
+		});
 	});
 
 	// Auto select list text to copy
 
 	$("body").on("click", ".modal textarea.list-text", function(e){
 		this.setSelectionRange(0, this.value.length);
-	});
-
-	// Copy list text
-
-	$("body").on("click", ".modal .list-export .copy", function(e){
-		var el = $(e.target).prev()[0];
-		el.focus();
-		el.setSelectionRange(0, el.value.length);
-		document.execCommand("copy");
-	});
-
-	// Import list text
-
-	$("body").on("click", ".modal .button.import", function(e){
-		var data = $(".modal textarea.list-text").val();
-
-		self.quickFillCSV(data);
-
-		closeModalWindow();
 	});
 
 	// Open the save window

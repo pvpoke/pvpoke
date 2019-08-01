@@ -117,6 +117,8 @@ a.random {
       justify-content: space-between; }
       .battle-window .top .team-indicator.left {
         left: 2.5%; }
+        .battle-window .top .team-indicator.left .cmp {
+          left: 0; }
       .battle-window .top .team-indicator.right {
         right: 2.5%; }
         .battle-window .top .team-indicator.right .cp {
