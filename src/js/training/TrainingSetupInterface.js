@@ -171,6 +171,12 @@ var InterfaceMaster = (function () {
 					league: battle.getCP(),
 					cup: battle.getCup().name
 					};
+				
+				// Reset roster selection for tournament mode
+				if(mode == "tournament"){
+					currentTeamIndex = 0;
+					currentTeam = [];
+				}
 
 				handler.initBattle(props);
 			}

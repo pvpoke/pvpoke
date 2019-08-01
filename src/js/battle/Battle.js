@@ -769,6 +769,10 @@ function Battle(){
 				self.dispatchUpdate({ result: result });
 				clearInterval(mainLoopInterval);
 			}
+			
+			// If a Pokemon has fainted, clear the action queue
+			turnActions = [];
+			queuedActions = [];
 		}
 	}
 
@@ -1244,10 +1248,13 @@ function Battle(){
 
 		// Don't run this action if it's invalidated
 
-		if(! action.valid){
+		if((! action.valid)||(action.processed)){
 			return false;
 		}
-
+		
+		// Set porcessed to true so it isn't processed twice
+		action.processed = true;
+		
 		switch(action.type){
 
 			case "fast":
@@ -1495,6 +1502,12 @@ function Battle(){
 			if(mode == "emulate"){
 				attacker.battleStats.energyUsed += move.energy
 				attacker.battleStats.chargedDamage += damage;
+			}
+			
+			// Clear the queue if defender if fainted by a Charged Move
+			if((mode == "emulate")&&(defender.hp <= 0)){
+				turnActions = [];
+				queuedActions = [];
 			}
 
 		} else{

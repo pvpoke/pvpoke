@@ -185,6 +185,10 @@ a.random{
 
 			&.left{
 				left:2.5%;
+				
+				.cmp{
+					left:0;
+				}
 			}
 
 			&.right{
@@ -798,10 +802,6 @@ a.random{
 	&[phase="animating"]{
 		.animate-message{
 			opacity:1;
-		}
-		
-		.controls .move-bars{
-			display:none;
 		}
 
 		.team-indicator{
