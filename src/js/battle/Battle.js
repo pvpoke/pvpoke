@@ -377,11 +377,17 @@ function Battle(){
 	// Reset all battle components and initiate the battle
 
 	this.start = function(){
+		// Reset all Pokemon
 		for(var i = 0; i < pokemon.length; i++){
 			pokemon[i].reset();
 
 			startingValues[i].hp = pokemon[i].hp;
 			startingValues[i].energy = pokemon[i].energy;
+		}
+		
+		// Reset all actions
+		for(var i = 0; i < actions.length; i++){
+			actions[i].processed = false;
 		}
 
 		// Determine if charged move priority should be used
@@ -409,7 +415,7 @@ function Battle(){
 		roundShieldUsed = false;
 
 		// Hold the actions for both Pokemon this turn
-		
+
 		if(turns > lastProcessedTurn){
 			turnActions = [];
 		}
@@ -419,7 +425,7 @@ function Battle(){
 		for(var i = 0; i < 2; i++){
 			var poke = pokemon[i];
 			poke.cooldown = Math.max(0, poke.cooldown - deltaTime); // Reduce cooldown
-			if(turns > lastProcessedTurn){				
+			if(turns > lastProcessedTurn){
 				poke.hasActed = false;
 			}
 		}
@@ -454,7 +460,7 @@ function Battle(){
 
 				// Are both Pokemon alive?
 
-				if((action.type == "switch")||((action.type != "switch")&&(poke.hp > 0)&&(opponent.hp > 0))){				
+				if((action.type == "switch")||((action.type != "switch")&&(poke.hp > 0)&&(opponent.hp > 0))){
 					if((action.type=="fast")&&(mode == "emulate")){
 						// Submit an animation to be played
 						self.pushAnimation(poke.index, "fast", pokemon[action.actor].fastMove.cooldown / 500);
@@ -463,7 +469,7 @@ function Battle(){
 				}
 			}
 		}
-		
+
 
 		// Take actions from the queue to be processed now
 		for(var i = 0; i < queuedActions.length; i++){
@@ -1259,16 +1265,16 @@ function Battle(){
 						self.useMove(poke, opponent, move, action.settings.shielded, action.settings.buffs, action.settings.charge);
 					} else if(mode == "emulate"){
 						// Initiate the suspended phase
-						
+
 						// If multiple charged moves are being used on this turn, set the turn counter back
 						var continueSameTurn = false;
-						
+
 						for(var i = 0; i < turnActions.length; i++){
 							if((turnActions[i].type == "charged")&&(turnActions[i].actor != poke.index)){
 								continueSameTurn = true;
 							}
 						}
-						
+
 						if(continueSameTurn){
 							turns--;
 						}
