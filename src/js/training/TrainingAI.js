@@ -103,6 +103,7 @@ function TrainingAI(l, p, b){
 			// Select a random poke from the bucket
 			var index = Math.floor(Math.random() * pokeBucket.length);
 			var poke = pokeBucket[index];
+
 			var pokemon = new Pokemon(poke.speciesId, player.index, battle);
 			pokemon.initialize(battle.getCP());
 

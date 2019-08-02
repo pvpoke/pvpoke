@@ -32,6 +32,10 @@
 				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
 			},
 			{
+				"speciesId": "gyarados",
+				"chargedMoves": ["CRUNCH", "OUTRAGE"]
+			},
+			{
 				"speciesId": "jirachi",
 				"chargedMoves": ["DOOM_DESIRE", "DAZZLING_GLEAM"]
 			},
@@ -195,7 +199,7 @@
 			},
 			{
 				"speciesId": "gardevoir",
-				"chargedMoves": ["SHADOW_BALL", "DAZZLING_GLEAM"]
+				"chargedMoves": ["SHADOW_BALL", "SYNCHRONOISE"]
 			},
 			{
 				"speciesId": "drapion",
@@ -225,10 +229,6 @@
 			{
 				"speciesId": "bronzong",
 				"fastMove": "CONFUSION"
-			},
-			{
-				"speciesId": "gardevoir",
-				"fastMove": "CONFUSION"
 			}
 		]
 	},
@@ -251,6 +251,14 @@
 			{
 				"speciesId": "hitmonchan",
 				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "gyarados",
+				"chargedMoves": ["CRUNCH", "OUTRAGE"]
+			},
+			{
+				"speciesId": "crobat",
+				"chargedMoves": ["SLUDGE_BOMB", "SHADOW_BALL"]
 			},
 			{
 				"speciesId": "dragonite",
@@ -314,6 +322,14 @@
 			{
 				"speciesId": "dragonite",
 				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
+			},
+			{
+				"speciesId": "gyarados",
+				"chargedMoves": ["CRUNCH", "OUTRAGE"]
+			},
+			{
+				"speciesId": "crobat",
+				"chargedMoves": ["SLUDGE_BOMB", "SHADOW_BALL"]
 			},
 			{
 				"speciesId": "tentacruel",

@@ -7,9 +7,16 @@
 			{
 				"speciesId": "gardevoir",
 				"fastMove": "CHARM",
-				"chargedMoves": ["SHADOW_BALL","DAZZLING_GLEAM"],
+				"chargedMoves": ["SHADOW_BALL","SYNCHRONOISE"],
 				"difficulty": 2,
 				"weight":20
+			},
+			{
+				"speciesId": "gardevoir",
+				"fastMove": "CHARM",
+				"chargedMoves": ["SHADOW_BALL","DAZZLING_GLEAM"],
+				"difficulty": 2,
+				"weight":5
 			},
 			{
 				"speciesId": "gallade",

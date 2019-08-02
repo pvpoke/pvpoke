@@ -509,20 +509,6 @@
 				"weight":1
 			},
 			{
-				"speciesId": "ludicolo",
-				"fastMove": "RAZOR_LEAF",
-				"chargedMoves": ["ICE_BEAM","HYDRO_PUMP"],
-				"difficulty": 2,
-				"weight":1
-			},
-			{
-				"speciesId": "grotle",
-				"fastMove": "RAZOR_LEAF",
-				"chargedMoves": ["BODY_SLAM","ENERGY_BALL"],
-				"difficulty": 1,
-				"weight":1
-			},
-			{
 				"speciesId": "shiftry",
 				"fastMove": "RAZOR_LEAF",
 				"chargedMoves": ["LEAF_BLADE","FOUL_PLAY"],
@@ -707,7 +693,7 @@
 			{
 				"speciesId": "gardevoir",
 				"fastMove": "CHARM",
-				"chargedMoves": ["SHADOW_BALL","DAZZLING_GLEAM"],
+				"chargedMoves": ["SHADOW_BALL","SYNCHRONOISE"],
 				"difficulty": 2,
 				"weight":2
 			},

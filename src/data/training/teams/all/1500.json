@@ -47,7 +47,7 @@
 				"weight":1
 			},
 			{
-				"speciesId": "castform_rain",
+				"speciesId": "castform_rainy",
 				"fastMove": "WATER_GUN",
 				"chargedMoves": ["WEATHER_BALL_WATER","THUNDER"],
 				"difficulty": 0,
@@ -875,7 +875,7 @@
 			{
 				"speciesId": "gardevoir",
 				"fastMove": "CHARM",
-				"chargedMoves": ["SHADOW_BALL","DAZZLING_GLEAM"],
+				"chargedMoves": ["SHADOW_BALL","SYNCHRONOISE"],
 				"difficulty": 2,
 				"weight":2
 			},
