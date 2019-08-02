@@ -655,8 +655,6 @@ var BattlerMaster = (function () {
 						  'player_type': playerType,
 						  'team_position': n+1
 						});
-						
-						console.log(pokeStr + " " + playerType + " " + (n+1));
 					}
 					
 					gtag('event', battleSummaryStr, {
@@ -690,7 +688,6 @@ var BattlerMaster = (function () {
 					}
 					
 					var battleRating = Math.floor( (500 * ((maxScore - opponentScore) / maxScore)) + (500 * (score / maxScore)))
-					console.log(teamStrs[i] + " " + battleRating);
 					
 					gtag('event', battleSummaryStr, {
 					  'event_category' : 'Training Team',
