@@ -5,7 +5,12 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', '<?php echo $UA; ?>');
+  gtag('config', '<?php echo $UA; ?>', {
+	  'custom_map': {
+		  'dimension1': 'player_type',
+		  'dimension2': 'team_position'
+	  }
+	});
 	
   var UA_ID = '<?php echo $UA; ?>';
 </script>

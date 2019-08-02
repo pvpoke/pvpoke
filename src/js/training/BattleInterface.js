@@ -98,6 +98,7 @@ var BattlerMaster = (function () {
 				$(".battle-window .scene .pokemon-container .messages").html("");
 				$(".battle-window .countdown .text").html("");
 				$(".battle-window .switch-btn").show();
+				$(".switch-window").removeClass("active")
 				$(".battle-window").attr("mode", props.mode);
 
 				$("body").addClass("battle-active");
@@ -596,15 +597,25 @@ var BattlerMaster = (function () {
 				});
 
 				// Report each Pokemon
+				var teamStrs = [];
+				var teamScores = [];
 
 				for(var i = 0; i < players.length; i++){
 					var team = players[i].getTeam();
+					var teamStr = '';
+					var backupPokeStrs = [];
+					var playerType = 0;
+					var teamScore = 0;
+					
+					if(i == 1){
+						playerType = players[i].getAI().getLevel()+1;
+					}
 
 					for(var n = 0; n < team.length; n++){
 						var pokemon = team[n];
 						var pokeStr = pokemon.speciesName + ' ' + pokemon.fastMove.abbreviation;
 						var chargedMoveAbbrevations = [];
-
+						
 						// Only report this Pokemon if it was used in battle
 						if(pokemon.hp == pokemon.stats.hp){
 							continue;
@@ -624,17 +635,69 @@ var BattlerMaster = (function () {
 								pokeStr += "/" + chargedMoveAbbrevations[k];
 							}
 						}
+						
+						// Add to team string
+						if(n == 0){
+							teamStr += pokeStr;
+						} else{
+							backupPokeStrs.push(pokeStr);
+						}
 
 						// Assign this Pokemon's score in battle, damage done plus shields broken
 
 						var score = Math.round(pokemon.battleStats.damage + (50 * pokemon.battleStats.shieldsBurned));
+						teamScore += score;
 
 						gtag('event', battleSummaryStr, {
 						  'event_category' : 'Training Pokemon',
 						  'event_label' : pokeStr,
-						  'value' : score+''
+						  'value' : score+'',
+						  'player_type': playerType,
+						  'team_position': n+1
 						});
+						
+						console.log(pokeStr + " " + playerType + " " + (n+1));
 					}
+					
+					gtag('event', battleSummaryStr, {
+					  'event_category' : 'Training Pokemon',
+					  'event_label' : pokeStr,
+					  'value' : score+'',
+					  'player_type': playerType,
+					  'team_position': n+1
+					});
+					
+					// Alphabetize the last two Pokemon on the team and build the team string
+					backupPokeStrs.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
+					
+					for(var n = 0; n < backupPokeStrs.length; n++){
+						teamStr += " " + backupPokeStrs[n];
+					}
+					
+					teamStrs.push(teamStr);
+					teamScores.push(teamScore);
+				}
+				
+				// Report each team
+				for(var i = 0; i < players.length; i++){
+					var score = teamScores[i];
+					var opponentIndex = (i == 0) ? 1 : 0;
+					var opponentScore = teamScores[opponentIndex];
+					var maxScore = Math.max(teamScores[0], teamScores[1]);
+					var playerType = 0;
+					if(i == 1){
+						playerType = players[i].getAI().getLevel()+1;
+					}
+					
+					var battleRating = Math.floor( (500 * ((maxScore - opponentScore) / maxScore)) + (500 * (score / maxScore)))
+					console.log(teamStrs[i] + " " + battleRating);
+					
+					gtag('event', battleSummaryStr, {
+					  'event_category' : 'Training Team',
+					  'event_label' : teamStrs[i],
+					  'value' : battleRating+'',
+					  'player_type': playerType,
+					});
 				}
 			}
 
