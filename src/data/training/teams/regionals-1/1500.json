@@ -635,41 +635,6 @@
 				"weight":8
 			},
 			{
-				"speciesId": "hypno",
-				"fastMove": "CONFUSION",
-				"chargedMoves": ["SHADOW_BALL","FOCUS_BLAST"],
-				"difficulty": 3,
-				"weight":6
-			},
-			{
-				"speciesId": "hypno",
-				"fastMove": "CONFUSION",
-				"chargedMoves": ["FIRE_PUNCH","SHADOW_BALL"],
-				"difficulty": 2,
-				"weight":4
-			},
-			{
-				"speciesId": "hypno",
-				"fastMove": "CONFUSION",
-				"chargedMoves": ["THUNDER_PUNCH","SHADOW_BALL"],
-				"difficulty": 2,
-				"weight":4
-			},
-			{
-				"speciesId": "hypno",
-				"fastMove": "CONFUSION",
-				"chargedMoves": ["THUNDER_PUNCH","ICE_PUNCH"],
-				"difficulty": 2,
-				"weight":2
-			},
-			{
-				"speciesId": "hypno",
-				"fastMove": "CONFUSION",
-				"chargedMoves": ["PSYSHOCK","FOCUS_BLAST"],
-				"difficulty": 1,
-				"weight":2
-			},
-			{
 				"speciesId": "bronzong",
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["PSYSHOCK","BULLDOZE"],
@@ -687,7 +652,7 @@
 				"speciesId": "claydol",
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["EARTH_POWER","GYRO_BALL"],
-				"difficulty": 0,
+				"difficulty": 1,
 				"weight":1
 			},
 			{
@@ -701,7 +666,7 @@
 				"speciesId": "venomoth",
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["SILVER_WIND","POISON_FANG"],
-				"difficulty": 0,
+				"difficulty": 1,
 				"weight":1
 			}
 		]

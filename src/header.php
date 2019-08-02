@@ -98,6 +98,7 @@ if(! isset($OG_IMAGE)){
 			<h1 class="title"><a href="/">PvPoke.com</a></h1>
 			<div class="menu">
 				<a class="icon-battle" href="<?php echo $WEB_ROOT; ?>battle/">Battle</a>
+				<a class="icon-train" href="<?php echo $WEB_ROOT; ?>train/">Train</a>
 				<a class="icon-rankings" href="<?php echo $WEB_ROOT; ?>rankings/">Rankings</a>
 				<a class="icon-team" href="<?php echo $WEB_ROOT; ?>team-builder/">Team Builder</a>
 				<a class="more desktop" href="#"></a>
