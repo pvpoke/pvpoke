@@ -43,7 +43,7 @@ var BattlerMaster = (function () {
 			var listenersInitialized = false; // Prevent event listeners from being added twice
 
 			var priorityAssignment = 1; // Assign priority to a player
-			
+
 			var autotap = false; // Whether or not to automatically register fast moves
 
 			// Kick off the setup and the battle
@@ -413,7 +413,7 @@ var BattlerMaster = (function () {
 						}, 250);
 					}
 				}
-				
+
 				// Update the autotap button and queue an action
 
 				if(autotap){
@@ -423,9 +423,9 @@ var BattlerMaster = (function () {
 				} else{
 					$(".controls .auto-tap").removeClass("active");
 				}
-				
+
 				// Hide the switch button if only one Pokemon remains
-				
+
 				if(players[0].getRemainingPokemon() == 1){
 					$(".battle-window .switch-btn").hide();
 				}
@@ -604,7 +604,7 @@ var BattlerMaster = (function () {
 						var pokemon = team[n];
 						var pokeStr = pokemon.speciesName + ' ' + pokemon.fastMove.abbreviation;
 						var chargedMoveAbbrevations = [];
-						
+
 						// Only report this Pokemon if it was used in battle
 						if(pokemon.hp == pokemon.stats.hp){
 							continue;
@@ -632,7 +632,7 @@ var BattlerMaster = (function () {
 						gtag('event', battleSummaryStr, {
 						  'event_category' : 'Training Pokemon',
 						  'event_label' : pokeStr,
-						  'value' : score
+						  'value' : score+''
 						});
 					}
 				}
@@ -696,11 +696,11 @@ var BattlerMaster = (function () {
 
 					return;
 				}
-				
+
 				// Turn autotap on or off
 				if($(".controls .auto-tap:hover").length > 0){
 					autotap = (! autotap);
-					
+
 
 					if(autotap){
 						$(".controls .auto-tap").addClass("active");
@@ -765,7 +765,7 @@ var BattlerMaster = (function () {
 			function replayBattleClick(e){
 				// Alternate CMP so it remains the same on rematch
 				priorityAssignment = (priorityAssignment == 1) ? 0 : 1;
-				
+
 				// Manually set the previous team
 				properties.teamSelectMethod = "manual";
 				properties.teams[1] = players[1].getTeam();
