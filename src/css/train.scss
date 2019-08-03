@@ -26,7 +26,7 @@
 	.quick-fill-select option.multi-battle{
 		display:none !important;
 	}
-	
+
 	.cup-select{
 		display:none;
 	}
@@ -185,7 +185,7 @@ a.random{
 
 			&.left{
 				left:2.5%;
-				
+
 				.cmp{
 					left:0;
 				}
@@ -833,12 +833,6 @@ a.random{
 		}
 	}
 
-	&[mode="tournament"]{
-		.button.replay{
-			display:none;
-		}
-	}
-
 }
 
 .team-select .pokemon-container,
@@ -943,6 +937,10 @@ a.random{
 
 	.buttons{
 		display: flex;
+
+		.button{
+			font-size:14px;
+		}
 	}
 
 	.tabs{

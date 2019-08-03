@@ -130,7 +130,7 @@ function Player(i, ai, b){
 	this.getPriority = function(){
 		return priority;
 	}
-	
+
 	// Set this player's priority
 
 	this.setPriority = function(val){
@@ -163,7 +163,7 @@ function Player(i, ai, b){
 		if(! previousResult){
 			ai.generateTeam(opponentRoster);
 		} else{
-			ai.generateTeam(opponentRoster, previousResult, previousTeams);
+			ai.generateTeam(opponentRoster, previousResult, previousTeams, forcePickStrategy);
 		}
 
 	}

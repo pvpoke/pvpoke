@@ -189,6 +189,11 @@ function Battle(){
 			}
 
 			chargeMultiplier = chargeAmount;
+
+			// Protection to prevent 0 damage
+			if(chargeMultiplier == 0){
+				chargeMultiplier = 1;
+			}
 		}
 
 		var damage = Math.floor(move.power * move.stab * ( attacker.getEffectiveStat(0) / defender.getEffectiveStat(1)) * effectiveness * chargeMultiplier * 0.5 * bonusMultiplier) + 1;
@@ -384,7 +389,7 @@ function Battle(){
 			startingValues[i].hp = pokemon[i].hp;
 			startingValues[i].energy = pokemon[i].energy;
 		}
-		
+
 		// Reset all actions
 		for(var i = 0; i < actions.length; i++){
 			actions[i].processed = false;
@@ -769,7 +774,7 @@ function Battle(){
 				self.dispatchUpdate({ result: result });
 				clearInterval(mainLoopInterval);
 			}
-			
+
 			// If a Pokemon has fainted, clear the action queue
 			turnActions = [];
 			queuedActions = [];
@@ -1251,10 +1256,10 @@ function Battle(){
 		if((! action.valid)||(action.processed)){
 			return false;
 		}
-		
+
 		// Set porcessed to true so it isn't processed twice
 		action.processed = true;
-		
+
 		switch(action.type){
 
 			case "fast":
@@ -1270,7 +1275,7 @@ function Battle(){
 				if(poke.energy >= move.energy){
 					if(mode == "simulate"){
 						self.useMove(poke, opponent, move, action.settings.shielded, action.settings.buffs, action.settings.charge);
-					} else if(mode == "emulate"){
+					} else if((mode == "emulate")&&(phase != "suspend_charged")){
 						// Initiate the suspended phase
 
 						// If multiple charged moves are being used on this turn, set the turn counter back
@@ -1503,7 +1508,7 @@ function Battle(){
 				attacker.battleStats.energyUsed += move.energy
 				attacker.battleStats.chargedDamage += damage;
 			}
-			
+
 			// Clear the queue if defender if fainted by a Charged Move
 			if((mode == "emulate")&&(defender.hp <= 0)){
 				turnActions = [];

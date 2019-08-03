@@ -45,6 +45,7 @@ var BattlerMaster = (function () {
 			var priorityAssignment = 1; // Assign priority to a player
 
 			var autotap = false; // Whether or not to automatically register fast moves
+			var bufferedSwitch = -1; // If autotap is on, preserve the last input switch and attempt to use until successful
 
 			// Kick off the setup and the battle
 
@@ -394,6 +395,10 @@ var BattlerMaster = (function () {
 							$(".battle-window .scene .pokemon-container").eq(animation.actor).addClass("animate-switch");
 							$(".battle-window .scene .pokemon-container").eq(animation.actor).attr("animation-time", time);
 
+							if(actor == 0){
+								bufferedSwitch = -1;
+							}
+
 							if(animation.value === false){
 								var duration = 1000;
 
@@ -419,8 +424,13 @@ var BattlerMaster = (function () {
 
 				if(autotap){
 					$(".controls .auto-tap").addClass("active");
-					// Queue a fast move
-					battle.queueAction(0, "fast", 0);
+					if(bufferedSwitch == -1){
+						// Queue a fast move
+						battle.queueAction(0, "fast", 0);
+					} else{
+						// Queue a previously entered switch
+						battle.queueAction(0, "switch", bufferedSwitch);
+					}
 				} else{
 					$(".controls .auto-tap").removeClass("active");
 				}
@@ -606,7 +616,7 @@ var BattlerMaster = (function () {
 					var backupPokeStrs = [];
 					var playerType = 0;
 					var teamScore = 0;
-					
+
 					if(i == 1){
 						playerType = players[i].getAI().getLevel()+1;
 					}
@@ -615,7 +625,7 @@ var BattlerMaster = (function () {
 						var pokemon = team[n];
 						var pokeStr = pokemon.speciesName + ' ' + pokemon.fastMove.abbreviation;
 						var chargedMoveAbbrevations = [];
-						
+
 						// Only report this Pokemon if it was used in battle
 						if(pokemon.hp == pokemon.stats.hp){
 							continue;
@@ -635,7 +645,7 @@ var BattlerMaster = (function () {
 								pokeStr += "/" + chargedMoveAbbrevations[k];
 							}
 						}
-						
+
 						// Add to team string
 						if(n == 0){
 							teamStr += pokeStr;
@@ -656,7 +666,7 @@ var BattlerMaster = (function () {
 						  'team_position': n+1
 						});
 					}
-					
+
 					gtag('event', battleSummaryStr, {
 					  'event_category' : 'Training Pokemon',
 					  'event_label' : pokeStr,
@@ -664,18 +674,18 @@ var BattlerMaster = (function () {
 					  'player_type': playerType,
 					  'team_position': n+1
 					});
-					
+
 					// Alphabetize the last two Pokemon on the team and build the team string
 					backupPokeStrs.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
-					
+
 					for(var n = 0; n < backupPokeStrs.length; n++){
 						teamStr += " " + backupPokeStrs[n];
 					}
-					
+
 					teamStrs.push(teamStr);
 					teamScores.push(teamScore);
 				}
-				
+
 				// Report each team
 				for(var i = 0; i < players.length; i++){
 					var score = teamScores[i];
@@ -686,9 +696,9 @@ var BattlerMaster = (function () {
 					if(i == 1){
 						playerType = players[i].getAI().getLevel()+1;
 					}
-					
+
 					var battleRating = Math.floor( (500 * ((maxScore - opponentScore) / maxScore)) + (500 * (score / maxScore)))
-					
+
 					gtag('event', battleSummaryStr, {
 					  'event_category' : 'Training Team',
 					  'event_label' : teamStrs[i],
@@ -747,6 +757,7 @@ var BattlerMaster = (function () {
 
 					var index = parseInt($target.attr("index"));
 					battle.queueAction(0, "switch", index);
+					bufferedSwitch = index;
 
 					$(".switch-window").removeClass("active");
 
@@ -799,7 +810,7 @@ var BattlerMaster = (function () {
 			// Click handler for sending input to the Battle object
 
 			function chargeUpClick(e){
-				charge = Math.min(charge + chargeRate, maxCharge + (chargeDecayRate * 10));
+				charge = Math.min(charge + chargeRate, maxCharge);
 			}
 
 			// Close the shield window
@@ -827,9 +838,14 @@ var BattlerMaster = (function () {
 				priorityAssignment = (priorityAssignment == 1) ? 0 : 1;
 
 				// Manually set the previous team
-				properties.teamSelectMethod = "manual";
-				properties.teams[1] = players[1].getTeam();
-				handler.initBattle(properties);
+				if(properties.mode == "single"){
+					properties.teamSelectMethod = "manual";
+					properties.teams[1] = players[1].getTeam();
+					handler.initBattle(properties);
+				} else if(properties.mode == "tournament"){
+					handler.startTournamentBattle(players[0].getTeam(), properties, players[1].getTeam());
+				}
+
 			}
 
 			// Go back to the settings page

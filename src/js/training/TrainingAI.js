@@ -141,7 +141,7 @@ function TrainingAI(l, p, b){
 
 	// With a set roster, produce a team of 3
 
-	this.generateTeam = function(opponentRoster, previousResult, previousTeams){
+	this.generateTeam = function(opponentRoster, previousResult, previousTeams, forcePickStrategy){
 		var roster = player.getRoster();
 		var team = [];
 
