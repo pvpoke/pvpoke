@@ -460,6 +460,40 @@ a.random {
   background: #ee2222;
   color: #eee;
 }
+.battle-window .controls .button-stack {
+  -webkit-transition: all 0.2s ease 0s;
+  -moz-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 5px 2px;
+  border-radius: 8px;
+  left: 2.5%;
+  top: -80%;
+}
+.battle-window .controls .button-stack div {
+  width: 16px;
+  height: 19px;
+  margin: 10px 0;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.battle-window .controls .button-stack div:first-of-type {
+  margin-top: 0;
+}
+.battle-window .controls .button-stack div:last-of-type {
+  margin-bottom: 0;
+}
+.battle-window .controls .button-stack .pause-btn {
+  background-image: url("../img/playback_pause.png");
+}
+.battle-window .controls .button-stack .pause-btn.active {
+  background-image: url("../img/playback_play.png");
+}
+.battle-window .controls .button-stack .restart-btn {
+  background-image: url("../img/playback_replay.png");
+}
 .battle-window .shield-window {
   width: 100%;
   height: 40%;
@@ -644,6 +678,9 @@ a.random {
 .battle-window[phase=suspend_charged_shield] .controls .move-bars {
   display: none;
 }
+.battle-window[phase=suspend_charged_shield] .controls .button-stack {
+  display: none;
+}
 .battle-window[phase=suspend_charged_shield] .team-indicator {
   display: none;
 }
@@ -658,6 +695,9 @@ a.random {
   opacity: 1;
 }
 .battle-window[phase=suspend_charged_no_shields] .controls .move-bars {
+  display: none;
+}
+.battle-window[phase=suspend_charged_no_shields] .controls .button-stack {
   display: none;
 }
 .battle-window[phase=suspend_charged_no_shields] .team-indicator {
@@ -683,6 +723,9 @@ a.random {
 .battle-window[phase=suspend_charged_attack] .controls .move-bars {
   display: none;
 }
+.battle-window[phase=suspend_charged_attack] .controls .button-stack {
+  display: none;
+}
 .battle-window[phase=suspend_charged_attack] .team-indicator {
   display: none;
 }
@@ -700,13 +743,22 @@ a.random {
   bottom: 0;
   pointer-events: all;
 }
+.battle-window[phase=suspend_switch_self] .controls .button-stack {
+  display: none;
+}
 .battle-window[phase=suspend_switch] .animate-message {
   opacity: 1;
+}
+.battle-window[phase=suspend_switch] .controls .button-stack {
+  display: none;
 }
 .battle-window[phase=animating] .animate-message {
   opacity: 1;
 }
 .battle-window[phase=animating] .team-indicator {
+  display: none;
+}
+.battle-window[phase=animating] .controls .button-stack {
   display: none;
 }
 .battle-window[phase=countdown] .top, .battle-window[phase=countdown] .controls {
@@ -720,6 +772,9 @@ a.random {
 }
 .battle-window[phase=game_over_screen] .end-screen-container {
   bottom: -10px;
+}
+.battle-window[phase=game_paused] .countdown {
+  display: flex;
 }
 .battle-window[mode=single] .button.next-round {
   display: none;

@@ -15,7 +15,13 @@
 	<div class="auto-tap-container">
 		<div class="auto-tap">Autotap</div>
 	</div>
-	
+
+	<div class="button-stack">
+		<div class="pause-btn"></div>
+		<div class="restart-btn"></div>
+		<div class="quit-btn">&cross;</div>
+	</div>
+
 </div>
 
 <div class="shield-window">
@@ -68,5 +74,23 @@
 				<div class="name">Pokemon 2</div>
 			</div>
 		</div>
+	</div>
+</div>
+
+<div class="restart-confirm hide">
+	<p>Restart the match?</p>
+
+	<div class="center flex">
+		<div class="button yes">Yes</div>
+		<div class="button no">No</div>
+	</div>
+</div>
+
+<div class="quit-confirm hide">
+	<p>Quit the match? In Tournament Mode, you'll go back to the team selection screen.</p>
+
+	<div class="center flex">
+		<div class="button yes">Yes</div>
+		<div class="button no">No</div>
 	</div>
 </div>

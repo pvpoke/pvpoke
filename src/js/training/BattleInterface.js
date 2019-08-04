@@ -66,9 +66,15 @@ var BattlerMaster = (function () {
 					$(".end-screen .new-match").on("click", newMatchClick);
 					$(".end-screen .next-round").on("click", nextRoundClick);
 					$(".end-screen a.tab").on("click", tabClick);
+					$("body").on("click", ".modal .no", closeModalWindow);
+					$("body").on("click", ".modal .restart-confirm .yes", replayBattleClick);
+					$("body").on("click", ".modal .quit-confirm .yes", confirmQuitBattle);
 
 					listenersInitialized = true;
 				}
+
+				// Close any open modal windows
+				closeModalWindow();
 
 				// Alternate CMP
 				priorityAssignment = (priorityAssignment == 1) ? 0 : 1;
@@ -95,6 +101,7 @@ var BattlerMaster = (function () {
 				// Reset interface for new battle
 
 				$(".battle-window .switch-btn").removeClass("active");
+				$(".controls .button-stack .pause-btn").removeClass("active");
 				$(".battle-window .scene .pokemon-container").removeClass("animate-switch");
 				$(".battle-window .scene .pokemon-container .messages").html("");
 				$(".battle-window .countdown .text").html("");
@@ -165,6 +172,12 @@ var BattlerMaster = (function () {
 
 						case "animating":
 							$(".animate-message .text").html(activePokemon[response.actor].speciesName + " used " + response.moveName);
+
+							// If we're transitioning from the Charged Move minigame, submit the damage
+							if(phase == "suspend_charged_attack"){
+								var chargeMultiplier = Math.min(.25 + (.75 * (charge / maxCharge)), 1);
+								battle.setChargeAmount(chargeMultiplier);
+							}
 							break;
 
 						case "suspend_switch":
@@ -176,6 +189,11 @@ var BattlerMaster = (function () {
 							phaseInterval = setInterval(phaseStep, 1000 / 60);
 							self.openSwitchWindow();
 							interfaceLockout = 750;
+							break;
+
+						case "game_paused":
+							$(".battle-window .countdown").removeClass("animate");
+							$(".battle-window .countdown .text").html("II");
 							break;
 
 						case "game_over":
@@ -723,12 +741,6 @@ var BattlerMaster = (function () {
 				$(".battle-window .charge-window .ring").css("height", percent + "%");
 
 				self.updatePhaseTimer();
-
-				// Submit charge amount to Battle
-				if(phaseTimer <= 0){
-					var chargeMultiplier = Math.min(.25 + (.75 * (charge / maxCharge)), 1);
-					battle.setChargeAmount(chargeMultiplier);
-				}
 			}
 
 			// Click handler for sending input to the Battle object
@@ -744,6 +756,37 @@ var BattlerMaster = (function () {
 					if($(".switch-window").hasClass("active")){
 						self.openSwitchWindow();
 					}
+					return;
+				}
+
+				// Press one of the side button controls
+
+				if($(".battle-window .controls .button-stack:hover").length > 0){
+
+					// Pause or resume the game
+					if($(".controls .button-stack .pause-btn:hover").length > 0){
+						$(".controls .button-stack .pause-btn").toggleClass("active");
+						battle.setPause($(".controls .button-stack .pause-btn").hasClass("active"));
+					}
+
+					// Open the restart confirm dialogue
+					if($(".controls .button-stack .restart-btn:hover").length > 0){
+						// Pause the game
+						$(".controls .button-stack .pause-btn").addClass("active");
+						battle.setPause(true);
+
+						modalWindow("Restart Match", $(".restart-confirm"));
+					}
+
+					// Open the quit confirm dialogue
+					if($(".controls .button-stack .quit-btn:hover").length > 0){
+						// Pause the game
+						$(".controls .button-stack .pause-btn").addClass("active");
+						battle.setPause(true);
+
+						modalWindow("Quit Match", $(".quit-confirm"));
+					}
+
 					return;
 				}
 
@@ -834,6 +877,9 @@ var BattlerMaster = (function () {
 			// At the end of a 3v3 match, replay the same battle
 
 			function replayBattleClick(e){
+				// Stop the current battle
+				battle.stop();
+
 				// Alternate CMP so it remains the same on rematch
 				priorityAssignment = (priorityAssignment == 1) ? 0 : 1;
 
@@ -852,6 +898,18 @@ var BattlerMaster = (function () {
 
 			function newMatchClick(e){
 				handler.returnToSetup();
+			}
+
+			// User has confirmed they want to quit the battle
+			function confirmQuitBattle(e){
+				battle.stop();
+				closeModalWindow();
+
+				if(properties.mode == "single"){
+					handler.returnToSetup();
+				} else if(properties.mode == "tournament"){
+					handler.nextTournamentRoundSetup("tie");
+				}
 			}
 
 			// Go back to team select for a new round

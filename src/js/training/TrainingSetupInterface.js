@@ -58,6 +58,8 @@ var InterfaceMaster = (function () {
 					$(".section").eq(i).slideUp(500);
 				}
 
+				$(".section.white").slideUp(500);
+
 				$("#main h1").slideUp(500);
 			}
 
@@ -67,6 +69,8 @@ var InterfaceMaster = (function () {
 				for(var i = 0; i < 3; i++){
 					$(".section").eq(i).slideDown(500);
 				}
+
+				$(".section.white").slideDown(500);
 
 				$("#main h1").slideDown(500);
 			}
@@ -171,7 +175,7 @@ var InterfaceMaster = (function () {
 					league: battle.getCP(),
 					cup: battle.getCup().name
 					};
-				
+
 				// Reset roster selection for tournament mode
 				if(mode == "tournament"){
 					currentTeamIndex = 0;

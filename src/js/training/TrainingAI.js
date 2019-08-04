@@ -159,7 +159,7 @@ function TrainingAI(l, p, b){
 		var basicWeight = 1;
 
 		if(opponentRoster.length < 6){
-			basicWeight = (8 * (3 - level)) + 3;
+			basicWeight = (8 * (4 - level));
 		}
 
 		// Choose a pick strategy

@@ -108,7 +108,8 @@ function MatchHandler(){
 
 	this.nextTournamentRoundSetup = function(result){
 		$(".battle-window").attr("phase","");
-
+		$("body").removeClass("battle-active");
+		
 		switch(result){
 			case "win":
 				roundRecord[0]++;
@@ -147,6 +148,7 @@ function MatchHandler(){
 	// Return to the setup interface
 
 	this.returnToSetup = function(){
+		$("body").removeClass("battle-active");
 		$(".battle-window").attr("phase","");
 		interface.open();
 	}

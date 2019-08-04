@@ -40,6 +40,7 @@ function Battle(){
 	var phaseProps; // A collection of properties associated with the current phase
 	var phaseTimeout; // Used to trigger the end of certain phases like charging up and switching
 	var mainLoopInterval;
+	var isPaused = false; // A flag for whether or not to pause the battle
 
 	var roundChargedMoveUsed;
 	var roundShieldUsed;
@@ -414,6 +415,11 @@ function Battle(){
 	// Process a turn
 
 	this.step = function(){
+		// Return from this function if paused
+		if(phase == "game_paused"){
+			return false;
+		}
+
 		// For display purposes, need to track whether a Pokemon has used a charged move or shield each round
 
 		roundChargedMoveUsed = 0;
@@ -1693,10 +1699,28 @@ function Battle(){
 		chargeAmount = val;
 	}
 
-	// Set a charge multiplier in emulated Battles
+	// Set whether or not the player will use a shield for the upcoming Charged Move
 
 	this.setPlayerUseShield = function(val){
 		playerUseShield = val;
+	}
+
+	// Pause or resume the simulation
+
+	this.setPause = function(val){
+		isPaused = val;
+
+		if(isPaused){
+			phase = "game_paused";
+		} else{
+			phase = "neutral";
+		}
+	}
+
+	// Completely stop the current simulation
+
+	this.stop = function(){
+		clearInterval(mainLoopInterval);
 	}
 
 	// Return whether or not a simulation can run successfully

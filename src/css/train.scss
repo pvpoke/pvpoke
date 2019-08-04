@@ -515,6 +515,45 @@ a.random{
 				}
 			}
 		}
+
+		.button-stack{
+			@include transition(all, 0.2s, ease, 0s);
+
+			position:absolute;
+			background: rgba(255, 255, 255, 0.85);
+			padding: 5px 2px;
+			border-radius: 8px;
+			left: 2.5%;
+			top: -80%;
+
+			div{
+				width: 16px;
+			    height: 19px;
+				margin:10px 0;
+			    background-position: center center;
+			    background-repeat: no-repeat;
+
+				&:first-of-type{
+					margin-top:0;
+				}
+
+				&:last-of-type{
+					margin-bottom:0;
+				}
+			}
+
+			.pause-btn{
+				background-image: url('../img/playback_pause.png');
+
+				&.active{
+					background-image: url('../img/playback_play.png');
+				}
+			}
+
+			.restart-btn{
+				background-image: url('../img/playback_replay.png');
+			}
+		}
 	}
 
 	.shield-window{
@@ -728,6 +767,10 @@ a.random{
 			display:none;
 		}
 
+		.controls .button-stack{
+			display:none;
+		}
+
 		.team-indicator{
 			display:none;
 		}
@@ -743,6 +786,10 @@ a.random{
 		}
 
 		.controls .move-bars{
+			display:none;
+		}
+
+		.controls .button-stack{
 			display:none;
 		}
 
@@ -773,6 +820,10 @@ a.random{
 			display:none;
 		}
 
+		.controls .button-stack{
+			display:none;
+		}
+
 		.team-indicator{
 			display:none;
 		}
@@ -791,11 +842,19 @@ a.random{
 			bottom:0;
 			pointer-events: all;
 		}
+
+		.controls .button-stack{
+			display:none;
+		}
 	}
 
 	&[phase="suspend_switch"]{
 		.animate-message{
 			opacity:1;
+		}
+
+		.controls .button-stack{
+			display:none;
 		}
 	}
 
@@ -805,6 +864,10 @@ a.random{
 		}
 
 		.team-indicator{
+			display:none;
+		}
+
+		.controls .button-stack{
 			display:none;
 		}
 	}
@@ -824,6 +887,12 @@ a.random{
 
 		.end-screen-container{
 			bottom:-10px;
+		}
+	}
+
+	&[phase="game_paused"]{
+		.countdown{
+			display:flex;
 		}
 	}
 

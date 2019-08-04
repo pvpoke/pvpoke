@@ -27,20 +27,27 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.9.0 (August 1, 2019)</h4>
+	<h4>v1.9.2 (August 4, 2019)</h4>
 	<ul>
-		<li>Play real-time battle simulations against a CPU opponent with the new Training Battle feature, anytime and anywhere</li>
+		<li>Fixed an issue in Training Battles where Charged Moves would sometimes deal no damage</li>
 		<ul>
-			<li>Practice with your teams or try new Pokemon before you invest</li>
-			<li>Challenge four difficulty levels: Novice, Rival, Elite, and Champion</li>
-			<ul>
-				<li>Practice at your own pace in a pressure-free environment and against an opponent with your experience level</li>
-			</ul>
-			<li>Play in Great, Ultra, or Master League, or in any of The Silph Arena's Season 1 cups</li>
-			<li>Play in Single Mode (blind 3v3) or Tournament Mode (pick 6, play 3, multiple rounds)</li>
-			<li>Learn from your battles with advanced post-game stats</li>
+			<li>This happened due to an issue where the game timers would desync and the Charged Move minigame would end early, resulting in your charge not being submitted before damage occurred. The timer desync part is still unresolved, but the Charged Move sequence has been reworked so your moves will deal the correct amount of damage even when this issue occurs.</li>
 		</ul>
-		<li>Piggybacking is now reenabled for "self-piggybacking"; performing two Charged Moves in a row has the opportunity to negate the opponent's Fast Move</li>
+		<li>When Autotap is enabled in Training Battles, switch commands are buffered and submitted each turn until they succeed. This should resolve issues that made switching incredibly difficult with Autotap enabled.</li>
+		<ul>
+			<li>The simulator contains the same "switch glitch" in the game that causes switches to fail when you're in the middle of a Fast Move. For ease of use, this behavior is fixed when Autotap is enabled. You'll want to keep practicing care with your switches when you tap manually.</li>
+		</ul>
+		<li>Added the Rematch button for battles in Tournament Mode so you can replay against the same lineup. Matches you replay won't count for or against your record.</li>
+		<li>Added a new set of controls to Training Battles so you can:</li>
+		<ul>
+			<li>Pause the game mid-match</li>
+			<li>Instantly restart the current match</li>
+			<li>Quit from the current match to the setup options in 3v3 mode, or the team select screen in 6v6 mode</li>
+		</ul>
+		<li>Tweaked the AI's pick strategies in 3v3 mode so counter leads are less frequent in the higher difficulties.</li>
+		<ul>
+			<li>The AI doesn't have advanced knowledge of your lead, but how the pick method works in 3v3 made a counter lead highly likely. This has been turned down so you should encounter a wider variety of leads and lineups. This doesn't impact 6v6.</li>
+		</ul>
 	</ul>
 
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>
