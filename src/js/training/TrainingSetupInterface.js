@@ -58,7 +58,7 @@ var InterfaceMaster = (function () {
 					$(".section").eq(i).slideUp(500);
 				}
 
-				$(".section.white").slideUp(500);
+				$(".section.updates").slideUp(500);
 
 				$("#main h1").slideUp(500);
 			}
@@ -70,7 +70,7 @@ var InterfaceMaster = (function () {
 					$(".section").eq(i).slideDown(500);
 				}
 
-				$(".section.white").slideDown(500);
+				$(".section.updates").slideDown(500);
 
 				$("#main h1").slideDown(500);
 			}

@@ -101,7 +101,7 @@ require_once '../header.php';
 	</div>
 </div>
 
-<div class="section white">
+<div class="section white updates">
 	<h3>What's New</h3>
 
 	<h4>v1.9.2 (August 4, 2019)</h4>
