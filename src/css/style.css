@@ -2017,7 +2017,10 @@ a.toggle {
 
   .league-select,
   .cup-select {
-    max-width: 49%; } }
+    max-width: 49%; }
+
+  .modal {
+    overflow-y: scroll; } }
 /* SETTINGS */
 .settings select {
   max-width: 200px; }
