@@ -439,7 +439,13 @@ function TrainingAI(l, p, b){
 		var totalSwitchWeight = 0;
 
 		if((self.hasStrategy("SWITCH_BASIC"))&&(player.getSwitchTimer() == 0)&&(player.getRemainingPokemon() > 1)){
-			var switchWeight = Math.floor(Math.max((500 - overallRating) / 10, 0));
+			var switchThreshold = 500;
+
+			if((self.hasStrategy("PRESERVE_SWITCH_ADVANTAGE"))&&(opponentPlayer.getRemainingPokemon() > 1)){
+				switchThreshold = 450;
+			}
+
+			var switchWeight = Math.floor(Math.max((switchThreshold - overallRating) / 10, 0));
 
 			// Don't switch Pokemon when HP is low
 			if((self.hasStrategy("PRESERVE_SWITCH_ADVANTAGE"))&&(opponentPlayer.getSwitchTimer() - player.getSwitchTimer() < 30)&&(pokemon.hp / pokemon.stats.hp <= .25)&&(opponentPlayer.getRemainingPokemon() > 1)){
@@ -730,13 +736,29 @@ function TrainingAI(l, p, b){
 		var team = player.getTeam();
 		var poke = battle.getPokemon()[player.getIndex()];
 		var opponent = battle.getOpponent(player.getIndex());
+		var opponentPlayer = battle.getPlayers()[opponent.index];
 
 		for(var i = 0; i < team.length; i++){
 			var pokemon = team[i];
 
 			if((pokemon.hp > 0)&&(pokemon != poke)){
 				var scenario = self.runScenario("NO_BAIT", pokemon, opponent);
-				var weight = Math.pow(Math.round(scenario.average / 100));
+				var weight = 1;
+
+				// Dramatically scale weight based on winning or losing
+				if(scenario.average < 500){
+					weight = Math.max(Math.round(Math.pow(scenario.average / 100, 4) / 20), 1);
+				} else{
+					// If the opponent is switch locked, favor the hard counter
+					if(opponentPlayer.getSwitchTimer() < 10){
+						weight = Math.round(scenario.average / 2);
+					} else{
+						weight = Math.round(Math.pow(scenario.average / 100, 3));
+					}
+
+				}
+
+				Math.round(scenario.average / 100);
 
 				if(scenario.average > 500){
 					weight *= 2;
@@ -814,17 +836,17 @@ function TrainingAI(l, p, b){
 
 		// Will this attack hurt?
 		var damageWeight = Math.min(Math.round((move.damage / defender.stats.hp) * 10), 10);
+		var moveDamage = move.damage;
+		var fastMoveDamage = attacker.fastMove.damage;
 
 		if(damageWeight > 4){
-			damageWeight = damageWeight - 4;
-			yesWeight += (damageWeight * 2);
+			yesWeight += ((damageWeight - 4) * 2);
 		} else{
-			damageWeight = 10 - damageWeight;
-			noWeight += damageWeight;
+			noWeight += 10 - damageWeight;
 		}
 
 		// Is this move going to knock me out?
-		if(move.damage + (attacker.fastMove.damage * 2) >= defender.hp){
+		if(moveDamage + (fastMoveDamage * 2) >= defender.hp){
 			// How good of a matchup is this for us?
 			if(currentRating > 500){
 				yesWeight += Math.round((currentRating - 500) / 10)
@@ -846,31 +868,17 @@ function TrainingAI(l, p, b){
 			var move = defender.chargedMoves[i];
 			var turnsAway = Math.ceil( (move.energy - defender.energy) / defender.fastMove.energyGain ) * defender.fastMove.cooldown;
 
-			if( ((move.damage >= attacker.hp)||((move.damage >= attacker.stats.hp * .75)))&&(turnsAway <= 2)){
+			if( ((moveDamage >= attacker.hp)||((moveDamage >= defender.stats.hp * .75)))&&(turnsAway <= 2)){
 				if(! self.hasStrategy("ADVANCED_SHIELDING")){
 					yesWeight += 2;
 				} else{
 					// Let's also check that this move will faint or deal a lot of damage
-					if(move.damage + (attacker.fastMove.damage * 2) >= defender.hp){
+					if(moveDamage + (fastMoveDamage * 2) >= defender.hp){
 						yesWeight += 2;
 					} else{
 						noWeight += 2;
 					}
 				}
-			}
-		}
-
-		// How many Pokemon do I have left compared to shields?
-		if(yesWeight / noWeight > 1){
-			yesWeight += (3 - player.getRemainingPokemon()) * 4;
-		}
-
-		// If one of these options is significantly more weighted than the other, make it the only option
-		if(self.hasStrategy("BAD_DECISION_PROTECTION")){
-			if(yesWeight / noWeight >= 4){
-				noWeight = 0;
-			} else if (noWeight / yesWeight >= 4){
-				yesWeight = 0;
 			}
 		}
 
@@ -894,8 +902,23 @@ function TrainingAI(l, p, b){
 				}
 			}
 
-			if((! betterMatchupExists)&&(currentRating >= 500)&&((damageWeight > 4)||(move.damage + (attacker.fastMove.damage * 2) >= defender.hp))){
+			if((! betterMatchupExists)&&(currentRating >= 500)&&((damageWeight > 4)||(moveDamage + (fastMoveDamage * 2) >= defender.hp))){
 				yesWeight += 20;
+				noWeight = Math.round(noWeight / 2);
+			}
+		}
+
+		// How many Pokemon do I have left compared to shields?
+		if(yesWeight / noWeight > 1){
+			yesWeight += (3 - player.getRemainingPokemon()) * 4;
+		}
+
+		// If one of these options is significantly more weighted than the other, make it the only option
+		if(self.hasStrategy("BAD_DECISION_PROTECTION")){
+			if(yesWeight / noWeight >= 4){
+				noWeight = 0;
+			} else if (noWeight / yesWeight >= 4){
+				yesWeight = 0;
 			}
 		}
 
