@@ -200,7 +200,7 @@ function PokeMultiSelect(element){
 
 			// Set first slot to none if both are none
 
-			if(poke[3] == 'none'){
+			if((poke[2] == 'none')&&(poke[3] == 'none')){
 				pokemon.selectMove("charged", poke[3], 0);
 			}
 
