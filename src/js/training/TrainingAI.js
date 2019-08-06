@@ -433,6 +433,8 @@ function TrainingAI(l, p, b){
 
 		var overallRating = (scenarios.bothBait.average + scenarios.neitherBait.average + scenarios.noBait.average) / 3;
 
+		console.log(pokemon.speciesId + " rating " + overallRating);
+
 		var options = [];
 		var totalSwitchWeight = 0;
 
@@ -455,13 +457,19 @@ function TrainingAI(l, p, b){
 
 				totalSwitchWeight += (switchWeight * weightFactor);
 				options.push(new DecisionOption("SWITCH_FARM", switchWeight * weightFactor));
+
+				console.log("Switch Farm: " + (switchWeight * weightFactor));
 			}
+
+			console.log("Switch: " + switchWeight);
 		}
 
 		// If there's a decent chance this Pokemon really shouldn't switch out, add other actions
 
 		if(totalSwitchWeight < 10){
 			options.push(new DecisionOption("DEFAULT", 1));
+
+			console.log("Default: 1");
 
 			if((self.hasStrategy("BAIT_SHIELDS"))&&(opponent.shields > 0)){
 				var baitWeight = Math.round( (scenarios.bothBait.average - scenarios.noBait.average) / 20);
@@ -474,6 +482,8 @@ function TrainingAI(l, p, b){
 				}
 
 				options.push(new DecisionOption("BAIT_SHIELDS", baitWeight));
+
+				console.log("Bait: " + baitWeight);
 			}
 
 			if(self.hasStrategy("FARM_ENERGY")){
@@ -485,12 +495,16 @@ function TrainingAI(l, p, b){
 					farmWeight += 2;
 				}
 				options.push(new DecisionOption("FARM", farmWeight));
+
+				console.log("Farm: " + farmWeight);
 			}
 		}
 
 		// Decide the AI's operating strategy
 		var option = self.chooseOption(options);
 		self.processStrategy(option.name);
+
+		console.log(option.name);
 
 		if(turn !== undefined){
 			turnLastEvaluated = battle.getTurns();
@@ -722,13 +736,16 @@ function TrainingAI(l, p, b){
 
 			if((pokemon.hp > 0)&&(pokemon != poke)){
 				var scenario = self.runScenario("NO_BAIT", pokemon, opponent);
-				var weight = Math.round(scenario.average / 100);
+				var weight = Math.pow(Math.round(scenario.average / 100));
 
 				if(scenario.average > 500){
-					weight *= 10;
+					weight *= 2;
 				}
 
 				switchOptions.push(new DecisionOption(i, weight));
+
+
+				console.log(pokemon.speciesId + " " + scenario.average + " " + weight);
 			}
 		}
 
@@ -789,6 +806,8 @@ function TrainingAI(l, p, b){
 
 		var move = moves[self.chooseOption(moveGuessOptions).name]; // The guessed move of the attacker
 
+		console.log("Predicting " + move.name);
+
 		// Great! We've guessed the move, now let's analyze if we should shield like a player would
 		var yesWeight = 1;
 		var noWeight = 1;
@@ -800,7 +819,7 @@ function TrainingAI(l, p, b){
 			damageWeight = damageWeight - 4;
 			yesWeight += (damageWeight * 2);
 		} else{
-			damageWeight = 4 - damageWeight;
+			damageWeight = 10 - damageWeight;
 			noWeight += damageWeight;
 		}
 
@@ -812,10 +831,13 @@ function TrainingAI(l, p, b){
 			} else if(player.getRemainingPokemon() > 1){
 				noWeight += Math.round((500 - currentRating) / 10)
 			}
+		} else if(self.hasStrategy("ADVANCED_SHIELDING")){
+			// Save shields until they're needed
+			noWeight += 2;
 		}
 
 		// Monkey see, monkey do
-		if((attacker.battleStats.shieldsUsed > 0)&&(damageWeight > 2)){
+		if((attacker.battleStats.shieldsUsed > 0)&&(damageWeight > 2)&&(! self.hasStrategy("ADVANCED_SHIELDING"))){
 			yesWeight += 2;
 		}
 
@@ -824,20 +846,65 @@ function TrainingAI(l, p, b){
 			var move = defender.chargedMoves[i];
 			var turnsAway = Math.ceil( (move.energy - defender.energy) / defender.fastMove.energyGain ) * defender.fastMove.cooldown;
 
-			if( ((move.damage >= attacker.hp)||((move.damage >= attacker.stats.hp * .75)))&&(turnsAway < 4)){
-				yesWeight += 2;
+			if( ((move.damage >= attacker.hp)||((move.damage >= attacker.stats.hp * .75)))&&(turnsAway <= 2)){
+				if(! self.hasStrategy("ADVANCED_SHIELDING")){
+					yesWeight += 2;
+				} else{
+					// Let's also check that this move will faint or deal a lot of damage
+					if(move.damage + (attacker.fastMove.damage * 2) >= defender.hp){
+						yesWeight += 2;
+					} else{
+						noWeight += 2;
+					}
+				}
 			}
 		}
 
 		// How many Pokemon do I have left compared to shields?
-
-		if(yesWeight - noWeight > -3){
+		if(yesWeight / noWeight > 1){
 			yesWeight += (3 - player.getRemainingPokemon()) * 4;
+		}
+
+		// If one of these options is significantly more weighted than the other, make it the only option
+		if(self.hasStrategy("BAD_DECISION_PROTECTION")){
+			if(yesWeight / noWeight >= 4){
+				noWeight = 0;
+			} else if (noWeight / yesWeight >= 4){
+				yesWeight = 0;
+			}
+		}
+
+		// Does my current Pokemon have a better matchup against the attacker than my remaining Pokemon?
+		if((self.hasStrategy("ADVANCED_SHIELDING"))&&(player.getRemainingPokemon() > 1)){
+			var team = player.getTeam();
+			var remainingPokemon = [];
+
+			for(var i = 0; i < team.length; team++){
+				if((team[i].hp > 0)&&(team[i] != defender)){
+					remainingPokemon.push(team[i]);
+				}
+			}
+
+			var scenarios = self.runBulkScenarios("NO_BAIT", attacker, remainingPokemon);
+			var betterMatchupExists = false;
+
+			for(var i = 0; i < scenarios.length; i++){
+				if(scenarios[i] >= currentRating){
+					betterMatchupExists = true;
+				}
+			}
+
+			if((! betterMatchupExists)&&(currentRating >= 500)&&((damageWeight > 4)||(move.damage + (attacker.fastMove.damage * 2) >= defender.hp))){
+				yesWeight += 20;
+			}
 		}
 
 		var options = [];
 		options.push(new DecisionOption(true, yesWeight));
 		options.push(new DecisionOption(false, noWeight));
+
+		console.log("Yes: " + yesWeight);
+		console.log("No: " + noWeight);
 
 		var decision = self.chooseOption(options).name;
 
