@@ -156,6 +156,9 @@ var BattlerMaster = (function () {
 							charge = 0;
 							phaseTimer = chargeTime;
 							phaseInterval = setInterval(chargeUpStep, 1000 / 60);
+							
+							// Clear a previously buffered switch
+							bufferedSwitch = -1;
 							break;
 
 						case "suspend_charged_shield":
@@ -163,6 +166,9 @@ var BattlerMaster = (function () {
 							phaseTimer = chargeTime;
 							phaseInterval = setInterval(phaseStep, 1000 / 60);
 							interfaceLockout = 750;
+							
+							// Clear a previously buffered switch
+							bufferedSwitch = -1;
 							break;
 
 						case "suspend_charged_no_shields":
@@ -182,6 +188,9 @@ var BattlerMaster = (function () {
 
 						case "suspend_switch":
 							$(".animate-message .text").html("Opponent is selecting a Pokemon");
+							
+							// Clear a previously buffered switch
+							bufferedSwitch = -1;
 							break;
 
 						case "suspend_switch_self":
@@ -189,6 +198,9 @@ var BattlerMaster = (function () {
 							phaseInterval = setInterval(phaseStep, 1000 / 60);
 							self.openSwitchWindow();
 							interfaceLockout = 750;
+							
+							// Clear a previously buffered switch
+							bufferedSwitch = -1;
 							break;
 
 						case "game_paused":
@@ -442,15 +454,14 @@ var BattlerMaster = (function () {
 
 				if(autotap){
 					$(".controls .auto-tap").addClass("active");
-					if(bufferedSwitch == -1){
-						// Queue a fast move
-						battle.queueAction(0, "fast", 0);
-					} else{
-						// Queue a previously entered switch
-						battle.queueAction(0, "switch", bufferedSwitch);
-					}
+					battle.queueAction(0, "fast", 0);
 				} else{
 					$(".controls .auto-tap").removeClass("active");
+				}
+				
+				// Queue a previously entered switch
+				if(bufferedSwitch > -1){
+					battle.queueAction(0, "switch", bufferedSwitch);
 				}
 
 				// Hide the switch button if only one Pokemon remains
