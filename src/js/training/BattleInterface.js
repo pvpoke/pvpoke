@@ -149,7 +149,7 @@ var BattlerMaster = (function () {
 					switch(response.phase){
 						case "suspend_charged_attack":
 							$(".charge-window .move-bars").html('');
-							$(".charge-window .move-bars").append($(".controls .move-bar").eq(response.move).clone());
+							$(".charge-window .move-bars").append($(".controls .move-bar").eq(response.move).clone().addClass(activePokemon[0].chargedMoves[response.move].type));
 							$(".battle-window .animate-message .text").html("Tap to charge up "+activePokemon[0].chargedMoves[response.move].name+"!");
 							$(".switch-window").removeClass("active");
 
@@ -292,7 +292,8 @@ var BattlerMaster = (function () {
 
 								$bar.show();
 								$bar.find(".label").html(chargedMove.abbreviation);
-								$bar.find(".bar").attr("class","bar " + chargedMove.type);
+								//$bar.find(".bar").attr("class","bar " + chargedMove.type);
+								$bar.find(".bar").attr("type",chargedMove.type);
 								$bar.find(".bar-back").attr("class","bar-back " + chargedMove.type);
 							}
 						}
@@ -304,11 +305,13 @@ var BattlerMaster = (function () {
 						for(var n = 0; n < pokemon.chargedMoves.length; n++){
 							var chargedMove = pokemon.chargedMoves[n];
 							var $bar = $(".battle-window .move-bar").eq(n);
-							var chargePercent = (pokemon.energy / chargedMove.energy) * 100;
+							var chargePercent = Math.min((pokemon.energy / chargedMove.energy), 1);
+							var position = 66 - (chargePercent * 66);
+							$bar.find(".bar").first().css("background-position-y", position+"px");
 
-							$bar.find(".bar").first().css("height", chargePercent+"%");
+							//$bar.find(".bar").first().css("height", chargePercent+"%");
 
-							if(chargePercent >= 100){
+							if(chargePercent >= 1){
 								$bar.addClass("active");
 							} else{
 								$bar.removeClass("active");

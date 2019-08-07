@@ -450,6 +450,18 @@ a.random{
 				height:70px;
 
 				@include transition(all, 0.2s, ease, 0s);
+				
+				.bar{
+					@include transition(background-position-y, 0.2s, ease-out, 0s);
+					
+					background: url(../img/train/type-gradients.jpg);
+					background-repeat: no-repeat;
+					border-radius:40px;
+				}
+				
+				.bar-back{
+					border-radius:40px;
+				}
 
 				.label{
 					font-size:24px;
@@ -1371,6 +1383,27 @@ a.random{
 		}
 	}
 
+}
+
+.move-bar .bar{
+	&[type="bug"]{ background-position-x: 0px !important; }
+	&[type="dark"]{ background-position-x: -200px !important; }
+	&[type="dragon"]{ background-position-x: -400px !important; }
+	&[type="electric"]{ background-position-x: -600px !important; }
+	&[type="fairy"]{ background-position-x: -800px !important; }
+	&[type="fighting"]{ background-position-x: -1000px !important; }
+	&[type="fire"]{ background-position-x: -1200px !important; }
+	&[type="flying"]{ background-position-x: -1400px !important; }
+	&[type="ghost"]{ background-position-x: -1600px !important; }
+	&[type="grass"]{ background-position-x: -1800px !important; }
+	&[type="ground"]{ background-position-x: -2000px !important; }
+	&[type="ice"]{ background-position-x: -2200px !important; }
+	&[type="normal"]{ background-position-x: -2400px !important; }
+	&[type="poison"]{ background-position-x: -2600px !important; }
+	&[type="psychic"]{ background-position-x: -2800px !important; }
+	&[type="rock"]{ background-position-x: -3000px !important; }
+	&[type="steel"]{ background-position-x: -3200px !important; }
+	&[type="water"]{ background-position-x: -3400px !important; }
 }
 
 @media only screen and (max-width: 720px) {

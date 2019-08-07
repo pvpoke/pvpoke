@@ -27,26 +27,21 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.9.2 (August 4, 2019)</h4>
+	<h4>v1.9.3 (August 7, 2019)</h4>
 	<ul>
-		<li>Fixed an issue in Training Battles where Charged Moves would sometimes deal no damage</li>
+		<li>In Training Battles, switch commands are now buffered regardless of whether autotap is enabled or disabled to make switching seamless.</li>
 		<ul>
-			<li>This happened due to an issue where the game timers would desync and the Charged Move minigame would end early, resulting in your charge not being submitted before damage occurred. The timer desync part is still unresolved, but the Charged Move sequence has been reworked so your moves will deal the correct amount of damage even when this issue occurs.</li>
+			<li>I intended to replicate the "switch glitch" that appears in-game but reports were that switching was more difficult than in-game.</li>
 		</ul>
-		<li>When Autotap is enabled in Training Battles, switch commands are buffered and submitted each turn until they succeed. This should resolve issues that made switching incredibly difficult with Autotap enabled.</li>
+		<li>Fixed an issue where importing a team would sometimes result in no Charged Moves being selected.</li>
+		<li>Popup windows (Pokemon selection, etc.) can now scroll on mobile in cases where the popup content extends beyond the screen.</li>
+		<li>Adjusted Charged Move buttons to fix visual glitches on iPhone/Safari.</li>
+		<li>Adjusted AI behavior, with a focus on Champion difficulty:</li>
 		<ul>
-			<li>The simulator contains the same "switch glitch" in the game that causes switches to fail when you're in the middle of a Fast Move. For ease of use, this behavior is fixed when Autotap is enabled. You'll want to keep practicing care with your switches when you tap manually.</li>
-		</ul>
-		<li>Added the Rematch button for battles in Tournament Mode so you can replay against the same lineup. Matches you replay won't count for or against your record.</li>
-		<li>Added a new set of controls to Training Battles so you can:</li>
-		<ul>
-			<li>Pause the game mid-match</li>
-			<li>Instantly restart the current match</li>
-			<li>Quit from the current match to the setup options in 3v3 mode, or the team select screen in 6v6 mode</li>
-		</ul>
-		<li>Tweaked the AI's pick strategies in 3v3 mode so counter leads are less frequent in the higher difficulties.</li>
-		<ul>
-			<li>The AI doesn't have advanced knowledge of your lead, but how the pick method works in 3v3 made a counter lead highly likely. This has been turned down so you should encounter a wider variety of leads and lineups. This doesn't impact 6v6.</li>
+			<li>The AI is now more hesitant to shield in general, especially involving Power-Up Punch and Acid Spray.</li>
+			<li>The AI should also make fewer curious switches, such as tossing Pokemon against their hard counters.</li>
+			<li>The AI is now more likely to preserve switch advantange and stick it out in close or neutral matchups.</li>
+			<li>These changes result in more consistent behavior but also allow less veriance. I'll be looking closely at game data and feeback to make sure these behavior changes are more engaging and challenging than the old behaviors.</li>
 		</ul>
 	</ul>
 

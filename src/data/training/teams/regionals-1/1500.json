@@ -68,6 +68,13 @@
 				"weight":1
 			},
 			{
+				"speciesId": "medicham",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["POWER_UP_PUNCH","PSYCHIC"],
+				"difficulty": 3,
+				"weight":2
+			},
+			{
 				"speciesId": "toxicroak",
 				"fastMove": "COUNTER",
 				"chargedMoves": ["MUD_BOMB","SLUDGE_BOMB"],

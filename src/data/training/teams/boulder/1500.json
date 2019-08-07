@@ -37,7 +37,7 @@
 				"fastMove": "COUNTER",
 				"chargedMoves": ["POWER_UP_PUNCH","PSYCHIC"],
 				"difficulty": 3,
-				"weight":5
+				"weight":8
 			},
 			{
 				"speciesId": "medicham",
@@ -45,6 +45,13 @@
 				"chargedMoves": ["POWER_UP_PUNCH","ICE_PUNCH"],
 				"difficulty": 2,
 				"weight":20
+			},
+			{
+				"speciesId": "medicham",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["POWER_UP_PUNCH","DYNAMIC_PUNCH"],
+				"difficulty": 2,
+				"weight":2
 			},
 			{
 				"speciesId": "medicham",
