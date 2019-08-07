@@ -1013,28 +1013,26 @@ function Battle(){
 
 					self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because opponent has shields and fast moves will knock them out before their cooldown completes");
 				}
+			}
 
-				// Don't use best charged move if opponent has shields and a cheaper move is charged
+			// Don't use best charged move if opponent has shields and a cheaper move is charged
 
-				for(var n = 0; n < poke.chargedMoves.length; n++){
+			for(var n = 0; n < poke.chargedMoves.length; n++){
 
-					// Don't use best charged moves if a cheaper move is available to bait or faint
-					if((poke.energy >= poke.chargedMoves[n].energy) && (poke.chargedMoves[n].energy < poke.bestChargedMove.energy)){
-						if(poke.baitShields){
-							useChargedMove = false;
+				// Don't use best charged moves if a cheaper move is available to bait or faint
+				if((poke.energy >= poke.chargedMoves[n].energy) && (poke.chargedMoves[n].energy < poke.bestChargedMove.energy)){
+					if(poke.baitShields){
+						useChargedMove = false;
 
-							self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because it has a cheaper move to remove shields");
-						}
+						self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because it has a cheaper move to remove shields");
+					}
 
-						if(opponent.hp <= poke.chargedMoves[n].damage){
-							useChargedMove = false;
+					if(opponent.hp <= poke.chargedMoves[n].damage){
+						useChargedMove = false;
 
-							self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because it has a cheaper move to faint");
-						}
+						self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because it has a cheaper move to faint");
 					}
 				}
-
-
 			}
 
 			if(poke.farmEnergy){
