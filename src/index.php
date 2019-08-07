@@ -35,7 +35,7 @@
 		</ul>
 		<li>Fixed an issue where importing a team would sometimes result in no Charged Moves being selected.</li>
 		<li>Popup windows (Pokemon selection, etc.) can now scroll on mobile in cases where the popup content extends beyond the screen.</li>
-		<li>Adjusted Charged Move buttons to fix visual glitches on iPhone/Safari.</li>
+		<li>Fixed visual glitches with the Charged Move buttons on iPhone/Safari.</li>
 		<li>Adjusted AI behavior, with a focus on Champion difficulty:</li>
 		<ul>
 			<li>The AI is now more hesitant to shield in general, especially involving Power-Up Punch and Acid Spray.</li>
