@@ -644,11 +644,6 @@ var BattlerMaster = (function () {
 						var pokeStr = pokemon.speciesName + ' ' + pokemon.fastMove.abbreviation;
 						var chargedMoveAbbrevations = [];
 
-						// Only report this Pokemon if it was used in battle
-						if(pokemon.hp == pokemon.stats.hp){
-							continue;
-						}
-
 						for(var k = 0; k < pokemon.chargedMoves.length; k++){
 							chargedMoveAbbrevations.push(pokemon.chargedMoves[k].abbreviation);
 						}
@@ -676,13 +671,17 @@ var BattlerMaster = (function () {
 						var score = Math.round(pokemon.battleStats.damage + (50 * pokemon.battleStats.shieldsBurned));
 						teamScore += score;
 
-						gtag('event', battleSummaryStr, {
-						  'event_category' : 'Training Pokemon',
-						  'event_label' : pokeStr,
-						  'value' : score+'',
-						  'player_type': playerType,
-						  'team_position': n+1
-						});
+						// Only report this Pokemon if it was used in battle
+						if(pokemon.hp < pokemon.stats.hp){
+							gtag('event', battleSummaryStr, {
+							  'event_category' : 'Training Pokemon',
+							  'event_label' : pokeStr,
+							  'value' : score+'',
+							  'player_type': playerType,
+							  'team_position': n+1
+							});
+						}
+
 					}
 
 					gtag('event', battleSummaryStr, {

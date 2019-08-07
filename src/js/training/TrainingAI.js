@@ -20,6 +20,7 @@ function TrainingAI(l, p, b){
 	var self = this;
 
 	var currentStrategy; // The current employed strategy to determine behavior
+	var previousStrategy; // Store the previous strategy
 	var scenarios;
 
 	var turnLastEvaluated = 0;
@@ -446,7 +447,7 @@ function TrainingAI(l, p, b){
 			}
 
 			var switchWeight = Math.floor(Math.max((switchThreshold - overallRating) / 10, 0));
-			
+
 			// Is the opponent switch locked and do I have a better Pokemon for it?
 			if(opponentPlayer.getSwitchTimer() > 20){
 				var team = player.getTeam();
@@ -457,9 +458,9 @@ function TrainingAI(l, p, b){
 						remainingPokemon.push(team[i]);
 					}
 				}
-				
+
 				console.log(remainingPokemon);
-				
+
 				console.log(pokemon.speciesId + " has a current rating of " + overallRating);
 
 				for(var i = 0; i < remainingPokemon.length; i++){
@@ -485,8 +486,14 @@ function TrainingAI(l, p, b){
 				var dpt = (opponent.fastMove.damage / (opponent.fastMove.cooldown / 500));
 				var percentPerTurn = (dpt / pokemon.stats.hp) * 100; // The opponent's fast attack will deal this % damage per turn
 				var weightFactor =  Math.pow(Math.round(Math.max(3 - percentPerTurn, 0)), 2);
-				
-				if(percentPerTurn > 5){
+
+				// Switch immediately if previously failed to switch before a Charged Move
+				if(previousStrategy == "SWITCH_FARM"){
+					weightFactor = 0;
+				}
+
+				console.log("percent per turn " + percentPerTurn);
+				if(percentPerTurn > 3){
 					weightFactor = 0;
 				}
 
@@ -515,12 +522,12 @@ function TrainingAI(l, p, b){
 						baitWeight += 5;
 					}
 				}
-				
+
 				// If behind on shields, bait more
 				if(player.getShields() < opponentPlayer.getShields()){
 					baitWeight += 2;
 				}
-				
+
 				// If the Pokemon has very low health, don't bait
 				if((pokemon.hp / pokemon.stats.hp < .25)&&(pokemon.energy < 70)){
 					baitWeight = 0;
@@ -533,12 +540,22 @@ function TrainingAI(l, p, b){
 
 			if(self.hasStrategy("FARM_ENERGY")){
 				var farmWeight = Math.round( (scenarios.farm.average - 600) / 20);
-				if((opponent.energy < 20)&&(scenarios.farm.average > 500)){
-					farmWeight += 4;
+
+				// Let's farm if we'll win and the opponent is low on energy
+				if((opponent.energy < 20)&&(scenarios.farm.average > 525)){
+					farmWeight += 12;
 				}
+
+				// Don't farm against the last Pokemon
 				if(opponentPlayer.getRemainingPokemon() < 2){
 					farmWeight = 0;
 				}
+
+				// Let's make very certain to farm if that looks like a winning strategy
+				if((self.hasStrategy("BAD_DECISION_PROTECTION"))&&(farmWeight >= 15)){
+					farmWeight *= 5;
+				}
+
 				options.push(new DecisionOption("FARM", farmWeight));
 
 				console.log("Farm: " + farmWeight);
@@ -698,6 +715,7 @@ function TrainingAI(l, p, b){
 	// Change settings to accomodate a new strategy
 
 	this.processStrategy = function(strategy){
+		previousStrategy = currentStrategy;
 		currentStrategy = strategy;
 
 		var pokemon = battle.getPokemon()[player.getIndex()];
@@ -743,11 +761,11 @@ function TrainingAI(l, p, b){
 				// How much potential damage will they have after one more Fast Move?
 
 				var extraFastMoves = Math.floor((poke.fastMove.cooldown - opponent.cooldown) / (opponent.fastMove.cooldown));
-				
+
 				if(poke.fastMove.cooldown != opponent.fastMove.cooldown){
 					extraFastMoves = Math.floor((poke.fastMove.cooldown) / (opponent.fastMove.cooldown));
 				}
-				
+
 				var futureEnergy = opponent.energy + (extraFastMoves * opponent.fastMove.energyGain);
 				var futureDamage = self.calculatePotentialDamage(opponent, poke, futureEnergy);
 
@@ -827,7 +845,7 @@ function TrainingAI(l, p, b){
 		// Which move do we think the attacker is using?
 		var moves = [];
 		var minimumEnergy = 100;
-		
+
 		// Don't allow the AI to guess less energy than the opponent's fastest move
 		for(var i = 0; i < attacker.chargedMoves.length; i++){
 			if(minimumEnergy > attacker.chargedMoves[i].energy){
@@ -858,12 +876,12 @@ function TrainingAI(l, p, b){
 			// Is the opponent low on HP? Probably the higher damage move
 			if((i == 0)&&(attacker.hp / attacker.stats.hp <= .25)){
 				moveWeight += 8;
-				
+
 				if(moves[i].name == "Acid Spray"){
 					moveWeight += 12;
 				}
 			}
-			
+
 			// Am I the last Pokemon and will this move faint me? Better protect myself
 			if((player.getRemainingPokemon() == 1)&&(moves[i].damage >= defender.hp)){
 				moveWeight += 4;
@@ -942,21 +960,21 @@ function TrainingAI(l, p, b){
 					remainingPokemon.push(team[i]);
 				}
 			}
-			
+
 			var betterMatchupExists = false;
-			
+
 			console.log("Current rating " + currentRating);
-			
+
 			for(var i = 0; i < remainingPokemon.length; i++){
 				var scenario = self.runScenario("NO_BAIT", remainingPokemon[i], attacker);
-				
+
 				console.log(remainingPokemon[i].speciesId + " rating " + scenario.average);
-				
+
 				if(scenario.average >= currentRating){
 					betterMatchupExists = true;
 				}
 			}
-			
+
 			if(! betterMatchupExists){
 				console.log("No better matchup exists");
 			}
