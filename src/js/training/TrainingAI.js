@@ -433,6 +433,8 @@ function TrainingAI(l, p, b){
 		scenarios.farm = self.runScenario("FARM", pokemon, opponent);
 
 		var overallRating = (scenarios.bothBait.average + scenarios.neitherBait.average + scenarios.noBait.average) / 3;
+		
+		console.log("Rating " + overallRating);
 
 		var options = [];
 		var totalSwitchWeight = 0;
@@ -445,9 +447,14 @@ function TrainingAI(l, p, b){
 			}
 
 			var switchWeight = Math.floor(Math.max((switchThreshold - overallRating) / 10, 0));
+			var canCounterSwitch = false;
+			
+			console.log("Switch weight 1: " + switchWeight);
+			
+			console.log("Switch timer: " + opponentPlayer.getSwitchTimer());
 
 			// Is the opponent switch locked and do I have a better Pokemon for it?
-			if(opponentPlayer.getSwitchTimer() > 20){
+			if(opponentPlayer.getSwitchTimer() > 30000){
 				var team = player.getTeam();
 				var remainingPokemon = [];
 
@@ -460,11 +467,15 @@ function TrainingAI(l, p, b){
 				for(var i = 0; i < remainingPokemon.length; i++){
 					var scenario = self.runScenario("NO_BAIT", remainingPokemon[i], opponent);
 					var rating = scenario.average;
-					if(rating >= overallRating){
+					console.log(remainingPokemon[i].speciesId + " " + rating);
+					if(rating - 500 > (Math.max(overallRating, 500) - 500) * 1.2){
 						switchWeight += Math.round((rating-overallRating)/10);
+						canCounterSwitch = true;
 					}
 				}
 			}
+
+			console.log("Switch weight 2: " + switchWeight);
 
 			// Don't switch Pokemon when HP is low
 			if((self.hasStrategy("PRESERVE_SWITCH_ADVANTAGE"))&&(opponentPlayer.getSwitchTimer() - player.getSwitchTimer() < 30)&&(pokemon.hp / pokemon.stats.hp <= .25)&&(opponentPlayer.getRemainingPokemon() > 1)){
@@ -488,16 +499,28 @@ function TrainingAI(l, p, b){
 				if(percentPerTurn > 3){
 					weightFactor = 0;
 				}
+				
+				if(opponent.fastMove.energyGain / (opponent.fastMove.cooldown / 500) < 3){
+					weightFactor = 0;
+				}
+				
+				if((pokemon.hp / pokemon.stats.hp < .5)&&(opponentPlayer.getRemainingPokemon() > 1)){
+					weightFactor = .1;
+				}
+				
+				if(canCounterSwitch){
+					weightFactor = .1;
+				}
 
 				totalSwitchWeight += (switchWeight * weightFactor);
-				options.push(new DecisionOption("SWITCH_FARM", switchWeight * weightFactor));
+				options.push(new DecisionOption("SWITCH_FARM", Math.floor(switchWeight * weightFactor)));
 			}
 		}
 
 		// If there's a decent chance this Pokemon really shouldn't switch out, add other actions
 
 		if(totalSwitchWeight < 10){
-			options.push(new DecisionOption("DEFAULT", 2));
+			options.push(new DecisionOption("DEFAULT", 1));
 
 			if((self.hasStrategy("BAIT_SHIELDS"))&&(opponent.shields > 0)){
 				var baitWeight = Math.max(Math.round( (scenarios.bothBait.average - scenarios.noBait.average) / 20), 1);
@@ -526,7 +549,7 @@ function TrainingAI(l, p, b){
 				var farmWeight = Math.round( (scenarios.farm.average - 600) / 20);
 
 				// Let's farm if we'll win and the opponent is low on energy
-				if((opponent.energy < 20)&&(scenarios.farm.average > 525)){
+				if((opponent.energy < 20)&&(scenarios.farm.average > 500)){
 					farmWeight += 12;
 				}
 
@@ -539,6 +562,8 @@ function TrainingAI(l, p, b){
 				if((self.hasStrategy("BAD_DECISION_PROTECTION"))&&(farmWeight >= 15)){
 					farmWeight *= 5;
 				}
+				
+				console.log("Farm weight: " + farmWeight);
 
 				options.push(new DecisionOption("FARM", farmWeight));
 			}
@@ -615,6 +640,9 @@ function TrainingAI(l, p, b){
 		var b = new Battle();
 		b.setNewPokemon(pokemon, 0, false);
 		b.setNewPokemon(opponent, 1, false);
+		
+		var shieldWeights = [5,4,1];
+		var totalWeight = 0;
 
 		for(var i = 0; i <= startStats[0].shields; i++){
 			for(n = 0; n <= startStats[1].shields; n++){
@@ -623,8 +651,12 @@ function TrainingAI(l, p, b){
 				b.simulate();
 
 				var rating = b.getBattleRatings()[0];
+				
 				scenario.matchups.push(rating);
-				scenario.average += rating;
+				
+				var shieldWeight = shieldWeights[i] * shieldWeights[n];
+				totalWeight += shieldWeight;
+				scenario.average += (rating * shieldWeight);
 
 				if((rating >= 500)&&(i < scenario.minShields)){
 					scenario.minShields = i;
@@ -632,7 +664,7 @@ function TrainingAI(l, p, b){
 			}
 		}
 
-		scenario.average /= scenario.matchups.length;
+		scenario.average /= totalWeight;
 
 		pokemon.startingShields = startStats[0].shields;
 		pokemon.startHp = startStats[0].hp;
@@ -883,9 +915,9 @@ function TrainingAI(l, p, b){
 		var fastMoveDamage = attacker.fastMove.damage;
 
 		if(damageWeight > 4){
-			yesWeight += ((damageWeight - 4) * 2);
+			yesWeight += ((damageWeight - 2) * 3);
 		} else{
-			noWeight += 6 - damageWeight;
+			noWeight += 5 - damageWeight;
 		}
 
 		// Is this move going to knock me out?
@@ -911,15 +943,15 @@ function TrainingAI(l, p, b){
 			var move = defender.chargedMoves[i];
 			var turnsAway = Math.ceil( (move.energy - defender.energy) / defender.fastMove.energyGain ) * defender.fastMove.cooldown;
 
-			if( ((moveDamage >= attacker.hp)||((moveDamage >= defender.stats.hp * .75)))&&(turnsAway <= 2)){
+			if( ((moveDamage >= attacker.hp)||((moveDamage >= defender.stats.hp * .8)))&&(turnsAway <= 2)){
 				if(! self.hasStrategy("ADVANCED_SHIELDING")){
 					yesWeight += 2;
 				} else{
 					// Let's also check that this move will faint or deal a lot of damage
 					if(moveDamage + (fastMoveDamage * 2) >= defender.hp){
-						yesWeight += 2;
+						yesWeight += 4;
 					} else{
-						noWeight += 2;
+						noWeight += 4;
 					}
 				}
 			}
@@ -965,6 +997,9 @@ function TrainingAI(l, p, b){
 				yesWeight = 0;
 			}
 		}
+		
+		console.log("Yes: " + yesWeight);
+		console.log("No: " + noWeight);
 
 		var options = [];
 		options.push(new DecisionOption(true, yesWeight));
