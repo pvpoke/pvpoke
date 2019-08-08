@@ -356,6 +356,9 @@ var BattlerMaster = (function () {
 						} else{
 							$(".battle-window .switch-btn").removeClass("active");
 							$(".battle-window .switch-btn").html(Math.floor(player.getSwitchTimer() / 1000));
+							
+							// Hide the switch window
+							$(".battle-window .switch-window").removeClass("active");
 						}
 					}
 				}
