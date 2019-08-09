@@ -406,6 +406,7 @@ function TrainingAI(l, p, b){
 	// Evaluate the current matchup and decide a high level strategy
 
 	this.evaluateMatchup = function(turn, pokemon, opponent, opponentPlayer){
+		console.log("EVALUATING MATCHUP");
 		// Preserve current HP, energy, and stat boosts
 		pokemon.startHp = pokemon.hp;
 		pokemon.startEnergy = pokemon.energy;
@@ -645,7 +646,7 @@ function TrainingAI(l, p, b){
 		b.setNewPokemon(pokemon, 0, false);
 		b.setNewPokemon(opponent, 1, false);
 
-		var shieldWeights = [5,4,1];
+		var shieldWeights = [4,4,1];
 		var totalWeight = 0;
 
 		for(var i = 0; i <= startStats[0].shields; i++){
@@ -770,6 +771,23 @@ function TrainingAI(l, p, b){
 
 		console.log(currentStrategy);
 
+		// How much potential damage will they have after one more Fast Move?
+		var extraFastMoves = Math.floor((poke.fastMove.cooldown) / (opponent.fastMove.cooldown)) + 1;
+
+		if(poke.fastMove.cooldown != opponent.fastMove.cooldown){
+			extraFastMoves = Math.floor((poke.fastMove.cooldown) / (opponent.fastMove.cooldown));
+		}
+
+		var futureEnergy = opponent.energy + (extraFastMoves * opponent.fastMove.energyGain);
+		var futureDamage = self.calculatePotentialDamage(opponent, poke, futureEnergy);
+
+		// Stop farming if they're about to get a lethal Charged Move
+
+		if(futureDamage >= poke.hp){
+			currentStrategy = "DEFAULT";
+			self.processStrategy(currentStrategy);
+		}
+
 		if((currentStrategy.indexOf("SWITCH") > -1) && (player.getSwitchTimer() == 0)){
 			var performSwitch = false;
 
@@ -813,16 +831,6 @@ function TrainingAI(l, p, b){
 
 			// Be likely to overfarm if the opponent is low on energy
 			overfarmChance += Math.round((50 - opponent.energy) / 10);
-
-			// How much potential damage will they have after one more Fast Move?
-			var extraFastMoves = Math.floor((poke.fastMove.cooldown) / (opponent.fastMove.cooldown)) + 1;
-
-			if(poke.fastMove.cooldown != opponent.fastMove.cooldown){
-				extraFastMoves = Math.floor((poke.fastMove.cooldown) / (opponent.fastMove.cooldown));
-			}
-
-			var futureEnergy = opponent.energy + (extraFastMoves * opponent.fastMove.energyGain);
-			var futureDamage = self.calculatePotentialDamage(opponent, poke, futureEnergy);
 
 			console.log("Future Damage + " + futureDamage);
 
@@ -950,6 +958,11 @@ function TrainingAI(l, p, b){
 				}
 			}
 
+			// Be more cautious when you have more shields
+			if(i == 0){
+				moveWeight += player.getShields();
+			}
+
 			// Am I the last Pokemon and will this move faint me? Better protect myself
 			if((player.getRemainingPokemon() == 1)&&(moves[i].damage >= defender.hp)){
 				moveWeight += 4;
@@ -974,10 +987,17 @@ function TrainingAI(l, p, b){
 		var fastMoveDamage = attacker.fastMove.damage;
 
 		if(damageWeight > 4){
-			yesWeight += ((damageWeight - 2) * 3);
+			if((! self.hasStrategy("ADVANCED_SHIELDING"))||(player.getRemainingPokemon() == 1)){
+				yesWeight += ((damageWeight - 2) * 3);
+			} else if(currentRating > 500){
+				yesWeight += ((damageWeight - 2) * 3);
+			}
+
 		} else{
 			noWeight += 5 - damageWeight;
 		}
+
+		console.log("Yes 1: " + yesWeight);
 
 		// Is this move going to knock me out?
 		if(moveDamage + (fastMoveDamage * 2) >= defender.hp){
@@ -992,6 +1012,8 @@ function TrainingAI(l, p, b){
 			noWeight += 4;
 		}
 
+		console.log("Yes 2: " + yesWeight);
+
 		// Monkey see, monkey do
 		if((attacker.battleStats.shieldsUsed > 0)&&(damageWeight > 2)&&(! self.hasStrategy("ADVANCED_SHIELDING"))){
 			yesWeight += 2;
@@ -1000,7 +1022,7 @@ function TrainingAI(l, p, b){
 		// Is this Pokemon close to a move that will faint or seriously injure the attacker?
 		for(var i = 0; i < defender.chargedMoves.length; i++){
 			var move = defender.chargedMoves[i];
-			var turnsAway = Math.ceil( (move.energy - defender.energy) / defender.fastMove.energyGain ) * defender.fastMove.cooldown;
+			var turnsAway = Math.ceil( (move.energy - defender.energy) / defender.fastMove.energyGain ) * (defender.fastMove.cooldown / 500);
 
 			if( ((moveDamage >= attacker.hp)||((moveDamage >= defender.stats.hp * .8)))&&(turnsAway <= 2)){
 				if(! self.hasStrategy("ADVANCED_SHIELDING")){
@@ -1015,6 +1037,8 @@ function TrainingAI(l, p, b){
 				}
 			}
 		}
+
+		console.log("Yes 3: " + yesWeight);
 
 		// Does my current Pokemon have a better matchup against the attacker than my remaining Pokemon?
 		if((self.hasStrategy("ADVANCED_SHIELDING"))&&(player.getRemainingPokemon() > 1)){
@@ -1037,7 +1061,7 @@ function TrainingAI(l, p, b){
 				}
 			}
 
-			if((! betterMatchupExists)&&(currentRating >= 500)&&((damageWeight > 3)||(moveDamage + (fastMoveDamage * 2) >= defender.hp))){
+			if((! betterMatchupExists)&&(currentRating >= 500)&&((damageWeight > 4)||(moveDamage + (fastMoveDamage * 2) >= defender.hp))){
 				yesWeight += 20;
 				noWeight = Math.round(noWeight / 2);
 			}
@@ -1048,10 +1072,14 @@ function TrainingAI(l, p, b){
 			}
 		}
 
+		console.log("Yes 4: " + yesWeight);
+
 		// How many Pokemon do I have left compared to shields?
 		if((currentRating >= 500)||(player.getRemainingPokemon() == 1)){
-			yesWeight += (3 - player.getRemainingPokemon()) * (damageWeight-1) * 2;
+			yesWeight += (3 - player.getRemainingPokemon()) * (damageWeight-1);
 		}
+
+		console.log("Yes 5: " + yesWeight);
 
 		// If one of these options is significantly more weighted than the other, make it the only option
 		if(self.hasStrategy("BAD_DECISION_PROTECTION")){
