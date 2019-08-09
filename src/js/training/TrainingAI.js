@@ -567,6 +567,19 @@ function TrainingAI(l, p, b){
 
 				options.push(new DecisionOption("FARM", farmWeight));
 			}
+			
+			// Potentially farm more energy than needed
+			
+			if(self.hasStrategy("OVERFARM")){
+				var overfarmWeight = Math.round( (overallRating - 600) / 40);
+				
+				if(overallRating > 500){
+					overfarmWeight += Math.round((40 - opponent.energy) / 20);
+				}
+				
+				console.log("Overfarm weight: " + overfarmWeight);
+				options.push(new DecisionOption("OVERFARM", overfarmWeight));
+			}
 		}
 
 		// Decide the AI's operating strategy
@@ -750,6 +763,10 @@ function TrainingAI(l, p, b){
 				pokemon.baitShields = true;
 				pokemon.farmEnergy = false;
 				break;
+				
+			case "OVERFARM":
+				pokemon.farmEnergy = true;
+				break;
 		}
 	}
 
@@ -758,6 +775,8 @@ function TrainingAI(l, p, b){
 
 		poke.setBattle(battle);
 		poke.resetMoves();
+		
+		console.log(currentStrategy);
 
 		if((currentStrategy.indexOf("SWITCH") > -1) && (player.getSwitchTimer() == 0)){
 			var performSwitch = false;
@@ -791,6 +810,24 @@ function TrainingAI(l, p, b){
 				// Determine a Pokemon to switch to
 				var switchChoice = self.decideSwitch();
 				action = new TimelineAction("switch", player.getIndex(), turn, switchChoice, {priority: poke.priority});
+			}
+		}
+		
+		if(currentStrategy == "OVERFARM"){
+
+			// How much potential damage will they have after one more Fast Move?
+			var extraFastMoves = Math.floor((poke.fastMove.cooldown - opponent.cooldown) / (opponent.fastMove.cooldown));
+
+			if(poke.fastMove.cooldown != opponent.fastMove.cooldown){
+				extraFastMoves = Math.floor((poke.fastMove.cooldown) / (opponent.fastMove.cooldown));
+			}
+
+			var futureEnergy = opponent.energy + (extraFastMoves * opponent.fastMove.energyGain);
+			var futureDamage = self.calculatePotentialDamage(opponent, poke, futureEnergy);
+
+			if((futureDamage >= poke.hp)||(futureDamage >= poke.stats.hp * .25)){
+				currentStrategy = "DEFAULT";
+				self.processStrategy("DEFAULT");
 			}
 		}
 
