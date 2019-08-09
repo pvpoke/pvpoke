@@ -433,7 +433,7 @@ function TrainingAI(l, p, b){
 		scenarios.farm = self.runScenario("FARM", pokemon, opponent);
 
 		var overallRating = (scenarios.bothBait.average + scenarios.neitherBait.average + scenarios.noBait.average) / 3;
-		
+
 		console.log("Rating " + overallRating);
 
 		var options = [];
@@ -448,9 +448,9 @@ function TrainingAI(l, p, b){
 
 			var switchWeight = Math.floor(Math.max((switchThreshold - overallRating) / 10, 0));
 			var canCounterSwitch = false;
-			
+
 			console.log("Switch weight 1: " + switchWeight);
-			
+
 			console.log("Switch timer: " + opponentPlayer.getSwitchTimer());
 
 			// Is the opponent switch locked and do I have a better Pokemon for it?
@@ -499,17 +499,21 @@ function TrainingAI(l, p, b){
 				if(percentPerTurn > 3){
 					weightFactor = 0;
 				}
-				
+
 				if(opponent.fastMove.energyGain / (opponent.fastMove.cooldown / 500) < 3){
 					weightFactor = 0;
 				}
-				
+
 				if((pokemon.hp / pokemon.stats.hp < .5)&&(opponentPlayer.getRemainingPokemon() > 1)){
 					weightFactor = .1;
 				}
-				
+
 				if(canCounterSwitch){
 					weightFactor = .1;
+				}
+
+				if(pokemon.hp / pokemon.stats.hp < .25){
+					weightFactor = 0;
 				}
 
 				totalSwitchWeight += (switchWeight * weightFactor);
@@ -562,23 +566,10 @@ function TrainingAI(l, p, b){
 				if((self.hasStrategy("BAD_DECISION_PROTECTION"))&&(farmWeight >= 15)){
 					farmWeight *= 5;
 				}
-				
+
 				console.log("Farm weight: " + farmWeight);
 
 				options.push(new DecisionOption("FARM", farmWeight));
-			}
-			
-			// Potentially farm more energy than needed
-			
-			if(self.hasStrategy("OVERFARM")){
-				var overfarmWeight = Math.round( (overallRating - 600) / 40);
-				
-				if(overallRating > 500){
-					overfarmWeight += Math.round((40 - opponent.energy) / 20);
-				}
-				
-				console.log("Overfarm weight: " + overfarmWeight);
-				options.push(new DecisionOption("OVERFARM", overfarmWeight));
 			}
 		}
 
@@ -653,7 +644,7 @@ function TrainingAI(l, p, b){
 		var b = new Battle();
 		b.setNewPokemon(pokemon, 0, false);
 		b.setNewPokemon(opponent, 1, false);
-		
+
 		var shieldWeights = [5,4,1];
 		var totalWeight = 0;
 
@@ -664,9 +655,9 @@ function TrainingAI(l, p, b){
 				b.simulate();
 
 				var rating = b.getBattleRatings()[0];
-				
+
 				scenario.matchups.push(rating);
-				
+
 				var shieldWeight = shieldWeights[i] * shieldWeights[n];
 				totalWeight += shieldWeight;
 				scenario.average += (rating * shieldWeight);
@@ -763,7 +754,7 @@ function TrainingAI(l, p, b){
 				pokemon.baitShields = true;
 				pokemon.farmEnergy = false;
 				break;
-				
+
 			case "OVERFARM":
 				pokemon.farmEnergy = true;
 				break;
@@ -772,10 +763,11 @@ function TrainingAI(l, p, b){
 
 	this.decideAction = function(turn, poke, opponent){
 		var action = null;
+		var opponentPlayer = battle.getPlayers()[opponent.index];
 
 		poke.setBattle(battle);
 		poke.resetMoves();
-		
+
 		console.log(currentStrategy);
 
 		if((currentStrategy.indexOf("SWITCH") > -1) && (player.getSwitchTimer() == 0)){
@@ -812,11 +804,18 @@ function TrainingAI(l, p, b){
 				action = new TimelineAction("switch", player.getIndex(), turn, switchChoice, {priority: poke.priority});
 			}
 		}
-		
-		if(currentStrategy == "OVERFARM"){
+
+		// Potentially farm more energy than needed
+
+		if((self.hasStrategy("OVERFARM"))&&(scenarios.noBait.average > 450)
+			&&(currentStrategy.indexOf("SWITCH") == -1)&&(opponentPlayer.getRemainingPokemon() > 1)){
+			var overfarmChance = 2;
+
+			// Be likely to overfarm if the opponent is low on energy
+			overfarmChance += Math.round((50 - opponent.energy) / 10);
 
 			// How much potential damage will they have after one more Fast Move?
-			var extraFastMoves = Math.floor((poke.fastMove.cooldown - opponent.cooldown) / (opponent.fastMove.cooldown));
+			var extraFastMoves = Math.floor((poke.fastMove.cooldown) / (opponent.fastMove.cooldown)) + 1;
 
 			if(poke.fastMove.cooldown != opponent.fastMove.cooldown){
 				extraFastMoves = Math.floor((poke.fastMove.cooldown) / (opponent.fastMove.cooldown));
@@ -825,9 +824,32 @@ function TrainingAI(l, p, b){
 			var futureEnergy = opponent.energy + (extraFastMoves * opponent.fastMove.energyGain);
 			var futureDamage = self.calculatePotentialDamage(opponent, poke, futureEnergy);
 
-			if((futureDamage >= poke.hp)||(futureDamage >= poke.stats.hp * .25)){
-				currentStrategy = "DEFAULT";
-				self.processStrategy("DEFAULT");
+			console.log("Future Damage + " + futureDamage);
+
+			if((futureDamage >= poke.hp)||(futureDamage >= poke.stats.hp * .15)){
+				overfarmChance = -1;
+			}
+
+			if(poke.energy == 100){
+				overfarmChance = -1;
+			}
+
+			// Don't overfarm with Power-Up Punch or Acid Spray
+			for(var i = 0; i < poke.chargedMoves.length; i++){
+				if((poke.chargedMoves[i].name == "Power-Up Punch")||(poke.chargedMoves[i].name == "Acid Spray")){
+					overfarmChance = -1;
+				}
+			}
+
+			// Don't overfarm if this Pokemon has extremely low HP
+			if(poke.hp / poke.stats.hp < .2){
+				overfarmChance = -1;
+			}
+
+			// Perform overfarm
+			if(Math.floor((Math.random() * overfarmChance)) > 0){
+				action = new TimelineAction("fast", poke.index, turn, 0, {priority: poke.priority});
+				console.log("overfarm");
 			}
 		}
 
@@ -1019,6 +1041,11 @@ function TrainingAI(l, p, b){
 				yesWeight += 20;
 				noWeight = Math.round(noWeight / 2);
 			}
+
+			// Avoid shielding twice if it won't be fatal
+			if((betterMatchupExists)&&(moveDamage + (fastMoveDamage * 2) < defender.hp)&&(defender.battleStats.shieldsUsed > 0)){
+				yesWeight = Math.round(yesWeight / 2);
+			}
 		}
 
 		// How many Pokemon do I have left compared to shields?
@@ -1034,7 +1061,7 @@ function TrainingAI(l, p, b){
 				yesWeight = 0;
 			}
 		}
-		
+
 		console.log("Yes: " + yesWeight);
 		console.log("No: " + noWeight);
 
