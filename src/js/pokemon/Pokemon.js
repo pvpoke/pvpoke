@@ -418,7 +418,7 @@ function Pokemon(id, i, b){
 
 	// Initialize moves and set their respective damage numbers
 
-	this.resetMoves = function(){
+	this.resetMoves = function(){		
 		for(var i = 0; i < this.fastMovePool.length; i++){
 			this.initializeMove(this.fastMovePool[i]);
 		}
