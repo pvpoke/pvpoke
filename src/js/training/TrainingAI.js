@@ -988,6 +988,11 @@ function TrainingAI(l, p, b){
 				var yesRating = currentRating - 400;
 				var noRating = 400 - currentRating;
 
+				if(defender.hp / defender.stats.hp < .35){
+					yesRating = currentRating - 500;
+					noRating = 500 - currentRating;
+				}
+
 				// If we're locked in, prefer to shield good matchups and let bad matchups go
 				if((player.getSwitchTimer() > 0)&&(player.getRemainingPokemon() > 1)){
 					yesRating *= 2;
