@@ -66,6 +66,25 @@
 		.rank{
 			text-align: left;
 		}
+
+		p{
+			text-align: left;
+		    font-size: 12px;
+		}
+	}
+
+	.featured-team-section{
+		margin-top:10px;
+		display:none;
+	}
+
+	.featured-team-description{
+		display: none;
+
+		img{
+			max-width:75px;
+			margin: 0 auto;
+		}
 	}
 }
 
@@ -450,15 +469,15 @@ a.random{
 				height:70px;
 
 				@include transition(all, 0.2s, ease, 0s);
-				
+
 				.bar{
 					@include transition(background-position-y, 0.2s, ease-out, 0s);
-					
+
 					background: url(../img/train/type-gradients.jpg);
 					background-repeat: no-repeat;
 					border-radius:40px;
 				}
-				
+
 				.bar-back{
 					border-radius:40px;
 				}

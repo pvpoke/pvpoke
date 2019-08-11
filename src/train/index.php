@@ -58,6 +58,18 @@ require_once '../header.php';
 				<option value="manual">Manual</option>
 			</select>
 			<?php require '../modules/pokemultiselect.php'; ?>
+			<div class="featured-team-section">
+				<h3 class="section-title">Featured Teams</h3>
+				<p>Play against teams from your favorite content creators and top players.</p>
+				<select class="featured-team-select">
+					<option disabled selected value="">Select a team</option>
+				</select>
+				<div class="featured-team-description">
+					<img>
+					<a target="_blank" href="#"></a>
+					<p></p>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="clear"></div>

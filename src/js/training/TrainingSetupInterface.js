@@ -1,6 +1,20 @@
 /*
 * Interface functionality for move list and explorer
 */
+// Load AI archetypes
+
+var file = webRoot+"data/training/teams/featured/featured-mirror.json?v=1";
+var featuredTeams = [];
+
+$.getJSON( file, function( data ){
+	featuredTeams = data;
+	console.log("Featured team data loaded ["+featuredTeams.length+"]");
+
+	// Add featured teams to team select
+	for(var i = 0; i < featuredTeams.length; i++){
+		$(".featured-team-select").append("<option value=\""+featuredTeams[i].slug+"\">"+featuredTeams[i].name+"</option>");
+	}
+});
 
 var InterfaceMaster = (function () {
     var instance;
@@ -45,6 +59,7 @@ var InterfaceMaster = (function () {
 				$(".league-cup-select").on("change", selectLeague);
 				$(".mode-select").on("change", selectMode);
 				$(".team-method-select").on("change", selectTeamMethod);
+				$(".featured-team-select").on("change", selectFeaturedTeam);
 				$(".battle-btn").on("click", startBattle);
 				$(".lets-go-btn").on("click", startTournamentBattle);
 				$("body").on("click", ".self .roster .pokemon", selectRosterPokemon);
@@ -207,8 +222,29 @@ var InterfaceMaster = (function () {
 
 				if(teamSelectMethod == "manual"){
 					$(".poke.multi").eq(1).show();
+					$(".featured-team-section").show();
 				} else{
 					$(".poke.multi").eq(1).hide();
+					$(".featured-team-section").hide();
+				}
+			}
+
+			// Event handler for changing the AI's team selection
+
+			function selectFeaturedTeam(e){
+				var slug = $(".featured-team-select option:selected").val();
+
+				for(var i = 0; i < featuredTeams.length; i++){
+					var team = featuredTeams[i];
+
+					if(team.slug == slug){
+						$(".featured-team-description img").attr("src", webRoot + "img/train/featured/"+slug+".png");
+						$(".featured-team-description a").attr("href", team.link);
+						$(".featured-team-description a").html(team.link);
+						$(".featured-team-description p").html(team.description);
+					}
+
+					$(".featured-team-description").show()
 				}
 			}
 

@@ -1,0 +1,42 @@
+[
+	{
+		"name": "Bestinwest (Twilight)",
+		"slug": "bestinwest",
+		"cup": "twilight",
+		"league": "1500",
+		"description": "I'm a lifelong Pokémon fan and make youtube videos about PvP.  I hope you follow my journey to becoming the very best as well as help you along with yours!",
+		"link": "https://www.youtube.com/user/Bestinwest",
+		"pokemon": [
+			{
+				"speciesId": "azumarill",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["ICE_BEAM","HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "skuntank",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["CRUNCH","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "toxicroak",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["MUD_BOMB","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "dustox",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["SILVER_WIND","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "umbreon",
+				"fastMove": "SNARL",
+				"chargedMoves": ["FOUL_PLAY","LAST_RESORT"]
+			},
+			{
+				"speciesId": "golbat",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["SHADOW_BALL","POISON_FANG"]
+			}
+		]
+	}
+]
