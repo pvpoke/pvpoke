@@ -178,6 +178,9 @@ var InterfaceMaster = (function () {
 								break;
 
 							case "cup":
+								if(val == "safari"){
+									$(".cup-select").append("<option value=\"safari\">Safari Cup</option>");
+								}
 								$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
 
 								break;
