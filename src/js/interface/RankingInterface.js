@@ -78,8 +78,16 @@ var InterfaceMaster = (function () {
 					$(".limited").show();
 					$(".check.limited").addClass("on");
 
-					limitedPokemon = ["medicham","lucario","venusaur","meganium","skarmory","altaria","bastiodon","probopass","tropius","azumarill"]
+					limitedPokemon = ["medicham","lucario","venusaur","meganium","skarmory","altaria","bastiodon","probopass","tropius","azumarill"];
 				}
+				
+				if(cup == "safari"){
+					$(".limited").show();
+					$(".check.limited").addClass("on");
+
+					limitedPokemon = ["venusaur","meganium","skarmory","altaria","bastiodon","probopass","tropius","azumarill","wormadam_trash","forretress","vigoroth"];
+				}
+
 
 
 				// Create an element for each ranked Pokemon
