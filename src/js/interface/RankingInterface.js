@@ -85,7 +85,7 @@ var InterfaceMaster = (function () {
 					$(".limited").show();
 					$(".check.limited").addClass("on");
 
-					limitedPokemon = ["venusaur","meganium","skarmory","altaria","bastiodon","probopass","tropius","azumarill","wormadam_trash","forretress","vigoroth"];
+					limitedPokemon = ["venusaur","meganium","skarmory","altaria","bastiodon","probopass","tropius","azumarill","wormadam_trash","forretress","vigoroth","swampert"];
 				}
 
 
