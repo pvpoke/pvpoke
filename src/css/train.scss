@@ -77,14 +77,24 @@
 		margin-top:10px;
 		display:none;
 	}
+}
 
-	.featured-team-description{
-		display: none;
 
-		img{
-			max-width:75px;
-			margin: 0 auto;
-		}
+.featured-team-description{
+	display: none;
+	text-align: center;
+
+	img{
+		max-width:75px;
+		margin: 0 auto;
+	}
+
+	a h3{
+		color:#003748;
+		margin-top: 0;
+		font-size: 16px;
+		font-weight:bold !important;
+		text-decoration: underline;
 	}
 }
 
@@ -262,6 +272,16 @@ a.random{
 				background: rgba(0,0,0,0.25);
 				color: #eee;
 				border-radius: 12px;
+			}
+			
+			.featured-team-description{
+				position: absolute;
+				top: 190%;
+				right: 0;
+				
+				img{
+					max-width:45px;
+				}
 			}
 		}
 	}

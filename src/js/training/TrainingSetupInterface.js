@@ -12,7 +12,7 @@ $.getJSON( file, function( data ){
 
 	// Add featured teams to team select
 	for(var i = 0; i < featuredTeams.length; i++){
-		$(".featured-team-select").append("<option value=\""+featuredTeams[i].slug+"\">"+featuredTeams[i].name+"</option>");
+		$(".featured-team-select").append("<option value=\""+featuredTeams[i].slug+"\">"+featuredTeams[i].name+" ("+featuredTeams[i].cupName+")</option>");
 	}
 });
 
@@ -39,6 +39,7 @@ var InterfaceMaster = (function () {
 			var currentTeam = [];
 			var currentTeamIndex = 0;
 			var roundNumber = 0;
+			var featuredTeam = null;
 
 			var multiSelectors = [];
 
@@ -149,6 +150,13 @@ var InterfaceMaster = (function () {
 
 				// Show the current round record
 				$(".round-record").html(roundRecord[0] + "-" + roundRecord[1]);
+				
+				// Show or hide featured team details
+				if(teamSelectMethod != "featured"){
+					$(".team-select .opponent h3.center").show();
+				} else{
+					$(".team-select .opponent h3.center").hide();
+				}
 			}
 
 			// Callback for importing a randomly generated roster
@@ -188,7 +196,8 @@ var InterfaceMaster = (function () {
 					teamSelectMethod: teamSelectMethod,
 					partySize: partySize,
 					league: battle.getCP(),
-					cup: battle.getCup().name
+					cup: battle.getCup().name,
+					featuredTeam: featuredTeam
 					};
 
 				// Reset roster selection for tournament mode
@@ -219,14 +228,30 @@ var InterfaceMaster = (function () {
 
 			function selectTeamMethod(e){
 				teamSelectMethod = $(".team-method-select option:selected").val();
-
-				if(teamSelectMethod == "manual"){
-					$(".poke.multi").eq(1).show();
-					$(".featured-team-section").show();
-				} else{
-					$(".poke.multi").eq(1).hide();
-					$(".featured-team-section").hide();
+				
+				switch(teamSelectMethod){
+					case "random":
+						$(".poke.multi").eq(1).hide();
+						$(".featured-team-section").hide();
+						featuredTeam = null;
+						break;
+						
+					case "manual":
+						$(".poke.multi").eq(1).show();
+						$(".featured-team-section").hide();
+						featuredTeam = null;
+						break;
+						
+					case "featured":
+						$(".poke.multi").eq(1).hide();
+						$(".featured-team-section").show();
+						featuredTeam = null;
+						break;
 				}
+				
+				$(".featured-team-description").hide();
+				$(".featured-team-select option").eq(0).prop("selected","selected");
+				multiSelectors[1].setMaxPokemonCount(partySize);
 			}
 
 			// Event handler for changing the AI's team selection
@@ -240,11 +265,21 @@ var InterfaceMaster = (function () {
 					if(team.slug == slug){
 						$(".featured-team-description img").attr("src", webRoot + "img/train/featured/"+slug+".png");
 						$(".featured-team-description a").attr("href", team.link);
-						$(".featured-team-description a").html(team.link);
+						$(".featured-team-description a h3").html(team.name);
 						$(".featured-team-description p").html(team.description);
-					}
+						
+						// Select the assocaited cup and league
+						$(".league-cup-select option[value=\""+team.league+" "+team.cup+"\"]").prop("selected","selected");
+						$(".league-cup-select").trigger("change");
 
-					$(".featured-team-description").show()
+						// Fill in the featured team
+						multiSelectors[1].setMaxPokemonCount(6);
+						multiSelectors[1].quickFillGroup(team.pokemon);
+
+						$(".featured-team-description").show()
+
+						featuredTeam = team;
+					}
 				}
 			}
 

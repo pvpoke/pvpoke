@@ -23,6 +23,9 @@
 			<div class="ball"></div>
 			<div class="ball"></div>
 		</div>
+		<div class="featured-team-description">
+			<img>
+		</div>
 		<div class="cmp">CMP</div>
 	</div>
 </div>

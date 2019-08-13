@@ -303,14 +303,14 @@
 				"fastMove": "AIR_SLASH",
 				"chargedMoves": ["SKY_ATTACK","FLASH_CANNON"],
 				"difficulty": 2,
-				"weight":12
+				"weight":16
 			},
 			{
 				"speciesId": "altaria",
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["SKY_ATTACK","DRAGON_PULSE"],
 				"difficulty": 2,
-				"weight":10
+				"weight":6
 			},
 			{
 				"speciesId": "tropius",

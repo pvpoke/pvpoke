@@ -56,6 +56,7 @@ require_once '../header.php';
 			<select class="team-method-select">
 				<option value="random">Random</option>
 				<option value="manual">Manual</option>
+				<option value="featured">Featured Teams</option>
 			</select>
 			<?php require '../modules/pokemultiselect.php'; ?>
 			<div class="featured-team-section">
@@ -65,8 +66,10 @@ require_once '../header.php';
 					<option disabled selected value="">Select a team</option>
 				</select>
 				<div class="featured-team-description">
-					<img>
-					<a target="_blank" href="#"></a>
+					<a target="_blank" href="#">
+						<img>
+						<h3></h3>
+					</a>
 					<p></p>
 				</div>
 			</div>
@@ -82,6 +85,12 @@ require_once '../header.php';
 <div class="section team-select">
 	<div class="opponent">
 		<h3 class="center">Opponent's Roster</h3>
+		<div class="featured-team-description">
+			<a target="_blank" href="#">
+				<img>
+				<h3></h3>
+			</a>
+		</div>
 		<div class="roster pokemon-container"></div>
 	</div>
 	<h3 class="center">vs.</h3>

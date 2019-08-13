@@ -56,6 +56,8 @@ var BattlerMaster = (function () {
 				phase = "countdown";
 				turn = 0;
 				time = 0;
+				
+				console.log(props);
 
 				// Event listeners
 				if(! listenersInitialized){
@@ -618,7 +620,11 @@ var BattlerMaster = (function () {
 				$(".battle-stats .tab-section.energy .stat-avg-dpe").html(Math.round( (totalChargedDamage / totalEnergyUsed) * 100) / 100);
 
 				// Display AI difficulty
-				$(".end-screen .difficulty-name").html(players[1].getAI().difficultyToString());
+				var opponentName = players[1].getAI().difficultyToString();
+				if(properties.featuredTeam !== null){
+					opponentName = properties.featuredTeam.name;
+				}
+				$(".end-screen .difficulty-name").html(opponentName);
 
 				// Reset tabs
 
