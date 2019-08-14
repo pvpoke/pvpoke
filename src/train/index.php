@@ -125,21 +125,11 @@ require_once '../header.php';
 <div class="section white updates">
 	<h3>What's New</h3>
 
-	<h4>v1.9.3 (August 7, 2019)</h4>
+	<h4>v1.9.5 (August 14, 2019)</h4>
 	<ul>
-		<li>In Training Battles, switch commands are now buffered regardless of whether autotap is enabled or disabled to make switching seamless.</li>
+		<li>You can now select from Featured Teams to play against in Training Battles showcases tournament teams from top players and content creators!</li>
 		<ul>
-			<li>I intended to replicate the "switch glitch" that appears in-game but reports were that switching was more difficult than in-game.</li>
-		</ul>
-		<li>Fixed an issue where importing a team would sometimes result in no Charged Moves being selected.</li>
-		<li>Popup windows (Pokemon selection, etc.) can now scroll on mobile in cases where the popup content extends beyond the screen.</li>
-		<li>Fixed visual glitches with the Charged Move buttons on iPhone/Safari.</li>
-		<li>Adjusted AI behavior, with a focus on Champion difficulty:</li>
-		<ul>
-			<li>The AI is now more hesitant to shield in general, especially involving Power-Up Punch and Acid Spray.</li>
-			<li>The AI should also make fewer curious switches, such as tossing Pokemon against their hard counters.</li>
-			<li>The AI is now more likely to preserve switch advantange and stick it out in close or neutral matchups.</li>
-			<li>These changes result in more consistent behavior but also allow less veriance. I'll be looking closely at game data and feeback to make sure these behavior changes are more engaging and challenging than the old behaviors.</li>
+			<li>Features teams from Bestinwest, CallMeJake, DarkMatterWolf, Elite Four TV, JayDevin, JFarmakis, st1x10, ValorAsh, Wyvvyrn, and Zyonik!</li>
 		</ul>
 	</ul>
 </div>
