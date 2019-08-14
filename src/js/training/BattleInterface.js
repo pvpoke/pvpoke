@@ -56,8 +56,6 @@ var BattlerMaster = (function () {
 				phase = "countdown";
 				turn = 0;
 				time = 0;
-				
-				console.log(props);
 
 				// Event listeners
 				if(! listenersInitialized){
@@ -641,11 +639,20 @@ var BattlerMaster = (function () {
 				var battleSummaryStr = battle.getCup().name + " " + battle.getCP() + " difficulty " + (players[1].getAI().getLevel()+1);
 
 				// Report the overall battle result
+				
+				if(properties.featuredTeam !== null){
+					gtag('event', battleSummaryStr, {
+					  'event_category' : 'Training Battle',
+					  'event_label' : battleResult,
+					  'featured_team': properties.featuredTeam.slug
+					});
+				} else{
+					gtag('event', battleSummaryStr, {
+					  'event_category' : 'Training Battle',
+					  'event_label' : battleResult
+					});
+				}
 
-				gtag('event', battleSummaryStr, {
-				  'event_category' : 'Training Battle',
-				  'event_label' : battleResult
-				});
 
 				// Report each Pokemon
 				var teamStrs = [];

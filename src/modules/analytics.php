@@ -8,7 +8,8 @@
   gtag('config', '<?php echo $UA; ?>', {
 	  'custom_map': {
 		  'dimension1': 'player_type',
-		  'dimension2': 'team_position'
+		  'dimension2': 'team_position',
+		  'dimension3': 'featured_team'
 	  }
 	});
 	

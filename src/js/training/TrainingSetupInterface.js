@@ -365,7 +365,8 @@ var InterfaceMaster = (function () {
 					teamSelectMethod: teamSelectMethod,
 					partySize: partySize,
 					league: battle.getCP(),
-					cup: battle.getCup().name
+					cup: battle.getCup().name,
+					featuredTeam: featuredTeam
 					};
 
 				if(roundNumber == 0){
