@@ -263,7 +263,7 @@ var InterfaceMaster = (function () {
 					var team = featuredTeams[i];
 
 					if(team.slug == slug){
-						$(".featured-team-description img").attr("src", webRoot + "img/train/featured/"+slug+".png");
+						$(".featured-team-description img").attr("src", webRoot + "img/train/featured/"+slug+".png?v=2");
 						$(".featured-team-description a").attr("href", team.link);
 						$(".featured-team-description a h3").html(team.name);
 						$(".featured-team-description p").html(team.description);
