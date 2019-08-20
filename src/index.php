@@ -27,11 +27,11 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.9.5 (August 14, 2019)</h4>
+	<h4>v1.9.6 (August 29, 2019)</h4>
 	<ul>
-		<li>You can now select from Featured Teams to play against in Training Battles showcases tournament teams from top players and content creators!</li>
+		<li>You can now change the site appearance to Night Mode from the <a href="<?php echo $WEB_ROOT;?>settings/">Settings page</a>!</li>
 		<ul>
-			<li>Features teams from Bestinwest, CallMeJake, DarkMatterWolf, Elite Four TV, JayDevin, JFarmakis, st1x10, ValorAsh, Wyvvyrn, and Zyonik!</li>
+			<li>Look forward to future theme options!</li>
 		</ul>
 	</ul>
 
