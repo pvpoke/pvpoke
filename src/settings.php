@@ -26,6 +26,23 @@ require_once 'header.php';
 		<div class="check animate-timeline <?php if($_SETTINGS->animateTimeline == 1) : ?>on<?php endif; ?>"><span></span> Animate after generating results</div>
 
 		<div class="save button">Save Settings</div>
+		
+		<h3>Site Theme</h3>
+		<?php
+		$theme = "default";
+		
+		if(isset($_SETTINGS->theme)){
+			$theme = $_SETTINGS->theme;
+		}
+		?>
+		<div>
+			<select class="input" id="theme-select">
+				<option value="default" <?php if($theme == "default") : ?>selected<?php endif; ?>>Default</option>
+				<option value="night" <?php if($theme == "night") : ?>selected<?php endif; ?>>Night</option>
+			</select>
+		</div>
+
+		<div class="save button">Save Settings</div>
 	</div>
 </div>
 
