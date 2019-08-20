@@ -409,5 +409,46 @@
 				"chargedMoves": ["LEAF_BLADE","CLOSE_COMBAT"]
 			}
 		]
+	},
+	{
+		"name": "KnightsOoofRen",
+		"slug": "renn",
+		"cup": "jungle",
+		"cupName": "Jungle",
+		"league": 1500,
+		"description": "KakunaMattata42’s rival. Been a Pokemon Fan since I was 1 year old and still on the grind. Out here trying to improve my PvP skills to clap some noobs. Peru & UMN-TC Represent. ‘If you can’t giddy up then giddy out my way’.",
+		"link": "#",
+		"pokemon": [
+			{
+				"speciesId": "raichu",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["WILD_CHARGE","BRICK_BREAK"]
+			},
+			{
+				"speciesId": "noctowl",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["SKY_ATTACK","PSYCHIC"]
+			},
+			{
+				"speciesId": "vigoroth",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["BULLDOZE","BODY_SLAM"]
+			},
+			{
+				"speciesId": "venusaur",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "beedrill",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["X_SCISSOR","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "lanturn",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["THUNDERBOLT","HYDRO_PUMP"]
+			}
+		]
 	}
 ]
