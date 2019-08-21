@@ -160,6 +160,19 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "safari",
+			"title": "Safari Cup",
+			"include": [
+				{
+					"filterType": "type",
+					"values": [
+						"grass","ground","rock","bug","normal","poison","flying","water"
+					]
+				}
+			],
+			"exclude": []
 		}
 	],
  	"pokemon": [{
