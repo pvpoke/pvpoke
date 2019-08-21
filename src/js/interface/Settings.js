@@ -21,6 +21,7 @@ var InterfaceMaster = (function () {
 				
 				var defaultIVs = $("#default-ivs option:selected").val();
 				var animateTimeline = $(".check.animate-timeline").hasClass("on") ? 1 : 0;
+				var theme = $("#theme-select option:selected").val();
 				
 				$.ajax({
 
@@ -28,11 +29,12 @@ var InterfaceMaster = (function () {
 					type : 'POST',
 					data : {
 						'defaultIVs' : defaultIVs,
-						'animateTimeline' : animateTimeline
+						'animateTimeline' : animateTimeline,
+						'theme': theme
 					},
 					dataType:'json',
 					success : function(data) {              
-						modalWindow("Settings Saved", $("<p>Your settings have been updated.</p>"))
+						modalWindow("Settings Saved", $("<p>Your settings have been updated. (Refresh the page if you've updated the site appearance.)</p>"))
 
 					},
 					error : function(request,error)

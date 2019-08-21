@@ -29,6 +29,7 @@ require_once 'header.php'; ?>
 		<div class="supporter">ShinyHunterBen</div>
 		<div class="supporter">ElnetoCC</div>
 		<div class="supporter">RandomKashual</div>
+		<div class="supporter">KnightsOoofRen</div>
 	</div>
 
 	<h2 class="center">Master Supporters</h2>
@@ -71,6 +72,11 @@ require_once 'header.php'; ?>
 		<div class="supporter-container">
 			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/iowa-arena.png" />
 			<div class="supporter"><a href="https://discord.gg/hF9pds8" target="_blank">Central Iowa Arena</a></div>
+		</div>
+
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/mdalliance.jpg" />
+			<div class="supporter"><a href="https://discord.gg/ehmgWTN" target="_blank">The MD PvP Alliance</a></div>
 		</div>
 	</div>
 </div>

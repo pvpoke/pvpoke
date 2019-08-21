@@ -1,0 +1,68 @@
+[
+	{
+		"name": "Novice",
+		"level": 0,
+		"chargedMoveCount": 1,
+		"energyGuessRange": 15,
+		"moveGuessCertainty": 1,
+		"reactionTime": 12,
+		"ivComboRange": 3000,
+		"strategies": [
+			"DEFAULT",
+			"SHIELD"
+		]
+	},
+	{
+		"name": "Rival",
+		"level": 1,
+		"chargedMoveCount": 2,
+		"energyGuessRange": 10,
+		"moveGuessCertainty": 2,
+		"reactionTime": 8,
+		"ivComboRange": 2000,
+		"strategies": [
+			"DEFAULT",
+			"SHIELD",
+			"SWITCH_BASIC"
+		]
+	},
+	{
+		"name": "Elite",
+		"level": 2,
+		"chargedMoveCount": 2,
+		"energyGuessRange": 5,
+		"moveGuessCertainty": 3,
+		"reactionTime": 4,
+		"ivComboRange": 1000,
+		"strategies": [
+			"DEFAULT",
+			"SHIELD",
+			"SWITCH_BASIC",
+			"FARM_ENERGY",
+			"BAIT_SHIELDS"
+		]
+	},
+	{
+		"name": "Champion",
+		"level": 3,
+		"chargedMoveCount": 2,
+		"energyGuessRange": 0,
+		"moveGuessCertainty": 4,
+		"reactionTime": 0,
+		"ivComboRange": 200,
+		"strategies": [
+			"DEFAULT",
+			"SHIELD",
+			"SWITCH_BASIC",
+			"SWITCH_FARM",
+			"FARM_ENERGY",
+			"OVERFARM",
+			"BAIT_SHIELDS",
+			"WAIT_CLOCK",
+			"PRESERVE_SWITCH_ADVANTAGE",
+			"ADVANCED_SHIELDING",
+			"BAD_DECISION_PROTECTION",
+			"SACRIFICIAL_SWAP"
+		]
+	}
+]

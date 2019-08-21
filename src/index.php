@@ -7,6 +7,10 @@
 		<h2 class="icon-battle">Battle</h2>
 		<p>Simulate a battle between two custom Pokemon.</p>
 	</a>
+	<a href="<?php echo $WEB_ROOT; ?>train/" class="button">
+		<h2 class="icon-train">Train</h2>
+		<p>Play real-time battle simulations against a CPU opponent.</p>
+	</a>
 	<a href="<?php echo $WEB_ROOT; ?>rankings/" class="button">
 		<h2 class="icon-rankings">Rankings</h2>
 		<p>Explore the rankings, movesets, and counters for the top Pokemon in each league.</p>
@@ -22,44 +26,12 @@
 
 	<!--Update section for updates-->
 	<h3>What's New</h3>
-	
-	<h4>v1.8.3 (July 9, 2019)</h4>
-	<ul>
-		<li>Pokemon now correctly have a minimum HP of 10</li>
-		<li>Fixed an issue in Multi-Battle that would sometimes display incorrect results</li>
-		<ul>
-			<li>This happened when switching from custom to regular Multi-Battle, and regular Multi-Battle would display the custom Pokemon over the regular Multi-Battle results.</li>
-		</ul>
-	</ul>
-	
-	<h4>v1.8.2 (July 3, 2019)</h4>
-	<ul>
-		<li>Fixed a bug that caused headers to disappear when searching on the Moves page</li>
-		<li>Breakpoint and bulkpoint calculations now also check against max Defense and max Attack, respectively, and show which Attack or Defense values will guarantee a certain breakpoint or bulkpoint against that opponent.</li>
-	</ul>
 
-	<h4>v1.8.1 (July 2, 2019)</h4>
+	<h4>v1.9.6 (August 29, 2019)</h4>
 	<ul>
-		<li>Adjusted Pokemon default IV's</li>
+		<li>You can now change the site appearance to Night Mode from the <a href="<?php echo $WEB_ROOT;?>settings/">Settings page</a>!</li>
 		<ul>
-			<li>In the last update, Pokemon were assigned "rank 1" IV's by default, which maximized overall stats. However most players will not have rank 1 Pokemon and the default sims tended to differ from typical play.</li>
-			<li>Pokemon now have a pregenerated set of default IV's that are roughly equivalent to "rank 500" out of 4,096 possible combinations. This provides a more realistic benchmark to prepare against while also trending toward the upper end for competitive play.</li>
-			<li>Pokemon that can't be traded like Mew, Jirachi, and Deoxys now obey their respective IV limits when generating IV combinations.</li>
-		</ul>
-		<li>Adjusted Pokemon level and IV entry and added advanced options</li>
-		<ul>
-			<li>You can now choose to maximize overall stats, Attack, or Defense</li>
-		</ul>
-		<li>Added Breakpoint &amp; Bulkpoint section in the matchup details</li>
-		<ul>
-			<li>Breakpoints and bulkpoints are calculated for the left Pokemon against the specific right Pokemon. You may wish to explore multiple IV spreads for the defending Pokemon to identify which stat ranges you should target.</li>
-			<li>Clicking any of the level &amp; IV combinations in the tables will enter them for the respective Pokemon.</li>
-			<li>Where possible, this report will show an IV combination that reaches both the best breakpoint and best bulkpoint.</li>
-		</ul>
-		<li>Added Settings page where you can adjust the following preferences:</li>
-		<ul>
-			<li>Default IV combination (for Pokemon that you select)</li>
-			<li>Enable or diable timeline animations</li>
+			<li>Look forward to future theme options!</li>
 		</ul>
 	</ul>
 
@@ -69,14 +41,14 @@
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/guide-to-fast-move-registration/">
-				<img src="<?php echo $WEB_ROOT; ?>assets/articles/mechanics-thumb.jpg?v=2" />
+			<a href="<?php echo $WEB_ROOT; ?>articles/developing-trainer-battle-ai/">
+				<img src="<?php echo $WEB_ROOT; ?>assets/articles/ai-thumb.jpg?v=2" />
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/guide-to-fast-move-registration/">Guide to Fast Move Mechanics</a></h4>
-			<div class="date"> June 24, 2019</div>
-			<p>How exactly do Fast Moves work and register? This guide will walk through some of PvP's mysterious nuts and bolts.</p>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/developing-trainer-battle-ai/">Developing an AI for Pokemon GO Trainer Battles</a></h4>
+			<div class="date"> July 30, 2019</div>
+			<p>How does the AI on the site's training battles work? Read all about how I approached development and strategies the AI uses to mimic player behavior.</p>
 		</div>
 	</div>
 

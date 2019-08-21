@@ -1,10 +1,22 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.8.4';
+$SITE_VERSION = '1.9.6';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
     $SITE_VERSION = rand(1,1000) . '.' . rand(1,1000) . '.' . rand(1,1000);
 }
+
+// Initialize settings object
+if(isset($_COOKIE['settings'])){
+	$_SETTINGS = json_decode($_COOKIE['settings']);
+} else{
+	$_SETTINGS = (object) [
+		'defaultIVs' => "gamemaster",
+		'animateTimeline' => 1,
+		'theme' => 'default'
+	];
+}
+
 ?>
 <!doctype html>
 <html>
@@ -44,7 +56,16 @@ if(! isset($OG_IMAGE)){
 <link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json">
 
 <link rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=37">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=52">
+
+<?php if(strpos($META_TITLE, 'Train') !== false): ?>
+	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=4">
+<?php endif; ?>
+	
+<?php if((isset($_SETTINGS->theme))&&($_SETTINGS->theme != "default")): ?>
+	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/themes/<?php echo $_SETTINGS->theme; ?>.css?v=1">
+<?php endif; ?>
+
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>
 
 <?php require_once('modules/analytics.php'); ?>
@@ -55,21 +76,12 @@ if(! isset($OG_IMAGE)){
 	var host = "<?php echo $WEB_HOST; ?>";
 	var webRoot = "<?php echo $WEB_ROOT; ?>";
 
-	<?php if(isset($_COOKIE['settings'])) :
-		$_SETTINGS = json_decode($_COOKIE['settings']);
-
-		?>
+	<?php if(isset($_COOKIE['settings'])) : ?>
 		var settings = {
 			defaultIVs: "<?php echo htmlspecialchars($_SETTINGS->defaultIVs); ?>",
 			animateTimeline: <?php echo htmlspecialchars($_SETTINGS->animateTimeline); ?>
 		};
-	<?php else:
-
-		$_SETTINGS = (object) [
-			'defaultIVs' => "gamemaster",
-			'animateTimeline' => 1
-		];
-		?>
+	<?php else: ?>
 
 		var settings = {
 			defaultIVs: "gamemaster",
@@ -93,6 +105,7 @@ if(! isset($OG_IMAGE)){
 			<h1 class="title"><a href="/">PvPoke.com</a></h1>
 			<div class="menu">
 				<a class="icon-battle" href="<?php echo $WEB_ROOT; ?>battle/">Battle</a>
+				<a class="icon-train" href="<?php echo $WEB_ROOT; ?>train/">Train</a>
 				<a class="icon-rankings" href="<?php echo $WEB_ROOT; ?>rankings/">Rankings</a>
 				<a class="icon-team" href="<?php echo $WEB_ROOT; ?>team-builder/">Team Builder</a>
 				<a class="more desktop" href="#"></a>

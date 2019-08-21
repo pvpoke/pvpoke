@@ -32,6 +32,10 @@
 				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
 			},
 			{
+				"speciesId": "gyarados",
+				"chargedMoves": ["CRUNCH", "OUTRAGE"]
+			},
+			{
 				"speciesId": "jirachi",
 				"chargedMoves": ["DOOM_DESIRE", "DAZZLING_GLEAM"]
 			},
@@ -48,6 +52,10 @@
 				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
 			},
 			{
+				"speciesId": "deoxys_defense",
+				"chargedMoves": ["PSYCHO_BOOST", "THUNDERBOLT"]
+			},
+			{
 				"speciesId": "probopass",
 				"fastMove": "SPARK"
 			},
@@ -58,6 +66,10 @@
 			{
 				"speciesId": "togekiss",
 				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
+			},
+			{
+				"speciesId": "crobat",
+				"chargedMoves": ["SLUDGE_BOMB","SHADOW_BALL"]
 			}
 		]
 	},
@@ -68,6 +80,56 @@
 			{
 				"speciesId": "medicham",
 				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "probopass",
+				"chargedMoves": ["MAGNET_BOMB", "THUNDERBOLT"]
+			}
+		]
+	},
+	{
+		"league": 1500,
+		"cup": "twilight",
+		"pokemon": [
+			{
+				"speciesId": "azumarill",
+				"chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
+			},
+			{
+				"speciesId": "muk_alolan",
+				"chargedMoves": ["DARK_PULSE", "ACID_SPRAY"]
+			},
+			{
+				"speciesId": "tentacruel",
+				"chargedMoves": ["ACID_SPRAY", "HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "victreebel",
+				"chargedMoves": ["LEAF_BLADE", "ACID_SPRAY"]
+			},
+			{
+				"speciesId": "qwilfish",
+				"chargedMoves": ["AQUA_TAIL", "SLUDGE_WAVE"]
+			},
+			{
+				"speciesId": "wigglytuff",
+				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "clefable",
+				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "gardevoir",
+				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "crobat",
+				"chargedMoves": ["SLUDGE_BOMB","SHADOW_BALL"]
+			},
+			{
+				"speciesId": "venusaur",
+				"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"]
 			}
 		]
 	},
@@ -86,6 +148,10 @@
 			{
 				"speciesId": "sealeo",
 				"fastMove": "POWDER_SNOW"
+			},
+			{
+				"speciesId": "magneton",
+				"chargedMoves": ["DISCHARGE","MAGNET_BOMB"]
 			}
 		]
 	},
@@ -102,8 +168,16 @@
 				"chargedMoves": ["SURF", "ICE_BEAM"]
 			},
 			{
+				"speciesId": "probopass",
+				"fastMove": "SPARK"
+			},
+			{
 				"speciesId": "moltres",
-				"chargedMoves": ["OVERHEAT", "FIRE_BLAST"]
+				"chargedMoves": ["OVERHEAT", "ANCIENT_POWER"]
+			},
+			{
+				"speciesId": "blaziken",
+				"chargedMoves": ["BLAST_BURN", "BLAZE_KICK"]
 			}
 		]
 	},
@@ -124,12 +198,12 @@
 				"chargedMoves": ["CRUNCH", "FLAMETHROWER"]
 			},
 			{
-				"speciesId": "drapion",
-				"chargedMoves": ["AQUA_TAIL", "CRUNCH"]
+				"speciesId": "gardevoir",
+				"chargedMoves": ["SHADOW_BALL", "SYNCHRONOISE"]
 			},
 			{
-				"speciesId": "gardevoir",
-				"fastMove": "CONFUSION"
+				"speciesId": "drapion",
+				"chargedMoves": ["AQUA_TAIL", "CRUNCH"]
 			},
 			{
 				"speciesId": "slowbro",
@@ -177,6 +251,14 @@
 			{
 				"speciesId": "hitmonchan",
 				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "gyarados",
+				"chargedMoves": ["CRUNCH", "OUTRAGE"]
+			},
+			{
+				"speciesId": "crobat",
+				"chargedMoves": ["SLUDGE_BOMB", "SHADOW_BALL"]
 			},
 			{
 				"speciesId": "dragonite",
@@ -240,6 +322,14 @@
 			{
 				"speciesId": "dragonite",
 				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
+			},
+			{
+				"speciesId": "gyarados",
+				"chargedMoves": ["CRUNCH", "OUTRAGE"]
+			},
+			{
+				"speciesId": "crobat",
+				"chargedMoves": ["SLUDGE_BOMB", "SHADOW_BALL"]
 			},
 			{
 				"speciesId": "tentacruel",
@@ -373,6 +463,60 @@
 		]
 	},
 	{
+		"league": 1500,
+		"cup": "safari",
+		"pokemon": [
+			{
+				"speciesId": "wormadam_trash",
+				"fastMove": "CONFUSION"
+			},
+			{
+				"speciesId": "flygon",
+				"chargedMoves": ["DRAGON_CLAW", "EARTHQUAKE"]
+			},
+			{
+				"speciesId": "lapras",
+				"chargedMoves": ["SURF", "ICE_BEAM"]
+			},
+			{
+				"speciesId": "dragonite",
+				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
+			},
+			{
+				"speciesId": "gyarados",
+				"chargedMoves": ["CRUNCH", "OUTRAGE"]
+			},
+			{
+				"speciesId": "jirachi",
+				"chargedMoves": ["DOOM_DESIRE", "DAZZLING_GLEAM"]
+			},
+			{
+				"speciesId": "pidgeot",
+				"chargedMoves": ["AERIAL_ACE", "BRAVE_BIRD"]
+			},
+			{
+				"speciesId": "toxicroak",
+				"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "probopass",
+				"fastMove": "SPARK"
+			},
+			{
+				"speciesId": "zapdos",
+				"fastMove": "CHARGE_BEAM"
+			},
+			{
+				"speciesId": "togekiss",
+				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
+			},
+			{
+				"speciesId": "crobat",
+				"chargedMoves": ["SLUDGE_BOMB","SHADOW_BALL"]
+			}
+		]
+	},
+	{
 		"league": 2500,
 		"cup": "all",
 		"pokemon": [
@@ -399,6 +543,10 @@
 			{
 				"speciesId": "mewtwo_armored",
 				"chargedMoves": ["ROCK_SLIDE","DYNAMIC_PUNCH"]
+			},
+			{
+				"speciesId": "mewtwo",
+				"chargedMoves": ["PSYSTRIKE","ICE_BEAM"]
 			}
 		]
 	},
@@ -433,6 +581,10 @@
 			{
 				"speciesId": "mewtwo_armored",
 				"chargedMoves": ["ROCK_SLIDE","DYNAMIC_PUNCH"]
+			},
+			{
+				"speciesId": "mewtwo",
+				"chargedMoves": ["ICE_BEAM","SHADOW_BALL"]
 			}
 		]
 	},
@@ -494,6 +646,10 @@
 				"chargedMoves": ["BODY_SLAM","EARTHQUAKE"]
 			},
 			{
+				"speciesId": "venusaur",
+				"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"]
+			},
+			{
 				"speciesId": "parasect",
 				"chargedMoves": ["X_SCISSOR","CROSS_POISON"]
 			},
@@ -528,6 +684,10 @@
 			{
 				"speciesId": "abomasnow",
 				"fastMove": "RAZOR_LEAF"
+			},
+			{
+				"speciesId": "ivysaur",
+				"chargedMoves": ["SLUDGE_BOMB","RETURN"]
 			},
 			{
 				"speciesId": "beautifly",

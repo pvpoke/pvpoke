@@ -7,6 +7,7 @@ function TimelineAction(type, actor, turn, value, settings){
 	this.value = value; // Index of charged move
 	this.settings = settings;
 	this.valid = false;
+	this.processed = false; // Whether this action has been processed yet or not
 	var self = this;
 
 	this.typeToInt = function(){

@@ -79,12 +79,21 @@ var InterfaceMaster = (function () {
 					$(".limited").show();
 					$(".check.limited").addClass("on");
 
-					limitedPokemon = ["medicham","lucario","venusaur","meganium","skarmory","altaria","bastiodon","probopass","tropius","azumarill"]
+					limitedPokemon = ["medicham","lucario","venusaur","meganium","skarmory","altaria","bastiodon","probopass","tropius","azumarill"];
 				}
 				
+
+				if(cup == "safari"){
+					$(".limited").show();
+					$(".check.limited").addClass("on");
+
+					limitedPokemon = ["venusaur","meganium","skarmory","altaria","bastiodon","probopass","tropius","azumarill","wormadam_trash","forretress","vigoroth","swampert"];
+				}
+
 				var battle = new Battle();
 				
 				$(".rankings-container").html('');
+
 
 				// Create an element for each ranked Pokemon
 
@@ -174,6 +183,9 @@ var InterfaceMaster = (function () {
 								break;
 
 							case "cup":
+								if(val == "safari"){
+									$(".cup-select").append("<option value=\"safari\">Safari Cup</option>");
+								}
 								$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
 
 								break;
@@ -401,12 +413,11 @@ var InterfaceMaster = (function () {
 				var cp = $(".league-select option:selected").val();
 				var category = $(".ranking-categories a.selected").attr("data");
 				var shieldStrs = {
-					"overall": "/11/",
-					"closers": "/00/",
-					"leads": "/11/",
-					"attackers": "/01/",
-					"defenders": "/10/",
-					"custom": "/11/"
+					"overall": "11",
+					"closers": "00",
+					"leads": "11",
+					"attackers": "01",
+					"defenders": "10"
 				}
 				
 				if(context == "custom"){
@@ -418,7 +429,7 @@ var InterfaceMaster = (function () {
 				for(var n = 0; n < r.matchups.length; n++){
 					var m = r.matchups[n];
 					var opponent = new Pokemon(m.opponent);
-					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+shieldStrs[category]+'/'+r.moveStr+'/';
+					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+"/"+shieldStrs[category]+"/"+r.moveStr+"/";
 
 					// Append opponent's move string
 
@@ -440,7 +451,7 @@ var InterfaceMaster = (function () {
 				for(var n = 0; n < r.counters.length; n++){
 					var c = r.counters[n];
 					var opponent = new Pokemon(c.opponent);
-					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+shieldStrs[category]+'/'+r.moveStr+'/';
+					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+"/"+shieldStrs[category]+"/"+r.moveStr+"/";
 
 					// Append opponent's move string
 
@@ -467,7 +478,7 @@ var InterfaceMaster = (function () {
 
 				// Add multi-battle link
 
-				var multiBattleLink = host+"battle/multi/"+cp+"/"+cup+"/"+pokemon.speciesId+shieldStrs[category]+"/"+r.moveStr+"/2-1/";
+				var multiBattleLink = host+"battle/multi/"+cp+"/"+cup+"/"+pokemon.speciesId+"/"+shieldStrs[category]+"/"+r.moveStr+"/2-1/";
 
 				$details.find(".share-link").before($("<div class=\"multi-battle-link\"><p>See all of <b>" + pokemon.speciesName + "'s</b> matchups:</p><a target=\"_blank\" class=\"button\" href=\""+multiBattleLink+"\">"+pokemon.speciesName+" vs. " + cupName +"</a></div>"));
 

@@ -143,6 +143,9 @@ header {
 .icon-battle {
   background-image: url("../img/icon_battle.png"); }
 
+.icon-train {
+  background-image: url("../img/icon_train.png"); }
+
 .icon-rankings {
   background-image: url("../img/icon_rankings.png"); }
 
@@ -255,31 +258,6 @@ header {
         padding: 2px 5px;
         margin: 0 2px;
         font-size: 12px; }
-    .poke .poke-stats .hp.bar-back {
-      position: relative;
-      border: 3px solid #666;
-      padding: 2px;
-      width: 100%;
-      height: 30px;
-      box-sizing: border-box;
-      margin-top: 20px;
-      background: #00171c; }
-      .poke .poke-stats .hp.bar-back .bar {
-        width: 100%;
-        height: 100%;
-        background-color: #0088a6;
-        -webkit-transition: width 0.2s ease-out 0s;
-        -moz-transition: width 0.2s ease-out 0s;
-        -o-transition: width 0.2s ease-out 0s;
-        transition: width 0.2s ease-out 0s; }
-      .poke .poke-stats .hp.bar-back .stat {
-        position: absolute;
-        width: 100%;
-        left: 0;
-        top: 4px;
-        text-align: center;
-        color: #fff;
-        font-weight: bold; }
     .poke .poke-stats h3 {
       margin: 0;
       font-weight: normal; }
@@ -394,46 +372,6 @@ header {
   .poke a.swap {
     padding-left: 18px;
     background-image: url("../img/swap.png"); }
-  .poke .move-bars {
-    display: flex;
-    justify-content: space-around; }
-    .poke .move-bars .move-bar {
-      width: 40px;
-      height: 40px;
-      border-radius: 40px;
-      position: relative;
-      overflow: hidden;
-      border: 2px solid rgba(0, 0, 0, 0);
-      box-sizing: border-box;
-      color: #eee;
-      margin-top: 5px;
-      display: none;
-      cursor: pointer;
-      -webkit-transition: border 0.2s ease-out 0s;
-      -moz-transition: border 0.2s ease-out 0s;
-      -o-transition: border 0.2s ease-out 0s;
-      transition: border 0.2s ease-out 0s; }
-      .poke .move-bars .move-bar.active {
-        border: 2px solid black; }
-      .poke .move-bars .move-bar .label {
-        position: relative;
-        z-index: 10;
-        text-align: center;
-        padding-top: 10px;
-        font-weight: bold; }
-      .poke .move-bars .move-bar .bar, .poke .move-bars .move-bar .bar-back {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%; }
-      .poke .move-bars .move-bar .bar {
-        -webkit-transition: height 0.2s ease-out 0s;
-        -moz-transition: height 0.2s ease-out 0s;
-        -o-transition: height 0.2s ease-out 0s;
-        transition: height 0.2s ease-out 0s; }
-      .poke .move-bars .move-bar .bar-back {
-        opacity: .3; }
   .poke .move-details {
     font-size: 12px;
     min-height: 15px;
@@ -470,7 +408,7 @@ header {
       .poke.multi .custom-options .export-btn {
         margin-top: 15px; }
     .poke.multi .rankings-container {
-      max-height: 295px; }
+      max-height: 360px; }
       .poke.multi .rankings-container .rank {
         padding: 0 5px;
         position: relative; }
@@ -497,6 +435,73 @@ header {
             background: #ff0000; }
     .poke.multi .quick-fill-buttons {
       justify-content: space-around; }
+
+.hp.bar-back {
+  position: relative;
+  border: 3px solid #666;
+  padding: 2px;
+  width: 100%;
+  height: 30px;
+  box-sizing: border-box;
+  margin-top: 20px;
+  background: #00171c; }
+  .hp.bar-back .bar {
+    width: 100%;
+    height: 100%;
+    background-color: #0088a6;
+    -webkit-transition: width 0.2s ease-out 0s;
+    -moz-transition: width 0.2s ease-out 0s;
+    -o-transition: width 0.2s ease-out 0s;
+    transition: width 0.2s ease-out 0s; }
+  .hp.bar-back .stat {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 4px;
+    text-align: center;
+    color: #fff;
+    font-weight: bold; }
+
+.move-bars {
+  display: flex;
+  justify-content: space-around; }
+  .move-bars .move-bar {
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid rgba(0, 0, 0, 0);
+    box-sizing: border-box;
+    color: #eee;
+    margin-top: 5px;
+    display: none;
+    cursor: pointer;
+    -webkit-transition: border 0.2s ease-out 0s;
+    -moz-transition: border 0.2s ease-out 0s;
+    -o-transition: border 0.2s ease-out 0s;
+    transition: border 0.2s ease-out 0s; }
+    .move-bars .move-bar.active {
+      border: 2px solid black; }
+    .move-bars .move-bar .label {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding-top: 10px;
+      font-weight: bold; }
+    .move-bars .move-bar .bar, .move-bars .move-bar .bar-back {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+    .move-bars .move-bar .bar {
+      -webkit-transition: height 0.2s ease-out 0s;
+      -moz-transition: height 0.2s ease-out 0s;
+      -o-transition: height 0.2s ease-out 0s;
+      transition: height 0.2s ease-out 0s; }
+    .move-bars .move-bar .bar-back {
+      opacity: .3; }
 
 .poke-select-container.single .poke:nth-of-type(1) a.random {
   float: left; }
@@ -1471,13 +1476,16 @@ select, input {
   .article .rating-table.legend a.rating {
     text-align: center; }
 
-.article-item .col-9 {
-  padding: 0 10px; }
-.article-item img {
-  display: block;
-  border: 1px solid #000; }
-.article-item h4 {
-  margin-top: 0; }
+.article-item {
+  margin-bottom: 10px; }
+  .article-item .col-9 {
+    width: 75%;
+    padding: 0 10px; }
+  .article-item img {
+    display: block;
+    border: 1px solid #000; }
+  .article-item h4 {
+    margin-top: 0; }
 
 .article .date, .article-item .date {
   margin-bottom: 1em;
@@ -1618,6 +1626,9 @@ select, input {
       max-width: 200px; }
   .modal .sandbox-move-select .move-select {
     font-size: 18px;
+    margin-bottom: 10px; }
+  .modal .sandbox-move-select .charge-select {
+    max-width: 200px;
     margin-bottom: 10px; }
   .modal .sandbox-move-select .move-stats {
     flex-wrap: wrap;
@@ -2006,7 +2017,10 @@ a.toggle {
 
   .league-select,
   .cup-select {
-    max-width: 49%; } }
+    max-width: 49%; }
+
+  .modal {
+    overflow-y: scroll; } }
 /* SETTINGS */
 .settings select {
   max-width: 200px; }

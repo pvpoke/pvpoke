@@ -18,7 +18,7 @@
 		</div>
 
 		<div class="custom-options">
-			<h3 class="section-title">Pokemon (<span class="poke-count">0</span> / 50)</h3>
+			<h3 class="section-title">Pokemon (<span class="poke-count">0</span> / <span class="poke-max-count">50</span>)</h3>
 			<p>Create or select a group of custom Pokemon below.</p>
 			<div class="rankings-container clear"></div>
 			<button class="add-poke-btn button">+ Add Pokemon</button>
@@ -28,18 +28,18 @@
 			<h3 class="section-title">Quick Fill</h3>
 			<select class="quick-fill-select">
 				<option value="new">New Custom Group</option>
-				<option value="great">Great League Meta</option>
-				<option value="ultra" class="hide">Ultra League Meta</option>
-				<option value="master" class="hide">Master League Meta</option>
-				<option value="jungle">Jungle Cup Meta</option>
-				<option value="rainbow">Rainbow Cup Meta</option>
-				<option value="regionals-1">Season 1 Regionals Meta</option>
-				<option value="nightmare">Nightmare Cup Meta</option>
-				<option value="kingdom">Kingdom Cup Meta</option>
-				<option value="tempest">Tempest Cup Meta</option>
-				<option value="twilight">Twilight Cup Meta</option>
-				<option value="boulder">Boulder Cup Meta</option>			
-				<option value="leaders">Team Leader Pokemon</option>
+				<option value="great" class="multi-battle">Great League Meta</option>
+				<option value="ultra" class="hide multi-battle">Ultra League Meta</option>
+				<option value="master" class="hide multi-battle">Master League Meta</option>
+				<option value="jungle" class="multi-battle">Jungle Cup Meta</option>
+				<option value="rainbow" class="multi-battle">Rainbow Cup Meta</option>
+				<option value="regionals-1" class="multi-battle">Season 1 Regionals Meta</option>
+				<option value="nightmare" class="multi-battle">Nightmare Cup Meta</option>
+				<option value="kingdom" class="multi-battle">Kingdom Cup Meta</option>
+				<option value="tempest" class="multi-battle">Tempest Cup Meta</option>
+				<option value="twilight" class="multi-battle">Twilight Cup Meta</option>
+				<option value="boulder" class="multi-battle">Boulder Cup Meta</option>			
+				<option value="leaders" class="multi-battle">Team Leader Pokemon</option>
 
 				<?php
 				// Display custom groups

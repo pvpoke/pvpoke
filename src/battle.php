@@ -131,13 +131,13 @@ require_once 'header.php';
 					</table>
 					<p class="center">Click or tap to view battles.</p>
 				</div>
-				
+
 				<h2 class="center">Breakpoints &amp; Bulkpoints</h2>
-				
+
 				<div class="breakpoints-section">
 					<p>In Pokemon GO, damage is dealt in whole numbers. A breakpoint is when a Pokemon has high enough Attack to deal 1 more damage with their Fast Move. A bulkpoint is when a Pokemon has high enough Defense to take 1 less damage from their opponent's Fast Move.</p>
 					<p><span class="name-attacker">Pokemon</span> can reach the following breakpoints against this <span class="name-defender">Pokemon</span>:</p>
-					
+
 					<table class="stats-table breakpoints" cellspacing="0">
 						<tr>
 							<td><span class="name name-fast">Move</span></td>
@@ -148,9 +148,9 @@ require_once 'header.php';
 						<tbody class="output">
 						</tbody>
 					</table>
-					
+
 					<p><span class="name-attacker">Pokemon</span> can reach the following bulkpoints against this <span class="name-defender">Pokemon</span>:</p>
-					
+
 					<table class="stats-table bulkpoints" cellspacing="0">
 						<tr>
 							<td><span class="name name-fast">Move</span></td>
@@ -324,6 +324,14 @@ require_once 'header.php';
 		<div class="stat-dpe charged"><span class="stat"></span> dpe</div>
 	</div>
 	<p class="wait hide">This Pokemon will take no action this turn.</p>
+
+	<select class="charge-select charged">
+		<option value="0">100% Charge</option>
+		<option value="1">95% Charge</option>
+		<option value="2">75% Charge</option>
+		<option value="3">50% Charge</option>
+		<option value="4">25% Charge</option>
+	</select>
 
 	<div class="check shields charged"><span></span>Shield this attack</div>
 	<div class="check buffs charged"><span></span>Apply buffs/debuffs</div>

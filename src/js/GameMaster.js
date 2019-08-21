@@ -9,9 +9,10 @@ var GameMaster = (function () {
 		object.data = {};
 		object.rankings = [];
 		object.groups = [];
+		object.teamPools = [];
 		object.loadedData = 0;
 
-		$.getJSON( webRoot+"data/gamemaster.json?v=115", function( data ){
+		$.getJSON( webRoot+"data/gamemaster.json?v=134", function( data ){
 			object.data = data;
 
 			// Sort Pokemon alphabetically for searching
@@ -145,7 +146,7 @@ var GameMaster = (function () {
 			var key = cup + "" + category + "" + league;
 
 			if(! object.rankings[key]){
-				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=115";
+				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=134";
 
 				$.getJSON( file, function( data ){
 					object.rankings[key] = data;
@@ -165,7 +166,7 @@ var GameMaster = (function () {
 			var key = group;
 
 			if(! object.groups[key]){
-				var file = webRoot+"data/groups/"+group+".json?v=115";
+				var file = webRoot+"data/groups/"+group+".json?v=134";
 
 				$.getJSON( file, function( data ){
 
@@ -180,6 +181,25 @@ var GameMaster = (function () {
 				caller.quickFillGroup(object.groups[key]);
 			}
 		}
+
+		// Load team pool JSON for AI team generation
+
+		object.loadTeamData = function(league, cup, callback){
+
+			var key = league + "" + cup;
+
+			if(! object.teamPools[key]){
+				var file = webRoot+"data/training/teams/"+cup+"/"+league+".json?v=134";
+
+				$.getJSON( file, function( data ){
+					object.teamPools[key] = data;
+					callback(league, cup, data);
+				});
+			} else{
+				callback(league, cup, object.teamPools[key]);
+			}
+		}
+
 
 		// Modify a Pokemon data entry
 

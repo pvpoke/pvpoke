@@ -1,0 +1,167 @@
+/* CSS Document */
+body {
+  background: #030509;
+  color: #eee; }
+
+a {
+  color: #30b5ab; }
+
+.section.white,
+.poke .poke-stats {
+  background: #444; }
+
+select, .league-select, .cup-select, .mode-select,
+option,
+.poke input, .poke select,
+input,
+.poke-search {
+  background: #222;
+  color: #fff; }
+  select::-webkit-input-placeholder, .league-select::-webkit-input-placeholder, .cup-select::-webkit-input-placeholder, .mode-select::-webkit-input-placeholder,
+  option::-webkit-input-placeholder,
+  .poke input::-webkit-input-placeholder, .poke select::-webkit-input-placeholder,
+  input::-webkit-input-placeholder,
+  .poke-search::-webkit-input-placeholder {
+    color: #aaa; }
+  select::-moz-placeholder, .league-select::-moz-placeholder, .cup-select::-moz-placeholder, .mode-select::-moz-placeholder,
+  option::-moz-placeholder,
+  .poke input::-moz-placeholder, .poke select::-moz-placeholder,
+  input::-moz-placeholder,
+  .poke-search::-moz-placeholder {
+    color: #aaa; }
+  select:-ms-input-placeholder, .league-select:-ms-input-placeholder, .cup-select:-ms-input-placeholder, .mode-select:-ms-input-placeholder,
+  option:-ms-input-placeholder,
+  .poke input:-ms-input-placeholder, .poke select:-ms-input-placeholder,
+  input:-ms-input-placeholder,
+  .poke-search:-ms-input-placeholder {
+    color: #aaa; }
+  select:-moz-placeholder, .league-select:-moz-placeholder, .cup-select:-moz-placeholder, .mode-select:-moz-placeholder,
+  option:-moz-placeholder,
+  .poke input:-moz-placeholder, .poke select:-moz-placeholder,
+  input:-moz-placeholder,
+  .poke-search:-moz-placeholder {
+    color: #aaa; }
+
+.modal .sandbox-move-select .move-select option {
+  background: #222 !important; }
+
+.poke input, .poke select {
+  border: 1px solid #666; }
+
+.poke-search {
+  border: 1px solid #aaa; }
+
+header {
+  background: #444; }
+  header .menu a,
+  header .title a {
+    color: #eabd49; }
+  header .hamburger .meat {
+    background: #eabd49; }
+  header .icon-battle {
+    background-image: url("../../img/themes/night/icon_battle.png"); }
+  header .icon-train {
+    background-image: url("../../img/themes/night/icon_train.png"); }
+  header .icon-rankings {
+    background-image: url("../../img/themes/night/icon_rankings.png"); }
+  header .icon-team {
+    background-image: url("../../img/themes/night/icon_team.png"); }
+  header .icon-contribute {
+    background-image: url("../../img/themes/night/icon_contribute.png"); }
+  header .icon-articles {
+    background-image: url("../../img/themes/night/icon_articles.png"); }
+  header .icon-moves {
+    background-image: url("../../img/themes/night/icon_moves.png"); }
+  header .icon-settings {
+    background-image: url("../../img/themes/night/icon_settings.png"); }
+
+h1 {
+  color: #fff; }
+
+.poke .poke-stats .stat-container {
+  color: #eee; }
+.poke .poke-stats .stat-container .bar-back .bar {
+  background: rgba(255, 255, 255, 0.6); }
+.poke .poke-stats a {
+  color: #30b5ab; }
+.poke .poke-stats h3.section-title {
+  color: #eee; }
+.poke .poke-stats .move-select, .poke .poke-stats .type {
+  color: #000; }
+
+.check span {
+  border: 2px solid #888; }
+
+a.toggle {
+  color: #30b5ab; }
+
+.move-bars .move-bar.active {
+  border: 2px solid white; }
+
+.battle-results .timeline-container {
+  background: rgba(50, 50, 50, 0.5);
+  border: 1px solid #888; }
+  .battle-results .timeline-container .timeline {
+    border-top: 1px dashed #888; }
+    .battle-results .timeline-container .timeline .item-container .item.fast {
+      border: 1px solid #888; }
+  .battle-results .timeline-container .tracker {
+    border-left: 1px solid #aaa; }
+
+.sandbox.clear-btn {
+  color: #000; }
+
+.stats-table tr:nth-child(2n) {
+  background: rgba(255, 255, 255, 0.15); }
+
+.histograms .histogram .chart {
+  border: 1px solid #888;
+  background: #222; }
+  .histograms .histogram .chart .segment:nth-of-type(10) {
+    border-right: 1px dashed #888; }
+
+.rank {
+  color: #000; }
+
+.ranking-categories {
+  margin-top: 10px; }
+  .ranking-categories a {
+    color: #30b5ab; }
+    .ranking-categories a.selected {
+      background: #30b5ab;
+      color: #eee; }
+
+.modal .modal-header {
+  color: #000; }
+.modal .modal-container {
+  border: 2px solid #888; }
+.modal .modal-content {
+  background: #444; }
+
+.section.typings li span {
+  color: #000; }
+.section.typings table {
+  color: #000;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px; }
+
+.contribute .supporters .supporter {
+  background: #222; }
+
+.battle-window {
+  box-shadow: 0px 5px 15px #000; }
+  .battle-window .scene .background {
+    background-image: url("../../img/themes/night/pvp-background.jpg"); }
+  .battle-window .top .team-indicator {
+    color: #000; }
+  .battle-window .end-screen-container .damage .damage-section {
+    background: #222; }
+    .battle-window .end-screen-container .damage .damage-section .avg-line {
+      border: 1px dotted rgba(255, 255, 255, 0.5); }
+
+.team-select .self, .team-select .opponent {
+  background: #444; }
+
+@media only screen and (min-width: 721px) {
+  .menu .submenu .submenu-wrap {
+    background: #444; } }
