@@ -83,7 +83,8 @@ require_once 'header.php'; ?>
 			</div>
 			
 			<div class="field-section id">
-				<p>Enter a list of Pokemon ID's below, separated by comma (no spaces). Pokemon ID's are lowercase. Some examples:</p>
+				<p>Enter a list of Pokemon ID's below, separated by comma (no spaces). For inclusion, these Pokemon will be included regardless of the other filters.</p>
+				<p>Pokemon ID's are lowercase. Some examples:</p>
 				<ul>
 					<li><em>pikachu</em></li>
 					<li><em>raichu_alolan</em></li>
@@ -129,6 +130,7 @@ require_once 'header.php'; ?>
 
 <div class="section white custom-rankings-list">
 	<h3>Pokemon List (<span class="pokemon-count">0</span>)</h3>
+	<p>Currently this list filters out Pokemon that don't meet a certain stat product requirement for the sake of the rankings, so it's not comprehensive regarding pre-evolutions, low CP Pokemon, etc.</p>
 	<textarea class="pokemon-list"></textarea>
 </div>
 
