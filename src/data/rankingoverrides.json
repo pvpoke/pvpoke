@@ -543,6 +543,10 @@
 			{
 				"speciesId": "mewtwo_armored",
 				"chargedMoves": ["ROCK_SLIDE","DYNAMIC_PUNCH"]
+			},
+			{
+				"speciesId": "mewtwo",
+				"chargedMoves": ["PSYSTRIKE","ICE_BEAM"]
 			}
 		]
 	},
@@ -577,6 +581,10 @@
 			{
 				"speciesId": "mewtwo_armored",
 				"chargedMoves": ["ROCK_SLIDE","DYNAMIC_PUNCH"]
+			},
+			{
+				"speciesId": "mewtwo",
+				"chargedMoves": ["ICE_BEAM","SHADOW_BALL"]
 			}
 		]
 	},

@@ -5024,8 +5024,8 @@
 		},
 		"types": ["psychic", "none"],
 		"fastMoves": ["CONFUSION", "PSYCHO_CUT"],
-		"chargedMoves": ["FLAMETHROWER", "FOCUS_BLAST", "HYPER_BEAM", "ICE_BEAM", "PSYCHIC", "SHADOW_BALL", "THUNDERBOLT"],
-		"legacyMoves": ["HYPER_BEAM", "SHADOW_BALL"],
+		"chargedMoves": ["FLAMETHROWER", "FOCUS_BLAST", "HYPER_BEAM", "ICE_BEAM", "PSYCHIC", "SHADOW_BALL", "THUNDERBOLT", "PSYSTRIKE"],
+		"legacyMoves": ["HYPER_BEAM", "SHADOW_BALL", "PSYSTRIKE"],
 		"defaultIVs": {
 			"cp1500": [13.5, 3, 12, 0],
 			"cp2500": [22, 5, 10, 10]
