@@ -17,7 +17,6 @@ require_once 'header.php'; ?>
 		<h3>Include</h3>
 		<p>Pokemon will be included if they meet all of the criteria below.</p>
 		<div class="filters" list-index="0">
-			<p>No filters yet.</p>
 		</div>
 		<button class="add-filter" list-index="0">+ Add Filter</button>
 	</div>
@@ -26,7 +25,6 @@ require_once 'header.php'; ?>
 		<h3>Exclude</h3>
 		<p>Pokemon will be excluded if they meet any of the criteria below.</p>
 		<div class="filters" list-index="1">
-			<p>No filters yet.</p>
 		</div>
 		<button class="add-filter" list-index="1">+ Add Filter</button>
 	</div>
@@ -110,6 +108,7 @@ require_once 'header.php'; ?>
 				</div>
 			</div>
 		</div>
+		<div class="remove">X</div>
 	</div>
 
 	<button class="simulate button">Simulate</button>
@@ -130,8 +129,29 @@ require_once 'header.php'; ?>
 
 <div class="section white custom-rankings-list">
 	<h3>Pokemon List (<span class="pokemon-count">0</span>)</h3>
-	<p>Currently this list filters out Pokemon that don't meet a certain stat product requirement for the sake of the rankings, so it's not comprehensive regarding pre-evolutions, low CP Pokemon, etc.</p>
+	<p>This list below contains eligible Pokemon for this cup. Pokemon that don't meet certain stat requirements, such as low CP Pokemon, aren't included for ranking purposes.</p>
 	<textarea class="pokemon-list"></textarea>
+</div>
+
+<div class="hide">
+	<?php require 'modules/pokeselect.php'; ?>
+</div>
+
+<div class="section white custom-rankings-overrides">
+	<h3>Moveset Overrides</h3>
+	<p>The rankings generate recommended movesets for each Pokemon. You can add a Pokemon below to override its ranked moveset.</p>
+	<?php require 'modules/pokemultiselect.php'; ?>
+</div>
+
+
+
+<div class="delete-filter-confirm hide">
+	<p>Remove this filter?</p>
+
+	<div class="center flex">
+		<div class="button yes">Yes</div>
+		<div class="button no">No</div>
+	</div>
 </div>
 
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
@@ -143,6 +163,9 @@ require_once 'header.php'; ?>
 <script src="<?php echo $WEB_ROOT; ?>js/RankerMain.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/RankingInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeMultiSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/CustomRankingInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
 
 <?php require_once 'footer.php'; ?>

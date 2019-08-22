@@ -11,8 +11,14 @@ function interfaceObject(){
 	var ranker = RankerMaster.getInstance();
 	var rankingInterface = InterfaceMaster.getInstance();
 	var pokeSelectors = [];
+	var multiSelector;
 	var rankingsRunning = false;
 	var self = this;
+	
+	// Store selected filter for later manipulation
+	var selectedElement;
+	var selectedListIndex;
+	var selectedFilterIndex;
 
 	var cup = {
 		name: "custom",
@@ -38,8 +44,12 @@ function interfaceObject(){
 		$("body").on("stateChange", ".field-section .check", filterCheckBox);
 		$("body").on("keyup", ".field-section input", filterInput);
 		$("body").on("click", ".field-section.type .select-all, .field-section.type .deselect-all", typeSelectAll);
+		$("body").on("click", ".filter .remove", deleteFilterConfirm);
 
 		battle = new Battle();
+		
+		multiSelector = new PokeMultiSelect($(".poke.multi"));
+		multiSelector.init(data.pokemon, battle);
 	};
 
 	// Update the displayed filters
@@ -175,6 +185,42 @@ function interfaceObject(){
 		self.updateFilterValues($el);
 		$el.find("a.toggle .name").html(filter.name);
 		$el.attr("type",filter.filterType);
+	}
+	
+	// Confirm whether or not to delete a filter
+
+	function deleteFilterConfirm(e){
+		var $el = $(e.target).closest(".filter");
+		var listIndex = $el.closest(".filters").attr("list-index");
+		
+		selectedElement = $el;
+		selectedListIndex = listIndex;
+		selectedFilterIndex = parseInt($el.attr("index"));
+		
+		modalWindow("Remove Filter", $(".delete-filter-confirm"));
+	}
+	
+	// Confirm whether or not to delete a filter
+
+	function deleteFilterConfirm(e){
+		var $el = $(e.target).closest(".filter");
+		var listIndex = $el.closest(".filters").attr("list-index");
+		
+		selectedElement = $el;
+		selectedListIndex = listIndex;
+		selectedFilterIndex = parseInt($el.attr("index"));
+		
+		modalWindow("Remove Filter", $(".delete-filter-confirm"));
+		
+		$(".modal .yes").click(deleteSelectedFilter);
+	}
+	
+	// Delete a previously selected filter
+	
+	function deleteSelectedFilter(){
+		filterLists[selectedListIndex].splice(selectedFilterIndex, 1);
+		$(selectedElement).remove();
+		closeModalWindow();
 	}
 
 	// Event handler for changing the league select

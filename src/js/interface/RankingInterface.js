@@ -92,7 +92,7 @@ var InterfaceMaster = (function () {
 
 				var battle = new Battle();
 				
-				$(".rankings-container").html('');
+				$(".section.white > .rankings-container").html('');
 
 
 				// Create an element for each ranked Pokemon
@@ -122,7 +122,7 @@ var InterfaceMaster = (function () {
 						$el.addClass("limited-rank");
 					}
 
-					$(".rankings-container").append($el);
+					$(".section.white > .rankings-container").append($el);
 				}
 
 				$(".loading").hide();

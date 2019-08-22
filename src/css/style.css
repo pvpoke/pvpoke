@@ -2046,8 +2046,10 @@ a.toggle {
   margin-bottom: 5px; }
   .custom-rankings .filters .filter {
     padding: 10px;
+    border: 2px solid #000;
     border-radius: 12px;
-    margin-bottom: 5px; }
+    margin-bottom: 8px;
+    position: relative; }
     .custom-rankings .filters .filter .toggle-content {
       margin-top: 10px;
       padding-top: 10px;
@@ -2071,6 +2073,12 @@ a.toggle {
       .custom-rankings .filters .filter .field-section.dex input {
         max-width: 100px;
         margin-right: 10px; }
+    .custom-rankings .filters .filter .remove {
+      cursor: pointer;
+      color: #ff0000;
+      position: absolute;
+      top: 10px;
+      right: 10px; }
     .custom-rankings .filters .filter[type="type"] .field-section.type {
       display: block; }
     .custom-rankings .filters .filter[type="tag"] .field-section.tag {
@@ -2091,6 +2099,18 @@ a.toggle {
   display: none; }
   .custom-rankings-results h3:first-of-type {
     margin-top: 0; }
+
+.custom-rankings-overrides .poke.multi {
+  display: block;
+  float: none; }
+  .custom-rankings-overrides .poke.multi .poke-stats {
+    padding: 0;
+    background: none; }
+  .custom-rankings-overrides .poke.multi .cup-select,
+  .custom-rankings-overrides .poke.multi .options {
+    display: none; }
+  .custom-rankings-overrides .poke.multi .custom-options {
+    display: block; }
 
 @media only screen and (min-width: 721px) {
   .menu {

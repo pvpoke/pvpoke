@@ -2763,8 +2763,10 @@ a.toggle{
 		
 		.filter{
 			padding: 10px;
+			border:2px solid #000;
 			border-radius: 12px;
-			margin-bottom:5px;
+			margin-bottom:8px;
+			position: relative;
 			
 			.toggle-content{
 				margin-top:10px;
@@ -2809,6 +2811,14 @@ a.toggle{
 					}
 				}
 			}
+				
+			.remove{
+				cursor:pointer;
+				color:#ff0000;
+				position: absolute;
+				top: 10px;
+				right: 10px;
+			}
 			
 			&[type="type"] .field-section.type{
 				display:block;
@@ -2846,6 +2856,27 @@ a.toggle{
 	
 	h3:first-of-type{
 		margin-top:0;
+	}
+}
+
+.custom-rankings-overrides{
+	.poke.multi{
+		display:block;
+		float:none;
+		
+		.poke-stats{
+			padding:0;
+			background:none;
+		}
+		
+		.cup-select,
+		.options{
+			display:none;
+		}
+		
+		.custom-options{
+			display:block;
+		}
 	}
 }
 
