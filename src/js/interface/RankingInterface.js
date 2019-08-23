@@ -81,7 +81,7 @@ var InterfaceMaster = (function () {
 
 					limitedPokemon = ["medicham","lucario","venusaur","meganium","skarmory","altaria","bastiodon","probopass","tropius","azumarill"];
 				}
-				
+
 
 				if(cup == "safari"){
 					$(".limited").show();
@@ -91,7 +91,7 @@ var InterfaceMaster = (function () {
 				}
 
 				var battle = new Battle();
-				
+
 				$(".section.white > .rankings-container").html('');
 
 
@@ -214,7 +214,7 @@ var InterfaceMaster = (function () {
 				if(context == "custom"){
 					return false;
 				}
-				
+
 				var url = webRoot+"rankings/"+cup+"/"+cp+"/"+category+"/";
 
 				if(speciesId){
@@ -233,9 +233,9 @@ var InterfaceMaster = (function () {
 				  'event_label' : speciesId
 				});
 			}
-			
+
 			// Set a context so this interface can add or skip functionality
-			
+
 			this.setContext = function(value){
 				context = value;
 			}
@@ -417,9 +417,10 @@ var InterfaceMaster = (function () {
 					"closers": "00",
 					"leads": "11",
 					"attackers": "01",
-					"defenders": "10"
+					"defenders": "10",
+					"custom": "11"
 				}
-				
+
 				if(context == "custom"){
 					category = context;
 				}
