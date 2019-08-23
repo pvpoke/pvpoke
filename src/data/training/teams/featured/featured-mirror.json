@@ -411,6 +411,59 @@
 		]
 	},
 	{
+		"name": "Nico Villalobos",
+		"slug": "nico",
+		"cup": "nightmare",
+		"cupName": "Nightmare",
+		"league": 1500,
+		"description": "I've been a competitive Pokemon player since 2011, Pokemon GO is just the next game in line for me to dominate. I'm looking to be the best in the Midwest, so y'all better step aside.",
+		"link": "https://twitter.com/villalobos_nico",
+		"pokemon": [
+			{
+				"speciesId": "gardevoir",
+				"fastMove": "CHARM",
+				"chargedMoves": ["SYNCRHONOISE","SHADOW_BALL"],
+				"level": 18.5,
+				"ivs": [0,15,6]
+			},
+			{
+				"speciesId": "claydol",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["GYRO_BALL","EARTH_POWER"],
+				"level": 29,
+				"ivs": [4,14,11]
+			},
+			{
+				"speciesId": "bronzong",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["BULLDOZE","PSYSHOCK"],
+				"level": 25.5,
+				"ivs": [0,14,15]
+			},
+			{
+				"speciesId": "hypno",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["SHADOW_BALL","ICE_PUNCH"],
+				"level": 26.5,
+				"ivs": [7,15,12]
+			},
+			{
+				"speciesId": "hitmonchan",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["POWER_UP_PUNCH","ICE_PUNCH"],
+				"level": 23,
+				"ivs": [11,14,12]
+			},
+			{
+				"speciesId": "drapion",
+				"fastMove": "BITE",
+				"chargedMoves": ["AQUA_TAIL","CRUNCH"],
+				"level": 24,
+				"ivs": [2,5,6]
+			}
+		]
+	},
+	{
 		"name": "KnightsOoofRen",
 		"slug": "renn",
 		"cup": "jungle",

@@ -9228,6 +9228,17 @@
 		"energyGain": 7,
 		"cooldown": 1000
 	}, {
+		"moveId": "CRABHAMMER",
+		"name": "Crabhammer",
+		"type": "water",
+		"power": 75,
+		"energy": 50,
+		"energyGain": 0,
+		"cooldown": 500,
+		"buffs": [2,0],
+		"buffTarget": "self",
+		"buffApplyChance": ".125"
+	}, {
 		"moveId": "CROSS_CHOP",
 		"name": "Cross Chop",
 		"type": "fighting",
