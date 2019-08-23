@@ -1697,7 +1697,7 @@
 		},
 		"types": ["water", "dark"],
 		"fastMoves": ["SNARL", "WATERFALL"],
-		"chargedMoves": ["BUBBLE_BEAM", "NIGHT_SLASH", "VICE_GRIP"],
+		"chargedMoves": ["BUBBLE_BEAM", "NIGHT_SLASH", "VICE_GRIP", "CRABHAMMER"],
 		"defaultIVs": {
 			"cp1500": [22.5, 0, 13, 13],
 			"cp2500": [40, 15, 15, 15]
@@ -3905,7 +3905,7 @@
 		},
 		"types": ["water", "none"],
 		"fastMoves": ["BUBBLE", "METAL_CLAW", "MUD_SHOT"],
-		"chargedMoves": ["VICE_GRIP", "WATER_PULSE", "X_SCISSOR"],
+		"chargedMoves": ["VICE_GRIP", "WATER_PULSE", "X_SCISSOR","CRABHAMMER"],
 		"legacyMoves": ["MUD_SHOT"],
 		"defaultIVs": {
 			"cp1500": [19, 11, 13, 12],

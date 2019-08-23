@@ -254,14 +254,14 @@
 				"fastMove": "SMACK_DOWN",
 				"chargedMoves": ["CRUNCH","STONE_EDGE"],
 				"difficulty": 2,
-				"weight":6
+				"weight":10
 			},
 			{
 				"speciesId": "umbreon",
 				"fastMove": "SNARL",
 				"chargedMoves": ["FOUL_PLAY","LAST_RESORT"],
 				"difficulty": 3,
-				"weight":4
+				"weight":8
 			},
 			{
 				"speciesId": "froslass",
@@ -274,8 +274,8 @@
 				"speciesId": "sneasel",
 				"fastMove": "ICE_SHARD",
 				"chargedMoves": ["AVALANCHE","ICE_PUNCH"],
-				"difficulty": 2,
-				"weight":3
+				"difficulty": 1,
+				"weight":2
 			},
 			{
 				"speciesId": "houndoom",
@@ -563,6 +563,13 @@
 				"chargedMoves": ["AQUA_TAIL","SLUDGE_WAVE"],
 				"difficulty": 1,
 				"weight":1
+			},
+			{
+				"speciesId": "crawdaunt",
+				"fastMove": "WATERFALL",
+				"chargedMoves": ["NIGHT_SLASH","CRABHAMMER"],
+				"difficulty": 2,
+				"weight":2
 			},
 			{
 				"speciesId": "sharpedo",

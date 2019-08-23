@@ -68,6 +68,20 @@
 				"weight":1
 			},
 			{
+				"speciesId": "kingler",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["X_SCISSOR","CRABHAMMER"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "kingler",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["X_SCISSOR","CRABHAMMER"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
 				"speciesId": "huntail",
 				"fastMove": "WATER_GUN",
 				"chargedMoves": ["AQUA_TAIL","ICE_BEAM"],
