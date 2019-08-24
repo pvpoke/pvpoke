@@ -72,6 +72,7 @@ var RankerMaster = (function () {
 				if(moveSelectMode == "auto"){
 					pokemonList = gm.generateFilteredPokemonList(battle, cup.include, cup.exclude);
 				} else if(moveSelectMode == "force"){
+					console.log("forcing");
 					pokemonList = gm.generateFilteredPokemonList(battle, cup.include, cup.exclude, rankingData, overrides);
 				}
 				
@@ -477,10 +478,6 @@ var RankerMaster = (function () {
 						for(var k = 0; k < rankingData.length; k++){
 							if(pokemon.speciesId == rankingData[k].speciesId){
 								rankings[i].moves = rankingData[k].moves;
-
-								if(pokemon.speciesId == "vigoroth"){
-									console.log(rankingData[k].moves);
-								}
 							}
 						}
 					} else{
@@ -619,6 +616,31 @@ var RankerMaster = (function () {
 			
 			this.getMoveSelectMode = function(){
 				return moveSelectMode;
+			}
+			
+			// Set move overrides for a specific cup and league
+			
+			this.setMoveOverrides = function(league, cup, values){
+				// Iterate through existing overrides and replace if already exists
+				var cupFound = false;
+				
+				for(var i = 0; i < overrides.length; i++){
+					if((overrides[i].league == league)&&(overrides[i].cup == cup)){
+						cupFound = true;
+						overrides[i].pokemon = values;
+					}
+				}
+				
+				// If a cup wasn't found, add a new one
+				if(! cupFound){
+					overrides.push({
+						league: league,
+						cup: cup,
+						pokemon: values
+					})
+				}
+				
+				console.log(overrides);
 			}
 
 			// Given a Pokemon, output a string of numbers for URL building

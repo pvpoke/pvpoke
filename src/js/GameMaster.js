@@ -328,7 +328,6 @@ var GameMaster = (function () {
 						if((rankingData)&&(overrides)){
 
 							// Find Pokemon in existing rankings
-
 							for(var n = 0; n < rankingData.length; n++){
 								if(pokemon.speciesId == rankingData[n].speciesId){
 

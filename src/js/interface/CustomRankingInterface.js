@@ -144,6 +144,26 @@ function interfaceObject(){
 		if(ranker.getMoveSelectMode() == "auto"){
 			// Run the rankings again with established movesets
 			$(".button.simulate").html("Running rankings...");
+			
+			// Convert overrides custom group into an array
+			var overrides = [];
+			var group = multiSelector.getPokemonList();
+			
+			for(var i = 0; i < group.length; i++){
+				var chargedMoves = [];
+				for(n = 0; n < group[i].chargedMoves.length; n++){
+					chargedMoves.push(group[i].chargedMoves[n].moveId);
+				}
+				
+				overrides.push({
+					speciesId: group[i].speciesId,
+					fastMove: group[i].fastMove.moveId,
+					chargedMoves: chargedMoves
+				});
+			}
+			
+			ranker.setMoveOverrides(battle.getCP(), "custom", overrides);
+			
 			generateRankings(null, data);
 		} else if(ranker.getMoveSelectMode() == "force"){
 			$(".button.simulate").html("Simulate");
@@ -252,7 +272,7 @@ function interfaceObject(){
 		} else{
 			// Generate rankings with movesets established
 			ranker.setMoveSelectMode("force");
-			ranker.rankLoop(battle.getCP(), cup, self.receiveRankingData, data);
+			ranker.rankLoop(battle.getCP(), cup, self.receiveRankingData, data[0]);
 		}
 	}
 
