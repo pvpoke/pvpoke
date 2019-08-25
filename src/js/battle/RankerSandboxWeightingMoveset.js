@@ -58,7 +58,7 @@ var RankerMaster = (function () {
 					var r = self.rank(leagues[currentLeagueIndex], shields[currentShieldsIndex]);
 					allResults.push(r);
 				}
-				
+
 				callback(allResults);
 			}
 
@@ -68,14 +68,13 @@ var RankerMaster = (function () {
 
 				// Gather all eligible Pokemon
 				battle.setCP(cp);
-				
+
 				if(moveSelectMode == "auto"){
 					pokemonList = gm.generateFilteredPokemonList(battle, cup.include, cup.exclude);
 				} else if(moveSelectMode == "force"){
-					console.log("forcing");
 					pokemonList = gm.generateFilteredPokemonList(battle, cup.include, cup.exclude, rankingData, overrides);
 				}
-				
+
 			}
 
 			// Run all ranking sets at once
@@ -88,17 +87,17 @@ var RankerMaster = (function () {
 				} else{
 					battle.setCustomCup(cup);
 				}
-				
+
 
 				currentLeagueIndex = 0;
 				currentShieldsIndex = 0;
 
 				leagues = [cp];
-				
+
 				if(cup.name == "custom"){
 					shields = [ [1,1] ];
 				}
-				
+
 				allResults = [];
 
 				for(var currentLeagueIndex = 0; currentLeagueIndex < leagues.length; currentLeagueIndex++){
@@ -113,13 +112,13 @@ var RankerMaster = (function () {
 
 					} else if(moveSelectMode == "force"){
 						// Load existing ranking data first
-						
+
 						if(! data){
 							gm.loadRankingData(self, "overall", leagues[currentLeagueIndex], cup.name);
 						} else{
 							self.displayRankingData(data, callback);
 						}
-						
+
 					}
 
 				}
@@ -134,7 +133,7 @@ var RankerMaster = (function () {
 						allResults.push(r);
 
 						rankingCombinations.splice(0, 1);
-						
+
 						if(rankingCombinations.length == 0){
 							callback(allResults);
 						}
@@ -387,6 +386,10 @@ var RankerMaster = (function () {
 					rankWeightExponent = 1.25;
 				}
 
+				if(cup.name == "custom"){
+					iterations = 7;
+				}
+
 				for(var n = 0; n < iterations; n++){
 
 					var bestScore = Math.max.apply(Math, rankings.map(function(o) { return o.scores[n]; }))
@@ -605,32 +608,32 @@ var RankerMaster = (function () {
 
 				return rankings;
 			}
-			
+
 			// Set whether to autoselect moves or force a best moveset
-			
+
 			this.setMoveSelectMode = function(value){
 				moveSelectMode = value;
 			}
-			
+
 			// Return the current move select mode
-			
+
 			this.getMoveSelectMode = function(){
 				return moveSelectMode;
 			}
-			
+
 			// Set move overrides for a specific cup and league
-			
+
 			this.setMoveOverrides = function(league, cup, values){
 				// Iterate through existing overrides and replace if already exists
 				var cupFound = false;
-				
+
 				for(var i = 0; i < overrides.length; i++){
 					if((overrides[i].league == league)&&(overrides[i].cup == cup)){
 						cupFound = true;
 						overrides[i].pokemon = values;
 					}
 				}
-				
+
 				// If a cup wasn't found, add a new one
 				if(! cupFound){
 					overrides.push({
@@ -639,7 +642,7 @@ var RankerMaster = (function () {
 						pokemon: values
 					})
 				}
-				
+
 				console.log(overrides);
 			}
 

@@ -1,4 +1,4 @@
-		
+
 // Other interfaces are singleton, but this one needs to interact with the RankingInterface
 
 var object = new interfaceObject();
@@ -14,7 +14,7 @@ function interfaceObject(){
 	var multiSelector;
 	var rankingsRunning = false;
 	var self = this;
-	
+
 	// Store selected filter for later manipulation
 	var selectedElement;
 	var selectedListIndex;
@@ -29,7 +29,7 @@ function interfaceObject(){
 
 	var pokemonList = [];
 
-	// Filter lists			
+	// Filter lists
 	var filterLists = [ cup.include, cup.exclude ]; // Array for easy reference
 
 	this.init = function(){
@@ -47,7 +47,7 @@ function interfaceObject(){
 		$("body").on("click", ".filter .remove", deleteFilterConfirm);
 
 		battle = new Battle();
-		
+
 		multiSelector = new PokeMultiSelect($(".poke.multi"));
 		multiSelector.init(data.pokemon, battle);
 	};
@@ -113,8 +113,6 @@ function interfaceObject(){
 				filter.values = [parseInt($el.find("input.start-range").val()), parseInt($el.find("input.end-range").val())];
 				break;
 		}
-
-		self.updatePokemonList();
 	}
 
 	// Updated the list of valid Pokemon
@@ -144,30 +142,31 @@ function interfaceObject(){
 		if(ranker.getMoveSelectMode() == "auto"){
 			// Run the rankings again with established movesets
 			$(".button.simulate").html("Running rankings...");
-			
+
 			// Convert overrides custom group into an array
 			var overrides = [];
 			var group = multiSelector.getPokemonList();
-			
+
 			for(var i = 0; i < group.length; i++){
 				var chargedMoves = [];
 				for(n = 0; n < group[i].chargedMoves.length; n++){
 					chargedMoves.push(group[i].chargedMoves[n].moveId);
 				}
-				
+
 				overrides.push({
 					speciesId: group[i].speciesId,
 					fastMove: group[i].fastMove.moveId,
 					chargedMoves: chargedMoves
 				});
 			}
-			
+
 			ranker.setMoveOverrides(battle.getCP(), "custom", overrides);
-			
+
 			generateRankings(null, data);
 		} else if(ranker.getMoveSelectMode() == "force"){
 			$(".button.simulate").html("Simulate");
 			$(".custom-rankings-results").show();
+			$(".custom-rankings-list").show();
 			rankingInterface.displayRankingData(data[0]);
 		}
 
@@ -206,41 +205,51 @@ function interfaceObject(){
 		$el.find("a.toggle .name").html(filter.name);
 		$el.attr("type",filter.filterType);
 	}
-	
+
 	// Confirm whether or not to delete a filter
 
 	function deleteFilterConfirm(e){
 		var $el = $(e.target).closest(".filter");
 		var listIndex = $el.closest(".filters").attr("list-index");
-		
+
 		selectedElement = $el;
 		selectedListIndex = listIndex;
 		selectedFilterIndex = parseInt($el.attr("index"));
-		
+
 		modalWindow("Remove Filter", $(".delete-filter-confirm"));
 	}
-	
+
 	// Confirm whether or not to delete a filter
 
 	function deleteFilterConfirm(e){
 		var $el = $(e.target).closest(".filter");
 		var listIndex = $el.closest(".filters").attr("list-index");
-		
+
 		selectedElement = $el;
 		selectedListIndex = listIndex;
 		selectedFilterIndex = parseInt($el.attr("index"));
-		
+
 		modalWindow("Remove Filter", $(".delete-filter-confirm"));
-		
+
 		$(".modal .yes").click(deleteSelectedFilter);
 	}
-	
+
 	// Delete a previously selected filter
-	
+
 	function deleteSelectedFilter(){
 		filterLists[selectedListIndex].splice(selectedFilterIndex, 1);
 		$(selectedElement).remove();
 		closeModalWindow();
+
+		// Decrement the index of remaining filter elements by 1
+
+		$(".filters").eq(selectedListIndex).find(".filter").each(function(i, value){
+			var index = parseInt($(this).attr("index"));
+
+			if(index > selectedFilterIndex){
+				$(this).attr("index", index-1);
+			}
+		});
 	}
 
 	// Event handler for changing the league select
@@ -261,16 +270,19 @@ function interfaceObject(){
 			rankingsRunning = true;
 			return false;
 		} else if((! data)&&(!rankingsRunning)){
-			$(".button.simulate").html("Generating movesets...");
+			$(".button.simulate").html("Generating...");
+			self.updatePokemonList();
 		}
-		
-		
+
+
 		if(! data){
 			// Generate movesets
 			ranker.setMoveSelectMode("auto");
 			ranker.rankLoop(battle.getCP(), cup, self.receiveRankingData);
 		} else{
 			// Generate rankings with movesets established
+			console.log(data[0]);
+
 			ranker.setMoveSelectMode("force");
 			ranker.rankLoop(battle.getCP(), cup, self.receiveRankingData, data[0]);
 		}

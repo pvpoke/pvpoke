@@ -12,7 +12,7 @@ require_once 'header.php'; ?>
 	<?php require 'modules/leagueselect.php'; ?>
 
 	<p>Select your rulesets below for which Pokemon to include or exclude.</p>
-	
+
 	<div class="include">
 		<h3>Include</h3>
 		<p>Pokemon will be included if they meet all of the criteria below.</p>
@@ -20,7 +20,7 @@ require_once 'header.php'; ?>
 		</div>
 		<button class="add-filter" list-index="0">+ Add Filter</button>
 	</div>
-	
+
 	<div class="exclude">
 		<h3>Exclude</h3>
 		<p>Pokemon will be excluded if they meet any of the criteria below.</p>
@@ -28,7 +28,7 @@ require_once 'header.php'; ?>
 		</div>
 		<button class="add-filter" list-index="1">+ Add Filter</button>
 	</div>
-	
+
 	<div class="filter clone hide">
 		<a class="toggle" href="#"><span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span> <span class="name">Filter Name</span></a>
 		<div class="toggle-content">
@@ -69,7 +69,7 @@ require_once 'header.php'; ?>
 					<button class="deselect-all">Deselect All</button>
 				</div>
 			</div>
-			
+
 			<div class="field-section tag">
 				<p>Select one or more Pokemon categories below. A Pokemon will be included or excluded if it fits any of these requirements.</p>
 				<div class="field-container">
@@ -79,7 +79,7 @@ require_once 'header.php'; ?>
 					<div class="check" value="regional"><span></span> Regional</div>
 				</div>
 			</div>
-			
+
 			<div class="field-section id">
 				<p>Enter a list of Pokemon ID's below, separated by comma (no spaces). For inclusion, these Pokemon will be included regardless of the other filters.</p>
 				<p>Pokemon ID's are lowercase. Some examples:</p>
@@ -93,7 +93,7 @@ require_once 'header.php'; ?>
 					<input class="ids" placeholder="Pokemon ID's" />
 				</div>
 			</div>
-			
+
 			<div class="field-section dex">
 				<p>Enter a range (inclusive) of Pokedex entry numbers to filter. Below are example ranges:</p>
 				<ul>
