@@ -1,5 +1,6 @@
 <select class="cup-select">
 	<option value="all">All Pokemon</option>
+	<option value="safari">Montreal Safari Cup</option>
 	<option value="jungle">Jungle Cup</option>
 	<option value="rainbow">Rainbow Cup</option>
 	<option value="championships-1">Season 1 Championships</option>
