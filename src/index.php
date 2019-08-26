@@ -27,11 +27,13 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.9.6 (August 29, 2019)</h4>
+	<h4>v1.10.0</h4>
 	<ul>
-		<li>You can now change the site appearance to Night Mode from the <a href="<?php echo $WEB_ROOT;?>settings/">Settings page</a>!</li>
+		<li><a href="<?php echo $WEB_ROOT;?>custom-rankings/">Custom Rankings</a> tool will allow you to test rules for a custom tournament format</li>
 		<ul>
-			<li>Look forward to future theme options!</li>
+			<li>Add rules to include or exclude Pokemon based on type, category, generation, or individual species</li>
+			<li>Generate ranking results to see a big picture view of the meta and potential balance problems</li>
+			<li>Import or export your custom tournament settings to share or save</li>
 		</ul>
 	</ul>
 

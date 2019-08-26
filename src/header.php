@@ -56,14 +56,14 @@ if(! isset($OG_IMAGE)){
 <link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json">
 
 <link rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=52">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=53">
 
 <?php if(strpos($META_TITLE, 'Train') !== false): ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=4">
 <?php endif; ?>
 	
 <?php if((isset($_SETTINGS->theme))&&($_SETTINGS->theme != "default")): ?>
-	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/themes/<?php echo $_SETTINGS->theme; ?>.css?v=1">
+	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/themes/<?php echo $_SETTINGS->theme; ?>.css?v=2">
 <?php endif; ?>
 
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>

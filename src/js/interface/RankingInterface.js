@@ -183,9 +183,6 @@ var InterfaceMaster = (function () {
 								break;
 
 							case "cup":
-								if(val == "safari"){
-									$(".cup-select").append("<option value=\"safari\">Safari Cup</option>");
-								}
 								$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
 
 								break;
@@ -301,6 +298,9 @@ var InterfaceMaster = (function () {
 				if(! $(e.target).is(".rank, .rank > .rating-container, .rank > .rating-container *, .rank > .name-container, .rank > .name-container *")||($(e.target).is("a"))){
 					return;
 				}
+				
+				var cup = $(".cup-select option:selected").val();
+				console.log(cup);
 
 				var $rank = $(this).closest(".rank");
 
@@ -484,10 +484,12 @@ var InterfaceMaster = (function () {
 				$details.find(".share-link input").val(link);
 
 				// Add multi-battle link
+				if($(".cup-select").length > 0){
+					var multiBattleLink = host+"battle/multi/"+cp+"/"+cup+"/"+pokemon.speciesId+"/"+shieldStrs[category]+"/"+r.moveStr+"/2-1/";
 
-				var multiBattleLink = host+"battle/multi/"+cp+"/"+cup+"/"+pokemon.speciesId+"/"+shieldStrs[category]+"/"+r.moveStr+"/2-1/";
+					$details.find(".share-link").before($("<div class=\"multi-battle-link\"><p>See all of <b>" + pokemon.speciesName + "'s</b> matchups:</p><a target=\"_blank\" class=\"button\" href=\""+multiBattleLink+"\">"+pokemon.speciesName+" vs. " + cupName +"</a></div>"));
+				}
 
-				$details.find(".share-link").before($("<div class=\"multi-battle-link\"><p>See all of <b>" + pokemon.speciesName + "'s</b> matchups:</p><a target=\"_blank\" class=\"button\" href=\""+multiBattleLink+"\">"+pokemon.speciesName+" vs. " + cupName +"</a></div>"));
 
 				// Only execute if this was a direct action and not loaded from URL parameters, otherwise pushes infinite states when the user navigates back
 

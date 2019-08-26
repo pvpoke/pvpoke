@@ -2,14 +2,14 @@
 
 $META_TITLE = 'Custom Rankings';
 
-$META_DESCRIPTION = 'Configure a custom cup and see simple rankings.';
+$META_DESCRIPTION = 'Configure a custom Pokemon GO tournament and see simple rankings.';
 
 
 require_once 'header.php'; ?>
 
 <h1>Custom Rankings</h1>
 <div class="section white custom-rankings">
-	<p>This tool will generate high-level rankings to help you develop a custom meta. Select your rulesets below for which Pokemon to include or exclude.</p>
+	<p>This tool will generate high-level rankings to help you develop a custom cup or tournament. Select your rulesets below for which Pokemon to include or exclude.</p>
 
 	<?php require 'modules/leagueselect.php'; ?>
 

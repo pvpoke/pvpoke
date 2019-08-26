@@ -162,6 +162,22 @@ a.toggle {
 .team-select .self, .team-select .opponent {
   background: #444; }
 
+.custom-rankings .include .filter {
+  background: #29505b; }
+  .custom-rankings .include .filter .remove {
+    color: #ff8b8b; }
+.custom-rankings .exclude .filter {
+  background: #582b2b; }
+  .custom-rankings .exclude .filter a.toggle {
+    color: #f1b9b9; }
+  .custom-rankings .exclude .filter .remove {
+    color: #ff8b8b; }
+
+.custom-rankings-import textarea.import,
+.custom-rankings-list .pokemon-list {
+  background: #222;
+  color: #eee; }
+
 @media only screen and (min-width: 721px) {
   .menu .submenu .submenu-wrap {
     background: #444; } }

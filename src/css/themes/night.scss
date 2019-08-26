@@ -248,6 +248,34 @@ a.toggle{
 	background:#444;
 }
 
+.custom-rankings{
+	.include .filter{
+		background:#29505b;
+		
+		.remove{
+			color:#ff8b8b;
+		}
+	}
+	
+	.exclude .filter{
+		background:#582b2b;
+		
+		a.toggle{
+			color:#f1b9b9;
+		}
+		
+		.remove{
+			color:#ff8b8b;
+		}
+	}
+}
+
+.custom-rankings-import textarea.import,
+.custom-rankings-list .pokemon-list{
+	background:#222;
+	color:$font-color;
+}
+
 @media only screen and (min-width: 721px){
 	.menu .submenu .submenu-wrap{
 		background:#444;

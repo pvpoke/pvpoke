@@ -51,6 +51,9 @@ function interfaceObject(){
 
 		multiSelector = new PokeMultiSelect($(".poke.multi"));
 		multiSelector.init(data.pokemon, battle);
+		
+		// Kill the cup select
+		$(".cup-select").remove();
 	};
 
 	// Update the displayed filters
@@ -186,7 +189,10 @@ function interfaceObject(){
 	this.importCupSettings = function(data){
 		cup.include = data.include;
 		cup.exclude = data.exclude;
-		cup.overrides = data.overrides;
+		if(data.overrides){
+			cup.overrides = data.overrides;
+		}
+		
 		filterLists = [cup.include, cup.exclude];
 			
 		// Clear all displayed filters
@@ -207,9 +213,7 @@ function interfaceObject(){
 	
 	// Add a new displayed filter given a filter category and filter data
 	
-	this.addFilterFromData = function(category, data, index){
-		console.log(data);
-		
+	this.addFilterFromData = function(category, data, index){		
 		var $filter = $(".filter.clone").clone();
 		$filter.removeClass("hide clone");
 		$filter.find("a.toggle .name").html(data.name);
@@ -337,11 +341,12 @@ function interfaceObject(){
 			return false;
 		}
 		
+		$(".button.simulate").html("Generating...");
+		
 		if((! data)&&(rankingsRunning)){
 			rankingsRunning = true;
 			return false;
 		} else if((! data)&&(!rankingsRunning)){
-			$(".button.simulate").html("Generating...");
 			self.updatePokemonList();
 		}
 
