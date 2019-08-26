@@ -488,6 +488,8 @@ var InterfaceMaster = (function () {
 					var multiBattleLink = host+"battle/multi/"+cp+"/"+cup+"/"+pokemon.speciesId+"/"+shieldStrs[category]+"/"+r.moveStr+"/2-1/";
 
 					$details.find(".share-link").before($("<div class=\"multi-battle-link\"><p>See all of <b>" + pokemon.speciesName + "'s</b> matchups:</p><a target=\"_blank\" class=\"button\" href=\""+multiBattleLink+"\">"+pokemon.speciesName+" vs. " + cupName +"</a></div>"));
+				} else{
+					$details.find(".share-link").remove();
 				}
 
 
