@@ -9,9 +9,9 @@ require_once 'header.php'; ?>
 
 <h1>Custom Rankings</h1>
 <div class="section white custom-rankings">
-	<?php require 'modules/leagueselect.php'; ?>
+	<p>This tool will generate high-level rankings to help you develop a custom meta. Select your rulesets below for which Pokemon to include or exclude.</p>
 
-	<p>Select your rulesets below for which Pokemon to include or exclude.</p>
+	<?php require 'modules/leagueselect.php'; ?>
 
 	<div class="include">
 		<h3>Include</h3>

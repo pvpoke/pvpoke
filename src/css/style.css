@@ -685,10 +685,6 @@ select, input {
   font-weight: bold;
 }
 
-.cup-select option[value=custom] {
-  display: none;
-}
-
 .button {
   display: block;
   font-size: 18px;
@@ -2542,6 +2538,9 @@ a.toggle {
 }
 
 /* CUSTOM RANKINGS */
+.custom-rankings .league-select {
+  margin-bottom: 15px;
+}
 .custom-rankings .include,
 .custom-rankings .exclude {
   margin-bottom: 15px;

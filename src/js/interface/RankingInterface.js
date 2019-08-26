@@ -259,9 +259,15 @@ var InterfaceMaster = (function () {
 				var category = $(".ranking-categories a.selected").attr("data");
 				var cup = $(".cup-select option:selected").val();
 
-				self.displayRankings(category, cp, cup);
+				if(cup != "custom"){
+					self.displayRankings(category, cp, cup);
 
-				self.pushHistoryState(cup, cp, category, null);
+					self.pushHistoryState(cup, cp, category, null);
+				} else{
+					// Redirect to the custom rankings page
+					window.location.href = webRoot+'custom-rankings/';
+				}
+
 			}
 
 			// Event handler for selecting ranking category
