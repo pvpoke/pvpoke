@@ -33,22 +33,6 @@
 			}
 		});
 		
-		
-		// If $_GET request exists, output as JSON into Javascript
-		
-		<?php
-		foreach($_GET as &$param){
-			$param = htmlspecialchars($param);
-		}
-		
-		
-		if($_GET){
-			echo 'var get = ' . json_encode($_GET) . ';';
-		} else{
-			echo 'var get = false;';
-		}
-		?>
-		
 		// Auto select link
 		
 		$(".share-link input").click(function(e){
@@ -66,10 +50,10 @@
 		
 		// Toggleable sections
 		
-		$(".toggle").click(function(e){
+		$("body").on("click", ".toggle", function(e){
 			e.preventDefault();
 			
-			$(this).toggleClass("active");
+			$(e.target).closest(".toggle").toggleClass("active");
 		});
 		
 	</script>

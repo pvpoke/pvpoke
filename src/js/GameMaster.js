@@ -124,6 +124,20 @@ var GameMaster = (function () {
 
 			return move;
 		}
+		
+		// Return a cup object given an id name
+
+		object.getCupById = function(id){
+			var cup;
+			
+			$.each(object.data.cups, function(index, c){
+				if(c.name == id){
+					cup = c;
+				}
+			});
+
+			return cup;
+		}
 
 		// Load and return ranking data JSON
 
@@ -205,7 +219,193 @@ var GameMaster = (function () {
 				}
 			});
 		}
+		
+		// Return a list of eligible Pokemon given a Battle object, and include and exclude filters
+		
+		object.generateFilteredPokemonList = function(battle, include, exclude, rankingData, overrides){
+			// Gather all eligible Pokemon
 
+			var minStats = 3000; // You must be this tall to ride this ride
+
+			if(battle.getCP() == 1500){
+				minStats = 1250;
+			} else if(battle.getCP() == 2500){
+				minStats = 2000;
+			}
+
+			var bannedList = ["mewtwo","mewtwo_armored","giratina_altered","groudon","kyogre","rayquaza","palkia","dialga","heatran","giratina_origin"];
+			var permaBannedList = ["rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","regigigas","phione","manaphy","darkrai","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","kecleon"]; // Don't rank these Pokemon at all yet
+
+			// Aggregate filters
+
+			var filterLists = [
+				include,
+				exclude
+			];
+			
+			var pokemonList = [];
+
+			for(var i = 0; i < object.data.pokemon.length; i++){
+
+				var pokemon = new Pokemon(object.data.pokemon[i].speciesId, 0, battle);
+				pokemon.initialize(battle.getCP());
+
+				var stats = (pokemon.stats.hp * pokemon.stats.atk * pokemon.stats.def) / 1000;
+
+				if(stats >= minStats){
+					// Process all filters
+					var allowed = false;
+
+					for(var n = 0; n < filterLists.length; n++){
+						var filters = filterLists[n];
+						var include = (n == 0);
+						var filtersMatched = 0;
+						var requiredFilters = filters.length;
+
+						for(var j = 0; j < filters.length; j++){
+							var filter = filters[j];
+
+							switch(filter.filterType){
+								case "type":
+
+									if((filter.values.indexOf(pokemon.types[0]) > -1) || (filter.values.indexOf(pokemon.types[1]) > -1)){
+										filtersMatched++;
+									}
+									break;
+
+								case "dex":
+									if((pokemon.dex >= filter.values[0])&&(pokemon.dex <= filter.values[1])){
+										filtersMatched++;
+									}
+									break;
+
+								case "tag":
+									for(var k = 0; k < filter.values.length; k++){
+										if(pokemon.hasTag(filter.values[k])){
+											filtersMatched++;
+										}
+									}
+									break;
+
+								case "id":
+									if(include){
+										requiredFilters--;
+									}
+									
+									if(filter.values.indexOf(pokemon.speciesId) > -1){
+										filtersMatched += filters.length; // If a Pokemon is explicitly included, ignore all other filters
+									}
+									break;
+							}
+						}
+
+						// Only include Pokemon that match all of the include filters
+
+						if((include)&&(filtersMatched >= requiredFilters)){
+							allowed = true;
+						}
+
+						// Exclude Pokemon that match any of the exclude filters
+
+
+						if((! include)&&(filtersMatched > 0)){
+							allowed = false;
+						}								
+					}
+
+					if((battle.getCP() == 1500)&&(bannedList.indexOf(pokemon.speciesId) > -1)){
+						allowed = false;
+					}
+
+					if(permaBannedList.indexOf(pokemon.speciesId) > -1){
+						allowed = false;
+					}
+
+					if(allowed){
+						
+						// If data is available, force "best" moveset
+
+						if((rankingData)&&(overrides)){
+
+							// Find Pokemon in existing rankings
+							for(var n = 0; n < rankingData.length; n++){
+								if(pokemon.speciesId == rankingData[n].speciesId){
+
+									// Sort by uses
+									var fastMoves = rankingData[n].moves.fastMoves;
+									var chargedMoves = rankingData[n].moves.chargedMoves;
+
+									fastMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+									chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+
+									pokemon.selectMove("fast", fastMoves[0].moveId);
+									pokemon.selectMove("charged", chargedMoves[0].moveId, 0);
+
+									pokemon.weightModifier = 1;
+
+									if(chargedMoves.length > 1){
+										pokemon.selectMove("charged", chargedMoves[1].moveId, 1);
+									}
+
+									object.overrideMoveset(pokemon, battle.getCP(), battle.getCup().name, overrides);
+								}
+							}
+						}
+
+						pokemonList.push(pokemon);
+					}
+				}
+			}
+			
+			return pokemonList;
+		}
+
+		// Override a Pokemon's moveset to be used in the rankings
+
+		object.overrideMoveset = function(pokemon, league, cup, overrides){
+
+			// Search eligible leagues and cups
+
+			for(var i = 0; i < overrides.length; i++){
+
+				if((overrides[i].league == league)&&(overrides[i].cup == cup)){
+
+					// Iterate through Pokemon
+
+					var pokemonList = overrides[i].pokemon;
+
+					for(var n = 0; n < pokemonList.length; n++){
+						if(pokemonList[n].speciesId == pokemon.speciesId){
+
+							// Set Fast Move
+
+							if(pokemonList[n].fastMove){
+								pokemon.selectMove("fast", pokemonList[n].fastMove);
+							}
+
+							// Set Charged Moves
+
+							if(pokemonList[n].chargedMoves){
+								for(var j = 0; j < pokemonList[n].chargedMoves.length; j++){
+									pokemon.selectMove("charged", pokemonList[n].chargedMoves[j], j);
+								}
+
+							}
+
+							// Set weight modifier
+
+							if(pokemonList[n].weight){
+								pokemon.weightModifier = pokemonList[n].weight;
+							}
+
+							break;
+						}
+					}
+
+					break;
+				}
+			}
+		}
 
         return object;
     }

@@ -89,6 +89,22 @@ if(! isset($OG_IMAGE)){
 		};
 
 	<?php endif; ?>
+	
+
+	// If $_GET request exists, output as JSON into Javascript
+
+	<?php
+	foreach($_GET as &$param){
+		$param = htmlspecialchars($param);
+	}
+
+
+	if($_GET){
+		echo 'var get = ' . json_encode($_GET) . ';';
+	} else{
+		echo 'var get = false;';
+	}
+	?>
 </script>
 
 </head>

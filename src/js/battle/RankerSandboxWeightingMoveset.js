@@ -21,6 +21,7 @@ var RankerMaster = (function () {
 
 			var moveSelectMode = "force";
 			var rankingData;
+			var allResults = []; // Array of all ranking results
 
 			var leagues = [1500];
 			var shields = [ [0,0], [1,1], [0,1], [1,0]];
@@ -46,18 +47,19 @@ var RankerMaster = (function () {
 
 			// Load existing rankings to get best movesets
 
-			this.displayRankingData = function(data){
+			this.displayRankingData = function(data, callback){
 				rankingData = data;
-
-				console.log(rankingData);
 
 				self.initPokemonList(battle.getCP());
 
 				currentShieldsIndex = 0;
 
 				for(var currentShieldsIndex = 0; currentShieldsIndex < shields.length; currentShieldsIndex++){
-					self.rank(leagues[currentLeagueIndex], shields[currentShieldsIndex]);
+					var r = self.rank(leagues[currentLeagueIndex], shields[currentShieldsIndex]);
+					allResults.push(r);
 				}
+
+				callback(allResults);
 			}
 
 			this.initPokemonList = function(cp){
@@ -67,115 +69,36 @@ var RankerMaster = (function () {
 				// Gather all eligible Pokemon
 				battle.setCP(cp);
 
-				var minStats = 3000; // You must be this tall to ride this ride
-
-				if(battle.getCP() == 1500){
-					minStats = 1250;
-				} else if(battle.getCP() == 2500){
-					minStats = 2500;
+				if(moveSelectMode == "auto"){
+					pokemonList = gm.generateFilteredPokemonList(battle, cup.include, cup.exclude);
+				} else if(moveSelectMode == "force"){
+					pokemonList = gm.generateFilteredPokemonList(battle, cup.include, cup.exclude, rankingData, overrides);
 				}
 
-				// Don't allow these Pokemon into the Great League. They can't be trusted.
-
-				var bannedList = ["mewtwo","mewtwo_armored","giratina_altered","groudon","kyogre","rayquaza","palkia","dialga","heatran","giratina_origin","darkrai"];
-				var permaBannedList = ["rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","regigigas","phione","manaphy","darkrai","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","kecleon"]; // Don't rank these Pokemon at all yet
-
-
-				if(cup.name == "nightmare"){
-					permaBannedList = permaBannedList.concat(["medicham","sableye","lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi","latios","latias","uxie","mesprit","azelf","jirachi"]);
-				}
-
-				if(cup.name == "championships-1"){
-					permaBannedList = permaBannedList.concat(["lugia","cresselia","deoxys","deoxys_attack","deoxys_defense","deoxys_speed","mew","celebi","latios","latias","uxie","mesprit","azelf","melmetal","celebi","zapdos","articuno","moltres","suicune","entei","raikou","regirock","registeel","regice","ho_oh","jirachi"]);
-				}
-
-				if(cup.name == "jungle"){
-					permaBannedList = permaBannedList.concat(["tropius","wormadam_sandy","wormadam_plant","wormadam_trash","mothim"]);
-				}
-
-
-				// If you want to rank specfic Pokemon, you can enter their species id's here
-
-				var allowedList = [];
-
-				for(var i = 0; i < gm.data.pokemon.length; i++){
-
-					if(gm.data.pokemon[i].fastMoves.length > 0){ // Only add Pokemon that have move data
-						var pokemon = new Pokemon(gm.data.pokemon[i].speciesId, 0, battle);
-
-						pokemon.initialize(battle.getCP());
-
-						var stats = (pokemon.stats.hp * pokemon.stats.atk * pokemon.stats.def) / 1000;
-
-						if(stats >= minStats){
-
-							if((battle.getCP() == 1500)&&(bannedList.indexOf(pokemon.speciesId) > -1)){
-								continue;
-							}
-
-							if((allowedList.length > 0) && (allowedList.indexOf(pokemon.speciesId) == -1)){
-								continue;
-							}
-
-							if(permaBannedList.indexOf(pokemon.speciesId) > -1){
-								continue;
-							}
-
-							if((cup.name == "rainbow")&&( (pokemon.dex > 251) || (pokemon.speciesId.indexOf("alolan") > -1))){
-								continue;
-							}
-
-							if((cup.types.length > 0) && (cup.types.indexOf(pokemon.types[0]) < 0) && (cup.types.indexOf(pokemon.types[1]) < 0) ){
-								continue;
-							}
-
-							// If data is available, force "best" moveset
-
-							if((moveSelectMode == "force")&&(rankingData)){
-
-								// Find Pokemon in existing rankings
-
-								for(var n = 0; n < rankingData.length; n++){
-									if(pokemon.speciesId == rankingData[n].speciesId){
-
-										// Sort by uses
-										var fastMoves = rankingData[n].moves.fastMoves;
-										var chargedMoves = rankingData[n].moves.chargedMoves;
-
-										fastMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
-										chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
-
-										pokemon.selectMove("fast", fastMoves[0].moveId);
-										pokemon.selectMove("charged", chargedMoves[0].moveId, 0);
-
-										pokemon.weightModifier = 1;
-
-										if(chargedMoves.length > 1){
-											pokemon.selectMove("charged", chargedMoves[1].moveId, 1);
-										}
-
-										self.overrideMoveset(pokemon, cp, cup.name);
-									}
-								}
-							}
-
-							pokemonList.push(pokemon);
-						}
-					}
-				}
 			}
 
 			// Run all ranking sets at once
 
-			this.rankLoop = function(cp, cup){
+			this.rankLoop = function(cp, cup, callback, data){
 
 				battle.setCP(cp);
-				battle.setCup(cup.name);
+				if(cup.name != "custom"){
+					battle.setCup(cup.name);
+				} else{
+					battle.setCustomCup(cup);
+				}
+
 
 				currentLeagueIndex = 0;
 				currentShieldsIndex = 0;
 
 				leagues = [cp];
+
+				if(cup.name == "custom"){
+					shields = [ [1,1] ];
+				}
+
+				allResults = [];
 
 				for(var currentLeagueIndex = 0; currentLeagueIndex < leagues.length; currentLeagueIndex++){
 
@@ -190,7 +113,12 @@ var RankerMaster = (function () {
 					} else if(moveSelectMode == "force"){
 						// Load existing ranking data first
 
-						gm.loadRankingData(self, "overall", leagues[currentLeagueIndex], cup.name);
+						if(! data){
+							gm.loadRankingData(self, "overall", leagues[currentLeagueIndex], cup.name);
+						} else{
+							self.displayRankingData(data, callback);
+						}
+
 					}
 
 				}
@@ -201,9 +129,14 @@ var RankerMaster = (function () {
 					if((rankingCombinations.length == currentRankings)&&(rankingCombinations.length > 0)){
 						currentRankings--;
 
-						self.rank(rankingCombinations[0].league, rankingCombinations[0].shields);
+						var r = self.rank(rankingCombinations[0].league, rankingCombinations[0].shields);
+						allResults.push(r);
 
 						rankingCombinations.splice(0, 1);
+
+						if(rankingCombinations.length == 0){
+							callback(allResults);
+						}
 					}
 				}, 1000);
 
@@ -216,8 +149,6 @@ var RankerMaster = (function () {
 				var cup = battle.getCup();
 				var totalBattles = 0;
 				var shieldCounts = shields;
-
-				console.log(shieldCounts);
 
 				rankings = [];
 
@@ -455,6 +386,10 @@ var RankerMaster = (function () {
 					rankWeightExponent = 1.25;
 				}
 
+				if(cup.name == "custom"){
+					iterations = 7;
+				}
+
 				for(var n = 0; n < iterations; n++){
 
 					var bestScore = Math.max.apply(Math, rankings.map(function(o) { return o.scores[n]; }))
@@ -546,10 +481,6 @@ var RankerMaster = (function () {
 						for(var k = 0; k < rankingData.length; k++){
 							if(pokemon.speciesId == rankingData[k].speciesId){
 								rankings[i].moves = rankingData[k].moves;
-
-								if(pokemon.speciesId == "vigoroth"){
-									console.log(rankingData[k].moves);
-								}
 							}
 						}
 					} else{
@@ -633,94 +564,86 @@ var RankerMaster = (function () {
 				}
 
 				// Write rankings to file
+				if(cup.name != "custom"){
 
-				var category = "overall";
+					var category = "overall";
 
-				if((shieldCounts[0] == 0) && (shieldCounts[1] == 0)){
-					category = "closers";
-				} else if((shieldCounts[0] == 1) && (shieldCounts[1] == 1)){
-					category = "leads";
-				} else if((shieldCounts[0] == 1) && (shieldCounts[1] == 0)){
-					category = "defenders";
-				} else if((shieldCounts[0] == 0) && (shieldCounts[1] == 1)){
-					category = "attackers";
-				}
-
-				var json = JSON.stringify(rankings);
-				var league = battle.getCP();
-
-				console.log(json);
-				console.log("/"+cup.name+"/"+category+"/rankings-"+league+".json");
-
-				$.ajax({
-
-					url : 'data/write.php',
-					type : 'POST',
-					data : {
-						'data' : json,
-						'league' : league,
-						'category' : category,
-						'cup': cup.name
-					},
-					dataType:'json',
-					success : function(data) {
-						console.log(data);
-					},
-					error : function(request,error)
-					{
-						console.log("Request: "+JSON.stringify(request));
-						console.log(error);
+					if((shieldCounts[0] == 0) && (shieldCounts[1] == 0)){
+						category = "closers";
+					} else if((shieldCounts[0] == 1) && (shieldCounts[1] == 1)){
+						category = "leads";
+					} else if((shieldCounts[0] == 1) && (shieldCounts[1] == 0)){
+						category = "defenders";
+					} else if((shieldCounts[0] == 0) && (shieldCounts[1] == 1)){
+						category = "attackers";
 					}
-				});
+
+					var json = JSON.stringify(rankings);
+					var league = battle.getCP();
+
+					console.log(json);
+					console.log("/"+cup.name+"/"+category+"/rankings-"+league+".json");
+
+					$.ajax({
+
+						url : 'data/write.php',
+						type : 'POST',
+						data : {
+							'data' : json,
+							'league' : league,
+							'category' : category,
+							'cup': cup.name
+						},
+						dataType:'json',
+						success : function(data) {
+							console.log(data);
+						},
+						error : function(request,error)
+						{
+							console.log("Request: "+JSON.stringify(request));
+							console.log(error);
+						}
+					});
+				}
 
 				return rankings;
 			}
 
-			// Override a Pokemon's moveset to be used in the rankings
+			// Set whether to autoselect moves or force a best moveset
 
-			this.overrideMoveset = function(pokemon, league, cup){
+			this.setMoveSelectMode = function(value){
+				moveSelectMode = value;
+			}
 
-				// Search eligible leagues and cups
+			// Return the current move select mode
+
+			this.getMoveSelectMode = function(){
+				return moveSelectMode;
+			}
+
+			// Set move overrides for a specific cup and league
+
+			this.setMoveOverrides = function(league, cup, values){
+				// Iterate through existing overrides and replace if already exists
+				var cupFound = false;
 
 				for(var i = 0; i < overrides.length; i++){
-
 					if((overrides[i].league == league)&&(overrides[i].cup == cup)){
-
-						// Iterate through Pokemon
-
-						var pokemonList = overrides[i].pokemon;
-
-						for(var n = 0; n < pokemonList.length; n++){
-							if(pokemonList[n].speciesId == pokemon.speciesId){
-
-								// Set Fast Move
-
-								if(pokemonList[n].fastMove){
-									pokemon.selectMove("fast", pokemonList[n].fastMove);
-								}
-
-								// Set Charged Moves
-
-								if(pokemonList[n].chargedMoves){
-									for(var j = 0; j < pokemonList[n].chargedMoves.length; j++){
-										pokemon.selectMove("charged", pokemonList[n].chargedMoves[j], j);
-									}
-
-								}
-
-								// Set weight modifier
-
-								if(pokemonList[n].weight){
-									pokemon.weightModifier = pokemonList[n].weight;
-								}
-
-								break;
-							}
-						}
-
-						break;
+						cupFound = true;
+						overrides[i].pokemon = values;
 					}
 				}
+
+				// If a cup wasn't found, add a new one
+				if(! cupFound){
+					overrides.push({
+						league: league,
+						cup: cup,
+						pokemon: values
+					})
+				}
+
+				console.log(overrides);
 			}
 
 			// Given a Pokemon, output a string of numbers for URL building

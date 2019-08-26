@@ -35,7 +35,7 @@ function PokeMultiSelect(element){
 
 		pokeSelector = new PokeSelect($(".modal .poke"), 1);
 		pokeSelector.setContext("modal");
-		pokeSelector.init(pokemon, battle);
+		pokeSelector.init(gm.data.pokemon, battle);
 
 		if(index == -1){
 			// New Pokemon
@@ -472,7 +472,7 @@ function PokeMultiSelect(element){
 		var csv = self.convertListToCSV();
 
 		$(".modal .list-text").html(csv);
-		
+
 
 		// Copy list text
 

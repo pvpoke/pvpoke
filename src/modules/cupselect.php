@@ -11,7 +11,7 @@
 	<option value="twilight">Twilight Cup</option>
 	<option value="boulder">Boulder Cup</option>
 
-	<?php if(strpos($_SERVER['REQUEST_URI'], 'battle') !== false): ?>
+	<?php if((strpos($_SERVER['REQUEST_URI'], 'battle') !== false)||(strpos($_SERVER['REQUEST_URI'], 'rankings') !== false)): ?>
 		<option value="custom">Custom</option>
 	<?php endif; ?>
 
