@@ -24,7 +24,8 @@ function interfaceObject(){
 		name: "custom",
 		title: "Custom",
 		include: [],
-		exclude: []
+		exclude: [],
+		overrides: []
 	}
 
 	var pokemonList = [];
@@ -106,13 +107,18 @@ function interfaceObject(){
 				break;
 
 			case "id":
-				filter.values = $el.find("input.ids").val().split(",");
+				var str = $el.find("input.ids").val().toLowerCase().replace(/ /g,'');
+				filter.values = str.split(",");
 				break;
 
 			case "dex":
 				filter.values = [parseInt($el.find("input.start-range").val()), parseInt($el.find("input.end-range").val())];
 				break;
 		}
+		
+		// Output the cup data to JSON
+		var json = JSON.stringify(cup);
+		$("textarea.import").val(json);
 	}
 
 	// Updated the list of valid Pokemon
@@ -137,8 +143,6 @@ function interfaceObject(){
 	// Receive ranking data from the ranker
 
 	this.receiveRankingData = function(data){
-		console.log(data);
-
 		if(ranker.getMoveSelectMode() == "auto"){
 			// Run the rankings again with established movesets
 			$(".button.simulate").html("Running rankings...");
@@ -159,8 +163,13 @@ function interfaceObject(){
 					chargedMoves: chargedMoves
 				});
 			}
-
+			
+			cup.overrides = overrides;
 			ranker.setMoveOverrides(battle.getCP(), "custom", overrides);
+			
+			// Output the cup data to JSON
+			var json = JSON.stringify(cup);
+			$("textarea.import").val(json);
 
 			generateRankings(null, data);
 		} else if(ranker.getMoveSelectMode() == "force"){
@@ -170,6 +179,62 @@ function interfaceObject(){
 			rankingInterface.displayRankingData(data[0]);
 		}
 
+	}
+	
+	// Import settings and set up displayed filters to match new data
+	
+	this.importCupSettings = function(data){
+		cup.include = data.include;
+		cup.exclude = data.exclude;
+		cup.overrides = data.overrides;
+		filterLists = [cup.include, cup.exclude];
+			
+		// Clear all displayed filters
+		$(".filters .filter").remove();
+		
+		// Add filters back
+		for(var i = 0; i < cup.include.length; i++){
+			self.addFilterFromData("include", cup.include[i], i);
+		}
+		
+		for(var i = 0; i < cup.exclude.length; i++){
+			self.addFilterFromData("exclude", cup.exclude[i], i);
+		}
+		
+		// Import moveset overrides
+		multiSelector.quickFillGroup(cup.overrides);
+	}
+	
+	// Add a new displayed filter given a filter category and filter data
+	
+	this.addFilterFromData = function(category, data, index){
+		console.log(data);
+		
+		var $filter = $(".filter.clone").clone();
+		$filter.removeClass("hide clone");
+		$filter.find("a.toggle .name").html(data.name);
+		$filter.attr("index", index);
+		$filter.attr("type", data.filterType);
+		$("." + category + " .filters").append($filter);
+		
+		// Process and select current values
+		switch(data.filterType){
+			case "type":
+			case "tag":
+				for(var i = 0; i < data.values.length; i++){
+					$filter.find(".check[value=\""+data.values[i]+"\"]").addClass("on");
+				}
+				break;
+			
+			case "id":
+				$filter.find("input.ids").val(data.values.join(","));
+				break;
+				
+			case "dex":
+				$filter.find("input.start-range").val(data.values[0]);
+				$filter.find("input.end-range").val(data.values[1]);
+				break;
+		}
 	}
 
 	// Add a new filter to the include or exclude settings
@@ -266,6 +331,12 @@ function interfaceObject(){
 	// Run simulation
 
 	function generateRankings(e, data){
+		// Just some good old client side validation
+		if(cup.name != "custom"){
+			// Is this like being stopped at customs?
+			return false;
+		}
+		
 		if((! data)&&(rankingsRunning)){
 			rankingsRunning = true;
 			return false;
@@ -281,8 +352,6 @@ function interfaceObject(){
 			ranker.rankLoop(battle.getCP(), cup, self.receiveRankingData);
 		} else{
 			// Generate rankings with movesets established
-			console.log(data[0]);
-
 			ranker.setMoveSelectMode("force");
 			ranker.rankLoop(battle.getCP(), cup, self.receiveRankingData, data[0]);
 		}
@@ -315,5 +384,27 @@ function interfaceObject(){
 
 		self.updateFilterValues($el);
 	}
+	
+	// Oh yeah, it's big brain copy + paste time
+	// Copy list text
 
+	$(".custom-rankings-import .copy").click(function(e){
+		var el = $(e.target).prev()[0];
+		el.focus();
+		el.setSelectionRange(0, el.value.length);
+		document.execCommand("copy");
+	});
+
+	// Copy text to import
+
+	$(".custom-rankings-import textarea.import").on("click", function(e){
+		this.setSelectionRange(0, this.value.length);
+	});
+	
+	// Import text
+
+	$(".custom-rankings-import textarea.import").on("change", function(e){
+		var data = JSON.parse($(this).val());
+		self.importCupSettings(data);
+	});
 };

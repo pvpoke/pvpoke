@@ -81,7 +81,7 @@ require_once 'header.php'; ?>
 			</div>
 
 			<div class="field-section id">
-				<p>Enter a list of Pokemon ID's below, separated by comma (no spaces). For inclusion, these Pokemon will be included regardless of the other filters.</p>
+				<p>Enter a list of Pokemon ID's below, separated by commas. For inclusion, these Pokemon will be included regardless of the other filters.</p>
 				<p>Pokemon ID's are lowercase. Some examples:</p>
 				<ul>
 					<li><em>pikachu</em></li>
@@ -133,13 +133,22 @@ require_once 'header.php'; ?>
 	<textarea class="pokemon-list"></textarea>
 </div>
 
+<div class="section white custom-rankings-import">
+	<h3>Import/Export Settings</h3>
+
+	<p>Copy the text below to export your custom settings or paste to import settings.</p>
+	
+	<textarea class="import"></textarea>
+	<div class="copy">Copy</div>
+</div>
+
 <div class="hide">
 	<?php require 'modules/pokeselect.php'; ?>
 </div>
 
 <div class="section white custom-rankings-overrides">
 	<h3>Moveset Overrides</h3>
-	<p>The rankings generate recommended movesets for each Pokemon. You can add a Pokemon below to override its ranked moveset.</p>
+	<p>The rankings generate recommended movesets for each Pokemon. A different moveset may be more optimal, so you can add a Pokemon below to override its ranked moveset.</p>
 	<?php require 'modules/pokemultiselect.php'; ?>
 </div>
 
