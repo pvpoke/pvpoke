@@ -25,7 +25,8 @@ function interfaceObject(){
 		title: "Custom",
 		include: [],
 		exclude: [],
-		overrides: []
+		overrides: [],
+		league: 1500
 	}
 
 	var pokemonList = [];
@@ -189,6 +190,7 @@ function interfaceObject(){
 	this.importCupSettings = function(data){
 		cup.include = data.include;
 		cup.exclude = data.exclude;
+		cup.league = data.league
 		if(data.overrides){
 			cup.overrides = data.overrides;
 		}
@@ -209,6 +211,10 @@ function interfaceObject(){
 		
 		// Import moveset overrides
 		multiSelector.quickFillGroup(cup.overrides);
+		
+		// Set league
+		$(".league-select option[value=\""+cup.league+"\"]").prop("selected","selected");
+		$(".league-select").trigger("change");
 	}
 	
 	// Add a new displayed filter given a filter category and filter data
@@ -329,6 +335,7 @@ function interfaceObject(){
 
 		if(allowed.indexOf(cp) > -1){
 			battle.setCP(cp);
+			cup.league = cp;
 		}
 	}
 

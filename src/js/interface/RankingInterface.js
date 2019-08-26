@@ -240,13 +240,15 @@ var InterfaceMaster = (function () {
 			// Event handler for changing the league select
 
 			function selectLeague(e){
-				var cp = $(".league-select option:selected").val();
-				var category = $(".ranking-categories a.selected").attr("data");
-				var cup = $(".cup-select option:selected").val();
+				if($(".cup-select").length > 0){
+					var cp = $(".league-select option:selected").val();
+					var category = $(".ranking-categories a.selected").attr("data");
+					var cup = $(".cup-select option:selected").val();
 
-				self.displayRankings(category, cp, cup);
+					self.displayRankings(category, cp, cup);
 
-				self.pushHistoryState(cup, cp, category, null);
+					self.pushHistoryState(cup, cp, category, null);
+				}
 			}
 
 			// Event handler for changing the cup select
