@@ -1285,6 +1285,10 @@ select, input{
 	}
 }
 
+.poke.multi .cup-select option[value="custom"]{
+	display:none;
+}
+
 .rating-table{
 
 	text-align: center;

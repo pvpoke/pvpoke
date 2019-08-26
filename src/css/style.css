@@ -844,6 +844,9 @@ select, input {
       border-left: none;
       cursor: initial; }
 
+.poke.multi .cup-select option[value="custom"] {
+  display: none; }
+
 .rating-table {
   text-align: center; }
   .rating-table tr {
