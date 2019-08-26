@@ -133,7 +133,6 @@ function PokeMultiSelect(element){
 	// After loading from the GameMaster, fill in a preset group
 
 	this.quickFillGroup = function(data){
-
 		pokemonList = [];
 
 		for(var i = 0; i < data.length; i++){

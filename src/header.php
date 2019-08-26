@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.9.6';
+$SITE_VERSION = '1.10.0';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -122,16 +122,25 @@ if(! isset($OG_IMAGE)){
 			<div class="menu">
 				<a class="icon-battle" href="<?php echo $WEB_ROOT; ?>battle/">Battle</a>
 				<a class="icon-train" href="<?php echo $WEB_ROOT; ?>train/">Train</a>
-				<a class="icon-rankings" href="<?php echo $WEB_ROOT; ?>rankings/">Rankings</a>
+				<div class="parent-menu">
+					<a class="icon-rankings" href="<?php echo $WEB_ROOT; ?>rankings/">Rankings</a>
+					<div class="submenu">
+						<div class="submenu-wrap">
+							<a class="icon-rankings" href="<?php echo $WEB_ROOT; ?>custom-rankings/">Custom Rankings</a>
+						</div>
+					</div>
+				</div>
 				<a class="icon-team" href="<?php echo $WEB_ROOT; ?>team-builder/">Team Builder</a>
-				<a class="more desktop" href="#"></a>
-				<div class="submenu">
-					<div class="submenu-wrap">
-						<a class="icon-moves" href="<?php echo $WEB_ROOT; ?>moves/">Moves</a>
-						<a class="icon-articles" href="<?php echo $WEB_ROOT; ?>articles/">Articles</a>
-						<a class="icon-contribute" href="<?php echo $WEB_ROOT; ?>contribute/">Contribute</a>
-						<a class="icon-settings" href="<?php echo $WEB_ROOT; ?>settings/">Settings</a>
-						<a class="icon-twitter" href="https://twitter.com/pvpoke" target="_blank">Twitter</a>
+				<div class="parent-menu">
+					<a class="more desktop" href="#"></a>
+					<div class="submenu">
+						<div class="submenu-wrap">
+							<a class="icon-moves" href="<?php echo $WEB_ROOT; ?>moves/">Moves</a>
+							<a class="icon-articles" href="<?php echo $WEB_ROOT; ?>articles/">Articles</a>
+							<a class="icon-contribute" href="<?php echo $WEB_ROOT; ?>contribute/">Contribute</a>
+							<a class="icon-settings" href="<?php echo $WEB_ROOT; ?>settings/">Settings</a>
+							<a class="icon-twitter" href="https://twitter.com/pvpoke" target="_blank">Twitter</a>
+						</div>
 					</div>
 				</div>
 			</div>

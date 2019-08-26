@@ -23,12 +23,12 @@
 		
 		// Submenu interaction on desktop
 		
-		$(".menu .more").on("mouseover click", function(e){
-			$(".submenu").addClass("active");
+		$(".menu .parent-menu").on("mouseover click", function(e){
+			$(this).find(".submenu").addClass("active");
 		});
 		
 		$("body").on("mousemove click", function(e){
-			if($(".submenu:hover, .more:hover").length == 0){
+			if($(".submenu:hover, .parent-menu:hover").length == 0){
 				$(".submenu").removeClass("active");
 			}
 		});
