@@ -390,6 +390,11 @@ var RankerMaster = (function () {
 					iterations = 7;
 				}
 
+				// Do fewer or no iterations for a very small pool
+				if(rankings.length < 30){
+					iterations = 1;
+				}
+
 				for(var n = 0; n < iterations; n++){
 
 					var bestScore = Math.max.apply(Math, rankings.map(function(o) { return o.scores[n]; }))
@@ -505,7 +510,7 @@ var RankerMaster = (function () {
 
 					rankings[i].matches.sort((a,b) => (a.rating > b.rating) ? -1 : ((b.rating > a.rating) ? 1 : 0));
 
-					var matchupCount = 5;
+					var matchupCount = Math.min(5, rankings[i].matches.length);
 
 					// Gather 5 worst matchups for counters
 
@@ -642,8 +647,6 @@ var RankerMaster = (function () {
 						pokemon: values
 					})
 				}
-
-				console.log(overrides);
 			}
 
 			// Given a Pokemon, output a string of numbers for URL building
