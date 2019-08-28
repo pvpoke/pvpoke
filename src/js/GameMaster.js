@@ -12,7 +12,7 @@ var GameMaster = (function () {
 		object.teamPools = [];
 		object.loadedData = 0;
 
-		$.getJSON( webRoot+"data/gamemaster.json?v=138", function( data ){
+		$.getJSON( webRoot+"data/gamemaster.json?v=139", function( data ){
 			object.data = data;
 
 			// Sort Pokemon alphabetically for searching
@@ -124,12 +124,12 @@ var GameMaster = (function () {
 
 			return move;
 		}
-		
+
 		// Return a cup object given an id name
 
 		object.getCupById = function(id){
 			var cup;
-			
+
 			$.each(object.data.cups, function(index, c){
 				if(c.name == id){
 					cup = c;
@@ -146,7 +146,7 @@ var GameMaster = (function () {
 			var key = cup + "" + category + "" + league;
 
 			if(! object.rankings[key]){
-				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=138";
+				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=139";
 
 				$.getJSON( file, function( data ){
 					object.rankings[key] = data;
@@ -166,7 +166,7 @@ var GameMaster = (function () {
 			var key = group;
 
 			if(! object.groups[key]){
-				var file = webRoot+"data/groups/"+group+".json?v=138";
+				var file = webRoot+"data/groups/"+group+".json?v=139";
 
 				$.getJSON( file, function( data ){
 
@@ -189,7 +189,7 @@ var GameMaster = (function () {
 			var key = league + "" + cup;
 
 			if(! object.teamPools[key]){
-				var file = webRoot+"data/training/teams/"+cup+"/"+league+".json?v=138";
+				var file = webRoot+"data/training/teams/"+cup+"/"+league+".json?v=139";
 
 				$.getJSON( file, function( data ){
 					object.teamPools[key] = data;
@@ -219,9 +219,9 @@ var GameMaster = (function () {
 				}
 			});
 		}
-		
+
 		// Return a list of eligible Pokemon given a Battle object, and include and exclude filters
-		
+
 		object.generateFilteredPokemonList = function(battle, include, exclude, rankingData, overrides){
 			// Gather all eligible Pokemon
 
@@ -242,7 +242,7 @@ var GameMaster = (function () {
 				include,
 				exclude
 			];
-			
+
 			var pokemonList = [];
 
 			for(var i = 0; i < object.data.pokemon.length; i++){
@@ -288,10 +288,10 @@ var GameMaster = (function () {
 									break;
 
 								case "id":
-									if(include){
+									if((include)&&(filters.length > 1)){
 										requiredFilters--;
 									}
-									
+
 									if(filter.values.indexOf(pokemon.speciesId) > -1){
 										filtersMatched += filters.length; // If a Pokemon is explicitly included, ignore all other filters
 									}
@@ -310,7 +310,7 @@ var GameMaster = (function () {
 
 						if((! include)&&(filtersMatched > 0)){
 							allowed = false;
-						}								
+						}
 					}
 
 					if((battle.getCP() == 1500)&&(bannedList.indexOf(pokemon.speciesId) > -1)){
@@ -322,7 +322,7 @@ var GameMaster = (function () {
 					}
 
 					if(allowed){
-						
+
 						// If data is available, force "best" moveset
 
 						if((rankingData)&&(overrides)){
@@ -356,7 +356,7 @@ var GameMaster = (function () {
 					}
 				}
 			}
-			
+
 			return pokemonList;
 		}
 

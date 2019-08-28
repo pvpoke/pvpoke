@@ -12,6 +12,12 @@
 			"exclude": []
 		},
 		{
+			"name": "custom",
+			"title": "Custom",
+			"include": [],
+			"exclude": []
+		},
+		{
 			"name": "boulder",
 			"title": "Boulder Cup",
 			"include": [
@@ -8326,7 +8332,7 @@
 		"types": ["fire", "none"],
 		"fastMoves": ["EMBER", "FIRE_SPIN"],
 		"chargedMoves": ["EARTHQUAKE", "OVERHEAT", "SOLAR_BEAM"],
-		"tags": ["torkoal"],
+		"tags": ["regional"],
 		"defaultIVs": {
 			"cp1500": [28.5, 0, 12, 3],
 			"cp2500": [40, 15, 15, 15]
