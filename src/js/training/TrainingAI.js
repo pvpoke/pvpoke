@@ -83,6 +83,14 @@ function TrainingAI(l, p, b){
 
 		var roster = [];
 		var selectedIds = []; // Array of Pokemon ID's to check to avoid duplicates
+		var restrictedPicks = 0;
+		var restrictedLimit = 6;
+		var restrictedPicksExist = false;
+
+		if(battle.getCup().restrictedPicks){
+			restrictedLimit = battle.getCup().restrictedPicks;
+			restrictedPicksExist = true;
+		}
 
 		for(var i = 0; i < slots.length; i++){
 			// Grab the pool of Pokemon given the slot name
@@ -90,6 +98,18 @@ function TrainingAI(l, p, b){
   				return obj.slot === slots[i]
 			})[0].pokemon;
 			var pokeBucket = [];
+			
+			// Choose from restricted picks if available
+			if((restrictedPicksExist)&&(restrictedPicks<restrictedLimit)){
+				var slotObj = pool.filter(obj => {
+  				return obj.slot === slots[i]
+			})[0];
+				
+				if(slotObj.restricted){
+					slotPool = slotObj.restricted;
+					restrictedPicks++;
+				}
+			}
 
 			for(var n = 0; n < slotPool.length; n++){
 				var poke = slotPool[n];

@@ -503,5 +503,46 @@
 				"chargedMoves": ["THUNDERBOLT","HYDRO_PUMP"]
 			}
 		]
+	},
+	{
+		"name": "BGold",
+		"slug": "bgold",
+		"cup": "safari",
+		"cupName": "Montreal Safari",
+		"league": 1500,
+		"description": "Water type enthusiast and gym leader.",
+		"link": "https://twitter.com/B_Goldwax",
+		"pokemon": [
+			{
+				"speciesId": "azumarill",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["ICE_BEAM","PLAY_ROUGH"]
+			},
+			{
+				"speciesId": "toxicroak",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["MUD_BOMB","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "skarmory",
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["SKY_ATTACK","FLASH_CANNON"]
+			},
+			{
+				"speciesId": "munchlax",
+				"fastMove": "LICK",
+				"chargedMoves": ["BODY_SLAM","BULLDOZE"]
+			},
+			{
+				"speciesId": "ludicolo",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["ICE_BEAM","HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "charizard",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"]
+			}
+		]
 	}
 ]
