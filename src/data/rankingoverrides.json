@@ -480,6 +480,10 @@
 				"fastMove": "CONFUSION"
 			},
 			{
+				"speciesId": "venomoth",
+				"fastMove": "CONFUSION"
+			},
+			{
 				"speciesId": "flygon",
 				"chargedMoves": ["DRAGON_CLAW", "EARTHQUAKE"]
 			},
@@ -514,6 +518,46 @@
 			{
 				"speciesId": "zapdos",
 				"fastMove": "CHARGE_BEAM"
+			},
+			{
+				"speciesId": "lapras",
+				"fastMove": "ICE_SHARD"
+			},
+			{
+				"speciesId": "ludicolo",
+				"fastMove": "RAZOR_LEAF"
+			},
+			{
+				"speciesId": "articuno",
+				"chargedMoves": ["ANCIENT_POWER","ICE_BEAM"]
+			},
+			{
+				"speciesId": "raticate_alolan",
+				"chargedMoves": ["CRUNCH","HYPER_FANG"]
+			},
+			{
+				"speciesId": "claydol",
+				"chargedMoves": ["EARTH_POWER","GYRO_BALL"]
+			},
+			{
+				"speciesId": "vespiquen",
+				"chargedMoves": ["X_SCISSOR","POWER_GEM"]
+			},
+			{
+				"speciesId": "moltres",
+				"chargedMoves": ["ANCIENT_POWER","OVERHEAT"]
+			},
+			{
+				"speciesId": "tentacruel",
+				"chargedMoves": ["ACID_SPRAY","HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "tangrowth",
+				"chargedMoves": ["ANCIENT_POWER","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "muk_alolan",
+				"chargedMoves": ["ACID_SPRAY","DARK_PULSE"]
 			},
 			{
 				"speciesId": "togekiss",
