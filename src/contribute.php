@@ -41,8 +41,8 @@ require_once 'header.php'; ?>
 			<div class="supporter"><a href="https://www.youtube.com/channel/UCz0vZmmKHbGa1ZVNgJEw2bw" target="_blank">Elite Four TV</a></div>
 		</div>
 		<div class="supporter-container">
-			<div class="space"></div>
-			<div class="supporter"><a href="https://discord.gg/fbczGXZ" target="_blank">Pokemon GO PVP Discord</a></div>
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/gostadium.jpg" />
+			<div class="supporter"><a href="https://discord.gg/fbczGXZ" target="_blank">GO Stadium Discord</a></div>
 		</div>
 
 		<div class="supporter-container">
@@ -81,6 +81,10 @@ require_once 'header.php'; ?>
 		<div class="supporter-container">
 			<div class="space"></div>
 			<div class="supporter">GalronObadiah</div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/golive.jpg" />
+			<div class="supporter"><a href="https://www.twitch.tv/golive_pvp" target="_blank">amaced24</a></div>
 		</div>
 	</div>
 </div>

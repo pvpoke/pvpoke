@@ -36,6 +36,7 @@ require_once '../header.php';
 				<option value="1500 all">Great League</option>
 				<option value="2500 all">Ultra League</option>
 				<option value="10000 all">Master League</option>
+				<option value="1500 cliffhanger">GO Stadium Cliffhanger</option>
 				<option value="1500 safari">Montreal Safari Cup</option>
 				<option value="1500 jungle">Jungle Cup</option>
 				<option value="1500 rainbow">Rainbow Cup</option>
@@ -126,12 +127,10 @@ require_once '../header.php';
 <div class="section white updates">
 	<h3>What's New</h3>
 
-	<h4>v1.9.5 (August 14, 2019)</h4>
+	<h4>v1.10.4 (September 1, 2019)</h4>
 	<ul>
-		<li>You can now select from Featured Teams to play against in Training Battles showcases tournament teams from top players and content creators!</li>
-		<ul>
-			<li>Features teams from Bestinwest, CallMeJake, DarkMatterWolf, Elite Four TV, JayDevin, JFarmakis, st1x10, ValorAsh, Wyvvyrn, and Zyonik!</li>
-		</ul>
+		<li>Featured Teams are now available for GO Stadium's Cliffhanger format</li>
+		<li>Play against featured or random teams in the Montreal Safari Cup</li>
 	</ul>
 </div>
 

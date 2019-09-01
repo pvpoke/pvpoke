@@ -3,7 +3,7 @@
 */
 // Load AI archetypes
 
-var file = webRoot+"data/training/teams/featured/featured-mirror.json?v=1";
+var file = webRoot+"data/training/teams/featured/featured-september.json?v=1";
 var featuredTeams = [];
 
 $.getJSON( file, function( data ){
@@ -150,7 +150,7 @@ var InterfaceMaster = (function () {
 
 				// Show the current round record
 				$(".round-record").html(roundRecord[0] + "-" + roundRecord[1]);
-				
+
 				// Show or hide featured team details
 				if(teamSelectMethod != "featured"){
 					$(".team-select .opponent h3.center").show();
@@ -228,27 +228,27 @@ var InterfaceMaster = (function () {
 
 			function selectTeamMethod(e){
 				teamSelectMethod = $(".team-method-select option:selected").val();
-				
+
 				switch(teamSelectMethod){
 					case "random":
 						$(".poke.multi").eq(1).hide();
 						$(".featured-team-section").hide();
 						featuredTeam = null;
 						break;
-						
+
 					case "manual":
 						$(".poke.multi").eq(1).show();
 						$(".featured-team-section").hide();
 						featuredTeam = null;
 						break;
-						
+
 					case "featured":
 						$(".poke.multi").eq(1).hide();
 						$(".featured-team-section").show();
 						featuredTeam = null;
 						break;
 				}
-				
+
 				$(".featured-team-description").hide();
 				$(".featured-team-select option").eq(0).prop("selected","selected");
 				multiSelectors[1].setMaxPokemonCount(partySize);
@@ -263,11 +263,11 @@ var InterfaceMaster = (function () {
 					var team = featuredTeams[i];
 
 					if(team.slug == slug){
-						$(".featured-team-description img").attr("src", webRoot + "img/train/featured/"+slug+".png?v=2");
+						$(".featured-team-description img").attr("src", webRoot + "img/train/featured/"+team.img+".png?v=2");
 						$(".featured-team-description a").attr("href", team.link);
 						$(".featured-team-description a h3").html(team.name);
 						$(".featured-team-description p").html(team.description);
-						
+
 						// Select the assocaited cup and league
 						$(".league-cup-select option[value=\""+team.league+" "+team.cup+"\"]").prop("selected","selected");
 						$(".league-cup-select").trigger("change");
@@ -386,6 +386,17 @@ var InterfaceMaster = (function () {
 
 				battle.setCP(cp);
 				battle.setCup(cup);
+
+				// Force featured team selection for Cliffhanger and hide randomize button
+				if(cup == "cliffhanger"){
+					$(".team-method-select option[value=\"featured\"]").prop("selected","selected");
+					$(".team-method-select").trigger("change");
+					$(".team-method-select option[value=\"random\"]").hide();
+					$("a.random").hide();
+				} else{
+					$(".team-method-select option[value=\"random\"]").show();
+					$("a.random").show();
+				}
 			}
 
 			// Give the player a random team
