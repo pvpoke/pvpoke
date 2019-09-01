@@ -1,5 +1,47 @@
 [
 	{
+		"name": "AlphaFeeb",
+		"slug": "alphafeeb",
+		"img": "gostadium",
+		"cup": "cliffhanger",
+		"cupName": "Cliffhanger",
+		"league": 1500,
+		"description": "A Worldwide Community of dedicated Pokémon GO Trainers and Content Creators committed to cultivating the PvP Community as a premiere mobile gaming E-Sport. Cliffhanger is a special format designed by GO Stadium with a tiered team-building system.",
+		"link": "https://discord.gg/fbczGXZ",
+		"pokemon": [
+			{
+				"speciesId": "swampert",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["HYDRO_CANNON","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "bronzong",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["PSYSHOCK","HEAVY_SLAM"]
+			},
+			{
+				"speciesId": "venusaur",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "sableye",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["FOUL_PLAY","SHADOW_SNEAK"]
+			},
+			{
+				"speciesId": "magneton",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["DISCHARGE","MAGNET_BOMB"]
+			},
+			{
+				"speciesId": "munchlax",
+				"fastMove": "LICK",
+				"chargedMoves": ["BODY_SLAM","BULLDOZE"]
+			}
+		]
+	},
+	{
 		"name": "Choostemaster",
 		"slug": "choostemaster",
 		"img": "gostadium",
@@ -126,6 +168,48 @@
 		]
 	},
 	{
+		"name": "itsSmogondevo",
+		"slug": "itsSmogondevo",
+		"img": "gostadium",
+		"cup": "cliffhanger",
+		"cupName": "Cliffhanger",
+		"league": 1500,
+		"description": "A Worldwide Community of dedicated Pokémon GO Trainers and Content Creators committed to cultivating the PvP Community as a premiere mobile gaming E-Sport. Cliffhanger is a special format designed by GO Stadium with a tiered team-building system.",
+		"link": "https://discord.gg/fbczGXZ",
+		"pokemon": [
+			{
+				"speciesId": "azumarill",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["ICE_BEAM","PLAY_ROUGH"]
+			},
+			{
+				"speciesId": "sableye",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["FOUL_PLAY","POWER_GEM"]
+			},
+			{
+				"speciesId": "jirachi",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["METEOR_MASH","DAZZLING_GLEAM"]
+			},
+			{
+				"speciesId": "tangela",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["GRASS_KNOT","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "lanturn",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["THUNDERBOLT","HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "togekiss",
+				"fastMove": "CHARM",
+				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
+			}
+		]
+	},
+	{
 		"name": "KnightsOoofRen",
 		"slug": "renn",
 		"img": "renn",
@@ -210,8 +294,8 @@
 		]
 	},
 	{
-		"name": "itsSmogondevo",
-		"slug": "itsSmogondevo",
+		"name": "squawkdirtytome",
+		"slug": "squawkdirtytome",
 		"img": "gostadium",
 		"cup": "cliffhanger",
 		"cupName": "Cliffhanger",
@@ -220,34 +304,76 @@
 		"link": "https://discord.gg/fbczGXZ",
 		"pokemon": [
 			{
-				"speciesId": "azumarill",
-				"fastMove": "BUBBLE",
-				"chargedMoves": ["ICE_BEAM","PLAY_ROUGH"]
+				"speciesId": "deoxys_defense",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["PSYCHO_BOOST","THUNDERBOLT"]
 			},
 			{
-				"speciesId": "sableye",
-				"fastMove": "SHADOW_CLAW",
-				"chargedMoves": ["FOUL_PLAY","POWER_GEM"]
+				"speciesId": "bastiodon",
+				"fastMove": "SMACK_DOWN",
+				"chargedMoves": ["STONE_EDGE","FLAMETHROWER"]
 			},
 			{
-				"speciesId": "jirachi",
-				"fastMove": "CONFUSION",
-				"chargedMoves": ["METEOR_MASH","DAZZLING_GLEAM"]
+				"speciesId": "umbreon",
+				"fastMove": "SNARL",
+				"chargedMoves": ["FOUL_PLAY","LAST_RESORT"]
 			},
 			{
-				"speciesId": "tangela",
-				"fastMove": "VINE_WHIP",
-				"chargedMoves": ["GRASS_KNOT","SLUDGE_BOMB"]
-			},
-			{
-				"speciesId": "lanturn",
-				"fastMove": "WATER_GUN",
-				"chargedMoves": ["THUNDERBOLT","HYDRO_PUMP"]
+				"speciesId": "quagsire",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["STONE_EDGE","SLUDGE_BOMB"]
 			},
 			{
 				"speciesId": "togekiss",
 				"fastMove": "CHARM",
 				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
+			},
+			{
+				"speciesId": "golbat",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["POISON_FANG","SHADOW_BALL"]
+			}
+		]
+	},
+	{
+		"name": "TorpedoRunner",
+		"slug": "torpedurunner",
+		"img": "gostadium",
+		"cup": "cliffhanger",
+		"cupName": "Cliffhanger",
+		"league": 1500,
+		"description": "A Worldwide Community of dedicated Pokémon GO Trainers and Content Creators committed to cultivating the PvP Community as a premiere mobile gaming E-Sport. Cliffhanger is a special format designed by GO Stadium with a tiered team-building system.",
+		"link": "https://discord.gg/fbczGXZ",
+		"pokemon": [
+			{
+				"speciesId": "beedrill",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["X_SCISSOR","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "altaria",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["SKY_ATTACK","DRAGON_PULSE"]
+			},
+			{
+				"speciesId": "sableye",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["FOUL_PLAY","SHADOW_SNEAK"]
+			},
+			{
+				"speciesId": "meganium",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "clefable",
+				"fastMove": "CHARM",
+				"chargedMoves": ["METEOR_MASH","PSYCHIC"]
+			},
+			{
+				"speciesId": "poliwrath",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["POWER_UP_PUNCH","ICE_PUNCH"]
 			}
 		]
 	},
