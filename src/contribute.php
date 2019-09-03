@@ -86,6 +86,10 @@ require_once 'header.php'; ?>
 			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/golive.jpg" />
 			<div class="supporter"><a href="https://www.twitch.tv/golive_pvp" target="_blank">amaced24</a></div>
 		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/coloseum.jpg" />
+			<div class="supporter"><a href="https://t.co/LZj6MBjpOe?amp=1" target="_blank">PoGo Colosseum Discord</a></div>
+		</div>
 	</div>
 </div>
 
