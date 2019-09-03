@@ -106,7 +106,7 @@
 			{
 				"speciesId": "lapras",
 				"fastMove": "ICE_SHARD",
-				"chargedMoves": ["SURF","ICE_BEAM"]
+				"chargedMoves": ["SURF","SKULL_BASH"]
 			},
 			{
 				"speciesId": "sableye",
@@ -290,6 +290,48 @@
 				"speciesId": "steelix",
 				"fastMove": "DRAGON_TAIL",
 				"chargedMoves": ["HEAVY_SLAM","EARTHQUAKE"]
+			}
+		]
+	},
+	{
+		"name": "Richiebeckett85",
+		"slug": "richiebeckett85",
+		"img": "gostadium",
+		"cup": "cliffhanger",
+		"cupName": "Cliffhanger",
+		"league": 1500,
+		"description": "A Worldwide Community of dedicated Pokémon GO Trainers and Content Creators committed to cultivating the PvP Community as a premiere mobile gaming E-Sport. Cliffhanger is a special format designed by GO Stadium with a tiered team-building system.",
+		"link": "https://discord.gg/fbczGXZ",
+		"pokemon": [
+			{
+				"speciesId": "medicham",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["POWER_UP_PUNCH","ICE_PUNCH"]
+			},
+			{
+				"speciesId": "bastiodon",
+				"fastMove": "SMACK_DOWN",
+				"chargedMoves": ["STONE_EDGE","FLAMETHROWER"]
+			},
+			{
+				"speciesId": "lapras",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["SURF","SKULL_BASH"]
+			},
+			{
+				"speciesId": "muk_alolan",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["ACID_SPRAY","DARK_PULSE"]
+			},
+			{
+				"speciesId": "togekiss",
+				"fastMove": "CHARM",
+				"chargedMoves": ["ANCIENT_POWER","AERIAL_ACE"]
+			},
+			{
+				"speciesId": "linoone",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["GRASS_KNOT","THUNDER"]
 			}
 		]
 	},
