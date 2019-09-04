@@ -37,6 +37,7 @@ var InterfaceMaster = (function () {
 				
 				$(".league-select").on("change", selectLeague);
 				$(".cup-select").on("change", selectCup);
+				$(".format-select").on("change", selectFormat);
 				$(".rate-btn").on("click", rateClick);
 				
 				// If get data exists, load settings
@@ -94,6 +95,17 @@ var InterfaceMaster = (function () {
 								
 							case "cup":
 								$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
+								
+								if($(".format-select option[cup=\""+val+"\"]").length > 0){
+									$(".format-select option[cup=\""+val+"\"]").prop("selected","selected");
+								} else{
+									var cat = $(".cup-select option[value=\""+val+"\"]").attr("cat");
+									$(".format-select option[value=\""+cat+"\"]").prop("selected","selected");
+									selectFormat();
+									
+									$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
+								}
+								
 								$(".cup-select").trigger("change");
 								break;
 								
@@ -598,6 +610,34 @@ var InterfaceMaster = (function () {
 
 				for(var i = 0; i < pokeSelectors.length; i++){
 					pokeSelectors[i].filterByTypes(cupTypes);
+				}
+			}
+			
+			// Event handler for changing the format category
+
+			function selectFormat(e){
+				var format = $(".format-select option:selected").val();
+				var cup = $(".format-select option:selected").attr("cup");
+				
+				$(".cup-select option").hide();
+				$(".cup-select option[cat=\""+format+"\"]").show();
+				$(".cup-select option[cat=\""+format+"\"]").eq(0).prop("selected", "selected");
+				
+				if(cup){
+					$(".cup-select option[value=\""+cup+"\"]").eq(0).prop("selected", "selected");
+				}
+				
+				$(".cup-select").trigger("change");
+				
+				if((format == "all")||(cup)){
+					$(".cup-select").hide();
+				} else{
+					$(".cup-select").show();
+				}
+				
+				if(format == "custom"){
+					// Redirect to the custom rankings page
+					window.location.href = webRoot+'custom-rankings/';
 				}
 			}
 			

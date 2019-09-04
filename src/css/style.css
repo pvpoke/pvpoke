@@ -396,8 +396,10 @@ header {
     float: right; }
     .poke.multi .poke-stats {
       display: block; }
+    .poke.multi .format-select {
+      margin-top: 62px; }
     .poke.multi .cup-select {
-      margin-top: 62px;
+      margin-top: 0;
       width: 100%; }
       .poke.multi .cup-select option[value="custom"] {
         display: block; }
@@ -541,11 +543,15 @@ select, input {
 
 .league-select,
 .cup-select,
+.format-select,
 .mode-select {
   font-size: 18px;
   width: auto;
   background: none;
   font-weight: bold; }
+
+.league-select-container .cup-select, .poke .cup-select {
+  display: none; }
 
 .button {
   display: block;
@@ -2015,8 +2021,10 @@ a.toggle {
     flex-basis: 75%; }
 
   .league-select,
+  .format-select,
   .cup-select {
-    max-width: 49%; }
+    max-width: 48%;
+    margin-bottom: 5px; }
 
   .modal {
     overflow-y: scroll; } }

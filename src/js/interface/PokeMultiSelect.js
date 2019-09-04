@@ -566,6 +566,33 @@ function PokeMultiSelect(element){
 			}
 		});
 	});
+	
+	// Event handler for changing the format select
+
+	$el.find(".format-select").on("click",function(e){
+		self.changeFormatSelect();
+	});
+	
+	this.changeFormatSelect = function(){
+		var format = $(".format-select option:selected").val();
+		var cup = $(".format-select option:selected").attr("cup");
+
+		$(".cup-select option").hide();
+		$(".cup-select option[cat=\""+format+"\"]").show();
+		$(".cup-select option[cat=\""+format+"\"]").eq(0).prop("selected", "selected");
+
+		if(cup){
+			$(".cup-select option[value=\""+cup+"\"]").eq(0).prop("selected", "selected");
+		}
+
+		$(".cup-select").trigger("change");
+
+		if((format == "all")||(cup)){
+			$(".cup-select").hide();
+		} else{
+			$(".cup-select").show();
+		}
+	}
 
 	// Return the list of selected Pokemon
 

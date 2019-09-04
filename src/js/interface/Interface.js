@@ -1214,6 +1214,17 @@ var InterfaceMaster = (function () {
 
 							case "cup":
 								$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
+								
+								if($(".format-select option[cup=\""+val+"\"]").length > 0){
+									$(".format-select option[cup=\""+val+"\"]").prop("selected","selected");
+								} else{
+									var cat = $(".cup-select option[value=\""+val+"\"]").attr("cat");
+									$(".format-select option[value=\""+cat+"\"]").prop("selected","selected");
+									multiSelector.changeFormatSelect();
+									
+									$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
+								}
+								
 								$(".cup-select").trigger("change");
 								break;
 

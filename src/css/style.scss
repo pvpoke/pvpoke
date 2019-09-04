@@ -673,9 +673,13 @@ header{
 		.poke-stats{
 			display:block;
 		}
+		
+		.format-select{
+			margin-top:62px;
+		}
 
 		.cup-select{
-			margin-top:62px;
+			margin-top:0;
 			width:100%;
 
 			option[value="custom"]{
@@ -892,11 +896,18 @@ select, input{
 
 .league-select,
 .cup-select,
+.format-select,
 .mode-select{
     font-size: 18px;
     width: auto;
     background: none;
     font-weight: bold;
+}
+
+.league-select-container, .poke{
+	.cup-select{
+		display:none;
+	}
 }
 
 .button{
@@ -2706,8 +2717,10 @@ a.toggle{
 	}
 
 	.league-select,
+	.format-select,
 	.cup-select{
-		max-width:49%;
+		max-width:48%;
+		margin-bottom:5px;
 	}
 
 	.modal{
