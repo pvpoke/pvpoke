@@ -56,6 +56,17 @@
 			$(e.target).closest(".toggle").toggleClass("active");
 		});
 		
+		// Service worker handler
+		if ('serviceWorker' in navigator) {
+			console.log("Attempting to register service worker");
+			navigator.serviceWorker.register('service-worker.js')
+			  .then(function(reg){
+				console.log("Service worker registered.");
+			  }).catch(function(err) {
+				console.log("Service worker failed to register:", err)
+			  });
+		}
+
 	</script>
 </body>
 </html>

@@ -26,8 +26,15 @@
 
 	<!--Update section for updates-->
 	<h3>What's New</h3>
+	
+	<h4>v1.10.6 (September 5th, 2019)</h4>
+	<ul>
+		<ul>
+			<li>On Android, add PvPoke.com to your home screen to run it like a standalone app</li>
+		</ul>
+	</ul>
 
-	<h4>v1.10.0</h4>
+	<h4>v1.10.0 (August 29th, 2019)</h4>
 	<ul>
 		<li><a href="<?php echo $WEB_ROOT;?>custom-rankings/">Custom Rankings</a> tool will allow you to test rules for a custom tournament format</li>
 		<ul>
