@@ -60,6 +60,27 @@
 				"chargedMoves": ["OVERHEAT", "ANCIENT_POWER"]
 			},
 			{
+				"speciesId": "vileplume",
+				"chargedMoves": ["SLUDGE_BOMB", "PETAL_BLIZZARD"]
+			},
+			{
+				"speciesId": "grotle",
+				"chargedMoves": ["BODY_SLAM", "ENERGY_BALL"]
+			},
+			{
+				"speciesId": "torterra",
+				"chargedMoves": ["STONE_EDGE", "EARTHQUAKE"]
+			},
+			{
+				"speciesId": "golduck",
+				"chargedMoves": ["ICE_BEAM", "HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "venomoth",
+				"fastMove": "CONFUSION"
+			},
+
+			{
 				"speciesId": "probopass",
 				"fastMove": "SPARK"
 			},
@@ -566,6 +587,22 @@
 			{
 				"speciesId": "crobat",
 				"chargedMoves": ["SLUDGE_BOMB","SHADOW_BALL"]
+			},
+			{
+				"speciesId": "vileplume",
+				"chargedMoves": ["SLUDGE_BOMB", "PETAL_BLIZZARD"]
+			},
+			{
+				"speciesId": "grotle",
+				"chargedMoves": ["BODY_SLAM", "ENERGY_BALL"]
+			},
+			{
+				"speciesId": "torterra",
+				"chargedMoves": ["STONE_EDGE", "EARTHQUAKE"]
+			},
+			{
+				"speciesId": "golduck",
+				"chargedMoves": ["ICE_BEAM", "HYDRO_PUMP"]
 			}
 		]
 	},
@@ -597,6 +634,10 @@
 			{
 				"speciesId": "crobat",
 				"chargedMoves": ["SHADOW_BALL","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "tyranitar",
+				"chargedMoves": ["CRUNCH", "STONE_EDGE"]
 			},
 			{
 				"speciesId": "venusaur",
