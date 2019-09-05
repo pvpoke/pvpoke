@@ -91,6 +91,13 @@ var InterfaceMaster = (function () {
 					limitedPokemon = ["venusaur","meganium","skarmory","altaria","bastiodon","probopass","tropius","azumarill","wormadam_trash","forretress","vigoroth","swampert"];
 				}
 
+				if(cup == "fantasy"){
+					$(".limited").show();
+					$(".check.limited").addClass("on");
+
+					limitedPokemon = ["azumarill","deoxys_defense","medicham","wormadam_trash","forretress","sableye"];
+				}
+
 				var battle = new Battle();
 
 				$(".section.white > .rankings-container").html('');
@@ -185,17 +192,17 @@ var InterfaceMaster = (function () {
 
 							case "cup":
 								$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
-								
+
 								if($(".format-select option[cup=\""+val+"\"]").length > 0){
 									$(".format-select option[cup=\""+val+"\"]").prop("selected","selected");
 								} else{
 									var cat = $(".cup-select option[value=\""+val+"\"]").attr("cat");
 									$(".format-select option[value=\""+cat+"\"]").prop("selected","selected");
 									selectFormat();
-									
+
 									$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
 								}
-								
+
 								break;
 
 							case "p":
@@ -272,29 +279,29 @@ var InterfaceMaster = (function () {
 				self.displayRankings(category, cp, cup);
 				self.pushHistoryState(cup, cp, category, null);
 			}
-			
+
 			// Event handler for changing the format category
 
 			function selectFormat(e){
 				var format = $(".format-select option:selected").val();
 				var cup = $(".format-select option:selected").attr("cup");
-				
+
 				$(".cup-select option").hide();
 				$(".cup-select option[cat=\""+format+"\"]").show();
 				$(".cup-select option[cat=\""+format+"\"]").eq(0).prop("selected", "selected");
-				
+
 				if(cup){
 					$(".cup-select option[value=\""+cup+"\"]").eq(0).prop("selected", "selected");
 				}
-				
+
 				$(".cup-select").trigger("change");
-				
+
 				if((format == "all")||(cup)){
 					$(".cup-select").hide();
 				} else{
 					$(".cup-select").show();
 				}
-				
+
 				if(format == "custom"){
 					// Redirect to the custom rankings page
 					window.location.href = webRoot+'custom-rankings/';
@@ -332,7 +339,7 @@ var InterfaceMaster = (function () {
 				if(! $(e.target).is(".rank, .rank > .rating-container, .rank > .rating-container *, .rank > .name-container, .rank > .name-container *")||($(e.target).is("a"))){
 					return;
 				}
-				
+
 				var cup = $(".cup-select option:selected").val();
 				console.log(cup);
 

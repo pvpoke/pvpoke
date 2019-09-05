@@ -570,6 +570,49 @@
 		]
 	},
 	{
+		"league": 1500,
+		"cup": "fantasy",
+		"pokemon": [
+			{
+				"speciesId": "umbreon",
+				"chargedMoves": ["FOUL_PLAY","LAST_RESORT"]
+			},
+			{
+				"speciesId": "medicham",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["POWER_UP_PUNCH","ICE_PUNCH"]
+			},
+			{
+				"speciesId": "muk_alolan",
+				"chargedMoves": ["ACID_SPRAY","DARK_PULSE"]
+			},
+			{
+				"speciesId": "golbat",
+				"chargedMoves": ["POISON_FANG","SHADOW_BALL"]
+			},
+			{
+				"speciesId": "gardevoir",
+				"chargedMoves": ["SHADOW_BALL","SYNCHRONOISE"]
+			},
+			{
+				"speciesId": "crobat",
+				"chargedMoves": ["SHADOW_BALL","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "venusaur",
+				"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "qwilfish",
+				"chargedMoves": ["AQUA_TAIL","ACID_SPRAY"]
+			},
+			{
+				"speciesId": "wigglytuff",
+				"fastMove": "CHARM"
+			}
+		]
+	},
+	{
 		"league": 2500,
 		"cup": "all",
 		"pokemon": [

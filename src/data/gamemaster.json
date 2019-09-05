@@ -182,6 +182,20 @@
 			"exclude": []
 		},
 		{
+			"name": "fantasy",
+			"title": "Fantasy Cup",
+			"restrictedPicks": 1,
+			"include": [
+				{
+					"filterType": "type",
+					"values": [
+						"bug","dark","fighting","poison","fairy","ghost","psychic"
+					]
+				}
+			],
+			"exclude": []
+		},
+		{
 			"name": "cliffhanger",
 			"title": "Cliffhanger",
 			"include": [],
