@@ -543,6 +543,48 @@
 		]
 	},
 	{
+		"name": "VeryCoolGuy",
+		"slug": "verycoolguy",
+		"img": "gostadium",
+		"cup": "cliffhanger",
+		"cupName": "Cliffhanger",
+		"league": 1500,
+		"description": "A Worldwide Community of dedicated Pokémon GO Trainers and Content Creators committed to cultivating the PvP Community as a premiere mobile gaming E-Sport. Cliffhanger is a special format designed by GO Stadium with a tiered team-building system.",
+		"link": "https://discord.gg/fbczGXZ",
+		"pokemon": [
+			{
+				"speciesId": "bastiodon",
+				"fastMove": "SMACK_DOWN",
+				"chargedMoves": ["STONE_EDGE","FLAMETHROWER"]
+			},
+			{
+				"speciesId": "meganium",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "lapras",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["SURF","SKULL_BASH"]
+			},
+			{
+				"speciesId": "forretress",
+				"fastMove": "BUG_BITE",
+				"chargedMoves": ["HEAVY_SLAM","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "bronzong",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["PSYSHOCK","BULLDOZE"]
+			},
+			{
+				"speciesId": "marowak_alolan",
+				"fastMove": "HEX",
+				"chargedMoves": ["BONE_CLUB","SHADOW_BALL"]
+			}
+		]
+	},
+	{
 		"name": "BGold",
 		"slug": "bgold",
 		"img": "bgold",
