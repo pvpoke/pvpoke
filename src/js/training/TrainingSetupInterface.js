@@ -3,7 +3,7 @@
 */
 // Load AI archetypes
 
-var file = webRoot+"data/training/teams/featured/featured-september.json?v=4";
+var file = webRoot+"data/training/teams/featured/featured-september.json?v=5";
 var featuredTeams = [];
 
 $.getJSON( file, function( data ){
@@ -182,6 +182,12 @@ var InterfaceMaster = (function () {
 
 				if((teams[0].length < partySize)||((teamSelectMethod == "manual")&&(teams[1].length < partySize))){
 					modalWindow("Select Teams", $("<p>Please select a full team.</p>"));
+
+					return false;
+				}
+				
+				if((teamSelectMethod == "featured")&&(! featuredTeam)){
+					modalWindow("Featured Team", $("<p>Please select a featured team to fight.</p>"));
 
 					return false;
 				}

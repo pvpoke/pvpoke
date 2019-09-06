@@ -62,9 +62,9 @@
 				"chargedMoves": ["SHADOW_BALL","THUNDER_PUNCH"]
 			},
 			{
-				"speciesId": "swampert",
-				"fastMove": "MUD_SHOT",
-				"chargedMoves": ["HYDRO_CANNON","EARTHQUAKE"]
+				"speciesId": "tropius",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["LEAF_BLADE","AERIAL_ACE"]
 			},
 			{
 				"speciesId": "forretress",
@@ -77,9 +77,51 @@
 				"chargedMoves": ["AERIAL_ACE","ICE_BEAM"]
 			},
 			{
-				"speciesId": "sceptile",
-				"fastMove": "FURY_CUTTER",
-				"chargedMoves": ["LEAF_BLADE","EARTHQUAKE"]
+				"speciesId": "quagsire",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["STONE_EDGE","EARTHQUAKE"]
+			}
+		]
+	},
+	{
+		"name": "datboiMuk",
+		"slug": "datboimuk",
+		"img": "datboimuk",
+		"cup": "cliffhanger",
+		"cupName": "Cliffhanger",
+		"league": 1500,
+		"description": "datboiMuk is a Season 1 Chicago Championship finalist that specializes in running obscure lineups.",
+		"link": "https://twitter.com/datboimuk",
+		"pokemon": [
+			{
+				"speciesId": "skarmory",
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["SKY_ATTACK","FLASH_CANNON"]
+			},
+			{
+				"speciesId": "bronzong",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["PSYSHOCK","BULLDOZE"]
+			},
+			{
+				"speciesId": "victreebel",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["LEAF_BLADE","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "umbreon",
+				"fastMove": "SNARL",
+				"chargedMoves": ["FOUL_PLAY","LAST_RESORT"]
+			},
+			{
+				"speciesId": "sableye",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["FOUL_PLAY","POWER_GEM"]
+			},
+			{
+				"speciesId": "tentacruel",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["HYDRO_PUMP","SLUDGE_WAVE"]
 			}
 		]
 	},
@@ -168,10 +210,7 @@
 		]
 	},
 	{
-		"name": "itsSmogondevo",
-		"slug": "itsSmogondevo",
-		"img": "gostadium",
-		"cup": "cliffhanger",
+		"name": "itsSmogondevo #1",
 		"cupName": "Cliffhanger",
 		"league": 1500,
 		"description": "A Worldwide Community of dedicated Pokémon GO Trainers and Content Creators committed to cultivating the PvP Community as a premiere mobile gaming E-Sport. Cliffhanger is a special format designed by GO Stadium with a tiered team-building system.",
@@ -206,6 +245,48 @@
 				"speciesId": "togekiss",
 				"fastMove": "CHARM",
 				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
+			}
+		]
+	},
+	{
+		"name": "itsSmogondevo #2",
+		"slug": "itsSmogondevo-2",
+		"img": "gostadium",
+		"cup": "cliffhanger",
+		"cupName": "Cliffhanger",
+		"league": 1500,
+		"description": "A Worldwide Community of dedicated Pokémon GO Trainers and Content Creators committed to cultivating the PvP Community as a premiere mobile gaming E-Sport. Cliffhanger is a special format designed by GO Stadium with a tiered team-building system.",
+		"link": "https://discord.gg/fbczGXZ",
+		"pokemon": [
+			{
+				"speciesId": "hypno",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["SHADOW_BALL","FIRE_PUNCH"]
+			},
+			{
+				"speciesId": "togekiss",
+				"fastMove": "CHARM",
+				"chargedMoves": ["ANCIENT_POWER","AERIAL_ACE"]
+			},
+			{
+				"speciesId": "toxicroak",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["MUD_BOMB","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "probopass",
+				"fastMove": "SPARK",
+				"chargedMoves": ["ROCK_SLIDE","THUNDERBOLT"]
+			},
+			{
+				"speciesId": "meganium",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "sableye",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["FOUL_PLAY","POWER_GEM"]
 			}
 		]
 	},
