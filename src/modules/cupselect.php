@@ -16,7 +16,7 @@
 	<option value="safari" cat="community">Montreal Safari Cup</option>
 	<option value="fantasy" cat="community">GO LIVE Fantasy Cup</option>
 	<option value="jungle"  cat="tsa-1">Jungle Cup</option>
-	<option value="rainbow" >Rainbow Cup</option>
+	<option value="rainbow" cat="tsa-1">Rainbow Cup</option>
 	<option value="championships-1" cat="tsa-1">Season 1 Championships</option>
 	<option value="regionals-1" cat="tsa-1">Season 1 Regionals</option>
 	<option value="nightmare" cat="tsa-1">Nightmare Cup</option>
