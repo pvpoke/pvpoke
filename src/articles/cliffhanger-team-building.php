@@ -38,7 +38,7 @@ require_once '../header.php';
 <h3 class="article-header"><strong>Team-Building with Slots</strong></h3>
 <p>So you have a team archetype picked out or maybe  you&rsquo;re not even sure yet! Where do you begin with choosing the actual Pokemon  on your team? One way to approach it is to think about your team in terms of  slots. Your team has 6 slots and you need each one to fill a certain kind of  role or coverage. </p>
 <p>The infographic below highlights a few of the  possible picks in different slots and the roles they play for your team: </p>
-	<p><img src="<?php echo $WEB_ROOT; ?>assets/articles/cliffhanger-infographic.jpg" /></p>
+	<p><img src="<?php echo $WEB_ROOT; ?>assets/articles/cliffhanger-infographic.jpg?v=2" /></p>
 <p>What&rsquo;s the best way to start? Pick a Pokemon you  really like, think about which Pokemon it loses to, and then pick a Pokemon  that covers its weaknesses. Skarmory is countered by Steel-type tanks, for  example, so Whiscash makes a great partner. Toxicroak evaporates against  Confusion users, so it would appreciate a buddy like Sableye or Umbreon. </p>
 <p>Here&rsquo;s a team building example that walks  through each pick: </p>
 <ol start="1" type="1">
