@@ -12,7 +12,7 @@ require_once '../header.php';
 <div class="section article white">
 	<h1>Team Building for GO Stadium Cliffhanger</h1>
 	<div class="date">Last updated September 7th, 2019</div>
-	<p>The GO Stadium Discord, one of the largest communities for PvP discussion and remote tournaments, has announced an exciting new way to play: Cliffhanger! Cliffhanger is a format where you have to build your team with a limited number of points. Let’s dive into the format and how to build your Cliffhanger team!</p>
+	<p>The <a href="https://discord.gg/fbczGXZ" target="_blank">GO Stadium Discord</a>, one of the largest communities for PvP discussion and remote tournaments, has announced an exciting new way to play: Cliffhanger! Cliffhanger is a format where you have to build your team with a limited number of points. Let’s dive into the format and how to build your Cliffhanger team!</p>
 	<p>Also be sure to check out the full rules in the <a href="https://reddit.com/r/TheSilphArena/comments/cvv0q1/go_stadium_announces_cliffhanger_a_4tier_format/ey6kqr7/" target="_blank">announcement post</a>!</p>
 <p>Jump to a section:
   <ol>

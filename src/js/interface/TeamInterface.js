@@ -106,7 +106,7 @@ var InterfaceMaster = (function () {
 									$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
 								}
 								
-								$(".cup-select").trigger("change");
+								$(".cup-select").change();
 								break;
 								
 							case "m1":
@@ -627,7 +627,9 @@ var InterfaceMaster = (function () {
 					$(".cup-select option[value=\""+cup+"\"]").eq(0).prop("selected", "selected");
 				}
 				
-				$(".cup-select").trigger("change");
+				setTimeout(function(){
+					$(".cup-select").change();
+				}, 50);
 				
 				if((format == "all")||(cup)){
 					$(".cup-select").hide();

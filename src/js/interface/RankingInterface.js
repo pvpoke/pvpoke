@@ -293,8 +293,10 @@ var InterfaceMaster = (function () {
 				if(cup){
 					$(".cup-select option[value=\""+cup+"\"]").eq(0).prop("selected", "selected");
 				}
-
-				$(".cup-select").trigger("change");
+				
+				setTimeout(function(){
+					$(".cup-select").change();
+				}, 50);
 
 				if((format == "all")||(cup)){
 					$(".cup-select").hide();
