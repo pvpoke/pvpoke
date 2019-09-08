@@ -288,21 +288,27 @@ var InterfaceMaster = (function () {
 
 				$(".cup-select option").hide();
 				$(".cup-select option[cat=\""+format+"\"]").show();
-				$(".cup-select option[cat=\""+format+"\"]").eq(0).prop("selected", "selected");
 
 				if(cup){
-					$(".cup-select option[value=\""+cup+"\"]").eq(0).prop("selected", "selected");
+					$(".cup-select option[value=\""+cup+"\"]").eq(0).prop("selected", true);
+				} else{
+					$(".cup-select option[cat=\""+format+"\"]").eq(0).prop("selected", true);
 				}
-				
-				setTimeout(function(){
-					$(".cup-select").change();
-				}, 50);
 
 				if((format == "all")||(cup)){
 					$(".cup-select").hide();
 				} else{
 					$(".cup-select").show();
 				}
+				
+				var cp = $(".league-select option:selected").val();
+				var category = $(".ranking-categories a.selected").attr("data");
+				if(! cup){
+					cup = $(".cup-select option:selected").val();
+				}
+
+				self.displayRankings(category, cp, cup);
+				self.pushHistoryState(cup, cp, category, null);
 
 				if(format == "custom"){
 					// Redirect to the custom rankings page
