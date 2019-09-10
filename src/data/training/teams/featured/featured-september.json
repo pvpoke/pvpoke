@@ -607,34 +607,34 @@
 		"link": "https://www.youtube.com/channel/UCOeIQWAJYD-zy7T5-IRZy7Q",
 		"pokemon": [
 			{
-				"speciesId": "azumarill",
+				"speciesId": "bayleef",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["ANCIENT_POWER","GRASS_KNOT"]
+			},
+			{
+				"speciesId": "relicanth",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["AQUA_TAIL","ANCIENT_POWER"]
+			},
+			{
+				"speciesId": "mantine",
 				"fastMove": "BUBBLE",
-				"chargedMoves": ["PLAY_ROUGH","HYDRO_PUMP"]
+				"chargedMoves": ["AERIAL_ACE","ICE_BEAM"]
 			},
 			{
-				"speciesId": "meganium",
-				"fastMove": "VINE_WHIP",
-				"chargedMoves": ["FRENZY_PLANT","EARTHQUAKE"]
+				"speciesId": "marshtomp",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["MUD_BOMB","SURF"]
 			},
 			{
-				"speciesId": "lapras",
-				"fastMove": "ICE_SHARD",
-				"chargedMoves": ["SURF","SKULL_BASH"]
+				"speciesId": "aggron",
+				"fastMove": "SMACK_DOWN",
+				"chargedMoves": ["HEAVY_SLAM","STONE_EDGE"]
 			},
 			{
-				"speciesId": "forretress",
-				"fastMove": "BUG_BITE",
-				"chargedMoves": ["HEAVY_SLAM","EARTHQUAKE"]
-			},
-			{
-				"speciesId": "muk_alolan",
-				"fastMove": "POISON_JAB",
-				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"]
-			},
-			{
-				"speciesId": "gliscor",
-				"fastMove": "FURY_CUTTER",
-				"chargedMoves": ["EARTHQUAKE","AERIAL_ACE"]
+				"speciesId": "golbat",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["POISON_FANG","SHADOW_BALL"]
 			}
 		]
 	},
