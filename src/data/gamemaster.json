@@ -8382,8 +8382,8 @@
 		},
 		"types": ["grass", "ground"],
 		"fastMoves": ["BITE", "RAZOR_LEAF"],
-		"chargedMoves": ["EARTHQUAKE", "SOLAR_BEAM", "STONE_EDGE", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["EARTHQUAKE", "SOLAR_BEAM", "STONE_EDGE", "RETURN", "FRUSTRATION", "FRENZY_PLANT"],
+		"legacyMoves": ["RETURN", "FRUSTRATION", "FRENZY_PLANT"],
 		"defaultIVs": {
 			"cp1500": [18.5, 9, 13, 13],
 			"cp2500": [34.5, 3, 13, 6]

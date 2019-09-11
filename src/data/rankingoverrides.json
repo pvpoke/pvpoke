@@ -69,7 +69,7 @@
 			},
 			{
 				"speciesId": "torterra",
-				"chargedMoves": ["STONE_EDGE", "EARTHQUAKE"]
+				"chargedMoves": ["FRENZY_PLANT", "STONE_EDGE"]
 			},
 			{
 				"speciesId": "golduck",
@@ -549,6 +549,10 @@
 				"fastMove": "RAZOR_LEAF"
 			},
 			{
+				"speciesId": "tropius",
+				"fastMove": "AIR_SLASH"
+			},
+			{
 				"speciesId": "articuno",
 				"chargedMoves": ["ANCIENT_POWER","ICE_BEAM"]
 			},
@@ -567,6 +571,10 @@
 			{
 				"speciesId": "moltres",
 				"chargedMoves": ["ANCIENT_POWER","OVERHEAT"]
+			},
+			{
+				"speciesId": "lugia",
+				"chargedMoves": ["SKY_ATTACK","HYDRO_PUMP"]
 			},
 			{
 				"speciesId": "tentacruel",
@@ -598,7 +606,7 @@
 			},
 			{
 				"speciesId": "torterra",
-				"chargedMoves": ["STONE_EDGE", "EARTHQUAKE"]
+				"chargedMoves": ["FRENZY_PLANT", "STONE_EDGE"]
 			},
 			{
 				"speciesId": "golduck",
