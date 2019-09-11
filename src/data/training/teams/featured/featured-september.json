@@ -723,6 +723,48 @@
 		]
 	},
 	{
+		"name": "MattSuar",
+		"slug": "mattsuar",
+		"img": "mattsuar",
+		"cup": "safari",
+		"cupName": "Montreal Safari",
+		"league": 1500,
+		"description": "Made Top 4 during the Season 1 NA Championship. Love to team build and experiment with new and interesting Pokemon.",
+		"link": "https://twitter.com/MattSuarPvP",
+		"pokemon": [
+			{
+				"speciesId": "camerupt",
+				"fastMove": "EMBER",
+				"chargedMoves": ["EARTH_POWER","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "ludicolo",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["ICE_BEAM","HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "skarmory",
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["SKY_ATTACK","FLASH_CANNON"]
+			},
+			{
+				"speciesId": "drifblim",
+				"fastMove": "HEX",
+				"chargedMoves": ["ICY_WIND","OMINOUS_WIND"]
+			},
+			{
+				"speciesId": "toxicroak",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["MUD_BOMB","DYNAMIC_PUNCH"]
+			},
+			{
+				"speciesId": "aggron",
+				"fastMove": "SMACK_DOWN",
+				"chargedMoves": ["STONE_EDGE","HEAVY_SLAM"]
+			}
+		]
+	},
+	{
 		"name": "Toshi9227",
 		"slug": "toshi9227",
 		"img": "toshi9227",

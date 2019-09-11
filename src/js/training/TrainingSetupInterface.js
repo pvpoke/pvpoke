@@ -3,7 +3,7 @@
 */
 // Load AI archetypes
 
-var file = webRoot+"data/training/teams/featured/featured-september.json?v=7";
+var file = webRoot+"data/training/teams/featured/featured-september.json?v=8";
 var featuredTeams = [];
 
 $.getJSON( file, function( data ){
