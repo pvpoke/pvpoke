@@ -569,7 +569,7 @@ function PokeMultiSelect(element){
 	
 	// Event handler for changing the format select
 
-	$el.find(".format-select").on("click",function(e){
+	$el.find(".format-select").on("change",function(e){
 		self.changeFormatSelect();
 	});
 	
