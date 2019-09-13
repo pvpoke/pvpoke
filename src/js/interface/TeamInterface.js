@@ -106,7 +106,7 @@ var InterfaceMaster = (function () {
 									$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
 								}
 								
-								$(".cup-select").trigger("change");
+								$(".cup-select").change();
 								break;
 								
 							case "m1":
@@ -621,13 +621,13 @@ var InterfaceMaster = (function () {
 				
 				$(".cup-select option").hide();
 				$(".cup-select option[cat=\""+format+"\"]").show();
-				$(".cup-select option[cat=\""+format+"\"]").eq(0).prop("selected", "selected");
+				$(".cup-select option[cat=\""+format+"\"]").eq(0).prop("selected", true);
 				
 				if(cup){
-					$(".cup-select option[value=\""+cup+"\"]").eq(0).prop("selected", "selected");
+					$(".cup-select option[value=\""+cup+"\"]").eq(0).prop("selected", true);
 				}
 				
-				$(".cup-select").trigger("change");
+				$(".cup-select").change();
 				
 				if((format == "all")||(cup)){
 					$(".cup-select").hide();

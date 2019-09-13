@@ -141,7 +141,7 @@
 	},
 	{
 		"slot": "Flying",
-		"synergies": ["Fighting","Ground","Water"],
+		"synergies": ["Fighting","Ground"],
 		"weight": 8,
 		"pokemon": [
 			{
@@ -569,7 +569,7 @@
 				"fastMove": "WATERFALL",
 				"chargedMoves": ["THUNDER","BLIZZARD"],
 				"difficulty": 2,
-				"weight":15
+				"weight":3
 			},
 			{
 				"speciesId": "palkia",

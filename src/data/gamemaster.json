@@ -116,7 +116,7 @@
 				{
 					"filterType": "tag",
 					"values": [
-						"mythic","legendary"
+						"mythical","legendary"
 					]
 				}
 			]
@@ -229,7 +229,8 @@
 		},
 		"types": ["psychic", "none"],
 		"fastMoves": ["CHARGE_BEAM", "ZEN_HEADBUTT"],
-		"chargedMoves": ["PSYSHOCK", "SHADOW_BALL", "SIGNAL_BEAM"],
+		"chargedMoves": ["PSYSHOCK", "SHADOW_BALL", "SIGNAL_BEAM", "RETURN", "FRUSTRATION"],
+		"legacyMoves": ["RETURN", "FRUSTRATION"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -309,8 +310,8 @@
 		},
 		"types": ["psychic", "none"],
 		"fastMoves": ["CONFUSION", "PSYCHO_CUT"],
-		"chargedMoves": ["DAZZLING_GLEAM", "FIRE_PUNCH", "FOCUS_BLAST", "FUTURE_SIGHT", "PSYCHIC", "SHADOW_BALL"],
-		"legacyMoves": ["DAZZLING_GLEAM", "PSYCHIC"],
+		"chargedMoves": ["DAZZLING_GLEAM", "FIRE_PUNCH", "FOCUS_BLAST", "FUTURE_SIGHT", "PSYCHIC", "SHADOW_BALL", "RETURN", "FRUSTRATION"],
+		"legacyMoves": ["DAZZLING_GLEAM", "PSYCHIC", "RETURN", "FRUSTRATION"],
 		"defaultIVs": {
 			"cp1500": [18.5, 2, 4, 14],
 			"cp2500": [30, 4, 13, 12]
@@ -407,8 +408,8 @@
 		},
 		"types": ["fire", "none"],
 		"fastMoves": ["BITE", "FIRE_FANG", "SNARL"],
-		"chargedMoves": ["BULLDOZE", "CRUNCH", "FIRE_BLAST", "FLAMETHROWER", "WILD_CHARGE"],
-		"legacyMoves": ["BITE", "BULLDOZE", "FLAMETHROWER"],
+		"chargedMoves": ["BULLDOZE", "CRUNCH", "FIRE_BLAST", "FLAMETHROWER", "WILD_CHARGE", "RETURN", "FRUSTRATION"],
+		"legacyMoves": ["BITE", "BULLDOZE", "FLAMETHROWER","RETURN", "FRUSTRATION"],
 		"defaultIVs": {
 			"cp1500": [19, 4, 8, 4],
 			"cp2500": [33, 3, 12, 3]
@@ -972,7 +973,8 @@
 		},
 		"types": ["grass", "none"],
 		"fastMoves": ["ACID", "RAZOR_LEAF"],
-		"chargedMoves": ["DAZZLING_GLEAM", "LEAF_BLADE", "PETAL_BLIZZARD"],
+		"chargedMoves": ["DAZZLING_GLEAM", "LEAF_BLADE", "PETAL_BLIZZARD", "RETURN", "FRUSTRATION"],
+		"legacyMoves": ["RETURN", "FRUSTRATION"],
 		"defaultIVs": {
 			"cp1500": [25, 5, 7, 11],
 			"cp2500": [40, 15, 15, 15]
@@ -3226,7 +3228,8 @@
 		},
 		"types": ["grass", "poison"],
 		"fastMoves": ["ACID", "RAZOR_LEAF"],
-		"chargedMoves": ["MOONBLAST", "PETAL_BLIZZARD", "SLUDGE_BOMB"],
+		"chargedMoves": ["MOONBLAST", "PETAL_BLIZZARD", "SLUDGE_BOMB", "RETURN", "FRUSTRATION"],
+		"legacyMoves": ["RETURN", "FRUSTRATION"],
 		"defaultIVs": {
 			"cp1500": [35.5, 7, 14, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -3275,7 +3278,8 @@
 		},
 		"types": ["water", "none"],
 		"fastMoves": ["CONFUSION", "WATER_GUN"],
-		"chargedMoves": ["HYDRO_PUMP", "ICE_BEAM", "PSYCHIC"],
+		"chargedMoves": ["HYDRO_PUMP", "ICE_BEAM", "PSYCHIC", "RETURN", "FRUSTRATION"],
+		"legacyMoves": ["RETURN", "FRUSTRATION"],
 		"defaultIVs": {
 			"cp1500": [22.5, 5, 12, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -3426,7 +3430,8 @@
 		},
 		"types": ["grass", "none"],
 		"fastMoves": ["BITE", "RAZOR_LEAF"],
-		"chargedMoves": ["BODY_SLAM", "ENERGY_BALL", "SOLAR_BEAM"],
+		"chargedMoves": ["BODY_SLAM", "ENERGY_BALL", "SOLAR_BEAM", "RETURN", "FRUSTRATION"],
+		"legacyMoves": ["RETURN", "FRUSTRATION"],
 		"defaultIVs": {
 			"cp1500": [33.5, 1, 1, 14],
 			"cp2500": [40, 15, 15, 15]
@@ -3475,7 +3480,8 @@
 		},
 		"types": ["fire", "none"],
 		"fastMoves": ["BITE", "EMBER"],
-		"chargedMoves": ["BODY_SLAM", "FLAME_WHEEL", "FLAMETHROWER"],
+		"chargedMoves": ["BODY_SLAM", "FLAME_WHEEL", "FLAMETHROWER", "RETURN", "FRUSTRATION"],
+		"legacyMoves": ["RETURN", "FRUSTRATION"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -3655,8 +3661,8 @@
 		},
 		"types": ["fighting", "none"],
 		"fastMoves": ["BULLET_PUNCH", "COUNTER", "ROCK_SMASH"],
-		"chargedMoves": ["BRICK_BREAK", "CLOSE_COMBAT", "FIRE_PUNCH", "ICE_PUNCH", "THUNDER_PUNCH", "POWER_UP_PUNCH"],
-		"legacyMoves": ["BRICK_BREAK", "ROCK_SMASH"],
+		"chargedMoves": ["BRICK_BREAK", "CLOSE_COMBAT", "FIRE_PUNCH", "ICE_PUNCH", "THUNDER_PUNCH", "POWER_UP_PUNCH", "RETURN", "FRUSTRATION"],
+		"legacyMoves": ["BRICK_BREAK", "ROCK_SMASH", "RETURN", "FRUSTRATION"],
 		"defaultIVs": {
 			"cp1500": [24.5, 3, 8, 10],
 			"cp2500": [40, 15, 15, 15]
@@ -4036,7 +4042,8 @@
 		},
 		"types": ["psychic", "none"],
 		"fastMoves": ["CONFUSION", "PSYCHO_CUT"],
-		"chargedMoves": ["DAZZLING_GLEAM", "PSYBEAM", "SHADOW_BALL"],
+		"chargedMoves": ["DAZZLING_GLEAM", "PSYBEAM", "SHADOW_BALL", "RETURN", "FRUSTRATION"],
+		"legacyMoves": ["RETURN", "FRUSTRATION"],
 		"defaultIVs": {
 			"cp1500": [27.5, 8, 15, 3],
 			"cp2500": [40, 15, 15, 15]
@@ -4284,7 +4291,8 @@
 		},
 		"types": ["rock", "ground"],
 		"fastMoves": ["BITE", "ROCK_SMASH"],
-		"chargedMoves": ["ANCIENT_POWER", "CRUNCH", "STOMP"],
+		"chargedMoves": ["ANCIENT_POWER", "CRUNCH", "STOMP", "RETURN", "FRUSTRATION"],
+		"legacyMoves": ["RETURN", "FRUSTRATION"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -5101,7 +5109,8 @@
 		"defaultIVs": {
 			"cp1500": [15.5, 1, 13, 8],
 			"cp2500": [25.5, 7, 11, 11]
-		}
+		},
+		"tags": ["mythical"]
 	}, {
 		"dex": 808,
 		"speciesName": "Meltan",
@@ -5117,7 +5126,8 @@
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"tags": ["mythical"]
 	}, {
 		"dex": 52,
 		"speciesName": "Meowth",
@@ -5801,7 +5811,8 @@
 		},
 		"types": ["grass", "poison"],
 		"fastMoves": ["ACID", "RAZOR_LEAF"],
-		"chargedMoves": ["MOONBLAST", "SEED_BOMB", "SLUDGE_BOMB"],
+		"chargedMoves": ["MOONBLAST", "SEED_BOMB", "SLUDGE_BOMB", "RETURN", "FRUSTRATION"],
+		"legacyMoves": ["RETURN", "FRUSTRATION"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -6380,7 +6391,8 @@
 		},
 		"types": ["water", "none"],
 		"fastMoves": ["WATER_GUN", "ZEN_HEADBUTT"],
-		"chargedMoves": ["AQUA_TAIL", "CROSS_CHOP", "PSYBEAM"],
+		"chargedMoves": ["AQUA_TAIL", "CROSS_CHOP", "PSYBEAM", "RETURN", "FRUSTRATION"],
+		"legacyMoves": ["RETURN", "FRUSTRATION"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -6396,7 +6408,8 @@
 		},
 		"types": ["rock", "ground"],
 		"fastMoves": ["BITE", "ROCK_SMASH"],
-		"chargedMoves": ["ANCIENT_POWER", "CRUNCH", "DIG"],
+		"chargedMoves": ["ANCIENT_POWER", "CRUNCH", "DIG", "RETURN", "FRUSTRATION"],
+		"legacyMoves": ["RETURN", "FRUSTRATION"],
 		"defaultIVs": {
 			"cp1500": [37.5, 1, 9, 7],
 			"cp2500": [40, 15, 15, 15]
@@ -8369,7 +8382,8 @@
 		},
 		"types": ["grass", "ground"],
 		"fastMoves": ["BITE", "RAZOR_LEAF"],
-		"chargedMoves": ["EARTHQUAKE", "SOLAR_BEAM", "STONE_EDGE"],
+		"chargedMoves": ["EARTHQUAKE", "SOLAR_BEAM", "STONE_EDGE", "RETURN", "FRUSTRATION", "FRENZY_PLANT"],
+		"legacyMoves": ["RETURN", "FRUSTRATION", "FRENZY_PLANT"],
 		"defaultIVs": {
 			"cp1500": [18.5, 9, 13, 13],
 			"cp2500": [34.5, 3, 13, 6]
@@ -8466,7 +8480,8 @@
 		},
 		"types": ["grass", "none"],
 		"fastMoves": ["RAZOR_LEAF", "TACKLE"],
-		"chargedMoves": ["BODY_SLAM", "ENERGY_BALL", "SEED_BOMB"],
+		"chargedMoves": ["BODY_SLAM", "ENERGY_BALL", "SEED_BOMB", "RETURN", "FRUSTRATION"],
+		"legacyMoves": ["RETURN", "FRUSTRATION"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -8499,8 +8514,8 @@
 		},
 		"types": ["rock", "dark"],
 		"fastMoves": ["BITE", "IRON_TAIL", "SMACK_DOWN"],
-		"chargedMoves": ["CRUNCH", "FIRE_BLAST", "STONE_EDGE"],
-		"legacyMoves": ["SMACK_DOWN"],
+		"chargedMoves": ["CRUNCH", "FIRE_BLAST", "STONE_EDGE", "RETURN", "FRUSTRATION"],
+		"legacyMoves": ["SMACK_DOWN", "RETURN", "FRUSTRATION"],
 		"defaultIVs": {
 			"cp1500": [14.5, 5, 14, 4],
 			"cp2500": [24, 4, 10, 12]
@@ -8615,8 +8630,8 @@
 		},
 		"types": ["bug", "poison"],
 		"fastMoves": ["BUG_BITE", "CONFUSION", "INFESTATION"],
-		"chargedMoves": ["BUG_BUZZ", "POISON_FANG", "PSYCHIC", "SILVER_WIND"],
-		"legacyMoves": ["BUG_BITE", "POISON_FANG"],
+		"chargedMoves": ["BUG_BUZZ", "POISON_FANG", "PSYCHIC", "SILVER_WIND", "RETURN", "FRUSTRATION"],
+		"legacyMoves": ["BUG_BITE", "POISON_FANG", "RETURN", "FRUSTRATION"],
 		"defaultIVs": {
 			"cp1500": [27.5, 3, 11, 9],
 			"cp2500": [40, 15, 15, 15]
@@ -8632,7 +8647,8 @@
 		},
 		"types": ["bug", "poison"],
 		"fastMoves": ["BUG_BITE", "CONFUSION"],
-		"chargedMoves": ["POISON_FANG", "PSYBEAM", "SIGNAL_BEAM"],
+		"chargedMoves": ["POISON_FANG", "PSYBEAM", "SIGNAL_BEAM", "RETURN", "FRUSTRATION"],
+		"legacyMoves": ["RETURN", "FRUSTRATION"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -8729,7 +8745,8 @@
 		},
 		"types": ["grass", "poison"],
 		"fastMoves": ["ACID", "RAZOR_LEAF"],
-		"chargedMoves": ["MOONBLAST", "PETAL_BLIZZARD", "SOLAR_BEAM", "SLUDGE_BOMB"],
+		"chargedMoves": ["MOONBLAST", "PETAL_BLIZZARD", "SOLAR_BEAM", "SLUDGE_BOMB", "RETURN", "FRUSTRATION"],
+		"legacyMoves": ["RETURN", "FRUSTRATION"],
 		"defaultIVs": {
 			"cp1500": [22, 8, 15, 1],
 			"cp2500": [40, 11, 8, 13]

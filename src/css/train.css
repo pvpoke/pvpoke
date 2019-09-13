@@ -1,7 +1,7 @@
 /* MIXINS */
 .multi .quick-fill-select option.multi-battle {
   display: none !important; }
-.multi .cup-select {
+.multi .cup-select, .multi .format-select {
   display: none; }
 
 .train .poke {

@@ -26,8 +26,15 @@
 
 	<!--Update section for updates-->
 	<h3>What's New</h3>
+	
+	<h4>v1.10.6 (September 5th, 2019)</h4>
+	<ul>
+		<ul>
+			<li>On Android, add PvPoke.com to your home screen to run it like a standalone app</li>
+		</ul>
+	</ul>
 
-	<h4>v1.10.0</h4>
+	<h4>v1.10.0 (August 29th, 2019)</h4>
 	<ul>
 		<li><a href="<?php echo $WEB_ROOT;?>custom-rankings/">Custom Rankings</a> tool will allow you to test rules for a custom tournament format</li>
 		<ul>
@@ -43,14 +50,14 @@
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/developing-trainer-battle-ai/">
-				<img src="<?php echo $WEB_ROOT; ?>assets/articles/ai-thumb.jpg?v=2" />
+			<a href="<?php echo $WEB_ROOT; ?>articles/cliffhanger-team-building/">
+				<img src="<?php echo $WEB_ROOT; ?>assets/articles/cliffhanger-thumb.jpg" />
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/developing-trainer-battle-ai/">Developing an AI for Pokemon GO Trainer Battles</a></h4>
-			<div class="date"> July 30, 2019</div>
-			<p>How does the AI on the site's training battles work? Read all about how I approached development and strategies the AI uses to mimic player behavior.</p>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/cliffhanger-team-building/">Team Building for GO Stadium Cliffhanger</a></h4>
+			<div class="date"> September 7, 2019</div>
+			<p>GO Stadium has introduced an exciting new format called Cliffhanger! Learn how to spend your points and build your Cliffhanger team from the ground up.</p>
 		</div>
 	</div>
 

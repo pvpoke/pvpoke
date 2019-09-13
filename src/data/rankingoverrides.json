@@ -60,6 +60,27 @@
 				"chargedMoves": ["OVERHEAT", "ANCIENT_POWER"]
 			},
 			{
+				"speciesId": "vileplume",
+				"chargedMoves": ["SLUDGE_BOMB", "PETAL_BLIZZARD"]
+			},
+			{
+				"speciesId": "grotle",
+				"chargedMoves": ["BODY_SLAM", "ENERGY_BALL"]
+			},
+			{
+				"speciesId": "torterra",
+				"chargedMoves": ["FRENZY_PLANT", "STONE_EDGE"]
+			},
+			{
+				"speciesId": "golduck",
+				"chargedMoves": ["ICE_BEAM", "HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "venomoth",
+				"fastMove": "CONFUSION"
+			},
+
+			{
 				"speciesId": "probopass",
 				"fastMove": "SPARK"
 			},
@@ -528,6 +549,10 @@
 				"fastMove": "RAZOR_LEAF"
 			},
 			{
+				"speciesId": "tropius",
+				"fastMove": "AIR_SLASH"
+			},
+			{
 				"speciesId": "articuno",
 				"chargedMoves": ["ANCIENT_POWER","ICE_BEAM"]
 			},
@@ -548,6 +573,10 @@
 				"chargedMoves": ["ANCIENT_POWER","OVERHEAT"]
 			},
 			{
+				"speciesId": "lugia",
+				"chargedMoves": ["SKY_ATTACK","HYDRO_PUMP"]
+			},
+			{
 				"speciesId": "tentacruel",
 				"chargedMoves": ["ACID_SPRAY","HYDRO_PUMP"]
 			},
@@ -566,6 +595,22 @@
 			{
 				"speciesId": "crobat",
 				"chargedMoves": ["SLUDGE_BOMB","SHADOW_BALL"]
+			},
+			{
+				"speciesId": "vileplume",
+				"chargedMoves": ["SLUDGE_BOMB", "PETAL_BLIZZARD"]
+			},
+			{
+				"speciesId": "grotle",
+				"chargedMoves": ["BODY_SLAM", "ENERGY_BALL"]
+			},
+			{
+				"speciesId": "torterra",
+				"chargedMoves": ["FRENZY_PLANT", "STONE_EDGE"]
+			},
+			{
+				"speciesId": "golduck",
+				"chargedMoves": ["ICE_BEAM", "HYDRO_PUMP"]
 			}
 		]
 	},
@@ -597,6 +642,10 @@
 			{
 				"speciesId": "crobat",
 				"chargedMoves": ["SHADOW_BALL","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "tyranitar",
+				"chargedMoves": ["CRUNCH", "STONE_EDGE"]
 			},
 			{
 				"speciesId": "venusaur",

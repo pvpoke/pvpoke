@@ -62,9 +62,9 @@
 				"chargedMoves": ["SHADOW_BALL","THUNDER_PUNCH"]
 			},
 			{
-				"speciesId": "swampert",
-				"fastMove": "MUD_SHOT",
-				"chargedMoves": ["HYDRO_CANNON","EARTHQUAKE"]
+				"speciesId": "tropius",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["LEAF_BLADE","AERIAL_ACE"]
 			},
 			{
 				"speciesId": "forretress",
@@ -77,9 +77,51 @@
 				"chargedMoves": ["AERIAL_ACE","ICE_BEAM"]
 			},
 			{
-				"speciesId": "sceptile",
-				"fastMove": "FURY_CUTTER",
-				"chargedMoves": ["LEAF_BLADE","EARTHQUAKE"]
+				"speciesId": "quagsire",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["STONE_EDGE","EARTHQUAKE"]
+			}
+		]
+	},
+	{
+		"name": "datboiMuk",
+		"slug": "datboimuk",
+		"img": "datboimuk",
+		"cup": "cliffhanger",
+		"cupName": "Cliffhanger",
+		"league": 1500,
+		"description": "datboiMuk is a Season 1 Chicago Championship finalist that specializes in running obscure lineups.",
+		"link": "https://twitter.com/datboimuk",
+		"pokemon": [
+			{
+				"speciesId": "skarmory",
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["SKY_ATTACK","FLASH_CANNON"]
+			},
+			{
+				"speciesId": "bronzong",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["PSYSHOCK","BULLDOZE"]
+			},
+			{
+				"speciesId": "victreebel",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["LEAF_BLADE","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "umbreon",
+				"fastMove": "SNARL",
+				"chargedMoves": ["FOUL_PLAY","LAST_RESORT"]
+			},
+			{
+				"speciesId": "sableye",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["FOUL_PLAY","POWER_GEM"]
+			},
+			{
+				"speciesId": "tentacruel",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["HYDRO_PUMP","SLUDGE_WAVE"]
 			}
 		]
 	},
@@ -168,8 +210,47 @@
 		]
 	},
 	{
-		"name": "itsSmogondevo",
-		"slug": "itsSmogondevo",
+		"name": "itsSmogondevo #1",
+		"cupName": "Cliffhanger",
+		"league": 1500,
+		"description": "A Worldwide Community of dedicated Pokémon GO Trainers and Content Creators committed to cultivating the PvP Community as a premiere mobile gaming E-Sport. Cliffhanger is a special format designed by GO Stadium with a tiered team-building system.",
+		"link": "https://discord.gg/fbczGXZ",
+		"pokemon": [
+			{
+				"speciesId": "swampert",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["HYDRO_CANNON","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "castform_sunny",
+				"fastMove": "EMBER",
+				"chargedMoves": ["WEATHER_BALL_FIRE","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "jirachi",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["METEOR_MASH","PSYCHIC"]
+			},
+			{
+				"speciesId": "meganium",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "raichu_alolan",
+				"fastMove": "SPARK",
+				"chargedMoves": ["THUNDER_PUNCH","WILD_CHARGE"]
+			},
+			{
+				"speciesId": "togekiss",
+				"fastMove": "CHARM",
+				"chargedMoves": ["ANCIENT_POWER","AERIAL_ACE"]
+			}
+		]
+	},
+	{
+		"name": "itsSmogondevo #2",
+		"slug": "itsSmogondevo-2",
 		"img": "gostadium",
 		"cup": "cliffhanger",
 		"cupName": "Cliffhanger",
@@ -178,34 +259,88 @@
 		"link": "https://discord.gg/fbczGXZ",
 		"pokemon": [
 			{
-				"speciesId": "azumarill",
-				"fastMove": "BUBBLE",
-				"chargedMoves": ["ICE_BEAM","PLAY_ROUGH"]
+				"speciesId": "hypno",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["SHADOW_BALL","FIRE_PUNCH"]
+			},
+			{
+				"speciesId": "togekiss",
+				"fastMove": "CHARM",
+				"chargedMoves": ["ANCIENT_POWER","AERIAL_ACE"]
+			},
+			{
+				"speciesId": "toxicroak",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["MUD_BOMB","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "probopass",
+				"fastMove": "SPARK",
+				"chargedMoves": ["ROCK_SLIDE","THUNDERBOLT"]
+			},
+			{
+				"speciesId": "meganium",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","EARTHQUAKE"]
 			},
 			{
 				"speciesId": "sableye",
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["FOUL_PLAY","POWER_GEM"]
+			}
+		]
+	},
+	{
+		"name": "KepBepoc",
+		"slug": "kepbepoc",
+		"img": "gostadium",
+		"cup": "cliffhanger",
+		"cupName": "Cliffhanger",
+		"league": 1500,
+		"description": "A Worldwide Community of dedicated Pokémon GO Trainers and Content Creators committed to cultivating the PvP Community as a premiere mobile gaming E-Sport. Cliffhanger is a special format designed by GO Stadium with a tiered team-building system.",
+		"link": "https://discord.gg/fbczGXZ",
+		"pokemon": [
+			{
+				"speciesId": "tentacruel",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["HYDRO_PUMP","SLUDGE_WAVE"],
+				"level": 23,
+				"ivs": [3,15,15]
 			},
 			{
-				"speciesId": "jirachi",
-				"fastMove": "CONFUSION",
-				"chargedMoves": ["METEOR_MASH","DAZZLING_GLEAM"]
+				"speciesId": "swampert",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["HYDRO_CANNON","EARTHQUAKE"],
+				"level": 19,
+				"ivs": [0,15,13]
 			},
 			{
-				"speciesId": "tangela",
-				"fastMove": "VINE_WHIP",
-				"chargedMoves": ["GRASS_KNOT","SLUDGE_BOMB"]
+				"speciesId": "vigoroth",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["BODY_SLAM","BULLDOZE"],
+				"level": 29.5,
+				"ivs": [1,13,7]
 			},
 			{
-				"speciesId": "lanturn",
-				"fastMove": "WATER_GUN",
-				"chargedMoves": ["THUNDERBOLT","HYDRO_PUMP"]
+				"speciesId": "sableye",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["FOUL_PLAY","POWER_GEM"],
+				"level": 40,
+				"ivs": [14,13,13]
 			},
 			{
-				"speciesId": "togekiss",
-				"fastMove": "CHARM",
-				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
+				"speciesId": "tropius",
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["LEAF_BLADE","AERIAL_ACE"],
+				"level": 28.5,
+				"ivs": [14,8,3]
+			},
+			{
+				"speciesId": "probopass",
+				"fastMove": "SPARK",
+				"chargedMoves": ["ROCK_SLIDE","MAGNET_BOMB"],
+				"level": 25,
+				"ivs": [15,13,13]
 			}
 		]
 	},
@@ -462,6 +597,90 @@
 		]
 	},
 	{
+		"name": "Vergyverg",
+		"slug": "vergyverg",
+		"img": "vergyverg",
+		"cup": "cliffhanger",
+		"cupName": "Cliffhanger",
+		"league": 1500,
+		"description": "Pokemon Go enthusiast! Primarily battles in the Texas area. Started pvp'ing late in the game around the Nightmare Cup. Quickly made it to challenger and hope to achieve Ace in season 2 now that I'll be starting at the beginning of the season.",
+		"link": "https://www.youtube.com/channel/UCOeIQWAJYD-zy7T5-IRZy7Q",
+		"pokemon": [
+			{
+				"speciesId": "bayleef",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["ANCIENT_POWER","GRASS_KNOT"]
+			},
+			{
+				"speciesId": "relicanth",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["AQUA_TAIL","ANCIENT_POWER"]
+			},
+			{
+				"speciesId": "mantine",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["AERIAL_ACE","ICE_BEAM"]
+			},
+			{
+				"speciesId": "marshtomp",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["MUD_BOMB","SURF"]
+			},
+			{
+				"speciesId": "aggron",
+				"fastMove": "SMACK_DOWN",
+				"chargedMoves": ["HEAVY_SLAM","STONE_EDGE"]
+			},
+			{
+				"speciesId": "golbat",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["POISON_FANG","SHADOW_BALL"]
+			}
+		]
+	},
+	{
+		"name": "VeryCoolGuy",
+		"slug": "verycoolguy",
+		"img": "gostadium",
+		"cup": "cliffhanger",
+		"cupName": "Cliffhanger",
+		"league": 1500,
+		"description": "A Worldwide Community of dedicated Pokémon GO Trainers and Content Creators committed to cultivating the PvP Community as a premiere mobile gaming E-Sport. Cliffhanger is a special format designed by GO Stadium with a tiered team-building system.",
+		"link": "https://discord.gg/fbczGXZ",
+		"pokemon": [
+			{
+				"speciesId": "azumarill",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["PLAY_ROUGH","HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "meganium",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "lapras",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["SURF","SKULL_BASH"]
+			},
+			{
+				"speciesId": "forretress",
+				"fastMove": "BUG_BITE",
+				"chargedMoves": ["HEAVY_SLAM","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "muk_alolan",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"]
+			},
+			{
+				"speciesId": "gliscor",
+				"fastMove": "FURY_CUTTER",
+				"chargedMoves": ["EARTHQUAKE","AERIAL_ACE"]
+			}
+		]
+	},
+	{
 		"name": "BGold",
 		"slug": "bgold",
 		"img": "bgold",
@@ -500,6 +719,90 @@
 				"speciesId": "charizard",
 				"fastMove": "FIRE_SPIN",
 				"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"]
+			}
+		]
+	},
+	{
+		"name": "MattSuar",
+		"slug": "mattsuar",
+		"img": "mattsuar",
+		"cup": "safari",
+		"cupName": "Montreal Safari",
+		"league": 1500,
+		"description": "Made Top 4 during the Season 1 NA Championship. Love to team build and experiment with new and interesting Pokemon.",
+		"link": "https://twitter.com/MattSuarPvP",
+		"pokemon": [
+			{
+				"speciesId": "camerupt",
+				"fastMove": "EMBER",
+				"chargedMoves": ["EARTH_POWER","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "ludicolo",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["ICE_BEAM","HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "skarmory",
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["SKY_ATTACK","FLASH_CANNON"]
+			},
+			{
+				"speciesId": "drifblim",
+				"fastMove": "HEX",
+				"chargedMoves": ["ICY_WIND","OMINOUS_WIND"]
+			},
+			{
+				"speciesId": "toxicroak",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["MUD_BOMB","DYNAMIC_PUNCH"]
+			},
+			{
+				"speciesId": "aggron",
+				"fastMove": "SMACK_DOWN",
+				"chargedMoves": ["STONE_EDGE","HEAVY_SLAM"]
+			}
+		]
+	},
+	{
+		"name": "Toshi9227",
+		"slug": "toshi9227",
+		"img": "toshi9227",
+		"cup": "safari",
+		"cupName": "Montreal Safari",
+		"league": 1500,
+		"description": "TL40x12, 100mil club and Silph Ace Trainer, #10 global rank (for now).",
+		"link": "https://twitter.com/ShutupToshi9227",
+		"pokemon": [
+			{
+				"speciesId": "bastiodon",
+				"fastMove": "SMACK_DOWN",
+				"chargedMoves": ["STONE_EDGE","FLAMETHROWER"]
+			},
+			{
+				"speciesId": "tropius",
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["LEAF_BLADE","AERIAL_ACE"]
+			},
+			{
+				"speciesId": "ivysaur",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["POWER_WHIP","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "mantine",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["AERIAL_ACE","ICE_BEAM"]
+			},
+			{
+				"speciesId": "heracross",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["MEGAHORN","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "munchlax",
+				"fastMove": "LICK",
+				"chargedMoves": ["BODY_SLAM","BULLDOZE"]
 			}
 		]
 	}

@@ -569,7 +569,7 @@ function PokeMultiSelect(element){
 	
 	// Event handler for changing the format select
 
-	$el.find(".format-select").on("click",function(e){
+	$el.find(".format-select").on("change",function(e){
 		self.changeFormatSelect();
 	});
 	
@@ -579,13 +579,14 @@ function PokeMultiSelect(element){
 
 		$(".cup-select option").hide();
 		$(".cup-select option[cat=\""+format+"\"]").show();
-		$(".cup-select option[cat=\""+format+"\"]").eq(0).prop("selected", "selected");
 
 		if(cup){
-			$(".cup-select option[value=\""+cup+"\"]").eq(0).prop("selected", "selected");
+			$(".cup-select option[value=\""+cup+"\"]").prop("selected", true);
+		} else{
+			$(".cup-select option[cat=\""+format+"\"]").eq(0).prop("selected", true);
 		}
 
-		$(".cup-select").trigger("change");
+		$(".cup-select").change();
 
 		if((format == "all")||(cup)){
 			$(".cup-select").hide();

@@ -3,39 +3,97 @@
 <head>
 <meta charset="utf-8">
 <title>Untitled Document</title>
+<script src="../js/libs/jquery-3.3.1.min.js"></script>
 </head>
+	
 
 <body>
-<?php
-	
-// Open the file for reading
-if (($h = fopen("base_stats.csv", "r")) !== FALSE) 
-{
-	echo '	"pokemon": [<br>';
-	
-	
-  // Convert each line into the local $data variable
-  while (($data = fgetcsv($h, 1000, ",")) !== FALSE) 
-  {		
-    // Read the data from a single line
-	  
-	  echo '		{<br>';
-	  echo '			"dex": ' . $data[0] . ',<br>';
-	  echo '			"speciesName": "' . $data[1] . '",<br>';
-	  echo '			"speciesId": "' . strtolower($data[1]) . '",<br>';
-	  echo '			"baseStats": { "atk": '.$data[2].', "def": '.$data[3].', "hp": '.$data[4].' },';
-	  echo '			"types": ["' . strtolower($data[5]) . '", "' . strtolower($data[6]) . '"],<br>';
-	  echo '			"fastMoves": [],<br>';
-	  echo '			"chargedMoves": []<br>';
-	  echo '		},<br>';
-  }
-	
-	echo ']';
+	<script>
+		/* This file parses the game master file from the app and adapts Pokemon entries into the format the site uses. */
+		
+		// Load app game master file to parse
+		
+		$.getJSON( "../data/gamemaster/gamemaster-app.json", function( data ){
+			var templates = data.itemTemplates;
+			var pokemon = [];
+			
+			console.log(templates);
+			
+			for(var i = 0; i < data.itemTemplates.length; i++){
+				var template = data.itemTemplates[i];
+				
+				if(! template.pokemonSettings){
+					continue;
+				}
+				
+				if( (template.templateId.indexOf("NORMAL") > -1) || (template.templateId.indexOf("SHADOW") > -1) || (template.templateId.indexOf("PURIFIED") > -1)){
+					continue;
+				}
+				
+				// Parse out the dex number from the template Id
+				
+				var dexStr = template.templateId.split("_");
+				dexStr = dexStr[0].split("V0");
+				var dexNumber = parseInt(dexStr[1]);
+				
+				var settings = template.pokemonSettings;
+				var speciesId = settings.pokemonId.toLowerCase();
+				
+				if(settings.form){
+					speciesId = settings.form.toLowerCase();
+				}
+				
+				var speciesName = speciesId[0].toUpperCase() + speciesId.substring(1);
+				
+				// Gather fast moves and charged moves
+				
+				var fastMoves = [];
+				var chargedMoves = [];
+				
+				// Catch for Smeargle, which doesn't have set moves
+				if(settings.quickMoves){					
+					for(var n = 0; n < settings.quickMoves.length; n++){
+						settings.quickMoves[n] = settings.quickMoves[n].replace("_FAST","");
+					}
+					
+					fastMoves = settings.quickMoves;
+					chargedMoves = settings.cinematicMoves;
+				}
+				
+				// Gather Poekmon types
+				var types = ["none", "none"];
+				
+				if(settings.type){
+					types[0] = settings.type.replace("POKEMON_TYPE_","").toLowerCase();
+				}
+				
+				if(settings.type2){
+					types[1] = settings.type2.replace("POKEMON_TYPE_","").toLowerCase();
+				}
 
-  // Close the file
-  fclose($h);
-}
+				
+				var poke = {
+					dex: dexNumber,
+					speciesId: speciesId,
+					speciesName: speciesName,
+					baseStats: {
+						atk: settings.stats.baseAttack,
+						def: settings.stats.baseDefense,
+						hp: settings.stats.baseStamina
+					},
+					types: types,
+					fastMoves: fastMoves,
+					chargedMoves: chargedMoves
+				};
+				
+				pokemon.push(poke);
+			}
+			
+			console.log(JSON.stringify(pokemon));
+		});
+		
+
 	
-?>
+	</script>
 </body>
 </html>

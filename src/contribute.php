@@ -31,6 +31,7 @@ require_once 'header.php'; ?>
 		<div class="supporter">RandomKashual</div>
 		<div class="supporter">KnightsOoofRen</div>
 		<div class="supporter">Vlaada</div>
+		<div class="supporter">FunkyGaaroth</div>
 	</div>
 
 	<h2 class="center">Master Supporters</h2>
