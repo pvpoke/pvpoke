@@ -127,10 +127,9 @@ require_once '../header.php';
 <div class="section white updates">
 	<h3>What's New</h3>
 
-	<h4>v1.10.4 (September 1, 2019)</h4>
+	<h4>v1.11.0 (September 14th, 2019)</h4>
 	<ul>
-		<li>Featured Teams are now available for GO Stadium's Cliffhanger format</li>
-		<li>Play against featured or random teams in the Montreal Safari Cup</li>
+		<li>Generation 5 has been added! Try any Generation 5 Pokemon in your training battles to see how they perform!</li>
 	</ul>
 </div>
 

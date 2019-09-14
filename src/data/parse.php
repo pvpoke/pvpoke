@@ -14,13 +14,13 @@
 		// Load app game master file to parse
 		
 		$.getJSON( "../data/gamemaster/gamemaster-app.json", function( data ){
-			var templates = data.itemTemplates;
+			var templates = data;
 			var pokemon = [];
 			
 			console.log(templates);
 			
-			for(var i = 0; i < data.itemTemplates.length; i++){
-				var template = data.itemTemplates[i];
+			for(var i = 0; i < data.length; i++){
+				var template = data[i];
 				
 				if(! template.pokemonSettings){
 					continue;
@@ -83,7 +83,11 @@
 					},
 					types: types,
 					fastMoves: fastMoves,
-					chargedMoves: chargedMoves
+					chargedMoves: chargedMoves,
+					defaultIVs: {
+						cp1500: [20, 15, 15, 15],
+						cp2500: [20, 15, 15, 15]
+					}
 				};
 				
 				pokemon.push(poke);

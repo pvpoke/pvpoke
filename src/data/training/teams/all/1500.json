@@ -565,6 +565,13 @@
 				"weight":2
 			},
 			{
+				"speciesId": "serperior",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["GRASS_KNOT","AERIAL_ACE"],
+				"difficulty": 2,
+				"weight":3
+			},
+			{
 				"speciesId": "sceptile",
 				"fastMove": "FURY_CUTTER",
 				"chargedMoves": ["LEAF_BLADE","FRENZY_PLANT"],

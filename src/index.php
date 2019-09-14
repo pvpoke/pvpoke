@@ -27,20 +27,12 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 	
-	<h4>v1.10.6 (September 5th, 2019)</h4>
+	<h4>v1.11.6 (September 14th, 2019)</h4>
 	<ul>
+		<li>Generation 5 Pokemon have been added!</li>
 		<ul>
-			<li>On Android, add PvPoke.com to your home screen to run it like a standalone app</li>
-		</ul>
-	</ul>
-
-	<h4>v1.10.0 (August 29th, 2019)</h4>
-	<ul>
-		<li><a href="<?php echo $WEB_ROOT;?>custom-rankings/">Custom Rankings</a> tool will allow you to test rules for a custom tournament format</li>
-		<ul>
-			<li>Add rules to include or exclude Pokemon based on type, category, generation, or individual species</li>
-			<li>Generate ranking results to see a big picture view of the meta and potential balance problems</li>
-			<li>Import or export your custom tournament settings to share or save</li>
+			<li>All Generation 5 Pokemon are available in battle simulations and training battles! Pokemon will be added to the rankings as they are released.</li>
+			
 		</ul>
 	</ul>
 
