@@ -315,8 +315,8 @@ var GameMaster = (function () {
 						
 						// Only include releasedGen 5  Pokemon
 						
-						if((pokemon.dex > maxDexNumber)&&(releaesdGen5.indexOf(pokemon.speciesId) == -1)){
-							//allowed = false;
+						if((pokemon.dex > maxDexNumber)&&(releaesdGen5.indexOf(pokemon.speciesId) == -1)&&(battle.getCup().name != "gen-5")){
+							allowed = false;
 						}
 
 						// Exclude Pokemon that match any of the exclude filters
