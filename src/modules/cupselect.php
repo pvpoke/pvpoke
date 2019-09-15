@@ -1,5 +1,6 @@
 <select class="format-select">
 	<option value="all" cup="all">All Pokemon</option>
+	<option value="all" cup="gen-5">All Pokemon (With Generation 5)</option>
 	<option value="community" cup="safari">Montreal Safari Cup</option>
 	<option value="community" cup="fantasy">GO LIVE Fantasy Cup</option>
 	<option value="tsa-1">Silph Arena Season 1</option>
@@ -13,6 +14,7 @@
 
 <select class="cup-select">
 	<option value="all" cat="all">All Pokemon</option>
+	<option value="gen-5" cat="all">All Pokemon (With Generation 5)</option>
 	<option value="safari" cat="community">Montreal Safari Cup</option>
 	<option value="fantasy" cat="community">GO LIVE Fantasy Cup</option>
 	<option value="jungle"  cat="tsa-1">Jungle Cup</option>
