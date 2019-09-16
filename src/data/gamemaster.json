@@ -4670,6 +4670,8 @@
 		"types": ["grass", "none"],
 		"fastMoves": ["BULLET_SEED", "FURY_CUTTER"],
 		"chargedMoves": ["AERIAL_ACE", "EARTHQUAKE", "LEAF_BLADE", "FRENZY_PLANT", "DRAGON_CLAW"],
+		"legacyMoves": ["FRENZY_PLANT"],
+		
 		"defaultIVs": {
 			"cp1500": [20, 7, 8, 15],
 			"cp2500": [40, 1, 6, 10]
@@ -4767,6 +4769,7 @@
 		"types": ["water", "ground"],
 		"fastMoves": ["MUD_SHOT", "WATER_GUN"],
 		"chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "SURF", "HYDRO_CANNON", "MUDDY_WATER"],
+		"legacyMoves": ["HYDRO_CANNON"],
 		"defaultIVs": {
 			"cp1500": [19, 3, 15, 2],
 			"cp2500": [36, 0, 9, 1]
@@ -13334,8 +13337,8 @@
 		"moveId": "PSYSTRIKE",
 		"name": "Psystrike",
 		"type": "psychic",
-		"power": 100,
-		"energy": 55,
+		"power": 90,
+		"energy": 45,
 		"energyGain": 0,
 		"cooldown": 500
 	}, {

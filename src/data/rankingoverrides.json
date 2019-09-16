@@ -95,6 +95,11 @@
 			{
 				"speciesId": "crobat",
 				"chargedMoves": ["SLUDGE_BOMB","SHADOW_BALL"]
+			},
+			{
+				"speciesId": "ferrothorn",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["POWER_WHIP", "FLASH_CANNON"]
 			}
 		]
 	},
@@ -729,7 +734,7 @@
 			},
 			{
 				"speciesId": "mewtwo",
-				"chargedMoves": ["ICE_BEAM","SHADOW_BALL"]
+				"chargedMoves": ["PSYSTRIKE","ICE_BEAM"]
 			}
 		]
 	},
