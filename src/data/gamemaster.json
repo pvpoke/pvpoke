@@ -10149,23 +10149,7 @@
 	}, {
 		"dex": 555,
 		"speciesId": "darmanitan_standard",
-		"speciesName": "Darmanitan_standard",
-		"baseStats": {
-			"atk": 263,
-			"def": 114,
-			"hp": 233
-		},
-		"types": ["fire", "none"],
-		"fastMoves": ["TACKLE", "FIRE_FANG"],
-		"chargedMoves": ["OVERHEAT", "FOCUS_BLAST", "PSYCHIC", "ROCK_SLIDE"],
-		"defaultIVs": {
-			"cp1500": [20, 15, 15, 15],
-			"cp2500": [20, 15, 15, 15]
-		}
-	}, {
-		"dex": 555,
-		"speciesId": "darmanitan_standard",
-		"speciesName": "Darmanitan_standard",
+		"speciesName": "Darmanitan (Standard)",
 		"baseStats": {
 			"atk": 263,
 			"def": 114,
@@ -10181,7 +10165,7 @@
 	}, {
 		"dex": 555,
 		"speciesId": "darmanitan_zen",
-		"speciesName": "Darmanitan_zen",
+		"speciesName": "Darmanitan (Zen)",
 		"baseStats": {
 			"atk": 243,
 			"def": 202,
@@ -11517,7 +11501,7 @@
 		},
 		"types": ["dark", "flying"],
 		"fastMoves": ["SNARL", "AIR_SLASH"],
-		"chargedMoves": ["DARK_PULSE", "SKY_ATTACK", "FOUL_PLAY", "SHADOW_BALL"],
+		"chargedMoves": ["DARK_PULSE", "AERIAL_ACE", "FOUL_PLAY", "SHADOW_BALL"],
 		"defaultIVs": {
 			"cp1500": [28.5, 1, 2, 5],
 			"cp2500": [40, 15, 15, 15]
@@ -11877,7 +11861,7 @@
 	}, {
 		"dex": 646,
 		"speciesId": "kyurem_white",
-		"speciesName": "Kyurem_white",
+		"speciesName": "Kyurem (White)",
 		"baseStats": {
 			"atk": 310,
 			"def": 183,

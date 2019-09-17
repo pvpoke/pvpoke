@@ -73,6 +73,10 @@ switch($cup){
 	case "fantasy":
 		$league = 'Fantasy Cup';
 		break;
+		
+	case "sinister":
+		$league = 'Sinister Cup';
+		break;
 }
 
 $META_TITLE = $league . ' PvP Rankings';

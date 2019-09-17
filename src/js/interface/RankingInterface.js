@@ -48,7 +48,7 @@ var InterfaceMaster = (function () {
 
 				// Force 1500 if not general
 
-				if(cup != 'all'){
+				if((cup != 'all')&&(cup != 'gen-5')){
 					league = 1500;
 
 					$(".league-select option[value=\"1500\"]").prop("selected","selected");
