@@ -11538,7 +11538,8 @@
 		"defaultIVs": {
 			"cp1500": [23.5, 3, 14, 6],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"tags": ["regional"]
 	}, {
 		"dex": 632,
 		"speciesId": "durant",
@@ -11554,7 +11555,8 @@
 		"defaultIVs": {
 			"cp1500": [21, 1, 9, 15],
 			"cp2500": [40, 0, 15, 10]
-		}
+		},
+		"tags": ["regional"]
 	}, {
 		"dex": 633,
 		"speciesId": "deino",

@@ -708,6 +708,7 @@ header{
 			.rank{
 				padding: 0 5px;
 				position:relative;
+				border-left:none;
 
 				&:hover{
 					border-left:none;
@@ -1588,7 +1589,7 @@ select, input{
 	}
 
 	& > .rank:hover, > .rank.selected{
-		border-left:10px solid $color-highlight;
+		border-left:20px solid $color-highlight;
 	}
 }
 
@@ -1596,9 +1597,29 @@ select, input{
 	padding:5px 10px;
 	border-radius:8px;
 	margin-bottom:5px;
+	border-left: 20px solid rgba(0,0,0,.10);
+	position:relative;
 
 	&.hide{
 		display:none !important;
+	}
+	
+	&.selected .expand-label:after{
+		content:"-";
+	}
+	
+	.expand-label{
+		position: absolute;
+		color: rgba(255,255,255,.65);
+		left: -16px;
+		font-size: 24px;
+		top: 10px;
+		width: 14px;
+		text-align: center;
+		
+		&:after{
+			content:"+";
+		}
 	}
 
 	.name-container{
@@ -1697,6 +1718,10 @@ select, input{
 
 					.ranking-header{
 						float:none;
+						margin: 0;
+						width: 100%;
+						padding: 0 5px;
+						font-size: 12px;
 					}
 
 					.rating{
@@ -1933,9 +1958,11 @@ select, input{
 }
 
 .threats.rankings-container,
-.alternatives.rankings-container{
+.alternatives.rankings-container,
+.section.battle-results .rankings-container{
 	.rank{
 		cursor:initial;
+		border-left:none;
 
 		&:hover{
 			border-left:none;
@@ -2979,6 +3006,10 @@ a.toggle{
 				width: 120px;
 			}
 		}
+	}
+	
+	.rank .details .detail-section.overall .rating-container .ranking-header{
+		font-size:16px;
 	}
 
 }

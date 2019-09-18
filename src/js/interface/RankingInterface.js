@@ -115,16 +115,27 @@ var InterfaceMaster = (function () {
 					var moveNameStr = '';
 
 					var arr = r.moveStr.split("-");
+					var move = pokemon.chargedMovePool[arr[1]-1];
 
-					moveNameStr = pokemon.fastMovePool[arr[0]].name + ", " + pokemon.chargedMovePool[arr[1]-1].name;
+					moveNameStr = pokemon.fastMovePool[arr[0]].name + ", " + move.name;
+					if(move.legacy){
+						moveNameStr += "*";
+					}
 
 					if((arr.length > 2)&&(arr[2] != "0")){
-						moveNameStr += ", " + pokemon.chargedMovePool[arr[2]-1].name;
+						move = pokemon.chargedMovePool[arr[2]-1];
+						moveNameStr += ", " + move.name;
+
+						if(move.legacy){
+							moveNameStr += "*";
+						}
+						
+						
 					}
 
 					// Is this the best way to add HTML content? I'm gonna go with no here. But does it work? Yes!
 
-					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span><div class=\"moves\">"+moveNameStr+"</div></div><div class=\"rating-container\"><div class=\"rating\">"+r.score+"</span></div><div class=\"clear\"></div></div><div class=\"details\"></div>");
+					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"expand-label\"></div><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span><div class=\"moves\">"+moveNameStr+"</div></div><div class=\"rating-container\"><div class=\"rating\">"+r.score+"</span></div><div class=\"clear\"></div></div><div class=\"details\"></div>");
 
 					if(limitedPokemon.indexOf(pokemon.speciesId) > -1){
 						$el.addClass("limited-rank");
@@ -344,13 +355,11 @@ var InterfaceMaster = (function () {
 
 				// Don't collapse when clicking links or the share button
 
-				if(! $(e.target).is(".rank, .rank > .rating-container, .rank > .rating-container *, .rank > .name-container, .rank > .name-container *")||($(e.target).is("a"))){
+				if(! $(e.target).is(".rank, .rank > .rating-container, .rank > .rating-container *, .rank > .name-container, .rank > .name-container *, .rank > .expand-label")||($(e.target).is("a"))){
 					return;
 				}
 
 				var cup = $(".cup-select option:selected").val();
-				console.log(cup);
-
 				var $rank = $(this).closest(".rank");
 
 

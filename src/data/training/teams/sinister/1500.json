@@ -9,7 +9,7 @@
 				"fastMove": "HEX",
 				"chargedMoves": ["SHADOW_BALL","BONE_CLUB"],
 				"difficulty": 3,
-				"weight":12
+				"weight":16
 			},
 			{
 				"speciesId": "haunter",
@@ -44,14 +44,14 @@
 				"fastMove": "FEINT_ATTACK",
 				"chargedMoves": ["SHADOW_PUNCH","FIRE_PUNCH"],
 				"difficulty": 2,
-				"weight":3
+				"weight":2
 			},
 			{
 				"speciesId": "dusclops",
 				"fastMove": "HEX",
 				"chargedMoves": ["SHADOW_PUNCH","FIRE_PUNCH"],
 				"difficulty": 2,
-				"weight":1
+				"weight":3
 			},
 			{
 				"speciesId": "banette",
@@ -224,9 +224,16 @@
 			{
 				"speciesId": "poliwrath",
 				"fastMove": "BUBBLE",
+				"chargedMoves": ["POWER_UP_PUNCH","HYDRO_PUMP"],
+				"difficulty": 3,
+				"weight":2
+			},
+			{
+				"speciesId": "poliwrath",
+				"fastMove": "BUBBLE",
 				"chargedMoves": ["POWER_UP_PUNCH","ICE_PUNCH"],
 				"difficulty": 3,
-				"weight":8
+				"weight":16
 			},
 			{
 				"speciesId": "primeape",
@@ -470,8 +477,8 @@
 				"speciesId": "girafarig",
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["THUNDERBOLT","MIRROR_COAT"],
-				"difficulty": 1,
-				"weight":1
+				"difficulty": 2,
+				"weight":2
 			},
 			{
 				"speciesId": "jynx",
@@ -569,21 +576,21 @@
 				"fastMove": "SMACK_DOWN",
 				"chargedMoves": ["STONE_EDGE","FLAMETHROWER"],
 				"difficulty": 3,
-				"weight":12
+				"weight":8
 			},
 			{
 				"speciesId": "steelix",
 				"fastMove": "DRAGON_TAIL",
 				"chargedMoves": ["CRUNCH","EARTHQUAKE"],
 				"difficulty": 2,
-				"weight":10
+				"weight":12
 			},
 			{
 				"speciesId": "probopass",
 				"fastMove": "SPARK",
 				"chargedMoves": ["ROCK_SLIDE","MAGNET_BOMB"],
 				"difficulty": 2,
-				"weight":4
+				"weight":2
 			},
 			{
 				"speciesId": "probopass",
@@ -597,7 +604,7 @@
 				"fastMove": "BITE",
 				"chargedMoves": ["IRON_HEAD","PLAY_ROUGH"],
 				"difficulty": 2,
-				"weight":4
+				"weight":6
 			},
 			{
 				"speciesId": "mawile",

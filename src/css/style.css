@@ -415,7 +415,8 @@ header {
       max-height: 360px; }
       .poke.multi .rankings-container .rank {
         padding: 0 5px;
-        position: relative; }
+        position: relative;
+        border-left: none; }
         .poke.multi .rankings-container .rank:hover {
           border-left: none;
           box-shadow: 0px 2px; }
@@ -1085,14 +1086,28 @@ select, input {
   .rankings-container.threats, .rankings-container.alternatives {
     overflow-y: initial; }
   .rankings-container > .rank:hover, .rankings-container > .rank.selected {
-    border-left: 10px solid #222; }
+    border-left: 20px solid #222; }
 
 .rank {
   padding: 5px 10px;
   border-radius: 8px;
-  margin-bottom: 5px; }
+  margin-bottom: 5px;
+  border-left: 20px solid rgba(0, 0, 0, 0.1);
+  position: relative; }
   .rank.hide {
     display: none !important; }
+  .rank.selected .expand-label:after {
+    content: "-"; }
+  .rank .expand-label {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.65);
+    left: -16px;
+    font-size: 24px;
+    top: 10px;
+    width: 14px;
+    text-align: center; }
+    .rank .expand-label:after {
+      content: "+"; }
   .rank .name-container {
     float: left;
     padding: 5px 0; }
@@ -1156,7 +1171,11 @@ select, input {
         .rank .details .detail-section.overall .rating-container {
           text-align: center; }
           .rank .details .detail-section.overall .rating-container .ranking-header {
-            float: none; }
+            float: none;
+            margin: 0;
+            width: 100%;
+            padding: 0 5px;
+            font-size: 12px; }
           .rank .details .detail-section.overall .rating-container .rating {
             padding: 5px;
             display: inline-block;
@@ -1327,10 +1346,13 @@ select, input {
     padding: 2px 10px; }
 
 .threats.rankings-container .rank,
-.alternatives.rankings-container .rank {
-  cursor: initial; }
+.alternatives.rankings-container .rank,
+.section.battle-results .rankings-container .rank {
+  cursor: initial;
+  border-left: none; }
   .threats.rankings-container .rank:hover,
-  .alternatives.rankings-container .rank:hover {
+  .alternatives.rankings-container .rank:hover,
+  .section.battle-results .rankings-container .rank:hover {
     border-left: none; }
 
 .histograms {
@@ -2178,4 +2200,7 @@ a.toggle {
       .menu .submenu a {
         float: none;
         margin: 6px 0;
-        width: 120px; } }
+        width: 120px; }
+
+  .rank .details .detail-section.overall .rating-container .ranking-header {
+    font-size: 16px; } }
