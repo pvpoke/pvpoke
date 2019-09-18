@@ -872,5 +872,68 @@
 				"weight": 0.5
 			}
 		]
+	},
+	{
+		"league": 1500,
+		"cup": "sinister",
+		"pokemon": [
+			{
+				"speciesId": "medicham",
+				"chargedMoves": ["POWER_UP_PUNCH","ICE_PUNCH"]
+			},
+			{
+				"speciesId": "claydol",
+				"chargedMoves": ["EARTH_POWER","GYRO_BALL"]
+			},
+			{
+				"speciesId": "poliwrath",
+				"fastMove": "BUBBLE"
+			},
+			{
+				"speciesId": "slowbro",
+				"fastMove": "CONFUSION"
+			},
+			{
+				"speciesId": "slowpoke",
+				"fastMove": "CONFUSION"
+			},
+			{
+				"speciesId": "bronzong",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["PSYSHOCK", "BULLDOZE"]
+			},
+			{
+				"speciesId": "mawile",
+				"chargedMoves": ["IRON_HEAD", "PLAY_ROUGH"]
+			},
+			{
+				"speciesId": "magneton",
+				"chargedMoves": ["MAGNET_BOMB", "DISCHARGE"]
+			},
+			{
+				"speciesId": "hitmonchan",
+				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "blaziken",
+				"fastMove": "COUNTER"
+			},
+			{
+				"speciesId": "froslass",
+				"fastMove": "POWDER_SNOW"
+			},
+			{
+				"speciesId": "gardevoir",
+				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "excadrill",
+				"fastMove": "MUD_SLAP"
+			},
+			{
+				"speciesId": "cresselia",
+				"fastMove": "CONFUSION"
+			}
+		]
 	}
 ]

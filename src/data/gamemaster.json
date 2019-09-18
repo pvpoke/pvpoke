@@ -132,6 +132,23 @@
 		"title": "Cliffhanger",
 		"include": [],
 		"exclude": []
+	}, {
+		"name": "sinister",
+		"title": "Sinister Cup",
+		"include": [{
+			"filterType": "type",
+			"values": ["ghost", "psychic", "fighting", "steel"]
+		}],
+		"exclude": [{
+			"filterType": "id",
+			"values": ["skarmory", "hypno"]
+		}, {
+			"filterType": "tag",
+			"values": ["mythical"]
+		}, {
+			"filterType": "type",
+			"values": ["dark"]
+		}]
 	}],
 	"pokemon": [{
 		"dex": 1,

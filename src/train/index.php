@@ -36,6 +36,7 @@ require_once '../header.php';
 				<option value="1500 all">Great League</option>
 				<option value="2500 all">Ultra League</option>
 				<option value="10000 all">Master League</option>
+				<option value="1500 sinister">Sinister Cup</option>
 				<option value="1500 cliffhanger">GO Stadium Cliffhanger</option>
 				<option value="1500 safari">Montreal Safari Cup</option>
 				<option value="1500 jungle">Jungle Cup</option>

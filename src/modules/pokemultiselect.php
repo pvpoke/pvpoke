@@ -31,15 +31,7 @@
 				<option value="great" class="multi-battle">Great League Meta</option>
 				<option value="ultra" class="hide multi-battle">Ultra League Meta</option>
 				<option value="master" class="hide multi-battle">Master League Meta</option>
-				<option value="jungle" class="multi-battle">Jungle Cup Meta</option>
-				<option value="rainbow" class="multi-battle">Rainbow Cup Meta</option>
-				<option value="regionals-1" class="multi-battle">Season 1 Regionals Meta</option>
-				<option value="nightmare" class="multi-battle">Nightmare Cup Meta</option>
-				<option value="kingdom" class="multi-battle">Kingdom Cup Meta</option>
-				<option value="tempest" class="multi-battle">Tempest Cup Meta</option>
-				<option value="twilight" class="multi-battle">Twilight Cup Meta</option>
-				<option value="boulder" class="multi-battle">Boulder Cup Meta</option>			
-				<option value="leaders" class="multi-battle">Team Leader Pokemon</option>
+				<option value="sinister" class="multi-battle">Sinister Cup Meta</option>
 
 				<?php
 				// Display custom groups
