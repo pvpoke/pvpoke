@@ -898,6 +898,7 @@ select, input{
 .league-select,
 .cup-select,
 .format-select,
+.slot-select,
 .mode-select{
     font-size: 18px;
     width: auto;
@@ -1853,12 +1854,12 @@ select, input{
 /* TEAM BUILD STYLING */
 
 .team-build{
-
 	display:flex;
 	justify-content: space-between;
 
 	.poke{
-
+		float:none;
+		
 		a.random{
 			margin-bottom: 0;
 		}
@@ -1890,6 +1891,17 @@ select, input{
 			display:none;
 		}
 	}
+	
+	.poke.multi{
+		display:block;
+		.poke-stats{
+			display: block;
+		}
+		.custom-options{
+			display: block;
+		}
+	}
+
 }
 
 .typings{

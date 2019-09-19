@@ -545,6 +545,7 @@ select, input {
 .league-select,
 .cup-select,
 .format-select,
+.slot-select,
 .mode-select {
   font-size: 18px;
   width: auto;
@@ -1277,28 +1278,36 @@ select, input {
 .team-build {
   display: flex;
   justify-content: space-between; }
-  .team-build .poke a.random {
-    margin-bottom: 0; }
-  .team-build .poke a.swap {
-    display: none; }
-  .team-build .poke:nth-of-type(2) .poke-stats {
-    text-align: left; }
-    .team-build .poke:nth-of-type(2) .poke-stats .stat-label {
-      float: left !important; }
-    .team-build .poke:nth-of-type(2) .poke-stats .bar-back {
-      -moz-transform: scale(1, 1);
-      -webkit-transform: scale(1, 1);
-      -o-transform: scale(1, 1);
-      -ms-transform: scale(1, 1);
-      transform: scale(1, 1); }
-    .team-build .poke:nth-of-type(2) .poke-stats .hp.bar-back .stat {
-      -moz-transform: scale(1, 1);
-      -webkit-transform: scale(1, 1);
-      -o-transform: scale(1, 1);
-      -ms-transform: scale(1, 1);
-      transform: scale(1, 1); }
-  .team-build .poke .options, .team-build .poke .bar-back, .team-build .poke .move-bars {
-    display: none; }
+  .team-build .poke {
+    float: none; }
+    .team-build .poke a.random {
+      margin-bottom: 0; }
+    .team-build .poke a.swap {
+      display: none; }
+    .team-build .poke:nth-of-type(2) .poke-stats {
+      text-align: left; }
+      .team-build .poke:nth-of-type(2) .poke-stats .stat-label {
+        float: left !important; }
+      .team-build .poke:nth-of-type(2) .poke-stats .bar-back {
+        -moz-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        -o-transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        transform: scale(1, 1); }
+      .team-build .poke:nth-of-type(2) .poke-stats .hp.bar-back .stat {
+        -moz-transform: scale(1, 1);
+        -webkit-transform: scale(1, 1);
+        -o-transform: scale(1, 1);
+        -ms-transform: scale(1, 1);
+        transform: scale(1, 1); }
+    .team-build .poke .options, .team-build .poke .bar-back, .team-build .poke .move-bars {
+      display: none; }
+  .team-build .poke.multi {
+    display: block; }
+    .team-build .poke.multi .poke-stats {
+      display: block; }
+    .team-build .poke.multi .custom-options {
+      display: block; }
 
 .typings {
   display: none; }

@@ -13,6 +13,7 @@ var InterfaceMaster = (function () {
 			var gm;
 			var battle;
 			var pokeSelectors = [];
+			var multiSelector = new PokeMultiSelect($(".poke.multi"));
 			var self = this;
 			
 			var histograms = [];
@@ -28,12 +29,15 @@ var InterfaceMaster = (function () {
 				
 				// Initialize selectors and push Pokemon data
 
-				$(".poke-select-container .poke").each(function(index, value){
+				$(".poke.single").each(function(index, value){
 					var selector = new PokeSelect($(this), index);
 					pokeSelectors.push(selector);
 
 					selector.init(data.pokemon, battle);
 				});
+				
+				multiSelector.init(data.pokemon, battle);
+				multiSelector.setMaxPokemonCount(6);
 				
 				$(".league-select").on("change", selectLeague);
 				$(".cup-select").on("change", selectCup);
@@ -196,15 +200,7 @@ var InterfaceMaster = (function () {
 				
 				// Get team and validate results
 				
-				var team = [];
-				
-				for(var i = 0; i < pokeSelectors.length; i++){
-					var poke = pokeSelectors[i].getPokemon();
-					
-					if(poke){
-						team.push(poke);
-					}
-				}
+				var team = multiSelector.getPokemonList();
 				
 				if(team.length == 0){
 					$(".section.error").show();
@@ -278,7 +274,7 @@ var InterfaceMaster = (function () {
 					}
 				}
 				
-				$(".rankings-container").html('');
+				$(".section.typings .rankings-container").html('');
 				
 				for(var i = 0; i < 10; i++){
 					var r = counterRankings[i];
@@ -666,19 +662,13 @@ var InterfaceMaster = (function () {
 					var cp = battle.getCP();
 					var cup = battle.getCup().name;
 					
-					var pokes = [];
+					var pokes = multiSelector.getPokemonList();
 					var moveStrs = [];
 					var teamStr = "team-builder/"+cup+"/"+cp+"/";
 					
-					for(var i = 0; i < pokeSelectors.length; i++){
+					for(var i = 0; i < pokes.length; i++){
 						
-						var poke = pokeSelectors[i].getPokemon();
-						
-						if(! poke){
-							continue;
-						}
-						
-						pokes.push(poke);
+						var poke = pokes[i];
 
 						moveStrs.push(generateURLMoveStr(poke));
 						
