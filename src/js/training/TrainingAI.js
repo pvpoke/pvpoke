@@ -211,8 +211,6 @@ function TrainingAI(l, p, b){
 
 		var pickStrategy = self.chooseOption(pickStrategyOptions).name;
 
-		pickStrategy = "BEST";
-
 		switch(pickStrategy){
 			// Choose a random set of 3 from the roster
 			case "BASIC":
@@ -240,7 +238,13 @@ function TrainingAI(l, p, b){
 				// Add the best bodyguard that isn't the currently selected Pokemon
 				for(var i = 0; i < teamPerformance.length; i++){
 					if(team.indexOf(teamPerformance[i].pokemon) == -1){
-						team.push(teamPerformance[i].pokemon);
+						// Sometimes lead with the bodyguard, sometimes have it in the back
+						if(Math.random() > .5){
+							team.push(teamPerformance[i].pokemon);
+						} else{
+							team.unshift(teamPerformance[i].pokemon);
+						}
+						
 						break;
 					}
 				}
@@ -387,6 +391,9 @@ function TrainingAI(l, p, b){
 
 				break;
 		}
+		
+		console.log(pickStrategy);
+		console.log(team);
 
 		player.setTeam(team);
 	}
