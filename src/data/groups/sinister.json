@@ -67,7 +67,7 @@
 	{
 		"speciesId":"gallade",
 		"fastMove":"CONFUSION",
-		"chargedMoves":["LEAD_BLADE","CLOSE_COMBAT"]
+		"chargedMoves":["LEAF_BLADE","CLOSE_COMBAT"]
 	},
 	{
 		"speciesId":"cresselia",
@@ -111,7 +111,7 @@
 	},
 	{
 		"speciesId":"dusclops",
-		"fastMove":"FEINT_ATTACK",
+		"fastMove":"HEX",
 		"chargedMoves":["SHADOW_PUNCH","FIRE_PUNCH"]
 	}
 ]

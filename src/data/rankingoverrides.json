@@ -739,6 +739,78 @@
 		]
 	},
 	{
+		"league": 2500,
+		"cup": "gen-5",
+		"pokemon": [
+			{
+				"speciesId": "giratina_altered",
+				"fastMove": ["SHADOW_CLAW"]
+			},
+			{
+				"speciesId": "poliwrath",
+				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "dragonite",
+				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
+			},
+			{
+				"speciesId": "gardevoir",
+				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "togekiss",
+				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
+			},
+			{
+				"speciesId": "mewtwo_armored",
+				"chargedMoves": ["ROCK_SLIDE","DYNAMIC_PUNCH"]
+			},
+			{
+				"speciesId": "mewtwo",
+				"chargedMoves": ["PSYSTRIKE","ICE_BEAM"]
+			}
+		]
+	},
+	{
+		"league": 10000,
+		"cup": "gen-5",
+		"pokemon": [
+			{
+				"speciesId": "giratina_altered",
+				"fastMove": ["SHADOW_CLAW"]
+			},
+			{
+				"speciesId": "dragonite",
+				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
+			},
+			{
+				"speciesId": "blaziken",
+				"chargedMoves": ["BLAZE_KICK", "BLAST_BURN"]
+			},
+			{
+				"speciesId": "machamp",
+				"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
+			},
+			{
+				"speciesId": "gardevoir",
+				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "togekiss",
+				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
+			},
+			{
+				"speciesId": "mewtwo_armored",
+				"chargedMoves": ["ROCK_SLIDE","DYNAMIC_PUNCH"]
+			},
+			{
+				"speciesId": "mewtwo",
+				"chargedMoves": ["PSYSTRIKE","ICE_BEAM"]
+			}
+		]
+	},
+	{
 		"league": 1500,
 		"cup": "jungle",
 		"pokemon": [
@@ -896,6 +968,10 @@
 			{
 				"speciesId": "slowpoke",
 				"fastMove": "CONFUSION"
+			},
+			{
+				"speciesId": "dusclops",
+				"fastMove": "HEX"
 			},
 			{
 				"speciesId": "bronzong",

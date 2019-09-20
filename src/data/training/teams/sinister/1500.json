@@ -35,7 +35,7 @@
 			{
 				"speciesId": "haunter",
 				"fastMove": "SHADOW_CLAW",
-				"chargedMoves": ["SHADOW_PUNCH","SLUDGE_BOMB"],
+				"chargedMoves": ["SHADOW_PUNCH","DARK_PULSE"],
 				"difficulty": 1,
 				"weight":1
 			},
@@ -44,7 +44,7 @@
 				"fastMove": "FEINT_ATTACK",
 				"chargedMoves": ["SHADOW_PUNCH","FIRE_PUNCH"],
 				"difficulty": 2,
-				"weight":2
+				"weight":1
 			},
 			{
 				"speciesId": "dusclops",
@@ -126,7 +126,7 @@
 			{
 				"speciesId": "haunter",
 				"fastMove": "SHADOW_CLAW",
-				"chargedMoves": ["SHADOW_PUNCH","SLUDGE_BOMB"],
+				"chargedMoves": ["SHADOW_PUNCH","DARK_PULSE"],
 				"difficulty": 1,
 				"weight":1
 			},
