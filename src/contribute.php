@@ -91,6 +91,10 @@ require_once 'header.php'; ?>
 			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/coloseum.jpg" />
 			<div class="supporter"><a href="https://t.co/LZj6MBjpOe?amp=1" target="_blank">PoGo Colosseum Discord</a></div>
 		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/themistervalor.jpg" />
+			<div class="supporter"><a href="https://twitter.com/TheMisterValor" target="_blank">TheMisterValor</a></div>
+		</div>
 	</div>
 </div>
 
