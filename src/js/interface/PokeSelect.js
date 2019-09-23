@@ -46,8 +46,8 @@ function PokeSelect(element, i){
 
 			$el.find(".stat").removeClass("buff debuff");
 
-			$el.find(".attack .stat").html(Math.round(selectedPokemon.getEffectiveStat(0)*10)/10);
-			$el.find(".defense .stat").html(Math.round(selectedPokemon.getEffectiveStat(1)*10)/10);
+			$el.find(".attack .stat").html(Math.floor(selectedPokemon.getEffectiveStat(0)*10)/10);
+			$el.find(".defense .stat").html(Math.floor(selectedPokemon.getEffectiveStat(1)*10)/10);
 			$el.find(".stamina .stat").html(selectedPokemon.stats.hp);
 
 			if(selectedPokemon.statBuffs[0] > 0){
@@ -285,8 +285,8 @@ function PokeSelect(element, i){
 		// Set shields to correct amount
 
 		$el.find(".shield-select option[value=\""+poke.startingShields+"\"]").prop("selected","selected");
-		
-		// Set level and iv fields		
+
+		// Set level and iv fields
 		$el.find("input.level").val(selectedPokemon.level);
 		$el.find("input.iv[iv='atk']").val(selectedPokemon.ivs.atk);
 		$el.find("input.iv[iv='def']").val(selectedPokemon.ivs.def);
@@ -365,13 +365,13 @@ function PokeSelect(element, i){
 	$pokeSelect.on("change", function(e, fromURL){
 		var id = $pokeSelect.find("option:selected").val();
 		selectedPokemon = new Pokemon(id, index, battle);
-		
+
 		if(fromURL){
 			selectedPokemon.initialize(battle.getCP());
 		} else{
 			selectedPokemon.initialize(battle.getCP(), settings.defaultIVs);
 		}
-		
+
 
 		if($(".team-build").length == 0){
 			battle.setNewPokemon(selectedPokemon, index);
@@ -388,8 +388,8 @@ function PokeSelect(element, i){
 		if(interface.resetSelectedPokemon){
 			interface.resetSelectedPokemon();
 		}
-		
-		// Set level and iv fields		
+
+		// Set level and iv fields
 		$el.find("input.level").val(selectedPokemon.level);
 		$el.find("input.iv[iv='atk']").val(selectedPokemon.ivs.atk);
 		$el.find("input.iv[iv='def']").val(selectedPokemon.ivs.def);
@@ -526,9 +526,9 @@ function PokeSelect(element, i){
 			if(interface.resetSelectedPokemon){
 				interface.resetSelectedPokemon();
 			}
-			
-			
-			// Set level and iv fields		
+
+
+			// Set level and iv fields
 			$el.find("input.level").val(selectedPokemon.level);
 			$el.find("input.iv[iv='atk']").val(selectedPokemon.ivs.atk);
 			$el.find("input.iv[iv='def']").val(selectedPokemon.ivs.def);
@@ -640,7 +640,7 @@ function PokeSelect(element, i){
 	$el.find(".maximize-section .check").on("click", function(e){
 		$el.find(".maximize-section .check").removeClass("on");
 	});
-	
+
 	// Restore default IV's
 
     $el.find(".restore-default").on("click", function(e){
@@ -701,6 +701,8 @@ function PokeSelect(element, i){
 		if(interface.resetSelectedPokemon){
 			interface.resetSelectedPokemon();
 		}
+
+		console.log(selectedPokemon);
 	});
 
 	// Change stat modifier input
