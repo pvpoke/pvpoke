@@ -260,7 +260,7 @@ function Pokemon(id, i, b){
 			floor = 10;
 		}
 		
-		if(maxNear1500.indexOf(self.speciesId) > -1){
+		if((maxNear1500.indexOf(self.speciesId) > -1)&&(resultCount > 1)){
 			floor = 12;
 		}
 
