@@ -714,14 +714,6 @@ var BattlerMaster = (function () {
 
 					}
 
-					gtag('event', battleSummaryStr, {
-					  'event_category' : 'Training Pokemon',
-					  'event_label' : pokeStr,
-					  'value' : score+'',
-					  'player_type': playerType,
-					  'team_position': n+1
-					});
-
 					// Alphabetize the last two Pokemon on the team and build the team string
 					backupPokeStrs.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
 

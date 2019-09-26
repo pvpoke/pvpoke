@@ -44,21 +44,21 @@
 				"fastMove": "FEINT_ATTACK",
 				"chargedMoves": ["SHADOW_PUNCH","FIRE_PUNCH"],
 				"difficulty": 2,
-				"weight":1
+				"weight":2
 			},
 			{
 				"speciesId": "dusclops",
 				"fastMove": "HEX",
 				"chargedMoves": ["SHADOW_PUNCH","FIRE_PUNCH"],
 				"difficulty": 2,
-				"weight":3
+				"weight":5
 			},
 			{
 				"speciesId": "banette",
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["SHADOW_BALL","THUNDER"],
 				"difficulty": 2,
-				"weight":3
+				"weight":2
 			},
 			{
 				"speciesId": "froslass",
@@ -124,6 +124,20 @@
 				"weight":8
 			},
 			{
+				"speciesId": "dusclops",
+				"fastMove": "FEINT_ATTACK",
+				"chargedMoves": ["SHADOW_PUNCH","FIRE_PUNCH"],
+				"difficulty": 2,
+				"weight":2
+			},
+			{
+				"speciesId": "dusclops",
+				"fastMove": "HEX",
+				"chargedMoves": ["SHADOW_PUNCH","FIRE_PUNCH"],
+				"difficulty": 2,
+				"weight":6
+			},
+			{
 				"speciesId": "haunter",
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["SHADOW_PUNCH","DARK_PULSE"],
@@ -149,7 +163,7 @@
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["SHADOW_BALL","THUNDER"],
 				"difficulty": 2,
-				"weight":4
+				"weight":2
 			},
 			{
 				"speciesId": "chandelure",
@@ -451,13 +465,6 @@
 				"chargedMoves": ["LEAF_BLADE","CLOSE_COMBAT"],
 				"difficulty": 2,
 				"weight":5
-			},
-			{
-				"speciesId": "gallade",
-				"fastMove": "CHARM",
-				"chargedMoves": ["LEAF_BLADE","CLOSE_COMBAT"],
-				"difficulty": 1,
-				"weight":1
 			},
 			{
 				"speciesId": "uxie",
