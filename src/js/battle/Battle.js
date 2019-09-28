@@ -1453,16 +1453,12 @@ function Battle(){
 
 					// Determine how much damage will be dealt per cycle to see if the defender will survive to shield the next cycle
 
-					for (var i = 0; i < attacker.chargedMoves.length; i++){
-						var chargedMove = attacker.chargedMoves[i];
-						var fastAttacks = Math.ceil(Math.max(chargedMove.energy - attacker.energy, 0) / attacker.fastMove.energyGain) + 2; // Give some margin for error here
-						var fastAttackDamage = fastAttacks * fastDamage;
-						var chargedDamage = self.calculateDamage(attacker, defender, chargedMove);
-						var cycleDamage = fastAttackDamage + 1;
+					var fastAttacks = Math.ceil(Math.max(move.energy - attacker.energy, 0) / attacker.fastMove.energyGain) + 2; // Give some margin for error here
+					var fastAttackDamage = fastAttacks * fastDamage;
+					var cycleDamage = (fastAttackDamage + 1) * defender.shields;
 
-						if(postMoveHP <= cycleDamage){
-							useShield = true;
-						}
+					if(postMoveHP <= cycleDamage){
+						useShield = true;
 					}
 
 					attacker.statBuffs = [currentBuffs[0], currentBuffs[1]]; // Reset to original
@@ -1471,10 +1467,15 @@ function Battle(){
 
 					for (var i = 0; i < attacker.chargedMoves.length; i++){
 						var chargedMove = attacker.chargedMoves[i];
-						var chargedDamage = self.calculateDamage(attacker, defender, chargedMove);
 
-						if(chargedDamage >= defender.hp / 2){
-							useShield = true;
+						if(attacker.energy + chargedMove.energy >= chargedMove.energy){
+							var chargedDamage = self.calculateDamage(attacker, defender, chargedMove);
+
+
+
+							if(chargedDamage >= defender.hp / 1.5){
+								useShield = true;
+							}
 						}
 					}
 				}
