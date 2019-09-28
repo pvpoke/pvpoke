@@ -762,6 +762,10 @@
 				"fastMove": "CHARM"
 			},
 			{
+				"speciesId": "muk_alolan",
+				"fastMove": "SNARL"
+			},
+			{
 				"speciesId": "togekiss",
 				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
 			},
@@ -958,7 +962,7 @@
 			},
 			{
 				"speciesId": "claydol",
-				"chargedMoves": ["EARTH_POWER","GYRO_BALL"]
+				"chargedMoves": ["EARTH_POWER","PSYCHIC"]
 			},
 			{
 				"speciesId": "poliwrath",
