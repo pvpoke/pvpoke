@@ -2,9 +2,8 @@
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="all" cup="gen-5">All Pokemon (With Generation 5)</option>
 	<option value="tsa-2" cup="sinister">Sinister Cup</option>
-	<option value="community" cup="safari">Montreal Safari Cup</option>
-	<option value="community" cup="fantasy">GO LIVE Fantasy Cup</option>
 	<option value="tsa-1">Silph Arena Season 1</option>
+	<option value="tsa-2">Silph Arena Season 2</option>
 	<option value="community">Community Formats</option>
 
 	<?php if((strpos($_SERVER['REQUEST_URI'], 'battle') !== false)||(strpos($_SERVER['REQUEST_URI'], 'rankings') !== false)): ?>

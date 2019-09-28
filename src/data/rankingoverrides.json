@@ -36,10 +36,6 @@
 				"chargedMoves": ["CRUNCH", "OUTRAGE"]
 			},
 			{
-				"speciesId": "jirachi",
-				"chargedMoves": ["DOOM_DESIRE", "DAZZLING_GLEAM"]
-			},
-			{
 				"speciesId": "hypno",
 				"chargedMoves": ["SHADOW_BALL", "THUNDER_PUNCH"]
 			},
@@ -50,6 +46,10 @@
 			{
 				"speciesId": "medicham",
 				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "muk_alolan",
+				"chargedMoves": ["DARK_PULSE", "ACID_SPRAY"]
 			},
 			{
 				"speciesId": "deoxys_defense",
@@ -72,14 +72,13 @@
 				"chargedMoves": ["FRENZY_PLANT", "STONE_EDGE"]
 			},
 			{
-				"speciesId": "golduck",
-				"chargedMoves": ["ICE_BEAM", "HYDRO_PUMP"]
-			},
-			{
 				"speciesId": "venomoth",
 				"fastMove": "CONFUSION"
 			},
-
+			{
+				"speciesId": "tropius",
+				"fastMove": "AIR_SLASH"
+			},
 			{
 				"speciesId": "probopass",
 				"fastMove": "SPARK"
@@ -683,6 +682,10 @@
 				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
 			},
 			{
+				"speciesId": "muk_alolan",
+				"fastMove": "SNARL"
+			},
+			{
 				"speciesId": "gardevoir",
 				"fastMove": "CHARM"
 			},
@@ -959,7 +962,12 @@
 			},
 			{
 				"speciesId": "poliwrath",
-				"fastMove": "BUBBLE"
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["POWER_UP_PUNCH","ICE_PUNCH"]
+			},
+			{
+				"speciesId": "marowak_alolan",
+				"fastMove": "FIRE_SPIN"
 			},
 			{
 				"speciesId": "slowbro",
@@ -980,7 +988,8 @@
 			},
 			{
 				"speciesId": "mawile",
-				"chargedMoves": ["IRON_HEAD", "PLAY_ROUGH"]
+				"fastMove": "BITE",
+				"chargedMoves": ["POWER_UP_PUNCH", "PLAY_ROUGH"]
 			},
 			{
 				"speciesId": "magneton",

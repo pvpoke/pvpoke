@@ -26,14 +26,11 @@
 
 	<!--Update section for updates-->
 	<h3>What's New</h3>
-	
-	<h4>v1.11.6 (September 14th, 2019)</h4>
+
+	<h4>v1.11.4 (September 28th, 2019)</h4>
 	<ul>
-		<li>Generation 5 Pokemon have been added!</li>
-		<ul>
-			<li>All Generation 5 Pokemon are available in battle simulations and training battles! Pokemon will be added to the rankings as they are released.</li>
-			
-		</ul>
+		<li>Moves and rankings have been updated with the latest rebalance</li>
+		<li>Fast move mechanics are currently unchanged but will update when the game does</li>
 	</ul>
 
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>

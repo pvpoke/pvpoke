@@ -141,7 +141,7 @@ function Battle(){
 	this.setCup = function(cupName){
 		cup = gm.getCupById(cupName);
 	}
-	
+
 	// Set a custom cup object
 
 	this.setCustomCup = function(customCup){
@@ -1085,6 +1085,36 @@ function Battle(){
 					return action;
 				}
 
+				// KO opponent with any available charged move
+
+				if((move.damage + unregisteredDamage >= opponent.hp) && (opponent.hp > poke.fastMove.damage) && (! poke.farmEnergy) && (!chargedMoveUsed)){
+					action = new TimelineAction(
+						"charged",
+						poke.index,
+						turns,
+						moveIndex,
+						{shielded: false, buffs: false, priority: poke.priority});
+
+					chargedMoveUsed = true;
+					self.logDecision(turns, poke, " will knock out opponent with " + move.name);
+					return action;
+				}
+
+				// Use this charged move if it has a guaranteed stat effect and this Pokemon has high fast move damage
+
+				if((move.buffApplyChance)&&(move.buffApplyChance == 1)&&(poke.fastMove.damage / ((poke.fastMove.cooldown / 500) * opponent.stats.hp) >= .025)&&(opponent.hp > poke.bestChargedMove.damage)){
+					action = new TimelineAction(
+						"charged",
+						poke.index,
+						turns,
+						moveIndex,
+						{shielded: false, buffs: false, priority: poke.priority});
+
+					chargedMoveUsed = true;
+					self.logDecision(turns, poke, " is looking to build up stat boosts with " + move.name);
+					return action;
+				}
+
 				// Use charged move if the opponent has a shield
 
 				if((opponent.shields > 0)  && (!chargedMoveUsed) && (! poke.farmEnergy) && ((move == poke.bestChargedMove)||( (poke.baitShields) && (poke.energy >= poke.bestChargedMove.energy) ))){
@@ -1174,7 +1204,7 @@ function Battle(){
 					self.logDecision(turns, poke, " doesn't use " + move.name + " because opponent has shields and will faint from a fast move this turn");
 				}
 
-				// Don't use this Charged Move is a better one is available
+				// Don't use this Charged Move if a better one is available
 
 				if((poke.bestChargedMove)&&(poke.energy >= poke.bestChargedMove.energy)&&(move.damage < poke.bestChargedMove.damage)){
 					nearDeath = false;
