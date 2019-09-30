@@ -1471,8 +1471,6 @@ function Battle(){
 						if(attacker.energy + chargedMove.energy >= chargedMove.energy){
 							var chargedDamage = self.calculateDamage(attacker, defender, chargedMove);
 
-
-
 							if(chargedDamage >= defender.hp / 1.5){
 								useShield = true;
 							}

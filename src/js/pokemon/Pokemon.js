@@ -59,7 +59,7 @@ function Pokemon(id, i, b){
 	this.startingShields = 0;
 	this.hasActed = false; // This Pokemon has acted this turn
 
-	this.baitShields = true; // Use low energy attacks to bait shields
+	this.baitShields = false; // Use low energy attacks to bait shields
 	this.farmEnergy = false; // use fast moves only
 
 	// Training battle statistics

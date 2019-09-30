@@ -31,6 +31,10 @@
 	<ul>
 		<li>Moves and rankings have been updated with the latest rebalance</li>
 		<li>Fast move mechanics are currently unchanged but will update when the game does</li>
+		<li>Shielding against Power-Up Punch has been tweaked so Pokemon are less inclined to fall for baits if they can take the other Charged Move</li>
+		<ul>
+			<li>Pokemon with Power-Up Punch now fail baits more than before, and closer represents how matchups would play out.</li>
+		</ul>
 	</ul>
 
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>

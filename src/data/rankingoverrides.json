@@ -746,6 +746,113 @@
 		]
 	},
 	{
+		"league": 1500,
+		"cup": "gen-5",
+		"pokemon": [
+			{
+				"speciesId": "cresselia",
+				"chargedMoves": ["FUTURE_SIGHT", "MOONBLAST"]
+			},
+			{
+				"speciesId": "umbreon",
+				"chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
+			},
+			{
+				"speciesId": "flygon",
+				"chargedMoves": ["DRAGON_CLAW", "EARTHQUAKE"]
+			},
+			{
+				"speciesId": "azumarill",
+				"chargedMoves": ["PLAY_ROUGH", "HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "lapras",
+				"chargedMoves": ["SURF", "ICE_BEAM"]
+			},
+			{
+				"speciesId": "medicham",
+				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "dragonite",
+				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
+			},
+			{
+				"speciesId": "gyarados",
+				"chargedMoves": ["CRUNCH", "OUTRAGE"]
+			},
+			{
+				"speciesId": "hypno",
+				"chargedMoves": ["SHADOW_BALL", "THUNDER_PUNCH"]
+			},
+			{
+				"speciesId": "pidgeot",
+				"chargedMoves": ["AERIAL_ACE", "BRAVE_BIRD"]
+			},
+			{
+				"speciesId": "medicham",
+				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "muk_alolan",
+				"chargedMoves": ["DARK_PULSE", "ACID_SPRAY"]
+			},
+			{
+				"speciesId": "deoxys_defense",
+				"chargedMoves": ["PSYCHO_BOOST", "THUNDERBOLT"]
+			},
+			{
+				"speciesId": "moltres",
+				"chargedMoves": ["OVERHEAT", "ANCIENT_POWER"]
+			},
+			{
+				"speciesId": "vileplume",
+				"chargedMoves": ["SLUDGE_BOMB", "PETAL_BLIZZARD"]
+			},
+			{
+				"speciesId": "grotle",
+				"chargedMoves": ["BODY_SLAM", "ENERGY_BALL"]
+			},
+			{
+				"speciesId": "torterra",
+				"chargedMoves": ["FRENZY_PLANT", "STONE_EDGE"]
+			},
+			{
+				"speciesId": "venomoth",
+				"fastMove": "CONFUSION"
+			},
+			{
+				"speciesId": "ninetales_alolan",
+				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "tropius",
+				"fastMove": "AIR_SLASH"
+			},
+			{
+				"speciesId": "probopass",
+				"fastMove": "SPARK"
+			},
+			{
+				"speciesId": "gardevoir",
+				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "togekiss",
+				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
+			},
+			{
+				"speciesId": "crobat",
+				"chargedMoves": ["SLUDGE_BOMB","SHADOW_BALL"]
+			},
+			{
+				"speciesId": "ferrothorn",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["POWER_WHIP", "FLASH_CANNON"]
+			}
+		]
+	},
+	{
 		"league": 2500,
 		"cup": "gen-5",
 		"pokemon": [
@@ -768,10 +875,6 @@
 			{
 				"speciesId": "muk_alolan",
 				"fastMove": "SNARL"
-			},
-			{
-				"speciesId": "togekiss",
-				"chargedMoves": ["POWER_UP_PUNCH","ICE_PUNCH"]
 			},
 			{
 				"speciesId": "togekiss",
