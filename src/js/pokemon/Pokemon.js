@@ -59,7 +59,7 @@ function Pokemon(id, i, b){
 	this.startingShields = 0;
 	this.hasActed = false; // This Pokemon has acted this turn
 
-	this.baitShields = false; // Use low energy attacks to bait shields
+	this.baitShields = true; // Use low energy attacks to bait shields
 	this.farmEnergy = false; // use fast moves only
 
 	// Training battle statistics
@@ -254,7 +254,7 @@ function Pokemon(id, i, b){
 		var floor = 0;
 
 		var untradables = ["mew","celebi","deoxys_attack","deoxys_defense","deoxys_speed","deoxys","jirachi"];
-		var maxNear1500 = ["bastiodon","dusclops"]
+		var maxNear1500 = ["bastiodon"]
 
 		if(untradables.indexOf(self.speciesId) > -1){
 			floor = 10;
