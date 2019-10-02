@@ -19,7 +19,7 @@ var RankerMaster = (function () {
 			var rankings = [];
 			var rankingCombinations = [];
 
-			var moveSelectMode = "auto";
+			var moveSelectMode = "force";
 			var rankingData;
 			var allResults = []; // Array of all ranking results
 
@@ -223,7 +223,7 @@ var RankerMaster = (function () {
 						battle.setNewPokemon(pokemon, 0, false);
 						battle.setNewPokemon(opponent, 1, false);
 
-						/*pokemon.reset();
+						pokemon.reset();
 						opponent.reset();
 
 						if(moveSelectMode == "auto"){
@@ -234,7 +234,7 @@ var RankerMaster = (function () {
 						pokemon.setShields(shieldCounts[0]);
 						opponent.setShields(shieldCounts[1]);
 
-						battle.simulate();*/
+						battle.simulate();
 
 
 						// Calculate Battle Rating for each Pokemon
