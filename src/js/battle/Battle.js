@@ -1022,7 +1022,7 @@ function Battle(){
 			for(var n = 0; n < poke.chargedMoves.length; n++){
 
 				// Don't use best charged moves if a cheaper move is available to bait or faint
-				if((poke.energy >= poke.chargedMoves[n].energy) && (poke.chargedMoves[n].energy < poke.bestChargedMove.energy)){
+				if((poke.energy >= poke.chargedMoves[n].energy) && ((poke.chargedMoves[n].energy < poke.bestChargedMove.energy) || ((poke.chargedMoves[n].energy == poke.bestChargedMove.energy)&&(poke.chargedMoves[n].buffs)))){
 					if((poke.baitShields)&&(opponent.shields > 0)){
 						useChargedMove = false;
 
