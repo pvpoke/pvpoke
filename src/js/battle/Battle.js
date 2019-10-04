@@ -502,15 +502,19 @@ function Battle(){
 					}
 				}
 
-				if(actionsThisTurn){
-					if(timeSinceActivated >= pokemon[action.actor].fastMove.cooldown - 500){
-						action.settings.priority += 20;
-						valid = true;
-					}
-					if((timeSinceActivated >= 500)&&(chargedMoveLastTurn)){
-						action.settings.priority += 20;
-						valid = true;
-					}
+				var requiredTimeToPass = pokemon[action.actor].fastMove.cooldown - 500;
+
+				if((pokemon[action.actor].fastMove.moveId == "CONFUSION")||(pokemon[action.actor].fastMove.moveId == "YAWN")){
+					requiredTimeToPass -= 500;
+				}
+
+				if(timeSinceActivated >= requiredTimeToPass){
+					action.settings.priority += 20;
+					valid = true;
+				}
+				if((timeSinceActivated >= 500)&&(chargedMoveLastTurn)){
+					action.settings.priority += 20;
+					valid = true;
 				}
 
 				// Was this queued this turn? Let's check for piggybacking. Boy was this a headache.

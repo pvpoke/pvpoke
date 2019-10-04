@@ -149,3 +149,6 @@ if(! isset($OG_IMAGE)){
 	</header>
 	<div class="main-wrap">
 		<div id="main">
+			<div class="section white" style="margin-top:0px; font-size:12px;">
+				Fast move mechanics have been updated in app version 0.157.0! Some close matchup results may differ. Stay tuned for a site update!
+			</div>
