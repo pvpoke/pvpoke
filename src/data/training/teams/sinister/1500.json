@@ -9,28 +9,21 @@
 				"fastMove": "HEX",
 				"chargedMoves": ["SHADOW_BALL","BONE_CLUB"],
 				"difficulty": 3,
-				"weight":6
+				"weight":9
 			},
 			{
 				"speciesId": "marowak_alolan",
 				"fastMove": "FIRE_SPIN",
 				"chargedMoves": ["SHADOW_BALL","BONE_CLUB"],
 				"difficulty": 3,
-				"weight":10
+				"weight":9
 			},
 			{
 				"speciesId": "haunter",
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["SHADOW_PUNCH","SHADOW_BALL"],
 				"difficulty": 3,
-				"weight":6
-			},
-			{
-				"speciesId": "haunter",
-				"fastMove": "LICK",
-				"chargedMoves": ["SHADOW_PUNCH","SHADOW_BALL"],
-				"difficulty": 2,
-				"weight":1
+				"weight":8
 			},
 			{
 				"speciesId": "drifblim",
@@ -51,7 +44,7 @@
 				"fastMove": "FEINT_ATTACK",
 				"chargedMoves": ["SHADOW_PUNCH","FIRE_PUNCH"],
 				"difficulty": 2,
-				"weight":1
+				"weight":3
 			},
 			{
 				"speciesId": "dusclops",
@@ -71,8 +64,8 @@
 				"speciesId": "froslass",
 				"fastMove": "POWDER_SNOW",
 				"chargedMoves": ["SHADOW_BALL","AVALANCHE"],
-				"difficulty": 2,
-				"weight":2
+				"difficulty": 1,
+				"weight":1
 			},
 			{
 				"speciesId": "mismagius",
@@ -114,35 +107,28 @@
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["SHADOW_PUNCH","SHADOW_BALL"],
 				"difficulty": 3,
-				"weight":4
-			},
-			{
-				"speciesId": "haunter",
-				"fastMove": "LICK",
-				"chargedMoves": ["SHADOW_PUNCH","SHADOW_BALL"],
-				"difficulty": 1,
-				"weight":1
+				"weight":6
 			},
 			{
 				"speciesId": "drifblim",
 				"fastMove": "HEX",
 				"chargedMoves": ["SHADOW_BALL","OMINOUS_WIND"],
 				"difficulty": 2,
-				"weight":8
+				"weight":6
 			},
 			{
 				"speciesId": "dusclops",
 				"fastMove": "FEINT_ATTACK",
 				"chargedMoves": ["SHADOW_PUNCH","FIRE_PUNCH"],
 				"difficulty": 2,
-				"weight":1
+				"weight":2
 			},
 			{
 				"speciesId": "dusclops",
 				"fastMove": "HEX",
 				"chargedMoves": ["SHADOW_PUNCH","FIRE_PUNCH"],
 				"difficulty": 2,
-				"weight":6
+				"weight":4
 			},
 			{
 				"speciesId": "haunter",
@@ -176,7 +162,7 @@
 				"speciesId": "chandelure",
 				"fastMove": "HEX",
 				"chargedMoves": ["SHADOW_BALL","ENERGY_BALL"],
-				"difficulty": 1,
+				"difficulty": 0,
 				"weight":1
 			},
 			{
@@ -208,48 +194,6 @@
 		"weight": 4,
 		"pokemon": [
 			{
-				"speciesId": "medicham",
-				"fastMove": "COUNTER",
-				"chargedMoves": ["POWER_UP_PUNCH","ICE_PUNCH"],
-				"difficulty": 3,
-				"weight":6
-			},
-			{
-				"speciesId": "medicham",
-				"fastMove": "COUNTER",
-				"chargedMoves": ["POWER_UP_PUNCH","PSYCHIC"],
-				"difficulty": 1,
-				"weight":1
-			},
-			{
-				"speciesId": "medicham",
-				"fastMove": "COUNTER",
-				"chargedMoves": ["DYNAMIC_PUNCH","ICE_PUNCH"],
-				"difficulty": 3,
-				"weight":6
-			},
-			{
-				"speciesId": "medicham",
-				"fastMove": "PSYCHO_CUT",
-				"chargedMoves": ["POWER_UP_PUNCH","ICE_PUNCH"],
-				"difficulty": 1,
-				"weight":1
-			},
-			{
-				"speciesId": "medicham",
-				"fastMove": "PSYCHO_CUT",
-				"chargedMoves": ["DYNAMIC_PUNCH","ICE_PUNCH"],
-				"difficulty": 1,
-				"weight":1
-			},
-			{
-				"speciesId": "medicham",
-				"fastMove": "PSYCHO_CUT",
-				"chargedMoves": ["PSYCHIC","DYNAMIC_PUNCH"],
-				"difficulty": 1,
-				"weight":1
-			},
-			{
 				"speciesId": "poliwrath",
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["POWER_UP_PUNCH","ICE_PUNCH"],
@@ -262,6 +206,13 @@
 				"chargedMoves": ["POWER_UP_PUNCH","HYDRO_PUMP"],
 				"difficulty": 2,
 				"weight":1
+			},
+			{
+				"speciesId": "poliwrath",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["DYNAMIC_PUNCH","ICE_PUNCH"],
+				"difficulty": 3,
+				"weight":12
 			},
 			{
 				"speciesId": "poliwrath",
@@ -275,14 +226,14 @@
 				"fastMove": "BUBBLE",
 				"chargedMoves": ["POWER_UP_PUNCH","ICE_PUNCH"],
 				"difficulty": 3,
-				"weight":20
+				"weight":10
 			},
 			{
 				"speciesId": "primeape",
 				"fastMove": "COUNTER",
 				"chargedMoves": ["CROSS_CHOP","NIGHT_SLASH"],
 				"difficulty": 2,
-				"weight":3
+				"weight":6
 			},
 			{
 				"speciesId": "machamp",
@@ -309,21 +260,21 @@
 				"speciesId": "hitmonchan",
 				"fastMove": "COUNTER",
 				"chargedMoves": ["POWER_UP_PUNCH","ICE_PUNCH"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":2
 			},
 			{
 				"speciesId": "hitmonchan",
 				"fastMove": "COUNTER",
 				"chargedMoves": ["POWER_UP_PUNCH","THUNDER_PUNCH"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":1
 			},
 			{
 				"speciesId": "hitmontop",
 				"fastMove": "COUNTER",
 				"chargedMoves": ["CLOSE_COMBAT","STONE_EDGE"],
-				"difficulty": 1,
+				"difficulty": 0,
 				"weight":1
 			},
 			{
@@ -338,7 +289,7 @@
 				"fastMove": "COUNTER",
 				"chargedMoves": ["POWER_UP_PUNCH","SHADOW_BALL"],
 				"difficulty": 1,
-				"weight":1
+				"weight":2
 			},
 			{
 				"speciesId": "toxicroak",
@@ -352,8 +303,36 @@
 	{
 		"slot": "Fighting Flex",
 		"synergies": ["Primary Steel", "Primary Ghost"],
-		"weight": 1,
+		"weight": 2,
 		"pokemon": [
+			{
+				"speciesId": "medicham",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["POWER_UP_PUNCH","ICE_PUNCH"],
+				"difficulty": 3,
+				"weight":3
+			},
+			{
+				"speciesId": "medicham",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["POWER_UP_PUNCH","PSYCHIC"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "medicham",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["DYNAMIC_PUNCH","PSYCHIC"],
+				"difficulty": 3,
+				"weight":3
+			},
+			{
+				"speciesId": "medicham",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["DYNAMIC_PUNCH","ICE_PUNCH"],
+				"difficulty": 3,
+				"weight":3
+			},
 			{
 				"speciesId": "poliwrath",
 				"fastMove": "MUD_SHOT",
@@ -366,7 +345,7 @@
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["POWER_UP_PUNCH","HYDRO_PUMP"],
 				"difficulty": 3,
-				"weight":1
+				"weight":2
 			},
 			{
 				"speciesId": "poliwrath",
@@ -376,18 +355,25 @@
 				"weight":6
 			},
 			{
+				"speciesId": "poliwrath",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["DYNAMIC_PUNCH","ICE_PUNCH"],
+				"difficulty": 3,
+				"weight":6
+			},
+			{
 				"speciesId": "lucario",
 				"fastMove": "COUNTER",
 				"chargedMoves": ["POWER_UP_PUNCH","SHADOW_BALL"],
 				"difficulty": 1,
-				"weight":3
+				"weight":1
 			},
 			{
 				"speciesId": "toxicroak",
 				"fastMove": "COUNTER",
 				"chargedMoves": ["MUD_BOMB","DYNAMIC_PUNCH"],
-				"difficulty": 2,
-				"weight":2
+				"difficulty": 1,
+				"weight":1
 			},
 			{
 				"speciesId": "blaziken",
@@ -429,14 +415,14 @@
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["FUTURE_SIGHT","MOONBLAST"],
 				"difficulty": 3,
-				"weight":6
+				"weight":4
 			},
 			{
 				"speciesId": "cresselia",
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["FUTURE_SIGHT","AURORA_BEAM"],
 				"difficulty": 3,
-				"weight":4
+				"weight":8
 			},
 			{
 				"speciesId": "cresselia",
@@ -446,24 +432,24 @@
 				"weight":1
 			},
 			{
-				"speciesId": "cresselia",
-				"fastMove": "PSYCHO_CUT",
-				"chargedMoves": ["FUTURE_SIGHT","MOONBLAST"],
-				"difficulty": 2,
-				"weight":1
+				"speciesId": "lugia",
+				"fastMove": "EXTRASENSORY",
+				"chargedMoves": ["SKY_ATTACK","HYDRO_PUMP"],
+				"difficulty": 3,
+				"weight":6
 			},
 			{
 				"speciesId": "gardevoir",
 				"fastMove": "CHARM",
 				"chargedMoves": ["SYNCHRONOISE","SHADOW_BALL"],
 				"difficulty": 3,
-				"weight":10
+				"weight":8
 			},
 			{
 				"speciesId": "gardevoir",
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["DAZZLING_GLEAM","SHADOW_BALL"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":1
 			},
 			{
@@ -478,14 +464,14 @@
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["PSYSHOCK","BULLDOZE"],
 				"difficulty": 2,
-				"weight":8
+				"weight":4
 			},
 			{
 				"speciesId": "gallade",
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["LEAF_BLADE","CLOSE_COMBAT"],
 				"difficulty": 2,
-				"weight":5
+				"weight":4
 			},
 			{
 				"speciesId": "uxie",
@@ -527,7 +513,7 @@
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["THUNDERBOLT","PSYCHIC"],
 				"difficulty": 2,
-				"weight":3
+				"weight":2
 			},
 			{
 				"speciesId": "jynx",
@@ -552,17 +538,17 @@
 		"pokemon": [
 			{
 				"speciesId": "lugia",
-				"fastMove": "DRAGON_TAIL",
-				"chargedMoves": ["SKY_ATTACK","HYDRO_PUMP"],
-				"difficulty": 3,
-				"weight":2
-			},
-			{
-				"speciesId": "lugia",
 				"fastMove": "EXTRASENSORY",
 				"chargedMoves": ["SKY_ATTACK","HYDRO_PUMP"],
 				"difficulty": 3,
-				"weight":8
+				"weight":12
+			},
+			{
+				"speciesId": "gardevoir",
+				"fastMove": "CHARM",
+				"chargedMoves": ["SYNCHRONOISE","SHADOW_BALL"],
+				"difficulty": 3,
+				"weight":4
 			},
 			{
 				"speciesId": "raichu_alolan",
@@ -639,7 +625,7 @@
 				"fastMove": "DRAGON_TAIL",
 				"chargedMoves": ["CRUNCH","EARTHQUAKE"],
 				"difficulty": 2,
-				"weight":12
+				"weight":16
 			},
 			{
 				"speciesId": "steelix",
@@ -652,14 +638,14 @@
 				"speciesId": "probopass",
 				"fastMove": "SPARK",
 				"chargedMoves": ["ROCK_SLIDE","MAGNET_BOMB"],
-				"difficulty": 2,
-				"weight":1
+				"difficulty": 1,
+				"weight":2
 			},
 			{
 				"speciesId": "probopass",
 				"fastMove": "SPARK",
 				"chargedMoves": ["ROCK_SLIDE","THUNDERBOLT"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":2
 			},
 			{
@@ -709,7 +695,7 @@
 				"fastMove": "WATERFALL",
 				"chargedMoves": ["HYDRO_PUMP","FLASH_CANNON"],
 				"difficulty": 2,
-				"weight":10
+				"weight":12
 			},
 			{
 				"speciesId": "mawile",
@@ -737,7 +723,21 @@
 				"fastMove": "BITE",
 				"chargedMoves": ["PLAY_ROUGH","POWER_UP_PUNCH"],
 				"difficulty": 3,
-				"weight":8
+				"weight":10
+			},
+			{
+				"speciesId": "probopass",
+				"fastMove": "SPARK",
+				"chargedMoves": ["ROCK_SLIDE","MAGNET_BOMB"],
+				"difficulty": 2,
+				"weight":3
+			},
+			{
+				"speciesId": "probopass",
+				"fastMove": "SPARK",
+				"chargedMoves": ["ROCK_SLIDE","THUNDERBOLT"],
+				"difficulty": 2,
+				"weight":2
 			},
 			{
 				"speciesId": "forretress",
@@ -778,7 +778,7 @@
 				"speciesId": "ferrothorn",
 				"fastMove": "BULLET_SEED",
 				"chargedMoves": ["POWER_WHIP","FLASH_CANNON"],
-				"difficulty": 1,
+				"difficulty": 2,
 				"weight":1
 			},
 			{
