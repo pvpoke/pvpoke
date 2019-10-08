@@ -454,35 +454,43 @@ function Battle(){
 		if(phase != "neutral"){
 			return false;
 		}
+		
+		// In emulated battles, randomize priority
+		
+		if(mode == "emulate"){
+			pokemon[0].priority = (Math.random() > .5) ? 1 : 0;
+			pokemon[1].priority = (pokemon[0].priority == 0) ? 1 : 0;
+		}
 
 		// Determine actions for both Pokemon
 		var actionsThisTurn = false;
 		var chargedMoveThisTurn = false;
+		
+		if(turns > lastProcessedTurn){
+			for(var i = 0; i < 2; i++){
 
-		for(var i = 0; i < 2; i++){
+				var poke = pokemon[i];
+				var opponent = this.getOpponent(i);
+				var action = self.getTurnAction(poke, opponent);
 
-			var poke = pokemon[i];
-			var opponent = this.getOpponent(i);
-			var action = self.getTurnAction(poke, opponent);
-
-			if(action){
-				actionsThisTurn = true;
-				if(action.type == "charged"){
-					chargedMoveThisTurn = true;
-				}
-
-				// Are both Pokemon alive?
-
-				if((action.type == "switch")||((action.type != "switch")&&(poke.hp > 0)&&(opponent.hp > 0))){
-					if((action.type=="fast")&&(mode == "emulate")){
-						// Submit an animation to be played
-						self.pushAnimation(poke.index, "fast", pokemon[action.actor].fastMove.cooldown / 500);
+				if(action){
+					actionsThisTurn = true;
+					if(action.type == "charged"){
+						chargedMoveThisTurn = true;
 					}
-					queuedActions.push(action);
+
+					// Are both Pokemon alive?
+
+					if((action.type == "switch")||((action.type != "switch")&&(poke.hp > 0)&&(opponent.hp > 0))){
+						if((action.type=="fast")&&(mode == "emulate")){
+							// Submit an animation to be played
+							self.pushAnimation(poke.index, "fast", pokemon[action.actor].fastMove.cooldown / 500);
+						}
+						queuedActions.push(action);
+					}
 				}
 			}
 		}
-
 
 		// Take actions from the queue to be processed now
 		for(var i = 0; i < queuedActions.length; i++){
@@ -503,10 +511,11 @@ function Battle(){
 				}
 
 				var requiredTimeToPass = pokemon[action.actor].fastMove.cooldown - 500;
-
-				if((pokemon[action.actor].fastMove.moveId == "CONFUSION")||(pokemon[action.actor].fastMove.moveId == "YAWN")){
+				
+				// Just wait, this is going to be a doozy
+				/*if((pokemon[action.actor].fastMove.moveId == "CONFUSION")||(pokemon[action.actor].fastMove.moveId == "YAWN")){
 					requiredTimeToPass -= 500;
-				}
+				}*/
 
 				if(timeSinceActivated >= requiredTimeToPass){
 					action.settings.priority += 20;
@@ -1308,7 +1317,7 @@ function Battle(){
 				break;
 
 			case "charged":
-				var move = poke.chargedMoves[action.value];
+				var move = poke.chargedMoves[action.value];				
 
 				// Validate this move can be used
 
