@@ -5912,7 +5912,8 @@
 		},
 		"types": ["ground", "dragon"],
 		"fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
-		"chargedMoves": ["DRAGON_CLAW", "EARTHQUAKE", "STONE_EDGE"],
+		"chargedMoves": ["DRAGON_CLAW", "EARTHQUAKE", "STONE_EDGE", "EARTH_POWER"],
+		"legacyMoves": ["EARTH_POWER"],
 		"defaultIVs": {
 			"cp1500": [20.5, 5, 14, 14],
 			"cp2500": [37, 10, 15, 14]

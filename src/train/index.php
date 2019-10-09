@@ -118,9 +118,14 @@ require_once '../header.php';
 <div class="section white updates">
 	<h3>What's New</h3>
 
-	<h4>v1.11.0 (September 14th, 2019)</h4>
+	<h4>v1.12.0 (October 9th, 2019)</h4>
 	<ul>
-		<li>Generation 5 has been added! Try any Generation 5 Pokemon in your training battles to see how they perform!</li>
+		<li>Mechanics have been updated to reflect Fast Move mechanic changes in app version 0.157.0</li>
+		<ul>
+			<li>Fast Moves are now guaranteed to register on the last turn of the move, no "overtapping" or "undertapping".</li>
+			<li>Until Charged Move Priority is better understood, CMP is now randomized in Training Battles</li>
+		</ul>
+		<li>Tweaked near-faint logic where Pokemon would sometimes use a weaker Charged Moves because they incorrectly calculated they would faint before reaching the more powerful move</li>
 	</ul>
 </div>
 

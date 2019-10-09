@@ -12,10 +12,6 @@
 				"chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
 			},
 			{
-				"speciesId": "flygon",
-				"chargedMoves": ["DRAGON_CLAW", "EARTHQUAKE"]
-			},
-			{
 				"speciesId": "azumarill",
 				"chargedMoves": ["PLAY_ROUGH", "HYDRO_PUMP"]
 			},
@@ -25,7 +21,15 @@
 			},
 			{
 				"speciesId": "medicham",
-				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
+				"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "poliwrath",
+				"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "toxicroak",
+				"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
 			},
 			{
 				"speciesId": "dragonite",
@@ -42,10 +46,6 @@
 			{
 				"speciesId": "pidgeot",
 				"chargedMoves": ["AERIAL_ACE", "BRAVE_BIRD"]
-			},
-			{
-				"speciesId": "medicham",
-				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
 			},
 			{
 				"speciesId": "muk_alolan",
@@ -758,10 +758,6 @@
 				"chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
 			},
 			{
-				"speciesId": "flygon",
-				"chargedMoves": ["DRAGON_CLAW", "EARTHQUAKE"]
-			},
-			{
 				"speciesId": "azumarill",
 				"chargedMoves": ["PLAY_ROUGH", "HYDRO_PUMP"]
 			},
@@ -771,7 +767,15 @@
 			},
 			{
 				"speciesId": "medicham",
-				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
+				"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "poliwrath",
+				"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "toxicroak",
+				"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
 			},
 			{
 				"speciesId": "dragonite",
@@ -788,10 +792,6 @@
 			{
 				"speciesId": "pidgeot",
 				"chargedMoves": ["AERIAL_ACE", "BRAVE_BIRD"]
-			},
-			{
-				"speciesId": "medicham",
-				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
 			},
 			{
 				"speciesId": "muk_alolan",

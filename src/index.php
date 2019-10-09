@@ -27,14 +27,20 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.11.4 (September 28th, 2019)</h4>
+	<h4>v1.12.0 (October 9th, 2019)</h4>
 	<ul>
-		<li>Moves and rankings have been updated with the latest rebalance</li>
-		<li>Fast move mechanics are currently unchanged but will update when the game does</li>
-		<li>Shielding against Power-Up Punch has been tweaked so Pokemon are less inclined to fall for baits if they can take the other Charged Move</li>
+		<li>Mechanics have been updated to reflect Fast Move mechanic changes in app version 0.157.0</li>
 		<ul>
-			<li>Pokemon with Power-Up Punch now fail baits more than before, and closer represents how matchups would play out.</li>
+			<li>Fast Moves are now guaranteed to register on the last turn of the move, no "overtapping" or "undertapping".</li>
+			<li>Until Charged Move Priority is better understood, CMP is now randomized in Training Battles</li>
 		</ul>
+		<li>Default simulations are less likely to shield Power-Up Punch baits when the opponent doesn't possess a lethal Charged Move</li>
+		<ul>
+			<li>This corrects some matchups that were previously labeled as "wins" for PUP users but rarely are against opponents who know not to shield (eg. Lucario vs Altaria).</li>
+			<li>As a consequence, PuP users now perform more poorly when shield baiting is enabled.</li>
+		</ul>
+		<li>Pokemon will now bait with Acid Spray when they have Charged Moves that cost the sam energy (Alolan Muk with Dark Pulse, Ferrothorn with Power Whip)</li>
+		<li>Tweaked near-faint logic where Pokemon would sometimes use a weaker Charged Moves because they incorrectly calculated they would faint before reaching the more powerful move</li>
 	</ul>
 
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>
