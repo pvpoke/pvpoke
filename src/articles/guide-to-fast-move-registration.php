@@ -24,6 +24,7 @@ require_once '../header.php';
 				<li><a href="#duration">Fast Move Duration</a></li>
 				<li><a href="#registration">Fast Move Registration</a></li>
 				<li><a href="#sandbox">Sandbox Mode</a></li>
+		  		<li><a href="#differences">Differences in 0.157.0</a></li>
 	  </ol>
 	<a name="turns"></a>
 	<h3 class="article-header">Turns</h3>
@@ -97,6 +98,15 @@ require_once '../header.php';
       <li><strong>Charged Move - </strong>This player       will use one of their Charged Moves. Note that a Charged Move will fail if a Fast Move that faints the user also registers on that turn.<strong></strong></li>
       <li><strong>Wait - </strong>This player will take no action on the selected turn.</li>
     </ul>
+	<a name="differences"></a>
+	<h3 class="article-header"> Differences in 0.157.0</h3>
+	<p>A big question is how have matchups changed? Are there any major new wins or losses? Here's a summary of what you can expect to find!</p>
+	<ul>
+		<li>Flipped matchups will be ones that were previously very close with a difference of one or two Fast Moves, or IV's.</li>
+		<li>Damage and energy registration now happen at more predictable intervals. 3-turn moves will behave the same whether they're against a 1-turn move or a 4-turn move.</li>
+		<li>Pokemon are no longer overtapping, but that goes for their opponents as well. This generally benefits most Pokemon equally. Matchups involving a 3-turn move and a 2 or 4-turn move are the most suspectible to change because of how erratic move registration was previously.</li>
+	</ul>
+
 <!--<a name="videos"></a>
 	<h3 class="article-header">Video Examples</h3>
 	<p>

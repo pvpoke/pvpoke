@@ -10,9 +10,19 @@
 		"chargedMoves":["POWER_UP_PUNCH","ICE_PUNCH"]
 	},
 	{
+		"speciesId":"poliwrath",
+		"fastMove":"BUBBLE",
+		"chargedMoves":["DYNAMIC_PUNCH","ICE_PUNCH"]
+	},	
+	{
 		"speciesId":"medicham",
 		"fastMove":"COUNTER",
 		"chargedMoves":["POWER_UP_PUNCH","ICE_PUNCH"]
+	},
+	{
+		"speciesId":"medicham",
+		"fastMove":"COUNTER",
+		"chargedMoves":["DYNAMIC_PUNCH","ICE_PUNCH"]
 	},
 	{
 		"speciesId":"bronzong",
