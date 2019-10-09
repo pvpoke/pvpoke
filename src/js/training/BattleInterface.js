@@ -88,7 +88,7 @@ var BattlerMaster = (function () {
 				}
 
 				$(".team-indicator .cmp").hide();
-				$(".team-indicator .cmp").eq(priorityAssignment).show();
+				//$(".team-indicator .cmp").eq(priorityAssignment).show();
 
 				// Set lead pokemon
 				battle.setBattleMode("emulate");

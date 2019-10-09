@@ -1154,7 +1154,7 @@ function Battle(){
 				var nearDeath = false;
 
 				// Will a Fast Move knock it out?
-				if((poke.hp <= opponent.fastMove.damage * 2)&&(opponent.cooldown / poke.fastMove.cooldown < 3)){
+				if((poke.hp <= opponent.fastMove.damage)&&(opponent.cooldown / poke.fastMove.cooldown < 3)){
 					nearDeath = true;
 
 					self.logDecision(turns, poke, " will be knocked out by opponent's fast move this turn");
