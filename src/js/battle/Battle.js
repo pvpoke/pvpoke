@@ -454,9 +454,9 @@ function Battle(){
 		if(phase != "neutral"){
 			return false;
 		}
-		
+
 		// In emulated battles, randomize priority
-		
+
 		if(mode == "emulate"){
 			pokemon[0].priority = (Math.random() > .5) ? 1 : 0;
 			pokemon[1].priority = (pokemon[0].priority == 0) ? 1 : 0;
@@ -465,7 +465,7 @@ function Battle(){
 		// Determine actions for both Pokemon
 		var actionsThisTurn = false;
 		var chargedMoveThisTurn = false;
-		
+
 		if(turns > lastProcessedTurn){
 			for(var i = 0; i < 2; i++){
 
@@ -511,7 +511,7 @@ function Battle(){
 				}
 
 				var requiredTimeToPass = pokemon[action.actor].fastMove.cooldown - 500;
-				
+
 				// Just wait, this is going to be a doozy
 				/*if((pokemon[action.actor].fastMove.moveId == "CONFUSION")||(pokemon[action.actor].fastMove.moveId == "YAWN")){
 					requiredTimeToPass -= 500;
@@ -1317,7 +1317,7 @@ function Battle(){
 				break;
 
 			case "charged":
-				var move = poke.chargedMoves[action.value];				
+				var move = poke.chargedMoves[action.value];
 
 				// Validate this move can be used
 

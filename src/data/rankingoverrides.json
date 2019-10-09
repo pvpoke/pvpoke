@@ -1069,7 +1069,7 @@
 		"pokemon": [
 			{
 				"speciesId": "medicham",
-				"chargedMoves": ["POWER_UP_PUNCH","ICE_PUNCH"]
+				"chargedMoves": ["DYNAMIC_PUNCH","ICE_PUNCH"]
 			},
 			{
 				"speciesId": "claydol",
@@ -1078,7 +1078,7 @@
 			{
 				"speciesId": "poliwrath",
 				"fastMove": "BUBBLE",
-				"chargedMoves": ["POWER_UP_PUNCH","ICE_PUNCH"]
+				"chargedMoves": ["DYNAMIC_PUNCH","ICE_PUNCH"]
 			},
 			{
 				"speciesId": "marowak_alolan",
@@ -1086,7 +1086,8 @@
 			},
 			{
 				"speciesId": "slowbro",
-				"fastMove": "CONFUSION"
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["ICE_BEAM", "WATER_PULSE"]
 			},
 			{
 				"speciesId": "slowpoke",
@@ -1105,6 +1106,10 @@
 				"speciesId": "mawile",
 				"fastMove": "BITE",
 				"chargedMoves": ["POWER_UP_PUNCH", "PLAY_ROUGH"]
+			},
+			{
+				"speciesId": "ferrothorn",
+				"fastMove": "BULLET_SEED"
 			},
 			{
 				"speciesId": "magneton",
@@ -1132,7 +1137,8 @@
 			},
 			{
 				"speciesId": "cresselia",
-				"fastMove": "CONFUSION"
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["FUTURE_SIGHT", "AURORA_BEAM"]
 			}
 		]
 	}
