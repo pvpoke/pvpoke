@@ -39,7 +39,7 @@
 			<li>This corrects some matchups that were previously labeled as "wins" for PUP users but rarely are against opponents who know not to shield (eg. Lucario vs Altaria).</li>
 			<li>As a consequence, PuP users now perform more poorly when shield baiting is enabled.</li>
 		</ul>
-		<li>Pokemon will now bait with Acid Spray when they have Charged Moves that cost the sam energy (Alolan Muk with Dark Pulse, Ferrothorn with Power Whip)</li>
+		<li>Pokemon will now bait with Acid Spray when they have Charged Moves that cost the same energy (Alolan Muk with Dark Pulse, Ferrothorn with Power Whip)</li>
 		<li>Tweaked near-faint logic where Pokemon would sometimes use a weaker Charged Moves because they incorrectly calculated they would faint before reaching the more powerful move</li>
 	</ul>
 
