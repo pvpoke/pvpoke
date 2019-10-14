@@ -363,7 +363,8 @@
 		},
 		"types": ["bug", "poison"],
 		"fastMoves": ["BUG_BITE", "POISON_STING"],
-		"chargedMoves": ["STRUGGLE"],
+		"chargedMoves": ["STRUGGLE", "FRUSTRATION", "RETURN"],
+		"legacyMoves": ["FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -379,7 +380,8 @@
 		},
 		"types": ["bug", "poison"],
 		"fastMoves": ["BUG_BITE", "POISON_STING"],
-		"chargedMoves": ["STRUGGLE"],
+		"chargedMoves": ["STRUGGLE", "FRUSTRATION", "RETURN"],
+		"legacyMoves": ["FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -395,8 +397,8 @@
 		},
 		"types": ["bug", "poison"],
 		"fastMoves": ["BUG_BITE", "INFESTATION", "POISON_JAB"],
-		"chargedMoves": ["AERIAL_ACE", "SLUDGE_BOMB", "X_SCISSOR"],
-		"legacyMoves": ["BUG_BITE"],
+		"chargedMoves": ["AERIAL_ACE", "SLUDGE_BOMB", "X_SCISSOR", "FRUSTRATION", "RETURN"],
+		"legacyMoves": ["BUG_BITE","FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [33.5, 3, 11, 5],
 			"cp2500": [40, 15, 15, 15]
@@ -2545,7 +2547,8 @@
 		},
 		"types": ["electric", "none"],
 		"fastMoves": ["LOW_KICK", "THUNDER_SHOCK"],
-		"chargedMoves": ["THUNDER", "THUNDER_PUNCH", "THUNDERBOLT"],
+		"chargedMoves": ["THUNDER", "THUNDER_PUNCH", "THUNDERBOLT", "FRUSTRATION", "RETURN"],
+		"legacyMoves": ["FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [25, 3, 2, 12],
 			"cp2500": [40, 15, 15, 15]
@@ -2561,7 +2564,8 @@
 		},
 		"types": ["fire", "none"],
 		"fastMoves": ["EMBER", "KARATE_CHOP"],
-		"chargedMoves": ["FIRE_BLAST", "FIRE_PUNCH", "FLAMETHROWER"],
+		"chargedMoves": ["FIRE_BLAST", "FIRE_PUNCH", "FLAMETHROWER","FRUSTRATION", "RETURN"],
+		"legacyMoves": ["FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [24.5, 0, 4, 10],
 			"cp2500": [40, 15, 15, 15]
@@ -2645,8 +2649,8 @@
 		},
 		"types": ["water", "ice"],
 		"fastMoves": ["FROST_BREATH", "ICE_SHARD", "WATER_GUN"],
-		"chargedMoves": ["BLIZZARD", "DRAGON_PULSE", "HYDRO_PUMP", "ICE_BEAM", "SURF", "SKULL_BASH"],
-		"legacyMoves": ["DRAGON_PULSE", "ICE_BEAM", "ICE_SHARD"],
+		"chargedMoves": ["BLIZZARD", "DRAGON_PULSE", "HYDRO_PUMP", "ICE_BEAM", "SURF", "SKULL_BASH", "FRUSTRATION", "RETURN"],
+		"legacyMoves": ["DRAGON_PULSE", "ICE_BEAM", "ICE_SHARD", "FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [22, 4, 2, 13],
 			"cp2500": [38.5, 12, 13, 7]
@@ -3461,7 +3465,8 @@
 		},
 		"types": ["electric", "none"],
 		"fastMoves": ["TACKLE", "THUNDER_SHOCK"],
-		"chargedMoves": ["BODY_SLAM", "DISCHARGE", "THUNDERBOLT"],
+		"chargedMoves": ["BODY_SLAM", "DISCHARGE", "THUNDERBOLT", "FRUSTRATION", "RETURN"],
+		"legacyMoves": ["FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -3477,7 +3482,8 @@
 		},
 		"types": ["electric", "none"],
 		"fastMoves": ["CHARGE_BEAM", "TACKLE"],
-		"chargedMoves": ["DISCHARGE", "POWER_GEM", "THUNDERBOLT"],
+		"chargedMoves": ["DISCHARGE", "POWER_GEM", "THUNDERBOLT", "FRUSTRATION", "RETURN"],
+		"legacyMoves": ["FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [40, 12, 8, 13],
 			"cp2500": [40, 15, 15, 15]
@@ -3493,8 +3499,8 @@
 		},
 		"types": ["electric", "none"],
 		"fastMoves": ["CHARGE_BEAM", "VOLT_SWITCH"],
-		"chargedMoves": ["DRAGON_PULSE", "FOCUS_BLAST", "POWER_GEM", "THUNDER", "ZAP_CANNON"],
-		"legacyMoves": ["DRAGON_PULSE"],
+		"chargedMoves": ["DRAGON_PULSE", "FOCUS_BLAST", "POWER_GEM", "THUNDER", "ZAP_CANNON", "FRUSTRATION", "RETURN"],
+		"legacyMoves": ["DRAGON_PULSE", "FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [19.5, 3, 10, 15],
 			"cp2500": [35, 6, 9, 14]
@@ -4994,7 +5000,8 @@
 		},
 		"types": ["grass", "none"],
 		"fastMoves": ["BULLET_SEED", "QUICK_ATTACK"],
-		"chargedMoves": ["ENERGY_BALL", "FOUL_PLAY", "GRASS_KNOT"],
+		"chargedMoves": ["ENERGY_BALL", "FOUL_PLAY", "GRASS_KNOT", "FRUSTRATION", "RETURN"],
+		"legacyMoves": ["FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -5010,7 +5017,8 @@
 		},
 		"types": ["grass", "dark"],
 		"fastMoves": ["FEINT_ATTACK", "RAZOR_LEAF"],
-		"chargedMoves": ["FOUL_PLAY", "GRASS_KNOT", "LEAF_BLADE"],
+		"chargedMoves": ["FOUL_PLAY", "GRASS_KNOT", "LEAF_BLADE", "FRUSTRATION", "RETURN"],
+		"legacyMoves": ["FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -5026,7 +5034,8 @@
 		},
 		"types": ["grass", "dark"],
 		"fastMoves": ["FEINT_ATTACK", "RAZOR_LEAF"],
-		"chargedMoves": ["FOUL_PLAY", "HURRICANE", "LEAF_BLADE", "LEAF_TORNADO"],
+		"chargedMoves": ["FOUL_PLAY", "HURRICANE", "LEAF_BLADE", "LEAF_TORNADO", "FRUSTRATION", "RETURN"],
+		"legacyMoves": ["FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [24.5, 3, 8, 12],
 			"cp2500": [40, 15, 15, 15]
@@ -5463,7 +5472,8 @@
 		},
 		"types": ["dark", "ghost"],
 		"fastMoves": ["FEINT_ATTACK", "SHADOW_CLAW"],
-		"chargedMoves": ["FOUL_PLAY", "POWER_GEM", "SHADOW_SNEAK"],
+		"chargedMoves": ["FOUL_PLAY", "POWER_GEM", "SHADOW_SNEAK", "FRUSTRATION", "RETURN"],
+		"legacyMoves": ["FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -5880,7 +5890,8 @@
 		},
 		"types": ["ground", "none"],
 		"fastMoves": ["MUD_SHOT", "STRUGGLE_BUG"],
-		"chargedMoves": ["CRUNCH", "DIG", "SAND_TOMB"],
+		"chargedMoves": ["CRUNCH", "DIG", "SAND_TOMB", "FRUSTRATION", "RETURN"],
+		"legacyMoves": ["FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -5896,7 +5907,8 @@
 		},
 		"types": ["ground", "dragon"],
 		"fastMoves": ["DRAGON_BREATH", "MUD_SHOT"],
-		"chargedMoves": ["BUG_BUZZ", "BULLDOZE", "SAND_TOMB"],
+		"chargedMoves": ["BUG_BUZZ", "BULLDOZE", "SAND_TOMB","FRUSTRATION", "RETURN"],
+		"legacyMoves": ["FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -5912,8 +5924,8 @@
 		},
 		"types": ["ground", "dragon"],
 		"fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
-		"chargedMoves": ["DRAGON_CLAW", "EARTHQUAKE", "STONE_EDGE", "EARTH_POWER"],
-		"legacyMoves": ["EARTH_POWER"],
+		"chargedMoves": ["DRAGON_CLAW", "EARTHQUAKE", "STONE_EDGE", "EARTH_POWER", "FRUSTRATION", "RETURN"],
+		"legacyMoves": ["EARTH_POWER", "FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [20.5, 5, 14, 14],
 			"cp2500": [37, 10, 15, 14]
@@ -5929,7 +5941,8 @@
 		},
 		"types": ["grass", "none"],
 		"fastMoves": ["POISON_STING", "SUCKER_PUNCH"],
-		"chargedMoves": ["BRICK_BREAK", "GRASS_KNOT", "SEED_BOMB"],
+		"chargedMoves": ["BRICK_BREAK", "GRASS_KNOT", "SEED_BOMB", "FRUSTRATION", "RETURN"],
+		"legacyMoves": ["FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -5945,7 +5958,8 @@
 		},
 		"types": ["grass", "dark"],
 		"fastMoves": ["POISON_JAB", "SUCKER_PUNCH"],
-		"chargedMoves": ["DARK_PULSE", "DYNAMIC_PUNCH", "GRASS_KNOT"],
+		"chargedMoves": ["DARK_PULSE", "DYNAMIC_PUNCH", "GRASS_KNOT", "FRUSTRATION", "RETURN"],
+		"legacyMoves": ["FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [23.5, 13, 10, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -6329,7 +6343,8 @@
 		},
 		"types": ["ghost", "none"],
 		"fastMoves": ["ASTONISH", "FEINT_ATTACK"],
-		"chargedMoves": ["NIGHT_SHADE", "OMINOUS_WIND", "SHADOW_SNEAK"],
+		"chargedMoves": ["NIGHT_SHADE", "OMINOUS_WIND", "SHADOW_SNEAK", "FRUSTRATION", "RETURN"],
+		"legacyMoves": ["FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -6345,7 +6360,8 @@
 		},
 		"types": ["ghost", "none"],
 		"fastMoves": ["HEX", "SHADOW_CLAW"],
-		"chargedMoves": ["DAZZLING_GLEAM", "SHADOW_BALL", "THUNDER"],
+		"chargedMoves": ["DAZZLING_GLEAM", "SHADOW_BALL", "THUNDER", "FRUSTRATION", "RETURN"],
+		"legacyMoves": ["FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [25.5, 0, 7, 7],
 			"cp2500": [40, 15, 15, 15]
@@ -6361,7 +6377,8 @@
 		},
 		"types": ["ghost", "none"],
 		"fastMoves": ["ASTONISH", "HEX"],
-		"chargedMoves": ["NIGHT_SHADE", "OMINOUS_WIND", "SHADOW_SNEAK"],
+		"chargedMoves": ["NIGHT_SHADE", "OMINOUS_WIND", "SHADOW_SNEAK","FRUSTRATION", "RETURN"],
+		"legacyMoves": ["FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -6377,7 +6394,8 @@
 		},
 		"types": ["ghost", "none"],
 		"fastMoves": ["FEINT_ATTACK", "HEX"],
-		"chargedMoves": ["FIRE_PUNCH", "ICE_PUNCH", "SHADOW_PUNCH"],
+		"chargedMoves": ["FIRE_PUNCH", "ICE_PUNCH", "SHADOW_PUNCH", "FRUSTRATION", "RETURN"],
+		"legacyMoves": ["FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [37, 12, 15, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -8324,7 +8342,8 @@
 		},
 		"types": ["electric", "none"],
 		"fastMoves": ["LOW_KICK", "THUNDER_SHOCK"],
-		"chargedMoves": ["THUNDER", "THUNDER_PUNCH", "WILD_CHARGE", "ICE_PUNCH"],
+		"chargedMoves": ["THUNDER", "THUNDER_PUNCH", "WILD_CHARGE", "ICE_PUNCH", "FRUSTRATION", "RETURN"],
+		"legacyMoves": ["FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [18, 6, 15, 6],
 			"cp2500": [29.5, 10, 15, 8]
@@ -8340,7 +8359,8 @@
 		},
 		"types": ["fire", "none"],
 		"fastMoves": ["FIRE_SPIN", "KARATE_CHOP"],
-		"chargedMoves": ["BRICK_BREAK", "FIRE_BLAST", "FIRE_PUNCH", "PSYCHIC"],
+		"chargedMoves": ["BRICK_BREAK", "FIRE_BLAST", "FIRE_PUNCH", "PSYCHIC", "FRUSTRATION", "RETURN"],
+		"legacyMoves": ["FRUSTRATION", "RETURN"],
 		"defaultIVs": {
 			"cp1500": [17.5, 1, 14, 13],
 			"cp2500": [31, 2, 6, 10]

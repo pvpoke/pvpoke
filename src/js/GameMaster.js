@@ -12,7 +12,7 @@ var GameMaster = (function () {
 		object.teamPools = [];
 		object.loadedData = 0;
 
-		$.getJSON( webRoot+"data/gamemaster.json?v=163", function( data ){
+		$.getJSON( webRoot+"data/gamemaster.json?v=164", function( data ){
 			object.data = data;
 
 			// Sort Pokemon alphabetically for searching
@@ -146,7 +146,7 @@ var GameMaster = (function () {
 			var key = cup + "" + category + "" + league;
 
 			if(! object.rankings[key]){
-				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=163";
+				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=164";
 
 				$.getJSON( file, function( data ){
 					object.rankings[key] = data;
@@ -166,7 +166,7 @@ var GameMaster = (function () {
 			var key = group;
 
 			if(! object.groups[key]){
-				var file = webRoot+"data/groups/"+group+".json?v=163";
+				var file = webRoot+"data/groups/"+group+".json?v=164";
 
 				$.getJSON( file, function( data ){
 
@@ -189,7 +189,7 @@ var GameMaster = (function () {
 			var key = league + "" + cup;
 
 			if(! object.teamPools[key]){
-				var file = webRoot+"data/training/teams/"+cup+"/"+league+".json?v=163";
+				var file = webRoot+"data/training/teams/"+cup+"/"+league+".json?v=164";
 
 				$.getJSON( file, function( data ){
 					object.teamPools[key] = data;
@@ -233,11 +233,11 @@ var GameMaster = (function () {
 				minStats = 2000;
 			}
 
-			var bannedList = ["mewtwo","mewtwo_armored","giratina_altered","groudon","kyogre","rayquaza","palkia","dialga","heatran","giratina_origin"];
-			var permaBannedList = ["rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","regigigas","phione","manaphy","darkrai","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","kecleon"]; // Don't rank these Pokemon at all yet
+			var bannedList = ["mewtwo","mewtwo_armored","giratina_altered","groudon","kyogre","rayquaza","palkia","dialga","heatran","giratina_origin","darkrai"];
+			var permaBannedList = ["rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","regigigas","phione","manaphy","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","kecleon"]; // Don't rank these Pokemon at all yet
 
 			var maxDexNumber = 493;
-			var releaesdGen5 = ["snivy","servine","serperior","tepig","pignite","emboar","oshawott","dewott","samurott","lillipup","herdier","stoutland","purrloin","liepard","pidove","tranquill","unfezant","blitzle","zebstrika","foongus","amoonguss","drilbur","excadrill","litwick","lampent","chandelure","golett","golurk","deino","zweilous","hydreigon","pansage","panpour","pansear","simisage","simipour","simisear","ferroseed","ferrothorn","heatmor","durant","patrat","watchog","klink","klang","klinklang","meltan","melmetal"];
+			var releaesdGen5 = ["snivy","servine","serperior","tepig","pignite","emboar","oshawott","dewott","samurott","lillipup","herdier","stoutland","purrloin","liepard","pidove","tranquill","unfezant","blitzle","zebstrika","foongus","amoonguss","drilbur","excadrill","litwick","lampent","chandelure","golett","golurk","deino","zweilous","hydreigon","pansage","panpour","pansear","simisage","simipour","simisear","ferroseed","ferrothorn","heatmor","durant","patrat","watchog","klink","klang","klinklang","yamask","cofagrigus","meltan","melmetal"];
 
 			// Aggregate filters
 

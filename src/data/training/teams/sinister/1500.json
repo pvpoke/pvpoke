@@ -58,7 +58,14 @@
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["SHADOW_BALL","THUNDER"],
 				"difficulty": 2,
-				"weight":2
+				"weight":1
+			},
+			{
+				"speciesId": "banette",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["SHADOW_BALL","RETURN"],
+				"difficulty": 3,
+				"weight":3
 			},
 			{
 				"speciesId": "froslass",
@@ -91,8 +98,8 @@
 			{
 				"speciesId": "dusknoir",
 				"fastMove": "HEX",
-				"chargedMoves": ["OMINOUS_WIND","PSYCHIC"],
-				"difficulty": 1,
+				"chargedMoves": ["OMINOUS_WIND","DARK_PULSE"],
+				"difficulty": 2,
 				"weight":1
 			}
 		]
@@ -156,6 +163,13 @@
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["SHADOW_BALL","THUNDER"],
 				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "banette",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["SHADOW_BALL","RETURN"],
+				"difficulty": 3,
 				"weight":2
 			},
 			{
@@ -317,7 +331,7 @@
 				"fastMove": "COUNTER",
 				"chargedMoves": ["POWER_UP_PUNCH","PSYCHIC"],
 				"difficulty": 1,
-				"weight":1
+				"weight":2
 			},
 			{
 				"speciesId": "medicham",
@@ -332,6 +346,13 @@
 				"chargedMoves": ["DYNAMIC_PUNCH","ICE_PUNCH"],
 				"difficulty": 3,
 				"weight":3
+			},
+			{
+				"speciesId": "medicham",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["PSYCHIC","ICE_PUNCH"],
+				"difficulty": 3,
+				"weight":2
 			},
 			{
 				"speciesId": "poliwrath",
@@ -457,7 +478,7 @@
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["EARTH_POWER","PSYCHIC"],
 				"difficulty": 2,
-				"weight":8
+				"weight":10
 			},
 			{
 				"speciesId": "bronzong",
@@ -506,7 +527,21 @@
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["ICE_BEAM","WATER_PULSE"],
 				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "slowbro",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["PSYCHIC","ICE_BEAM"],
+				"difficulty": 2,
 				"weight":3
+			},
+			{
+				"speciesId": "slowbro",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["PSYCHIC","WATER_PULSE"],
+				"difficulty": 2,
+				"weight":1
 			},
 			{
 				"speciesId": "girafarig",
@@ -771,14 +806,14 @@
 				"speciesId": "ferrothorn",
 				"fastMove": "METAL_CLAW",
 				"chargedMoves": ["POWER_WHIP","THUNDER"],
-				"difficulty": 1,
-				"weight":1
+				"difficulty": 2,
+				"weight":2
 			},
 			{
 				"speciesId": "ferrothorn",
 				"fastMove": "BULLET_SEED",
 				"chargedMoves": ["POWER_WHIP","FLASH_CANNON"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":1
 			},
 			{
