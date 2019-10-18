@@ -1145,5 +1145,125 @@
 				"chargedMoves": ["FUTURE_SIGHT", "AURORA_BEAM"]
 			}
 		]
+	},
+	{
+		"league": 1500,
+		"cup": "ferocious",
+		"pokemon": [
+			{
+				"speciesId": "raticate_alolan",
+				"chargedMoves": ["CRUNCH","HYPER_FANG"]
+			},
+			{
+				"speciesId": "vaporeon",
+				"chargedMoves": ["AQUA_TAIL","LAST_RESORT"]
+			},
+			{
+				"speciesId": "bibarel",
+				"chargedMoves": ["SURF","HYPER_FANG"]
+			},
+			{
+				"speciesId": "umbreon",
+				"chargedMoves": ["FOUL_PLAY","LAST_RESORT"]
+			},
+			{
+				"speciesId": "ninetales_alolan",
+				"fastMove": "CHARM",
+				"chargedMoves": ["PSYSHOCK", "ICE_BEAM"]
+			},
+			{
+				"speciesId": "lickilicky",
+				"chargedMoves": ["EARTHQUAKE","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "absol",
+				"chargedMoves": ["DARK_PULSE","THUNDER"]
+			},
+			{
+				"speciesId": "donphan",
+				"chargedMoves": ["HEAVY_SLAM","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "torkoal",
+				"chargedMoves": ["EARSTHQUAKE","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "ninetales",
+				"chargedMoves": ["PSYSHOCK","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "houndoom",
+				"fastMove": "SNARL",
+				"chargedMoves": ["CRUNCH","FLAMETHROWER"]
+			},
+			{
+				"speciesId": "pachirisu",
+				"chargedMoves": ["THUNDER_PUNCH","THUNDERBOLT"]
+			},
+			{
+				"speciesId": "raticate",
+				"chargedMoves": ["RETURN","DIG"]
+			},
+			{
+				"speciesId": "lickitung",
+				"chargedMoves": ["HYPER_BEAM","POWER_WHIP"]
+			},
+			{
+				"speciesId": "persian",
+				"chargedMoves": ["FOUL_PLAY","PLAY_ROUGH"]
+			},
+			{
+				"speciesId": "persian_alolan",
+				"chargedMoves": ["FOUL_PLAY","PLAY_ROUGH"]
+			},
+			{
+				"speciesId": "aggron",
+				"chargedMoves": ["HEAVY_SLAM","THUNDER"]
+			},
+			{
+				"speciesId": "heatmor",
+				"chargedMoves": ["POWER_UP_PUNCH","THUNDER_PUNCH"]
+			},
+			{
+				"speciesId": "tyranitar",
+				"chargedMoves": ["CRUNCH","STONE_EDGE"]
+			},
+			{
+				"speciesId": "nidorino",
+				"chargedMoves": ["SLUDGE_BOMB","HORN_ATTACK"]
+			},
+			{
+				"speciesId": "gabite",
+				"chargedMoves": ["FLAMETHROWER","DIG"]
+			},
+			{
+				"speciesId": "purugly",
+				"chargedMoves": ["PLAY_ROUGH","THUNDER"]
+			},
+			{
+				"speciesId": "camerupt",
+				"chargedMoves": ["EARTH_POWER","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "zebstrika",
+				"chargedMoves": ["WILD_CHARGE","DISCHARGE"]
+			},
+			{
+				"speciesId": "arcanine",
+				"fastMove": "SNARL"
+			},
+			{
+				"speciesId": "houndoom",
+				"fastMove": "SNARL"
+			},
+			{
+				"speciesId": "granbull",
+				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "liepard",
+				"fastMove": "CHARM"
+			}
+		]
 	}
 ]

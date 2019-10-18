@@ -499,7 +499,7 @@
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["THUNDER","FUTURE_SIGHT"],
 				"difficulty": 2,
-				"weight":2
+				"weight":1
 			},
 			{
 				"speciesId": "chimecho",
@@ -512,8 +512,8 @@
 				"speciesId": "alakazam",
 				"fastMove": "PSYCHO_CUT",
 				"chargedMoves": ["FIRE_PUNCH","SHADOW_BALL"],
-				"difficulty": 1,
-				"weight":1
+				"difficulty": 2,
+				"weight":2
 			},
 			{
 				"speciesId": "mr_mime",
@@ -534,14 +534,14 @@
 				"fastMove": "WATER_GUN",
 				"chargedMoves": ["PSYCHIC","ICE_BEAM"],
 				"difficulty": 2,
-				"weight":3
+				"weight":1
 			},
 			{
 				"speciesId": "slowbro",
 				"fastMove": "WATER_GUN",
 				"chargedMoves": ["PSYCHIC","WATER_PULSE"],
 				"difficulty": 2,
-				"weight":1
+				"weight":3
 			},
 			{
 				"speciesId": "girafarig",

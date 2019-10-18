@@ -31,6 +31,7 @@
 				<option value="great" class="multi-battle">Great League Meta</option>
 				<option value="ultra" class="hide multi-battle">Ultra League Meta</option>
 				<option value="master" class="hide multi-battle">Master League Meta</option>
+				<option value="ferocious" class="multi-battle">Ferocious Cup Meta</option>
 				<option value="sinister" class="multi-battle">Sinister Cup Meta</option>
 
 				<?php
