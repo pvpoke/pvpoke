@@ -16,10 +16,6 @@
 				"chargedMoves": ["PLAY_ROUGH", "HYDRO_PUMP"]
 			},
 			{
-				"speciesId": "lapras",
-				"chargedMoves": ["SURF", "ICE_BEAM"]
-			},
-			{
 				"speciesId": "medicham",
 				"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
 			},
@@ -38,6 +34,39 @@
 			{
 				"speciesId": "gyarados",
 				"chargedMoves": ["CRUNCH", "OUTRAGE"]
+			},
+			{
+				"speciesId": "bronzong",
+				"chargedMoves": ["PSYSHOCK", "BULLDOZE"]
+			},
+			{
+				"speciesId": "lugia",
+				"chargedMoves": ["SKY_ATTACK", "HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "lapras",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["SURF", "SKULL_BASH"]
+			},
+			{
+				"speciesId": "zapdos",
+				"fastMove": "CHARGE_BEAM"
+			},
+			{
+				"speciesId": "hitmonchan",
+				"chargedMoves": ["POWER_UP_PUNCH", "THUNDER_PUNCH"]
+			},
+			{
+				"speciesId": "ludicolo",
+				"fastMove": "RAZOR_LEAF"
+			},
+			{
+				"speciesId": "magneton",
+				"chargedMoves": ["DISCHARGE", "MAGNET_BOMB"]
+			},
+			{
+				"speciesId": "ferrothorn",
+				"chargedMoves": ["POWER_WHIP", "THUNDER"]
 			},
 			{
 				"speciesId": "hypno",
@@ -1199,6 +1228,10 @@
 			{
 				"speciesId": "pachirisu",
 				"chargedMoves": ["THUNDER_PUNCH","THUNDERBOLT"]
+			},
+			{
+				"speciesId": "raichu_alolan",
+				"chargedMoves": ["THUNDER_PUNCH","GRASS_KNOT"]
 			},
 			{
 				"speciesId": "raticate",

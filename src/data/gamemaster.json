@@ -238,7 +238,7 @@
 		"types": ["fire", "none"],
 		"fastMoves": ["EMBER", "FIRE_FANG", "SCRATCH"],
 		"chargedMoves": ["FIRE_PUNCH", "FLAME_BURST", "FLAMETHROWER", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["SCRATCH"],
+		"legacyMoves": ["SCRATCH", "RETURN", "FRUSTRATION"],
 		"defaultIVs": {
 			"cp1500": [35, 10, 15, 15],
 			"cp2500": [40, 15, 15, 15]
