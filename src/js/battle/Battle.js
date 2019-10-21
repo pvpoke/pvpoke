@@ -1173,12 +1173,17 @@ function Battle(){
 				}
 
 				// If this Pokemon uses a Fast Move, will it be knocked out while on cooldown?
+				var effectiveCooldown = opponent.cooldown;
+				
+				if(opponent.index == 0){
+					effectiveCooldown -= 500;
+				}
 
-				if( (((opponent.cooldown > 0) && (opponent.cooldown < poke.fastMove.cooldown)) || ((opponent.cooldown == 0) && (opponent.fastMove.cooldown < poke.fastMove.cooldown))) && (roundChargedMoveUsed == 0)){
+				if( (((effectiveCooldown > 0) && (effectiveCooldown < poke.fastMove.cooldown)) || ((effectiveCooldown == 0) && (opponent.fastMove.cooldown < poke.fastMove.cooldown))) && (roundChargedMoveUsed == 0)){
 
 					// Can this Pokemon be knocked out by future Fast Moves?
 
-					var availableTime = poke.fastMove.cooldown - opponent.cooldown;
+					var availableTime = poke.fastMove.cooldown - effectiveCooldown;
 					var futureActions = Math.ceil(availableTime / opponent.fastMove.cooldown);
 
 					if(roundChargedMoveUsed > 0){
@@ -1970,6 +1975,7 @@ function Battle(){
 		decisionLog.push({
 			turn: turn,
 			pokemon: pokemon,
+			hp: pokemon.hp,
 			string: string
 		});
 	}
@@ -1981,7 +1987,7 @@ function Battle(){
 		for(var i = 0; i < decisionLog.length; i++){
 			var log = decisionLog[i];
 
-			console.log(log.turn + "\t:\t" + log.pokemon.speciesName + "(" + log.pokemon.index + ") " + log.string);
+			console.log(log.turn + "\t:\t" + log.pokemon.speciesName + "(" + log.hp + ") " + log.string);
 		}
 	}
 
