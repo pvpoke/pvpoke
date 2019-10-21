@@ -27,20 +27,15 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.12.0 (October 9th, 2019)</h4>
+	<h4>v1.12.3 (October 19th, 2019)</h4>
 	<ul>
-		<li>Mechanics have been updated to reflect Fast Move mechanic changes in app version 0.157.0</li>
+		<li>Ferocious Cup rankings and Training Battles are now live!</li>
+		<li>A new Consistency score has been added to the rankings to illustrate which Pokemon are depenendent on shield baiting:</li>
 		<ul>
-			<li>Fast Moves are now guaranteed to register on the last turn of the move, no "overtapping" or "undertapping".</li>
-			<li>Until Charged Move Priority is better understood, CMP is now randomized in Training Battles</li>
+			<li>This score is calculated based on the Pokemon's recommended moveset. It is a function of how much of the Pokemon's total damage output comes from Charged Moves, and how that damage output is impacted by failed baits.</li>
+			<li>The calculation evaluates consistency when both moves are neutral or when either move is resisted (if applicable). For example, Vaporeon has 100 Consistency when spamming Aqua Tail but loses Consistency when Aqua Tail is resisted and Vaporeon can potentially bait with Aqua Tail while reaching for Last Resort.</li>
+			<li>Consistency is incorporated into the overall scores. This should help tone down Pokemon who are heavily dependent on baiting, and better represent Pokemon who are more consistent.</li>
 		</ul>
-		<li>Default simulations are less likely to shield Power-Up Punch baits when the opponent doesn't possess a lethal Charged Move</li>
-		<ul>
-			<li>This corrects some matchups that were previously labeled as "wins" for PUP users but rarely are against opponents who know not to shield (eg. Lucario vs Altaria).</li>
-			<li>As a consequence, PuP users now perform more poorly when shield baiting is enabled.</li>
-		</ul>
-		<li>Pokemon will now bait with Acid Spray when they have Charged Moves that cost the same energy (Alolan Muk with Dark Pulse, Ferrothorn with Power Whip)</li>
-		<li>Tweaked near-faint logic where Pokemon would sometimes use a weaker Charged Moves because they incorrectly calculated they would faint before reaching the more powerful move</li>
 	</ul>
 
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>
