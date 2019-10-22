@@ -8465,6 +8465,7 @@
 		"types": ["ice", "ground"],
 		"fastMoves": ["MUD_SLAP", "POWDER_SNOW"],
 		"chargedMoves": ["AVALANCHE", "BULLDOZE", "STONE_EDGE", "ANCIENT_POWER"],
+		"legacyMoves": ["ANCIENT_POWER"],
 		"defaultIVs": {
 			"cp1500": [16.5, 8, 9, 13],
 			"cp2500": [29, 0, 5, 9]
