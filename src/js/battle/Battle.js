@@ -465,6 +465,7 @@ function Battle(){
 		// Determine actions for both Pokemon
 		var actionsThisTurn = false;
 		var chargedMoveThisTurn = false;
+		var cooldownsToSet = [pokemon[0].cooldown, pokemon[1].cooldown]; // Store cooldown values to set later
 
 		if(turns > lastProcessedTurn){
 			for(var i = 0; i < 2; i++){
@@ -477,6 +478,9 @@ function Battle(){
 					actionsThisTurn = true;
 					if(action.type == "charged"){
 						chargedMoveThisTurn = true;
+					}
+					if(action.type == "fast"){
+						cooldownsToSet[i] += poke.fastMove.cooldown;
 					}
 
 					// Are both Pokemon alive?
@@ -491,6 +495,10 @@ function Battle(){
 				}
 			}
 		}
+		
+		// Set cooldowns for both Pokemon. We do this after move decision making because cooldown values are used in the decision making process
+		pokemon[0].cooldown = cooldownsToSet[0];
+		pokemon[1].cooldown = cooldownsToSet[1];
 
 		// Take actions from the queue to be processed now
 		for(var i = 0; i < queuedActions.length; i++){
@@ -963,7 +971,6 @@ function Battle(){
 			// Set cooldown
 
 			if((action)&&(action.type == "fast")){
-				poke.cooldown = poke.fastMove.cooldown;
 				timeline.push(new TimelineEvent("tap interaction", "Tap", poke.index, time, turns, [2,0]));
 			}
 
@@ -1078,29 +1085,7 @@ function Battle(){
 				self.logDecision(turns, poke, " has " + move.name + " charged");
 
 				// Use charged move if it would KO the opponent
-				var unregisteredDamage = 0; // Search for any unregistered attacks to take into account for opponent's effective HP
-				for(var k = 0; k < queuedActions.length; k++){
-					if((queuedActions[k].actor == poke.index)&&(queuedActions[k].type == "fast")){
-						unregisteredDamage += poke.fastMove.damage;
-					}
-				}
-
-				if((move.damage + unregisteredDamage >= opponent.hp) && (opponent.hp > poke.fastMove.damage) && (! poke.farmEnergy) && (!chargedMoveUsed)){
-					action = new TimelineAction(
-						"charged",
-						poke.index,
-						turns,
-						moveIndex,
-						{shielded: false, buffs: false, priority: poke.priority});
-
-					chargedMoveUsed = true;
-					self.logDecision(turns, poke, " will knock out opponent with " + move.name);
-					return action;
-				}
-
-				// KO opponent with any available charged move
-
-				if((move.damage + unregisteredDamage >= opponent.hp) && (opponent.hp > poke.fastMove.damage) && (! poke.farmEnergy) && (!chargedMoveUsed)){
+				if((move.damage >= opponent.hp) && (! poke.farmEnergy) && (!chargedMoveUsed)){
 					action = new TimelineAction(
 						"charged",
 						poke.index,
@@ -1172,27 +1157,19 @@ function Battle(){
 					}
 				}
 
-				// If this Pokemon uses a Fast Move, will it be knocked out while on cooldown?
-				var effectiveCooldown = opponent.cooldown;
-
-				if(opponent.index == 0){
-					effectiveCooldown -= 500;
-				}
-
-				if( (((effectiveCooldown > 0) && (effectiveCooldown < poke.fastMove.cooldown)) || ((effectiveCooldown == 0) && (opponent.fastMove.cooldown < poke.fastMove.cooldown))) && (roundChargedMoveUsed == 0)){
+				// If this Pokemon uses a Fast Move, will it be knocked out while on cooldown?				
+				if( (((opponent.cooldown > 0) && (opponent.cooldown < poke.fastMove.cooldown)) || ((opponent.cooldown == 0) && (opponent.fastMove.cooldown < poke.fastMove.cooldown))) && (roundChargedMoveUsed == 0)){
 
 					// Can this Pokemon be knocked out by future Fast Moves?
 
-					var availableTime = poke.fastMove.cooldown - effectiveCooldown;
+					var availableTime = poke.fastMove.cooldown - opponent.cooldown;
 					var futureActions = Math.ceil(availableTime / opponent.fastMove.cooldown);
 
 					// If this Pokemon has already acted and they have a 1 turn move, add an action
 
-					if((opponent.index == 0)&&(opponent.cooldown > 0)&&(opponent.fastMove.cooldown == 500)){
+					if(opponent.fastMove.cooldown == 500){
 						futureActions++;
 					}
-
-					self.logDecision(turns, poke, " expects opponent to get  " + futureActions + " future actions");
 
 					if(roundChargedMoveUsed > 0){
 						futureActions = 0;
@@ -1210,6 +1187,10 @@ function Battle(){
 					if(poke.shields == 0){
 						var futureEffectiveEnergy = opponent.energy + (opponent.fastMove.energyGain * (futureActions-1));
 						var futureEffectiveHP = poke.hp - ((futureActions-1) * opponent.fastMove.damage);
+						
+						if(opponent.cooldown == 500){
+							futureEffectiveEnergy += opponent.fastMove.energyGain;
+						}
 
 						for(var j = 0; j < opponent.chargedMoves.length; j++){
 

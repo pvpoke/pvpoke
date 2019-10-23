@@ -114,7 +114,7 @@
 	{
 		"slot": "Water",
 		"synergies": ["Anti-Electric"],
-		"weight": 8,
+		"weight": 6,
 		"pokemon": [
 			{
 				"speciesId": "vaporeon",
@@ -233,7 +233,7 @@
 	{
 		"slot": "Charm",
 		"synergies": ["Water"],
-		"weight": 3,
+		"weight": 6,
 		"pokemon": [
 			{
 				"speciesId": "ninetales_alolan",
@@ -275,13 +275,6 @@
 				"fastMove": "CHARM",
 				"chargedMoves": ["HEAVY_SLAM","EARTHQUAKE"],
 				"difficulty": 2,
-				"weight":2
-			},
-			{
-				"speciesId": "donphan",
-				"fastMove": "CHARM",
-				"chargedMoves": ["HEAVY_SLAM","EARTHQUAKE"],
-				"difficulty": 1,
 				"weight":1
 			},
 			{

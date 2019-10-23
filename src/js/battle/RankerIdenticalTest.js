@@ -82,11 +82,7 @@ var RankerMaster = (function () {
 							if((allowedList.length > 0) && (allowedList.indexOf(pokemon.speciesId) == -1)){
 								continue;
 							}
-							
-							if((cup.types.length > 0) && (cup.types.indexOf(pokemon.types[0]) < 0) && (cup.types.indexOf(pokemon.types[1]) < 0) ){	
-								continue;
-							}
-							
+
 							pokemonList.push(pokemon);
 						}
 					}
