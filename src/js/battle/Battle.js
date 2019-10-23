@@ -1174,7 +1174,7 @@ function Battle(){
 
 				// If this Pokemon uses a Fast Move, will it be knocked out while on cooldown?
 				var effectiveCooldown = opponent.cooldown;
-				
+
 				if(opponent.index == 0){
 					effectiveCooldown -= 500;
 				}
@@ -1185,6 +1185,14 @@ function Battle(){
 
 					var availableTime = poke.fastMove.cooldown - effectiveCooldown;
 					var futureActions = Math.ceil(availableTime / opponent.fastMove.cooldown);
+
+					// If this Pokemon has already acted and they have a 1 turn move, add an action
+
+					if((opponent.index == 0)&&(opponent.cooldown > 0)&&(opponent.fastMove.cooldown == 500)){
+						futureActions++;
+					}
+
+					self.logDecision(turns, poke, " expects opponent to get  " + futureActions + " future actions");
 
 					if(roundChargedMoveUsed > 0){
 						futureActions = 0;

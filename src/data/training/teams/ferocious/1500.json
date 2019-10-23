@@ -138,6 +138,13 @@
 				"weight":4
 			},
 			{
+				"speciesId": "bibarel",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["SURF","HYPDER_BEAM"],
+				"difficulty": 2,
+				"weight":2
+			},
+			{
 				"speciesId": "suicune",
 				"fastMove": "SNARL",
 				"chargedMoves": ["BUBBLE_BEAM","HYDRO_PUMP"],
@@ -329,7 +336,7 @@
 			{
 				"speciesId": "pachirisu",
 				"fastMove": "SPARK",
-				"chargedMoves": ["THUNDER_PUNCH","THUNDER_BOLT"],
+				"chargedMoves": ["THUNDER_PUNCH","THUNDERBOLT"],
 				"difficulty": 3,
 				"weight":4
 			},
@@ -436,14 +443,14 @@
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["FLAMETHROWER","DRAGON_PULSE"],
 				"difficulty": 3,
-				"weight":1
+				"weight":4
 			},
 			{
 				"speciesId": "nidoking",
 				"fastMove": "FURY_CUTTER",
 				"chargedMoves": ["EARTH_POWER","EARTHQUAKE"],
 				"difficulty": 2,
-				"weight":3
+				"weight":2
 			},
 			{
 				"speciesId": "nidoking",
@@ -464,7 +471,14 @@
 				"fastMove": "POISON_JAB",
 				"chargedMoves": ["EARTH_POWER","STONE_EDGE"],
 				"difficulty": 2,
-				"weight":8
+				"weight":10
+			},
+			{
+				"speciesId": "nidoqueen",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["EARTH_POWER","EARtHQUAKE"],
+				"difficulty": 2,
+				"weight":2
 			},
 			{
 				"speciesId": "donphan",
@@ -576,19 +590,33 @@
 				"fastMove": "FIRE_SPIN",
 				"chargedMoves": ["BONE_CLUB","SHADOW_BALL"],
 				"difficulty": 3,
-				"weight":10
+				"weight":6
 			},
 			{
 				"speciesId": "ninetales",
 				"fastMove": "FIRE_SPIN",
 				"chargedMoves": ["PSYSHOCK","SOLAR_BEAM"],
 				"difficulty": 2,
-				"weight":4
+				"weight":2
 			},
 			{
 				"speciesId": "ninetales",
 				"fastMove": "FIRE_SPIN",
 				"chargedMoves": ["PSYSHOCK","FLAMETHROWER"],
+				"difficulty": 2,
+				"weight":3
+			},
+			{
+				"speciesId": "skuntank",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["CRUNCH","SLUDGE_BOMB"],
+				"difficulty": 2,
+				"weight":6
+			},
+			{
+				"speciesId": "skuntank",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["CRUNCH","FLAMETHROWER"],
 				"difficulty": 2,
 				"weight":1
 			},
@@ -639,14 +667,21 @@
 				"fastMove": "METAL_CLAW",
 				"chargedMoves": ["BODY_SLAM","ROCK_SLIDE"],
 				"difficulty": 2,
-				"weight":6
+				"weight":10
 			},
 			{
 				"speciesId": "aggron",
 				"fastMove": "SMACK_DOWN",
 				"chargedMoves": ["HEAVY_SLAM","THUNDER"],
-				"difficulty": 1,
-				"weight":1
+				"difficulty": 2,
+				"weight":3
+			},
+			{
+				"speciesId": "aggron",
+				"fastMove": "SMACK_DOWN",
+				"chargedMoves": ["STONE_EDGE","THUNDER"],
+				"difficulty": 2,
+				"weight":3
 			},
 			{
 				"speciesId": "excadrill",
