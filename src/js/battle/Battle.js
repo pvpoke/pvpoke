@@ -43,6 +43,7 @@ function Battle(){
 	var isPaused = false; // A flag for whether or not to pause the battle
 
 	var roundChargedMoveUsed;
+	var roundChargedMovesInitiated; // used in decision making
 	var roundShieldUsed;
 
 	var chargedMinigameTime = 10000;
@@ -425,6 +426,7 @@ function Battle(){
 		// For display purposes, need to track whether a Pokemon has used a charged move or shield each round
 
 		roundChargedMoveUsed = 0;
+		roundChargedMovesInitiated = 0;
 		roundShieldUsed = false;
 
 		// Hold the actions for both Pokemon this turn
@@ -495,7 +497,7 @@ function Battle(){
 				}
 			}
 		}
-		
+
 		// Set cooldowns for both Pokemon. We do this after move decision making because cooldown values are used in the decision making process
 		pokemon[0].cooldown = cooldownsToSet[0];
 		pokemon[1].cooldown = cooldownsToSet[1];
@@ -978,6 +980,8 @@ function Battle(){
 
 			if(action){
 				if(action.type == "charged"){
+					roundChargedMovesInitiated++;
+
 					// Reset all cooldowns
 					if((opponent.cooldown > 0)&&(! opponent.hasActed)){
 						action.settings.priority += 4;
@@ -1157,7 +1161,7 @@ function Battle(){
 					}
 				}
 
-				// If this Pokemon uses a Fast Move, will it be knocked out while on cooldown?				
+				// If this Pokemon uses a Fast Move, will it be knocked out while on cooldown?
 				if( (((opponent.cooldown > 0) && (opponent.cooldown < poke.fastMove.cooldown)) || ((opponent.cooldown == 0) && (opponent.fastMove.cooldown < poke.fastMove.cooldown))) && (roundChargedMoveUsed == 0)){
 
 					// Can this Pokemon be knocked out by future Fast Moves?
@@ -1171,7 +1175,7 @@ function Battle(){
 						futureActions++;
 					}
 
-					if(roundChargedMoveUsed > 0){
+					if((roundChargedMoveUsed > 0)||(roundChargedMovesInitiated > 0)){
 						futureActions = 0;
 					}
 
@@ -1187,7 +1191,7 @@ function Battle(){
 					if(poke.shields == 0){
 						var futureEffectiveEnergy = opponent.energy + (opponent.fastMove.energyGain * (futureActions-1));
 						var futureEffectiveHP = poke.hp - ((futureActions-1) * opponent.fastMove.damage);
-						
+
 						if(opponent.cooldown == 500){
 							futureEffectiveEnergy += opponent.fastMove.energyGain;
 						}
