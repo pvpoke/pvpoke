@@ -121,7 +121,11 @@ require_once 'header.php';
 	<div class="check on limited hide"><span></span>Show <div class="limited-title">Limited Pokemon</div>*</div>
 	<div class="asterisk limited hide">* Only a limited number of these Pokemon can be selected per team.</div>
 
-	<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon Name or Type" />
+	<div class="poke-search-container">
+		<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />
+		<a href="#" class="search-info">i</a>
+	</div>
+
 
 	<div class="ranking-header">Pokemon</div>
 	<div class="ranking-header right">Score</div>
@@ -137,13 +141,14 @@ require_once 'header.php';
 		<p>As we improve our simulator and ranking algorithms, please note that exact rankings may change. They aren't set-in-stone fact, but a best guess at which Pokemon might or might not be good for Trainer Battles. Ultimately we hope the rankings here are a helpful resource in their own way, and help you build toward succcess.</p>
 		<h2>Using the Pokemon Rankings</h2>
 		<p>In the top-level rankings, you'll see a score for each Pokemon. This score is an overall performance number from 0 to 100, where 100 is the best Pokemon in that league and category. It is derived from simulating every possible matchup, with each Pokemon's most used moveset (these may be manually adjusted). Use this score to compare overall performance between Pokemon; for example, the difference between the #1 and #50 Pokemon may not be the same as the difference between the #50 and #100 Pokemon. This score also allows you to see the parity in different leagues and categories.</p>
-		<p>Trainer Battles feature a wide variety of scenarios, especially involving shields. In order to give a fuller picture, our overall rankings are derived from additional sets of rankings, where battles are simulated with different shield combinations. You can explore rankings for each of the following categories:</p>
+		<p>Trainer Battles feature a wide variety of scenarios, especially involving shields. In order to give a fuller picture, our overall rankings are derived from additional sets of rankings, where battles are simulated with different roles in mind. You can explore rankings for each of the following categories:</p>
 		<ul>
 			<li><b>Overall - </b> Derived from a Pokemon's score in all other categories. Moves are ranked based on usage in every category. Key Counters and Top Matchups, however, are taken from the Leads category.</li>
 			<li><b>Leads - </b> Ranking battles simulated with 2 shields vs. 2 shields.</li>
 			<li><b>Closers - </b> Ranking battles simulated with no shields vs. no shields.</li>
 			<li><b>Attackers - </b> Ranking battles simulated with no shields vs. 2 shields.</li>
 			<li><b>Defenders - </b> Ranking battles simulated with 2 shields vs. no shields.</li>
+			<li><b>Consistency - </b> Rating of how dependent Pokemon are at baiting shields.</li>
 		</ul>
 		<p>Different Pokemon may succeed in different scenarios, so use these categories to help determine when a particular Pokemon would be the most valuable.</p>
 		<p>Within each ranking, you'll see four separate detail sections:</p>
@@ -185,10 +190,45 @@ require_once 'header.php';
 	</div>
 </div>
 
+<div class="sandbox-search-strings hide">
+	<p>You can use the following search formats to filter Pokemon:</p>
+	<table>
+		<tr>
+			<td><strong>Pokemon Name</strong></td>
+			<td>"azumarill"</td>
+		</tr>
+		<tr>
+			<td><strong>Pokemon Type</strong></td>
+			<td>"water"</td>
+		</tr>
+		<tr>
+			<td><strong>Move Name</strong></td>
+			<td>"@counter"</td>
+		</tr>
+		<tr>
+			<td><strong>Move Type</strong></td>
+			<td>"@fighting"</td>
+		</tr>
+		<tr>
+			<td><strong>And</strong></td>
+			<td>"water&amp;@fighting"</td>
+		</tr>
+		<tr>
+			<td><strong>Or</strong></td>
+			<td>"water,fighting"</td>
+		</tr>
+		<tr>
+			<td><strong>Not</strong></td>
+			<td>"!water"</td>
+		</tr>
+	</table>
+</div>
+
 <!--test 2-->
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/RankingInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=<?php echo $SITE_VERSION; ?>"></script>

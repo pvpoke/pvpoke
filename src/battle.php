@@ -291,7 +291,10 @@ require_once 'header.php';
 		<a class="toggle active" href="#">Individual Matchups <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 
 		<div class="toggle-content">
-			<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon Name or Type" />
+			<div class="poke-search-container">
+				<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />
+				<a href="#" class="search-info">i</a>
+			</div>
 			<div class="ranking-header">Opponent</div>
 			<div class="ranking-header right">Battle Rating</div>
 			<div class="rankings-container clear"></div>
@@ -348,6 +351,40 @@ require_once 'header.php';
 		<div class="button yes">Yes</div>
 		<div class="button no">No</div>
 	</div>
+</div>
+
+<div class="sandbox-search-strings hide">
+	<p>You can use the following search formats to filter Pokemon:</p>
+	<table>
+		<tr>
+			<td><strong>Pokemon Name</strong></td>
+			<td>"azumarill"</td>
+		</tr>
+		<tr>
+			<td><strong>Pokemon Type</strong></td>
+			<td>"water"</td>
+		</tr>
+		<tr>
+			<td><strong>Move Name</strong></td>
+			<td>"@counter"</td>
+		</tr>
+		<tr>
+			<td><strong>Move Type</strong></td>
+			<td>"@fighting"</td>
+		</tr>
+		<tr>
+			<td><strong>And</strong></td>
+			<td>"water&amp;@fighting"</td>
+		</tr>
+		<tr>
+			<td><strong>Or</strong></td>
+			<td>"water,fighting"</td>
+		</tr>
+		<tr>
+			<td><strong>Not</strong></td>
+			<td>"!water"</td>
+		</tr>
+	</table>
 </div>
 
 <!--test 2-->

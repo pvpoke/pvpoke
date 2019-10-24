@@ -1817,10 +1817,27 @@ select, input{
 	}
 }
 
-.poke-search{
-	max-width:200px;
-	display:block;
+.poke-search-container{
+	display:flex;
+	
+	.poke-search{
+		max-width:200px;
+		display:block;
+	}
+	
+	a.search-info{
+		text-decoration: none;
+		color:#00171c;
+		border:1px solid #00171c;
+		border-radius:20px;
+		text-align: center;
+		width:15px;
+		height:15px;
+		font-weight: bold;
+		margin-left:5px;
+	}
 }
+
 
 .options{
 	margin: 40px 0 20px 0;

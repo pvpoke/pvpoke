@@ -6,7 +6,7 @@
 			<h3 class="section-title">Options</h3>
 			<select class="shield-select">
 				<option value="0">No shields</option>
-				<option value="1">1 shield</option>
+				<option value="1" selected>1 shield</option>
 				<option value="2">2 shields</option>
 			</select>
 			<select class="charged-count-select">
