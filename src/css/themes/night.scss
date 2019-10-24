@@ -276,6 +276,13 @@ a.toggle{
 	color:$font-color;
 }
 
+.poke-search-container{
+	a.search-info{
+		color:$link-color;
+		border:1px solid $link-color;
+	}
+}
+
 @media only screen and (min-width: 721px){
 	.menu .submenu .submenu-wrap{
 		background:#444;
