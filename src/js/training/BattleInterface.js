@@ -278,7 +278,7 @@ var BattlerMaster = (function () {
 							} else{
 								$poke.find(".pokemon").attr("type-2", pokemon.types[0]);
 							}
-
+							$poke.find(".pokemon").attr("data-pokemon-name", pokemon.speciesId);
 							$(".team-indicator").eq(i).find(".name").html(pokemon.speciesName);
 							$(".team-indicator").eq(i).find(".cp").html("CP " + pokemon.cp);
 						}
