@@ -117,7 +117,7 @@ var InterfaceMaster = (function () {
 							$el.attr("type-2", pokemon.types[1]);
 						}
 
-						$el.attr("data-pokemon-name", pokemon.speciesName.toLowerCase());
+						$el.attr("data-pokemon-name", pokemon.speciesId);
 						$el.addClass("active");
 						$el.find(".name").html(pokemon.speciesName);
 						$el.find(".cp").html("cp " + pokemon.cp);
