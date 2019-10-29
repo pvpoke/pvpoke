@@ -12,7 +12,7 @@ var GameMaster = (function () {
 		object.teamPools = [];
 		object.loadedData = 0;
 
-		$.getJSON( webRoot+"data/gamemaster.json?v=173", function( data ){
+		$.getJSON( webRoot+"data/gamemaster.json?v=174", function( data ){
 			object.data = data;
 
 			// Sort Pokemon alphabetically for searching
@@ -146,7 +146,7 @@ var GameMaster = (function () {
 			var key = cup + "" + category + "" + league;
 
 			if(! object.rankings[key]){
-				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=173";
+				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=174";
 
 				$.getJSON( file, function( data ){
 					object.rankings[key] = data;
@@ -166,7 +166,7 @@ var GameMaster = (function () {
 			var key = group;
 
 			if(! object.groups[key]){
-				var file = webRoot+"data/groups/"+group+".json?v=173";
+				var file = webRoot+"data/groups/"+group+".json?v=174";
 
 				$.getJSON( file, function( data ){
 
@@ -189,7 +189,7 @@ var GameMaster = (function () {
 			var key = league + "" + cup;
 
 			if(! object.teamPools[key]){
-				var file = webRoot+"data/training/teams/"+cup+"/"+league+".json?v=173";
+				var file = webRoot+"data/training/teams/"+cup+"/"+league+".json?v=174";
 
 				$.getJSON( file, function( data ){
 					object.teamPools[key] = data;
@@ -373,53 +373,53 @@ var GameMaster = (function () {
 
 			return pokemonList;
 		}
-		
+
 		// Generate a list of Pokemon given a search string
-		
+
 		object.generatePokemonListFromSearchString = function(str){
 			// Break the search string up into queries
 			var str = str.replace(/, /g, '').toLowerCase();
 			var queries = str.split(',');
 			var results = []; // Store an array of qualifying Pokemon ID's
-			
+
 			var types = ["bug","dark","dragon","electric","fairy","fighting","fire","flying","ghost","grass","ground","ice","normal","poison","psychic","rock","steel","water"];
 			var battle = new Battle();
-			
+
 			for(var i = 0; i < queries.length; i++){
 				var query = queries[i];
 				var params = query.split('&');
-				
+
 				for(var n = 0; n < object.data.pokemon.length; n++){
 					var pokemon = new Pokemon(object.data.pokemon[n].speciesId, 0, battle);
 					var paramsMet = 0;
-					
+
 					for(var j = 0; j < params.length; j++){
 						var param = params[j];
 						var isNot = false;
 						var valid = false;
-						
+
 						if(param.length == 0){
 							if(params.length == 1){
 								paramsMet++;
 							}
 							continue;
 						}
-						
+
 						if((param.charAt(0) == "!")&&(param.length > 1)){
 							isNot = true;
 							param = param.substr(1, param.length-1);
 						}
-						
+
 						// Move search
 						if((param.charAt(0) == "@")&&(param.length > 2)){
 							param = param.substr(1, param.length-1);
-							
+
 							for(var k = 0; k < pokemon.fastMovePool.length; k++){
 								if((pokemon.fastMovePool[k].name.toLocaleLowerCase().startsWith(param))||(pokemon.fastMovePool[k].type == param)){
 									valid = true;
 								}
 							}
-							
+
 							for(var k = 0; k < pokemon.chargedMovePool.length; k++){
 								if((pokemon.chargedMovePool[k].name.toLocaleLowerCase().startsWith(param))||(pokemon.chargedMovePool[k].type == param)){
 									valid = true;
@@ -430,18 +430,18 @@ var GameMaster = (function () {
 								valid = true;
 							}
 						}
-						
+
 						if(((valid)&&(!isNot))||((!valid)&&(isNot))){
 							paramsMet++;
 						}
 					}
-					
+
 					if(paramsMet >= params.length){
 						results.push(pokemon.speciesId);
 					}
 				}
 			}
-			
+
 			return results;
 		}
 
