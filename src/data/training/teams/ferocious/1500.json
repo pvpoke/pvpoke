@@ -565,6 +565,13 @@
 				"weight":1
 			},
 			{
+				"speciesId": "rhyperior",
+				"fastMove": "SMACK_DOWN",
+				"chargedMoves": ["SURF","EARTHQUAKE"],
+				"difficulty": 2,
+				"weight":2
+			},
+			{
 				"speciesId": "marowak_alolan",
 				"fastMove": "FIRE_SPIN",
 				"chargedMoves": ["BONE_CLUB","SHADOW_BALL"],
