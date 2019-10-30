@@ -48,6 +48,12 @@ var InterfaceMaster = (function () {
 
 				this.loadGetData();
 				
+				// Load rankings for the current league
+				
+				if(! get){
+					gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), "all");
+				}
+				
 				window.addEventListener('popstate', function(e) {
 					get = e.state;
 					self.loadGetData();
@@ -194,9 +200,28 @@ var InterfaceMaster = (function () {
 				$(".rate-btn").trigger("click");
 			}
 			
+			// Callback for loading ranking data
+			
+			this.displayRankingData = function(data){
+				console.log("Ranking data loaded");
+				
+				if(multiSelector.getPokemonList().length > 0){
+					self.updateTeamResults();
+					
+					$("html, body").animate({ scrollTop: $(".defense").offset().top }, 500);
+				}
+			}
+			
 			// Update team info output
 			
 			this.updateTeamResults = function(){
+				
+				var key = battle.getCup().name + "overall" + battle.getCP();
+				
+				if(! gm.rankings[key]){
+					gm.loadRankingData(self, "overall", battle.getCP(), battle.getCup().name);
+					return false;
+				}
 				
 				// Get team and validate results
 				
@@ -281,9 +306,31 @@ var InterfaceMaster = (function () {
 					
 					var pokemon = new Pokemon(r.speciesId, 1, battle);
 					pokemon.initialize(true);
+					
+					// Manually set moves if previously selected, otherwise autoselect
+					var moveNameStr = '';
+
+					if(r.moveset){
+						pokemon.selectMove("fast", r.moveset.fastMove.moveId);
+
+						moveNameStr = r.moveset.fastMove.name;
+
+						for(var n = 0; n < r.moveset.chargedMoves.length; n++){
+							pokemon.selectMove("charged", r.moveset.chargedMoves[n].moveId, n);
+
+							moveNameStr += ", " + r.moveset.chargedMoves[n].name;
+						}
+					}
+					
 					counterTeam.push(pokemon);
 					
 					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star\">"+r.rating+"</span></div><div class=\"clear\"></div></div><div class=\"details\"></div>");
+					
+					// Add moveset details if set
+
+					if(r.moveset){
+						$el.find(".name-container").append("<div class=\"moves\">"+moveNameStr+"</div>");
+					}
 
 					$(".rankings-container.threats").append($el);
 				}
@@ -303,7 +350,28 @@ var InterfaceMaster = (function () {
 					
 					var pokemon = new Pokemon(r.speciesId, 1, battle);
 					
+					// Manually set moves if previously selected, otherwise autoselect
+					var moveNameStr = '';
+
+					if(r.moveset){
+						pokemon.selectMove("fast", r.moveset.fastMove.moveId);
+
+						moveNameStr = r.moveset.fastMove.name;
+
+						for(var n = 0; n < r.moveset.chargedMoves.length; n++){
+							pokemon.selectMove("charged", r.moveset.chargedMoves[n].moveId, n);
+
+							moveNameStr += ", " + r.moveset.chargedMoves[n].name;
+						}
+					}
+					
 					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star\">"+r.rating+"</span></div><div class=\"clear\"></div></div><div class=\"details\"></div>");
+					
+					// Add moveset details if set
+
+					if(r.moveset){
+						$el.find(".name-container").append("<div class=\"moves\">"+moveNameStr+"</div>");
+					}
 
 					$(".rankings-container.alternatives").append($el);
 				}

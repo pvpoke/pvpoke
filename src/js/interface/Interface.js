@@ -107,6 +107,12 @@ var InterfaceMaster = (function () {
 				// If get data exists, load settings
 
 				this.loadGetData();
+				
+				// Load rankings for the current league
+				
+				if(! get){
+					gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), "all");
+				}
 
 				window.addEventListener('popstate', function(e) {
 					get = e.state;
@@ -114,6 +120,18 @@ var InterfaceMaster = (function () {
 				});
 
 			};
+			
+			// Callback for loading ranking data
+			
+			this.displayRankingData = function(data){
+				console.log("Ranking data loaded");
+				
+				if(self.battleMode == "multi"){
+					self.generateMultiBattleResults();
+					
+					$("html, body").animate({ scrollTop: $(".battle-results."+self.battleMode).offset().top - 185 }, 500);
+				}
+			}
 
 			// If the opposing Pokemon is changed or updated, update both so damage numbers are accurate
 
@@ -726,6 +744,15 @@ var InterfaceMaster = (function () {
 				var opponentShields = parseInt($(".poke.multi .shield-select option:selected").val());
 				var chargedMoveCount = parseInt($(".poke.multi .charged-count-select option:selected").val());
 				var shieldBaiting = $(".poke.multi .check.shield-baiting").hasClass("on") ? 1 : 0;
+				
+				// Load rankings and movesets
+				
+				var key = cup + "overall" + battle.getCP();
+				
+				if(! gm.rankings[key]){
+					gm.loadRankingData(self, "overall", battle.getCP(), cup);
+					return false;
+				}
 
 				battle.setCup(cup);
 				ranker.setShields(opponentShields);
@@ -914,7 +941,7 @@ var InterfaceMaster = (function () {
 
 				// Send Google Analytics pageview
 
-				gtag('config', UA_ID, {page_location: (host+url), page_path: url});
+				gtag('config', UA_ID, {page_location: (host+url), page_path: url});				
 			}
 
 			// For battles with buffs or debuffs, run bulk sims and return median match
@@ -1277,9 +1304,7 @@ var InterfaceMaster = (function () {
 						$(".battle-btn").trigger("click");
 					}, 500);
 				}
-
-
-
+				
 				if(sandbox){
 					self.runSandboxSim();
 				}
@@ -1361,7 +1386,10 @@ var InterfaceMaster = (function () {
 
 					multiSelector.updateLeague(cp);
 				}
-
+				
+				if(self.battleMode == "single"){
+					gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), "all");
+				}
 			}
 
 			// Event handler for changing the battle mode

@@ -2003,6 +2003,7 @@ select, input{
 .histograms{
     display: flex;
     justify-content: space-around;
+	flex-wrap: wrap;
 
 	.histogram{
 		position:relative;

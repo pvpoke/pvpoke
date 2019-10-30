@@ -1380,7 +1380,8 @@ select, input {
 
 .histograms {
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  flex-wrap: wrap; }
   .histograms .histogram {
     position: relative;
     width: 31%;

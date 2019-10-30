@@ -371,7 +371,8 @@ function PokeSelect(element, i){
 		} else{
 			selectedPokemon.initialize(battle.getCP(), settings.defaultIVs);
 		}
-
+		
+		selectedPokemon.selectRecommendedMoveset();
 
 		if($(".team-build").length == 0){
 			battle.setNewPokemon(selectedPokemon, index);
@@ -510,6 +511,8 @@ function PokeSelect(element, i){
 		if(id){
 			selectedPokemon = new Pokemon(id, index, battle);
 			selectedPokemon.initialize(battle.getCP(), settings.defaultIVs);
+			
+			selectedPokemon.selectRecommendedMoveset();
 
 			if($(".team-build").length == 0){
 				battle.setNewPokemon(selectedPokemon, index);

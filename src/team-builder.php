@@ -45,6 +45,9 @@ require_once 'header.php';
 			<div class="histogram"></div>
 			<div class="histogram"></div>
 			<div class="histogram"></div>
+			<div class="histogram"></div>
+			<div class="histogram"></div>
+			<div class="histogram"></div>
 		</div>
 	</div>
 

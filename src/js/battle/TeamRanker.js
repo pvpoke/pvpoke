@@ -82,6 +82,10 @@ var RankerMaster = (function () {
 				for(var i = 0; i < rankCount; i++){
 
 					var pokemon = pokemonList[i];
+					
+					if(targets.length == 0){
+						pokemon.selectRecommendedMoveset();
+					}
 
 					var rankObj = {
 						speciesId: pokemon.speciesId,
@@ -95,34 +99,30 @@ var RankerMaster = (function () {
 					// Add to CSV
 
 					var name = pokemon.speciesName;
+					var moveset = {
+						fastMove: pokemon.fastMove,
+						chargedMoves: []
+					};
 
-					if(targets.length > 0){
-						var moveset = {
-							fastMove: pokemon.fastMove,
-							chargedMoves: []
-						};
+					name += ' (' + pokemon.fastMove.abbreviation;
 
-						name += ' (' + pokemon.fastMove.abbreviation;
-
-						if(pokemon.chargedMoves.length > 0){
-							name += '+';
-						}
-
-						for(var n = 0; n < pokemon.chargedMoves.length; n++){
-							moveset.chargedMoves.push(pokemon.chargedMoves[n]);
-
-							if(n > 0){
-								name += '/';
-							}
-
-							name += pokemon.chargedMoves[n].abbreviation;
-						}
-
-						rankObj.moveset = moveset;
-
-						name += ')';
-
+					if(pokemon.chargedMoves.length > 0){
+						name += '+';
 					}
+
+					for(var n = 0; n < pokemon.chargedMoves.length; n++){
+						moveset.chargedMoves.push(pokemon.chargedMoves[n]);
+
+						if(n > 0){
+							name += '/';
+						}
+
+						name += pokemon.chargedMoves[n].abbreviation;
+					}
+
+					rankObj.moveset = moveset;
+
+					name += ')';
 
 					csv += '\n' + name;
 
@@ -151,12 +151,8 @@ var RankerMaster = (function () {
 
 						// Force best moves on counters but not on the user's selected Pokemon
 
-						if(targets.length == 0){
-							pokemon.autoSelectMoves(chargedMoveCountOverride);
-						}
-
 						if(team.length > 3){
-							opponent.autoSelectMoves(chargedMoveCountOverride);
+							opponent.selectRecommendedMoveset();
 						}
 
 						pokemon.baitShields = shieldBaitOverride;
@@ -190,7 +186,11 @@ var RankerMaster = (function () {
 							var rating = Math.floor( (healthRating + damageRating) * 500);
 							var opRating = Math.floor( (opHealthRating + opDamageRating) * 500);
 							
-
+							/*if(shieldMode == 'average'){
+								rating = Math.pow(rating, 0.5);
+								opRating = Math.pow(opRating, 0.5);
+							}*/
+							
 							if(isNaN(avgPokeRating)){
 								console.log(battle.getPokemon());
 								return false;
