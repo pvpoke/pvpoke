@@ -72,11 +72,11 @@ function Pokemon(id, i, b){
 	if(data.legacyMoves){
 		this.legacyMoves = data.legacyMoves;
 	}
-	
+
 	// Set tags
-	
+
 	this.tags = [];
-	
+
 	if(data.tags){
 		this.tags = data.tags;
 	}
@@ -259,8 +259,8 @@ function Pokemon(id, i, b){
 		if(untradables.indexOf(self.speciesId) > -1){
 			floor = 10;
 		}
-		
-		if(maxNear1500.indexOf(self.speciesId) > -1){
+
+		if((maxNear1500.indexOf(self.speciesId) > -1)&&(resultCount > 1)){
 			floor = 12;
 		}
 
@@ -426,7 +426,7 @@ function Pokemon(id, i, b){
 
 	// Initialize moves and set their respective damage numbers
 
-	this.resetMoves = function(){		
+	this.resetMoves = function(){
 		for(var i = 0; i < this.fastMovePool.length; i++){
 			this.initializeMove(this.fastMovePool[i]);
 		}
@@ -446,6 +446,14 @@ function Pokemon(id, i, b){
 			}
 
 			self.activeChargedMoves.sort((a,b) => (a.energy > b.energy) ? 1 : ((b.energy > a.energy) ? -1 : 0));
+
+			if(self.activeChargedMoves.length > 1){
+				if((self.activeChargedMoves[1].energy == self.activeChargedMoves[0].energy)&&(self.activeChargedMoves[1].buffs)){
+					var move = self.activeChargedMoves[0];
+					self.activeChargedMoves.splice(0, 1);
+					self.activeChargedMoves.push(move);
+				}
+			}
 
 			self.bestChargedMove = self.activeChargedMoves[0];
 
@@ -563,6 +571,12 @@ function Pokemon(id, i, b){
 			var move = chargedMoves[i];
 
 			move.dpe *= 1 / move.energy;
+
+			// If this move has a guaranteed stat effect, consider that as well
+
+			if((move.buffApplyChance)&&(move.buffApplyChance == 1)){
+				move.dpe *= 2;
+			}
 		}
 
 		if(chargedMoves.length > 0){
@@ -890,9 +904,9 @@ function Pokemon(id, i, b){
 
 		return Math.floor( (500 * ((opponent.stats.hp - opponent.hp) / opponent.stats.hp)) + (500 * (self.hp / self.stats.hp)))
 	}
-	
+
 	// Return whether or not this Pokemon has a specific tag
-	
+
 	this.hasTag = function(tag){
 		return (self.tags.indexOf(tag) > -1);
 	}

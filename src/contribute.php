@@ -32,6 +32,7 @@ require_once 'header.php'; ?>
 		<div class="supporter">KnightsOoofRen</div>
 		<div class="supporter">Vlaada</div>
 		<div class="supporter">FunkyGaaroth</div>
+		<div class="supporter">autonomyfairy</div>
 	</div>
 
 	<h2 class="center">Master Supporters</h2>
@@ -90,6 +91,10 @@ require_once 'header.php'; ?>
 		<div class="supporter-container">
 			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/coloseum.jpg" />
 			<div class="supporter"><a href="https://t.co/LZj6MBjpOe?amp=1" target="_blank">PoGo Colosseum Discord</a></div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/themistervalor.jpg" />
+			<div class="supporter"><a href="https://twitter.com/TheMisterValor" target="_blank">TheMisterValor</a></div>
 		</div>
 	</div>
 </div>

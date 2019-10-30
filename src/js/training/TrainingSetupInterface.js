@@ -3,7 +3,7 @@
 */
 // Load AI archetypes
 
-var file = webRoot+"data/training/teams/featured/featured-september.json?v=8";
+var file = webRoot+"data/training/teams/featured/featured-october.json?v=3";
 var featuredTeams = [];
 
 $.getJSON( file, function( data ){
@@ -117,6 +117,7 @@ var InterfaceMaster = (function () {
 							$el.attr("type-2", pokemon.types[1]);
 						}
 
+						$el.attr("data-pokemon-id", pokemon.speciesId);
 						$el.addClass("active");
 						$el.find(".name").html(pokemon.speciesName);
 						$el.find(".cp").html("cp " + pokemon.cp);
@@ -185,7 +186,7 @@ var InterfaceMaster = (function () {
 
 					return false;
 				}
-				
+
 				if((teamSelectMethod == "featured")&&(! featuredTeam)){
 					modalWindow("Featured Team", $("<p>Please select a featured team to fight.</p>"));
 

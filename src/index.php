@@ -26,14 +26,15 @@
 
 	<!--Update section for updates-->
 	<h3>What's New</h3>
-	
-	<h4>v1.11.6 (September 14th, 2019)</h4>
+
+	<h4>v1.12.5 (October 25th, 2019)</h4>
 	<ul>
-		<li>Generation 5 Pokemon have been added!</li>
+		<li>Pokemon search in the rankings and Multi-Battle results have been adjusted to be closer to in-game search terms:</li>
 		<ul>
-			<li>All Generation 5 Pokemon are available in battle simulations and training battles! Pokemon will be added to the rankings as they are released.</li>
-			
+			<li>Search for Pokemon that know a specific move or type of move with "@move" or "@movetype"</li>
+			<li>Perform search operations with "," "&amp;" or "!"</li>
 		</ul>
+		<li>Shield selection now defaults to 1 shield to hopefully save you a few clicks</li>
 	</ul>
 
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>

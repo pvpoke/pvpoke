@@ -92,7 +92,7 @@
 			<h3 class="section-title">Shields</h3>
 			<select class="shield-select">
 				<option value="0">No shields</option>
-				<option value="1">1 shield</option>
+				<option value="1" selected>1 shield</option>
 				<option value="2">2 shields</option>
 			</select>
 			<a href="#" class="section-title toggle">Options <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>

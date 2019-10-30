@@ -6,7 +6,7 @@
 			<h3 class="section-title">Options</h3>
 			<select class="shield-select">
 				<option value="0">No shields</option>
-				<option value="1">1 shield</option>
+				<option value="1" selected>1 shield</option>
 				<option value="2">2 shields</option>
 			</select>
 			<select class="charged-count-select">
@@ -31,6 +31,7 @@
 				<option value="great" class="multi-battle">Great League Meta</option>
 				<option value="ultra" class="hide multi-battle">Ultra League Meta</option>
 				<option value="master" class="hide multi-battle">Master League Meta</option>
+				<option value="ferocious" class="multi-battle">Ferocious Cup Meta</option>
 				<option value="sinister" class="multi-battle">Sinister Cup Meta</option>
 
 				<?php

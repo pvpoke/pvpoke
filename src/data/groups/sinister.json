@@ -1,20 +1,5 @@
 [
 	{
-		"speciesId":"toxicroak",
-		"fastMove":"COUNTER",
-		"chargedMoves":["MUD_BOMB","SLUDGE_BOMB"]
-	},
-	{
-		"speciesId":"hitmonchan",
-		"fastMove":"COUNTER",
-		"chargedMoves":["POWER_UP_PUNCH","ICE_PUNCH"]
-	},
-	{
-		"speciesId":"lucario",
-		"fastMove":"COUNTER",
-		"chargedMoves":["POWER_UP_PUNCH","SHADOW_BALL"]
-	},
-	{
 		"speciesId":"poliwrath",
 		"fastMove":"MUD_SHOT",
 		"chargedMoves":["POWER_UP_PUNCH","HYDRO_PUMP"]
@@ -22,7 +7,22 @@
 	{
 		"speciesId":"poliwrath",
 		"fastMove":"BUBBLE",
-		"chargedMoves":["POWER_UP_PUNCH","HYDRO_PUMP"]
+		"chargedMoves":["POWER_UP_PUNCH","ICE_PUNCH"]
+	},
+	{
+		"speciesId":"poliwrath",
+		"fastMove":"BUBBLE",
+		"chargedMoves":["DYNAMIC_PUNCH","ICE_PUNCH"]
+	},	
+	{
+		"speciesId":"medicham",
+		"fastMove":"COUNTER",
+		"chargedMoves":["POWER_UP_PUNCH","ICE_PUNCH"]
+	},
+	{
+		"speciesId":"medicham",
+		"fastMove":"COUNTER",
+		"chargedMoves":["DYNAMIC_PUNCH","ICE_PUNCH"]
 	},
 	{
 		"speciesId":"bronzong",
@@ -32,7 +32,7 @@
 	{
 		"speciesId":"claydol",
 		"fastMove":"CONFUSION",
-		"chargedMoves":["GYRO_BALL","EARTH_POWER"]
+		"chargedMoves":["EARTH_POWER","PSYCHIC"]
 	},
 	{
 		"speciesId":"haunter",
@@ -45,6 +45,11 @@
 		"chargedMoves":["BONE_CLUB","SHADOW_BALL"]
 	},
 	{
+		"speciesId":"marowak_alolan",
+		"fastMove":"FIRE_SPIN",
+		"chargedMoves":["BONE_CLUB","SHADOW_BALL"]
+	},
+	{
 		"speciesId":"drifblim",
 		"fastMove":"HEX",
 		"chargedMoves":["OMINOUS_WIND","SHADOW_BALL"]
@@ -52,17 +57,17 @@
 	{
 		"speciesId":"mawile",
 		"fastMove":"BITE",
-		"chargedMoves":["IRON_HEAD","FOUL_PLAY"]
+		"chargedMoves":["POWER_UP_PUNCH","FOUL_PLAY"]
 	},
 	{
 		"speciesId":"banette",
 		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["SHADOW_BALL","THUNDER"]
+		"chargedMoves":["SHADOW_BALL","RETURN"]
 	},
 	{
 		"speciesId":"gallade",
 		"fastMove":"CONFUSION",
-		"chargedMoves":["LEAD_BLADE","CLOSE_COMBAT"]
+		"chargedMoves":["LEAF_BLADE","CLOSE_COMBAT"]
 	},
 	{
 		"speciesId":"cresselia",
@@ -71,7 +76,7 @@
 	},
 	{
 		"speciesId":"lugia",
-		"fastMove":"DRAGON_TAIL",
+		"fastMove":"EXTRASENSORY",
 		"chargedMoves":["SKY_ATTACK","HYDRO_PUMP"]
 	},
 	{
@@ -83,20 +88,25 @@
 		"speciesId":"bastiodon",
 		"fastMove":"SMACK_DOWN",
 		"chargedMoves":["STONE_EDGE","FLAMETHROWER"]
-	},	
+	},
 	{
 		"speciesId":"steelix",
 		"fastMove":"DRAGON_TAIL",
 		"chargedMoves":["CRUNCH","EARTHQUAKE"]
 	},
 	{
+		"speciesId":"steelix",
+		"fastMove":"THUNDER_FANG",
+		"chargedMoves":["CRUNCH","EARTHQUAKE"]
+	},
+	{
 		"speciesId":"probopass",
 		"fastMove":"SPARK",
-		"chargedMoves":["ROCK_SLIDE","MAGNET_BOMB"]
+		"chargedMoves":["ROCK_SLIDE","THUNDERBOLT"]
 	},
 	{
 		"speciesId":"raichu_alolan",
-		"fastMove":"SPARK",
+		"fastMove":"THUNDER_SHOCK",
 		"chargedMoves":["THUNDER_PUNCH","WILD_CHARGE"]
 	},
 	{
@@ -106,7 +116,17 @@
 	},
 	{
 		"speciesId":"dusclops",
+		"fastMove":"HEX",
+		"chargedMoves":["SHADOW_PUNCH","FIRE_PUNCH"]
+	},
+	{
+		"speciesId":"dusclops",
 		"fastMove":"FEINT_ATTACK",
 		"chargedMoves":["SHADOW_PUNCH","FIRE_PUNCH"]
+	},
+	{
+		"speciesId":"girafarig",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["THUNDERBOLT","PSYCHIC"]
 	}
 ]

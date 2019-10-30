@@ -119,7 +119,10 @@ require_once 'header.php'; ?>
 <div class="section white custom-rankings-results">
 	<h3>Rankings</h3>
 
-	<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon Name or Type" />
+	<div class="poke-search-container">
+		<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />
+		<a href="#" class="search-info">i</a>
+	</div>
 
 	<div class="ranking-header">Pokemon</div>
 	<div class="ranking-header right">Score</div>
@@ -152,8 +155,6 @@ require_once 'header.php'; ?>
 	<?php require 'modules/pokemultiselect.php'; ?>
 </div>
 
-
-
 <div class="delete-filter-confirm hide">
 	<p>Remove this filter?</p>
 
@@ -161,6 +162,40 @@ require_once 'header.php'; ?>
 		<div class="button yes">Yes</div>
 		<div class="button no">No</div>
 	</div>
+</div>
+
+<div class="sandbox-search-strings hide">
+	<p>You can use the following search formats to filter Pokemon:</p>
+	<table>
+		<tr>
+			<td><strong>Pokemon Name</strong></td>
+			<td>"azumarill"</td>
+		</tr>
+		<tr>
+			<td><strong>Pokemon Type</strong></td>
+			<td>"water"</td>
+		</tr>
+		<tr>
+			<td><strong>Move Name</strong></td>
+			<td>"@counter"</td>
+		</tr>
+		<tr>
+			<td><strong>Move Type</strong></td>
+			<td>"@fighting"</td>
+		</tr>
+		<tr>
+			<td><strong>And</strong></td>
+			<td>"water&amp;@fighting"</td>
+		</tr>
+		<tr>
+			<td><strong>Or</strong></td>
+			<td>"water,fighting"</td>
+		</tr>
+		<tr>
+			<td><strong>Not</strong></td>
+			<td>"!water"</td>
+		</tr>
+	</table>
 </div>
 
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>

@@ -1,0 +1,842 @@
+[
+	{
+		"slot": "Dark",
+		"synergies": ["Anti-Charm"],
+		"weight": 8,
+		"pokemon": [
+			{
+				"speciesId": "umbreon",
+				"fastMove": "SNARL",
+				"chargedMoves": ["FOUL_PLAY","LAST_RESORT"],
+				"difficulty": 3,
+				"weight":16
+			},
+			{
+				"speciesId": "umbreon",
+				"fastMove": "SNARL",
+				"chargedMoves": ["DARK_PULSE","LAST_RESORT"],
+				"difficulty": 3,
+				"weight":12
+			},
+			{
+				"speciesId": "umbreon",
+				"fastMove": "SNARL",
+				"chargedMoves": ["DARK_PULSE","FOUL_PLAY"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "raticate_alolan",
+				"fastMove": "QUICK_ATTACK",
+				"chargedMoves": ["CRUNCH","HYPER_FANG"],
+				"difficulty": 2,
+				"weight":6
+			},
+			{
+				"speciesId": "raticate_alolan",
+				"fastMove": "QUICK_ATTACK",
+				"chargedMoves": ["CRUNCH","HYPER_BEAM"],
+				"difficulty": 1,
+				"weight":2
+			},
+			{
+				"speciesId": "skuntank",
+				"fastMove": "BITE",
+				"chargedMoves": ["CRUNCH","SLUDGE_BOMB"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "weavile",
+				"fastMove": "SNARL",
+				"chargedMoves": ["AVALANCHE","FOCUS_BLAST"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "mightyena",
+				"fastMove": "THUNDER_FANG",
+				"chargedMoves": ["POISON_FANG","CRUNCH"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "mightyena",
+				"fastMove": "BITE",
+				"chargedMoves": ["POISON_FANG","CRUNCH"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "tyranitar",
+				"fastMove": "SMACK_DOWN",
+				"chargedMoves": ["STONE_EDGE","CRUNCH"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "absol",
+				"fastMove": "SNARL",
+				"chargedMoves": ["DARK_PULSE","THUNDER"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "absol",
+				"fastMove": "SNARL",
+				"chargedMoves": ["DARK_PULSE","THUNDER"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "liepard",
+				"fastMove": "SNARL",
+				"chargedMoves": ["DARK_PULSE","PLAY_ROUGH"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "liepard",
+				"fastMove": "SNARL",
+				"chargedMoves": ["DARK_PULSE","GUNK_SHOT"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "houndoom",
+				"fastMove": "SNARL",
+				"chargedMoves": ["CRUNCH","FLAMETHROWER"],
+				"difficulty": 1,
+				"weight":1
+			}
+		]
+	},
+	{
+		"slot": "Water",
+		"synergies": ["Charm"],
+		"weight": 6,
+		"pokemon": [
+			{
+				"speciesId": "vaporeon",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["AQUA_TAIL","LAST_RESORT"],
+				"difficulty": 3,
+				"weight":12
+			},
+			{
+				"speciesId": "vaporeon",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["AQUA_TAIL","HYDRO_PUMP"],
+				"difficulty": 2,
+				"weight":4
+			},
+			{
+				"speciesId": "bibarel",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["SURF","HYPER_FANG"],
+				"difficulty": 2,
+				"weight":8
+			},
+			{
+				"speciesId": "bibarel",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["SURF","HYPER_BEAM"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "suicune",
+				"fastMove": "SNARL",
+				"chargedMoves": ["BUBBLE_BEAM","HYDRO_PUMP"],
+				"difficulty": 2,
+				"weight":4
+			},
+			{
+				"speciesId": "suicune",
+				"fastMove": "HIDDEN_POWER_GRASS",
+				"chargedMoves": ["BUBBLE_BEAM","HYDRO_PUMP"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "suicune",
+				"fastMove": "HIDDEN_POWER_FIGHTING",
+				"chargedMoves": ["BUBBLE_BEAM","HYDRO_PUMP"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "floatzel",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["AQUA_JET","HYDRO_PUMP"],
+				"difficulty": 1,
+				"weight":1
+			}
+		]
+	},
+	{
+		"slot": "Water-2",
+		"synergies": ["Anti-Charm"],
+		"weight": 1,
+		"pokemon": [
+			{
+				"speciesId": "vaporeon",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["AQUA_TAIL","LAST_RESORT"],
+				"difficulty": 3,
+				"weight":16
+			},
+			{
+				"speciesId": "vaporeon",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["AQUA_TAIL","HYDRO_PUMP"],
+				"difficulty": 1,
+				"weight":2
+			},
+			{
+				"speciesId": "bibarel",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["SURF","HYPER_FANG"],
+				"difficulty": 2,
+				"weight":4
+			},
+			{
+				"speciesId": "suicune",
+				"fastMove": "SNARL",
+				"chargedMoves": ["BUBBLE_BEAM","HYDRO_PUMP"],
+				"difficulty": 2,
+				"weight":8
+			},
+			{
+				"speciesId": "suicune",
+				"fastMove": "HIDDEN_POWER_GRASS",
+				"chargedMoves": ["BUBBLE_BEAM","HYDRO_PUMP"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "suicune",
+				"fastMove": "HIDDEN_POWER_FIGHTING",
+				"chargedMoves": ["BUBBLE_BEAM","HYDRO_PUMP"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "floatzel",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["AQUA_JET","HYDRO_PUMP"],
+				"difficulty": 1,
+				"weight":1
+			}
+		]
+	},
+	{
+		"slot": "Charm",
+		"synergies": ["Water"],
+		"weight": 6,
+		"pokemon": [
+			{
+				"speciesId": "ninetales_alolan",
+				"fastMove": "CHARM",
+				"chargedMoves": ["PSYSHOCK","ICE_BEAM"],
+				"difficulty": 3,
+				"weight":20
+			},
+			{
+				"speciesId": "ninetales_alolan",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["PSYSHOCK","ICE_BEAM"],
+				"difficulty": 2,
+				"weight":2
+			},
+			{
+				"speciesId": "granbull",
+				"fastMove": "CHARM",
+				"chargedMoves": ["CRUNCH","CLOSE_COMBAT"],
+				"difficulty": 2,
+				"weight":3
+			},
+			{
+				"speciesId": "delcatty",
+				"fastMove": "CHARM",
+				"chargedMoves": ["DISARMING_VOICE","WILD_CHARGE"],
+				"difficulty": 2,
+				"weight":4
+			},
+			{
+				"speciesId": "liepard",
+				"fastMove": "CHARM",
+				"chargedMoves": ["DARK_PULSE","PLAY_ROUGH"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "donphan",
+				"fastMove": "CHARM",
+				"chargedMoves": ["HEAVY_SLAM","EARTHQUAKE"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "delcatty",
+				"fastMove": "CHARM",
+				"chargedMoves": ["DISARMING_VOICE","WILD_CHARGE"],
+				"difficulty": 1,
+				"weight":1
+			}
+		]
+	},
+	{
+		"slot": "Anti-Water",
+		"synergies": ["Water"],
+		"weight": 3,
+		"pokemon": [
+			{
+				"speciesId": "minun",
+				"fastMove": "SPARK",
+				"chargedMoves": ["DISCHARGE","THUNDERBOLT"],
+				"difficulty": 3,
+				"weight":14
+			},
+			{
+				"speciesId": "plusle",
+				"fastMove": "SPARK",
+				"chargedMoves": ["DISCHARGE","THUNDERBOLT"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "raichu",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["BRICK_BREAK","WILD_CHARGE"],
+				"difficulty": 2,
+				"weight":6
+			},
+			{
+				"speciesId": "raichu",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["THUNDER_PUNCH","WILD_CHARGE"],
+				"difficulty": 2,
+				"weight":2
+			},
+			{
+				"speciesId": "raichu",
+				"fastMove": "SPARK",
+				"chargedMoves": ["BRICK_BREAK","WILD_CHARGE"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "pachirisu",
+				"fastMove": "SPARK",
+				"chargedMoves": ["THUNDER_PUNCH","THUNDERBOLT"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "raikou",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["WILD_CHARGE","SHADOW_BALL"],
+				"difficulty": 1,
+				"weight":2
+			},
+			{
+				"speciesId": "zebstrika",
+				"fastMove": "SPARK",
+				"chargedMoves": ["WILD_CHARGE","DISCHARGE"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "luxio",
+				"fastMove": "SPARK",
+				"chargedMoves": ["WILD_CHARGE","CRUNCH"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "ampharos",
+				"fastMove": "CHARGE_BEAM",
+				"chargedMoves": ["THUNDER","FOCUS_BLAST"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "jolteon",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["DISCHARGE","LAST_RESORT"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "jolteon",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["DISCHARGE","THUNDER"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "raichu_alolan",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["THUNDER_PUNCH","WILD_CHARGE"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "raichu_alolan",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["THUNDER_PUNCH","GRASS_KNOT"],
+				"difficulty": 2,
+				"weight":2
+			}
+		]
+	},
+	{
+		"slot": "Anti-Electric",
+		"synergies": ["Anti-Charm"],
+		"weight": 1,
+		"pokemon": [
+			{
+				"speciesId": "shelgon",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["FLAMETHROWER","TWISTER"],
+				"difficulty": 3,
+				"weight":2
+			},
+			{
+				"speciesId": "piloswine",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["STONE_EDGE","BULLDOZE"],
+				"difficulty": 2,
+				"weight":2
+			},
+			{
+				"speciesId": "shelgon",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["FLAMETHROWER","DRAGON_PULSE"],
+				"difficulty": 3,
+				"weight":6
+			},
+			{
+				"speciesId": "donphan",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["HEAVY_SLAM","EARTHQUAKE"],
+				"difficulty": 2,
+				"weight":5
+			},
+			{
+				"speciesId": "donphan",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["HEAVY_SLAM","PLAY_ROUGH"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "donphan",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["EARTHQUAKE","PLAY_ROUGH"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "sandslash",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["EARTHQUAKE","BULLDOZE"],
+				"difficulty": 2,
+				"weight":2
+			},
+			{
+				"speciesId": "mamoswine",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["ANCIENT_POWER","AVALANCHE"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "mamoswine",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["BULLDOZE","AVALANCHE"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "hippowdon",
+				"fastMove": "FIRE_FANG",
+				"chargedMoves": ["EARTH_POWER","BODY_SLAM"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "hippowdon",
+				"fastMove": "THUNDER_FANG",
+				"chargedMoves": ["EARTH_POWER","BODY_SLAM"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "marowak",
+				"fastMove": "MUD_SLAP",
+				"chargedMoves": ["BONE_CLUB","EARTHQUAKE"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "marowak",
+				"fastMove": "MUD_SLAP",
+				"chargedMoves": ["BONE_CLUB","EARTHQUAKE"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "rhyperior",
+				"fastMove": "SMACK_DOWN",
+				"chargedMoves": ["SURF","EARTHQUAKE"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "excadrill",
+				"fastMove": "METAL_CLAW",
+				"chargedMoves": ["ROCK_SLIDE","EARTHQUAKE"],
+				"difficulty": 1,
+				"weight":2
+			},
+			{
+				"speciesId": "gabite",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["FLAMETHROWER","DIG"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "camerupt",
+				"fastMove": "EMBER",
+				"chargedMoves": ["EARTH_POWER","SOLAR_BEAM"],
+				"difficulty": 1,
+				"weight":2
+			}
+		]
+	},
+	{
+		"slot": "Anti-Charm",
+		"synergies": ["Anti-Water", "Charm"],
+		"weight": 4,
+		"pokemon": [
+			{
+				"speciesId": "nidoqueen",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["EARTH_POWER","STONE_EDGE"],
+				"difficulty": 2,
+				"weight":20
+			},
+			{
+				"speciesId": "nidoqueen",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["EARTH_POWER","EARtHQUAKE"],
+				"difficulty": 2,
+				"weight":4
+			},
+			{
+				"speciesId": "nidoking",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["EARTH_POWER","MEGAHORN"],
+				"difficulty": 2,
+				"weight":2
+			},
+			{
+				"speciesId": "nidoking",
+				"fastMove": "FURY_CUTTER",
+				"chargedMoves": ["EARTH_POWER","EARTHQUAKE"],
+				"difficulty": 1,
+				"weight":2
+			},
+			{
+				"speciesId": "nidoking",
+				"fastMove": "FURY_CUTTER",
+				"chargedMoves": ["EARTH_POWER","SLUDGE_WAVE"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "nidoking",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["EARTH_POWER","EARTHQUAKE"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "rhyperior",
+				"fastMove": "SMACK_DOWN",
+				"chargedMoves": ["SURF","EARTHQUAKE"],
+				"difficulty": 2,
+				"weight":2
+			},
+			{
+				"speciesId": "marowak_alolan",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["BONE_CLUB","SHADOW_BALL"],
+				"difficulty": 3,
+				"weight":6
+			},
+			{
+				"speciesId": "ninetales",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["PSYSHOCK","SOLAR_BEAM"],
+				"difficulty": 2,
+				"weight":3
+			},
+			{
+				"speciesId": "ninetales",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["PSYSHOCK","FLAMETHROWER"],
+				"difficulty": 2,
+				"weight":3
+			},
+			{
+				"speciesId": "skuntank",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["CRUNCH","SLUDGE_BOMB"],
+				"difficulty": 2,
+				"weight":2
+			},
+			{
+				"speciesId": "skuntank",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["CRUNCH","FLAMETHROWER"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "torkoal",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["EARTHQUAKE","SOLAR_BEAM"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "entei",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["FLAMETRHOWER","IRON_HEAD"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "heatmor",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["POWER_UP_PUNCH","THUNDER_PUNCH"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "sandslash_alolan",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["ICE_PUNCH","BULLDOZE"],
+				"difficulty": 2,
+				"weight":4
+			},
+			{
+				"speciesId": "sandslash_alolan",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["GYRO_BALL","BULLDOZE"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "sandslash_alolan",
+				"fastMove": "METAL_CLAW",
+				"chargedMoves": ["ICE_PUNCH","GYRO_BALL"],
+				"difficulty": 2,
+				"weight":2
+			},
+			{
+				"speciesId": "lairon",
+				"fastMove": "METAL_CLAW",
+				"chargedMoves": ["BODY_SLAM","ROCK_SLIDE"],
+				"difficulty": 2,
+				"weight":10
+			},
+			{
+				"speciesId": "aggron",
+				"fastMove": "SMACK_DOWN",
+				"chargedMoves": ["HEAVY_SLAM","THUNDER"],
+				"difficulty": 2,
+				"weight":3
+			},
+			{
+				"speciesId": "aggron",
+				"fastMove": "SMACK_DOWN",
+				"chargedMoves": ["STONE_EDGE","THUNDER"],
+				"difficulty": 2,
+				"weight":3
+			},
+			{
+				"speciesId": "excadrill",
+				"fastMove": "METAL_CLAW",
+				"chargedMoves": ["ROCK_SLIDE","EARTHQUAKE"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "nidorino",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["HORN_ATTACK","SLUDGE_BOMB"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "nidorino",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["DIG","SLUDGE_BOMB"],
+				"difficulty": 1,
+				"weight":1
+			}
+		]
+	},
+	{
+		"slot": "Flex",
+		"synergies": ["Water", "Anti-Charm"],
+		"weight": 2,
+		"pokemon": [
+			{
+				"speciesId": "skuntank",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["CRUNCH","SLUDGE_BOMB"],
+				"difficulty": 2,
+				"weight":14
+			},
+			{
+				"speciesId": "skuntank",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["CRUNCH","FLAMETHROWER"],
+				"difficulty": 2,
+				"weight":2
+			},
+			{
+				"speciesId": "linoone",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["GRASS_KNOT","DIG"],
+				"difficulty": 3,
+				"weight":8
+			},
+			{
+				"speciesId": "furret",
+				"fastMove": "QUICK_ATTACK",
+				"chargedMoves": ["BRICK_BREAK","HYPER_BEAM"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "furret",
+				"fastMove": "QUICK_ATTACK",
+				"chargedMoves": ["BRICK_BREAK","DIG"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "lickitung",
+				"fastMove": "LICK",
+				"chargedMoves": ["POWER_WHIP","HYPER_BEAM"],
+				"difficulty": 2,
+				"weight":3
+			},
+			{
+				"speciesId": "lickitung",
+				"fastMove": "LICK",
+				"chargedMoves": ["POWER_WHIP","STOMP"],
+				"difficulty": 2,
+				"weight":2
+			},
+			{
+				"speciesId": "lickilicky",
+				"fastMove": "LICK",
+				"chargedMoves": ["EARtHQUAKE","SOLAR_BEAM"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "persian",
+				"fastMove": "SCRATCH",
+				"chargedMoves": ["FOUL_PLAY","PLAY_ROUGH"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "miltank",
+				"fastMove": "TACKLE",
+				"chargedMoves": ["BODY_SLAM","THUNDERBOLT"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "miltank",
+				"fastMove": "TACKLE",
+				"chargedMoves": ["BODY_SLAM","THUNDERBOLT"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "zangoose",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["NIGHT_SLASH","CLOSE_COMBAT"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "zangoose",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["NIGHT_SLASH","DIG"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "purugly",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["PLAY_ROUGH","THUNDER"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "purugly",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["AERIAL_ACE","THUNDER"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "exploud",
+				"fastMove": "BITE",
+				"chargedMoves": ["CRUNCH","DISARMING_VOICE"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "girafarig",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["PSYCHIC","THUNDER"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "kangaskhan",
+				"fastMove": "MUD_SLAP",
+				"chargedMoves": ["EARTHQUAKE","POWER_UP_PUNCH"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "raticate",
+				"fastMove": "QUICK_ATTACK",
+				"chargedMoves": ["RETURN","DIG"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "stoutland",
+				"fastMove": "LICK",
+				"chargedMoves": ["CRUNCH","WILD_CHARGE"],
+				"difficulty": 1,
+				"weight":1
+			}
+		]
+	}
+]

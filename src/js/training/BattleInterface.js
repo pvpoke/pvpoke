@@ -88,7 +88,7 @@ var BattlerMaster = (function () {
 				}
 
 				$(".team-indicator .cmp").hide();
-				$(".team-indicator .cmp").eq(priorityAssignment).show();
+				//$(".team-indicator .cmp").eq(priorityAssignment).show();
 
 				// Set lead pokemon
 				battle.setBattleMode("emulate");
@@ -156,7 +156,7 @@ var BattlerMaster = (function () {
 							charge = 0;
 							phaseTimer = chargeTime;
 							phaseInterval = setInterval(chargeUpStep, 1000 / 60);
-							
+
 							// Clear a previously buffered switch
 							bufferedSwitch = -1;
 							break;
@@ -166,7 +166,7 @@ var BattlerMaster = (function () {
 							phaseTimer = chargeTime;
 							phaseInterval = setInterval(phaseStep, 1000 / 60);
 							interfaceLockout = 750;
-							
+
 							// Clear a previously buffered switch
 							bufferedSwitch = -1;
 							break;
@@ -188,7 +188,7 @@ var BattlerMaster = (function () {
 
 						case "suspend_switch":
 							$(".animate-message .text").html("Opponent is selecting a Pokemon");
-							
+
 							// Clear a previously buffered switch
 							bufferedSwitch = -1;
 							break;
@@ -198,7 +198,7 @@ var BattlerMaster = (function () {
 							phaseInterval = setInterval(phaseStep, 1000 / 60);
 							self.openSwitchWindow();
 							interfaceLockout = 750;
-							
+
 							// Clear a previously buffered switch
 							bufferedSwitch = -1;
 							break;
@@ -278,7 +278,7 @@ var BattlerMaster = (function () {
 							} else{
 								$poke.find(".pokemon").attr("type-2", pokemon.types[0]);
 							}
-
+							$poke.find(".pokemon").attr("data-pokemon-id", pokemon.speciesId);
 							$(".team-indicator").eq(i).find(".name").html(pokemon.speciesName);
 							$(".team-indicator").eq(i).find(".cp").html("CP " + pokemon.cp);
 						}
@@ -356,7 +356,7 @@ var BattlerMaster = (function () {
 						} else{
 							$(".battle-window .switch-btn").removeClass("active");
 							$(".battle-window .switch-btn").html(Math.floor(player.getSwitchTimer() / 1000));
-							
+
 							// Hide the switch window
 							$(".battle-window .switch-window").removeClass("active");
 						}
@@ -464,7 +464,7 @@ var BattlerMaster = (function () {
 				} else{
 					$(".controls .auto-tap").removeClass("active");
 				}
-				
+
 				// Queue a previously entered switch
 				if(bufferedSwitch > -1){
 					battle.queueAction(0, "switch", bufferedSwitch);
@@ -639,7 +639,7 @@ var BattlerMaster = (function () {
 				var battleSummaryStr = battle.getCup().name + " " + battle.getCP() + " difficulty " + (players[1].getAI().getLevel()+1);
 
 				// Report the overall battle result
-				
+
 				if(properties.featuredTeam !== null){
 					gtag('event', battleSummaryStr, {
 					  'event_category' : 'Training Battle',
@@ -714,14 +714,6 @@ var BattlerMaster = (function () {
 
 					}
 
-					gtag('event', battleSummaryStr, {
-					  'event_category' : 'Training Pokemon',
-					  'event_label' : pokeStr,
-					  'value' : score+'',
-					  'player_type': playerType,
-					  'team_position': n+1
-					});
-
 					// Alphabetize the last two Pokemon on the team and build the team string
 					backupPokeStrs.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
 
@@ -749,6 +741,47 @@ var BattlerMaster = (function () {
 					gtag('event', battleSummaryStr, {
 					  'event_category' : 'Training Team',
 					  'event_label' : teamStrs[i],
+					  'value' : battleRating+'',
+					  'player_type': playerType,
+					});
+
+					// Organize rosteer to report teams of 6
+
+					var roster = players[i].getRoster();
+					var pokeStrArr = [];
+
+					for(var n = 0; n < roster.length; n++){
+						var pokemon = roster[n];
+						var pokeStr = pokemon.speciesName + ' ' + pokemon.fastMove.abbreviation;
+						var chargedMoveAbbrevations = [];
+
+						for(var k = 0; k < pokemon.chargedMoves.length; k++){
+							chargedMoveAbbrevations.push(pokemon.chargedMoves[k].abbreviation);
+						}
+
+						// Sort alphabetically
+						chargedMoveAbbrevations.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
+
+						for(var k = 0; k < chargedMoveAbbrevations.length; k++){
+							if(k == 0){
+								pokeStr += "+" + chargedMoveAbbrevations[k];
+							} else{
+								pokeStr += "/" + chargedMoveAbbrevations[k];
+							}
+						}
+
+						pokeStrArr.push(pokeStr);
+					}
+
+					// Alphabetize the roster names
+					pokeStrArr.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
+
+					var rosterStr = pokeStrArr.join(" ");
+
+
+					gtag('event', battleSummaryStr, {
+					  'event_category' : 'Training Roster',
+					  'event_label' : rosterStr,
 					  'value' : battleRating+'',
 					  'player_type': playerType,
 					});

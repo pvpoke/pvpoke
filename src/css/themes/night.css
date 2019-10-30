@@ -178,6 +178,10 @@ a.toggle {
   background: #222;
   color: #eee; }
 
+.poke-search-container a.search-info {
+  color: #30b5ab;
+  border: 1px solid #30b5ab; }
+
 @media only screen and (min-width: 721px) {
   .menu .submenu .submenu-wrap {
     background: #444; } }

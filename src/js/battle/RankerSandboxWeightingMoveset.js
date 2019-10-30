@@ -28,6 +28,8 @@ var RankerMaster = (function () {
 			var currentLeagueIndex = 0;
 			var currentShieldsIndex = 0;
 
+			var startTime = 0; // For debugging and performance testing
+
 			var pokemonList = [];
 
 			var self = this;
@@ -63,6 +65,8 @@ var RankerMaster = (function () {
 			}
 
 			this.initPokemonList = function(cp){
+				startTime = Date.now();
+
 				pokemonList = [];
 				var cup = battle.getCup();
 
@@ -75,11 +79,15 @@ var RankerMaster = (function () {
 					pokemonList = gm.generateFilteredPokemonList(battle, cup.include, cup.exclude, rankingData, overrides);
 				}
 
+				console.log("List generated in: " + (Date.now() - startTime));
+
 			}
 
 			// Run all ranking sets at once
 
 			this.rankLoop = function(cp, cup, callback, data){
+
+				startTime = Date.now();
 
 				battle.setCP(cp);
 				if(cup.name != "custom"){
@@ -129,8 +137,12 @@ var RankerMaster = (function () {
 					if((rankingCombinations.length == currentRankings)&&(rankingCombinations.length > 0)){
 						currentRankings--;
 
+						startTime = Date.now();
+
 						var r = self.rank(rankingCombinations[0].league, rankingCombinations[0].shields);
 						allResults.push(r);
+
+						console.log("Total time: " + (Date.now() - startTime));
 
 						rankingCombinations.splice(0, 1);
 
@@ -224,6 +236,7 @@ var RankerMaster = (function () {
 
 						battle.simulate();
 
+
 						// Calculate Battle Rating for each Pokemon
 
 						var healthRating = (pokemon.hp / pokemon.stats.hp);
@@ -310,6 +323,7 @@ var RankerMaster = (function () {
 					avg = Math.floor(avg / rankCount);
 
 					rankObj.rating = avg;
+					rankObj.scores = [avg];
 
 					// Push all moves into moveset
 
@@ -365,11 +379,6 @@ var RankerMaster = (function () {
 
 				if(shieldCounts[0] != shieldCounts[1]){
 					// iterations = 0;
-				}
-
-				for(var i = 0; i < rankCount; i++){
-					var rating = rankings[i].rating;
-					rankings[i].scores = [rating];
 				}
 
 				// Iterate through the rankings and weigh each matchup Battle Rating by the average rating of the opponent

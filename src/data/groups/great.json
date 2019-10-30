@@ -6,7 +6,7 @@
 	},
 	{
 		"speciesId":"tropius",
-		"fastMove":"RAZOR_LEAF",
+		"fastMove":"AIR_SLASH",
 		"chargedMoves":["LEAF_BLADE","AERIAL_ACE"]
 	},
 	{
@@ -52,7 +52,7 @@
 	{
 		"speciesId":"jirachi",
 		"fastMove":"CONFUSION",
-		"chargedMoves":["DOOM_DESIRE","DAZZLING_GLEAM"]
+		"chargedMoves":["DOOM_DESIRE","PSYCHIC"]
 	},
 	{
 		"speciesId":"melmetal",
@@ -168,5 +168,10 @@
 		"speciesId":"lugia",
 		"fastMove":"DRAGON_TAIL",
 		"chargedMoves":["SKY_ATTACK","FUTURE_SIGHT"]
+	},
+	{
+		"speciesId":"mantine",
+		"fastMove":"BUBBLE",
+		"chargedMoves":["BUBBLE_BEAM","ICE_BEAM"]
 	}
 ]

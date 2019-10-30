@@ -164,7 +164,7 @@ header{
 			background-size: contain;
 			font-weight:bold;
 		}
-		
+
 		.parent-menu{
 			position:relative;
 		}
@@ -673,7 +673,7 @@ header{
 		.poke-stats{
 			display:block;
 		}
-		
+
 		.format-select{
 			margin-top:62px;
 		}
@@ -1579,7 +1579,6 @@ select, input{
 }
 
 .rankings-container {
-
 	margin-top:20px;
 	max-height:400px;
 	overflow-y:scroll;
@@ -1604,11 +1603,11 @@ select, input{
 	&.hide{
 		display:none !important;
 	}
-	
+
 	&.selected .expand-label:after{
 		content:"-";
 	}
-	
+
 	.expand-label{
 		position: absolute;
 		color: rgba(255,255,255,.65);
@@ -1617,7 +1616,7 @@ select, input{
 		top: 10px;
 		width: 14px;
 		text-align: center;
-		
+
 		&:after{
 			content:"+";
 		}
@@ -1712,17 +1711,19 @@ select, input{
 			&.overall{
 				width: 100%;
 				display: flex;
+				flex-wrap: wrap;
 				justify-content: space-around;
 
 				.rating-container{
 					text-align:center;
+					padding:5px;
 
 					.ranking-header{
 						float:none;
 						margin: 0;
 						width: 100%;
 						padding: 0 5px;
-						font-size: 12px;
+						font-size: 14px;
 					}
 
 					.rating{
@@ -1817,10 +1818,27 @@ select, input{
 	}
 }
 
-.poke-search{
-	max-width:200px;
-	display:block;
+.poke-search-container{
+	display:flex;
+	
+	.poke-search{
+		max-width:200px;
+		display:block;
+	}
+	
+	a.search-info{
+		text-decoration: none;
+		color:#00171c;
+		border:1px solid #00171c;
+		border-radius:20px;
+		text-align: center;
+		width:15px;
+		height:15px;
+		font-weight: bold;
+		margin-left:5px;
+	}
 }
+
 
 .options{
 	margin: 40px 0 20px 0;
@@ -2947,12 +2965,12 @@ a.toggle{
 	h3{
 		margin-top:0;
 	}
-	
+
 	textarea.import{
 		width:100%;
 		height:100px;
 	}
-	
+
 	.copy{
 		display:inline-block;
 		cursor: pointer;
@@ -2979,11 +2997,11 @@ a.toggle{
 				content:"...";
 			}
 		}
-		
+
 		.parent-menu{
 			float:left;
-			
-			
+
+
 			.submenu .icon-rankings{
 				font-size:14px;
 			}
@@ -3019,9 +3037,12 @@ a.toggle{
 			}
 		}
 	}
-	
+
 	.rank .details .detail-section.overall .rating-container .ranking-header{
 		font-size:16px;
 	}
 
+	.rankings-container{
+		max-height:800px;
+	}
 }

@@ -117,7 +117,11 @@ var InterfaceMaster = (function () {
 					var arr = r.moveStr.split("-");
 					var move = pokemon.chargedMovePool[arr[1]-1];
 
-					moveNameStr = pokemon.fastMovePool[arr[0]].name + ", " + move.name;
+					moveNameStr = pokemon.fastMovePool[arr[0]].name;
+					if(pokemon.fastMovePool[arr[0]].legacy){
+						moveNameStr += "*";
+					}
+					moveNameStr += ", " + move.name;
 					if(move.legacy){
 						moveNameStr += "*";
 					}
@@ -129,8 +133,8 @@ var InterfaceMaster = (function () {
 						if(move.legacy){
 							moveNameStr += "*";
 						}
-						
-						
+
+
 					}
 
 					// Is this the best way to add HTML content? I'm gonna go with no here. But does it work? Yes!
@@ -311,7 +315,7 @@ var InterfaceMaster = (function () {
 				} else{
 					$(".cup-select").show();
 				}
-				
+
 				var cp = $(".league-select option:selected").val();
 				var category = $(".ranking-categories a.selected").attr("data");
 				if(! cup){
@@ -379,7 +383,7 @@ var InterfaceMaster = (function () {
 				// If overall, display score for each category
 
 				if(r.scores){
-					var categories = ["Lead","Closer","Attacker","Defender"];
+					var categories = ["Lead","Closer","Attacker","Defender","Consistency"];
 
 					var $section = $("<div class=\"detail-section overall\"></div>");
 
