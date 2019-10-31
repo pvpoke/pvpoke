@@ -93,6 +93,7 @@ var RankerMaster = (function () {
 						types: pokemon.types,
 						rating: 0,
 						opRating: 0,
+						matchups: [],
 						index: i
 					};
 
@@ -209,6 +210,10 @@ var RankerMaster = (function () {
 						opponentRating = avgOpRating;
 
 						teamRatings[n].push(avgOpRating);
+						rankObj.matchups.push({
+							opponent: pokemon,
+							rating: avgOpRating
+							});
 					}
 
 					avg = Math.floor(avg / team.length);
