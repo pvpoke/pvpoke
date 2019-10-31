@@ -98,6 +98,88 @@ var InterfaceMaster = (function () {
 								pokeSelectors[2].setPokemon(val);
 								break;
 								
+							case "t":
+								// Add each team member to the multi-selector
+								var list = val.split(",");
+								var pokeList = [];
+								
+								for(var i = 0; i < list.length; i++){
+									var arr = list[i].split('-');
+									var pokemon = new Pokemon(arr[0], index, battle);
+
+									pokemon.initialize(battle.getCP());
+									
+									if(arr.length >= 8){
+										pokemon.setIV("atk", arr[2]);
+										pokemon.setIV("def", arr[3]);
+										pokemon.setIV("hp", arr[4]);
+										pokemon.setLevel(arr[1]);
+									}
+									
+									// Split out the move string and select moves
+									
+									var moveStr = list[i].split("m-")[1];
+									arr = moveStr.split("-");
+									
+									// Legacy move construction
+
+									if(arr.length <= 1){
+										arr = val.split('');
+									}
+									
+									// Search string for any custom moves to add
+									var customMoveIndexes = [];
+
+									for(var n = 0; n < arr.length; n++){
+										if(arr[n].match('([A-Z_]+)')){
+											var move = gm.getMoveById(arr[i]);
+											var movePool = (move.energyGain > 0) ? pokemon.fastMovePool : pokemon.chargedMovePool;
+											var moveType = (move.energyGain > 0) ? "fast" : "charged";
+											var moveIndex = 0;
+
+											if(arr[i+1]){
+												moveIndex = parseInt(arr[i+1]);
+											}
+
+											pokemon.addNewMove(arr[i], movePool, true, moveType, moveIndex);
+											customMoveIndexes.push(moveIndex);
+										}
+									}
+									
+									pokemon.selectMove("fast", pokemon.fastMovePool[arr[0]].moveId, 0);
+									
+									for(var n = 1; n < arr.length; n++){
+										// Don't set this move if already set as a custom move
+
+										if(customMoveIndexes.indexOf(n-1) > -1){
+											continue;
+										}
+										
+										
+										var moveId = "none";
+										
+										if(arr[n] > 0){
+											moveId = pokemon.chargedMovePool[arr[n]-1].moveId;
+										}
+
+										if(moveId != "none"){
+											pokemon.selectMove("charged", moveId, n-1);
+										} else{
+											if((arr[1] == "0")&&(arr[2] == "0")){
+												pokemon.selectMove("charged", moveId, 0); // Always deselect the first move because removing it pops the 2nd move up
+											} else{
+												pokemon.selectMove("charged", moveId, n-1);
+											}
+										}
+
+									}
+									
+									pokeList.push(pokemon);
+								}
+								
+								multiSelector.setPokemonList(pokeList);
+								break;
+								
 							case "cp":
 								$(".league-select option[value=\""+val+"\"]").prop("selected","selected");
 								$(".league-select").trigger("change");
@@ -738,16 +820,16 @@ var InterfaceMaster = (function () {
 						
 						var poke = pokes[i];
 
-						moveStrs.push(generateURLMoveStr(poke));
+						moveStrs.push(poke.generateURLMoveStr());
 						
-						teamStr += pokes[i].speciesId + "/";
+						teamStr += pokes[i].generateURLPokeStr("team-builder");
+						
+						if(i < pokes.length - 1){
+							teamStr += "%2C";
+						}
 					}
 					
 					// Add move strings to URL
-					
-					for(var i = 0; i < moveStrs.length; i++){
-						teamStr += moveStrs[i] + "/";
-					}
 
 					var link = host + teamStr;
 
@@ -793,32 +875,6 @@ var InterfaceMaster = (function () {
 
 					},10);
 
-			}
-			
-			// Gemerate a URL moveset string given a Pokemon
-			
-			function generateURLMoveStr(pokemon){
-				var moveStr = '';
-
-				var fastMoveIndex = pokemon.fastMovePool.indexOf(pokemon.fastMove);
-				var chargedMove1Index = pokemon.chargedMovePool.indexOf(pokemon.chargedMoves[0])+1;
-				var chargedMove2Index = pokemon.chargedMovePool.indexOf(pokemon.chargedMoves[1])+1;
-					
-				moveStr = fastMoveIndex + "-" + chargedMove1Index + "-" + chargedMove2Index;
-				
-				// Check for any custom moves;
-				
-				if(pokemon.fastMove.isCustom){
-					moveStr += "-" + pokemon.fastMove.moveId;
-				}
-				
-				for(var i = 0; i < pokemon.chargedMoves.length; i++){
-					if(pokemon.chargedMoves[i].isCustom){
-						moveStr += "-" + pokemon.chargedMoves[i].moveId + "-" + i;
-					}
-				}
-				
-				return moveStr;
 			}
 		};
 		

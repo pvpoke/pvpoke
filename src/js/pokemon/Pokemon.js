@@ -650,7 +650,13 @@ function Pokemon(id, i, b){
 	// Obtain a Pokemon's recommended moveset from the rankings and select them
 	
 	this.selectRecommendedMoveset = function(){
-		var key = battle.getCup().name + "overall" + battle.getCP();
+		var cupName = "all";
+		
+		if(battle.getCup()){
+			cupName = battle.getCup().name;
+		}
+		
+		var key = cupName + "overall" + battle.getCP();
 		
 		if(! gm.rankings[key]){
 			console.log("Ranking data not loaded yet");
@@ -938,5 +944,60 @@ function Pokemon(id, i, b){
 
 	this.hasTag = function(tag){
 		return (self.tags.indexOf(tag) > -1);
+	}
+	
+	// Output a string of numbers for URL building and recreating a Pokemon
+
+	this.generateURLPokeStr = function(context){
+		var pokeStr = self.speciesId;
+
+		if((self.isCustom)||(self.startStatBuffs[0] != 0)||(self.startStatBuffs[1] != 0)){
+			var arr = [self.level];
+
+			arr.push(self.ivs.atk, self.ivs.def, self.ivs.hp, self.startStatBuffs[0]+gm.data.settings.maxBuffStages, self.startStatBuffs[1]+gm.data.settings.maxBuffStages, self.baitShields ? 1 : 0);
+
+			// Stat buffs are increased by 4 so the URL doesn't have to deal with parsing negative numbers
+
+			var str = arr.join("-");
+
+			pokeStr += "-" + str;
+		}
+
+		if(self.priority != 0){
+			pokeStr += "-p";
+		}
+		
+		if(context == "team-builder"){
+			pokeStr += "-m-" + self.generateURLMoveStr();
+		}
+
+		return pokeStr;
+	}
+	
+
+	// Output a string of numbers for URL building and recreating a moveset
+
+	this.generateURLMoveStr = function(){
+		var moveStr = '';
+
+		var fastMoveIndex = self.fastMovePool.indexOf(self.fastMove);
+		var chargedMove1Index = self.chargedMovePool.indexOf(self.chargedMoves[0])+1;
+		var chargedMove2Index = self.chargedMovePool.indexOf(self.chargedMoves[1])+1;
+
+		moveStr = fastMoveIndex + "-" + chargedMove1Index + "-" + chargedMove2Index;
+
+		// Check for any custom moves;
+
+		if(self.fastMove.isCustom){
+			moveStr += "-" + self.fastMove.moveId;
+		}
+
+		for(var i = 0; i < self.chargedMoves.length; i++){
+			if(self.chargedMoves[i].isCustom){
+				moveStr += "-" + self.chargedMoves[i].moveId + "-" + i;
+			}
+		}
+
+		return moveStr;
 	}
 }

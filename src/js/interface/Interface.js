@@ -374,7 +374,7 @@ var InterfaceMaster = (function () {
 					var moveStrs = [];
 
 					for(var i = 0; i < pokes.length; i++){
-						moveStrs.push(generateURLMoveStr(pokes[i]));
+						moveStrs.push(pokes[i].generateURLMoveStr());
 					}
 
 					var battleStr = self.generateSingleBattleLinkString(false);
@@ -427,8 +427,8 @@ var InterfaceMaster = (function () {
 				var moveStrs = [];
 
 				for(var i = 0; i < pokes.length; i++){
-					pokeStrs.push(generateURLPokeStr(pokes[i], i));
-					moveStrs.push(generateURLMoveStr(pokes[i]));
+					pokeStrs.push(pokes[i].generateURLPokeStr());
+					moveStrs.push(pokes[i].generateURLMoveStr());
 				}
 
 				var battleStr = "battle/";
@@ -782,8 +782,8 @@ var InterfaceMaster = (function () {
 				var data = ranker.rank(team, battle.getCP(), battle.getCup());
 				var rankings = data.rankings;
 				var shieldStr = poke.startingShields + "" + opponentShields;
-				var pokeStr = generateURLPokeStr(poke, 0);
-				var moveStr = generateURLMoveStr(poke);
+				var pokeStr = poke.generateURLPokeStr();
+				var moveStr = poke.generateURLMoveStr();
 
 				csv = data.csv;
 
@@ -838,8 +838,8 @@ var InterfaceMaster = (function () {
 						pokemon.isCustom = true;
 					}
 
-					var opPokeStr = generateURLPokeStr(pokemon, 1);
-					var opMoveStr = generateURLMoveStr(pokemon);
+					var opPokeStr = pokemon.generateURLPokeStr();
+					var opMoveStr = pokemon.generateURLMoveStr();
 
 					var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
 
@@ -1752,56 +1752,6 @@ var InterfaceMaster = (function () {
 
 				$("html, body").animate({ scrollTop: $(".poke").offset().top - 30 }, 500);
 
-			}
-
-			// Given a Pokemon, output a string of numbers for URL building
-
-			function generateURLMoveStr(pokemon){
-				var moveStr = '';
-
-				var fastMoveIndex = pokemon.fastMovePool.indexOf(pokemon.fastMove);
-				var chargedMove1Index = pokemon.chargedMovePool.indexOf(pokemon.chargedMoves[0])+1;
-				var chargedMove2Index = pokemon.chargedMovePool.indexOf(pokemon.chargedMoves[1])+1;
-
-				moveStr = fastMoveIndex + "-" + chargedMove1Index + "-" + chargedMove2Index;
-
-				// Check for any custom moves;
-
-				if(pokemon.fastMove.isCustom){
-					moveStr += "-" + pokemon.fastMove.moveId;
-				}
-
-				for(var i = 0; i < pokemon.chargedMoves.length; i++){
-					if(pokemon.chargedMoves[i].isCustom){
-						moveStr += "-" + pokemon.chargedMoves[i].moveId + "-" + i;
-					}
-				}
-
-				return moveStr;
-			}
-
-			// Given a Pokemon, output a string of numbers for URL building
-
-			function generateURLPokeStr(pokemon, index){
-				var pokeStr = pokemon.speciesId;
-
-				if((pokemon.isCustom)||(pokemon.startStatBuffs[0] != 0)||(pokemon.startStatBuffs[1] != 0)){
-					var arr = [pokemon.level];
-
-					arr.push(pokemon.ivs.atk, pokemon.ivs.def, pokemon.ivs.hp, pokemon.startStatBuffs[0]+gm.data.settings.maxBuffStages, pokemon.startStatBuffs[1]+gm.data.settings.maxBuffStages, pokemon.baitShields ? 1 : 0);
-
-					// Stat buffs are increased by 4 so the URL doesn't have to deal with parsing negative numbers
-
-					var str = arr.join("-");
-
-					pokeStr += "-" + str;
-				}
-
-				if(pokemon.priority != 0){
-					pokeStr += "-p";
-				}
-
-				return pokeStr;
 			}
 
 			// Toggle Sandbox Mode on or off

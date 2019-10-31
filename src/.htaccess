@@ -32,6 +32,7 @@ RewriteRule ^rankings.?$ rankings.php [L,QSA]
 RewriteRule team-builder/([a-zA-Z0-9-]+)/(\d+)/([a-zA-Z_]+)/([a-zA-Z_]+)/([a-zA-Z_]+)/([\da-zA-Z_-]+)/([\da-zA-Z_-]+)/([\da-zA-Z_-]+).*$ team-builder.php?cup=$1&cp=$2&p1=$3&p2=$4&p3=$5&m1=$6&m2=$7&m3=$8 [L,QSA]
 RewriteRule team-builder/([a-zA-Z0-9-]+)/(\d+)/([a-zA-Z_]+)/([a-zA-Z_]+)/([\da-zA-Z_-]+)/([\da-zA-Z_-]+).*$ team-builder.php?cup=$1&cp=$2&p1=$3&p2=$4&m1=$5&m2=$6 [L,QSA]
 RewriteRule team-builder/([a-zA-Z0-9-]+)/(\d+)/([a-zA-Z_]+)/([\da-zA-Z_-]+).*$ team-builder.php?cup=$1&cp=$2&p1=$3&m1=$4 [L,QSA]
+RewriteRule team-builder/([a-zA-Z0-9-]+)/(\d+)/([a-zA-Z_\-0-9,\.]+).*$ team-builder.php?cup=$1&cp=$2&t=$3 [L,QSA]
 RewriteRule team-builder.?$ team-builder.php [L,QSA]
 
 
