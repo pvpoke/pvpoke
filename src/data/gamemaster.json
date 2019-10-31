@@ -12719,6 +12719,14 @@
 		"energyGain": 0,
 		"cooldown": 500
 	}, {
+		"moveId": "GIGA_IMPACT",
+		"name": "Giga Impact",
+		"type": "normal",
+		"power": 150,
+		"energy": 80,
+		"energyGain": 0,
+		"cooldown": 500
+	}, {
 		"moveId": "GRASS_KNOT",
 		"name": "Grass Knot",
 		"type": "grass",
@@ -13064,6 +13072,14 @@
 		"power": 3,
 		"energy": 0,
 		"energyGain": 3,
+		"cooldown": 500
+	}, {
+		"moveId": "LOCK_ON",
+		"name": "Lock On",
+		"type": "normal",
+		"power": 1,
+		"energy": 0,
+		"energyGain": 6,
 		"cooldown": 500
 	}, {
 		"moveId": "LOW_KICK",
