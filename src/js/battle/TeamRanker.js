@@ -128,6 +128,7 @@ var RankerMaster = (function () {
 					csv += '\n' + name;
 
 					var avg = 0;
+					var matchupScore = 0; // A softer representation of wins/losses used for team builder threats and alternatives
 					var opponentRating = 0;
 
 					// Simulate battle against each Pokemon
@@ -208,25 +209,38 @@ var RankerMaster = (function () {
 
 						avg += avgPokeRating;
 						opponentRating = avgOpRating;
+						
+						var score = 500;
+						
+						if(avgPokeRating > 500){
+							score = 500 + Math.pow(avgPokeRating - 500, .75);
+						} else{
+							score = avgPokeRating / 2;
+						}
+						
+						matchupScore += score;
 
 						teamRatings[n].push(avgOpRating);
 						rankObj.matchups.push({
-							opponent: pokemon,
-							rating: avgOpRating
+							opponent: opponent,
+							rating: avgPokeRating,
+							score: score
 							});
 					}
 
 					avg = Math.floor(avg / team.length);
+					matchupScore = matchupScore / team.length;
 
 					rankObj.rating = avg;
 					rankObj.opRating = opponentRating;
+					rankObj.score = matchupScore;
 					rankings.push(rankObj);
 				}
 
 				// Sort rankings
 
 				if(self.context == "team-builder"){
-					rankings.sort((a,b) => (a.rating > b.rating) ? -1 : ((b.rating > a.rating) ? 1 : 0));
+					rankings.sort((a,b) => (a.score > b.score) ? -1 : ((b.score > a.score) ? 1 : 0));
 				} else if(self.context == "battle"){
 					rankings.sort((a,b) => (a.rating > b.rating) ? 1 : ((b.rating > a.rating) ? -1 : 0));
 				}

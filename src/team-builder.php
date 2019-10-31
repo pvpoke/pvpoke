@@ -56,6 +56,8 @@ require_once 'header.php';
 		<p>The Pokemon below have the best overall matchups against this team.</p>
 		<div class="threats rankings-container"></div>
 		<div class="clear"></div>
+		<table class="threats-table rating-table">
+		</table>
 	</div>
 
 	<a href="#" class="toggle active">Potential Alternatives <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>

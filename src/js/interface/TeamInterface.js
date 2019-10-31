@@ -381,7 +381,16 @@ var InterfaceMaster = (function () {
 					}
 				}
 				
+				// Potential threats
+				
 				$(".section.typings .rankings-container").html('');
+				$(".threats-table").html("");
+				
+				var $row = $("<tr><td></td></tr>");
+
+				for(var n = 0; n < team.length; n++){
+					$row.append("<td>"+team[n].speciesName+"</td>");
+				}
 				
 				for(var i = 0; i < 10; i++){
 					var r = counterRankings[i];
@@ -415,6 +424,18 @@ var InterfaceMaster = (function () {
 					}
 
 					$(".rankings-container.threats").append($el);
+					
+					// Add results to threats table
+					
+					$(".threats-table").append($row);
+					
+					$row = $("<tr><td>"+pokemon.speciesName+"</td></tr>");
+					
+					for(var n = 0; n < r.matchups.length; n++){
+						$row.append("<td>"+r.matchups[n].rating+"</td>");
+					}
+					
+					$(".threats-table").append($row);
 				}
 				
 				// And for kicks, generate the counters to those counters
