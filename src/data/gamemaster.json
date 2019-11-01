@@ -6741,7 +6741,7 @@
 			"hp": 190
 		},
 		"types": ["rock", "none"],
-		"fastMoves": ["ROCK_SMASH", "ROCK_THROW"],
+		"fastMoves": ["ROCK_SMASH", "ROCK_THROW", "LOCK_ON"],
 		"chargedMoves": ["FOCUS_BLAST", "STONE_EDGE", "ZAP_CANNON"],
 		"tags": ["legendary"],
 		"defaultIVs": {
@@ -6758,7 +6758,7 @@
 			"hp": 190
 		},
 		"types": ["ice", "none"],
-		"fastMoves": ["FROST_BREATH", "ROCK_SMASH"],
+		"fastMoves": ["FROST_BREATH", "ROCK_SMASH", "LOCK_ON"],
 		"chargedMoves": ["BLIZZARD", "EARTHQUAKE", "FOCUS_BLAST"],
 		"tags": ["legendary"],
 		"defaultIVs": {
@@ -6775,7 +6775,7 @@
 			"hp": 190
 		},
 		"types": ["steel", "none"],
-		"fastMoves": ["METAL_CLAW", "ROCK_SMASH"],
+		"fastMoves": ["METAL_CLAW", "ROCK_SMASH", "LOCK_ON"],
 		"chargedMoves": ["FLASH_CANNON", "FOCUS_BLAST", "HYPER_BEAM"],
 		"tags": ["legendary"],
 		"defaultIVs": {
@@ -8760,8 +8760,8 @@
 			"hp": 221
 		},
 		"types": ["normal", "none"],
-		"fastMoves": ["ROCK_SMASH", "ZEN_HEADBUTT"],
-		"chargedMoves": ["AVALANCHE", "HEAVY_SLAM", "STONE_EDGE"],
+		"fastMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "ZEN_HEADBUTT"],
+		"chargedMoves": ["GIGA_IMPACT","FOCUS_BLAST","THUNDER"],
 		"tags": ["legendary"],
 		"defaultIVs": {
 			"cp1500": [12.5, 4, 14, 10],
