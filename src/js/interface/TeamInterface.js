@@ -389,8 +389,10 @@ var InterfaceMaster = (function () {
 				var $row = $("<tr><td></td></tr>");
 
 				for(var n = 0; n < team.length; n++){
-					$row.append("<td>"+team[n].speciesName+"</td>");
+					$row.append("<td class=\"name-small\">"+team[n].speciesName+"</td>");
 				}
+									
+				$(".threats-table").append($row);
 				
 				for(var i = 0; i < 10; i++){
 					var r = counterRankings[i];
@@ -413,26 +415,38 @@ var InterfaceMaster = (function () {
 						}
 					}
 					
-					counterTeam.push(pokemon);
-					
-					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star\">"+r.rating+"</span></div><div class=\"clear\"></div></div><div class=\"details\"></div>");
-					
-					// Add moveset details if set
-
-					if(r.moveset){
-						$el.find(".name-container").append("<div class=\"moves\">"+moveNameStr+"</div>");
+					if(i < 6){
+						counterTeam.push(pokemon);
 					}
 
-					$(".rankings-container.threats").append($el);
-					
 					// Add results to threats table
 					
-					$(".threats-table").append($row);
-					
-					$row = $("<tr><td>"+pokemon.speciesName+"</td></tr>");
+					$row = $("<tr><td class=\"name\"><b>"+(i+1)+". "+pokemon.speciesName+"</b></td></tr>");
 					
 					for(var n = 0; n < r.matchups.length; n++){
-						$row.append("<td>"+r.matchups[n].rating+"</td>");
+						var $cell = $("<td><a class=\"rating\" href=\"#\" target=\"blank\"><span></span></a></td>");
+						var rating = r.matchups[n].rating;
+						
+						if(rating == 500){
+							$cell.find("a").addClass("tie");
+						} else if( (rating < 500) && (rating > 250)){
+							$cell.find("a").addClass("close-loss");
+						} else if( rating <= 250){
+							$cell.find("a").addClass("loss");
+						} else if( (rating > 500) && (rating < 750)){
+							$cell.find("a").addClass("close-win");
+						} else if( rating >= 750){
+							$cell.find("a").addClass("win");
+						}
+
+						var pokeStr = pokemon.generateURLPokeStr();
+						var moveStr = pokemon.generateURLMoveStr();
+						var opPokeStr = r.matchups[n].opponent.generateURLPokeStr();
+						var opMoveStr = r.matchups[n].opponent.generateURLMoveStr();
+						var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/11/"+moveStr+"/"+opMoveStr+"/";
+						$cell.find("a").attr("href", battleLink);
+						
+						$row.append($cell);
 					}
 					
 					$(".threats-table").append($row);
@@ -447,6 +461,16 @@ var InterfaceMaster = (function () {
 				}
 				
 				var altRankings = ranker.rank(counterTeam, battle.getCP(), battle.getCup(), exclusionList).rankings;
+				
+				$(".alternatives-table").html("");
+				
+				var $row = $("<tr><td></td></tr>");
+
+				for(var n = 0; n < counterTeam.length; n++){
+					$row.append("<td class=\"name-small\">"+counterTeam[n].speciesName+"</td>");
+				}
+				
+				$(".alternatives-table").append($row);
 				
 				for(var i = 0; i < 10; i++){
 					var r = altRankings[i];
@@ -468,15 +492,37 @@ var InterfaceMaster = (function () {
 						}
 					}
 					
-					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star\">"+r.rating+"</span></div><div class=\"clear\"></div></div><div class=\"details\"></div>");
+					// Add results to alternatives table
 					
-					// Add moveset details if set
+					$row = $("<tr><td class=\"name\"><b>"+(i+1)+". "+pokemon.speciesName+"</b></td></tr>");
+					
+					for(var n = 0; n < r.matchups.length; n++){
+						var $cell = $("<td><a class=\"rating\" href=\"#\" target=\"blank\"><span></span></a></td>");
+						var rating = r.matchups[n].rating;
+						
+						if(rating == 500){
+							$cell.find("a").addClass("tie");
+						} else if( (rating < 500) && (rating > 250)){
+							$cell.find("a").addClass("close-loss");
+						} else if( rating <= 250){
+							$cell.find("a").addClass("loss");
+						} else if( (rating > 500) && (rating < 750)){
+							$cell.find("a").addClass("close-win");
+						} else if( rating >= 750){
+							$cell.find("a").addClass("win");
+						}
 
-					if(r.moveset){
-						$el.find(".name-container").append("<div class=\"moves\">"+moveNameStr+"</div>");
+						var pokeStr = pokemon.generateURLPokeStr();
+						var moveStr = pokemon.generateURLMoveStr();
+						var opPokeStr = r.matchups[n].opponent.generateURLPokeStr();
+						var opMoveStr = r.matchups[n].opponent.generateURLMoveStr();
+						var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/11/"+moveStr+"/"+opMoveStr+"/";
+						$cell.find("a").attr("href", battleLink);
+						
+						$row.append($cell);
 					}
-
-					$(".rankings-container.alternatives").append($el);
+					
+					$(".alternatives-table").append($row);
 				}
 			}
 			

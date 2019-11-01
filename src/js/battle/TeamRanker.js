@@ -47,8 +47,6 @@ var RankerMaster = (function () {
 					battle.setCustomCup(cup);
 				}
 				
-
-
 				var pokemonList = [];
 				var teamRatings = [];
 
@@ -73,7 +71,15 @@ var RankerMaster = (function () {
 						pokemonList.push(targets[i]);
 					}
 				}
-
+				
+				// Remove any Pokemon that are in the exclusion list
+				if(exclusionList){
+					for(var i = 0; i < pokemonList.length; i++){
+						if(exclusionList.indexOf(pokemonList[i].speciesId) > -1){
+							pokemonList.splice(i, 1);
+						}
+					}
+				}
 
 				// For all eligible Pokemon, simulate battles and gather rating data
 
@@ -197,7 +203,7 @@ var RankerMaster = (function () {
 								console.log(battle.getPokemon());
 								return false;
 							}
-
+							
 							avgPokeRating += rating;
 							avgOpRating += opRating;
 						}

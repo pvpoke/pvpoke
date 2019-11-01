@@ -1470,16 +1470,14 @@ select, input {
   .article table tr:nth-of-type(2n) {
     background: rgba(0, 0, 0, 0.1); }
 .article .rating-table td {
-  padding: 1px; }
+  padding: 3px; }
 .article .rating-table a {
   display: block;
   padding: 5px 12px;
   border-radius: 8px;
   text-decoration: none;
-  /*
-  *	|	||
-  *	||	|_
-  */ }
+  width: 30px;
+  margin: 0 auto; }
   .article .rating-table a span {
     display: block;
     margin: 0 auto;
@@ -1520,6 +1518,10 @@ select, input {
   vertical-align: middle;
   text-align: left;
   padding-right: 10px; }
+.article .rating-table td.name-small {
+  font-size: 14px;
+  max-width: 80px;
+  vertical-align: bottom; }
 .article .rating-table.legend {
   margin: 0;
   text-align: left; }

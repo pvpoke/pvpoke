@@ -2143,7 +2143,7 @@ select, input{
 	.rating-table{
 
 		td{
-			padding: 1px;
+			padding: 3px;
 		}
 
 		a{
@@ -2151,6 +2151,8 @@ select, input{
 			padding:5px 12px;
 			border-radius:8px;
 			text-decoration: none;
+			width:30px;
+			margin: 0 auto;
 
 			span{
 				display:block;
@@ -2190,11 +2192,6 @@ select, input{
 				}
 			}
 
-			/*
-			*	|	||
-			*	||	|_
-			*/
-
 			&.loss{
 				background-color: rgb(185, 0, 143);
 
@@ -2226,6 +2223,12 @@ select, input{
 			vertical-align: middle;
 			text-align: left;
 			padding-right:10px;
+		}
+		
+		td.name-small{
+			font-size:14px;
+			max-width:80px;
+			vertical-align: bottom;
 		}
 
 		&.legend{

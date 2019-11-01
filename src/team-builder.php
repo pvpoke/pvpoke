@@ -52,19 +52,68 @@ require_once 'header.php';
 	</div>
 
 	<a href="#" class="toggle active">Potential Threats <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
-	<div class="toggle-content">
+	<div class="toggle-content article">
 		<p>The Pokemon below have the best overall matchups against this team.</p>
-		<div class="threats rankings-container"></div>
-		<div class="clear"></div>
-		<table class="threats-table rating-table">
+		
+		<table class="threats-table rating-table" cellspacing="0">
+		</table>
+		
+		<table class="rating-table legend" cellspacing="0">
+				<tbody>
+				<tr>
+					<td><a href="#" class="rating win" target="_blank"><span></span></a></td>
+					<td><b>Win:</b> This Pokemon wins decisively in most scenarios. It would take a big HP or energy lead to flip this matchup. This Pokemon can safely switch and win.</td>
+				</tr>
+				<tr>
+					<td><a href="#" class="rating close-win" target="_blank"><span></span></a></td>
+					<td><b>Close Win:</b> This Pokemon is favored, but the matchup can flip with a small HP or energy lead. This Pokemon may not be able to safely switch and win.</td>
+				</tr>
+				<tr>
+					<td><a href="#" class="rating tie" target="_blank"><span></span></a></td>
+					<td><b>Tie:</b> Neither Pokemon is favored. This matchup can flip depending on HP or energy lead, Charged Move priority, or IV's.</td>
+				</tr>
+				<tr>
+					<td><a href="#" class="rating close-loss" target="_blank"><span></span></a></td>
+					<td><b>Close Loss:</b> This Pokemon is at a disadvantage, but the matchup can flip with a small HP or energy lead.</td>
+				</tr>
+				<tr>
+					<td><a href="#" class="rating loss" target="_blank"><span></span></a></td>
+					<td><b>Loss:</b> This Pokemon loses decisively in most scenarios. It would take a big HP or energy lead to flip this matchup.</td>
+				</tr>
+			</tbody>
 		</table>
 	</div>
 
 	<a href="#" class="toggle active">Potential Alternatives <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
-	<div class="toggle-content">
+	<div class="toggle-content article">
 		<p>The Pokemon below have the best overall matchups against this team's potential threats.</p>
-		<div class="alternatives rankings-container"></div>
-		<div class="clear"></div>
+		<table class="alternatives-table rating-table" cellspacing="0">
+		</table>
+		
+		<table class="rating-table legend" cellspacing="0">
+				<tbody>
+				<tr>
+					<td><a href="#" class="rating win" target="_blank"><span></span></a></td>
+					<td><b>Win:</b> This Pokemon wins decisively in most scenarios. It would take a big HP or energy lead to flip this matchup. This Pokemon can safely switch and win.</td>
+				</tr>
+				<tr>
+					<td><a href="#" class="rating close-win" target="_blank"><span></span></a></td>
+					<td><b>Close Win:</b> This Pokemon is favored, but the matchup can flip with a small HP or energy lead. This Pokemon may not be able to safely switch and win.</td>
+				</tr>
+				<tr>
+					<td><a href="#" class="rating tie" target="_blank"><span></span></a></td>
+					<td><b>Tie:</b> Neither Pokemon is favored. This matchup can flip depending on HP or energy lead, Charged Move priority, or IV's.</td>
+				</tr>
+				<tr>
+					<td><a href="#" class="rating close-loss" target="_blank"><span></span></a></td>
+					<td><b>Close Loss:</b> This Pokemon is at a disadvantage, but the matchup can flip with a small HP or energy lead.</td>
+				</tr>
+				<tr>
+					<td><a href="#" class="rating loss" target="_blank"><span></span></a></td>
+					<td><b>Loss:</b> This Pokemon loses decisively in most scenarios. It would take a big HP or energy lead to flip this matchup.</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 
 	<div class="share-link-container">
