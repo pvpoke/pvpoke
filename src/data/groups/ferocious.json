@@ -50,16 +50,6 @@
 		"chargedMoves":["BRICK_BREAK","WILD_CHARGE"]
 	},
 	{
-		"speciesId":"pachirisu",
-		"fastMove":"SPARK",
-		"chargedMoves":["THUNDERBOLT","THUNDER_PUNCH"]
-	},
-	{
-		"speciesId":"raikou",
-		"fastMove":"THUNDER_SHOCK",
-		"chargedMoves":["WILD_CHARGE","SHADOW_BALL"]
-	},
-	{
 		"speciesId":"piloswine",
 		"fastMove":"POWDER_SNOW",
 		"chargedMoves":["AVALANCHE","STONE_EDGE"]
@@ -100,11 +90,6 @@
 		"chargedMoves":["BONE_CLUB","SHADOW_BALL"]
 	},
 	{
-		"speciesId":"torkoal",
-		"fastMove":"FIRE_SPIN",
-		"chargedMoves":["EARTHQUAKE","SOLAR_BEAM"]
-	},
-	{
 		"speciesId":"sandslash_alolan",
 		"fastMove":"POWDER_SNOW",
 		"chargedMoves":["ICE_PUNCH","BULLDOZE"]
@@ -115,9 +100,14 @@
 		"chargedMoves":["BODY_SLAM","ROCK_SLIDE"]
 	},
 	{
-		"speciesId":"furret",
-		"fastMove":"QUICK_ATTACK",
-		"chargedMoves":["BRICK_BREAK","HYPER_BEAM"]
+		"speciesId":"aggron",
+		"fastMove":"SMACK_DOWN",
+		"chargedMoves":["STONE_EDGE","THUNDER"]
+	},
+	{
+		"speciesId":"linoone",
+		"fastMove":"SHADOW_CLAW",
+		"chargedMoves":["GRASS_KNOT","DIG"]
 	},
 	{
 		"speciesId":"lickitung",

@@ -544,6 +544,13 @@
 		"weight": 5,
 		"pokemon": [
 			{
+				"speciesId": "registeel",
+				"fastMove": "LOCK_ON",
+				"chargedMoves": ["FLASH_CANNON","FOCUS_BLAST"],
+				"difficulty": 3,
+				"weight": 15
+			},
+			{
 				"speciesId": "steelix",
 				"fastMove": "DRAGON_TAIL",
 				"chargedMoves": ["CRUNCH","EARTHQUAKE"],

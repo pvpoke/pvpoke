@@ -187,11 +187,32 @@
 		"weight": 8,
 		"pokemon": [
 			{
+				"speciesId": "registeel",
+				"fastMove": "LOCK_ON",
+				"chargedMoves": ["FLASH_CANNON","FOCUS_BLAST"],
+				"difficulty": 3,
+				"weight":15
+			},
+			{
+				"speciesId": "regirock",
+				"fastMove": "LOCK_ON",
+				"chargedMoves": ["STONE_EDGE","FOCUS_BLAST"],
+				"difficulty": 3,
+				"weight":3
+			},
+			{
+				"speciesId": "regirock",
+				"fastMove": "LOCK_ON",
+				"chargedMoves": ["STONE_EDGE","ZAP_CANNON"],
+				"difficulty": 3,
+				"weight":1
+			},
+			{
 				"speciesId": "bastiodon",
 				"fastMove": "SMACK_DOWN",
 				"chargedMoves": ["STONE_EDGE","FLAMETHROWER"],
 				"difficulty": 3,
-				"weight":15
+				"weight":10
 			},
 			{
 				"speciesId": "melmetal",
