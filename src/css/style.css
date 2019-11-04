@@ -1489,23 +1489,24 @@ select, input {
       border-radius: 20px;
       background: #fff6d4; }
   .article .rating-table a.close-win {
-    background-color: #2e6bb0; }
+    background-color: #1b79b4; }
     .article .rating-table a.close-win span {
       border-radius: 20px;
-      border: 2px solid #fff6d4;
+      border: 2px solid #a5d6fb;
       box-sizing: border-box; }
   .article .rating-table a.close-loss {
-    background-color: #9e1595; }
+    background-color: #96359e; }
     .article .rating-table a.close-loss span {
-      color: #ffacdb; }
+      color: #fd91e0; }
       .article .rating-table a.close-loss span:after {
         content: "x"; }
   .article .rating-table a.loss {
     background-color: #b9008f; }
     .article .rating-table a.loss span {
-      color: #ff6abe;
-      font-size: 18px;
-      font-weight: bold; }
+      color: #ff92e2;
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 18px; }
       .article .rating-table a.loss span:after {
         content: "X"; }
   .article .rating-table a.tie {

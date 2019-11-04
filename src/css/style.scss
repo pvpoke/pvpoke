@@ -2171,23 +2171,23 @@ select, input{
 			}
 
 			&.close-win{
-				background-color: #2e6bb0;
+				background-color: #1b79b4;
 
 				span{
 					border-radius:20px;
-					border:2px solid #fff6d4;
+					border:2px solid #a5d6fb;
 					box-sizing:border-box;
 				}
 			}
 
 			&.close-loss{
-				background-color: #9e1595;
+				background-color: #96359e;
 
 				span{
-					color:#ffacdb;
+					color:#fd91e0;
 
 					&:after{
-						content:"x";
+						content: "x";
 					}
 				}
 			}
@@ -2196,12 +2196,13 @@ select, input{
 				background-color: rgb(185, 0, 143);
 
 				span{
-					color:#ff6abe;
-					font-size:18px;
-					font-weight:bold;
+					color:#ff92e2;
+					font-size:22px;
+					font-weight:900;
+					line-height: 18px;
 
 					&:after{
-						content:"X";
+						content: "X";
 					}
 				}
 			}
