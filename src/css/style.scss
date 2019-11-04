@@ -2171,7 +2171,7 @@ select, input{
 			}
 
 			&.close-win{
-				background-color: rgba(63, 94, 172, 1);
+				background-color: #2e6bb0;
 
 				span{
 					border-radius:20px;
@@ -2181,7 +2181,7 @@ select, input{
 			}
 
 			&.close-loss{
-				background-color: rgba(114, 54, 159, 1);
+				background-color: #9e1595;
 
 				span{
 					color:#ffacdb;
@@ -2207,7 +2207,7 @@ select, input{
 			}
 
 			&.tie{
-				background-color: rgb(93, 71, 165);
+				background-color: rgb(150, 140, 182);
 
 				span{
 					color:#fff6d4;

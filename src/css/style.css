@@ -1489,13 +1489,13 @@ select, input {
       border-radius: 20px;
       background: #fff6d4; }
   .article .rating-table a.close-win {
-    background-color: #3f5eac; }
+    background-color: #2e6bb0; }
     .article .rating-table a.close-win span {
       border-radius: 20px;
       border: 2px solid #fff6d4;
       box-sizing: border-box; }
   .article .rating-table a.close-loss {
-    background-color: #72369f; }
+    background-color: #9e1595; }
     .article .rating-table a.close-loss span {
       color: #ffacdb; }
       .article .rating-table a.close-loss span:after {
@@ -1509,7 +1509,7 @@ select, input {
       .article .rating-table a.loss span:after {
         content: "X"; }
   .article .rating-table a.tie {
-    background-color: #5d47a5; }
+    background-color: #968cb6; }
     .article .rating-table a.tie span {
       color: #fff6d4; }
       .article .rating-table a.tie span:after {
