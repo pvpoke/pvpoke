@@ -2245,6 +2245,12 @@ select, input{
 			}
 		}
 	}
+	
+	a.button.download-csv{
+		max-width:250px;
+		margin: 10px auto;
+		text-align: center;
+	}
 }
 
 .article-item{

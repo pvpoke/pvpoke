@@ -224,6 +224,10 @@ var RankerMaster = (function () {
 							score = avgPokeRating / 2;
 						}
 
+						if((pokemon.overall)&&(pokemon.scores[4])){
+							score *= Math.sqrt(pokemon.overall) * Math.pow(pokemon.scores[4], 1/4);
+						}
+
 						matchupScore += score;
 
 						teamRatings[n].push(avgOpRating);
@@ -240,10 +244,8 @@ var RankerMaster = (function () {
 					rankObj.rating = avg;
 					rankObj.opRating = opponentRating;
 					rankObj.score = matchupScore;
-
-					if((rankObj.score > 500)&&(pokemon.overall)){
-						rankObj.score *= Math.sqrt(pokemon.overall);
-					}
+					rankObj.overall = (pokemon.overall !== undefined) ? pokemon.overall : 0;
+					rankObj.speciesName = pokemon.speciesName;
 
 					rankings.push(rankObj);
 				}

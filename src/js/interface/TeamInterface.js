@@ -14,6 +14,7 @@ var InterfaceMaster = (function () {
 			var battle;
 			var pokeSelectors = [];
 			var multiSelector = new PokeMultiSelect($(".poke.multi"));
+			var results; // Store team matchup results for later reference
 			var self = this;
 			
 			var histograms = [];
@@ -118,7 +119,7 @@ var InterfaceMaster = (function () {
 									
 									// Split out the move string and select moves
 									
-									var moveStr = list[i].split("m-")[1];
+									var moveStr = list[i].split("-m-")[1];
 									arr = moveStr.split("-");
 									
 									// Legacy move construction
@@ -368,6 +369,8 @@ var InterfaceMaster = (function () {
 				var teamRatings = data.teamRatings;
 				var counterTeam = [];
 				
+				results = counterRankings;
+				
 				// Let's start with the histograms, because they're kinda neat
 
 				for(var i = 0; i < team.length; i++){
@@ -383,6 +386,7 @@ var InterfaceMaster = (function () {
 				
 				// Potential threats
 				
+				var csv = ','; // CSV data of all matchups
 				$(".section.typings .rankings-container").html('');
 				$(".threats-table").html("");
 				
@@ -390,7 +394,14 @@ var InterfaceMaster = (function () {
 
 				for(var n = 0; n < team.length; n++){
 					$row.append("<td class=\"name-small\">"+team[n].speciesName+"</td>");
+					
+					csv += team[n].speciesName;
+					if(n < team.length -1){
+						csv += ',';
+					}
 				}
+				
+				csv += ',Threat Score,Overall Rating';
 									
 				$(".threats-table").append($row);
 				
@@ -450,6 +461,26 @@ var InterfaceMaster = (function () {
 					}
 					
 					$(".threats-table").append($row);
+				}
+				
+				// Build CSV results
+				
+				for(var i = 0; i < counterRankings.length; i++){
+					var r = counterRankings[i];
+
+					csv += '\n';
+					
+					csv += r.speciesName + ',';
+					
+					for(var n = 0; n < r.matchups.length; n++){
+						csv += r.matchups[n].rating;
+						
+						if(n < r.matchups.length-1){
+							csv += ',';
+						}
+					}
+					
+					csv += ',' + (Math.round(r.score*10)/10) + ',' + r.overall;
 				}
 				
 				// And for kicks, generate the counters to those counters
@@ -524,6 +555,22 @@ var InterfaceMaster = (function () {
 					
 					$(".alternatives-table").append($row);
 				}
+				
+				// Set download link data
+				var cupTitle = "All Pokemon";
+				if(battle.getCup().title){
+					cupTitle = battle.getCup().title;
+				}
+				var filename = "Team vs. " + cupTitle + ".csv";
+				var filedata = '';
+
+				if (!csv.match(/^data:text\/csv/i)) {
+					filedata = [csv];
+					filedata = new Blob(filedata, { type: 'text/csv'});
+				}
+
+				$(".button.download-csv").attr("href", window.URL.createObjectURL(filedata));
+				$(".button.download-csv").attr("download", filename);
 			}
 			
 			// Given a subject type, produce effectiveness array for offense or defense

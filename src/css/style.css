@@ -1530,6 +1530,10 @@ select, input {
     padding: 5px; }
   .article .rating-table.legend a.rating {
     text-align: center; }
+.article a.button.download-csv {
+  max-width: 250px;
+  margin: 10px auto;
+  text-align: center; }
 
 .article-item {
   margin-bottom: 10px; }

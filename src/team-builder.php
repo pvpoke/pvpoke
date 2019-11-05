@@ -53,11 +53,11 @@ require_once 'header.php';
 
 	<a href="#" class="toggle active">Potential Threats <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content article">
-		<p>The Pokemon below have the best overall matchups against this team.</p>
+		<p>The Pokemon below have the best overall matchups against this team. Results are an average of 0 and 1 shield simulations. Scores also factor in a Pokemon's overall strength and consistency.</p>
 		
 		<table class="threats-table rating-table" cellspacing="0">
 		</table>
-		
+		<a href="#" class="button download-csv">Export Full Matchups to CSV</a>
 		<table class="rating-table legend" cellspacing="0">
 				<tbody>
 				<tr>
@@ -86,7 +86,7 @@ require_once 'header.php';
 
 	<a href="#" class="toggle active">Potential Alternatives <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content article">
-		<p>The Pokemon below have the best overall matchups against this team's potential threats.</p>
+		<p>The Pokemon below have the best overall matchups against this team's potential threats. Results are an average of 0 and 1 shield simulations. Scores also factor in a Pokemon's overall strength and consistency.</p>
 		<table class="alternatives-table rating-table" cellspacing="0">
 		</table>
 		
