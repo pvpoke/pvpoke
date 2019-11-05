@@ -292,6 +292,9 @@ var InterfaceMaster = (function () {
 					self.updateTeamResults();
 					
 					$("html, body").animate({ scrollTop: $(".defense").offset().top }, 500);
+					
+										
+					$(".rate-btn").html("Rate Team");
 				}
 			}
 			
@@ -911,16 +914,6 @@ var InterfaceMaster = (function () {
 				
 				setTimeout(function(){
 					var results = self.updateTeamResults();
-
-					$(".rate-btn").html("Rate Team");
-
-					if(results === false){
-						return;
-					}
-
-					// Scroll down to results
-					
-					$("html, body").animate({ scrollTop: $(".defense").offset().top }, 500);
 					
 					// Set new page state
 					var cp = battle.getCP();
@@ -986,8 +979,21 @@ var InterfaceMaster = (function () {
 					// Send Google Analytics pageview
 
 					gtag('config', UA_ID, {page_location: (host+url), page_path: url});
+					
 
-					},10);
+
+					if(results === false){
+						return;
+					}
+					
+					$(".rate-btn").html("Rate Team");
+
+					// Scroll down to results
+					
+					$("html, body").animate({ scrollTop: $(".defense").offset().top }, 500);
+
+					},
+				10);
 
 			}
 		};
