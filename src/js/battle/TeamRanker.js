@@ -38,7 +38,7 @@ var RankerMaster = (function () {
 			this.rank = function(team, league, cup, exclusionList){
 
 				var totalBattles = 0;
-				
+
 				battle = new Battle();
 				battle.setCP(league);
 				if(cup.name != "custom"){
@@ -46,7 +46,7 @@ var RankerMaster = (function () {
 				} else{
 					battle.setCustomCup(cup);
 				}
-				
+
 				var pokemonList = [];
 				var teamRatings = [];
 
@@ -71,7 +71,7 @@ var RankerMaster = (function () {
 						pokemonList.push(targets[i]);
 					}
 				}
-				
+
 				// Remove any Pokemon that are in the exclusion list
 				if(exclusionList){
 					for(var i = 0; i < pokemonList.length; i++){
@@ -88,7 +88,7 @@ var RankerMaster = (function () {
 				for(var i = 0; i < rankCount; i++){
 
 					var pokemon = pokemonList[i];
-					
+
 					if(targets.length == 0){
 						pokemon.selectRecommendedMoveset();
 					}
@@ -193,17 +193,17 @@ var RankerMaster = (function () {
 
 							var rating = Math.floor( (healthRating + damageRating) * 500);
 							var opRating = Math.floor( (opHealthRating + opDamageRating) * 500);
-							
+
 							/*if(shieldMode == 'average'){
 								rating = Math.pow(rating, 0.5);
 								opRating = Math.pow(opRating, 0.5);
 							}*/
-							
+
 							if(isNaN(avgPokeRating)){
 								console.log(battle.getPokemon());
 								return false;
 							}
-							
+
 							avgPokeRating += rating;
 							avgOpRating += opRating;
 						}
@@ -215,15 +215,15 @@ var RankerMaster = (function () {
 
 						avg += avgPokeRating;
 						opponentRating = avgOpRating;
-						
+
 						var score = 500;
-						
+
 						if(avgPokeRating > 500){
 							score = 500 + Math.pow(avgPokeRating - 500, .75);
 						} else{
 							score = avgPokeRating / 2;
 						}
-						
+
 						matchupScore += score;
 
 						teamRatings[n].push(avgOpRating);
@@ -240,6 +240,11 @@ var RankerMaster = (function () {
 					rankObj.rating = avg;
 					rankObj.opRating = opponentRating;
 					rankObj.score = matchupScore;
+
+					if((rankObj.score > 500)&&(pokemon.overall)){
+						rankObj.score *= Math.sqrt(pokemon.overall);
+					}
+
 					rankings.push(rankObj);
 				}
 

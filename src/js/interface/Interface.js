@@ -36,7 +36,7 @@ var InterfaceMaster = (function () {
 			var sandboxAction;
 			var sandboxActionIndex;
 			var sandboxTurn;
-			
+
 			var chargeMultipliers = [1, .95, .75, .5, .25]; // Array of potential charge multipliers between full and minimum charge
 
 			var modal;
@@ -107,9 +107,9 @@ var InterfaceMaster = (function () {
 				// If get data exists, load settings
 
 				this.loadGetData();
-				
+
 				// Load rankings for the current league
-				
+
 				if(! get){
 					gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), "all");
 				}
@@ -120,15 +120,15 @@ var InterfaceMaster = (function () {
 				});
 
 			};
-			
+
 			// Callback for loading ranking data
-			
+
 			this.displayRankingData = function(data){
 				console.log("Ranking data loaded");
-				
+
 				if(self.battleMode == "multi"){
 					self.generateMultiBattleResults();
-					
+
 					$("html, body").animate({ scrollTop: $(".battle-results."+self.battleMode).offset().top - 185 }, 500);
 				}
 			}
@@ -744,12 +744,12 @@ var InterfaceMaster = (function () {
 				var opponentShields = parseInt($(".poke.multi .shield-select option:selected").val());
 				var chargedMoveCount = parseInt($(".poke.multi .charged-count-select option:selected").val());
 				var shieldBaiting = $(".poke.multi .check.shield-baiting").hasClass("on") ? 1 : 0;
-				
+
 				// Load rankings and movesets
-				
+
 				var key = cup + "overall" + battle.getCP();
-				
-				if(! gm.rankings[key]){
+
+				if((! gm.rankings[key])&&(cup != "custom")){
 					gm.loadRankingData(self, "overall", battle.getCP(), cup);
 					return false;
 				}
@@ -900,7 +900,7 @@ var InterfaceMaster = (function () {
 				// Update download link with new data
 				var poke = pokeSelectors[0].getPokemon();
 				var moveAbbreviationStr = poke.fastMove.abbreviation;
-				
+
 				for(var i = 0; i < poke.chargedMoves.length; i++){
 					if(i == 0){
 						moveAbbreviationStr += "+" + poke.chargedMoves[i].abbreviation;
@@ -941,7 +941,7 @@ var InterfaceMaster = (function () {
 
 				// Send Google Analytics pageview
 
-				gtag('config', UA_ID, {page_location: (host+url), page_path: url});				
+				gtag('config', UA_ID, {page_location: (host+url), page_path: url});
 			}
 
 			// For battles with buffs or debuffs, run bulk sims and return median match
@@ -1200,7 +1200,7 @@ var InterfaceMaster = (function () {
 												if(paramsArr[5]){
 													charge = chargeMultipliers[paramsArr[5]];
 												}
-												
+
 												actions.push(new TimelineAction(
 													"charged",
 													parseInt(paramsArr[1]),
@@ -1241,17 +1241,17 @@ var InterfaceMaster = (function () {
 
 							case "cup":
 								$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
-								
+
 								if($(".format-select option[cup=\""+val+"\"]").length > 0){
 									$(".format-select option[cup=\""+val+"\"]").prop("selected","selected");
 								} else{
 									var cat = $(".cup-select option[value=\""+val+"\"]").attr("cat");
 									$(".format-select option[value=\""+cat+"\"]").prop("selected","selected");
 									multiSelector.changeFormatSelect();
-									
+
 									$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
 								}
-								
+
 								$(".cup-select").trigger("change");
 								break;
 
@@ -1304,7 +1304,7 @@ var InterfaceMaster = (function () {
 						$(".battle-btn").trigger("click");
 					}, 500);
 				}
-				
+
 				if(sandbox){
 					self.runSandboxSim();
 				}
@@ -1386,7 +1386,7 @@ var InterfaceMaster = (function () {
 
 					multiSelector.updateLeague(cp);
 				}
-				
+
 				if(self.battleMode == "single"){
 					gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), "all");
 				}
@@ -1874,7 +1874,7 @@ var InterfaceMaster = (function () {
 					if(sandboxAction.settings.buffs){
 						$(".modal .check.buffs").addClass("on");
 					}
-					
+
 					if(sandboxAction.settings.charge){
 						var chargeInt = chargeMultipliers.indexOf(sandboxAction.settings.charge);
 						$(".modal .charge-select option[value=\""+chargeInt+"\"]").prop("selected", "selected");
@@ -2008,7 +2008,7 @@ var InterfaceMaster = (function () {
 						if(selectedValue != "wait"){
 							var chargeIndex = parseInt($(".modal .charge-select option:selected").val());
 							var charge = chargeMultipliers[chargeIndex];
-							
+
 							actions.push(new TimelineAction(
 								"charged",
 								sandboxPokemon.index,
@@ -2037,7 +2037,7 @@ var InterfaceMaster = (function () {
 						if(selectedValue != "wait"){
 							var chargeIndex = parseInt($(".modal .charge-select option:selected").val());
 							var charge = chargeMultipliers[chargeIndex];
-							
+
 							actions[sandboxActionIndex] = new TimelineAction(
 								"charged",
 								sandboxPokemon.index,

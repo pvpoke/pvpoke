@@ -646,37 +646,41 @@ function Pokemon(id, i, b){
 			}
 		}
 	}
-	
+
 	// Obtain a Pokemon's recommended moveset from the rankings and select them
-	
+
 	this.selectRecommendedMoveset = function(){
 		var cupName = "all";
-		
+
 		if(battle.getCup()){
 			cupName = battle.getCup().name;
 		}
-		
+
 		var key = cupName + "overall" + battle.getCP();
-		
+
 		if(! gm.rankings[key]){
 			console.log("Ranking data not loaded yet");
 			return;
 		}
-		
+
 		var rankings = gm.rankings[key];
-		
+
 		for(var i = 0; i < rankings.length; i++){
 			var r = rankings[i];
-			
+
 			if(r.speciesId == self.speciesId){
 				var moveIndexes = r.moveStr.split("-");
-				
+
 				self.selectMove("fast", self.fastMovePool[moveIndexes[0]].moveId);
 				self.selectMove("charged", self.chargedMovePool[moveIndexes[1]-1].moveId, 0);
-				
+
 				if(moveIndexes[2] != 0){
 					self.selectMove("charged", self.chargedMovePool[moveIndexes[2]-1].moveId, 1);
 				}
+
+				// Assign overall score for reference
+				self.overall = r.score;
+				self.scores = r.scores;
 				break;
 			}
 		}
@@ -945,7 +949,7 @@ function Pokemon(id, i, b){
 	this.hasTag = function(tag){
 		return (self.tags.indexOf(tag) > -1);
 	}
-	
+
 	// Output a string of numbers for URL building and recreating a Pokemon
 
 	this.generateURLPokeStr = function(context){
@@ -966,14 +970,14 @@ function Pokemon(id, i, b){
 		if(self.priority != 0){
 			pokeStr += "-p";
 		}
-		
+
 		if(context == "team-builder"){
 			pokeStr += "-m-" + self.generateURLMoveStr();
 		}
 
 		return pokeStr;
 	}
-	
+
 
 	// Output a string of numbers for URL building and recreating a moveset
 
