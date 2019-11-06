@@ -1196,6 +1196,10 @@
 				"chargedMoves": ["FOUL_PLAY","LAST_RESORT"]
 			},
 			{
+				"speciesId": "sandslash",
+				"chargedMoves": ["EARTHQUAKE","RETURN"]
+			},
+			{
 				"speciesId": "ninetales_alolan",
 				"fastMove": "CHARM",
 				"chargedMoves": ["PSYSHOCK", "ICE_BEAM"]
@@ -1242,8 +1246,8 @@
 				"chargedMoves": ["HYPER_BEAM","POWER_WHIP"]
 			},
 			{
-				"speciesId": "persian",
-				"chargedMoves": ["FOUL_PLAY","PLAY_ROUGH"]
+				"speciesId": "hippopotas",
+				"chargedMoves": ["BODY_SLAM","DIG"]
 			},
 			{
 				"speciesId": "persian_alolan",
