@@ -35,7 +35,7 @@ var RankerMaster = (function () {
 
 			// Run an individual rank set
 
-			this.rank = function(team, league, cup, exclusionList){
+			this.rank = function(team, league, cup, exclusionList, context){
 
 				var totalBattles = 0;
 
@@ -159,7 +159,7 @@ var RankerMaster = (function () {
 
 						// Force best moves on counters but not on the user's selected Pokemon
 
-						if(team.length > 3){
+						if(context != "team-counters"){
 							opponent.selectRecommendedMoveset();
 						}
 
@@ -226,6 +226,8 @@ var RankerMaster = (function () {
 
 						if((pokemon.overall)&&(pokemon.scores[4])){
 							score *= Math.sqrt(pokemon.overall) * Math.pow(pokemon.scores[4], 1/4);
+						} else{
+							score *= 10 * Math.pow(100, 1/4);
 						}
 
 						matchupScore += score;

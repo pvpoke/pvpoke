@@ -367,7 +367,7 @@ var InterfaceMaster = (function () {
 				var ranker = RankerMaster.getInstance();
 				ranker.setShieldMode("average");
 				
-				var data = ranker.rank(team, battle.getCP(), battle.getCup());
+				var data = ranker.rank(team, battle.getCP(), battle.getCup(), [], "team-counters");
 				var counterRankings = data.rankings;
 				var teamRatings = data.teamRatings;
 				var counterTeam = [];
@@ -408,6 +408,8 @@ var InterfaceMaster = (function () {
 									
 				$(".threats-table").append($row);
 				
+				var avgThreatScore = 0;
+				
 				for(var i = 0; i < 10; i++){
 					var r = counterRankings[i];
 					
@@ -428,6 +430,11 @@ var InterfaceMaster = (function () {
 							moveNameStr += ", " + r.moveset.chargedMoves[n].name;
 						}
 					}
+					
+					// Display threat score
+					avgThreatScore += r.score;
+					
+					// Push to counter team
 					
 					if(i < 6){
 						counterTeam.push(pokemon);
@@ -452,7 +459,7 @@ var InterfaceMaster = (function () {
 						} else if( rating >= 750){
 							$cell.find("a").addClass("win");
 						}
-
+						
 						var pokeStr = pokemon.generateURLPokeStr();
 						var moveStr = pokemon.generateURLMoveStr();
 						var opPokeStr = r.matchups[n].opponent.generateURLPokeStr();
@@ -465,6 +472,10 @@ var InterfaceMaster = (function () {
 					
 					$(".threats-table").append($row);
 				}
+				
+				// Display average threat score
+				avgThreatScore = Math.round(avgThreatScore / 200);
+				$(".threat-score").html(avgThreatScore);
 				
 				// Build CSV results
 				
@@ -483,7 +494,7 @@ var InterfaceMaster = (function () {
 						}
 					}
 					
-					csv += ',' + (Math.round(r.score*10)/10) + ',' + r.overall;
+					csv += ',' + (Math.round(r.score/2)/10) + ',' + r.overall;
 				}
 				
 				// And for kicks, generate the counters to those counters

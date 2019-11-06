@@ -54,9 +54,9 @@ require_once 'header.php';
 	<a href="#" class="toggle active">Potential Threats <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content article">
 		<p>The Pokemon below have the best overall matchups against this team. Results are an average of 0 and 1 shield simulations. Scores also factor in a Pokemon's overall strength and consistency.</p>
-		
 		<table class="threats-table rating-table" cellspacing="0">
 		</table>
+		<p class="center">This team has a theat score of <b class="threat-score"></b></p>
 		<a href="#" class="button download-csv">Export Full Matchups to CSV</a>
 		<table class="rating-table legend" cellspacing="0">
 				<tbody>
@@ -82,6 +82,7 @@ require_once 'header.php';
 				</tr>
 			</tbody>
 		</table>
+		<p class="small"><strong>Threat score</strong> measures how vulnerable your team may be to a specific Pokemon. The smaller the number, the better. It factors in how many Pokemon on your team it can threaten, how hard it threatens them, the threat's overall ranking (how likely you may be to encounter it), and how consistently it performs with its ranked moveset.</p>
 	</div>
 
 	<a href="#" class="toggle active">Potential Alternatives <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
