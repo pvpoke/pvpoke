@@ -102,6 +102,20 @@ function Pokemon(id, i, b){
 			this.chargedMovePool.push(move);
 		}
 	}
+	
+	// Add Return and Frustration for eligible Pokemon
+	
+	
+	if(data.shadow){
+		
+		self.chargedMovePool.push(gm.getMoveById("FRUSTRATION"));
+		
+		if(data.level25CP <= b.getCP()){
+			self.chargedMovePool.push(gm.getMoveById("RETURN"));
+		}
+		
+		self.legacyMoves.push("FRUSTRATION","RETURN");
+	}
 
 	// Sort moves by ID for consistent order
 

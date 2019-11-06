@@ -26,6 +26,14 @@
 
 	<!--Update section for updates-->
 	<h3>What's New</h3>
+	
+	<h4>v1.12.6 (November 26th, 2019)</h4>
+	<ul>
+		<li>Adjusted Shadow Pokemon behind the scenes</li>
+		<ul>
+			<li>Shadow Pokemon will only have Return in their movepool when they are an eligible CP at level 25</li>
+		</ul>
+	</ul>
 
 	<h4>v1.12.5 (October 25th, 2019)</h4>
 	<ul>
