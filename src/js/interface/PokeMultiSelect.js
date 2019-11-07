@@ -23,6 +23,17 @@ function PokeMultiSelect(element){
 		pokemon = pokes;
 		battle = b;
 		interface = InterfaceMaster.getInstance();
+
+		// Load groups from local storage
+		var i = 0;
+
+		while(window.localStorage.key(i) !== null){
+			var key = window.localStorage.key(i);
+			$el.find(".quick-fill-select").append("<option value=\""+key+"\" type=\"custom\">"+key+"</option>");
+			i++;
+		}
+
+
 	}
 
 	// Open Pokemon select modal window to add or edit a Pokemon
@@ -320,6 +331,8 @@ function PokeMultiSelect(element){
 			return;
 		}
 
+		window.localStorage.setItem(name, csv);
+
 		$.ajax({
 
 			url : host+'data/groupCookie.php',
@@ -420,10 +433,11 @@ function PokeMultiSelect(element){
 
 	$el.find(".quick-fill-select").change(function(e){
 		var val = $(this).find("option:selected").val();
+		var type = $(this).find("option:selected").attr("type");
 
 		// Load a preset group from data files
 
-		if((val.indexOf("custom") == -1)&&(val != "new")){
+		if((type != "custom")&&(val != "new")){
 			gm.loadGroupData(self, val);
 
 			// Show the save as button
@@ -449,8 +463,9 @@ function PokeMultiSelect(element){
 
 		// Populate from a custom group
 
-		if(val.indexOf("custom") > -1){
-			self.quickFillCSV($(this).find("option:selected").attr("data"));
+		if(type == "custom"){
+			var data = window.localStorage.getItem(val);
+			self.quickFillCSV(data);
 
 			// Show the save and delete buttons
 
@@ -566,13 +581,13 @@ function PokeMultiSelect(element){
 			}
 		});
 	});
-	
+
 	// Event handler for changing the format select
 
 	$el.find(".format-select").on("change",function(e){
 		self.changeFormatSelect();
 	});
-	
+
 	this.changeFormatSelect = function(){
 		var format = $(".format-select option:selected").val();
 		var cup = $(".format-select option:selected").attr("cup");
