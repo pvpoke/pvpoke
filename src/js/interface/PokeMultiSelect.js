@@ -32,8 +32,6 @@ function PokeMultiSelect(element){
 			$el.find(".quick-fill-select").append("<option value=\""+key+"\" type=\"custom\">"+key+"</option>");
 			i++;
 		}
-
-
 	}
 
 	// Open Pokemon select modal window to add or edit a Pokemon
@@ -324,7 +322,7 @@ function PokeMultiSelect(element){
 
 	// Given a name, save current list to a cookie
 
-	this.saveListToCookie = function(name, isNew){
+	this.saveCustomList = function(name, isNew){
 		var csv = self.convertListToCSV();
 
 		if(name == ''){
@@ -333,35 +331,18 @@ function PokeMultiSelect(element){
 
 		window.localStorage.setItem(name, csv);
 
-		$.ajax({
+		if(! isNew){
+			modalWindow("Custom Group Saved", $("<p><b>"+name+"</b> has been updated.</p>"))
+		} else{
+			// Add new group to all dropdowns
 
-			url : host+'data/groupCookie.php',
-			type : 'POST',
-			data : {
-				'name' : name,
-				'data' : csv
-			},
-			dataType:'json',
-			success : function(data) {
-				if(! isNew){
-					modalWindow("Custom Group Saved", $("<p><b>"+name+"</b> has been updated.</p>"))
-				} else{
-					// Add new group to all dropdowns
+			$(".quick-fill-select").append($("<option value=\""+name+"\" type=\"custom\">"+name+"</option>"));
+			$el.find(".quick-fill-select option").last().prop("selected", "selected");
 
-					$(".quick-fill-select").append($("<option value=\"custom\" data=\""+csv+"\">"+name+"</option>"));
-					$el.find(".quick-fill-select option").last().prop("selected", "selected");
-
-					$el.find(".save-as").hide();
-					$el.find(".save-custom").show();
-					$el.find(".delete-btn").show();
-				}
-			},
-			error : function(request,error)
-			{
-				console.log("Request: "+JSON.stringify(request));
-				console.log(error);
-			}
-		});
+			$el.find(".save-as").hide();
+			$el.find(".save-custom").show();
+			$el.find(".delete-btn").show();
+		}
 	}
 
 	// Set the maximum number of selectable pokemon
@@ -518,13 +499,13 @@ function PokeMultiSelect(element){
 
 	$el.find(".save-btn").click(function(e){
 
-		if(selectedGroup.indexOf("custom") == -1){
+		var selectedGroupType = $(".quick-fill-select option[value='"+selectedGroup+"']").attr("type");
+
+		if(selectedGroupType != "custom"){
 			// Prompt to save a new group if a custom one isn't selected
 			modalWindow("Save Group", $(".save-list").eq(0));
 		} else{
-			var name = $el.find(".quick-fill-select option:selected").html();
-
-			self.saveListToCookie(name, false);
+			self.saveCustomList(selectedGroup, false);
 		}
 
 	});
@@ -533,7 +514,7 @@ function PokeMultiSelect(element){
 
 	$("body").on("click", ".modal .button.save", function(e){
 
-		self.saveListToCookie($(".modal input.list-name").val(), true);
+		self.saveCustomList($(".modal input.list-name").val(), true);
 
 		closeModalWindow();
 	});
@@ -552,34 +533,15 @@ function PokeMultiSelect(element){
 
 	$("body").on("click", ".modal .delete-list-confirm .button.yes", function(e){
 
-		var name = $el.find(".quick-fill-select option:selected").html();
-		var csv = self.convertListToCSV();
+		window.localStorage.removeItem(selectedGroup);
 
-		$.ajax({
+		closeModalWindow();
 
-			url : host+'data/groupCookie.php',
-			type : 'POST',
-			data : {
-				'name' : name,
-				'data' : csv,
-				'delete' : 1
-			},
-			dataType:'json',
-			success : function(data) {
-				closeModalWindow();
+		// Remove option from quick fill selects
 
-				// Remove option from quick fill selects
-
-				$(".quick-fill-select option[value='"+selectedGroup+"']").remove();
-				$el.find(".quick-fill-select option").first().prop("selected", "selected");
-				$el.find(".quick-fill-select").trigger("change");
-			},
-			error : function(request,error)
-			{
-				console.log("Request: "+JSON.stringify(request));
-				console.log(error);
-			}
-		});
+		$(".quick-fill-select option[value='"+selectedGroup+"']").remove();
+		$el.find(".quick-fill-select option").first().prop("selected", "selected");
+		$el.find(".quick-fill-select").trigger("change");
 	});
 
 	// Event handler for changing the format select
