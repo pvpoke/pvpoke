@@ -16,7 +16,7 @@ function PokeMultiSelect(element){
 	var selectedIndex = -1;
 	var pokeSelector;
 
-	var maxPokemonCount = 50;
+	var maxPokemonCount = 100;
 	var selectedGroup = "";
 
 	this.init = function(pokes, b){

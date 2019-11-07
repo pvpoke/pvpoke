@@ -704,8 +704,6 @@ function PokeSelect(element, i){
 		if(interface.resetSelectedPokemon){
 			interface.resetSelectedPokemon();
 		}
-
-		console.log(selectedPokemon);
 	});
 
 	// Change stat modifier input

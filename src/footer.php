@@ -66,6 +66,32 @@
 				console.log("Service worker failed to register:", err)
 			  });
 		}
+		
+		<?php if($performGroupMigration) : ?>
+			// One-time custom group migration from cookies to localstorage
+
+			var jsonToMigrate = [];
+
+			<?php
+			// Display custom groups
+
+			foreach($_COOKIE as $key=>$value){
+				if(strpos($key, 'custom_group') !== false){
+					$data = json_decode($value, true);
+
+					echo "jsonToMigrate.push({$value});";
+				}
+			}
+
+			?>
+
+			// Migrate custom groups to local storage
+		
+			for(var i = 0; i < jsonToMigrate.length; i++){
+				window.localStorage.setItem(jsonToMigrate[i].name, jsonToMigrate[i].data);
+			}
+
+		<?php endif; ?>
 
 	</script>
 </body>

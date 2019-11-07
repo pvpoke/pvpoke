@@ -17,6 +17,14 @@ if(isset($_COOKIE['settings'])){
 	];
 }
 
+$performGroupMigration = false;
+
+if(! isset($_COOKIE['migrate'])){
+	$performGroupMigration = true;
+	
+	setcookie('migrate', 'true', time() + (5 * 365 * 24 * 60 * 60), '/');
+}
+
 ?>
 <!doctype html>
 <html>
