@@ -9,10 +9,10 @@
 				<option value="1" selected>1 shield</option>
 				<option value="2">2 shields</option>
 			</select>
-			<select class="charged-count-select">
+			<select class="charged-count-select hide">
 				<option value="0">0 Charged Moves</option>
 				<option value="1">1 Charged Move</option>
-				<option value="2" selected>2 Charged Moves</option>
+				<option value="2" selected="">2 Charged Moves</option>
 			</select>
 			<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
 		</div>
@@ -28,11 +28,11 @@
 			<h3 class="section-title">Quick Fill</h3>
 			<select class="quick-fill-select">
 				<option value="new">New Custom Group</option>
-				<option value="great" class="multi-battle">Great League Meta</option>
-				<option value="ultra" class="hide multi-battle">Ultra League Meta</option>
-				<option value="master" class="hide multi-battle">Master League Meta</option>
-				<option value="ferocious" class="multi-battle">Ferocious Cup Meta</option>
-				<option value="sinister" class="multi-battle">Sinister Cup Meta</option>
+				<option value="great" type="great" class="multi-battle">Great League Meta</option>
+				<option value="ultra" type="ultra" class="hide multi-battle">Ultra League Meta</option>
+				<option value="master" type="master" class="hide multi-battle">Master League Meta</option>
+				<option value="ferocious" type="ferocious" class="multi-battle">Ferocious Cup Meta</option>
+				<option value="sinister" type="sinister" class="multi-battle">Sinister Cup Meta</option>
 			</select>
 			<div class="flex quick-fill-buttons">
 				<button class="save-btn save-custom">Save</button>

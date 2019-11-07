@@ -18,6 +18,7 @@ function PokeMultiSelect(element){
 
 	var maxPokemonCount = 100;
 	var selectedGroup = "";
+	var selectedGroupType = "";
 
 	this.init = function(pokes, b){
 		pokemon = pokes;
@@ -456,6 +457,7 @@ function PokeMultiSelect(element){
 		}
 
 		selectedGroup = val;
+		selectedGroupType = type;
 
 	});
 
@@ -582,6 +584,12 @@ function PokeMultiSelect(element){
 
 	this.getSelectedGroup = function(){
 		return selectedGroup;
+	}
+	
+	// Return the type of the selected group
+
+	this.getSelectedGroupType = function(){
+		return selectedGroupType;
 	}
 
 	// Force a group selection

@@ -13,7 +13,7 @@ var InterfaceMaster = (function () {
 			var gm = GameMaster.getInstance();
 			var battle;
 			var pokeSelectors = [];
-			var multiSelector;
+			var multiSelectors = [];
 			var animating = false;
 			var self = this;
 
@@ -66,9 +66,14 @@ var InterfaceMaster = (function () {
 
 					selector.init(data.pokemon, battle);
 				});
-
-				multiSelector = new PokeMultiSelect($(".poke.multi"));
-				multiSelector.init(data.pokemon, battle);
+				
+				$(".poke-select-container .poke.multi").each(function(index, value){
+					var selector = new PokeMultiSelect($(this));
+					selector.init(data.pokemon, battle);
+					
+					multiSelectors.push(selector);
+				});
+				
 
 				$(".league-select").on("change", selectLeague);
 				$(".mode-select").on("change", selectMode);
@@ -771,7 +776,7 @@ var InterfaceMaster = (function () {
 				// Set multi selected Pokemon if available
 
 				if(cup == "custom"){
-					ranker.setTargets(multiSelector.getPokemonList());
+					ranker.setTargets(multiSelectors[0].getPokemonList());
 				} else{
 					ranker.setTargets([]);
 				}
@@ -786,6 +791,198 @@ var InterfaceMaster = (function () {
 				var moveStr = poke.generateURLMoveStr();
 
 				csv = data.csv;
+
+				$(".battle-results .rankings-container").html('');
+
+				battle.setNewPokemon(poke, 0, false);
+
+				var pokemonList = multiSelectors[0].getPokemonList();
+				var custom = (battle.getCup().name == "custom");
+				var initialize = (custom == false);
+
+				if(! custom){
+					pokemonList = [];
+				}
+
+				for(var i = 0; i < rankings.length; i++){
+					var r = rankings[i];
+
+					var pokemon;
+
+					if(pokemonList.length > r.index){
+						pokemon = pokemonList[r.index];
+					} else{
+						pokemon = new Pokemon(r.speciesId, 1, battle);
+					}
+
+
+					// Generate moves for link
+
+					battle.setNewPokemon(pokemon, 1, initialize);
+
+
+					// Manually set moves if previously selected, otherwise autoselect
+					var moveNameStr = '';
+
+					if(r.moveset){
+						pokemon.selectMove("fast", r.moveset.fastMove.moveId);
+
+						moveNameStr = r.moveset.fastMove.name;
+
+						for(var n = 0; n < r.moveset.chargedMoves.length; n++){
+							pokemon.selectMove("charged", r.moveset.chargedMoves[n].moveId, n);
+
+							moveNameStr += ", " + r.moveset.chargedMoves[n].name;
+						}
+					} else{
+						pokemon.autoSelectMoves(chargedMoveCount);
+					}
+
+					if(! $(".poke.multi .check.shield-baiting").hasClass("on")){
+						pokemon.baitShields = false;
+						pokemon.isCustom = true;
+					}
+
+					var opPokeStr = pokemon.generateURLPokeStr();
+					var opMoveStr = pokemon.generateURLMoveStr();
+
+					var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
+
+					// Append extra options
+
+					if( (poke.startHp != poke.stats.hp) || (poke.startEnergy != 0) ){
+						battleLink += poke.startHp +  "/" + poke.startEnergy + "/";
+					}
+
+					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star\">"+r.opRating+"</span></div><a target=\"_blank\" href=\""+battleLink+"\"></a><div class=\"clear\"></div></div><div class=\"details\"></div>");
+
+					// Add moveset details if set
+
+					if(r.moveset){
+						$el.find(".name-container").append("<div class=\"moves\">"+moveNameStr+"</div>");
+					}
+
+					$(".battle-results .rankings-container").append($el);
+				}
+
+				// Generate and display histogram
+
+				if(! histogram){
+					histogram = new BattleHistogram($(".battle-results.multi .histogram"));
+					histogram.generate(poke, data.teamRatings[0]);
+				} else{
+					histogram.generate(poke, data.teamRatings[0]);
+				}
+
+				$(".battle-results.multi").show();
+
+				// Generate and display share link
+
+				var cp = battle.getCP();
+				var battleStr = "battle/multi/"+cp+"/"+cup+"/"+pokeStr+"/"+poke.startingShields+opponentShields+"/"+moveStr+"/"+chargedMoveCount+"-"+shieldBaiting+"/";
+
+				// Append extra options
+
+				if( (poke.startHp != poke.stats.hp) || (poke.startEnergy != 0) ){
+					battleStr += poke.startHp +  "/" + poke.startEnergy + "/";
+				}
+
+				// Add preset group to URL if available
+
+				if(cup == "custom"){
+					var groupName = multiSelectors[0].getSelectedGroup();
+
+					if(multiSelectors[0].getSelectedGroupType() != "custom"){
+						battleStr += groupName + "/";
+					}
+				}
+
+
+				var link = host + battleStr;
+
+				$(".share-link input").val(link);
+
+				// Update download link with new data
+				var poke = pokeSelectors[0].getPokemon();
+				var moveAbbreviationStr = poke.fastMove.abbreviation;
+
+				for(var i = 0; i < poke.chargedMoves.length; i++){
+					if(i == 0){
+						moveAbbreviationStr += "+" + poke.chargedMoves[i].abbreviation;
+					} else{
+						moveAbbreviationStr += "+" + poke.chargedMoves[i].abbreviation;
+					}
+				}
+
+				var filename = pokeSelectors[0].getPokemon().speciesName + " " + moveAbbreviationStr + " vs " + $(".poke.multi .cup-select option:selected").html() + " " + poke.startingShields + "-" + opponentShields + " shields.csv";
+				var filedata = '';
+
+				if (!csv.match(/^data:text\/csv/i)) {
+					filedata = [csv];
+					filedata = new Blob(filedata, { type: 'text/csv'});
+				}
+
+				$(".button.download-csv").attr("href", window.URL.createObjectURL(filedata));
+				$(".button.download-csv").attr("download", filename);
+
+				// Push state to browser history so it can be navigated, only if not from URL parameters
+
+				gtag('event', 'Lookup', {
+				  'event_category' : 'Simulation',
+				  'event_label' : pokemon.speciesId
+				});
+
+				if(get){
+					get = false;
+
+					return;
+				}
+
+				var url = webRoot+battleStr;
+
+				var data = {cp: cp, p1: poke.speciesId, cup:cup, s: poke.startingShields+""+opponentShields, m1: moveStr, cms: chargedMoveCount, mode: self.battleMode};
+
+				window.history.pushState(data, "Battle", url);
+
+				// Send Google Analytics pageview
+
+				gtag('config', UA_ID, {page_location: (host+url), page_path: url});
+			}
+			
+			// Process both groups of Pokemon through the team ranker
+
+			this.generateMatrixResults = function(){
+
+				// Set settings
+				var opponentShields = parseInt($(".poke.multi .shield-select option:selected").val());
+				var shieldBaiting = $(".poke.multi .check.shield-baiting").hasClass("on") ? 1 : 0;
+
+				ranker.setShields(opponentShields);
+				ranker.setShieldBaitOverride($(".poke.multi .check.shield-baiting").hasClass("on"));
+				
+				/* It's opposite day, so we get to switch these around.
+				* But actually it's because TeamRanker is built for the Team Builder (how other Pokemon do vs your Pokemon)
+				*/
+				var team = multiSelectors[1].getPokemonList();
+
+				if(team.length < 1){
+					return;
+				}
+
+				// Set multi selected Pokemon if available
+				ranker.setTargets(multiSelectors[0].getPokemonList());
+
+				// Run battles through the ranker
+
+				var data = ranker.rank(team, battle.getCP(), battle.getCup(), [], "matrix");
+				var rankings = data.rankings;
+				//var shieldStr = poke.startingShields + "" + opponentShields;		
+
+				csv = data.csv;
+				
+				console.log(data);
+				
+				return;
 
 				$(".battle-results .rankings-container").html('');
 
@@ -1247,7 +1444,7 @@ var InterfaceMaster = (function () {
 								} else{
 									var cat = $(".cup-select option[value=\""+val+"\"]").attr("cat");
 									$(".format-select option[value=\""+cat+"\"]").prop("selected","selected");
-									multiSelector.changeFormatSelect();
+									multiSelectors[0].changeFormatSelect();
 
 									$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
 								}
@@ -1271,7 +1468,7 @@ var InterfaceMaster = (function () {
 								break;
 
 							case "g1":
-								multiSelector.selectGroup(val);
+								multiSelectors[0].selectGroup(val);
 								isLoadingPreset = true;
 								break;
 
@@ -1383,8 +1580,10 @@ var InterfaceMaster = (function () {
 						pokeSelectors[i].setBattle(battle);
 						pokeSelectors[i].setCP(cp);
 					}
-
-					multiSelector.updateLeague(cp);
+					
+					for(var i = 0; i < multiSelectors.length; i++){
+						multiSelectors[i].updateLeague(cp);
+					}
 				}
 
 				if(self.battleMode == "single"){
@@ -1400,7 +1599,7 @@ var InterfaceMaster = (function () {
 				$("p.description").hide();
 				$("p."+self.battleMode).show();
 
-				$(".poke-select-container").removeClass("single multi");
+				$(".poke-select-container").removeClass("single multi matrix");
 				$(".poke-select-container").addClass(self.battleMode);
 
 				if(self.battleMode == "single"){
@@ -1488,6 +1687,8 @@ var InterfaceMaster = (function () {
 
 					} else if(self.battleMode == "multi"){
 						self.generateMultiBattleResults();
+					} else if(self.battleMode == "matrix"){
+						self.generateMatrixResults();
 					}
 
 					// Scroll to results

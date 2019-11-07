@@ -26,14 +26,17 @@ require_once 'header.php';
 	<select class="mode-select">
 		<option value="single">Single Battle</option>
 		<option value="multi">Multi Battle</option>
+		<option value="matrix">Matrix Battle</option>
 	</select>
 	<p class="description single">Select two Pokemon from any league to fight a simulated battle. Customize movesets, levels, IV's, and shields.</p>
 	<p class="description multi hide">Battle one Pokemon against an entire league or cup. Explore overall performance or individual matchups.</p>
+	<p class="description matrix hide">Battle two groups of Pokemon against each other and see the results.</p>
 </div>
 
 <div class="section poke-select-container single">
 	<?php require 'modules/pokeselect.php'; ?>
 	<?php require 'modules/pokeselect.php'; ?>
+	<?php require 'modules/pokemultiselect.php'; ?>
 	<?php require 'modules/pokemultiselect.php'; ?>
 	<div class="clear"></div>
 </div>

@@ -403,6 +403,8 @@ header {
       width: 100%; }
       .poke.multi .cup-select option[value="custom"] {
         display: block; }
+    .poke.multi .charged-count-select {
+      display: none; }
     .poke.multi .custom-options {
       display: none; }
       .poke.multi .custom-options .add-poke-btn {
@@ -526,6 +528,19 @@ header {
   display: none; }
 .poke-select-container.multi .poke:nth-of-type(3) {
   display: block; }
+.poke-select-container.matrix .poke.single,
+.poke-select-container.matrix .hp.bar-back,
+.poke-select-container.matrix .move-bars {
+  display: none; }
+.poke-select-container.matrix .poke.multi {
+  display: block;
+  float: left; }
+  .poke-select-container.matrix .poke.multi .format-select {
+    display: none; }
+  .poke-select-container.matrix .poke.multi .custom-options {
+    display: block; }
+.poke-select-container.matrix .delete-list-confirm + .poke.multi {
+  float: right; }
 
 .arrow-up {
   display: none; }
@@ -2251,9 +2266,9 @@ a.toggle {
   .table-container {
     overflow-x: auto; }
 
-  .threats-table .name,
-  .alternatives-table .name,
-  .meta-table .name {
+  .article .threats-table .name,
+  .article .alternatives-table .name,
+  .article .meta-table .name {
     font-size: 16px; } }
 /* Printing for meta scorecard */
 @media print {
@@ -2271,6 +2286,8 @@ a.toggle {
     display: none !important; }
   .scorecard-print .toggle-content:nth-of-type(4) {
     display: block !important; }
+  .scorecard-print .article .rating-table a {
+    background: none; }
   .scorecard-print .article .rating-table a.close-win span {
     border: 2px solid #1b79b4; }
   .scorecard-print .article .rating-table a.win span {
@@ -2288,4 +2305,10 @@ a.toggle {
   .scorecard-print header, .scorecard-print footer {
     display: none; }
   .scorecard-print .share-link-container {
-    display: none; } }
+    display: none; }
+  .scorecard-print .article table tr:nth-of-type(2n) {
+    background: rgba(0, 0, 0, 0.07);
+    -webkit-print-color-adjust: exact; }
+
+  .table-container {
+    overflow-x: auto; } }

@@ -686,6 +686,10 @@ header{
 				display:block;
 			}
 		}
+		
+		.charged-count-select{
+			display:none;
+		}
 
 		.custom-options{
 			display:none;
@@ -868,6 +872,31 @@ header{
 		}
 		.poke:nth-of-type(3){
 			display: block;
+		}
+	}
+	
+	&.matrix{
+		.poke.single,
+		.hp.bar-back,
+		.move-bars{
+			display: none;
+		}
+		.poke.multi
+		{
+			display: block;
+			float:left;
+			
+			.format-select{
+				display:none;
+			}
+			
+			.custom-options{
+				display:block;
+			}
+		}
+		
+		.delete-list-confirm + .poke.multi{
+			float:right;
 		}
 	}
 }
@@ -3077,11 +3106,13 @@ a.toggle{
 		overflow-x: auto;
 	}
 	
-	.threats-table,
-	.alternatives-table,
-	.meta-table{
-		.name{
-			font-size:16px;
+	.article{
+		.threats-table,
+		.alternatives-table,
+		.meta-table{
+			.name{
+				font-size:16px;
+			}
 		}
 	}
 }
@@ -3114,6 +3145,10 @@ a.toggle{
 
 		.toggle-content:nth-of-type(4){
 			display:block !important;
+		}
+		
+		.article .rating-table a{
+			background:none;
 		}
 
 		.article .rating-table a.close-win span{
@@ -3151,5 +3186,14 @@ a.toggle{
 		.share-link-container{
 			display:none;
 		}
+		
+		.article table tr:nth-of-type(2n){
+			background: rgba(0, 0, 0, 0.07);
+			-webkit-print-color-adjust: exact;
+		}
+	}
+	
+	.table-container{
+		overflow-x:auto;
 	}
 }

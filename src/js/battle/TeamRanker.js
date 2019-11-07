@@ -60,7 +60,7 @@ var RankerMaster = (function () {
 					csv = 'Pokemon,Battle Rating,HP Remaining,Energy Remaining'
 				}
 
-				if((targets.length == 0)||(cup.name != "custom")){
+				if(((targets.length == 0)||(cup.name != "custom"))&&(context != "matrix")){
 					// Get a full list of Pokemon from the game master
 					pokemonList = gm.generateFilteredPokemonList(battle, cup.include, cup.exclude);
 				} else{
@@ -159,7 +159,7 @@ var RankerMaster = (function () {
 
 						// Force best moves on counters but not on the user's selected Pokemon
 
-						if(context != "team-counters"){
+						if((context != "team-counters")&&(context != "matrix")&&(team.length > 1)){
 							opponent.selectRecommendedMoveset();
 						}
 

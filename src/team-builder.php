@@ -97,7 +97,7 @@ require_once 'header.php';
 			</table>
 		</div>
 		<p class="center">This team has a theat score of <b class="threat-score"></b></p>
-		<p class="small"><strong>Threat score</strong> measures how vulnerable your team may be to a specific Pokemon. The smaller the number, the better. It factors in how many Pokemon on your team it can threaten, how hard it threatens them, the threat's overall ranking (how likely you may be to encounter it), and how consistently it performs with its ranked moveset.</p>
+		<p class="small"><strong>Threat score</strong> measures how vulnerable your team may be to a specific Pokemon. The smaller the number, the better. It factors in how many Pokemon on your team it can be threatened, how hard they're threatened, a threat's overall ranking (how likely you may be to encounter it), and how consistently it performs.</p>
 	</div>
 
 	<a href="#" class="toggle active">Potential Alternatives <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
