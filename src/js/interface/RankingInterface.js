@@ -54,7 +54,7 @@ var InterfaceMaster = (function () {
 
 					$(".league-select option[value=\"1500\"]").prop("selected","selected");
 				}
-				
+
 				battle.setCP(league);
 
 				/* This timeout allows the interface to display the loading message before
@@ -100,7 +100,7 @@ var InterfaceMaster = (function () {
 
 					limitedPokemon = ["azumarill","deoxys_defense","medicham","wormadam_trash","forretress","sableye"];
 				}
-				
+
 				$(".section.white > .rankings-container").html('');
 
 
@@ -126,7 +126,7 @@ var InterfaceMaster = (function () {
 					if(move.legacy){
 						moveNameStr += "*";
 					}
-
+					console.log(pokemon.chargedMovePool);
 					if((arr.length > 2)&&(arr[2] != "0")){
 						move = pokemon.chargedMovePool[arr[2]-1];
 						moveNameStr += ", " + move.name;
@@ -274,8 +274,9 @@ var InterfaceMaster = (function () {
 			// Event handler for changing the league select
 
 			function selectLeague(e){
+				var cp = $(".league-select option:selected").val();
+
 				if($(".cup-select").length > 0){
-					var cp = $(".league-select option:selected").val();
 					var category = $(".ranking-categories a.selected").attr("data");
 					var cup = $(".cup-select option:selected").val();
 
@@ -283,6 +284,8 @@ var InterfaceMaster = (function () {
 
 					self.pushHistoryState(cup, cp, category, null);
 				}
+
+				battle.setCP(cp);
 			}
 
 			// Event handler for changing the cup select
