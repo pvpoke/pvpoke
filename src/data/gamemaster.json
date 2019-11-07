@@ -19,7 +19,7 @@
 		"title": "Generation 5",
 		"include": [],
 		"exclude": []
-	},{
+	}, {
 		"name": "boulder",
 		"title": "Boulder Cup",
 		"include": [{
@@ -158,6 +158,7 @@
 		}],
 		"exclude": []
 	}],
+	"shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "charmander", "charmeleon", "charizard", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "bellossom", "politoed", "scizor", "houndour", "houndoom", "larvitar", "pupitar", "tyranitar", "mudkip", "marshtomp", "swampert", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "trapinch", "vibrava", "flygon", "cacnea", "cacturne", "shuppet", "banette", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "ekans", "arbok", "koffing", "weezing", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "chimchar", "monferno", "infernape", "kangaskhan", "diglett", "dugtrio", "rhyhorn", "rhydon", "rhyperior", "murkrow", "honchkrow", "gible", "gabite", "garchomp", "shellder", "cloyster", "geodude", "graveler", "golem", "hippopotas", "hippowdon", "onix", "steelix","sableye"],
 	"pokemon": [{
 		"dex": 1,
 		"speciesName": "Bulbasaur",
@@ -169,12 +170,13 @@
 		},
 		"types": ["grass", "poison"],
 		"fastMoves": ["TACKLE", "VINE_WHIP"],
-		"chargedMoves": ["POWER_WHIP", "SEED_BOMB", "SLUDGE_BOMB", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["POWER_WHIP", "SEED_BOMB", "SLUDGE_BOMB"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 627
 	}, {
 		"dex": 2,
 		"speciesName": "Ivysaur",
@@ -186,12 +188,13 @@
 		},
 		"types": ["grass", "poison"],
 		"fastMoves": ["RAZOR_LEAF", "VINE_WHIP"],
-		"chargedMoves": ["POWER_WHIP", "SLUDGE_BOMB", "SOLAR_BEAM", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["POWER_WHIP", "SLUDGE_BOMB", "SOLAR_BEAM"],
 		"defaultIVs": {
 			"cp1500": [36, 6, 13, 12],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1002
 	}, {
 		"dex": 3,
 		"speciesName": "Venusaur",
@@ -203,12 +206,14 @@
 		},
 		"types": ["grass", "poison"],
 		"fastMoves": ["RAZOR_LEAF", "VINE_WHIP"],
-		"chargedMoves": ["FRENZY_PLANT", "PETAL_BLIZZARD", "SLUDGE_BOMB", "SOLAR_BEAM", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["FRENZY_PLANT", "PETAL_BLIZZARD", "SLUDGE_BOMB", "SOLAR_BEAM"],
 		"legacyMoves": ["FRENZY_PLANT"],
 		"defaultIVs": {
 			"cp1500": [20.5, 7, 6, 15],
 			"cp2500": [39.5, 4, 4, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1673
 	}, {
 		"dex": 4,
 		"speciesName": "Charmander",
@@ -220,12 +225,13 @@
 		},
 		"types": ["fire", "none"],
 		"fastMoves": ["EMBER", "SCRATCH"],
-		"chargedMoves": ["FLAME_BURST", "FLAME_CHARGE", "FLAMETHROWER", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["FLAME_BURST", "FLAME_CHARGE", "FLAMETHROWER"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 542
 	}, {
 		"dex": 5,
 		"speciesName": "Charmeleon",
@@ -237,12 +243,14 @@
 		},
 		"types": ["fire", "none"],
 		"fastMoves": ["EMBER", "FIRE_FANG", "SCRATCH"],
-		"chargedMoves": ["FIRE_PUNCH", "FLAME_BURST", "FLAMETHROWER", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["SCRATCH", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["FIRE_PUNCH", "FLAME_BURST", "FLAMETHROWER"],
+		"legacyMoves": ["SCRATCH"],
 		"defaultIVs": {
 			"cp1500": [35, 10, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 972
 	}, {
 		"dex": 6,
 		"speciesName": "Charizard",
@@ -254,12 +262,14 @@
 		},
 		"types": ["fire", "flying"],
 		"fastMoves": ["AIR_SLASH", "EMBER", "FIRE_SPIN", "WING_ATTACK"],
-		"chargedMoves": ["BLAST_BURN", "DRAGON_CLAW", "FIRE_BLAST", "FLAMETHROWER", "OVERHEAT", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["BLAST_BURN", "EMBER", "FLAMETHROWER", "WING_ATTACK", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["BLAST_BURN", "DRAGON_CLAW", "FIRE_BLAST", "FLAMETHROWER", "OVERHEAT"],
+		"legacyMoves": ["BLAST_BURN", "EMBER", "FLAMETHROWER", "WING_ATTACK"],
 		"defaultIVs": {
 			"cp1500": [19, 4, 12, 14],
 			"cp2500": [35.5, 4, 11, 7]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1784
 	}, {
 		"dex": 7,
 		"speciesName": "Squirtle",
@@ -271,12 +281,13 @@
 		},
 		"types": ["water", "none"],
 		"fastMoves": ["BUBBLE", "TACKLE"],
-		"chargedMoves": ["AQUA_JET", "AQUA_TAIL", "WATER_PULSE", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["AQUA_JET", "AQUA_TAIL", "WATER_PULSE"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 519
 	}, {
 		"dex": 8,
 		"speciesName": "Wartortle",
@@ -288,12 +299,13 @@
 		},
 		"types": ["water", "none"],
 		"fastMoves": ["BITE", "WATER_GUN"],
-		"chargedMoves": ["AQUA_JET", "HYDRO_PUMP", "ICE_BEAM", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["AQUA_JET", "HYDRO_PUMP", "ICE_BEAM"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 865
 	}, {
 		"dex": 9,
 		"speciesName": "Blastoise",
@@ -305,12 +317,14 @@
 		},
 		"types": ["water", "none"],
 		"fastMoves": ["BITE", "WATER_GUN"],
-		"chargedMoves": ["FLASH_CANNON", "HYDRO_CANNON", "HYDRO_PUMP", "ICE_BEAM", "SKULL_BASH", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["HYDRO_CANNON", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["FLASH_CANNON", "HYDRO_CANNON", "HYDRO_PUMP", "ICE_BEAM", "SKULL_BASH"],
+		"legacyMoves": ["HYDRO_CANNON"],
 		"defaultIVs": {
 			"cp1500": [23.5, 3, 11, 4],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1504
 	}, {
 		"dex": 10,
 		"speciesName": "Caterpie",
@@ -371,12 +385,13 @@
 		},
 		"types": ["bug", "poison"],
 		"fastMoves": ["BUG_BITE", "POISON_STING"],
-		"chargedMoves": ["STRUGGLE", "FRUSTRATION", "RETURN"],
-		"legacyMoves": ["FRUSTRATION", "RETURN"],
+		"chargedMoves": ["STRUGGLE"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 217
 	}, {
 		"dex": 14,
 		"speciesName": "Kakuna",
@@ -388,12 +403,13 @@
 		},
 		"types": ["bug", "poison"],
 		"fastMoves": ["BUG_BITE", "POISON_STING"],
-		"chargedMoves": ["STRUGGLE", "FRUSTRATION", "RETURN"],
-		"legacyMoves": ["FRUSTRATION", "RETURN"],
+		"chargedMoves": ["STRUGGLE"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 201
 	}, {
 		"dex": 15,
 		"speciesName": "Beedrill",
@@ -405,12 +421,14 @@
 		},
 		"types": ["bug", "poison"],
 		"fastMoves": ["BUG_BITE", "INFESTATION", "POISON_JAB"],
-		"chargedMoves": ["AERIAL_ACE", "SLUDGE_BOMB", "X_SCISSOR", "FRUSTRATION", "RETURN"],
-		"legacyMoves": ["BUG_BITE","FRUSTRATION", "RETURN"],
+		"chargedMoves": ["AERIAL_ACE", "SLUDGE_BOMB", "X_SCISSOR"],
+		"legacyMoves": ["BUG_BITE"],
 		"defaultIVs": {
 			"cp1500": [33.5, 3, 11, 5],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1097
 	}, {
 		"dex": 16,
 		"speciesName": "Pidgey",
@@ -471,12 +489,13 @@
 		},
 		"types": ["normal", "none"],
 		"fastMoves": ["QUICK_ATTACK", "TACKLE"],
-		"chargedMoves": ["BODY_SLAM", "DIG", "HYPER_FANG", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["BODY_SLAM", "DIG", "HYPER_FANG"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 388
 	}, {
 		"dex": 19,
 		"speciesName": "Rattata (Alolan)",
@@ -505,12 +524,13 @@
 		},
 		"types": ["normal", "none"],
 		"fastMoves": ["BITE", "QUICK_ATTACK"],
-		"chargedMoves": ["DIG", "HYPER_BEAM", "HYPER_FANG", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["DIG", "HYPER_BEAM", "HYPER_FANG"],
 		"defaultIVs": {
 			"cp1500": [38.5, 1, 10, 7],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1023
 	}, {
 		"dex": 20,
 		"speciesName": "Raticate (Alolan)",
@@ -578,7 +598,9 @@
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 509
 	}, {
 		"dex": 24,
 		"speciesName": "Arbok",
@@ -594,7 +616,9 @@
 		"defaultIVs": {
 			"cp1500": [31.5, 2, 6, 9],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1147
 	}, {
 		"dex": 25,
 		"speciesName": "Pikachu",
@@ -662,7 +686,9 @@
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 720
 	}, {
 		"dex": 27,
 		"speciesName": "Sandshrew (Alolan)",
@@ -695,7 +721,9 @@
 		"defaultIVs": {
 			"cp1500": [24, 6, 12, 4],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1445
 	}, {
 		"dex": 28,
 		"speciesName": "Sandslash (Alolan)",
@@ -954,12 +982,14 @@
 		},
 		"types": ["poison", "flying"],
 		"fastMoves": ["BITE", "QUICK_ATTACK"],
-		"chargedMoves": ["AIR_CUTTER", "POISON_FANG", "SLUDGE_BOMB", "SWIFT", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["SLUDGE_BOMB", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["AIR_CUTTER", "POISON_FANG", "SLUDGE_BOMB", "SWIFT"],
+		"legacyMoves": ["SLUDGE_BOMB"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 346
 	}, {
 		"dex": 42,
 		"speciesName": "Golbat",
@@ -971,12 +1001,14 @@
 		},
 		"types": ["poison", "flying"],
 		"fastMoves": ["BITE", "WING_ATTACK"],
-		"chargedMoves": ["AIR_CUTTER", "OMINOUS_WIND", "POISON_FANG", "SHADOW_BALL", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["OMINOUS_WIND", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["AIR_CUTTER", "OMINOUS_WIND", "POISON_FANG", "SHADOW_BALL"],
+		"legacyMoves": ["OMINOUS_WIND"],
 		"defaultIVs": {
 			"cp1500": [29, 5, 14, 5],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1183
 	}, {
 		"dex": 43,
 		"speciesName": "Oddish",
@@ -988,12 +1020,13 @@
 		},
 		"types": ["grass", "poison"],
 		"fastMoves": ["ACID", "RAZOR_LEAF"],
-		"chargedMoves": ["MOONBLAST", "SEED_BOMB", "SLUDGE_BOMB", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["MOONBLAST", "SEED_BOMB", "SLUDGE_BOMB"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 699
 	}, {
 		"dex": 44,
 		"speciesName": "Gloom",
@@ -1005,12 +1038,13 @@
 		},
 		"types": ["grass", "poison"],
 		"fastMoves": ["ACID", "RAZOR_LEAF"],
-		"chargedMoves": ["MOONBLAST", "PETAL_BLIZZARD", "SLUDGE_BOMB", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["MOONBLAST", "PETAL_BLIZZARD", "SLUDGE_BOMB"],
 		"defaultIVs": {
 			"cp1500": [35.5, 7, 14, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 991
 	}, {
 		"dex": 45,
 		"speciesName": "Vileplume",
@@ -1022,12 +1056,13 @@
 		},
 		"types": ["grass", "poison"],
 		"fastMoves": ["ACID", "RAZOR_LEAF"],
-		"chargedMoves": ["MOONBLAST", "PETAL_BLIZZARD", "SOLAR_BEAM", "SLUDGE_BOMB", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["MOONBLAST", "PETAL_BLIZZARD", "SOLAR_BEAM", "SLUDGE_BOMB"],
 		"defaultIVs": {
 			"cp1500": [22, 8, 15, 1],
 			"cp2500": [40, 11, 8, 13]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1566
 	}, {
 		"dex": 46,
 		"speciesName": "Paras",
@@ -1072,12 +1107,13 @@
 		},
 		"types": ["bug", "poison"],
 		"fastMoves": ["BUG_BITE", "CONFUSION"],
-		"chargedMoves": ["POISON_FANG", "PSYBEAM", "SIGNAL_BEAM", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["POISON_FANG", "PSYBEAM", "SIGNAL_BEAM"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 555
 	}, {
 		"dex": 49,
 		"speciesName": "Venomoth",
@@ -1089,12 +1125,14 @@
 		},
 		"types": ["bug", "poison"],
 		"fastMoves": ["BUG_BITE", "CONFUSION", "INFESTATION"],
-		"chargedMoves": ["BUG_BUZZ", "POISON_FANG", "PSYCHIC", "SILVER_WIND", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["BUG_BITE", "POISON_FANG", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["BUG_BUZZ", "POISON_FANG", "PSYCHIC", "SILVER_WIND"],
+		"legacyMoves": ["BUG_BITE", "POISON_FANG"],
 		"defaultIVs": {
 			"cp1500": [27.5, 3, 11, 9],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1252
 	}, {
 		"dex": 50,
 		"speciesName": "Diglett",
@@ -1111,7 +1149,9 @@
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 351
 	}, {
 		"dex": 50,
 		"speciesName": "Diglett (Alolan)",
@@ -1145,7 +1185,9 @@
 		"defaultIVs": {
 			"cp1500": [39, 15, 10, 11],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 915
 	}, {
 		"dex": 51,
 		"speciesName": "Dugtrio (Alolan)",
@@ -1179,7 +1221,9 @@
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 397
 	}, {
 		"dex": 52,
 		"speciesName": "Meowth (Alolan)",
@@ -1213,7 +1257,9 @@
 		"defaultIVs": {
 			"cp1500": [39, 3, 14, 4],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 996
 	}, {
 		"dex": 53,
 		"speciesName": "Persian (Alolan)",
@@ -1242,12 +1288,13 @@
 		},
 		"types": ["water", "none"],
 		"fastMoves": ["WATER_GUN", "ZEN_HEADBUTT"],
-		"chargedMoves": ["AQUA_TAIL", "CROSS_CHOP", "PSYBEAM", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["AQUA_TAIL", "CROSS_CHOP", "PSYBEAM"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 620
 	}, {
 		"dex": 55,
 		"speciesName": "Golduck",
@@ -1259,12 +1306,13 @@
 		},
 		"types": ["water", "none"],
 		"fastMoves": ["CONFUSION", "WATER_GUN"],
-		"chargedMoves": ["HYDRO_PUMP", "ICE_BEAM", "PSYCHIC", "BUBBLE_BEAM", "SYNCHRONOISE", "CROSS_CHOP", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["HYDRO_PUMP", "ICE_BEAM", "PSYCHIC", "BUBBLE_BEAM", "SYNCHRONOISE", "CROSS_CHOP"],
 		"defaultIVs": {
 			"cp1500": [22.5, 5, 12, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1494
 	}, {
 		"dex": 56,
 		"speciesName": "Mankey",
@@ -1309,12 +1357,13 @@
 		},
 		"types": ["fire", "none"],
 		"fastMoves": ["BITE", "EMBER"],
-		"chargedMoves": ["BODY_SLAM", "FLAME_WHEEL", "FLAMETHROWER", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["BODY_SLAM", "FLAME_WHEEL", "FLAMETHROWER"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 707
 	}, {
 		"dex": 59,
 		"speciesName": "Arcanine",
@@ -1326,12 +1375,14 @@
 		},
 		"types": ["fire", "none"],
 		"fastMoves": ["BITE", "FIRE_FANG", "SNARL", "THUNDER_FANG"],
-		"chargedMoves": ["BULLDOZE", "CRUNCH", "FIRE_BLAST", "FLAMETHROWER", "WILD_CHARGE", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["BITE", "BULLDOZE", "FLAMETHROWER", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["BULLDOZE", "CRUNCH", "FIRE_BLAST", "FLAMETHROWER", "WILD_CHARGE"],
+		"legacyMoves": ["BITE", "BULLDOZE", "FLAMETHROWER"],
 		"defaultIVs": {
 			"cp1500": [19, 4, 8, 4],
 			"cp2500": [33, 3, 12, 3]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1877
 	}, {
 		"dex": 60,
 		"speciesName": "Poliwag",
@@ -1343,12 +1394,13 @@
 		},
 		"types": ["water", "none"],
 		"fastMoves": ["BUBBLE", "MUD_SHOT"],
-		"chargedMoves": ["BODY_SLAM", "BUBBLE_BEAM", "MUD_BOMB", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["BODY_SLAM", "BUBBLE_BEAM", "MUD_BOMB"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 446
 	}, {
 		"dex": 61,
 		"speciesName": "Poliwhirl",
@@ -1360,12 +1412,14 @@
 		},
 		"types": ["water", "none"],
 		"fastMoves": ["BUBBLE", "MUD_SHOT"],
-		"chargedMoves": ["BUBBLE_BEAM", "MUD_BOMB", "SCALD", "WATER_PULSE", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["SCALD", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["BUBBLE_BEAM", "MUD_BOMB", "SCALD", "WATER_PULSE"],
+		"legacyMoves": ["SCALD"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 821
 	}, {
 		"dex": 62,
 		"speciesName": "Poliwrath",
@@ -1377,12 +1431,14 @@
 		},
 		"types": ["water", "fighting"],
 		"fastMoves": ["BUBBLE", "MUD_SHOT", "ROCK_SMASH"],
-		"chargedMoves": ["DYNAMIC_PUNCH", "HYDRO_PUMP", "ICE_PUNCH", "SUBMISSION", "POWER_UP_PUNCH", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["MUD_SHOT", "SUBMISSION", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["DYNAMIC_PUNCH", "HYDRO_PUMP", "ICE_PUNCH", "SUBMISSION", "POWER_UP_PUNCH"],
+		"legacyMoves": ["MUD_SHOT", "SUBMISSION"],
 		"defaultIVs": {
 			"cp1500": [21, 8, 14, 15],
 			"cp2500": [40, 10, 9, 12]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1584
 	}, {
 		"dex": 63,
 		"speciesName": "Abra",
@@ -1394,12 +1450,13 @@
 		},
 		"types": ["psychic", "none"],
 		"fastMoves": ["CHARGE_BEAM", "ZEN_HEADBUTT"],
-		"chargedMoves": ["PSYSHOCK", "SHADOW_BALL", "SIGNAL_BEAM", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["PSYSHOCK", "SHADOW_BALL", "SIGNAL_BEAM"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 759
 	}, {
 		"dex": 64,
 		"speciesName": "Kadabra",
@@ -1411,12 +1468,13 @@
 		},
 		"types": ["psychic", "none"],
 		"fastMoves": ["CONFUSION", "PSYCHO_CUT"],
-		"chargedMoves": ["DAZZLING_GLEAM", "PSYBEAM", "SHADOW_BALL", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["DAZZLING_GLEAM", "PSYBEAM", "SHADOW_BALL"],
 		"defaultIVs": {
 			"cp1500": [27.5, 8, 15, 3],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1226
 	}, {
 		"dex": 65,
 		"speciesName": "Alakazam",
@@ -1428,12 +1486,14 @@
 		},
 		"types": ["psychic", "none"],
 		"fastMoves": ["CONFUSION", "PSYCHO_CUT"],
-		"chargedMoves": ["DAZZLING_GLEAM", "FIRE_PUNCH", "FOCUS_BLAST", "FUTURE_SIGHT", "PSYCHIC", "SHADOW_BALL", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["DAZZLING_GLEAM", "PSYCHIC", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["DAZZLING_GLEAM", "FIRE_PUNCH", "FOCUS_BLAST", "FUTURE_SIGHT", "PSYCHIC", "SHADOW_BALL"],
+		"legacyMoves": ["DAZZLING_GLEAM", "PSYCHIC"],
 		"defaultIVs": {
 			"cp1500": [18.5, 2, 4, 14],
 			"cp2500": [30, 4, 13, 12]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1887
 	}, {
 		"dex": 66,
 		"speciesName": "Machop",
@@ -1500,7 +1560,9 @@
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 566
 	}, {
 		"dex": 70,
 		"speciesName": "Weepinbell",
@@ -1517,7 +1579,9 @@
 		"defaultIVs": {
 			"cp1500": [40, 8, 8, 13],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 939
 	}, {
 		"dex": 71,
 		"speciesName": "Victreebel",
@@ -1533,7 +1597,9 @@
 		"defaultIVs": {
 			"cp1500": [23.5, 3, 14, 3],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1479
 	}, {
 		"dex": 72,
 		"speciesName": "Tentacool",
@@ -1581,7 +1647,9 @@
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 741
 	}, {
 		"dex": 74,
 		"speciesName": "Geodude (Alolan)",
@@ -1615,7 +1683,9 @@
 		"defaultIVs": {
 			"cp1500": [29.5, 5, 11, 14],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1132
 	}, {
 		"dex": 75,
 		"speciesName": "Graveler (Alolan)",
@@ -1649,7 +1719,9 @@
 		"defaultIVs": {
 			"cp1500": [18.5, 7, 13, 13],
 			"cp2500": [35.5, 2, 14, 0]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1825
 	}, {
 		"dex": 76,
 		"speciesName": "Golem (Alolan)",
@@ -1748,7 +1820,9 @@
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 780
 	}, {
 		"dex": 82,
 		"speciesName": "Magneton",
@@ -1765,7 +1839,9 @@
 		"defaultIVs": {
 			"cp1500": [22.5, 2, 13, 11],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1513
 	}, {
 		"dex": 83,
 		"speciesName": "Farfetch'd",
@@ -1863,12 +1939,14 @@
 		},
 		"types": ["poison", "none"],
 		"fastMoves": ["ACID", "MUD_SLAP", "POISON_JAB"],
-		"chargedMoves": ["MUD_BOMB", "SLUDGE", "SLUDGE_BOMB", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["ACID", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["MUD_BOMB", "SLUDGE", "SLUDGE_BOMB"],
+		"legacyMoves": ["ACID"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 787
 	}, {
 		"dex": 88,
 		"speciesName": "Grimer (Alolan)",
@@ -1898,12 +1976,14 @@
 		},
 		"types": ["poison", "none"],
 		"fastMoves": ["ACID", "INFESTATION", "LICK", "POISON_JAB"],
-		"chargedMoves": ["DARK_PULSE", "GUNK_SHOT", "SLUDGE_WAVE", "THUNDER_PUNCH", "ACID_SPRAY", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["ACID", "LICK", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["DARK_PULSE", "GUNK_SHOT", "SLUDGE_WAVE", "THUNDER_PUNCH", "ACID_SPRAY"],
+		"legacyMoves": ["ACID", "LICK"],
 		"defaultIVs": {
 			"cp1500": [19.5, 12, 13, 13],
 			"cp2500": [39, 3, 14, 4]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1696
 	}, {
 		"dex": 89,
 		"speciesName": "Muk (Alolan)",
@@ -1936,7 +2016,9 @@
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 605
 	}, {
 		"dex": 91,
 		"speciesName": "Cloyster",
@@ -1953,7 +2035,9 @@
 		"defaultIVs": {
 			"cp1500": [22.5, 4, 7, 9],
 			"cp2500": [40, 5, 15, 13]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1554
 	}, {
 		"dex": 92,
 		"speciesName": "Gastly",
@@ -2021,7 +2105,9 @@
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 608
 	}, {
 		"dex": 96,
 		"speciesName": "Drowzee",
@@ -2033,12 +2119,13 @@
 		},
 		"types": ["psychic", "none"],
 		"fastMoves": ["CONFUSION", "POUND"],
-		"chargedMoves": ["PSYBEAM", "PSYCHIC", "PSYSHOCK", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["PSYBEAM", "PSYCHIC", "PSYSHOCK"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 576
 	}, {
 		"dex": 97,
 		"speciesName": "Hypno",
@@ -2050,12 +2137,14 @@
 		},
 		"types": ["psychic", "none"],
 		"fastMoves": ["CONFUSION", "ZEN_HEADBUTT"],
-		"chargedMoves": ["FOCUS_BLAST", "FUTURE_SIGHT", "PSYCHIC", "PSYSHOCK", "SHADOW_BALL", "FIRE_PUNCH", "ICE_PUNCH", "THUNDER_PUNCH", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["PSYSHOCK", "SHADOW_BALL", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["FOCUS_BLAST", "FUTURE_SIGHT", "PSYCHIC", "PSYSHOCK", "SHADOW_BALL", "FIRE_PUNCH", "ICE_PUNCH", "THUNDER_PUNCH"],
+		"legacyMoves": ["PSYSHOCK", "SHADOW_BALL"],
 		"defaultIVs": {
 			"cp1500": [27.5, 4, 5, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1255
 	}, {
 		"dex": 98,
 		"speciesName": "Krabby",
@@ -2184,12 +2273,13 @@
 		},
 		"types": ["ground", "none"],
 		"fastMoves": ["MUD_SLAP", "ROCK_SMASH"],
-		"chargedMoves": ["BONE_CLUB", "BULLDOZE", "DIG", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["BONE_CLUB", "BULLDOZE", "DIG"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 563
 	}, {
 		"dex": 105,
 		"speciesName": "Marowak",
@@ -2201,12 +2291,13 @@
 		},
 		"types": ["ground", "none"],
 		"fastMoves": ["MUD_SLAP", "ROCK_SMASH"],
-		"chargedMoves": ["BONE_CLUB", "DIG", "EARTHQUAKE", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["BONE_CLUB", "DIG", "EARTHQUAKE"],
 		"defaultIVs": {
 			"cp1500": [36, 0, 4, 9],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1090
 	}, {
 		"dex": 105,
 		"speciesName": "Marowak (Alolan)",
@@ -2240,7 +2331,9 @@
 		"defaultIVs": {
 			"cp1500": [22.5, 1, 14, 2],
 			"cp2500": [40, 13, 3, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1573
 	}, {
 		"dex": 107,
 		"speciesName": "Hitmonchan",
@@ -2252,12 +2345,14 @@
 		},
 		"types": ["fighting", "none"],
 		"fastMoves": ["BULLET_PUNCH", "COUNTER", "ROCK_SMASH"],
-		"chargedMoves": ["BRICK_BREAK", "CLOSE_COMBAT", "FIRE_PUNCH", "ICE_PUNCH", "THUNDER_PUNCH", "POWER_UP_PUNCH", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["BRICK_BREAK", "ROCK_SMASH", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["BRICK_BREAK", "CLOSE_COMBAT", "FIRE_PUNCH", "ICE_PUNCH", "THUNDER_PUNCH", "POWER_UP_PUNCH"],
+		"legacyMoves": ["BRICK_BREAK", "ROCK_SMASH"],
 		"defaultIVs": {
 			"cp1500": [24.5, 3, 8, 10],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1414
 	}, {
 		"dex": 108,
 		"speciesName": "Lickitung",
@@ -2290,7 +2385,9 @@
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 690
 	}, {
 		"dex": 110,
 		"speciesName": "Weezing",
@@ -2307,7 +2404,9 @@
 		"defaultIVs": {
 			"cp1500": [24.5, 7, 14, 7],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1391
 	}, {
 		"dex": 111,
 		"speciesName": "Rhyhorn",
@@ -2323,7 +2422,9 @@
 		"defaultIVs": {
 			"cp1500": [39.5, 5, 12, 8],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 970
 	}, {
 		"dex": 112,
 		"speciesName": "Rhydon",
@@ -2340,7 +2441,9 @@
 		"defaultIVs": {
 			"cp1500": [18, 2, 7, 8],
 			"cp2500": [30.5, 0, 11, 3]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1976
 	}, {
 		"dex": 113,
 		"speciesName": "Chansey",
@@ -2392,7 +2495,9 @@
 		"defaultIVs": {
 			"cp1500": [21.5, 6, 14, 9],
 			"cp2500": [40, 9, 10, 13]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1583
 	}, {
 		"dex": 116,
 		"speciesName": "Horsea",
@@ -2521,12 +2626,14 @@
 		},
 		"types": ["bug", "flying"],
 		"fastMoves": ["AIR_SLASH", "FURY_CUTTER", "STEEL_WING"],
-		"chargedMoves": ["AERIAL_ACE", "BUG_BUZZ", "NIGHT_SLASH", "X_SCISSOR", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["BUG_BUZZ", "STEEL_WING", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["AERIAL_ACE", "BUG_BUZZ", "NIGHT_SLASH", "X_SCISSOR"],
+		"legacyMoves": ["BUG_BUZZ", "STEEL_WING"],
 		"defaultIVs": {
 			"cp1500": [21, 5, 11, 5],
 			"cp2500": [38.5, 8, 14, 6]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1663
 	}, {
 		"dex": 124,
 		"speciesName": "Jynx",
@@ -2555,12 +2662,13 @@
 		},
 		"types": ["electric", "none"],
 		"fastMoves": ["LOW_KICK", "THUNDER_SHOCK"],
-		"chargedMoves": ["THUNDER", "THUNDER_PUNCH", "THUNDERBOLT", "FRUSTRATION", "RETURN"],
-		"legacyMoves": ["FRUSTRATION", "RETURN"],
+		"chargedMoves": ["THUNDER", "THUNDER_PUNCH", "THUNDERBOLT"],
 		"defaultIVs": {
 			"cp1500": [25, 3, 2, 12],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1417
 	}, {
 		"dex": 126,
 		"speciesName": "Magmar",
@@ -2572,12 +2680,13 @@
 		},
 		"types": ["fire", "none"],
 		"fastMoves": ["EMBER", "KARATE_CHOP"],
-		"chargedMoves": ["FIRE_BLAST", "FIRE_PUNCH", "FLAMETHROWER","FRUSTRATION", "RETURN"],
-		"legacyMoves": ["FRUSTRATION", "RETURN"],
+		"chargedMoves": ["FIRE_BLAST", "FIRE_PUNCH", "FLAMETHROWER"],
 		"defaultIVs": {
 			"cp1500": [24.5, 0, 4, 10],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1456
 	}, {
 		"dex": 127,
 		"speciesName": "Pinsir",
@@ -2623,12 +2732,13 @@
 		},
 		"types": ["water", "none"],
 		"fastMoves": ["SPLASH"],
-		"chargedMoves": ["STRUGGLE", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["STRUGGLE"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 109
 	}, {
 		"dex": 130,
 		"speciesName": "Gyarados",
@@ -2640,12 +2750,14 @@
 		},
 		"types": ["water", "flying"],
 		"fastMoves": ["BITE", "DRAGON_BREATH", "DRAGON_TAIL", "WATERFALL"],
-		"chargedMoves": ["CRUNCH", "DRAGON_PULSE", "HYDRO_PUMP", "OUTRAGE", "TWISTER", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["DRAGON_BREATH", "DRAGON_PULSE", "DRAGON_TAIL", "TWISTER", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["CRUNCH", "DRAGON_PULSE", "HYDRO_PUMP", "OUTRAGE", "TWISTER"],
+		"legacyMoves": ["DRAGON_BREATH", "DRAGON_PULSE", "DRAGON_TAIL", "TWISTER"],
 		"defaultIVs": {
 			"cp1500": [16.5, 5, 5, 14],
 			"cp2500": [27.5, 6, 9, 9]
-		}
+		},
+		"shadow": true,
+		"level25CP": 2119
 	}, {
 		"dex": 131,
 		"speciesName": "Lapras",
@@ -2657,12 +2769,14 @@
 		},
 		"types": ["water", "ice"],
 		"fastMoves": ["FROST_BREATH", "ICE_SHARD", "WATER_GUN"],
-		"chargedMoves": ["BLIZZARD", "DRAGON_PULSE", "HYDRO_PUMP", "ICE_BEAM", "SURF", "SKULL_BASH", "FRUSTRATION", "RETURN"],
-		"legacyMoves": ["DRAGON_PULSE", "ICE_BEAM", "ICE_SHARD", "FRUSTRATION", "RETURN"],
+		"chargedMoves": ["BLIZZARD", "DRAGON_PULSE", "HYDRO_PUMP", "ICE_BEAM", "SURF", "SKULL_BASH"],
+		"legacyMoves": ["DRAGON_PULSE", "ICE_BEAM", "ICE_SHARD"],
 		"defaultIVs": {
 			"cp1500": [22, 4, 2, 13],
 			"cp2500": [38.5, 12, 13, 7]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1616
 	}, {
 		"dex": 132,
 		"speciesName": "Ditto",
@@ -2763,7 +2877,9 @@
 		"defaultIVs": {
 			"cp1500": [38, 2, 11, 9],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1016
 	}, {
 		"dex": 138,
 		"speciesName": "Omanyte",
@@ -2858,12 +2974,14 @@
 		},
 		"types": ["normal", "none"],
 		"fastMoves": ["LICK", "ZEN_HEADBUTT", "YAWN"],
-		"chargedMoves": ["BODY_SLAM", "EARTHQUAKE", "HEAVY_SLAM", "HYPER_BEAM", "OUTRAGE", "SKULL_BASH", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["BODY_SLAM", "SKULL_BASH", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["BODY_SLAM", "EARTHQUAKE", "HEAVY_SLAM", "HYPER_BEAM", "OUTRAGE", "SKULL_BASH"],
+		"legacyMoves": ["BODY_SLAM", "SKULL_BASH"],
 		"defaultIVs": {
 			"cp1500": [17.5, 3, 15, 1],
 			"cp2500": [29, 0, 13, 14]
-		}
+		},
+		"shadow": true,
+		"level25CP": 2001
 	}, {
 		"dex": 144,
 		"speciesName": "Articuno",
@@ -2881,7 +2999,9 @@
 		"defaultIVs": {
 			"cp1500": [19, 1, 12, 1],
 			"cp2500": [33.5, 1, 2, 11]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1893
 	}, {
 		"dex": 145,
 		"speciesName": "Zapdos",
@@ -2929,12 +3049,13 @@
 		},
 		"types": ["dragon", "none"],
 		"fastMoves": ["DRAGON_BREATH", "IRON_TAIL"],
-		"chargedMoves": ["AQUA_TAIL", "TWISTER", "WRAP", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["AQUA_TAIL", "TWISTER", "WRAP"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 557
 	}, {
 		"dex": 148,
 		"speciesName": "Dragonair",
@@ -2946,12 +3067,13 @@
 		},
 		"types": ["dragon", "none"],
 		"fastMoves": ["DRAGON_BREATH", "IRON_TAIL"],
-		"chargedMoves": ["AQUA_TAIL", "DRAGON_PULSE", "WRAP", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["AQUA_TAIL", "DRAGON_PULSE", "WRAP"],
 		"defaultIVs": {
 			"cp1500": [37, 0, 5, 12],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1055
 	}, {
 		"dex": 149,
 		"speciesName": "Dragonite",
@@ -2963,12 +3085,14 @@
 		},
 		"types": ["dragon", "flying"],
 		"fastMoves": ["DRAGON_BREATH", "DRAGON_TAIL", "STEEL_WING"],
-		"chargedMoves": ["DRACO_METEOR", "DRAGON_CLAW", "DRAGON_PULSE", "HURRICANE", "HYPER_BEAM", "OUTRAGE", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["DRACO_METEOR", "DRAGON_BREATH", "DRAGON_CLAW", "DRAGON_PULSE", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["DRACO_METEOR", "DRAGON_CLAW", "DRAGON_PULSE", "HURRICANE", "HYPER_BEAM", "OUTRAGE"],
+		"legacyMoves": ["DRACO_METEOR", "DRAGON_BREATH", "DRAGON_CLAW", "DRAGON_PULSE"],
 		"defaultIVs": {
 			"cp1500": [14.5, 9, 12, 6],
 			"cp2500": [24, 7, 10, 13]
-		}
+		},
+		"shadow": true,
+		"level25CP": 2386
 	}, {
 		"dex": 150,
 		"speciesName": "Mewtwo",
@@ -3307,12 +3431,13 @@
 		},
 		"types": ["poison", "flying"],
 		"fastMoves": ["AIR_SLASH", "BITE"],
-		"chargedMoves": ["AIR_CUTTER", "SHADOW_BALL", "SLUDGE_BOMB", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["AIR_CUTTER", "SHADOW_BALL", "SLUDGE_BOMB"],
 		"defaultIVs": {
 			"cp1500": [21.5, 6, 2, 14],
 			"cp2500": [40, 9, 15, 3]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1624
 	}, {
 		"dex": 170,
 		"speciesName": "Chinchou",
@@ -3473,12 +3598,13 @@
 		},
 		"types": ["electric", "none"],
 		"fastMoves": ["TACKLE", "THUNDER_SHOCK"],
-		"chargedMoves": ["BODY_SLAM", "DISCHARGE", "THUNDERBOLT", "FRUSTRATION", "RETURN"],
-		"legacyMoves": ["FRUSTRATION", "RETURN"],
+		"chargedMoves": ["BODY_SLAM", "DISCHARGE", "THUNDERBOLT"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 546
 	}, {
 		"dex": 180,
 		"speciesName": "Flaaffy",
@@ -3490,12 +3616,13 @@
 		},
 		"types": ["electric", "none"],
 		"fastMoves": ["CHARGE_BEAM", "TACKLE"],
-		"chargedMoves": ["DISCHARGE", "POWER_GEM", "THUNDERBOLT", "FRUSTRATION", "RETURN"],
-		"legacyMoves": ["FRUSTRATION", "RETURN"],
+		"chargedMoves": ["DISCHARGE", "POWER_GEM", "THUNDERBOLT"],
 		"defaultIVs": {
 			"cp1500": [40, 12, 8, 13],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 885
 	}, {
 		"dex": 181,
 		"speciesName": "Ampharos",
@@ -3507,12 +3634,14 @@
 		},
 		"types": ["electric", "none"],
 		"fastMoves": ["CHARGE_BEAM", "VOLT_SWITCH"],
-		"chargedMoves": ["DRAGON_PULSE", "FOCUS_BLAST", "POWER_GEM", "THUNDER", "ZAP_CANNON", "FRUSTRATION", "RETURN"],
-		"legacyMoves": ["DRAGON_PULSE", "FRUSTRATION", "RETURN"],
+		"chargedMoves": ["DRAGON_PULSE", "FOCUS_BLAST", "POWER_GEM", "THUNDER", "ZAP_CANNON"],
+		"legacyMoves": ["DRAGON_PULSE"],
 		"defaultIVs": {
 			"cp1500": [19.5, 3, 10, 15],
 			"cp2500": [35, 6, 9, 14]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1760
 	}, {
 		"dex": 182,
 		"speciesName": "Bellossom",
@@ -3524,12 +3653,13 @@
 		},
 		"types": ["grass", "none"],
 		"fastMoves": ["ACID", "RAZOR_LEAF"],
-		"chargedMoves": ["DAZZLING_GLEAM", "LEAF_BLADE", "PETAL_BLIZZARD", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["DAZZLING_GLEAM", "LEAF_BLADE", "PETAL_BLIZZARD"],
 		"defaultIVs": {
 			"cp1500": [25, 5, 7, 11],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1383
 	}, {
 		"dex": 183,
 		"speciesName": "Marill",
@@ -3589,12 +3719,14 @@
 		},
 		"types": ["water", "none"],
 		"fastMoves": ["BUBBLE", "MUD_SHOT"],
-		"chargedMoves": ["BLIZZARD", "EARTHQUAKE", "HYDRO_PUMP", "SURF", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["EARTHQUAKE", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["BLIZZARD", "EARTHQUAKE", "HYDRO_PUMP", "SURF"],
+		"legacyMoves": ["EARTHQUAKE"],
 		"defaultIVs": {
 			"cp1500": [23.5, 0, 9, 12],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1494
 	}, {
 		"dex": 187,
 		"speciesName": "Hoppip",
@@ -3788,7 +3920,9 @@
 		"defaultIVs": {
 			"cp1500": [39.5, 15, 9, 12],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 906
 	}, {
 		"dex": 199,
 		"speciesName": "Slowking",
@@ -3852,7 +3986,9 @@
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 538
 	}, {
 		"dex": 203,
 		"speciesName": "Girafarig",
@@ -3948,7 +4084,9 @@
 		"defaultIVs": {
 			"cp1500": [23.5, 7, 13, 6],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1465
 	}, {
 		"dex": 209,
 		"speciesName": "Snubbull",
@@ -4008,12 +4146,13 @@
 		},
 		"types": ["bug", "steel"],
 		"fastMoves": ["BULLET_PUNCH", "FURY_CUTTER"],
-		"chargedMoves": ["IRON_HEAD", "NIGHT_SLASH", "X_SCISSOR", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["IRON_HEAD", "NIGHT_SLASH", "X_SCISSOR"],
 		"defaultIVs": {
 			"cp1500": [18.5, 8, 9, 10],
 			"cp2500": [33, 3, 7, 11]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1857
 	}, {
 		"dex": 213,
 		"speciesName": "Shuckle",
@@ -4062,7 +4201,9 @@
 		"defaultIVs": {
 			"cp1500": [28, 4, 15, 3],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1231
 	}, {
 		"dex": 216,
 		"speciesName": "Teddiursa",
@@ -4268,12 +4409,13 @@
 		},
 		"types": ["dark", "fire"],
 		"fastMoves": ["EMBER", "FEINT_ATTACK"],
-		"chargedMoves": ["CRUNCH", "DARK_PULSE", "FLAMETHROWER", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["CRUNCH", "DARK_PULSE", "FLAMETHROWER"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 698
 	}, {
 		"dex": 229,
 		"speciesName": "Houndoom",
@@ -4285,12 +4427,13 @@
 		},
 		"types": ["dark", "fire"],
 		"fastMoves": ["FIRE_FANG", "SNARL"],
-		"chargedMoves": ["CRUNCH", "FIRE_BLAST", "FLAMETHROWER", "FOUL_PLAY", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["CRUNCH", "FIRE_BLAST", "FLAMETHROWER", "FOUL_PLAY"],
 		"defaultIVs": {
 			"cp1500": [20.5, 11, 12, 14],
 			"cp2500": [39.5, 11, 14, 5]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1613
 	}, {
 		"dex": 230,
 		"speciesName": "Kingdra",
@@ -4355,7 +4498,9 @@
 		"defaultIVs": {
 			"cp1500": [20, 10, 12, 14],
 			"cp2500": [37, 7, 13, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1667
 	}, {
 		"dex": 234,
 		"speciesName": "Stantler",
@@ -4566,12 +4711,13 @@
 		},
 		"types": ["rock", "ground"],
 		"fastMoves": ["BITE", "ROCK_SMASH"],
-		"chargedMoves": ["ANCIENT_POWER", "CRUNCH", "STOMP", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["ANCIENT_POWER", "CRUNCH", "STOMP"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 579
 	}, {
 		"dex": 247,
 		"speciesName": "Pupitar",
@@ -4583,12 +4729,13 @@
 		},
 		"types": ["rock", "ground"],
 		"fastMoves": ["BITE", "ROCK_SMASH"],
-		"chargedMoves": ["ANCIENT_POWER", "CRUNCH", "DIG", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["ANCIENT_POWER", "CRUNCH", "DIG"],
 		"defaultIVs": {
 			"cp1500": [37.5, 1, 9, 7],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1045
 	}, {
 		"dex": 248,
 		"speciesName": "Tyranitar",
@@ -4600,12 +4747,14 @@
 		},
 		"types": ["rock", "dark"],
 		"fastMoves": ["BITE", "IRON_TAIL", "SMACK_DOWN"],
-		"chargedMoves": ["CRUNCH", "FIRE_BLAST", "STONE_EDGE", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["SMACK_DOWN", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["CRUNCH", "FIRE_BLAST", "STONE_EDGE"],
+		"legacyMoves": ["SMACK_DOWN"],
 		"defaultIVs": {
 			"cp1500": [14.5, 5, 14, 4],
 			"cp2500": [24, 4, 10, 12]
-		}
+		},
+		"shadow": true,
+		"level25CP": 2416
 	}, {
 		"dex": 249,
 		"speciesName": "Lugia",
@@ -4702,7 +4851,6 @@
 		"fastMoves": ["BULLET_SEED", "FURY_CUTTER"],
 		"chargedMoves": ["AERIAL_ACE", "EARTHQUAKE", "LEAF_BLADE", "FRENZY_PLANT", "DRAGON_CLAW"],
 		"legacyMoves": ["FRENZY_PLANT"],
-
 		"defaultIVs": {
 			"cp1500": [20, 7, 8, 15],
 			"cp2500": [40, 1, 6, 10]
@@ -4771,7 +4919,9 @@
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 634
 	}, {
 		"dex": 259,
 		"speciesName": "Marshtomp",
@@ -4787,7 +4937,9 @@
 		"defaultIVs": {
 			"cp1500": [33, 5, 14, 13],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1052
 	}, {
 		"dex": 260,
 		"speciesName": "Swampert",
@@ -4804,7 +4956,9 @@
 		"defaultIVs": {
 			"cp1500": [19, 3, 15, 2],
 			"cp2500": [36, 0, 9, 1]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1841
 	}, {
 		"dex": 261,
 		"speciesName": "Poochyena",
@@ -5008,12 +5162,13 @@
 		},
 		"types": ["grass", "none"],
 		"fastMoves": ["BULLET_SEED", "QUICK_ATTACK"],
-		"chargedMoves": ["ENERGY_BALL", "FOUL_PLAY", "GRASS_KNOT", "FRUSTRATION", "RETURN"],
-		"legacyMoves": ["FRUSTRATION", "RETURN"],
+		"chargedMoves": ["ENERGY_BALL", "FOUL_PLAY", "GRASS_KNOT"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 304
 	}, {
 		"dex": 274,
 		"speciesName": "Nuzleaf",
@@ -5025,12 +5180,13 @@
 		},
 		"types": ["grass", "dark"],
 		"fastMoves": ["FEINT_ATTACK", "RAZOR_LEAF"],
-		"chargedMoves": ["FOUL_PLAY", "GRASS_KNOT", "LEAF_BLADE", "FRUSTRATION", "RETURN"],
-		"legacyMoves": ["FRUSTRATION", "RETURN"],
+		"chargedMoves": ["FOUL_PLAY", "GRASS_KNOT", "LEAF_BLADE"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 692
 	}, {
 		"dex": 275,
 		"speciesName": "Shiftry",
@@ -5042,12 +5198,13 @@
 		},
 		"types": ["grass", "dark"],
 		"fastMoves": ["FEINT_ATTACK", "RAZOR_LEAF"],
-		"chargedMoves": ["FOUL_PLAY", "HURRICANE", "LEAF_BLADE", "LEAF_TORNADO", "FRUSTRATION", "RETURN"],
-		"legacyMoves": ["FRUSTRATION", "RETURN"],
+		"chargedMoves": ["FOUL_PLAY", "HURRICANE", "LEAF_BLADE", "LEAF_TORNADO"],
 		"defaultIVs": {
 			"cp1500": [24.5, 3, 8, 12],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1412
 	}, {
 		"dex": 276,
 		"speciesName": "Taillow",
@@ -5123,12 +5280,13 @@
 		},
 		"types": ["psychic", "fairy"],
 		"fastMoves": ["CHARGE_BEAM", "CONFUSION"],
-		"chargedMoves": ["DISARMING_VOICE", "PSYSHOCK", "SHADOW_SNEAK", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["DISARMING_VOICE", "PSYSHOCK", "SHADOW_SNEAK"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 269
 	}, {
 		"dex": 281,
 		"speciesName": "Kirlia",
@@ -5140,12 +5298,13 @@
 		},
 		"types": ["psychic", "fairy"],
 		"fastMoves": ["CHARGE_BEAM", "CONFUSION"],
-		"chargedMoves": ["DISARMING_VOICE", "PSYCHIC", "SHADOW_SNEAK", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["DISARMING_VOICE", "PSYCHIC", "SHADOW_SNEAK"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 533
 	}, {
 		"dex": 282,
 		"speciesName": "Gardevoir",
@@ -5157,12 +5316,14 @@
 		},
 		"types": ["psychic", "fairy"],
 		"fastMoves": ["CHARGE_BEAM", "CONFUSION", "CHARM"],
-		"chargedMoves": ["DAZZLING_GLEAM", "PSYCHIC", "SHADOW_BALL", "SYNCHRONOISE", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["SYNCHRONOISE", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["DAZZLING_GLEAM", "PSYCHIC", "SHADOW_BALL", "SYNCHRONOISE"],
+		"legacyMoves": ["SYNCHRONOISE"],
 		"defaultIVs": {
 			"cp1500": [18.5, 0, 15, 2],
 			"cp2500": [32.5, 1, 3, 10]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1919
 	}, {
 		"dex": 283,
 		"speciesName": "Surskit",
@@ -5480,12 +5641,13 @@
 		},
 		"types": ["dark", "ghost"],
 		"fastMoves": ["FEINT_ATTACK", "SHADOW_CLAW"],
-		"chargedMoves": ["FOUL_PLAY", "POWER_GEM", "SHADOW_SNEAK", "FRUSTRATION", "RETURN"],
-		"legacyMoves": ["FRUSTRATION", "RETURN"],
+		"chargedMoves": ["FOUL_PLAY", "POWER_GEM", "SHADOW_SNEAK"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 858
 	}, {
 		"dex": 303,
 		"speciesName": "Mawile",
@@ -5898,12 +6060,13 @@
 		},
 		"types": ["ground", "none"],
 		"fastMoves": ["MUD_SHOT", "STRUGGLE_BUG"],
-		"chargedMoves": ["CRUNCH", "DIG", "SAND_TOMB", "FRUSTRATION", "RETURN"],
-		"legacyMoves": ["FRUSTRATION", "RETURN"],
+		"chargedMoves": ["CRUNCH", "DIG", "SAND_TOMB"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 722
 	}, {
 		"dex": 329,
 		"speciesName": "Vibrava",
@@ -5915,12 +6078,13 @@
 		},
 		"types": ["ground", "dragon"],
 		"fastMoves": ["DRAGON_BREATH", "MUD_SHOT"],
-		"chargedMoves": ["BUG_BUZZ", "BULLDOZE", "SAND_TOMB","FRUSTRATION", "RETURN"],
-		"legacyMoves": ["FRUSTRATION", "RETURN"],
+		"chargedMoves": ["BUG_BUZZ", "BULLDOZE", "SAND_TOMB"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 696
 	}, {
 		"dex": 330,
 		"speciesName": "Flygon",
@@ -5932,12 +6096,14 @@
 		},
 		"types": ["ground", "dragon"],
 		"fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
-		"chargedMoves": ["DRAGON_CLAW", "EARTHQUAKE", "STONE_EDGE", "EARTH_POWER", "FRUSTRATION", "RETURN"],
-		"legacyMoves": ["EARTH_POWER", "FRUSTRATION", "RETURN"],
+		"chargedMoves": ["DRAGON_CLAW", "EARTHQUAKE", "STONE_EDGE", "EARTH_POWER"],
+		"legacyMoves": ["EARTH_POWER"],
 		"defaultIVs": {
 			"cp1500": [20.5, 5, 14, 14],
 			"cp2500": [37, 10, 15, 14]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1634
 	}, {
 		"dex": 331,
 		"speciesName": "Cacnea",
@@ -5949,12 +6115,13 @@
 		},
 		"types": ["grass", "none"],
 		"fastMoves": ["POISON_STING", "SUCKER_PUNCH"],
-		"chargedMoves": ["BRICK_BREAK", "GRASS_KNOT", "SEED_BOMB", "FRUSTRATION", "RETURN"],
-		"legacyMoves": ["FRUSTRATION", "RETURN"],
+		"chargedMoves": ["BRICK_BREAK", "GRASS_KNOT", "SEED_BOMB"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 700
 	}, {
 		"dex": 332,
 		"speciesName": "Cacturne",
@@ -5966,12 +6133,13 @@
 		},
 		"types": ["grass", "dark"],
 		"fastMoves": ["POISON_JAB", "SUCKER_PUNCH"],
-		"chargedMoves": ["DARK_PULSE", "DYNAMIC_PUNCH", "GRASS_KNOT", "FRUSTRATION", "RETURN"],
-		"legacyMoves": ["FRUSTRATION", "RETURN"],
+		"chargedMoves": ["DARK_PULSE", "DYNAMIC_PUNCH", "GRASS_KNOT"],
 		"defaultIVs": {
 			"cp1500": [23.5, 13, 10, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1386
 	}, {
 		"dex": 333,
 		"speciesName": "Swablu",
@@ -6351,12 +6519,13 @@
 		},
 		"types": ["ghost", "none"],
 		"fastMoves": ["ASTONISH", "FEINT_ATTACK"],
-		"chargedMoves": ["NIGHT_SHADE", "OMINOUS_WIND", "SHADOW_SNEAK", "FRUSTRATION", "RETURN"],
-		"legacyMoves": ["FRUSTRATION", "RETURN"],
+		"chargedMoves": ["NIGHT_SHADE", "OMINOUS_WIND", "SHADOW_SNEAK"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 559
 	}, {
 		"dex": 354,
 		"speciesName": "Banette",
@@ -6368,12 +6537,13 @@
 		},
 		"types": ["ghost", "none"],
 		"fastMoves": ["HEX", "SHADOW_CLAW"],
-		"chargedMoves": ["DAZZLING_GLEAM", "SHADOW_BALL", "THUNDER", "FRUSTRATION", "RETURN"],
-		"legacyMoves": ["FRUSTRATION", "RETURN"],
+		"chargedMoves": ["DAZZLING_GLEAM", "SHADOW_BALL", "THUNDER"],
 		"defaultIVs": {
 			"cp1500": [25.5, 0, 7, 7],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1389
 	}, {
 		"dex": 355,
 		"speciesName": "Duskull",
@@ -6385,12 +6555,13 @@
 		},
 		"types": ["ghost", "none"],
 		"fastMoves": ["ASTONISH", "HEX"],
-		"chargedMoves": ["NIGHT_SHADE", "OMINOUS_WIND", "SHADOW_SNEAK","FRUSTRATION", "RETURN"],
-		"legacyMoves": ["FRUSTRATION", "RETURN"],
+		"chargedMoves": ["NIGHT_SHADE", "OMINOUS_WIND", "SHADOW_SNEAK"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 366
 	}, {
 		"dex": 356,
 		"speciesName": "Dusclops",
@@ -6402,12 +6573,13 @@
 		},
 		"types": ["ghost", "none"],
 		"fastMoves": ["FEINT_ATTACK", "HEX"],
-		"chargedMoves": ["FIRE_PUNCH", "ICE_PUNCH", "SHADOW_PUNCH", "FRUSTRATION", "RETURN"],
-		"legacyMoves": ["FRUSTRATION", "RETURN"],
+		"chargedMoves": ["FIRE_PUNCH", "ICE_PUNCH", "SHADOW_PUNCH"],
 		"defaultIVs": {
 			"cp1500": [37, 12, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 927
 	}, {
 		"dex": 357,
 		"speciesName": "Tropius",
@@ -6741,7 +6913,7 @@
 			"hp": 190
 		},
 		"types": ["rock", "none"],
-		"fastMoves": ["ROCK_SMASH", "ROCK_THROW"],
+		"fastMoves": ["ROCK_SMASH", "ROCK_THROW", "LOCK_ON"],
 		"chargedMoves": ["FOCUS_BLAST", "STONE_EDGE", "ZAP_CANNON"],
 		"tags": ["legendary"],
 		"defaultIVs": {
@@ -6758,7 +6930,7 @@
 			"hp": 190
 		},
 		"types": ["ice", "none"],
-		"fastMoves": ["FROST_BREATH", "ROCK_SMASH"],
+		"fastMoves": ["FROST_BREATH", "ROCK_SMASH", "LOCK_ON"],
 		"chargedMoves": ["BLIZZARD", "EARTHQUAKE", "FOCUS_BLAST"],
 		"tags": ["legendary"],
 		"defaultIVs": {
@@ -6775,7 +6947,7 @@
 			"hp": 190
 		},
 		"types": ["steel", "none"],
-		"fastMoves": ["METAL_CLAW", "ROCK_SMASH"],
+		"fastMoves": ["METAL_CLAW", "ROCK_SMASH", "LOCK_ON"],
 		"chargedMoves": ["FLASH_CANNON", "FOCUS_BLAST", "HYPER_BEAM"],
 		"tags": ["legendary"],
 		"defaultIVs": {
@@ -6963,12 +7135,13 @@
 		},
 		"types": ["grass", "none"],
 		"fastMoves": ["RAZOR_LEAF", "TACKLE"],
-		"chargedMoves": ["BODY_SLAM", "ENERGY_BALL", "SEED_BOMB", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["BODY_SLAM", "ENERGY_BALL", "SEED_BOMB"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 672
 	}, {
 		"dex": 388,
 		"speciesName": "Grotle",
@@ -6980,12 +7153,13 @@
 		},
 		"types": ["grass", "none"],
 		"fastMoves": ["BITE", "RAZOR_LEAF"],
-		"chargedMoves": ["BODY_SLAM", "ENERGY_BALL", "SOLAR_BEAM", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["RETURN", "FRUSTRATION"],
+		"chargedMoves": ["BODY_SLAM", "ENERGY_BALL", "SOLAR_BEAM"],
 		"defaultIVs": {
 			"cp1500": [33.5, 1, 1, 14],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1126
 	}, {
 		"dex": 389,
 		"speciesName": "Torterra",
@@ -6997,12 +7171,14 @@
 		},
 		"types": ["grass", "ground"],
 		"fastMoves": ["BITE", "RAZOR_LEAF"],
-		"chargedMoves": ["EARTHQUAKE", "SOLAR_BEAM", "STONE_EDGE", "RETURN", "FRUSTRATION", "FRENZY_PLANT"],
-		"legacyMoves": ["RETURN", "FRUSTRATION", "FRENZY_PLANT"],
+		"chargedMoves": ["EARTHQUAKE", "SOLAR_BEAM", "STONE_EDGE", "FRENZY_PLANT"],
+		"legacyMoves": ["FRENZY_PLANT"],
 		"defaultIVs": {
 			"cp1500": [18.5, 9, 13, 13],
 			"cp2500": [34.5, 3, 13, 6]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1816
 	}, {
 		"dex": 390,
 		"speciesName": "Chimchar",
@@ -7018,7 +7194,9 @@
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 526
 	}, {
 		"dex": 391,
 		"speciesName": "Monferno",
@@ -7034,7 +7212,9 @@
 		"defaultIVs": {
 			"cp1500": [40, 3, 13, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 919
 	}, {
 		"dex": 392,
 		"speciesName": "Infernape",
@@ -7050,7 +7230,9 @@
 		"defaultIVs": {
 			"cp1500": [22, 1, 5, 5],
 			"cp2500": [37, 11, 14, 12]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1646
 	}, {
 		"dex": 393,
 		"speciesName": "Piplup",
@@ -7776,7 +7958,9 @@
 		"defaultIVs": {
 			"cp1500": [20, 5, 14, 14],
 			"cp2500": [38.5, 4, 15, 5]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1650
 	}, {
 		"dex": 431,
 		"speciesName": "Glameow",
@@ -7985,7 +8169,9 @@
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 623
 	}, {
 		"dex": 444,
 		"speciesName": "Gabite",
@@ -8001,7 +8187,9 @@
 		"defaultIVs": {
 			"cp1500": [32, 2, 6, 14],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1115
 	}, {
 		"dex": 445,
 		"speciesName": "Garchomp",
@@ -8017,7 +8205,9 @@
 		"defaultIVs": {
 			"cp1500": [14, 0, 9, 15],
 			"cp2500": [23, 8, 13, 9]
-		}
+		},
+		"shadow": true,
+		"level25CP": 2500
 	}, {
 		"dex": 446,
 		"speciesName": "Munchlax",
@@ -8081,7 +8271,9 @@
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 781
 	}, {
 		"dex": 450,
 		"speciesName": "Hippowdon",
@@ -8097,7 +8289,9 @@
 		"defaultIVs": {
 			"cp1500": [18, 6, 12, 9],
 			"cp2500": [31.5, 3, 15, 2]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1915
 	}, {
 		"dex": 451,
 		"speciesName": "Skorupi",
@@ -8274,7 +8468,9 @@
 		"defaultIVs": {
 			"cp1500": [19, 4, 12, 3],
 			"cp2500": [33.5, 1, 8, 10]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1859
 	}, {
 		"dex": 462,
 		"speciesName": "Magnezone",
@@ -8290,7 +8486,9 @@
 		"defaultIVs": {
 			"cp1500": [17.5, 8, 14, 2],
 			"cp2500": [29.5, 4, 10, 6]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1993
 	}, {
 		"dex": 463,
 		"speciesName": "Lickilicky",
@@ -8322,7 +8520,9 @@
 		"defaultIVs": {
 			"cp1500": [15, 2, 10, 8],
 			"cp2500": [24.5, 5, 15, 9]
-		}
+		},
+		"shadow": true,
+		"level25CP": 2347
 	}, {
 		"dex": 465,
 		"speciesName": "Tangrowth",
@@ -8350,12 +8550,13 @@
 		},
 		"types": ["electric", "none"],
 		"fastMoves": ["LOW_KICK", "THUNDER_SHOCK"],
-		"chargedMoves": ["THUNDER", "THUNDER_PUNCH", "WILD_CHARGE", "ICE_PUNCH", "FRUSTRATION", "RETURN"],
-		"legacyMoves": ["FRUSTRATION", "RETURN"],
+		"chargedMoves": ["THUNDER", "THUNDER_PUNCH", "WILD_CHARGE", "ICE_PUNCH"],
 		"defaultIVs": {
 			"cp1500": [18, 6, 15, 6],
 			"cp2500": [29.5, 10, 15, 8]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1908
 	}, {
 		"dex": 467,
 		"speciesName": "Magmortar",
@@ -8367,12 +8568,13 @@
 		},
 		"types": ["fire", "none"],
 		"fastMoves": ["FIRE_SPIN", "KARATE_CHOP"],
-		"chargedMoves": ["BRICK_BREAK", "FIRE_BLAST", "FIRE_PUNCH", "PSYCHIC", "FRUSTRATION", "RETURN"],
-		"legacyMoves": ["FRUSTRATION", "RETURN"],
+		"chargedMoves": ["BRICK_BREAK", "FIRE_BLAST", "FIRE_PUNCH", "PSYCHIC"],
 		"defaultIVs": {
 			"cp1500": [17.5, 1, 14, 13],
 			"cp2500": [31, 2, 6, 10]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1944
 	}, {
 		"dex": 468,
 		"speciesName": "Togekiss",
@@ -8485,7 +8687,9 @@
 		"defaultIVs": {
 			"cp1500": [16.5, 6, 13, 14],
 			"cp2500": [27.5, 12, 13, 11]
-		}
+		},
+		"shadow": true,
+		"level25CP": 2029
 	}, {
 		"dex": 475,
 		"speciesName": "Gallade",
@@ -8497,12 +8701,14 @@
 		},
 		"types": ["psychic", "fighting"],
 		"fastMoves": ["CONFUSION", "LOW_KICK", "CHARM"],
-		"chargedMoves": ["CLOSE_COMBAT", "LEAF_BLADE", "PSYCHIC", "SYNCHRONOISE", "RETURN", "FRUSTRATION"],
-		"legacyMoves": ["SYNCHRONOISE", "RETURN", "FRUSTRATION"],
+		"chargedMoves": ["CLOSE_COMBAT", "LEAF_BLADE", "PSYCHIC", "SYNCHRONOISE"],
+		"legacyMoves": ["SYNCHRONOISE"],
 		"defaultIVs": {
 			"cp1500": [18.5, 0, 15, 2],
 			"cp2500": [32.5, 1, 3, 10]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1919
 	}, {
 		"dex": 476,
 		"speciesName": "Probopass",
@@ -8530,12 +8736,13 @@
 		},
 		"types": ["ghost", "none"],
 		"fastMoves": ["ASTONISH", "HEX"],
-		"chargedMoves": ["DARK_PULSE", "OMINOUS_WIND", "PSYCHIC", "FRUSTRATION", "RETURN"],
-		"legacyMoves": ["FRUSTRATION", "RETURN"],
+		"chargedMoves": ["DARK_PULSE", "OMINOUS_WIND", "PSYCHIC"],
 		"defaultIVs": {
 			"cp1500": [23.5, 5, 7, 14],
 			"cp2500": [40, 15, 15, 15]
-		}
+		},
+		"shadow": true,
+		"level25CP": 1447
 	}, {
 		"dex": 478,
 		"speciesName": "Froslass",
@@ -8760,8 +8967,8 @@
 			"hp": 221
 		},
 		"types": ["normal", "none"],
-		"fastMoves": ["ROCK_SMASH", "ZEN_HEADBUTT"],
-		"chargedMoves": ["AVALANCHE", "HEAVY_SLAM", "STONE_EDGE"],
+		"fastMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "ZEN_HEADBUTT"],
+		"chargedMoves": ["GIGA_IMPACT", "FOCUS_BLAST", "THUNDER"],
 		"tags": ["legendary"],
 		"defaultIVs": {
 			"cp1500": [12.5, 4, 14, 10],
@@ -11878,22 +12085,6 @@
 		}
 	}, {
 		"dex": 646,
-		"speciesId": "kyurem_black",
-		"speciesName": "Kyurem (Black)",
-		"baseStats": {
-			"atk": 310,
-			"def": 183,
-			"hp": 245
-		},
-		"types": ["dragon", "ice"],
-		"fastMoves": ["DRAGON_TAIL", "SHADOW_CLAW"],
-		"chargedMoves": ["IRON_HEAD", "BLIZZARD", "STONE_EDGE", "OUTRAGE"],
-		"defaultIVs": {
-			"cp1500": [12, 3, 10, 9],
-			"cp2500": [19.5, 8, 13, 12]
-		}
-	}, {
-		"dex": 646,
 		"speciesId": "kyurem_normal",
 		"speciesName": "Kyurem",
 		"baseStats": {
@@ -11907,6 +12098,22 @@
 		"defaultIVs": {
 			"cp1500": [16.5, 0, 1, 4],
 			"cp2500": [26, 3, 12, 8]
+		}
+	}, {
+		"dex": 646,
+		"speciesId": "kyurem_black",
+		"speciesName": "Kyurem (Black)",
+		"baseStats": {
+			"atk": 310,
+			"def": 183,
+			"hp": 245
+		},
+		"types": ["dragon", "ice"],
+		"fastMoves": ["DRAGON_TAIL", "SHADOW_CLAW"],
+		"chargedMoves": ["IRON_HEAD", "BLIZZARD", "STONE_EDGE", "OUTRAGE"],
+		"defaultIVs": {
+			"cp1500": [12, 3, 10, 9],
+			"cp2500": [19.5, 8, 13, 12]
 		}
 	}, {
 		"dex": 646,
@@ -12719,6 +12926,14 @@
 		"energyGain": 0,
 		"cooldown": 500
 	}, {
+		"moveId": "GIGA_IMPACT",
+		"name": "Giga Impact",
+		"type": "normal",
+		"power": 150,
+		"energy": 80,
+		"energyGain": 0,
+		"cooldown": 500
+	}, {
 		"moveId": "GRASS_KNOT",
 		"name": "Grass Knot",
 		"type": "grass",
@@ -13064,6 +13279,14 @@
 		"power": 3,
 		"energy": 0,
 		"energyGain": 3,
+		"cooldown": 500
+	}, {
+		"moveId": "LOCK_ON",
+		"name": "Lock On",
+		"type": "normal",
+		"power": 1,
+		"energy": 0,
+		"energyGain": 5,
 		"cooldown": 500
 	}, {
 		"moveId": "LOW_KICK",

@@ -49,6 +49,10 @@
 				"chargedMoves": ["SURF", "SKULL_BASH"]
 			},
 			{
+				"speciesId": "marowak_alolan",
+				"fastMove": "FIRE_SPIN"
+			},
+			{
 				"speciesId": "zapdos",
 				"fastMove": "CHARGE_BEAM"
 			},
@@ -807,6 +811,10 @@
 				"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
 			},
 			{
+				"speciesId": "marowak_alolan",
+				"fastMove": "FIRE_SPIN"
+			},
+			{
 				"speciesId": "toxicroak",
 				"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
 			},
@@ -1196,6 +1204,10 @@
 				"chargedMoves": ["FOUL_PLAY","LAST_RESORT"]
 			},
 			{
+				"speciesId": "sandslash",
+				"chargedMoves": ["EARTHQUAKE","RETURN"]
+			},
+			{
 				"speciesId": "ninetales_alolan",
 				"fastMove": "CHARM",
 				"chargedMoves": ["PSYSHOCK", "ICE_BEAM"]
@@ -1242,8 +1254,8 @@
 				"chargedMoves": ["HYPER_BEAM","POWER_WHIP"]
 			},
 			{
-				"speciesId": "persian",
-				"chargedMoves": ["FOUL_PLAY","PLAY_ROUGH"]
+				"speciesId": "hippopotas",
+				"chargedMoves": ["BODY_SLAM","DIG"]
 			},
 			{
 				"speciesId": "persian_alolan",

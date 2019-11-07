@@ -245,6 +245,10 @@ var InterfaceMaster = (function () {
 					for(var i = 0; i < gm.data.pokemon.length; i++){
 						var pokemon = gm.data.pokemon[i];
 						var valid = true;
+						
+						if(pokemon.shadow){
+							pokemon.chargedMoves.push("RETURN","FRUSTRATION");
+						}
 
 						if((fastMoveId != '')&&(pokemon.fastMoves.indexOf(fastMoveId) == -1)){
 							valid = false;

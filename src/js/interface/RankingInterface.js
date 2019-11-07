@@ -15,6 +15,7 @@ var InterfaceMaster = (function () {
 			var jumpToPoke = false;
 			var limitedPokemon = [];
 			var context = "rankings";
+			var battle = new Battle();
 
 			this.init = function(){
 				if(! get){
@@ -53,6 +54,8 @@ var InterfaceMaster = (function () {
 
 					$(".league-select option[value=\"1500\"]").prop("selected","selected");
 				}
+
+				battle.setCP(league);
 
 				/* This timeout allows the interface to display the loading message before
 				being thrown into the data loading loop */
@@ -98,8 +101,6 @@ var InterfaceMaster = (function () {
 					limitedPokemon = ["azumarill","deoxys_defense","medicham","wormadam_trash","forretress","sableye"];
 				}
 
-				var battle = new Battle();
-
 				$(".section.white > .rankings-container").html('');
 
 
@@ -125,7 +126,7 @@ var InterfaceMaster = (function () {
 					if(move.legacy){
 						moveNameStr += "*";
 					}
-
+					console.log(pokemon.chargedMovePool);
 					if((arr.length > 2)&&(arr[2] != "0")){
 						move = pokemon.chargedMovePool[arr[2]-1];
 						moveNameStr += ", " + move.name;
@@ -273,8 +274,9 @@ var InterfaceMaster = (function () {
 			// Event handler for changing the league select
 
 			function selectLeague(e){
+				var cp = $(".league-select option:selected").val();
+
 				if($(".cup-select").length > 0){
-					var cp = $(".league-select option:selected").val();
 					var category = $(".ranking-categories a.selected").attr("data");
 					var cup = $(".cup-select option:selected").val();
 
@@ -282,6 +284,8 @@ var InterfaceMaster = (function () {
 
 					self.pushHistoryState(cup, cp, category, null);
 				}
+
+				battle.setCP(cp);
 			}
 
 			// Event handler for changing the cup select
@@ -378,7 +382,7 @@ var InterfaceMaster = (function () {
 				}
 
 				var r = data[index];
-				var pokemon = new Pokemon(r.speciesId);
+				var pokemon = new Pokemon(r.speciesId, 0, battle);
 
 				// If overall, display score for each category
 
@@ -497,7 +501,7 @@ var InterfaceMaster = (function () {
 
 				for(var n = 0; n < r.matchups.length; n++){
 					var m = r.matchups[n];
-					var opponent = new Pokemon(m.opponent);
+					var opponent = new Pokemon(m.opponent, 1, battle);
 					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+"/"+shieldStrs[category]+"/"+r.moveStr+"/";
 
 					// Append opponent's move string
@@ -519,7 +523,7 @@ var InterfaceMaster = (function () {
 
 				for(var n = 0; n < r.counters.length; n++){
 					var c = r.counters[n];
-					var opponent = new Pokemon(c.opponent);
+					var opponent = new Pokemon(c.opponent, 1, battle);
 					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+"/"+shieldStrs[category]+"/"+r.moveStr+"/";
 
 					// Append opponent's move string
