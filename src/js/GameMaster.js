@@ -12,7 +12,7 @@ var GameMaster = (function () {
 		object.teamPools = [];
 		object.loadedData = 0;
 
-		$.getJSON( webRoot+"data/gamemaster.json?v=181", function( data ){
+		$.getJSON( webRoot+"data/gamemaster.json?v=182", function( data ){
 			object.data = data;
 
 			// Sort Pokemon alphabetically for searching
@@ -36,9 +36,9 @@ var GameMaster = (function () {
 
 			return pokemon;
 		}
-		
+
 		// Iterate through the Pokemon entries and apply shadow Pokemon traits
-		
+
 		object.updateShadowStatus = function(){
 
 			$.each(object.data.pokemon, function(index, poke){
@@ -47,10 +47,10 @@ var GameMaster = (function () {
 				var pokemon = new Pokemon(poke.speciesId, 0, battle);
 				var entry = object.getPokemonById(poke.speciesId);
 				battle.setNewPokemon(pokemon, 0, false);
-				
+
 				if(object.data.shadowPokemon.indexOf(poke.speciesId) > -1){
 					entry.shadow = true;
-					
+
 					// Remove Return and Frustration if they already exist
 					for(var i = 0; i < entry.chargedMoves.length; i++){
 						if((entry.chargedMoves[i] == "RETURN")||(entry.chargedMoves[i] == "FRUSTRATION")){
@@ -58,7 +58,7 @@ var GameMaster = (function () {
 							i--;
 						}
 					}
-					
+
 					// Remove Return and Frustration if they already exist
 					if(entry.legacyMoves){
 						for(var i = 0; i < entry.legacyMoves.length; i++){
@@ -67,26 +67,26 @@ var GameMaster = (function () {
 								i--;
 							}
 						}
-						
+
 						if(entry.legacyMoves.length == 0){
 							delete entry.legacyMoves;
 						}
 					}
 
-					
+
 					// Get CP at level 25
 					var cp = pokemon.calculateCP(0.667934, 0, 0, 0);
 					entry.level25CP = cp;
 				}
 			});
-			
+
 			object.data.pokemon.sort((a,b) => (a.dex > b.dex) ? 1 : ((b.dex > a.dex) ? -1 : 0));
 
 			var json = JSON.stringify(object.data);
 
 			console.log(json);
 		}
-		
+
 		// Iterate through the Pokemon entries and generate default IV's
 
 		object.generateDefaultIVs = function(){
@@ -198,7 +198,7 @@ var GameMaster = (function () {
 			var key = cup + "" + category + "" + league;
 
 			if(! object.rankings[key]){
-				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=181";
+				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=182";
 
 				$.getJSON( file, function( data ){
 					object.rankings[key] = data;
@@ -218,7 +218,7 @@ var GameMaster = (function () {
 			var key = group;
 
 			if(! object.groups[key]){
-				var file = webRoot+"data/groups/"+group+".json?v=181";
+				var file = webRoot+"data/groups/"+group+".json?v=182";
 
 				$.getJSON( file, function( data ){
 
@@ -241,7 +241,7 @@ var GameMaster = (function () {
 			var key = league + "" + cup;
 
 			if(! object.teamPools[key]){
-				var file = webRoot+"data/training/teams/"+cup+"/"+league+".json?v=181";
+				var file = webRoot+"data/training/teams/"+cup+"/"+league+".json?v=182";
 
 				$.getJSON( file, function( data ){
 					object.teamPools[key] = data;

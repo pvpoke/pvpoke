@@ -49,6 +49,10 @@
 				"chargedMoves": ["SURF", "SKULL_BASH"]
 			},
 			{
+				"speciesId": "marowak_alolan",
+				"fastMove": "FIRE_SPIN"
+			},
+			{
 				"speciesId": "zapdos",
 				"fastMove": "CHARGE_BEAM"
 			},
@@ -805,6 +809,10 @@
 			{
 				"speciesId": "poliwrath",
 				"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "marowak_alolan",
+				"fastMove": "FIRE_SPIN"
 			},
 			{
 				"speciesId": "toxicroak",
