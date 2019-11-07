@@ -44,6 +44,7 @@ var InterfaceMaster = (function () {
 				$(".cup-select").on("change", selectCup);
 				$(".format-select").on("change", selectFormat);
 				$(".rate-btn").on("click", rateClick);
+				$(".print-scorecard").on("click", printScorecard);
 				
 				// If get data exists, load settings
 
@@ -392,6 +393,7 @@ var InterfaceMaster = (function () {
 				var csv = ','; // CSV data of all matchups
 				$(".section.typings .rankings-container").html('');
 				$(".threats-table").html("");
+				$(".meta-table").html("");
 				
 				var $row = $("<tr><td></td></tr>");
 
@@ -407,6 +409,7 @@ var InterfaceMaster = (function () {
 				csv += ',Threat Score,Overall Rating';
 									
 				$(".threats-table").append($row);
+				$(".meta-table").append($row.clone());
 				
 				var avgThreatScore = 0;
 				
@@ -497,6 +500,63 @@ var InterfaceMaster = (function () {
 					csv += ',' + (Math.round(r.score/2)/10) + ',' + r.overall;
 				}
 				
+				// Display meta scorecard
+				counterRankings.sort((a,b) => (a.overall > b.overall) ? -1 : ((b.overall > a.overall) ? 1 : 0));
+				
+				for(var i = 0; i < 20; i++){
+					var r = counterRankings[i];
+					
+					var pokemon = new Pokemon(r.speciesId, 1, battle);
+					pokemon.initialize(true);
+					
+					// Manually set moves if previously selected, otherwise autoselect
+					var moveNameStr = '';
+
+					if(r.moveset){
+						pokemon.selectMove("fast", r.moveset.fastMove.moveId);
+
+						moveNameStr = r.moveset.fastMove.name;
+
+						for(var n = 0; n < r.moveset.chargedMoves.length; n++){
+							pokemon.selectMove("charged", r.moveset.chargedMoves[n].moveId, n);
+
+							moveNameStr += ", " + r.moveset.chargedMoves[n].name;
+						}
+					}
+
+					// Add results to meta table
+					
+					$row = $("<tr><td class=\"name\"><b>"+(i+1)+". "+pokemon.speciesName+"</b></td></tr>");
+					
+					for(var n = 0; n < r.matchups.length; n++){
+						var $cell = $("<td><a class=\"rating\" href=\"#\" target=\"blank\"><span></span></a></td>");
+						var rating = r.matchups[n].rating;
+						
+						if(rating == 500){
+							$cell.find("a").addClass("tie");
+						} else if( (rating < 500) && (rating > 250)){
+							$cell.find("a").addClass("close-loss");
+						} else if( rating <= 250){
+							$cell.find("a").addClass("loss");
+						} else if( (rating > 500) && (rating < 750)){
+							$cell.find("a").addClass("close-win");
+						} else if( rating >= 750){
+							$cell.find("a").addClass("win");
+						}
+						
+						var pokeStr = pokemon.generateURLPokeStr();
+						var moveStr = pokemon.generateURLMoveStr();
+						var opPokeStr = r.matchups[n].opponent.generateURLPokeStr();
+						var opMoveStr = r.matchups[n].opponent.generateURLMoveStr();
+						var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/11/"+moveStr+"/"+opMoveStr+"/";
+						$cell.find("a").attr("href", battleLink);
+						
+						$row.append($cell);
+					}
+					
+					$(".meta-table").append($row);
+				}
+
 				// And for kicks, generate the counters to those counters
 				
 				var exclusionList = []; // Exclude the current team from the alternative results
@@ -1006,6 +1066,16 @@ var InterfaceMaster = (function () {
 					},
 				10);
 
+			}
+			
+			// Open the print dialogue
+			
+			function printScorecard(e){
+				e.preventDefault();
+				
+				$("body").addClass("scorecard-print");
+				
+				window.print();
 			}
 		};
 		

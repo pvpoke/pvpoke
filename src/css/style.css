@@ -1378,6 +1378,9 @@ select, input {
   .section.battle-results .rankings-container .rank:hover {
     border-left: none; }
 
+.table-container {
+  overflow-x: scroll; }
+
 .histograms {
   display: flex;
   justify-content: space-around;
@@ -1530,10 +1533,16 @@ select, input {
     padding: 5px; }
   .article .rating-table.legend a.rating {
     text-align: center; }
-.article a.button.download-csv {
-  max-width: 250px;
-  margin: 10px auto;
-  text-align: center; }
+.article .results-buttons {
+  display: flex;
+  justify-content: center; }
+  .article .results-buttons a.button {
+    margin: 10px; }
+.article .threats-table .name,
+.article .alternatives-table .name,
+.article .meta-table .name {
+  min-width: 120px;
+  font-size: 12px; }
 
 .article-item {
   margin-bottom: 10px; }
@@ -2237,4 +2246,46 @@ a.toggle {
     font-size: 16px; }
 
   .rankings-container {
-    max-height: 800px; } }
+    max-height: 800px; }
+
+  .table-container {
+    overflow-x: auto; }
+
+  .threats-table .name,
+  .alternatives-table .name,
+  .meta-table .name {
+    font-size: 16px; } }
+/* Printing for meta scorecard */
+@media print {
+  .background {
+    display: none; }
+
+  .scorecard-print .section {
+    display: none !important; }
+  .scorecard-print .section.typings {
+    display: block !important; }
+  .scorecard-print .button {
+    display: none !important; }
+  .scorecard-print .toggle,
+  .scorecard-print .toggle-content {
+    display: none !important; }
+  .scorecard-print .toggle-content:nth-of-type(4) {
+    display: block !important; }
+  .scorecard-print .article .rating-table a.close-win span {
+    border: 2px solid #1b79b4; }
+  .scorecard-print .article .rating-table a.win span {
+    background: #1b79b4; }
+  .scorecard-print .article .rating-table a.tie span {
+    color: #aaa; }
+  .scorecard-print .article .rating-table a span {
+    -webkit-print-color-adjust: exact; }
+  .scorecard-print .rating-table.legend {
+    font-size: 12px; }
+  .scorecard-print #main h1 {
+    display: none; }
+  .scorecard-print #main p {
+    display: none; }
+  .scorecard-print header, .scorecard-print footer {
+    display: none; }
+  .scorecard-print .share-link-container {
+    display: none; } }

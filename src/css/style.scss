@@ -2000,6 +2000,10 @@ select, input{
 	}
 }
 
+.table-container{
+	overflow-x:scroll;
+}
+
 .histograms{
     display: flex;
     justify-content: space-around;
@@ -2246,10 +2250,22 @@ select, input{
 		}
 	}
 	
-	a.button.download-csv{
-		max-width:250px;
-		margin: 10px auto;
-		text-align: center;
+	.results-buttons{
+		display:flex;
+		justify-content: center;
+		
+		a.button{
+			margin: 10px;
+		}
+	}
+	
+	.threats-table,
+	.alternatives-table,
+	.meta-table{
+		.name{
+			min-width:120px;
+			font-size:12px;
+		}
 	}
 }
 
@@ -3055,5 +3071,85 @@ a.toggle{
 
 	.rankings-container{
 		max-height:800px;
+	}
+	
+	.table-container{
+		overflow-x: auto;
+	}
+	
+	.threats-table,
+	.alternatives-table,
+	.meta-table{
+		.name{
+			font-size:16px;
+		}
+	}
+}
+
+/* Printing for meta scorecard */
+
+@media print {
+	
+	.background{
+		display:none;
+	}
+	
+	.scorecard-print{
+		.section{
+			display:none !important;
+		}
+
+		.section.typings{
+			display:block !important;
+		}
+
+		.button{
+			display:none !important;
+		}
+
+		.toggle,
+		.toggle-content{
+			display:none !important;
+		}
+
+		.toggle-content:nth-of-type(4){
+			display:block !important;
+		}
+
+		.article .rating-table a.close-win span{
+			border:2px solid #1b79b4;
+		}
+
+		.article .rating-table a.win span{
+			background:#1b79b4;
+		}
+
+		.article .rating-table a.tie span{
+			color:#aaa;
+		}
+
+		.article .rating-table a span{
+			-webkit-print-color-adjust: exact;
+		}
+
+		.rating-table.legend{
+			font-size:12px;
+		}
+
+		#main h1{
+			display:none;
+		}
+
+		#main p{
+			display:none;
+		}
+
+		header, footer{
+			display:none;
+		}
+
+		.share-link-container{
+			display:none;
+		}
 	}
 }

@@ -50,16 +50,21 @@ require_once 'header.php';
 			<div class="histogram"></div>
 		</div>
 	</div>
-
-	<a href="#" class="toggle active">Potential Threats <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+	
+	<a href="#" class="toggle active">Meta Scorecard <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content article">
-		<p>The Pokemon below have the best overall matchups against this team. Results are an average of 0 and 1 shield simulations. Scores also factor in a Pokemon's overall strength and consistency.</p>
-		<table class="threats-table rating-table" cellspacing="0">
-		</table>
-		<p class="center">This team has a theat score of <b class="threat-score"></b></p>
-		<a href="#" class="button download-csv">Export Full Matchups to CSV</a>
+		<p>Explore the top 20 ranked Pokemon's matchups against your team below. Print this scorecard or save a screenshot for reference as you practice.</p>
+		<div class="table-container">
+			<table class="meta-table rating-table" cellspacing="0">
+			</table>
+		</div>
+		<div class="results-buttons">
+			<a href="#" class="button print-scorecard">Print</a>
+			<a href="#" class="button download-csv">Export Full Matchups to CSV</a>
+		</div>
+	
 		<table class="rating-table legend" cellspacing="0">
-				<tbody>
+			<tbody>
 				<tr>
 					<td><a href="#" class="rating win" target="_blank"><span></span></a></td>
 					<td><b>Win:</b> This Pokemon wins decisively in most scenarios. It would take a big HP or energy lead to flip this matchup. This Pokemon can safely switch and win.</td>
@@ -82,39 +87,26 @@ require_once 'header.php';
 				</tr>
 			</tbody>
 		</table>
+	</div>
+
+	<a href="#" class="toggle active">Potential Threats <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+	<div class="toggle-content article">
+		<p>The Pokemon below have the best overall matchups against this team. Results are an average of 0 and 1 shield simulations. Scores also factor in a Pokemon's overall strength and consistency.</p>
+		<div class="table-container">
+			<table class="threats-table rating-table" cellspacing="0">
+			</table>
+		</div>
+		<p class="center">This team has a theat score of <b class="threat-score"></b></p>
 		<p class="small"><strong>Threat score</strong> measures how vulnerable your team may be to a specific Pokemon. The smaller the number, the better. It factors in how many Pokemon on your team it can threaten, how hard it threatens them, the threat's overall ranking (how likely you may be to encounter it), and how consistently it performs with its ranked moveset.</p>
 	</div>
 
 	<a href="#" class="toggle active">Potential Alternatives <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content article">
 		<p>The Pokemon below have the best overall matchups against this team's potential threats. Results are an average of 0 and 1 shield simulations. Scores also factor in a Pokemon's overall strength and consistency.</p>
-		<table class="alternatives-table rating-table" cellspacing="0">
-		</table>
-		
-		<table class="rating-table legend" cellspacing="0">
-				<tbody>
-				<tr>
-					<td><a href="#" class="rating win" target="_blank"><span></span></a></td>
-					<td><b>Win:</b> This Pokemon wins decisively in most scenarios. It would take a big HP or energy lead to flip this matchup. This Pokemon can safely switch and win.</td>
-				</tr>
-				<tr>
-					<td><a href="#" class="rating close-win" target="_blank"><span></span></a></td>
-					<td><b>Close Win:</b> This Pokemon is favored, but the matchup can flip with a small HP or energy lead. This Pokemon may not be able to safely switch and win.</td>
-				</tr>
-				<tr>
-					<td><a href="#" class="rating tie" target="_blank"><span></span></a></td>
-					<td><b>Tie:</b> Neither Pokemon is favored. This matchup can flip depending on HP or energy lead, Charged Move priority, or IV's.</td>
-				</tr>
-				<tr>
-					<td><a href="#" class="rating close-loss" target="_blank"><span></span></a></td>
-					<td><b>Close Loss:</b> This Pokemon is at a disadvantage, but the matchup can flip with a small HP or energy lead.</td>
-				</tr>
-				<tr>
-					<td><a href="#" class="rating loss" target="_blank"><span></span></a></td>
-					<td><b>Loss:</b> This Pokemon loses decisively in most scenarios. It would take a big HP or energy lead to flip this matchup.</td>
-				</tr>
-			</tbody>
-		</table>
+		<div class="table-container">
+			<table class="alternatives-table rating-table" cellspacing="0">
+			</table>
+		</div>
 	</div>
 
 	<div class="share-link-container">
