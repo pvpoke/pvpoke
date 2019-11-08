@@ -36,8 +36,9 @@ var RankerMaster = (function () {
 			// Run an individual rank set
 
 			this.rank = function(team, league, cup, exclusionList, context){
-
-				self.context = context;
+				if(context){
+					self.context = context;
+				}
 
 				var totalBattles = 0;
 
@@ -264,7 +265,7 @@ var RankerMaster = (function () {
 
 				// Sort rankings
 
-				if(self.context == "team-builder"){
+				if((self.context == "team-builder")||(self.context == "team-counters")){
 					rankings.sort((a,b) => (a.score > b.score) ? -1 : ((b.score > a.score) ? 1 : 0));
 				} else if(self.context == "battle"){
 					rankings.sort((a,b) => (a.rating > b.rating) ? 1 : ((b.rating > a.rating) ? -1 : 0));
