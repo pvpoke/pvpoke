@@ -9,10 +9,16 @@
 				<option value="1" selected>1 shield</option>
 				<option value="2">2 shields</option>
 			</select>
-			<select class="charged-count-select hide">
+			<select class="charged-count-select">
 				<option value="0">0 Charged Moves</option>
 				<option value="1">1 Charged Move</option>
 				<option value="2" selected="">2 Charged Moves</option>
+			</select>
+			<select class="default-iv-select">
+				<option value="gamemaster">Default/Original IV's</option>
+				<option value="overall">Maximum stat product (Rank 1)</option>
+				<option value="atk">Maximum Attack</option>
+				<option value="def">Maximum Defense</option>
 			</select>
 			<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
 		</div>

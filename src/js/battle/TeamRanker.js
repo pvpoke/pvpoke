@@ -28,6 +28,15 @@ var RankerMaster = (function () {
 			var shieldMode = 'single'; // single - sim specific shield scenarios, average - sim average of 0 and 1 shields each
 			var chargedMoveCountOverride = 2;
 			var shieldBaitOverrides = [true, true];
+			var overrideSettings = [{
+				shields: 1,
+				ivs: "gamemaster",
+				bait: true
+			}, {
+				shields: 1,
+				ivs: "gamemaster",
+				bait: true
+			}];
 
 			var csv = '';
 
@@ -131,6 +140,10 @@ var RankerMaster = (function () {
 						name += pokemon.chargedMoves[n].abbreviation;
 					}
 
+					if(overrideSettings[1].ivs != "gamemaster"){
+						pokemon.maximizeStat(overrideSettings[1].ivs);
+					}
+
 					rankObj.moveset = moveset;
 
 					name += ')';
@@ -167,24 +180,25 @@ var RankerMaster = (function () {
 							opponent.selectRecommendedMoveset();
 						}
 
-						pokemon.baitShields = shieldBaitOverrides[0];
+						pokemon.baitShields = overrideSettings[1].bait;
+						
 						if(context == "matrix"){
-							opponent.baitShields = shieldBaitOverrides[1];
+							opponent.baitShields = overrideSettings[0].bait;
 						}
 
-						if(! shieldBaitOverrides[0]){
+						if(! overrideSettings[1].bait){
 							pokemon.isCustom = true;
 						}
 
-						if(! shieldBaitOverrides[1]){
+						if(! overrideSettings[0].bait){
 							opponent.isCustom = true;
 						}
 
-
 						var shieldTestArr = []; // Array of shield scenarios to test
+						
 
 						if(shieldMode == 'single'){
-							shieldTestArr.push(shieldOverrides);
+							shieldTestArr.push([ overrideSettings[0].shields, overrideSettings[1].shields ]);
 						} else if(shieldMode == 'average'){
 							shieldTestArr.push([0,0], [1,1]);
 						}
@@ -316,6 +330,12 @@ var RankerMaster = (function () {
 
 			this.setShieldMode = function(value){
 				shieldMode = value;
+			}
+			
+			// Apply settings from a MultiSelector
+			
+			this.applySettings = function(settings, index){
+				overrideSettings[index] = settings;
 			}
 
 		};

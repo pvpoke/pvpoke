@@ -746,9 +746,9 @@ var InterfaceMaster = (function () {
 				// Set settings
 
 				var cup = $(".cup-select option:selected").val();
-				var opponentShields = parseInt($(".poke.multi .shield-select option:selected").val());
+				var opponentShields = parseInt($(".poke.multi").eq(0).find(".shield-select option:selected").val());
 				var chargedMoveCount = parseInt($(".poke.multi .charged-count-select option:selected").val());
-				var shieldBaiting = $(".poke.multi .check.shield-baiting").hasClass("on") ? 1 : 0;
+				var shieldBaiting = $(".poke.multi").eq(0).find(".check.shield-baiting").hasClass("on") ? 1 : 0;
 
 				// Load rankings and movesets
 
@@ -760,6 +760,10 @@ var InterfaceMaster = (function () {
 				}
 
 				battle.setCup(cup);
+				
+				console.log(multiSelectors[0].getSettings());
+				
+				ranker.applySettings(multiSelectors[0].getSettings(), 1);
 				ranker.setShields(opponentShields, 1);
 				ranker.setChargedMoveCount(chargedMoveCount);
 				ranker.setShieldBaitOverride($(".poke.multi .check.shield-baiting").hasClass("on"), 1);
@@ -768,6 +772,11 @@ var InterfaceMaster = (function () {
 				var poke = pokeSelectors[0].getPokemon();
 
 				if(poke){
+					ranker.applySettings({
+						shields: poke.shields,
+						ivs: "gamemaster",
+						bait: poke.baitShields
+					}, 0);
 					team.push(poke);
 				} else{
 					return;
@@ -807,19 +816,7 @@ var InterfaceMaster = (function () {
 				for(var i = 0; i < rankings.length; i++){
 					var r = rankings[i];
 
-					var pokemon;
-
-					if(pokemonList.length > r.index){
-						pokemon = pokemonList[r.index];
-					} else{
-						pokemon = new Pokemon(r.speciesId, 1, battle);
-					}
-
-
-					// Generate moves for link
-
-					battle.setNewPokemon(pokemon, 1, initialize);
-
+					var pokemon = r.pokemon;
 
 					// Manually set moves if previously selected, otherwise autoselect
 					var moveNameStr = '';
@@ -1266,6 +1263,7 @@ var InterfaceMaster = (function () {
 										pokeSelectors[i].getPokemon().setShields(arr[i]);
 									} else if((i == 1)&&(self.battleMode == "multi")){
 										$(".poke.multi .shield-select").find("option[value=\""+arr[i]+"\"]").prop("selected", "selected");
+										$(".poke.multi .shield-select").trigger("change");
 									}
 
 								}
@@ -1387,6 +1385,7 @@ var InterfaceMaster = (function () {
 								if(arr.length > 1){
 									if(parseInt(arr[1]) == 0){
 										$(".poke.multi .check.shield-baiting").removeClass("on");
+										multiSelectors[0].setBaitSetting(false);
 									}
 								}
 

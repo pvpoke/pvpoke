@@ -182,6 +182,12 @@ a.toggle {
   color: #30b5ab;
   border: 1px solid #30b5ab; }
 
+.battle-results.matrix .table-container tbody th {
+  background: #000; }
+
+.battle-results.matrix .table-container tr:nth-of-type(2n) th {
+  background: #444; }
+
 @media only screen and (min-width: 721px) {
   .menu .submenu .submenu-wrap {
     background: #444; } }

@@ -404,7 +404,7 @@ header {
       .poke.multi .cup-select option[value="custom"] {
         display: block; }
     .poke.multi .charged-count-select {
-      display: none; }
+      display: none !important; }
     .poke.multi .custom-options {
       display: none; }
       .poke.multi .custom-options .add-poke-btn {

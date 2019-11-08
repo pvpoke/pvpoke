@@ -19,6 +19,12 @@ function PokeMultiSelect(element){
 	var maxPokemonCount = 100;
 	var selectedGroup = "";
 	var selectedGroupType = "";
+	
+	var settings = {
+		shields: 1,
+		ivs: "gamemaster",
+		bait: true
+	}
 
 	this.init = function(pokes, b){
 		pokemon = pokes;
@@ -545,6 +551,24 @@ function PokeMultiSelect(element){
 		$el.find(".quick-fill-select option").first().prop("selected", "selected");
 		$el.find(".quick-fill-select").trigger("change");
 	});
+	
+	// Change shield settings
+	
+	$el.find(".shield-select").on("change", function(e){
+		settings.shields = parseInt($el.find(".shield-select option:selected").val());
+	});
+	
+	// Change IV settings
+	
+	$el.find(".default-iv-select").on("change", function(e){
+		settings.ivs = $el.find(".default-iv-select option:selected").val();
+	});
+	
+	// Change bait toggle
+	
+	$el.find(".check.shield-baiting").on("click", function(e){
+		settings.bait = (! settings.bait == true);
+	});
 
 	// Event handler for changing the format select
 
@@ -573,6 +597,10 @@ function PokeMultiSelect(element){
 			$(".cup-select").show();
 		}
 	}
+	
+	this.setBaitSetting = function(val){
+		settings.bait = val;
+	}
 
 	// Return the list of selected Pokemon
 
@@ -590,6 +618,12 @@ function PokeMultiSelect(element){
 
 	this.getSelectedGroupType = function(){
 		return selectedGroupType;
+	}
+	
+	// Return the current option setings
+	
+	this.getSettings = function(){
+		return settings;
 	}
 
 	// Force a group selection
