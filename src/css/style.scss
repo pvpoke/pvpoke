@@ -686,7 +686,7 @@ header{
 				display:block;
 			}
 		}
-		
+
 		.charged-count-select{
 			display:none;
 		}
@@ -874,7 +874,7 @@ header{
 			display: block;
 		}
 	}
-	
+
 	&.matrix{
 		.poke.single,
 		.hp.bar-back,
@@ -885,16 +885,16 @@ header{
 		{
 			display: block;
 			float:left;
-			
+
 			.format-select{
 				display:none;
 			}
-			
+
 			.custom-options{
 				display:block;
 			}
 		}
-		
+
 		.delete-list-confirm + .poke.multi{
 			float:right;
 		}
@@ -1255,7 +1255,8 @@ select, input{
 		text-align:center;
 	}
 
-	.battle-details{
+	.battle-details,
+	&.matrix{
 		text-align: left;
 
 		table{
@@ -1323,6 +1324,34 @@ select, input{
 			.rank:hover{
 				border-left:none;
 				cursor:initial;
+			}
+		}
+	}
+
+	&.matrix{
+		.table-container{
+			overflow:scroll;
+			max-height: 500px;
+
+			thead th {
+			  position: -webkit-sticky; /* for Safari */
+			  position: sticky;
+			  top: 0;
+			  background: #444;
+			  color: #eee;
+			  font-size:14px;
+			  font-weight:normal;
+			}
+
+			tbody th {
+			  position: -webkit-sticky; /* for Safari */
+			  position: sticky;
+			  left: 0;
+			  background: #fcfcfc;
+			}
+
+			tr:nth-of-type(2n) th{
+				background: #ddd;
 			}
 		}
 	}
@@ -1849,12 +1878,12 @@ select, input{
 
 .poke-search-container{
 	display:flex;
-	
+
 	.poke-search{
 		max-width:200px;
 		display:block;
 	}
-	
+
 	a.search-info{
 		text-decoration: none;
 		color:#00171c;
@@ -1906,7 +1935,7 @@ select, input{
 
 	.poke{
 		float:none;
-		
+
 		a.random{
 			margin-bottom: 0;
 		}
@@ -1938,7 +1967,7 @@ select, input{
 			display:none;
 		}
 	}
-	
+
 	.poke.multi{
 		display:block;
 		.poke-stats{
@@ -2258,7 +2287,7 @@ select, input{
 			text-align: left;
 			padding-right:10px;
 		}
-		
+
 		td.name-small{
 			font-size:14px;
 			max-width:80px;
@@ -2277,17 +2306,21 @@ select, input{
 				text-align: center;
 			}
 		}
+
+		&.matrix-table a{
+			padding: 5px 5px 5px 36px;
+		}
 	}
-	
+
 	.results-buttons{
 		display:flex;
 		justify-content: center;
-		
+
 		a.button{
 			margin: 10px;
 		}
 	}
-	
+
 	.threats-table,
 	.alternatives-table,
 	.meta-table{
@@ -3101,11 +3134,11 @@ a.toggle{
 	.rankings-container{
 		max-height:800px;
 	}
-	
+
 	.table-container{
 		overflow-x: auto;
 	}
-	
+
 	.article{
 		.threats-table,
 		.alternatives-table,
@@ -3115,16 +3148,20 @@ a.toggle{
 			}
 		}
 	}
+
+	.battle-results.matrix .table-container{
+		max-height: 800px;
+	}
 }
 
 /* Printing for meta scorecard */
 
 @media print {
-	
+
 	.background{
 		display:none;
 	}
-	
+
 	.scorecard-print{
 		.section{
 			display:none !important;
@@ -3146,7 +3183,7 @@ a.toggle{
 		.toggle-content:nth-of-type(4){
 			display:block !important;
 		}
-		
+
 		.article .rating-table a{
 			background:none;
 		}
@@ -3186,13 +3223,13 @@ a.toggle{
 		.share-link-container{
 			display:none;
 		}
-		
+
 		.article table tr:nth-of-type(2n){
 			background: rgba(0, 0, 0, 0.07);
 			-webkit-print-color-adjust: exact;
 		}
 	}
-	
+
 	.table-container{
 		overflow-x:auto;
 	}

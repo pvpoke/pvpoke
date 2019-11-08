@@ -314,6 +314,18 @@ require_once 'header.php';
 			</div>
 		</div>
 	</div>
+
+	<div class="section white battle-results matrix article">
+		<a class="toggle active" href="#">Matchups <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+
+		<div class="toggle-content">
+			<div class="table-container">
+				<table class="matrix-table rating-table" cellspacing="0">
+				</table>
+			</div>
+			<a href="#" class="button download-csv">Export to CSV</a>
+		</div>
+	</div>
 </div>
 
 <!--Sandbox forms-->

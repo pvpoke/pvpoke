@@ -66,14 +66,14 @@ var InterfaceMaster = (function () {
 
 					selector.init(data.pokemon, battle);
 				});
-				
+
 				$(".poke-select-container .poke.multi").each(function(index, value){
 					var selector = new PokeMultiSelect($(this));
 					selector.init(data.pokemon, battle);
-					
+
 					multiSelectors.push(selector);
 				});
-				
+
 
 				$(".league-select").on("change", selectLeague);
 				$(".mode-select").on("change", selectMode);
@@ -94,7 +94,7 @@ var InterfaceMaster = (function () {
 
 				// Details battle viewing
 
-				$("body").on("click", ".rating-table a.rating.star", viewShieldBattle);
+				$("body").on("click", ".battle-details .rating-table a.rating.star", viewShieldBattle);
 				$("body").on("click", ".section.summary a.rating.star", viewBulkBattle);
 				$("body").on("click", ".breakpoints-section .button", selectBreakpointIVs);
 
@@ -760,9 +760,9 @@ var InterfaceMaster = (function () {
 				}
 
 				battle.setCup(cup);
-				ranker.setShields(opponentShields);
+				ranker.setShields(opponentShields, 1);
 				ranker.setChargedMoveCount(chargedMoveCount);
-				ranker.setShieldBaitOverride($(".poke.multi .check.shield-baiting").hasClass("on"));
+				ranker.setShieldBaitOverride($(".poke.multi .check.shield-baiting").hasClass("on"), 1);
 
 				var team = [];
 				var poke = pokeSelectors[0].getPokemon();
@@ -948,151 +948,96 @@ var InterfaceMaster = (function () {
 
 				gtag('config', UA_ID, {page_location: (host+url), page_path: url});
 			}
-			
+
 			// Process both groups of Pokemon through the team ranker
 
 			this.generateMatrixResults = function(){
 
-				// Set settings
-				var opponentShields = parseInt($(".poke.multi .shield-select option:selected").val());
-				var shieldBaiting = $(".poke.multi .check.shield-baiting").hasClass("on") ? 1 : 0;
+				// Set settings, really top tier programming happening here
+				var shields1 = parseInt($(".poke.multi").first().find(".shield-select option:selected").val());
+				var shieldBaiting1 = $(".poke.multi").first().find(".check.shield-baiting").hasClass("on") ? 1 : 0;
+				var shields2 = parseInt($(".poke.multi").eq(1).find(".shield-select option:selected").val());
+				var shieldBaiting2 = $(".poke.multi").eq(1).find(".check.shield-baiting").hasClass("on") ? 1 : 0;
 
-				ranker.setShields(opponentShields);
-				ranker.setShieldBaitOverride($(".poke.multi .check.shield-baiting").hasClass("on"));
-				
+				ranker.setShields(shields1, 1);
+				ranker.setShields(shields2, 0);
+				ranker.setShieldBaitOverride(shieldBaiting1, 0);
+				ranker.setShieldBaitOverride(shieldBaiting2, 1);
+
 				/* It's opposite day, so we get to switch these around.
 				* But actually it's because TeamRanker is built for the Team Builder (how other Pokemon do vs your Pokemon)
 				*/
 				var team = multiSelectors[1].getPokemonList();
+				var targets = multiSelectors[0].getPokemonList();
 
 				if(team.length < 1){
 					return;
 				}
 
 				// Set multi selected Pokemon if available
-				ranker.setTargets(multiSelectors[0].getPokemonList());
+				ranker.setTargets(targets);
 
 				// Run battles through the ranker
 
 				var data = ranker.rank(team, battle.getCP(), battle.getCup(), [], "matrix");
 				var rankings = data.rankings;
-				//var shieldStr = poke.startingShields + "" + opponentShields;		
 
-				csv = data.csv;
-				
 				console.log(data);
-				
-				return;
 
-				$(".battle-results .rankings-container").html('');
+				// Display results
+				var csv = ','; // CSV data of all matchups
+				$(".matrix-table").html("");
 
-				battle.setNewPokemon(poke, 0, false);
+				var $row = $("<thead><tr><th></th></tr></thead>");
 
-				var pokemonList = multiSelector.getPokemonList();
-				var custom = (battle.getCup().name == "custom");
-				var initialize = (custom == false);
+				for(var n = 0; n < team.length; n++){
+					$row.find("tr").append("<th class=\"name-small\">"+team[n].speciesName+"</th>");
 
-				if(! custom){
-					pokemonList = [];
+					csv += team[n].speciesName;
+					if(n < team.length -1){
+						csv += ',';
+					}
 				}
+
+				$(".matrix-table").append($row);
+				$(".matrix-table").append("<tbody></tbody>");
 
 				for(var i = 0; i < rankings.length; i++){
 					var r = rankings[i];
+					var pokemon = r.pokemon;
 
-					var pokemon;
+					// Add results to matrix table
 
-					if(pokemonList.length > r.index){
-						pokemon = pokemonList[r.index];
-					} else{
-						pokemon = new Pokemon(r.speciesId, 1, battle);
-					}
+					$row = $("<tr><th class=\"name\"><b>"+pokemon.speciesName+"</b></th></tr>");
 
+					for(var n = 0; n < r.matchups.length; n++){
+						var $cell = $("<td><a class=\"rating star\" href=\"#\" target=\"blank\"><span></span></a></td>");
+						var rating = r.matchups[n].rating;
+						var color = battle.getRatingColor(rating);
 
-					// Generate moves for link
+						$cell.find("a").html(rating);
+						$cell.find("a").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
 
-					battle.setNewPokemon(pokemon, 1, initialize);
-
-
-					// Manually set moves if previously selected, otherwise autoselect
-					var moveNameStr = '';
-
-					if(r.moveset){
-						pokemon.selectMove("fast", r.moveset.fastMove.moveId);
-
-						moveNameStr = r.moveset.fastMove.name;
-
-						for(var n = 0; n < r.moveset.chargedMoves.length; n++){
-							pokemon.selectMove("charged", r.moveset.chargedMoves[n].moveId, n);
-
-							moveNameStr += ", " + r.moveset.chargedMoves[n].name;
+						if(rating > 500){
+							$cell.find("a").addClass("win");
 						}
-					} else{
-						pokemon.autoSelectMoves(chargedMoveCount);
+
+						var pokeStr = pokemon.generateURLPokeStr();
+						var moveStr = pokemon.generateURLMoveStr();
+						var opPokeStr = r.matchups[n].opponent.generateURLPokeStr();
+						var opMoveStr = r.matchups[n].opponent.generateURLMoveStr();
+						var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/"+shields1+""+shields2+"/"+moveStr+"/"+opMoveStr+"/";
+						$cell.find("a").attr("href", battleLink);
+
+						$row.append($cell);
 					}
 
-					if(! $(".poke.multi .check.shield-baiting").hasClass("on")){
-						pokemon.baitShields = false;
-						pokemon.isCustom = true;
-					}
-
-					var opPokeStr = pokemon.generateURLPokeStr();
-					var opMoveStr = pokemon.generateURLMoveStr();
-
-					var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
-
-					// Append extra options
-
-					if( (poke.startHp != poke.stats.hp) || (poke.startEnergy != 0) ){
-						battleLink += poke.startHp +  "/" + poke.startEnergy + "/";
-					}
-
-					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star\">"+r.opRating+"</span></div><a target=\"_blank\" href=\""+battleLink+"\"></a><div class=\"clear\"></div></div><div class=\"details\"></div>");
-
-					// Add moveset details if set
-
-					if(r.moveset){
-						$el.find(".name-container").append("<div class=\"moves\">"+moveNameStr+"</div>");
-					}
-
-					$(".battle-results .rankings-container").append($el);
+					$(".matrix-table tbody").append($row);
 				}
 
-				// Generate and display histogram
+				$(".battle-results.matrix").show();
 
-				if(! histogram){
-					histogram = new BattleHistogram($(".battle-results.multi .histogram"));
-					histogram.generate(poke, data.teamRatings[0]);
-				} else{
-					histogram.generate(poke, data.teamRatings[0]);
-				}
-
-				$(".battle-results.multi").show();
-
-				// Generate and display share link
-
-				var cp = battle.getCP();
-				var battleStr = "battle/multi/"+cp+"/"+cup+"/"+pokeStr+"/"+poke.startingShields+opponentShields+"/"+moveStr+"/"+chargedMoveCount+"-"+shieldBaiting+"/";
-
-				// Append extra options
-
-				if( (poke.startHp != poke.stats.hp) || (poke.startEnergy != 0) ){
-					battleStr += poke.startHp +  "/" + poke.startEnergy + "/";
-				}
-
-				// Add preset group to URL if available
-
-				if(cup == "custom"){
-					var groupName = multiSelector.getSelectedGroup();
-
-					if(groupName.indexOf("custom") == -1){
-						battleStr += groupName + "/";
-					}
-				}
-
-
-				var link = host + battleStr;
-
-				$(".share-link input").val(link);
+				return;
 
 				// Update download link with new data
 				var poke = pokeSelectors[0].getPokemon();
@@ -1121,24 +1066,8 @@ var InterfaceMaster = (function () {
 
 				gtag('event', 'Lookup', {
 				  'event_category' : 'Simulation',
-				  'event_label' : pokemon.speciesId
+				  'event_label' : 'Matrix'
 				});
-
-				if(get){
-					get = false;
-
-					return;
-				}
-
-				var url = webRoot+battleStr;
-
-				var data = {cp: cp, p1: poke.speciesId, cup:cup, s: poke.startingShields+""+opponentShields, m1: moveStr, cms: chargedMoveCount, mode: self.battleMode};
-
-				window.history.pushState(data, "Battle", url);
-
-				// Send Google Analytics pageview
-
-				gtag('config', UA_ID, {page_location: (host+url), page_path: url});
 			}
 
 			// For battles with buffs or debuffs, run bulk sims and return median match
@@ -1580,7 +1509,7 @@ var InterfaceMaster = (function () {
 						pokeSelectors[i].setBattle(battle);
 						pokeSelectors[i].setCP(cp);
 					}
-					
+
 					for(var i = 0; i < multiSelectors.length; i++){
 						multiSelectors[i].updateLeague(cp);
 					}
