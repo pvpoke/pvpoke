@@ -982,8 +982,6 @@ var InterfaceMaster = (function () {
 				var data = ranker.rank(team, battle.getCP(), battle.getCup(), [], "matrix");
 				var rankings = data.rankings;
 
-				console.log(data);
-
 				// Display results
 				var csv = ','; // CSV data of all matchups
 				$(".matrix-table").html("");
@@ -998,6 +996,8 @@ var InterfaceMaster = (function () {
 						csv += ',';
 					}
 				}
+				
+				csv += '\n';
 
 				$(".matrix-table").append($row);
 				$(".matrix-table").append("<tbody></tbody>");
@@ -1009,6 +1009,8 @@ var InterfaceMaster = (function () {
 					// Add results to matrix table
 
 					$row = $("<tr><th class=\"name\"><b>"+pokemon.speciesName+"</b></th></tr>");
+					
+					csv += pokemon.speciesName + ',';
 
 					for(var n = 0; n < r.matchups.length; n++){
 						var $cell = $("<td><a class=\"rating star\" href=\"#\" target=\"blank\"><span></span></a></td>");
@@ -1030,28 +1032,23 @@ var InterfaceMaster = (function () {
 						$cell.find("a").attr("href", battleLink);
 
 						$row.append($cell);
+						
+						csv += rating;
+						
+						if(n < r.matchups.length-1){
+							csv += ',';
+						}
 					}
 
 					$(".matrix-table tbody").append($row);
+					
+					csv += '\n';
 				}
 
 				$(".battle-results.matrix").show();
 
-				return;
-
 				// Update download link with new data
-				var poke = pokeSelectors[0].getPokemon();
-				var moveAbbreviationStr = poke.fastMove.abbreviation;
-
-				for(var i = 0; i < poke.chargedMoves.length; i++){
-					if(i == 0){
-						moveAbbreviationStr += "+" + poke.chargedMoves[i].abbreviation;
-					} else{
-						moveAbbreviationStr += "+" + poke.chargedMoves[i].abbreviation;
-					}
-				}
-
-				var filename = pokeSelectors[0].getPokemon().speciesName + " " + moveAbbreviationStr + " vs " + $(".poke.multi .cup-select option:selected").html() + " " + poke.startingShields + "-" + opponentShields + " shields.csv";
+				var filename = multiSelectors[0].getSelectedGroup() + " vs " + multiSelectors[1].getSelectedGroup() + ".csv";
 				var filedata = '';
 
 				if (!csv.match(/^data:text\/csv/i)) {
@@ -1530,6 +1527,8 @@ var InterfaceMaster = (function () {
 
 				$(".poke-select-container").removeClass("single multi matrix");
 				$(".poke-select-container").addClass(self.battleMode);
+				
+				$(".battle-results").hide();
 
 				if(self.battleMode == "single"){
 					pokeSelectors[0].setSelectedPokemon(pokeSelectors[0].getPokemon());

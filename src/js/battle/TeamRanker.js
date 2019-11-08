@@ -191,6 +191,7 @@ var RankerMaster = (function () {
 
 						var avgPokeRating = 0;
 						var avgOpRating = 0;
+						var shieldRatings = [];
 
 						for(var j = 0; j < shieldTestArr.length; j++){
 							pokemon.setShields(shieldTestArr[j][1]);
@@ -217,9 +218,14 @@ var RankerMaster = (function () {
 
 							avgPokeRating += rating;
 							avgOpRating += opRating;
+							
+							shieldRatings.push(rating);
 						}
-
-						avgPokeRating = Math.floor(avgPokeRating / shieldTestArr.length);
+						
+						if(shieldTestArr.length > 1){
+							avgPokeRating = Math.round( Math.pow(shieldRatings[0] * Math.pow(shieldRatings[1], 3), 1/4));
+						}
+						//avgPokeRating = Math.floor(avgPokeRating / shieldTestArr.length);
 						avgOpRating = Math.floor(avgOpRating / shieldTestArr.length);
 
 						csv += ',' + avgOpRating + ',' + opponent.hp + ',' + opponent.energy;

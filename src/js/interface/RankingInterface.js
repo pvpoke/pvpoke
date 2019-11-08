@@ -126,7 +126,7 @@ var InterfaceMaster = (function () {
 					if(move.legacy){
 						moveNameStr += "*";
 					}
-					console.log(pokemon.chargedMovePool);
+
 					if((arr.length > 2)&&(arr[2] != "0")){
 						move = pokemon.chargedMovePool[arr[2]-1];
 						moveNameStr += ", " + move.name;

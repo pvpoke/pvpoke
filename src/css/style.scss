@@ -894,6 +894,10 @@ header{
 				display:block;
 			}
 		}
+		
+		.options .section-title{
+			margin-top:0;
+		}
 
 		.delete-list-confirm + .poke.multi{
 			float:right;
@@ -1348,11 +1352,17 @@ select, input{
 			  position: sticky;
 			  left: 0;
 			  background: #fcfcfc;
+		  	  text-align:center;
+			  padding:2px 5px;
 			}
 
 			tr:nth-of-type(2n) th{
 				background: #ddd;
 			}
+		}
+		
+		a.download-csv{
+			display:inline-block;
 		}
 	}
 }
