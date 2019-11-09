@@ -64,6 +64,17 @@ var RankerMaster = (function () {
 
 				for(var i = 0; i < team.length; i++){
 					teamRatings.push([]);
+
+					// Adjust IVs as needed
+					if(overrideSettings[0].ivs != "gamemaster"){
+						team[i].maximizeStat(overrideSettings[0].ivs);
+					} else if((overrideSettings[0].ivs == "gamemaster")&&(team[i].isCustom)){
+						team[i].isCustom = false;
+						team[i].initialize(battle.getCP());
+						if(! team[i].baitShields){
+							team[i].isCustom = true;
+						}
+					}
 				}
 
 				rankings = [];
@@ -76,7 +87,6 @@ var RankerMaster = (function () {
 					// Get a full list of Pokemon from the game master
 					pokemonList = gm.generateFilteredPokemonList(battle, cup.include, cup.exclude);
 				} else{
-
 					// Otherwise, push all set targets into the list
 
 					for(var i = 0; i < targets.length; i++){
@@ -142,6 +152,12 @@ var RankerMaster = (function () {
 
 					if(overrideSettings[1].ivs != "gamemaster"){
 						pokemon.maximizeStat(overrideSettings[1].ivs);
+					} else if((overrideSettings[1].ivs == "gamemaster")&&(pokemon.isCustom)){
+						pokemon.isCustom = false;
+						pokemon.initialize(battle.getCP());
+						if(! pokemon.baitShields){
+							pokemon.isCustom = true;
+						}
 					}
 
 					rankObj.moveset = moveset;
@@ -181,7 +197,7 @@ var RankerMaster = (function () {
 						}
 
 						pokemon.baitShields = overrideSettings[1].bait;
-						
+
 						if(context == "matrix"){
 							opponent.baitShields = overrideSettings[0].bait;
 						}
@@ -195,7 +211,7 @@ var RankerMaster = (function () {
 						}
 
 						var shieldTestArr = []; // Array of shield scenarios to test
-						
+
 
 						if(shieldMode == 'single'){
 							shieldTestArr.push([ overrideSettings[0].shields, overrideSettings[1].shields ]);
@@ -232,10 +248,10 @@ var RankerMaster = (function () {
 
 							avgPokeRating += rating;
 							avgOpRating += opRating;
-							
+
 							shieldRatings.push(rating);
 						}
-						
+
 						if(shieldTestArr.length > 1){
 							avgPokeRating = Math.round( Math.pow(shieldRatings[0] * Math.pow(shieldRatings[1], 3), 1/4));
 						}
@@ -331,9 +347,9 @@ var RankerMaster = (function () {
 			this.setShieldMode = function(value){
 				shieldMode = value;
 			}
-			
+
 			// Apply settings from a MultiSelector
-			
+
 			this.applySettings = function(settings, index){
 				overrideSettings[index] = settings;
 			}

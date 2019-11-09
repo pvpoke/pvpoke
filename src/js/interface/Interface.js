@@ -760,9 +760,7 @@ var InterfaceMaster = (function () {
 				}
 
 				battle.setCup(cup);
-				
-				console.log(multiSelectors[0].getSettings());
-				
+
 				ranker.applySettings(multiSelectors[0].getSettings(), 1);
 				ranker.setShields(opponentShields, 1);
 				ranker.setChargedMoveCount(chargedMoveCount);
@@ -950,16 +948,9 @@ var InterfaceMaster = (function () {
 
 			this.generateMatrixResults = function(){
 
-				// Set settings, really top tier programming happening here
-				var shields1 = parseInt($(".poke.multi").first().find(".shield-select option:selected").val());
-				var shieldBaiting1 = $(".poke.multi").first().find(".check.shield-baiting").hasClass("on") ? 1 : 0;
-				var shields2 = parseInt($(".poke.multi").eq(1).find(".shield-select option:selected").val());
-				var shieldBaiting2 = $(".poke.multi").eq(1).find(".check.shield-baiting").hasClass("on") ? 1 : 0;
-
-				ranker.setShields(shields1, 1);
-				ranker.setShields(shields2, 0);
-				ranker.setShieldBaitOverride(shieldBaiting1, 0);
-				ranker.setShieldBaitOverride(shieldBaiting2, 1);
+				// Appply settings from multiSelectors
+				ranker.applySettings(multiSelectors[0].getSettings(), 1);
+				ranker.applySettings(multiSelectors[1].getSettings(), 0);
 
 				/* It's opposite day, so we get to switch these around.
 				* But actually it's because TeamRanker is built for the Team Builder (how other Pokemon do vs your Pokemon)
@@ -967,7 +958,7 @@ var InterfaceMaster = (function () {
 				var team = multiSelectors[1].getPokemonList();
 				var targets = multiSelectors[0].getPokemonList();
 
-				if(team.length < 1){
+				if((team.length < 1)||(targets.length < 1)){
 					return;
 				}
 
@@ -993,7 +984,7 @@ var InterfaceMaster = (function () {
 						csv += ',';
 					}
 				}
-				
+
 				csv += '\n';
 
 				$(".matrix-table").append($row);
@@ -1006,7 +997,7 @@ var InterfaceMaster = (function () {
 					// Add results to matrix table
 
 					$row = $("<tr><th class=\"name\"><b>"+pokemon.speciesName+"</b></th></tr>");
-					
+
 					csv += pokemon.speciesName + ',';
 
 					for(var n = 0; n < r.matchups.length; n++){
@@ -1025,20 +1016,20 @@ var InterfaceMaster = (function () {
 						var moveStr = pokemon.generateURLMoveStr();
 						var opPokeStr = r.matchups[n].opponent.generateURLPokeStr();
 						var opMoveStr = r.matchups[n].opponent.generateURLMoveStr();
-						var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/"+shields1+""+shields2+"/"+moveStr+"/"+opMoveStr+"/";
+						var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/"+pokemon.startingShields+""+r.matchups[n].opponent.startingShields+"/"+moveStr+"/"+opMoveStr+"/";
 						$cell.find("a").attr("href", battleLink);
 
 						$row.append($cell);
-						
+
 						csv += rating;
-						
+
 						if(n < r.matchups.length-1){
 							csv += ',';
 						}
 					}
 
 					$(".matrix-table tbody").append($row);
-					
+
 					csv += '\n';
 				}
 
@@ -1526,7 +1517,7 @@ var InterfaceMaster = (function () {
 
 				$(".poke-select-container").removeClass("single multi matrix");
 				$(".poke-select-container").addClass(self.battleMode);
-				
+
 				$(".battle-results").hide();
 
 				if(self.battleMode == "single"){

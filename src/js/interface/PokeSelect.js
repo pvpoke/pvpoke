@@ -371,7 +371,7 @@ function PokeSelect(element, i){
 		} else{
 			selectedPokemon.initialize(battle.getCP(), settings.defaultIVs);
 		}
-		
+
 		selectedPokemon.selectRecommendedMoveset();
 
 		if($(".team-build").length == 0){
@@ -511,7 +511,7 @@ function PokeSelect(element, i){
 		if(id){
 			selectedPokemon = new Pokemon(id, index, battle);
 			selectedPokemon.initialize(battle.getCP(), settings.defaultIVs);
-			
+
 			selectedPokemon.selectRecommendedMoveset();
 
 			if($(".team-build").length == 0){
@@ -628,10 +628,10 @@ function PokeSelect(element, i){
 
         self.update();
 
-		$("input.level").eq(index).val(selectedPokemon.level);
-		$("input.iv[iv='atk']").eq(index).val(selectedPokemon.ivs.atk);
-		$("input.iv[iv='def']").eq(index).val(selectedPokemon.ivs.def);
-		$("input.iv[iv='hp']").eq(index).val(selectedPokemon.ivs.hp);
+		$el.find("input.level").val(selectedPokemon.level);
+		$el.find("input.iv[iv='atk']").val(selectedPokemon.ivs.atk);
+		$el.find("input.iv[iv='def']").val(selectedPokemon.ivs.def);
+		$el.find("input.iv[iv='hp']").val(selectedPokemon.ivs.hp);
 
 		if(interface.resetSelectedPokemon){
 			interface.resetSelectedPokemon();
@@ -653,10 +653,10 @@ function PokeSelect(element, i){
 
         self.update();
 
-		$("input.level").eq(index).val(selectedPokemon.level);
-		$("input.iv[iv='atk']").eq(index).val(selectedPokemon.ivs.atk);
-		$("input.iv[iv='def']").eq(index).val(selectedPokemon.ivs.def);
-		$("input.iv[iv='hp']").eq(index).val(selectedPokemon.ivs.hp);
+		$el.find("input.level").val(selectedPokemon.level);
+		$el.find("input.iv[iv='atk']").val(selectedPokemon.ivs.atk);
+		$el.find("input.iv[iv='def']").val(selectedPokemon.ivs.def);
+		$el.find("input.iv[iv='hp']").val(selectedPokemon.ivs.hp);
 
 		if(interface.resetSelectedPokemon){
 			interface.resetSelectedPokemon();
