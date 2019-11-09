@@ -9,10 +9,10 @@ RewriteCond %{SCRIPT_FILENAME} !-f
 # RewriteCond %{HTTP_HOST} ^www\.pvpoke\.com [NC]
 # RewriteRule ^(.*)$ https://pvpoke.com/$1 [L,R=301]
 
-RewriteRule battle/multi/(\d+)/([a-zA-Z0-9-]+)/([a-zA-Z_\d\.-]+)/([\d-]+)/([\da-zA-Z_-]+)/([\d-]+)/(\d+)/(\d+)/([a-zA-Z_]+).*$ battle.php?mode=multi&cp=$1&cup=$2&p1=$3&s=$4&m1=$5&cms=$6&h=$7&e=$8&g1=$9 [L,QSA]
-RewriteRule battle/multi/(\d+)/([a-zA-Z0-9-]+)/([a-zA-Z_\d\.-]+)/([\d-]+)/([\da-zA-Z_-]+)/([\d-]+)/(\d+)/(\d+).*$ battle.php?mode=multi&cp=$1&cup=$2&p1=$3&s=$4&m1=$5&cms=$6&h=$7&e=$8 [L,QSA]
-RewriteRule battle/multi/(\d+)/([a-zA-Z0-9-]+)/([a-zA-Z_\d\.-]+)/([\d-]+)/([\da-zA-Z_-]+)/([\d-]+)/([a-zA-Z_]+).*$ battle.php?mode=multi&cp=$1&cup=$2&p1=$3&s=$4&m1=$5&cms=$6&g1=$7 [L,QSA]
-RewriteRule battle/multi/(\d+)/([a-zA-Z0-9-]+)/([a-zA-Z_\d\.-]+)/([\d-]+)/([\da-zA-Z_-]+)/([\d-]+).*$ battle.php?mode=multi&cp=$1&cup=$2&p1=$3&s=$4&m1=$5&cms=$6 [L,QSA]
+RewriteRule battle/multi/(\d+)/([a-zA-Z0-9-]+)/([a-zA-Z_\d\.-]+)/([\d-]+)/([\da-zA-Z_-]+)/([a-z\d-]+)/(\d+)/(\d+)/([a-zA-Z_]+).*$ battle.php?mode=multi&cp=$1&cup=$2&p1=$3&s=$4&m1=$5&cms=$6&h=$7&e=$8&g1=$9 [L,QSA]
+RewriteRule battle/multi/(\d+)/([a-zA-Z0-9-]+)/([a-zA-Z_\d\.-]+)/([\d-]+)/([\da-zA-Z_-]+)/([a-z\d-]+)/(\d+)/(\d+).*$ battle.php?mode=multi&cp=$1&cup=$2&p1=$3&s=$4&m1=$5&cms=$6&h=$7&e=$8 [L,QSA]
+RewriteRule battle/multi/(\d+)/([a-zA-Z0-9-]+)/([a-zA-Z_\d\.-]+)/([\d-]+)/([\da-zA-Z_-]+)/([a-z\d-]+)/([a-zA-Z_]+).*$ battle.php?mode=multi&cp=$1&cup=$2&p1=$3&s=$4&m1=$5&cms=$6&g1=$7 [L,QSA]
+RewriteRule battle/multi/(\d+)/([a-zA-Z0-9-]+)/([a-zA-Z_\d\.-]+)/([\d-]+)/([\da-zA-Z_-]+)/([a-z\d-]+).*$ battle.php?mode=multi&cp=$1&cup=$2&p1=$3&s=$4&m1=$5&cms=$6 [L,QSA]
 
 RewriteRule battle/sandbox/(\d+)/([a-zA-Z_\d\.-]+)/([a-zA-Z_\d\.-]+)/(\d+)/([\da-zA-Z_-]+)/([\da-zA-Z_-]+)/([\d-]+)/([\d-]+)/([\d\.-]+).*$ battle.php?cp=$1&p1=$2&p2=$3&s=$4&m1=$5&m2=$6&h=$7&e=$8&sandbox=1&a=$9 [L,QSA]
 RewriteRule battle/sandbox/(\d+)/([a-zA-Z_\d\.-]+)/([a-zA-Z_\d\.-]+)/(\d+)/([\da-zA-Z_-]+)/([\da-zA-Z_-]+)/([\d\.-]+).*$ battle.php?cp=$1&p1=$2&p2=$3&s=$4&m1=$5&m2=$6&sandbox=1&a=$7 [L,QSA]

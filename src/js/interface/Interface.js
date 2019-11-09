@@ -874,7 +874,13 @@ var InterfaceMaster = (function () {
 				// Generate and display share link
 
 				var cp = battle.getCP();
-				var battleStr = "battle/multi/"+cp+"/"+cup+"/"+pokeStr+"/"+poke.startingShields+opponentShields+"/"+moveStr+"/"+chargedMoveCount+"-"+shieldBaiting+"/";
+				var battleStr = "battle/multi/"+cp+"/"+cup+"/"+pokeStr+"/"+poke.startingShields+opponentShields+"/"+moveStr+"/"+chargedMoveCount+"-"+shieldBaiting;
+
+				if(multiSelectors[0].getSettings().ivs != "gamemaster"){
+					battleStr += "-"+multiSelectors[0].getSettings().ivs;
+				}
+
+				battleStr += "/";
 
 				// Append extra options
 
@@ -1377,6 +1383,11 @@ var InterfaceMaster = (function () {
 									if(parseInt(arr[1]) == 0){
 										$(".poke.multi .check.shield-baiting").removeClass("on");
 										multiSelectors[0].setBaitSetting(false);
+									}
+
+									if(arr[2]){
+										$(".poke.multi").eq(0).find(".default-iv-select option[value=\""+arr[2]+"\"]").prop("selected","selected");
+										$(".poke.multi").eq(0).find(".default-iv-select").trigger("change");
 									}
 								}
 
