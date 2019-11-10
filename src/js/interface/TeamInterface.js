@@ -45,6 +45,7 @@ var InterfaceMaster = (function () {
 				$(".format-select").on("change", selectFormat);
 				$(".rate-btn").on("click", rateClick);
 				$(".print-scorecard").on("click", printScorecard);
+				$("body").on("click", ".alternatives-table .button.add", addAlternativePokemon);
 
 				// If get data exists, load settings
 
@@ -292,7 +293,7 @@ var InterfaceMaster = (function () {
 				if(multiSelector.getPokemonList().length > 0){
 					self.updateTeamResults();
 
-					$("html, body").animate({ scrollTop: $(".defense").offset().top }, 500);
+					$("html, body").animate({ scrollTop: $(".section.typings a").first().offset().top }, 500);
 
 
 					$(".rate-btn").html("Rate Team");
@@ -599,7 +600,7 @@ var InterfaceMaster = (function () {
 
 					// Add results to alternatives table
 
-					$row = $("<tr><td class=\"name\"><b>"+(i+1)+". "+pokemon.speciesName+"</b></td></tr>");
+					$row = $("<tr><td class=\"name\"><b>"+(i+1)+". "+pokemon.speciesName+"<div class=\"button add\" pokemon=\""+pokemon.speciesId+"\">+</div></b></td></tr>");
 
 					for(var n = 0; n < r.matchups.length; n++){
 						var $cell = $("<td><a class=\"rating\" href=\"#\" target=\"blank\"><span></span></a></td>");
@@ -628,6 +629,10 @@ var InterfaceMaster = (function () {
 					}
 
 					$(".alternatives-table").append($row);
+				}
+
+				if(team.length == 6){
+					$(".alternatives-table .button.add").hide();
 				}
 
 				// Set download link data
@@ -1061,11 +1066,21 @@ var InterfaceMaster = (function () {
 
 					// Scroll down to results
 
-					$("html, body").animate({ scrollTop: $(".defense").offset().top }, 500);
+					$("html, body").animate({ scrollTop: $(".section.typings a").first().offset().top }, 500);
 
 					},
 				10);
 
+			}
+
+			// Add a Pokemon from the alternatives table
+
+			function addAlternativePokemon(e){
+				var id = $(e.target).attr("pokemon");
+				$(".poke.multi .add-poke-btn").trigger("click");
+				$(".modal .poke-select option[value=\""+id+"\"]").prop("selected", "selected");
+				$(".modal .poke-select").trigger("change");
+				$("html, body").animate({ scrollTop: $(".poke.multi").offset().top }, 500);
 			}
 
 			// Open the print dialogue

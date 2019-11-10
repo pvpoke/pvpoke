@@ -26,31 +26,6 @@ require_once 'header.php';
 <div class="section white error">Please select one or more Pokemon.</div>
 
 <div class="section typings white">
-	<a href="#" class="toggle active">Defense <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
-	<div class="toggle-content">
-		<div class="summary defense-summary"></div>
-		<div class="defense"></div>
-	</div>
-
-	<a href="#" class="toggle active">Offense <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
-	<div class="toggle-content">
-		<div class="summary offense-summary"></div>
-		<div class="offense"></div>
-	</div>
-
-	<a href="#" class="toggle active">Battle Histograms <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
-	<div class="toggle-content">
-		<p>The charts below show how many good or bad matchups each Pokemon has among all matchups possible. A Battle Rating below 500 is a loss, and a Battle Rating above 500 is a win. You can compare previous results to examine different Pokemon, movesets, or stats.</p>
-		<div class="histograms">
-			<div class="histogram"></div>
-			<div class="histogram"></div>
-			<div class="histogram"></div>
-			<div class="histogram"></div>
-			<div class="histogram"></div>
-			<div class="histogram"></div>
-		</div>
-	</div>
-	
 	<a href="#" class="toggle active">Meta Scorecard <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content article">
 		<p>Explore the top 20 ranked Pokemon's matchups against your team below. Print this scorecard or save a screenshot for reference as you practice. Remember to prepare beforehand and follow timely play in tournaments!</p>
@@ -60,9 +35,9 @@ require_once 'header.php';
 		</div>
 		<div class="results-buttons">
 			<a href="#" class="button print-scorecard">Print</a>
-			<a href="#" class="button download-csv">Export Full Matchups to CSV</a>
+			<a href="#" class="button download-csv">Export All Matchups to CSV</a>
 		</div>
-	
+
 		<table class="rating-table legend" cellspacing="0">
 			<tbody>
 				<tr>
@@ -107,6 +82,31 @@ require_once 'header.php';
 			<table class="alternatives-table rating-table" cellspacing="0">
 			</table>
 		</div>
+	</div>
+
+	<a href="#" class="toggle active">Battle Histograms <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+	<div class="toggle-content">
+		<p>The charts below show how many good or bad matchups each Pokemon has among all matchups possible. A Battle Rating below 500 is a loss, and a Battle Rating above 500 is a win. You can compare previous results to examine different Pokemon, movesets, or stats.</p>
+		<div class="histograms">
+			<div class="histogram"></div>
+			<div class="histogram"></div>
+			<div class="histogram"></div>
+			<div class="histogram"></div>
+			<div class="histogram"></div>
+			<div class="histogram"></div>
+		</div>
+	</div>
+
+	<a href="#" class="toggle active">Defensive Typing <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+	<div class="toggle-content">
+		<div class="summary defense-summary"></div>
+		<div class="defense"></div>
+	</div>
+
+	<a href="#" class="toggle active">Offensive Typing <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+	<div class="toggle-content">
+		<div class="summary offense-summary"></div>
+		<div class="offense"></div>
 	</div>
 
 	<div class="share-link-container">

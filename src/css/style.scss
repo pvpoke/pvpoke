@@ -894,7 +894,7 @@ header{
 				display:block;
 			}
 		}
-		
+
 		.options .section-title{
 			margin-top:0;
 		}
@@ -1360,7 +1360,7 @@ select, input{
 				background: #ddd;
 			}
 		}
-		
+
 		a.download-csv{
 			display:inline-block;
 		}
@@ -2337,6 +2337,13 @@ select, input{
 		.name{
 			min-width:120px;
 			font-size:12px;
+		}
+
+		.button.add{
+			display: inline-block;
+		    padding: 0 5px;
+		    margin: 0 0 0 5px;
+		    border-radius: 30px;
 		}
 	}
 }
