@@ -184,7 +184,7 @@
 	{
 		"slot": "Water-2",
 		"synergies": ["Anti-Charm"],
-		"weight": 1,
+		"weight": 2,
 		"pokemon": [
 			{
 				"speciesId": "vaporeon",
@@ -296,7 +296,7 @@
 	{
 		"slot": "Anti-Water",
 		"synergies": ["Water"],
-		"weight": 3,
+		"weight": 2,
 		"pokemon": [
 			{
 				"speciesId": "minun",
@@ -392,9 +392,9 @@
 			{
 				"speciesId": "raichu_alolan",
 				"fastMove": "THUNDER_SHOCK",
-				"chargedMoves": ["THUNDER_PUNCH","GRASS_KNOT"],
+				"chargedMoves": ["THUNDER_PUNCH","PSYCHIC"],
 				"difficulty": 2,
-				"weight":2
+				"weight":3
 			}
 		]
 	},
