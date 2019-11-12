@@ -29,8 +29,9 @@ require_once 'header.php';
 		<option value="matrix">Matrix Battle</option>
 	</select>
 	<p class="description single">Select two Pokemon from any league to fight a simulated battle. Customize movesets, levels, IV's, and shields.</p>
-	<p class="description multi hide">Battle one Pokemon against an entire league or cup. Explore overall performance or individual matchups.</p>
-	<p class="description matrix hide">Battle two groups of Pokemon against each other and see the results.</p>
+	<p class="description multi hide">Battle one Pokemon against an entire league or cup. Explore overall performance or individual matchups against a group of Pokemon.</p>
+	<p class="description matrix hide">Battle two groups of Pokemon against each other and see a matrix of the results. Use this to explore mass matchups or compare different Pokemon, movesets, or IV's.</p>
+	<p class="description matrix hide"><i>Reminder: Simulating your opponent's specific Pokemon isn't allowed during Silph League Arena tournaments. Remember to prepare beforehand and follow timely play.</i></p>
 </div>
 
 <div class="section poke-select-container single">

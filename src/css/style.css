@@ -343,6 +343,9 @@ header {
   color: #333;
   margin-top: 20px;
 }
+.poke .poke-stats h3.section-title:first-of-type {
+  margin-top: 0;
+}
 .poke .poke-stats a {
   font-size: 14px;
   text-decoration: none;
@@ -523,6 +526,9 @@ header {
 }
 .poke.multi .custom-options .export-btn {
   margin-top: 15px;
+}
+.poke.multi .custom-options p {
+  font-size: 12px;
 }
 .poke.multi .rankings-container {
   max-height: 360px;
@@ -1084,28 +1090,6 @@ select, input {
   overflow: scroll;
   max-height: 500px;
 }
-.battle-results.matrix .table-container thead th {
-  position: -webkit-sticky;
-  /* for Safari */
-  position: sticky;
-  top: 0;
-  background: #444;
-  color: #eee;
-  font-size: 14px;
-  font-weight: normal;
-}
-.battle-results.matrix .table-container tbody th {
-  position: -webkit-sticky;
-  /* for Safari */
-  position: sticky;
-  left: 0;
-  background: #fcfcfc;
-  text-align: center;
-  padding: 2px 5px;
-}
-.battle-results.matrix .table-container tr:nth-of-type(2n) th {
-  background: #ddd;
-}
 .battle-results.matrix a.download-csv {
   display: inline-block;
 }
@@ -1115,6 +1099,28 @@ select, input {
 }
 .rating-table tr {
   background: none;
+}
+.rating-table thead th {
+  position: -webkit-sticky;
+  /* for Safari */
+  position: sticky;
+  top: 0;
+  background: #444;
+  color: #eee;
+  font-size: 14px;
+  font-weight: normal;
+}
+.rating-table tbody th {
+  position: -webkit-sticky;
+  /* for Safari */
+  position: sticky;
+  left: 0;
+  background: #fcfcfc;
+  text-align: center;
+  padding: 2px 5px;
+}
+.rating-table tr:nth-of-type(2n) th {
+  background: #ddd;
 }
 .rating-table .shield {
   display: inline-block;
@@ -1985,6 +1991,11 @@ select, input {
 .article .meta-table .name {
   min-width: 120px;
   font-size: 12px;
+}
+.article .threats-table th,
+.article .alternatives-table th,
+.article .meta-table th {
+  text-align: left;
 }
 .article .threats-table .button.add,
 .article .alternatives-table .button.add,
@@ -2919,11 +2930,12 @@ a.toggle {
 .scorecard-print .toggle-content {
     display: none !important;
   }
-  .scorecard-print .toggle-content:nth-of-type(4) {
+  .scorecard-print .toggle-content:nth-of-type(1) {
     display: block !important;
   }
   .scorecard-print .article .rating-table a {
     background: none;
+    padding: 2px 5px;
   }
   .scorecard-print .article .rating-table a.close-win span {
     border: 2px solid #1b79b4;

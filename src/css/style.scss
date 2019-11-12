@@ -475,6 +475,10 @@ header{
 				color: $color-off-black;
 				margin-top: 20px;
 			}
+
+			&.section-title:first-of-type{
+				margin-top:0;
+			}
 		}
 
 
@@ -702,6 +706,10 @@ header{
 
 			.export-btn{
 				margin-top:15px;
+			}
+
+			p{
+				font-size:12px;
 			}
 		}
 
@@ -1336,29 +1344,6 @@ select, input{
 		.table-container{
 			overflow:scroll;
 			max-height: 500px;
-
-			thead th {
-			  position: -webkit-sticky; /* for Safari */
-			  position: sticky;
-			  top: 0;
-			  background: #444;
-			  color: #eee;
-			  font-size:14px;
-			  font-weight:normal;
-			}
-
-			tbody th {
-			  position: -webkit-sticky; /* for Safari */
-			  position: sticky;
-			  left: 0;
-			  background: #fcfcfc;
-		  	  text-align:center;
-			  padding:2px 5px;
-			}
-
-			tr:nth-of-type(2n) th{
-				background: #ddd;
-			}
 		}
 
 		a.download-csv{
@@ -1373,6 +1358,30 @@ select, input{
 
 	tr{
 		background:none;
+	}
+
+	thead th {
+	  position: -webkit-sticky; /* for Safari */
+	  position: sticky;
+	  top: 0;
+
+	  background: #444;
+	  color: #eee;
+	  font-size:14px;
+	  font-weight:normal;
+	}
+
+	tbody th {
+	  position: -webkit-sticky; /* for Safari */
+	  position: sticky;
+	  left: 0;
+	  background: #fcfcfc;
+  	  text-align:center;
+	  padding:2px 5px;
+	}
+
+	tr:nth-of-type(2n) th{
+		background: #ddd;
 	}
 
 	.shield{
@@ -2339,6 +2348,10 @@ select, input{
 			font-size:12px;
 		}
 
+		th{
+			text-align: left;
+		}
+
 		.button.add{
 			display: inline-block;
 		    padding: 0 5px;
@@ -3197,12 +3210,13 @@ a.toggle{
 			display:none !important;
 		}
 
-		.toggle-content:nth-of-type(4){
+		.toggle-content:nth-of-type(1){
 			display:block !important;
 		}
 
 		.article .rating-table a{
 			background:none;
+			padding: 2px 5px;
 		}
 
 		.article .rating-table a.close-win span{

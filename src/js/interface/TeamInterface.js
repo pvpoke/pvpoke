@@ -396,10 +396,10 @@ var InterfaceMaster = (function () {
 				$(".threats-table").html("");
 				$(".meta-table").html("");
 
-				var $row = $("<tr><td></td></tr>");
+				var $row = $("<thead><tr><td></td></tr></thead>");
 
 				for(var n = 0; n < team.length; n++){
-					$row.append("<td class=\"name-small\">"+team[n].speciesName+"</td>");
+					$row.find("tr").append("<td class=\"name-small\">"+team[n].speciesName+"</td>");
 
 					csv += team[n].speciesName;
 					if(n < team.length -1){
@@ -411,6 +411,8 @@ var InterfaceMaster = (function () {
 
 				$(".threats-table").append($row);
 				$(".meta-table").append($row.clone());
+				$(".threats-table").append("<tbody></tbody>");
+				$(".meta-table").append("<tbody></tbody>");
 
 				var avgThreatScore = 0;
 
@@ -446,7 +448,7 @@ var InterfaceMaster = (function () {
 
 					// Add results to threats table
 
-					$row = $("<tr><td class=\"name\"><b>"+(i+1)+". "+pokemon.speciesName+"</b></td></tr>");
+					$row = $("<tr><th class=\"name\"><b>"+(i+1)+". "+pokemon.speciesName+"</b></th></tr>");
 
 					for(var n = 0; n < r.matchups.length; n++){
 						var $cell = $("<td><a class=\"rating\" href=\"#\" target=\"blank\"><span></span></a></td>");
@@ -474,7 +476,7 @@ var InterfaceMaster = (function () {
 						$row.append($cell);
 					}
 
-					$(".threats-table").append($row);
+					$(".threats-table tbody").append($row);
 				}
 
 				// Display average threat score
@@ -527,7 +529,7 @@ var InterfaceMaster = (function () {
 
 					// Add results to meta table
 
-					$row = $("<tr><td class=\"name\"><b>"+(i+1)+". "+pokemon.speciesName+"</b></td></tr>");
+					$row = $("<tr><th class=\"name\"><b>"+(i+1)+". "+pokemon.speciesName+"</b></th></tr>");
 
 					for(var n = 0; n < r.matchups.length; n++){
 						var $cell = $("<td><a class=\"rating\" href=\"#\" target=\"blank\"><span></span></a></td>");
@@ -555,7 +557,7 @@ var InterfaceMaster = (function () {
 						$row.append($cell);
 					}
 
-					$(".meta-table").append($row);
+					$(".meta-table tbody").append($row);
 				}
 
 				// And for kicks, generate the counters to those counters
@@ -570,13 +572,14 @@ var InterfaceMaster = (function () {
 
 				$(".alternatives-table").html("");
 
-				var $row = $("<tr><td></td></tr>");
+				var $row = $("<thead><tr><td></td></tr></thead>");
 
 				for(var n = 0; n < counterTeam.length; n++){
-					$row.append("<td class=\"name-small\">"+counterTeam[n].speciesName+"</td>");
+					$row.find("tr").append("<td class=\"name-small\">"+counterTeam[n].speciesName+"</td>");
 				}
 
 				$(".alternatives-table").append($row);
+				$(".alternatives-table").append("<tbody></tbody>");
 
 				for(var i = 0; i < 10; i++){
 					var r = altRankings[i];
@@ -600,7 +603,7 @@ var InterfaceMaster = (function () {
 
 					// Add results to alternatives table
 
-					$row = $("<tr><td class=\"name\"><b>"+(i+1)+". "+pokemon.speciesName+"<div class=\"button add\" pokemon=\""+pokemon.speciesId+"\">+</div></b></td></tr>");
+					$row = $("<tr><th class=\"name\"><b>"+(i+1)+". "+pokemon.speciesName+"<div class=\"button add\" pokemon=\""+pokemon.speciesId+"\">+</div></b></th></tr>");
 
 					for(var n = 0; n < r.matchups.length; n++){
 						var $cell = $("<td><a class=\"rating\" href=\"#\" target=\"blank\"><span></span></a></td>");
@@ -628,7 +631,7 @@ var InterfaceMaster = (function () {
 						$row.append($cell);
 					}
 
-					$(".alternatives-table").append($row);
+					$(".alternatives-table tbody").append($row);
 				}
 
 				if(team.length == 6){

@@ -2,27 +2,6 @@
 
 	<?php require_once 'cupselect.php'; ?>
 	<div class="poke-stats">
-		<div class="options">
-			<h3 class="section-title">Options</h3>
-			<select class="shield-select">
-				<option value="0">No shields</option>
-				<option value="1" selected>1 shield</option>
-				<option value="2">2 shields</option>
-			</select>
-			<select class="charged-count-select">
-				<option value="0">0 Charged Moves</option>
-				<option value="1">1 Charged Move</option>
-				<option value="2" selected="">2 Charged Moves</option>
-			</select>
-			<select class="default-iv-select">
-				<option value="gamemaster">Default/Original IV's</option>
-				<option value="overall">Maximum stat product (Rank 1)</option>
-				<option value="atk">Maximum Attack</option>
-				<option value="def">Maximum Defense</option>
-			</select>
-			<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
-		</div>
-
 		<div class="custom-options">
 			<h3 class="section-title">Pokemon (<span class="poke-count">0</span> / <span class="poke-max-count">100</span>)</h3>
 			<p>Create or select a group of custom Pokemon below.</p>
@@ -45,6 +24,27 @@
 				<button class="save-btn save-as hide">Save As</button>
 				<button class="delete-btn hide">Delete</button>
 			</div>
+		</div>
+
+		<div class="options">
+			<h3 class="section-title">Options</h3>
+			<select class="shield-select">
+				<option value="0">No shields</option>
+				<option value="1" selected>1 shield</option>
+				<option value="2">2 shields</option>
+			</select>
+			<select class="charged-count-select">
+				<option value="0">0 Charged Moves</option>
+				<option value="1">1 Charged Move</option>
+				<option value="2" selected="">2 Charged Moves</option>
+			</select>
+			<select class="default-iv-select">
+				<option value="gamemaster">Default/Original IV's</option>
+				<option value="overall">Maximum stat product (Rank 1)</option>
+				<option value="atk">Maximum Attack</option>
+				<option value="def">Maximum Defense</option>
+			</select>
+			<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
 		</div>
 	</div>
 </div>
