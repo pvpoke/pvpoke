@@ -36,7 +36,11 @@ function PokeMultiSelect(element){
 
 		while(window.localStorage.key(i) !== null){
 			var key = window.localStorage.key(i);
-			$el.find(".quick-fill-select").append("<option value=\""+key+"\" type=\"custom\">"+key+"</option>");
+			
+			if(key.indexOf("google") == -1){
+				$el.find(".quick-fill-select").append("<option value=\""+key+"\" type=\"custom\">"+key+"</option>");
+			}
+
 			i++;
 		}
 	}
