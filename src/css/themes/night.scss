@@ -283,12 +283,20 @@ a.toggle{
 	}
 }
 
-.battle-results.matrix .table-container tbody th{
+.battle-results.matrix .table-container tbody th,
+.alternatives-table tbody th,
+.threats-table tbody th,
+.meta-table tbody th{
 	background:#000;
+	color:#eee;
 }
 
-.battle-results.matrix .table-container tr:nth-of-type(2n) th{
+.battle-results.matrix .table-container tr:nth-of-type(2n) th,
+.alternatives-table tr:nth-of-type(2n) th,
+.threats-table tr:nth-of-type(2n) th,
+.meta-table tr:nth-of-type(2n) th{
 	background:#444;
+	color:#eee;
 }
 
 @media only screen and (min-width: 721px){

@@ -27,22 +27,31 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 	
-	<h4>v1.12.6 (November 26th, 2019)</h4>
+	<h4>v1.12.7 (November 12th, 2019)</h4>
 	<ul>
-		<li>Adjusted Shadow Pokemon behind the scenes</li>
+		<li>Revamped the <a href="<?php echo $WEB_ROOT; ?>team-builder/">Team Builder</a> tool with new and updated features:</li>
 		<ul>
-			<li>Shadow Pokemon will only have Return in their movepool when they are an eligible CP at level 25</li>
+			<li>Enter up to 6 Pokemon or use a custom group</li>
+			<li>A "Meta Scorecard" matrix shows how top Pokemon match up against your team. You can print this as a study reference!</li>
+			<li>Export your team's matchups against the entire league or cup to a spreadsheet.</li>
+			<li>Updated the "Potential Threats" and "Potential Alternatives" sections with matrices that highlight matchups against individual Pokemon on your team, including a "threat score" that rates how vulnerable your team is to prevalent Pokemon.</li>
+			<ul>
+				<li>The math for calculating potential threats and alternatives has been tweaked to show Pokemon that beat or have soft matchups against the most targets. (Previously, this was a simple average which skewed toward Pokemon with hard wins.)</li>
+			</ul>
 		</ul>
-	</ul>
-
-	<h4>v1.12.5 (October 25th, 2019)</h4>
-	<ul>
-		<li>Pokemon search in the rankings and Multi-Battle results have been adjusted to be closer to in-game search terms:</li>
+		<li>New "Matrix Battle" mode generates mass battle results between two groups of Pokemon. Export the results to a spreadsheet!</li>
+		<li>You can now apply IV spreads to an entire group in Multi-Battle and Matrix Battle (default, max stat product, etc.). Note that these results may take a little time to generate.</li>
+		<li>Custom groups have been reworked to save to local app storage instead of cookies:</li>
 		<ul>
-			<li>Search for Pokemon that know a specific move or type of move with "@move" or "@movetype"</li>
-			<li>Perform search operations with "," "&amp;" or "!"</li>
+			<li>Custom group limit increased from 50 Pokemon to 100.</li>
+			<li>This change resolves an issue where too many custom groups could make the site inaccessible.</li>
+			<li>When you visit the site for the first time after the update, your custom group data should automatically migrate from cookies to local storage. If you don't see your custom groups, don't worry, your data is still there! Ping me on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> and I can help you recover your groups.</li>
 		</ul>
-		<li>Shield selection now defaults to 1 shield to hopefully save you a few clicks</li>
+		<li>Pokemon no longer select movesets through the "auto-select" algorithm and default to their recommended moveset from the rankings, when available:</li>
+		<ul>
+			<li>Multi-Battle and Team Builder tools now  use the same movesets every time. (Previously, Pokemon auto-selected movesets for each matchup, producing erroneous results.)</li>
+			<li>Hopefully this saves you a few clicks when selecting new Pokemon!</li>
+		</ul>
 	</ul>
 
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>

@@ -13,7 +13,7 @@ require_once 'header.php';
 <h1>Team Builder</h1>
 
 <div class="section league-select-container white">
-	<p>Select your Pokemon and movesets below. You'll see how your team matches up defensively and offensively against other types, which Pokemon pose a potential threat, and potential alternatives for your team. You can also use this tool to compare Pokemon with different levels and IV's.</p>
+	<p>Select your Pokemon and movesets below. You'll see how your team matches up against top Pokemon, which Pokemon pose a potential threat, and potential alternatives for your team. You can also use this tool to identify strong team cores and how to break them.</p>
 	<?php require 'modules/leagueselect.php'; ?>
 	<?php require 'modules/cupselect.php'; ?>
 </div>
