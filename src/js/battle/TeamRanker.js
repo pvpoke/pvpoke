@@ -30,11 +30,11 @@ var RankerMaster = (function () {
 			var shieldBaitOverrides = [true, true];
 			var overrideSettings = [{
 				shields: 1,
-				ivs: "gamemaster",
+				ivs: "original",
 				bait: true
 			}, {
 				shields: 1,
-				ivs: "gamemaster",
+				ivs: "original",
 				bait: true
 			}];
 
@@ -66,7 +66,8 @@ var RankerMaster = (function () {
 					teamRatings.push([]);
 
 					// Adjust IVs as needed
-					if(overrideSettings[0].ivs != "gamemaster"){
+					console.log(overrideSettings[0].ivs);
+					if((overrideSettings[0].ivs != "gamemaster")&&(overrideSettings[0].ivs != "original")){
 						team[i].maximizeStat(overrideSettings[0].ivs);
 					} else if((overrideSettings[0].ivs == "gamemaster")&&(team[i].isCustom)){
 						team[i].isCustom = false;
@@ -141,7 +142,7 @@ var RankerMaster = (function () {
 						moveset.chargedMoves.push(pokemon.chargedMoves[n]);
 					}
 
-					if(overrideSettings[1].ivs != "gamemaster"){
+					if((overrideSettings[1].ivs != "gamemaster")&&(overrideSettings[1].ivs != "original")){
 						pokemon.maximizeStat(overrideSettings[1].ivs);
 					} else if((overrideSettings[1].ivs == "gamemaster")&&(pokemon.isCustom)){
 						pokemon.isCustom = false;

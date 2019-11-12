@@ -772,7 +772,7 @@ var InterfaceMaster = (function () {
 				if(poke){
 					ranker.applySettings({
 						shields: poke.shields,
-						ivs: "gamemaster",
+						ivs: "original",
 						bait: poke.baitShields
 					}, 0);
 					team.push(poke);
@@ -876,7 +876,7 @@ var InterfaceMaster = (function () {
 				var cp = battle.getCP();
 				var battleStr = "battle/multi/"+cp+"/"+cup+"/"+pokeStr+"/"+poke.startingShields+opponentShields+"/"+moveStr+"/"+chargedMoveCount+"-"+shieldBaiting;
 
-				if(multiSelectors[0].getSettings().ivs != "gamemaster"){
+				if(multiSelectors[0].getSettings().ivs != "original"){
 					battleStr += "-"+multiSelectors[0].getSettings().ivs;
 				}
 

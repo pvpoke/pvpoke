@@ -39,7 +39,8 @@
 				<option value="2" selected="">2 Charged Moves</option>
 			</select>
 			<select class="default-iv-select">
-				<option value="gamemaster">Default/Original IV's</option>
+				<option value="original">Original IV's</option>
+				<option value="gamemaster">Typical IV's (~Rank 500)</option>
 				<option value="overall">Maximum stat product (Rank 1)</option>
 				<option value="atk">Maximum Attack</option>
 				<option value="def">Maximum Defense</option>

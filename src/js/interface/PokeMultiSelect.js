@@ -22,7 +22,7 @@ function PokeMultiSelect(element){
 	
 	var settings = {
 		shields: 1,
-		ivs: "gamemaster",
+		ivs: "original",
 		bait: true
 	}
 
