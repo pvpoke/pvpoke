@@ -13,7 +13,7 @@ var InterfaceMaster = (function () {
 			var gm = GameMaster.getInstance();
 			var battle;
 			var pokeSelectors = [];
-			var multiSelector;
+			var multiSelectors = [];
 			var animating = false;
 			var self = this;
 
@@ -36,7 +36,7 @@ var InterfaceMaster = (function () {
 			var sandboxAction;
 			var sandboxActionIndex;
 			var sandboxTurn;
-			
+
 			var chargeMultipliers = [1, .95, .75, .5, .25]; // Array of potential charge multipliers between full and minimum charge
 
 			var modal;
@@ -67,8 +67,13 @@ var InterfaceMaster = (function () {
 					selector.init(data.pokemon, battle);
 				});
 
-				multiSelector = new PokeMultiSelect($(".poke.multi"));
-				multiSelector.init(data.pokemon, battle);
+				$(".poke-select-container .poke.multi").each(function(index, value){
+					var selector = new PokeMultiSelect($(this));
+					selector.init(data.pokemon, battle);
+
+					multiSelectors.push(selector);
+				});
+
 
 				$(".league-select").on("change", selectLeague);
 				$(".mode-select").on("change", selectMode);
@@ -89,7 +94,7 @@ var InterfaceMaster = (function () {
 
 				// Details battle viewing
 
-				$("body").on("click", ".rating-table a.rating.star", viewShieldBattle);
+				$("body").on("click", ".battle-details .rating-table a.rating.star", viewShieldBattle);
 				$("body").on("click", ".section.summary a.rating.star", viewBulkBattle);
 				$("body").on("click", ".breakpoints-section .button", selectBreakpointIVs);
 
@@ -108,12 +113,30 @@ var InterfaceMaster = (function () {
 
 				this.loadGetData();
 
+				// Load rankings for the current league
+
+				if(! get){
+					gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), "all");
+				}
+
 				window.addEventListener('popstate', function(e) {
 					get = e.state;
 					self.loadGetData();
 				});
 
 			};
+
+			// Callback for loading ranking data
+
+			this.displayRankingData = function(data){
+				console.log("Ranking data loaded");
+
+				if(self.battleMode == "multi"){
+					self.generateMultiBattleResults();
+
+					$("html, body").animate({ scrollTop: $(".battle-results."+self.battleMode).offset().top - 185 }, 500);
+				}
+			}
 
 			// If the opposing Pokemon is changed or updated, update both so damage numbers are accurate
 
@@ -356,7 +379,7 @@ var InterfaceMaster = (function () {
 					var moveStrs = [];
 
 					for(var i = 0; i < pokes.length; i++){
-						moveStrs.push(generateURLMoveStr(pokes[i]));
+						moveStrs.push(pokes[i].generateURLMoveStr());
 					}
 
 					var battleStr = self.generateSingleBattleLinkString(false);
@@ -409,8 +432,8 @@ var InterfaceMaster = (function () {
 				var moveStrs = [];
 
 				for(var i = 0; i < pokes.length; i++){
-					pokeStrs.push(generateURLPokeStr(pokes[i], i));
-					moveStrs.push(generateURLMoveStr(pokes[i]));
+					pokeStrs.push(pokes[i].generateURLPokeStr());
+					moveStrs.push(pokes[i].generateURLMoveStr());
 				}
 
 				var battleStr = "battle/";
@@ -723,19 +746,35 @@ var InterfaceMaster = (function () {
 				// Set settings
 
 				var cup = $(".cup-select option:selected").val();
-				var opponentShields = parseInt($(".poke.multi .shield-select option:selected").val());
+				var opponentShields = parseInt($(".poke.multi").eq(0).find(".shield-select option:selected").val());
 				var chargedMoveCount = parseInt($(".poke.multi .charged-count-select option:selected").val());
-				var shieldBaiting = $(".poke.multi .check.shield-baiting").hasClass("on") ? 1 : 0;
+				var shieldBaiting = $(".poke.multi").eq(0).find(".check.shield-baiting").hasClass("on") ? 1 : 0;
+
+				// Load rankings and movesets
+
+				var key = cup + "overall" + battle.getCP();
+
+				if((! gm.rankings[key])&&(cup != "custom")){
+					gm.loadRankingData(self, "overall", battle.getCP(), cup);
+					return false;
+				}
 
 				battle.setCup(cup);
-				ranker.setShields(opponentShields);
+
+				ranker.applySettings(multiSelectors[0].getSettings(), 1);
+				ranker.setShields(opponentShields, 1);
 				ranker.setChargedMoveCount(chargedMoveCount);
-				ranker.setShieldBaitOverride($(".poke.multi .check.shield-baiting").hasClass("on"));
+				ranker.setShieldBaitOverride($(".poke.multi .check.shield-baiting").hasClass("on"), 1);
 
 				var team = [];
 				var poke = pokeSelectors[0].getPokemon();
 
 				if(poke){
+					ranker.applySettings({
+						shields: poke.shields,
+						ivs: "gamemaster",
+						bait: poke.baitShields
+					}, 0);
 					team.push(poke);
 				} else{
 					return;
@@ -744,7 +783,7 @@ var InterfaceMaster = (function () {
 				// Set multi selected Pokemon if available
 
 				if(cup == "custom"){
-					ranker.setTargets(multiSelector.getPokemonList());
+					ranker.setTargets(multiSelectors[0].getPokemonList());
 				} else{
 					ranker.setTargets([]);
 				}
@@ -755,8 +794,8 @@ var InterfaceMaster = (function () {
 				var data = ranker.rank(team, battle.getCP(), battle.getCup());
 				var rankings = data.rankings;
 				var shieldStr = poke.startingShields + "" + opponentShields;
-				var pokeStr = generateURLPokeStr(poke, 0);
-				var moveStr = generateURLMoveStr(poke);
+				var pokeStr = poke.generateURLPokeStr();
+				var moveStr = poke.generateURLMoveStr();
 
 				csv = data.csv;
 
@@ -764,7 +803,7 @@ var InterfaceMaster = (function () {
 
 				battle.setNewPokemon(poke, 0, false);
 
-				var pokemonList = multiSelector.getPokemonList();
+				var pokemonList = multiSelectors[0].getPokemonList();
 				var custom = (battle.getCup().name == "custom");
 				var initialize = (custom == false);
 
@@ -775,19 +814,7 @@ var InterfaceMaster = (function () {
 				for(var i = 0; i < rankings.length; i++){
 					var r = rankings[i];
 
-					var pokemon;
-
-					if(pokemonList.length > r.index){
-						pokemon = pokemonList[r.index];
-					} else{
-						pokemon = new Pokemon(r.speciesId, 1, battle);
-					}
-
-
-					// Generate moves for link
-
-					battle.setNewPokemon(pokemon, 1, initialize);
-
+					var pokemon = r.pokemon;
 
 					// Manually set moves if previously selected, otherwise autoselect
 					var moveNameStr = '';
@@ -811,8 +838,8 @@ var InterfaceMaster = (function () {
 						pokemon.isCustom = true;
 					}
 
-					var opPokeStr = generateURLPokeStr(pokemon, 1);
-					var opMoveStr = generateURLMoveStr(pokemon);
+					var opPokeStr = pokemon.generateURLPokeStr();
+					var opMoveStr = pokemon.generateURLMoveStr();
 
 					var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
 
@@ -847,7 +874,13 @@ var InterfaceMaster = (function () {
 				// Generate and display share link
 
 				var cp = battle.getCP();
-				var battleStr = "battle/multi/"+cp+"/"+cup+"/"+pokeStr+"/"+poke.startingShields+opponentShields+"/"+moveStr+"/"+chargedMoveCount+"-"+shieldBaiting+"/";
+				var battleStr = "battle/multi/"+cp+"/"+cup+"/"+pokeStr+"/"+poke.startingShields+opponentShields+"/"+moveStr+"/"+chargedMoveCount+"-"+shieldBaiting;
+
+				if(multiSelectors[0].getSettings().ivs != "gamemaster"){
+					battleStr += "-"+multiSelectors[0].getSettings().ivs;
+				}
+
+				battleStr += "/";
 
 				// Append extra options
 
@@ -858,9 +891,9 @@ var InterfaceMaster = (function () {
 				// Add preset group to URL if available
 
 				if(cup == "custom"){
-					var groupName = multiSelector.getSelectedGroup();
+					var groupName = multiSelectors[0].getSelectedGroup();
 
-					if(groupName.indexOf("custom") == -1){
+					if(multiSelectors[0].getSelectedGroupType() != "custom"){
 						battleStr += groupName + "/";
 					}
 				}
@@ -872,16 +905,7 @@ var InterfaceMaster = (function () {
 
 				// Update download link with new data
 				var poke = pokeSelectors[0].getPokemon();
-				var moveAbbreviationStr = poke.fastMove.abbreviation;
-				
-				for(var i = 0; i < poke.chargedMoves.length; i++){
-					if(i == 0){
-						moveAbbreviationStr += "+" + poke.chargedMoves[i].abbreviation;
-					} else{
-						moveAbbreviationStr += "+" + poke.chargedMoves[i].abbreviation;
-					}
-				}
-
+				var moveAbbreviationStr = poke.generateMovesetStr();
 				var filename = pokeSelectors[0].getPokemon().speciesName + " " + moveAbbreviationStr + " vs " + $(".poke.multi .cup-select option:selected").html() + " " + poke.startingShields + "-" + opponentShields + " shields.csv";
 				var filedata = '';
 
@@ -915,6 +939,117 @@ var InterfaceMaster = (function () {
 				// Send Google Analytics pageview
 
 				gtag('config', UA_ID, {page_location: (host+url), page_path: url});
+			}
+
+			// Process both groups of Pokemon through the team ranker
+
+			this.generateMatrixResults = function(){
+
+				// Appply settings from multiSelectors
+				ranker.applySettings(multiSelectors[0].getSettings(), 1);
+				ranker.applySettings(multiSelectors[1].getSettings(), 0);
+
+				/* It's opposite day, so we get to switch these around.
+				* But actually it's because TeamRanker is built for the Team Builder (how other Pokemon do vs your Pokemon)
+				*/
+				var team = multiSelectors[1].getPokemonList();
+				var targets = multiSelectors[0].getPokemonList();
+
+				if((team.length < 1)||(targets.length < 1)){
+					return;
+				}
+
+				// Set multi selected Pokemon if available
+				ranker.setTargets(targets);
+
+				// Run battles through the ranker
+
+				var data = ranker.rank(team, battle.getCP(), battle.getCup(), [], "matrix");
+				var rankings = data.rankings;
+
+				// Display results
+				var csv = ','; // CSV data of all matchups
+				$(".matrix-table").html("");
+
+				var $row = $("<thead><tr><th></th></tr></thead>");
+
+				for(var n = 0; n < team.length; n++){
+					$row.find("tr").append("<th class=\"name-small\">"+team[n].speciesName+"</th>");
+
+					csv += team[n].speciesName;
+					if(n < team.length -1){
+						csv += ',';
+					}
+				}
+
+				csv += '\n';
+
+				$(".matrix-table").append($row);
+				$(".matrix-table").append("<tbody></tbody>");
+
+				for(var i = 0; i < rankings.length; i++){
+					var r = rankings[i];
+					var pokemon = r.pokemon;
+
+					// Add results to matrix table
+
+					$row = $("<tr><th class=\"name\"><b>"+pokemon.speciesName+"</b></th></tr>");
+
+					csv += pokemon.speciesName + ',';
+
+					for(var n = 0; n < r.matchups.length; n++){
+						var $cell = $("<td><a class=\"rating star\" href=\"#\" target=\"blank\"><span></span></a></td>");
+						var rating = r.matchups[n].rating;
+						var color = battle.getRatingColor(rating);
+
+						$cell.find("a").html(rating);
+						$cell.find("a").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
+
+						if(rating > 500){
+							$cell.find("a").addClass("win");
+						}
+
+						var pokeStr = pokemon.generateURLPokeStr();
+						var moveStr = pokemon.generateURLMoveStr();
+						var opPokeStr = r.matchups[n].opponent.generateURLPokeStr();
+						var opMoveStr = r.matchups[n].opponent.generateURLMoveStr();
+						var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/"+pokemon.startingShields+""+r.matchups[n].opponent.startingShields+"/"+moveStr+"/"+opMoveStr+"/";
+						$cell.find("a").attr("href", battleLink);
+
+						$row.append($cell);
+
+						csv += rating;
+
+						if(n < r.matchups.length-1){
+							csv += ',';
+						}
+					}
+
+					$(".matrix-table tbody").append($row);
+
+					csv += '\n';
+				}
+
+				$(".battle-results.matrix").show();
+
+				// Update download link with new data
+				var filename = multiSelectors[0].getSelectedGroup() + " vs " + multiSelectors[1].getSelectedGroup() + ".csv";
+				var filedata = '';
+
+				if (!csv.match(/^data:text\/csv/i)) {
+					filedata = [csv];
+					filedata = new Blob(filedata, { type: 'text/csv'});
+				}
+
+				$(".button.download-csv").attr("href", window.URL.createObjectURL(filedata));
+				$(".button.download-csv").attr("download", filename);
+
+				// Push state to browser history so it can be navigated, only if not from URL parameters
+
+				gtag('event', 'Lookup', {
+				  'event_category' : 'Simulation',
+				  'event_label' : 'Matrix'
+				});
 			}
 
 			// For battles with buffs or debuffs, run bulk sims and return median match
@@ -1116,6 +1251,7 @@ var InterfaceMaster = (function () {
 										pokeSelectors[i].getPokemon().setShields(arr[i]);
 									} else if((i == 1)&&(self.battleMode == "multi")){
 										$(".poke.multi .shield-select").find("option[value=\""+arr[i]+"\"]").prop("selected", "selected");
+										$(".poke.multi .shield-select").trigger("change");
 									}
 
 								}
@@ -1173,7 +1309,7 @@ var InterfaceMaster = (function () {
 												if(paramsArr[5]){
 													charge = chargeMultipliers[paramsArr[5]];
 												}
-												
+
 												actions.push(new TimelineAction(
 													"charged",
 													parseInt(paramsArr[1]),
@@ -1214,17 +1350,17 @@ var InterfaceMaster = (function () {
 
 							case "cup":
 								$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
-								
+
 								if($(".format-select option[cup=\""+val+"\"]").length > 0){
 									$(".format-select option[cup=\""+val+"\"]").prop("selected","selected");
 								} else{
 									var cat = $(".cup-select option[value=\""+val+"\"]").attr("cat");
 									$(".format-select option[value=\""+cat+"\"]").prop("selected","selected");
-									multiSelector.changeFormatSelect();
-									
+									multiSelectors[0].changeFormatSelect();
+
 									$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
 								}
-								
+
 								$(".cup-select").trigger("change");
 								break;
 
@@ -1237,6 +1373,12 @@ var InterfaceMaster = (function () {
 								if(arr.length > 1){
 									if(parseInt(arr[1]) == 0){
 										$(".poke.multi .check.shield-baiting").removeClass("on");
+										multiSelectors[0].setBaitSetting(false);
+									}
+
+									if(arr[2]){
+										$(".poke.multi").eq(0).find(".default-iv-select option[value=\""+arr[2]+"\"]").prop("selected","selected");
+										$(".poke.multi").eq(0).find(".default-iv-select").trigger("change");
 									}
 								}
 
@@ -1244,7 +1386,7 @@ var InterfaceMaster = (function () {
 								break;
 
 							case "g1":
-								multiSelector.selectGroup(val);
+								multiSelectors[0].selectGroup(val);
 								isLoadingPreset = true;
 								break;
 
@@ -1277,8 +1419,6 @@ var InterfaceMaster = (function () {
 						$(".battle-btn").trigger("click");
 					}, 500);
 				}
-
-
 
 				if(sandbox){
 					self.runSandboxSim();
@@ -1359,9 +1499,14 @@ var InterfaceMaster = (function () {
 						pokeSelectors[i].setCP(cp);
 					}
 
-					multiSelector.updateLeague(cp);
+					for(var i = 0; i < multiSelectors.length; i++){
+						multiSelectors[i].updateLeague(cp);
+					}
 				}
 
+				if(self.battleMode == "single"){
+					gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), "all");
+				}
 			}
 
 			// Event handler for changing the battle mode
@@ -1372,8 +1517,10 @@ var InterfaceMaster = (function () {
 				$("p.description").hide();
 				$("p."+self.battleMode).show();
 
-				$(".poke-select-container").removeClass("single multi");
+				$(".poke-select-container").removeClass("single multi matrix");
 				$(".poke-select-container").addClass(self.battleMode);
+
+				$(".battle-results").hide();
 
 				if(self.battleMode == "single"){
 					pokeSelectors[0].setSelectedPokemon(pokeSelectors[0].getPokemon());
@@ -1460,6 +1607,8 @@ var InterfaceMaster = (function () {
 
 					} else if(self.battleMode == "multi"){
 						self.generateMultiBattleResults();
+					} else if(self.battleMode == "matrix"){
+						self.generateMatrixResults();
 					}
 
 					// Scroll to results
@@ -1726,56 +1875,6 @@ var InterfaceMaster = (function () {
 
 			}
 
-			// Given a Pokemon, output a string of numbers for URL building
-
-			function generateURLMoveStr(pokemon){
-				var moveStr = '';
-
-				var fastMoveIndex = pokemon.fastMovePool.indexOf(pokemon.fastMove);
-				var chargedMove1Index = pokemon.chargedMovePool.indexOf(pokemon.chargedMoves[0])+1;
-				var chargedMove2Index = pokemon.chargedMovePool.indexOf(pokemon.chargedMoves[1])+1;
-
-				moveStr = fastMoveIndex + "-" + chargedMove1Index + "-" + chargedMove2Index;
-
-				// Check for any custom moves;
-
-				if(pokemon.fastMove.isCustom){
-					moveStr += "-" + pokemon.fastMove.moveId;
-				}
-
-				for(var i = 0; i < pokemon.chargedMoves.length; i++){
-					if(pokemon.chargedMoves[i].isCustom){
-						moveStr += "-" + pokemon.chargedMoves[i].moveId + "-" + i;
-					}
-				}
-
-				return moveStr;
-			}
-
-			// Given a Pokemon, output a string of numbers for URL building
-
-			function generateURLPokeStr(pokemon, index){
-				var pokeStr = pokemon.speciesId;
-
-				if((pokemon.isCustom)||(pokemon.startStatBuffs[0] != 0)||(pokemon.startStatBuffs[1] != 0)){
-					var arr = [pokemon.level];
-
-					arr.push(pokemon.ivs.atk, pokemon.ivs.def, pokemon.ivs.hp, pokemon.startStatBuffs[0]+gm.data.settings.maxBuffStages, pokemon.startStatBuffs[1]+gm.data.settings.maxBuffStages, pokemon.baitShields ? 1 : 0);
-
-					// Stat buffs are increased by 4 so the URL doesn't have to deal with parsing negative numbers
-
-					var str = arr.join("-");
-
-					pokeStr += "-" + str;
-				}
-
-				if(pokemon.priority != 0){
-					pokeStr += "-p";
-				}
-
-				return pokeStr;
-			}
-
 			// Toggle Sandbox Mode on or off
 
 			function toggleSandboxMode(e){
@@ -1896,7 +1995,7 @@ var InterfaceMaster = (function () {
 					if(sandboxAction.settings.buffs){
 						$(".modal .check.buffs").addClass("on");
 					}
-					
+
 					if(sandboxAction.settings.charge){
 						var chargeInt = chargeMultipliers.indexOf(sandboxAction.settings.charge);
 						$(".modal .charge-select option[value=\""+chargeInt+"\"]").prop("selected", "selected");
@@ -2030,7 +2129,7 @@ var InterfaceMaster = (function () {
 						if(selectedValue != "wait"){
 							var chargeIndex = parseInt($(".modal .charge-select option:selected").val());
 							var charge = chargeMultipliers[chargeIndex];
-							
+
 							actions.push(new TimelineAction(
 								"charged",
 								sandboxPokemon.index,
@@ -2059,7 +2158,7 @@ var InterfaceMaster = (function () {
 						if(selectedValue != "wait"){
 							var chargeIndex = parseInt($(".modal .charge-select option:selected").val());
 							var charge = chargeMultipliers[chargeIndex];
-							
+
 							actions[sandboxActionIndex] = new TimelineAction(
 								"charged",
 								sandboxPokemon.index,

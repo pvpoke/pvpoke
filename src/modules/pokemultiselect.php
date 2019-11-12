@@ -2,6 +2,30 @@
 
 	<?php require_once 'cupselect.php'; ?>
 	<div class="poke-stats">
+		<div class="custom-options">
+			<h3 class="section-title">Pokemon (<span class="poke-count">0</span> / <span class="poke-max-count">100</span>)</h3>
+			<p>Create or select a group of custom Pokemon below.</p>
+			<div class="rankings-container clear"></div>
+			<button class="add-poke-btn button">+ Add Pokemon</button>
+
+			<button class="export-btn">Import/Export</button>
+
+			<h3 class="section-title">Quick Fill</h3>
+			<select class="quick-fill-select">
+				<option value="new">New Custom Group</option>
+				<option value="great" type="great" class="multi-battle">Great League Meta</option>
+				<option value="ultra" type="ultra" class="hide multi-battle">Ultra League Meta</option>
+				<option value="master" type="master" class="hide multi-battle">Master League Meta</option>
+				<option value="ferocious" type="ferocious" class="multi-battle">Ferocious Cup Meta</option>
+				<option value="sinister" type="sinister" class="multi-battle">Sinister Cup Meta</option>
+			</select>
+			<div class="flex quick-fill-buttons">
+				<button class="save-btn save-custom">Save</button>
+				<button class="save-btn save-as hide">Save As</button>
+				<button class="delete-btn hide">Delete</button>
+			</div>
+		</div>
+
 		<div class="options">
 			<h3 class="section-title">Options</h3>
 			<select class="shield-select">
@@ -12,46 +36,15 @@
 			<select class="charged-count-select">
 				<option value="0">0 Charged Moves</option>
 				<option value="1">1 Charged Move</option>
-				<option value="2" selected>2 Charged Moves</option>
+				<option value="2" selected="">2 Charged Moves</option>
+			</select>
+			<select class="default-iv-select">
+				<option value="gamemaster">Default/Original IV's</option>
+				<option value="overall">Maximum stat product (Rank 1)</option>
+				<option value="atk">Maximum Attack</option>
+				<option value="def">Maximum Defense</option>
 			</select>
 			<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
-		</div>
-
-		<div class="custom-options">
-			<h3 class="section-title">Pokemon (<span class="poke-count">0</span> / <span class="poke-max-count">50</span>)</h3>
-			<p>Create or select a group of custom Pokemon below.</p>
-			<div class="rankings-container clear"></div>
-			<button class="add-poke-btn button">+ Add Pokemon</button>
-
-			<button class="export-btn">Import/Export</button>
-
-			<h3 class="section-title">Quick Fill</h3>
-			<select class="quick-fill-select">
-				<option value="new">New Custom Group</option>
-				<option value="great" class="multi-battle">Great League Meta</option>
-				<option value="ultra" class="hide multi-battle">Ultra League Meta</option>
-				<option value="master" class="hide multi-battle">Master League Meta</option>
-				<option value="ferocious" class="multi-battle">Ferocious Cup Meta</option>
-				<option value="sinister" class="multi-battle">Sinister Cup Meta</option>
-
-				<?php
-				// Display custom groups
-
-				foreach($_COOKIE as $key=>$value){
-					if(strpos($key, 'custom_group') !== false){
-						$data = json_decode($value, true);
-
-						echo '<option value="'.$key.'" data="'.$data["data"].'">'.htmlspecialchars($data['name']).'</option>';
-					}
-				}
-
-				?>
-			</select>
-			<div class="flex quick-fill-buttons">
-				<button class="save-btn save-custom">Save</button>
-				<button class="save-btn save-as hide">Save As</button>
-				<button class="delete-btn hide">Delete</button>
-			</div>
 		</div>
 	</div>
 </div>

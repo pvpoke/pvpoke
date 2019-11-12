@@ -19,25 +19,69 @@ require_once 'header.php';
 </div>
 
 <div class="section team-build poke-select-container">
-	<?php require 'modules/pokeselect.php'; ?>
-	<?php require 'modules/pokeselect.php'; ?>
-	<?php require 'modules/pokeselect.php'; ?>
+	<?php require 'modules/pokemultiselect.php'; ?>
 </div>
 
 <button class="rate-btn button">Rate Team</button>
 <div class="section white error">Please select one or more Pokemon.</div>
 
 <div class="section typings white">
-	<a href="#" class="toggle active">Defense <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
-	<div class="toggle-content">
-		<div class="summary defense-summary"></div>
-		<div class="defense"></div>
+	<a href="#" class="toggle active">Meta Scorecard <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+	<div class="toggle-content article">
+		<p>Explore how the top 20 ranked Pokemon match up against your team below. Print this scorecard or save a screenshot for reference as you practice. Remember to prepare beforehand and follow timely play in tournaments!</p>
+		<div class="table-container">
+			<table class="meta-table rating-table" cellspacing="0">
+			</table>
+		</div>
+		<div class="results-buttons">
+			<a href="#" class="button print-scorecard">Print</a>
+			<a href="#" class="button download-csv">Export All Matchups to CSV</a>
+		</div>
+
+		<table class="rating-table legend" cellspacing="0">
+			<tbody>
+				<tr>
+					<td><a href="#" class="rating win" target="_blank"><span></span></a></td>
+					<td><b>Win:</b> This Pokemon wins decisively in most scenarios. It would take a big HP or energy difference to flip this matchup. This Pokemon can usually safely switch and win.</td>
+				</tr>
+				<tr>
+					<td><a href="#" class="rating close-win" target="_blank"><span></span></a></td>
+					<td><b>Close Win:</b> This Pokemon is favored, but the matchup can flip depending on HP, energy, baits, or IV's. This Pokemon may not be able to safely switch and win.</td>
+				</tr>
+				<tr>
+					<td><a href="#" class="rating tie" target="_blank"><span></span></a></td>
+					<td><b>Tie:</b> Neither Pokemon is favored. This matchup can flip depending on HP, energy, baits, IV's or, Charged Move priority.</td>
+				</tr>
+				<tr>
+					<td><a href="#" class="rating close-loss" target="_blank"><span></span></a></td>
+					<td><b>Close Loss:</b> This Pokemon is usually at a disadvantage, but the matchup can flip depending on HP, energy, baits, or IV's.</td>
+				</tr>
+				<tr>
+					<td><a href="#" class="rating loss" target="_blank"><span></span></a></td>
+					<td><b>Loss:</b> This Pokemon loses decisively in most scenarios. It would take a big HP or energy difference to flip this matchup.</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 
-	<a href="#" class="toggle active">Offense <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
-	<div class="toggle-content">
-		<div class="summary offense-summary"></div>
-		<div class="offense"></div>
+	<a href="#" class="toggle active">Potential Threats <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+	<div class="toggle-content article">
+		<p>The Pokemon below have the best overall matchups against this team. Results are taken from 0 and 1 shield simulations. Scores also factor in a Pokemon's overall strength and consistency.</p>
+		<div class="table-container">
+			<table class="threats-table rating-table" cellspacing="0">
+			</table>
+		</div>
+		<p class="center">This team has a theat score of <b class="threat-score"></b></p>
+		<p class="small"><strong>Threat score</strong> measures how vulnerable your team may be to specific Pokemon. The smaller the number, the better. It factors in how many Pokemon on your team can be threatened, how hard they're threatened, a threat's overall ranking (how likely you may be to encounter it), and how consistently it performs.</p>
+	</div>
+
+	<a href="#" class="toggle active">Potential Alternatives <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+	<div class="toggle-content article">
+		<p>The Pokemon below have the best overall matchups against this team's potential threats. Results are taken from 0 and 1 shield simulations. Scores also factor in a Pokemon's overall strength and consistency.</p>
+		<div class="table-container">
+			<table class="alternatives-table rating-table" cellspacing="0">
+			</table>
+		</div>
 	</div>
 
 	<a href="#" class="toggle active">Battle Histograms <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
@@ -47,21 +91,22 @@ require_once 'header.php';
 			<div class="histogram"></div>
 			<div class="histogram"></div>
 			<div class="histogram"></div>
+			<div class="histogram"></div>
+			<div class="histogram"></div>
+			<div class="histogram"></div>
 		</div>
 	</div>
 
-	<a href="#" class="toggle active">Potential Threats <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+	<a href="#" class="toggle active">Defensive Typing <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content">
-		<p>The Pokemon below have the best overall matchups against this team.</p>
-		<div class="threats rankings-container"></div>
-		<div class="clear"></div>
+		<div class="summary defense-summary"></div>
+		<div class="defense"></div>
 	</div>
 
-	<a href="#" class="toggle active">Potential Alternatives <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+	<a href="#" class="toggle active">Offensive Typing <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content">
-		<p>The Pokemon below have the best overall matchups against this team's potential threats.</p>
-		<div class="alternatives rankings-container"></div>
-		<div class="clear"></div>
+		<div class="summary offense-summary"></div>
+		<div class="offense"></div>
 	</div>
 
 	<div class="share-link-container">
@@ -73,10 +118,15 @@ require_once 'header.php';
 	</div>
 </div>
 
+<div class="hide">
+	<?php require 'modules/pokeselect.php'; ?>
+</div>
+
 <!--test 4-->
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/TeamInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeMultiSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BattleHistogram.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>

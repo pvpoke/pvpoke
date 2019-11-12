@@ -102,18 +102,18 @@ function Pokemon(id, i, b){
 			this.chargedMovePool.push(move);
 		}
 	}
-	
+
 	// Add Return and Frustration for eligible Pokemon
-	
-	
+
+
 	if(data.shadow){
-		
+
 		self.chargedMovePool.push(gm.getMoveById("FRUSTRATION"));
-		
+
 		if(data.level25CP <= b.getCP()){
 			self.chargedMovePool.push(gm.getMoveById("RETURN"));
 		}
-		
+
 		self.legacyMoves.push("FRUSTRATION","RETURN");
 	}
 
@@ -661,6 +661,45 @@ function Pokemon(id, i, b){
 		}
 	}
 
+	// Obtain a Pokemon's recommended moveset from the rankings and select them
+
+	this.selectRecommendedMoveset = function(){
+		var cupName = "all";
+
+		if(battle.getCup()){
+			cupName = battle.getCup().name;
+		}
+
+		var key = cupName + "overall" + battle.getCP();
+
+		if(! gm.rankings[key]){
+			console.log("Ranking data not loaded yet");
+			return;
+		}
+
+		var rankings = gm.rankings[key];
+
+		for(var i = 0; i < rankings.length; i++){
+			var r = rankings[i];
+
+			if(r.speciesId == self.speciesId){
+				var moveIndexes = r.moveStr.split("-");
+
+				self.selectMove("fast", self.fastMovePool[moveIndexes[0]].moveId);
+				self.selectMove("charged", self.chargedMovePool[moveIndexes[1]-1].moveId, 0);
+
+				if(moveIndexes[2] != 0){
+					self.selectMove("charged", self.chargedMovePool[moveIndexes[2]-1].moveId, 1);
+				}
+
+				// Assign overall score for reference
+				self.overall = r.score;
+				self.scores = r.scores;
+				break;
+			}
+		}
+	}
+
 	// Add new move to the supplied move pool, with a flag to automatically select the new move
 
 	this.addNewMove = function(id, movepool, selectNewMove, moveType, index){
@@ -923,5 +962,76 @@ function Pokemon(id, i, b){
 
 	this.hasTag = function(tag){
 		return (self.tags.indexOf(tag) > -1);
+	}
+
+	// Output a string of numbers for URL building and recreating a Pokemon
+
+	this.generateURLPokeStr = function(context){
+		var pokeStr = self.speciesId;
+
+		if((self.isCustom)||(self.startStatBuffs[0] != 0)||(self.startStatBuffs[1] != 0)){
+			var arr = [self.level];
+
+			arr.push(self.ivs.atk, self.ivs.def, self.ivs.hp, self.startStatBuffs[0]+gm.data.settings.maxBuffStages, self.startStatBuffs[1]+gm.data.settings.maxBuffStages, self.baitShields ? 1 : 0);
+
+			// Stat buffs are increased by 4 so the URL doesn't have to deal with parsing negative numbers
+
+			var str = arr.join("-");
+
+			pokeStr += "-" + str;
+		}
+
+		if(self.priority != 0){
+			pokeStr += "-p";
+		}
+
+		if(context == "team-builder"){
+			pokeStr += "-m-" + self.generateURLMoveStr();
+		}
+
+		return pokeStr;
+	}
+
+
+	// Output a string of numbers for URL building and recreating a moveset
+
+	this.generateURLMoveStr = function(){
+		var moveStr = '';
+
+		var fastMoveIndex = self.fastMovePool.indexOf(self.fastMove);
+		var chargedMove1Index = self.chargedMovePool.indexOf(self.chargedMoves[0])+1;
+		var chargedMove2Index = self.chargedMovePool.indexOf(self.chargedMoves[1])+1;
+
+		moveStr = fastMoveIndex + "-" + chargedMove1Index + "-" + chargedMove2Index;
+
+		// Check for any custom moves;
+
+		if(self.fastMove.isCustom){
+			moveStr += "-" + self.fastMove.moveId;
+		}
+
+		for(var i = 0; i < self.chargedMoves.length; i++){
+			if(self.chargedMoves[i].isCustom){
+				moveStr += "-" + self.chargedMoves[i].moveId + "-" + i;
+			}
+		}
+
+		return moveStr;
+	}
+
+	// Output a string of the Pokemon's moveset abbreviation
+
+	this.generateMovesetStr = function(){
+		var moveAbbreviationStr = self.fastMove.abbreviation;
+
+		for(var i = 0; i < self.chargedMoves.length; i++){
+			if(i == 0){
+				moveAbbreviationStr += "+" + self.chargedMoves[i].abbreviation;
+			} else{
+				moveAbbreviationStr += "/" + self.chargedMoves[i].abbreviation;
+			}
+		}
+
+		return moveAbbreviationStr;
 	}
 }

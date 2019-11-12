@@ -283,6 +283,14 @@ a.toggle{
 	}
 }
 
+.battle-results.matrix .table-container tbody th{
+	background:#000;
+}
+
+.battle-results.matrix .table-container tr:nth-of-type(2n) th{
+	background:#444;
+}
+
 @media only screen and (min-width: 721px){
 	.menu .submenu .submenu-wrap{
 		background:#444;

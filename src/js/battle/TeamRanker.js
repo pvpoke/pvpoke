@@ -24,10 +24,19 @@ var RankerMaster = (function () {
 
 			var rankings = [];
 
-			var shieldOverride = 0;
+			var shieldOverrides = [0, 0];
 			var shieldMode = 'single'; // single - sim specific shield scenarios, average - sim average of 0 and 1 shields each
 			var chargedMoveCountOverride = 2;
-			var shieldBaitOverride = true;
+			var shieldBaitOverrides = [true, true];
+			var overrideSettings = [{
+				shields: 1,
+				ivs: "gamemaster",
+				bait: true
+			}, {
+				shields: 1,
+				ivs: "gamemaster",
+				bait: true
+			}];
 
 			var csv = '';
 
@@ -35,10 +44,13 @@ var RankerMaster = (function () {
 
 			// Run an individual rank set
 
-			this.rank = function(team, league, cup, exclusionList){
+			this.rank = function(team, league, cup, exclusionList, context){
+				if(context){
+					self.context = context;
+				}
 
 				var totalBattles = 0;
-				
+
 				battle = new Battle();
 				battle.setCP(league);
 				if(cup.name != "custom"){
@@ -46,14 +58,23 @@ var RankerMaster = (function () {
 				} else{
 					battle.setCustomCup(cup);
 				}
-				
-
 
 				var pokemonList = [];
 				var teamRatings = [];
 
 				for(var i = 0; i < team.length; i++){
 					teamRatings.push([]);
+
+					// Adjust IVs as needed
+					if(overrideSettings[0].ivs != "gamemaster"){
+						team[i].maximizeStat(overrideSettings[0].ivs);
+					} else if((overrideSettings[0].ivs == "gamemaster")&&(team[i].isCustom)){
+						team[i].isCustom = false;
+						team[i].initialize(battle.getCP());
+						if(! team[i].baitShields){
+							team[i].isCustom = true;
+						}
+					}
 				}
 
 				rankings = [];
@@ -62,11 +83,10 @@ var RankerMaster = (function () {
 					csv = 'Pokemon,Battle Rating,HP Remaining,Energy Remaining'
 				}
 
-				if((targets.length == 0)||(cup.name != "custom")){
+				if(((targets.length == 0)||(cup.name != "custom"))&&(context != "matrix")){
 					// Get a full list of Pokemon from the game master
 					pokemonList = gm.generateFilteredPokemonList(battle, cup.include, cup.exclude);
 				} else{
-
 					// Otherwise, push all set targets into the list
 
 					for(var i = 0; i < targets.length; i++){
@@ -74,6 +94,14 @@ var RankerMaster = (function () {
 					}
 				}
 
+				// Remove any Pokemon that are in the exclusion list
+				if(exclusionList){
+					for(var i = 0; i < pokemonList.length; i++){
+						if(exclusionList.indexOf(pokemonList[i].speciesId) > -1){
+							pokemonList.splice(i, 1);
+						}
+					}
+				}
 
 				// For all eligible Pokemon, simulate battles and gather rating data
 
@@ -83,50 +111,50 @@ var RankerMaster = (function () {
 
 					var pokemon = pokemonList[i];
 
+					if(targets.length == 0){
+						pokemon.selectRecommendedMoveset();
+					}
+
 					var rankObj = {
+						pokemon: pokemon,
 						speciesId: pokemon.speciesId,
 						speciesName: pokemon.speciesName,
 						types: pokemon.types,
 						rating: 0,
 						opRating: 0,
+						matchups: [],
 						index: i
 					};
 
 					// Add to CSV
 
 					var name = pokemon.speciesName;
+					var moveset = {
+						fastMove: pokemon.fastMove,
+						chargedMoves: []
+					};
 
-					if(targets.length > 0){
-						var moveset = {
-							fastMove: pokemon.fastMove,
-							chargedMoves: []
-						};
-
-						name += ' (' + pokemon.fastMove.abbreviation;
-
-						if(pokemon.chargedMoves.length > 0){
-							name += '+';
-						}
-
-						for(var n = 0; n < pokemon.chargedMoves.length; n++){
-							moveset.chargedMoves.push(pokemon.chargedMoves[n]);
-
-							if(n > 0){
-								name += '/';
-							}
-
-							name += pokemon.chargedMoves[n].abbreviation;
-						}
-
-						rankObj.moveset = moveset;
-
-						name += ')';
-
-					}
-
+					name += ' ' + pokemon.generateMovesetStr();
 					csv += '\n' + name;
 
+					for(var n = 0; n < pokemon.chargedMoves.length; n++){
+						moveset.chargedMoves.push(pokemon.chargedMoves[n]);
+					}
+
+					if(overrideSettings[1].ivs != "gamemaster"){
+						pokemon.maximizeStat(overrideSettings[1].ivs);
+					} else if((overrideSettings[1].ivs == "gamemaster")&&(pokemon.isCustom)){
+						pokemon.isCustom = false;
+						pokemon.initialize(battle.getCP());
+						if(! pokemon.baitShields){
+							pokemon.isCustom = true;
+						}
+					}
+
+					rankObj.moveset = moveset;
+
 					var avg = 0;
+					var matchupScore = 0; // A softer representation of wins/losses used for team builder threats and alternatives
 					var opponentRating = 0;
 
 					// Simulate battle against each Pokemon
@@ -151,32 +179,42 @@ var RankerMaster = (function () {
 
 						// Force best moves on counters but not on the user's selected Pokemon
 
-						if(targets.length == 0){
-							pokemon.autoSelectMoves(chargedMoveCountOverride);
+						if((context != "team-counters")&&(context != "matrix")&&(team.length > 1)){
+							opponent.selectRecommendedMoveset();
 						}
 
-						if(team.length > 3){
-							opponent.autoSelectMoves(chargedMoveCountOverride);
+						pokemon.baitShields = overrideSettings[1].bait;
+
+						if(context == "matrix"){
+							opponent.baitShields = overrideSettings[0].bait;
 						}
 
-						pokemon.baitShields = shieldBaitOverride;
+						if(! overrideSettings[1].bait){
+							pokemon.isCustom = true;
+						}
+
+						if(! overrideSettings[0].bait){
+							opponent.isCustom = true;
+						}
 
 						var shieldTestArr = []; // Array of shield scenarios to test
 
+
 						if(shieldMode == 'single'){
-							shieldTestArr.push(shieldOverride);
+							shieldTestArr.push([ overrideSettings[0].shields, overrideSettings[1].shields ]);
 						} else if(shieldMode == 'average'){
-							shieldTestArr.push(0, 1);
+							shieldTestArr.push([0,0], [1,1]);
 						}
 
 						var avgPokeRating = 0;
 						var avgOpRating = 0;
+						var shieldRatings = [];
 
 						for(var j = 0; j < shieldTestArr.length; j++){
-							pokemon.setShields(shieldTestArr[j]);
+							pokemon.setShields(shieldTestArr[j][1]);
 
-							if(shieldMode == 'average'){
-								opponent.setShields(shieldTestArr[j]);
+							if((shieldMode == 'average')||(context == 'matrix')){
+								opponent.setShields(shieldTestArr[j][0]);
 							}
 
 							battle.simulate();
@@ -189,7 +227,6 @@ var RankerMaster = (function () {
 
 							var rating = Math.floor( (healthRating + damageRating) * 500);
 							var opRating = Math.floor( (opHealthRating + opDamageRating) * 500);
-							
 
 							if(isNaN(avgPokeRating)){
 								console.log(battle.getPokemon());
@@ -198,9 +235,14 @@ var RankerMaster = (function () {
 
 							avgPokeRating += rating;
 							avgOpRating += opRating;
+
+							shieldRatings.push(rating);
 						}
 
-						avgPokeRating = Math.floor(avgPokeRating / shieldTestArr.length);
+						if(shieldTestArr.length > 1){
+							avgPokeRating = Math.round( Math.pow(shieldRatings[0] * Math.pow(shieldRatings[1], 3), 1/4));
+						}
+						//avgPokeRating = Math.floor(avgPokeRating / shieldTestArr.length);
 						avgOpRating = Math.floor(avgOpRating / shieldTestArr.length);
 
 						csv += ',' + avgOpRating + ',' + opponent.hp + ',' + opponent.energy;
@@ -208,20 +250,46 @@ var RankerMaster = (function () {
 						avg += avgPokeRating;
 						opponentRating = avgOpRating;
 
+						var score = 500;
+
+						if(avgPokeRating > 500){
+							score = 500 + Math.pow(avgPokeRating - 500, .75);
+						} else{
+							score = avgPokeRating / 2;
+						}
+
+						if((pokemon.overall)&&(pokemon.scores[4])){
+							score *= Math.sqrt(pokemon.overall) * Math.pow(pokemon.scores[4], 1/4);
+						} else{
+							score *= 10 * Math.pow(100, 1/4);
+						}
+
+						matchupScore += score;
+
 						teamRatings[n].push(avgOpRating);
+						rankObj.matchups.push({
+							opponent: opponent,
+							rating: avgPokeRating,
+							score: score
+							});
 					}
 
 					avg = Math.floor(avg / team.length);
+					matchupScore = matchupScore / team.length;
 
 					rankObj.rating = avg;
 					rankObj.opRating = opponentRating;
+					rankObj.score = matchupScore;
+					rankObj.overall = (pokemon.overall !== undefined) ? pokemon.overall : 0;
+					rankObj.speciesName = pokemon.speciesName;
+
 					rankings.push(rankObj);
 				}
 
 				// Sort rankings
 
-				if(self.context == "team-builder"){
-					rankings.sort((a,b) => (a.rating > b.rating) ? -1 : ((b.rating > a.rating) ? 1 : 0));
+				if((self.context == "team-builder")||(self.context == "team-counters")){
+					rankings.sort((a,b) => (a.score > b.score) ? -1 : ((b.score > a.score) ? 1 : 0));
 				} else if(self.context == "battle"){
 					rankings.sort((a,b) => (a.rating > b.rating) ? 1 : ((b.rating > a.rating) ? -1 : 0));
 				}
@@ -239,8 +307,8 @@ var RankerMaster = (function () {
 
 			// Override Pokemon shield settings with the provided value
 
-			this.setShields = function(value){
-				shieldOverride = value;
+			this.setShields = function(value, index){
+				shieldOverrides[index] = value;
 			}
 
 			// Override charged move count with the provided value
@@ -251,8 +319,8 @@ var RankerMaster = (function () {
 
 			// Override whether or not to bait shields
 
-			this.setShieldBaitOverride = function(value){
-				shieldBaitOverride = value;
+			this.setShieldBaitOverride = function(value, index){
+				shieldBaitOverrides[index] = value;
 			}
 
 			// Set the targets to rank against
@@ -265,6 +333,12 @@ var RankerMaster = (function () {
 
 			this.setShieldMode = function(value){
 				shieldMode = value;
+			}
+
+			// Apply settings from a MultiSelector
+
+			this.applySettings = function(settings, index){
+				overrideSettings[index] = settings;
 			}
 
 		};

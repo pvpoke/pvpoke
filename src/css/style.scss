@@ -475,6 +475,10 @@ header{
 				color: $color-off-black;
 				margin-top: 20px;
 			}
+
+			&.section-title:first-of-type{
+				margin-top:0;
+			}
 		}
 
 
@@ -687,6 +691,10 @@ header{
 			}
 		}
 
+		.charged-count-select{
+			display:none !important;
+		}
+
 		.custom-options{
 			display:none;
 
@@ -698,6 +706,10 @@ header{
 
 			.export-btn{
 				margin-top:15px;
+			}
+
+			p{
+				font-size:12px;
 			}
 		}
 
@@ -870,6 +882,35 @@ header{
 			display: block;
 		}
 	}
+
+	&.matrix{
+		.poke.single,
+		.hp.bar-back,
+		.move-bars{
+			display: none;
+		}
+		.poke.multi
+		{
+			display: block;
+			float:left;
+
+			.format-select{
+				display:none;
+			}
+
+			.custom-options{
+				display:block;
+			}
+		}
+
+		.options .section-title{
+			margin-top:0;
+		}
+
+		.delete-list-confirm + .poke.multi{
+			float:right;
+		}
+	}
 }
 
 .arrow-up{
@@ -898,6 +939,7 @@ select, input{
 .league-select,
 .cup-select,
 .format-select,
+.slot-select,
 .mode-select{
     font-size: 18px;
     width: auto;
@@ -1225,7 +1267,8 @@ select, input{
 		text-align:center;
 	}
 
-	.battle-details{
+	.battle-details,
+	&.matrix{
 		text-align: left;
 
 		table{
@@ -1296,6 +1339,17 @@ select, input{
 			}
 		}
 	}
+
+	&.matrix{
+		.table-container{
+			overflow:scroll;
+			max-height: 500px;
+		}
+
+		a.download-csv{
+			display:inline-block;
+		}
+	}
 }
 
 .rating-table{
@@ -1304,6 +1358,30 @@ select, input{
 
 	tr{
 		background:none;
+	}
+
+	thead th {
+	  position: -webkit-sticky; /* for Safari */
+	  position: sticky;
+	  top: 0;
+
+	  background: #444;
+	  color: #eee;
+	  font-size:14px;
+	  font-weight:normal;
+	}
+
+	tbody th {
+	  position: -webkit-sticky; /* for Safari */
+	  position: sticky;
+	  left: 0;
+	  background: #fcfcfc;
+  	  text-align:center;
+	  padding:2px 5px;
+	}
+
+	tr:nth-of-type(2n) th{
+		background: #ddd;
 	}
 
 	.shield{
@@ -1819,12 +1897,12 @@ select, input{
 
 .poke-search-container{
 	display:flex;
-	
+
 	.poke-search{
 		max-width:200px;
 		display:block;
 	}
-	
+
 	a.search-info{
 		text-decoration: none;
 		color:#00171c;
@@ -1871,11 +1949,11 @@ select, input{
 /* TEAM BUILD STYLING */
 
 .team-build{
-
 	display:flex;
 	justify-content: space-between;
 
 	.poke{
+		float:none;
 
 		a.random{
 			margin-bottom: 0;
@@ -1908,6 +1986,17 @@ select, input{
 			display:none;
 		}
 	}
+
+	.poke.multi{
+		display:block;
+		.poke-stats{
+			display: block;
+		}
+		.custom-options{
+			display: block;
+		}
+	}
+
 }
 
 .typings{
@@ -1988,9 +2077,14 @@ select, input{
 	}
 }
 
+.table-container{
+	overflow-x:scroll;
+}
+
 .histograms{
     display: flex;
     justify-content: space-around;
+	flex-wrap: wrap;
 
 	.histogram{
 		position:relative;
@@ -2130,7 +2224,7 @@ select, input{
 	.rating-table{
 
 		td{
-			padding: 1px;
+			padding: 3px;
 		}
 
 		a{
@@ -2138,6 +2232,8 @@ select, input{
 			padding:5px 12px;
 			border-radius:8px;
 			text-decoration: none;
+			width:30px;
+			margin: 0 auto;
 
 			span{
 				display:block;
@@ -2156,48 +2252,44 @@ select, input{
 			}
 
 			&.close-win{
-				background-color: rgba(63, 94, 172, 1);
+				background-color: #1b79b4;
 
 				span{
 					border-radius:20px;
-					border:2px solid #fff6d4;
+					border:2px solid #a5d6fb;
 					box-sizing:border-box;
 				}
 			}
 
 			&.close-loss{
-				background-color: rgba(114, 54, 159, 1);
+				background-color: #96359e;
 
 				span{
-					color:#ffacdb;
+					color:#fd91e0;
 
 					&:after{
-						content:"x";
+						content: "x";
 					}
 				}
 			}
-
-			/*
-			*	|	||
-			*	||	|_
-			*/
 
 			&.loss{
 				background-color: rgb(185, 0, 143);
 
 				span{
-					color:#ff6abe;
-					font-size:18px;
-					font-weight:bold;
+					color:#ff92e2;
+					font-size:22px;
+					font-weight:900;
+					line-height: 18px;
 
 					&:after{
-						content:"X";
+						content: "X";
 					}
 				}
 			}
 
 			&.tie{
-				background-color: rgb(93, 71, 165);
+				background-color: rgb(150, 140, 182);
 
 				span{
 					color:#fff6d4;
@@ -2215,6 +2307,12 @@ select, input{
 			padding-right:10px;
 		}
 
+		td.name-small{
+			font-size:14px;
+			max-width:80px;
+			vertical-align: bottom;
+		}
+
 		&.legend{
 			margin:0;
 			text-align: left;
@@ -2226,6 +2324,39 @@ select, input{
 			a.rating{
 				text-align: center;
 			}
+		}
+
+		&.matrix-table a{
+			padding: 5px 5px 5px 36px;
+		}
+	}
+
+	.results-buttons{
+		display:flex;
+		justify-content: center;
+
+		a.button{
+			margin: 10px;
+		}
+	}
+
+	.threats-table,
+	.alternatives-table,
+	.meta-table{
+		.name{
+			min-width:120px;
+			font-size:12px;
+		}
+
+		th{
+			text-align: left;
+		}
+
+		.button.add{
+			display: inline-block;
+		    padding: 0 5px;
+		    margin: 0 0 0 5px;
+		    border-radius: 30px;
 		}
 	}
 }
@@ -3032,5 +3163,105 @@ a.toggle{
 
 	.rankings-container{
 		max-height:800px;
+	}
+
+	.table-container{
+		overflow-x: auto;
+	}
+
+	.article{
+		.threats-table,
+		.alternatives-table,
+		.meta-table{
+			.name{
+				font-size:16px;
+			}
+		}
+	}
+
+	.battle-results.matrix .table-container{
+		max-height: 800px;
+	}
+}
+
+/* Printing for meta scorecard */
+
+@media print {
+
+	.background{
+		display:none;
+	}
+
+	.scorecard-print{
+		.section{
+			display:none !important;
+		}
+
+		.section.typings{
+			display:block !important;
+		}
+
+		.button{
+			display:none !important;
+		}
+
+		.toggle,
+		.toggle-content{
+			display:none !important;
+		}
+
+		.toggle-content:nth-of-type(1){
+			display:block !important;
+		}
+
+		.article .rating-table a{
+			background:none;
+			padding: 2px 5px;
+		}
+
+		.article .rating-table a.close-win span{
+			border:2px solid #1b79b4;
+		}
+
+		.article .rating-table a.win span{
+			background:#1b79b4;
+		}
+
+		.article .rating-table a.tie span{
+			color:#aaa;
+		}
+
+		.article .rating-table a span{
+			-webkit-print-color-adjust: exact;
+		}
+
+		.rating-table.legend{
+			font-size:12px;
+		}
+
+		#main h1{
+			display:none;
+		}
+
+		#main p{
+			display:none;
+		}
+
+		header, footer{
+			display:none;
+		}
+
+		.share-link-container{
+			display:none;
+		}
+
+		.article table tr:nth-of-type(2n){
+			background: rgba(0, 0, 0, 0.07);
+			-webkit-print-color-adjust: exact;
+		}
+	}
+
+	.table-container{
+		overflow-x:auto;
 	}
 }

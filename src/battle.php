@@ -26,14 +26,18 @@ require_once 'header.php';
 	<select class="mode-select">
 		<option value="single">Single Battle</option>
 		<option value="multi">Multi Battle</option>
+		<option value="matrix">Matrix Battle</option>
 	</select>
 	<p class="description single">Select two Pokemon from any league to fight a simulated battle. Customize movesets, levels, IV's, and shields.</p>
-	<p class="description multi hide">Battle one Pokemon against an entire league or cup. Explore overall performance or individual matchups.</p>
+	<p class="description multi hide">Battle one Pokemon against an entire league or cup. Explore overall performance or individual matchups against a group of Pokemon.</p>
+	<p class="description matrix hide">Battle two groups of Pokemon against each other and see a matrix of the results. Use this to explore mass matchups or compare different Pokemon, movesets, or IV's.</p>
+	<p class="description matrix hide"><i>Reminder: Simulating your opponent's specific Pokemon isn't allowed during Silph League Arena tournaments. Remember to prepare beforehand and follow timely play.</i></p>
 </div>
 
 <div class="section poke-select-container single">
 	<?php require 'modules/pokeselect.php'; ?>
 	<?php require 'modules/pokeselect.php'; ?>
+	<?php require 'modules/pokemultiselect.php'; ?>
 	<?php require 'modules/pokemultiselect.php'; ?>
 	<div class="clear"></div>
 </div>
@@ -309,6 +313,18 @@ require_once 'header.php';
 				<input type="text" value="" readonly>
 				<div class="copy">Copy</div>
 			</div>
+		</div>
+	</div>
+
+	<div class="section white battle-results matrix article">
+		<a class="toggle active" href="#">Matchups <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+
+		<div class="toggle-content">
+			<div class="table-container">
+				<table class="matrix-table rating-table" cellspacing="0">
+				</table>
+			</div>
+			<a href="#" class="button download-csv">Export to CSV</a>
 		</div>
 	</div>
 </div>
