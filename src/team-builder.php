@@ -71,7 +71,7 @@ require_once 'header.php';
 			<table class="threats-table rating-table" cellspacing="0">
 			</table>
 		</div>
-		<p class="center">This team has a theat score of <b class="threat-score"></b></p>
+		<p class="center">This team has a threat score of <b class="threat-score"></b></p>
 		<p class="small"><strong>Threat score</strong> measures how vulnerable your team may be to specific Pokemon. The smaller the number, the better. It factors in how many Pokemon on your team can be threatened, how hard they're threatened, a threat's overall ranking (how likely you may be to encounter it), and how consistently it performs.</p>
 	</div>
 
