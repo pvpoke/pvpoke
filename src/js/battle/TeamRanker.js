@@ -134,20 +134,11 @@ var RankerMaster = (function () {
 						chargedMoves: []
 					};
 
-					name += ' (' + pokemon.fastMove.abbreviation;
-
-					if(pokemon.chargedMoves.length > 0){
-						name += '+';
-					}
+					name += ' ' + pokemon.generateMovesetStr();
+					csv += '\n' + name;
 
 					for(var n = 0; n < pokemon.chargedMoves.length; n++){
 						moveset.chargedMoves.push(pokemon.chargedMoves[n]);
-
-						if(n > 0){
-							name += '/';
-						}
-
-						name += pokemon.chargedMoves[n].abbreviation;
 					}
 
 					if(overrideSettings[1].ivs != "gamemaster"){
@@ -161,10 +152,6 @@ var RankerMaster = (function () {
 					}
 
 					rankObj.moveset = moveset;
-
-					name += ')';
-
-					csv += '\n' + name;
 
 					var avg = 0;
 					var matchupScore = 0; // A softer representation of wins/losses used for team builder threats and alternatives

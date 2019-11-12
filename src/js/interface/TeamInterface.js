@@ -16,6 +16,7 @@ var InterfaceMaster = (function () {
 			var multiSelector = new PokeMultiSelect($(".poke.multi"));
 			var results; // Store team matchup results for later reference
 			var self = this;
+			var runningResults = false;
 
 			var histograms = [];
 
@@ -201,7 +202,8 @@ var InterfaceMaster = (function () {
 									$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
 								}
 
-								$(".cup-select").change();
+								var cup = $(".cup-select option:selected").val();
+								battle.setCup(cup);
 								break;
 
 							case "m1":
@@ -290,7 +292,7 @@ var InterfaceMaster = (function () {
 			this.displayRankingData = function(data){
 				console.log("Ranking data loaded");
 
-				if(multiSelector.getPokemonList().length > 0){
+				if(runningResults){
 					self.updateTeamResults();
 
 					$("html, body").animate({ scrollTop: $(".section.typings a").first().offset().top }, 500);
@@ -307,6 +309,7 @@ var InterfaceMaster = (function () {
 				var key = battle.getCup().name + "overall" + battle.getCP();
 
 				if(! gm.rankings[key]){
+					runningResults = true;
 					gm.loadRankingData(self, "overall", battle.getCP(), battle.getCup().name);
 					return false;
 				}
@@ -401,7 +404,7 @@ var InterfaceMaster = (function () {
 				for(var n = 0; n < team.length; n++){
 					$row.find("tr").append("<td class=\"name-small\">"+team[n].speciesName+"</td>");
 
-					csv += team[n].speciesName;
+					csv += team[n].speciesName + ' ' + team[n].generateMovesetStr();
 					if(n < team.length -1){
 						csv += ',';
 					}
@@ -490,7 +493,7 @@ var InterfaceMaster = (function () {
 
 					csv += '\n';
 
-					csv += r.speciesName + ',';
+					csv += r.speciesName + ' ' + r.pokemon.generateMovesetStr() + ',';
 
 					for(var n = 0; n < r.matchups.length; n++){
 						csv += r.matchups[n].rating;
@@ -653,6 +656,8 @@ var InterfaceMaster = (function () {
 
 				$(".button.download-csv").attr("href", window.URL.createObjectURL(filedata));
 				$(".button.download-csv").attr("download", filename);
+
+				runningResults = false;
 			}
 
 			// Given a subject type, produce effectiveness array for offense or defense
@@ -952,6 +957,14 @@ var InterfaceMaster = (function () {
 
 				for(var i = 0; i < pokeSelectors.length; i++){
 					pokeSelectors[i].filterByTypes(cupTypes);
+				}
+
+
+				// Load ranking data for movesets
+				var key = battle.getCup().name + "overall" + battle.getCP();
+
+				if(! gm.rankings[key]){
+					gm.loadRankingData(self, "overall", battle.getCP(), battle.getCup().name);
 				}
 			}
 

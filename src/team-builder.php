@@ -28,7 +28,7 @@ require_once 'header.php';
 <div class="section typings white">
 	<a href="#" class="toggle active">Meta Scorecard <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content article">
-		<p>Explore the top 20 ranked Pokemon's matchups against your team below. Print this scorecard or save a screenshot for reference as you practice. Remember to prepare beforehand and follow timely play in tournaments!</p>
+		<p>Explore how the top 20 ranked Pokemon match up against your team below. Print this scorecard or save a screenshot for reference as you practice. Remember to prepare beforehand and follow timely play in tournaments!</p>
 		<div class="table-container">
 			<table class="meta-table rating-table" cellspacing="0">
 			</table>

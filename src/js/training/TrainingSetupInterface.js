@@ -55,6 +55,9 @@ var InterfaceMaster = (function () {
 					multiSelectors.push(multiSelector);
 				}
 
+				// Load ranking data for movesets
+				gm.loadRankingData(self, "overall", 1500, "all");
+
 				// Event listeners
 
 				$(".league-cup-select").on("change", selectLeague);
@@ -66,6 +69,12 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".self .roster .pokemon", selectRosterPokemon);
 				$("a.random").on("click", randomizeTeam);
 			};
+
+			// Callback after ranking data is loaded
+
+			this.displayRankingData = function(data){
+				console.log("Ranking data loaded");
+			}
 
 			// Hide setup after initiating battle
 

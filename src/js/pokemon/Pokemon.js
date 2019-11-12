@@ -102,18 +102,18 @@ function Pokemon(id, i, b){
 			this.chargedMovePool.push(move);
 		}
 	}
-	
+
 	// Add Return and Frustration for eligible Pokemon
-	
-	
+
+
 	if(data.shadow){
-		
+
 		self.chargedMovePool.push(gm.getMoveById("FRUSTRATION"));
-		
+
 		if(data.level25CP <= b.getCP()){
 			self.chargedMovePool.push(gm.getMoveById("RETURN"));
 		}
-		
+
 		self.legacyMoves.push("FRUSTRATION","RETURN");
 	}
 
@@ -1017,5 +1017,21 @@ function Pokemon(id, i, b){
 		}
 
 		return moveStr;
+	}
+
+	// Output a string of the Pokemon's moveset abbreviation
+
+	this.generateMovesetStr = function(){
+		var moveAbbreviationStr = self.fastMove.abbreviation;
+
+		for(var i = 0; i < self.chargedMoves.length; i++){
+			if(i == 0){
+				moveAbbreviationStr += "+" + self.chargedMoves[i].abbreviation;
+			} else{
+				moveAbbreviationStr += "/" + self.chargedMoves[i].abbreviation;
+			}
+		}
+
+		return moveAbbreviationStr;
 	}
 }

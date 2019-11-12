@@ -905,16 +905,7 @@ var InterfaceMaster = (function () {
 
 				// Update download link with new data
 				var poke = pokeSelectors[0].getPokemon();
-				var moveAbbreviationStr = poke.fastMove.abbreviation;
-
-				for(var i = 0; i < poke.chargedMoves.length; i++){
-					if(i == 0){
-						moveAbbreviationStr += "+" + poke.chargedMoves[i].abbreviation;
-					} else{
-						moveAbbreviationStr += "+" + poke.chargedMoves[i].abbreviation;
-					}
-				}
-
+				var moveAbbreviationStr = poke.generateMovesetStr();
 				var filename = pokeSelectors[0].getPokemon().speciesName + " " + moveAbbreviationStr + " vs " + $(".poke.multi .cup-select option:selected").html() + " " + poke.startingShields + "-" + opponentShields + " shields.csv";
 				var filedata = '';
 
