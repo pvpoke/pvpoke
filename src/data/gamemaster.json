@@ -2408,6 +2408,23 @@
 		"shadow": true,
 		"level25CP": 1391
 	}, {
+		"dex": 110,
+		"speciesName": "Weezing (Galarian)",
+		"speciesId": "weezing_galarian",
+		"baseStats": {
+			"atk": 174,
+			"def": 197,
+			"hp": 163
+		},
+		"types": ["poison", "fairy"],
+		"fastMoves": ["TACKLE"],
+		"chargedMoves": ["SLUDGE","HYPER_BEAM","PLAY_ROUGH","OVERHEAT"],
+		"defaultIVs": {
+			"cp1500": [24.5, 7, 14, 7],
+			"cp2500": [40, 15, 15, 15]
+		},
+		"tags":["galarian"]
+	}, {
 		"dex": 111,
 		"speciesName": "Rhyhorn",
 		"speciesId": "rhyhorn",
@@ -5008,6 +5025,23 @@
 			"cp2500": [40, 15, 15, 15]
 		}
 	}, {
+		"dex": 263,
+		"speciesName": "Zigzagoon (Galarian)",
+		"speciesId": "zigzagoon_galarian",
+		"baseStats": {
+			"atk": 58,
+			"def": 80,
+			"hp": 116
+		},
+		"types": ["normal", "dark"],
+		"fastMoves": ["ROCK_SMASH", "TACKLE"],
+		"chargedMoves": ["DIG", "GRASS_KNOT", "THUNDERBOLT"],
+		"defaultIVs": {
+			"cp1500": [40, 15, 15, 15],
+			"cp2500": [40, 15, 15, 15]
+		},
+		"tags":["galarian"]
+	}, {
 		"dex": 264,
 		"speciesName": "Linoone",
 		"speciesId": "linoone",
@@ -5023,6 +5057,23 @@
 			"cp1500": [40, 5, 8, 9],
 			"cp2500": [40, 15, 15, 15]
 		}
+	}, {
+		"dex": 264,
+		"speciesName": "Linoone (Galarian)",
+		"speciesId": "linoone_galarian",
+		"baseStats": {
+			"atk": 142,
+			"def": 128,
+			"hp": 186
+		},
+		"types": ["normal", "dark"],
+		"fastMoves": ["SHADOW_CLAW", "TACKLE"],
+		"chargedMoves": ["DIG", "GRASS_KNOT", "THUNDER"],
+		"defaultIVs": {
+			"cp1500": [40, 5, 8, 9],
+			"cp2500": [40, 15, 15, 15]
+		},
+		"tags": ["galarian"]
 	}, {
 		"dex": 265,
 		"speciesName": "Wurmple",

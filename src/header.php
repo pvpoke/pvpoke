@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.12.7.2';
+$SITE_VERSION = '1.12.7.3';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -21,7 +21,7 @@ $performGroupMigration = false;
 
 if(! isset($_COOKIE['migrate'])){
 	$performGroupMigration = true;
-	
+
 	setcookie('migrate', 'true', time() + (5 * 365 * 24 * 60 * 60), '/');
 }
 
