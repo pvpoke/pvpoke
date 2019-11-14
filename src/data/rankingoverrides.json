@@ -32,6 +32,10 @@
 				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
 			},
 			{
+				"speciesId": "porygon",
+				"chargedMoves": ["DISCHARGE", "HYPER_BEAM"]
+			},
+			{
 				"speciesId": "gyarados",
 				"chargedMoves": ["CRUNCH", "OUTRAGE"]
 			},
@@ -59,6 +63,14 @@
 			{
 				"speciesId": "hitmonchan",
 				"chargedMoves": ["POWER_UP_PUNCH", "THUNDER_PUNCH"]
+			},
+			{
+				"speciesId": "muk_alolan",
+				"fastMove": "SNARL"
+			},
+			{
+				"speciesId": "muk",
+				"chargedMoves": ["THUNDER_PUNCH", "DARK_PULSE"]
 			},
 			{
 				"speciesId": "ludicolo",
