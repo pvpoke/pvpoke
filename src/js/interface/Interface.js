@@ -1457,7 +1457,7 @@ var InterfaceMaster = (function () {
 				var moveStrs = [];
 
 				for(var i = 0; i < pokes.length; i++){
-					moveStrs.push(generateURLMoveStr(pokes[i]));
+					moveStrs.push(pokes[i].generateURLMoveStr(pokes[i]));
 				}
 
 				var battleStr = self.generateSingleBattleLinkString(true);
