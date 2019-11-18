@@ -79,7 +79,7 @@ var InterfaceMaster = (function () {
 				$(".limited").hide();
 				limitedPokemon = [];
 
-				if(gm.getCupById(cup).restrictedPokemon){
+				if((gm.getCupById(cup))&&(gm.getCupById(cup).restrictedPokemon)){
 					$(".limited").show();
 					$(".check.limited").addClass("on");
 
