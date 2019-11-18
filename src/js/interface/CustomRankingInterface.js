@@ -52,7 +52,7 @@ function interfaceObject(){
 
 		multiSelector = new PokeMultiSelect($(".poke.multi"));
 		multiSelector.init(data.pokemon, battle);
-		
+
 		// Kill the cup select
 		$(".cup-select").remove();
 	};
@@ -119,7 +119,7 @@ function interfaceObject(){
 				filter.values = [parseInt($el.find("input.start-range").val()), parseInt($el.find("input.end-range").val())];
 				break;
 		}
-		
+
 		// Output the cup data to JSON
 		var json = JSON.stringify(cup);
 		$("textarea.import").val(json);
@@ -167,10 +167,10 @@ function interfaceObject(){
 					chargedMoves: chargedMoves
 				});
 			}
-			
+
 			cup.overrides = overrides;
 			ranker.setMoveOverrides(battle.getCP(), "custom", overrides);
-			
+
 			// Output the cup data to JSON
 			var json = JSON.stringify(cup);
 			$("textarea.import").val(json);
@@ -184,9 +184,9 @@ function interfaceObject(){
 		}
 
 	}
-	
+
 	// Import settings and set up displayed filters to match new data
-	
+
 	this.importCupSettings = function(data){
 		cup.include = data.include;
 		cup.exclude = data.exclude;
@@ -194,39 +194,39 @@ function interfaceObject(){
 		if(data.overrides){
 			cup.overrides = data.overrides;
 		}
-		
+
 		filterLists = [cup.include, cup.exclude];
-			
+
 		// Clear all displayed filters
 		$(".filters .filter").remove();
-		
+
 		// Add filters back
 		for(var i = 0; i < cup.include.length; i++){
 			self.addFilterFromData("include", cup.include[i], i);
 		}
-		
+
 		for(var i = 0; i < cup.exclude.length; i++){
 			self.addFilterFromData("exclude", cup.exclude[i], i);
 		}
-		
+
 		// Import moveset overrides
 		multiSelector.quickFillGroup(cup.overrides);
-		
+
 		// Set league
 		$(".league-select option[value=\""+cup.league+"\"]").prop("selected","selected");
 		$(".league-select").trigger("change");
 	}
-	
+
 	// Add a new displayed filter given a filter category and filter data
-	
-	this.addFilterFromData = function(category, data, index){		
+
+	this.addFilterFromData = function(category, data, index){
 		var $filter = $(".filter.clone").clone();
 		$filter.removeClass("hide clone");
 		$filter.find("a.toggle .name").html(data.name);
 		$filter.attr("index", index);
 		$filter.attr("type", data.filterType);
 		$("." + category + " .filters").append($filter);
-		
+
 		// Process and select current values
 		switch(data.filterType){
 			case "type":
@@ -235,11 +235,11 @@ function interfaceObject(){
 					$filter.find(".check[value=\""+data.values[i]+"\"]").addClass("on");
 				}
 				break;
-			
+
 			case "id":
 				$filter.find("input.ids").val(data.values.join(","));
 				break;
-				
+
 			case "dex":
 				$filter.find("input.start-range").val(data.values[0]);
 				$filter.find("input.end-range").val(data.values[1]);
@@ -347,9 +347,9 @@ function interfaceObject(){
 			// Is this like being stopped at customs?
 			return false;
 		}
-		
+
 		$(".button.simulate").html("Generating...");
-		
+
 		if((! data)&&(rankingsRunning)){
 			rankingsRunning = true;
 			return false;
@@ -396,7 +396,7 @@ function interfaceObject(){
 
 		self.updateFilterValues($el);
 	}
-	
+
 	// Oh yeah, it's big brain copy + paste time
 	// Copy list text
 
@@ -412,7 +412,7 @@ function interfaceObject(){
 	$(".custom-rankings-import textarea.import").on("click", function(e){
 		this.setSelectionRange(0, this.value.length);
 	});
-	
+
 	// Import text
 
 	$(".custom-rankings-import textarea.import").on("change", function(e){

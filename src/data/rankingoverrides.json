@@ -1322,5 +1322,117 @@
 				"fastMove": "CHARM"
 			}
 		]
+	},	{
+		"league": 1500,
+		"cup": "timeless",
+		"pokemon": [
+			{
+				"speciesId": "lapras",
+				"fastMove":"ICE_SHARD",
+				"chargedMoves": ["SURF","SKULL_BASH"],
+				"weight": 1.5
+			},
+			{
+				"speciesId": "sceptile",
+				"fastMove":"FURY_CUTTER",
+				"chargedMoves": ["LEAF_BLADE","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "muk",
+				"chargedMoves": ["THUNDER_PUNCH","DARK_PULSE"]
+			},
+			{
+				"speciesId": "skuntank",
+				"chargedMoves": ["CRUNCH","FLAMETHROWER"]
+			},
+			{
+				"speciesId": "drapion",
+				"fastMove": "ICE_FANG"
+			},
+			{
+				"speciesId": "venomoth",
+				"fastMove":"CONFUSION"
+			},
+			{
+				"speciesId": "sealeo",
+				"fastMove":"POWDER_SNOW"
+			},
+			{
+				"speciesId": "wormadam_plant",
+				"fastMove":"CONFUSION"
+			},
+			{
+				"speciesId": "wormadam_sandy",
+				"fastMove":"CONFUSION"
+			},
+			{
+				"speciesId": "ludicolo",
+				"fastMove":"RAZOR_LEAF"
+			},
+			{
+				"speciesId": "houndoom",
+				"fastMove":"SNARL"
+			},
+			{
+				"speciesId": "beedrill",
+				"fastMove":"POISON_JAB"
+			},
+			{
+				"speciesId": "milotic",
+				"fastMove":"DRAGON_TAIL"
+			},
+			{
+				"speciesId": "weepinbell",
+				"chargedMoves": ["SEED_BOMB","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "swalot",
+				"chargedMoves": ["ACID_SPRAY","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "dusclops",
+				"fastMove":"HEX"
+			},
+			{
+				"speciesId": "sunflora",
+				"weight":0.5
+			},
+			{
+				"speciesId": "turtwig",
+				"weight":0.5
+			},
+			{
+				"speciesId": "oddish",
+				"weight":0.5
+			},
+			{
+				"speciesId": "torterra",
+				"weight":0.5
+			},
+			{
+				"speciesId": "abomasnow",
+				"weight":0.5
+			},
+			{
+				"speciesId": "ludicolo",
+				"weight":0.5
+			},
+			{
+				"speciesId": "cherrim_sunny",
+				"weight":0.5
+			},
+			{
+				"speciesId": "cherrim_overcast",
+				"weight":0.5
+			},
+			{
+				"speciesId": "dragonair",
+				"weight":1.5
+			},
+			{
+				"speciesId": "charizard",
+				"weight":1.5
+			}
+		]
 	}
 ]

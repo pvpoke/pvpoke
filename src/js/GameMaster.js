@@ -12,7 +12,7 @@ var GameMaster = (function () {
 		object.teamPools = [];
 		object.loadedData = 0;
 
-		$.getJSON( webRoot+"data/gamemaster.json?v=183", function( data ){
+		$.getJSON( webRoot+"data/gamemaster.json?v=185", function( data ){
 			object.data = data;
 
 			// Sort Pokemon alphabetically for searching
@@ -198,7 +198,7 @@ var GameMaster = (function () {
 			var key = cup + "" + category + "" + league;
 
 			if(! object.rankings[key]){
-				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=183";
+				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=185";
 
 				$.getJSON( file, function( data ){
 					object.rankings[key] = data;
@@ -218,7 +218,7 @@ var GameMaster = (function () {
 			var key = group;
 
 			if(! object.groups[key]){
-				var file = webRoot+"data/groups/"+group+".json?v=183";
+				var file = webRoot+"data/groups/"+group+".json?v=185";
 
 				$.getJSON( file, function( data ){
 
@@ -241,7 +241,7 @@ var GameMaster = (function () {
 			var key = league + "" + cup;
 
 			if(! object.teamPools[key]){
-				var file = webRoot+"data/training/teams/"+cup+"/"+league+".json?v=183";
+				var file = webRoot+"data/training/teams/"+cup+"/"+league+".json?v=185";
 
 				$.getJSON( file, function( data ){
 					object.teamPools[key] = data;
@@ -310,13 +310,13 @@ var GameMaster = (function () {
 				if(stats >= minStats){
 					// Process all filters
 					var allowed = false;
+					var includeIDFilter = false; // Flag to see if an ID filter should override other filters
 
 					for(var n = 0; n < filterLists.length; n++){
 						var filters = filterLists[n];
 						var include = (n == 0);
 						var filtersMatched = 0;
 						var requiredFilters = filters.length;
-						var includeIDFilter = false; // Flag to see if an ID filter should override other filters
 
 						for(var j = 0; j < filters.length; j++){
 							var filter = filters[j];
@@ -373,8 +373,7 @@ var GameMaster = (function () {
 
 						// Exclude Pokemon that match any of the exclude filters
 
-
-						if((! include)&&(filtersMatched > 0)){
+						if((! include)&&(filtersMatched > 0)&&(! includeIDFilter)){
 							allowed = false;
 						}
 					}

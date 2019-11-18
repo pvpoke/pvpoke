@@ -157,6 +157,29 @@
 			"values": ["absol", "aggron", "ampharos", "arcanine", "aron", "bagon", "bibarel", "bidoof", "blitzle", "buizel", "buneary", "camerupt", "cranidos", "cubone", "delcatty", "donphan", "drillbur", "eevee", "electrike", "entei", "espeon", "excadrill", "exploud", "flaaffy", "flareon", "floatzel", "furret", "gabite", "garchomp", "gible", "girafarig", "glaceon", "glameow", "granbull", "growlithe", "grumpig", "heatmor", "herdier", "hippopotas", "hippowdon", "houndoom", "houndour", "jolteon", "kangaskhan", "lairon", "larvitar", "lickilicky", "lickitung", "liepard", "lillipup", "linoone", "lopunny", "luxio", "luxray", "mamoswine", "manectric", "mareep", "marowak", "marowak_alolan", "meowth", "meowth_alolan", "mightyena", "miltank", "minun", "nidoking", "nidoqueen", "nidoran_female", "nidoran_male", "nidorina", "nidorino", "ninetales", "ninetales_alolan", "numel", "pachirisu", "patrat", "persian", "persian_alolan", "phanpy", "pichu", "pikachu", "piloswine", "plusle", "ponyta", "poochyena", "pupitar", "purrloin", "purugly", "raichu", "raichu_alolan", "raikou", "rampardos", "rapidash", "raticate", "raticate_alolan", "rattata", "rattata_alolan", "rhydon", "rhyhorn", "rhyperior", "sandslash", "sandslash_alolan", "sandshrew", "sandshrew_alolan", "sentret", "shelgon", "shinx", "skitty", "skuntank", "smeargle", "sneasel", "spoink", "stantler", "stoutland", "stunky", "suicune", "swinub", "tauros", "teddiursa", "torkoal", "tyranitar", "umbreon", "ursaring", "vaporeon", "vulpix", "vulpix_alolan", "watchog", "weavile", "zangoose", "zebstrika", "zigzagoon"]
 		}],
 		"exclude": []
+	}, {
+		"name": "timeless",
+		"title": "Timeless Cup",
+		"restrictedPicks": 1,
+		"restrictedPokemon": ["bulbasaur","ivysaur","venusaur","squirtle","wartortle","blastoise","charmander","charmeleon","charizard","chikorita","bayleef","meganium","totodile","croconaw","feraligatr","cyndaquil","quilava","typhlosion","treecko","grovyle","sceptile","mudkip","marshtomp","swampert","torchic","combusken","blaziken","turtwig","grotle","torterra","piplup","prinplup","empoleon","chimchar","monferno","infernape"],
+		"include": [{
+			"filterType": "dex",
+			"values": [1,488]
+		},
+		{
+			"filterType": "id",
+			"values": ["blaziken","charizard","infernape","empoleon","monferno","prinplup"]
+		}],
+		"exclude": [{
+			"filterType": "tag",
+			"values": ["legendary","mythical","alolan"]
+		}, {
+			"filterType": "type",
+			"values": ["fighting","flying","normal","psychic","steel","fairy"]
+		}, {
+			"filterType": "id",
+			"values": ["umbreon","sableye"]
+		}]
 	}],
 	"shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "charmander", "charmeleon", "charizard", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "bellossom", "politoed", "scizor", "houndour", "houndoom", "larvitar", "pupitar", "tyranitar", "mudkip", "marshtomp", "swampert", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "trapinch", "vibrava", "flygon", "cacnea", "cacturne", "shuppet", "banette", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "ekans", "arbok", "koffing", "weezing", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "chimchar", "monferno", "infernape", "kangaskhan", "diglett", "dugtrio", "rhyhorn", "rhydon", "rhyperior", "murkrow", "honchkrow", "gible", "gabite", "garchomp", "shellder", "cloyster", "geodude", "graveler", "golem", "hippopotas", "hippowdon", "onix", "steelix","sableye"],
 	"pokemon": [{
