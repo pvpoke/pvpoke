@@ -27,6 +27,15 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 	
+	<h4>v1.12.8 (November 19th, 2019)</h4>
+	<ul>
+		<li>Pokemon movesets are now listed in Matrix Battle results</li>
+		<li>Added an option in the <a href="<?php echo $WEB_ROOT; ?>settings/">Settings</a> to switch Matrix Battle results and Team Builder results to display column vs. row instead of row vs. column.</li>
+		<li>Fixed styling issues when entering Pokemon IV's on mobile</li>
+		<li>Updated default IV's for the Castforms (they were previously 1463 CP)</li>
+	</ul>
+
+	
 	<h4>v1.12.7 (November 12th, 2019)</h4>
 	<ul>
 		<li>Revamped the <a href="<?php echo $WEB_ROOT; ?>team-builder/">Team Builder</a> tool with new and updated features:</li>

@@ -24,8 +24,13 @@ require_once 'header.php';
 
 		<h3>Battle Timeline</h3>
 		<div class="check animate-timeline <?php if($_SETTINGS->animateTimeline == 1) : ?>on<?php endif; ?>"><span></span> Animate after generating results</div>
-
-		<div class="save button">Save Settings</div>
+		
+		<h3>Matrix &amp; Team Builder Results</h3>
+		<p>Select whether to display results for Pokemon in rows versus Pokemon in columns, or vice versa, in the Matrix Battle tool and Team Builder scorecards.</p>
+		<select class="input" id="matrix-direction">
+			<option value="row" <?php if((isset($_SETTINGS->matrixDirection))&&($_SETTINGS->matrixDirection == "row")) : ?>selected<?php endif; ?>>Row vs Column</option>
+			<option value="column" <?php if((isset($_SETTINGS->matrixDirection))&&($_SETTINGS->matrixDirection == "column")) : ?>selected<?php endif; ?>>Column vs Row</option>
+		</select>
 		
 		<h3>Site Theme</h3>
 		<?php

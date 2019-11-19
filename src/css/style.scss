@@ -1279,6 +1279,12 @@ select, input{
 				font-size:14px;
 				font-weight: bold;
 			}
+			
+			th span{
+				font-weight: normal;
+				font-size:11px;
+				display:block;
+			}
 
 			.rating.star{
 				display: block;
@@ -2125,6 +2131,7 @@ select, input{
 
 		.move-label{
 			font-size:12px;
+			height:28px;
 		}
 
 		.star.rating{
@@ -2843,6 +2850,10 @@ a.toggle{
 			width:60px;
 		}
 	}
+	
+	.modal .poke{
+		width:100%;
+	}
 
 	.rank{
 		.details .detail-section{
@@ -3233,6 +3244,7 @@ a.toggle{
 
 		.article .rating-table a span{
 			-webkit-print-color-adjust: exact;
+			color-adjust: exact;
 		}
 
 		.rating-table.legend{

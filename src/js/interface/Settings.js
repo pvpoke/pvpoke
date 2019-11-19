@@ -22,6 +22,7 @@ var InterfaceMaster = (function () {
 				var defaultIVs = $("#default-ivs option:selected").val();
 				var animateTimeline = $(".check.animate-timeline").hasClass("on") ? 1 : 0;
 				var theme = $("#theme-select option:selected").val();
+				var matrixDirection = $("#matrix-direction option:selected").val();
 				
 				$.ajax({
 
@@ -30,7 +31,8 @@ var InterfaceMaster = (function () {
 					data : {
 						'defaultIVs' : defaultIVs,
 						'animateTimeline' : animateTimeline,
-						'theme': theme
+						'theme': theme,
+						'matrixDirection': matrixDirection
 					},
 					dataType:'json',
 					success : function(data) {              

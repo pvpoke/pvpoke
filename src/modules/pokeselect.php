@@ -46,7 +46,7 @@
 		<div class="clear"></div>
 
 		<div class="advanced-section">
-			<a class="advanced" href="#">Advanced <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+			<a class="advanced" href="#">Advanced Stats/IVs <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 			<div class="fields">
 
 				<div class="ivs">

@@ -974,9 +974,9 @@ var InterfaceMaster = (function () {
 				var $row = $("<thead><tr><th></th></tr></thead>");
 
 				for(var n = 0; n < team.length; n++){
-					$row.find("tr").append("<th class=\"name-small\">"+team[n].speciesName+"</th>");
+					$row.find("tr").append("<th class=\"name-small\">"+team[n].speciesName+" <span>"+team[n].generateMovesetStr()+"</span></th>");
 
-					csv += team[n].speciesName;
+					csv += team[n].speciesName+" "+team[n].generateMovesetStr();
 					if(n < team.length -1){
 						csv += ',';
 					}
@@ -993,9 +993,9 @@ var InterfaceMaster = (function () {
 
 					// Add results to matrix table
 
-					$row = $("<tr><th class=\"name\"><b>"+pokemon.speciesName+"</b></th></tr>");
+					$row = $("<tr><th class=\"name\">"+pokemon.speciesName+" <span>"+pokemon.generateMovesetStr()+"</span></th></tr>");
 
-					csv += pokemon.speciesName + ',';
+					csv += pokemon.speciesName + ' ' + pokemon.generateMovesetStr() + ',';
 
 					for(var n = 0; n < r.matchups.length; n++){
 						var $cell = $("<td><a class=\"rating star\" href=\"#\" target=\"blank\"><span></span></a></td>");

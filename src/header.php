@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.12.7.11';
+$SITE_VERSION = '1.12.8';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -7,8 +7,13 @@ if (strpos($WEB_ROOT, 'src') !== false) {
 }
 
 // Initialize settings object
-if(isset($_COOKIE['settings'])){
+if(isset($_COOKIE['settings'])){	
 	$_SETTINGS = json_decode($_COOKIE['settings']);
+	
+	// Fill in missing settings with defaults
+	if(! isset($_SETTINGS->matrixDirection)){
+		$_SETTINGS->matrixDirection = "row";
+	}
 } else{
 	$_SETTINGS = (object) [
 		'defaultIVs' => "gamemaster",
@@ -64,7 +69,7 @@ if(! isset($OG_IMAGE)){
 <link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json?v=2">
 
 <link rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=60">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=61">
 
 <?php if(strpos($META_TITLE, 'Train') !== false): ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=6">
@@ -87,13 +92,15 @@ if(! isset($OG_IMAGE)){
 	<?php if(isset($_COOKIE['settings'])) : ?>
 		var settings = {
 			defaultIVs: "<?php echo htmlspecialchars($_SETTINGS->defaultIVs); ?>",
-			animateTimeline: <?php echo htmlspecialchars($_SETTINGS->animateTimeline); ?>
+			animateTimeline: <?php echo htmlspecialchars($_SETTINGS->animateTimeline); ?>,
+			matrixDirection: "<?php echo htmlspecialchars($_SETTINGS->matrixDirection); ?>"
 		};
 	<?php else: ?>
 
 		var settings = {
 			defaultIVs: "gamemaster",
-			animateTimeline: 1
+			animateTimeline: 1,
+			matrixDirection: "row"
 		};
 
 	<?php endif; ?>
