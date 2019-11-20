@@ -52,6 +52,7 @@ function interfaceObject(){
 
 		multiSelector = new PokeMultiSelect($(".poke.multi"));
 		multiSelector.init(data.pokemon, battle);
+		multiSelector.setContext("customrankings");
 
 		// Kill the cup select
 		$(".cup-select").remove();

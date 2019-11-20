@@ -20,6 +20,8 @@ function PokeMultiSelect(element){
 	var selectedGroup = "";
 	var selectedGroupType = "";
 	
+	var context = "";
+	
 	var settings = {
 		shields: 1,
 		ivs: "original",
@@ -54,7 +56,7 @@ function PokeMultiSelect(element){
 		modalWindow("Select Pokemon", $(".poke.single").first());
 
 		pokeSelector = new PokeSelect($(".modal .poke"), 1);
-		pokeSelector.setContext("modal");
+		pokeSelector.setContext("modal"+context);
 		pokeSelector.init(gm.data.pokemon, battle);
 
 		if(index == -1){
@@ -628,6 +630,12 @@ function PokeMultiSelect(element){
 	
 	this.getSettings = function(){
 		return settings;
+	}
+	
+	// Set the context for this multiselector
+	
+	this.setContext = function(val){
+		context = val;
 	}
 
 	// Force a group selection

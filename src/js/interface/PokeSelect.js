@@ -107,11 +107,10 @@ function PokeSelect(element, i){
 
 					$fastSelect.append("<option value=\""+move.moveId+"\">"+move.name+(move.legacy === false ? "" : " *")+"</option");
 				}
-
-				if(context == "main"){
-					$fastSelect.append("<option value=\"custom\">Custom ...</option");
+				
+				if(context != "modalcustomrankings"){
+					$fastSelect.append("<option value=\"custom\">Custom ...</option");	
 				}
-
 
 				$el.find(".move-select.charged").each(function(index, value){
 
@@ -123,8 +122,8 @@ function PokeSelect(element, i){
 
 						$(this).append("<option value=\""+move.moveId+"\">"+move.name+(move.legacy === false ? "" : " *")+"</option");
 					}
-
-					if(context == "main"){
+					
+					if(context != "modalcustomrankings"){
 						$(this).append("<option value=\"custom\">Other ...</option");
 					}
 
@@ -434,22 +433,22 @@ function PokeSelect(element, i){
 					// Edge cases
 
 					if((move.moveId != "TRANSFORM") && (move.moveId.indexOf("BLASTOISE") == -1) ){
-						$(".modal .move-select").append($option);
+						$(".modal").last().find(".move-select").append($option);
 					}
 				}
 			}
 
-			$(".modal .move-select").on("change", function(e){
+			$(".modal").last().find(".move-select").on("change", function(e){
 				var type = $(this).find("option:selected").attr("type");
 
 				$(this).attr("class", "move-select " + type);
 			});
 
-			$(".modal .move-select").trigger("change");
+			$(".modal").last().find(".move-select").trigger("change");
 
 			// Search for a move
 
-			$(".modal .poke-search").on("keyup", function(e){
+			$(".modal").last().find(".poke-search").on("keyup", function(e){
 				var val = $(this).val().toLocaleLowerCase();
 				var $select = $(this).next(".move-select");
 
@@ -466,15 +465,15 @@ function PokeSelect(element, i){
 
 			// Add the custom move
 
-			$(".modal .add-move").on("click", function(e){
-				var moveId = $(".modal .move-select option:selected").val();
+			$(".modal").last().find(".add-move").on("click", function(e){
+				var moveId = $(".modal").last().find(".move-select option:selected").val();
 				var moveType = (isFastMove) ? "fast" : "charged";
 
 				var pool = (isFastMove) ? selectedPokemon.fastMovePool : selectedPokemon.chargedMovePool;
 
-				selectedPokemon.addNewMove(moveId, pool, true, moveType, moveSlotIndex)
+				selectedPokemon.addNewMove(moveId, pool, true, moveType, moveSlotIndex);
 
-				closeModalWindow();
+				$(".modal").last().remove();
 
 				self.update();
 			});
