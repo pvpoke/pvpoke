@@ -27,6 +27,15 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 	
+	<h4>v1.12.9 (November 21st, 2019)</h4>
+	<ul>
+		<li>Custom moves can now be added for Pokemon selected for groups, including Multi-Battle, Matrix Battle, and Training Battles</li>
+		<li>Fixed an issue with Sandbox Mode where the same actions would produce different between Sandbox Mode and the default sims</li>
+		<ul>
+			<li>There was an issue with cooldowns being reset after Charged Moves that allowed Pokemon to use ineligible Fast Moves on the same turn as a Charged Move in Sandbox Mode</li>
+		</ul>
+	</ul>
+	
 	<h4>v1.12.8 (November 19th, 2019)</h4>
 	<ul>
 		<li>Pokemon movesets are now listed in Matrix Battle results</li>

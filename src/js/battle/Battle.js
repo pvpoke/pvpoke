@@ -440,6 +440,7 @@ function Battle(){
 		for(var i = 0; i < 2; i++){
 			var poke = pokemon[i];
 			poke.cooldown = Math.max(0, poke.cooldown - deltaTime); // Reduce cooldown
+			poke.chargedMovesOnly = false;
 			if(turns > lastProcessedTurn){
 				poke.hasActed = false;
 			}
@@ -492,7 +493,16 @@ function Battle(){
 							// Submit an animation to be played
 							self.pushAnimation(poke.index, "fast", pokemon[action.actor].fastMove.cooldown / 500);
 						}
-						queuedActions.push(action);
+						
+						var valid = true;
+						
+						if((action.type == "fast")&&(poke.chargedMovesOnly)){
+							valid = false;
+						}
+						
+						if(valid){
+							queuedActions.push(action);
+						}
 					}
 				}
 			}
@@ -522,11 +532,6 @@ function Battle(){
 
 				var requiredTimeToPass = pokemon[action.actor].fastMove.cooldown - 500;
 
-				// Just wait, this is going to be a doozy
-				/*if((pokemon[action.actor].fastMove.moveId == "CONFUSION")||(pokemon[action.actor].fastMove.moveId == "YAWN")){
-					requiredTimeToPass -= 500;
-				}*/
-
 				if(timeSinceActivated >= requiredTimeToPass){
 					action.settings.priority += 20;
 					valid = true;
@@ -534,53 +539,6 @@ function Battle(){
 				if((timeSinceActivated >= 500)&&(chargedMoveLastTurn)){
 					action.settings.priority += 20;
 					valid = true;
-				}
-
-				// Was this queued this turn? Let's check for piggybacking. Boy was this a headache.
-				if(action.turn == turns){
-
-					// Check for a charged move last turn and this turn
-					var chargedMoveLastTurn = false;
-
-					for(var n = 0; n < previousTurnActions.length; n++){
-						if(previousTurnActions[n].type == "charged"){
-							chargedMoveLastTurn = true;
-						}
-					}
-
-					if(actionsThisTurn){
-						if(timeSinceActivated >= pokemon[action.actor].fastMove.cooldown - 500){
-							action.settings.priority += 20;
-							valid = true;
-						}
-						if((timeSinceActivated >= 500)&&(chargedMoveLastTurn)){
-							action.settings.priority += 20;
-							valid = true;
-						}
-					}
-
-					// Was this queued this turn? Let's check for piggybacking. Boy was this a headache.
-
-					// Check for a charged move last turn and this turn
-					var chargedMoveLastTurn = false;
-					var fastMoveRegisteredLastTurn = false;
-
-					for(var j = 0; j < previousTurnActions.length; j++){
-						var a = previousTurnActions[j];
-
-						if((a.type == "charged")&&(a.actor != action.actor)){
-							chargedMoveLastTurn = true;
-						}
-						if((a.type == "fast")&&(a.actor == action.actor)){
-							fastMoveRegisteredLastTurn = true;
-						}
-					}
-
-					if((chargedMoveLastTurn)&&(fastMoveRegisteredLastTurn)&&(chargedMoveThisTurn)){
-						valid = false;
-						queuedActions.splice(i, 1);
-						i--;
-					}
 				}
 			}
 
@@ -595,7 +553,7 @@ function Battle(){
 			if(action.type == "switch"){
 				valid = true;
 			}
-
+			
 			if(valid){
 				turnActions.push(action);
 				queuedActions.splice(i, 1);
@@ -985,6 +943,9 @@ function Battle(){
 					// Reset all cooldowns
 					if((opponent.cooldown > 0)&&(! opponent.hasActed)){
 						action.settings.priority += 4;
+						if(opponent.cooldown > 0){
+							opponent.chargedMovesOnly = true;
+						}
 						opponent.cooldown = 0;
 
 						var a = self.getTurnAction(opponent, poke);
