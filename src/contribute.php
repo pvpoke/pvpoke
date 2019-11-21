@@ -96,6 +96,10 @@ require_once 'header.php'; ?>
 			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/themistervalor.jpg" />
 			<div class="supporter"><a href="https://twitter.com/TheMisterValor" target="_blank">TheMisterValor</a></div>
 		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/vergyverg.jpg" />
+			<div class="supporter"><a href="https://www.youtube.com/channel/UCOeIQWAJYD-zy7T5-IRZy7Q" target="_blank">Vergyverg</a></div>
+		</div>
 	</div>
 </div>
 
