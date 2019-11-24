@@ -493,13 +493,13 @@ function Battle(){
 							// Submit an animation to be played
 							self.pushAnimation(poke.index, "fast", pokemon[action.actor].fastMove.cooldown / 500);
 						}
-						
+
 						var valid = true;
-						
+
 						if((action.type == "fast")&&(poke.chargedMovesOnly)){
 							valid = false;
 						}
-						
+
 						if(valid){
 							queuedActions.push(action);
 						}
@@ -553,7 +553,7 @@ function Battle(){
 			if(action.type == "switch"){
 				valid = true;
 			}
-			
+
 			if(valid){
 				turnActions.push(action);
 				queuedActions.splice(i, 1);
@@ -1190,7 +1190,7 @@ function Battle(){
 					nearDeath = false;
 				}
 
-				if((nearDeath)&&(!chargedMoveUsed)){
+				if((nearDeath)&&(!chargedMoveUsed)&&(! poke.farmEnergy)){
 					action = new TimelineAction(
 						"charged",
 						poke.index,

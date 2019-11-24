@@ -661,7 +661,7 @@ function Pokemon(id, i, b){
 				}
 			}
 		}
-		
+
 		// If the move wasn't found, add it to the movepool
 		if((! disallowCustomAddition)&&(! moveFound)){
 			self.addNewMove(id, arr, true, type, index);
@@ -711,7 +711,7 @@ function Pokemon(id, i, b){
 
 	this.addNewMove = function(id, movepool, selectNewMove, moveType, index){
 		var move = gm.getMoveById(id);
-		
+
 		if(! move){
 			return false;
 		}

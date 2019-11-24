@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.12.9';
+$SITE_VERSION = '1.12.10';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -7,9 +7,9 @@ if (strpos($WEB_ROOT, 'src') !== false) {
 }
 
 // Initialize settings object
-if(isset($_COOKIE['settings'])){	
+if(isset($_COOKIE['settings'])){
 	$_SETTINGS = json_decode($_COOKIE['settings']);
-	
+
 	// Fill in missing settings with defaults
 	if(! isset($_SETTINGS->matrixDirection)){
 		$_SETTINGS->matrixDirection = "row";

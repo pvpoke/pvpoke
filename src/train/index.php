@@ -119,14 +119,11 @@ require_once '../header.php';
 <div class="section white updates">
 	<h3>What's New</h3>
 
-	<h4>v1.12.0 (October 9th, 2019)</h4>
+	<h4>v1.12.10 (November 23rd, 2019)</h4>
 	<ul>
-		<li>Mechanics have been updated to reflect Fast Move mechanic changes in app version 0.157.0</li>
-		<ul>
-			<li>Fast Moves are now guaranteed to register on the last turn of the move, no "overtapping" or "undertapping".</li>
-			<li>Until Charged Move Priority is better understood, CMP is now randomized in Training Battles</li>
-		</ul>
-		<li>Tweaked near-faint logic where Pokemon would sometimes use a weaker Charged Moves because they incorrectly calculated they would faint before reaching the more powerful move</li>
+		<li>Tweaked AI shielding behavior so it is less likely to enter a shield deficit</li>
+		<li>Fixed an issue where Pokemon would ignore AI's farming behavior and use Charged Moves on low HP opponents</li>
+		<li>Pokemon with Skull Bash will now usually go for straight Skull Bash instead of attempting shield baits</li>
 	</ul>
 </div>
 

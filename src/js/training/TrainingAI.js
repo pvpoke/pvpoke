@@ -98,13 +98,13 @@ function TrainingAI(l, p, b){
   				return obj.slot === slots[i]
 			})[0].pokemon;
 			var pokeBucket = [];
-			
+
 			// Choose from restricted picks if available
 			if((restrictedPicksExist)&&(restrictedPicks<restrictedLimit)){
 				var slotObj = pool.filter(obj => {
   				return obj.slot === slots[i]
 			})[0];
-				
+
 				if(slotObj.restricted){
 					slotPool = slotObj.restricted;
 					restrictedPicks++;
@@ -244,7 +244,7 @@ function TrainingAI(l, p, b){
 						} else{
 							team.unshift(teamPerformance[i].pokemon);
 						}
-						
+
 						break;
 					}
 				}
@@ -391,7 +391,7 @@ function TrainingAI(l, p, b){
 
 				break;
 		}
-		
+
 		console.log(pickStrategy);
 		console.log(team);
 
@@ -546,7 +546,7 @@ function TrainingAI(l, p, b){
 		if(totalSwitchWeight < 10){
 			options.push(new DecisionOption("DEFAULT", 1));
 
-			if((self.hasStrategy("BAIT_SHIELDS"))&&(opponent.shields > 0)){
+			if((self.hasStrategy("BAIT_SHIELDS"))&&(opponent.shields > 0)&&(pokemon.chargedMoves.length > 1)){
 				var baitWeight = Math.max(Math.round( (scenarios.bothBait.average - scenarios.noBait.average) / 20), 1);
 
 				// If this Pokemon's moves are very close in DPE, prefer the shorter energy move
@@ -564,6 +564,11 @@ function TrainingAI(l, p, b){
 				// If this matchup is very bad, consider not baiting
 				if(overallRating < 250){
 					baitWeight = 1;
+				}
+
+				// For Skull Bash specifically, prefer not to bait
+				if((pokemon.bestChargedMove.moveId == "SKULL_BASH")&&(player.getRemainingPokemon() > 1)){
+					baitWeight = 0;
 				}
 
 				// If the Pokemon has very low health, don't bait
@@ -996,7 +1001,7 @@ function TrainingAI(l, p, b){
 		var noWeight = 4 + ((3-level)*2);
 
 		// Will this attack hurt?
-		var damageWeight = Math.min(Math.round((move.damage / Math.max(defender.hp, defender.hp / 2)) * 10), 10);
+		var damageWeight = Math.min(Math.round((move.damage / Math.max(defender.hp, defender.stats.hp / 2)) * 10), 10);
 		var moveDamage = move.damage;
 		var fastMoveDamage = attacker.fastMove.damage;
 
@@ -1045,23 +1050,26 @@ function TrainingAI(l, p, b){
 			var move = defender.chargedMoves[i];
 			var turnsAway = Math.ceil( (move.energy - defender.energy) / defender.fastMove.energyGain ) * (defender.fastMove.cooldown / 500);
 
-			if( ((moveDamage >= attacker.hp)||((moveDamage >= defender.stats.hp * .8)))&&(turnsAway <= 2)){
-				if(! self.hasStrategy("ADVANCED_SHIELDING")){
-					yesWeight += 2;
-				} else{
-					// Let's also check that this move will faint or deal a lot of damage
-					if(moveDamage + (fastMoveDamage * 2) >= defender.hp){
-						yesWeight += 4;
-					} else{
-						noWeight += 4;
-					}
+			if( ((moveDamage >= attacker.hp)||((moveDamage >= defender.stats.hp * .8)))&&(turnsAway <= 1)){
+				if(self.hasStrategy("ADVANCED_SHIELDING")){
+					yesWeight += 4;
 				}
 			}
 		}
 
 		// Preserve shield advantage where possible
-		if((player.getRemainingPokemon() > 1)&&(attacker.startingShields >= defender.startingShields)&&(defender.battleStats.shieldsUsed > 1)){
+		if((player.getRemainingPokemon() > 1)&&(attacker.startingShields >= defender.startingShields)&&(defender.battleStats.shieldsUsed > 0)){
 			yesWeight = Math.round(yesWeight / 2);
+
+			if(currentScenario < 500){
+				yesWeight = Math.round(yesWeight / 4);
+			}
+		}
+
+		// Is this the last Pokemon remaining? If so, protect it at all costs
+		if(player.getRemainingPokemon() == 1){
+			yesWeight *= 2;
+			noWeight = Math.round(noWeight / 4);
 		}
 
 		/*
