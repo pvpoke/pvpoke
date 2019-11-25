@@ -198,7 +198,7 @@ var GameMaster = (function () {
 			var key = cup + "" + category + "" + league;
 
 			if(! object.rankings[key]){
-				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=188;
+				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=188";
 
 				$.getJSON( file, function( data ){
 					object.rankings[key] = data;
