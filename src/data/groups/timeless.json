@@ -10,6 +10,11 @@
 		"chargedMoves":["THUNDERBOLT","HYDRO_PUMP"]
 	},
 	{
+		"speciesId":"lanturn",
+		"fastMove":"CHARGE_BEAM",
+		"chargedMoves":["THUNDERBOLT","HYDRO_PUMP"]
+	},
+	{
 		"speciesId":"quagsire",
 		"fastMove":"MUD_SHOT",
 		"chargedMoves":["EARTHQUAKE","STONE_EDGE"]
@@ -22,6 +27,11 @@
 	{
 		"speciesId":"charizard",
 		"fastMove":"FIRE_SPIN",
+		"chargedMoves":["DRAGON_CLAW","BLAST_BURN"]
+	},
+	{
+		"speciesId":"charizard",
+		"fastMove":"AIR_SLASH",
 		"chargedMoves":["DRAGON_CLAW","BLAST_BURN"]
 	},
 	{
@@ -40,11 +50,6 @@
 		"chargedMoves":["CRUNCH","AQUA_TAIL"]
 	},
 	{
-		"speciesId":"drapion",
-		"fastMove":"INFESTATION",
-		"chargedMoves":["CRUNCH","AQUA_TAIL"]
-	},
-	{
 		"speciesId":"typhlosion",
 		"fastMove":"SHADOW_CLAW",
 		"chargedMoves":["BLAST_BURN","SOLAR_BEAM"]
@@ -53,11 +58,6 @@
 		"speciesId":"meganium",
 		"fastMove":"VINE_WHIP",
 		"chargedMoves":["FRENZY_PLANT","EARTHQUAKE"]
-	},
-	{
-		"speciesId":"beedrill",
-		"fastMove":"POISON_JAB",
-		"chargedMoves":["X_SCISSOR","SLUDGE_BOMB"]
 	},
 	{
 		"speciesId":"ninetales",
@@ -83,11 +83,6 @@
 		"speciesId":"swampert",
 		"fastMove":"MUD_SHOT",
 		"chargedMoves":["HYDRO_CANNON","EARTHQUAKE"]
-	},
-	{
-		"speciesId":"flygon",
-		"fastMove":"MUD_SHOT",
-		"chargedMoves":["DRAGON_CLAW","EARTH_POWER"]
 	},
 	{
 		"speciesId":"haunter",
@@ -155,16 +150,6 @@
 		"chargedMoves":["THUNDER_PUNCH","DARK_PULSE"]
 	},
 	{
-		"speciesId":"wormadam_plant",
-		"fastMove":"CONFUSION",
-		"chargedMoves":["ENERGY_BALL","BUG_BUZZ"]
-	},
-	{
-		"speciesId":"dustox",
-		"fastMove":"CONFUSION",
-		"chargedMoves":["SILVER_WIND","SLUDGE_BOMB"]
-	},
-	{
 		"speciesId":"victreebel",
 		"fastMove":"RAZOR_LEAF",
 		"chargedMoves":["LEAF_BLADE","ACID_SPRAY"]
@@ -193,5 +178,10 @@
 		"speciesId":"sceptile",
 		"fastMove":"FURY_CUTTER",
 		"chargedMoves":["LEAF_BLADE","EARTHQUAKE"]
+	},
+	{
+		"speciesId":"sudowoodo",
+		"fastMove":"COUNTER",
+		"chargedMoves":["ROCK_SLIDE","EARTHQUAKE"]
 	}
 ]

@@ -81,7 +81,7 @@
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["MUD_BOMB","BLIZZARD"],
 				"difficulty": 2,
-				"weight":20
+				"weight":18
 			},
 			{
 				"speciesId": "castform_rainy",
@@ -95,7 +95,7 @@
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["SURF","EARTHQUAKE"],
 				"difficulty": 2,
-				"weight":2
+				"weight":6
 			},
 			{
 				"speciesId": "lanturn",
@@ -112,18 +112,39 @@
 				"weight":2
 			},
 			{
+				"speciesId": "sudowoodo",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["ROCK_SLIDE","EARTHQUAKE"],
+				"difficulty": 2,
+				"weight":3
+			},
+			{
+				"speciesId": "tyranitar",
+				"fastMove": "SMACK_DOWN",
+				"chargedMoves": ["CRUNCH","STONE_EDGE"],
+				"difficulty": 2,
+				"weight":2
+			},
+			{
+				"speciesId": "rampardos",
+				"fastMove": "SMACK_DOWN",
+				"chargedMoves": ["ROCK_SLIDE","OUTRAGE"],
+				"difficulty": 1,
+				"weight":2
+			},
+			{
 				"speciesId": "quagsire",
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["STONE_EDGE","EARTHQUAKE"],
 				"difficulty": 2,
-				"weight":3
+				"weight":2
 			},
 			{
 				"speciesId": "quagsire",
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["STONE_EDGE","ACID_SPRAY"],
 				"difficulty": 2,
-				"weight":1
+				"weight":2
 			},
 			{
 				"speciesId": "milotic",
@@ -143,7 +164,7 @@
 				"speciesId": "tentacruel",
 				"fastMove": "POISON_JAB",
 				"chargedMoves": ["HYDRO_PUMP","ACID_SPRAY"],
-				"difficulty": 1,
+				"difficulty": 2,
 				"weight":2
 			},
 			{
@@ -151,12 +172,19 @@
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["ROCK_SLIDE","HYDRO_PUMP"],
 				"difficulty": 2,
-				"weight":1
+				"weight":2
 			},
 			{
 				"speciesId": "omastar",
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["ANCIENT_POWER","HYDRO_PUMP"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "omanyte",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["ANCIENT_POWER","BUBBLE_BEAM"],
 				"difficulty": 2,
 				"weight":1
 			},
@@ -221,14 +249,14 @@
 				"fastMove": "VINE_WHIP",
 				"chargedMoves": ["FRENZY_PLANT","EARTHQUAKE"],
 				"difficulty": 2,
-				"weight":20
+				"weight":24
 			},
 			{
 				"speciesId": "ivysaur",
 				"fastMove": "RAZOR_LEAF",
 				"chargedMoves": ["POWER_WHIP","SLUDGE_BOMB"],
 				"difficulty": 2,
-				"weight":2
+				"weight":3
 			},
 			{
 				"speciesId": "ivysaur",
@@ -240,9 +268,9 @@
 			{
 				"speciesId": "sceptile",
 				"fastMove": "FURY_CUTTER",
-				"chargedMoves": ["LEAF_BLADE","FRENZY_PLANT"],
+				"chargedMoves": ["LEAF_BLADE","DRAGON_CLAW"],
 				"difficulty": 2,
-				"weight":1
+				"weight":4
 			},
 			{
 				"speciesId": "sceptile",
@@ -256,7 +284,7 @@
 				"fastMove": "FURY_CUTTER",
 				"chargedMoves": ["LEAF_BLADE","AERIAL_ACE"],
 				"difficulty": 1,
-				"weight":2
+				"weight":1
 			},
 			{
 				"speciesId": "bayleef",
@@ -346,6 +374,13 @@
 				"weight":3
 			},
 			{
+				"speciesId": "ludicolo",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["ICE_BEAM","HYDRO_PUMP"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
 				"speciesId": "abomasnow",
 				"fastMove": "RAZOR_LEAF",
 				"chargedMoves": ["OUTRAGE","BLIZZARD"],
@@ -364,7 +399,14 @@
 				"fastMove": "FIRE_SPIN",
 				"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"],
 				"difficulty": 2,
-				"weight":14
+				"weight":10
+			},
+			{
+				"speciesId": "charizard",
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["DRAGON_CLAW","FLAMETHROWER"],
+				"difficulty": 3,
+				"weight":8
 			},
 			{
 				"speciesId": "charizard",
@@ -378,14 +420,14 @@
 				"fastMove": "COUNTER",
 				"chargedMoves": ["BLAZE_KICK","BLAST_BURN"],
 				"difficulty": 2,
-				"weight":10
+				"weight":12
 			},
 			{
 				"speciesId": "typhlosion",
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["BLAST_BURN","SOLAR_BEAM"],
 				"difficulty": 2,
-				"weight":4
+				"weight":6
 			},
 			{
 				"speciesId": "charmeleon",
@@ -436,7 +478,14 @@
 				"fastMove": "POISON_JAB",
 				"chargedMoves": ["X_SCISSOR","SLUDGE_BOMB"],
 				"difficulty": 2,
-				"weight":3
+				"weight":1
+			},
+			{
+				"speciesId": "dustox",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["SILVER_WIND","SLUDGE_BOMB"],
+				"difficulty": 2,
+				"weight":5
 			},
 			{
 				"speciesId": "wormadam_plant",
@@ -863,20 +912,20 @@
 				"fastMove": "CHARGE_BEAM",
 				"chargedMoves": ["THUNDERBOLT","HYDRO_PUMP"],
 				"difficulty": 2,
-				"weight":2
+				"weight":4
 			},
 			{
 				"speciesId": "raichu",
 				"fastMove": "THUNDERSHOCK",
 				"chargedMoves": ["WILD_CHARGE","BRICK_BREAK"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":5
 			},
 			{
 				"speciesId": "raichu",
 				"fastMove": "THUNDERSHOCK",
 				"chargedMoves": ["WILD_CHARGE","THUNDER_PUNCH"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":2
 			},
 			{
@@ -890,7 +939,7 @@
 				"speciesId": "minun",
 				"fastMove": "SPARK",
 				"chargedMoves": ["THUNDERBOLT","DISCHARGE"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":1
 			},
 			{
@@ -898,7 +947,7 @@
 				"fastMove": "THUNDER_SHOCK",
 				"chargedMoves": ["THUNDER_SHOCK","ICE_PUNCH"],
 				"difficulty": 2,
-				"weight":1
+				"weight":3
 			},
 			{
 				"speciesId": "electabuzz",
