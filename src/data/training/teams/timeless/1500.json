@@ -116,7 +116,7 @@
 				"fastMove": "COUNTER",
 				"chargedMoves": ["ROCK_SLIDE","EARTHQUAKE"],
 				"difficulty": 2,
-				"weight":3
+				"weight":2
 			},
 			{
 				"speciesId": "tyranitar",
@@ -130,7 +130,7 @@
 				"fastMove": "SMACK_DOWN",
 				"chargedMoves": ["ROCK_SLIDE","OUTRAGE"],
 				"difficulty": 1,
-				"weight":2
+				"weight":1
 			},
 			{
 				"speciesId": "quagsire",
@@ -166,6 +166,13 @@
 				"chargedMoves": ["HYDRO_PUMP","ACID_SPRAY"],
 				"difficulty": 2,
 				"weight":2
+			},
+			{
+				"speciesId": "tentacruel",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["SLUDGE_WAVE","ACID_SPRAY"],
+				"difficulty": 2,
+				"weight":1
 			},
 			{
 				"speciesId": "omastar",
@@ -270,6 +277,13 @@
 				"fastMove": "FURY_CUTTER",
 				"chargedMoves": ["LEAF_BLADE","DRAGON_CLAW"],
 				"difficulty": 2,
+				"weight":3
+			},
+			{
+				"speciesId": "sceptile",
+				"fastMove": "FURY_CUTTER",
+				"chargedMoves": ["FRENZY_PLANT","DRAGON_CLAW"],
+				"difficulty": 2,
 				"weight":4
 			},
 			{
@@ -277,7 +291,7 @@
 				"fastMove": "FURY_CUTTER",
 				"chargedMoves": ["LEAF_BLADE","EARTHQUAKE"],
 				"difficulty": 2,
-				"weight":2
+				"weight":1
 			},
 			{
 				"speciesId": "sceptile",

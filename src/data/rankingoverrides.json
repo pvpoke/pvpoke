@@ -1330,16 +1330,20 @@
 				"speciesId": "lapras",
 				"fastMove":"ICE_SHARD",
 				"chargedMoves": ["SURF","SKULL_BASH"],
-				"weight": 1.5
+				"weight": 4
 			},
 			{
 				"speciesId": "sceptile",
 				"fastMove":"FURY_CUTTER",
-				"chargedMoves": ["LEAF_BLADE","EARTHQUAKE"]
+				"chargedMoves": ["LEAF_BLADE","DRAGON_CLAW"]
 			},
 			{
 				"speciesId": "muk",
 				"chargedMoves": ["THUNDER_PUNCH","DARK_PULSE"]
+			},
+			{
+				"speciesId": "tentacruel",
+				"chargedMoves": ["ACID_SPRAY","SLUDGE_WAVE"]
 			},
 			{
 				"speciesId": "skuntank",
@@ -1383,7 +1387,8 @@
 			},
 			{
 				"speciesId": "weepinbell",
-				"chargedMoves": ["SEED_BOMB","SLUDGE_BOMB"]
+				"chargedMoves": ["SEED_BOMB","SLUDGE_BOMB"],
+				"weight": 0.25
 			},
 			{
 				"speciesId": "swalot",
@@ -1395,39 +1400,75 @@
 			},
 			{
 				"speciesId": "sunflora",
-				"weight":0.5
+				"weight":0.25
 			},
 			{
 				"speciesId": "turtwig",
-				"weight":0.5
+				"weight":0.25
 			},
 			{
 				"speciesId": "oddish",
-				"weight":0.5
+				"weight":0.25
 			},
 			{
 				"speciesId": "torterra",
-				"weight":0.5
-			},
-			{
-				"speciesId": "abomasnow",
-				"weight":0.5
-			},
-			{
-				"speciesId": "ludicolo",
-				"weight":0.5
+				"weight":0.25
 			},
 			{
 				"speciesId": "cherrim_sunny",
-				"weight":0.5
+				"weight":0.25
 			},
 			{
 				"speciesId": "cherrim_overcast",
-				"weight":0.5
+				"weight":0.25
 			},
 			{
+				"speciesId": "raichu",
+				"weight":0.25
+			},
+			{
+				"speciesId": "leafeon",
+				"weight":0.25
+			},
+			{
+				"speciesId": "roselia",
+				"weight":0.25
+			},
+			{
+				"speciesId": "roserade",
+				"weight":0.25
+			},
+			{
+				"speciesId": "shiftry",
+				"weight":0.25
+			},
+			{
+				"speciesId": "vileplume",
+				"weight":0.25
+			},
+			{
+				"speciesId": "electabuzz",
+				"weight":0.25
+			},
+			{
+				"speciesId": "minun",
+				"weight":0.25
+			},
+			{
+				"speciesId": "electrode",
+				"weight":0.25
+			},
+			{	
+				"speciesId": "meganium",
+				"weight":3
+			},
+			{	
+				"speciesId": "venusaur",
+				"weight":3
+			},
+			{	
 				"speciesId": "dragonair",
-				"weight":1.5
+				"weight":4
 			},
 			{
 				"speciesId": "charizard",
