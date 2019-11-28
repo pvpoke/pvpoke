@@ -98,6 +98,13 @@
 				"weight":6
 			},
 			{
+				"speciesId": "golduck",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["CROSS_CHOP","ICE_BEAM"],
+				"difficulty": 2,
+				"weight":3
+			},
+			{
 				"speciesId": "lanturn",
 				"fastMove": "WATER_GUN",
 				"chargedMoves": ["THUNDERBOLT","HYDRO_PUMP"],
