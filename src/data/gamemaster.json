@@ -8691,7 +8691,8 @@
 		},
 		"types": ["grass", "none"],
 		"fastMoves": ["QUICK_ATTACK", "RAZOR_LEAF"],
-		"chargedMoves": ["ENERGY_BALL", "LEAF_BLADE", "SOLAR_BEAM"],
+		"chargedMoves": ["ENERGY_BALL", "LEAF_BLADE", "SOLAR_BEAM", "LAST_RESORT"],
+		"legacyMoves": ["LAST_RESORT"],
 		"defaultIVs": {
 			"cp1500": [18.5, 11, 15, 8],
 			"cp2500": [35, 1, 11, 7]
@@ -8707,7 +8708,8 @@
 		},
 		"types": ["ice", "none"],
 		"fastMoves": ["FROST_BREATH", "ICE_SHARD"],
-		"chargedMoves": ["AVALANCHE", "ICE_BEAM", "ICY_WIND"],
+		"chargedMoves": ["AVALANCHE", "ICE_BEAM", "ICY_WIND", "LAST_RESORT"],
+		"legacyMoves": ["LAST_RESORT"],
 		"defaultIVs": {
 			"cp1500": [17.5, 6, 13, 11],
 			"cp2500": [30.5, 3, 5, 12]
