@@ -119,11 +119,13 @@ require_once '../header.php';
 <div class="section white updates">
 	<h3>What's New</h3>
 
-	<h4>v1.12.10 (November 23rd, 2019)</h4>
+	<h4>v1.12.11 (December 1, 2019)</h4>
 	<ul>
-		<li>Tweaked AI shielding behavior so it is less likely to enter a shield deficit</li>
-		<li>Fixed an issue where Pokemon would ignore AI's farming behavior and use Charged Moves on low HP opponents</li>
-		<li>Pokemon with Skull Bash will now usually go for straight Skull Bash instead of attempting shield baits</li>
+		<li>Updated Training Battle interface to reflect current in-game behavior:</li>
+		<ul>
+			<li>The switch button is now unavailable during Charged Moves</li>
+			<li>Charged Move buttons disappear during switch-in periods</li>
+		</ul>
 	</ul>
 </div>
 

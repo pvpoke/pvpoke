@@ -19,9 +19,9 @@ function PokeMultiSelect(element){
 	var maxPokemonCount = 100;
 	var selectedGroup = "";
 	var selectedGroupType = "";
-	
+
 	var context = "";
-	
+
 	var settings = {
 		shields: 1,
 		ivs: "original",
@@ -38,7 +38,7 @@ function PokeMultiSelect(element){
 
 		while(window.localStorage.key(i) !== null){
 			var key = window.localStorage.key(i);
-			
+
 			if(key.indexOf("google") == -1){
 				$el.find(".quick-fill-select").append("<option value=\""+key+"\" type=\"custom\">"+key+"</option>");
 			}
@@ -209,7 +209,7 @@ function PokeMultiSelect(element){
 
 			var poke = arr[i].split(',');
 
-			var pokemon = new Pokemon(poke[0], 1, battle);
+			var pokemon = new Pokemon(poke[0].toLowerCase(), 1, battle);
 
 			pokemon.initialize(cp);
 
@@ -557,21 +557,21 @@ function PokeMultiSelect(element){
 		$el.find(".quick-fill-select option").first().prop("selected", "selected");
 		$el.find(".quick-fill-select").trigger("change");
 	});
-	
+
 	// Change shield settings
-	
+
 	$el.find(".shield-select").on("change", function(e){
 		settings.shields = parseInt($el.find(".shield-select option:selected").val());
 	});
-	
+
 	// Change IV settings
-	
+
 	$el.find(".default-iv-select").on("change", function(e){
 		settings.ivs = $el.find(".default-iv-select option:selected").val();
 	});
-	
+
 	// Change bait toggle
-	
+
 	$el.find(".check.shield-baiting").on("click", function(e){
 		settings.bait = (! settings.bait == true);
 	});
@@ -603,7 +603,7 @@ function PokeMultiSelect(element){
 			$(".cup-select").show();
 		}
 	}
-	
+
 	this.setBaitSetting = function(val){
 		settings.bait = val;
 	}
@@ -619,21 +619,21 @@ function PokeMultiSelect(element){
 	this.getSelectedGroup = function(){
 		return selectedGroup;
 	}
-	
+
 	// Return the type of the selected group
 
 	this.getSelectedGroupType = function(){
 		return selectedGroupType;
 	}
-	
+
 	// Return the current option setings
-	
+
 	this.getSettings = function(){
 		return settings;
 	}
-	
+
 	// Set the context for this multiselector
-	
+
 	this.setContext = function(val){
 		context = val;
 	}

@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.12.10.3';
+$SITE_VERSION = '1.12.11';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -72,7 +72,7 @@ if(! isset($OG_IMAGE)){
 <link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=61">
 
 <?php if(strpos($META_TITLE, 'Train') !== false): ?>
-	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=6">
+	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=7">
 <?php endif; ?>
 
 <?php if((isset($_SETTINGS->theme))&&($_SETTINGS->theme != "default")): ?>

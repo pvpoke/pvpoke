@@ -27,28 +27,14 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.12.10 (November 23rd, 2019)</h4>
+	<h4>v1.12.11 (December 1, 2019)</h4>
 	<ul>
-		<li>Tweaked AI shielding behavior so it is less likely to enter a shield deficit</li>
-		<li>Fixed an issue where Pokemon would ignore AI's farming behavior and use Charged Moves on low HP opponents</li>
-		<li>Pokemon with Skull Bash will now usually go for straight Skull Bash instead of attempting shield baits</li>
-	</ul>
-
-	<h4>v1.12.9 (November 21st, 2019)</h4>
-	<ul>
-		<li>Custom moves can now be added for Pokemon selected for groups, including Multi-Battle, Matrix Battle, and Training Battles</li>
-		<li>Fixed an issue with Sandbox Mode where the same actions would produce different between Sandbox Mode and the default sims</li>
+		<li>Custom group import now ignores upper and lower case. You can use this to quickly import a list of Pokemon (separated by line break).</li>
+		<li>Updated Training Battle interface to reflect current in-game behavior:</li>
 		<ul>
-			<li>There was an issue with cooldowns being reset after Charged Moves that allowed Pokemon to use ineligible Fast Moves on the same turn as a Charged Move in Sandbox Mode</li>
+			<li>The switch button is now unavailable during Charged Moves</li>
+			<li>Charged Move buttons disappear during switch-in periods</li>
 		</ul>
-	</ul>
-
-	<h4>v1.12.8 (November 19th, 2019)</h4>
-	<ul>
-		<li>Pokemon movesets are now listed in Matrix Battle results</li>
-		<li>Added an option in the <a href="<?php echo $WEB_ROOT; ?>settings/">Settings</a> to switch Matrix Battle results and Team Builder results to display column vs. row instead of row vs. column.</li>
-		<li>Fixed styling issues when entering Pokemon IV's on mobile</li>
-		<li>Updated default IV's for the Castforms (they were previously 1463 CP)</li>
 	</ul>
 
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>

@@ -273,12 +273,12 @@ a.random{
 				color: #eee;
 				border-radius: 12px;
 			}
-			
+
 			.featured-team-description{
 				position: absolute;
 				top: 190%;
 				right: 0;
-				
+
 				img{
 					max-width:45px;
 				}
@@ -818,8 +818,10 @@ a.random{
 			display:none;
 		}
 
-		.controls .button-stack{
-			display:none;
+		.controls .button-stack,
+		.controls .move-bar,
+		.controls .switch-btn{
+			display:none !important;
 		}
 
 		.team-indicator{
@@ -840,8 +842,10 @@ a.random{
 			display:none;
 		}
 
-		.controls .button-stack{
-			display:none;
+		.controls .button-stack,
+		.controls .move-bar,
+		.controls .switch-btn{
+			display:none !important;
 		}
 
 		.team-indicator{
@@ -871,8 +875,10 @@ a.random{
 			display:none;
 		}
 
-		.controls .button-stack{
-			display:none;
+		.controls .button-stack,
+		.controls .move-bar,
+		.controls .switch-btn{
+			display:none !important;
 		}
 
 		.team-indicator{
@@ -894,8 +900,10 @@ a.random{
 			pointer-events: all;
 		}
 
-		.controls .button-stack{
-			display:none;
+		.controls .button-stack,
+		.controls .move-bar,
+		.controls .switch-btn{
+			display:none !important;
 		}
 	}
 
@@ -904,8 +912,10 @@ a.random{
 			opacity:1;
 		}
 
-		.controls .button-stack{
-			display:none;
+		.controls .button-stack,
+		.controls .move-bar,
+		.controls .switch-btn{
+			display:none !important;
 		}
 	}
 
@@ -918,8 +928,10 @@ a.random{
 			display:none;
 		}
 
-		.controls .button-stack{
-			display:none;
+		.controls .button-stack,
+		.controls .move-bar,
+		.controls .switch-btn{
+			display:none !important;
 		}
 	}
 
