@@ -70,7 +70,8 @@
 			},
 			{
 				"speciesId": "muk_alolan",
-				"fastMove": "SNARL"
+				"fastMove": "SNARL",
+				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"]
 			},
 			{
 				"speciesId": "muk",
@@ -1396,7 +1397,7 @@
 			},
 			{
 				"speciesId": "swalot",
-				"chargedMoves": ["ACID_SPRAY","SLUDGE_BOMB"]
+				"chargedMoves": ["ICE_BEAM","SLUDGE_BOMB"]
 			},
 			{
 				"speciesId": "weavile",
