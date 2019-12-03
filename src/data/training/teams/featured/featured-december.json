@@ -1,0 +1,128 @@
+[
+	{
+		"name": "JimmaBanks",
+		"slug": "jimmabanks",
+		"img": "jimmabanks",
+		"cup": "timeless",
+		"cupName": "Timeless",
+		"league": 1500,
+		"description": "Welcome to my world of Pokemon GO. Since PvP has come out I've tried to help build my local community and just be really good at PvP. It has turned into so much more. I have met players in other cities and we are doing what we can to help make this PvP thing a bigger deal. Salute to you battlers and enjoy your day. Thank you for stopping by my channel.",
+		"link": "https://www.youtube.com/channel/UC4B6SokqkZ-Sg5ofLBWdG0Q/",
+		"pokemon": [
+			{
+				"speciesId": "whiscash",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["MUD_BOMB","BLIZZARD"]
+			},
+			{
+				"speciesId": "sealeo",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["BODY_SLAM","AURORA_BEAM"]
+			},
+			{
+				"speciesId": "umbreon",
+				"fastMove": "SNARL",
+				"chargedMoves": ["LAST_RESORT","FOUL_PLAY"]
+			},
+			{
+				"speciesId": "venusaur",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "dragonair",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["AQUA_TAIL","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "suicune",
+				"fastMove": "SNARL",
+				"chargedMoves": ["BUBBLE_BEAM","HYDRO_PUMP"]
+			}
+		]
+	},
+	{
+		"name": "KnightsOoofRen",
+		"slug": "renn",
+		"img": "renn",
+		"cup": "timeless",
+		"cupName": "Timeless",
+		"league": 1500,
+		"description": "KakunaMattata42’s rival. Been a Pokemon Fan since I was 1 year old and still on the grind. Out here trying to improve my PvP skills to clap some noobs. Peru & UMN-TC Represent. ‘If you can’t giddy up then giddy out my way’.",
+		"link": "#",
+		"pokemon": [
+			{
+				"speciesId": "ninetales_alolan",
+				"fastMove": "CHARM",
+				"chargedMoves": ["PSYSHOCK","ICE_BEAM"]
+			},
+			{
+				"speciesId": "bibarel",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["SURF","HYPER_FANG"]
+			},
+			{
+				"speciesId": "umbreon",
+				"fastMove": "SNARL",
+				"chargedMoves": ["LAST_RESORT","FOUL_PLAY"]
+			},
+			{
+				"speciesId": "ninetales",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["PSYSHOCK","FLAMETHROWER"]
+			},
+			{
+				"speciesId": "donphan",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["PLAY_ROUGH","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "suicune",
+				"fastMove": "SNARL",
+				"chargedMoves": ["BUBBLE_BEAM","HYDRO_PUMP"]
+			}
+		]
+	},
+	{
+		"name": "MattyFBaby",
+		"slug": "mattyfbaby",
+		"img": "mattyfbaby",
+		"cup": "timeless",
+		"cupName": "Timeless",
+		"league": 1500,
+		"description": "Welcome to my world of Pokemon GO. Since PvP has come out I've tried to help build my local community and just be really good at PvP. It has turned into so much more. I have met players in other cities and we are doing what we can to help make this PvP thing a bigger deal. Salute to you battlers and enjoy your day. Thank you for stopping by my channel.",
+		"link": "https://twitter.com/Matthewbabybaby",
+		"pokemon": [
+			{
+				"speciesId": "dragonair",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["AQUA_TAIL","DRAGON_PULSE"]
+			},
+			{
+				"speciesId": "ludicolo",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["ICE_BEAM","HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "milotic",
+				"fastMove": "DRAGON_TAIL",
+				"chargedMoves": ["SURF","HYPER_BEAM"]
+			},
+			{
+				"speciesId": "venomoth",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["SILVER_WIND","RETURN"]
+			},
+			{
+				"speciesId": "blaziken",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["BLAZE_KICK","BLAST_BURN"]
+			},
+			{
+				"speciesId": "sealeo",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["BODY_SLAM","AURORA_BEAM"]
+			}
+		]
+	}
+]
