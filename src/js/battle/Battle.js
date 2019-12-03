@@ -1412,14 +1412,21 @@ function Battle(){
 			if( ((sandbox) && (forceShields) && (defender.shields > 0)) || ((! sandbox) && (defender.shields > 0)) ){
 				var useShield = true;
 
-				// For PuP and similar moves, don't shield if it's survivable
+				// For PuP, Acid Spray and similar moves, don't shield if it's survivable
 
-				if((! sandbox)&&(move.buffs)&&(move.buffs[0] > 0)&&(move.buffApplyChance == 1)){
+				if((! sandbox)&&(move.buffs)&&(move.buffs[0] > 0 || move.buffs[1] < 0)&&(move.buffApplyChance == 1)){
 					useShield = false;
 
 					var postMoveHP = defender.hp - damage; // How much HP will be left after the attack
-					var currentBuffs = [attacker.statBuffs[0], attacker.statBuffs[1]]; // Capture this to reset later
-					attacker.applyStatBuffs(move.buffs);
+					// Capture current buffs for pokemon whose buffs will change
+					var currentBuffs;
+					if (move.buffs[0] > 0) {
+						currentBuffs = [attacker.statBuffs[0], attacker.statBuffs[1]];
+						attacker.applyStatBuffs(move.buffs);
+					} else {
+						currentBuffs = [defender.statBuffs[0], defender.statBuffs[1]];
+						defender.applyStatBuffs(move.buffs);
+					}
 
 					var fastDamage = self.calculateDamage(attacker, defender, attacker.fastMove);
 
@@ -1433,7 +1440,12 @@ function Battle(){
 						useShield = true;
 					}
 
-					attacker.statBuffs = [currentBuffs[0], currentBuffs[1]]; // Reset to original
+					// Reset buffs to original
+					if (move.buffs[0] > 0) {
+						attacker.statBuffs = [currentBuffs[0], currentBuffs[1]];
+					} else {
+						defender.statBuffs = [currentBuffs[0], currentBuffs[1]];
+					}
 
 					// If the defender can't afford to let a charged move connect, block
 
