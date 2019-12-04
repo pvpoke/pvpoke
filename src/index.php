@@ -27,6 +27,11 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 	
+	<h4>v1.12.13 (December 4, 2019)</h4>
+	<ul>
+		<li>Reverted previous changes to the switch button in Training Battles to match in-game update</li>
+	</ul>
+	
 	<h4>v1.12.12 (December 3, 2019)</h4>
 	<ul>
 		<li>In the default simulations, Pokemon will now shield more intelligently against Acid Spray. They won't fall for the bait if they can take the opponent's other Charged Move.</li>

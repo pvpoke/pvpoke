@@ -123,9 +123,9 @@ require_once '../header.php';
 	<ul>
 		<li>Updated Training Battle interface to reflect current in-game behavior:</li>
 		<ul>
-			<li>The switch button is now unavailable during Charged Moves</li>
 			<li>Charged Move buttons disappear during switch-in periods</li>
 		</ul>
+		<li>The switch button is available again during Charged Moves</li>
 	</ul>
 </div>
 
