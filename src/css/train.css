@@ -42,6 +42,33 @@
     font-size: 16px;
     font-weight: bold !important;
     text-decoration: underline; }
+  .featured-team-description h5 {
+    font-size: 14px;
+    text-align: left;
+    margin: 10px 0 5px 0; }
+  .featured-team-description .featured-team-preview {
+    padding: 5px;
+    border: 1px solid;
+    border-radius: 12px; }
+    .featured-team-description .featured-team-preview .preview-poke {
+      display: flex;
+      margin-bottom: 5px; }
+      .featured-team-description .featured-team-preview .preview-poke:last-of-type {
+        margin-bottom: 0; }
+      .featured-team-description .featured-team-preview .preview-poke .sprite-container {
+        width: 32px;
+        height: 32px;
+        background: none;
+        border: none;
+        padding: 0;
+        margin-right: 10px; }
+      .featured-team-description .featured-team-preview .preview-poke h6, .featured-team-description .featured-team-preview .preview-poke p {
+        margin: 0; }
+      .featured-team-description .featured-team-preview .preview-poke h6 {
+        text-align: left;
+        font-size: 14px; }
+      .featured-team-description .featured-team-preview .preview-poke p {
+        font-size: 12px; }
 
 .ai-options .poke.multi {
   float: none;

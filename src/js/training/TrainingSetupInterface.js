@@ -3,7 +3,7 @@
 */
 // Load AI archetypes
 
-var file = webRoot+"data/training/teams/featured/featured-november.json?v=4";
+var file = webRoot+"data/training/teams/featured/featured-december.json?v=4";
 var featuredTeams = [];
 
 $.getJSON( file, function( data ){
@@ -295,6 +295,44 @@ var InterfaceMaster = (function () {
 						$(".featured-team-description").show()
 
 						featuredTeam = team;
+						
+						// Fill in team preview
+						var teamPokemon = multiSelectors[1].getPokemonList();
+						$(".featured-team-preview").html("");
+						
+						for(var n = 0; n < teamPokemon.length; n++){
+							var pokemon = teamPokemon[n];
+							var $row = $("<div class=\"preview-poke\"></div>");
+							var $el = $(".switch-window .pokemon").first().clone();
+							$el.find(".name").remove();
+							$el.find(".cp").remove();
+
+							$el.attr("type-1", pokemon.types[0]);
+							if(pokemon.types[1] == "none"){
+								$el.attr("type-2", pokemon.types[0]);
+							} else{
+								$el.attr("type-2", pokemon.types[1]);
+							}
+							
+							$row.append($el);
+							$row.append("<div class\"name-container\"><h6></h6><p></p></div>");
+							
+							var moveStr = pokemon.fastMove.name;
+							
+							if(pokemon.chargedMoves.length > 0){
+								moveStr += " + " + pokemon.chargedMoves[0].name;
+								
+								if(pokemon.chargedMoves.length == 2){
+									moveStr += " &amp; " + pokemon.chargedMoves[1].name;
+								}
+							}
+							
+							$row.find("h6").html(pokemon.speciesName);
+							$row.find("p").html(moveStr);
+							
+							
+							$(".featured-team-preview").append($row);
+						}
 					}
 				}
 			}

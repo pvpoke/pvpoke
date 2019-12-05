@@ -1,5 +1,89 @@
 [
 	{
+		"name": "guan87",
+		"slug": "guan87",
+		"img": "guan87",
+		"cup": "timeless",
+		"cupName": "Timeless",
+		"league": 1500,
+		"description": "PokemonGo PvP competitor. My passion is in team design, theory-craft and re-defining the meta. Unique team of 6!",
+		"link": "https://twitter.com/guan87_pogo",
+		"pokemon": [
+			{
+				"speciesId": "haunter",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["SHADOW_BALL","SHADOW_PUNCH"]
+			},
+			{
+				"speciesId": "drapion",
+				"fastMove": "ICE_FANG",
+				"chargedMoves": ["AQUA_TAIL","CRUNCH"]
+			},
+			{
+				"speciesId": "charizard",
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"]
+			},
+			{
+				"speciesId": "whiscash",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["MUD_BOMB","BLIZZARD"]
+			},
+			{
+				"speciesId": "sealeo",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["AURORA_BEAM","BODY_SLAM"]
+			},
+			{
+				"speciesId": "victreebel",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["LEAF_BLADE","SLUDGE_BOMB"]
+			}
+		]
+	},
+	{
+		"name": "JayDevin",
+		"slug": "jaydevin",
+		"img": "jaydevin",
+		"cup": "timeless",
+		"cupName": "Timeless",
+		"league": 1500,
+		"description": "Hey battlers! I create YouTube PvP video uploads, livestreams every weekend as well as creating various meta guides that have helped others perform well in their tournaments. Yes, you may have heard that I am the founder of #battlers on Twitter! ",
+		"link": "https://www.youtube.com/c/JayDevin",
+		"pokemon": [
+			{
+				"speciesId": "lapras",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["SURF","SKULL_BASH"]
+			},
+			{
+				"speciesId": "dragonair",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["AQUA_TAIL","DRAGON_PULSE"]
+			},
+			{
+				"speciesId": "muk",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["THUNDER_PUNCH","ACID_SPRAY"]
+			},
+			{
+				"speciesId": "sudowoodo",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["ROCK_SLIDE","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "blaziken",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["BLAZE_KICK","BLAST_BURN"]
+			},
+			{
+				"speciesId": "victreebel",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["LEAF_BLADE","SLUDGE_BOMB"]
+			}
+		]
+	},
+	{
 		"name": "JimmaBanks",
 		"slug": "jimmabanks",
 		"img": "jimmabanks",
@@ -42,6 +126,48 @@
 		]
 	},
 	{
+		"name": "Kieng",
+		"slug": "kieng",
+		"img": "kieng",
+		"cup": "timeless",
+		"cupName": "Timeless",
+		"league": 1500,
+		"description": "I love to create and share Pogo content especially raid challenges and PvP. Goal: Pogo PvP into an eSport. Subscribe to my YouTube channel.",
+		"link": "https://www.youtube.com/user/kieng/",
+		"pokemon": [
+			{
+				"speciesId": "lapras",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["SURF","SKULL_BASH"]
+			},
+			{
+				"speciesId": "sealeo",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["BODY_SLAM","AURORA_BEAM"]
+			},
+			{
+				"speciesId": "meganium",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "castform_sunny",
+				"fastMove": "EMBER",
+				"chargedMoves": ["WEATHER_BALL_FIRE","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "dragonair",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["AQUA_TAIL","RETURN"]
+			},
+			{
+				"speciesId": "kingdra",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["OUTRAGE","HYDRO_PUMP"]
+			}
+		]
+	},
+	{
 		"name": "KnightsOoofRen",
 		"slug": "renn",
 		"img": "renn",
@@ -52,34 +178,34 @@
 		"link": "#",
 		"pokemon": [
 			{
-				"speciesId": "ninetales_alolan",
-				"fastMove": "CHARM",
-				"chargedMoves": ["PSYSHOCK","ICE_BEAM"]
+				"speciesId": "sceptile",
+				"fastMove": "FURY_CUTTER",
+				"chargedMoves": ["LEAF_BLADE","DRAGON_CLAW"]
 			},
 			{
-				"speciesId": "bibarel",
-				"fastMove": "WATER_GUN",
-				"chargedMoves": ["SURF","HYPER_FANG"]
+				"speciesId": "lapras",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["SURF","SKULL_BASH"]
 			},
 			{
-				"speciesId": "umbreon",
-				"fastMove": "SNARL",
-				"chargedMoves": ["LAST_RESORT","FOUL_PLAY"]
+				"speciesId": "dragonair",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["RETURN","AQUA_TAIL"]
 			},
 			{
-				"speciesId": "ninetales",
-				"fastMove": "FIRE_SPIN",
-				"chargedMoves": ["PSYSHOCK","FLAMETHROWER"]
+				"speciesId": "whiscash",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["MUD_BOMB","BLIZZARD"]
 			},
 			{
-				"speciesId": "donphan",
-				"fastMove": "COUNTER",
-				"chargedMoves": ["PLAY_ROUGH","EARTHQUAKE"]
+				"speciesId": "haunter",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["SHADOW_BALL","SHADOW_PUNCH"]
 			},
 			{
-				"speciesId": "suicune",
-				"fastMove": "SNARL",
-				"chargedMoves": ["BUBBLE_BEAM","HYDRO_PUMP"]
+				"speciesId": "kingdra",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["OUTRAGE","none"]
 			}
 		]
 	},
@@ -90,7 +216,7 @@
 		"cup": "timeless",
 		"cupName": "Timeless",
 		"league": 1500,
-		"description": "Welcome to my world of Pokemon GO. Since PvP has come out I've tried to help build my local community and just be really good at PvP. It has turned into so much more. I have met players in other cities and we are doing what we can to help make this PvP thing a bigger deal. Salute to you battlers and enjoy your day. Thank you for stopping by my channel.",
+		"description": "Representing the PVP team Battlers United. America's first Timeless Cup Champion. Season one top 600 Global.",
 		"link": "https://twitter.com/Matthewbabybaby",
 		"pokemon": [
 			{

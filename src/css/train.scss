@@ -96,6 +96,49 @@
 		font-weight:bold !important;
 		text-decoration: underline;
 	}
+	
+	h5{
+		font-size:14px;
+		text-align: left;
+		margin: 10px 0 5px 0;
+	}
+	
+	.featured-team-preview{
+		padding: 5px;
+		border: 1px solid;
+		border-radius: 12px;
+		
+		.preview-poke{
+			display:flex;
+			margin-bottom:5px;
+			
+			&:last-of-type{
+				margin-bottom: 0;
+			}
+
+			.sprite-container{
+				width: 32px;
+				height: 32px;
+				background: none;
+				border: none;
+				padding: 0;
+				margin-right:10px;
+			}
+			
+			h6, p{
+				margin: 0;
+			}
+			
+			h6{
+				text-align: left;
+				font-size:14px;
+			}
+			
+			p{
+				font-size:12px;
+			}
+		}
+	}
 }
 
 .ai-options .poke.multi{

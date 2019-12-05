@@ -26,6 +26,12 @@
 
 	<!--Update section for updates-->
 	<h3>What's New</h3>
+
+	<h4>v1.12.14 (December 5, 2019)</h4>
+	<ul>
+		<li>Added Timeless Cup featured teams to Training Battles, with teams from guan87, JayDevin, JimmaBanks, Kieng, KnightsOoofRen, and MattyFBaby!</li>
+		<li>Added a team preview when selecting featured teams to battle</li>
+	</ul>
 	
 	<h4>v1.12.13 (December 4, 2019)</h4>
 	<ul>
@@ -38,17 +44,6 @@
 		<ul>
 			<li>This same logic was previously applied to Power-Up Punch and now extends to Acid Spray.</li>
 			<li>This drastically reduces the number of wins some Pokemon scored with Acid Spray. It also makes some losses appear harder than they would be without the Acid Spray baits.</li>
-		</ul>
-	</ul>
-
-
-	<h4>v1.12.11 (December 1, 2019)</h4>
-	<ul>
-		<li>Custom group import now ignores upper and lower case. You can use this to quickly import a list of Pokemon (separated by line break).</li>
-		<li>Updated Training Battle interface to reflect current in-game behavior:</li>
-		<ul>
-			<li>The switch button is now unavailable during Charged Moves</li>
-			<li>Charged Move buttons disappear during switch-in periods</li>
 		</ul>
 	</ul>
 
