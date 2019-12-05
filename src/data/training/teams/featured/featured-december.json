@@ -104,11 +104,6 @@
 				"chargedMoves": ["BODY_SLAM","AURORA_BEAM"]
 			},
 			{
-				"speciesId": "umbreon",
-				"fastMove": "SNARL",
-				"chargedMoves": ["LAST_RESORT","FOUL_PLAY"]
-			},
-			{
 				"speciesId": "venusaur",
 				"fastMove": "VINE_WHIP",
 				"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"]
@@ -119,9 +114,14 @@
 				"chargedMoves": ["AQUA_TAIL","EARTHQUAKE"]
 			},
 			{
-				"speciesId": "suicune",
-				"fastMove": "SNARL",
-				"chargedMoves": ["BUBBLE_BEAM","HYDRO_PUMP"]
+				"speciesId": "venomoth",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["POISON_FANG","SILVER_WIND"]
+			},
+			{
+				"speciesId": "kingdra",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["OUTRAGE","HYDRO_PUMP"]
 			}
 		]
 	},
