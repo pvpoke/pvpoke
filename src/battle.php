@@ -298,6 +298,8 @@ require_once 'header.php';
 			<div class="poke-search-container">
 				<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />
 				<a href="#" class="search-info">i</a>
+				
+				<button class="multi-battle-sort">Sort: Worst to best &#9650;</button>
 			</div>
 			<div class="ranking-header">Opponent</div>
 			<div class="ranking-header right">Battle Rating</div>

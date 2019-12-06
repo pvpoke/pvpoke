@@ -36,6 +36,8 @@ var InterfaceMaster = (function () {
 			var sandboxAction;
 			var sandboxActionIndex;
 			var sandboxTurn;
+			
+			var multiBattleWorstToBest = true; // In multi battle, order the results from worst to best
 
 			var chargeMultipliers = [1, .95, .75, .5, .25]; // Array of potential charge multipliers between full and minimum charge
 
@@ -81,6 +83,7 @@ var InterfaceMaster = (function () {
 				$(".continue-container .button").on("click", continueBattle);
 				$(".timeline-container").on("mousemove",".item",timelineEventHover);
 				$(".poke a.swap").on("click", swapSelectedPokemon);
+				$(".multi-battle-sort").on("click", sortMultiBattleResults);
 				$("body").on("mousemove",mainMouseMove);
 				$("body").on("mousedown",mainMouseMove);
 				$("body").on("click", ".check", checkBox);
@@ -809,6 +812,12 @@ var InterfaceMaster = (function () {
 
 				if(! custom){
 					pokemonList = [];
+				}
+				
+				// Order the rankings from best to worst or worst to best
+				
+				if(multiBattleWorstToBest){
+					rankings.sort((a,b) => (a.opRating > b.opRating) ? 1 : ((b.opRating > a.opRating) ? -1 : 0));
 				}
 
 				for(var i = 0; i < rankings.length; i++){
@@ -1873,6 +1882,22 @@ var InterfaceMaster = (function () {
 
 				$("html, body").animate({ scrollTop: $(".poke").offset().top - 30 }, 500);
 
+			}
+			
+			// Toggle multi-battle result sort
+
+			function sortMultiBattleResults(e){
+				multiBattleWorstToBest = ! multiBattleWorstToBest;
+				
+				if(multiBattleWorstToBest){
+					$(".multi-battle-sort").html("Sort: Worst to best &#9650;");
+				} else{
+					$(".multi-battle-sort").html("Sort: Best to worst &#9660;");
+				}
+				
+				// Reorganize child elements
+				
+				$(".battle-results.multi .rankings-container").children().each(function(i,li){$(".battle-results.multi .rankings-container").prepend(li)})
 			}
 
 			// Toggle Sandbox Mode on or off

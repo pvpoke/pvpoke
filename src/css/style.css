@@ -877,6 +877,10 @@ select, input {
     .battle-results.multi .rankings-container .rank:hover {
       border-left: none;
       cursor: initial; }
+    .battle-results.multi .multi-battle-sort {
+      display: block;
+      margin-top: 15px;
+      margin-left: 20px; }
   .battle-results.matrix .table-container {
     overflow: scroll;
     max-height: 500px; }

@@ -1344,6 +1344,12 @@ select, input{
 				cursor:initial;
 			}
 		}
+		
+		.multi-battle-sort{
+			display: block;
+			margin-top: 15px;
+			margin-left: 20px;
+		}
 	}
 
 	&.matrix{

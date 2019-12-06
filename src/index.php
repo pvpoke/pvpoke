@@ -26,6 +26,12 @@
 
 	<!--Update section for updates-->
 	<h3>What's New</h3>
+	
+	<h4>v1.12.15 (December 6, 2019)</h4>
+	<ul>
+		<li>Multi-Battle results are now sorted from worst to best by default.</li>
+		<li>You can toggle Multi-Battle results to sort from best to worst instead.</li>
+	</ul>
 
 	<h4>v1.12.14 (December 5, 2019)</h4>
 	<ul>
@@ -36,15 +42,6 @@
 	<h4>v1.12.13 (December 4, 2019)</h4>
 	<ul>
 		<li>Reverted previous changes to the switch button in Training Battles to match in-game update</li>
-	</ul>
-	
-	<h4>v1.12.12 (December 3, 2019)</h4>
-	<ul>
-		<li>In the default simulations, Pokemon will now shield more intelligently against Acid Spray. They won't fall for the bait if they can take the opponent's other Charged Move.</li>
-		<ul>
-			<li>This same logic was previously applied to Power-Up Punch and now extends to Acid Spray.</li>
-			<li>This drastically reduces the number of wins some Pokemon scored with Acid Spray. It also makes some losses appear harder than they would be without the Acid Spray baits.</li>
-		</ul>
 	</ul>
 
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>
