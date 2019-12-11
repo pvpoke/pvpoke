@@ -2739,7 +2739,7 @@
 		},
 		"types": ["bug", "none"],
 		"fastMoves": ["BUG_BITE", "FURY_CUTTER", "ROCK_SMASH"],
-		"chargedMoves": ["CLOSE_COMBAT", "SUBMISSION", "VICE_GRIP", "X_SCISSOR", "SUPERPOWER"],
+		"chargedMoves": ["CLOSE_COMBAT", "SUBMISSION", "VICE_GRIP", "X_SCISSOR", "SUPER_POWER"],
 		"legacyMoves": ["SUBMISSION"],
 		"defaultIVs": {
 			"cp1500": [18.5, 8, 11, 12],
@@ -3015,7 +3015,7 @@
 		},
 		"types": ["normal", "none"],
 		"fastMoves": ["LICK", "ZEN_HEADBUTT", "YAWN"],
-		"chargedMoves": ["BODY_SLAM", "EARTHQUAKE", "HEAVY_SLAM", "HYPER_BEAM", "OUTRAGE", "SKULL_BASH", "SUPERPOWER"],
+		"chargedMoves": ["BODY_SLAM", "EARTHQUAKE", "HEAVY_SLAM", "HYPER_BEAM", "OUTRAGE", "SKULL_BASH", "SUPER_POWER"],
 		"defaultIVs": {
 			"cp1500": [17.5, 3, 15, 1],
 			"cp2500": [29, 0, 13, 14]
@@ -5637,7 +5637,7 @@
 		},
 		"types": ["fighting", "none"],
 		"fastMoves": ["BULLET_PUNCH", "COUNTER"],
-		"chargedMoves": ["CLOSE_COMBAT", "DYNAMIC_PUNCH", "HEAVY_SLAM", "SUPERPOWER"],
+		"chargedMoves": ["CLOSE_COMBAT", "DYNAMIC_PUNCH", "HEAVY_SLAM", "SUPER_POWER"],
 		"defaultIVs": {
 			"cp1500": [19.5, 8, 12, 9],
 			"cp2500": [35.5, 6, 12, 11]
@@ -8593,7 +8593,7 @@
 		},
 		"types": ["ground", "rock"],
 		"fastMoves": ["MUD_SLAP", "SMACK_DOWN"],
-		"chargedMoves": ["EARTHQUAKE", "STONE_EDGE", "SURF", "SKULL_BASH", "SUPERPOWER"],
+		"chargedMoves": ["EARTHQUAKE", "STONE_EDGE", "SURF", "SKULL_BASH", "SUPER_POWER"],
 		"defaultIVs": {
 			"cp1500": [15, 2, 10, 8],
 			"cp2500": [24.5, 5, 15, 9]
@@ -12386,7 +12386,7 @@
 		},
 		"types": ["steel", "none"],
 		"fastMoves": ["THUNDER_SHOCK"],
-		"chargedMoves": ["FLASH_CANNON", "HYPER_BEAM", "ROCK_SLIDE", "THUNDERBOLT", "SUPERPOWER"],
+		"chargedMoves": ["FLASH_CANNON", "HYPER_BEAM", "ROCK_SLIDE", "THUNDERBOLT", "SUPER_POWER"],
 		"defaultIVs": {
 			"cp1500": [15.5, 1, 13, 8],
 			"cp2500": [25.5, 7, 11, 11]
@@ -14059,6 +14059,17 @@
 		"energy": 0,
 		"energyGain": 7,
 		"cooldown": 1000
+	}, {
+		"moveId": "SUPER_POWER",
+		"name": "Superpower",
+		"type": "fighting",
+		"power": 85,
+		"energy": 409,
+		"energyGain": 0,
+		"cooldown": 500,
+		"buffs": [-1, -1],
+		"buffTarget": "self",
+		"buffApplyChance": "1"
 	}, {
 		"moveId": "SURF",
 		"name": "Surf",

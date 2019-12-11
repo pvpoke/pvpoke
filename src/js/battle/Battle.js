@@ -402,7 +402,7 @@ function Battle(){
 		// Determine if charged move priority should be used
 		usePriority = false;
 
-		if(pokemon[0].priority != pokemon[1].priority){
+		if(pokemon[0].stats.atk != pokemon[1].stats.atk){
 			usePriority = true;
 		}
 
@@ -459,11 +459,6 @@ function Battle(){
 		}
 
 		// In emulated battles, randomize priority
-
-		if(mode == "emulate"){
-			pokemon[0].priority = (Math.random() > .5) ? 1 : 0;
-			pokemon[1].priority = (pokemon[0].priority == 0) ? 1 : 0;
-		}
 
 		// Determine actions for both Pokemon
 		var actionsThisTurn = false;
@@ -910,7 +905,6 @@ function Battle(){
 						action = a;
 
 						// Apply priority
-
 						action.settings.priority = poke.priority;
 
 						// Don't do action if not enough energy
@@ -955,6 +949,11 @@ function Battle(){
 					}
 					poke.cooldown = 0;
 					action.settings.priority += 10;
+					
+					// Set additional priority by attack stat
+					if(poke.stats.atk > opponent.stats.atk){
+						action.settings.priority++;
+					}
 				}
 
 				if(action.type == "switch"){
