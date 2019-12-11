@@ -9149,7 +9149,8 @@
 		"defaultIVs": {
 			"cp1500": [14.5, 2, 14, 14],
 			"cp2500": [24, 9, 12, 13]
-		}
+		},
+		"tags": ["mythical"]
 	}, {
 		"dex": 492,
 		"speciesName": "Shaymin (Land)",
@@ -11967,7 +11968,8 @@
 		"defaultIVs": {
 			"cp1500": [19, 4, 12, 2],
 			"cp2500": [33.5, 0, 12, 7]
-		}
+		},
+		"tags": ["legendary"]
 	}, {
 		"dex": 639,
 		"speciesId": "terrakion",
@@ -11983,7 +11985,8 @@
 		"defaultIVs": {
 			"cp1500": [15.5, 1, 7, 5],
 			"cp2500": [25.5, 5, 10, 3]
-		}
+		},
+		"tags": ["legendary"]
 	}, {
 		"dex": 640,
 		"speciesId": "virizion",
@@ -11999,27 +12002,12 @@
 		"defaultIVs": {
 			"cp1500": [19, 4, 12, 2],
 			"cp2500": [33.5, 0, 12, 7]
-		}
-	}, {
-		"dex": 641,
-		"speciesId": "tornadus_incarnate",
-		"speciesName": "Tornadus_incarnate",
-		"baseStats": {
-			"atk": 266,
-			"def": 164,
-			"hp": 188
 		},
-		"types": ["flying", "none"],
-		"fastMoves": ["BITE", "AIR_SLASH"],
-		"chargedMoves": ["GRASS_KNOT", "DARK_PULSE", "HYPER_BEAM", "HURRICANE"],
-		"defaultIVs": {
-			"cp1500": [20, 15, 15, 15],
-			"cp2500": [20, 15, 15, 15]
-		}
+		"tags": ["legendary"]
 	}, {
 		"dex": 641,
 		"speciesId": "tornadus_incarnate",
-		"speciesName": "Tornadus_incarnate",
+		"speciesName": "Tornadus (Incarnate)",
 		"baseStats": {
 			"atk": 266,
 			"def": 164,
@@ -12031,11 +12019,12 @@
 		"defaultIVs": {
 			"cp1500": [17, 4, 10, 4],
 			"cp2500": [27.5, 1, 10, 15]
-		}
+		},
+		"tags": ["legendary"]
 	}, {
 		"dex": 641,
 		"speciesId": "tornadus_therian",
-		"speciesName": "Tornadus_therian",
+		"speciesName": "Tornadus (Therian)",
 		"baseStats": {
 			"atk": 238,
 			"def": 189,
@@ -12047,27 +12036,12 @@
 		"defaultIVs": {
 			"cp1500": [17.5, 3, 5, 13],
 			"cp2500": [28, 11, 10, 15]
-		}
-	}, {
-		"dex": 642,
-		"speciesId": "thundurus_incarnate",
-		"speciesName": "Thundurus_incarnate",
-		"baseStats": {
-			"atk": 266,
-			"def": 164,
-			"hp": 188
 		},
-		"types": ["electric", "flying"],
-		"fastMoves": ["ASTONISH", "THUNDER_SHOCK"],
-		"chargedMoves": ["CRUNCH", "THUNDER", "BRICK_BREAK", "THUNDER_PUNCH"],
-		"defaultIVs": {
-			"cp1500": [20, 15, 15, 15],
-			"cp2500": [20, 15, 15, 15]
-		}
+		"tags": ["legendary"]
 	}, {
 		"dex": 642,
 		"speciesId": "thundurus_incarnate",
-		"speciesName": "Thundurus_incarnate",
+		"speciesName": "Thundurus (Incarnate)",
 		"baseStats": {
 			"atk": 266,
 			"def": 164,
@@ -12079,11 +12053,12 @@
 		"defaultIVs": {
 			"cp1500": [17, 4, 10, 4],
 			"cp2500": [27.5, 1, 10, 15]
-		}
+		},
+		"tags": ["legendary"]
 	}, {
 		"dex": 642,
 		"speciesId": "thundurus_therian",
-		"speciesName": "Thundurus_therian",
+		"speciesName": "Thundurus (Therian)",
 		"baseStats": {
 			"atk": 295,
 			"def": 161,
@@ -12095,7 +12070,8 @@
 		"defaultIVs": {
 			"cp1500": [15, 11, 5, 14],
 			"cp2500": [25.5, 1, 6, 14]
-		}
+		},
+		"tags": ["legendary"]
 	}, {
 		"dex": 643,
 		"speciesId": "reshiram",
@@ -12111,7 +12087,8 @@
 		"defaultIVs": {
 			"cp1500": [14, 2, 2, 13],
 			"cp2500": [24, 0, 1, 7]
-		}
+		},
+		"tags": ["legendary"]
 	}, {
 		"dex": 644,
 		"speciesId": "zekrom",
@@ -12127,7 +12104,8 @@
 		"defaultIVs": {
 			"cp1500": [14, 2, 2, 13],
 			"cp2500": [24, 0, 1, 7]
-		}
+		},
+		"tags": ["legendary"]
 	}, {
 		"dex": 645,
 		"speciesId": "landorus_incarnate",
@@ -12143,7 +12121,8 @@
 		"defaultIVs": {
 			"cp1500": [16, 1, 10, 1],
 			"cp2500": [26, 2, 6, 15]
-		}
+		},
+		"tags": ["legendary"]
 	}, {
 		"dex": 645,
 		"speciesId": "landorus_therian",
@@ -12159,7 +12138,8 @@
 		"defaultIVs": {
 			"cp1500": [14, 9, 5, 15],
 			"cp2500": [23.5, 3, 7, 15]
-		}
+		},
+		"tags": ["legendary"]
 	}, {
 		"dex": 646,
 		"speciesId": "kyurem_normal",
@@ -12175,7 +12155,8 @@
 		"defaultIVs": {
 			"cp1500": [16.5, 0, 1, 4],
 			"cp2500": [26, 3, 12, 8]
-		}
+		},
+		"tags": ["legendary"]
 	}, {
 		"dex": 646,
 		"speciesId": "kyurem_black",
@@ -12191,7 +12172,8 @@
 		"defaultIVs": {
 			"cp1500": [12, 3, 10, 9],
 			"cp2500": [19.5, 8, 13, 12]
-		}
+		},
+		"tags": ["legendary"]
 	}, {
 		"dex": 646,
 		"speciesId": "kyurem_white",
@@ -12207,7 +12189,8 @@
 		"defaultIVs": {
 			"cp1500": [12, 3, 10, 9],
 			"cp2500": [19.5, 8, 13, 12]
-		}
+		},
+		"tags": ["legendary"]
 	}, {
 		"dex": 647,
 		"speciesId": "keldeo_ordinary",
