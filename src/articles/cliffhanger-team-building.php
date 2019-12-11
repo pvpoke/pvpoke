@@ -11,9 +11,9 @@ require_once '../header.php';
 
 <div class="section article white">
 	<h1>Team Building for GO Stadium Cliffhanger</h1>
-	<div class="date">Last updated September 7th, 2019</div>
-	<p>The <a href="https://discord.gg/fbczGXZ" target="_blank">GO Stadium Discord</a>, one of the largest communities for PvP discussion and remote tournaments, has announced an exciting new way to play: Cliffhanger! Cliffhanger is a format where you have to build your team with a limited number of points. Let’s dive into the format and how to build your Cliffhanger team!</p>
-	<p>Also be sure to check out the full rules in the <a href="https://reddit.com/r/TheSilphArena/comments/cvv0q1/go_stadium_announces_cliffhanger_a_4tier_format/ey6kqr7/" target="_blank">announcement post</a>!</p>
+	<div class="date">Last updated September December 11th, 2019</div>
+	<p>Cliffhanger is an exciting format where you have to build your team with a limited number of points! It was designed by the <a href="https://discord.gg/fbczGXZ" target="_blank">GO Stadium Discord</a>, one of the largest communities for PvP discussion and remote tournaments, and has been updated with the previous movepool changes and Generation 5 Pokemon. Let’s dive into the format and how to build your Cliffhanger team!</p>
+	<p>Also be sure to check out the full rules in the updated <a href="https://reddit.com/r/TheSilphArena/comments/drdh2j/cliffhanger_tiers_version_21_regi_edition/" target="_blank">announcement post</a>!</p>
 <p>Jump to a section:
   <ol>
 				<li><a href="#rules">Cliffhanger Rules &amp; Team Archetypes</a></li>
@@ -22,7 +22,7 @@ require_once '../header.php';
 	  </ol>
 	<a name="rules"></a>
 <h3 class="article-header"><strong>Cliffhanger Rules &amp; Team Archetypes</strong></h3>
-	<p><img src="<?php echo $WEB_ROOT; ?>assets/articles/cliffhanger-rules.jpg" /></p>
+	<p><img src="<?php echo $WEB_ROOT; ?>assets/articles/cliffhanger-rules-2-1.jpg" /></p>
 <p>You have 17 points to build to your team! The  graphic above shows which Pokemon belong to which tiers. The tiers are a team  building challenge, so how can you rise to meet it? </p>
 <p>There are several different team archetypes you  can choose from. Some will allow you to pick that powerful T0 Pokemon while  others give you broader choices from the lower tiers. </p>
 <ul type="disc">
@@ -38,18 +38,19 @@ require_once '../header.php';
 <h3 class="article-header"><strong>Team-Building with Slots</strong></h3>
 <p>So you have a team archetype picked out or maybe  you&rsquo;re not even sure yet! Where do you begin with choosing the actual Pokemon  on your team? One way to approach it is to think about your team in terms of  slots. Your team has 6 slots and you need each one to fill a certain kind of  role or coverage. </p>
 <p>The infographic below highlights a few of the  possible picks in different slots and the roles they play for your team: </p>
-	<p><img src="<?php echo $WEB_ROOT; ?>assets/articles/cliffhanger-infographic.jpg?v=2" /></p>
+	<p><img src="<?php echo $WEB_ROOT; ?>assets/articles/cliffhanger-infographic-2-1.jpg?v=2" /></p>
 <p>What&rsquo;s the best way to start? Pick a Pokemon you  really like, think about which Pokemon it loses to, and then pick a Pokemon  that covers its weaknesses. Skarmory is countered by Steel-type tanks, for  example, so Whiscash makes a great partner. Toxicroak evaporates against  Confusion users, so it would appreciate a buddy like Sableye or Umbreon. </p>
 <p>Here&rsquo;s a team building example that walks  through each pick: </p>
 <ol start="1" type="1">
   <li><strong>Altaria (9 points) </strong>has strong       general matchups but loses to Steel and Fairy types.<strong></strong></li>
   <li><strong>Toxicroak (1 point)</strong> can beat       down Steel types and threaten Fairy types with Sludge Bomb, but loses to       Flying, Psychic, and Ghost types.<strong></strong></li>
-  <li><strong>Magneton (1 point) </strong>with       Discharge and Magnet Bomb counters Flying types, resists Psychic attacks,       and hits Fairy types hard. It loses to Fighting and Ground attacks.<strong></strong></li>
+  <li><strong>Magneton (0 points) </strong>with       Discharge and Magnet Bomb counters Flying types, resists Psychic attacks,       and hits Fairy types hard. It loses to Fighting and Ground attacks.<strong></strong></li>
   <li><strong>Venusaur (5 points) </strong>tears       through Ground and Water-type Pokemon and shores up Fighting and Fairy       weaknesses thanks to its Poison typing. It&rsquo;s most vulnerable to Flying and       Fire types, and Psychic types with Confusion.<strong></strong></li>
   <li><strong>Lapras (1 point)</strong> with Ice       Shard, Surf, and Skull Bash provides additional Flying and Fire coverage       and supports the team with high natural bulk. It&rsquo;s most vulnerable to       Fighting and Electric types.<strong></strong></li>
-  <li><strong>Alolan Marowak (0 points) </strong>rounds       out the team as a hard counter to Fighting and Psychic types, coverage       with Bone Club, and a resistance to Fairy and Grass-type attacks.</li>
+  <li><strong>Alolan Marowak (1 point) </strong>rounds out the team as a hard counter to Fighting and Psychic types, coverage       with Bone Club, and a resistance to Fairy and Grass-type attacks.</li>
 </ol>
 <p>This gives you a fairly well-rounded team, but  even the example above has some gaps. Sableye poses a problem so Alolan Marowak  could be swapped for Togekiss to similarly counter Fighting types, but this  makes the team more vulnerable to Electric attacks (Raichu with Brick Break  could do some damage). Team building is a game of give and take. See which  picks work for you and experiment with different ways to build out your  coverage! </p>
+<p>Be sure to take advantage of the <a href="<?php echo $WEB_ROOT; ?>team-builder/">Team Builder</a> tool, which can help you identify coverage problems for your team and find alternatives.</p>
 <a name="testing"></a>
   <h3 class="article-header"><strong>Testing Your Team</strong></h3>
  	<p>Once you have a team picked, find some friends  to battle and put them to the test! Pay close attention and try to answer the  following questions: </p>
