@@ -5,16 +5,6 @@
 		"chargedMoves":["FRENZY_PLANT","SLUDGE_BOMB"]
 	},
 	{
-		"speciesId":"lanturn",
-		"fastMove":"WATER_GUN",
-		"chargedMoves":["THUNDERBOLT","HYDRO_PUMP"]
-	},
-	{
-		"speciesId":"lanturn",
-		"fastMove":"CHARGE_BEAM",
-		"chargedMoves":["THUNDERBOLT","HYDRO_PUMP"]
-	},
-	{
 		"speciesId":"quagsire",
 		"fastMove":"MUD_SHOT",
 		"chargedMoves":["EARTHQUAKE","STONE_EDGE"]
@@ -47,12 +37,12 @@
 	{
 		"speciesId":"drapion",
 		"fastMove":"ICE_FANG",
-		"chargedMoves":["CRUNCH","AQUA_TAIL"]
+		"chargedMoves":["FELL_STINGER","AQUA_TAIL"]
 	},
 	{
-		"speciesId":"typhlosion",
-		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["BLAST_BURN","SOLAR_BEAM"]
+		"speciesId":"drapion",
+		"fastMove":"BITE",
+		"chargedMoves":["FELL_STINGER","AQUA_TAIL"]
 	},
 	{
 		"speciesId":"meganium",
@@ -62,12 +52,12 @@
 	{
 		"speciesId":"ninetales",
 		"fastMove":"FIRE_SPIN",
-		"chargedMoves":["FLAMETHROWER","PSYSHOCK"]
+		"chargedMoves":["OVERHEAT","PSYSHOCK"]
 	},
 	{
 		"speciesId":"torkoal",
 		"fastMove":"FIRE_SPIN",
-		"chargedMoves":["EARTHQUAKE","SOLAR_BEAM"]
+		"chargedMoves":["EARTHQUAKE","OVERHEAT"]
 	},
 	{
 		"speciesId":"venomoth",
@@ -90,11 +80,6 @@
 		"chargedMoves":["SHADOW_PUNCH","SHADOW_BALL"]
 	},
 	{
-		"speciesId":"banette",
-		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["RETURN","SHADOW_BALL"]
-	},
-	{
 		"speciesId":"froslass",
 		"fastMove":"POWDER_SNOW",
 		"chargedMoves":["AVALANCHE","SHADOW_BALL"]
@@ -103,6 +88,11 @@
 		"speciesId":"glalie",
 		"fastMove":"ICE_SHARD",
 		"chargedMoves":["AVALANCHE","SHADOW_BALL"]
+	},
+	{
+		"speciesId":"dewgong",
+		"fastMove":"ICE_SHARD",
+		"chargedMoves":["ICY_WIND","WATER_PULSE"]
 	},
 	{
 		"speciesId":"castform_snowy",
@@ -122,7 +112,22 @@
 	{
 		"speciesId":"dragonair",
 		"fastMove":"DRAGON_BREATH",
-		"chargedMoves":["AQUA_TAIL","RETURN"]
+		"chargedMoves":["AQUA_TAIL","DRAGON_PULSE"]
+	},
+	{
+		"speciesId":"gastrodon_west_sea",
+		"fastMove":"MUD_SLAP",
+		"chargedMoves":["BODY_SLAM","EARTH_POWER"]
+	},
+	{
+		"speciesId":"pinsir",
+		"fastMove":"FURY_CUTTER",
+		"chargedMoves":["X_SCISSOR","CLOSE_COMBAT"]
+	},
+	{
+		"speciesId":"dragonair",
+		"fastMove":"DRAGON_BREATH",
+		"chargedMoves":["AQUA_TAIL","WRAP"]
 	},
 	{
 		"speciesId":"shelgon",
@@ -132,7 +137,7 @@
 	{
 		"speciesId":"kingdra",
 		"fastMove":"DRAGON_BREATH",
-		"chargedMoves":["OUTRAGE","HYDRO_PUMP"]
+		"chargedMoves":["OUTRAGE","OCTAZOOKA"]
 	},
 	{
 		"speciesId":"lapras",
@@ -167,7 +172,7 @@
 	{
 		"speciesId":"gloom",
 		"fastMove":"RAZOR_LEAF",
-		"chargedMoves":["RETURN","SLUDGE_BOMB"]
+		"chargedMoves":["PETAL_BLIZZARD","SLUDGE_BOMB"]
 	},
 	{
 		"speciesId":"ivysaur",

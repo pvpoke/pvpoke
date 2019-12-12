@@ -81,7 +81,14 @@
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["MUD_BOMB","BLIZZARD"],
 				"difficulty": 2,
-				"weight":40
+				"weight":30
+			},
+			{
+				"speciesId": "gastrodon_west_sea",
+				"fastMove": "MUD_SLAP",
+				"chargedMoves": ["BODY_SLAM","EARTH_POWER"],
+				"difficulty": 2,
+				"weight":8
 			},
 			{
 				"speciesId": "castform_rainy",
@@ -130,7 +137,7 @@
 				"fastMove": "COUNTER",
 				"chargedMoves": ["ROCK_SLIDE","EARTHQUAKE"],
 				"difficulty": 2,
-				"weight":4
+				"weight":6
 			},
 			{
 				"speciesId": "tyranitar",
@@ -213,8 +220,8 @@
 				"speciesId": "kabutops",
 				"fastMove": "FURY_CUTTER",
 				"chargedMoves": ["ANCIENT_POWER","STONE_EDGE"],
-				"difficulty": 1,
-				"weight":1
+				"difficulty": 2,
+				"weight":2
 			},
 			{
 				"speciesId": "wailord",
@@ -355,16 +362,16 @@
 			{
 				"speciesId": "gloom",
 				"fastMove": "RAZOR_LEAF",
-				"chargedMoves": ["SLUDGE_BOMB","RETURN"],
+				"chargedMoves": ["SLUDGE_BOMB","PETAL_BLIZZARD"],
 				"difficulty": 2,
 				"weight":10
 			},
 			{
 				"speciesId": "tangrowth",
 				"fastMove": "VINE_WHIP",
-				"chargedMoves": ["ANCIENT_POWER","SLUDGE_BOMB"],
+				"chargedMoves": ["ANCIENT_POWER","POWER_WHIP"],
 				"difficulty": 2,
-				"weight":3
+				"weight":6
 			},
 			{
 				"speciesId": "tangela",
@@ -474,7 +481,7 @@
 			{
 				"speciesId": "infernape",
 				"fastMove": "FIRE_SPIN",
-				"chargedMoves": ["BLAST_BURN","SOLAR_BEAM"],
+				"chargedMoves": ["BLAST_BURN","CLOSE_COMBAT"],
 				"difficulty": 1,
 				"weight":1
 			},
@@ -509,6 +516,13 @@
 				"weight":4
 			},
 			{
+				"speciesId": "beedrill",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["FELL_STINGER","SLUDGE_BOMB"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
 				"speciesId": "dustox",
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["SILVER_WIND","SLUDGE_BOMB"],
@@ -539,23 +553,16 @@
 			{
 				"speciesId": "torkoal",
 				"fastMove": "FIRE_SPIN",
-				"chargedMoves": ["EARTHQUAKE","SOLAR_BEAM"],
+				"chargedMoves": ["EARTHQUAKE","OVERHEAT"],
 				"difficulty": 2,
-				"weight":2
+				"weight":6
 			},
 			{
 				"speciesId": "ninetales",
 				"fastMove": "FIRE_SPIN",
-				"chargedMoves": ["PSYSHOCK","FLAMETHROWER"],
+				"chargedMoves": ["PSYSHOCK","OVERHEAT"],
 				"difficulty": 2,
-				"weight":3
-			},
-			{
-				"speciesId": "ninetales",
-				"fastMove": "FIRE_SPIN",
-				"chargedMoves": ["PSYSHOCK","SOLAR_BEAM"],
-				"difficulty": 2,
-				"weight":2
+				"weight":8
 			},
 			{
 				"speciesId": "arcanine",
@@ -579,10 +586,17 @@
 				"weight":1
 			},
 			{
+				"speciesId": "pinsir",
+				"fastMove": "FURY_CUTTER",
+				"chargedMoves": ["X_SCISSOR","CLOSE_COMBAT"],
+				"difficulty": 3,
+				"weight":8
+			},
+			{
 				"speciesId": "kricketune",
 				"fastMove": "FURY_CUTTER",
 				"chargedMoves": ["X_SCISSOR","BUG_BUZZ"],
-				"difficulty": 1,
+				"difficulty": 2,
 				"weight":1
 			},
 			{
@@ -681,7 +695,7 @@
 				"fastMove": "ICE_SHARD",
 				"chargedMoves": ["ICY_WIND","WATER_PULSE"],
 				"difficulty": 2,
-				"weight":1
+				"weight":3
 			},
 			{
 				"speciesId": "sealeo",
@@ -728,16 +742,16 @@
 			{
 				"speciesId": "dragonair",
 				"fastMove": "DRAGON_BREATH",
-				"chargedMoves": ["AQUA_TAIL","RETURN"],
+				"chargedMoves": ["AQUA_TAIL","WRAP"],
 				"difficulty": 2,
-				"weight":24
+				"weight":10
 			},
 			{
 				"speciesId": "dragonair",
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["AQUA_TAIL","DRAGON_PULSE"],
 				"difficulty": 3,
-				"weight":20
+				"weight":24
 			},
 			{
 				"speciesId": "shelgon",
@@ -756,9 +770,9 @@
 			{
 				"speciesId": "kingdra",
 				"fastMove": "DRAGON_BREATH",
-				"chargedMoves": ["OUTRAGE","HYDRO_PUMP"],
-				"difficulty": 2,
-				"weight":2
+				"chargedMoves": ["OUTRAGE","OCTAZOOKA"],
+				"difficulty": 3,
+				"weight":6
 			},
 			{
 				"speciesId": "kingdra",
@@ -777,16 +791,16 @@
 			{
 				"speciesId": "dragonair",
 				"fastMove": "DRAGON_BREATH",
-				"chargedMoves": ["AQUA_TAIL","RETURN"],
+				"chargedMoves": ["AQUA_TAIL","WRAP"],
 				"difficulty": 2,
-				"weight":10
+				"weight":6
 			},
 			{
 				"speciesId": "dragonair",
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["AQUA_TAIL","DRAGON_PULSE"],
 				"difficulty": 3,
-				"weight":6
+				"weight":10
 			},
 			{
 				"speciesId": "shelgon",
@@ -826,9 +840,9 @@
 			{
 				"speciesId": "kingdra",
 				"fastMove": "DRAGON_BREATH",
-				"chargedMoves": ["OUTRAGE","HYDRO_PUMP"],
+				"chargedMoves": ["OUTRAGE","OCTAZOOKA"],
 				"difficulty": 2,
-				"weight":16
+				"weight":24
 			},
 			{
 				"speciesId": "kingdra",
@@ -849,14 +863,14 @@
 				"fastMove": "POISON_JAB",
 				"chargedMoves": ["CRUNCH","FLAMETHROWER"],
 				"difficulty": 2,
-				"weight":24
+				"weight":10
 			},
 			{
 				"speciesId": "muk",
 				"fastMove": "POISON_JAB",
 				"chargedMoves": ["THUNDER_PUNCH","DARK_PULSE"],
 				"difficulty": 2,
-				"weight":14
+				"weight":8
 			},
 			{
 				"speciesId": "drapion",
@@ -868,9 +882,9 @@
 			{
 				"speciesId": "drapion",
 				"fastMove": "BITE",
-				"chargedMoves": ["CRUNCH","AQUA_TAIL"],
+				"chargedMoves": ["FELL_STINGER","AQUA_TAIL"],
 				"difficulty": 2,
-				"weight":3
+				"weight":14
 			},
 			{
 				"speciesId": "swalot",
@@ -961,7 +975,7 @@
 				"fastMove": "SUCKER_PUNCH",
 				"chargedMoves": ["SHADOW_BALL","OMINOUS_WIND"],
 				"difficulty": 2,
-				"weight":2
+				"weight":1
 			},
 			{
 				"speciesId": "dusclops",
