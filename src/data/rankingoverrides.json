@@ -28,10 +28,6 @@
 				"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
 			},
 			{
-				"speciesId": "dragonite",
-				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
-			},
-			{
 				"speciesId": "porygon",
 				"chargedMoves": ["DISCHARGE", "HYPER_BEAM"]
 			},
@@ -44,8 +40,20 @@
 				"chargedMoves": ["PSYSHOCK", "BULLDOZE"]
 			},
 			{
+				"speciesId": "forretress",
+				"chargedMoves": ["EARTHQUAKE", "MIRROR_SHOT"]
+			},
+			{
+				"speciesId": "gliscor",
+				"chargedMoves": ["EARTHQUAKE", "NIGHT_SLASH"]
+			},
+			{
 				"speciesId": "lugia",
 				"chargedMoves": ["SKY_ATTACK", "HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "charizard",
+				"fastMove": "FIRE_SPIN"
 			},
 			{
 				"speciesId": "lapras",
@@ -86,8 +94,12 @@
 				"chargedMoves": ["DISCHARGE", "MAGNET_BOMB"]
 			},
 			{
-				"speciesId": "ferrothorn",
-				"chargedMoves": ["POWER_WHIP", "THUNDER"]
+				"speciesId": "typhlosion",
+				"chargedMoves": ["BLAST_BURN", "SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "blaziken",
+				"chargedMoves": ["BLAST_BURN", "BLAZE_KICK"]
 			},
 			{
 				"speciesId": "hypno",
@@ -98,12 +110,52 @@
 				"chargedMoves": ["AERIAL_ACE", "BRAVE_BIRD"]
 			},
 			{
+				"speciesId": "mew",
+				"chargedMoves": ["OVERHEAT", "PSYSHOCK"]
+			},
+			{
+				"speciesId": "snorlax",
+				"chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
+			},
+			{
 				"speciesId": "muk_alolan",
 				"chargedMoves": ["DARK_PULSE", "ACID_SPRAY"]
 			},
 			{
 				"speciesId": "deoxys_defense",
-				"chargedMoves": ["PSYCHO_BOOST", "THUNDERBOLT"]
+				"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
+			},
+			{
+				"speciesId": "primeape",
+				"chargedMoves": ["NIGHT_SLASH", "CLOSE_COMBAT"]
+			},
+			{
+				"speciesId": "lucario",
+				"chargedMoves": ["POWER_UP_PUNCH", "SHADOW_BALL"]
+			},
+			{
+				"speciesId": "hitmonchan",
+				"chargedMoves": ["THUNDER_PUNCH", "CLOSE_COMBAT"]
+			},
+			{
+				"speciesId": "beedrill",
+				"chargedMoves": ["X_SCISSOR", "SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "vespiquen",
+				"chargedMoves": ["FELL_STINGER", "POWER_GEM"]
+			},
+			{
+				"speciesId": "golbat",
+				"chargedMoves": ["POISON_FANG", "SHADOW_BALL"]
+			},
+			{
+				"speciesId": "cloyster",
+				"chargedMoves": ["ICY_WIND", "HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "machamp",
+				"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
 			},
 			{
 				"speciesId": "moltres",
@@ -112,6 +164,14 @@
 			{
 				"speciesId": "vileplume",
 				"chargedMoves": ["SLUDGE_BOMB", "PETAL_BLIZZARD"]
+			},
+			{
+				"speciesId": "hariyama",
+				"chargedMoves": ["SUPER_POWER", "HEAVY_SLAM"]
+			},
+			{
+				"speciesId": "pinsir",
+				"chargedMoves": ["CLOSE_COMBAT", "X_SCISSOR"]
 			},
 			{
 				"speciesId": "grotle",
@@ -152,11 +212,6 @@
 			{
 				"speciesId": "crobat",
 				"chargedMoves": ["SLUDGE_BOMB","SHADOW_BALL"]
-			},
-			{
-				"speciesId": "ferrothorn",
-				"fastMove": "BULLET_SEED",
-				"chargedMoves": ["POWER_WHIP", "FLASH_CANNON"]
 			}
 		]
 	},
@@ -736,8 +791,16 @@
 				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
 			},
 			{
-				"speciesId": "dragonite",
-				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
+				"speciesId": "typhlosion",
+				"chargedMoves": ["BLAST_BURN", "SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "mew",
+				"chargedMoves": ["OVERHEAT", "PSYSHOCK"]
+			},
+			{
+				"speciesId": "machamp",
+				"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
 			},
 			{
 				"speciesId": "muk_alolan",
@@ -768,10 +831,6 @@
 			{
 				"speciesId": "giratina_altered",
 				"fastMove": ["SHADOW_CLAW"]
-			},
-			{
-				"speciesId": "dragonite",
-				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
 			},
 			{
 				"speciesId": "blaziken",
@@ -1347,6 +1406,10 @@
 				"chargedMoves": ["THUNDER_PUNCH","DARK_PULSE"]
 			},
 			{
+				"speciesId": "pinsir",
+				"chargedMoves": ["X_SCISSOR","CLOSE_COMBAT"]
+			},
+			{
 				"speciesId": "tentacruel",
 				"chargedMoves": ["ACID_SPRAY","SLUDGE_WAVE"]
 			},
@@ -1355,8 +1418,13 @@
 				"chargedMoves": ["CRUNCH","FLAMETHROWER"]
 			},
 			{
-				"speciesId": "drapion",
-				"fastMove": "ICE_FANG"
+				"speciesId": "typhlosion",
+				"chargedMoves": ["BLAST_BURN","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "charizard",
+				"fastMove":"FIRE_SPIN",
+				"weight": 2
 			},
 			{
 				"speciesId": "venomoth",
@@ -1398,6 +1466,10 @@
 			{
 				"speciesId": "swalot",
 				"chargedMoves": ["ICE_BEAM","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "blaziken",
+				"chargedMoves": ["BLAZE_KICK","BLAST_BURN"]
 			},
 			{
 				"speciesId": "weavile",
@@ -1472,21 +1544,17 @@
 				"speciesId": "electrode",
 				"weight":0.25
 			},
-			{	
+			{
 				"speciesId": "meganium",
-				"weight":3
-			},
-			{	
-				"speciesId": "venusaur",
-				"weight":3
-			},
-			{	
-				"speciesId": "dragonair",
-				"weight":4
+				"weight": 2
 			},
 			{
-				"speciesId": "charizard",
-				"weight":1.5
+				"speciesId": "venusaur",
+				"weight": 3
+			},
+			{
+				"speciesId": "dragonair",
+				"weight": 4
 			}
 		]
 	}

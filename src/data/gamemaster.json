@@ -1947,7 +1947,7 @@
 		"types": ["water", "ice"],
 		"fastMoves": ["FROST_BREATH", "ICE_SHARD", "IRON_TAIL"],
 		"chargedMoves": ["AQUA_JET", "AURORA_BEAM", "BLIZZARD", "ICY_WIND", "WATER_PULSE"],
-		"legacyMoves": ["AQUA_JET", "ICE_SHARD", "ICY_WIND"],
+		"legacyMoves": ["AQUA_JET", "ICE_SHARD","ICY_WIND"],
 		"defaultIVs": {
 			"cp1500": [31, 0, 4, 8],
 			"cp2500": [40, 15, 15, 15]
@@ -4074,7 +4074,7 @@
 		},
 		"types": ["bug", "steel"],
 		"fastMoves": ["BUG_BITE", "STRUGGLE_BUG"],
-		"chargedMoves": ["EARTHQUAKE", "HEAVY_SLAM", "ROCK_TOMB", "MIRROR_SHOT"],
+		"chargedMoves": ["EARTHQUAKE", "HEAVY_SLAM", "ROCK_TOMB", "SAND_TOMB", "MIRROR_SHOT"],
 		"defaultIVs": {
 			"cp1500": [25, 2, 11, 11],
 			"cp2500": [40, 15, 15, 15]
@@ -7074,8 +7074,8 @@
 			"hp": 205
 		},
 		"types": ["water", "none"],
-		"fastMoves": ["WATERFALL","SURF"],
-		"chargedMoves": ["BLIZZARD", "HYDRO_PUMP", "THUNDER"],
+		"fastMoves": ["WATERFALL"],
+		"chargedMoves": ["BLIZZARD", "HYDRO_PUMP", "THUNDER", "SURF"],
 		"tags": ["legendary"],
 		"defaultIVs": {
 			"cp1500": [13.5, 2, 10, 9],
@@ -7247,7 +7247,7 @@
 		},
 		"types": ["grass", "ground"],
 		"fastMoves": ["BITE", "RAZOR_LEAF"],
-		"chargedMoves": ["EARTHQUAKE", "SOLAR_BEAM", "STONE_EDGE", "FRENZY_PLANT"],
+		"chargedMoves": ["EARTHQUAKE", "SOLAR_BEAM", "SAND_TOMB", "STONE_EDGE", "FRENZY_PLANT"],
 		"legacyMoves": ["FRENZY_PLANT"],
 		"defaultIVs": {
 			"cp1500": [18.5, 9, 13, 13],
@@ -8278,7 +8278,7 @@
 		},
 		"types": ["dragon", "ground"],
 		"fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
-		"chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "OUTRAGE"],
+		"chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "OUTRAGE", "SAND_TOMB"],
 		"defaultIVs": {
 			"cp1500": [14, 0, 9, 15],
 			"cp2500": [23, 8, 13, 9]
@@ -8729,7 +8729,7 @@
 		},
 		"types": ["ground", "flying"],
 		"fastMoves": ["FURY_CUTTER", "WING_ATTACK"],
-		"chargedMoves": ["AERIAL_ACE", "EARTHQUAKE", "NIGHT_SLASH"],
+		"chargedMoves": ["AERIAL_ACE", "EARTHQUAKE", "NIGHT_SLASH", "SAND_TOMB"],
 		"defaultIVs": {
 			"cp1500": [20.5, 9, 12, 10],
 			"cp2500": [40, 7, 8, 8]
@@ -14064,7 +14064,7 @@
 		"name": "Superpower",
 		"type": "fighting",
 		"power": 85,
-		"energy": 409,
+		"energy": 40,
 		"energyGain": 0,
 		"cooldown": 500,
 		"buffs": [-1, -1],

@@ -26,24 +26,12 @@
 
 	<!--Update section for updates-->
 	<h3>What's New</h3>
-	
-	<h4>v1.12.15 (December 6, 2019)</h4>
-	<ul>
-		<li>Multi-Battle results are now sorted from worst to best by default.</li>
-		<li>You can toggle Multi-Battle results to sort from best to worst instead.</li>
-	</ul>
 
-	<h4>v1.12.14 (December 5, 2019)</h4>
+	<h4>v1.12.16 (December 11, 2019)</h4>
 	<ul>
-		<li>Added Timeless Cup featured teams to Training Battles, with teams from guan87, JayDevin, JimmaBanks, Kieng, KnightsOoofRen, and MattyFBaby!</li>
-		<li>Added a team preview when selecting featured teams to battle</li>
+		<li>The site is now updated with all new moves and movepool changes!</li>
+		<li>Custom lists and Training Battle rosters will be updated in the coming days.</li>
 	</ul>
-	
-	<h4>v1.12.13 (December 4, 2019)</h4>
-	<ul>
-		<li>Reverted previous changes to the switch button in Training Battles to match in-game update</li>
-	</ul>
-
 	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>
 
 	<h3>Latest Article</h3>

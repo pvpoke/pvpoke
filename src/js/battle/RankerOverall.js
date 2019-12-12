@@ -70,8 +70,6 @@ var RankerMaster = (function () {
 				var cup = battle.getCup().name;
 				var categories = ["leads","closers","attackers","defenders"];
 
-				console.log(cup);
-
 				if(gm.loadedData < categories.length){
 					return;
 				}
