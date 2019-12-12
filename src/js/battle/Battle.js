@@ -1036,8 +1036,10 @@ function Battle(){
 
 			// Don't use a Charged Move if primary attack has a self debuff and you can build more energy
 
-			if((poke.bestChargedMove.buffTarget)&&( (poke.bestChargedMove.buffTarget == "self") && (poke.bestChargedMove.buffs[0] < 0 || poke.bestChargedMove.buffs[1] < 0))&&(poke.energy < poke.bestChargedMove.energy * 2)){
+			if((poke.bestChargedMove.buffTarget)&&( (poke.bestChargedMove.buffTarget == "self") && (poke.bestChargedMove.buffs[0] < 0 || poke.bestChargedMove.buffs[1] < 0))&&(poke.energy < Math.min(poke.bestChargedMove.energy * 2, 100))){
 				useChargedMove = false;
+				
+				self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because it wants to minimize time debuffed");
 			}
 
 			if(poke.farmEnergy){
@@ -1068,16 +1070,16 @@ function Battle(){
 				self.logDecision(turns, poke, " has " + move.name + " charged");
 
 				// Use charged move if it would KO the opponent
-				if((move.damage >= opponent.hp) && (! poke.farmEnergy) && (!chargedMoveUsed)){
+				if((move.damage >= opponent.hp) && (! poke.farmEnergy) && (move.energy <= poke.bestChargedMove.energy) && (!chargedMoveUsed)){
 
 					// Don't try to KO with a self debuffing Charged Move if they still have shields
 					var avoidSelfDebuff = false;
 
-					if((opponent.shields > 0)&&(move.buffTarget)&&(move.buffTarget == "self")&&(move.buffs[0] < 0 || move.buffs[1] < 0)&&(poke.energy < move.energy * 2)){
+					if((opponent.shields > 0)&&(move.buffTarget)&&(move.buffTarget == "self")&&(move.buffs[0] < 0 || move.buffs[1] < 0)&&(poke.energy < Math.min(move.energy * 2, 100))){
 						avoidSelfDebuff = true;
 					}
 
-					if((opponent.shields > 0)&&(poke.bestChargedMove.buffTarget)&&(poke.bestChargedMove.buffTarget == "self")&&(poke.bestChargedMove.buffs[0] < 0 || poke.bestChargedMove.buffs[1] < 0)&&(poke.bestChargedMove.energy < move.energy * 2)){
+					if((opponent.shields > 0)&&(poke.bestChargedMove.buffTarget)&&(poke.bestChargedMove.buffTarget == "self")&&(poke.bestChargedMove.buffs[0] < 0 || poke.bestChargedMove.buffs[1] < 0)&&(poke.bestChargedMove.energy < Math.min(move.energy * 2, 100))){
 						avoidSelfDebuff = true;
 					}
 
@@ -1097,7 +1099,7 @@ function Battle(){
 
 				// Use this charged move if it has a guaranteed stat effect and this Pokemon has high fast move damage
 
-				if((move.buffApplyChance)&&(move.buffApplyChance == 1)&&(poke.fastMove.damage / ((poke.fastMove.cooldown / 500) * opponent.stats.hp) >= .025)&&(opponent.hp > poke.bestChargedMove.damage)){
+				if((move.buffApplyChance)&&(move.buffApplyChance == 1)&&(poke.fastMove.damage / ((poke.fastMove.cooldown / 500) * opponent.stats.hp) >= .025)&&(opponent.hp > poke.bestChargedMove.damage)&&((move.buffs[0] > 0)||(move.buffs[1] > 0))){
 					action = new TimelineAction(
 						"charged",
 						poke.index,
@@ -1112,20 +1114,20 @@ function Battle(){
 
 				// Use charged move if the opponent has a shield
 
-				if((opponent.shields > 0)  && (!chargedMoveUsed) && (! poke.farmEnergy) && ((move == poke.bestChargedMove)||( (poke.baitShields) && (poke.energy >= poke.bestChargedMove.energy) ))){
-
+				if((opponent.shields > 0)  && (!chargedMoveUsed) && (! poke.farmEnergy) && (((!poke.baitShields)&&(move == poke.bestChargedMove))||( (poke.baitShields) && (poke.energy >= poke.bestChargedMove.energy) && (move == poke.fastestChargedMove)))){
+					
 					// Don't use a charged move if a fast move will result in a KO
 
 					if((opponent.hp > poke.fastMove.damage)&&(opponent.hp > (poke.fastMove.damage *(opponent.fastMove.cooldown / poke.fastMove.cooldown)))){
 
 						var avoidSelfDebuff = false;
 
-						if((opponent.shields > 0)&&(move.buffTarget)&&(move.buffTarget == "self")&&(move.buffs[0] < 0 || move.buffs[1] < 0)&&(poke.energy < move.energy * 2)){
+						if((opponent.shields > 0)&&(move.buffTarget)&&(move.buffTarget == "self")&&(move.buffs[0] < 0 || move.buffs[1] < 0)&&(poke.energy < Math.min(move.energy * 2, 100))){
 							avoidSelfDebuff = true;
 						}
 
-						if((opponent.shields > 0)&&(poke.bestChargedMove.buffTarget)&&(poke.bestChargedMove.buffTarget == "self")&&(poke.bestChargedMove.buffs[0] < 0 || poke.bestChargedMove.buffs[1] < 0)&&(poke.bestChargedMove.energy < move.energy * 2)){
-							avoidSelfDebuff = true;
+						if((opponent.shields > 0)&&(poke.bestChargedMove.buffTarget)&&(poke.bestChargedMove.buffTarget == "self")&&(poke.bestChargedMove.buffs[0] < 0 || poke.bestChargedMove.buffs[1] < 0)&&(poke.energy < Math.min(poke.bestChargedMove.energy * 2, 100))){
+							//avoidSelfDebuff = true;
 						}
 
 						if(! avoidSelfDebuff){
@@ -1154,6 +1156,14 @@ function Battle(){
 
 					self.logDecision(turns, poke, " will be knocked out by opponent's fast move this turn");
 				}
+				
+				// Will a 1 turn Fast Move knock it out next turn?
+				if((poke.hp <= opponent.fastMove.damage * 2)&&(opponent.fastMove.cooldown == 500)){
+					nearDeath = true;
+
+					self.logDecision(turns, poke, " will be knocked out by opponent's fast move next turn");
+				}
+				
 
 				// Will a Charged Move knock it out?
 				if(poke.shields == 0){
@@ -1223,7 +1233,7 @@ function Battle(){
 
 				// Don't use this Charged Move if a better one is available
 
-				if((poke.bestChargedMove)&&(poke.energy >= poke.bestChargedMove.energy)&&(move.damage < poke.bestChargedMove.damage)){
+				if((poke.bestChargedMove)&&(poke.energy >= poke.bestChargedMove.energy)&&(move.damage < poke.bestChargedMove.damage)&&((!poke.baitShields)||(opponent.shields == 0))){
 					nearDeath = false;
 
 					self.logDecision(turns, poke, " doesn't use " + move.name + " because a better move is available");

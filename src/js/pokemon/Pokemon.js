@@ -461,6 +461,8 @@ function Pokemon(id, i, b){
 			}
 
 			self.activeChargedMoves.sort((a,b) => (a.energy > b.energy) ? 1 : ((b.energy > a.energy) ? -1 : 0));
+			
+			self.fastestChargedMove = self.activeChargedMoves[0];
 
 			if(self.activeChargedMoves.length > 1){
 				if((self.activeChargedMoves[1].energy == self.activeChargedMoves[0].energy)&&(self.activeChargedMoves[1].buffs)){
