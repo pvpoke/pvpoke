@@ -44,6 +44,10 @@
 				"chargedMoves": ["EARTHQUAKE", "MIRROR_SHOT"]
 			},
 			{
+				"speciesId": "dewgong",
+				"chargedMoves": ["ICY_WIND","WATER_PULSE"]
+			},
+			{
 				"speciesId": "gliscor",
 				"chargedMoves": ["EARTHQUAKE", "NIGHT_SLASH"]
 			},
@@ -795,12 +799,21 @@
 				"chargedMoves": ["BLAST_BURN", "SOLAR_BEAM"]
 			},
 			{
+				"speciesId": "charizard",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"]
+			},
+			{
 				"speciesId": "mew",
 				"chargedMoves": ["OVERHEAT", "PSYSHOCK"]
 			},
 			{
 				"speciesId": "machamp",
 				"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
+			},
+			{
+				"speciesId": "snorlax",
+				"chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
 			},
 			{
 				"speciesId": "muk_alolan",
@@ -855,6 +868,19 @@
 			{
 				"speciesId": "mewtwo",
 				"chargedMoves": ["PSYSTRIKE","ICE_BEAM"]
+			},
+			{
+				"speciesId": "charizard",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
+			},
+			{
+				"speciesId": "garchomp",
+				"chargedMoves": ["OUTRAGE","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "snorlax",
+				"chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
 			}
 		]
 	},
@@ -988,6 +1014,11 @@
 			{
 				"speciesId": "gardevoir",
 				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "charizard",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["BLAST_BURN", "OUTRAGE"]
 			},
 			{
 				"speciesId": "muk_alolan",
@@ -1410,6 +1441,10 @@
 				"chargedMoves": ["X_SCISSOR","CLOSE_COMBAT"]
 			},
 			{
+				"speciesId": "dewgong",
+				"chargedMoves": ["ICY_WIND","WATER_PULSE"]
+			},
+			{
 				"speciesId": "tentacruel",
 				"chargedMoves": ["ACID_SPRAY","SLUDGE_WAVE"]
 			},
@@ -1549,12 +1584,20 @@
 				"weight": 2
 			},
 			{
+				"speciesId": "dewgong",
+				"weight": 2
+			},
+			{
+				"speciesId": "skuntank",
+				"weight": 2
+			},
+			{
 				"speciesId": "venusaur",
 				"weight": 3
 			},
 			{
 				"speciesId": "dragonair",
-				"weight": 4
+				"weight": 3
 			}
 		]
 	}
