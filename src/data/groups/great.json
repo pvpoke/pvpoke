@@ -2,7 +2,7 @@
 	{
 		"speciesId":"azumarill",
 		"fastMove":"BUBBLE",
-		"chargedMoves":["ICE_BEAM","PLAY_ROUGH"]
+		"chargedMoves":["PLAY_ROUGH","HYDRO_PUMP"]
 	},
 	{
 		"speciesId":"tropius",
@@ -17,7 +17,7 @@
 	{
 		"speciesId":"medicham",
 		"fastMove":"COUNTER",
-		"chargedMoves":["POWER_UP_PUNCH","ICE_PUNCH"]
+		"chargedMoves":["DYNAMIC_PUNCH","ICE_PUNCH"]
 	},
 	{
 		"speciesId":"skarmory",
@@ -57,7 +57,7 @@
 	{
 		"speciesId":"melmetal",
 		"fastMove":"THUNDER_SHOCK",
-		"chargedMoves":["ROCK_SLIDE","THUNDERBOLT"]
+		"chargedMoves":["ROCK_SLIDE","SUPERPOWER"]
 	},
 	{
 		"speciesId":"steelix",
@@ -80,11 +80,6 @@
 		"chargedMoves":["MUD_BOMB","BLIZZARD"]
 	},
 	{
-		"speciesId":"quagsire",
-		"fastMove":"MUD_SHOT",
-		"chargedMoves":["ACID_SPRAY","STONE_EDGE"]
-	},
-	{
 		"speciesId":"swampert",
 		"fastMove":"MUD_SHOT",
 		"chargedMoves":["HYDRO_CANNON","EARTHQUAKE"]
@@ -92,7 +87,7 @@
 	{
 		"speciesId":"forretress",
 		"fastMove":"BUG_BITE",
-		"chargedMoves":["HEAVY_SLAM","EARTHQUAKE"]
+		"chargedMoves":["MIRROR_SHOT","EARTHQUAKE"]
 	},
 	{
 		"speciesId":"froslass",
@@ -101,17 +96,17 @@
 	},
 	{
 		"speciesId":"muk_alolan",
-		"fastMove":"POISON_JAB",
-		"chargedMoves":["DARK_PULSE","ACID_SPRAY"]
+		"fastMove":"SNARL",
+		"chargedMoves":["DARK_PULSE","SLUDGE_WAVE"]
 	},
 	{
 		"speciesId":"sableye",
 		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["FOUL_PLAY","SHADOW_SNEAKS"]
+		"chargedMoves":["FOUL_PLAY","SHADOW_SNEAK"]
 	},
 	{
 		"speciesId":"marowak_alolan",
-		"fastMove":"HEX",
+		"fastMove":"FIRE_SPIN",
 		"chargedMoves":["SHADOW_BALL","BONE_CLUB"]
 	},
 	{
@@ -122,12 +117,12 @@
 	{
 		"speciesId":"mew",
 		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["ICE_BEAM","GRASS_KNOT"]
+		"chargedMoves":["OVERHEAT","PSYSHOCK"]
 	},
 	{
 		"speciesId":"deoxys_defense",
 		"fastMove":"COUNTER",
-		"chargedMoves":["PSYCHO_BOOST","ROCK_SLIDE"]
+		"chargedMoves":["THUNDERBOLT","ROCK_SLIDE"]
 	},
 	{
 		"speciesId":"haunter",
@@ -152,12 +147,7 @@
 	{
 		"speciesId":"bronzong",
 		"fastMove":"CONFUSION",
-		"chargedMoves":["PSYSHOCK","FLASH_CANNON"]
-	},
-	{
-		"speciesId":"wormadam_trash",
-		"fastMove":"CONFUSION",
-		"chargedMoves":["IRON_HEAD","BUG_BUZZ"]
+		"chargedMoves":["PSYSHOCK","BULLDOZE"]
 	},
 	{
 		"speciesId":"togekiss",
@@ -165,13 +155,18 @@
 		"chargedMoves":["ANCIENT_POWER","FLAMETHROWER"]
 	},
 	{
-		"speciesId":"lugia",
-		"fastMove":"DRAGON_TAIL",
-		"chargedMoves":["SKY_ATTACK","FUTURE_SIGHT"]
+		"speciesId":"registeel",
+		"fastMove":"LOCK_ON",
+		"chargedMoves":["FLASH_CANNON","FOCUS_BLAST"]
 	},
 	{
 		"speciesId":"mantine",
 		"fastMove":"BUBBLE",
 		"chargedMoves":["BUBBLE_BEAM","ICE_BEAM"]
+	},
+	{
+		"speciesId":"vigoroth",
+		"fastMove":"COUNTER",
+		"chargedMoves":["BODY_SLAM","BULLDOZE"]
 	}
 ]

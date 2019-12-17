@@ -693,8 +693,7 @@ a.random {
     opacity: 1; }
   .battle-window[phase="animating"] .team-indicator {
     display: none; }
-  .battle-window[phase="animating"] .controls .button-stack,
-  .battle-window[phase="animating"] .controls .move-bar {
+  .battle-window[phase="animating"] .controls .button-stack {
     display: none !important; }
   .battle-window[phase="countdown"] .top, .battle-window[phase="countdown"] .controls {
     display: none; }

@@ -52,9 +52,9 @@
 		"link": "https://www.youtube.com/c/JayDevin",
 		"pokemon": [
 			{
-				"speciesId": "lapras",
-				"fastMove": "ICE_SHARD",
-				"chargedMoves": ["SURF","SKULL_BASH"]
+				"speciesId": "sealeo",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["BODY_SLAM","AURORA_BEAM"]
 			},
 			{
 				"speciesId": "dragonair",
@@ -67,14 +67,14 @@
 				"chargedMoves": ["THUNDER_PUNCH","ACID_SPRAY"]
 			},
 			{
-				"speciesId": "sudowoodo",
-				"fastMove": "COUNTER",
-				"chargedMoves": ["ROCK_SLIDE","EARTHQUAKE"]
+				"speciesId": "seadra",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["AURORA_BEAM","DRAGON_PULSE"]
 			},
 			{
-				"speciesId": "blaziken",
-				"fastMove": "COUNTER",
-				"chargedMoves": ["BLAZE_KICK","BLAST_BURN"]
+				"speciesId": "charizard",
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"]
 			},
 			{
 				"speciesId": "victreebel",
@@ -206,6 +206,48 @@
 				"speciesId": "kingdra",
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["OUTRAGE","none"]
+			}
+		]
+	},
+	{
+		"name": "limonlime94",
+		"slug": "limonlime94",
+		"img": "limonlime94",
+		"cup": "timeless",
+		"cupName": "Timeless",
+		"league": 1500,
+		"description": "Hey battlers! I create YouTube PvP video uploads, livestreams every weekend as well as creating various meta guides that have helped others perform well in their tournaments. Yes, you may have heard that I am the founder of #battlers on Twitter! ",
+		"link": "https://www.youtube.com/c/JayDevin",
+		"pokemon": [
+			{
+				"speciesId": "meganium",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "lapras",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["SURF","SKULL_BASH"]
+			},
+			{
+				"speciesId": "dragonair",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["AQUA_TAIL","DRAGON_PULSE"]
+			},
+			{
+				"speciesId": "ninetales",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["PSYSHOCK","OVERHEAT"]
+			},
+			{
+				"speciesId": "whiscash",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["MUD_BOMB","BLIZZARD"]
+			},
+			{
+				"speciesId": "kingdra",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["OUTRAGE","OCTAZOOKA"]
 			}
 		]
 	},

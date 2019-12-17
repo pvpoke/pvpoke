@@ -65,11 +65,6 @@
 		"chargedMoves":["POISON_FANG","SILVER_WIND"]
 	},
 	{
-		"speciesId":"blastoise",
-		"fastMove":"WATER_GUN",
-		"chargedMoves":["HYDRO_CANNON","ICE_BEAM"]
-	},
-	{
 		"speciesId":"swampert",
 		"fastMove":"MUD_SHOT",
 		"chargedMoves":["HYDRO_CANNON","EARTHQUAKE"]
@@ -103,11 +98,6 @@
 		"speciesId":"castform_sunny",
 		"fastMove":"EMBER",
 		"chargedMoves":["WEATHER_BALL_FIRE","SOLAR_BEAM"]
-	},
-	{
-		"speciesId":"castform_rainy",
-		"fastMove":"WATER_GUN",
-		"chargedMoves":["WEATHER_BALL_WATER","THUNDER"]
 	},
 	{
 		"speciesId":"dragonair",
@@ -170,19 +160,9 @@
 		"chargedMoves":["LEAF_BLADE","RETURN"]
 	},
 	{
-		"speciesId":"gloom",
-		"fastMove":"RAZOR_LEAF",
-		"chargedMoves":["PETAL_BLIZZARD","SLUDGE_BOMB"]
-	},
-	{
 		"speciesId":"ivysaur",
 		"fastMove":"VINE_WHIP",
 		"chargedMoves":["POWER_WHIP","SLUDGE_BOMB"]
-	},
-	{
-		"speciesId":"sceptile",
-		"fastMove":"FURY_CUTTER",
-		"chargedMoves":["LEAF_BLADE","EARTHQUAKE"]
 	},
 	{
 		"speciesId":"sudowoodo",

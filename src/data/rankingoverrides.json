@@ -1630,16 +1630,20 @@
 				"chargedMoves": ["PSYSHOCK", "BULLDOZE"]
 			},
 			{
+				"speciesId": "haunter",
+				"chargedMoves": ["SHADOW_PUNCH", "SHADOW_BALL"]
+			},
+			{
+				"speciesId": "blaziken",
+				"chargedMoves": ["BLAZE_KICK", "BLAST_BURN"]
+			},
+			{
 				"speciesId": "marowak_alolan",
 				"fastMove": "FIRE_SPIN"
 			},
 			{
 				"speciesId": "sealeo",
 				"fastMove": "POWDER_SNOW"
-			},
-			{
-				"speciesId": "muk",
-				"chargedMoves": ["THUNDER_PUNCH", "DARK_PULSE"]
 			},
 			{
 				"speciesId": "ludicolo",
@@ -1666,10 +1670,6 @@
 				"fastMove": "CONFUSION"
 			},
 			{
-				"speciesId": "ninetales_alolan",
-				"fastMove": "CHARM"
-			},
-			{
 				"speciesId": "probopass",
 				"fastMove": "SPARK"
 			},
@@ -1692,6 +1692,7 @@
 			},
 			{
 				"speciesId": "muk_alolan",
+				"fastMove": "SNARL",
 				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"]
 			},
 			{
