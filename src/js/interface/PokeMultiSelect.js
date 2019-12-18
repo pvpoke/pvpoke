@@ -39,7 +39,7 @@ function PokeMultiSelect(element){
 		while(window.localStorage.key(i) !== null){
 			var key = window.localStorage.key(i);
 
-			if(key.indexOf("google") == -1){
+			if((key !== "undefined")&&(key.indexOf("google") == -1)){
 				$el.find(".quick-fill-select").append("<option value=\""+key+"\" type=\"custom\">"+key+"</option>");
 			}
 
@@ -518,6 +518,9 @@ function PokeMultiSelect(element){
 		if(selectedGroupType != "custom"){
 			// Prompt to save a new group if a custom one isn't selected
 			modalWindow("Save Group", $(".save-list").eq(0));
+			
+			// Add a property to the modal window to identify the index of this selector
+			$(".modal .save-list").attr("selector-index", $(".poke.multi").index($el));
 		} else{
 			self.saveCustomList(selectedGroup, false);
 		}
@@ -527,10 +530,14 @@ function PokeMultiSelect(element){
 	// Save data to cookie
 
 	$("body").on("click", ".modal .button.save", function(e){
+		
+		// If the save list is for this selector, save it
+		
+		if($(".modal .save-list").attr("selector-index") == $(".poke.multi").index($el)){
+			self.saveCustomList($(".modal input.list-name").val(), true);
 
-		self.saveCustomList($(".modal input.list-name").val(), true);
-
-		closeModalWindow();
+			closeModalWindow();
+		}
 	});
 
 	// Open the delete group window
@@ -538,7 +545,7 @@ function PokeMultiSelect(element){
 	$el.find(".delete-btn").click(function(e){
 		var name = $el.find(".quick-fill-select option:selected").html();
 
-		modalWindow("Delete Group", $(".delete-list-confirm"));
+		modalWindow("Delete Group", $(".delete-list-confirm").first());
 
 		$(".modal .name").html(name);
 	});

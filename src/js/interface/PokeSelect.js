@@ -668,7 +668,7 @@ function PokeSelect(element, i){
 
 		var value = parseFloat($el.find("input.level").val());
 
-		if((value >= 1) && (value <=40) && (value % 0.5 == 0)){
+		if((value >= 1) && (value <=45) && (value % 0.5 == 0)){
 			// Valid level
 
 			selectedPokemon.setLevel(value);
