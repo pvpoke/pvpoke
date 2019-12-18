@@ -100,6 +100,17 @@ function Battle(){
 					players[1].getAI().evaluateMatchup(turns, pokemon[1], pokemon[0], players[0]);
 				}
 			}
+
+			// Display any current buffs or debuffs
+
+			var statNames = ["Attack","Defense"];
+			var statDescriptions = ["fell sharply","fell sharply","fell sharply","fell","","rose","rose sharply","rose sharply","rose sharply"];
+
+			for(var i = poke.statBuffs.length-1; i >= 0; i--){
+				if(poke.statBuffs[i] != 0){
+					turnMessages.push({ index: poke.index, str: statNames[i] + " " + statDescriptions[poke.statBuffs[i]+4] +"!"});
+				}
+			}
 		}
 	}
 
@@ -1038,7 +1049,7 @@ function Battle(){
 
 			if((poke.bestChargedMove.buffTarget)&&( (poke.bestChargedMove.buffTarget == "self") && (poke.bestChargedMove.buffs[0] < 0 || poke.bestChargedMove.buffs[1] < 0))&&(poke.energy < Math.min(poke.bestChargedMove.energy * 2, 100))){
 				useChargedMove = false;
-				
+
 				self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because it wants to minimize time debuffed");
 			}
 
@@ -1115,7 +1126,7 @@ function Battle(){
 				// Use charged move if the opponent has a shield
 
 				if((opponent.shields > 0)  && (!chargedMoveUsed) && (! poke.farmEnergy) && (((!poke.baitShields)&&(move == poke.bestChargedMove))||( (poke.baitShields) && (poke.energy >= poke.bestChargedMove.energy) && (move == poke.fastestChargedMove)))){
-					
+
 					// Don't use a charged move if a fast move will result in a KO
 
 					if((opponent.hp > poke.fastMove.damage)&&(opponent.hp > (poke.fastMove.damage *(opponent.fastMove.cooldown / poke.fastMove.cooldown)))){
@@ -1156,14 +1167,14 @@ function Battle(){
 
 					self.logDecision(turns, poke, " will be knocked out by opponent's fast move this turn");
 				}
-				
+
 				// Will a 1 turn Fast Move knock it out next turn?
 				if((poke.hp <= opponent.fastMove.damage * 2)&&(opponent.fastMove.cooldown == 500)){
 					nearDeath = true;
 
 					self.logDecision(turns, poke, " will be knocked out by opponent's fast move next turn");
 				}
-				
+
 
 				// Will a Charged Move knock it out?
 				if(poke.shields == 0){
@@ -1298,6 +1309,10 @@ function Battle(){
 				for(var n = 0; n < actions.length; n++){
 					if((actions[n].type == "switch")&&(actions[n].actor == phaseProps.actors[i])){
 						switchesAnswered++;
+
+						// Reset the incoming Pokemon's buffs and debuffs
+						players[actions[n].actor].getTeam()[actions[n].value].statBuffs = [0,0];
+						players[actions[n].actor].getTeam()[actions[n].value].startStatBuffs = [0,0];
 					}
 				}
 			}
