@@ -64,6 +64,11 @@
 						<div class="check" value="atk"><span></span>Atk</div>
 						<div class="check" value="def"><span></span>Def</div>
 					</div>
+					<div class="level-cap-group">
+						<div>Level Cap:</div>
+						<div class="check on" value="40"><span></span>40</div>
+						<div class="check" value="45"><span></span>45</div>
+					</div>
 					<button class="maximize-stats">Maximize</button>
 					<button class="restore-default">Default</button>
 				</div>

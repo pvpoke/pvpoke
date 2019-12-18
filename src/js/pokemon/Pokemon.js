@@ -33,6 +33,7 @@ function Pokemon(id, i, b){
 	this.startEnergy = 0;
 	this.startCooldown = 0;
 	this.level = 40;
+	this.levelCap = 40;
 	this.cpm = 0.79030001;
 	this.priority = 0; // Charged move priority
 	this.fastMovePool = [];
@@ -232,7 +233,7 @@ function Pokemon(id, i, b){
             this.ivs.atk = 15;
             this.ivs.def = 15;
             this.ivs.hp = 15;
-            this.setLevel(45, false);
+            this.setLevel(self.levelCap, false);
         }
 		
 		var index = this.level - 1;		
@@ -251,7 +252,7 @@ function Pokemon(id, i, b){
 
 	this.generateIVCombinations = function(sortStat, sortDirection, resultCount, filters) {
 		var targetCP = battle.getCP();
-		var level = 45;
+		var level = self.levelCap;
         var atkIV = 15;
         var defIV = 15;
         var hpIV = 15;
@@ -288,7 +289,7 @@ function Pokemon(id, i, b){
 					level = 0.5;
 					calcCP = 0;
 
-					while((level < 45)&&(calcCP < targetCP)){
+					while((level < self.levelCap)&&(calcCP < targetCP)){
 						level += 0.5;
 						
 						if(level % 1 == 0){
