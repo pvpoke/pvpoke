@@ -33,6 +33,8 @@ require_once 'header.php'; ?>
 		<div class="supporter">Vlaada</div>
 		<div class="supporter">FunkyGaaroth</div>
 		<div class="supporter">autonomyfairy</div>
+		<div class="supporter">JEngels21</div>
+		<div class="supporter">PirateUnicornNK</div>
 	</div>
 
 	<h2 class="center">Master Supporters</h2>
@@ -99,6 +101,14 @@ require_once 'header.php'; ?>
 		<div class="supporter-container">
 			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/vergyverg.jpg" />
 			<div class="supporter"><a href="https://www.youtube.com/channel/UCOeIQWAJYD-zy7T5-IRZy7Q" target="_blank">Vergyverg</a></div>
+		</div>
+		<div class="supporter-container">
+			<div class="space"></div>
+			<div class="supporter"><a href="https://twitter.com/PirateUnicornNK" target="_blank">Mark Pain</a></div>
+		</div>
+		<div class="supporter-container">
+			<div class="space"></div>
+			<div class="supporter"><a href="https://twitter.com/PirateUnicornNK" target="_blank">PirateUnicornNK</a></div>
 		</div>
 	</div>
 </div>
