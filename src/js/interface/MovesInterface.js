@@ -62,7 +62,7 @@ var InterfaceMaster = (function () {
 				if(mode == "fast"){
 					headers.push("E", "T", "DPT", "EPT");
 				} else{
-					headers.push("E", "DPE");
+					headers.push("E", "DPE", "Effects");
 				}
 
 				for(var i = 0; i < gm.data.moves.length; i++){
@@ -88,6 +88,7 @@ var InterfaceMaster = (function () {
 					} else if(mode == "charged"){
 						obj.energy = move.energy;
 						obj.dpe = Math.floor( (move.power / move.energy) * 100) / 100;
+						obj.effects = getStatusEffectString(move);
 					}
 
 					// Edge cases
@@ -399,6 +400,36 @@ var InterfaceMaster = (function () {
 				if($(this).hasClass("stab")){
 					self.generateExploreResults(false);
 				}
+			}
+
+			// Get status effect string from move
+			
+			function getStatusEffectString(move){
+				if (!move.buffs) {
+					return '';
+				}
+				var atk = getStatusEffectStatString(move.buffs[0], 'atk');
+				var def = getStatusEffectStatString(move.buffs[1], 'def');
+				var buffApplyChance = parseFloat(move.buffApplyChance)*100 + '%';
+				var buffTarget = move.buffTarget;
+				var stringArray = [buffApplyChance, atk, def, buffTarget];
+				for (var i = 0; i < stringArray.length; i++) {
+					stringArray[i] = "<div>" + stringArray[i] + "</div>";
+				}
+				return stringArray.join('');
+			}
+
+			// Get stats string from move for status effects
+			
+			function getStatusEffectStatString(stat, type){
+				if (stat === 0) {
+					return "";
+				}
+				var statString = stat;
+				if (stat > 0) {
+					statString = "+" + statString;
+				}
+				return statString + " " + type;
 			}
 
 		}
