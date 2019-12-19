@@ -10,14 +10,14 @@
 		"link": "https://twitter.com/guan87_pogo",
 		"pokemon": [
 			{
-				"speciesId": "haunter",
-				"fastMove": "SHADOW_CLAW",
-				"chargedMoves": ["SHADOW_BALL","SHADOW_PUNCH"]
+				"speciesId": "kingdra",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["OUTRAGE","OCTAZOOKA"]
 			},
 			{
-				"speciesId": "drapion",
-				"fastMove": "ICE_FANG",
-				"chargedMoves": ["AQUA_TAIL","CRUNCH"]
+				"speciesId": "muk",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["THUNDER_PUNCH","DARK_PULSE"]
 			},
 			{
 				"speciesId": "charizard",
@@ -30,9 +30,9 @@
 				"chargedMoves": ["MUD_BOMB","BLIZZARD"]
 			},
 			{
-				"speciesId": "sealeo",
-				"fastMove": "POWDER_SNOW",
-				"chargedMoves": ["AURORA_BEAM","BODY_SLAM"]
+				"speciesId": "dewgong",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["ICY_WIND","WATER_PULSE"]
 			},
 			{
 				"speciesId": "victreebel",
@@ -121,7 +121,7 @@
 			{
 				"speciesId": "kingdra",
 				"fastMove": "DRAGON_BREATH",
-				"chargedMoves": ["OUTRAGE","HYDRO_PUMP"]
+				"chargedMoves": ["OUTRAGE","OCTAZOOKA"]
 			}
 		]
 	},
@@ -158,12 +158,12 @@
 			{
 				"speciesId": "dragonair",
 				"fastMove": "DRAGON_BREATH",
-				"chargedMoves": ["AQUA_TAIL","RETURN"]
+				"chargedMoves": ["AQUA_TAIL","DRAGON_PULSE"]
 			},
 			{
 				"speciesId": "kingdra",
 				"fastMove": "DRAGON_BREATH",
-				"chargedMoves": ["OUTRAGE","HYDRO_PUMP"]
+				"chargedMoves": ["OUTRAGE","OCTAZOOKA"]
 			}
 		]
 	},
@@ -190,7 +190,7 @@
 			{
 				"speciesId": "dragonair",
 				"fastMove": "DRAGON_BREATH",
-				"chargedMoves": ["RETURN","AQUA_TAIL"]
+				"chargedMoves": ["DRAGON_PULSE","AQUA_TAIL"]
 			},
 			{
 				"speciesId": "whiscash",
@@ -205,7 +205,7 @@
 			{
 				"speciesId": "kingdra",
 				"fastMove": "DRAGON_BREATH",
-				"chargedMoves": ["OUTRAGE","none"]
+				"chargedMoves": ["OUTRAGE","OCTAZOOKA"]
 			}
 		]
 	},
@@ -216,8 +216,8 @@
 		"cup": "timeless",
 		"cupName": "Timeless",
 		"league": 1500,
-		"description": "Hey battlers! I create YouTube PvP video uploads, livestreams every weekend as well as creating various meta guides that have helped others perform well in their tournaments. Yes, you may have heard that I am the founder of #battlers on Twitter! ",
-		"link": "https://www.youtube.com/c/JayDevin",
+		"description": "Pokemon Go PVP. Team Socal Swablus #swablupower",
+		"link": "https://twitter.com/limonlime94",
 		"pokemon": [
 			{
 				"speciesId": "meganium",
