@@ -331,6 +331,15 @@ header {
         .poke .poke-stats .advanced-section .maximize-section .check span {
           width: 12px;
           height: 12px; }
+      .poke .poke-stats .advanced-section .maximize-section .level-cap-group {
+        display: flex;
+        margin-top: 10px; }
+        .poke .poke-stats .advanced-section .maximize-section .level-cap-group div:first-of-type {
+          font-size: 12px;
+          font-weight: bold;
+          margin-right: 10px; }
+        .poke .poke-stats .advanced-section .maximize-section .level-cap-group .check {
+          margin-right: 10px; }
       .poke .poke-stats .advanced-section .maximize-section .maximize-stats {
         font-size: 12px;
         margin-top: 5px; }

@@ -566,6 +566,21 @@ header{
 						height:12px;
 					}
 				}
+				
+				.level-cap-group{
+					display:flex;
+					margin-top:10px;
+					
+					div:first-of-type{
+						font-size: 12px;
+						font-weight: bold;
+						margin-right: 10px;
+					}
+					
+					.check{
+						margin-right:10px;
+					}
+				}
 
 
 				.maximize-stats{

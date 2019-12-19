@@ -26,6 +26,15 @@
 
 	<!--Update section for updates-->
 	<h3>What's New</h3>
+	
+	<h4>v1.12.18 (December 18, 2019)</h4>
+	<ul>
+		<li>Pokemon can now be up to level 45! Experiment with Pokemon levels and see how they impact potential performance.</li>
+		<ul>
+			<li>This update isn't reflected in the rankings yet</li>
+		</ul>
+		<li>Fixed an issue where saving custom groups would result in additional "undefined" groups being listed</li>
+	</ul>
 
 	<h4>v1.12.16 (December 11, 2019)</h4>
 	<ul>

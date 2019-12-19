@@ -618,8 +618,10 @@ function PokeSelect(element, i){
 	// Turn maximize stats on and off
 
     $el.find(".maximize-stats").on("click", function(e){
-		var sortStat = $el.find(".maximize-section .check.on").first().attr("value");
-
+		var sortStat = $el.find(".maximize-section .check-group .check.on").first().attr("value");
+		var levelCap = parseInt($el.find(".maximize-section .level-cap-group .check.on").first().attr("value"));
+		
+		selectedPokemon.levelCap = levelCap;
         selectedPokemon.maximizeStat(sortStat);
 
         selectedPokemon.isCustom = true;
@@ -640,7 +642,7 @@ function PokeSelect(element, i){
 	// Select an option from the maximize section
 
 	$el.find(".maximize-section .check").on("click", function(e){
-		$el.find(".maximize-section .check").removeClass("on");
+		$(e.target).closest(".check").parent().find(".check").removeClass("on");
 	});
 
 	// Restore default IV's
@@ -668,7 +670,7 @@ function PokeSelect(element, i){
 
 		var value = parseFloat($el.find("input.level").val());
 
-		if((value >= 1) && (value <=40) && (value % 0.5 == 0)){
+		if((value >= 1) && (value <=45) && (value % 0.5 == 0)){
 			// Valid level
 
 			selectedPokemon.setLevel(value);
