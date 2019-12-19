@@ -47,6 +47,10 @@
 				<option value="atk">Maximum Attack</option>
 				<option value="def">Maximum Defense</option>
 			</select>
+			<select class="pokemon-level-cap-select">
+				<option value="40">Default Level Cap (40)</option>
+				<option value="45">Buddy Level Cap (45)</option>
+			</select>
 			<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
 		</div>
 	</div>

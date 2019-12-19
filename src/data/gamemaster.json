@@ -10729,7 +10729,7 @@
 			"hp": 137
 		},
 		"types": ["poison", "none"],
-		"fastMoves": ["POUND", "ACID"],
+		"fastMoves": ["POUND", "TAKE_DOWN"],
 		"chargedMoves": ["GUNK_SHOT", "SEED_BOMB", "GUNK_SHOT"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
@@ -10745,7 +10745,7 @@
 			"hp": 190
 		},
 		"types": ["poison", "none"],
-		"fastMoves": ["INFESTATION", "ACID"],
+		"fastMoves": ["INFESTATION", "TAKE_DOWN"],
 		"chargedMoves": ["ACID_SPRAY", "SEED_BOMB", "GUNK_SHOT", "BODY_SLAM"],
 		"defaultIVs": {
 			"cp1500": [25.5, 0, 6, 3],
