@@ -27,6 +27,12 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 	
+	<h4>v1.12.19 (December 20, 2019)</h4>
+	<ul>
+		<li>The <a href="<?php echo $WEB_ROOT; ?>moves/">Moves</a> page now lists stat buffs and debuffs for Charged Moves</li>
+		<li>By default, Pokemon no longer bait shields with self-debuffing moves</li>
+	</ul>
+	
 	<h4>v1.12.18 (December 18, 2019)</h4>
 	<ul>
 		<li>Pokemon can now be up to level 45! Experiment with Pokemon levels and see how they impact potential performance.</li>

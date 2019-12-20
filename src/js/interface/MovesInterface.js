@@ -408,13 +408,13 @@ var InterfaceMaster = (function () {
 				if (!move.buffs) {
 					return '';
 				}
-				var atk = getStatusEffectStatString(move.buffs[0], 'atk');
-				var def = getStatusEffectStatString(move.buffs[1], 'def');
+				var atk = getStatusEffectStatString(move.buffs[0], 'Atk');
+				var def = getStatusEffectStatString(move.buffs[1], 'Def');
 				var buffApplyChance = parseFloat(move.buffApplyChance)*100 + '%';
 				var buffTarget = move.buffTarget;
 				var stringArray = [buffApplyChance, atk, def, buffTarget];
 				for (var i = 0; i < stringArray.length; i++) {
-					stringArray[i] = "<div>" + stringArray[i] + "</div>";
+					stringArray[i] = "<div class=\"status-effect-description\">" + stringArray[i] + "</div>";
 				}
 				return stringArray.join('');
 			}

@@ -1072,6 +1072,8 @@ select, input {
   user-select: none;
                    /* Non-prefixed version, currently
 					  supported by Chrome and Opera */ }
+.stats-table .status-effect-description {
+  font-size: 12px; }
 
 /* Buff and debuff background animations */
 @-webkit-keyframes BUFF-ANIMATION {

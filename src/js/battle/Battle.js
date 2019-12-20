@@ -1031,7 +1031,7 @@ function Battle(){
 
 				// Don't use best charged moves if a cheaper move is available to bait or faint
 				if((poke.energy >= poke.chargedMoves[n].energy) && ((poke.chargedMoves[n].energy < poke.bestChargedMove.energy) || ((poke.chargedMoves[n].energy == poke.bestChargedMove.energy)&&(poke.chargedMoves[n].buffs)))){
-					if((poke.baitShields)&&(opponent.shields > 0)){
+					if((poke.baitShields)&&(opponent.shields > 0)&&(! poke.chargedMoves[n].selfDebuffing)){
 						useChargedMove = false;
 
 						self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because it has a cheaper move to remove shields");
