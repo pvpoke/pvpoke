@@ -57,7 +57,9 @@ require_once 'header.php';
 			</tr>
 		</table>
 		<input class="poke-search" context="move-search" type="text" placeholder="Search Move or Type" />
-		<table class="sortable-table stats-table moves" cellpadding="0" cellspacing="0"></table>
+		<div class="table-container">
+			<table class="sortable-table stats-table moves" cellpadding="0" cellspacing="0"></table>
+		</div>
 	</div>
 
 	<div class="move-explore-container explore hide">
