@@ -11,7 +11,7 @@ require_once '../header.php';
 
 <div class="section article white">
 	<h1>Team Building for GO Stadium Cliffhanger</h1>
-	<div class="date">Last updated September December 11th, 2019</div>
+	<div class="date">Last updated December 11th, 2019</div>
 	<p>Cliffhanger is an exciting format where you have to build your team with a limited number of points! It was designed by the <a href="https://discord.gg/fbczGXZ" target="_blank">GO Stadium Discord</a>, one of the largest communities for PvP discussion and remote tournaments, and has been updated with the previous movepool changes and Generation 5 Pokemon. Let’s dive into the format and how to build your Cliffhanger team!</p>
 	<p>Also be sure to check out the full rules in the updated <a href="https://reddit.com/r/TheSilphArena/comments/drdh2j/cliffhanger_tiers_version_21_regi_edition/" target="_blank">announcement post</a>!</p>
 <p>Jump to a section:
