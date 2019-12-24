@@ -29,6 +29,7 @@ var RankerMaster = (function () {
 
 
 				battle.setCup(cup.name);
+				battle.setCP(cp);
 
 				var leagues = [cp];
 
@@ -148,7 +149,7 @@ var RankerMaster = (function () {
 					var consistencyScore = 1;
 
 					// Only calculate with two Charged Moves
-					if((arr.length > 2)&&(arr[2] != "0")){
+					if((arr.length > 2)&&(arr[2] != "0")){						
 						chargedMoves.push(pokemon.chargedMovePool[arr[2]-1]);
 
 						var effectivenessScenarios = [
