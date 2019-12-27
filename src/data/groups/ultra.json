@@ -10,14 +10,34 @@
 		"chargedMoves":["SHADOW_BALL","OMINOUS_WIND"]
 	},
 	{
-		"speciesId":"machamp",
-		"fastMove":"COUNTER",
-		"chargedMoves":["DYNAMIC_PUNCH","ROCK_SLIDE"]
+		"speciesId":"registeel",
+		"fastMove":"LOCK_ON",
+		"chargedMoves":["FLASH_CANNON","FOCUS_BLAST"]
 	},
 	{
-		"speciesId":"lapras",
-		"fastMove":"ICE_SHARD",
-		"chargedMoves":["ICE_BEAM","SURF"]
+		"speciesId":"regice",
+		"fastMove":"LOCK_ON",
+		"chargedMoves":["BLIZZARD","EARTHQUAKE"]
+	},
+	{
+		"speciesId":"regirock",
+		"fastMove":"LOCK_ON",
+		"chargedMoves":["STONE_EDGE","FOCUS_BLAST"]
+	},
+	{
+		"speciesId":"machamp",
+		"fastMove":"COUNTER",
+		"chargedMoves":["CROSS_CHOP","ROCK_SLIDE"]
+	},
+	{
+		"speciesId":"typhlosion",
+		"fastMove":"SHADOW_CLAW",
+		"chargedMoves":["BLAST_BURN","SOLAR_BEAM"]
+	},
+	{
+		"speciesId":"deoxys_defense",
+		"fastMove":"COUNTER",
+		"chargedMoves":["ROCK_SLIDE","PSYCHO_BOOST"]
 	},
 	{
 		"speciesId":"blastoise",
@@ -26,18 +46,23 @@
 	},
 	{
 		"speciesId":"cresselia",
-		"fastMove":"PSYCHO_CUT",
-		"chargedMoves":["FUTURE_SIGHT","MOONBLAST"]
+		"fastMove":"CONFUSION",
+		"chargedMoves":["AURORA_BEAM","MOONBLAST"]
 	},
 	{
 		"speciesId":"kingdra",
 		"fastMove":"DRAGON_BREATH",
-		"chargedMoves":["OUTRAGE","HYDRO_PUMP"]
+		"chargedMoves":["OUTRAGE","OCTAZOOKA"]
 	},
 	{
 		"speciesId":"melmetal",
 		"fastMove":"THUNDER_SHOCK",
-		"chargedMoves":["ROCK_SLIDE","THUNDERBOLT"]
+		"chargedMoves":["ROCK_SLIDE","SUPER_POWER"]
+	},
+	{
+		"speciesId":"jirachi",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["DOOM_DESIRE","PSYCHIC"]
 	},
 	{
 		"speciesId":"steelix",
@@ -57,12 +82,7 @@
 	{
 		"speciesId":"dragonite",
 		"fastMove":"DRAGON_BREATH",
-		"chargedMoves":["DRAGON_CLAW","HURRICANE"]
-	},
-	{
-		"speciesId":"metagross",
-		"fastMove":"BULLET_PUNCH",
-		"chargedMoves":["METEOR_MASH","EARTHQUAKE"]
+		"chargedMoves":["DRAGON_CLAW","DRACO_METEOR"]
 	},
 	{
 		"speciesId":"charizard",
@@ -80,24 +100,19 @@
 		"chargedMoves":["FRENZY_PLANT","SLUDGE_BOMB"]
 	},
 	{
-		"speciesId":"flygon",
-		"fastMove":"DRAGON_TAIL",
-		"chargedMoves":["DRAGON_CLAW","EARTHQUAKE"]
+		"speciesId":"virizion",
+		"fastMove":"QUICK_ATTACK",
+		"chargedMoves":["LEAF_BLADE","CLOSE_COMBAT"]
 	},
 	{
-		"speciesId":"umbreon",
-		"fastMove":"SNARL",
-		"chargedMoves":["FOUL_PLAY","LAST_RESORT"]
-	},
-	{
-		"speciesId":"heatran",
-		"fastMove":"FIRE_SPIN",
-		"chargedMoves":["IRON_HEAD","FIRE_BLAST"]
+		"speciesId": "moltres",
+		"fastMove": "WING_ATTACK",
+		"chargedMoves": ["SKY_ATTACK","OVERHEAT"]
 	},
 	{
 		"speciesId":"muk_alolan",
 		"fastMove":"SNARL",
-		"chargedMoves":["DARK_PULSE","ACID_SPRAY"]
+		"chargedMoves":["DARK_PULSE","SLUDGE_WAVE"]
 	},
 	{
 		"speciesId":"snorlax",
@@ -110,11 +125,6 @@
 		"chargedMoves":["SKY_ATTACK","FUTURE_SIGHT"]
 	},
 	{
-		"speciesId":"mewtwo",
-		"fastMove":"PSYCHO_CUT",
-		"chargedMoves":["SHADOW_BALL","FOCUS_BLAST"]
-	},
-	{
 		"speciesId":"mewtwo_armored",
 		"fastMove":"CONFUSION",
 		"chargedMoves":["ROCK_SLIDE","DYNAMIC_PUNCH"]
@@ -122,7 +132,7 @@
 	{
 		"speciesId":"mew",
 		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["ICE_BEAM","GRASS_KNOT"]
+		"chargedMoves":["OVERHEAT","PSYSHOCK"]
 	},
 	{
 		"speciesId":"swampert",
@@ -137,26 +147,26 @@
 	{
 		"speciesId":"poliwrath",
 		"fastMove":"MUD_SHOT",
-		"chargedMoves":["ICE_PUNCH","POWER_UP_PUNCH"]
+		"chargedMoves":["ICE_PUNCH","DYNAMIC_PUNCH"]
 	},
 	{
 		"speciesId":"gliscor",
-		"fastMove":"WING_ATTACK",
-		"chargedMoves":["AERIAL_ACE","EARTHQUAKE"]
+		"fastMove":"FURY_CUTTER",
+		"chargedMoves":["NIGHT_SLASH","EARTHQUAKE"]
 	},
 	{
-		"speciesId":"dialga",
-		"fastMove":"DRAGON_BREATH",
-		"chargedMoves":["IRON_HEAD","THUNDER"]
-	},
-	{
-		"speciesId":"magneton",
-		"fastMove":"THUNDER_SHOCK",
-		"chargedMoves":["DISCHARGE","MAGNET_BOMB"]
+		"speciesId":"heracross",
+		"fastMove":"COUNTER",
+		"chargedMoves":["CLOSE_COMBAT","MEGAHORN"]
 	},
 	{
 		"speciesId":"togekiss",
 		"fastMove":"CHARM",
 		"chargedMoves":["ANCIENT_POWER","FLAMETHROWER"]
+	},
+	{
+		"speciesId":"clefable",
+		"fastMove":"CHARM",
+		"chargedMoves":["METEOR_MASH","PSYCHIC"]
 	}
 ]

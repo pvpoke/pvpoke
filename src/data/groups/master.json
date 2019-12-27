@@ -17,37 +17,17 @@
 	{
 		"speciesId":"machamp",
 		"fastMove":"COUNTER",
-		"chargedMoves":["DYNAMIC_PUNCH","ROCK_SLIDE"]
-	},
-	{
-		"speciesId":"lapras",
-		"fastMove":"ICE_SHARD",
-		"chargedMoves":["ICE_BEAM","SURF"]
-	},
-	{
-		"speciesId":"cresselia",
-		"fastMove":"PSYCHO_CUT",
-		"chargedMoves":["FUTURE_SIGHT","MOONBLAST"]
+		"chargedMoves":["CROSS_CHOP","ROCK_SLIDE"]
 	},
 	{
 		"speciesId":"melmetal",
 		"fastMove":"THUNDER_SHOCK",
-		"chargedMoves":["ROCK_SLIDE","THUNDERBOLT"]
-	},
-	{
-		"speciesId":"steelix",
-		"fastMove":"DRAGON_TAIL",
-		"chargedMoves":["CRUNCH","EARTHQUAKE"]
+		"chargedMoves":["ROCK_SLIDE","SUPER_POWER"]
 	},
 	{
 		"speciesId":"latios",
 		"fastMove":"DRAGON_BREATH",
 		"chargedMoves":["DRAGON_CLAW","SOLAR_BEAM"]
-	},
-	{
-		"speciesId":"latias",
-		"fastMove":"DRAGON_BREATH",
-		"chargedMoves":["OUTRAGE","THUNDER"]
 	},
 	{
 		"speciesId":"dragonite",
@@ -67,17 +47,7 @@
 	{
 		"speciesId":"heatran",
 		"fastMove":"FIRE_SPIN",
-		"chargedMoves":["IRON_HEAD","FIRE_BLAST"]
-	},
-	{
-		"speciesId":"venusaur",
-		"fastMove":"VINE_WHIP",
-		"chargedMoves":["FRENZY_PLANT","SLUDGE_BOMB"]
-	},
-	{
-		"speciesId":"meganium",
-		"fastMove":"VINE_WHIP",
-		"chargedMoves":["FRENZY_PLANT","EARTHQUAKE"]
+		"chargedMoves":["IRON_HEAD","FLAMETHROWER"]
 	},
 	{
 		"speciesId":"snorlax",
@@ -87,27 +57,22 @@
 	{
 		"speciesId":"lugia",
 		"fastMove":"DRAGON_TAIL",
-		"chargedMoves":["SKY_ATTACK","FUTURE_SIGHT"]
+		"chargedMoves":["SKY_ATTACK","HYDRO_PUMP"]
 	},
 	{
 		"speciesId":"mew",
 		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["ICE_BEAM","GRASS_KNOT"]
+		"chargedMoves":["PSYSHOCK","FOCUS_BLAST"]
 	},
 	{
 		"speciesId":"mewtwo",
 		"fastMove":"PSYCHO_CUT",
-		"chargedMoves":["ICE_BEAM","THUNDERBOLT"]
+		"chargedMoves":["ICE_BEAM","PSYSTRIKE"]
 	},
 	{
 		"speciesId":"swampert",
 		"fastMove":"MUD_SHOT",
 		"chargedMoves":["HYDRO_CANNON","EARTHQUAKE"]
-	},
-	{
-		"speciesId":"lucario",
-		"fastMove":"COUNTER",
-		"chargedMoves":["SHADOW_BALL","POWER_UP_PUNCH"]
 	},
 	{
 		"speciesId":"dialga",
@@ -117,12 +82,12 @@
 	{
 		"speciesId":"groudon",
 		"fastMove":"MUD_SHOT",
-		"chargedMoves":["EARTHQUAKE","SOLAR_BEAM"]
+		"chargedMoves":["EARTHQUAKE","FIRE_BLAST"]
 	},
 	{
 		"speciesId":"kyogre",
 		"fastMove":"WATERFALL",
-		"chargedMoves":["THUNDER","BLIZZARD"]
+		"chargedMoves":["SURF","BLIZZARD"]
 	},
 	{
 		"speciesId":"raikou",

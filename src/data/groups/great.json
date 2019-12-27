@@ -20,6 +20,11 @@
 		"chargedMoves":["DYNAMIC_PUNCH","ICE_PUNCH"]
 	},
 	{
+		"speciesId":"hitmontop",
+		"fastMove":"COUNTER",
+		"chargedMoves":["CLOSE_COMBAT","STONE_EDGE"]
+	},
+	{
 		"speciesId":"skarmory",
 		"fastMove":"AIR_SLASH",
 		"chargedMoves":["SKY_ATTACK","FLASH_CANNON"]
@@ -57,7 +62,7 @@
 	{
 		"speciesId":"melmetal",
 		"fastMove":"THUNDER_SHOCK",
-		"chargedMoves":["ROCK_SLIDE","SUPERPOWER"]
+		"chargedMoves":["ROCK_SLIDE","SUPER_POWER"]
 	},
 	{
 		"speciesId":"steelix",
@@ -102,7 +107,7 @@
 	{
 		"speciesId":"sableye",
 		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["FOUL_PLAY","SHADOW_SNEAK"]
+		"chargedMoves":["FOUL_PLAY","POWER_GEM"]
 	},
 	{
 		"speciesId":"marowak_alolan",

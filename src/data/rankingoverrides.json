@@ -56,8 +56,13 @@
 				"chargedMoves": ["SKY_ATTACK", "HYDRO_PUMP"]
 			},
 			{
+				"speciesId": "melmetal",
+				"chargedMoves": ["SUPER_POWER", "ROCK_SLIDE"]
+			},
+			{
 				"speciesId": "charizard",
-				"fastMove": "FIRE_SPIN"
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
 			},
 			{
 				"speciesId": "lapras",
@@ -132,6 +137,10 @@
 			{
 				"speciesId": "primeape",
 				"chargedMoves": ["NIGHT_SLASH", "CLOSE_COMBAT"]
+			},
+			{
+				"speciesId": "ninetales",
+				"chargedMoves": ["OVERHEAT", "PSYSHOCK"]
 			},
 			{
 				"speciesId": "lucario",
@@ -926,11 +935,7 @@
 		"pokemon": [
 			{
 				"speciesId": "giratina_altered",
-				"fastMove": ["SHADOW_CLAW"]
-			},
-			{
-				"speciesId": "poliwrath",
-				"chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
+				"fastMove": "SHADOW_CLAW"
 			},
 			{
 				"speciesId": "typhlosion",
@@ -951,7 +956,90 @@
 			},
 			{
 				"speciesId": "snorlax",
-				"chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
+				"chargedMoves": ["BODY_SLAM", "EARTHQUAKE"]
+			},
+			{
+				"speciesId": "politoed",
+				"chargedMoves": ["SURF", "EARTHQUAKE"]
+			},
+			{
+				"speciesId": "sceptile",
+				"chargedMoves": ["LEAF_BLADE", "EARTHQUAKE"]
+			},
+			{
+				"speciesId": "magnezone",
+				"chargedMoves": ["WILD_CHARGE", "FLASH_CANNON"]
+			},
+			{
+				"speciesId": "ninetales",
+				"chargedMoves": ["OVERHEAT", "PSYSHOCK"]
+			},
+			{
+				"speciesId": "umbreon",
+				"chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
+			},
+			{
+				"speciesId": "blaziken",
+				"chargedMoves": ["BLAST_BURN", "BLAZE_KICK"]
+			},
+			{
+				"speciesId": "articuno",
+				"chargedMoves": ["ICY_WIND", "ANCIENT_POWER"]
+			},
+			{
+				"speciesId": "melmetal",
+				"chargedMoves": ["ROCK_SLIDE", "FLASH_CANNON"]
+			},
+			{
+				"speciesId": "hariyama",
+				"chargedMoves": ["CLOSE_COMBAT", "HEAVY_SLAM"]
+			},
+			{
+				"speciesId": "drapion",
+				"chargedMoves": ["FELL_STINGER", "AQUA_TAIL"]
+			},
+			{
+				"speciesId": "forretress",
+				"chargedMoves": ["EARTHQUAKE", "MIRROR_SHOT"]
+			},
+			{
+				"speciesId": "bronzong",
+				"chargedMoves": ["PSYSHOCK", "BULLDOZE"]
+			},
+			{
+				"speciesId": "cresselia",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["AURORA_BEAM", "MOONBLAST"]
+			},
+			{
+				"speciesId": "lapras",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["SURF", "ICE_BEAM"]
+			},
+			{
+				"speciesId": "arcanine",
+				"fastMove": "SNARL",
+				"chargedMoves": ["CRUNCH", "FLAMETHROWER"]
+			},
+			{
+				"speciesId": "poliwrath",
+				"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "muk",
+				"chargedMoves": ["THUNDER_PUNCH", "DARK_PULSE"]
+			},
+			{
+				"speciesId": "sandslash_alolan",
+				"chargedMoves": ["ICE_PUNCH", "BULLDOZE"]
+			},
+			{
+				"speciesId": "pinsir",
+				"chargedMoves": ["CLOSE_COMBAT", "X_SCISSOR"]
+			},
+			{
+				"speciesId": "ninetales_alolan",
+				"fastMove": "CHARM"
 			},
 			{
 				"speciesId": "muk_alolan",
@@ -960,6 +1048,14 @@
 			{
 				"speciesId": "gardevoir",
 				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "chandelure",
+				"fastMove": "FIRE_SPIN"
+			},
+			{
+				"speciesId": "houndoom",
+				"fastMove": "SNARL"
 			},
 			{
 				"speciesId": "togekiss",
@@ -981,7 +1077,8 @@
 		"pokemon": [
 			{
 				"speciesId": "giratina_altered",
-				"fastMove": ["SHADOW_CLAW"]
+				"fastMove": ["SHADOW_CLAW"],
+				"weight": 2
 			},
 			{
 				"speciesId": "blaziken",
@@ -992,8 +1089,49 @@
 				"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
 			},
 			{
+				"speciesId": "hariyama",
+				"chargedMoves": ["CLOSE_COMBAT", "HEAVY_SLAM"]
+			},
+			{
+				"speciesId": "lapras",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["SURF", "ICE_BEAM"]
+			},
+			{
+				"speciesId": "lucario",
+				"chargedMoves": ["POWER_UP_PUNCH", "SHADOW_BALL"]
+			},
+			{
+				"speciesId": "typhlosion",
+				"chargedMoves": ["BLAST_BURN", "OVERHEAT"]
+			},
+			{
 				"speciesId": "gardevoir",
 				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "zapdos",
+				"chargedMoves": ["DRILL_PECK","ANCIENT_POWER"]
+			},
+			{
+				"speciesId": "articuno",
+				"chargedMoves": ["ICY_WIND","ANCIENT_POWER"]
+			},
+			{
+				"speciesId": "snorlax",
+				"chargedMoves": ["BODY_SLAM","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "heatran",
+				"chargedMoves": ["FLAMETHROWER","IRON_HEAD"]
+			},
+			{
+				"speciesId": "metagross",
+				"chargedMoves": ["METEOR_MASH","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "melmetal",
+				"chargedMoves": ["SUPER_POWER","ROCK_SLIDE"]
 			},
 			{
 				"speciesId": "togekiss",
@@ -1008,6 +1146,18 @@
 				"chargedMoves": ["PSYSTRIKE","ICE_BEAM"]
 			},
 			{
+				"speciesId": "mew",
+				"chargedMoves": ["PSYSHOCK","FOCUS_BLAST"]
+			},
+			{
+				"speciesId": "kyogre",
+				"chargedMoves": ["SURF","BLIZZARD"]
+			},
+			{
+				"speciesId": "lugia",
+				"chargedMoves": ["SKY_ATTACK","HYDRO_PUMP"]
+			},
+			{
 				"speciesId": "charizard",
 				"fastMove": "FIRE_SPIN",
 				"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
@@ -1017,8 +1167,16 @@
 				"chargedMoves": ["OUTRAGE","EARTHQUAKE"]
 			},
 			{
-				"speciesId": "snorlax",
-				"chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
+				"speciesId": "togekiss",
+				"weight": 2
+			},
+			{
+				"speciesId": "giratina_origin",
+				"weight": 2
+			},
+			{
+				"speciesId": "metagross",
+				"weight": 2
 			}
 		]
 	},
@@ -1161,6 +1319,10 @@
 			{
 				"speciesId": "muk_alolan",
 				"fastMove": "SNARL"
+			},
+			{
+				"speciesId": "snorlax",
+				"chargedMoves": ["BODY_SLAM","EARTHQUAKE"]
 			},
 			{
 				"speciesId": "togekiss",
