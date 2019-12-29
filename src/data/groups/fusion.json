@@ -10,11 +10,6 @@
 		"chargedMoves":["FRENZY_PLANT","SLUDGE_BOMB"]
 	},
 	{
-		"speciesId":"lanturn",
-		"fastMove":"WATER_GUN",
-		"chargedMoves":["THUNDERBOLT","HYDRO_PUMP"]
-	},
-	{
 		"speciesId":"probopass",
 		"fastMove":"SPARK",
 		"chargedMoves":["ROCK_SLIDE","MAGNET_BOMB"]
@@ -50,19 +45,9 @@
 		"chargedMoves":["SHADOW_BALL","BONE_CLUB"]
 	},
 	{
-		"speciesId":"magneton",
-		"fastMove":"THUNDER_SHOCK",
-		"chargedMoves":["DISCHARGE","MAGNET_BOMB"]
-	},
-	{
 		"speciesId":"haunter",
 		"fastMove":"SHADOW_CLAW",
 		"chargedMoves":["SHADOW_PUNCH","SHADOW_BALL"]
-	},
-	{
-		"speciesId":"toxicroak",
-		"fastMove":"COUNTER",
-		"chargedMoves":["MUD_BOMB","SLUDGE_BOMB"]
 	},
 	{
 		"speciesId":"bronzong",
@@ -90,26 +75,6 @@
 		"chargedMoves":["LEAF_BLADE","SLUDGE_BOMB"]
 	},
 	{
-		"speciesId":"gloom",
-		"fastMove":"RAZOR_LEAF",
-		"chargedMoves":["RETURN","SLUDGE_BOMB"]
-	},
-	{
-		"speciesId":"ludicolo",
-		"fastMove":"RAZOR_LEAF",
-		"chargedMoves":["ICE_BEAM","HYDRO_PUMP"]
-	},
-	{
-		"speciesId":"sealeo",
-		"fastMove":"POWDER_SNOW",
-		"chargedMoves":["BODY_SLAM","AURORA_BEAM"]
-	},
-	{
-		"speciesId":"marshtomp",
-		"fastMove":"MUD_SHOT",
-		"chargedMoves":["MUD_BOMB","SURF"]
-	},
-	{
 		"speciesId":"golbat",
 		"fastMove":"WING_ATTACK",
 		"chargedMoves":["POISON_FANG","SHADOW_BALL"]
@@ -130,24 +95,19 @@
 		"chargedMoves":["DYNAMIC_PUNCH","ICE_PUNCH"]
 	},
 	{
-		"speciesId":"blaziken",
-		"fastMove":"COUNTER",
-		"chargedMoves":["BLAZE_KICK","BLAST_BURN"]
-	},
-	{
 		"speciesId":"heracross",
 		"fastMove":"COUNTER",
 		"chargedMoves":["CLOSE_COMBAT","MEGAHORN"]
 	},
 	{
-		"speciesId":"piloswine",
-		"fastMove":"POWDER_SNOW",
-		"chargedMoves":["AVALANCHE","STONE_EDGE"]
-	},
-	{
 		"speciesId":"claydol",
 		"fastMove":"CONFUSION",
 		"chargedMoves":["EARTH_POWER","PSYCHIC"]
+	},
+	{
+		"speciesId":"ninetales_alolan",
+		"fastMove":"POWDER_SNOW",
+		"chargedMoves":["PSYSHOCK","ICE_BEAM"]
 	},
 	{
 		"speciesId":"ninetales_alolan",

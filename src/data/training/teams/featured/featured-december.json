@@ -1,5 +1,47 @@
 [
 	{
+		"name": "Caleb Peng",
+		"slug": "calebpeng",
+		"img": "calebpeng",
+		"cup": "timeless",
+		"cupName": "Timeless",
+		"league": 1500,
+		"description": "I'm always looking to create off-meta teams to challenge mainstream lineups. Feel free to follow my YouTube channel for PvP content!",
+		"link": "https://www.youtube.com/calebpeng",
+		"pokemon": [
+			{
+				"speciesId": "lapras",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["SURF","SKULL_BASH"]
+			},
+			{
+				"speciesId": "venomoth",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["SILVER_WIND","POISON_FANG"]
+			},
+			{
+				"speciesId": "sealeo",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["BODY_SLAM","AURORA_BEAM"]
+			},
+			{
+				"speciesId": "bellossom",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["LEAF_BLADE","RETURN"]
+			},
+			{
+				"speciesId": "relicanth",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["AQUA_TAIL","ANCIENT_POWER"]
+			},
+			{
+				"speciesId": "venusaur",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"]
+			}
+		]
+	},
+	{
 		"name": "guan87",
 		"slug": "guan87",
 		"img": "guan87",
@@ -38,6 +80,48 @@
 				"speciesId": "victreebel",
 				"fastMove": "RAZOR_LEAF",
 				"chargedMoves": ["LEAF_BLADE","SLUDGE_BOMB"]
+			}
+		]
+	},
+	{
+		"name": "Hrdina38",
+		"slug": "hrdina38",
+		"img": "hrdina38",
+		"cup": "timeless",
+		"cupName": "Timeless",
+		"league": 1500,
+		"description": "Loves pokemon go pvp season 1 ranked #249 aiming for a top 100 finish in season 2",
+		"link": "https://twitter.com/hrdina38_",
+		"pokemon": [
+			{
+				"speciesId": "kingdra",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["OUTRAGE","OCTAZOOKA"]
+			},
+			{
+				"speciesId": "dragonair",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["AQUA_TAIL","DRAGON_PULSE"]
+			},
+			{
+				"speciesId": "ninetales",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["PSYSHOCK","OVERHEAT"]
+			},
+			{
+				"speciesId": "sealeo",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["BODY_SLAM","AURORA_BEAM"]
+			},
+			{
+				"speciesId": "dewgong",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["ICY_WIND","WATER_PULSE"]
+			},
+			{
+				"speciesId": "meganium",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","EARTHQUAKE"]
 			}
 		]
 	},
@@ -290,6 +374,144 @@
 				"speciesId": "sealeo",
 				"fastMove": "POWDER_SNOW",
 				"chargedMoves": ["BODY_SLAM","AURORA_BEAM"]
+			}
+		]
+	},
+	{
+		"name": "ShinyHunterBen",
+		"slug": "shinyhunterben",
+		"img": "shinyhunterben",
+		"cup": "timeless",
+		"cupName": "Timeless",
+		"league": 1500,
+		"description": "Winner of the Ohio Timeless Cup with a 7-2 run in the LA mega tournament!",
+		"link": "https://twitter.com/stramben",
+		"pokemon": [
+			{
+				"speciesId": "kingdra",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["OUTRAGE","OCTAZOOKA"]
+			},
+			{
+				"speciesId": "dragonair",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["AQUA_TAIL","DRAGON_PULSE"]
+			},
+			{
+				"speciesId": "ninetales",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["PSYSHOCK","FLAMETHROWER"]
+			},
+			{
+				"speciesId": "sealeo",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["BODY_SLAM","AURORA_BEAM"]
+			},
+			{
+				"speciesId": "relicanth",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["AQUA_TAIL","ANCIENT_POWER"]
+			},
+			{
+				"speciesId": "venusaur",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"]
+			}
+		]
+	},
+	{
+		"name": "Trainer_Remamco",
+		"slug": "trainer_remamco",
+		"img": "trainer_remamco",
+		"cup": "timeless",
+		"cupName": "Timeless",
+		"league": 1500,
+		"description": "Hey there! Name's Remy, in-game name Trainer Remamco. Been battling since the dawn of PoGO PvP, and I've been battling in my Michigan communities as well as others out of state! I make PvP vids on YT/stream on Twitch, and I'm usually hangin' on Twitter! Come join me on my master quest!",
+		"link": "https://twitter.com/trainer_remamco",
+		"pokemon": [
+			{
+				"speciesId": "charizard",
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["DRAGON_CLAW","OUTRAGE"]
+			},
+			{
+				"speciesId": "dragonair",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["AQUA_TAIL","DRAGON_PULSE"]
+			},
+			{
+				"speciesId": "sealeo",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["BODY_SLAM","AURORA_BEAM"]
+			},
+			{
+				"speciesId": "lapras",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["SURF","SKULL_BASH"]
+			},
+			{
+				"speciesId": "victreebel",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["LEAF_BLADE","ACID_SPRAY"]
+			},
+			{
+				"speciesId": "whiscash",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["MUD_BOMB","BLIZZARD"]
+			}
+		]
+	},
+	{
+		"name": "TRNRZaddy",
+		"slug": "trnrzaddy",
+		"img": "trnrzaddy",
+		"cup": "timeless",
+		"cupName": "Timeless",
+		"league": 1500,
+		"description": "Just love to PvP for fun!",
+		"link": "https://twitter.com/TrnrZaddy",
+		"pokemon": [
+			{
+				"speciesId": "lapras",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["SURF","SKULL_BASH"],
+				"level": 22,
+				"ivs": [4,2,12]
+			},
+			{
+				"speciesId": "kingdra",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["OCTAZOOKA","OUTRAGE"],
+				"level": 21,
+				"ivs": [4,15,12]
+			},
+			{
+				"speciesId": "ninetales",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["PSYSHOCK","OVERHEAT"],
+				"level": 23.5,
+				"ivs": [13,12,13]
+			},
+			{
+				"speciesId": "froslass",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["AVALANCHE","SHADOW_BALL"],
+				"level": 26,
+				"ivs": [14,13,15]
+			},
+			{
+				"speciesId": "whiscash",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["MUD_BOMB","BLIZZARD"],
+				"level": 27.5,
+				"ivs": [1,15,15]
+			},
+			{
+				"speciesId": "meganium",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","EARTHQUAKE"],
+				"level": 23.5,
+				"ivs": [2,14,11]
 			}
 		]
 	}
