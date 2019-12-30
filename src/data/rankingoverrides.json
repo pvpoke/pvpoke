@@ -551,7 +551,7 @@
 			{
 				"speciesId": "tropius",
 				"fastMove": "AIR_SLASH"
-			}			
+			}
 		]
 	},
 	{
@@ -1062,6 +1062,10 @@
 				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
 			},
 			{
+				"speciesId": "lucario",
+				"chargedMoves": ["POWER_UP_PUNCH","SHADOW_BALL"]
+			},
+			{
 				"speciesId": "mewtwo_armored",
 				"chargedMoves": ["ROCK_SLIDE","DYNAMIC_PUNCH"]
 			},
@@ -1167,16 +1171,20 @@
 				"chargedMoves": ["OUTRAGE","EARTHQUAKE"]
 			},
 			{
+				"speciesId": "dialga",
+				"weight": 1.5
+			},
+			{
 				"speciesId": "togekiss",
-				"weight": 2
+				"weight": 1.5
 			},
 			{
 				"speciesId": "giratina_origin",
-				"weight": 2
+				"weight": 1.5
 			},
 			{
 				"speciesId": "metagross",
-				"weight": 2
+				"weight": 1.5
 			}
 		]
 	},
