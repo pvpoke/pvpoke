@@ -9,7 +9,8 @@
 	  'custom_map': {
 		  'dimension1': 'player_type',
 		  'dimension2': 'team_position',
-		  'dimension3': 'featured_team'
+		  'dimension3': 'featured_team',
+		  'metric1': 'team_rating'
 	  }
 	});
 	

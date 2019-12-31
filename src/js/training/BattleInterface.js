@@ -654,7 +654,7 @@ var BattlerMaster = (function () {
 				}
 
 
-				// Report each Pokemon
+				// Gather team and Pokemon data
 				var teamStrs = [];
 				var teamScores = [];
 
@@ -698,20 +698,8 @@ var BattlerMaster = (function () {
 
 						// Assign this Pokemon's score in battle, damage done plus shields broken
 
-						var score = Math.round(pokemon.battleStats.damage + (50 * pokemon.battleStats.shieldsBurned));
-						teamScore += score;
-
-						// Only report this Pokemon if it was used in battle
-						if(pokemon.hp < pokemon.stats.hp){
-							gtag('event', battleSummaryStr, {
-							  'event_category' : 'Training Pokemon',
-							  'event_label' : pokeStr,
-							  'value' : score+'',
-							  'player_type': playerType,
-							  'team_position': n+1
-							});
-						}
-
+						pokemon.battleStats.score = Math.round(pokemon.battleStats.damage + (50 * pokemon.battleStats.shieldsBurned));
+						teamScore += pokemon.battleStats.score;
 					}
 
 					// Alphabetize the last two Pokemon on the team and build the team string
@@ -727,6 +715,7 @@ var BattlerMaster = (function () {
 
 				// Report each team
 				for(var i = 0; i < players.length; i++){
+					var team = players[i].getTeam();
 					var score = teamScores[i];
 					var opponentIndex = (i == 0) ? 1 : 0;
 					var opponentScore = teamScores[opponentIndex];
@@ -737,7 +726,9 @@ var BattlerMaster = (function () {
 					}
 
 					var battleRating = Math.floor( (500 * ((maxScore - opponentScore) / maxScore)) + (500 * (score / maxScore)))
-
+					
+					// Report team stats
+					
 					gtag('event', battleSummaryStr, {
 					  'event_category' : 'Training Team',
 					  'event_label' : teamStrs[i],
@@ -778,13 +769,50 @@ var BattlerMaster = (function () {
 
 					var rosterStr = pokeStrArr.join(" ");
 
-
+					// Report roster stats
+					
 					gtag('event', battleSummaryStr, {
 					  'event_category' : 'Training Roster',
 					  'event_label' : rosterStr,
 					  'value' : battleRating+'',
 					  'player_type': playerType,
 					});
+					
+					// Report individual Pokemon with team ratings
+					
+					for(var n = 0; n < team.length; n++){
+						var pokemon = team[n];
+						var pokeStr = pokemon.speciesName + ' ' + pokemon.fastMove.abbreviation;
+						var chargedMoveAbbrevations = [];
+
+						for(var k = 0; k < pokemon.chargedMoves.length; k++){
+							chargedMoveAbbrevations.push(pokemon.chargedMoves[k].abbreviation);
+						}
+
+						// Sort alphabetically
+						chargedMoveAbbrevations.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
+
+						for(var k = 0; k < chargedMoveAbbrevations.length; k++){
+							if(k == 0){
+								pokeStr += "+" + chargedMoveAbbrevations[k];
+							} else{
+								pokeStr += "/" + chargedMoveAbbrevations[k];
+							}
+						}
+
+						// Only report this Pokemon if it was used in battle
+						if(pokemon.hp < pokemon.stats.hp){
+							gtag('event', battleSummaryStr, {
+							  'event_category' : 'Training Pokemon',
+							  'event_label' : pokeStr,
+							  'value' : pokemon.battleStats.score+'',
+							  'player_type': playerType,
+							  'team_position': n+1,
+							  'team_rating': battleRating
+							});
+						}
+
+					}
 				}
 			}
 
