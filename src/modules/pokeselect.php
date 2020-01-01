@@ -67,7 +67,7 @@
 					<div class="level-cap-group">
 						<div>Level Cap:</div>
 						<div class="check on" value="40"><span></span>40</div>
-						<div class="check" value="45"><span></span>45</div>
+						<div class="check" value="41"><span></span>41</div>
 					</div>
 					<button class="maximize-stats">Maximize</button>
 					<button class="restore-default">Default</button>

@@ -240,14 +240,14 @@
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["SKY_ATTACK","DRAGON_PULSE"],
 				"difficulty": 2,
-				"weight":30
+				"weight":25
 			},
 			{
 				"speciesId": "noctowl",
 				"fastMove": "WING_ATTACK",
 				"chargedMoves": ["SKY_ATTACK","PSYCHIC"],
 				"difficulty": 2,
-				"weight":1
+				"weight":10
 			},
 			{
 				"speciesId": "golbat",

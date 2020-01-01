@@ -26,28 +26,18 @@
 
 	<!--Update section for updates-->
 	<h3>What's New</h3>
-	
+
+	<h4>v1.12.20 (January 1, 2019)</h4>
+	<ul>
+		<li>Buddy Pokemon gain a 1 level increase. Level caps have been adjusted to Level 41 so you can simulate individual buddy Pokemon.</li>
+	</ul>
+
+
 	<h4>v1.12.19 (December 20, 2019)</h4>
 	<ul>
 		<li>The <a href="<?php echo $WEB_ROOT; ?>moves/">Moves</a> page now lists stat buffs and debuffs for Charged Moves</li>
 		<li>By default, Pokemon no longer bait shields with self-debuffing moves</li>
 	</ul>
-	
-	<h4>v1.12.18 (December 18, 2019)</h4>
-	<ul>
-		<li>Pokemon can now be up to level 45! Experiment with Pokemon levels and see how they impact potential performance.</li>
-		<ul>
-			<li>This update isn't reflected in the rankings yet</li>
-		</ul>
-		<li>Fixed an issue where saving custom groups would result in additional "undefined" groups being listed</li>
-	</ul>
-
-	<h4>v1.12.16 (December 11, 2019)</h4>
-	<ul>
-		<li>The site is now updated with all new moves and movepool changes!</li>
-		<li>Custom lists and Training Battle rosters will be updated in the coming days.</li>
-	</ul>
-	<p>Follow on <a href="https://twitter.com/pvpoke" target="_blank">Twitter</a> for the latest news and updates!</p>
 
 	<h3>Latest Article</h3>
 
