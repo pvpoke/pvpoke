@@ -10024,7 +10024,7 @@
 		},
 		"types": ["rock", "none"],
 		"fastMoves": ["MUD_SLAP", "SMACK_DOWN"],
-		"chargedMoves": ["ROCK_SLIDE", "SOLAR_BEAM", "STONE_EDGE", "HEAVY_SLAM"],
+		"chargedMoves": ["ROCK_SLIDE", "SOLAR_BEAM", "SUPER_POWER", "HEAVY_SLAM"],
 		"defaultIVs": {
 			"cp1500": [17, 10, 14, 6],
 			"cp2500": [30, 1, 5, 6]
@@ -10328,7 +10328,7 @@
 		},
 		"types": ["bug", "poison"],
 		"fastMoves": ["BUG_BITE", "POISON_JAB"],
-		"chargedMoves": ["MEGAHORN", "SLUDGE_BOMB", "GYRO_BALL"],
+		"chargedMoves": ["MEGAHORN", "SLUDGE_BOMB", "GYRO_BALL", "X_SCISSOR"],
 		"defaultIVs": {
 			"cp1500": [23.5, 1, 5, 13],
 			"cp2500": [40, 15, 15, 15]
@@ -11207,8 +11207,8 @@
 			"hp": 172
 		},
 		"types": ["bug", "steel"],
-		"fastMoves": ["PECK", "BUG_BITE"],
-		"chargedMoves": ["MEGAHORN", "X_SCISSOR", "DRILL_RUN", "AERIAL_ACE"],
+		"fastMoves": ["COUNTER", "BUG_BITE"],
+		"chargedMoves": ["MEGAHORN", "ACID_SPRAY", "DRILL_RUN", "AERIAL_ACE"],
 		"defaultIVs": {
 			"cp1500": [19, 7, 9, 14],
 			"cp2500": [34.5, 3, 10, 13]
