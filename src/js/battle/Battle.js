@@ -94,10 +94,10 @@ function Battle(){
 			if((pokemon[0])&&(pokemon[1])){
 				for(var i = 0; i < pokemon.length; i++){
 					pokemon[i].resetMoves();
-				}
-
-				if(players[1].getAI()){
-					players[1].getAI().evaluateMatchup(turns, pokemon[1], pokemon[0], players[0]);
+					
+					if(players[i].getAI()){
+						players[i].getAI().evaluateMatchup(turns, pokemon[i], self.getOpponent(i), players[(i == 0) ? 1 : 0]);
+					}
 				}
 			}
 
@@ -199,7 +199,7 @@ function Battle(){
 
 		// Fully charge moves in regular simulation or if the opponent is an AI
 		if(mode == "emulate"){
-			if((move.energyGain > 0)||(attacker.index == 1)){
+			if((move.energyGain > 0)||(players[attacker.index].getAI() !== false)){
 				chargeAmount = 1;
 			}
 
@@ -906,7 +906,7 @@ function Battle(){
 		chargedMoveUsed = false; // Flag so Pokemon only uses one Charged Move per round
 
 		if((poke.cooldown == 0)&&(! poke.hasActed)){
-			if((! sandbox)||((mode == "emulate")&&(poke.index==1)&&(poke.hp > 0))){
+			if((! sandbox)||((mode == "emulate")&&(players[poke.index].getAI() !== false)&&(poke.hp > 0))){
 				poke.hasActed = true;
 
 				if(mode == "simulate"){
@@ -938,7 +938,7 @@ function Battle(){
 			}
 
 			// If no other action set, use a fast move
-			if((! action)&&( (mode == "simulate") || ((mode == "emulate")&&(poke.index == 1)))){
+			if((! action)&&( (mode == "simulate") || ((mode == "emulate")&&(players[poke.index].getAI() !== false)))){
 				action = new TimelineAction("fast", poke.index, turns, 0, {priority: poke.priority});
 			}
 
@@ -1380,8 +1380,8 @@ function Battle(){
 						chargeAmount = 0;
 						playerUseShield = false;
 
-						if(poke.index == 0){
-							playerUseShield = players[1].getAI().decideShield(poke, opponent, move);
+						if(players[opponent.index].getAI() !== false){
+							playerUseShield = players[opponent.index].getAI().decideShield(poke, opponent, move);
 						}
 
 						// Initiate the move animation

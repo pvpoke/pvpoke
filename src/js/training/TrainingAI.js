@@ -628,13 +628,15 @@ function TrainingAI(l, p, b){
 				shields: pokemon.startingShields,
 				hp: pokemon.hp,
 				energy: pokemon.energy,
-				cooldown: pokemon.cooldown
+				cooldown: pokemon.cooldown,
+				index: pokemon.index
 			},
 			{
 				shields: opponent.startingShields,
 				hp: opponent.hp,
 				energy: opponent.energy,
-				cooldown: opponent.cooldown
+				cooldown: opponent.cooldown,
+				index: opponent.index
 			}
 		];
 
@@ -711,9 +713,9 @@ function TrainingAI(l, p, b){
 
 		pokemon.reset();
 		opponent.reset();
-		pokemon.index = 1;
+		pokemon.index = startStats[0].index;
 		pokemon.farmEnergy = false;
-		opponent.index = 0;
+		opponent.index = startStats[1].index;
 		opponent.farmEnergy = false;
 
 		return scenario;
