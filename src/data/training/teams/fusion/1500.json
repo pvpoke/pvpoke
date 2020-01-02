@@ -247,7 +247,14 @@
 				"fastMove": "WING_ATTACK",
 				"chargedMoves": ["SKY_ATTACK","PSYCHIC"],
 				"difficulty": 2,
-				"weight":10
+				"weight":7
+			},
+			{
+				"speciesId": "noctowl",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["SKY_ATTACK","NIGHT_SHADE"],
+				"difficulty": 2,
+				"weight":3
 			},
 			{
 				"speciesId": "golbat",
@@ -478,7 +485,7 @@
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["DYNAMIC_PUNCH","ICE_PUNCH"],
 				"difficulty": 2,
-				"weight":8
+				"weight":20
 			},
 			{
 				"speciesId": "poliwrath",
@@ -506,7 +513,7 @@
 				"fastMove": "COUNTER",
 				"chargedMoves": ["MEGAHORN","CLOSE_COMBAT"],
 				"difficulty": 2,
-				"weight":12
+				"weight":6
 			},
 			{
 				"speciesId": "infernape",
