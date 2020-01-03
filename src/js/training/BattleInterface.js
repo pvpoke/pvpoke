@@ -292,9 +292,9 @@ var BattlerMaster = (function () {
 
 								$bar.show();
 								$bar.find(".label").html(chargedMove.abbreviation);
-								//$bar.find(".bar").attr("class","bar " + chargedMove.type);
 								$bar.find(".bar").attr("type",chargedMove.type);
 								$bar.find(".bar-back").attr("class","bar-back " + chargedMove.type);
+								$(".battle-window .move-labels .label").eq(n).html(chargedMove.name);
 							}
 						}
 					}
@@ -313,8 +313,10 @@ var BattlerMaster = (function () {
 
 							if(chargePercent >= 1){
 								$bar.addClass("active");
+								$(".battle-window .move-labels .label").eq(n).addClass("active");
 							} else{
 								$bar.removeClass("active");
+								$(".battle-window .move-labels .label").eq(n).removeClass("active");
 							}
 						}
 					}
@@ -726,9 +728,9 @@ var BattlerMaster = (function () {
 					}
 
 					var battleRating = Math.floor( (500 * ((maxScore - opponentScore) / maxScore)) + (500 * (score / maxScore)))
-					
+
 					// Report team stats
-					
+
 					gtag('event', battleSummaryStr, {
 					  'event_category' : 'Training Team',
 					  'event_label' : teamStrs[i],
@@ -770,16 +772,16 @@ var BattlerMaster = (function () {
 					var rosterStr = pokeStrArr.join(" ");
 
 					// Report roster stats
-					
+
 					gtag('event', battleSummaryStr, {
 					  'event_category' : 'Training Roster',
 					  'event_label' : rosterStr,
 					  'value' : battleRating+'',
 					  'player_type': playerType,
 					});
-					
+
 					// Report individual Pokemon with team ratings
-					
+
 					for(var n = 0; n < team.length; n++){
 						var pokemon = team[n];
 						var pokeStr = pokemon.speciesName + ' ' + pokemon.fastMove.abbreviation;

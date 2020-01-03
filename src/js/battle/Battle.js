@@ -94,7 +94,7 @@ function Battle(){
 			if((pokemon[0])&&(pokemon[1])){
 				for(var i = 0; i < pokemon.length; i++){
 					pokemon[i].resetMoves();
-					
+
 					if(players[i].getAI()){
 						players[i].getAI().evaluateMatchup(turns, pokemon[i], self.getOpponent(i), players[(i == 0) ? 1 : 0]);
 					}
@@ -198,7 +198,7 @@ function Battle(){
 		var chargeMultiplier = charge; // The amount of charge for a Charged Move
 
 		// Fully charge moves in regular simulation or if the opponent is an AI
-		if(mode == "emulate"){
+		if((mode == "emulate")&&(players[attacker.index])){
 			if((move.energyGain > 0)||(players[attacker.index].getAI() !== false)){
 				chargeAmount = 1;
 			}

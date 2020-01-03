@@ -1,4 +1,9 @@
 <div class="controls">
+	<div class="move-labels">
+		<div class="label">Thunderbolt</div>
+		<div class="label">Magnet Bomb</div>
+	</div>
+
 	<div class="move-bars">
 		<div class="move-bar">
 			<div class="label">T</div>

@@ -96,22 +96,22 @@
 		font-weight:bold !important;
 		text-decoration: underline;
 	}
-	
+
 	h5{
 		font-size:14px;
 		text-align: left;
 		margin: 10px 0 5px 0;
 	}
-	
+
 	.featured-team-preview{
 		padding: 5px;
 		border: 1px solid;
 		border-radius: 12px;
-		
+
 		.preview-poke{
 			display:flex;
 			margin-bottom:5px;
-			
+
 			&:last-of-type{
 				margin-bottom: 0;
 			}
@@ -124,16 +124,16 @@
 				padding: 0;
 				margin-right:10px;
 			}
-			
+
 			h6, p{
 				margin: 0;
 			}
-			
+
 			h6{
 				text-align: left;
 				font-size:14px;
 			}
-			
+
 			p{
 				font-size:12px;
 			}
@@ -565,6 +565,32 @@ a.random{
 			}
 		}
 
+		.move-labels{
+			position: absolute;
+		    bottom: 72%;
+		    width: 100%;
+		    display: flex;
+		    justify-content: space-around;
+
+			.label{
+				@include transition(all, 0.2s, ease, 0s);
+
+				width:50%;
+				font-weight: bold;
+			    color: rgba(0,0,0,0.75);
+			    text-transform: uppercase;
+			    font-size: 12px;
+				padding:1px 0;
+
+				&.active{
+					color: rgba(255,255,255,1);
+					text-shadow: 3px 3px 5px #000;
+					font-size:14px;
+					padding:0;
+				}
+			}
+		}
+
 		.switch-btn{
 
 			width:40px;
@@ -857,7 +883,8 @@ a.random{
 			pointer-events: all;
 		}
 
-		.controls .move-bars{
+		.controls .move-bars,
+		.controls .move-labels{
 			display:none;
 		}
 
@@ -914,7 +941,8 @@ a.random{
 			pointer-events: all;
 		}
 
-		.controls .move-bars{
+		.controls .move-bars,
+		.controls .move-labels{
 			display:none;
 		}
 
