@@ -27,7 +27,7 @@
 	{
 		"speciesId":"swampert",
 		"fastMove":"MUD_SHOT",
-		"chargedMoves":["HYDRO_CANNON","EARTHQUAKE"]
+		"chargedMoves":["HYDRO_CANNON","SLUDGE_WAVE"]
 	},
 	{
 		"speciesId":"froslass",
@@ -37,17 +37,12 @@
 	{
 		"speciesId":"muk_alolan",
 		"fastMove":"SNARL",
-		"chargedMoves":["DARK_PULSE","ACID_SPRAY"]
+		"chargedMoves":["DARK_PULSE","SLUDGE_WAVE"]
 	},
 	{
 		"speciesId":"marowak_alolan",
 		"fastMove":"FIRE_SPIN",
 		"chargedMoves":["SHADOW_BALL","BONE_CLUB"]
-	},
-	{
-		"speciesId":"haunter",
-		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["SHADOW_PUNCH","SHADOW_BALL"]
 	},
 	{
 		"speciesId":"bronzong",
@@ -67,17 +62,7 @@
 	{
 		"speciesId":"noctowl",
 		"fastMove":"WING_ATTACK",
-		"chargedMoves":["SKY_ATTACK","PSYCHIC"]
-	},
-	{
-		"speciesId":"victreebel",
-		"fastMove":"RAZOR_LEAF",
-		"chargedMoves":["LEAF_BLADE","SLUDGE_BOMB"]
-	},
-	{
-		"speciesId":"golbat",
-		"fastMove":"WING_ATTACK",
-		"chargedMoves":["POISON_FANG","SHADOW_BALL"]
+		"chargedMoves":["SKY_ATTACK","NIGHT_SHADE"]
 	},
 	{
 		"speciesId":"charizard",

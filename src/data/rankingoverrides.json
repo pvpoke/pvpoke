@@ -2271,7 +2271,8 @@
 			},
 			{
 				"speciesId": "bronzong",
-				"chargedMoves": ["PSYSHOCK", "BULLDOZE"]
+				"chargedMoves": ["PSYSHOCK", "BULLDOZE"],
+				"weight": 2
 			},
 			{
 				"speciesId": "haunter",
@@ -2279,7 +2280,8 @@
 			},
 			{
 				"speciesId": "froslass",
-				"chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
+				"chargedMoves": ["AVALANCHE", "SHADOW_BALL"],
+				"weight": 2
 			},
 			{
 				"speciesId": "blaziken",
@@ -2287,11 +2289,13 @@
 			},
 			{
 				"speciesId": "marowak_alolan",
-				"fastMove": "FIRE_SPIN"
+				"fastMove": "FIRE_SPIN",
+				"weight": 2
 			},
 			{
 				"speciesId": "sealeo",
-				"fastMove": "POWDER_SNOW"
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["BODY_SLAM", "WATER_PULSE"]
 			},
 			{
 				"speciesId": "ludicolo",
@@ -2314,12 +2318,17 @@
 				"chargedMoves": ["FRENZY_PLANT", "STONE_EDGE"]
 			},
 			{
+				"speciesId": "swampert",
+				"chargedMoves": ["HYDRO_CANNON", "SLUDGE_WAVE"]
+			},
+			{
 				"speciesId": "venomoth",
 				"fastMove": "CONFUSION"
 			},
 			{
 				"speciesId": "probopass",
-				"fastMove": "SPARK"
+				"fastMove": "SPARK",
+				"weight": 1.5
 			},
 			{
 				"speciesId": "gardevoir",
@@ -2339,6 +2348,10 @@
 				"chargedMoves": ["POISON_FANG","SHADOW_BALL"]
 			},
 			{
+				"speciesId": "cloyster",
+				"chargedMoves": ["ICY_WIND","HYDRO_PUMP"]
+			},
+			{
 				"speciesId": "muk_alolan",
 				"fastMove": "SNARL",
 				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"]
@@ -2348,12 +2361,14 @@
 				"chargedMoves": ["SEED_BOMB","SLUDGE_BOMB"]
 			},
 			{
-				"speciesId": "weepinbell",
-				"chargedMoves": ["SEED_BOMB","SLUDGE_BOMB"]
+				"speciesId": "whiscash",
+				"chargedMoves": ["MUD_BOMB","BLIZZARD"],
+				"weight": 2
 			},
 			{
-				"speciesId": "whiscash",
-				"chargedMoves": ["MUD_BOMB","BLIZZARD"]
+				"speciesId": "noctowl",
+				"chargedMoves": ["SKY_ATTACK","NIGHT_SHADE"],
+				"weight": 2
 			},
 			{
 				"speciesId": "charizard",
@@ -2374,6 +2389,26 @@
 			{
 				"speciesId": "roselia",
 				"fastMove": "RAZOR_LEAF"
+			},
+			{
+				"speciesId": "ninetales_alolan",
+				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "venusaur",
+				"weight": 1.5
+			},
+			{
+				"speciesId": "altaria",
+				"weight": 2
+			},
+			{
+				"speciesId": "wigglytuff",
+				"weight": 1.5
+			},
+			{
+				"speciesId": "sandslash_alolan",
+				"weight": 2
 			}
 		]
 	}
