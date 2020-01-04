@@ -27,7 +27,7 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.12.20 (January 1, 2019)</h4>
+	<h4>v1.12.20 (January 1, 2020)</h4>
 	<ul>
 		<li>Buddy Pokemon gain a 1 level increase. Level caps have been adjusted to Level 41 so you can simulate individual buddy Pokemon.</li>
 	</ul>
@@ -49,7 +49,7 @@
 		</div>
 		<div class="col-9">
 			<h4><a href="<?php echo $WEB_ROOT; ?>articles/cliffhanger-team-building/">Team Building for GO Stadium Cliffhanger</a></h4>
-			<div class="date"> December 11, 2019</div>
+			<div class="date"> January 4, 2019</div>
 			<p>GO Stadium has introduced an exciting new format called Cliffhanger! Learn how to spend your points and build your Cliffhanger team from the ground up.</p>
 		</div>
 	</div>

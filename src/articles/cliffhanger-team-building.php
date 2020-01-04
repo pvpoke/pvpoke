@@ -11,7 +11,7 @@ require_once '../header.php';
 
 <div class="section article white">
 	<h1>Team Building for GO Stadium Cliffhanger</h1>
-	<div class="date">Last updated December 11th, 2019</div>
+	<div class="date">Last updated January 4th, 2020</div>
 	<p>Cliffhanger is an exciting format where you have to build your team with a limited number of points! It was designed by the <a href="https://discord.gg/fbczGXZ" target="_blank">GO Stadium Discord</a>, one of the largest communities for PvP discussion and remote tournaments, and has been updated with the previous movepool changes and Generation 5 Pokemon. Let’s dive into the format and how to build your Cliffhanger team!</p>
 	<p>Also be sure to check out the full rules in the updated <a href="https://reddit.com/r/TheSilphArena/comments/drdh2j/cliffhanger_tiers_version_21_regi_edition/" target="_blank">announcement post</a>!</p>
 <p>Jump to a section:
@@ -22,7 +22,7 @@ require_once '../header.php';
 	  </ol>
 	<a name="rules"></a>
 <h3 class="article-header"><strong>Cliffhanger Rules &amp; Team Archetypes</strong></h3>
-	<p><img src="<?php echo $WEB_ROOT; ?>assets/articles/cliffhanger-rules-2-1.jpg" /></p>
+	<p><img src="<?php echo $WEB_ROOT; ?>assets/articles/cliffhanger-rules-2-2.jpg" /></p>
 <p>You have 17 points to build to your team! The  graphic above shows which Pokemon belong to which tiers. The tiers are a team  building challenge, so how can you rise to meet it? </p>
 <p>There are several different team archetypes you  can choose from. Some will allow you to pick that powerful T0 Pokemon while  others give you broader choices from the lower tiers. </p>
 <ul type="disc">
@@ -38,7 +38,7 @@ require_once '../header.php';
 <h3 class="article-header"><strong>Team-Building with Slots</strong></h3>
 <p>So you have a team archetype picked out or maybe  you&rsquo;re not even sure yet! Where do you begin with choosing the actual Pokemon  on your team? One way to approach it is to think about your team in terms of  slots. Your team has 6 slots and you need each one to fill a certain kind of  role or coverage. </p>
 <p>The infographic below highlights a few of the  possible picks in different slots and the roles they play for your team: </p>
-	<p><img src="<?php echo $WEB_ROOT; ?>assets/articles/cliffhanger-infographic-2-1.jpg?v=2" /></p>
+	<p><img src="<?php echo $WEB_ROOT; ?>assets/articles/cliffhanger-infographic-2-2.jpg?v=2" /></p>
 <p>What&rsquo;s the best way to start? Pick a Pokemon you  really like, think about which Pokemon it loses to, and then pick a Pokemon  that covers its weaknesses. Skarmory is countered by Steel-type tanks, for  example, so Whiscash makes a great partner. Toxicroak evaporates against  Confusion users, so it would appreciate a buddy like Sableye or Umbreon. </p>
 <p>Here&rsquo;s a team building example that walks  through each pick: </p>
 <ol start="1" type="1">

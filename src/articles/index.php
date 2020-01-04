@@ -18,7 +18,7 @@ require_once '../header.php';
 		</div>
 		<div class="col-9">
 			<h4><a href="<?php echo $WEB_ROOT; ?>articles/cliffhanger-team-building/">Team Building for GO Stadium Cliffhanger</a></h4>
-			<div class="date"> December 11, 2019</div>
+			<div class="date"> January 4, 2020</div>
 			<p>GO Stadium has introduced an exciting new format called Cliffhanger! Learn how to spend your points and build your Cliffhanger team from the ground up.</p>
 		</div>
 	</div>	
