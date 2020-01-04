@@ -36,7 +36,7 @@ var InterfaceMaster = (function () {
 			var sandboxAction;
 			var sandboxActionIndex;
 			var sandboxTurn;
-			
+
 			var multiBattleWorstToBest = true; // In multi battle, order the results from worst to best
 
 			var chargeMultipliers = [1, .95, .75, .5, .25]; // Array of potential charge multipliers between full and minimum charge
@@ -813,9 +813,9 @@ var InterfaceMaster = (function () {
 				if(! custom){
 					pokemonList = [];
 				}
-				
+
 				// Order the rankings from best to worst or worst to best
-				
+
 				if(multiBattleWorstToBest){
 					rankings.sort((a,b) => (a.opRating > b.opRating) ? 1 : ((b.opRating > a.opRating) ? -1 : 0));
 				}
@@ -1219,7 +1219,9 @@ var InterfaceMaster = (function () {
 										}
 
 										poke.addNewMove(arr[i], movePool, true, moveType, moveIndex);
-										customMoveIndexes.push(moveIndex);
+										if(moveType == "charged"){
+											customMoveIndexes.push(moveIndex);
+										}
 									}
 								}
 
@@ -1237,6 +1239,7 @@ var InterfaceMaster = (function () {
 									var moveId = $(".poke").eq(index).find(".move-select.charged").eq(i-1).find("option").eq(parseInt(arr[i])).val();
 
 									if(moveId != "none"){
+										console.log("Selecting " + moveId + " " + (i-1));
 										poke.selectMove("charged", moveId, i-1);
 									} else{
 										if((arr[1] == "0")&&(arr[2] == "0")){
@@ -1883,20 +1886,20 @@ var InterfaceMaster = (function () {
 				$("html, body").animate({ scrollTop: $(".poke").offset().top - 30 }, 500);
 
 			}
-			
+
 			// Toggle multi-battle result sort
 
 			function sortMultiBattleResults(e){
 				multiBattleWorstToBest = ! multiBattleWorstToBest;
-				
+
 				if(multiBattleWorstToBest){
 					$(".multi-battle-sort").html("Sort: Worst to best &#9650;");
 				} else{
 					$(".multi-battle-sort").html("Sort: Best to worst &#9660;");
 				}
-				
+
 				// Reorganize child elements
-				
+
 				$(".battle-results.multi .rankings-container").children().each(function(i,li){$(".battle-results.multi .rankings-container").prepend(li)})
 			}
 
