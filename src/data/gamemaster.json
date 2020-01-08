@@ -7379,7 +7379,8 @@
 		},
 		"types": ["water", "steel"],
 		"fastMoves": ["METAL_CLAW", "WATERFALL"],
-		"chargedMoves": ["BLIZZARD", "FLASH_CANNON", "HYDRO_PUMP"],
+		"chargedMoves": ["BLIZZARD", "FLASH_CANNON", "HYDRO_PUMP", "HYDRO_CANNON"],
+		"legacyMoves": ["HYDRO_CANNON"],
 		"defaultIVs": {
 			"cp1500": [19, 8, 7, 15],
 			"cp2500": [34.5, 4, 15, 6]

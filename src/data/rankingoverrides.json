@@ -135,6 +135,10 @@
 				"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
 			},
 			{
+				"speciesId": "empoleon",
+				"chargedMoves": ["HYDRO_CANNON", "FLASH_CANNON"]
+			},
+			{
 				"speciesId": "primeape",
 				"chargedMoves": ["NIGHT_SLASH", "CLOSE_COMBAT"]
 			},
@@ -959,6 +963,10 @@
 				"chargedMoves": ["BODY_SLAM", "EARTHQUAKE"]
 			},
 			{
+				"speciesId": "empoleon",
+				"chargedMoves": ["HYDRO_CANNON", "FLASH_CANNON"]
+			},
+			{
 				"speciesId": "politoed",
 				"chargedMoves": ["SURF", "EARTHQUAKE"]
 			},
@@ -1099,6 +1107,10 @@
 			{
 				"speciesId": "hariyama",
 				"chargedMoves": ["CLOSE_COMBAT", "HEAVY_SLAM"]
+			},
+			{
+				"speciesId": "empoleon",
+				"chargedMoves": ["HYDRO_CANNON", "FLASH_CANNON"]
 			},
 			{
 				"speciesId": "lapras",
@@ -2283,18 +2295,13 @@
 				"chargedMoves": ["SHADOW_PUNCH", "SHADOW_BALL"]
 			},
 			{
-				"speciesId": "froslass",
-				"chargedMoves": ["AVALANCHE", "SHADOW_BALL"],
-				"weight": 2
-			},
-			{
 				"speciesId": "blaziken",
 				"chargedMoves": ["BLAZE_KICK", "BLAST_BURN"]
 			},
 			{
 				"speciesId": "marowak_alolan",
 				"fastMove": "FIRE_SPIN",
-				"weight": 2
+				"weight": 1.5
 			},
 			{
 				"speciesId": "sealeo",
@@ -2352,6 +2359,10 @@
 				"chargedMoves": ["POISON_FANG","SHADOW_BALL"]
 			},
 			{
+				"speciesId": "piloswine",
+				"chargedMoves": ["AVALANCHE","BULLDOZE"]
+			},
+			{
 				"speciesId": "cloyster",
 				"chargedMoves": ["ICY_WIND","HYDRO_PUMP"]
 			},
@@ -2367,7 +2378,7 @@
 			{
 				"speciesId": "whiscash",
 				"chargedMoves": ["MUD_BOMB","BLIZZARD"],
-				"weight": 2
+				"weight": 3
 			},
 			{
 				"speciesId": "noctowl",
@@ -2400,7 +2411,7 @@
 			},
 			{
 				"speciesId": "venusaur",
-				"weight": 1.5
+				"weight": 2
 			},
 			{
 				"speciesId": "altaria",
@@ -2412,7 +2423,55 @@
 			},
 			{
 				"speciesId": "sandslash_alolan",
-				"weight": 2
+				"weight": 1.5
+			},
+			{
+				"speciesId": "ludicolo",
+				"weight": 0.1
+			},
+			{
+				"speciesId": "roselia",
+				"weight": 0.1
+			},
+			{
+				"speciesId": "weepinbell",
+				"weight": 0.1
+			},
+			{
+				"speciesId": "vileplume",
+				"weight": 0.1
+			},
+			{
+				"speciesId": "gloom",
+				"weight": 0.1
+			},
+			{
+				"speciesId": "roserade",
+				"weight": 0.1
+			},
+			{
+				"speciesId": "ivysaur",
+				"weight": 0.1
+			},
+			{
+				"speciesId": "abomasnow",
+				"weight": 0.1
+			},
+			{
+				"speciesId": "torterra",
+				"weight": 0.1
+			},
+			{
+				"speciesId": "nuzleaf",
+				"weight": 0.1
+			},
+			{
+				"speciesId": "shiftry",
+				"weight": 1.5
+			},
+			{
+				"speciesId": "lanturn",
+				"weight": 0.25
 			}
 		]
 	}
