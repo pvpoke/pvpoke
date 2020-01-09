@@ -131,10 +131,6 @@
 				"chargedMoves": ["DARK_PULSE", "ACID_SPRAY"]
 			},
 			{
-				"speciesId": "deoxys_defense",
-				"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
-			},
-			{
 				"speciesId": "empoleon",
 				"chargedMoves": ["HYDRO_CANNON", "FLASH_CANNON"]
 			},
@@ -184,7 +180,7 @@
 			},
 			{
 				"speciesId": "hariyama",
-				"chargedMoves": ["SUPER_POWER", "HEAVY_SLAM"]
+				"chargedMoves": ["CLOSE_COMBAT", "HEAVY_SLAM"]
 			},
 			{
 				"speciesId": "pinsir",
@@ -1336,8 +1332,8 @@
 				"chargedMoves": ["DARK_PULSE", "ACID_SPRAY"]
 			},
 			{
-				"speciesId": "deoxys_defense",
-				"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
+				"speciesId": "hariyama",
+				"chargedMoves": ["CLOSE_COMBAT", "HEAVY_SLAM"]
 			},
 			{
 				"speciesId": "primeape",
@@ -1385,7 +1381,7 @@
 			},
 			{
 				"speciesId": "hariyama",
-				"chargedMoves": ["SUPER_POWER", "HEAVY_SLAM"]
+				"chargedMoves": ["CLOSE_COMBAT", "HEAVY_SLAM"]
 			},
 			{
 				"speciesId": "pinsir",

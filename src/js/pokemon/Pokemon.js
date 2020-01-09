@@ -235,8 +235,8 @@ function Pokemon(id, i, b){
             this.ivs.hp = 15;
             this.setLevel(self.levelCap, false);
         }
-		
-		var index = this.level - 1;		
+
+		var index = this.level - 1;
         this.stats.atk = this.cpm * (this.baseStats.atk+this.ivs.atk);
         this.stats.def = this.cpm * (this.baseStats.def+this.ivs.def);
         this.stats.hp = Math.max(Math.floor(this.cpm * (this.baseStats.hp+this.ivs.hp)), 10);
@@ -291,7 +291,7 @@ function Pokemon(id, i, b){
 
 					while((level < self.levelCap)&&(calcCP < targetCP)){
 						level += 0.5;
-						
+
 						if(level % 1 == 0){
 							// Set CPM for whole levels
 							cpm = cpms[level - 1];
@@ -299,7 +299,7 @@ function Pokemon(id, i, b){
 							// Set CPM for half levels
 							cpm = Math.sqrt( (Math.pow(cpms[Math.floor(level-1)], 2) + Math.pow(cpms[Math.ceil(level-1)], 2)) / 2);
 						}
-						
+
 						calcCP = self.calculateCP(cpm, atkIV, defIV, hpIV);
 					}
 
@@ -475,11 +475,22 @@ function Pokemon(id, i, b){
 			}
 
 			self.activeChargedMoves.sort((a,b) => (a.energy > b.energy) ? 1 : ((b.energy > a.energy) ? -1 : 0));
-			
+
 			self.fastestChargedMove = self.activeChargedMoves[0];
 
 			if(self.activeChargedMoves.length > 1){
-				if((self.activeChargedMoves[1].energy == self.activeChargedMoves[0].energy)&&(self.activeChargedMoves[1].buffs)){
+
+				// If both moves cost the same energy and one has a buff effect, prioritize the buffing move
+
+				if((self.activeChargedMoves[1].energy == self.activeChargedMoves[0].energy)&&(self.activeChargedMoves[1].buffs)&&(! self.activeChargedMoves[1].selfDebuffing)){
+					var move = self.activeChargedMoves[0];
+					self.activeChargedMoves.splice(0, 1);
+					self.activeChargedMoves.push(move);
+				}
+
+				// If the cheaper move is a self debuffing move and the other move is a close non-debuffing move, prioritize the non-debuffing move
+
+				if((self.activeChargedMoves[1].energy - self.activeChargedMoves[0].energy <= 10)&&(self.activeChargedMoves[0].selfAttackDebuffing)&&(! self.activeChargedMoves[1].selfDebuffing)){
 					var move = self.activeChargedMoves[0];
 					self.activeChargedMoves.splice(0, 1);
 					self.activeChargedMoves.push(move);
@@ -904,10 +915,10 @@ function Pokemon(id, i, b){
 
 	this.setLevel = function(amount, initialize){
 		initialize = typeof initialize !== 'undefined' ? initialize : true;
-		
+
 		this.level = amount;
 		var index = (amount - 1);
-		
+
 		if(index % 1 == 0){
 			// Set CPM for whole levels
 			this.cpm = cpms[index];
@@ -915,7 +926,7 @@ function Pokemon(id, i, b){
 			// Set CPM for half levels
 			this.cpm = Math.sqrt( (Math.pow(cpms[Math.floor(index)], 2) + Math.pow(cpms[Math.ceil(index)], 2)) / 2);
 		}
-		
+
 		if(initialize){
 			this.isCustom = true;
 			this.initialize(false);

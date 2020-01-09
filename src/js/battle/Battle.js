@@ -1029,7 +1029,7 @@ function Battle(){
 					continue;
 				}
 
-				// Don't use best charged moves if a cheaper move is available to bait or faint
+				// Don't use best charged move if a cheaper move is available to bait or faint
 				if((poke.energy >= poke.chargedMoves[n].energy) && ((poke.chargedMoves[n].energy < poke.bestChargedMove.energy) || ((poke.chargedMoves[n].energy == poke.bestChargedMove.energy)&&(poke.chargedMoves[n].buffs)))){
 					if((poke.baitShields)&&(opponent.shields > 0)&&(! poke.chargedMoves[n].selfDebuffing)){
 						useChargedMove = false;
@@ -1041,6 +1041,15 @@ function Battle(){
 						useChargedMove = false;
 
 						self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because it has a cheaper move to faint");
+					}
+				}
+
+				// Don't use best charged move if it's a self debuffing move and a close non-debuffing move is available to burn shields
+				if((poke.energy >= poke.chargedMoves[n].energy) && ((poke.chargedMoves[n].energy - poke.bestChargedMove.energy <= 10))){
+					if((poke.baitShields)&&(opponent.shields > 0)&&(! poke.chargedMoves[n].selfDebuffing)&&(poke.bestChargedMove.selfAttackDebuffing)){
+						useChargedMove = false;
+
+						self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because it has a close non-debuffing move to remove shields");
 					}
 				}
 			}
@@ -1125,34 +1134,34 @@ function Battle(){
 
 				// Use charged move if the opponent has a shield
 
-				if((opponent.shields > 0)  && (!chargedMoveUsed) && (! poke.farmEnergy) && (((!poke.baitShields)&&(move == poke.bestChargedMove))||( (poke.baitShields) && (poke.energy >= poke.bestChargedMove.energy) && (move == poke.fastestChargedMove)))){
+				if((opponent.shields > 0)  && (!chargedMoveUsed) && (! poke.farmEnergy) && (((!poke.baitShields)&&(move == poke.bestChargedMove))||( (poke.baitShields) && (poke.energy >= poke.bestChargedMove.energy)))){
 
-					// Don't use a charged move if a fast move will result in a KO
+					// Use this move if it has less than or equal energy than the Pokemon's fastest move
+					if((move.energy == poke.fastestChargedMove.energy)||((move.energy - poke.fastestChargedMove.energy <= 10)&&(poke.fastestChargedMove.selfAttackDebuffing)&&(! move.selfDebuffing)&&(poke.baitShields))){
 
-					if((opponent.hp > poke.fastMove.damage)&&(opponent.hp > (poke.fastMove.damage *(opponent.fastMove.cooldown / poke.fastMove.cooldown)))){
+						// Don't use a charged move if a fast move will result in a KO
 
-						var avoidSelfDebuff = false;
+						if((opponent.hp > poke.fastMove.damage)&&(opponent.hp > (poke.fastMove.damage *(opponent.fastMove.cooldown / poke.fastMove.cooldown)))){
 
-						if((opponent.shields > 0)&&(move.buffTarget)&&(move.buffTarget == "self")&&(move.buffs[0] < 0 || move.buffs[1] < 0)&&(poke.energy < Math.min(move.energy * 2, 100))){
-							avoidSelfDebuff = true;
-						}
+							var avoidSelfDebuff = false;
 
-						if((opponent.shields > 0)&&(poke.bestChargedMove.buffTarget)&&(poke.bestChargedMove.buffTarget == "self")&&(poke.bestChargedMove.buffs[0] < 0 || poke.bestChargedMove.buffs[1] < 0)&&(poke.energy < Math.min(poke.bestChargedMove.energy * 2, 100))){
-							//avoidSelfDebuff = true;
-						}
+							if((opponent.shields > 0)&&(move.buffTarget)&&(move.buffTarget == "self")&&(move.buffs[0] < 0 || move.buffs[1] < 0)&&(poke.energy < Math.min(move.energy * 2, 100))){
+								avoidSelfDebuff = true;
+							}
 
-						if(! avoidSelfDebuff){
-							self.logDecision(turns, poke, " wants to remove shields with " + move.name + " and opponent won't faint from fast move damage before next cooldown");
+							if(! avoidSelfDebuff){
+								self.logDecision(turns, poke, " wants to remove shields with " + move.name + " and opponent won't faint from fast move damage before next cooldown");
 
-							action = new TimelineAction(
-								"charged",
-								poke.index,
-								turns,
-								moveIndex,
-								{shielded: false, buffs: false, priority:poke.priority});
+								action = new TimelineAction(
+									"charged",
+									poke.index,
+									turns,
+									moveIndex,
+									{shielded: false, buffs: false, priority:poke.priority});
 
-							chargedMoveUsed = true;
-							return action;
+								chargedMoveUsed = true;
+								return action;
+							}
 						}
 					}
 				}

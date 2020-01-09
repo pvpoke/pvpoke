@@ -1239,7 +1239,6 @@ var InterfaceMaster = (function () {
 									var moveId = $(".poke").eq(index).find(".move-select.charged").eq(i-1).find("option").eq(parseInt(arr[i])).val();
 
 									if(moveId != "none"){
-										console.log("Selecting " + moveId + " " + (i-1));
 										poke.selectMove("charged", moveId, i-1);
 									} else{
 										if((arr[1] == "0")&&(arr[2] == "0")){
