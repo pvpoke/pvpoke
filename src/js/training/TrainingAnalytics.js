@@ -60,16 +60,28 @@ var InterfaceMaster = (function () {
 			this.runPickProcess = function(roster){
 				var playerA = new Player(0, 3, battle);
 				var playerB = new Player(1, 3, battle);
+				var resultSequence = [
+					["win", "loss"],
+					["win", "loss"],
+					["loss", "win"]
+				];
 
 				for(var i = 0; i < 100; i++){
 					playerA.getAI().generateRoster(partySize, self.collectRosterData);
 					playerB.getAI().generateRoster(partySize, self.collectRosterData);
 
-					playerA.getAI().generateTeam(playerB.getRoster());
-					playerB.getAI().generateTeam(playerA.getRoster());
+					for(var n = 0; n < 3; n++){
+						if(n == 0){
+							playerA.getAI().generateTeam(playerB.getRoster());
+							playerB.getAI().generateTeam(playerA.getRoster());
+						} else{
+							playerA.getAI().generateTeam(playerB.getRoster(), resultSequence[n][0], [playerB.getTeam(), playerA.getTeam()]);
+							playerB.getAI().generateTeam(playerA.getRoster(), resultSequence[n][1], [playerA.getTeam(), playerB.getTeam()]);
+						}
 
-					self.collectTeamData(playerA.getTeam());
-					self.collectTeamData(playerB.getTeam());
+						self.collectTeamData(playerA.getTeam());
+						self.collectTeamData(playerB.getTeam());
+					}
 				}
 
 				pokemonData.sort((a,b) => (a.pickCount > b.pickCount) ? -1 : ((b.pickCount > a.pickCount) ? 1 : 0));
@@ -96,7 +108,7 @@ var InterfaceMaster = (function () {
 					for(var n = 0; n < pokemonData.length; n++){
 						if(roster[i].speciesId == pokemonData[n].speciesId){
 							found = true;
-							pokemonData[n].rosterCount++;
+							pokemonData[n].rosterCount+=3;
 							continue;
 						}
 					}
