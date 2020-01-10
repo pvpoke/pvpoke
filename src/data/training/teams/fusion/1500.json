@@ -135,7 +135,7 @@
 				"fastMove": "WATER_GUN",
 				"chargedMoves": ["BODY_SLAM","AURORA_BEAM"],
 				"difficulty": 2,
-				"weight":2
+				"weight":3
 			},
 			{
 				"speciesId": "sealeo",
@@ -317,7 +317,7 @@
 				"fastMove": "SNARL",
 				"chargedMoves": ["SKY_ATTACK","DARK_PULSE"],
 				"difficulty": 2,
-				"weight":1
+				"weight":2
 			},
 			{
 				"speciesId": "togekiss",
