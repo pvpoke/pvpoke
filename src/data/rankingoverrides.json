@@ -2270,6 +2270,215 @@
 				"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
 			},
 			{
+				"speciesId": "empoleon",
+				"chargedMoves": ["FLASH_CANNON", "HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "toxicroak",
+				"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "gyarados",
+				"chargedMoves": ["CRUNCH", "OUTRAGE"]
+			},
+			{
+				"speciesId": "exeggutor",
+				"chargedMoves": ["SEED_BOMB", "PSYCHIC"]
+			},
+			{
+				"speciesId": "bronzong",
+				"chargedMoves": ["PSYSHOCK", "BULLDOZE"],
+				"weight": 2
+			},
+			{
+				"speciesId": "haunter",
+				"chargedMoves": ["SHADOW_PUNCH", "SHADOW_BALL"]
+			},
+			{
+				"speciesId": "blaziken",
+				"chargedMoves": ["BLAZE_KICK", "BLAST_BURN"]
+			},
+			{
+				"speciesId": "marowak_alolan",
+				"fastMove": "FIRE_SPIN",
+				"weight": 1.5
+			},
+			{
+				"speciesId": "ludicolo",
+				"fastMove": "RAZOR_LEAF"
+			},
+			{
+				"speciesId": "magneton",
+				"chargedMoves": ["DISCHARGE", "MAGNET_BOMB"]
+			},
+			{
+				"speciesId": "pidgeot",
+				"chargedMoves": ["AERIAL_ACE", "BRAVE_BIRD"]
+			},
+			{
+				"speciesId": "vileplume",
+				"chargedMoves": ["SLUDGE_BOMB", "PETAL_BLIZZARD"]
+			},
+			{
+				"speciesId": "torterra",
+				"chargedMoves": ["FRENZY_PLANT", "STONE_EDGE"]
+			},
+			{
+				"speciesId": "swampert",
+				"chargedMoves": ["HYDRO_CANNON", "SLUDGE_WAVE"]
+			},
+			{
+				"speciesId": "venomoth",
+				"fastMove": "CONFUSION"
+			},
+			{
+				"speciesId": "probopass",
+				"fastMove": "SPARK",
+				"weight": 1.5
+			},
+			{
+				"speciesId": "gardevoir",
+				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "togekiss",
+				"fastMove": "CHARM",
+				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
+			},
+			{
+				"speciesId": "crobat",
+				"chargedMoves": ["SLUDGE_BOMB","SHADOW_BALL"]
+			},
+			{
+				"speciesId": "golbat",
+				"chargedMoves": ["POISON_FANG","SHADOW_BALL"]
+			},
+			{
+				"speciesId": "piloswine",
+				"chargedMoves": ["AVALANCHE","BULLDOZE"]
+			},
+			{
+				"speciesId": "cloyster",
+				"chargedMoves": ["ICY_WIND","HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "muk_alolan",
+				"fastMove": "SNARL",
+				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"]
+			},
+			{
+				"speciesId": "weepinbell",
+				"chargedMoves": ["SEED_BOMB","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "whiscash",
+				"chargedMoves": ["MUD_BOMB","BLIZZARD"],
+				"weight": 2
+			},
+			{
+				"speciesId": "noctowl",
+				"chargedMoves": ["SKY_ATTACK","NIGHT_SHADE"],
+				"weight": 2
+			},
+			{
+				"speciesId": "charizard",
+				"fastMove": "FIRE_SPIN"
+			},
+			{
+				"speciesId": "abomasnow",
+				"fastMove": "RAZOR_LEAF"
+			},
+			{
+				"speciesId": "beedrill",
+				"fastMove": "POISON_JAB"
+			},
+			{
+				"speciesId": "roserade",
+				"fastMove": "RAZOR_LEAF"
+			},
+			{
+				"speciesId": "roselia",
+				"fastMove": "RAZOR_LEAF"
+			},
+			{
+				"speciesId": "ninetales_alolan",
+				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "venusaur",
+				"weight": 2
+			},
+			{
+				"speciesId": "altaria",
+				"weight": 2
+			},
+			{
+				"speciesId": "wigglytuff",
+				"weight": 1.5
+			},
+			{
+				"speciesId": "sandslash_alolan",
+				"weight": 1.5
+			},
+			{
+				"speciesId": "ludicolo",
+				"weight": 0.1
+			},
+			{
+				"speciesId": "roselia",
+				"weight": 0.1
+			},
+			{
+				"speciesId": "weepinbell",
+				"weight": 0.1
+			},
+			{
+				"speciesId": "vileplume",
+				"weight": 0.1
+			},
+			{
+				"speciesId": "gloom",
+				"weight": 0.1
+			},
+			{
+				"speciesId": "roserade",
+				"weight": 0.1
+			},
+			{
+				"speciesId": "ivysaur",
+				"weight": 0.1
+			},
+			{
+				"speciesId": "abomasnow",
+				"weight": 0.1
+			},
+			{
+				"speciesId": "torterra",
+				"weight": 0.1
+			},
+			{
+				"speciesId": "nuzleaf",
+				"weight": 0.1
+			},
+			{
+				"speciesId": "shiftry",
+				"weight": 1.5
+			},
+			{
+				"speciesId": "lanturn",
+				"weight": 0.25
+			}
+		]
+	},
+	{
+		"league": 1500,
+		"cup": "fusion-empoleon",
+		"pokemon": [
+			{
+				"speciesId": "poliwrath",
+				"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
+			},
+			{
 				"speciesId": "toxicroak",
 				"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
 			},

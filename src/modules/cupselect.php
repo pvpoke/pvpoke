@@ -2,6 +2,7 @@
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="all" cup="gen-5">All Pokemon (With Generation 5)</option>
 	<option value="tsa-2" cup="fusion">Fusion Cup</option>
+	<option value="tsa-2" cup="fusion-empoleon">Fusion Cup (With Empoleon)</option>
 	<option value="tsa-2" cup="timeless">Timeless Cup</option>
 	<option value="tsa-1">Silph Arena Season 1</option>
 	<option value="tsa-2">Silph Arena Season 2</option>
@@ -28,6 +29,7 @@
 	<option value="twilight" cat="tsa-1">Twilight Cup</option>
 	<option value="boulder" cat="tsa-1">Boulder Cup</option>
 	<option value="fusion" cat="tsa-2">Fusion Cup</option>
+	<option value="fusion-empoleon" cat="tsa-2">Fusion Cup (With Empoleon)</option>
 	<option value="timeless" cat="tsa-2">Timeless Cup</option>
 	<option value="ferocious" cat="tsa-2">Ferocious Cup</option>
 	<option value="sinister" cat="tsa-2">Sinister Cup</option>
