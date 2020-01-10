@@ -225,6 +225,27 @@
 			{
 				"speciesId": "crobat",
 				"chargedMoves": ["SLUDGE_BOMB","SHADOW_BALL"]
+			},
+			{
+				"speciesId": "accelgor",
+				"chargedMoves": ["BUG_BUZZ","ACID_SPRAY"]
+			},
+			{
+				"speciesId": "escavalier",
+				"chargedMoves": ["MEGAHORN","DRILL_RUN"]
+			},
+			{
+				"speciesId": "scolipede",
+				"chargedMoves": ["X_SCISSOR","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "seismitoad",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["EARTH_POWER","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "boldore",
+				"chargedMoves": ["ROCK_SLIDE","BULLDOZE"]
 			}
 		]
 	},
@@ -1080,6 +1101,11 @@
 			{
 				"speciesId": "mewtwo",
 				"chargedMoves": ["PSYSTRIKE","ICE_BEAM"]
+			},
+			{
+				"speciesId": "seismitoad",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["EARTH_POWER","SLUDGE_BOMB"]
 			}
 		]
 	},
