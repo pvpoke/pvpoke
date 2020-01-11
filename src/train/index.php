@@ -122,10 +122,10 @@ require_once '../header.php';
 <div class="section white updates">
 	<h3>What's New</h3>
 
-	<h4>v1.12.14 (December 5, 2019)</h4>
+	<h4>v1.12.22 (January 10, 2019)</h4>
 	<ul>
-		<li>Added Timeless Cup featured teams to Training Battles, with teams from guan87, JayDevin, JimmaBanks, Kieng, KnightsOoofRen, and MattyFBaby!</li>
-		<li>Added a team preview when selecting featured teams to battle</li>
+		<li>Fixed an issue where the end-game window could cover the switch button on smaller screens</li>
+		<li>Fixed an issue where move names would display incorrectly for Pokemon with only one Charged Move</li>
 	</ul>
 </div>
 

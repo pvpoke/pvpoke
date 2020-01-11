@@ -285,12 +285,14 @@ var BattlerMaster = (function () {
 
 						if(i == 0){
 							$(".move-bar").hide();
+							$(".move-labels .label").hide();
 
 							for(var n = 0; n < pokemon.chargedMoves.length; n++){
 								var chargedMove = pokemon.chargedMoves[n];
 								var $bar = $(".battle-window .move-bar").eq(n);
 
 								$bar.show();
+								$(".move-labels .label").eq(n).show();
 								$bar.find(".label").html(chargedMove.abbreviation);
 								$bar.find(".bar").attr("type",chargedMove.type);
 								$bar.find(".bar-back").attr("class","bar-back " + chargedMove.type);

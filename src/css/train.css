@@ -977,7 +977,7 @@ a.random {
   position: absolute;
   z-index: 50;
   width: 100%;
-  bottom: -100%;
+  bottom: -150%;
 }
 .end-screen-container .end-screen {
   width: 90%;

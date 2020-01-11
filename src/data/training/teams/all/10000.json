@@ -306,11 +306,18 @@
 		"weight": 2,
 		"pokemon": [
 			{
+				"speciesId": "conkeldurr",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["DYNAMIC_PUNCH","STONE_EDGE"],
+				"difficulty": 3,
+				"weight":7
+			},
+			{
 				"speciesId": "machamp",
 				"fastMove": "COUNTER",
 				"chargedMoves": ["CROSS_CHOP","ROCK_SLIDE"],
 				"difficulty": 2,
-				"weight":14
+				"weight":7
 			},
 			{
 				"speciesId": "lucario",
