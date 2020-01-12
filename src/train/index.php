@@ -37,7 +37,6 @@ require_once '../header.php';
 				<option value="2500 all">Ultra League</option>
 				<option value="10000 all">Master League</option>
 				<option value="1500 fusion">Fusion Cup</option>
-				<option value="1500 timeless">Timeless Cup</option>
 			</select>
 			<h3 class="section-title">Difficulty</h3>
 			<select class="difficulty-select">
@@ -121,6 +120,11 @@ require_once '../header.php';
 
 <div class="section white updates">
 	<h3>What's New</h3>
+
+	<h4>v1.12.23 (January 12, 2019)</h4>
+	<ul>
+		<li>Fusion Cup featured teams are now available, featuring teams from DarkMatterWolf, JayDevin, Kieng, KnightsOoofRen, and ValorAsh!</li>
+	</ul>
 
 	<h4>v1.12.22 (January 10, 2019)</h4>
 	<ul>

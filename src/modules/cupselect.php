@@ -3,7 +3,6 @@
 	<option value="all" cup="gen-5">All Pokemon (With Generation 5)</option>
 	<option value="tsa-2" cup="fusion">Fusion Cup</option>
 	<option value="tsa-2" cup="fusion-empoleon">Fusion Cup (With Empoleon)</option>
-	<option value="tsa-2" cup="timeless">Timeless Cup</option>
 	<option value="tsa-1">Silph Arena Season 1</option>
 	<option value="tsa-2">Silph Arena Season 2</option>
 	<option value="community">Community Formats</option>
