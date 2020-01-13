@@ -84,7 +84,7 @@ var InterfaceMaster = (function () {
 					}
 				}
 
-				pokemonData.sort((a,b) => (a.pickCount > b.pickCount) ? -1 : ((b.pickCount > a.pickCount) ? 1 : 0));
+				pokemonData.sort((a,b) => (a.rosterCount > b.rosterCount) ? -1 : ((b.rosterCount > a.rosterCount) ? 1 : 0));
 
 				// Display pick data in table
 
