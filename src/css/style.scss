@@ -566,17 +566,17 @@ header{
 						height:12px;
 					}
 				}
-				
+
 				.level-cap-group{
 					display:flex;
 					margin-top:10px;
-					
+
 					div:first-of-type{
 						font-size: 12px;
 						font-weight: bold;
 						margin-right: 10px;
 					}
-					
+
 					.check{
 						margin-right:10px;
 					}
@@ -1294,7 +1294,7 @@ select, input{
 				font-size:14px;
 				font-weight: bold;
 			}
-			
+
 			th span{
 				font-weight: normal;
 				font-size:11px;
@@ -1359,7 +1359,7 @@ select, input{
 				cursor:initial;
 			}
 		}
-		
+
 		.multi-battle-sort{
 			display: block;
 			margin-top: 15px;
@@ -1601,7 +1601,7 @@ select, input{
 									  supported by Chrome and Opera */
 		}
 	}
-	
+
 	.status-effect-description{
 		font-size:12px;
 	}
@@ -1664,6 +1664,10 @@ select, input{
 
 	&.tap{
 		background:#eee;
+	}
+
+	&.dark{
+		color:#fff;
 	}
 
 	h3{
@@ -2875,7 +2879,7 @@ a.toggle{
 			width:60px;
 		}
 	}
-	
+
 	.modal .poke{
 		width:100%;
 	}
