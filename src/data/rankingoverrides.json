@@ -2493,6 +2493,10 @@
 			{
 				"speciesId": "lanturn",
 				"weight": 0.25
+			},
+			{
+				"speciesId": "escavalier",
+				"chargedMoves": ["AERIAL_ACE","MEGAHORN"]
 			}
 		]
 	},
@@ -2614,6 +2618,10 @@
 			{
 				"speciesId": "charizard",
 				"fastMove": "FIRE_SPIN"
+			},
+			{
+				"speciesId": "escavalier",
+				"chargedMoves": ["AERIAL_ACE","MEGAHORN"]
 			},
 			{
 				"speciesId": "abomasnow",
