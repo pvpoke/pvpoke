@@ -3042,6 +3042,7 @@
 		"types": ["normal", "none"],
 		"fastMoves": ["LICK", "ZEN_HEADBUTT", "YAWN"],
 		"chargedMoves": ["BODY_SLAM", "EARTHQUAKE", "HEAVY_SLAM", "HYPER_BEAM", "OUTRAGE", "SKULL_BASH", "SUPER_POWER"],
+		"legacyMoves": ["YAWN"],
 		"defaultIVs": {
 			"cp1500": [17.5, 3, 15, 1],
 			"cp2500": [29, 0, 13, 14]
