@@ -342,7 +342,7 @@
 			},
 			{
 				"speciesId": "magcargo",
-				"fastMove": "SMACK_DOWN",
+				"fastMove": "ROCK_THROW",
 				"chargedMoves": ["OVERHEAT","STONE_EDGE"],
 				"difficulty": 2,
 				"weight":15
