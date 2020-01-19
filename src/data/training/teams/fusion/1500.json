@@ -9,28 +9,35 @@
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["PSYSHOCK","BULLDOZE"],
 				"difficulty": 3,
-				"weight":20
+				"weight":15
+			},
+			{
+				"speciesId": "empoleon",
+				"fastMove": "WATERFALL",
+				"chargedMoves": ["HYDRO_CANNON","FLASH_CANNON"],
+				"difficulty": 2,
+				"weight":15
 			},
 			{
 				"speciesId": "probopass",
 				"fastMove": "SPARK",
 				"chargedMoves": ["THUNDERBOLT","ROCK_SLIDE"],
 				"difficulty": 2,
-				"weight":9
+				"weight":20
 			},
 			{
 				"speciesId": "probopass",
 				"fastMove": "SPARK",
 				"chargedMoves": ["ROCK_SLIDE","MAGNET_BOMB"],
-				"difficulty": 2,
-				"weight":3
+				"difficulty": 1,
+				"weight":1
 			},
 			{
 				"speciesId": "probopass",
 				"fastMove": "ROCK_THROW",
 				"chargedMoves": ["ROCK_SLIDE","MAGNET_BOMB"],
 				"difficulty": 2,
-				"weight":5
+				"weight":1
 			},
 			{
 				"speciesId": "magneton",
@@ -79,7 +86,7 @@
 				"fastMove": "POWDER_SNOW",
 				"chargedMoves": ["ICE_PUNCH","BULLDOZE"],
 				"difficulty": 3,
-				"weight":20
+				"weight":15
 			},
 			{
 				"speciesId": "ninetales_alolan",
@@ -93,7 +100,7 @@
 				"fastMove": "POWDER_SNOW",
 				"chargedMoves": ["AVALANCHE","SHADOW_BALL"],
 				"difficulty": 2,
-				"weight":14
+				"weight":20
 			},
 			{
 				"speciesId": "froslass",
@@ -141,7 +148,7 @@
 				"speciesId": "weavile",
 				"fastMove": "SNARL",
 				"chargedMoves": ["AVALANCHE","FOUL_PLAY"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":1
 			},
 			{
@@ -170,7 +177,7 @@
 				"fastMove": "WING_ATTACK",
 				"chargedMoves": ["SKY_ATTACK","NIGHT_SHADE"],
 				"difficulty": 2,
-				"weight":2
+				"weight":4
 			},
 			{
 				"speciesId": "altaria",
@@ -225,7 +232,7 @@
 				"speciesId": "honchkrow",
 				"fastMove": "SNARL",
 				"chargedMoves": ["SKY_ATTACK","DARK_PULSE"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":1
 			},
 			{
@@ -268,7 +275,7 @@
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["SKY_ATTACK","DRAGON_PULSE"],
 				"difficulty": 2,
-				"weight":20
+				"weight":10
 			},
 			{
 				"speciesId": "noctowl",
@@ -282,14 +289,14 @@
 				"fastMove": "WING_ATTACK",
 				"chargedMoves": ["SKY_ATTACK","NIGHT_SHADE"],
 				"difficulty": 2,
-				"weight":20
+				"weight":24
 			},
 			{
 				"speciesId": "golbat",
 				"fastMove": "WING_ATTACK",
 				"chargedMoves": ["POISON_FANG","SHADOW_BALL"],
-				"difficulty": 2,
-				"weight":2
+				"difficulty": 1,
+				"weight":1
 			},
 			{
 				"speciesId": "pidgeot",
@@ -316,8 +323,8 @@
 				"speciesId": "honchkrow",
 				"fastMove": "SNARL",
 				"chargedMoves": ["SKY_ATTACK","DARK_PULSE"],
-				"difficulty": 2,
-				"weight":2
+				"difficulty": 1,
+				"weight":1
 			},
 			{
 				"speciesId": "togekiss",
@@ -446,6 +453,13 @@
 				"weight":60
 			},
 			{
+				"speciesId": "empoleon",
+				"fastMove": "WATERFALL",
+				"chargedMoves": ["HYDRO_CANNON","FLASH_CANNON"],
+				"difficulty": 2,
+				"weight":25
+			},
+			{
 				"speciesId": "swampert",
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["HYDRO_CANNON","EARTHQUAKE"],
@@ -512,7 +526,7 @@
 				"speciesId": "toxicroak",
 				"fastMove": "COUNTER",
 				"chargedMoves": ["MUD_BOMB","SLUDGE_BOMB"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":2
 			},
 			{
@@ -520,7 +534,7 @@
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["DYNAMIC_PUNCH","ICE_PUNCH"],
 				"difficulty": 2,
-				"weight":20
+				"weight":24
 			},
 			{
 				"speciesId": "escavalier",
@@ -562,7 +576,7 @@
 				"fastMove": "COUNTER",
 				"chargedMoves": ["MEGAHORN","CLOSE_COMBAT"],
 				"difficulty": 2,
-				"weight":6
+				"weight":10
 			},
 			{
 				"speciesId": "infernape",
@@ -632,7 +646,7 @@
 				"fastMove": "CHARM",
 				"chargedMoves": ["ANCIENT_POWER","AERIAL_ACE"],
 				"difficulty": 2,
-				"weight":2
+				"weight":1
 			},
 			{
 				"speciesId": "wigglytuff",

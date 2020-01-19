@@ -5,6 +5,11 @@
 		"chargedMoves":["DYNAMIC_PUNCH","ICE_PUNCH"]
 	},
 	{
+		"speciesId":"machamp",
+		"fastMove":"COUNTER",
+		"chargedMoves":["CROSS_CHOP","ROCK_SLIDE"]
+	},
+	{
 		"speciesId":"haunter",
 		"fastMove":"SHADOW_CLAW",
 		"chargedMoves":["SHADOW_PUNCH","SHADOW_BALL"]
@@ -63,11 +68,6 @@
 		"speciesId":"rhyperior",
 		"fastMove":"SMACK_DOWN",
 		"chargedMoves":["SURF","SUPER_POWER"]
-	},
-	{
-		"speciesId":"rhyperior",
-		"fastMove":"MUD_SLAP",
-		"chargedMoves":["SURF","STONE_EDGE"]
 	},
 	{
 		"speciesId":"rhyperior",
