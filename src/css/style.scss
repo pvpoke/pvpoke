@@ -636,6 +636,19 @@ header{
 			margin-bottom:15px;
 		}
 
+		.add-fast-move{
+			border: 1px solid #000;
+		    outline: none;
+		    border-radius: 8px;
+		    cursor: pointer;
+		    margin: 0px 0px 10px 40px;
+		    float: right;
+
+			&.dark{
+				color:#fff;
+			}
+		}
+
 		.label{
 			margin:5px 5px 5px 0;
 		}
@@ -775,6 +788,18 @@ header{
 
 		.quick-fill-buttons{
 			justify-content: space-around;
+		}
+	}
+
+	.energy-label{
+		margin-top: 15px;
+	    text-align: center;
+	    font-size: 12px;
+	    line-height: 14px;
+
+		.num{
+			font-size: 16px;
+			font-weight: bold;
 		}
 	}
 

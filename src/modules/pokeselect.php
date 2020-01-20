@@ -108,6 +108,7 @@
 				<div class="flex">
 					<div class="label">Energy:</div><input class="start-energy" type="number" min="0" max="100" placeholder="Starting Energy" />
 				</div>
+				<button class="add-fast-move">+ Move</button>
 				<button class="pull-from-timeline">Pull from timeline</button>
 				<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
 				<div class="check priority"><span></span>Charged Move priority</div>
@@ -126,6 +127,10 @@
 				<div class="label">CM</div>
 				<div class="bar"></div>
 				<div class="bar-back"></div>
+			</div>
+			<div class="energy-label">
+				<div class="num">0</div>
+				<div>energy</div>
 			</div>
 			<div class="move-bar">
 				<div class="label">CM</div>

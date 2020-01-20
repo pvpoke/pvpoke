@@ -467,6 +467,17 @@ header {
 .poke .options .pull-from-timeline {
   margin-bottom: 15px;
 }
+.poke .options .add-fast-move {
+  border: 1px solid #000;
+  outline: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin: 0px 0px 10px 40px;
+  float: right;
+}
+.poke .options .add-fast-move.dark {
+  color: #fff;
+}
 .poke .options .label {
   margin: 5px 5px 5px 0;
 }
@@ -579,6 +590,16 @@ header {
 }
 .poke.multi .quick-fill-buttons {
   justify-content: space-around;
+}
+.poke .energy-label {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 14px;
+}
+.poke .energy-label .num {
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .hp.bar-back {
