@@ -201,6 +201,8 @@ function PokeSelect(element, i){
 
 	this.animateEnergy = function(index, amount){
 
+		$el.find(".energy-label .num").html(Math.min(selectedPokemon.startEnergy + amount, 100));
+
 		if(selectedPokemon.chargedMoves.length <= index){
 			return;
 		}
@@ -209,7 +211,6 @@ function PokeSelect(element, i){
 		var $bar = $el.find(".move-bar").eq(index);
 
 		$bar.find(".bar").css("height", ((energy / selectedPokemon.chargedMoves[index].energy)*100)+"%");
-		$el.find(".energy-label .num").html(selectedPokemon.startEnergy + amount);
 
 		if(energy >= selectedPokemon.chargedMoves[index].energy){
 			$bar.addClass("active");

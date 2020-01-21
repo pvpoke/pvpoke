@@ -184,7 +184,7 @@ var InterfaceMaster = (function () {
 
 					pokeSelectors[n].animateHealth(cumulativeDamage[n]);
 
-					for(i = 0; i < pokeSelectors[n].getPokemon().chargedMoves.length; i++){
+					for(i = 0; i < Math.max(pokeSelectors[n].getPokemon().chargedMoves.length, 1); i++){
 						pokeSelectors[n].animateEnergy(i, cumulativeEnergy[n]);
 					}
 
