@@ -178,6 +178,60 @@
 		"link": "https://twitter.com/ash_valor",
 		"pokemon": [
 			{
+				"speciesId": "swampert",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["HYDRO_CANNON","EARTHQUAKE"],
+				"level": 19.5,
+				"ivs": [0,5,13]
+			},
+			{
+				"speciesId": "whiscash",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["BLIZARD","MUD_BOMB"],
+				"level": 27.5,
+				"ivs": [1,15,15]
+			},
+			{
+				"speciesId": "heracross",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["CLOSE_COMBAT","EARTHQUAKE"],
+				"level": 18,
+				"ivs": [0,15,15]
+			},
+			{
+				"speciesId": "noctowl",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["SKY_ATTACK","NIGHT_SHADE"],
+				"level": 28.5,
+				"ivs": [0,14,15]
+			},
+			{
+				"speciesId": "marowak_alolan",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["SHADOW_BALL","BONE_CLUB"],
+				"level": 33.5,
+				"ivs": [0,14,14]
+			},
+			{
+				"speciesId": "cloyster",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["HYDRO_PUMP","ICY_WIND"],
+				"level": 22.5,
+				"ivs": [0,13,13]
+			}
+		]
+	},
+	{
+		"name": "ValorAsh w/ Empoleon",
+		"slug": "valorash_empoleon",
+		"img": "valorash",
+		"cup": "fusion",
+		"cupName": "Fusion",
+		"league": 1500,
+		"description": "PokemonGo PvP player. Like Ash I am chasing my childhood dream of becoming the best there ever was. Was #1 for a bit.",
+		"link": "https://twitter.com/ash_valor",
+		"pokemon": [
+			{
 				"speciesId": "empoleon",
 				"fastMove": "WATERFALL",
 				"chargedMoves": ["HYDRO_CANNON","FLASH_CANNON"],
@@ -218,6 +272,60 @@
 				"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"],
 				"level": 21,
 				"ivs": [0,14,11]
+			}
+		]
+	},
+	{
+		"name": "ValorAsh",
+		"slug": "valoras_rose",
+		"img": "valorash",
+		"cup": "rose",
+		"cupName": "Rose",
+		"league": 1500,
+		"description": "PokemonGo PvP player. Like Ash I am chasing my childhood dream of becoming the best there ever was. Was #1 for a bit.",
+		"link": "https://twitter.com/ash_valor",
+		"pokemon": [
+			{
+				"speciesId": "machamp",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["CLOSE_COMBAT","ROCK_SLIDE"],
+				"level": 18.5,
+				"ivs": [0,14,11]
+			},
+			{
+				"speciesId": "steelix",
+				"fastMove": "DRAGON_TAIL",
+				"chargedMoves": ["CRUNCH","EARTHQUAKE"],
+				"level": 24,
+				"ivs": [0,14,15]
+			},
+			{
+				"speciesId": "haunter",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["SHADOW_PUNCH","SHADOW_BALL"],
+				"level": 28.5,
+				"ivs": [1,15,14]
+			},
+			{
+				"speciesId": "skarmory",
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["SKY_ATTACK","FLASH_CANNON"],
+				"level": 27.5,
+				"ivs": [0,15,14]
+			},
+			{
+				"speciesId": "sableye",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["FOUL_PLAY","POWER_GEM"],
+				"level": 41,
+				"ivs": [15,15,15]
+			},
+			{
+				"speciesId": "charizard",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"],
+				"level": 19.5,
+				"ivs": [0,15,13]
 			}
 		]
 	}
