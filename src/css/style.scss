@@ -1846,7 +1846,8 @@ select, input{
 				}
 			}
 
-			&.overall{
+			&.overall,
+			&.stats{
 				width: 100%;
 				display: flex;
 				flex-wrap: wrap;

@@ -26,6 +26,11 @@
 
 	<!--Update section for updates-->
 	<h3>What's New</h3>
+	
+	<h4>v1.12.26 (January 22, 2020)</h4>
+	<ul>
+		<li>Pokemon stat values are now listed in the rankings. They display the range of minimum to maximum possible values. Get set to study those Attack stats!</li>
+	</ul>
 
 	<h4>v1.12.25 (January 21, 2020)</h4>
 	<ul>
