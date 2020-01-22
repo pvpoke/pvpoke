@@ -1337,9 +1337,10 @@ select, input{
 			}
 		}
 
-		.breakpoints-section{
+		.breakpoints-section,
+		.cmp-section{
 			max-width:340px;
-			margin: 0 auto;
+			margin: 0 auto 35px auto;
 
 			.bold{
 				font-weight:bold;

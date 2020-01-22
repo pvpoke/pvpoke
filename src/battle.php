@@ -168,6 +168,23 @@ require_once 'header.php';
 					<div class="golden-combination"></div>
 				</div>
 
+				<h2 class="center">Charged Move Ties</h2>
+
+				<div class="cmp-section">
+					<p>When two Charged Moves occur on the same turn, the Pokemon with the highest Attack stat goes first.</p>
+					<p><span class="name-attacker">Pokemon</span> can win Charged Move ties against this <span class="name-defender">Pokemon</span> with the following stats:</p>
+
+					<table class="stats-table cmp" cellspacing="0">
+						<tr>
+							<td><span class="name">Minimum Attack</span></td>
+							<td><span class="name">Attack to Guarantee</span></td>
+							<td><span class="name">Top Level &amp; IV's</span></td>
+						</tr>
+						<tbody class="output">
+						</tbody>
+					</table>
+				</div>
+
 				<h2 class="center">Battle Stats</h2>
 
 				<table class="stats-table" cellspacing="0">
@@ -298,7 +315,7 @@ require_once 'header.php';
 			<div class="poke-search-container">
 				<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />
 				<a href="#" class="search-info">i</a>
-				
+
 				<button class="multi-battle-sort">Sort: Worst to best &#9650;</button>
 			</div>
 			<div class="ranking-header">Opponent</div>

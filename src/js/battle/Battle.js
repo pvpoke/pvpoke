@@ -413,11 +413,7 @@ function Battle(){
 		// Determine if charged move priority should be used
 		usePriority = false;
 
-		/*if(pokemon[0].stats.atk != pokemon[1].stats.atk){
-			usePriority = true;
-		}*/
-
-		if(pokemon[0].priority != pokemon[1].priority){
+		if(pokemon[0].stats.atk != pokemon[1].stats.atk){
 			usePriority = true;
 		}
 
@@ -971,9 +967,9 @@ function Battle(){
 					action.settings.priority += 10;
 
 					// Set additional priority by attack stat
-					/*if(poke.stats.atk > opponent.stats.atk){
+					if(poke.stats.atk > opponent.stats.atk){
 						action.settings.priority++;
-					}*/
+					}
 				}
 
 				if(action.type == "switch"){

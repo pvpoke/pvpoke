@@ -27,15 +27,15 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.12.24 (January 20, 2020)</h4>
+	<h4>v1.12.25 (January 21, 2020)</h4>
 	<ul>
-		<li>Fixed an issue where damage displayed in Charged Move tooltips was sometimes incorrect.
+		<li>Attack stat now determines Charged Move ties:
 			<ul>
-				<li>If any stat changes were applied in battle, the tooltip would show the damage with these stat changes applied. The tooltip now shows the original damage value.</li>
+				<li>Ties are determined by the Pokemon's actual Attack stat, which factors in the base stat, Attack IV, and level.</li>
 			</ul>
 		</li>
-		<li>Exact energy amount is now displayed next to the Charged Move meters.</li>
-		<li>Added a button in the "Options" section that adds energy from the selected Pokemon's Fast Move. This allows you to quickly check how a Pokemon performs with a few moves' headstart.</li>
+		<li>Sims, rankings, and Training Battles are updated with the new CMP tiebreaker.</li>
+		<li>Added a new Charged Move Ties section in the battle details that show the Attack values a Pokemon needs to hit to win Charged Move ties.</li>
 	</ul>
 
 	<h3>Latest Article</h3>

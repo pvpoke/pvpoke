@@ -122,15 +122,14 @@ require_once '../header.php';
 <div class="section white updates">
 	<h3>What's New</h3>
 
-	<h4>v1.12.23 (January 12, 2019)</h4>
+	<h4>v1.12.25 (January 21, 2020)</h4>
 	<ul>
-		<li>Fusion Cup featured teams are now available, featuring teams from DarkMatterWolf, JayDevin, Kieng, KnightsOoofRen, and ValorAsh!</li>
-	</ul>
-
-	<h4>v1.12.22 (January 10, 2019)</h4>
-	<ul>
-		<li>Fixed an issue where the end-game window could cover the switch button on smaller screens</li>
-		<li>Fixed an issue where move names would display incorrectly for Pokemon with only one Charged Move</li>
+		<li>Attack stat now determines Charged Move ties:
+			<ul>
+				<li>Ties are determined by the Pokemon's actual Attack stat, which factors in the base stat, Attack IV, and level.</li>
+			</ul>
+		</li>
+		<li>Sims, rankings, and Training Battles are updated with the new CMP tiebreaker.</li>
 	</ul>
 </div>
 

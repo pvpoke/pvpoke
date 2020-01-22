@@ -1086,14 +1086,20 @@ select, input {
 .battle-results .battle-details table .rating.star.win, .battle-results.matrix table .rating.star.win {
   background-image: url("../img/starburst.png");
 }
-.battle-results .battle-details .breakpoints-section, .battle-results.matrix .breakpoints-section {
+.battle-results .battle-details .breakpoints-section,
+.battle-results .battle-details .cmp-section, .battle-results.matrix .breakpoints-section,
+.battle-results.matrix .cmp-section {
   max-width: 340px;
-  margin: 0 auto;
+  margin: 0 auto 35px auto;
 }
-.battle-results .battle-details .breakpoints-section .bold, .battle-results.matrix .breakpoints-section .bold {
+.battle-results .battle-details .breakpoints-section .bold,
+.battle-results .battle-details .cmp-section .bold, .battle-results.matrix .breakpoints-section .bold,
+.battle-results.matrix .cmp-section .bold {
   font-weight: bold;
 }
-.battle-results .battle-details .breakpoints-section .ivs .button, .battle-results.matrix .breakpoints-section .ivs .button {
+.battle-results .battle-details .breakpoints-section .ivs .button,
+.battle-results .battle-details .cmp-section .ivs .button, .battle-results.matrix .breakpoints-section .ivs .button,
+.battle-results.matrix .cmp-section .ivs .button {
   font-size: 14px;
   margin: 0;
   padding: 5px;
@@ -1101,7 +1107,9 @@ select, input {
   background: #333 !important;
   color: #eee;
 }
-.battle-results .battle-details .breakpoints-section .golden-combination .button, .battle-results.matrix .breakpoints-section .golden-combination .button {
+.battle-results .battle-details .breakpoints-section .golden-combination .button,
+.battle-results .battle-details .cmp-section .golden-combination .button, .battle-results.matrix .breakpoints-section .golden-combination .button,
+.battle-results.matrix .cmp-section .golden-combination .button {
   display: inline-block;
   font-size: 14px;
   padding: 5px 15px;

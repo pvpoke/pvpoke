@@ -99,7 +99,7 @@ var InterfaceMaster = (function () {
 
 				$("body").on("click", ".battle-details .rating-table a.rating.star", viewShieldBattle);
 				$("body").on("click", ".section.summary a.rating.star", viewBulkBattle);
-				$("body").on("click", ".breakpoints-section .button", selectBreakpointIVs);
+				$("body").on("click", ".breakpoints-section .button, .cmp-section .button", selectBreakpointIVs);
 
 				// Sandbox mode
 
@@ -738,6 +738,33 @@ var InterfaceMaster = (function () {
 
 				if((combinations.length > 0)&&(breakpoints.length > 1)&&(bulkpoints.length > 1)){
 					$(".breakpoints-section .golden-combination").append("<p><div class=\"button\" level=\""+combinations[0].level+"\" atk=\""+combinations[0].ivs.atk+"\" def=\""+combinations[0].ivs.def+"\" hp=\""+combinations[0].ivs.hp+"\">"+combinations[0].level+ " "+combinations[0].ivs.atk+"/"+combinations[0].ivs.def+"/"+combinations[0].ivs.hp+"</div> "+pokemon[0].speciesName+" reaches the best breakpoint and bulkpoint against this "+pokemon[1].speciesName+".</p>");
+				}
+
+				// Calculate attack needed for CMP ties
+
+				var minimumCMPAttack = pokemon[1].stats.atk + .001;
+				var guaranteedCMPAttack = pokemon[1].generateIVCombinations("atk", 1, 1)[0].atk + .001;
+				var maxCMPAttack = pokemon[0].generateIVCombinations("atk", 1, 1)[0].atk
+
+				// Find the best combination that reaches this value
+				var combinations = pokemon[0].generateIVCombinations("overall", 1, 2, [{stat: "atk", value: minimumCMPAttack}]);
+
+				// Output to table
+
+				$(".cmp-section .name-attacker").html(pokemon[0].speciesName);
+				$(".cmp-section .name-defender").html(pokemon[1].speciesName);
+				$(".stats-table.cmp .output").html('<tr></tr>');
+
+				if(maxCMPAttack > minimumCMPAttack){
+					$(".stats-table.cmp .output").append("<tr class=\"toggle\"><td>"+(Math.round(minimumCMPAttack * 100) / 100)+"</td><td>"+(Math.round(guaranteedCMPAttack * 100) / 100)+"</td><td class=\"ivs\"><div class=\"button\" level=\""+combinations[0].level+"\" atk=\""+combinations[0].ivs.atk+"\" def=\""+combinations[0].ivs.def+"\" hp=\""+combinations[0].ivs.hp+"\">"+combinations[0].level+ " "+combinations[0].ivs.atk+"/"+combinations[0].ivs.def+"/"+combinations[0].ivs.hp+"</div></td></tr>");
+
+					// Don't show a result if this Pokemon can't guarantee a CMP win
+					if(maxCMPAttack < guaranteedCMPAttack){
+						$(".stats-table.cmp .output td").eq(1).html("-");
+					}
+				} else{
+					// Show blank if this Pokemon can't win CMP at all
+					$(".stats-table.cmp .output").append("<tr class=\"toggle\"><td>-</td><td>-</td><td>-</td></tr>");
 				}
 
 			}
