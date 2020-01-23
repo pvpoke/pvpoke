@@ -70,8 +70,20 @@
 				"chargedMoves": ["SURF", "SKULL_BASH"]
 			},
 			{
+				"speciesId": "vespiquen",
+				"chargedMoves": ["X_SCISSOR", "POWER_GEM"]
+			},
+			{
+				"speciesId": "masquerain",
+				"chargedMoves": ["BUBBLE_BEAM", "SILVER_WIND"]
+			},
+			{
 				"speciesId": "marowak_alolan",
 				"fastMove": "FIRE_SPIN"
+			},
+			{
+				"speciesId": "lanturn",
+				"fastMove": "SPARK"
 			},
 			{
 				"speciesId": "zapdos",
@@ -232,11 +244,19 @@
 			},
 			{
 				"speciesId": "escavalier",
-				"chargedMoves": ["MEGAHORN","DRILL_RUN"]
+				"chargedMoves": ["MEGAHORN","AERIAL_ACE"]
 			},
 			{
-				"speciesId": "scolipede",
-				"chargedMoves": ["X_SCISSOR","SLUDGE_BOMB"]
+				"speciesId": "electrode",
+				"chargedMoves": ["FOUL_PLAY","THUNDERBOLT"]
+			},
+			{
+				"speciesId": "minun",
+				"chargedMoves": ["THUNDERBOLT","GRASS_KNOT"]
+			},
+			{
+				"speciesId": "plusle",
+				"chargedMoves": ["THUNDERBOLT","GRASS_KNOT"]
 			},
 			{
 				"speciesId": "seismitoad",
@@ -968,6 +988,10 @@
 				"chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"]
 			},
 			{
+				"speciesId": "escavalier",
+				"chargedMoves": ["MEGAHORN", "AERIAL_ACE"]
+			},
+			{
 				"speciesId": "mew",
 				"chargedMoves": ["OVERHEAT", "PSYSHOCK"]
 			},
@@ -986,6 +1010,10 @@
 			{
 				"speciesId": "politoed",
 				"chargedMoves": ["SURF", "EARTHQUAKE"]
+			},
+			{
+				"speciesId": "ampharos",
+				"chargedMoves": ["THUNDER_PUNCH", "FOCUS_BLAST"]
 			},
 			{
 				"speciesId": "sceptile",
@@ -1146,6 +1174,10 @@
 			{
 				"speciesId": "typhlosion",
 				"chargedMoves": ["BLAST_BURN", "OVERHEAT"]
+			},
+			{
+				"speciesId": "raikou",
+				"fastMove": "VOLT_SWITCH"
 			},
 			{
 				"speciesId": "gardevoir",
@@ -1463,7 +1495,7 @@
 			},
 			{
 				"speciesId": "escavalier",
-				"chargedMoves": ["MEGAHORN","DRILL_RUN"]
+				"chargedMoves": ["MEGAHORN","AERIAL_ACE"]
 			},
 			{
 				"speciesId": "accelgor",
@@ -2348,6 +2380,10 @@
 			{
 				"speciesId": "swampert",
 				"chargedMoves": ["HYDRO_CANNON", "SLUDGE_WAVE"]
+			},
+			{
+				"speciesId": "lanturn",
+				"fastMove": "SPARK"
 			},
 			{
 				"speciesId": "venomoth",

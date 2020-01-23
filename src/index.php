@@ -27,6 +27,12 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 	
+	
+	<h4>v1.12.27 (January 23, 2020)</h4>
+	<ul>
+		<li>Rankings and simulations are updated with the latest movepool changes and move rebalances! Explore Spark Lanturn or take a peek at the new and improved Megahorn!</li>
+	</ul>
+	
 	<h4>v1.12.26 (January 22, 2020)</h4>
 	<ul>
 		<li>Pokemon stat values are now listed in the rankings. They display the range of minimum to maximum possible values. Get set to study those Attack stats!</li>

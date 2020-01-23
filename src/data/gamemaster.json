@@ -695,7 +695,7 @@
 		"types": ["electric", "none"],
 		"fastMoves": ["SPARK", "THUNDER_SHOCK", "VOLT_SWITCH", "CHARM"],
 		"chargedMoves": ["BRICK_BREAK", "THUNDER", "THUNDER_PUNCH", "WILD_CHARGE", "SKULL_BASH"],
-		"legacyMoves": ["THUNDER", "THUNDER_SHOCK"],
+		"legacyMoves": ["THUNDER"],
 		"defaultIVs": {
 			"cp1500": [26.5, 4, 7, 9],
 			"cp2500": [40, 15, 15, 15]
@@ -1173,7 +1173,7 @@
 		"types": ["bug", "poison"],
 		"fastMoves": ["BUG_BITE", "CONFUSION", "INFESTATION"],
 		"chargedMoves": ["BUG_BUZZ", "POISON_FANG", "PSYCHIC", "SILVER_WIND"],
-		"legacyMoves": ["BUG_BITE", "POISON_FANG"],
+		"legacyMoves": ["BUG_BITE"],
 		"defaultIVs": {
 			"cp1500": [27.5, 3, 11, 9],
 			"cp2500": [40, 15, 15, 15]
@@ -1882,7 +1882,6 @@
 		"types": ["electric", "steel"],
 		"fastMoves": ["CHARGE_BEAM", "SPARK", "THUNDER_SHOCK"],
 		"chargedMoves": ["DISCHARGE", "FLASH_CANNON", "MAGNET_BOMB", "ZAP_CANNON"],
-		"legacyMoves": ["DISCHARGE", "THUNDER_SHOCK"],
 		"defaultIVs": {
 			"cp1500": [22.5, 2, 13, 11],
 			"cp2500": [40, 15, 15, 15]
@@ -2114,7 +2113,7 @@
 		"types": ["ghost", "poison"],
 		"fastMoves": ["ASTONISH", "LICK", "SHADOW_CLAW"],
 		"chargedMoves": ["DARK_PULSE", "SHADOW_BALL", "SHADOW_PUNCH", "SLUDGE_BOMB"],
-		"legacyMoves": ["LICK", "SHADOW_BALL"],
+		"legacyMoves": ["LICK"],
 		"defaultIVs": {
 			"cp1500": [30, 0, 9, 7],
 			"cp2500": [40, 15, 15, 15]
@@ -2185,7 +2184,7 @@
 		"types": ["psychic", "none"],
 		"fastMoves": ["CONFUSION", "ZEN_HEADBUTT"],
 		"chargedMoves": ["FOCUS_BLAST", "FUTURE_SIGHT", "PSYCHIC", "PSYSHOCK", "SHADOW_BALL", "FIRE_PUNCH", "ICE_PUNCH", "THUNDER_PUNCH"],
-		"legacyMoves": ["PSYSHOCK", "SHADOW_BALL"],
+		"legacyMoves": ["PSYSHOCK"],
 		"defaultIVs": {
 			"cp1500": [27.5, 4, 5, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -3532,7 +3531,7 @@
 			"hp": 268
 		},
 		"types": ["water", "electric"],
-		"fastMoves": ["CHARGE_BEAM", "WATER_GUN"],
+		"fastMoves": ["CHARGE_BEAM", "WATER_GUN","SPARK"],
 		"chargedMoves": ["HYDRO_PUMP", "THUNDER", "THUNDERBOLT"],
 		"defaultIVs": {
 			"cp1500": [28, 0, 10, 12],
@@ -3702,7 +3701,7 @@
 		},
 		"types": ["electric", "none"],
 		"fastMoves": ["CHARGE_BEAM", "VOLT_SWITCH"],
-		"chargedMoves": ["DRAGON_PULSE", "FOCUS_BLAST", "POWER_GEM", "THUNDER", "ZAP_CANNON"],
+		"chargedMoves": ["DRAGON_PULSE", "FOCUS_BLAST", "POWER_GEM", "THUNDER", "ZAP_CANNON", "THUNDER_PUNCH"],
 		"legacyMoves": ["DRAGON_PULSE"],
 		"defaultIVs": {
 			"cp1500": [19.5, 3, 10, 15],
@@ -5457,7 +5456,7 @@
 		},
 		"types": ["bug", "flying"],
 		"fastMoves": ["AIR_SLASH", "INFESTATION"],
-		"chargedMoves": ["AIR_CUTTER", "OMINOUS_WIND", "SILVER_WIND"],
+		"chargedMoves": ["AIR_CUTTER", "OMINOUS_WIND", "SILVER_WIND", "BUBBLE_BEAM"],
 		"defaultIVs": {
 			"cp1500": [24.5, 3, 14, 11],
 			"cp2500": [40, 15, 15, 15]
@@ -5893,7 +5892,7 @@
 		},
 		"types": ["electric", "none"],
 		"fastMoves": ["QUICK_ATTACK", "SPARK"],
-		"chargedMoves": ["DISCHARGE", "SWIFT", "THUNDERBOLT"],
+		"chargedMoves": ["DISCHARGE", "SWIFT", "THUNDERBOLT","GRASS_KNOT"],
 		"defaultIVs": {
 			"cp1500": [36.5, 2, 7, 9],
 			"cp2500": [40, 15, 15, 15]
@@ -5909,7 +5908,7 @@
 		},
 		"types": ["electric", "none"],
 		"fastMoves": ["QUICK_ATTACK", "SPARK"],
-		"chargedMoves": ["DISCHARGE", "SWIFT", "THUNDERBOLT"],
+		"chargedMoves": ["DISCHARGE", "SWIFT", "THUNDERBOLT","GRASS_KNOT"],
 		"defaultIVs": {
 			"cp1500": [39, 4, 4, 14],
 			"cp2500": [40, 15, 15, 15]
@@ -7791,7 +7790,7 @@
 			"hp": 172
 		},
 		"types": ["bug", "flying"],
-		"fastMoves": ["BUG_BITE", "POISON_STING"],
+		"fastMoves": ["BUG_BITE", "POISON_STING", "FURY_CUTTER", "AIR_SLASH"],
 		"chargedMoves": ["BUG_BUZZ", "POWER_GEM", "X_SCISSOR", "FELL_STINGER"],
 		"defaultIVs": {
 			"cp1500": [29, 0, 8, 14],
@@ -13444,7 +13443,7 @@
 		"moveId": "MEGAHORN",
 		"name": "Megahorn",
 		"type": "bug",
-		"power": 90,
+		"power": 100,
 		"energy": 55,
 		"energyGain": 0,
 		"cooldown": 500
@@ -14197,8 +14196,8 @@
 		"type": "electric",
 		"power": 12,
 		"energy": 0,
-		"energyGain": 10,
-		"cooldown": 2500
+		"energyGain": 16,
+		"cooldown": 2000
 	}, {
 		"moveId": "WATER_GUN",
 		"name": "Water Gun",
