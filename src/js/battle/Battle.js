@@ -100,17 +100,6 @@ function Battle(){
 					}
 				}
 			}
-
-			// Display any current buffs or debuffs
-
-			var statNames = ["Attack","Defense"];
-			var statDescriptions = ["fell sharply","fell sharply","fell sharply","fell","","rose","rose sharply","rose sharply","rose sharply"];
-
-			for(var i = poke.statBuffs.length-1; i >= 0; i--){
-				if(poke.statBuffs[i] != 0){
-					turnMessages.push({ index: poke.index, str: statNames[i] + " " + statDescriptions[poke.statBuffs[i]+4] +"!"});
-				}
-			}
 		}
 	}
 
@@ -1314,10 +1303,6 @@ function Battle(){
 				for(var n = 0; n < actions.length; n++){
 					if((actions[n].type == "switch")&&(actions[n].actor == phaseProps.actors[i])){
 						switchesAnswered++;
-
-						// Reset the incoming Pokemon's buffs and debuffs
-						players[actions[n].actor].getTeam()[actions[n].value].statBuffs = [0,0];
-						players[actions[n].actor].getTeam()[actions[n].value].startStatBuffs = [0,0];
 					}
 				}
 			}
@@ -1439,6 +1424,10 @@ function Battle(){
 				if(newPokemon){
 					if(poke.hp > 0){
 						player.startSwitchTimer();
+
+						// Reset the outgoing Pokemon's buffs and debuffs
+						poke.statBuffs = [0,0];
+						poke.startStatBuffs = [0,0];
 					}
 					self.setNewPokemon(newPokemon, poke.index, false);
 
