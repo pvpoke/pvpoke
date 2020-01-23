@@ -198,6 +198,50 @@ require_once 'header.php'; ?>
 	</table>
 </div>
 
+<div class="details-template hide">
+	<div class="detail-section float margin">
+		<div class="ranking-header">Fast Moves</div>
+		<div class="ranking-header right">Usage</div>
+		<div class="moveset fast clear"></div>
+	</div>
+	<div class="detail-section float">
+		<div class="ranking-header">Charged Moves</div>
+		<div class="ranking-header right">Usage</div>
+		<div class="moveset charged clear"></div>
+	</div>
+	<div class="detail-section float margin">
+		<div class="ranking-header">Key Matchups</div>
+		<div class="ranking-header right">Battle Rating</div>
+		<div class="matchups clear"></div>
+	</div>
+	<div class="detail-section float">
+		<div class="ranking-header">Top Counters</div>
+		<div class="ranking-header right">Battle Rating</div>
+		<div class="counters clear"></div>
+	</div>
+	<div class="clear"></div>
+	<div class="detail-section stats">
+		<div class="rating-container">
+			<div class="ranking-header">Attack</div>
+			<div class="rating"></div>&nbsp;-
+			<div class="rating"></div>
+		</div>
+		<div class="rating-container">
+			<div class="ranking-header">Defense</div>
+			<div class="rating"></div>&nbsp;-
+			<div class="rating"></div>
+		</div>
+		<div class="rating-container">
+			<div class="ranking-header">Stamina</div>
+			<div class="rating"></div>&nbsp;-
+			<div class="rating"></div>
+		</div>
+	</div>
+	<div class="share-link detail-section"><input type="text" readonly="">
+		<div class="copy">Copy</div>
+	</div>
+</div>
+
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=<?php echo $SITE_VERSION; ?>"></script>
