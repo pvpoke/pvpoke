@@ -70,7 +70,7 @@
 		"chargedMoves":["SURF","SUPER_POWER"]
 	},
 	{
-		"speciesId":"rhyperior",
+		"speciesId":"rhydon",
 		"fastMove":"MUD_SLAP",
 		"chargedMoves":["SURF","STONE_EDGE"]
 	},
@@ -93,6 +93,11 @@
 		"speciesId":"probopass",
 		"fastMove":"ROCK_THROW",
 		"chargedMoves":["ROCK_SLIDE","MAGNET_BOMB"]
+	},
+	{
+		"speciesId":"graveler_alolan",
+		"fastMove":"VOLT_SWITCH",
+		"chargedMoves":["ROCK_BLAST","THUNDERBOLT"]
 	},
 	{
 		"speciesId":"lickilicky",

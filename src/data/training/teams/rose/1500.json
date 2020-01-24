@@ -86,7 +86,21 @@
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["FOUL_PLAY","POWER_GEM"],
 				"difficulty": 3,
-				"weight":20
+				"weight":10
+			},
+			{
+				"speciesId": "sableye",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["FOUL_PLAY","SHADOW_SNEAK"],
+				"difficulty": 3,
+				"weight":5
+			},
+			{
+				"speciesId": "sableye",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["FOUL_PLAY","RETURN"],
+				"difficulty": 3,
+				"weight":5
 			},
 			{
 				"speciesId": "drifblim",
@@ -142,7 +156,21 @@
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["FOUL_PLAY","POWER_GEM"],
 				"difficulty": 3,
-				"weight":20
+				"weight":10
+			},
+			{
+				"speciesId": "sableye",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["FOUL_PLAY","SHADOW_SNEAK"],
+				"difficulty": 3,
+				"weight":5
+			},
+			{
+				"speciesId": "sableye",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["FOUL_PLAY","RETURN"],
+				"difficulty": 3,
+				"weight":5
 			},
 			{
 				"speciesId": "drifblim",
@@ -352,7 +380,7 @@
 				"fastMove": "FIRE_SPIN",
 				"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"],
 				"difficulty": 2,
-				"weight":30
+				"weight":50
 			},
 			{
 				"speciesId": "castform_sunny",
@@ -366,7 +394,7 @@
 				"fastMove": "FIRE_SPIN",
 				"chargedMoves": ["SHADOW_BALL","BONE_CLUB"],
 				"difficulty": 2,
-				"weight":40
+				"weight":30
 			},
 			{
 				"speciesId": "heatmor",
@@ -404,11 +432,39 @@
 				"weight":60
 			},
 			{
+				"speciesId": "steelix",
+				"fastMove": "THUNDER_FANG",
+				"chargedMoves": ["CRUNCH","EARTHQUAKE"],
+				"difficulty": 2,
+				"weight":8
+			},
+			{
+				"speciesId": "graveler_alolan",
+				"fastMove": "VOLT_SWITCH",
+				"chargedMoves": ["ROCK_BLAST","THUNDERBOLT"],
+				"difficulty": 2,
+				"weight":8
+			},
+			{
+				"speciesId": "graveler_alolan",
+				"fastMove": "VOLT_SWITCH",
+				"chargedMoves": ["ROCK_BLAST","STONE_EDGE"],
+				"difficulty": 2,
+				"weight":4
+			},
+			{
+				"speciesId": "golem_alolan",
+				"fastMove": "VOLT_SWITCH",
+				"chargedMoves": ["ROCK_BLAST","WILD_CHARGE"],
+				"difficulty": 2,
+				"weight":2
+			},
+			{
 				"speciesId": "probopass",
 				"fastMove": "ROCK_THROW",
 				"chargedMoves": ["ROCK_SLIDE","MAGNET_BOMB"],
 				"difficulty": 2,
-				"weight":10
+				"weight":6
 			},
 			{
 				"speciesId": "magneton",
