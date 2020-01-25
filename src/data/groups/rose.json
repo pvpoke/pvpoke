@@ -97,7 +97,12 @@
 	{
 		"speciesId":"graveler_alolan",
 		"fastMove":"VOLT_SWITCH",
-		"chargedMoves":["ROCK_BLAST","THUNDERBOLT"]
+		"chargedMoves":["ROCK_BLAST","STONE_EDGE"]
+	},
+	{
+		"speciesId":"magneton",
+		"fastMove":"THUNDER_SHOCK",
+		"chargedMoves":["DISCHARGE","MAGNET_BOMB"]
 	},
 	{
 		"speciesId":"lickilicky",
@@ -110,8 +115,8 @@
 		"chargedMoves":["ICY_WIND","SHADOW_BALL"]
 	},
 	{
-		"speciesId":"skuntank",
-		"fastMove":"POISON_JAB",
-		"chargedMoves":["CRUNCH","SLUDGE_BOMB"]
+		"speciesId":"vileplume",
+		"fastMove":"RAZOR_LEAF",
+		"chargedMoves":["DAZZLING_GLEAM","SLUDGE_BOMB"]
 	}
 ]

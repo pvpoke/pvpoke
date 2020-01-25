@@ -50,7 +50,7 @@
 			</select>
 			<select class="pokemon-level-cap-select">
 				<option value="40">Default Level Cap (40)</option>
-				<option value="45">Buddy Level Cap (45)</option>
+				<option value="41">Buddy Level Cap (41)</option>
 			</select>
 			<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
 		</div>

@@ -1183,8 +1183,7 @@ function Battle(){
 				}
 
 				// If this Pokemon uses a Fast Move, will it be knocked out while on cooldown?
-				if( (((opponent.cooldown > 0) && (opponent.cooldown < poke.fastMove.cooldown)) || ((opponent.cooldown == 0) && (opponent.fastMove.cooldown < poke.fastMove.cooldown))) && (roundChargedMoveUsed == 0)){
-
+				if( (((opponent.cooldown > 0) && (opponent.cooldown < poke.fastMove.cooldown)) || ((opponent.cooldown == 0) && ((opponent.fastMove.cooldown < poke.fastMove.cooldown) || ((opponent.stats.atk > poke.stats.atk)&&(opponent.fastMove.cooldown == poke.fastMove.cooldown))))) && (roundChargedMoveUsed == 0)){
 					// Can this Pokemon be knocked out by future Fast Moves?
 
 					var availableTime = poke.fastMove.cooldown - opponent.cooldown;
@@ -1217,8 +1216,11 @@ function Battle(){
 							futureEffectiveEnergy += opponent.fastMove.energyGain;
 						}
 
-						for(var j = 0; j < opponent.chargedMoves.length; j++){
+						if((opponent.stats.atk > poke.stats.atk)&&(opponent.fastMove.cooldown + opponent.cooldown == poke.fastMove.cooldown)){
+							futureEffectiveEnergy += opponent.fastMove.energyGain;
+						}
 
+						for(var j = 0; j < opponent.chargedMoves.length; j++){
 							if((futureEffectiveEnergy >= opponent.chargedMoves[j].energy) && (futureEffectiveHP <= opponent.chargedMoves[j].damage)){
 								nearDeath = true;
 
@@ -1478,7 +1480,7 @@ function Battle(){
 
 				// For PuP, Acid Spray and similar moves, don't shield if it's survivable
 
-				if((! sandbox)&&(move.buffs)&&(move.buffs[0] > 0 || move.buffs[1] < 0)&&(move.buffApplyChance == 1)){
+				if((! sandbox)&&(move.buffs)&&(((move.buffs[0] > 0) && (move.buffTarget == "self")) || ((move.buffs[1] < 0) && (move.buffTarget == "opponent")))&&(move.buffApplyChance == 1)){
 					useShield = false;
 
 					var postMoveHP = defender.hp - damage; // How much HP will be left after the attack
