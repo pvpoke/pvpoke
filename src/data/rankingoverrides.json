@@ -1151,8 +1151,7 @@
 		"pokemon": [
 			{
 				"speciesId": "giratina_altered",
-				"fastMove": ["SHADOW_CLAW"],
-				"weight": 2
+				"fastMove": ["SHADOW_CLAW"]
 			},
 			{
 				"speciesId": "blaziken",
@@ -1247,22 +1246,6 @@
 			{
 				"speciesId": "garchomp",
 				"chargedMoves": ["OUTRAGE","EARTHQUAKE"]
-			},
-			{
-				"speciesId": "dialga",
-				"weight": 1.5
-			},
-			{
-				"speciesId": "togekiss",
-				"weight": 1.5
-			},
-			{
-				"speciesId": "giratina_origin",
-				"weight": 1.5
-			},
-			{
-				"speciesId": "metagross",
-				"weight": 1.5
 			}
 		]
 	},
