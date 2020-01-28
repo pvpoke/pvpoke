@@ -9,7 +9,14 @@
 				"fastMove": "COUNTER",
 				"chargedMoves": ["DYNAMIC_PUNCH","ICE_PUNCH"],
 				"difficulty": 3,
-				"weight":20
+				"weight":15
+			},
+			{
+				"speciesId": "medicham",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["DYNAMIC_PUNCH","PSYCHIC"],
+				"difficulty": 3,
+				"weight":5
 			},
 			{
 				"speciesId": "medicham",
@@ -22,14 +29,14 @@
 				"speciesId": "medicham",
 				"fastMove": "PSYCHO_CUT",
 				"chargedMoves": ["DYNAMIC_PUNCH","ICE_PUNCH"],
-				"difficulty": 3,
+				"difficulty": 1,
 				"weight":1
 			},
 			{
 				"speciesId": "medicham",
 				"fastMove": "COUNTER",
 				"chargedMoves": ["POWER_UP_PUNCH","PSYCHIC"],
-				"difficulty": 3,
+				"difficulty": 1,
 				"weight":2
 			},
 			{
@@ -37,7 +44,7 @@
 				"fastMove": "COUNTER",
 				"chargedMoves": ["CROSS_CHOP","ROCK_SLIDE"],
 				"difficulty": 2,
-				"weight":15
+				"weight":30
 			},
 			{
 				"speciesId": "machamp",
@@ -86,14 +93,14 @@
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["FOUL_PLAY","POWER_GEM"],
 				"difficulty": 3,
-				"weight":10
+				"weight":12
 			},
 			{
 				"speciesId": "sableye",
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["FOUL_PLAY","SHADOW_SNEAK"],
-				"difficulty": 3,
-				"weight":5
+				"difficulty": 2,
+				"weight":1
 			},
 			{
 				"speciesId": "sableye",
@@ -106,14 +113,14 @@
 				"speciesId": "drifblim",
 				"fastMove": "HEX",
 				"chargedMoves": ["ICY_WIND","SHADOW_BALL"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":4
 			},
 			{
 				"speciesId": "drifblim",
 				"fastMove": "HEX",
 				"chargedMoves": ["OMINOUS_WIND","SHADOW_BALL"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":1
 			},
 			{
@@ -142,7 +149,7 @@
 	{
 		"slot": "Ghost 2",
 		"synergies": ["Fairy", "Fighting"],
-		"weight": 4,
+		"weight": 2,
 		"pokemon": [
 			{
 				"speciesId": "haunter",
@@ -176,14 +183,14 @@
 				"speciesId": "drifblim",
 				"fastMove": "HEX",
 				"chargedMoves": ["ICY_WIND","SHADOW_BALL"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":2
 			},
 			{
 				"speciesId": "drifblim",
 				"fastMove": "HEX",
 				"chargedMoves": ["OMINOUS_WIND","SHADOW_BALL"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":2
 			},
 			{
@@ -212,21 +219,21 @@
 	{
 		"slot": "Dark/Poison",
 		"synergies": ["Flex","Flying"],
-		"weight": 14,
+		"weight": 6,
 		"pokemon": [
 			{
 				"speciesId": "drapion",
 				"fastMove": "BITE",
 				"chargedMoves": ["FELL_STINGER","AQUA_TAIL"],
 				"difficulty": 3,
-				"weight":10
+				"weight":3
 			},
 			{
 				"speciesId": "drapion",
 				"fastMove": "BITE",
 				"chargedMoves": ["CRUNCH","AQUA_TAIL"],
 				"difficulty": 3,
-				"weight":10
+				"weight":14
 			},
 			{
 				"speciesId": "drapion",
@@ -278,11 +285,18 @@
 				"weight":20
 			},
 			{
+				"speciesId": "gliscor",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["NIGHT_SLASH","EARTHQUAKE"],
+				"difficulty": 2,
+				"weight":4
+			},
+			{
 				"speciesId": "rhydon",
 				"fastMove": "MUD_SLAP",
 				"chargedMoves": ["SURF","STONE_EDGE"],
 				"difficulty": 2,
-				"weight":2
+				"weight":6
 			},
 			{
 				"speciesId": "gligar",
@@ -295,7 +309,7 @@
 				"speciesId": "gligar",
 				"fastMove": "FURY_CUTTER",
 				"chargedMoves": ["NIGHT_SLASH","DIG"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":2
 			},
 			{
@@ -311,6 +325,13 @@
 				"chargedMoves": ["SUPER_POWER","SURF"],
 				"difficulty": 2,
 				"weight":8
+			},
+			{
+				"speciesId": "rhyperior",
+				"fastMove": "MUD_SLAP",
+				"chargedMoves": ["STONE_EDGE","SURF"],
+				"difficulty": 2,
+				"weight":4
 			},
 			{
 				"speciesId": "donphan",
@@ -331,7 +352,7 @@
 	{
 		"slot": "Flying",
 		"synergies": ["Ground"],
-		"weight": 28,
+		"weight": 17,
 		"pokemon": [
 			{
 				"speciesId": "skarmory",
@@ -345,14 +366,14 @@
 				"fastMove": "WING_ATTACK",
 				"chargedMoves": ["SHADOW_BALL","POISON_FANG"],
 				"difficulty": 2,
-				"weight":25
+				"weight":12
 			},
 			{
 				"speciesId": "aerodactyl",
 				"fastMove": "ROCK_THROW",
 				"chargedMoves": ["ROCK_SLIDE","ANCIENT_POWER"],
 				"difficulty": 2,
-				"weight":5
+				"weight":4
 			},
 			{
 				"speciesId": "tranquill",
@@ -373,14 +394,14 @@
 	{
 		"slot": "Fire",
 		"synergies": ["Ground"],
-		"weight": 60,
+		"weight": 100,
 		"pokemon": [
 			{
 				"speciesId": "charizard",
 				"fastMove": "FIRE_SPIN",
 				"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"],
 				"difficulty": 2,
-				"weight":50
+				"weight":60
 			},
 			{
 				"speciesId": "castform_sunny",
@@ -421,22 +442,22 @@
 	},
 	{
 		"slot": "Tank",
-		"synergies": ["Flying"],
-		"weight": 100,
+		"synergies": ["Flying","Fire"],
+		"weight": 80,
 		"pokemon": [
 			{
 				"speciesId": "steelix",
 				"fastMove": "DRAGON_TAIL",
 				"chargedMoves": ["CRUNCH","EARTHQUAKE"],
 				"difficulty": 2,
-				"weight":60
+				"weight":14
 			},
 			{
 				"speciesId": "steelix",
 				"fastMove": "THUNDER_FANG",
 				"chargedMoves": ["CRUNCH","EARTHQUAKE"],
 				"difficulty": 2,
-				"weight":8
+				"weight":2
 			},
 			{
 				"speciesId": "graveler_alolan",
@@ -450,7 +471,7 @@
 				"fastMove": "VOLT_SWITCH",
 				"chargedMoves": ["ROCK_BLAST","STONE_EDGE"],
 				"difficulty": 2,
-				"weight":4
+				"weight":3
 			},
 			{
 				"speciesId": "golem_alolan",
@@ -464,13 +485,20 @@
 				"fastMove": "ROCK_THROW",
 				"chargedMoves": ["ROCK_SLIDE","MAGNET_BOMB"],
 				"difficulty": 2,
-				"weight":6
+				"weight":20
+			},
+			{
+				"speciesId": "probopass",
+				"fastMove": "SPARK",
+				"chargedMoves": ["ROCK_SLIDE","MAGNET_BOMB"],
+				"difficulty": 2,
+				"weight":7
 			},
 			{
 				"speciesId": "magneton",
 				"fastMove": "THUNDER_SHOCK",
 				"chargedMoves": ["MAGNET_BOMB","DISCHARGE"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":3
 			},
 			{
@@ -478,7 +506,7 @@
 				"fastMove": "ROCK_THROW",
 				"chargedMoves": ["OVERHEAT","STONE_EDGE"],
 				"difficulty": 2,
-				"weight":15
+				"weight":3
 			},
 			{
 				"speciesId": "rhyperior",
@@ -513,7 +541,7 @@
 	{
 		"slot": "Fairy",
 		"synergies": ["Tank"],
-		"weight": 14,
+		"weight": 18,
 		"pokemon": [
 			{
 				"speciesId": "wigglytuff",
@@ -527,7 +555,7 @@
 				"fastMove": "CHARM",
 				"chargedMoves": ["METEOR_MASH","PSYCHIC"],
 				"difficulty": 2,
-				"weight":15
+				"weight":10
 			},
 			{
 				"speciesId": "granbull",

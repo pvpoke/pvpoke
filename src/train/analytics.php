@@ -32,7 +32,7 @@ require_once '../header.php';
 				<option value="2500 all">Ultra League</option>
 				<option value="10000 all">Master League</option>
 				<option value="1500 fusion">Fusion Cup</option>
-				<option value="1500 timeless">Timeless Cup</option>
+				<option value="1500 rose">Rose Cup</option>
 			</select>
 		</div>
 	</div>
