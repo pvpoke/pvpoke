@@ -184,6 +184,16 @@ var InterfaceMaster = (function () {
 			// Dispatch battle start to the MatchHandler with provided options
 
 			function startBattle(e){
+				// Only start if league and cup are selected
+				var val = $(".league-cup-select option:selected").val();
+				
+				if(val == ""){
+					modalWindow("Select League", $("<p>Please select a league or cup.</p>"));
+					
+					return false;
+				}
+				
+				
 				var teams = [
 					 multiSelectors[0].getPokemonList(),
 					 multiSelectors[1].getPokemonList()
