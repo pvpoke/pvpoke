@@ -186,14 +186,14 @@ var InterfaceMaster = (function () {
 			function startBattle(e){
 				// Only start if league and cup are selected
 				var val = $(".league-cup-select option:selected").val();
-				
+
 				if(val == ""){
 					modalWindow("Select League", $("<p>Please select a league or cup.</p>"));
-					
+
 					return false;
 				}
-				
-				
+
+
 				var teams = [
 					 multiSelectors[0].getPokemonList(),
 					 multiSelectors[1].getPokemonList()
@@ -460,6 +460,15 @@ var InterfaceMaster = (function () {
 				} else{
 					$(".team-method-select option[value=\"random\"]").show();
 					$("a.random").show();
+				}
+
+				// Force 3v3 for GO Battle League
+				if(cup == "gobattleleague"){
+					$(".mode-select option[value=\"single\"]").prop("selected","selected");
+					$(".mode-select option[value=\"tournament\"]").prop("disabled","disabled");
+					$(".mode-select").trigger("change");
+				} else{
+					$(".mode-select option[value=\"tournament\"]").prop("disabled","");
 				}
 			}
 

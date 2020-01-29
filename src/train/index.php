@@ -33,7 +33,8 @@ require_once '../header.php';
 			</select>
 			<h3 class="section-title">League &amp; Cup</h3>
 			<select class="league-cup-select">
-				<option value="" selected disabled>Select a league or cup</option>
+				<option value="" selected disabled>Select a league</option>
+				<option value="1500 gobattleleague">GO Battle League (Great)</option>
 				<option value="1500 all">Great League</option>
 				<option value="2500 all">Ultra League</option>
 				<option value="10000 all">Master League</option>
@@ -123,14 +124,12 @@ require_once '../header.php';
 <div class="section white updates">
 	<h3>What's New</h3>
 
-	<h4>v1.12.25 (January 21, 2020)</h4>
+	<h4>v1.12.30 (January 29, 2020)</h4>
 	<ul>
-		<li>Attack stat now determines Charged Move ties:
-			<ul>
-				<li>Ties are determined by the Pokemon's actual Attack stat, which factors in the base stat, Attack IV, and level.</li>
-			</ul>
-		</li>
-		<li>Sims, rankings, and Training Battles are updated with the new CMP tiebreaker.</li>
+		<li>GO Battle League is now available in Training Battles!</li>
+		<ul>
+			<li>This format allows 3v3 only and has a refined pool of Pokemon.</li>
+		</ul>
 	</ul>
 </div>
 

@@ -181,6 +181,12 @@ function TrainingAI(l, p, b){
 
 		if(opponentRoster.length < 6){
 			basicWeight = (4 * (4 - level));
+
+			// Make the teams more random in GO Battle League
+
+			if(battle.getCup().name == "gobattleleague"){
+				basicWeight *= 2;
+			}
 		}
 
 		// Choose a pick strategy
