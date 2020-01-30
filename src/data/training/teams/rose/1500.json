@@ -47,6 +47,13 @@
 				"weight":30
 			},
 			{
+				"speciesId": "scrafty",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["POWER_UP_PUNCH","FOUL_PLAY"],
+				"difficulty": 2,
+				"weight":3
+			},
+			{
 				"speciesId": "machamp",
 				"fastMove": "COUNTER",
 				"chargedMoves": ["CLOSE_COMBAT","ROCK_SLIDE"],

@@ -117,6 +117,13 @@
 				"weight":8
 			},
 			{
+				"speciesId": "scrafty",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["POWER_UP_PUNCH","FOUL_PLAY"],
+				"difficulty": 2,
+				"weight":2
+			},
+			{
 				"speciesId": "medicham",
 				"fastMove": "COUNTER",
 				"chargedMoves": ["POWER_UP_PUNCH","ICE_PUNCH"],
