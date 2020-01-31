@@ -13,7 +13,8 @@
 			},
 			{
 				"speciesId": "azumarill",
-				"chargedMoves": ["PLAY_ROUGH", "HYDRO_PUMP"]
+				"chargedMoves": ["ICE_BEAM", "HYDRO_PUMP"],
+				"weight": 2
 			},
 			{
 				"speciesId": "medicham",
@@ -83,7 +84,8 @@
 			},
 			{
 				"speciesId": "raichu_alolan",
-				"fastMove": "VOLT_SWITCH"
+				"fastMove": "VOLT_SWITCH",
+				"chargedMoves": ["THUNDER_PUNCH","GRASS_KNOT"]
 			},
 			{
 				"speciesId": "raichu",
@@ -228,7 +230,8 @@
 			},
 			{
 				"speciesId": "tropius",
-				"fastMove": "AIR_SLASH"
+				"fastMove": "AIR_SLASH",
+				"weight": 2
 			},
 			{
 				"speciesId": "probopass",
@@ -274,6 +277,22 @@
 			{
 				"speciesId": "boldore",
 				"chargedMoves": ["ROCK_SLIDE","BULLDOZE"]
+			},
+			{
+				"speciesId": "registeel",
+				"weight":2
+			},
+			{
+				"speciesId": "altaria",
+				"weight":2
+			},
+			{
+				"speciesId": "skarmory",
+				"weight":2
+			},
+			{
+				"speciesId": "deoxys_defense",
+				"weight":2
 			}
 		]
 	},

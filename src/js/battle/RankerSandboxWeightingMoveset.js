@@ -389,7 +389,7 @@ var RankerMaster = (function () {
 
 				// Doesn't make sense to weight which attackers can beat which other attackers, so don't weight those
 
-				if(scenario.energy[0] != scenario.energy[1]){
+				if((scenario.energy[0] != scenario.energy[1])||(scenario.shields[0] != scenario.shields[1])){
 					iterations = 1;
 				}
 

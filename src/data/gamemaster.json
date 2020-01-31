@@ -19,6 +19,11 @@
 			"slug": "switches",
 			"shields": [1,1],
 			"energy": [6,0]
+		},
+		{
+			"slug": "attackers",
+			"shields": [0,1],
+			"energy": [0,0]
 		}
 	],
 	"cups": [{

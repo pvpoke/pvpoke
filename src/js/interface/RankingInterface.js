@@ -453,7 +453,7 @@ var InterfaceMaster = (function () {
 				// If overall, display score for each category
 
 				if(r.scores){
-					var categories = ["Lead","Closer","Switch","Consistency"];
+					var categories = ["Lead","Closer","Switch","Attacker","Consistency"];
 
 					var $section = $("<div class=\"detail-section overall\"></div>");
 

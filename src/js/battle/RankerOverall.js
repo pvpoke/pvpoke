@@ -56,7 +56,7 @@ var RankerMaster = (function () {
 
 			this.rank = function(cup, league){
 
-				var categories = ["leads","closers","switches"];
+				var categories = ["leads","closers","switches","attackers"];
 
 				for(var i = 0; i < categories.length; i++){
 					gm.loadRankingData(self, categories[i], league, cup.name);
@@ -69,7 +69,7 @@ var RankerMaster = (function () {
 
 				var league = battle.getCP().toString();
 				var cup = battle.getCup().name;
-				var categories = ["leads","closers","switches"];
+				var categories = ["leads","closers","switches","attackers"];
 
 				if(gm.loadedData < categories.length){
 					return;
@@ -217,12 +217,13 @@ var RankerMaster = (function () {
 					var bestScore = Math.max(scores[0], scores[1], scores[2]);
 					sortedScores.push(scores[0],
 						scores[1],
-						scores[2]
+						scores[2],
+						scores[3]
 						);
 
 					sortedScores.sort((a,b) => (a > b) ? -1 : ((b > a) ? 1 : 0));
 
-					rankings[i].score = Math.pow( Math.pow(sortedScores[0], 11) * Math.pow(sortedScores[1], 6) * Math.pow(sortedScores[2], 1) * Math.pow(consistencyScore, 2), (1/20));
+					rankings[i].score = Math.pow( Math.pow(sortedScores[0], 16) * Math.pow(sortedScores[1], 8) * Math.pow(sortedScores[2], 2) * Math.pow(sortedScores[3], 1) * Math.pow(consistencyScore, 4), (1/31));
 
 					rankings[i].score = Math.floor(rankings[i].score*10) / 10;
 				}
@@ -236,6 +237,47 @@ var RankerMaster = (function () {
 				var json = JSON.stringify(rankings);
 				var league = battle.getCP();
 				var category = "overall";
+
+				console.log(category+"/rankings-"+league+".json");
+
+				// Write to a file
+
+				$.ajax({
+
+					url : 'data/write.php',
+					type : 'POST',
+					data : {
+						'data' : json,
+						'league' : league,
+						'category' : category,
+						'cup' : cup
+					},
+					dataType:'json',
+					success : function(data) {
+						console.log(data);
+					},
+					error : function(request,error)
+					{
+						console.log("Request: "+JSON.stringify(request));
+					}
+				});
+				
+				// Save consistency scores
+				
+				for(var i = 0; i < rankings.length; i++){
+					rankings[i].score = rankings[i].scores[4];
+					delete rankings[i].scores;
+				}
+				
+				rankings.sort((a,b) => (a.score > b.score) ? -1 : ((b.score > a.score) ? 1 : 0));
+
+				var json = JSON.stringify(rankings);
+
+				console.log(json);
+
+				var json = JSON.stringify(rankings);
+				var league = battle.getCP();
+				var category = "consistency";
 
 				console.log(category+"/rankings-"+league+".json");
 
