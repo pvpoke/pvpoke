@@ -3098,21 +3098,31 @@ a.toggle{
 			}
 		}
 	}
-	
+
 	.advanced{
 		.flex-section{
 			display:flex;
-			
+
 			div{
 				margin-right:30px;
 			}
 		}
-		
+
+		.format-select{
+			display:none;
+		}
+
+		.cup-select{
+			display:block;
+			font-size:14px;
+			max-width:200px;
+		}
+
 		select,
 		input{
 			max-width:100px;
 		}
-		
+
 		h3{
 			font-size:14px;
 			margin-bottom:5px;

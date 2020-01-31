@@ -24,11 +24,11 @@ var RankerMaster = (function () {
 			var allResults = []; // Array of all ranking results
 
 			var leagues = [1500];
-			
-			
+
+
 			// Ranking scenarios, energy is turns of advantage
 			var scenarios = GameMaster.getInstance().data.rankingScenarios;
-			
+
 			var currentLeagueIndex = 0;
 			var currentScenarioIndex = 0;
 
@@ -104,7 +104,7 @@ var RankerMaster = (function () {
 				currentLeagueIndex = 0;
 				currentScenarioIndex = 0;
 
-				leagues = [cp];				
+				leagues = [cp];
 				allResults = [];
 
 				for(var currentLeagueIndex = 0; currentLeagueIndex < leagues.length; currentLeagueIndex++){
@@ -156,9 +156,6 @@ var RankerMaster = (function () {
 			// Run an individual rank set
 
 			this.rank = function(league, scenario){
-				
-				console.log(scenario);
-
 				var cup = battle.getCup();
 				var totalBattles = 0;
 				var shieldCounts = scenario.shields;
@@ -231,17 +228,17 @@ var RankerMaster = (function () {
 							pokemon.autoSelectMoves();
 							opponent.autoSelectMoves();
 						}
-						
+
 						pokemon.setShields(shieldCounts[0]);
 						opponent.setShields(shieldCounts[1]);
-						
+
 						// Set energy advantage
 						if(scenario.energy[0] == 0){
 							pokemon.startEnergy = 0;
 						} else{
 							pokemon.startEnergy = Math.min(pokemon.fastMove.energyGain * (Math.floor((scenario.energy[0] * 500) / pokemon.fastMove.cooldown)), 100);
 						}
-						
+
 						if(scenario.energy[1] == 0){
 							opponent.startEnergy = 0;
 						} else{
@@ -442,9 +439,9 @@ var RankerMaster = (function () {
 							if(pokemonList[j].weightModifier){
 								weight *= pokemonList[j].weightModifier;
 							}
-							
+
 							// For switches, punish hard losses more. The goal is to identify safe switches
-							
+
 							if((scenario.slug == "switches")&&(matches[j].adjRating < 500)){
 								weight *= (1 + (Math.pow(500 - matches[j].adjRating, 2)/20000));
 							}
@@ -668,7 +665,7 @@ var RankerMaster = (function () {
 					})
 				}
 			}
-			
+
 			// Set the scenarios to be ranked
 
 			this.setScenarioOverrides = function(arr){

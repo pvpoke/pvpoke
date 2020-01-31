@@ -13,6 +13,7 @@ function interfaceObject(){
 	var pokeSelectors = [];
 	var multiSelector;
 	var rankingsRunning = false;
+	var loadingDataFromCup = false; // Flag for whether we want to import new data into the moveset overrides
 	var self = this;
 
 	// Store selected filter for later manipulation
@@ -28,7 +29,7 @@ function interfaceObject(){
 		overrides: [],
 		league: 1500
 	}
-	
+
 	// The scenario to rank
 	var scenario = {
 		slug: "custom",
@@ -45,10 +46,12 @@ function interfaceObject(){
 
 		var data = GameMaster.getInstance().data;
 		rankingInterface.setContext("custom");
+		rankingInterface.setCustomRankingInterface(self);
 
 		$(".league-select").on("change", selectLeague);
 		$(".add-filter").on("click", addFilter);
 		$(".simulate").on("click", generateRankings);
+		$(".cup-select").on("change", selectCup);
 		$(".subject-shield-select, .target-shield-select").on("change", changeScenarioShields);
 		$(".subject-turns, .target-turns").on("keyup, change", changeScenarioEnergy);
 		$("body").on("change", ".filter-type", changeFilterType);
@@ -62,9 +65,6 @@ function interfaceObject(){
 		multiSelector = new PokeMultiSelect($(".poke.multi"));
 		multiSelector.init(data.pokemon, battle);
 		multiSelector.setContext("customrankings");
-
-		// Kill the cup select
-		$(".cup-select").remove();
 	};
 
 	// Update the displayed filters
@@ -227,6 +227,39 @@ function interfaceObject(){
 		$(".league-select").trigger("change");
 	}
 
+	// Import moveset oversides using an existing cup's rankings
+
+	this.importMovesetsFromRankings = function(data){
+		if(! loadingDataFromCup){
+			return;
+		}
+
+		var list = [];
+
+		for(var i = 0; i < Math.min(data.length,100); i++){
+			var r = data[i];
+
+			var pokemon = new Pokemon(r.speciesId, 0, battle);
+			pokemon.initialize();
+
+			var arr = r.moveStr.split("-");
+			pokemon.selectMove("fast", pokemon.fastMovePool[arr[0]].moveId);
+			pokemon.selectMove("charged", pokemon.chargedMovePool[arr[1]-1].moveId, 0);
+
+			if((arr.length > 2)&&(arr[2] != "0")){
+				pokemon.selectMove("charged", pokemon.chargedMovePool[arr[2]-1].moveId,1);
+			} else{
+				pokemon.selectMove("charged", "none", 1);
+			}
+
+			list.push(pokemon);
+		}
+
+		multiSelector.setPokemonList(list);
+
+		loadingDataFromCup = false;
+	}
+
 	// Add a new displayed filter given a filter category and filter data
 
 	this.addFilterFromData = function(category, data, index){
@@ -348,7 +381,7 @@ function interfaceObject(){
 			cup.league = cp;
 		}
 	}
-	
+
 	// Event handler for changing the amount of shields in the ranking scenario
 
 	function changeScenarioShields(e){
@@ -360,7 +393,7 @@ function interfaceObject(){
 			scenario.shields[index] = val;
 		}
 	}
-	
+
 	// Event handler for changing the amount of shields in the ranking scenario
 
 	function changeScenarioEnergy(e){
@@ -369,10 +402,24 @@ function interfaceObject(){
 		if(val < 0){
 			val = 0;
 		}
-		
+
 		scenario.energy[index] = val;
-		
-		console.log(scenario);
+	}
+
+	// Import the settings of an existing up
+
+	function selectCup(e){
+		var val = $(".cup-select option:selected").val();
+		var c = gm.getCupById(val);
+
+		if(c){
+			c.name = "custom";
+
+			$(".custom-rankings-import textarea.import").val(JSON.stringify(c));
+			$(".custom-rankings-import textarea.import").trigger("change");
+		}
+
+		loadingDataFromCup = true;
 	}
 
 	// Run simulation

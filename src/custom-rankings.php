@@ -28,7 +28,7 @@ require_once 'header.php'; ?>
 		</div>
 		<button class="add-filter" list-index="1">+ Add Filter</button>
 	</div>
-	
+
 	<a class="toggle" href="#">Advanced <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content advanced">
 		<div class="flex-section">
@@ -59,6 +59,9 @@ require_once 'header.php'; ?>
 				<input type="number" class="target-turns" index="1" placeholder="Turns" />
 			</div>
 		</div>
+		<h3 class="section-title">Import League or Cup</h3>
+		<?php require_once 'modules/cupselect.php'; ?>
+		<p>Import the rulesets and recommended moves from an existing format.</p>
 	</div>
 
 	<div class="filter clone hide">
@@ -172,7 +175,7 @@ require_once 'header.php'; ?>
 	<h3>Import/Export Settings</h3>
 
 	<p>Copy the text below to export your custom settings or paste to import settings.</p>
-	
+
 	<textarea class="import"></textarea>
 	<div class="copy">Copy</div>
 </div>

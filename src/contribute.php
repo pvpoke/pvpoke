@@ -34,9 +34,10 @@ require_once 'header.php'; ?>
 		<div class="supporter">FunkyGaaroth</div>
 		<div class="supporter">autonomyfairy</div>
 		<div class="supporter">JEngels21</div>
-		<div class="supporter">PirateUnicornNK</div>
 		<div class="supporter">SparkSpencer</div>
-		<div class="supporter">Vexilus @PvPVexilus</div> 
+		<div class="supporter">Vexilus @PvPVexilus</div>
+
+
 	</div>
 
 	<h2 class="center">Master Supporters</h2>
@@ -101,7 +102,7 @@ require_once 'header.php'; ?>
 			<div class="supporter"><a href="https://twitter.com/TheMisterValor" target="_blank">TheMisterValor</a></div>
 		</div>
 		<div class="supporter-container">
-			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/vergyverg.jpg" />
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/vergyverg.jpg" width="85" height="85" />
 			<div class="supporter"><a href="https://www.youtube.com/channel/UCOeIQWAJYD-zy7T5-IRZy7Q" target="_blank">Vergyverg</a></div>
 		</div>
 		<div class="supporter-container">
@@ -109,8 +110,16 @@ require_once 'header.php'; ?>
 			<div class="supporter"><a href="https://twitter.com/PirateUnicornNK" target="_blank">Mark Pain</a></div>
 		</div>
 		<div class="supporter-container">
-			<div class="space"></div>
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/pirateunicornnk.jpg" width="85" height="85" />
 			<div class="supporter"><a href="https://twitter.com/PirateUnicornNK" target="_blank">PirateUnicornNK</a></div>
+		</div>
+		<div class="supporter-container">
+			<div class="space"></div>
+			<div class="supporter"><a href="http://twitch.tv/rickeybot" target="_blank">Rickeybot</a></div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/wizap.jpg"/>
+			<div class="supporter"><a href="https://www.youtube.com/channel/UC77QyviuffB5xGKtAkn1XtQ" target="_blank">Wizap 7</a></div>
 		</div>
 	</div>
 </div>
