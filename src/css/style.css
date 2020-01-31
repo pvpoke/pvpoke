@@ -2267,6 +2267,16 @@ a.toggle {
       display: block; }
     .custom-rankings .filters .filter[type="dex"] .field-section.dex {
       display: block; }
+.custom-rankings .advanced .flex-section {
+  display: flex; }
+  .custom-rankings .advanced .flex-section div {
+    margin-right: 30px; }
+.custom-rankings .advanced select,
+.custom-rankings .advanced input {
+  max-width: 100px; }
+.custom-rankings .advanced h3 {
+  font-size: 14px;
+  margin-bottom: 5px; }
 
 .custom-rankings-list {
   display: none; }

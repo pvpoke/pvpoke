@@ -28,6 +28,13 @@ function interfaceObject(){
 		overrides: [],
 		league: 1500
 	}
+	
+	// The scenario to rank
+	var scenario = {
+		slug: "custom",
+		shields: [1,1],
+		energy: [0,0]
+	};
 
 	var pokemonList = [];
 
@@ -42,6 +49,8 @@ function interfaceObject(){
 		$(".league-select").on("change", selectLeague);
 		$(".add-filter").on("click", addFilter);
 		$(".simulate").on("click", generateRankings);
+		$(".subject-shield-select, .target-shield-select").on("change", changeScenarioShields);
+		$(".subject-turns, .target-turns").on("keyup, change", changeScenarioEnergy);
 		$("body").on("change", ".filter-type", changeFilterType);
 		$("body").on("stateChange", ".field-section .check", filterCheckBox);
 		$("body").on("keyup", ".field-section input", filterInput);
@@ -339,6 +348,32 @@ function interfaceObject(){
 			cup.league = cp;
 		}
 	}
+	
+	// Event handler for changing the amount of shields in the ranking scenario
+
+	function changeScenarioShields(e){
+		var index = parseInt($(this).attr("index"));
+		var val = parseInt($(this).find("option:selected").val());
+		var allowed = [0,1,2];
+
+		if(allowed.indexOf(val) > -1){
+			scenario.shields[index] = val;
+		}
+	}
+	
+	// Event handler for changing the amount of shields in the ranking scenario
+
+	function changeScenarioEnergy(e){
+		var index = parseInt($(this).attr("index"));
+		var val = parseInt($(this).val());
+		if(val < 0){
+			val = 0;
+		}
+		
+		scenario.energy[index] = val;
+		
+		console.log(scenario);
+	}
 
 	// Run simulation
 
@@ -362,10 +397,13 @@ function interfaceObject(){
 		if(! data){
 			// Generate movesets
 			ranker.setMoveSelectMode("auto");
+			ranker.setScenarioOverrides([scenario]);
 			ranker.rankLoop(battle.getCP(), cup, self.receiveRankingData);
 		} else{
 			// Generate rankings with movesets established
 			ranker.setMoveSelectMode("force");
+			ranker.setScenarioOverrides([scenario]);
+			rankingInterface.setScenario(scenario);
 			ranker.rankLoop(battle.getCP(), cup, self.receiveRankingData, data[0]);
 		}
 	}

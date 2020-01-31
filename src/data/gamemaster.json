@@ -4,6 +4,23 @@
 		"maxBuffStages": 4,
 		"buffDivisor": 4
 	},
+	"rankingScenarios": [
+		{
+			"slug": "leads",
+			"shields": [1,1],
+			"energy": [0,0]
+		},
+		{
+			"slug": "closers",
+			"shields": [0,0],
+			"energy": [0,0]
+		},
+		{
+			"slug": "switches",
+			"shields": [1,1],
+			"energy": [6,0]
+		}
+	],
 	"cups": [{
 		"name": "all",
 		"title": "All Pokemon",

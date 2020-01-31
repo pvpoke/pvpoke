@@ -24,9 +24,13 @@ var RankerMaster = (function () {
 			var allResults = []; // Array of all ranking results
 
 			var leagues = [1500];
-			var shields = [ [0,0], [1,1], [0,1], [1,0]];
+			
+			
+			// Ranking scenarios, energy is turns of advantage
+			var scenarios = GameMaster.getInstance().data.rankingScenarios;
+			
 			var currentLeagueIndex = 0;
-			var currentShieldsIndex = 0;
+			var currentScenarioIndex = 0;
 
 			var startTime = 0; // For debugging and performance testing
 
@@ -54,10 +58,10 @@ var RankerMaster = (function () {
 
 				self.initPokemonList(battle.getCP());
 
-				currentShieldsIndex = 0;
+				currentScenarioIndex = 0;
 
-				for(var currentShieldsIndex = 0; currentShieldsIndex < shields.length; currentShieldsIndex++){
-					var r = self.rank(leagues[currentLeagueIndex], shields[currentShieldsIndex]);
+				for(currentScenarioIndex = 0; currentScenarioIndex < scenarios.length; currentScenarioIndex++){
+					var r = self.rank(leagues[currentLeagueIndex], scenarios[currentScenarioIndex]);
 					allResults.push(r);
 				}
 
@@ -98,14 +102,9 @@ var RankerMaster = (function () {
 
 
 				currentLeagueIndex = 0;
-				currentShieldsIndex = 0;
+				currentScenarioIndex = 0;
 
-				leagues = [cp];
-
-				if(cup.name == "custom"){
-					shields = [ [1,1] ];
-				}
-
+				leagues = [cp];				
 				allResults = [];
 
 				for(var currentLeagueIndex = 0; currentLeagueIndex < leagues.length; currentLeagueIndex++){
@@ -114,8 +113,8 @@ var RankerMaster = (function () {
 
 						self.initPokemonList(cp);
 
-						for(var currentShieldsIndex = 0; currentShieldsIndex < shields.length; currentShieldsIndex++){
-							rankingCombinations.push({league: leagues[currentLeagueIndex], shields: shields[currentShieldsIndex]});
+						for(currentScenarioIndex = 0; currentScenarioIndex < scenarios.length; currentScenarioIndex++){
+							rankingCombinations.push({league: leagues[currentLeagueIndex], scenario: scenarios[currentScenarioIndex]});
 						}
 
 					} else if(moveSelectMode == "force"){
@@ -139,7 +138,7 @@ var RankerMaster = (function () {
 
 						startTime = Date.now();
 
-						var r = self.rank(rankingCombinations[0].league, rankingCombinations[0].shields);
+						var r = self.rank(rankingCombinations[0].league, rankingCombinations[0].scenario);
 						allResults.push(r);
 
 						console.log("Total time: " + (Date.now() - startTime));
@@ -156,11 +155,13 @@ var RankerMaster = (function () {
 
 			// Run an individual rank set
 
-			this.rank = function(league, shields){
+			this.rank = function(league, scenario){
+				
+				console.log(scenario);
 
 				var cup = battle.getCup();
 				var totalBattles = 0;
-				var shieldCounts = shields;
+				var shieldCounts = scenario.shields;
 
 				rankings = [];
 
@@ -198,7 +199,7 @@ var RankerMaster = (function () {
 
 							// When shields are the same, A vs B is the same as B vs A, so take the existing result
 
-							if((rankings[n].matches[i])&&(shieldCounts[0]==shieldCounts[1])){
+							if((rankings[n].matches[i])&&(shieldCounts[0]==shieldCounts[1])&&(scenario.energy[0] == scenario.energy[1])){
 
 								rankObj.matches.push({
 									opponent: opponent.speciesId,
@@ -230,9 +231,23 @@ var RankerMaster = (function () {
 							pokemon.autoSelectMoves();
 							opponent.autoSelectMoves();
 						}
-
+						
 						pokemon.setShields(shieldCounts[0]);
 						opponent.setShields(shieldCounts[1]);
+						
+						// Set energy advantage
+						if(scenario.energy[0] == 0){
+							pokemon.startEnergy = 0;
+						} else{
+							pokemon.startEnergy = Math.min(pokemon.fastMove.energyGain * (Math.floor((scenario.energy[0] * 500) / pokemon.fastMove.cooldown)), 100);
+						}
+						
+						if(scenario.energy[1] == 0){
+							opponent.startEnergy = 0;
+						} else{
+							opponent.startEnergy = Math.min(opponent.fastMove.energyGain * (Math.floor((scenario.energy[1] * 500) / opponent.fastMove.cooldown)), 100);
+						}
+
 
 						battle.simulate();
 
@@ -377,8 +392,8 @@ var RankerMaster = (function () {
 
 				// Doesn't make sense to weight which attackers can beat which other attackers, so don't weight those
 
-				if(shieldCounts[0] != shieldCounts[1]){
-					// iterations = 0;
+				if(scenario.energy[0] != scenario.energy[1]){
+					iterations = 1;
 				}
 
 				// Iterate through the rankings and weigh each matchup Battle Rating by the average rating of the opponent
@@ -426,6 +441,12 @@ var RankerMaster = (function () {
 
 							if(pokemonList[j].weightModifier){
 								weight *= pokemonList[j].weightModifier;
+							}
+							
+							// For switches, punish hard losses more. The goal is to identify safe switches
+							
+							if((scenario.slug == "switches")&&(matches[j].adjRating < 500)){
+								weight *= (1 + (Math.pow(500 - matches[j].adjRating, 2)/20000));
 							}
 
 							var sc = matches[j].adjRating * weight;
@@ -580,17 +601,7 @@ var RankerMaster = (function () {
 				// Write rankings to file
 				if(cup.name != "custom"){
 
-					var category = "overall";
-
-					if((shieldCounts[0] == 0) && (shieldCounts[1] == 0)){
-						category = "closers";
-					} else if((shieldCounts[0] == 1) && (shieldCounts[1] == 1)){
-						category = "leads";
-					} else if((shieldCounts[0] == 1) && (shieldCounts[1] == 0)){
-						category = "defenders";
-					} else if((shieldCounts[0] == 0) && (shieldCounts[1] == 1)){
-						category = "attackers";
-					}
+					var category = scenario.slug;
 
 					var json = JSON.stringify(rankings);
 					var league = battle.getCP();
@@ -656,6 +667,12 @@ var RankerMaster = (function () {
 						pokemon: values
 					})
 				}
+			}
+			
+			// Set the scenarios to be ranked
+
+			this.setScenarioOverrides = function(arr){
+				scenarios = arr;
 			}
 
 			// Given a Pokemon, output a string of numbers for URL building

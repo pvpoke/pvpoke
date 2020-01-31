@@ -210,6 +210,8 @@ var GameMaster = (function () {
 
 			if(! object.rankings[key]){
 				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=206";
+				
+				console.log(file);
 
 				$.getJSON( file, function( data ){
 					object.rankings[key] = data;
