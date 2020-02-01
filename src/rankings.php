@@ -113,6 +113,7 @@ require_once 'header.php';
 		<a href="#" data="leads" scenario="leads">Leads</a>
 		<a href="#" data="closers" scenario="closers">Closers</a>
 		<a href="#" data="switches" scenario="switches">Switches</a>
+		<a href="#" data="chargers" scenario="chargers">Chargers</a>
 		<a href="#" data="attackers" scenario="attackers">Attackers</a>
 		<a href="#" data="consistency" scenario="leads">Consistency</a>
 	</div>
