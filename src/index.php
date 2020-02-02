@@ -27,11 +27,14 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.12.30 (January 29, 2020)</h4>
+	<h4>v1.12.31 (February 2, 2020)</h4>
 	<ul>
-		<li>GO Battle League is now available in Training Battles!</li>
+		<li>Added new ranking categories and reworked overall ranking formula:</li>
 		<ul>
-			<li>This format allows 3v3 only and has a refined pool of Pokemon.</li>
+			<li>Added new "Switches" and "Chargers" categories to rank Pokemon as safe switches and with an energy advantage, respectively. Consistency score now has its own listing as well.</li>
+			<li>Removed the Defender category (shield advantage) from the rankings. This category was somewhat redundant with the Closer category and inflated scores for some Pokemon like Hitmontop and Heracross.</li>
+			<li>Added advanced options to Custom Rankings that allow you to rank in varied shield and energy scenarios, or quickly import the rules and movesets from an existing format.</li>
+			<li>Legendary Pokemon now have an IV floor of 1.</li>
 		</ul>
 	</ul>
 

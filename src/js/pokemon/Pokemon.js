@@ -268,8 +268,12 @@ function Pokemon(id, i, b){
 
 		var floor = 0;
 
-		var untradables = ["mew","celebi","deoxys_attack","deoxys_defense","deoxys_speed","deoxys","jirachi"];
+		var untradables = ["mew","celebi","deoxys_attack","deoxys_defense","deoxys_speed","deoxys","jirachi","darkrai"];
 		var maxNear1500 = ["bastiodon"]
+
+		if(self.hasTag("legendary")){
+			floor = 1;
+		}
 
 		if(untradables.indexOf(self.speciesId) > -1){
 			floor = 10;
@@ -278,7 +282,6 @@ function Pokemon(id, i, b){
 		if((maxNear1500.indexOf(self.speciesId) > -1)&&(resultCount > 1)){
 			floor = 12;
 		}
-
 
         hpIV = 15;
         while (hpIV >= floor) {

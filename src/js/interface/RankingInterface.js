@@ -448,7 +448,7 @@ var InterfaceMaster = (function () {
 
 				var r = data[index];
 				var pokemon = new Pokemon(r.speciesId, 0, battle);
-				pokemon.initialize();
+				pokemon.initialize(battle.getCP(), "gamemaster");
 
 				// If overall, display score for each category
 
@@ -560,7 +560,7 @@ var InterfaceMaster = (function () {
 				for(var n = 0; n < r.matchups.length; n++){
 					var m = r.matchups[n];
 					var opponent = new Pokemon(m.opponent, 1, battle);
-					opponent.initialize();
+					opponent.initialize(battle.getCP(), "gamemaster");
 
 					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+r.moveStr+"/";
 
@@ -603,7 +603,7 @@ var InterfaceMaster = (function () {
 				for(var n = 0; n < r.counters.length; n++){
 					var c = r.counters[n];
 					var opponent = new Pokemon(c.opponent, 1, battle);
-					opponent.initialize();
+					opponent.initialize(battle.getCP(), "gamemaster");
 					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+r.moveStr+"/";
 
 					// Append opponent's move string

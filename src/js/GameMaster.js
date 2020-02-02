@@ -12,7 +12,7 @@ var GameMaster = (function () {
 		object.teamPools = [];
 		object.loadedData = 0;
 
-		$.getJSON( webRoot+"data/gamemaster.json?v=206", function( data ){
+		$.getJSON( webRoot+"data/gamemaster.json?v="+siteVersion, function( data ){
 			object.data = data;
 
 			// Sort Pokemon alphabetically for searching
@@ -126,6 +126,10 @@ var GameMaster = (function () {
 				entry.defaultIVs = defaultIVs;
 			});
 
+			// Sort Pokemon by dex
+
+			object.data.pokemon.sort((a,b) => (a.dex > b.dex) ? 1 : ((b.dex > a.dex) ? -1 : 0));
+
 			var json = JSON.stringify(object.data);
 
 			console.log(json);
@@ -209,7 +213,7 @@ var GameMaster = (function () {
 			var key = cup + "" + category + "" + league;
 
 			if(! object.rankings[key]){
-				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v=206";
+				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v="+siteVersion;
 
 				console.log(file);
 
@@ -231,7 +235,7 @@ var GameMaster = (function () {
 			var key = group;
 
 			if(! object.groups[key]){
-				var file = webRoot+"data/groups/"+group+".json?v=206";
+				var file = webRoot+"data/groups/"+group+".json?v="+siteVersion;
 
 				$.getJSON( file, function( data ){
 
@@ -254,7 +258,7 @@ var GameMaster = (function () {
 			var key = league + "" + cup;
 
 			if(! object.teamPools[key]){
-				var file = webRoot+"data/training/teams/"+cup+"/"+league+".json?v=206";
+				var file = webRoot+"data/training/teams/"+cup+"/"+league+".json?v="+siteVersion;
 
 				$.getJSON( file, function( data ){
 					object.teamPools[key] = data;

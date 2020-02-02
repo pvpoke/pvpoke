@@ -1131,7 +1131,8 @@
 			},
 			{
 				"speciesId": "muk_alolan",
-				"fastMove": "SNARL"
+				"fastMove": "SNARL",
+				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"]
 			},
 			{
 				"speciesId": "gardevoir",
