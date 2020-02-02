@@ -235,6 +235,7 @@
 			{
 				"speciesId": "tropius",
 				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["LEAF_BLADE", "AERIAL_ACE"],
 				"weight": 2
 			},
 			{
@@ -287,6 +288,22 @@
 				"chargedMoves": ["DRAGON_CLAW","DRACO_METEOR"]
 			},
 			{
+				"speciesId": "vigoroth",
+				"chargedMoves": ["BODY_SLAM","BULLDOZE"]
+			},
+			{
+				"speciesId": "sableye",
+				"chargedMoves": ["FOUL_PLAY","POWER_GEM"]
+			},
+			{
+				"speciesId": "haunter",
+				"chargedMoves": ["SHADOW_PUNCH","SHADOW_BALL"]
+			},
+			{
+				"speciesId": "probopass",
+				"chargedMoves": ["ROCK_SLIDE","THUNDERBOLT"]
+			},
+			{
 				"speciesId": "registeel",
 				"weight":2
 			},
@@ -296,6 +313,7 @@
 			},
 			{
 				"speciesId": "skarmory",
+				"chargedMoves": ["SKY_ATTACK","FLASH_CANNON"],
 				"weight":2
 			},
 			{
