@@ -279,6 +279,10 @@
 				"chargedMoves": ["ROCK_SLIDE","BULLDOZE"]
 			},
 			{
+				"speciesId": "dragonite",
+				"chargedMoves": ["DRAGON_CLAW","DRACO_METEOR"]
+			},
+			{
 				"speciesId": "registeel",
 				"weight":2
 			},
@@ -1265,6 +1269,10 @@
 			{
 				"speciesId": "garchomp",
 				"chargedMoves": ["OUTRAGE","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "dragonite",
+				"chargedMoves": ["DRAGON_CLAW","DRACO_METEOR"]
 			}
 		]
 	},
@@ -2672,6 +2680,10 @@
 			{
 				"speciesId": "grimer",
 				"chargedMoves": ["MUD_BOMB","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "scrafty",
+				"weight": 2
 			}
 		]
 	}

@@ -12049,23 +12049,7 @@
 	}, {
 		"dex": 641,
 		"speciesId": "tornadus_incarnate",
-		"speciesName": "Tornadus_incarnate",
-		"baseStats": {
-			"atk": 266,
-			"def": 164,
-			"hp": 188
-		},
-		"types": ["flying", "none"],
-		"fastMoves": ["BITE", "AIR_SLASH"],
-		"chargedMoves": ["GRASS_KNOT", "DARK_PULSE", "HYPER_BEAM", "HURRICANE"],
-		"defaultIVs": {
-			"cp1500": [20, 15, 15, 15],
-			"cp2500": [20, 15, 15, 15]
-		}
-	}, {
-		"dex": 641,
-		"speciesId": "tornadus_incarnate",
-		"speciesName": "Tornadus_incarnate",
+		"speciesName": "Tornadus (Incarnate)",
 		"baseStats": {
 			"atk": 266,
 			"def": 164,
@@ -12081,7 +12065,7 @@
 	}, {
 		"dex": 641,
 		"speciesId": "tornadus_therian",
-		"speciesName": "Tornadus_therian",
+		"speciesName": "Tornadus (Therian)",
 		"baseStats": {
 			"atk": 238,
 			"def": 189,
@@ -12097,23 +12081,7 @@
 	}, {
 		"dex": 642,
 		"speciesId": "thundurus_incarnate",
-		"speciesName": "Thundurus_incarnate",
-		"baseStats": {
-			"atk": 266,
-			"def": 164,
-			"hp": 188
-		},
-		"types": ["electric", "flying"],
-		"fastMoves": ["ASTONISH", "THUNDER_SHOCK"],
-		"chargedMoves": ["CRUNCH", "THUNDER", "BRICK_BREAK", "THUNDER_PUNCH"],
-		"defaultIVs": {
-			"cp1500": [20, 15, 15, 15],
-			"cp2500": [20, 15, 15, 15]
-		}
-	}, {
-		"dex": 642,
-		"speciesId": "thundurus_incarnate",
-		"speciesName": "Thundurus_incarnate",
+		"speciesName": "Thundurus (Incarnate)",
 		"baseStats": {
 			"atk": 266,
 			"def": 164,
@@ -12129,7 +12097,7 @@
 	}, {
 		"dex": 642,
 		"speciesId": "thundurus_therian",
-		"speciesName": "Thundurus_therian",
+		"speciesName": "Thundurus (Therian)",
 		"baseStats": {
 			"atk": 295,
 			"def": 161,
