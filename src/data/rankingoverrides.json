@@ -2584,10 +2584,12 @@
 		"pokemon": [
 			{
 				"speciesId": "drapion",
-				"chargedMoves": ["FELL_STINGER","AQUA_TAIL"]
+				"fastMove": "ICE_FANG",
+				"chargedMoves": ["CRUNCH","AQUA_TAIL"]
 			},
 			{
 				"speciesId": "gliscor",
+				"fastMove": "WING_ATTACK",
 				"chargedMoves": ["NIGHT_SLASH","EARTHQUAKE"]
 			},
 			{
@@ -2638,6 +2640,11 @@
 			{
 				"speciesId": "delcatty",
 				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "rhyperior",
+				"fastMove": "MUD_SLAP",
+				"chargedMoves": ["SUPER_POWER","SURF"]
 			},
 			{
 				"speciesId": "swalot",

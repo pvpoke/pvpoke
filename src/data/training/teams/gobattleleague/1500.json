@@ -358,7 +358,7 @@
 				"speciesId": "raichu_alolan",
 				"fastMove": "VOLT_SWITCH",
 				"chargedMoves": ["WILD_CHARGE","THUNDER_PUNCH"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":2
 			},
 			{
@@ -366,7 +366,7 @@
 				"fastMove": "VOLT_SWITCH",
 				"chargedMoves": ["THUNDER_PUNCH","GRASS_KNOT"],
 				"difficulty": 2,
-				"weight":2
+				"weight":8
 			}
 		]
 	},
@@ -458,6 +458,13 @@
 				"chargedMoves": ["FOUL_PLAY","POWER_GEM"],
 				"difficulty": 3,
 				"weight":30
+			},
+			{
+				"speciesId": "raichu_alolan",
+				"fastMove": "VOLT_SWITCH",
+				"chargedMoves": ["THUNDER_PUNCH","GRASS_KNOT"],
+				"difficulty": 2,
+				"weight":10
 			},
 			{
 				"speciesId": "sableye",
@@ -744,7 +751,7 @@
 	{
 		"slot": "Grass",
 		"synergies": ["Tank"],
-		"weight": 1,
+		"weight": 2,
 		"pokemon": [
 			{
 				"speciesId": "venusaur",
@@ -869,7 +876,7 @@
 	},
 	{
 		"slot": "Mudboi",
-		"weight": 4,
+		"weight": 5,
 		"synergies": ["Flying"],
 		"pokemon": [
 			{
@@ -920,6 +927,13 @@
 				"chargedMoves": ["HYDRO_CANNON","EARTHQUAKE"],
 				"difficulty": 2,
 				"weight":25
+			},
+			{
+				"speciesId": "swampert",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["HYDRO_CANNON","SLUDGE_WAVE"],
+				"difficulty": 2,
+				"weight":10
 			},
 			{
 				"speciesId": "flygon",
