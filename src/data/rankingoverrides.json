@@ -1049,6 +1049,51 @@
 				"chargedMoves": ["OVERHEAT", "PSYSHOCK"]
 			},
 			{
+				"speciesId": "garchomp",
+				"chargedMoves": ["SAND_TOMB", "OUTRAGE"]
+			},
+			{
+				"speciesId": "dragonite",
+				"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"]
+			},
+			{
+				"speciesId": "zapdos",
+				"chargedMoves": ["DRILL_PECK", "THUNDERBOLT"]
+			},
+			{
+				"speciesId": "suicune",
+				"chargedMoves": ["ICE_BEAM", "HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "primeape",
+				"chargedMoves": ["CLOSE_COMBAT", "NIGHT_SLASH"]
+			},
+			{
+				"speciesId": "lugia",
+				"chargedMoves": ["SKY_ATTACK", "HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "melmetal",
+				"chargedMoves": ["ROCK_SLIDE", "SUPER_POWER"]
+			},
+			{
+				"speciesId": "gliscor",
+				"chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"]
+			},
+			{
+				"speciesId": "cloyster",
+				"chargedMoves": ["ICY_WIND", "HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "politoed",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["SURF", "EARTHQUAKE"]
+			},
+			{
+				"speciesId": "jirachi",
+				"chargedMoves": ["DOOM_DESIRE", "DAZZLING_GLEAM"]
+			},
+			{
 				"speciesId": "machamp",
 				"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
 			},
@@ -1061,10 +1106,6 @@
 				"chargedMoves": ["HYDRO_CANNON", "FLASH_CANNON"]
 			},
 			{
-				"speciesId": "politoed",
-				"chargedMoves": ["SURF", "EARTHQUAKE"]
-			},
-			{
 				"speciesId": "ampharos",
 				"chargedMoves": ["THUNDER_PUNCH", "FOCUS_BLAST"]
 			},
@@ -1074,7 +1115,7 @@
 			},
 			{
 				"speciesId": "magnezone",
-				"chargedMoves": ["WILD_CHARGE", "FLASH_CANNON"]
+				"chargedMoves": ["WILD_CHARGE", "MIRROR_SHOT"]
 			},
 			{
 				"speciesId": "ninetales",
@@ -1130,6 +1171,28 @@
 				"speciesId": "arcanine",
 				"fastMove": "SNARL",
 				"chargedMoves": ["CRUNCH", "FLAMETHROWER"]
+			},
+			{
+				"speciesId": "ursaring",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["CLOSE_COMBAT", "PLAY_ROUGH"]
+			},
+			{
+				"speciesId": "staraptor",
+				"fastMove": "WING_ATTACK"
+			},
+			{
+				"speciesId": "hippowdon",
+				"fastMove": "ICE_FANG"
+			},
+			{
+				"speciesId": "arcanine",
+				"fastMove": "SNARL",
+				"chargedMoves": ["CRUNCH", "FLAMETHROWER"]
+			},
+			{
+				"speciesId": "metagross",
+				"chargedMoves": ["METEOR_MASH", "EARTHQUAKE"]
 			},
 			{
 				"speciesId": "poliwrath",
