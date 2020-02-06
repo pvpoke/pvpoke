@@ -35,6 +35,7 @@ require_once '../header.php';
 			<select class="league-cup-select">
 				<option value="" selected disabled>Select a league</option>
 				<option value="1500 gobattleleague">GO Battle League (Great)</option>
+				<option value="2500 gobattleleague">GO Battle League (Ultra)</option>
 				<option value="1500 all">Great League</option>
 				<option value="2500 all">Ultra League</option>
 				<option value="10000 all">Master League</option>
@@ -123,12 +124,9 @@ require_once '../header.php';
 <div class="section white updates">
 	<h3>What's New</h3>
 
-	<h4>v1.12.30 (January 29, 2020)</h4>
+	<h4>v1.12.30 (February 6, 2020)</h4>
 	<ul>
-		<li>GO Battle League is now available in Training Battles!</li>
-		<ul>
-			<li>This format allows 3v3 only and has a refined pool of Pokemon.</li>
-		</ul>
+		<li>GO Battle League (Ultra League) is now available in Training Battles! Go test your teams of 3 for the next league shift.</li>
 	</ul>
 </div>
 

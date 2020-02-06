@@ -1081,6 +1081,10 @@
 				"chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"]
 			},
 			{
+				"speciesId": "toxicroak",
+				"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
+			},
+			{
 				"speciesId": "cloyster",
 				"chargedMoves": ["ICY_WIND", "HYDRO_PUMP"]
 			},
@@ -1088,6 +1092,11 @@
 				"speciesId": "politoed",
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["SURF", "EARTHQUAKE"]
+			},
+			{
+				"speciesId": "moltres",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["SKY_ATTACK", "OVERHEAT"]
 			},
 			{
 				"speciesId": "jirachi",
@@ -1182,6 +1191,14 @@
 				"fastMove": "WING_ATTACK"
 			},
 			{
+				"speciesId": "raichu_alolan",
+				"fastMove": "VOLT_SWITCH"
+			},
+			{
+				"speciesId": "raikou",
+				"fastMove": "VOLT_SWITCH"
+			},
+			{
 				"speciesId": "hippowdon",
 				"fastMove": "ICE_FANG"
 			},
@@ -1211,13 +1228,21 @@
 				"chargedMoves": ["CLOSE_COMBAT", "X_SCISSOR"]
 			},
 			{
+				"speciesId": "crawdaunt",
+				"chargedMoves": ["NIGHT_SLASH", "CRABHAMMER"]
+			},
+			{
+				"speciesId": "feraligatr",
+				"fastMove": "ICE_FANG"
+			},
+			{
 				"speciesId": "ninetales_alolan",
 				"fastMove": "CHARM"
 			},
 			{
 				"speciesId": "muk_alolan",
 				"fastMove": "SNARL",
-				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"]
+				"chargedMoves": ["DARK_PULSE","GUNK_SHOT"]
 			},
 			{
 				"speciesId": "gardevoir",
