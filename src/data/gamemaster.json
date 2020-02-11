@@ -2444,7 +2444,8 @@
 		},
 		"types": ["normal", "none"],
 		"fastMoves": ["LICK", "ZEN_HEADBUTT"],
-		"chargedMoves": ["HYPER_BEAM", "POWER_WHIP", "STOMP"],
+		"chargedMoves": ["HYPER_BEAM", "POWER_WHIP", "STOMP", "BODY_SLAM"],
+		"legacyMoves": ["BODY_SLAM"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]
@@ -8676,7 +8677,8 @@
 		},
 		"types": ["normal", "none"],
 		"fastMoves": ["LICK", "ZEN_HEADBUTT"],
-		"chargedMoves": ["EARTHQUAKE", "HYPER_BEAM", "SOLAR_BEAM", "SHADOW_BALL"],
+		"chargedMoves": ["EARTHQUAKE", "HYPER_BEAM", "SOLAR_BEAM", "SHADOW_BALL", "BODY_SLAM"],
+		"legacyMoves": ["BODY_SLAM"],
 		"defaultIVs": {
 			"cp1500": [23, 5, 11, 9],
 			"cp2500": [40, 15, 15, 15]

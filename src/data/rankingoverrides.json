@@ -25,6 +25,10 @@
 				"chargedMoves": ["BUBBLE_BEAM", "ICE_BEAM"]
 			},
 			{
+				"speciesId": "lickitung",
+				"chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
+			},
+			{
 				"speciesId": "poliwrath",
 				"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
 			},
@@ -2694,7 +2698,7 @@
 			},
 			{
 				"speciesId": "lickitung",
-				"chargedMoves": ["STOMP","POWER_WHIP"]
+				"chargedMoves": ["BODY_SLAM","POWER_WHIP"]
 			},
 			{
 				"speciesId": "electrode",
