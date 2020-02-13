@@ -203,7 +203,6 @@ function Pokemon(id, i, b){
 
 		// Set moves if unset
 
-
 		if(! self.fastMove){
 			self.autoSelectMoves();
 		} else{
@@ -700,14 +699,16 @@ function Pokemon(id, i, b){
 
 	// Obtain a Pokemon's recommended moveset from the rankings and select them
 
-	this.selectRecommendedMoveset = function(){
+	this.selectRecommendedMoveset = function(category){
+		category = typeof category !== 'undefined' ? category : "overall";
+
 		var cupName = "all";
 
 		if(battle.getCup()){
 			cupName = battle.getCup().name;
 		}
 
-		var key = cupName + "overall" + battle.getCP();
+		var key = cupName + category + battle.getCP();
 
 		if(! gm.rankings[key]){
 			console.log("Ranking data not loaded yet");

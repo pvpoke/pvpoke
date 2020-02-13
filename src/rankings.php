@@ -162,10 +162,11 @@ require_once 'header.php';
 		<p>Trainer Battles feature a wide variety of scenarios, especially involving shields. In order to give a fuller picture, our overall rankings are derived from additional sets of rankings, where battles are simulated with different roles in mind. You can explore rankings for each of the following categories:</p>
 		<ul>
 			<li><b>Overall - </b> Derived from a Pokemon's score in all other categories. Moves are ranked based on usage in every category. Key Counters and Top Matchups, however, are taken from the Leads category.</li>
-			<li><b>Leads - </b> Ranking battles simulated with 2 shields vs. 2 shields.</li>
+			<li><b>Leads - </b> Ranking battles simulated with 1 shield vs. 1 shields.</li>
 			<li><b>Closers - </b> Ranking battles simulated with no shields vs. no shields.</li>
-			<li><b>Attackers - </b> Ranking battles simulated with no shields vs. 2 shields.</li>
-			<li><b>Defenders - </b> Ranking battles simulated with 2 shields vs. no shields.</li>
+			<li><b>Switches - </b> Ranking battles simulated with 6 turns of energy advantage, also scored to favor safe matchups.</li>
+			<li><b>Chargers - </b> Ranking battles simulated with 6 turns of energy advantage.</li>
+			<li><b>Attackers - </b> Ranking battles simulated with no shields vs. 1 shields.</li>
 			<li><b>Consistency - </b> Rating of how dependent Pokemon are at baiting shields.</li>
 		</ul>
 		<p>Different Pokemon may succeed in different scenarios, so use these categories to help determine when a particular Pokemon would be the most valuable.</p>

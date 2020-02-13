@@ -27,15 +27,10 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.12.31 (February 2, 2020)</h4>
+	<h4>v1.12.32 (February 13, 2020)</h4>
 	<ul>
-		<li>Added new ranking categories and reworked overall ranking formula:</li>
-		<ul>
-			<li>Added new "Switches" and "Chargers" categories to rank Pokemon as safe switches and with an energy advantage, respectively. Consistency score now has its own listing as well.</li>
-			<li>Removed the Defender category (shield advantage) from the rankings. This category was somewhat redundant with the Closer category and inflated scores for some Pokemon like Hitmontop and Heracross.</li>
-			<li>Added advanced options to Custom Rankings that allow you to rank in varied shield and energy scenarios, or quickly import the rules and movesets from an existing format.</li>
-			<li>Legendary Pokemon now have an IV floor of 1.</li>
-		</ul>
+		<li>Fixed a bug where battles in the Switch and Charger categories weren't linking to the correct energy settings.</li>
+		<li>Fixed an issue in the Team Builder where Threat Score was referencing the wrong ranking score instead of Consistency.</li>
 	</ul>
 
 	<h3>Latest Article</h3>

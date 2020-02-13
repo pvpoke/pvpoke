@@ -243,7 +243,7 @@ var RankerMaster = (function () {
 						if(shieldTestArr.length > 1){
 							avgPokeRating = Math.round( Math.pow(shieldRatings[0] * Math.pow(shieldRatings[1], 3), 1/4));
 						}
-						
+
 						avgOpRating = Math.floor(avgOpRating / shieldTestArr.length);
 
 						csv += ',' + avgOpRating + ',' + opponent.energy + ',' + opponent.hp;
@@ -259,14 +259,14 @@ var RankerMaster = (function () {
 							score = avgPokeRating / 2;
 						}
 
-						if((pokemon.overall)&&(pokemon.scores[4])){
-							score *= Math.sqrt(pokemon.overall) * Math.pow(pokemon.scores[4], 1/4);
+						if((pokemon.overall)&&(pokemon.scores[5])){
+							score *= Math.sqrt(pokemon.overall) * Math.pow(pokemon.scores[5], 1/4);
 						} else{
 							score *= 10 * Math.pow(100, 1/4);
 						}
 
 						matchupScore += score;
-						
+
 						if(settings.matrixDirection == "column"){
 							avgPokeRating = 1000 - avgPokeRating;
 						}
