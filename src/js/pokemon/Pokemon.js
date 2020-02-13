@@ -512,7 +512,7 @@ function Pokemon(id, i, b){
 				}
 				
 				// When DPE is close, favor moves with guaranteed buff effects
-				if((move.dpe - self.bestChargedMove.dpe < .03)&&(self.bestChargedMove.buffs)&&(move.buffs)&&(move.buffApplyChance > self.bestChargedMove.buffApplyChance)&&(! move.selfDebuffing)){
+				if((Math.abs(move.dpe - self.bestChargedMove.dpe) < .03)&&(self.bestChargedMove.buffs)&&(move.buffs)&&(move.buffApplyChance > self.bestChargedMove.buffApplyChance)&&(! move.selfDebuffing)){
 					self.bestChargedMove = self.activeChargedMoves[i];
 				}
 			}
