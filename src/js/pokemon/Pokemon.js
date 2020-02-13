@@ -500,15 +500,22 @@ function Pokemon(id, i, b){
 			}
 
 			self.bestChargedMove = self.activeChargedMoves[0];
+			self.bestChargedMove.dpe = self.bestChargedMove.damage / self.bestChargedMove.energy;
 
 			for(var i = 0; i < self.activeChargedMoves.length; i++){
 				var move = self.activeChargedMoves[i];
-
+				move.dpe = move.damage / move.energy;
+				
+				// Use moves that have higher DPE
 				if(move.dpe - self.bestChargedMove.dpe > .03){
 					self.bestChargedMove = self.activeChargedMoves[i];
 				}
+				
+				// When DPE is close, favor moves with guaranteed buff effects
+				if((move.dpe - self.bestChargedMove.dpe < .03)&&(self.bestChargedMove.buffs)&&(move.buffs)&&(move.buffApplyChance > self.bestChargedMove.buffApplyChance)&&(! move.selfDebuffing)){
+					self.bestChargedMove = self.activeChargedMoves[i];
+				}
 			}
-
 
 		} else{
 			self.bestChargedMove = null;

@@ -10545,7 +10545,7 @@
 		},
 		"types": ["fire", "none"],
 		"fastMoves": ["TACKLE", "FIRE_FANG"],
-		"chargedMoves": ["FIRE_PUNCH", "FLAME_CHARGE", "PSYCHIC"],
+		"chargedMoves": ["FIRE_PUNCH", "FLAME_CHARGE"],
 		"defaultIVs": {
 			"cp1500": [40, 15, 15, 15],
 			"cp2500": [40, 15, 15, 15]

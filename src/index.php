@@ -26,6 +26,12 @@
 
 	<!--Update section for updates-->
 	<h3>What's New</h3>
+	
+	<h4>v1.12.33 (February 13, 2020)</h4>
+	<ul>
+		<li>Adjusted move usage so it favors guaranteed buffs (ie Icy Wind vs Ancient Power on Articuno)</li>
+		<li>Pokemon will now go for lethal moves instead of attempting to build up stat boosts where applicable (ie Scrafty using Foul Play)</li>
+	</ul>
 
 	<h4>v1.12.32 (February 13, 2020)</h4>
 	<ul>

@@ -40,7 +40,7 @@ var RankerMaster = (function () {
 
 			// Load override data
 
-			var file = webRoot+"data/rankingoverrides.json";
+			var file = webRoot+"data/rankingoverrides.json?v="+siteVersion;
 			var overrides = [];
 
 			$.getJSON( file, function( data ){

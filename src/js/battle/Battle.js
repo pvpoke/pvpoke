@@ -1015,7 +1015,7 @@ function Battle(){
 				}
 
 				// Don't use best charged move if a cheaper move is available to bait or faint
-				if((poke.energy >= poke.chargedMoves[n].energy) && ((poke.chargedMoves[n].energy < poke.bestChargedMove.energy) || ((poke.chargedMoves[n].energy == poke.bestChargedMove.energy)&&(poke.chargedMoves[n].buffs)))){
+				if((poke.energy >= poke.chargedMoves[n].energy) && ((poke.chargedMoves[n].energy < poke.bestChargedMove.energy) || ((poke.chargedMoves[n].energy == poke.bestChargedMove.energy)&&((poke.chargedMoves[n].buffs)&&(! poke.bestChargedMove.buffs))))){
 					if((poke.baitShields)&&(opponent.shields > 0)&&(! poke.chargedMoves[n].selfDebuffing)){
 						useChargedMove = false;
 
@@ -1105,16 +1105,34 @@ function Battle(){
 				// Use this charged move if it has a guaranteed stat effect and this Pokemon has high fast move damage
 
 				if((move.buffApplyChance)&&(move.buffApplyChance == 1)&&(poke.fastMove.damage / ((poke.fastMove.cooldown / 500) * opponent.stats.hp) >= .025)&&(opponent.hp > poke.bestChargedMove.damage)&&((move.buffs[0] > 0)||(move.buffs[1] > 0))){
-					action = new TimelineAction(
-						"charged",
-						poke.index,
-						turns,
-						moveIndex,
-						{shielded: false, buffs: false, priority: poke.priority});
+					
+					// Check to see if this Pokemon should go for a KO'ing move instead
+					var hasLethalMove = false;
 
-					chargedMoveUsed = true;
-					self.logDecision(turns, poke, " is looking to build up stat boosts with " + move.name);
-					return action;
+					for(var i = 0; i < poke.activeChargedMoves.length; i++){
+						if(i == n){
+							continue;
+						}
+						
+						if(self.calculateDamage(poke, opponent, poke.activeChargedMoves[i]) >= opponent.hp){
+							hasLethalMove = true;
+						} else{
+							self.logDecision(turns, poke, " won't KO with " + poke.activeChargedMoves[i].name);
+						}
+					}
+					
+					if(! hasLethalMove){
+						action = new TimelineAction(
+							"charged",
+							poke.index,
+							turns,
+							moveIndex,
+							{shielded: false, buffs: false, priority: poke.priority});
+
+						chargedMoveUsed = true;
+						self.logDecision(turns, poke, " is looking to build up stat boosts with " + move.name);
+						return action;
+					}
 				}
 
 				// Use charged move if the opponent has a shield
