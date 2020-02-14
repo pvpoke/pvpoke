@@ -2,7 +2,7 @@
 	{
 		"speciesId":"medicham",
 		"fastMove":"COUNTER",
-		"chargedMoves":["DYNAMIC_PUNCH","ICE_PUNCH"]
+		"chargedMoves":["PSYCHIC","ICE_PUNCH"]
 	},
 	{
 		"speciesId":"machamp",
@@ -40,13 +40,18 @@
 		"chargedMoves":["METEOR_MASH","PSYCHIC"]
 	},
 	{
+		"speciesId":"granbull",
+		"fastMove":"CHARM",
+		"chargedMoves":["CRUNCH","CLOSE_COMBAT"]
+	},
+	{
 		"speciesId":"sableye",
 		"fastMove":"SHADOW_CLAW",
 		"chargedMoves":["FOUL_PLAY","POWER_GEM"]
 	},
 	{
 		"speciesId":"gliscor",
-		"fastMove":"FURY_CUTTER",
+		"fastMove":"WING_ATTACK",
 		"chargedMoves":["NIGHT_SLASH","EARTHQUAKE"]
 	},
 	{
@@ -65,13 +70,8 @@
 		"chargedMoves":["DRAGON_CLAW","BLAST_BURN"]
 	},
 	{
-		"speciesId":"magcargo",
-		"fastMove":"ROCK_THROW",
-		"chargedMoves":["STONE_EDGE","OVERHEAT"]
-	},
-	{
 		"speciesId":"rhyperior",
-		"fastMove":"SMACK_DOWN",
+		"fastMove":"MUD_SLAP",
 		"chargedMoves":["SURF","SUPER_POWER"]
 	},
 	{
@@ -100,24 +100,19 @@
 		"chargedMoves":["ROCK_SLIDE","MAGNET_BOMB"]
 	},
 	{
-		"speciesId":"graveler_alolan",
-		"fastMove":"VOLT_SWITCH",
-		"chargedMoves":["ROCK_BLAST","STONE_EDGE"]
-	},
-	{
-		"speciesId":"magneton",
-		"fastMove":"THUNDER_SHOCK",
-		"chargedMoves":["DISCHARGE","MAGNET_BOMB"]
+		"speciesId":"probopass",
+		"fastMove":"SPARK",
+		"chargedMoves":["ROCK_SLIDE","MAGNET_BOMB"]
 	},
 	{
 		"speciesId":"lickilicky",
 		"fastMove":"LICK",
-		"chargedMoves":["SHADOW_BALL","EARTHQUAKE"]
+		"chargedMoves":["BODY_SLAM","EARTHQUAKE"]
 	},
 	{
-		"speciesId":"drifblim",
-		"fastMove":"HEX",
-		"chargedMoves":["ICY_WIND","SHADOW_BALL"]
+		"speciesId":"lickitung",
+		"fastMove":"LICK",
+		"chargedMoves":["BODY_SLAM","POWER_WHIP"]
 	},
 	{
 		"speciesId":"vileplume",
