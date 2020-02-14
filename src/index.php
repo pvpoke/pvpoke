@@ -27,6 +27,12 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 	
+	<h4>v1.12.34 (February 14, 2020)</h4>
+	<ul>
+		<li>Fixed an issue where custom groups would only appear available for Great League.</li>
+		<li>Fixed a visual bug in the Sandbox Mode where displayed energy and actual energy didn't match when building up to or past 100 energy.</li>
+	</ul>
+	
 	<h4>v1.12.33 (February 13, 2020)</h4>
 	<ul>
 		<li>Adjusted move usage so it favors guaranteed buffs (ie Icy Wind vs Ancient Power on Articuno)</li>

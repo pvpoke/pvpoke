@@ -87,8 +87,6 @@ function MatchHandler(){
 	// Initiate a new tournament battle
 
 	this.startTournamentBattle = function(team, props, opponentTeam){
-		forcePickStrategy = typeof forcePickStrategy !== 'undefined' ? forcePickStrategy : false;
-
 		var player = players[0];
 		var opponent = players[1];
 
@@ -96,7 +94,7 @@ function MatchHandler(){
 
 		// If we're rematching the previous round, use the same team
 		if(! opponentTeam){
-			opponent.generateTeam(player.getRoster(), previousRoundResult, previousRoundTeams, forcePickStrategy);
+			opponent.generateTeam(player.getRoster(), previousRoundResult, previousRoundTeams);
 		} else{
 			opponent.setTeam(opponentTeam);
 		}

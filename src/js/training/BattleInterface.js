@@ -974,9 +974,6 @@ var BattlerMaster = (function () {
 				// Stop the current battle
 				battle.stop();
 
-				// Alternate CMP so it remains the same on rematch
-				priorityAssignment = (priorityAssignment == 1) ? 0 : 1;
-
 				// Manually set the previous team
 				if(properties.mode == "single"){
 					properties.teamSelectMethod = "manual";

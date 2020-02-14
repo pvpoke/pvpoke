@@ -271,13 +271,7 @@ function PokeMultiSelect(element){
 				break;
 		}
 
-		$el.find(".quick-fill-select option[value='leaders']").show();
-
-		$el.find(".quick-fill-select option").each(function(index, value){
-			if($(this).val().indexOf("custom") > -1){
-				$(this).show();
-			}
-		});
+		$el.find(".quick-fill-select option[type='custom']").show();
 	}
 
 	// Convert the current Pokemon list into exportable and savable JSON

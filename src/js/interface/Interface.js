@@ -166,10 +166,10 @@ var InterfaceMaster = (function () {
 						if((event.type.indexOf("fast") >= 0) || (event.type.indexOf("charged") >= 0)){
 							if(event.actor == 0){
 								cumulativeDamage[1] += event.values[0];
-								cumulativeEnergy[0] += event.values[1];
+								cumulativeEnergy[0] = Math.min(cumulativeEnergy[0] + event.values[1], 100);
 							} else{
 								cumulativeDamage[0] += event.values[0];
-								cumulativeEnergy[1] += event.values[1];
+								cumulativeEnergy[1] = Math.min(cumulativeEnergy[1] + event.values[1], 100);
 							}
 						}
 					}
@@ -270,7 +270,7 @@ var InterfaceMaster = (function () {
 					}
 
 					if(event.values[1]){
-						energy[event.actor] += event.values[1];
+						energy[event.actor] = Math.min(energy[event.actor] + event.values[1], 100);
 					}
 
 					if(event.type.indexOf("tap") > -1){
