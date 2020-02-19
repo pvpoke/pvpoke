@@ -1,6 +1,7 @@
 <select class="format-select">
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="all" cup="gen-5">All Pokemon (With Generation 5)</option>
+	<option value="tsa-2" cup="toxic">Toxic Cup</option>
 	<option value="tsa-2" cup="rose">Rose Cup</option>
 
 	<?php if((strpos($_SERVER['REQUEST_URI'], 'battle') !== false)||(strpos($_SERVER['REQUEST_URI'], 'rankings') !== false)): ?>
@@ -23,6 +24,7 @@
 	<option value="tempest" cat="tsa-1">Tempest Cup</option>
 	<option value="twilight" cat="tsa-1">Twilight Cup</option>
 	<option value="boulder" cat="tsa-1">Boulder Cup</option>
+	<option value="toxic" cat="tsa-2">Toxic Cup</option>
 	<option value="rose" cat="tsa-2">Rose Cup</option>
 	<option value="fusion" cat="tsa-2">Fusion Cup</option>
 	<option value="timeless" cat="tsa-2">Timeless Cup</option>
