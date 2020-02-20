@@ -407,6 +407,22 @@ var RankerMaster = (function () {
 					rankWeightExponent = 1.25;
 				}
 
+				if(cup.name == "toxic"){
+					iterations = 1;
+				}
+
+				if(cup.name == "rose"){
+					iterations = 1;
+				}
+
+				if((cup.name == "all")&&(battle.getCP() == 2500)){
+					iterations = 1;
+				}
+
+				if((cup.name == "all")&&(battle.getCP() == 1500)){
+					iterations = 1;
+				}
+
 				if(cup.name == "custom"){
 					iterations = 7;
 				}

@@ -8705,7 +8705,8 @@
 		},
 		"types": ["ground", "rock"],
 		"fastMoves": ["MUD_SLAP", "SMACK_DOWN"],
-		"chargedMoves": ["EARTHQUAKE", "STONE_EDGE", "SURF", "SKULL_BASH", "SUPER_POWER"],
+		"chargedMoves": ["EARTHQUAKE", "STONE_EDGE", "SURF", "SKULL_BASH", "SUPER_POWER", "ROCK_WRECKER"],
+		"legacyMoves": ["ROCK_WRECKER"],
 		"defaultIVs": {
 			"cp1500": [15, 2, 10, 8],
 			"cp2500": [24.5, 5, 15, 9]
