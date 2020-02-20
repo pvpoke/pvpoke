@@ -20,6 +20,11 @@
 		"chargedMoves":["CROSS_CHOP","ROCK_SLIDE"]
 	},
 	{
+		"speciesId":"conkeldurr",
+		"fastMove":"COUNTER",
+		"chargedMoves":["DYNAMIC_PUNCH","STONE_EDGE"]
+	},
+	{
 		"speciesId":"melmetal",
 		"fastMove":"THUNDER_SHOCK",
 		"chargedMoves":["ROCK_SLIDE","SUPER_POWER"]
@@ -102,7 +107,7 @@
 	{
 		"speciesId":"mamoswine",
 		"fastMove":"POWDER_SNOW",
-		"chargedMoves":["AVALANCHE","ANCIENT_POWER"]
+		"chargedMoves":["AVALANCHE","BULLDOZE"]
 	},
 	{
 		"speciesId":"gyarados",
@@ -110,9 +115,9 @@
 		"chargedMoves":["OUTRAGE","CRUNCH"]
 	},
 	{
-		"speciesId":"palkia",
-		"fastMove":"DRAGON_BREATH",
-		"chargedMoves":["DRACO_METEOR","HYDRO_PUMP"]
+		"speciesId":"rhyperior",
+		"fastMove":"MUD_SLAP",
+		"chargedMoves":["ROCK_WRECKER","SURF"]
 	},
 	{
 		"speciesId":"togekiss",

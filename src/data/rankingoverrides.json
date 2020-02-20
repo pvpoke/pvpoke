@@ -1373,7 +1373,8 @@
 		"pokemon": [
 			{
 				"speciesId": "giratina_altered",
-				"fastMove": ["SHADOW_CLAW"]
+				"fastMove": ["SHADOW_CLAW"],
+				"weight": 20
 			},
 			{
 				"speciesId": "blaziken",
@@ -1381,7 +1382,8 @@
 			},
 			{
 				"speciesId": "machamp",
-				"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
+				"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
+				"weight": 22
 			},
 			{
 				"speciesId": "hariyama",
@@ -1406,7 +1408,7 @@
 			},
 			{
 				"speciesId": "raikou",
-				"fastMove": "VOLT_SWITCH"
+				"weight": 14
 			},
 			{
 				"speciesId": "gardevoir",
@@ -1415,19 +1417,23 @@
 			{
 				"speciesId": "rhyperior",
 				"fastMove": "MUD_SLAP",
-				"chargedMoves": ["ROCK_WRECKER","SURF"]
+				"chargedMoves": ["ROCK_WRECKER","SURF"],
+				"weight": 3
 			},
 			{
 				"speciesId": "zapdos",
-				"chargedMoves": ["DRILL_PECK","ANCIENT_POWER"]
+				"chargedMoves": ["DRILL_PECK","THUNDERBOLT"],
+				"weight": 3
 			},
 			{
 				"speciesId": "articuno",
-				"chargedMoves": ["ICY_WIND","ANCIENT_POWER"]
+				"chargedMoves": ["ICY_WIND","ANCIENT_POWER"],
+				"weight": 5
 			},
 			{
 				"speciesId": "snorlax",
-				"chargedMoves": ["BODY_SLAM","EARTHQUAKE"]
+				"chargedMoves": ["BODY_SLAM","EARTHQUAKE"],
+				"weight": 15
 			},
 			{
 				"speciesId": "heatran",
@@ -1435,15 +1441,18 @@
 			},
 			{
 				"speciesId": "metagross",
-				"chargedMoves": ["METEOR_MASH","EARTHQUAKE"]
+				"chargedMoves": ["METEOR_MASH","EARTHQUAKE"],
+				"weight": 23
 			},
 			{
 				"speciesId": "melmetal",
-				"chargedMoves": ["SUPER_POWER","ROCK_SLIDE"]
+				"chargedMoves": ["SUPER_POWER","ROCK_SLIDE"],
+				"weight": 8
 			},
 			{
 				"speciesId": "togekiss",
-				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
+				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"],
+				"weight": 20
 			},
 			{
 				"speciesId": "mewtwo_armored",
@@ -1451,7 +1460,8 @@
 			},
 			{
 				"speciesId": "mewtwo",
-				"chargedMoves": ["PSYSTRIKE","ICE_BEAM"]
+				"chargedMoves": ["PSYSTRIKE","ICE_BEAM"],
+				"weight": 28
 			},
 			{
 				"speciesId": "mew",
@@ -1459,11 +1469,13 @@
 			},
 			{
 				"speciesId": "kyogre",
-				"chargedMoves": ["SURF","BLIZZARD"]
+				"chargedMoves": ["SURF","BLIZZARD"],
+				"weight": 20
 			},
 			{
 				"speciesId": "lugia",
-				"chargedMoves": ["SKY_ATTACK","HYDRO_PUMP"]
+				"chargedMoves": ["SKY_ATTACK","HYDRO_PUMP"],
+				"weight": 6
 			},
 			{
 				"speciesId": "charizard",
@@ -1472,11 +1484,50 @@
 			},
 			{
 				"speciesId": "garchomp",
-				"chargedMoves": ["OUTRAGE","EARTHQUAKE"]
+				"chargedMoves": ["OUTRAGE","EARTHQUAKE"],
+				"weight": 5
 			},
 			{
 				"speciesId": "dragonite",
-				"chargedMoves": ["DRAGON_CLAW","DRACO_METEOR"]
+				"chargedMoves": ["DRAGON_CLAW","OUTRAGE"],
+				"weight": 28
+			},
+			{
+				"speciesId": "dialga",
+				"weight": 22
+			},
+			{
+				"speciesId": "giratina_origin",
+				"weight": 28
+			},
+			{
+				"speciesId": "groudon",
+				"weight": 10
+			},
+			{
+				"speciesId": "darkrai",
+				"weight": 4
+			},
+			{
+				"speciesId": "gyarados",
+				"weight": 14
+			},
+			{
+				"speciesId": "swampert",
+				"weight": 20
+			},
+			{
+				"speciesId": "latios",
+				"weight": 5
+			},
+			{
+				"speciesId": "mamoswine",
+				"chargedMoves": ["AVALANCHE","BULLDOZE"],
+				"weight": 18
+			},
+			{
+				"speciesId": "tyranitar",
+				"weight": 20
 			}
 		]
 	},
