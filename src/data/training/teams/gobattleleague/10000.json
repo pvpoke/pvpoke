@@ -394,7 +394,14 @@
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["IRON_HEAD","THUNDER"],
 				"difficulty": 3,
-				"weight":50
+				"weight":20
+			},
+			{
+				"speciesId": "dialga",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["IRON_HEAD","DRACO_METEOR"],
+				"difficulty": 3,
+				"weight":30
 			},
 			{
 				"speciesId": "scizor",
