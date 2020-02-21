@@ -1415,6 +1415,15 @@
 				"fastMove": "CHARM"
 			},
 			{
+				"speciesId": "roserade",
+				"fastMove": "RAZOR_LEAF"
+			},
+			{
+				"speciesId": "gliscor",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"]
+			},
+			{
 				"speciesId": "rhyperior",
 				"fastMove": "MUD_SLAP",
 				"chargedMoves": ["ROCK_WRECKER","SURF"],
@@ -1494,6 +1503,7 @@
 			},
 			{
 				"speciesId": "dialga",
+				"chargedMoves": ["IRON_HEAD","DRACO_METEOR"],
 				"weight": 22
 			},
 			{
