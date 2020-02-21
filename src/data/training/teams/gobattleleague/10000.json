@@ -1,50 +1,8 @@
 [
 	{
-		"slot": "Dialga",
-		"synergies": ["Flying","Flex"],
-		"weight": 20,
-		"pokemon": [
-			{
-				"speciesId": "dialga",
-				"fastMove": "DRAGON_BREATH",
-				"chargedMoves": ["IRON_HEAD","THUNDER"],
-				"difficulty": 3,
-				"weight":30
-			},
-			{
-				"speciesId": "palkia",
-				"fastMove": "DRAGON_BREATH",
-				"chargedMoves": ["DRACO_METEOR","HYDRO_PUMP"],
-				"difficulty": 2,
-				"weight":1
-			},
-			{
-				"speciesId": "scizor",
-				"fastMove": "FURY_CUTTER",
-				"chargedMoves": ["X_SCISSOR","IRON_HEAD"],
-				"difficulty": 1,
-				"weight":1
-			},
-			{
-				"speciesId": "aggron",
-				"fastMove": "SMACK_DOWN",
-				"chargedMoves": ["STONE_EDGE","HEAVY_SLAM"],
-				"difficulty": 0,
-				"weight":1
-			},
-			{
-				"speciesId": "registeel",
-				"fastMove": "METAL_CLAW",
-				"chargedMoves": ["FLASH_CANNON","FOCUS_BLAST"],
-				"difficulty": 0,
-				"weight":1
-			}
-		]
-	},
-	{
 		"slot": "Giratina",
 		"synergies": ["Fighting","Anti-Flying"],
-		"weight": 14,
+		"weight": 8,
 		"pokemon": [
 			{
 				"speciesId": "giratina_origin",
@@ -72,7 +30,7 @@
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["DRAGON_CLAW","ANCIENT_POWER"],
 				"difficulty": 2,
-				"weight":12
+				"weight":4
 			},
 			{
 				"speciesId": "giratina_altered",
@@ -107,7 +65,7 @@
 	{
 		"slot": "Flying",
 		"synergies": ["Fighting","Ground"],
-		"weight": 14,
+		"weight": 8,
 		"pokemon": [
 			{
 				"speciesId": "togekiss",
@@ -117,11 +75,32 @@
 				"weight":30
 			},
 			{
+				"speciesId": "gardevoir",
+				"fastMove": "CHARM",
+				"chargedMoves": ["SYNCHRONOISE","SHADOW_BALL"],
+				"difficulty": 1,
+				"weight":2
+			},
+			{
 				"speciesId": "moltres",
 				"fastMove": "WING_ATTACK",
 				"chargedMoves": ["SKY_ATTACK","ANCIENT_POWER"],
 				"difficulty": 1,
 				"weight":1
+			},
+			{
+				"speciesId": "moltres",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["SKY_ATTACK","ANCIENT_POWER"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "zapdos",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["DRILL_PECK","THUNDERBOLT"],
+				"difficulty": 2,
+				"weight":2
 			},
 			{
 				"speciesId": "rayquaza",
@@ -164,48 +143,97 @@
 				"chargedMoves": ["SKY_ATTACK","DARK_PULSE"],
 				"difficulty": 0,
 				"weight":1
-			}
-		]
-	},
-	{
-		"slot": "Flex",
-		"synergies": ["Fighting","Ground"],
-		"weight": 3,
-		"pokemon": [
+			},
 			{
-				"speciesId": "lugia",
-				"fastMove": "DRAGON_TAIL",
-				"chargedMoves": ["SKY_ATTACK","HYDRO_PUMP"],
+				"speciesId": "palkia",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["DRACO_METEOR","HYDRO_PUMP"],
 				"difficulty": 2,
-				"weight":20
+				"weight":1
 			},
 			{
 				"speciesId": "dragonite",
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["DRAGON_CLAW","OUTRAGE"],
 				"difficulty": 2,
-				"weight":16
+				"weight":20
+			},
+			{
+				"speciesId": "dragonite",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["DRAGON_CLAW","DRACO_METEOR"],
+				"difficulty": 2,
+				"weight":10
+			},
+			{
+				"speciesId": "dragonite",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["DRAGON_CLAW","HURRICANE"],
+				"difficulty": 2,
+				"weight":2
 			},
 			{
 				"speciesId": "gyarados",
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["CRUNCH","OUTRAGE"],
+				"difficulty": 4,
+				"weight":2
+			},
+			{
+				"speciesId": "gyarados",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["CRUNCH","HYDRO_PUMP"],
 				"difficulty": 2,
 				"weight":2
+			},
+			{
+				"speciesId": "gyarados",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["CRUNCH","HYDRO_PUMP"],
+				"difficulty": 2,
+				"weight":2
+			},
+			{
+				"speciesId": "charizard",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"],
+				"difficulty": 1,
+				"weight":2
+			}
+		]
+	},
+	{
+		"slot": "Flex",
+		"synergies": ["Fighting","Ground"],
+		"weight": 1,
+		"pokemon": [
+			{
+				"speciesId": "lugia",
+				"fastMove": "DRAGON_TAIL",
+				"chargedMoves": ["SKY_ATTACK","HYDRO_PUMP"],
+				"difficulty": 2,
+				"weight":5
+			},
+			{
+				"speciesId": "mewtwo",
+				"fastMove": "PSYCHO_CUT",
+				"chargedMoves": ["PSYSTRIKE","ICE_BEAM"],
+				"difficulty": 2,
+				"weight":16
 			},
 			{
 				"speciesId": "mewtwo",
 				"fastMove": "PSYCHO_CUT",
 				"chargedMoves": ["SHADOW_BALL","FOCUS_BLAST"],
 				"difficulty": 2,
-				"weight":3
+				"weight":6
 			},
 			{
 				"speciesId": "mewtwo",
 				"fastMove": "PSYCHO_CUT",
 				"chargedMoves": ["SHADOW_BALL","ICE_BEAM"],
 				"difficulty": 2,
-				"weight":1
+				"weight":4
 			},
 			{
 				"speciesId": "mewtwo",
@@ -229,72 +257,9 @@
 				"weight":1
 			},
 			{
-				"speciesId": "mew",
-				"fastMove": "SHADOW_CLAW",
-				"chargedMoves": ["PSYSHOCK","FOCUS_BLAST"],
-				"difficulty": 3,
-				"weight":2
-			},
-			{
-				"speciesId": "mew",
-				"fastMove": "SHADOW_CLAW",
-				"chargedMoves": ["PSYSHOCK","OVERHEAT"],
-				"difficulty": 3,
-				"weight":1
-			},
-			{
-				"speciesId": "mew",
-				"fastMove": "SHADOW_CLAW",
-				"chargedMoves": ["PSYSHOCK","DRAGON_CLAW"],
-				"difficulty": 3,
-				"weight":1
-			},
-			{
-				"speciesId": "mew",
-				"fastMove": "SHADOW_CLAW",
-				"chargedMoves": ["DRAGON_CLAW","STONE_EDGE"],
-				"difficulty": 3,
-				"weight":1
-			},
-			{
-				"speciesId": "mew",
-				"fastMove": "SHADOW_CLAW",
-				"chargedMoves": ["ROCK_SLIDE","GRASS_KNOT"],
-				"difficulty": 3,
-				"weight":1
-			},
-			{
-				"speciesId": "mew",
-				"fastMove": "SHADOW_CLAW",
-				"chargedMoves": ["ICE_BEAM","WILD_CHARGE"],
-				"difficulty": 3,
-				"weight":1
-			},
-			{
-				"speciesId": "mewtwo_armored",
-				"fastMove": "CONFUSION",
-				"chargedMoves": ["ROCK_SLIDE","DYNAMIC_PUNCH"],
-				"difficulty": 1,
-				"weight":1
-			},
-			{
-				"speciesId": "latios",
-				"fastMove": "DRAGON_BREATH",
-				"chargedMoves": ["DRAGON_CLAW","SOLAR_BEAM"],
-				"difficulty": 2,
-				"weight":3
-			},
-			{
-				"speciesId": "latias",
-				"fastMove": "DRAGON_BREATH",
-				"chargedMoves": ["OUTRAGE","THUNDER"],
-				"difficulty": 1,
-				"weight":1
-			},
-			{
-				"speciesId": "gardevoir",
-				"fastMove": "CONFUSION",
-				"chargedMoves": ["SHADOW_BALL","SYNCHRONOISE"],
+				"speciesId": "venusaur",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"],
 				"difficulty": 1,
 				"weight":1
 			}
@@ -310,21 +275,28 @@
 				"fastMove": "COUNTER",
 				"chargedMoves": ["DYNAMIC_PUNCH","STONE_EDGE"],
 				"difficulty": 3,
-				"weight":7
+				"weight":2
 			},
 			{
 				"speciesId": "machamp",
 				"fastMove": "COUNTER",
 				"chargedMoves": ["CROSS_CHOP","ROCK_SLIDE"],
 				"difficulty": 2,
-				"weight":7
+				"weight":25
+			},
+			{
+				"speciesId": "heracross",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["CLOSE_COMBAT","MEGAHORN"],
+				"difficulty": 2,
+				"weight":1
 			},
 			{
 				"speciesId": "lucario",
 				"fastMove": "COUNTER",
 				"chargedMoves": ["POWER_UP_PUNCH","SHADOW_BALL"],
-				"difficulty": 2,
-				"weight":2
+				"difficulty": 1,
+				"weight":1
 			},
 			{
 				"speciesId": "blaziken",
@@ -359,7 +331,7 @@
 	{
 		"slot": "Dark",
 		"synergies": ["Flying","Giratina"],
-		"weight": 6,
+		"weight": 1,
 		"pokemon": [
 			{
 				"speciesId": "tyranitar",
@@ -418,6 +390,27 @@
 		"synergies": ["Flying","Flex","Giratina"],
 		"pokemon": [
 			{
+				"speciesId": "dialga",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["IRON_HEAD","THUNDER"],
+				"difficulty": 3,
+				"weight":50
+			},
+			{
+				"speciesId": "scizor",
+				"fastMove": "BULLET_PUNCH",
+				"chargedMoves": ["NIGHT_SLASH","IRON_HEAD"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "aggron",
+				"fastMove": "SMACK_DOWN",
+				"chargedMoves": ["STONE_EDGE","HEAVY_SLAM"],
+				"difficulty": 0,
+				"weight":1
+			},
+			{
 				"speciesId": "metagross",
 				"fastMove": "BULLET_PUNCH",
 				"chargedMoves": ["METEOR_MASH","EARTHQUAKE"],
@@ -429,21 +422,21 @@
 				"fastMove": "THUNDER_SHOCK",
 				"chargedMoves": ["ROCK_SLIDE","SUPER_POWER"],
 				"difficulty": 2,
-				"weight":12
+				"weight":3
 			},
 			{
 				"speciesId": "jirachi",
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["DOOM_DESIRE","DAZZLING_GLEAM"],
 				"difficulty": 1,
-				"weight":2
+				"weight":1
 			},
 			{
 				"speciesId": "heatran",
 				"fastMove": "FIRE_SPIN",
 				"chargedMoves": ["IRON_HEAD","FLAMETHROWER"],
 				"difficulty": 3,
-				"weight":6
+				"weight":2
 			},
 			{
 				"speciesId": "steelix",
@@ -461,9 +454,9 @@
 			},
 			{
 				"speciesId": "scizor",
-				"fastMove": "FURY_CUTTER",
-				"chargedMoves": ["X_SCISSOR","IRON_HEAD"],
-				"difficulty": 2,
+				"fastMove": "BULLET_PUNCH",
+				"chargedMoves": ["NIGHT_SLASH","IRON_HEAD"],
+				"difficulty": 1,
 				"weight":1
 			},
 			{
@@ -485,11 +478,18 @@
 				"fastMove": "LOCK_ON",
 				"chargedMoves": ["BLIZZARD","EARTHQUAKE"],
 				"difficulty": 3,
-				"weight":3
+				"weight":1
 			},
 			{
 				"speciesId": "raikou",
 				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["WILD_CHARGE","SHADOW_BALL"],
+				"difficulty": 2,
+				"weight":3
+			},
+			{
+				"speciesId": "raikou",
+				"fastMove": "VOLT_SWITCH",
 				"chargedMoves": ["WILD_CHARGE","SHADOW_BALL"],
 				"difficulty": 2,
 				"weight":2
@@ -499,7 +499,42 @@
 				"fastMove": "POWDER_SNOW",
 				"chargedMoves": ["AVALANCHE","ANCIENT_POWER"],
 				"difficulty": 2,
-				"weight":2
+				"weight":1
+			},
+			{
+				"speciesId": "mamoswine",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["AVALANCHE","BULLDOZE"],
+				"difficulty": 2,
+				"weight":4
+			},
+			{
+				"speciesId": "articuno",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["ICY_WIND","ANCIENT_POWER"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "glaceon",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["ICY_WIND","AVALANCHE"],
+				"difficulty": 2,
+				"weight":3
+			},
+			{
+				"speciesId": "regice",
+				"fastMove": "LOCK_ON",
+				"chargedMoves": ["BLIZZARD","EARTHQUAKE"],
+				"difficulty": 3,
+				"weight":1
+			},
+			{
+				"speciesId": "rhyperior",
+				"fastMove": "MUD_SLAP",
+				"chargedMoves": ["SURF","ROCK_WRECKER"],
+				"difficulty": 2,
+				"weight":8
 			},
 			{
 				"speciesId": "rhyperior",
@@ -533,7 +568,7 @@
 	},
 	{
 		"slot": "Ground",
-		"weight": 14,
+		"weight": 4,
 		"synergies": ["Dark","Anti-Flying"],
 		"pokemon": [
 			{
@@ -541,7 +576,7 @@
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["EARTHQUAKE","FIRE_BLAST"],
 				"difficulty": 2,
-				"weight":4
+				"weight":8
 			},
 			{
 				"speciesId": "groudon",
@@ -555,7 +590,14 @@
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["EARTHQUAKE","OUTRAGE"],
 				"difficulty": 3,
-				"weight":6
+				"weight":1
+			},
+			{
+				"speciesId": "garchomp",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["SAND_TOMB","OUTRAGE"],
+				"difficulty": 3,
+				"weight":1
 			},
 			{
 				"speciesId": "swampert",
@@ -565,32 +607,39 @@
 				"weight":30
 			},
 			{
+				"speciesId": "swampert",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["SLUDGE_WAVE","HYDRO_CANNON"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "excadrill",
+				"fastMove": "MUD_SLAP",
+				"chargedMoves": ["ROCK_SLIDE","DRILL_RUN"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
 				"speciesId": "kyogre",
 				"fastMove": "WATERFALL",
 				"chargedMoves": ["SURF","BLIZZARD"],
 				"difficulty": 3,
-				"weight":6
+				"weight":5
 			},
 			{
 				"speciesId": "kyogre",
 				"fastMove": "WATERFALL",
 				"chargedMoves": ["SURF","THUNDER"],
 				"difficulty": 2,
-				"weight":2
-			},
-			{
-				"speciesId": "palkia",
-				"fastMove": "DRAGON_BREATH",
-				"chargedMoves": ["DRACO_METEOR","HYDRO_PUMP"],
-				"difficulty": 2,
-				"weight":2
+				"weight":1
 			},
 			{
 				"speciesId": "steelix",
 				"fastMove": "DRAGON_TAIL",
 				"chargedMoves": ["EARTHQUAKE","CRUNCH"],
 				"difficulty": 0,
-				"weight":2
+				"weight":1
 			},
 			{
 				"speciesId": "donphan",
