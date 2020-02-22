@@ -451,6 +451,8 @@ var GameMaster = (function () {
 			var results = []; // Store an array of qualifying Pokemon ID's
 
 			var types = ["bug","dark","dragon","electric","fairy","fighting","fire","flying","ghost","grass","ground","ice","normal","poison","psychic","rock","steel","water"];
+			var tags = object.data.pokemonTags;
+			var regions = object.data.pokemonRegions;
 			var battle = new Battle();
 
 			for(var i = 0; i < queries.length; i++){
@@ -494,8 +496,34 @@ var GameMaster = (function () {
 								}
 							}
 						} else{
-							if((pokemon.types.indexOf(param) > -1)||(pokemon.speciesName.toLowerCase().startsWith(param))){
+							// Name search
+							if(pokemon.speciesName.toLowerCase().startsWith(param)){
 								valid = true;
+							}
+
+							// Type search
+							if(pokemon.types.indexOf(param) > -1){
+								valid = true;
+							}
+
+							// Tag search
+							if((tags.indexOf(param) > -1)&&(pokemon.hasTag(param))){
+								valid = true;
+							}
+
+							// Dex number search
+
+							if(pokemon.dex == param){
+								valid = true;
+							}
+
+							// Region/generation search
+							for(k = 0; k < regions.length; k++){
+								if((param == regions[k].string)||(param==regions[k].name)){
+									if((pokemon.dex >= regions[k].dexStart)&&(pokemon.dex <= regions[k].dexEnd)){
+										valid = true;
+									}
+								}
 							}
 						}
 
