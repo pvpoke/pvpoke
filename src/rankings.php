@@ -212,39 +212,7 @@ require_once 'header.php';
 	</div>
 </div>
 
-<div class="sandbox-search-strings hide">
-	<p>You can use the following search formats to filter Pokemon:</p>
-	<table>
-		<tr>
-			<td><strong>Pokemon Name</strong></td>
-			<td>"azumarill"</td>
-		</tr>
-		<tr>
-			<td><strong>Pokemon Type</strong></td>
-			<td>"water"</td>
-		</tr>
-		<tr>
-			<td><strong>Move Name</strong></td>
-			<td>"@counter"</td>
-		</tr>
-		<tr>
-			<td><strong>Move Type</strong></td>
-			<td>"@fighting"</td>
-		</tr>
-		<tr>
-			<td><strong>And</strong></td>
-			<td>"water&amp;@fighting"</td>
-		</tr>
-		<tr>
-			<td><strong>Or</strong></td>
-			<td>"water,fighting"</td>
-		</tr>
-		<tr>
-			<td><strong>Not</strong></td>
-			<td>"!water"</td>
-		</tr>
-	</table>
-</div>
+<?php require_once 'modules/search-string-help.php'; ?>
 
 <div class="details-template hide">
 	<div class="detail-section float margin">
