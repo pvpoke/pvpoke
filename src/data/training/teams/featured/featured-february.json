@@ -126,6 +126,48 @@
 		]
 	},
 	{
+		"name": "Arrohh",
+		"slug": "arrohh",
+		"img": "arrohh",
+		"cup": "rose",
+		"cupName": "Rose",
+		"league": 1500,
+		"description": "Season 1 ranked #38 in the world Ace Trainer Elite 4 Taco Truck GoStadium Coach just keep tapping",
+		"link": "https://twitter.com/TheArrohh",
+		"pokemon": [
+			{
+				"speciesId": "marowak_alolan",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["SHADOW_BALL","BONE_CLUB"]
+			},
+			{
+				"speciesId": "lickilicky",
+				"fastMove": "LICK",
+				"chargedMoves": ["BODY_SLAM","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "magcargo",
+				"fastMove": "ROCK_THROW",
+				"chargedMoves": ["STONE_EDGE","OVERHEAT"]
+			},
+			{
+				"speciesId": "medicham",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["ICE_PUNCH","PSYCHIC"]
+			},
+			{
+				"speciesId": "vileplume",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["SLUDGE_BOMB","MOONBLAST"]
+			},
+			{
+				"speciesId": "wigglytuff",
+				"fastMove": "CHARM",
+				"chargedMoves": ["ICE_BEAM","PLAY_ROUGH"]
+			}
+		]
+	},
+	{
 		"name": "R6RacingR6",
 		"slug": "r6racingr6",
 		"img": "r6racingr6",
