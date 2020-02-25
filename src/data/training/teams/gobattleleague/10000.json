@@ -2,7 +2,7 @@
 	{
 		"slot": "Giratina",
 		"synergies": ["Fighting","Anti-Flying"],
-		"weight": 8,
+		"weight": 10,
 		"pokemon": [
 			{
 				"speciesId": "giratina_origin",
@@ -386,7 +386,7 @@
 	},
 	{
 		"slot": "Anti-Flying",
-		"weight": 6,
+		"weight": 8,
 		"synergies": ["Flying","Flex","Giratina"],
 		"pokemon": [
 			{
@@ -394,14 +394,14 @@
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["IRON_HEAD","THUNDER"],
 				"difficulty": 3,
-				"weight":20
+				"weight":15
 			},
 			{
 				"speciesId": "dialga",
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["IRON_HEAD","DRACO_METEOR"],
 				"difficulty": 3,
-				"weight":30
+				"weight":35
 			},
 			{
 				"speciesId": "scizor",
@@ -429,7 +429,7 @@
 				"fastMove": "THUNDER_SHOCK",
 				"chargedMoves": ["ROCK_SLIDE","SUPER_POWER"],
 				"difficulty": 2,
-				"weight":3
+				"weight":10
 			},
 			{
 				"speciesId": "jirachi",
@@ -513,7 +513,7 @@
 				"fastMove": "POWDER_SNOW",
 				"chargedMoves": ["AVALANCHE","BULLDOZE"],
 				"difficulty": 2,
-				"weight":4
+				"weight":10
 			},
 			{
 				"speciesId": "articuno",
@@ -541,7 +541,7 @@
 				"fastMove": "MUD_SLAP",
 				"chargedMoves": ["SURF","ROCK_WRECKER"],
 				"difficulty": 2,
-				"weight":8
+				"weight":12
 			},
 			{
 				"speciesId": "rhyperior",
@@ -624,7 +624,7 @@
 				"speciesId": "excadrill",
 				"fastMove": "MUD_SLAP",
 				"chargedMoves": ["ROCK_SLIDE","DRILL_RUN"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":1
 			},
 			{
@@ -632,7 +632,7 @@
 				"fastMove": "WATERFALL",
 				"chargedMoves": ["SURF","BLIZZARD"],
 				"difficulty": 3,
-				"weight":5
+				"weight":12
 			},
 			{
 				"speciesId": "kyogre",

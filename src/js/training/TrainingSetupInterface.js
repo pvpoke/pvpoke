@@ -68,6 +68,7 @@ var InterfaceMaster = (function () {
 				$(".lets-go-btn").on("click", startTournamentBattle);
 				$("body").on("click", ".self .roster .pokemon", selectRosterPokemon);
 				$("a.random").on("click", randomizeTeam);
+				$("body").on("click", ".check", checkBox);
 			};
 
 			// Callback after ranking data is loaded

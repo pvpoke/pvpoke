@@ -1334,7 +1334,7 @@
 			},
 			{
 				"speciesId": "mewtwo_armored",
-				"chargedMoves": ["ROCK_SLIDE","DYNAMIC_PUNCH"]
+				"chargedMoves": ["PSYSTRIKE","DYNAMIC_PUNCH"]
 			},
 			{
 				"speciesId": "mewtwo",
@@ -1435,6 +1435,11 @@
 				"weight": 3
 			},
 			{
+				"speciesId": "moltres",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["SKY_ATTACK","OVERHEAT"]
+			},
+			{
 				"speciesId": "articuno",
 				"chargedMoves": ["ICY_WIND","ANCIENT_POWER"],
 				"weight": 5
@@ -1465,7 +1470,7 @@
 			},
 			{
 				"speciesId": "mewtwo_armored",
-				"chargedMoves": ["ROCK_SLIDE","DYNAMIC_PUNCH"]
+				"chargedMoves": ["PSYSTRIKE","DYNAMIC_PUNCH"]
 			},
 			{
 				"speciesId": "mewtwo",

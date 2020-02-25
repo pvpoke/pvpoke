@@ -47,6 +47,7 @@ var InterfaceMaster = (function () {
 				$(".rate-btn").on("click", rateClick);
 				$(".print-scorecard").on("click", printScorecard);
 				$("body").on("click", ".alternatives-table .button.add", addAlternativePokemon);
+				$("body").on("click", ".check", checkBox);
 
 				// If get data exists, load settings
 
@@ -1107,6 +1108,12 @@ var InterfaceMaster = (function () {
 				$("body").addClass("scorecard-print");
 
 				window.print();
+			}
+			
+			// Turn checkboxes on and off
+
+			function checkBox(e){
+				$(this).toggleClass("on");
 			}
 		};
 
