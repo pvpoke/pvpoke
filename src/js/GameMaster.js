@@ -484,15 +484,41 @@ var GameMaster = (function () {
 						if((param.charAt(0) == "@")&&(param.length > 2)){
 							param = param.substr(1, param.length-1);
 
-							for(var k = 0; k < pokemon.fastMovePool.length; k++){
-								if((pokemon.fastMovePool[k].name.toLocaleLowerCase().startsWith(param))||(pokemon.fastMovePool[k].type == param)){
-									valid = true;
+							// legacy move search
+							if ((param == "legacy")||(param == "special")) {
+								for(var k = 0; k < pokemon.fastMovePool.length; k++){
+									if(pokemon.fastMovePool[k].legacy === true){
+										valid = true;
+									} else if(param == "special") {
+										if ((pokemon.fastMovePool[k].moveId == "FRUSTRATION")||(pokemon.fastMovePool[k].moveId === "RETURN")) {
+											valid = true;
+										}
+									}
 								}
-							}
-
-							for(var k = 0; k < pokemon.chargedMovePool.length; k++){
-								if((pokemon.chargedMovePool[k].name.toLocaleLowerCase().startsWith(param))||(pokemon.chargedMovePool[k].type == param)){
-									valid = true;
+	
+								for(var k = 0; k < pokemon.chargedMovePool.length; k++){
+									if(pokemon.chargedMovePool[k].legacy === true){
+										valid = true;
+									} else if(param == "special") {
+										if ((pokemon.chargedMovePool[k].moveId == "FRUSTRATION")||(pokemon.chargedMovePool[k].moveId === "RETURN")) {
+											valid = true;
+										}
+									}
+								}
+							} 
+							
+							// move name/type serach
+							else {
+								for(var k = 0; k < pokemon.fastMovePool.length; k++){
+									if((pokemon.fastMovePool[k].name.toLocaleLowerCase().startsWith(param))||(pokemon.fastMovePool[k].type == param)){
+										valid = true;
+									}
+								}
+	
+								for(var k = 0; k < pokemon.chargedMovePool.length; k++){
+									if((pokemon.chargedMovePool[k].name.toLocaleLowerCase().startsWith(param))||(pokemon.chargedMovePool[k].type == param)){
+										valid = true;
+									}
 								}
 							}
 						} else{
