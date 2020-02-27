@@ -701,8 +701,13 @@ var BattlerMaster = (function () {
 						}
 
 						// Assign this Pokemon's score in battle, damage done plus shields broken
+						var shieldValue = 50;
+						
+						if((battle.getCP() == 2500)||(battle.getCP() == 10000)){
+							shieldValue = 40;
+						}
 
-						pokemon.battleStats.score = Math.round(pokemon.battleStats.damage + (50 * pokemon.battleStats.shieldsBurned));
+						pokemon.battleStats.score = Math.round(pokemon.battleStats.damage + (shieldValue * pokemon.battleStats.shieldsBurned));
 						teamScore += pokemon.battleStats.score;
 					}
 
@@ -763,6 +768,15 @@ var BattlerMaster = (function () {
 							} else{
 								pokeStr += "/" + chargedMoveAbbrevations[k];
 							}
+						}
+						
+						if(properties.mode == "tournament"){
+							gtag('event', battleSummaryStr, {
+								  'event_category' : 'Training Roster Pokemon',
+								  'event_label' : pokemon.speciesId,
+								  'value' : battleRating+'',
+								  'player_type': playerType
+								});
 						}
 
 						pokeStrArr.push(pokeStr);
