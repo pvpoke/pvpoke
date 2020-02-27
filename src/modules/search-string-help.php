@@ -30,6 +30,14 @@
 			<td>@fighting</td>
 		</tr>
 		<tr>
+			<td><strong>Legacy Moves (excl. Return)</strong></td>
+			<td>@legacy</td>
+		</tr>
+		<tr>
+			<td><strong>Special Moves (incl. Return)</strong></td>
+			<td>@special</td>
+		</tr>
+		<tr>
 			<td><strong>And</strong></td>
 			<td>water&amp;@fighting</td>
 		</tr>
