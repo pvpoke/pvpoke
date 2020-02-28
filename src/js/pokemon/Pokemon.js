@@ -39,6 +39,8 @@ function Pokemon(id, i, b){
 	this.fastMovePool = [];
 	this.chargedMovePool = [];
 	this.legacyMoves = [];
+	this.shadowEligible = false;
+	this.shadowType = "normal"; // normal, shadow, or purified
 
 	this.typeEffectiveness = getTypeEffectivenessArray(b);
 
@@ -109,7 +111,8 @@ function Pokemon(id, i, b){
 
 
 	if(data.shadow){
-
+		self.shadowEligible = true;
+		
 		self.chargedMovePool.push(gm.getMoveById("FRUSTRATION"));
 
 		if(data.level25CP <= b.getCP()){
@@ -505,12 +508,12 @@ function Pokemon(id, i, b){
 			for(var i = 0; i < self.activeChargedMoves.length; i++){
 				var move = self.activeChargedMoves[i];
 				move.dpe = move.damage / move.energy;
-				
+
 				// Use moves that have higher DPE
 				if(move.dpe - self.bestChargedMove.dpe > .03){
 					self.bestChargedMove = self.activeChargedMoves[i];
 				}
-				
+
 				// When DPE is close, favor moves with guaranteed buff effects
 				if((Math.abs(move.dpe - self.bestChargedMove.dpe) < .03)&&(self.bestChargedMove.buffs)&&(move.buffs)&&(move.buffApplyChance > self.bestChargedMove.buffApplyChance)&&(! move.selfDebuffing)){
 					self.bestChargedMove = self.activeChargedMoves[i];
@@ -1092,5 +1095,28 @@ function Pokemon(id, i, b){
 		}
 
 		return moveAbbreviationStr;
+	}
+
+	// Change the value of this Pokemon's form type (normal, shadow, purified) and adjust moveset as needed
+
+	this.setShadowType = function(val, changeMoveset){
+		changeMoveset = typeof changeMoveset !== 'undefined' ? changeMoveset : true;
+
+		self.shadowType = val;
+
+		// Force the Pokemon to select or deselect special moves
+		if(changeMoveset){
+			if(self.shadowType == "shadow"){
+				// Force Frustration in the first slot
+				self.selectMove("charged", "FRUSTRATION", 0);
+
+				// Deselect any legacy moves in the 2nd slot
+				if((self.chargedMoves.length > 1)&&(self.legacyMoves.indexOf(self.chargedMoves[1].moveId) > -1)){
+					self.selectMove("charged", "none", 1);
+				}
+			} else if((self.chargedMoves.length > 0)&&(self.chargedMoves[0].moveId == "FRUSTRATION")){
+				self.selectRecommendedMoveset();
+			}
+		}
 	}
 }

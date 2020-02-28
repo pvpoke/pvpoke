@@ -654,6 +654,31 @@ header{
 		}
 	}
 
+	.form-group{
+		border: 1px solid #888;
+		border-radius: 8px;
+		padding: 5px;
+		margin-bottom:15px;
+		clear:both;
+		display:flex;
+		flex-wrap:wrap;
+		margin-top:10px;
+
+		.check{
+			display: inline-block;
+			font-size: 11px;
+			margin-right:5px;
+			margin-bottom: 5px;
+			margin-top:5px;
+
+			span{
+				width:12px;
+				height:12px;
+				margin-right:2px;
+			}
+		}
+	}
+
 	a.random,
 	a.swap{
 		font-size: 10px;

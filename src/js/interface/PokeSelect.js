@@ -650,6 +650,21 @@ function PokeSelect(element, i){
 		$(e.target).closest(".check").parent().find(".check").removeClass("on");
 	});
 
+	// Select an option from the form section
+
+	$el.find(".form-group .check").on("click", function(e){
+		$(e.target).closest(".check").parent().find(".check").removeClass("on");
+	});
+
+	// Change a form option
+
+	$el.find(".form-group .check").on("change", function(e){
+		var formType = $(e.target).attr("value");
+		selectedPokemon.setShadowType(formType);
+
+		self.update();
+	});
+
 	// Restore default IV's
 
     $el.find(".restore-default").on("click", function(e){
