@@ -183,6 +183,11 @@ function PokeSelect(element, i){
 			} else{
 				$el.find(".check.negate-fast-moves").addClass("on");
 			}
+
+			// Update the Shadow form radio buttons to display the currently selected setting
+
+			$el.find(".form-group .check").removeClass("on");
+			$el.find(".form-group .check[value=\""+selectedPokemon.shadowType+"\"]").addClass("on");
 		}
 	}
 

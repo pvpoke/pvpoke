@@ -112,7 +112,7 @@ function Pokemon(id, i, b){
 
 	if(data.shadow){
 		self.shadowEligible = true;
-		
+
 		self.chargedMovePool.push(gm.getMoveById("FRUSTRATION"));
 
 		if(data.level25CP <= b.getCP()){
@@ -1045,6 +1045,10 @@ function Pokemon(id, i, b){
 
 		if(self.priority != 0){
 			pokeStr += "-p";
+		}
+
+		if(self.shadowType != "normal"){
+			pokeStr += "-"+self.shadowType;
 		}
 
 		if(context == "team-builder"){

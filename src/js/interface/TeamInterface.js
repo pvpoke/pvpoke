@@ -91,18 +91,6 @@ var InterfaceMaster = (function () {
 						// Process each type of parameter
 
 						switch(key){
-							case "p1":
-								pokeSelectors[0].setPokemon(val);
-								break;
-
-							case "p2":
-								pokeSelectors[1].setPokemon(val);
-								break;
-
-							case "p3":
-								pokeSelectors[2].setPokemon(val);
-								break;
-
 							case "t":
 								// Add each team member to the multi-selector
 								var list = val.split(",");
@@ -121,18 +109,24 @@ var InterfaceMaster = (function () {
 										pokemon.setLevel(arr[1]);
 									}
 
+									// Check string for other parameters
+									for(var n = 0; n < arr.length; n++){
+										switch(arr[n]){
+											case "shadow":
+											case "purified":
+												pokemon.setShadowType(arr[n], false);
+												break;
+										}
+									}
+
 									// Split out the move string and select moves
 
 									var moveStr = list[i].split("-m-")[1];
 									arr = moveStr.split("-");
 
-									// Legacy move construction
+									console.log(arr);
 
-									if(arr.length <= 1){
-										arr = val.split('');
-									}
-
-									// Search string for any custom moves to add
+									// Search string for any custom moves
 									var customMoveIndexes = [];
 
 									for(var n = 0; n < arr.length; n++){
@@ -1109,11 +1103,12 @@ var InterfaceMaster = (function () {
 
 				window.print();
 			}
-			
+
 			// Turn checkboxes on and off
 
 			function checkBox(e){
 				$(this).toggleClass("on");
+				$(this).trigger("change");
 			}
 		};
 

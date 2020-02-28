@@ -1772,7 +1772,7 @@ select, input {
   -ms-transform: scale(1, 1);
   transform: scale(1, 1);
 }
-.team-build .poke .options, .team-build .poke .bar-back, .team-build .poke .move-bars {
+.team-build .poke .options .shield-section, .team-build .poke .options .toggle, .team-build .poke .options .toggle-content, .team-build .poke .bar-back, .team-build .poke .move-bars {
   display: none;
 }
 .team-build .poke.multi {
@@ -2268,7 +2268,9 @@ select, input {
 .modal .modal-container .poke.single .swap,
 .modal .modal-container .poke.single .stat-container,
 .modal .modal-container .poke.single .auto-select,
-.modal .modal-container .poke.single .options {
+.modal .modal-container .poke.single .options .shield-section,
+.modal .modal-container .poke.single .options .toggle,
+.modal .modal-container .poke.single .options .toggle-content {
   display: none;
 }
 .modal .modal-container .poke-search {

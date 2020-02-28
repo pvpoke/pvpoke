@@ -94,12 +94,14 @@
 		</div>
 
 		<div class="options">
-			<h3 class="section-title">Shields</h3>
-			<select class="shield-select">
-				<option value="0">No shields</option>
-				<option value="1" selected>1 shield</option>
-				<option value="2">2 shields</option>
-			</select>
+			<div class="shield-section">
+				<h3 class="section-title">Shields</h3>
+				<select class="shield-select">
+					<option value="0">No shields</option>
+					<option value="1" selected>1 shield</option>
+					<option value="2">2 shields</option>
+				</select>
+			</div>
 			<div class="shadow-section">
 				<h3 class="section-title">Pokemon Form</h3>
 				<div class="form-group">

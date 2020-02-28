@@ -2069,7 +2069,7 @@ select, input{
 			}
 		}
 
-		.options, .bar-back, .move-bars{
+		.options .shield-section, .options .toggle, .options .toggle-content, .bar-back, .move-bars{
 			display:none;
 		}
 	}
@@ -2678,7 +2678,9 @@ select, input{
 			.swap,
 			.stat-container,
 			.auto-select,
-			.options{
+			.options .shield-section,
+			.options .toggle,
+			.options .toggle-content{
 				display:none;
 			}
 		}
