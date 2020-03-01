@@ -1101,26 +1101,9 @@ function Pokemon(id, i, b){
 		return moveAbbreviationStr;
 	}
 
-	// Change the value of this Pokemon's form type (normal, shadow, purified) and adjust moveset as needed
+	// Change the value of this Pokemon's form type (normal, shadow, purified)
 
-	this.setShadowType = function(val, changeMoveset){
-		changeMoveset = typeof changeMoveset !== 'undefined' ? changeMoveset : true;
-
+	this.setShadowType = function(val){
 		self.shadowType = val;
-
-		// Force the Pokemon to select or deselect special moves
-		if(changeMoveset){
-			if(self.shadowType == "shadow"){
-				// Force Frustration in the first slot
-				self.selectMove("charged", "FRUSTRATION", 0);
-
-				// Deselect any legacy moves in the 2nd slot
-				if((self.chargedMoves.length > 1)&&(self.legacyMoves.indexOf(self.chargedMoves[1].moveId) > -1)){
-					self.selectMove("charged", "none", 1);
-				}
-			} else if((self.chargedMoves.length > 0)&&(self.chargedMoves[0].moveId == "FRUSTRATION")){
-				self.selectRecommendedMoveset();
-			}
-		}
 	}
 }

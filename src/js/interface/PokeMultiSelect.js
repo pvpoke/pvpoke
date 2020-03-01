@@ -186,6 +186,10 @@ function PokeMultiSelect(element){
 				pokemon.setLevel(data[i].level);
 			}
 
+			if(data[i].shadowType){
+				pokemon.setShadowType(data[i].shadowType);
+			}
+
 			pokemonList.push(pokemon);
 		}
 
@@ -208,10 +212,14 @@ function PokeMultiSelect(element){
 			}
 
 			var poke = arr[i].split(',');
+			var pokeSettings = poke[0].split('-'); // Get the Pokemon ID and shadow type
 
-			var pokemon = new Pokemon(poke[0].toLowerCase(), 1, battle);
+			var pokemon = new Pokemon(pokeSettings[0].toLowerCase(), 1, battle);
 
 			pokemon.initialize(cp);
+			if(pokeSettings[1]){
+				pokemon.setShadowType(pokeSettings[1]);
+			}
 
 			// Set moves
 
@@ -290,6 +298,10 @@ function PokeMultiSelect(element){
 				obj.chargedMoves.push(pokemonList[i].chargedMoves[n].moveId);
 			}
 
+			if(pokemonList[i].shadowType != "normal"){
+				obj.shadowType = pokemonList[i].shadowType;
+			}
+
 			arr.push(obj);
 		}
 
@@ -309,7 +321,13 @@ function PokeMultiSelect(element){
 				csv += '\n';
 			}
 
-			csv += pokemonList[i].speciesId + ',' + pokemonList[i].fastMove.moveId;
+			csv += pokemonList[i].speciesId;
+
+			if(pokemonList[i].shadowType != "normal"){
+				csv += "-" + pokemonList[i].shadowType;
+			}
+
+			csv += ',' + pokemonList[i].fastMove.moveId;
 
 			for(var n = 0; n < pokemonList[i].chargedMoves.length; n++){
 				csv += ',' + pokemonList[i].chargedMoves[n].moveId
@@ -512,7 +530,7 @@ function PokeMultiSelect(element){
 		if(selectedGroupType != "custom"){
 			// Prompt to save a new group if a custom one isn't selected
 			modalWindow("Save Group", $(".save-list").eq(0));
-			
+
 			// Add a property to the modal window to identify the index of this selector
 			$(".modal .save-list").attr("selector-index", $(".poke.multi").index($el));
 		} else{
@@ -524,9 +542,9 @@ function PokeMultiSelect(element){
 	// Save data to cookie
 
 	$("body").on("click", ".modal .button.save", function(e){
-		
+
 		// If the save list is for this selector, save it
-		
+
 		if($(".modal .save-list").attr("selector-index") == $(".poke.multi").index($el)){
 			self.saveCustomList($(".modal input.list-name").val(), true);
 

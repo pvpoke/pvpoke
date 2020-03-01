@@ -114,7 +114,7 @@ var InterfaceMaster = (function () {
 										switch(arr[n]){
 											case "shadow":
 											case "purified":
-												pokemon.setShadowType(arr[n], false);
+												pokemon.setShadowType(arr[n]);
 												break;
 										}
 									}

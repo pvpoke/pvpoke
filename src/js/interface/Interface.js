@@ -1192,7 +1192,7 @@ var InterfaceMaster = (function () {
 										switch(arr[i]){
 											case "shadow":
 											case "purified":
-												pokemon.setShadowType(arr[i], false);
+												pokemon.setShadowType(arr[i]);
 												$(".poke.single .form-group").eq(index).find(".check").removeClass("on");
 												$(".poke.single .form-group").eq(index).find(".check[value=\""+arr[i]+"\"]").addClass("on");
 												break;
