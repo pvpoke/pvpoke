@@ -163,7 +163,7 @@ function Player(i, ai, b){
 		if(! previousResult){
 			ai.generateTeam(opponentRoster);
 		} else{
-			ai.generateTeam(opponentRoster, previousResult, previousTeams, forcePickStrategy);
+			ai.generateTeam(opponentRoster, previousResult, previousTeams);
 		}
 
 	}

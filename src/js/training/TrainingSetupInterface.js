@@ -487,6 +487,7 @@ var InterfaceMaster = (function () {
 
 			function checkBox(e){
 				$(this).toggleClass("on");
+				$(this).trigger("change");
 			}
 
 		}
