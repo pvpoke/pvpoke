@@ -41,6 +41,8 @@ function Pokemon(id, i, b){
 	this.legacyMoves = [];
 	this.shadowEligible = false;
 	this.shadowType = "normal"; // normal, shadow, or purified
+	this.shadowAtkMult = 1;
+	this.shadowDefMult = 1;
 
 	this.typeEffectiveness = getTypeEffectivenessArray(b);
 
@@ -321,10 +323,14 @@ function Pokemon(id, i, b){
 					}
 
                     if (calcCP <= targetCP) {
-                        let atk = cpm * (self.baseStats.atk + atkIV);
-                        let def = cpm * (self.baseStats.def + defIV);
+                        let atk = cpm * (self.baseStats.atk + atkIV) * self.shadowAtkMult;
+                        let def = cpm * (self.baseStats.def + defIV) * self.shadowDefMult;
                         let hp = Math.floor(cpm * (self.baseStats.hp + hpIV));
                         overall = (hp * atk * def);
+
+						if(self.shadowType == "shadow"){
+
+						}
 
 						var combination = {
 							level: level,
@@ -999,6 +1005,14 @@ function Pokemon(id, i, b){
 			multiplier = buffDivisor / (buffDivisor - self.statBuffs[index]);
 		}
 
+		if(self.shadowType == "shadow"){
+			if(index == 0){
+				multiplier *= self.shadowAtkMult;
+			} else if(index == 1){
+				multiplier *= self.shadowDefMult;
+			}
+		}
+
 		if(index == 0){
 			return self.stats.atk * multiplier;
 		} else if(index == 1){
@@ -1105,5 +1119,21 @@ function Pokemon(id, i, b){
 
 	this.setShadowType = function(val){
 		self.shadowType = val;
+
+		if(self.shadowType == "shadow"){
+			self.shadowAtkMult = gm.data.settings.shadowAtkMult;
+			self.shadowDefMult = gm.data.settings.shadowDefMult;
+
+			if(self.speciesName.indexOf("Shadow") == -1){
+				self.speciesName = "Shadow " + self.speciesName;
+			}
+		} else{
+			self.shadowAtkMult = 1;
+			self.shadowDefMult = 1;
+
+			if(self.speciesName.indexOf("Shadow") > -1){
+				self.speciesName = self.speciesName.replace("Shadow","");
+			}
+		}
 	}
 }

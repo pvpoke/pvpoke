@@ -107,7 +107,6 @@
 				<div class="form-group">
 					<div class="check on" value="normal"><span></span>Normal</div>
 					<div class="check" value="shadow"><span></span>Shadow</div>
-					<div class="check" value="purified"><span></span>Purified</div>
 				</div>
 			</div>
 			<a href="#" class="section-title toggle">Options <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>

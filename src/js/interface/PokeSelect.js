@@ -50,15 +50,15 @@ function PokeSelect(element, i){
 			$el.find(".defense .stat").html(Math.floor(selectedPokemon.getEffectiveStat(1)*10)/10);
 			$el.find(".stamina .stat").html(selectedPokemon.stats.hp);
 
-			if(selectedPokemon.statBuffs[0] > 0){
+			if(selectedPokemon.getEffectiveStat(0) > selectedPokemon.stats.atk){
 				$el.find(".attack .stat").addClass("buff");
-			} else if(selectedPokemon.statBuffs[0] < 0){
+			} else if(selectedPokemon.getEffectiveStat(0) < selectedPokemon.stats.atk){
 				$el.find(".attack .stat").addClass("debuff");
 			}
 
-			if(selectedPokemon.statBuffs[1] > 0){
+			if(selectedPokemon.getEffectiveStat(1) > selectedPokemon.stats.def){
 				$el.find(".defense .stat").addClass("buff");
-			} else if(selectedPokemon.statBuffs[1] < 0){
+			} else if(selectedPokemon.getEffectiveStat(1) < selectedPokemon.stats.def){
 				$el.find(".defense .stat").addClass("debuff");
 			}
 
