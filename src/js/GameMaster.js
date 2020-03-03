@@ -302,11 +302,11 @@ var GameMaster = (function () {
 				minStats = 2800;
 			}
 
-			var bannedList = ["mewtwo","mewtwo_armored","giratina_altered","groudon","kyogre","rayquaza","palkia","dialga","heatran","giratina_origin","darkrai","cobalion","terrakion","virizion"];
+			var bannedList = ["mewtwo","mewtwo_armored","giratina_altered","groudon","kyogre","rayquaza","palkia","dialga","heatran","giratina_origin","darkrai","cobalion","terrakion","virizion","thundurus_incarnate","regigigas","tornadus_incarnate"];
 			var permaBannedList = ["rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","rotom_wash","phione","manaphy","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","kecleon","zigzagoon_galarian","linoone_galarian"]; // Don't rank these Pokemon at all yet
 
 			var maxDexNumber = 493;
-			var releasedGen5 = ["snivy","servine","serperior","tepig","pignite","emboar","oshawott","dewott","samurott","lillipup","herdier","stoutland","purrloin","liepard","pidove","tranquill","unfezant","blitzle","zebstrika","foongus","amoonguss","drilbur","excadrill","litwick","lampent","chandelure","golett","golurk","deino","zweilous","hydreigon","pansage","panpour","pansear","simisage","simipour","simisear","ferroseed","ferrothorn","heatmor","durant","patrat","watchog","klink","klang","klinklang","yamask","cofagrigus","cobalion","terrakion","virizion","cryogonal","cubchoo","beartic","meltan","roggenrola","boldore","gigalith","tympole","palpitoad","seismitoad","dwebble","crustle","trubbish","garbodor","karrablast","escavalier","joltik","galvantula","shelmet","accelgor","timburr","gurdurr","conkeldurr","tirtouga","carracosta","archen","archeops","axew","fraxure","haxorus","throh","sawk","maractus","sigilyph","basculin","venipede","whirlipede","scolipede","minccino","cinccino","darumaka","darmanitan_standard","scraggy","scrafty","woobat","swoobat","tornadus_incarnate","audino","alomomola","melmetal"];
+			var releasedGen5 = ["snivy","servine","serperior","tepig","pignite","emboar","oshawott","dewott","samurott","lillipup","herdier","stoutland","purrloin","liepard","pidove","tranquill","unfezant","blitzle","zebstrika","foongus","amoonguss","drilbur","excadrill","litwick","lampent","chandelure","golett","golurk","deino","zweilous","hydreigon","pansage","panpour","pansear","simisage","simipour","simisear","ferroseed","ferrothorn","heatmor","durant","patrat","watchog","klink","klang","klinklang","yamask","cofagrigus","cobalion","terrakion","virizion","cryogonal","cubchoo","beartic","meltan","roggenrola","boldore","gigalith","tympole","palpitoad","seismitoad","dwebble","crustle","trubbish","garbodor","karrablast","escavalier","joltik","galvantula","shelmet","accelgor","timburr","gurdurr","conkeldurr","tirtouga","carracosta","archen","archeops","axew","fraxure","haxorus","throh","sawk","maractus","sigilyph","basculin","venipede","whirlipede","scolipede","minccino","cinccino","darumaka","darmanitan_standard","scraggy","scrafty","woobat","swoobat","tornadus_incarnate","audino","alomomola","thundurus_incarnate","melmetal"];
 
 			// Aggregate filters
 
@@ -495,7 +495,7 @@ var GameMaster = (function () {
 										}
 									}
 								}
-	
+
 								for(var k = 0; k < pokemon.chargedMovePool.length; k++){
 									if(pokemon.chargedMovePool[k].legacy === true){
 										valid = true;
@@ -505,8 +505,8 @@ var GameMaster = (function () {
 										}
 									}
 								}
-							} 
-							
+							}
+
 							// move name/type serach
 							else {
 								for(var k = 0; k < pokemon.fastMovePool.length; k++){
@@ -514,7 +514,7 @@ var GameMaster = (function () {
 										valid = true;
 									}
 								}
-	
+
 								for(var k = 0; k < pokemon.chargedMovePool.length; k++){
 									if((pokemon.chargedMovePool[k].name.toLocaleLowerCase().startsWith(param))||(pokemon.chargedMovePool[k].type == param)){
 										valid = true;
