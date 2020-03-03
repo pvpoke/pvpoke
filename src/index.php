@@ -27,13 +27,12 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.12.35 (February 22, 2020)</h4>
+	<h4>v1.13.0 (March 2, 2020)</h4>
 	<ul>
-		<li>Expanded search functionality for the rankings and Multi-Battle results:</li>
+		<li>Settings now added for Shadow Pokemon.</li>
 		<ul>
-			<li>Search by generation</li>
-			<li>Search by tags (legendary, mythical, etc.)</li>
-			<li>Search by dex number</li>
+			<li>Shadow Pokemon receive a x1.2 multiplier to Attack and a x0.83 multiplier to Defense.</li>
+			<li>Shadow Pokemon can be incorporated into custom groups.</li>
 		</ul>
 	</ul>
 
