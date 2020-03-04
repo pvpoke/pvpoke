@@ -41,42 +41,49 @@ var GameMaster = (function () {
 
 		object.updateShadowStatus = function(){
 
+			// First, clear all Shadow entries from the game master to start from a clean slate
+
 			$.each(object.data.pokemon, function(index, poke){
-				var battle = new Battle();
+				if(poke.speciesId.indexOf("_shadow") > -1){
+					object.data.pokemon.splice(index, 1);
+				}
+			});
+
+			var battle = new Battle();
+
+			$.each(object.data.pokemon, function(index, poke){
+				if(poke.speciesId.indexOf("_shadow") > -1){
+					return false;
+				}
 
 				var pokemon = new Pokemon(poke.speciesId, 0, battle);
 				var entry = object.getPokemonById(poke.speciesId);
 				battle.setNewPokemon(pokemon, 0, false);
 
 				if(object.data.shadowPokemon.indexOf(poke.speciesId) > -1){
-					entry.shadow = true;
-
-					// Remove Return and Frustration if they already exist
-					for(var i = 0; i < entry.chargedMoves.length; i++){
-						if((entry.chargedMoves[i] == "RETURN")||(entry.chargedMoves[i] == "FRUSTRATION")){
-							entry.chargedMoves.splice(i, 1);
-							i--;
-						}
-					}
-
-					// Remove Return and Frustration if they already exist
-					if(entry.legacyMoves){
-						for(var i = 0; i < entry.legacyMoves.length; i++){
-							if((entry.legacyMoves[i] == "RETURN")||(entry.legacyMoves[i] == "FRUSTRATION")){
-								entry.legacyMoves.splice(i, 1);
-								i--;
-							}
-						}
-
-						if(entry.legacyMoves.length == 0){
-							delete entry.legacyMoves;
-						}
-					}
-
-
 					// Get CP at level 25
 					var cp = pokemon.calculateCP(0.667934, 0, 0, 0);
 					entry.level25CP = cp;
+
+					if(entry.tags){
+						if(entry.tags.indexOf("shadow") == -1){
+							entry.tags.push("shadow");
+						}
+					} else{
+						entry.tags = ["shadow"];
+					}
+
+					delete entry.shadow;
+
+					// Duplicate the entry for the Shadow version of the Pokemon
+
+					entry = JSON.parse(JSON.stringify(entry)); // Your clones are very impressive, you must be very proud
+
+					entry.speciesId += "_shadow";
+					entry.speciesName += " (Shadow)";
+					entry.shadow = true;
+					delete entry.level25CP;
+					object.data.pokemon.push(entry);
 				}
 			});
 

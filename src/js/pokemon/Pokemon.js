@@ -112,7 +112,7 @@ function Pokemon(id, i, b){
 	// Add Return and Frustration for eligible Pokemon
 
 
-	if(data.shadow){
+	if((data.tags)&&(data.tags.indexOf("shadow") > -1)&&(!data.shadow)){
 		self.shadowEligible = true;
 
 		self.chargedMovePool.push(gm.getMoveById("FRUSTRATION"));
