@@ -241,7 +241,7 @@
         }],
         "exclude": [{
             "filterType": "id",
-            "values": ["noctowl", "vigoroth", "tropius", "whiscash", "swampert", "quagsire", "gastrodon_east_sea", "gastrodon_west_sea", "seismitoad", "palpitoad", "marshtomp"]
+            "values": ["noctowl", "vigoroth", "tropius", "whiscash", "swampert", "quagsire", "gastrodon_east_sea", "gastrodon_west_sea", "seismitoad", "palpitoad", "marshtomp", "swampert_shadow", "marshtomp_shadow"]
         }]
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow"],
@@ -271,7 +271,7 @@
         "dexStart": 494,
         "dexEnd": 649
     }],
-    "shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "charmander", "charmeleon", "charizard", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "bellossom", "politoed", "scizor", "houndour", "houndoom", "larvitar", "pupitar", "tyranitar", "mudkip", "marshtomp", "swampert", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "trapinch", "vibrava", "flygon", "cacnea", "cacturne", "shuppet", "banette", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "ekans", "arbok", "koffing", "weezing", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "chimchar", "monferno", "infernape", "kangaskhan", "diglett", "dugtrio", "rhyhorn", "rhydon", "rhyperior", "murkrow", "honchkrow", "gible", "gabite", "garchomp", "shellder", "cloyster", "geodude", "graveler", "golem", "hippopotas", "hippowdon", "onix", "steelix", "sableye", "zapdos", "moltres", "delibird", "stantler", "absol", "bagon", "shelgon", "salamence", "snover", "abomasnow", "raikou", "vulpix", "ninetales", "exeggcute", "exeggutor", "omanyte", "omastar", "misdreavus", "mismagius", "carvanha", "sharpedo", "pinsir", "mawile", "beldum", "metang", "metagross", "entei"],
+    "shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "charmander", "charmeleon", "charizard", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "bellossom", "politoed", "scizor", "houndour", "houndoom", "larvitar", "pupitar", "tyranitar", "mudkip", "marshtomp", "swampert", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "trapinch", "vibrava", "flygon", "cacnea", "cacturne", "shuppet", "banette", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "ekans", "arbok", "koffing", "weezing", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "chimchar", "monferno", "infernape", "kangaskhan", "diglett", "dugtrio", "rhyhorn", "rhydon", "rhyperior", "murkrow", "honchkrow", "shellder", "cloyster", "geodude", "graveler", "golem", "onix", "steelix", "sableye", "zapdos", "moltres", "delibird", "stantler", "absol", "bagon", "shelgon", "salamence", "snover", "abomasnow", "raikou", "vulpix", "ninetales", "exeggcute", "exeggutor", "omanyte", "omastar", "misdreavus", "mismagius", "carvanha", "sharpedo", "pinsir", "mawile", "beldum", "metang", "metagross", "entei"],
     "pokemon": [{
         "dex": 1,
         "speciesName": "Bulbasaur",
@@ -11027,27 +11027,7 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        },
-        "level25CP": 623,
-        "tags": ["shadow"]
-    }, {
-        "dex": 443,
-        "speciesName": "Gible (Shadow)",
-        "speciesId": "gible_shadow",
-        "baseStats": {
-            "atk": 124,
-            "def": 84,
-            "hp": 151
-        },
-        "types": ["dragon", "ground"],
-        "fastMoves": ["MUD_SHOT", "TAKE_DOWN"],
-        "chargedMoves": ["BODY_SLAM", "DIG", "TWISTER"],
-        "defaultIVs": {
-            "cp1500": [40, 15, 15, 15],
-            "cp2500": [40, 15, 15, 15]
-        },
-        "tags": ["shadow"],
-        "shadow": true
+        }
     }, {
         "dex": 444,
         "speciesName": "Gabite",
@@ -11063,27 +11043,7 @@
         "defaultIVs": {
             "cp1500": [32, 2, 6, 14],
             "cp2500": [40, 15, 15, 15]
-        },
-        "level25CP": 1115,
-        "tags": ["shadow"]
-    }, {
-        "dex": 444,
-        "speciesName": "Gabite (Shadow)",
-        "speciesId": "gabite_shadow",
-        "baseStats": {
-            "atk": 172,
-            "def": 125,
-            "hp": 169
-        },
-        "types": ["dragon", "ground"],
-        "fastMoves": ["MUD_SHOT", "TAKE_DOWN"],
-        "chargedMoves": ["DIG", "FLAMETHROWER", "TWISTER"],
-        "defaultIVs": {
-            "cp1500": [32, 2, 6, 14],
-            "cp2500": [40, 15, 15, 15]
-        },
-        "tags": ["shadow"],
-        "shadow": true
+        }
     }, {
         "dex": 445,
         "speciesName": "Garchomp",
@@ -11099,27 +11059,7 @@
         "defaultIVs": {
             "cp1500": [14, 0, 9, 15],
             "cp2500": [23, 8, 13, 9]
-        },
-        "level25CP": 2500,
-        "tags": ["shadow"]
-    }, {
-        "dex": 445,
-        "speciesName": "Garchomp (Shadow)",
-        "speciesId": "garchomp_shadow",
-        "baseStats": {
-            "atk": 261,
-            "def": 193,
-            "hp": 239
-        },
-        "types": ["dragon", "ground"],
-        "fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
-        "chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "OUTRAGE", "SAND_TOMB"],
-        "defaultIVs": {
-            "cp1500": [14, 0, 9, 15],
-            "cp2500": [23, 8, 13, 9]
-        },
-        "tags": ["shadow"],
-        "shadow": true
+        }
     }, {
         "dex": 446,
         "speciesName": "Munchlax",
@@ -11183,27 +11123,7 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        },
-        "level25CP": 781,
-        "tags": ["shadow"]
-    }, {
-        "dex": 449,
-        "speciesName": "Hippopotas (Shadow)",
-        "speciesId": "hippopotas_shadow",
-        "baseStats": {
-            "atk": 124,
-            "def": 118,
-            "hp": 169
-        },
-        "types": ["ground", "none"],
-        "fastMoves": ["BITE", "TACKLE"],
-        "chargedMoves": ["BODY_SLAM", "DIG", "ROCK_TOMB"],
-        "defaultIVs": {
-            "cp1500": [40, 15, 15, 15],
-            "cp2500": [40, 15, 15, 15]
-        },
-        "tags": ["shadow"],
-        "shadow": true
+        }
     }, {
         "dex": 450,
         "speciesName": "Hippowdon",
@@ -11219,27 +11139,7 @@
         "defaultIVs": {
             "cp1500": [18, 6, 12, 9],
             "cp2500": [31.5, 3, 15, 2]
-        },
-        "level25CP": 1915,
-        "tags": ["shadow"]
-    }, {
-        "dex": 450,
-        "speciesName": "Hippowdon (Shadow)",
-        "speciesId": "hippowdon_shadow",
-        "baseStats": {
-            "atk": 201,
-            "def": 191,
-            "hp": 239
-        },
-        "types": ["ground", "none"],
-        "fastMoves": ["BITE", "FIRE_FANG", "THUNDER_FANG", "ICE_FANG"],
-        "chargedMoves": ["BODY_SLAM", "EARTHQUAKE", "STONE_EDGE", "EARTH_POWER"],
-        "defaultIVs": {
-            "cp1500": [18, 6, 12, 9],
-            "cp2500": [31.5, 3, 15, 2]
-        },
-        "tags": ["shadow"],
-        "shadow": true
+        }
     }, {
         "dex": 451,
         "speciesName": "Skorupi",

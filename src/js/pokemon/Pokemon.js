@@ -205,6 +205,12 @@ function Pokemon(id, i, b){
 		if(this.cp < 10){
 			this.cp = 10;
 		}
+	
+		// Set Shadow Pokemon to Shadow
+
+		if(data.shadow){
+			self.setShadowType("shadow");
+		}
 
 		// Set moves if unset
 
