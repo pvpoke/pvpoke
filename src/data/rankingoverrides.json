@@ -42,6 +42,11 @@
 				"chargedMoves": ["X_SCISSOR","IRON_HEAD"]
 			},
 			{
+				"speciesId": "scizor_shadow",
+				"fastMove": "BULLET_PUNCH",
+				"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
+			},
+			{
 				"speciesId": "poliwrath",
 				"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
 			},
@@ -99,20 +104,10 @@
 				"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
 			},
 			{
-				"speciesId": "charizard_shadow",
-				"fastMove": "FIRE_SPIN",
-				"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
-			},
-			{
 				"speciesId": "lapras",
 				"fastMove": "ICE_SHARD",
 				"chargedMoves": ["SURF", "SKULL_BASH"],
 				"weight": 2
-			},
-			{
-				"speciesId": "lapras_shadow",
-				"fastMove": "WATER_GUN",
-				"chargedMoves": ["SURF", "SKULL_BASH"]
 			},
 			{
 				"speciesId": "vespiquen",
@@ -146,10 +141,6 @@
 				"fastMove": "CHARGE_BEAM"
 			},
 			{
-				"speciesId": "zapdos_shadow",
-				"fastMove": "CHARGE_BEAM"
-			},
-			{
 				"speciesId": "sealeo",
 				"fastMove": "POWDER_SNOW"
 			},
@@ -172,10 +163,6 @@
 			{
 				"speciesId": "cloyster_shadow",
 				"chargedMoves": ["AVALANCHE", "HYDRO_PUMP"]
-			},
-			{
-				"speciesId": "moltres_shadow",
-				"chargedMoves": ["OVERHEAT", "ANCIENT_POWER"]
 			},
 			{
 				"speciesId": "ninetales",
@@ -381,10 +368,6 @@
 			},
 			{
 				"speciesId": "dragonite",
-				"chargedMoves": ["DRAGON_CLAW","DRACO_METEOR"]
-			},
-			{
-				"speciesId": "dragonite_shadow",
 				"chargedMoves": ["DRAGON_CLAW","DRACO_METEOR"]
 			},
 			{
@@ -1228,6 +1211,14 @@
 				"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
 			},
 			{
+				"speciesId": "muk_shadow",
+				"chargedMoves": ["DARK_PULSE", "THUNDER_PUNCH"]
+			},
+			{
+				"speciesId": "snorlax_shadow",
+				"chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
+			},
+			{
 				"speciesId": "cloyster",
 				"chargedMoves": ["ICY_WIND", "HYDRO_PUMP"]
 			},
@@ -1330,6 +1321,14 @@
 				"chargedMoves": ["CLOSE_COMBAT", "PLAY_ROUGH"]
 			},
 			{
+				"speciesId": "houndoom",
+				"fastMove": "SNARL"
+			},
+			{
+				"speciesId": "houndoom_shadow",
+				"fastMove": "SNARL"
+			},
+			{
 				"speciesId": "staraptor",
 				"fastMove": "WING_ATTACK"
 			},
@@ -1353,6 +1352,24 @@
 			{
 				"speciesId": "metagross",
 				"chargedMoves": ["METEOR_MASH", "EARTHQUAKE"]
+			},
+			{
+				"speciesId": "poliwrath_shadow",
+				"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "cloyster_shadow",
+				"chargedMoves": ["ICY_WIND", "HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "scizor",
+				"fastMove": "BULLET_PUNCH",
+				"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
+			},
+			{
+				"speciesId": "scizor_shadow",
+				"fastMove": "BULLET_PUNCH",
+				"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
 			},
 			{
 				"speciesId": "poliwrath",

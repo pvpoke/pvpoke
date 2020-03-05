@@ -205,7 +205,7 @@ function Pokemon(id, i, b){
 		if(this.cp < 10){
 			this.cp = 10;
 		}
-	
+
 		// Set Shadow Pokemon to Shadow
 
 		if(data.shadow){
@@ -1067,7 +1067,7 @@ function Pokemon(id, i, b){
 			pokeStr += "-p";
 		}
 
-		if(self.shadowType != "normal"){
+		if((self.shadowType != "normal")&&(self.speciesId.indexOf("_shadow") == -1)){
 			pokeStr += "-"+self.shadowType;
 		}
 
