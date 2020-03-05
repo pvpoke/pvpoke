@@ -42,12 +42,14 @@ var GameMaster = (function () {
 		object.updateShadowStatus = function(){
 
 			// First, clear all Shadow entries from the game master to start from a clean slate
-
-			$.each(object.data.pokemon, function(index, poke){
-				if(poke.speciesId.indexOf("_shadow") > -1){
-					object.data.pokemon.splice(index, 1);
+			for(var i = 0; i < object.data.pokemon.length; i++){
+				var poke = object.data.pokemon[i];
+				if((poke)&&(poke.speciesId.indexOf("_shadow") > -1)){
+					console.log("deleting " + poke.speciesId);
+					object.data.pokemon.splice(i, 1);
+					i--;
 				}
-			});
+			}
 
 			var battle = new Battle();
 
@@ -73,17 +75,42 @@ var GameMaster = (function () {
 						entry.tags = ["shadow"];
 					}
 
-					delete entry.shadow;
-
 					// Duplicate the entry for the Shadow version of the Pokemon
+					// Your clones are very impressive, you must be very proud
 
 					entry = JSON.parse(JSON.stringify(entry)); // Your clones are very impressive, you must be very proud
 
 					entry.speciesId += "_shadow";
 					entry.speciesName += " (Shadow)";
 					entry.shadow = true;
+
+					// Remove all legacy and exclusive moves
+					if(entry.legacyMoves){
+						for(var i = 0; i < entry.fastMoves.length; i++){
+							if(entry.legacyMoves.indexOf(entry.fastMoves[i]) > -1){
+								entry.fastMoves.splice(i, 1);
+								i--;
+							}
+						}
+
+						for(var i = 0; i < entry.chargedMoves.length; i++){
+							if(entry.legacyMoves.indexOf(entry.chargedMoves[i]) > -1){
+								entry.chargedMoves.splice(i, 1);
+								i--;
+							}
+						}
+
+						delete entry.legacyMoves;
+					}
+
 					delete entry.level25CP;
 					object.data.pokemon.push(entry);
+				} else{
+					if(entry.tags){
+						if(entry.tags.indexOf("shadow") > -1){
+							entry.tags.splice(entry.tags.indexOf("shadow"), 1);
+						}
+					}
 				}
 			});
 
