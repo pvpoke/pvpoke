@@ -188,6 +188,12 @@ function PokeSelect(element, i){
 
 			$el.find(".form-group .check").removeClass("on");
 			$el.find(".form-group .check[value=\""+selectedPokemon.shadowType+"\"]").addClass("on");
+
+			if(selectedPokemon.hasTag("shadow")){
+				$el.find(".shadow-section").hide();
+			} else{
+				$el.find(".shadow-section").show();
+			}
 		}
 	}
 

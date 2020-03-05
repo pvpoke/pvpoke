@@ -67,12 +67,23 @@ var GameMaster = (function () {
 					var cp = pokemon.calculateCP(0.667934, 0, 0, 0);
 					entry.level25CP = cp;
 
+					// Delete shadow from tags
 					if(entry.tags){
-						if(entry.tags.indexOf("shadow") == -1){
-							entry.tags.push("shadow");
+						if(entry.tags.indexOf("shadow") > -1){
+							entry.tags.splice(entry.tags.indexOf("shadow"), 1);
+
+							if(entry.tags.length == 0){
+								delete entry.tags;
+							}
+						}
+					}
+
+					if(entry.tags){
+						if(entry.tags.indexOf("shadoweligible") == -1){
+							entry.tags.push("shadoweligible");
 						}
 					} else{
-						entry.tags = ["shadow"];
+						entry.tags = ["shadoweligible"];
 					}
 
 					// Duplicate the entry for the Shadow version of the Pokemon
@@ -82,7 +93,8 @@ var GameMaster = (function () {
 
 					entry.speciesId += "_shadow";
 					entry.speciesName += " (Shadow)";
-					entry.shadow = true;
+					entry.tags.push("shadow");
+					entry.tags.splice(entry.tags.indexOf("shadowEligible"), 1);
 
 					// Remove all legacy and exclusive moves
 					if(entry.legacyMoves){

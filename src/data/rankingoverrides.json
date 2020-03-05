@@ -224,7 +224,7 @@
 			},
 			{
 				"speciesId": "snorlax_shadow",
-				"chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
+				"chargedMoves": ["BODY_SLAM", "EARTHQUAKE"]
 			},
 			{
 				"speciesId": "muk_alolan",
@@ -1216,7 +1216,7 @@
 			},
 			{
 				"speciesId": "snorlax_shadow",
-				"chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
+				"chargedMoves": ["BODY_SLAM", "EARTHQUAKE"]
 			},
 			{
 				"speciesId": "cloyster",
@@ -1489,6 +1489,15 @@
 				"chargedMoves": ["CLOSE_COMBAT", "HEAVY_SLAM"]
 			},
 			{
+				"speciesId": "metagross_shadow",
+				"chargedMoves": ["PSYCHIC", "EARTHQUAKE"]
+			},
+			{
+				"speciesId": "scizor_shadow",
+				"fastMove": "BULLET_PUNCH",
+				"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
+			},
+			{
 				"speciesId": "empoleon",
 				"chargedMoves": ["HYDRO_CANNON", "FLASH_CANNON"]
 			},
@@ -1551,6 +1560,10 @@
 				"speciesId": "snorlax",
 				"chargedMoves": ["BODY_SLAM","EARTHQUAKE"],
 				"weight": 15
+			},
+			{
+				"speciesId": "snorlax_shadow",
+				"chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
 			},
 			{
 				"speciesId": "heatran",

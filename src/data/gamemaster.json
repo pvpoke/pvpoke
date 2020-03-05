@@ -244,7 +244,7 @@
             "values": ["noctowl", "vigoroth", "tropius", "whiscash", "swampert", "quagsire", "gastrodon_east_sea", "gastrodon_west_sea", "seismitoad", "palpitoad", "marshtomp", "swampert_shadow", "marshtomp_shadow"]
         }]
     }],
-    "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow"],
+    "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible"],
     "pokemonRegions": [{
         "string": "gen1",
         "name": "kanto",
@@ -284,7 +284,7 @@
         "types": ["grass", "poison"],
         "fastMoves": ["TACKLE", "VINE_WHIP"],
         "chargedMoves": ["POWER_WHIP", "SEED_BOMB", "SLUDGE_BOMB"],
-        "tags": ["starter", "shadow"],
+        "tags": ["starter", "shadoweligible"],
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
@@ -306,8 +306,7 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        },
-        "shadow": true
+        }
     }, {
         "dex": 2,
         "speciesName": "Ivysaur",
@@ -320,7 +319,7 @@
         "types": ["grass", "poison"],
         "fastMoves": ["RAZOR_LEAF", "VINE_WHIP"],
         "chargedMoves": ["POWER_WHIP", "SLUDGE_BOMB", "SOLAR_BEAM"],
-        "tags": ["starter", "shadow"],
+        "tags": ["starter", "shadoweligible"],
         "defaultIVs": {
             "cp1500": [36, 6, 13, 12],
             "cp2500": [40, 15, 15, 15]
@@ -342,8 +341,7 @@
         "defaultIVs": {
             "cp1500": [36, 6, 13, 12],
             "cp2500": [40, 15, 15, 15]
-        },
-        "shadow": true
+        }
     }, {
         "dex": 3,
         "speciesName": "Venusaur",
@@ -357,7 +355,7 @@
         "fastMoves": ["RAZOR_LEAF", "VINE_WHIP"],
         "chargedMoves": ["FRENZY_PLANT", "PETAL_BLIZZARD", "SLUDGE_BOMB", "SOLAR_BEAM"],
         "legacyMoves": ["FRENZY_PLANT", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN"],
-        "tags": ["starter", "shadow"],
+        "tags": ["starter", "shadoweligible"],
         "defaultIVs": {
             "cp1500": [20.5, 7, 6, 15],
             "cp2500": [39.5, 4, 4, 15]
@@ -379,8 +377,7 @@
         "defaultIVs": {
             "cp1500": [20.5, 7, 6, 15],
             "cp2500": [39.5, 4, 4, 15]
-        },
-        "shadow": true
+        }
     }, {
         "dex": 4,
         "speciesName": "Charmander",
@@ -393,7 +390,7 @@
         "types": ["fire", "none"],
         "fastMoves": ["EMBER", "SCRATCH"],
         "chargedMoves": ["FLAME_BURST", "FLAME_CHARGE", "FLAMETHROWER"],
-        "tags": ["starter", "shadow"],
+        "tags": ["starter", "shadoweligible"],
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
@@ -415,8 +412,7 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        },
-        "shadow": true
+        }
     }, {
         "dex": 5,
         "speciesName": "Charmeleon",
@@ -430,7 +426,7 @@
         "fastMoves": ["EMBER", "FIRE_FANG", "SCRATCH"],
         "chargedMoves": ["FIRE_PUNCH", "FLAME_BURST", "FLAMETHROWER"],
         "legacyMoves": ["SCRATCH", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN"],
-        "tags": ["starter", "shadow"],
+        "tags": ["starter", "shadoweligible"],
         "defaultIVs": {
             "cp1500": [35, 10, 15, 15],
             "cp2500": [40, 15, 15, 15]
@@ -452,8 +448,7 @@
         "defaultIVs": {
             "cp1500": [35, 10, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        },
-        "shadow": true
+        }
     }, {
         "dex": 6,
         "speciesName": "Charizard",
@@ -467,7 +462,7 @@
         "fastMoves": ["AIR_SLASH", "EMBER", "FIRE_SPIN", "WING_ATTACK"],
         "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW", "FIRE_BLAST", "FLAMETHROWER", "OVERHEAT"],
         "legacyMoves": ["BLAST_BURN", "EMBER", "FLAMETHROWER", "WING_ATTACK", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN"],
-        "tags": ["starter", "shadow"],
+        "tags": ["starter", "shadoweligible"],
         "defaultIVs": {
             "cp1500": [19, 4, 12, 14],
             "cp2500": [35.5, 4, 11, 7]
@@ -489,8 +484,7 @@
         "defaultIVs": {
             "cp1500": [19, 4, 12, 14],
             "cp2500": [35.5, 4, 11, 7]
-        },
-        "shadow": true
+        }
     }, {
         "dex": 7,
         "speciesName": "Squirtle",
@@ -503,7 +497,7 @@
         "types": ["water", "none"],
         "fastMoves": ["BUBBLE", "TACKLE"],
         "chargedMoves": ["AQUA_JET", "AQUA_TAIL", "WATER_PULSE"],
-        "tags": ["starter", "shadow"],
+        "tags": ["starter", "shadoweligible"],
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
@@ -525,8 +519,7 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        },
-        "shadow": true
+        }
     }, {
         "dex": 8,
         "speciesName": "Wartortle",
@@ -539,7 +532,7 @@
         "types": ["water", "none"],
         "fastMoves": ["BITE", "WATER_GUN"],
         "chargedMoves": ["AQUA_JET", "HYDRO_PUMP", "ICE_BEAM"],
-        "tags": ["starter", "shadow"],
+        "tags": ["starter", "shadoweligible"],
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
@@ -561,8 +554,7 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        },
-        "shadow": true
+        }
     }, {
         "dex": 9,
         "speciesName": "Blastoise",
@@ -576,7 +568,7 @@
         "fastMoves": ["BITE", "WATER_GUN"],
         "chargedMoves": ["FLASH_CANNON", "HYDRO_CANNON", "HYDRO_PUMP", "ICE_BEAM", "SKULL_BASH"],
         "legacyMoves": ["HYDRO_CANNON", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN"],
-        "tags": ["starter", "shadow"],
+        "tags": ["starter", "shadoweligible"],
         "defaultIVs": {
             "cp1500": [23.5, 3, 11, 4],
             "cp2500": [40, 15, 15, 15]
@@ -598,8 +590,7 @@
         "defaultIVs": {
             "cp1500": [23.5, 3, 11, 4],
             "cp2500": [40, 15, 15, 15]
-        },
-        "shadow": true
+        }
     }, {
         "dex": 10,
         "speciesName": "Caterpie",
@@ -666,7 +657,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 217,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 13,
         "speciesName": "Weedle (Shadow)",
@@ -683,8 +674,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 14,
         "speciesName": "Kakuna",
@@ -702,7 +692,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 201,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 14,
         "speciesName": "Kakuna (Shadow)",
@@ -719,8 +709,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 15,
         "speciesName": "Beedrill",
@@ -739,7 +728,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1097,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 15,
         "speciesName": "Beedrill (Shadow)",
@@ -756,8 +745,7 @@
             "cp1500": [33.5, 3, 11, 5],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 16,
         "speciesName": "Pidgey",
@@ -824,7 +812,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 388,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 19,
         "speciesName": "Rattata (Alolan)",
@@ -858,8 +846,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 20,
         "speciesName": "Raticate",
@@ -877,7 +864,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1023,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 20,
         "speciesName": "Raticate (Alolan)",
@@ -911,8 +898,7 @@
             "cp1500": [38.5, 1, 10, 7],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 21,
         "speciesName": "Spearow",
@@ -1053,7 +1039,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 720,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 27,
         "speciesName": "Sandshrew (Alolan)",
@@ -1087,8 +1073,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 28,
         "speciesName": "Sandslash",
@@ -1106,7 +1091,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1445,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 28,
         "speciesName": "Sandslash (Alolan)",
@@ -1140,8 +1125,7 @@
             "cp1500": [24, 6, 12, 4],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 29,
         "speciesName": "Nidoran♀",
@@ -1289,7 +1273,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 481,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 37,
         "speciesName": "Vulpix (Alolan)",
@@ -1323,8 +1307,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 38,
         "speciesName": "Ninetales",
@@ -1343,7 +1326,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1382,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 38,
         "speciesName": "Ninetales (Alolan)",
@@ -1377,8 +1360,7 @@
             "cp1500": [25, 5, 6, 13],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 39,
         "speciesName": "Jigglypuff",
@@ -1430,7 +1412,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 346,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 41,
         "speciesName": "Zubat (Shadow)",
@@ -1447,8 +1429,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 42,
         "speciesName": "Golbat",
@@ -1467,7 +1448,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1183,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 42,
         "speciesName": "Golbat (Shadow)",
@@ -1484,8 +1465,7 @@
             "cp1500": [29, 5, 14, 5],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 43,
         "speciesName": "Oddish",
@@ -1503,7 +1483,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 699,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 43,
         "speciesName": "Oddish (Shadow)",
@@ -1520,8 +1500,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 44,
         "speciesName": "Gloom",
@@ -1539,7 +1518,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 991,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 44,
         "speciesName": "Gloom (Shadow)",
@@ -1556,8 +1535,7 @@
             "cp1500": [35.5, 7, 14, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 45,
         "speciesName": "Vileplume",
@@ -1575,7 +1553,7 @@
             "cp2500": [40, 11, 8, 13]
         },
         "level25CP": 1566,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 45,
         "speciesName": "Vileplume (Shadow)",
@@ -1592,8 +1570,7 @@
             "cp1500": [22, 8, 15, 1],
             "cp2500": [40, 11, 8, 13]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 46,
         "speciesName": "Paras",
@@ -1644,7 +1621,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 555,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 48,
         "speciesName": "Venonat (Shadow)",
@@ -1661,8 +1638,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 49,
         "speciesName": "Venomoth",
@@ -1681,7 +1657,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1252,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 49,
         "speciesName": "Venomoth (Shadow)",
@@ -1698,8 +1674,7 @@
             "cp1500": [27.5, 3, 11, 9],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 50,
         "speciesName": "Diglett",
@@ -1790,7 +1765,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 397,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 52,
         "speciesName": "Meowth (Alolan)",
@@ -1824,8 +1799,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 53,
         "speciesName": "Persian",
@@ -1844,7 +1818,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 996,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 53,
         "speciesName": "Persian (Alolan)",
@@ -1878,8 +1852,7 @@
             "cp1500": [39, 3, 14, 4],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 54,
         "speciesName": "Psyduck",
@@ -1897,7 +1870,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 620,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 54,
         "speciesName": "Psyduck (Shadow)",
@@ -1914,8 +1887,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 55,
         "speciesName": "Golduck",
@@ -1933,7 +1905,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1494,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 55,
         "speciesName": "Golduck (Shadow)",
@@ -1950,8 +1922,7 @@
             "cp1500": [22.5, 5, 12, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 56,
         "speciesName": "Mankey",
@@ -2002,7 +1973,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 707,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 58,
         "speciesName": "Growlithe (Shadow)",
@@ -2019,8 +1990,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 59,
         "speciesName": "Arcanine",
@@ -2039,7 +2009,7 @@
             "cp2500": [33, 3, 12, 3]
         },
         "level25CP": 1877,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 59,
         "speciesName": "Arcanine (Shadow)",
@@ -2056,8 +2026,7 @@
             "cp1500": [19, 4, 8, 4],
             "cp2500": [33, 3, 12, 3]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 60,
         "speciesName": "Poliwag",
@@ -2075,7 +2044,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 446,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 60,
         "speciesName": "Poliwag (Shadow)",
@@ -2092,8 +2061,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 61,
         "speciesName": "Poliwhirl",
@@ -2112,7 +2080,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 821,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 61,
         "speciesName": "Poliwhirl (Shadow)",
@@ -2129,8 +2097,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 62,
         "speciesName": "Poliwrath",
@@ -2149,7 +2116,7 @@
             "cp2500": [40, 10, 9, 12]
         },
         "level25CP": 1584,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 62,
         "speciesName": "Poliwrath (Shadow)",
@@ -2166,8 +2133,7 @@
             "cp1500": [21, 8, 14, 15],
             "cp2500": [40, 10, 9, 12]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 63,
         "speciesName": "Abra",
@@ -2185,7 +2151,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 759,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 63,
         "speciesName": "Abra (Shadow)",
@@ -2202,8 +2168,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 64,
         "speciesName": "Kadabra",
@@ -2221,7 +2186,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1226,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 64,
         "speciesName": "Kadabra (Shadow)",
@@ -2238,8 +2203,7 @@
             "cp1500": [27.5, 8, 15, 3],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 65,
         "speciesName": "Alakazam",
@@ -2258,7 +2222,7 @@
             "cp2500": [30, 4, 13, 12]
         },
         "level25CP": 1887,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 65,
         "speciesName": "Alakazam (Shadow)",
@@ -2275,8 +2239,7 @@
             "cp1500": [18.5, 2, 4, 14],
             "cp2500": [30, 4, 13, 12]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 66,
         "speciesName": "Machop",
@@ -2345,7 +2308,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 566,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 69,
         "speciesName": "Bellsprout (Shadow)",
@@ -2362,8 +2325,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 70,
         "speciesName": "Weepinbell",
@@ -2382,7 +2344,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 939,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 70,
         "speciesName": "Weepinbell (Shadow)",
@@ -2399,8 +2361,7 @@
             "cp1500": [40, 8, 8, 13],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 71,
         "speciesName": "Victreebel",
@@ -2418,7 +2379,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1479,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 71,
         "speciesName": "Victreebel (Shadow)",
@@ -2435,8 +2396,7 @@
             "cp1500": [23.5, 3, 14, 3],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 72,
         "speciesName": "Tentacool",
@@ -2486,7 +2446,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 741,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 74,
         "speciesName": "Geodude (Alolan)",
@@ -2520,8 +2480,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 75,
         "speciesName": "Graveler",
@@ -2540,7 +2499,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1132,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 75,
         "speciesName": "Graveler (Alolan)",
@@ -2574,8 +2533,7 @@
             "cp1500": [29.5, 5, 11, 14],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 76,
         "speciesName": "Golem",
@@ -2594,7 +2552,7 @@
             "cp2500": [35.5, 2, 14, 0]
         },
         "level25CP": 1825,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 76,
         "speciesName": "Golem (Alolan)",
@@ -2628,8 +2586,7 @@
             "cp1500": [18.5, 7, 13, 13],
             "cp2500": [35.5, 2, 14, 0]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 77,
         "speciesName": "Ponyta",
@@ -2713,7 +2670,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 780,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 81,
         "speciesName": "Magnemite (Shadow)",
@@ -2730,8 +2687,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 82,
         "speciesName": "Magneton",
@@ -2749,7 +2705,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1513,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 82,
         "speciesName": "Magneton (Shadow)",
@@ -2766,8 +2722,7 @@
             "cp1500": [22.5, 2, 13, 11],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 83,
         "speciesName": "Farfetch'd",
@@ -2872,7 +2827,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 787,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 88,
         "speciesName": "Grimer (Alolan)",
@@ -2907,8 +2862,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 89,
         "speciesName": "Muk",
@@ -2927,7 +2881,7 @@
             "cp2500": [39, 3, 14, 4]
         },
         "level25CP": 1696,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 89,
         "speciesName": "Muk (Alolan)",
@@ -2961,8 +2915,7 @@
             "cp1500": [19.5, 12, 13, 13],
             "cp2500": [39, 3, 14, 4]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 90,
         "speciesName": "Shellder",
@@ -2980,7 +2933,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 605,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 90,
         "speciesName": "Shellder (Shadow)",
@@ -2997,8 +2950,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 91,
         "speciesName": "Cloyster",
@@ -3017,7 +2969,7 @@
             "cp2500": [40, 5, 15, 13]
         },
         "level25CP": 1554,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 91,
         "speciesName": "Cloyster (Shadow)",
@@ -3034,8 +2986,7 @@
             "cp1500": [22.5, 4, 7, 9],
             "cp2500": [40, 5, 15, 13]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 92,
         "speciesName": "Gastly",
@@ -3105,7 +3056,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 608,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 95,
         "speciesName": "Onix (Shadow)",
@@ -3122,8 +3073,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 96,
         "speciesName": "Drowzee",
@@ -3141,7 +3091,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 576,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 96,
         "speciesName": "Drowzee (Shadow)",
@@ -3158,8 +3108,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 97,
         "speciesName": "Hypno",
@@ -3178,7 +3127,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1255,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 97,
         "speciesName": "Hypno (Shadow)",
@@ -3195,8 +3144,7 @@
             "cp1500": [27.5, 4, 5, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 98,
         "speciesName": "Krabby",
@@ -3281,7 +3229,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 664,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 102,
         "speciesName": "Exeggcute (Shadow)",
@@ -3298,8 +3246,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 103,
         "speciesName": "Exeggutor",
@@ -3318,7 +3265,7 @@
             "cp2500": [33, 1, 10, 9]
         },
         "level25CP": 1864,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 103,
         "speciesName": "Exeggutor (Alolan)",
@@ -3352,8 +3299,7 @@
             "cp1500": [18, 5, 15, 12],
             "cp2500": [33, 1, 10, 9]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 104,
         "speciesName": "Cubone",
@@ -3371,7 +3317,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 563,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 104,
         "speciesName": "Cubone (Shadow)",
@@ -3388,8 +3334,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 105,
         "speciesName": "Marowak",
@@ -3407,7 +3352,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1090,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 105,
         "speciesName": "Marowak (Alolan)",
@@ -3441,8 +3386,7 @@
             "cp1500": [36, 0, 4, 9],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 106,
         "speciesName": "Hitmonlee",
@@ -3461,7 +3405,7 @@
             "cp2500": [40, 13, 3, 15]
         },
         "level25CP": 1573,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 106,
         "speciesName": "Hitmonlee (Shadow)",
@@ -3478,8 +3422,7 @@
             "cp1500": [22.5, 1, 14, 2],
             "cp2500": [40, 13, 3, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 107,
         "speciesName": "Hitmonchan",
@@ -3498,7 +3441,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1414,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 107,
         "speciesName": "Hitmonchan (Shadow)",
@@ -3515,8 +3458,7 @@
             "cp1500": [24.5, 3, 8, 10],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 108,
         "speciesName": "Lickitung",
@@ -3814,7 +3756,7 @@
             "cp2500": [38.5, 8, 14, 6]
         },
         "level25CP": 1663,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 123,
         "speciesName": "Scyther (Shadow)",
@@ -3831,8 +3773,7 @@
             "cp1500": [21, 5, 11, 5],
             "cp2500": [38.5, 8, 14, 6]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 124,
         "speciesName": "Jynx",
@@ -3867,7 +3808,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1417,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 125,
         "speciesName": "Electabuzz (Shadow)",
@@ -3884,8 +3825,7 @@
             "cp1500": [25, 3, 2, 12],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 126,
         "speciesName": "Magmar",
@@ -3903,7 +3843,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1456,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 126,
         "speciesName": "Magmar (Shadow)",
@@ -3920,8 +3860,7 @@
             "cp1500": [24.5, 0, 4, 10],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 127,
         "speciesName": "Pinsir",
@@ -3940,7 +3879,7 @@
             "cp2500": [35, 1, 13, 3]
         },
         "level25CP": 1828,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 127,
         "speciesName": "Pinsir (Shadow)",
@@ -3957,8 +3896,7 @@
             "cp1500": [18.5, 8, 11, 12],
             "cp2500": [35, 1, 13, 3]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 128,
         "speciesName": "Tauros",
@@ -3993,7 +3931,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 109,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 129,
         "speciesName": "Magikarp (Shadow)",
@@ -4010,8 +3948,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 130,
         "speciesName": "Gyarados",
@@ -4030,7 +3967,7 @@
             "cp2500": [27.5, 6, 9, 9]
         },
         "level25CP": 2119,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 130,
         "speciesName": "Gyarados (Shadow)",
@@ -4047,8 +3984,7 @@
             "cp1500": [16.5, 5, 5, 14],
             "cp2500": [27.5, 6, 9, 9]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 131,
         "speciesName": "Lapras",
@@ -4067,7 +4003,7 @@
             "cp2500": [38.5, 12, 13, 7]
         },
         "level25CP": 1616,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 131,
         "speciesName": "Lapras (Shadow)",
@@ -4084,8 +4020,7 @@
             "cp1500": [22, 4, 2, 13],
             "cp2500": [38.5, 12, 13, 7]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 132,
         "speciesName": "Ditto",
@@ -4188,7 +4123,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1016,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 137,
         "speciesName": "Porygon (Shadow)",
@@ -4205,8 +4140,7 @@
             "cp1500": [38, 2, 11, 9],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 138,
         "speciesName": "Omanyte",
@@ -4225,7 +4159,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 901,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 138,
         "speciesName": "Omanyte (Shadow)",
@@ -4242,8 +4176,7 @@
             "cp1500": [40, 8, 11, 12],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 139,
         "speciesName": "Omastar",
@@ -4262,7 +4195,7 @@
             "cp2500": [39, 2, 2, 14]
         },
         "level25CP": 1717,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 139,
         "speciesName": "Omastar (Shadow)",
@@ -4279,8 +4212,7 @@
             "cp1500": [20.5, 6, 8, 5],
             "cp2500": [39, 2, 2, 14]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 140,
         "speciesName": "Kabuto",
@@ -4348,7 +4280,7 @@
             "cp2500": [29, 0, 13, 14]
         },
         "level25CP": 2001,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 143,
         "speciesName": "Snorlax (Shadow)",
@@ -4365,8 +4297,7 @@
             "cp1500": [17.5, 3, 15, 1],
             "cp2500": [29, 0, 13, 14]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 144,
         "speciesName": "Articuno",
@@ -4380,7 +4311,7 @@
         "fastMoves": ["FROST_BREATH", "ICE_SHARD"],
         "chargedMoves": ["BLIZZARD", "HURRICANE", "ICE_BEAM", "ICY_WIND", "ANCIENT_POWER"],
         "legacyMoves": ["HURRICANE", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN"],
-        "tags": ["legendary", "shadow"],
+        "tags": ["legendary", "shadoweligible"],
         "defaultIVs": {
             "cp1500": [18.5, 2, 9, 12],
             "cp2500": [32.5, 4, 14, 2]
@@ -4402,8 +4333,7 @@
         "defaultIVs": {
             "cp1500": [18.5, 2, 9, 12],
             "cp2500": [32.5, 4, 14, 2]
-        },
-        "shadow": true
+        }
     }, {
         "dex": 145,
         "speciesName": "Zapdos",
@@ -4417,7 +4347,7 @@
         "fastMoves": ["CHARGE_BEAM", "THUNDER_SHOCK"],
         "chargedMoves": ["THUNDER", "THUNDERBOLT", "ZAP_CANNON", "ANCIENT_POWER", "DRILL_PECK"],
         "legacyMoves": ["THUNDER_SHOCK", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN"],
-        "tags": ["legendary", "shadow"],
+        "tags": ["legendary", "shadoweligible"],
         "defaultIVs": {
             "cp1500": [15.5, 3, 15, 11],
             "cp2500": [26.5, 4, 4, 15]
@@ -4439,8 +4369,7 @@
         "defaultIVs": {
             "cp1500": [15.5, 3, 15, 11],
             "cp2500": [26.5, 4, 4, 15]
-        },
-        "shadow": true
+        }
     }, {
         "dex": 146,
         "speciesName": "Moltres",
@@ -4454,7 +4383,7 @@
         "fastMoves": ["EMBER", "FIRE_SPIN", "WING_ATTACK"],
         "chargedMoves": ["FIRE_BLAST", "HEAT_WAVE", "OVERHEAT", "SKY_ATTACK", "ANCIENT_POWER"],
         "legacyMoves": ["EMBER", "SKY_ATTACK", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN"],
-        "tags": ["legendary", "shadow"],
+        "tags": ["legendary", "shadoweligible"],
         "defaultIVs": {
             "cp1500": [15.5, 13, 11, 13],
             "cp2500": [26.5, 8, 14, 6]
@@ -4476,8 +4405,7 @@
         "defaultIVs": {
             "cp1500": [15.5, 13, 11, 13],
             "cp2500": [26.5, 8, 14, 6]
-        },
-        "shadow": true
+        }
     }, {
         "dex": 147,
         "speciesName": "Dratini",
@@ -4495,7 +4423,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 557,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 147,
         "speciesName": "Dratini (Shadow)",
@@ -4512,8 +4440,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 148,
         "speciesName": "Dragonair",
@@ -4531,7 +4458,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1055,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 148,
         "speciesName": "Dragonair (Shadow)",
@@ -4548,8 +4475,7 @@
             "cp1500": [37, 0, 5, 12],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 149,
         "speciesName": "Dragonite",
@@ -4568,7 +4494,7 @@
             "cp2500": [24, 7, 10, 13]
         },
         "level25CP": 2386,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 149,
         "speciesName": "Dragonite (Shadow)",
@@ -4585,8 +4511,7 @@
             "cp1500": [14.5, 9, 12, 6],
             "cp2500": [24, 7, 10, 13]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 150,
         "speciesName": "Mewtwo",
@@ -4942,7 +4867,7 @@
             "cp2500": [40, 9, 15, 3]
         },
         "level25CP": 1624,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 169,
         "speciesName": "Crobat (Shadow)",
@@ -4959,8 +4884,7 @@
             "cp1500": [21.5, 6, 2, 14],
             "cp2500": [40, 9, 15, 3]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 170,
         "speciesName": "Chinchou",
@@ -5127,7 +5051,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 546,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 179,
         "speciesName": "Mareep (Shadow)",
@@ -5144,8 +5068,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 180,
         "speciesName": "Flaaffy",
@@ -5163,7 +5086,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 885,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 180,
         "speciesName": "Flaaffy (Shadow)",
@@ -5180,8 +5103,7 @@
             "cp1500": [40, 12, 8, 13],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 181,
         "speciesName": "Ampharos",
@@ -5200,7 +5122,7 @@
             "cp2500": [35, 6, 9, 14]
         },
         "level25CP": 1760,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 181,
         "speciesName": "Ampharos (Shadow)",
@@ -5217,8 +5139,7 @@
             "cp1500": [19.5, 3, 10, 15],
             "cp2500": [35, 6, 9, 14]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 182,
         "speciesName": "Bellossom",
@@ -5236,7 +5157,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1383,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 182,
         "speciesName": "Bellossom (Shadow)",
@@ -5253,8 +5174,7 @@
             "cp1500": [25, 5, 7, 11],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 183,
         "speciesName": "Marill",
@@ -5321,7 +5241,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1494,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 186,
         "speciesName": "Politoed (Shadow)",
@@ -5338,8 +5258,7 @@
             "cp1500": [23.5, 0, 9, 12],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 187,
         "speciesName": "Hoppip",
@@ -5569,7 +5488,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1151,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 200,
         "speciesName": "Misdreavus (Shadow)",
@@ -5586,8 +5505,7 @@
             "cp1500": [29.5, 2, 12, 13],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 201,
         "speciesName": "Unown",
@@ -5621,7 +5539,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 538,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 202,
         "speciesName": "Wobbuffet (Shadow)",
@@ -5638,8 +5556,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 203,
         "speciesName": "Girafarig",
@@ -5737,7 +5654,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1465,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 208,
         "speciesName": "Steelix (Shadow)",
@@ -5754,8 +5671,7 @@
             "cp1500": [23.5, 7, 13, 6],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 209,
         "speciesName": "Snubbull",
@@ -5821,7 +5737,7 @@
             "cp2500": [33, 3, 7, 11]
         },
         "level25CP": 1857,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 212,
         "speciesName": "Scizor (Shadow)",
@@ -5838,8 +5754,7 @@
             "cp1500": [18.5, 8, 9, 10],
             "cp2500": [33, 3, 7, 11]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 213,
         "speciesName": "Shuckle",
@@ -5890,7 +5805,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1231,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 215,
         "speciesName": "Sneasel (Shadow)",
@@ -5907,8 +5822,7 @@
             "cp1500": [28, 4, 15, 3],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 216,
         "speciesName": "Teddiursa",
@@ -6072,7 +5986,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 612,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 225,
         "speciesName": "Delibird (Shadow)",
@@ -6089,8 +6003,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 226,
         "speciesName": "Mantine",
@@ -6140,7 +6053,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 698,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 228,
         "speciesName": "Houndour (Shadow)",
@@ -6157,8 +6070,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 229,
         "speciesName": "Houndoom",
@@ -6176,7 +6088,7 @@
             "cp2500": [39.5, 11, 14, 5]
         },
         "level25CP": 1613,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 229,
         "speciesName": "Houndoom (Shadow)",
@@ -6193,8 +6105,7 @@
             "cp1500": [20.5, 11, 12, 14],
             "cp2500": [39.5, 11, 14, 5]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 230,
         "speciesName": "Kingdra",
@@ -6261,7 +6172,7 @@
             "cp2500": [37, 7, 13, 15]
         },
         "level25CP": 1667,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 233,
         "speciesName": "Porygon2 (Shadow)",
@@ -6278,8 +6189,7 @@
             "cp1500": [20, 10, 12, 14],
             "cp2500": [37, 7, 13, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 234,
         "speciesName": "Stantler",
@@ -6297,7 +6207,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1304,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 234,
         "speciesName": "Stantler (Shadow)",
@@ -6314,8 +6224,7 @@
             "cp1500": [26.5, 4, 6, 13],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 235,
         "speciesName": "Smeargle",
@@ -6459,7 +6368,7 @@
         "types": ["electric", "none"],
         "fastMoves": ["THUNDER_SHOCK", "VOLT_SWITCH"],
         "chargedMoves": ["SHADOW_BALL", "THUNDER", "THUNDERBOLT", "WILD_CHARGE"],
-        "tags": ["legendary", "shadow"],
+        "tags": ["legendary", "shadoweligible"],
         "level25CP": 2160,
         "defaultIVs": {
             "cp1500": [16.5, 5, 6, 5],
@@ -6481,8 +6390,7 @@
         "defaultIVs": {
             "cp1500": [16.5, 5, 6, 5],
             "cp2500": [28, 1, 6, 4]
-        },
-        "shadow": true
+        }
     }, {
         "dex": 244,
         "speciesName": "Entei",
@@ -6495,7 +6403,7 @@
         "types": ["fire", "none"],
         "fastMoves": ["FIRE_FANG", "FIRE_SPIN"],
         "chargedMoves": ["FIRE_BLAST", "FLAMETHROWER", "IRON_HEAD", "OVERHEAT"],
-        "tags": ["legendary", "shadow"],
+        "tags": ["legendary", "shadoweligible"],
         "defaultIVs": {
             "cp1500": [16, 7, 7, 11],
             "cp2500": [26, 6, 14, 14]
@@ -6517,8 +6425,7 @@
         "defaultIVs": {
             "cp1500": [16, 7, 7, 11],
             "cp2500": [26, 6, 14, 14]
-        },
-        "shadow": true
+        }
     }, {
         "dex": 245,
         "speciesName": "Suicune",
@@ -6554,7 +6461,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 579,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 246,
         "speciesName": "Larvitar (Shadow)",
@@ -6571,8 +6478,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 247,
         "speciesName": "Pupitar",
@@ -6590,7 +6496,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1045,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 247,
         "speciesName": "Pupitar (Shadow)",
@@ -6607,8 +6513,7 @@
             "cp1500": [37.5, 1, 9, 7],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 248,
         "speciesName": "Tyranitar",
@@ -6627,7 +6532,7 @@
             "cp2500": [24, 4, 10, 12]
         },
         "level25CP": 2416,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 248,
         "speciesName": "Tyranitar (Shadow)",
@@ -6644,8 +6549,7 @@
             "cp1500": [14.5, 5, 14, 4],
             "cp2500": [24, 4, 10, 12]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 249,
         "speciesName": "Lugia",
@@ -6818,7 +6722,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 634,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 258,
         "speciesName": "Mudkip (Shadow)",
@@ -6835,8 +6739,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 259,
         "speciesName": "Marshtomp",
@@ -6849,7 +6752,7 @@
         "types": ["water", "ground"],
         "fastMoves": ["MUD_SHOT", "WATER_GUN"],
         "chargedMoves": ["MUD_BOMB", "SLUDGE", "SURF"],
-        "tags": ["starter", "shadow"],
+        "tags": ["starter", "shadoweligible"],
         "defaultIVs": {
             "cp1500": [33, 5, 14, 13],
             "cp2500": [40, 15, 15, 15]
@@ -6871,8 +6774,7 @@
         "defaultIVs": {
             "cp1500": [33, 5, 14, 13],
             "cp2500": [40, 15, 15, 15]
-        },
-        "shadow": true
+        }
     }, {
         "dex": 260,
         "speciesName": "Swampert",
@@ -6886,7 +6788,7 @@
         "fastMoves": ["MUD_SHOT", "WATER_GUN"],
         "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "SURF", "HYDRO_CANNON", "MUDDY_WATER"],
         "legacyMoves": ["HYDRO_CANNON", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN"],
-        "tags": ["starter", "shadow"],
+        "tags": ["starter", "shadoweligible"],
         "defaultIVs": {
             "cp1500": [19, 3, 15, 2],
             "cp2500": [36, 0, 9, 1]
@@ -6908,8 +6810,7 @@
         "defaultIVs": {
             "cp1500": [19, 3, 15, 2],
             "cp2500": [36, 0, 9, 1]
-        },
-        "shadow": true
+        }
     }, {
         "dex": 261,
         "speciesName": "Poochyena",
@@ -7153,7 +7054,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 304,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 273,
         "speciesName": "Seedot (Shadow)",
@@ -7170,8 +7071,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 274,
         "speciesName": "Nuzleaf",
@@ -7189,7 +7089,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 692,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 274,
         "speciesName": "Nuzleaf (Shadow)",
@@ -7206,8 +7106,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 275,
         "speciesName": "Shiftry",
@@ -7225,7 +7124,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1412,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 275,
         "speciesName": "Shiftry (Shadow)",
@@ -7242,8 +7141,7 @@
             "cp1500": [24.5, 3, 8, 12],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 276,
         "speciesName": "Taillow",
@@ -7325,7 +7223,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 269,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 280,
         "speciesName": "Ralts (Shadow)",
@@ -7342,8 +7240,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 281,
         "speciesName": "Kirlia",
@@ -7361,7 +7258,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 533,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 281,
         "speciesName": "Kirlia (Shadow)",
@@ -7378,8 +7275,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 282,
         "speciesName": "Gardevoir",
@@ -7398,7 +7294,7 @@
             "cp2500": [32.5, 1, 3, 10]
         },
         "level25CP": 1919,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 282,
         "speciesName": "Gardevoir (Shadow)",
@@ -7415,8 +7311,7 @@
             "cp1500": [18.5, 0, 15, 2],
             "cp2500": [32.5, 1, 3, 10]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 283,
         "speciesName": "Surskit",
@@ -7740,7 +7635,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 858,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 302,
         "speciesName": "Sableye (Shadow)",
@@ -7757,8 +7652,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 303,
         "speciesName": "Mawile",
@@ -7776,7 +7670,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 961,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 303,
         "speciesName": "Mawile (Shadow)",
@@ -7793,8 +7687,7 @@
             "cp1500": [39.5, 7, 14, 6],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 304,
         "speciesName": "Aron",
@@ -8036,7 +7929,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 539,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 318,
         "speciesName": "Carvanha (Shadow)",
@@ -8053,8 +7946,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 319,
         "speciesName": "Sharpedo",
@@ -8072,7 +7964,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1295,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 319,
         "speciesName": "Sharpedo (Shadow)",
@@ -8089,8 +7981,7 @@
             "cp1500": [25, 8, 15, 9],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 320,
         "speciesName": "Wailmer",
@@ -8237,7 +8128,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 722,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 328,
         "speciesName": "Trapinch (Shadow)",
@@ -8254,8 +8145,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 329,
         "speciesName": "Vibrava",
@@ -8273,7 +8163,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 696,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 329,
         "speciesName": "Vibrava (Shadow)",
@@ -8290,8 +8180,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 330,
         "speciesName": "Flygon",
@@ -8310,7 +8199,7 @@
             "cp2500": [37, 10, 15, 14]
         },
         "level25CP": 1634,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 330,
         "speciesName": "Flygon (Shadow)",
@@ -8327,8 +8216,7 @@
             "cp1500": [20.5, 5, 14, 14],
             "cp2500": [37, 10, 15, 14]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 331,
         "speciesName": "Cacnea",
@@ -8346,7 +8234,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 700,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 331,
         "speciesName": "Cacnea (Shadow)",
@@ -8363,8 +8251,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 332,
         "speciesName": "Cacturne",
@@ -8382,7 +8269,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1386,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 332,
         "speciesName": "Cacturne (Shadow)",
@@ -8399,8 +8286,7 @@
             "cp1500": [23.5, 13, 10, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 333,
         "speciesName": "Swablu",
@@ -8786,7 +8672,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 559,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 353,
         "speciesName": "Shuppet (Shadow)",
@@ -8803,8 +8689,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 354,
         "speciesName": "Banette",
@@ -8822,7 +8707,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1389,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 354,
         "speciesName": "Banette (Shadow)",
@@ -8839,8 +8724,7 @@
             "cp1500": [25.5, 0, 7, 7],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 355,
         "speciesName": "Duskull",
@@ -8858,7 +8742,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 366,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 355,
         "speciesName": "Duskull (Shadow)",
@@ -8875,8 +8759,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 356,
         "speciesName": "Dusclops",
@@ -8894,7 +8777,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 927,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 356,
         "speciesName": "Dusclops (Shadow)",
@@ -8911,8 +8794,7 @@
             "cp1500": [37, 12, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 357,
         "speciesName": "Tropius",
@@ -8963,7 +8845,7 @@
             "cp2500": [40, 10, 14, 7]
         },
         "level25CP": 1534,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 359,
         "speciesName": "Absol (Shadow)",
@@ -8980,8 +8862,7 @@
             "cp1500": [23, 0, 11, 4],
             "cp2500": [40, 10, 14, 7]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 360,
         "speciesName": "Wynaut",
@@ -9176,7 +9057,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 652,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 371,
         "speciesName": "Bagon (Shadow)",
@@ -9193,8 +9074,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 372,
         "speciesName": "Shelgon",
@@ -9212,7 +9092,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1219,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 372,
         "speciesName": "Shelgon (Shadow)",
@@ -9229,8 +9109,7 @@
             "cp1500": [28, 3, 9, 13],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 373,
         "speciesName": "Salamence",
@@ -9248,7 +9127,7 @@
             "cp2500": [25.5, 3, 0, 13]
         },
         "level25CP": 2354,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 373,
         "speciesName": "Salamence (Shadow)",
@@ -9265,8 +9144,7 @@
             "cp1500": [14.5, 12, 6, 15],
             "cp2500": [25.5, 3, 0, 13]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 374,
         "speciesName": "Beldum",
@@ -9284,7 +9162,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 539,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 374,
         "speciesName": "Beldum (Shadow)",
@@ -9301,8 +9179,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 375,
         "speciesName": "Metang",
@@ -9320,7 +9197,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1016,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 375,
         "speciesName": "Metang (Shadow)",
@@ -9337,8 +9214,7 @@
             "cp1500": [38, 3, 5, 14],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 376,
         "speciesName": "Metagross",
@@ -9357,7 +9233,7 @@
             "cp2500": [23.5, 10, 15, 13]
         },
         "level25CP": 2386,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 376,
         "speciesName": "Metagross (Shadow)",
@@ -9374,8 +9250,7 @@
             "cp1500": [14.5, 6, 7, 14],
             "cp2500": [23.5, 10, 15, 13]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 377,
         "speciesName": "Regirock",
@@ -9609,7 +9484,7 @@
         "types": ["grass", "none"],
         "fastMoves": ["RAZOR_LEAF", "TACKLE"],
         "chargedMoves": ["BODY_SLAM", "ENERGY_BALL", "SEED_BOMB"],
-        "tags": ["starter", "shadow"],
+        "tags": ["starter", "shadoweligible"],
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
@@ -9631,8 +9506,7 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        },
-        "shadow": true
+        }
     }, {
         "dex": 388,
         "speciesName": "Grotle",
@@ -9645,7 +9519,7 @@
         "types": ["grass", "none"],
         "fastMoves": ["BITE", "RAZOR_LEAF"],
         "chargedMoves": ["BODY_SLAM", "ENERGY_BALL", "SOLAR_BEAM"],
-        "tags": ["starter", "shadow"],
+        "tags": ["starter", "shadoweligible"],
         "defaultIVs": {
             "cp1500": [33.5, 1, 1, 14],
             "cp2500": [40, 15, 15, 15]
@@ -9667,8 +9541,7 @@
         "defaultIVs": {
             "cp1500": [33.5, 1, 1, 14],
             "cp2500": [40, 15, 15, 15]
-        },
-        "shadow": true
+        }
     }, {
         "dex": 389,
         "speciesName": "Torterra",
@@ -9682,7 +9555,7 @@
         "fastMoves": ["BITE", "RAZOR_LEAF"],
         "chargedMoves": ["EARTHQUAKE", "SOLAR_BEAM", "SAND_TOMB", "STONE_EDGE", "FRENZY_PLANT"],
         "legacyMoves": ["FRENZY_PLANT", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN", "FRUSTRATION", "RETURN"],
-        "tags": ["starter", "shadow"],
+        "tags": ["starter", "shadoweligible"],
         "defaultIVs": {
             "cp1500": [18.5, 9, 13, 13],
             "cp2500": [34.5, 3, 13, 6]
@@ -9704,8 +9577,7 @@
         "defaultIVs": {
             "cp1500": [18.5, 9, 13, 13],
             "cp2500": [34.5, 3, 13, 6]
-        },
-        "shadow": true
+        }
     }, {
         "dex": 390,
         "speciesName": "Chimchar",
@@ -10474,7 +10346,7 @@
             "cp2500": [40, 3, 13, 13]
         },
         "level25CP": 1602,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 429,
         "speciesName": "Mismagius (Shadow)",
@@ -10491,8 +10363,7 @@
             "cp1500": [21.5, 1, 7, 15],
             "cp2500": [40, 3, 13, 13]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 430,
         "speciesName": "Honchkrow",
@@ -10978,7 +10849,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 654,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 459,
         "speciesName": "Snover (Shadow)",
@@ -10995,8 +10866,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 460,
         "speciesName": "Abomasnow",
@@ -11014,7 +10884,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1436,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 460,
         "speciesName": "Abomasnow (Shadow)",
@@ -11031,8 +10901,7 @@
             "cp1500": [24, 5, 15, 3],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 461,
         "speciesName": "Weavile",
@@ -11050,7 +10919,7 @@
             "cp2500": [33.5, 1, 8, 10]
         },
         "level25CP": 1859,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 461,
         "speciesName": "Weavile (Shadow)",
@@ -11067,8 +10936,7 @@
             "cp1500": [19, 4, 12, 3],
             "cp2500": [33.5, 1, 8, 10]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 462,
         "speciesName": "Magnezone",
@@ -11086,7 +10954,7 @@
             "cp2500": [29.5, 4, 10, 6]
         },
         "level25CP": 1993,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 462,
         "speciesName": "Magnezone (Shadow)",
@@ -11103,8 +10971,7 @@
             "cp1500": [17.5, 8, 14, 2],
             "cp2500": [29.5, 4, 10, 6]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 463,
         "speciesName": "Lickilicky",
@@ -11174,7 +11041,7 @@
             "cp2500": [29.5, 10, 15, 8]
         },
         "level25CP": 1908,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 466,
         "speciesName": "Electivire (Shadow)",
@@ -11191,8 +11058,7 @@
             "cp1500": [18, 6, 15, 6],
             "cp2500": [29.5, 10, 15, 8]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 467,
         "speciesName": "Magmortar",
@@ -11210,7 +11076,7 @@
             "cp2500": [31, 2, 6, 10]
         },
         "level25CP": 1944,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 467,
         "speciesName": "Magmortar (Shadow)",
@@ -11227,8 +11093,7 @@
             "cp1500": [17.5, 1, 14, 13],
             "cp2500": [31, 2, 6, 10]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 468,
         "speciesName": "Togekiss",
@@ -11345,7 +11210,7 @@
             "cp2500": [27.5, 12, 13, 11]
         },
         "level25CP": 2029,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 474,
         "speciesName": "Porygon-Z (Shadow)",
@@ -11362,8 +11227,7 @@
             "cp1500": [16.5, 6, 13, 14],
             "cp2500": [27.5, 12, 13, 11]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 475,
         "speciesName": "Gallade",
@@ -11382,7 +11246,7 @@
             "cp2500": [32.5, 1, 3, 10]
         },
         "level25CP": 1919,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 475,
         "speciesName": "Gallade (Shadow)",
@@ -11399,8 +11263,7 @@
             "cp1500": [18.5, 0, 15, 2],
             "cp2500": [32.5, 1, 3, 10]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 476,
         "speciesName": "Probopass",
@@ -11434,7 +11297,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1447,
-        "tags": ["shadow"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 477,
         "speciesName": "Dusknoir (Shadow)",
@@ -11451,8 +11314,7 @@
             "cp1500": [23.5, 5, 7, 14],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "shadow": true
+        "tags": ["shadow"]
     }, {
         "dex": 478,
         "speciesName": "Froslass",

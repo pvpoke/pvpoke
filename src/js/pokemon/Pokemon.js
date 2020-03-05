@@ -111,17 +111,23 @@ function Pokemon(id, i, b){
 
 	// Add Return and Frustration for eligible Pokemon
 
-
-	if((data.tags)&&(data.tags.indexOf("shadow") > -1)&&(!data.shadow)){
+	if((data.tags)&&(data.tags.indexOf("shadoweligible") > -1)){
 		self.shadowEligible = true;
-
-		self.chargedMovePool.push(gm.getMoveById("FRUSTRATION"));
 
 		if(data.level25CP <= b.getCP()){
 			self.chargedMovePool.push(gm.getMoveById("RETURN"));
+			self.legacyMoves.push("RETURN");
+		}
+	}
+
+	if((data.tags)&&(data.tags.indexOf("shadow") > -1)){
+		self.shadowEligible = true;
+
+		if(data.tags.indexOf("shadow") > -1){
+			self.chargedMovePool.push(gm.getMoveById("FRUSTRATION"));
 		}
 
-		self.legacyMoves.push("FRUSTRATION","RETURN");
+		self.legacyMoves.push("FRUSTRATION");
 	}
 
 	// Sort moves by ID for consistent order
@@ -208,7 +214,7 @@ function Pokemon(id, i, b){
 
 		// Set Shadow Pokemon to Shadow
 
-		if(data.shadow){
+		if(self.hasTag("shadow")){
 			self.setShadowType("shadow");
 		}
 
@@ -1131,14 +1137,14 @@ function Pokemon(id, i, b){
 			self.shadowDefMult = gm.data.settings.shadowDefMult;
 
 			if(self.speciesName.indexOf("Shadow") == -1){
-				self.speciesName = "Shadow " + self.speciesName;
+				self.speciesName = self.speciesName + " (Shadow)";
 			}
 		} else{
 			self.shadowAtkMult = 1;
 			self.shadowDefMult = 1;
 
-			if(self.speciesName.indexOf("Shadow") > -1){
-				self.speciesName = self.speciesName.replace("Shadow","");
+			if(self.speciesName.indexOf(" (Shadow)") > -1){
+				self.speciesName = self.speciesName.replace(" (Shadow)","");
 			}
 		}
 	}
