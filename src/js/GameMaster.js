@@ -41,42 +41,88 @@ var GameMaster = (function () {
 
 		object.updateShadowStatus = function(){
 
+			// First, clear all Shadow entries from the game master to start from a clean slate
+			for(var i = 0; i < object.data.pokemon.length; i++){
+				var poke = object.data.pokemon[i];
+				if((poke)&&(poke.speciesId.indexOf("_shadow") > -1)){
+					console.log("deleting " + poke.speciesId);
+					object.data.pokemon.splice(i, 1);
+					i--;
+				}
+			}
+
+			var battle = new Battle();
+
 			$.each(object.data.pokemon, function(index, poke){
-				var battle = new Battle();
+				if(poke.speciesId.indexOf("_shadow") > -1){
+					return false;
+				}
 
 				var pokemon = new Pokemon(poke.speciesId, 0, battle);
 				var entry = object.getPokemonById(poke.speciesId);
 				battle.setNewPokemon(pokemon, 0, false);
 
 				if(object.data.shadowPokemon.indexOf(poke.speciesId) > -1){
-					entry.shadow = true;
+					// Get CP at level 25
+					var cp = pokemon.calculateCP(0.667934, 0, 0, 0);
+					entry.level25CP = cp;
 
-					// Remove Return and Frustration if they already exist
-					for(var i = 0; i < entry.chargedMoves.length; i++){
-						if((entry.chargedMoves[i] == "RETURN")||(entry.chargedMoves[i] == "FRUSTRATION")){
-							entry.chargedMoves.splice(i, 1);
-							i--;
+					// Delete shadow from tags
+					if(entry.tags){
+						if(entry.tags.indexOf("shadow") > -1){
+							entry.tags.splice(entry.tags.indexOf("shadow"), 1);
+
+							if(entry.tags.length == 0){
+								delete entry.tags;
+							}
 						}
 					}
 
-					// Remove Return and Frustration if they already exist
+					if(entry.tags){
+						if(entry.tags.indexOf("shadoweligible") == -1){
+							entry.tags.push("shadoweligible");
+						}
+					} else{
+						entry.tags = ["shadoweligible"];
+					}
+
+					// Duplicate the entry for the Shadow version of the Pokemon
+					// Your clones are very impressive, you must be very proud
+
+					entry = JSON.parse(JSON.stringify(entry)); // Your clones are very impressive, you must be very proud
+
+					entry.speciesId += "_shadow";
+					entry.speciesName += " (Shadow)";
+					entry.tags.push("shadow");
+					entry.tags.splice(entry.tags.indexOf("shadowEligible"), 1);
+
+					// Remove all legacy and exclusive moves
 					if(entry.legacyMoves){
-						for(var i = 0; i < entry.legacyMoves.length; i++){
-							if((entry.legacyMoves[i] == "RETURN")||(entry.legacyMoves[i] == "FRUSTRATION")){
-								entry.legacyMoves.splice(i, 1);
+						for(var i = 0; i < entry.fastMoves.length; i++){
+							if(entry.legacyMoves.indexOf(entry.fastMoves[i]) > -1){
+								entry.fastMoves.splice(i, 1);
 								i--;
 							}
 						}
 
-						if(entry.legacyMoves.length == 0){
-							delete entry.legacyMoves;
+						for(var i = 0; i < entry.chargedMoves.length; i++){
+							if(entry.legacyMoves.indexOf(entry.chargedMoves[i]) > -1){
+								entry.chargedMoves.splice(i, 1);
+								i--;
+							}
 						}
+
+						delete entry.legacyMoves;
 					}
 
-
-					// Get CP at level 25
-					var cp = pokemon.calculateCP(0.667934, 0, 0, 0);
-					entry.level25CP = cp;
+					delete entry.level25CP;
+					object.data.pokemon.push(entry);
+				} else{
+					if(entry.tags){
+						if(entry.tags.indexOf("shadow") > -1){
+							entry.tags.splice(entry.tags.indexOf("shadow"), 1);
+						}
+					}
 				}
 			});
 
