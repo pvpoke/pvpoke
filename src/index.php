@@ -27,6 +27,11 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
+	<h4>v1.14.0 (March 14, 2020)</h4>
+	<ul>
+		<li>Shadow Pokemon are now treated as separate Pokemon that you can search in the rankings and select for battle!</li>
+	</ul>
+
 	<h4>v1.13.0 (March 2, 2020)</h4>
 	<ul>
 		<li>Settings now added for Shadow Pokemon.</li>

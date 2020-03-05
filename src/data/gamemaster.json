@@ -242,6 +242,9 @@
         "exclude": [{
             "filterType": "id",
             "values": ["noctowl", "vigoroth", "tropius", "whiscash", "swampert", "quagsire", "gastrodon_east_sea", "gastrodon_west_sea", "seismitoad", "palpitoad", "marshtomp", "swampert_shadow", "marshtomp_shadow"]
+        }, {
+            "filterType": "tag",
+            "values": ["shadow"]
         }]
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible"],
