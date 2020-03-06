@@ -45,7 +45,7 @@ var GameMaster = (function () {
 			for(var i = 0; i < object.data.pokemon.length; i++){
 				var poke = object.data.pokemon[i];
 				if((poke)&&(poke.speciesId.indexOf("_shadow") > -1)){
-					console.log("deleting " + poke.speciesId);
+					console.log("Removed " + poke.speciesId);
 					object.data.pokemon.splice(i, 1);
 					i--;
 				}
@@ -61,6 +61,21 @@ var GameMaster = (function () {
 				var pokemon = new Pokemon(poke.speciesId, 0, battle);
 				var entry = object.getPokemonById(poke.speciesId);
 				battle.setNewPokemon(pokemon, 0, false);
+
+				// Remove Return and Frustration from legacy move list
+				if(entry.legacyMoves){
+					for(var i = 0; i < entry.legacyMoves.length; i++){
+						if((entry.legacyMoves[i] == "FRUSTRATION")||(entry.legacyMoves[i] == "RETURN")){
+							console.log("Removing Return from " + entry.speciesId);
+							entry.legacyMoves.splice(i, 1);
+							i--;
+						}
+
+						if(entry.legacyMoves.length == 0){
+							delete entry.legacyMoves;
+						}
+					}
+				}
 
 				if(object.data.shadowPokemon.indexOf(poke.speciesId) > -1){
 					// Get CP at level 25
@@ -93,9 +108,9 @@ var GameMaster = (function () {
 
 					entry.speciesId += "_shadow";
 					entry.speciesName += " (Shadow)";
-					entry.tags.push("shadow");
 					entry.tags.splice(entry.tags.indexOf("shadowEligible"), 1);
-
+					entry.tags.push("shadow");
+					
 					// Remove all legacy and exclusive moves
 					if(entry.legacyMoves){
 						for(var i = 0; i < entry.fastMoves.length; i++){
