@@ -15,6 +15,11 @@
 		"chargedMoves":["IRON_HEAD","X_SCISSOR"]
 	},
 	{
+		"speciesId":"scizor_shadow",
+		"fastMove":"BULLET_PUNCH",
+		"chargedMoves":["IRON_HEAD","X_SCISSOR"]
+	},
+	{
 		"speciesId":"wormadam_trash",
 		"fastMove":"CONFUSION",
 		"chargedMoves":["IRON_HEAD","BUG_BUZZ"]
@@ -70,6 +75,11 @@
 		"chargedMoves":["DRAGON_CLAW","EARTH_POWER"]
 	},
 	{
+		"speciesId":"flygon_shadow",
+		"fastMove":"MUD_SHOT",
+		"chargedMoves":["DRAGON_CLAW","STONE_EDGE"]
+	},
+	{
 		"speciesId":"gligar",
 		"fastMove":"WING_ATTACK",
 		"chargedMoves":["NIGHT_SLASH","AERIAL_ACE"]
@@ -81,6 +91,11 @@
 	},
 	{
 		"speciesId":"golbat",
+		"fastMove":"WING_ATTACK",
+		"chargedMoves":["POISON_FANG","SHADOW_BALL"]
+	},
+	{
+		"speciesId":"golbat_shadow",
 		"fastMove":"WING_ATTACK",
 		"chargedMoves":["POISON_FANG","SHADOW_BALL"]
 	},
@@ -125,18 +140,8 @@
 		"chargedMoves":["BODY_SLAM","BULLDOZE"]
 	},
 	{
-		"speciesId":"claydol",
-		"fastMove":"CONFUSION",
-		"chargedMoves":["EARTH_POWER","PSYCHIC"]
-	},
-	{
-		"speciesId":"zangoose",
-		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["NIGHT_SLASH","CLOSE_COMBAT"]
-	},
-	{
-		"speciesId":"linoone",
-		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["GRASS_KNOT","THUNDER"]
+		"speciesId":"snorlax_shadow",
+		"fastMove":"LICK",
+		"chargedMoves":["BODY_SLAM","SUPER_POWER"]
 	}
 ]

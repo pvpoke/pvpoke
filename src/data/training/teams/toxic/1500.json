@@ -12,6 +12,13 @@
 				"weight":35
 			},
 			{
+				"speciesId": "golbat_shadow",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["POISON_FANG","SHADOW_BALL"],
+				"difficulty": 3,
+				"weight":4
+			},
+			{
 				"speciesId": "golbat",
 				"fastMove": "WING_ATTACK",
 				"chargedMoves": ["POISON_FANG","RETURN"],
@@ -310,13 +317,20 @@
 				"fastMove": "LICK",
 				"chargedMoves": ["BODY_SLAM","BULLDOZE"],
 				"difficulty": 2,
-				"weight":4
+				"weight":5
 			},
 			{
 				"speciesId": "snorlax",
 				"fastMove": "LICK",
 				"chargedMoves": ["BODY_SLAM","EARTHQUAKE"],
 				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "snorlax_shadow",
+				"fastMove": "LICK",
+				"chargedMoves": ["BODY_SLAM","SUPER_POWER"],
+				"difficulty": 3,
 				"weight":1
 			}
 		]
@@ -353,6 +367,13 @@
 				"chargedMoves": ["DRAGON_CLAW","STONE_EDGE"],
 				"difficulty": 2,
 				"weight":5
+			},
+			{
+				"speciesId": "flygon_shadow",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["DRAGON_CLAW","STONE_EDGE"],
+				"difficulty": 2,
+				"weight":1
 			},
 			{
 				"speciesId": "nidoqueen",
@@ -506,6 +527,13 @@
 				"chargedMoves": ["IRON_HEAD","X_SCISSOR"],
 				"difficulty": 2,
 				"weight":2
+			},
+			{
+				"speciesId": "scizor_shadow",
+				"fastMove": "BULLET_PUNCH",
+				"chargedMoves": ["IRON_HEAD","X_SCISSOR"],
+				"difficulty": 2,
+				"weight":1
 			},
 			{
 				"speciesId": "durant",
