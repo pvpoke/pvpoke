@@ -115,11 +115,6 @@
 		"chargedMoves":["AVALANCHE","BULLDOZE"]
 	},
 	{
-		"speciesId":"haunter",
-		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["SHADOW_PUNCH","SHADOW_BALL"]
-	},
-	{
 		"speciesId":"galvantula",
 		"fastMove":"VOLT_SWITCH",
 		"chargedMoves":["DISCHARGE","BUG_BUZZ"]
@@ -143,5 +138,10 @@
 		"speciesId":"snorlax_shadow",
 		"fastMove":"LICK",
 		"chargedMoves":["BODY_SLAM","SUPER_POWER"]
+	},
+	{
+		"speciesId":"ludicolo",
+		"fastMove":"BUBBLE",
+		"chargedMoves":["ICE_BEAM","HYDRO_PUMP"]
 	}
 ]

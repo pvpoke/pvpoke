@@ -41,7 +41,6 @@ require_once '../header.php';
 				<option value="2500 all">Ultra League</option>
 				<option value="10000 all">Master League</option>
 				<option value="1500 toxic">Toxic Cup</option>
-				<option value="1500 rose">Rose Cup</option>
 			</select>
 			<h3 class="section-title">Difficulty</h3>
 			<select class="difficulty-select">

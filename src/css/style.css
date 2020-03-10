@@ -1784,6 +1784,9 @@ select, input {
 .team-build .poke.multi .custom-options {
   display: block;
 }
+.team-build .poke.multi .options {
+  display: none;
+}
 
 .typings {
   display: none;

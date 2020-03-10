@@ -177,7 +177,7 @@
 				"fastMove": "COUNTER",
 				"chargedMoves": ["MEGAHORN","CLOSE_COMBAT"],
 				"difficulty": 2,
-				"weight":3
+				"weight":6
 			},
 			{
 				"speciesId": "heracross",
@@ -490,7 +490,7 @@
 				"speciesId": "forretress",
 				"fastMove": "BUG_BITE",
 				"chargedMoves": ["MIRROR_SHOT","EARTHQUAKE"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":2
 			},
 			{
@@ -504,14 +504,14 @@
 				"speciesId": "forretress",
 				"fastMove": "BUG_BITE",
 				"chargedMoves": ["ROCK_TOMB","EARTHQUAKE"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":1
 			},
 			{
 				"speciesId": "forretress",
 				"fastMove": "BUG_BITE",
 				"chargedMoves": ["ROCK_TOMB","SAND_TOMB"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":1
 			},
 			{
@@ -533,7 +533,7 @@
 				"fastMove": "BULLET_PUNCH",
 				"chargedMoves": ["IRON_HEAD","X_SCISSOR"],
 				"difficulty": 2,
-				"weight":1
+				"weight":2
 			},
 			{
 				"speciesId": "durant",
@@ -554,14 +554,21 @@
 	{
 		"slot": "Dark-Poison",
 		"synergies": ["Flying"],
-		"weight": 2,
+		"weight": 4,
 		"pokemon": [
 			{
 				"speciesId": "drapion",
 				"fastMove": "ICE_FANG",
 				"chargedMoves": ["AQUA_TAIL","CRUNCH"],
 				"difficulty": 2,
-				"weight":10
+				"weight":20
+			},
+			{
+				"speciesId": "drapion",
+				"fastMove": "BITE",
+				"chargedMoves": ["AQUA_TAIL","FELL_STINGER"],
+				"difficulty": 3,
+				"weight":1
 			},
 			{
 				"speciesId": "skuntank",
@@ -575,7 +582,7 @@
 				"fastMove": "SNARL",
 				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"],
 				"difficulty": 3,
-				"weight":15
+				"weight":12
 			},
 			{
 				"speciesId": "muk_alolan",
@@ -606,6 +613,13 @@
 				"weight":20
 			},
 			{
+				"speciesId": "ludicolo",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["ICE_BEAM","HYDRO_PUMP"],
+				"difficulty": 2,
+				"weight":5
+			},
+			{
 				"speciesId": "celebi",
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["SEED_BOMB","PSYCHIC"],
@@ -614,6 +628,13 @@
 			},
 			{
 				"speciesId": "exeggutor",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["SEED_BOMB","PSYCHIC"],
+				"difficulty": 2,
+				"weight":3
+			},
+			{
+				"speciesId": "exeggutor_shadow",
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["SEED_BOMB","PSYCHIC"],
 				"difficulty": 2,
@@ -630,14 +651,14 @@
 				"speciesId": "shiftry",
 				"fastMove": "SNARL",
 				"chargedMoves": ["HURRICANE","LEAF_BLADE"],
-				"difficulty": 1,
-				"weight":6
+				"difficulty": 2,
+				"weight":4
 			},
 			{
 				"speciesId": "shiftry",
 				"fastMove": "SNARL",
 				"chargedMoves": ["FOUL_PLAY","LEAF_BLADE"],
-				"difficulty": 1,
+				"difficulty": 2,
 				"weight":2
 			},
 			{
@@ -658,14 +679,14 @@
 				"speciesId": "haunter",
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["SHADOW_PUNCH","SHADOW_BALL"],
-				"difficulty": 3,
-				"weight":2
+				"difficulty": 1,
+				"weight":1
 			},
 			{
 				"speciesId": "haunter",
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["SHADOW_PUNCH","SLUDGE_BOMB"],
-				"difficulty": 3,
+				"difficulty": 1,
 				"weight":1
 			},
 			{
@@ -674,6 +695,13 @@
 				"chargedMoves": ["ICE_BEAM","PLAY_ROUGH"],
 				"difficulty": 2,
 				"weight":10
+			},
+			{
+				"speciesId": "chansey",
+				"fastMove": "POUND",
+				"chargedMoves": ["PSYCHIC","HYPER_BEAM"],
+				"difficulty": 2,
+				"weight":1
 			},
 			{
 				"speciesId": "muk",

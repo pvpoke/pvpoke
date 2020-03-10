@@ -390,6 +390,13 @@
 				"weight":18
 			},
 			{
+				"speciesId": "dragonite_shadow",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["DRAGON_CLAW","OUTRAGE"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
 				"speciesId": "tropius",
 				"fastMove": "AIR_SLASH",
 				"chargedMoves": ["AERIAL_ACE","LEAF_BLADE"],
@@ -1011,6 +1018,13 @@
 				"chargedMoves": ["PLAY_ROUGH","ICE_BEAM"],
 				"difficulty": 2,
 				"weight":5
+			},
+			{
+				"speciesId": "gardevoir_shadow",
+				"fastMove": "CHARM",
+				"chargedMoves": ["SHADOW_BALL","PSYCHIC"],
+				"difficulty": 3,
+				"weight":1
 			},
 			{
 				"speciesId": "gardevoir",
