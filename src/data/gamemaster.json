@@ -988,6 +988,22 @@
             "cp2500": [40, 15, 15, 15]
         }
     }, {
+        "dex": 25,
+        "speciesName": "Pikachu (Libre)",
+        "speciesId": "pikachu_libre",
+        "baseStats": {
+            "atk": 112,
+            "def": 96,
+            "hp": 111
+        },
+        "types": ["electric", "none"],
+        "fastMoves": ["THUNDER_SHOCK","CHARM"],
+        "chargedMoves": ["FLYING_PRESS", "PLAY_ROUGH", "THUNDER_PUNCH"],
+        "defaultIVs": {
+            "cp1500": [40, 15, 15, 15],
+            "cp2500": [40, 15, 15, 15]
+        }
+    }, {
         "dex": 26,
         "speciesName": "Raichu",
         "speciesId": "raichu",
@@ -6509,8 +6525,9 @@
             "hp": 225
         },
         "types": ["rock", "dark"],
-        "fastMoves": ["BITE", "IRON_TAIL"],
+        "fastMoves": ["SMACK_DOWN", "BITE", "IRON_TAIL"],
         "chargedMoves": ["CRUNCH", "FIRE_BLAST", "STONE_EDGE"],
+		"legacyMoves": ["SMACK_DOWN"],
         "defaultIVs": {
             "cp1500": [14.5, 5, 14, 4],
             "cp2500": [24, 4, 10, 12]
@@ -15391,6 +15408,14 @@
         "type": "steel",
         "power": 110,
         "energy": 65,
+        "energyGain": 0,
+        "cooldown": 500
+    }, {
+        "moveId": "FLYING_PRESS",
+        "name": "Flying Press",
+        "type": "fighting",
+        "power": 90,
+        "energy": 40,
         "energyGain": 0,
         "cooldown": 500
     }, {
