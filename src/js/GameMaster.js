@@ -110,7 +110,7 @@ var GameMaster = (function () {
 					entry.speciesName += " (Shadow)";
 					entry.tags.splice(entry.tags.indexOf("shadowEligible"), 1);
 					entry.tags.push("shadow");
-					
+
 					// Remove all legacy and exclusive moves
 					if(entry.legacyMoves){
 						for(var i = 0; i < entry.fastMoves.length; i++){
@@ -609,6 +609,11 @@ var GameMaster = (function () {
 								if((param == regions[k].string)||(param==regions[k].name)){
 									if((pokemon.dex >= regions[k].dexStart)&&(pokemon.dex <= regions[k].dexEnd)){
 										valid = true;
+
+										// Exclude Alolan Pokemon from Gen1
+										if((pokemon.hasTag("alolan"))&&(regions[k].string == "gen1")){
+											valid = false;
+										}
 									}
 								}
 							}

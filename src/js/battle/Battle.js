@@ -41,6 +41,7 @@ function Battle(){
 	var phaseTimeout; // Used to trigger the end of certain phases like charging up and switching
 	var mainLoopInterval;
 	var isPaused = false; // A flag for whether or not to pause the battle
+	var sixtySecondMarked = false; // Flag for if the 60 second marker has been displayed yet in the timeline
 
 	var roundChargedMoveUsed;
 	var roundChargedMovesInitiated; // used in decision making
@@ -413,6 +414,7 @@ function Battle(){
 		timeline = [];
 		queuedActions = [];
 		turnActions = [];
+		sixtySecondMarked = false;
 	}
 
 	// Process a turn
@@ -685,6 +687,13 @@ function Battle(){
 		duration = time;
 		lastProcessedTurn = turns;
 		turns++;
+
+		// Display sixty second marker after 60 seconds have passed
+
+		if((mode == "simulate")&&(time >= 60000)&&(! sixtySecondMarked)){
+			timeline.push(new TimelineEvent("switchAvailable", "Switch Available (60 seconds)", 0, time, turns));
+			sixtySecondMarked = true;
+		}
 
 		// Check for faint
 		var faintedPokemonIndexes = [];
@@ -1105,7 +1114,7 @@ function Battle(){
 				// Use this charged move if it has a guaranteed stat effect and this Pokemon has high fast move damage
 
 				if((move.buffApplyChance)&&(move.buffApplyChance == 1)&&(poke.fastMove.damage / ((poke.fastMove.cooldown / 500) * opponent.stats.hp) >= .025)&&(opponent.hp > poke.bestChargedMove.damage)&&((move.buffs[0] > 0)||(move.buffs[1] > 0))){
-					
+
 					// Check to see if this Pokemon should go for a KO'ing move instead
 					var hasLethalMove = false;
 
@@ -1113,14 +1122,14 @@ function Battle(){
 						if(i == n){
 							continue;
 						}
-						
+
 						if(self.calculateDamage(poke, opponent, poke.activeChargedMoves[i]) >= opponent.hp){
 							hasLethalMove = true;
 						} else{
 							self.logDecision(turns, poke, " won't KO with " + poke.activeChargedMoves[i].name);
 						}
 					}
-					
+
 					if(! hasLethalMove){
 						action = new TimelineAction(
 							"charged",

@@ -413,9 +413,17 @@ var InterfaceMaster = (function () {
 				$(".meta-table").append("<tbody></tbody>");
 
 				var avgThreatScore = 0;
+				var count = 0;
+				var total = 20;
+				var i = 0;
 
-				for(var i = 0; i < 10; i++){
+				while((count < total)&&(i < counterRankings.length)){
 					var r = counterRankings[i];
+
+					if(r.speciesId.indexOf("_shadow") > -1){
+						i++;
+						continue;
+					}
 
 					var pokemon = new Pokemon(r.speciesId, 1, battle);
 					pokemon.initialize(true);
@@ -474,6 +482,9 @@ var InterfaceMaster = (function () {
 						$row.append($cell);
 					}
 
+					i++;
+					count++;
+
 					$(".threats-table tbody").append($row);
 				}
 
@@ -504,8 +515,17 @@ var InterfaceMaster = (function () {
 				// Display meta scorecard
 				counterRankings.sort((a,b) => (a.overall > b.overall) ? -1 : ((b.overall > a.overall) ? 1 : 0));
 
-				for(var i = 0; i < 20; i++){
+				count = 0;
+				total = 20;
+				i = 0;
+
+				while((count < total)&&(i < counterRankings.length)){
 					var r = counterRankings[i];
+
+					if(r.speciesId.indexOf("_shadow") > -1){
+						i++;
+						continue;
+					}
 
 					var pokemon = new Pokemon(r.speciesId, 1, battle);
 					pokemon.initialize(true);
@@ -555,6 +575,9 @@ var InterfaceMaster = (function () {
 						$row.append($cell);
 					}
 
+					i++;
+					count++;
+
 					$(".meta-table tbody").append($row);
 				}
 
@@ -579,8 +602,17 @@ var InterfaceMaster = (function () {
 				$(".alternatives-table").append($row);
 				$(".alternatives-table").append("<tbody></tbody>");
 
-				for(var i = 0; i < 10; i++){
+				count = 0;
+				total = 20;
+				i = 0;
+
+				while((count < total)&&(i < altRankings.length)){
 					var r = altRankings[i];
+
+					if(r.speciesId.indexOf("_shadow") > -1){
+						i++
+						continue;
+					}
 
 					var pokemon = new Pokemon(r.speciesId, 1, battle);
 
@@ -601,7 +633,7 @@ var InterfaceMaster = (function () {
 
 					// Add results to alternatives table
 
-					$row = $("<tr><th class=\"name\"><b>"+(i+1)+". "+pokemon.speciesName+"<div class=\"button add\" pokemon=\""+pokemon.speciesId+"\">+</div></b></th></tr>");
+					$row = $("<tr><th class=\"name\"><b>"+(count+1)+". "+pokemon.speciesName+"<div class=\"button add\" pokemon=\""+pokemon.speciesId+"\">+</div></b></th></tr>");
 
 					for(var n = 0; n < r.matchups.length; n++){
 						var $cell = $("<td><a class=\"rating\" href=\"#\" target=\"blank\"><span></span></a></td>");
@@ -630,6 +662,9 @@ var InterfaceMaster = (function () {
 					}
 
 					$(".alternatives-table tbody").append($row);
+
+					i++;
+					count++;
 				}
 
 				if(team.length == 6){
@@ -927,9 +962,8 @@ var InterfaceMaster = (function () {
 
 					battle.setCP(cp);
 
-					for(var i = 0; i < pokeSelectors.length; i++){
-						pokeSelectors[i].setCP(cp);
-					}
+					// Set the selected team to the new CP
+					multiSelector.setCP(cp);
 				}
 
 			}

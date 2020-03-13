@@ -1329,6 +1329,7 @@ select, input{
 	}
 
 	.tip{
+		margin-top:15px;
 		text-align:center;
 	}
 
@@ -1582,6 +1583,24 @@ select, input{
 				animation-timing-function: linear;
 			}
 
+			&.switchAvailable{
+				width:12px;
+				height:12px;
+				border-radius:12px;
+				background:#fff;
+				border:1px solid #333;
+				top:-21px;
+				z-index: 10;
+			}
+
+			&.switchAvailable:after{
+				font-size:11px;
+				color:#333;
+				content:"\021C5";
+				position: relative;
+			    top: -4px;
+			}
+
 			&.active{
 				@include transform(scale(1, 1));
 			}
@@ -1719,6 +1738,10 @@ select, input{
 
 	&.dark{
 		color:#fff;
+	}
+
+	&.switchAvailable{
+		background:#fff;
 	}
 
 	h3{
@@ -2627,9 +2650,10 @@ select, input{
 	width:100%;
 	height:100%;
 	background:rgba(0,0,0,.5);
-	z-index:20;
+	z-index:30;
 	padding:10px;
 	box-sizing:border-box;
+	overflow-y:scroll;
 
 	.modal-container{
 		position:relative;
@@ -2995,10 +3019,6 @@ a.toggle{
 	.cup-select{
 		max-width:48%;
 		margin-bottom:5px;
-	}
-
-	.modal{
-		overflow-y:scroll;
 	}
 }
 

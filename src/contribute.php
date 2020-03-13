@@ -36,8 +36,10 @@ require_once 'header.php'; ?>
 		<div class="supporter">JEngels21</div>
 		<div class="supporter">SparkSpencer</div>
 		<div class="supporter">Vexilus @PvPVexilus</div>
-
-
+		<div class="supporter">LindenRyu</div>
+		<div class="supporter">impoid</div>
+		<div class="supporter">t00fan</div>
+		<div class="supporter">TehPool</div>
 	</div>
 
 	<h2 class="center">Master Supporters</h2>

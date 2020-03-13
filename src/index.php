@@ -27,18 +27,16 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.14.0 (March 14, 2020)</h4>
+	<h4>v1.14.1 (March 13, 2020)</h4>
 	<ul>
-		<li>Shadow Pokemon are now treated as separate Pokemon that you can search in the rankings and select for battle!</li>
-	</ul>
-
-	<h4>v1.13.0 (March 2, 2020)</h4>
-	<ul>
-		<li>Settings now added for Shadow Pokemon.</li>
+		<li>Shadow Pokemon have been removed from the Team Builder threats and alternatives lists for the time being.</li>
 		<ul>
-			<li>Shadow Pokemon receive a x1.2 multiplier to Attack and a x0.83 multiplier to Defense.</li>
-			<li>Shadow Pokemon can be incorporated into custom groups.</li>
+			<li>Shadow Pokemon are still listed in the CSV export.</li>
 		</ul>
+		<li>The Team Builder threats and alternative lists have been extended from 10 to 20 Pokemon.</li>
+		<li>Added an indicator in the battle timeline at 60 seconds to indicate when the switch button would be available after a switch.</li>
+		<li>Alolan Pokemon are no longer listed for "gen1"/"kanto" search.</li>
+		<li>Fixed an issue where entering Pokemon into custom groups (Matrix Battle, Team Builder, etc.) and then changing leagues would produce erroneous results. Changing league now adjusts the selected Pokemon to the appropriate CP.</li>
 	</ul>
 
 	<h3>Latest Article</h3>

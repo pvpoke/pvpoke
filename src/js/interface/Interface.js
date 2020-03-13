@@ -1541,7 +1541,7 @@ var InterfaceMaster = (function () {
 					}
 
 					for(var i = 0; i < multiSelectors.length; i++){
-						multiSelectors[i].updateLeague(cp);
+						multiSelectors[i].setCP(cp);
 					}
 				}
 

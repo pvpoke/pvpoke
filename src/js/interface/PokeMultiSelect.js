@@ -259,7 +259,7 @@ function PokeMultiSelect(element){
 
 	// Update the custom group selections when changing league
 
-	this.updateLeague = function(cp){
+	this.setCP = function(cp){
 		$el.find(".quick-fill-select option").hide();
 
 		switch(cp){
@@ -280,6 +280,11 @@ function PokeMultiSelect(element){
 		}
 
 		$el.find(".quick-fill-select option[type='custom']").show();
+
+		// Set all Pokemon to the new CP limit
+		for(var i = 0; i < pokemonList.length; i++){
+			pokemonList[i].initialize(cp, settings.defaultIVs);
+		}
 	}
 
 	// Convert the current Pokemon list into exportable and savable JSON
