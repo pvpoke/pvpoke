@@ -489,7 +489,7 @@ var InterfaceMaster = (function () {
 				}
 
 				// Display average threat score
-				avgThreatScore = Math.round(avgThreatScore / 200);
+				avgThreatScore = Math.round(avgThreatScore / 400);
 				$(".threat-score").html(avgThreatScore);
 
 				// Build CSV results
