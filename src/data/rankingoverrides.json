@@ -1196,6 +1196,10 @@
 				"chargedMoves": ["DRILL_PECK", "THUNDERBOLT"]
 			},
 			{
+				"speciesId": "cobalion",
+				"chargedMoves": ["SACRED_SWORD", "STONE_EDGE"]
+			},
+			{
 				"speciesId": "suicune",
 				"chargedMoves": ["ICE_BEAM", "HYDRO_PUMP"]
 			},
@@ -1509,6 +1513,10 @@
 			{
 				"speciesId": "empoleon",
 				"chargedMoves": ["HYDRO_CANNON", "FLASH_CANNON"]
+			},
+			{
+				"speciesId": "cobalion",
+				"chargedMoves": ["SACRED_SWORD", "STONE_EDGE"]
 			},
 			{
 				"speciesId": "lapras",
@@ -3242,6 +3250,10 @@
 				"speciesId": "pidgeot",
 				"chargedMoves": ["AERIAL_ACE","HURRICANE"],
 				"weight": 7
+			},
+			{
+				"speciesId": "zangoose",
+				"fastMove": "SHADOW_CLAW"
 			},
 			{
 				"speciesId": "mothim",
