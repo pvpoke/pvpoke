@@ -586,6 +586,13 @@
 				"weight": 20
 			},
 			{
+				"speciesId": "cobalion",
+				"fastMove": "METAL_CLAW",
+				"chargedMoves": ["SACRED_SWORD","STONE_EDGE"],
+				"difficulty": 3,
+				"weight": 3
+			},
+			{
 				"speciesId": "scizor",
 				"fastMove": "BULLET_PUNCH",
 				"chargedMoves": ["NIGHT_SLASH","IRON_HEAD"],

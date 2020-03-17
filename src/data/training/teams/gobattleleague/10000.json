@@ -425,6 +425,13 @@
 				"weight":15
 			},
 			{
+				"speciesId": "cobalion",
+				"fastMove": "METAL_CLAW",
+				"chargedMoves": ["SACRED_SWORD","STONE_EDGE"],
+				"difficulty": 1,
+				"weight": 2
+			},
+			{
 				"speciesId": "jirachi",
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["DOOM_DESIRE","DAZZLING_GLEAM"],
