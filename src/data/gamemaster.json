@@ -14446,7 +14446,7 @@
         },
         "types": ["rock", "fighting"],
         "fastMoves": ["SMACK_DOWN", "ZEN_HEADBUTT"],
-        "chargedMoves": ["CLOSE_COMBAT", "EARTHQUAKE", "ROCK_SLIDE", "SACRED_SWORD"],
+        "chargedMoves": ["CLOSE_COMBAT", "EARTHQUAKE", "ROCK_SLIDE"],
         "defaultIVs": {
             "cp1500": [15, 8, 10, 7],
             "cp2500": [24.5, 10, 10, 13]
