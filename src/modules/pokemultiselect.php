@@ -16,12 +16,8 @@
 				<option value="great" type="great" class="multi-battle">Great League Meta</option>
 				<option value="ultra" type="ultra" class="hide multi-battle">Ultra League Meta</option>
 				<option value="master" type="master" class="hide multi-battle">Master League Meta</option>
+				<option value="toxic" type="voyager" class="multi-battle">Voyager Cup Meta</option>
 				<option value="toxic" type="toxic" class="multi-battle">Toxic Cup Meta</option>
-				<option value="rose" type="rose" class="multi-battle">Rose Cup Meta</option>
-				<option value="fusion" type="fusion" class="multi-battle">Fusion Cup Meta</option>
-				<option value="timeless" type="timeless" class="multi-battle">Timeless Cup Meta</option>
-				<option value="ferocious" type="ferocious" class="multi-battle">Ferocious Cup Meta</option>
-				<option value="sinister" type="sinister" class="multi-battle">Sinister Cup Meta</option>
 			</select>
 			<div class="flex quick-fill-buttons">
 				<button class="save-btn save-custom">Save</button>

@@ -97,6 +97,10 @@ switch($cup){
 	case "toxic":
 		$league = 'Toxic Cup';
 		break;
+
+	case "voyager":
+		$league = 'Voyager Cup';
+		break;
 }
 
 $META_TITLE = $league . ' PvP Rankings';
@@ -142,6 +146,8 @@ require_once 'header.php';
 
 	<div class="check on limited hide"><span></span>Show <div class="limited-title">Limited Pokemon</div>*</div>
 	<div class="asterisk limited hide">* Only a limited number of these Pokemon can be selected per team.</div>
+
+	<p class="limited hide">Search for Pokemon by region or generation by typing "kanto", "johto", etc. or "gen1", "gen2", etc.</p>
 
 	<div class="poke-search-container">
 		<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />

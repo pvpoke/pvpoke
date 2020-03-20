@@ -166,5 +166,257 @@
 				"chargedMoves": ["CLOSE_COMBAT","MEGAHORN"]
 			}
 		]
+	},
+	{
+		"name": "Champion Blue",
+		"slug": "championblue",
+		"img": "pvpoke",
+		"cup": "voyager",
+		"cupName": "Voyager",
+		"league": 1500,
+		"description": "Train against this Voyager Cup team inspired by the Champion of the Kanto region.",
+		"link": "#",
+		"pokemon": [
+			{
+				"speciesId": "lapras",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["SURF","SKULL_BASH"]
+			},
+			{
+				"speciesId": "azumarill",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["ICE_BEAM","HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "tropius",
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["LEAF_BLADE","AERIAL_ACE"]
+			},
+			{
+				"speciesId": "probopass",
+				"fastMove": "SPARK",
+				"chargedMoves": ["ROCK_SLIDE","THUNDERBOLT"]
+			},
+			{
+				"speciesId": "marowak_alolan",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["BONE_CLUB","SHADOW_BALL"]
+			},
+			{
+				"speciesId": "machamp",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["CROSS_CHOP","ROCK_SLIDE"]
+			}
+		]
+	},
+	{
+		"name": "Champion Lance",
+		"slug": "championlance",
+		"img": "pvpoke",
+		"cup": "voyager",
+		"cupName": "Voyager",
+		"league": 1500,
+		"description": "Train against this Voyager Cup team inspired by the Champion of the Johto region.",
+		"link": "#",
+		"pokemon": [
+			{
+				"speciesId": "dragonite_shadow",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["DRAGON_CLAW","OUTRAGE"]
+			},
+			{
+				"speciesId": "azumarill",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["PLAY_ROUGH","HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "registeel",
+				"fastMove": "LOCK_ON",
+				"chargedMoves": ["FLASH_CANNON","FOCUS_BLAST"]
+			},
+			{
+				"speciesId": "toxicroak",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["MUD_BOMB","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "marowak_alolan",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["BONE_CLUB","SHADOW_BALL"]
+			},
+			{
+				"speciesId": "meganium",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","EARTHQUAKE"]
+			}
+		]
+	},
+	{
+		"name": "Champion Steven",
+		"slug": "championsteven",
+		"img": "pvpoke",
+		"cup": "voyager",
+		"cupName": "Voyager",
+		"league": 1500,
+		"description": "Train against this Voyager Cup team inspired by the Champion of the Hoenn region.",
+		"link": "#",
+		"pokemon": [
+			{
+				"speciesId": "venusaur",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "skarmory",
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["SKY_ATTACK","FLASH_CANNON"]
+			},
+			{
+				"speciesId": "altaria",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["SKY_ATTACK","DRAGON_PULSE"]
+			},
+			{
+				"speciesId": "gastrodon_east_sea",
+				"fastMove": "MUD_SLAP",
+				"chargedMoves": ["BODY_SLAM","EARTH_POWER"]
+			},
+			{
+				"speciesId": "melmetal",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["ROCK_SLIDE","SUPER_POWER"]
+			},
+			{
+				"speciesId": "castform_rainy",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["THUNDERBOLT","WEATHER_BALL_WATER"]
+			}
+		]
+	},
+	{
+		"name": "Champion Cynthia",
+		"slug": "championcynthia",
+		"img": "pvpoke",
+		"cup": "voyager",
+		"cupName": "Voyager",
+		"league": 1500,
+		"description": "Train against this Voyager Cup team inspired by the Champion of the Sinnoh region.",
+		"link": "#",
+		"pokemon": [
+			{
+				"speciesId": "dewgong",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["ICY_WIND","WATER_PULSE"]
+			},
+			{
+				"speciesId": "meganium",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "registeel",
+				"fastMove": "LOCK_ON",
+				"chargedMoves": ["FLASH_CANNON","FOCUS_BLAST"]
+			},
+			{
+				"speciesId": "togekiss",
+				"fastMove": "CHARM",
+				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
+			},
+			{
+				"speciesId": "marowak_alolan",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["BONE_CLUB","SHADOW_BALL"]
+			},
+			{
+				"speciesId": "garchomp",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["SAND_TOMB","OUTRAGE"]
+			}
+		]
+	},
+	{
+		"name": "Champion Alder",
+		"slug": "championalder",
+		"img": "pvpoke",
+		"cup": "voyager",
+		"cupName": "Voyager",
+		"league": 1500,
+		"description": "Train against this Voyager Cup team inspired by the Champion of the Unova region.",
+		"link": "#",
+		"pokemon": [
+			{
+				"speciesId": "venusaur",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "umbreon",
+				"fastMove": "SNARL",
+				"chargedMoves": ["FOUL_PLAY","LAST_RESORT"]
+			},
+			{
+				"speciesId": "deoxys_defense",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["ROCK_SLIDE","THUNDERBOLT"]
+			},
+			{
+				"speciesId": "froslass",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["AVALANCHE","SHADOW_BALL"]
+			},
+			{
+				"speciesId": "alomomola",
+				"fastMove": "WATERFALL",
+				"chargedMoves": ["PSYCHIC","HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "mantine",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["BUBBLE_BEAM","ICE_BEAM"]
+			}
+		]
+	},
+	{
+		"name": "Champion Leon",
+		"slug": "championleon",
+		"img": "pvpoke",
+		"cup": "voyager",
+		"cupName": "Voyager",
+		"league": 1500,
+		"description": "Train against this Voyager Cup team inspired by the undefeated Champion of the Galar region.",
+		"link": "#",
+		"pokemon": [
+			{
+				"speciesId": "charizard",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
+			},
+			{
+				"speciesId": "meganium",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "swampert",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["HYDRO_CANNON","SLUDGE_WAVE"]
+			},
+			{
+				"speciesId": "skuntank",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["CRUNCH","FLAMETHROWER"]
+			},
+			{
+				"speciesId": "melmetal",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["ROCK_SLIDE","SUPER_POWER"]
+			},
+			{
+				"speciesId": "clefable",
+				"fastMove": "CHARM",
+				"chargedMoves": ["METEOR_MASH","PSYCHIC"]
+			}
+		]
 	}
 ]

@@ -661,6 +661,28 @@ var InterfaceMaster = (function () {
 						$row.append($cell);
 					}
 
+					// Add region for alternative Pokemon for Voyager
+					if(battle.getCup().name == "voyager"){
+						var regions = gm.data.pokemonRegions;
+						var regionName = "";
+
+						for(var j = 0; j < regions.length; j++){
+							if((pokemon.dex >= regions[j].dexStart)&&(pokemon.dex >= regions[j].dexStart)){
+								regionName = regions[j].name;
+							}
+
+							if(pokemon.hasTag("alolan")){
+								regionName = "Alola";
+							}
+
+							if((pokemon.hasTag("galarian"))||(pokemon.speciesId == "melmetal")){
+								regionName = "Galar";
+							}
+						}
+
+						$row.find("th.name").append("<div class=\"region-label "+regionName.toLowerCase()+"\">"+regionName+"</div>");
+					}
+
 					$(".alternatives-table tbody").append($row);
 
 					i++;

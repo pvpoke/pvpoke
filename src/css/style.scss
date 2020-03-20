@@ -2109,7 +2109,6 @@ select, input{
 			display:none;
 		}
 	}
-
 }
 
 .typings{
@@ -2471,6 +2470,21 @@ select, input{
 		    padding: 0 5px;
 		    margin: 0 0 0 5px;
 		    border-radius: 30px;
+		}
+
+		.region-label{
+			font-size:14px;
+			font-weight: normal;
+			font-style: italic;
+			text-transform: capitalize;
+
+			&.kanto{ color:#ce0000; }
+			&.johto{ color:#a59662; }
+			&.hoenn{ color:#2665f3; }
+			&.sinnoh{ color:#821a37; }
+			&.unova{ color:#333; }
+			&.alola{ color:#fb900b; }
+			&.galar{ color:#946000; }
 		}
 	}
 }

@@ -241,8 +241,15 @@
         }],
         "exclude": [{
             "filterType": "id",
-            "values": ["noctowl", "vigoroth", "tropius", "whiscash", "swampert", "quagsire", "gastrodon_east_sea", "gastrodon_west_sea", "seismitoad", "palpitoad", "marshtomp", "swampert_shadow", "marshtomp_shadow"]
+            "values": ["noctowl", "vigoroth", "tropius", "whiscash", "swampert", "quagsire", "gastrodon_east_sea", "gastrodon_west_sea", "seismitoad", "palpitoad", "marshtomp", "swampert_shadow", "marshtomp_shadow", "genesect"]
         }]
+    }, {
+        "name": "voyager",
+        "title": "Voyager Cup",
+		"restrictedPicks": 1,
+		"restrictedPokemon": ["altaria","azumarill","bastiodon","cresselia","deoxys_defense","dewgong","gardevoir","gardevoir_shadow","hypno","hypno_shadow","ivysaur","ivysaur_shadow","jellicent","lapras","lapras_shadow","mandibuzz","marowak_alolan","medicham","melmetal","mew","probopass","registeel","scrafty","skarmory","swampert","swampert_shadow","togekiss","tropius","umbreon","venusaur","venusaur_shadow","whiscash","wigglytuff","zweilous"],
+        "include": [],
+        "exclude": []
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible"],
     "pokemonRegions": [{
@@ -14733,9 +14740,10 @@
         "fastMoves": ["METAL_CLAW", "FURY_CUTTER"],
         "chargedMoves": ["X_SCISSOR", "MAGNET_BOMB", "HYPER_BEAM"],
         "defaultIVs": {
-            "cp1500": [16, 9, 15, 12],
-            "cp2500": [28, 4, 13, 5]
-        }
+			"cp1500": [15.5, 13, 15, 15],
+            "cp2500": [26.5, 11, 15, 13]
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 649,
         "speciesId": "genesect_burn",
@@ -14749,9 +14757,10 @@
         "fastMoves": ["METAL_CLAW", "FURY_CUTTER"],
         "chargedMoves": ["X_SCISSOR", "MAGNET_BOMB", "FLAMETHROWER"],
         "defaultIVs": {
-            "cp1500": [16, 9, 15, 12],
-            "cp2500": [28, 4, 13, 5]
-        }
+			"cp1500": [15.5, 13, 15, 15],
+            "cp2500": [26.5, 11, 15, 13]
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 649,
         "speciesId": "genesect_chill",
@@ -14765,9 +14774,10 @@
         "fastMoves": ["METAL_CLAW", "FURY_CUTTER"],
         "chargedMoves": ["X_SCISSOR", "MAGNET_BOMB", "ICE_BEAM"],
         "defaultIVs": {
-            "cp1500": [16, 9, 15, 12],
-            "cp2500": [28, 4, 13, 5]
-        }
+            "cp1500": [15.5, 13, 15, 15],
+            "cp2500": [26.5, 11, 15, 13]
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 649,
         "speciesId": "genesect_douse",
@@ -14781,9 +14791,10 @@
         "fastMoves": ["METAL_CLAW", "FURY_CUTTER"],
         "chargedMoves": ["X_SCISSOR", "MAGNET_BOMB", "GUNK_SHOT"],
         "defaultIVs": {
-            "cp1500": [16, 9, 15, 12],
-            "cp2500": [28, 4, 13, 5]
-        }
+			"cp1500": [15.5, 13, 15, 15],
+            "cp2500": [26.5, 11, 15, 13]
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 649,
         "speciesId": "genesect_shock",
@@ -14797,9 +14808,10 @@
         "fastMoves": ["METAL_CLAW", "FURY_CUTTER"],
         "chargedMoves": ["X_SCISSOR", "MAGNET_BOMB", "ZAP_CANNON"],
         "defaultIVs": {
-            "cp1500": [16, 9, 15, 12],
-            "cp2500": [28, 4, 13, 5]
-        }
+			"cp1500": [15.5, 13, 15, 15],
+            "cp2500": [26.5, 11, 15, 13]
+        },
+		"tags": ["mythical"]
     }, {
         "dex": 808,
         "speciesName": "Meltan",

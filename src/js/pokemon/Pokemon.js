@@ -284,7 +284,7 @@ function Pokemon(id, i, b){
 
 		var floor = 0;
 
-		var untradables = ["mew","celebi","deoxys_attack","deoxys_defense","deoxys_speed","deoxys","jirachi","darkrai"];
+		var untradables = ["mew","celebi","deoxys_attack","deoxys_defense","deoxys_speed","deoxys","jirachi","darkrai","genesect","genesect_burn","genesect_shock","genesect_chill","genesect_douse"];
 		var maxNear1500 = ["bastiodon"]
 
 		if(self.hasTag("legendary")){

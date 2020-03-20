@@ -2108,6 +2108,49 @@ select, input {
   margin: 0 0 0 5px;
   border-radius: 30px;
 }
+.article .threats-table .region-label,
+.article .alternatives-table .region-label,
+.article .meta-table .region-label {
+  font-size: 14px;
+  font-weight: normal;
+  font-style: italic;
+  text-transform: capitalize;
+}
+.article .threats-table .region-label.kanto,
+.article .alternatives-table .region-label.kanto,
+.article .meta-table .region-label.kanto {
+  color: #ce0000;
+}
+.article .threats-table .region-label.johto,
+.article .alternatives-table .region-label.johto,
+.article .meta-table .region-label.johto {
+  color: #a59662;
+}
+.article .threats-table .region-label.hoenn,
+.article .alternatives-table .region-label.hoenn,
+.article .meta-table .region-label.hoenn {
+  color: #2665f3;
+}
+.article .threats-table .region-label.sinnoh,
+.article .alternatives-table .region-label.sinnoh,
+.article .meta-table .region-label.sinnoh {
+  color: #821a37;
+}
+.article .threats-table .region-label.unova,
+.article .alternatives-table .region-label.unova,
+.article .meta-table .region-label.unova {
+  color: #333;
+}
+.article .threats-table .region-label.alola,
+.article .alternatives-table .region-label.alola,
+.article .meta-table .region-label.alola {
+  color: #fb900b;
+}
+.article .threats-table .region-label.galar,
+.article .alternatives-table .region-label.galar,
+.article .meta-table .region-label.galar {
+  color: #946000;
+}
 
 .article-item {
   margin-bottom: 10px;
