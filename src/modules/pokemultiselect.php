@@ -16,7 +16,7 @@
 				<option value="great" type="great" class="multi-battle">Great League Meta</option>
 				<option value="ultra" type="ultra" class="hide multi-battle">Ultra League Meta</option>
 				<option value="master" type="master" class="hide multi-battle">Master League Meta</option>
-				<option value="toxic" type="voyager" class="multi-battle">Voyager Cup Meta</option>
+				<option value="voyager" type="voyager" class="multi-battle">Voyager Cup Meta</option>
 				<option value="toxic" type="toxic" class="multi-battle">Toxic Cup Meta</option>
 			</select>
 			<div class="flex quick-fill-buttons">
