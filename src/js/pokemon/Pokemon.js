@@ -411,7 +411,7 @@ function Pokemon(id, i, b){
 		var effectiveness = defender.typeEffectiveness[self.fastMove.type];
 		var minAttack = self.generateIVCombinations("atk", -1, 1)[0].atk;
 		var maxAttack = self.generateIVCombinations("atk", 1, 1)[0].atk;
-		var maxDefense = defender.generateIVCombinations("def", 1, 1)[0].def * defender.shadowDefMult;
+		var maxDefense = defender.generateIVCombinations("def", 1, 1)[0].def;
 		var minDamage = battle.calculateDamageByStats(minAttack, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
 		var maxDamage = battle.calculateDamageByStats(maxAttack, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
 
@@ -862,10 +862,6 @@ function Pokemon(id, i, b){
 
 		for(var n = 0; n < allTypes.length; n++){
 			effectiveness = battle.getEffectiveness(allTypes[n], self.types);
-
-			// Round to nearest thousandths to avoid Javascript floating point wonkiness
-
-			effectiveness = Math.floor(effectiveness * 1000) / 1000;
 			arr[allTypes[n].toLowerCase()] = effectiveness;
 		}
 

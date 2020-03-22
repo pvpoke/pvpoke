@@ -112,6 +112,8 @@ require_once 'header.php'; ?>
 					<div class="check" value="mythical"><span></span> Mythical</div>
 					<div class="check" value="alolan"><span></span> Alolan</div>
 					<div class="check" value="regional"><span></span> Regional</div>
+					<div class="check" value="shadow"><span></span> Shadow</div>
+					<div class="check" value="shadoweligible"><span></span> Shadow Eligible</div>
 				</div>
 			</div>
 
@@ -236,6 +238,16 @@ require_once 'header.php'; ?>
 
 <div class="details-template hide">
 	<div class="detail-section float margin">
+		<div class="ranking-header">Key Matchups</div>
+		<div class="ranking-header right">Battle Rating</div>
+		<div class="matchups clear"></div>
+	</div>
+	<div class="detail-section float">
+		<div class="ranking-header">Top Counters</div>
+		<div class="ranking-header right">Battle Rating</div>
+		<div class="counters clear"></div>
+	</div>
+	<div class="detail-section float margin">
 		<div class="ranking-header">Fast Moves</div>
 		<div class="ranking-header right">Usage</div>
 		<div class="moveset fast clear"></div>
@@ -245,15 +257,24 @@ require_once 'header.php'; ?>
 		<div class="ranking-header right">Usage</div>
 		<div class="moveset charged clear"></div>
 	</div>
+	<div class="clear"></div>
+	<div class="detail-section typing">
+		<div class="rating-container">
+			<div class="ranking-header">Primary Type</div>
+			<div class="type"></div>
+		</div>
+		<div class="rating-container">
+			<div class="ranking-header">Secondary Type</div>
+			<div class="type"></div>
+		</div>
+	</div>
 	<div class="detail-section float margin">
-		<div class="ranking-header">Key Matchups</div>
-		<div class="ranking-header right">Battle Rating</div>
-		<div class="matchups clear"></div>
+		<div class="ranking-header">Weaknesses</div>
+		<div class="weaknesses clear"></div>
 	</div>
 	<div class="detail-section float">
-		<div class="ranking-header">Top Counters</div>
-		<div class="ranking-header right">Battle Rating</div>
-		<div class="counters clear"></div>
+		<div class="ranking-header">Resistances</div>
+		<div class="resistances clear"></div>
 	</div>
 	<div class="clear"></div>
 	<div class="detail-section stats">

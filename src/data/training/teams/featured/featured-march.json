@@ -168,6 +168,48 @@
 		]
 	},
 	{
+		"name": "ReinBerglund",
+		"slug": "reinberglund",
+		"img": "reinberglund",
+		"cup": "voyager",
+		"cupName": "Voyager",
+		"league": 1500,
+		"description": "Pokémon GO PvP:er, nr3 in Sweden",
+		"link": "https://www.twitch.tv/reinberglund",
+		"pokemon": [
+			{
+				"speciesId": "haunter",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["SHADOW_PUNCH","SHADOW_BALL"]
+			},
+			{
+				"speciesId": "azumarill",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["ICE_BEAM","HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "registeel",
+				"fastMove": "LOCK_ON",
+				"chargedMoves": ["FLASH_CANNON","FOCUS_BLAST"]
+			},
+			{
+				"speciesId": "gallade",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["LEAF_BLADE","CLOSE_COMBAT"]
+			},
+			{
+				"speciesId": "marowak_alolan",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["BONE_CLUB","SHADOW_BALL"]
+			},
+			{
+				"speciesId": "shiftry",
+				"fastMove": "SNARL",
+				"chargedMoves": ["LEAF_BLADE","FOUL_PLAY"]
+			}
+		]
+	},
+	{
 		"name": "Champion Blue",
 		"slug": "championblue",
 		"img": "pvpoke",

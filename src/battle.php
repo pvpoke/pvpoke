@@ -134,6 +134,7 @@ require_once 'header.php';
 						</tr>
 					</table>
 					<p class="center">Click or tap to view battles.</p>
+					<p>The grid above shows <span class="name-1">Pokemon</span>'s matchups against <span class="name-2">Pokemon</span> depending on how many shields each side uses. Look horizontally for the number of shields used by <span class="name-1">Pokemon</span> and vertically for the number of shields used by <span class="name-2">Pokemon</span>. Above 500 is a win and under 500 is a loss.</p>
 				</div>
 
 				<h2 class="center">Breakpoints &amp; Bulkpoints</h2>

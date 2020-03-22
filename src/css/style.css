@@ -1110,18 +1110,24 @@ select, input {
   background-image: url("../img/starburst.png");
 }
 .battle-results .battle-details .breakpoints-section,
+.battle-results .battle-details .matchup-detail-section,
 .battle-results .battle-details .cmp-section, .battle-results.matrix .breakpoints-section,
+.battle-results.matrix .matchup-detail-section,
 .battle-results.matrix .cmp-section {
   max-width: 340px;
   margin: 0 auto 35px auto;
 }
 .battle-results .battle-details .breakpoints-section .bold,
+.battle-results .battle-details .matchup-detail-section .bold,
 .battle-results .battle-details .cmp-section .bold, .battle-results.matrix .breakpoints-section .bold,
+.battle-results.matrix .matchup-detail-section .bold,
 .battle-results.matrix .cmp-section .bold {
   font-weight: bold;
 }
 .battle-results .battle-details .breakpoints-section .ivs .button,
+.battle-results .battle-details .matchup-detail-section .ivs .button,
 .battle-results .battle-details .cmp-section .ivs .button, .battle-results.matrix .breakpoints-section .ivs .button,
+.battle-results.matrix .matchup-detail-section .ivs .button,
 .battle-results.matrix .cmp-section .ivs .button {
   font-size: 14px;
   margin: 0;
@@ -1131,7 +1137,9 @@ select, input {
   color: #eee;
 }
 .battle-results .battle-details .breakpoints-section .golden-combination .button,
+.battle-results .battle-details .matchup-detail-section .golden-combination .button,
 .battle-results .battle-details .cmp-section .golden-combination .button, .battle-results.matrix .breakpoints-section .golden-combination .button,
+.battle-results.matrix .matchup-detail-section .golden-combination .button,
 .battle-results.matrix .cmp-section .golden-combination .button {
   display: inline-block;
   font-size: 14px;
@@ -1609,24 +1617,24 @@ select, input {
 .rank .details .detail-section.float.margin {
   margin-right: 1%;
 }
-.rank .details .detail-section.overall, .rank .details .detail-section.stats {
+.rank .details .detail-section.overall, .rank .details .detail-section.stats, .rank .details .detail-section.typing {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.rank .details .detail-section.overall .rating-container, .rank .details .detail-section.stats .rating-container {
+.rank .details .detail-section.overall .rating-container, .rank .details .detail-section.stats .rating-container, .rank .details .detail-section.typing .rating-container {
   text-align: center;
   padding: 5px;
 }
-.rank .details .detail-section.overall .rating-container .ranking-header, .rank .details .detail-section.stats .rating-container .ranking-header {
+.rank .details .detail-section.overall .rating-container .ranking-header, .rank .details .detail-section.stats .rating-container .ranking-header, .rank .details .detail-section.typing .rating-container .ranking-header {
   float: none;
   margin: 0;
   width: 100%;
   padding: 0 5px;
   font-size: 14px;
 }
-.rank .details .detail-section.overall .rating-container .rating, .rank .details .detail-section.stats .rating-container .rating {
+.rank .details .detail-section.overall .rating-container .rating, .rank .details .detail-section.stats .rating-container .rating, .rank .details .detail-section.typing .rating-container .rating {
   padding: 5px;
   display: inline-block;
   float: none;
@@ -1634,6 +1642,11 @@ select, input {
   margin: 0 auto;
   font-weight: bold;
   background-color: rgba(0, 0, 0, 0.65);
+}
+.rank .details .detail-section.overall .type, .rank .details .detail-section.stats .type, .rank .details .detail-section.typing .type {
+  display: inline-block;
+  text-transform: capitalize;
+  padding: 2px 12px;
 }
 .rank .details .detail-section .move {
   display: inline-block;
@@ -1643,6 +1656,31 @@ select, input {
 }
 .rank .details .detail-section .move.charged {
   font-weight: bold;
+}
+.rank .details .detail-section .type {
+  border-radius: 12px;
+  margin: 3px;
+}
+.rank .details .detail-section .resistances, .rank .details .detail-section .weaknesses {
+  display: flex;
+  flex-wrap: wrap;
+}
+.rank .details .detail-section .resistances .type, .rank .details .detail-section .weaknesses .type {
+  display: flex;
+}
+.rank .details .detail-section .resistances .type div:nth-of-type(2), .rank .details .detail-section .weaknesses .type div:nth-of-type(2) {
+  text-transform: capitalize;
+  padding: 2px 8px 2px 4px;
+  font-size: 12px;
+  line-height: 18px;
+}
+.rank .details .detail-section .resistances .multiplier, .rank .details .detail-section .weaknesses .multiplier {
+  font-size: 12px;
+  background: #333;
+  color: #ddd;
+  border-radius: 12px;
+  padding: 2px 4px;
+  line-height: 18px;
 }
 .rank .details .detail-section .rating-container .rating {
   background-color: rgba(0, 0, 0, 0.35);
@@ -3062,6 +3100,12 @@ a.toggle {
 
   .rank .details .detail-section.overall .rating-container .ranking-header {
     font-size: 16px;
+  }
+
+  .rank .details .detail-section .weaknesses .type div:nth-of-type(2),
+.rank .details .detail-section .resistances .type div:nth-of-type(2) {
+    font-size: 16px;
+    line-height: 16px;
   }
 
   .rankings-container {

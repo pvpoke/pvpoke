@@ -1364,6 +1364,7 @@ select, input{
 		}
 
 		.breakpoints-section,
+		.matchup-detail-section,
 		.cmp-section{
 			max-width:340px;
 			margin: 0 auto 35px auto;
@@ -1895,7 +1896,8 @@ select, input{
 			}
 
 			&.overall,
-			&.stats{
+			&.stats,
+			&.typing{
 				width: 100%;
 				display: flex;
 				flex-wrap: wrap;
@@ -1923,6 +1925,12 @@ select, input{
 						background-color: rgba(0,0,0,.65);
 					}
 				}
+
+				.type{
+					display:inline-block;
+					text-transform: capitalize;
+					padding: 2px 12px;
+				}
 			}
 
 			.move{
@@ -1933,6 +1941,36 @@ select, input{
 
 				&.charged{
 					font-weight:bold;
+				}
+			}
+
+			.type{
+				border-radius:12px;
+				margin:3px;
+			}
+
+			.resistances, .weaknesses{
+				display:flex;
+				flex-wrap: wrap;
+
+				.type{
+					display:flex;
+
+					div:nth-of-type(2){
+						text-transform: capitalize;
+						padding: 2px 8px 2px 4px;
+						font-size:12px;
+						line-height: 18px;
+					}
+				}
+
+				.multiplier{
+					font-size: 12px;
+				    background: #333;
+				    color: #ddd;
+				    border-radius: 12px;
+				    padding: 2px 4px;
+					line-height: 18px;
 				}
 			}
 
@@ -3320,6 +3358,12 @@ a.toggle{
 
 	.rank .details .detail-section.overall .rating-container .ranking-header{
 		font-size:16px;
+	}
+
+	.rank .details .detail-section .weaknesses .type div:nth-of-type(2),
+	.rank .details .detail-section .resistances .type div:nth-of-type(2){
+		font-size:16px;
+		line-height: 16px;
 	}
 
 	.rankings-container{

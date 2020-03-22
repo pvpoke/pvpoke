@@ -27,16 +27,16 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.14.1 (March 13, 2020)</h4>
+	<h4>v1.14.3 (March 22, 2020)</h4>
 	<ul>
-		<li>Shadow Pokemon have been removed from the Team Builder threats and alternatives lists for the time being.</li>
+		<li>Rankings now display Pokemon typing, weaknesses, and resistances.</li>
+		<li>Identified and fixed a rounding issue with type effectiveness in damage calculations for double- and triple-resisted moves.</li>
 		<ul>
-			<li>Shadow Pokemon are still listed in the CSV export.</li>
+			<li>This issue had no impact in the majority of matchups but affected breakpoint and bulkpoint calculations for double- and triple-resisted moves. These breakpoints are reachable with 0.1-0.2 less Attack than previously shown.</li>
 		</ul>
-		<li>The Team Builder threats and alternative lists have been extended from 10 to 20 Pokemon.</li>
-		<li>Added an indicator in the battle timeline at 60 seconds to indicate when the switch button would be available after a switch.</li>
-		<li>Alolan Pokemon are no longer listed for "gen1"/"kanto" search.</li>
-		<li>Fixed an issue where entering Pokemon into custom groups (Matrix Battle, Team Builder, etc.) and then changing leagues would produce erroneous results. Changing league now adjusts the selected Pokemon to the appropriate CP.</li>
+		<li>Fixed a breakpoint calculation issue for guaranteeing breakpoints against Shadow Pokemon.</li>
+		<li>Search bar processing on Rankings and Multi-Battle has been tweaked for smoother typing on mobile.</li>
+		<li>Added "Shadow" and "Shadow Eligible" tags to the Custom Rankings filters.</li>
 	</ul>
 
 	<h3>Latest Article</h3>
