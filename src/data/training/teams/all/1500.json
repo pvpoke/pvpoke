@@ -27,9 +27,16 @@
 			},
 			{
 				"speciesId": "lapras",
-				"fastMove": "WATER_GUN",
-				"chargedMoves": ["SURF","ICE_BEAM"],
-				"difficulty": 1,
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["SURF","SKULL_BASH"],
+				"difficulty": 2,
+				"weight":2
+			},
+			{
+				"speciesId": "dewgong",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["ICY_WIND","WAtER_PULSE"],
+				"difficulty": 2,
 				"weight":1
 			},
 			{

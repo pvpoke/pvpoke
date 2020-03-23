@@ -25,6 +25,16 @@
 		"chargedMoves":["POWER_UP_PUNCH","FOUL_PLAY"]
 	},
 	{
+		"speciesId":"galvantula",
+		"fastMove":"VOLT_SWITCH",
+		"chargedMoves":["DISCHARGE","BUG_BUZZ"]
+	},
+	{
+		"speciesId":"shiftry",
+		"fastMove":"SNARL",
+		"chargedMoves":["LEAF_BLADE","FOUL_PLAY"]
+	},
+	{
 		"speciesId":"skarmory",
 		"fastMove":"AIR_SLASH",
 		"chargedMoves":["SKY_ATTACK","FLASH_CANNON"]
@@ -58,6 +68,16 @@
 		"speciesId":"jirachi",
 		"fastMove":"CONFUSION",
 		"chargedMoves":["DOOM_DESIRE","PSYCHIC"]
+	},
+	{
+		"speciesId":"dewgong",
+		"fastMove":"ICE_SHARD",
+		"chargedMoves":["ICY_WIND","WAtER_PULSE"]
+	},
+	{
+		"speciesId":"lapras",
+		"fastMove":"ICE_SHARD",
+		"chargedMoves":["SURF","SKULL_BASH"]
 	},
 	{
 		"speciesId":"melmetal",
