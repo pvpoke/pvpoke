@@ -104,33 +104,44 @@ require_once 'header.php';
 						<tr>
 							<td></td>
 							<td></td>
-							<td colspan="3"><span class="name name-2">Pokemon</span></td>
+							<td colspan="4"><span class="name name-2">Pokemon</span></td>
 						</tr>
 						<tr>
 							<td></td>
 							<td></td>
 							<td>0 <span class="shield shield-none"></span></td>
 							<td>1 <span class="shield"></span></td>
-							<td>2 <span class="shield shield"></span></td>
+							<td>2 <span class="shield"></span></td>
+							<td>3 <span class="shield"></span></td>
 						</tr>
 						<tr>
-							<td rowspan="3"><span class="name name-1">Pokemon</span></td>
+							<td rowspan="4"><span class="name name-1">Pokemon</span></td>
 							<td>0 <span class="shield shield-none"></span></td>
 							<td><a href="#" class="rating star battle-0-0" shields="0,0">100</a></td>
 							<td><a href="#" class="rating star battle-1-0" shields="1,0">100</a></td>
 							<td><a href="#" class="rating star battle-2-0" shields="2,0">100</a></td>
+							<td><a href="#" class="rating star battle-3-0" shields="2,0">100</a></td>
 						</tr>
 						<tr>
 							<td>1 <span class="shield"></span></td>
 							<td><a href="#" class="rating star battle-0-1" shields="0,1">100</a></td>
 							<td><a href="#" class="rating star battle-1-1" shields="1,1">100</a></td>
 							<td><a href="#" class="rating star battle-2-1" shields="2,1">100</a></td>
+							<td><a href="#" class="rating star battle-3-1" shields="2,1">100</a></td>
 						</tr>
 						<tr>
-							<td>2 <span class="shield shield"></span></td>
+							<td>2 <span class="shield"></span></td>
 							<td><a href="#" class="rating star battle-0-2" shields="0,2">100</a></td>
 							<td><a href="#" class="rating star battle-1-2" shields="1,2">100</a></td>
 							<td><a href="#" class="rating star battle-2-2" shields="2,2">100</a></td>
+							<td><a href="#" class="rating star battle-3-2" shields="2,2">100</a></td>
+						</tr>
+						<tr>
+							<td>3 <span class="shield shield"></span></td>
+							<td><a href="#" class="rating star battle-0-3" shields="0,2">100</a></td>
+							<td><a href="#" class="rating star battle-1-3" shields="1,2">100</a></td>
+							<td><a href="#" class="rating star battle-2-3" shields="2,2">100</a></td>
+							<td><a href="#" class="rating star battle-3-3" shields="2,2">100</a></td>
 						</tr>
 					</table>
 					<p class="center">Click or tap to view battles.</p>
