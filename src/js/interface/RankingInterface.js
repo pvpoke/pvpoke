@@ -70,6 +70,12 @@ var InterfaceMaster = (function () {
 
 				battle.setCP(league);
 
+				if(cup == "beam"){
+					category = "beaminess";
+					$(".description").hide();
+					$(".description."+category).show();
+				}
+
 				/* This timeout allows the interface to display the loading message before
 				being thrown into the data loading loop */
 
