@@ -1639,18 +1639,18 @@
 			{
 				"speciesId": "giratina_altered",
 				"fastMove": "SHADOW_CLAW",
-				"weight": 20
+				"weight": 60
 			},
 			{
 				"speciesId": "typhlosion",
 				"chargedMoves": ["BLAST_BURN", "SOLAR_BEAM"],
-				"weight": 4
+				"weight": 7
 			},
 			{
 				"speciesId": "charizard",
 				"fastMove": "FIRE_SPIN",
 				"chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"],
-				"weight": 4
+				"weight": 15
 			},
 			{
 				"speciesId": "escavalier",
@@ -1700,7 +1700,8 @@
 			},
 			{
 				"speciesId": "melmetal",
-				"chargedMoves": ["ROCK_SLIDE", "SUPER_POWER"]
+				"chargedMoves": ["ROCK_SLIDE", "SUPER_POWER"],
+				"weight": 7
 			},
 			{
 				"speciesId": "gliscor",
@@ -1738,16 +1739,17 @@
 			},
 			{
 				"speciesId": "machamp",
-				"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
+				"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
+				"weight": 4
 			},
 			{
 				"speciesId": "snorlax",
 				"chargedMoves": ["BODY_SLAM", "EARTHQUAKE"],
-				"weight": 12
+				"weight": 20
 			},
 			{
 				"speciesId": "empoleon",
-				"chargedMoves": ["HYDRO_CANNON", "FLASH_CANNON"]
+				"weight": 2
 			},
 			{
 				"speciesId": "ampharos",
@@ -1775,12 +1777,13 @@
 			},
 			{
 				"speciesId": "blaziken",
-				"chargedMoves": ["BLAST_BURN", "BLAZE_KICK"]
+				"chargedMoves": ["BLAST_BURN", "BLAZE_KICK"],
+				"weight": 3
 			},
 			{
 				"speciesId": "articuno",
 				"chargedMoves": ["ICY_WIND", "ANCIENT_POWER"],
-				"weight": 4
+				"weight": 9
 			},
 			{
 				"speciesId": "hariyama",
@@ -1788,7 +1791,8 @@
 			},
 			{
 				"speciesId": "drapion",
-				"chargedMoves": ["FELL_STINGER", "AQUA_TAIL"]
+				"fastMove": "ICE_FANG",
+				"chargedMoves": ["CRUNCH", "AQUA_TAIL"]
 			},
 			{
 				"speciesId": "forretress",
@@ -1802,13 +1806,13 @@
 				"speciesId": "cresselia",
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["AURORA_BEAM", "MOONBLAST"],
-				"weight": 10
+				"weight": 4
 			},
 			{
 				"speciesId": "lapras",
 				"fastMove": "ICE_SHARD",
 				"chargedMoves": ["SURF", "ICE_BEAM"],
-				"weight": 3
+				"weight": 6
 			},
 			{
 				"speciesId": "arcanine",
@@ -1874,7 +1878,7 @@
 			{
 				"speciesId": "poliwrath",
 				"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"],
-				"weight": 12
+				"weight": 10
 			},
 			{
 				"speciesId": "muk",
@@ -1894,7 +1898,8 @@
 			},
 			{
 				"speciesId": "feraligatr",
-				"fastMove": "ICE_FANG"
+				"fastMove": "ICE_FANG",
+				"weight": 2
 			},
 			{
 				"speciesId": "ninetales_alolan",
@@ -1904,7 +1909,7 @@
 				"speciesId": "muk_alolan",
 				"fastMove": "SNARL",
 				"chargedMoves": ["DARK_PULSE","GUNK_SHOT"],
-				"weight": 14
+				"weight": 25
 			},
 			{
 				"speciesId": "gardevoir",
@@ -1921,7 +1926,7 @@
 			{
 				"speciesId": "togekiss",
 				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"],
-				"weight": 16
+				"weight": 25
 			},
 			{
 				"speciesId": "lucario",
@@ -1929,7 +1934,8 @@
 			},
 			{
 				"speciesId": "mewtwo_armored",
-				"chargedMoves": ["PSYSTRIKE","DYNAMIC_PUNCH"]
+				"chargedMoves": ["PSYSTRIKE","DYNAMIC_PUNCH"],
+				"weight": 4
 			},
 			{
 				"speciesId": "mewtwo",
@@ -1946,23 +1952,48 @@
 			},
 			{
 				"speciesId": "venusaur",
-				"weight": 18
+				"weight": 22
 			},
 			{
 				"speciesId": "giratina_origin",
-				"weight": 6
+				"weight": 16
 			},
 			{
 				"speciesId": "clefable",
-				"weight": 4
+				"weight": 11
+			},
+			{
+				"speciesId": "shiftry",
+				"weight": 8
 			},
 			{
 				"speciesId": "lucario",
+				"weight": 3
+			},
+			{
+				"speciesId": "scizor",
+				"weight": 2
+			},
+			{
+				"speciesId": "steelix",
 				"weight": 4
 			},
 			{
+				"speciesId": "meganium",
+				"weight": 2
+			},
+			{
+				"speciesId": "gyarados",
+				"chargedMoves": ["CRUNCH","HYDRO_PUMP"],
+				"weight": 4
+			},
+			{
+				"speciesId": "swampert",
+				"weight": 50
+			},
+			{
 				"speciesId": "registeel",
-				"weight": 12
+				"weight": 26
 			}
 		]
 	},
