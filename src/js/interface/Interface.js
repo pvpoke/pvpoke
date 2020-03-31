@@ -537,9 +537,9 @@ var InterfaceMaster = (function () {
 				if(! sandbox){
 					var originalShields = [pokemon[0].startingShields, pokemon[1].startingShields];
 
-					for(var i = 0; i < 4; i++){
+					for(var i = 0; i < 3; i++){
 
-						for(var n = 0; n < 4; n++){
+						for(var n = 0; n < 3; n++){
 
 							pokemon[0].setShields(n);
 							pokemon[1].setShields(i);

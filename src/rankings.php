@@ -150,7 +150,7 @@ require_once 'header.php';
 
 	<ul class="description beaminess hide">
 		<li>1 point for a Solar Beam or Hyper Beam KO</li>
-		<li>First to 5 points wins the set!</li>
+		<li>First to 3 points wins the set!</li>
 		<li>Show 6, bring 3, no duplicates</li>
 		<li>Any Pokemon can be on your team for support with the exceptions below, but remember only beams get you points!</li>
 		<ul>
@@ -159,7 +159,7 @@ require_once 'header.php';
 		</ul>
 	</ul>
 
-	<p class="description beaminess hide">Battle until one player reaches 5 points and is declared the winner. Winning or losing the actual battles has no bearing on points, so do what you can to get your beams or deny your opponent!</p>
+	<p class="description beaminess hide">Battle until one player reaches 3 points and is declared the winner. Winning or losing the actual battles doesn't matter, so do what you can to get your beams or deny your opponent!</p>
 
 	<p class="description beaminess hide">The rankings below evaluate Pokemon based on their matchups and a very official Beaminess metric that measures the speediness, bait ability, and power of their beams:</p>
 
