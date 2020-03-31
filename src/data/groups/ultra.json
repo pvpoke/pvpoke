@@ -45,11 +45,6 @@
 		"chargedMoves":["BLAST_BURN","SOLAR_BEAM"]
 	},
 	{
-		"speciesId":"deoxys_defense",
-		"fastMove":"COUNTER",
-		"chargedMoves":["ROCK_SLIDE","PSYCHO_BOOST"]
-	},
-	{
 		"speciesId":"blastoise",
 		"fastMove":"WATER_GUN",
 		"chargedMoves":["HYDRO_CANNON","ICE_BEAM"]
@@ -80,16 +75,6 @@
 		"chargedMoves":["CRUNCH","EARTHQUAKE"]
 	},
 	{
-		"speciesId":"latios",
-		"fastMove":"DRAGON_BREATH",
-		"chargedMoves":["DRAGON_CLAW","SOLAR_BEAM"]
-	},
-	{
-		"speciesId":"latias",
-		"fastMove":"DRAGON_BREATH",
-		"chargedMoves":["OUTRAGE","THUNDER"]
-	},
-	{
 		"speciesId":"dragonite",
 		"fastMove":"DRAGON_BREATH",
 		"chargedMoves":["DRAGON_CLAW","DRACO_METEOR"]
@@ -115,11 +100,6 @@
 		"chargedMoves":["LEAF_BLADE","CLOSE_COMBAT"]
 	},
 	{
-		"speciesId": "moltres",
-		"fastMove": "WING_ATTACK",
-		"chargedMoves": ["SKY_ATTACK","OVERHEAT"]
-	},
-	{
 		"speciesId":"muk_alolan",
 		"fastMove":"SNARL",
 		"chargedMoves":["DARK_PULSE","SLUDGE_WAVE"]
@@ -128,11 +108,6 @@
 		"speciesId":"snorlax",
 		"fastMove":"LICK",
 		"chargedMoves":["BODY_SLAM","EARTHQUAKE"]
-	},
-	{
-		"speciesId":"lugia",
-		"fastMove":"DRAGON_TAIL",
-		"chargedMoves":["SKY_ATTACK","FUTURE_SIGHT"]
 	},
 	{
 		"speciesId":"mewtwo_armored",
@@ -178,5 +153,15 @@
 		"speciesId":"clefable",
 		"fastMove":"CHARM",
 		"chargedMoves":["METEOR_MASH","PSYCHIC"]
+	},
+	{
+		"speciesId":"articuno",
+		"fastMove":"ICE_SHARD",
+		"chargedMoves":["ICY_WIND","ANCIENT_POWER"]
+	},
+	{
+		"speciesId":"shiftry",
+		"fastMove":"SNARL",
+		"chargedMoves":["LEAF_BLADE","FOUL_PLAY"]
 	}
 ]

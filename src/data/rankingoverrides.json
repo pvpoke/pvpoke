@@ -81,6 +81,10 @@
 				"chargedMoves": ["EARTHQUAKE", "MIRROR_SHOT"]
 			},
 			{
+				"speciesId": "stunfisk",
+				"fastMove": "THUNDER_SHOCK"
+			},
+			{
 				"speciesId": "dewgong",
 				"chargedMoves": ["ICY_WIND","WATER_PULSE"],
 				"weight": 4
@@ -529,6 +533,10 @@
 			{
 				"speciesId": "forretress",
 				"chargedMoves": ["EARTHQUAKE", "MIRROR_SHOT"]
+			},
+			{
+				"speciesId": "stunfisk",
+				"fastMove": "THUNDER_SHOCK"
 			},
 			{
 				"speciesId": "dewgong",
@@ -3692,6 +3700,10 @@
 				"fastMove": "SNARL",
 				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"],
 				"weight": 6
+			},
+			{
+				"speciesId": "stunfisk",
+				"fastMove": "THUNDER_SHOCK"
 			},
 			{
 				"speciesId": "scizor",

@@ -369,6 +369,20 @@
 				"weight":5
 			},
 			{
+				"speciesId": "stunfisk",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["DISCHARGE","MUD_BOMB"],
+				"difficulty": 3,
+				"weight":5
+			},
+			{
+				"speciesId": "stunfisk",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["DISCHARGE","MUD_BOMB"],
+				"difficulty": 3,
+				"weight":5
+			},
+			{
 				"speciesId": "flygon_shadow",
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["DRAGON_CLAW","STONE_EDGE"],

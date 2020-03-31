@@ -929,6 +929,20 @@
 				"weight":14
 			},
 			{
+				"speciesId": "stunfisk",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["DISCHARGE","MUD_BOMB"],
+				"difficulty": 3,
+				"weight":2
+			},
+			{
+				"speciesId": "stunfisk",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["DISCHARGE","MUD_BOMB"],
+				"difficulty": 3,
+				"weight":2
+			},
+			{
 				"speciesId": "quagsire",
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["STONE_EDGE","ACID_SPRAY"],
