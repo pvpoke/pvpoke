@@ -2,6 +2,7 @@
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="tsa-2" cup="voyager">Voyager Cup</option>
 	<option value="tsa-2" cup="toxic">Toxic Cup</option>
+	<option value="community" cup="beam">Get Beamed</option>
 	<option value="community" cup="safari">Safari Cup Flash Tournament</option>
 
 	<?php if((strpos($_SERVER['REQUEST_URI'], 'battle') !== false)||(strpos($_SERVER['REQUEST_URI'], 'rankings') !== false)): ?>
@@ -15,6 +16,7 @@
 	<option value="gen-5" cat="all">All Pokemon (With Generation 5)</option>
 	<option value="safari" cat="community">Montreal Safari Cup</option>
 	<option value="fantasy" cat="community">GO LIVE Fantasy Cup</option>
+	<option value="beam" cat="community">Get Beamed</option>
 	<option value="jungle"  cat="tsa-1">Jungle Cup</option>
 	<option value="rainbow" cat="tsa-1">Rainbow Cup</option>
 	<option value="championships-1" cat="tsa-1">Season 1 Championships</option>

@@ -46,6 +46,7 @@ function TrainingAI(l, p, b){
 		var pool = teamPool[league+""+cup];
 		var slotBucket = [];
 		var slots = [];
+		var roles = []; // Array of roles that have been filled on the team
 
 		// Put all the slots in bucket, multiple times for its weight value
 
@@ -114,7 +115,7 @@ function TrainingAI(l, p, b){
 			for(var n = 0; n < slotPool.length; n++){
 				var poke = slotPool[n];
 				// Is this Pokemon valid to be added to the team?
-				if((selectedIds.indexOf(poke.speciesId) === -1)&&(Math.abs(poke.difficulty - level) <= 1)){
+				if((selectedIds.indexOf(poke.speciesId) === -1)&&(Math.abs(poke.difficulty - level) <= 1)&&(roles.indexOf(poke.role) == -1)){
 					for(var j = 0; j < poke.weight; j++){
 						pokeBucket.push(poke);
 					}
@@ -127,6 +128,8 @@ function TrainingAI(l, p, b){
 
 			var pokemon = new Pokemon(poke.speciesId, player.index, battle);
 			pokemon.initialize(battle.getCP());
+
+			roles.push(poke.role);
 
 			// Select a random IV spread according to difficulty
 			var ivCombos = pokemon.generateIVCombinations("overall", 1, props.ivComboRange);
@@ -154,6 +157,11 @@ function TrainingAI(l, p, b){
 
 			roster.push(pokemon);
 			selectedIds.push(poke.speciesId);
+		}
+
+		// Sort roster by dex number
+		if(cup == "voyager"){
+			roster.sort((a,b) => (a.dex > b.dex) ? 1 : ((b.dex > a.dex) ? -1 : 0));
 		}
 
 		player.setRoster(roster);

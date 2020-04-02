@@ -191,7 +191,7 @@
 			},
 			{
 				"speciesId": "ludicolo",
-				"fastMove": "RAZOR_LEAF"
+				"fastMove": "BUBBLE"
 			},
 			{
 				"speciesId": "magneton",
@@ -449,6 +449,37 @@
 			{
 				"speciesId": "clefable",
 				"weight":6
+			},
+			{
+				"speciesId": "bellossom_shadow",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["LEAF_BLADE","DAZZLING_GLEAM"]
+			},
+			{
+				"speciesId": "cherrim_sunny",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["WEATHER_BALL_FIRE","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "ferrothorn",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["POWER_WHIP","THUNDER"]
+			},
+			{
+				"speciesId": "sceptile",
+				"chargedMoves": ["LEAF_BLADE", "EARTHQUAKE"]
+			},
+			{
+				"speciesId": "serperior",
+				"chargedMoves": ["GRASS_KNOT", "AERIAL_ACE"]
+			},
+			{
+				"speciesId": "exeggutor_alolan",
+				"fastMove": "BULLET_SEED"
+			},
+			{
+				"speciesId": "maractus",
+				"fastMove": "BULLET_SEED"
 			}
 		]
 	},
@@ -648,7 +679,7 @@
 			},
 			{
 				"speciesId": "ludicolo",
-				"fastMove": "RAZOR_LEAF"
+				"fastMove": "BUBBLE"
 			},
 			{
 				"speciesId": "magneton",
@@ -936,6 +967,33 @@
 			{
 				"speciesId": "zweilous",
 				"weight":5
+			},
+			{
+				"speciesId": "bellossom_shadow",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["LEAF_BLADE","DAZZLING_GLEAM"]
+			},
+			{
+				"speciesId": "cherrim_sunny",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["WEATHER_BALL_FIRE","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "ferrothorn",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["POWER_WHIP","THUNDER"]
+			},
+			{
+				"speciesId": "sceptile",
+				"chargedMoves": ["LEAF_BLADE", "EARTHQUAKE"]
+			},
+			{
+				"speciesId": "exeggutor_alolan",
+				"fastMove": "BULLET_SEED"
+			},
+			{
+				"speciesId": "maractus",
+				"fastMove": "BULLET_SEED"
 			}
 		]
 	},
@@ -1524,22 +1582,22 @@
 				"fastMove": "CHARGE_BEAM"
 			},
 			{
-				"speciesId": "ludicolo",
-				"fastMove": "RAZOR_LEAF"
-			},
-			{
 				"speciesId": "tropius",
 				"fastMove": "AIR_SLASH",
 				"chargedMoves": ["LEAF_BLADE","AERIAL_ACE"],
 				"weight": 6
 			},
 			{
-				"speciesId": "articuno",
-				"chargedMoves": ["ANCIENT_POWER","ICE_BEAM"]
-			},
-			{
 				"speciesId": "raticate_alolan",
 				"chargedMoves": ["CRUNCH","HYPER_FANG"]
+			},
+			{
+				"speciesId": "ferrothorn",
+				"chargedMoves": ["POWER_WHIP","THUNDER"]
+			},
+			{
+				"speciesId": "sceptile",
+				"chargedMoves": ["LEAF_BLADE","EARTHQUAKE"]
 			},
 			{
 				"speciesId": "escavalier",
@@ -1870,7 +1928,7 @@
 			},
 			{
 				"speciesId": "articuno",
-				"chargedMoves": ["ICY_WIND", "ANCIENT_POWER"],
+				"chargedMoves": ["ICY_WIND", "HURRICANE"],
 				"weight": 9
 			},
 			{
@@ -2082,6 +2140,18 @@
 			{
 				"speciesId": "registeel",
 				"weight": 26
+			},
+			{
+				"speciesId": "ferrothorn",
+				"chargedMoves": ["POWER_WHIP","FLASH_CANNON"]
+			},
+			{
+				"speciesId": "cherrim_sunny",
+				"chargedMoves": ["WEATHER_BALL_FIRE","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "serperior",
+				"chargedMoves": ["GRASS_KNOT", "AERIAL_ACE"]
 			}
 		]
 	},
@@ -3947,6 +4017,10 @@
 				"chargedMoves": ["BODY_SLAM","EARTHQUAKE"]
 			},
 			{
+				"speciesId": "ferrothorn",
+				"chargedMoves": ["POWER_WHIP","FLASH_CANNON"]
+			},
+			{
 				"speciesId": "beedrill",
 				"chargedMoves": ["X_SCISSOR","SLUDGE_BOMB"]
 			},
@@ -4145,6 +4219,7 @@
 			},
 			{
 				"speciesId": "maractus",
+				"fastMove": "BULLET_SEED",
 				"chargedMoves": ["AERIAL_ACE","SOLAR_BEAM"]
 			},
 			{
@@ -4170,7 +4245,8 @@
 			},
 			{
 				"speciesId": "cherrim_sunny",
-				"fastMove": "BULLET_SEED"
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["WEATHER_BALL_FIRE", "SOLAR_BEAM"]
 			},
 			{
 				"speciesId": "cherrim_overcast",

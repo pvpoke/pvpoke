@@ -1,0 +1,1140 @@
+[
+	{
+		"slot": "Kanto",
+		"synergies": [],
+		"weight": 1,
+		"pokemon": [
+			{
+				"speciesId": "venusaur",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"],
+				"difficulty": 2,
+				"weight":38,
+				"role": "grass"
+			},
+			{
+				"speciesId": "hypno",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["THUNDER_PUNCH","SHADOW_BALL"],
+				"difficulty": 2,
+				"weight":17,
+				"role": "confusion"
+			},
+			{
+				"speciesId": "hypno",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["ICE_PUNCH","SHADOW_BALL"],
+				"difficulty": 2,
+				"weight":3,
+				"role": "confusion"
+			},
+			{
+				"speciesId": "hypno",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["ICE_PUNCH","THUNDER_PUNCH"],
+				"difficulty": 2,
+				"weight":1,
+				"role": "confusion"
+			},
+			{
+				"speciesId": "hypno",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["SHADOW_BALL","FOCUS_BLAST"],
+				"difficulty": 2,
+				"weight":1,
+				"role": "confusion"
+			},
+			{
+				"speciesId": "lapras",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["SURF","SKULL_BASH"],
+				"difficulty": 2,
+				"weight":8,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "dewgong",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["ICY_WIND","WATER_PULSE"],
+				"difficulty": 3,
+				"weight":1,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "mew",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["PSYSHOCK","GRASS_KNOT"],
+				"difficulty": 3,
+				"weight":1,
+				"role": "anti-fighting"
+			},
+			{
+				"speciesId": "wigglytuff",
+				"fastMove": "CHARM",
+				"chargedMoves": ["ICE_BEAM","PLAY_ROUGH"],
+				"difficulty": 1,
+				"weight":2,
+				"role": "charm"
+			},
+			{
+				"speciesId": "ivysaur",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["POWER_WHIP","SLUDGE_BOMB"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "grass"
+			},
+			{
+				"speciesId": "victreebel",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["LEAF_BLADE","SLUDGE_BOMB"],
+				"difficulty": 1,
+				"weight":2,
+				"role": "grass"
+			},
+			{
+				"speciesId": "charizard",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"],
+				"difficulty": 2,
+				"weight":6,
+				"role": "fire"
+			},
+			{
+				"speciesId": "haunter",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["SHADOW_PUNCH","SHADOW_BALL"],
+				"difficulty": 2,
+				"weight":3,
+				"role": "anti-fighting"
+			},
+			{
+				"speciesId": "articuno",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["ICY_WIND","ANCIENT_POWER"],
+				"difficulty": 3,
+				"weight":1,
+				"role": "flying"
+			},
+			{
+				"speciesId": "dragonite",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["DRAGON_CLAW","HURRICANE"],
+				"difficulty": 3,
+				"weight":1,
+				"role": "flying"
+			},
+			{
+				"speciesId": "dragonite_shadow",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["DRAGON_CLAW","HURRICANE"],
+				"difficulty": 3,
+				"weight":1,
+				"role": "flying"
+			},
+			{
+				"speciesId": "golbat",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["POISON_FANG","SHADOW_BALL"],
+				"difficulty": 2,
+				"weight":1,
+				"role": "flying"
+			},
+			{
+				"speciesId": "poliwrath",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["DYNAMIC_PUNCH","ICE_PUNCH"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "machamp",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["CROSS_CHOP","ROCK_SLIDE"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "blastoise",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["HYDRO_CANNON","ICE_BEAM"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "water"
+			},
+			{
+				"speciesId": "ninetales",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["PSYSHOCK","SOLAR_BEAM"],
+				"difficulty": 0,
+				"weight":1,
+				"role": "fire"
+			}
+		]
+	},
+	{
+		"slot": "Johto",
+		"synergies": [],
+		"weight": 4,
+		"pokemon": [
+			{
+				"speciesId": "azumarill",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["ICE_BEAM","HYDRO_PUMP"],
+				"difficulty": 2,
+				"weight":50,
+				"role": "water"
+			},
+			{
+				"speciesId": "azumarill",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["PLAY_ROUGH","HYDRO_PUMP"],
+				"difficulty": 2,
+				"weight":14,
+				"role": "water"
+			},
+			{
+				"speciesId": "azumarill",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["PLAY_ROUGH","ICE_BEAM"],
+				"difficulty": 2,
+				"weight":4,
+				"role": "water"
+			},
+			{
+				"speciesId": "skarmory",
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["SKY_ATTACK","FLASH_CANNON"],
+				"difficulty": 2,
+				"weight":15,
+				"role": "flying"
+			},
+			{
+				"speciesId": "meganium",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","EARTHQUAKE"],
+				"difficulty": 2,
+				"weight":28,
+				"role": "grass"
+			},
+			{
+				"speciesId": "umbreon",
+				"fastMove": "SNARL",
+				"chargedMoves": ["FOUL_PLAY","LAST_RESORT"],
+				"difficulty": 2,
+				"weight":7,
+				"role": "dark"
+			},
+			{
+				"speciesId": "umbreon",
+				"fastMove": "SNARL",
+				"chargedMoves": ["DARK_PULSE","LAST_RESORT"],
+				"difficulty": 2,
+				"weight":2,
+				"role": "dark"
+			},
+			{
+				"speciesId": "mantine",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["BUBBLE_BEAM","ICE_BEAM"],
+				"difficulty": 3,
+				"weight":6,
+				"role": "water"
+			},
+			{
+				"speciesId": "lanturn",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["THUNDERBOLT","HYDRO_PUMP"],
+				"difficulty": 2,
+				"weight":3,
+				"role": "water"
+			},
+			{
+				"speciesId": "lanturn",
+				"fastMove": "SPARK",
+				"chargedMoves": ["THUNDERBOLT","HYDRO_PUMP"],
+				"difficulty": 2,
+				"weight":1,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "noctowl",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["SKY_ATTACK","PSYCHIC"],
+				"difficulty": 2,
+				"weight":3,
+				"role": "flying"
+			},
+			{
+				"speciesId": "quagsire",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["EARTHQUAKE","STONE_EDGE"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "steelix",
+				"fastMove": "DRAGON_TAIL",
+				"chargedMoves": ["EARTHQUAKE","CRUNCH"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "bayleef",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["ANCIENT_POWER","GRASS_KNOT"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "grass"
+			},
+			{
+				"speciesId": "lugia",
+				"fastMove": "DRAGON_TAIL",
+				"chargedMoves": ["SKY_ATTACK","HYDRO_PUMP"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "flying"
+			},
+			{
+				"speciesId": "feraligatr",
+				"fastMove": "WATERFALL",
+				"chargedMoves": ["HYDRO_CANNON","CRUNCH"],
+				"difficulty": 0,
+				"weight":1,
+				"role": "water"
+			},
+			{
+				"speciesId": "granbull",
+				"fastMove": "CHARM",
+				"chargedMoves": ["CRUNCH","CLOSE_COMBAT"],
+				"difficulty": 0,
+				"weight":1,
+				"role": "charm"
+			}
+		]
+	},
+	{
+		"slot": "Hoenn",
+		"synergies": [],
+		"weight": 3,
+		"pokemon": [
+			{
+				"speciesId": "registeel",
+				"fastMove": "LOCK_ON",
+				"chargedMoves": ["FLASH_CANNON","FOCUS_BLAST"],
+				"difficulty": 3,
+				"weight":40,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "altaria",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["SKY_ATTACK","DRAGON_PULSE"],
+				"difficulty": 2,
+				"weight":25,
+				"role": "flying"
+			},
+			{
+				"speciesId": "altaria",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["SKY_ATTACK","DAZZLING_GLEAM"],
+				"difficulty": 2,
+				"weight":3,
+				"role": "flying"
+			},
+			{
+				"speciesId": "whiscash",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["MUD_BOMB","BLIZZARD"],
+				"difficulty": 2,
+				"weight":12,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "swampert",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["HYDRO_CANNON","SLUDGE_WAVE"],
+				"difficulty": 2,
+				"weight":3,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "swampert",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["HYDRO_CANNON","EARTHQUAKE"],
+				"difficulty": 2,
+				"weight":1,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "deoxys_defense",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["ROCK_SLIDE","THUNDERBOLT"],
+				"difficulty": 3,
+				"weight":6,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "deoxys_defense",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["ROCK_SLIDE","PSYCHO_BOOST"],
+				"difficulty": 3,
+				"weight":1,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "tropius",
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["LEAF_BLADE","AERIAL_ACE"],
+				"difficulty":2,
+				"weight":4,
+				"role": "grass"
+			},
+			{
+				"speciesId": "tropius",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["LEAF_BLADE","AERIAL_ACE"],
+				"difficulty":2,
+				"weight":1,
+				"role": "grass"
+			},
+			{
+				"speciesId": "medicham",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["DYNAMIC_PUNCH","ICE_PUNCH"],
+				"difficulty":1,
+				"weight":1,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "gardevoir_shadow",
+				"fastMove": "CHARM",
+				"chargedMoves": ["SHADOW_BALL","PSYCHIC"],
+				"difficulty":3,
+				"weight":1,
+				"role": "charm"
+			},
+			{
+				"speciesId": "shiftry",
+				"fastMove": "SNARL",
+				"chargedMoves": ["LEAF_BLADE","FOUL_PLAY"],
+				"difficulty":2,
+				"weight":9,
+				"role": "grass"
+			},
+			{
+				"speciesId": "vigoroth",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["BODY_SLAM","BULLDOZE"],
+				"difficulty":2,
+				"weight":2,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "sableye",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["FOUL_PLAY","POWER_GEM"],
+				"difficulty": 2,
+				"weight":2,
+				"role": "dark"
+			},
+			{
+				"speciesId": "blaziken",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["BLAZE_KICK","BLAST_BURN"],
+				"difficulty":1,
+				"weight":1,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "mawile",
+				"fastMove": "FIRE_FANG",
+				"chargedMoves": ["POWER_UP_PUNCH","PLAY_ROUGH"],
+				"difficulty":1,
+				"weight":1,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "castform_sunny",
+				"fastMove": "EMBER",
+				"chargedMoves": ["WEATHER_BALL_FIRE","SOLAR_BEAM"],
+				"difficulty":1,
+				"weight":1,
+				"role": "fire"
+			},
+			{
+				"speciesId": "minun",
+				"fastMove": "SPARK",
+				"chargedMoves": ["DISCHARGE","THUNDERBOLT"],
+				"difficulty":0,
+				"weight":1,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "wailord",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["SURF","HYPER_BEAM"],
+				"difficulty":0,
+				"weight":1,
+				"role": "water"
+			},
+			{
+				"speciesId": "swellow",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["SKY_ATTACK","BRAVE_BIRD"],
+				"difficulty":0,
+				"weight":1,
+				"role": "flying"
+			}
+		]
+	},
+	{
+		"slot": "Sinnoh",
+		"synergies": [],
+		"weight": 2,
+		"pokemon": [
+			{
+				"speciesId": "toxicroak",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["MUD_BOMB","SLUDGE_BOMB"],
+				"difficulty": 2,
+				"weight":45,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "probopass",
+				"fastMove": "SPARK",
+				"chargedMoves": ["ROCK_SLIDE","THUNDERBOLT"],
+				"difficulty": 2,
+				"weight":18,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "probopass",
+				"fastMove": "SPARK",
+				"chargedMoves": ["ROCK_SLIDE","MAGNET_BOMB"],
+				"difficulty": 2,
+				"weight":3,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "bastiodon",
+				"fastMove": "SMACK_DOWN",
+				"chargedMoves": ["STONE_EDGE","FLAMETHROWER"],
+				"difficulty": 2,
+				"weight":20,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "cresselia",
+				"fastMove": "PSYCHO_CUT",
+				"chargedMoves": ["FUTURE_SIGHT","MOONBLAST"],
+				"difficulty": 3,
+				"weight":2,
+				"role": "confusion"
+			},
+			{
+				"speciesId": "cresselia",
+				"fastMove": "PSYCHO_CUT",
+				"chargedMoves": ["FUTURE_SIGHT","AURORA_BEAM"],
+				"difficulty": 3,
+				"weight":1,
+				"role": "confusion"
+			},
+			{
+				"speciesId": "cresselia",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["FUTURE_SIGHT","AURORA_BEAM"],
+				"difficulty": 3,
+				"weight":6,
+				"role": "confusion"
+			},
+			{
+				"speciesId": "bronzong",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["PSYSHOCK","BULLDOZE"],
+				"difficulty": 2,
+				"weight":2,
+				"role": "confusion"
+			},
+			{
+				"speciesId": "togekiss",
+				"fastMove": "CHARM",
+				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"],
+				"difficulty": 2,
+				"weight":1,
+				"role": "charm"
+			},
+			{
+				"speciesId": "empoleon",
+				"fastMove": "WATERFALL",
+				"chargedMoves": ["HYDRO_CANNON","FLASH_CANNON"],
+				"difficulty": 2,
+				"weight":2,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "gallade",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["LEAF_BLADE","CLOSE_COMBAT"],
+				"difficulty": 2,
+				"weight":4,
+				"role": "confusion"
+			},
+			{
+				"speciesId": "froslass",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["AVALANCHE","SHADOW_BALL"],
+				"difficulty": 2,
+				"weight":2,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "gastrodon_east_sea",
+				"fastMove": "MUD_SLAP",
+				"chargedMoves": ["BODY_SLAM","EARTH_POWER"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "skuntank",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["CRUNCH","FLAMETHROWER"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "dark"
+			},
+			{
+				"speciesId": "lucario",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["POWER_UP_PUNCH","SHADOW_BALL"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "drifblim",
+				"fastMove": "HEX",
+				"chargedMoves": ["ICY_WIND","SHADOW_BALL"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "anti-fighting"
+			},
+			{
+				"speciesId": "leafeon",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["LEAF_BLADE","LAST_RESORT"],
+				"difficulty": 0,
+				"weight":1,
+				"role": "grass"
+			},
+			{
+				"speciesId": "wormadam_trash",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["IRON_HEAD","BUG_BUZZ"],
+				"difficulty": 0,
+				"weight":1,
+				"role": "confusion"
+			}
+		]
+	},
+	{
+		"slot": "Unova",
+		"synergies": [],
+		"weight": 1,
+		"pokemon": [
+			{
+				"speciesId": "marowak_alolan",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["BONE_CLUB","SHADOW_BALL"],
+				"difficulty": 2,
+				"weight":40,
+				"role": "fire"
+			},
+			{
+				"speciesId": "raichu_alolan",
+				"fastMove": "VOLT_SWITCH",
+				"chargedMoves": ["THUNDER_PUNCH","GRASS_KNOT"],
+				"difficulty": 2,
+				"weight":24,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "raichu_alolan",
+				"fastMove": "VOLT_SWITCH",
+				"chargedMoves": ["THUNDER_PUNCH","PSYCHIC"],
+				"difficulty": 2,
+				"weight":4,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "seismitoad",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["EARTH_POWER","SLUDGE_BOMB"],
+				"difficulty": 2,
+				"weight":6,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "seismitoad",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["EARTH_POWER","SLUDGE_BOMB"],
+				"difficulty": 2,
+				"weight":3,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "scrafty",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["POWER_UP_PUNCH","FOUL_PLAY"],
+				"difficulty": 3,
+				"weight":8,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "muk_alolan",
+				"fastMove": "SNARL",
+				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"],
+				"difficulty": 2,
+				"weight":8,
+				"role": "dark"
+			},
+			{
+				"speciesId": "melmetal",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["ROCK_SLIDE","SUPER_POWER"],
+				"difficulty": 2,
+				"weight":7,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "melmetal",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["ROCK_SLIDE","THUNDERBOLT"],
+				"difficulty": 2,
+				"weight":1,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "zweilous",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["BODY_SLAM","DARK_PULSE"],
+				"difficulty": 3,
+				"weight":2,
+				"role": "dark"
+			},
+			{
+				"speciesId": "stunfisk",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["DISCHARGE","MUD_BOMB"],
+				"difficulty": 3,
+				"weight":2,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "galvantula",
+				"fastMove": "VOLT_SWITCH",
+				"chargedMoves": ["DISCHARGE","BUG_BUZZ"],
+				"difficulty": 3,
+				"weight":1,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "galvantula",
+				"fastMove": "VOLT_SWITCH",
+				"chargedMoves": ["DISCHARGE","ENERGY_BALL"],
+				"difficulty": 3,
+				"weight":1,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "ninetales_alolan",
+				"fastMove": "CHARM",
+				"chargedMoves": ["PSYSHOCK","ICE_BEAM"],
+				"difficulty": 2,
+				"weight":1,
+				"role": "charm"
+			},
+			{
+				"speciesId": "alomomola",
+				"fastMove": "WATERFALL",
+				"chargedMoves": ["PSYCHIC","HYDRO_PUMP"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "water"
+			},
+			{
+				"speciesId": "serperior",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["GRASS_KNOT","AERIAL_ACE"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "grass"
+			},
+			{
+				"speciesId": "ferrothorn",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["THUNDER","POWER_WHIP"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "grass"
+			},
+			{
+				"speciesId": "escavalier",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["AERIAL_ACE","DRILL_RUN"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "anti-tank"
+			}
+		]
+	},
+	{
+		"slot": "Wildcard",
+		"synergies": [],
+		"weight": 1,
+		"pokemon": [
+			{
+				"speciesId": "meganium",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["FRENZY_PLANT","EARTHQUAKE"],
+				"difficulty": 2,
+				"weight":45,
+				"role": "grass"
+			},
+			{
+				"speciesId": "toxicroak",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["MUD_BOMB","SLUDGE_BOMB"],
+				"difficulty": 2,
+				"weight":20,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "raichu_alolan",
+				"fastMove": "VOLT_SWITCH",
+				"chargedMoves": ["THUNDER_PUNCH","GRASS_KNOT"],
+				"difficulty": 2,
+				"weight":5,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "raichu_alolan",
+				"fastMove": "VOLT_SWITCH",
+				"chargedMoves": ["THUNDER_PUNCH","PSYCHIC"],
+				"difficulty": 2,
+				"weight":1,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "muk_alolan",
+				"fastMove": "SNARL",
+				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"],
+				"difficulty": 2,
+				"weight":1,
+				"role": "dark"
+			},
+			{
+				"speciesId": "stunfisk",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["DISCHARGE","MUD_BOMB"],
+				"difficulty": 3,
+				"weight":4,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "lanturn",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["THUNDERBOLT","HYDRO_PUMP"],
+				"difficulty": 2,
+				"weight":4,
+				"role": "water"
+			},
+			{
+				"speciesId": "lanturn",
+				"fastMove": "SPARK",
+				"chargedMoves": ["THUNDERBOLT","HYDRO_PUMP"],
+				"difficulty": 2,
+				"weight":2,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "galvantula",
+				"fastMove": "VOLT_SWITCH",
+				"chargedMoves": ["DISCHARGE","BUG_BUZZ"],
+				"difficulty": 3,
+				"weight":1,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "galvantula",
+				"fastMove": "VOLT_SWITCH",
+				"chargedMoves": ["DISCHARGE","ENERGY_BALL"],
+				"difficulty": 3,
+				"weight":1,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "ninetales_alolan",
+				"fastMove": "CHARM",
+				"chargedMoves": ["PSYSHOCK","ICE_BEAM"],
+				"difficulty": 2,
+				"weight":1,
+				"role": "charm"
+			},
+			{
+				"speciesId": "alomomola",
+				"fastMove": "WATERFALL",
+				"chargedMoves": ["PSYCHIC","HYDRO_PUMP"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "water"
+			},
+			{
+				"speciesId": "serperior",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["GRASS_KNOT","AERIAL_ACE"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "grass"
+			},
+			{
+				"speciesId": "ferrothorn",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["THUNDER","POWER_WHIP"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "grass"
+			},
+			{
+				"speciesId": "escavalier",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["AERIAL_ACE","DRILL_RUN"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "mantine",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["BUBBLE_BEAM","ICE_BEAM"],
+				"difficulty": 3,
+				"weight":3,
+				"role": "water"
+			},
+			{
+				"speciesId": "noctowl",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["SKY_ATTACK","PSYCHIC"],
+				"difficulty": 2,
+				"weight":4,
+				"role": "flying"
+			},
+			{
+				"speciesId": "quagsire",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["EARTHQUAKE","STONE_EDGE"],
+				"difficulty": 1,
+				"weight":2,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "quagsire",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["EARTHQUAKE","SLUDGE_BOMB"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "flygon",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["EARTH_POWER","DRAGON_CLAW"],
+				"difficulty": 2,
+				"weight":1,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "shiftry",
+				"fastMove": "SNARL",
+				"chargedMoves": ["LEAF_BLADE","FOUL_PLAY"],
+				"difficulty":2,
+				"weight":4,
+				"role": "grass"
+			},
+			{
+				"speciesId": "vigoroth",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["BODY_SLAM","BULLDOZE"],
+				"difficulty":2,
+				"weight":1,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "blaziken",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["BLAZE_KICK","BLAST_BURN"],
+				"difficulty":1,
+				"weight":1,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "froslass",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["AVALANCHE","SHADOW_BALL"],
+				"difficulty": 2,
+				"weight":4,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "castform_rainy",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["WEATHER_BALL_WATER","THUNDERBOLT"],
+				"difficulty": 2,
+				"weight":1,
+				"role": "water"
+			},
+			{
+				"speciesId": "clefable",
+				"fastMove": "CHARM",
+				"chargedMoves": ["METEOR_MASH","PSYCHIC"],
+				"difficulty": 2,
+				"weight":2,
+				"role": "charm"
+			},
+			{
+				"speciesId": "tangrowth",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["ANCIENT_POWER","POWER_WHIP"],
+				"difficulty":2,
+				"weight":1,
+				"role": "grass"
+			},
+			{
+				"speciesId": "gallade",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["LEAF_BLADE","CLOSE_COMBAT"],
+				"difficulty": 2,
+				"weight":4,
+				"role": "confusion"
+			},
+			{
+				"speciesId": "poliwrath",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["DYNAMIC_PUNCH","ICE_PUNCH"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "sableye",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["FOUL_PLAY","POWER_GEM"],
+				"difficulty": 2,
+				"weight":2,
+				"role": "dark"
+			},
+			{
+				"speciesId": "charizard",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"],
+				"difficulty": 2,
+				"weight":2,
+				"role": "fire"
+			},
+			{
+				"speciesId": "bronzong",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["PSYSHOCK","BULLDOZE"],
+				"difficulty": 2,
+				"weight":1,
+				"role": "confusion"
+			},
+			{
+				"speciesId": "dragonite",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["DRAGON_CLAW","HURRICANE"],
+				"difficulty": 3,
+				"weight":1,
+				"role": "flying"
+			},
+			{
+				"speciesId": "dragonite_shadow",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["DRAGON_CLAW","HURRICANE"],
+				"difficulty": 3,
+				"weight":1,
+				"role": "flying"
+			},
+			{
+				"speciesId": "sealeo",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["AURORA_BEAM","BODY_SLAM"],
+				"difficulty": 2,
+				"weight":1,
+				"role": "anti-flying"
+			},
+			{
+				"speciesId": "victreebel",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["LEAF_BLADE","SLUDGE_BOMB"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "grass"
+			},
+			{
+				"speciesId": "ludicolo",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["ICE_BEAM","HYDRO_PUMP"],
+				"difficulty": 1,
+				"weight":1,
+				"role": "grass"
+			},
+			{
+				"speciesId": "munchlax",
+				"fastMove": "LICK",
+				"chargedMoves": ["BODY_SLAM","BULLDOZE"],
+				"difficulty": 2,
+				"weight":1,
+				"role": "anti-tank"
+			},
+			{
+				"speciesId": "golbat",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["POISON_FANG","SHADOW_BALL"],
+				"difficulty": 2,
+				"weight":1,
+				"role": "flying"
+			},
+			{
+				"speciesId": "drifblim",
+				"fastMove": "HEX",
+				"chargedMoves": ["ICY_WIND","SHADOW_BALL"],
+				"difficulty": 0,
+				"weight":1,
+				"role": "anti-fighting"
+			},
+			{
+				"speciesId": "leafeon",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["LEAF_BLADE","LAST_RESORT"],
+				"difficulty": 0,
+				"weight":1,
+				"role": "grass"
+			},
+			{
+				"speciesId": "wormadam_trash",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["IRON_HEAD","BUG_BUZZ"],
+				"difficulty": 0,
+				"weight":1,
+				"role": "confusion"
+			}
+		]
+	}
+]

@@ -5168,7 +5168,7 @@
             "hp": 181
         },
         "types": ["grass", "none"],
-        "fastMoves": ["ACID", "RAZOR_LEAF"],
+        "fastMoves": ["ACID", "RAZOR_LEAF", "BULLET_SEED"],
         "chargedMoves": ["DAZZLING_GLEAM", "LEAF_BLADE", "PETAL_BLIZZARD"],
         "defaultIVs": {
             "cp1500": [25, 5, 7, 11],
@@ -5186,7 +5186,7 @@
             "hp": 181
         },
         "types": ["grass", "none"],
-        "fastMoves": ["ACID", "RAZOR_LEAF"],
+        "fastMoves": ["ACID", "RAZOR_LEAF", "BULLET_SEED"],
         "chargedMoves": ["DAZZLING_GLEAM", "LEAF_BLADE", "PETAL_BLIZZARD"],
         "defaultIVs": {
             "cp1500": [25, 5, 7, 11],
@@ -5320,7 +5320,7 @@
         },
         "types": ["grass", "flying"],
         "fastMoves": ["BULLET_SEED", "INFESTATION"],
-        "chargedMoves": ["DAZZLING_GLEAM", "ENERGY_BALL", "SOLAR_BEAM"],
+        "chargedMoves": ["DAZZLING_GLEAM", "ENERGY_BALL", "AERIAL_ACE", "SOLAR_BEAM"],
         "defaultIVs": {
             "cp1500": [38, 10, 12, 10],
             "cp2500": [40, 15, 15, 15]
@@ -7034,7 +7034,7 @@
         },
         "types": ["water", "grass"],
         "fastMoves": ["BUBBLE", "RAZOR_LEAF"],
-        "chargedMoves": ["BLIZZARD", "HYDRO_PUMP", "ICE_BEAM", "SOLAR_BEAM"],
+        "chargedMoves": ["BLIZZARD", "HYDRO_PUMP", "ENERGY_BALL", "ICE_BEAM", "SOLAR_BEAM"],
         "defaultIVs": {
             "cp1500": [26, 0, 4, 3],
             "cp2500": [40, 15, 15, 15]
@@ -8507,7 +8507,7 @@
             "hp": 200
         },
         "types": ["rock", "grass"],
-        "fastMoves": ["ACID", "INFESTATION"],
+        "fastMoves": ["ACID", "INFESTATION", "BULLET_SEED"],
         "chargedMoves": ["BULLDOZE", "GRASS_KNOT", "STONE_EDGE"],
         "defaultIVs": {
             "cp1500": [28, 0, 0, 1],
@@ -10180,7 +10180,7 @@
         },
         "types": ["grass", "none"],
         "fastMoves": ["BULLET_SEED", "RAZOR_LEAF"],
-        "chargedMoves": ["DAZZLING_GLEAM", "HYPER_BEAM", "SOLAR_BEAM"],
+        "chargedMoves": ["DAZZLING_GLEAM", "HYPER_BEAM", "SOLAR_BEAM", "WEATHER_BALL_FIRE"],
         "defaultIVs": {
             "cp1500": [27.5, 4, 11, 13],
             "cp2500": [40, 15, 15, 15]
@@ -11021,7 +11021,7 @@
         },
         "types": ["grass", "none"],
         "fastMoves": ["INFESTATION", "VINE_WHIP"],
-        "chargedMoves": ["ANCIENT_POWER", "SLUDGE_BOMB", "SOLAR_BEAM", "POWER_WHIP"],
+        "chargedMoves": ["ANCIENT_POWER", "ROCK_SLIDE", "SLUDGE_BOMB", "SOLAR_BEAM", "POWER_WHIP"],
         "defaultIVs": {
             "cp1500": [19, 0, 11, 4],
             "cp2500": [34, 1, 2, 13]
@@ -14906,7 +14906,7 @@
         "moveId": "ANCIENT_POWER",
         "name": "Ancient Power",
         "type": "rock",
-        "power": 70,
+        "power": 45,
         "energy": 45,
         "energyGain": 0,
         "cooldown": 500,
@@ -15082,7 +15082,7 @@
         "type": "grass",
         "power": 5,
         "energy": 0,
-        "energyGain": 11,
+        "energyGain": 13,
         "cooldown": 1500
     }, {
         "moveId": "CHARGE_BEAM",
@@ -15325,9 +15325,12 @@
         "name": "Energy Ball",
         "type": "grass",
         "power": 90,
-        "energy": 60,
+        "energy": 55,
         "energyGain": 0,
-        "cooldown": 500
+        "cooldown": 500,
+		"buffs": [0, -1],
+        "buffTarget": "opponent",
+        "buffApplyChance": ".1"
     }, {
         "moveId": "EXTRASENSORY",
         "name": "Extrasensory",
@@ -15854,7 +15857,7 @@
         "energy": 40,
         "energyGain": 0,
         "cooldown": 500,
-        "buffs": [-1, 0],
+        "buffs": [-2, 0],
         "buffTarget": "opponent",
         "buffApplyChance": ".5"
     }, {
@@ -16025,8 +16028,8 @@
         "moveId": "OMINOUS_WIND",
         "name": "Ominous Wind",
         "type": "ghost",
-        "power": 50,
-        "energy": 40,
+        "power": 45,
+        "energy": 45,
         "energyGain": 0,
         "cooldown": 500,
         "buffs": [2, 2],
@@ -16403,7 +16406,7 @@
         "moveId": "SILVER_WIND",
         "name": "Silver Wind",
         "type": "bug",
-        "power": 70,
+        "power": 45,
         "energy": 45,
         "energyGain": 0,
         "cooldown": 500,

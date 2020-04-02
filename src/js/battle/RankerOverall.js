@@ -231,7 +231,10 @@ var RankerMaster = (function () {
 					}
 
 					rankings[i].scores.push(consistencyScore);
-					rankings[i].scores.push(beaminess);
+
+					if(cup == "beam"){
+						rankings[i].scores.push(beaminess);
+					}
 
 					sortedScores.push(scores[0],
 						scores[1],

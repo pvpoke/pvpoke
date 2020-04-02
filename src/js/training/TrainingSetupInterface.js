@@ -453,7 +453,7 @@ var InterfaceMaster = (function () {
 				battle.setCup(cup);
 
 				// Force featured team selection for Cliffhanger and hide randomize button
-				if((cup == "cliffhanger")||(cup == "voyager")){
+				if(cup == "cliffhanger"){
 					$(".team-method-select option[value=\"featured\"]").prop("selected","selected");
 					$(".team-method-select").trigger("change");
 					$(".team-method-select option[value=\"random\"]").hide();
