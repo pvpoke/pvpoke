@@ -32,7 +32,6 @@
 				<option value="0">No shields</option>
 				<option value="1" selected>1 shield</option>
 				<option value="2">2 shields</option>
-				<option value="3">3 shields</option>
 			</select>
 			<select class="charged-count-select">
 				<option value="0">0 Charged Moves</option>
