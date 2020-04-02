@@ -27,20 +27,13 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.14.3 (March 22, 2020)</h4>
+	<h4>v1.14.3 (April 4, 2020)</h4>
 	<ul>
-		<li>Rankings now display Pokemon typing, weaknesses, and resistances.</li>
-		<li>Identified and fixed a rounding issue with type effectiveness in damage calculations for double- and triple-resisted moves.</li>
-		<ul>
-			<li>This issue had no impact in the majority of matchups but affected breakpoint and bulkpoint calculations for double- and triple-resisted moves. These breakpoints are reachable with 0.1-0.2 less Attack than previously shown.</li>
-		</ul>
-		<li>Fixed a breakpoint calculation issue for guaranteeing breakpoints against Shadow Pokemon.</li>
-		<li>Search bar processing on Rankings and Multi-Battle has been tweaked for smoother typing on mobile.</li>
-		<li>Added "Shadow" and "Shadow Eligible" tags to the Custom Rankings filters.</li>
+		<li>Simulations and rankings have been updated with the April balance changes including a buff to Bullet Seed and nerfs to Ancient Power, Ominous Wind, and Silver Wind!</li>
 	</ul>
 
 	<h3>Latest Article</h3>
-	
+
 	<div class="article-item flex">
 		<div class="col-3">
 			<a href="<?php echo $WEB_ROOT; ?>articles/cliffhanger-team-building/">
