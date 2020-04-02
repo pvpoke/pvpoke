@@ -12,6 +12,20 @@ require_once '../header.php';
 <div class="section home white">
 	<div class="article-item flex">
 		<div class="col-3">
+			<a href="<?php echo $WEB_ROOT; ?>articles/april-2020-update-highlights/">
+				<img src="<?php echo $WEB_ROOT; ?>assets/articles/2019-update-thumb.jpg" />
+			</a>
+		</div>
+		<div class="col-9">
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/april-2020-update-highlights/">Highlights of the April 2020 Update</a></h4>
+			<div class="date">April 1, 2020</div>
+			<p>Wild new moves and effects are changing Trainer Battles in unbelievable ways!</p>
+		</div>
+
+	</div>
+
+	<div class="article-item flex">
+		<div class="col-3">
 			<a href="<?php echo $WEB_ROOT; ?>articles/cliffhanger-team-building/">
 				<img src="<?php echo $WEB_ROOT; ?>assets/articles/cliffhanger-thumb.jpg" />
 			</a>
@@ -21,7 +35,7 @@ require_once '../header.php';
 			<div class="date"> January 4, 2020</div>
 			<p>GO Stadium has introduced an exciting new format called Cliffhanger! Learn how to spend your points and build your Cliffhanger team from the ground up.</p>
 		</div>
-	</div>	
+	</div>
 	<div class="article-item flex">
 		<div class="col-3">
 			<a href="<?php echo $WEB_ROOT; ?>articles/developing-trainer-battle-ai/">

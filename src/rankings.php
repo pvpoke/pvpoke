@@ -101,6 +101,10 @@ switch($cup){
 	case "voyager":
 		$league = 'Voyager Cup';
 		break;
+
+	case "beam":
+		$league = 'Get Beamed';
+		break;
 }
 
 $META_TITLE = $league . ' PvP Rankings';
@@ -141,6 +145,23 @@ require_once 'header.php';
 	<p class="description chargers hide"><b>The best Pokemon with an energy advantage.</b> Fast energy gain or powerful moves make them dangerous after building up energy.</p>
 
 	<p class="description consistency hide"><b>These Pokemon perform the most dependably.</b> They provide consistent damage and rely less on baiting shields than other Pokemon.</p>
+
+	<p class="description beaminess hide"><b>Are you ready to Get Beamed?</b> Beam it up with this twist on Trainer Battles:</p>
+
+	<ul class="description beaminess hide">
+		<li>1 point for a Solar Beam or Hyper Beam KO</li>
+		<li>First to 3 points wins the set!</li>
+		<li>Show 6, bring 3, no duplicates</li>
+		<li>Any Pokemon can be on your team for support with the exceptions below, but remember only beams get you points!</li>
+		<ul>
+			<li>No Steel types. Resisting both beams is a jerk move.</li>
+			<li>No Shadow Pokemon. Pure beams, pure hearts!</li>
+		</ul>
+	</ul>
+
+	<p class="description beaminess hide">Battle until one player reaches 3 points and is declared the winner. Winning or losing the actual battles doesn't matter, so do what you can to get your beams or deny your opponent!</p>
+
+	<p class="description beaminess hide">The rankings below evaluate Pokemon based on their matchups and a very official Beaminess metric that measures the speediness, bait ability, and power of their beams:</p>
 
 	<p>Click or tap the rankings below for more details.</p>
 

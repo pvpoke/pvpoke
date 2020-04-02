@@ -104,17 +104,17 @@ require_once 'header.php';
 						<tr>
 							<td></td>
 							<td></td>
-							<td colspan="3"><span class="name name-2">Pokemon</span></td>
+							<td colspan="4"><span class="name name-2">Pokemon</span></td>
 						</tr>
 						<tr>
 							<td></td>
 							<td></td>
 							<td>0 <span class="shield shield-none"></span></td>
 							<td>1 <span class="shield"></span></td>
-							<td>2 <span class="shield shield"></span></td>
+							<td>2 <span class="shield"></span></td>
 						</tr>
 						<tr>
-							<td rowspan="3"><span class="name name-1">Pokemon</span></td>
+							<td rowspan="4"><span class="name name-1">Pokemon</span></td>
 							<td>0 <span class="shield shield-none"></span></td>
 							<td><a href="#" class="rating star battle-0-0" shields="0,0">100</a></td>
 							<td><a href="#" class="rating star battle-1-0" shields="1,0">100</a></td>
@@ -127,7 +127,7 @@ require_once 'header.php';
 							<td><a href="#" class="rating star battle-2-1" shields="2,1">100</a></td>
 						</tr>
 						<tr>
-							<td>2 <span class="shield shield"></span></td>
+							<td>2 <span class="shield"></span></td>
 							<td><a href="#" class="rating star battle-0-2" shields="0,2">100</a></td>
 							<td><a href="#" class="rating star battle-1-2" shields="1,2">100</a></td>
 							<td><a href="#" class="rating star battle-2-2" shields="2,2">100</a></td>

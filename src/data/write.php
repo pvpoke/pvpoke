@@ -15,7 +15,7 @@ if( (! isset($_POST['data'])) || (! isset($_POST['league'])) || (! isset($_POST[
 // But nah let's scratch our head for 20 minutes when we can't figure out why the write function doesn't work after we change a name
 
 $leagues = [1500,2500,10000];
-$categories = ["closers","attackers","defenders","leads","switches","chargers","consistency","overall"];
+$categories = ["closers","attackers","defenders","leads","switches","chargers","consistency","overall","beaminess"];
 
 if( (! in_array($_POST['league'], $leagues)) || (! in_array($_POST['category'], $categories)) ){
 	exit();

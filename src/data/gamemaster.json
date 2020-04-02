@@ -250,6 +250,20 @@
 		"restrictedPokemon": ["altaria","azumarill","bastiodon","cresselia","deoxys_defense","dewgong","gardevoir","gardevoir_shadow","hypno","hypno_shadow","ivysaur","ivysaur_shadow","jellicent","lapras","lapras_shadow","mandibuzz","marowak_alolan","medicham","melmetal","mew","probopass","registeel","scrafty","skarmory","swampert","swampert_shadow","togekiss","tropius","umbreon","venusaur","venusaur_shadow","whiscash","wigglytuff","zweilous"],
         "include": [],
         "exclude": []
+    }, {
+        "name": "beam",
+        "title": "Get Beamed",
+        "include": [{
+            "filterType": "id",
+            "values": ["meganium","venusaur","mew","wigglytuff","lickitung","grotle","typhlosion","ivysaur","lickilicky","victreebel","ludicolo","snorlax","milotic","leafeon","dragonite","vileplume","wailord","tangrowth","castform_sunny","latios","sunflora","ninetales","torterra","electrode","cherrim_sunny","cherrim_overcast","tangela","bibarel","raticate_alolan","infernape","torkoal","parasect","celebi","simisage","cryogonal","exeggutor_alolan","chansey","ursaring","exeggutor","cinccino","unfezant","gigalith","luxray","aerodactyl","furret","solrock","blissey","roserade","porygon","jumpluff","maractus","porygon2","ho_oh","ambipom","raticate","camerupt","audino","weezing_galarian","porygon_z","lopunny","slaking"]
+        }],
+        "exclude": [{
+            "filterType": "type",
+            "values": ["steel"]
+        }, {
+            "filterType": "tag",
+            "values": ["shadow"]
+        }]
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible"],
     "pokemonRegions": [{

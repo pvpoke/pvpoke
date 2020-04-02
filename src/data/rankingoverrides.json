@@ -3973,5 +3973,166 @@
 				"weight": 3
 			}
 		]
+	},
+	{
+		"league": 1500,
+		"cup": "beam",
+		"pokemon": [
+			{
+				"speciesId": "venusaur",
+				"chargedMoves": ["SLUDGE_BOMB","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "ivysaur",
+				"chargedMoves": ["SLUDGE_BOMB","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "latios",
+				"chargedMoves": ["DRAGON_CLAW","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "dragonite",
+				"chargedMoves": ["DRAGON_CLAW","HYPER_BEAM"]
+			},
+			{
+				"speciesId": "wigglytuff",
+				"fastMove": "FEINT_ATTACK",
+				"chargedMoves": ["ICE_BEAM","HYPER_BEAM"]
+			},
+			{
+				"speciesId": "celebi",
+				"chargedMoves": ["SEED_BOMB","HYPER_BEAM"]
+			},
+			{
+				"speciesId": "victreebel",
+				"fastMove": "ACID",
+				"chargedMoves": ["LEAF_BLADE","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "vileplume",
+				"fastMove": "ACID",
+				"chargedMoves": ["SLUDGE_BOMB","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "cryogonal",
+				"chargedMoves": ["NIGHT_SLASH","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "meganium",
+				"chargedMoves": ["FRENZY_PLANT","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "roserade",
+				"chargedMoves": ["SLUDGE_BOMB","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "aerodactyl",
+				"chargedMoves": ["ROCK_SLIDE","HYPER_BEAM"]
+			},
+			{
+				"speciesId": "exeggutor_alolan",
+				"chargedMoves": ["SEED_BOMB","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "exeggutor",
+				"chargedMoves": ["SEED_BOMB","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "bibarel",
+				"chargedMoves": ["SURF","HYPER_BEAM"]
+			},
+			{
+				"speciesId": "wailord",
+				"chargedMoves": ["SURF","HYPER_BEAM"]
+			},
+			{
+				"speciesId": "milotic",
+				"fastMove": "DRAGON_TAIL",
+				"chargedMoves": ["SURF","HYPER_BEAM"]
+			},
+			{
+				"speciesId": "leafeon",
+				"fastMove": "QUICK_ATTACK",
+				"chargedMoves": ["LEAF_BLADE","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "tangela",
+				"chargedMoves": ["SLUDGE_BOMB","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "tangrowth",
+				"chargedMoves": ["ANCIENT_POWER","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "maractus",
+				"chargedMoves": ["AERIAL_ACE","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "gigalith",
+				"chargedMoves": ["ROCK_SLIDE","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "torterra",
+				"chargedMoves": ["SAND_TOMB","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "electrode",
+				"chargedMoves": ["DISCHARGE","HYPER_BEAM"]
+			},
+			{
+				"speciesId": "ho_oh",
+				"chargedMoves": ["BRAVE_BIRD","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "ludicolo",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["ICE_BEAM","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "cherrim_sunny",
+				"fastMove": "BULLET_SEED"
+			},
+			{
+				"speciesId": "cherrim_overcast",
+				"fastMove": "BULLET_SEED"
+			},
+			{
+				"speciesId": "sunflora",
+				"fastMove": "BULLET_SEED"
+			},
+			{
+				"speciesId": "typhlosion",
+				"fastMove": "SHADOW_CLAW"
+			},
+			{
+				"speciesId": "ambipom",
+				"chargedMoves": ["AERIAL_ACE","HYPER_BEAM"]
+			},
+			{
+				"speciesId": "simisage",
+				"chargedMoves": ["CRUNCH","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "luxray",
+				"chargedMoves": ["CRUNCH","HYPER_BEAM"]
+			},
+			{
+				"speciesId": "snorlax",
+				"chargedMoves": ["BODY_SLAM","HYPER_BEAM"]
+			},
+			{
+				"speciesId": "jumpluff",
+				"chargedMoves": ["ENERGY_BALL","SOLAR_BEAM"]
+			},
+			{
+				"speciesId": "lopunny",
+				"chargedMoves": ["FIRE_PUNCH","HYPER_BEAM"]
+			},
+			{
+				"speciesId": "mew",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["PSYSHOCK","HYPER_BEAM"]
+			}
+		]
 	}
 ]

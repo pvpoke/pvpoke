@@ -2330,8 +2330,12 @@ select, input{
 		margin-top:1em;
 	}
 
-	p{
+	p, ul{
 		line-height:26px;
+	}
+
+	ul li{
+		margin-bottom:10px;
 	}
 
 	.article-section{

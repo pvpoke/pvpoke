@@ -606,6 +606,16 @@ function Pokemon(id, i, b){
 			}
 		}
 
+		// Pop beams to the front
+
+		if(battle.getCup().name == "beam"){
+			for(var i = 0; i < chargedMoves.length; i++){
+				if((chargedMoves[i].moveId == "SOLAR_BEAM")||(chargedMoves[i].moveId == "HYPER_BEAM")){
+					chargedMoves[i].dpe = 100;
+				}
+			}
+		}
+
 		// Sort charged moves by DPE
 
 		chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
