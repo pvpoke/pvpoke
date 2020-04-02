@@ -1489,7 +1489,9 @@
 			},
 			{
 				"speciesId": "lapras",
-				"chargedMoves": ["SURF", "ICE_BEAM"]
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["SURF", "SKULL_BASH"],
+				"weight": 6
 			},
 			{
 				"speciesId": "dragonite",
@@ -1509,19 +1511,17 @@
 			},
 			{
 				"speciesId": "toxicroak",
-				"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
+				"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"],
+				"weight": 26
 			},
 			{
 				"speciesId": "probopass",
-				"fastMove": "SPARK"
+				"fastMove": "SPARK",
+				"weight": 4
 			},
 			{
 				"speciesId": "zapdos",
 				"fastMove": "CHARGE_BEAM"
-			},
-			{
-				"speciesId": "lapras",
-				"fastMove": "ICE_SHARD"
 			},
 			{
 				"speciesId": "ludicolo",
@@ -1529,7 +1529,9 @@
 			},
 			{
 				"speciesId": "tropius",
-				"fastMove": "AIR_SLASH"
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["LEAF_BLADE","AERIAL_ACE"],
+				"weight": 6
 			},
 			{
 				"speciesId": "articuno",
@@ -1540,8 +1542,16 @@
 				"chargedMoves": ["CRUNCH","HYPER_FANG"]
 			},
 			{
+				"speciesId": "escavalier",
+				"chargedMoves": ["AERIAL_ACE","DRILL_RUN"]
+			},
+			{
+				"speciesId": "haunter",
+				"chargedMoves": ["SHADOW_PUNCH","SHADOW_BALL"]
+			},
+			{
 				"speciesId": "claydol",
-				"chargedMoves": ["EARTH_POWER","GYRO_BALL"]
+				"chargedMoves": ["EARTH_POWER","PSYCHIC"]
 			},
 			{
 				"speciesId": "vespiquen",
@@ -1590,6 +1600,76 @@
 			{
 				"speciesId": "golduck",
 				"chargedMoves": ["ICE_BEAM", "HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "dewgong",
+				"chargedMoves": ["ICY_WIND", "WATER_PULSE"]
+			},
+			{
+				"speciesId": "skarmory",
+				"chargedMoves": ["SKY_ATTACK","FLASH_CANNON"],
+				"weight": 20
+			},
+			{
+				"speciesId": "altaria",
+				"weight": 15
+			},
+			{
+				"speciesId": "lanturn",
+				"weight": 24
+			},
+			{
+				"speciesId": "bastiodon",
+				"weight": 16
+			},
+			{
+				"speciesId": "ivysaur",
+				"weight": 12
+			},
+			{
+				"speciesId": "steelix",
+				"weight": 10
+			},
+			{
+				"speciesId": "victreebel",
+				"weight": 8
+			},
+			{
+				"speciesId": "charizard",
+				"weight": 8
+			},
+			{
+				"speciesId": "munchlax",
+				"weight": 7
+			},
+			{
+				"speciesId": "whiscash",
+				"weight": 6
+			},
+			{
+				"speciesId": "tropius",
+				"weight": 6
+			},
+			{
+				"speciesId": "swampert",
+				"weight": 5
+			},
+			{
+				"speciesId": "noctowl",
+				"weight": 4
+			},
+			{
+				"speciesId": "vigoroth",
+				"chargedMoves": ["BODY_SLAM","BULLDOZE"],
+				"weight": 4
+			},
+			{
+				"speciesId": "mantine",
+				"weight": 4
+			},
+			{
+				"speciesId": "venusaur",
+				"weight": 4
 			}
 		]
 	},

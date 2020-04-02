@@ -2,6 +2,7 @@
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="tsa-2" cup="voyager">Voyager Cup</option>
 	<option value="tsa-2" cup="toxic">Toxic Cup</option>
+	<option value="community" cup="safari">Safari Cup Flash Tournament</option>
 
 	<?php if((strpos($_SERVER['REQUEST_URI'], 'battle') !== false)||(strpos($_SERVER['REQUEST_URI'], 'rankings') !== false)): ?>
 		<option value="custom" cup="custom">Custom</option>
