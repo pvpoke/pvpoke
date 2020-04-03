@@ -114,8 +114,13 @@ function TrainingAI(l, p, b){
 
 			for(var n = 0; n < slotPool.length; n++){
 				var poke = slotPool[n];
+				var role = "none";
+
+				if(poke.role){
+					role = poke.role;
+				}
 				// Is this Pokemon valid to be added to the team?
-				if((selectedIds.indexOf(poke.speciesId) === -1)&&(Math.abs(poke.difficulty - level) <= 1)&&(roles.indexOf(poke.role) == -1)){
+				if((selectedIds.indexOf(poke.speciesId) === -1)&&(Math.abs(poke.difficulty - level) <= 1)&&(roles.indexOf(role) == -1)){
 					for(var j = 0; j < poke.weight; j++){
 						pokeBucket.push(poke);
 					}
