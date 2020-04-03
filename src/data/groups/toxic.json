@@ -1,8 +1,28 @@
 [
 	{
-		"speciesId":"venusaur",
+		"speciesId":"shiftry",
+		"fastMove":"SNARL",
+		"chargedMoves":["LEAF_BLADE","FOUL_PLAY"]
+	},
+	{
+		"speciesId":"meganium",
 		"fastMove":"VINE_WHIP",
-		"chargedMoves":["FRENZY_PLANT","SLUDGE_BOMB"]
+		"chargedMoves":["FRENZY_PLANT","EARTHQUAKE"]
+	},
+	{
+		"speciesId":"cherrim_sunny",
+		"fastMove":"BULLET_SEED",
+		"chargedMoves":["WEATHER_BALL_FIRE","SOLAR_BEAM"]
+	},
+	{
+		"speciesId":"ferrothorn",
+		"fastMove":"BULLET_SEED",
+		"chargedMoves":["POWER_WHIP","FLASH_CANNON"]
+	},
+	{
+		"speciesId":"stunfisk",
+		"fastMove":"THUNDER_SHOCK",
+		"chargedMoves":["MUD_BOMB","DISCHARGE"]
 	},
 	{
 		"speciesId":"forretress",
@@ -123,11 +143,6 @@
 		"speciesId":"hippowdon",
 		"fastMove":"FIRE_FANG",
 		"chargedMoves":["BODY_SLAM","EARTH_POWER"]
-	},
-	{
-		"speciesId":"crustle",
-		"fastMove":"FURY_CUTTER",
-		"chargedMoves":["X_SCISSOR","ROCK_SLIDE"]
 	},
 	{
 		"speciesId":"munchlax",

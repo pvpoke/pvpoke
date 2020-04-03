@@ -2,7 +2,7 @@
 	{
 		"speciesId":"giratina_altered",
 		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["DRAGON_CLAW","ANCIENT_POWER"]
+		"chargedMoves":["DRAGON_CLAW","SHADOW_SNEAK"]
 	},
 	{
 		"speciesId":"giratina_origin",
@@ -18,11 +18,6 @@
 		"speciesId":"regice",
 		"fastMove":"LOCK_ON",
 		"chargedMoves":["BLIZZARD","EARTHQUAKE"]
-	},
-	{
-		"speciesId":"regirock",
-		"fastMove":"LOCK_ON",
-		"chargedMoves":["STONE_EDGE","FOCUS_BLAST"]
 	},
 	{
 		"speciesId":"lapras",
@@ -135,11 +130,6 @@
 		"chargedMoves":["ICE_PUNCH","DYNAMIC_PUNCH"]
 	},
 	{
-		"speciesId":"gliscor",
-		"fastMove":"FURY_CUTTER",
-		"chargedMoves":["NIGHT_SLASH","EARTHQUAKE"]
-	},
-	{
 		"speciesId":"heracross",
 		"fastMove":"COUNTER",
 		"chargedMoves":["CLOSE_COMBAT","MEGAHORN"]
@@ -157,11 +147,41 @@
 	{
 		"speciesId":"articuno",
 		"fastMove":"ICE_SHARD",
-		"chargedMoves":["ICY_WIND","ANCIENT_POWER"]
+		"chargedMoves":["ICY_WIND","HURRICANE"]
+	},
+	{
+		"speciesId":"lickilicky",
+		"fastMove":"LICK",
+		"chargedMoves":["BODY_SLAM","EARTHQUAKE"]
+	},
+	{
+		"speciesId":"granbull",
+		"fastMove":"CHARM",
+		"chargedMoves":["CRUNCH","CLOSE_COMBAT"]
+	},
+	{
+		"speciesId":"empoleon",
+		"fastMove":"WATERFALL",
+		"chargedMoves":["HYDRO_CANNON","BLIZZARD"]
+	},
+	{
+		"speciesId":"feraligatr",
+		"fastMove":"ICE_FANG",
+		"chargedMoves":["HYDRO_CANNON","CRUNCH"]
 	},
 	{
 		"speciesId":"shiftry",
 		"fastMove":"SNARL",
 		"chargedMoves":["LEAF_BLADE","FOUL_PLAY"]
+	},
+	{
+		"speciesId":"sceptile",
+		"fastMove":"BULLET_SEED",
+		"chargedMoves":["LEAF_BLADE","EARTHQUAKE"]
+	},
+	{
+		"speciesId":"ferrothorn",
+		"fastMove":"BULLET_SEED",
+		"chargedMoves":["POWER_WHIP","FLASH_CANNON"]
 	}
 ]

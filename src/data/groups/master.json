@@ -2,7 +2,7 @@
 	{
 		"speciesId":"giratina_altered",
 		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["DRAGON_CLAW","ANCIENT_POWER"]
+		"chargedMoves":["DRAGON_CLAW","SHADOW_SNEAK"]
 	},
 	{
 		"speciesId":"giratina_origin",
@@ -28,11 +28,6 @@
 		"speciesId":"melmetal",
 		"fastMove":"THUNDER_SHOCK",
 		"chargedMoves":["ROCK_SLIDE","SUPER_POWER"]
-	},
-	{
-		"speciesId":"latios",
-		"fastMove":"DRAGON_BREATH",
-		"chargedMoves":["DRAGON_CLAW","SOLAR_BEAM"]
 	},
 	{
 		"speciesId":"dragonite",
@@ -123,5 +118,10 @@
 		"speciesId":"togekiss",
 		"fastMove":"CHARM",
 		"chargedMoves":["ANCIENT_POWER","FLAMETHROWER"]
+	},
+	{
+		"speciesId":"landorus_incarnate",
+		"fastMove":"MUD_SHOT",
+		"chargedMoves":["ROCK_SLIDE","EARTH_POWER"]
 	}
 ]

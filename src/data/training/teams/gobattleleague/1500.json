@@ -835,14 +835,42 @@
 				"fastMove": "AIR_SLASH",
 				"chargedMoves": ["LEAF_BLADE","AERIAL_ACE"],
 				"difficulty": 3,
-				"weight":4
+				"weight":6
 			},
 			{
-				"speciesId": "sceptile",
-				"fastMove": "FURY_CUTTER",
-				"chargedMoves": ["LEAF_BLADE","EARTHQUAKE"],
+				"speciesId": "cherrim_sunny",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["WEATHER_BALL_FIRE","SOLAR_BEAM"],
+				"difficulty": 2,
+				"weight":3
+			},
+			{
+				"speciesId": "jumpluff",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["ENERGY_BALL","AERIAL_ACE"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "ferrothorn",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["POWER_WHIP","THUNDER"],
 				"difficulty": 1,
 				"weight":2
+			},
+			{
+				"speciesId": "ferrothorn",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["POWER_WHIP","MIRROR_SHOT"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "ferrothorn",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["POWER_WHIP","FLASH_CANNON"],
+				"difficulty": 1,
+				"weight":1
 			},
 			{
 				"speciesId": "serperior",
@@ -852,10 +880,24 @@
 				"weight":2
 			},
 			{
+				"speciesId": "serperior",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["LEAF_TORNADO","AERIAL_ACE"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
 				"speciesId": "sceptile",
-				"fastMove": "FURY_CUTTER",
-				"chargedMoves": ["LEAF_BLADE","FRENZY_PLANT"],
-				"difficulty": 1,
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["LEAF_BLADE","EARTHQUAKE"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "sceptile",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["FRENZY_PLANT","DRAGON_CLAW"],
+				"difficulty": 2,
 				"weight":1
 			},
 			{

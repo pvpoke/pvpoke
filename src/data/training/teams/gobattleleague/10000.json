@@ -9,14 +9,14 @@
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["SHADOW_BALL","OMINOUS_WIND"],
 				"difficulty": 3,
-				"weight":20
+				"weight":12
 			},
 			{
 				"speciesId": "giratina_origin",
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["SHADOW_BALL","DRAGON_PULSE"],
 				"difficulty": 3,
-				"weight":5
+				"weight":8
 			},
 			{
 				"speciesId": "giratina_origin",
@@ -28,9 +28,9 @@
 			{
 				"speciesId": "giratina_altered",
 				"fastMove": "SHADOW_CLAW",
-				"chargedMoves": ["DRAGON_CLAW","ANCIENT_POWER"],
+				"chargedMoves": ["DRAGON_CLAW","SHADOW_SNEAK"],
 				"difficulty": 2,
-				"weight":4
+				"weight":3
 			},
 			{
 				"speciesId": "giratina_altered",
@@ -247,6 +247,13 @@
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["SHADOW_BALL","FOCUS_BLAST"],
 				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "tangrowth",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["ROCK_SLIDE","POWER_WHIP"],
+				"difficulty": 1,
 				"weight":1
 			},
 			{

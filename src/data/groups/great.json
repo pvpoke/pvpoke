@@ -2,7 +2,7 @@
 	{
 		"speciesId":"azumarill",
 		"fastMove":"BUBBLE",
-		"chargedMoves":["PLAY_ROUGH","HYDRO_PUMP"]
+		"chargedMoves":["ICE_BEAM","HYDRO_PUMP"]
 	},
 	{
 		"speciesId":"tropius",
@@ -183,5 +183,15 @@
 		"speciesId":"raichu_alolan",
 		"fastMove":"VOLT_SWITCH",
 		"chargedMoves":["THUNDER_PUNCH","GRASS_KNOT"]
+	},
+	{
+		"speciesId":"ferrothorn",
+		"fastMove":"BULLET_SEED",
+		"chargedMoves":["POWER_WHIP","THUNDER"]
+	},
+	{
+		"speciesId":"cherrim_sunny",
+		"fastMove":"BULLET_SEED",
+		"chargedMoves":["WEATHER_BALL_FIRE","SOLAR_BEAM"]
 	}
 ]

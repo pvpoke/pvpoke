@@ -2,7 +2,7 @@
 	{
 		"speciesId":"azumarill",
 		"fastMove":"BUBBLE",
-		"chargedMoves":["PLAY_ROUGH","HYDRO_PUMP"]
+		"chargedMoves":["ICE_BEAM","HYDRO_PUMP"]
 	},
 	{
 		"speciesId":"tropius",
@@ -13,11 +13,6 @@
 		"speciesId":"altaria",
 		"fastMove":"DRAGON_BREATH",
 		"chargedMoves":["SKY_ATTACK","DRAGON_PULSE"]
-	},
-	{
-		"speciesId":"medicham",
-		"fastMove":"COUNTER",
-		"chargedMoves":["DYNAMIC_PUNCH","ICE_PUNCH"]
 	},
 	{
 		"speciesId":"scrafty",
@@ -183,5 +178,45 @@
 		"speciesId":"raichu_alolan",
 		"fastMove":"VOLT_SWITCH",
 		"chargedMoves":["THUNDER_PUNCH","GRASS_KNOT"]
+	},
+	{
+		"speciesId":"ferrothorn",
+		"fastMove":"BULLET_SEED",
+		"chargedMoves":["POWER_WHIP","THUNDER"]
+	},
+	{
+		"speciesId":"cherrim_sunny",
+		"fastMove":"BULLET_SEED",
+		"chargedMoves":["WEATHER_BALL_FIRE","SOLAR_BEAM"]
+	},
+	{
+		"speciesId":"gallade",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["LEAF_BLADE","CLOSE_COMBAT"]
+	},
+	{
+		"speciesId":"seismitoad",
+		"fastMove":"MUD_SHOT",
+		"chargedMoves":["EARTH_POWER","SLUDGE_BOMB"]
+	},
+	{
+		"speciesId":"muk_alolan",
+		"fastMove":"SNARL",
+		"chargedMoves":["DARK_PULSE","SLUDGE_WAVE"]
+	},
+	{
+		"speciesId":"wigglytuff",
+		"fastMove":"CHARM",
+		"chargedMoves":["ICE_BEAM","PLAY_ROUGH"]
+	},
+	{
+		"speciesId":"poliwrath",
+		"fastMove":"MUD_SHOT",
+		"chargedMoves":["ICE_PUNCH","DYNAMIC_PUNCH"]
+	},
+	{
+		"speciesId":"empoleon",
+		"fastMove":"WATERFALL",
+		"chargedMoves":["HYDRO_CANNON","FLASH_CANNON"]
 	}
 ]
