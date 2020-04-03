@@ -227,10 +227,6 @@
 				"chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
 			},
 			{
-				"speciesId": "snorlax_shadow",
-				"chargedMoves": ["BODY_SLAM", "EARTHQUAKE"]
-			},
-			{
 				"speciesId": "muk_alolan",
 				"chargedMoves": ["DARK_PULSE", "ACID_SPRAY"]
 			},
@@ -716,7 +712,7 @@
 			},
 			{
 				"speciesId": "snorlax_shadow",
-				"chargedMoves": ["BODY_SLAM", "EARTHQUAKE"]
+				"chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
 			},
 			{
 				"speciesId": "muk_alolan",
@@ -2191,6 +2187,14 @@
 				"chargedMoves": ["HYDRO_CANNON", "FLASH_CANNON"]
 			},
 			{
+				"speciesId": "weavile",
+				"chargedMoves": ["AVALANCHE", "FOCUS_BLAST"]
+			},
+			{
+				"speciesId": "weavile_shadow",
+				"chargedMoves": ["AVALANCHE", "FOCUS_BLAST"]
+			},
+			{
 				"speciesId": "cobalion",
 				"chargedMoves": ["SACRED_SWORD", "STONE_EDGE"]
 			},
@@ -2217,6 +2221,10 @@
 			},
 			{
 				"speciesId": "gardevoir",
+				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "gardevoir_shadow",
 				"fastMove": "CHARM"
 			},
 			{
