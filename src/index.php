@@ -27,7 +27,12 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.14.3 (April 4, 2020)</h4>
+	<h4>v1.14.7 (April 3, 2020)</h4>
+	<ul>
+		<li>Random Voyager teams are now available to fight in Training Battles!</li>
+	</ul>
+
+	<h4>v1.14.6 (April 2, 2020)</h4>
 	<ul>
 		<li>Simulations and rankings have been updated with the April balance changes including a buff to Bullet Seed and nerfs to Ancient Power, Ominous Wind, and Silver Wind!</li>
 	</ul>

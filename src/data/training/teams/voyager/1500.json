@@ -184,7 +184,7 @@
 				"fastMove": "BUBBLE",
 				"chargedMoves": ["ICE_BEAM","HYDRO_PUMP"],
 				"difficulty": 2,
-				"weight":50,
+				"weight":40,
 				"role": "water"
 			},
 			{
@@ -590,7 +590,7 @@
 				"fastMove": "POWDER_SNOW",
 				"chargedMoves": ["AVALANCHE","SHADOW_BALL"],
 				"difficulty": 2,
-				"weight":2,
+				"weight":3,
 				"role": "anti-flying"
 			},
 			{
@@ -677,7 +677,7 @@
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["EARTH_POWER","SLUDGE_BOMB"],
 				"difficulty": 2,
-				"weight":6,
+				"weight":4,
 				"role": "anti-tank"
 			},
 			{
@@ -685,7 +685,7 @@
 				"fastMove": "BUBBLE",
 				"chargedMoves": ["EARTH_POWER","SLUDGE_BOMB"],
 				"difficulty": 2,
-				"weight":3,
+				"weight":2,
 				"role": "anti-tank"
 			},
 			{
@@ -733,8 +733,16 @@
 				"fastMove": "THUNDER_SHOCK",
 				"chargedMoves": ["DISCHARGE","MUD_BOMB"],
 				"difficulty": 3,
-				"weight":2,
+				"weight":3,
 				"role": "anti-tank"
+			},
+			{
+				"speciesId": "ferrothorn",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["POWER_WHIP","THUNDER"],
+				"difficulty": 3,
+				"weight":2,
+				"role": "grass"
 			},
 			{
 				"speciesId": "galvantula",
@@ -844,7 +852,7 @@
 				"fastMove": "THUNDER_SHOCK",
 				"chargedMoves": ["DISCHARGE","MUD_BOMB"],
 				"difficulty": 3,
-				"weight":4,
+				"weight":5,
 				"role": "anti-tank"
 			},
 			{
@@ -964,7 +972,23 @@
 				"fastMove": "SNARL",
 				"chargedMoves": ["LEAF_BLADE","FOUL_PLAY"],
 				"difficulty":2,
-				"weight":4,
+				"weight":5,
+				"role": "grass"
+			},
+			{
+				"speciesId": "sceptile",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["LEAF_BLADE","EARTHQUAKE"],
+				"difficulty":2,
+				"weight":2,
+				"role": "grass"
+			},
+			{
+				"speciesId": "sceptile",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["LEAF_BLADE","AERIAL_ACE"],
+				"difficulty":2,
+				"weight":1,
 				"role": "grass"
 			},
 			{
@@ -1062,6 +1086,38 @@
 				"difficulty": 3,
 				"weight":1,
 				"role": "flying"
+			},
+			{
+				"speciesId": "ferrothorn",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["POWER_WHIP","THUNDER"],
+				"difficulty": 3,
+				"weight":2,
+				"role": "grass"
+			},
+			{
+				"speciesId": "ferrothorn",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["POWER_WHIP","FLASH_CANNON"],
+				"difficulty": 3,
+				"weight":2,
+				"role": "grass"
+			},
+			{
+				"speciesId": "cherrim_sunny",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["WEATHER_BALL_FIRE","SOLAR_BEAM"],
+				"difficulty": 3,
+				"weight":5,
+				"role": "grass"
+			},
+			{
+				"speciesId": "jumpluff",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["ENERGY_BALL","AERIAL_ACE"],
+				"difficulty": 2,
+				"weight":2,
+				"role": "grass"
 			},
 			{
 				"speciesId": "dragonite_shadow",
