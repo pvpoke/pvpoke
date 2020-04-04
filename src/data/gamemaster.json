@@ -9123,7 +9123,8 @@
         },
         "types": ["dragon", "flying"],
         "fastMoves": ["BITE", "DRAGON_TAIL", "FIRE_FANG"],
-        "chargedMoves": ["DRACO_METEOR", "FIRE_BLAST", "HYDRO_PUMP", "OUTRAGE"],
+        "chargedMoves": ["DRACO_METEOR", "FIRE_BLAST", "HYDRO_PUMP"],
+        "legacyMoves": ["OUTRAGE"],
         "defaultIVs": {
             "cp1500": [14.5, 12, 6, 15],
             "cp2500": [25.5, 3, 0, 13]
