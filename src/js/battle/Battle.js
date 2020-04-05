@@ -1259,25 +1259,17 @@ function Battle(){
 					var availableTime = poke.fastMove.cooldown - opponent.cooldown;
 
 					// If this Pokemon has already acted, anticipate unregistered Fast Moves
-					if(opponent.cooldown > 0){
+					if((opponent.cooldown > 0)&&(poke.fastMove.cooldown > 500)){
 						availableTime += (opponent.fastMove.cooldown - opponent.cooldown + 500);
 					}
 
 					var futureActions = Math.ceil(availableTime / opponent.fastMove.cooldown);
 
-					if(opponent.cooldown > 0){
-						//futureActions++;
-					}
-
 					// If this Pokemon would lose a CMP tie to the opponent, consider the opponent an action ahead
 
-					if(((opponent.cooldown == 0)||(opponent.cooldown == poke.fastMove.cooldown))&&(opponent.stats.atk > poke.stats.atk)){
+					if((((opponent.cooldown == 0)&&(opponent.fastMove.cooldown == poke.fastMove.cooldown))||(opponent.cooldown == poke.fastMove.cooldown))&&(opponent.stats.atk > poke.stats.atk)){
 						futureActions++;
 					}
-
-					/*if((roundChargedMoveUsed > 0)||(roundChargedMovesInitiated > 0)){
-						futureActions = 0;
-					}*/
 
 					var futureFastDamage = futureActions * opponent.fastMove.damage;
 
@@ -1296,11 +1288,10 @@ function Battle(){
 
 						if(opponent.cooldown == 500){
 							futureEffectiveEnergy += opponent.fastMove.energyGain;
+							futureEffectiveHP -= opponent.fastMove.damage;
 						}
 
-						if((opponent.stats.atk > poke.stats.atk)&&(opponent.fastMove.cooldown + opponent.cooldown == poke.fastMove.cooldown)){
-							futureEffectiveEnergy += opponent.fastMove.energyGain;
-						}
+						self.logDecision(turns, poke, " expects opponent to have " + futureEffectiveEnergy + " energy");
 
 						for(var j = 0; j < opponent.chargedMoves.length; j++){
 							if((futureEffectiveEnergy >= opponent.chargedMoves[j].energy) && (futureEffectiveHP <= (opponent.chargedMoves[j].damage * (Math.floor(futureEffectiveEnergy / opponent.chargedMoves[j].energy))))){
