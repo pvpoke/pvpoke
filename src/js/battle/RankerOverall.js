@@ -189,6 +189,11 @@ var RankerMaster = (function () {
 							var factor = 1;
 							if((chargedMoves[0].energy > chargedMoves[1].energy)||( (chargedMoves[0].energy == chargedMoves[1].energy) && (chargedMoves[1].moveId == "ACID_SPRAY")||((chargedMoves[0].selfAttackDebuffing)&&(! chargedMoves[1].selfDebuffing)&&(chargedMoves[1].energy - chargedMoves[0].energy <= 10)))){
 								factor = (cycleFastDamage / cycleDamage) + ((chargedMoves[0].damage / cycleDamage) * (chargedMoves[1].dpe / chargedMoves[0].dpe));
+
+								// If the difference in energy is small, improve the consistency score as players may play straight more often
+								if(chargedMoves[1].energy < chargedMoves[0].energy){
+									factor += (1 - factor) * ((chargedMoves[1].energy-30) / (chargedMoves[0].energy-30)) * 0.5;
+								}
 							}
 
 							consistencyScore *= factor;
