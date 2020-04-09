@@ -17,7 +17,7 @@
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["THUNDER_PUNCH","SHADOW_BALL"],
 				"difficulty": 2,
-				"weight":17,
+				"weight":24,
 				"role": "confusion"
 			},
 			{
@@ -25,7 +25,7 @@
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["ICE_PUNCH","SHADOW_BALL"],
 				"difficulty": 2,
-				"weight":3,
+				"weight":8,
 				"role": "confusion"
 			},
 			{
@@ -33,7 +33,7 @@
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["ICE_PUNCH","THUNDER_PUNCH"],
 				"difficulty": 2,
-				"weight":1,
+				"weight":3,
 				"role": "confusion"
 			},
 			{
@@ -97,7 +97,7 @@
 				"fastMove": "FIRE_SPIN",
 				"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"],
 				"difficulty": 2,
-				"weight":6,
+				"weight":4,
 				"role": "fire"
 			},
 			{
@@ -184,7 +184,7 @@
 				"fastMove": "BUBBLE",
 				"chargedMoves": ["ICE_BEAM","HYDRO_PUMP"],
 				"difficulty": 2,
-				"weight":40,
+				"weight":50,
 				"role": "water"
 			},
 			{
@@ -264,7 +264,7 @@
 				"fastMove": "WING_ATTACK",
 				"chargedMoves": ["SKY_ATTACK","PSYCHIC"],
 				"difficulty": 2,
-				"weight":3,
+				"weight":5,
 				"role": "flying"
 			},
 			{
@@ -335,7 +335,7 @@
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["SKY_ATTACK","DRAGON_PULSE"],
 				"difficulty": 2,
-				"weight":25,
+				"weight":40,
 				"role": "flying"
 			},
 			{
@@ -351,7 +351,7 @@
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["MUD_BOMB","BLIZZARD"],
 				"difficulty": 2,
-				"weight":12,
+				"weight":8,
 				"role": "anti-tank"
 			},
 			{
@@ -375,7 +375,7 @@
 				"fastMove": "COUNTER",
 				"chargedMoves": ["ROCK_SLIDE","THUNDERBOLT"],
 				"difficulty": 3,
-				"weight":6,
+				"weight":8,
 				"role": "anti-tank"
 			},
 			{
@@ -391,7 +391,7 @@
 				"fastMove": "AIR_SLASH",
 				"chargedMoves": ["LEAF_BLADE","AERIAL_ACE"],
 				"difficulty":2,
-				"weight":4,
+				"weight":8,
 				"role": "grass"
 			},
 			{
@@ -510,7 +510,7 @@
 				"fastMove": "SPARK",
 				"chargedMoves": ["ROCK_SLIDE","THUNDERBOLT"],
 				"difficulty": 2,
-				"weight":18,
+				"weight":12,
 				"role": "anti-flying"
 			},
 			{
@@ -526,7 +526,7 @@
 				"fastMove": "SMACK_DOWN",
 				"chargedMoves": ["STONE_EDGE","FLAMETHROWER"],
 				"difficulty": 2,
-				"weight":20,
+				"weight":30,
 				"role": "anti-flying"
 			},
 			{
@@ -661,7 +661,7 @@
 				"fastMove": "VOLT_SWITCH",
 				"chargedMoves": ["THUNDER_PUNCH","GRASS_KNOT"],
 				"difficulty": 2,
-				"weight":24,
+				"weight":15,
 				"role": "anti-flying"
 			},
 			{
@@ -669,7 +669,7 @@
 				"fastMove": "VOLT_SWITCH",
 				"chargedMoves": ["THUNDER_PUNCH","PSYCHIC"],
 				"difficulty": 2,
-				"weight":4,
+				"weight":2,
 				"role": "anti-flying"
 			},
 			{
@@ -693,7 +693,7 @@
 				"fastMove": "COUNTER",
 				"chargedMoves": ["POWER_UP_PUNCH","FOUL_PLAY"],
 				"difficulty": 3,
-				"weight":8,
+				"weight":16,
 				"role": "anti-tank"
 			},
 			{
@@ -701,7 +701,7 @@
 				"fastMove": "SNARL",
 				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"],
 				"difficulty": 2,
-				"weight":8,
+				"weight":14,
 				"role": "dark"
 			},
 			{
@@ -709,7 +709,7 @@
 				"fastMove": "THUNDER_SHOCK",
 				"chargedMoves": ["ROCK_SLIDE","SUPER_POWER"],
 				"difficulty": 2,
-				"weight":7,
+				"weight":10,
 				"role": "anti-flying"
 			},
 			{
@@ -725,7 +725,7 @@
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["BODY_SLAM","DARK_PULSE"],
 				"difficulty": 3,
-				"weight":2,
+				"weight":5,
 				"role": "dark"
 			},
 			{
@@ -740,6 +740,14 @@
 				"speciesId": "ferrothorn",
 				"fastMove": "BULLET_SEED",
 				"chargedMoves": ["POWER_WHIP","THUNDER"],
+				"difficulty": 3,
+				"weight":5,
+				"role": "grass"
+			},
+			{
+				"speciesId": "ferrothorn",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["POWER_WHIP","FLASH_CANNON"],
 				"difficulty": 3,
 				"weight":2,
 				"role": "grass"
@@ -844,7 +852,7 @@
 				"fastMove": "SNARL",
 				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"],
 				"difficulty": 2,
-				"weight":1,
+				"weight":6,
 				"role": "dark"
 			},
 			{
@@ -940,7 +948,7 @@
 				"fastMove": "WING_ATTACK",
 				"chargedMoves": ["SKY_ATTACK","PSYCHIC"],
 				"difficulty": 2,
-				"weight":4,
+				"weight":8,
 				"role": "flying"
 			},
 			{
@@ -979,8 +987,8 @@
 				"speciesId": "sceptile",
 				"fastMove": "BULLET_SEED",
 				"chargedMoves": ["LEAF_BLADE","EARTHQUAKE"],
-				"difficulty":2,
-				"weight":2,
+				"difficulty":1,
+				"weight":1,
 				"role": "grass"
 			},
 			{
@@ -1092,7 +1100,7 @@
 				"fastMove": "BULLET_SEED",
 				"chargedMoves": ["POWER_WHIP","THUNDER"],
 				"difficulty": 3,
-				"weight":2,
+				"weight":3,
 				"role": "grass"
 			},
 			{
@@ -1100,7 +1108,7 @@
 				"fastMove": "BULLET_SEED",
 				"chargedMoves": ["POWER_WHIP","FLASH_CANNON"],
 				"difficulty": 3,
-				"weight":2,
+				"weight":3,
 				"role": "grass"
 			},
 			{
@@ -1108,14 +1116,14 @@
 				"fastMove": "BULLET_SEED",
 				"chargedMoves": ["WEATHER_BALL_FIRE","SOLAR_BEAM"],
 				"difficulty": 3,
-				"weight":5,
+				"weight":9,
 				"role": "grass"
 			},
 			{
 				"speciesId": "jumpluff",
 				"fastMove": "BULLET_SEED",
 				"chargedMoves": ["ENERGY_BALL","AERIAL_ACE"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":2,
 				"role": "grass"
 			},
