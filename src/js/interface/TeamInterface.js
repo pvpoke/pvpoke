@@ -665,22 +665,30 @@ var InterfaceMaster = (function () {
 					if(battle.getCup().name == "voyager"){
 						var regions = gm.data.pokemonRegions;
 						var regionName = "";
+						var regionNumber = "";
 
 						for(var j = 0; j < regions.length; j++){
 							if((pokemon.dex >= regions[j].dexStart)&&(pokemon.dex >= regions[j].dexStart)){
 								regionName = regions[j].name;
+								regionNumber = "Gen " + (j+1);
+
+								if(j > 3){
+									regionNumber = "Gen 5+";
+								}
 							}
 
 							if(pokemon.hasTag("alolan")){
 								regionName = "Alola";
+								regionNumber = "Gen 5+";
 							}
 
 							if((pokemon.hasTag("galarian"))||(pokemon.speciesId == "melmetal")){
 								regionName = "Galar";
+								regionNumber = "Gen 5+";
 							}
 						}
 
-						$row.find("th.name").append("<div class=\"region-label "+regionName.toLowerCase()+"\">"+regionName+"</div>");
+						$row.find("th.name").append("<div class=\"region-label "+regionName.toLowerCase()+"\">"+regionName+" (" + regionNumber + ")</div>");
 					}
 
 					$(".alternatives-table tbody").append($row);

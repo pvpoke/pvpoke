@@ -1648,6 +1648,11 @@ select, input {
   text-transform: capitalize;
   padding: 2px 12px;
 }
+.rank .details .detail-section.moveset-override {
+  display: none;
+  font-size: 12px;
+  padding: 10px;
+}
 .rank .details .detail-section .move {
   display: inline-block;
   padding: 5px;

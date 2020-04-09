@@ -1933,6 +1933,12 @@ select, input{
 				}
 			}
 
+			&.moveset-override{
+				display:none;
+				font-size: 12px;
+				padding: 10px;
+			}
+
 			.move{
 				display:inline-block;
 				padding:5px;

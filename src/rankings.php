@@ -195,8 +195,9 @@ require_once 'header.php';
 			<li><b>Overall - </b> Derived from a Pokemon's score in all other categories. Moves are ranked based on usage in every category. Key Counters and Top Matchups, however, are taken from the Leads category.</li>
 			<li><b>Leads - </b> Ranking battles simulated with 2 shields vs. 2 shields.</li>
 			<li><b>Closers - </b> Ranking battles simulated with no shields vs. no shields.</li>
+			<li><b>Switches - </b> Ranking battles simulated with 6 turns of energy advantage and scored to favor safe matches.</li>
+			<li><b>Chargers - </b> Ranking battles simulated with 6 turns of energy advantage.</li>
 			<li><b>Attackers - </b> Ranking battles simulated with no shields vs. 2 shields.</li>
-			<li><b>Defenders - </b> Ranking battles simulated with 2 shields vs. no shields.</li>
 			<li><b>Consistency - </b> Rating of how dependent Pokemon are at baiting shields.</li>
 		</ul>
 		<p>Different Pokemon may succeed in different scenarios, so use these categories to help determine when a particular Pokemon would be the most valuable.</p>
@@ -263,6 +264,7 @@ require_once 'header.php';
 		<div class="moveset charged clear"></div>
 	</div>
 	<div class="clear"></div>
+	<div class="detail-section moveset-override">This Pokemon's recommended moveset has been manually set over the generated move usage data. This may be to prevent an impossible moveset or take advantage of specific matchups.</div>
 	<div class="detail-section typing">
 		<div class="rating-container">
 			<div class="ranking-header">Primary Type</div>
