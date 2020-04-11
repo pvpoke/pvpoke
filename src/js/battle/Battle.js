@@ -1319,12 +1319,6 @@ function Battle(){
 					self.logDecision(turns, poke, " doesn't use " + move.name + " because a better move is available");
 				}
 
-				// Keep a Pokemon from farming energy if it's near faint in simulated battles
-
-				if((nearDeath)&&(mode == "simulate")){
-					poke.farmEnergy = false;
-				}
-
 				// Don't process this if battle continues until both Pokemon faint
 
 				if(battleEndMode == "both"){
