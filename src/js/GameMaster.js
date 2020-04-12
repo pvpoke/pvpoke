@@ -111,25 +111,6 @@ var GameMaster = (function () {
 					entry.tags.splice(entry.tags.indexOf("shadowEligible"), 1);
 					entry.tags.push("shadow");
 
-					// Remove all legacy and exclusive moves
-					if(entry.legacyMoves){
-						for(var i = 0; i < entry.fastMoves.length; i++){
-							if(entry.legacyMoves.indexOf(entry.fastMoves[i]) > -1){
-								entry.fastMoves.splice(i, 1);
-								i--;
-							}
-						}
-
-						for(var i = 0; i < entry.chargedMoves.length; i++){
-							if(entry.legacyMoves.indexOf(entry.chargedMoves[i]) > -1){
-								entry.chargedMoves.splice(i, 1);
-								i--;
-							}
-						}
-
-						delete entry.legacyMoves;
-					}
-
 					delete entry.level25CP;
 					object.data.pokemon.push(entry);
 				} else{
