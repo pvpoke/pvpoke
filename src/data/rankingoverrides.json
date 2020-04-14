@@ -137,6 +137,10 @@
 				"weight": 15
 			},
 			{
+				"speciesId": "charizard_shadow",
+				"fastMove": ["FIRE_SPIN"]
+			},
+			{
 				"speciesId": "raichu_alolan",
 				"fastMove": "VOLT_SWITCH",
 				"chargedMoves": ["THUNDER_PUNCH","GRASS_KNOT"]
@@ -191,8 +195,12 @@
 				"chargedMoves": ["CLOSE_COMBAT", "X_SCISSOR"]
 			},
 			{
+				"speciesId": "weepinbell",
+				"fastMove": "RAZOR_LEAF"
+			},
+			{
 				"speciesId": "weepinbell_shadow",
-				"fastMove": "ACID"
+				"fastMove": "RAZOR_LEAF"
 			},
 			{
 				"speciesId": "muk_alolan",
@@ -608,6 +616,10 @@
 				"weight": 5
 			},
 			{
+				"speciesId": "charizard_shadow",
+				"fastMove": ["FIRE_SPIN"]
+			},
+			{
 				"speciesId": "lapras",
 				"fastMove": "ICE_SHARD",
 				"chargedMoves": ["SURF", "SKULL_BASH"],
@@ -679,8 +691,12 @@
 				"chargedMoves": ["CLOSE_COMBAT", "X_SCISSOR"]
 			},
 			{
+				"speciesId": "weepinbell",
+				"fastMove": "RAZOR_LEAF"
+			},
+			{
 				"speciesId": "weepinbell_shadow",
-				"fastMove": "ACID"
+				"fastMove": "RAZOR_LEAF"
 			},
 			{
 				"speciesId": "muk_alolan",
