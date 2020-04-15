@@ -380,7 +380,7 @@
 				"fastMove": "THUNDER_SHOCK",
 				"chargedMoves": ["DISCHARGE","MUD_BOMB"],
 				"difficulty": 3,
-				"weight":5
+				"weight":15
 			},
 			{
 				"speciesId": "flygon_shadow",
@@ -610,7 +610,7 @@
 	{
 		"slot": "Grass",
 		"synergies": ["Anti-Flying"],
-		"weight": 1,
+		"weight": 2,
 		"pokemon": [
 			{
 				"speciesId": "venusaur",
@@ -624,14 +624,14 @@
 				"fastMove": "VINE_WHIP",
 				"chargedMoves": ["FRENZY_PLANT","EARTHQUAKE"],
 				"difficulty": 2,
-				"weight":20
+				"weight":10
 			},
 			{
 				"speciesId": "ludicolo",
 				"fastMove": "BUBBLE",
 				"chargedMoves": ["ICE_BEAM","HYDRO_PUMP"],
 				"difficulty": 2,
-				"weight":5
+				"weight":8
 			},
 			{
 				"speciesId": "celebi",
@@ -656,10 +656,10 @@
 			},
 			{
 				"speciesId": "ferrothorn",
-				"fastMove": "METAL_CLAW",
-				"chargedMoves": ["MIRROR_SHOT","POWER_WHIP"],
-				"difficulty": 1,
-				"weight":1
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["FLASH_CANNON","POWER_WHIP"],
+				"difficulty": 2,
+				"weight":30
 			},
 			{
 				"speciesId": "shiftry",

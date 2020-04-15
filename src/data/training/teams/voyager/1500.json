@@ -33,7 +33,7 @@
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["ICE_PUNCH","THUNDER_PUNCH"],
 				"difficulty": 2,
-				"weight":3,
+				"weight":10,
 				"role": "confusion"
 			},
 			{
@@ -49,7 +49,7 @@
 				"fastMove": "ICE_SHARD",
 				"chargedMoves": ["SURF","SKULL_BASH"],
 				"difficulty": 2,
-				"weight":8,
+				"weight":6,
 				"role": "anti-flying"
 			},
 			{
@@ -97,7 +97,7 @@
 				"fastMove": "FIRE_SPIN",
 				"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"],
 				"difficulty": 2,
-				"weight":4,
+				"weight":2,
 				"role": "fire"
 			},
 			{
@@ -105,7 +105,7 @@
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["SHADOW_PUNCH","SHADOW_BALL"],
 				"difficulty": 2,
-				"weight":3,
+				"weight":6,
 				"role": "anti-fighting"
 			},
 			{
@@ -224,7 +224,7 @@
 				"fastMove": "SNARL",
 				"chargedMoves": ["FOUL_PLAY","LAST_RESORT"],
 				"difficulty": 2,
-				"weight":7,
+				"weight":5,
 				"role": "dark"
 			},
 			{
@@ -327,7 +327,7 @@
 				"fastMove": "LOCK_ON",
 				"chargedMoves": ["FLASH_CANNON","FOCUS_BLAST"],
 				"difficulty": 3,
-				"weight":40,
+				"weight":20,
 				"role": "anti-flying"
 			},
 			{
@@ -335,7 +335,7 @@
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["SKY_ATTACK","DRAGON_PULSE"],
 				"difficulty": 2,
-				"weight":40,
+				"weight":45,
 				"role": "flying"
 			},
 			{
@@ -359,7 +359,7 @@
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["HYDRO_CANNON","SLUDGE_WAVE"],
 				"difficulty": 2,
-				"weight":3,
+				"weight":6,
 				"role": "anti-tank"
 			},
 			{
@@ -391,7 +391,7 @@
 				"fastMove": "AIR_SLASH",
 				"chargedMoves": ["LEAF_BLADE","AERIAL_ACE"],
 				"difficulty":2,
-				"weight":8,
+				"weight":10,
 				"role": "grass"
 			},
 			{
@@ -510,7 +510,7 @@
 				"fastMove": "SPARK",
 				"chargedMoves": ["ROCK_SLIDE","THUNDERBOLT"],
 				"difficulty": 2,
-				"weight":12,
+				"weight":18,
 				"role": "anti-flying"
 			},
 			{
@@ -733,7 +733,7 @@
 				"fastMove": "THUNDER_SHOCK",
 				"chargedMoves": ["DISCHARGE","MUD_BOMB"],
 				"difficulty": 3,
-				"weight":3,
+				"weight":10,
 				"role": "anti-tank"
 			},
 			{
@@ -741,7 +741,7 @@
 				"fastMove": "BULLET_SEED",
 				"chargedMoves": ["POWER_WHIP","THUNDER"],
 				"difficulty": 3,
-				"weight":5,
+				"weight":4,
 				"role": "grass"
 			},
 			{
@@ -749,7 +749,7 @@
 				"fastMove": "BULLET_SEED",
 				"chargedMoves": ["POWER_WHIP","FLASH_CANNON"],
 				"difficulty": 3,
-				"weight":2,
+				"weight":10,
 				"role": "grass"
 			},
 			{
