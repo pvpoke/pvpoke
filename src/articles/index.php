@@ -12,6 +12,20 @@ require_once '../header.php';
 <div class="section home white">
 	<div class="article-item flex">
 		<div class="col-3">
+			<a href="<?php echo $WEB_ROOT; ?>articles/best-elite-tm-candidates-pvp/">
+				<img src="<?php echo $WEB_ROOT; ?>assets/articles/elite-tm-thumb.jpg" />
+			</a>
+		</div>
+		<div class="col-9">
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/best-elite-tm-candidates-pvp/">Best Elite TM Candidates for PvP</a></h4>
+			<div class="date">April 14, 2020</div>
+			<p>Elite TM's will soon be available! Which exclusive moves and Pokemon are the best for your PvP team?</p>
+		</div>
+
+	</div>
+	
+	<div class="article-item flex">
+		<div class="col-3">
 			<a href="<?php echo $WEB_ROOT; ?>articles/april-2020-update-highlights/">
 				<img src="<?php echo $WEB_ROOT; ?>assets/articles/2019-update-thumb.jpg" />
 			</a>
