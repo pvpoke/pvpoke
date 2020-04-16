@@ -52,15 +52,16 @@
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/cliffhanger-team-building/">
-				<img src="<?php echo $WEB_ROOT; ?>assets/articles/cliffhanger-thumb.jpg" />
+			<a href="<?php echo $WEB_ROOT; ?>articles/best-elite-tm-candidates-pvp/">
+				<img src="<?php echo $WEB_ROOT; ?>assets/articles/elite-tm-thumb.jpg" />
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/cliffhanger-team-building/">Team Building for GO Stadium Cliffhanger</a></h4>
-			<div class="date"> January 4, 2020</div>
-			<p>GO Stadium has introduced an exciting new format called Cliffhanger! Learn how to spend your points and build your Cliffhanger team from the ground up.</p>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/best-elite-tm-candidates-pvp/">Best Elite TM Candidates for PvP</a></h4>
+			<div class="date">April 14, 2020</div>
+			<p>Elite TM's will soon be available! Which exclusive moves and Pokemon are the best for your PvP team?</p>
 		</div>
+
 	</div>
 
 </div>
