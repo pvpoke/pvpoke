@@ -59,6 +59,10 @@
 				"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
 			},
 			{
+				"speciesId": "alakazam",
+				"chargedMoves": ["FIRE_PUNCH", "SHADOW_BALL"]
+			},
+			{
 				"speciesId": "toxicroak",
 				"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"],
 				"weight": 12
@@ -542,6 +546,10 @@
 				"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
 			},
 			{
+				"speciesId": "alakazam",
+				"chargedMoves": ["FIRE_PUNCH", "SHADOW_BALL"]
+			},
+			{
 				"speciesId": "toxicroak",
 				"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"],
 				"weight": 72
@@ -699,7 +707,7 @@
 			},
 			{
 				"speciesId": "hypno",
-				"chargedMoves": ["THUNDER_PUNCH", "ICE_PUNCH"],
+				"chargedMoves": ["THUNDER_PUNCH", "SHADOW_BALL"],
 				"weight": 70
 			},
 			{
@@ -1840,6 +1848,10 @@
 				"weight": 2
 			},
 			{
+				"speciesId": "alakazam",
+				"chargedMoves": ["FIRE_PUNCH", "SHADOW_BALL"]
+			},
+			{
 				"speciesId": "zapdos",
 				"chargedMoves": ["DRILL_PECK", "THUNDERBOLT"]
 			},
@@ -2246,6 +2258,10 @@
 				"speciesId": "lapras",
 				"fastMove": "ICE_SHARD",
 				"chargedMoves": ["SURF", "ICE_BEAM"]
+			},
+			{
+				"speciesId": "alakazam",
+				"chargedMoves": ["FIRE_PUNCH", "SHADOW_BALL"]
 			},
 			{
 				"speciesId": "lucario",
