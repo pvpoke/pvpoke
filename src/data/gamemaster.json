@@ -2264,9 +2264,9 @@
             "hp": 146
         },
         "types": ["psychic", "none"],
-        "fastMoves": ["CONFUSION", "PSYCHO_CUT"],
+        "fastMoves": ["CONFUSION", "PSYCHO_CUT", "COUNTER"],
         "chargedMoves": ["DAZZLING_GLEAM", "FIRE_PUNCH", "FOCUS_BLAST", "FUTURE_SIGHT", "PSYCHIC", "SHADOW_BALL"],
-        "legacyMoves": ["DAZZLING_GLEAM", "PSYCHIC"],
+        "legacyMoves": ["DAZZLING_GLEAM", "PSYCHIC", "COUNTER"],
         "defaultIVs": {
             "cp1500": [18.5, 2, 4, 14],
             "cp2500": [30, 4, 13, 12]
