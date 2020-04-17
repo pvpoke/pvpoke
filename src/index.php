@@ -27,6 +27,18 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
+	<h4>v1.14.10 (April 17, 2020)</h4>
+	<ul>
+		<li>Training Battles have been updated to reflect recent interface changes in-game along with a few QOL updates:</li>
+		<ul>
+			<li>Type icons appear for each Pokemon at the top of the screen. These icons change immediately on switches.</li>
+			<li>The HP bar flashes red, orange, or blue based on damage effectiveness.</li>
+			<li>Added a "Return to Team Select" button to the 6v6 view in Tournament Mode.</li>
+			<li>Added a master autotap toggle that will enable autotapping automatically between games.</li>
+			<li>"Champion" is now the default difficulty.</li>
+		</ul>
+	</ul>
+
 	<h4>v1.14.9 (April 17, 2020)</h4>
 	<ul>
 		<li>Additional fixes for battle logic related to near faint situations which caused Pokemon to throw erroneous Charged Moves.</li>

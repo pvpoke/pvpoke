@@ -66,6 +66,7 @@ var InterfaceMaster = (function () {
 				$(".featured-team-select").on("change", selectFeaturedTeam);
 				$(".battle-btn").on("click", startBattle);
 				$(".lets-go-btn").on("click", startTournamentBattle);
+				$("a.return-to-setup").on("click", returnToSetup);
 				$("body").on("click", ".self .roster .pokemon", selectRosterPokemon);
 				$("a.random").on("click", randomizeTeam);
 				$("body").on("click", ".check", checkBox);
@@ -213,6 +214,8 @@ var InterfaceMaster = (function () {
 					return false;
 				}
 
+				var autotapOverride = $(".autotap-toggle").hasClass("on");
+
 				// Set the round number to 0 for tournament mode
 				roundNumber = 0;
 
@@ -224,7 +227,8 @@ var InterfaceMaster = (function () {
 					partySize: partySize,
 					league: battle.getCP(),
 					cup: battle.getCup().name,
-					featuredTeam: featuredTeam
+					featuredTeam: featuredTeam,
+					autotapOverride:autotapOverride
 					};
 
 				// Reset roster selection for tournament mode
@@ -488,6 +492,14 @@ var InterfaceMaster = (function () {
 			function checkBox(e){
 				$(this).toggleClass("on");
 				$(this).trigger("change");
+			}
+
+			// Return to the setup screen from the tournament team select screen
+
+			function returnToSetup(e){
+				e.preventDefault();
+				
+				handler.returnToSetup();
 			}
 
 		}

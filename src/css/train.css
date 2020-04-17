@@ -102,6 +102,11 @@
   padding: 0;
 }
 
+.autotap-toggle {
+  font-size: 14px;
+  text-align: left;
+}
+
 a.random {
   margin-top: 5px;
 }
@@ -197,7 +202,7 @@ a.random {
   border-radius: 8px;
   display: flex;
   flex-wrap: wrap;
-  top: 15px;
+  top: 25px;
   padding: 3px;
   max-width: 35%;
   justify-content: space-between;
@@ -205,8 +210,11 @@ a.random {
 .battle-window .top .team-indicator.left {
   left: 2.5%;
 }
-.battle-window .top .team-indicator.left .cmp {
+.battle-window .top .team-indicator.left .cmp, .battle-window .top .team-indicator.left .types {
   left: 0;
+}
+.battle-window .top .team-indicator.left .type {
+  margin-left: 5px;
 }
 .battle-window .top .team-indicator.right {
   right: 2.5%;
@@ -217,8 +225,11 @@ a.random {
 .battle-window .top .team-indicator.right .name {
   text-align: right;
 }
-.battle-window .top .team-indicator.right .cmp {
+.battle-window .top .team-indicator.right .cmp, .battle-window .top .team-indicator.right .types {
   right: 0;
+}
+.battle-window .top .team-indicator.right .type {
+  margin-right: 5px;
 }
 .battle-window .top .team-indicator .name, .battle-window .top .team-indicator .cp, .battle-window .top .team-indicator .balls {
   width: 50%;
@@ -251,6 +262,24 @@ a.random {
   background: rgba(0, 0, 0, 0.25);
   color: #eee;
   border-radius: 12px;
+}
+.battle-window .top .team-indicator .types {
+  position: absolute;
+  display: flex;
+  top: -20px;
+}
+.battle-window .top .team-indicator .types .type {
+  width: 18px;
+  height: 18px;
+  border-radius: 18px;
+  font-weight: bold;
+  color: #fff;
+  font-size: 12px;
+  line-height: 20px;
+  text-transform: capitalize;
+}
+.battle-window .top .team-indicator .types .type.none {
+  display: none;
 }
 .battle-window .top .team-indicator .featured-team-description {
   position: absolute;
@@ -288,6 +317,7 @@ a.random {
 .battle-window .scene .pokemon-container.self {
   bottom: 30%;
   left: 20%;
+  z-index: 10;
 }
 .battle-window .scene .pokemon-container.self .pokemon {
   -moz-transform: scaleX(-1);
@@ -307,7 +337,7 @@ a.random {
   left: -70px;
 }
 .battle-window .scene .pokemon-container.opponent {
-  bottom: 55%;
+  bottom: 52%;
   right: 25%;
 }
 .battle-window .scene .pokemon-container.opponent .shield-sprite {
@@ -413,14 +443,34 @@ a.random {
   left: -52px;
 }
 .battle-window .scene .pokemon-container .hp.bar-back {
-  border: 2px solid #666;
+  outline: 2px solid #666;
+  border: none;
   height: 20px;
   width: 90%;
   margin: 0 auto 20px auto;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+.battle-window .scene .pokemon-container .hp.bar-back.super-effective, .battle-window .scene .pokemon-container .hp.bar-back.effective, .battle-window .scene .pokemon-container .hp.bar-back.not-very-effective {
+  -webkit-transition: all 0.05s ease 0s;
+  -moz-transition: all 0.05s ease 0s;
+  -o-transition: all 0.05s ease 0s;
+  transition: all 0.05s ease 0s;
+}
+.battle-window .scene .pokemon-container .hp.bar-back.super-effective {
+  outline: 4px solid #ea0404;
+}
+.battle-window .scene .pokemon-container .hp.bar-back.effective {
+  outline: 2px solid #f57a23;
+}
+.battle-window .scene .pokemon-container .hp.bar-back.not-very-effective {
+  outline: 2px solid #2172ea;
 }
 .battle-window .scene .pokemon-container .hp.bar-back .bar {
   position: relative;
-  top: -12px;
+  top: -16px;
 }
 .battle-window .scene .pokemon-container .hp.bar-back .bar.damage {
   background: #ff5115;
@@ -455,6 +505,7 @@ a.random {
   position: absolute;
   bottom: 35%;
   width: 100%;
+  z-index: 15;
 }
 .battle-window .controls .move-bars .move-bar {
   display: block;
@@ -504,6 +555,7 @@ a.random {
   width: 100%;
   display: flex;
   justify-content: space-around;
+  z-index: 15;
 }
 .battle-window .controls .move-labels .label {
   -webkit-transition: all 0.2s ease 0s;
@@ -575,6 +627,7 @@ a.random {
   border-radius: 8px;
   left: 2.5%;
   top: -80%;
+  z-index: 15;
 }
 .battle-window .controls .button-stack div {
   width: 16px;
@@ -806,7 +859,8 @@ a.random {
 }
 .battle-window[phase=suspend_charged_no_shields] .controls .button-stack,
 .battle-window[phase=suspend_charged_no_shields] .controls .move-bar,
-.battle-window[phase=suspend_charged_no_shields] .controls .switch-btn {
+.battle-window[phase=suspend_charged_no_shields] .controls .switch-btn,
+.battle-window[phase=suspend_charged_no_shields] .controls .move-labels {
   display: none !important;
 }
 .battle-window[phase=suspend_charged_no_shields] .team-indicator {
@@ -857,7 +911,8 @@ a.random {
 }
 .battle-window[phase=suspend_switch_self] .controls .button-stack,
 .battle-window[phase=suspend_switch_self] .controls .move-bar,
-.battle-window[phase=suspend_switch_self] .controls .switch-btn {
+.battle-window[phase=suspend_switch_self] .controls .switch-btn,
+.battle-window[phase=suspend_switch_self] .controls .move-labels {
   display: none !important;
 }
 .battle-window[phase=suspend_switch] .animate-message {
@@ -966,6 +1021,15 @@ a.random {
 }
 .team-select .lets-go-btn {
   display: none;
+}
+.team-select a.return-to-setup {
+  background: rgba(255, 255, 255, 0.75);
+  color: #000;
+  border-radius: 8px;
+  font-size: 14px;
+  padding: 4px 12px;
+  margin-bottom: 10px;
+  display: inline-block;
 }
 
 /* END SCREEN */
@@ -1315,7 +1379,7 @@ a.random {
   left: 21%;
 }
 .battle-window .scene .pokemon-container.animate-fast.opponent {
-  bottom: 54%;
+  bottom: 51%;
   right: 26%;
 }
 .battle-window .scene .pokemon-container.animate-fast .fast-move-circle {

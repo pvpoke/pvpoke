@@ -151,6 +151,11 @@
 	}
 }
 
+.autotap-toggle{
+	font-size:14px;
+	text-align: left;
+}
+
 a.random{
 	margin-top:5px;
 }
@@ -250,7 +255,7 @@ a.random{
 			border-radius:8px;
 			display:flex;
 			flex-wrap:wrap;
-			top:15px;
+			top:25px;
 			padding: 3px;
 			max-width:35%;
 			justify-content: space-between;
@@ -258,8 +263,12 @@ a.random{
 			&.left{
 				left:2.5%;
 
-				.cmp{
+				.cmp, .types{
 					left:0;
+				}
+
+				.type{
+					margin-left:5px;
 				}
 			}
 
@@ -274,8 +283,12 @@ a.random{
 					text-align: right;
 				}
 
-				.cmp{
+				.cmp, .types{
 					right:0;
+				}
+
+				.type{
+					margin-right:5px;
 				}
 			}
 
@@ -317,6 +330,27 @@ a.random{
 				border-radius: 12px;
 			}
 
+			.types{
+				position: absolute;
+			    display: flex;
+			    top: -20px;
+
+				.type{
+					width: 18px;
+				    height: 18px;
+				    border-radius: 18px;
+				    font-weight: bold;
+					color:#fff;
+				    font-size: 12px;
+				    line-height: 20px;
+					text-transform: capitalize;
+
+					&.none{
+						display:none;
+					}
+				}
+			}
+
 			.featured-team-description{
 				position: absolute;
 				top: 190%;
@@ -356,6 +390,7 @@ a.random{
 			&.self{
 				bottom: 30%;
 				left: 20%;
+				z-index: 10;
 
 				.pokemon{
 					@include transform(scaleX(-1));
@@ -376,7 +411,7 @@ a.random{
 			}
 
 			&.opponent{
-				bottom: 55%;
+				bottom: 52%;
 				right: 25%;
 
 				.shield-sprite{
@@ -484,14 +519,33 @@ a.random{
 			}
 
 			.hp.bar-back{
-				border:2px solid #666;
+				outline:2px solid #666;
+				border:none;
 				height:20px;
 				width: 90%;
 				margin: 0 auto 20px auto;
 
+				@include transition(all, 0.4s, ease, 0s);
+
+				&.super-effective, &.effective, &.not-very-effective{
+					@include transition(all, 0.05s, ease, 0s);
+				}
+
+				&.super-effective{
+					outline: 4px solid #ea0404;
+				}
+
+				&.effective{
+					outline: 2px solid #f57a23;
+				}
+
+				&.not-very-effective{
+					outline: 2px solid #2172ea;
+				}
+
 				.bar{
 					position:relative;
-					top:-12px;
+					top:-16px;
 
 					&.damage{
 						background:#ff5115;
@@ -525,6 +579,7 @@ a.random{
 			position:absolute;
 			bottom:35%;
 			width:100%;
+			z-index:15;
 
 			.move-bar{
 				display:block;
@@ -571,6 +626,7 @@ a.random{
 		    width: 100%;
 		    display: flex;
 		    justify-content: space-around;
+			z-index: 15;
 
 			.label{
 				@include transition(all, 0.2s, ease, 0s);
@@ -645,6 +701,7 @@ a.random{
 			border-radius: 8px;
 			left: 2.5%;
 			top: -80%;
+			z-index: 15;
 
 			div{
 				width: 16px;
@@ -914,7 +971,8 @@ a.random{
 
 		.controls .button-stack,
 		.controls .move-bar,
-		.controls .switch-btn{
+		.controls .switch-btn,
+		.controls .move-labels{
 			display:none !important;
 		}
 
@@ -973,7 +1031,8 @@ a.random{
 
 		.controls .button-stack,
 		.controls .move-bar,
-		.controls .switch-btn{
+		.controls .switch-btn,
+		.controls .move-labels{
 			display:none !important;
 		}
 	}
@@ -1114,6 +1173,16 @@ a.random{
 
 	.lets-go-btn{
 		display:none;
+	}
+
+	a.return-to-setup{
+		background: rgba(255, 255, 255, 0.75);
+	    color: #000;
+	    border-radius: 8px;
+	    font-size: 14px;
+	    padding: 4px 12px;
+	    margin-bottom: 10px;
+	    display: inline-block;
 	}
 }
 
@@ -1473,7 +1542,7 @@ a.random{
 		}
 
 		&.opponent{
-			bottom:54%;
+			bottom:51%;
 			right:26%;
 		}
 

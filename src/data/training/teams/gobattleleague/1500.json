@@ -246,7 +246,7 @@
 				"speciesId": "regirock",
 				"fastMove": "LOCK_ON",
 				"chargedMoves": ["STONE_EDGE","ZAP_CANNON"],
-				"difficulty": 3,
+				"difficulty": 1,
 				"weight":1
 			},
 			{
@@ -254,28 +254,28 @@
 				"fastMove": "SMACK_DOWN",
 				"chargedMoves": ["STONE_EDGE","FLAMETHROWER"],
 				"difficulty": 3,
-				"weight":15
+				"weight":20
 			},
 			{
 				"speciesId": "melmetal",
 				"fastMove": "THUNDER_SHOCK",
 				"chargedMoves": ["ROCK_SLIDE","SUPER_POWER"],
 				"difficulty": 3,
-				"weight":5
+				"weight":2
 			},
 			{
 				"speciesId": "melmetal",
 				"fastMove": "THUNDER_SHOCK",
 				"chargedMoves": ["THUNDERBOLT","ROCK_SLIDE"],
 				"difficulty": 1,
-				"weight":2
+				"weight":1
 			},
 			{
 				"speciesId": "probopass",
 				"fastMove": "SPARK",
 				"chargedMoves": ["THUNDERBOLT","ROCK_SLIDE"],
 				"difficulty": 2,
-				"weight":3
+				"weight":6
 			},
 			{
 				"speciesId": "mawile",

@@ -87,6 +87,12 @@ var BattlerMaster = (function () {
 					}
 				}
 
+				// Turn on autotapping if override set
+				if(props.autotapOverride){
+					autotap = true;
+					$(".controls .auto-tap").addClass("active");
+				}
+
 				$(".team-indicator .cmp").hide();
 				//$(".team-indicator .cmp").eq(priorityAssignment).show();
 
@@ -283,6 +289,12 @@ var BattlerMaster = (function () {
 							$(".team-indicator").eq(i).find(".cp").html("CP " + pokemon.cp);
 						}
 
+						// Display Pokemon types
+						$(".team-indicator").eq(i).find(".types .type").eq(0).attr("class","type " + pokemon.types[0]);
+						$(".team-indicator").eq(i).find(".types .type").eq(1).attr("class","type " + pokemon.types[1]);
+						$(".team-indicator").eq(i).find(".types .type").eq(0).html(pokemon.types[0].charAt(0));
+						$(".team-indicator").eq(i).find(".types .type").eq(1).html(pokemon.types[1].charAt(0));
+
 						if(i == 0){
 							$(".move-bar").hide();
 							$(".move-labels .label").hide();
@@ -422,6 +434,7 @@ var BattlerMaster = (function () {
 				for(var i = 0; i < response.animations.length; i++){
 					var animation = response.animations[i];
 					var fastAnimationOccurred = false;
+					var damageAnimationOccurred = false;
 
 					switch(animation.type){
 						case "fast":
@@ -449,13 +462,31 @@ var BattlerMaster = (function () {
 
 								$(".battle-window .scene .pokemon-container").eq(animation.actor).attr("animation-duration", duration);
 							}
+							break;
 
+						case "damage":
+							damageAnimationOccurred = true;
+							var effectiveness = "effective";
+
+							if(animation.value > 1){
+								effectiveness = "super-effective";
+							} else if(animation.value < 1){
+								effectiveness = "not-very-effective";
+							}
+
+							$(".battle-window .scene .pokemon-container").eq(animation.actor).find(".hp.bar-back").addClass(effectiveness);
 							break;
 					}
 
 					if(fastAnimationOccurred){
 						setTimeout(function(){
 							$(".battle-window .scene .pokemon-container").removeClass("animate-fast");
+						}, 250);
+					}
+
+					if(damageAnimationOccurred){
+						setTimeout(function(){
+							$(".battle-window .scene .pokemon-container .hp.bar-back").removeClass("effective super-effective not-very-effective");
 						}, 250);
 					}
 				}
@@ -539,7 +570,7 @@ var BattlerMaster = (function () {
 						$(this).eq(index).find(".name").attr("class", "name " + activePokemon[index].types[0]);
 
 						$(".team-indicator").eq(index).find(".name").html(activePokemon[index].speciesName);
-						$(".team-indicator").eq(index).find(".cp").html(activePokemon[index].cp);
+						$(".team-indicator").eq(index).find(".cp").html("CP " + activePokemon[index].cp);
 
 						if(activePokemon[index].types[1] != "none"){
 							$(this).find(".pokemon").attr("type-2", activePokemon[index].types[1]);
@@ -702,7 +733,7 @@ var BattlerMaster = (function () {
 
 						// Assign this Pokemon's score in battle, damage done plus shields broken
 						var shieldValue = 50;
-						
+
 						if((battle.getCP() == 2500)||(battle.getCP() == 10000)){
 							shieldValue = 40;
 						}
@@ -769,7 +800,7 @@ var BattlerMaster = (function () {
 								pokeStr += "/" + chargedMoveAbbrevations[k];
 							}
 						}
-						
+
 						if(properties.mode == "tournament"){
 							gtag('event', battleSummaryStr, {
 								  'event_category' : 'Training Roster Pokemon',

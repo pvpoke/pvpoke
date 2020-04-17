@@ -741,7 +741,11 @@ function Battle(){
 					self.forceSwitch();
 				}
 
+				// Reset cooldowns for active Pokemon
 
+				for(var i = 0; i < pokemon.length; i++){
+					pokemon[i].cooldown = 0;
+				}
 
 				// AI switch
 				if(phaseProps.actors.indexOf(1) > -1){
@@ -756,8 +760,6 @@ function Battle(){
 					setTimeout(function(){
 						self.queueAction(1, "switch", switchChoice);
 					}, waitTime);
-
-
 				}
 			} else{
 				var result = "tie";
@@ -1697,10 +1699,14 @@ function Battle(){
 		if(mode == "emulate"){
 			attacker.battleStats.damage += (Math.min(damage, defender.hp) / defender.stats.hp) * 100;
 
-
 			if(attacker.battleStats.shieldsUsed > 0){
 				attacker.battleStats.damageFromShields += (Math.min(damage, defender.hp) / defender.stats.hp) * 100;
 			}
+
+			// Enter health bar animations
+			var effectiveness = defender.typeEffectiveness[move.type];
+
+			self.pushAnimation(defender.index, "damage", effectiveness);
 		}
 
 		// Inflict damage
