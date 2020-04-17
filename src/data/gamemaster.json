@@ -2268,8 +2268,9 @@
             "hp": 146
         },
         "types": ["psychic", "none"],
-        "fastMoves": ["CONFUSION", "PSYCHO_CUT"],
+        "fastMoves": ["CONFUSION", "PSYCHO_CUT", "COUNTER"],
         "chargedMoves": ["FIRE_PUNCH", "FOCUS_BLAST", "FUTURE_SIGHT", "SHADOW_BALL"],
+		"legacyMoves": ["COUNTER"],
         "defaultIVs": {
             "cp1500": [18.5, 2, 4, 14],
             "cp2500": [30, 4, 13, 12]

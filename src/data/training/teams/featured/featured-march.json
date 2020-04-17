@@ -84,6 +84,48 @@
 		]
 	},
 	{
+		"name": "SimplyMoxie",
+		"slug": "simplymoxie",
+		"img": "simplymoxie",
+		"cup": "voyager",
+		"cupName": "Voyager",
+		"league": 1500,
+		"description": "600M+ XP. Ottawa, Canada. TL40 Date: 2016-12-15. Pokemon GO PvP player.",
+		"link": "https://twitter.com/simplymoxie_",
+		"pokemon": [
+			{
+				"speciesId": "clefable",
+				"fastMove": "CHARM",
+				"chargedMoves": ["METEOR_MASH","PSYCHIC"]
+			},
+			{
+				"speciesId": "azumarill",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["ICE_BEAM","HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "registeel",
+				"fastMove": "LOCK_ON",
+				"chargedMoves": ["FLASH_CANNON","FOCUS_BLAST"]
+			},
+			{
+				"speciesId": "toxicroak",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["MUD_BOMB","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "raichu_alolan",
+				"fastMove": "VOLT_SWITCH",
+				"chargedMoves": ["THUNDER_PUNCH","WILD_CHARGE"]
+			},
+			{
+				"speciesId": "sableye",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["FOUL_PLAY","RETURN"]
+			}
+		]
+	},
+	{
 		"name": "Champion Blue",
 		"slug": "championblue",
 		"img": "pvpoke",
