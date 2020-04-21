@@ -266,7 +266,7 @@ function Pokemon(id, i, b){
 
 	// Generate an array of IV combinations sorted by stat
 
-	this.generateIVCombinations = function(sortStat, sortDirection, resultCount, filters) {
+	this.generateIVCombinations = function(sortStat, sortDirection, resultCount, filters, ivFloor) {
 		var targetCP = battle.getCP();
 		var level = self.levelCap;
         var atkIV = 15;
@@ -284,19 +284,16 @@ function Pokemon(id, i, b){
 
 		var floor = 0;
 
-		var untradables = ["mew","celebi","deoxys_attack","deoxys_defense","deoxys_speed","deoxys","jirachi","darkrai","genesect","genesect_burn","genesect_shock","genesect_chill","genesect_douse"];
-		var maxNear1500 = ["bastiodon"]
-
 		if(self.hasTag("legendary")){
 			floor = 1;
 		}
 
-		if(untradables.indexOf(self.speciesId) > -1){
-			floor = 10;
+		if(ivFloor){
+			floor = ivFloor;
 		}
 
-		if((maxNear1500.indexOf(self.speciesId) > -1)&&(resultCount > 1)){
-			floor = 12;
+		if(self.hasTag("untradeable")){
+			floor = 10;
 		}
 
         hpIV = 15;

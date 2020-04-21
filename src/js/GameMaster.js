@@ -169,10 +169,24 @@ var GameMaster = (function () {
 					battle.setCP(leagues[i]);
 
 					var cp = pokemon.calculateCP(.79030001, 15, 15, 15);
+					var level35cp = pokemon.calculateCP(0.76156384, 15, 15, 15);
 
 					if(cp > leagues[i]){
-						var combinations = pokemon.generateIVCombinations("overall", 1, 4096);
-						var defaultIndex = Math.floor(combinations.length * .12207);
+						var floor = 5;
+						var defaultIndex = 63;
+
+						// For Pokemon that max near the league cap, default to lucky IV's
+						if(level35cp < leagues[i]){
+							floor = 12;
+							defaultIndex = 16;
+						}
+
+						var combinations = pokemon.generateIVCombinations("overall", 1, 4096, null, floor);
+
+						// For untradable Pokemon, set the index to the 54th rank
+						if(pokemon.hasTag("untradeable")){
+							defaultIndex = 53;
+						}
 
 						var level = combinations[defaultIndex].level;
 						var ivs = combinations[defaultIndex].ivs;
