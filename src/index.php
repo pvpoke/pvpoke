@@ -27,7 +27,7 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.15.0 (April 21, 2020)</h4>
+	<h4>v1.14.11 (April 22, 2020)</h4>
 	<ul>
 		<li>Pokemon default IV's have been tweaked:</li>
 		<ul>
