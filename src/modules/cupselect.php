@@ -1,8 +1,8 @@
 <select class="format-select">
 	<option value="all" cup="all">All Pokemon</option>
+	<option value="tsa-2" cup="forest">Forest Cup</option>
 	<option value="tsa-2" cup="voyager">Voyager Cup</option>
 	<option value="tsa-2" cup="toxic">Toxic Cup</option>
-	<option value="community" cup="beam">Get Beamed</option>
 
 	<?php if((strpos($_SERVER['REQUEST_URI'], 'battle') !== false)||(strpos($_SERVER['REQUEST_URI'], 'rankings') !== false)): ?>
 		<option value="custom" cup="custom">Custom</option>
@@ -25,6 +25,7 @@
 	<option value="tempest" cat="tsa-1">Tempest Cup</option>
 	<option value="twilight" cat="tsa-1">Twilight Cup</option>
 	<option value="boulder" cat="tsa-1">Boulder Cup</option>
+	<option value="forest" cat="tsa-2">Forest Cup</option>
 	<option value="voyager" cat="tsa-2">Voyager Cup</option>
 	<option value="toxic" cat="tsa-2">Toxic Cup</option>
 	<option value="rose" cat="tsa-2">Rose Cup</option>

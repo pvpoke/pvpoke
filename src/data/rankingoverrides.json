@@ -4374,5 +4374,205 @@
 				"chargedMoves": ["PSYSHOCK","HYPER_BEAM"]
 			}
 		]
+	},
+	{
+		"league": 1500,
+		"cup": "forest",
+		"pokemon": [
+			{
+				"speciesId": "lanturn",
+				"fastMove": "SPARK"
+			},
+			{
+				"speciesId": "wormadam_trash",
+				"fastMove": "CONFUSION"
+			},
+			{
+				"speciesId": "stunfisk",
+				"fastMove": "THUNDER_SHOCK"
+			},
+			{
+				"speciesId": "houndoom",
+				"fastMove": "SNARL"
+			},
+			{
+				"speciesId": "houndoom_shadow",
+				"fastMove": "SNARL"
+			},
+			{
+				"speciesId": "yanmega",
+				"fastMove": "WING_ATTACK"
+			},
+			{
+				"speciesId": "alomomola",
+				"fastMove": "WATERFALL"
+			},
+			{
+				"speciesId": "chandelure",
+				"fastMove": "FIRE_SPIN"
+			},
+			{
+				"speciesId": "roselia",
+				"fastMove": "RAZOR_LEAF"
+			},
+			{
+				"speciesId": "scolipede",
+				"chargedMoves": ["X_SCISSOR","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "swampert",
+				"chargedMoves": ["HYDRO_CANNON", "SLUDGE_WAVE"]
+			},
+			{
+				"speciesId": "swampert_shadow",
+				"chargedMoves": ["SURF", "SLUDGE_WAVE"]
+			},
+			{
+				"speciesId": "octillery",
+				"chargedMoves": ["OCTAZOOKA", "GUNK_SHOT"]
+			},
+			{
+				"speciesId": "suicune",
+				"chargedMoves": ["BUBBLE_BEAM", "ICE_BEAM"]
+			},
+			{
+				"speciesId": "electivire",
+				"chargedMoves": ["ICE_PUNCH", "WILD_CHARGE"]
+			},
+			{
+				"speciesId": "seismitoad",
+				"chargedMoves": ["EARTH_POWER", "SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "forretress",
+				"chargedMoves": ["ROCK_TOMB", "EARTHQUAKE"]
+			},
+			{
+				"speciesId": "plusle",
+				"chargedMoves": ["DISCHARGE", "GRASS_KNOT"]
+			},
+			{
+				"speciesId": "minun",
+				"chargedMoves": ["DISCHARGE", "GRASS_KNOT"]
+			},
+			{
+				"speciesId": "qwilfish",
+				"chargedMoves": ["AQUA_TAIL", "SLUDGE_WAVE"]
+			},
+			{
+				"speciesId": "cherrim_sunny",
+				"chargedMoves": ["WEATHER_BALL_FIRE", "SOLAR_BEAM"],
+				"weight": 5
+			},
+			{
+				"speciesId": "ferrothorn",
+				"chargedMoves": ["POWER_WHIP", "FLASH_CANNON"],
+				"weight": 30
+			},
+			{
+				"speciesId": "blaziken",
+				"chargedMoves": ["BLAZE_KICK", "BLAST_BURN"],
+				"weight": 25
+			},
+			{
+				"speciesId": "escavalier",
+				"chargedMoves": ["AERIAL_ACE", "DRILL_RUN"]
+			},
+			{
+				"speciesId": "politoed",
+				"chargedMoves": ["SURF", "EARTHQUAKE"]
+			},
+			{
+				"speciesId": "lileep",
+				"fastMove": "BULLET_SEED"
+			},
+			{
+				"speciesId": "ampharos_shadow",
+				"chargedMoves": ["THUNDER_PUNCH", "FOCUS_BLAST"]
+			},
+			{
+				"speciesId": "galvantula",
+				"chargedMoves": ["DISCHARGE", "BUG_BUZZ"],
+				"weight": 10
+			},
+			{
+				"speciesId": "magnezone",
+				"chargedMoves": ["WILD_CHARGE", "FLASH_CANNON"],
+				"weight": 5
+			},
+			{
+				"speciesId": "vespiquen",
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["X_SCISSOR", "POWER_GEM"]
+			},
+			{
+				"speciesId": "mantine",
+				"weight": 50
+			},
+			{
+				"speciesId": "azumarill",
+				"weight": 35
+			},
+			{
+				"speciesId": "lanturn",
+				"weight": 10
+			},
+			{
+				"speciesId": "ampharos",
+				"weight": 10
+			},
+			{
+				"speciesId": "castform_sunny",
+				"weight": 35
+			},
+			{
+				"speciesId": "typhlosion",
+				"weight": 15
+			},
+			{
+				"speciesId": "torkoal",
+				"weight": 5
+			},
+			{
+				"speciesId": "shiftry",
+				"weight": 10
+			},
+			{
+				"speciesId": "ludicolo",
+				"weight": 10
+			},
+			{
+				"speciesId": "jumpluff",
+				"weight": 10
+			},
+			{
+				"speciesId": "cradily",
+				"weight": 10
+			},
+			{
+				"speciesId": "heracross",
+				"weight": 10
+			},
+			{
+				"speciesId": "meganium",
+				"weight": 25
+			},
+			{
+				"speciesId": "kingdra",
+				"weight": 30
+			},
+			{
+				"speciesId": "swampert",
+				"weight": 25
+			},
+			{
+				"speciesId": "quagsire",
+				"weight": 15
+			},
+			{
+				"speciesId": "stunfisk",
+				"weight": 5
+			}
+		]
 	}
 ]

@@ -105,6 +105,10 @@ switch($cup){
 	case "beam":
 		$league = 'Get Beamed';
 		break;
+
+	case "forest":
+		$league = 'Forest';
+		break;
 }
 
 $META_TITLE = $league . ' PvP Rankings';

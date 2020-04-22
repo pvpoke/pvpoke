@@ -262,6 +262,23 @@
             "filterType": "tag",
             "values": ["shadow"]
         }]
+    },{
+        "name": "forest",
+        "title": "Forest Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["grass","water","fire","electric","bug"]
+        }, {
+            "filterType": "dex",
+            "values": [152,649]
+        }],
+        "exclude": [{
+            "filterType": "id",
+            "values": ["tropius","genesect"]
+        }, {
+            "filterType": "tag",
+            "values": ["shadow"]
+        }]
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable"],
     "pokemonRegions": [{
@@ -8492,8 +8509,9 @@
             "hp": 165
         },
         "types": ["rock", "grass"],
-        "fastMoves": ["ACID", "INFESTATION"],
+        "fastMoves": ["ACID", "INFESTATION", "BULLET_SEED"],
         "chargedMoves": ["ANCIENT_POWER", "GRASS_KNOT", "MIRROR_COAT"],
+		"legacyMoves": ["BULLET_SEED"],
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
