@@ -1754,8 +1754,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 351,
-        "tags": [],
-        "eliteMoves": ["MUD_SHOT"]
+        "tags": []
     }, {
         "dex": 50,
         "speciesName": "Diglett (Alolan)",
@@ -3589,11 +3588,11 @@
         "types": ["normal", "none"],
         "fastMoves": ["POUND", "ZEN_HEADBUTT"],
         "chargedMoves": ["DAZZLING_GLEAM", "HYPER_BEAM", "PSYBEAM", "PSYCHIC"],
+        "legacyMoves": ["PSYBEAM"],
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        },
-        "eliteMoves": ["PSYBEAM"]
+        }
     }, {
         "dex": 114,
         "speciesName": "Tangela",
@@ -3725,12 +3724,12 @@
         "types": ["water", "psychic"],
         "fastMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "QUICK_ATTACK", "TACKLE", "WATER_GUN"],
         "chargedMoves": ["HYDRO_PUMP", "ICE_BEAM", "POWER_GEM", "PSYBEAM", "PSYCHIC", "THUNDER"],
-        "legacyMoves": ["QUICK_ATTACK"],
+        "legacyMoves": ["QUICK_ATTACK", "PSYBEAM"],
         "defaultIVs": {
             "cp1500": [22, 5, 9, 8],
             "cp2500": [39.5, 12, 13, 12]
         },
-        "eliteMoves": ["TACKLE", "PSYBEAM"]
+        "eliteMoves": ["TACKLE"]
     }, {
         "dex": 122,
         "speciesName": "Mr. Mime",
@@ -4366,13 +4365,14 @@
         "types": ["electric", "flying"],
         "fastMoves": ["CHARGE_BEAM", "THUNDER_SHOCK"],
         "chargedMoves": ["THUNDER", "THUNDERBOLT", "ZAP_CANNON", "ANCIENT_POWER", "DRILL_PECK", "DISCHARGE"],
+		"legacyMoves": ["DISCHARGE"],
         "tags": ["legendary", "shadoweligible"],
         "defaultIVs": {
             "cp1500": [15.5, 8, 14, 8],
             "cp2500": [26.5, 6, 7, 10]
         },
         "level25CP": 2208,
-        "eliteMoves": ["THUNDER_SHOCK", "DISCHARGE"]
+        "eliteMoves": ["THUNDER_SHOCK"]
     }, {
         "dex": 145,
         "speciesName": "Zapdos (Shadow)",
@@ -4384,13 +4384,13 @@
         },
         "types": ["electric", "flying"],
         "fastMoves": ["CHARGE_BEAM", "THUNDER_SHOCK"],
-        "chargedMoves": ["THUNDER", "THUNDERBOLT", "ZAP_CANNON", "ANCIENT_POWER", "DRILL_PECK", "DISCHARGE"],
+        "chargedMoves": ["THUNDER", "THUNDERBOLT", "ZAP_CANNON", "ANCIENT_POWER", "DRILL_PECK"],
         "tags": ["legendary", "shadow"],
         "defaultIVs": {
             "cp1500": [15.5, 8, 14, 8],
             "cp2500": [26.5, 6, 7, 10]
         },
-        "eliteMoves": ["THUNDER_SHOCK", "DISCHARGE"]
+        "eliteMoves": ["THUNDER_SHOCK"]
     }, {
         "dex": 146,
         "speciesName": "Moltres",
@@ -4401,7 +4401,7 @@
             "hp": 207
         },
         "types": ["fire", "flying"],
-        "fastMoves": ["EMBER", "FIRE_SPIN", "WING_ATTACK"],
+        "fastMoves": ["FIRE_SPIN", "WING_ATTACK"],
         "chargedMoves": ["FIRE_BLAST", "HEAT_WAVE", "OVERHEAT", "SKY_ATTACK", "ANCIENT_POWER"],
         "tags": ["legendary", "shadoweligible"],
         "defaultIVs": {
@@ -4409,7 +4409,7 @@
             "cp2500": [26.5, 5, 13, 11]
         },
         "level25CP": 2167,
-        "eliteMoves": ["EMBER", "SKY_ATTACK"]
+        "eliteMoves": ["SKY_ATTACK"]
     }, {
         "dex": 146,
         "speciesName": "Moltres (Shadow)",
@@ -5988,13 +5988,13 @@
         "types": ["ice", "flying"],
         "fastMoves": ["ICE_SHARD", "PRESENT", "QUICK_ATTACK"],
         "chargedMoves": ["AERIAL_ACE", "ICE_PUNCH", "ICY_WIND"],
+        "legacyMoves": ["ICE_SHARD", "QUICK_ATTACK"],
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 612,
-        "tags": ["shadoweligible"],
-        "eliteMoves": ["ICE_SHARD", "QUICK_ATTACK"]
+        "tags": ["shadoweligible"]
     }, {
         "dex": 225,
         "speciesName": "Delibird (Shadow)",
@@ -6445,7 +6445,7 @@
             "hp": 225
         },
         "types": ["water", "none"],
-        "fastMoves": ["EXTRASENSORY", "HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "ICE_FANG", "SNARL", "HIDDEN_POWER"],
+        "fastMoves": ["EXTRASENSORY", "HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "ICE_FANG", "SNARL"],
         "chargedMoves": ["BUBBLE_BEAM", "HYDRO_PUMP", "ICE_BEAM", "WATER_PULSE"],
         "legacyMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER"],
         "tags": ["legendary"],
@@ -6453,7 +6453,7 @@
             "cp1500": [18.5, 6, 11, 15],
             "cp2500": [33.5, 5, 8, 9]
         },
-        "eliteMoves": ["HIDDEN_POWER"]
+        "eliteMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER"]
     }, {
         "dex": 246,
         "speciesName": "Larvitar",
