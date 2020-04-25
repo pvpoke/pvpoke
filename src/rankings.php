@@ -261,6 +261,10 @@ require_once 'header.php';
 		<div class="ranking-header">Fast Moves</div>
 		<div class="ranking-header right">Usage</div>
 		<div class="moveset fast clear"></div>
+		<div class="footnote">
+			* Event or Elite TM exclusive<br>
+			<sup>†</sup> Unobtainable via TM
+		</div>
 	</div>
 	<div class="detail-section float">
 		<div class="ranking-header">Charged Moves</div>

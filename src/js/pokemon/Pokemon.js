@@ -108,7 +108,7 @@ function Pokemon(id, i, b){
 			move.displayName = move.name;
 			
 			if(move.legacy){
-				move.displayName = move.name + " †";
+				move.displayName = move.name + " <sup>†</sup>";
 			} else if(move.elite){
 				move.displayName = move.name + " *";
 			}
@@ -131,7 +131,7 @@ function Pokemon(id, i, b){
 			move.displayName = move.name;
 			
 			if(move.legacy){
-				move.displayName = move.name + " †";
+				move.displayName = move.name + " <sup>†</sup>";
 			} else if(move.elite){
 				move.displayName = move.name + " *";
 			}
@@ -139,7 +139,8 @@ function Pokemon(id, i, b){
 			this.chargedMovePool.push(move);
 		}
 	}
-
+	
+	
 	// Add Return and Frustration for eligible Pokemon
 
 	if((data.tags)&&(data.tags.indexOf("shadoweligible") > -1)){

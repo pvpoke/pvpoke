@@ -255,6 +255,7 @@ var GameMaster = (function () {
 					move = {
 						moveId: m.moveId,
 						name: m.name,
+						displayName: m.name,
 						abbreviation: abbreviation,
 						type: m.type,
 						power: m.power,
@@ -262,8 +263,15 @@ var GameMaster = (function () {
 						energyGain: m.energyGain,
 						cooldown: m.cooldown,
 						selfDebuffing: false,
-						selfAttackDebuffing: false
+						selfAttackDebuffing: false,
+						legacy: false,
+						elite: false
 					};
+					
+					if((move.moveId == "RETURN")||(move.moveId == "FRUSTRATION")){
+						move.legacy = true;
+						move.displayName = move.displayName + " <sup>†</sup>";
+					}
 
 					if(m.buffs){
 						move.buffs = m.buffs;
