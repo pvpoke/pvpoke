@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /* VARIABLES */
 /* MIXINS */
 /* STRUCTURE */
@@ -188,6 +188,7 @@ header {
 
 .icon-rankings {
   background-image: url("../img/icon_rankings.png");
+
 }
 
 .icon-team {
@@ -3086,6 +3087,7 @@ a.toggle {
     height: 0;
     overflow: hidden;
     pointer-events: none;
+    white-space: nowrap;
     -webkit-transition: all 0.125s linear 0s;
     -moz-transition: all 0.125s linear 0s;
     -o-transition: all 0.125s linear 0s;
@@ -3103,7 +3105,7 @@ a.toggle {
   .menu .submenu a {
     float: none;
     margin: 6px 0;
-    width: 120px;
+    max-width: 150px;
   }
 
   .rank .details .detail-section.overall .rating-container .ranking-header {
