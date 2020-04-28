@@ -18,7 +18,7 @@ require_once '../header.php';
 		</div>
 		<div class="col-9">
 			<h4><a href="<?php echo $WEB_ROOT; ?>articles/best-elite-tm-candidates-pvp/">Best Elite TM Candidates for PvP</a></h4>
-			<div class="date">April 24, 2020</div>
+			<div class="date">April 28, 2020</div>
 			<p>Elite TM's are now available! Which exclusive moves and Pokemon are the best for your PvP team?</p>
 		</div>
 

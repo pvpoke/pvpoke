@@ -13,7 +13,7 @@ require_once '../header.php';
 
 <div class="section article white">
 	<h1>Best Elite TM Candidates for PvP</h1>
-	<div class="date">Last updated April 24, 2020</div>
+	<div class="date">Last updated April 28, 2020</div>
 	<img src="<?php echo $WEB_ROOT;?>assets/articles/elite-tm-banner.jpg" />
 <p>
     Trainers can now obtain Elite TM's—special TM's that will
@@ -32,6 +32,8 @@ require_once '../header.php';
   <ol>
 			<li><a href="#dewgong">Dewgong</a></li>
 			<li><a href="#zapdos">Zapdos</a></li>
+			<li><a href="#groudon">Groudon</a></li>
+			<li><a href="#cresselia">Cresselia</a></li>
 			<li><a href="#charizard">Charizard</a></li>
 			<li><a href="#blaziken">Blaziken</a></li>
 			<li><a href="#mewtwo">Mewtwo</a></li>
@@ -145,6 +147,57 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
     safest switches that can force shields and take all but Giratina and
     Melmetal into the red. If you managed to catch one and TM Frustration away,
     it’s definitely a top Elite TM candidate.
+</p>
+	</div>
+
+	<a name="groudon"></a>
+	<h3 class="article-header">Groudon</h3>
+  <div class="article-section">
+<p>
+    <strong>Moveset: </strong>
+    Mud Shot
+    + <em>Fire Punch</em> &amp; Earthquake
+    <em>
+        <br/>
+    </em>
+    <strong>Formats: </strong>
+    Master League
+</p>
+<p>
+    During the <a href="https://pokemongolive.com/en/post/throwbackchallenge2020/" target="_blank">Hoenn Throwback Challenge</a> starting on May 15th, Groudon with the exclusive move Fire Punch will be roaring into special research! This is a titanic change for Groudon, giving it a move 15 energy cheaper than its previously cheapest move (Earthquake, 65 energy) and setting it up to tear through Master League's Steel-heavy meta.
+</p>
+<p>
+    One big thing Fire Punch does for Groudon is give it the ability to bait. <b>Fire Punch Groudon gains the ability to beat both Giratina with a successful bait.</b> Groudon is happy to spam Fire Punch as well, beating key targets like Melmetal and Metagross. It can also potentially beat Dialga and Togekiss this way, although these matchups are extremely close (Dialga needs 1 more Dragon Breath to reach another Iron Head, Togekiss can win the matchups by not using a Charged Move).</b>
+</p>
+<p>
+    Overall,  <a href="https://pvpoke.com/battle/multi/10000/custom/groudon/11/1-1-4-FIRE_PUNCH-1/2-1/master/" target="_blank">Fire Punch Groudon</a> will enter the Master League scene as a very welcome addition to break up prominent Steel and double-Steel lineups. If you already have a Groudon powered up, using an Elite TM to obtain Fire Punch is well worth it and greatly improves Groudon's viability. <b>Groudon has yet to receive its signature move, Precipice Blades</b>, so if you want to invest in Groudon now, be prepared to use more Elite TM's on it in the future.
+</p>
+	</div>
+
+	<a name="cresselia"></a>
+	<h3 class="article-header">Cresselia</h3>
+  <div class="article-section">
+<p>
+    <strong>Moveset: </strong>
+    Confusion or Psycho Cut
+    + <em>Grass Knot</em> &amp; Aurora Beam, Future Sight, or Moonblast
+    <em>
+        <br/>
+    </em>
+    <strong>Formats: </strong>
+    Great League, Ultra League
+</p>
+<p>
+    Not only will Cresselia likely be available under 1500 CP outside of trades during the <a href="https://pokemongolive.com/en/post/throwbackchallenge2020/" target="_blank">Sinnnoh Throwback Challenge</a>, it will come with Grass Knot! Grass Knot Cresselia will become a force to be reckoned with in <a href="https://pvpoke.com/battle/multi/1500/custom/cresselia/11/0-4-1-GRASS_KNOT-0/2-1/great/" target="_blank">Great League</a> and provide an interesting twist in <a href="https://pvpoke.com/battle/multi/2500/custom/cresselia/11/0-4-1-GRASS_KNOT-0/2-1/ultra/" target="_blank">Ultra League</a>.
+</p>
+<p>
+	Great League is rife with bulky Water-type Pokemon like Azumarill and Whiscash that form the backbone of many teams. Cresselia can now take its amazing bulk and apply super effective pressure against these Pokemon. <b>Head to head, it beats Azumarill, Whiscash, Swampert, and Dewgong.</b> It will also be able to go toe to toe with Jellicent. Outside of Grass Knot, it can also beat other Grass types like Venusaur and Tropius, and Fighting or pseudo-Fighting Pokemon like Toxicroak, Medicham, Defense Deoxys, and Vigoroth. That's an impressive matchup profile!
+</p>
+<p>
+	Cresselia has an abundance of Charged Move options to pair with Grass Knot. Aurora Beam has the most synergy, targeting Flying and Grass types that resist Grass Knot. It does leave Cresselia more vulnerable to Alolan Marowak, but with Confusion this matchup is surprisingly close and <a href="https://pvpoke.com/battle/1500/cresselia/marowak_alolan-31-7-11-14-4-4-0/11/0-4-1-GRASS_KNOT-0/0-4-1/" target="_blank">has potential to flip in Cresselia's favor</a>. Moonblast provides valuable coverage against Dark-type counters and is especially valuable against Giratina in Ultra League. Last but not least, Future Sight is an all around good move for general matchups.
+</p>
+<p>
+	Confusion versus Psycho Cut is a tougher debate and depends on how you want to use Cresselia. Confusion is generally better in head-on matchups while Psycho Cut gives Cresselia a bigger advantage when switching in or building energy leads. Overall I would recommend Confusion especially if you run Grass Knot and Aurora Beam, as Aurora Beam especially lacks punch.
 </p>
 	</div>
 
