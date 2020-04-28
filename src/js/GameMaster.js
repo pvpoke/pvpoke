@@ -69,11 +69,21 @@ var GameMaster = (function () {
 							console.log("Removing Return from " + entry.speciesId);
 							entry.legacyMoves.splice(i, 1);
 							i--;
+
+							continue;
 						}
 
-						if(entry.legacyMoves.length == 0){
-							delete entry.legacyMoves;
+						// Remove any elite moves from the legacy move list
+						if(entry.eliteMoves){
+							if(entry.eliteMoves.indexOf(entry.legacyMoves[i]) > -1){
+								entry.legacyMoves.splice(i, 1);
+								i--;
+							}
 						}
+					}
+
+					if(entry.legacyMoves.length == 0){
+						delete entry.legacyMoves;
 					}
 				}
 
@@ -111,19 +121,33 @@ var GameMaster = (function () {
 					entry.tags.splice(entry.tags.indexOf("shadowEligible"), 1);
 					entry.tags.push("shadow");
 
-					// Remove all legacy and exclusive moves
+					// Remove all legacy and exclusive moves that aren't available via Elite TM
 					if(entry.legacyMoves){
 						for(var i = 0; i < entry.fastMoves.length; i++){
+							var remove = true;
 							if(entry.legacyMoves.indexOf(entry.fastMoves[i]) > -1){
-								entry.fastMoves.splice(i, 1);
-								i--;
+								if((entry.eliteMoves)&&(entry.eliteMoves.indexOf(entry.fastMoves[i]) > -1)){
+									remove = false;
+								}
+
+								if(remove){
+									entry.fastMoves.splice(i, 1);
+									i--;
+								}
 							}
 						}
 
 						for(var i = 0; i < entry.chargedMoves.length; i++){
+							var remove = true;
 							if(entry.legacyMoves.indexOf(entry.chargedMoves[i]) > -1){
-								entry.chargedMoves.splice(i, 1);
-								i--;
+								if((entry.eliteMoves)&&(entry.eliteMoves.indexOf(entry.chargedMoves[i]) > -1)){
+									remove = false;
+								}
+
+								if(remove){
+									entry.chargedMoves.splice(i, 1);
+									i--;
+								}
 							}
 						}
 
@@ -231,6 +255,7 @@ var GameMaster = (function () {
 					move = {
 						moveId: m.moveId,
 						name: m.name,
+						displayName: m.name,
 						abbreviation: abbreviation,
 						type: m.type,
 						power: m.power,
@@ -238,8 +263,15 @@ var GameMaster = (function () {
 						energyGain: m.energyGain,
 						cooldown: m.cooldown,
 						selfDebuffing: false,
-						selfAttackDebuffing: false
+						selfAttackDebuffing: false,
+						legacy: false,
+						elite: false
 					};
+					
+					if((move.moveId == "RETURN")||(move.moveId == "FRUSTRATION")){
+						move.legacy = true;
+						move.displayName = move.displayName + " <sup>†</sup>";
+					}
 
 					if(m.buffs){
 						move.buffs = m.buffs;

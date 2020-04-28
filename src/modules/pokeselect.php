@@ -90,7 +90,7 @@
 			<select class="move-select charged"></select>
 			<select class="move-select charged"></select>
 			<button class="auto-select">Auto Select Moves</button>
-			<div class="legacy">* Legacy Move</div>
+			<div class="legacy">* Exclusive move<br><sup>†</sup> Unobtainable move</div>
 		</div>
 
 		<div class="options">

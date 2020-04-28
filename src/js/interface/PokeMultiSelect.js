@@ -136,7 +136,7 @@ function PokeMultiSelect(element){
 					$item.find(".moves").append(", ");
 				}
 
-				$item.find(".moves").append(moveList[n].name);
+				$item.find(".moves").append(moveList[n].displayName);
 			}
 
 			$el.find(".rankings-container").append($item);

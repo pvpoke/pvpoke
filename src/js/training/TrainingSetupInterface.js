@@ -3,7 +3,7 @@
 */
 // Load AI archetypes
 
-var file = webRoot+"data/training/teams/featured/featured-march.json?v=4";
+var file = webRoot+"data/training/teams/featured/featured-april.json?v=1";
 var featuredTeams = [];
 
 $.getJSON( file, function( data ){
@@ -498,7 +498,7 @@ var InterfaceMaster = (function () {
 
 			function returnToSetup(e){
 				e.preventDefault();
-				
+
 				handler.returnToSetup();
 			}
 

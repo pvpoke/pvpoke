@@ -210,16 +210,23 @@
 			{
 				"speciesId": "mewtwo",
 				"fastMove": "PSYCHO_CUT",
-				"chargedMoves": ["PSYSTRIKE","ICE_BEAM"],
+				"chargedMoves": ["PSYSTRIKE","SHADOW_BALL"],
 				"difficulty": 2,
-				"weight":16
+				"weight":6
 			},
 			{
 				"speciesId": "mewtwo",
 				"fastMove": "PSYCHO_CUT",
-				"chargedMoves": ["SHADOW_BALL","FOCUS_BLAST"],
+				"chargedMoves": ["PSYSTRIKE","ICE_BEAM"],
 				"difficulty": 2,
-				"weight":6
+				"weight":12
+			},
+			{
+				"speciesId": "mewtwo",
+				"fastMove": "PSYCHO_CUT",
+				"chargedMoves": ["PSYSTRIKE","FOCUS_BLAST"],
+				"difficulty": 2,
+				"weight":12
 			},
 			{
 				"speciesId": "mewtwo",

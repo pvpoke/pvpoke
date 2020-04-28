@@ -16,6 +16,7 @@
 				<option value="great" type="great" class="multi-battle">Great League Meta</option>
 				<option value="ultra" type="ultra" class="hide multi-battle">Ultra League Meta</option>
 				<option value="master" type="master" class="hide multi-battle">Master League Meta</option>
+				<option value="forest" type="forest" class="multi-battle">Forest Cup Meta</option>
 				<option value="voyager" type="voyager" class="multi-battle">Voyager Cup Meta</option>
 				<option value="toxic" type="toxic" class="multi-battle">Toxic Cup Meta</option>
 			</select>
@@ -40,7 +41,7 @@
 			</select>
 			<select class="default-iv-select">
 				<option value="original">Original IV's</option>
-				<option value="gamemaster">Typical IV's (~Rank 500)</option>
+				<option value="gamemaster">Default IV's</option>
 				<option value="overall">Maximum stat product (Rank 1)</option>
 				<option value="atk">Maximum Attack</option>
 				<option value="def">Maximum Defense</option>

@@ -3,7 +3,7 @@
 
 $META_TITLE = 'Best Elite TM Candidates for PvP';
 
-$META_DESCRIPTION = 'Elite TM\'s will soon be available! Which exclusive moves and Pokemon are the best for your PvP team?';
+$META_DESCRIPTION = 'Elite TM\'s are now available! Which exclusive moves and Pokemon are the best for your PvP team?';
 
 $OG_IMAGE = 'https://pvpoke.com/assets/articles/elite-tm-og.jpg';
 
@@ -13,40 +13,16 @@ require_once '../header.php';
 
 <div class="section article white">
 	<h1>Best Elite TM Candidates for PvP</h1>
-	<div class="date">Last updated April 16, 2020</div>
+	<div class="date">Last updated April 24, 2020</div>
 	<img src="<?php echo $WEB_ROOT;?>assets/articles/elite-tm-banner.jpg" />
 <p>
-    Soon, trainers will be able to obtain Elite TM's—special TM's that will
-    allow you to select the move your Pokemon learns or even “learn attacks
-    previously available only during events such as Raid Days or Community
-    Days.” (<a href="https://pokemongolive.com/en/post/gobattleleague-season1/" target="_blank">source</a>) When Season 1 ends on May 1st, players who reach Rank 7 or higher will
-    receive an Elite Charged TM. An Elite Charged TM will also be available in
-    the Community Day box for one-time purchase (<a
-        href="https://pokemongolive.com/en/post/communityday-april2020/" target="_blank"
-    >source</a>).
-</p>
-<p>
-    These Elite TM's open up rare movesets and movesets that haven’t been
+    Trainers can now obtain Elite TM's—special TM's that will
+    allow you to select a specific move or learn event-exclusive or legacy attacks! These Elite TM's open up rare movesets and movesets that haven’t been
     available before! In this article, we’ll take a look at potential
     candidates so you have some ideas when those Elite TM’s land in your bag.
 </p>
 <p>
-    Please note that until Elite TM’s are released, exact move availability is
-    unknown. The official announcement suggests Elite TM’s work for Community
-    Day and Raid Day exclusive moves; whether they will work on legacy moves
-    that are no longer in a Pokemon’s movepool has yet to be announced by a
-    first party source. This article speculates on the possibilities but some
-    of the movesets listed in this article may prove to be unobtainable. I’ll
-    update as new info comes out! Niantic may also decide to restore legacy
-    moves in a future movepool update, so you’ll also want to consider this
-    while using your Elite TM’s.
-</p>
-<p>
-    In the meantime, I’ve marked each candidate as “Event” (Community Day and
-    Raid Day moves which will be possible according to the announcement) or
-    “Removed” (moves no longer in the movepool which may or may not be
-    possible). Moves italicized in the listed movesets are moves you would
-    obtain via Elite TM.
+    Note that not all legacy moves are available via Elite TM, in particular moves that Pokemon never learned in the main series games. These include Mud Shot Golem and and Mud Shot Dugtrio. Also note that Elite TM's cannot remove Frustration from Shadow Pokemon.
 </p>
 <p>
     Special thanks to <a href="https://twitter.com/squawk1337" target="_blank">@squawk1337</a>
@@ -57,13 +33,14 @@ require_once '../header.php';
 			<li><a href="#dewgong">Dewgong</a></li>
 			<li><a href="#zapdos">Zapdos</a></li>
 			<li><a href="#charizard">Charizard</a></li>
+			<li><a href="#blaziken">Blaziken</a></li>
 			<li><a href="#mewtwo">Mewtwo</a></li>
 			<li><a href="#mew">Mew</a></li>
 	  		<li><a href="#event-shadow">Event Moves &amp; Shadow Pokemon</a></li>
 	  		<li><a href="#removed">Other Removed Moves</a></li>
 		</ol>
 	</p>
-	
+
 	<a name="dewgong"></a>
 	<h3 class="article-header">Dewgong</h3>
 	<div class="article-section">
@@ -74,11 +51,6 @@ require_once '../header.php';
     <em>
         <br/>
     </em>
-    <strong>Move Type: </strong>
-    Removed
-    <em>
-        <br/>
-    </em>
     <strong>Formats: </strong>
     Great League
 </p>
@@ -86,8 +58,8 @@ require_once '../header.php';
     If you’ve been playing Great League or in The Silph Arena for a while,
     you’ve probably heard myths about this rare creature. You’ve maybe even
     glimpsed one for 4 whole minutes before the game timed out. The fabled
-    double legacy Dewgong may soon be attainable, but would come at the steep
-    cost of two Elite TM’s if you don’t have one of the removed moves already.
+    double legacy Dewgong is now attainable, but comes at the steep
+    cost of two Elite TM’s if you don’t have one of the legacy moves already.
 </p>
 <p>
 Make no mistake,    <strong>double legacy Dewgong is a top tier Great League Pokemon </strong>
@@ -109,7 +81,7 @@ Make no mistake,    <strong>double legacy Dewgong is a top tier Great League Pok
     on Dewgong now if you want to win with it now.
 </p>
   </div>
-	
+
 	<a name="zapdos"></a>
 	<h3 class="article-header">Zapdos</h3>
   <div class="article-section">
@@ -120,18 +92,13 @@ Make no mistake,    <strong>double legacy Dewgong is a top tier Great League Pok
     <em>
         <br/>
     </em>
-    <strong>Move Type: </strong>
-    Event
-    <em>
-        <br/>
-    </em>
     <strong>Formats: </strong>
     Great League, Ultra League
 </p>
 <p>
     Thunder Shock Zapdos flew into raids a long while back, and although Zapdos
     became Great League eligible as a research breakthrough encounter, it’s
-    been limping along with Charge Beam. All that is going to change when Elite
+    been limping along with Charge Beam. All that changes now that Elite
     TM’s amp it up to its full potential.
 </p>
 <p>
@@ -180,7 +147,7 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
     it’s definitely a top Elite TM candidate.
 </p>
 	</div>
-	
+
 	<a name="charizard"></a>
 	<h3 class="article-header">Charizard</h3>
 	<div class="article-section">
@@ -188,11 +155,6 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
     <strong>Moveset: </strong>
     <em>Wing Attack</em>
     + <em>Blast Burn</em> &amp; Dragon Claw
-    <em>
-        <br/>
-    </em>
-    <strong>Move Type: </strong>
-    Event or Removed
     <em>
         <br/>
     </em>
@@ -318,13 +280,11 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
         When to use Wing Attack and when not to depends on the meta and
         specific matchups
     </strong>
-    you want to take advantage of. In Ultra League, for example, Charizard will
-    probably want to stick to Fire Spin to handle Registeel and Articuno. In
-    Great League, Charizard is up against a lot of Pokemon that resist
+    you want to take advantage of. In Ultra League, for example, Charizard may prefer Fire Spin to handle Registeel and Articuno. In Great League, Charizard is up against a lot of Pokemon that resist
     Fire-type attacks, so Wing Attack may be better. Wing Attack Charizard puts
     up a better fight against the likes of Whiscash and Altaria. However, open
     Great League is still a hostile place for Charizard so look to make the
-    most of Wing Attack Charizard in a future Silph format.
+    most of Wing Attack Charizard in a future Silph Arena format.
 </p>
 <p>
     <strong>See also Sky Attack Moltres </strong>
@@ -334,6 +294,29 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
     of Fighting-type matchups.
 </p>
   </div>
+
+  <a name="blaziken"></a>
+  <h3 class="article-header">Blaziken</h3>
+  <div class="article-section">
+<p>
+  <strong>Moveset: </strong>
+  Counter
+  + Blaze Kick &amp; <em>Stone Edge</em>
+  <em>
+	  <br/>
+  </em>
+  <strong>Formats: </strong>
+  Great League, Silph Arena
+</p>
+<p>
+  Stone Edge Blaziken was one of the rarest legacy movesets. It was only available for a few days after release, and even if you had one, odds were slim it was under 1500 CP. Is this chicken a slam dunk or is it overrated?
+</p>
+<p>
+  Blast Burn Blaziken has a lot of similarities to the old Alolan Raichu: a high-offense Pokemon that ran a bait and a nuke move of the same type, powerful in the right Silph Arena meta in the right situation but vulnerable to being hard countered. Alolan Raichu got upgrades to Volt Switch and the addition of Grass Knot, both of which propelled it into a top anti-meta spot. <b>Stone Edge solves Blaziken's big coverage problem and makes it much more forgiving to use.</b> Blast Burn + Blaze Kick Blaziken is completely stuck against the likes of Altaria and Mantine, but with Stone Edge it can draw shields and potentially flip matchups it couldn't before.
+</p>
+<p>Why Blaze Kick instead of Blast Burn and Stone Edge? Blast Burn and Stone Edge give Blaziken a powerful pair of closing moves. However, this set lacks flexibility which is a big selling point for unlocking Stone Edge in the first place. Blaze Kick allows Blaziken to still perform its Fire-type role and also provides a bait move for Stone Edge. In the Forest Cup, for example, Stone Edge over Blast Burn drops Quagsire and Stunfisk in the 1-shield matchup (both require bait), and drops Jumpluff, Meganium, and Stunfisk in the 0-shield matchup while picking up Kingdra. All other matchups have similar results on paper.</p>
+<p>Ultimately, Stone Edge Blaziken has a lower ceiling without Blast Burn but a higher floor. If you find maneuvering with Blaziken a challenge, Stone Edge can make it more comfortable and forgiving to run. Want to try it out before spending your previous Elite TM? Head over to <a href="/train/">Training Battles</a> and test it out against a bot opponent!</p>
+</div>
 
 	<a name="mewtwo"></a>
 	<h3 class="article-header">Mewtwo</h3>
@@ -345,17 +328,12 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
         Shadow Ball
         <br/>
     </em>
-    <strong>Move Type: </strong>
-    Event
-    <em>
-        <br/>
-    </em>
     <strong>Formats: </strong>
     Master League
 </p>
 <p>
     Mewtwo has been in raids with Psytrike and Shadow Ball as exclusive moves,
-    but this will be the first time it can wield both moves together. Psystrike
+    but now they can be wielded together for the first time. Psystrike
     provides incredible neutral damage and Shadow Ball allows it to bully
     Giratina more and score better neutral hits against Dialga (Shadow Ball is
     100 power/55 energy compared to Ice Beam and Flamethrower’s 90 power/55
@@ -363,9 +341,8 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
 </p>
 <p>
     Where before you had to choose between one or the other, Psytrike and
-    Shadow Ball have incredible coverage together and are resisted only by Dark
-    types like Darkrai and Weavile. Psystrike + Shadow Ball Mewtwo also gains
-    the ability to scrape by Melmetal so long as it lands a Shadow Ball. Ice
+    Shadow Ball have incredible coverage and are resisted only by Dark
+    types like Darkrai and Weavile. Ice
     Beam may be missed against targets like Garchomp or Dragonite, and
     Flamethrower may be missed against Melmetal, but all in all
     Psystrike/Shadow Ball Mewtwo improves as a generalist.
@@ -374,10 +351,10 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
     </strong>
     that will force shields from even dedicated Dark-type counters. Other
     Mewtwo movesets are still viable and aren’t overshadowed by this one, but
-    Psystrike/Shadow Ball opens up new possibilities.
+    Psystrike/Shadow Ball opens up new possibilities. In the current Steel-heavy meta, Psystrike + Focus Blast may prove to be the more meta-centric set.
 </p>
 	</div>
-	
+
 	<a name="mew"></a>
 	<h3 class="article-header">Mew</h3>
 	<div class="article-section">
@@ -577,8 +554,7 @@ Dialga. Top neutral damage generalist for the raiders in the room.        <stron
 	<h3 class="article-header">Other Removed Moves</h3>
 	<div class="article-section">
 <p>
-    If removed moves are on the table, there are a lot of Pokemon worth
-    considering. Here are a few more that could be worth an Elite TM:
+    There are a lot of Pokemon worth considering with their legacy movesets. Here are a few more that could be worth an Elite TM:
 </p>
 <ul type="disc">
     <li>
@@ -599,29 +575,13 @@ Beam in Ultra League (another Elite TM required for Ice Beam).        <strong></
         with energy.<strong></strong>
     </li>
     <li>
-        <strong>Stone Edge Blaziken: </strong>
-        One of the rarest legacy moves out there. Stone Edge gives the chicken
-        a chance against the likes of Altaria and a neutral damage option
-        against Water types. Probably won’t see much freestyle play but
-        Blaziken is a frequent Silph Cup participant. Potential to catch many
-        opponents off guard.<strong></strong>
-    </li>
-    <li>
         <strong>Razor Leaf Weepinbell: </strong>
         Highest Attack stat of any Razor Leaf user in the game. Doesn’t offer
         many practical advantages over Victreebel, who has a much better move
 pool, but could be fun to play with, especially the Shadow variant.        <strong></strong>
     </li>
 </ul>
-<p>
-    How about moves that were removed when a Pokemon was released?
-    <strong>
-        Dragon Tail Kyogre, Power Whip Cherrim, Thunder Galvantula,
-    </strong>
-    or <strong>Earthquake Gastrodon</strong> will almost certainly not be
-    available, but it’s fun to speculate.
-</p>
-		<p>Hopefully this article helps you weigh the all-important decisions ahead of you! I will keep it updated as new information becomes available.</p>
+		<p>Hopefully this article helps you weigh the all-important decisions ahead of you!</p>
 	</div>
 
   <div class="share-link-container">

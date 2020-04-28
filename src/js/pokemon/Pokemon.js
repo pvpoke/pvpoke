@@ -39,6 +39,7 @@ function Pokemon(id, i, b){
 	this.fastMovePool = [];
 	this.chargedMovePool = [];
 	this.legacyMoves = [];
+	this.eliteMoves = [];
 	this.shadowEligible = false;
 	this.shadowType = "normal"; // normal, shadow, or purified
 	this.shadowAtkMult = 1;
@@ -78,6 +79,10 @@ function Pokemon(id, i, b){
 	if(data.legacyMoves){
 		this.legacyMoves = data.legacyMoves;
 	}
+	
+	if(data.eliteMoves){
+		this.eliteMoves = data.eliteMoves;
+	}
 
 	// Set tags
 
@@ -94,6 +99,19 @@ function Pokemon(id, i, b){
 
 		if(move){
 			move.legacy = (self.legacyMoves.indexOf(move.moveId) > -1);
+			move.elite = (self.eliteMoves.indexOf(move.moveId) > -1);
+			
+			if(move.elite){
+				move.legacy = false;
+			}
+			
+			move.displayName = move.name;
+			
+			if(move.legacy){
+				move.displayName = move.name + " <sup>†</sup>";
+			} else if(move.elite){
+				move.displayName = move.name + " *";
+			}
 
 			this.fastMovePool.push(move);
 		}
@@ -104,11 +122,25 @@ function Pokemon(id, i, b){
 
 		if(move){
 			move.legacy = (self.legacyMoves.indexOf(move.moveId) > -1);
+			move.elite = (self.eliteMoves.indexOf(move.moveId) > -1);
+			
+			if(move.elite){
+				move.legacy = false;
+			}
+			
+			move.displayName = move.name;
+			
+			if(move.legacy){
+				move.displayName = move.name + " <sup>†</sup>";
+			} else if(move.elite){
+				move.displayName = move.name + " *";
+			}
 
 			this.chargedMovePool.push(move);
 		}
 	}
-
+	
+	
 	// Add Return and Frustration for eligible Pokemon
 
 	if((data.tags)&&(data.tags.indexOf("shadoweligible") > -1)){

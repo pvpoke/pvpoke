@@ -105,7 +105,7 @@ function PokeSelect(element, i){
 				for(var i = 0; i < selectedPokemon.fastMovePool.length; i++){
 					var move = selectedPokemon.fastMovePool[i];
 
-					$fastSelect.append("<option value=\""+move.moveId+"\">"+move.name+(move.legacy === false ? "" : " *")+"</option");
+					$fastSelect.append("<option value=\""+move.moveId+"\">"+move.displayName+"</option");
 				}
 
 				if(context != "modalcustomrankings"){
@@ -120,7 +120,7 @@ function PokeSelect(element, i){
 
 						var move = selectedPokemon.chargedMovePool[i];
 
-						$(this).append("<option value=\""+move.moveId+"\">"+move.name+(move.legacy === false ? "" : " *")+"</option");
+						$(this).append("<option value=\""+move.moveId+"\">"+move.displayName+"</option");
 					}
 
 					if(context != "modalcustomrankings"){
