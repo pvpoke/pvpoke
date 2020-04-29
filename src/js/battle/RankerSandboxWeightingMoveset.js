@@ -414,6 +414,11 @@ var RankerMaster = (function () {
 				if(cup.name == "rose"){
 					iterations = 1;
 				}
+				
+
+				if((cup.name == "all")&&(battle.getCP() == 10000)){
+					iterations = 1;
+				}
 
 				if((cup.name == "all")&&(battle.getCP() == 2500)){
 					iterations = 1;

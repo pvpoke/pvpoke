@@ -27,10 +27,10 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.14.12 (April 24, 2020)</h4>
+	<h4>v1.14.13 (April 24, 2020)</h4>
 	<ul>
-		<li>Movepools and rankings have been updated with newly available Elite TM moves.</li>
-		<li>Added new indicators for legacy moves that are available via Elite TM and moves that aren't.</li>
+		<li>Added rankings for Premier League</li>
+		<li>Updated rankings with new move updates</li>
 	</ul>
 
 	<h4>v1.14.11 (April 22, 2020)</h4>
