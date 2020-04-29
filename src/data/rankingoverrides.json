@@ -2545,6 +2545,10 @@
 				"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
 			},
 			{
+				"speciesId": "charizard_shadow",
+				"fastMove": "FIRE_SPIN"
+			},
+			{
 				"speciesId": "garchomp",
 				"chargedMoves": ["OUTRAGE","EARTHQUAKE"],
 				"weight": 10
