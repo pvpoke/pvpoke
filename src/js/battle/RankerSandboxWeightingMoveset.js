@@ -431,6 +431,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if((cup.name == "premier")&&(battle.getCP() == 10000)){
+					iterations = 1;
+				}
+
 				if(cup.name == "custom"){
 					iterations = 7;
 				}

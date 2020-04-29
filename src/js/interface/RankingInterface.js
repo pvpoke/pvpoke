@@ -62,10 +62,16 @@ var InterfaceMaster = (function () {
 
 				// Force 1500 if not general
 
-				if((cup != 'all')&&(cup != 'gen-5')){
+				if((cup != 'all')&&(cup != 'gen-5')&&(cup != "premier")){
 					league = 1500;
 
 					$(".league-select option[value=\"1500\"]").prop("selected","selected");
+				}
+
+				if(cup == "premier"){
+					league = 10000;
+
+					$(".league-select option[value=\"10000\"]").prop("selected","selected");
 				}
 
 				battle.setCP(league);

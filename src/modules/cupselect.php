@@ -1,8 +1,8 @@
 <select class="format-select">
 	<option value="all" cup="all">All Pokemon</option>
-	<option value="tsa-2" cup="forest">Forest Cup</option>
-	<option value="tsa-2" cup="voyager">Voyager Cup</option>
-	<option value="tsa-2" cup="toxic">Toxic Cup</option>
+	<option value="official" cup="premier">Premier Cup</option>
+	<option value="tsa-2" cup="forest">Silph Forest Cup</option>
+	<option value="tsa-2" cup="voyager">Silph Voyager Cup</option>
 
 	<?php if((strpos($_SERVER['REQUEST_URI'], 'battle') !== false)||(strpos($_SERVER['REQUEST_URI'], 'rankings') !== false)): ?>
 		<option value="custom" cup="custom">Custom</option>
@@ -13,6 +13,7 @@
 <select class="cup-select">
 	<option value="all" cat="all">All Pokemon</option>
 	<option value="gen-5" cat="all">All Pokemon (With Generation 5)</option>
+	<option value="premier" cat="official">Premier Cup</option>
 	<option value="safari" cat="community">Montreal Safari Cup</option>
 	<option value="fantasy" cat="community">GO LIVE Fantasy Cup</option>
 	<option value="beam" cat="community">Get Beamed</option>

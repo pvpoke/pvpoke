@@ -274,10 +274,18 @@
         }],
         "exclude": [{
             "filterType": "id",
-            "values": ["tropius", "genesect"]
+            "values": ["tropius", "genesect", "raikou"]
         }, {
             "filterType": "tag",
             "values": ["shadow"]
+        }]
+    }, {
+        "name": "premier",
+        "title": "Premier Cup",
+        "include": [],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["legendary", "mythical"]
         }]
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable"],
@@ -11528,7 +11536,7 @@
         },
         "types": ["water", "dragon"],
         "fastMoves": ["DRAGON_BREATH", "DRAGON_TAIL"],
-        "chargedMoves": ["DRACO_METEOR", "FIRE_BLAST", "HYDRO_PUMP"],
+        "chargedMoves": ["DRACO_METEOR", "FIRE_BLAST", "HYDRO_PUMP", "AQUA_TAIL"],
         "tags": ["legendary"],
         "defaultIVs": {
             "cp1500": [13.5, 11, 15, 10],
@@ -15302,7 +15310,7 @@
         "name": "Drill Run",
         "type": "ground",
         "power": 80,
-        "energy": 55,
+        "energy": 45,
         "energyGain": 0,
         "cooldown": 500
     }, {
@@ -15975,10 +15983,13 @@
         "moveId": "MOONBLAST",
         "name": "Moonblast",
         "type": "fairy",
-        "power": 130,
-        "energy": 70,
+		"power": 110,
+        "energy": 60,
         "energyGain": 0,
-        "cooldown": 500
+        "cooldown": 500,
+        "buffs": [-1, 0],
+        "buffTarget": "opponent",
+        "buffApplyChance": ".3"
     }, {
         "moveId": "MUD_BOMB",
         "name": "Mud Bomb",
@@ -16771,10 +16782,13 @@
         "moveId": "WILD_CHARGE",
         "name": "Wild Charge",
         "type": "electric",
-        "power": 90,
-        "energy": 50,
+		"power": 100,
+        "energy": 45,
         "energyGain": 0,
-        "cooldown": 500
+        "cooldown": 500,
+        "buffs": [0, -2],
+        "buffTarget": "self",
+        "buffApplyChance": "1"
     }, {
         "moveId": "WING_ATTACK",
         "name": "Wing Attack",
