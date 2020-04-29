@@ -2376,7 +2376,7 @@
 			},
 			{
 				"speciesId": "dragonite",
-				"chargedMoves": ["DRAGON_CLAW","OUTRAGE"],
+				"chargedMoves": ["DRAGON_CLAW","HURRICANE"],
 				"weight": 28
 			},
 			{
@@ -2551,7 +2551,7 @@
 			},
 			{
 				"speciesId": "dragonite",
-				"chargedMoves": ["DRAGON_CLAW","OUTRAGE"],
+				"chargedMoves": ["DRAGON_CLAW","HURRICANE"],
 				"weight": 40
 			},
 			{
@@ -4014,6 +4014,10 @@
 				"fastMove": "RAZOR_LEAF"
 			},
 			{
+				"speciesId": "escavalier",
+				"chargedMoves": ["MEGAHORN","DRILL_RUN"]
+			},
+			{
 				"speciesId": "scolipede",
 				"chargedMoves": ["X_SCISSOR","SLUDGE_BOMB"]
 			},
@@ -4071,10 +4075,6 @@
 				"speciesId": "blaziken",
 				"chargedMoves": ["BLAZE_KICK", "STONE_EDGE"],
 				"weight": 25
-			},
-			{
-				"speciesId": "escavalier",
-				"chargedMoves": ["AERIAL_ACE", "DRILL_RUN"]
 			},
 			{
 				"speciesId": "politoed",
