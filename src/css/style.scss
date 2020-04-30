@@ -1938,7 +1938,7 @@ select, input{
 				font-size: 12px;
 				padding: 10px;
 			}
-			
+
 			.footnote{
 				font-size: 12px;
 			}
@@ -3348,6 +3348,7 @@ a.toggle{
 			height:0;
 			overflow: hidden;
 			pointer-events: none;
+			white-space: nowrap;
 
 			@include transition(all, .125s, linear, 0s);
 
@@ -3365,7 +3366,7 @@ a.toggle{
 			a{
 				float:none;
 				margin: 6px 0;
-				width: 120px;
+				max-width: 150px;
 			}
 		}
 	}
