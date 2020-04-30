@@ -2477,8 +2477,7 @@ a.toggle {
         background: #eabd49; }
       .menu .submenu a {
         float: none;
-        margin: 6px 0;
-		max-width: 150px; }
+        margin: 6px 0; }
 
   .rank .details .detail-section.overall .rating-container .ranking-header {
     font-size: 16px; }
