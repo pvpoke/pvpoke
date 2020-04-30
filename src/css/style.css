@@ -2463,7 +2463,7 @@ a.toggle {
       height: 0;
       overflow: hidden;
       pointer-events: none;
-	  white-space: nowrap;
+      white-space: nowrap;
       -webkit-transition: all 0.125s linear 0s;
       -moz-transition: all 0.125s linear 0s;
       -o-transition: all 0.125s linear 0s;
