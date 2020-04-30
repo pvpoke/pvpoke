@@ -3,6 +3,7 @@
 	<option value="official" cup="premier">Premier Cup</option>
 	<option value="tsa-2" cup="forest">Silph Forest Cup</option>
 	<option value="tsa-2" cup="voyager">Silph Voyager Cup</option>
+	<option value="tsa-2" cup="toxic">Silph Toxic Cup</option>
 
 	<?php if((strpos($_SERVER['REQUEST_URI'], 'battle') !== false)||(strpos($_SERVER['REQUEST_URI'], 'rankings') !== false)): ?>
 		<option value="custom" cup="custom">Custom</option>
