@@ -27,18 +27,18 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
+	<h4>v1.14.15 (May 1, 2020)</h4>
+	<ul>
+		<li>Move balance changes have been rolled back until the delayed Season 2 start</li>
+		<li>Note that the Premier Cup rankings use the current (old) move stats and will change once they're reimplemented.</li>
+	</ul>
+	
 	<h4>v1.14.14 (April 30, 2020)</h4>
 	<ul>
 		<li>Fixed a styling issue with the Custom Rankings dropdown (thanks noahfkaplan!)</li>
 		<li>Fixed "@legacy" and "@special" search strings to be compatible with Elite TM move pools</li>
 		<li>Fixed issue with Premier Cup links sometimes being listed at 1500</li>
 		<li>Updated Multi-Battle results to display asterisks for legacy moves</li>
-	</ul>
-
-	<h4>v1.14.13 (April 24, 2020)</h4>
-	<ul>
-		<li>Added rankings for Premier League</li>
-		<li>Updated rankings with new move updates</li>
 	</ul>
 
 	<h3>Latest Article</h3>
