@@ -4573,7 +4573,7 @@
         "types": ["psychic", "none"],
         "fastMoves": ["CONFUSION", "IRON_TAIL"],
         "chargedMoves": ["DYNAMIC_PUNCH", "ROCK_SLIDE", "EARTHQUAKE", "FUTURE_SIGHT", "PSYSTRIKE"],
-        "legacyMoves": ["PSYSTRIKE"],
+        "eliteMoves": ["PSYSTRIKE"],
         "tags": ["legendary"],
         "defaultIVs": {
             "cp1500": [17.5, 6, 6, 15],

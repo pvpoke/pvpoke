@@ -267,10 +267,10 @@ var GameMaster = (function () {
 						legacy: false,
 						elite: false
 					};
-					
+
 					if((move.moveId == "RETURN")||(move.moveId == "FRUSTRATION")){
 						move.legacy = true;
-						move.displayName = move.displayName + " <sup>†</sup>";
+						move.displayName = move.displayName + "<sup>†</sup>";
 					}
 
 					if(m.buffs){
@@ -594,7 +594,7 @@ var GameMaster = (function () {
 							// legacy move search
 							if ((param == "legacy")||(param == "special")) {
 								for(var k = 0; k < pokemon.fastMovePool.length; k++){
-									if(pokemon.fastMovePool[k].legacy === true){
+									if((pokemon.fastMovePool[k].legacy == true)||(pokemon.fastMovePool[k].elite == true)){
 										valid = true;
 									} else if(param == "special") {
 										if ((pokemon.fastMovePool[k].moveId == "FRUSTRATION")||(pokemon.fastMovePool[k].moveId === "RETURN")) {
@@ -604,7 +604,7 @@ var GameMaster = (function () {
 								}
 
 								for(var k = 0; k < pokemon.chargedMovePool.length; k++){
-									if(pokemon.chargedMovePool[k].legacy === true){
+									if((pokemon.chargedMovePool[k].legacy == true)||(pokemon.chargedMovePool[k].elite == true)){
 										valid = true;
 									} else if(param == "special") {
 										if ((pokemon.chargedMovePool[k].moveId == "FRUSTRATION")||(pokemon.chargedMovePool[k].moveId === "RETURN")) {

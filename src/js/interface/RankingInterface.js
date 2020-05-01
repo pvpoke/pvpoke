@@ -279,6 +279,10 @@ var InterfaceMaster = (function () {
 					return false;
 				}
 
+				if(cup == "premier"){
+					cp = 10000;
+				}
+
 				var url = webRoot+"rankings/"+cup+"/"+cp+"/"+category+"/";
 
 				if(speciesId){

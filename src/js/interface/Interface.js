@@ -858,12 +858,12 @@ var InterfaceMaster = (function () {
 					if(r.moveset){
 						pokemon.selectMove("fast", r.moveset.fastMove.moveId);
 
-						moveNameStr = r.moveset.fastMove.name;
+						moveNameStr = r.moveset.fastMove.displayName;
 
 						for(var n = 0; n < r.moveset.chargedMoves.length; n++){
 							pokemon.selectMove("charged", r.moveset.chargedMoves[n].moveId, n);
 
-							moveNameStr += ", " + r.moveset.chargedMoves[n].name;
+							moveNameStr += ", " + r.moveset.chargedMoves[n].displayName;
 						}
 					} else{
 						pokemon.autoSelectMoves(chargedMoveCount);

@@ -27,20 +27,18 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
+	<h4>v1.14.14 (April 30, 2020)</h4>
+	<ul>
+		<li>Fixed a styling issue with the Custom Rankings dropdown (thanks noahfkaplan!)</li>
+		<li>Fixed "@legacy" and "@special" search strings to be compatible with Elite TM move pools</li>
+		<li>Fixed issue with Premier Cup links sometimes being listed at 1500</li>
+		<li>Updated Multi-Battle results to display asterisks for legacy moves</li>
+	</ul>
+
 	<h4>v1.14.13 (April 24, 2020)</h4>
 	<ul>
 		<li>Added rankings for Premier League</li>
 		<li>Updated rankings with new move updates</li>
-	</ul>
-
-	<h4>v1.14.11 (April 22, 2020)</h4>
-	<ul>
-		<li>Pokemon default IV's have been tweaked:</li>
-		<ul>
-			<li>Most Pokemon are now rank 64 with an IV floor of 5 (were previously rank 500 with an IV floor of 0). This generally improves their stat product from the old defaults and gets them closer to the CP limit, while maintaining some distance between default and rank 1.</li>
-			<li>Pokemon that reach the CP limit above level 35 default to rank 16 with an IV floor of 12 (lucky trades).</li>
-			<li>Untradeable Pokemon like Mew default to rank 54 with an IV floor of 10.</li>
-		</ul>
 	</ul>
 
 	<h3>Latest Article</h3>
