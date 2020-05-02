@@ -27,12 +27,19 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
+	<h4>v1.14.16 (May 2, 2020)</h4>
+	<ul>
+		<li>Move balance changes have been rolled back until the delayed Season 2 start</li>
+		<li>Note that the Premier Cup rankings use the current (old) move stats and will change once they're reimplemented.</li>
+		<li>Updated versions of Moonblast, Wild Charge, and Drill Run are available to add as custom moves.</li>
+	</ul>
+
 	<h4>v1.14.15 (May 1, 2020)</h4>
 	<ul>
 		<li>Move balance changes have been rolled back until the delayed Season 2 start</li>
 		<li>Note that the Premier Cup rankings use the current (old) move stats and will change once they're reimplemented.</li>
 	</ul>
-	
+
 	<h4>v1.14.14 (April 30, 2020)</h4>
 	<ul>
 		<li>Fixed a styling issue with the Custom Rankings dropdown (thanks noahfkaplan!)</li>

@@ -15320,6 +15320,14 @@
         "energyGain": 0,
         "cooldown": 500
     }, {
+        "moveId": "DRILL_RUN_UPDATED",
+        "name": "Drill Run (Updated)",
+        "type": "ground",
+        "power": 80,
+        "energy": 45,
+        "energyGain": 0,
+        "cooldown": 500
+    }, {
         "moveId": "DYNAMIC_PUNCH",
         "name": "Dynamic Punch",
         "type": "fighting",
@@ -15993,6 +16001,17 @@
         "energy": 70,
         "energyGain": 0,
         "cooldown": 500
+    },  {
+        "moveId": "MOONBLAST_UPDATED",
+        "name": "Moonblast (Updated)",
+        "type": "fairy",
+		"power": 110,
+        "energy": 60,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [-1, 0],
+        "buffTarget": "opponent",
+        "buffApplyChance": ".3"
     }, {
         "moveId": "MUD_BOMB",
         "name": "Mud Bomb",
@@ -16789,6 +16808,17 @@
         "energy": 50,
         "energyGain": 0,
         "cooldown": 500
+    }, {
+        "moveId": "WILD_CHARGE_UPDATED",
+        "name": "Wild Charge (Updated)",
+        "type": "electric",
+		"power": 100,
+        "energy": 45,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [0, -2],
+        "buffTarget": "self",
+        "buffApplyChance": "1"
     }, {
         "moveId": "WING_ATTACK",
         "name": "Wing Attack",
