@@ -455,6 +455,10 @@ var InterfaceMaster = (function () {
 
 				battle.setCP(cp);
 				battle.setCup(cup);
+				
+				for(var i = 0; i < multiSelectors.length; i++){
+					multiSelectors[i].setCP(cp);
+				}
 
 				// Force featured team selection for Cliffhanger and hide randomize button
 				if(cup == "cliffhanger"){
