@@ -849,17 +849,14 @@ var BattlerMaster = (function () {
 							}
 						}
 
-						// Only report this Pokemon if it was used in battle
-						if(pokemon.hp < pokemon.stats.hp){
-							gtag('event', battleSummaryStr, {
-							  'event_category' : 'Training Pokemon',
-							  'event_label' : pokeStr,
-							  'value' : pokemon.battleStats.score+'',
-							  'player_type': playerType,
-							  'team_position': n+1,
-							  'team_rating': battleRating
-							});
-						}
+						gtag('event', battleSummaryStr, {
+						  'event_category' : 'Training Pokemon',
+						  'event_label' : pokeStr,
+						  'value' : pokemon.battleStats.score+'',
+						  'player_type': playerType,
+						  'team_position': n+1,
+						  'team_rating': battleRating
+						});
 
 					}
 				}
