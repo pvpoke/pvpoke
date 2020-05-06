@@ -1027,7 +1027,7 @@ function Battle(){
 
 			if(opponent.shields > 0){
 
-			   if(opponent.hp <= (poke.fastMove.damage * (opponent.fastMove.cooldown / poke.fastMove.cooldown))){
+			   if(opponent.hp <= (poke.fastMove.damage * Math.floor(opponent.fastMove.cooldown / poke.fastMove.cooldown))){
 					useChargedMove = false;
 
 					self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because opponent has shields and fast moves will knock them out before their cooldown completes");
@@ -1065,6 +1065,15 @@ function Battle(){
 						self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because it has a close non-debuffing move to remove shields");
 					}
 				}
+
+
+				// Don't use a Charged Move if it won't KO and a higher energy one could
+
+				if((poke.baitShields)&&(poke.bestChargedMove.damage < opponent.hp)&&(poke.chargedMoves[n].damage >= opponent.hp)){
+					useChargedMove = false;
+
+					self.logDecision(turns, poke, " doesn't use " + poke.bestChargedMove.name + " because it has a stronger move that can KO");
+				}
 			}
 
 			// Don't use a Charged Move if primary attack has a self debuff and you can build more energy
@@ -1098,12 +1107,13 @@ function Battle(){
 			var move = poke.activeChargedMoves[n];
 			var moveIndex = poke.chargedMoves.indexOf(move);
 
+			move.damage = self.calculateDamage(poke, opponent, move);
+
 			if((poke.energy >= move.energy)&&(!chargedMoveUsed)){
-				move.damage = self.calculateDamage(poke, opponent, move);
 				self.logDecision(turns, poke, " has " + move.name + " charged");
 
 				// Use charged move if it would KO the opponent
-				if((move.damage >= opponent.hp) && (! poke.farmEnergy) && (move.energy <= poke.bestChargedMove.energy) && (!chargedMoveUsed)){
+				if((move.damage >= opponent.hp) && ((move == poke.bestChargedMove)||(opponent.hp > poke.bestChargedMove.damage)||(poke.bestChargedMove.energy > move.energy)) && (! poke.farmEnergy) && (!chargedMoveUsed)){
 
 					// Don't try to KO with a self debuffing Charged Move if they still have shields
 					var avoidSelfDebuff = false;
@@ -1309,11 +1319,14 @@ function Battle(){
 
 				// Don't use a Charged Move early if close to a move that will KO
 
-				for(var j = 0; j < poke.chargedMoves.length; j++){
-					if((opponent.hp <= poke.chargedMoves[j].damage)&&(poke.chargedMoves[j].energy - poke.energy <= poke.fastMove.energyGain)){
+				for(var j = 0; j < poke.activeChargedMoves.length; j++){
+					if(j == n){
+						continue;
+					}
+					if((opponent.hp <= poke.activeChargedMoves[j].damage)&&(poke.activeChargedMoves[j].energy - poke.energy <= poke.fastMove.energyGain)){
 						nearDeath = false;
 
-						self.logDecision(turns, poke, " doesn't use " + move.name + " because it's close to a KO with " + poke.chargedMoves[j].name);
+						self.logDecision(turns, poke, " doesn't use " + move.name + " because it's close to a KO with " + poke.activeChargedMoves[j].name);
 					}
 				}
 
