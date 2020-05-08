@@ -187,13 +187,13 @@
         "name": "timeless",
         "title": "Timeless Cup",
         "restrictedPicks": 1,
-        "restrictedPokemon": ["bulbasaur", "ivysaur", "venusaur", "squirtle", "wartortle", "blastoise", "charmander", "charmeleon", "charizard", "chikorita", "bayleef", "meganium", "totodile", "croconaw", "feraligatr", "cyndaquil", "quilava", "typhlosion", "treecko", "grovyle", "sceptile", "mudkip", "marshtomp", "swampert", "torchic", "combusken", "blaziken", "turtwig", "grotle", "torterra", "piplup", "prinplup", "empoleon", "chimchar", "monferno", "infernape"],
+        "restrictedPokemon": ["bulbasaur", "ivysaur", "venusaur", "squirtle", "wartortle", "blastoise", "charmander", "charmeleon", "charizard", "chikorita", "bayleef", "meganium", "totodile", "croconaw", "feraligatr", "cyndaquil", "quilava", "typhlosion", "treecko", "grovyle", "sceptile", "mudkip", "marshtomp", "swampert", "torchic", "combusken", "blaziken", "turtwig", "grotle", "torterra", "piplup", "prinplup", "empoleon", "chimchar", "monferno", "infernape", "bulbasaur_shadow", "ivysaur_shadow", "venusaur_shadow", "squirtle_shadow", "wartortle_shadow", "blastoise_shadow", "charmander_shadow", "charmeleon_shadow", "charizard_shadow", "mudkip_shadow", "marshtomp_shadow", "swampert_shadow", "turtwig_shadow", "grotle_shadow", "torterra_shadow"],
         "include": [{
             "filterType": "dex",
             "values": [1, 488]
         }, {
             "filterType": "id",
-            "values": ["blaziken", "charizard", "infernape", "empoleon", "monferno", "prinplup", "combusken"]
+            "values": ["blaziken", "charizard", "charizard_shadow", "infernape", "empoleon", "monferno", "prinplup", "combusken"]
         }],
         "exclude": [{
             "filterType": "tag",
@@ -203,7 +203,7 @@
             "values": ["fighting", "flying", "normal", "psychic", "steel", "fairy"]
         }, {
             "filterType": "id",
-            "values": ["umbreon", "sableye"]
+            "values": ["umbreon", "sableye", "sableye_shadow"]
         }]
     }, {
         "name": "fusion",
@@ -217,7 +217,7 @@
             "values": ["none"]
         }, {
             "filterType": "id",
-            "values": ["azumarill", "medicham", "dewgong", "wormadam_trash", "wormadam_plant", "wormadam_sandy", "hypno", "munchlax", "linoone", "onix", "hitmonlee", "hitmonchan", "chansey", "mr.mime", "scyther", "jynx", "electabuzz", "magmar", "pinsir", "lapras", "eevee", "vaporeon", "jolteon", "flareon", "omanyte", "omastar", "kabuto", "kabutops", "aerodactyl", "snorlax", "dratini", "dragonair", "dragonite", "mareep", "flaafy", "ampharos", "sudowoodo", "espeon", "umbreon", "pineco", "forretress", "gligar", "steelix", "scizor", "delibir", "mantine", "skarmory", "hitmontop", "miltank", "blissey", "larvitar", "pupitar", "tyranitar", "ralts", "kirlia", "gardevoir", "slakoth", "vigoroth", "slaking", "nincada", "ninjask", "sableye", "mawile", "trapinch", "vibrava", "flygon", "milotic", "castform", "castform_sunny", "castform_rainy", "castform_snowy", "tropius", "chimecho", "absol", "relicanth", "bagon", "shelgon", "salamence", "metang", "metagross", "shinx", "luxio", "luxray", "cranidos", "rampardos", "shieldon", "bastiodon", "pachirisu", "drifloon", "drifblim", "chatot", "spiritomb", "gible", "gabite", "garchomp", "lucario", "skorupi", "drapion", "carnivine", "electivire", "magmortar", "leafeon", "glaceon", "gliscor", "gallade", "ferroseed", "ferrothorn", "klink", "klang", "klinklang", "litwick", "lampent", "chandelure", "golett", "golurk", "deino", "zweilous", "hydreigon", "mr_mime", "tirtouga", "carracosta", "archeops", "archen", "scraggy", "scrafty"]
+            "values": ["azumarill", "medicham", "dewgong", "wormadam_trash", "wormadam_plant", "wormadam_sandy", "hypno", "hypno_shadow", "munchlax", "linoone", "onix", "hitmonlee", "hitmonlee_shadow", "hitmonchan", "hitmonchan_shadow", "chansey", "mr.mime", "scyther", "scyther_shadow", "jynx", "electabuzz", "electabuzz-shadow", "magmar", "magmar_shadow", "pinsir", "pinsir_shadow", "lapras", "lapras_shadow", "eevee", "vaporeon", "jolteon", "flareon", "omanyte", "omanyte_shadow", "omastar", "omastar_shadow", "kabuto", "kabutops", "aerodactyl", "snorlax", "snorlax_shadow", "dratini", "dratini_shadow", "dragonair", "dragonair_shadow", "dragonite","dragonite_shadow", "mareep", "mareep_shadow","flaafy", "flaafy_shadow","ampharos", "ampharos_shadow", "sudowoodo", "espeon", "umbreon", "pineco", "forretress", "gligar", "steelix", "scizor", "scizor_shadow", "delibird", "mantine", "skarmory", "hitmontop", "miltank", "blissey", "larvitar","larvitar_shadow", "pupitar","pupitar_shadow", "tyranitar","tyranitar_shadow", "ralts","ralts_shadow", "kirlia","kirlia_shadow", "gardevoir","gardevoir_shadow", "slakoth", "vigoroth", "slaking", "nincada", "ninjask", "sableye", "sableye_shadow", "mawile", "mawile_shadow", "trapinch","trapinch_shadow", "vibrava", "vibrava_shadow", "flygon", "flygon_shadow", "milotic", "castform", "castform_sunny", "castform_rainy", "castform_snowy", "tropius", "chimecho", "absol", "absol_shadow", "relicanth", "bagon", "shelgon", "salamence", "metang","metang_shadow", "metagross","metagross_shadow", "shinx", "luxio", "luxray", "cranidos", "rampardos", "shieldon", "bastiodon", "pachirisu", "drifloon", "drifblim", "chatot", "spiritomb", "gible", "gabite", "garchomp", "lucario", "skorupi", "drapion", "carnivine", "electivire","electivire_shadow", "magmortar","magmortar_shadow", "leafeon", "glaceon", "gliscor", "gallade", "gallade_shadow", "ferroseed", "ferrothorn", "klink", "klang", "klinklang", "litwick", "lampent", "chandelure", "golett", "golurk", "deino", "zweilous", "hydreigon", "mr_mime", "tirtouga", "carracosta", "archeops", "archen", "stunfisk", "alomomola", "timburr", "gurdurr", "conkeldurr", "rufflet", "braviary", "cryogonal", "axew","haxorus","fraxure","sigilyph","tirtouga","carracosta"]
         }]
     }, {
         "name": "rose",
@@ -404,7 +404,7 @@
             "cp2500": [39, 5, 9, 12]
         },
         "level25CP": 1673,
-        "eliteMoves": ["FRENZY_PLANT"]
+		"legacyMoves": ["FRENZY_PLANT"]
     }, {
         "dex": 3,
         "speciesName": "Venusaur (Shadow)",
@@ -6599,12 +6599,13 @@
         },
         "types": ["fire", "flying"],
         "fastMoves": ["EXTRASENSORY", "HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "STEEL_WING"],
-        "chargedMoves": ["BRAVE_BIRD", "FIRE_BLAST", "SOLAR_BEAM"],
+        "chargedMoves": ["BRAVE_BIRD", "FIRE_BLAST", "SOLAR_BEAM", "EARTHQUAKE"],
         "tags": ["legendary"],
         "defaultIVs": {
             "cp1500": [14.5, 6, 6, 10],
             "cp2500": [23.5, 6, 11, 15]
-        }
+        },
+		"legacyMoves": ["EARTHQUAKE"]
     }, {
         "dex": 251,
         "speciesName": "Celebi",

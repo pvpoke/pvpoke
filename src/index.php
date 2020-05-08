@@ -27,25 +27,21 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
+	<h4>v1.14.18 (May 8, 2020)</h4>
+	<ul>
+		<li>Added back Season 2 Silph rankings for the Battle of the Servers tournament. Note that these rankings don't include the upcoming move updates, and will be removed after the tournament begins.</li>
+		<li>Updated and fixed some sim logic:</li>
+		<ul>
+			<li>Fixed an issue where Pokemon building up to two self-debuffing moves wouldn't throw a move before fainting.</li>
+			<li>Pokemon now reach for a bigger move if it would KO rather than defaulting to the highest DPE move. This should improve some situations where the highest DPE move wasn't always the optimal play. This behavior is only active when baiting is turned on.</li>
+		</ul>
+	</ul>
+
 	<h4>v1.14.16 (May 2, 2020)</h4>
 	<ul>
 		<li>Move balance changes have been rolled back until the delayed Season 2 start</li>
 		<li>Note that the Premier Cup rankings use the current (old) move stats and will change once they're reimplemented.</li>
 		<li>Updated versions of Moonblast, Wild Charge, and Drill Run are available to add as custom moves.</li>
-	</ul>
-
-	<h4>v1.14.15 (May 1, 2020)</h4>
-	<ul>
-		<li>Move balance changes have been rolled back until the delayed Season 2 start</li>
-		<li>Note that the Premier Cup rankings use the current (old) move stats and will change once they're reimplemented.</li>
-	</ul>
-
-	<h4>v1.14.14 (April 30, 2020)</h4>
-	<ul>
-		<li>Fixed a styling issue with the Custom Rankings dropdown (thanks noahfkaplan!)</li>
-		<li>Fixed "@legacy" and "@special" search strings to be compatible with Elite TM move pools</li>
-		<li>Fixed issue with Premier Cup links sometimes being listed at 1500</li>
-		<li>Updated Multi-Battle results to display asterisks for legacy moves</li>
 	</ul>
 
 	<h3>Latest Article</h3>
