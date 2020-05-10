@@ -6811,7 +6811,7 @@
         "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "SURF", "HYDRO_CANNON", "MUDDY_WATER"],
         "tags": ["starter", "shadoweligible"],
         "defaultIVs": {
-            "cp1500": [19, 5, 7, 11],
+            "cp1500": [19, 5, 7, 10],
             "cp2500": [32, 6, 11, 14]
         },
         "level25CP": 1841,
@@ -6830,7 +6830,7 @@
         "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "SURF", "HYDRO_CANNON", "MUDDY_WATER"],
         "tags": ["starter", "shadow"],
         "defaultIVs": {
-            "cp1500": [19, 5, 7, 11],
+            "cp1500": [19, 5, 7, 10],
             "cp2500": [32, 6, 11, 14]
         },
         "eliteMoves": ["HYDRO_CANNON"]
