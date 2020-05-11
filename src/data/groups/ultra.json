@@ -183,5 +183,10 @@
 		"speciesId":"ferrothorn",
 		"fastMove":"BULLET_SEED",
 		"chargedMoves":["POWER_WHIP","FLASH_CANNON"]
+	},
+	{
+		"speciesId":"escavalier",
+		"fastMove":"COUNTER",
+		"chargedMoves":["MEGAHORN","DRILL_RUN"]
 	}
 ]

@@ -455,7 +455,7 @@ var InterfaceMaster = (function () {
 
 				battle.setCP(cp);
 				battle.setCup(cup);
-				
+
 				for(var i = 0; i < multiSelectors.length; i++){
 					multiSelectors[i].setCP(cp);
 				}
@@ -472,7 +472,7 @@ var InterfaceMaster = (function () {
 				}
 
 				// Force 3v3 for GO Battle League
-				if(cup == "gobattleleague"){
+				if((cup == "gobattleleague")||(cup == "premier")){
 					$(".mode-select option[value=\"single\"]").prop("selected","selected");
 					$(".mode-select option[value=\"tournament\"]").prop("disabled","disabled");
 					$(".mode-select").trigger("change");

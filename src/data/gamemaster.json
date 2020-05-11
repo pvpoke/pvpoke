@@ -404,7 +404,7 @@
             "cp2500": [39, 5, 9, 12]
         },
         "level25CP": 1673,
-		"legacyMoves": ["FRENZY_PLANT"]
+		"eliteMoves": ["FRENZY_PLANT"]
     }, {
         "dex": 3,
         "speciesName": "Venusaur (Shadow)",
@@ -6605,7 +6605,7 @@
             "cp1500": [14.5, 6, 6, 10],
             "cp2500": [23.5, 6, 11, 15]
         },
-		"legacyMoves": ["EARTHQUAKE"]
+		"eliteMoves": ["EARTHQUAKE"]
     }, {
         "dex": 251,
         "speciesName": "Celebi",
@@ -9397,12 +9397,13 @@
         },
         "types": ["ground", "none"],
         "fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
-        "chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "SOLAR_BEAM"],
+        "chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "SOLAR_BEAM", "FIRE_PUNCH"],
         "tags": ["legendary"],
         "defaultIVs": {
             "cp1500": [13, 11, 15, 12],
             "cp2500": [22.5, 5, 14, 6]
-        }
+        },
+		"eliteMoves": ["FIRE_PUNCH"]
     }, {
         "dex": 384,
         "speciesName": "Rayquaza",

@@ -159,10 +159,6 @@
 				"weight": 15
 			},
 			{
-				"speciesId": "raikou",
-				"fastMove": "VOLT_SWITCH"
-			},
-			{
 				"speciesId": "raichu",
 				"fastMove": "VOLT_SWITCH"
 			},
@@ -2403,6 +2399,7 @@
 			},
 			{
 				"speciesId": "gyarados",
+				"chargedMoves": ["CRUNCH", "HYDRO_PUMP"],
 				"weight": 14
 			},
 			{
@@ -2439,6 +2436,11 @@
 			},
 			{
 				"speciesId": "scizor_shadow",
+				"fastMove": "BULLET_PUNCH",
+				"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
+			},
+			{
+				"speciesId": "scizor",
 				"fastMove": "BULLET_PUNCH",
 				"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
 			},
@@ -2565,6 +2567,7 @@
 			},
 			{
 				"speciesId": "gyarados",
+				"chargedMoves": ["CRUNCH","HYDRO_PUMP"],
 				"weight": 10
 			},
 			{
@@ -4101,10 +4104,6 @@
 				"speciesId": "galvantula",
 				"chargedMoves": ["DISCHARGE", "BUG_BUZZ"],
 				"weight": 18
-			},
-			{
-				"speciesId": "magnezone",
-				"chargedMoves": ["WILD_CHARGE", "FLASH_CANNON"]
 			},
 			{
 				"speciesId": "vespiquen",

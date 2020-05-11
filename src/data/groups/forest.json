@@ -5,11 +5,6 @@
 		"chargedMoves":["ICE_BEAM","PLAY_ROUGH"]
 	},
 	{
-		"speciesId":"lanturn",
-		"fastMove":"SPARK",
-		"chargedMoves":["THUNDERBOLT","HYDRO_PUMP"]
-	},
-	{
 		"speciesId":"quagsire",
 		"fastMove":"MUD_SHOT",
 		"chargedMoves":["EARTHQUAKE","STONE_EDGE"]
@@ -50,11 +45,6 @@
 		"chargedMoves":["GRASS_KNOT","STONE_EDGE"]
 	},
 	{
-		"speciesId":"bellossom",
-		"fastMove":"BULLET_SEED",
-		"chargedMoves":["LEAF_BLADE","RETURN"]
-	},
-	{
 		"speciesId":"cherrim_sunny",
 		"fastMove":"BULLET_SEED",
 		"chargedMoves":["WEATHER_BALL_FIRE","SOLAR_BEAM"]
@@ -63,11 +53,6 @@
 		"speciesId":"jumpluff",
 		"fastMove":"BULLET_SEED",
 		"chargedMoves":["AERIAL_ACE","ENERGY_BALL"]
-	},
-	{
-		"speciesId":"tangrowth",
-		"fastMove":"VINE_WHIP",
-		"chargedMoves":["ROCK_SLIDE","POWER_WHIP"]
 	},
 	{
 		"speciesId":"castform_rainy",
@@ -87,11 +72,11 @@
 	{
 		"speciesId":"blaziken",
 		"fastMove":"COUNTER",
-		"chargedMoves":["BLAZE_KICK","BLAST_BURN"]
+		"chargedMoves":["BLAZE_KICK","STONE_EDGE"]
 	},
 	{
 		"speciesId":"stunfisk",
-		"fastMove":"THUNDER_SHOCK",
+		"fastMove":"MUD_SHOT",
 		"chargedMoves":["MUD_BOMB","DISCHARGE"]
 	},
 	{
@@ -103,16 +88,6 @@
 		"speciesId":"castform_sunny",
 		"fastMove":"EMBER",
 		"chargedMoves":["WEATHER_BALL_FIRE","SOLAR_BEAM"]
-	},
-	{
-		"speciesId":"qwilfish",
-		"fastMove":"WATER_GUN",
-		"chargedMoves":["AQUA_TAIL","SLUDGE_WAVE"]
-	},
-	{
-		"speciesId":"plusle",
-		"fastMove":"SPARK",
-		"chargedMoves":["DISCHARGE","GRASS_KNOT"]
 	},
 	{
 		"speciesId":"heracross",
@@ -135,11 +110,6 @@
 		"chargedMoves":["MUD_BOMB","BLIZZARD"]
 	},
 	{
-		"speciesId":"ludicolo",
-		"fastMove":"BUBBLE",
-		"chargedMoves":["ICE_BEAM","ENERGY_BALL"]
-	},
-	{
 		"speciesId":"magnezone",
 		"fastMove":"SPARK",
 		"chargedMoves":["WILD_CHARGE","FLASH_CANNON"]
@@ -147,6 +117,26 @@
 	{
 		"speciesId":"breloom",
 		"fastMove":"COUNTER",
-		"chargedMoves":["DYNAMIC_PUNCH","SEED_BOMB"]
+		"chargedMoves":["SEED_BOMB","SLUDGE_BOMB"]
+	},
+	{
+		"speciesId":"escavalier",
+		"fastMove":"COUNTER",
+		"chargedMoves":["DRILL_RUN","MEGAHORN"]
+	},
+	{
+		"speciesId":"electivire",
+		"fastMove":"THUNDER_SHOCK",
+		"chargedMoves":["ICE_PUNCH","WILD_CHARGE"]
+	},
+	{
+		"speciesId":"crustle",
+		"fastMove":"FURY_CUTTER",
+		"chargedMoves":["ROCK_SLIDE","X_SCISSOR"]
+	},
+	{
+		"speciesId":"vespiquen",
+		"fastMove":"AIR_SLASH",
+		"chargedMoves":["POWER_GEM","X_SCISSOR"]
 	}
 ]

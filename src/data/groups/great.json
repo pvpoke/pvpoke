@@ -66,7 +66,7 @@
 	},
 	{
 		"speciesId":"lanturn",
-		"fastMove":"WATER_GUN",
+		"fastMove":"SPARK",
 		"chargedMoves":["THUNDERBOLT","HYDRO_PUMP"]
 	},
 	{
@@ -107,7 +107,7 @@
 	{
 		"speciesId":"swampert",
 		"fastMove":"MUD_SHOT",
-		"chargedMoves":["HYDRO_CANNON","EARTHQUAKE"]
+		"chargedMoves":["HYDRO_CANNON","SLUDGE_WAVE"]
 	},
 	{
 		"speciesId":"froslass",
@@ -127,7 +127,7 @@
 	{
 		"speciesId":"mew",
 		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["OVERHEAT","PSYSHOCK"]
+		"chargedMoves":["WILD_CHARGE","PSYSHOCK"]
 	},
 	{
 		"speciesId":"deoxys_defense",
@@ -150,19 +150,14 @@
 		"chargedMoves":["METEOR_MASH","PSYCHIC"]
 	},
 	{
+		"speciesId":"wigglytuff",
+		"fastMove":"CHARM",
+		"chargedMoves":["ICE_BEAM","PLAY_ROUGH"]
+	},
+	{
 		"speciesId":"hypno",
 		"fastMove":"CONFUSION",
-		"chargedMoves":["SHADOW_BALL","THUNDER_PUNCH"]
-	},
-	{
-		"speciesId":"bronzong",
-		"fastMove":"CONFUSION",
-		"chargedMoves":["PSYSHOCK","BULLDOZE"]
-	},
-	{
-		"speciesId":"togekiss",
-		"fastMove":"CHARM",
-		"chargedMoves":["ANCIENT_POWER","FLAMETHROWER"]
+		"chargedMoves":["ICE_PUNCH","THUNDER_PUNCH"]
 	},
 	{
 		"speciesId":"registeel",
@@ -182,7 +177,7 @@
 	{
 		"speciesId":"raichu_alolan",
 		"fastMove":"VOLT_SWITCH",
-		"chargedMoves":["THUNDER_PUNCH","GRASS_KNOT"]
+		"chargedMoves":["THUNDER_PUNCH","WILD_CHARGE"]
 	},
 	{
 		"speciesId":"ferrothorn",
