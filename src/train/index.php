@@ -128,16 +128,10 @@ require_once '../header.php';
 <div class="section white updates">
 	<h3>What's New</h3>
 
-	<h4>v1.14.10 (April 17, 2020)</h4>
+	<h4>v1.14.19 (May 11, 2020)</h4>
 	<ul>
-		<li>Training Battles have been updated to reflect recent interface changes in-game along with a few QOL updates:</li>
-		<ul>
-			<li>Type icons appear for each Pokemon at the top of the screen. These icons change immediately on switches.</li>
-			<li>The HP bar flashes red, orange, or blue based on damage effectiveness.</li>
-			<li>Added a "Return to Team Select" button to the 6v6 view in Tournament Mode.</li>
-			<li>Added a master autotap toggle that will enable autotapping automatically between games.</li>
-			<li>"Champion" is now the default difficulty.</li>
-		</ul>
+		<li>Simulations, rankings, meta groups, and Training Battles have been updated with the latest move balance updates for Wild Charge, Moonblast, and Drill Run.</li>
+		<li>Premier Cup is now available in Training Battles.</li>
 	</ul>
 </div>
 

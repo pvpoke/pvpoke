@@ -27,21 +27,10 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.14.18 (May 8, 2020)</h4>
+	<h4>v1.14.19 (May 11, 2020)</h4>
 	<ul>
-		<li>Added back Season 2 Silph rankings for the Battle of the Servers tournament. Note that these rankings don't include the upcoming move updates, and will be removed after the tournament begins.</li>
-		<li>Updated and fixed some sim logic:</li>
-		<ul>
-			<li>Fixed an issue where Pokemon building up to two self-debuffing moves wouldn't throw a move before fainting.</li>
-			<li>Pokemon now reach for a bigger move if it would KO rather than defaulting to the highest DPE move. This should improve some situations where the highest DPE move wasn't always the optimal play. This behavior is only active when baiting is turned on.</li>
-		</ul>
-	</ul>
-
-	<h4>v1.14.16 (May 2, 2020)</h4>
-	<ul>
-		<li>Move balance changes have been rolled back until the delayed Season 2 start</li>
-		<li>Note that the Premier Cup rankings use the current (old) move stats and will change once they're reimplemented.</li>
-		<li>Updated versions of Moonblast, Wild Charge, and Drill Run are available to add as custom moves.</li>
+		<li>Simulations, rankings, meta groups, and Training Battles have been updated with the latest move balance updates for Wild Charge, Moonblast, and Drill Run.</li>
+		<li>Premier Cup is now available in Training Battles.</li>
 	</ul>
 
 	<h3>Latest Article</h3>
