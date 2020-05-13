@@ -36,6 +36,7 @@ require_once '../header.php';
 			<li><a href="#cresselia">Cresselia</a></li>
 			<li><a href="#charizard">Charizard</a></li>
 			<li><a href="#blaziken">Blaziken</a></li>
+			<li><a href="#seaking">Seaking</a></li>
 			<li><a href="#mewtwo">Mewtwo</a></li>
 			<li><a href="#mew">Mew</a></li>
 	  		<li><a href="#event-shadow">Event Moves &amp; Shadow Pokemon</a></li>
@@ -90,7 +91,7 @@ Make no mistake,    <strong>double legacy Dewgong is a top tier Great League Pok
 <p>
     <strong>Moveset: </strong>
     <em>Thunder Shock</em>
-    + Thunderbolt &amp; Drill Peck
+    + Drill Peck &amp; Thunderbolt or Thunder
     <em>
         <br/>
     </em>
@@ -120,18 +121,15 @@ Make no mistake,    <strong>double legacy Dewgong is a top tier Great League Pok
     and Mandibuzz.
 </p>
 <p>
-    An important note on IV’s:
-    <strong>
-        Zapdos needs to reach a Thunder Shock breakpoint against Ice Beam
-        Azumarill
-    </strong>
-    to properly beat it. This breakpoint can be guaranteed at 141 Attack which
-    is a fairly steep hill to climb (11/2/5 is the highest stat product spread
-    that reaches it). Research breakthrough Zapdos are likely to hit this
-    breakpoint against Lucky Azumarill spreads and some field research spreads.
-    Note that Zapdos can’t switch into an Azumarill with energy unless it’s
-    willing to shield twice.
+    One of the most important matchups in the Great League is Azumarill, and here's where things get tricky for Zapdos. Below is a list of conditions for Zapdos to beat high-rank Azumarill in a direct 1-shield matchup:
+	<ul>
+		<li><a href="https://pvpoke.com/battle/1500/zapdos-16-11-2-5-4-4-0/azumarill-40-8-15-15-4-4-1/11/1-3-5/0-2-1/">Thunderbolt Zapdos</a> needs to hit a Thunder Shock breakpoint against Azumarill for its Thunderbolt to KO. This requires steep Attack IV's against high-rank Azumarill (11/2/5 guarantees the breakpoint against rank 1 Azumarill).</li>
+		<li><a href="https://pvpoke.com/battle/1500/zapdos-15-15-14-12-4-4-0/azumarill-40-8-15-15-4-4-1/11/1-3-4/0-2-1/">Thunder Zapdos</a> needs 138.6 Attack (15 Attack IV for a research breakthrough Zapdos) for Thunder to KO a rank 1 Azumarill.</li>
+		<li>Barring this, Thunder Zapdos should allow Azumarill to use its Charged Move first and attempt to <a href="https://pvpoke.com/battle/sandbox/1500/zapdos-15-10-14-12-4-4-0/azumarill-40-8-15-15-4-4-1/22/1-3-4/0-2-1/16.110100-19.101100-32.101000/">sneak in extra Thunder Shocks</a>. This extra difference is enough for Thunder to KO.</li>
+		<li>All Zapdos lose head-on shields down and all Zapdos win investing two shields.</li>
+	</ul>
 </p>
+<p>Should you run Thunderbolt or Thunder? For regular Zapdos, your decision could depend on the scenarios outlined above. Thunderbolt is 90 power/55 energy while Thunder is 100 power/60 energy. The first Charged Move takes 7 Thunder Shocks to reach but the second Thunderbolt only takes 6. This one may come down to personal preference but either work.</p>
 <p>
     So you could get some Attack, but what if you wanted <em>more </em>Attack?
 Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup </strong>and also
@@ -139,7 +137,7 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
     potentially Dewgong, Froslass, and Sableye with bait. This comes at the
     cost of Meganium and Swampert so there are tradeoffs. In general Shadow
     Zapdos is highly dangerous especially with energy; it has comparable Attack
-    to Haunter with 20% more bulk.
+    to Haunter with 20% more bulk. Thunderbolt is recommended for Shadow Zapdos so you can reach it slightly faster.
 </p>
 <p>
     In the Ultra League, Shadow Zapdos takes on meta staples such as Articuno,
@@ -369,6 +367,29 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
 </p>
 <p>Why Blaze Kick instead of Blast Burn and Stone Edge? Blast Burn and Stone Edge give Blaziken a powerful pair of closing moves. However, this set lacks flexibility which is a big selling point for unlocking Stone Edge in the first place. Blaze Kick allows Blaziken to still perform its Fire-type role and also provides a bait move for Stone Edge. In the Forest Cup, for example, Stone Edge over Blast Burn drops Quagsire and Stunfisk in the 1-shield matchup (both require bait), and drops Jumpluff, Meganium, and Stunfisk in the 0-shield matchup while picking up Kingdra. All other matchups have similar results on paper.</p>
 <p>Ultimately, Stone Edge Blaziken has a lower ceiling without Blast Burn but a higher floor. If you find maneuvering with Blaziken a challenge, Stone Edge can make it more comfortable and forgiving to run. Want to try it out before spending your previous Elite TM? Head over to <a href="/train/">Training Battles</a> and test it out against a bot opponent!</p>
+</div>
+
+<a name="seaking"></a>
+<h3 class="article-header">Seaking</h3>
+<div class="article-section">
+<p>
+<strong>Moveset: </strong>
+<em>Poison Jab</em>
++ <em>Icy Wind</em> &amp; <em>Drill Run</em>
+<em>
+	<br/>
+</em>
+<strong>Formats: </strong>
+Great League
+</p>
+<p>
+Some candidates may only need one Elite TM. How about three? Triple legacy Seaking is the new hotness since Drill Run was improved to be as powerful as Sky Attack. <b>Seaking is the ultimate meta breaker with potential wins against Azumarill, Altaria, and Registeel.</b> Is that enough to warrant the steep investment?
+</p>
+<p>
+First thing to note, Seaking has middling stats and doesn't receive the same-type attack bonus on its moves. This means Seaking needs shields to perform well, its wins are often close, and it'll have difficulty coming back while behind. In other words, Seaking may be best suited as a lead where you can guarantee an even start and give Seaking the support it needs. Its strong anti-meta role also means it can struggle if it doesn't encounter that meta. Using its Icy Wind debuff effectively, reading your opponent's backline, and maneuvering it effectively are key to making Seaking successful.
+</p>
+<p>If you're lucky enough to have one or two of the legacy moves already, how good of a Seaking do you need? Should you wait to snag a better one? Thankfully, Seaking's primary matchups aren't IV dependent and even low-rank Seaking can take them on. Of note are a <a href="https://pvpoke.com/battle/1500/seaking-26.5-0-14-14-4-4-1/altaria/11/1-3-1/0-3-2/">Dragon Breath bulkpoint against Altaria</a>, and a <a href="https://pvpoke.com/battle/1500/seaking-26.5-0-14-14-4-4-1/shiftry/11/1-3-1/2-3-1/">bulkpoint against Snarl Shiftry</a> which allows it to survive to a second Icy Wind.</p>
+<p>This Pokemon is more gimmicky, but could be worth it if you're willing to train with it a lot. You can always try it out in the <a href="https://pvpoke.com/train/">Train</a> section before you decide to invest!</p>
 </div>
 
 	<a name="mewtwo"></a>
