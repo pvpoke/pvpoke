@@ -109,9 +109,13 @@ switch($cup){
 	case "forest":
 		$league = 'Forest';
 		break;
-		
+
 	case "premier":
 		$league = 'Premier';
+		break;
+
+	case "grunt-4":
+		$league = 'Grunt Cup 4';
 		break;
 }
 
