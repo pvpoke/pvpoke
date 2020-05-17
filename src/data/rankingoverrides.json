@@ -4179,5 +4179,81 @@
 				"weight": 7
 			}
 		]
+	},
+	{
+		"league": 1500,
+		"cup": "grunt-4",
+		"pokemon": [
+			{
+				"speciesId": "venusaur",
+				"weight": 20
+			},
+			{
+				"speciesId": "charizard",
+				"weight": 20
+			},
+			{
+				"speciesId": "blastoise",
+				"weight": 20
+			},
+			{
+				"speciesId": "golbat",
+				"weight": 15
+			},
+			{
+				"speciesId": "venomoth",
+				"weight": 5
+			},
+			{
+				"speciesId": "magneton",
+				"weight": 10
+			},
+			{
+				"speciesId": "haunter",
+				"weight": 5
+			},
+			{
+				"speciesId": "machamp",
+				"chargedMoves": ["CROSS_CHOP","ROCK_SLIDE"],
+				"weight": 5
+			},
+			{
+				"speciesId": "dewgong",
+				"chargedMoves": ["ICY_WIND","WATER_PULSE"],
+				"weight": 10
+			},
+			{
+				"speciesId": "cloyster",
+				"chargedMoves": ["ICY_WIND","HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "poliwrath",
+				"chargedMoves": ["ICE_PUNCH","DYNAMIC_PUNCH"],
+				"weight": 15
+			},
+			{
+				"speciesId": "poliwrath_shadow",
+				"chargedMoves": ["ICE_PUNCH","DYNAMIC_PUNCH"]
+			},
+			{
+				"speciesId": "exeggutor",
+				"chargedMoves": ["SEED_BOMB","PSYCHIC"],
+				"weight": 5
+			},
+			{
+				"speciesId": "exeggutor_shadow",
+				"chargedMoves": ["SEED_BOMB","PSYCHIC"]
+			},
+			{
+				"speciesId": "muk",
+				"chargedMoves": ["THUNDER_PUNCH","DARK_PULSE"]
+			},
+			{
+				"speciesId": "muk_alolan",
+				"fastMove": "SNARL",
+				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"],
+				"weight": 10
+			}
+		]
 	}
 ]

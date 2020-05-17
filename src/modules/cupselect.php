@@ -9,6 +9,7 @@
 	<option value="tsa-2" cup="timeless">Silph Timeless Cup</option>
 	<option value="tsa-2" cup="ferocious">Silph Ferocious Cup</option>
 	<option value="tsa-2" cup="sinister">Silph Sinister Cup</option>
+	<option value="community" cup="grunt-4">Grunt Cup Season 4</option>
 
 	<?php if((strpos($_SERVER['REQUEST_URI'], 'battle') !== false)||(strpos($_SERVER['REQUEST_URI'], 'rankings') !== false)): ?>
 		<option value="custom" cup="custom">Custom</option>
@@ -23,6 +24,7 @@
 	<option value="safari" cat="community">Montreal Safari Cup</option>
 	<option value="fantasy" cat="community">GO LIVE Fantasy Cup</option>
 	<option value="beam" cat="community">Get Beamed</option>
+	<option value="grunt-4" cat="community">Grunt Cup Season 4</option>
 	<option value="jungle"  cat="tsa-1">Jungle Cup</option>
 	<option value="rainbow" cat="tsa-1">Rainbow Cup</option>
 	<option value="championships-1" cat="tsa-1">Season 1 Championships</option>

@@ -432,6 +432,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if((cup.name == "grunt-4")&&(battle.getCP() == 1500)){
+					iterations = 1;
+				}
+
 				if((cup.name == "forest")&&(battle.getCP() == 1500)){
 					iterations = 1;
 				}

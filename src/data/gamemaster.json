@@ -170,7 +170,7 @@
             "values": ["skarmory", "hypno"]
         }, {
             "filterType": "tag",
-            "values": ["mythical"]
+            "values": ["mythical","shadow"]
         }, {
             "filterType": "type",
             "values": ["dark"]
@@ -187,7 +187,7 @@
         "name": "timeless",
         "title": "Timeless Cup",
         "restrictedPicks": 1,
-        "restrictedPokemon": ["bulbasaur", "ivysaur", "venusaur", "squirtle", "wartortle", "blastoise", "charmander", "charmeleon", "charizard", "chikorita", "bayleef", "meganium", "totodile", "croconaw", "feraligatr", "cyndaquil", "quilava", "typhlosion", "treecko", "grovyle", "sceptile", "mudkip", "marshtomp", "swampert", "torchic", "combusken", "blaziken", "turtwig", "grotle", "torterra", "piplup", "prinplup", "empoleon", "chimchar", "monferno", "infernape", "bulbasaur_shadow", "ivysaur_shadow", "venusaur_shadow", "squirtle_shadow", "wartortle_shadow", "blastoise_shadow", "charmander_shadow", "charmeleon_shadow", "charizard_shadow", "mudkip_shadow", "marshtomp_shadow", "swampert_shadow", "turtwig_shadow", "grotle_shadow", "torterra_shadow"],
+        "restrictedPokemon": ["bulbasaur", "ivysaur", "venusaur", "squirtle", "wartortle", "blastoise", "charmander", "charmeleon", "charizard", "chikorita", "bayleef", "meganium", "totodile", "croconaw", "feraligatr", "cyndaquil", "quilava", "typhlosion", "treecko", "grovyle", "sceptile", "mudkip", "marshtomp", "swampert", "torchic", "combusken", "blaziken", "turtwig", "grotle", "torterra", "piplup", "prinplup", "empoleon", "chimchar", "monferno", "infernape"],
         "include": [{
             "filterType": "dex",
             "values": [1, 488]
@@ -197,7 +197,7 @@
         }],
         "exclude": [{
             "filterType": "tag",
-            "values": ["legendary", "mythical", "alolan"]
+            "values": ["legendary", "mythical", "alolan", "shadow"]
         }, {
             "filterType": "type",
             "values": ["fighting", "flying", "normal", "psychic", "steel", "fairy"]
@@ -211,13 +211,13 @@
         "include": [],
         "exclude": [{
             "filterType": "tag",
-            "values": ["legendary", "mythical"]
+            "values": ["legendary", "mythical", "shadow"]
         }, {
             "filterType": "type",
             "values": ["none"]
         }, {
             "filterType": "id",
-            "values": ["azumarill", "medicham", "dewgong", "wormadam_trash", "wormadam_plant", "wormadam_sandy", "hypno", "hypno_shadow", "munchlax", "linoone", "onix", "hitmonlee", "hitmonlee_shadow", "hitmonchan", "hitmonchan_shadow", "chansey", "mr.mime", "scyther", "scyther_shadow", "jynx", "electabuzz", "electabuzz-shadow", "magmar", "magmar_shadow", "pinsir", "pinsir_shadow", "lapras", "lapras_shadow", "eevee", "vaporeon", "jolteon", "flareon", "omanyte", "omanyte_shadow", "omastar", "omastar_shadow", "kabuto", "kabutops", "aerodactyl", "snorlax", "snorlax_shadow", "dratini", "dratini_shadow", "dragonair", "dragonair_shadow", "dragonite","dragonite_shadow", "mareep", "mareep_shadow","flaafy", "flaafy_shadow","ampharos", "ampharos_shadow", "sudowoodo", "espeon", "umbreon", "pineco", "forretress", "gligar", "steelix", "scizor", "scizor_shadow", "delibird", "mantine", "skarmory", "hitmontop", "miltank", "blissey", "larvitar","larvitar_shadow", "pupitar","pupitar_shadow", "tyranitar","tyranitar_shadow", "ralts","ralts_shadow", "kirlia","kirlia_shadow", "gardevoir","gardevoir_shadow", "slakoth", "vigoroth", "slaking", "nincada", "ninjask", "sableye", "sableye_shadow", "mawile", "mawile_shadow", "trapinch","trapinch_shadow", "vibrava", "vibrava_shadow", "flygon", "flygon_shadow", "milotic", "castform", "castform_sunny", "castform_rainy", "castform_snowy", "tropius", "chimecho", "absol", "absol_shadow", "relicanth", "bagon", "shelgon", "salamence", "metang","metang_shadow", "metagross","metagross_shadow", "shinx", "luxio", "luxray", "cranidos", "rampardos", "shieldon", "bastiodon", "pachirisu", "drifloon", "drifblim", "chatot", "spiritomb", "gible", "gabite", "garchomp", "lucario", "skorupi", "drapion", "carnivine", "electivire","electivire_shadow", "magmortar","magmortar_shadow", "leafeon", "glaceon", "gliscor", "gallade", "gallade_shadow", "ferroseed", "ferrothorn", "klink", "klang", "klinklang", "litwick", "lampent", "chandelure", "golett", "golurk", "deino", "zweilous", "hydreigon", "mr_mime", "tirtouga", "carracosta", "archeops", "archen", "stunfisk", "alomomola", "timburr", "gurdurr", "conkeldurr", "rufflet", "braviary", "cryogonal", "axew","haxorus","fraxure","sigilyph","tirtouga","carracosta"]
+            "values": ["azumarill", "medicham", "dewgong", "wormadam_trash", "wormadam_plant", "wormadam_sandy", "hypno", "munchlax", "linoone", "onix", "hitmonlee", "hitmonchan", "chansey", "mr.mime", "scyther", "jynx", "electabuzz", "magmar", "magmar_shadow", "pinsir", "lapras", "eevee", "vaporeon", "jolteon", "flareon", "omanyte", "omastar", "omastar_shadow", "kabuto", "kabutops", "aerodactyl", "snorlax", "dratini", "dragonair", "dragonite", "mareep","flaafy","ampharos", "sudowoodo", "espeon", "umbreon", "pineco", "forretress", "gligar", "steelix", "scizor", "delibird", "mantine", "skarmory", "hitmontop", "miltank", "blissey", "larvitar", "pupitar", "tyranitar", "ralts", "kirlia", "gardevoir", "slakoth", "vigoroth", "slaking", "nincada", "ninjask", "sableye", "mawile", "trapinch", "vibrava", "flygon", "milotic", "castform", "castform_sunny", "castform_rainy", "castform_snowy", "tropius", "chimecho", "absol", "absol_shadow", "relicanth", "bagon", "shelgon", "salamence", "metang", "metagross", "shinx", "luxio", "luxray", "cranidos", "rampardos", "shieldon", "bastiodon", "pachirisu", "drifloon", "drifblim", "chatot", "spiritomb", "gible", "gabite", "garchomp", "lucario", "skorupi", "drapion", "carnivine", "electivire", "magmortar", "leafeon", "glaceon", "gliscor", "gallade", "ferroseed", "ferrothorn", "klink", "klang", "klinklang", "litwick", "lampent", "chandelure", "golett", "golurk", "deino", "zweilous", "hydreigon", "mr_mime", "tirtouga", "carracosta", "archeops", "archen", "stunfisk", "alomomola", "timburr", "gurdurr", "conkeldurr", "rufflet", "braviary", "cryogonal", "axew","haxorus","fraxure","sigilyph","tirtouga","carracosta"]
         }]
     }, {
         "name": "rose",
@@ -287,7 +287,16 @@
             "filterType": "tag",
             "values": ["legendary", "mythical"]
         }]
-    }],
+    }, {
+	    "name": "grunt-4",
+	    "title": "Grunt Cup 4",
+        "restrictedPokemon": ["ivysaur","ivysaur_shadow","venusaur","venusaur_shadow","wartortle","wartortle_shadow","blastoise","blastoise_shadow","charmeleon","charmeleon_shadow","charizard","charizard_shadow"],
+	    "include": [{
+	        "filterType": "id",
+	        "values": ["ivysaur","ivysaur_shadow","venusaur","venusaur_shadow","wartortle","wartortle_shadow","blastoise","blastoise_shadow","charmeleon","charmeleon_shadow","charizard","charizard_shadow","sneasel", "sneasel_shadow", "raticate", "arbok", "sandslash", "nidorina", "nidorino", "nidoking", "gyarados", "nidoqueen", "golbat", "golem", "gloom", "vileplume", "parasect", "venomoth", "persian", "poliwhirl", "poliwrath", "machoke", "arcanine", "machamp", "weepinbell", "victreebel", "tentacruel", "graveler", "slowbro", "slowpoke", "wobbuffet", "wobbuffet_shadow", "dodrio", "dewgong", "muk", "cloyster", "haunter", "gengar", "onix", "electrode", "magmar", "tyranitar", "tyranitar_shadow", "houndoom", "houndoom_shadow", "dugtrio", "dugtrio_alolan", "exeggutor", "exeggutor_shadow", "magneton", "magneton_shadow", "drowzee", "marowak", "weezing", "rhyhorn", "rhydon", "kangaskhan", "seadra", "seaking", "jynx", "tauros", "omanyte", "omastar", "kabuto", "kabutops", "aerodactyl", "golbat_shadow", "victreebel_shadow", "weepinbell_shadow", "raticate_shadow", "sandslash_shadow", "gloom_shadow", "vileplume_shadow", "venomoth_shadow", "persian_shadow", "poliwhirl_shadow", "poliwrath_shadow", "drowzee_shadow", "muk_shadow", "marowak_shadow", "omanyte_shadow", "omastar_shadow", "muk_alolan", "raticate_alolan", "persian_alolan", "golem_alolan", "graveler_alolan", "lickitung", "moltres", "vaporeon", "clefable"]
+	    }],
+	    "exclude": []
+	}],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable"],
     "pokemonRegions": [{
         "string": "gen1",
