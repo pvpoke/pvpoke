@@ -460,13 +460,6 @@ function Battle(){
 			return false;
 		}
 
-		// In emulated battles, randomize priority
-
-		if(mode == "emulate"){
-			pokemon[0].priority = (Math.random() > .5) ? 1 : 0;
-			pokemon[1].priority = (pokemon[0].priority == 0) ? 1 : 0;
-		}
-
 		// Determine actions for both Pokemon
 		var actionsThisTurn = false;
 		var chargedMoveThisTurn = false;
@@ -484,9 +477,6 @@ function Battle(){
 					if(action.type == "charged"){
 						chargedMoveThisTurn = true;
 					}
-					if(action.type == "fast"){
-						cooldownsToSet[i] += poke.fastMove.cooldown;
-					}
 
 					// Are both Pokemon alive?
 
@@ -498,8 +488,14 @@ function Battle(){
 
 						var valid = true;
 
-						if((action.type == "fast")&&(poke.chargedMovesOnly)){
-							valid = false;
+						if(action.type == "fast"){
+							if(poke.chargedMovesOnly){
+								valid = false;
+							}
+
+							if(valid){
+								cooldownsToSet[i] += poke.fastMove.cooldown;
+							}
 						}
 
 						if(valid){
@@ -1522,6 +1518,8 @@ function Battle(){
 						// Reset the outgoing Pokemon's buffs and debuffs
 						poke.statBuffs = [0,0];
 						poke.startStatBuffs = [0,0];
+					} else{
+						self.getOpponent(poke.index).cooldown = 500;
 					}
 					self.setNewPokemon(newPokemon, poke.index, false);
 

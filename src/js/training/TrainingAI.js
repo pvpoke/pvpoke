@@ -928,21 +928,34 @@ function TrainingAI(l, p, b){
 
 				// Dramatically scale weight based on winning or losing
 				if(scenario.average < 500){
-					weight = Math.max(Math.round(Math.pow(scenario.average / 100, 4) / 20), 1);
+					weight = Math.round(Math.pow(scenario.average / 100, 4) / 20);
 				} else{
-					// If the opponent is switch locked, favor the hard counter
-					if(opponentPlayer.getSwitchTimer() < 10){
-						weight = Math.round((scenario.average-250) / 2);
-					} else{
+
+					if((opponentPlayer.getSwitchTimer() > 10)||(poke.hp <= 0)){
+						// If the opponent is switch locked, favor the hard counter
 						weight = Math.round(Math.pow((scenario.average-250) / 100, 4));
+					} else{
+						// If the opponent isn't switch locked, favor the softer counter
+						weight = Math.round(Math.pow((1000-scenario.average) / 100, 4));
 					}
 
+				}
+
+				if(weight < 1){
+					weight = 1;
 				}
 
 				switchOptions.push(new DecisionOption(i, weight));
 			}
 		}
 
+		if(self.hasStrategy("BAD_DECISION_PROTECTION")){
+			switchOptions.sort((a,b) => (a.weight > b.weight) ? -1 : ((b.weight > a.weight) ? 1 : 0));
+
+			if((switchOptions.length > 1)&&(switchOptions[0].weight > switchOptions[1].weight * 4)){
+				switchOptions.splice(1, 1);
+			}
+		}
 		var switchChoice = self.chooseOption(switchOptions);
 		return switchChoice.name;
 	}
