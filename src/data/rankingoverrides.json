@@ -276,6 +276,12 @@
 			},
 			{
 				"speciesId": "beedrill",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["X_SCISSOR", "SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "beedrill_shadow",
+				"fastMove": "POISON_JAB",
 				"chargedMoves": ["X_SCISSOR", "SLUDGE_BOMB"]
 			},
 			{
