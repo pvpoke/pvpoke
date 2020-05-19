@@ -794,6 +794,30 @@ var InterfaceMaster = (function () {
 				$(".overview-section.bulk .grade").attr("grade", bulkGrade.letter);
 				$(".overview-section.bulk .notes div[grade=\""+bulkGrade.letter+"\"]").show();
 
+				// Safety grade, how safe these Pokemon's matchups are
+
+				var overallRankings = gm.rankings[key];
+				var averageSafety = 0;
+
+				for(var i = 0; i < team.length; i++){
+					var safety = 60;
+
+					for(var n = 0; n < overallRankings.length; n++){
+						if(team[i].speciesId == overallRankings[n].speciesId){
+							safety = overallRankings[n].scores[2];
+							break;
+						}
+					}
+					averageSafety += safety;
+				}
+
+				averageSafety /= team.length;
+
+				var safetyGrade = self.calculateLetterGrade(averageSafety, 98);
+				$(".overview-section.safety .grade").html(safetyGrade.letter);
+				$(".overview-section.safety .grade").attr("grade", safetyGrade.letter);
+				$(".overview-section.safety .notes div[grade=\""+safetyGrade.letter+"\"]").show();
+
 				// Consistency grade, how bait dependent movesets are
 				var averageConsistency = 0;
 

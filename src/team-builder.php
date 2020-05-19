@@ -69,7 +69,7 @@ require_once 'header.php';
 <div class="section typings white">
 	<a href="#" class="toggle active">Overview <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content article">
-		<p>Below is a high-level evaluation of your team. Use this as a general guideline.</p>
+		<p>Below is a high-level evaluation of your team. Use this as a general guideline for any adjustments you may want to make. Some unique strategies can score lower marks.</p>
 		<div class="overview-section coverage">
 			<div class="flex">
 				<h3>Coverage</h3>
@@ -92,8 +92,21 @@ require_once 'header.php';
 				<div grade="A">This team has excellent average bulk. It will help manage shields and overcome difficult scenarios.</div>
 				<div grade="B">This team has good average bulk. Make sure to save shields for your more fragile teammates.</div>
 				<div grade="C">This team has moderate average bulk. You may be pressured to shield more often. Consider a bulky alternative to absorb damage.</div>
-				<div grade="D">This team has low average bulk. You will be pressured to burn shields often. Consider bulkier alternatives to ease shield pressure.</div>
-				<div grade="F">This team is extremely fragile and will have a hard time climbing out of bad situations. Use bulkier Pokemon to make it more forgiving to run.</div>
+				<div grade="D">This team has low average bulk. You will be pressured to shield often. Consider bulkier alternatives to ease shield pressure.</div>
+				<div grade="F">This team is extremely fragile and will have a hard time climbing out of bad situations. Use bulkier Pokemon to make this team more forgiving.</div>
+			</div>
+		</div>
+		<div class="overview-section safety">
+			<div class="flex">
+				<h3>Safety</h3>
+				<div class="grade"></div>
+			</div>
+			<div class="notes">
+				<div grade="A">This team has extremely safe matchups. It's flexible and can easily pivot to regain advantage.</div>
+				<div grade="B">This team has mostly safe matchups. It can work back from lost leads and has options to escape disadvantageous scenarios.</div>
+				<div grade="C">This team has only somewhat safe matchups. It may have limited safe switch options or struggle without switch advantage. Consider alternatives with good bulk or coverage to provide more flexibility. Otherwise, be prepared to spend shields to line up your Pokemon in the right matchups.</div>
+				<div grade="D">This team has generally unsafe matchups. It may rely on winning the lead and maintaining switch advantage. Consider safer alternatives with broader coverage.</div>
+				<div grade="F">This team has very unsafe matchups. It relies heavily on winning the lead and lining up perfect counters. Consider more flexible alternatives to make your matchups safer.</div>
 			</div>
 		</div>
 		<div class="overview-section consistency">
@@ -102,26 +115,12 @@ require_once 'header.php';
 				<div class="grade"></div>
 			</div>
 			<div class="notes">
-				<div grade="A">This team has extremely consistent movesets. It will be dependable in many scenarios.</div>
+				<div grade="A">This team has extremely consistent movesets. It will have dependable damage output.</div>
 				<div grade="B">This team has mostly consistent movesets. It won't depend on baits often.</div>
 				<div grade="C">This team has movesets with mixed consistency. You might depend on baits every now and then.</div>
 				<div grade="D">This team has movesets with low consistency. You'll depend on baits or stat boosts often. Consider alternatives with more consistent Fast or Charged Move damage.</div>
 				<div grade="F">This team has many movesets with poor consistency. You'll be highly dependent on landing baits or triggering stat boosts. Consider alternatives that have more dependable movesets.</div>
 			</div>
-		</div>
-		<div class="overview-section speed">
-			<div class="flex">
-				<h3>Speed</h3>
-				<div class="grade"></div>
-			</div>
-			<div class="notes"></div>
-		</div>
-		<div class="overview-section safety">
-			<div class="flex">
-				<h3>Safety</h3>
-				<div class="grade"></div>
-			</div>
-			<div class="notes"></div>
 		</div>
 	</div>
 	<a href="#" class="toggle active">Meta Scorecard <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
@@ -175,7 +174,7 @@ require_once 'header.php';
 
 	<a href="#" class="toggle active">Potential Alternatives <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content article">
-		<p>The Pokemon below have the best overall matchups against this team's potential threats. Results are taken from 0 and 1 shield simulations. Scores also factor in a Pokemon's overall strength and consistency.</p>
+		<p>The Pokemon below have the best overall matchups against this team's potential threats. Results are taken from 0 and 1 shield simulations. Scores also factor in a Pokemon's overall strength and consistency. See the team's Coverage grade for more on its potential threats.</p>
 		<div class="table-container">
 			<table class="alternatives-table rating-table" cellspacing="0">
 			</table>
