@@ -13,7 +13,11 @@ var InterfaceMaster = (function () {
 			var gm;
 			var battle;
 			var pokeSelectors = [];
-			var multiSelector = new PokeMultiSelect($(".poke.multi"));
+			var multiSelectors = [
+				new PokeMultiSelect($(".team .poke.multi")),
+				new PokeMultiSelect($(".custom-threats .poke.multi")),
+				new PokeMultiSelect($(".custom-alternatives .poke.multi"))
+			];
 			var results; // Store team matchup results for later reference
 			var self = this;
 			var runningResults = false;
@@ -38,8 +42,11 @@ var InterfaceMaster = (function () {
 					selector.init(data.pokemon, battle);
 				});
 
-				multiSelector.init(data.pokemon, battle);
-				multiSelector.setMaxPokemonCount(6);
+				for(var i = 0; i < multiSelectors.length; i++){
+					multiSelectors[i].init(data.pokemon, battle);
+					multiSelectors[i].setMaxPokemonCount(6);
+				}
+
 
 				$(".league-select").on("change", selectLeague);
 				$(".cup-select").on("change", selectCup);
@@ -124,8 +131,6 @@ var InterfaceMaster = (function () {
 									var moveStr = list[i].split("-m-")[1];
 									arr = moveStr.split("-");
 
-									console.log(arr);
-
 									// Search string for any custom moves
 									var customMoveIndexes = [];
 
@@ -176,7 +181,7 @@ var InterfaceMaster = (function () {
 									pokeList.push(pokemon);
 								}
 
-								multiSelector.setPokemonList(pokeList);
+								multiSelectors[0].setPokemonList(pokeList);
 								break;
 
 							case "cp":
@@ -311,7 +316,7 @@ var InterfaceMaster = (function () {
 
 				// Get team and validate results
 
-				var team = multiSelector.getPokemonList();
+				var team = multiSelectors[0].getPokemonList();
 
 				if(team.length == 0){
 					$(".section.error").show();
@@ -993,7 +998,10 @@ var InterfaceMaster = (function () {
 					battle.setCP(cp);
 
 					// Set the selected team to the new CP
-					multiSelector.setCP(cp);
+					for(var i = 0; i < multiSelectors.length; i++){
+						multiSelectors[i].setCP(cp);
+					}
+
 				}
 
 			}
@@ -1070,7 +1078,7 @@ var InterfaceMaster = (function () {
 					var cp = battle.getCP();
 					var cup = battle.getCup().name;
 
-					var pokes = multiSelector.getPokemonList();
+					var pokes = multiSelectors[0].getPokemonList();
 					var moveStrs = [];
 					var teamStr = "team-builder/"+cup+"/"+cp+"/";
 

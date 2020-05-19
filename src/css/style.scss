@@ -2159,6 +2159,18 @@ select, input{
 	}
 }
 
+.team-content{
+	a.toggle{
+		margin-top:10px;
+	}
+}
+
+.team-advanced{
+	.poke .poke-stats{
+		background:none;
+	}
+}
+
 .typings{
 	display:none;
 

@@ -12,14 +12,34 @@ require_once 'header.php';
 
 <h1>Team Builder</h1>
 
-<div class="section league-select-container white">
+<div class="section league-select-container team-content white">
 	<p>Select your Pokemon and movesets below. You'll see how your team matches up against top Pokemon, which Pokemon pose a potential threat, and potential alternatives for your team. You can also use this tool to identify strong team cores and how to break them.</p>
 	<p>You can change how the scorecards results display on the <a href="<?php echo $WEB_ROOT; ?>settings/">Settings page</a>.</p>
 	<?php require 'modules/leagueselect.php'; ?>
 	<?php require 'modules/cupselect.php'; ?>
+
+	<a class="toggle" href="#">Advanced <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+	<div class="toggle-content team-advanced">
+		<div class="flex">
+			<div class="flex-section">
+				<h3 class="section-title">Custom Threats</h3>
+				<p>Enter a custom group of Pokemon to evaluate threats. The first 20 Pokemon will also make up the meta scorecard.</p>
+				<div class="team-build custom-threats">
+					<?php require 'modules/pokemultiselect.php'; ?>
+				</div>
+			</div>
+			<div class="flex-section">
+				<h3 class="section-title">Custom Alternatives</h3>
+				<p>Enter a custom group of Pokemon to evaluate alternatives.</p>
+				<div class="team-build custom-alternatives">
+					<?php require 'modules/pokemultiselect.php'; ?>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 
-<div class="section team-build poke-select-container">
+<div class="section team-build team poke-select-container">
 	<?php require 'modules/pokemultiselect.php'; ?>
 </div>
 
