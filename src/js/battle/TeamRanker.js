@@ -24,7 +24,6 @@ var RankerMaster = (function () {
 
 			var rankings = [];
 
-			var shieldOverrides = [0, 0];
 			var shieldMode = 'single'; // single - sim specific shield scenarios, average - sim average of 0 and 1 shields each
 			var chargedMoveCountOverride = 2;
 			var shieldBaitOverrides = [true, true];
@@ -103,7 +102,7 @@ var RankerMaster = (function () {
 						}
 					}
 				}
-				
+
 				// For all eligible Pokemon, simulate battles and gather rating data
 
 				var rankCount = pokemonList.length;
@@ -310,22 +309,10 @@ var RankerMaster = (function () {
 				return {rankings: rankings, teamRatings: teamRatings, csv: csv};
 			}
 
-			// Override Pokemon shield settings with the provided value
-
-			this.setShields = function(value, index){
-				shieldOverrides[index] = value;
-			}
-
 			// Override charged move count with the provided value
 
 			this.setChargedMoveCount = function(value){
 				chargedMoveCountOverride = value;
-			}
-
-			// Override whether or not to bait shields
-
-			this.setShieldBaitOverride = function(value, index){
-				shieldBaitOverrides[index] = value;
 			}
 
 			// Set the targets to rank against

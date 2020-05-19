@@ -792,9 +792,6 @@ var InterfaceMaster = (function () {
 				battle.setCup(cup);
 
 				ranker.applySettings(multiSelectors[0].getSettings(), 1);
-				ranker.setShields(opponentShields, 1);
-				ranker.setChargedMoveCount(chargedMoveCount);
-				ranker.setShieldBaitOverride($(".poke.multi .check.shield-baiting").hasClass("on"), 1);
 
 				var team = [];
 				var poke = pokeSelectors[0].getPokemon();

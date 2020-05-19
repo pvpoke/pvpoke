@@ -315,6 +315,11 @@ var InterfaceMaster = (function () {
 					return false;
 				}
 
+				// Gather advanced settings
+				var scorecardCount = parseInt($(".scorecard-length-select option:selected").val());
+				var allowShadows = $(".team-option .check.allow-shadows").hasClass("on");
+				var baitShields = $(".team-option .check.shield-baiting").hasClass("on");
+
 				// Get team and validate results
 
 				var team = multiSelectors[0].getPokemonList();
@@ -372,6 +377,16 @@ var InterfaceMaster = (function () {
 
 				var ranker = RankerMaster.getInstance();
 				ranker.setShieldMode("average");
+				ranker.applySettings({
+					shields: 1,
+					ivs: "original",
+					bait: baitShields
+				}, 0);
+				ranker.applySettings({
+					shields: 1,
+					ivs: "original",
+					bait: baitShields
+				}, 1);
 
 				// Set targets for custom threats
 				if(multiSelectors[1].getPokemonList().length > 0){
@@ -425,13 +440,13 @@ var InterfaceMaster = (function () {
 
 				var avgThreatScore = 0;
 				var count = 0;
-				var total = 20;
+				var total = scorecardCount;
 				var i = 0;
 
 				while((count < total)&&(i < counterRankings.length)){
 					var r = counterRankings[i];
 
-					if(r.speciesId.indexOf("_shadow") > -1){
+					if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
 						i++;
 						continue;
 					}
@@ -532,13 +547,13 @@ var InterfaceMaster = (function () {
 
 
 				count = 0;
-				total = 20;
+				total = scorecardCount;
 				i = 0;
 
 				while((count < total)&&(i < counterRankings.length)){
 					var r = counterRankings[i];
 
-					if(r.speciesId.indexOf("_shadow") > -1){
+					if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
 						i++;
 						continue;
 					}
@@ -627,13 +642,13 @@ var InterfaceMaster = (function () {
 				$(".alternatives-table").append("<tbody></tbody>");
 
 				count = 0;
-				total = 20;
+				total = scorecardCount;
 				i = 0;
 
 				while((count < total)&&(i < altRankings.length)){
 					var r = altRankings[i];
 
-					if(r.speciesId.indexOf("_shadow") > -1){
+					if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
 						i++
 						continue;
 					}
