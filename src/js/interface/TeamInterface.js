@@ -13,7 +13,11 @@ var InterfaceMaster = (function () {
 			var gm;
 			var battle;
 			var pokeSelectors = [];
-			var multiSelector = new PokeMultiSelect($(".poke.multi"));
+			var multiSelectors = [
+				new PokeMultiSelect($(".team .poke.multi")),
+				new PokeMultiSelect($(".custom-threats .poke.multi")),
+				new PokeMultiSelect($(".custom-alternatives .poke.multi"))
+			];
 			var results; // Store team matchup results for later reference
 			var self = this;
 			var runningResults = false;
@@ -38,8 +42,12 @@ var InterfaceMaster = (function () {
 					selector.init(data.pokemon, battle);
 				});
 
-				multiSelector.init(data.pokemon, battle);
-				multiSelector.setMaxPokemonCount(6);
+				for(var i = 0; i < multiSelectors.length; i++){
+					multiSelectors[i].init(data.pokemon, battle);
+				}
+
+				multiSelectors[0].setMaxPokemonCount(6);
+
 
 				$(".league-select").on("change", selectLeague);
 				$(".cup-select").on("change", selectCup);
@@ -124,8 +132,6 @@ var InterfaceMaster = (function () {
 									var moveStr = list[i].split("-m-")[1];
 									arr = moveStr.split("-");
 
-									console.log(arr);
-
 									// Search string for any custom moves
 									var customMoveIndexes = [];
 
@@ -176,7 +182,7 @@ var InterfaceMaster = (function () {
 									pokeList.push(pokemon);
 								}
 
-								multiSelector.setPokemonList(pokeList);
+								multiSelectors[0].setPokemonList(pokeList);
 								break;
 
 							case "cp":
@@ -309,9 +315,14 @@ var InterfaceMaster = (function () {
 					return false;
 				}
 
+				// Gather advanced settings
+				var scorecardCount = parseInt($(".scorecard-length-select option:selected").val());
+				var allowShadows = $(".team-option .check.allow-shadows").hasClass("on");
+				var baitShields = $(".team-option .check.shield-baiting").hasClass("on");
+
 				// Get team and validate results
 
-				var team = multiSelector.getPokemonList();
+				var team = multiSelectors[0].getPokemonList();
 
 				if(team.length == 0){
 					$(".section.error").show();
@@ -366,11 +377,29 @@ var InterfaceMaster = (function () {
 
 				var ranker = RankerMaster.getInstance();
 				ranker.setShieldMode("average");
+				ranker.applySettings({
+					shields: 1,
+					ivs: "original",
+					bait: baitShields
+				}, 0);
+				ranker.applySettings({
+					shields: 1,
+					ivs: "original",
+					bait: baitShields
+				}, 1);
+
+				// Set targets for custom threats
+				if(multiSelectors[1].getPokemonList().length > 0){
+					ranker.setTargets(multiSelectors[1].getPokemonList());
+				}
 
 				var data = ranker.rank(team, battle.getCP(), battle.getCup(), [], "team-counters");
 				var counterRankings = data.rankings;
 				var teamRatings = data.teamRatings;
 				var counterTeam = [];
+
+				// Clear targets so it will default to the normal format if the user changes settings
+				ranker.setTargets([]);
 
 				results = counterRankings;
 
@@ -414,13 +443,13 @@ var InterfaceMaster = (function () {
 
 				var avgThreatScore = 0;
 				var count = 0;
-				var total = 20;
+				var total = scorecardCount;
 				var i = 0;
 
 				while((count < total)&&(i < counterRankings.length)){
 					var r = counterRankings[i];
 
-					if(r.speciesId.indexOf("_shadow") > -1){
+					if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
 						i++;
 						continue;
 					}
@@ -472,6 +501,13 @@ var InterfaceMaster = (function () {
 							$cell.find("a").addClass("win");
 						}
 
+						if(! baitShields){
+							pokemon.isCustom = true;
+							pokemon.baitShields = false;
+							r.matchups[n].opponent.isCustom = true;
+							r.matchups[n].opponent.baitShields = false;
+						}
+
 						var pokeStr = pokemon.generateURLPokeStr();
 						var moveStr = pokemon.generateURLMoveStr();
 						var opPokeStr = r.matchups[n].opponent.generateURLPokeStr();
@@ -513,16 +549,21 @@ var InterfaceMaster = (function () {
 				}
 
 				// Display meta scorecard
-				counterRankings.sort((a,b) => (a.overall > b.overall) ? -1 : ((b.overall > a.overall) ? 1 : 0));
+				if(multiSelectors[1].getPokemonList().length == 0){
+					counterRankings.sort((a,b) => (a.overall > b.overall) ? -1 : ((b.overall > a.overall) ? 1 : 0));
+				} else{
+					counterRankings.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+				}
+
 
 				count = 0;
-				total = 20;
+				total = scorecardCount;
 				i = 0;
 
 				while((count < total)&&(i < counterRankings.length)){
 					var r = counterRankings[i];
 
-					if(r.speciesId.indexOf("_shadow") > -1){
+					if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
 						i++;
 						continue;
 					}
@@ -565,6 +606,13 @@ var InterfaceMaster = (function () {
 							$cell.find("a").addClass("win");
 						}
 
+						if(! baitShields){
+							pokemon.isCustom = true;
+							pokemon.baitShields = false;
+							r.matchups[n].opponent.isCustom = true;
+							r.matchups[n].opponent.baitShields = false;
+						}
+
 						var pokeStr = pokemon.generateURLPokeStr();
 						var moveStr = pokemon.generateURLMoveStr();
 						var opPokeStr = r.matchups[n].opponent.generateURLPokeStr();
@@ -589,7 +637,15 @@ var InterfaceMaster = (function () {
 					exclusionList.push(team[i].speciesId);
 				}
 
+				// Set targets for custom alternatives
+				if(multiSelectors[2].getPokemonList().length > 0){
+					ranker.setTargets(multiSelectors[2].getPokemonList());
+				}
+
 				var altRankings = ranker.rank(counterTeam, battle.getCP(), battle.getCup(), exclusionList).rankings;
+
+				// Clear targets so it will default to the normal format if the user changes settings
+				ranker.setTargets([]);
 
 				$(".alternatives-table").html("");
 
@@ -603,13 +659,13 @@ var InterfaceMaster = (function () {
 				$(".alternatives-table").append("<tbody></tbody>");
 
 				count = 0;
-				total = 20;
+				total = scorecardCount;
 				i = 0;
 
 				while((count < total)&&(i < altRankings.length)){
 					var r = altRankings[i];
 
-					if(r.speciesId.indexOf("_shadow") > -1){
+					if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
 						i++
 						continue;
 					}
@@ -649,6 +705,13 @@ var InterfaceMaster = (function () {
 							$cell.find("a").addClass("close-win");
 						} else if( rating >= 750){
 							$cell.find("a").addClass("win");
+						}
+
+						if(! baitShields){
+							pokemon.isCustom = true;
+							pokemon.baitShields = false;
+							r.matchups[n].opponent.isCustom = true;
+							r.matchups[n].opponent.baitShields = false;
 						}
 
 						var pokeStr = pokemon.generateURLPokeStr();
@@ -701,6 +764,77 @@ var InterfaceMaster = (function () {
 					$(".alternatives-table .button.add").hide();
 				}
 
+				// Update the overall team grades
+				$(".overview-section .notes div").hide();
+
+				// Coverage grade, take threat score
+				var threatGrade = self.calculateLetterGrade(1200 - avgThreatScore, 680);
+
+				$(".overview-section.coverage .grade").html(threatGrade.letter);
+				$(".overview-section.coverage .grade").attr("grade", threatGrade.letter);
+				$(".overview-section.coverage .notes div[grade=\""+threatGrade.letter+"\"]").show();
+
+				// Bulk grade, average HP x Defense stats
+				var leagueAverageBulk = [22000,35000,35000];
+				var averageBulk = 0;
+				var goalBulk = leagueAverageBulk[0];
+
+				for(var i = 0; i < team.length; i++){
+					team[i].fullReset();
+					averageBulk += (team[i].getEffectiveStat(1) * team[i].stats.hp);
+				}
+
+				averageBulk /= team.length;
+
+				if(battle.getCP() == 2500){
+					goalBulk = leagueAverageBulk[1];
+				} else if(battle.getCP() == 10000){
+					goalBulk = leagueAverageBulk[2];
+				}
+
+				var bulkGrade = self.calculateLetterGrade(averageBulk, goalBulk);
+				$(".overview-section.bulk .grade").html(bulkGrade.letter);
+				$(".overview-section.bulk .grade").attr("grade", bulkGrade.letter);
+				$(".overview-section.bulk .notes div[grade=\""+bulkGrade.letter+"\"]").show();
+
+				// Safety grade, how safe these Pokemon's matchups are
+
+				var overallRankings = gm.rankings[key];
+				var averageSafety = 0;
+
+				for(var i = 0; i < team.length; i++){
+					var safety = 60;
+
+					for(var n = 0; n < overallRankings.length; n++){
+						if(team[i].speciesId == overallRankings[n].speciesId){
+							safety = overallRankings[n].scores[2];
+							break;
+						}
+					}
+					averageSafety += safety;
+				}
+
+				averageSafety /= team.length;
+
+				var safetyGrade = self.calculateLetterGrade(averageSafety, 98);
+				$(".overview-section.safety .grade").html(safetyGrade.letter);
+				$(".overview-section.safety .grade").attr("grade", safetyGrade.letter);
+				$(".overview-section.safety .notes div[grade=\""+safetyGrade.letter+"\"]").show();
+
+				// Consistency grade, how bait dependent movesets are
+				var averageConsistency = 0;
+
+				for(var i = 0; i < team.length; i++){
+					averageConsistency += team[i].calculateConsistency();
+				}
+
+				averageConsistency /= team.length;
+
+				var consistencyGrade = self.calculateLetterGrade(averageConsistency, 98);
+				$(".overview-section.consistency .grade").html(consistencyGrade.letter);
+				$(".overview-section.consistency .grade").attr("grade", consistencyGrade.letter);
+				$(".overview-section.consistency .notes div[grade=\""+consistencyGrade.letter+"\"]").show();
+
 				// Set download link data
 				var cupTitle = "All Pokemon";
 				if(battle.getCup().title){
@@ -718,6 +852,45 @@ var InterfaceMaster = (function () {
 				$(".button.download-csv").attr("download", filename);
 
 				runningResults = false;
+			}
+
+			// Given a goal value, convert a score into a letter grade
+
+			this.calculateLetterGrade = function(value, goal){
+				var gradeScale = [
+					{
+						letter: "A",
+						value: .9
+					},
+					{
+						letter: "B",
+						value: .8
+					},
+					{
+						letter: "C",
+						value: .7
+					},
+					{
+						letter: "D",
+						value: .6
+					}
+				];
+
+				var percentage = value / goal;
+				var letter="F";
+
+				for(var i = gradeScale.length - 1; i >= 0; i--){
+					if(percentage >= gradeScale[i].value){
+						letter = gradeScale[i].letter;
+					}
+				}
+
+				var result = {
+					letter: letter
+				}
+
+
+				return result;
 			}
 
 			// Given a subject type, produce effectiveness array for offense or defense
@@ -993,7 +1166,10 @@ var InterfaceMaster = (function () {
 					battle.setCP(cp);
 
 					// Set the selected team to the new CP
-					multiSelector.setCP(cp);
+					for(var i = 0; i < multiSelectors.length; i++){
+						multiSelectors[i].setCP(cp);
+					}
+
 				}
 
 			}
@@ -1070,7 +1246,7 @@ var InterfaceMaster = (function () {
 					var cp = battle.getCP();
 					var cup = battle.getCup().name;
 
-					var pokes = multiSelector.getPokemonList();
+					var pokes = multiSelectors[0].getPokemonList();
 					var moveStrs = [];
 					var teamStr = "team-builder/"+cup+"/"+cp+"/";
 
@@ -1152,7 +1328,7 @@ var InterfaceMaster = (function () {
 
 			function addAlternativePokemon(e){
 				var id = $(e.target).attr("pokemon");
-				$(".poke.multi .add-poke-btn").trigger("click");
+				$(".poke-select-container .poke.multi .add-poke-btn").trigger("click");
 				$(".modal .poke-select option[value=\""+id+"\"]").prop("selected", "selected");
 				$(".modal .poke-select").trigger("change");
 				$("html, body").animate({ scrollTop: $(".poke.multi").offset().top }, 500);

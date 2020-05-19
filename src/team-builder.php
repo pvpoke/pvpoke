@@ -12,14 +12,54 @@ require_once 'header.php';
 
 <h1>Team Builder</h1>
 
-<div class="section league-select-container white">
+<div class="section league-select-container team-content white">
 	<p>Select your Pokemon and movesets below. You'll see how your team matches up against top Pokemon, which Pokemon pose a potential threat, and potential alternatives for your team. You can also use this tool to identify strong team cores and how to break them.</p>
 	<p>You can change how the scorecards results display on the <a href="<?php echo $WEB_ROOT; ?>settings/">Settings page</a>.</p>
 	<?php require 'modules/leagueselect.php'; ?>
 	<?php require 'modules/cupselect.php'; ?>
+
+	<a class="toggle" href="#">Advanced <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+	<div class="toggle-content team-advanced">
+		<div class="flex">
+			<div class="flex-section">
+				<h3 class="section-title">Custom Threats</h3>
+				<p>Enter a custom group of Pokemon to evaluate threats. These Pokemon will also make up the meta scorecard.</p>
+				<div class="team-build custom-threats">
+					<?php require 'modules/pokemultiselect.php'; ?>
+				</div>
+			</div>
+			<div class="flex-section">
+				<h3 class="section-title">Custom Alternatives</h3>
+				<p>Enter a custom group of Pokemon to evaluate alternatives.</p>
+				<div class="team-build custom-alternatives">
+					<?php require 'modules/pokemultiselect.php'; ?>
+				</div>
+			</div>
+		</div>
+		<h3 class="section-title">Options</h3>
+		<div class="flex poke">
+			<div class="team-option">
+				<h3>Scorecard Length</h3>
+				<select class="scorecard-length-select">
+					<option value="10">10</option>
+					<option value="20" selected>20</option>
+					<option value="30">30</option>
+					<option value="40">40</option>
+				</select>
+			</div>
+			<div class="team-option">
+				<h3>Shadow Pokemon</h3>
+				<div class="check allow-shadows"><span></span>Show Shadow Pokemon in results</div>
+			</div>
+			<div class="team-option">
+				<h3>Shield Baiting</h3>
+				<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
+			</div>
+		</div>
+	</div>
 </div>
 
-<div class="section team-build poke-select-container">
+<div class="section team-build team poke-select-container">
 	<?php require 'modules/pokemultiselect.php'; ?>
 </div>
 
@@ -27,9 +67,65 @@ require_once 'header.php';
 <div class="section white error">Please select one or more Pokemon.</div>
 
 <div class="section typings white">
+	<a href="#" class="toggle active">Overview <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+	<div class="toggle-content article">
+		<p>Below is a high-level evaluation of your team. Use this as a general guideline for any adjustments you may want to make. Some unique strategies can score lower marks.</p>
+		<div class="overview-section coverage">
+			<div class="flex">
+				<h3>Coverage</h3>
+				<div class="grade"></div>
+			</div>
+			<div class="notes">
+				<div grade="A">This team has excellent coverage against top meta threats. It has few or no major vulnerabilities.</div>
+				<div grade="B">This team covers most top meta threats. There may be a few vulnerabilities to look out for.</div>
+				<div grade="C">This team has coverage gaps and may be vulnerable to certain threats. Consider alternative picks or movesets to shore up your weaknesses.</div>
+				<div grade="D">This team is highly vulnerable to certain threats. Consider alternative picks to avoid doubling up on weaknesses or look for Pokemon that perform well against the top meta.</div>
+				<div grade="F">This team has extremely poor coverage against multiple threats. Consider strong meta alternatives to anchor this team.</div>
+			</div>
+		</div>
+		<div class="overview-section bulk">
+			<div class="flex">
+				<h3>Bulk</h3>
+				<div class="grade"></div>
+			</div>
+			<div class="notes">
+				<div grade="A">This team has excellent average bulk. It will help manage shields and overcome difficult scenarios.</div>
+				<div grade="B">This team has good average bulk. Make sure to save shields for your more fragile teammates.</div>
+				<div grade="C">This team has moderate average bulk. You may be pressured to shield more often. Consider a bulky alternative to absorb damage.</div>
+				<div grade="D">This team has low average bulk. You will be pressured to shield often. Consider bulkier alternatives to ease shield pressure.</div>
+				<div grade="F">This team is extremely fragile and will have a hard time climbing out of bad situations. Use bulkier Pokemon to make this team more forgiving.</div>
+			</div>
+		</div>
+		<div class="overview-section safety">
+			<div class="flex">
+				<h3>Safety</h3>
+				<div class="grade"></div>
+			</div>
+			<div class="notes">
+				<div grade="A">This team has extremely safe matchups. It's flexible and can easily pivot to regain advantage.</div>
+				<div grade="B">This team has mostly safe matchups. It can work back from lost leads and has options to escape disadvantageous scenarios.</div>
+				<div grade="C">This team has only somewhat safe matchups. It may have limited safe switch options or struggle without switch advantage. Consider alternatives with good bulk or coverage to provide more flexibility. Otherwise, be prepared to spend shields to line up your Pokemon in the right matchups.</div>
+				<div grade="D">This team has generally unsafe matchups. It may rely on winning the lead and maintaining switch advantage. Consider safer alternatives with broader coverage.</div>
+				<div grade="F">This team has very unsafe matchups. It relies heavily on winning the lead and lining up perfect counters. Consider more flexible alternatives to make your matchups safer.</div>
+			</div>
+		</div>
+		<div class="overview-section consistency">
+			<div class="flex">
+				<h3>Consistency</h3>
+				<div class="grade"></div>
+			</div>
+			<div class="notes">
+				<div grade="A">This team has extremely consistent movesets. It will have dependable damage output.</div>
+				<div grade="B">This team has mostly consistent movesets. It won't depend on baits often.</div>
+				<div grade="C">This team has movesets with mixed consistency. You might depend on baits every now and then.</div>
+				<div grade="D">This team has movesets with low consistency. You'll depend on baits or stat boosts often. Consider alternatives with more consistent Fast or Charged Move damage.</div>
+				<div grade="F">This team has many movesets with poor consistency. You'll be highly dependent on landing baits or triggering stat boosts. Consider alternatives that have more dependable movesets.</div>
+			</div>
+		</div>
+	</div>
 	<a href="#" class="toggle active">Meta Scorecard <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content article">
-		<p>Explore how the top 20 ranked Pokemon match up against your team below. Print this scorecard or save a screenshot for reference as you practice. Remember to prepare beforehand and follow timely play in tournaments!</p>
+		<p>Explore how the top ranked Pokemon match up against your team below. Print this scorecard or save a screenshot for reference as you practice. Remember to prepare beforehand and follow timely play in tournaments!</p>
 		<div class="table-container">
 			<table class="meta-table rating-table" cellspacing="0">
 			</table>
@@ -78,7 +174,7 @@ require_once 'header.php';
 
 	<a href="#" class="toggle active">Potential Alternatives <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content article">
-		<p>The Pokemon below have the best overall matchups against this team's potential threats. Results are taken from 0 and 1 shield simulations. Scores also factor in a Pokemon's overall strength and consistency.</p>
+		<p>The Pokemon below have the best overall matchups against this team's potential threats. Results are taken from 0 and 1 shield simulations. Scores also factor in a Pokemon's overall strength and consistency. See the team's Coverage grade for more on its potential threats.</p>
 		<div class="table-container">
 			<table class="alternatives-table rating-table" cellspacing="0">
 			</table>

@@ -1854,6 +1854,26 @@ select, input {
   display: none;
 }
 
+.team-content a.toggle {
+  margin-top: 10px;
+}
+
+.team-advanced .poke .poke-stats {
+  background: none;
+}
+.team-advanced .poke.flex {
+  float: none;
+  max-width: none;
+}
+.team-advanced .team-option {
+  font-size: 12px;
+  margin-right: 20px;
+}
+.team-advanced .team-option h3 {
+  font-size: 14px;
+  margin-top: 0;
+}
+
 .typings {
   display: none;
 }
@@ -1881,6 +1901,54 @@ select, input {
 .typings .offense table td.name {
   display: block;
   width: 120px;
+}
+.typings .overview-section {
+  border-radius: 8px;
+  padding: 4px 8px;
+  margin-bottom: 10px;
+  background: rgba(0, 0, 0, 0.05);
+}
+.typings .overview-section .flex {
+  justify-content: space-between;
+}
+.typings .overview-section h3 {
+  margin: 10px 0 0px 0;
+  font-size: 18px;
+  line-height: 26px;
+}
+.typings .overview-section .grade {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 6px 8px;
+  border-radius: 8px;
+  line-height: 30px;
+}
+.typings .overview-section .notes div {
+  display: none;
+  font-size: 12px;
+  border-top: rgba(0, 0, 0, 0.25) 1px solid;
+  margin-top: 5px;
+  padding-top: 5px;
+}
+.typings .overview-section .grade[grade=A] {
+  background: #018dba;
+  color: #fff6d4;
+}
+.typings .overview-section .grade[grade=B] {
+  background: #1b79b4;
+  color: #a5d6fb;
+}
+.typings .overview-section .grade[grade=C] {
+  background: #968cb6;
+  color: #fff6d4;
+}
+.typings .overview-section .grade[grade=D] {
+  background: #96359e;
+  color: #fd91e0;
+}
+.typings .overview-section .grade[grade=F] {
+  background: #b9008f;
+  color: #ff92e2;
 }
 
 .summary li {

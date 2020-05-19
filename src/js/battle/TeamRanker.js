@@ -24,7 +24,6 @@ var RankerMaster = (function () {
 
 			var rankings = [];
 
-			var shieldOverrides = [0, 0];
 			var shieldMode = 'single'; // single - sim specific shield scenarios, average - sim average of 0 and 1 shields each
 			var chargedMoveCountOverride = 2;
 			var shieldBaitOverrides = [true, true];
@@ -66,7 +65,6 @@ var RankerMaster = (function () {
 					teamRatings.push([]);
 
 					// Adjust IVs as needed
-					console.log(overrideSettings[0].ivs);
 					if((overrideSettings[0].ivs != "gamemaster")&&(overrideSettings[0].ivs != "original")){
 						team[i].maximizeStat(overrideSettings[0].ivs);
 					} else if((overrideSettings[0].ivs == "gamemaster")&&(team[i].isCustom)){
@@ -84,7 +82,7 @@ var RankerMaster = (function () {
 					csv = 'Pokemon,Battle Rating,Energy Remaining,HP Remaining'
 				}
 
-				if(((targets.length == 0)||(cup.name != "custom"))&&(context != "matrix")){
+				if((targets.length == 0)&&(context != "matrix")){
 					// Get a full list of Pokemon from the game master
 					pokemonList = gm.generateFilteredPokemonList(battle, cup.include, cup.exclude);
 				} else{
@@ -310,22 +308,10 @@ var RankerMaster = (function () {
 				return {rankings: rankings, teamRatings: teamRatings, csv: csv};
 			}
 
-			// Override Pokemon shield settings with the provided value
-
-			this.setShields = function(value, index){
-				shieldOverrides[index] = value;
-			}
-
 			// Override charged move count with the provided value
 
 			this.setChargedMoveCount = function(value){
 				chargedMoveCountOverride = value;
-			}
-
-			// Override whether or not to bait shields
-
-			this.setShieldBaitOverride = function(value, index){
-				shieldBaitOverrides[index] = value;
 			}
 
 			// Set the targets to rank against
