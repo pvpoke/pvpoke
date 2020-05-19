@@ -398,6 +398,9 @@ var InterfaceMaster = (function () {
 				var teamRatings = data.teamRatings;
 				var counterTeam = [];
 
+				// Clear targets so it will default to the normal format if the user changes settings
+				ranker.setTargets([]);
+
 				results = counterRankings;
 
 				// Let's start with the histograms, because they're kinda neat
