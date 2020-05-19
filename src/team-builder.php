@@ -36,7 +36,7 @@ require_once 'header.php';
 				</div>
 			</div>
 		</div>
-		<h3 class="section-title">Advanced Options</h3>
+		<h3 class="section-title">Options</h3>
 		<div class="flex poke">
 			<div class="team-option">
 				<h3>Scorecard Length</h3>
@@ -67,6 +67,63 @@ require_once 'header.php';
 <div class="section white error">Please select one or more Pokemon.</div>
 
 <div class="section typings white">
+	<a href="#" class="toggle active">Overview <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+	<div class="toggle-content article">
+		<p>Below is a high-level evaluation of your team. Use this as a general guideline.</p>
+		<div class="overview-section coverage">
+			<div class="flex">
+				<h3>Coverage</h3>
+				<div class="grade"></div>
+			</div>
+			<div class="notes">
+				<div grade="A">This team has excellent coverage against top meta threats. It has few or no major vulnerabilities.</div>
+				<div grade="B">This team covers most top meta threats. There may be a few vulnerabilities to look out for.</div>
+				<div grade="C">This team has coverage gaps and may be vulnerable to certain threats. Consider alternative picks or movesets to shore up your weaknesses.</div>
+				<div grade="D">This team is highly vulnerable to certain threats. Consider alternative picks to avoid doubling up on weaknesses or look for Pokemon that perform well against the top meta.</div>
+				<div grade="F">This team has extremely poor coverage against multiple threats. Consider strong meta alternatives to anchor this team.</div>
+			</div>
+		</div>
+		<div class="overview-section bulk">
+			<div class="flex">
+				<h3>Bulk</h3>
+				<div class="grade"></div>
+			</div>
+			<div class="notes">
+				<div grade="A">This team has excellent average bulk. It will help manage shields and overcome difficult scenarios.</div>
+				<div grade="B">This team has good average bulk. Make sure to save shields for your more fragile teammates.</div>
+				<div grade="C">This team has moderate average bulk. You may be pressured to shield more often. Consider a bulky alternative to absorb damage.</div>
+				<div grade="D">This team has low average bulk. You will be pressured to burn shields often. Consider bulkier alternatives to ease shield pressure.</div>
+				<div grade="F">This team is extremely fragile and will have a hard time climbing out of bad situations. Use bulkier Pokemon to make it more forgiving to run.</div>
+			</div>
+		</div>
+		<div class="overview-section consistency">
+			<div class="flex">
+				<h3>Consistency</h3>
+				<div class="grade"></div>
+			</div>
+			<div class="notes">
+				<div grade="A">This team has extremely consistent movesets. It will be dependable in many scenarios.</div>
+				<div grade="B">This team has mostly consistent movesets. It won't depend on baits often.</div>
+				<div grade="C">This team has movesets with mixed consistency. You might depend on baits every now and then.</div>
+				<div grade="D">This team has movesets with low consistency. You'll depend on baits or stat boosts often. Consider alternatives with more consistent Fast or Charged Move damage.</div>
+				<div grade="F">This team has many movesets with poor consistency. You'll be highly dependent on landing baits or triggering stat boosts. Consider alternatives that have more dependable movesets.</div>
+			</div>
+		</div>
+		<div class="overview-section speed">
+			<div class="flex">
+				<h3>Speed</h3>
+				<div class="grade"></div>
+			</div>
+			<div class="notes"></div>
+		</div>
+		<div class="overview-section safety">
+			<div class="flex">
+				<h3>Safety</h3>
+				<div class="grade"></div>
+			</div>
+			<div class="notes"></div>
+		</div>
+	</div>
 	<a href="#" class="toggle active">Meta Scorecard <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content article">
 		<p>Explore how the top ranked Pokemon match up against your team below. Print this scorecard or save a screenshot for reference as you practice. Remember to prepare beforehand and follow timely play in tournaments!</p>

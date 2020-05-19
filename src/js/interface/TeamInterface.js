@@ -498,6 +498,13 @@ var InterfaceMaster = (function () {
 							$cell.find("a").addClass("win");
 						}
 
+						if(! baitShields){
+							pokemon.isCustom = true;
+							pokemon.baitShields = false;
+							r.matchups[n].opponent.isCustom = true;
+							r.matchups[n].opponent.baitShields = false;
+						}
+
 						var pokeStr = pokemon.generateURLPokeStr();
 						var moveStr = pokemon.generateURLMoveStr();
 						var opPokeStr = r.matchups[n].opponent.generateURLPokeStr();
@@ -596,6 +603,13 @@ var InterfaceMaster = (function () {
 							$cell.find("a").addClass("win");
 						}
 
+						if(! baitShields){
+							pokemon.isCustom = true;
+							pokemon.baitShields = false;
+							r.matchups[n].opponent.isCustom = true;
+							r.matchups[n].opponent.baitShields = false;
+						}
+
 						var pokeStr = pokemon.generateURLPokeStr();
 						var moveStr = pokemon.generateURLMoveStr();
 						var opPokeStr = r.matchups[n].opponent.generateURLPokeStr();
@@ -690,6 +704,13 @@ var InterfaceMaster = (function () {
 							$cell.find("a").addClass("win");
 						}
 
+						if(! baitShields){
+							pokemon.isCustom = true;
+							pokemon.baitShields = false;
+							r.matchups[n].opponent.isCustom = true;
+							r.matchups[n].opponent.baitShields = false;
+						}
+
 						var pokeStr = pokemon.generateURLPokeStr();
 						var moveStr = pokemon.generateURLMoveStr();
 						var opPokeStr = r.matchups[n].opponent.generateURLPokeStr();
@@ -740,6 +761,53 @@ var InterfaceMaster = (function () {
 					$(".alternatives-table .button.add").hide();
 				}
 
+				// Update the overall team grades
+				$(".overview-section .notes div").hide();
+
+				// Coverage grade, take threat score
+				var threatGrade = self.calculateLetterGrade(1200 - avgThreatScore, 680);
+
+				$(".overview-section.coverage .grade").html(threatGrade.letter);
+				$(".overview-section.coverage .grade").attr("grade", threatGrade.letter);
+				$(".overview-section.coverage .notes div[grade=\""+threatGrade.letter+"\"]").show();
+
+				// Bulk grade, average HP x Defense stats
+				var leagueAverageBulk = [22000,35000,35000];
+				var averageBulk = 0;
+				var goalBulk = leagueAverageBulk[0];
+
+				for(var i = 0; i < team.length; i++){
+					team[i].fullReset();
+					averageBulk += (team[i].getEffectiveStat(1) * team[i].stats.hp);
+				}
+
+				averageBulk /= team.length;
+
+				if(battle.getCP() == 2500){
+					goalBulk = leagueAverageBulk[1];
+				} else if(battle.getCP() == 10000){
+					goalBulk = leagueAverageBulk[2];
+				}
+
+				var bulkGrade = self.calculateLetterGrade(averageBulk, goalBulk);
+				$(".overview-section.bulk .grade").html(bulkGrade.letter);
+				$(".overview-section.bulk .grade").attr("grade", bulkGrade.letter);
+				$(".overview-section.bulk .notes div[grade=\""+bulkGrade.letter+"\"]").show();
+
+				// Consistency grade, how bait dependent movesets are
+				var averageConsistency = 0;
+
+				for(var i = 0; i < team.length; i++){
+					averageConsistency += team[i].calculateConsistency();
+				}
+
+				averageConsistency /= team.length;
+
+				var consistencyGrade = self.calculateLetterGrade(averageConsistency, 98);
+				$(".overview-section.consistency .grade").html(consistencyGrade.letter);
+				$(".overview-section.consistency .grade").attr("grade", consistencyGrade.letter);
+				$(".overview-section.consistency .notes div[grade=\""+consistencyGrade.letter+"\"]").show();
+
 				// Set download link data
 				var cupTitle = "All Pokemon";
 				if(battle.getCup().title){
@@ -757,6 +825,45 @@ var InterfaceMaster = (function () {
 				$(".button.download-csv").attr("download", filename);
 
 				runningResults = false;
+			}
+
+			// Given a goal value, convert a score into a letter grade
+
+			this.calculateLetterGrade = function(value, goal){
+				var gradeScale = [
+					{
+						letter: "A",
+						value: .9
+					},
+					{
+						letter: "B",
+						value: .8
+					},
+					{
+						letter: "C",
+						value: .7
+					},
+					{
+						letter: "D",
+						value: .6
+					}
+				];
+
+				var percentage = value / goal;
+				var letter="F";
+
+				for(var i = gradeScale.length - 1; i >= 0; i--){
+					if(percentage >= gradeScale[i].value){
+						letter = gradeScale[i].letter;
+					}
+				}
+
+				var result = {
+					letter: letter
+				}
+
+
+				return result;
 			}
 
 			// Given a subject type, produce effectiveness array for offense or defense
@@ -1194,7 +1301,7 @@ var InterfaceMaster = (function () {
 
 			function addAlternativePokemon(e){
 				var id = $(e.target).attr("pokemon");
-				$(".poke.multi .add-poke-btn").trigger("click");
+				$(".poke-select-container .poke.multi .add-poke-btn").trigger("click");
 				$(".modal .poke-select option[value=\""+id+"\"]").prop("selected", "selected");
 				$(".modal .poke-select").trigger("change");
 				$("html, body").animate({ scrollTop: $(".poke.multi").offset().top }, 500);

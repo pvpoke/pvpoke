@@ -65,7 +65,6 @@ var RankerMaster = (function () {
 					teamRatings.push([]);
 
 					// Adjust IVs as needed
-					console.log(overrideSettings[0].ivs);
 					if((overrideSettings[0].ivs != "gamemaster")&&(overrideSettings[0].ivs != "original")){
 						team[i].maximizeStat(overrideSettings[0].ivs);
 					} else if((overrideSettings[0].ivs == "gamemaster")&&(team[i].isCustom)){

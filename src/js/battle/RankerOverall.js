@@ -141,87 +141,16 @@ var RankerMaster = (function () {
 					var pokemon = new Pokemon(r.speciesId, 0, battle);
 					pokemon.initialize();
 
-					// Calculate consistency score based on moveset
-
 					var arr = r.moveStr.split("-");
-					var fastMove = pokemon.fastMovePool[arr[0]];
-					var chargedMoves = [pokemon.chargedMovePool[arr[1]-1]];
-					var consistencyScore = 1;
-					var beaminess = 1;
+					pokemon.selectMove("fast", pokemon.fastMovePool[arr[0]].moveId);
+					pokemon.selectMove("charged", pokemon.chargedMovePool[arr[1]-1].moveId, 0);
 
 					// Only calculate with two Charged Moves
 					if((arr.length > 2)&&(arr[2] != "0")){
-						chargedMoves.push(pokemon.chargedMovePool[arr[2]-1]);
-
-						var effectivenessScenarios = [
-							[1, 1]
-							];
-
-						if(chargedMoves[0].type != chargedMoves[1].type){
-							effectivenessScenarios.push(
-								[0.625, 1],
-								[1, 0.625]
-							);
-						}
-
-						// Here we are looking at how depenendent each Pokemon is on baiting in scenarios where both moves are neutral, or one or the other is resisted
-						for(var n = 0; n < effectivenessScenarios.length; n++){
-							// Sort moves by name as a starting point
-							chargedMoves.sort((a,b) => (a.name > b.name) ? -1 : ((b.name > a.name) ? 1 : 0));
-
-							// Need to reset this number because of how movesets are generated
-							chargedMoves[0].dpe = (chargedMoves[0].damage / chargedMoves[0].energy) * effectivenessScenarios[n][0];
-							chargedMoves[1].dpe = (chargedMoves[1].damage / chargedMoves[1].energy) * effectivenessScenarios[n][1];
-							chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
-
-							// Factor in Power-Up Punch where Pokemon may be consistent spamming it
-
-							if(chargedMoves[1].moveId == "POWER_UP_PUNCH"){
-								chargedMoves[1].dpe *= 2;
-								chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
-							}
-
-							// Calculate how much fast move vs charged move damage this Pokemon puts out per cycle
-							var cycleFastMoves = Math.ceil(chargedMoves[0].energy / fastMove.energyGain);
-							var cycleFastDamage = fastMove.damage * cycleFastMoves;
-							var cycleDamage = cycleFastDamage + chargedMoves[0].damage;
-
-							var factor = 1;
-							if((chargedMoves[0].energy > chargedMoves[1].energy)||( (chargedMoves[0].energy == chargedMoves[1].energy) && (chargedMoves[1].moveId == "ACID_SPRAY")||((chargedMoves[0].selfAttackDebuffing)&&(! chargedMoves[1].selfDebuffing)&&(chargedMoves[1].energy - chargedMoves[0].energy <= 10)))){
-								factor = (cycleFastDamage / cycleDamage) + ((chargedMoves[0].damage / cycleDamage) * (chargedMoves[1].dpe / chargedMoves[0].dpe));
-
-								// If the difference in energy is small, improve the consistency score as players may play straight more often
-								if(chargedMoves[1].energy < chargedMoves[0].energy){
-									factor += (1 - factor) * ((chargedMoves[1].energy-30) / (chargedMoves[0].energy-30)) * 0.5;
-								}
-							}
-
-							consistencyScore *= factor;
-						}
-
-						// Now do a square root mean
-						consistencyScore = Math.pow(consistencyScore, (1/effectivenessScenarios.length));
+						pokemon.selectMove("charged", pokemon.chargedMovePool[arr[2]-1].moveId, 1);
 					}
 
-					consistencyScore = Math.round(consistencyScore * 1000) / 10;
-
-					// Calculate beaminess, very official
-
-					if(cup == "beam"){
-						chargedMoves.sort((a,b) => (a.energy > b.energy) ? 1 : ((b.dpe > a.dpe) ? -1 : 0));
-						var fastestMove = chargedMoves[0];
-						var beamType = chargedMoves[1].type;
-						var speed = (45-(Math.floor(80 / fastMove.energyGain) * (fastMove.cooldown / 500))) * (80 / fastestMove.energy);
-						var power = (pokemon.types.indexOf(beamType) > -1) ? 1.2 : 1;
-						var stats = (pokemon.stats.atk * pokemon.stats.def * pokemon.stats.hp) / 10000;
-
-						beaminess = speed * power * stats;
-						beaminess = Math.round(((beaminess+10000) / 22500) * 1000) / 10;
-
-						// Factor by performance
-						beaminess = ((beaminess*2) + rankings[i].scores[0] + rankings[i].scores[1]) / 4;
-						beaminess = (Math.round(beaminess * 10) / 10) + 10;
-					}
+					var consistencyScore = pokemon.calculateConsistency();
 
 					/* Let's try a different approach to calculating overall score.
 					* Weigh the top 2 ratings by 9/20 and the bottom 2 ratings by 1/20.

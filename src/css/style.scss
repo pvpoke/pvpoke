@@ -2218,6 +2218,64 @@ select, input{
 			}
 		}
 	}
+
+	.overview-section{
+		border-radius: 8px;
+	    padding: 4px 8px;
+	    margin-bottom: 10px;
+	    background: rgba(0,0,0,0.05);
+
+		.flex{
+			justify-content: space-between;
+		}
+
+		h3{
+			margin: 10px 0 0px 0;
+		    font-size: 18px;
+		    line-height: 26px;
+		}
+
+		.grade{
+			font-size: 24px;
+		    font-weight: bold;
+		    padding: 6px 8px;
+		    border-radius: 8px;
+		    line-height: 30px;
+		}
+
+		.notes div{
+			display: none;
+			font-size: 12px;
+		    border-top: rgba(0,0,0,0.25) 1px solid;
+		    margin-top: 5px;
+		    padding-top: 5px;
+		}
+
+		.grade[grade="A"]{
+			background:#018dba;
+			color:#fff6d4;
+		}
+
+		.grade[grade="B"]{
+			background:#1b79b4;
+			color:#a5d6fb;
+		}
+
+		.grade[grade="C"]{
+			background:#968cb6;
+			color:#fff6d4;
+		}
+
+		.grade[grade="D"]{
+			background:#96359e;
+			color:#fd91e0;
+		}
+
+		.grade[grade="F"]{
+			background:#b9008f;
+			color:#ff92e2;
+		}
+	}
 }
 
 .summary{

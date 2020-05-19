@@ -1187,4 +1187,77 @@ function Pokemon(id, i, b){
 			}
 		}
 	}
+
+	// Calculate consistency score based on moveset, used in rankings and the team builder
+
+	this.calculateConsistency = function(){
+
+		var fastMove = self.fastMove;
+		var chargedMoves = self.chargedMoves;
+		var consistencyScore = 1;
+
+		// Reset move stats
+		fastMove.damage = Math.floor(fastMove.power * fastMove.stab);
+
+		for(var i = 0; i < chargedMoves.length; i++){
+			chargedMoves[i].damage = Math.floor(chargedMoves[i].power * chargedMoves[i].stab);
+		}
+
+		// Only calculate with two Charged Moves
+		if(chargedMoves.length == 2){
+
+			var effectivenessScenarios = [
+				[1, 1]
+				];
+
+			if(chargedMoves[0].type != chargedMoves[1].type){
+				effectivenessScenarios.push(
+					[0.625, 1],
+					[1, 0.625]
+				);
+			}
+
+			// Here we are looking at how depenendent each Pokemon is on baiting in scenarios where both moves are neutral, or one or the other is resisted
+			for(var n = 0; n < effectivenessScenarios.length; n++){
+				// Sort moves by name as a starting point
+				chargedMoves.sort((a,b) => (a.name > b.name) ? -1 : ((b.name > a.name) ? 1 : 0));
+
+				// Need to reset this number because of how movesets are generated
+				chargedMoves[0].dpe = (chargedMoves[0].damage / chargedMoves[0].energy) * effectivenessScenarios[n][0];
+				chargedMoves[1].dpe = (chargedMoves[1].damage / chargedMoves[1].energy) * effectivenessScenarios[n][1];
+				chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
+
+				// Factor in Power-Up Punch where Pokemon may be consistent spamming it
+
+				if(chargedMoves[1].moveId == "POWER_UP_PUNCH"){
+					chargedMoves[1].dpe *= 2;
+					chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
+				}
+
+				// Calculate how much fast move vs charged move damage this Pokemon puts out per cycle
+				var cycleFastMoves = Math.ceil(chargedMoves[0].energy / fastMove.energyGain);
+				var cycleFastDamage = fastMove.damage * cycleFastMoves;
+				var cycleDamage = cycleFastDamage + chargedMoves[0].damage;
+
+				var factor = 1;
+				if((chargedMoves[0].energy > chargedMoves[1].energy)||( (chargedMoves[0].energy == chargedMoves[1].energy) && (chargedMoves[1].moveId == "ACID_SPRAY")||((chargedMoves[0].selfAttackDebuffing)&&(! chargedMoves[1].selfDebuffing)&&(chargedMoves[1].energy - chargedMoves[0].energy <= 10)))){
+					factor = (cycleFastDamage / cycleDamage) + ((chargedMoves[0].damage / cycleDamage) * (chargedMoves[1].dpe / chargedMoves[0].dpe));
+
+					// If the difference in energy is small, improve the consistency score as players may play straight more often
+					if(chargedMoves[1].energy < chargedMoves[0].energy){
+						factor += (1 - factor) * ((chargedMoves[1].energy-30) / (chargedMoves[0].energy-30)) * 0.5;
+					}
+				}
+
+				consistencyScore *= factor;
+			}
+
+			// Now do a square root mean
+			consistencyScore = Math.pow(consistencyScore, (1/effectivenessScenarios.length));
+		}
+
+		consistencyScore = Math.round(consistencyScore * 1000) / 10;
+
+		return consistencyScore
+	}
 }
