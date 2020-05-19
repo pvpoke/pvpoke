@@ -667,14 +667,35 @@
 				"fastMove": "PSYCHO_CUT",
 				"chargedMoves": ["FUTURE_SIGHT","MOONBLAST"],
 				"difficulty": 3,
-				"weight":10
+				"weight":2
+			},
+			{
+				"speciesId": "cresselia",
+				"fastMove": "PSYCHO_CUT",
+				"chargedMoves": ["GRASS_KNOT","MOONBLAST"],
+				"difficulty": 3,
+				"weight":8
+			},
+			{
+				"speciesId": "cresselia",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["GRASS_KNOT","MOONBLAST"],
+				"difficulty": 3,
+				"weight":4
+			},
+			{
+				"speciesId": "cresselia",
+				"fastMove": "PSYCHO_CUT",
+				"chargedMoves": ["GRASS_KNOT","FUTURE_SIGHT"],
+				"difficulty": 3,
+				"weight":14
 			},
 			{
 				"speciesId": "cresselia",
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["FUTURE_SIGHT","MOONBLAST"],
 				"difficulty": 3,
-				"weight":5
+				"weight":1
 			},
 			{
 				"speciesId": "mew",

@@ -11637,12 +11637,13 @@
         },
         "types": ["psychic", "none"],
         "fastMoves": ["CONFUSION", "PSYCHO_CUT"],
-        "chargedMoves": ["AURORA_BEAM", "FUTURE_SIGHT", "MOONBLAST"],
+        "chargedMoves": ["AURORA_BEAM", "FUTURE_SIGHT", "MOONBLAST", "GRASS_KNOT"],
         "tags": ["legendary"],
         "defaultIVs": {
             "cp1500": [19.5, 7, 9, 14],
             "cp2500": [35, 7, 13, 11]
-        }
+        },
+		"eliteMoves": ["GRASS_KNOT"]
     }, {
         "dex": 489,
         "speciesName": "Phione",

@@ -5,8 +5,9 @@
 		"pokemon": [
 			{
 				"speciesId": "cresselia",
-				"chargedMoves": ["FUTURE_SIGHT", "MOONBLAST"],
-				"weight": 2
+				"fastMove": "PSYCHO_CUT",
+				"chargedMoves": ["GRASS_KNOT", "MOONBLAST"],
+				"weight": 10
 			},
 			{
 				"speciesId": "umbreon",
@@ -136,6 +137,11 @@
 				"fastMove": "ICE_SHARD",
 				"chargedMoves": ["SURF", "SKULL_BASH"],
 				"weight": 2
+			},
+			{
+				"speciesId": "lapras_shadow",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["SURF", "SKULL_BASH"]
 			},
 			{
 				"speciesId": "vespiquen",
