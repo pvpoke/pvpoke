@@ -473,9 +473,11 @@ var InterfaceMaster = (function () {
 					}
 
 					// Display threat score
-					if(i < 20){
+					if(count < 20){
 						avgThreatScore += r.score;
 					}
+
+
 
 					// Push to counter team
 
@@ -770,7 +772,7 @@ var InterfaceMaster = (function () {
 				$(".overview-section .notes div").hide();
 
 				// Coverage grade, take threat score
-				var threatGrade = self.calculateLetterGrade(1200 - avgThreatScore, 680);
+				var threatGrade = self.calculateLetterGrade(1200 - avgThreatScore, 670);
 
 				$(".overview-section.coverage .grade").html(threatGrade.letter);
 				$(".overview-section.coverage .grade").attr("grade", threatGrade.letter);
