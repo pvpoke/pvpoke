@@ -983,20 +983,24 @@ function Pokemon(id, i, b){
 	this.setLevel = function(amount, initialize){
 		initialize = typeof initialize !== 'undefined' ? initialize : true;
 
-		this.level = amount;
+		self.level = amount;
 		var index = (amount - 1);
 
 		if(index % 1 == 0){
 			// Set CPM for whole levels
-			this.cpm = cpms[index];
+			self.cpm = cpms[index];
 		} else{
 			// Set CPM for half levels
-			this.cpm = Math.sqrt( (Math.pow(cpms[Math.floor(index)], 2) + Math.pow(cpms[Math.ceil(index)], 2)) / 2);
+			self.cpm = Math.sqrt( (Math.pow(cpms[Math.floor(index)], 2) + Math.pow(cpms[Math.ceil(index)], 2)) / 2);
+		}
+
+		if(amount > self.levelCap){
+			self.levelCap = amount;
 		}
 
 		if(initialize){
-			this.isCustom = true;
-			this.initialize(false);
+			self.isCustom = true;
+			self.initialize(false);
 		}
 	}
 
