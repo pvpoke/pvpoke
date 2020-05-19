@@ -473,7 +473,9 @@ var InterfaceMaster = (function () {
 					}
 
 					// Display threat score
-					avgThreatScore += r.score;
+					if(i < 20){
+						avgThreatScore += r.score;
+					}
 
 					// Push to counter team
 
