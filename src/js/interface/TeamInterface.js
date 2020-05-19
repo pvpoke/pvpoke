@@ -44,8 +44,9 @@ var InterfaceMaster = (function () {
 
 				for(var i = 0; i < multiSelectors.length; i++){
 					multiSelectors[i].init(data.pokemon, battle);
-					multiSelectors[i].setMaxPokemonCount(6);
 				}
+
+				multiSelectors[0].setMaxPokemonCount(6);
 
 
 				$(".league-select").on("change", selectLeague);
@@ -372,6 +373,11 @@ var InterfaceMaster = (function () {
 				var ranker = RankerMaster.getInstance();
 				ranker.setShieldMode("average");
 
+				// Set targets for custom threats
+				if(multiSelectors[1].getPokemonList().length > 0){
+					ranker.setTargets(multiSelectors[1].getPokemonList());
+				}
+
 				var data = ranker.rank(team, battle.getCP(), battle.getCup(), [], "team-counters");
 				var counterRankings = data.rankings;
 				var teamRatings = data.teamRatings;
@@ -518,7 +524,12 @@ var InterfaceMaster = (function () {
 				}
 
 				// Display meta scorecard
-				counterRankings.sort((a,b) => (a.overall > b.overall) ? -1 : ((b.overall > a.overall) ? 1 : 0));
+				if(multiSelectors[1].getPokemonList().length == 0){
+					counterRankings.sort((a,b) => (a.overall > b.overall) ? -1 : ((b.overall > a.overall) ? 1 : 0));
+				} else{
+					counterRankings.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+				}
+
 
 				count = 0;
 				total = 20;
@@ -594,7 +605,15 @@ var InterfaceMaster = (function () {
 					exclusionList.push(team[i].speciesId);
 				}
 
+				// Set targets for custom alternatives
+				if(multiSelectors[2].getPokemonList().length > 0){
+					ranker.setTargets(multiSelectors[2].getPokemonList());
+				}
+
 				var altRankings = ranker.rank(counterTeam, battle.getCP(), battle.getCup(), exclusionList).rankings;
+
+				// Clear targets so it will default to the normal format if the user changes settings
+				ranker.setTargets([]);
 
 				$(".alternatives-table").html("");
 

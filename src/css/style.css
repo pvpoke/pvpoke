@@ -1861,6 +1861,18 @@ select, input {
 .team-advanced .poke .poke-stats {
   background: none;
 }
+.team-advanced .poke.flex {
+  float: none;
+  max-width: none;
+}
+.team-advanced .team-option {
+  font-size: 12px;
+  margin-right: 20px;
+}
+.team-advanced .team-option h3 {
+  font-size: 14px;
+  margin-top: 0;
+}
 
 .typings {
   display: none;

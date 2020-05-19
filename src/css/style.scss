@@ -2169,6 +2169,21 @@ select, input{
 	.poke .poke-stats{
 		background:none;
 	}
+
+	.poke.flex{
+		float:none;
+		max-width:none;
+	}
+
+	.team-option{
+		font-size:12px;
+		margin-right:20px;
+
+		h3{
+			font-size:14px;
+			margin-top:0;
+		}
+	}
 }
 
 .typings{

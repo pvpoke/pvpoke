@@ -84,7 +84,7 @@ var RankerMaster = (function () {
 					csv = 'Pokemon,Battle Rating,Energy Remaining,HP Remaining'
 				}
 
-				if(((targets.length == 0)||(cup.name != "custom"))&&(context != "matrix")){
+				if((targets.length == 0)&&(context != "matrix")){
 					// Get a full list of Pokemon from the game master
 					pokemonList = gm.generateFilteredPokemonList(battle, cup.include, cup.exclude);
 				} else{
@@ -103,7 +103,7 @@ var RankerMaster = (function () {
 						}
 					}
 				}
-
+				
 				// For all eligible Pokemon, simulate battles and gather rating data
 
 				var rankCount = pokemonList.length;

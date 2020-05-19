@@ -23,7 +23,7 @@ require_once 'header.php';
 		<div class="flex">
 			<div class="flex-section">
 				<h3 class="section-title">Custom Threats</h3>
-				<p>Enter a custom group of Pokemon to evaluate threats. The first 20 Pokemon will also make up the meta scorecard.</p>
+				<p>Enter a custom group of Pokemon to evaluate threats. These Pokemon will also make up the meta scorecard.</p>
 				<div class="team-build custom-threats">
 					<?php require 'modules/pokemultiselect.php'; ?>
 				</div>
@@ -34,6 +34,26 @@ require_once 'header.php';
 				<div class="team-build custom-alternatives">
 					<?php require 'modules/pokemultiselect.php'; ?>
 				</div>
+			</div>
+		</div>
+		<h3 class="section-title">Advanced Options</h3>
+		<div class="flex poke">
+			<div class="team-option">
+				<h3>Scorecard Length</h3>
+				<select class="scorecard-length-select">
+					<option value="10">10</option>
+					<option value="20" selected>20</option>
+					<option value="30">30</option>
+					<option value="40">40</option>
+				</select>
+			</div>
+			<div class="team-option">
+				<h3>Shadow Pokemon</h3>
+				<div class="check allow-shadows"><span></span>Show Shadow Pokemon in results</div>
+			</div>
+			<div class="team-option">
+				<h3>Shield Baiting</h3>
+				<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
 			</div>
 		</div>
 	</div>
@@ -49,7 +69,7 @@ require_once 'header.php';
 <div class="section typings white">
 	<a href="#" class="toggle active">Meta Scorecard <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content article">
-		<p>Explore how the top 20 ranked Pokemon match up against your team below. Print this scorecard or save a screenshot for reference as you practice. Remember to prepare beforehand and follow timely play in tournaments!</p>
+		<p>Explore how the top ranked Pokemon match up against your team below. Print this scorecard or save a screenshot for reference as you practice. Remember to prepare beforehand and follow timely play in tournaments!</p>
 		<div class="table-container">
 			<table class="meta-table rating-table" cellspacing="0">
 			</table>
