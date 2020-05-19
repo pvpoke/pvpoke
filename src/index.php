@@ -27,14 +27,16 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.14.20 (May 17, 2020)</h4>
+	<h4>v1.15.0 (May 20, 2020)</h4>
 	<ul>
-		<li>Updates to Training Battles:</li>
+		<li>The Team Builder has been updated with new advanced options:</li>
 		<ul>
-			<li>Tweaked AI switching behavior to favor soft counters over hard counters when it can be counter-switched.</li>
-			<li>The switch window now closes during Charged Moves to prevent overlap with the shield screen.</li>
-			<li>Fixed an issue where Pokemon would be locked into their Fast Move cooldown after fainting an opponent with a Fast Move.</li>
+			<li>Custom groups for the Team Builder's threats and alternatives lists. This will allow you to evaluate specific Pokemon or build a custom meta scorecard for your team.</li>
+			<li>Option for the number of threats and alternatives to show.</li>
+			<li>Toggle for Shadow Pokemon in the results.</li>
+			<li>Toggle for shield baiting in the Team Builder's simulations.</li>
 		</ul>
+		<li>The Team Builder includes new letter grades for your team to provide general feedback on coverage and composition.</li>
 	</ul>
 
 	<h4>v1.14.19 (May 11, 2020)</h4>

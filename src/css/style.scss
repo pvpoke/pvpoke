@@ -2170,6 +2170,15 @@ select, input{
 		background:none;
 	}
 
+	.flex:first-of-type{
+		justify-content: space-between;
+		flex-wrap: wrap;
+
+		.flex-section{
+			max-width:350px;
+		}
+	}
+
 	.poke.flex{
 		float:none;
 		max-width:none;

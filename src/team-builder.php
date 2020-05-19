@@ -30,7 +30,7 @@ require_once 'header.php';
 			</div>
 			<div class="flex-section">
 				<h3 class="section-title">Custom Alternatives</h3>
-				<p>Enter a custom group of Pokemon to evaluate alternatives.</p>
+				<p>Enter a custom group of Pokemon to evaluate alternatives. These will appear as suggestions for your team.</p>
 				<div class="team-build custom-alternatives">
 					<?php require 'modules/pokemultiselect.php'; ?>
 				</div>
@@ -56,6 +56,7 @@ require_once 'header.php';
 				<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
 			</div>
 		</div>
+		<p>Note that links will not currently preserve these advanced settings.</p>
 	</div>
 </div>
 
