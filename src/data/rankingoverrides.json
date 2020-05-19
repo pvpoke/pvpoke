@@ -1820,6 +1820,10 @@
 				"chargedMoves": ["MEGAHORN", "DRILL_RUN"]
 			},
 			{
+				"speciesId": "reshiram",
+				"chargedMoves": ["CRUNCH", "OVERHEAT"]
+			},
+			{
 				"speciesId": "rhyperior",
 				"fastMove": "MUD_SLAP",
 				"chargedMoves": ["ROCK_WRECKER","SURF"]
@@ -2231,6 +2235,11 @@
 				"speciesId": "palkia",
 				"chargedMoves": ["AQUA_TAIL", "DRACO_METEOR"],
 				"weight": 10
+			},
+			{
+				"speciesId": "reshiram",
+				"chargedMoves": ["CRUNCH", "OVERHEAT"],
+				"weight": 2
 			},
 			{
 				"speciesId": "hariyama",
