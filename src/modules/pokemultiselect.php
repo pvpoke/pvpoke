@@ -17,6 +17,7 @@
 				<option value="ultra" type="ultra" class="hide multi-battle">Ultra League Meta</option>
 				<option value="master" type="master" class="hide multi-battle">Master League Meta</option>
 				<option value="premier" type="master" class="hide multi-battle">Premier Cup Meta</option>
+				<option value="sorcerous" type="great" class="multi-battle">Silph Sorcerous Cup Meta</option>
 				<option value="forest" type="forest" class="multi-battle">Silph Forest Cup Meta</option>
 			</select>
 			<div class="flex quick-fill-buttons">
