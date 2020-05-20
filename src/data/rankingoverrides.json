@@ -366,9 +366,17 @@
 				"fastMove": "CHARM"
 			},
 			{
-				"speciesId": "togekiss",
-				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"],
+				"speciesId": "shiftry",
+				"fastMove": "SNARL",
 				"weight": 4
+			},
+			{
+				"speciesId": "shiftry_shadow",
+				"fastMove": "SNARL"
+			},
+			{
+				"speciesId": "togekiss",
+				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
 			},
 			{
 				"speciesId": "crobat",
@@ -982,7 +990,12 @@
 			},
 			{
 				"speciesId": "shiftry",
+				"fastMove": "SNARL",
 				"weight":9
+			},
+			{
+				"speciesId": "shiftry_shadow",
+				"fastMove": "SNARL"
 			},
 			{
 				"speciesId": "scrafty",
@@ -2153,7 +2166,8 @@
 			},
 			{
 				"speciesId": "shiftry",
-				"weight": 14
+				"fastMove": "SNARL",
+				"weight": 18
 			},
 			{
 				"speciesId": "lucario",
