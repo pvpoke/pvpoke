@@ -4371,6 +4371,10 @@
 				"chargedMoves": ["POISON_FANG","PSYCHIC"]
 			},
 			{
+				"speciesId": "grimer",
+				"chargedMoves": ["MUD_BOMB","SLUDGE_BOMB"]
+			},
+			{
 				"speciesId": "piloswine",
 				"chargedMoves": ["AVALANCHE","BULLDOZE"],
 				"weight": 5
@@ -4434,7 +4438,6 @@
 			},
 			{
 				"speciesId": "noctowl",
-				"chargedMoves": ["SKY_ATTACK", "NIGHT_SHADE"],
 				"weight": 35
 			},
 			{
