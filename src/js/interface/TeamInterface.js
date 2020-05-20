@@ -204,6 +204,10 @@ var InterfaceMaster = (function () {
 								}
 
 								var cup = $(".cup-select option:selected").val();
+
+								if(cup == "sorcerous"){
+									$("#main h1").html("Team Wizard");
+								}
 								battle.setCup(cup);
 								break;
 
@@ -1198,6 +1202,11 @@ var InterfaceMaster = (function () {
 					pokeSelectors[i].filterByTypes(cupTypes);
 				}
 
+				if(cup.name == "sorcerous"){
+					$("#main h1").html("Team Wizard");
+				} else{
+					$("#main h1").html("Team Builder");
+				}
 
 				// Load ranking data for movesets
 				var key = battle.getCup().name + "overall" + battle.getCP();
