@@ -4300,22 +4300,22 @@
 			{
 				"speciesId": "bronzong",
 				"chargedMoves": ["PSYSHOCK","BULLDOZE"],
-				"weight": 25
+				"weight": 36
 			},
 			{
 				"speciesId": "lickilicky",
 				"chargedMoves": ["BODY_SLAM","EARTHQUAKE"],
-				"weight": 15
+				"weight": 6
 			},
 			{
 				"speciesId": "cloyster",
 				"chargedMoves": ["ICY_WIND","HYDRO_PUMP"],
-				"weight": 10
+				"weight": 2
 			},
 			{
 				"speciesId": "lickitung",
 				"chargedMoves": ["BODY_SLAM","POWER_WHIP"],
-				"weight": 5
+				"weight": 2
 			},
 			{
 				"speciesId": "muk",
@@ -4326,22 +4326,22 @@
 				"speciesId": "muk_alolan",
 				"fastMove": "SNARL",
 				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"],
-				"weight": 40
+				"weight": 62
 			},
 			{
 				"speciesId": "hypno",
 				"chargedMoves": ["THUNDER_PUNCH","SHADOW_BALL"],
-				"weight": 50
+				"weight": 45
 			},
 			{
 				"speciesId": "raticate_alolan",
 				"chargedMoves": ["CRUNCH","HYPER_FANG"],
-				"weight": 25
+				"weight": 7
 			},
 			{
 				"speciesId": "golbat",
 				"chargedMoves": ["POISON_FANG","SHADOW_BALL"],
-				"weight": 10
+				"weight": 6
 			},
 			{
 				"speciesId": "scolipede",
@@ -4349,11 +4349,13 @@
 			},
 			{
 				"speciesId": "tentacruel",
-				"chargedMoves": ["ACID_SPRAY","HYDRO_PUMP"]
+				"chargedMoves": ["ACID_SPRAY","HYDRO_PUMP"],
+				"weight": 22
 			},
 			{
 				"speciesId": "kangaskhan",
-				"chargedMoves": ["POWER_UP_PUNCH","CRUNCH"]
+				"chargedMoves": ["POWER_UP_PUNCH","CRUNCH"],
+				"weight": 2
 			},
 			{
 				"speciesId": "togekiss",
@@ -4370,11 +4372,13 @@
 			},
 			{
 				"speciesId": "ninetales_alolan",
-				"fastMove": "CHARM"
+				"fastMove": "CHARM",
+				"weight": 2
 			},
 			{
 				"speciesId": "granbull",
-				"fastMove": "CHARM"
+				"fastMove": "CHARM",
+				"weight": 3
 			},
 			{
 				"speciesId": "venomoth",
@@ -4387,8 +4391,7 @@
 			},
 			{
 				"speciesId": "piloswine",
-				"chargedMoves": ["AVALANCHE","BULLDOZE"],
-				"weight": 5
+				"chargedMoves": ["AVALANCHE","BULLDOZE"]
 			},
 			{
 				"speciesId": "mamoswine",
@@ -4397,12 +4400,11 @@
 			{
 				"speciesId": "froslass",
 				"chargedMoves": ["AVALANCHE","SHADOW_BALL"],
-				"weight": 20
+				"weight": 36
 			},
 			{
 				"speciesId": "qwilfish",
-				"chargedMoves": ["AQUA_TAIL","SLUDGE_WAVE"],
-				"weight": 5
+				"chargedMoves": ["AQUA_TAIL","SLUDGE_WAVE"]
 			},
 			{
 				"speciesId": "victreebel",
@@ -4411,69 +4413,79 @@
 			{
 				"speciesId": "toxicroak",
 				"chargedMoves": ["MUD_BOMB","SLUDGE_BOMB"],
-				"weight": 40
+				"weight": 60
 			},
 			{
 				"speciesId": "medicham",
 				"chargedMoves": ["POWER_UP_PUNCH","PSYCHIC"],
-				"weight": 30
+				"weight": 24
 			},
 			{
 				"speciesId": "sandslash_alolan",
 				"chargedMoves": ["ICE_PUNCH","BULLDOZE"],
-				"weight": 25
+				"weight": 7
 			},
 			{
 				"speciesId": "skuntank",
-				"chargedMoves": ["CRUNCH","SLUDGE_BOMB"],
-				"weight": 50
+				"chargedMoves": ["CRUNCH","FLAMETHROWER"],
+				"weight": 24
 			},
 			{
 				"speciesId": "beedrill",
 				"fastMove": "POISON_JAB",
 				"chargedMoves": ["X_SCISSOR","SLUDGE_BOMB"],
-				"weight": 5
+				"weight": 4
 			},
 			{
 				"speciesId": "azumarill",
 				"chargedMoves": ["PLAY_ROUGH","HYDRO_PUMP"],
-				"weight": 80
+				"weight": 48
 			},
 			{
 				"speciesId": "munchlax",
-				"weight": 20
+				"weight": 26
 			},
 			{
 				"speciesId": "venusaur",
-				"weight": 5
+				"weight": 7
 			},
 			{
 				"speciesId": "noctowl",
-				"weight": 35
+				"chargedMoves": ["SKY_ATTACK", "NIGHT_SHADE"],
+				"weight": 53
 			},
 			{
 				"speciesId": "glalie",
-				"weight": 2
+				"weight": 4
 			},
 			{
 				"speciesId": "wigglytuff",
-				"weight": 20
+				"weight": 23
+			},
+			{
+				"speciesId": "clefable",
+				"weight": 4
 			},
 			{
 				"speciesId": "haunter",
-				"weight": 5
-			},
-			{
-				"speciesId": "zangoose",
 				"weight": 2
 			},
 			{
-				"speciesId": "gloom",
-				"weight": 5
+				"speciesId": "linoone",
+				"weight": 12
 			},
 			{
-				"speciesId": "abomasnow",
-				"weight": 10
+				"speciesId": "claydol",
+				"fastMove": "MUD_SLAP",
+				"weight": 6
+			},
+			{
+				"speciesId": "wobbuffet",
+				"weight": 2
+			},
+			{
+				"speciesId": "alakazam",
+				"weight": 2
 			}
 		]
 	}

@@ -467,6 +467,10 @@ var RankerMaster = (function () {
 
 							var weight = Math.pow( Math.max((rankings[j].scores[n] / bestScore) - (.1 + (rankCutoffIncrease * n)), 0), rankWeightExponent);
 
+							if(cup.name == "sorcerous"){
+								weight = 1;
+							}
+
 							// Don't score Pokemon in the mirror match
 
 							if(rankings[j].speciesId == pokemonList[i].speciesId){
