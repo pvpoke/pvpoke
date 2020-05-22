@@ -23,7 +23,7 @@
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["AQUA_TAIL","DRACO_METEOR"],
 				"difficulty": 3,
-				"weight":15
+				"weight":10
 			},
 			{
 				"speciesId": "reshiram",
@@ -40,11 +40,18 @@
 				"weight":1
 			},
 			{
+				"speciesId": "zekrom",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["CRUNCH","WILD_CHARGE"],
+				"difficulty": 14,
+				"weight":1
+			},
+			{
 				"speciesId": "palkia",
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["AQUA_TAIL","FIRE_BLAST"],
 				"difficulty": 3,
-				"weight":3
+				"weight":1
 			},
 			{
 				"speciesId": "giratina_origin",

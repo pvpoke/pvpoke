@@ -1843,6 +1843,10 @@
 				"chargedMoves": ["CRUNCH", "OVERHEAT"]
 			},
 			{
+				"speciesId": "zekrom",
+				"chargedMoves": ["CRUNCH", "WILD_CHARGE"]
+			},
+			{
 				"speciesId": "rhyperior",
 				"fastMove": "MUD_SLAP",
 				"chargedMoves": ["ROCK_WRECKER","SURF"]
@@ -2240,7 +2244,7 @@
 			{
 				"speciesId": "giratina_altered",
 				"fastMove": ["SHADOW_CLAW"],
-				"weight": 4
+				"weight": 10
 			},
 			{
 				"speciesId": "blaziken",
@@ -2249,7 +2253,7 @@
 			{
 				"speciesId": "machamp",
 				"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
-				"weight": 22
+				"weight": 5
 			},
 			{
 				"speciesId": "palkia",
@@ -2313,8 +2317,7 @@
 			},
 			{
 				"speciesId": "raikou",
-				"fastMove": "VOLT_SWITCH",
-				"weight": 14
+				"fastMove": "VOLT_SWITCH"
 			},
 			{
 				"speciesId": "raikou_shadow",
@@ -2355,7 +2358,7 @@
 			{
 				"speciesId": "snorlax",
 				"chargedMoves": ["BODY_SLAM","EARTHQUAKE"],
-				"weight": 15
+				"weight": 10
 			},
 			{
 				"speciesId": "snorlax_shadow",
@@ -2373,12 +2376,12 @@
 			{
 				"speciesId": "melmetal",
 				"chargedMoves": ["SUPER_POWER","ROCK_SLIDE"],
-				"weight": 12
+				"weight": 25
 			},
 			{
 				"speciesId": "togekiss",
 				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"],
-				"weight": 24
+				"weight": 35
 			},
 			{
 				"speciesId": "mewtwo_armored",
@@ -2386,7 +2389,7 @@
 			},
 			{
 				"speciesId": "mewtwo",
-				"weight": 20
+				"weight": 15
 			},
 			{
 				"speciesId": "mew",
@@ -2409,25 +2412,25 @@
 			{
 				"speciesId": "garchomp",
 				"chargedMoves": ["OUTRAGE","EARTHQUAKE"],
-				"weight": 5
+				"weight": 2
 			},
 			{
 				"speciesId": "dragonite",
 				"chargedMoves": ["DRAGON_CLAW","HURRICANE"],
-				"weight": 28
+				"weight": 30
 			},
 			{
 				"speciesId": "dialga",
 				"chargedMoves": ["IRON_HEAD","DRACO_METEOR"],
-				"weight": 22
+				"weight": 45
 			},
 			{
 				"speciesId": "giratina_origin",
-				"weight": 20
+				"weight": 25
 			},
 			{
 				"speciesId": "groudon",
-				"weight": 10
+				"weight": 15
 			},
 			{
 				"speciesId": "darkrai",
@@ -2436,20 +2439,14 @@
 			{
 				"speciesId": "gyarados",
 				"chargedMoves": ["CRUNCH", "HYDRO_PUMP"],
-				"weight": 14
-			},
-			{
-				"speciesId": "swampert",
-				"weight": 5
+				"weight": 6
 			},
 			{
 				"speciesId": "mamoswine",
-				"chargedMoves": ["AVALANCHE","BULLDOZE"],
-				"weight": 18
+				"chargedMoves": ["AVALANCHE","BULLDOZE"]
 			},
 			{
-				"speciesId": "tyranitar",
-				"weight": 20
+				"speciesId": "tyranitar"
 			}
 		]
 	},
