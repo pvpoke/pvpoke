@@ -10,6 +10,11 @@
 		"chargedMoves":["LEAF_BLADE","AERIAL_ACE"]
 	},
 	{
+		"speciesId":"tropius",
+		"fastMove":"RAZOR_LEAF",
+		"chargedMoves":["LEAF_BLADE","AERIAL_ACE"]
+	},
+	{
 		"speciesId":"altaria",
 		"fastMove":"DRAGON_BREATH",
 		"chargedMoves":["SKY_ATTACK","DRAGON_PULSE"]
@@ -108,6 +113,11 @@
 		"speciesId":"swampert",
 		"fastMove":"MUD_SHOT",
 		"chargedMoves":["HYDRO_CANNON","SLUDGE_WAVE"]
+	},
+	{
+		"speciesId":"swampert",
+		"fastMove":"MUD_SHOT",
+		"chargedMoves":["HYDRO_CANNON","EARTHQUAKE"]
 	},
 	{
 		"speciesId":"froslass",
