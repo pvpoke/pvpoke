@@ -1,0 +1,1968 @@
+{
+  "evolutionFamilyIdByUniqueId": {
+    "bulbasaur": "family_bulbasaur",
+    "ivysaur": "family_bulbasaur",
+    "venusaur": "family_bulbasaur",
+    "charmander": "family_charmander",
+    "charmeleon": "family_charmander",
+    "charizard": "family_charmander",
+    "squirtle": "family_squirtle",
+    "wartortle": "family_squirtle",
+    "blastoise": "family_squirtle",
+    "caterpie": "family_caterpie",
+    "metapod": "family_caterpie",
+    "butterfree": "family_caterpie",
+    "weedle": "family_weedle",
+    "kakuna": "family_weedle",
+    "beedrill": "family_weedle",
+    "pidgey": "family_pidgey",
+    "pidgeotto": "family_pidgey",
+    "pidgeot": "family_pidgey",
+    "rattata": "family_rattata",
+    "raticate": "family_rattata",
+    "spearow": "family_spearow",
+    "fearow": "family_spearow",
+    "ekans": "family_ekans",
+    "arbok": "family_ekans",
+    "pikachu": "family_pikachu",
+    "raichu": "family_pikachu",
+    "sandshrew": "family_sandshrew",
+    "sandslash": "family_sandshrew",
+    "nidoran_female": "family_nidoran_female",
+    "nidorina": "family_nidoran_female",
+    "nidoqueen": "family_nidoran_female",
+    "nidoran_male": "family_nidoran_male",
+    "nidorino": "family_nidoran_male",
+    "nidoking": "family_nidoran_male",
+    "clefairy": "family_clefairy",
+    "clefable": "family_clefairy",
+    "vulpix": "family_vulpix",
+    "ninetales": "family_vulpix",
+    "jigglypuff": "family_jigglypuff",
+    "wigglytuff": "family_jigglypuff",
+    "zubat": "family_zubat",
+    "golbat": "family_zubat",
+    "oddish": "family_oddish",
+    "gloom": "family_oddish",
+    "vileplume": "family_oddish",
+    "paras": "family_paras",
+    "parasect": "family_paras",
+    "venonat": "family_venonat",
+    "venomoth": "family_venonat",
+    "diglett": "family_diglett",
+    "dugtrio": "family_diglett",
+    "meowth": "family_meowth",
+    "persian": "family_meowth",
+    "psyduck": "family_psyduck",
+    "golduck": "family_psyduck",
+    "mankey": "family_mankey",
+    "primeape": "family_mankey",
+    "growlithe": "family_growlithe",
+    "arcanine": "family_growlithe",
+    "poliwag": "family_poliwag",
+    "poliwhirl": "family_poliwag",
+    "poliwrath": "family_poliwag",
+    "abra": "family_abra",
+    "kadabra": "family_abra",
+    "alakazam": "family_abra",
+    "machop": "family_machop",
+    "machoke": "family_machop",
+    "machamp": "family_machop",
+    "bellsprout": "family_bellsprout",
+    "weepinbell": "family_bellsprout",
+    "victreebel": "family_bellsprout",
+    "tentacool": "family_tentacool",
+    "tentacruel": "family_tentacool",
+    "geodude": "family_geodude",
+    "graveler": "family_geodude",
+    "golem": "family_geodude",
+    "ponyta": "family_ponyta",
+    "rapidash": "family_ponyta",
+    "slowpoke": "family_slowpoke",
+    "slowbro": "family_slowpoke",
+    "magnemite": "family_magnemite",
+    "magneton": "family_magnemite",
+    "farfetchd": "family_farfetchd",
+    "doduo": "family_doduo",
+    "dodrio": "family_doduo",
+    "seel": "family_seel",
+    "dewgong": "family_seel",
+    "grimer": "family_grimer",
+    "muk": "family_grimer",
+    "shellder": "family_shellder",
+    "cloyster": "family_shellder",
+    "gastly": "family_gastly",
+    "haunter": "family_gastly",
+    "gengar": "family_gastly",
+    "onix": "family_onix",
+    "drowzee": "family_drowzee",
+    "hypno": "family_drowzee",
+    "krabby": "family_krabby",
+    "kingler": "family_krabby",
+    "voltorb": "family_voltorb",
+    "electrode": "family_voltorb",
+    "exeggcute": "family_exeggcute",
+    "exeggutor": "family_exeggcute",
+    "cubone": "family_cubone",
+    "marowak": "family_cubone",
+    "hitmonlee": "family_tyrogue",
+    "hitmonchan": "family_tyrogue",
+    "lickitung": "family_lickitung",
+    "koffing": "family_koffing",
+    "weezing": "family_koffing",
+    "rhyhorn": "family_rhyhorn",
+    "rhydon": "family_rhyhorn",
+    "chansey": "family_chansey",
+    "tangela": "family_tangela",
+    "kangaskhan": "family_kangaskhan",
+    "horsea": "family_horsea",
+    "seadra": "family_horsea",
+    "goldeen": "family_goldeen",
+    "seaking": "family_goldeen",
+    "staryu": "family_staryu",
+    "starmie": "family_staryu",
+    "mr_mime": "family_mr_mime",
+    "scyther": "family_scyther",
+    "jynx": "family_jynx",
+    "electabuzz": "family_electabuzz",
+    "magmar": "family_magmar",
+    "pinsir": "family_pinsir",
+    "tauros": "family_tauros",
+    "magikarp": "family_magikarp",
+    "gyarados": "family_magikarp",
+    "lapras": "family_lapras",
+    "ditto": "family_ditto",
+    "eevee": "family_eevee",
+    "vaporeon": "family_eevee",
+    "jolteon": "family_eevee",
+    "flareon": "family_eevee",
+    "porygon": "family_porygon",
+    "omanyte": "family_omanyte",
+    "omastar": "family_omanyte",
+    "kabuto": "family_kabuto",
+    "kabutops": "family_kabuto",
+    "aerodactyl": "family_aerodactyl",
+    "snorlax": "family_snorlax",
+    "articuno": "family_articuno",
+    "zapdos": "family_zapdos",
+    "moltres": "family_moltres",
+    "dratini": "family_dratini",
+    "dragonair": "family_dratini",
+    "dragonite": "family_dratini",
+    "mewtwo": "family_mewtwo",
+    "mew": "family_mew",
+    "chikorita": "family_chikorita",
+    "bayleef": "family_chikorita",
+    "meganium": "family_chikorita",
+    "cyndaquil": "family_cyndaquil",
+    "quilava": "family_cyndaquil",
+    "typhlosion": "family_cyndaquil",
+    "totodile": "family_totodile",
+    "croconaw": "family_totodile",
+    "feraligatr": "family_totodile",
+    "sentret": "family_sentret",
+    "furret": "family_sentret",
+    "hoothoot": "family_hoothoot",
+    "noctowl": "family_hoothoot",
+    "ledyba": "family_ledyba",
+    "ledian": "family_ledyba",
+    "spinarak": "family_spinarak",
+    "ariados": "family_spinarak",
+    "crobat": "family_zubat",
+    "chinchou": "family_chinchou",
+    "lanturn": "family_chinchou",
+    "pichu": "family_pikachu",
+    "cleffa": "family_clefairy",
+    "igglybuff": "family_jigglypuff",
+    "togepi": "family_togepi",
+    "togetic": "family_togepi",
+    "natu": "family_natu",
+    "xatu": "family_natu",
+    "mareep": "family_mareep",
+    "flaaffy": "family_mareep",
+    "ampharos": "family_mareep",
+    "bellossom": "family_oddish",
+    "marill": "family_marill",
+    "azumarill": "family_marill",
+    "sudowoodo": "family_sudowoodo",
+    "politoed": "family_poliwag",
+    "hoppip": "family_hoppip",
+    "skiploom": "family_hoppip",
+    "jumpluff": "family_hoppip",
+    "aipom": "family_aipom",
+    "sunkern": "family_sunkern",
+    "sunflora": "family_sunkern",
+    "yanma": "family_yanma",
+    "wooper": "family_wooper",
+    "quagsire": "family_wooper",
+    "espeon": "family_eevee",
+    "umbreon": "family_eevee",
+    "murkrow": "family_murkrow",
+    "slowking": "family_slowpoke",
+    "misdreavus": "family_misdreavus",
+    "unown": "family_unown",
+    "wobbuffet": "family_wobbuffet",
+    "girafarig": "family_girafarig",
+    "pineco": "family_pineco",
+    "forretress": "family_pineco",
+    "dunsparce": "family_dunsparce",
+    "gligar": "family_gligar",
+    "steelix": "family_onix",
+    "snubbull": "family_snubbull",
+    "granbull": "family_snubbull",
+    "qwilfish": "family_qwilfish",
+    "scizor": "family_scyther",
+    "shuckle": "family_shuckle",
+    "heracross": "family_heracross",
+    "sneasel": "family_sneasel",
+    "teddiursa": "family_teddiursa",
+    "ursaring": "family_teddiursa",
+    "slugma": "family_slugma",
+    "magcargo": "family_slugma",
+    "swinub": "family_swinub",
+    "piloswine": "family_swinub",
+    "corsola": "family_corsola",
+    "remoraid": "family_remoraid",
+    "octillery": "family_remoraid",
+    "delibird": "family_delibird",
+    "mantine": "family_mantine",
+    "skarmory": "family_skarmory",
+    "houndour": "family_houndour",
+    "houndoom": "family_houndour",
+    "kingdra": "family_horsea",
+    "phanpy": "family_phanpy",
+    "donphan": "family_phanpy",
+    "porygon2": "family_porygon",
+    "stantler": "family_stantler",
+    "smeargle": "family_smeargle",
+    "tyrogue": "family_tyrogue",
+    "hitmontop": "family_tyrogue",
+    "smoochum": "family_jynx",
+    "elekid": "family_electabuzz",
+    "magby": "family_magmar",
+    "miltank": "family_miltank",
+    "blissey": "family_chansey",
+    "raikou": "family_raikou",
+    "entei": "family_entei",
+    "suicune": "family_suicune",
+    "larvitar": "family_larvitar",
+    "pupitar": "family_larvitar",
+    "tyranitar": "family_larvitar",
+    "lugia": "family_lugia",
+    "ho_oh": "family_ho_oh",
+    "celebi": "family_celebi",
+    "treecko": "family_treecko",
+    "grovyle": "family_treecko",
+    "sceptile": "family_treecko",
+    "torchic": "family_torchic",
+    "combusken": "family_torchic",
+    "blaziken": "family_torchic",
+    "mudkip": "family_mudkip",
+    "marshtomp": "family_mudkip",
+    "swampert": "family_mudkip",
+    "poochyena": "family_poochyena",
+    "mightyena": "family_poochyena",
+    "zigzagoon": "family_zigzagoon",
+    "linoone": "family_zigzagoon",
+    "wurmple": "family_wurmple",
+    "silcoon": "family_wurmple",
+    "beautifly": "family_wurmple",
+    "cascoon": "family_wurmple",
+    "dustox": "family_wurmple",
+    "lotad": "family_lotad",
+    "lombre": "family_lotad",
+    "ludicolo": "family_lotad",
+    "seedot": "family_seedot",
+    "nuzleaf": "family_seedot",
+    "shiftry": "family_seedot",
+    "taillow": "family_taillow",
+    "swellow": "family_taillow",
+    "wingull": "family_wingull",
+    "pelipper": "family_wingull",
+    "ralts": "family_ralts",
+    "kirlia": "family_ralts",
+    "gardevoir": "family_ralts",
+    "surskit": "family_surskit",
+    "masquerain": "family_surskit",
+    "shroomish": "family_shroomish",
+    "breloom": "family_shroomish",
+    "slakoth": "family_slakoth",
+    "vigoroth": "family_slakoth",
+    "slaking": "family_slakoth",
+    "nincada": "family_nincada",
+    "ninjask": "family_nincada",
+    "shedinja": "family_nincada",
+    "whismur": "family_whismur",
+    "loudred": "family_whismur",
+    "exploud": "family_whismur",
+    "makuhita": "family_makuhita",
+    "hariyama": "family_makuhita",
+    "azurill": "family_marill",
+    "nosepass": "family_nosepass",
+    "skitty": "family_skitty",
+    "delcatty": "family_skitty",
+    "sableye": "family_sableye",
+    "mawile": "family_mawile",
+    "aron": "family_aron",
+    "lairon": "family_aron",
+    "aggron": "family_aron",
+    "meditite": "family_meditite",
+    "medicham": "family_meditite",
+    "electrike": "family_electrike",
+    "manectric": "family_electrike",
+    "plusle": "family_plusle",
+    "minun": "family_minun",
+    "volbeat": "family_volbeat",
+    "illumise": "family_illumise",
+    "roselia": "family_roselia",
+    "gulpin": "family_gulpin",
+    "swalot": "family_gulpin",
+    "carvanha": "family_carvanha",
+    "sharpedo": "family_carvanha",
+    "wailmer": "family_wailmer",
+    "wailord": "family_wailmer",
+    "numel": "family_numel",
+    "camerupt": "family_numel",
+    "torkoal": "family_torkoal",
+    "spoink": "family_spoink",
+    "grumpig": "family_spoink",
+    "spinda": "family_spinda",
+    "trapinch": "family_trapinch",
+    "vibrava": "family_trapinch",
+    "flygon": "family_trapinch",
+    "cacnea": "family_cacnea",
+    "cacturne": "family_cacnea",
+    "swablu": "family_swablu",
+    "altaria": "family_swablu",
+    "zangoose": "family_zangoose",
+    "seviper": "family_seviper",
+    "lunatone": "family_lunatone",
+    "solrock": "family_solrock",
+    "barboach": "family_barboach",
+    "whiscash": "family_barboach",
+    "corphish": "family_corphish",
+    "crawdaunt": "family_corphish",
+    "baltoy": "family_baltoy",
+    "claydol": "family_baltoy",
+    "lileep": "family_lileep",
+    "cradily": "family_lileep",
+    "anorith": "family_anorith",
+    "armaldo": "family_anorith",
+    "feebas": "family_feebas",
+    "milotic": "family_feebas",
+    "castform": "family_castform",
+    "kecleon": "family_kecleon",
+    "shuppet": "family_shuppet",
+    "banette": "family_shuppet",
+    "duskull": "family_duskull",
+    "dusclops": "family_duskull",
+    "tropius": "family_tropius",
+    "chimecho": "family_chimecho",
+    "absol": "family_absol",
+    "wynaut": "family_wobbuffet",
+    "snorunt": "family_snorunt",
+    "glalie": "family_snorunt",
+    "spheal": "family_spheal",
+    "sealeo": "family_spheal",
+    "walrein": "family_spheal",
+    "clamperl": "family_clamperl",
+    "huntail": "family_clamperl",
+    "gorebyss": "family_clamperl",
+    "relicanth": "family_relicanth",
+    "luvdisc": "family_luvdisc",
+    "bagon": "family_bagon",
+    "shelgon": "family_bagon",
+    "salamence": "family_bagon",
+    "beldum": "family_beldum",
+    "metang": "family_beldum",
+    "metagross": "family_beldum",
+    "regirock": "family_regirock",
+    "regice": "family_regice",
+    "registeel": "family_registeel",
+    "latias": "family_latias",
+    "latios": "family_latios",
+    "kyogre": "family_kyogre",
+    "groudon": "family_groudon",
+    "rayquaza": "family_rayquaza",
+    "jirachi": "family_jirachi",
+    "deoxys": "family_deoxys",
+    "turtwig": "family_turtwig",
+    "grotle": "family_turtwig",
+    "torterra": "family_turtwig",
+    "chimchar": "family_chimchar",
+    "monferno": "family_chimchar",
+    "infernape": "family_chimchar",
+    "piplup": "family_piplup",
+    "prinplup": "family_piplup",
+    "empoleon": "family_piplup",
+    "starly": "family_starly",
+    "staravia": "family_starly",
+    "staraptor": "family_starly",
+    "bidoof": "family_bidoof",
+    "bibarel": "family_bidoof",
+    "kricketot": "family_kricketot",
+    "kricketune": "family_kricketot",
+    "shinx": "family_shinx",
+    "luxio": "family_shinx",
+    "luxray": "family_shinx",
+    "budew": "family_roselia",
+    "roserade": "family_roselia",
+    "cranidos": "family_cranidos",
+    "rampardos": "family_cranidos",
+    "shieldon": "family_shieldon",
+    "bastiodon": "family_shieldon",
+    "burmy": "family_burmy",
+    "wormadam": "family_burmy",
+    "mothim": "family_burmy",
+    "combee": "family_combee",
+    "vespiquen": "family_combee",
+    "pachirisu": "family_pachirisu",
+    "buizel": "family_buizel",
+    "floatzel": "family_buizel",
+    "cherubi": "family_cherubi",
+    "cherrim": "family_cherubi",
+    "shellos": "family_shellos",
+    "gastrodon": "family_shellos",
+    "ambipom": "family_aipom",
+    "drifloon": "family_drifloon",
+    "drifblim": "family_drifloon",
+    "buneary": "family_buneary",
+    "lopunny": "family_buneary",
+    "mismagius": "family_misdreavus",
+    "honchkrow": "family_murkrow",
+    "glameow": "family_glameow",
+    "purugly": "family_glameow",
+    "chingling": "family_chimecho",
+    "stunky": "family_stunky",
+    "skuntank": "family_stunky",
+    "bronzor": "family_bronzor",
+    "bronzong": "family_bronzor",
+    "bonsly": "family_sudowoodo",
+    "mime_jr": "family_mr_mime",
+    "happiny": "family_chansey",
+    "chatot": "family_chatot",
+    "spiritomb": "family_spiritomb",
+    "gible": "family_gible",
+    "gabite": "family_gible",
+    "garchomp": "family_gible",
+    "munchlax": "family_snorlax",
+    "riolu": "family_lucario",
+    "lucario": "family_lucario",
+    "hippopotas": "family_hippopotas",
+    "hippowdon": "family_hippopotas",
+    "skorupi": "family_skorupi",
+    "drapion": "family_skorupi",
+    "croagunk": "family_croagunk",
+    "toxicroak": "family_croagunk",
+    "carnivine": "family_carnivine",
+    "finneon": "family_finneon",
+    "lumineon": "family_finneon",
+    "mantyke": "family_mantine",
+    "snover": "family_snover",
+    "abomasnow": "family_snover",
+    "weavile": "family_sneasel",
+    "magnezone": "family_magnemite",
+    "lickilicky": "family_lickitung",
+    "rhyperior": "family_rhyhorn",
+    "tangrowth": "family_tangela",
+    "electivire": "family_electabuzz",
+    "magmortar": "family_magmar",
+    "togekiss": "family_togepi",
+    "yanmega": "family_yanma",
+    "leafeon": "family_eevee",
+    "glaceon": "family_eevee",
+    "gliscor": "family_gligar",
+    "mamoswine": "family_swinub",
+    "porygon_z": "family_porygon",
+    "gallade": "family_ralts",
+    "probopass": "family_nosepass",
+    "dusknoir": "family_duskull",
+    "froslass": "family_snorunt",
+    "rotom": "family_rotom",
+    "uxie": "family_uxie",
+    "mesprit": "family_mesprit",
+    "azelf": "family_azelf",
+    "dialga": "family_dialga",
+    "palkia": "family_palkia",
+    "heatran": "family_heatran",
+    "regigigas": "family_regigigas",
+    "giratina": "family_giratina",
+    "cresselia": "family_cresselia",
+    "phione": "family_phione",
+    "manaphy": "family_manaphy",
+    "darkrai": "family_darkrai",
+    "shaymin": "family_shaymin",
+    "arceus": "family_arceus",
+    "victini": "family_victini",
+    "snivy": "family_snivy",
+    "servine": "family_snivy",
+    "serperior": "family_snivy",
+    "tepig": "family_tepig",
+    "pignite": "family_tepig",
+    "emboar": "family_tepig",
+    "oshawott": "family_oshawott",
+    "dewott": "family_oshawott",
+    "samurott": "family_oshawott",
+    "patrat": "family_patrat",
+    "watchog": "family_patrat",
+    "lillipup": "family_lillipup",
+    "herdier": "family_lillipup",
+    "stoutland": "family_lillipup",
+    "purrloin": "family_purrloin",
+    "liepard": "family_purrloin",
+    "pansage": "family_pansage",
+    "simisage": "family_pansage",
+    "pansear": "family_pansear",
+    "simisear": "family_pansear",
+    "panpour": "family_panpour",
+    "simipour": "family_panpour",
+    "munna": "family_munna",
+    "musharna": "family_munna",
+    "pidove": "family_pidove",
+    "tranquill": "family_pidove",
+    "unfezant": "family_pidove",
+    "blitzle": "family_blitzle",
+    "zebstrika": "family_blitzle",
+    "roggenrola": "family_roggenrola",
+    "boldore": "family_roggenrola",
+    "gigalith": "family_roggenrola",
+    "woobat": "family_woobat",
+    "swoobat": "family_woobat",
+    "drilbur": "family_drilbur",
+    "excadrill": "family_drilbur",
+    "audino": "family_audino",
+    "timburr": "family_timburr",
+    "gurdurr": "family_timburr",
+    "conkeldurr": "family_timburr",
+    "tympole": "family_tympole",
+    "palpitoad": "family_tympole",
+    "seismitoad": "family_tympole",
+    "throh": "family_throh",
+    "sawk": "family_sawk",
+    "sewaddle": "family_sewaddle",
+    "swadloon": "family_sewaddle",
+    "leavanny": "family_sewaddle",
+    "venipede": "family_venipede",
+    "whirlipede": "family_venipede",
+    "scolipede": "family_venipede",
+    "cottonee": "family_cottonee",
+    "whimsicott": "family_cottonee",
+    "petilil": "family_petilil",
+    "lilligant": "family_petilil",
+    "basculin": "family_basculin",
+    "sandile": "family_sandile",
+    "krokorok": "family_sandile",
+    "krookodile": "family_sandile",
+    "darumaka": "family_darumaka",
+    "darmanitan": "family_darumaka",
+    "maractus": "family_maractus",
+    "dwebble": "family_dwebble",
+    "crustle": "family_dwebble",
+    "scraggy": "family_scraggy",
+    "scrafty": "family_scraggy",
+    "sigilyph": "family_sigilyph",
+    "yamask": "family_yamask",
+    "cofagrigus": "family_yamask",
+    "tirtouga": "family_tirtouga",
+    "carracosta": "family_tirtouga",
+    "archen": "family_archen",
+    "archeops": "family_archen",
+    "trubbish": "family_trubbish",
+    "garbodor": "family_trubbish",
+    "zorua": "family_zorua",
+    "zoroark": "family_zorua",
+    "minccino": "family_minccino",
+    "cinccino": "family_minccino",
+    "gothita": "family_gothita",
+    "gothorita": "family_gothita",
+    "gothitelle": "family_gothita",
+    "solosis": "family_solosis",
+    "duosion": "family_solosis",
+    "reuniclus": "family_solosis",
+    "ducklett": "family_ducklett",
+    "swanna": "family_ducklett",
+    "vanillite": "family_vanillite",
+    "vanillish": "family_vanillite",
+    "vanilluxe": "family_vanillite",
+    "deerling": "family_deerling",
+    "sawsbuck": "family_deerling",
+    "emolga": "family_emolga",
+    "karrablast": "family_karrablast",
+    "escavalier": "family_karrablast",
+    "foongus": "family_foongus",
+    "amoonguss": "family_foongus",
+    "frillish": "family_frillish",
+    "jellicent": "family_frillish",
+    "alomomola": "family_alomomola",
+    "joltik": "family_joltik",
+    "galvantula": "family_joltik",
+    "ferroseed": "family_ferroseed",
+    "ferrothorn": "family_ferroseed",
+    "klink": "family_klink",
+    "klang": "family_klink",
+    "klinklang": "family_klink",
+    "tynamo": "family_tynamo",
+    "eelektrik": "family_tynamo",
+    "eelektross": "family_tynamo",
+    "elgyem": "family_elgyem",
+    "beheeyem": "family_elgyem",
+    "litwick": "family_litwick",
+    "lampent": "family_litwick",
+    "chandelure": "family_litwick",
+    "axew": "family_axew",
+    "fraxure": "family_axew",
+    "haxorus": "family_axew",
+    "cubchoo": "family_cubchoo",
+    "beartic": "family_cubchoo",
+    "cryogonal": "family_cryogonal",
+    "shelmet": "family_shelmet",
+    "accelgor": "family_shelmet",
+    "stunfisk": "family_stunfisk",
+    "mienfoo": "family_mienfoo",
+    "mienshao": "family_mienfoo",
+    "druddigon": "family_druddigon",
+    "golett": "family_golett",
+    "golurk": "family_golett",
+    "pawniard": "family_pawniard",
+    "bisharp": "family_pawniard",
+    "bouffalant": "family_bouffalant",
+    "rufflet": "family_rufflet",
+    "braviary": "family_rufflet",
+    "vullaby": "family_vullaby",
+    "mandibuzz": "family_vullaby",
+    "heatmor": "family_heatmor",
+    "durant": "family_durant",
+    "deino": "family_deino",
+    "zweilous": "family_deino",
+    "hydreigon": "family_deino",
+    "larvesta": "family_larvesta",
+    "volcarona": "family_larvesta",
+    "cobalion": "family_cobalion",
+    "terrakion": "family_terrakion",
+    "virizion": "family_virizion",
+    "tornadus": "family_tornadus",
+    "thundurus": "family_thundurus",
+    "reshiram": "family_reshiram",
+    "zekrom": "family_zekrom",
+    "landorus": "family_landorus",
+    "kyurem": "family_kyurem",
+    "keldeo": "family_keldeo",
+    "meloetta": "family_meloetta",
+    "genesect": "family_genesect",
+    "meltan": "family_meltan",
+    "melmetal": "family_meltan"
+  },
+  "uniqueIdsForFamilyId": {
+    "family_bulbasaur": [
+      "bulbasaur",
+      "ivysaur",
+      "venusaur"
+    ],
+    "family_charmander": [
+      "charmander",
+      "charmeleon",
+      "charizard"
+    ],
+    "family_squirtle": [
+      "squirtle",
+      "wartortle",
+      "blastoise"
+    ],
+    "family_caterpie": [
+      "caterpie",
+      "metapod",
+      "butterfree"
+    ],
+    "family_weedle": [
+      "weedle",
+      "kakuna",
+      "beedrill"
+    ],
+    "family_pidgey": [
+      "pidgey",
+      "pidgeotto",
+      "pidgeot"
+    ],
+    "family_rattata": [
+      "rattata",
+      "raticate"
+    ],
+    "family_spearow": [
+      "spearow",
+      "fearow"
+    ],
+    "family_ekans": [
+      "ekans",
+      "arbok"
+    ],
+    "family_pikachu": [
+      "pikachu",
+      "raichu",
+      "pichu"
+    ],
+    "family_sandshrew": [
+      "sandshrew",
+      "sandslash"
+    ],
+    "family_nidoran_female": [
+      "nidoran_female",
+      "nidorina",
+      "nidoqueen"
+    ],
+    "family_nidoran_male": [
+      "nidoran_male",
+      "nidorino",
+      "nidoking"
+    ],
+    "family_clefairy": [
+      "clefairy",
+      "clefable",
+      "cleffa"
+    ],
+    "family_vulpix": [
+      "vulpix",
+      "ninetales"
+    ],
+    "family_jigglypuff": [
+      "jigglypuff",
+      "wigglytuff",
+      "igglybuff"
+    ],
+    "family_zubat": [
+      "zubat",
+      "golbat",
+      "crobat"
+    ],
+    "family_oddish": [
+      "oddish",
+      "gloom",
+      "vileplume",
+      "bellossom"
+    ],
+    "family_paras": [
+      "paras",
+      "parasect"
+    ],
+    "family_venonat": [
+      "venonat",
+      "venomoth"
+    ],
+    "family_diglett": [
+      "diglett",
+      "dugtrio"
+    ],
+    "family_meowth": [
+      "meowth",
+      "persian"
+    ],
+    "family_psyduck": [
+      "psyduck",
+      "golduck"
+    ],
+    "family_mankey": [
+      "mankey",
+      "primeape"
+    ],
+    "family_growlithe": [
+      "growlithe",
+      "arcanine"
+    ],
+    "family_poliwag": [
+      "poliwag",
+      "poliwhirl",
+      "poliwrath",
+      "politoed"
+    ],
+    "family_abra": [
+      "abra",
+      "kadabra",
+      "alakazam"
+    ],
+    "family_machop": [
+      "machop",
+      "machoke",
+      "machamp"
+    ],
+    "family_bellsprout": [
+      "bellsprout",
+      "weepinbell",
+      "victreebel"
+    ],
+    "family_tentacool": [
+      "tentacool",
+      "tentacruel"
+    ],
+    "family_geodude": [
+      "geodude",
+      "graveler",
+      "golem"
+    ],
+    "family_ponyta": [
+      "ponyta",
+      "rapidash"
+    ],
+    "family_slowpoke": [
+      "slowpoke",
+      "slowbro",
+      "slowking"
+    ],
+    "family_magnemite": [
+      "magnemite",
+      "magneton",
+      "magnezone"
+    ],
+    "family_farfetchd": [
+      "farfetchd"
+    ],
+    "family_doduo": [
+      "doduo",
+      "dodrio"
+    ],
+    "family_seel": [
+      "seel",
+      "dewgong"
+    ],
+    "family_grimer": [
+      "grimer",
+      "muk"
+    ],
+    "family_shellder": [
+      "shellder",
+      "cloyster"
+    ],
+    "family_gastly": [
+      "gastly",
+      "haunter",
+      "gengar"
+    ],
+    "family_onix": [
+      "onix",
+      "steelix"
+    ],
+    "family_drowzee": [
+      "drowzee",
+      "hypno"
+    ],
+    "family_krabby": [
+      "krabby",
+      "kingler"
+    ],
+    "family_voltorb": [
+      "voltorb",
+      "electrode"
+    ],
+    "family_exeggcute": [
+      "exeggcute",
+      "exeggutor"
+    ],
+    "family_cubone": [
+      "cubone",
+      "marowak"
+    ],
+    "family_tyrogue": [
+      "hitmonlee",
+      "hitmonchan",
+      "tyrogue",
+      "hitmontop"
+    ],
+    "family_lickitung": [
+      "lickitung",
+      "lickilicky"
+    ],
+    "family_koffing": [
+      "koffing",
+      "weezing"
+    ],
+    "family_rhyhorn": [
+      "rhyhorn",
+      "rhydon",
+      "rhyperior"
+    ],
+    "family_chansey": [
+      "chansey",
+      "blissey",
+      "happiny"
+    ],
+    "family_tangela": [
+      "tangela",
+      "tangrowth"
+    ],
+    "family_kangaskhan": [
+      "kangaskhan"
+    ],
+    "family_horsea": [
+      "horsea",
+      "seadra",
+      "kingdra"
+    ],
+    "family_goldeen": [
+      "goldeen",
+      "seaking"
+    ],
+    "family_staryu": [
+      "staryu",
+      "starmie"
+    ],
+    "family_mr_mime": [
+      "mr_mime",
+      "mime_jr"
+    ],
+    "family_scyther": [
+      "scyther",
+      "scizor"
+    ],
+    "family_jynx": [
+      "jynx",
+      "smoochum"
+    ],
+    "family_electabuzz": [
+      "electabuzz",
+      "elekid",
+      "electivire"
+    ],
+    "family_magmar": [
+      "magmar",
+      "magby",
+      "magmortar"
+    ],
+    "family_pinsir": [
+      "pinsir"
+    ],
+    "family_tauros": [
+      "tauros"
+    ],
+    "family_magikarp": [
+      "magikarp",
+      "gyarados"
+    ],
+    "family_lapras": [
+      "lapras"
+    ],
+    "family_ditto": [
+      "ditto"
+    ],
+    "family_eevee": [
+      "eevee",
+      "vaporeon",
+      "jolteon",
+      "flareon",
+      "espeon",
+      "umbreon",
+      "leafeon",
+      "glaceon"
+    ],
+    "family_porygon": [
+      "porygon",
+      "porygon2",
+      "porygon_z"
+    ],
+    "family_omanyte": [
+      "omanyte",
+      "omastar"
+    ],
+    "family_kabuto": [
+      "kabuto",
+      "kabutops"
+    ],
+    "family_aerodactyl": [
+      "aerodactyl"
+    ],
+    "family_snorlax": [
+      "snorlax",
+      "munchlax"
+    ],
+    "family_articuno": [
+      "articuno"
+    ],
+    "family_zapdos": [
+      "zapdos"
+    ],
+    "family_moltres": [
+      "moltres"
+    ],
+    "family_dratini": [
+      "dratini",
+      "dragonair",
+      "dragonite"
+    ],
+    "family_mewtwo": [
+      "mewtwo"
+    ],
+    "family_mew": [
+      "mew"
+    ],
+    "family_chikorita": [
+      "chikorita",
+      "bayleef",
+      "meganium"
+    ],
+    "family_cyndaquil": [
+      "cyndaquil",
+      "quilava",
+      "typhlosion"
+    ],
+    "family_totodile": [
+      "totodile",
+      "croconaw",
+      "feraligatr"
+    ],
+    "family_sentret": [
+      "sentret",
+      "furret"
+    ],
+    "family_hoothoot": [
+      "hoothoot",
+      "noctowl"
+    ],
+    "family_ledyba": [
+      "ledyba",
+      "ledian"
+    ],
+    "family_spinarak": [
+      "spinarak",
+      "ariados"
+    ],
+    "family_chinchou": [
+      "chinchou",
+      "lanturn"
+    ],
+    "family_togepi": [
+      "togepi",
+      "togetic",
+      "togekiss"
+    ],
+    "family_natu": [
+      "natu",
+      "xatu"
+    ],
+    "family_mareep": [
+      "mareep",
+      "flaaffy",
+      "ampharos"
+    ],
+    "family_marill": [
+      "marill",
+      "azumarill",
+      "azurill"
+    ],
+    "family_sudowoodo": [
+      "sudowoodo",
+      "bonsly"
+    ],
+    "family_hoppip": [
+      "hoppip",
+      "skiploom",
+      "jumpluff"
+    ],
+    "family_aipom": [
+      "aipom",
+      "ambipom"
+    ],
+    "family_sunkern": [
+      "sunkern",
+      "sunflora"
+    ],
+    "family_yanma": [
+      "yanma",
+      "yanmega"
+    ],
+    "family_wooper": [
+      "wooper",
+      "quagsire"
+    ],
+    "family_murkrow": [
+      "murkrow",
+      "honchkrow"
+    ],
+    "family_misdreavus": [
+      "misdreavus",
+      "mismagius"
+    ],
+    "family_unown": [
+      "unown"
+    ],
+    "family_wobbuffet": [
+      "wobbuffet",
+      "wynaut"
+    ],
+    "family_girafarig": [
+      "girafarig"
+    ],
+    "family_pineco": [
+      "pineco",
+      "forretress"
+    ],
+    "family_dunsparce": [
+      "dunsparce"
+    ],
+    "family_gligar": [
+      "gligar",
+      "gliscor"
+    ],
+    "family_snubbull": [
+      "snubbull",
+      "granbull"
+    ],
+    "family_qwilfish": [
+      "qwilfish"
+    ],
+    "family_shuckle": [
+      "shuckle"
+    ],
+    "family_heracross": [
+      "heracross"
+    ],
+    "family_sneasel": [
+      "sneasel",
+      "weavile"
+    ],
+    "family_teddiursa": [
+      "teddiursa",
+      "ursaring"
+    ],
+    "family_slugma": [
+      "slugma",
+      "magcargo"
+    ],
+    "family_swinub": [
+      "swinub",
+      "piloswine",
+      "mamoswine"
+    ],
+    "family_corsola": [
+      "corsola"
+    ],
+    "family_remoraid": [
+      "remoraid",
+      "octillery"
+    ],
+    "family_delibird": [
+      "delibird"
+    ],
+    "family_mantine": [
+      "mantine",
+      "mantyke"
+    ],
+    "family_skarmory": [
+      "skarmory"
+    ],
+    "family_houndour": [
+      "houndour",
+      "houndoom"
+    ],
+    "family_phanpy": [
+      "phanpy",
+      "donphan"
+    ],
+    "family_stantler": [
+      "stantler"
+    ],
+    "family_smeargle": [
+      "smeargle"
+    ],
+    "family_miltank": [
+      "miltank"
+    ],
+    "family_raikou": [
+      "raikou"
+    ],
+    "family_entei": [
+      "entei"
+    ],
+    "family_suicune": [
+      "suicune"
+    ],
+    "family_larvitar": [
+      "larvitar",
+      "pupitar",
+      "tyranitar"
+    ],
+    "family_lugia": [
+      "lugia"
+    ],
+    "family_ho_oh": [
+      "ho_oh"
+    ],
+    "family_celebi": [
+      "celebi"
+    ],
+    "family_treecko": [
+      "treecko",
+      "grovyle",
+      "sceptile"
+    ],
+    "family_torchic": [
+      "torchic",
+      "combusken",
+      "blaziken"
+    ],
+    "family_mudkip": [
+      "mudkip",
+      "marshtomp",
+      "swampert"
+    ],
+    "family_poochyena": [
+      "poochyena",
+      "mightyena"
+    ],
+    "family_zigzagoon": [
+      "zigzagoon",
+      "linoone"
+    ],
+    "family_wurmple": [
+      "wurmple",
+      "silcoon",
+      "beautifly",
+      "cascoon",
+      "dustox"
+    ],
+    "family_lotad": [
+      "lotad",
+      "lombre",
+      "ludicolo"
+    ],
+    "family_seedot": [
+      "seedot",
+      "nuzleaf",
+      "shiftry"
+    ],
+    "family_taillow": [
+      "taillow",
+      "swellow"
+    ],
+    "family_wingull": [
+      "wingull",
+      "pelipper"
+    ],
+    "family_ralts": [
+      "ralts",
+      "kirlia",
+      "gardevoir",
+      "gallade"
+    ],
+    "family_surskit": [
+      "surskit",
+      "masquerain"
+    ],
+    "family_shroomish": [
+      "shroomish",
+      "breloom"
+    ],
+    "family_slakoth": [
+      "slakoth",
+      "vigoroth",
+      "slaking"
+    ],
+    "family_nincada": [
+      "nincada",
+      "ninjask",
+      "shedinja"
+    ],
+    "family_whismur": [
+      "whismur",
+      "loudred",
+      "exploud"
+    ],
+    "family_makuhita": [
+      "makuhita",
+      "hariyama"
+    ],
+    "family_nosepass": [
+      "nosepass",
+      "probopass"
+    ],
+    "family_skitty": [
+      "skitty",
+      "delcatty"
+    ],
+    "family_sableye": [
+      "sableye"
+    ],
+    "family_mawile": [
+      "mawile"
+    ],
+    "family_aron": [
+      "aron",
+      "lairon",
+      "aggron"
+    ],
+    "family_meditite": [
+      "meditite",
+      "medicham"
+    ],
+    "family_electrike": [
+      "electrike",
+      "manectric"
+    ],
+    "family_plusle": [
+      "plusle"
+    ],
+    "family_minun": [
+      "minun"
+    ],
+    "family_volbeat": [
+      "volbeat"
+    ],
+    "family_illumise": [
+      "illumise"
+    ],
+    "family_roselia": [
+      "roselia",
+      "budew",
+      "roserade"
+    ],
+    "family_gulpin": [
+      "gulpin",
+      "swalot"
+    ],
+    "family_carvanha": [
+      "carvanha",
+      "sharpedo"
+    ],
+    "family_wailmer": [
+      "wailmer",
+      "wailord"
+    ],
+    "family_numel": [
+      "numel",
+      "camerupt"
+    ],
+    "family_torkoal": [
+      "torkoal"
+    ],
+    "family_spoink": [
+      "spoink",
+      "grumpig"
+    ],
+    "family_spinda": [
+      "spinda"
+    ],
+    "family_trapinch": [
+      "trapinch",
+      "vibrava",
+      "flygon"
+    ],
+    "family_cacnea": [
+      "cacnea",
+      "cacturne"
+    ],
+    "family_swablu": [
+      "swablu",
+      "altaria"
+    ],
+    "family_zangoose": [
+      "zangoose"
+    ],
+    "family_seviper": [
+      "seviper"
+    ],
+    "family_lunatone": [
+      "lunatone"
+    ],
+    "family_solrock": [
+      "solrock"
+    ],
+    "family_barboach": [
+      "barboach",
+      "whiscash"
+    ],
+    "family_corphish": [
+      "corphish",
+      "crawdaunt"
+    ],
+    "family_baltoy": [
+      "baltoy",
+      "claydol"
+    ],
+    "family_lileep": [
+      "lileep",
+      "cradily"
+    ],
+    "family_anorith": [
+      "anorith",
+      "armaldo"
+    ],
+    "family_feebas": [
+      "feebas",
+      "milotic"
+    ],
+    "family_castform": [
+      "castform"
+    ],
+    "family_kecleon": [
+      "kecleon"
+    ],
+    "family_shuppet": [
+      "shuppet",
+      "banette"
+    ],
+    "family_duskull": [
+      "duskull",
+      "dusclops",
+      "dusknoir"
+    ],
+    "family_tropius": [
+      "tropius"
+    ],
+    "family_chimecho": [
+      "chimecho",
+      "chingling"
+    ],
+    "family_absol": [
+      "absol"
+    ],
+    "family_snorunt": [
+      "snorunt",
+      "glalie",
+      "froslass"
+    ],
+    "family_spheal": [
+      "spheal",
+      "sealeo",
+      "walrein"
+    ],
+    "family_clamperl": [
+      "clamperl",
+      "huntail",
+      "gorebyss"
+    ],
+    "family_relicanth": [
+      "relicanth"
+    ],
+    "family_luvdisc": [
+      "luvdisc"
+    ],
+    "family_bagon": [
+      "bagon",
+      "shelgon",
+      "salamence"
+    ],
+    "family_beldum": [
+      "beldum",
+      "metang",
+      "metagross"
+    ],
+    "family_regirock": [
+      "regirock"
+    ],
+    "family_regice": [
+      "regice"
+    ],
+    "family_registeel": [
+      "registeel"
+    ],
+    "family_latias": [
+      "latias"
+    ],
+    "family_latios": [
+      "latios"
+    ],
+    "family_kyogre": [
+      "kyogre"
+    ],
+    "family_groudon": [
+      "groudon"
+    ],
+    "family_rayquaza": [
+      "rayquaza"
+    ],
+    "family_jirachi": [
+      "jirachi"
+    ],
+    "family_deoxys": [
+      "deoxys"
+    ],
+    "family_turtwig": [
+      "turtwig",
+      "grotle",
+      "torterra"
+    ],
+    "family_chimchar": [
+      "chimchar",
+      "monferno",
+      "infernape"
+    ],
+    "family_piplup": [
+      "piplup",
+      "prinplup",
+      "empoleon"
+    ],
+    "family_starly": [
+      "starly",
+      "staravia",
+      "staraptor"
+    ],
+    "family_bidoof": [
+      "bidoof",
+      "bibarel"
+    ],
+    "family_kricketot": [
+      "kricketot",
+      "kricketune"
+    ],
+    "family_shinx": [
+      "shinx",
+      "luxio",
+      "luxray"
+    ],
+    "family_cranidos": [
+      "cranidos",
+      "rampardos"
+    ],
+    "family_shieldon": [
+      "shieldon",
+      "bastiodon"
+    ],
+    "family_burmy": [
+      "burmy",
+      "wormadam",
+      "mothim"
+    ],
+    "family_combee": [
+      "combee",
+      "vespiquen"
+    ],
+    "family_pachirisu": [
+      "pachirisu"
+    ],
+    "family_buizel": [
+      "buizel",
+      "floatzel"
+    ],
+    "family_cherubi": [
+      "cherubi",
+      "cherrim"
+    ],
+    "family_shellos": [
+      "shellos",
+      "gastrodon"
+    ],
+    "family_drifloon": [
+      "drifloon",
+      "drifblim"
+    ],
+    "family_buneary": [
+      "buneary",
+      "lopunny"
+    ],
+    "family_glameow": [
+      "glameow",
+      "purugly"
+    ],
+    "family_stunky": [
+      "stunky",
+      "skuntank"
+    ],
+    "family_bronzor": [
+      "bronzor",
+      "bronzong"
+    ],
+    "family_chatot": [
+      "chatot"
+    ],
+    "family_spiritomb": [
+      "spiritomb"
+    ],
+    "family_gible": [
+      "gible",
+      "gabite",
+      "garchomp"
+    ],
+    "family_lucario": [
+      "riolu",
+      "lucario"
+    ],
+    "family_hippopotas": [
+      "hippopotas",
+      "hippowdon"
+    ],
+    "family_skorupi": [
+      "skorupi",
+      "drapion"
+    ],
+    "family_croagunk": [
+      "croagunk",
+      "toxicroak"
+    ],
+    "family_carnivine": [
+      "carnivine"
+    ],
+    "family_finneon": [
+      "finneon",
+      "lumineon"
+    ],
+    "family_snover": [
+      "snover",
+      "abomasnow"
+    ],
+    "family_rotom": [
+      "rotom"
+    ],
+    "family_uxie": [
+      "uxie"
+    ],
+    "family_mesprit": [
+      "mesprit"
+    ],
+    "family_azelf": [
+      "azelf"
+    ],
+    "family_dialga": [
+      "dialga"
+    ],
+    "family_palkia": [
+      "palkia"
+    ],
+    "family_heatran": [
+      "heatran"
+    ],
+    "family_regigigas": [
+      "regigigas"
+    ],
+    "family_giratina": [
+      "giratina"
+    ],
+    "family_cresselia": [
+      "cresselia"
+    ],
+    "family_phione": [
+      "phione"
+    ],
+    "family_manaphy": [
+      "manaphy"
+    ],
+    "family_darkrai": [
+      "darkrai"
+    ],
+    "family_shaymin": [
+      "shaymin"
+    ],
+    "family_arceus": [
+      "arceus"
+    ],
+    "family_victini": [
+      "victini"
+    ],
+    "family_snivy": [
+      "snivy",
+      "servine",
+      "serperior"
+    ],
+    "family_tepig": [
+      "tepig",
+      "pignite",
+      "emboar"
+    ],
+    "family_oshawott": [
+      "oshawott",
+      "dewott",
+      "samurott"
+    ],
+    "family_patrat": [
+      "patrat",
+      "watchog"
+    ],
+    "family_lillipup": [
+      "lillipup",
+      "herdier",
+      "stoutland"
+    ],
+    "family_purrloin": [
+      "purrloin",
+      "liepard"
+    ],
+    "family_pansage": [
+      "pansage",
+      "simisage"
+    ],
+    "family_pansear": [
+      "pansear",
+      "simisear"
+    ],
+    "family_panpour": [
+      "panpour",
+      "simipour"
+    ],
+    "family_munna": [
+      "munna",
+      "musharna"
+    ],
+    "family_pidove": [
+      "pidove",
+      "tranquill",
+      "unfezant"
+    ],
+    "family_blitzle": [
+      "blitzle",
+      "zebstrika"
+    ],
+    "family_roggenrola": [
+      "roggenrola",
+      "boldore",
+      "gigalith"
+    ],
+    "family_woobat": [
+      "woobat",
+      "swoobat"
+    ],
+    "family_drilbur": [
+      "drilbur",
+      "excadrill"
+    ],
+    "family_audino": [
+      "audino"
+    ],
+    "family_timburr": [
+      "timburr",
+      "gurdurr",
+      "conkeldurr"
+    ],
+    "family_tympole": [
+      "tympole",
+      "palpitoad",
+      "seismitoad"
+    ],
+    "family_throh": [
+      "throh"
+    ],
+    "family_sawk": [
+      "sawk"
+    ],
+    "family_sewaddle": [
+      "sewaddle",
+      "swadloon",
+      "leavanny"
+    ],
+    "family_venipede": [
+      "venipede",
+      "whirlipede",
+      "scolipede"
+    ],
+    "family_cottonee": [
+      "cottonee",
+      "whimsicott"
+    ],
+    "family_petilil": [
+      "petilil",
+      "lilligant"
+    ],
+    "family_basculin": [
+      "basculin"
+    ],
+    "family_sandile": [
+      "sandile",
+      "krokorok",
+      "krookodile"
+    ],
+    "family_darumaka": [
+      "darumaka",
+      "darmanitan"
+    ],
+    "family_maractus": [
+      "maractus"
+    ],
+    "family_dwebble": [
+      "dwebble",
+      "crustle"
+    ],
+    "family_scraggy": [
+      "scraggy",
+      "scrafty"
+    ],
+    "family_sigilyph": [
+      "sigilyph"
+    ],
+    "family_yamask": [
+      "yamask",
+      "cofagrigus"
+    ],
+    "family_tirtouga": [
+      "tirtouga",
+      "carracosta"
+    ],
+    "family_archen": [
+      "archen",
+      "archeops"
+    ],
+    "family_trubbish": [
+      "trubbish",
+      "garbodor"
+    ],
+    "family_zorua": [
+      "zorua",
+      "zoroark"
+    ],
+    "family_minccino": [
+      "minccino",
+      "cinccino"
+    ],
+    "family_gothita": [
+      "gothita",
+      "gothorita",
+      "gothitelle"
+    ],
+    "family_solosis": [
+      "solosis",
+      "duosion",
+      "reuniclus"
+    ],
+    "family_ducklett": [
+      "ducklett",
+      "swanna"
+    ],
+    "family_vanillite": [
+      "vanillite",
+      "vanillish",
+      "vanilluxe"
+    ],
+    "family_deerling": [
+      "deerling",
+      "sawsbuck"
+    ],
+    "family_emolga": [
+      "emolga"
+    ],
+    "family_karrablast": [
+      "karrablast",
+      "escavalier"
+    ],
+    "family_foongus": [
+      "foongus",
+      "amoonguss"
+    ],
+    "family_frillish": [
+      "frillish",
+      "jellicent"
+    ],
+    "family_alomomola": [
+      "alomomola"
+    ],
+    "family_joltik": [
+      "joltik",
+      "galvantula"
+    ],
+    "family_ferroseed": [
+      "ferroseed",
+      "ferrothorn"
+    ],
+    "family_klink": [
+      "klink",
+      "klang",
+      "klinklang"
+    ],
+    "family_tynamo": [
+      "tynamo",
+      "eelektrik",
+      "eelektross"
+    ],
+    "family_elgyem": [
+      "elgyem",
+      "beheeyem"
+    ],
+    "family_litwick": [
+      "litwick",
+      "lampent",
+      "chandelure"
+    ],
+    "family_axew": [
+      "axew",
+      "fraxure",
+      "haxorus"
+    ],
+    "family_cubchoo": [
+      "cubchoo",
+      "beartic"
+    ],
+    "family_cryogonal": [
+      "cryogonal"
+    ],
+    "family_shelmet": [
+      "shelmet",
+      "accelgor"
+    ],
+    "family_stunfisk": [
+      "stunfisk"
+    ],
+    "family_mienfoo": [
+      "mienfoo",
+      "mienshao"
+    ],
+    "family_druddigon": [
+      "druddigon"
+    ],
+    "family_golett": [
+      "golett",
+      "golurk"
+    ],
+    "family_pawniard": [
+      "pawniard",
+      "bisharp"
+    ],
+    "family_bouffalant": [
+      "bouffalant"
+    ],
+    "family_rufflet": [
+      "rufflet",
+      "braviary"
+    ],
+    "family_vullaby": [
+      "vullaby",
+      "mandibuzz"
+    ],
+    "family_heatmor": [
+      "heatmor"
+    ],
+    "family_durant": [
+      "durant"
+    ],
+    "family_deino": [
+      "deino",
+      "zweilous",
+      "hydreigon"
+    ],
+    "family_larvesta": [
+      "larvesta",
+      "volcarona"
+    ],
+    "family_cobalion": [
+      "cobalion"
+    ],
+    "family_terrakion": [
+      "terrakion"
+    ],
+    "family_virizion": [
+      "virizion"
+    ],
+    "family_tornadus": [
+      "tornadus"
+    ],
+    "family_thundurus": [
+      "thundurus"
+    ],
+    "family_reshiram": [
+      "reshiram"
+    ],
+    "family_zekrom": [
+      "zekrom"
+    ],
+    "family_landorus": [
+      "landorus"
+    ],
+    "family_kyurem": [
+      "kyurem"
+    ],
+    "family_keldeo": [
+      "keldeo"
+    ],
+    "family_meloetta": [
+      "meloetta"
+    ],
+    "family_genesect": [
+      "genesect"
+    ],
+    "family_meltan": [
+      "meltan",
+      "melmetal"
+    ]
+  }
+}
