@@ -2,15 +2,6 @@
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
 	<option value="tsa-2" cup="sorcerous">Silph Sorcerous Cup</option>
-	<option value="tsa-2" cup="forest">Silph Forest Cup</option>
-	<option value="tsa-2" cup="voyager">Silph Voyager Cup</option>
-	<option value="tsa-2" cup="toxic">Silph Toxic Cup</option>
-	<option value="tsa-2" cup="rose">Silph Rose Cup</option>
-	<option value="tsa-2" cup="fusion">Silph Fusion Cup</option>
-	<option value="tsa-2" cup="timeless">Silph Timeless Cup</option>
-	<option value="tsa-2" cup="ferocious">Silph Ferocious Cup</option>
-	<option value="tsa-2" cup="sinister">Silph Sinister Cup</option>
-	<option value="community" cup="grunt-4">Grunt Cup Season 4</option>
 
 	<?php if((strpos($_SERVER['REQUEST_URI'], 'battle') !== false)||(strpos($_SERVER['REQUEST_URI'], 'rankings') !== false)): ?>
 		<option value="custom" cup="custom">Custom</option>

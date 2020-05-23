@@ -4326,7 +4326,7 @@
 				"speciesId": "muk_alolan",
 				"fastMove": "SNARL",
 				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"],
-				"weight": 62
+				"weight": 55
 			},
 			{
 				"speciesId": "hypno",
@@ -4335,8 +4335,11 @@
 			},
 			{
 				"speciesId": "raticate_alolan",
-				"chargedMoves": ["CRUNCH","HYPER_FANG"],
-				"weight": 7
+				"chargedMoves": ["CRUNCH","HYPER_FANG"]
+			},
+			{
+				"speciesId": "linoone_galarian",
+				"weight": 20
 			},
 			{
 				"speciesId": "golbat",

@@ -1877,6 +1877,23 @@
             "cp2500": [40, 15, 15, 15]
         }
     }, {
+	    "dex": 52,
+	    "speciesName": "Meowth (Galarian)",
+	    "speciesId": "meowth_galarian",
+	    "baseStats": {
+	        "atk": 115,
+	        "def": 92,
+	        "hp": 137
+	    },
+	    "types": ["steel", "none"],
+	    "fastMoves": ["SCRATCH", "METAL_CLAW"],
+	    "chargedMoves": ["NIGHT_SLASH", "GYRO_BALL", "DIG"],
+		"tags": ["galarian"],
+	    "defaultIVs": {
+			"cp1500": [40, 15, 15, 15],
+            "cp2500": [40, 15, 15, 15]
+	    }
+	}, {
         "dex": 52,
         "speciesName": "Meowth (Shadow)",
         "speciesId": "meowth_shadow",
@@ -2792,6 +2809,23 @@
         },
         "eliteMoves": ["CUT"]
     }, {
+	    "dex": 83,
+	    "speciesName": "Farfetchd (Galarian)",
+	    "speciesId": "farfetchd_galarian",
+	    "baseStats": {
+	        "atk": 174,
+	        "def": 114,
+	        "hp": 141
+	    },
+	    "types": ["fighting", "none"],
+	    "fastMoves": ["ROCK_SMASH", "FURY_CUTTER"],
+	    "chargedMoves": ["BRICK_BREAK", "BRAVE_BIRD", "LEAF_BLADE"],
+		"tags": ["galarian"],
+	    "defaultIVs": {
+			"cp1500": [40, 15, 15, 15],
+            "cp2500": [40, 15, 15, 15]
+	    }
+	}, {
         "dex": 84,
         "speciesName": "Doduo",
         "speciesId": "doduo",
@@ -6906,23 +6940,23 @@
             "cp2500": [40, 15, 15, 15]
         }
     }, {
-        "dex": 263,
-        "speciesName": "Zigzagoon (Galarian)",
-        "speciesId": "zigzagoon_galarian",
-        "baseStats": {
-            "atk": 58,
-            "def": 80,
-            "hp": 116
-        },
-        "types": ["normal", "dark"],
-        "fastMoves": ["ROCK_SMASH", "TACKLE"],
-        "chargedMoves": ["DIG", "GRASS_KNOT", "THUNDERBOLT"],
-        "defaultIVs": {
-            "cp1500": [40, 15, 15, 15],
+	    "dex": 263,
+	    "speciesName": "Zigzagoon (Galarian)",
+	    "speciesId": "zigzagoon_galarian",
+	    "baseStats": {
+	        "atk": 58,
+	        "def": 80,
+	        "hp": 116
+	    },
+	    "types": ["dark", "normal"],
+	    "fastMoves": ["TACKLE", "TAKE_DOWN"],
+	    "chargedMoves": ["DIG", "BODY_SLAM", "SWIFT"],
+		"tags": ["galarian"],
+	    "defaultIVs": {
+			"cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        },
-        "tags": ["galarian"]
-    }, {
+	    }
+	}, {
         "dex": 264,
         "speciesName": "Linoone",
         "speciesId": "linoone",
@@ -6939,23 +6973,23 @@
             "cp2500": [40, 15, 15, 15]
         }
     }, {
-        "dex": 264,
-        "speciesName": "Linoone (Galarian)",
-        "speciesId": "linoone_galarian",
-        "baseStats": {
-            "atk": 142,
-            "def": 128,
-            "hp": 186
-        },
-        "types": ["normal", "dark"],
-        "fastMoves": ["SHADOW_CLAW", "TACKLE"],
-        "chargedMoves": ["DIG", "GRASS_KNOT", "THUNDER"],
-        "defaultIVs": {
-            "cp1500": [38.5, 5, 12, 11],
+	    "dex": 264,
+	    "speciesName": "Linoone (Galarian)",
+	    "speciesId": "linoone_galarian",
+	    "baseStats": {
+	        "atk": 142,
+	        "def": 128,
+	        "hp": 186
+	    },
+	    "types": ["dark", "normal"],
+	    "fastMoves": ["SNARL", "LICK"],
+	    "chargedMoves": ["DIG", "BODY_SLAM", "GUNK_SHOT"],
+		"tags": ["galarian"],
+	    "defaultIVs": {
+			"cp1500": [38.5, 5, 12, 11],
             "cp2500": [40, 15, 15, 15]
-        },
-        "tags": ["galarian"]
-    }, {
+	    }
+	}, {
         "dex": 265,
         "speciesName": "Wurmple",
         "speciesId": "wurmple",
@@ -13023,6 +13057,23 @@
             "cp2500": [40, 15, 15, 15]
         }
     }, {
+	    "dex": 554,
+	    "speciesName": "Darumaka (Galarian)",
+	    "speciesId": "darumaka_galarian",
+	    "baseStats": {
+	        "atk": 153,
+	        "def": 86,
+	        "hp": 172
+	    },
+	    "types": ["ice", "none"],
+	    "fastMoves": ["TACKLE", "ICE_FANG"],
+	    "chargedMoves": ["ICE_PUNCH", "ICE_BEAM"],
+		"tags": ["galarian"],
+	    "defaultIVs": {
+			"cp1500": [40, 15, 15, 15],
+            "cp2500": [40, 15, 15, 15]
+	    }
+	}, {
         "dex": 555,
         "speciesId": "darmanitan_standard",
         "speciesName": "Darmanitan (Standard)",
@@ -13039,6 +13090,40 @@
             "cp2500": [29, 5, 15, 14]
         }
     }, {
+	    "dex": 555,
+	    "speciesName": "Darmanitan (Galarian)",
+	    "speciesId": "darmanitan_galarian_standard",
+	    "baseStats": {
+	        "atk": 263,
+	        "def": 114,
+	        "hp": 233
+	    },
+	    "types": ["ice", "none"],
+	    "fastMoves": ["TACKLE", "ICE_FANG"],
+	    "chargedMoves": ["OVERHEAT", "AVALANCHE", "SUPER_POWER", "ICE_PUNCH"],
+		"tags": ["galarian"],
+	    "defaultIVs": {
+			"cp1500": [17.5, 9, 14, 10],
+            "cp2500": [29, 5, 15, 14]
+	    }
+	}, {
+	    "dex": 555,
+	    "speciesName": "Darmanitan (Galarian Zen)",
+	    "speciesId": "darmanitan_galarian_zen",
+	    "baseStats": {
+	        "atk": 323,
+	        "def": 123,
+	        "hp": 233
+	    },
+	    "types": ["ice", "fire"],
+	    "fastMoves": ["TACKLE", "ICE_FANG"],
+	    "chargedMoves": ["OVERHEAT", "AVALANCHE", "SUPER_POWER", "ICE_PUNCH"],
+		"tags": ["galarian"],
+	    "defaultIVs": {
+			"cp1500": [15, 5, 11, 6],
+            "cp2500": [24, 10, 13, 14]
+	    }
+	}, {
         "dex": 555,
         "speciesId": "darmanitan_zen",
         "speciesName": "Darmanitan (Zen)",
@@ -14193,6 +14278,23 @@
             "cp2500": [40, 15, 15, 15]
         }
     }, {
+	    "dex": 618,
+	    "speciesName": "Stunfisk (Galarian)",
+	    "speciesId": "stunfisk_galarian",
+	    "baseStats": {
+	        "atk": 144,
+	        "def": 171,
+	        "hp": 240
+	    },
+	    "types": ["ground", "steel"],
+	    "fastMoves": ["MUD_SHOT", "METAL_CLAW"],
+	    "chargedMoves": ["EARTHQUAKE", "FLASH_CANNON", "MUDDY_WATER", "ROCK_SLIDE"],
+		"tags": ["galarian"],
+	    "defaultIVs": {
+			"cp1500": [26, 7, 15, 6],
+            "cp2500": [40, 15, 15, 15]
+	    }
+	}, {
         "dex": 619,
         "speciesId": "mienfoo",
         "speciesName": "Mienfoo",
