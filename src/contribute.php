@@ -42,8 +42,7 @@ require_once 'header.php'; ?>
 		<div class="supporter">jkg5150</div>
 		<div class="supporter">jrj1986</div>
 		<div class="supporter">robbied888</div>
-
-		jrj1986
+		<div class="supporter">PoGoCabCo</div>
 	</div>
 
 	<h2 class="center">Master Supporters</h2>
@@ -134,6 +133,14 @@ require_once 'header.php'; ?>
 		<div class="supporter-container">
 			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/spieletrend.png"/>
 			<div class="supporter"><a href="https://www.youtube.com/spieletrend" target="_blank">Daniel Schilling</a></div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/jigglydad.png"/>
+			<div class="supporter"><a href="http://jigglydad.com" target="_blank">J1gglyDad</a></div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/osmopvp.png"/>
+			<div class="supporter"><a href="https://discord.gg/RqUV4VA" target="_blank">OsMo PvP</a></div>
 		</div>
 	</div>
 </div>
