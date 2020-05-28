@@ -55,6 +55,10 @@ require_once 'header.php';
 				<h3>Shield Baiting</h3>
 				<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
 			</div>
+			<div class="team-option">
+				<h3>Show Threat Movesets</h3>
+				<div class="check show-movesets"><span></span>Show movesets of Pokemon in the threats table</div>
+			</div>
 		</div>
 		<p>Note that links will not currently preserve these advanced settings.</p>
 	</div>

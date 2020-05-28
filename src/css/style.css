@@ -2275,6 +2275,11 @@ select, input {
 .article .meta-table .region-label.galar {
   color: #946000;
 }
+.article .threats-table .moveset-label{
+  font-size:10px;
+  font-style: italic;
+  font-weight: normal;
+}
 
 .article-item {
   margin-bottom: 10px;
