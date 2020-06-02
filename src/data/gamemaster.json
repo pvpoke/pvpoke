@@ -15022,7 +15022,58 @@
             "cp2500": [26, 5, 6, 12]
         },
         "tags": ["mythical"]
-    }],
+    }, {
+	    "dex": 862,
+	    "speciesName": "Obstagoon",
+	    "speciesId": "obstagoon",
+	    "baseStats": {
+	        "atk": 180,
+	        "def": 194,
+	        "hp": 212
+	    },
+	    "types": ["dark", "normal"],
+	    "fastMoves": ["COUNTER", "LICK"],
+	    "chargedMoves": ["CROSS_CHOP", "NIGHT_SLASH", "HYPER_BEAM", "GUNK_SHOT"],
+	    "defaultIVs": {
+			"cp1500": [21, 5, 10, 15],
+            "cp2500": [36, 14, 15, 15]
+	    },
+		"tags": ["galarian"]
+	}, {
+	    "dex": 863,
+	    "speciesName": "Perrserker",
+	    "speciesId": "perrserker",
+	    "baseStats": {
+	        "atk": 195,
+	        "def": 162,
+	        "hp": 172
+	    },
+	    "types": ["steel", "none"],
+	    "fastMoves": ["METAL_CLAW", "SHADOW_CLAW"],
+	    "chargedMoves": ["IRON_HEAD", "CLOSE_COMBAT", "PLAY_ROUGH", "FOUL_PLAY"],
+	    "defaultIVs": {
+			"cp1500": [23.5, 7, 8, 12],
+            "cp2500": [40, 15, 15, 15]
+	    },
+		"tags": ["galarian"]
+	}, {
+	    "dex": 865,
+	    "speciesName": "Sirfetchd",
+	    "speciesId": "sirfetchd",
+	    "baseStats": {
+	        "atk": 248,
+	        "def": 176,
+	        "hp": 158
+	    },
+	    "types": ["fighting", "none"],
+	    "fastMoves": ["COUNTER", "FURY_CUTTER"],
+	    "chargedMoves": ["CLOSE_COMBAT", "BRAVE_BIRD", "LEAF_BLADE", "NIGHT_SLASH"],
+	    "defaultIVs": {
+			"cp1500": [18.5, 6, 13, 10],
+            "cp2500": [31.5, 6, 13, 12]
+	    },
+		"tags": ["galarian"]
+	}],
     "moves": [{
         "moveId": "ACID",
         "name": "Acid",
