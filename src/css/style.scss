@@ -1562,7 +1562,7 @@ select, input{
 
 			&.buff{
 				background-image:url('../img/move_buff.png') !important;
-				background-position: center -50% !important;
+				background-position: center 0% !important;
 				background-repeat: no-repeat !important;
 
 				-webkit-animation: BUFF-ANIMATION 1.5s infinite; /* Safari 4+ */
@@ -1574,7 +1574,7 @@ select, input{
 
 			&.debuff{
 				background-image:url('../img/move_debuff.png') !important;
-				background-position: center 150% !important;
+				background-position: center 50% !important;
 				background-repeat: no-repeat !important;
 
 				-webkit-animation: DEBUFF-ANIMATION 1.5s infinite; /* Safari 4+ */
