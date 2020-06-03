@@ -713,6 +713,11 @@ var InterfaceMaster = (function () {
 				$details.find(".stats .rating").eq(4).html(Math.round(statRanges.hp.min * 10) / 10);
 				$details.find(".stats .rating").eq(5).html(Math.round(statRanges.hp.max * 10) / 10);
 
+				// Display Pokemon's highest IV's
+
+				var rank1Combo = pokemon.generateIVCombinations("overall", 1, 1)[0];
+				$details.find(".stats .rating").eq(6).html("Lvl " + rank1Combo.level + " " + rank1Combo.ivs.atk + "/" + rank1Combo.ivs.def + "/" + rank1Combo.ivs.hp);
+
 				// Show share link
 				var cup = $(".cup-select option:selected").val();
 				var cupName = $(".cup-select option:selected").html();

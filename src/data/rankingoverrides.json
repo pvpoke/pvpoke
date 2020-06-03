@@ -4319,10 +4319,6 @@
 		"cup": "sorcerous",
 		"pokemon": [
 			{
-				"speciesId": "obstagoon",
-				"weight": 30
-			},
-			{
 				"speciesId": "sealeo",
 				"fastMove": "POWDER_SNOW",
 				"weight": 10
@@ -4356,20 +4352,17 @@
 				"speciesId": "muk_alolan",
 				"fastMove": "SNARL",
 				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"],
-				"weight": 45
+				"weight": 62
 			},
 			{
 				"speciesId": "hypno",
 				"chargedMoves": ["THUNDER_PUNCH","SHADOW_BALL"],
-				"weight": 35
+				"weight": 45
 			},
 			{
 				"speciesId": "raticate_alolan",
-				"chargedMoves": ["CRUNCH","HYPER_FANG"]
-			},
-			{
-				"speciesId": "linoone_galarian",
-				"weight": 10
+				"chargedMoves": ["CRUNCH","HYPER_FANG"],
+				"weight": 7
 			},
 			{
 				"speciesId": "golbat",
