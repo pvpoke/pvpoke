@@ -34,6 +34,11 @@
 				"fastMove": "CONFUSION"
 			},
 			{
+				"speciesId": "sirfetchd",
+				"chargedMoves": ["LEAF_BLADE", "CLOSE_COMBAT"],
+				"weight": 4
+			},
+			{
 				"speciesId": "lickitung",
 				"chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
 			},
@@ -483,6 +488,14 @@
 			{
 				"speciesId": "venusaur",
 				"weight":8
+			},
+			{
+				"speciesId": "obstagoon",
+				"weight":4
+			},
+			{
+				"speciesId": "perrserker",
+				"weight":2
 			},
 			{
 				"speciesId": "meganium",
@@ -1862,6 +1875,15 @@
 			{
 				"speciesId": "alomomola",
 				"fastMove": "WATERFALL"
+			},
+			{
+				"speciesId": "obstagoon",
+				"weight": 6
+			},
+			{
+				"speciesId": "sirfetchd",
+				"chargedMoves": ["LEAF_BLADE", "CLOSE_COMBAT"],
+				"weight": 4
 			},
 			{
 				"speciesId": "garchomp",
@@ -4297,6 +4319,10 @@
 		"cup": "sorcerous",
 		"pokemon": [
 			{
+				"speciesId": "obstagoon",
+				"weight": 30
+			},
+			{
 				"speciesId": "sealeo",
 				"fastMove": "POWDER_SNOW",
 				"weight": 10
@@ -4330,12 +4356,12 @@
 				"speciesId": "muk_alolan",
 				"fastMove": "SNARL",
 				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"],
-				"weight": 55
+				"weight": 45
 			},
 			{
 				"speciesId": "hypno",
 				"chargedMoves": ["THUNDER_PUNCH","SHADOW_BALL"],
-				"weight": 45
+				"weight": 35
 			},
 			{
 				"speciesId": "raticate_alolan",
@@ -4343,7 +4369,7 @@
 			},
 			{
 				"speciesId": "linoone_galarian",
-				"weight": 20
+				"weight": 10
 			},
 			{
 				"speciesId": "golbat",

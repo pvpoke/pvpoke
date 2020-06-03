@@ -36,7 +36,7 @@
 	},
 	{
 		"speciesId":"cresselia",
-		"fastMove":"CONFUSION",
+		"fastMove":"PSYCHO_CUT",
 		"chargedMoves":["FUTURE_SIGHT","MOONBLAST"]
 	},
 	{
@@ -83,6 +83,21 @@
 		"speciesId":"snorlax",
 		"fastMove":"LICK",
 		"chargedMoves":["BODY_SLAM","EARTHQUAKE"]
+	},
+	{
+		"speciesId":"obstagoon",
+		"fastMove":"COUNTER",
+		"chargedMoves":["NIGHT_SLASH","CROSS_CHOP"]
+	},
+	{
+		"speciesId":"perrserker",
+		"fastMove":"SHADOW_CLAW",
+		"chargedMoves":["FOUL_PLAY","CLOSE_COMBAT"]
+	},
+	{
+		"speciesId":"sirfetchd",
+		"fastMove":"COUNTER",
+		"chargedMoves":["LEAF_BLADE","CLOSE_COMBAT"]
 	},
 	{
 		"speciesId":"mewtwo_armored",
