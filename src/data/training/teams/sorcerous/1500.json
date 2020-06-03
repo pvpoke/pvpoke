@@ -432,13 +432,6 @@
 				"weight":20
 			},
 			{
-				"speciesId": "tentacruel",
-				"fastMove": "POISON_JAB",
-				"chargedMoves": ["GUNK_SHOT","HYDRO_PUMP"],
-				"difficulty": 2,
-				"weight":2
-			},
-			{
 				"speciesId": "muk",
 				"fastMove": "POISON_JAB",
 				"chargedMoves": ["THUNDER_PUNCH","DARK_PULSE"],
