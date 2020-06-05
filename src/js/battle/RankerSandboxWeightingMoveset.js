@@ -428,6 +428,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if((cup.name == "goteamup")&&(battle.getCP() == 1500)){
+					iterations = 1;
+				}
+
 				if((cup.name == "voyager")&&(battle.getCP() == 1500)){
 					iterations = 1;
 				}
