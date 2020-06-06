@@ -51,7 +51,7 @@ An alternative to running pvpoke locally is using a docker container. That way y
 2. If you don't have Docker installed, install it [here](https://runnable.com/docker/getting-started/).
 3. Go into this directory with the Dockerfile in it.
 4. Run this command:
-```docker build -t pvpoke . & docker run -p 80:80 pvpoke```
+```docker build -t pvpoke . && docker run -p 80:80 pvpoke```
 5. Open this url in your browser: [localhost/pvpoke/src](http://localhost/pvpoke/src)
 
 ## Site Structure
