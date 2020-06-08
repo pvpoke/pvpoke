@@ -432,6 +432,19 @@ var GameMaster = (function () {
 				var stats = (pokemon.stats.hp * pokemon.stats.atk * pokemon.stats.def) / 1000;
 
 				if(stats >= minStats){
+					// Only include releasedGen 5  Pokemon
+					if((pokemon.dex > maxDexNumber)&&(releasedGen5.indexOf(pokemon.speciesId) == -1)&&(battle.getCup().name != "gen-5")){
+						continue;
+					}
+
+					if((battle.getCP() == 1500)&&(bannedList.indexOf(pokemon.speciesId) > -1)){
+						continue;
+					}
+
+					if(permaBannedList.indexOf(pokemon.speciesId) > -1){
+						continue;
+					}
+
 					// Process all filters
 					var allowed = false;
 					var includeIDFilter = false; // Flag to see if an ID filter should override other filters
@@ -489,25 +502,10 @@ var GameMaster = (function () {
 							allowed = true;
 						}
 
-						// Only include releasedGen 5  Pokemon
-
-						if((pokemon.dex > maxDexNumber)&&(releasedGen5.indexOf(pokemon.speciesId) == -1)&&(battle.getCup().name != "gen-5")){
-							allowed = false;
-						}
-
 						// Exclude Pokemon that match any of the exclude filters
-
 						if((! include)&&(filtersMatched > 0)&&(! includeIDFilter)){
 							allowed = false;
 						}
-					}
-
-					if((battle.getCP() == 1500)&&(bannedList.indexOf(pokemon.speciesId) > -1)){
-						allowed = false;
-					}
-
-					if(permaBannedList.indexOf(pokemon.speciesId) > -1){
-						allowed = false;
 					}
 
 					if(allowed){
