@@ -2,7 +2,7 @@
 	{
 		"slot": "Fighting",
 		"synergies": ["Dark","Anti-Flying"],
-		"weight": 6,
+		"weight": 4,
 		"pokemon": [
 			{
 				"speciesId": "toxicroak",
@@ -16,7 +16,7 @@
 				"fastMove": "COUNTER",
 				"chargedMoves": ["DYNAMIC_PUNCH","ICE_PUNCH"],
 				"difficulty": 2,
-				"weight":3
+				"weight":5
 			},
 			{
 				"speciesId": "medicham",
@@ -24,6 +24,13 @@
 				"chargedMoves": ["POWER_UP_PUNCH","PSYCHIC"],
 				"difficulty": 2,
 				"weight":4
+			},
+			{
+				"speciesId": "medicham",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["ICE_PUNCH","PSYCHIC"],
+				"difficulty": 2,
+				"weight":2
 			},
 			{
 				"speciesId": "wobbuffet",
@@ -51,14 +58,14 @@
 	{
 		"slot": "Psychic",
 		"synergies": ["Fighting","Fairy"],
-		"weight": 6,
+		"weight": 10,
 		"pokemon": [
 			{
 				"speciesId": "hypno",
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["THUNDER_PUNCH","SHADOW_BALL"],
 				"difficulty": 3,
-				"weight":14
+				"weight":18
 			},
 			{
 				"speciesId": "hypno",
@@ -86,7 +93,7 @@
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["PSYSHOCK","BULLDOZE"],
 				"difficulty": 2,
-				"weight":12
+				"weight":13
 			},
 			{
 				"speciesId": "claydol",
@@ -198,21 +205,21 @@
 				"fastMove": "LICK",
 				"chargedMoves": ["BODY_SLAM","EARTHQUAKE"],
 				"difficulty": 2,
-				"weight":12
+				"weight":2
 			},
 			{
 				"speciesId": "lickitung",
 				"fastMove": "LICK",
 				"chargedMoves": ["BODY_SLAM","POWER_WHIP"],
 				"difficulty": 2,
-				"weight":3
+				"weight":1
 			},
 			{
 				"speciesId": "linoone",
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["GRASS_KNOT","THUNDER"],
 				"difficulty": 2,
-				"weight":6
+				"weight":10
 			},
 			{
 				"speciesId": "bibarel",
@@ -296,28 +303,28 @@
 	{
 		"slot": "Anti-Flying",
 		"synergies": ["Psychic","Fairy"],
-		"weight": 3,
+		"weight": 5,
 		"pokemon": [
 			{
 				"speciesId": "sealeo",
 				"fastMove": "POWDER_SNOW",
 				"chargedMoves": ["BODY_SLAM","AURORA_BEAM"],
 				"difficulty": 3,
-				"weight":5
+				"weight":3
 			},
 			{
 				"speciesId": "froslass",
 				"fastMove": "POWDER_SNOW",
 				"chargedMoves": ["AVALANCHE","SHADOW_BALL"],
 				"difficulty": 3,
-				"weight":30
+				"weight":40
 			},
 			{
 				"speciesId": "sandslash_alolan",
 				"fastMove": "POWDER_SNOW",
 				"chargedMoves": ["ICE_PUNCH","BULLDOZE"],
 				"difficulty": 2,
-				"weight":15
+				"weight":10
 			},
 			{
 				"speciesId": "glalie",
@@ -331,14 +338,14 @@
 				"fastMove": "POWDER_SNOW",
 				"chargedMoves": ["AVALANCHE","BULLDOZE"],
 				"difficulty": 2,
-				"weight":2
+				"weight":1
 			},
 			{
 				"speciesId": "cloyster",
 				"fastMove": "ICE_SHARD",
 				"chargedMoves": ["ICY_WIND","HYDRO_PUMP"],
 				"difficulty": 2,
-				"weight":4
+				"weight":2
 			},
 			{
 				"speciesId": "weavile",

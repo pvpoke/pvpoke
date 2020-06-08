@@ -132,7 +132,7 @@
 			},
 			{
 				"speciesId": "feraligatr",
-				"fastMove": "ICE_SHARD",
+				"fastMove": "ICE_FANG",
 				"chargedMoves": ["HYDRO_CANNON","CRUNCH"],
 				"difficulty": 2,
 				"weight":2
@@ -226,7 +226,7 @@
 	{
 		"slot": "Anti-Giratina 2",
 		"synergies": ["Anti-Registeel 1"],
-		"weight": 6,
+		"weight": 3,
 		"pokemon": [
 			{
 				"speciesId": "togekiss",
@@ -317,7 +317,7 @@
 	{
 		"slot": "Anti-Registeel 1",
 		"synergies": ["Giratina"],
-		"weight": 3,
+		"weight": 8,
 		"pokemon": [
 			{
 				"speciesId": "lucario",
@@ -338,7 +338,21 @@
 				"fastMove": "COUNTER",
 				"chargedMoves": ["MEGAHORN","DRILL_RUN"],
 				"difficulty": 3,
-				"weight":2
+				"weight":13
+			},
+			{
+				"speciesId": "obstagoon",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["NIGHT_SLASH","CROSS_CHOP"],
+				"difficulty": 3,
+				"weight":3
+			},
+			{
+				"speciesId": "obstagoon",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["NIGHT_SLASH","GUNK_SHOT"],
+				"difficulty": 3,
+				"weight":1
 			},
 			{
 				"speciesId": "blaziken",
@@ -422,7 +436,7 @@
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["HYDRO_CANNON","EARTHQUAKE"],
 				"difficulty": 2,
-				"weight":60
+				"weight":80
 			},
 			{
 				"speciesId": "flygon",
@@ -492,14 +506,14 @@
 	{
 		"slot": "Flex",
 		"synergies": ["Anti-Giratina 1","Anti-Registeel 1"],
-		"weight": 5,
+		"weight": 8,
 		"pokemon": [
 			{
 				"speciesId": "venusaur",
 				"fastMove": "VINE_WHIP",
 				"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"],
 				"difficulty": 2,
-				"weight": 25
+				"weight": 12
 			},
 			{
 				"speciesId": "meganium",
@@ -513,7 +527,7 @@
 				"fastMove": "BULLET_SEED",
 				"chargedMoves": ["POWER_WHIP","FLASH_CANNON"],
 				"difficulty": 2,
-				"weight": 1
+				"weight": 3
 			},
 			{
 				"speciesId": "sceptile",
@@ -554,15 +568,15 @@
 				"speciesId": "cresselia",
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["FUTURE_SIGHT","MOONBLAST"],
-				"difficulty": 3,
-				"weight":5
+				"difficulty": 2,
+				"weight":2
 			},
 			{
 				"speciesId": "cresselia",
 				"fastMove": "PSYCHO_CUT",
 				"chargedMoves": ["FUTURE_SIGHT","MOONBLAST"],
 				"difficulty": 3,
-				"weight":15
+				"weight":45
 			},
 			{
 				"speciesId": "lugia",
@@ -625,7 +639,7 @@
 				"fastMove": "LOCK_ON",
 				"chargedMoves": ["FLASH_CANNON","FOCUS_BLAST"],
 				"difficulty": 3,
-				"weight": 20
+				"weight": 40
 			},
 			{
 				"speciesId": "cobalion",

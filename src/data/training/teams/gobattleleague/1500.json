@@ -114,7 +114,7 @@
 	{
 		"slot": "Fighting",
 		"synergies": ["Tank"],
-		"weight": 2,
+		"weight": 3,
 		"pokemon": [
 			{
 				"speciesId": "medicham",
@@ -128,7 +128,7 @@
 				"fastMove": "COUNTER",
 				"chargedMoves": ["POWER_UP_PUNCH","FOUL_PLAY"],
 				"difficulty": 2,
-				"weight":1
+				"weight":2
 			},
 			{
 				"speciesId": "medicham",
@@ -233,7 +233,14 @@
 				"fastMove": "LOCK_ON",
 				"chargedMoves": ["FLASH_CANNON","FOCUS_BLAST"],
 				"difficulty": 3,
-				"weight":60
+				"weight":35
+			},
+			{
+				"speciesId": "stunfisk_galarian",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["ROCK_SLIDE","EARTHQUAKE"],
+				"difficulty": 3,
+				"weight":25
 			},
 			{
 				"speciesId": "regirock",

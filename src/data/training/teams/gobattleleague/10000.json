@@ -9,28 +9,28 @@
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["SHADOW_BALL","OMINOUS_WIND"],
 				"difficulty": 3,
-				"weight":25
+				"weight":4
 			},
 			{
 				"speciesId": "giratina_origin",
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["SHADOW_BALL","DRAGON_PULSE"],
 				"difficulty": 3,
-				"weight":12
+				"weight":20
 			},
 			{
 				"speciesId": "palkia",
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["AQUA_TAIL","DRACO_METEOR"],
 				"difficulty": 3,
-				"weight":10
+				"weight":15
 			},
 			{
 				"speciesId": "reshiram",
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["CRUNCH","OVERHEAT"],
 				"difficulty": 3,
-				"weight":4
+				"weight":8
 			},
 			{
 				"speciesId": "reshiram",
@@ -43,8 +43,8 @@
 				"speciesId": "zekrom",
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["CRUNCH","WILD_CHARGE"],
-				"difficulty": 14,
-				"weight":1
+				"difficulty": 3,
+				"weight":8
 			},
 			{
 				"speciesId": "palkia",
@@ -471,14 +471,14 @@
 				"fastMove": "BULLET_PUNCH",
 				"chargedMoves": ["METEOR_MASH","EARTHQUAKE"],
 				"difficulty": 2,
-				"weight":30
+				"weight":25
 			},
 			{
 				"speciesId": "melmetal",
 				"fastMove": "THUNDER_SHOCK",
 				"chargedMoves": ["ROCK_SLIDE","SUPER_POWER"],
 				"difficulty": 2,
-				"weight":35
+				"weight":50
 			},
 			{
 				"speciesId": "cobalion",
@@ -631,7 +631,7 @@
 	},
 	{
 		"slot": "Anti-Flying 2",
-		"weight": 6,
+		"weight": 3,
 		"synergies": ["Giratina"],
 		"pokemon": [
 			{
@@ -820,7 +820,7 @@
 	},
 	{
 		"slot": "Ground",
-		"weight": 6,
+		"weight": 14,
 		"synergies": ["Dark","Anti-Flying"],
 		"pokemon": [
 			{
