@@ -611,6 +611,16 @@ var GameMaster = (function () {
 									}
 								}
 							}
+							
+							// beam search
+							if (param == "beam") {
+								for(var k = 0; k < pokemon.chargedMovePool.length; k++){
+									// only includes **REAL** beams
+									if ((pokemon.chargedMovePool[k].moveId == "HYPER_BEAM")||(pokemon.chargedMovePool[k].moveId === "SOLAR_BEAM")) {
+										valid = true;
+									}
+								}
+							}
 
 							// move name/type serach
 							else {
