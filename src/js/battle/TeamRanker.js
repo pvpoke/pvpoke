@@ -98,6 +98,7 @@ var RankerMaster = (function () {
 					for(var i = 0; i < pokemonList.length; i++){
 						if(exclusionList.indexOf(pokemonList[i].speciesId) > -1){
 							pokemonList.splice(i, 1);
+							i--;
 						}
 					}
 				}

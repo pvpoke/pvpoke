@@ -28,6 +28,8 @@ function PokeMultiSelect(element){
 		bait: true
 	}
 
+	var cliffhangerMode = false;
+
 	this.init = function(pokes, b){
 		pokemon = pokes;
 		battle = b;
@@ -115,6 +117,13 @@ function PokeMultiSelect(element){
 
 		$el.find(".rankings-container").html('');
 
+		// For Cliffhanger, calculate points
+		var cliffObj;
+
+		if(cliffhangerMode){
+			cliffObj = self.calculateCliffhangerPoints();
+		}
+
 		for(var i = 0; i < pokemonList.length; i++){
 
 			var pokemon = pokemonList[i];
@@ -139,10 +148,28 @@ function PokeMultiSelect(element){
 				$item.find(".moves").append(moveList[n].displayName);
 			}
 
+			if(cliffhangerMode){
+				$item.find(".name").prepend("<span class=\"cliffhanger-points\">"+pokemonList[i].cliffhangerPoints+"</span>");
+			}
+
 			$el.find(".rankings-container").append($item);
 		}
 
-		$el.find(".section-title .poke-count").html(pokemonList.length);
+		if(! cliffhangerMode){
+			$el.find(".section-title .poke-count").removeClass("error");
+			$el.find(".section-title .poke-count").html(pokemonList.length);
+			$el.find(".poke-max-count").html(maxPokemonCount);
+		} else{
+			$el.find(".section-title .poke-count").html(cliffObj.points);
+			$el.find(".section-title .poke-max-count").html(cliffObj.max + " points");
+
+			if(cliffObj.points > cliffObj.max){
+				$el.find(".section-title .poke-count").addClass("error");
+			} else{
+				$el.find(".section-title .poke-count").removeClass("error");
+			}
+		}
+
 
 		if(pokemonList.length >= maxPokemonCount){
 			$el.find(".add-poke-btn").hide();
@@ -384,6 +411,46 @@ function PokeMultiSelect(element){
 		pokemonList = pokemonList.splice(0, maxPokemonCount);
 		$el.find(".poke-max-count").html(maxPokemonCount);
 		self.updateListDisplay();
+	}
+
+	// Set cliffhanger mode to true or false
+
+	this.setCliffhangerMode = function(val){
+		cliffhangerMode = val;
+
+		self.updateListDisplay();
+	}
+
+	// Calculate a team's cliffhanger points, returns object with current points, maximum allowed, and tiers
+
+	this.calculateCliffhangerPoints = function(){
+		var tiers = [];
+		var points = 0;
+		var max = 0;
+
+		// Grab tiers from GM data
+
+		for(var i = 0 ; i < gm.data.cliffhangerTiers.length; i++){
+			if(gm.data.cliffhangerTiers[i].league == battle.getCP()){
+				tiers = gm.data.cliffhangerTiers[i].tiers;
+				max = gm.data.cliffhangerTiers[i].max;
+				break;
+			}
+		}
+
+		for(var i = 0; i < pokemonList.length; i++){
+			var searchId = pokemonList[i].speciesId.replace("_shadow",""); // Do this so Shadow and non-Shadow ID's match
+
+			for(var n = 0; n < tiers.length; n++){
+				if(tiers[n].pokemon.indexOf(searchId) > -1){
+					points += tiers[n].points;
+					pokemonList[i].cliffhangerPoints = tiers[n].points;
+					break;
+				}
+			}
+		}
+
+		return {points: points, max: max, tiers: tiers};
 	}
 
 	// Show or hide custom options when changing the cup select

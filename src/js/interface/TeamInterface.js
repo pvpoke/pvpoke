@@ -208,6 +208,10 @@ var InterfaceMaster = (function () {
 								if(cup == "sorcerous"){
 									$("#main h1").html("Team Wizard");
 								}
+
+								if(cup == "cliffhanger"){
+									multiSelectors[0].setCliffhangerMode(true);
+								}
 								battle.setCup(cup);
 								break;
 
@@ -645,6 +649,25 @@ var InterfaceMaster = (function () {
 					exclusionList.push(team[i].speciesId);
 				}
 
+				// In Cliffhanger, exclude Pokemon that would put the team over the point limit
+				var tiers = [];
+
+				if(battle.getCup().name == "cliffhanger"){
+					var cliffObj = multiSelectors[0].calculateCliffhangerPoints();
+					var remainingPoints = cliffObj.max - cliffObj.points;
+					tiers = cliffObj.tiers;
+
+					// Add ineligible tiers tot he exclusion list
+					for(var i = 0; i < tiers.length; i++){
+						if(remainingPoints < tiers[i].points){
+							for(var n = 0; n < tiers[i].pokemon.length; n++){
+								exclusionList.push(tiers[i].pokemon[n]);
+								exclusionList.push(tiers[i].pokemon[n]+"_shadow");
+							}
+						}
+					}
+				}
+
 				// Set targets for custom alternatives
 				if(multiSelectors[2].getPokemonList().length > 0){
 					ranker.setTargets(multiSelectors[2].getPokemonList());
@@ -760,6 +783,29 @@ var InterfaceMaster = (function () {
 						}
 
 						$row.find("th.name").append("<div class=\"region-label "+regionName.toLowerCase()+"\">"+regionName+" (" + regionNumber + ")</div>");
+					}
+
+					// Add points for alternative Pokemon for Cliffhanger
+					if(battle.getCup().name == "cliffhanger"){
+						var tierName = "";
+						var pointsName = "points";
+						var searchId = pokemon.speciesId.replace("_shadow","");
+						var points = 0;
+
+						for(var j = 0; j < tiers.length; j++){
+							if(tiers[j].pokemon.indexOf(searchId) > -1){
+								// Being sneaky here and borrowing Voyager Cup name colors
+								tierName = gm.data.pokemonRegions[j].name;
+								points = tiers[j].points;
+								break;
+							}
+						}
+
+						if(points == 1){
+							pointsName = "point";
+						}
+
+						$row.find("th.name").append("<div class=\"region-label "+tierName.toLowerCase()+"\">"+points+" "+pointsName+"</div>");
 					}
 
 					$(".alternatives-table tbody").append($row);
@@ -1208,6 +1254,8 @@ var InterfaceMaster = (function () {
 					$("#main h1").html("Team Builder");
 				}
 
+				multiSelectors[0].setCliffhangerMode(cup == "cliffhanger");
+
 				// Load ranking data for movesets
 				var key = battle.getCup().name + "overall" + battle.getCP();
 
@@ -1242,6 +1290,8 @@ var InterfaceMaster = (function () {
 					// Redirect to the custom rankings page
 					window.location.href = webRoot+'custom-rankings/';
 				}
+
+				multiSelectors[0].setCliffhangerMode(cup == "cliffhanger");
 			}
 
 			// Event handler for clicking the rate button

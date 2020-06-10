@@ -731,6 +731,10 @@ header{
 			display:block;
 		}
 
+		.poke-count.error{
+			color:#b9008f;
+		}
+
 		.format-select{
 			margin-top:62px;
 		}
@@ -782,6 +786,17 @@ header{
 
 				.name-container{
 					float:none;
+				}
+
+				span.cliffhanger-points{
+					font-weight: normal;
+				    border: 1px solid;
+				    border-radius: 20px;
+				    width: 20px;
+				    display: inline-block;
+				    text-align: center;
+				    margin-right: 5px;
+				    padding-top: 2px;
 				}
 
 				.moves{

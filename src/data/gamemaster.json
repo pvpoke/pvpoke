@@ -350,17 +350,18 @@
 	"cliffhangerTiers": [
 		{
 			"league": 1500,
+			"max": 17,
 			"tiers": [
 				{
-					"points": 9
+					"points": 9,
 					"pokemon": ["altaria","azumarill","skarmory","deoxys_defense","registeel","stunfisk_galarian","tropius"]
 				},
 				{
-					"points": 5
+					"points": 5,
 					"pokemon": ["bastiodon","bronzong","cresselia","ferrothorn","hypno","ivysaur","jirachi","marowak_alolan","medicham","meganium","melmetal","probopass","regice","regirock","sableye","scrafty","swampert","umbreon","venusaur","zweilous"]
 				},
 				{
-					"points": 1
+					"points": 1,
 					"pokemon": ["cherrim_sunny","clefable","dewgong","forretress","gardevoir","gliscor","golbat","haunter","jumpluff","lanturn","lapras","lugia","mantine","mew","muk_alolan","noctowl","obstagoon","perrserker","quagsire","raichu","raichu_alolan","raikou","shiftry","stunfisk","togekiss","toxicroak","uxie","victreebel","vigoroth","whiscash","wigglytuff","zapdos"]
 				}
 			]

@@ -27,16 +27,13 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.15.0 (May 20, 2020)</h4>
+	<h4>v1.15.2 (June 10, 2020)</h4>
 	<ul>
-		<li>The Team Builder has been updated with new advanced options:</li>
+		<li>GO Stadium Cliffhanger support added to Team Builder:</li>
 		<ul>
-			<li>Custom groups for the Team Builder's threats and alternatives lists. This will allow you to evaluate specific Pokemon or build a custom meta scorecard for your team.</li>
-			<li>Option for the number of threats and alternatives to show.</li>
-			<li>Toggle for Shadow Pokemon in the results.</li>
-			<li>Toggle for shield baiting in the Team Builder's simulations.</li>
+			<li>Display for team and Pokemon points</li>
+			<li>Alternatives are filtered based on your remaining points</li>
 		</ul>
-		<li>The Team Builder includes new letter grades for your team to provide general feedback on coverage and composition.</li>
 	</ul>
 
 	<h4>v1.14.19 (May 11, 2020)</h4>
