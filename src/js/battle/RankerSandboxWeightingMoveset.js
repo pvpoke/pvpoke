@@ -570,7 +570,11 @@ var RankerMaster = (function () {
 						rankings[i].moves = {fastMoves: fastMoves, chargedMoves: chargedMoves};
 					}
 
-					rankings[i].moveStr = generateURLMoveStr(pokemon);
+					rankings[i].moveset = [pokemon.fastMove.moveId, pokemon.chargedMoves[0].moveId];
+
+					if(pokemon.chargedMoves[1]){
+						rankings[i].moveset.push(pokemon.chargedMoves[1].moveId);
+					}
 
 					rankings[i].score = rankings[i].scores[rankings[i].scores.length-1];
 
@@ -594,6 +598,7 @@ var RankerMaster = (function () {
 						delete match.score;
 						delete match.adjRating;
 						delete match.adjOpRating;
+						delete match.opRating;
 
 						rankings[i].counters.push(rankings[i].matches[j]);
 					}
@@ -612,6 +617,7 @@ var RankerMaster = (function () {
 						delete match.score;
 						delete match.adjRating;
 						delete match.adjOpRating;
+						delete match.OpRating;
 
 						if(match.rating > 500){
 							rankings[i].matchups.push(match);

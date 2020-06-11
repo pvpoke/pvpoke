@@ -788,13 +788,11 @@ function Pokemon(id, i, b){
 			var r = rankings[i];
 
 			if(r.speciesId == self.speciesId){
-				var moveIndexes = r.moveStr.split("-");
+				self.selectMove("fast", r.moveset[0]);
+				self.selectMove("charged", r.moveset[1], 0);
 
-				self.selectMove("fast", self.fastMovePool[moveIndexes[0]].moveId);
-				self.selectMove("charged", self.chargedMovePool[moveIndexes[1]-1].moveId, 0);
-
-				if(moveIndexes[2] != 0){
-					self.selectMove("charged", self.chargedMovePool[moveIndexes[2]-1].moveId, 1);
+				if(r.moveset.length > 2){
+					self.selectMove("charged", r.moveset[2], 1);
 				}
 
 				// Assign overall score for reference

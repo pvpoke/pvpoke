@@ -140,14 +140,12 @@ var RankerMaster = (function () {
 					var r = rankings[i];
 					var pokemon = new Pokemon(r.speciesId, 0, battle);
 					pokemon.initialize();
-
-					var arr = r.moveStr.split("-");
-					pokemon.selectMove("fast", pokemon.fastMovePool[arr[0]].moveId);
-					pokemon.selectMove("charged", pokemon.chargedMovePool[arr[1]-1].moveId, 0);
+					pokemon.selectMove("fast", r.moveset[0]);
+					pokemon.selectMove("charged", r.moveset[1], 0);
 
 					// Only calculate with two Charged Moves
-					if((arr.length > 2)&&(arr[2] != "0")){
-						pokemon.selectMove("charged", pokemon.chargedMovePool[arr[2]-1].moveId, 1);
+					if(r.moveset.length > 2){
+						pokemon.selectMove("charged", r.moveset[2], 1);
 					}
 
 					var consistencyScore = pokemon.calculateConsistency();

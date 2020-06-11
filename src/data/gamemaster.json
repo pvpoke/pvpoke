@@ -7,18 +7,6 @@
         "shadowDefMult": 0.83333331
     },
     "rankingScenarios": [{
-        "slug": "leads",
-        "shields": [1, 1],
-        "energy": [0, 0]
-    }, {
-        "slug": "closers",
-        "shields": [0, 0],
-        "energy": [0, 0]
-    }, {
-        "slug": "switches",
-        "shields": [1, 1],
-        "energy": [6, 0]
-    }, {
         "slug": "chargers",
         "shields": [1, 1],
         "energy": [6, 0]
@@ -4458,8 +4446,7 @@
         },
         "types": ["electric", "flying"],
         "fastMoves": ["CHARGE_BEAM", "THUNDER_SHOCK"],
-        "chargedMoves": ["THUNDER", "THUNDERBOLT", "ZAP_CANNON", "ANCIENT_POWER", "DRILL_PECK", "DISCHARGE"],
-		"legacyMoves": ["DISCHARGE"],
+        "chargedMoves": ["THUNDER", "THUNDERBOLT", "ZAP_CANNON", "ANCIENT_POWER", "DRILL_PECK"],
         "tags": ["legendary", "shadoweligible"],
         "defaultIVs": {
             "cp1500": [15, 13, 14, 15],

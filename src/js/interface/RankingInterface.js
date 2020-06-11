@@ -142,18 +142,29 @@ var InterfaceMaster = (function () {
 
 					// Get names of of ranking moves
 
-					var moveNameStr = '';
+					var moveNameStr = "";
 
-					var arr = r.moveStr.split("-");
-					var move = pokemon.chargedMovePool[arr[1]-1];
+					// Put together the recommended moveset string
+					for(var n = 0; n < r.moveset.length; n++){
+						if(n == 0){
+							for(var j = 0; j < pokemon.fastMovePool.length; j++){
+								if(r.moveset[n] == pokemon.fastMovePool[j].moveId){
+									moveNameStr += pokemon.fastMovePool[j].displayName;
+									break;
+								}
+							}
+						} else{
+							for(var j = 0; j < pokemon.chargedMovePool.length; j++){
+								if(r.moveset[n] == pokemon.chargedMovePool[j].moveId){
+									moveNameStr += pokemon.chargedMovePool[j].displayName;
+									break;
+								}
+							}
+						}
 
-					moveNameStr = pokemon.fastMovePool[arr[0]].displayName;
-
-					moveNameStr += ", " + move.displayName;
-
-					if((arr.length > 2)&&(arr[2] != "0")){
-						move = pokemon.chargedMovePool[arr[2]-1];
-						moveNameStr += ", " + move.displayName;
+						if(n < r.moveset.length - 1){
+							moveNameStr += ", "
+						}
 					}
 
 					// Is this the best way to add HTML content? I'm gonna go with no here. But does it work? Yes!
@@ -453,6 +464,8 @@ var InterfaceMaster = (function () {
 				pokemon.initialize(battle.getCP(), "gamemaster");
 				pokemon.selectRecommendedMoveset(category);
 
+				var pokeMoveStr = pokemon.generateURLMoveStr();
+
 				// If overall, display score for each category
 
 				if(r.scores){
@@ -573,7 +586,7 @@ var InterfaceMaster = (function () {
 					opponent.initialize(battle.getCP(), "gamemaster");
 					opponent.selectRecommendedMoveset(category);
 
-					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+r.moveStr+"/";
+					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+pokeMoveStr+"/";
 
 					// Append opponent's move string
 
@@ -616,7 +629,7 @@ var InterfaceMaster = (function () {
 					var opponent = new Pokemon(c.opponent, 1, battle);
 					opponent.initialize(battle.getCP(), "gamemaster");
 					opponent.selectRecommendedMoveset(category);
-					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+r.moveStr+"/";
+					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+pokeMoveStr+"/";
 
 					// Append opponent's move string
 
@@ -645,7 +658,7 @@ var InterfaceMaster = (function () {
 						battleLink += Math.min(opponent.fastMove.energyGain * (Math.floor((scenario.energy[1] * 500) / opponent.fastMove.cooldown)), 100);
 					}
 
-					var $item = $("<div class=\"rank " + opponent.types[0] + "\"><div class=\"name-container\"><span class=\"number\">#"+(n+1)+"</span><span class=\"name\">"+opponent.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star\">"+c.opRating+"</span></div><a target=\"_blank\" href=\""+battleLink+"\"></a><div class=\"clear\"></div></div>");
+					var $item = $("<div class=\"rank " + opponent.types[0] + "\"><div class=\"name-container\"><span class=\"number\">#"+(n+1)+"</span><span class=\"name\">"+opponent.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star\">"+(1000-c.rating)+"</span></div><a target=\"_blank\" href=\""+battleLink+"\"></a><div class=\"clear\"></div></div>");
 
 					$details.find(".counters").append($item);
 				}
@@ -728,7 +741,7 @@ var InterfaceMaster = (function () {
 
 				// Add multi-battle link
 				if(context != "custom"){
-					var multiBattleLink = host+"battle/multi/"+cp+"/"+cup+"/"+pokemon.speciesId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+r.moveStr+"/2-1/";
+					var multiBattleLink = host+"battle/multi/"+cp+"/"+cup+"/"+pokemon.speciesId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+pokeMoveStr+"/2-1/";
 
 					// Append energy settings
 					multiBattleLink += pokemon.stats.hp + "/";
