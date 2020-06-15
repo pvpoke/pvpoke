@@ -657,12 +657,32 @@ var InterfaceMaster = (function () {
 					var remainingPoints = cliffObj.max - cliffObj.points;
 					tiers = cliffObj.tiers;
 
-					// Add ineligible tiers tot he exclusion list
+					// Add ineligible tiers to the exclusion list
 					for(var i = 0; i < tiers.length; i++){
 						if(remainingPoints < tiers[i].points){
 							for(var n = 0; n < tiers[i].pokemon.length; n++){
 								exclusionList.push(tiers[i].pokemon[n]);
 								exclusionList.push(tiers[i].pokemon[n]+"_shadow");
+							}
+						}
+					}
+				}
+
+				// For Season 2 continentals, exclude Pokemon in already occupied slots
+
+				if(battle.getCup().name == "continentals-2"){
+					// Add ineligible Pokemon to the exclusion list
+					var slots = battle.getCup().slots;
+
+					for(var i = 0; i < slots.length; i++){
+						for(var n = 0; n < team.length; n++){
+							if(slots[i].pokemon.indexOf(team[n].speciesId) > -1){
+								console.log("slot " + i + " taken by " + team[n].speciesId);
+								for(var j = 0; j < slots[n].pokemon.length; j++){
+									exclusionList.push(slots[i].pokemon[j]);
+								}
+
+								continue;
 							}
 						}
 					}
