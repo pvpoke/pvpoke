@@ -521,7 +521,7 @@ var InterfaceMaster = (function () {
 			// Generate matchup details after main battle has been simulated
 
 			this.generateMatchupDetails = function(battle, doBulk){
-
+				
 				// Run simulations for every shield matchup
 
 				var pokemon = [];
