@@ -949,7 +949,7 @@ function Battle(){
 					// Reset all cooldowns
 					if((opponent.cooldown > 0)&&(! opponent.hasActed)){
 						action.settings.priority += 4;
-						if(opponent.cooldown > 0){
+						/* if(opponent.cooldown > 0){
 							opponent.chargedMovesOnly = true;
 						}
 
@@ -972,11 +972,11 @@ function Battle(){
 
 						if((a)&&(a.type == "charged")){
 							queuedActions.push(a);
-						}
-
+						} */
 
 					}
-					poke.cooldown = 0;
+
+					//poke.cooldown = 0;
 					action.settings.priority += 10;
 
 					// Set additional priority by attack stat

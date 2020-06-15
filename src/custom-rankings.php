@@ -238,12 +238,12 @@ require_once 'header.php'; ?>
 
 <div class="details-template hide">
 	<div class="detail-section float margin">
-		<div class="ranking-header">Key Matchups</div>
+		<div class="ranking-header">Key Wins</div>
 		<div class="ranking-header right">Battle Rating</div>
 		<div class="matchups clear"></div>
 	</div>
 	<div class="detail-section float">
-		<div class="ranking-header">Top Counters</div>
+		<div class="ranking-header">Key Losses</div>
 		<div class="ranking-header right">Battle Rating</div>
 		<div class="counters clear"></div>
 	</div>

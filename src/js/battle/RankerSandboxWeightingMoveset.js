@@ -415,6 +415,13 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if(cup.name == "sorcerous"){
+					iterations = 1;
+				}
+
+				if(cup.name == "sorcerous-bee"){
+					iterations = 1;
+				}
 
 				if((cup.name == "all")&&(battle.getCP() == 10000)){
 					iterations = 1;
@@ -475,6 +482,10 @@ var RankerMaster = (function () {
 								weight = 1;
 							}
 
+							if(cup.name == "sorcerous-bee"){
+								weight = 1;
+							}
+
 							// Don't score Pokemon in the mirror match
 
 							if(rankings[j].speciesId == pokemonList[i].speciesId){
@@ -492,6 +503,7 @@ var RankerMaster = (function () {
 							}
 
 							var sc = matches[j].adjRating * weight;
+							var opScore = 1000 - matches[j].adjRating * weight;
 
 							if(rankings[j].scores[n] / bestScore < .1 + (rankCutoffIncrease * n)){
 								weight = 0;
@@ -499,6 +511,7 @@ var RankerMaster = (function () {
 
 							weights += weight;
 							matches[j].score = sc;
+							matches[j].opScore = opScore;
 							score += sc;
 						}
 
@@ -584,30 +597,12 @@ var RankerMaster = (function () {
 
 					var matches = rankings[i].matches;
 
-					rankings[i].matches.sort((a,b) => (a.rating > b.rating) ? -1 : ((b.rating > a.rating) ? 1 : 0));
+					rankings[i].matches.sort((a,b) => (a.opScore > b.opScore) ? 1 : ((b.opScore > a.opScore) ? -1 : 0));
 
 					var matchupCount = Math.min(5, rankings[i].matches.length);
+					var keyMatchupsCount = 0;
 
 					// Gather 5 worst matchups for counters
-
-					for(var j = rankObj.matches.length - 1; j > rankings[i].matches.length - matchupCount - 1; j--){
-						var match = rankings[i].matches[j];
-
-						delete match.moveSet;
-						delete match.oppMoveSet;
-						delete match.score;
-						delete match.adjRating;
-						delete match.adjOpRating;
-						delete match.opRating;
-
-						rankings[i].counters.push(rankings[i].matches[j]);
-					}
-
-					// Gather 5 best matchups, weighted by opponent rank
-
-					rankings[i].matches.sort((a,b) => (a.score > b.score) ? -1 : ((b.score > a.score) ? 1 : 0));
-
-					var keyMatchupsCount = 0;
 
 					for(var j = 0; j < rankings[i].matches.length; j++){
 						var match = rankings[i].matches[j];
@@ -615,6 +610,34 @@ var RankerMaster = (function () {
 						delete match.moveSet;
 						delete match.oppMoveSet;
 						delete match.score;
+						delete match.opScore;
+						delete match.adjRating;
+						delete match.adjOpRating;
+						delete match.opRating;
+
+						if(match.rating < 500){
+							rankings[i].counters.push(match);
+							keyMatchupsCount++;
+
+							if(keyMatchupsCount >= matchupCount){
+								break;
+							}
+						}
+					}
+
+					// Gather 5 best matchups, weighted by opponent rank
+
+					rankings[i].matches.sort((a,b) => (a.score > b.score) ? -1 : ((b.score > a.score) ? 1 : 0));
+
+					keyMatchupsCount = 0;
+
+					for(var j = 0; j < rankings[i].matches.length; j++){
+						var match = rankings[i].matches[j];
+
+						delete match.moveSet;
+						delete match.oppMoveSet;
+						delete match.score;
+						delete match.opScore;
 						delete match.adjRating;
 						delete match.adjOpRating;
 						delete match.OpRating;

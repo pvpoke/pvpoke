@@ -311,6 +311,20 @@
             "values": ["drapion", "mawile", "metang", "metagross", "lapras", "dewgong", "snorlax", "vigoroth", "slaking", "castform", "rufflet", "braviary", "chansey", "blissey", "mr_mime", "jynx", "eevee", "espeon", "delibird", "miltank", "gardevoir", "gallade", "chimecho", "chatot", "skorupi", "sigilyph", "cryogonal", "glaceon", "castform_snowy", "raichu_alolan", "linoone_galarian", "obstagoon"]
         }]
     }, {
+        "name": "sorcerous-bee",
+        "title": "Sorcerous Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["ice","poison","fairy","psychic","normal"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["legendary", "mythical", "shadow"]
+        }, {
+            "filterType": "id",
+            "values": ["drapion", "mawile", "metang", "metagross", "lapras", "dewgong", "snorlax", "vigoroth", "slaking", "castform", "rufflet", "braviary", "chansey", "blissey", "mr_mime", "jynx", "eevee", "espeon", "delibird", "miltank", "gardevoir", "gallade", "chimecho", "chatot", "skorupi", "sigilyph", "cryogonal", "glaceon", "castform_snowy", "raichu_alolan", "linoone_galarian", "obstagoon"]
+        }]
+    }, {
         "name": "goteamup",
         "title": "GOTeamUp",
         "include": [],
@@ -821,14 +835,14 @@
         },
         "types": ["bug", "poison"],
         "fastMoves": ["BUG_BITE", "INFESTATION", "POISON_JAB"],
-        "chargedMoves": ["AERIAL_ACE", "SLUDGE_BOMB", "X_SCISSOR", "FELL_STINGER"],
+        "chargedMoves": ["AERIAL_ACE", "SLUDGE_BOMB", "X_SCISSOR", "FELL_STINGER", "DRILL_RUN"],
         "defaultIVs": {
             "cp1500": [30.5, 6, 11, 15],
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1097,
         "tags": ["shadoweligible"],
-        "eliteMoves": ["BUG_BITE"]
+        "eliteMoves": ["BUG_BITE", "DRILL_RUN"]
     }, {
         "dex": 15,
         "speciesName": "Beedrill (Shadow)",
@@ -840,13 +854,13 @@
         },
         "types": ["bug", "poison"],
         "fastMoves": ["BUG_BITE", "INFESTATION", "POISON_JAB"],
-        "chargedMoves": ["AERIAL_ACE", "SLUDGE_BOMB", "X_SCISSOR", "FELL_STINGER"],
+        "chargedMoves": ["AERIAL_ACE", "SLUDGE_BOMB", "X_SCISSOR", "FELL_STINGER", "DRILL_RUN"],
         "defaultIVs": {
             "cp1500": [30.5, 6, 11, 15],
             "cp2500": [40, 15, 15, 15]
         },
         "tags": ["shadow"],
-        "eliteMoves": ["BUG_BITE"]
+        "eliteMoves": ["BUG_BITE", "DRILL_RUN"]
     }, {
         "dex": 16,
         "speciesName": "Pidgey",

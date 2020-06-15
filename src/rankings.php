@@ -225,8 +225,8 @@ require_once 'header.php';
 		<ul>
 			<li><b>Fast Moves - </b> Which Fast Moves the Pokemon uses most in the league and category.</li>
 			<li><b>Charged Moves - </b> Which Charged Moves the Pokemon uses most in the league and category.</li>
-			<li><b>Key Matchups - </b> Which battles the Pokemon performs best in, weighed by the opponent's overall score.</li>
-			<li><b>Top Counters - </b> Which opponents perform best against the Pokemon.</li>
+			<li><b>Key Wins - </b> Which battles the Pokemon performs best in, weighed by the opponent's overall score.</li>
+			<li><b>Key Counters - </b> Which significant opponents perform best against the Pokemon.</li>
 		</ul>
 		<p>Use these to see even more information about a Pokemon, which matchups it might be useful in, and what you can use to counter it.</p>
 		<h2>Using the Move Rankings</h2>
@@ -264,12 +264,12 @@ require_once 'header.php';
 
 <div class="details-template hide">
 	<div class="detail-section float margin">
-		<div class="ranking-header">Key Matchups</div>
+		<div class="ranking-header">Key Wins</div>
 		<div class="ranking-header right">Battle Rating</div>
 		<div class="matchups clear"></div>
 	</div>
 	<div class="detail-section float">
-		<div class="ranking-header">Top Counters</div>
+		<div class="ranking-header">Key Losses</div>
 		<div class="ranking-header right">Battle Rating</div>
 		<div class="counters clear"></div>
 	</div>
