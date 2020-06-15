@@ -122,6 +122,10 @@ switch($cup){
 		$league = 'Sorcerous Cup';
 		break;
 
+	case "sorcerous-bee":
+		$league = 'Sorcerous Cup';
+		break;
+
 	case "goteamup":
 		$league = 'GOTeamUp';
 		break;

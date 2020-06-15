@@ -27,19 +27,14 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.15.2 (June 10, 2020)</h4>
+	<h4>v1.15.6 (June 15, 2020)</h4>
 	<ul>
-		<li>GO Stadium Cliffhanger support added to Team Builder:</li>
+		<li>Removed same-turn "hooking" from Charged Move interactions.</li>
 		<ul>
-			<li>Display for team and Pokemon points</li>
-			<li>Alternatives are filtered based on your remaining points</li>
+			<li>Previously, Charged Moves queued in the middle of your Fast Move would "hook" into the same turn as an opponent firing their Charged Move. This no longer appears to be how Charged Moves interact.</li>
 		</ul>
-	</ul>
-
-	<h4>v1.14.19 (May 11, 2020)</h4>
-	<ul>
-		<li>Simulations, rankings, meta groups, and Training Battles have been updated with the latest move balance updates for Wild Charge, Moonblast, and Drill Run.</li>
-		<li>Premier Cup is now available in Training Battles.</li>
+		<li>"Key Matchups" and "Top Counters" sections in the rankings have now been renamed "Key Wins" and "Key Losses". The Key Losses section now has weighting applied to highlight meta-relevant matchups.</li>
+		<li>Added a temporary Sorcerous Cup listing that includes Drill Run Beedrill.</li>
 	</ul>
 
 	<h3>Latest Article</h3>
