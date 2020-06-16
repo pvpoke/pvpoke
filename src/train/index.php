@@ -42,7 +42,7 @@ require_once '../header.php';
 				<option value="10000 all">Master League</option>
 				<option value="10000 premier">Premier Cup</option>
 				<option value="1500 sorcerous">Silph Sorcerous Cup</option>
-				<option value="1500 forest">Silph Forest Cup</option>
+				<option value="1500 continentals-2">Season 2 Continentals</option>
 			</select>
 			<h3 class="section-title">Difficulty</h3>
 			<select class="difficulty-select">

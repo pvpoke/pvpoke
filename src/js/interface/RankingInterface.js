@@ -44,6 +44,7 @@ var InterfaceMaster = (function () {
 				$(".ranking-categories a").on("click", selectCategory);
 				$("body").on("click", ".check", checkBox);
 				$("body").on("click", ".check.limited", toggleLimitedPokemon);
+				$("body").on("click", ".continentals .check", toggleContinentalsSlots);
 
 				window.addEventListener('popstate', function(e) {
 					get = e.state;
@@ -262,6 +263,12 @@ var InterfaceMaster = (function () {
 									$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
 								}
 
+								if(val == "continentals-2"){
+									$(".continentals").removeClass("hide");
+								} else{
+									$(".continentals").addClass("hide");
+								}
+
 								battle.setCup(val);
 								break;
 
@@ -360,6 +367,12 @@ var InterfaceMaster = (function () {
 					category = "overall";
 				}
 
+				if(cup == "continentals-2"){
+					$(".continentals").removeClass("hide");
+				} else{
+					$(".continentals").addClass("hide");
+				}
+
 				self.displayRankings(category, cp, cup);
 				self.pushHistoryState(cup, cp, category, null);
 			}
@@ -395,6 +408,12 @@ var InterfaceMaster = (function () {
 
 				self.displayRankings(category, cp, cup);
 				self.pushHistoryState(cup, cp, category, null);
+
+				if(cup == "continentals-2"){
+					$(".continentals").removeClass("hide");
+				} else{
+					$(".continentals").addClass("hide");
+				}
 
 				if(format == "custom"){
 					// Redirect to the custom rankings page
@@ -761,6 +780,36 @@ var InterfaceMaster = (function () {
 			function toggleLimitedPokemon(e){
 				for(var i = 0; i < limitedPokemon.length; i++){
 					$(".rank[data='"+limitedPokemon[i]+"']").toggleClass("hide");
+				}
+			}
+
+			// Show or hide Continentals slots
+
+			function toggleContinentalsSlots(e){
+				var selectedSlots = [];
+
+				$(".continentals .check").each(function(index, value){
+					if($(this).hasClass("on")){
+						selectedSlots.push(index);
+					}
+				});
+
+				var slots = battle.getCup().slots;
+
+				for(var i = 0; i < slots.length; i++){
+					if(selectedSlots.indexOf(i) > -1){
+						for(var n = 0; n < slots[i].pokemon.length; n++){
+							$(".rank[data='"+slots[i].pokemon[n]+"']").removeClass("hide");
+						}
+					} else{
+						for(var n = 0; n < slots[i].pokemon.length; n++){
+							$(".rank[data='"+slots[i].pokemon[n]+"']").addClass("hide");
+						}
+					}
+				}
+
+				if(selectedSlots.length == 0){
+					$(".rank").removeClass("hide");
 				}
 			}
 		};

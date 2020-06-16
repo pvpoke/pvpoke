@@ -670,15 +670,14 @@ var InterfaceMaster = (function () {
 
 				// For Season 2 continentals, exclude Pokemon in already occupied slots
 
-				if(battle.getCup().name == "continentals-2"){
+				if((battle.getCup().name == "continentals-2")&&(team.length < 6)){
 					// Add ineligible Pokemon to the exclusion list
 					var slots = battle.getCup().slots;
 
 					for(var i = 0; i < slots.length; i++){
 						for(var n = 0; n < team.length; n++){
 							if(slots[i].pokemon.indexOf(team[n].speciesId) > -1){
-								console.log("slot " + i + " taken by " + team[n].speciesId);
-								for(var j = 0; j < slots[n].pokemon.length; j++){
+								for(var j = 0; j < slots[i].pokemon.length; j++){
 									exclusionList.push(slots[i].pokemon[j]);
 								}
 
@@ -828,11 +827,30 @@ var InterfaceMaster = (function () {
 						$row.find("th.name").append("<div class=\"region-label "+tierName.toLowerCase()+"\">"+points+" "+pointsName+"</div>");
 					}
 
+					// Add slot label for Continentals
+					if(battle.getCup().name == "continentals-2"){
+						var tierName = "";
+						var slot = 0;
+
+						var slots = battle.getCup().slots;
+
+						for(var j = 0; j < slots.length; j++){
+							if(slots[j].pokemon.indexOf(pokemon.speciesId) > -1){
+								slot = j+1;
+								break;
+							}
+						}
+
+						$row.find("th.name").append("<div class=\"region-label\">Slot "+slot+"</div>");
+					}
+
 					$(".alternatives-table tbody").append($row);
 
 					i++;
 					count++;
 				}
+
+
 
 				if(team.length == 6){
 					$(".alternatives-table .button.add").hide();

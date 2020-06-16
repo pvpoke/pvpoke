@@ -135,6 +135,12 @@ header {
 .section h2 {
   font-size: 18px;
 }
+.section .continentals {
+  margin-bottom: 15px;
+}
+.section .continentals .check {
+  margin-right: 10px;
+}
 
 .section.about {
   text-align: left;

@@ -5256,6 +5256,10 @@
 				"chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
 			},
 			{
+				"speciesId": "castform_sunny",
+				"chargedMoves": ["WEATHER_BALL_FIRE", "SOLAR_BEAM"]
+			},
+			{
 				"speciesId": "escavalier",
 				"chargedMoves": ["DRILL_RUN", "MEGAHORN"]
 			},
@@ -5500,7 +5504,7 @@
 			{
 				"speciesId": "beedrill",
 				"fastMove": "POISON_JAB",
-				"chargedMoves": ["X_SCISSOR", "SLUDGE_BOMB"]
+				"chargedMoves": ["X_SCISSOR", "DRILL_RUN"]
 			},
 			{
 				"speciesId": "beedrill_shadow",

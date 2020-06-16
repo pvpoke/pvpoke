@@ -3,7 +3,7 @@
 */
 // Load AI archetypes
 
-var file = webRoot+"data/training/teams/featured/featured-april.json?v=1";
+var file = webRoot+"data/training/teams/featured/featured-june.json?v=1";
 var featuredTeams = [];
 
 $.getJSON( file, function( data ){
@@ -281,7 +281,6 @@ var InterfaceMaster = (function () {
 				}
 
 				$(".featured-team-description").hide();
-				$(".featured-team-select option").eq(0).prop("selected","selected");
 				multiSelectors[1].setMaxPokemonCount(partySize);
 			}
 
@@ -461,7 +460,7 @@ var InterfaceMaster = (function () {
 				}
 
 				// Force featured team selection for Cliffhanger and hide randomize button
-				if(cup == "cliffhanger"){
+				if((cup == "cliffhanger")||(cup == "continentals-2")){
 					$(".team-method-select option[value=\"featured\"]").prop("selected","selected");
 					$(".team-method-select").trigger("change");
 					$(".team-method-select option[value=\"random\"]").hide();
