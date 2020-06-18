@@ -111,6 +111,7 @@ require_once 'header.php'; ?>
 					<div class="check" value="legendary"><span></span> Legendary</div>
 					<div class="check" value="mythical"><span></span> Mythical</div>
 					<div class="check" value="alolan"><span></span> Alolan</div>
+					<div class="check" value="galarian"><span></span> Galarian</div>
 					<div class="check" value="regional"><span></span> Regional</div>
 					<div class="check" value="shadow"><span></span> Shadow</div>
 					<div class="check" value="shadoweligible"><span></span> Shadow Eligible</div>
