@@ -1,5 +1,47 @@
 [
 	{
+		"name": "mathmagic10",
+		"slug": "mathmagic10",
+		"img": "mathmagic10",
+		"cup": "continentals-2",
+		"cupName": "Continentals",
+		"league": 1500,
+		"description": "Pokemon GO player. Math enthusiast. https://www.twitch.tv/mathmagic10",
+		"link": "https://twitter.com/mathmagic10",
+		"pokemon": [
+			{
+				"speciesId": "ludicolo",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["ENERGY_BALL","ICE_BEAM"]
+			},
+			{
+				"speciesId": "sableye",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["FOUL_PLAY","RETURN"]
+			},
+			{
+				"speciesId": "altaria",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["SKY_ATTACK","DRAGON_PULSE"]
+			},
+			{
+				"speciesId": "ninetales_alolan",
+				"fastMove": "CHARM",
+				"chargedMoves": ["PSYSHOCK","ICE_BEAM"]
+			},
+			{
+				"speciesId": "lanturn",
+				"fastMove": "SPARK",
+				"chargedMoves": ["THUNDERBOLT","HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "shiftry",
+				"fastMove": "SNARL",
+				"chargedMoves": ["LEAF_BLADE","FOUL_PLAY"]
+			}
+		]
+	},
+	{
 		"name": "Training Team 1",
 		"slug": "training-1",
 		"img": "pvpoke",

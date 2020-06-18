@@ -7051,14 +7051,13 @@
 	        "hp": 186
 	    },
 	    "types": ["dark", "normal"],
-	    "fastMoves": ["SNARL", "LICK", "TACKLE", "SHADOW_CLAW"],
-	    "chargedMoves": ["DIG", "BODY_SLAM", "GUNK_SHOT", "GRASS_KNOT", "THUNDER"],
+	    "fastMoves": ["SNARL", "LICK"],
+	    "chargedMoves": ["DIG", "BODY_SLAM", "GUNK_SHOT"],
 		"tags": ["galarian"],
 	    "defaultIVs": {
 			"cp1500": [38.5, 5, 12, 11],
             "cp2500": [40, 15, 15, 15]
-	    },
-		"legacyMoves": ["TACKLE", "SHADOW_CLAW", "GRASS_KNOT", "THUNDER"]
+	    }
 	}, {
         "dex": 265,
         "speciesName": "Wurmple",
