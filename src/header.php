@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.15.6.7';
+$SITE_VERSION = '1.15.7';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -14,11 +14,24 @@ if(isset($_COOKIE['settings'])){
 	if(! isset($_SETTINGS->matrixDirection)){
 		$_SETTINGS->matrixDirection = "row";
 	}
+
+	// Fill in missing settings with defaults
+	if(! isset($_SETTINGS->gamemaster)){
+		$_SETTINGS->gamemaster = "gamemaster";
+	}
+
+	// Validate the gamemaster setting, only allow these options
+	$gamemasters = ["gamemaster", "gamemaster-mega"];
+
+	if(! in_array($_SETTINGS->gamemaster, $gamemasters)){
+		$_SETTINGS->gamemaster = "gamemaster";
+	}
 } else{
 	$_SETTINGS = (object) [
 		'defaultIVs' => "gamemaster",
 		'animateTimeline' => 1,
-		'theme' => 'default'
+		'theme' => 'default',
+		'gamemaster' => 'gamemaster'
 	];
 }
 
@@ -94,16 +107,25 @@ if(! isset($OG_IMAGE)){
 		var settings = {
 			defaultIVs: "<?php echo htmlspecialchars($_SETTINGS->defaultIVs); ?>",
 			animateTimeline: <?php echo htmlspecialchars($_SETTINGS->animateTimeline); ?>,
-			matrixDirection: "<?php echo htmlspecialchars($_SETTINGS->matrixDirection); ?>"
+			matrixDirection: "<?php echo htmlspecialchars($_SETTINGS->matrixDirection); ?>",
+			gamemaster: "<?php echo htmlspecialchars($_SETTINGS->gamemaster); ?>"
 		};
 	<?php else: ?>
 
 		var settings = {
 			defaultIVs: "gamemaster",
 			animateTimeline: 1,
-			matrixDirection: "row"
+			matrixDirection: "row",
+			gamemaster: "gamemaster"
 		};
 
+	<?php endif; ?>
+
+	<?php if(strpos($_SERVER['REQUEST_URI'], 'mega') !== false):
+		$_SETTINGS->gamemaster = 'gamemaster-mega';
+		?>
+		// If "Mega" is contained in the URL, default to the mega gamemaster
+		settings.gamemaster = "gamemaster-mega";
 	<?php endif; ?>
 
 
@@ -165,3 +187,6 @@ if(! isset($OG_IMAGE)){
 	</header>
 	<div class="main-wrap">
 		<div id="main">
+			<?php if((isset($_SETTINGS->gamemaster)) && ($_SETTINGS->gamemaster == 'gamemaster-mega')): ?>
+				<div class="section white"><b>Information for Mega Evolutions is speculative! It may not be accurate to how Mega Evolution stats and mechanics are implemented. Don't make any investments based on the speculation below.</b></div>
+			<?php endif; ?>
