@@ -557,7 +557,7 @@ function Pokemon(id, i, b){
 				move.dpe = move.damage / move.energy;
 
 				// Use moves that have higher DPE
-				if(move.dpe - self.bestChargedMove.dpe > .03){
+				if(((move.dpe - self.bestChargedMove.dpe > .03)&&(move.moveId != "SUPER_POWER"))||(move.dpe - self.bestChargedMove.dpe > .3)){
 					self.bestChargedMove = self.activeChargedMoves[i];
 				}
 
