@@ -12217,16 +12217,16 @@
         "speciesName": "Gallade (Mega)",
         "speciesId": "gallade_mega",
         "baseStats": {
-            "atk": 326,
-            "def": 230,
-            "hp": 169
+            "atk": 297,
+            "def": 209,
+            "hp": 154
         },
         "types": ["psychic", "fighting"],
         "fastMoves": ["CONFUSION", "LOW_KICK", "CHARM"],
         "chargedMoves": ["CLOSE_COMBAT", "LEAF_BLADE", "PSYCHIC", "SYNCHRONOISE"],
         "defaultIVs": {
-            "cp1500": [12, 4, 15, 15],
-            "cp2500": [20.5, 0, 9, 15]
+            "cp1500": [14.5, 2, 15, 14],
+            "cp2500": [24.5, 0, 11, 14]
         },
         "level25CP": 1919,
         "tags": ["shadoweligible"],
