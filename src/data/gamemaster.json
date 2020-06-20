@@ -311,20 +311,6 @@
             "values": ["drapion", "mawile", "metang", "metagross", "lapras", "dewgong", "snorlax", "vigoroth", "slaking", "castform", "rufflet", "braviary", "chansey", "blissey", "mr_mime", "jynx", "eevee", "espeon", "delibird", "miltank", "gardevoir", "gallade", "chimecho", "chatot", "skorupi", "sigilyph", "cryogonal", "glaceon", "castform_snowy", "raichu_alolan", "linoone_galarian", "obstagoon"]
         }]
     }, {
-        "name": "sorcerous-bee",
-        "title": "Sorcerous Cup",
-        "include": [{
-            "filterType": "type",
-            "values": ["ice","poison","fairy","psychic","normal"]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "values": ["legendary", "mythical", "shadow"]
-        }, {
-            "filterType": "id",
-            "values": ["drapion", "mawile", "metang", "metagross", "lapras", "dewgong", "snorlax", "vigoroth", "slaking", "castform", "rufflet", "braviary", "chansey", "blissey", "mr_mime", "jynx", "eevee", "espeon", "delibird", "miltank", "gardevoir", "gallade", "chimecho", "chatot", "skorupi", "sigilyph", "cryogonal", "glaceon", "castform_snowy", "raichu_alolan", "linoone_galarian", "obstagoon"]
-        }]
-    }, {
         "name": "goteamup",
         "title": "GOTeamUp",
         "include": [],

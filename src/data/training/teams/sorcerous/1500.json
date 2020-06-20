@@ -275,7 +275,7 @@
 				"fastMove": "SNARL",
 				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"],
 				"difficulty": 2,
-				"weight":35
+				"weight":25
 			},
 			{
 				"speciesId": "muk_alolan",
@@ -429,14 +429,28 @@
 	{
 		"slot": "Flex",
 		"synergies": ["Flying","Dark"],
-		"weight": 1,
+		"weight": 2,
 		"pokemon": [
+			{
+				"speciesId": "beedrill",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["X_SCISSOR","DRILL_RUN"],
+				"difficulty": 2,
+				"weight":25
+			},
+			{
+				"speciesId": "beedrill",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["SLUDGE_BOMB","DRILL_RUN"],
+				"difficulty": 2,
+				"weight":5
+			},
 			{
 				"speciesId": "tentacruel",
 				"fastMove": "POISON_JAB",
 				"chargedMoves": ["ACID_SPRAY","HYDRO_PUMP"],
 				"difficulty": 3,
-				"weight":30
+				"weight":10
 			},
 			{
 				"speciesId": "muk",

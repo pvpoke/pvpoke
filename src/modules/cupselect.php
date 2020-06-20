@@ -2,7 +2,6 @@
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
 	<option value="tsa-2" cup="sorcerous">Silph Sorcerous Cup</option>
-	<option value="tsa-2" cup="sorcerous-bee">Sorcerous Cup (w/ Beedrill)</option>
 	<option value="tsa-2" cup="continentals-2">Season 2 Continentals</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
@@ -36,7 +35,6 @@
 	<option value="boulder" cat="tsa-1">Boulder Cup</option>
 	<option value="continentals-2" cat="tsa-2">Season 2 Continentals</option>
 	<option value="sorcerous" cat="tsa-2">Silph Sorcerous Cup</option>
-	<option value="sorcerous-bee" cat="tsa-2">Silph Sorcerous Cup</option>
 	<option value="forest" cat="tsa-2">Forest Cup</option>
 	<option value="voyager" cat="tsa-2">Voyager Cup</option>
 	<option value="toxic" cat="tsa-2">Toxic Cup</option>

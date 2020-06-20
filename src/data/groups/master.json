@@ -45,11 +45,6 @@
 		"chargedMoves":["METEOR_MASH","EARTHQUAKE"]
 	},
 	{
-		"speciesId":"tyranitar",
-		"fastMove":"SMACK_DOWN",
-		"chargedMoves":["CRUNCH","STONE_EDGE"]
-	},
-	{
 		"speciesId":"heatran",
 		"fastMove":"FIRE_SPIN",
 		"chargedMoves":["IRON_HEAD","FLAMETHROWER"]
@@ -63,11 +58,6 @@
 		"speciesId":"lugia",
 		"fastMove":"DRAGON_TAIL",
 		"chargedMoves":["SKY_ATTACK","HYDRO_PUMP"]
-	},
-	{
-		"speciesId":"mew",
-		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["PSYSHOCK","FOCUS_BLAST"]
 	},
 	{
 		"speciesId":"mewtwo",
@@ -143,5 +133,10 @@
 		"speciesId":"reshiram",
 		"fastMove":"DRAGON_BREATH",
 		"chargedMoves":["CRUNCH","OVERHEAT"]
+	},
+	{
+		"speciesId":"zekrom",
+		"fastMove":"DRAGON_BREATH",
+		"chargedMoves":["CRUNCH","WILD_CHARGE"]
 	}
 ]
