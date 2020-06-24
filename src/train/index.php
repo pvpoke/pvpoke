@@ -41,6 +41,7 @@ require_once '../header.php';
 				<option value="2500 all">Ultra League</option>
 				<option value="10000 all">Master League</option>
 				<option value="10000 premier">Premier Cup</option>
+				<option value="1500 catacomb">Silph Catacomb Cup</option>
 				<option value="1500 sorcerous">Silph Sorcerous Cup</option>
 				<option value="1500 continentals-2">Season 2 Continentals</option>
 			</select>
