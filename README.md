@@ -6,6 +6,7 @@ This started as a passion project that went from “I wonder what this would loo
 
 ## Installation
 
+### Apache
 To begin, you’ll need:
 
 1. Apache (the server, not the attack helicopter)
@@ -42,6 +43,18 @@ To the following:
 ```
 
 You can also set this specifically for the project directory. You may need to restart the server afterward.
+
+### Docker Nginx+PHP-FPM
+
+You can run this application as a container using the richarvey/nginx-php-fpm image. Below is an example command that will run the application and expose it on your server's IP address on port 6080.
+
+*Note: The command below will not provide SSL access. The nginx-php-fpm image does have the ability to issue certificates using Lets Encrypt using the instructions at this [link](https://gitlab.com/ric_harvey/nginx-php-fpm/blob/master/docs/lets_encrypt.md). Otherwise, you can put the application behind an existing reverse proxy that already has SSL configured.*
+
+```
+docker run -p 0.0.0.0:6080:80 -e 'WEBROOT=/var/www/html/src/' -e 'APP_WEB_ROOT=/' -e 'GIT_REPO=https://github.com/pvpoke/pvpoke.git' richarvey/nginx-php-fpm:latest
+```
+
+After running the above command, you will have access to the application by opening `http://<SERVER-IP>:6080/` in your browser.
 
 ## Site Structure
 
