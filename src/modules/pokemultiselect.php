@@ -17,6 +17,7 @@
 				<option value="ultra" type="ultra" class="hide multi-battle">Ultra League Meta</option>
 				<option value="master" type="master" class="hide multi-battle">Master League Meta</option>
 				<option value="premier" type="master" class="hide multi-battle">Premier Cup Meta</option>
+				<option value="catacomb" type="great" class="multi-battle">Silph Catacomb Cup</option>
 				<option value="sorcerous" type="great" class="multi-battle">Silph Sorcerous Cup Meta</option>
 				<option value="continentals" type="great" class="multi-battle">Season 2 Continentals Meta</option>
 			</select>

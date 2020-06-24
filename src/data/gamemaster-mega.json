@@ -360,6 +360,23 @@
 				"pokemon": ["jirachi", "bronzong", "lugia", "wobbuffet", "celebi", "latios", "latias", "slowbro", "slowking", "alakazam", "gothitelle", "metagross", "raichu_alolan", "sneasel", "weavile", "tyranitar", "shiftry", "escavalier", "forretress", "heracross", "galvantula", "crustle", "scizor", "beedrill", "vespiquen", "scolipede", "ninjask", "venomoth", "dustox", "linoone_galarian", "obstagoon", "wormadam_trash", "wormadam_plant", "wormadam_sandy", "durant", "hydreigon", "mr_mime", "metang", "pinsir", "kricketune", "masquerain", "yanma", "yanmega"]
 			}
 		]
+    }, {
+        "name": "catacomb",
+        "title": "Catacomb Cup",
+		"include": [{
+	        "filterType": "type",
+	        "values": ["dark","grass","rock","ice","bug"]
+	    }],
+	    "exclude": [{
+	        "filterType": "id",
+	        "values": ["scrafty", "obstagoon", "dewgong", "ninetales_alolan", "crustle"]
+	    }, {
+	        "filterType": "type",
+	        "values": ["steel"]
+	    }, {
+	        "filterType": "tag",
+	        "values": ["legendary", "mythical", "shadow", "regional"]
+	    }]
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable"],
     "pokemonRegions": [{
@@ -7486,14 +7503,13 @@
 	        "hp": 186
 	    },
 	    "types": ["dark", "normal"],
-	    "fastMoves": ["SNARL", "LICK", "TACKLE", "SHADOW_CLAW"],
-	    "chargedMoves": ["DIG", "BODY_SLAM", "GUNK_SHOT", "GRASS_KNOT", "THUNDER"],
+	    "fastMoves": ["SNARL", "LICK", "TACKLE"],
+	    "chargedMoves": ["DIG", "BODY_SLAM", "GUNK_SHOT"],
 		"tags": ["galarian"],
 	    "defaultIVs": {
 			"cp1500": [38.5, 5, 12, 11],
             "cp2500": [40, 15, 15, 15]
-	    },
-		"legacyMoves": ["TACKLE", "SHADOW_CLAW", "GRASS_KNOT", "THUNDER"]
+	    }
 	}, {
         "dex": 265,
         "speciesName": "Wurmple",

@@ -346,6 +346,23 @@
 				"pokemon": ["jirachi", "bronzong", "lugia", "wobbuffet", "celebi", "latios", "latias", "slowbro", "slowking", "alakazam", "gothitelle", "metagross", "raichu_alolan", "sneasel", "weavile", "tyranitar", "shiftry", "escavalier", "forretress", "heracross", "galvantula", "crustle", "scizor", "beedrill", "vespiquen", "scolipede", "ninjask", "venomoth", "dustox", "linoone_galarian", "obstagoon", "wormadam_trash", "wormadam_plant", "wormadam_sandy", "durant", "hydreigon", "mr_mime", "metang", "pinsir", "kricketune", "masquerain", "yanma", "yanmega"]
 			}
 		]
+    }, {
+        "name": "catacomb",
+        "title": "Catacomb Cup",
+		"include": [{
+	        "filterType": "type",
+	        "values": ["dark","grass","rock","ice","bug"]
+	    }],
+	    "exclude": [{
+	        "filterType": "id",
+	        "values": ["scrafty", "obstagoon", "dewgong", "ninetales_alolan", "crustle"]
+	    }, {
+	        "filterType": "type",
+	        "values": ["steel"]
+	    }, {
+	        "filterType": "tag",
+	        "values": ["legendary", "mythical", "shadow", "regional"]
+	    }]
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable"],
     "pokemonRegions": [{
