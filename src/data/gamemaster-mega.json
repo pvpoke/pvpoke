@@ -15711,7 +15711,7 @@
         "tags": ["legendary"]
     }, {
         "dex": 646,
-        "speciesId": "kyurem_normal",
+        "speciesId": "kyurem",
         "speciesName": "Kyurem",
         "baseStats": {
             "atk": 246,
@@ -15720,7 +15720,7 @@
         },
         "types": ["dragon", "ice"],
         "fastMoves": ["DRAGON_BREATH", "STEEL_WING"],
-        "chargedMoves": ["DRAGON_CLAW", "BLIZZARD", "ICY_WIND", "DRACO_METEOR"],
+        "chargedMoves": ["DRAGON_CLAW", "BLIZZARD", "DRACO_METEOR"],
         "defaultIVs": {
             "cp1500": [15.5, 7, 12, 6],
             "cp2500": [25.5, 6, 15, 9]
