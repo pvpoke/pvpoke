@@ -15732,6 +15732,14 @@
         "energyGain": 0,
         "cooldown": 500
     }, {
+        "moveId": "FLY",
+        "name": "Fly",
+        "type": "flying",
+        "power": 80,
+        "energy": 45,
+        "energyGain": 0,
+        "cooldown": 500
+    }, {
         "moveId": "FLYING_PRESS",
         "name": "Flying Press",
         "type": "fighting",
