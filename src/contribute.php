@@ -43,6 +43,9 @@ require_once 'header.php'; ?>
 		<div class="supporter">jrj1986</div>
 		<div class="supporter">robbied888</div>
 		<div class="supporter">PoGoCabCo</div>
+		<div class="supporter">Worsel55</div>
+		<div class="supporter">gerry3</div>
+		<div class="supporter">Third Shield Podcast</div>
 	</div>
 
 	<h2 class="center">Master Supporters</h2>
@@ -141,6 +144,10 @@ require_once 'header.php'; ?>
 		<div class="supporter-container">
 			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/osmopvp.png"/>
 			<div class="supporter"><a href="https://discord.gg/RqUV4VA" target="_blank">OsMo PvP</a></div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/pogolookup.png"/>
+			<div class="supporter"><a href="https://pogolookup.com/" target="_blank">PoGoLookup.com</a></div>
 		</div>
 	</div>
 </div>
