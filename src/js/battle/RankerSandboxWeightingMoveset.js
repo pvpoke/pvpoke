@@ -419,7 +419,7 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
-				if(cup.name == "sorcerous-bee"){
+				if(cup.name == "catacomb"){
 					iterations = 1;
 				}
 
@@ -482,7 +482,7 @@ var RankerMaster = (function () {
 								weight = 1;
 							}
 
-							if(cup.name == "sorcerous-bee"){
+							if(cup.name == "catacomb"){
 								weight = 1;
 							}
 

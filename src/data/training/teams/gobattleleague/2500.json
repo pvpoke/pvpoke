@@ -9,7 +9,7 @@
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["DRAGON_CLAW","ANCIENT_POWER"],
 				"difficulty": 3,
-				"weight":10
+				"weight":5
 			},
 			{
 				"speciesId": "giratina_altered",
@@ -23,7 +23,7 @@
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["DRAGON_CLAW","SHADOW_SNEAK"],
 				"difficulty": 2,
-				"weight":3
+				"weight":15
 			},
 			{
 				"speciesId": "giratina_altered",
@@ -48,13 +48,6 @@
 			},
 			{
 				"speciesId": "giratina_origin",
-				"fastMove": "SHADOW_CLAW",
-				"chargedMoves": ["OMINOUS_WIND","DRAGON_PULSE"],
-				"difficulty": 2,
-				"weight":1
-			},
-			{
-				"speciesId": "giratina_origin",
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["SHADOW_BALL","OMINOUS_WIND"],
 				"difficulty": 1,
@@ -64,8 +57,8 @@
 				"speciesId": "dragonite",
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["DRAGON_CLAW","OUTRAGE"],
-				"difficulty": 2,
-				"weight":3
+				"difficulty": 1,
+				"weight":1
 			},
 			{
 				"speciesId": "latios",
@@ -331,14 +324,14 @@
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["DYNAMIC_PUNCH","ICE_PUNCH"],
 				"difficulty": 3,
-				"weight":14
+				"weight":8
 			},
 			{
 				"speciesId": "escavalier",
 				"fastMove": "COUNTER",
 				"chargedMoves": ["MEGAHORN","DRILL_RUN"],
 				"difficulty": 3,
-				"weight":13
+				"weight":16
 			},
 			{
 				"speciesId": "obstagoon",
@@ -352,7 +345,7 @@
 				"fastMove": "COUNTER",
 				"chargedMoves": ["NIGHT_SLASH","GUNK_SHOT"],
 				"difficulty": 3,
-				"weight":1
+				"weight":2
 			},
 			{
 				"speciesId": "blaziken",
@@ -506,7 +499,7 @@
 	{
 		"slot": "Flex",
 		"synergies": ["Anti-Giratina 1","Anti-Registeel 1"],
-		"weight": 8,
+		"weight": 12,
 		"pokemon": [
 			{
 				"speciesId": "venusaur",
@@ -576,7 +569,7 @@
 				"fastMove": "PSYCHO_CUT",
 				"chargedMoves": ["FUTURE_SIGHT","MOONBLAST"],
 				"difficulty": 3,
-				"weight":45
+				"weight":65
 			},
 			{
 				"speciesId": "lugia",
