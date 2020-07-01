@@ -27,12 +27,10 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.15.7 (June 15, 2020)</h4>
+	<h4>v1.15.8 (July 1, 2020)</h4>
 	<ul>
-		<li>Speculative stats for Mega Pokemon are now available under special site settings:</li>
-		<ul>
-			<li>Head to the <a href="<?php echo $WEB_ROOT; ?>settings/">Settings page</a> and select the "Mega Evolutions" version of the game master to enable Mega Evolutions. These will be available on the Battle page simulations, Custom Rankings, and Training Battles. (They won't appear in the default rankings.)</li>
-		</ul>
+		<li>Updated interface for Charged Move buttons/meters to show overflow energy like in-game.</li>
+		<li>Hovering over a Pokemon's selected Charged Moves shows damage in percentage and highlights the damage amount on the opponent's health bar.</li>
 	</ul>
 
 	<h3>Latest Article</h3>

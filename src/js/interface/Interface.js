@@ -83,6 +83,7 @@ var InterfaceMaster = (function () {
 				$(".continue-container .button").on("click", continueBattle);
 				$(".timeline-container").on("mousemove",".item",timelineEventHover);
 				$(".poke a.swap").on("click", swapSelectedPokemon);
+				$(".poke.single").on("mousemove",".move-bar",moveBarHover);
 				$(".multi-battle-sort").on("click", sortMultiBattleResults);
 				$("body").on("mousemove",mainMouseMove);
 				$("body").on("mousedown",mainMouseMove);
@@ -521,7 +522,7 @@ var InterfaceMaster = (function () {
 			// Generate matchup details after main battle has been simulated
 
 			this.generateMatchupDetails = function(battle, doBulk){
-				
+
 				// Run simulations for every shield matchup
 
 				var pokemon = [];
@@ -1578,6 +1579,24 @@ var InterfaceMaster = (function () {
 					pokeSelectors[0].setSelectedPokemon(pokemonB);
 					pokeSelectors[1].setSelectedPokemon(pokemonA);
 				}
+			}
+
+			// Animate amount of damage from the selected Charged Move on the opposing Pokemon
+
+			function moveBarHover(e){
+				e.preventDefault();
+
+				var pokeIndex = $(e.target).closest(".poke.single").index();
+				var selectorIndex = (pokeIndex == 0) ? 1 : 0;
+				var subject = pokeSelectors[pokeIndex].getPokemon();
+				var target = pokeSelectors[selectorIndex].getPokemon();
+				var moveIndex = $(e.target).closest(".move-bars").find(".move-bar").index($(e.target).closest(".move-bar"));
+				var move = subject.chargedMoves[moveIndex];
+				var effectiveness = target.typeEffectiveness[move.type];
+
+				displayDamage = battle.calculateDamageByStats(subject.stats.atk * subject.shadowAtkMult, target.stats.def * target.shadowDefMult, effectiveness, move);
+
+				pokeSelectors[selectorIndex].animateDamage(displayDamage)
 			}
 
 			// Run simulation

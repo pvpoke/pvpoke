@@ -851,6 +851,15 @@ header{
 		}
 	}
 
+	.hp.bar-back .bar.damage{
+		display:none;
+
+		-webkit-animation: BLINK_ANIMATION 2s infinite;
+	     -moz-animation: BLINK_ANIMATION 2s infinite;
+	     -o-animation: BLINK_ANIMATION 2s infinite;
+	      animation: BLINK_ANIMATION 2s infinite;
+	}
+
 }
 
 .hp.bar-back{
@@ -868,7 +877,15 @@ header{
 		height:100%;
 		background-color:$color-hp;
 
-		@include transition(width, 0.2s, ease-out, 0s);
+		&:nth-child(1){
+			@include transition(width, 0.2s, ease-out, 0s);
+		}
+
+		&.damage{
+			background:#ff5115;
+			position: relative;
+			top: -20px;
+		}
 	}
 
 	.stat{
@@ -1597,10 +1614,10 @@ select, input{
 				background-position: center 0% !important;
 				background-repeat: no-repeat !important;
 
-				-webkit-animation: BUFF-ANIMATION 1.5s infinite; /* Safari 4+ */
-				-moz-animation:    BUFF-ANIMATION 1.5s infinite; /* Fx 5+ */
-				-o-animation:      BUFF-ANIMATION 1.5s infinite; /* Opera 12+ */
-				animation:         BUFF-ANIMATION 1.5s infinite; /* IE 10+, Fx 29+ */
+				-webkit-animation: BUFF_ANIMATION 1.5s infinite; /* Safari 4+ */
+				-moz-animation:    BUFF_ANIMATION 1.5s infinite; /* Fx 5+ */
+				-o-animation:      BUFF_ANIMATION 1.5s infinite; /* Opera 12+ */
+				animation:         BUFF_ANIMATION 1.5s infinite; /* IE 10+, Fx 29+ */
 				animation-timing-function: linear;
 			}
 
@@ -1609,10 +1626,10 @@ select, input{
 				background-position: center 50% !important;
 				background-repeat: no-repeat !important;
 
-				-webkit-animation: DEBUFF-ANIMATION 1.5s infinite; /* Safari 4+ */
-				-moz-animation:    DEBUFF-ANIMATION 1.5s infinite; /* Fx 5+ */
-				-o-animation:      DEBUFF-ANIMATION 1.5s infinite; /* Opera 12+ */
-				animation:         DEBUFF-ANIMATION 1.5s infinite; /* IE 10+, Fx 29+ */
+				-webkit-animation: DEBUFF_ANIMATION 1.5s infinite; /* Safari 4+ */
+				-moz-animation:    DEBUFF_ANIMATION 1.5s infinite; /* Fx 5+ */
+				-o-animation:      DEBUFF_ANIMATION 1.5s infinite; /* Opera 12+ */
+				animation:         DEBUFF_ANIMATION 1.5s infinite; /* IE 10+, Fx 29+ */
 				animation-timing-function: linear;
 			}
 
@@ -1712,39 +1729,60 @@ select, input{
 
 /* Buff and debuff background animations */
 
-@-webkit-keyframes BUFF-ANIMATION {
+@-webkit-keyframes BUFF_ANIMATION {
   0%   { background-position: center -50%; }
   100% { background-position: center 150%; }
 }
-@-moz-keyframes BUFF-ANIMATION {
+@-moz-keyframes BUFF_ANIMATION {
   0%   { background-position: center -50%; }
   100% { background-position: center 150%; }
 }
-@-o-keyframes BUFF-ANIMATION {
+@-o-keyframes BUFF_ANIMATION {
   0%   { background-position: center -50%; }
   100% { background-position: center 150%; }
 }
-@keyframes BUFF-ANIMATION {
+@keyframes BUFF_ANIMATION {
   0%   { background-position: center -50%; }
   100% { background-position: center 150%; }
 }
 
 
-@-webkit-keyframes DEBUFF-ANIMATION {
+@-webkit-keyframes DEBUFF_ANIMATION {
   0%   { background-position: center 150%; }
   100% { background-position: center -50%; }
 }
-@-moz-keyframes DEBUFF-ANIMATION {
+@-moz-keyframes DEBUFF_ANIMATION {
   0%   { background-position: center 150%; }
   100% { background-position: center -50%; }
 }
-@-o-keyframes DEBUFF-ANIMATION {
+@-o-keyframes DEBUFF_ANIMATION {
   0%   { background-position: center 150%; }
   100% { background-position: center -50%; }
 }
-@keyframes DEBUFF-ANIMATION {
+@keyframes DEBUFF_ANIMATION {
   0%   { background-position: center 150%; }
   100% { background-position: center -50%; }
+}
+
+@-webkit-keyframes BLINK_ANIMATION {
+	0%   { opacity:1; }
+    50%  { opacity:.75; }
+    100% { opacity:1; }
+}
+@-moz-keyframes BLINK_ANIMATION {
+	0%   { opacity:1; }
+    50%  { opacity:.75; }
+    100% { opacity:1; }
+}
+@-o-keyframes BLINK_ANIMATION {
+	0%   { opacity:1; }
+    50%  { opacity:.75; }
+    100% { opacity:1; }
+}
+@keyframes BLINK_ANIMATION {
+	0%   { opacity:1; }
+    50%  { opacity:.75; }
+    100% { opacity:1; }
 }
 
 
@@ -1756,6 +1794,16 @@ select, input{
 	text-align: left;
 	z-index:20;
 	pointer-events: none;
+
+	.details{
+		font-size:14px;
+
+		span.label{
+			font-size:12px;
+			font-weight: bold;
+			font-style: italic;
+		}
+	}
 
 	&.faint{
 		background:$color-faint;

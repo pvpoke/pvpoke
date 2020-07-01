@@ -204,6 +204,7 @@ function PokeSelect(element, i){
 
 		$el.find(".hp .bar").css("width", ((health / selectedPokemon.stats.hp)*100)+"%");
 		$el.find(".hp .stat").html(health+" / "+selectedPokemon.stats.hp);
+		$el.find(".hp .bar.damage").hide();
 
 		currentHP = health;
 	}
@@ -236,6 +237,18 @@ function PokeSelect(element, i){
 		}
 
 		currentEnergy = energy;
+	}
+
+	// Display a damage amount on the health bar (triggered from Interface.js when hovering over another selector's Charged Moves)
+
+	this.animateDamage = function(amount){
+		var health = Math.max(0, selectedPokemon.startHp - amount);
+
+		$el.find(".hp .bar.damage").css("width", ((amount / selectedPokemon.stats.hp)*100)+"%");
+		$el.find(".hp .bar.damage").show();
+
+		var position = Math.max( Math.ceil($el.find(".hp .bar").eq(0).width() - $el.find(".hp .bar.damage").width()), 0);
+		$el.find(".hp .bar.damage").css("left", position+"px");
 	}
 
 	// Reset IV and Level input fields, and other options when switching Pokemon
@@ -797,10 +810,11 @@ function PokeSelect(element, i){
 		}
 
 		var dpe = Math.floor( (displayDamage / move.energy) * 100) / 100;
+		var percent = Math.floor( (displayDamage / opponent.hp) * 1000) / 10;
 
 		$tooltip.find(".name").html(move.name);
 		$tooltip.addClass(move.type);
-		$tooltip.find(".details").html(displayDamage + ' damage<br>' + move.energy + ' energy<br>' + dpe + ' dpe');
+		$tooltip.find(".details").html(displayDamage + ' (' + percent + '%) <span class="label">dmg</span><br>' + move.energy + ' <span class="label">energy</span><br>' + dpe + ' <span class="label">dpe</span>');
 
 		var width = $tooltip.width();
 		var left = (e.pageX - $(".section").first().offset().left) + 10;

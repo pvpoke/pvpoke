@@ -127,6 +127,7 @@
 
 		<div class="hp bar-back">
 			<div class="bar"></div>
+			<div class="bar damage"></div>
 			<div class="stat"></div>
 		</div>
 
