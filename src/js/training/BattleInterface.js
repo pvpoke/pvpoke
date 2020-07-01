@@ -155,7 +155,11 @@ var BattlerMaster = (function () {
 					switch(response.phase){
 						case "suspend_charged_attack":
 							$(".charge-window .move-bars").html('');
-							$(".charge-window .move-bars").append($(".controls .move-bar").eq(response.move).clone().addClass(activePokemon[0].chargedMoves[response.move].type));
+
+							var $moveBar = $(".controls .move-bar").eq(response.move).clone();
+							$moveBar.addClass(activePokemon[0].chargedMoves[response.move].type);
+
+							$(".charge-window .move-bars").append($moveBar);
 							$(".battle-window .animate-message .text").html("Tap to charge up "+activePokemon[0].chargedMoves[response.move].name+"!");
 							$(".switch-window").removeClass("active");
 
@@ -322,10 +326,23 @@ var BattlerMaster = (function () {
 							var chargedMove = pokemon.chargedMoves[n];
 							var $bar = $(".battle-window .move-bar").eq(n);
 							var chargePercent = Math.min((pokemon.energy / chargedMove.energy), 1);
-							var position = 66 - (chargePercent * 66);
-							$bar.find(".bar").first().css("background-position-y", position+"px");
 
-							//$bar.find(".bar").first().css("height", chargePercent+"%");
+							$bar.find(".bar").each(function(index, value){
+								var extraEnergy = Math.min(((pokemon.energy - (chargedMove.energy * index)) / chargedMove.energy), 1);
+
+								// This provides extra spacing so the white border doesn't show up at the bottom at 0 charge
+								if(extraEnergy <= 0){
+									extraEnergy = 0;
+								}
+
+								var positionBase = 66;
+								if(index > 0){
+									positionBase = 68;
+								}
+
+								var position = Math.min(66 - (extraEnergy * positionBase), 66);
+								$bar.find(".bar").eq(index).css("top", position+"px");
+							});
 
 							if(chargePercent >= 1){
 								$bar.addClass("active");

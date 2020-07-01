@@ -243,7 +243,7 @@ header{
 
 	.continentals{
 		margin-bottom:15px;
-		
+
 		.check{
 			margin-right:10px;
 		}
@@ -924,6 +924,15 @@ header{
 
 		.bar{
 			@include transition(height, 0.2s, ease-out, 0s);
+
+			bottom: -5%;
+
+			&:nth-child(3),
+			&:nth-child(4),
+			{
+				border-top: 2px solid #fff;
+				background:rgba(0,0,0,0.35) !important;
+			}
 		}
 
 		.bar-back{

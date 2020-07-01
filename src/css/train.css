@@ -517,13 +517,13 @@ a.random {
   transition: all 0.2s ease 0s;
 }
 .battle-window .controls .move-bars .move-bar .bar {
-  -webkit-transition: background-position-y 0.2s ease-out 0s;
-  -moz-transition: background-position-y 0.2s ease-out 0s;
-  -o-transition: background-position-y 0.2s ease-out 0s;
-  transition: background-position-y 0.2s ease-out 0s;
+  -webkit-transition: top 0.2s ease-out 0s;
+  -moz-transition: top 0.2s ease-out 0s;
+  -o-transition: top 0.2s ease-out 0s;
+  transition: top 0.2s ease-out 0s;
+  bottom: 0;
   background: url(../img/train/type-gradients.jpg);
   background-repeat: no-repeat;
-  border-radius: 40px;
 }
 .battle-window .controls .move-bars .move-bar .bar-back {
   border-radius: 40px;
@@ -724,6 +724,10 @@ a.random {
 .battle-window .charge-window .container .move-bar .label {
   font-size: 60px;
   padding-top: 22px;
+}
+.battle-window .charge-window .container .move-bar .bar:nth-child(3),
+.battle-window .charge-window .container .move-bar .bar:nth-child(4) {
+  display: none;
 }
 .battle-window .charge-window .rings {
   position: absolute;

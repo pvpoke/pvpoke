@@ -8,10 +8,14 @@
 		<div class="move-bar">
 			<div class="label">T</div>
 			<div class="bar"></div>
+			<div class="bar"></div>
+			<div class="bar"></div>
 			<div class="bar-back electric"></div>
 		</div>
 		<div class="move-bar">
 			<div class="label">MB</div>
+			<div class="bar"></div>
+			<div class="bar"></div>
 			<div class="bar"></div>
 			<div class="bar-back steel"></div>
 		</div>

@@ -589,11 +589,11 @@ a.random{
 				@include transition(all, 0.2s, ease, 0s);
 
 				.bar{
-					@include transition(background-position-y, 0.2s, ease-out, 0s);
+					@include transition(top, 0.2s, ease-out, 0s);
 
+					bottom:0;
 					background: url(../img/train/type-gradients.jpg);
 					background-repeat: no-repeat;
-					border-radius:40px;
 				}
 
 				.bar-back{
@@ -814,6 +814,11 @@ a.random{
 				.label{
 					font-size:60px;
 					padding-top:22px;
+				}
+
+				.bar:nth-child(3),
+				.bar:nth-child(4){
+					display: none;
 				}
 			}
 		}

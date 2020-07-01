@@ -715,6 +715,11 @@ header {
   -moz-transition: height 0.2s ease-out 0s;
   -o-transition: height 0.2s ease-out 0s;
   transition: height 0.2s ease-out 0s;
+  bottom: -5%;
+}
+.move-bars .move-bar .bar:nth-child(3), .move-bars .move-bar .bar:nth-child(4) {
+  border-top: 2px solid #fff;
+  background: rgba(0, 0, 0, 0.35) !important;
 }
 .move-bars .move-bar .bar-back {
   opacity: 0.3;
