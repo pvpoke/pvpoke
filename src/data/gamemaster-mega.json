@@ -1276,6 +1276,22 @@
             "cp2500": [40, 15, 15, 15]
         }
     }, {
+        "dex": 25,
+        "speciesName": "Pikachu (Flying)",
+        "speciesId": "pikachu_flying",
+        "baseStats": {
+            "atk": 112,
+            "def": 96,
+            "hp": 111
+        },
+        "types": ["electric", "none"],
+        "fastMoves": ["QUICK_ATTACK", "THUNDER_SHOCK"],
+        "chargedMoves": ["DISCHARGE", "THUNDERBOLT", "WILD_CHARGE", "FLY"],
+        "defaultIVs": {
+            "cp1500": [40, 15, 15, 15],
+            "cp2500": [40, 15, 15, 15]
+        }
+    }, {
         "dex": 26,
         "speciesName": "Raichu",
         "speciesId": "raichu",
