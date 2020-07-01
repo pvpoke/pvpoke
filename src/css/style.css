@@ -674,6 +674,7 @@ header {
 .hp.bar-back .bar.damage {
   background: #ff5115;
   position: relative;
+  max-width: 100%;
   top: -20px;
 }
 .hp.bar-back .stat {
