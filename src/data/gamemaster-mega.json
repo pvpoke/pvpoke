@@ -1030,7 +1030,8 @@
         "defaultIVs": {
             "cp1500": [36, 7, 10, 15],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 2
     }, {
         "dex": 20,
         "speciesName": "Raticate (Shadow)",
