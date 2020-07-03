@@ -253,7 +253,12 @@ function Pokemon(id, i, b){
 		// Set moves if unset
 
 		if(! self.fastMove){
-			self.autoSelectMoves();
+			self.fastMove = self.fastMovePool[0];
+			self.chargedMoves = [self.chargedMovePool[0]];
+
+			if(self.chargedMovePool.length > 1){
+				self.chargedMoves.push(self.chargedMovePool[1]);
+			}
 		} else{
 			this.resetMoves();
 		}
@@ -698,6 +703,7 @@ function Pokemon(id, i, b){
 			}
 		}
 
+		self.generateMoveUsage(opponent);
 	}
 
 	// Given a type string, move id, and charged move index, set a specific move
@@ -783,6 +789,7 @@ function Pokemon(id, i, b){
 		}
 
 		var rankings = gm.rankings[key];
+		var found = false;
 
 		for(var i = 0; i < rankings.length; i++){
 			var r = rankings[i];
@@ -798,9 +805,148 @@ function Pokemon(id, i, b){
 				// Assign overall score for reference
 				self.overall = r.score;
 				self.scores = r.scores;
+
+				found = true;
 				break;
 			}
 		}
+
+		// If no results, auto select moveset
+		if(! found){
+			self.autoSelectMoves();
+		}
+	}
+
+	// Given an opponent, generate move usage stats
+
+	this.generateMoveUsage = function(opponent){
+
+		// First, initialize all moves to get updated damage numbers
+
+		this.resetMoves();
+
+		// Feed move pools into new arrays so they can be manipulated without affecting the originals
+
+		var fastMoves = [];
+		var chargedMoves = [];
+		var targetArrs = [fastMoves, chargedMoves];
+		var sourceArrs = [self.fastMovePool, self.chargedMovePool];
+
+		for(var i = 0; i < sourceArrs.length; i++){
+			for(var n = 0; n < sourceArrs[i].length; n++){
+				targetArrs[i].push(sourceArrs[i][n]);
+			}
+		}
+
+		// Sort charged moves by DPE
+
+		chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
+
+		var total = 0;
+
+		for(var i = 0; i < chargedMoves.length; i++){
+			var move = chargedMoves[i];
+			var statChangeFactor = 1;
+
+			// Calculate the magnitude of stat changes, factoring in stages and buff chance
+			if(move.buffs){
+				for(var n = 0; n < move.buffs.length; n++){
+					// Don't factor self defense drops for move usage
+					if((move.selfDebuffing)&&(n == 1)){
+						continue;
+					}
+
+					if(move.buffs[n] > 0){
+						if(move.buffTarget == "self"){
+							statChangeFactor *= ((4+move.buffs[n]) / 4);
+						} else if(move.buffTarget == "opponent"){
+							statChangeFactor *= (1 / ((4+move.buffs[n]) / 4));
+						}
+					} else if(move.buffs[n] < 0){
+						if(move.buffTarget == "self"){
+							statChangeFactor *= (4 / (4-move.buffs[n]));
+						} else if(move.buffTarget == "opponent"){
+							statChangeFactor *= (1 / (4 / (4-move.buffs[n])));
+						}
+					}
+				}
+
+				statChangeFactor =  1 + ((statChangeFactor - 1) * move.buffApplyChance);
+			}
+
+			// Calculate usage based on raw damage, efficiency, and speed
+			move.uses = Math.pow(move.damage / 50, 2) * Math.pow(move.dpe, 2) * Math.pow((100 / move.energy), 4) * Math.pow(statChangeFactor, 3);
+
+			total += move.uses;
+		}
+
+		// Normalize move usage to total
+		for(var i = 0; i < chargedMoves.length; i++){
+			chargedMoves[i].uses = Math.round((chargedMoves[i].uses / total) * 100);
+		}
+
+		chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+
+		for(var i = 0; i < chargedMoves.length; i++){
+			console.log(chargedMoves[i].name + " " + chargedMoves[i].uses);
+		}
+
+		// Calculate TDO for each fast move and sort
+
+		var opponent = battle.getOpponent(self.index);
+
+		for(var i = 0; i < fastMoves.length; i++){
+			var move = fastMoves[i];
+
+			move.tdo = self.calculateTDO(move, chargedMoves[0], opponent, false);
+			move.tdo = Math.pow(move.tdo, 2) / 1000;
+		}
+
+		fastMoves.sort((a,b) => (a.tdo > b.tdo) ? -1 : ((b.tdo > a.tdo) ? 1 : 0));
+
+		for(var i = 0; i < fastMoves.length; i++){
+			console.log(fastMoves[i].name + " tdo " + fastMoves[i].tdo);
+		}
+
+		return false;
+
+		// Do this for realsies so the opponent can compare
+
+		self.calculateTDO(fastMoves[0], chargedMoves[0], opponent, true);
+
+		self.fastMove = fastMoves[0];
+
+		self.chargedMoves = [];
+
+		if(count > 0){
+			self.chargedMoves.push(chargedMoves[0]);
+
+			chargedMoves.splice(0,1);
+		}
+
+
+		// Sort remaining charged moves by dpe, weighted by energy
+
+		for(var i = 0; i < chargedMoves.length; i++){
+			var move = chargedMoves[i];
+
+			move.dpe *= 1 / move.energy;
+
+			// If this move has a guaranteed stat effect, consider that as well
+
+			if((move.buffApplyChance)&&(move.buffApplyChance == 1)){
+				move.dpe *= 2;
+			}
+		}
+
+		if(chargedMoves.length > 0){
+			chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
+
+			for(var i = 0; i < count-1; i++){
+				self.chargedMoves.push(chargedMoves[i]);
+			}
+		}
+
 	}
 
 	// Add new move to the supplied move pool, with a flag to automatically select the new move
@@ -842,9 +988,10 @@ function Pokemon(id, i, b){
 			opponentDef = opponent.stats.def;
 		}
 
-		var cycleFastMoves = Math.ceil(chargedMove.energy / fastMove.energyGain);
+		// Calculate multiple cycles to avoid issues with overflow energy
+		var cycleFastMoves = Math.ceil((chargedMove.energy * 5) / fastMove.energyGain);
 		var cycleTime = cycleFastMoves * (fastMove.cooldown / 2000);
-		var cycleDamage = (cycleFastMoves * fastMove.damage) + chargedMove.damage;
+		var cycleDamage = (cycleFastMoves * fastMove.damage) + (chargedMove.damage * 4) + 1; // Emulate TDO with a shield
 		var cycleDPS = cycleDamage / cycleTime;
 
 		if(final){
