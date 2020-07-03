@@ -259,9 +259,8 @@ function Pokemon(id, i, b){
 			if(self.chargedMovePool.length > 1){
 				self.chargedMoves.push(self.chargedMovePool[1]);
 			}
-		} else{
-			this.resetMoves();
 		}
+		this.resetMoves();
 	}
 
 	// Calculate and return the Pokemon's CP
@@ -879,7 +878,7 @@ function Pokemon(id, i, b){
 			}
 
 			// Calculate usage based on raw damage, efficiency, and speed
-			move.uses = Math.pow(move.damage / 50, 2) * Math.pow(move.dpe, 2) * Math.pow((100 / move.energy), 4) * Math.pow(statChangeFactor, 3);
+			move.uses = (Math.pow(move.damage, 2) / Math.pow(move.energy, 4)) * Math.pow(statChangeFactor, 2);
 
 			total += move.uses;
 		}
@@ -887,6 +886,18 @@ function Pokemon(id, i, b){
 		// Normalize move usage to total
 		for(var i = 0; i < chargedMoves.length; i++){
 			chargedMoves[i].uses = Math.round((chargedMoves[i].uses / total) * 100);
+		}
+
+		// To approximate baiting, give up to 50% usage to the fastest move
+		chargedMoves.sort((a,b) => (a.energy > b.energy) ? 1 : ((b.energy > a.energy) ? -1 : 0));
+
+		for(var i = 1; i < chargedMoves.length; i++){
+			var baitUsage = (1 - (chargedMoves[0].energy / chargedMoves[i].energy)) * 0.5;
+			//chargedMoves[0].uses += Math.round(chargedMoves[i].uses * baitUsage);
+			//chargedMoves[i].uses -= Math.round(chargedMoves[i].uses * baitUsage);
+		}
+
+		for(var i = 0; i < chargedMoves.length; i++){
 			chargedMoveUses.push({
 				moveId: chargedMoves[i].moveId,
 				uses: chargedMoves[i].uses * weightModifier
@@ -894,6 +905,7 @@ function Pokemon(id, i, b){
 		}
 
 		chargedMoveUses.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+
 
 		// Calculate TDO for each fast move and sort
 		var total = 0;
@@ -929,6 +941,8 @@ function Pokemon(id, i, b){
 			fastMoves: fastMoveUses,
 			chargedMoves: chargedMoveUses
 		};
+
+		console.log(results.chargedMoves);
 
 		return results;
 	}
