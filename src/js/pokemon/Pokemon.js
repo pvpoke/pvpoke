@@ -842,6 +842,7 @@ function Pokemon(id, i, b){
 
 		chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
 
+		var highestDPE = chargedMoves[0].dpe;
 		var total = 0;
 
 		for(var i = 0; i < chargedMoves.length; i++){
@@ -892,20 +893,26 @@ function Pokemon(id, i, b){
 		}
 
 		// Calculate TDO for each fast move and sort
-
-		var opponent = battle.getOpponent(self.index);
+		var total = 0;
 
 		for(var i = 0; i < fastMoves.length; i++){
 			var move = fastMoves[i];
+			var ept = move.energyGain / (move.cooldown / 500);
 
-			move.tdo = self.calculateTDO(move, chargedMoves[0], opponent, false);
-			move.tdo = Math.pow(move.tdo, 2) / 1000;
+			move.uses = self.calculateCycleDPT(move, chargedMoves[0]);
+			//move.uses *= Math.pow(ept, highestDPE / 2); // Emphasize fast charging moves with access to powerful Charged Moves
+			total += move.uses;
 		}
 
-		fastMoves.sort((a,b) => (a.tdo > b.tdo) ? -1 : ((b.tdo > a.tdo) ? 1 : 0));
+		// Normalize move usage to total
+		for(var i = 0; i < fastMoves.length; i++){
+			fastMoves[i].uses = Math.round((fastMoves[i].uses / total) * 100);
+		}
+
+		fastMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
 
 		for(var i = 0; i < fastMoves.length; i++){
-			console.log(fastMoves[i].name + " tdo " + fastMoves[i].tdo);
+			console.log(fastMoves[i].name + " " + fastMoves[i].uses);
 		}
 
 		return false;
@@ -989,9 +996,9 @@ function Pokemon(id, i, b){
 		}
 
 		// Calculate multiple cycles to avoid issues with overflow energy
-		var cycleFastMoves = Math.ceil((chargedMove.energy * 5) / fastMove.energyGain);
-		var cycleTime = cycleFastMoves * (fastMove.cooldown / 2000);
-		var cycleDamage = (cycleFastMoves * fastMove.damage) + (chargedMove.damage * 4) + 1; // Emulate TDO with a shield
+		var cycleFastMoves = Math.ceil(chargedMove.energy / fastMove.energyGain);
+		var cycleTime = cycleFastMoves * (fastMove.cooldown / 1000);
+		var cycleDamage = (cycleFastMoves * fastMove.damage) + chargedMove.damage;
 		var cycleDPS = cycleDamage / cycleTime;
 
 		if(final){
@@ -1002,6 +1009,18 @@ function Pokemon(id, i, b){
 		var tdo = cycleDPS * timeToFaint;
 
 		return tdo;
+	}
+
+	// This function calculates cycle DPT given a moveset
+
+	this.calculateCycleDPT = function(fastMove, chargedMove){
+		// Calculate multiple cycles to avoid issues with overflow energy
+		var cycleFastMoves = 120 / fastMove.energyGain;
+		var cycleTime = (cycleFastMoves * (fastMove.cooldown / 500)) + 1;
+		var cycleDamage = (cycleFastMoves * fastMove.damage) + (chargedMove.damage * ((120 / chargedMove.energy)-1)) + 1; // Emulate TDO with a shield
+		var cycleDPT = cycleDamage / cycleTime;
+
+		return cycleDPT;
 	}
 
 	// Return whether or not this Pokemon has a move with buff or debuff effects
