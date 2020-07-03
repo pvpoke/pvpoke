@@ -703,7 +703,7 @@ function Pokemon(id, i, b){
 			}
 		}
 
-		self.generateMoveUsage(opponent);
+		self.generateMoveUsage(opponent, 1);
 	}
 
 	// Given a type string, move id, and charged move index, set a specific move
@@ -819,7 +819,8 @@ function Pokemon(id, i, b){
 
 	// Given an opponent, generate move usage stats
 
-	this.generateMoveUsage = function(opponent){
+	this.generateMoveUsage = function(opponent, weightModifier){
+		weightModifier = typeof weightModifier !== 'undefined' ? weightModifier : 1;
 
 		// First, initialize all moves to get updated damage numbers
 
@@ -829,6 +830,8 @@ function Pokemon(id, i, b){
 
 		var fastMoves = [];
 		var chargedMoves = [];
+		var fastMoveUses = [];
+		var chargedMoveUses = [];
 		var targetArrs = [fastMoves, chargedMoves];
 		var sourceArrs = [self.fastMovePool, self.chargedMovePool];
 
@@ -884,76 +887,50 @@ function Pokemon(id, i, b){
 		// Normalize move usage to total
 		for(var i = 0; i < chargedMoves.length; i++){
 			chargedMoves[i].uses = Math.round((chargedMoves[i].uses / total) * 100);
+			chargedMoveUses.push({
+				moveId: chargedMoves[i].moveId,
+				uses: chargedMoves[i].uses * weightModifier
+			});
 		}
 
-		chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
-
-		for(var i = 0; i < chargedMoves.length; i++){
-			console.log(chargedMoves[i].name + " " + chargedMoves[i].uses);
-		}
+		chargedMoveUses.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
 
 		// Calculate TDO for each fast move and sort
 		var total = 0;
+
+		// Let's use Yawn as a baseline for comparison
+		var yawn = gm.getMoveById("YAWN");
+		yawn.damage = 1;
+
+		var baseline = self.calculateCycleDPT(yawn, chargedMoves[0]);
 
 		for(var i = 0; i < fastMoves.length; i++){
 			var move = fastMoves[i];
 			var ept = move.energyGain / (move.cooldown / 500);
 
 			move.uses = self.calculateCycleDPT(move, chargedMoves[0]);
-			//move.uses *= Math.pow(ept, highestDPE / 2); // Emphasize fast charging moves with access to powerful Charged Moves
+			move.uses = Math.max(move.uses - baseline, 0);
+			move.uses *= Math.pow(ept, Math.max(highestDPE - 1, 1)); // Emphasize fast charging moves with access to powerful Charged Moves
 			total += move.uses;
 		}
 
 		// Normalize move usage to total
 		for(var i = 0; i < fastMoves.length; i++){
 			fastMoves[i].uses = Math.round((fastMoves[i].uses / total) * 100);
+			fastMoveUses.push({
+				moveId: fastMoves[i].moveId,
+				uses: fastMoves[i].uses * weightModifier
+			});
 		}
 
-		fastMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+		fastMoveUses.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
 
-		for(var i = 0; i < fastMoves.length; i++){
-			console.log(fastMoves[i].name + " " + fastMoves[i].uses);
-		}
+		var results = {
+			fastMoves: fastMoveUses,
+			chargedMoves: chargedMoveUses
+		};
 
-		return false;
-
-		// Do this for realsies so the opponent can compare
-
-		self.calculateTDO(fastMoves[0], chargedMoves[0], opponent, true);
-
-		self.fastMove = fastMoves[0];
-
-		self.chargedMoves = [];
-
-		if(count > 0){
-			self.chargedMoves.push(chargedMoves[0]);
-
-			chargedMoves.splice(0,1);
-		}
-
-
-		// Sort remaining charged moves by dpe, weighted by energy
-
-		for(var i = 0; i < chargedMoves.length; i++){
-			var move = chargedMoves[i];
-
-			move.dpe *= 1 / move.energy;
-
-			// If this move has a guaranteed stat effect, consider that as well
-
-			if((move.buffApplyChance)&&(move.buffApplyChance == 1)){
-				move.dpe *= 2;
-			}
-		}
-
-		if(chargedMoves.length > 0){
-			chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
-
-			for(var i = 0; i < count-1; i++){
-				self.chargedMoves.push(chargedMoves[i]);
-			}
-		}
-
+		return results;
 	}
 
 	// Add new move to the supplied move pool, with a flag to automatically select the new move
@@ -1015,9 +992,9 @@ function Pokemon(id, i, b){
 
 	this.calculateCycleDPT = function(fastMove, chargedMove){
 		// Calculate multiple cycles to avoid issues with overflow energy
-		var cycleFastMoves = 120 / fastMove.energyGain;
+		var cycleFastMoves = 150 / fastMove.energyGain;
 		var cycleTime = (cycleFastMoves * (fastMove.cooldown / 500)) + 1;
-		var cycleDamage = (cycleFastMoves * fastMove.damage) + (chargedMove.damage * ((120 / chargedMove.energy)-1)) + 1; // Emulate TDO with a shield
+		var cycleDamage = (cycleFastMoves * fastMove.damage) + (chargedMove.damage * ((150 / chargedMove.energy)-1)) + 1; // Emulate TDO with a shield
 		var cycleDPT = cycleDamage / cycleTime;
 
 		return cycleDPT;

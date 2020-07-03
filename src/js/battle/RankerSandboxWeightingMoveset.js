@@ -204,8 +204,8 @@ var RankerMaster = (function () {
 									adjRating: rankings[n].matches[i].adjOpRating,
 									opRating: rankings[n].matches[i].rating,
 									adjOpRating: rankings[n].matches[i].adjRating,
-									moveSet: rankings[n].matches[i].oppMoveSet,
-									oppMoveSet: rankings[n].matches[i].moveSet
+									moveUsage: rankings[n].matches[i].oppMoveUsage,
+									oppMoveUsage: rankings[n].matches[i].moveUsage
 								})
 
 								avg += rankings[n].matches[i].adjOpRating;
@@ -224,91 +224,77 @@ var RankerMaster = (function () {
 						pokemon.reset();
 						opponent.reset();
 
-						if(moveSelectMode == "auto"){
-							pokemon.autoSelectMoves();
-							opponent.autoSelectMoves();
-						}
+						// Initialize values
+						var healthRating = 500;
+						var damageRating = 500;
 
-						pokemon.setShields(shieldCounts[0]);
-						opponent.setShields(shieldCounts[1]);
+						var opHealthRating = 500;
+						var opDamageRating = 500;
 
-						// Set energy advantage
-						if(scenario.energy[0] == 0){
-							pokemon.startEnergy = 0;
-						} else{
-							pokemon.startEnergy = Math.min(pokemon.fastMove.energyGain * (Math.floor((scenario.energy[0] * 500) / pokemon.fastMove.cooldown)), 100);
-						}
+						var rating = 500;
+						var opRating = 500;
 
-						if(scenario.energy[1] == 0){
-							opponent.startEnergy = 0;
-						} else{
-							opponent.startEnergy = Math.min(opponent.fastMove.energyGain * (Math.floor((scenario.energy[1] * 500) / opponent.fastMove.cooldown)), 100);
-						}
-
-
-						battle.simulate();
-
-
-						// Calculate Battle Rating for each Pokemon
-
-						var healthRating = (pokemon.hp / pokemon.stats.hp);
-						var damageRating = ((opponent.stats.hp - opponent.hp) / (opponent.stats.hp));
-
-						var opHealthRating = (opponent.hp / opponent.stats.hp);
-						var opDamageRating = ((pokemon.stats.hp - pokemon.hp) / (pokemon.stats.hp));
-
-						var rating = Math.floor( (healthRating + damageRating) * 500);
-						var opRating = Math.floor( (opHealthRating + opDamageRating) * 500);
-
-						var turnsToWin = battle.getTurnsToWin();
-						var turnRatio = turnsToWin[0] / turnsToWin[1];
-						var opTurnRatio = turnsToWin[1] / turnsToWin[0];
-
-						// Modify ratings by shields burned and shields remaining
+						var turnsToWin = 1;
+						var turnRatio = 1;
+						var opTurnRatio = 1;
 
 						var winMultiplier = 1;
 						var opWinMultiplier = 1;
+						var adjRating = 500;
+						var adjOpRating = 500;
 
-						if(rating > opRating){
-							opWinMultiplier = 0;
-						} else{
-							winMultiplier = 0;
-						}
+						if(moveSelectMode == "auto"){
 
-						var adjRating = rating + ( (100 * (opponent.startingShields - opponent.shields) * winMultiplier) + (100 * pokemon.shields * winMultiplier));
-						var adjOpRating = opRating + ( (100 * (pokemon.startingShields - pokemon.shields) * opWinMultiplier) + (100 * opponent.shields * opWinMultiplier));
+							//pokemon.autoSelectMoves();
+							//opponent.autoSelectMoves();
 
-						//adjRating = turnRatio * 1000;
-						//adjOpRating = opTurnRatio * 1000;
+						} else if(moveSelectMode == "force"){
+							pokemon.setShields(shieldCounts[0]);
+							opponent.setShields(shieldCounts[1]);
 
-						// Search the timeline and store whether or not each charged move was used
-
-						var chargedMovesList = [];
-						var oppChargedMovesList = [];
-						var timeline = battle.getTimeline();
-
-						for(var k = 0; k < pokemon.chargedMoves.length; k++){
-							var uses = 0;
-
-							for(var j = 0; j < timeline.length; j++){
-								if(timeline[j].name == pokemon.chargedMoves[k].name){
-									uses = 1;
-								}
+							// Set energy advantage
+							if(scenario.energy[0] == 0){
+								pokemon.startEnergy = 0;
+							} else{
+								pokemon.startEnergy = Math.min(pokemon.fastMove.energyGain * (Math.floor((scenario.energy[0] * 500) / pokemon.fastMove.cooldown)), 100);
 							}
 
-							chargedMovesList.push({moveId: pokemon.chargedMoves[k].moveId, uses: uses})
-						}
-
-						for(var k = 0; k < opponent.chargedMoves.length; k++){
-							uses = 0;
-
-							for(var j = 0; j < timeline.length; j++){
-								if(timeline[j].name == opponent.chargedMoves[k].name){
-									uses = 1;
-								}
+							if(scenario.energy[1] == 0){
+								opponent.startEnergy = 0;
+							} else{
+								opponent.startEnergy = Math.min(opponent.fastMove.energyGain * (Math.floor((scenario.energy[1] * 500) / opponent.fastMove.cooldown)), 100);
 							}
 
-							oppChargedMovesList.push({moveId: opponent.chargedMoves[k].moveId, uses: uses})
+							battle.simulate();
+
+							// Calculate Battle Rating for each Pokemon
+
+							healthRating = (pokemon.hp / pokemon.stats.hp);
+							damageRating = ((opponent.stats.hp - opponent.hp) / (opponent.stats.hp));
+
+							opHealthRating = (opponent.hp / opponent.stats.hp);
+							opDamageRating = ((pokemon.stats.hp - pokemon.hp) / (pokemon.stats.hp));
+
+							rating = Math.floor( (healthRating + damageRating) * 500);
+							opRating = Math.floor( (opHealthRating + opDamageRating) * 500);
+
+							turnsToWin = battle.getTurnsToWin();
+							turnRatio = turnsToWin[0] / turnsToWin[1];
+							opTurnRatio = turnsToWin[1] / turnsToWin[0];
+
+							// Modify ratings by shields burned and shields remaining
+
+							winMultiplier = 1;
+							opWinMultiplier = 1;
+
+							if(rating > opRating){
+								opWinMultiplier = 0;
+							} else{
+								winMultiplier = 0;
+							}
+
+							adjRating = rating + ( (100 * (opponent.startingShields - opponent.shields) * winMultiplier) + (100 * pokemon.shields * winMultiplier));
+							adjOpRating = opRating + ( (100 * (pokemon.startingShields - pokemon.shields) * opWinMultiplier) + (100 * opponent.shields * opWinMultiplier));
 						}
 
 						// Push final results into the rank object's matches array
@@ -319,14 +305,8 @@ var RankerMaster = (function () {
 							adjRating: adjRating,
 							opRating: opRating,
 							adjOpRating: adjOpRating,
-							moveSet: {
-								fastMove: pokemon.fastMove.moveId,
-								chargedMoves: chargedMovesList
-							},
-							oppMoveSet: {
-								fastMove: opponent.fastMove.moveId,
-								chargedMoves: oppChargedMovesList
-							}
+							moveUsage: pokemon.generateMoveUsage(opponent, opponent.weightModifier),
+							oppMoveUsage: opponent.generateMoveUsage(pokemon, pokemon.weightModifier)
 						});
 
 						avg += adjRating;
@@ -353,18 +333,20 @@ var RankerMaster = (function () {
 					// Assign special rating to movesets and determine best overall moveset
 
 					for(var j = 0; j < rankObj.matches.length; j++){
-						var moveset = rankObj.matches[j].moveSet;
+						var moveUsage = rankObj.matches[j].moveUsage;
 
 						for(var k = 0; k < fastMoves.length; k++){
-							if(fastMoves[k].moveId == moveset.fastMove){
-								fastMoves[k].uses += 1;
+							for(var l = 0; l < moveUsage.fastMoves.length; l++){
+								if(fastMoves[k].moveId == moveUsage.fastMoves[l].moveId){
+									fastMoves[k].uses += moveUsage.fastMoves[l].uses;
+								}
 							}
 						}
 
 						for(var k = 0; k < chargedMoves.length; k++){
-							for(var l = 0; l < moveset.chargedMoves.length; l++){
-								if(chargedMoves[k].moveId == moveset.chargedMoves[l].moveId){
-									chargedMoves[k].uses += moveset.chargedMoves[l].uses;
+							for(var l = 0; l < moveUsage.chargedMoves.length; l++){
+								if(chargedMoves[k].moveId == moveUsage.chargedMoves[l].moveId){
+									chargedMoves[k].uses += moveUsage.chargedMoves[l].uses;
 								}
 							}
 						}
@@ -380,6 +362,7 @@ var RankerMaster = (function () {
 					rankings.push(rankObj);
 				}
 
+				console.log(rankings);
 
 				console.log("total battles " + totalBattles);
 
@@ -527,44 +510,9 @@ var RankerMaster = (function () {
 
 					var pokemon = pokemonList[i];
 
-					// Count up all the moves again but only include those against the top
-
-					var fastMoves = [];
-					var chargedMoves = [];
-
-					for(var j = 0; j < pokemon.fastMovePool.length; j++){
-						fastMoves.push({moveId: pokemon.fastMovePool[j].moveId, uses: 0});
-					}
-
-					for(var j = 0; j < pokemon.chargedMovePool.length; j++){
-						chargedMoves.push({moveId: pokemon.chargedMovePool[j].moveId, uses: 0});
-					}
-
-					// Assign special rating to movesets and determine best overall moveset
-
-					for(var j = 0; j < rankings[i].matches.length; j++){
-						if(rankings[i].matches[j].score > 0){
-							var moveset = rankings[i].matches[j].moveSet;
-
-							for(var k = 0; k < fastMoves.length; k++){
-								if(fastMoves[k].moveId == moveset.fastMove){
-									fastMoves[k].uses += 1;
-								}
-							}
-
-							for(var k = 0; k < chargedMoves.length; k++){
-								for(var l = 0; l < moveset.chargedMoves.length; l++){
-									if(chargedMoves[k].moveId == moveset.chargedMoves[l].moveId){
-										chargedMoves[k].uses += moveset.chargedMoves[l].uses;
-									}
-								}
-							}
-						}
-					}
-
 					// If data is available, take existing move use data
 
-					if((moveSelectMode == "force")&&(rankingData)){
+					/*if((moveSelectMode == "force")&&(rankingData)){
 
 						// Find Pokemon in existing rankings
 
@@ -573,15 +521,7 @@ var RankerMaster = (function () {
 								rankings[i].moves = rankingData[k].moves;
 							}
 						}
-					} else{
-
-						// Sort move arrays and add them to the rank object
-
-						fastMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
-						chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
-
-						rankings[i].moves = {fastMoves: fastMoves, chargedMoves: chargedMoves};
-					}
+					}*/
 
 					rankings[i].moveset = [pokemon.fastMove.moveId, pokemon.chargedMoves[0].moveId];
 
@@ -607,8 +547,8 @@ var RankerMaster = (function () {
 					for(var j = 0; j < rankings[i].matches.length; j++){
 						var match = rankings[i].matches[j];
 
-						delete match.moveSet;
-						delete match.oppMoveSet;
+						delete match.moveUsage;
+						delete match.oppMoveUsage;
 						delete match.score;
 						delete match.opScore;
 						delete match.adjRating;
@@ -634,8 +574,8 @@ var RankerMaster = (function () {
 					for(var j = 0; j < rankings[i].matches.length; j++){
 						var match = rankings[i].matches[j];
 
-						delete match.moveSet;
-						delete match.oppMoveSet;
+						delete match.moveUsage;
+						delete match.oppMoveUsage;
 						delete match.score;
 						delete match.opScore;
 						delete match.adjRating;
