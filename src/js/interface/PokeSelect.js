@@ -16,6 +16,7 @@ function PokeSelect(element, i){
 	var interface;
 	var isCustom = false; // Whether or not the Pokemon has custom-set level, IVs, or traits
 	var context = "main";
+	var searchArr = []; // Array of searchable Pokemon sorted by priority
 
 	var currentHP; // The currently animated HP
 	var currentEnergy; // The currently animated energy
@@ -26,10 +27,22 @@ function PokeSelect(element, i){
 
 		$.each(pokemon, function(n, poke){
 
-			if(poke.fastMoves.length > 0){
-				$pokeSelect.append("<option value=\""+poke.speciesId+"\" type-1=\""+poke.types[0]+"\" type-2=\""+poke.types[1]+"\">"+poke.speciesName+"</option");
+			var priority = 1;
+
+			if(poke.searchPriority){
+				priority = poke.searchPriority;
 			}
+
+			searchArr.push({
+				speciesId: poke.speciesId,
+				speciesName: poke.speciesName,
+				priority: priority
+			});
+
+			$pokeSelect.append("<option value=\""+poke.speciesId+"\" type-1=\""+poke.types[0]+"\" type-2=\""+poke.types[1]+"\">"+poke.speciesName+"</option");
 		});
+
+		searchArr.sort((a,b) => (a.priority > b.priority) ? -1 : ((b.priority > a.priority) ? 1 : 0));
 
 		interface = InterfaceMaster.getInstance();
 
@@ -525,20 +538,14 @@ function PokeSelect(element, i){
 		if(searchStr == '')
 			return;
 
-		var found = false;
+		for(var i = 0; i < searchArr.length; i++){
+			var pokeName = searchArr[i].speciesName.toLowerCase();
 
-		$pokeSelect.find("option").not(".hide").each(function(index, value){
-			var pokeName = $(this).html().toLowerCase();
-
-			if((pokeName.startsWith(searchStr))&&(! found)){
-
-				$(this).prop("selected", "selected");
-
-				found = true;
-
-				return true;
+			if(pokeName.startsWith(searchStr)){
+				$pokeSelect.find("option[value=\""+searchArr[i].speciesId+"\"]").prop("selected", "selected");
+				break;
 			}
-		});
+		}
 
 		var id = $pokeSelect.find("option:selected").val();
 

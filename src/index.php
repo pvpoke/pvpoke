@@ -27,7 +27,12 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.15.8 (July 1, 2020)</h4>
+	<h4>v1.15.9 (July 2, 2020)</h4>
+	<ul>
+		<li>Implemented a search priority to Pokemon selection so popular Pokemon like Azumarill and Giratina will appear first without needing to type most of the name.</li>
+	</ul>
+
+	<h4>v1.15.9 (July 1, 2020)</h4>
 	<ul>
 		<li>Updated interface for Charged Move buttons/meters to show overflow energy like in-game.</li>
 		<li>Hovering over a Pokemon's selected Charged Moves shows damage in percentage and highlights the damage amount on the opponent's health bar.</li>

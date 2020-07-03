@@ -426,7 +426,7 @@
 			]
 		}
 	],
-  "pokemon": [{
+  "pokemon": [[{
         "dex": 1,
         "speciesName": "Bulbasaur",
         "speciesId": "bulbasaur",
@@ -514,7 +514,8 @@
             "cp2500": [39, 5, 9, 12]
         },
         "level25CP": 1673,
-		"eliteMoves": ["FRENZY_PLANT"]
+		"eliteMoves": ["FRENZY_PLANT"],
+		"searchPriority": 13
     }, {
         "dex": 3,
         "speciesName": "Venusaur (Shadow)",
@@ -624,7 +625,8 @@
             "cp2500": [35, 5, 13, 6]
         },
         "level25CP": 1784,
-        "eliteMoves": ["EMBER", "WING_ATTACK", "BLAST_BURN", "FLAMETHROWER"]
+        "eliteMoves": ["EMBER", "WING_ATTACK", "BLAST_BURN", "FLAMETHROWER"],
+		"searchPriority": 10
     }, {
         "dex": 6,
         "speciesName": "Charizard (Shadow)",
@@ -887,7 +889,8 @@
         },
         "level25CP": 1097,
         "tags": ["shadoweligible"],
-        "eliteMoves": ["BUG_BITE", "DRILL_RUN"]
+        "eliteMoves": ["BUG_BITE", "DRILL_RUN"],
+		"searchPriority": 4
     }, {
         "dex": 15,
         "speciesName": "Beedrill (Shadow)",
@@ -1212,7 +1215,8 @@
         "defaultIVs": {
             "cp1500": [24.5, 5, 15, 8],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 5
     }, {
         "dex": 27,
         "speciesName": "Sandshrew",
@@ -1448,7 +1452,8 @@
             "cp1500": [23, 5, 14, 8],
             "cp2500": [40, 15, 15, 15]
         },
-        "eliteMoves": ["POUND"]
+        "eliteMoves": ["POUND"],
+		"searchPriority": 8
     }, {
         "dex": 37,
         "speciesName": "Vulpix",
@@ -1587,7 +1592,8 @@
         "defaultIVs": {
             "cp1500": [29, 7, 15, 5],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 7
     }, {
         "dex": 41,
         "speciesName": "Zubat",
@@ -2333,7 +2339,8 @@
         },
         "level25CP": 1584,
         "tags": ["shadoweligible"],
-        "eliteMoves": ["SUBMISSION"]
+        "eliteMoves": ["SUBMISSION"],
+		"searchPriority": 6
     }, {
         "dex": 62,
         "speciesName": "Poliwrath (Shadow)",
@@ -2509,7 +2516,8 @@
             "cp1500": [18, 6, 10, 15],
             "cp2500": [30, 5, 12, 14]
         },
-        "eliteMoves": ["KARATE_CHOP", "STONE_EDGE", "SUBMISSION"]
+        "eliteMoves": ["KARATE_CHOP", "STONE_EDGE", "SUBMISSION"],
+		"searchPriority": 5
     }, {
         "dex": 69,
         "speciesName": "Bellsprout",
@@ -2599,7 +2607,8 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1479,
-        "tags": ["shadoweligible"]
+        "tags": ["shadoweligible"],
+		"searchPriority": 3
     }, {
         "dex": 71,
         "speciesName": "Victreebel (Shadow)",
@@ -2720,7 +2729,8 @@
         "defaultIVs": {
             "cp1500": [29, 5, 15, 14],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 3
     }, {
         "dex": 76,
         "speciesName": "Golem",
@@ -3086,7 +3096,8 @@
         "defaultIVs": {
             "cp1500": [20, 8, 15, 7],
             "cp2500": [38, 5, 11, 10]
-        }
+        },
+		"searchPriority": 17
     }, {
         "dex": 89,
         "speciesName": "Muk (Shadow)",
@@ -3210,7 +3221,8 @@
             "cp1500": [28.5, 6, 15, 8],
             "cp2500": [40, 15, 15, 15]
         },
-        "eliteMoves": ["LICK"]
+        "eliteMoves": ["LICK"],
+		"searchPriority": 7
     }, {
         "dex": 94,
         "speciesName": "Gengar",
@@ -3227,7 +3239,8 @@
             "cp1500": [19, 8, 15, 9],
             "cp2500": [34, 7, 8, 15]
         },
-        "eliteMoves": ["LICK", "SLUDGE_WAVE", "DARK_PULSE", "PSYCHIC"]
+        "eliteMoves": ["LICK", "SLUDGE_WAVE", "DARK_PULSE", "PSYCHIC"],
+		"searchPriority": 14
     }, {
         "dex": 95,
         "speciesName": "Onix",
@@ -3300,7 +3313,8 @@
         },
         "level25CP": 1255,
         "tags": ["shadoweligible"],
-        "eliteMoves": ["PSYSHOCK"]
+        "eliteMoves": ["PSYSHOCK"],
+		"searchPriority": 14
     }, {
         "dex": 97,
         "speciesName": "Hypno (Shadow)",
@@ -3544,7 +3558,8 @@
         "defaultIVs": {
             "cp1500": [31, 7, 11, 14],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 8
     }, {
         "dex": 105,
         "speciesName": "Marowak (Shadow)",
@@ -4058,7 +4073,8 @@
         },
         "level25CP": 1828,
         "tags": ["shadoweligible"],
-        "eliteMoves": ["SUBMISSION"]
+        "eliteMoves": ["SUBMISSION"],
+		"searchPriority": 2
     }, {
         "dex": 127,
         "speciesName": "Pinsir (Shadow)",
@@ -4147,7 +4163,8 @@
         },
         "level25CP": 2119,
         "tags": ["shadoweligible"],
-        "eliteMoves": ["DRAGON_TAIL", "DRAGON_PULSE"]
+        "eliteMoves": ["DRAGON_TAIL", "DRAGON_PULSE"],
+		"searchPriority": 4
     }, {
         "dex": 130,
         "speciesName": "Gyarados (Shadow)",
@@ -4184,7 +4201,8 @@
         },
         "level25CP": 1616,
         "tags": ["shadoweligible"],
-        "eliteMoves": ["ICE_SHARD", "DRAGON_PULSE", "ICE_BEAM"]
+        "eliteMoves": ["ICE_SHARD", "DRAGON_PULSE", "ICE_BEAM"],
+		"searchPriority": 10
     }, {
         "dex": 131,
         "speciesName": "Lapras (Shadow)",
@@ -4466,7 +4484,8 @@
         },
         "level25CP": 2001,
         "tags": ["shadoweligible"],
-        "eliteMoves": ["YAWN"]
+        "eliteMoves": ["YAWN"],
+		"searchPriority": 6
     }, {
         "dex": 143,
         "speciesName": "Snorlax (Shadow)",
@@ -4503,7 +4522,8 @@
             "cp2500": [31.5, 5, 15, 6]
         },
         "level25CP": 1893,
-        "eliteMoves": ["HURRICANE"]
+        "eliteMoves": ["HURRICANE"],
+		"searchPriority": 6
     }, {
         "dex": 144,
         "speciesName": "Articuno (Shadow)",
@@ -4684,7 +4704,8 @@
         },
         "level25CP": 2386,
         "tags": ["shadoweligible"],
-        "eliteMoves": ["DRACO_METEOR", "DRAGON_PULSE"]
+        "eliteMoves": ["DRACO_METEOR", "DRAGON_PULSE"],
+		"searchPriority": 10
     }, {
         "dex": 149,
         "speciesName": "Dragonite (Shadow)",
@@ -4720,7 +4741,8 @@
             "cp1500": [13, 5, 14, 11],
             "cp2500": [21.5, 11, 13, 11]
         },
-        "eliteMoves": ["PSYSTRIKE", "SHADOW_BALL", "HYPER_BEAM"]
+        "eliteMoves": ["PSYSTRIKE", "SHADOW_BALL", "HYPER_BEAM"],
+		"searchPriority": 7
     }, {
         "dex": 150,
         "speciesName": "Mewtwo (Armored)",
@@ -4807,7 +4829,8 @@
             "cp1500": [23, 7, 9, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "eliteMoves": ["FRENZY_PLANT"]
+        "eliteMoves": ["FRENZY_PLANT"],
+		"searchPriority": 16
     }, {
         "dex": 155,
         "speciesName": "Cyndaquil",
@@ -4859,7 +4882,8 @@
             "cp1500": [19.5, 6, 8, 10],
             "cp2500": [35, 5, 13, 6]
         },
-        "eliteMoves": ["BLAST_BURN"]
+        "eliteMoves": ["BLAST_BURN"],
+		"searchPriority": 4
     }, {
         "dex": 158,
         "speciesName": "Totodile",
@@ -4976,7 +5000,8 @@
         "defaultIVs": {
             "cp1500": [28, 6, 13, 8],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 3
     }, {
         "dex": 165,
         "speciesName": "Ledyba",
@@ -5107,7 +5132,8 @@
         "defaultIVs": {
             "cp1500": [27, 5, 14, 9],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 3
     }, {
         "dex": 172,
         "speciesName": "Pichu",
@@ -5399,7 +5425,8 @@
         "defaultIVs": {
             "cp1500": [38, 13, 13, 12],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 48
     }, {
         "dex": 185,
         "speciesName": "Sudowoodo",
@@ -5415,7 +5442,8 @@
         "defaultIVs": {
             "cp1500": [25.5, 6, 14, 15],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 8
     }, {
         "dex": 186,
         "speciesName": "Politoed",
@@ -5500,7 +5528,8 @@
         "defaultIVs": {
             "cp1500": [38.5, 7, 12, 15],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 5
     }, {
         "dex": 190,
         "speciesName": "Aipom",
@@ -5630,7 +5659,8 @@
             "cp1500": [26, 7, 13, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "eliteMoves": ["LAST_RESORT"]
+        "eliteMoves": ["LAST_RESORT"],
+		"searchPriority": 13
     }, {
         "dex": 198,
         "speciesName": "Murkrow",
@@ -5914,7 +5944,8 @@
             "cp2500": [31, 6, 11, 14]
         },
         "level25CP": 1857,
-        "tags": ["shadoweligible"]
+        "tags": ["shadoweligible"],
+		"searchPriority": 6
     }, {
         "dex": 212,
         "speciesName": "Scizor (Shadow)",
@@ -6197,7 +6228,8 @@
         "defaultIVs": {
             "cp1500": [27, 6, 9, 10],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 13
     }, {
         "dex": 227,
         "speciesName": "Skarmory",
@@ -6213,7 +6245,8 @@
         "defaultIVs": {
             "cp1500": [26.5, 5, 15, 12],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 16
     }, {
         "dex": 228,
         "speciesName": "Houndour",
@@ -6300,7 +6333,8 @@
             "cp1500": [21, 6, 9, 14],
             "cp2500": [36.5, 15, 14, 14]
         },
-        "eliteMoves": ["WATER_GUN"]
+        "eliteMoves": ["WATER_GUN"],
+		"searchPriority": 5
     }, {
         "dex": 231,
         "speciesName": "Phanpy",
@@ -6711,7 +6745,8 @@
         },
         "level25CP": 2416,
         "tags": ["shadoweligible"],
-        "eliteMoves": ["SMACK_DOWN"]
+        "eliteMoves": ["SMACK_DOWN"],
+		"searchPriority": 4
     }, {
         "dex": 248,
         "speciesName": "Tyranitar (Shadow)",
@@ -6833,7 +6868,8 @@
             "cp1500": [20.5, 6, 10, 7],
             "cp2500": [36, 9, 13, 12]
         },
-        "eliteMoves": ["FRENZY_PLANT"]
+        "eliteMoves": ["FRENZY_PLANT"],
+		"searchPriority": 2
     }, {
         "dex": 255,
         "speciesName": "Torchic",
@@ -6974,7 +7010,8 @@
             "cp2500": [32, 6, 11, 14]
         },
         "level25CP": 1841,
-        "eliteMoves": ["HYDRO_CANNON"]
+        "eliteMoves": ["HYDRO_CANNON"],
+		"searchPriority": 31
     }, {
         "dex": 260,
         "speciesName": "Swampert (Shadow)",
@@ -7307,7 +7344,8 @@
         },
         "level25CP": 1412,
         "tags": ["shadoweligible"],
-		"eliteMoves": ["BULLET_SEED"]
+		"eliteMoves": ["BULLET_SEED"],
+		"searchPriority": 10
     }, {
         "dex": 275,
         "speciesName": "Shiftry (Shadow)",
@@ -7593,7 +7631,8 @@
         "defaultIVs": {
             "cp1500": [28, 5, 15, 14],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 4
     }, {
         "dex": 289,
         "speciesName": "Slaking",
@@ -7823,7 +7862,8 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 858,
-        "tags": ["shadoweligible"]
+        "tags": ["shadoweligible"],
+		"searchPriority": 10
     }, {
         "dex": 302,
         "speciesName": "Sableye (Shadow)",
@@ -7955,7 +7995,8 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 5
     }, {
         "dex": 309,
         "speciesName": "Electrike",
@@ -8510,7 +8551,8 @@
         "defaultIVs": {
             "cp1500": [28.5, 5, 9, 12],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 21
     }, {
         "dex": 335,
         "speciesName": "Zangoose",
@@ -8610,7 +8652,8 @@
         "defaultIVs": {
             "cp1500": [27, 5, 14, 11],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 8
     }, {
         "dex": 341,
         "speciesName": "Corphish",
@@ -8707,7 +8750,8 @@
         "defaultIVs": {
             "cp1500": [25.5, 5, 15, 8],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 2
     }, {
         "dex": 347,
         "speciesName": "Anorith",
@@ -9008,7 +9052,8 @@
         "defaultIVs": {
             "cp1500": [29, 6, 12, 13],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 4
     }, {
         "dex": 358,
         "speciesName": "Chimecho",
@@ -9432,7 +9477,8 @@
         },
         "level25CP": 2386,
         "tags": ["shadoweligible"],
-        "eliteMoves": ["METEOR_MASH"]
+        "eliteMoves": ["METEOR_MASH"],
+		"searchPriority": 20
     }, {
         "dex": 376,
         "speciesName": "Metagross (Shadow)",
@@ -9501,7 +9547,8 @@
         "defaultIVs": {
             "cp1500": [22.5, 8, 15, 13],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 40
     }, {
         "dex": 380,
         "speciesName": "Latias",
@@ -9552,7 +9599,8 @@
         "defaultIVs": {
             "cp1500": [13, 11, 15, 12],
             "cp2500": [22.5, 5, 14, 6]
-        }
+        },
+		"searchPriority": 10
     }, {
         "dex": 383,
         "speciesName": "Groudon",
@@ -9570,7 +9618,8 @@
             "cp1500": [13, 11, 15, 12],
             "cp2500": [22.5, 5, 14, 6]
         },
-		"eliteMoves": ["FIRE_PUNCH"]
+		"eliteMoves": ["FIRE_PUNCH"],
+		"searchPriority": 20
     }, {
         "dex": 384,
         "speciesName": "Rayquaza",
@@ -9655,7 +9704,8 @@
         "defaultIVs": {
             "cp1500": [23.5, 13, 12, 13],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 15
     }, {
         "dex": 386,
         "speciesName": "Deoxys (Speed)",
@@ -9886,7 +9936,8 @@
             "cp1500": [19, 6, 11, 14],
             "cp2500": [33.5, 7, 14, 9]
         },
-        "eliteMoves": ["HYDRO_CANNON"]
+        "eliteMoves": ["HYDRO_CANNON"],
+		"searchPriority": 4
     }, {
         "dex": 396,
         "speciesName": "Starly",
@@ -10142,7 +10193,8 @@
         "defaultIVs": {
             "cp1500": [38.5, 15, 14, 14],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 25
     }, {
         "dex": 412,
         "speciesName": "Burmy (Plant)",
@@ -10384,7 +10436,8 @@
         "defaultIVs": {
             "cp1500": [27, 7, 14, 11],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 7
     }, {
         "dex": 422,
         "speciesName": "Shellos (East)",
@@ -10664,7 +10717,8 @@
         "defaultIVs": {
             "cp1500": [23.5, 6, 13, 11],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 5
     }, {
         "dex": 436,
         "speciesName": "Bronzor",
@@ -10696,7 +10750,8 @@
         "defaultIVs": {
             "cp1500": [24.5, 9, 14, 12],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 2
     }, {
         "dex": 438,
         "speciesName": "Bonsly",
@@ -10825,7 +10880,8 @@
         "defaultIVs": {
             "cp1500": [14, 6, 12, 6],
             "cp2500": [23, 8, 15, 7]
-        }
+        },
+		"searchPriority": 8
     }, {
         "dex": 446,
         "speciesName": "Munchlax",
@@ -10841,7 +10897,8 @@
         "defaultIVs": {
             "cp1500": [30, 6, 11, 12],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 4
     }, {
         "dex": 447,
         "speciesName": "Riolu",
@@ -10937,7 +10994,8 @@
         "defaultIVs": {
             "cp1500": [22.5, 8, 14, 10],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 2
     }, {
         "dex": 453,
         "speciesName": "Croagunk",
@@ -10969,7 +11027,8 @@
         "defaultIVs": {
             "cp1500": [22, 7, 14, 12],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 20
     }, {
         "dex": 455,
         "speciesName": "Carnivine",
@@ -11157,7 +11216,8 @@
             "cp2500": [29, 5, 15, 6]
         },
         "level25CP": 1993,
-        "tags": ["shadoweligible"]
+        "tags": ["shadoweligible"],
+		"searchPriority": 4
     }, {
         "dex": 462,
         "speciesName": "Magnezone (Shadow)",
@@ -11312,7 +11372,8 @@
         "defaultIVs": {
             "cp1500": [16.5, 8, 15, 7],
             "cp2500": [27.5, 7, 14, 10]
-        }
+        },
+		"searchPriority": 14
     }, {
         "dex": 469,
         "speciesName": "Yanmega",
@@ -11395,7 +11456,8 @@
             "cp1500": [16, 11, 14, 15],
             "cp2500": [27.5, 8, 15, 5]
         },
-        "eliteMoves": ["ANCIENT_POWER"]
+        "eliteMoves": ["ANCIENT_POWER"],
+		"searchPriority": 2
     }, {
         "dex": 474,
         "speciesName": "Porygon-Z",
@@ -11534,7 +11596,8 @@
         "defaultIVs": {
             "cp1500": [27.5, 8, 6, 15],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 7
     }, {
         "dex": 479,
         "speciesName": "Rotom",
@@ -11698,7 +11761,8 @@
         "defaultIVs": {
             "cp1500": [13.5, 7, 14, 9],
             "cp2500": [22.5, 5, 12, 14]
-        }
+        },
+		"searchPriority": 20
     }, {
         "dex": 484,
         "speciesName": "Palkia",
@@ -11766,7 +11830,8 @@
         "defaultIVs": {
             "cp1500": [16.5, 5, 13, 9],
             "cp2500": [27.5, 7, 10, 9]
-        }
+        },
+		"searchPriority": 32
     }, {
         "dex": 487,
         "speciesName": "Giratina (Origin)",
@@ -11801,7 +11866,8 @@
             "cp1500": [19.5, 7, 9, 14],
             "cp2500": [35, 7, 13, 11]
         },
-		"eliteMoves": ["GRASS_KNOT"]
+		"eliteMoves": ["GRASS_KNOT"],
+		"searchPriority": 32
     }, {
         "dex": 489,
         "speciesName": "Phione",
@@ -13408,7 +13474,8 @@
         "defaultIVs": {
             "cp1500": [21, 6, 13, 13],
             "cp2500": [37, 15, 14, 14]
-        }
+        },
+		"searchPriority": 2
     }, {
         "dex": 566,
         "speciesId": "archen",
@@ -13920,7 +13987,8 @@
         "defaultIVs": {
             "cp1500": [19.5, 6, 13, 5],
             "cp2500": [34, 5, 10, 14]
-        }
+        },
+		"searchPriority": 7
     }, {
         "dex": 590,
         "speciesId": "foongus",
@@ -14064,7 +14132,8 @@
         "defaultIVs": {
             "cp1500": [23.5, 10, 15, 11],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 13
     }, {
         "dex": 599,
         "speciesId": "klink",
@@ -14384,7 +14453,8 @@
         "defaultIVs": {
             "cp1500": [26, 7, 15, 6],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 10
     }, {
 	    "dex": 618,
 	    "speciesName": "Stunfisk (Galarian)",
@@ -14401,7 +14471,8 @@
 	    "defaultIVs": {
 			"cp1500": [26, 7, 15, 6],
             "cp2500": [40, 15, 15, 15]
-	    }
+	    },
+		"searchPriority": 10
 	}, {
         "dex": 619,
         "speciesId": "mienfoo",
@@ -14659,7 +14730,8 @@
         "defaultIVs": {
             "cp1500": [31, 7, 13, 10],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 3
     }, {
         "dex": 635,
         "speciesId": "hydreigon",
@@ -14844,7 +14916,8 @@
             "cp1500": [13.5, 7, 14, 9],
             "cp2500": [22.5, 5, 12, 14]
         },
-        "tags": ["legendary"]
+        "tags": ["legendary"],
+		"searchPriority": 4
     }, {
         "dex": 644,
         "speciesId": "zekrom",
@@ -14861,7 +14934,8 @@
             "cp1500": [13.5, 7, 14, 9],
             "cp2500": [22.5, 5, 12, 14]
         },
-        "tags": ["legendary"]
+        "tags": ["legendary"],
+		"searchPriority": 2
     }, {
         "dex": 645,
         "speciesId": "landorus_incarnate",
@@ -14878,7 +14952,8 @@
             "cp1500": [15, 8, 15, 13],
             "cp2500": [25, 10, 15, 11]
         },
-        "tags": ["legendary"]
+        "tags": ["legendary"],
+		"searchPriority": 4
     }, {
         "dex": 645,
         "speciesId": "landorus_therian",
@@ -15129,7 +15204,8 @@
             "cp1500": [15, 10, 14, 11],
             "cp2500": [26, 5, 6, 12]
         },
-        "tags": ["mythical"]
+        "tags": ["mythical"],
+		"searchPriority": 18
     }, {
 	    "dex": 862,
 	    "speciesName": "Obstagoon",
@@ -15163,7 +15239,8 @@
 			"cp1500": [23.5, 7, 8, 12],
             "cp2500": [40, 15, 15, 15]
 	    },
-		"tags": ["galarian"]
+		"tags": ["galarian"],
+		"searchPriority": 3
 	}, {
 	    "dex": 865,
 	    "speciesName": "Sirfetchd",
