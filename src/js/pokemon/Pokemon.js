@@ -887,7 +887,7 @@ function Pokemon(id, i, b){
 
 		for(var i = 1; i < chargedMoves.length; i++){
 			for(var n = 0; n < i; n++){
-				if((chargedMoves[i].type == chargedMoves[n].type)&&(chargedMoves[i].energy >= chargedMoves[n].energy)){
+				if((chargedMoves[i].type == chargedMoves[n].type)&&(chargedMoves[i].energy >= chargedMoves[n].energy)&&(chargedMoves[i].dpe / chargedMoves[n].dpe < 1.3)){
 					chargedMoves[i].uses *= .5;
 					break;
 				}
@@ -923,10 +923,15 @@ function Pokemon(id, i, b){
 		for(var i = 0; i < fastMoves.length; i++){
 			var move = fastMoves[i];
 			var ept = move.energyGain / (move.cooldown / 500);
+			var dpt = move.damage / (move.cooldown / 500);
 
 			move.uses = self.calculateCycleDPT(move, chargedMoves[0]);
 			move.uses = Math.max(move.uses - baseline, 0);
-			move.uses *= Math.pow(ept, Math.max(highestDPE - 1, 1)); // Emphasize fast charging moves with access to powerful Charged Moves
+
+			if(ept >= 4){
+				move.uses *= Math.pow(Math.sqrt(dpt*Math.pow(ept,2)), Math.max(highestDPE - 1, 1)); // Emphasize fast charging moves with access to powerful Charged Moves
+			}
+
 			total += move.uses;
 		}
 
