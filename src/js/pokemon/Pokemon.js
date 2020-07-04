@@ -845,7 +845,6 @@ function Pokemon(id, i, b){
 		chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
 
 		var highestDPE = chargedMoves[0].dpe;
-		var total = 0;
 
 		for(var i = 0; i < chargedMoves.length; i++){
 			var move = chargedMoves[i];
@@ -879,22 +878,27 @@ function Pokemon(id, i, b){
 
 			// Calculate usage based on raw damage, efficiency, and speed
 			move.uses = (Math.pow(move.damage, 2) / Math.pow(move.energy, 4)) * Math.pow(statChangeFactor, 2);
+		}
 
-			total += move.uses;
+		chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+
+		// For moves that have a strictly better preference, sharply reduce usage
+		total = chargedMoves[0].uses;
+
+		for(var i = 1; i < chargedMoves.length; i++){
+			for(var n = 0; n < i; n++){
+				if((chargedMoves[i].type == chargedMoves[n].type)&&(chargedMoves[i].energy >= chargedMoves[n].energy)){
+					chargedMoves[i].uses *= .5;
+					break;
+				}
+			}
+
+			total += chargedMoves[i].uses;
 		}
 
 		// Normalize move usage to total
 		for(var i = 0; i < chargedMoves.length; i++){
 			chargedMoves[i].uses = Math.round((chargedMoves[i].uses / total) * 100);
-		}
-
-		// To approximate baiting, give up to 50% usage to the fastest move
-		chargedMoves.sort((a,b) => (a.energy > b.energy) ? 1 : ((b.energy > a.energy) ? -1 : 0));
-
-		for(var i = 1; i < chargedMoves.length; i++){
-			var baitUsage = (1 - (chargedMoves[0].energy / chargedMoves[i].energy)) * 0.5;
-			//chargedMoves[0].uses += Math.round(chargedMoves[i].uses * baitUsage);
-			//chargedMoves[i].uses -= Math.round(chargedMoves[i].uses * baitUsage);
 		}
 
 		for(var i = 0; i < chargedMoves.length; i++){
@@ -941,8 +945,6 @@ function Pokemon(id, i, b){
 			fastMoves: fastMoveUses,
 			chargedMoves: chargedMoveUses
 		};
-
-		console.log(results.chargedMoves);
 
 		return results;
 	}

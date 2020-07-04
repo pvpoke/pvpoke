@@ -113,6 +113,10 @@ var RankerMaster = (function () {
 
 						self.initPokemonList(cp);
 
+						// Only do 1 scenario for move generation
+						scenarios = scenarios.splice(0, 1);
+
+
 						for(currentScenarioIndex = 0; currentScenarioIndex < scenarios.length; currentScenarioIndex++){
 							rankingCombinations.push({league: leagues[currentLeagueIndex], scenario: scenarios[currentScenarioIndex]});
 						}
@@ -361,8 +365,6 @@ var RankerMaster = (function () {
 
 					rankings.push(rankObj);
 				}
-
-				console.log(rankings);
 
 				console.log("total battles " + totalBattles);
 
