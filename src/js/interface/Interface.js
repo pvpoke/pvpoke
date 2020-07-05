@@ -1543,9 +1543,7 @@ var InterfaceMaster = (function () {
 					}
 				}
 
-				if(self.battleMode == "single"){
-					gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), "all");
-				}
+				gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), "all");
 			}
 
 			// Event handler for changing the battle mode

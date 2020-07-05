@@ -11257,7 +11257,8 @@
         },
         "level25CP": 2347,
         "tags": [],
-        "eliteMoves": ["ROCK_WRECKER"]
+        "eliteMoves": ["ROCK_WRECKER"],
+		"searchPriority": 5
     }, {
         "dex": 465,
         "speciesName": "Tangrowth",
