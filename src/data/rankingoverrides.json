@@ -2523,10 +2523,6 @@
 				"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
 			},
 			{
-				"speciesId": "empoleon",
-				"chargedMoves": ["HYDRO_CANNON", "FLASH_CANNON"]
-			},
-			{
 				"speciesId": "weavile",
 				"chargedMoves": ["AVALANCHE", "FOCUS_BLAST"]
 			},
@@ -2578,10 +2574,6 @@
 			{
 				"speciesId": "electivire_shadow",
 				"chargedMoves": ["ICE_PUNCH", "WILD_CHARGE"]
-			},
-			{
-				"speciesId": "haxorus",
-				"chargedMoves": ["DRAGON_CLAW", "SURF"]
 			},
 			{
 				"speciesId": "hydreigon",
@@ -2658,11 +2650,13 @@
 			},
 			{
 				"speciesId": "gyarados",
+				"fastMove": ["DRAGON_BREATH"],
 				"chargedMoves": ["CRUNCH","HYDRO_PUMP"],
 				"weight": 10
 			},
 			{
 				"speciesId": "swampert",
+				"chargedMoves": ["HYDRO_CANNON","EARTHQUAKE"],
 				"weight": 15
 			},
 			{
