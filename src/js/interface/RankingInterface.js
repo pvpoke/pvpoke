@@ -551,8 +551,8 @@ var InterfaceMaster = (function () {
 					var percentStr = (Math.floor((fastMoves[n].uses / totalFastUses) * 1000) / 10) + "%";
 					var displayWidth = (Math.floor((fastMoves[n].uses / totalFastUses) * 1000) / 20);
 
-					if(displayWidth < 10){
-						displayWidth = "auto";
+					if(displayWidth < 14){
+						displayWidth = "14%";
 					} else{
 						displayWidth = displayWidth + "%";
 					}
@@ -572,8 +572,8 @@ var InterfaceMaster = (function () {
 					percentStr = (Math.floor((chargedMoves[n].uses / totalChargedUses) * 1000) / 10) + "%";
 					displayWidth = (Math.floor((chargedMoves[n].uses / totalChargedUses) * 1000) / 20);
 
-					if(displayWidth < 10){
-						displayWidth = "auto";
+					if(displayWidth < 14){
+						displayWidth = "14%";
 					} else{
 						displayWidth = displayWidth + "%";
 					}

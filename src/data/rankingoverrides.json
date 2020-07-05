@@ -1889,10 +1889,6 @@
 				"fastMove": "WATERFALL"
 			},
 			{
-				"speciesId": "obstagoon",
-				"weight": 6
-			},
-			{
 				"speciesId": "sirfetchd",
 				"chargedMoves": ["LEAF_BLADE", "CLOSE_COMBAT"],
 				"weight": 4
@@ -1984,12 +1980,17 @@
 			{
 				"speciesId": "machamp",
 				"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
-				"weight": 9
+				"weight": 3
+			},
+			{
+				"speciesId": "obstagoon",
+				"chargedMoves": ["NIGHT_SLASH", "GUNK_SHOT"],
+				"weight": 10
 			},
 			{
 				"speciesId": "snorlax",
 				"chargedMoves": ["BODY_SLAM", "EARTHQUAKE"],
-				"weight": 33
+				"weight": 25
 			},
 			{
 				"speciesId": "empoleon",
@@ -2050,7 +2051,7 @@
 				"speciesId": "cresselia",
 				"fastMove": "PSYCHO_CUT",
 				"chargedMoves": ["FUTURE_SIGHT", "MOONBLAST"],
-				"weight": 25
+				"weight": 80
 			},
 			{
 				"speciesId": "lapras",
@@ -2157,7 +2158,7 @@
 				"speciesId": "muk_alolan",
 				"fastMove": "SNARL",
 				"chargedMoves": ["DARK_PULSE","GUNK_SHOT"],
-				"weight": 50
+				"weight": 10
 			},
 			{
 				"speciesId": "gardevoir",
@@ -2464,6 +2465,7 @@
 			},
 			{
 				"speciesId": "giratina_origin",
+				"chargedMoves": ["SHADOW_BALL","OMINOUS_WIND"],
 				"weight": 25
 			},
 			{

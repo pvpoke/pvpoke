@@ -622,87 +622,15 @@ function Pokemon(id, i, b){
 
 		count = typeof count !== 'undefined' ? count : 2;
 
-		// First, initialize all moves to get updated damage numbers
-
-		this.resetMoves();
-
-		// Feed move pools into new arrays so they can be manipulated without affecting the originals
-
-		var fastMoves = [];
-		var chargedMoves = [];
-		var targetArrs = [fastMoves, chargedMoves];
-		var sourceArrs = [self.fastMovePool, self.chargedMovePool];
-
-		for(var i = 0; i < sourceArrs.length; i++){
-			for(var n = 0; n < sourceArrs[i].length; n++){
-				targetArrs[i].push(sourceArrs[i][n]);
-			}
-		}
-
-		// Pop beams to the front
-
-		if((battle.getCup())&&(battle.getCup().name == "beam")){
-			for(var i = 0; i < chargedMoves.length; i++){
-				if((chargedMoves[i].moveId == "SOLAR_BEAM")||(chargedMoves[i].moveId == "HYPER_BEAM")){
-					chargedMoves[i].dpe = 100;
-				}
-			}
-		}
-
-		// Sort charged moves by DPE
-
-		chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
-
-		// Calculate TDO for each fast move and sort
-
 		var opponent = battle.getOpponent(self.index);
+		var usage = self.generateMoveUsage(opponent, 1);
 
-		for(var i = 0; i < fastMoves.length; i++){
-			var move = fastMoves[i];
+		self.selectMove("fast", usage.fastMoves[0].moveId);
+		self.selectMove("charged", usage.chargedMoves[0].moveId, 0);
 
-			move.tdo = self.calculateTDO(move, chargedMoves[0], opponent, false);
+		if((usage.chargedMoves.length > 1)&&(count > 1)){
+			self.selectMove("charged", usage.chargedMoves[1].moveId, 1);
 		}
-
-		fastMoves.sort((a,b) => (a.tdo > b.tdo) ? -1 : ((b.tdo > a.tdo) ? 1 : 0));
-
-		// Do this for realsies so the opponent can compare
-
-		self.calculateTDO(fastMoves[0], chargedMoves[0], opponent, true);
-
-		self.fastMove = fastMoves[0];
-
-		self.chargedMoves = [];
-
-		if(count > 0){
-			self.chargedMoves.push(chargedMoves[0]);
-
-			chargedMoves.splice(0,1);
-		}
-
-
-		// Sort remaining charged moves by dpe, weighted by energy
-
-		for(var i = 0; i < chargedMoves.length; i++){
-			var move = chargedMoves[i];
-
-			move.dpe *= 1 / move.energy;
-
-			// If this move has a guaranteed stat effect, consider that as well
-
-			if((move.buffApplyChance)&&(move.buffApplyChance == 1)){
-				move.dpe *= 2;
-			}
-		}
-
-		if(chargedMoves.length > 0){
-			chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
-
-			for(var i = 0; i < count-1; i++){
-				self.chargedMoves.push(chargedMoves[i]);
-			}
-		}
-
-		self.generateMoveUsage(opponent, 1);
 	}
 
 	// Given a type string, move id, and charged move index, set a specific move
