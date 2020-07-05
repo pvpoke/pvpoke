@@ -71,6 +71,10 @@ var RankerMaster = (function () {
 				var cup = battle.getCup().name;
 				var categories = ["leads","closers","switches","chargers","attackers"];
 
+				if(moveUsageMode == "aggregate"){
+					categories = ["leads"];
+				}
+
 				if(gm.loadedData < categories.length){
 					return;
 				}

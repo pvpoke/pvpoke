@@ -235,7 +235,7 @@ require_once 'header.php';
 		<p>In the top-level rankings, you'll see a score for each Pokemon. This score is an overall performance number from 0 to 100, where 100 is the best Pokemon in that league and category. It is derived from simulating every possible matchup, with each Pokemon's most used moveset (these may be manually adjusted). Use this score to compare overall performance between Pokemon; for example, the difference between the #1 and #50 Pokemon may not be the same as the difference between the #50 and #100 Pokemon. This score also allows you to see the parity in different leagues and categories.</p>
 		<p>Trainer Battles feature a wide variety of scenarios, especially involving shields. In order to give a fuller picture, our overall rankings are derived from additional sets of rankings, where battles are simulated with different roles in mind. You can explore rankings for each of the following categories:</p>
 		<ul>
-			<li><b>Overall - </b> Derived from a Pokemon's score in all other categories. Moves are ranked based on usage in every category. Key Counters and Top Matchups, however, are taken from the Leads category.</li>
+			<li><b>Overall - </b> Derived from a Pokemon's score in all other categories. Moves are ranked based on calculations across all opponents. Key Counters and Top Matchups, however, are taken from the Leads category.</li>
 			<li><b>Leads - </b> Ranking battles simulated with 2 shields vs. 2 shields.</li>
 			<li><b>Closers - </b> Ranking battles simulated with no shields vs. no shields.</li>
 			<li><b>Switches - </b> Ranking battles simulated with 6 turns of energy advantage and scored to favor safe matches.</li>
@@ -254,12 +254,7 @@ require_once 'header.php';
 		<p>Use these to see even more information about a Pokemon, which matchups it might be useful in, and what you can use to counter it.</p>
 		<h2>Using the Move Rankings</h2>
 		<p>Each Pokemon has a pool of Fast Moves and a pool of Charged Moves. Some moves might be better in one battle, and other moves might be better in another. For Trainer Battles, you'll want know which moves will be the best ones to have in the most matchups. You might also want to know which Pokemon are the best candidates for a second Charged Move. The move details within each Pokemon ranking can help you determine that.</p>
-		<p>Each move is sorted by usage percentage—the percentage of battles where that move was used during the simulation, not just where it was selected. The distinction is that, in practice, an often selected move might be used infrequently, or conversely, an infrequently selected move might see more use in the matches where it's selected. Here are a few of examples to illustrate the difference:</p>
-		<ul>
-			<li>Kyogre's best Charged Move in terms of DPE (damage per energy) is Hydro Pump. However, Hydro Pump takes so long to charge and Kyogre's Fast Move, Waterfall, hits so hard that Kyogre ends up using the faster-charging move Thunder to knock out its opponents much more often than it uses Hydro Pump. In other words, there are very few Pokemon that would survive Kyogre's Thunder by the time it has Hydro Pump charged. As a result, Thunder has a higher usage percentage than Hydro Pump.</li>
-			<li>On paper, Meganium's second best Charged Move is Solar Beam, and is selected in a large number of matchups. However, there are no situations in the current battle algorithm where Solar Beam is more optimal than Frenzy Plant, so it sees no usage. Alternatively, Earthquake is selected in fewer matchups but sees widespread use in the matchups where it's selected, making it a better secondary Charged Move than Solar Beam.</li>
-			<li>Raticate and Alolan Raticate both know Hyper Beam and the faster but less efficient Hyper Fang. Raticate is less bulky than its Alolan counterpart, and that reflects in its move usage. It often doesn't survive long enough to use Hyper Beam, and ends up using Hyper Fang instead. Alolan Raticate, by comparison, survives to use Hyper Beam with more regular frequency, and so sees more balanced usage between Hyper Beam and Hyper Fang.</li>
-		</ul>
+		<p>Moves are ranked using calculations primarily based on their damage and energy cost. Stat changes are also factored in. These calculations are run for each matchup, and then totaled across the format. Matchup weighting affects these numbers as well, so moves that would be used against significant meta targets will rank higher.</p>
 		<p>When looking at potential moves, keep an eye out for Pokemon that have a strong tendency toward a single Fast Move and a single Charged Move. These Pokemon will have their optimal moveset in the most matchups. On the other hand, some Pokemon see more balanced usage in their Charged Moves. This is where having a second Charged Move comes into play.</p>
 		<p>If you're investing in a second Charged Move, you want a pair that would be optimal in the most number of matchups. Two moves that would be used in 90% of matchups are better than two moves that would be used in 60% of matchups. You also want a move that adds the most value to those matchups. A second Charged Move that is used in 40% of matchups will give you more value than one that's used in 5% of matchups.</p>
 		<p>However, not all matchups are equal. When your opponent switches in a Pokemon, it isn't just random; they're likely to send out something that's strong against you. Because of this, a Charged Move that counters your counters might be more valuable than the rankings indicate. Blastoise, for example, doesn't use Ice Beam often in simulated head-to-head matchups (premier Grass-types like Meganium and Venusaur will knock it out before it can). However, Ice Beam can still be valuable when your opponent sends out these Pokemon while Blastoise has Ice Beam near or fully charged, or if you have shields while they don't.</p>
@@ -298,7 +293,7 @@ require_once 'header.php';
 	</div>
 	<div class="detail-section float margin">
 		<div class="ranking-header">Fast Moves</div>
-		<div class="ranking-header right">Usage</div>
+		<div class="ranking-header right">Preference</div>
 		<div class="moveset fast clear"></div>
 		<div class="footnote">
 			* Event or Elite TM exclusive<br>
@@ -307,11 +302,11 @@ require_once 'header.php';
 	</div>
 	<div class="detail-section float">
 		<div class="ranking-header">Charged Moves</div>
-		<div class="ranking-header right">Usage</div>
+		<div class="ranking-header right">Preference</div>
 		<div class="moveset charged clear"></div>
 	</div>
 	<div class="clear"></div>
-	<div class="detail-section moveset-override">This Pokemon's recommended moveset has been manually set over the generated move usage data. This may be to prevent an impossible moveset or take advantage of specific matchups.</div>
+	<div class="detail-section moveset-override">This Pokemon's recommended moveset has been manually set over the calculated move preferences. This may be to prevent an impossible moveset or take advantage of specific matchups.</div>
 	<div class="detail-section typing">
 		<div class="rating-container">
 			<div class="ranking-header">Primary Type</div>
