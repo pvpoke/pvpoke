@@ -404,6 +404,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if(cup.name == "continentals-2"){
+					iterations = 1;
+				}
+
 				if(cup.name == "catacomb"){
 					iterations = 1;
 				}
@@ -468,6 +472,10 @@ var RankerMaster = (function () {
 							}
 
 							if(cup.name == "catacomb"){
+								weight = 1;
+							}
+
+							if(cup.name == "continentals-2"){
 								weight = 1;
 							}
 
