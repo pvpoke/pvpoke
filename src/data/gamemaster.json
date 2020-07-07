@@ -391,7 +391,7 @@
         "dexStart": 494,
         "dexEnd": 649
     }],
-    "shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "charmander", "charmeleon", "charizard", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "bellossom", "politoed", "scizor", "houndour", "houndoom", "larvitar", "pupitar", "tyranitar", "mudkip", "marshtomp", "swampert", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "trapinch", "vibrava", "flygon", "cacnea", "cacturne", "shuppet", "banette", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "shellder", "cloyster", "sableye", "zapdos", "moltres", "delibird", "stantler", "absol", "bagon", "shelgon", "salamence", "snover", "abomasnow", "raikou", "vulpix", "ninetales", "exeggcute", "exeggutor", "omanyte", "omastar", "misdreavus", "mismagius", "carvanha", "sharpedo", "pinsir", "mawile", "beldum", "metang", "metagross", "entei"],
+    "shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "charmander", "charmeleon", "charizard", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "bellossom", "politoed", "scizor", "houndour", "houndoom", "larvitar", "pupitar", "tyranitar", "mudkip", "marshtomp", "swampert", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "trapinch", "vibrava", "flygon", "cacnea", "cacturne", "shuppet", "banette", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "sableye", "zapdos", "moltres", "delibird", "stantler", "absol", "bagon", "shelgon", "salamence", "snover", "abomasnow", "raikou", "vulpix", "ninetales", "exeggcute", "exeggutor", "omanyte", "omastar", "misdreavus", "mismagius", "carvanha", "sharpedo", "pinsir", "mawile", "beldum", "metang", "metagross", "entei"],
 	"cliffhangerTiers": [
 		{
 			"league": 1500,
@@ -1528,7 +1528,8 @@
         "defaultIVs": {
             "cp1500": [23.5, 9, 15, 14],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 2
     }, {
         "dex": 38,
         "speciesName": "Ninetales (Shadow)",
@@ -2661,8 +2662,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "level25CP": 741,
-        "tags": ["shadoweligible"]
+        "level25CP": 741
     }, {
         "dex": 74,
         "speciesName": "Geodude (Alolan)",
@@ -2698,7 +2698,6 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1132,
-        "tags": ["shadoweligible"],
         "eliteMoves": ["ROCK_SLIDE"]
     }, {
         "dex": 75,
@@ -2735,8 +2734,7 @@
             "cp1500": [18.5, 9, 12, 13],
             "cp2500": [32.5, 5, 11, 14]
         },
-        "level25CP": 1825,
-        "tags": ["shadoweligible"]
+        "level25CP": 1825
     }, {
         "dex": 76,
         "speciesName": "Golem (Alolan)",
@@ -3119,25 +3117,7 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "level25CP": 605,
-        "tags": ["shadoweligible"]
-    }, {
-        "dex": 90,
-        "speciesName": "Shellder (Shadow)",
-        "speciesId": "shellder_shadow",
-        "baseStats": {
-            "atk": 116,
-            "def": 134,
-            "hp": 102
-        },
-        "types": ["water", "none"],
-        "fastMoves": ["ICE_SHARD", "TACKLE"],
-        "chargedMoves": ["BUBBLE_BEAM", "ICY_WIND", "WATER_PULSE"],
-        "defaultIVs": {
-            "cp1500": [40, 15, 15, 15],
-            "cp2500": [40, 15, 15, 15]
-        },
-        "tags": ["shadow"]
+        "level25CP": 605
     }, {
         "dex": 91,
         "speciesName": "Cloyster",
@@ -3155,25 +3135,6 @@
             "cp2500": [39.5, 13, 15, 13]
         },
         "level25CP": 1554,
-        "tags": ["shadoweligible"],
-        "eliteMoves": ["BLIZZARD"]
-    }, {
-        "dex": 91,
-        "speciesName": "Cloyster (Shadow)",
-        "speciesId": "cloyster_shadow",
-        "baseStats": {
-            "atk": 186,
-            "def": 256,
-            "hp": 137
-        },
-        "types": ["water", "ice"],
-        "fastMoves": ["FROST_BREATH", "ICE_SHARD"],
-        "chargedMoves": ["AURORA_BEAM", "AVALANCHE", "BLIZZARD", "HYDRO_PUMP", "ICY_WIND"],
-        "defaultIVs": {
-            "cp1500": [21, 12, 15, 14],
-            "cp2500": [39.5, 13, 15, 13]
-        },
-        "tags": ["shadow"],
         "eliteMoves": ["BLIZZARD"]
     }, {
         "dex": 92,
@@ -3245,7 +3206,6 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 608,
-        "tags": ["shadoweligible"],
         "eliteMoves": ["IRON_HEAD", "ROCK_SLIDE"]
     }, {
         "dex": 96,
@@ -5864,8 +5824,7 @@
             "cp1500": [22.5, 10, 15, 14],
             "cp2500": [40, 15, 15, 15]
         },
-        "level25CP": 1465,
-        "tags": ["shadoweligible"]
+        "level25CP": 1465
     }, {
         "dex": 209,
         "speciesName": "Snubbull",
@@ -7521,7 +7480,8 @@
             "cp2500": [29.5, 9, 11, 12]
         },
         "tags": ["shadow"],
-        "eliteMoves": ["SYNCHRONOISE"]
+        "eliteMoves": ["SYNCHRONOISE"],
+		"searchPriority": 2
     }, {
         "dex": 283,
         "speciesName": "Surskit",

@@ -15,6 +15,11 @@ function Pokemon(id, i, b){
 
 	var cpms = [0.093999997,0.16639787,0.21573247,0.25572005,0.29024988,0.3210876,0.34921268,0.37523559,0.39956728,0.42250001,0.44310755,0.46279839,0.48168495,0.49985844,0.51739395,0.53435433,0.55079269,0.56675452,0.58227891,0.59740001,0.61215729,0.62656713,0.64065295,0.65443563,0.667934,0.68116492,0.69414365,0.70688421,0.71939909,0.7317,0.73776948,0.74378943,0.74976104,0.75568551,0.76156384,0.76739717,0.7731865,0.77893275,0.78463697,0.79030001,0.79530001,0.8003,0.8053,0.81029999,0.81529999];
 
+	if(! data){
+		console.log(id + " not found");
+		return false;
+	}
+
 	// Base properties
 	this.dex = data.dex;
 	this.speciesId = id;
@@ -855,10 +860,7 @@ function Pokemon(id, i, b){
 
 			move.uses = self.calculateCycleDPT(move, chargedMoves[0]);
 			move.uses = Math.max(move.uses - baseline, 0);
-
-			if(ept >= 4){
-				move.uses *= Math.pow(Math.sqrt(dpt*Math.pow(ept,2)), Math.max(highestDPE - 1, 1)); // Emphasize fast charging moves with access to powerful Charged Moves
-			}
+			move.uses *= Math.pow(Math.pow(dpt*Math.pow(ept,4), 1/5), Math.max(highestDPE - 1, 1)); // Emphasize fast charging moves with access to powerful Charged Moves
 
 			total += move.uses;
 		}

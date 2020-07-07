@@ -141,6 +141,10 @@ var InterfaceMaster = (function () {
 
 					var pokemon = new Pokemon(r.speciesId, 0, battle);
 
+					if(! pokemon.speciesId){
+						continue;
+					}
+
 					// Get names of of ranking moves
 
 					var moveNameStr = "";

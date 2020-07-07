@@ -26,6 +26,7 @@
 			},
 			{
 				"speciesId": "mantine",
+				"fastMove": "BUBBLE",
 				"chargedMoves": ["BUBBLE_BEAM", "ICE_BEAM"],
 				"weight": 4
 			},
@@ -187,6 +188,14 @@
 				"chargedMoves": ["WILD_CHARGE","GRASS_KNOT"]
 			},
 			{
+				"speciesId": "raikou",
+				"fastMove": "THUNDER_SHOCK"
+			},
+			{
+				"speciesId": "raikou_shadow",
+				"fastMove": "THUNDER_SHOCK"
+			},
+			{
 				"speciesId": "lanturn",
 				"fastMove": "SPARK",
 				"weight": 3
@@ -201,11 +210,11 @@
 			},
 			{
 				"speciesId": "hitmonchan",
-				"chargedMoves": ["POWER_UP_PUNCH", "THUNDER_PUNCH"]
+				"chargedMoves": ["ICE_PUNCH", "THUNDER_PUNCH"]
 			},
 			{
 				"speciesId": "hitmonchan_shadow",
-				"chargedMoves": ["POWER_UP_PUNCH", "THUNDER_PUNCH"]
+				"chargedMoves": ["ICE_PUNCH", "THUNDER_PUNCH"]
 			},
 			{
 				"speciesId": "dragonair",
