@@ -297,6 +297,14 @@
 	    }],
 	    "exclude": []
 	}, {
+	    "name": "grunt-6",
+	    "title": "Grunt Cup 6",
+	    "include": [{
+	        "filterType": "id",
+	        "values": ["beedrill_shadow","beedrill","cradily","golbat","sneasel","houndoom","drapion","toxicroak","masquerain","liepard","scyther","scyther_shadow","scizor_shadow","scizor","skuntank","froslass","electabuzz","electabuzz_shadow","electivire_shadow","electivire","muk_alolan","graveler_alolan","golem_alolan","arcanine","venomoth","alakazam_shadow","grimer","moltres_shadow","arcanine_shadow","alakazam","breloom","manectric","walrein","sealeo","seviper","lanturn","crawdaunt","cacturne","cacturne_shadow","torkoal","zangoose","claydol","lairon","aggron","camerupt","mightyyena","sharpedo","sharpedo_shadow","magneton_shadow","sneasel_shadow","raticate","arbok","sandslash","nidorina","nidorino","nidoking","crobat","crobat_shadow","gyarados","nidoqueen","golem","parasect","persian","poliwhirl","poliwrath","tentacruel","graveler","slowbro","slowpoke","wobbuffet","wobbuffet_shadow","dodrio","muk","cloyster","haunter","gengar","onix","electrode","magmar","tyranitar","tyranitar_shadow","houndoom_shadow","dugtrio","exeggutor","exeggutor_shadow","magneton","drowzee","marowak","weezing","rhyhorn","rhydon","kangaskhan","seadra","seaking","jynx","tauros","omanyte","omastar","kabuto","kabutops","aerodactyl","golbat_shadow","raticate_shadow","sandslash_shadow","venomoth_shadow","persian_shadow","poliwhirl_shadow","poliwrath_shadow","drowzee_shadow","muk_shadow","marowak_shadow","omanyte_shadow","omastar_shadow","lickitung","moltres","vaporeon","porygon","porygon_shadow","porygon2","porygon2_shadow","porygon_z","porygon_z_shadow"]
+	    }],
+	    "exclude": []
+	}, {
         "name": "sorcerous",
         "title": "Sorcerous Cup",
         "include": [{

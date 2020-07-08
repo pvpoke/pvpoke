@@ -3,7 +3,8 @@
 	<option value="official" cup="premier">Premier Cup</option>
 	<option value="tsa-2" cup="catacomb">Silph Catacomb Cup</option>
 	<option value="tsa-2" cup="continentals-2">Season 2 Continentals</option>
-	<option value="tsa-2" cup="scoville">Scoville Cup</option>
+	<option value="community" cup="scoville">Scoville Cup</option>
+	<option value="community" cup="grunt-6">Grunt Cup Season 6</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>
@@ -23,6 +24,7 @@
 	<option value="fantasy" cat="community">GO LIVE Fantasy Cup</option>
 	<option value="beam" cat="community">Get Beamed</option>
 	<option value="grunt-4" cat="community">Grunt Cup Season 4</option>
+	<option value="grunt-6" cat="community">Grunt Cup Season 6</option>
 	<option value="goteamup" cat="community">GO Stadium GOTeamUp</option>
 	<option value="cliffhanger" cat="community">GO Stadium Cliffhanger</option>
 	<option value="scoville" cat="community">Scoville Cup</option>
