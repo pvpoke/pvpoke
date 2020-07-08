@@ -4094,6 +4094,52 @@
 	},
 	{
 		"league": 1500,
+		"cup": "scoville",
+		"pokemon": [
+			{
+				"speciesId": "bronzong",
+				"chargedMoves": ["PSYSHOCK","BULLDOZE"]
+			},
+			{
+				"speciesId": "hypno_shadow",
+				"chargedMoves": ["ICE_PUNCH","THUNDER_PUNCH"]
+			},
+			{
+				"speciesId": "serperior",
+				"chargedMoves": ["GRASS_KNOT","AERIAL_ACE"]
+			},
+			{
+				"speciesId": "ninetales",
+				"chargedMoves": ["PSYSHOCK","OVERHEAT"]
+			},
+			{
+				"speciesId": "breloom",
+				"chargedMoves": ["SEED_BOMB","DYNAMIC_PUNCH"]
+			},
+			{
+				"speciesId": "mawile",
+				"chargedMoves": ["POWER_UP_PUNCH","PLAY_ROUGH"]
+			},
+			{
+				"speciesId": "forretress",
+				"chargedMoves": ["MIRROR_SHOT","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "mawile_shadow",
+				"chargedMoves": ["POWER_UP_PUNCH","PLAY_ROUGH"]
+			},
+			{
+				"speciesId": "granbull",
+				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "gardevoir",
+				"fastMove": "CHARM"
+			}
+		]
+	},
+	{
+		"league": 1500,
 		"cup": "forest",
 		"pokemon": [
 			{
