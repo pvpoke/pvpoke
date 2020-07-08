@@ -135,11 +135,11 @@ switch($cup){
 		break;
 
 	case "catacomb":
-		$league = 'Catacomb';
+		$league = 'Catacomb Cup';
 		break;
 
 	case "scoville":
-		$league = 'Scoville';
+		$league = 'Scoville Cup';
 		break;
 }
 
