@@ -112,6 +112,16 @@
 				"chargedMoves": ["ROCK_WRECKER","SURF"]
 			},
 			{
+				"speciesId": "abomasnow",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["ENERGY_BALL","OUTRAGE"]
+			},
+			{
+				"speciesId": "abomasnow_shadow",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["ENERGY_BALL","OUTRAGE"]
+			},
+			{
 				"speciesId": "gyarados",
 				"chargedMoves": ["CRUNCH", "OUTRAGE"]
 			},
