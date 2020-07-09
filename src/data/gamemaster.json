@@ -400,7 +400,7 @@
         "dexStart": 494,
         "dexEnd": 649
     }],
-    "shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "charmander", "charmeleon", "charizard", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "bellossom", "politoed", "scizor", "houndour", "houndoom", "larvitar", "pupitar", "tyranitar", "mudkip", "marshtomp", "swampert", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "trapinch", "vibrava", "flygon", "cacnea", "cacturne", "shuppet", "banette", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "sableye", "zapdos", "moltres", "delibird", "stantler", "absol", "bagon", "shelgon", "salamence", "snover", "abomasnow", "raikou", "vulpix", "ninetales", "exeggcute", "exeggutor", "omanyte", "omastar", "misdreavus", "mismagius", "carvanha", "sharpedo", "pinsir", "mawile", "beldum", "metang", "metagross", "entei", "ekans", "arbok", "koffing", "weezing"],
+    "shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "charmander", "charmeleon", "charizard", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "bellossom", "politoed", "scizor", "houndour", "houndoom", "larvitar", "pupitar", "tyranitar", "mudkip", "marshtomp", "swampert", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "trapinch", "vibrava", "flygon", "cacnea", "cacturne", "shuppet", "banette", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "sableye", "zapdos", "moltres", "delibird", "stantler", "absol", "bagon", "shelgon", "salamence", "snover", "abomasnow", "raikou", "vulpix", "ninetales", "exeggcute", "exeggutor", "omanyte", "omastar", "misdreavus", "mismagius", "carvanha", "sharpedo", "pinsir", "mawile", "beldum", "metang", "metagross", "entei", "ekans", "arbok", "koffing", "weezing", "nidoran_female", "nidorina", "nidoran_male", "nidorino", "nidoqueen", "nidoking", "machop", "machoke", "machamp", "gligar", "gliscor", "shuckle", "stunky", "skuntank", "suicune", "pineco", "forretress"],
     "cliffhangerTiers": [{
         "league": 1500,
         "max": 17,
@@ -1365,7 +1365,26 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+        "level25CP": 437,
+        "tags": ["shadoweligible"]
+    }, {
+        "dex": 29,
+        "speciesName": "Nidoran♀ (Shadow)",
+        "speciesId": "nidoran_female_shadow",
+        "baseStats": {
+            "atk": 86,
+            "def": 89,
+            "hp": 146
+        },
+        "types": ["poison", "none"],
+        "fastMoves": ["BITE", "POISON_STING"],
+        "chargedMoves": ["BODY_SLAM", "POISON_FANG", "SLUDGE_BOMB"],
+        "defaultIVs": {
+            "cp1500": [40, 15, 15, 15],
+            "cp2500": [40, 15, 15, 15]
+        },
+        "tags": ["shadow"]
     }, {
         "dex": 30,
         "speciesName": "Nidorina",
@@ -1381,7 +1400,26 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+        "level25CP": 749,
+        "tags": ["shadoweligible"]
+    }, {
+        "dex": 30,
+        "speciesName": "Nidorina (Shadow)",
+        "speciesId": "nidorina_shadow",
+        "baseStats": {
+            "atk": 117,
+            "def": 120,
+            "hp": 172
+        },
+        "types": ["poison", "none"],
+        "fastMoves": ["BITE", "POISON_STING"],
+        "chargedMoves": ["DIG", "POISON_FANG", "SLUDGE_BOMB"],
+        "defaultIVs": {
+            "cp1500": [40, 15, 15, 15],
+            "cp2500": [40, 15, 15, 15]
+        },
+        "tags": ["shadow"]
     }, {
         "dex": 31,
         "speciesName": "Nidoqueen",
@@ -1397,7 +1435,25 @@
         "defaultIVs": {
             "cp1500": [23, 5, 6, 10],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["shadoweligible"]
+    }, {
+        "dex": 31,
+        "speciesName": "Nidoqueen (Shadow)",
+        "speciesId": "nidoqueen_shadow",
+        "baseStats": {
+            "atk": 180,
+            "def": 173,
+            "hp": 207
+        },
+        "types": ["poison", "ground"],
+        "fastMoves": ["BITE", "POISON_JAB"],
+        "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "STONE_EDGE", "EARTH_POWER"],
+        "defaultIVs": {
+            "cp1500": [23, 5, 6, 10],
+            "cp2500": [40, 15, 15, 15]
+        },
+		"tags": ["shadow"]
     }, {
         "dex": 32,
         "speciesName": "Nidoran♂",
@@ -1413,7 +1469,26 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+        "level25CP": 465,
+        "tags": ["shadoweligible"]
+    }, {
+        "dex": 32,
+        "speciesName": "Nidoran♂ (Shadow)",
+        "speciesId": "nidoran_male_shadow",
+        "baseStats": {
+            "atk": 105,
+            "def": 76,
+            "hp": 130
+        },
+        "types": ["poison", "none"],
+        "fastMoves": ["PECK", "POISON_STING"],
+        "chargedMoves": ["BODY_SLAM", "HORN_ATTACK", "SLUDGE_BOMB"],
+        "defaultIVs": {
+            "cp1500": [40, 15, 15, 15],
+            "cp2500": [40, 15, 15, 15]
+        },
+        "tags": ["shadow"]
     }, {
         "dex": 33,
         "speciesName": "Nidorino",
@@ -1429,7 +1504,26 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+        "level25CP": 804,
+        "tags": ["shadoweligible"]
+    }, {
+        "dex": 33,
+        "speciesName": "Nidorino (Shadow)",
+        "speciesId": "nidorino_shadow",
+        "baseStats": {
+            "atk": 137,
+            "def": 111,
+            "hp": 156
+        },
+        "types": ["poison", "none"],
+        "fastMoves": ["POISON_JAB", "POISON_STING"],
+        "chargedMoves": ["DIG", "HORN_ATTACK", "SLUDGE_BOMB"],
+        "defaultIVs": {
+            "cp1500": [40, 15, 15, 15],
+            "cp2500": [40, 15, 15, 15]
+        },
+        "tags": ["shadow"]
     }, {
         "dex": 34,
         "speciesName": "Nidoking",
@@ -1446,7 +1540,27 @@
             "cp1500": [21.5, 7, 15, 8],
             "cp2500": [38.5, 15, 13, 15]
         },
-        "eliteMoves": ["FURY_CUTTER"]
+        "eliteMoves": ["FURY_CUTTER"],
+        "level25CP": 1571,
+        "tags": ["shadoweligible"]
+    }, {
+        "dex": 34,
+        "speciesName": "Nidoking (Shadow)",
+        "speciesId": "nidoking_shadow",
+        "baseStats": {
+            "atk": 204,
+            "def": 156,
+            "hp": 191
+        },
+        "types": ["poison", "ground"],
+        "fastMoves": ["FURY_CUTTER", "IRON_TAIL", "POISON_JAB"],
+        "chargedMoves": ["EARTHQUAKE", "MEGAHORN", "SLUDGE_WAVE", "EARTH_POWER"],
+        "defaultIVs": {
+            "cp1500": [21.5, 7, 15, 8],
+            "cp2500": [38.5, 15, 13, 15]
+        },
+        "eliteMoves": ["FURY_CUTTER"],
+        "tags": ["shadow"]
     }, {
         "dex": 35,
         "speciesName": "Clefairy",
@@ -2511,7 +2625,27 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "eliteMoves": ["LOW_KICK"]
+        "eliteMoves": ["LOW_KICK"],
+        "level25CP": 725,
+        "tags": ["shadoweligible"]
+    }, {
+        "dex": 66,
+        "speciesName": "Machop (Shadow)",
+        "speciesId": "machop_shadow",
+        "baseStats": {
+            "atk": 137,
+            "def": 82,
+            "hp": 172
+        },
+        "types": ["fighting", "none"],
+        "fastMoves": ["KARATE_CHOP", "LOW_KICK", "ROCK_SMASH"],
+        "chargedMoves": ["BRICK_BREAK", "CROSS_CHOP", "LOW_SWEEP"],
+        "defaultIVs": {
+            "cp1500": [40, 15, 15, 15],
+            "cp2500": [40, 15, 15, 15]
+        },
+        "eliteMoves": ["LOW_KICK"],
+        "tags": ["shadow"]
     }, {
         "dex": 67,
         "speciesName": "Machoke",
@@ -2528,7 +2662,27 @@
             "cp1500": [27.5, 7, 15, 6],
             "cp2500": [40, 15, 15, 15]
         },
-        "eliteMoves": ["CROSS_CHOP"]
+        "eliteMoves": ["CROSS_CHOP"],
+        "level25CP": 1216,
+        "tags": ["shadoweligible"]
+    }, {
+        "dex": 67,
+        "speciesName": "Machoke (Shadow)",
+        "speciesId": "machoke_shadow",
+        "baseStats": {
+            "atk": 177,
+            "def": 125,
+            "hp": 190
+        },
+        "types": ["fighting", "none"],
+        "fastMoves": ["KARATE_CHOP", "LOW_KICK"],
+        "chargedMoves": ["BRICK_BREAK", "CROSS_CHOP", "DYNAMIC_PUNCH", "SUBMISSION"],
+        "defaultIVs": {
+            "cp1500": [27.5, 7, 15, 6],
+            "cp2500": [40, 15, 15, 15]
+        },
+        "eliteMoves": ["CROSS_CHOP"],
+        "tags": ["shadow"]
     }, {
         "dex": 68,
         "speciesName": "Machamp",
@@ -2546,7 +2700,28 @@
             "cp2500": [30, 5, 12, 14]
         },
         "eliteMoves": ["KARATE_CHOP", "STONE_EDGE", "SUBMISSION"],
-        "searchPriority": 5
+        "searchPriority": 5,
+        "level25CP": 1893,
+        "tags": ["shadoweligible"]
+    }, {
+        "dex": 68,
+        "speciesName": "Machamp (Shadow)",
+        "speciesId": "machamp_shadow",
+        "baseStats": {
+            "atk": 234,
+            "def": 159,
+            "hp": 207
+        },
+        "types": ["fighting", "none"],
+        "fastMoves": ["BULLET_PUNCH", "COUNTER", "KARATE_CHOP"],
+        "chargedMoves": ["CLOSE_COMBAT", "CROSS_CHOP", "DYNAMIC_PUNCH", "HEAVY_SLAM", "ROCK_SLIDE", "STONE_EDGE", "SUBMISSION"],
+        "defaultIVs": {
+            "cp1500": [18, 6, 10, 15],
+            "cp2500": [30, 5, 12, 14]
+        },
+        "eliteMoves": ["KARATE_CHOP", "STONE_EDGE", "SUBMISSION"],
+        "searchPriority": 5,
+        "tags": ["shadow"]
     }, {
         "dex": 69,
         "speciesName": "Bellsprout",
@@ -5857,7 +6032,25 @@
         "defaultIVs": {
             "cp1500": [24.5, 6, 10, 13],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["shadoweligible"]
+    }, {
+        "dex": 205,
+        "speciesName": "Forretress (Shadow)",
+        "speciesId": "forretress_shadow",
+        "baseStats": {
+            "atk": 161,
+            "def": 205,
+            "hp": 181
+        },
+        "types": ["bug", "steel"],
+        "fastMoves": ["BUG_BITE", "STRUGGLE_BUG"],
+        "chargedMoves": ["EARTHQUAKE", "HEAVY_SLAM", "ROCK_TOMB", "SAND_TOMB", "MIRROR_SHOT"],
+        "defaultIVs": {
+            "cp1500": [24.5, 6, 10, 13],
+            "cp2500": [40, 15, 15, 15]
+        },
+		"tags": "shadoweligible"
     }, {
         "dex": 206,
         "speciesName": "Dunsparce",
@@ -5889,7 +6082,26 @@
         "defaultIVs": {
             "cp1500": [31, 6, 15, 9],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+        "level25CP": 1104,
+        "tags": ["shadoweligible"]
+    }, {
+        "dex": 207,
+        "speciesName": "Gligar (Shadow)",
+        "speciesId": "gligar_shadow",
+        "baseStats": {
+            "atk": 143,
+            "def": 184,
+            "hp": 163
+        },
+        "types": ["ground", "flying"],
+        "fastMoves": ["FURY_CUTTER", "WING_ATTACK"],
+        "chargedMoves": ["AERIAL_ACE", "DIG", "NIGHT_SLASH"],
+        "defaultIVs": {
+            "cp1500": [31, 6, 15, 9],
+            "cp2500": [40, 15, 15, 15]
+        },
+        "tags": ["shadow"]
     }, {
         "dex": 208,
         "speciesName": "Steelix",
@@ -6007,7 +6219,26 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+        "level25CP": 139,
+        "tags": ["shadoweligible"]
+    }, {
+        "dex": 213,
+        "speciesName": "Shuckle (Shadow)",
+        "speciesId": "shuckle_shadow",
+        "baseStats": {
+            "atk": 17,
+            "def": 396,
+            "hp": 85
+        },
+        "types": ["bug", "rock"],
+        "fastMoves": ["ROCK_THROW", "STRUGGLE_BUG"],
+        "chargedMoves": ["GYRO_BALL", "ROCK_BLAST", "STONE_EDGE"],
+        "defaultIVs": {
+            "cp1500": [40, 15, 15, 15],
+            "cp2500": [40, 15, 15, 15]
+        },
+        "tags": ["shadow"]
     }, {
         "dex": 214,
         "speciesName": "Heracross",
@@ -6678,7 +6909,26 @@
         "types": ["water", "none"],
         "fastMoves": ["EXTRASENSORY", "HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "ICE_FANG", "SNARL"],
         "chargedMoves": ["BUBBLE_BEAM", "HYDRO_PUMP", "ICE_BEAM", "WATER_PULSE"],
-        "tags": ["legendary"],
+        "tags": ["legendary", "shadoweligible"],
+        "defaultIVs": {
+            "cp1500": [18.5, 6, 11, 15],
+            "cp2500": [33.5, 5, 8, 9]
+        },
+        "eliteMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER"],
+        "level25CP": 1846
+    }, {
+        "dex": 245,
+        "speciesName": "Suicune (Shadow)",
+        "speciesId": "suicune_shadow",
+        "baseStats": {
+            "atk": 180,
+            "def": 235,
+            "hp": 225
+        },
+        "types": ["water", "none"],
+        "fastMoves": ["EXTRASENSORY", "HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "ICE_FANG", "SNARL"],
+        "chargedMoves": ["BUBBLE_BEAM", "HYDRO_PUMP", "ICE_BEAM", "WATER_PULSE"],
+        "tags": ["legendary", "shadow"],
         "defaultIVs": {
             "cp1500": [18.5, 6, 11, 15],
             "cp2500": [33.5, 5, 8, 9]
@@ -10730,7 +10980,26 @@
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+        "level25CP": 647,
+        "tags": ["shadoweligible"]
+    }, {
+        "dex": 434,
+        "speciesName": "Stunky (Shadow)",
+        "speciesId": "stunky_shadow",
+        "baseStats": {
+            "atk": 121,
+            "def": 90,
+            "hp": 160
+        },
+        "types": ["poison", "dark"],
+        "fastMoves": ["BITE", "SCRATCH"],
+        "chargedMoves": ["CRUNCH", "FLAMETHROWER", "SLUDGE_BOMB"],
+        "defaultIVs": {
+            "cp1500": [40, 15, 15, 15],
+            "cp2500": [40, 15, 15, 15]
+        },
+        "tags": ["shadow"]
     }, {
         "dex": 435,
         "speciesName": "Skuntank",
@@ -10747,7 +11016,27 @@
             "cp1500": [23.5, 6, 13, 11],
             "cp2500": [40, 15, 15, 15]
         },
-        "searchPriority": 5
+        "searchPriority": 5,
+        "level25CP": 1430,
+        "tags": ["shadoweligible"]
+    }, {
+        "dex": 435,
+        "speciesName": "Skuntank (Shadow)",
+        "speciesId": "skuntank_shadow",
+        "baseStats": {
+            "atk": 184,
+            "def": 132,
+            "hp": 230
+        },
+        "types": ["poison", "dark"],
+        "fastMoves": ["BITE", "POISON_JAB"],
+        "chargedMoves": ["CRUNCH", "FLAMETHROWER", "SLUDGE_BOMB"],
+        "defaultIVs": {
+            "cp1500": [23.5, 6, 13, 11],
+            "cp2500": [40, 15, 15, 15]
+        },
+        "searchPriority": 5,
+        "tags": ["shadow"]
     }, {
         "dex": 436,
         "speciesName": "Bronzor",
@@ -11470,7 +11759,26 @@
         "defaultIVs": {
             "cp1500": [20.5, 7, 13, 11],
             "cp2500": [39.5, 5, 11, 11]
-        }
+        },
+        "level25CP": 1654,
+        "tags": ["shadoweligible"]
+    }, {
+        "dex": 472,
+        "speciesName": "Gliscor (Shadow)",
+        "speciesId": "gliscor_shadow",
+        "baseStats": {
+            "atk": 185,
+            "def": 222,
+            "hp": 181
+        },
+        "types": ["ground", "flying"],
+        "fastMoves": ["FURY_CUTTER", "WING_ATTACK"],
+        "chargedMoves": ["AERIAL_ACE", "EARTHQUAKE", "NIGHT_SLASH", "SAND_TOMB"],
+        "defaultIVs": {
+            "cp1500": [20.5, 7, 13, 11],
+            "cp2500": [39.5, 5, 11, 11]
+        },
+        "tags": ["shadow"]
     }, {
         "dex": 473,
         "speciesName": "Mamoswine",
