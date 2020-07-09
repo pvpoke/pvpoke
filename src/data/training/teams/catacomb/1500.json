@@ -54,6 +54,13 @@
 				"weight":40
 			},
 			{
+				"speciesId": "sudowoodo",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["ROCK_SLIDE","STONE_EDGE"],
+				"difficulty": 3,
+				"weight":10
+			},
+			{
 				"speciesId": "carracosta",
 				"fastMove": "ROCK_THROW",
 				"chargedMoves": ["BODY_SLAM","SURF"],
@@ -401,14 +408,14 @@
 				"fastMove": "SNARL",
 				"chargedMoves": ["FOUL_PLAY","LAST_RESORT"],
 				"difficulty": 2,
-				"weight":40
+				"weight":35
 			},
 			{
 				"speciesId": "umbreon",
 				"fastMove": "SNARL",
 				"chargedMoves": ["DARK_PULSE","LAST_RESORT"],
 				"difficulty": 2,
-				"weight":10
+				"weight":15
 			},
 			{
 				"speciesId": "drapion",
