@@ -48,6 +48,7 @@ var InterfaceMaster = (function () {
 			var settingGetParams = false; // Flag to keep certain functions from running
 
 			var isLoadingPreset = false; // Flag that lets the sim know if it should wait for a preset list to finish loading
+			var getDataLoaded = false // Flag that tells the interface if it has already loaded variables passed through the url
 
 			var ranker = RankerMaster.getInstance();
 			ranker.context = this.context;
@@ -113,15 +114,14 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".modal .sandbox-clear-confirm .button", confirmClearSandbox);
 				$(".update-btn").on("click", self.runSandboxSim);
 
-				// If get data exists, load settings
-
-				this.loadGetData();
-
 				// Load rankings for the current league
 
-				if(! get){
-					gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), "all");
+				var league = 1500;
+				if(get.cp){
+					league = get.cp;
 				}
+
+				gm.loadRankingData(self, "overall", league, "all");
 
 				window.addEventListener('popstate', function(e) {
 					get = e.state;
@@ -135,11 +135,12 @@ var InterfaceMaster = (function () {
 			this.displayRankingData = function(data){
 				console.log("Ranking data loaded");
 
-				if(self.battleMode == "multi"){
-					self.generateMultiBattleResults();
-
-					$("html, body").animate({ scrollTop: $(".battle-results."+self.battleMode).offset().top - 185 }, 500);
+				if(! getDataLoaded){
+					// If get data exists, load settings
+					getDataLoaded = true;
+					self.loadGetData();
 				}
+
 			}
 
 			// If the opposing Pokemon is changed or updated, update both so damage numbers are accurate

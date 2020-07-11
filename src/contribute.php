@@ -46,6 +46,7 @@ require_once 'header.php'; ?>
 		<div class="supporter">Worsel55</div>
 		<div class="supporter">gerry3</div>
 		<div class="supporter">Third Shield Podcast</div>
+		<div class="supporter">Elite4al</div>
 	</div>
 
 	<h2 class="center">Master Supporters</h2>
@@ -148,6 +149,10 @@ require_once 'header.php'; ?>
 		<div class="supporter-container">
 			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/pogolookup.png"/>
 			<div class="supporter"><a href="https://pogolookup.com/" target="_blank">PoGoLookup.com</a></div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/tridentleague.jpg"/>
+			<div class="supporter"><a href="https://t.me/TridentPvP" target="_blank">Trident League</a></div>
 		</div>
 	</div>
 </div>

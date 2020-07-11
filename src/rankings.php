@@ -118,6 +118,10 @@ switch($cup){
 		$league = 'Grunt Cup 4';
 		break;
 
+	case "grunt-6":
+		$league = 'Grunt Cup 6';
+		break;
+
 	case "sorcerous":
 		$league = 'Sorcerous Cup';
 		break;
@@ -135,7 +139,11 @@ switch($cup){
 		break;
 
 	case "catacomb":
-		$league = 'Catacomb';
+		$league = 'Catacomb Cup';
+		break;
+
+	case "scoville":
+		$league = 'Scoville Cup';
 		break;
 }
 
