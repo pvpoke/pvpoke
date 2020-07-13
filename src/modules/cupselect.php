@@ -1,20 +1,12 @@
-<select class="format-select">
-	<option value="all" cup="all">All Pokemon</option>
-	<option value="official" cup="premier">Premier Cup</option>
-	<option value="tsa-2" cup="catacomb">Silph Catacomb Cup</option>
-	<option value="tsa-2" cup="continentals-2">Season 2 Continentals</option>
-	<option value="community" cup="scoville">Scoville Cup</option>
-	<option value="community" cup="grunt-6">Grunt Cup Season 6</option>
-
-	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
-		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>
-	<?php endif; ?>
-
-	<?php if((strpos($_SERVER['REQUEST_URI'], 'battle') !== false)||(strpos($_SERVER['REQUEST_URI'], 'rankings') !== false)): ?>
-		<option value="custom" cup="custom">Custom</option>
-	<?php endif; ?>
-
-</select>
+<div class="format-select">
+	<div class="format-great single" cp="1500" cup="all">Great League</div>
+	<div class="format-ultra single" cp="2500" cup="all">Ultra League</div>
+	<div class="format-master single" cp="10000" cup="all">Master League</div>
+	<div class="format-premier multi" cp="10000" cup="premier">Premier Cup</div>
+	<div class="format-silph multi" cp="1500" cup="catacomb">Catacomb Cup</div>
+	<div class="format-custom team" cp="1500" cup="cliffhanger">Cliffhanger</div>
+	<div class="format-custom multi" cp="1500" cup="custom">Custom</div>
+</div>
 
 <select class="cup-select">
 	<option value="all" cat="all">All Pokemon</option>
