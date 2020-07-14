@@ -1077,6 +1077,7 @@ select, input{
     display: flex;
     flex-wrap: wrap;
 	box-sizing: border-box;
+	margin-bottom: 10px;
 
 	a{
 		display: block;
@@ -1089,7 +1090,7 @@ select, input{
 		border-radius: 8px;
 		color:$color-links;
 
-		&:hover{
+		&:hover, &.selected{
 			background:$color-links;
 			color:#fff;
 			border-bottom:2px solid rgba(0,0,0,0);
@@ -1099,6 +1100,24 @@ select, input{
 	&.format-select .multi,
 	&.format-select .team{
 		display: none;
+	}
+}
+
+.tab-group-title{
+	font-size: 14px;
+    font-weight: bold;
+    color: #999;
+    border-bottom: 1px solid #999;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+.battle-tabs{
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+	div:first-child{
+		margin-right:10px;
 	}
 }
 
@@ -2154,23 +2173,6 @@ select, input{
 	width:42px;
 	text-align: center;
 	font-weight: bold;
-}
-
-.ranking-categories{
-	float:right;
-
-	a{
-		text-decoration: none;
-		color:$color-off-black;
-		padding:10px;
-		border-radius:8px;
-		display:inline-block;
-
-		&.selected{
-			background:#fff;
-			font-weight:bold;
-		}
-	}
 }
 
 .poke-search-container{

@@ -159,7 +159,8 @@ require_once 'header.php';
 <div class="section league-select-container rankings-content white">
 	<?php require 'modules/cupselect.php'; ?>
 
-	<div class="ranking-categories">
+	<div class="tab-group-title">Category</div>
+	<div class="ranking-categories tab-group">
 		<a class="selected" href="#" data="overall" scenario="leads">Overall</a>
 		<a href="#" data="leads" scenario="leads">Leads</a>
 		<a href="#" data="closers" scenario="closers">Closers</a>

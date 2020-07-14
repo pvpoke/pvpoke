@@ -22,12 +22,39 @@ require_once 'header.php';
 <h1>Battle</h1>
 
 <div class="section league-select-container white">
-	<?php require 'modules/leagueselect.php'; ?>
-	<select class="mode-select">
-		<option value="single">Single Battle</option>
-		<option value="multi">Multi Battle</option>
-		<option value="matrix">Matrix Battle</option>
-	</select>
+
+	<div class="battle-tabs flex">
+		<div class="single matrix">
+			<div class="tab-group-title">CP Limit</div>
+			<div class="cp-select tab-group">
+				<a href="#" class="format-great selected" data="1500">CP 1500</a>
+				<a href="#" class="format-ultra" data="2500">CP 2500</a>
+				<a href="#" class="format-master" data="10000">Unlimited</a>
+			</div>
+		</div>
+		<div class="multi hide">
+			<?php require 'modules/cupselect.php'; ?>
+		</div>
+		<div class="single multi matrix">
+			<div class="tab-group-title">Battle Mode</div>
+			<div class="mode-select tab-group">
+				<a href="#" class="mode-single selected" data="single">Single</a>
+				<a href="#" class="mode-multi" data="multi">Multi</a>
+				<a href="#" class="mode-matrix" data="matrix">Matrix</a>
+			</div>
+		</div>
+	</div>
+
+	<div class="battle-tabs flex">
+		<div class="multi hide">
+			<div class="tab-group-title">Pokemon</div>
+			<div class="cp-select tab-group">
+				<a href="#" class="selected" data="all">All</a>
+				<a href="#" class="format-ultra" data="meta">Meta</a>
+			</div>
+		</div>
+	</div>
+
 	<p class="description single">Select two Pokemon from any league to fight a simulated battle. Customize movesets, levels, IV's, and shields.</p>
 	<p class="description multi hide">Battle one Pokemon against an entire league or cup. Explore overall performance or individual matchups against a group of Pokemon.</p>
 	<p class="description matrix hide">Battle two groups of Pokemon against each other and see a matrix of the results. Use this to explore mass matchups or compare different Pokemon, movesets, or IV's. You can change how the matrix results display on the <a href="<?php echo $WEB_ROOT; ?>settings/">Settings page</a>.</p>

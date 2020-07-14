@@ -826,6 +826,7 @@ select, input {
   display: flex;
   flex-wrap: wrap;
   box-sizing: border-box;
+  margin-bottom: 10px;
 }
 .tab-group a {
   display: block;
@@ -838,13 +839,30 @@ select, input {
   border-radius: 8px;
   color: #003748;
 }
-.tab-group a:hover {
+.tab-group a:hover, .tab-group a.selected {
   background: #003748;
   color: #fff;
   border-bottom: 2px solid rgba(0, 0, 0, 0);
 }
 .tab-group.format-select .multi, .tab-group.format-select .team {
   display: none;
+}
+
+.tab-group-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: #999;
+  border-bottom: 1px solid #999;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+
+.battle-tabs {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.battle-tabs div:first-child {
+  margin-right: 10px;
 }
 
 .rankings-content .format-select .multi {
@@ -1853,21 +1871,6 @@ select, input {
   padding: 5px;
   width: 42px;
   text-align: center;
-  font-weight: bold;
-}
-
-.ranking-categories {
-  float: right;
-}
-.ranking-categories a {
-  text-decoration: none;
-  color: #333;
-  padding: 10px;
-  border-radius: 8px;
-  display: inline-block;
-}
-.ranking-categories a.selected {
-  background: #fff;
   font-weight: bold;
 }
 

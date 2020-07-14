@@ -1,5 +1,6 @@
+<div class="tab-group-title">Format</div>
 <div class="format-select tab-group">
-	<a href="#" class="format-great single" cp="1500" cup="all" title="Great League">Great League</a>
+	<a href="#" class="format-great single selected" cp="1500" cup="all" title="Great League">Great League</a>
 	<a href="#" class="format-ultra single" cp="2500" cup="all" title="Ultra League">Ultra League</a>
 	<a href="#" class="format-master single" cp="10000" cup="all" title="Master League">Master League</a>
 	<a href="#" class="format-premier multi" cp="10000" cup="premier" title="Premier Cup">Premier Cup</a>

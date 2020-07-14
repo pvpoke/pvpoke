@@ -1,6 +1,4 @@
 <div class="poke multi">
-
-	<?php require_once 'cupselect.php'; ?>
 	<div class="poke-stats">
 		<div class="custom-options">
 			<h3 class="section-title">Pokemon (<span class="poke-count">0</span> / <span class="poke-max-count">100</span>)</h3>

@@ -41,6 +41,7 @@ var InterfaceMaster = (function () {
 				$(".league-select").on("change", selectLeague);
 				$(".cup-select").on("change", selectCup);
 				$(".format-select").on("change", selectFormat);
+				$(".format-select a").on("click", selectFormat);
 				$(".ranking-categories a").on("click", selectCategory);
 				$("body").on("click", ".check", checkBox);
 				$("body").on("click", ".check.limited", toggleLimitedPokemon);
@@ -106,7 +107,7 @@ var InterfaceMaster = (function () {
 				}
 
 				// Show any restrictions
-				var cup = $(".cup-select option:selected").val();
+				var cup = battle.getCup().name;
 				$(".limited").hide();
 				limitedPokemon = [];
 
@@ -231,8 +232,8 @@ var InterfaceMaster = (function () {
 							// Don't process default values so data doesn't needlessly reload
 
 							case "cp":
-								$(".league-select option[value=\""+val+"\"]").prop("selected","selected");
-
+								//$(".league-select option[value=\""+val+"\"]").prop("selected","selected");
+								battle.setCP(val);
 								break;
 
 							case "cat":
@@ -255,24 +256,7 @@ var InterfaceMaster = (function () {
 								break;
 
 							case "cup":
-								$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
-
-								if($(".format-select option[cup=\""+val+"\"]").length > 0){
-									$(".format-select option[cup=\""+val+"\"]").prop("selected","selected");
-								} else{
-									var cat = $(".cup-select option[value=\""+val+"\"]").attr("cat");
-									$(".format-select option[value=\""+cat+"\"]").prop("selected","selected");
-									selectFormat();
-
-									$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
-								}
-
-								if(val == "continentals-2"){
-									$(".continentals").removeClass("hide");
-								} else{
-									$(".continentals").addClass("hide");
-								}
-
+								//$(".format-select a[cup=\""+val+"\"]").addClass("selected");
 								battle.setCup(val);
 								break;
 
@@ -285,13 +269,13 @@ var InterfaceMaster = (function () {
 					}
 				}
 
+				$(".format-select a").removeClass("selected");
+				$(".format-select a[cp=\""+battle.getCP()+"\"][cup=\""+battle.getCup().name+"\"]").addClass("selected");
+
 				// Load data via existing change function
-
-				var cp = $(".league-select option:selected").val();
 				var category = $(".ranking-categories a.selected").attr("data");
-				var cup = $(".cup-select option:selected").val();
 
-				self.displayRankings(category, cp, cup, null);
+				self.displayRankings(category, battle.getCP(), battle.getCup().name, null);
 			}
 
 			// When the view state changes, push to browser history so it can be navigated forward or back
@@ -381,37 +365,22 @@ var InterfaceMaster = (function () {
 				self.pushHistoryState(cup, cp, category, null);
 			}
 
-			// Event handler for changing the format category
+			// Event handler for changing the format tab
 
 			function selectFormat(e){
-				var format = $(".format-select option:selected").val();
-				var cup = $(".format-select option:selected").attr("cup");
-
-				$(".cup-select option").hide();
-				$(".cup-select option[cat=\""+format+"\"]").show();
-
-				if(cup){
-					$(".cup-select option[value=\""+cup+"\"]").eq(0).prop("selected", true);
-				} else{
-					$(".cup-select option[cat=\""+format+"\"]").eq(0).prop("selected", true);
+				if(e){
+					e.preventDefault();
+					$(".format-select a").removeClass("selected");
+					$(e.target).addClass("selected");
 				}
 
-				if((format == "all")||(cup)){
-					$(".cup-select").hide();
-				} else{
-					$(".cup-select").show();
-				}
-
-				var cp = $(".league-select option:selected").val();
+				var cp = parseInt($(".format-select a.selected").attr("cp"));
+				var cup = $(".format-select a.selected").attr("cup")
 				var category = $(".ranking-categories a.selected").attr("data");
-				if(! cup){
-					cup = $(".cup-select option:selected").val();
+
+				if(! category){
+					category = "overall";
 				}
-
-				battle.setCup(cup);
-
-				self.displayRankings(category, cp, cup);
-				self.pushHistoryState(cup, cp, category, null);
 
 				if(cup == "continentals-2"){
 					$(".continentals").removeClass("hide");
@@ -419,10 +388,17 @@ var InterfaceMaster = (function () {
 					$(".continentals").addClass("hide");
 				}
 
-				if(format == "custom"){
+				if(cup == "custom"){
 					// Redirect to the custom rankings page
 					window.location.href = webRoot+'custom-rankings/';
+					return;
 				}
+
+				battle.setCP(cp);
+				battle.setCup(cup);
+
+				self.displayRankings(category, cp, cup);
+				self.pushHistoryState(cup, cp, category, null);
 			}
 
 			// Event handler for selecting ranking category
@@ -435,10 +411,10 @@ var InterfaceMaster = (function () {
 
 				$(e.target).addClass("selected");
 
-				var cp = $(".league-select option:selected").val();
+				var cp = battle.getCP();
 				var category = $(".ranking-categories a.selected").attr("data");
 				var scenarioStr = $(".ranking-categories a.selected").attr("scenario");
-				var cup = $(".cup-select option:selected").val();
+				var cup = battle.getCup().name;
 
 				$(".description").hide();
 				$(".description."+category).show();

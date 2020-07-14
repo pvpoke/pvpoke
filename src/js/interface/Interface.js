@@ -78,8 +78,8 @@ var InterfaceMaster = (function () {
 				});
 
 
-				$(".league-select").on("change", selectLeague);
-				$(".mode-select").on("change", selectMode);
+				$(".cp-select a").on("click", selectLeague);
+				$(".mode-select a").on("click", selectMode);
 				$(".battle-btn").on("click", startBattle);
 				$(".continue-container .button").on("click", continueBattle);
 				$(".timeline-container").on("mousemove",".item",timelineEventHover);
@@ -1528,8 +1528,14 @@ var InterfaceMaster = (function () {
 			// Event handler for changing the league select
 
 			function selectLeague(e){
+				if(e){
+					e.preventDefault();
+					$(".cp-select a").removeClass("selected");
+					$(e.target).addClass("selected");
+				}
+
 				var allowed = [1500, 2500, 10000];
-				var cp = parseInt($(".league-select option:selected").val());
+				var cp = parseInt($(".cp-select a.selected").attr("data"));
 
 				if(allowed.indexOf(cp) > -1){
 					battle.setCP(cp);
@@ -1544,13 +1550,19 @@ var InterfaceMaster = (function () {
 					}
 				}
 
-				gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), "all");
+				gm.loadRankingData(self, "overall", cp, "all");
 			}
 
 			// Event handler for changing the battle mode
 
 			function selectMode(e){
-				self.battleMode = $(e.target).find("option:selected").val();
+				if(e){
+					e.preventDefault();
+					$(".mode-select a").removeClass("selected");
+					$(e.target).addClass("selected");
+				}
+
+				self.battleMode = $(".mode-select a.selected").attr("data");
 
 				$("p.description").hide();
 				$("p."+self.battleMode).show();
@@ -1559,6 +1571,9 @@ var InterfaceMaster = (function () {
 				$(".poke-select-container").addClass(self.battleMode);
 
 				$(".battle-results").hide();
+
+				$(".battle-tabs > div").hide();
+				$(".battle-tabs > ." + self.battleMode).show();
 
 				if(self.battleMode == "single"){
 					pokeSelectors[0].setSelectedPokemon(pokeSelectors[0].getPokemon());
