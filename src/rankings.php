@@ -155,9 +155,8 @@ require_once 'header.php';
 
 ?>
 
-<h1>Rankings</h1>
-<div class="section league-select-container white">
-	<?php require 'modules/leagueselect.php'; ?>
+<h1><?php echo $league; ?> Rankings</h1>
+<div class="section league-select-container rankings-content white">
 	<?php require 'modules/cupselect.php'; ?>
 
 	<div class="ranking-categories">

@@ -67,6 +67,11 @@ $color-off-black:#333;
 $color-stat-buff:#f1841c;
 $color-stat-debuff:#0158d0;
 
+$color-format-great:#293ea1;
+$color-format-ultra:#e3b827;
+$color-format-master:#381a80;
+$color-format-premier:#cf0224;
+$color-format-silph:#2a2f33;
 
 /* MIXINS */
 
@@ -1053,7 +1058,6 @@ select, input{
 
 .league-select,
 .cup-select,
-.format-select,
 .slot-select,
 .mode-select{
     font-size: 18px;
@@ -1066,6 +1070,41 @@ select, input{
 .league-select-container, .poke{
 	.cup-select{
 		display:none;
+	}
+}
+
+.tab-group{
+    display: flex;
+    flex-wrap: wrap;
+	box-sizing: border-box;
+
+	a{
+		display: block;
+		text-decoration: none;
+		font-size: 14px;
+		padding:2px 4px;
+		box-sizing: border-box;
+		border:2px solid $color-links;
+		margin: 0 5px 5px 0;
+		border-radius: 8px;
+		color:$color-links;
+
+		&:hover{
+			background:$color-links;
+			color:#fff;
+			border-bottom:2px solid rgba(0,0,0,0);
+		}
+	}
+
+	&.format-select .multi,
+	&.format-select .team{
+		display: none;
+	}
+}
+
+.rankings-content{
+	.format-select	.multi{
+		display:block;
 	}
 }
 
@@ -3256,7 +3295,6 @@ a.toggle{
 	}
 
 	.league-select,
-	.format-select,
 	.cup-select{
 		max-width:48%;
 		margin-bottom:5px;

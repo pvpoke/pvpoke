@@ -809,7 +809,6 @@ select, input {
 
 .league-select,
 .cup-select,
-.format-select,
 .slot-select,
 .mode-select {
   font-size: 18px;
@@ -821,6 +820,35 @@ select, input {
 
 .league-select-container .cup-select, .poke .cup-select {
   display: none;
+}
+
+.tab-group {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
+.tab-group a {
+  display: block;
+  text-decoration: none;
+  font-size: 14px;
+  padding: 2px 4px;
+  box-sizing: border-box;
+  border: 2px solid #003748;
+  margin: 0 5px 5px 0;
+  border-radius: 8px;
+  color: #003748;
+}
+.tab-group a:hover {
+  background: #003748;
+  color: #fff;
+  border-bottom: 2px solid rgba(0, 0, 0, 0);
+}
+.tab-group.format-select .multi, .tab-group.format-select .team {
+  display: none;
+}
+
+.rankings-content .format-select .multi {
+  display: block;
 }
 
 .button {
@@ -3051,7 +3079,6 @@ a.toggle {
   }
 
   .league-select,
-.format-select,
 .cup-select {
     max-width: 48%;
     margin-bottom: 5px;
