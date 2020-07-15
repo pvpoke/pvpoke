@@ -50,6 +50,11 @@
 		"chargedMoves":["OUTRAGE","EARTHQUAKE"]
 	},
 	{
+		"speciesId":"garchomp",
+		"fastMove":"MUD_SHOT",
+		"chargedMoves":["OUTRAGE","SAND_TOMB"]
+	},
+	{
 		"speciesId":"mamoswine",
 		"fastMove":"POWDER_SNOW",
 		"chargedMoves":["AVALANCHE","BULLDOZE"]
@@ -58,6 +63,11 @@
 		"speciesId":"gyarados",
 		"fastMove":"DRAGON_BREATH",
 		"chargedMoves":["HYDRO_PUMP","CRUNCH"]
+	},
+	{
+		"speciesId":"gyarados",
+		"fastMove":"WATERFALL",
+		"chargedMoves":["CRUNCH","OUTRAGE"]
 	},
 	{
 		"speciesId":"rhyperior",
@@ -72,12 +82,12 @@
 	{
 		"speciesId":"magnezone",
 		"fastMove":"SPARK",
-		"chargedMoves":["WILD_CHARGE","FLASH_CANNON"]
+		"chargedMoves":["WILD_CHARGE","MIRROR_SHOT"]
 	},
 	{
 		"speciesId":"magnezone_shadow",
 		"fastMove":"SPARK",
-		"chargedMoves":["WILD_CHARGE","FLASH_CANNON"]
+		"chargedMoves":["WILD_CHARGE","MIRROR_SHOT"]
 	},
 	{
 		"speciesId":"electivire",
@@ -97,7 +107,7 @@
 	{
 		"speciesId":"gengar",
 		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["SLUDGE_BOMB","SHADOW_BALL"]
+		"chargedMoves":["SHADOW_PUNCH","SHADOW_BALL"]
 	},
 	{
 		"speciesId":"typhlosion",

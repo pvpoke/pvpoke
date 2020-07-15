@@ -35,6 +35,11 @@
 		"chargedMoves":["HYDRO_CANNON","ICE_BEAM"]
 	},
 	{
+		"speciesId":"gengar",
+		"fastMove":"SHADOW_CLAW",
+		"chargedMoves":["SHADOW_PUNCH","SHADOW_BALL"]
+	},
+	{
 		"speciesId":"cresselia",
 		"fastMove":"PSYCHO_CUT",
 		"chargedMoves":["FUTURE_SIGHT","MOONBLAST"]
@@ -43,11 +48,6 @@
 		"speciesId":"melmetal",
 		"fastMove":"THUNDER_SHOCK",
 		"chargedMoves":["ROCK_SLIDE","SUPER_POWER"]
-	},
-	{
-		"speciesId":"steelix",
-		"fastMove":"DRAGON_TAIL",
-		"chargedMoves":["CRUNCH","EARTHQUAKE"]
 	},
 	{
 		"speciesId":"dragonite",
@@ -70,11 +70,6 @@
 		"chargedMoves":["FRENZY_PLANT","SLUDGE_BOMB"]
 	},
 	{
-		"speciesId":"virizion",
-		"fastMove":"QUICK_ATTACK",
-		"chargedMoves":["LEAF_BLADE","CLOSE_COMBAT"]
-	},
-	{
 		"speciesId":"muk_alolan",
 		"fastMove":"SNARL",
 		"chargedMoves":["DARK_PULSE","SLUDGE_WAVE"]
@@ -87,12 +82,7 @@
 	{
 		"speciesId":"obstagoon",
 		"fastMove":"COUNTER",
-		"chargedMoves":["NIGHT_SLASH","CROSS_CHOP"]
-	},
-	{
-		"speciesId":"perrserker",
-		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["FOUL_PLAY","CLOSE_COMBAT"]
+		"chargedMoves":["NIGHT_SLASH","GUNK_SHOT"]
 	},
 	{
 		"speciesId":"mewtwo_armored",
@@ -105,19 +95,9 @@
 		"chargedMoves":["HYDRO_CANNON","EARTHQUAKE"]
 	},
 	{
-		"speciesId":"lucario",
-		"fastMove":"COUNTER",
-		"chargedMoves":["SHADOW_BALL","POWER_UP_PUNCH"]
-	},
-	{
 		"speciesId":"poliwrath",
 		"fastMove":"MUD_SHOT",
 		"chargedMoves":["ICE_PUNCH","DYNAMIC_PUNCH"]
-	},
-	{
-		"speciesId":"heracross",
-		"fastMove":"COUNTER",
-		"chargedMoves":["CLOSE_COMBAT","MEGAHORN"]
 	},
 	{
 		"speciesId":"togekiss",

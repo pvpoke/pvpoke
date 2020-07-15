@@ -139,6 +139,10 @@ var InterfaceMaster = (function () {
 					// If get data exists, load settings
 					getDataLoaded = true;
 					self.loadGetData();
+				} else if(self.battleMode == "multi"){
+					self.generateMultiBattleResults();
+
+					$("html, body").animate({ scrollTop: $(".battle-results."+self.battleMode).offset().top - 185 }, 500);
 				}
 
 			}

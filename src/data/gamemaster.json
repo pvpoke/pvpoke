@@ -301,7 +301,7 @@
         "title": "Grunt Cup 6",
         "include": [{
             "filterType": "id",
-            "values": ["beedrill_shadow", "beedrill", "cradily", "golbat", "sneasel", "houndoom", "drapion", "toxicroak", "masquerain", "liepard", "scyther", "scyther_shadow", "scizor_shadow", "scizor", "skuntank", "froslass", "electabuzz", "electabuzz_shadow", "electivire_shadow", "electivire", "muk_alolan", "graveler_alolan", "golem_alolan", "arcanine", "venomoth", "alakazam_shadow", "grimer", "moltres_shadow", "arcanine_shadow", "alakazam", "breloom", "manectric", "walrein", "sealeo", "seviper", "lanturn", "crawdaunt", "cacturne", "cacturne_shadow", "torkoal", "zangoose", "claydol", "lairon", "aggron", "camerupt", "mightyyena", "sharpedo", "sharpedo_shadow", "magneton_shadow", "sneasel_shadow", "raticate", "arbok", "sandslash", "nidorina", "nidorino", "nidoking", "crobat", "crobat_shadow", "gyarados", "nidoqueen", "golem", "parasect", "persian", "poliwhirl", "poliwrath", "tentacruel", "graveler", "slowbro", "slowpoke", "wobbuffet", "wobbuffet_shadow", "dodrio", "muk", "cloyster", "haunter", "gengar", "onix", "electrode", "magmar", "tyranitar", "tyranitar_shadow", "houndoom_shadow", "dugtrio", "exeggutor", "exeggutor_shadow", "magneton", "drowzee", "marowak", "weezing", "rhyhorn", "rhydon", "kangaskhan", "seadra", "seaking", "jynx", "tauros", "omanyte", "omastar", "kabuto", "kabutops", "aerodactyl", "golbat_shadow", "raticate_shadow", "sandslash_shadow", "venomoth_shadow", "persian_shadow", "poliwhirl_shadow", "poliwrath_shadow", "drowzee_shadow", "muk_shadow", "marowak_shadow", "omanyte_shadow", "omastar_shadow", "lickitung", "moltres", "vaporeon", "porygon", "porygon_shadow", "porygon2", "porygon2_shadow", "porygon_z", "porygon_z_shadow"]
+            "values": ["beedrill_shadow", "beedrill", "cradily", "golbat", "sneasel", "houndoom", "drapion", "toxicroak", "masquerain", "liepard", "scyther", "scyther_shadow", "scizor_shadow", "scizor", "skuntank", "froslass", "electabuzz", "electabuzz_shadow", "electivire_shadow", "electivire", "muk_alolan", "graveler_alolan", "golem_alolan", "arcanine", "venomoth", "alakazam_shadow", "grimer", "moltres_shadow", "arcanine_shadow", "alakazam", "breloom", "manectric", "walrein", "sealeo", "seviper", "lanturn", "crawdaunt", "cacturne", "cacturne_shadow", "torkoal", "zangoose", "claydol", "lairon", "aggron", "camerupt", "mightyyena", "sharpedo", "sharpedo_shadow", "magneton_shadow", "sneasel_shadow", "raticate", "arbok", "sandslash", "nidorina", "nidorino", "nidoking", "crobat", "crobat_shadow", "gyarados", "nidoqueen", "golem", "parasect", "persian", "poliwhirl", "poliwrath", "tentacruel", "graveler", "slowbro", "slowpoke", "wobbuffet", "wobbuffet_shadow", "dodrio", "muk", "cloyster", "haunter", "gengar", "onix", "electrode", "magmar", "tyranitar", "tyranitar_shadow", "houndoom_shadow", "dugtrio", "exeggutor", "exeggutor_shadow", "magneton", "drowzee", "marowak", "weezing", "rhyhorn", "rhydon", "kangaskhan", "seadra", "seaking", "jynx", "tauros", "omanyte", "omastar", "kabuto", "kabutops", "aerodactyl", "golbat_shadow", "raticate_shadow", "sandslash_shadow", "venomoth_shadow", "persian_shadow", "poliwhirl_shadow", "poliwrath_shadow", "drowzee_shadow", "muk_shadow", "marowak_shadow", "omanyte_shadow", "omastar_shadow", "lickitung", "moltres", "vaporeon", "porygon", "porygon_shadow", "porygon2", "porygon2_shadow", "porygon_z", "porygon_z_shadow", "arbok", "arbok_shadow", "weezing", "weezing_shadow", "nidorino", "nidorina", "nidorina_shadow", "nidoking", "nidoking_shadow", "nidoqueen", "nidoqueen_shadow", "gyarados_shadow", "grimer", "grimer_shadow", "grimer_alolan"]
         }],
         "exclude": []
     }, {
@@ -3399,12 +3399,12 @@
         },
         "types": ["ghost", "poison"],
         "fastMoves": ["HEX", "LICK", "SHADOW_CLAW", "SUCKER_PUNCH"],
-        "chargedMoves": ["DARK_PULSE", "FOCUS_BLAST", "PSYCHIC", "SHADOW_BALL", "SLUDGE_BOMB", "SLUDGE_WAVE"],
+        "chargedMoves": ["DARK_PULSE", "FOCUS_BLAST", "PSYCHIC", "SHADOW_BALL", "SLUDGE_BOMB", "SLUDGE_WAVE", "SHADOW_PUNCH"],
         "defaultIVs": {
             "cp1500": [19, 8, 15, 9],
             "cp2500": [34, 7, 8, 15]
         },
-        "eliteMoves": ["LICK", "SLUDGE_WAVE", "DARK_PULSE", "PSYCHIC"],
+        "eliteMoves": ["LICK", "SLUDGE_WAVE", "DARK_PULSE", "PSYCHIC", "SHADOW_PUNCH"],
         "searchPriority": 14
     }, {
         "dex": 95,
