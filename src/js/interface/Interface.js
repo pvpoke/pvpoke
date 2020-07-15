@@ -80,6 +80,7 @@ var InterfaceMaster = (function () {
 
 				$(".cp-select a").on("click", selectLeague);
 				$(".mode-select a").on("click", selectMode);
+				$(".format-select a").on("click", selectFormat);
 				$(".battle-btn").on("click", startBattle);
 				$(".continue-container .button").on("click", continueBattle);
 				$(".timeline-container").on("mousemove",".item",timelineEventHover);
@@ -1212,8 +1213,7 @@ var InterfaceMaster = (function () {
 								break;
 
 							case "cp":
-								$(".league-select option[value=\""+val+"\"]").prop("selected","selected");
-								$(".league-select").trigger("change");
+								$(".cp-select a[data=\""+val+"\"]").trigger("click", [false]);
 								break;
 
 							case "m1":
@@ -1384,24 +1384,11 @@ var InterfaceMaster = (function () {
 								break;
 
 							case "mode":
-								$(".mode-select option[value=\""+val+"\"]").prop("selected","selected");
-								$(".mode-select").trigger("change");
+								$(".mode-select a[data=\""+val+"\"]").trigger("click");
 								break;
 
 							case "cup":
-								$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
-
-								if($(".format-select option[cup=\""+val+"\"]").length > 0){
-									$(".format-select option[cup=\""+val+"\"]").prop("selected","selected");
-								} else{
-									var cat = $(".cup-select option[value=\""+val+"\"]").attr("cat");
-									$(".format-select option[value=\""+cat+"\"]").prop("selected","selected");
-									multiSelectors[0].changeFormatSelect();
-
-									$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
-								}
-
-								$(".cup-select").trigger("change");
+								$(".format-select a[cup=\""+val+"\"][cp=\""+battle.getCP()+"\"]").trigger("click");
 								break;
 
 							case "cms":
@@ -1527,7 +1514,10 @@ var InterfaceMaster = (function () {
 
 			// Event handler for changing the league select
 
-			function selectLeague(e){
+			function selectLeague(e, doRankingLoad){
+				doRankingLoad = typeof doRankingLoad !== 'undefined' ? doRankingLoad : true;
+
+
 				if(e){
 					e.preventDefault();
 					$(".cp-select a").removeClass("selected");
@@ -1550,7 +1540,10 @@ var InterfaceMaster = (function () {
 					}
 				}
 
-				gm.loadRankingData(self, "overall", cp, "all");
+				if(doRankingLoad){
+					gm.loadRankingData(self, "overall", cp, "all");
+				}
+
 			}
 
 			// Event handler for changing the battle mode
@@ -1578,6 +1571,25 @@ var InterfaceMaster = (function () {
 				if(self.battleMode == "single"){
 					pokeSelectors[0].setSelectedPokemon(pokeSelectors[0].getPokemon());
 					pokeSelectors[1].setSelectedPokemon(pokeSelectors[1].getPokemon());
+				}
+			}
+
+			// In multi-battle, select one of the format tabs
+
+			function selectFormat(e){
+				if(e){
+					e.preventDefault();
+					$(".format-select a").removeClass("selected");
+					$(e.target).addClass("selected");
+				}
+
+				var cp = parseInt($(e.target).attr("cp"));
+				var cup = $(e.target).attr("cup");
+
+				battle.setCup(cup);
+
+				if(self.battleMode == "multi"){
+					$(".cp-select a[data=\""+cp+"\"]").trigger("click");
 				}
 			}
 

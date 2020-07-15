@@ -25,11 +25,11 @@ require_once 'header.php';
 
 	<div class="battle-tabs flex">
 		<div class="single matrix">
-			<div class="tab-group-title">CP Limit</div>
+			<div class="tab-group-title">League</div>
 			<div class="cp-select tab-group">
-				<a href="#" class="format-great selected" data="1500">CP 1500</a>
-				<a href="#" class="format-ultra" data="2500">CP 2500</a>
-				<a href="#" class="format-master" data="10000">Unlimited</a>
+				<a href="#" class="format-great selected" data="1500">Great League</a>
+				<a href="#" class="format-ultra" data="2500">Ultra  League</a>
+				<a href="#" class="format-master" data="10000">Master League</a>
 			</div>
 		</div>
 		<div class="multi hide">
@@ -48,9 +48,9 @@ require_once 'header.php';
 	<div class="battle-tabs flex">
 		<div class="multi hide">
 			<div class="tab-group-title">Pokemon</div>
-			<div class="cp-select tab-group">
+			<div class="custom-select tab-group">
 				<a href="#" class="selected" data="all">All</a>
-				<a href="#" class="format-ultra" data="meta">Meta</a>
+				<a href="#" data="meta">Meta</a>
 			</div>
 		</div>
 	</div>
