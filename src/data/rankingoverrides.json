@@ -150,6 +150,10 @@
 				"chargedMoves": ["EARTHQUAKE", "MIRROR_SHOT"]
 			},
 			{
+				"speciesId": "lilligant",
+				"fastMove": "CHARM"
+			},
+			{
 				"speciesId": "stunfisk",
 				"fastMove": "THUNDER_SHOCK"
 			},
@@ -1974,6 +1978,10 @@
 			{
 				"speciesId": "alakazam_shadow",
 				"chargedMoves": ["FIRE_PUNCH", "SHADOW_BALL"]
+			},
+			{
+				"speciesId": "lilligant",
+				"fastMove": "CHARM"
 			},
 			{
 				"speciesId": "zapdos",
@@ -5959,6 +5967,10 @@
 			},
 			{
 				"speciesId": "liepard",
+				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "lilligant",
 				"fastMove": "CHARM"
 			},
 			{
