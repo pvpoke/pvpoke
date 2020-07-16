@@ -1,10 +1,10 @@
 <div class="tab-group-title">Format</div>
 <div class="format-select tab-group">
-	<a href="#" class="format-great single selected" cp="1500" cup="all" title="Great League">Great League</a>
-	<a href="#" class="format-ultra single" cp="2500" cup="all" title="Ultra League">Ultra League</a>
-	<a href="#" class="format-master single" cp="10000" cup="all" title="Master League">Master League</a>
-	<a href="#" class="format-premier multi" cp="10000" cup="premier" title="Premier Cup">Premier Cup</a>
-	<a href="#" class="format-silph multi" cp="1500" cup="catacomb" title="Catacomb Cup">Catacomb Cup</a>
+	<a href="#" class="format-great single selected" cp="1500" cup="all" title="Great League" group="great">Great League</a>
+	<a href="#" class="format-ultra single" cp="2500" cup="all" title="Ultra League" group="ultra">Ultra League</a>
+	<a href="#" class="format-master single" cp="10000" cup="all" title="Master League" group="master">Master League</a>
+	<a href="#" class="format-premier multi" cp="10000" cup="premier" title="Premier Cup" group="premier">Premier Cup</a>
+	<a href="#" class="format-silph multi" cp="1500" cup="catacomb" title="Catacomb Cup" group="catacomb">Catacomb Cup</a>
 	<a href="#" class="format-custom team" cp="1500" cup="cliffhanger" title="Cliffhanger">Cliffhanger</a>
 	<a href="#" class="format-custom multi" cp="1500" cup="custom" title="Custom">Custom</a>
 </div>

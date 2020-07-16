@@ -441,7 +441,7 @@ function PokeMultiSelect(element){
 		for(var i = 0; i < pokemonList.length; i++){
 			var searchId = pokemonList[i].speciesId.replace("_shadow",""); // Do this so Shadow and non-Shadow ID's match
 			pokemonList[i].cliffhangerPoints = 0;
-			
+
 			for(var n = 0; n < tiers.length; n++){
 				if(tiers[n].pokemon.indexOf(searchId) > -1){
 					points += tiers[n].points;
@@ -456,15 +456,13 @@ function PokeMultiSelect(element){
 
 	// Show or hide custom options when changing the cup select
 
-	$el.find(".cup-select").change(function(e){
-		if($(this).find("option:selected").val() == "custom"){
+	this.showCustomSettings = function(show){
+		if(show){
 			$(".custom-options").show();
-			$(".charged-count-select").hide();
 		} else{
 			$(".custom-options").hide();
-			$(".charged-count-select").show();
 		}
-	});
+	}
 
 	// Click the add new Pokemon button
 

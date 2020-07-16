@@ -81,6 +81,7 @@ var InterfaceMaster = (function () {
 				$(".cp-select a").on("click", selectLeague);
 				$(".mode-select a").on("click", selectMode);
 				$(".format-select a").on("click", selectFormat);
+				$(".custom-select a").on("click", selectCustomMeta);
 				$(".battle-btn").on("click", startBattle);
 				$(".continue-container .button").on("click", continueBattle);
 				$(".timeline-container").on("mousemove",".item",timelineEventHover);
@@ -778,7 +779,7 @@ var InterfaceMaster = (function () {
 
 				// Set settings
 
-				var cup = $(".cup-select option:selected").val();
+				var cup = battle.getCup().name;
 				var opponentShields = parseInt($(".poke.multi").eq(0).find(".shield-select option:selected").val());
 				var chargedMoveCount = parseInt($(".poke.multi .charged-count-select option:selected").val());
 				var shieldBaiting = $(".poke.multi").eq(0).find(".check.shield-baiting").hasClass("on") ? 1 : 0;
@@ -1540,10 +1541,66 @@ var InterfaceMaster = (function () {
 					}
 				}
 
+				if(self.battleMode != "multi"){
+					// Select the corresponding format
+					$(".format-select a").removeClass("selected");
+					$(".format-select a[cp=\""+cp+"\"][cup=\"all\"]").addClass("selected");
+				}
+
 				if(doRankingLoad){
 					gm.loadRankingData(self, "overall", cp, "all");
 				}
 
+			}
+
+			// In multi-battle, select one of the format tabs
+
+			function selectFormat(e){
+				if(e){
+					e.preventDefault();
+					$(".format-select a").removeClass("selected");
+					$(e.target).addClass("selected");
+				}
+
+				var cp = parseInt($(e.target).attr("cp"));
+				var cup = $(e.target).attr("cup");
+				var group = $(e.target).attr("group");
+				var isCustom = ($(".custom-select a.selected").attr("data") == "meta");
+
+				battle.setCup(cup);
+
+				$(".cp-select a[data=\""+cp+"\"]").trigger("click");
+
+				if(isCustom){
+					battle.setCup("custom");
+					multiSelectors[0].selectGroup(group);
+					isLoadingPreset = true;
+				}
+			}
+
+			// In multi-battle, select custom meta or all Pokemon
+
+			function selectCustomMeta(e){
+				if(e){
+					e.preventDefault();
+					$(".custom-select a").removeClass("selected");
+					$(e.target).addClass("selected");
+				}
+
+				var isCustom = ($(e.target).attr("data") == "meta");
+
+				if(isCustom){
+					battle.setCup("custom");
+					multiSelectors[0].showCustomSettings(true);
+
+					// Load a preset group if any
+					var group = $(".format-select a.selected").attr("group");
+
+					multiSelectors[0].selectGroup(group);
+					isLoadingPreset = true;
+				} else{
+
+				}
 			}
 
 			// Event handler for changing the battle mode
@@ -1571,25 +1628,6 @@ var InterfaceMaster = (function () {
 				if(self.battleMode == "single"){
 					pokeSelectors[0].setSelectedPokemon(pokeSelectors[0].getPokemon());
 					pokeSelectors[1].setSelectedPokemon(pokeSelectors[1].getPokemon());
-				}
-			}
-
-			// In multi-battle, select one of the format tabs
-
-			function selectFormat(e){
-				if(e){
-					e.preventDefault();
-					$(".format-select a").removeClass("selected");
-					$(e.target).addClass("selected");
-				}
-
-				var cp = parseInt($(e.target).attr("cp"));
-				var cup = $(e.target).attr("cup");
-
-				battle.setCup(cup);
-
-				if(self.battleMode == "multi"){
-					$(".cp-select a[data=\""+cp+"\"]").trigger("click");
 				}
 			}
 
