@@ -12595,9 +12595,10 @@
         "types": ["psychic", "fire"],
         "fastMoves": ["CONFUSION", "QUICK_ATTACK"],
         "chargedMoves": ["OVERHEAT", "FOCUS_BLAST", "PSYCHIC", "V_CREATE"],
+		"tags": ["mythical", "untradeable"],
         "defaultIVs": {
-            "cp1500": [17, 6, 13, 9],
-            "cp2500": [28.5, 5, 7, 14]
+			"cp1500": [16.5, 12, 12, 10],
+            "cp2500": [27.5, 10, 15, 10]
         }
     }, {
         "dex": 495,
