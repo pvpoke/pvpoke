@@ -1119,6 +1119,10 @@ select, input{
 	div:first-child{
 		margin-right:10px;
 	}
+
+	.format-select .multi{
+		display:block;
+	}
 }
 
 .rankings-content{

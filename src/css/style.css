@@ -864,6 +864,9 @@ select, input {
 .battle-tabs div:first-child {
   margin-right: 10px;
 }
+.battle-tabs .format-select .multi {
+  display: block;
+}
 
 .rankings-content .format-select .multi {
   display: block;

@@ -1588,6 +1588,7 @@ var InterfaceMaster = (function () {
 				}
 
 				var isCustom = ($(e.target).attr("data") == "meta");
+				var cup = $(".format-select a.selected").attr("cup");
 
 				if(isCustom){
 					battle.setCup("custom");
@@ -1599,7 +1600,8 @@ var InterfaceMaster = (function () {
 					multiSelectors[0].selectGroup(group);
 					isLoadingPreset = true;
 				} else{
-
+					battle.setCup(cup);
+					multiSelectors[0].showCustomSettings(false);
 				}
 			}
 
