@@ -1264,6 +1264,7 @@ var InterfaceMaster = (function () {
 
 				}
 
+				gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), "all");
 			}
 
 			// Event handler for changing the cup select

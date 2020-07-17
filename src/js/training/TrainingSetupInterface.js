@@ -478,6 +478,8 @@ var InterfaceMaster = (function () {
 				} else{
 					$(".mode-select option[value=\"tournament\"]").prop("disabled","");
 				}
+
+				gm.loadRankingData(self, "overall", cp, cup);
 			}
 
 			// Give the player a random team
