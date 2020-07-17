@@ -2,7 +2,7 @@
 	{
 		"slot": "Zweilous",
 		"synergies": ["Rock"],
-		"weight": 6,
+		"weight": 1,
 		"pokemon": [
 			{
 				"speciesId":"zweilous",
@@ -71,7 +71,7 @@
 				"speciesId": "omastar",
 				"fastMove": "MUD_SHOT",
 				"chargedMoves": ["ROCK_SLIDE","HYDRO_PUMP"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":1
 			},
 			{
@@ -92,7 +92,84 @@
 				"speciesId": "golem_alolan",
 				"fastMove": "VOLT_SWITCH",
 				"chargedMoves": ["STONE_EDGE","ROCK_BLAST"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "rhyperior",
+				"fastMove": "SMACK_DOWN",
+				"chargedMoves": ["ROCK_WRECKER","SUPER_POWER"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "tyranitar",
+				"fastMove": "SMACK_DOWN",
+				"chargedMoves": ["STONE_EDGE","CRUNCH"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "rampardos",
+				"fastMove": "SMACK_DOWN",
+				"chargedMoves": ["ROCK_SLIDE","FLAMETHROWER"],
+				"difficulty": 1,
+				"weight":1
+			}
+		]
+	},
+	{
+		"slot": "Rock 2",
+		"synergies": ["Bug","Ice"],
+		"weight": 4,
+		"pokemon": [
+			{
+				"speciesId": "sudowoodo",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["ROCK_SLIDE","EARTHQUAKE"],
+				"difficulty": 3,
+				"weight":10
+			},
+			{
+				"speciesId": "sudowoodo",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["ROCK_SLIDE","STONE_EDGE"],
+				"difficulty": 3,
+				"weight":5
+			},
+			{
+				"speciesId": "carracosta",
+				"fastMove": "ROCK_THROW",
+				"chargedMoves": ["BODY_SLAM","SURF"],
 				"difficulty": 2,
+				"weight":4
+			},
+			{
+				"speciesId": "omastar",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["ROCK_SLIDE","HYDRO_PUMP"],
+				"difficulty": 1,
+				"weight":1
+			},
+			{
+				"speciesId": "magcargo",
+				"fastMove": "ROCK_THROW",
+				"chargedMoves": ["STONE_EDGE","OVERHEAT"],
+				"difficulty": 1,
+				"weight":6
+			},
+			{
+				"speciesId": "graveler_alolan",
+				"fastMove": "VOLT_SWITCH",
+				"chargedMoves": ["STONE_EDGE","ROCK_BLAST"],
+				"difficulty": 2,
+				"weight":40
+			},
+			{
+				"speciesId": "golem_alolan",
+				"fastMove": "VOLT_SWITCH",
+				"chargedMoves": ["STONE_EDGE","ROCK_BLAST"],
+				"difficulty": 1,
 				"weight":1
 			},
 			{
@@ -149,7 +226,7 @@
 				"fastMove": "FURY_CUTTER",
 				"chargedMoves": ["X_SCISSOR","POWER_GEM"],
 				"difficulty": 3,
-				"weight":20
+				"weight":30
 			},
 			{
 				"speciesId": "vespiquen",
@@ -169,35 +246,35 @@
 				"speciesId": "scolipede",
 				"fastMove": "POISON_JAB",
 				"chargedMoves": ["X_SCISSOR","MEGAHORN"],
-				"difficulty": 3,
+				"difficulty": 1,
 				"weight":2
 			},
 			{
 				"speciesId": "galvantula",
 				"fastMove": "FURY_CUTTER",
 				"chargedMoves": ["DISCHARGE","BUG_BUZZ"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":1
 			},
 			{
 				"speciesId": "galvantula",
 				"fastMove": "VOLT_SWITCH",
 				"chargedMoves": ["DISCHARGE","BUG_BUZZ"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":1
 			},
 			{
 				"speciesId": "venomoth",
 				"fastMove": "BUG_BITE",
 				"chargedMoves": ["POISON_FANG","PSYCHIC"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":2
 			},
 			{
 				"speciesId": "scyther",
 				"fastMove": "FURY_CUTTER",
 				"chargedMoves": ["X_SCISSOR","AERIAL_ACE"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":4
 			},
 			{
@@ -212,7 +289,7 @@
 	{
 		"slot": "Grass",
 		"synergies": ["Rock","Ice"],
-		"weight": 10,
+		"weight": 20,
 		"pokemon": [
 			{
 				"speciesId": "venusaur",
@@ -246,8 +323,8 @@
 				"speciesId": "breloom",
 				"fastMove": "COUNTER",
 				"chargedMoves": ["SEED_BOMB","DYNAMIC_PUNCH"],
-				"difficulty": 2,
-				"weight":8
+				"difficulty": 1,
+				"weight":4
 			},
 			{
 				"speciesId": "gloom",
@@ -344,7 +421,7 @@
 				"speciesId": "castform_snowy",
 				"fastMove": "POWDER_SNOW",
 				"chargedMoves": ["WEATHER_BALL_ICE","BLIZZARD"],
-				"difficulty": 3,
+				"difficulty": 1,
 				"weight":4
 			},
 			{
@@ -365,7 +442,7 @@
 				"speciesId": "glalie",
 				"fastMove": "ICE_SHARD",
 				"chargedMoves": ["AVALANCHE","SHADOW_BALL"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":3
 			},
 			{
@@ -379,7 +456,70 @@
 				"speciesId": "piloswine",
 				"fastMove": "POWDER_SNOW",
 				"chargedMoves": ["AVALANCHE","STONE_EDGE"],
+				"difficulty": 1,
+				"weight":2
+			},
+			{
+				"speciesId": "sealeo",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["BODY_SLAM","AURORA_BEAM"],
 				"difficulty": 2,
+				"weight":4
+			},
+			{
+				"speciesId": "mamoswine",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["AVALANCHE","STONE_EDGE"],
+				"difficulty": 1,
+				"weight":1
+			}
+		]
+	},
+	{
+		"slot": "Ice 2",
+		"synergies": ["Grass"],
+		"weight": 3,
+		"pokemon": [
+			{
+				"speciesId": "castform_snowy",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["WEATHER_BALL_ICE","BLIZZARD"],
+				"difficulty": 1,
+				"weight":4
+			},
+			{
+				"speciesId": "lapras",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["SURF","SKULL_BASH"],
+				"difficulty": 2,
+				"weight":10
+			},
+			{
+				"speciesId": "lapras",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["SURF","ICE_BEAM"],
+				"difficulty": 2,
+				"weight":5
+			},
+			{
+				"speciesId": "glalie",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["AVALANCHE","SHADOW_BALL"],
+				"difficulty": 1,
+				"weight":3
+			},
+			{
+				"speciesId": "froslass",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["AVALANCHE","SHADOW_BALL"],
+				"difficulty": 2,
+				"weight":40
+			},
+			{
+				"speciesId": "piloswine",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["AVALANCHE","STONE_EDGE"],
+				"difficulty": 1,
 				"weight":2
 			},
 			{
@@ -449,14 +589,14 @@
 				"speciesId": "houndoom",
 				"fastMove": "FIRE_FANG",
 				"chargedMoves": ["CRUNCH","FLAMETHROWER"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":1
 			},
 			{
 				"speciesId": "houndoom",
 				"fastMove": "SNARL",
 				"chargedMoves": ["CRUNCH","FLAMETHROWER"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":1
 			},
 			{

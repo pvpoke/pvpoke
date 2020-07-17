@@ -2,7 +2,6 @@
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
 	<option value="tsa-2" cup="catacomb">Silph Catacomb Cup</option>
-	<option value="tsa-2" cup="continentals-2">Season 2 Continentals</option>
 	<option value="community" cup="scoville">Scoville Cup</option>
 	<option value="community" cup="grunt-6">Grunt Cup Season 6</option>
 
