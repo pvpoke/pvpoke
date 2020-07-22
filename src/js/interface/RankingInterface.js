@@ -69,7 +69,7 @@ var InterfaceMaster = (function () {
 					$(".league-select option[value=\"1500\"]").prop("selected","selected");
 				}
 
-				if(cup == "premier"){
+				if((cup == "premier")&&(league == 1500)){
 					league = 10000;
 
 					$(".league-select option[value=\"10000\"]").prop("selected","selected");
@@ -299,10 +299,6 @@ var InterfaceMaster = (function () {
 			this.pushHistoryState = function(cup, cp, category, speciesId){
 				if(context == "custom"){
 					return false;
-				}
-
-				if(cup == "premier"){
-					cp = 10000;
 				}
 
 				var url = webRoot+"rankings/"+cup+"/"+cp+"/"+category+"/";

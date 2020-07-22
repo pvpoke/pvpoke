@@ -444,6 +444,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if((cup.name == "premier")&&(battle.getCP() == 2500)){
+					iterations = 1;
+				}
+
 				if(cup.name == "custom"){
 					iterations = 7;
 				}
@@ -476,6 +480,10 @@ var RankerMaster = (function () {
 							}
 
 							if(cup.name == "continentals-2"){
+								weight = 1;
+							}
+
+							if(cup.name == "premier"){
 								weight = 1;
 							}
 
