@@ -17413,11 +17413,11 @@
         "moveId": "V_CREATE",
         "name": "V-Create",
         "type": "fire",
-        "power": 100,
+        "power": 95,
         "energy": 40,
         "energyGain": 0,
         "cooldown": 500,
-        "buffs": [-3, -3],
+        "buffs": [0, -3],
         "buffTarget": "self",
         "buffApplyChance": "1"
     }, {
