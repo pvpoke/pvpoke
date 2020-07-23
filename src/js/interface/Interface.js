@@ -230,6 +230,7 @@ var InterfaceMaster = (function () {
 				var duration = b.getDuration()+1000;
 				var pokemon = b.getPokemon();
 				var energy = [pokemon[0].startEnergy, pokemon[1].startEnergy]; // Store energy so valid editable moves can be displayed
+				var turnMargin = b.calculateTurnMargin();
 
 				$(".battle-results.single").show();
 				$(".timeline").html('');
@@ -318,7 +319,27 @@ var InterfaceMaster = (function () {
 
 				if(winner.pokemon){
 					var winnerRating = winner.rating;
-					$(".battle-results .summary").html("<span class=\"name\">"+winner.pokemon.speciesName+"</span> wins in <span class=\"time\">"+durationSeconds+"s</span> with a battle rating of <span class=\"rating star\">"+winnerRating+"</span>");
+					$(".battle-results .summary").html("<div><span class=\"name\">"+winner.pokemon.speciesName+"</span> wins in <span class=\"time\">"+durationSeconds+"s</span> with a battle rating of <span class=\"rating star\">"+winnerRating+"</span></div>");
+
+					if(turnMargin >= 20){
+						turnMargin = "20+";
+					}
+
+					var marginSummary = "It is generally safe from energy, IV, or lag factors."
+					var attr = "high";
+
+					if(turnMargin <= 2){
+						marginSummary = "It is extremely vulnerable to energy, IV, or lag factors."
+						attr = "extreme";
+					} else if(turnMargin <= 5){
+						marginSummary = "It is vulnerable to energy, IV, or lag factors."
+						attr = "low";
+					} else if(turnMargin <= 10){
+						marginSummary = "It is somewhat vulnerable to energy, IV, or lag factors."
+						attr = "medium";
+					}
+
+					$(".battle-results .summary").append("<div class=\"turn-margin-description\"><span class=\"turn-margin\" value=\""+attr+"\">"+turnMargin + " turn(s)</span> of difference can flip this scenario. " + marginSummary + "</div>");
 
 					var color = battle.getRatingColor(winnerRating);
 					$(".battle-results .summary .rating").first().css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");

@@ -1376,6 +1376,16 @@ select, input{
 		p{
 			font-size:14px;
 		}
+
+		.turn-margin-description{
+			font-size: 12px;
+    		margin-top: 5px;
+
+			span.turn-margin[value="extreme"]{ background:#ff4d4d; }
+			span.turn-margin[value="low"]{ background:#fff943; }
+			span.turn-margin[value="medium"]{ background:#94ff43; }
+			span.turn-margin[value="high"]{ background:#43ff85; }
+		}
 	}
 
 	.tip{

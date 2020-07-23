@@ -1120,6 +1120,22 @@ select, input {
 .battle-results .summary p {
   font-size: 14px;
 }
+.battle-results .summary .turn-margin-description {
+  font-size: 12px;
+  margin-top: 5px;
+}
+.battle-results .summary .turn-margin-description span.turn-margin[value=extreme] {
+  background: #ff4d4d;
+}
+.battle-results .summary .turn-margin-description span.turn-margin[value=low] {
+  background: #fff943;
+}
+.battle-results .summary .turn-margin-description span.turn-margin[value=medium] {
+  background: #94ff43;
+}
+.battle-results .summary .turn-margin-description span.turn-margin[value=high] {
+  background: #43ff85;
+}
 .battle-results .tip {
   margin-top: 15px;
   text-align: center;
