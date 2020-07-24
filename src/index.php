@@ -30,7 +30,7 @@
 	<h4>v1.15.12 (July 24, 2020)</h4>
 	<ul>
 		<li>For Single Battle results, added number of turns it would take to flip the current scenario. This indicates how impacted a scenario is by lag, IV's, and other factors.</li>
-		<li>Speculative Primal Groudon and Primal Kyogre stats added to the Mega Evolution version of the game master (see <a href="<?php echo $WEB_ROOT; ?>/settings/">Settings page</a>)</li>
+		<li>Speculative Primal Groudon and Primal Kyogre stats added to the Mega Evolution version of the game master (see <a href="<?php echo $WEB_ROOT; ?>settings/">Settings page</a>)</li>
 	</ul>
 
 	<h3>Latest Article</h3>
