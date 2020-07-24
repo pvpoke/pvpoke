@@ -12040,7 +12040,8 @@
         "defaultIVs": {
             "cp1500": [22, 5, 7, 11],
             "cp2500": [38.5, 13, 14, 14]
-        }
+        },
+		"searchPriority": 2
     }, {
         "dex": 480,
         "speciesName": "Uxie",
