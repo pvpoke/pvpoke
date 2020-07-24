@@ -2869,7 +2869,8 @@
         "defaultIVs": {
             "cp1500": [23.5, 5, 12, 7],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 2
     }, {
         "dex": 74,
         "speciesName": "Geodude",
@@ -14818,7 +14819,7 @@
             "cp1500": [26, 7, 15, 6],
             "cp2500": [40, 15, 15, 15]
         },
-        "searchPriority": 10
+        "searchPriority": 20
     }, {
         "dex": 619,
         "speciesId": "mienfoo",
@@ -16434,7 +16435,46 @@
 		   },
 		   "level25CP": 1436,
 		   "tags": ["shadoweligible"]
-	   }],
+	   }, {
+           "dex": 382,
+           "speciesName": "Kyogre (Primal)",
+           "speciesId": "kyogre_primal",
+           "baseStats": {
+               "atk": 331,
+               "def": 251,
+               "hp": 205
+           },
+           "types": ["water", "none"],
+           "fastMoves": ["WATERFALL"],
+           "chargedMoves": ["BLIZZARD", "HYDRO_PUMP", "THUNDER", "SURF", "ORIGIN_PULSE"],
+           "tags": ["legendary"],
+           "defaultIVs": {
+               "cp1500": [10.5, 1, 13, 15],
+               "cp2500": [17.5, 1, 14, 14]
+           }
+       }, {
+           "dex": 382,
+		   "speciesName": "Groudon (Primal)",
+           "speciesId": "groudon_primal",
+		   "baseStats": {
+               "atk": 331,
+               "def": 251,
+               "hp": 205
+           },
+           "types": ["ground", "none"],
+           "fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
+           "chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "SOLAR_BEAM", "FIRE_PUNCH", "PRECIPICE_BLADES"],
+           "tags": ["legendary"],
+           "defaultIVs": {
+               "cp1500": [13, 11, 15, 12],
+               "cp2500": [22.5, 5, 14, 6]
+           },
+           "eliteMoves": ["FIRE_PUNCH"],
+           "defaultIVs": {
+               "cp1500": [10.5, 1, 13, 15],
+               "cp2500": [17.5, 1, 14, 14]
+           }
+       }],
     "moves": [{
         "moveId": "ACID",
         "name": "Acid",

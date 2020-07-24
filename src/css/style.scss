@@ -1379,7 +1379,8 @@ select, input{
 
 		.turn-margin-description{
 			font-size: 12px;
-    		margin-top: 5px;
+			margin-top: 15px;
+			line-height: 18px;
 
 			span.turn-margin[value="extreme"]{ background:#ff4d4d; }
 			span.turn-margin[value="low"]{ background:#fff943; }

@@ -328,14 +328,14 @@ var InterfaceMaster = (function () {
 					var marginSummary = "It is generally safe from energy, IV, or lag factors."
 					var attr = "high";
 
-					if(turnMargin <= 2){
-						marginSummary = "It is extremely vulnerable to energy, IV, or lag factors."
+					if(turnMargin < 5){
+						marginSummary = "It is highly vulnerable to energy, IV, or lag factors."
 						attr = "extreme";
-					} else if(turnMargin <= 5){
-						marginSummary = "It is vulnerable to energy, IV, or lag factors."
-						attr = "low";
 					} else if(turnMargin <= 10){
 						marginSummary = "It is somewhat vulnerable to energy, IV, or lag factors."
+						attr = "low";
+					} else if(turnMargin <= 15){
+						marginSummary = "It is somewhat safe from energy, IV, or lag factors."
 						attr = "medium";
 					}
 

@@ -1122,7 +1122,8 @@ select, input {
 }
 .battle-results .summary .turn-margin-description {
   font-size: 12px;
-  margin-top: 5px;
+  margin-top: 15px;
+  line-height: 18px;
 }
 .battle-results .summary .turn-margin-description span.turn-margin[value=extreme] {
   background: #ff4d4d;
