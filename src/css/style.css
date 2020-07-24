@@ -1125,6 +1125,9 @@ select, input {
   margin-top: 15px;
   line-height: 18px;
 }
+.battle-results .summary .turn-margin-description span.turn-margin {
+  color: #000;
+}
 .battle-results .summary .turn-margin-description span.turn-margin[value=extreme] {
   background: #ff4d4d;
 }

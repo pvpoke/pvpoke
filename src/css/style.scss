@@ -1382,6 +1382,10 @@ select, input{
 			margin-top: 15px;
 			line-height: 18px;
 
+			span.turn-margin{
+				color:#000;
+			}
+
 			span.turn-margin[value="extreme"]{ background:#ff4d4d; }
 			span.turn-margin[value="low"]{ background:#fff943; }
 			span.turn-margin[value="medium"]{ background:#94ff43; }
