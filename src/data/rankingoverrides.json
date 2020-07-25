@@ -2522,6 +2522,10 @@
 				"weight": 10
 			},
 			{
+				"speciesId": "mewtwo_shadow",
+				"chargedMoves": ["PSYSTRIKE", "SHADOW_BALL"]
+			},
+			{
 				"speciesId": "mew",
 				"chargedMoves": ["PSYSHOCK","FOCUS_BLAST"]
 			},
