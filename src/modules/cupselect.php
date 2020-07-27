@@ -2,8 +2,6 @@
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
 	<option value="tsa-2" cup="catacomb">Silph Catacomb Cup</option>
-	<option value="community" cup="scoville">Scoville Cup</option>
-	<option value="community" cup="grunt-6">Grunt Cup Season 6</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>

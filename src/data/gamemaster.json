@@ -7723,7 +7723,7 @@
         },
         "types": ["water", "flying"],
         "fastMoves": ["WATER_GUN", "WING_ATTACK"],
-        "chargedMoves": ["BLIZZARD", "HURRICANE", "HYDRO_PUMP"],
+        "chargedMoves": ["BLIZZARD", "HURRICANE", "HYDRO_PUMP", "WEATHER_BALL_WATER"],
         "defaultIVs": {
             "cp1500": [26, 8, 13, 11],
             "cp2500": [40, 15, 15, 15]
@@ -10230,7 +10230,7 @@
         },
         "types": ["water", "steel"],
         "fastMoves": ["METAL_CLAW", "WATERFALL"],
-        "chargedMoves": ["BLIZZARD", "FLASH_CANNON", "HYDRO_PUMP", "HYDRO_CANNON"],
+        "chargedMoves": ["BLIZZARD", "FLASH_CANNON", "HYDRO_PUMP", "HYDRO_CANNON", "DRILL_PECK"],
         "tags": ["starter"],
         "defaultIVs": {
             "cp1500": [19, 6, 11, 14],
@@ -11478,7 +11478,7 @@
         },
         "types": ["grass", "ice"],
         "fastMoves": ["POWDER_SNOW", "RAZOR_LEAF"],
-        "chargedMoves": ["BLIZZARD", "ENERGY_BALL", "OUTRAGE"],
+        "chargedMoves": ["BLIZZARD", "ENERGY_BALL", "OUTRAGE", "WEATHER_BALL_ICE"],
         "defaultIVs": {
             "cp1500": [23.5, 5, 14, 11],
             "cp2500": [40, 15, 15, 15]
@@ -11496,7 +11496,7 @@
         },
         "types": ["grass", "ice"],
         "fastMoves": ["POWDER_SNOW", "RAZOR_LEAF"],
-        "chargedMoves": ["BLIZZARD", "ENERGY_BALL", "OUTRAGE"],
+        "chargedMoves": ["BLIZZARD", "ENERGY_BALL", "OUTRAGE", "WEATHER_BALL_ICE"],
         "defaultIVs": {
             "cp1500": [23.5, 5, 14, 11],
             "cp2500": [40, 15, 15, 15]
@@ -14988,7 +14988,7 @@
         },
         "types": ["normal", "flying"],
         "fastMoves": ["STEEL_WING", "AIR_SLASH"],
-        "chargedMoves": ["HEAT_WAVE", "BRAVE_BIRD", "ROCK_SLIDE"],
+        "chargedMoves": ["HEAT_WAVE", "BRAVE_BIRD", "ROCK_SLIDE", "CLOSE_COMBAT"],
         "defaultIVs": {
             "cp1500": [18, 5, 15, 5],
             "cp2500": [30, 7, 11, 9]
@@ -15741,7 +15741,7 @@
         "moveId": "BLIZZARD",
         "name": "Blizzard",
         "type": "ice",
-        "power": 130,
+        "power": 140,
         "energy": 75,
         "energyGain": 0,
         "cooldown": 500
@@ -15765,10 +15765,13 @@
         "moveId": "BRAVE_BIRD",
         "name": "Brave Bird",
         "type": "flying",
-        "power": 90,
+        "power": 130,
         "energy": 55,
         "energyGain": 0,
-        "cooldown": 500
+        "cooldown": 500,
+		"buffs": [0, -3],
+        "buffTarget": "self",
+        "buffApplyChance": "1"
     }, {
         "moveId": "BRICK_BREAK",
         "name": "Brick Break",
@@ -16033,7 +16036,7 @@
         "moveId": "DRILL_PECK",
         "name": "Drill Peck",
         "type": "flying",
-        "power": 60,
+        "power": 65,
         "energy": 40,
         "energyGain": 0,
         "cooldown": 500
@@ -16195,7 +16198,7 @@
         "name": "Flash Cannon",
         "type": "steel",
         "power": 110,
-        "energy": 65,
+        "energy": 70,
         "energyGain": 0,
         "cooldown": 500
     }, {
@@ -16218,7 +16221,7 @@
         "moveId": "FOCUS_BLAST",
         "name": "Focus Blast",
         "type": "fighting",
-        "power": 150,
+        "power": 140,
         "energy": 75,
         "energyGain": 0,
         "cooldown": 500
@@ -16340,7 +16343,7 @@
         "type": "ghost",
         "power": 6,
         "energy": 0,
-        "energyGain": 11,
+        "energyGain": 12,
         "cooldown": 1500
     }, {
         "moveId": "HIDDEN_POWER_BUG",
@@ -16575,7 +16578,7 @@
         "type": "bug",
         "power": 6,
         "energy": 0,
-        "energyGain": 11,
+        "energyGain": 12,
         "cooldown": 1500
     }, {
         "moveId": "IRON_HEAD",
@@ -16729,7 +16732,7 @@
         "cooldown": 500,
         "buffs": [-1, 0],
         "buffTarget": "opponent",
-        "buffApplyChance": ".3"
+        "buffApplyChance": ".1"
     }, {
         "moveId": "MUD_BOMB",
         "name": "Mud Bomb",
@@ -16901,7 +16904,7 @@
         "moveId": "POWDER_SNOW",
         "name": "Powder Snow",
         "type": "ice",
-        "power": 4,
+        "power": 5,
         "energy": 0,
         "energyGain": 8,
         "cooldown": 1000

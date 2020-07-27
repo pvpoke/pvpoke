@@ -27,6 +27,11 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
+	<h4>v1.15.13 (July 27, 2020)</h4>
+	<ul>
+		<li>The site has been updated with the latest move changes! Rankings and simulations are updated, but updates to Training Battle teams and custom meta groups are to come.</li>
+	</ul>
+
 	<h4>v1.15.12 (July 24, 2020)</h4>
 	<ul>
 		<li>For Single Battle results, added number of turns it would take to flip the current scenario. This indicates how impacted a scenario is by lag, IV's, and other factors.</li>
