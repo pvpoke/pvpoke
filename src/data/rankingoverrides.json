@@ -2342,7 +2342,6 @@
 			},
 			{
 				"speciesId": "gyarados",
-				"chargedMoves": ["CRUNCH","HYDRO_PUMP"],
 				"weight": 12
 			},
 			{
@@ -2587,10 +2586,6 @@
 				"weight": 4
 			},
 			{
-				"speciesId": "gyarados",
-				"chargedMoves": ["CRUNCH", "HYDRO_PUMP"]
-			},
-			{
 				"speciesId": "mamoswine",
 				"chargedMoves": ["AVALANCHE","BULLDOZE"]
 			},
@@ -2777,8 +2772,11 @@
 			{
 				"speciesId": "gyarados",
 				"fastMove": ["DRAGON_BREATH"],
-				"chargedMoves": ["CRUNCH","HYDRO_PUMP"],
 				"weight": 10
+			},
+			{
+				"speciesId": "gyarados_shadow",
+				"fastMove": ["DRAGON_BREATH"]
 			},
 			{
 				"speciesId": "swampert",

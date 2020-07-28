@@ -15832,14 +15832,14 @@
 		   },
 		   "types": ["water", "dark"],
 		   "fastMoves": ["BITE", "DRAGON_BREATH", "DRAGON_TAIL", "WATERFALL"],
-		   "chargedMoves": ["CRUNCH", "DRAGON_PULSE", "HYDRO_PUMP", "OUTRAGE", "TWISTER"],
+		   "chargedMoves": ["CRUNCH", "DRAGON_PULSE", "HYDRO_PUMP", "OUTRAGE", "TWISTER", "AQUA_TAIL"],
 		   "defaultIVs": {
 			   "cp1500": [14, 0, 15, 15],
 			   "cp2500": [23.5, 0, 12, 15]
 		   },
 		   "level25CP": 2119,
 		   "tags": ["shadoweligible"],
-		   "eliteMoves": ["DRAGON_TAIL", "DRAGON_PULSE"]
+		   "eliteMoves": ["DRAGON_TAIL", "DRAGON_PULSE", "AQUA_TAIL"]
 	   },  {
 		   "dex": 142,
 		   "speciesName": "Aerodactyl (Mega)",
