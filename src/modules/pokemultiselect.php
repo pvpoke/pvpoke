@@ -16,10 +16,9 @@
 				<option value="great" type="great" class="multi-battle">Great League Meta</option>
 				<option value="ultra" type="ultra" class="hide multi-battle">Ultra League Meta</option>
 				<option value="master" type="master" class="hide multi-battle">Master League Meta</option>
+				<option value="premierultra" type="ultra" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="premier" type="master" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="catacomb" type="great" class="multi-battle">Silph Catacomb Cup</option>
-				<option value="continentals" type="great" class="multi-battle">Season 2 Continentals Meta</option>
-				<option value="continentals" type="great" class="multi-battle">Scoville Cup</option>
 			</select>
 			<div class="flex quick-fill-buttons">
 				<button class="save-btn save-custom">Save</button>

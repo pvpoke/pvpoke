@@ -300,11 +300,12 @@ function PokeMultiSelect(element){
 
 			case 2500:
 				$el.find(".quick-fill-select option[value='ultra']").show();
+				$el.find(".quick-fill-select option[type='ultra']").show();
 				break;
 
 			case 10000:
 				$el.find(".quick-fill-select option[value='master']").show();
-				$el.find(".quick-fill-select option[value='premier']").show();
+				$el.find(".quick-fill-select option[type='master']").show();
 				break;
 		}
 
@@ -441,7 +442,7 @@ function PokeMultiSelect(element){
 		for(var i = 0; i < pokemonList.length; i++){
 			var searchId = pokemonList[i].speciesId.replace("_shadow",""); // Do this so Shadow and non-Shadow ID's match
 			pokemonList[i].cliffhangerPoints = 0;
-			
+
 			for(var n = 0; n < tiers.length; n++){
 				if(tiers[n].pokemon.indexOf(searchId) > -1){
 					points += tiers[n].points;

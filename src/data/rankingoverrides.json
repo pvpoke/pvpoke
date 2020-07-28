@@ -2808,12 +2808,12 @@
 			},
 			{
 				"speciesId": "swampert",
-				"chargedMoves": ["HYDRO_CANNON", "SLUDGE_WAVE"],
+				"chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"],
 				"weight": 35
 			},
 			{
 				"speciesId": "swampert_shadow",
-				"chargedMoves": ["HYDRO_CANNON", "SLUDGE_WAVE"],
+				"chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"],
 				"weight": 2
 			},
 			{
@@ -2874,6 +2874,7 @@
 			},
 			{
 				"speciesId": "gliscor_shadow",
+				"fastMove": "WING_ATTACK",
 				"chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"]
 			},
 			{
@@ -2891,6 +2892,10 @@
 			{
 				"speciesId": "tentacruel",
 				"chargedMoves": ["ACID_SPRAY", "HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "blaziken",
+				"chargedMoves": ["BLAZE_KICK", "BRAVE_BIRD"]
 			},
 			{
 				"speciesId": "feraligatr",

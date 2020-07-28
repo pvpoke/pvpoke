@@ -713,6 +713,10 @@ function Pokemon(id, i, b){
 			cupName = battle.getCup().name;
 		}
 
+		if(cupName == "custom"){
+			cupName = "all";
+		}
+
 		var key = cupName + category + battle.getCP();
 
 		if(! gm.rankings[key]){

@@ -4357,14 +4357,14 @@
         },
         "types": ["water", "flying"],
         "fastMoves": ["BITE", "DRAGON_BREATH", "DRAGON_TAIL", "WATERFALL"],
-        "chargedMoves": ["CRUNCH", "DRAGON_PULSE", "HYDRO_PUMP", "OUTRAGE", "TWISTER"],
+        "chargedMoves": ["CRUNCH", "DRAGON_PULSE", "HYDRO_PUMP", "OUTRAGE", "TWISTER", "AQUA_TAIL"],
         "defaultIVs": {
             "cp1500": [16, 10, 11, 13],
             "cp2500": [27.5, 6, 7, 11]
         },
         "level25CP": 2119,
         "tags": ["shadoweligible"],
-        "eliteMoves": ["DRAGON_TAIL", "DRAGON_PULSE"],
+        "eliteMoves": ["DRAGON_TAIL", "DRAGON_PULSE", "AQUA_TAIL"],
         "searchPriority": 4
     }, {
         "dex": 130,
@@ -4377,13 +4377,13 @@
         },
         "types": ["water", "flying"],
         "fastMoves": ["BITE", "DRAGON_BREATH", "DRAGON_TAIL", "WATERFALL"],
-        "chargedMoves": ["CRUNCH", "DRAGON_PULSE", "HYDRO_PUMP", "OUTRAGE", "TWISTER"],
+        "chargedMoves": ["CRUNCH", "DRAGON_PULSE", "HYDRO_PUMP", "OUTRAGE", "TWISTER", "AQUA_TAIL"],
         "defaultIVs": {
             "cp1500": [16, 10, 11, 13],
             "cp2500": [27.5, 6, 7, 11]
         },
         "tags": ["shadow"],
-        "eliteMoves": ["DRAGON_TAIL", "DRAGON_PULSE"],
+        "eliteMoves": ["DRAGON_TAIL", "DRAGON_PULSE", "AQUA_TAIL"],
         "searchPriority": 4
     }, {
         "dex": 131,
@@ -6053,6 +6053,7 @@
             "cp1500": [24.5, 6, 10, 13],
             "cp2500": [40, 15, 15, 15]
         },
+		"level25CP": 1415,
 		"tags": ["shadoweligible"]
     }, {
         "dex": 205,
@@ -6070,7 +6071,7 @@
             "cp1500": [24.5, 6, 10, 13],
             "cp2500": [40, 15, 15, 15]
         },
-		"tags": "shadoweligible"
+		"tags": "shadow"
     }, {
         "dex": 206,
         "speciesName": "Dunsparce",

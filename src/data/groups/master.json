@@ -10,11 +10,6 @@
 		"chargedMoves":["SHADOW_BALL","OMINOUS_WIND"]
 	},
 	{
-		"speciesId":"darkrai",
-		"fastMove":"SNARL",
-		"chargedMoves":["DARK_PULSE","FOCUS_BLAST"]
-	},
-	{
 		"speciesId":"machamp",
 		"fastMove":"COUNTER",
 		"chargedMoves":["CROSS_CHOP","ROCK_SLIDE"]
@@ -112,7 +107,7 @@
 	{
 		"speciesId":"gyarados",
 		"fastMove":"DRAGON_BREATH",
-		"chargedMoves":["HYDRO_PUMP","CRUNCH"]
+		"chargedMoves":["AQUA_TAIL","CRUNCH"]
 	},
 	{
 		"speciesId":"rhyperior",
@@ -123,15 +118,5 @@
 		"speciesId":"togekiss",
 		"fastMove":"CHARM",
 		"chargedMoves":["ANCIENT_POWER","FLAMETHROWER"]
-	},
-	{
-		"speciesId":"landorus_incarnate",
-		"fastMove":"MUD_SHOT",
-		"chargedMoves":["ROCK_SLIDE","EARTH_POWER"]
-	},
-	{
-		"speciesId":"reshiram",
-		"fastMove":"DRAGON_BREATH",
-		"chargedMoves":["CRUNCH","OVERHEAT"]
 	}
 ]
