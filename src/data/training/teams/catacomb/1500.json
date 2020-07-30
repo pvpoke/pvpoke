@@ -306,6 +306,13 @@
 				"weight":25
 			},
 			{
+				"speciesId": "abomasnow",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["WEATHER_BALL_ICE","ENERGY_BALL"],
+				"difficulty": 2,
+				"weight":15
+			},
+			{
 				"speciesId": "victreebel",
 				"fastMove": "RAZOR_LEAF",
 				"chargedMoves": ["LEAF_BLADE","ACID_SPRAY"],
@@ -451,6 +458,13 @@
 				"chargedMoves": ["AVALANCHE","SHADOW_BALL"],
 				"difficulty": 2,
 				"weight":17
+			},
+			{
+				"speciesId": "froslass",
+				"fastMove": "HEX",
+				"chargedMoves": ["AVALANCHE","SHADOW_BALL"],
+				"difficulty": 2,
+				"weight":6
 			},
 			{
 				"speciesId": "piloswine",

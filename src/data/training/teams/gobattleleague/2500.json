@@ -26,6 +26,20 @@
 				"weight":15
 			},
 			{
+				"speciesId": "drifblim",
+				"fastMove": "HEX",
+				"chargedMoves": ["ICY_WIND","SHADOW_BALL"],
+				"difficulty": 2,
+				"weight":5
+			},
+			{
+				"speciesId": "gengar",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["SHADOW_BALL","SHADOW_PUNCH"],
+				"difficulty": 2,
+				"weight":8
+			},
+			{
 				"speciesId": "giratina_altered",
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["DRAGON_CLAW","ANCIENT_POWER"],
@@ -71,13 +85,6 @@
 				"speciesId": "latias",
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["OUTRAGE","THUNDER"],
-				"difficulty": 1,
-				"weight":1
-			},
-			{
-				"speciesId": "gengar",
-				"fastMove": "SHADOW_CLAW",
-				"chargedMoves": ["SHADOW_BALL","SLUDGE_BOMB"],
 				"difficulty": 1,
 				"weight":1
 			}
@@ -281,15 +288,15 @@
 				"speciesId": "gyarados",
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["CRUNCH","OUTRAGE"],
-				"difficulty": 2,
+				"difficulty": 1,
 				"weight":2
 			},
 			{
 				"speciesId": "gyarados",
 				"fastMove": "DRAGON_BREATH",
-				"chargedMoves": ["CRUNCH","HYDRO_PUMP"],
+				"chargedMoves": ["CRUNCH","AQUA_TAIL"],
 				"difficulty": 2,
-				"weight":5
+				"weight":10
 			},
 			{
 				"speciesId": "gliscor",
@@ -338,14 +345,14 @@
 				"fastMove": "COUNTER",
 				"chargedMoves": ["NIGHT_SLASH","CROSS_CHOP"],
 				"difficulty": 3,
-				"weight":3
+				"weight":2
 			},
 			{
 				"speciesId": "obstagoon",
 				"fastMove": "COUNTER",
 				"chargedMoves": ["NIGHT_SLASH","GUNK_SHOT"],
 				"difficulty": 3,
-				"weight":2
+				"weight":8
 			},
 			{
 				"speciesId": "blaziken",
@@ -513,7 +520,14 @@
 				"fastMove": "VINE_WHIP",
 				"chargedMoves": ["FRENZY_PLANT","EARTHQUAKE"],
 				"difficulty": 2,
-				"weight": 6
+				"weight": 4
+			},
+			{
+				"speciesId": "abomasnow",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["WEATHER_BALL_ICE","ENERGY_BALL"],
+				"difficulty": 2,
+				"weight": 3
 			},
 			{
 				"speciesId": "ferrothorn",
