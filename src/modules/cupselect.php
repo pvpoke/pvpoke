@@ -1,6 +1,7 @@
 <select class="format-select">
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
+	<option value="tsa-2" cup="catacomb">Silph Catacomb Cup</option>
 	<option value="tsa-2" cup="sinister-mirror">Silph Sinister Cup</option>
 	<option value="tsa-2" cup="ferocious-mirror">Silph Ferocious Cup</option>
 	<option value="tsa-2" cup="timeless-mirror">Silph Timeless Cup</option>
