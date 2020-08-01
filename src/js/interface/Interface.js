@@ -1589,6 +1589,10 @@ var InterfaceMaster = (function () {
 					pokeSelectors[0].setSelectedPokemon(pokeSelectors[0].getPokemon());
 					pokeSelectors[1].setSelectedPokemon(pokeSelectors[1].getPokemon());
 				}
+
+				if(self.battleMode == "matrix"){
+					$(".poke.multi .custom-options").show();
+				}
 			}
 
 			// Swap the selected Pokemon between the left and right Pokemon selectors

@@ -1490,11 +1490,11 @@ select, input{
 			overflow:scroll;
 			max-height: 500px;
 		}
-
-		a.download-csv{
-			display:inline-block;
-		}
 	}
+}
+
+a.download-csv{
+	display:inline-block;
 }
 
 .rating-table{

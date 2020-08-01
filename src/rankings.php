@@ -238,6 +238,8 @@ require_once 'header.php';
 	<div class="rankings-container clear"></div>
 </div>
 
+<a href="#" class="button download-csv">Export to CSV</a>
+
 <div class="section about white">
 	<a class="toggle" href="#">About Rankings <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content">

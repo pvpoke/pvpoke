@@ -636,21 +636,22 @@ function PokeMultiSelect(element){
 		modalWindow("Delete Group", $(".delete-list-confirm").first());
 
 		$(".modal .name").html(name);
-	});
 
-	// Delete group cookie
 
-	$("body").on("click", ".modal .delete-list-confirm .button.yes", function(e){
+		// Trigger for deleting group cookie
 
-		window.localStorage.removeItem(selectedGroup);
+		$(".modal .delete-list-confirm .button.yes").click(function(e){
 
-		closeModalWindow();
+			window.localStorage.removeItem(selectedGroup);
 
-		// Remove option from quick fill selects
+			closeModalWindow();
 
-		$(".quick-fill-select option[value='"+selectedGroup+"']").remove();
-		$el.find(".quick-fill-select option").first().prop("selected", "selected");
-		$el.find(".quick-fill-select").trigger("change");
+			// Remove option from quick fill selects
+
+			$el.find(".quick-fill-select option[value='"+selectedGroup+"']").remove();
+			$el.find(".quick-fill-select option").first().prop("selected", "selected");
+			$el.find(".quick-fill-select").trigger("change");
+		});
 	});
 
 	// Change shield settings

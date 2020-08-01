@@ -47,6 +47,9 @@ require_once 'header.php'; ?>
 		<div class="supporter">gerry3</div>
 		<div class="supporter">Third Shield Podcast</div>
 		<div class="supporter">Elite4al</div>
+		<div class="supporter">WillSimsMS</div>
+		<div class="supporter">Melgood711</div>
+		<div class="supporter">PvP&Me/BrajSF</div>
 	</div>
 
 	<h2 class="center">Master Supporters</h2>
@@ -153,6 +156,10 @@ require_once 'header.php'; ?>
 		<div class="supporter-container">
 			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/tridentleague.jpg"/>
 			<div class="supporter"><a href="https://t.me/TridentPvP" target="_blank">Trident League</a></div>
+		</div>
+		<div class="supporter-container">
+			<div class="space"></div>
+			<div class="supporter"><a href="https://twitter.com/MysticSparkle24" target="_blank">MysticSparkle24</a></div>
 		</div>
 	</div>
 </div>

@@ -1231,7 +1231,8 @@ select, input {
   overflow: scroll;
   max-height: 500px;
 }
-.battle-results.matrix a.download-csv {
+
+a.download-csv {
   display: inline-block;
 }
 
