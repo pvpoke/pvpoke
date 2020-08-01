@@ -547,6 +547,8 @@ a.random{
 					position:relative;
 					top:-16px;
 
+					@include transition(width, 0.2s, ease, 0s);
+
 					&.damage{
 						background:#ff5115;
 						position: relative;

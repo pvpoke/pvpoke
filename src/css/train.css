@@ -471,6 +471,10 @@ a.random {
 .battle-window .scene .pokemon-container .hp.bar-back .bar {
   position: relative;
   top: -16px;
+  -webkit-transition: width 0.2s ease 0s;
+  -moz-transition: width 0.2s ease 0s;
+  -o-transition: width 0.2s ease 0s;
+  transition: width 0.2s ease 0s;
 }
 .battle-window .scene .pokemon-container .hp.bar-back .bar.damage {
   background: #ff5115;

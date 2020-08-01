@@ -199,6 +199,10 @@ var InterfaceMaster = (function () {
 				var filename = battle.getCup().title + " Rankings.csv";
 				var filedata = '';
 
+				if(! battle.getCup().title){
+					filename = "Custom Rankings.csv";
+				}
+
 				if (!csv.match(/^data:text\/csv/i)) {
 					filedata = [csv];
 					filedata = new Blob(filedata, { type: 'text/csv'});

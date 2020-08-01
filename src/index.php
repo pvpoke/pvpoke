@@ -27,15 +27,11 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.15.13 (July 27, 2020)</h4>
+	<h4>v1.15.14 (August 1, 2020)</h4>
 	<ul>
-		<li>The site has been updated with the latest move changes! Rankings and simulations are updated, but updates to Training Battle teams and custom meta groups are to come.</li>
-	</ul>
-
-	<h4>v1.15.12 (July 24, 2020)</h4>
-	<ul>
-		<li>For Single Battle results, added number of turns it would take to flip the current scenario. This indicates how impacted a scenario is by lag, IV's, and other factors.</li>
-		<li>Speculative Primal Groudon and Primal Kyogre stats added to the Mega Evolution version of the game master (see <a href="<?php echo $WEB_ROOT; ?>settings/">Settings page</a>)</li>
+		<li>Training Battles are now available for Ultra League Premier Cup.</li>
+		<li>Added CSV export for Rankings and Custom Rankings.</li>
+		<li>Fixed an issue where deleting a custom group could result in a different group being deleted in Matrix Battle.</li>
 	</ul>
 
 	<h3>Latest Article</h3>
