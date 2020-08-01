@@ -196,10 +196,10 @@ var InterfaceMaster = (function () {
 				$(".rank").on("click", selectPokemon);
 
 				// Update download link with new data
-				var filename = battle.getCup().title + " Rankings.csv";
+				var filename = $(".cup-select option:selected").html() + " Rankings.csv";
 				var filedata = '';
 
-				if(! battle.getCup().title){
+				if(context == "custom"){
 					filename = "Custom Rankings.csv";
 				}
 
