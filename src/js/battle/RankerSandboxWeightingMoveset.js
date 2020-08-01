@@ -448,6 +448,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if((cup.name == "sorcerous-mirror")||(cup.name == "sinister-mirror")||(cup.name == "timeless-mirror")){
+					iterations = 1;
+				}
+
 				if(cup.name == "custom"){
 					iterations = 7;
 				}
@@ -484,6 +488,10 @@ var RankerMaster = (function () {
 							}
 
 							if(cup.name == "premier"){
+								weight = 1;
+							}
+
+							if((cup.name == "sorcerous-mirror")||(cup.name == "sinister-mirror")||(cup.name == "timeless-mirror")){
 								weight = 1;
 							}
 

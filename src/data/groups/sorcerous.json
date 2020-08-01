@@ -30,11 +30,6 @@
 		"chargedMoves":["CRUNCH","FLAMETHROWER"]
 	},
 	{
-		"speciesId":"golbat",
-		"fastMove":"WING_ATTACK",
-		"chargedMoves":["POISON_FANG","SHADOW_BALL"]
-	},
-	{
 		"speciesId":"wigglytuff",
 		"fastMove":"CHARM",
 		"chargedMoves":["ICE_BEAM","PLAY_ROUGH"]
@@ -103,6 +98,26 @@
 		"speciesId":"sealeo",
 		"fastMove":"POWDER_SNOW",
 		"chargedMoves":["BODY_SLAM","AURORA_BEAM"]
+	},
+	{
+		"speciesId":"metagross",
+		"fastMove":"BULLET_PUNCH",
+		"chargedMoves":["METEOR_MASH","EARTHQUAKE"]
+	},
+	{
+		"speciesId":"snorlax",
+		"fastMove":"LICK",
+		"chargedMoves":["BODY_SLAM","SUPER_POWER"]
+	},
+	{
+		"speciesId":"linoone_galarian",
+		"fastMove":"LICK",
+		"chargedMoves":["BODY_SLAM","GUNK_SHOT"]
+	},
+	{
+		"speciesId":"gallade",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["LEAF_BLADE","CLOSE_COMBAT"]
 	},
 	{
 		"speciesId":"bronzong",

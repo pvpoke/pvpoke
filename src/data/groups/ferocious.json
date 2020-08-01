@@ -1,10 +1,5 @@
 [
 	{
-		"speciesId":"umbreon",
-		"fastMove":"SNARL",
-		"chargedMoves":["FOUL_PLAY","LAST_RESORT"]
-	},
-	{
 		"speciesId":"raticate_alolan",
 		"fastMove":"QUICK_ATTACK",
 		"chargedMoves":["CRUNCH","HYPER_FANG"]
@@ -55,6 +50,21 @@
 		"chargedMoves":["AVALANCHE","STONE_EDGE"]
 	},
 	{
+		"speciesId":"ursaring",
+		"fastMove":"COUNTER",
+		"chargedMoves":["CLOSE_COMBAT","HYPER_BEAM"]
+	},
+	{
+		"speciesId":"perrserker",
+		"fastMove":"SHADOW_CLAW",
+		"chargedMoves":["CLOSE_COMBAT","FOUL_PLAY"]
+	},
+	{
+		"speciesId":"linoone_galarian",
+		"fastMove":"SNARL",
+		"chargedMoves":["BODY_SLAM","DIG"]
+	},
+	{
 		"speciesId":"nidoking",
 		"fastMove":"FURY_CUTTER",
 		"chargedMoves":["EARTH_POWER","EARTHQUAKE"]
@@ -85,9 +95,19 @@
 		"chargedMoves":["FLAMETHROWER","TWISTER"]
 	},
 	{
+		"speciesId":"raikou",
+		"fastMove":"VOLT_SWITCH",
+		"chargedMoves":["WILD_CHARGE","SHADOW_BALL"]
+	},
+	{
 		"speciesId":"marowak_alolan",
 		"fastMove":"FIRE_SPIN",
 		"chargedMoves":["BONE_CLUB","SHADOW_BALL"]
+	},
+	{
+		"speciesId":"marowak",
+		"fastMove":"MUD_SLAP",
+		"chargedMoves":["BONE_CLUB","EARTHQUAKE"]
 	},
 	{
 		"speciesId":"sandslash_alolan",
@@ -95,23 +115,18 @@
 		"chargedMoves":["ICE_PUNCH","BULLDOZE"]
 	},
 	{
-		"speciesId":"lairon",
-		"fastMove":"METAL_CLAW",
-		"chargedMoves":["BODY_SLAM","ROCK_SLIDE"]
-	},
-	{
-		"speciesId":"aggron",
-		"fastMove":"SMACK_DOWN",
-		"chargedMoves":["STONE_EDGE","THUNDER"]
-	},
-	{
 		"speciesId":"linoone",
 		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["GRASS_KNOT","DIG"]
+		"chargedMoves":["GRASS_KNOT","THUNDER"]
 	},
 	{
 		"speciesId":"lickitung",
 		"fastMove":"LICK",
-		"chargedMoves":["POWER_WHIP","HYPER_BEAM"]
+		"chargedMoves":["POWER_WHIP","BODY_SLAM"]
+	},
+	{
+		"speciesId":"lickilicky",
+		"fastMove":"LICK",
+		"chargedMoves":["POWER_WHIP","EARTHQUAKE"]
 	}
 ]

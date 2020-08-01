@@ -2,6 +2,10 @@
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
 	<option value="tsa-2" cup="catacomb">Silph Catacomb Cup</option>
+	<option value="tsa-2" cup="sinister-mirror">Silph Sinister Cup</option>
+	<option value="tsa-2" cup="ferocious-mirror">Silph Ferocious Cup</option>
+	<option value="tsa-2" cup="timeless-mirror">Silph Timeless Cup</option>
+	<option value="tsa-2" cup="sorcerous-mirror">Silph Sorcerous Cup</option>
 	<option value="community" cup="goteamup">GO Stadium GOTeamUp</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
@@ -38,13 +42,17 @@
 	<option value="catacomb" cat="tsa-2">Silph Catacomb Cup</option>
 	<option value="continentals-2" cat="tsa-2">Season 2 Continentals</option>
 	<option value="sorcerous" cat="tsa-2">Silph Sorcerous Cup</option>
+	<option value="sorcerous-mirror" cat="tsa-2">Silph Sorcerous Cup (Mirror)</option>
 	<option value="forest" cat="tsa-2">Forest Cup</option>
 	<option value="voyager" cat="tsa-2">Voyager Cup</option>
 	<option value="toxic" cat="tsa-2">Toxic Cup</option>
 	<option value="rose" cat="tsa-2">Rose Cup</option>
 	<option value="fusion" cat="tsa-2">Fusion Cup</option>
 	<option value="timeless" cat="tsa-2">Timeless Cup</option>
+	<option value="timeless-mirror" cat="tsa-2">Timeless Cup (Mirror)</option>
 	<option value="ferocious" cat="tsa-2">Ferocious Cup</option>
+	<option value="ferocious-mirror" cat="tsa-2">Ferocious Cup (Mirror)</option>
 	<option value="sinister" cat="tsa-2">Sinister Cup</option>
+	<option value="sinister-mirror" cat="tsa-2">Sinister Cup (Mirror)</option>
 	<option value="custom" cat="custom">Custom</option>
 </select>

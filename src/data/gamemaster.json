@@ -176,11 +176,39 @@
             "values": ["dark"]
         }]
     }, {
+        "name": "sinister-mirror",
+        "title": "Sinister Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["ghost", "psychic", "fighting", "steel"]
+        }, {
+            "filterType": "id",
+            "values": ["shiftry", "honchkrow", "murkrow", "crawdaunt", "sharpedo"]
+        }],
+        "exclude": [{
+            "filterType": "id",
+            "values": ["skarmory", "hypno", "drifblim"]
+        }, {
+            "filterType": "tag",
+            "values": ["legendary", "mythical", "shadow", "galarian"]
+        }, {
+            "filterType": "type",
+            "values": ["dark"]
+        }]
+    }, {
         "name": "ferocious",
         "title": "Ferocious Cup",
         "include": [{
             "filterType": "id",
             "values": ["absol", "aggron", "ampharos", "arcanine", "aron", "bagon", "bibarel", "bidoof", "blitzle", "buizel", "buneary", "camerupt", "cranidos", "cubone", "delcatty", "donphan", "drillbur", "eevee", "electrike", "entei", "espeon", "excadrill", "exploud", "flaaffy", "flareon", "floatzel", "furret", "gabite", "garchomp", "gible", "girafarig", "glaceon", "glameow", "granbull", "growlithe", "grumpig", "heatmor", "herdier", "hippopotas", "hippowdon", "houndoom", "houndour", "jolteon", "kangaskhan", "lairon", "larvitar", "lickilicky", "lickitung", "liepard", "lillipup", "linoone", "lopunny", "luxio", "luxray", "mamoswine", "manectric", "mareep", "marowak", "marowak_alolan", "meowth", "meowth_alolan", "mightyena", "miltank", "minun", "nidoking", "nidoqueen", "nidoran_female", "nidoran_male", "nidorina", "nidorino", "ninetales", "ninetales_alolan", "numel", "pachirisu", "patrat", "persian", "persian_alolan", "phanpy", "pichu", "pikachu", "piloswine", "plusle", "ponyta", "poochyena", "pupitar", "purrloin", "purugly", "raichu", "raichu_alolan", "raikou", "rampardos", "rapidash", "raticate", "raticate_alolan", "rattata", "rattata_alolan", "rhydon", "rhyhorn", "rhyperior", "sandslash", "sandslash_alolan", "sandshrew", "sandshrew_alolan", "sentret", "shelgon", "shinx", "skitty", "skuntank", "smeargle", "sneasel", "spoink", "stantler", "stoutland", "stunky", "suicune", "swinub", "tauros", "teddiursa", "torkoal", "tyranitar", "umbreon", "ursaring", "vaporeon", "vulpix", "vulpix_alolan", "watchog", "weavile", "zangoose", "zebstrika", "zigzagoon"]
+        }],
+        "exclude": []
+    }, {
+        "name": "ferocious-mirror",
+        "title": "Ferocious Cup",
+        "include": [{
+            "filterType": "id",
+            "values": ["absol", "aggron", "ampharos", "arcanine", "aron", "bagon", "bibarel", "bidoof", "blitzle", "buizel", "buneary", "camerupt", "cranidos", "cubone", "delcatty", "donphan", "drillbur", "eevee", "electrike", "entei", "espeon", "excadrill", "exploud", "flaaffy", "flareon", "floatzel", "furret", "gabite", "garchomp", "gible", "girafarig", "glaceon", "glameow", "granbull", "growlithe", "grumpig", "heatmor", "herdier", "hippopotas", "hippowdon", "houndoom", "houndour", "jolteon", "kangaskhan", "lairon", "larvitar", "lickilicky", "lickitung", "liepard", "lillipup", "linoone", "lopunny", "luxio", "luxray", "mamoswine", "manectric", "mareep", "marowak", "marowak_alolan", "meowth", "meowth_alolan", "mightyena", "miltank", "minun", "nidoking", "nidoqueen", "nidoran_female", "nidoran_male", "nidorina", "nidorino", "ninetales", "ninetales_alolan", "numel", "pachirisu", "patrat", "persian", "persian_alolan", "phanpy", "pichu", "pikachu", "piloswine", "plusle", "ponyta", "poochyena", "pupitar", "purrloin", "purugly", "raichu", "raichu_alolan", "raikou", "rampardos", "rapidash", "raticate", "raticate_alolan", "rattata", "rattata_alolan", "rhydon", "rhyhorn", "rhyperior", "sandslash", "sandslash_alolan", "sandshrew", "sandshrew_alolan", "sentret", "shelgon", "shinx", "skitty", "skuntank", "smeargle", "sneasel", "spoink", "stantler", "stoutland", "stunky", "suicune", "swinub", "tauros", "teddiursa", "torkoal", "tyranitar", "ursaring", "vaporeon", "vulpix", "vulpix_alolan", "watchog", "weavile", "zebstrika", "zigzagoon","linoone_galarian","perrserker","beartic","gabite","garchomp","aerodactyl","articuno","moltres","zapdos","lugia","ho_oh","salamence"]
         }],
         "exclude": []
     }, {
@@ -204,6 +232,28 @@
         }, {
             "filterType": "id",
             "values": ["umbreon", "sableye", "sableye_shadow"]
+        }]
+    }, {
+        "name": "timeless-mirror",
+        "title": "Timeless Cup",
+        "restrictedPicks": 1,
+        "restrictedPokemon": ["bulbasaur", "ivysaur", "venusaur", "squirtle", "wartortle", "blastoise", "charmander", "charmeleon", "charizard", "chikorita", "bayleef", "meganium", "totodile", "croconaw", "feraligatr", "cyndaquil", "quilava", "typhlosion", "treecko", "grovyle", "sceptile", "mudkip", "marshtomp", "swampert", "torchic", "combusken", "blaziken", "turtwig", "grotle", "torterra", "piplup", "prinplup", "empoleon", "chimchar", "monferno", "infernape"],
+        "include": [{
+            "filterType": "dex",
+            "values": [1, 488]
+        }, {
+            "filterType": "id",
+            "values": ["blaziken", "charizard", "infernape", "empoleon", "monferno", "prinplup", "combusken"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["legendary", "mythical", "alolan", "shadow"]
+        }, {
+            "filterType": "type",
+            "values": ["fighting", "flying", "normal", "psychic", "steel", "fairy"]
+        }, {
+            "filterType": "id",
+            "values": ["umbreon", "kingdra","abomasnow","castform_snowy","froslass"]
         }]
     }, {
         "name": "fusion",
@@ -317,6 +367,20 @@
         }, {
             "filterType": "id",
             "values": ["drapion", "mawile", "metang", "metagross", "lapras", "dewgong", "snorlax", "vigoroth", "slaking", "castform", "rufflet", "braviary", "chansey", "blissey", "mr_mime", "jynx", "eevee", "espeon", "delibird", "miltank", "gardevoir", "gallade", "chimecho", "chatot", "skorupi", "sigilyph", "cryogonal", "glaceon", "castform_snowy", "raichu_alolan", "linoone_galarian", "obstagoon"]
+        }]
+    }, {
+        "name": "sorcerous-mirror",
+        "title": "Sorcerous Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["ice","poison","fairy","psychic","normal"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["legendary", "mythical", "shadow"]
+        }, {
+            "filterType": "id",
+            "values": ["drapion", "mawile", "lapras", "dewgong", "vigoroth", "slaking", "castform", "rufflet", "braviary", "chansey", "blissey", "mr_mime", "jynx", "eevee", "espeon", "delibird", "miltank", "gardevoir", "metang", "chimecho", "chatot", "skorupi", "sigilyph", "cryogonal", "glaceon", "castform_snowy", "raichu_alolan", "obstagoon"]
         }]
     }, {
         "name": "goteamup",
