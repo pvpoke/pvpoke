@@ -75,14 +75,17 @@ switch($cup){
 		break;
 
 	case "sinister":
+	case "sinister-mirror":
 		$league = 'Sinister Cup';
 		break;
 
 	case "ferocious":
+	case "ferocious-mirror":
 		$league = 'Ferocious Cup';
 		break;
 
 	case "timeless":
+	case "timeless-mirror":
 		$league = 'Timeless Cup';
 		break;
 
@@ -123,6 +126,7 @@ switch($cup){
 		break;
 
 	case "sorcerous":
+	case "sorcerous-mirror":
 		$league = 'Sorcerous Cup';
 		break;
 
