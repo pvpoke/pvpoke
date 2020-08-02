@@ -880,6 +880,9 @@ var InterfaceMaster = (function () {
 
 				if(battle.getCP() == 2500){
 					goalBulk = leagueAverageBulk[1];
+					if(battle.getCup().name == "premier"){
+						goalBulk = 33000;
+					}
 				} else if(battle.getCP() == 10000){
 					goalBulk = leagueAverageBulk[2];
 				}
