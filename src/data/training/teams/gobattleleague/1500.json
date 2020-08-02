@@ -457,7 +457,7 @@
 				"fastMove": "AIR_SLASH",
 				"chargedMoves": ["SKY_ATTACK","BRAVE_BIRD"],
 				"difficulty": 2,
-				"weight":20
+				"weight":40
 			},
 			{
 				"speciesId": "skarmory",
@@ -471,7 +471,7 @@
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["SKY_ATTACK","DRAGON_PULSE"],
 				"difficulty": 2,
-				"weight":45
+				"weight":20
 			},
 			{
 				"speciesId": "dragonite_shadow",
@@ -583,14 +583,14 @@
 				"fastMove": "SHADOW_CLAW",
 				"chargedMoves": ["SHADOW_PUNCH","SHADOW_BALL"],
 				"difficulty": 3,
-				"weight":60
+				"weight":25
 			},
 			{
 				"speciesId": "marowak_alolan",
 				"fastMove": "FIRE_SPIN",
 				"chargedMoves": ["BONE_CLUB","SHADOW_BALL"],
 				"difficulty": 2,
-				"weight":15
+				"weight":40
 			},
 			{
 				"speciesId": "marowak_alolan",
@@ -598,6 +598,13 @@
 				"chargedMoves": ["BONE_CLUB","SHADOW_BALL"],
 				"difficulty": 2,
 				"weight":20
+			},
+			{
+				"speciesId": "marowak_alolan",
+				"fastMove": "HEX",
+				"chargedMoves": ["FIRE_BLAST","SHADOW_BALL"],
+				"difficulty": 2,
+				"weight":10
 			},
 			{
 				"speciesId": "marowak_alolan",
@@ -828,14 +835,14 @@
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["THUNDER_PUNCH","ICE_PUNCH"],
 				"difficulty": 2,
-				"weight":10
+				"weight":15
 			},
 			{
 				"speciesId": "hypno_shadow",
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["THUNDER_PUNCH","FIRE_PUNCH"],
 				"difficulty": 1,
-				"weight":5
+				"weight":10
 			},
 			{
 				"speciesId": "bronzong",
@@ -912,21 +919,21 @@
 				"fastMove": "RAZOR_LEAF",
 				"chargedMoves": ["LEAF_BLADE","AERIAL_ACE"],
 				"difficulty": 2,
-				"weight":20
+				"weight":15
 			},
 			{
 				"speciesId": "tropius",
 				"fastMove": "AIR_SLASH",
 				"chargedMoves": ["LEAF_BLADE","AERIAL_ACE"],
 				"difficulty": 3,
-				"weight":30
+				"weight":25
 			},
 			{
 				"speciesId": "abomasnow",
 				"fastMove": "POWDER_SNOW",
 				"chargedMoves": ["WEATHER_BALL_ICE","ENERGY_BALL"],
 				"difficulty": 2,
-				"weight":10
+				"weight":30
 			},
 			{
 				"speciesId": "abomasnow_shadow",
