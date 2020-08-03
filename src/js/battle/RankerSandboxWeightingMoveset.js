@@ -494,7 +494,7 @@ var RankerMaster = (function () {
 							if((cup.name == "sorcerous-mirror")||(cup.name == "sinister-mirror")||(cup.name == "timeless-mirror")){
 								weight = 1;
 							}
-
+							
 							// Don't score Pokemon in the mirror match
 
 							if(rankings[j].speciesId == pokemonList[i].speciesId){
@@ -503,6 +503,10 @@ var RankerMaster = (function () {
 
 							if(pokemonList[j].weightModifier){
 								weight *= pokemonList[j].weightModifier;
+							} else{
+								if((cup.name == "all")&&(battle.getCP() == 1500)){
+									weight = 0;
+								}
 							}
 
 							// For switches, punish hard losses more. The goal is to identify safe switches
