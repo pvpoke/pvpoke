@@ -11,7 +11,8 @@ function interfaceObject(){
 	var ranker = RankerMaster.getInstance();
 	var rankingInterface = InterfaceMaster.getInstance();
 	var pokeSelectors = [];
-	var multiSelector;
+	var customMetaSelector;
+	var overrideSelector;
 	var rankingsRunning = false;
 	var loadingDataFromCup = false; // Flag for whether we want to import new data into the moveset overrides
 	var self = this;
@@ -62,9 +63,13 @@ function interfaceObject(){
 
 		battle = new Battle();
 
-		multiSelector = new PokeMultiSelect($(".poke.multi"));
-		multiSelector.init(data.pokemon, battle);
-		multiSelector.setContext("customrankings");
+		customMetaSelector = new PokeMultiSelect($(".poke.multi").eq(0));
+		customMetaSelector.init(data.pokemon, battle);
+		customMetaSelector.setContext("customrankings");
+
+		overrideSelector = new PokeMultiSelect($(".poke.multi").eq(1));
+		overrideSelector.init(data.pokemon, battle);
+		overrideSelector.setContext("customrankings");
 	};
 
 	// Update the displayed filters
@@ -163,7 +168,7 @@ function interfaceObject(){
 
 			// Convert overrides custom group into an array
 			var overrides = [];
-			var group = multiSelector.getPokemonList();
+			var group = overrideSelector.getPokemonList();
 
 			for(var i = 0; i < group.length; i++){
 				var chargedMoves = [];
@@ -191,6 +196,8 @@ function interfaceObject(){
 			$(".custom-rankings-results").show();
 			$(".custom-rankings-list").show();
 			rankingInterface.displayRankingData(data[0]);
+
+			customMetaSelector.setPokemonList(rankingInterface.getMetaGroup());
 		}
 
 	}
@@ -220,7 +227,7 @@ function interfaceObject(){
 		}
 
 		// Import moveset overrides
-		multiSelector.quickFillGroup(cup.overrides);
+		overrideSelector.quickFillGroup(cup.overrides);
 
 		// Set league
 		$(".league-select option[value=\""+cup.league+"\"]").prop("selected","selected");
@@ -241,13 +248,11 @@ function interfaceObject(){
 
 			var pokemon = new Pokemon(r.speciesId, 0, battle);
 			pokemon.initialize();
+			pokemon.selectMove("fast", r.moveset[0]);
+			pokemon.selectMove("charged", r.moveset[1], 0);
 
-			var arr = r.moveStr.split("-");
-			pokemon.selectMove("fast", pokemon.fastMovePool[arr[0]].moveId);
-			pokemon.selectMove("charged", pokemon.chargedMovePool[arr[1]-1].moveId, 0);
-
-			if((arr.length > 2)&&(arr[2] != "0")){
-				pokemon.selectMove("charged", pokemon.chargedMovePool[arr[2]-1].moveId,1);
+			if(r.moveset.length > 2){
+				pokemon.selectMove("charged", r.moveset[2],1);
 			} else{
 				pokemon.selectMove("charged", "none", 1);
 			}
@@ -255,7 +260,7 @@ function interfaceObject(){
 			list.push(pokemon);
 		}
 
-		multiSelector.setPokemonList(list);
+		overrideSelector.setPokemonList(list);
 
 		loadingDataFromCup = false;
 	}

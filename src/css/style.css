@@ -3211,22 +3211,28 @@ a.toggle {
   margin-top: 0;
 }
 
-.custom-rankings-overrides .poke.multi {
+.custom-rankings-overrides .poke.multi,
+.custom-rankings-meta-group .poke.multi {
   display: block;
   float: none;
 }
-.custom-rankings-overrides .poke.multi .poke-stats {
+.custom-rankings-overrides .poke.multi .poke-stats,
+.custom-rankings-meta-group .poke.multi .poke-stats {
   padding: 0;
   background: none;
 }
 .custom-rankings-overrides .poke.multi .cup-select,
-.custom-rankings-overrides .poke.multi .options {
+.custom-rankings-overrides .poke.multi .options,
+.custom-rankings-meta-group .poke.multi .cup-select,
+.custom-rankings-meta-group .poke.multi .options {
   display: none;
 }
-.custom-rankings-overrides .poke.multi .custom-options {
+.custom-rankings-overrides .poke.multi .custom-options,
+.custom-rankings-meta-group .poke.multi .custom-options {
   display: block;
 }
-.custom-rankings-overrides h3 {
+.custom-rankings-overrides h3,
+.custom-rankings-meta-group h3 {
   margin-top: 0;
 }
 
