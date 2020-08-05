@@ -581,12 +581,12 @@ var GameMaster = (function () {
 
 						if((param.charAt(0) == "!")&&(param.length > 1)){
 							isNot = true;
-							param = param.substr(1, param.length - 1).replace( /^\s*/g, '' );
+							param = param.substr(1, param.length - 1).trim();
 						}
 
 						// Move search
 						if((param.charAt(0) == "@")&&(param.length > 2)){
-							param = param.substr(1, param.length - 1).replace( /^\s*/g, '' );
+							param = param.substr(1, param.length - 1).trim();
 
 							// legacy move search
 							if ((param == "legacy")||(param == "special")) {
