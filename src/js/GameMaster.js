@@ -551,8 +551,7 @@ var GameMaster = (function () {
 
 		object.generatePokemonListFromSearchString = function(str){
 			// Break the search string up into queries
-			var str = str.replace(/, /g, '').toLowerCase();
-			var queries = str.split(',');
+			var queries = str.toLowerCase().split( /\s*[,|]\s*/ );
 			var results = []; // Store an array of qualifying Pokemon ID's
 
 			var types = ["bug","dark","dragon","electric","fairy","fighting","fire","flying","ghost","grass","ground","ice","normal","poison","psychic","rock","steel","water"];
@@ -562,14 +561,14 @@ var GameMaster = (function () {
 
 			for(var i = 0; i < queries.length; i++){
 				var query = queries[i];
-				var params = query.split('&');
+				var params = query.split( /\s*&\s*/ );
 
 				for(var n = 0; n < object.data.pokemon.length; n++){
 					var pokemon = new Pokemon(object.data.pokemon[n].speciesId, 0, battle);
 					var paramsMet = 0;
 
 					for(var j = 0; j < params.length; j++){
-						var param = params[j];
+						var param = params[j].trim();
 						var isNot = false;
 						var valid = false;
 
@@ -582,12 +581,12 @@ var GameMaster = (function () {
 
 						if((param.charAt(0) == "!")&&(param.length > 1)){
 							isNot = true;
-							param = param.substr(1, param.length-1);
+							param = param.substr(1, param.length - 1).replace( /^\s*/g, '' );
 						}
 
 						// Move search
 						if((param.charAt(0) == "@")&&(param.length > 2)){
-							param = param.substr(1, param.length-1);
+							param = param.substr(1, param.length - 1).replace( /^\s*/g, '' );
 
 							// legacy move search
 							if ((param == "legacy")||(param == "special")) {
