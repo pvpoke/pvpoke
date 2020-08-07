@@ -494,7 +494,7 @@ var RankerMaster = (function () {
 							if((cup.name == "sorcerous-mirror")||(cup.name == "sinister-mirror")||(cup.name == "timeless-mirror")){
 								weight = 1;
 							}
-							
+
 							// Don't score Pokemon in the mirror match
 
 							if(rankings[j].speciesId == pokemonList[i].speciesId){
