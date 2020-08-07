@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.15.15.1';
+$SITE_VERSION = '1.15.15.2';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -79,6 +79,7 @@ if(! isset($OG_IMAGE)){
 
 <meta name="apple-mobile-web-app-capable">
 <meta name="mobile-web-app-capable">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json?v=2">
 
 <link rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">

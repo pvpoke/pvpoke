@@ -253,7 +253,7 @@
             "values": ["fighting", "flying", "normal", "psychic", "steel", "fairy"]
         }, {
             "filterType": "id",
-            "values": ["umbreon", "kingdra","abomasnow","castform_snowy","froslass"]
+            "values": ["umbreon", "kingdra","abomasnow","castform_snowy","froslass","rotom_wash"]
         }]
     }, {
         "name": "fusion",
@@ -473,10 +473,10 @@
             "pokemon": ["altaria", "azumarill", "skarmory", "deoxys_defense", "registeel", "stunfisk_galarian", "tropius"]
         }, {
             "points": 5,
-            "pokemon": ["bastiodon", "bronzong", "cresselia", "ferrothorn", "hypno", "ivysaur", "jirachi", "marowak_alolan", "medicham", "meganium", "melmetal", "probopass", "regice", "regirock", "sableye", "scrafty", "swampert", "umbreon", "venusaur", "zweilous"]
+            "pokemon": ["bastiodon", "bronzong", "cresselia", "ferrothorn", "hypno", "ivysaur", "jirachi", "marowak_alolan", "medicham", "meganium", "melmetal", "probopass", "regirock", "sableye", "scrafty", "swampert", "umbreon", "venusaur", "zweilous", "abomasnow"]
         }, {
             "points": 1,
-            "pokemon": ["cherrim_sunny", "clefable", "dewgong", "forretress", "gardevoir", "gliscor", "golbat", "haunter", "jumpluff", "lanturn", "lapras", "lugia", "mantine", "mew", "muk_alolan", "noctowl", "obstagoon", "perrserker", "quagsire", "raichu", "raichu_alolan", "raikou", "shiftry", "stunfisk", "togekiss", "toxicroak", "uxie", "victreebel", "vigoroth", "whiscash", "wigglytuff", "zapdos"]
+            "pokemon": ["cherrim_sunny", "clefable", "dewgong", "gardevoir", "golbat", "haunter", "jumpluff", "lanturn", "lapras", "lugia", "mantine", "mew", "muk_alolan", "noctowl", "obstagoon", "perrserker", "raichu", "raichu_alolan", "raikou", "shiftry", "stunfisk", "togekiss", "toxicroak", "uxie", "victreebel", "vigoroth", "whiscash", "wigglytuff", "zapdos", "drifblim", "froslass", "empoleon", "gengar", "machamp", "regice"]
         }]
     }],
     "pokemon": [{
