@@ -29,7 +29,7 @@
 
 	<h4>v1.15.15 (August 10, 2020)</h4>
 	<ul>
-		<li>Sinister, Ferocious, Timeless, and Sorcerous Silph Arena formats are now avaiable in Training Battles.</li>
+		<li>Sinister, Ferocious, Timeless, and Sorcerous Silph Arena formats are now available in Training Battles.</li>
 	</ul>
 	<h4>v1.15.15 (August 4, 2020)</h4>
 	<ul>
