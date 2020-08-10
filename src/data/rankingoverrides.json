@@ -2916,10 +2916,12 @@
 			},
 			{
 				"speciesId": "scizor",
+				"fastMove": "BULLET_PUNCH",
 				"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
 			},
 			{
 				"speciesId": "scizor_shadow",
+				"fastMove": "BULLET_PUNCH",
 				"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
 			},
 			{

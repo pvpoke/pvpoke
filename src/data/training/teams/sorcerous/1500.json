@@ -93,7 +93,21 @@
 				"fastMove": "CONFUSION",
 				"chargedMoves": ["PSYSHOCK","BULLDOZE"],
 				"difficulty": 2,
-				"weight":19
+				"weight":24
+			},
+			{
+				"speciesId": "gallade",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["LEAF_BLADE","CLOSE_COMBAT"],
+				"difficulty": 2,
+				"weight":3
+			},
+			{
+				"speciesId": "metagross",
+				"fastMove": "BULLET_PUNCH",
+				"chargedMoves": ["METEOR_MASH","EARTHQUAKE"],
+				"difficulty": 2,
+				"weight":2
 			},
 			{
 				"speciesId": "claydol",
@@ -201,6 +215,13 @@
 				"weight":20
 			},
 			{
+				"speciesId": "snorlax",
+				"fastMove": "LICK",
+				"chargedMoves": ["BODY_SLAM","SUPER_POWER"],
+				"difficulty": 2,
+				"weight":3
+			},
+			{
 				"speciesId": "lickilicky",
 				"fastMove": "LICK",
 				"chargedMoves": ["BODY_SLAM","EARTHQUAKE"],
@@ -276,6 +297,13 @@
 				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"],
 				"difficulty": 2,
 				"weight":25
+			},
+			{
+				"speciesId": "linoone_galarian",
+				"fastMove": "SNARL",
+				"chargedMoves": ["BODY_SLAM","GUNK_SHOT"],
+				"difficulty": 2,
+				"weight":4
 			},
 			{
 				"speciesId": "muk_alolan",
