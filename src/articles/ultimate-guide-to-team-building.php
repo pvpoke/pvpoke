@@ -58,7 +58,7 @@ require_once '../header.php';
 		<p>Conventionally, we often enter our primary Pokémon into Team Builder, identify a strong core partner, and then continue to build sequentially adding Pokémon that compensate for coverage gaps. During that initial step to build a core, Team Builder, however, can occasionally miss strong core partners in the suggestions by over-emphasizing one role to cover its hardest counters (e.g. Anti-Charm for a Sableye partner) or due to several obscure off-meta core breakers. An alternative approach is to select up to 6 Pokémon that are representative of key meta Pokémon or roles that pose a threat to your primary Pokémon and then use Team Builder to identify Pokémon that counter those meta-centric threats. Make note of those suggestions as potential core partners for your primary Pokémon. This approach can potentially pinpoint less conventional core partners that PvPoke’s algorithm might initially miss, leading you to potentially discover a hidden-gem core.</p>
   </div>
 
-	<a name="shiny-bonus"></a>
+	<a name="considerations"></a>
 	<h3 class="article-header">Key Team Building Considerations</h3>
 	<div class="article-section">
 		<h3>3 vs 6</h3>
