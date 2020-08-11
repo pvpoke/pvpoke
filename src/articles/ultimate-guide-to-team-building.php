@@ -5,7 +5,7 @@ $META_TITLE = 'Ultimate Guide to Team Building';
 
 $META_DESCRIPTION = 'Learn the fundamentals of building a good team and how to use the PvPoke Team Builder to its full potential.';
 
-$OG_IMAGE = 'https://pvpoke.com/assets/articles/2019-update-header.jpg';
+$OG_IMAGE = 'https://pvpoke.com/assets/articles/team-building-og.jpg';
 
 require_once '../header.php';
 
