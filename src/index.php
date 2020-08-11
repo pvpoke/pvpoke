@@ -47,14 +47,14 @@
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/best-elite-tm-candidates-pvp/">
-				<img src="<?php echo $WEB_ROOT; ?>assets/articles/elite-tm-thumb.jpg" />
+			<a href="<?php echo $WEB_ROOT; ?>articles/ultimate-guide-to-team-building/">
+				<img src="<?php echo $WEB_ROOT; ?>assets/articles/team-building-thumb.jpg" />
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/best-elite-tm-candidates-pvp/">Best Elite TM Candidates for PvP</a></h4>
-			<div class="date">April 28, 2020</div>
-			<p>Elite TM's are now available! Which exclusive moves and Pokemon are the best for your PvP team?</p>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/ultimate-guide-to-team-building/">Ultimate Team Building Guide by PolymersUp</a></h4>
+			<div class="date">August 11, 2020</div>
+			<p>Learn the fundamentals of building a good team and how to use the PvPoke Team Builder to its full potential.</p>
 		</div>
 
 	</div>

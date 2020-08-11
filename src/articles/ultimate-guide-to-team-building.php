@@ -3,7 +3,7 @@
 
 $META_TITLE = 'Ultimate Guide to Team Building';
 
-$META_DESCRIPTION = 'Wild new moves and effects are changing Trainer Battles in unbelievable ways!';
+$META_DESCRIPTION = 'Learn the fundamentals of building a good team and how to use the PvPoke Team Builder to its full potential.';
 
 $OG_IMAGE = 'https://pvpoke.com/assets/articles/2019-update-header.jpg';
 
@@ -14,8 +14,8 @@ require_once '../header.php';
 <div class="section article white">
 	<h1>Ultimate Guide to Team Building</h1>
 	<div class="date">By <a href="https://twitter.com/PolymersUp">PolymersUp</a></div>
-	<div class="date">Last updated August 10, 2020</div>
-	<img src="<?php echo $WEB_ROOT;?>assets/articles/2019-update-header.jpg" />
+	<div class="date">Last updated August 11, 2020</div>
+	<img src="<?php echo $WEB_ROOT;?>assets/articles/team-building-banner.jpg" />
 	<p>The <a href="<?php echo $WEB_ROOT;?>team-builder/">Team Builder</a> feature was previously an underutilized tool, but now is integral to team building for any meta. As battlers have come to discover its extensive utility, that has also brought about questions of how much stock to put into achieving the lowest Threat Score and alternatives on how to approach team building. In addition to the Meta Scorecard, Threats section and Alternatives section, PvPoke recently added a Graded Overview as well to provide a multi-faceted evaluation of teams. In this article, we hopefully can shed some light on how to help you get the most out of Team Builder.</p>
 	<p>Jump to a section:
   		<ol>
@@ -28,6 +28,8 @@ require_once '../header.php';
 			<li><a href="#final">Final Thoughts</a></li>
 		</ol>
 	</p>
+
+	<img src="<?php echo $WEB_ROOT;?>assets/articles/team-building-infographic.jpg" />
 
 	<a name="grades"></a>
 	<h3 class="article-header">Graded Overview Explained</h3>
