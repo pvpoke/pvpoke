@@ -436,6 +436,18 @@
             "filterType": "id",
             "values": ["azumarill", "registeel", "altaria", "stunfisk_galarian", "deoxys_defense", "swampert", "mantine", "umbreon", "tropius", "cresselia", "swampert_shadow", "dewgong", "mew", "bastiodon", "raikou_shadow", "zweilous", "whiscash", "vigoroth", "meganium", "machamp", "venusaur", "scrafty", "skarmory", "castform_rainy", "regirock", "munchlax", "raikou", "shiftry_shadow", "grotle_shadow", "lapras", "medicham", "sableye_shadow", "ferrothorn", "wigglytuff", "zapdos", "perrserker", "primeape", "zapdos_shadow", "snorlax", "flygon_shadow", "lapras_shadow", "gloom_shadow", "dragonite_shadow", "noctowl", "obstagoon", "venusaur_shadow", "shiftry", "clefable", "hitmontop", "muk_alolan", "quagsire", "sableye", "melmetal", "politoed_shadow", "bellossom", "blastoise", "victreebel_shadow", "gardevoir_shadow", "lickitung", "snorlax_shadow", "marowak_alolan", "dragonair_shadow", "grotle", "flygon", "regice", "gliscor", "bellossom_shadow", "electivire_shadow", "lanturn", "politoed", "raichu_alolan", "vileplume_shadow", "zangoose", "escavalier", "ludicolo", "stunfisk", "lickilicky", "magnezone", "togekiss", "hariyama", "seaking", "alomomola", "hypno", "magnezone_shadow", "tangtowth", "ivysaur", "raichu", "typhlosion", "ninetales_alolan", "dragonair", "haunter", "toxicroak", "gloom", "torterra_shadow", "victreebel", "drapion", "golbat_shadow", "jumpluff", "blastoise_shadow"]
         }]
+    }, {
+        "name": "mexico",
+        "title": "Mexico Cup",
+		"link": "https://silph.gg/t/rrtb",
+        "include": [{
+            "filterType": "type",
+            "values": ["poison", "fighting", "grass", "ghost", "flying", "ground"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["legendary", "mythical"]
+        }]
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable"],
     "pokemonRegions": [{

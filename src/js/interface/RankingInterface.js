@@ -85,6 +85,15 @@ var InterfaceMaster = (function () {
 					$(".description."+category).show();
 				}
 
+				if(battle.getCup().link){
+					$(".description.link").show();
+					console.log(battle.getCup());
+					$(".description.link a").attr("href", battle.getCup().link);
+					$(".description.link a").html(battle.getCup().link);
+				} else{
+					$(".description.link").hide();
+				}
+
 				/* This timeout allows the interface to display the loading message before
 				being thrown into the data loading loop */
 
