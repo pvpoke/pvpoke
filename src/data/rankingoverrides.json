@@ -154,6 +154,10 @@
 				"fastMove": "CHARM"
 			},
 			{
+				"speciesId": "leavanny",
+				"fastMove": "RAZOR_LEAF"
+			},
+			{
 				"speciesId": "stunfisk",
 				"fastMove": "THUNDER_SHOCK",
 				"weight": 4
@@ -2886,6 +2890,10 @@
 				"weight": 5
 			},
 			{
+				"speciesId": "bouffalant",
+				"chargedMoves": ["STOMP", "SKULL_BASH"]
+			},
+			{
 				"speciesId": "breloom",
 				"chargedMoves": ["SEED_BOMB", "SLUDGE_BOMB"]
 			},
@@ -2918,6 +2926,10 @@
 				"speciesId": "scizor",
 				"fastMove": "BULLET_PUNCH",
 				"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
+			},
+			{
+				"speciesId": "leavanny",
+				"fastMove": "RAZOR_LEAF"
 			},
 			{
 				"speciesId": "scizor_shadow",
@@ -7119,6 +7131,78 @@
 				"speciesId": "claydol",
 				"fastMove": "MUD_SLAP",
 				"weight": 5
+			}
+		]
+	},
+	{
+		"league": 1500,
+		"cup": "mexico",
+		"pokemon": [
+			{
+				"speciesId": "togekiss",
+				"fastMove": "CHARM"
+			},
+			{
+				"speciesId": "charizard",
+				"fastMove": "FIRE_SPIN"
+			},
+			{
+				"speciesId": "leavanny",
+				"fastMove": "RAZOR_LEAF"
+			},
+			{
+				"speciesId": "mantine",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["BUBBLE_BEAM", "ICE_BEAM"]
+			},
+			{
+				"speciesId": "steelix",
+				"chargedMoves": ["CRUNCH", "EARTHQUAKE"]
+			},
+			{
+				"speciesId": "hariyama",
+				"chargedMoves": ["CLOSE_COMBAT", "HEAVY_SLAM"]
+			},
+			{
+				"speciesId": "ferrothorn",
+				"chargedMoves": ["POWER_WHIP", "THUNDER"]
+			},
+			{
+				"speciesId": "swampert",
+				"chargedMoves": ["HYDRO_CANNON", "SLUDGE_WAVE"]
+			},
+			{
+				"speciesId": "swampert_shadow",
+				"chargedMoves": ["HYDRO_CANNON", "SLUDGE_WAVE"]
+			},
+			{
+				"speciesId": "himtonchan",
+				"chargedMoves": ["THUNDER_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "himtonchan_shadow",
+				"chargedMoves": ["THUNDER_PUNCH", "ICE_PUNCH"]
+			},
+			{
+				"speciesId": "sableye",
+				"chargedMoves": ["FOUL_PLAY", "POWER_GEM"]
+			},
+			{
+				"speciesId": "sableye_shadow",
+				"chargedMoves": ["FOUL_PLAY", "POWER_GEM"]
+			},
+			{
+				"speciesId": "medicham",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["ICE_PUNCH", "PSYCHIC"]
+			},
+			{
+				"speciesId": "machamp",
+				"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
+			},
+			{
+				"speciesId": "machamp_shadow",
+				"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
 			}
 		]
 	}
