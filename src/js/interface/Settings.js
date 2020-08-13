@@ -24,6 +24,7 @@ var InterfaceMaster = (function () {
 				var theme = $("#theme-select option:selected").val();
 				var matrixDirection = $("#matrix-direction option:selected").val();
 				var gamemaster = $("#gm-select option:selected").val();
+				var pokeboxId = $("#pokebox-id").val();
 
 				$.ajax({
 
@@ -34,7 +35,8 @@ var InterfaceMaster = (function () {
 						'animateTimeline' : animateTimeline,
 						'theme': theme,
 						'matrixDirection': matrixDirection,
-						'gamemaster': gamemaster
+						'gamemaster': gamemaster,
+						'pokeboxId': pokeboxId
 					},
 					dataType:'json',
 					success : function(data) {

@@ -17,6 +17,7 @@ function PokeSelect(element, i){
 	var isCustom = false; // Whether or not the Pokemon has custom-set level, IVs, or traits
 	var context = "main";
 	var searchArr = []; // Array of searchable Pokemon sorted by priority
+	var pokebox;
 
 	var currentHP; // The currently animated HP
 	var currentEnergy; // The currently animated energy
@@ -45,6 +46,7 @@ function PokeSelect(element, i){
 		searchArr.sort((a,b) => (a.priority > b.priority) ? -1 : ((b.priority > a.priority) ? 1 : 0));
 
 		interface = InterfaceMaster.getInstance();
+		pokebox = new Pokebox($el.find(".pokebox"), self, "single");
 
 		self.clear();
 	}

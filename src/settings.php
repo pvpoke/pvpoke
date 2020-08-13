@@ -22,6 +22,10 @@ require_once 'header.php';
 		</select>
 		<p>Currently, this will choose which IV's to set for Pokemon you select in Single Battle, Multi-Battle, and the Team Builder. Opponents in Multi-Battle and the Team Builder will still use the "typical" IV's.</p>
 
+		<h3>Pokebattler Pokebox</h3>
+		<p>Enter your Pokebox ID to import Pokemon.</p>
+		<input type="text" class="input" id="pokebox-id" <?php if(isset($_SETTINGS->pokeboxId)) : ?>value="<?php echo intval($_SETTINGS->pokeboxId); ?>"<?php endif; ?> />
+
 		<h3>Battle Timeline</h3>
 		<div class="check animate-timeline <?php if($_SETTINGS->animateTimeline == 1) : ?>on<?php endif; ?>"><span></span> Animate after generating results</div>
 

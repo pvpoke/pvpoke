@@ -20,6 +20,10 @@ if(isset($_COOKIE['settings'])){
 		$_SETTINGS->gamemaster = "gamemaster";
 	}
 
+	if(! isset($_SETTINGS->pokeboxId)){
+		$_SETTINGS->pokeboxId = false;
+	}
+
 	// Validate the gamemaster setting, only allow these options
 	$gamemasters = ["gamemaster", "gamemaster-mega"];
 
@@ -31,7 +35,8 @@ if(isset($_COOKIE['settings'])){
 		'defaultIVs' => "gamemaster",
 		'animateTimeline' => 1,
 		'theme' => 'default',
-		'gamemaster' => 'gamemaster'
+		'gamemaster' => 'gamemaster',
+		'pokeboxId' => 0
 	];
 }
 
@@ -109,7 +114,8 @@ if(! isset($OG_IMAGE)){
 			defaultIVs: "<?php echo htmlspecialchars($_SETTINGS->defaultIVs); ?>",
 			animateTimeline: <?php echo htmlspecialchars($_SETTINGS->animateTimeline); ?>,
 			matrixDirection: "<?php echo htmlspecialchars($_SETTINGS->matrixDirection); ?>",
-			gamemaster: "<?php echo htmlspecialchars($_SETTINGS->gamemaster); ?>"
+			gamemaster: "<?php echo htmlspecialchars($_SETTINGS->gamemaster); ?>",
+			pokeboxId: "<?php echo intval($_SETTINGS->pokeboxId); ?>"
 		};
 	<?php else: ?>
 
@@ -117,7 +123,8 @@ if(! isset($OG_IMAGE)){
 			defaultIVs: "gamemaster",
 			animateTimeline: 1,
 			matrixDirection: "row",
-			gamemaster: "gamemaster"
+			gamemaster: "gamemaster",
+			pokeboxId: 0
 		};
 
 	<?php endif; ?>
