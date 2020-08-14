@@ -4,7 +4,7 @@ $(function(){
 	var searchTimeout;
 	var searchStr = '';
 
-	$(".poke-search[context='ranking-search']").on("keyup", function(e){
+	$("body").on("keyup", ".poke-search[context='ranking-search']", function(e){
 		searchStr = $(this).val().toLowerCase();
 
 		// Reset the timeout when a new key is typed. This prevents queries from being submitted too quickly and bogging things down on mobile.

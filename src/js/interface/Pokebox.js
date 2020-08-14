@@ -13,7 +13,6 @@ function Pokebox(element, selector, selectMode, b){
 
 	$el.find("a.open-pokebox").click(openPokebox);
 
-
 	this.loadPokebox = function(forceLoad){
 		// Fetch box data from Pokebattler
 		if((forceLoad)||(box.length == 0)){
@@ -23,13 +22,12 @@ function Pokebox(element, selector, selectMode, b){
 				success:function(json){
 					box = [];
 
-					$(".modal .pokebox-list").html("");
-
 					// Convert each Pokemon entry into a Pokemon object
 					for(var i = 0; i < json.pokemon.length; i++){
 						var obj = json.pokemon[i];
 						var id = self.translateId(obj.pokemon, "species");
 						var pokemon = new Pokemon(id, 0, battle);
+						pokemon.initialize();
 
 						if(pokemon){
 							pokemon.selectMove("fast", self.translateId(obj.quickMove, "move"));
@@ -78,11 +76,13 @@ function Pokebox(element, selector, selectMode, b){
 	// Display list of Pokemon in the box
 
 	this.displayBox = function(){
+		$(".modal .pokebox-list").html("");
+
 		for(var i = 0; i < box.length; i++){
 			var pokemon = box[i];
 
-			var $item = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\"><div class=\"name-container\"><span class=\"name\">"+pokemon.speciesName+"</span><span class=\"moves\"></span></div><div class=\"remove\"></div></div>");
-
+			var $item = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"name-container\"><span class=\"name\">"+pokemon.speciesName+"</span><span class=\"moves\"></span></div><div class=\"remove\"></div></div>");
+			$item.find(".moves").append("CP " + pokemon.cp + " " + pokemon.ivs.atk + "/" + pokemon.ivs.def + "/" + pokemon.ivs.hp + "<br>");
 			var moveList = [pokemon.fastMove];
 
 			for(var n = 0; n < pokemon.chargedMoves.length; n++){
@@ -99,7 +99,11 @@ function Pokebox(element, selector, selectMode, b){
 
 			$(".modal .pokebox-list").append($item);
 		}
+
+		$(".modal .pokebox-list .rank").click(selectPokemon);
 	}
+
+	// Click the prompt to open the Pokebox
 
 	function openPokebox(e){
 		e.preventDefault();
@@ -107,5 +111,21 @@ function Pokebox(element, selector, selectMode, b){
 		modalWindow("Import Pokemon", $el.find(".pokebox-import"));
 
 		self.loadPokebox(false);
+	}
+
+	// Select a Pokemon in the Pokebox
+
+	function selectPokemon(e){
+		e.preventDefault();
+
+		$(e.target).closest(".rank").toggleClass("selected");
+
+		var index = $(e.target).closest(".rank").index();
+		var pokemon = box[index];
+
+		if(selectMode == "single"){
+			selector.setSelectedPokemon(pokemon);
+			closeModalWindow();
+		}
 	}
 }

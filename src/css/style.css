@@ -1633,6 +1633,23 @@ a.download-csv {
 .rankings-container > .rank:hover, .rankings-container > .rank.selected {
   border-left: 20px solid #222;
 }
+.rankings-container.pokebox-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.rankings-container.pokebox-list .rank {
+  width: 49%;
+  border-left: none;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+.rankings-container.pokebox-list .rank:hover {
+  border: 2px solid rgba(0, 0, 0, 0.4);
+}
+.rankings-container.pokebox-list .rank.selected {
+  border: 2px solid #000;
+}
 .rankings-container.pokebox-list .name-container {
   float: none;
   padding: 0;

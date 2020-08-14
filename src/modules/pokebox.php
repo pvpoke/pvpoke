@@ -4,6 +4,7 @@
 	<div class="pokebox-import hide">
 		<?php if($_SETTINGS->pokeboxId): ?>
 			<p>Select Pokemon below to import.</p>
+			<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />
 			<div class="pokebox-list rankings-container">
 				Loading Pokebox...
 			</div>

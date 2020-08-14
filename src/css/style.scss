@@ -1876,6 +1876,25 @@ a.download-csv{
 	}
 
 	&.pokebox-list{
+		display:flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+
+		.rank{
+		    width: 49%;
+		    border-left: none;
+		    box-sizing: border-box;
+			border:2px solid rgba(0,0,0,0);
+
+			&:hover{
+				border:2px solid rgba(0,0,0,.4);
+			}
+
+			&.selected{
+				border:2px solid #000;
+			}
+		}
+
 		.name-container{
 			float:none;
 			padding:0;
