@@ -187,7 +187,7 @@
         }],
         "exclude": [{
             "filterType": "id",
-            "values": ["skarmory", "hypno", "drifblim"]
+            "values": ["skarmory", "hypno", "drifblim", "beheeyem"]
         }, {
             "filterType": "tag",
             "values": ["legendary", "mythical", "shadow", "galarian"]
@@ -253,7 +253,7 @@
             "values": ["fighting", "flying", "normal", "psychic", "steel", "fairy"]
         }, {
             "filterType": "id",
-            "values": ["umbreon", "kingdra","abomasnow","castform_snowy","froslass","rotom_wash"]
+            "values": ["umbreon", "kingdra","abomasnow","castform_snowy","froslass","rotom_wash","rotom_wash"]
         }]
     }, {
         "name": "fusion",
@@ -380,7 +380,7 @@
             "values": ["legendary", "mythical", "shadow"]
         }, {
             "filterType": "id",
-            "values": ["drapion", "mawile", "lapras", "dewgong", "vigoroth", "slaking", "castform", "rufflet", "braviary", "chansey", "blissey", "mr_mime", "jynx", "eevee", "espeon", "delibird", "miltank", "gardevoir", "metang", "chimecho", "chatot", "skorupi", "sigilyph", "cryogonal", "glaceon", "castform_snowy", "raichu_alolan", "obstagoon"]
+            "values": ["drapion", "mawile", "lapras", "dewgong", "vigoroth", "slaking", "castform", "rufflet", "braviary", "chansey", "blissey", "mr_mime", "jynx", "eevee", "espeon", "delibird", "miltank", "gardevoir", "metang", "chimecho", "chatot", "skorupi", "sigilyph", "cryogonal", "glaceon", "castform_snowy", "raichu_alolan", "obstagoon", "bouffalant", "whimsicott"]
         }]
     }, {
         "name": "goteamup",
