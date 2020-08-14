@@ -46,7 +46,7 @@ function PokeSelect(element, i){
 		searchArr.sort((a,b) => (a.priority > b.priority) ? -1 : ((b.priority > a.priority) ? 1 : 0));
 
 		interface = InterfaceMaster.getInstance();
-		pokebox = new Pokebox($el.find(".pokebox"), self, "single");
+		pokebox = new Pokebox($el.find(".pokebox"), self, "single", b);
 
 		self.clear();
 	}

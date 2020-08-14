@@ -1633,6 +1633,10 @@ a.download-csv {
 .rankings-container > .rank:hover, .rankings-container > .rank.selected {
   border-left: 20px solid #222;
 }
+.rankings-container.pokebox-list .name-container {
+  float: none;
+  padding: 0;
+}
 
 .rank {
   padding: 5px 10px;

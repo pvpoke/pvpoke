@@ -137,10 +137,6 @@ function PokeMultiSelect(element){
 			}
 
 			for(var n = 0; n < moveList.length; n++){
-				// Code for move icons, but I think the move names work better for readability
-
-				// $item.find(".moves").append("<div class=\"move " + moveList[n].type + "\">"+moveList[n].name+"</div>");
-
 				if(n > 0){
 					$item.find(".moves").append(", ");
 				}

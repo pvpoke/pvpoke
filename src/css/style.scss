@@ -1874,6 +1874,13 @@ a.download-csv{
 	& > .rank:hover, > .rank.selected{
 		border-left:20px solid $color-highlight;
 	}
+
+	&.pokebox-list{
+		.name-container{
+			float:none;
+			padding:0;
+		}
+	}
 }
 
 .rank{
