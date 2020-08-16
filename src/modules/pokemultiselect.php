@@ -7,6 +7,8 @@
 			<p>Create or select a group of custom Pokemon below.</p>
 			<div class="rankings-container clear"></div>
 			<button class="add-poke-btn button">+ Add Pokemon</button>
+			
+			<?php include 'pokebox.php'; ?>
 
 			<button class="export-btn">Import/Export</button>
 

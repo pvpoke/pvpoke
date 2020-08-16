@@ -1637,6 +1637,7 @@ a.download-csv {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  max-height: 400px;
 }
 .rankings-container.pokebox-list .rank {
   width: 49%;

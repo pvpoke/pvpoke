@@ -1879,6 +1879,7 @@ a.download-csv{
 		display:flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+		max-height:400px;
 
 		.rank{
 		    width: 49%;

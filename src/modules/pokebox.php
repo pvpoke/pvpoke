@@ -8,6 +8,7 @@
 			<div class="pokebox-list rankings-container">
 				Loading Pokebox...
 			</div>
+			<div class="button select hide multi">Select Pokemon</div>
 		<?php else: ?>
 			<p>Go to Pokebattler to create a Pokebox where you can store your Pokemon and Iv's.</p>
 

@@ -12,6 +12,7 @@ function Pokebox(element, selector, selectMode, b){
 	var box = [];
 
 	$el.find("a.open-pokebox").click(openPokebox);
+	$el.find("."+selectMode).show();
 
 	this.loadPokebox = function(forceLoad){
 		// Fetch box data from Pokebattler
@@ -101,6 +102,7 @@ function Pokebox(element, selector, selectMode, b){
 		}
 
 		$(".modal .pokebox-list .rank").click(selectPokemon);
+		$(".modal .button.select").click(selectGroup);
 	}
 
 	// Click the prompt to open the Pokebox
@@ -127,5 +129,30 @@ function Pokebox(element, selector, selectMode, b){
 			selector.setSelectedPokemon(pokemon);
 			closeModalWindow();
 		}
+	}
+
+	// Submit a group of selected Pokemon to a MultiSelector
+
+	function selectGroup(e){
+		e.preventDefault();
+
+		var group = [];
+
+		$(".modal .rank").each(function(index, value){
+			if($(this).hasClass("selected")){
+				group.push(box[index]);
+			}
+		});
+
+		// Merge the group into the existing MutliSelector
+
+		var list = selector.getPokemonList();
+
+		for(var i = 0; i < group.length; i++){
+			list.push(group[i]);
+		}
+
+		selector.setPokemonList(list);
+		closeModalWindow();
 	}
 }

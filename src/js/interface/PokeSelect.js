@@ -333,7 +333,7 @@ function PokeSelect(element, i){
 
 		// Set shields to correct amount
 
-		$el.find(".shield-select option[value=\""+poke.startingShields+"\"]").prop("selected","selected");
+		poke.startingShields = $el.find(".shield-select option:selected").val();
 
 		// Set level and iv fields
 		$el.find("input.level").val(selectedPokemon.level);
