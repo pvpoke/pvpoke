@@ -1,0 +1,17 @@
+@mixin transition($property, $duration, $ease, $delay) {
+  transition: $property $duration $ease $delay;
+}
+
+@mixin transform($property) {
+  transform: $property;
+}
+
+@mixin gradient($light, $dark) {
+  background: $dark;
+  background: linear-gradient(to bottom, $light 30%, $dark 99%) !important;
+}
+
+@mixin size($height, $width: $height) {
+  height: $height;
+  width: $width;
+}

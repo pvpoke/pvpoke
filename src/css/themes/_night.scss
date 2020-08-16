@@ -1,0 +1,301 @@
+body {
+  background: $blackcurrant;
+  color: $font-color;
+}
+
+a {
+  color: $link-color;
+}
+
+.section.white,
+.poke .poke-stats {
+  background: $dark;
+}
+
+select,
+.league-select,
+.cup-select,
+.mode-select,
+option,
+.poke input,
+.poke select,
+input,
+.poke-search {
+  background: $color-highlight;
+  color: $white;
+
+  &::-webkit-input-placeholder,
+  &::-moz-placeholder,
+  &:-ms-input-placeholder,
+  &:-moz-placeholder {
+    color: $dark-grey;
+  }
+}
+
+.modal .sandbox-move-select .move-select option {
+  background: $color-highlight !important;
+}
+
+.poke input,
+.poke select {
+  border: 1px solid $dim-grey;
+}
+
+.poke-search {
+  border: 1px solid $dark-grey;
+}
+
+header {
+  background: $dark;
+
+  .menu a,
+  .title a {
+    color: $color-gold;
+  }
+
+  .hamburger .meat {
+    background: $color-gold;
+  }
+
+  .icon-battle {
+    background-image: url('../../img/themes/night/icon_battle.png');
+  }
+
+  .icon-train {
+    background-image: url('../../img/themes/night/icon_train.png');
+  }
+
+  .icon-rankings {
+    background-image: url('../../img/themes/night/icon_rankings.png');
+  }
+
+  .icon-team {
+    background-image: url('../../img/themes/night/icon_team.png');
+  }
+
+  .icon-contribute {
+    background-image: url('../../img/themes/night/icon_contribute.png');
+  }
+
+  .icon-articles {
+    background-image: url('../../img/themes/night/icon_articles.png');
+  }
+
+  .icon-moves {
+    background-image: url('../../img/themes/night/icon_moves.png');
+  }
+
+  .icon-settings {
+    background-image: url('../../img/themes/night/icon_settings.png');
+  }
+}
+
+h1 {
+  color: $white;
+}
+
+.poke {
+  .poke-stats {
+    .stat-container {
+      color: $font-color;
+    }
+
+    .stat-container .bar-back .bar {
+      background: rgba(255, 255, 255, 0.6);
+    }
+
+    a {
+      color: $link-color;
+    }
+
+    h3.section-title {
+      color: $font-color;
+    }
+
+    .move-select,
+    .type {
+      color: $black;
+    }
+  }
+}
+
+.check span {
+  border: 2px solid $suva-grey;
+}
+
+a.toggle {
+  color: $link-color;
+}
+
+.move-bars .move-bar.active {
+  border: 2px solid $white;
+}
+
+.battle-results .timeline-container {
+  background: rgba(50, 50, 50, 0.5);
+  border: 1px solid $suva-grey;
+
+  .timeline {
+    border-top: 1px dashed $suva-grey;
+
+    .item-container {
+      .item.fast {
+        border: 1px solid $suva-grey;
+      }
+    }
+  }
+
+  .tracker {
+    border-left: 1px solid $dark-grey;
+  }
+}
+
+.sandbox.clear-btn {
+  color: $black;
+}
+
+.stats-table tr:nth-child(2n) {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.histograms .histogram .chart {
+  background: $color-highlight;
+  border: 1px solid $suva-grey;
+
+  .segment:nth-of-type(10) {
+    border-right: 1px dashed $suva-grey;
+  }
+}
+
+.rank {
+  color: $black;
+}
+
+.ranking-categories {
+  margin-top: 0.625rem;
+
+  a {
+    color: $link-color;
+
+    &.selected {
+      background: $link-color;
+      color: $font-color;
+    }
+  }
+}
+
+.modal {
+  .modal-header {
+    color: $black;
+  }
+
+  .modal-container {
+    border: 2px solid $suva-grey;
+  }
+
+  .modal-content {
+    background: $dark;
+  }
+}
+
+.section.typings {
+  li span {
+    color: $black;
+  }
+
+  table {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 0.75rem;
+    color: $black;
+  }
+}
+
+.contribute .supporters .supporter {
+  background: $color-highlight;
+}
+
+.battle-window {
+  box-shadow: 0 0.25rem 1rem $black;
+
+  .scene .background {
+    background-image: url('../../img/themes/night/pvp-background.jpg');
+  }
+
+  .top .team-indicator {
+    color: $black;
+  }
+
+  .end-screen-container .damage .damage-section {
+    background: $color-highlight;
+
+    .avg-line {
+      border: 1px dotted rgba(255, 255, 255, 0.5);
+    }
+  }
+}
+
+.team-select .self,
+.team-select .opponent {
+  background: $dark;
+}
+
+.custom-rankings {
+  .include .filter {
+    background: $teal-blue;
+
+    .remove {
+      color: $mona-list;
+    }
+  }
+
+  .exclude .filter {
+    background: $moccaccino;
+
+    a.toggle {
+      color: $watusi;
+    }
+
+    .remove {
+      color: $mona-list;
+    }
+  }
+}
+
+.custom-rankings-import textarea.import,
+.custom-rankings-list .pokemon-list {
+  background: $color-highlight;
+  color: $font-color;
+}
+
+.poke-search-container {
+  a.search-info {
+    border: 1px solid $link-color;
+    color: $link-color;
+  }
+}
+
+.battle-results.matrix .table-container tbody th,
+.alternatives-table tbody th,
+.threats-table tbody th,
+.meta-table tbody th {
+  background: $black;
+  color: $color-off-white;
+}
+
+.battle-results.matrix .table-container tr:nth-of-type(2n) th,
+.alternatives-table tr:nth-of-type(2n) th,
+.threats-table tr:nth-of-type(2n) th,
+.meta-table tr:nth-of-type(2n) th {
+  background: $dark;
+  color: $color-off-white;
+}
+
+.electric {
+  color: $black;
+}
+
+@media only screen and (min-width: 720px) {
+  .menu .submenu .submenu-wrap {
+    background: $dark;
+  }
+}

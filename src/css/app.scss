@@ -1,0 +1,13 @@
+@import 'abstract/functions';
+@import 'abstract/mixins';
+@import 'abstract/placeholders';
+@import 'abstract/variables';
+
+@import 'base/animations';
+@import 'base/resets';
+
+@import 'legacy/style';
+@import 'legacy/train';
+
+// Not sure how necessary it is to have a dark theme?
+// @import 'themes/night';
