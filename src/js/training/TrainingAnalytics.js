@@ -1,194 +1,204 @@
-/*
-* Interface functionality for move list and explorer
-*/
+// Interface functionality for move list and explorer
 
-var InterfaceMaster = (function () {
-    var instance;
+const InterfaceMaster = (function () {
+  let instance;
 
-    function createInstance() {
+  function createInstance() {
+    const object = new InterfaceObject();
 
+    function InterfaceObject(matchHandler) {
+      // It's matchHandlers all the way down
+      const self = this;
+      const gm = GameMaster.getInstance();
+      const mode = 'tournament'; // Single or tournament
+      const teamSelectMethod = 'random'; // Random or manual
+      const partySize = 6;
+      let battle;
+      const roundNumber = 0;
+      let pokemonData = []; // Collection of pick and usage rates for all Pokemon
 
-        var object = new interfaceObject();
+      this.init = function () {
+        const { data } = gm;
+        battle = new Battle();
 
-		function interfaceObject(matchHandler){
+        // Load ranking data for movesets
+        gm.loadRankingData(self, 'overall', 1500, 'all');
 
-			// It's matchHandlers all the way down
+        // Event listeners
+        $('.league-cup-select').on('change', selectLeague);
+        $('.battle-btn').on('click', startBattle);
+        $('a.random').on('click', randomizeTeam);
+      };
 
-			var self = this;
-			var gm = GameMaster.getInstance();
-			var mode = "tournament"; // Single or tournament
-			var teamSelectMethod = "random"; // Random or manual
-			var partySize = 6;
-			var battle;
-			var roundNumber = 0;
-			var pokemonData = []; // Collection of pick and usage rates for all Pokemon
+      // Callback after ranking data is loaded
+      this.displayRankingData = function () {
+        console.log('Ranking data loaded');
+      };
 
-			this.init = function(){
-				var data = gm.data;
-				battle = new Battle();
+      // Hide setup after initiating battle
+      this.close = function () {
+        for (let i = 0; i < 4; i++) {
+          $('.section').eq(i).slideUp(500);
+        }
 
-				// Load ranking data for movesets
-				gm.loadRankingData(self, "overall", 1500, "all");
+        $('.section.updates').slideUp(500);
 
-				// Event listeners
+        $('#main h1').slideUp(500);
+      };
 
-				$(".league-cup-select").on("change", selectLeague);
-				$(".battle-btn").on("click", startBattle);
-				$("a.random").on("click", randomizeTeam);
-			};
+      // Callback for importing a randomly generated roster
+      this.runPickProcess = function () {
+        const playerA = new Player(0, 3, battle);
+        const playerB = new Player(1, 3, battle);
+        const resultSequence = [
+          ['win', 'loss'],
+          ['win', 'loss'],
+          ['loss', 'win'],
+        ];
 
-			// Callback after ranking data is loaded
+        for (let i = 0; i < 100; i++) {
+          playerA.getAI().generateRoster(partySize, self.collectRosterData);
+          playerB.getAI().generateRoster(partySize, self.collectRosterData);
 
-			this.displayRankingData = function(data){
-				console.log("Ranking data loaded");
-			}
+          for (let n = 0; n < 3; n++) {
+            if (n === 0) {
+              playerA.getAI().generateTeam(playerB.getRoster());
+              playerB.getAI().generateTeam(playerA.getRoster());
+            } else {
+              playerA
+                .getAI()
+                .generateTeam(playerB.getRoster(), resultSequence[n][0], [
+                  playerB.getTeam(),
+                  playerA.getTeam(),
+                ]);
+              playerB
+                .getAI()
+                .generateTeam(playerA.getRoster(), resultSequence[n][1], [
+                  playerA.getTeam(),
+                  playerB.getTeam(),
+                ]);
+            }
 
-			// Hide setup after initiating battle
+            self.collectTeamData(playerA.getTeam());
+            self.collectTeamData(playerB.getTeam());
+          }
+        }
 
-			this.close = function(){
-				for(var i = 0; i < 4; i++){
-					$(".section").eq(i).slideUp(500);
-				}
+        pokemonData.sort((a, b) =>
+          a.rosterCount > b.rosterCount ? -1 : b.rosterCount > a.rosterCount ? 1 : 0
+        );
 
-				$(".section.updates").slideUp(500);
+        // Display pick data in table
+        const $table = $(
+          `
+						<table>
+							<tr>
+								<td>Pokemon</td>
+								<td>Roster Count</td>
+								<td>Pick Count</td>
+							</tr>
+						</table>
+					`
+        );
 
-				$("#main h1").slideUp(500);
-			}
+        for (let i = 0; i < pokemonData.length; i++) {
+          $table.append(
+            `
+							<tr>
+								<td>${pokemonData[i].speciesId}</td>
+								<td>${pokemonData[i].rosterCount}</td>
+								<td>${pokemonData[i].pickCount}</td>
+							</tr>
+						`
+          );
+        }
 
-			// Callback for importing a randomly generated roster
+        $('#main').append($table);
+      };
 
-			this.runPickProcess = function(roster){
-				var playerA = new Player(0, 3, battle);
-				var playerB = new Player(1, 3, battle);
-				var resultSequence = [
-					["win", "loss"],
-					["win", "loss"],
-					["loss", "win"]
-				];
+      // Push team of 6 data into the current collection
+      this.collectRosterData = function (roster) {
+        // Search data for Pokemon ID
+        for (let i = 0; i < roster.length; i++) {
+          let found = false;
 
-				for(var i = 0; i < 100; i++){
-					playerA.getAI().generateRoster(partySize, self.collectRosterData);
-					playerB.getAI().generateRoster(partySize, self.collectRosterData);
+          for (let n = 0; n < pokemonData.length; n++) {
+            if (roster[i].speciesId === pokemonData[n].speciesId) {
+              found = true;
+              pokemonData[n].rosterCount += 3;
+              continue;
+            }
+          }
 
-					for(var n = 0; n < 3; n++){
-						if(n == 0){
-							playerA.getAI().generateTeam(playerB.getRoster());
-							playerB.getAI().generateTeam(playerA.getRoster());
-						} else{
-							playerA.getAI().generateTeam(playerB.getRoster(), resultSequence[n][0], [playerB.getTeam(), playerA.getTeam()]);
-							playerB.getAI().generateTeam(playerA.getRoster(), resultSequence[n][1], [playerA.getTeam(), playerB.getTeam()]);
-						}
+          if (!found) {
+            pokemonData.push({
+              speciesId: roster[i].speciesId,
+              rosterCount: 3,
+              pickCount: 0,
+            });
+          }
+        }
+      };
 
-						self.collectTeamData(playerA.getTeam());
-						self.collectTeamData(playerB.getTeam());
-					}
-				}
+      // Push team of 3 data into the current collection
+      this.collectTeamData = function (team) {
+        // Search data for Pokemon ID
+        for (let i = 0; i < team.length; i++) {
+          for (let n = 0; n < pokemonData.length; n++) {
+            if (team[i].speciesId === pokemonData[n].speciesId) {
+              found = true;
+              pokemonData[n].pickCount += 1;
+              continue;
+            }
+          }
+        }
+      };
 
-				pokemonData.sort((a,b) => (a.rosterCount > b.rosterCount) ? -1 : ((b.rosterCount > a.rosterCount) ? 1 : 0));
+      // Dispatch battle start to the MatchHandler with provided options
+      function startBattle() {
+        pokemonData = [];
 
-				// Display pick data in table
+        // Initiate a player to load the training team data
+        const player = new Player(0, 3, battle);
+        player.getAI().generateRoster(partySize, self.runPickProcess);
+      }
 
-				var $table = $("<table><tr><td>Pokemon</td><td>Roster Count</td><td>Pick Count</td></tr></table>");
+      // Event handler for changing the league select
+      function selectLeague() {
+        const vals = $('.league-cup-select option:selected').val().split(' ');
+        const cp = vals[0];
+        const cup = vals[1];
 
-				for(var i = 0; i < pokemonData.length; i++){
-					$table.append("<tr><td>"+pokemonData[i].speciesId+"</td><td>"+pokemonData[i].rosterCount+"</td><td>"+pokemonData[i].pickCount+"</td></tr>");
-				}
+        battle.setCP(cp);
+        battle.setCup(cup);
+      }
 
-				$("#main").append($table);
-			}
+      // Give the player a random team
+      function randomizeTeam(e) {
+        e.preventDefault();
 
-			// Push team of 6 data into the current collection
+        const difficulty = $('.difficulty-select option:selected').val();
+        const player = new Player(0, difficulty, battle);
+        player.getAI().generateRoster(partySize, self.importRandomizedRoster);
+      }
 
-			this.collectRosterData = function(roster){
-				// Search data for Pokemon ID
-
-				for(var i = 0; i < roster.length; i++){
-					var found = false;
-
-					for(var n = 0; n < pokemonData.length; n++){
-						if(roster[i].speciesId == pokemonData[n].speciesId){
-							found = true;
-							pokemonData[n].rosterCount+=3;
-							continue;
-						}
-					}
-
-					if(! found){
-						pokemonData.push({
-							speciesId: roster[i].speciesId,
-							rosterCount: 3,
-							pickCount: 0
-						});
-					}
-				}
-			}
-
-			// Push team of 3 data into the current collection
-
-			this.collectTeamData = function(team){
-				// Search data for Pokemon ID
-
-				for(var i = 0; i < team.length; i++){
-					for(var n = 0; n < pokemonData.length; n++){
-						if(team[i].speciesId == pokemonData[n].speciesId){
-							found = true;
-							pokemonData[n].pickCount++;
-							continue;
-						}
-					}
-				}
-			}
-
-			// Dispatch battle start to the MatchHandler with provided options
-
-			function startBattle(e){
-				pokemonData = [];
-
-				// Initiate a player to load the training team data
-				var player = new Player(0, 3, battle);
-				player.getAI().generateRoster(partySize, self.runPickProcess);
-			}
-
-			// Event handler for changing the league select
-
-			function selectLeague(e){
-				var vals = $(".league-cup-select option:selected").val().split(" ");
-				var cp = vals[0];
-				var cup = vals[1];
-
-				battle.setCP(cp);
-				battle.setCup(cup);
-			}
-
-			// Give the player a random team
-
-			function randomizeTeam(e){
-				e.preventDefault();
-
-				var difficulty = $(".difficulty-select option:selected").val();
-				var player = new Player(0, difficulty, battle);
-				player.getAI().generateRoster(partySize, self.importRandomizedRoster);
-			}
-
-			// Turn checkboxes on and off
-
-			function checkBox(e){
-				$(this).toggleClass("on");
-			}
-
-		}
-
-        return object;
+      // Turn checkboxes on and off
+      function checkBox() {
+        $(this).toggleClass('on');
+      }
     }
 
-    return {
-        getInstance: function () {
-            if (!instance) {
-                instance = createInstance();
-            }
-            return instance;
-        }
-    };
+    return object;
+  }
+
+  return {
+    getInstance() {
+      if (!instance) {
+        instance = createInstance();
+      }
+      return instance;
+    },
+  };
 })();
 
-var interface = InterfaceMaster.getInstance();
+const myInterface = InterfaceMaster.getInstance();
