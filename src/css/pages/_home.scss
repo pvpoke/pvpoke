@@ -1,0 +1,80 @@
+// HOME PAGE STYLING
+.home {
+  a.button {
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: $black;
+    display: block;
+    margin: 20px auto;
+    max-width: 400px;
+    padding: 10px;
+    text-decoration: none;
+
+    h2 {
+      background-position: 0 center;
+      background-repeat: no-repeat;
+      color: $color-links;
+      font-size: 32px;
+      margin: 0;
+      padding-left: 32px;
+
+      &.no-logo {
+        padding-left: 0;
+      }
+    }
+
+    p {
+      margin: 0;
+      font-size: 14px;
+    }
+  }
+}
+
+.icon-battle {
+  background-image: url('../img/icon_battle.png');
+}
+
+.icon-train {
+  background-image: url('../img/icon_train.png');
+}
+
+.icon-rankings {
+  background-image: url('../img/icon_rankings.png');
+}
+
+.icon-team {
+  background-image: url('../img/icon_team.png');
+}
+
+.icon-contribute {
+  background-image: url('../img/icon_contribute.png');
+}
+
+.icon-articles {
+  background-image: url('../img/icon_articles.png');
+}
+
+.icon-moves {
+  background-image: url('../img/icon_moves.png');
+}
+
+.icon-settings {
+  background-image: url('../img/icon_settings.png');
+}
+
+.icon-twitter {
+  background-image: url('../img/icon_twitter.png');
+  min-height: 18px;
+
+  span {
+    display: none;
+  }
+}
+
+.flex {
+  display: flex;
+
+  &.cols-3 > div {
+    flex-basis: 33%;
+  }
+}

@@ -241,88 +241,6 @@ header {
   display: block;
 }
 
-.home a.button {
-  border-radius: 8px;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
-  color: #000;
-  display: block;
-  margin: 20px auto;
-  max-width: 400px;
-  padding: 10px;
-  text-decoration: none;
-}
-
-.home a.button h2 {
-  background-position: 0 center;
-  background-repeat: no-repeat;
-  color: #003748;
-  font-size: 32px;
-  margin: 0;
-  padding-left: 32px;
-}
-
-.home a.button h2.no-logo {
-  padding-left: 0;
-}
-
-.home a.button p {
-  margin: 0;
-  font-size: 14px;
-}
-
-.icon-battle {
-  background-image: url("../img/icon_battle.png");
-}
-
-.icon-train {
-  background-image: url("../img/icon_train.png");
-}
-
-.icon-rankings {
-  background-image: url("../img/icon_rankings.png");
-}
-
-.icon-team {
-  background-image: url("../img/icon_team.png");
-}
-
-.icon-contribute {
-  background-image: url("../img/icon_contribute.png");
-}
-
-.icon-articles {
-  background-image: url("../img/icon_articles.png");
-}
-
-.icon-moves {
-  background-image: url("../img/icon_moves.png");
-}
-
-.icon-settings {
-  background-image: url("../img/icon_settings.png");
-}
-
-.icon-twitter {
-  background-image: url("../img/icon_twitter.png");
-  min-height: 18px;
-}
-
-.icon-twitter span {
-  display: none;
-}
-
-.flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.flex.cols-3 > div {
-  -ms-flex-preferred-size: 33%;
-      flex-basis: 33%;
-}
-
 .poke {
   max-width: 200px;
 }
@@ -3017,114 +2935,6 @@ a.toggle {
   text-align: center;
 }
 
-.bug {
-  background: #aec92c;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #9bc231), color-stop(99%, #aec92c)) !important;
-  background: linear-gradient(to bottom, #9bc231 30%, #aec92c 99%) !important;
-}
-
-.dark {
-  background: #6e7681;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #52505e), color-stop(99%, #6e7681)) !important;
-  background: linear-gradient(to bottom, #52505e 30%, #6e7681 99%) !important;
-}
-
-.dragon {
-  background: #067fc4;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #1065b6), color-stop(99%, #067fc4)) !important;
-  background: linear-gradient(to bottom, #1065b6 30%, #067fc4 99%) !important;
-}
-
-.electric {
-  background: #fedf6b;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #f3d43e), color-stop(99%, #fedf6b)) !important;
-  background: linear-gradient(to bottom, #f3d43e 30%, #fedf6b 99%) !important;
-}
-
-.fairy {
-  background: #f6a7e8;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #eb8de1), color-stop(99%, #f6a7e8)) !important;
-  background: linear-gradient(to bottom, #eb8de1 30%, #f6a7e8 99%) !important;
-}
-
-.fighting {
-  background: #e34448;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #ce3d64), color-stop(99%, #e34448)) !important;
-  background: linear-gradient(to bottom, #ce3d64 30%, #e34448 99%) !important;
-}
-
-.fire {
-  background: #feb04b;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #fe9d59), color-stop(99%, #feb04b)) !important;
-  background: linear-gradient(to bottom, #fe9d59 30%, #feb04b 99%) !important;
-}
-
-.flying {
-  background: #a7c1f2;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #91a8de), color-stop(99%, #a7c1f2)) !important;
-  background: linear-gradient(to bottom, #91a8de 30%, #a7c1f2 99%) !important;
-}
-
-.ghost {
-  background: #7571d0;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #5069ac), color-stop(99%, #7571d0)) !important;
-  background: linear-gradient(to bottom, #5069ac 30%, #7571d0 99%) !important;
-}
-
-.grass {
-  background: #59c079;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #5fbb50), color-stop(99%, #59c079)) !important;
-  background: linear-gradient(to bottom, #5fbb50 30%, #59c079 99%) !important;
-}
-
-.ground {
-  background: #d2976b;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #d87b40), color-stop(99%, #d2976b)) !important;
-  background: linear-gradient(to bottom, #d87b40 30%, #d2976b 99%) !important;
-}
-
-.ice {
-  background: #94ddd6;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #74d3bd), color-stop(99%, #94ddd6)) !important;
-  background: linear-gradient(to bottom, #74d3bd 30%, #94ddd6 99%) !important;
-}
-
-.normal {
-  background: #a3a49e;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #909aa3), color-stop(99%, #a3a49e)) !important;
-  background: linear-gradient(to bottom, #909aa3 30%, #a3a49e 99%) !important;
-}
-
-.poison {
-  background: #a662c7;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #c662d6), color-stop(99%, #a662c7)) !important;
-  background: linear-gradient(to bottom, #c662d6 30%, #a662c7 99%) !important;
-}
-
-.psychic {
-  background: #fda194;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #f2726f), color-stop(99%, #fda194)) !important;
-  background: linear-gradient(to bottom, #f2726f 30%, #fda194 99%) !important;
-}
-
-.rock {
-  background: #d7cd90;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #c7b98c), color-stop(99%, #d7cd90)) !important;
-  background: linear-gradient(to bottom, #c7b98c 30%, #d7cd90 99%) !important;
-}
-
-.steel {
-  background: #5aafb4;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #50879c), color-stop(99%, #5aafb4)) !important;
-  background: linear-gradient(to bottom, #50879c 30%, #5aafb4 99%) !important;
-}
-
-.water {
-  background: #6ac7e9;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, #4f91db), color-stop(99%, #6ac7e9)) !important;
-  background: linear-gradient(to bottom, #4f91db 30%, #6ac7e9 99%) !important;
-}
-
 .dark > .name-container,
 .dragon > .name-container,
 .ghost > .name-container {
@@ -5440,5 +5250,87 @@ a.random {
   .team-select .number {
     padding-top: 2px !important;
   }
+}
+
+.home a.button {
+  border-radius: 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  color: #000;
+  display: block;
+  margin: 20px auto;
+  max-width: 400px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.home a.button h2 {
+  background-position: 0 center;
+  background-repeat: no-repeat;
+  color: #003748;
+  font-size: 32px;
+  margin: 0;
+  padding-left: 32px;
+}
+
+.home a.button h2.no-logo {
+  padding-left: 0;
+}
+
+.home a.button p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.icon-battle {
+  background-image: url("../img/icon_battle.png");
+}
+
+.icon-train {
+  background-image: url("../img/icon_train.png");
+}
+
+.icon-rankings {
+  background-image: url("../img/icon_rankings.png");
+}
+
+.icon-team {
+  background-image: url("../img/icon_team.png");
+}
+
+.icon-contribute {
+  background-image: url("../img/icon_contribute.png");
+}
+
+.icon-articles {
+  background-image: url("../img/icon_articles.png");
+}
+
+.icon-moves {
+  background-image: url("../img/icon_moves.png");
+}
+
+.icon-settings {
+  background-image: url("../img/icon_settings.png");
+}
+
+.icon-twitter {
+  background-image: url("../img/icon_twitter.png");
+  min-height: 18px;
+}
+
+.icon-twitter span {
+  display: none;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex.cols-3 > div {
+  -ms-flex-preferred-size: 33%;
+      flex-basis: 33%;
 }
 /*# sourceMappingURL=app.css.map */
