@@ -1,97 +1,87 @@
 // JavaScript Document
 
-var InterfaceMaster = (function () {
-    var instance;
+const InterfaceMaster = (function () {
+  let instance;
 
-    function createInstance() {
+  function createInstance() {
+    const object = new InterfaceObject();
 
+    function InterfaceObject() {
+      let battle;
+      const ranker = RankerMaster.getInstance();
+      const pokeSelectors = [];
+      const animating = false;
+      const self = this;
 
-        var object = new interfaceObject();
+      this.init = function () {
+        const data = GameMaster.getInstance().data;
 
-		function interfaceObject(){
+        $('.league-select').on('change', selectLeague);
+        $('.cup-select').on('change', selectCup);
+        $('.format-select').on('change', selectFormat);
+        $('.simulate').on('click', startRanker);
 
-			var battle;
-			var ranker = RankerMaster.getInstance();
-			var pokeSelectors = [];
-			var animating = false;
-			var self = this;
+        battle = new Battle();
+      };
 
-			this.init = function(){
+      // Event handler for changing the league select
+      function selectLeague() {
+        const allowed = [1500, 2500, 10000];
+        const cp = parseInt($('.league-select option:selected').val());
 
-				var data = GameMaster.getInstance().data;
+        if (allowed.indexOf(cp) > -1) {
+          battle.setCP(cp);
+        }
+      }
 
-				$(".league-select").on("change", selectLeague);
-				$(".cup-select").on("change", selectCup);
-				$(".format-select").on("change", selectFormat);
-				$(".simulate").on("click", startRanker);
+      // Event handler for changing the cup select
+      function selectCup() {
+        const cup = $('.cup-select option:selected').val();
+        battle.setCup(cup);
+      }
 
-				battle = new Battle();
+      // Event handler for changing the format category
+      function selectFormat() {
+        const format = $('.format-select option:selected').val();
+        const cup = $('.format-select option:selected').attr('cup');
 
-			};
+        $('.cup-select option').hide();
+        $(`.cup-select option[cat="${format}"]`).show();
+        $(`.cup-select option[cat="${format}"]`).eq(0).prop('selected', 'selected');
 
-			// Event handler for changing the league select
+        if (cup) {
+          $(`.cup-select option[value="${cup}"]`).eq(0).prop('selected', 'selected');
+        }
 
-			function selectLeague(e){
-				var allowed = [1500, 2500, 10000];
-				var cp = parseInt($(".league-select option:selected").val());
+        $('.cup-select').trigger('change');
 
-				if(allowed.indexOf(cp) > -1){
-					battle.setCP(cp);
-				}
+        if (format === 'all' || cup) {
+          $('.cup-select').hide();
+        } else {
+          $('.cup-select').show();
+        }
 
-			}
+        if (format === 'custom') {
+          // Redirect to the custom rankings page
+          window.location.href = `${webRoot}custom-rankings/`;
+        }
+      }
 
-			// Event handler for changing the cup select
-
-			function selectCup(e){
-				var cup = $(".cup-select option:selected").val();
-				battle.setCup(cup);
-			}
-
-			// Event handler for changing the format category
-
-			function selectFormat(e){
-				var format = $(".format-select option:selected").val();
-				var cup = $(".format-select option:selected").attr("cup");
-
-				$(".cup-select option").hide();
-				$(".cup-select option[cat=\""+format+"\"]").show();
-				$(".cup-select option[cat=\""+format+"\"]").eq(0).prop("selected", "selected");
-
-				if(cup){
-					$(".cup-select option[value=\""+cup+"\"]").eq(0).prop("selected", "selected");
-				}
-
-				$(".cup-select").trigger("change");
-
-				if((format == "all")||(cup)){
-					$(".cup-select").hide();
-				} else{
-					$(".cup-select").show();
-				}
-
-				if(format == "custom"){
-					// Redirect to the custom rankings page
-					window.location.href = webRoot+'custom-rankings/';
-				}
-			}
-
-			// Run simulation
-
-			function startRanker(){
-				ranker.rankLoop(battle.getCP(), battle.getCup());
-			}
-		};
-
-        return object;
+      // Run simulation
+      function startRanker() {
+        ranker.rankLoop(battle.getCP(), battle.getCup());
+      }
     }
 
-    return {
-        getInstance: function () {
-            if (!instance) {
-                instance = createInstance();
-            }
-            return instance;
-        }
-    };
+    return object;
+  }
+
+  return {
+    getInstance() {
+      if (!instance) {
+        instance = createInstance();
+      }
+      return instance;
+    },
+  };
 })();

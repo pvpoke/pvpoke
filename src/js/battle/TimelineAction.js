@@ -1,27 +1,28 @@
 // An action set in Sandbox Mode to be interpreted by Battle.js into a TimelineEvent
 
-function TimelineAction(type, actor, turn, value, settings){
-	this.type = type;
-	this.actor = actor;
-	this.turn = turn;
-	this.value = value; // Index of charged move
-	this.settings = settings;
-	this.valid = false;
-	this.processed = false; // Whether this action has been processed yet or not
-	var self = this;
+function TimelineAction(type, actor, turn, value, settings) {
+  this.type = type;
+  this.actor = actor;
+  this.turn = turn;
+  this.value = value; // Index of charged move
+  this.settings = settings;
+  this.valid = false;
+  this.processed = false; // Whether this action has been processed yet or not
+  const self = this;
 
-	this.typeToInt = function(){
-		switch(self.type){
-			case "fast":
-			case "charged":
-				return 1;
-				break;
+  this.typeToInt = function () {
+    switch (self.type) {
+      case 'fast':
+      case 'charged':
+        return 1;
 
-			case "wait":
-				return 2;
-				break;
-		}
+      case 'wait':
+        return 2;
 
-		return 0;
-	}
+      default:
+        break;
+    }
+
+    return 0;
+  };
 }
