@@ -448,6 +448,17 @@
             "filterType": "tag",
             "values": ["legendary", "mythical"]
         }]
+    }, {
+        "name": "kaiser",
+        "title": "Kaiser Invitational",
+        "include": [],
+        "exclude": [{
+            "filterType": "id",
+            "values": ["stunfisk_galarian","bastiodon","registeel","ferrothorn","deoxys_defense","skarmory","altaria"]
+        }, {
+            "filterType": "tag",
+            "values": ["regional"]
+        }]
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable"],
     "pokemonRegions": [{
@@ -3695,7 +3706,8 @@
         },
         "level25CP": 1864,
         "tags": ["shadoweligible"],
-        "eliteMoves": ["ZEN_HEADBUTT"]
+        "eliteMoves": ["ZEN_HEADBUTT"],
+		"searchPriority": 2
     }, {
         "dex": 103,
         "speciesName": "Exeggutor (Alolan)",

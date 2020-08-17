@@ -153,6 +153,10 @@ switch($cup){
 	case "mexico":
 		$league = 'México Cup';
 		break;
+
+	case "kaiser":
+		$league = 'Kaiser Invitational';
+		break;
 }
 
 $META_TITLE = $league . ' PvP Rankings';
