@@ -11923,7 +11923,8 @@
             "cp2500": [28, 6, 11, 14]
         },
         "level25CP": 2029,
-        "tags": ["shadoweligible"]
+        "tags": ["shadoweligible"],
+		"searchPriority": 2
     }, {
         "dex": 474,
         "speciesName": "Porygon-Z (Shadow)",
