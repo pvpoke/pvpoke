@@ -26,7 +26,7 @@
 	<option value="safari" cat="community">Montreal Safari Cup</option>
 	<option value="fantasy" cat="community">GO LIVE Fantasy Cup</option>
 	<option value="beam" cat="community">Get Beamed</option>
-	<option value="grunt-7" cat="community">Grunt Cup Season 7</option>
+	<option value="grunt" cat="community">Grunt Cup Season 7</option>
 	<option value="goteamup" cat="community">GO Stadium GOTeamUp</option>
 	<option value="cliffhanger" cat="community">GO Stadium Cliffhanger</option>
 	<option value="scoville" cat="community">Scoville Cup</option>
