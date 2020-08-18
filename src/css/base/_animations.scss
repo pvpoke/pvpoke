@@ -1,0 +1,29 @@
+@keyframes BLINK_ANIMATION {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes BUFF_ANIMATION {
+  0% {
+    background-position: center -50%;
+  }
+  100% {
+    background-position: center 150%;
+  }
+}
+
+@keyframes DEBUFF_ANIMATION {
+  0% {
+    background-position: center 150%;
+  }
+  100% {
+    background-position: center -50%;
+  }
+}

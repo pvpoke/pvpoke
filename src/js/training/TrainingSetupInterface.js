@@ -1,523 +1,512 @@
-/*
-* Interface functionality for move list and explorer
-*/
+// Interface functionality for move list and explorer
+
 // Load AI archetypes
+const file = `${webRoot}data/training/teams/featured/featured-july.json?v=1`;
+let featuredTeams = [];
 
-var file = webRoot+"data/training/teams/featured/featured-july.json?v=1";
-var featuredTeams = [];
+$.getJSON(file, function (data) {
+  featuredTeams = data;
+  console.log(`Featured team data loaded [${featuredTeams.length}]`);
 
-$.getJSON( file, function( data ){
-	featuredTeams = data;
-	console.log("Featured team data loaded ["+featuredTeams.length+"]");
-
-	// Add featured teams to team select
-	for(var i = 0; i < featuredTeams.length; i++){
-		$(".featured-team-select").append("<option value=\""+featuredTeams[i].slug+"\">"+featuredTeams[i].name+" ("+featuredTeams[i].cupName+")</option>");
-	}
+  // Add featured teams to team select
+  for (let i = 0; i < featuredTeams.length; i++) {
+    $('.featured-team-select').append(
+      `
+        <option value="${featuredTeams[i].slug}">
+          ${featuredTeams[i].name} (${featuredTeams[i].cupName})
+        </option>
+      `
+    );
+  }
 });
 
-var InterfaceMaster = (function () {
-    var instance;
-
-    function createInstance(matchHandler) {
-
-
-        var object = new interfaceObject(matchHandler);
-
-		function interfaceObject(matchHandler){
-
-			// It's matchHandlers all the way down
-			var handler = matchHandler;
-
-			var self = this;
-			var gm = GameMaster.getInstance();
-			var mode = "single"; // Single or tournament
-			var teamSelectMethod = "random"; // Random or manual
-			var partySize = 3;
-			var battle;
-			var playerRoster;
-			var currentTeam = [];
-			var currentTeamIndex = 0;
-			var roundNumber = 0;
-			var featuredTeam = null;
-
-			var multiSelectors = [];
-
-			this.init = function(){
-				var data = gm.data;
-				battle = new Battle();
-
-				for(var i = 0; i < 2; i++){
-					var multiSelector = new PokeMultiSelect($(".poke.multi").eq(i));
-
-					multiSelector.init(data.pokemon, battle);
-					multiSelector.setMaxPokemonCount(partySize);
-					multiSelectors.push(multiSelector);
-				}
-
-				// Load ranking data for movesets
-				gm.loadRankingData(self, "overall", 1500, "all");
-
-				// Event listeners
-
-				$(".league-cup-select").on("change", selectLeague);
-				$(".mode-select").on("change", selectMode);
-				$(".team-method-select").on("change", selectTeamMethod);
-				$(".featured-team-select").on("change", selectFeaturedTeam);
-				$(".battle-btn").on("click", startBattle);
-				$(".lets-go-btn").on("click", startTournamentBattle);
-				$("a.return-to-setup").on("click", returnToSetup);
-				$("body").on("click", ".self .roster .pokemon", selectRosterPokemon);
-				$("a.random").on("click", randomizeTeam);
-				$("body").on("click", ".check", checkBox);
-			};
-
-			// Callback after ranking data is loaded
-
-			this.displayRankingData = function(data){
-				console.log("Ranking data loaded");
-			}
-
-			// Hide setup after initiating battle
-
-			this.close = function(){
-				for(var i = 0; i < 4; i++){
-					$(".section").eq(i).slideUp(500);
-				}
-
-				$(".section.updates").slideUp(500);
-
-				$("#main h1").slideUp(500);
-			}
-
-			// Show setup after battle
-
-			this.open = function(){
-				for(var i = 0; i < 3; i++){
-					$(".section").eq(i).slideDown(500);
-				}
-
-				$(".section.updates").slideDown(500);
-
-				$("#main h1").slideDown(500);
-			}
-
-			this.openTeamSelect = function(players, roundRecord){
-				playerRoster = players[0].getRoster();
-				currentTeamIndex = 0;
-
-				self.close();
-				$(".section.team-select").show();
-
-				// Display team rosters
-				$(".team-select .roster, .team-select .team").html("");
-
-				for(var i = 0; i < players.length; i++){
-					var player = players[i];
-					var roster = player.getRoster();
-
-					for(var n = 0; n < roster.length; n++){
-						var pokemon = roster[n];
-						var $el = $(".switch-window .pokemon").first().clone();
-
-						$el.find(".name").attr("class","name");
-						$el.attr("type-1", pokemon.types[0]);
-						if(pokemon.types[1] == "none"){
-							$el.attr("type-2", pokemon.types[0]);
-						} else{
-							$el.attr("type-2", pokemon.types[1]);
-						}
-
-						$el.attr("data-pokemon-id", pokemon.speciesId);
-						$el.addClass("active");
-						$el.find(".name").html(pokemon.speciesName);
-						$el.find(".cp").html("cp " + pokemon.cp);
-						$el.attr("index", n);
-
-						if(i == 0){
-							$el.find(".sprite-container").append("<div class=\"number\"></div>");
-						}
-
-						$(".team-select .roster").eq(1-i).append($el);
-
-						// Check to see if this Pokemon was selected for a previous round
-						if((i == 0)&&(currentTeam.length == 3)){
-							var selectedCount = 0;
-
-							for(var j = 0; j < currentTeam.length; j++){
-								if(pokemon == currentTeam[j]){
-									$el.addClass("selected");
-									$el.attr("team-index", j);
-									$el.find(".number").html((j+1));
-									selectedCount++;
-								}
-							}
-
-							if(selectedCount > 0){
-								currentTeamIndex = 2;
-							}
-						}
-					}
-				}
-
-				// Show the current round record
-				$(".round-record").html(roundRecord[0] + "-" + roundRecord[1]);
-
-				// Show or hide featured team details
-				if(teamSelectMethod != "featured"){
-					$(".team-select .opponent h3.center").show();
-				} else{
-					$(".team-select .opponent h3.center").hide();
-				}
-			}
-
-			// Callback for importing a randomly generated roster
-
-			this.importRandomizedRoster = function(roster){
-				multiSelectors[0].setPokemonList(roster.slice(0, partySize));
-			}
-
-			// Set the current tournament round number for reference
-
-			this.setRoundNumber = function(val){
-				roundNumber = val;
-			}
-
-			// Dispatch battle start to the MatchHandler with provided options
-
-			function startBattle(e){
-				// Only start if league and cup are selected
-				var val = $(".league-cup-select option:selected").val();
-
-				if(val == ""){
-					modalWindow("Select League", $("<p>Please select a league or cup.</p>"));
-
-					return false;
-				}
-
-
-				var teams = [
-					 multiSelectors[0].getPokemonList(),
-					 multiSelectors[1].getPokemonList()
-					];
-				var difficulty = $(".difficulty-select option:selected").val();
-
-				if((teams[0].length < partySize)||((teamSelectMethod == "manual")&&(teams[1].length < partySize))){
-					modalWindow("Select Teams", $("<p>Please select a full team.</p>"));
-
-					return false;
-				}
-
-				if((teamSelectMethod == "featured")&&(! featuredTeam)){
-					modalWindow("Featured Team", $("<p>Please select a featured team to fight.</p>"));
-
-					return false;
-				}
-
-				var autotapOverride = $(".autotap-toggle").hasClass("on");
-
-				// Set the round number to 0 for tournament mode
-				roundNumber = 0;
-
-				var props = {
-					teams: teams,
-					mode: mode,
-					difficulty: difficulty,
-					teamSelectMethod: teamSelectMethod,
-					partySize: partySize,
-					league: battle.getCP(),
-					cup: battle.getCup().name,
-					featuredTeam: featuredTeam,
-					autotapOverride:autotapOverride
-					};
-
-				// Reset roster selection for tournament mode
-				if(mode == "tournament"){
-					currentTeamIndex = 0;
-					currentTeam = [];
-				}
-
-				handler.initBattle(props);
-			}
-
-			// Event handler for changing the battle mode
-
-			function selectMode(e){
-				partySize = 3;
-				mode = $(".mode-select option:selected").val();
-
- 				if(mode == "tournament"){
-					partySize = 6;
-				}
-
-				for(var i = 0; i < multiSelectors.length; i++){
-					multiSelectors[i].setMaxPokemonCount(partySize);
-				}
-			}
-
-			// Event handler for changing the AI's team selection
-
-			function selectTeamMethod(e){
-				teamSelectMethod = $(".team-method-select option:selected").val();
-
-				switch(teamSelectMethod){
-					case "random":
-						$(".poke.multi").eq(1).hide();
-						$(".featured-team-section").hide();
-						featuredTeam = null;
-						break;
-
-					case "manual":
-						$(".poke.multi").eq(1).show();
-						$(".featured-team-section").hide();
-						featuredTeam = null;
-						break;
-
-					case "featured":
-						$(".poke.multi").eq(1).hide();
-						$(".featured-team-section").show();
-						featuredTeam = null;
-						break;
-				}
-
-				$(".featured-team-description").hide();
-				multiSelectors[1].setMaxPokemonCount(partySize);
-			}
-
-			// Event handler for changing the AI's team selection
-
-			function selectFeaturedTeam(e){
-				var slug = $(".featured-team-select option:selected").val();
-
-				for(var i = 0; i < featuredTeams.length; i++){
-					var team = featuredTeams[i];
-
-					if(team.slug == slug){
-						$(".featured-team-description img").attr("src", webRoot + "img/train/featured/"+team.img+".png?v=2");
-						$(".featured-team-description a").attr("href", team.link);
-						$(".featured-team-description a h3").html(team.name);
-						$(".featured-team-description p").html(team.description);
-
-						// Select the assocaited cup and league
-						$(".league-cup-select option[value=\""+team.league+" "+team.cup+"\"]").prop("selected","selected");
-						$(".league-cup-select").trigger("change");
-
-						// Fill in the featured team
-						multiSelectors[1].setMaxPokemonCount(6);
-						multiSelectors[1].quickFillGroup(team.pokemon);
-
-						$(".featured-team-description").show()
-
-						featuredTeam = team;
-
-						// Fill in team preview
-						var teamPokemon = multiSelectors[1].getPokemonList();
-						$(".featured-team-preview").html("");
-
-						for(var n = 0; n < teamPokemon.length; n++){
-							var pokemon = teamPokemon[n];
-							var $row = $("<div class=\"preview-poke\"></div>");
-							var $el = $(".switch-window .pokemon").first().clone();
-							$el.find(".name").remove();
-							$el.find(".cp").remove();
-
-							$el.attr("type-1", pokemon.types[0]);
-							if(pokemon.types[1] == "none"){
-								$el.attr("type-2", pokemon.types[0]);
-							} else{
-								$el.attr("type-2", pokemon.types[1]);
-							}
-
-							$row.append($el);
-							$row.append("<div class\"name-container\"><h6></h6><p></p></div>");
-
-							var moveStr = pokemon.fastMove.name;
-
-							if(pokemon.chargedMoves.length > 0){
-								moveStr += " + " + pokemon.chargedMoves[0].name;
-
-								if(pokemon.chargedMoves.length == 2){
-									moveStr += " &amp; " + pokemon.chargedMoves[1].name;
-								}
-							}
-
-							$row.find("h6").html(pokemon.speciesName);
-							$row.find("p").html(moveStr);
-
-
-							$(".featured-team-preview").append($row);
-						}
-					}
-				}
-			}
-
-			// Event handler for choosing a Pokemon from the roster in tournament mode
-
-			function selectRosterPokemon(e){
-				var $el = $(e.target).closest(".pokemon")
-				var index = $el.attr("index");
-
-
-				if(! $el.hasClass("selected")){
-					// Remove class and attributes from previously selected Pokemon of the same index
-					$(".self .roster .pokemon[team-index="+currentTeamIndex+"]").removeClass("selected");
-
-					// Insert or replace Pokemon on the team selection
-					if(currentTeamIndex >= currentTeam.length){
-						currentTeam.push(playerRoster[index]);
-					} else{
-						currentTeam.splice(currentTeamIndex, 1, playerRoster[index]);
-					}
-
-					$el.addClass("selected");
-					$el.attr("team-index", currentTeamIndex);
-					$el.find(".number").html((currentTeamIndex+1));
-
-					// Search for the next available team index
-					for(currentTeamIndex = 0; currentTeamIndex < currentTeam.length; currentTeamIndex++){
-						if(currentTeam[currentTeamIndex] === null){
-							break;
-						}
-					}
-
-					currentTeamIndex = Math.min(currentTeamIndex, 2);
-
-				} else{
-					// Deselect a Pokemon
-
-					$el.removeClass("selected");
-					currentTeam[parseInt($el.attr("team-index"))] = null;
-					currentTeamIndex = parseInt($el.attr("team-index"));
-
-					// Reset the index to 0 if nothing is selected
-					if($(".self .roster .pokemon.selected").length == 0){
-						currentTeamIndex = 0;
-					}
-				}
-
-				// Check to see if a full team is selected to show the continue button
-				var teamCount = 0;
-
-				for(var i = 0; i < currentTeam.length; i++){
-					if(currentTeam[i] !== null){
-						teamCount++;
-					}
-				}
-
-				if(teamCount == 3){
-					$(".team-select .lets-go-btn").css("display","block");
-				} else{
-					$(".team-select .lets-go-btn").hide();
-				}
-			}
-
-			// Start a tournament battle after selecting a team
-
-			function startTournamentBattle(e){
-				var teams = [
-					 multiSelectors[0].getPokemonList(),
-					 multiSelectors[1].getPokemonList()
-					];
-				var difficulty = $(".difficulty-select option:selected").val();
-
-				if((teams[0].length < partySize)||((teamSelectMethod == "manual")&&(teams[1].length < partySize))){
-					modalWindow("Select Teams", $("<p>Please select a full team.</p>"));
-
-					return false;
-				}
-
-				var props = {
-					teams: teams,
-					mode: mode,
-					difficulty: difficulty,
-					teamSelectMethod: teamSelectMethod,
-					partySize: partySize,
-					league: battle.getCP(),
-					cup: battle.getCup().name,
-					featuredTeam: featuredTeam
-					};
-
-				if(roundNumber == 0){
-					handler.startTournamentRound(currentTeam, props);
-				} else{
-					handler.startTournamentBattle(currentTeam, props);
-				}
-
-			}
-
-			// Event handler for changing the league select
-
-			function selectLeague(e){
-				var vals = $(".league-cup-select option:selected").val().split(" ");
-				var cp = vals[0];
-				var cup = vals[1];
-
-				battle.setCP(cp);
-				battle.setCup(cup);
-
-				for(var i = 0; i < multiSelectors.length; i++){
-					multiSelectors[i].setCP(cp);
-				}
-
-				// Force featured team selection for Cliffhanger and hide randomize button
-				if((cup == "cliffhanger")||(cup == "continentals-2")){
-					$(".team-method-select option[value=\"featured\"]").prop("selected","selected");
-					$(".team-method-select").trigger("change");
-					$(".team-method-select option[value=\"random\"]").hide();
-					$("a.random").hide();
-				} else{
-					$(".team-method-select option[value=\"random\"]").show();
-					$("a.random").show();
-				}
-
-				// Force 3v3 for GO Battle League
-				if((cup == "gobattleleague")||(cup == "premier")){
-					$(".mode-select option[value=\"single\"]").prop("selected","selected");
-					$(".mode-select option[value=\"tournament\"]").prop("disabled","disabled");
-					$(".mode-select").trigger("change");
-				} else{
-					$(".mode-select option[value=\"tournament\"]").prop("disabled","");
-				}
-
-				gm.loadRankingData(self, "overall", cp, cup);
-			}
-
-			// Give the player a random team
-
-			function randomizeTeam(e){
-				e.preventDefault();
-
-				var difficulty = $(".difficulty-select option:selected").val();
-				var player = new Player(0, difficulty, battle);
-				player.getAI().generateRoster(partySize, self.importRandomizedRoster);
-			}
-
-			// Turn checkboxes on and off
-
-			function checkBox(e){
-				$(this).toggleClass("on");
-				$(this).trigger("change");
-			}
-
-			// Return to the setup screen from the tournament team select screen
-
-			function returnToSetup(e){
-				e.preventDefault();
-
-				handler.returnToSetup();
-			}
-
-		}
-
-        return object;
+const InterfaceMaster = (function () {
+  let instance;
+
+  function createInstance(matchHandler) {
+    const object = new InterfaceObject(matchHandler);
+
+    function InterfaceObject(matchHandler) {
+      // It's matchHandlers all the way down
+      const handler = matchHandler;
+
+      const self = this;
+      const gm = GameMaster.getInstance();
+      let mode = 'single'; // Single or tournament
+      let teamSelectMethod = 'random'; // Random or manual
+      let partySize = 3;
+      let battle;
+      let playerRoster;
+      let currentTeam = [];
+      let currentTeamIndex = 0;
+      let roundNumber = 0;
+      let featuredTeam = null;
+
+      const multiSelectors = [];
+
+      this.init = function () {
+        const { data } = gm;
+        battle = new Battle();
+
+        for (let i = 0; i < 2; i++) {
+          const multiSelector = new PokeMultiSelect($('.poke.multi').eq(i));
+
+          multiSelector.init(data.pokemon, battle);
+          multiSelector.setMaxPokemonCount(partySize);
+          multiSelectors.push(multiSelector);
+        }
+
+        // Load ranking data for movesets
+        gm.loadRankingData(self, 'overall', 1500, 'all');
+
+        // Event listeners
+        $('.league-cup-select').on('change', selectLeague);
+        $('.mode-select').on('change', selectMode);
+        $('.team-method-select').on('change', selectTeamMethod);
+        $('.featured-team-select').on('change', selectFeaturedTeam);
+        $('.battle-btn').on('click', startBattle);
+        $('.lets-go-btn').on('click', startTournamentBattle);
+        $('a.return-to-setup').on('click', returnToSetup);
+        $('body').on('click', '.self .roster .pokemon', selectRosterPokemon);
+        $('a.random').on('click', randomizeTeam);
+        $('body').on('click', '.check', checkBox);
+      };
+
+      // Callback after ranking data is loaded
+      this.displayRankingData = function () {
+        console.log('Ranking data loaded');
+      };
+
+      // Hide setup after initiating battle
+      this.close = function () {
+        for (let i = 0; i < 4; i++) {
+          $('.section').eq(i).slideUp(500);
+        }
+
+        $('.section.updates').slideUp(500);
+
+        $('#main h1').slideUp(500);
+      };
+
+      // Show setup after battle
+      this.open = function () {
+        for (let i = 0; i < 3; i++) {
+          $('.section').eq(i).slideDown(500);
+        }
+
+        $('.section.updates').slideDown(500);
+
+        $('#main h1').slideDown(500);
+      };
+
+      this.openTeamSelect = function (players, roundRecord) {
+        playerRoster = players[0].getRoster();
+        currentTeamIndex = 0;
+
+        self.close();
+        $('.section.team-select').show();
+
+        // Display team rosters
+        $('.team-select .roster, .team-select .team').html('');
+
+        for (let i = 0; i < players.length; i++) {
+          const player = players[i];
+          const roster = player.getRoster();
+
+          for (let n = 0; n < roster.length; n++) {
+            const pokemon = roster[n];
+            const $el = $('.switch-window .pokemon').first().clone();
+
+            $el.find('.name').attr('class', 'name');
+            $el.attr('type-1', pokemon.types[0]);
+            if (pokemon.types[1] === 'none') {
+              $el.attr('type-2', pokemon.types[0]);
+            } else {
+              $el.attr('type-2', pokemon.types[1]);
+            }
+
+            $el.attr('data-pokemon-id', pokemon.speciesId);
+            $el.addClass('active');
+            $el.find('.name').html(pokemon.speciesName);
+            $el.find('.cp').html(`cp ${pokemon.cp}`);
+            $el.attr('index', n);
+
+            if (i === 0) {
+              $el.find('.sprite-container').append('<div class="number"></div>');
+            }
+
+            $('.team-select .roster')
+              .eq(1 - i)
+              .append($el);
+
+            // Check to see if this Pokemon was selected for a previous round
+            if (i === 0 && currentTeam.length === 3) {
+              let selectedCount = 0;
+
+              for (let j = 0; j < currentTeam.length; j++) {
+                if (pokemon === currentTeam[j]) {
+                  $el.addClass('selected');
+                  $el.attr('team-index', j);
+                  $el.find('.number').html(j + 1);
+                  selectedCount += 1;
+                }
+              }
+
+              if (selectedCount > 0) {
+                currentTeamIndex = 2;
+              }
+            }
+          }
+        }
+
+        // Show the current round record
+        $('.round-record').html(`${roundRecord[0]}-${roundRecord[1]}`);
+
+        // Show or hide featured team details
+        if (teamSelectMethod !== 'featured') {
+          $('.team-select .opponent h3.center').show();
+        } else {
+          $('.team-select .opponent h3.center').hide();
+        }
+      };
+
+      // Callback for importing a randomly generated roster
+      this.importRandomizedRoster = function (roster) {
+        multiSelectors[0].setPokemonList(roster.slice(0, partySize));
+      };
+
+      // Set the current tournament round number for reference
+      this.setRoundNumber = function (val) {
+        roundNumber = val;
+      };
+
+      // Dispatch battle start to the MatchHandler with provided options
+      function startBattle() {
+        // Only start if league and cup are selected
+        const val = $('.league-cup-select option:selected').val();
+
+        if (val === '') {
+          modalWindow('Select League', $('<p>Please select a league or cup.</p>'));
+
+          return false;
+        }
+
+        const teams = [multiSelectors[0].getPokemonList(), multiSelectors[1].getPokemonList()];
+        const difficulty = $('.difficulty-select option:selected').val();
+
+        if (
+          teams[0].length < partySize ||
+          (teamSelectMethod === 'manual' && teams[1].length < partySize)
+        ) {
+          modalWindow('Select Teams', $('<p>Please select a full team.</p>'));
+
+          return false;
+        }
+
+        if (teamSelectMethod === 'featured' && !featuredTeam) {
+          modalWindow('Featured Team', $('<p>Please select a featured team to fight.</p>'));
+
+          return false;
+        }
+
+        const autotapOverride = $('.autotap-toggle').hasClass('on');
+
+        // Set the round number to 0 for tournament mode
+        roundNumber = 0;
+
+        const props = {
+          teams,
+          mode,
+          difficulty,
+          teamSelectMethod,
+          partySize,
+          league: battle.getCP(),
+          cup: battle.getCup().name,
+          featuredTeam,
+          autotapOverride,
+        };
+
+        // Reset roster selection for tournament mode
+        if (mode === 'tournament') {
+          currentTeamIndex = 0;
+          currentTeam = [];
+        }
+
+        handler.initBattle(props);
+      }
+
+      // Event handler for changing the battle mode
+      function selectMode() {
+        partySize = 3;
+        mode = $('.mode-select option:selected').val();
+
+        if (mode === 'tournament') {
+          partySize = 6;
+        }
+
+        for (let i = 0; i < multiSelectors.length; i++) {
+          multiSelectors[i].setMaxPokemonCount(partySize);
+        }
+      }
+
+      // Event handler for changing the AI's team selection
+      function selectTeamMethod() {
+        teamSelectMethod = $('.team-method-select option:selected').val();
+
+        switch (teamSelectMethod) {
+          case 'random':
+            $('.poke.multi').eq(1).hide();
+            $('.featured-team-section').hide();
+            featuredTeam = null;
+            break;
+
+          case 'manual':
+            $('.poke.multi').eq(1).show();
+            $('.featured-team-section').hide();
+            featuredTeam = null;
+            break;
+
+          case 'featured':
+            $('.poke.multi').eq(1).hide();
+            $('.featured-team-section').show();
+            featuredTeam = null;
+            break;
+
+          default:
+            break;
+        }
+
+        $('.featured-team-description').hide();
+        multiSelectors[1].setMaxPokemonCount(partySize);
+      }
+
+      // Event handler for changing the AI's team selection
+      function selectFeaturedTeam() {
+        const slug = $('.featured-team-select option:selected').val();
+
+        for (let i = 0; i < featuredTeams.length; i++) {
+          const team = featuredTeams[i];
+
+          if (team.slug === slug) {
+            $('.featured-team-description img').attr(
+              'src',
+              `${webRoot}img/train/featured/${team.img}.png?v=2`
+            );
+            $('.featured-team-description a').attr('href', team.link);
+            $('.featured-team-description a h3').html(team.name);
+            $('.featured-team-description p').html(team.description);
+
+            // Select the assocaited cup and league
+            $(`.league-cup-select option[value="${team.league} ${team.cup}"]`).prop(
+              'selected',
+              'selected'
+            );
+            $('.league-cup-select').trigger('change');
+
+            // Fill in the featured team
+            multiSelectors[1].setMaxPokemonCount(6);
+            multiSelectors[1].quickFillGroup(team.pokemon);
+
+            $('.featured-team-description').show();
+
+            featuredTeam = team;
+
+            // Fill in team preview
+            const teamPokemon = multiSelectors[1].getPokemonList();
+            $('.featured-team-preview').html('');
+
+            for (let n = 0; n < teamPokemon.length; n++) {
+              const pokemon = teamPokemon[n];
+              const $row = $('<div class="preview-poke"></div>');
+              const $el = $('.switch-window .pokemon').first().clone();
+              $el.find('.name').remove();
+              $el.find('.cp').remove();
+
+              $el.attr('type-1', pokemon.types[0]);
+              if (pokemon.types[1] === 'none') {
+                $el.attr('type-2', pokemon.types[0]);
+              } else {
+                $el.attr('type-2', pokemon.types[1]);
+              }
+
+              $row.append($el);
+              $row.append('<div class"name-container"><h6></h6><p></p></div>');
+
+              let moveStr = pokemon.fastMove.name;
+
+              if (pokemon.chargedMoves.length > 0) {
+                moveStr += ` + ${pokemon.chargedMoves[0].name}`;
+
+                if (pokemon.chargedMoves.length === 2) {
+                  moveStr += ` &amp; ${pokemon.chargedMoves[1].name}`;
+                }
+              }
+
+              $row.find('h6').html(pokemon.speciesName);
+              $row.find('p').html(moveStr);
+
+              $('.featured-team-preview').append($row);
+            }
+          }
+        }
+      }
+
+      // Event handler for choosing a Pokemon from the roster in tournament mode
+      function selectRosterPokemon(e) {
+        const $el = $(e.target).closest('.pokemon');
+        const index = $el.attr('index');
+
+        if (!$el.hasClass('selected')) {
+          // Remove class and attributes from previously selected Pokemon of the same index
+          $(`.self .roster .pokemon[team-index=${currentTeamIndex}]`).removeClass('selected');
+
+          // Insert or replace Pokemon on the team selection
+          if (currentTeamIndex >= currentTeam.length) {
+            currentTeam.push(playerRoster[index]);
+          } else {
+            currentTeam.splice(currentTeamIndex, 1, playerRoster[index]);
+          }
+
+          $el.addClass('selected');
+          $el.attr('team-index', currentTeamIndex);
+          $el.find('.number').html(currentTeamIndex + 1);
+
+          // Search for the next available team index
+          for (currentTeamIndex = 0; currentTeamIndex < currentTeam.length; currentTeamIndex++) {
+            if (currentTeam[currentTeamIndex] === null) {
+              break;
+            }
+          }
+
+          currentTeamIndex = Math.min(currentTeamIndex, 2);
+        } else {
+          // Deselect a Pokemon
+          $el.removeClass('selected');
+          currentTeam[parseInt($el.attr('team-index'))] = null;
+          currentTeamIndex = parseInt($el.attr('team-index'));
+
+          // Reset the index to 0 if nothing is selected
+          if ($('.self .roster .pokemon.selected').length === 0) {
+            currentTeamIndex = 0;
+          }
+        }
+
+        // Check to see if a full team is selected to show the continue button
+        let teamCount = 0;
+
+        for (let i = 0; i < currentTeam.length; i++) {
+          if (currentTeam[i] !== null) {
+            teamCount += 1;
+          }
+        }
+
+        if (teamCount === 3) {
+          $('.team-select .lets-go-btn').css('display', 'block');
+        } else {
+          $('.team-select .lets-go-btn').hide();
+        }
+      }
+
+      // Start a tournament battle after selecting a team
+      function startTournamentBattle() {
+        const teams = [multiSelectors[0].getPokemonList(), multiSelectors[1].getPokemonList()];
+        const difficulty = $('.difficulty-select option:selected').val();
+
+        if (
+          teams[0].length < partySize ||
+          (teamSelectMethod === 'manual' && teams[1].length < partySize)
+        ) {
+          modalWindow('Select Teams', $('<p>Please select a full team.</p>'));
+
+          return false;
+        }
+
+        const props = {
+          teams,
+          mode,
+          difficulty,
+          teamSelectMethod,
+          partySize,
+          league: battle.getCP(),
+          cup: battle.getCup().name,
+          featuredTeam,
+        };
+
+        if (roundNumber === 0) {
+          handler.startTournamentRound(currentTeam, props);
+        } else {
+          handler.startTournamentBattle(currentTeam, props);
+        }
+      }
+
+      // Event handler for changing the league select
+      function selectLeague() {
+        const vals = $('.league-cup-select option:selected').val().split(' ');
+        const cp = vals[0];
+        const cup = vals[1];
+
+        battle.setCP(cp);
+        battle.setCup(cup);
+
+        for (let i = 0; i < multiSelectors.length; i++) {
+          multiSelectors[i].setCP(cp);
+        }
+
+        // Force featured team selection for Cliffhanger and hide randomize button
+        if (cup === 'cliffhanger' || cup === 'continentals-2') {
+          $('.team-method-select option[value="featured"]').prop('selected', 'selected');
+          $('.team-method-select').trigger('change');
+          $('.team-method-select option[value="random"]').hide();
+          $('a.random').hide();
+        } else {
+          $('.team-method-select option[value="random"]').show();
+          $('a.random').show();
+        }
+
+        // Force 3v3 for GO Battle League
+        if (cup === 'gobattleleague' || cup === 'premier') {
+          $('.mode-select option[value="single"]').prop('selected', 'selected');
+          $('.mode-select option[value="tournament"]').prop('disabled', 'disabled');
+          $('.mode-select').trigger('change');
+        } else {
+          $('.mode-select option[value="tournament"]').prop('disabled', '');
+        }
+
+        gm.loadRankingData(self, 'overall', cp, cup);
+      }
+
+      // Give the player a random team
+      function randomizeTeam(e) {
+        e.preventDefault();
+
+        const difficulty = $('.difficulty-select option:selected').val();
+        const player = new Player(0, difficulty, battle);
+        player.getAI().generateRoster(partySize, self.importRandomizedRoster);
+      }
+
+      // Turn checkboxes on and off
+      function checkBox() {
+        $(this).toggleClass('on');
+        $(this).trigger('change');
+      }
+
+      // Return to the setup screen from the tournament team select screen
+      function returnToSetup(e) {
+        e.preventDefault();
+
+        handler.returnToSetup();
+      }
     }
 
-    return {
-        getInstance: function (matchHandler) {
-            if (!instance) {
-                instance = createInstance(matchHandler);
-            }
-            return instance;
-        }
-    };
+    return object;
+  }
+
+  return {
+    getInstance(matchHandler) {
+      if (!instance) {
+        instance = createInstance(matchHandler);
+      }
+      return instance;
+    },
+  };
 })();

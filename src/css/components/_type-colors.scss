@@ -1,0 +1,72 @@
+// TYPE COLORS
+.bug {
+  @include gradient($color-bug-dark, $color-bug-light);
+}
+
+.dark {
+  @include gradient($color-dark-dark, $color-dark-light);
+}
+
+.dragon {
+  @include gradient($color-dragon-dark, $color-dragon-light);
+}
+
+.electric {
+  @include gradient($color-electric-dark, $color-electric-light);
+}
+
+.fairy {
+  @include gradient($color-fairy-dark, $color-fairy-light);
+}
+
+.fighting {
+  @include gradient($color-fighting-dark, $color-fighting-light);
+}
+
+.fire {
+  @include gradient($color-fire-dark, $color-fire-light);
+}
+
+.flying {
+  @include gradient($color-flying-dark, $color-flying-light);
+}
+
+.ghost {
+  @include gradient($color-ghost-dark, $color-ghost-light);
+}
+
+.grass {
+  @include gradient($color-grass-dark, $color-grass-light);
+}
+
+.ground {
+  @include gradient($color-ground-dark, $color-ground-light);
+}
+
+.ice {
+  @include gradient($color-ice-dark, $color-ice-light);
+}
+
+.normal {
+  @include gradient($color-normal-dark, $color-normal-light);
+}
+
+.poison {
+  @include gradient($color-poison-dark, $color-poison-light);
+}
+
+.psychic {
+  @include gradient($color-psychic-dark, $color-psychic-light);
+}
+
+.rock {
+  @include gradient($color-rock-dark, $color-rock-light);
+}
+
+.steel {
+  @include gradient($color-steel-dark, $color-steel-light);
+}
+
+.water {
+  @include gradient($color-water-dark, $color-water-light);
+}

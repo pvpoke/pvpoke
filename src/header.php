@@ -76,22 +76,29 @@ if(! isset($OG_IMAGE)){
 <meta property="og:title" content="<?php echo $META_TITLE; ?>" />
 <meta property="og:description" content="<?php echo $META_DESCRIPTION; ?>" />
 <meta property="og:image" content="<?php echo $OG_IMAGE; ?>" />
-
 <meta name="apple-mobile-web-app-capable">
 <meta name="mobile-web-app-capable">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json?v=2">
 
 <link rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=88">
 
-<?php if(strpos($META_TITLE, 'Train') !== false): ?>
+<!-- STYLE.CSS -->
+<!-- <link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=88"> -->
+
+<!-- TRAIN.CSS -->
+<!-- <?php if(strpos($META_TITLE, 'Train') !== false): ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=14">
-<?php endif; ?>
+<?php endif; ?> -->
 
-<?php if((isset($_SETTINGS->theme))&&($_SETTINGS->theme != "default")): ?>
+<!-- THEME.CSS -->
+<!-- <?php if((isset($_SETTINGS->theme))&&($_SETTINGS->theme != "default")): ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/themes/<?php echo $_SETTINGS->theme; ?>.css?v=8">
-<?php endif; ?>
+<?php endif; ?> -->
+
+<!-- APP.CSS -->
+<!-- Generate random number to help cache bust -->
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/app.min.css?ver=<?php echo rand(1, 1000) ?>">
 
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>
 
