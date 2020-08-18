@@ -670,7 +670,7 @@ var InterfaceMaster = (function () {
 
 				// For Season 2 continentals, exclude Pokemon in already occupied slots
 
-				if((battle.getCup().name == "continentals-2")&&(team.length < 6)){
+				if((battle.getCup().name == "grunt")&&(team.length < 6)){
 					// Add ineligible Pokemon to the exclusion list
 					var slots = battle.getCup().slots;
 
@@ -828,7 +828,7 @@ var InterfaceMaster = (function () {
 					}
 
 					// Add slot label for Continentals
-					if(battle.getCup().name == "continentals-2"){
+					if(battle.getCup().name == "grunt"){
 						var tierName = "";
 						var slot = 0;
 

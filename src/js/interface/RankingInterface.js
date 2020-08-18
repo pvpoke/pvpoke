@@ -314,7 +314,7 @@ var InterfaceMaster = (function () {
 									$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
 								}
 
-								if(val == "continentals-2"){
+								if(val == "grunt"){
 									$(".continentals").removeClass("hide");
 								} else{
 									$(".continentals").addClass("hide");
@@ -420,7 +420,7 @@ var InterfaceMaster = (function () {
 					category = "overall";
 				}
 
-				if(cup == "continentals-2"){
+				if(cup == "grunt"){
 					$(".continentals").removeClass("hide");
 				} else{
 					$(".continentals").addClass("hide");
@@ -462,7 +462,7 @@ var InterfaceMaster = (function () {
 				self.displayRankings(category, cp, cup);
 				self.pushHistoryState(cup, cp, category, null);
 
-				if(cup == "continentals-2"){
+				if(cup == "grunt"){
 					$(".continentals").removeClass("hide");
 				} else{
 					$(".continentals").addClass("hide");
