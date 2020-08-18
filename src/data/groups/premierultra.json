@@ -2,7 +2,7 @@
 	{
 		"speciesId":"lapras",
 		"fastMove":"ICE_SHARD",
-		"chargedMoves":["SURF","ICE_BEAM"]
+		"chargedMoves":["SURF","SKULL_BASH"]
 	},
 	{
 		"speciesId":"machamp",
@@ -13,16 +13,6 @@
 		"speciesId":"machamp_shadow",
 		"fastMove":"COUNTER",
 		"chargedMoves":["CROSS_CHOP","ROCK_SLIDE"]
-	},
-	{
-		"speciesId":"typhlosion",
-		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["BLAST_BURN","SOLAR_BEAM"]
-	},
-	{
-		"speciesId":"blastoise",
-		"fastMove":"WATER_GUN",
-		"chargedMoves":["HYDRO_CANNON","ICE_BEAM"]
 	},
 	{
 		"speciesId":"gengar",
@@ -38,11 +28,6 @@
 		"speciesId":"charizard",
 		"fastMove":"FIRE_SPIN",
 		"chargedMoves":["BLAST_BURN","DRAGON_CLAW"]
-	},
-	{
-		"speciesId":"meganium",
-		"fastMove":"VINE_WHIP",
-		"chargedMoves":["FRENZY_PLANT","EARTHQUAKE"]
 	},
 	{
 		"speciesId":"venusaur",
@@ -92,42 +77,12 @@
 	{
 		"speciesId":"clefable",
 		"fastMove":"CHARM",
-		"chargedMoves":["METEOR_MASH","PSYCHIC"]
-	},
-	{
-		"speciesId":"lickilicky",
-		"fastMove":"LICK",
-		"chargedMoves":["BODY_SLAM","EARTHQUAKE"]
-	},
-	{
-		"speciesId":"granbull",
-		"fastMove":"CHARM",
-		"chargedMoves":["CRUNCH","CLOSE_COMBAT"]
+		"chargedMoves":["METEOR_MASH","MOONBLAST"]
 	},
 	{
 		"speciesId":"empoleon",
 		"fastMove":"WATERFALL",
 		"chargedMoves":["HYDRO_CANNON","DRILL_PECK"]
-	},
-	{
-		"speciesId":"feraligatr",
-		"fastMove":"ICE_FANG",
-		"chargedMoves":["HYDRO_CANNON","CRUNCH"]
-	},
-	{
-		"speciesId":"shiftry",
-		"fastMove":"SNARL",
-		"chargedMoves":["LEAF_BLADE","FOUL_PLAY"]
-	},
-	{
-		"speciesId":"sceptile",
-		"fastMove":"BULLET_SEED",
-		"chargedMoves":["LEAF_BLADE","EARTHQUAKE"]
-	},
-	{
-		"speciesId":"ferrothorn",
-		"fastMove":"BULLET_SEED",
-		"chargedMoves":["POWER_WHIP","FLASH_CANNON"]
 	},
 	{
 		"speciesId":"escavalier",
@@ -180,23 +135,18 @@
 		"chargedMoves":["ICE_PUNCH","WILD_CHARGE"]
 	},
 	{
-		"speciesId":"heracross",
-		"fastMove":"COUNTER",
-		"chargedMoves":["CLOSE_COMBAT","MEGAHORN"]
-	},
-	{
 		"speciesId":"tangrowth",
 		"fastMove":"VINE_WHIP",
 		"chargedMoves":["ROCK_SLIDE","POWER_WHIP"]
 	},
 	{
-		"speciesId":"milotic",
-		"fastMove":"WATERFALL",
-		"chargedMoves":["SURF","BLIZZARD"]
+		"speciesId":"ampharos",
+		"fastMove":"VOLT_SWITCH",
+		"chargedMoves":["THUNDER_PUNCH","FOCUS_BLAST"]
 	},
 	{
-		"speciesId":"gliscor",
-		"fastMove":"WING_ATTACK",
-		"chargedMoves":["NIGHT_SLASH","EARTHQUAKE"]
+		"speciesId":"slowbro",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["PSYCHIC","ICE_BEAM"]
 	}
 ]
