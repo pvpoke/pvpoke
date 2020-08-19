@@ -18,7 +18,7 @@ function Pokebox(element, selector, selectMode, b){
 		// Fetch box data from Pokebattler
 		if((forceLoad)||(box.length == 0)){
 			$.ajax({
-				url:"https://fight.pokebattler.com/profiles/1",
+				url:"https://fight.pokebattler.com/profiles/"+settings.pokeboxId,
 				dataType: 'json',
 				success:function(json){
 					box = [];
@@ -47,6 +47,10 @@ function Pokebox(element, selector, selectMode, b){
 							box.push(pokemon);
 						}
 					}
+
+					// Sort box by CP
+
+					box.sort((a,b) => (a.cp > b.cp) ? -1 : ((b.cp > a.cp) ? 1 : 0));
 
 					self.displayBox();
 				},
@@ -82,27 +86,30 @@ function Pokebox(element, selector, selectMode, b){
 		for(var i = 0; i < box.length; i++){
 			var pokemon = box[i];
 
-			var $item = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"name-container\"><span class=\"name\">"+pokemon.speciesName+"</span><span class=\"moves\"></span></div><div class=\"remove\"></div></div>");
-			$item.find(".moves").append("CP " + pokemon.cp + " " + pokemon.ivs.atk + "/" + pokemon.ivs.def + "/" + pokemon.ivs.hp + "<br>");
-			var moveList = [pokemon.fastMove];
+			if(pokemon.cp <= battle.getCP()){
+				var $item = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"name-container\"><span class=\"name\">"+pokemon.speciesName+"</span><span class=\"moves\"></span></div><div class=\"remove\"></div></div>");
+				$item.find(".moves").append("CP " + pokemon.cp + " " + pokemon.ivs.atk + "/" + pokemon.ivs.def + "/" + pokemon.ivs.hp + "<br>");
+				var moveList = [pokemon.fastMove];
 
-			for(var n = 0; n < pokemon.chargedMoves.length; n++){
-				moveList.push(pokemon.chargedMoves[n]);
-			}
-
-			for(var n = 0; n < moveList.length; n++){
-				if(n > 0){
-					$item.find(".moves").append(", ");
+				for(var n = 0; n < pokemon.chargedMoves.length; n++){
+					moveList.push(pokemon.chargedMoves[n]);
 				}
 
-				$item.find(".moves").append(moveList[n].displayName);
-			}
+				for(var n = 0; n < moveList.length; n++){
+					if(n > 0){
+						$item.find(".moves").append(", ");
+					}
 
-			$(".modal .pokebox-list").append($item);
+					$item.find(".moves").append(moveList[n].displayName);
+				}
+
+				$(".modal .pokebox-list").append($item);
+			}
 		}
 
 		$(".modal .pokebox-list .rank").click(selectPokemon);
 		$(".modal .button.select").click(selectGroup);
+		$(".modal a.pokebox-refresh").click(refreshPokebox);
 	}
 
 	// Click the prompt to open the Pokebox
@@ -154,5 +161,17 @@ function Pokebox(element, selector, selectMode, b){
 
 		selector.setPokemonList(list);
 		closeModalWindow();
+	}
+
+	// Submit a group of selected Pokemon to a MultiSelector
+
+	function refreshPokebox(e){
+		e.preventDefault();
+
+		$(".modal .pokebox-list").html("Loading Pokemon...");
+
+		setTimeout(function(){
+			self.loadPokebox(true);
+		}, 250);
 	}
 }

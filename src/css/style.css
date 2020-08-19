@@ -1638,6 +1638,7 @@ a.download-csv {
   flex-wrap: wrap;
   justify-content: space-between;
   max-height: 400px;
+  margin-top: 0;
 }
 .rankings-container.pokebox-list .rank {
   width: 49%;
@@ -2598,6 +2599,9 @@ a.download-csv {
 .modal .modal-container .poke.single .options .toggle-content {
   display: none;
 }
+.modal .modal-container .poke.single .pokebox {
+  display: none;
+}
 .modal .modal-container .poke-search {
   margin-bottom: 5px;
 }
@@ -2644,6 +2648,19 @@ a.download-csv {
 .modal .button {
   margin: 25px auto 0 auto;
   display: inline-block;
+}
+.modal .pokebox-options {
+  display: flex;
+}
+.modal .pokebox-options a {
+  padding: 4px 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #fff;
+  background: #003748;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 /* TEXTS & FONTS */

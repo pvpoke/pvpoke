@@ -1880,6 +1880,7 @@ a.download-csv{
 		flex-wrap: wrap;
 		justify-content: space-between;
 		max-height:400px;
+		margin-top:0;
 
 		.rank{
 		    width: 49%;
@@ -2993,6 +2994,10 @@ a.download-csv{
 			.options .toggle-content{
 				display:none;
 			}
+
+			.pokebox{
+				display:none;
+			}
 		}
 
 		.poke-search{
@@ -3061,6 +3066,21 @@ a.download-csv{
 	.button{
 		margin:25px auto 0 auto;
 		display:inline-block;
+	}
+
+	.pokebox-options{
+		display:flex;
+
+		a{
+			padding: 4px 8px;
+			border-radius: 8px;
+			text-decoration: none;
+			font-size:14px;
+			color:#fff;
+			background:$color-links;
+			margin-right:10px;
+			margin-bottom:10px;
+		}
 	}
 
 }
