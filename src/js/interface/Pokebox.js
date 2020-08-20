@@ -12,7 +12,7 @@ function Pokebox(element, selector, selectMode, b){
 	var box = [];
 
 	$el.find("a.open-pokebox").click(openPokebox);
-	$el.find("."+selectMode).show();
+	$el.find(".pokebox-import").attr("select-mode", selectMode);
 
 	this.loadPokebox = function(forceLoad){
 		// Fetch box data from Pokebattler

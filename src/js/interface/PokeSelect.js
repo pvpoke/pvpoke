@@ -209,6 +209,10 @@ function PokeSelect(element, i){
 			} else{
 				$el.find(".shadow-section").show();
 			}
+
+			// Hide Pokebox after Selection
+
+			$el.find(".pokebox").hide();
 		}
 	}
 
@@ -300,6 +304,7 @@ function PokeSelect(element, i){
 		$el.find(".move-select").html('');
 		$el.find(".start-energy").val('');
 		$el.find(".poke-stats").hide();
+		$el.find(".pokebox").show();
 		$pokeSelect.find("option").first().prop("selected", "selected");
 
 		isCustom = false;

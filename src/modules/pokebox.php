@@ -1,5 +1,5 @@
 <div class="pokebox">
-	<a href="#" class="button open-pokebox">Import from Pokebox</a>
+	<a href="#" class="open-pokebox"><span>Import from</span><span>Pokebox<span></a>
 
 	<div class="pokebox-import hide">
 		<?php if($_SETTINGS->pokeboxId): ?>
@@ -13,8 +13,8 @@
 			<div class="pokebox-list rankings-container">
 				Loading Pokebox...
 			</div>
-			<div class="center">
-				<div class="button select hide multi">Select Pokemon</div>
+			<div class="center multi">
+				<div class="button select">Select Pokemon</div>
 			</div>
 		<?php else: ?>
 			<p>Go to Pokebattler to create a Pokebox where you can store your Pokemon and Iv's.</p>

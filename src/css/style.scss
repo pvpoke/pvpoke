@@ -1087,6 +1087,35 @@ select, input{
 	}
 }
 
+.pokebox{
+	a.open-pokebox{
+		display:block;
+		border:1px solid #000;
+		padding: 10px;
+	    cursor: pointer;
+		text-decoration: none;
+		color:#000;
+		margin:10px auto;
+	    border-radius: 8px;
+		background:url('../img/pokebattler.png') $color-off-white;
+		background-size: 40px;
+	    background-position: 5px center;
+	    background-repeat: no-repeat;
+		padding: 5px 5px 5px 50px;
+		text-align: center;
+
+		span:first-of-type{
+			display:block;
+			font-size:10px;
+		}
+
+		span:nth-of-type(2){
+			display:block;
+			font-weight: bold;
+		}
+	}
+}
+
 .share-link-container{
 
 	text-align: center;
@@ -1879,7 +1908,7 @@ a.download-csv{
 		display:flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
-		max-height:400px;
+		max-height:350px;
 		margin-top:0;
 
 		.rank{
@@ -2996,7 +3025,7 @@ a.download-csv{
 			}
 
 			.pokebox{
-				display:none;
+				display:none !important;
 			}
 		}
 
@@ -3080,6 +3109,28 @@ a.download-csv{
 			background:$color-links;
 			margin-right:10px;
 			margin-bottom:10px;
+
+			&.pokebox-edit{
+				border:1px solid #000;
+				color:#000;
+				background:url('../img/pokebattler_logo.png') $color-off-white;
+				background-repeat: no-repeat;
+				background-position: 5px center;
+				background-size: 20px;
+				padding: 4px 8px 4px 30px;
+			}
+		}
+	}
+
+	.pokebox-import[select-mode="multi"]{
+		.multi{
+			display:block;
+		}
+	}
+
+	.pokebox-import[select-mode="single"]{
+		.multi{
+			display:none;
 		}
 	}
 
@@ -3621,6 +3672,10 @@ a.toggle{
 
 	.rankings-container{
 		max-height:800px;
+
+		&.pokebox-list{
+			max-height:600px;
+		}
 	}
 
 	.table-container{
