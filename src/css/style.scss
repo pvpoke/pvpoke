@@ -3122,6 +3122,23 @@ a.download-csv{
 		}
 	}
 
+	.pokebox-import{
+		a.pokebattler{
+			background-image:url('../img/pokebattler_logo.png');
+			background-size: 20px;
+		    background-repeat: no-repeat;
+			padding-left:24px;
+		}
+
+		ol{
+			line-height:30px;
+		}
+
+		input#pokebox-id{
+			max-width:200px;
+		}
+	}
+
 	.pokebox-import[select-mode="multi"]{
 		.multi{
 			display:block;
@@ -3380,7 +3397,7 @@ a.toggle{
 /* SETTINGS */
 
 .settings{
-	select{
+	select, input{
 		max-width:200px;
 	}
 

@@ -2696,6 +2696,18 @@ a.download-csv {
   background-size: 20px;
   padding: 4px 8px 4px 30px;
 }
+.modal .pokebox-import a.pokebattler {
+  background-image: url("../img/pokebattler_logo.png");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  padding-left: 24px;
+}
+.modal .pokebox-import ol {
+  line-height: 30px;
+}
+.modal .pokebox-import input#pokebox-id {
+  max-width: 200px;
+}
 .modal .pokebox-import[select-mode=multi] .multi {
   display: block;
 }

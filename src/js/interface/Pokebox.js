@@ -117,9 +117,18 @@ function Pokebox(element, selector, selectMode, b){
 	function openPokebox(e){
 		e.preventDefault();
 
+		if(settings.pokeboxId){
+			$el.find(".pokebox-on").show();
+			$el.find(".pokebox-off").hide();
+			self.loadPokebox(false);
+		} else{
+			$el.find(".pokebox-on").hide();
+			$el.find(".pokebox-off").show();
+		}
+
 		modalWindow("Import Pokemon", $el.find(".pokebox-import"));
 
-		self.loadPokebox(false);
+		$(".modal a.save").click(saveSettings);
 	}
 
 	// Select a Pokemon in the Pokebox
@@ -173,5 +182,40 @@ function Pokebox(element, selector, selectMode, b){
 		setTimeout(function(){
 			self.loadPokebox(true);
 		}, 250);
+	}
+
+	// Save the Pokebox settings after entering ID
+
+	function saveSettings(e){
+
+		var pokeboxId = parseInt($(".modal #pokebox-id").val());
+
+		$.ajax({
+
+			url : host+'data/settingsCookie.php',
+			type : 'POST',
+			data : {
+				'defaultIVs' : settings.defaultIVs,
+				'animateTimeline' : settings.animateTimeline,
+				'theme': settings.theme,
+				'matrixDirection': settings.matrixDirection,
+				'gamemaster': settings.gamemaster,
+				'pokeboxId': pokeboxId
+			},
+			dataType:'json',
+			success : function(data) {
+				settings.pokeboxId = pokeboxId;
+
+				$("modal .pokebox-off").hide();
+				$("modal .pokebox-on").show();
+
+				self.forceLoad(true);
+			},
+			error : function(request,error)
+			{
+				console.log("Request: "+JSON.stringify(request));
+				console.log(error);
+			}
+		});
 	}
 }
