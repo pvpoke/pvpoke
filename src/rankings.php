@@ -120,7 +120,7 @@ switch($cup){
 	case "grunt":
 		$league = 'Grunt Cup 4';
 		break;
-		
+
 	case "sorcerous":
 	case "sorcerous-mirror":
 		$league = 'Sorcerous Cup';
@@ -152,6 +152,10 @@ switch($cup){
 
 	case "kaiser":
 		$league = 'Kaiser Invitational';
+		break;
+
+	case "shadow":
+		$league = 'Shadow Cup';
 		break;
 }
 
@@ -207,12 +211,12 @@ require_once 'header.php';
 
 	<div class="continentals hide">
 		<div class="flex">
-			<div class="check" value="0"><span></span>Slot 1</div>
-			<div class="check" value="1"><span></span>Slot 2</div>
-			<div class="check" value="2"><span></span>Slot 3</div>
-			<div class="check" value="3"><span></span>Slot 4</div>
-			<div class="check" value="4"><span></span>Slot 5</div>
-			<div class="check" value="5"><span></span>Slot 6</div>
+			<div class="check" value="0"><span></span>Cliff</div>
+			<div class="check" value="1"><span></span>Sierra</div>
+			<div class="check" value="2"><span></span>Arlo</div>
+			<div class="check" value="3"><span></span>Giovanni</div>
+			<div class="check" value="4"><span></span>James</div>
+			<div class="check" value="5"><span></span>Jessie</div>
 		</div>
 	</div>
 

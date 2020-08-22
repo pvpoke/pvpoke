@@ -343,7 +343,7 @@
         "restrictedPokemon": ["ivysaur", "ivysaur_shadow", "venusaur", "venusaur_shadow", "wartortle", "wartortle_shadow", "blastoise", "blastoise_shadow", "charmeleon", "charmeleon_shadow", "charizard", "charizard_shadow"],
         "include": [{
             "filterType": "id",
-            "values": ["ferrothorn","alomomola","escavalier","galvantula","victini","serperior","klang","lapras","shiftry","gallade","hypno","sableye","alakazam","muk","grimer","grimer_shadow","muk_shadow","lapras_shadow","shiftry_shadow","gallade_shadow","hypno_shadow","sableye_shadow","alakazam_shadow","exeggutor","exeggutor_shadow","sharpedo","sharpedo_shadow","metagross","metagross_shadow","houndoom","houndoom_shadow","charizard","charizard_shadow","blastoise","blastoise_shadow","fortress","fortress_shadow","dragonite","dragonite_shadow","steelix","crobat","crobat_shadow","mawile","mawile_shadow","scizor","scizor_shadow","zapdos","zapdos_shadow","moltres","moltres_shadow","articuno","articuno_shadow","suicune","suicune_shadow","rhyperior","machamp","machamp_shadow","rhydon","khangaskan","golem_alolan","graveler_alolan","gliscor","gliscor_shadow","victreebel","victreebel_shadow","gyarados","gyarados_shadow","arcanine","arcanine_shadow","venomoth","venomoth_shadow","cradily","lanturn","skuntank","skuntank_shadow","sealeo","beedrill","beedrill_shadow","weezing","weezing_shadow","golbat","arbok","arbok_shadow","wobbuffet","wobbuffet_shadow","lickitung","tentacruel","electrode","haunter","cloyster","gengar","clefable"]
+            "values": ["ferrothorn","alomomola","escavalier","galvantula","victini","serperior","klang","lapras","shiftry","gallade","hypno","sableye","alakazam","muk","grimer","grimer_shadow","muk_shadow","lapras_shadow","shiftry_shadow","gallade_shadow","hypno_shadow","sableye_shadow","alakazam_shadow","exeggutor","exeggutor_shadow","sharpedo","sharpedo_shadow","metagross","metagross_shadow","houndoom","houndoom_shadow","charizard","charizard_shadow","blastoise","blastoise_shadow","fortress","fortress_shadow","dragonite","dragonite_shadow","steelix","crobat","crobat_shadow","mawile","mawile_shadow","scizor","scizor_shadow","zapdos","zapdos_shadow","moltres","moltres_shadow","articuno","articuno_shadow","suicune","suicune_shadow","rhyperior","machamp","machamp_shadow","rhydon","khangaskan","golem_alolan","graveler_alolan","gliscor","gliscor_shadow","victreebel","victreebel_shadow","gyarados","gyarados_shadow","arcanine","arcanine_shadow","venomoth","venomoth_shadow","cradily","lanturn","skuntank","skuntank_shadow","sealeo","beedrill","beedrill_shadow","weezing","weezing_shadow","golbat","arbok","arbok_shadow","wobbuffet","wobbuffet_shadow","lickitung","tentacruel","electrode","haunter","cloyster","gengar","clefable","golbat_shadow","poliwrath","poliwrath_shadow","forretress","forretress_shadow","magneton","magneton_shadow"]
         }],
         "exclude": [],
 		"slots": [{
@@ -464,6 +464,15 @@
             "filterType": "tag",
             "values": ["regional"]
         }]
+    }, {
+        "name": "shadow",
+        "title": "Shadow Cup",
+		"link": "https://silph.gg/t/vxtj/team-rocket-academy-presents-shadow-cup",
+        "include": [{
+            "filterType": "tag",
+            "values": ["shadow"]
+        }],
+        "exclude": []
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable"],
     "pokemonRegions": [{

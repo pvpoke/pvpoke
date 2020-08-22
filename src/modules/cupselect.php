@@ -8,6 +8,7 @@
 	<option value="community" cup="mexico">México Cup</option>
 	<option value="community" cup="kaiser">Kaiser Invitational</option>
 	<option value="community" cup="grunt">Grunt Cup Season 7</option>
+	<option value="community" cup="shadow">Shadow Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>
@@ -27,6 +28,7 @@
 	<option value="fantasy" cat="community">GO LIVE Fantasy Cup</option>
 	<option value="beam" cat="community">Get Beamed</option>
 	<option value="grunt" cat="community">Grunt Cup Season 7</option>
+	<option value="shadow" cat="community">Shadow Cup</option>
 	<option value="goteamup" cat="community">GO Stadium GOTeamUp</option>
 	<option value="cliffhanger" cat="community">GO Stadium Cliffhanger</option>
 	<option value="scoville" cat="community">Scoville Cup</option>
