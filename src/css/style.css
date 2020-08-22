@@ -1669,13 +1669,13 @@ a.download-csv {
   width: 49%;
   border-left: none;
   box-sizing: border-box;
-  border: 2px solid rgba(0, 0, 0, 0);
+  border: 3px solid rgba(0, 0, 0, 0);
 }
 .rankings-container.pokebox-list .rank:hover {
-  border: 2px solid rgba(0, 0, 0, 0.4);
+  border: 3px solid rgba(0, 0, 0, 0.4);
 }
 .rankings-container.pokebox-list .rank.selected {
-  border: 2px solid #000;
+  border: 3px solid #000;
 }
 .rankings-container.pokebox-list .name-container {
   float: none;
@@ -2705,7 +2705,7 @@ a.download-csv {
 .modal .pokebox-import ol {
   line-height: 30px;
 }
-.modal .pokebox-import input#pokebox-id {
+.modal .pokebox-import input.pokebox-id {
   max-width: 200px;
 }
 .modal .pokebox-import[select-mode=multi] .multi {
@@ -3170,7 +3170,7 @@ a.toggle {
   }
 }
 /* SETTINGS */
-.settings select {
+.settings select, .settings input {
   max-width: 200px;
 }
 .settings .button.save {

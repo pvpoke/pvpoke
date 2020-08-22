@@ -10,6 +10,7 @@ function Pokebox(element, selector, selectMode, b){
 	var self = this;
 	var battle = b;
 	var box = [];
+	var filteredBox = [];
 
 	$el.find("a.open-pokebox").click(openPokebox);
 	$el.find(".pokebox-import").attr("select-mode", selectMode);
@@ -83,10 +84,14 @@ function Pokebox(element, selector, selectMode, b){
 	this.displayBox = function(){
 		$(".modal .pokebox-list").html("");
 
+		filteredBox = [];
+
 		for(var i = 0; i < box.length; i++){
 			var pokemon = box[i];
 
 			if(pokemon.cp <= battle.getCP()){
+				filteredBox.push(pokemon);
+
 				var $item = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"name-container\"><span class=\"name\">"+pokemon.speciesName+"</span><span class=\"moves\"></span></div><div class=\"remove\"></div></div>");
 				$item.find(".moves").append("CP " + pokemon.cp + " " + pokemon.ivs.atk + "/" + pokemon.ivs.def + "/" + pokemon.ivs.hp + "<br>");
 				var moveList = [pokemon.fastMove];
@@ -117,18 +122,18 @@ function Pokebox(element, selector, selectMode, b){
 	function openPokebox(e){
 		e.preventDefault();
 
-		if(settings.pokeboxId){
-			$el.find(".pokebox-on").show();
-			$el.find(".pokebox-off").hide();
-			self.loadPokebox(false);
-		} else{
-			$el.find(".pokebox-on").hide();
-			$el.find(".pokebox-off").show();
-		}
-
 		modalWindow("Import Pokemon", $el.find(".pokebox-import"));
 
-		$(".modal a.save").click(saveSettings);
+
+		if(settings.pokeboxId){
+			$(".modal .pokebox-on").show();
+			$(".modal .pokebox-off").hide();
+			self.loadPokebox();
+		} else{
+			$(".modal .pokebox-on").hide();
+			$(".modal .pokebox-off").show();
+			$(".modal .button.save").click(saveSettings);
+		}
 	}
 
 	// Select a Pokemon in the Pokebox
@@ -139,7 +144,7 @@ function Pokebox(element, selector, selectMode, b){
 		$(e.target).closest(".rank").toggleClass("selected");
 
 		var index = $(e.target).closest(".rank").index();
-		var pokemon = box[index];
+		var pokemon = filteredBox[index];
 
 		if(selectMode == "single"){
 			selector.setSelectedPokemon(pokemon);
@@ -156,7 +161,7 @@ function Pokebox(element, selector, selectMode, b){
 
 		$(".modal .rank").each(function(index, value){
 			if($(this).hasClass("selected")){
-				group.push(box[index]);
+				group.push(filteredBox[index]);
 			}
 		});
 
@@ -188,7 +193,7 @@ function Pokebox(element, selector, selectMode, b){
 
 	function saveSettings(e){
 
-		var pokeboxId = parseInt($(".modal #pokebox-id").val());
+		var pokeboxId = parseInt($(".modal .pokebox-id").val());
 
 		$.ajax({
 
@@ -206,10 +211,10 @@ function Pokebox(element, selector, selectMode, b){
 			success : function(data) {
 				settings.pokeboxId = pokeboxId;
 
-				$("modal .pokebox-off").hide();
-				$("modal .pokebox-on").show();
+				$(".modal .pokebox-off").hide();
+				$(".modal .pokebox-on").show();
 
-				self.forceLoad(true);
+				self.loadPokebox(true);
 			},
 			error : function(request,error)
 			{

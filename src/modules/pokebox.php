@@ -22,7 +22,7 @@
 			<ol>
 				<li><a href="https://www.pokebattler.com/user" target="_blank">Create or log in</a> to your Pokebattler account.</li>
 				<li>Add Pokemon to your Pokebox.</li>
-				<li>Enter your Pokebattler ID (top right corner):<input type="text" id="pokebox-id" placeholder="Pokebattler ID" /></li>
+				<li>Enter your Pokebattler ID (top right corner):<input type="text" class="pokebox-id" placeholder="Pokebattler ID" /></li>
 			</ol>
 			<div class="center">
 				<div class="button save">Save Settings</div>
