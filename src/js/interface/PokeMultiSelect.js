@@ -172,8 +172,10 @@ function PokeMultiSelect(element){
 
 		if(pokemonList.length >= maxPokemonCount){
 			$el.find(".add-poke-btn").hide();
+			$el.find(".pokebox").hide();
 		} else{
 			$el.find(".add-poke-btn").show();
+			$el.find(".pokebox").show();
 		}
 
 	}
@@ -279,7 +281,7 @@ function PokeMultiSelect(element){
 	// After loading from the GameMaster, fill in a preset group
 
 	this.setPokemonList = function(list){
-		pokemonList = list;
+		pokemonList = list.slice(0, maxPokemonCount);
 		self.updateListDisplay();
 	}
 
@@ -731,6 +733,12 @@ function PokeMultiSelect(element){
 
 	this.setContext = function(val){
 		context = val;
+	}
+
+	// Return the number of remaining spots
+
+	this.getAvailableSpots = function(){
+		return maxPokemonCount - pokemonList.length;
 	}
 
 	// Force a group selection

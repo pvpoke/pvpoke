@@ -22,8 +22,8 @@ require_once 'header.php';
 		</select>
 		<p>Currently, this will choose which IV's to set for Pokemon you select in Single Battle, Multi-Battle, and the Team Builder. Opponents in Multi-Battle and the Team Builder will still use the "typical" IV's.</p>
 
-		<h3>Pokebattler Pokebox</h3>
-		<p>Enter your Pokebox ID to import Pokemon.</p>
+		<h3>Pokebox</h3>
+		<p>PvPoke integrates with <a href="https://www.pokebattler.com/" class="pokebattler">Pokebattler</a> so you can permanently store your Pokemon and import them anywhere on the site. Enter your Pokebattler account ID below to link your Pokebox:</p>
 		<input type="text" class="input" id="pokebox-id" <?php if(isset($_SETTINGS->pokeboxId)) : ?>value="<?php echo intval($_SETTINGS->pokeboxId); ?>"<?php endif; ?> />
 
 		<h3>Battle Timeline</h3>

@@ -11,15 +11,18 @@ function Pokebox(element, selector, selectMode, b){
 	var battle = b;
 	var box = [];
 	var filteredBox = [];
+	var maxCount = 100;
 
 	$el.find("a.open-pokebox").click(openPokebox);
 	$el.find(".pokebox-import").attr("select-mode", selectMode);
 
 	this.loadPokebox = function(forceLoad){
 		// Fetch box data from Pokebattler
+		$(".modal .error").hide();
+
 		if((forceLoad)||(box.length == 0)){
 			$.ajax({
-				url:"https://fight.pokebattler.com/profiles/"+settings.pokeboxId,
+				url:"https://fight.pokebattler.com/profiles/"+settings.pokeboxId+"?v="+(Math.random() * 1000),
 				dataType: 'json',
 				success:function(json){
 					box = [];
@@ -56,7 +59,11 @@ function Pokebox(element, selector, selectMode, b){
 					self.displayBox();
 				},
 				error:function(){
-					console.log("Pokebox error");
+					$(".modal .rankings-container").html("");
+					$(".modal .error").show();
+					$(".modal .pokebox-options").hide();
+					$(".modal .poke-search").hide();
+					$(".modal p").first().hide();
 				}
 			});
 		} else{
@@ -124,7 +131,6 @@ function Pokebox(element, selector, selectMode, b){
 
 		modalWindow("Import Pokemon", $el.find(".pokebox-import"));
 
-
 		if(settings.pokeboxId){
 			$(".modal .pokebox-on").show();
 			$(".modal .pokebox-off").hide();
@@ -134,12 +140,23 @@ function Pokebox(element, selector, selectMode, b){
 			$(".modal .pokebox-off").show();
 			$(".modal .button.save").click(saveSettings);
 		}
+
+		if(selectMode == "multi"){
+			maxCount = selector.getAvailableSpots();
+
+			$(".modal .poke-max-count").html(maxCount);
+		}
 	}
 
 	// Select a Pokemon in the Pokebox
 
 	function selectPokemon(e){
 		e.preventDefault();
+
+		// Don't select more than allowed
+		if(($(".modal .rank.selected").length >= maxCount)&&(!$(e.target).closest(".rank").hasClass("selected"))){
+			return;
+		}
 
 		$(e.target).closest(".rank").toggleClass("selected");
 
@@ -149,6 +166,8 @@ function Pokebox(element, selector, selectMode, b){
 		if(selectMode == "single"){
 			selector.setSelectedPokemon(pokemon);
 			closeModalWindow();
+		} else{
+			$(".modal .poke-count").html($(".modal .rank.selected").length);
 		}
 	}
 

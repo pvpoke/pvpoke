@@ -4,6 +4,9 @@
 	<div class="pokebox-import hide">
 		<div class="pokebox-on hide">
 			<p>Select Pokemon below to import.</p>
+			<div class="poke-count-container multi">
+				<span class="poke-count">0</span> / <span class="poke-max-count">100</span>
+			</div>
 			<div class="pokebox-options">
 				<a href="#" class="pokebox-refresh">Refresh</a>
 				<a href="https://www.pokebattler.com/pokebox" class="pokebox-edit" target="_blank">Edit Pokebox</a>
@@ -12,6 +15,9 @@
 
 			<div class="pokebox-list rankings-container">
 				Loading Pokebox...
+			</div>
+			<div class="error hide">
+				There was an error loading your Pokebox. Check your <a href="<?php echo $WEB_ROOT; ?>settings/" target="_blank">settings</a> to ensure they're correct and refresh this page.</a>
 			</div>
 			<div class="center multi">
 				<div class="button select">Select Pokemon</div>
