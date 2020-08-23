@@ -21,8 +21,17 @@ function Pokebox(element, selector, selectMode, b){
 		$(".modal .error").hide();
 
 		if((forceLoad)||(box.length == 0)){
+			var url = "https://fight.pokebattler.com/profiles/"+settings.pokeboxId;
+
+			// Add timestamp to bypass cache
+			if(forceLoad){
+				url = url + "?t=" + Date.now();
+			}
+
+			console.log(url);
+
 			$.ajax({
-				url:"https://fight.pokebattler.com/profiles/"+settings.pokeboxId+"?v="+(Math.random() * 1000),
+				url:url,
 				dataType: 'json',
 				success:function(json){
 					box = [];

@@ -24,7 +24,7 @@
 			</div>
 		</div>
 		<div class="pokebox-off hide">
-			<p>PvPoke integrates with <a href="https://www.pokebattler.com/" class="pokebattler">Pokebattler</a> so you can permanently store your Pokemon and import them anywhere on the site:</p>
+			<p>PvPoke integrates with <a href="https://www.pokebattler.com/" class="pokebattler">Pokebattler</a> so you can permanently store your Pokemon and import them on any device:</p>
 			<ol>
 				<li><a href="https://www.pokebattler.com/user" target="_blank">Create or log in</a> to your Pokebattler account.</li>
 				<li>Add Pokemon to your Pokebox.</li>
