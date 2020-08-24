@@ -172,6 +172,7 @@ if(isset($_GET['p'])){
 
 	$META_DESCRIPTION = 'Explore key matchups, moves, and counters for ' . $name . ' in ' . $league . '.';
 
+	$CANONICAL = '/rankings/' . $cup . '/' . $cp . '/overall/' . htmlspecialchars($_GET['p']) . '/';
 }
 
 require_once 'header.php';
