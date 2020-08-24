@@ -163,6 +163,17 @@ $META_TITLE = $league . ' PvP Rankings';
 
 $META_DESCRIPTION = 'Explore the top Pokemon for Pokemon GO PvP in the ' . $league . '. Rankings include top moves, matchups, and counters for every Pokemon, as well as ratings for different roles.';
 
+if(isset($_GET['p'])){
+	// Put Pokemon names in the meta title
+
+	$name = ucwords(str_replace('_',' ', explode('-', htmlspecialchars($_GET['p']))[0]));
+
+	$META_TITLE = $name . ' ' . $league . ' PvP Rankings';
+
+	$META_DESCRIPTION = 'Explore key matchups, moves, and counters for ' . $name . ' in ' . $league . '.';
+
+}
+
 require_once 'header.php';
 
 ?>
