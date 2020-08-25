@@ -70,14 +70,14 @@
 			{
 				"speciesId": "gyarados",
 				"fastMove": "DRAGON_BREATH",
-				"chargedMoves": ["CRUNCH","HYDRO_PUMP"],
+				"chargedMoves": ["CRUNCH","AQUA_TAIL"],
 				"difficulty": 2,
 				"weight":5
 			},
 			{
 				"speciesId": "gyarados",
 				"fastMove": "WATERFALL",
-				"chargedMoves": ["CRUNCH","HYDRO_PUMP"],
+				"chargedMoves": ["AQUA_TAIL","OUTRAGE"],
 				"difficulty": 2,
 				"weight":4
 			},
@@ -119,14 +119,14 @@
 			{
 				"speciesId": "gyarados",
 				"fastMove": "DRAGON_BREATH",
-				"chargedMoves": ["CRUNCH","HYDRO_PUMP"],
+				"chargedMoves": ["CRUNCH","AQUA_TAIL"],
 				"difficulty": 2,
 				"weight":15
 			},
 			{
 				"speciesId": "gyarados",
 				"fastMove": "WATERFALL",
-				"chargedMoves": ["CRUNCH","HYDRO_PUMP"],
+				"chargedMoves": ["AQUA_TAIL","OUTRAGE"],
 				"difficulty": 2,
 				"weight":20
 			},
