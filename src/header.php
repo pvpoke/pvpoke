@@ -122,7 +122,7 @@ if(! isset($OG_IMAGE)){
 
 	<?php endif; ?>
 
-	<?php if((strpos($_SERVER['REQUEST_URI'], 'mega') !== false) && (strpos($_SERVER['REQUEST_URI'], 'meganium') === false)):
+	<?php if((strpos($_SERVER['REQUEST_URI'], 'mega') !== false) && (strpos($_SERVER['REQUEST_URI'], 'meganium') === false) && (strpos($_SERVER['REQUEST_URI'], 'venusaur_mega') === false) && (strpos($_SERVER['REQUEST_URI'], 'blastoise_mega') === false) && ((strpos($_SERVER['REQUEST_URI'], 'charizard_mega_x') === false)) && (strpos($_SERVER['REQUEST_URI'], 'charizard_mega_y') === false) && (strpos($_SERVER['REQUEST_URI'], 'beedrill_mega') === false)):
 		$_SETTINGS->gamemaster = 'gamemaster-mega';
 		?>
 		// If "Mega" is contained in the URL, default to the mega gamemaster
