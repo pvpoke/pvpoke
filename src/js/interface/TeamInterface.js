@@ -328,6 +328,10 @@ var InterfaceMaster = (function () {
 				var allowShadows = $(".team-option .check.allow-shadows").hasClass("on");
 				var baitShields = $(".team-option .check.shield-baiting").hasClass("on");
 
+				if(battle.getCup().name == "shadow"){
+					allowShadows = true;
+				}
+
 				// Get team and validate results
 
 				var team = multiSelectors[0].getPokemonList();

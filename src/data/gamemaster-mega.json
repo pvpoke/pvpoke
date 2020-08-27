@@ -343,19 +343,19 @@
         "restrictedPokemon": ["ivysaur", "ivysaur_shadow", "venusaur", "venusaur_shadow", "wartortle", "wartortle_shadow", "blastoise", "blastoise_shadow", "charmeleon", "charmeleon_shadow", "charizard", "charizard_shadow"],
         "include": [{
             "filterType": "id",
-            "values": ["ferrothorn","alomomola","escavalier","galvantula","victini","serperior","klang","lapras","shiftry","gallade","hypno","sableye","alakazam","muk","grimer","grimer_shadow","muk_shadow","lapras_shadow","shiftry_shadow","gallade_shadow","hypno_shadow","sableye_shadow","alakazam_shadow","exeggutor","exeggutor_shadow","sharpedo","sharpedo_shadow","metagross","metagross_shadow","houndoom","houndoom_shadow","charizard","charizard_shadow","blastoise","blastoise_shadow","fortress","fortress_shadow","dragonite","dragonite_shadow","steelix","crobat","crobat_shadow","mawile","mawile_shadow","scizor","scizor_shadow","zapdos","zapdos_shadow","moltres","moltres_shadow","articuno","articuno_shadow","suicune","suicune_shadow","rhyperior","machamp","machamp_shadow","rhydon","khangaskan","golem_alolan","graveler_alolan","gliscor","gliscor_shadow","victreebel","victreebel_shadow","gyarados","gyarados_shadow","arcanine","arcanine_shadow","venomoth","venomoth_shadow","cradily","lanturn","skuntank","skuntank_shadow","sealeo","beedrill","beedrill_shadow","weezing","weezing_shadow","golbat","arbok","arbok_shadow","wobbuffet","wobbuffet_shadow","lickitung","tentacruel","electrode","haunter","cloyster","gengar","clefable"]
+            "values": ["ferrothorn","alomomola","escavalier","galvantula","victini","serperior","klang","lapras","shiftry","gallade","hypno","sableye","alakazam","muk","grimer","grimer_shadow","muk_shadow","lapras_shadow","shiftry_shadow","gallade_shadow","hypno_shadow","sableye_shadow","alakazam_shadow","exeggutor","exeggutor_shadow","sharpedo","sharpedo_shadow","metagross","metagross_shadow","houndoom","houndoom_shadow","charizard","charizard_shadow","blastoise","blastoise_shadow","fortress","fortress_shadow","dragonite","dragonite_shadow","steelix","crobat","crobat_shadow","mawile","mawile_shadow","scizor","scizor_shadow","zapdos","zapdos_shadow","moltres","moltres_shadow","articuno","articuno_shadow","suicune","suicune_shadow","rhyperior","machamp","machamp_shadow","rhydon","khangaskan","golem_alolan","graveler_alolan","gliscor","gliscor_shadow","victreebel","victreebel_shadow","gyarados","gyarados_shadow","arcanine","arcanine_shadow","venomoth","venomoth_shadow","cradily","lanturn","skuntank","skuntank_shadow","sealeo","beedrill","beedrill_shadow","weezing","weezing_shadow","golbat","arbok","arbok_shadow","wobbuffet","wobbuffet_shadow","lickitung","tentacruel","electrode","haunter","cloyster","gengar","clefable","golbat_shadow","poliwrath","poliwrath_shadow","forretress","forretress_shadow","magneton","magneton_shadow"]
         }],
         "exclude": [],
 		"slots": [{
             "pokemon": ["ferrothorn","alomomola","escavalier","galvantula","victini","serperior","klang","muk","grimer","muk_shadow","grimer_shadow"]
         }, {
-            "pokemon": ["lapras","lapras_shadow","shiftry","shiftry_shadow","gallade","gallade_shadow","hypno","hypno_shadow","sableye","sableye_shadow","alakazam","alakazam_shadow","exeggutor","exeggutor_shaexeggutor_shadow","sharpedo","sharpedo_shadow","metagross","metagross_shadow","houndoom","houhoundoom_shadow"]
+            "pokemon": ["lapras","lapras_shadow","shiftry","shiftry_shadow","gallade","gallade_shadow","hypno","hypno_shadow","sableye","sableye_shadow","alakazam","alakazam_shadow","exeggutor","exeggutor_shadow","sharpedo","sharpedo_shadow","metagross","metagross_shadow","houndoom","houndoom_shadow"]
         }, {
             "pokemon": ["charizard","charizard_shadow","blastoise","blastoise_shadow","forretress","forretress_shadow","dragonite","dragonite_shadow","magneton","magneton_shadow","steelix","golbat","golbat_shadow","crobat","crobat_shadow","mawile","mawile_shadow","scizor","scizor_shadow"]
         }, {
             "pokemon": ["zapdos","moltres","articuno","zapdos_shadow","moltres_shadow","articuno_shadow","suicune","suicune_shadow","rhyperior","machamp","machamp_shadow","rhydon","khangaskan","graveler_alolan","golem_alolan","gliscor","gliscor_shadow"]
         }, {
-            "pokemon": ["victreebel","victreebel_shadow","arcanine","arcanine_shadow","gyarados","gyarados_shadow","venomoth","venomoth_shadow","cradily","weezing","weezing_shadow","lanturn","skuntank","skuntskuntank_shadow","sealeo","beedrill","beedrill_shadow"]
+            "pokemon": ["victreebel","victreebel_shadow","arcanine","arcanine_shadow","gyarados","gyarados_shadow","venomoth","venomoth_shadow","cradily","weezing","weezing_shadow","lanturn","skuntank","skuntank_shadow","sealeo","beedrill","beedrill_shadow"]
         }, {
             "pokemon": ["wobbuffet","wobbuffet_shadow","arbok","arbok_shadow","lickitung","poliwrath","poliwrath_shadow","tentacruel","electrode","haunter","gengar","cloyster","clefable"]
         }]
@@ -464,8 +464,17 @@
             "filterType": "tag",
             "values": ["regional"]
         }]
+    }, {
+        "name": "shadow",
+        "title": "Shadow Cup",
+		"link": "https://silph.gg/t/vxtj/team-rocket-academy-presents-shadow-cup",
+        "include": [{
+            "filterType": "tag",
+            "values": ["shadow"]
+        }],
+        "exclude": []
     }],
-    "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable"],
+    "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega"],
     "pokemonRegions": [{
         "string": "gen1",
         "name": "kanto",
@@ -15055,7 +15064,8 @@
         "defaultIVs": {
             "cp1500": [20, 5, 8, 15],
             "cp2500": [36.5, 6, 14, 8]
-        }
+        },
+		"tags": ["regional"]
     }, {
         "dex": 627,
         "speciesId": "rufflet",
@@ -15725,7 +15735,7 @@
 		"types": ["grass", "poison"],
 		"fastMoves": ["RAZOR_LEAF", "VINE_WHIP"],
 		"chargedMoves": ["FRENZY_PLANT", "PETAL_BLIZZARD", "SLUDGE_BOMB", "SOLAR_BEAM"],
-		"tags": ["starter", "shadoweligible"],
+		"tags": ["starter", "shadoweligible", "mega"],
 		"defaultIVs": {
 			"cp1500": [15, 1, 15, 15],
 			"cp2500": [25.5, 0, 15, 9]
@@ -15744,7 +15754,7 @@
 		   "types": ["fire", "dragon"],
 		   "fastMoves": ["AIR_SLASH", "EMBER", "FIRE_SPIN", "WING_ATTACK"],
 		   "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW", "FIRE_BLAST", "FLAMETHROWER", "OVERHEAT"],
-		   "tags": ["starter", "shadoweligible"],
+		   "tags": ["starter", "shadoweligible", "mega"],
 		   "defaultIVs": {
 			   "cp1500": [14.5, 0, 11, 15],
 			   "cp2500": [24, 1, 15, 13]
@@ -15756,8 +15766,8 @@
 		   "speciesName": "Charizard (Mega Y)",
 		   "speciesId": "charizard_mega_y",
 		   "baseStats": {
-			   "atk": 290,
-			   "def": 193,
+			   "atk": 319,
+			   "def": 212,
 			   "hp": 169
 		   },
 		   "types": ["fire", "flying"],
@@ -15782,7 +15792,7 @@
 		   "types": ["water", "none"],
 		   "fastMoves": ["BITE", "WATER_GUN"],
 		   "chargedMoves": ["FLASH_CANNON", "HYDRO_CANNON", "HYDRO_PUMP", "ICE_BEAM", "SKULL_BASH"],
-		   "tags": ["starter", "shadoweligible"],
+		   "tags": ["starter", "shadoweligible", "mega"],
 		   "defaultIVs": {
 			   "cp1500": [14, 1, 15, 15],
 			   "cp2500": [23.5, 0, 14, 15]
@@ -15806,7 +15816,7 @@
 			   "cp2500": [27, 1, 15, 15]
 		   },
 		   "level25CP": 1097,
-		   "tags": ["shadoweligible"],
+		   "tags": ["shadoweligible", "mega"],
 		   "eliteMoves": ["BUG_BITE", "DRILL_RUN"]
 	   }, {
 		   "dex": 18,

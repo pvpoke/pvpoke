@@ -120,7 +120,7 @@ switch($cup){
 	case "grunt":
 		$league = 'Grunt Cup 4';
 		break;
-		
+
 	case "sorcerous":
 	case "sorcerous-mirror":
 		$league = 'Sorcerous Cup';
@@ -153,11 +153,27 @@ switch($cup){
 	case "kaiser":
 		$league = 'Kaiser Invitational';
 		break;
+
+	case "shadow":
+		$league = 'Shadow Cup';
+		break;
 }
 
 $META_TITLE = $league . ' PvP Rankings';
 
 $META_DESCRIPTION = 'Explore the top Pokemon for Pokemon GO PvP in the ' . $league . '. Rankings include top moves, matchups, and counters for every Pokemon, as well as ratings for different roles.';
+
+if(isset($_GET['p'])){
+	// Put Pokemon names in the meta title
+
+	$name = ucwords(str_replace('_',' ', explode('-', htmlspecialchars($_GET['p']))[0]));
+
+	$META_TITLE = $name . ' ' . $league . ' PvP Rankings';
+
+	$META_DESCRIPTION = 'Explore key matchups, moves, and counters for ' . $name . ' in ' . $league . '.';
+
+	$CANONICAL = '/rankings/' . $cup . '/' . $cp . '/overall/' . htmlspecialchars($_GET['p']) . '/';
+}
 
 require_once 'header.php';
 
@@ -207,12 +223,12 @@ require_once 'header.php';
 
 	<div class="continentals hide">
 		<div class="flex">
-			<div class="check" value="0"><span></span>Slot 1</div>
-			<div class="check" value="1"><span></span>Slot 2</div>
-			<div class="check" value="2"><span></span>Slot 3</div>
-			<div class="check" value="3"><span></span>Slot 4</div>
-			<div class="check" value="4"><span></span>Slot 5</div>
-			<div class="check" value="5"><span></span>Slot 6</div>
+			<div class="check" value="0"><span></span>Cliff</div>
+			<div class="check" value="1"><span></span>Sierra</div>
+			<div class="check" value="2"><span></span>Arlo</div>
+			<div class="check" value="3"><span></span>Giovanni</div>
+			<div class="check" value="4"><span></span>James</div>
+			<div class="check" value="5"><span></span>Jessie</div>
 		</div>
 	</div>
 
