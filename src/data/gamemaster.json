@@ -190,7 +190,7 @@
             "values": ["skarmory", "hypno", "drifblim", "beheeyem"]
         }, {
             "filterType": "tag",
-            "values": ["legendary", "mythical", "shadow", "galarian"]
+            "values": ["legendary", "mythical", "shadow", "galarian", "mega"]
         }, {
             "filterType": "type",
             "values": ["dark"]
@@ -247,7 +247,7 @@
         }],
         "exclude": [{
             "filterType": "tag",
-            "values": ["legendary", "mythical", "alolan", "shadow"]
+            "values": ["legendary", "mythical", "alolan", "shadow", "mega"]
         }, {
             "filterType": "type",
             "values": ["fighting", "flying", "normal", "psychic", "steel", "fairy"]
@@ -335,7 +335,7 @@
         "include": [],
         "exclude": [{
             "filterType": "tag",
-            "values": ["legendary", "mythical"]
+            "values": ["legendary", "mythical", "mega"]
         }]
     }, {
         "name": "grunt",
@@ -382,7 +382,7 @@
         }],
         "exclude": [{
             "filterType": "tag",
-            "values": ["legendary", "mythical", "shadow"]
+            "values": ["legendary", "mythical", "shadow", "mega"]
         }, {
             "filterType": "id",
             "values": ["drapion", "mawile", "lapras", "dewgong", "vigoroth", "slaking", "castform", "rufflet", "braviary", "chansey", "blissey", "mr_mime", "jynx", "eevee", "espeon", "delibird", "miltank", "gardevoir", "metang", "chimecho", "chatot", "skorupi", "sigilyph", "cryogonal", "glaceon", "castform_snowy", "raichu_alolan", "obstagoon", "bouffalant", "whimsicott"]
@@ -451,7 +451,7 @@
         }],
         "exclude": [{
             "filterType": "tag",
-            "values": ["legendary", "mythical"]
+            "values": ["legendary", "mythical", "mega"]
         }]
     }, {
         "name": "kaiser",
@@ -462,7 +462,7 @@
             "values": ["stunfisk_galarian","bastiodon","registeel","ferrothorn","deoxys_defense","skarmory","altaria"]
         }, {
             "filterType": "tag",
-            "values": ["regional"]
+            "values": ["regional", "mega"]
         }]
     }, {
         "name": "shadow",
@@ -15768,15 +15768,15 @@
         "baseStats": {
             "atk": 319,
             "def": 212,
-            "hp": 169
+            "hp": 186
         },
         "types": ["fire", "flying"],
         "fastMoves": ["AIR_SLASH", "EMBER", "FIRE_SPIN", "WING_ATTACK"],
         "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW", "FIRE_BLAST", "FLAMETHROWER", "OVERHEAT"],
-        "tags": ["starter", "shadoweligible"],
+        "tags": ["starter", "shadoweligible", "mega"],
         "defaultIVs": {
-            "cp1500": [12.5, 9, 14, 14],
-            "cp2500": [21.5, 8, 11, 9]
+			"cp1500": [12, 7, 15, 13],
+            "cp2500": [20, 6, 14, 15]
         },
         "level25CP": 2693,
         "eliteMoves": ["EMBER", "WING_ATTACK", "BLAST_BURN", "FLAMETHROWER"]
