@@ -450,14 +450,14 @@ function Pokemon(id, i, b){
 		var minAttack = self.generateIVCombinations("atk", -1, 1)[0].atk;
 		var maxAttack = self.generateIVCombinations("atk", 1, 1)[0].atk;
 		var maxDefense = defender.generateIVCombinations("def", 1, 1)[0].def;
-		var minDamage = battle.calculateDamageByStats(minAttack, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
-		var maxDamage = battle.calculateDamageByStats(maxAttack, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
+		var minDamage = battle.calculateDamageByStats(self, defender, minAttack, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
+		var maxDamage = battle.calculateDamageByStats(self, defender, maxAttack, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
 
 		var breakpoints = [];
 
 		for(var i = minDamage; i <= maxDamage; i++){
-			var breakpoint = battle.calculateBreakpoint(i, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
-			var maxDefenseBreakpoint = battle.calculateBreakpoint(i, maxDefense, effectiveness, self.fastMove);
+			var breakpoint = battle.calculateBreakpoint(self, defender, i, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
+			var maxDefenseBreakpoint = battle.calculateBreakpoint(self, defender, i, maxDefense, effectiveness, self.fastMove);
 
 			if(maxDefenseBreakpoint > maxAttack){
 				maxDefenseBreakpoint = -1;
@@ -480,14 +480,13 @@ function Pokemon(id, i, b){
 		var minDefense = self.generateIVCombinations("def", -1, 1)[0].def;
 		var maxDefense = self.generateIVCombinations("def", 1, 1)[0].def;
 		var maxAttack = attacker.generateIVCombinations("atk", 1, 1)[0].atk * attacker.shadowAtkMult;
-		var minDamage = battle.calculateDamageByStats(attacker.stats.atk * attacker.shadowAtkMult, maxDefense, effectiveness, attacker.fastMove);
-		var maxDamage = battle.calculateDamageByStats(attacker.stats.atk * attacker.shadowAtkMult, minDefense, effectiveness, attacker.fastMove);
-
+		var minDamage = battle.calculateDamageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult, maxDefense, effectiveness, attacker.fastMove);
+		var maxDamage = battle.calculateDamageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult, minDefense, effectiveness, attacker.fastMove);
 		var breakpoints = [];
 
 		for(var i = minDamage; i <= maxDamage; i++){
-			var bulkpoint = battle.calculateBulkpoint(i, attacker.stats.atk * attacker.shadowAtkMult, effectiveness, attacker.fastMove);
-			var maxAttackBulkpoint = battle.calculateBulkpoint(i, maxAttack, effectiveness, attacker.fastMove);
+			var bulkpoint = battle.calculateBulkpoint(attacker, self, i, attacker.stats.atk * attacker.shadowAtkMult, effectiveness, attacker.fastMove);
+			var maxAttackBulkpoint = battle.calculateBulkpoint(attacker, self, i, maxAttack, effectiveness, attacker.fastMove);
 
 			if(maxAttackBulkpoint > maxDefense){
 				maxAttackBulkpoint = -1;

@@ -201,6 +201,14 @@ function Battle(){
 			}
 		}
 
+		if(attacker.hasTag("mega")){
+			bonusMultiplier *= 1.049;
+		}
+
+		if(defender.hasTag("mega")){
+			bonusMultiplier *= (1/1.049);
+		}
+
 		var damage = Math.floor(move.power * move.stab * ( attacker.getEffectiveStat(0) / defender.getEffectiveStat(1)) * effectiveness * chargeMultiplier * 0.5 * bonusMultiplier) + 1;
 
 		return damage;
@@ -208,10 +216,17 @@ function Battle(){
 
 	// Calculate damage given stats and effectiveness
 
-	this.calculateDamageByStats = function(attack, defense, effectiveness, move){
+	this.calculateDamageByStats = function(attacker, defender, attack, defense, effectiveness, move){
 
 		var bonusMultiplier = 1.3;
 
+		if(attacker.hasTag("mega")){
+			bonusMultiplier *= 1.049;
+		}
+
+		if(defender.hasTag("mega")){
+			bonusMultiplier *= (1/1.049);
+		}
 		var damage = Math.floor(move.power * move.stab * (attack/defense) * effectiveness * 0.5 * bonusMultiplier) + 1;
 
 		return damage;
@@ -219,9 +234,17 @@ function Battle(){
 
 	// Solve for Attack given the damage, defense, effectiveness, and move
 
-	this.calculateBreakpoint = function(damage, defense, effectiveness, move){
+	this.calculateBreakpoint = function(attacker, defender, damage, defense, effectiveness, move){
 
 		var bonusMultiplier = 1.3;
+
+		if(attacker.hasTag("mega")){
+			bonusMultiplier *= 1.049;
+		}
+
+		if(defender.hasTag("mega")){
+			bonusMultiplier *= (1/1.049);
+		}
 
 		var attack = ((damage - 1) * defense) / (move.power * move.stab * effectiveness * 0.5 * bonusMultiplier);
 
@@ -230,9 +253,17 @@ function Battle(){
 
 	// Solve for Defense given the damage, attack, effectiveness, and move
 
-	this.calculateBulkpoint = function(damage, attack, effectiveness, move){
+	this.calculateBulkpoint = function(attacker, defender, damage, attack, effectiveness, move){
 
 		var bonusMultiplier = 1.3;
+
+		if(attacker.hasTag("mega")){
+			bonusMultiplier *= 1.049;
+		}
+
+		if(defender.hasTag("mega")){
+			bonusMultiplier *= (1/1.049);
+		}
 
 		var defense =  (move.power * move.stab * effectiveness * 0.5 * bonusMultiplier * attack) / (damage);
 

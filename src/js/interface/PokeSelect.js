@@ -813,7 +813,7 @@ function PokeSelect(element, i){
 		if(battle.getOpponent(selectedPokemon.index)){
 			var opponent = battle.getOpponent(selectedPokemon.index);
 			var effectiveness = opponent.typeEffectiveness[move.type];
-			displayDamage = battle.calculateDamageByStats(selectedPokemon.stats.atk * opponent.shadowAtkMult, opponent.stats.def * selectedPokemon.shadowDefMult, effectiveness, move);
+			displayDamage = battle.calculateDamageByStats(selectedPokemon, opponent, selectedPokemon.stats.atk * opponent.shadowAtkMult, opponent.stats.def * selectedPokemon.shadowDefMult, effectiveness, move);
 		}
 
 		var dpe = Math.floor( (displayDamage / move.energy) * 100) / 100;
