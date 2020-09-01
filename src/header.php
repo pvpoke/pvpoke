@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.15.16';
+$SITE_VERSION = '1.16.0';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -83,7 +83,7 @@ if(! isset($OG_IMAGE)){
 <link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json?v=2">
 
 <link rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=88">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=89">
 
 <?php if(strpos($META_TITLE, 'Train') !== false): ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=14">
@@ -188,6 +188,4 @@ if(! isset($OG_IMAGE)){
 	</header>
 	<div class="main-wrap">
 		<div id="main">
-			<?php if((isset($_SETTINGS->gamemaster)) && ($_SETTINGS->gamemaster == 'gamemaster-mega')): ?>
-				<div class="section white"><b>Information for Mega Evolutions is speculative! It may not be accurate to how Mega Evolution stats and mechanics are implemented. Don't make any investments based on the speculation below.</b></div>
-			<?php endif; ?>
+			<div class="section white hide mega-warning"><b>Stats for released Mega Evolutions are official but PvP performance is currently unknown. Simulation results should be disregarded until more info is available. Stats for unreleased Mega Evolutions are speculative and unofficial.</b></div>

@@ -15834,6 +15834,7 @@
             "cp1500": [14.5, 10, 14, 14],
             "cp2500": [24.5, 6, 13, 14]
         },
+		"tags": ["mega"],
         "eliteMoves": ["WING_ATTACK", "AIR_CUTTER"]
     }, {
         "dex": 65,
@@ -15851,7 +15852,7 @@
             "cp1500": [12.5, 9, 7, 14],
             "cp2500": [21.5, 5, 5, 9]
         },
-        "tags": ["shadoweligible"],
+        "tags": ["shadoweligible", "mega"],
         "level25CP": 2748,
         "eliteMoves": ["COUNTER", "DAZZLING_GLEAM", "PSYCHIC"]
     }, {
@@ -15869,7 +15870,8 @@
         "defaultIVs": {
             "cp1500": [14.5, 9, 15, 9],
             "cp2500": [25, 5, 10, 6]
-        }
+        },
+		"tags": ["mega"]
     }, {
         "dex": 94,
         "speciesName": "Gengar (Mega)",
@@ -15886,6 +15888,7 @@
             "cp1500": [12.5, 8, 10, 13],
             "cp2500": [21, 9, 15, 7]
         },
+		"tags": ["mega"],
         "eliteMoves": ["LICK", "SLUDGE_WAVE", "DARK_PULSE", "PSYCHIC", "SHADOW_PUNCH"]
     }, {
         "dex": 115,
@@ -15899,7 +15902,7 @@
         "types": ["normal", "none"],
         "fastMoves": ["LOW_KICK", "MUD_SLAP"],
         "chargedMoves": ["BRICK_BREAK", "CRUNCH", "EARTHQUAKE", "OUTRAGE", "STOMP", "POWER_UP_PUNCH"],
-        "tags": ["regional"],
+        "tags": ["regional", "mega"],
         "defaultIVs": {
             "cp1500": [14, 10, 15, 11],
             "cp2500": [23.5, 9, 10, 15]
@@ -15921,7 +15924,7 @@
             "cp1500": [13, 5, 10, 15],
             "cp2500": [21.5, 10, 13, 12]
         },
-        "tags": ["shadoweligible"],
+        "tags": ["shadoweligible", "mega"],
         "level25CP": 2640,
         "eliteMoves": ["SUBMISSION"]
     }, {
@@ -15940,7 +15943,7 @@
             "cp1500": [11.5, 11, 6, 14],
             "cp2500": [19, 9, 13, 13]
         },
-        "tags": ["shadoweligible"],
+        "tags": ["shadoweligible", "mega"],
         "level25CP": 3009,
         "eliteMoves": ["DRAGON_TAIL", "DRAGON_PULSE", "AQUA_TAIL"]
     }, {
@@ -15955,6 +15958,7 @@
         "types": ["rock", "flying"],
         "fastMoves": ["BITE", "STEEL_WING", "ROCK_THROW"],
         "chargedMoves": ["ANCIENT_POWER", "HYPER_BEAM", "IRON_HEAD", "ROCK_SLIDE", "EARTH_POWER"],
+		"tags": ["mega"],
         "defaultIVs": {
             "cp1500": [13, 6, 15, 14],
             "cp2500": [22, 6, 10, 15]
@@ -16013,7 +16017,7 @@
             "cp1500": [13, 7, 7, 12],
             "cp2500": [22, 5, 10, 6]
         },
-        "tags": ["shadoweligible"],
+        "tags": ["shadoweligible", "mega"],
         "level25CP": 2688,
         "eliteMoves": ["DRAGON_PULSE"]
     }, {
@@ -16028,6 +16032,7 @@
         "types": ["steel", "ground"],
         "fastMoves": ["DRAGON_TAIL", "IRON_TAIL", "THUNDER_FANG"],
         "chargedMoves": ["CRUNCH", "EARTHQUAKE", "HEAVY_SLAM"],
+		"tags": ["mega"],
         "defaultIVs": {
             "cp1500": [15, 7, 11, 11],
             "cp2500": [25, 5, 12, 13]
@@ -16048,7 +16053,7 @@
             "cp1500": [13.5, 7, 9, 11],
             "cp2500": [22.5, 6, 13, 8]
         },
-        "tags": ["shadoweligible"],
+        "tags": ["shadoweligible", "mega"],
         "level25CP": 2581
     }, {
         "dex": 214,
@@ -16062,7 +16067,7 @@
         "types": ["bug", "fighting"],
         "fastMoves": ["COUNTER", "STRUGGLE_BUG"],
         "chargedMoves": ["CLOSE_COMBAT", "EARTHQUAKE", "MEGAHORN"],
-        "tags": ["regional"],
+        "tags": ["regional", "mega"],
         "defaultIVs": {
             "cp1500": [11.5, 5, 13, 6],
             "cp2500": [19, 6, 15, 6]
@@ -16083,7 +16088,7 @@
             "cp1500": [14, 6, 14, 14],
             "cp2500": [23.5, 9, 15, 9]
         },
-        "tags": ["shadoweligible"],
+        "tags": ["shadoweligible", "mega"],
         "level25CP": 2416
     }, {
         "dex": 248,
@@ -16101,7 +16106,7 @@
             "cp1500": [10, 14, 15, 7],
             "cp2500": [17, 5, 7, 15]
         },
-        "tags": ["shadoweligible"],
+        "tags": ["shadoweligible", "mega"],
         "level25CP": 3435,
         "eliteMoves": ["SMACK_DOWN"]
     }, {
@@ -16116,7 +16121,7 @@
         "types": ["grass", "dragon"],
         "fastMoves": ["BULLET_SEED", "FURY_CUTTER"],
         "chargedMoves": ["AERIAL_ACE", "EARTHQUAKE", "LEAF_BLADE", "FRENZY_PLANT", "DRAGON_CLAW"],
-        "tags": ["starter"],
+        "tags": ["starter", "mega"],
         "defaultIVs": {
             "cp1500": [13, 15, 12, 15],
             "cp2500": [22, 9, 12, 15]
@@ -16134,7 +16139,7 @@
         "types": ["fire", "fighting"],
         "fastMoves": ["COUNTER", "FIRE_SPIN"],
         "chargedMoves": ["BRAVE_BIRD", "FOCUS_BLAST", "OVERHEAT", "STONE_EDGE", "BLAST_BURN", "BLAZE_KICK"],
-        "tags": ["starter"],
+        "tags": ["starter", "mega"],
         "defaultIVs": {
             "cp1500": [13, 12, 10, 12],
             "cp2500": [22, 6, 10, 12]
@@ -16152,7 +16157,7 @@
         "types": ["water", "ground"],
         "fastMoves": ["MUD_SHOT", "WATER_GUN"],
         "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "SURF", "HYDRO_CANNON", "MUDDY_WATER"],
-        "tags": ["starter", "shadoweligible"],
+        "tags": ["starter", "shadoweligible", "mega"],
         "defaultIVs": {
             "cp1500": [12.5, 7, 13, 7],
             "cp2500": [21, 5, 5, 14]
@@ -16175,7 +16180,7 @@
             "cp1500": [12, 11, 8, 13],
             "cp2500": [19.5, 15, 15, 13]
         },
-        "tags": ["shadoweligible"],
+        "tags": ["shadoweligible", "mega"],
         "eliteMoves": ["SYNCHRONOISE"],
         "level25CP": 2861
     }, {
@@ -16195,7 +16200,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1158,
-        "tags": ["shadoweligible"]
+        "tags": ["shadoweligible", "mega"]
     }, {
         "dex": 303,
         "speciesName": "Mawile (Mega)",
@@ -16213,7 +16218,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 1446,
-        "tags": ["shadoweligible"]
+        "tags": ["shadoweligible", "mega"]
     }, {
         "dex": 306,
         "speciesName": "Aggron (Mega)",
@@ -16226,6 +16231,7 @@
         "types": ["steel", "none"],
         "fastMoves": ["DRAGON_TAIL", "IRON_TAIL", "SMACK_DOWN"],
         "chargedMoves": ["HEAVY_SLAM", "STONE_EDGE", "THUNDER"],
+		"tags": ["mega"],
         "defaultIVs": {
             "cp1500": [13, 10, 9, 13],
             "cp2500": [22, 6, 7, 14]
@@ -16242,6 +16248,7 @@
         "types": ["fighting", "psychic"],
         "fastMoves": ["COUNTER", "PSYCHO_CUT"],
         "chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH", "PSYCHIC", "POWER_UP_PUNCH"],
+		"tags": ["mega"],
         "defaultIVs": {
             "cp1500": [22, 6, 13, 14],
             "cp2500": [40, 15, 15, 15]
@@ -16258,6 +16265,7 @@
         "types": ["electric", "none"],
         "fastMoves": ["CHARGE_BEAM", "SNARL"],
         "chargedMoves": ["FLAME_BURST", "THUNDER", "WILD_CHARGE"],
+		"tags": ["mega"],
         "defaultIVs": {
             "cp1500": [15, 13, 10, 14],
             "cp2500": [25, 9, 13, 14]
@@ -16279,7 +16287,7 @@
             "cp2500": [28, 5, 9, 15]
         },
         "level25CP": 2029,
-        "tags": ["shadoweligible"]
+        "tags": ["shadoweligible", "mega"]
     }, {
         "dex": 323,
         "speciesName": "Camerupt (Mega)",
@@ -16308,6 +16316,7 @@
         "types": ["dragon", "fairy"],
         "fastMoves": ["DRAGON_BREATH", "PECK"],
         "chargedMoves": ["DAZZLING_GLEAM", "DRAGON_PULSE", "SKY_ATTACK"],
+		"tags": ["mega"],
         "defaultIVs": {
             "cp1500": [17.5, 7, 14, 7],
             "cp2500": [29, 7, 12, 11]
@@ -16329,7 +16338,7 @@
             "cp2500": [25, 5, 13, 15]
         },
         "level25CP": 2240,
-        "tags": ["shadoweligible"]
+        "tags": ["shadoweligible", "mega"]
     }, {
         "dex": 359,
         "speciesName": "Absol (Mega)",
@@ -16347,7 +16356,7 @@
             "cp2500": [27, 10, 13, 15]
         },
         "level25CP": 1534,
-        "tags": ["shadoweligible"]
+        "tags": ["shadoweligible", "mega"]
     }, {
         "dex": 531,
         "speciesId": "audino_mega",
@@ -16363,7 +16372,8 @@
         "defaultIVs": {
             "cp1500": [22, 8, 12, 11],
             "cp2500": [39.5, 14, 15, 14]
-        }
+        },
+		"tags": ["mega"]
     }, {
         "dex": 362,
         "speciesName": "Glalie (Mega)",
@@ -16379,7 +16389,8 @@
         "defaultIVs": {
             "cp1500": [16.5, 11, 15, 13],
             "cp2500": [28, 5, 14, 14]
-        }
+        },
+		"tags": ["mega"]
     }, {
         "dex": 373,
         "speciesName": "Salamence (Mega)",
@@ -16397,7 +16408,7 @@
             "cp2500": [18, 8, 8, 15]
         },
         "level25CP": 3220,
-        "tags": ["shadoweligible"],
+        "tags": ["shadoweligible", "mega"],
         "eliteMoves": ["OUTRAGE"]
     }, {
         "dex": 376,
@@ -16416,7 +16427,7 @@
             "cp2500": [18.5, 7, 12, 11]
         },
         "level25CP": 3136,
-        "tags": ["shadoweligible"],
+        "tags": ["shadoweligible", "mega"],
         "eliteMoves": ["METEOR_MASH"]
     }, {
         "dex": 380,
@@ -16430,7 +16441,7 @@
         "types": ["dragon", "psychic"],
         "fastMoves": ["DRAGON_BREATH", "ZEN_HEADBUTT", "CHARM"],
         "chargedMoves": ["OUTRAGE", "PSYCHIC", "THUNDER"],
-        "tags": ["legendary"],
+        "tags": ["legendary", "mega"],
         "defaultIVs": {
             "cp1500": [11.5, 9, 5, 9],
             "cp2500": [19, 5, 14, 10]
@@ -16447,7 +16458,7 @@
         "types": ["dragon", "psychic"],
         "fastMoves": ["DRAGON_BREATH", "ZEN_HEADBUTT"],
         "chargedMoves": ["DRAGON_CLAW", "PSYCHIC", "SOLAR_BEAM"],
-        "tags": ["legendary"],
+        "tags": ["legendary", "mega"],
         "defaultIVs": {
             "cp1500": [11, 7, 8, 9],
             "cp2500": [18.5, 6, 7, 9]
@@ -16464,7 +16475,7 @@
         "types": ["dragon", "flying"],
         "fastMoves": ["AIR_SLASH", "DRAGON_TAIL"],
         "chargedMoves": ["AERIAL_ACE", "ANCIENT_POWER", "OUTRAGE"],
-        "tags": ["legendary"],
+        "tags": ["legendary", "mega"],
         "defaultIVs": {
             "cp1500": [11, 6, 5, 11],
             "cp2500": [18, 7, 7, 15]
@@ -16484,7 +16495,8 @@
         "defaultIVs": {
             "cp1500": [14.5, 7, 15, 11],
             "cp2500": [24, 5, 14, 15]
-        }
+        },
+		"tags": ["mega"]
     }, {
         "dex": 445,
         "speciesName": "Garchomp (Mega)",
@@ -16500,7 +16512,8 @@
         "defaultIVs": {
             "cp1500": [10, 5, 14, 11],
             "cp2500": [17, 5, 7, 10]
-        }
+        },
+		"tags": ["mega"]
     }, {
         "dex": 448,
         "speciesName": "Lucario (Mega)",
@@ -16516,7 +16529,8 @@
         "defaultIVs": {
             "cp1500": [14.5, 7, 5, 13],
             "cp2500": [23.5, 11, 9, 15]
-        }
+        },
+		"tags": ["mega"]
     }, {
         "dex": 475,
         "speciesName": "Gallade (Mega)",
@@ -16534,7 +16548,7 @@
             "cp2500": [20, 6, 10, 15]
         },
         "level25CP": 2867,
-        "tags": ["shadoweligible"],
+        "tags": ["shadoweligible", "mega"],
         "eliteMoves": ["SYNCHRONOISE"]
     }, {
         "dex": 460,
@@ -16553,7 +16567,7 @@
             "cp2500": [27, 7, 8, 14]
         },
         "level25CP": 2129,
-        "tags": ["shadoweligible"]
+        "tags": ["shadoweligible", "mega"]
     }, {
            "dex": 382,
            "speciesName": "Kyogre (Primal)",

@@ -502,6 +502,23 @@ header{
 			}
 		}
 
+		.mega-cp-container{
+			border: 1px solid #888;
+		    border-radius: 8px;
+		    padding: 5px;
+			margin:10px 0;
+			text-align: center;
+			display: none;
+
+			h3.section-title{
+				font-size:12px;
+			}
+
+			.mega-cp{
+				font-size:14px;
+			}
+		}
+
 		.advanced-section{
 
 			.fields{
@@ -573,6 +590,16 @@ header{
 						width:12px;
 						height:12px;
 					}
+
+					&.auto-level{
+						margin-top:10px;
+						text-align: left;
+						display: block;
+					}
+				}
+
+				.check-group{
+					text-align: left;
 				}
 
 				.level-cap-group{

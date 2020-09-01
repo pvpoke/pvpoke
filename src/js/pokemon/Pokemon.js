@@ -56,6 +56,7 @@ function Pokemon(id, i, b){
 	this.chargedMoves = [];
 
 	this.isCustom = false; // Does this Pokemon have custom set levels and IV's?
+	this.autoLevel = false; // Automatically adjust a Pokemon to league CP when adjusting IVs
 
 	this.index = i;
 
@@ -190,7 +191,7 @@ function Pokemon(id, i, b){
 
 		var isDefault = false;
 
-		if((this.level == 40)&&(this.ivs.atk == 0) && (this.ivs.def == 0) && (this.ivs.hp == 0)){
+		if((this.level == 40)&&(this.ivs.atk == 0) && (this.ivs.def == 0) && (this.ivs.hp == 0) && (! self.autoLevel)){
 			isDefault = true;
 		}
 
@@ -1108,8 +1109,20 @@ function Pokemon(id, i, b){
 			this.ivs.hp = parseInt(amount);
 		}
 
-		this.isCustom = true;
-		this.initialize(false);
+		// Automatically adjust to league cap
+
+		if(self.autoLevel){
+			var level = self.levelCap;
+			self.cp = 100000;
+
+			while(self.cp > battle.getCP()){
+				self.setLevel(level, true);
+				level -= 0.5;
+			}
+		} else{
+			self.isCustom = true;
+			self.initialize(false);
+		}
 	}
 
 	// Set battle reference object

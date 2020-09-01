@@ -12,6 +12,10 @@ var GameMaster = (function () {
 		object.teamPools = [];
 		object.loadedData = 0;
 
+		if(settings.gamemaster == "gamemaster-mega"){
+			$(".mega-warning").show();
+		}
+
 		$.getJSON( webRoot+"data/"+settings.gamemaster+".json?v="+siteVersion, function( data ){
 			object.data = data;
 
@@ -444,6 +448,10 @@ var GameMaster = (function () {
 					}
 
 					if(permaBannedList.indexOf(pokemon.speciesId) > -1){
+						continue;
+					}
+
+					if((settings.gamemaster != "gamemaster-mega")&&(pokemon.hasTag("mega"))){
 						continue;
 					}
 
