@@ -501,7 +501,7 @@
         "dexStart": 494,
         "dexEnd": 649
     }],
-    "shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "charmander", "charmeleon", "charizard", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "bellossom", "politoed", "scizor", "houndour", "houndoom", "larvitar", "pupitar", "tyranitar", "mudkip", "marshtomp", "swampert", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "trapinch", "vibrava", "flygon", "cacnea", "cacturne", "shuppet", "banette", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "sableye", "zapdos", "moltres", "delibird", "stantler", "absol", "bagon", "shelgon", "salamence", "snover", "abomasnow", "raikou", "vulpix", "ninetales", "exeggcute", "exeggutor", "omanyte", "omastar", "misdreavus", "mismagius", "carvanha", "sharpedo", "pinsir", "mawile", "beldum", "metang", "metagross", "entei", "ekans", "arbok", "koffing", "weezing", "nidoran_female", "nidorina", "nidoran_male", "nidorino", "nidoqueen", "nidoking", "machop", "machoke", "machamp", "gligar", "gliscor", "shuckle", "stunky", "skuntank", "suicune", "pineco", "forretress", "mewtwo"],
+    "shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "venusaur_mega", "charmander", "charmeleon", "charizard", "charizard_mega_x", "charizard_mega_y", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "beedrill_mega", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "alakazam_mega", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "gyarados_mega", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "ampharos_mega", "bellossom", "politoed", "scizor", "scizor_mega", "houndour", "houndoom", "houndoom_mega", "larvitar", "pupitar", "tyranitar", "tyranitar_mega", "mudkip", "marshtomp", "swampert", "swampert_mega", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "gardevoir_mega", "trapinch", "vibrava", "flygon", "cacnea", "cacturne", "shuppet", "banette", "banette_mega", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "gallade_mega", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "sableye", "sableye_mega", "zapdos", "moltres", "delibird", "stantler", "absol", "bagon", "shelgon", "salamence", "salamence_mega", "snover", "abomasnow", "abomasnow_mega", "raikou", "vulpix", "ninetales", "exeggcute", "exeggutor", "omanyte", "omastar", "misdreavus", "mismagius", "carvanha", "sharpedo", "sharpedo_mega", "pinsir", "pinsir_mega", "mawile", "mawile_mega", "beldum", "metang", "metagross", "metagross_mega", "entei", "ekans", "arbok", "koffing", "weezing", "nidoran_female", "nidorina", "nidoran_male", "nidorino", "nidoqueen", "nidoking", "machop", "machoke", "machamp", "gligar", "gliscor", "shuckle", "stunky", "skuntank", "suicune", "pineco", "forretress", "mewtwo", "mewtwo_mega_x", "mewtwo_mega_y"],
     "cliffhangerTiers": [{
         "league": 1500,
         "max": 17,
@@ -15736,7 +15736,7 @@
         "fastMoves": ["RAZOR_LEAF", "VINE_WHIP"],
         "chargedMoves": ["FRENZY_PLANT", "PETAL_BLIZZARD", "SLUDGE_BOMB", "SOLAR_BEAM"],
         "tags": ["starter", "shadoweligible", "mega"],
-        "level25CP": 1000,
+        "level25CP": 2324,
         "defaultIVs": {
             "cp1500": [15, 7, 6, 12],
             "cp2500": [24.5, 6, 12, 15]
@@ -15755,7 +15755,7 @@
         "fastMoves": ["AIR_SLASH", "EMBER", "FIRE_SPIN", "WING_ATTACK"],
         "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW", "FIRE_BLAST", "FLAMETHROWER", "OVERHEAT"],
         "tags": ["starter", "shadoweligible", "mega"],
-        "level25CP": 1000,
+        "level25CP": 2424,
         "defaultIVs": {
             "cp1500": [14, 6, 15, 13],
             "cp2500": [24, 7, 12, 7]
@@ -15774,7 +15774,7 @@
         "fastMoves": ["AIR_SLASH", "EMBER", "FIRE_SPIN", "WING_ATTACK"],
         "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW", "FIRE_BLAST", "FLAMETHROWER", "OVERHEAT"],
         "tags": ["starter", "shadoweligible", "mega"],
-        "level25CP": 1000,
+        "level25CP": 2826,
         "defaultIVs": {
             "cp1500": [12, 7, 15, 13],
             "cp2500": [20, 6, 14, 15]
@@ -15816,7 +15816,7 @@
             "cp2500": [27, 8, 15, 7]
         },
         "tags": ["shadoweligible", "mega"],
-        "level25CP": 1000,
+        "level25CP": 2099,
         "eliteMoves": ["BUG_BITE", "DRILL_RUN"]
     }, {
         "dex": 18,
@@ -15852,7 +15852,7 @@
             "cp2500": [21.5, 5, 5, 9]
         },
         "tags": ["shadoweligible"],
-        "level25CP": 1000,
+        "level25CP": 2748,
         "eliteMoves": ["COUNTER", "DAZZLING_GLEAM", "PSYCHIC"]
     }, {
         "dex": 80,
@@ -15922,7 +15922,7 @@
             "cp2500": [21.5, 10, 13, 12]
         },
         "tags": ["shadoweligible"],
-        "level25CP": 1000,
+        "level25CP": 2640,
         "eliteMoves": ["SUBMISSION"]
     }, {
         "dex": 130,
@@ -15941,7 +15941,7 @@
             "cp2500": [19, 9, 13, 13]
         },
         "tags": ["shadoweligible"],
-        "level25CP": 2119,
+        "level25CP": 3009,
         "eliteMoves": ["DRAGON_TAIL", "DRAGON_PULSE", "AQUA_TAIL"]
     }, {
         "dex": 142,
@@ -15972,7 +15972,7 @@
         "fastMoves": ["CONFUSION", "PSYCHO_CUT"],
         "chargedMoves": ["FLAMETHROWER", "FOCUS_BLAST", "HYPER_BEAM", "ICE_BEAM", "PSYCHIC", "SHADOW_BALL", "THUNDERBOLT", "PSYSTRIKE"],
         "tags": ["legendary", "shadoweligible", "mega"],
-        "level25CP": 1000,
+        "level25CP": 3478,
         "defaultIVs": {
             "cp1500": [10, 6, 9, 15],
             "cp2500": [16.5, 11, 14, 9]
@@ -15991,7 +15991,7 @@
         "fastMoves": ["CONFUSION", "PSYCHO_CUT"],
         "chargedMoves": ["FLAMETHROWER", "FOCUS_BLAST", "HYPER_BEAM", "ICE_BEAM", "PSYCHIC", "SHADOW_BALL", "THUNDERBOLT", "PSYSTRIKE"],
         "tags": ["legendary", "shadoweligible", "mega"],
-        "level25CP": 1000,
+        "level25CP": 3652,
         "defaultIVs": {
             "cp1500": [9.5, 11, 12, 10],
             "cp2500": [16, 7, 9, 11]
@@ -16014,7 +16014,7 @@
             "cp2500": [22, 5, 10, 6]
         },
         "tags": ["shadoweligible"],
-        "level25CP": 1000,
+        "level25CP": 2688,
         "eliteMoves": ["DRAGON_PULSE"]
     }, {
         "dex": 208,
@@ -16049,7 +16049,7 @@
             "cp2500": [22.5, 6, 13, 8]
         },
         "tags": ["shadoweligible"],
-        "level25CP": 1000
+        "level25CP": 2581
     }, {
         "dex": 214,
         "speciesName": "Heracross (Mega)",
@@ -16084,7 +16084,7 @@
             "cp2500": [23.5, 9, 15, 9]
         },
         "tags": ["shadoweligible"],
-        "level25CP": 1000
+        "level25CP": 2416
     }, {
         "dex": 248,
         "speciesName": "Tyranitar (Mega)",
@@ -16102,7 +16102,7 @@
             "cp2500": [17, 5, 7, 15]
         },
         "tags": ["shadoweligible"],
-        "level25CP": 1000,
+        "level25CP": 3435,
         "eliteMoves": ["SMACK_DOWN"]
     }, {
         "dex": 254,
@@ -16157,7 +16157,8 @@
             "cp1500": [12.5, 7, 13, 7],
             "cp2500": [21, 5, 5, 14]
         },
-        "eliteMoves": ["HYDRO_CANNON"]
+        "eliteMoves": ["HYDRO_CANNON"],
+        "level25CP": 2796
     }, {
         "dex": 282,
         "speciesName": "Gardevoir (Mega)",
@@ -16175,7 +16176,8 @@
             "cp2500": [19.5, 15, 15, 13]
         },
         "tags": ["shadoweligible"],
-        "eliteMoves": ["SYNCHRONOISE"]
+        "eliteMoves": ["SYNCHRONOISE"],
+        "level25CP": 2861
     }, {
         "dex": 302,
         "speciesName": "Sableye (Mega)",
@@ -16192,7 +16194,7 @@
             "cp1500": [29.5, 5, 8, 11],
             "cp2500": [40, 15, 15, 15]
         },
-        "level25CP": 858,
+        "level25CP": 1158,
         "tags": ["shadoweligible"]
     }, {
         "dex": 303,
@@ -16210,7 +16212,7 @@
             "cp1500": [23.5, 6, 5, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "level25CP": 961,
+        "level25CP": 1446,
         "tags": ["shadoweligible"]
     }, {
         "dex": 306,
@@ -16276,7 +16278,7 @@
             "cp1500": [16.5, 10, 12, 14],
             "cp2500": [28, 5, 9, 15]
         },
-        "level25CP": 1295,
+        "level25CP": 2029,
         "tags": ["shadoweligible"]
     }, {
         "dex": 323,
@@ -16326,7 +16328,7 @@
             "cp1500": [15, 9, 13, 13],
             "cp2500": [25, 5, 13, 15]
         },
-        "level25CP": 1389,
+        "level25CP": 2240,
         "tags": ["shadoweligible"]
     }, {
         "dex": 359,
@@ -16394,7 +16396,7 @@
             "cp1500": [10.5, 9, 15, 15],
             "cp2500": [18, 8, 8, 15]
         },
-        "level25CP": 2354,
+        "level25CP": 3220,
         "tags": ["shadoweligible"],
         "eliteMoves": ["OUTRAGE"]
     }, {
@@ -16413,7 +16415,7 @@
             "cp1500": [11, 9, 12, 12],
             "cp2500": [18.5, 7, 12, 11]
         },
-        "level25CP": 2386,
+        "level25CP": 3136,
         "tags": ["shadoweligible"],
         "eliteMoves": ["METEOR_MASH"]
     }, {
@@ -16531,7 +16533,7 @@
             "cp1500": [12, 6, 8, 15],
             "cp2500": [20, 6, 10, 15]
         },
-        "level25CP": 1919,
+        "level25CP": 2867,
         "tags": ["shadoweligible"],
         "eliteMoves": ["SYNCHRONOISE"]
     }, {
@@ -16550,7 +16552,7 @@
             "cp1500": [15.5, 14, 15, 14],
             "cp2500": [27, 7, 8, 14]
         },
-        "level25CP": 1436,
+        "level25CP": 2129,
         "tags": ["shadoweligible"]
     }, {
            "dex": 382,
