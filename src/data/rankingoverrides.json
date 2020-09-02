@@ -2644,7 +2644,7 @@
 			{
 				"speciesId": "machamp",
 				"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
-				"weight": 8
+				"weight": 18
 			},
 			{
 				"speciesId": "machamp_shadow",
@@ -2721,7 +2721,7 @@
 			{
 				"speciesId": "magnezone",
 				"chargedMoves": ["WILD_CHARGE", "MIRROR_SHOT"],
-				"weight": 20
+				"weight": 21
 			},
 			{
 				"speciesId": "magnezone_shadow",
@@ -2764,12 +2764,12 @@
 				"speciesId": "rhyperior",
 				"fastMove": "MUD_SLAP",
 				"chargedMoves": ["ROCK_WRECKER","SURF"],
-				"weight": 4
+				"weight": 9
 			},
 			{
 				"speciesId": "snorlax",
-				"chargedMoves": ["BODY_SLAM","EARTHQUAKE"],
-				"weight": 20
+				"chargedMoves": ["BODY_SLAM","SUPER_POWER"],
+				"weight": 22
 			},
 			{
 				"speciesId": "snorlax_shadow",
@@ -2778,7 +2778,7 @@
 			{
 				"speciesId": "metagross",
 				"chargedMoves": ["METEOR_MASH", "EARTHQUAKE"],
-				"weight": 40
+				"weight": 61
 			},
 			{
 				"speciesId": "metagross_shadow",
@@ -2787,7 +2787,7 @@
 			{
 				"speciesId": "togekiss",
 				"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"],
-				"weight": 40
+				"weight": 35
 			},
 			{
 				"speciesId": "charizard",
@@ -2801,17 +2801,17 @@
 			{
 				"speciesId": "garchomp",
 				"chargedMoves": ["SAND_TOMB","OUTRAGE"],
-				"weight": 15
+				"weight": 19
 			},
 			{
 				"speciesId": "dragonite",
 				"chargedMoves": ["DRAGON_CLAW","HURRICANE"],
-				"weight": 40
+				"weight": 38
 			},
 			{
 				"speciesId": "gyarados",
 				"fastMove": ["DRAGON_BREATH"],
-				"weight": 10
+				"weight": 27
 			},
 			{
 				"speciesId": "gyarados_shadow",
@@ -2819,13 +2819,33 @@
 			},
 			{
 				"speciesId": "swampert",
-				"chargedMoves": ["HYDRO_CANNON","EARTHQUAKE"],
-				"weight": 15
+				"chargedMoves": ["HYDRO_CANNON","SLUDGE_WAVE"],
+				"weight": 13
+			},
+			{
+				"speciesId": "swampert_shadow",
+				"chargedMoves": ["HYDRO_CANNON","SLUDGE_WAVE"]
 			},
 			{
 				"speciesId": "mamoswine",
 				"chargedMoves": ["AVALANCHE","BULLDOZE"],
-				"weight": 5
+				"weight": 6
+			},
+			{
+				"speciesId": "conkeldurr",
+				"weight": 4
+			},
+			{
+				"speciesId": "excadrill",
+				"weight": 4
+			},
+			{
+				"speciesId": "gengar",
+				"weight": 2
+			},
+			{
+				"speciesId": "milotic",
+				"weight": 2
 			}
 		]
 	},
