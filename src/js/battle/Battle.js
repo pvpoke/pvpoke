@@ -393,9 +393,6 @@ function Battle(){
 
 			startingValues[i].hp = pokemon[i].hp;
 			startingValues[i].energy = pokemon[i].energy;
-			pokemon[i].chargedMoves.sort(function(a, b) {
-				return a.energy - b.energy;
-			})
 		}
 
 		// Reset all actions
