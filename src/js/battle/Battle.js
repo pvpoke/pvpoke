@@ -1539,7 +1539,7 @@ function Battle(){
 			poke.index,
 			turns,
 			poke.chargedMoves.indexOf(currState[4][0]),
-			{shielded: false, buffs: false, priority: poke.priorityz});
+			{shielded: false, buffs: false, priority: poke.priority});
 
 		chargedMoveUsed = true;
 		return action;
