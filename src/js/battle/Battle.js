@@ -1010,6 +1010,19 @@ function Battle(){
 			return;
 		}
 
+		// DEBUG: Make a prediction
+		/*
+		if (opponent.turnsToKO != -1 && poke.turnsToKO != -1) {
+			if (opponent.turnsToKO < poke.turnsToKO) {
+				self.logDecision(turns, poke, " thinks it will lose. Turn to KO opponent: " + poke.turnsToKO + ". Turn KO'd: " + opponent.turnsToKO);
+			} else if (opponent.turnsToKO == poke.turnsToKO) {
+				self.logDecision(turns, poke, " thinks it will tie. Turn to KO opponent: " + poke.turnsToKO + ". Turn KO'd: " + opponent.turnsToKO);
+			} else {
+				self.logDecision(turns, poke, " thinks it will win. Turn to KO opponent: " + poke.turnsToKO + ". Turn KO'd: " + opponent.turnsToKO);
+			}
+		}
+		*/
+
 		// If a fast move KOs before opponent's cooldown is over, use fast move
 		if((opponent.hp <= fastDamage)){
 			useChargedMove = false;
@@ -1061,7 +1074,7 @@ function Battle(){
 			// Check if a fast move faints, add results to queue
 			if (currState[0] - oppFastDamage <= 0) {
 
-				turnsToLive = Math.min(currState[2] + opponent.fastMove.cooldown / 500, turnsToLive);
+				turnsToLive = Math.min(currState[2] + opponent.fastMove.cooldown / 500 - 1, turnsToLive);
 
 				break;
 			} else {
@@ -1080,7 +1093,7 @@ function Battle(){
 						moveDamage = self.calculateDamage(opponent, poke, opponent.chargedMoves[n]);
 						if (moveDamage >= currState[0]) {
 							turnsToLive = Math.min(currState[2], turnsToLive);
-							self.logDecision(turns, poke, " opponent has energy to use " + opponent.chargedMoves[n].name + " and it would do " + moveDamage + " damage. I have " + turnsToLive + " turn(s) to live");
+//							self.logDecision(turns, poke, " opponent has energy to use " + opponent.chargedMoves[n].name + " and it would do " + moveDamage + " damage. I have " + turnsToLive + " turn(s) to live");
 							break;
 						}
 						queue.unshift([currState[0] - moveDamage, currState[1] - opponent.chargedMoves[n].energy, currState[2] + 1, currState[3]])
@@ -1138,7 +1151,6 @@ function Battle(){
 
 		var stateCount = 0;
 
-
 		var DPQueue = [[poke.energy, opponent.hp, 0, opponent.shields, []]];
 		var finalState;
 		while (DPQueue.length != 0) {
@@ -1165,11 +1177,11 @@ function Battle(){
 //			self.logDecision(turns, poke, " is considering putting the opponent at " + currState[1] + " hp at turn " + currState[2]);
 
 			// Found fastest way to defeat enemy, fastest = optimal in this case since damage taken is strictly dependent on time
-			// Set finalState to currState and do more evaluation later
+			// Set finalState to currState and do more evaluation later, record predicted TTK 
 			if (currState[1] <= 0) {
 
 //				self.logDecision(turns, poke, " decides the optimal plan is to use " + currState[4][0].name + " since it puts the opponent at " + currState[1] + " from " + opponent.hp + " at turn " + currState[2]);
-
+				poke.turnsToKO = turns + currState[2];
 				finalState = currState;
 				break;
 
@@ -1392,7 +1404,17 @@ function Battle(){
 		}
 
 		// If bait shields is off, always throw high damage move first
-		if (!poke.baitShields) {
+		// If no moves debuff and shields are down, always throw high damage move first
+
+		var debuffingMove = false;
+		for (var moveInd = 0; moveInd < finalState[4].length; moveInd++) {
+			if (finalState[4][moveInd].selfDebuffing) {
+				debuffingMove = true;
+				break;
+			}
+		}
+
+		if (!poke.baitShields || (opponent.shields == 0 && debuffingMove == false)) {
 			finalState[4].sort(function(a, b) {
 				var moveDamage1 = self.calculateDamage(poke, opponent, a);
 				var moveDamage2 = self.calculateDamage(poke, opponent, b);
