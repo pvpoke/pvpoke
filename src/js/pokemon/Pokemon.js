@@ -56,6 +56,7 @@ function Pokemon(id, i, b){
 	this.chargedMoves = [];
 
 	this.isCustom = false; // Does this Pokemon have custom set levels and IV's?
+	this.autoLevel = false; // Automatically adjust a Pokemon to league CP when adjusting IVs
 
 	this.index = i;
 
@@ -190,7 +191,7 @@ function Pokemon(id, i, b){
 
 		var isDefault = false;
 
-		if((this.level == 40)&&(this.ivs.atk == 0) && (this.ivs.def == 0) && (this.ivs.hp == 0)){
+		if((this.level == 40)&&(this.ivs.atk == 0) && (this.ivs.def == 0) && (this.ivs.hp == 0) && (! self.autoLevel)){
 			isDefault = true;
 		}
 
@@ -450,14 +451,15 @@ function Pokemon(id, i, b){
 		var minAttack = self.generateIVCombinations("atk", -1, 1)[0].atk;
 		var maxAttack = self.generateIVCombinations("atk", 1, 1)[0].atk;
 		var maxDefense = defender.generateIVCombinations("def", 1, 1)[0].def;
-		var minDamage = battle.calculateDamageByStats(minAttack, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
-		var maxDamage = battle.calculateDamageByStats(maxAttack, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
+
+		var minDamage = battle.calculateDamageByStats(self, defender, minAttack, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
+		var maxDamage = battle.calculateDamageByStats(self, defender, maxAttack, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
 
 		var breakpoints = [];
 
 		for(var i = minDamage; i <= maxDamage; i++){
-			var breakpoint = battle.calculateBreakpoint(i, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
-			var maxDefenseBreakpoint = battle.calculateBreakpoint(i, maxDefense, effectiveness, self.fastMove);
+			var breakpoint = battle.calculateBreakpoint(self, defender, i, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
+			var maxDefenseBreakpoint = battle.calculateBreakpoint(self, defender, i, maxDefense, effectiveness, self.fastMove);
 
 			if(maxDefenseBreakpoint > maxAttack){
 				maxDefenseBreakpoint = -1;
@@ -480,14 +482,13 @@ function Pokemon(id, i, b){
 		var minDefense = self.generateIVCombinations("def", -1, 1)[0].def;
 		var maxDefense = self.generateIVCombinations("def", 1, 1)[0].def;
 		var maxAttack = attacker.generateIVCombinations("atk", 1, 1)[0].atk * attacker.shadowAtkMult;
-		var minDamage = battle.calculateDamageByStats(attacker.stats.atk * attacker.shadowAtkMult, maxDefense, effectiveness, attacker.fastMove);
-		var maxDamage = battle.calculateDamageByStats(attacker.stats.atk * attacker.shadowAtkMult, minDefense, effectiveness, attacker.fastMove);
-
+		var minDamage = battle.calculateDamageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult, maxDefense, effectiveness, attacker.fastMove);
+		var maxDamage = battle.calculateDamageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult, minDefense, effectiveness, attacker.fastMove);
 		var breakpoints = [];
 
 		for(var i = minDamage; i <= maxDamage; i++){
-			var bulkpoint = battle.calculateBulkpoint(i, attacker.stats.atk * attacker.shadowAtkMult, effectiveness, attacker.fastMove);
-			var maxAttackBulkpoint = battle.calculateBulkpoint(i, maxAttack, effectiveness, attacker.fastMove);
+			var bulkpoint = battle.calculateBulkpoint(attacker, self, i, attacker.stats.atk * attacker.shadowAtkMult, effectiveness, attacker.fastMove);
+			var maxAttackBulkpoint = battle.calculateBulkpoint(attacker, self, i, maxAttack, effectiveness, attacker.fastMove);
 
 			if(maxAttackBulkpoint > maxDefense){
 				maxAttackBulkpoint = -1;
@@ -1109,8 +1110,20 @@ function Pokemon(id, i, b){
 			this.ivs.hp = parseInt(amount);
 		}
 
-		this.isCustom = true;
-		this.initialize(false);
+		// Automatically adjust to league cap
+
+		if(self.autoLevel){
+			var level = self.levelCap;
+			self.cp = 100000;
+
+			while(self.cp > battle.getCP()){
+				self.setLevel(level, true);
+				level -= 0.5;
+			}
+		} else{
+			self.isCustom = true;
+			self.initialize(false);
+		}
 	}
 
 	// Set battle reference object

@@ -42,6 +42,8 @@ function PokeSelect(element, i){
 			$pokeSelect.append("<option value=\""+poke.speciesId+"\" type-1=\""+poke.types[0]+"\" type-2=\""+poke.types[1]+"\">"+poke.speciesName+"</option");
 		});
 
+		$el.find(".check.auto-level").addClass("on");
+
 		searchArr.sort((a,b) => (a.priority > b.priority) ? -1 : ((b.priority > a.priority) ? 1 : 0));
 
 		interface = InterfaceMaster.getInstance();
@@ -207,6 +209,32 @@ function PokeSelect(element, i){
 			} else{
 				$el.find(".shadow-section").show();
 			}
+
+			// Show base Pokemon CP for Mega Evolutions
+
+			if(selectedPokemon.hasTag("mega")){
+				// Get the ID of the original form
+				var baseId = selectedPokemon.speciesId;
+
+				baseId = baseId.replace("_mega_x", "");
+				baseId = baseId.replace("_mega_y", "");
+				baseId = baseId.replace("_mega", "");
+
+				var basePokemon = new Pokemon(baseId, index, battle);
+				basePokemon.initialize(false);
+				basePokemon.setIV("atk", selectedPokemon.ivs.atk);
+				basePokemon.setIV("def", selectedPokemon.ivs.def);
+				basePokemon.setIV("hp", selectedPokemon.ivs.hp);
+				basePokemon.setLevel(selectedPokemon.level);
+
+				$el.find(".mega-cp-container .base-name").html("Base " + basePokemon.speciesName);
+				$el.find(".mega-cp-container .mega-cp .stat").html(basePokemon.cp);
+				$el.find(".mega-cp-container").show();
+
+				$(".mega-warning").show();
+			} else{
+				$el.find(".mega-cp-container").hide();
+			}
 		}
 	}
 
@@ -329,6 +357,8 @@ function PokeSelect(element, i){
 			$el.find("input.start-energy").val(poke.startEnergy);
 		}
 
+		selectedPokemon.autoLevel = true;
+
 		// Set shields to correct amount
 
 		$el.find(".shield-select option[value=\""+poke.startingShields+"\"]").prop("selected","selected");
@@ -428,6 +458,7 @@ function PokeSelect(element, i){
 		var value = parseInt($el.find(".shield-select option:selected").val());
 
 		selectedPokemon.setShields(value);
+		selectedPokemon.autoLevel = true;
 
 		self.reset();
 
@@ -562,6 +593,7 @@ function PokeSelect(element, i){
 			var value = parseInt($el.find(".shield-select option:selected").val());
 
 			selectedPokemon.setShields(value);
+			selectedPokemon.autoLevel = true;
 
 			self.reset();
 
@@ -683,7 +715,7 @@ function PokeSelect(element, i){
 
 	// Select an option from the maximize section
 
-	$el.find(".maximize-section .check").on("click", function(e){
+	$el.find(".maximize-section div .check").on("click", function(e){
 		$(e.target).closest(".check").parent().find(".check").removeClass("on");
 	});
 
@@ -700,6 +732,17 @@ function PokeSelect(element, i){
 		selectedPokemon.setShadowType(formType);
 
 		self.update();
+	});
+
+	// Toggle auto select on and off
+
+	$el.find(".maximize-section .check.auto-level").on("click", function(e){
+		selectedPokemon.autoLevel = ! selectedPokemon.autoLevel;
+
+		if(selectedPokemon.autoLevel){
+			selectedPokemon.setIV("atk", selectedPokemon.ivs.atk);
+			$el.find("input.iv").eq(0).trigger("change");
+		}
 	});
 
 	// Restore default IV's
@@ -753,6 +796,8 @@ function PokeSelect(element, i){
 			// Valid level
 
 			selectedPokemon.setIV($(this).attr("iv"), value);
+
+			$el.find("input.level").val(selectedPokemon.level);
 		}
 
 		isCustom = true;
@@ -813,7 +858,7 @@ function PokeSelect(element, i){
 		if(battle.getOpponent(selectedPokemon.index)){
 			var opponent = battle.getOpponent(selectedPokemon.index);
 			var effectiveness = opponent.typeEffectiveness[move.type];
-			displayDamage = battle.calculateDamageByStats(selectedPokemon.stats.atk * opponent.shadowAtkMult, opponent.stats.def * selectedPokemon.shadowDefMult, effectiveness, move);
+			displayDamage = battle.calculateDamageByStats(selectedPokemon, opponent, selectedPokemon.stats.atk * opponent.shadowAtkMult, opponent.stats.def * selectedPokemon.shadowDefMult, effectiveness, move);
 		}
 
 		var dpe = Math.floor( (displayDamage / move.energy) * 100) / 100;

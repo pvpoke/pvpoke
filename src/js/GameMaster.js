@@ -12,6 +12,10 @@ var GameMaster = (function () {
 		object.teamPools = [];
 		object.loadedData = 0;
 
+		if(settings.gamemaster == "gamemaster-mega"){
+			$(".mega-warning").show();
+		}
+
 		$.getJSON( webRoot+"data/"+settings.gamemaster+".json?v="+siteVersion, function( data ){
 			object.data = data;
 
@@ -114,48 +118,50 @@ var GameMaster = (function () {
 					// Duplicate the entry for the Shadow version of the Pokemon
 					// Your clones are very impressive, you must be very proud
 
-					entry = JSON.parse(JSON.stringify(entry)); // Your clones are very impressive, you must be very proud
+					if(!pokemon.hasTag("mega")){
+						entry = JSON.parse(JSON.stringify(entry)); // Your clones are very impressive, you must be very proud
 
-					entry.speciesId += "_shadow";
-					entry.speciesName += " (Shadow)";
-					entry.tags.splice(entry.tags.indexOf("shadowEligible"), 1);
-					entry.tags.push("shadow");
+						entry.speciesId += "_shadow";
+						entry.speciesName += " (Shadow)";
+						entry.tags.splice(entry.tags.indexOf("shadowEligible"), 1);
+						entry.tags.push("shadow");
 
-					// Remove all legacy and exclusive moves that aren't available via Elite TM
-					if(entry.legacyMoves){
-						for(var i = 0; i < entry.fastMoves.length; i++){
-							var remove = true;
-							if(entry.legacyMoves.indexOf(entry.fastMoves[i]) > -1){
-								if((entry.eliteMoves)&&(entry.eliteMoves.indexOf(entry.fastMoves[i]) > -1)){
-									remove = false;
-								}
+						// Remove all legacy and exclusive moves that aren't available via Elite TM
+						if(entry.legacyMoves){
+							for(var i = 0; i < entry.fastMoves.length; i++){
+								var remove = true;
+								if(entry.legacyMoves.indexOf(entry.fastMoves[i]) > -1){
+									if((entry.eliteMoves)&&(entry.eliteMoves.indexOf(entry.fastMoves[i]) > -1)){
+										remove = false;
+									}
 
-								if(remove){
-									entry.fastMoves.splice(i, 1);
-									i--;
-								}
-							}
-						}
-
-						for(var i = 0; i < entry.chargedMoves.length; i++){
-							var remove = true;
-							if(entry.legacyMoves.indexOf(entry.chargedMoves[i]) > -1){
-								if((entry.eliteMoves)&&(entry.eliteMoves.indexOf(entry.chargedMoves[i]) > -1)){
-									remove = false;
-								}
-
-								if(remove){
-									entry.chargedMoves.splice(i, 1);
-									i--;
+									if(remove){
+										entry.fastMoves.splice(i, 1);
+										i--;
+									}
 								}
 							}
+
+							for(var i = 0; i < entry.chargedMoves.length; i++){
+								var remove = true;
+								if(entry.legacyMoves.indexOf(entry.chargedMoves[i]) > -1){
+									if((entry.eliteMoves)&&(entry.eliteMoves.indexOf(entry.chargedMoves[i]) > -1)){
+										remove = false;
+									}
+
+									if(remove){
+										entry.chargedMoves.splice(i, 1);
+										i--;
+									}
+								}
+							}
+
+							delete entry.legacyMoves;
 						}
 
-						delete entry.legacyMoves;
+						delete entry.level25CP;
+						object.data.pokemon.push(entry);
 					}
-
-					delete entry.level25CP;
-					object.data.pokemon.push(entry);
 				} else{
 					if(entry.tags){
 						if(entry.tags.indexOf("shadow") > -1){
@@ -442,6 +448,10 @@ var GameMaster = (function () {
 					}
 
 					if(permaBannedList.indexOf(pokemon.speciesId) > -1){
+						continue;
+					}
+
+					if((settings.gamemaster != "gamemaster-mega")&&(pokemon.hasTag("mega"))){
 						continue;
 					}
 

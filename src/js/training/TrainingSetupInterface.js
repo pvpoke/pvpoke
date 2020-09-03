@@ -94,7 +94,7 @@ var InterfaceMaster = (function () {
 
 			this.open = function(){
 				for(var i = 0; i < 3; i++){
-					$(".section").eq(i).slideDown(500);
+					$(".section:not('.mega-warning')").eq(i).slideDown(500);
 				}
 
 				$(".section.updates").slideDown(500);

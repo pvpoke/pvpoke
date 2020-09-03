@@ -190,7 +190,7 @@
             "values": ["skarmory", "hypno", "drifblim", "beheeyem"]
         }, {
             "filterType": "tag",
-            "values": ["legendary", "mythical", "shadow", "galarian"]
+            "values": ["legendary", "mythical", "shadow", "galarian", "mega"]
         }, {
             "filterType": "type",
             "values": ["dark"]
@@ -247,7 +247,7 @@
         }],
         "exclude": [{
             "filterType": "tag",
-            "values": ["legendary", "mythical", "alolan", "shadow"]
+            "values": ["legendary", "mythical", "alolan", "shadow", "mega"]
         }, {
             "filterType": "type",
             "values": ["fighting", "flying", "normal", "psychic", "steel", "fairy"]
@@ -335,7 +335,7 @@
         "include": [],
         "exclude": [{
             "filterType": "tag",
-            "values": ["legendary", "mythical"]
+            "values": ["legendary", "mythical", "mega"]
         }]
     }, {
         "name": "grunt",
@@ -382,7 +382,7 @@
         }],
         "exclude": [{
             "filterType": "tag",
-            "values": ["legendary", "mythical", "shadow"]
+            "values": ["legendary", "mythical", "shadow", "mega"]
         }, {
             "filterType": "id",
             "values": ["drapion", "mawile", "lapras", "dewgong", "vigoroth", "slaking", "castform", "rufflet", "braviary", "chansey", "blissey", "mr_mime", "jynx", "eevee", "espeon", "delibird", "miltank", "gardevoir", "metang", "chimecho", "chatot", "skorupi", "sigilyph", "cryogonal", "glaceon", "castform_snowy", "raichu_alolan", "obstagoon", "bouffalant", "whimsicott"]
@@ -451,7 +451,7 @@
         }],
         "exclude": [{
             "filterType": "tag",
-            "values": ["legendary", "mythical"]
+            "values": ["legendary", "mythical", "mega"]
         }]
     }, {
         "name": "kaiser",
@@ -462,7 +462,7 @@
             "values": ["stunfisk_galarian","bastiodon","registeel","ferrothorn","deoxys_defense","skarmory","altaria"]
         }, {
             "filterType": "tag",
-            "values": ["regional"]
+            "values": ["regional", "mega"]
         }]
     }, {
         "name": "shadow",
@@ -501,7 +501,7 @@
         "dexStart": 494,
         "dexEnd": 649
     }],
-    "shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "charmander", "charmeleon", "charizard", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "bellossom", "politoed", "scizor", "houndour", "houndoom", "larvitar", "pupitar", "tyranitar", "mudkip", "marshtomp", "swampert", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "trapinch", "vibrava", "flygon", "cacnea", "cacturne", "shuppet", "banette", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "sableye", "zapdos", "moltres", "delibird", "stantler", "absol", "bagon", "shelgon", "salamence", "snover", "abomasnow", "raikou", "vulpix", "ninetales", "exeggcute", "exeggutor", "omanyte", "omastar", "misdreavus", "mismagius", "carvanha", "sharpedo", "pinsir", "mawile", "beldum", "metang", "metagross", "entei", "ekans", "arbok", "koffing", "weezing", "nidoran_female", "nidorina", "nidoran_male", "nidorino", "nidoqueen", "nidoking", "machop", "machoke", "machamp", "gligar", "gliscor", "shuckle", "stunky", "skuntank", "suicune", "pineco", "forretress", "mewtwo"],
+    "shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "venusaur_mega", "charmander", "charmeleon", "charizard", "charizard_mega_x", "charizard_mega_y", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "beedrill_mega", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "alakazam_mega", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "gyarados_mega", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "ampharos_mega", "bellossom", "politoed", "scizor", "scizor_mega", "houndour", "houndoom", "houndoom_mega", "larvitar", "pupitar", "tyranitar", "tyranitar_mega", "mudkip", "marshtomp", "swampert", "swampert_mega", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "gardevoir_mega", "trapinch", "vibrava", "flygon", "cacnea", "cacturne", "shuppet", "banette", "banette_mega", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "gallade_mega", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "sableye", "sableye_mega", "zapdos", "moltres", "delibird", "stantler", "absol", "bagon", "shelgon", "salamence", "salamence_mega", "snover", "abomasnow", "abomasnow_mega", "raikou", "vulpix", "ninetales", "exeggcute", "exeggutor", "omanyte", "omastar", "misdreavus", "mismagius", "carvanha", "sharpedo", "sharpedo_mega", "pinsir", "pinsir_mega", "mawile", "mawile_mega", "beldum", "metang", "metagross", "metagross_mega", "entei", "ekans", "arbok", "koffing", "weezing", "nidoran_female", "nidorina", "nidoran_male", "nidorino", "nidoqueen", "nidoking", "machop", "machoke", "machamp", "gligar", "gliscor", "shuckle", "stunky", "skuntank", "suicune", "pineco", "forretress", "mewtwo", "mewtwo_mega_x", "mewtwo_mega_y"],
     "cliffhangerTiers": [{
         "league": 1500,
         "max": 17,
@@ -513,7 +513,7 @@
             "pokemon": ["bastiodon", "bronzong", "cresselia", "ferrothorn", "hypno", "ivysaur", "jirachi", "marowak_alolan", "medicham", "meganium", "melmetal", "probopass", "regirock", "sableye", "scrafty", "swampert", "umbreon", "venusaur", "zweilous", "abomasnow"]
         }, {
             "points": 1,
-            "pokemon": ["cherrim_sunny", "clefable", "dewgong", "gardevoir", "golbat", "haunter", "jumpluff", "lanturn", "lapras", "lugia", "mantine", "mew", "muk_alolan", "noctowl", "obstagoon", "perrserker", "raichu", "raichu_alolan", "raikou", "shiftry", "stunfisk", "togekiss", "toxicroak", "uxie", "victreebel", "vigoroth", "whiscash", "wigglytuff", "zapdos", "drifblim", "froslass", "empoleon", "gengar", "machamp", "regice"]
+            "pokemon": ["cherrim_sunny", "clefable", "dewgong", "gardevoir", "golbat", "haunter", "jumpluff", "lanturn", "lapras", "lugia", "mantine", "mew", "muk_alolan", "noctowl", "obstagoon", "raichu", "raichu_alolan", "raikou", "shiftry", "stunfisk", "togekiss", "toxicroak", "uxie", "victreebel", "vigoroth", "whiscash", "wigglytuff", "zapdos", "drifblim", "froslass", "empoleon", "gengar", "machamp", "regice"]
         }]
     }],
     "pokemon": [{
@@ -15724,836 +15724,851 @@
         },
         "tags": ["galarian"]
     }, {
-		"dex": 3,
-		"speciesName": "Venusaur (Mega)",
-		"speciesId": "venusaur_mega",
-		"baseStats": {
-			"atk": 241,
-			"def": 246,
-			"hp": 190
-		},
-		"types": ["grass", "poison"],
-		"fastMoves": ["RAZOR_LEAF", "VINE_WHIP"],
-		"chargedMoves": ["FRENZY_PLANT", "PETAL_BLIZZARD", "SLUDGE_BOMB", "SOLAR_BEAM"],
-		"tags": ["starter", "shadoweligible", "mega"],
-		"defaultIVs": {
-			"cp1500": [15, 1, 15, 15],
-			"cp2500": [25.5, 0, 15, 9]
-		},
-		"level25CP": 1673,
-		"eliteMoves": ["FRENZY_PLANT"]
-	}, {
-		   "dex": 6,
-		   "speciesName": "Charizard (Mega X)",
-		   "speciesId": "charizard_mega_x",
-		   "baseStats": {
-			   "atk": 273,
-			   "def": 213,
-			   "hp": 186
-		   },
-		   "types": ["fire", "dragon"],
-		   "fastMoves": ["AIR_SLASH", "EMBER", "FIRE_SPIN", "WING_ATTACK"],
-		   "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW", "FIRE_BLAST", "FLAMETHROWER", "OVERHEAT"],
-		   "tags": ["starter", "shadoweligible", "mega"],
-		   "defaultIVs": {
-			   "cp1500": [14.5, 0, 11, 15],
-			   "cp2500": [24, 1, 15, 13]
-		   },
-		   "level25CP": 1784,
-		   "eliteMoves": ["EMBER", "WING_ATTACK", "BLAST_BURN", "FLAMETHROWER"]
-	}, {
-		   "dex": 6,
-		   "speciesName": "Charizard (Mega Y)",
-		   "speciesId": "charizard_mega_y",
-		   "baseStats": {
-			   "atk": 319,
-			   "def": 212,
-			   "hp": 169
-		   },
-		   "types": ["fire", "flying"],
-		   "fastMoves": ["AIR_SLASH", "EMBER", "FIRE_SPIN", "WING_ATTACK"],
-		   "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW", "FIRE_BLAST", "FLAMETHROWER", "OVERHEAT"],
-		   "tags": ["starter", "shadoweligible"],
-		   "defaultIVs": {
-			   "cp1500": [15, 0, 10, 15],
-			   "cp2500": [24.5, 3, 15, 14]
-		   },
-		   "level25CP": 1784,
-		   "eliteMoves": ["EMBER", "WING_ATTACK", "BLAST_BURN", "FLAMETHROWER"]
-	   }, {
-		   "dex": 9,
-		   "speciesName": "Blastoise (Mega)",
-		   "speciesId": "blastoise_mega",
-		   "baseStats": {
-			   "atk": 264,
-			   "def": 237,
-			   "hp": 188
-		   },
-		   "types": ["water", "none"],
-		   "fastMoves": ["BITE", "WATER_GUN"],
-		   "chargedMoves": ["FLASH_CANNON", "HYDRO_CANNON", "HYDRO_PUMP", "ICE_BEAM", "SKULL_BASH"],
-		   "tags": ["starter", "shadoweligible", "mega"],
-		   "defaultIVs": {
-			   "cp1500": [14, 1, 15, 15],
-			   "cp2500": [23.5, 0, 14, 15]
-		   },
-		   "level25CP": 1504,
-		   "eliteMoves": ["HYDRO_CANNON"]
-	   }, {
-		   "dex": 15,
-		   "speciesName": "Beedrill (Mega)",
-		   "speciesId": "beedrill_mega",
-		   "baseStats": {
-			   "atk": 303,
-			   "def": 148,
-			   "hp": 163
-		   },
-		   "types": ["bug", "poison"],
-		   "fastMoves": ["BUG_BITE", "INFESTATION", "POISON_JAB"],
-		   "chargedMoves": ["AERIAL_ACE", "SLUDGE_BOMB", "X_SCISSOR", "FELL_STINGER", "DRILL_RUN"],
-		   "defaultIVs": {
-			   "cp1500": [16.5, 0, 11, 15],
-			   "cp2500": [27, 1, 15, 15]
-		   },
-		   "level25CP": 1097,
-		   "tags": ["shadoweligible", "mega"],
-		   "eliteMoves": ["BUG_BITE", "DRILL_RUN"]
-	   }, {
-		   "dex": 18,
-		   "speciesName": "Pidgeot (Mega)",
-		   "speciesId": "pidgeot_mega",
-		   "baseStats": {
-			   "atk": 280,
-			   "def": 175,
-			   "hp": 195
-		   },
-		   "types": ["normal", "flying"],
-		   "fastMoves": ["AIR_SLASH", "STEEL_WING", "WING_ATTACK"],
-		   "chargedMoves": ["AERIAL_ACE", "AIR_CUTTER", "BRAVE_BIRD", "HURRICANE"],
-		   "defaultIVs": {
-			   "cp1500": [15, 1, 15, 14],
-			   "cp2500": [25, 0, 15, 15]
-		   },
-		   "eliteMoves": ["WING_ATTACK", "AIR_CUTTER"]
-	   }, {
-		   "dex": 65,
-		   "speciesName": "Alakazam (Mega)",
-		   "speciesId": "alakazam_mega",
-		   "baseStats": {
-			   "atk": 334,
-			   "def": 176,
-			   "hp": 133
-		   },
-		   "types": ["psychic", "none"],
-		   "fastMoves": ["CONFUSION", "PSYCHO_CUT", "COUNTER"],
-		   "chargedMoves": ["DAZZLING_GLEAM", "FIRE_PUNCH", "FOCUS_BLAST", "FUTURE_SIGHT", "PSYCHIC", "SHADOW_BALL"],
-		   "defaultIVs": {
-			   "cp1500": [15, 0, 15, 14],
-			   "cp2500": [25, 0, 15, 14]
-		   },
-		   "level25CP": 1887,
-		   "tags": ["shadoweligible"],
-		   "eliteMoves": ["COUNTER", "DAZZLING_GLEAM", "PSYCHIC"]
-	   }, {
-		   "dex": 80,
-		   "speciesName": "Slowbro (Mega)",
-		   "speciesId": "slowbro_mega",
-		   "baseStats": {
-			   "atk": 224,
-			   "def": 259,
-			   "hp": 216
-		   },
-		   "types": ["water", "psychic"],
-		   "fastMoves": ["CONFUSION", "WATER_GUN"],
-		   "chargedMoves": ["ICE_BEAM", "PSYCHIC", "WATER_PULSE"],
-		   "defaultIVs": {
-			   "cp1500": [15, 0, 13, 14],
-			   "cp2500": [25, 0, 12, 15]
-		   }
-	   },  {
-		   "dex": 94,
-		   "speciesName": "Gengar (Mega)",
-		   "speciesId": "gengar_mega",
-		   "baseStats": {
-			   "atk": 318,
-			   "def": 181,
-			   "hp": 141
-		   },
-		   "types": ["ghost", "poison"],
-		   "fastMoves": ["HEX", "LICK", "SHADOW_CLAW", "SUCKER_PUNCH"],
-		   "chargedMoves": ["DARK_PULSE", "FOCUS_BLAST", "PSYCHIC", "SHADOW_BALL", "SLUDGE_BOMB", "SLUDGE_WAVE", "SHADOW_PUNCH"],
-		   "defaultIVs": {
-			   "cp1500": [15, 3, 15, 14],
-			   "cp2500": [25, 2, 15, 15]
-		   },
-		   "eliteMoves": ["LICK", "SLUDGE_WAVE", "DARK_PULSE", "PSYCHIC", "SHADOW_PUNCH"]
-	   },  {
-		   "dex": 115,
-		   "speciesName": "Kangaskhan (Mega)",
-		   "speciesId": "kangaskhan_mega",
-		   "baseStats": {
-			   "atk": 246,
-			   "def": 210,
-			   "hp": 233
-		   },
-		   "types": ["normal", "none"],
-		   "fastMoves": ["LOW_KICK", "MUD_SLAP"],
-		   "chargedMoves": ["BRICK_BREAK", "CRUNCH", "EARTHQUAKE", "OUTRAGE", "STOMP", "POWER_UP_PUNCH"],
-		   "tags": ["regional"],
-		   "defaultIVs": {
-			   "cp1500": [14.5, 0, 14, 15],
-			   "cp2500": [24, 1, 15, 15]
-		   },
-		   "level25CP": 1583,
-		   "eliteMoves": ["BRICK_BREAK", "STOMP"]
-	   },  {
-		   "dex": 127,
-		   "speciesName": "Pinsir (Mega)",
-		   "speciesId": "pinsir_mega",
-		   "baseStats": {
-			   "atk": 278,
-			   "def": 210,
-			   "hp": 148
-		   },
-		   "types": ["bug", "flying"],
-		   "fastMoves": ["BUG_BITE", "FURY_CUTTER", "ROCK_SMASH"],
-		   "chargedMoves": ["CLOSE_COMBAT", "SUBMISSION", "VICE_GRIP", "X_SCISSOR", "SUPER_POWER"],
-		   "defaultIVs": {
-			   "cp1500": [16, 0, 12, 13],
-			   "cp2500": [26.5, 0, 12, 15]
-		   },
-		   "level25CP": 1828,
-		   "tags": ["shadoweligible"],
-		   "eliteMoves": ["SUBMISSION"]
-	   }, {
-		   "dex": 130,
-		   "speciesName": "Gyarados (Mega)",
-		   "speciesId": "gyarados_mega",
-		   "baseStats": {
-			   "atk": 266,
-			   "def": 225,
-			   "hp": 197
-		   },
-		   "types": ["water", "dark"],
-		   "fastMoves": ["BITE", "DRAGON_BREATH", "DRAGON_TAIL", "WATERFALL"],
-		   "chargedMoves": ["CRUNCH", "DRAGON_PULSE", "HYDRO_PUMP", "OUTRAGE", "TWISTER", "AQUA_TAIL"],
-		   "defaultIVs": {
-			   "cp1500": [14, 0, 15, 15],
-			   "cp2500": [23.5, 0, 12, 15]
-		   },
-		   "level25CP": 2119,
-		   "tags": ["shadoweligible"],
-		   "eliteMoves": ["DRAGON_TAIL", "DRAGON_PULSE", "AQUA_TAIL"]
-	   },  {
-		   "dex": 142,
-		   "speciesName": "Aerodactyl (Mega)",
-		   "speciesId": "aerodactyl_mega",
-		   "baseStats": {
-			   "atk": 266,
-			   "def": 191,
-			   "hp": 173
-		   },
-		   "types": ["rock", "flying"],
-		   "fastMoves": ["BITE", "STEEL_WING", "ROCK_THROW"],
-		   "chargedMoves": ["ANCIENT_POWER", "HYPER_BEAM", "IRON_HEAD", "ROCK_SLIDE", "EARTH_POWER"],
-		   "defaultIVs": {
-			   "cp1500": [16, 1, 15, 15],
-			   "cp2500": [27, 0, 13, 13]
-		   }
-	   },  {
-		   "dex": 150,
-		   "speciesName": "Mewtwo (Mega X)",
-		   "speciesId": "mewtwo_mega_x",
-		   "baseStats": {
-			   "atk": 375,
-			   "def": 202,
-			   "hp": 214
-		   },
-		   "types": ["psychic", "fighting"],
-		   "fastMoves": ["CONFUSION", "PSYCHO_CUT"],
-		   "chargedMoves": ["FLAMETHROWER", "FOCUS_BLAST", "HYPER_BEAM", "ICE_BEAM", "PSYCHIC", "SHADOW_BALL", "THUNDERBOLT", "PSYSTRIKE"],
-		   "tags": ["legendary"],
-		   "defaultIVs": {
-			   "cp1500": [10, 3, 15, 14],
-			   "cp2500": [16.5, 6, 15, 15]
-		   },
-		   "eliteMoves": ["PSYSTRIKE", "SHADOW_BALL", "HYPER_BEAM"]
-	   },  {
-		   "dex": 150,
-		   "speciesName": "Mewtwo (Mega Y)",
-		   "speciesId": "mewtwo_mega_y",
-		   "baseStats": {
-			   "atk": 388,
-			   "def": 208,
-			   "hp": 214
-		   },
-		   "types": ["psychic", "none"],
-		   "fastMoves": ["CONFUSION", "PSYCHO_CUT"],
-		   "chargedMoves": ["FLAMETHROWER", "FOCUS_BLAST", "HYPER_BEAM", "ICE_BEAM", "PSYCHIC", "SHADOW_BALL", "THUNDERBOLT", "PSYSTRIKE"],
-		   "tags": ["legendary"],
-		   "defaultIVs": {
-			   "cp1500": [9.5, 4, 15, 14],
-			   "cp2500": [16, 1, 15, 13]
-		   },
-		   "eliteMoves": ["PSYSTRIKE", "SHADOW_BALL", "HYPER_BEAM"]
-	   },  {
-		   "dex": 181,
-		   "speciesName": "Ampharos (Mega)",
-		   "speciesId": "ampharos_mega",
-		   "baseStats": {
-			   "atk": 268,
-			   "def": 185,
-			   "hp": 188
-		   },
-		   "types": ["electric", "dragon"],
-		   "fastMoves": ["CHARGE_BEAM", "VOLT_SWITCH"],
-		   "chargedMoves": ["DRAGON_PULSE", "FOCUS_BLAST", "POWER_GEM", "THUNDER", "ZAP_CANNON", "THUNDER_PUNCH"],
-		   "defaultIVs": {
-			   "cp1500": [15.5, 1, 15, 15],
-			   "cp2500": [26, 0, 14, 15]
-		   },
-		   "level25CP": 1760,
-		   "tags": ["shadoweligible"],
-		   "eliteMoves": ["DRAGON_PULSE"]
-	   },  {
-		   "dex": 208,
-		   "speciesName": "Steelix (Mega)",
-		   "speciesId": "steelix_mega",
-		   "baseStats": {
-			   "atk": 212,
-			   "def": 327,
-			   "hp": 181
-		   },
-		   "types": ["steel", "ground"],
-		   "fastMoves": ["DRAGON_TAIL", "IRON_TAIL", "THUNDER_FANG"],
-		   "chargedMoves": ["CRUNCH", "EARTHQUAKE", "HEAVY_SLAM"],
-		   "defaultIVs": {
-			   "cp1500": [15.5, 0, 7, 15],
-			   "cp2500": [25.5, 0, 15, 15]
-		   }
-	   }, {
-		   "dex": 212,
-		   "speciesName": "Scizor (Mega)",
-		   "speciesId": "scizor_mega",
-		   "baseStats": {
-			   "atk": 254,
-			   "def": 228,
-			   "hp": 157
-		   },
-		   "types": ["bug", "steel"],
-		   "fastMoves": ["BULLET_PUNCH", "FURY_CUTTER"],
-		   "chargedMoves": ["IRON_HEAD", "NIGHT_SLASH", "X_SCISSOR"],
-		   "defaultIVs": {
-			   "cp1500": [16.5, 0, 14, 9],
-			   "cp2500": [27, 0, 14, 15]
-		   },
-		   "level25CP": 1857,
-		   "tags": ["shadoweligible"]
-	   },  {
-		   "dex": 214,
-		   "speciesName": "Heracross (Mega)",
-		   "speciesId": "heracross_mega",
-		   "baseStats": {
-			   "atk": 304,
-			   "def": 203,
-			   "hp": 173
-		   },
-		   "types": ["bug", "fighting"],
-		   "fastMoves": ["COUNTER", "STRUGGLE_BUG"],
-		   "chargedMoves": ["CLOSE_COMBAT", "EARTHQUAKE", "MEGAHORN"],
-		   "tags": ["regional"],
-		   "defaultIVs": {
-			   "cp1500": [13.5, 3, 15, 15],
-			   "cp2500": [23, 0, 13, 13]
-		   }
-	   },  {
-		   "dex": 229,
-		   "speciesName": "Houndoom (Mega)",
-		   "speciesId": "houndoom_mega",
-		   "baseStats": {
-			   "atk": 289,
-			   "def": 194,
-			   "hp": 181
-		   },
-		   "types": ["dark", "fire"],
-		   "fastMoves": ["FIRE_FANG", "SNARL"],
-		   "chargedMoves": ["CRUNCH", "FIRE_BLAST", "FLAMETHROWER", "FOUL_PLAY"],
-		   "defaultIVs": {
-			   "cp1500": [14.5, 0, 12, 14],
-			   "cp2500": [24, 0, 14, 15]
-		   },
-		   "level25CP": 1613,
-		   "tags": ["shadoweligible"]
-	   },  {
-		   "dex": 248,
-		   "speciesName": "Tyranitar (Mega)",
-		   "speciesId": "tyranitar_mega",
-		   "baseStats": {
-			   "atk": 281,
-			   "def": 251,
-			   "hp": 205
-		   },
-		   "types": ["rock", "dark"],
-		   "fastMoves": ["BITE", "IRON_TAIL", "SMACK_DOWN"],
-		   "chargedMoves": ["CRUNCH", "FIRE_BLAST", "STONE_EDGE"],
-		   "defaultIVs": {
-			   "cp1500": [12.5, 0, 14, 11],
-			   "cp2500": [20.5, 1, 15, 15]
-		   },
-		   "level25CP": 2416,
-		   "tags": ["shadoweligible"],
-		   "eliteMoves": ["SMACK_DOWN"]
-	   },  {
-		   "dex": 254,
-		   "speciesName": "Sceptile (Mega)",
-		   "speciesId": "sceptile_mega",
-		   "baseStats": {
-			   "atk": 291,
-			   "def": 169,
-			   "hp": 157
-		   },
-		   "types": ["grass", "dragon"],
-		   "fastMoves": ["BULLET_SEED", "FURY_CUTTER"],
-		   "chargedMoves": ["AERIAL_ACE", "EARTHQUAKE", "LEAF_BLADE", "FRENZY_PLANT", "DRAGON_CLAW"],
-		   "tags": ["starter"],
-		   "defaultIVs": {
-			   "cp1500": [16.5, 0, 13, 11],
-			   "cp2500": [27, 0, 15, 15]
-		   },
-		   "eliteMoves": ["FRENZY_PLANT"]
-	   },  {
-		   "dex": 257,
-		   "speciesName": "Blaziken (Mega)",
-		   "speciesId": "blaziken_mega",
-		   "baseStats": {
-			   "atk": 299,
-			   "def": 153,
-			   "hp": 173
-		   },
-		   "types": ["fire", "fighting"],
-		   "fastMoves": ["COUNTER", "FIRE_SPIN"],
-		   "chargedMoves": ["BRAVE_BIRD", "FOCUS_BLAST", "OVERHEAT", "STONE_EDGE", "BLAST_BURN", "BLAZE_KICK"],
-		   "tags": ["starter"],
-		   "defaultIVs": {
-			   "cp1500": [16, 0, 13, 13],
-			   "cp2500": [26.5, 0, 13, 15]
-		   },
-		   "eliteMoves": ["BLAST_BURN", "STONE_EDGE"]
-	   }, {
-		   "dex": 260,
-		   "speciesName": "Swampert (Mega)",
-		   "speciesId": "swampert_mega",
-		   "baseStats": {
-			   "atk": 258,
-			   "def": 198,
-			   "hp": 205
-		   },
-		   "types": ["water", "ground"],
-		   "fastMoves": ["MUD_SHOT", "WATER_GUN"],
-		   "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "SURF", "HYDRO_CANNON", "MUDDY_WATER"],
-		   "tags": ["starter", "shadoweligible"],
-		   "defaultIVs": {
-			   "cp1500": [15, 1, 15, 15],
-			   "cp2500": [25, 1, 15, 14]
-		   },
-		   "level25CP": 1841,
-		   "eliteMoves": ["HYDRO_CANNON"]
-	   },  {
-		   "dex": 282,
-		   "speciesName": "Gardevoir (Mega)",
-		   "speciesId": "gardevoir_mega",
-		   "baseStats": {
-			   "atk": 297,
-			   "def": 208,
-			   "hp": 154
-		   },
-		   "types": ["psychic", "fairy"],
-		   "fastMoves": ["CHARGE_BEAM", "CONFUSION", "CHARM"],
-		   "chargedMoves": ["DAZZLING_GLEAM", "PSYCHIC", "SHADOW_BALL", "SYNCHRONOISE"],
-		   "defaultIVs": {
-			   "cp1500": [14.5, 2, 15, 14],
-			   "cp2500": [24.5, 0, 12, 14]
-		   },
-		   "level25CP": 1919,
-		   "tags": ["shadoweligible"],
-		   "eliteMoves": ["SYNCHRONOISE"]
-	   },  {
-		   "dex": 302,
-		   "speciesName": "Sableye (Mega)",
-		   "speciesId": "sableye_mega",
-		   "baseStats": {
-			   "atk": 151,
-			   "def": 216,
-			   "hp": 137
-		   },
-		   "types": ["dark", "ghost"],
-		   "fastMoves": ["FEINT_ATTACK", "SHADOW_CLAW"],
-		   "chargedMoves": ["FOUL_PLAY", "POWER_GEM", "SHADOW_SNEAK"],
-		   "defaultIVs": {
-			   "cp1500": [30, 0, 15, 12],
-			   "cp2500": [40, 15, 15, 15]
-		   },
-		   "level25CP": 858,
-		   "tags": ["shadoweligible"]
-	   },  {
-		   "dex": 303,
-		   "speciesName": "Mawile (Mega)",
-		   "speciesId": "mawile_mega",
-		   "baseStats": {
-			   "atk": 188,
-			   "def": 217,
-			   "hp": 137
-		   },
-		   "types": ["steel", "fairy"],
-		   "fastMoves": ["ASTONISH", "BITE", "FIRE_FANG", "ICE_FANG"],
-		   "chargedMoves": ["IRON_HEAD", "PLAY_ROUGH", "VICE_GRIP", "POWER_UP_PUNCH"],
-		   "defaultIVs": {
-			   "cp1500": [24, 0, 14, 13],
-			   "cp2500": [40, 15, 15, 15]
-		   },
-		   "level25CP": 961,
-		   "tags": ["shadoweligible"]
-	   },  {
-		   "dex": 306,
-		   "speciesName": "Aggron (Mega)",
-		   "speciesId": "aggron_mega",
-		   "baseStats": {
-			   "atk": 225,
-			   "def": 301,
-			   "hp": 157
-		   },
-		   "types": ["steel", "none"],
-		   "fastMoves": ["DRAGON_TAIL", "IRON_TAIL", "SMACK_DOWN"],
-		   "chargedMoves": ["HEAVY_SLAM", "STONE_EDGE", "THUNDER"],
-		   "defaultIVs": {
-			   "cp1500": [16, 1, 15, 14],
-			   "cp2500": [27, 0, 12, 13]
-		   }
-	   },  {
-		   "dex": 308,
-		   "speciesName": "Medicham (Mega)",
-		   "speciesId": "medicham_mega",
-		   "baseStats": {
-			   "atk": 205,
-			   "def": 179,
-			   "hp": 155
-		   },
-		   "types": ["fighting", "psychic"],
-		   "fastMoves": ["COUNTER", "PSYCHO_CUT"],
-		   "chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH", "PSYCHIC", "POWER_UP_PUNCH"],
-		   "defaultIVs": {
-			   "cp1500": [22.5, 1, 15, 14],
-			   "cp2500": [40, 15, 15, 15]
-		   }
-	   },  {
-		   "dex": 310,
-		   "speciesName": "Manectric (Mega)",
-		   "speciesId": "manectric_mega",
-		   "baseStats": {
-			   "atk": 286,
-			   "def": 179,
-			   "hp": 172
-		   },
-		   "types": ["electric", "none"],
-		   "fastMoves": ["CHARGE_BEAM", "SNARL"],
-		   "chargedMoves": ["FLAME_BURST", "THUNDER", "WILD_CHARGE"],
-		   "defaultIVs": {
-			   "cp1500": [15.5, 0, 15, 13],
-			   "cp2500": [26, 0, 13, 13]
-		   }
-	   },  {
-		   "dex": 319,
-		   "speciesName": "Sharpedo (Mega)",
-		   "speciesId": "sharpedo_mega",
-		   "baseStats": {
-			   "atk": 289,
-			   "def": 144,
-			   "hp": 172
-		   },
-		   "types": ["water", "dark"],
-		   "fastMoves": ["BITE", "WATERFALL"],
-		   "chargedMoves": ["CRUNCH", "HYDRO_PUMP", "POISON_FANG"],
-		   "defaultIVs": {
-			   "cp1500": [17, 0, 15, 12],
-			   "cp2500": [28, 1, 15, 15]
-		   },
-		   "level25CP": 1295,
-		   "tags": ["shadoweligible"]
-	   },  {
-		   "dex": 323,
-		   "speciesName": "Camerupt (Mega)",
-		   "speciesId": "camerupt_mega",
-		   "baseStats": {
-			   "atk": 253,
-			   "def": 183,
-			   "hp": 172
-		   },
-		   "types": ["fire", "ground"],
-		   "fastMoves": ["EMBER", "ROCK_SMASH"],
-		   "chargedMoves": ["EARTHQUAKE", "OVERHEAT", "SOLAR_BEAM", "EARTH_POWER"],
-		   "defaultIVs": {
-			   "cp1500": [17.5, 0, 14, 11],
-			   "cp2500": [29, 0, 14, 13]
-		   }
-	   },  {
-		   "dex": 334,
-		   "speciesName": "Altaria (Mega)",
-		   "speciesId": "altaria_mega",
-		   "baseStats": {
-			   "atk": 222,
-			   "def": 218,
-			   "hp": 181
-		   },
-		   "types": ["dragon", "fairy"],
-		   "fastMoves": ["DRAGON_BREATH", "PECK"],
-		   "chargedMoves": ["DAZZLING_GLEAM", "DRAGON_PULSE", "SKY_ATTACK"],
-		   "defaultIVs": {
-			   "cp1500": [18, 0, 8, 15],
-			   "cp2500": [29.5, 0, 15, 15]
-		   }
-	   },  {
-		   "dex": 354,
-		   "speciesName": "Banette (Mega)",
-		   "speciesId": "banette_mega",
-		   "baseStats": {
-			   "atk": 312,
-			   "def": 160,
-			   "hp": 162
-		   },
-		   "types": ["ghost", "none"],
-		   "fastMoves": ["HEX", "SHADOW_CLAW"],
-		   "chargedMoves": ["DAZZLING_GLEAM", "SHADOW_BALL", "THUNDER"],
-		   "defaultIVs": {
-			   "cp1500": [15.5, 0, 12, 13],
-			   "cp2500": [25.5, 0, 15, 15]
-		   },
-		   "level25CP": 1389,
-		   "tags": ["shadoweligible"]
-	   },  {
-		   "dex": 359,
-		   "speciesName": "Absol (Mega)",
-		   "speciesId": "absol_mega",
-		   "baseStats": {
-			   "atk": 314,
-			   "def": 130,
-			   "hp": 163
-		   },
-		   "types": ["dark", "none"],
-		   "fastMoves": ["PSYCHO_CUT", "SNARL"],
-		   "chargedMoves": ["DARK_PULSE", "MEGAHORN", "THUNDER"],
-		   "defaultIVs": {
-			   "cp1500": [16.5, 4, 15, 14],
-			   "cp2500": [28, 0, 13, 14]
-		   },
-		   "level25CP": 1534,
-		   "tags": ["shadoweligible"]
-	   },  {
-		   "dex": 531,
-		   "speciesId": "audino_mega",
-		   "speciesName": "Audino (Mega)",
-		   "baseStats": {
-			   "atk": 147,
-			   "def": 239,
-			   "hp": 230
-		   },
-		   "types": ["normal", "fairy"],
-		   "fastMoves": ["POUND", "ZEN_HEADBUTT"],
-		   "chargedMoves": ["DISARMING_VOICE", "DAZZLING_GLEAM", "HYPER_BEAM"],
-		   "defaultIVs": {
-			   "cp1500": [23, 0, 14, 14],
-			   "cp2500": [40, 14, 15, 13]
-		   }
-	   },  {
-		   "dex": 362,
-		   "speciesName": "Glalie (Mega)",
-		   "speciesId": "glalie_mega",
-		   "baseStats": {
-			   "atk": 252,
-			   "def": 168,
-			   "hp": 190
-		   },
-		   "types": ["ice", "none"],
-		   "fastMoves": ["FROST_BREATH", "ICE_SHARD"],
-		   "chargedMoves": ["AVALANCHE", "GYRO_BALL", "SHADOW_BALL"],
-		   "defaultIVs": {
-			   "cp1500": [17.5, 0, 10, 14],
-			   "cp2500": [29, 0, 13, 13]
-		   }
-	   },  {
-		   "dex": 373,
-		   "speciesName": "Salamence (Mega)",
-		   "speciesId": "salamence_mega",
-		   "baseStats": {
-			   "atk": 282,
-			   "def": 228,
-			   "hp": 197
-		   },
-		   "types": ["dragon", "flying"],
-		   "fastMoves": ["BITE", "DRAGON_TAIL", "FIRE_FANG"],
-		   "chargedMoves": ["DRACO_METEOR", "FIRE_BLAST", "HYDRO_PUMP", "OUTRAGE"],
-		   "defaultIVs": {
-			   "cp1500": [13, 3, 15, 15],
-			   "cp2500": [22, 0, 15, 13]
-		   },
-		   "level25CP": 2354,
-		   "tags": ["shadoweligible"],
-		   "eliteMoves": ["OUTRAGE"]
-	   },  {
-		   "dex": 376,
-		   "speciesName": "Metagross (Mega)",
-		   "speciesId": "metagross_mega",
-		   "baseStats": {
-			   "atk": 273,
-			   "def": 263,
-			   "hp": 173
-		   },
-		   "types": ["steel", "psychic"],
-		   "fastMoves": ["BULLET_PUNCH", "ZEN_HEADBUTT"],
-		   "chargedMoves": ["EARTHQUAKE", "FLASH_CANNON", "METEOR_MASH", "PSYCHIC"],
-		   "defaultIVs": {
-			   "cp1500": [13.5, 0, 13, 15],
-			   "cp2500": [22.5, 0, 13, 15]
-		   },
-		   "level25CP": 2386,
-		   "tags": ["shadoweligible"],
-		   "eliteMoves": ["METEOR_MASH"]
-	   },  {
-		   "dex": 380,
-		   "speciesName": "Latias (Mega)",
-		   "speciesId": "latias_mega",
-		   "baseStats": {
-			   "atk": 263,
-			   "def": 270,
-			   "hp": 173
-		   },
-		   "types": ["dragon", "psychic"],
-		   "fastMoves": ["DRAGON_BREATH", "ZEN_HEADBUTT", "CHARM"],
-		   "chargedMoves": ["OUTRAGE", "PSYCHIC", "THUNDER"],
-		   "tags": ["legendary"],
-		   "defaultIVs": {
-			   "cp1500": [13.5, 6, 15, 15],
-			   "cp2500": [23, 1, 13, 15]
-		   }
-	   },  {
-		   "dex": 381,
-		   "speciesName": "Latios (Mega)",
-		   "speciesId": "latios_mega",
-		   "baseStats": {
-			   "atk": 305,
-			   "def": 219,
-			   "hp": 173
-		   },
-		   "types": ["dragon", "psychic"],
-		   "fastMoves": ["DRAGON_BREATH", "ZEN_HEADBUTT"],
-		   "chargedMoves": ["DRAGON_CLAW", "PSYCHIC", "SOLAR_BEAM"],
-		   "tags": ["legendary"],
-		   "defaultIVs": {
-			   "cp1500": [13, 4, 15, 14],
-			   "cp2500": [22, 1, 14, 13]
-		   }
-	   },  {
-		   "dex": 384,
-		   "speciesName": "Rayquaza (Mega)",
-		   "speciesId": "rayquaza_mega",
-		   "baseStats": {
-			   "atk": 354,
-			   "def": 197,
-			   "hp": 212
-		   },
-		   "types": ["dragon", "flying"],
-		   "fastMoves": ["AIR_SLASH", "DRAGON_TAIL"],
-		   "chargedMoves": ["AERIAL_ACE", "ANCIENT_POWER", "OUTRAGE"],
-		   "tags": ["legendary"],
-		   "defaultIVs": {
-			   "cp1500": [11, 1, 8, 14],
-			   "cp2500": [18, 1, 15, 14]
-		   }
-	   },  {
-		   "dex": 428,
-		   "speciesName": "Lopunny (Mega)",
-		   "speciesId": "lopunny_mega",
-		   "baseStats": {
-			   "atk": 282,
-			   "def": 214,
-			   "hp": 163
-		   },
-		   "types": ["normal", "fighting"],
-		   "fastMoves": ["LOW_KICK", "POUND"],
-		   "chargedMoves": ["FIRE_PUNCH", "FOCUS_BLAST", "HYPER_BEAM"],
-		   "defaultIVs": {
-			   "cp1500": [15, 0, 13, 11],
-			   "cp2500": [24.5, 2, 15, 14]
-		   }
-	   },  {
-		   "dex": 445,
-		   "speciesName": "Garchomp (Mega)",
-		   "speciesId": "garchomp_mega",
-		   "baseStats": {
-			   "atk": 308,
-			   "def": 202,
-			   "hp": 217
-		   },
-		   "types": ["dragon", "ground"],
-		   "fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
-		   "chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "OUTRAGE", "SAND_TOMB"],
-		   "defaultIVs": {
-			   "cp1500": [12, 4, 15, 15],
-			   "cp2500": [20.5, 0, 12, 13]
-		   }
-	   },  {
-		   "dex": 448,
-		   "speciesName": "Lucario (Mega)",
-		   "speciesId": "lucario_mega",
-		   "baseStats": {
-			   "atk": 310,
-			   "def": 175,
-			   "hp": 172
-		   },
-		   "types": ["fighting", "steel"],
-		   "fastMoves": ["BULLET_PUNCH", "COUNTER"],
-		   "chargedMoves": ["CLOSE_COMBAT", "FLASH_CANNON", "SHADOW_BALL", "POWER_UP_PUNCH", "AURA_SPHERE"],
-		   "defaultIVs": {
-			   "cp1500": [14.5, 0, 14, 13],
-			   "cp2500": [24, 1, 15, 13]
-		   }
-	   },  {
-		   "dex": 475,
-		   "speciesName": "Gallade (Mega)",
-		   "speciesId": "gallade_mega",
-		   "baseStats": {
-			   "atk": 297,
-			   "def": 209,
-			   "hp": 154
-		   },
-		   "types": ["psychic", "fighting"],
-		   "fastMoves": ["CONFUSION", "LOW_KICK", "CHARM"],
-		   "chargedMoves": ["CLOSE_COMBAT", "LEAF_BLADE", "PSYCHIC", "SYNCHRONOISE"],
-		   "defaultIVs": {
-			   "cp1500": [14.5, 2, 15, 14],
-			   "cp2500": [24.5, 0, 11, 14]
-		   },
-		   "level25CP": 1919,
-		   "tags": ["shadoweligible"],
-		   "eliteMoves": ["SYNCHRONOISE"]
-	   }, {
-		   "dex": 460,
-		   "speciesName": "Abomasnow (Mega)",
-		   "speciesId": "abomasnow_mega",
-		   "baseStats": {
-			   "atk": 240,
-			   "def": 191,
-			   "hp": 207
-		   },
-		   "types": ["grass", "ice"],
-		   "fastMoves": ["POWDER_SNOW", "RAZOR_LEAF"],
-		   "chargedMoves": ["BLIZZARD", "ENERGY_BALL", "OUTRAGE", "WEATHER_BALL_ICE"],
-		   "defaultIVs": {
-			   "cp1500": [16.5, 0, 14, 13],
-			   "cp2500": [27.5, 0, 12, 15]
-		   },
-		   "level25CP": 1436,
-		   "tags": ["shadoweligible"]
-	   }, {
+        "dex": 3,
+        "speciesName": "Venusaur (Mega)",
+        "speciesId": "venusaur_mega",
+        "baseStats": {
+            "atk": 241,
+            "def": 246,
+            "hp": 190
+        },
+        "types": ["grass", "poison"],
+        "fastMoves": ["RAZOR_LEAF", "VINE_WHIP"],
+        "chargedMoves": ["FRENZY_PLANT", "PETAL_BLIZZARD", "SLUDGE_BOMB", "SOLAR_BEAM"],
+        "tags": ["starter", "shadoweligible", "mega"],
+        "level25CP": 2324,
+        "defaultIVs": {
+            "cp1500": [15, 7, 6, 12],
+            "cp2500": [24.5, 6, 12, 15]
+        },
+        "eliteMoves": ["FRENZY_PLANT"]
+    }, {
+        "dex": 6,
+        "speciesName": "Charizard (Mega X)",
+        "speciesId": "charizard_mega_x",
+        "baseStats": {
+            "atk": 273,
+            "def": 213,
+            "hp": 186
+        },
+        "types": ["fire", "dragon"],
+        "fastMoves": ["AIR_SLASH", "EMBER", "FIRE_SPIN", "WING_ATTACK"],
+        "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW", "FIRE_BLAST", "FLAMETHROWER", "OVERHEAT"],
+        "tags": ["starter", "shadoweligible", "mega"],
+        "level25CP": 2424,
+        "defaultIVs": {
+            "cp1500": [14, 6, 15, 13],
+            "cp2500": [24, 7, 12, 7]
+        },
+        "eliteMoves": ["EMBER", "WING_ATTACK", "BLAST_BURN", "FLAMETHROWER"]
+    }, {
+        "dex": 6,
+        "speciesName": "Charizard (Mega Y)",
+        "speciesId": "charizard_mega_y",
+        "baseStats": {
+            "atk": 319,
+            "def": 212,
+            "hp": 186
+        },
+        "types": ["fire", "flying"],
+        "fastMoves": ["AIR_SLASH", "EMBER", "FIRE_SPIN", "WING_ATTACK"],
+        "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW", "FIRE_BLAST", "FLAMETHROWER", "OVERHEAT"],
+        "tags": ["starter", "shadoweligible", "mega"],
+        "level25CP": 2826,
+        "defaultIVs": {
+            "cp1500": [12, 7, 15, 13],
+            "cp2500": [20, 6, 14, 15]
+        },
+        "eliteMoves": ["EMBER", "WING_ATTACK", "BLAST_BURN", "FLAMETHROWER"]
+    }, {
+        "dex": 9,
+        "speciesName": "Blastoise (Mega)",
+        "speciesId": "blastoise_mega",
+        "baseStats": {
+            "atk": 264,
+            "def": 237,
+            "hp": 188
+        },
+        "types": ["water", "none"],
+        "fastMoves": ["BITE", "WATER_GUN"],
+        "chargedMoves": ["FLASH_CANNON", "HYDRO_CANNON", "HYDRO_PUMP", "ICE_BEAM", "SKULL_BASH"],
+        "tags": ["starter", "shadoweligible", "mega"],
+        "level25CP": 1000,
+        "defaultIVs": {
+            "cp1500": [14, 8, 5, 13],
+            "cp2500": [23, 10, 14, 9]
+        },
+        "eliteMoves": ["HYDRO_CANNON"]
+    }, {
+        "dex": 15,
+        "speciesName": "Beedrill (Mega)",
+        "speciesId": "beedrill_mega",
+        "baseStats": {
+            "atk": 303,
+            "def": 148,
+            "hp": 163
+        },
+        "types": ["bug", "poison"],
+        "fastMoves": ["BUG_BITE", "INFESTATION", "POISON_JAB"],
+        "chargedMoves": ["AERIAL_ACE", "SLUDGE_BOMB", "X_SCISSOR", "FELL_STINGER", "DRILL_RUN"],
+        "defaultIVs": {
+            "cp1500": [16, 6, 13, 14],
+            "cp2500": [27, 8, 15, 7]
+        },
+        "tags": ["shadoweligible", "mega"],
+        "level25CP": 2099,
+        "eliteMoves": ["BUG_BITE", "DRILL_RUN"]
+    }, {
+        "dex": 18,
+        "speciesName": "Pidgeot (Mega)",
+        "speciesId": "pidgeot_mega",
+        "baseStats": {
+            "atk": 280,
+            "def": 175,
+            "hp": 195
+        },
+        "types": ["normal", "flying"],
+        "fastMoves": ["AIR_SLASH", "STEEL_WING", "WING_ATTACK"],
+        "chargedMoves": ["AERIAL_ACE", "AIR_CUTTER", "BRAVE_BIRD", "HURRICANE"],
+        "defaultIVs": {
+            "cp1500": [14.5, 10, 14, 14],
+            "cp2500": [24.5, 6, 13, 14]
+        },
+		"tags": ["mega"],
+        "eliteMoves": ["WING_ATTACK", "AIR_CUTTER"]
+    }, {
+        "dex": 65,
+        "speciesName": "Alakazam (Mega)",
+        "speciesId": "alakazam_mega",
+        "baseStats": {
+            "atk": 367,
+            "def": 193,
+            "hp": 146
+        },
+        "types": ["psychic", "none"],
+        "fastMoves": ["CONFUSION", "PSYCHO_CUT", "COUNTER"],
+        "chargedMoves": ["DAZZLING_GLEAM", "FIRE_PUNCH", "FOCUS_BLAST", "FUTURE_SIGHT", "PSYCHIC", "SHADOW_BALL"],
+        "defaultIVs": {
+            "cp1500": [12.5, 9, 7, 14],
+            "cp2500": [21.5, 5, 5, 9]
+        },
+        "tags": ["shadoweligible", "mega"],
+        "level25CP": 2748,
+        "eliteMoves": ["COUNTER", "DAZZLING_GLEAM", "PSYCHIC"]
+    }, {
+        "dex": 80,
+        "speciesName": "Slowbro (Mega)",
+        "speciesId": "slowbro_mega",
+        "baseStats": {
+            "atk": 224,
+            "def": 259,
+            "hp": 216
+        },
+        "types": ["water", "psychic"],
+        "fastMoves": ["CONFUSION", "WATER_GUN"],
+        "chargedMoves": ["ICE_BEAM", "PSYCHIC", "WATER_PULSE"],
+        "defaultIVs": {
+            "cp1500": [14.5, 9, 15, 9],
+            "cp2500": [25, 5, 10, 6]
+        },
+		"tags": ["mega"]
+    }, {
+        "dex": 94,
+        "speciesName": "Gengar (Mega)",
+        "speciesId": "gengar_mega",
+        "baseStats": {
+            "atk": 349,
+            "def": 199,
+            "hp": 155
+        },
+        "types": ["ghost", "poison"],
+        "fastMoves": ["HEX", "LICK", "SHADOW_CLAW", "SUCKER_PUNCH"],
+        "chargedMoves": ["DARK_PULSE", "FOCUS_BLAST", "PSYCHIC", "SHADOW_BALL", "SLUDGE_BOMB", "SLUDGE_WAVE", "SHADOW_PUNCH"],
+        "defaultIVs": {
+            "cp1500": [12.5, 8, 10, 13],
+            "cp2500": [21, 9, 15, 7]
+        },
+		"tags": ["mega"],
+        "eliteMoves": ["LICK", "SLUDGE_WAVE", "DARK_PULSE", "PSYCHIC", "SHADOW_PUNCH"]
+    }, {
+        "dex": 115,
+        "speciesName": "Kangaskhan (Mega)",
+        "speciesId": "kangaskhan_mega",
+        "baseStats": {
+            "atk": 246,
+            "def": 210,
+            "hp": 233
+        },
+        "types": ["normal", "none"],
+        "fastMoves": ["LOW_KICK", "MUD_SLAP"],
+        "chargedMoves": ["BRICK_BREAK", "CRUNCH", "EARTHQUAKE", "OUTRAGE", "STOMP", "POWER_UP_PUNCH"],
+        "tags": ["regional", "mega"],
+        "defaultIVs": {
+            "cp1500": [14, 10, 15, 11],
+            "cp2500": [23.5, 9, 10, 15]
+        },
+        "eliteMoves": ["BRICK_BREAK", "STOMP"]
+    }, {
+        "dex": 127,
+        "speciesName": "Pinsir (Mega)",
+        "speciesId": "pinsir_mega",
+        "baseStats": {
+            "atk": 305,
+            "def": 231,
+            "hp": 163
+        },
+        "types": ["bug", "flying"],
+        "fastMoves": ["BUG_BITE", "FURY_CUTTER", "ROCK_SMASH"],
+        "chargedMoves": ["CLOSE_COMBAT", "SUBMISSION", "VICE_GRIP", "X_SCISSOR", "SUPER_POWER"],
+        "defaultIVs": {
+            "cp1500": [13, 5, 10, 15],
+            "cp2500": [21.5, 10, 13, 12]
+        },
+        "tags": ["shadoweligible", "mega"],
+        "level25CP": 2640,
+        "eliteMoves": ["SUBMISSION"]
+    }, {
+        "dex": 130,
+        "speciesName": "Gyarados (Mega)",
+        "speciesId": "gyarados_mega",
+        "baseStats": {
+            "atk": 292,
+            "def": 247,
+            "hp": 216
+        },
+        "types": ["water", "dark"],
+        "fastMoves": ["BITE", "DRAGON_BREATH", "DRAGON_TAIL", "WATERFALL"],
+        "chargedMoves": ["CRUNCH", "DRAGON_PULSE", "HYDRO_PUMP", "OUTRAGE", "TWISTER", "AQUA_TAIL"],
+        "defaultIVs": {
+            "cp1500": [11.5, 11, 6, 14],
+            "cp2500": [19, 9, 13, 13]
+        },
+        "tags": ["shadoweligible", "mega"],
+        "level25CP": 3009,
+        "eliteMoves": ["DRAGON_TAIL", "DRAGON_PULSE", "AQUA_TAIL"]
+    }, {
+        "dex": 142,
+        "speciesName": "Aerodactyl (Mega)",
+        "speciesId": "aerodactyl_mega",
+        "baseStats": {
+            "atk": 292,
+            "def": 210,
+            "hp": 190
+        },
+        "types": ["rock", "flying"],
+        "fastMoves": ["BITE", "STEEL_WING", "ROCK_THROW"],
+        "chargedMoves": ["ANCIENT_POWER", "HYPER_BEAM", "IRON_HEAD", "ROCK_SLIDE", "EARTH_POWER"],
+		"tags": ["mega"],
+        "defaultIVs": {
+            "cp1500": [13, 6, 15, 14],
+            "cp2500": [22, 6, 10, 15]
+        }
+    }, {
+        "dex": 150,
+        "speciesName": "Mewtwo (Mega X)",
+        "speciesId": "mewtwo_mega_x",
+        "baseStats": {
+            "atk": 375,
+            "def": 202,
+            "hp": 214
+        },
+        "types": ["psychic", "fighting"],
+        "fastMoves": ["CONFUSION", "PSYCHO_CUT"],
+        "chargedMoves": ["FLAMETHROWER", "FOCUS_BLAST", "HYPER_BEAM", "ICE_BEAM", "PSYCHIC", "SHADOW_BALL", "THUNDERBOLT", "PSYSTRIKE"],
+        "tags": ["legendary", "shadoweligible", "mega"],
+        "level25CP": 3478,
+        "defaultIVs": {
+            "cp1500": [10, 6, 9, 15],
+            "cp2500": [16.5, 11, 14, 9]
+        },
+        "eliteMoves": ["PSYSTRIKE", "SHADOW_BALL", "HYPER_BEAM"]
+    }, {
+        "dex": 150,
+        "speciesName": "Mewtwo (Mega Y)",
+        "speciesId": "mewtwo_mega_y",
+        "baseStats": {
+            "atk": 388,
+            "def": 208,
+            "hp": 214
+        },
+        "types": ["psychic", "none"],
+        "fastMoves": ["CONFUSION", "PSYCHO_CUT"],
+        "chargedMoves": ["FLAMETHROWER", "FOCUS_BLAST", "HYPER_BEAM", "ICE_BEAM", "PSYCHIC", "SHADOW_BALL", "THUNDERBOLT", "PSYSTRIKE"],
+        "tags": ["legendary", "shadoweligible", "mega"],
+        "level25CP": 3652,
+        "defaultIVs": {
+            "cp1500": [9.5, 11, 12, 10],
+            "cp2500": [16, 7, 9, 11]
+        },
+        "eliteMoves": ["PSYSTRIKE", "SHADOW_BALL", "HYPER_BEAM"]
+    }, {
+        "dex": 181,
+        "speciesName": "Ampharos (Mega)",
+        "speciesId": "ampharos_mega",
+        "baseStats": {
+            "atk": 294,
+            "def": 203,
+            "hp": 207
+        },
+        "types": ["electric", "dragon"],
+        "fastMoves": ["CHARGE_BEAM", "VOLT_SWITCH"],
+        "chargedMoves": ["DRAGON_PULSE", "FOCUS_BLAST", "POWER_GEM", "THUNDER", "ZAP_CANNON", "THUNDER_PUNCH"],
+        "defaultIVs": {
+            "cp1500": [13, 7, 7, 12],
+            "cp2500": [22, 5, 10, 6]
+        },
+        "tags": ["shadoweligible", "mega"],
+        "level25CP": 2688,
+        "eliteMoves": ["DRAGON_PULSE"]
+    }, {
+        "dex": 208,
+        "speciesName": "Steelix (Mega)",
+        "speciesId": "steelix_mega",
+        "baseStats": {
+            "atk": 212,
+            "def": 327,
+            "hp": 181
+        },
+        "types": ["steel", "ground"],
+        "fastMoves": ["DRAGON_TAIL", "IRON_TAIL", "THUNDER_FANG"],
+        "chargedMoves": ["CRUNCH", "EARTHQUAKE", "HEAVY_SLAM"],
+		"tags": ["mega"],
+        "defaultIVs": {
+            "cp1500": [15, 7, 11, 11],
+            "cp2500": [25, 5, 12, 13]
+        }
+    }, {
+        "dex": 212,
+        "speciesName": "Scizor (Mega)",
+        "speciesId": "scizor_mega",
+        "baseStats": {
+            "atk": 279,
+            "def": 250,
+            "hp": 172
+        },
+        "types": ["bug", "steel"],
+        "fastMoves": ["BULLET_PUNCH", "FURY_CUTTER"],
+        "chargedMoves": ["IRON_HEAD", "NIGHT_SLASH", "X_SCISSOR"],
+        "defaultIVs": {
+            "cp1500": [13.5, 7, 9, 11],
+            "cp2500": [22.5, 6, 13, 8]
+        },
+        "tags": ["shadoweligible", "mega"],
+        "level25CP": 2581
+    }, {
+        "dex": 214,
+        "speciesName": "Heracross (Mega)",
+        "speciesId": "heracross_mega",
+        "baseStats": {
+            "atk": 334,
+            "def": 223,
+            "hp": 190
+        },
+        "types": ["bug", "fighting"],
+        "fastMoves": ["COUNTER", "STRUGGLE_BUG"],
+        "chargedMoves": ["CLOSE_COMBAT", "EARTHQUAKE", "MEGAHORN"],
+        "tags": ["regional", "mega"],
+        "defaultIVs": {
+            "cp1500": [11.5, 5, 13, 6],
+            "cp2500": [19, 6, 15, 6]
+        }
+    }, {
+        "dex": 229,
+        "speciesName": "Houndoom (Mega)",
+        "speciesId": "houndoom_mega",
+        "baseStats": {
+            "atk": 289,
+            "def": 194,
+            "hp": 181
+        },
+        "types": ["dark", "fire"],
+        "fastMoves": ["FIRE_FANG", "SNARL"],
+        "chargedMoves": ["CRUNCH", "FIRE_BLAST", "FLAMETHROWER", "FOUL_PLAY"],
+        "defaultIVs": {
+            "cp1500": [14, 6, 14, 14],
+            "cp2500": [23.5, 9, 15, 9]
+        },
+        "tags": ["shadoweligible", "mega"],
+        "level25CP": 2416
+    }, {
+        "dex": 248,
+        "speciesName": "Tyranitar (Mega)",
+        "speciesId": "tyranitar_mega",
+        "baseStats": {
+            "atk": 309,
+            "def": 276,
+            "hp": 225
+        },
+        "types": ["rock", "dark"],
+        "fastMoves": ["BITE", "IRON_TAIL", "SMACK_DOWN"],
+        "chargedMoves": ["CRUNCH", "FIRE_BLAST", "STONE_EDGE"],
+        "defaultIVs": {
+            "cp1500": [10, 14, 15, 7],
+            "cp2500": [17, 5, 7, 15]
+        },
+        "tags": ["shadoweligible", "mega"],
+        "level25CP": 3435,
+        "eliteMoves": ["SMACK_DOWN"]
+    }, {
+        "dex": 254,
+        "speciesName": "Sceptile (Mega)",
+        "speciesId": "sceptile_mega",
+        "baseStats": {
+            "atk": 320,
+            "def": 186,
+            "hp": 172
+        },
+        "types": ["grass", "dragon"],
+        "fastMoves": ["BULLET_SEED", "FURY_CUTTER"],
+        "chargedMoves": ["AERIAL_ACE", "EARTHQUAKE", "LEAF_BLADE", "FRENZY_PLANT", "DRAGON_CLAW"],
+        "tags": ["starter", "mega"],
+        "defaultIVs": {
+            "cp1500": [13, 15, 12, 15],
+            "cp2500": [22, 9, 12, 15]
+        },
+        "eliteMoves": ["FRENZY_PLANT"]
+    }, {
+        "dex": 257,
+        "speciesName": "Blaziken (Mega)",
+        "speciesId": "blaziken_mega",
+        "baseStats": {
+            "atk": 329,
+            "def": 168,
+            "hp": 190
+        },
+        "types": ["fire", "fighting"],
+        "fastMoves": ["COUNTER", "FIRE_SPIN"],
+        "chargedMoves": ["BRAVE_BIRD", "FOCUS_BLAST", "OVERHEAT", "STONE_EDGE", "BLAST_BURN", "BLAZE_KICK"],
+        "tags": ["starter", "mega"],
+        "defaultIVs": {
+            "cp1500": [13, 12, 10, 12],
+            "cp2500": [22, 6, 10, 12]
+        },
+        "eliteMoves": ["BLAST_BURN", "STONE_EDGE"]
+    }, {
+        "dex": 260,
+        "speciesName": "Swampert (Mega)",
+        "speciesId": "swampert_mega",
+        "baseStats": {
+            "atk": 283,
+            "def": 218,
+            "hp": 225
+        },
+        "types": ["water", "ground"],
+        "fastMoves": ["MUD_SHOT", "WATER_GUN"],
+        "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "SURF", "HYDRO_CANNON", "MUDDY_WATER"],
+        "tags": ["starter", "shadoweligible", "mega"],
+        "defaultIVs": {
+            "cp1500": [12.5, 7, 13, 7],
+            "cp2500": [21, 5, 5, 14]
+        },
+        "eliteMoves": ["HYDRO_CANNON"],
+        "level25CP": 2796
+    }, {
+        "dex": 282,
+        "speciesName": "Gardevoir (Mega)",
+        "speciesId": "gardevoir_mega",
+        "baseStats": {
+            "atk": 326,
+            "def": 229,
+            "hp": 169
+        },
+        "types": ["psychic", "fairy"],
+        "fastMoves": ["CHARGE_BEAM", "CONFUSION", "CHARM"],
+        "chargedMoves": ["DAZZLING_GLEAM", "PSYCHIC", "SHADOW_BALL", "SYNCHRONOISE"],
+        "defaultIVs": {
+            "cp1500": [12, 11, 8, 13],
+            "cp2500": [19.5, 15, 15, 13]
+        },
+        "tags": ["shadoweligible", "mega"],
+        "eliteMoves": ["SYNCHRONOISE"],
+        "level25CP": 2861
+    }, {
+        "dex": 302,
+        "speciesName": "Sableye (Mega)",
+        "speciesId": "sableye_mega",
+        "baseStats": {
+            "atk": 151,
+            "def": 216,
+            "hp": 137
+        },
+        "types": ["dark", "ghost"],
+        "fastMoves": ["FEINT_ATTACK", "SHADOW_CLAW"],
+        "chargedMoves": ["FOUL_PLAY", "POWER_GEM", "SHADOW_SNEAK"],
+        "defaultIVs": {
+            "cp1500": [29.5, 5, 8, 11],
+            "cp2500": [40, 15, 15, 15]
+        },
+        "level25CP": 1158,
+        "tags": ["shadoweligible", "mega"]
+    }, {
+        "dex": 303,
+        "speciesName": "Mawile (Mega)",
+        "speciesId": "mawile_mega",
+        "baseStats": {
+            "atk": 188,
+            "def": 217,
+            "hp": 137
+        },
+        "types": ["steel", "fairy"],
+        "fastMoves": ["ASTONISH", "BITE", "FIRE_FANG", "ICE_FANG"],
+        "chargedMoves": ["IRON_HEAD", "PLAY_ROUGH", "VICE_GRIP", "POWER_UP_PUNCH"],
+        "defaultIVs": {
+            "cp1500": [23.5, 6, 5, 15],
+            "cp2500": [40, 15, 15, 15]
+        },
+        "level25CP": 1446,
+        "tags": ["shadoweligible", "mega"]
+    }, {
+        "dex": 306,
+        "speciesName": "Aggron (Mega)",
+        "speciesId": "aggron_mega",
+        "baseStats": {
+            "atk": 247,
+            "def": 331,
+            "hp": 172
+        },
+        "types": ["steel", "none"],
+        "fastMoves": ["DRAGON_TAIL", "IRON_TAIL", "SMACK_DOWN"],
+        "chargedMoves": ["HEAVY_SLAM", "STONE_EDGE", "THUNDER"],
+		"tags": ["mega"],
+        "defaultIVs": {
+            "cp1500": [13, 10, 9, 13],
+            "cp2500": [22, 6, 7, 14]
+        }
+    }, {
+        "dex": 308,
+        "speciesName": "Medicham (Mega)",
+        "speciesId": "medicham_mega",
+        "baseStats": {
+            "atk": 205,
+            "def": 179,
+            "hp": 155
+        },
+        "types": ["fighting", "psychic"],
+        "fastMoves": ["COUNTER", "PSYCHO_CUT"],
+        "chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH", "PSYCHIC", "POWER_UP_PUNCH"],
+		"tags": ["mega"],
+        "defaultIVs": {
+            "cp1500": [22, 6, 13, 14],
+            "cp2500": [40, 15, 15, 15]
+        }
+    }, {
+        "dex": 310,
+        "speciesName": "Manectric (Mega)",
+        "speciesId": "manectric_mega",
+        "baseStats": {
+            "atk": 286,
+            "def": 179,
+            "hp": 172
+        },
+        "types": ["electric", "none"],
+        "fastMoves": ["CHARGE_BEAM", "SNARL"],
+        "chargedMoves": ["FLAME_BURST", "THUNDER", "WILD_CHARGE"],
+		"tags": ["mega"],
+        "defaultIVs": {
+            "cp1500": [15, 13, 10, 14],
+            "cp2500": [25, 9, 13, 14]
+        }
+    }, {
+        "dex": 319,
+        "speciesName": "Sharpedo (Mega)",
+        "speciesId": "sharpedo_mega",
+        "baseStats": {
+            "atk": 289,
+            "def": 144,
+            "hp": 172
+        },
+        "types": ["water", "dark"],
+        "fastMoves": ["BITE", "WATERFALL"],
+        "chargedMoves": ["CRUNCH", "HYDRO_PUMP", "POISON_FANG"],
+        "defaultIVs": {
+            "cp1500": [16.5, 10, 12, 14],
+            "cp2500": [28, 5, 9, 15]
+        },
+        "level25CP": 2029,
+        "tags": ["shadoweligible", "mega"]
+    }, {
+        "dex": 323,
+        "speciesName": "Camerupt (Mega)",
+        "speciesId": "camerupt_mega",
+        "baseStats": {
+            "atk": 253,
+            "def": 183,
+            "hp": 172
+        },
+        "types": ["fire", "ground"],
+        "fastMoves": ["EMBER", "ROCK_SMASH"],
+        "chargedMoves": ["EARTHQUAKE", "OVERHEAT", "SOLAR_BEAM", "EARTH_POWER"],
+        "defaultIVs": {
+            "cp1500": [16.5, 10, 15, 15],
+            "cp2500": [28.5, 6, 11, 13]
+        }
+    }, {
+        "dex": 334,
+        "speciesName": "Altaria (Mega)",
+        "speciesId": "altaria_mega",
+        "baseStats": {
+            "atk": 222,
+            "def": 218,
+            "hp": 181
+        },
+        "types": ["dragon", "fairy"],
+        "fastMoves": ["DRAGON_BREATH", "PECK"],
+        "chargedMoves": ["DAZZLING_GLEAM", "DRAGON_PULSE", "SKY_ATTACK"],
+		"tags": ["mega"],
+        "defaultIVs": {
+            "cp1500": [17.5, 7, 14, 7],
+            "cp2500": [29, 7, 12, 11]
+        }
+    }, {
+        "dex": 354,
+        "speciesName": "Banette (Mega)",
+        "speciesId": "banette_mega",
+        "baseStats": {
+            "atk": 312,
+            "def": 160,
+            "hp": 162
+        },
+        "types": ["ghost", "none"],
+        "fastMoves": ["HEX", "SHADOW_CLAW"],
+        "chargedMoves": ["DAZZLING_GLEAM", "SHADOW_BALL", "THUNDER"],
+        "defaultIVs": {
+            "cp1500": [15, 9, 13, 13],
+            "cp2500": [25, 5, 13, 15]
+        },
+        "level25CP": 2240,
+        "tags": ["shadoweligible", "mega"]
+    }, {
+        "dex": 359,
+        "speciesName": "Absol (Mega)",
+        "speciesId": "absol_mega",
+        "baseStats": {
+            "atk": 314,
+            "def": 130,
+            "hp": 163
+        },
+        "types": ["dark", "none"],
+        "fastMoves": ["PSYCHO_CUT", "SNARL"],
+        "chargedMoves": ["DARK_PULSE", "MEGAHORN", "THUNDER"],
+        "defaultIVs": {
+            "cp1500": [17, 6, 8, 10],
+            "cp2500": [27, 10, 13, 15]
+        },
+        "level25CP": 1534,
+        "tags": ["shadoweligible", "mega"]
+    }, {
+        "dex": 531,
+        "speciesId": "audino_mega",
+        "speciesName": "Audino (Mega)",
+        "baseStats": {
+            "atk": 147,
+            "def": 239,
+            "hp": 230
+        },
+        "types": ["normal", "fairy"],
+        "fastMoves": ["POUND", "ZEN_HEADBUTT"],
+        "chargedMoves": ["DISARMING_VOICE", "DAZZLING_GLEAM", "HYPER_BEAM"],
+        "defaultIVs": {
+            "cp1500": [22, 8, 12, 11],
+            "cp2500": [39.5, 14, 15, 14]
+        },
+		"tags": ["mega"]
+    }, {
+        "dex": 362,
+        "speciesName": "Glalie (Mega)",
+        "speciesId": "glalie_mega",
+        "baseStats": {
+            "atk": 252,
+            "def": 168,
+            "hp": 190
+        },
+        "types": ["ice", "none"],
+        "fastMoves": ["FROST_BREATH", "ICE_SHARD"],
+        "chargedMoves": ["AVALANCHE", "GYRO_BALL", "SHADOW_BALL"],
+        "defaultIVs": {
+            "cp1500": [16.5, 11, 15, 13],
+            "cp2500": [28, 5, 14, 14]
+        },
+		"tags": ["mega"]
+    }, {
+        "dex": 373,
+        "speciesName": "Salamence (Mega)",
+        "speciesId": "salamence_mega",
+        "baseStats": {
+            "atk": 310,
+            "def": 251,
+            "hp": 216
+        },
+        "types": ["dragon", "flying"],
+        "fastMoves": ["BITE", "DRAGON_TAIL", "FIRE_FANG"],
+        "chargedMoves": ["DRACO_METEOR", "FIRE_BLAST", "HYDRO_PUMP", "OUTRAGE"],
+        "defaultIVs": {
+            "cp1500": [10.5, 9, 15, 15],
+            "cp2500": [18, 8, 8, 15]
+        },
+        "level25CP": 3220,
+        "tags": ["shadoweligible", "mega"],
+        "eliteMoves": ["OUTRAGE"]
+    }, {
+        "dex": 376,
+        "speciesName": "Metagross (Mega)",
+        "speciesId": "metagross_mega",
+        "baseStats": {
+            "atk": 300,
+            "def": 289,
+            "hp": 190
+        },
+        "types": ["steel", "psychic"],
+        "fastMoves": ["BULLET_PUNCH", "ZEN_HEADBUTT"],
+        "chargedMoves": ["EARTHQUAKE", "FLASH_CANNON", "METEOR_MASH", "PSYCHIC"],
+        "defaultIVs": {
+            "cp1500": [11, 9, 12, 12],
+            "cp2500": [18.5, 7, 12, 11]
+        },
+        "level25CP": 3136,
+        "tags": ["shadoweligible", "mega"],
+        "eliteMoves": ["METEOR_MASH"]
+    }, {
+        "dex": 380,
+        "speciesName": "Latias (Mega)",
+        "speciesId": "latias_mega",
+        "baseStats": {
+            "atk": 289,
+            "def": 297,
+            "hp": 190
+        },
+        "types": ["dragon", "psychic"],
+        "fastMoves": ["DRAGON_BREATH", "ZEN_HEADBUTT", "CHARM"],
+        "chargedMoves": ["OUTRAGE", "PSYCHIC", "THUNDER"],
+        "tags": ["legendary", "mega"],
+        "defaultIVs": {
+            "cp1500": [11.5, 9, 5, 9],
+            "cp2500": [19, 5, 14, 10]
+        }
+    }, {
+        "dex": 381,
+        "speciesName": "Latios (Mega)",
+        "speciesId": "latios_mega",
+        "baseStats": {
+            "atk": 335,
+            "def": 241,
+            "hp": 190
+        },
+        "types": ["dragon", "psychic"],
+        "fastMoves": ["DRAGON_BREATH", "ZEN_HEADBUTT"],
+        "chargedMoves": ["DRAGON_CLAW", "PSYCHIC", "SOLAR_BEAM"],
+        "tags": ["legendary", "mega"],
+        "defaultIVs": {
+            "cp1500": [11, 7, 8, 9],
+            "cp2500": [18.5, 6, 7, 9]
+        }
+    }, {
+        "dex": 384,
+        "speciesName": "Rayquaza (Mega)",
+        "speciesId": "rayquaza_mega",
+        "baseStats": {
+            "atk": 354,
+            "def": 197,
+            "hp": 212
+        },
+        "types": ["dragon", "flying"],
+        "fastMoves": ["AIR_SLASH", "DRAGON_TAIL"],
+        "chargedMoves": ["AERIAL_ACE", "ANCIENT_POWER", "OUTRAGE"],
+        "tags": ["legendary", "mega"],
+        "defaultIVs": {
+            "cp1500": [11, 6, 5, 11],
+            "cp2500": [18, 7, 7, 15]
+        }
+    }, {
+        "dex": 428,
+        "speciesName": "Lopunny (Mega)",
+        "speciesId": "lopunny_mega",
+        "baseStats": {
+            "atk": 282,
+            "def": 214,
+            "hp": 163
+        },
+        "types": ["normal", "fighting"],
+        "fastMoves": ["LOW_KICK", "POUND"],
+        "chargedMoves": ["FIRE_PUNCH", "FOCUS_BLAST", "HYPER_BEAM"],
+        "defaultIVs": {
+            "cp1500": [14.5, 7, 15, 11],
+            "cp2500": [24, 5, 14, 15]
+        },
+		"tags": ["mega"]
+    }, {
+        "dex": 445,
+        "speciesName": "Garchomp (Mega)",
+        "speciesId": "garchomp_mega",
+        "baseStats": {
+            "atk": 339,
+            "def": 222,
+            "hp": 239
+        },
+        "types": ["dragon", "ground"],
+        "fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
+        "chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "OUTRAGE", "SAND_TOMB"],
+        "defaultIVs": {
+            "cp1500": [10, 5, 14, 11],
+            "cp2500": [17, 5, 7, 10]
+        },
+		"tags": ["mega"]
+    }, {
+        "dex": 448,
+        "speciesName": "Lucario (Mega)",
+        "speciesId": "lucario_mega",
+        "baseStats": {
+            "atk": 310,
+            "def": 175,
+            "hp": 172
+        },
+        "types": ["fighting", "steel"],
+        "fastMoves": ["BULLET_PUNCH", "COUNTER"],
+        "chargedMoves": ["CLOSE_COMBAT", "FLASH_CANNON", "SHADOW_BALL", "POWER_UP_PUNCH", "AURA_SPHERE"],
+        "defaultIVs": {
+            "cp1500": [14.5, 7, 5, 13],
+            "cp2500": [23.5, 11, 9, 15]
+        },
+		"tags": ["mega"]
+    }, {
+        "dex": 475,
+        "speciesName": "Gallade (Mega)",
+        "speciesId": "gallade_mega",
+        "baseStats": {
+            "atk": 326,
+            "def": 230,
+            "hp": 169
+        },
+        "types": ["psychic", "fighting"],
+        "fastMoves": ["CONFUSION", "LOW_KICK", "CHARM"],
+        "chargedMoves": ["CLOSE_COMBAT", "LEAF_BLADE", "PSYCHIC", "SYNCHRONOISE"],
+        "defaultIVs": {
+            "cp1500": [12, 6, 8, 15],
+            "cp2500": [20, 6, 10, 15]
+        },
+        "level25CP": 2867,
+        "tags": ["shadoweligible", "mega"],
+        "eliteMoves": ["SYNCHRONOISE"]
+    }, {
+        "dex": 460,
+        "speciesName": "Abomasnow (Mega)",
+        "speciesId": "abomasnow_mega",
+        "baseStats": {
+            "atk": 240,
+            "def": 191,
+            "hp": 207
+        },
+        "types": ["grass", "ice"],
+        "fastMoves": ["POWDER_SNOW", "RAZOR_LEAF"],
+        "chargedMoves": ["BLIZZARD", "ENERGY_BALL", "OUTRAGE", "WEATHER_BALL_ICE"],
+        "defaultIVs": {
+            "cp1500": [15.5, 14, 15, 14],
+            "cp2500": [27, 7, 8, 14]
+        },
+        "level25CP": 2129,
+        "tags": ["shadoweligible", "mega"]
+    }, {
            "dex": 382,
            "speciesName": "Kyogre (Primal)",
            "speciesId": "kyogre_primal",
@@ -16583,10 +16598,6 @@
            "fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
            "chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "SOLAR_BEAM", "FIRE_PUNCH", "PRECIPICE_BLADES"],
            "tags": ["legendary"],
-           "defaultIVs": {
-               "cp1500": [13, 11, 15, 12],
-               "cp2500": [22.5, 5, 14, 6]
-           },
            "eliteMoves": ["FIRE_PUNCH"],
            "defaultIVs": {
                "cp1500": [10.5, 1, 13, 15],
