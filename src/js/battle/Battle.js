@@ -393,6 +393,9 @@ function Battle(){
 
 			startingValues[i].hp = pokemon[i].hp;
 			startingValues[i].energy = pokemon[i].energy;
+			pokemon[i].chargedMoves.sort(function(a, b) {
+				return a.energy - b.energy;
+			})
 		}
 
 		// Reset all actions
@@ -1032,6 +1035,7 @@ function Battle(){
 		var moveTurns = poke.fastMove.cooldown / 500;
 
 		// Check if opponent is in the middle of a fast move and adjust accordingly
+		// ELEMENTS OF STATE: POKEMON HP, OPPONENT ENERGY, CURRENT TURN, SHIELDS
 
 		if (opponent.cooldown != 0) {
 			queue.unshift([poke.hp - oppFastDamage, opponent.energy + opponent.fastMove.energyGain, opponent.cooldown / 500, poke.shields]);
@@ -1058,7 +1062,7 @@ function Battle(){
 
 			// Check if a fast move faints, add results to queue
 			if (currState[0] - oppFastDamage <= 0) {
-				turnsToLive = Math.min(currState[2], turnsToLive);
+				turnsToLive = Math.min(currState[2] + opponent.fastMove.cooldown / 500, turnsToLive);
 				break;
 			} else {
 				queue.unshift([currState[0] - oppFastDamage, currState[1] + opponent.fastMove.energyGain, currState[2] + opponent.fastMove.cooldown / 500, currState[3]])
@@ -1127,7 +1131,7 @@ function Battle(){
 			}
 		}
 
-		// Calculate the most efficient way to defeat opponent in shields down
+		// Calculate the most efficient way to defeat opponent
 
 		//ELEMENTS OF DP QUEUE: ENERGY, OPPONENT HEALTH, TURNS, OPPONENT SHIELDS, USED MOVES, ATTACK BUFF
 
@@ -1145,10 +1149,17 @@ function Battle(){
 			}
 			stateCount++;
 
+			// DEBUG
+			/*
+			for (var stateInd = 0; stateInd < DPQueue.length; stateInd++) {
+				self.logDecision(turns, poke, stateInd + "th element in DP queue is " + DPQueue[stateInd]);
+			}
+			*/
 
 			var currState = DPQueue.shift();
 			var DPchargedMoveReady = [];
 
+			// DEBUG
 //			self.logDecision(turns, poke, " is considering putting the opponent at " + currState[1] + " hp at turn " + currState[2]);
 
 			// Found fastest way to defeat enemy, fastest = optimal in this case since damage taken is strictly dependent on time
@@ -1198,7 +1209,7 @@ function Battle(){
 				if (DPQueue.length == 0) {
 					DPQueue.unshift([currState[0] + poke.fastMove.energyGain * movesToFarmDown, 0, currState[2] + movesToFarmDown * poke.fastMove.cooldown / 500, currState[3], currState[4], currState[5]]);
 				} else {
-					while (DPQueue[i][2] < movesToFarmDown * poke.fastMove.cooldown / 500) {
+					while (DPQueue[i][2] < currState[2] + movesToFarmDown * poke.fastMove.cooldown / 500) {
 						i ++;
 						if (i == DPQueue.length) {
 							break;
@@ -1235,6 +1246,7 @@ function Battle(){
 						newShields--;
 					}
 
+					// DEBUG
 //					self.logDecision(turns, poke, " wants to use " + poke.chargedMoves[n].name + " because it has the energy for it. Opponent hp will be " + newOppHealth + ". Turn = " + (currState[2]));
 					
 					// Remove all elements that are strictly worse than this state while checking if there are any elements better than this state
@@ -1281,7 +1293,7 @@ function Battle(){
 						// Place state at correct spot in priority queue
 						var i = 0;
 						if (DPQueue.length == 0) {
-							DPQueue.unshift([newEnergy, newOppHealth, newTurn, newShields, currState[4].concat([poke.chargedMoves[n]]), attackMult]);
+							DPQueue.unshift([newEnergy, newOppHealth, currState[2] + 1, newShields, currState[4].concat([poke.chargedMoves[n]]), attackMult]);
 						} else {
 							while (DPQueue[i][2] < currState[2] + 1) {
 								i ++;
@@ -1309,7 +1321,7 @@ function Battle(){
 						newShields--;
 					}
 
-					// If move is not ready, calculate values when it is ready and add to queue at correct spot
+					// DEBUG: If move is not ready, calculate values when it is ready and add to queue at correct spot
 					/*
 					self.logDecision(turns, poke, " wants to use " + poke.chargedMoves[n].name + " when it has energy for at turn " + newTurn + ". Opponent hp will be " + newOppHealth + ". Current turn is " + currState[2] + ". Current energy is " + currState[0]);
 					for (var i = currState[4].length - 1; i >= 0; i--) {
@@ -1366,7 +1378,7 @@ function Battle(){
 		// Evaluate throwing strategy after finding optimal plan
 
 		// Check if farming down is faster
-		if (finalState[2] > Math.ceil(opponent.hp / fastDamage) * poke.fastMove.cooldown / 500) {
+		if (finalState[4].length == 0) {
 			useChargedMove = false;
 			self.logDecision(turns, poke, " uses a fast move because it has chosen to farm down");
 			return;
@@ -1406,31 +1418,42 @@ function Battle(){
 /*
 		for (var i = 1; i < finalState[4].length; i++) {
 			var buffMove = finalState[4][i];
+
 			// Avoid redundancy and infinite loops
 			if (finalState[4][0] == buffMove) {
 				continue;
 			}
+
 			// If move buffs attack or debuffs opponent defense
 			if (buffMove.buffApplyChance && buffMove.buffApplyChance > 0 && ((buffMove.buffTarget == "self" && buffMove.buffs[0] > 0) || (buffMove.buffTarget == "opponent" && buffMove.buffs[1] < 0))) {
+
 				var attackMult = 1;
+
 				// Apply attack buff to attack multiplier
 				if (buffMove.buffTarget == "self") {
 					attackMult += buffMove.buffs[0] * 0.25;
 				}
+
 				// Defense drop is the same as an attack buff
 				if (buffMove.buffTarget == "opponent") {
 					attackMult += -buffMove.buffs[1] * 0.25;
 				}
 				
 				var opponentShields = opponent.shields;
+
 				// If opponent has no shields, throw buff move first if it's guaranteed
 				if (opponentShields == 0 && buffMove.buffApplyChance == 1) {
+
 					self.logDecision(turns, poke, "GOES FOR THE BUFF HEHEHE");
 					finalState.splice(i, 1);
 					finalState.unshift(buffMove);
+
 				} else {
+
 					// Calculate expected value of throwing it where it is now
+
 					var turnsAfter = 0;
+
 					var totalDamageAfterMove = 0;
 					for (var x = i + 1; x < finalState[4].length; x++) {
 						// Calculate approximate turns after move is thrown
@@ -1441,25 +1464,35 @@ function Battle(){
 							opponentShields --;
 						}
 					}
+
 					// Add fast move damage
 					totalDamageAfterMove += Math.floor((turnsAfter / (poke.fastMove.cooldown / 500))) * fastDamage;
+
 					var currentExpectedValue = buffMove.buffApplyChance * (totalDamageAfterMove * attackMult - totalDamageAfterMove);
+
 					// Calculate expected value of throwing it first
 					opponentShields = opponent.shields
 					var totalMovedDamage = 0;
+
 					for (var x = 0; x < n; x++) {
+
 						if (x == n) {
 							continue;
 						}
+
 						if (opponentShields == 0) {
 							totalMovedDamage += self.calculateDamage(poke, opponent, finalState[4][x]);
 						} else {
 							opponentShields --;
 						}
 					}
+
 					totalMovedDamage += totalDamageAfterMove;
+
 					totalMovedDamage += Math.floor((finalState[2] - turns - (finalState.length - 1 - i)) / (poke.fastMove.cooldown / 500)) * fastDamage;
+
 					var movedExpectedValue = buffMove.buffApplyChance * (totalMovedDamage * attackMult - totalMovedDamage);
+
 					if (movedExpectedValue > currentExpectedValue) {
 						self.logDecision(turns, poke, "GOES FOR THE BUFF");
 						finalState.splice(i, 1);
@@ -1469,6 +1502,8 @@ function Battle(){
 					}
 				}
 			}
+
+
 			// If move buffs defense or debuffs opponent attack, throw it early if it's the cheapest move
 			if (buffMove.buffApplyChance && buffMove.buffApplyChance > 0 && ((buffMove.buffTarget == "self" && (buffMove.buffs[1] > 0)) || (buffMove.buffTarget == "opponent" && buffMove.buffs[0] < 0))) {
 				if (poke.fastestChargedMove == buffMove) {
@@ -1492,7 +1527,7 @@ function Battle(){
 				}
 
 			} else {
-				self.logDecision(turns, poke, " uses " + finalState[4][0].name + " at turn " + turns + " because it KO's");
+				self.logDecision(turns, poke, " uses " + finalState[4][0].name + " at turn " + turns + " because it KO's or it wants to farm down afterwards");
 			}
 
 		} else {
@@ -1507,7 +1542,7 @@ function Battle(){
 			poke.index,
 			turns,
 			poke.chargedMoves.indexOf(currState[4][0]),
-			{shielded: false, buffs: false, priority: poke.priority});
+			{shielded: false, buffs: false, priority: poke.priorityz});
 
 		chargedMoveUsed = true;
 		return action;
