@@ -1152,6 +1152,7 @@ function Battle(){
 				self.logDecision(turns, poke, stateInd + "th element in DP queue is " + DPQueue[stateInd]);
 			}
 			*/
+			
 
 			var currState = DPQueue.shift();
 			var DPchargedMoveReady = [];
@@ -1163,7 +1164,7 @@ function Battle(){
 			// Set finalState to currState and do more evaluation later
 			if (currState[1] <= 0) {
 
-//				self.logDecision(turns, poke, " decides the optimal plan is to use " + currState[4][0].name + " since it puts the opponent at " + currState[1] + " from " + opponent.hp + " at turn " + currState[2]);
+//				self.logDecision(turns, poke, " decides the optimal plan is to use " + currState);
 
 				finalState = currState;
 				break;
