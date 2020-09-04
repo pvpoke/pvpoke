@@ -38,17 +38,22 @@ require_once 'header.php';
 	<div class="clear"></div>
 </div>
 
-<div class="section battle">
+<button class="button analyze">Analyze</button>
 
-	<div class="breakpoint-results">
+<div class="section white breakpoint-results">
+	<h3 class="iv-title"></h3>
+	<div class="iv-table">
+		<div class="iv-header"></div>
+		<div class="iv-body"></div>
+	</div>
+</div>
 
-		<div class="share-link-container">
-			<p>Share this battle:</p>
-			<div class="share-link">
-				<input type="text" value="" readonly>
-				<div class="copy">Copy</div>
-			</div>
-		</div>
+
+<div class="share-link-container">
+	<p>Share this battle:</p>
+	<div class="share-link">
+		<input type="text" value="" readonly>
+		<div class="copy">Copy</div>
 	</div>
 </div>
 

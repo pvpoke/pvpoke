@@ -208,11 +208,16 @@ function Battle(){
 
 	// Calculate damage given stats and effectiveness
 
-	this.calculateDamageByStats = function(attacker, defender, attack, defense, effectiveness, move){
-
+	this.calculateDamageByStats = function(attacker, defender, attack, defense, effectiveness, move, floor){
+		floor = typeof floor !== 'undefined' ? floor : true;
 		var bonusMultiplier = 1.3;
+		var damage = 0;
 
-		var damage = Math.floor(move.power * move.stab * (attack/defense) * effectiveness * 0.5 * bonusMultiplier) + 1;
+		if(floor){
+			damage = Math.floor(move.power * move.stab * (attack/defense) * effectiveness * 0.5 * bonusMultiplier) + 1;
+		} else{
+			damage = (move.power * move.stab * (attack/defense) * effectiveness * 0.5 * bonusMultiplier) + 1;
+		}
 
 		return damage;
 	}

@@ -3306,6 +3306,26 @@ a.toggle {
   display: none;
 }
 
+.iv-table .iv-header {
+  display: flex;
+}
+.iv-table .iv-header div {
+  padding: 4px;
+  box-sizing: border-box;
+  text-align: center;
+  width: 100px;
+  border-left: 1px solid rgba(0, 0, 0, 0.25);
+  border-right: 1px solid rgba(0, 0, 0, 0.25);
+}
+.iv-table .iv-body div {
+  position: relative;
+}
+
+.iv-title {
+  font-size: 16px;
+  text-align: center;
+}
+
 @media only screen and (min-width: 721px) {
   .menu {
     position: relative;

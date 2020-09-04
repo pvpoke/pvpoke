@@ -33,6 +33,7 @@ var InterfaceMaster = (function () {
 
 				$(".league-select").on("change", selectLeague);
 				$(".mode-select").on("change", selectMode);
+				$(".button.analyze").on("click", generateResults);
 				$("body").on("click", ".check", checkBox);
 
 				// Load rankings for the current league
@@ -238,6 +239,80 @@ var InterfaceMaster = (function () {
 					self.runSandboxSim();
 				}
 
+			}
+
+			// Produce and display the results
+
+			function generateResults(e){
+				var pokemon = pokeSelector.getPokemon();
+				var targets = multiSelector.getPokemonList();
+				var subjectStat = "atk";
+				var targetStat = "def";
+				var results = [];
+
+				if((! pokemon)||(targets.length < 1)){
+					return;
+				}
+
+				if(self.mode == "bulkpoints"){
+					subjectStat = "def";
+					targetStat = "atk";
+				}
+
+				// Min and max values for the table
+
+				var minOverallDamage = 100;
+				var maxOverallDamage = 0;
+
+				// For each target, determine the maximum and minimum damage
+
+				for(var i = 0; i < targets.length; i++){
+					var target = targets[i];
+					var move = pokemon.fastMove;
+					var effectiveness = target.typeEffectiveness[move.type];
+					var minStat = target.generateIVCombinations(targetStat, -1, 1)[0].def;
+					var maxStat = target.generateIVCombinations(targetStat, 1, 1)[0].def;
+					var minDamage = battle.calculateDamageByStats(target, pokemon, pokemon.stats.atk * pokemon.shadowAtkMult, maxStat * target.shadowDefMult, effectiveness, move, false);
+					var maxDamage = battle.calculateDamageByStats(target, pokemon, pokemon.stats.atk * pokemon.shadowAtkMult, minStat * target.shadowDefMult, effectiveness, move, false);
+
+					if(minDamage < minOverallDamage){
+						minOverallDamage = Math.floor(minDamage);
+					}
+
+					if(maxDamage > maxOverallDamage){
+						maxOverallDamage = Math.floor(maxDamage);
+					}
+
+					results.push({
+						pokemon: target,
+						min: minDamage,
+						max: maxDamage
+					})
+				}
+
+				// Create the graph
+				$(".iv-title").html(pokemon.fastMove.name + " Damage");
+
+				$(".iv-table .iv-header").html("");
+
+				for(var i = minOverallDamage; i < maxOverallDamage; i++){
+					$(".iv-table .iv-header").append("<div>"+i+"</div>");
+				}
+
+				var scale = $(".iv-header div").width();
+
+				$(".iv-table .iv-body").html("");
+
+				for(var i = 0; i < results.length; i++){
+					var target = results[i].pokemon;
+
+					var $item = $("<div class=\""+target.types[0]+"\">"+target.speciesName+"</div>");
+					$item.css("width", ((results[i].max - results[i].min) * scale) + "px");
+					$item.css("left", ((results[i].min - minOverallDamage) * scale) + "px")
+
+
+					$(".iv-table .iv-body").append($item);
+				}
 			}
 
 			// Event handler for changing the league select
