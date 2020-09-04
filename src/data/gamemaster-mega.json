@@ -473,7 +473,24 @@
             "values": ["shadow"]
         }],
         "exclude": []
-    }],
+    }, {
+        "name": "flying",
+        "title": "Flying Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["flying"]
+        }],
+        "exclude": []
+    },
+	{
+		"name": "halloween",
+		"title": "Halloween Cup",
+		"include": [{
+			"filterType": "type",
+			"values": ["poison","ghost","bug","dark","fairy"]
+		}],
+		"exclude": []
+	}],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega"],
     "pokemonRegions": [{
         "string": "gen1",
@@ -10693,7 +10710,8 @@
         "defaultIVs": {
             "cp1500": [37.5, 13, 13, 13],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 2
     }, {
         "dex": 414,
         "speciesName": "Mothim",
