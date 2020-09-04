@@ -241,9 +241,6 @@ header {
 .poke:nth-of-type(2) {
   float: right;
 }
-.poke:nth-of-type(2) .poke-stats {
-  text-align: right;
-}
 .poke:nth-of-type(2) .poke-stats .stat-label {
   float: right !important;
 }
@@ -3274,6 +3271,39 @@ a.toggle {
   padding: 5px;
   border-radius: 8px;
   margin: 5px 0;
+}
+
+/* IV TOOL */
+.iv-tool .poke.single .move-select-container .move-select.charged,
+.iv-tool .poke.single .move-select-container .section-title:nth-of-type(2),
+.iv-tool .poke.single .move-select-container .auto-select {
+  display: none;
+}
+.iv-tool .poke.single .shield-section,
+.iv-tool .poke.single .section-title.toggle,
+.iv-tool .poke.single .bar-back,
+.iv-tool .poke.single .move-bars,
+.iv-tool .poke.single .advanced,
+.iv-tool .poke.single .stat-modifiers {
+  display: none;
+}
+.iv-tool .poke.single .fields {
+  display: block;
+  margin-top: 15px;
+}
+.iv-tool .poke.multi {
+  display: block;
+  text-align: left;
+}
+.iv-tool .poke.multi .format-select {
+  display: none;
+}
+.iv-tool .poke.multi .custom-options {
+  display: block;
+}
+.iv-tool .poke.multi .shield-select,
+.iv-tool .poke.multi .check.shield-baiting {
+  display: none;
 }
 
 @media only screen and (min-width: 721px) {

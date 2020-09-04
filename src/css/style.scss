@@ -360,7 +360,6 @@ header{
 		float:right;
 
 		.poke-stats{
-			text-align: right;
 
 			.stat-label{
 				float:right !important;
@@ -3530,6 +3529,53 @@ a.toggle{
 		padding:5px;
 		border-radius:8px;
 		margin:5px 0;
+	}
+}
+
+/* IV TOOL */
+
+.iv-tool{
+
+	.poke.single{
+		.move-select-container{
+			.move-select.charged,
+			.section-title:nth-of-type(2),
+			.auto-select{
+				display: none;
+			}
+		}
+
+		.shield-section,
+		.section-title.toggle,
+		.bar-back,
+		.move-bars,
+		.advanced,
+		.stat-modifiers{
+			display: none;
+		}
+
+		.fields{
+			display: block;
+			margin-top: 15px;
+		}
+	}
+
+	.poke.multi{
+		display:block;
+		text-align: left;
+
+		.format-select{
+			display: none;
+		}
+
+		.custom-options{
+			display: block;
+		}
+
+		.shield-select,
+		.check.shield-baiting{
+			display: none;
+		}
 	}
 }
 

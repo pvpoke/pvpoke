@@ -36,6 +36,8 @@ RewriteRule team-builder/([a-zA-Z0-9-]+)/(\d+)/([a-zA-Z_]+)/([\da-zA-Z_-]+).*$ t
 RewriteRule team-builder/([a-zA-Z0-9-]+)/(\d+)/([a-zA-Z_\-0-9,\.]+).*$ team-builder.php?cup=$1&cp=$2&t=$3 [L,QSA]
 RewriteRule team-builder.?$ team-builder.php [L,QSA]
 
+RewriteRule ivs.?$ ivs.php [L,QSA]
+
 
 RewriteRule moves/([a-zA-Z_]+).*$ moves.php?mode=$1 [L,QSA]
 RewriteRule moves.?$ moves.php [L,QSA]
