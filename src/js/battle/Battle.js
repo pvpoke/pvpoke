@@ -1403,30 +1403,32 @@ function Battle(){
 			return;
 		}
 
-		// If bait shields is off, always throw high damage move first
-		// If no moves debuff and shields are down, always throw high damage move first
-
+		// Find if there are any debuffing moves and the most expensive move in planned move list
 		var debuffingMove = false;
+		var mostExpensiveMoveEnergy = finalState[4][0].energy;
 		for (var moveInd = 0; moveInd < finalState[4].length; moveInd++) {
 			if (finalState[4][moveInd].selfDebuffing) {
 				debuffingMove = true;
-				break;
 			}
+			mostExpensiveMoveEnergy = Math.max(mostExpensiveMoveEnergy, finalState[4][moveInd].energy);
 		}
 
+		// If not baiting shields or shields are down and no moves debuff, throw most damaging move first
 		if (!poke.baitShields || (opponent.shields == 0 && debuffingMove == false)) {
 			finalState[4].sort(function(a, b) {
 				var moveDamage1 = self.calculateDamage(poke, opponent, a);
 				var moveDamage2 = self.calculateDamage(poke, opponent, b);
 				return moveDamage2 - moveDamage1;
 			})
-		} else {
-			// Try to build up to best move to bait
-			if (opponent.shields > 0) {
-				if (finalState[4][0] != poke.bestChargedMove && poke.energy < poke.bestChargedMove) {
-					self.logDecision(turns, poke, " doesn't use " + finalState[4][0].name + " because it wants to pretend it is going to use " + poke.bestChargedMove.name);
-				}
-			}
+		}
+
+		// If bait shields, build up to most expensive charge move in planned move list
+		if (poke.baitShields && opponent.shields > 0) {
+			if (poke.energy < mostExpensiveMoveEnergy) {
+				self.logDecision(turns, poke, " doesn't use " + finalState[4][0].name + " because it wants to bait");
+				useChargedMove = false;
+				return;
+			}	
 		}
 
 		// If move is self debuffing and doesn't KO, try to stack as much as you can
