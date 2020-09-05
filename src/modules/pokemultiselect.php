@@ -18,11 +18,8 @@
 				<option value="master" type="master" class="hide multi-battle">Master League Meta</option>
 				<option value="premierultra" type="ultra" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="premier" type="master" class="hide multi-battle">Premier Cup Meta</option>
-				<option value="catacomb" type="great" class="multi-battle">Silph Catacomb Cup</option>
-				<option value="sinister" type="great" class="multi-battle">Silph Sinister Cup</option>
-				<option value="ferocious" type="great" class="multi-battle">Silph Ferocious Cup</option>
-				<option value="timeless" type="great" class="multi-battle">Silph Timeless Cup</option>
-				<option value="sorcerous" type="great" class="multi-battle">Silph Sorcerous Cup</option>
+				<option value="flying" type="great" class="multi-battle">Flying Cup Meta</option>
+				<option value="halloween" type="great" class="multi-battle">Halloween Cup Meta</option>
 			</select>
 			<div class="flex quick-fill-buttons">
 				<button class="save-btn save-custom">Save</button>

@@ -7288,6 +7288,7 @@
 		"pokemon": [
 			{
 				"speciesId": "skarmory",
+				"fastMove": "STEEL_WING",
 				"weight": 65
 			},
 			{
@@ -7298,7 +7299,7 @@
 			{
 				"speciesId": "mantine",
 				"chargedMoves": ["BUBBLE_BEAM","ICE_BEAM"],
-				"weight": 35
+				"weight": 20
 			},
 			{
 				"speciesId": "pelipper",
@@ -7326,7 +7327,7 @@
 			},
 			{
 				"speciesId": "aerodactyl",
-				"weight": 55
+				"weight": 75
 			},
 			{
 				"speciesId": "emolga",
@@ -7334,7 +7335,7 @@
 			},
 			{
 				"speciesId": "zapdos",
-				"weight": 35
+				"weight": 25
 			},
 			{
 				"speciesId": "zapdos_shadow",
@@ -7342,15 +7343,16 @@
 			},
 			{
 				"speciesId": "altaria",
-				"weight": 50
+				"weight": 55
 			},
 			{
 				"speciesId": "articuno",
-				"weight": 20
+				"weight": 10
 			},
 			{
 				"speciesId": "gligar",
-				"weight": 5
+				"chargedMoves": ["NIGHT_SLASH","RETURN"],
+				"weight": 2
 			}
 		]
 	},
