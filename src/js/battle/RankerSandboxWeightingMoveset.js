@@ -452,6 +452,14 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if(cup.name == "flying"){
+					iterations = 1;
+				}
+
+				if(cup.name == "halloween"){
+					iterations = 1;
+				}
+
 				if(cup.name == "custom"){
 					iterations = 7;
 				}
@@ -488,6 +496,14 @@ var RankerMaster = (function () {
 							}
 
 							if(cup.name == "premier"){
+								weight = 1;
+							}
+
+							if(cup.name == "flying"){
+								weight = 1;
+							}
+
+							if(cup.name == "halloween"){
 								weight = 1;
 							}
 

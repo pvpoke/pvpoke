@@ -46,7 +46,8 @@
         "name": "gobattleleague",
         "title": "GO Battle League",
         "include": [],
-        "exclude": []
+        "exclude": [],
+		"partySize": 3
     }, {
         "name": "boulder",
         "title": "Boulder Cup",
@@ -336,7 +337,8 @@
         "exclude": [{
             "filterType": "tag",
             "values": ["legendary", "mythical", "mega"]
-        }]
+        }],
+		"partySize": 3
     }, {
         "name": "grunt",
         "title": "Grunt Cup",
@@ -473,7 +475,26 @@
             "values": ["shadow"]
         }],
         "exclude": []
-    }],
+    }, {
+        "name": "flying",
+        "title": "Flying Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["flying"]
+        }],
+        "exclude": [],
+		"partySize": 3
+    },
+	{
+		"name": "halloween",
+		"title": "Halloween Cup",
+		"include": [{
+			"filterType": "type",
+			"values": ["poison","ghost","bug","dark","fairy"]
+		}],
+		"exclude": [],
+		"partySize": 3
+	}],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega"],
     "pokemonRegions": [{
         "string": "gen1",
@@ -10693,7 +10714,8 @@
         "defaultIVs": {
             "cp1500": [37.5, 13, 13, 13],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 2
     }, {
         "dex": 414,
         "speciesName": "Mothim",

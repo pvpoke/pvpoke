@@ -197,8 +197,8 @@ function TrainingAI(l, p, b){
 
 			// Make the teams more random in GO Battle League
 
-			if(battle.getCup().name == "gobattleleague"){
-				basicWeight *= 2;
+			if((battle.getCup().partySize)&&(battle.getCup().partySize == 3)){
+				basicWeight *= 3;
 			}
 		}
 
