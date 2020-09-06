@@ -471,7 +471,7 @@ var InterfaceMaster = (function () {
 				}
 
 				// Force 3v3 for GO Battle League
-				if((cup == "gobattleleague")||(cup == "premier")){
+				if((battle.getCup().partySize)&&(battle.getCup().partySize == 3)){
 					$(".mode-select option[value=\"single\"]").prop("selected","selected");
 					$(".mode-select option[value=\"tournament\"]").prop("disabled","disabled");
 					$(".mode-select").trigger("change");
