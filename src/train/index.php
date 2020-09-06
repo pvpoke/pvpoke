@@ -42,10 +42,8 @@ require_once '../header.php';
 				<option value="1500 all">Great League</option>
 				<option value="2500 all">Ultra League</option>
 				<option value="10000 all">Master League</option>
-				<option value="1500 sinister">Silph Sinister Cup</option>
-				<option value="1500 ferocious">Silph Ferocious Cup</option>
-				<option value="1500 timeless">Silph Timeless Cup</option>
-				<option value="1500 sorcerous">Silph Sorcerous Cup</option>
+				<option value="1500 flying">Flying Cup</option>
+				<option value="1500 halloween">Halloween Cup</option>
 			</select>
 			<h3 class="section-title">Difficulty</h3>
 			<select class="difficulty-select">
@@ -59,7 +57,6 @@ require_once '../header.php';
 			<select class="team-method-select">
 				<option value="random">Random</option>
 				<option value="manual">Manual</option>
-				<option value="featured">Featured Teams</option>
 			</select>
 			<?php require '../modules/pokemultiselect.php'; ?>
 			<div class="featured-team-section">

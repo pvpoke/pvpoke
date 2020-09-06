@@ -1,0 +1,240 @@
+[
+	{
+		"slot": "Skarmory",
+		"synergies": ["Electric"],
+		"weight": 50,
+		"pokemon": [
+			{
+				"speciesId": "skarmory",
+				"fastMove": "STEEL_WING",
+				"chargedMoves": ["SKY_ATTACK","BRAVE_BIRD"],
+				"difficulty": 2,
+				"weight":20
+			},
+			{
+				"speciesId": "skarmory",
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["SKY_ATTACK","BRAVE_BIRD"],
+				"difficulty": 2,
+				"weight":5
+			},
+			{
+				"speciesId": "skarmory",
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["SKY_ATTACK","BRAVE_BIRD"],
+				"difficulty": 1,
+				"weight":1
+			}
+		]
+	},
+	{
+		"slot": "Electric",
+		"synergies": ["Ice","Fairy"],
+		"weight": 6,
+		"pokemon": [
+			{
+				"speciesId": "zapdos",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["DRILL_PECK","THUNDERBOLT"],
+				"difficulty": 2,
+				"weight":12
+			},
+			{
+				"speciesId": "zapdos_shadow",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["DRILL_PECK","THUNDERBOLT"],
+				"difficulty": 3,
+				"weight":6
+			},
+			{
+				"speciesId": "emolga",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["DISCHARGE","THUNDERBOLT"],
+				"difficulty": 3,
+				"weight":2
+			},
+			{
+				"speciesId": "emolga",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["DISCHARGE","AERIAL_ACE"],
+				"difficulty": 3,
+				"weight":1
+			},
+			{
+				"speciesId": "zapdos",
+				"fastMove": "CHARGE_BEAM",
+				"chargedMoves": ["DRILL_PECK","THUNDERBOLT"],
+				"difficulty": 0,
+				"weight":1
+			}
+		]
+	},
+	{
+		"slot": "Water",
+		"synergies": ["Dragon","Ground"],
+		"weight": 6,
+		"pokemon": [
+			{
+				"speciesId": "mantine",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["BUBBLE_BEAM","ICE_BEAM"],
+				"difficulty": 2,
+				"weight":20
+			},
+			{
+				"speciesId": "gyarados",
+				"fastMove": "WATERFALL",
+				"chargedMoves": ["AQUA_TAIL","OUTRAGE"],
+				"difficulty": 2,
+				"weight":4
+			},
+			{
+				"speciesId": "pelipper",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["WEATHER_BALL_WATER","BLIZZARD"],
+				"difficulty": 1,
+				"weight":1
+			}
+		]
+	},
+	{
+		"slot": "Dragon",
+		"synergies": ["Rock","Skarmory"],
+		"weight": 20,
+		"pokemon": [
+			{
+				"speciesId": "altaria",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["SKY_ATTACK","DRAGON_PULSE"],
+				"difficulty": 2,
+				"weight":30
+			},
+			{
+				"speciesId": "gyarados",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["AQUA_TAIL","CRUNCH"],
+				"difficulty": 1,
+				"weight":4
+			},
+			{
+				"speciesId": "dragonite",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["DRAGON_CLAW","HURRICANE"],
+				"difficulty": 1,
+				"weight":3
+			},
+			{
+				"speciesId": "dragonite_shadow",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["DRAGON_CLAW","HURRICANE"],
+				"difficulty": 1,
+				"weight":1
+			}
+		]
+	},
+	{
+		"slot": "Rock",
+		"synergies": ["Electric"],
+		"weight": 35,
+		"pokemon": [
+			{
+				"speciesId": "aerodactyl",
+				"fastMove": "ROCK_THROW",
+				"chargedMoves": ["ROCK_SLIDE","IRON_HEAD"],
+				"difficulty": 2,
+				"weight":30
+			},
+			{
+				"speciesId": "aerodactyl",
+				"fastMove": "ROCK_THROW",
+				"chargedMoves": ["ROCK_SLIDE","IRON_HEAD"],
+				"difficulty": 0,
+				"weight":2
+			}
+		]
+	},
+	{
+		"slot": "Ice",
+		"synergies": ["Water"],
+		"weight": 4,
+		"pokemon": [
+			{
+				"speciesId": "articuno",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["ICY_WIND","ANCIENT_POWER"],
+				"difficulty": 2,
+				"weight":20
+			},
+			{
+				"speciesId": "articuno_shadow",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["ICY_WIND","ANCIENT_POWER"],
+				"difficulty": 3,
+				"weight":3
+			},
+			{
+				"speciesId": "drifblim",
+				"fastMove": "HEX",
+				"chargedMoves": ["ICY_WIND","SHADOW_BALL"],
+				"difficulty": 2,
+				"weight":1
+			},
+			{
+				"speciesId": "articuno",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["ICY_WIND","ANCIENT_POWER"],
+				"difficulty": 1,
+				"weight":1
+			}
+		]
+	},
+	{
+		"slot": "Fairy",
+		"synergies": ["Electric"],
+		"weight": 2,
+		"pokemon": [
+			{
+				"speciesId": "togekiss",
+				"fastMove": "CHARM",
+				"chargedMoves": ["AERIAL_ACE","ANCIENT_POWER"],
+				"difficulty": 2,
+				"weight":20
+			},
+			{
+				"speciesId": "togetic",
+				"fastMove": "EXTRASENSORY",
+				"chargedMoves": ["ANCIENT_POWER","DAZZLING_GLEAM"],
+				"difficulty": 0,
+				"weight":1
+			}
+		]
+	},
+	{
+		"slot": "Ground",
+		"synergies": ["Electric"],
+		"weight": 1,
+		"pokemon": [
+			{
+				"speciesId": "gligar",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["NIGHT_SLASH","AERIAL_ACE"],
+				"difficulty": 2,
+				"weight":10
+			},
+			{
+				"speciesId": "gligar",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["NIGHT_SLASH","RETURN"],
+				"difficulty": 2,
+				"weight":5
+			},
+			{
+				"speciesId": "gliscor",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["NIGHT_SLASH","AERIAL_ACE"],
+				"difficulty": 1,
+				"weight":2
+			}
+		]
+	}
+]

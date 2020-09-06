@@ -46,7 +46,8 @@
         "name": "gobattleleague",
         "title": "GO Battle League",
         "include": [],
-        "exclude": []
+        "exclude": [],
+		"partySize": 3
     }, {
         "name": "boulder",
         "title": "Boulder Cup",
@@ -336,7 +337,8 @@
         "exclude": [{
             "filterType": "tag",
             "values": ["legendary", "mythical", "mega"]
-        }]
+        }],
+		"partySize": 3
     }, {
         "name": "grunt",
         "title": "Grunt Cup",
@@ -480,7 +482,8 @@
             "filterType": "type",
             "values": ["flying"]
         }],
-        "exclude": []
+        "exclude": [],
+		"partySize": 3
     },
 	{
 		"name": "halloween",
@@ -489,7 +492,8 @@
 			"filterType": "type",
 			"values": ["poison","ghost","bug","dark","fairy"]
 		}],
-		"exclude": []
+		"exclude": [],
+		"partySize": 3
 	}],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega"],
     "pokemonRegions": [{
