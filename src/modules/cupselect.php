@@ -4,7 +4,10 @@
 	<option value="official" cup="flying">Flying Cup</option>
 	<option value="official" cup="halloween">Halloween Cup</option>
 	<option value="community" cup="mexico">México Cup</option>
-	<option value="community" cup="shadow">Shadow Cup</option>
+	<option value="tsa-2" cup="circus">Circus Cup</option>
+	<option value="tsa-2" cup="maelstrom">Maelstrom Cup</option>
+	<option value="tsa-2" cup="origin">Origin Cup</option>
+	<option value="tsa-2" cup="duet">Duet Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>
@@ -56,5 +59,9 @@
 	<option value="ferocious-mirror" cat="tsa-2">Ferocious Cup (Mirror)</option>
 	<option value="sinister" cat="tsa-2">Sinister Cup</option>
 	<option value="sinister-mirror" cat="tsa-2">Sinister Cup (Mirror)</option>
+	<option value="circus" cat="tsa-2">Circus Cup</option>
+	<option value="duet" cat="tsa-2">Duet Cup</option>
+	<option value="maelstrom" cat="tsa-2">Maelstrom Cup</option>
+	<option value="origin" cat="tsa-2">Origin Cup</option>
 	<option value="custom" cat="custom">Custom</option>
 </select>
