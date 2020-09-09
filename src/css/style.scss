@@ -3580,22 +3580,27 @@ a.toggle{
 }
 
 .iv-table{
-	.iv-header{
+
+	.iv-row{
 		display:flex;
+		margin-bottom: 5px;
 
-		div{
-			padding:4px;
-			box-sizing: border-box;
-			text-align: center;
-			width:100px;
-			border-left:1px solid rgba(0,0,0,0.25);
-			border-right:1px solid rgba(0,0,0,0.25);
+		.iv-name{
+			width:200px;
+			padding: 4px;
+			font-weight: bold;
 		}
-	}
 
-	.iv-body{
-		div{
-			position: relative;
+		.iv-data{
+			display:flex;
+			flex-wrap: wrap;
+
+			.iv-item{
+				padding:4px;
+				border: 2px solid #000;
+				text-align: center;
+				margin-right: 5px;
+			}
 		}
 	}
 }

@@ -272,8 +272,8 @@ var InterfaceMaster = (function () {
 					var effectiveness = target.typeEffectiveness[move.type];
 					var minStat = target.generateIVCombinations(targetStat, -1, 1)[0].def;
 					var maxStat = target.generateIVCombinations(targetStat, 1, 1)[0].def;
-					var minDamage = battle.calculateDamageByStats(target, pokemon, pokemon.stats.atk * pokemon.shadowAtkMult, maxStat * target.shadowDefMult, effectiveness, move, false);
-					var maxDamage = battle.calculateDamageByStats(target, pokemon, pokemon.stats.atk * pokemon.shadowAtkMult, minStat * target.shadowDefMult, effectiveness, move, false);
+					var minDamage = battle.calculateDamageByStats(target, pokemon, pokemon.stats.atk * pokemon.shadowAtkMult, maxStat * target.shadowDefMult, effectiveness, move);
+					var maxDamage = battle.calculateDamageByStats(target, pokemon, pokemon.stats.atk * pokemon.shadowAtkMult, minStat * target.shadowDefMult, effectiveness, move);
 
 					if(minDamage < minOverallDamage){
 						minOverallDamage = Math.floor(minDamage);
@@ -306,12 +306,19 @@ var InterfaceMaster = (function () {
 				for(var i = 0; i < results.length; i++){
 					var target = results[i].pokemon;
 
-					var $item = $("<div class=\""+target.types[0]+"\">"+target.speciesName+"</div>");
-					$item.css("width", ((results[i].max - results[i].min) * scale) + "px");
-					$item.css("left", ((results[i].min - minOverallDamage) * scale) + "px")
+					var $row = $("<div class=\"iv-row\"></div>");
 
+					$row.append("<div class=\"iv-name\">"+target.speciesName+"</div>")
 
-					$(".iv-table .iv-body").append($item);
+					var $data = $("<div class=\"iv-data\"></div>");
+
+					for(var n = results[i].min; n <= results[i].max; n++){
+						$data.append("<div class=\"iv-item\">"+n+"</div>")
+					}
+
+					$row.append($data);
+
+					$(".iv-table").append($row);
 				}
 			}
 

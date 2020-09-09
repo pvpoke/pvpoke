@@ -43,8 +43,6 @@ require_once 'header.php';
 <div class="section white breakpoint-results">
 	<h3 class="iv-title"></h3>
 	<div class="iv-table">
-		<div class="iv-header"></div>
-		<div class="iv-body"></div>
 	</div>
 </div>
 
