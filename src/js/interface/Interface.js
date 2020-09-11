@@ -698,7 +698,6 @@ var InterfaceMaster = (function () {
 				}
 
 				// Calculate breakpoints and bulkpoints
-
 				var breakpoints = pokemon[0].calculateBreakpoints(pokemon[1]);
 
 				// Output to table
@@ -791,7 +790,7 @@ var InterfaceMaster = (function () {
 					}
 				} else{
 					// Show blank if this Pokemon can't win CMP at all
-					$(".stats-table.cmp .output").append("<tr class=\"toggle\"><td>-</td><td>-</td><td>-</td></tr>");
+					$(".stats-table.cmp .output").append("<tr class=\"toggle\"><td>Can't win<br>CMP</td><td>Can't win<br>CMP</td><td>Can't win<br>CMP</td></tr>");
 				}
 
 			}
