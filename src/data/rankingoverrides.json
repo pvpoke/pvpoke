@@ -196,7 +196,12 @@
 			},
 			{
 				"speciesId": "charizard",
-				"fastMove": "WING_ATTACK",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
+			},
+			{
+				"speciesId": "charizard_shadow",
+				"fastMove": "FIRE_SPIN",
 				"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
 			},
 			{
@@ -505,7 +510,7 @@
 			},
 			{
 				"speciesId": "galvantula",
-				"chargedMoves": ["DISCHARGE","BUG_BUZZ"]
+				"chargedMoves": ["DISCHARGE","LUNGE"]
 			},
 			{
 				"speciesId": "electrode",

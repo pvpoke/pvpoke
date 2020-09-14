@@ -8004,7 +8004,7 @@
         },
         "types": ["bug", "flying"],
         "fastMoves": ["AIR_SLASH", "INFESTATION"],
-        "chargedMoves": ["AIR_CUTTER", "OMINOUS_WIND", "SILVER_WIND", "BUBBLE_BEAM"],
+        "chargedMoves": ["AIR_CUTTER", "OMINOUS_WIND", "SILVER_WIND", "BUBBLE_BEAM", "LUNGE"],
         "defaultIVs": {
             "cp1500": [25, 5, 7, 13],
             "cp2500": [40, 15, 15, 15]
@@ -14600,7 +14600,7 @@
         },
         "types": ["bug", "electric"],
         "fastMoves": ["VOLT_SWITCH", "FURY_CUTTER"],
-        "chargedMoves": ["CROSS_POISON", "BUG_BUZZ", "DISCHARGE", "ENERGY_BALL"],
+        "chargedMoves": ["CROSS_POISON", "BUG_BUZZ", "DISCHARGE", "ENERGY_BALL", "LUNGE"],
         "defaultIVs": {
             "cp1500": [25, 6, 14, 11],
             "cp2500": [40, 15, 15, 15]
@@ -16903,6 +16903,17 @@
         "energy": 40,
         "energyGain": 0,
         "cooldown": 500
+    }, {
+        "moveId": "LUNGE",
+        "name": "Lunge",
+        "type": "bug",
+        "power": 60,
+        "energy": 45,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [-1, 0],
+        "buffTarget": "opponent",
+        "buffApplyChance": "1"
     }, {
         "moveId": "MAGNET_BOMB",
         "name": "Magnet Bomb",
