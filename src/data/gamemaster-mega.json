@@ -5314,7 +5314,6 @@
         "types": ["normal", "none"],
         "fastMoves": ["QUICK_ATTACK", "SCRATCH"],
         "chargedMoves": ["BRICK_BREAK", "DIG", "GRASS_KNOT"],
-        "tags": ["starter"],
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
