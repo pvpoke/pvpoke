@@ -221,7 +221,8 @@
 			},
 			{
 				"speciesId": "masquerain",
-				"chargedMoves": ["BUBBLE_BEAM", "SILVER_WIND"]
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["BUBBLE_BEAM", "LUNGE"]
 			},
 			{
 				"speciesId": "zebstrika",
@@ -7458,7 +7459,6 @@
 			},
 			{
 				"speciesId": "galvantula",
-				"chargedMoves": ["DISCHARGE", "BUG_BUZZ"],
 				"weight": 2
 			},
 			{

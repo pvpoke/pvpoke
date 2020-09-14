@@ -5314,7 +5314,6 @@
         "types": ["normal", "none"],
         "fastMoves": ["QUICK_ATTACK", "SCRATCH"],
         "chargedMoves": ["BRICK_BREAK", "DIG", "GRASS_KNOT"],
-        "tags": ["starter"],
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
@@ -10777,7 +10776,7 @@
         },
         "types": ["bug", "flying"],
         "fastMoves": ["BUG_BITE", "POISON_STING", "FURY_CUTTER", "AIR_SLASH"],
-        "chargedMoves": ["BUG_BUZZ", "POWER_GEM", "X_SCISSOR", "FELL_STINGER"],
+        "chargedMoves": ["BUG_BUZZ", "POWER_GEM", "X_SCISSOR", "FELL_STINGER", "SIGNAL_BEAM"],
         "defaultIVs": {
             "cp1500": [28.5, 6, 11, 8],
             "cp2500": [40, 15, 15, 15]
@@ -16062,7 +16061,10 @@
         "power": 90,
         "energy": 60,
         "energyGain": 0,
-        "cooldown": 500
+        "cooldown": 500,
+		"buffs": [0, -1],
+        "buffTarget": "opponent",
+        "buffApplyChance": ".3"
     }, {
         "moveId": "BULLDOZE",
         "name": "Bulldoze",
@@ -16413,10 +16415,13 @@
         "moveId": "FLAME_CHARGE",
         "name": "Flame Charge",
         "type": "fire",
-        "power": 70,
+        "power": 65,
         "energy": 50,
         "energyGain": 0,
-        "cooldown": 500
+        "cooldown": 500,
+		"buffs": [1, 0],
+        "buffTarget": "self",
+        "buffApplyChance": "1"
     }, {
         "moveId": "FLAME_WHEEL",
         "name": "Flame Wheel",
@@ -17426,7 +17431,10 @@
         "power": 75,
         "energy": 55,
         "energyGain": 0,
-        "cooldown": 500
+        "cooldown": 500,
+		"buffs": [-1, -1],
+        "buffTarget": "opponent",
+        "buffApplyChance": ".2"
     }, {
         "moveId": "SILVER_WIND",
         "name": "Silver Wind",

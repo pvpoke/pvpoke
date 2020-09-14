@@ -434,9 +434,9 @@
 			{
 				"speciesId": "galvantula",
 				"fastMove": "VOLT_SWITCH",
-				"chargedMoves": ["DISCHARGE","BUG_BUZZ"],
+				"chargedMoves": ["DISCHARGE","LUNGE"],
 				"difficulty": 2,
-				"weight":1
+				"weight":15
 			},
 			{
 				"speciesId": "galvantula",
@@ -471,7 +471,7 @@
 				"fastMove": "DRAGON_BREATH",
 				"chargedMoves": ["SKY_ATTACK","DRAGON_PULSE"],
 				"difficulty": 2,
-				"weight":20
+				"weight":25
 			},
 			{
 				"speciesId": "dragonite_shadow",

@@ -27,12 +27,9 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.16.0 (September 1, 2020)</h4>
+	<h4>v1.16.2 (September 14, 2020)</h4>
 	<ul>
-		<li>Released Mega Evolutions are now listed on the main version of the site. You can view unreleased Mega Evolutions by setting your Gamemaster version on the <a href="<?php echo $WEB_ROOT; ?>settings/">Settings page</a>.</li>
-		<li>Please note that Mega Evolution performance in PvP is currently unknown and potentially bugged. Any battle simulations involving Mega Evolutions, breakpoints, etc. should be disregarded until more information is known.</li>
-		<li>Mega Evolutions display the CP of their base form.</li>
-		<li>When adjusting a Pokemon's IVs, its level will automatically adjust to the CP limit.</li>
+		<li>The site is updated for Season 4! Lunge has been added, and move stats have been updated for Flame Charge, Signal Beam, and Bug Buzz.</li>
 	</ul>
 
 	<h3>Latest Article</h3>
