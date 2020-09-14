@@ -17,7 +17,7 @@
 			{
 				"speciesId": "azumarill",
 				"chargedMoves": ["ICE_BEAM", "HYDRO_PUMP"],
-				"weight": 65
+				"weight": 70
 			},
 			{
 				"speciesId": "medicham",
@@ -511,7 +511,8 @@
 			},
 			{
 				"speciesId": "galvantula",
-				"chargedMoves": ["DISCHARGE","LUNGE"]
+				"chargedMoves": ["DISCHARGE","LUNGE"],
+				"weight": 15
 			},
 			{
 				"speciesId": "electrode",
