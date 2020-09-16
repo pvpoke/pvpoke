@@ -220,6 +220,14 @@
 				"chargedMoves": ["X_SCISSOR", "POWER_GEM"]
 			},
 			{
+				"speciesId": "porygon_z",
+				"chargedMoves": ["TRI_ATTACK", "ZAP_CANNON"]
+			},
+			{
+				"speciesId": "porygon_z_shadow",
+				"chargedMoves": ["TRI_ATTACK", "ZAP_CANNON"]
+			},
+			{
 				"speciesId": "masquerain",
 				"fastMove": "AIR_SLASH",
 				"chargedMoves": ["BUBBLE_BEAM", "LUNGE"]
@@ -2468,6 +2476,14 @@
 				"chargedMoves": ["AVALANCHE", "FOCUS_BLAST"]
 			},
 			{
+				"speciesId": "porygon_z",
+				"chargedMoves": ["TRI_ATTACK", "BLIZZARD"]
+			},
+			{
+				"speciesId": "porygon_z_shadow",
+				"chargedMoves": ["TRI_ATTACK", "BLIZZARD"]
+			},
+			{
 				"speciesId": "weavile_shadow",
 				"chargedMoves": ["AVALANCHE", "FOCUS_BLAST"]
 			},
@@ -2909,6 +2925,14 @@
 			{
 				"speciesId": "ferrothorn",
 				"chargedMoves": ["POWER_WHIP", "FLASH_CANNON"]
+			},
+			{
+				"speciesId": "porygon_z",
+				"chargedMoves": ["TRI_ATTACK", "BLIZZARD"]
+			},
+			{
+				"speciesId": "porygon_z_shadow",
+				"chargedMoves": ["TRI_ATTACK", "BLIZZARD"]
 			},
 			{
 				"speciesId": "bouffalant",

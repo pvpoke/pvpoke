@@ -56,5 +56,8 @@
 	<option value="sinister" cat="tsa-2">Sinister Cup</option>
 	<option value="sinister-mirror" cat="tsa-2">Sinister Cup (Mirror)</option>
 	<option value="circus" cat="tsa-2">Circus Cup</option>
+	<option value="maelstrom" cat="tsa-2">Maelstrom Cup</option>
+	<option value="origin" cat="tsa-2">Origin Cup</option>
+	<option value="duet" cat="tsa-2">Duet Cup</option>
 	<option value="custom" cat="custom">Custom</option>
 </select>
