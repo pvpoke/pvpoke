@@ -15902,6 +15902,24 @@
         "tags": ["shadoweligible", "mega"],
         "level25CP": 2099,
         "eliteMoves": ["BUG_BITE", "DRILL_RUN"]
+    },{
+        "dex": 18,
+        "speciesName": "Pidgeot (Mega)",
+        "speciesId": "pidgeot_mega",
+        "baseStats": {
+            "atk": 280,
+            "def": 175,
+            "hp": 195
+        },
+        "types": ["normal", "flying"],
+        "fastMoves": ["AIR_SLASH", "STEEL_WING", "WING_ATTACK"],
+        "chargedMoves": ["AERIAL_ACE", "AIR_CUTTER", "BRAVE_BIRD", "HURRICANE"],
+        "defaultIVs": {
+            "cp1500": [14.5, 10, 14, 14],
+            "cp2500": [24.5, 6, 13, 14]
+        },
+		"tags": ["mega"],
+        "eliteMoves": ["WING_ATTACK", "AIR_CUTTER"]
     }],
     "moves": [{
         "moveId": "ACID",
