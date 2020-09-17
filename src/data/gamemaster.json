@@ -17757,7 +17757,7 @@
         "cooldown": 500,
 		"buffs": [-1, -1],
         "buffTarget": "opponent",
-        "buffApplyChance": ".2"
+        "buffApplyChance": ".5"
     }, {
         "moveId": "TWISTER",
         "name": "Twister",
