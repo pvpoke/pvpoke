@@ -1124,13 +1124,13 @@
             "hp": 195
         },
         "types": ["normal", "flying"],
-        "fastMoves": ["AIR_SLASH", "STEEL_WING", "WING_ATTACK"],
+        "fastMoves": ["AIR_SLASH", "STEEL_WING", "WING_ATTACK", "GUST"],
         "chargedMoves": ["AERIAL_ACE", "AIR_CUTTER", "BRAVE_BIRD", "HURRICANE"],
         "defaultIVs": {
             "cp1500": [25.5, 9, 14, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "eliteMoves": ["WING_ATTACK", "AIR_CUTTER"]
+        "eliteMoves": ["WING_ATTACK", "AIR_CUTTER", "GUST"]
     }, {
         "dex": 19,
         "speciesName": "Rattata",
@@ -15912,14 +15912,14 @@
             "hp": 195
         },
         "types": ["normal", "flying"],
-        "fastMoves": ["AIR_SLASH", "STEEL_WING", "WING_ATTACK"],
+        "fastMoves": ["AIR_SLASH", "STEEL_WING", "WING_ATTACK", "GUST"],
         "chargedMoves": ["AERIAL_ACE", "AIR_CUTTER", "BRAVE_BIRD", "HURRICANE"],
         "defaultIVs": {
             "cp1500": [14.5, 10, 14, 14],
             "cp2500": [24.5, 6, 13, 14]
         },
 		"tags": ["mega"],
-        "eliteMoves": ["WING_ATTACK", "AIR_CUTTER"]
+        "eliteMoves": ["WING_ATTACK", "AIR_CUTTER", "GUST"]
     }],
     "moves": [{
         "moveId": "ACID",
@@ -16613,6 +16613,14 @@
         "energy": 75,
         "energyGain": 0,
         "cooldown": 500
+    }, {
+        "moveId": "GUST",
+        "name": "Gust",
+        "type": "flying",
+        "power": 16,
+        "energy": 0,
+        "energyGain": 12,
+        "cooldown": 2000
     }, {
         "moveId": "GYRO_BALL",
         "name": "Gyro Ball",
