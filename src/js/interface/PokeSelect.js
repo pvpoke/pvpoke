@@ -305,6 +305,7 @@ function PokeSelect(element, i){
 		$el.find(".check.shield-baiting").addClass("on");
 		$el.find(".check.priority").removeClass("on");
 		$el.find(".check.negate-fast-moves").addClass("on");
+		$el.find(".hp .bar.damage").hide();
 
 		isCustom = false;
 

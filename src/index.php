@@ -27,9 +27,11 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.16.2 (September 14, 2020)</h4>
+	<h4>v1.16.3 (September 19, 2020)</h4>
 	<ul>
-		<li>The site is updated for Season 4! Lunge has been added, and move stats have been updated for Flame Charge, Signal Beam, and Bug Buzz.</li>
+		<li>The "Switches" rankings now rank Pokemon with 4 turns of energy advantage instead of 6.</li>
+		<li>Fixed an issue in Sandbox Mode that caused stat-changing moves to reroll each update.</li>
+		<li>Custom group import/export text no longer highlights so you can edit the text directly.</li>
 	</ul>
 
 	<h3>Latest Article</h3>
