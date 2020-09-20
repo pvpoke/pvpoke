@@ -13,16 +13,14 @@ require_once '../header.php';
 
 <div class="section article white">
 	<h1>Best Elite TM Candidates for PvP</h1>
-	<div class="date">Last updated April 28, 2020</div>
+	<div class="date">Last updated September 19, 2020</div>
 	<img src="<?php echo $WEB_ROOT;?>assets/articles/elite-tm-banner.jpg" />
 <p>
-    Trainers can now obtain Elite TM's—special TM's that will
-    allow you to select a specific move or learn event-exclusive or legacy attacks! These Elite TM's open up rare movesets and movesets that haven’t been
-    available before! In this article, we’ll take a look at potential
-    candidates so you have some ideas when those Elite TM’s land in your bag.
+    Elite TM's allow you to select a specific move or learn event-exclusive or legacy attacks. You can typically earn them as end-of-season awards in GO Battle League for reaching Rank 7 or higher, or purchase them in Community Day boxes. These Elite TM's open up rare movesets and movesets that might not otherwise be possible! In this article, we’ll take a look at potential
+    candidates if you're looking to use a precious Elite TM in your bag.
 </p>
 <p>
-    Note that not all legacy moves are available via Elite TM, in particular moves that Pokemon never learned in the main series games. These include Mud Shot Golem and and Mud Shot Dugtrio. Also note that Elite TM's cannot remove Frustration from Shadow Pokemon.
+    Note that not all legacy moves are available via Elite TM, in particular moves that Pokemon never learned in the main series games. These include Mud Shot Golem and and Mud Shot Dugtrio. Also note that Elite TM's cannot remove Frustration from Shadow Pokemon, and can't be used to obtain or remember Return.
 </p>
 <p>
     Special thanks to <a href="https://twitter.com/squawk1337" target="_blank">@squawk1337</a>
@@ -31,9 +29,9 @@ require_once '../header.php';
 	<p>Jump to a section:
   <ol>
 			<li><a href="#dewgong">Dewgong</a></li>
-			<li><a href="#zapdos">Zapdos</a></li>
 			<li><a href="#groudon">Groudon</a></li>
 			<li><a href="#cresselia">Cresselia</a></li>
+			<li><a href="#zapdos">Zapdos</a></li>
 			<li><a href="#charizard">Charizard</a></li>
 			<li><a href="#blaziken">Blaziken</a></li>
 			<li><a href="#seaking">Seaking</a></li>
@@ -61,8 +59,8 @@ require_once '../header.php';
     If you’ve been playing Great League or in The Silph Arena for a while,
     you’ve probably heard myths about this rare creature. You’ve maybe even
     glimpsed one for 4 whole minutes before the game timed out. The fabled
-    double legacy Dewgong is now attainable, but comes at the steep
-    cost of two Elite TM’s if you don’t have one of the legacy moves already.
+    double legacy Dewgong is available via Elite TM, but comes at the steep
+    cost of two TM's if you don’t have one of the legacy moves already.
 </p>
 <p>
 Make no mistake,    <strong>double legacy Dewgong is a top tier Great League Pokemon </strong>
@@ -71,6 +69,9 @@ Make no mistake,    <strong>double legacy Dewgong is a top tier Great League Pok
     Wind boasts decent damage. Even in losing matchups, Icy Wind draws
     opponents into extended fights where they may lose the battle as well as
     their cool.
+</p>
+<p>
+ One challenge is <strong>Dewgong can be challenging to build a team around</strong>, especially in GO Battle League. Dewgong is vulnerable to Counter users, Rock Slide from Galarian Stunfisk, Bastiodon, Electric types like Galvantula, and bulky Grass-types like Ferrothorn. One successful example of a Dewgong team is Dewgong/Medicham/Munchlax run by <a href="https://twitter.com/TheAsianMilkMan" target="_blank">TheAsianMilkMan</a>.
 </p>
 <p>
     Yes, Dewgong does need both Ice Shard and Icy Wind to reach its full
@@ -82,6 +83,54 @@ Make no mistake,    <strong>double legacy Dewgong is a top tier Great League Pok
     returned in a future update, or Icy Wind could be nerfed following the fate
     of similar moves like Power-Up Punch and Ancient Power. Only use Elite TM’s
     on Dewgong now if you want to win with it now.
+</p>
+  </div>
+
+  <a name="groudon"></a>
+  <h3 class="article-header">Groudon</h3>
+<div class="article-section">
+<p>
+  <strong>Moveset: </strong>
+  Mud Shot
+  + <em>Fire Punch</em> &amp; Earthquake
+  <em>
+	  <br/>
+  </em>
+  <strong>Formats: </strong>
+  Master League
+</p>
+<p>
+  Fire Punch is a titanic change for Groudon, giving it a move 25 energy cheaper than its previously cheapest move (Earthquake, 65 energy) and setting it up to tear through Master League's Steel-heavy meta.
+</p>
+<p>
+  One big thing Fire Punch does for Groudon is give it the ability to bait. <b>Fire Punch Groudon gains the ability to beat both Giratina with a successful bait.</b> It can also potentially beat Dialga and Togekiss with just Fire Punch, although these matchups are extremely close (Dialga needs 1 more Dragon Breath to reach another Iron Head, Togekiss can win the matchups by not using a Charged Move).</b>
+</p>
+<p>
+  If you already have a Groudon powered up, using an Elite TM to obtain Fire Punch is well worth it and greatly improves Groudon's viability. <b>Groudon has yet to receive its signature move, Precipice Blades</b>, so if you want to invest in Groudon now, be prepared to use more Elite TM's on it in the future.
+</p>
+  </div>
+
+  <a name="cresselia"></a>
+  <h3 class="article-header">Cresselia</h3>
+<div class="article-section">
+<p>
+  <strong>Moveset: </strong>
+  Confusion or Psycho Cut
+  + <em>Grass Knot</em> &amp; Moonblast
+  <em>
+	  <br/>
+  </em>
+  <strong>Formats: </strong>
+  Great League
+</p>
+<p>
+  Great League is rife with Water-type Pokemon like Azumarill and Swampert that form the backbone of many teams. Grass Knot Cresselia can take its amazing bulk and apply super effective pressure against these Pokemon. <b>Head to head, it beats Azumarill, Whiscash, Swampert, and Dewgong.</b> Outside of Grass Knot, it can also beat other Grass types like Venusaur and Tropius, and Fighting or pseudo-Fighting Pokemon like Toxicroak, Medicham, Defense Deoxys, and Vigoroth. That's an impressive matchup profile!
+</p>
+<p>
+  Grass Knot is typically paired with Moonblast which covers Cresselia from Dark-type counters like Umbreon or Scrafty. Confusion versus Psycho Cut is a tougher debate and depends on how you want to use Cresselia. Confusion is generally better in head-on matchups while Psycho Cut gives Cresselia a bigger advantage when switching in or building energy leads. Which you choose may depend on your team and if you need Cresselia to be stronger against Dark types.
+</p>
+<p>
+	Grass Knot can be used in Ultra League, but Moonblast and Future Sight are generally preferred.
 </p>
   </div>
 
@@ -100,23 +149,17 @@ Make no mistake,    <strong>double legacy Dewgong is a top tier Great League Pok
 </p>
 <p>
     Thunder Shock Zapdos flew into raids a long while back, and although Zapdos
-    became Great League eligible as a research breakthrough encounter, it’s
-    been limping along with Charge Beam. All that changes now that Elite
-    TM’s amp it up to its full potential.
+    became Great League eligible as a research breakthrough encounter, Great League Zapdos doesn't have access to Thunder Shock unless you use an Elite TM.
 </p>
 <p>
     Zapdos combines Charizard-like stats with one of the best defensive typings
     in the game—Electric and Flying—which is only weak to Ice and Rock. Thunder
     Shock and similar moves like Mud Shot and Psycho Cut are second only to
-    Lock On in energy generation, giving Zapdos rapid access to Drill Peck (60
+    Lock On in energy generation, giving Zapdos rapid access to Drill Peck (65
     power/40 energy) and Thunderbolt.
 </p>
 <p>
-    <strong>
-        Zapdos enters the Great League as a potential Azumarill+Registeel core
-        breaker
-    </strong>
-    and can take on other meta players like Swampert, Skarmory, Tropius, and
+    While Zapdos is strong and fast, <strong>Galarian Stunfisk poses a significant challenge to its viability.</strong> If you can stomach that weakness or find a meta without Galarian Stunfisk, it has positive matchups against other meta players like Swampert, Skarmory, Tropius, and
     Toxicroak. It also stands up to future Great League giants like Jellicent
     and Mandibuzz.
 </p>
@@ -148,69 +191,17 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
 </p>
 	</div>
 
-	<a name="groudon"></a>
-	<h3 class="article-header">Groudon</h3>
-  <div class="article-section">
-<p>
-    <strong>Moveset: </strong>
-    Mud Shot
-    + <em>Fire Punch</em> &amp; Earthquake
-    <em>
-        <br/>
-    </em>
-    <strong>Formats: </strong>
-    Master League
-</p>
-<p>
-    During the <a href="https://pokemongolive.com/en/post/throwbackchallenge2020/" target="_blank">Hoenn Throwback Challenge</a> starting on May 15th, Groudon with the exclusive move Fire Punch will be roaring into special research! This is a titanic change for Groudon, giving it a move 15 energy cheaper than its previously cheapest move (Earthquake, 65 energy) and setting it up to tear through Master League's Steel-heavy meta.
-</p>
-<p>
-    One big thing Fire Punch does for Groudon is give it the ability to bait. <b>Fire Punch Groudon gains the ability to beat both Giratina with a successful bait.</b> Groudon is happy to spam Fire Punch as well, beating key targets like Melmetal and Metagross. It can also potentially beat Dialga and Togekiss this way, although these matchups are extremely close (Dialga needs 1 more Dragon Breath to reach another Iron Head, Togekiss can win the matchups by not using a Charged Move).</b>
-</p>
-<p>
-    Overall,  <a href="https://pvpoke.com/battle/multi/10000/custom/groudon/11/1-1-4-FIRE_PUNCH-1/2-1/master/" target="_blank">Fire Punch Groudon</a> will enter the Master League scene as a very welcome addition to break up prominent Steel and double-Steel lineups. If you already have a Groudon powered up, using an Elite TM to obtain Fire Punch is well worth it and greatly improves Groudon's viability. <b>Groudon has yet to receive its signature move, Precipice Blades</b>, so if you want to invest in Groudon now, be prepared to use more Elite TM's on it in the future.
-</p>
-	</div>
-
-	<a name="cresselia"></a>
-	<h3 class="article-header">Cresselia</h3>
-  <div class="article-section">
-<p>
-    <strong>Moveset: </strong>
-    Confusion or Psycho Cut
-    + <em>Grass Knot</em> &amp; Aurora Beam, Future Sight, or Moonblast
-    <em>
-        <br/>
-    </em>
-    <strong>Formats: </strong>
-    Great League, Ultra League
-</p>
-<p>
-    Not only will Cresselia likely be available under 1500 CP outside of trades during the <a href="https://pokemongolive.com/en/post/throwbackchallenge2020/" target="_blank">Sinnnoh Throwback Challenge</a>, it will come with Grass Knot! Grass Knot Cresselia will become a force to be reckoned with in <a href="https://pvpoke.com/battle/multi/1500/custom/cresselia/11/0-4-1-GRASS_KNOT-0/2-1/great/" target="_blank">Great League</a> and provide an interesting twist in <a href="https://pvpoke.com/battle/multi/2500/custom/cresselia/11/0-4-1-GRASS_KNOT-0/2-1/ultra/" target="_blank">Ultra League</a>.
-</p>
-<p>
-	Great League is rife with bulky Water-type Pokemon like Azumarill and Whiscash that form the backbone of many teams. Cresselia can now take its amazing bulk and apply super effective pressure against these Pokemon. <b>Head to head, it beats Azumarill, Whiscash, Swampert, and Dewgong.</b> It will also be able to go toe to toe with Jellicent. Outside of Grass Knot, it can also beat other Grass types like Venusaur and Tropius, and Fighting or pseudo-Fighting Pokemon like Toxicroak, Medicham, Defense Deoxys, and Vigoroth. That's an impressive matchup profile!
-</p>
-<p>
-	Cresselia has an abundance of Charged Move options to pair with Grass Knot. Aurora Beam has the most synergy, targeting Flying and Grass types that resist Grass Knot. It does leave Cresselia more vulnerable to Alolan Marowak, but with Confusion this matchup is surprisingly close and <a href="https://pvpoke.com/battle/1500/cresselia/marowak_alolan-31-7-11-14-4-4-0/11/0-4-1-GRASS_KNOT-0/0-4-1/" target="_blank">has potential to flip in Cresselia's favor</a>. Moonblast provides valuable coverage against Dark-type counters and is especially valuable against Giratina in Ultra League. Last but not least, Future Sight is an all around good move for general matchups.
-</p>
-<p>
-	Confusion versus Psycho Cut is a tougher debate and depends on how you want to use Cresselia. Confusion is generally better in head-on matchups while Psycho Cut gives Cresselia a bigger advantage when switching in or building energy leads. Overall I would recommend Confusion especially if you run Grass Knot and Aurora Beam, as Aurora Beam especially lacks punch.
-</p>
-	</div>
-
 	<a name="charizard"></a>
 	<h3 class="article-header">Charizard</h3>
 	<div class="article-section">
 <p>
     <strong>Moveset: </strong>
     <em>Wing Attack</em>
-    + <em>Blast Burn</em> &amp; Dragon Claw
-    <em>
-        <br/>
-    </em>
+    + <em>Blast Burn</em> &amp; <em>Dragon Claw</em>, or<br>
+	<em>Dragon Breath</em>
+	+ <em>Blast Burn</em> &amp; <em>Dragon Claw</em><br>
     <strong>Formats: </strong>
-    Great League, Silph Arena
+    Great League, Ultra League, Silph Arena
 </p>
 <p>
     Wing Attack Charizard has been a highly coveted legacy Pokemon especially
