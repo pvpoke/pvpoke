@@ -1938,7 +1938,7 @@ function Battle(){
 			var buffRoll = Math.random() + buffChanceModifier + shieldBuffModifier; // Totally not Really Random but just to get off the ground for now
 
 			if(forceBuff){
-				buffRoll += 1;
+				buffRoll += 2; // Allow this to overcome the buffChanceModifier
 			}
 
 			if((move.buffApplyChance == 1)&&(! sandbox)){
@@ -2317,7 +2317,10 @@ function Battle(){
 		sandbox = val;
 
 		if(val){
+			buffChanceModifier = -1;
 			actions = self.convertTimelineToActions();
+		} else{
+			buffChanceModifier = 0;
 		}
 	}
 

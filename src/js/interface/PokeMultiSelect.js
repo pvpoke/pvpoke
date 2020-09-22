@@ -590,13 +590,7 @@ function PokeMultiSelect(element){
 			closeModalWindow();
 		});
 	});
-
-	// Auto select list text to copy
-
-	$("body").on("click", ".modal textarea.list-text", function(e){
-		this.setSelectionRange(0, this.value.length);
-	});
-
+	
 	// Open the save window
 
 	$el.find(".save-btn").click(function(e){

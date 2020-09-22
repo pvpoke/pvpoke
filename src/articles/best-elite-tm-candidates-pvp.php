@@ -13,16 +13,14 @@ require_once '../header.php';
 
 <div class="section article white">
 	<h1>Best Elite TM Candidates for PvP</h1>
-	<div class="date">Last updated April 28, 2020</div>
+	<div class="date">Last updated September 19, 2020</div>
 	<img src="<?php echo $WEB_ROOT;?>assets/articles/elite-tm-banner.jpg" />
 <p>
-    Trainers can now obtain Elite TM's—special TM's that will
-    allow you to select a specific move or learn event-exclusive or legacy attacks! These Elite TM's open up rare movesets and movesets that haven’t been
-    available before! In this article, we’ll take a look at potential
-    candidates so you have some ideas when those Elite TM’s land in your bag.
+    Elite TM's allow you to select a specific move or learn event-exclusive or legacy attacks. You can typically earn them as end-of-season awards in GO Battle League for reaching Rank 7 or higher, or purchase them in Community Day boxes. These Elite TM's open up rare movesets and movesets that might not otherwise be possible! In this article, we’ll take a look at potential
+    candidates if you're looking to use a precious Elite TM in your bag.
 </p>
 <p>
-    Note that not all legacy moves are available via Elite TM, in particular moves that Pokemon never learned in the main series games. These include Mud Shot Golem and and Mud Shot Dugtrio. Also note that Elite TM's cannot remove Frustration from Shadow Pokemon.
+    Note that not all legacy moves are available via Elite TM, in particular moves that Pokemon never learned in the main series games. These include Mud Shot Golem and and Mud Shot Dugtrio. Also note that Elite TM's cannot remove Frustration from Shadow Pokemon, and can't be used to obtain or remember Return.
 </p>
 <p>
     Special thanks to <a href="https://twitter.com/squawk1337" target="_blank">@squawk1337</a>
@@ -30,13 +28,13 @@ require_once '../header.php';
 </p>
 	<p>Jump to a section:
   <ol>
-			<li><a href="#dewgong">Dewgong</a></li>
-			<li><a href="#zapdos">Zapdos</a></li>
 			<li><a href="#groudon">Groudon</a></li>
 			<li><a href="#cresselia">Cresselia</a></li>
+			<li><a href="#dewgong">Dewgong</a></li>
+			<li><a href="#lapras">Lapras</a></li>
+			<li><a href="#zapdos">Zapdos</a></li>
 			<li><a href="#charizard">Charizard</a></li>
 			<li><a href="#blaziken">Blaziken</a></li>
-			<li><a href="#seaking">Seaking</a></li>
 			<li><a href="#mewtwo">Mewtwo</a></li>
 			<li><a href="#mew">Mew</a></li>
 	  		<li><a href="#event-shadow">Event Moves &amp; Shadow Pokemon</a></li>
@@ -44,45 +42,117 @@ require_once '../header.php';
 		</ol>
 	</p>
 
-	<a name="dewgong"></a>
-	<h3 class="article-header">Dewgong</h3>
-	<div class="article-section">
+
+  <a name="groudon"></a>
+  <h3 class="article-header">Groudon</h3>
+<div class="article-section">
 <p>
-    <strong>Moveset: </strong>
-    <em>Ice Shard</em>
-    + <em>Icy Wind</em> &amp; Water Pulse
-    <em>
-        <br/>
-    </em>
-    <strong>Formats: </strong>
-    Great League
+  <strong>Moveset: </strong>
+  Mud Shot
+  + <em>Fire Punch</em> &amp; Earthquake
+  <em>
+	  <br/>
+  </em>
+  <strong>Formats: </strong>
+  Master League
 </p>
 <p>
-    If you’ve been playing Great League or in The Silph Arena for a while,
-    you’ve probably heard myths about this rare creature. You’ve maybe even
-    glimpsed one for 4 whole minutes before the game timed out. The fabled
-    double legacy Dewgong is now attainable, but comes at the steep
-    cost of two Elite TM’s if you don’t have one of the legacy moves already.
+  Fire Punch is a titanic change for Groudon, giving it a move 25 energy cheaper than its previously cheapest move (Earthquake, 65 energy) and setting it up to tear through Master League's Steel-heavy meta.
 </p>
 <p>
-Make no mistake,    <strong>double legacy Dewgong is a top tier Great League Pokemon </strong>
-    that combines great bulk with a stat-lowering move that is both spammable
-    and powerful. Unlike comparable moves like Bubble Beam and Sand Tomb, Icy
-    Wind boasts decent damage. Even in losing matchups, Icy Wind draws
-    opponents into extended fights where they may lose the battle as well as
-    their cool.
+  One big thing Fire Punch does for Groudon is give it the ability to bait. <b>Fire Punch Groudon gains the ability to beat both Giratina with a successful bait.</b> It can also potentially beat Dialga and Togekiss with just Fire Punch, although these matchups are extremely close (Dialga needs 1 more Dragon Breath to reach another Iron Head, Togekiss can win the matchups by not using a Charged Move).</b>
 </p>
 <p>
-    Yes, Dewgong does need both Ice Shard and Icy Wind to reach its full
-    potential. Frost Breath + Icy Wind is surprisingly playable but faster Icy
-    Winds are essential for Dewgong’s effectiveness.
+  If you already have a Groudon powered up, using an Elite TM to obtain Fire Punch is well worth it and greatly improves Groudon's viability. <b>Groudon has yet to receive its signature move, Precipice Blades</b>, so if you want to invest in Groudon now, be prepared to use more Elite TM's on it in the future.
+</p>
+  </div>
+
+  <a name="cresselia"></a>
+  <h3 class="article-header">Cresselia</h3>
+<div class="article-section">
+<p>
+  <strong>Moveset: </strong>
+  Confusion or Psycho Cut
+  + <em>Grass Knot</em> &amp; Moonblast
+  <em>
+	  <br/>
+  </em>
+  <strong>Formats: </strong>
+  Great League
 </p>
 <p>
-    A word of caution: Dewgong could potentially have its removed moves
-    returned in a future update, or Icy Wind could be nerfed following the fate
-    of similar moves like Power-Up Punch and Ancient Power. Only use Elite TM’s
-    on Dewgong now if you want to win with it now.
+  Great League is rife with Water-type Pokemon like Azumarill and Swampert that form the backbone of many teams. Grass Knot Cresselia can take its amazing bulk and apply super effective pressure against these Pokemon. <b>Head to head, it beats Azumarill, Whiscash, Swampert, and Dewgong.</b> Outside of Grass Knot, it can also beat other Grass types like Venusaur and Tropius, and Fighting or pseudo-Fighting Pokemon like Toxicroak, Medicham, Defense Deoxys, and Vigoroth. That's an impressive matchup profile!
 </p>
+<p>
+  Grass Knot is typically paired with Moonblast which covers Cresselia from Dark-type counters like Umbreon or Scrafty. Confusion versus Psycho Cut is a tougher debate and depends on how you want to use Cresselia. Confusion is generally better in head-on matchups while Psycho Cut gives Cresselia a bigger advantage when switching in or building energy leads. Which you choose may depend on your team and if you need Cresselia to be stronger against Dark types.
+</p>
+<p>
+	Grass Knot can be used in Ultra League, but Moonblast and Future Sight are generally preferred.
+</p>
+  </div>
+
+  <a name="dewgong"></a>
+  <h3 class="article-header">Dewgong</h3>
+  <div class="article-section">
+  <p>
+  <strong>Moveset: </strong>
+  <em>Ice Shard</em>
+  + <em>Icy Wind</em> &amp; Water Pulse
+  <em>
+  	<br/>
+  </em>
+  <strong>Formats: </strong>
+  Great League
+  </p>
+  <p>
+  If you’ve been playing Great League or in The Silph Arena for a while,
+  you’ve probably heard myths about this rare creature. You’ve maybe even
+  glimpsed one for 4 whole minutes before the game timed out. The fabled
+  double legacy Dewgong is available via Elite TM, but comes at the steep
+  cost of two TM's if you don’t have one of the legacy moves already.
+  </p>
+  <p>
+  Make no mistake,    <strong>double legacy Dewgong is a top tier Great League Pokemon </strong>
+  that combines great bulk with a stat-lowering move that is both spammable
+  and powerful. Unlike comparable moves like Bubble Beam and Sand Tomb, Icy
+  Wind boasts decent damage. Even in losing matchups, Icy Wind draws
+  opponents into extended fights where they may lose the battle as well as
+  their cool.
+  </p>
+  <p>
+  One challenge is <strong>Dewgong can be challenging to build a team around</strong>, especially in GO Battle League. Dewgong is vulnerable to Counter users, Rock Slide from Galarian Stunfisk, Bastiodon, Electric types like Galvantula, and bulky Grass-types like Ferrothorn. One successful example of a Dewgong team is Dewgong/Medicham/Munchlax run by <a href="https://twitter.com/TheAsianMilkMan" target="_blank">TheAsianMilkMan</a>.
+  </p>
+  <p>
+  Yes, Dewgong does need both Ice Shard and Icy Wind to reach its full
+  potential. Frost Breath + Icy Wind is surprisingly playable but faster Icy
+  Winds are essential for Dewgong’s effectiveness.
+  </p>
+  <p>
+  A word of caution: Dewgong could potentially have its removed moves
+  returned in a future update, or Icy Wind could be nerfed following the fate
+  of similar moves like Power-Up Punch and Ancient Power. Only use Elite TM’s
+  on Dewgong now if you want to win with it now.
+  </p>
+  </div>
+
+  <a name="lapras"></a>
+  <h3 class="article-header">Lapras</h3>
+  <div class="article-section">
+  <p>
+  <strong>Moveset: </strong>
+  <em>Ice Shard</em>
+  + Surf & Skull Bash or <em>Ice Beam</em>
+  <em>
+	  <br/>
+  </em>
+  <strong>Formats: </strong>
+  Great League, Ultra League, Premier Cup, Silph Arena
+  </p>
+  <p>
+	  The second Water/Ice type in this article, this majestic Pokemon is a powerful contender in most formats where it's allowed thanks to its bulk and powerful moveset. <b>Lapras is a top pick in the Ultra League Premier Cup</b> in particular. You'll need the legacy move Ice Shard. After that, Surf is always one of its preferred Charged Moves, followed by Skull Bash in Great League and Premier Cup, which hits hard and raises Lapras's defenses even further. If you're playing in regular Ultra League, you may want to consider another Elite TM on Ice Beam for super effective hits against Giratina.
+  </p>
+  <p>In the Premier Cup, Lapras is one of the bulkiest Pokemon and synergizes well with starters like Charizard and Venusaur. It's forgiving to use and can dish out damage even in its bad matchups. If you don't have an Ice Shard Lapras in your collection, it's one of the best Elite TM candidates you could pick.</p>
+  <p><b>Shadow Lapras has tradeoffs with regular Lapras</b>, but offers a harder hitting variant. In Great League, Shadow Lapras's Surf attacks are strong enough to take on Galarian Stunfisk, which regular Lapras can struggle with. It's a steep cost for Ultra League and doesn't provide many advantages over regular Lapras, but if you have the resources, more power to you!</p>
   </div>
 
 	<a name="zapdos"></a>
@@ -100,23 +170,17 @@ Make no mistake,    <strong>double legacy Dewgong is a top tier Great League Pok
 </p>
 <p>
     Thunder Shock Zapdos flew into raids a long while back, and although Zapdos
-    became Great League eligible as a research breakthrough encounter, it’s
-    been limping along with Charge Beam. All that changes now that Elite
-    TM’s amp it up to its full potential.
+    became Great League eligible as a research breakthrough encounter, Great League Zapdos doesn't have access to Thunder Shock unless you use an Elite TM.
 </p>
 <p>
     Zapdos combines Charizard-like stats with one of the best defensive typings
     in the game—Electric and Flying—which is only weak to Ice and Rock. Thunder
     Shock and similar moves like Mud Shot and Psycho Cut are second only to
-    Lock On in energy generation, giving Zapdos rapid access to Drill Peck (60
+    Lock On in energy generation, giving Zapdos rapid access to Drill Peck (65
     power/40 energy) and Thunderbolt.
 </p>
 <p>
-    <strong>
-        Zapdos enters the Great League as a potential Azumarill+Registeel core
-        breaker
-    </strong>
-    and can take on other meta players like Swampert, Skarmory, Tropius, and
+    While Zapdos is strong and fast, <strong>Galarian Stunfisk poses a significant challenge to its viability.</strong> If you can stomach that weakness or find a meta without Galarian Stunfisk, it has positive matchups against other meta players like Swampert, Skarmory, Tropius, and
     Toxicroak. It also stands up to future Great League giants like Jellicent
     and Mandibuzz.
 </p>
@@ -148,82 +212,21 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
 </p>
 	</div>
 
-	<a name="groudon"></a>
-	<h3 class="article-header">Groudon</h3>
-  <div class="article-section">
-<p>
-    <strong>Moveset: </strong>
-    Mud Shot
-    + <em>Fire Punch</em> &amp; Earthquake
-    <em>
-        <br/>
-    </em>
-    <strong>Formats: </strong>
-    Master League
-</p>
-<p>
-    During the <a href="https://pokemongolive.com/en/post/throwbackchallenge2020/" target="_blank">Hoenn Throwback Challenge</a> starting on May 15th, Groudon with the exclusive move Fire Punch will be roaring into special research! This is a titanic change for Groudon, giving it a move 15 energy cheaper than its previously cheapest move (Earthquake, 65 energy) and setting it up to tear through Master League's Steel-heavy meta.
-</p>
-<p>
-    One big thing Fire Punch does for Groudon is give it the ability to bait. <b>Fire Punch Groudon gains the ability to beat both Giratina with a successful bait.</b> Groudon is happy to spam Fire Punch as well, beating key targets like Melmetal and Metagross. It can also potentially beat Dialga and Togekiss this way, although these matchups are extremely close (Dialga needs 1 more Dragon Breath to reach another Iron Head, Togekiss can win the matchups by not using a Charged Move).</b>
-</p>
-<p>
-    Overall,  <a href="https://pvpoke.com/battle/multi/10000/custom/groudon/11/1-1-4-FIRE_PUNCH-1/2-1/master/" target="_blank">Fire Punch Groudon</a> will enter the Master League scene as a very welcome addition to break up prominent Steel and double-Steel lineups. If you already have a Groudon powered up, using an Elite TM to obtain Fire Punch is well worth it and greatly improves Groudon's viability. <b>Groudon has yet to receive its signature move, Precipice Blades</b>, so if you want to invest in Groudon now, be prepared to use more Elite TM's on it in the future.
-</p>
-	</div>
-
-	<a name="cresselia"></a>
-	<h3 class="article-header">Cresselia</h3>
-  <div class="article-section">
-<p>
-    <strong>Moveset: </strong>
-    Confusion or Psycho Cut
-    + <em>Grass Knot</em> &amp; Aurora Beam, Future Sight, or Moonblast
-    <em>
-        <br/>
-    </em>
-    <strong>Formats: </strong>
-    Great League, Ultra League
-</p>
-<p>
-    Not only will Cresselia likely be available under 1500 CP outside of trades during the <a href="https://pokemongolive.com/en/post/throwbackchallenge2020/" target="_blank">Sinnnoh Throwback Challenge</a>, it will come with Grass Knot! Grass Knot Cresselia will become a force to be reckoned with in <a href="https://pvpoke.com/battle/multi/1500/custom/cresselia/11/0-4-1-GRASS_KNOT-0/2-1/great/" target="_blank">Great League</a> and provide an interesting twist in <a href="https://pvpoke.com/battle/multi/2500/custom/cresselia/11/0-4-1-GRASS_KNOT-0/2-1/ultra/" target="_blank">Ultra League</a>.
-</p>
-<p>
-	Great League is rife with bulky Water-type Pokemon like Azumarill and Whiscash that form the backbone of many teams. Cresselia can now take its amazing bulk and apply super effective pressure against these Pokemon. <b>Head to head, it beats Azumarill, Whiscash, Swampert, and Dewgong.</b> It will also be able to go toe to toe with Jellicent. Outside of Grass Knot, it can also beat other Grass types like Venusaur and Tropius, and Fighting or pseudo-Fighting Pokemon like Toxicroak, Medicham, Defense Deoxys, and Vigoroth. That's an impressive matchup profile!
-</p>
-<p>
-	Cresselia has an abundance of Charged Move options to pair with Grass Knot. Aurora Beam has the most synergy, targeting Flying and Grass types that resist Grass Knot. It does leave Cresselia more vulnerable to Alolan Marowak, but with Confusion this matchup is surprisingly close and <a href="https://pvpoke.com/battle/1500/cresselia/marowak_alolan-31-7-11-14-4-4-0/11/0-4-1-GRASS_KNOT-0/0-4-1/" target="_blank">has potential to flip in Cresselia's favor</a>. Moonblast provides valuable coverage against Dark-type counters and is especially valuable against Giratina in Ultra League. Last but not least, Future Sight is an all around good move for general matchups.
-</p>
-<p>
-	Confusion versus Psycho Cut is a tougher debate and depends on how you want to use Cresselia. Confusion is generally better in head-on matchups while Psycho Cut gives Cresselia a bigger advantage when switching in or building energy leads. Overall I would recommend Confusion especially if you run Grass Knot and Aurora Beam, as Aurora Beam especially lacks punch.
-</p>
-	</div>
-
 	<a name="charizard"></a>
 	<h3 class="article-header">Charizard</h3>
 	<div class="article-section">
 <p>
     <strong>Moveset: </strong>
     <em>Wing Attack</em>
-    + <em>Blast Burn</em> &amp; Dragon Claw
-    <em>
-        <br/>
-    </em>
+    + <em>Blast Burn</em> &amp; <em>Dragon Claw</em>, or<br>
+	<em>Dragon Breath</em>
+	+ <em>Blast Burn</em> &amp; <em>Dragon Claw</em><br>
     <strong>Formats: </strong>
-    Great League, Silph Arena
+    Great League, Ultra League, Premier Cup, Silph Arena
 </p>
+<p>Charizard has a slew of exclusive moves, including the October Community day move Dragon Breath. Blast Burn and Dragon Claw are almost always its preferred Charged Moves, but you might need an Elite TM to tie a bow on Charizard's moveset. Overheat is playable if you can't get Blast Burn but comes with a -2 Attack drop.</p>
 <p>
-    Wing Attack Charizard has been a highly coveted legacy Pokemon especially
-    since Overheat became a devastating nuke. It saw play in Silph Arena’s
-    Rainbow Cup and also stood out in Timeless Cup alongside the Air Slash
-    variant. Overheat is overwhelmingly strong on paper but also tricky to use
-    because of the -2 Attack drop. Now, Blast Burn Charizard can take advantage
-    of Wing Attack’s faster energy generation, or vice versa, Wing Attack
-    Charizard can wield a powerful move that doesn’t sharply lower its stats.
-</p>
-<p>
-    Is Wing Attack Charizard worth all the hype? Actually, there are some
-    tradeoffs. Let’s do a quick gut check on the numbers:
+    Before we get into specific movesets, let’s do a quick gut check on the numbers (including same-type attack bonus in damage):
 </p>
 <table border="0" cellspacing="0" cellpadding="0" width="0">
     <tbody>
@@ -262,7 +265,7 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
             </td>
             <td valign="top">
                 <p>
-                    2.5
+                    3
                 </p>
             </td>
             <td valign="top">
@@ -284,7 +287,7 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
             </td>
             <td valign="top">
                 <p>
-                    3
+                    3.6
                 </p>
             </td>
             <td valign="top">
@@ -306,7 +309,29 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
             </td>
             <td valign="top">
                 <p>
+                    3.6
+                </p>
+            </td>
+            <td valign="top">
+                <p>
                     3
+                </p>
+            </td>
+        </tr>
+		<tr>
+            <td valign="top">
+                <p>
+                    Dragon Breath
+                </p>
+            </td>
+            <td valign="top">
+                <p>
+                    1
+                </p>
+            </td>
+            <td valign="top">
+                <p>
+                    4
                 </p>
             </td>
             <td valign="top">
@@ -318,13 +343,10 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
     </tbody>
 </table>
 <p>
+    <b>Wing Attack Charizard has been a highly coveted legacy Pokemon</b>, especially in Silph Arena play.
     Wing Attack generates energy slightly faster but comes at the cost of
     damage. It can’t farm down opponents like Fire Spin can, which means Wing
-    Attack Charizard usually has to spend energy to finish matchups. There’s
-    also the curious situation where Fire Spin actually reaches the first Blast
-    Burn faster than Wing Attack; Blast Burn costs 50 energy which fits
-    perfectly into 5 Fire Spins, while 7 Wing Attacks put you at 49 energy,
-    which requires one more Wing Attack.
+    Attack Charizard usually has to spend energy to finish matchups.
 </p>
 <p>
     <strong>
@@ -332,17 +354,13 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
         specific matchups
     </strong>
     you want to take advantage of. In Ultra League, for example, Charizard may prefer Fire Spin to handle Registeel and Articuno. In Great League, Charizard is up against a lot of Pokemon that resist
-    Fire-type attacks, so Wing Attack may be better. Wing Attack Charizard puts
+    Fire-type attacks, so Wing Attack Charizard puts
     up a better fight against the likes of Whiscash and Altaria. However, open
     Great League is still a hostile place for Charizard so look to make the
-    most of Wing Attack Charizard in a future Silph Arena format.
+    most of Wing Attack Charizard in a future Silph Arena format or other themed cups.
 </p>
 <p>
-    <strong>See also Sky Attack Moltres </strong>
-    who would be comparable to Charizard with some key differences. Sky Attack
-    is cheaper than Blast Burn, but Moltres lacks a bait/spam move like Dragon
-    Claw. Charizard is generally better unless you’re looking to take advantage
-    of Fighting-type matchups.
+	<b>Dragon Breath Charizard has incredible play in Ultra League,</b> including against other Charizard and <a href="https://pvpoke.com/battle/2500/charizard-35-0-13-15-4-4-1/giratina_altered/11/4-1-2-DRAGON_BREATH/1-2-3/" target="_blank">Giratina</a> itself. Charizard needs to be very high ranked to make the most of it, so save your Elite TM for an excellent candidate. Mega Charizard may also have play with Dragon Breath in Master League if Mega Evolutions are allowed in GO Battle League someday.
 </p>
   </div>
 
@@ -363,33 +381,10 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
   Stone Edge Blaziken was one of the rarest legacy movesets. It was only available for a few days after release, and even if you had one, odds were slim it was under 1500 CP. Is this chicken a slam dunk or is it overrated?
 </p>
 <p>
-  Blast Burn Blaziken has a lot of similarities to the old Alolan Raichu: a high-offense Pokemon that ran a bait and a nuke move of the same type, powerful in the right Silph Arena meta in the right situation but vulnerable to being hard countered. Alolan Raichu got upgrades to Volt Switch and the addition of Grass Knot, both of which propelled it into a top anti-meta spot. <b>Stone Edge solves Blaziken's big coverage problem and makes it much more forgiving to use.</b> Blast Burn + Blaze Kick Blaziken is completely stuck against the likes of Altaria and Mantine, but with Stone Edge it can draw shields and potentially flip matchups it couldn't before.
+  Blast Burn Blaziken has a lot of similarities to the old Alolan Raichu: a high-offense Pokemon that ran a bait and a nuke move of the same type, powerful in the right Silph Arena meta in the right situation but vulnerable to being hard countered. <b>Stone Edge solves Blaziken's big coverage problem and makes it much more forgiving to use.</b> Blast Burn + Blaze Kick Blaziken is completely stuck against the likes of Altaria and Mantine, but with Stone Edge it can draw shields and potentially flip matchups it couldn't before.
 </p>
-<p>Why Blaze Kick instead of Blast Burn and Stone Edge? Blast Burn and Stone Edge give Blaziken a powerful pair of closing moves. However, this set lacks flexibility which is a big selling point for unlocking Stone Edge in the first place. Blaze Kick allows Blaziken to still perform its Fire-type role and also provides a bait move for Stone Edge. In the Forest Cup, for example, Stone Edge over Blast Burn drops Quagsire and Stunfisk in the 1-shield matchup (both require bait), and drops Jumpluff, Meganium, and Stunfisk in the 0-shield matchup while picking up Kingdra. All other matchups have similar results on paper.</p>
-<p>Ultimately, Stone Edge Blaziken has a lower ceiling without Blast Burn but a higher floor. If you find maneuvering with Blaziken a challenge, Stone Edge can make it more comfortable and forgiving to run. Want to try it out before spending your previous Elite TM? Head over to <a href="/train/">Training Battles</a> and test it out against a bot opponent!</p>
-</div>
-
-<a name="seaking"></a>
-<h3 class="article-header">Seaking</h3>
-<div class="article-section">
-<p>
-<strong>Moveset: </strong>
-<em>Poison Jab</em>
-+ <em>Icy Wind</em> &amp; <em>Drill Run</em>
-<em>
-	<br/>
-</em>
-<strong>Formats: </strong>
-Great League
-</p>
-<p>
-Some candidates may only need one Elite TM. How about three? Triple legacy Seaking is the new hotness since Drill Run was improved to be as powerful as Sky Attack. <b>Seaking is the ultimate meta breaker with potential wins against Azumarill, Altaria, and Registeel.</b> Is that enough to warrant the steep investment?
-</p>
-<p>
-First thing to note, Seaking has middling stats and doesn't receive the same-type attack bonus on its moves. This means Seaking needs shields to perform well, its wins are often close, and it'll have difficulty coming back while behind. In other words, Seaking may be best suited as a lead where you can guarantee an even start and give Seaking the support it needs. Its strong anti-meta role also means it can struggle if it doesn't encounter that meta. Using its Icy Wind debuff effectively, reading your opponent's backline, and maneuvering it effectively are key to making Seaking successful.
-</p>
-<p>If you're lucky enough to have one or two of the legacy moves already, how good of a Seaking do you need? Should you wait to snag a better one? Thankfully, Seaking's primary matchups aren't IV dependent and even low-rank Seaking can take them on. Of note are a <a href="https://pvpoke.com/battle/1500/seaking-26.5-0-14-14-4-4-1/altaria/11/1-3-1/0-3-2/">Dragon Breath bulkpoint against Altaria</a>, and a <a href="https://pvpoke.com/battle/1500/seaking-26.5-0-14-14-4-4-1/shiftry/11/1-3-1/2-3-1/">bulkpoint against Snarl Shiftry</a> which allows it to survive to a second Icy Wind.</p>
-<p>This Pokemon is more gimmicky, but could be worth it if you're willing to train with it a lot. You can always try it out in the <a href="https://pvpoke.com/train/">Train</a> section before you decide to invest!</p>
+<p>Why Blaze Kick instead of Blast Burn and Stone Edge? Blast Burn and Stone Edge give Blaziken a powerful pair of closing moves. However, this set lacks flexibility which is a big selling point for unlocking Stone Edge in the first place. Blaze Kick allows Blaziken to still perform its Fire-type role and also provides a bait move for Stone Edge.</p>
+<p>Ultimately, Stone Edge Blaziken has a lower ceiling without Blast Burn but a higher floor. If you find maneuvering with Blaziken a challenge, Stone Edge can make it more comfortable and forgiving to run. Want to try it out before spending your precious Elite TM? Head over to <a href="/train/">Training Battles</a> and test it out against a bot opponent!</p>
 </div>
 
 	<a name="mewtwo"></a>
@@ -464,15 +459,11 @@ guidelines that can help us narrow things down. First,    <strong>Mew has two vi
 </p>
 <ul type="disc">
     <li>
-        <strong>Shadow Claw + Psyshock &amp; Grass Knot: </strong>
-        Swampert, Whiscash, Toxicroak, Lanturn, Lapras. Improved Grass Knot
-        scores super effective hits against big name Water types and Psyshock
-        spam chunks in neutral fights. Effective as a lead where your opponent
-        won’t know the matchup is bad for them. This set struggles against
-        Steel types.<strong></strong>
+        <strong>Shadow Claw + Wild Charge &amp; Surf: </strong>
+        Azumarill, Galarian Stunfisk, Defense Deoxys, Alolan Marowak. A "standard" set for Mew, thist targets Great League's biggest players. Surf is fast and reliable. You want to build enough energy for two Wild Charges so you can fire them back to back, minimizing the damage you'll take with your Defense lowered.<strong></strong>
     </li>
     <li>
-        <strong>Shadow Claw + Wild Charge &amp; Ice Beam: </strong>
+        <strong>Shadow Claw + Wild Charge &amp; Flame Charge: </strong>
         Altaria, Tropius, Mantine. Classic “boltbeam” coverage gives Mew a
         wide, super effective net to catch common meta Pokemon. Effective as a
         safe switch or a counter switch. Grass Knot over Ice Beam is also an
@@ -480,7 +471,7 @@ guidelines that can help us narrow things down. First,    <strong>Mew has two vi
     </li>
     <li>
         <strong>Shadow Claw + Surf &amp; Rock Slide: </strong>
-        Alolan Marowak, Probopass, Stunfisk, Froslass. Packs coverage and
+        Alolan Marowak, Galarian Stunfisk, Froslass. Packs coverage and
         spammability into one moveset. Underwhelming head to head matchups but
         excellent on a switch or with an energy advantage. Lacks closing power
         late game. Stone Edge is an alternative to Rock Slide with more punch.
@@ -546,13 +537,13 @@ guidelines that can help us narrow things down. First,    <strong>Mew has two vi
         <strong>Meteor Mash Metagross: </strong>
         Master<strong></strong>
     </li>
+	<li>
+        <strong>Blast Burn Charizard: </strong>
+        Ultra, Silph Arena<strong></strong>
+    </li>
     <li>
         <strong>Last Resort Umbreon: </strong>
         Great, Silph Arena<strong></strong>
-    </li>
-    <li>
-        <strong>Blast Burn Charizard: </strong>
-        Ultra, Silph Arena<strong></strong>
     </li>
     <li>
         <strong>Hurricane Articuno: </strong>
@@ -585,7 +576,7 @@ another question worth asking:    <strong>what about Shadow Pokemon with their C
     <li>
         <strong>Synchronoise Shadow Gardevoir: </strong>
         One Shadow Pokemon that’s pretty much a universal upgrade. Synchronoise
-        unlocks Shadow Gardevoir’s fastest available move which is highly
+        unlocks Shadow Gardevoir’s fastest available move which is
         valuable alongside Charm’s low energy gain.<strong></strong>
     </li>
     <li>
@@ -604,7 +595,7 @@ another question worth asking:    <strong>what about Shadow Pokemon with their C
         League with more relative bulk to work with.
     </li>
     <li>
-        <strong>Frenzy Plant Venusaur: </strong>
+        <strong>Frenzy Plant Shadow Venusaur: </strong>
         Direct matchups are roughly the same as regular Venusaur, dropping
         Umbreon and Shiftry. More potent Frenzy Plant will KO Azumarill before
 it reaches Ice Beam but lower capacity to take that Ice Beam.        <strong></strong>
@@ -652,7 +643,11 @@ Beam in Ultra League (another Elite TM required for Ice Beam).        <strong></
         <strong>Razor Leaf Weepinbell: </strong>
         Highest Attack stat of any Razor Leaf user in the game. Doesn’t offer
         many practical advantages over Victreebel, who has a much better move
-pool, but could be fun to play with, especially the Shadow variant.        <strong></strong>
+pool, but could be fun to play with, especially the Shadow variant.<strong></strong>
+    </li>
+	<li>
+        <strong>Poison Jab/Icy Wind/Drill Run Seaking: </strong>
+        Former anti-meta unicorn is less worthy of an Elite TM these days with Galarian Stunfisk overtaking Registeel. May have themed cup potential down the road but don't invest until you're sure you want to use it.<strong></strong>
     </li>
 </ul>
 		<p>Hopefully this article helps you weigh the all-important decisions ahead of you!</p>

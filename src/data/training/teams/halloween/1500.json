@@ -280,9 +280,9 @@
 			{
 				"speciesId": "galvantula",
 				"fastMove": "VOLT_SWITCH",
-				"chargedMoves": ["DISCHARGE","BUG_BUZZ"],
+				"chargedMoves": ["DISCHARGE","LUNGE"],
 				"difficulty": 3,
-				"weight":4
+				"weight":14
 			},
 			{
 				"speciesId": "galvantula",
