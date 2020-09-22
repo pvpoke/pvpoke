@@ -182,6 +182,10 @@ switch($cup){
 		$league = 'Duet Cup';
 		break;
 
+	case "sunrise":
+		$league = 'Silph Sunrise Cup';
+		break;
+
 }
 
 $META_TITLE = $league . ' PvP Rankings';
