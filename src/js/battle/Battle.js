@@ -1434,7 +1434,9 @@ function Battle(){
 
 		// If opponent KOs before our guaranteed KO, go for the least risky plan that still KOs before opponent KOs us.
 		var needsBoost = false;
-		if (opponent.turnsToKO != -1 && poke.turnsToKO > opponent.turnsToKO) {
+		if (stateList.length == 1) {
+			finalState = stateList[0];
+		} else if (opponent.turnsToKO != -1 && poke.turnsToKO > opponent.turnsToKO) {
 
 			var bestPlan = stateList[0];
 			for (var i = 1; i < stateList.length; i++) {
@@ -1442,7 +1444,7 @@ function Battle(){
 					bestPlan = stateList[i];
 				}
 			}
-			self.logDecision(turns, poke, " changes its plan because it needs the BOOST to win");
+			self.logDecision(turns, poke, " changes its plan because it needs the BOOST to win or debuff");
 			finalState = bestPlan;
 
 		} else {
