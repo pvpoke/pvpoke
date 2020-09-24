@@ -1231,7 +1231,7 @@ function Battle(){
 
 
 				// If attack buffs attack, apply effects
-				if (poke.chargedMoves[n].buffTarget && (poke.chargedMoves[n].buffTarget == "self")) {
+				if (poke.chargedMoves[n].buffTarget && (poke.chargedMoves[n].buffTarget == "self" && poke.chargedMoves[n].buffs[0] > 0)) {
 					if (poke.buffApplyChance == 1) {
 						attackMult += poke.chargedMoves[n].buffs[0];
 					} else {
@@ -1241,7 +1241,7 @@ function Battle(){
 				}
 
 				// If attack debuffs opponent defense, apply effects
-				if (poke.chargedMoves[n].buffTarget && (poke.chargedMoves[n].buffTarget == "opponent")) {
+				if (poke.chargedMoves[n].buffTarget && (poke.chargedMoves[n].buffTarget == "opponent" && poke.chargedMoves[n].buffs[1] < 0)) {
 					if (poke.buffApplyChance == 1) {
 						attackMult -= poke.chargedMoves[n].buffs[1];
 					} else {
@@ -1275,22 +1275,31 @@ function Battle(){
 						if (DPQueue[i][1] == newOppHealth && DPQueue[i][5] == attackMult) {
 							if (DPQueue[i][0] < (currState[0] - poke.chargedMoves[n].energy)) {
 								DPQueue.splice(i, 1);
-							} else if (DPQueue[i][0] ==  (currState[0] - poke.chargedMoves[n].energy)) {
+							} else if (DPQueue[i][0] == (currState[0] - poke.chargedMoves[n].energy)) {
 
-								// Added this just for perrserker
-								// If energy is the same and opponent at same health choose path with less debuffs
+								// Added this just for Perrserker and Giratina
+								// If energy is the same and opponent at same health choose path with less debuffs or more buff chances
+								
 								var DPDebuffs = 0;
 								var currDebuffs = 0;
 								for (var x = 0; x < DPQueue[i][4].length; x++) {
 									if (DPQueue[i][4][x].selfDebuffing) {
 										DPDebuffs++;
 									}
-								}
-								for (var x = 0; x < currState[4]; x++) {
-									if (currState[4][x].selfDebuffing) {
-										currDebuffs++;
+									if (DPQueue[i][4][x].buffApplyChance && DPQueue[i][4][x].buffTarget == "self" && DPQueue[i][4][x].buffs[0] + DPQueue[i][4][x].buffs[1] > 0) {
+										DPDebuffs--;
 									}
 								}
+								var tempState = currState[4].concat([poke.chargedMoves[n]]);
+								for (var x = 0; x < tempState.length; x++) {
+									if (tempState[x].selfDebuffing) {
+										currDebuffs++;
+									}
+									if (tempState[x].buffApplyChance && tempState[x].buffTarget == "self" && tempState[x].buffs[0] + tempState[x].buffs[1] > 0) {
+										currDebuffs--;
+									}
+								}
+
 
 								if (DPDebuffs > currDebuffs) {
 									DPQueue.splice(i, 1);
@@ -1420,17 +1429,31 @@ function Battle(){
 
 		// Evaluate throwing strategy after finding optimal plan
 
-		// If the KO is guaranteed, always use that plan
-		if (stateList.length == 1 || turns + stateList[stateList.length][2]) {
-			finalState = stateList[0];
+		// Set our turnsToKO to our guaranteed KO turn
+		poke.turnsToKO = turns + stateList[stateList.length - 1][2];
+
+		// If opponent KOs before our guaranteed KO, go for the least risky plan that still KOs before opponent KOs us.
+		var needsBoost = false;
+		if (opponent.turnsToKO != -1 && poke.turnsToKO > opponent.turnsToKO) {
+
+			var bestPlan = stateList[0];
+			for (var i = 1; i < stateList.length; i++) {
+				if (stateList[i][6] > bestPlan) {
+					bestPlan = stateList[i];
+				}
+			}
+			self.logDecision(turns, poke, " changes its plan because it needs the BOOST to win");
+			finalState = bestPlan;
+
 		} else {
-			for (var i = 0; i < stateList.length; i++) {}
+			// We guaranteed KO before opponent or opponent hasn't evaluated their turnsToKO yet.
+			finalState = stateList[stateList.length - 1];
 		}
 
-		// Check if farming down is faster
+		// Return if plan is the farm down
 		if (finalState[4].length == 0) {
+			self.logDecision(turns, poke, " wants to farm down");
 			useChargedMove = false;
-			self.logDecision(turns, poke, " uses a fast move because it has chosen to farm down");
 			return;
 		}
 
@@ -1444,15 +1467,6 @@ function Battle(){
 			mostExpensiveMoveEnergy = Math.max(mostExpensiveMoveEnergy, finalState[4][moveInd].energy);
 		}
 
-		// If not baiting shields or shields are down and no moves debuff, throw most damaging move first
-		if (!poke.baitShields || (opponent.shields == 0 && debuffingMove == false)) {
-			finalState[4].sort(function(a, b) {
-				var moveDamage1 = self.calculateDamage(poke, opponent, a);
-				var moveDamage2 = self.calculateDamage(poke, opponent, b);
-				return moveDamage2 - moveDamage1;
-			})
-		}
-
 		// If bait shields, build up to most expensive charge move in planned move list
 		if (poke.baitShields && opponent.shields > 0) {
 			if (poke.energy < mostExpensiveMoveEnergy) {
@@ -1462,17 +1476,30 @@ function Battle(){
 			}	
 		}
 
-		// If move is self debuffing and doesn't KO, try to stack as much as you can
-		if (finalState[4][0].selfDebuffing) {
-			if (poke.energy < Math.floor(100 / finalState[4][0].energy) * finalState[4][0].energy) {
-				var moveDamage = self.calculateDamage(poke, opponent, finalState[4][0]);
-				if (opponent.hp > moveDamage || opponent.shields != 0) {
-					useChargedMove = false;
-					self.logDecision(turns, poke, " doesn't use " + finalState[4][0].name + " because it wants to minimize time debuffed and it can stack the move " + Math.floor(100 / currState[4][0].energy) + " times");
-					return;
+		// If pokemon needs boost, we cannot reorder and no moves both buff and debuff
+		if (!needsBoost) {
+			// If not baiting shields or shields are down and no moves debuff, throw most damaging move first
+			if (!poke.baitShields || (opponent.shields == 0 && debuffingMove == false)) {
+				finalState[4].sort(function(a, b) {
+					var moveDamage1 = self.calculateDamage(poke, opponent, a);
+					var moveDamage2 = self.calculateDamage(poke, opponent, b);
+					return moveDamage2 - moveDamage1;
+				})
+			}
+
+			// If move is self debuffing and doesn't KO, try to stack as much as you can
+			if (finalState[4][0].selfDebuffing) {
+				if (poke.energy < Math.floor(100 / finalState[4][0].energy) * finalState[4][0].energy) {
+					var moveDamage = self.calculateDamage(poke, opponent, finalState[4][0]);
+					if (opponent.hp > moveDamage || opponent.shields != 0) {
+						useChargedMove = false;
+						self.logDecision(turns, poke, " doesn't use " + finalState[4][0].name + " because it wants to minimize time debuffed and it can stack the move " + Math.floor(100 / currState[4][0].energy) + " times");
+						return;
+					}
 				}
 			}
 		}
+		
 
 		// If move is self buffing or debuffs opponent, evaluate whether or not to throw it first
 		// No need to check first move since we are throwing it anyways
