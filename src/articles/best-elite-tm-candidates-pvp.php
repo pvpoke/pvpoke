@@ -16,7 +16,7 @@ require_once '../header.php';
 	<div class="date">Last updated September 19, 2020</div>
 	<img src="<?php echo $WEB_ROOT;?>assets/articles/elite-tm-banner.jpg" />
 <p>
-    Elite TM's allow you to select a specific move or learn event-exclusive or legacy attacks. You can typically earn them as end-of-season awards in GO Battle League for reaching Rank 7 or higher, or purchase them in Community Day boxes. These Elite TM's open up rare movesets and movesets that might not otherwise be possible! In this article, we’ll take a look at potential
+    Elite TM's allow you to select a specific move or learn exclusive attacks. You can typically earn them as end-of-season rewards in GO Battle League for reaching Rank 7 or higher, or purchase them in Community Day boxes. These Elite TM's open up new and rare movesets! In this article, we’ll take a look at potential
     candidates if you're looking to use a precious Elite TM in your bag.
 </p>
 <p>
@@ -72,7 +72,7 @@ require_once '../header.php';
 <div class="article-section">
 <p>
   <strong>Moveset: </strong>
-  Confusion or Psycho Cut
+  Psycho Cut or Confusion
   + <em>Grass Knot</em> &amp; Moonblast
   <em>
 	  <br/>
@@ -81,13 +81,13 @@ require_once '../header.php';
   Great League
 </p>
 <p>
-  Great League is rife with Water-type Pokemon like Azumarill and Swampert that form the backbone of many teams. Grass Knot Cresselia can take its amazing bulk and apply super effective pressure against these Pokemon. <b>Head to head, it beats Azumarill, Whiscash, Swampert, and Dewgong.</b> Outside of Grass Knot, it can also beat other Grass types like Venusaur and Tropius, and Fighting or pseudo-Fighting Pokemon like Toxicroak, Medicham, Defense Deoxys, and Vigoroth. That's an impressive matchup profile!
+  Great League is rife with Water-type Pokemon like Azumarill and Swampert that form the backbone of many teams. Grass Knot Cresselia can take its amazing bulk and apply super effective pressure against these Pokemon. <b>Head to head, it beats Azumarill, Whiscash, Swampert, and Dewgong.</b> Outside of Grass Knot, it great general matchups.
 </p>
 <p>
-  Grass Knot is typically paired with Moonblast which covers Cresselia from Dark-type counters like Umbreon or Scrafty. Confusion versus Psycho Cut is a tougher debate and depends on how you want to use Cresselia. Confusion is generally better in head-on matchups while Psycho Cut gives Cresselia a bigger advantage when switching in or building energy leads. Which you choose may depend on your team and if you need Cresselia to be stronger against Dark types.
+  Grass Knot is typically paired with Moonblast which covers Cresselia from Dark-type counters like Umbreon or Scrafty. Confusion versus Psycho Cut is a tougher debate and depends on how you want to use Cresselia. Confusion is generally better in head-on matchups while Psycho Cut gives Cresselia a bigger advantage when switching in or protecting it from Dark type counters. Which you choose may depend on your team.
 </p>
 <p>
-	Grass Knot can be used in Ultra League, but Moonblast and Future Sight are generally preferred.
+	Grass Knot can be used in Ultra League, but Moonblast and Future Sight are generally preferred there.
 </p>
   </div>
 
@@ -120,7 +120,7 @@ require_once '../header.php';
   their cool.
   </p>
   <p>
-  One challenge is <strong>Dewgong can be challenging to build a team around</strong>, especially in GO Battle League. Dewgong is vulnerable to Counter users, Rock Slide from Galarian Stunfisk, Bastiodon, Electric types like Galvantula, and bulky Grass-types like Ferrothorn. One successful example of a Dewgong team is Dewgong/Medicham/Munchlax run by <a href="https://twitter.com/TheAsianMilkMan" target="_blank">TheAsianMilkMan</a>.
+  One challenge is <strong>Dewgong can be difficult to build a team around</strong>, especially in GO Battle League. Dewgong is vulnerable to Counter users, Rock Slide from Galarian Stunfisk, Bastiodon, Electric types like Galvantula, and bulky Grass-types like Ferrothorn. One successful example of a Dewgong team is Dewgong/Medicham/Munchlax run by <a href="https://twitter.com/TheAsianMilkMan" target="_blank">TheAsianMilkMan</a>.
   </p>
   <p>
   Yes, Dewgong does need both Ice Shard and Icy Wind to reach its full
@@ -130,7 +130,7 @@ require_once '../header.php';
   <p>
   A word of caution: Dewgong could potentially have its removed moves
   returned in a future update, or Icy Wind could be nerfed following the fate
-  of similar moves like Power-Up Punch and Ancient Power. Only use Elite TM’s
+  of similar moves like Power-Up Punch and Ancient Power. This goes for the other Pokemon in this article, but only use Elite TM’s
   on Dewgong now if you want to win with it now.
   </p>
   </div>
@@ -151,7 +151,7 @@ require_once '../header.php';
   <p>
 	  The second Water/Ice type in this article, this majestic Pokemon is a powerful contender in most formats where it's allowed thanks to its bulk and powerful moveset. <b>Lapras is a top pick in the Ultra League Premier Cup</b> in particular. You'll need the legacy move Ice Shard. After that, Surf is always one of its preferred Charged Moves, followed by Skull Bash in Great League and Premier Cup, which hits hard and raises Lapras's defenses even further. If you're playing in regular Ultra League, you may want to consider another Elite TM on Ice Beam for super effective hits against Giratina.
   </p>
-  <p>In the Premier Cup, Lapras is one of the bulkiest Pokemon and synergizes well with starters like Charizard and Venusaur. It's forgiving to use and can dish out damage even in its bad matchups. If you don't have an Ice Shard Lapras in your collection, it's one of the best Elite TM candidates you could pick.</p>
+  <p>In the Premier Cup, Lapras is one of the bulkiest Pokemon and synergizes well with starters like Charizard and Venusaur. It's forgiving to use and can dish out damage even in its bad matchups. If you don't have an Ice Shard Lapras in your collection, it's one of the best Elite TM candidates to date.</p>
   <p><b>Shadow Lapras has tradeoffs with regular Lapras</b>, but offers a harder hitting variant. In Great League, Shadow Lapras's Surf attacks are strong enough to take on Galarian Stunfisk, which regular Lapras can struggle with. It's a steep cost for Ultra League and doesn't provide many advantages over regular Lapras, but if you have the resources, more power to you!</p>
   </div>
 
@@ -176,11 +176,10 @@ require_once '../header.php';
     Zapdos combines Charizard-like stats with one of the best defensive typings
     in the game—Electric and Flying—which is only weak to Ice and Rock. Thunder
     Shock and similar moves like Mud Shot and Psycho Cut are second only to
-    Lock On in energy generation, giving Zapdos rapid access to Drill Peck (65
-    power/40 energy) and Thunderbolt.
+    Lock On in energy generation, giving Zapdos rapid access to Drill Peck and Thunderbolt.
 </p>
 <p>
-    While Zapdos is strong and fast, <strong>Galarian Stunfisk poses a significant challenge to its viability.</strong> If you can stomach that weakness or find a meta without Galarian Stunfisk, it has positive matchups against other meta players like Swampert, Skarmory, Tropius, and
+    While it's strong and fast, <strong>Galarian Stunfisk poses a significant challenge to Zapdos's viability.</strong> If you can stomach that weakness or find a meta without Galarian Stunfisk, it has positive matchups against other meta players like Swampert, Skarmory, Tropius, and
     Toxicroak. It also stands up to future Great League giants like Jellicent
     and Mandibuzz.
 </p>
@@ -207,8 +206,7 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
     In the Ultra League, Shadow Zapdos takes on meta staples such as Articuno,
     Poliwrath, Venusaur, Swampert, and Registeel. It’s rated as one of the
     safest switches that can force shields and take all but Giratina and
-    Melmetal into the red. If you managed to catch one and TM Frustration away,
-    it’s definitely a top Elite TM candidate.
+    Melmetal into the red.
 </p>
 	</div>
 
@@ -218,9 +216,9 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
 <p>
     <strong>Moveset: </strong>
     <em>Wing Attack</em>
-    + <em>Blast Burn</em> &amp; <em>Dragon Claw</em>, or<br>
+    + <em>Blast Burn</em> &amp; Dragon Claw, or<br>
 	<em>Dragon Breath</em>
-	+ <em>Blast Burn</em> &amp; <em>Dragon Claw</em><br>
+	+ <em>Blast Burn</em> &amp; Dragon Claw<br>
     <strong>Formats: </strong>
     Great League, Ultra League, Premier Cup, Silph Arena
 </p>
@@ -249,6 +247,28 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
             <td valign="top">
                 <p>
                     <strong>Energy Per Turn</strong>
+                </p>
+            </td>
+        </tr>
+		<tr>
+            <td valign="top">
+                <p>
+                    Dragon Breath
+                </p>
+            </td>
+            <td valign="top">
+                <p>
+                    1
+                </p>
+            </td>
+            <td valign="top">
+                <p>
+                    4
+                </p>
+            </td>
+            <td valign="top">
+                <p>
+                    3
                 </p>
             </td>
         </tr>
@@ -318,28 +338,6 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
                 </p>
             </td>
         </tr>
-		<tr>
-            <td valign="top">
-                <p>
-                    Dragon Breath
-                </p>
-            </td>
-            <td valign="top">
-                <p>
-                    1
-                </p>
-            </td>
-            <td valign="top">
-                <p>
-                    4
-                </p>
-            </td>
-            <td valign="top">
-                <p>
-                    3
-                </p>
-            </td>
-        </tr>
     </tbody>
 </table>
 <p>
@@ -350,7 +348,7 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
 </p>
 <p>
     <strong>
-        When to use Wing Attack and when not to depends on the meta and
+        When to use Wing Attack or not depends on the meta and
         specific matchups
     </strong>
     you want to take advantage of. In Ultra League, for example, Charizard may prefer Fire Spin to handle Registeel and Articuno. In Great League, Charizard is up against a lot of Pokemon that resist
@@ -360,7 +358,7 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
     most of Wing Attack Charizard in a future Silph Arena format or other themed cups.
 </p>
 <p>
-	<b>Dragon Breath Charizard has incredible play in Ultra League,</b> including against other Charizard and <a href="https://pvpoke.com/battle/2500/charizard-35-0-13-15-4-4-1/giratina_altered/11/4-1-2-DRAGON_BREATH/1-2-3/" target="_blank">Giratina</a> itself. Charizard needs to be very high ranked to make the most of it, so save your Elite TM for an excellent candidate. Mega Charizard may also have play with Dragon Breath in Master League if Mega Evolutions are allowed in GO Battle League someday.
+	<b>Dragon Breath Charizard has incredible play in Ultra League,</b> including against other Charizard and <a href="https://pvpoke.com/battle/2500/charizard-35-0-13-15-4-4-1/giratina_altered/11/4-1-2-DRAGON_BREATH/1-2-3/" target="_blank">Giratina</a> itself. Charizard needs to be very high ranked IV's to make the most of it (low Attack IV, high HP & Defense IV), so save your Elite TM for an excellent candidate. Mega Charizard may also have play with Dragon Breath in Master League if Mega Evolutions are allowed in GO Battle League someday.
 </p>
   </div>
 
@@ -392,7 +390,7 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
 <div class="article-section">
 <p>
     <strong>Moveset: </strong>
-    Psycho Cut + <em>Psystrike </em>&amp;
+    Psycho Cut + <em>Psystrike </em>&amp; Focus Blast or
     <em>
         Shadow Ball
         <br/>
@@ -404,23 +402,14 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
     Mewtwo has been in raids with Psytrike and Shadow Ball as exclusive moves,
     but now they can be wielded together for the first time. Psystrike
     provides incredible neutral damage and Shadow Ball allows it to bully
-    Giratina more and score better neutral hits against Dialga (Shadow Ball is
-    100 power/55 energy compared to Ice Beam and Flamethrower’s 90 power/55
-    energy).
+    Giratina more. While Shadow Ball is better than Ice Beam or Flamethrower against meta titan Dialga, regular Mewtwo is generally preferred with Focus Blast for the OHKO potential.
 </p>
 <p>
-    Where before you had to choose between one or the other, Psytrike and
-    Shadow Ball have incredible coverage and are resisted only by Dark
-    types like Darkrai and Weavile. Ice
-    Beam may be missed against targets like Garchomp or Dragonite, and
-    Flamethrower may be missed against Melmetal, but all in all
-    Psystrike/Shadow Ball Mewtwo improves as a generalist.
+    If you want to go all in,
     <strong>
-        Psystrike/Shadow Ball Mewtwo also becomes an incredible safe switch
+        Shadow Mewtwo with Psystrike/Shadow Ball becomes an incredible safe switch
     </strong>
-    that will force shields from even dedicated Dark-type counters. Other
-    Mewtwo movesets are still viable and aren’t overshadowed by this one, but
-    Psystrike/Shadow Ball opens up new possibilities. In the current Steel-heavy meta, Psystrike + Focus Blast may prove to be the more meta-centric set.
+    that will force shields against anything. Shadow Mewtwo needs shields to operate and may fall short of regular Mewtwo in reaching multiple Charged Moves, but its power needs to be respected and can easily put your opponent on the back foot.
 </p>
 	</div>
 
@@ -428,8 +417,9 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
 	<h3 class="article-header">Mew</h3>
 	<div class="article-section">
 <p>
+	<strong>Moveset:</strong> Shadow Claw + Wild Charge & Surf or Flame Charge<br>
     <strong>Formats: </strong>
-    Great League, Ultra League, Master League
+    Great League
 </p>
 <p>
     Mew is a unique Pokemon on this list because it doesn’t have a legacy move
@@ -437,75 +427,12 @@ Enter Shadow Zapdos.    <strong>Shadow Zapdos locks down the Azumarill matchup <
     finally get the “mewvset” you’ve wanted.
 </p>
 <p>
-    Now the question is, which set do you want? Thankfully there are a few
-guidelines that can help us narrow things down. First,    <strong>Mew has two viable Fast Moves: Shadow Claw and Volt Switch</strong>
-    . Both of these moves have fantastic energy generation (4 energy per turn)
-    which help Mew reach its arsenal of Charged Moves. Shadow Claw is more
-    versatile and less clunky while Volt Switch can help plug an anti-Flying or
-    anti-Water hole in your team.
+    Now the question is, which set do you want? Shadow Claw is typically Mew's best Fast Move, with great energy generation and solid neutral damage against most targets. Wild Charge can also be considered standard for Mew with its immense power targeting Azumarill and Skarmory. Surf is a typical second Charged Move to hit Galarian Stunfisk, but Flame Charge is another option with more technical play.
 </p>
 <p>
-    Second, consider your playstyle and how you would like to use Mew on your
-    team. Are you leading with Mew? Using it as a safe switch? Closing with
-    shields down? When it comes to Mew’s Charged Moves,
-    <strong>
-        you generally want two coverage moves, or a coverage move plus a
-        spam/bait move.
-    </strong>
+    These are the standard "mewvsets" but the great thing about Mew is it can plug any hole in your team. There are a lot strong moves in its movepool, including Rock Slide, Ice Beam, and Grass Knot. If you want to go big with a move like Focus Blast, consider pairing it with a spammier move like Psyshock or Dragon Claw.
 </p>
-<p>
-    Below are some example movesets and specific Great League Pokemon they
-    target.
-</p>
-<ul type="disc">
-    <li>
-        <strong>Shadow Claw + Wild Charge &amp; Surf: </strong>
-        Azumarill, Galarian Stunfisk, Defense Deoxys, Alolan Marowak. A "standard" set for Mew, thist targets Great League's biggest players. Surf is fast and reliable. You want to build enough energy for two Wild Charges so you can fire them back to back, minimizing the damage you'll take with your Defense lowered.<strong></strong>
-    </li>
-    <li>
-        <strong>Shadow Claw + Wild Charge &amp; Flame Charge: </strong>
-        Altaria, Tropius, Mantine. Classic “boltbeam” coverage gives Mew a
-        wide, super effective net to catch common meta Pokemon. Effective as a
-        safe switch or a counter switch. Grass Knot over Ice Beam is also an
-        option. This set is less flexible and may struggle with shields up.
-    </li>
-    <li>
-        <strong>Shadow Claw + Surf &amp; Rock Slide: </strong>
-        Alolan Marowak, Galarian Stunfisk, Froslass. Packs coverage and
-        spammability into one moveset. Underwhelming head to head matchups but
-        excellent on a switch or with an energy advantage. Lacks closing power
-        late game. Stone Edge is an alternative to Rock Slide with more punch.
-    </li>
-    <li>
-        <strong>Shadow Claw + Psyshock &amp; Focus Blast: </strong>
-        Registeel, Bastiodon, Toxicroak, Ferrothorn. High versatility to spam
-        or nuke. Excellent safe switch potential as Focus Blast will either
-        draw a shield or devastate Dark-type counters.<strong></strong>
-    </li>
-    <li>
-        <strong>Shadow Claw + Psyshock &amp; Overheat: </strong>
-        Registeel, Skarmory, Ferrothorn. High ceiling but very bait dependent
-        (Overheat doesn’t OHKO Registeel). Potentially use Overheat in the lead
-        so you can switch and clear the stat changes.
-    </li>
-    <li>
-        <strong>Volt Switch + Wild Charge &amp; Grass Knot. </strong>
-        Azumarill, Swampert, Skarmory, Lanturn. You’re better off running
-        Alolan Raichu but this set is uniquely better against Ground types like
-        Swampert, Whiscash, and Stunfisk.<strong></strong>
-    </li>
-</ul>
-<p>
-    Leading with Mew may be the best option where you can keep it in or stash
-    it for the matchup it needs. It also ensures Mew won’t be working against
-    an energy advantage. If you land a lead matchup that’s bad for your
-    moveset, you can stick in to build up energy and potentially throw a
-    low-cost Charged Move before switching. Staying in the matchup can trick
-    your opponent into thinking you have the right moveset for the situation
-    and throwing shields. This strategy is less effective the bulkier the
-    opposing lead is (Registeel, Bastiodon, and Umbreon are unlikely to shield
-    the first Charged Move).
-</p>
+<p><b>Mew makes a great safe switch</b> where opponents are pressured to guess which moves you have and shield often. Azumarill is a great partner to cover it from Dark types like Umbreon. While this section covers Mew for Great League, if you've already powered yours up it could have Ultra League play as well. Look for moves like Ice Beam, Grass Knot, Flame Charge, or Dark Pulse to target key meta Pokemon like Giratina, Swampert, Melmetal, or Cresselia.</p>
 	</div>
 
 	<a name="event-shadow"></a>
@@ -561,9 +488,7 @@ another question worth asking:    <strong>what about Shadow Pokemon with their C
 <p>
     The answer like most things involving Shadow Pokemon is it depends. Each
     Shadow Pokemon has its advantages and drawbacks. As a quick note, Elite
-    TM’s may not be able to remove Frustration from Shadow Pokemon, so to
-    obtain these moves you would either need to unlock a 2nd Charged Move or
-    have previously removed Frustration during the available window. If you’re
+    TM’s can't remove Frustration from Shadow Pokemon. If you’re
     a fan of the Silph Arena, high-performing Shadow Pokemon are likely ban
     suspects, so gear your Elite TM and Shadow Pokemon decisions toward GO
     Battle League and freestyle.
@@ -574,17 +499,10 @@ another question worth asking:    <strong>what about Shadow Pokemon with their C
 </p>
 <ul type="disc">
     <li>
-        <strong>Synchronoise Shadow Gardevoir: </strong>
-        One Shadow Pokemon that’s pretty much a universal upgrade. Synchronoise
-        unlocks Shadow Gardevoir’s fastest available move which is
-        valuable alongside Charm’s low energy gain.<strong></strong>
-    </li>
-    <li>
         <strong>Blast Burn Shadow Charizard: </strong>
         Extra attack potentially snatches matchups like Umbreon, Hypno,
         Melmetal, and Sableye. More bait dependent but with even more
-        terrifying bait potential. Generally better in Great League than Ultra,
-        and better with Fire Spin than Wing Attack; Shadow Charizard wants to
+        terrifying bait potential. Generally better with Fire Spin than Wing Attack; Shadow Charizard wants to
         avoid extended, Charged Move-based fights.<strong></strong>
     </li>
     <li>
@@ -612,6 +530,12 @@ Dialga. Top neutral damage generalist for the raiders in the room.        <stron
         in Great and Ultra Leagues but vulnerable to top meta picks like
         Azumarill and Articuno.<strong></strong>
     </li>
+	<li>
+        <strong>Synchronoise Shadow Gardevoir: </strong>
+        One Shadow Pokemon that’s pretty much a universal upgrade. Synchronoise
+        unlocks Shadow Gardevoir’s fastest available move which is
+        valuable alongside Charm’s low energy gain.<strong></strong>
+    </li>
 </ul>
 	</div>
 
@@ -623,18 +547,10 @@ Dialga. Top neutral damage generalist for the raiders in the room.        <stron
 </p>
 <ul type="disc">
     <li>
-        <strong>Ice Shard Lapras: </strong>
-        Top Great and Ultra League pick if you missed when legacy Lapras was
-        available as a Research Breakthrough encounter and can’t obtain one via
-        trade. Wants Surf &amp; Skull Bash in Great League and Surf &amp; Ice
-Beam in Ultra League (another Elite TM required for Ice Beam).        <strong></strong>
-    </li>
-    <li>
         <strong>Earthquake Politoed: </strong>
-        Honorary mudboi with a lot of potential, capable of busting the
-        Azumarill + Registeel core with Earthquake alone. Pure Water type so it
+        Honorary mudboi with a lot of potential, capable of challenging Azumarill and Galarian STunfisk. Pure Water type so it
         fully resists Water and Ice-type attacks and isn’t double weak to
-        Grass. Also handles meta favorites like Haunter and Alolan Marowak, and
+        Grass. Also handles meta favorites like Alolan Marowak, and
         even beats its compatriots Swampert and Whiscash head to head. Shadow
         Politoed performs generally worse in head to head matchups but better
         with energy.<strong></strong>
