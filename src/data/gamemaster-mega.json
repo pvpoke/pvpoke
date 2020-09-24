@@ -602,10 +602,10 @@
             "pokemon": ["altaria", "azumarill", "skarmory", "deoxys_defense", "registeel", "stunfisk_galarian", "tropius"]
         }, {
             "points": 5,
-            "pokemon": ["abomasnow", "bastiodon", "bronzong", "cresselia", "ferrothorn", "hypno", "ivysaur", "jirachi", "marowak_alolan", "medicham", "meganium", "melmetal", "probopass", "regirock", "sableye", "scrafty", "swampert", "umbreon", "venusaur", "zweilous"]
+            "pokemon": ["abomasnow", "bastiodon", "bronzong", "cresselia", "ferrothorn", "galvantula", "hypno", "ivysaur", "jirachi", "marowak_alolan", "medicham", "meganium", "melmetal", "probopass", "regirock", "sableye", "scrafty", "swampert", "umbreon", "venusaur", "whiscash", "zweilous"]
         }, {
             "points": 1,
-            "pokemon": ["cherrim_sunny", "clefable", "dewgong", "drifblim", "empoleon", "froslass", "gardevoir", "gengar", "golbat", "haunter", "jumpluff", "lanturn", "lapras", "lugia", "machamp", "mantine", "mew", "muk_alolan", "noctowl", "obstagoon", "pelipper", "raichu", "raichu_alolan", "raikou", "regice", "shiftry", "stunfisk", "togekiss", "toxicroak", "uxie", "victreebel", "vigoroth", "whiscash", "wigglytuff", "zapdos"]
+            "pokemon": ["cherrim_sunny", "clefable", "dewgong", "drifblim", "empoleon", "froslass", "gardevoir", "gengar", "golbat", "haunter", "jumpluff", "lanturn", "lapras", "lugia", "machamp", "mantine", "mew", "muk_alolan", "noctowl", "obstagoon", "pelipper", "raichu", "raichu_alolan", "raikou", "regice", "shiftry", "stunfisk", "togekiss", "toxicroak", "uxie", "victreebel", "vigoroth", "wigglytuff", "zapdos"]
         }]
     }],
     "pokemon": [{
@@ -1135,13 +1135,13 @@
             "hp": 195
         },
         "types": ["normal", "flying"],
-        "fastMoves": ["AIR_SLASH", "STEEL_WING", "WING_ATTACK", "GUST"],
+        "fastMoves": ["AIR_SLASH", "STEEL_WING", "WING_ATTACK"],
         "chargedMoves": ["AERIAL_ACE", "AIR_CUTTER", "BRAVE_BIRD", "HURRICANE"],
         "defaultIVs": {
             "cp1500": [25.5, 9, 14, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "eliteMoves": ["WING_ATTACK", "AIR_CUTTER", "GUST"]
+        "eliteMoves": ["WING_ATTACK", "AIR_CUTTER"]
     }, {
         "dex": 19,
         "speciesName": "Rattata",
@@ -15923,14 +15923,14 @@
             "hp": 195
         },
         "types": ["normal", "flying"],
-        "fastMoves": ["AIR_SLASH", "STEEL_WING", "WING_ATTACK", "GUST"],
+        "fastMoves": ["AIR_SLASH", "STEEL_WING", "WING_ATTACK"],
         "chargedMoves": ["AERIAL_ACE", "AIR_CUTTER", "BRAVE_BIRD", "HURRICANE"],
         "defaultIVs": {
             "cp1500": [14.5, 10, 14, 14],
             "cp2500": [24.5, 6, 13, 14]
         },
 		"tags": ["mega"],
-        "eliteMoves": ["WING_ATTACK", "AIR_CUTTER", "GUST"]
+        "eliteMoves": ["WING_ATTACK", "AIR_CUTTER"]
     }, {
         "dex": 65,
         "speciesName": "Alakazam (Mega)",

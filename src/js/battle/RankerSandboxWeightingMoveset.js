@@ -663,7 +663,6 @@ var RankerMaster = (function () {
 					var json = JSON.stringify(rankings);
 					var league = battle.getCP();
 
-					console.log(json);
 					console.log("/"+cup.name+"/"+category+"/rankings-"+league+".json");
 
 					$.ajax({
