@@ -38,18 +38,7 @@ var RankerMaster = (function () {
 
 			var self = this;
 
-			// Load override data
-
-			var file = webRoot+"data/rankingoverrides.json?v="+siteVersion;
-			var overrides = [];
-
-			$.getJSON( file, function( data ){
-
-				// Sort alphabetically
-
-				overrides = data;
-				console.log("Ranking overrides loaded [" + overrides.length + "]");
-			});
+			var overrides = []; // Moveset override data
 
 			// Load existing rankings to get best movesets
 
