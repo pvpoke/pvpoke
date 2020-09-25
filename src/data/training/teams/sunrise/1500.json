@@ -42,7 +42,7 @@
 			{
 				"speciesId": "mantine",
 				"fastMove": "BUBBLE",
-				"chargedMoves": ["SKY_ATTACK","BRAVE_BIRD"],
+				"chargedMoves": ["ICE_BEAM","BUBBLE_BEAM"],
 				"difficulty": 2,
 				"weight":6
 			},
@@ -133,7 +133,7 @@
 			{
 				"speciesId": "mantine",
 				"fastMove": "BUBBLE",
-				"chargedMoves": ["SKY_ATTACK","BRAVE_BIRD"],
+				"chargedMoves": ["BUBBLE_BEAM","ICE_BEAM"],
 				"difficulty": 2,
 				"weight":5
 			},
