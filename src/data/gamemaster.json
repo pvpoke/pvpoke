@@ -15931,6 +15931,24 @@
         },
 		"tags": ["mega"],
         "eliteMoves": ["WING_ATTACK", "AIR_CUTTER"]
+    },{
+        "dex": 229,
+        "speciesName": "Houndoom (Mega)",
+        "speciesId": "houndoom_mega",
+        "baseStats": {
+            "atk": 289,
+            "def": 194,
+            "hp": 181
+        },
+        "types": ["dark", "fire"],
+        "fastMoves": ["FIRE_FANG", "SNARL"],
+        "chargedMoves": ["CRUNCH", "FIRE_BLAST", "FLAMETHROWER", "FOUL_PLAY"],
+        "defaultIVs": {
+            "cp1500": [14, 6, 14, 14],
+            "cp2500": [23.5, 9, 15, 9]
+        },
+        "tags": ["shadoweligible", "mega"],
+        "level25CP": 2416
     }],
     "moves": [{
         "moveId": "ACID",
