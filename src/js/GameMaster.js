@@ -326,7 +326,7 @@ var GameMaster = (function () {
 			var key = cup + "" + category + "" + league;
 
 			if(! object.rankings[key]){
-				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v="+siteVersion;
+				var file = webRoot+"data/rankings/"+cup+"/"+category+"/"+"rankings-"+league+".json?v="+siteVersion;
 
 				console.log(file);
 
