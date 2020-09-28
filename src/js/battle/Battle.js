@@ -1021,14 +1021,6 @@ function Battle(){
 			return;
 		}
 
-		// If a fast move KOs before opponent's cooldown is over, use fast move
-		if(opponent.hp <= fastDamage && poke.hp > (oppFastDamage * Math.floor((poke.fastMove.cooldown / 500) / (opponent.fastMove.cooldown / 500)))){
-			useChargedMove = false;
-
-			self.logDecision(turns, poke, " uses " + poke.fastMove.name + " because a fast move will knock out the opponent before they can attack.");
-			return;
-		}
-
 		// Evaluate cooldown to reach each charge move
 		for(var n = 0; n < poke.chargedMoves.length; n++) {
 			if (poke.energy >= poke.chargedMoves[n].energy) {
