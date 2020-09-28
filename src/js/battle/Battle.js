@@ -1167,7 +1167,7 @@ function Battle(){
 		while (DPQueue.length != 0) {
 
 			// A not very good way to prevent infinite loops
-			if (stateCount >= 100) {
+			if (stateCount >= 50) {
 				self.logDecision(turns, poke, " considered too many states, likely an infinite loop");
 				useChargedMove = false;
 				return;
@@ -1217,8 +1217,18 @@ function Battle(){
 
 				// Skip self debuffing moves like Superpower if they aren't lethal
 
-				if((poke.activeChargedMoves[n].selfDebuffing)&&(poke.activeChargedMoves[n].buffs[0] < 1)&&(opponent.hp > moveDamage * 1.8)){
-					continue;
+				if((poke.activeChargedMoves[n].selfDebuffing)&&(poke.activeChargedMoves[n].buffs[0] < 0)){
+					var targetHP = moveDamage * (1 + 4 / (4 - poke.activeChargedMoves[n].buffs[0]));
+
+					// Skip if back to back won't KO
+					if((n==0)&&(opponent.hp > targetHP)&&(poke.activeChargedMoves.length > 1)&&(! poke.activeChargedMoves[n+1].selfDebuffing)){
+						continue;
+					}
+
+					// Skip if a more effective non debuffing move is available
+					if((n == 0)&&(poke.activeChargedMoves.length > 1)&&(! poke.activeChargedMoves[n+1].selfDebuffing)&&(poke.activeChargedMoves[n+1].dpe >= poke.activeChargedMoves[n].dpe)&&(poke.activeChargedMoves[n+1].energy-poke.activeChargedMoves[n].energy <= 10)){
+						continue;
+					}
 				}
 
 				// Remove stat changes from pokemon attack
@@ -1461,7 +1471,15 @@ function Battle(){
 		// Evaluate throwing strategy after finding optimal plan
 
 		// Set our turnsToKO to our guaranteed KO turn
-		poke.turnsToKO = turns + stateList[stateList.length - 1].turn;
+
+		if(stateList.length > 0){
+			poke.turnsToKO = turns + stateList[stateList.length - 1].turn;
+		} else{
+			useChargedMove = false;
+			return;
+		}
+
+
 
 		// If opponent KOs before our guaranteed KO, go for the least risky plan that still KOs before opponent KOs us.
 		var needsBoost = false;
