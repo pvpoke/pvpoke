@@ -33,6 +33,7 @@
 		<ul>
 			<li>Move usage is now based on fastest sequence to KO (was formerly based on move damage per energy).</li>
 			<li>This should significantly improve optimal play in default matchups.</li>
+			<li>Huge thanks to <a href="https://twitter.com/Brandon50619618" target="_blank">Brandon/BananaBread</a> for contributing the code for this update!</li>
 		</ul>
 	</ul>
 
