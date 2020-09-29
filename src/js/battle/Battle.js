@@ -1163,10 +1163,6 @@ function Battle(){
 		var stateList = [];
 		var finalState;
 
-		if (poke.speciesName == "Deoxys (Defense)") {
-			console.log(turns);
-		}
-
 		while (DPQueue.length != 0) {
 
 			// A not very good way to prevent infinite loops
@@ -1183,10 +1179,6 @@ function Battle(){
 			// Set cap of 4 for buffs
 			currState.buffs = Math.min(4, currState.buffs);
 			currState.buffs = Math.max(-4, currState.buffs);
-
-			if (poke.speciesName == "Deoxys (Defense)") {
-				console.log(currState);
-			}
 
 			// Found fastest way to defeat enemy, fastest = optimal in this case since damage taken is strictly dependent on time
 			// Set finalState to currState and do more evaluation later
