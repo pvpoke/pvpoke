@@ -1044,7 +1044,6 @@ function Battle(){
 			);
 		}
 
-
 		// Check if opponent can KO in your fast move cooldown
 		while (queue.length != 0) {
 
