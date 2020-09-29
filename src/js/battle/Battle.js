@@ -1162,11 +1162,12 @@ function Battle(){
 		var DPQueue = [new BattleState(poke.energy, opponent.hp, 0, opponent.shields, [], 0, 1)];
 		var stateList = [];
 		var finalState;
-		while (DPQueue.length != 0) {
 
-			if (poke.speciesName == "Deoxys (Defense)") {
-				console.log(DPQueue[0]);
-			}
+		if (poke.speciesName == "Deoxys (Defense)") {
+			console.log(turns);
+		}
+
+		while (DPQueue.length != 0) {
 
 			// A not very good way to prevent infinite loops
 			if (stateCount >= 200) {
@@ -1182,6 +1183,10 @@ function Battle(){
 			// Set cap of 4 for buffs
 			currState.buffs = Math.min(4, currState.buffs);
 			currState.buffs = Math.max(-4, currState.buffs);
+
+			if (poke.speciesName == "Deoxys (Defense)") {
+				console.log(currState);
+			}
 
 			// Found fastest way to defeat enemy, fastest = optimal in this case since damage taken is strictly dependent on time
 			// Set finalState to currState and do more evaluation later
@@ -1209,28 +1214,21 @@ function Battle(){
 			for(var n = 0; n < poke.activeChargedMoves.length; n++) {
 
 				// Apply stat changes to pokemon attack
-				var currentMult = 0
-				if (currState.buffs >= 0) {
-					currentMult = (4 + currState.buffs) / 4;
-				} else {
-					currentMult = 4 / (4 - currState.buffs);
-				}
-
-				poke.attack *= currentMult;
+				var currentStatBuffs = [poke.statBuffs[0], poke.statBuffs[1]];
+				poke.applyStatBuffs([currState.buffs, 0]);
 
 				var moveDamage = self.calculateDamage(poke, opponent, poke.activeChargedMoves[n]);
 				var fastSimulatedDamage = self.calculateDamage(poke, opponent, poke.fastMove);
 
-				// Skip self debuffing moves like Superpower if they aren't lethal
+				// Remove stat changes from pokemon attack
+				poke.statBuffs = [currentStatBuffs[0], currentStatBuffs[1]];
+
+				// Skip self defense debuffing moves like Superpower if they aren't lethal
 				if (hasNonDebuff) {
-					if((poke.activeChargedMoves[n].selfDebuffing)&&(poke.activeChargedMoves[n].buffs[1] < 1)&&(opponent.hp > moveDamage * (1 + 4 / (4 - poke.activeChargedMoves[n].buffs[0])))){
+					if((poke.activeChargedMoves[n].selfDebuffing)&&(poke.activeChargedMoves[n].buffs[1] < 1)&&(opponent.hp > moveDamage * (1 + 4 / (4 -	 poke.activeChargedMoves[n].buffs[0])))){
 						continue;
 					}
 				}
-				
-
-				// Remove stat changes from pokemon attack
-				poke.attack /= currentMult;
 
 				// Add result of farming down from this point
 				var movesToFarmDown = Math.ceil(currState.oppHealth / fastSimulatedDamage);
@@ -1368,6 +1366,47 @@ function Battle(){
 						}
 					}
 
+					// If move will debuff attack, calculate values when you stack two of them then throw
+					if (poke.activeChargedMoves[n].selfDebuffing && poke.activeChargedMoves[n].buffs[0] < 0 && poke.activeChargedMoves[n].energy * 2 <= 100) {
+
+						var newTurn = Math.ceil((poke.chargedMoves[n].energy * 2 - currState.energy) / poke.fastMove.energyGain) * poke.fastMove.cooldown / 500;
+						newEnergy = Math.floor(newTurn / (poke.fastMove.cooldown / 500)) * poke.fastMove.energyGain + currState.energy - poke.chargedMoves[n].energy;
+
+						// Calculate new health 
+						newOppHealth = currState.oppHealth - fastSimulatedDamage * (newTurn / (poke.fastMove.cooldown / 500));
+
+						// Calculate shield scenarios
+						if (currState.oppShields > 0) {
+							newOppHealth = newOppHealth - 1;
+						} else {
+							newOppHealth = newOppHealth - moveDamage;
+						}
+
+						newTurn += currState.turn + 1;
+
+						i = 0;
+						if (DPQueue.length == 0) {
+							DPQueue.unshift(new BattleState(newEnergy, newOppHealth, newTurn, newShields, currState.moves.concat([poke.activeChargedMoves[n]]), attackMult, currState.chance));
+							// If move has chance of changing TTK, add that result
+							if (changeTTKChance != 0) {
+								DPQueue.unshift(new BattleState(newEnergy, newOppHealth, newTurn, newShields, currState.moves.concat([poke.activeChargedMoves[n]]), possibleAttackMult, currState.chance * changeTTKChance));
+							}
+						} else {
+							while (DPQueue[i].turn < newTurn) {
+								i ++;
+								if (i == DPQueue.length) {
+									break;
+								}
+							}
+
+							DPQueue.splice(i, 0, new BattleState(newEnergy, newOppHealth, newTurn, newShields, currState.moves.concat([poke.activeChargedMoves[n]]), attackMult, currState.chance));
+							// If move has chance of changing TTK, add that result
+							if (changeTTKChance != 0) {
+								DPQueue.splice(i, 0, new BattleState(newEnergy, newOppHealth, newTurn, newShields, currState.moves.concat([poke.activeChargedMoves[n]]), possibleAttackMult, currState.chance * changeTTKChance));
+							}
+						}
+					}
+
 				} else {
 					var newEnergy = currState.energy - poke.activeChargedMoves[n].energy + poke.fastMove.energyGain * (DPchargedMoveReady[n] / (poke.fastMove.cooldown / 500));
 					var newOppHealth = currState.oppHealth - moveDamage - fastSimulatedDamage * (DPchargedMoveReady[n] / (poke.fastMove.cooldown / 500));
@@ -1408,19 +1447,19 @@ function Battle(){
 					}
 
 					// If move will debuff attack, calculate values when you stack two of them then throw
-					if (poke.activeChargedMoves[n].selfDebuffing && poke.activeChargedMoves[n].buffs[0] < 0) {
+					if (poke.activeChargedMoves[n].selfDebuffing && poke.activeChargedMoves[n].buffs[0] < 0 && poke.activeChargedMoves[n].energy * 2 <= 100) {
 
-						newTurn =  Math.ceil((poke.chargedMoves[n].energy * 2 - currState.energy) / poke.fastMove.energyGain) * poke.fastMove.cooldown / 500;
-						newEnergy = Math.min(100, currState.turn + newTurn * poke.fastMove.energyGain) - poke.activeChargedMoves[n].energy;
+						newTurn = Math.ceil((poke.chargedMoves[n].energy * 2 - currState.energy) / poke.fastMove.energyGain) * poke.fastMove.cooldown / 500;
+						newEnergy = Math.floor(newTurn / (poke.fastMove.cooldown / 500)) * poke.fastMove.energyGain + currState.energy - poke.chargedMoves[n].energy;
 
 						// Calculate new health 
-						newOppHealth = currState.oppHealth - fastSimulatedDamage * (newTurn / poke.fastMove.cooldown / 500);
+						newOppHealth = currState.oppHealth - fastSimulatedDamage * (newTurn / (poke.fastMove.cooldown / 500));
 
 						// Calculate shield scenarios
 						if (currState.oppShields > 0) {
-							newOppHealth += currState.oppHealth - 1;
+							newOppHealth = newOppHealth - 1;
 						} else {
-							newOppHealth = currState.oppHealth - moveDamage;
+							newOppHealth = newOppHealth - moveDamage;
 						}
 
 						newTurn += currState.turn + 1
@@ -1447,7 +1486,6 @@ function Battle(){
 							}
 						}
 					}
-
 				}
 			}
 		}
