@@ -1,6 +1,7 @@
 <?php require_once 'header.php'; ?>
 
 <div class="section home white">
+
 	<p>Welcome to PvPoke.com! We're an open-source tool for simulating, ranking, and building teams for Pokemon GO PvP (player versus player) battles. Check out the links below to get started.</p>
 
 	<a href="<?php echo $WEB_ROOT; ?>battle/" class="button">
@@ -27,11 +28,14 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.16.3 (September 19, 2020)</h4>
+	<h4>v1.17.0 (September 28, 2020)</h4>
 	<ul>
-		<li>The "Switches" rankings now rank Pokemon with 4 turns of energy advantage instead of 6.</li>
-		<li>Fixed an issue in Sandbox Mode that caused stat-changing moves to reroll each update.</li>
-		<li>Custom group import/export text no longer highlights so you can edit the text directly.</li>
+		<li>Decision algorithm overhauled for simulations:</li>
+		<ul>
+			<li>Move usage is now based on fastest sequence to KO (was formerly based on move damage per energy).</li>
+			<li>This should significantly improve optimal play in default matchups.</li>
+			<li>Huge thanks to <a href="https://twitter.com/Brandon50619618" target="_blank">Brandon/BananaBread</a> for contributing the code for this update!</li>
+		</ul>
 	</ul>
 
 	<h3>Latest Article</h3>

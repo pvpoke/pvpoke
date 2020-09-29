@@ -559,6 +559,14 @@ function Pokemon(id, i, b){
 					self.activeChargedMoves.push(move);
 				}
 
+				// If both moves cost the same energy and one has a guaranteed buff effect, prioritize the buffing move
+
+				if((self.activeChargedMoves[1].energy == self.activeChargedMoves[0].energy)&&(self.activeChargedMoves[0].buffs)&&(self.activeChargedMoves[1].buffs)&&(! self.activeChargedMoves[1].selfDebuffing)&&(self.activeChargedMoves[0].buffs)&&(self.activeChargedMoves[1].buffApplyChance > self.activeChargedMoves[0].buffApplyChance)){
+					var move = self.activeChargedMoves[0];
+					self.activeChargedMoves.splice(0, 1);
+					self.activeChargedMoves.push(move);
+				}
+
 				// If the cheaper move is a self debuffing move and the other move is a close non-debuffing move, prioritize the non-debuffing move
 
 				/*if((self.activeChargedMoves[1].energy - self.activeChargedMoves[0].energy <= 10)&&(self.activeChargedMoves[0].selfAttackDebuffing)&&(! self.activeChargedMoves[1].selfDebuffing)){

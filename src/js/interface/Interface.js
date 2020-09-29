@@ -1117,7 +1117,7 @@ var InterfaceMaster = (function () {
 
 				var battles = [];
 				var ratings = [];
-				var simCount = 500;
+				var simCount = 250;
 
 				for(var i = 0; i < simCount; i++){
 					var b = new Battle();

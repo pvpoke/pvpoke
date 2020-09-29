@@ -1379,6 +1379,7 @@ function Battle(){
 						newEnergy = Math.floor(newTurn / (poke.fastMove.cooldown / 500)) * poke.fastMove.energyGain + currState.energy - poke.chargedMoves[n].energy;
 
 						if (newTurn != 0) {
+
 							// Calculate new health 
 							newOppHealth = currState.oppHealth - fastSimulatedDamage * (newTurn / (poke.fastMove.cooldown / 500));
 
@@ -1419,8 +1420,6 @@ function Battle(){
 								}
 							}
 						}
-
-						
 					}
 
 				} else {
@@ -1473,8 +1472,9 @@ function Battle(){
 
 						newTurn = Math.ceil((poke.chargedMoves[n].energy * 2 - currState.energy) / poke.fastMove.energyGain) * poke.fastMove.cooldown / 500;
 						newEnergy = Math.floor(newTurn / (poke.fastMove.cooldown / 500)) * poke.fastMove.energyGain + currState.energy - poke.chargedMoves[n].energy;
-
+						
 						// Calculate new health 
+
 						newOppHealth = currState.oppHealth - fastSimulatedDamage * (newTurn / (poke.fastMove.cooldown / 500));
 
 						// Calculate shield scenarios
@@ -1553,17 +1553,20 @@ function Battle(){
 
 		// Find if there are any debuffing moves and the most expensive move in planned move list
 		var debuffingMove = false;
-		var mostExpensiveMoveEnergy = finalState.moves[0].energy;
+		var mostExpensiveMove = finalState.moves[0];
 		for (var moveInd = 0; moveInd < finalState.moves.length; moveInd++) {
 			if (finalState.moves[moveInd].selfDebuffing) {
 				debuffingMove = true;
 			}
-			mostExpensiveMoveEnergy = Math.max(mostExpensiveMoveEnergy, finalState.moves[moveInd].energy);
+
+			if(finalState.moves[moveInd].energy > mostExpensiveMove.energy){
+				mostExpensiveMove = finalState.moves[moveInd];
+			}
 		}
 
 		// If bait shields, build up to most expensive charge move in planned move list
-		if (poke.baitShields && opponent.shields > 0) {
-			if (poke.energy < mostExpensiveMoveEnergy) {
+		if (poke.baitShields && opponent.shields > 0 && poke.activeChargedMoves.length > 1) {
+			if ((poke.energy < poke.activeChargedMoves[1].energy)&&(poke.activeChargedMoves[1].dpe > finalState.moves[0].dpe)) {
 				self.logDecision(turns, poke, " doesn't use " + finalState.moves[0].name + " because it wants to bait");
 				useChargedMove = false;
 				return;
