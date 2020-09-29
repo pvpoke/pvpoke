@@ -13,9 +13,12 @@ body, html {
 }
 
 body {
-  background: #f3fbfe;
+  background-color: #f3fbfe;
+  background: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
-  position: relative;
+  background-position: center bottom;
   min-height: 100%;
 }
 
@@ -38,6 +41,9 @@ header {
 header .header-wrap {
   max-width: 800px;
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 header .title {
   font-size: 18px;
@@ -56,11 +62,10 @@ header .title a {
 }
 header .menu {
   padding: 3px 0;
-  float: right;
+  display: flex;
 }
 header .menu a {
   display: block;
-  float: left;
   margin-left: 20px;
   color: #003748;
   text-decoration: none;
@@ -103,12 +108,6 @@ footer p:first-of-type {
 header {
   position: relative;
   z-index: 25;
-}
-
-.background {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
 }
 
 .section {
@@ -3003,6 +3002,7 @@ a.toggle {
     clear: both;
     margin-top: 15px;
     padding: 0;
+    flex: 0 0 100%;
   }
   header .menu a {
     float: none;
@@ -3015,7 +3015,6 @@ a.toggle {
   }
   header .hamburger {
     display: block;
-    float: right;
   }
   header .hamburger .meat {
     width: 30px;

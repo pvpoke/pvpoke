@@ -1,6 +1,7 @@
 /* CSS Document */
 body {
-  background: #030509;
+  background-color: #030509;
+  background-image: url("../../img/themes/night/bg.jpg");
   color: #eee;
 }
 
