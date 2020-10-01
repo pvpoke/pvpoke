@@ -999,6 +999,12 @@ function Battle(){
 		var oppFastDamage = self.calculateDamage(opponent, poke, opponent.fastMove);
 		var hasNonDebuff = false;
 
+		// If no Charged Moves at all, return
+		if(poke.activeChargedMoves.length < 1){
+			useChargedMove = false;
+			return;
+		}
+
 		// If no charged move ready, always throw fast move or farm energy is on
 		if (poke.energy < poke.fastestChargedMove.energy || poke.farmEnergy) {
 			useChargedMove = false;
@@ -1113,7 +1119,7 @@ function Battle(){
 
 		// If you can't throw a fast move and live, throw whatever move you can with the most damage
 		if (turnsToLive != -1) {
-			if (turnsToLive * 500 < poke.fastMove.cooldown || (turnsToLive * 500 == poke.fastMove.cooldown && !winsCMP)) {
+			if (turnsToLive * 500 < poke.fastMove.cooldown || (turnsToLive * 500 == poke.fastMove.cooldown && !winsCMP) || (turnsToLive * 500 == poke.fastMove.cooldown && poke.hp <= opponent.fastMove.damage)) {
 
 				var maxDamageMoveIndex = 0;
 				var prevMoveDamage = -1;
@@ -1522,7 +1528,13 @@ function Battle(){
 		// Evaluate throwing strategy after finding optimal plan
 
 		// Set our turnsToKO to our guaranteed KO turn
-		poke.turnsToKO = turns + stateList[stateList.length - 1].turn;
+		if(stateList.length > 0){
+			poke.turnsToKO = turns + stateList[stateList.length - 1].turn;
+		} else{
+			useChargedMove = false;
+			return;
+		}
+
 
 		// If opponent KOs before our guaranteed KO, go for the least risky plan that still KOs before opponent KOs us.
 		var needsBoost = false;
@@ -1596,6 +1608,12 @@ function Battle(){
 					}
 				}
 			}
+		}
+
+		// If shields are up, prefer low energy moves that are more efficient
+		if (opponent.shields > 0 && poke.activeChargedMoves.length > 1 && poke.activeChargedMoves[0].energy <= finalState.moves[0].energy && poke.activeChargedMoves[0].dpe > finalState.moves[0].dpe && (! poke.activeChargedMoves[0].selfDebuffing)) {
+			self.logDecision(turns, poke, " swaps " + finalState.moves[0].name + " in favor of " + poke.activeChargedMoves[0].name);
+			finalState.moves[0] = poke.activeChargedMoves[0];
 		}
 
 		if (poke.energy >= finalState.moves[0].energy) {

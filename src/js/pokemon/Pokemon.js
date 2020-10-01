@@ -543,12 +543,15 @@ function Pokemon(id, i, b){
 
 			if(self.activeChargedMoves.length > 1){
 
-				// If both moves cost the same energy and one has a buff effect, prioritize the buffing move
+				// If both moves cost the same energy and one has a buff effect, prioritize the buffing move, or the move that does more damage
 
-				if((self.activeChargedMoves[1].energy == self.activeChargedMoves[0].energy)&&(self.activeChargedMoves[1].buffs)&&(! self.activeChargedMoves[1].selfDebuffing)){
-					var move = self.activeChargedMoves[0];
-					self.activeChargedMoves.splice(0, 1);
-					self.activeChargedMoves.push(move);
+				if((self.activeChargedMoves[1].energy == self.activeChargedMoves[0].energy)&&(! self.activeChargedMoves[1].selfDebuffing)){
+
+					if((self.activeChargedMoves[1].buffs)||(self.activeChargedMoves[1].damage > self.activeChargedMoves[0].damage)){
+						var move = self.activeChargedMoves[0];
+						self.activeChargedMoves.splice(0, 1);
+						self.activeChargedMoves.push(move);
+					}
 				}
 
 				// If both moves cost the same energy and one has a guaranteed buff effect, prioritize the buffing move
