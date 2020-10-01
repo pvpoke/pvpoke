@@ -1612,7 +1612,6 @@ function Battle(){
 
 		// If shields are up, prefer low energy moves that are more efficient
 		if (opponent.shields > 0 && poke.activeChargedMoves.length > 1 && poke.activeChargedMoves[0].energy <= finalState.moves[0].energy && poke.activeChargedMoves[0].dpe > finalState.moves[0].dpe && (! poke.activeChargedMoves[0].selfDebuffing)) {
-			self.logDecision(turns, poke, " swaps " + finalState.moves[0].name + " in favor of " + poke.activeChargedMoves[0].name);
 			finalState.moves[0] = poke.activeChargedMoves[0];
 		}
 
