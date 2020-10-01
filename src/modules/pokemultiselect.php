@@ -20,7 +20,6 @@
 				<option value="premier" type="master" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="flying" type="great" class="multi-battle">Flying Cup Meta</option>
 				<option value="halloween" type="great" class="multi-battle">Halloween Cup Meta</option>
-				<option value="circus" type="great" class="multi-battle">Circus Cup Meta</option>
 				<option value="sunrise" type="great" class="multi-battle">Silph Sunrise Cup Meta</option>
 			</select>
 			<div class="flex quick-fill-buttons">
