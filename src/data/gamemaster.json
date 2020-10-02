@@ -7968,13 +7968,14 @@
         },
         "types": ["psychic", "fairy"],
         "fastMoves": ["CHARGE_BEAM", "CONFUSION"],
-        "chargedMoves": ["DISARMING_VOICE", "PSYCHIC", "SHADOW_SNEAK"],
+        "chargedMoves": ["DISARMING_VOICE", "PSYCHIC", "SHADOW_SNEAK", "DRAINING_KISS"],
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
         "level25CP": 533,
-        "tags": ["shadoweligible"]
+        "tags": ["shadoweligible"],
+		"eliteMoves": ["DRAINING_KISS"]
     }, {
         "dex": 281,
         "speciesName": "Kirlia (Shadow)",
@@ -7986,12 +7987,13 @@
         },
         "types": ["psychic", "fairy"],
         "fastMoves": ["CHARGE_BEAM", "CONFUSION"],
-        "chargedMoves": ["DISARMING_VOICE", "PSYCHIC", "SHADOW_SNEAK"],
+        "chargedMoves": ["DISARMING_VOICE", "PSYCHIC", "SHADOW_SNEAK", "DRAINING_KISS"],
         "defaultIVs": {
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"]
+        "tags": ["shadow"],
+		"eliteMoves": ["DRAINING_KISS"]
     }, {
         "dex": 282,
         "speciesName": "Gardevoir",
