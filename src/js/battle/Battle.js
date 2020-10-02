@@ -1119,6 +1119,10 @@ function Battle(){
 
 		// If you can't throw a fast move and live, throw whatever move you can with the most damage
 		if (turnsToLive != -1) {
+			if(opponent.fastMove.cooldown == 500){
+				turnsToLive--;
+			}
+
 			if (turnsToLive * 500 < poke.fastMove.cooldown || (turnsToLive * 500 == poke.fastMove.cooldown && !winsCMP) || (turnsToLive * 500 == poke.fastMove.cooldown && poke.hp <= opponent.fastMove.damage)) {
 
 				var maxDamageMoveIndex = 0;
@@ -1155,6 +1159,33 @@ function Battle(){
 
 					chargedMoveUsed = true;
 					return action;
+				}
+			}
+		}
+
+		// Throw a lethal Charged Move if it will faint the opponent
+
+		if(! poke.farmEnergy){
+			for(var n = 0; n < poke.activeChargedMoves.length; n++) {
+				var move = poke.activeChargedMoves[n];
+				var moveIndex = poke.chargedMoves.indexOf(poke.activeChargedMoves[n]);
+
+				if(poke.energy >= move.energy){
+					var moveDamage = self.calculateDamage(poke, opponent, poke.activeChargedMoves[n]);
+
+					// Don't throw self debuffing moves at this point, or if the opponent will faint from Fast Move damage
+					if(opponent.hp <= moveDamage && (! move.selfDebuffing) && (n == 0 || (n == 1 && ! poke.baitShields)) && opponent.hp > poke.fastMove.damage){
+
+						action = new TimelineAction(
+							"charged",
+							poke.index,
+							turns,
+							moveIndex,
+							{shielded: false, buffs: false, priority: poke.priority});
+
+						chargedMoveUsed = true;
+						return action;
+					}
 				}
 			}
 		}
@@ -1382,8 +1413,8 @@ function Battle(){
 					// If move will debuff attack, calculate values when you stack two of them then throw
 					if (poke.activeChargedMoves[n].selfDebuffing && poke.activeChargedMoves[n].buffs[0] < 0 && poke.activeChargedMoves[n].energy * 2 <= 100) {
 
-						var newTurn = Math.ceil((poke.chargedMoves[n].energy * 2 - currState.energy) / poke.fastMove.energyGain) * poke.fastMove.cooldown / 500;
-						newEnergy = Math.floor(newTurn / (poke.fastMove.cooldown / 500)) * poke.fastMove.energyGain + currState.energy - poke.chargedMoves[n].energy;
+						var newTurn = Math.ceil((poke.activeChargedMoves[n].energy * 2 - currState.energy) / poke.fastMove.energyGain) * poke.fastMove.cooldown / 500;
+						newEnergy = Math.floor(newTurn / (poke.fastMove.cooldown / 500)) * poke.fastMove.energyGain + currState.energy - poke.activeChargedMoves[n].energy;
 
 						if (newTurn != 0) {
 							// Calculate new health
@@ -1478,8 +1509,8 @@ function Battle(){
 					// If move will debuff attack, calculate values when you stack two of them then throw
 					if (poke.activeChargedMoves[n].selfDebuffing && poke.activeChargedMoves[n].buffs[0] < 0 && poke.activeChargedMoves[n].energy * 2 <= 100) {
 
-						newTurn = Math.ceil((poke.chargedMoves[n].energy * 2 - currState.energy) / poke.fastMove.energyGain) * poke.fastMove.cooldown / 500;
-						newEnergy = Math.floor(newTurn / (poke.fastMove.cooldown / 500)) * poke.fastMove.energyGain + currState.energy - poke.chargedMoves[n].energy;
+						newTurn = Math.ceil((poke.activeChargedMoves[n].energy * 2 - currState.energy) / poke.fastMove.energyGain) * poke.fastMove.cooldown / 500;
+						newEnergy = Math.floor(newTurn / (poke.fastMove.cooldown / 500)) * poke.fastMove.energyGain + currState.energy - poke.activeChargedMoves[n].energy;
 
 						// Calculate new health
 						newOppHealth = currState.oppHealth - fastSimulatedDamage * (newTurn / (poke.fastMove.cooldown / 500));

@@ -570,7 +570,7 @@ function Pokemon(id, i, b){
 					self.activeChargedMoves.push(move);
 				}
 			}
-			
+
 			self.bestChargedMove = self.activeChargedMoves[0];
 			self.bestChargedMove.dpe = self.bestChargedMove.damage / self.bestChargedMove.energy;
 
