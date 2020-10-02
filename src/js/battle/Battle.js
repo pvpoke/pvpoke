@@ -1646,6 +1646,11 @@ function Battle(){
 			finalState.moves[0] = poke.activeChargedMoves[0];
 		}
 
+		// Bandaid to force more efficient move of the same energy
+		if (poke.activeChargedMoves.length > 1 && poke.activeChargedMoves[0].energy == finalState.moves[0].energy && poke.activeChargedMoves[0].dpe > finalState.moves[0].dpe && (! poke.activeChargedMoves[0].selfDebuffing)) {
+			finalState.moves[0] = poke.activeChargedMoves[0];
+		}
+
 		if (poke.energy >= finalState.moves[0].energy) {
 			if (finalState.moves.length > 1) {
 				self.logDecision(turns, poke, " uses " + finalState.moves[0].name + " because it thinks that using " + (finalState.moves.length - 1) + " moves afterwards is the best plan.");
