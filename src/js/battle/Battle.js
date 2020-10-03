@@ -1011,6 +1011,48 @@ function Battle(){
 			return;
 		}
 
+		// Evaluate if opponent can't be fainted in a limited number of cycles. If so, do a simpler move selection.
+
+		var bestChargedDamage = self.calculateDamage(poke, opponent, poke.bestChargedMove);
+		var bestCycleDamage = bestChargedDamage + (fastDamage * Math.ceil(poke.bestChargedMove.energy / poke.fastMove.energyGain));
+		var minimumCycleThreshold = 2;
+
+		if(opponent.hp / bestCycleDamage > minimumCycleThreshold){
+			// It's going to take a lot of cycles to KO, so just throw the best move
+
+			// Build up to best move
+			var selectedMove = poke.bestChargedMove;
+
+			if(poke.activeChargedMoves.length > 0){
+				if(poke.baitShields && opponent.shields > 0 && ! poke.activeChargedMoves[0].selfDebuffing){
+					selectedMove = poke.activeChargedMoves[0];
+				}
+
+				if(poke.bestChargedMove.selfDebuffing){
+					for(var i = 0; i < poke.activeChargedMoves.length; i++){
+						if(! poke.activeChargedMoves[i].selfDebuffing){
+							selectedMove = poke.activeChargedMoves[i];
+						}
+					}
+				}
+			}
+
+			if(poke.energy < selectedMove.energy){
+				useChargedMove = false;
+				return;
+			} else{
+				action = new TimelineAction(
+					"charged",
+					poke.index,
+					turns,
+					poke.chargedMoves.indexOf(selectedMove),
+					{shielded: false, buffs: false, priority: poke.priority});
+
+				chargedMoveUsed = true;
+				return action;
+			}
+		}
+
 		// Evaluate cooldown to reach each charge move
 		for(var n = 0; n < poke.activeChargedMoves.length; n++) {
 			if (!poke.activeChargedMoves[n].selfDebuffing) {
