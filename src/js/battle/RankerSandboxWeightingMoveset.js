@@ -38,18 +38,7 @@ var RankerMaster = (function () {
 
 			var self = this;
 
-			// Load override data
-
-			var file = webRoot+"data/rankingoverrides.json?v="+siteVersion;
-			var overrides = [];
-
-			$.getJSON( file, function( data ){
-
-				// Sort alphabetically
-
-				overrides = data;
-				console.log("Ranking overrides loaded [" + overrides.length + "]");
-			});
+			var overrides = []; // Moveset override data
 
 			// Load existing rankings to get best movesets
 
@@ -452,6 +441,14 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if(cup.name == "flying"){
+					iterations = 1;
+				}
+
+				if(cup.name == "halloween"){
+					iterations = 1;
+				}
+
 				if(cup.name == "custom"){
 					iterations = 7;
 				}
@@ -488,6 +485,14 @@ var RankerMaster = (function () {
 							}
 
 							if(cup.name == "premier"){
+								weight = 1;
+							}
+
+							if(cup.name == "flying"){
+								weight = 1;
+							}
+
+							if(cup.name == "halloween"){
 								weight = 1;
 							}
 
@@ -647,7 +652,6 @@ var RankerMaster = (function () {
 					var json = JSON.stringify(rankings);
 					var league = battle.getCP();
 
-					console.log(json);
 					console.log("/"+cup.name+"/"+category+"/rankings-"+league+".json");
 
 					$.ajax({

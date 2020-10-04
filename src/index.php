@@ -1,6 +1,7 @@
 <?php require_once 'header.php'; ?>
 
 <div class="section home white">
+
 	<p>Welcome to PvPoke.com! We're an open-source tool for simulating, ranking, and building teams for Pokemon GO PvP (player versus player) battles. Check out the links below to get started.</p>
 
 	<a href="<?php echo $WEB_ROOT; ?>battle/" class="button">
@@ -27,12 +28,14 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.16.0 (September 1, 2020)</h4>
+	<h4>v1.17.0 (September 28, 2020)</h4>
 	<ul>
-		<li>Released Mega Evolutions are now listed on the main version of the site. You can view unreleased Mega Evolutions by setting your Gamemaster version on the <a href="<?php echo $WEB_ROOT; ?>settings/">Settings page</a>.</li>
-		<li>Please note that Mega Evolution performance in PvP is currently unknown and potentially bugged. Any battle simulations involving Mega Evolutions, breakpoints, etc. should be disregarded until more information is known.</li>
-		<li>Mega Evolutions display the CP of their base form.</li>
-		<li>When adjusting a Pokemon's IVs, its level will automatically adjust to the CP limit.</li>
+		<li>Decision algorithm overhauled for simulations:</li>
+		<ul>
+			<li>Move usage is now based on fastest sequence to KO (was formerly based on move damage per energy).</li>
+			<li>This should significantly improve optimal play in default matchups.</li>
+			<li>Huge thanks to <a href="https://twitter.com/Brandon50619618" target="_blank">Brandon/BananaBread</a> for contributing the code for this update!</li>
+		</ul>
 	</ul>
 
 	<h3>Latest Article</h3>

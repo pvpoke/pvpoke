@@ -156,7 +156,7 @@ var InterfaceMaster = (function () {
 					var r = rankings[i];
 
 					var pokemon = new Pokemon(r.speciesId, 0, battle);
-					pokemon.initialize();
+					pokemon.initialize(true);
 					pokemon.selectMove("fast", r.moveset[0]);
 					pokemon.selectMove("charged", r.moveset[1], 0);
 

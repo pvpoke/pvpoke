@@ -157,6 +157,35 @@ switch($cup){
 	case "shadow":
 		$league = 'Shadow Cup';
 		break;
+
+	case "flying":
+		$league = 'Flying Cup';
+		break;
+
+	case "halloween":
+		$league = 'Halloween Cup';
+		break;
+
+	case "circus":
+		$league = 'Circus Cup';
+		break;
+
+	case "maelstrom":
+		$league = 'Maelstrom Cup';
+		break;
+
+	case "origin":
+		$league = 'Origin Cup';
+		break;
+
+	case "duet":
+		$league = 'Duet Cup';
+		break;
+
+	case "sunrise":
+		$league = 'Silph Sunrise Cup';
+		break;
+
 }
 
 $META_TITLE = $league . ' PvP Rankings';

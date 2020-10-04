@@ -174,6 +174,18 @@ require_once 'header.php'; ?>
 			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/kaiser.jpg"/>
 			<div class="supporter"><a href="https://www.twitch.tv/kaiserneiner" target="_blank">KaiserNeiner</a></div>
 		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/graceunderfiero.png"/>
+			<div class="supporter"><a href="https://www.twitch.tv/GraceUnderFiero" target="_blank">GraceUnderFiero</a></div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/jordiepop.png"/>
+			<div class="supporter"><a href="https://www.youtube.com/user/jordangerm" target="_blank">Jordie Pop</a></div>
+		</div>
+		<div class="supporter-container">
+			<div class="space"></div>
+			<div class="supporter">	theghost087</div>
+		</div>
 	</div>
 </div>
 

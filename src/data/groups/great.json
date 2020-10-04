@@ -30,6 +30,11 @@
 		"chargedMoves":["POWER_UP_PUNCH","FOUL_PLAY"]
 	},
 	{
+		"speciesId":"obstagoon",
+		"fastMove":"COUNTER",
+		"chargedMoves":["NIGHT_SLASH","GUNK_SHOT"]
+	},
+	{
 		"speciesId":"stunfisk",
 		"fastMove":"THUNDER_SHOCK",
 		"chargedMoves":["MUD_BOMB","DISCHARGE"]
@@ -135,6 +140,11 @@
 		"chargedMoves":["MUD_BOMB","SLUDGE_BOMB"]
 	},
 	{
+		"speciesId":"mew",
+		"fastMove":"SHADOW_CLAW",
+		"chargedMoves":["WILD_CHARGE","SURF"]
+	},
+	{
 		"speciesId":"clefable",
 		"fastMove":"CHARM",
 		"chargedMoves":["METEOR_MASH","PSYCHIC"]
@@ -173,6 +183,11 @@
 		"speciesId":"raichu_alolan",
 		"fastMove":"VOLT_SWITCH",
 		"chargedMoves":["THUNDER_PUNCH","WILD_CHARGE"]
+	},
+	{
+		"speciesId":"galvantula",
+		"fastMove":"VOLT_SWITCH",
+		"chargedMoves":["DISCHARGE","LUNGE"]
 	},
 	{
 		"speciesId":"ferrothorn",

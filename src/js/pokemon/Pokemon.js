@@ -74,6 +74,7 @@ function Pokemon(id, i, b){
 	this.baitShields = true; // Use low energy attacks to bait shields
 	this.farmEnergy = false; // use fast moves only
 	this.chargedMovesOnly = false; // Only allow Charged Move actions
+	this.turnsToKO = -1;
 
 	// Training battle statistics
 
@@ -451,6 +452,7 @@ function Pokemon(id, i, b){
 		var minAttack = self.generateIVCombinations("atk", -1, 1)[0].atk;
 		var maxAttack = self.generateIVCombinations("atk", 1, 1)[0].atk;
 		var maxDefense = defender.generateIVCombinations("def", 1, 1)[0].def;
+
 		var minDamage = battle.calculateDamageByStats(self, defender, minAttack, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
 		var maxDamage = battle.calculateDamageByStats(self, defender, maxAttack, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
 
@@ -541,9 +543,20 @@ function Pokemon(id, i, b){
 
 			if(self.activeChargedMoves.length > 1){
 
-				// If both moves cost the same energy and one has a buff effect, prioritize the buffing move
+				// If both moves cost the same energy and one has a buff effect, prioritize the buffing move, or the move that does more damage
 
-				if((self.activeChargedMoves[1].energy == self.activeChargedMoves[0].energy)&&(self.activeChargedMoves[1].buffs)&&(! self.activeChargedMoves[1].selfDebuffing)){
+				if((self.activeChargedMoves[1].energy == self.activeChargedMoves[0].energy)&&(! self.activeChargedMoves[1].selfDebuffing)){
+
+					if((self.activeChargedMoves[1].buffs)||(self.activeChargedMoves[1].damage > self.activeChargedMoves[0].damage)){
+						var move = self.activeChargedMoves[0];
+						self.activeChargedMoves.splice(0, 1);
+						self.activeChargedMoves.push(move);
+					}
+				}
+
+				// If both moves cost the same energy and one has a guaranteed buff effect, prioritize the buffing move
+
+				if((self.activeChargedMoves[1].energy == self.activeChargedMoves[0].energy)&&(self.activeChargedMoves[0].buffs)&&(self.activeChargedMoves[1].buffs)&&(! self.activeChargedMoves[1].selfDebuffing)&&(self.activeChargedMoves[0].buffs)&&(self.activeChargedMoves[1].buffApplyChance > self.activeChargedMoves[0].buffApplyChance)){
 					var move = self.activeChargedMoves[0];
 					self.activeChargedMoves.splice(0, 1);
 					self.activeChargedMoves.push(move);

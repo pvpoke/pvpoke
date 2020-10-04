@@ -27,7 +27,7 @@ if($json === null){
 	exit();
 }
 
-$filepath = $_POST['cup'] . '/' . $_POST['category'] . '/rankings-' . $_POST['league'] . '.json';;
+$filepath = 'rankings/' . $_POST['cup'] . '/' . $_POST['category'] . '/rankings-' . $_POST['league'] . '.json';;
 
 if(file_put_contents($filepath, $_POST['data'])){
 	echo '{ "status": "Success" }';
