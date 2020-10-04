@@ -3599,6 +3599,10 @@ a.toggle{
 				border: 2px solid #000;
 				text-align: center;
 				margin-right: 5px;
+
+				&.possible{
+					border: 2px dotted #000;
+				}
 			}
 		}
 	}

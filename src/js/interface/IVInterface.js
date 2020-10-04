@@ -263,6 +263,7 @@ var InterfaceMaster = (function () {
 
 				var minOverallDamage = 100;
 				var maxOverallDamage = 0;
+				var maxSubjectStat = pokemon.generateIVCombinations(targetStat, -1, 1)[0].atk;
 
 				// For each target, determine the maximum and minimum damage
 
@@ -274,6 +275,7 @@ var InterfaceMaster = (function () {
 					var maxStat = target.generateIVCombinations(targetStat, 1, 1)[0].def;
 					var minDamage = battle.calculateDamageByStats(target, pokemon, pokemon.stats.atk * pokemon.shadowAtkMult, maxStat * target.shadowDefMult, effectiveness, move);
 					var maxDamage = battle.calculateDamageByStats(target, pokemon, pokemon.stats.atk * pokemon.shadowAtkMult, minStat * target.shadowDefMult, effectiveness, move);
+					var absoluteMaxDamage = battle.calculateDamageByStats(target, pokemon, maxSubjectStat * pokemon.shadowAtkMult, minStat * target.shadowDefMult, effectiveness, move);
 
 					if(minDamage < minOverallDamage){
 						minOverallDamage = Math.floor(minDamage);
@@ -286,7 +288,8 @@ var InterfaceMaster = (function () {
 					results.push({
 						pokemon: target,
 						min: minDamage,
-						max: maxDamage
+						max: maxDamage,
+						absoluteMax:absoluteMaxDamage
 					})
 				}
 
@@ -312,8 +315,14 @@ var InterfaceMaster = (function () {
 
 					var $data = $("<div class=\"iv-data\"></div>");
 
-					for(var n = results[i].min; n <= results[i].max; n++){
-						$data.append("<div class=\"iv-item\">"+n+"</div>")
+					for(var n = results[i].min; n <= results[i].absoluteMax; n++){
+						var $item = $("<div class=\"iv-item\">"+n+"</div>");
+
+						if(n > results[i].max){
+							$item.addClass("possible");
+						}
+
+						$data.append($item);
 					}
 
 					$row.append($data);
