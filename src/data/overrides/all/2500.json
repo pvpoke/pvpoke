@@ -2,22 +2,22 @@
 	{
 		"speciesId": "giratina_altered",
 		"fastMove": "SHADOW_CLAW",
-		"weight": 80
+		"weight": 60
 	},
 	{
 		"speciesId": "typhlosion",
-		"chargedMoves": ["BLAST_BURN", "SOLAR_BEAM"],
-		"weight": 14
+		"chargedMoves": ["BLAST_BURN", "SOLAR_BEAM"]
 	},
 	{
 		"speciesId": "charizard",
 		"fastMove": "FIRE_SPIN",
 		"chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"],
-		"weight": 33
+		"weight": 11
 	},
 	{
 		"speciesId": "escavalier",
-		"chargedMoves": ["MEGAHORN", "DRILL_RUN"]
+		"chargedMoves": ["MEGAHORN", "DRILL_RUN"],
+		"weight": 12
 	},
 	{
 		"speciesId": "reshiram",
@@ -29,11 +29,13 @@
 	},
 	{
 		"speciesId": "machamp",
-		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
+		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
+		"weight": 4
 	},
 	{
 		"speciesId": "machamp_shadow",
-		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
+		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
+		"weight": 2
 	},
 	{
 		"speciesId": "suicune",
@@ -57,18 +59,13 @@
 		"fastMove": "WATERFALL"
 	},
 	{
-		"speciesId": "sirfetchd",
-		"chargedMoves": ["LEAF_BLADE", "CLOSE_COMBAT"],
-		"weight": 4
-	},
-	{
 		"speciesId": "garchomp",
 		"chargedMoves": ["SAND_TOMB", "OUTRAGE"]
 	},
 	{
 		"speciesId": "dragonite",
 		"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"],
-		"weight": 2
+		"weight": 4
 	},
 	{
 		"speciesId": "alakazam",
@@ -109,7 +106,7 @@
 	{
 		"speciesId": "melmetal",
 		"chargedMoves": ["ROCK_SLIDE", "SUPER_POWER"],
-		"weight": 10
+		"weight": 16
 	},
 	{
 		"speciesId": "gliscor",
@@ -121,15 +118,22 @@
 	},
 	{
 		"speciesId": "toxicroak",
-		"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
+		"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"],
+		"weight": 1
 	},
 	{
 		"speciesId": "muk_shadow",
 		"chargedMoves": ["DARK_PULSE", "THUNDER_PUNCH"]
 	},
 	{
+		"speciesId": "snorlax",
+		"chargedMoves": ["BODY_SLAM", "EARTHQUAKE"],
+		"weight": 6
+	},
+	{
 		"speciesId": "snorlax_shadow",
-		"chargedMoves": ["BODY_SLAM", "EARTHQUAKE"]
+		"chargedMoves": ["BODY_SLAM", "EARTHQUAKE"],
+		"weight": 3
 	},
 	{
 		"speciesId": "cloyster",
@@ -154,23 +158,13 @@
 		"chargedMoves": ["DOOM_DESIRE", "DAZZLING_GLEAM"]
 	},
 	{
-		"speciesId": "machamp",
-		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
-		"weight": 3
-	},
-	{
 		"speciesId": "obstagoon",
 		"chargedMoves": ["NIGHT_SLASH", "GUNK_SHOT"],
-		"weight": 10
-	},
-	{
-		"speciesId": "snorlax",
-		"chargedMoves": ["BODY_SLAM", "EARTHQUAKE"],
-		"weight": 25
+		"weight": 12
 	},
 	{
 		"speciesId": "empoleon",
-		"weight": 11
+		"weight": 7
 	},
 	{
 		"speciesId": "ampharos",
@@ -198,13 +192,12 @@
 	},
 	{
 		"speciesId": "blaziken",
-		"chargedMoves": ["BLAZE_KICK", "STONE_EDGE"],
-		"weight": 5
+		"chargedMoves": ["BLAZE_KICK", "STONE_EDGE"]
 	},
 	{
 		"speciesId": "articuno",
 		"chargedMoves": ["ICY_WIND", "HURRICANE"],
-		"weight": 33
+		"weight": 12
 	},
 	{
 		"speciesId": "hariyama",
@@ -227,13 +220,13 @@
 		"speciesId": "cresselia",
 		"fastMove": "PSYCHO_CUT",
 		"chargedMoves": ["FUTURE_SIGHT", "MOONBLAST"],
-		"weight": 80
+		"weight": 40
 	},
 	{
 		"speciesId": "lapras",
 		"fastMove": "ICE_SHARD",
 		"chargedMoves": ["SURF", "ICE_BEAM"],
-		"weight": 20
+		"weight": 10
 	},
 	{
 		"speciesId": "arcanine",
@@ -293,7 +286,8 @@
 	{
 		"speciesId": "scizor",
 		"fastMove": "BULLET_PUNCH",
-		"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
+		"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"],
+		"weight": 6
 	},
 	{
 		"speciesId": "scizor_shadow",
@@ -303,7 +297,7 @@
 	{
 		"speciesId": "poliwrath",
 		"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"],
-		"weight": 45
+		"weight": 9
 	},
 	{
 		"speciesId": "muk",
@@ -323,8 +317,7 @@
 	},
 	{
 		"speciesId": "feraligatr",
-		"fastMove": "ICE_FANG",
-		"weight": 5
+		"fastMove": "ICE_FANG"
 	},
 	{
 		"speciesId": "ninetales_alolan",
@@ -334,7 +327,7 @@
 		"speciesId": "muk_alolan",
 		"fastMove": "SNARL",
 		"chargedMoves": ["DARK_PULSE","GUNK_SHOT"],
-		"weight": 10
+		"weight": 11
 	},
 	{
 		"speciesId": "gardevoir",
@@ -351,7 +344,7 @@
 	{
 		"speciesId": "togekiss",
 		"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"],
-		"weight": 15
+		"weight": 17
 	},
 	{
 		"speciesId": "lucario",
@@ -360,7 +353,7 @@
 	{
 		"speciesId": "mewtwo_armored",
 		"chargedMoves": ["PSYSTRIKE","DYNAMIC_PUNCH"],
-		"weight": 16
+		"weight": 3
 	},
 	{
 		"speciesId": "seismitoad",
@@ -373,68 +366,51 @@
 	},
 	{
 		"speciesId": "venusaur",
-		"weight": 38
-	},
-	{
-		"speciesId": "giratina_origin",
-		"weight": 5
-	},
-	{
-		"speciesId": "clefable",
-		"weight": 27
-	},
-	{
-		"speciesId": "shiftry",
-		"fastMove": "SNARL",
-		"weight": 18
-	},
-	{
-		"speciesId": "lucario",
-		"weight": 8
-	},
-	{
-		"speciesId": "scizor",
-		"weight": 17
-	},
-	{
-		"speciesId": "steelix",
-		"weight": 4
-	},
-	{
-		"speciesId": "meganium",
-		"weight": 2
-	},
-	{
-		"speciesId": "granbull",
 		"weight": 10
 	},
 	{
-		"speciesId": "blastoise",
+		"speciesId": "giratina_origin",
+		"weight": 2
+	},
+	{
+		"speciesId": "clefable",
 		"weight": 6
 	},
 	{
-		"speciesId": "ursaring",
-		"weight": 6
+		"speciesId": "shiftry",
+		"fastMove": "SNARL"
 	},
 	{
-		"speciesId": "heracross",
-		"weight": 6
-	},
-	{
-		"speciesId": "ampharos",
-		"weight": 4
+		"speciesId": "granbull",
+		"weight": 3
 	},
 	{
 		"speciesId": "gyarados",
-		"weight": 12
+		"weight": 9
 	},
 	{
 		"speciesId": "swampert",
-		"weight": 76
+		"weight": 40
 	},
 	{
 		"speciesId": "registeel",
-		"weight": 40
+		"weight": 7
+	},
+	{
+		"speciesId": "gallade",
+		"weight": 2
+	},
+	{
+		"speciesId": "gengar",
+		"weight": 2
+	},
+	{
+		"speciesId": "ampharos",
+		"weight": 1
+	},
+	{
+		"speciesId": "tangrowth",
+		"weight": 1
 	},
 	{
 		"speciesId": "ferrothorn",
