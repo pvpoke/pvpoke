@@ -1608,7 +1608,6 @@ function Battle(){
 			return;
 		}
 
-
 		// If opponent KOs before our guaranteed KO, go for the least risky plan that still KOs before opponent KOs us.
 		var needsBoost = false;
 		if (stateList.length == 1) {
@@ -1679,6 +1678,8 @@ function Battle(){
 						self.logDecision(turns, poke, " doesn't use " + finalState.moves[0].name + " because it wants to minimize time debuffed and it can stack the move " + Math.floor(100 / finalState.moves[0].energy) + " times");
 						return;
 					}
+				} else if(poke.baitShields && opponent.shields > 0 && poke.activeChargedMoves[0].energy - finalState.moves[0].energy <= 10 && ! poke.activeChargedMoves[0].selfDebuffing){
+					finalState.moves[0] = poke.activeChargedMoves[0];
 				}
 			}
 		}
