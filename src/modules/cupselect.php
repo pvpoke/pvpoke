@@ -1,7 +1,6 @@
 <select class="format-select">
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
-	<option value="official" cup="flying">Flying Cup</option>
 	<option value="official" cup="halloween">Halloween Cup</option>
 	<option value="tsa-3" cup="sunrise">Silph Sunrise Cup</option>
 

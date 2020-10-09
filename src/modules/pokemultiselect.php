@@ -18,7 +18,6 @@
 				<option value="master" type="master" class="hide multi-battle">Master League Meta</option>
 				<option value="premierultra" type="ultra" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="premier" type="master" class="hide multi-battle">Premier Cup Meta</option>
-				<option value="flying" type="great" class="multi-battle">Flying Cup Meta</option>
 				<option value="halloween" type="great" class="multi-battle">Halloween Cup Meta</option>
 				<option value="sunrise" type="great" class="multi-battle">Silph Sunrise Cup Meta</option>
 			</select>

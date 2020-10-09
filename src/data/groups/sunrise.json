@@ -1,10 +1,5 @@
 [
 	{
-		"speciesId":"emolga",
-		"fastMove":"THUNDER_SHOCK",
-		"chargedMoves":["DISCHARGE","THUNDERBOLT"]
-	},
-	{
 		"speciesId":"zapdos",
 		"fastMove":"THUNDER_SHOCK",
 		"chargedMoves":["DRILL_PECK","THUNDERBOLT"]
@@ -35,11 +30,6 @@
 		"chargedMoves":["SKY_ATTACK","BRAVE_BIRD"]
 	},
 	{
-		"speciesId":"togekiss",
-		"fastMove":"CHARM",
-		"chargedMoves":["AERIAL_ACE","ANCIENT_POWER"]
-	},
-	{
 		"speciesId":"altaria",
 		"fastMove":"DRAGON_BREATH",
 		"chargedMoves":["SKY_ATTACK","DRAGON_PULSE"]
@@ -63,11 +53,6 @@
 		"speciesId":"vigoroth",
 		"fastMove":"COUNTER",
 		"chargedMoves":["BODY_SLAM","BULLDOZE"]
-	},
-	{
-		"speciesId":"victini",
-		"fastMove":"CONFUSION",
-		"chargedMoves":["V_CREATE","PSYCHIC"]
 	},
 	{
 		"speciesId":"ferrothorn",
@@ -95,26 +80,6 @@
 		"chargedMoves":["NIGHT_SLASH","GUNK_SHOT"]
 	},
 	{
-		"speciesId":"tropius",
-		"fastMove":"RAZOR_LEAF",
-		"chargedMoves":["LEAF_BLADE","AERIAL_ACE"]
-	},
-	{
-		"speciesId":"shiftry",
-		"fastMove":"SNARL",
-		"chargedMoves":["LEAF_BLADE","FOUL_PLAY"]
-	},
-	{
-		"speciesId":"venusaur",
-		"fastMove":"VINE_WHIP",
-		"chargedMoves":["FRENZY_PLANT","SLUDGE_BOMB"]
-	},
-	{
-		"speciesId":"meganium",
-		"fastMove":"VINE_WHIP",
-		"chargedMoves":["FRENZY_PLANT","EARTHQUAKE"]
-	},
-	{
 		"speciesId":"wigglytuff",
 		"fastMove":"CHARM",
 		"chargedMoves":["ICE_BEAM","PLAY_ROUGH"]
@@ -125,18 +90,23 @@
 		"chargedMoves":["MUD_BOMB","DISCHARGE"]
 	},
 	{
-		"speciesId":"ninetales",
-		"fastMove":"FIRE_SPIN",
-		"chargedMoves":["PSYSHOCK","OVERHEAT"]
-	},
-	{
-		"speciesId":"ludicolo",
-		"fastMove":"BUBBLE",
-		"chargedMoves":["ICE_BEAM","ENERGY_BALL"]
+		"speciesId":"quagsire",
+		"fastMove":"MUD_SHOT",
+		"chargedMoves":["EARTHQUAKE","STONE_EDGE"]
 	},
 	{
 		"speciesId":"linoone",
 		"fastMove":"SHADOW_CLAW",
 		"chargedMoves":["GRASS_KNOT","THUNDER"]
+	},
+	{
+		"speciesId":"drifblim",
+		"fastMove":"HEX",
+		"chargedMoves":["ICY_WIND","SHADOW_BALL"]
+	},
+	{
+		"speciesId":"emolga",
+		"fastMove":"THUNDER_SHOCK",
+		"chargedMoves":["DISCHARGE","AERIAL_ACE"]
 	}
 ]
