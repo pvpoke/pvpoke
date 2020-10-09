@@ -2,6 +2,7 @@
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
 	<option value="official" cup="halloween">Halloween Cup</option>
+	<option value="official" cup="sunrise">Flying Cup</option>
 	<option value="tsa-3" cup="sunrise">Silph Sunrise Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
