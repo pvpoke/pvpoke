@@ -461,6 +461,11 @@ var InterfaceMaster = (function () {
 				while((count < total)&&(i < counterRankings.length)){
 					var r = counterRankings[i];
 
+					if(r.speciesId.indexOf("_mega") > -1){
+						i++;
+						continue;
+					}
+
 					if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
 						i++;
 						continue;
@@ -578,6 +583,10 @@ var InterfaceMaster = (function () {
 
 				while((count < total)&&(i < counterRankings.length)){
 					var r = counterRankings[i];
+
+					if(r.speciesId.indexOf("_mega") > -1){
+						continue;
+					}
 
 					if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
 						i++;
@@ -718,6 +727,11 @@ var InterfaceMaster = (function () {
 
 				while((count < total)&&(i < altRankings.length)){
 					var r = altRankings[i];
+
+					if(r.speciesId.indexOf("_mega") > -1){
+						i++
+						continue;
+					}
 
 					if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
 						i++

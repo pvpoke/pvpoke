@@ -561,6 +561,10 @@ var InterfaceMaster = (function () {
 					$details.append($section);
 				}
 
+				if(pokemon.hasTag("mega")){
+					$details.append("<div class=\"detail-section\"><b>Mega Evolutions are currently not allowed in GO Battle League. Use this information to help prepare if they are allowed in the future.</b></div>");
+				}
+
 				// Display move data
 
 				var fastMoves = pokemon.fastMovePool;

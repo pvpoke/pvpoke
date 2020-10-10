@@ -190,8 +190,12 @@
 	},
 	{
 		"speciesId": "charizard",
-		"fastMove": "FIRE_SPIN",
+		"fastMove": "DRAGON_BREATH",
 		"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
+	},
+	{
+		"speciesId": "charizard_mega_y",
+		"fastMove": "DRAGON_BREATH"
 	},
 	{
 		"speciesId": "garchomp",

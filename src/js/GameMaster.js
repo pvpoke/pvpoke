@@ -451,10 +451,6 @@ var GameMaster = (function () {
 						continue;
 					}
 
-					if((settings.gamemaster != "gamemaster-mega")&&(pokemon.hasTag("mega"))){
-						continue;
-					}
-
 					// Process all filters
 					var allowed = false;
 					var includeIDFilter = false; // Flag to see if an ID filter should override other filters

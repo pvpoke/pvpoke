@@ -10,9 +10,17 @@
 	},
 	{
 		"speciesId": "charizard",
-		"fastMove": "FIRE_SPIN",
+		"fastMove": "DRAGON_BREATH",
 		"chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"],
 		"weight": 11
+	},
+	{
+		"speciesId": "charizard_shadow",
+		"fastMove": "DRAGON_BREATH"
+	},
+	{
+		"speciesId": "charizard_shadow",
+		"fastMove": "DRAGON_BREATH"
 	},
 	{
 		"speciesId": "escavalier",

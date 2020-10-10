@@ -28,6 +28,11 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
+	<h4>v1.17.7 (October 10, 2020)</h4>
+	<ul>
+		<li>Mega Evolutions are now listed in the rankings. Note that Mega Evolutions are still not allowed in GO Battle League.</li>
+	</ul>
+
 	<h4>v1.17.6 (October 10, 2020)</h4>
 	<ul>
 		<li>In Sandbox Mode, moves with guaranteed stat changes will have those changes applied by default.</li>

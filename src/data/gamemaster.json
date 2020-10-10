@@ -482,7 +482,10 @@
             "filterType": "type",
             "values": ["flying"]
         }],
-        "exclude": [],
+        "exclude": [{
+	        "filterType": "tag",
+	        "values": ["mega"]
+	    }],
 		"partySize": 3
     },
 	{
@@ -492,7 +495,10 @@
 			"filterType": "type",
 			"values": ["poison","ghost","bug","dark","fairy"]
 		}],
-		"exclude": [],
+		"exclude": [{
+	        "filterType": "tag",
+	        "values": ["mega"]
+	    }],
 		"partySize": 3
 	}, {
 	    "name": "circus",
@@ -564,6 +570,9 @@
 	    "exclude": [{
 	        "filterType": "type",
 	        "values": ["rock"]
+	    }, {
+	        "filterType": "tag",
+	        "values": ["mega"]
 	    }]
 	}],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega"],
@@ -799,7 +808,7 @@
             "hp": 186
         },
         "types": ["fire", "flying"],
-        "fastMoves": ["AIR_SLASH", "EMBER", "FIRE_SPIN", "WING_ATTACK"],
+        "fastMoves": ["AIR_SLASH", "EMBER", "FIRE_SPIN", "WING_ATTACK", "DRAGON_BREATH"],
         "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW", "FIRE_BLAST", "FLAMETHROWER", "OVERHEAT"],
         "tags": ["starter", "shadoweligible"],
         "defaultIVs": {
@@ -807,7 +816,7 @@
             "cp2500": [35, 5, 13, 6]
         },
         "level25CP": 1784,
-        "eliteMoves": ["EMBER", "WING_ATTACK", "BLAST_BURN", "FLAMETHROWER"],
+        "eliteMoves": ["EMBER", "WING_ATTACK", "BLAST_BURN", "FLAMETHROWER", "DRAGON_BREATH"],
         "searchPriority": 10
     }, {
         "dex": 6,
@@ -819,14 +828,14 @@
             "hp": 186
         },
         "types": ["fire", "flying"],
-        "fastMoves": ["AIR_SLASH", "EMBER", "FIRE_SPIN", "WING_ATTACK"],
+        "fastMoves": ["AIR_SLASH", "EMBER", "FIRE_SPIN", "WING_ATTACK", "DRAGON_BREATH"],
         "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW", "FIRE_BLAST", "FLAMETHROWER", "OVERHEAT"],
         "tags": ["starter", "shadow"],
         "defaultIVs": {
             "cp1500": [19.5, 6, 8, 10],
             "cp2500": [35, 5, 13, 6]
         },
-        "eliteMoves": ["EMBER", "WING_ATTACK", "BLAST_BURN", "FLAMETHROWER"],
+        "eliteMoves": ["EMBER", "WING_ATTACK", "BLAST_BURN", "FLAMETHROWER", "DRAGON_BREATH"],
         "searchPriority": 10
     }, {
         "dex": 7,
@@ -15720,7 +15729,7 @@
             "hp": 186
         },
         "types": ["fire", "dragon"],
-        "fastMoves": ["AIR_SLASH", "EMBER", "FIRE_SPIN", "WING_ATTACK"],
+        "fastMoves": ["AIR_SLASH", "EMBER", "FIRE_SPIN", "WING_ATTACK", "DRAGON_BREATH"],
         "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW", "FIRE_BLAST", "FLAMETHROWER", "OVERHEAT"],
         "tags": ["starter", "shadoweligible", "mega"],
         "level25CP": 2424,
@@ -15728,7 +15737,7 @@
             "cp1500": [14, 6, 15, 13],
             "cp2500": [24, 7, 12, 7]
         },
-        "eliteMoves": ["EMBER", "WING_ATTACK", "BLAST_BURN", "FLAMETHROWER"]
+        "eliteMoves": ["EMBER", "WING_ATTACK", "BLAST_BURN", "FLAMETHROWER", "DRAGON_BREATH"]
     }, {
         "dex": 6,
         "speciesName": "Charizard (Mega Y)",
@@ -15739,7 +15748,7 @@
             "hp": 186
         },
         "types": ["fire", "flying"],
-        "fastMoves": ["AIR_SLASH", "EMBER", "FIRE_SPIN", "WING_ATTACK"],
+        "fastMoves": ["AIR_SLASH", "EMBER", "FIRE_SPIN", "WING_ATTACK", "DRAGON_BREATH"],
         "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW", "FIRE_BLAST", "FLAMETHROWER", "OVERHEAT"],
         "tags": ["starter", "shadoweligible", "mega"],
         "level25CP": 2826,
@@ -15747,7 +15756,7 @@
             "cp1500": [12, 7, 15, 13],
             "cp2500": [20, 6, 14, 15]
         },
-        "eliteMoves": ["EMBER", "WING_ATTACK", "BLAST_BURN", "FLAMETHROWER"]
+        "eliteMoves": ["EMBER", "WING_ATTACK", "BLAST_BURN", "FLAMETHROWER", "DRAGON_BREATH"]
     }, {
         "dex": 9,
         "speciesName": "Blastoise (Mega)",
