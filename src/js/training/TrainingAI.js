@@ -237,7 +237,7 @@ function TrainingAI(l, p, b){
 
 		// Add option for presets
 		if(currentTeamPool.presets){
-			pickStrategyOptions.push(new DecisionOption("PRESET", 15));
+			pickStrategyOptions.push(new DecisionOption("PRESET", 20));
 		}
 
 		var pickStrategy = self.chooseOption(pickStrategyOptions).name;
