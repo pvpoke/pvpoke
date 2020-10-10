@@ -562,7 +562,7 @@ var InterfaceMaster = (function () {
 				}
 
 				if(pokemon.hasTag("mega")){
-					$details.append("<div class=\"detail-section\"><b>Mega Evolutions are currently not allowed in GO Battle League. Use this information to help prepare if they are allowed in the future.</b></div>");
+					$details.append("<div class=\"detail-section\"><b>Mega Evolutions are currently not allowed in GO Battle League. Use this information to help prepare if they are allowed in the future. Don't invest Mega Energy or Elite TM's until you can use these Pokemon.</b></div>");
 				}
 
 				// Display move data
