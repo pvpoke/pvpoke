@@ -130,9 +130,9 @@ require_once '../header.php';
 <div class="section white updates">
 	<h3>What's New</h3>
 
-	<h4>v1.15.15 (August 10, 2020)</h4>
+	<h4>v1.17.6 (October 10, 2020)</h4>
 	<ul>
-		<li>Sinister, Ferocious, Timeless, and Sorcerous Silph Arena formats are now available in Training Battles.</li>
+		<li>Training Battles for GO Battle League can now utilize preset teams to help you prepare for and recognize common teams of 3.</li>
 	</ul>
 </div>
 

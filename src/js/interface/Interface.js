@@ -2152,6 +2152,12 @@ var InterfaceMaster = (function () {
 
 					if(move.buffs){
 						$(".modal .check.buffs").show();
+
+						if(move.buffApplyChance == 1){
+							$(".modal .check.buffs").addClass("on");
+						} else{
+							$(".modal .check.buffs").removeClass("on");
+						}
 					} else{
 						$(".modal .check.buffs").hide();
 					}

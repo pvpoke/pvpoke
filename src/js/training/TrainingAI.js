@@ -14,6 +14,7 @@ function TrainingAI(l, p, b){
 	var battle = b;
 	var gm = GameMaster.getInstance();
 	var teamPool = [];
+	var currentTeamPool = null;
 	var partySize = 3;
 	var props = aiData[l];
 	var generateRosterCallback;
@@ -44,6 +45,12 @@ function TrainingAI(l, p, b){
 		}
 
 		var pool = teamPool[league+""+cup];
+		currentTeamPool = teamPool[league+""+cup];
+
+		if(pool.slots){
+			pool = pool.slots;
+		}
+
 		var slotBucket = [];
 		var slots = [];
 		var roles = []; // Array of roles that have been filled on the team
@@ -228,6 +235,11 @@ function TrainingAI(l, p, b){
 			pickStrategyOptions.push(new DecisionOption("COUNTER", loseStratWeight));
 		}
 
+		// Add option for presets
+		if(currentTeamPool.presets){
+			pickStrategyOptions.push(new DecisionOption("PRESET", 15));
+		}
+
 		var pickStrategy = self.chooseOption(pickStrategyOptions).name;
 
 		switch(pickStrategy){
@@ -406,6 +418,52 @@ function TrainingAI(l, p, b){
 						team.push(teamPerformance[i].pokemon);
 						break;
 					}
+				}
+
+				break;
+
+			case "PRESET":
+				var presetBucket = [];
+
+				for(var i = 0; i < currentTeamPool.presets.length; i++){
+					for(var n = 0; n < currentTeamPool.presets[i].weight; n++){
+						presetBucket.push(currentTeamPool.presets[i]);
+					}
+				}
+
+				var presetIndex = Math.floor(Math.random() * presetBucket.length);
+				var preset = presetBucket[presetIndex];
+
+				for(var i = 0; i < preset.pokemon.length; i++){
+					var poke = preset.pokemon[i];
+					var pokemon = new Pokemon(poke.speciesId, player.index, battle);
+					pokemon.initialize(battle.getCP());
+
+					// Select a random IV spread according to difficulty
+					var ivCombos = pokemon.generateIVCombinations("overall", 1, props.ivComboRange);
+					var rank = Math.floor(Math.random() * ivCombos.length);
+
+					// If this Pokemon maxes under or near 1500, make sure it's close to 1500
+					if(ivCombos[0].level >= 39){
+						rank = Math.floor(Math.random() * 50 * (props.ivComboRange  / 4000));
+					}
+					var combo = ivCombos[rank];
+
+					pokemon.setIV("atk", combo.ivs.atk);
+					pokemon.setIV("def", combo.ivs.def);
+					pokemon.setIV("hp", combo.ivs.hp);
+					pokemon.setLevel(combo.level);
+
+					pokemon.selectMove("fast", poke.fastMove);
+					for(var n = 0; n < props.chargedMoveCount; n++){
+						pokemon.selectMove("charged", poke.chargedMoves[n], n);
+					}
+
+					if(props.chargedMoveCount == 1){
+						pokemon.selectMove("charged", "none", 1);
+					}
+
+					team.push(pokemon);
 				}
 
 				break;

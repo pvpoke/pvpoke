@@ -28,14 +28,10 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.17.0 (September 28, 2020)</h4>
+	<h4>v1.17.6 (October 10, 2020)</h4>
 	<ul>
-		<li>Decision algorithm overhauled for simulations:</li>
-		<ul>
-			<li>Move usage is now based on fastest sequence to KO (was formerly based on move damage per energy).</li>
-			<li>This should significantly improve optimal play in default matchups.</li>
-			<li>Huge thanks to <a href="https://twitter.com/Brandon50619618" target="_blank">Brandon/BananaBread</a> for contributing the code for this update!</li>
-		</ul>
+		<li>In Sandbox Mode, moves with guaranteed stat changes will have those changes applied by default.</li>
+		<li>Training Battles for GO Battle League can now utilize preset teams to help you prepare for and recognize common teams of 3.</li>
 	</ul>
 
 	<h3>Latest Article</h3>
