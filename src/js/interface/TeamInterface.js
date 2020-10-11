@@ -585,6 +585,7 @@ var InterfaceMaster = (function () {
 					var r = counterRankings[i];
 
 					if(r.speciesId.indexOf("_mega") > -1){
+						i++;
 						continue;
 					}
 
