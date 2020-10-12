@@ -306,7 +306,7 @@
 	},
 	{
 		"speciesId": "cloyster_shadow",
-		"chargedMoves": ["AVALANCHE", "HYDRO_PUMP"]
+		"chargedMoves": ["ICY_WIND", "HYDRO_PUMP"]
 	},
 	{
 		"speciesId": "ninetales",
@@ -585,6 +585,10 @@
 	{
 		"speciesId": "froslass",
 		"chargedMoves": ["AVALANCHE","SHADOW_BALL"]
+	},
+	{
+		"speciesId": "mandibuzz",
+		"chargedMoves": ["FOUL_PLAY","SHADOW_BALL"]
 	},
 	{
 		"speciesId": "deoxys_defense",

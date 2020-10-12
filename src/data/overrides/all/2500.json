@@ -36,6 +36,14 @@
 		"chargedMoves": ["CRUNCH", "WILD_CHARGE"]
 	},
 	{
+		"speciesId": "ursaring",
+		"chargedMoves": ["PLAY_ROUGH", "CLOSE_COMBAT"]
+	},
+	{
+		"speciesId": "ursaring_shadow",
+		"chargedMoves": ["PLAY_ROUGH", "CLOSE_COMBAT"]
+	},
+	{
 		"speciesId": "machamp",
 		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
 		"weight": 4
@@ -61,6 +69,14 @@
 	{
 		"speciesId": "mew",
 		"chargedMoves": ["OVERHEAT", "PSYSHOCK"]
+	},
+	{
+		"speciesId": "bisharp",
+		"chargedMoves": ["DARK_PULSE", "IRON_HEAD"]
+	},
+	{
+		"speciesId": "mandibuzz",
+		"chargedMoves": ["FOUL_PLAY", "SHADOW_BALL"]
 	},
 	{
 		"speciesId": "alomomola",

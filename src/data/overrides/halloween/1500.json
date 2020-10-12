@@ -29,6 +29,12 @@
 		"chargedMoves": ["MIRROR_SHOT", "EARTHQUAKE"]
 	},
 	{
+		"speciesId": "mandibuzz",
+		"fastMove": "AIR_SLASH",
+		"chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"],
+		"weight": 10
+	},
+	{
 		"speciesId": "gardevoir",
 		"fastMove": "CHARM"
 	},
@@ -121,7 +127,7 @@
 	},
 	{
 		"speciesId": "umbreon",
-		"weight": 40
+		"weight": 30
 	},
 	{
 		"speciesId": "venusaur",
