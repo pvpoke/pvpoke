@@ -930,7 +930,7 @@
 					"chargedMoves": ["ROCK_SLIDE","SUPER_POWER"]
 				}
 			],
-			"weight": 1
+			"weight": 3
 		},
 		{
 			"pokemon": [
@@ -943,6 +943,26 @@
 					"speciesId": "dialga",
 					"fastMove": "DRAGON_BREATH",
 					"chargedMoves": ["IRON_HEAD","DRACO_METEOR"]
+				},
+				{
+					"speciesId": "mewtwo",
+					"fastMove": "PSYCHO_CUT",
+					"chargedMoves": ["PSYSTRIKE","FOCUS_BLAST"]
+				}
+			],
+			"weight": 1
+		},
+		{
+			"pokemon": [
+				{
+					"speciesId": "dialga",
+					"fastMove": "DRAGON_BREATH",
+					"chargedMoves": ["IRON_HEAD","DRACO_METEOR"]
+				},
+				{
+					"speciesId": "groudon",
+					"fastMove": "MUD_SHOT",
+					"chargedMoves": ["FIRE_PUNCH","EARTHQUAKE"]
 				},
 				{
 					"speciesId": "mewtwo",
@@ -988,6 +1008,66 @@
 					"speciesId": "giratina_origin",
 					"fastMove": "SHADOW_CLAW",
 					"chargedMoves": ["OMINOUS_WIND","SHADOW_BALL"]
+				}
+			],
+			"weight": 1
+		},
+		{
+			"pokemon": [
+				{
+					"speciesId": "melmetal",
+					"fastMove": "THUNDER_SHOCK",
+					"chargedMoves": ["ROCK_SLIDE","SUPER_POWER"]
+				},
+				{
+					"speciesId": "dialga",
+					"fastMove": "DRAGON_BREATH",
+					"chargedMoves": ["IRON_HEAD","DRACO_METEOR"]
+				},
+				{
+					"speciesId": "dragonite",
+					"fastMove": "DRAGON_BREATH",
+					"chargedMoves": ["DRAGON_CLAW","HURRICANE"]
+				}
+			],
+			"weight": 2
+		},
+		{
+			"pokemon": [
+				{
+					"speciesId": "giratina_origin",
+					"fastMove": "SHADOW_CLAW",
+					"chargedMoves": ["OMINOUS_WIND","SHADOW_BALL"]
+				},
+				{
+					"speciesId": "dialga",
+					"fastMove": "DRAGON_BREATH",
+					"chargedMoves": ["IRON_HEAD","DRACO_METEOR"]
+				},
+				{
+					"speciesId": "togekiss",
+					"fastMove": "CHARM",
+					"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
+				}
+			],
+			"weight": 1
+		},
+		{
+			"pokemon": [
+				{
+					"speciesId": "groudon",
+					"fastMove": "MUD_SHOT",
+					"chargedMoves": ["FIRE_PUNCH","EARTHQUAKE"]
+				},
+				{
+					"speciesId": "dialga",
+					"fastMove": "DRAGON_BREATH",
+					"chargedMoves": ["IRON_HEAD","DRACO_METEOR"]
+				},
+				{
+					"speciesId": "kyogre",
+					"fastMove": "WATERFALL",
+					"chargedMoves": ["SURF","BLIZZARD"]
 				}
 			],
 			"weight": 1

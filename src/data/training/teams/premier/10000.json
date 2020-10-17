@@ -544,6 +544,66 @@
 					"chargedMoves": ["METEOR_MASH","EARTHQUAKE"]
 				}
 			],
+			"weight": 3
+		},
+		{
+			"pokemon": [
+				{
+					"speciesId": "garchomp",
+					"fastMove": "COUNTER",
+					"chargedMoves": ["DRAGON_CLAW","NIGHT_SLASH"]
+				},
+				{
+					"speciesId": "magnezone",
+					"fastMove": "SPARK",
+					"chargedMoves": ["WILD_CHARGE","MIRROR_SHOT"]
+				},
+				{
+					"speciesId": "metagross",
+					"fastMove": "BULLET_PUNCH",
+					"chargedMoves": ["METEOR_MASH","EARTHQUAKE"]
+				}
+			],
+			"weight": 2
+		},
+		{
+			"pokemon": [
+				{
+					"speciesId": "garchomp",
+					"fastMove": "COUNTER",
+					"chargedMoves": ["DRAGON_CLAW","NIGHT_SLASH"]
+				},
+				{
+					"speciesId": "mamoswine",
+					"fastMove": "POWDER_SNOW",
+					"chargedMoves": ["AVALANCHE","BULLDOZE"]
+				},
+				{
+					"speciesId": "metagross",
+					"fastMove": "BULLET_PUNCH",
+					"chargedMoves": ["METEOR_MASH","EARTHQUAKE"]
+				}
+			],
+			"weight": 1
+		},
+		{
+			"pokemon": [
+				{
+					"speciesId": "machamp",
+					"fastMove": "COUNTER",
+					"chargedMoves": ["CROSS_CHOP","ROCK_SLIDE"]
+				},
+				{
+					"speciesId": "snorlax",
+					"fastMove": "LICK",
+					"chargedMoves": ["BODY_SLAM","SUPER_POWER"]
+				},
+				{
+					"speciesId": "metagross",
+					"fastMove": "BULLET_PUNCH",
+					"chargedMoves": ["METEOR_MASH","EARTHQUAKE"]
+				}
+			],
 			"weight": 1
 		},
 		{
@@ -551,12 +611,32 @@
 				{
 					"speciesId": "gyarados",
 					"fastMove": "WATERFALL",
-					"chargedMoves": ["AQUA_TAIL","CRUNCH"]
+					"chargedMoves": ["AQUA_TAIL","OUTRAGE"]
 				},
 				{
 					"speciesId": "dragonite",
 					"fastMove": "DRAGON_BREATH",
 					"chargedMoves": ["DRAGON_CLAW","HURRICANE"]
+				},
+				{
+					"speciesId": "metagross",
+					"fastMove": "BULLET_PUNCH",
+					"chargedMoves": ["METEOR_MASH","EARTHQUAKE"]
+				}
+			],
+			"weight": 1
+		},
+		{
+			"pokemon": [
+				{
+					"speciesId": "gyarados",
+					"fastMove": "DRAGON_BREATH",
+					"chargedMoves": ["AQUA_TAIL","CRUNCH"]
+				},
+				{
+					"speciesId": "swampert",
+					"fastMove": "MUD_SHOT",
+					"chargedMoves": ["HYDRO_CANNON","EARTHQUAKE"]
 				},
 				{
 					"speciesId": "metagross",
@@ -602,6 +682,26 @@
 					"speciesId": "metagross",
 					"fastMove": "BULLET_PUNCH",
 					"chargedMoves": ["METEOR_MASH","EARTHQUAKE"]
+				}
+			],
+			"weight": 1
+		},
+		{
+			"pokemon": [
+				{
+					"speciesId": "magnezone",
+					"fastMove": "SPARK",
+					"chargedMoves": ["WILD_CHARGE","MIRROR_SHOT"]
+				},
+				{
+					"speciesId": "dragonite",
+					"fastMove": "DRAGON_BREATH",
+					"chargedMoves": ["DRAGON_CLAW","HURRICANE"]
+				},
+				{
+					"speciesId": "togekiss",
+					"fastMove": "CHARM",
+					"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
 				}
 			],
 			"weight": 1
