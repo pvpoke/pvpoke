@@ -709,7 +709,6 @@ var GameMaster = (function () {
 
 					for(var n = 0; n < pokemonList.length; n++){
 						if(pokemonList[n].speciesId == pokemon.speciesId){
-
 							// Set Fast Move
 
 							if(pokemonList[n].fastMove){
@@ -726,11 +725,9 @@ var GameMaster = (function () {
 							}
 
 							// Set weight modifier
-
-							if(pokemonList[n].weight){
+							if (typeof pokemonList[n].weight !== 'undefined') {
 								pokemon.weightModifier = pokemonList[n].weight;
 							}
-
 							break;
 						}
 					}

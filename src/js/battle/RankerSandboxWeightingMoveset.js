@@ -510,7 +510,7 @@ var RankerMaster = (function () {
 								weight = 0;
 							}
 
-							if(pokemonList[j].weightModifier){
+							if (typeof pokemonList[j].weightModifier !== 'undefined') {
 								weight *= pokemonList[j].weightModifier;
 							} else{
 								if((cup.name == "all")&&(battle.getCP() == 1500)){
@@ -530,7 +530,7 @@ var RankerMaster = (function () {
 							if(rankings[j].scores[n] / bestScore < .1 + (rankCutoffIncrease * n)){
 								weight = 0;
 							}
-
+							
 							weights += weight;
 							matches[j].score = sc;
 							matches[j].opScore = opScore;
