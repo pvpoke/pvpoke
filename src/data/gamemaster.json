@@ -16119,6 +16119,7 @@
     "moves": [{
         "moveId": "ACID",
         "name": "Acid",
+		"abbreviation": "Ac",
         "type": "poison",
         "power": 6,
         "energy": 0,
@@ -16213,6 +16214,7 @@
     }, {
         "moveId": "AVALANCHE",
         "name": "Avalanche",
+		"abbreviation": "Av",
         "type": "ice",
         "power": 90,
         "energy": 45,
@@ -16221,6 +16223,7 @@
     }, {
         "moveId": "BITE",
         "name": "Bite",
+		"abbreviation": "Bi",
         "type": "dark",
         "power": 4,
         "energy": 0,
@@ -16237,6 +16240,7 @@
     }, {
         "moveId": "BLIZZARD",
         "name": "Blizzard",
+		"abbreviation": "Bl",
         "type": "ice",
         "power": 140,
         "energy": 75,
@@ -16261,6 +16265,7 @@
     }, {
         "moveId": "BRAVE_BIRD",
         "name": "Brave Bird",
+		"abbreviation": "BrB",
         "type": "flying",
         "power": 130,
         "energy": 55,
@@ -16272,6 +16277,7 @@
     }, {
         "moveId": "BRICK_BREAK",
         "name": "Brick Break",
+		"abbreviation": "BkB",
         "type": "fighting",
         "power": 40,
         "energy": 35,
@@ -16280,6 +16286,7 @@
     }, {
         "moveId": "BRINE",
         "name": "Brine",
+		"abbreviation": "Bri",
         "type": "water",
         "power": 60,
         "energy": 50,
@@ -16296,6 +16303,7 @@
     }, {
         "moveId": "BUBBLE_BEAM",
         "name": "Bubble Beam",
+		"abbreviation": "BuB",
         "type": "water",
         "power": 25,
         "energy": 40,
@@ -16307,6 +16315,7 @@
     }, {
         "moveId": "BUG_BITE",
         "name": "Bug Bite",
+		"abbreviation": "BBi",
         "type": "bug",
         "power": 3,
         "energy": 0,
@@ -16315,6 +16324,7 @@
     }, {
         "moveId": "BUG_BUZZ",
         "name": "Bug Buzz",
+		"abbreviation": "BBu",
         "type": "bug",
         "power": 90,
         "energy": 60,
@@ -16326,6 +16336,7 @@
     }, {
         "moveId": "BULLDOZE",
         "name": "Bulldoze",
+		"abbreviation": "Bd",
         "type": "ground",
         "power": 80,
         "energy": 60,
@@ -16358,6 +16369,7 @@
     }, {
         "moveId": "CHARM",
         "name": "Charm",
+		"abbreviation": "Ch",
         "type": "fairy",
         "power": 16,
         "energy": 0,
@@ -16377,6 +16389,7 @@
     }, {
         "moveId": "CONFUSION",
         "name": "Confusion",
+		"abbreviation": "Cf",
         "type": "psychic",
         "power": 16,
         "energy": 0,
@@ -16385,6 +16398,7 @@
     }, {
         "moveId": "COUNTER",
         "name": "Counter",
+		"abbreviation": "C",
         "type": "fighting",
         "power": 8,
         "energy": 0,
@@ -16393,6 +16407,7 @@
     }, {
         "moveId": "CRABHAMMER",
         "name": "Crabhammer",
+		"abbreviation": "Crbh",
         "type": "water",
         "power": 75,
         "energy": 50,
@@ -16404,6 +16419,7 @@
     }, {
         "moveId": "CROSS_CHOP",
         "name": "Cross Chop",
+		"abbreviation": "CrC",
         "type": "fighting",
         "power": 50,
         "energy": 35,
@@ -16420,6 +16436,7 @@
     }, {
         "moveId": "CRUNCH",
         "name": "Crunch",
+		"abbreviation": "Cr",
         "type": "dark",
         "power": 70,
         "energy": 45,
@@ -16428,6 +16445,7 @@
     }, {
         "moveId": "CUT",
         "name": "Cut",
+		"abbreviation": "Cu",
         "type": "normal",
         "power": 3,
         "energy": 0,
@@ -16452,6 +16470,7 @@
     }, {
         "moveId": "DIG",
         "name": "Dig",
+		"abbreviation": "Dg",
         "type": "ground",
         "power": 100,
         "energy": 80,
@@ -16511,6 +16530,7 @@
     }, {
         "moveId": "DRAGON_PULSE",
         "name": "Dragon Pulse",
+		"abbreviation": "DgP",
         "type": "dragon",
         "power": 90,
         "energy": 60,
@@ -16535,6 +16555,7 @@
     }, {
         "moveId": "DRILL_PECK",
         "name": "Drill Peck",
+		"abbreviation": "DrlP",
         "type": "flying",
         "power": 65,
         "energy": 40,
@@ -16551,6 +16572,7 @@
     }, {
         "moveId": "DYNAMIC_PUNCH",
         "name": "Dynamic Punch",
+		"abbreviation": "DyP",
         "type": "fighting",
         "power": 90,
         "energy": 50,
@@ -16559,6 +16581,7 @@
     }, {
         "moveId": "EARTHQUAKE",
         "name": "Earthquake",
+		"abbreviation": "Eq",
         "type": "ground",
         "power": 120,
         "energy": 65,
@@ -16597,6 +16620,7 @@
     }, {
         "moveId": "EXTRASENSORY",
         "name": "Extrasensory",
+		"abbreviation": "Ex",
         "type": "psychic",
         "power": 8,
         "energy": 0,
@@ -16613,6 +16637,7 @@
     }, {
         "moveId": "FELL_STINGER",
         "name": "Fell Stinger",
+		"abbreviation": "FeS",
         "type": "bug",
         "power": 20,
         "energy": 35,
@@ -16624,6 +16649,7 @@
     }, {
         "moveId": "FIRE_BLAST",
         "name": "Fire Blast",
+		"abbreviation": "FiB",
         "type": "fire",
         "power": 140,
         "energy": 80,
@@ -16640,6 +16666,7 @@
     }, {
         "moveId": "FIRE_PUNCH",
         "name": "Fire Punch",
+		"abbreviation": "FiP",
         "type": "fire",
         "power": 55,
         "energy": 40,
@@ -16664,6 +16691,7 @@
     }, {
         "moveId": "FLAME_BURST",
         "name": "Flame Burst",
+		"abbreviation": "FlB",
         "type": "fire",
         "power": 70,
         "energy": 55,
@@ -16672,6 +16700,7 @@
     }, {
         "moveId": "FLAME_CHARGE",
         "name": "Flame Charge",
+		"abbreviation": "FlC"",
         "type": "fire",
         "power": 65,
         "energy": 50,
@@ -16691,6 +16720,7 @@
     }, {
         "moveId": "FLAMETHROWER",
         "name": "Flamethrower",
+		"abbreviation": "Ft",
         "type": "fire",
         "power": 90,
         "energy": 55,
