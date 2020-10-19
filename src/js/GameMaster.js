@@ -254,8 +254,14 @@ var GameMaster = (function () {
 					var arr = m.moveId.split('_');
 					var abbreviation = '';
 
-					for(var i = 0; i < arr.length; i++){
-						abbreviation += arr[i].charAt(0);
+					if(m.abbreviation){
+						// Use predefined abbreviation if set
+						abbreviation = m.abbreviation;
+					} else{
+						// Make abbreviation from first character of each word
+						for(var i = 0; i < arr.length; i++){
+							abbreviation += arr[i].charAt(0);
+						}
 					}
 
 					move = {
