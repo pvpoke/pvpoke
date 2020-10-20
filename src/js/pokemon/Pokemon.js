@@ -24,6 +24,8 @@ function Pokemon(id, i, b){
 	this.dex = data.dex;
 	this.speciesId = id;
 	this.speciesName = data.speciesName;
+	this.familyId = data.familyId;
+	this.family = data.family;
 
 	this.baseStats = { atk: data.baseStats.atk, def: data.baseStats.def, hp: data.baseStats.hp};
 	this.stats = { atk: 0, def: 0, hp: 0 };

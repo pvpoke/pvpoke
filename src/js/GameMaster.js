@@ -21,8 +21,35 @@ var GameMaster = (function () {
 
 			// Sort Pokemon alphabetically for searching
 			object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+		
+			$.getJSON( webRoot+"data/evolutionData.json?v="+siteVersion, function( data ){
+				var evolutionFamilyIdByUniqueId = data.evolutionFamilyIdByUniqueId;
+				var uniqueIdsForFamilyId = data.uniqueIdsForFamilyId;
+	
+				$.each(object.data.pokemon, function(index, poke){
+					var uniqueId = poke.speciesName.split(' ')[0].toLowerCase();
+					poke.familyId = evolutionFamilyIdByUniqueId[uniqueId];
+					poke.family = uniqueIdsForFamilyId[poke.familyId];
+				});
+				/*
+				$.each(object.data.pokemon, function(index, poke){
+					$.each(object.data.pokemon, function(index, poke2){
+						var uniqueId2 = poke2.speciesName.split(' ')[0].toLowerCase();
+						if (poke.familyId == poke2.familyId)
+						{
+							if (poke.family.indexOf(uniqueId2) == -1)
+							{
+								poke.family.push(uniqueId2);
+							}
+						}
+					});
+				});
+				*/
 
-			InterfaceMaster.getInstance().init(object);
+				debugger;
+
+				InterfaceMaster.getInstance().init(object);
+			});
 		});
 
 		// Return a Pokemon object given species ID
@@ -567,7 +594,6 @@ var GameMaster = (function () {
 			var queries = str.split(',');
 			var results = []; // Store an array of qualifying Pokemon ID's
 
-			var types = ["bug","dark","dragon","electric","fairy","fighting","fire","flying","ghost","grass","ground","ice","normal","poison","psychic","rock","steel","water"];
 			var tags = object.data.pokemonTags;
 			var regions = object.data.pokemonRegions;
 			var battle = new Battle();
@@ -648,6 +674,17 @@ var GameMaster = (function () {
 									}
 								}
 							}
+						
+						} else if((param.charAt(0) == "+")&&(param.length > 2)){
+							//  Evolution based search
+							param = param.substr(1, param.length-1);
+
+							$.each(pokemon.family, function(index, familySpeciesId){
+								if (familySpeciesId.toLowerCase().startsWith(param)) {
+									valid = true;
+								}
+							});
+
 						} else{
 							// Name search
 							if(pokemon.speciesName.toLowerCase().startsWith(param)){
