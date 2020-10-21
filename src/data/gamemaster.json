@@ -3337,6 +3337,23 @@
         },
         "eliteMoves": ["FIRE_BLAST"]
     }, {
+        "dex": 77,
+        "speciesName": "Ponyta (Galarian)",
+        "speciesId": "ponyta_galarian",
+        "baseStats": {
+            "atk": 170,
+            "def": 127,
+            "hp": 137
+        },
+        "types": ["psychic", "none"],
+        "fastMoves": ["LOW_KICK", "PSYCHO_CUT"],
+        "chargedMoves": ["PLAY_ROUGH", "PSYBEAM", "SWIFT"],
+        "defaultIVs": {
+            "cp1500": [35.5, 6, 15, 11],
+            "cp2500": [40, 15, 15, 15]
+        },
+		"tags": ["galarian"]
+    }, {
         "dex": 78,
         "speciesName": "Rapidash",
         "speciesId": "rapidash",
@@ -3353,6 +3370,24 @@
             "cp2500": [40, 15, 15, 15]
         },
         "eliteMoves": ["EMBER"]
+    }, {
+        "dex": 78,
+        "speciesName": "Rapidash (Galarian)",
+        "speciesId": "rapidash_galarian",
+        "baseStats": {
+            "atk": 207,
+            "def": 162,
+            "hp": 163
+        },
+        "types": ["psychic", "fairy"],
+        "fastMoves": ["LOW_KICK", "PSYCHO_CUT"],
+        "chargedMoves": ["PLAY_ROUGH", "PSYCHIC", "BODY_SLAM", "MEGAHORN"],
+        "defaultIVs": {
+            "cp1500": [21.5, 13, 15, 15],
+            "cp2500": [40, 15, 15, 15]
+        },
+        "tags": ["galarian"],
+		"searchPriority": 2
     }, {
         "dex": 79,
         "speciesName": "Slowpoke",
@@ -14411,6 +14446,23 @@
             "cp2500": [40, 15, 15, 15]
         }
     }, {
+        "dex": 562,
+        "speciesId": "yamask_galarian",
+        "speciesName": "Yamask (Galarian)",
+        "baseStats": {
+            "atk": 95,
+            "def": 141,
+            "hp": 116
+        },
+        "types": ["ground", "ghost"],
+        "fastMoves": ["ASTONISH"],
+        "chargedMoves": ["NIGHT_SHADE", "SAND_TOMB", "ROCK_TOMB"],
+        "defaultIVs": {
+            "cp1500": [40, 15, 15, 15],
+            "cp2500": [40, 15, 15, 15]
+        },
+		"tags": ["galarian"]
+    }, {
         "dex": 563,
         "speciesId": "cofagrigus",
         "speciesName": "Cofagrigus",
@@ -14426,6 +14478,23 @@
             "cp1500": [24, 7, 15, 15],
             "cp2500": [40, 15, 15, 15]
         }
+    }, {
+        "dex": 867,
+        "speciesId": "runerigus",
+        "speciesName": "Runerigus",
+        "baseStats": {
+            "atk": 163,
+            "def": 237,
+            "hp": 151
+        },
+        "types": ["ground", "ghost"],
+        "fastMoves": ["ASTONISH"],
+        "chargedMoves": ["SHADOW_BALL", "SAND_TOMB", "ROCK_TOMB"],
+        "defaultIVs": {
+            "cp1500": [24, 7, 15, 15],
+            "cp2500": [40, 15, 15, 15]
+        },
+		"tags": ["galarian"]
     }, {
         "dex": 564,
         "speciesId": "tirtouga",
