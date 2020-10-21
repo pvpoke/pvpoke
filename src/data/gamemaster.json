@@ -17726,6 +17726,18 @@
         "energyGain": 0,
         "cooldown": 500
     }, {
+        "moveId": "SHADOW_BONE",
+        "name": "Shadow Bone",
+		"abbreviation": "SBo",
+        "type": "ghost",
+        "power": 80,
+        "energy": 45,
+        "energyGain": 0,
+        "cooldown": 500,
+		"buffs": [0, -1],
+        "buffTarget": "opponent",
+        "buffApplyChance": ".2"
+    }, {
         "moveId": "SHADOW_CLAW",
         "name": "Shadow Claw",
         "type": "ghost",
