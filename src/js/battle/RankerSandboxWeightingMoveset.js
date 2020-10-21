@@ -530,7 +530,7 @@ var RankerMaster = (function () {
 							if(rankings[j].scores[n] / bestScore < .1 + (rankCutoffIncrease * n)){
 								weight = 0;
 							}
-							
+
 							weights += weight;
 							matches[j].score = sc;
 							matches[j].opScore = opScore;
