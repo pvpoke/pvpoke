@@ -30,132 +30,9 @@ switch($cp){
 }
 
 switch($cup){
-	case "boulder":
-		$league = 'Boulder Cup';
-		break;
-
-	case "twilight":
-		$league = 'Twilight Cup';
-		break;
-
-	case "tempest":
-		$league = 'Tempest Cup';
-		break;
-
-	case "kingdom":
-		$league = 'Kingdom Cup';
-		break;
-
-	case "nightmare":
-		$league = 'Nightmare Cup';
-		break;
-
-	case "regionals-1":
-		$league = 'Season 1 Regionals';
-		break;
-
-	case "championships-1":
-		$league = 'Season 1 Championships';
-		break;
-
-	case "rainbow":
-		$league = 'Rainbow Cup';
-		break;
-
-	case "jungle":
-		$league = 'Jungle Cup';
-		break;
-
-	case "safari":
-		$league = 'Safari Cup';
-		break;
-
-	case "fantasy":
-		$league = 'Fantasy Cup';
-		break;
-
-	case "sinister":
-	case "sinister-mirror":
-		$league = 'Sinister Cup';
-		break;
-
-	case "ferocious":
-	case "ferocious-mirror":
-		$league = 'Ferocious Cup';
-		break;
-
-	case "timeless":
-	case "timeless-mirror":
-		$league = 'Timeless Cup';
-		break;
-
-	case "fusion":
-		$league = 'Fusion Cup';
-		break;
-
-	case "rose":
-		$league = 'Rose Cup';
-		break;
-
-	case "toxic":
-		$league = 'Toxic Cup';
-		break;
-
-	case "voyager":
-		$league = 'Voyager Cup';
-		break;
-
-	case "beam":
-		$league = 'Get Beamed';
-		break;
-
-	case "forest":
-		$league = 'Forest';
-		break;
 
 	case "premier":
 		$league = 'Premier';
-		break;
-
-	case "grunt":
-		$league = 'Grunt Cup 4';
-		break;
-
-	case "sorcerous":
-	case "sorcerous-mirror":
-		$league = 'Sorcerous Cup';
-		break;
-
-	case "sorcerous-bee":
-		$league = 'Sorcerous Cup';
-		break;
-
-	case "goteamup":
-		$league = 'GOTeamUp';
-		break;
-
-	case "continentals-2":
-		$league = 'Season 2 Continentals';
-		break;
-
-	case "catacomb":
-		$league = 'Catacomb Cup';
-		break;
-
-	case "scoville":
-		$league = 'Scoville Cup';
-		break;
-
-	case "mexico":
-		$league = 'México Cup';
-		break;
-
-	case "kaiser":
-		$league = 'Kaiser Invitational';
-		break;
-
-	case "shadow":
-		$league = 'Shadow Cup';
 		break;
 
 	case "flying":
@@ -166,24 +43,12 @@ switch($cup){
 		$league = 'Halloween Cup';
 		break;
 
-	case "circus":
-		$league = 'Circus Cup';
-		break;
-
-	case "maelstrom":
-		$league = 'Maelstrom Cup';
-		break;
-
-	case "origin":
-		$league = 'Origin Cup';
-		break;
-
-	case "duet":
-		$league = 'Duet Cup';
-		break;
-
 	case "sunrise":
 		$league = 'Silph Sunrise Cup';
+		break;
+
+	case "marsh":
+		$league = 'Silph Marsh Cup';
 		break;
 
 }

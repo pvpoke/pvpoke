@@ -4,6 +4,7 @@
 	<option value="official" cup="halloween">Halloween Cup</option>
 	<option value="official" cup="flying">Flying Cup</option>
 	<option value="tsa-3" cup="sunrise">Silph Sunrise Cup</option>
+	<option value="tsa-3" cup="marsh">Silph Marsh Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>
@@ -60,5 +61,6 @@
 	<option value="origin" cat="tsa-2">Origin Cup</option>
 	<option value="duet" cat="tsa-2">Duet Cup</option>
 	<option value="sunrise" cat="tsa-3">Sunrise Cup</option>
+	<option value="marsh" cat="tsa-3">Marsh Cup</option>
 	<option value="custom" cat="custom">Custom</option>
 </select>

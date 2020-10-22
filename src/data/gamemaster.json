@@ -573,7 +573,22 @@
             "filterType": "tag",
             "values": ["mega"]
         }]
-    }],
+    }, {
+	    "name": "marsh",
+	    "title": "Marsh Cup",
+	    "include": [{
+	        "filterType": "type",
+	        "values": ["poison","ghost","bug","grass","water"]
+	    }],
+	    "exclude": [{
+	        "filterType": "id",
+	        "values": ["abomasnow","abomasnow_shadow","tropius"]
+	    },
+		{
+			"filterType": "tag",
+			"values": ["mega"]
+		}]
+	}],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega"],
     "pokemonRegions": [{
         "string": "gen1",

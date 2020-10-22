@@ -21,6 +21,7 @@
 				<option value="flying" type="great" class="multi-battle">Flying Cup Meta</option>
 				<option value="halloween" type="great" class="multi-battle">Halloween Cup Meta</option>
 				<option value="sunrise" type="great" class="multi-battle">Silph Sunrise Cup Meta</option>
+				<option value="marsh" type="great" class="multi-battle">Silph Marsh Cup Meta</option>
 			</select>
 			<div class="flex quick-fill-buttons">
 				<button class="save-btn save-custom">Save</button>
