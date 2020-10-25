@@ -8,6 +8,7 @@ var GameMaster = (function () {
 
 		object.data = {};
 		object.rankings = [];
+		object.trainRankings = [];
 		object.groups = [];
 		object.teamPools = [];
 		object.loadedData = 0;
@@ -338,6 +339,27 @@ var GameMaster = (function () {
 				});
 			} else{
 				caller.displayRankingData(object.rankings[key]);
+			}
+		}
+
+		// Load and return ranking data JSON
+
+		object.loadTrainData = function(caller, league, cup){
+
+			var key = cup + "" + league;
+
+			if(! object.trainRankings[key]){
+				var file = webRoot+"data/training/analysis/"+cup+"/"+league+".json?v="+siteVersion;
+
+				console.log(file);
+
+				$.getJSON( file, function( data ){
+					object.trainRankings[key] = data;
+
+					caller.displayRankingData(data);
+				});
+			} else{
+				caller.displayRankingData(object.trainRankings[key]);
 			}
 		}
 
