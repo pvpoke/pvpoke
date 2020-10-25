@@ -16,13 +16,31 @@ var GameMaster = (function () {
 			$(".mega-warning").show();
 		}
 
-		$.getJSON( webRoot+"data/"+settings.gamemaster+".json?v="+siteVersion, function( data ){
+		var gmVersion = settings.gamemaster;
+
+		if(gmVersion == "gamemaster-mega"){
+			gmVersion = "gamemaster";
+		}
+
+		$.getJSON( webRoot+"data/"+gmVersion+".json?v="+siteVersion, function( data ){
 			object.data = data;
 
-			// Sort Pokemon alphabetically for searching
-			object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+			if(settings.gamemaster != "gamemaster-mega"){
+				// Sort Pokemon alphabetically for searching
+				object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
 
-			InterfaceMaster.getInstance().init(object);
+				InterfaceMaster.getInstance().init(object);
+			} else{
+				// Load additional mega pokemon
+				$.getJSON( webRoot+"data/megas.json?v="+siteVersion, function( data ){
+
+					// Sort Pokemon alphabetically for searching
+					object.data.pokemon = object.data.pokemon.concat(data);
+					object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+
+					InterfaceMaster.getInstance().init(object);
+				});
+			}
 		});
 
 		// Return a Pokemon object given species ID

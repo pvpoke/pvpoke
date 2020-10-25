@@ -158,6 +158,8 @@ var InterfaceMaster = (function () {
 					var pokemon = new Pokemon(r.speciesId, 0, battle);
 
 					if(! pokemon.speciesId){
+						rankings.splice(i, 1);
+						i--;
 						continue;
 					}
 

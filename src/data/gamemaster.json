@@ -3882,6 +3882,24 @@
         "eliteMoves": ["LICK", "SLUDGE_WAVE", "DARK_PULSE", "PSYCHIC", "SHADOW_PUNCH"],
         "searchPriority": 14
     }, {
+	    "dex": 94,
+	    "speciesName": "Gengar (Mega)",
+	    "speciesId": "gengar_mega",
+	    "baseStats": {
+	        "atk": 349,
+	        "def": 199,
+	        "hp": 155
+	    },
+	    "types": ["ghost", "poison"],
+	    "fastMoves": ["HEX", "LICK", "SHADOW_CLAW", "SUCKER_PUNCH"],
+	    "chargedMoves": ["DARK_PULSE", "FOCUS_BLAST", "PSYCHIC", "SHADOW_BALL", "SLUDGE_BOMB", "SLUDGE_WAVE", "SHADOW_PUNCH"],
+	    "defaultIVs": {
+	        "cp1500": [12.5, 8, 10, 13],
+	        "cp2500": [21, 9, 15, 7]
+	    },
+	    "tags": ["mega"],
+	    "eliteMoves": ["LICK", "SLUDGE_WAVE", "DARK_PULSE", "PSYCHIC", "SHADOW_PUNCH"]
+	}, {
         "dex": 95,
         "speciesName": "Onix",
         "speciesId": "onix",
