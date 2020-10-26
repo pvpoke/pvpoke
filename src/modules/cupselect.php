@@ -5,6 +5,7 @@
 	<option value="official" cup="flying">Flying Cup</option>
 	<option value="tsa-3" cup="sunrise">Silph Sunrise Cup</option>
 	<option value="tsa-3" cup="marsh">Silph Marsh Cup</option>
+	<option value="community" cup="goteamup">GoStadium GOTeamUp</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>

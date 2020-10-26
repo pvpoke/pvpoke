@@ -395,7 +395,10 @@
         "include": [],
         "exclude": [{
             "filterType": "id",
-            "values": ["skarmory", "cresselia", "ferrothorn", "bronzong", "hypno", "hypno_shadow"]
+            "values": ["umbreon", "stunfisk_galarian", "medicham", "deoxys_defense", "scrafty"]
+        }, {
+            "filterType": "tag",
+            "values": ["mega"]
         }]
     }, {
         "name": "continentals-2",
