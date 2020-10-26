@@ -1,7 +1,7 @@
 [
 	{
 		"speciesId": "azumarill",
-		"chargedMoves": ["ICE_BEAM", "HYDRO_PUMP"],
+		"chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"],
 		"weight": 100
 	},
 	{
@@ -102,6 +102,7 @@
 	},
 	{
 		"speciesId": "crustle",
+		"fastMove": "SMACK_DOWN",
 		"chargedMoves": ["X_SCISSOR", "ROCK_SLIDE"],
 		"weight": 4
 	},
