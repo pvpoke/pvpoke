@@ -47,6 +47,9 @@ function TrainingAI(l, p, b){
 		var pool = teamPool[league+""+cup];
 		currentTeamPool = teamPool[league+""+cup];
 
+		// Test current pool for errors
+		self.testPool(pool);
+
 		if(pool.slots){
 			pool = pool.slots;
 		}
@@ -473,6 +476,47 @@ function TrainingAI(l, p, b){
 		console.log(team);
 
 		player.setTeam(team);
+	}
+
+	// Test a pool of Pokemon for moveset errors
+
+	this.testPool = function(pool){
+		var slots = pool;
+		var presets = [];
+		var pokes = [];
+
+		if(pool.slots){
+			slots = pool.slots;
+			presets = pool.presets;
+		}
+
+		for(var i = 0; i < slots.length; i++){
+			for(var n = 0; n < slots[i].pokemon.length; n++){
+				pokes.push(slots[i].pokemon[n]);
+			}
+		}
+
+		for(var i = 0; i < presets.length; i++){
+			for(var n = 0; n < presets[i].pokemon.length; n++){
+				pokes.push(presets[i].pokemon[n]);
+			}
+		}
+
+		for(var i = 0; i < pokes.length; i++){
+			var pokemon = new Pokemon(pokes[i].speciesId, 0, battle);
+
+			if(pokemon.data.fastMoves.indexOf(pokes[i].fastMove) == -1){
+				console.error(pokemon.speciesId + " doesn't know " + pokes[i].fastMove);
+			}
+
+			if(pokemon.data.chargedMoves.indexOf(pokes[i].chargedMoves[0]) == -1){
+				console.error(pokemon.speciesId + " doesn't know " + pokes[i].chargedMoves[0]);
+			}
+
+			if(pokemon.data.chargedMoves.indexOf(pokes[i].chargedMoves[0]) == -1){
+				console.error(pokemon.speciesId + " doesn't know " + pokes[i].chargedMoves[0]);
+			}
+		}
 	}
 
 	// Return an array of average performances of team A against team B

@@ -21,6 +21,7 @@ function Pokemon(id, i, b){
 	}
 
 	// Base properties
+	this.data = data;
 	this.dex = data.dex;
 	this.speciesId = id;
 	this.speciesName = data.speciesName;

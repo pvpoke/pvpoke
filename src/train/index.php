@@ -45,6 +45,7 @@ require_once '../header.php';
 				<option value="1500 flying">Flying Cup</option>
 				<option value="1500 halloween">Halloween Cup</option>
 				<option value="1500 sunrise">Silph Sunrise Cup</option>
+				<option value="1500 marsh">Silph Marsh Cup</option>
 			</select>
 			<h3 class="section-title">Difficulty</h3>
 			<select class="difficulty-select">
