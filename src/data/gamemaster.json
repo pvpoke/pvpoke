@@ -16250,6 +16250,17 @@
         "energyGain": 0,
         "cooldown": 500
     }, {
+        "moveId": "AEROBLAST",
+        "name": "Aeroblast",
+        "type": "flying",
+        "power": 180,
+        "energy": 75,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [2, 0],
+        "buffTarget": "self",
+        "buffApplyChance": ".125"
+    }, {
         "moveId": "AIR_CUTTER",
         "name": "Air Cutter",
         "type": "flying",
