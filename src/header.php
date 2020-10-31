@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.15.15.5';
+$SITE_VERSION = '1.17.8.12';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -88,14 +88,14 @@ if(! isset($OG_IMAGE)){
 <link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json?v=2">
 
 <link rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=88">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=91">
 
 <?php if(strpos($META_TITLE, 'Train') !== false): ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=14">
 <?php endif; ?>
 
 <?php if((isset($_SETTINGS->theme))&&($_SETTINGS->theme != "default")): ?>
-	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/themes/<?php echo $_SETTINGS->theme; ?>.css?v=8">
+	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/themes/<?php echo $_SETTINGS->theme; ?>.css?v=9">
 <?php endif; ?>
 
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>
@@ -129,7 +129,7 @@ if(! isset($OG_IMAGE)){
 
 	<?php endif; ?>
 
-	<?php if((strpos($_SERVER['REQUEST_URI'], 'mega') !== false) && (strpos($_SERVER['REQUEST_URI'], 'meganium') === false)):
+	<?php if((strpos($_SERVER['REQUEST_URI'], 'mega') !== false) && (strpos($_SERVER['REQUEST_URI'], 'meganium') === false) && (strpos($_SERVER['REQUEST_URI'], 'venusaur_mega') === false) && (strpos($_SERVER['REQUEST_URI'], 'blastoise_mega') === false) && ((strpos($_SERVER['REQUEST_URI'], 'charizard_mega_x') === false)) && (strpos($_SERVER['REQUEST_URI'], 'charizard_mega_y') === false) && (strpos($_SERVER['REQUEST_URI'], 'beedrill_mega') === false) && (strpos($_SERVER['REQUEST_URI'], 'pidgeot_mega') === false) && (strpos($_SERVER['REQUEST_URI'], 'houndoom_mega') === false)):
 		$_SETTINGS->gamemaster = 'gamemaster-mega';
 		?>
 		// If "Mega" is contained in the URL, default to the mega gamemaster
@@ -158,13 +158,13 @@ if(! isset($OG_IMAGE)){
 <body>
 	<header>
 		<div class="header-wrap">
+			<h1 class="title"><a href="/">PvPoke.com</a></h1>
 			<div class="hamburger">
 				<!--Because I'm too lazy to make a graphic-->
 				<div class="meat"></div>
 				<div class="meat"></div>
 				<div class="meat"></div>
 			</div>
-			<h1 class="title"><a href="/">PvPoke.com</a></h1>
 			<div class="menu">
 				<a class="icon-battle" href="<?php echo $WEB_ROOT; ?>battle/">Battle</a>
 				<a class="icon-train" href="<?php echo $WEB_ROOT; ?>train/">Train</a>
@@ -190,11 +190,8 @@ if(! isset($OG_IMAGE)){
 					</div>
 				</div>
 			</div>
-			<div class="clear"></div>
 		</div>
 	</header>
 	<div class="main-wrap">
 		<div id="main">
-			<?php if((isset($_SETTINGS->gamemaster)) && ($_SETTINGS->gamemaster == 'gamemaster-mega')): ?>
-				<div class="section white"><b>Information for Mega Evolutions is speculative! It may not be accurate to how Mega Evolution stats and mechanics are implemented. Don't make any investments based on the speculation below.</b></div>
-			<?php endif; ?>
+			<div class="hide mega-warning"><b>Stats for unreleased Mega Evolutions are speculative. Don't invest any resources until they're officially released.</b></div>

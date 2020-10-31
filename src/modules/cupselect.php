@@ -1,11 +1,12 @@
 <select class="format-select">
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
-	<option value="tsa-2" cup="sinister-mirror">Silph Sinister Cup</option>
-	<option value="tsa-2" cup="ferocious-mirror">Silph Ferocious Cup</option>
-	<option value="tsa-2" cup="timeless-mirror">Silph Timeless Cup</option>
-	<option value="tsa-2" cup="sorcerous-mirror">Silph Sorcerous Cup</option>
-	<option value="community" cup="mexico">México Cup</option>
+	<option value="official" cup="halloween">Halloween Cup</option>
+	<option value="official" cup="flying">Flying Cup</option>
+	<option value="tsa-3" cup="sunrise">Silph Sunrise Cup</option>
+	<option value="tsa-3" cup="marsh">Silph Marsh Cup</option>
+	<option value="community" cup="goteamup">GoStadium GOTeamUp</option>
+	<option value="community" cup="uber">Uber Tier Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>
@@ -21,15 +22,19 @@
 	<option value="all" cat="all">All Pokemon</option>
 	<option value="gen-5" cat="all">All Pokemon (With Generation 5)</option>
 	<option value="premier" cat="official">Premier Cup</option>
+	<option value="flying" cat="official">Flying Cup</option>
+	<option value="halloween" cat="official">Halloween Cup</option>
 	<option value="safari" cat="community">Montreal Safari Cup</option>
 	<option value="fantasy" cat="community">GO LIVE Fantasy Cup</option>
 	<option value="beam" cat="community">Get Beamed</option>
-	<option value="grunt-4" cat="community">Grunt Cup Season 4</option>
-	<option value="grunt-6" cat="community">Grunt Cup Season 6</option>
+	<option value="grunt" cat="community">Grunt Cup Season 7</option>
+	<option value="shadow" cat="community">Shadow Cup</option>
 	<option value="goteamup" cat="community">GO Stadium GOTeamUp</option>
 	<option value="cliffhanger" cat="community">GO Stadium Cliffhanger</option>
+	<option value="uber" cat="community">Uber Tier Cup</option>
 	<option value="scoville" cat="community">Scoville Cup</option>
 	<option value="mexico" cat="community">México Cup</option>
+	<option value="kaiser" cat="community">Kaiser Invitational</option>
 	<option value="jungle"  cat="tsa-1">Jungle Cup</option>
 	<option value="rainbow" cat="tsa-1">Rainbow Cup</option>
 	<option value="championships-1" cat="tsa-1">Season 1 Championships</option>
@@ -54,5 +59,11 @@
 	<option value="ferocious-mirror" cat="tsa-2">Ferocious Cup (Mirror)</option>
 	<option value="sinister" cat="tsa-2">Sinister Cup</option>
 	<option value="sinister-mirror" cat="tsa-2">Sinister Cup (Mirror)</option>
+	<option value="circus" cat="tsa-2">Circus Cup</option>
+	<option value="maelstrom" cat="tsa-2">Maelstrom Cup</option>
+	<option value="origin" cat="tsa-2">Origin Cup</option>
+	<option value="duet" cat="tsa-2">Duet Cup</option>
+	<option value="sunrise" cat="tsa-3">Sunrise Cup</option>
+	<option value="marsh" cat="tsa-3">Marsh Cup</option>
 	<option value="custom" cat="custom">Custom</option>
 </select>

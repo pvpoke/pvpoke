@@ -1,0 +1,92 @@
+[
+	{
+		"speciesId": "bronzong",
+		"chargedMoves": ["PSYSHOCK", "BULLDOZE"]
+	},
+	{
+		"speciesId": "hypno",
+		"chargedMoves": ["THUNDER_PUNCH", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "hypno_shadow",
+		"chargedMoves": ["THUNDER_PUNCH", "ICE_PUNCH"]
+	},
+	{
+		"speciesId": "skuntank",
+		"chargedMoves": ["CRUNCH", "FLAMETHROWER"]
+	},
+	{
+		"speciesId": "typhlosion",
+		"chargedMoves": ["BLAST_BURN", "SOLAR_BEAM"]
+	},
+	{
+		"speciesId": "skuntank_shadow",
+		"chargedMoves": ["CRUNCH", "FLAMETHROWER"]
+	},
+	{
+		"speciesId": "ninetales",
+		"chargedMoves": ["PSYSHOCK", "OVERHEAT"]
+	},
+	{
+		"speciesId": "lucario",
+		"chargedMoves": ["POWER_UP_PUNCH", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "machamp",
+		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
+	},
+	{
+		"speciesId": "machamp_shadow",
+		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
+	},
+	{
+		"speciesId": "blaziken",
+		"chargedMoves": ["BLAZE_KICK", "STONE_EDGE"]
+	},
+	{
+		"speciesId": "tentacruel",
+		"chargedMoves": ["ACID_SPRAY", "HYDRO_PUMP"]
+	},
+	{
+		"speciesId": "hitmonchan",
+		"chargedMoves": ["THUNDER_PUNCH", "ICE_PUNCH"]
+	},
+	{
+		"speciesId": "hitmonchan_shadow",
+		"chargedMoves": ["THUNDER_PUNCH", "ICE_PUNCH"]
+	},
+	{
+		"speciesId": "togekiss",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "gardevoir",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "gardevoir_shadow",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "charizard",
+		"fastMove": "FIRE_SPIN"
+	},
+	{
+		"speciesId": "charizard_shadow",
+		"fastMove": "FIRE_SPIN"
+	},
+	{
+		"speciesId": "medicham",
+		"fastMove": "COUNTER",
+		"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
+	},
+	{
+		"speciesId": "mantine",
+		"chargedMoves": ["BUBBLE_BEAM", "ICE_BEAM"],
+		"weight": 2
+	},
+	{
+		"speciesId": "skarmory",
+		"weight": 2
+	}
+]

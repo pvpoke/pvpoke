@@ -2,7 +2,7 @@
 	{
 		"speciesId":"lapras",
 		"fastMove":"ICE_SHARD",
-		"chargedMoves":["SURF","ICE_BEAM"]
+		"chargedMoves":["SURF","SKULL_BASH"]
 	},
 	{
 		"speciesId":"machamp",
@@ -15,16 +15,6 @@
 		"chargedMoves":["CROSS_CHOP","ROCK_SLIDE"]
 	},
 	{
-		"speciesId":"typhlosion",
-		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["BLAST_BURN","SOLAR_BEAM"]
-	},
-	{
-		"speciesId":"blastoise",
-		"fastMove":"WATER_GUN",
-		"chargedMoves":["HYDRO_CANNON","ICE_BEAM"]
-	},
-	{
 		"speciesId":"gengar",
 		"fastMove":"SHADOW_CLAW",
 		"chargedMoves":["SHADOW_PUNCH","SHADOW_BALL"]
@@ -35,14 +25,14 @@
 		"chargedMoves":["DRAGON_CLAW","HURRICANE"]
 	},
 	{
+		"speciesId":"dragonite_shadow",
+		"fastMove":"DRAGON_BREATH",
+		"chargedMoves":["DRAGON_CLAW","HURRICANE"]
+	},
+	{
 		"speciesId":"charizard",
 		"fastMove":"FIRE_SPIN",
 		"chargedMoves":["BLAST_BURN","DRAGON_CLAW"]
-	},
-	{
-		"speciesId":"meganium",
-		"fastMove":"VINE_WHIP",
-		"chargedMoves":["FRENZY_PLANT","EARTHQUAKE"]
 	},
 	{
 		"speciesId":"venusaur",
@@ -75,9 +65,9 @@
 		"chargedMoves":["HYDRO_CANNON","SLUDGE_WAVE"]
 	},
 	{
-		"speciesId":"swampert_shadow",
+		"speciesId":"swampert",
 		"fastMove":"MUD_SHOT",
-		"chargedMoves":["HYDRO_CANNON","SLUDGE_WAVE"]
+		"chargedMoves":["HYDRO_CANNON","EARTHQUAKE"]
 	},
 	{
 		"speciesId":"poliwrath",
@@ -92,42 +82,12 @@
 	{
 		"speciesId":"clefable",
 		"fastMove":"CHARM",
-		"chargedMoves":["METEOR_MASH","PSYCHIC"]
-	},
-	{
-		"speciesId":"lickilicky",
-		"fastMove":"LICK",
-		"chargedMoves":["BODY_SLAM","EARTHQUAKE"]
-	},
-	{
-		"speciesId":"granbull",
-		"fastMove":"CHARM",
-		"chargedMoves":["CRUNCH","CLOSE_COMBAT"]
+		"chargedMoves":["METEOR_MASH","MOONBLAST"]
 	},
 	{
 		"speciesId":"empoleon",
 		"fastMove":"WATERFALL",
 		"chargedMoves":["HYDRO_CANNON","DRILL_PECK"]
-	},
-	{
-		"speciesId":"feraligatr",
-		"fastMove":"ICE_FANG",
-		"chargedMoves":["HYDRO_CANNON","CRUNCH"]
-	},
-	{
-		"speciesId":"shiftry",
-		"fastMove":"SNARL",
-		"chargedMoves":["LEAF_BLADE","FOUL_PLAY"]
-	},
-	{
-		"speciesId":"sceptile",
-		"fastMove":"BULLET_SEED",
-		"chargedMoves":["LEAF_BLADE","EARTHQUAKE"]
-	},
-	{
-		"speciesId":"ferrothorn",
-		"fastMove":"BULLET_SEED",
-		"chargedMoves":["POWER_WHIP","FLASH_CANNON"]
 	},
 	{
 		"speciesId":"escavalier",
@@ -155,11 +115,6 @@
 		"chargedMoves":["ICY_WIND","SHADOW_BALL"]
 	},
 	{
-		"speciesId":"honchkrow",
-		"fastMove":"SNARL",
-		"chargedMoves":["SKY_ATTACK","BRAVE_BIRD"]
-	},
-	{
 		"speciesId":"toxicroak",
 		"fastMove":"COUNTER",
 		"chargedMoves":["MUD_BOMB","SLUDGE_BOMB"]
@@ -175,14 +130,9 @@
 		"chargedMoves":["LEAF_BLADE","CLOSE_COMBAT"]
 	},
 	{
-		"speciesId":"electivire",
-		"fastMove":"THUNDER_SHOCK",
-		"chargedMoves":["ICE_PUNCH","WILD_CHARGE"]
-	},
-	{
-		"speciesId":"heracross",
-		"fastMove":"COUNTER",
-		"chargedMoves":["CLOSE_COMBAT","MEGAHORN"]
+		"speciesId":"gallade_shadow",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["LEAF_BLADE","CLOSE_COMBAT"]
 	},
 	{
 		"speciesId":"tangrowth",
@@ -190,13 +140,28 @@
 		"chargedMoves":["ROCK_SLIDE","POWER_WHIP"]
 	},
 	{
-		"speciesId":"milotic",
-		"fastMove":"WATERFALL",
-		"chargedMoves":["SURF","BLIZZARD"]
+		"speciesId":"ampharos",
+		"fastMove":"VOLT_SWITCH",
+		"chargedMoves":["THUNDER_PUNCH","FOCUS_BLAST"]
 	},
 	{
-		"speciesId":"gliscor",
-		"fastMove":"WING_ATTACK",
-		"chargedMoves":["NIGHT_SLASH","EARTHQUAKE"]
+		"speciesId":"slowbro",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["PSYCHIC","ICE_BEAM"]
+	},
+	{
+		"speciesId":"kingdra",
+		"fastMove":"DRAGON_BREATH",
+		"chargedMoves":["OCTAZOOKA","OUTRAGE"]
+	},
+	{
+		"speciesId":"blaziken",
+		"fastMove":"COUNTER",
+		"chargedMoves":["BLAZE_KICK","BLAST_BURN"]
+	},
+	{
+		"speciesId":"exeggutor_shadow",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["SEED_BOMB","PSYCHIC"]
 	}
 ]

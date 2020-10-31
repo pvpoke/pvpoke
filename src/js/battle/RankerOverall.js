@@ -19,7 +19,7 @@ var RankerMaster = (function () {
 			var rankings = [];
 			var rankingCombinations = [];
 
-			var moveUsageMode = "single";
+			var moveUsageMode = "overall";
 
 			var self = this;
 

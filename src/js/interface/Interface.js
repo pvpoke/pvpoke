@@ -698,7 +698,6 @@ var InterfaceMaster = (function () {
 				}
 
 				// Calculate breakpoints and bulkpoints
-
 				var breakpoints = pokemon[0].calculateBreakpoints(pokemon[1]);
 
 				// Output to table
@@ -791,7 +790,7 @@ var InterfaceMaster = (function () {
 					}
 				} else{
 					// Show blank if this Pokemon can't win CMP at all
-					$(".stats-table.cmp .output").append("<tr class=\"toggle\"><td>-</td><td>-</td><td>-</td></tr>");
+					$(".stats-table.cmp .output").append("<tr class=\"toggle\"><td>Can't win<br>CMP</td><td>Can't win<br>CMP</td><td>Can't win<br>CMP</td></tr>");
 				}
 
 			}
@@ -1034,9 +1033,9 @@ var InterfaceMaster = (function () {
 				var $row = $("<thead><tr><th></th></tr></thead>");
 
 				for(var n = 0; n < team.length; n++){
-					$row.find("tr").append("<th class=\"name-small\">"+team[n].speciesName+" <span>"+team[n].generateMovesetStr()+"</span></th>");
+					$row.find("tr").append("<th class=\"name-small\">"+team[n].speciesName+" <span>"+team[n].generateMovesetStr()+"<br>"+ team[n].ivs.atk + "/" + team[n].ivs.def + "/" + team[n].ivs.hp + "</span></th>");
 
-					csv += team[n].speciesName+" "+team[n].generateMovesetStr();
+					csv += team[n].speciesName+" "+team[n].generateMovesetStr() + " " + team[n].ivs.atk + "/" + team[n].ivs.def + "/" + team[n].ivs.hp;
 					if(n < team.length -1){
 						csv += ',';
 					}
@@ -1053,9 +1052,9 @@ var InterfaceMaster = (function () {
 
 					// Add results to matrix table
 
-					$row = $("<tr><th class=\"name\">"+pokemon.speciesName+" <span>"+pokemon.generateMovesetStr()+"</span></th></tr>");
+					$row = $("<tr><th class=\"name\">"+pokemon.speciesName+" <span>"+pokemon.generateMovesetStr()+"<br>" + pokemon.ivs.atk + "/" + pokemon.ivs.def + "/" + pokemon.ivs.hp + "</span></th></tr>");
 
-					csv += pokemon.speciesName + ' ' + pokemon.generateMovesetStr() + ',';
+					csv += pokemon.speciesName + ' ' + pokemon.generateMovesetStr() + ' ' + + pokemon.ivs.atk + "/" + pokemon.ivs.def + "/" + pokemon.ivs.hp + ',';
 
 					for(var n = 0; n < r.matchups.length; n++){
 						var $cell = $("<td><a class=\"rating star\" href=\"#\" target=\"blank\"><span></span></a></td>");
@@ -1118,7 +1117,7 @@ var InterfaceMaster = (function () {
 
 				var battles = [];
 				var ratings = [];
-				var simCount = 500;
+				var simCount = 250;
 
 				for(var i = 0; i < simCount; i++){
 					var b = new Battle();
@@ -1622,7 +1621,7 @@ var InterfaceMaster = (function () {
 				var move = subject.chargedMoves[moveIndex];
 				var effectiveness = target.typeEffectiveness[move.type];
 
-				displayDamage = battle.calculateDamageByStats(subject.stats.atk * subject.shadowAtkMult, target.stats.def * target.shadowDefMult, effectiveness, move);
+				displayDamage = battle.calculateDamageByStats(subject, target, subject.stats.atk * subject.shadowAtkMult, target.stats.def * target.shadowDefMult, effectiveness, move);
 
 				pokeSelectors[selectorIndex].animateDamage(displayDamage)
 			}
@@ -2153,6 +2152,12 @@ var InterfaceMaster = (function () {
 
 					if(move.buffs){
 						$(".modal .check.buffs").show();
+
+						if(move.buffApplyChance == 1){
+							$(".modal .check.buffs").addClass("on");
+						} else{
+							$(".modal .check.buffs").removeClass("on");
+						}
 					} else{
 						$(".modal .check.buffs").hide();
 					}

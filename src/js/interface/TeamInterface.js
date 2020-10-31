@@ -328,6 +328,10 @@ var InterfaceMaster = (function () {
 				var allowShadows = $(".team-option .check.allow-shadows").hasClass("on");
 				var baitShields = $(".team-option .check.shield-baiting").hasClass("on");
 
+				if(battle.getCup().name == "shadow"){
+					allowShadows = true;
+				}
+
 				// Get team and validate results
 
 				var team = multiSelectors[0].getPokemonList();
@@ -457,6 +461,11 @@ var InterfaceMaster = (function () {
 				while((count < total)&&(i < counterRankings.length)){
 					var r = counterRankings[i];
 
+					if(r.speciesId.indexOf("_mega") > -1){
+						i++;
+						continue;
+					}
+
 					if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
 						i++;
 						continue;
@@ -575,6 +584,11 @@ var InterfaceMaster = (function () {
 				while((count < total)&&(i < counterRankings.length)){
 					var r = counterRankings[i];
 
+					if(r.speciesId.indexOf("_mega") > -1){
+						i++;
+						continue;
+					}
+
 					if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
 						i++;
 						continue;
@@ -670,7 +684,7 @@ var InterfaceMaster = (function () {
 
 				// For Season 2 continentals, exclude Pokemon in already occupied slots
 
-				if((battle.getCup().name == "continentals-2")&&(team.length < 6)){
+				if((battle.getCup().name == "grunt")&&(team.length < 6)){
 					// Add ineligible Pokemon to the exclusion list
 					var slots = battle.getCup().slots;
 
@@ -714,6 +728,11 @@ var InterfaceMaster = (function () {
 
 				while((count < total)&&(i < altRankings.length)){
 					var r = altRankings[i];
+
+					if(r.speciesId.indexOf("_mega") > -1){
+						i++
+						continue;
+					}
 
 					if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
 						i++
@@ -828,7 +847,7 @@ var InterfaceMaster = (function () {
 					}
 
 					// Add slot label for Continentals
-					if(battle.getCup().name == "continentals-2"){
+					if(battle.getCup().name == "grunt"){
 						var tierName = "";
 						var slot = 0;
 

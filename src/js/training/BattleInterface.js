@@ -725,7 +725,7 @@ var BattlerMaster = (function () {
 
 					for(var n = 0; n < team.length; n++){
 						var pokemon = team[n];
-						var pokeStr = pokemon.speciesName + ' ' + pokemon.fastMove.abbreviation;
+						var pokeStr = pokemon.speciesId + ' ' + pokemon.fastMove.abbreviation;
 						var chargedMoveAbbrevations = [];
 
 						for(var k = 0; k < pokemon.chargedMoves.length; k++){
@@ -736,11 +736,7 @@ var BattlerMaster = (function () {
 						chargedMoveAbbrevations.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
 
 						for(var k = 0; k < chargedMoveAbbrevations.length; k++){
-							if(k == 0){
-								pokeStr += "+" + chargedMoveAbbrevations[k];
-							} else{
-								pokeStr += "/" + chargedMoveAbbrevations[k];
-							}
+							pokeStr += "/" + chargedMoveAbbrevations[k];
 						}
 
 						// Add to team string
@@ -765,7 +761,7 @@ var BattlerMaster = (function () {
 					backupPokeStrs.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
 
 					for(var n = 0; n < backupPokeStrs.length; n++){
-						teamStr += " " + backupPokeStrs[n];
+						teamStr += "|" + backupPokeStrs[n];
 					}
 
 					teamStrs.push(teamStr);

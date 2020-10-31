@@ -42,10 +42,10 @@ require_once '../header.php';
 				<option value="1500 all">Great League</option>
 				<option value="2500 all">Ultra League</option>
 				<option value="10000 all">Master League</option>
-				<option value="1500 sinister">Silph Sinister Cup</option>
-				<option value="1500 ferocious">Silph Ferocious Cup</option>
-				<option value="1500 timeless">Silph Timeless Cup</option>
-				<option value="1500 sorcerous">Silph Sorcerous Cup</option>
+				<option value="1500 flying">Flying Cup</option>
+				<option value="1500 halloween">Halloween Cup</option>
+				<option value="1500 sunrise">Silph Sunrise Cup</option>
+				<option value="1500 marsh">Silph Marsh Cup</option>
 			</select>
 			<h3 class="section-title">Difficulty</h3>
 			<select class="difficulty-select">
@@ -59,7 +59,6 @@ require_once '../header.php';
 			<select class="team-method-select">
 				<option value="random">Random</option>
 				<option value="manual">Manual</option>
-				<option value="featured">Featured Teams</option>
 			</select>
 			<?php require '../modules/pokemultiselect.php'; ?>
 			<div class="featured-team-section">
@@ -132,9 +131,9 @@ require_once '../header.php';
 <div class="section white updates">
 	<h3>What's New</h3>
 
-	<h4>v1.15.15 (August 10, 2020)</h4>
+	<h4>v1.17.6 (October 10, 2020)</h4>
 	<ul>
-		<li>Sinister, Ferocious, Timeless, and Sorcerous Silph Arena formats are now available in Training Battles.</li>
+		<li>Training Battles for GO Battle League can now utilize preset teams to help you prepare for and recognize common teams of 3.</li>
 	</ul>
 </div>
 

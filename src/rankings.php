@@ -30,134 +30,48 @@ switch($cp){
 }
 
 switch($cup){
-	case "boulder":
-		$league = 'Boulder Cup';
-		break;
-
-	case "twilight":
-		$league = 'Twilight Cup';
-		break;
-
-	case "tempest":
-		$league = 'Tempest Cup';
-		break;
-
-	case "kingdom":
-		$league = 'Kingdom Cup';
-		break;
-
-	case "nightmare":
-		$league = 'Nightmare Cup';
-		break;
-
-	case "regionals-1":
-		$league = 'Season 1 Regionals';
-		break;
-
-	case "championships-1":
-		$league = 'Season 1 Championships';
-		break;
-
-	case "rainbow":
-		$league = 'Rainbow Cup';
-		break;
-
-	case "jungle":
-		$league = 'Jungle Cup';
-		break;
-
-	case "safari":
-		$league = 'Safari Cup';
-		break;
-
-	case "fantasy":
-		$league = 'Fantasy Cup';
-		break;
-
-	case "sinister":
-	case "sinister-mirror":
-		$league = 'Sinister Cup';
-		break;
-
-	case "ferocious":
-	case "ferocious-mirror":
-		$league = 'Ferocious Cup';
-		break;
-
-	case "timeless":
-	case "timeless-mirror":
-		$league = 'Timeless Cup';
-		break;
-
-	case "fusion":
-		$league = 'Fusion Cup';
-		break;
-
-	case "rose":
-		$league = 'Rose Cup';
-		break;
-
-	case "toxic":
-		$league = 'Toxic Cup';
-		break;
-
-	case "voyager":
-		$league = 'Voyager Cup';
-		break;
-
-	case "beam":
-		$league = 'Get Beamed';
-		break;
-
-	case "forest":
-		$league = 'Forest';
-		break;
 
 	case "premier":
 		$league = 'Premier';
 		break;
 
-	case "grunt-4":
-		$league = 'Grunt Cup 4';
+	case "flying":
+		$league = 'Flying Cup';
 		break;
 
-	case "grunt-6":
-		$league = 'Grunt Cup 6';
+	case "halloween":
+		$league = 'Halloween Cup';
 		break;
 
-	case "sorcerous":
-	case "sorcerous-mirror":
-		$league = 'Sorcerous Cup';
+	case "sunrise":
+		$league = 'Silph Sunrise Cup';
 		break;
 
-	case "sorcerous-bee":
-		$league = 'Sorcerous Cup';
+	case "marsh":
+		$league = 'Silph Marsh Cup';
 		break;
 
-	case "goteamup":
-		$league = 'GOTeamUp';
+	case "uber":
+		$league = 'Uber Tier Cup';
 		break;
 
-	case "continentals-2":
-		$league = 'Season 2 Continentals';
-		break;
-
-	case "catacomb":
-		$league = 'Catacomb Cup';
-		break;
-
-	case "scoville":
-		$league = 'Scoville Cup';
-		break;
-
-	case "mexico":
-		$league = 'México Cup';
-		break;
 }
 
 $META_TITLE = $league . ' PvP Rankings';
 
 $META_DESCRIPTION = 'Explore the top Pokemon for Pokemon GO PvP in the ' . $league . '. Rankings include top moves, matchups, and counters for every Pokemon, as well as ratings for different roles.';
+
+if(isset($_GET['p'])){
+	// Put Pokemon names in the meta title
+
+	$name = ucwords(str_replace('_',' ', explode('-', htmlspecialchars($_GET['p']))[0]));
+
+	$META_TITLE = $name . ' ' . $league . ' PvP Rankings';
+
+	$META_DESCRIPTION = 'Explore key matchups, moves, and counters for ' . $name . ' in ' . $league . '.';
+
+	$CANONICAL = '/rankings/' . $cup . '/' . $cp . '/overall/' . htmlspecialchars($_GET['p']) . '/';
+}
 
 require_once 'header.php';
 
@@ -196,6 +110,8 @@ require_once 'header.php';
 
 	<p class="description link hide"><b>Tournament Info:</b> <a href="#" target="_blank"></a></p>
 
+	<p>You can enter your GBL encounters <a href="https://docs.google.com/forms/d/e/1FAIpQLScc_gCvXLTUs5tHORiPpEmuF6yL6UJ0j0P03oSNDRQvNNHa0w/viewform" target="_blank">here</a> to help provide usage data for ranking updates.</p>
+
 	<p>Click or tap the rankings below for more details.</p>
 
 	<div class="check on limited hide"><span></span>Show <div class="limited-title">Limited Pokemon</div>*</div>
@@ -205,12 +121,12 @@ require_once 'header.php';
 
 	<div class="continentals hide">
 		<div class="flex">
-			<div class="check" value="0"><span></span>Slot 1</div>
-			<div class="check" value="1"><span></span>Slot 2</div>
-			<div class="check" value="2"><span></span>Slot 3</div>
-			<div class="check" value="3"><span></span>Slot 4</div>
-			<div class="check" value="4"><span></span>Slot 5</div>
-			<div class="check" value="5"><span></span>Slot 6</div>
+			<div class="check" value="0"><span></span>Cliff</div>
+			<div class="check" value="1"><span></span>Sierra</div>
+			<div class="check" value="2"><span></span>Arlo</div>
+			<div class="check" value="3"><span></span>Giovanni</div>
+			<div class="check" value="4"><span></span>James</div>
+			<div class="check" value="5"><span></span>Jessie</div>
 		</div>
 	</div>
 

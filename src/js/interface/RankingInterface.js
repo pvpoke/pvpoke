@@ -65,13 +65,13 @@ var InterfaceMaster = (function () {
 
 				// Force 1500 if not general
 
-				if((cup != 'all')&&(cup != 'gen-5')&&(cup != "premier")){
-					league = 1500;
+				if((cup == "premier")&&(league == 1500)){
+					league = 10000;
 
-					$(".league-select option[value=\"1500\"]").prop("selected","selected");
+					$(".league-select option[value=\"10000\"]").prop("selected","selected");
 				}
 
-				if((cup == "premier")&&(league == 1500)){
+				if((cup == "uber")&&(league != 10000)){
 					league = 10000;
 
 					$(".league-select option[value=\"10000\"]").prop("selected","selected");
@@ -156,7 +156,14 @@ var InterfaceMaster = (function () {
 					var r = rankings[i];
 
 					var pokemon = new Pokemon(r.speciesId, 0, battle);
-					pokemon.initialize();
+
+					if(! pokemon.speciesId){
+						rankings.splice(i, 1);
+						i--;
+						continue;
+					}
+
+					pokemon.initialize(true);
 					pokemon.selectMove("fast", r.moveset[0]);
 					pokemon.selectMove("charged", r.moveset[1], 0);
 
@@ -314,7 +321,7 @@ var InterfaceMaster = (function () {
 									$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
 								}
 
-								if(val == "continentals-2"){
+								if(val == "grunt"){
 									$(".continentals").removeClass("hide");
 								} else{
 									$(".continentals").addClass("hide");
@@ -420,7 +427,7 @@ var InterfaceMaster = (function () {
 					category = "overall";
 				}
 
-				if(cup == "continentals-2"){
+				if(cup == "grunt"){
 					$(".continentals").removeClass("hide");
 				} else{
 					$(".continentals").addClass("hide");
@@ -462,7 +469,7 @@ var InterfaceMaster = (function () {
 				self.displayRankings(category, cp, cup);
 				self.pushHistoryState(cup, cp, category, null);
 
-				if(cup == "continentals-2"){
+				if(cup == "grunt"){
 					$(".continentals").removeClass("hide");
 				} else{
 					$(".continentals").addClass("hide");
@@ -559,6 +566,10 @@ var InterfaceMaster = (function () {
 					}
 
 					$details.append($section);
+				}
+
+				if(pokemon.hasTag("mega")){
+					$details.append("<div class=\"detail-section\"><b>Mega Evolutions are currently not allowed in GO Battle League. Use this information to help prepare if they are allowed in the future. Don't invest Mega Energy or Elite TM's until you can use these Pokemon.</b></div>");
 				}
 
 				// Display move data

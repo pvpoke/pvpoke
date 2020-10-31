@@ -47,6 +47,11 @@
 		</div>
 		<div class="clear"></div>
 
+		<div class="mega-cp-container">
+			<h3 class="base-name section-title">Pokemon</h3>
+			<h3 class="mega-cp">cp <span class="stat"></span></h3>
+		</div>
+
 		<div class="advanced-section">
 			<a class="advanced" href="#">Advanced Stats/IVs <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 			<div class="fields">
@@ -71,6 +76,7 @@
 						<div class="check on" value="40"><span></span>40</div>
 						<div class="check" value="41"><span></span>41</div>
 					</div>
+					<div class="check auto-level on"><span></span>Auto level</div>
 					<button class="maximize-stats">Maximize</button>
 					<button class="restore-default">Default</button>
 				</div>

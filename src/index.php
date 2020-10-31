@@ -1,6 +1,7 @@
 <?php require_once 'header.php'; ?>
 
 <div class="section home white">
+
 	<p>Welcome to PvPoke.com! We're an open-source tool for simulating, ranking, and building teams for Pokemon GO PvP (player versus player) battles. Check out the links below to get started.</p>
 
 	<a href="<?php echo $WEB_ROOT; ?>battle/" class="button">
@@ -27,20 +28,14 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.15.15 (August 10, 2020)</h4>
+	<h4>v1.17.8 (October 10, 2020)</h4>
 	<ul>
-		<li>Sinister, Ferocious, Timeless, and Sorcerous Silph Arena formats are now available in Training Battles.</li>
-	</ul>
-	<h4>v1.15.15 (August 4, 2020)</h4>
-	<ul>
-		<li>Custom Rankings now output a custom meta group. You can save or copy this to use for Multi-Battle or the Team Builder.</li>
+		<li>Moves now have unique abbreviations (listed in Matrix Battle results). Matrix Battle results also list IV's.</li>
 	</ul>
 
-	<h4>v1.15.14 (August 1, 2020)</h4>
+	<h4>v1.17.7 (October 10, 2020)</h4>
 	<ul>
-		<li>Training Battles are now available for Ultra League Premier Cup.</li>
-		<li>Added CSV export for Rankings and Custom Rankings.</li>
-		<li>Fixed an issue where deleting a custom group could result in a different group being deleted in Matrix Battle.</li>
+		<li>Mega Evolutions are now listed in the rankings. Note that Mega Evolutions are still not allowed in GO Battle League.</li>
 	</ul>
 
 	<h3>Latest Article</h3>

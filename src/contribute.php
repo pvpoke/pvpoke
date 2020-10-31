@@ -50,6 +50,7 @@ require_once 'header.php'; ?>
 		<div class="supporter">WillSimsMS</div>
 		<div class="supporter">Melgood711</div>
 		<div class="supporter">PvP&Me/BrajSF</div>
+		<div class="supporter">MysticalTrack</div>
 	</div>
 
 	<h2 class="center">Master Supporters</h2>
@@ -160,6 +161,30 @@ require_once 'header.php'; ?>
 		<div class="supporter-container">
 			<div class="space"></div>
 			<div class="supporter"><a href="https://twitter.com/MysticSparkle24" target="_blank">MysticSparkle24</a></div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/scisensei.png"/>
+			<div class="supporter"><a href="https://www.twitch.tv/supersciencesensei" target="_blank">SuperScienceSensei</a></div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/sassifrass.jpg"/>
+			<div class="supporter"><a href="https://www.twitch.tv/sassifrass" target="_blank">sassifrass</a></div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/kaiser.jpg"/>
+			<div class="supporter"><a href="https://www.twitch.tv/kaiserneiner" target="_blank">KaiserNeiner</a></div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/graceunderfiero.png"/>
+			<div class="supporter"><a href="https://www.twitch.tv/GraceUnderFiero" target="_blank">GraceUnderFiero</a></div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/jordiepop.png"/>
+			<div class="supporter"><a href="https://www.youtube.com/user/jordangerm" target="_blank">Jordie Pop</a></div>
+		</div>
+		<div class="supporter-container">
+			<div class="space"></div>
+			<div class="supporter">	theghost087</div>
 		</div>
 	</div>
 </div>

@@ -12,13 +12,35 @@ var GameMaster = (function () {
 		object.teamPools = [];
 		object.loadedData = 0;
 
-		$.getJSON( webRoot+"data/"+settings.gamemaster+".json?v="+siteVersion, function( data ){
+		if(settings.gamemaster == "gamemaster-mega"){
+			$(".mega-warning").show();
+		}
+
+		var gmVersion = settings.gamemaster;
+
+		if(gmVersion == "gamemaster-mega"){
+			gmVersion = "gamemaster";
+		}
+
+		$.getJSON( webRoot+"data/"+gmVersion+".json?v="+siteVersion, function( data ){
 			object.data = data;
 
-			// Sort Pokemon alphabetically for searching
-			object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+			if(settings.gamemaster != "gamemaster-mega"){
+				// Sort Pokemon alphabetically for searching
+				object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
 
-			InterfaceMaster.getInstance().init(object);
+				InterfaceMaster.getInstance().init(object);
+			} else{
+				// Load additional mega pokemon
+				$.getJSON( webRoot+"data/megas.json?v="+siteVersion, function( data ){
+
+					// Sort Pokemon alphabetically for searching
+					object.data.pokemon = object.data.pokemon.concat(data);
+					object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+
+					InterfaceMaster.getInstance().init(object);
+				});
+			}
 		});
 
 		// Return a Pokemon object given species ID
@@ -114,48 +136,50 @@ var GameMaster = (function () {
 					// Duplicate the entry for the Shadow version of the Pokemon
 					// Your clones are very impressive, you must be very proud
 
-					entry = JSON.parse(JSON.stringify(entry)); // Your clones are very impressive, you must be very proud
+					if(!pokemon.hasTag("mega")){
+						entry = JSON.parse(JSON.stringify(entry)); // Your clones are very impressive, you must be very proud
 
-					entry.speciesId += "_shadow";
-					entry.speciesName += " (Shadow)";
-					entry.tags.splice(entry.tags.indexOf("shadowEligible"), 1);
-					entry.tags.push("shadow");
+						entry.speciesId += "_shadow";
+						entry.speciesName += " (Shadow)";
+						entry.tags.splice(entry.tags.indexOf("shadowEligible"), 1);
+						entry.tags.push("shadow");
 
-					// Remove all legacy and exclusive moves that aren't available via Elite TM
-					if(entry.legacyMoves){
-						for(var i = 0; i < entry.fastMoves.length; i++){
-							var remove = true;
-							if(entry.legacyMoves.indexOf(entry.fastMoves[i]) > -1){
-								if((entry.eliteMoves)&&(entry.eliteMoves.indexOf(entry.fastMoves[i]) > -1)){
-									remove = false;
-								}
+						// Remove all legacy and exclusive moves that aren't available via Elite TM
+						if(entry.legacyMoves){
+							for(var i = 0; i < entry.fastMoves.length; i++){
+								var remove = true;
+								if(entry.legacyMoves.indexOf(entry.fastMoves[i]) > -1){
+									if((entry.eliteMoves)&&(entry.eliteMoves.indexOf(entry.fastMoves[i]) > -1)){
+										remove = false;
+									}
 
-								if(remove){
-									entry.fastMoves.splice(i, 1);
-									i--;
-								}
-							}
-						}
-
-						for(var i = 0; i < entry.chargedMoves.length; i++){
-							var remove = true;
-							if(entry.legacyMoves.indexOf(entry.chargedMoves[i]) > -1){
-								if((entry.eliteMoves)&&(entry.eliteMoves.indexOf(entry.chargedMoves[i]) > -1)){
-									remove = false;
-								}
-
-								if(remove){
-									entry.chargedMoves.splice(i, 1);
-									i--;
+									if(remove){
+										entry.fastMoves.splice(i, 1);
+										i--;
+									}
 								}
 							}
+
+							for(var i = 0; i < entry.chargedMoves.length; i++){
+								var remove = true;
+								if(entry.legacyMoves.indexOf(entry.chargedMoves[i]) > -1){
+									if((entry.eliteMoves)&&(entry.eliteMoves.indexOf(entry.chargedMoves[i]) > -1)){
+										remove = false;
+									}
+
+									if(remove){
+										entry.chargedMoves.splice(i, 1);
+										i--;
+									}
+								}
+							}
+
+							delete entry.legacyMoves;
 						}
 
-						delete entry.legacyMoves;
+						delete entry.level25CP;
+						object.data.pokemon.push(entry);
 					}
-
-					delete entry.level25CP;
-					object.data.pokemon.push(entry);
 				} else{
 					if(entry.tags){
 						if(entry.tags.indexOf("shadow") > -1){
@@ -248,8 +272,14 @@ var GameMaster = (function () {
 					var arr = m.moveId.split('_');
 					var abbreviation = '';
 
-					for(var i = 0; i < arr.length; i++){
-						abbreviation += arr[i].charAt(0);
+					if(m.abbreviation){
+						// Use predefined abbreviation if set
+						abbreviation = m.abbreviation;
+					} else{
+						// Make abbreviation from first character of each word
+						for(var i = 0; i < arr.length; i++){
+							abbreviation += arr[i].charAt(0);
+						}
 					}
 
 					move = {
@@ -320,7 +350,7 @@ var GameMaster = (function () {
 			var key = cup + "" + category + "" + league;
 
 			if(! object.rankings[key]){
-				var file = webRoot+"data/"+cup+"/"+category+"/"+"rankings-"+league+".json?v="+siteVersion;
+				var file = webRoot+"data/rankings/"+cup+"/"+category+"/"+"rankings-"+league+".json?v="+siteVersion;
 
 				console.log(file);
 
@@ -409,11 +439,11 @@ var GameMaster = (function () {
 				minStats = 2800;
 			}
 
-			var bannedList = ["mewtwo","mewtwo_armored","giratina_altered","groudon","kyogre","rayquaza","palkia","dialga","heatran","giratina_origin","darkrai","cobalion","terrakion","virizion","thundurus_incarnate","regigigas","tornadus_incarnate","landorus_incarnate", "reshiram", "zekrom", "kyurem", "mewtwo_shadow"];
+			var bannedList = ["mewtwo","mewtwo_armored","giratina_altered","groudon","kyogre","rayquaza","palkia","dialga","heatran","giratina_origin","darkrai","cobalion","terrakion","virizion","thundurus_incarnate","regigigas","tornadus_incarnate","landorus_incarnate", "reshiram", "zekrom", "kyurem"];
 			var permaBannedList = ["rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","phione","manaphy","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","kecleon"]; // Don't rank these Pokemon at all yet
 
 			var maxDexNumber = 493;
-			var releasedGen5 = ["snivy","servine","serperior","tepig","pignite","emboar","oshawott","dewott","samurott","lillipup","herdier","stoutland","purrloin","liepard","pidove","tranquill","unfezant","blitzle","zebstrika","foongus","amoonguss","drilbur","excadrill","litwick","lampent","chandelure","golett","golurk","deino","zweilous","hydreigon","pansage","panpour","pansear","simisage","simipour","simisear","ferroseed","ferrothorn","heatmor","durant","patrat","watchog","klink","klang","klinklang","yamask","cofagrigus","cobalion","terrakion","virizion","cryogonal","cubchoo","beartic","meltan","roggenrola","boldore","gigalith","tympole","palpitoad","seismitoad","dwebble","crustle","trubbish","garbodor","karrablast","escavalier","joltik","galvantula","shelmet","accelgor","timburr","gurdurr","conkeldurr","tirtouga","carracosta","archen","archeops","axew","fraxure","haxorus","throh","sawk","maractus","sigilyph","basculin","venipede","whirlipede","scolipede","minccino","cinccino","darumaka","darmanitan_standard","scraggy","scrafty","woobat","swoobat","tornadus_incarnate","audino","alomomola","thundurus_incarnate","rufflet","braviary","landorus_incarnate","genesect","solosis","duosion","reuniclus","gothita","gothitelle","gothorita","stunfisk","reshiram","zekrom","stunfisk_galarian","darumaka_galarian","darmanitan_galarian_standard","melmetal","obstagoon","perrserker","farfetchd_galarian", "kyurem", "ducklett", "swanna", "petilil", "lilligant", "victini", "elgyem", "beheeyem","bouffalant","sewaddle","leavanny","cottonee","whimsicott","emolga"];
+			var releasedGen5 = ["snivy","servine","serperior","tepig","pignite","emboar","oshawott","dewott","samurott","lillipup","herdier","stoutland","purrloin","liepard","pidove","tranquill","unfezant","blitzle","zebstrika","foongus","amoonguss","drilbur","excadrill","litwick","lampent","chandelure","golett","golurk","deino","zweilous","hydreigon","pansage","panpour","pansear","simisage","simipour","simisear","ferroseed","ferrothorn","heatmor","durant","patrat","watchog","klink","klang","klinklang","yamask","cofagrigus","cobalion","terrakion","virizion","cryogonal","cubchoo","beartic","meltan","roggenrola","boldore","gigalith","tympole","palpitoad","seismitoad","dwebble","crustle","trubbish","garbodor","karrablast","escavalier","joltik","galvantula","shelmet","accelgor","timburr","gurdurr","conkeldurr","tirtouga","carracosta","archen","archeops","axew","fraxure","haxorus","throh","sawk","maractus","sigilyph","basculin","venipede","whirlipede","scolipede","minccino","cinccino","darumaka","darmanitan_standard","scraggy","scrafty","woobat","swoobat","tornadus_incarnate","audino","alomomola","thundurus_incarnate","rufflet","braviary","landorus_incarnate","genesect","solosis","duosion","reuniclus","gothita","gothitelle","gothorita","stunfisk","reshiram","zekrom","stunfisk_galarian","darumaka_galarian","darmanitan_galarian_standard","melmetal","obstagoon","perrserker","farfetchd_galarian", "kyurem", "ducklett", "swanna", "petilil", "lilligant", "victini", "elgyem", "beheeyem","bouffalant","sewaddle","leavanny","cottonee","whimsicott","emolga","deerling","sawsbuck","vullaby","mandibuzz","pawniard","bisharp","sandile","krokorok","krookodile","runerigus","sirfetchd"];
 
 			// Aggregate filters
 
@@ -703,7 +733,6 @@ var GameMaster = (function () {
 
 					for(var n = 0; n < pokemonList.length; n++){
 						if(pokemonList[n].speciesId == pokemon.speciesId){
-
 							// Set Fast Move
 
 							if(pokemonList[n].fastMove){
@@ -720,11 +749,9 @@ var GameMaster = (function () {
 							}
 
 							// Set weight modifier
-
-							if(pokemonList[n].weight){
+							if (typeof pokemonList[n].weight !== 'undefined') {
 								pokemon.weightModifier = pokemonList[n].weight;
 							}
-
 							break;
 						}
 					}

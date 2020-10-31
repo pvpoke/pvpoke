@@ -38,18 +38,7 @@ var RankerMaster = (function () {
 
 			var self = this;
 
-			// Load override data
-
-			var file = webRoot+"data/rankingoverrides.json?v="+siteVersion;
-			var overrides = [];
-
-			$.getJSON( file, function( data ){
-
-				// Sort alphabetically
-
-				overrides = data;
-				console.log("Ranking overrides loaded [" + overrides.length + "]");
-			});
+			var overrides = []; // Moveset override data
 
 			// Load existing rankings to get best movesets
 
@@ -416,6 +405,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if((cup.name == "uber")&&(battle.getCP() == 10000)){
+					iterations = 1;
+				}
+
 				if((cup.name == "all")&&(battle.getCP() == 2500)){
 					iterations = 1;
 				}
@@ -449,6 +442,18 @@ var RankerMaster = (function () {
 				}
 
 				if((cup.name == "sorcerous-mirror")||(cup.name == "sinister-mirror")||(cup.name == "timeless-mirror")){
+					iterations = 1;
+				}
+
+				if(cup.name == "flying"){
+					iterations = 1;
+				}
+
+				if(cup.name == "halloween"){
+					iterations = 1;
+				}
+
+				if(cup.name == "sunrise"){
 					iterations = 1;
 				}
 
@@ -491,6 +496,14 @@ var RankerMaster = (function () {
 								weight = 1;
 							}
 
+							if(cup.name == "flying"){
+								weight = 1;
+							}
+
+							if(cup.name == "halloween"){
+								weight = 1;
+							}
+
 							if((cup.name == "sorcerous-mirror")||(cup.name == "sinister-mirror")||(cup.name == "timeless-mirror")){
 								weight = 1;
 							}
@@ -501,7 +514,7 @@ var RankerMaster = (function () {
 								weight = 0;
 							}
 
-							if(pokemonList[j].weightModifier){
+							if (typeof pokemonList[j].weightModifier !== 'undefined') {
 								weight *= pokemonList[j].weightModifier;
 							} else{
 								if((cup.name == "all")&&(battle.getCP() == 1500)){
@@ -647,7 +660,6 @@ var RankerMaster = (function () {
 					var json = JSON.stringify(rankings);
 					var league = battle.getCP();
 
-					console.log(json);
 					console.log("/"+cup.name+"/"+category+"/rankings-"+league+".json");
 
 					$.ajax({

@@ -115,6 +115,7 @@ require_once 'header.php'; ?>
 					<div class="check" value="regional"><span></span> Regional</div>
 					<div class="check" value="shadow"><span></span> Shadow</div>
 					<div class="check" value="shadoweligible"><span></span> Shadow Eligible</div>
+					<div class="check" value="mega"><span></span> Mega</div>
 				</div>
 			</div>
 
