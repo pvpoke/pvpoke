@@ -31,7 +31,10 @@
         "name": "all",
         "title": "All Pokemon",
         "include": [],
-        "exclude": []
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }]
     }, {
         "name": "custom",
         "title": "Custom",
@@ -591,7 +594,13 @@
 			"filterType": "tag",
 			"values": ["mega"]
 		}]
-	}],
+	}, {
+        "name": "uber",
+        "title": "Uber Tier Cup",
+		"link": "https://twitter.com/PoGoKieng/status/1321532380407103493",
+        "include": [],
+        "exclude": []
+    }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega"],
     "pokemonRegions": [{
         "string": "gen1",
@@ -4216,7 +4225,8 @@
         },
         "types": ["fire", "ghost"],
         "fastMoves": ["HEX", "ROCK_SMASH", "FIRE_SPIN"],
-        "chargedMoves": ["BONE_CLUB", "FIRE_BLAST", "SHADOW_BALL", "FLAME_WHEEL"],
+        "chargedMoves": ["BONE_CLUB", "FIRE_BLAST", "SHADOW_BALL", "FLAME_WHEEL", "SHADOW_BONE"],
+		"eliteMoves": ["SHADOW_BONE"],
         "tags": ["alolan"],
         "defaultIVs": {
             "cp1500": [31, 7, 11, 14],

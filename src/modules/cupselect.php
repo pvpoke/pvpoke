@@ -6,6 +6,7 @@
 	<option value="tsa-3" cup="sunrise">Silph Sunrise Cup</option>
 	<option value="tsa-3" cup="marsh">Silph Marsh Cup</option>
 	<option value="community" cup="goteamup">GoStadium GOTeamUp</option>
+	<option value="community" cup="uber">Uber Tier Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>
@@ -30,6 +31,7 @@
 	<option value="shadow" cat="community">Shadow Cup</option>
 	<option value="goteamup" cat="community">GO Stadium GOTeamUp</option>
 	<option value="cliffhanger" cat="community">GO Stadium Cliffhanger</option>
+	<option value="uber" cat="community">Uber Tier Cup</option>
 	<option value="scoville" cat="community">Scoville Cup</option>
 	<option value="mexico" cat="community">México Cup</option>
 	<option value="kaiser" cat="community">Kaiser Invitational</option>
