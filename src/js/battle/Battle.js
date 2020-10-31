@@ -744,17 +744,18 @@ function Battle(){
 				}
 
 				// AI switch
-				if(phaseProps.actors.indexOf(1) > -1){
-					var switchChoice = players[1].getAI().decideSwitch();
+				for(var i = 0; i < phaseProps.actors.length; i++){
+					var playerIndex = phaseProps.actors[i];
+					var switchChoice = players[playerIndex].getAI().decideSwitch();
 					var waitTime = 500;
 
-					if((players[1].getAI().hasStrategy("WAIT_CLOCK"))&&(players[1].getSwitchTimer() > 0)&&(players[1].getRemainingPokemon() > 1)){
-						waitTime = Math.min(players[1].getSwitchTimer() - 1000, 5000);
+					if((players[playerIndex].getAI().hasStrategy("WAIT_CLOCK"))&&(players[playerIndex].getSwitchTimer() > 0)&&(players[playerIndex].getRemainingPokemon() > 1)){
+						waitTime = Math.min(players[playerIndex].getSwitchTimer() - 1000, 5000);
 						waitTime = Math.floor(Math.random() * waitTime) + 2000;
 					}
 
 					setTimeout(function(){
-						self.queueAction(1, "switch", switchChoice);
+						self.queueAction(playerIndex, "switch", switchChoice);
 					}, waitTime);
 				}
 			} else{
