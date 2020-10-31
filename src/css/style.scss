@@ -92,6 +92,21 @@ $color-stat-debuff:#0158d0;
 	background: linear-gradient(to bottom, $light 30%,$dark 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
+@mixin half-gradient($light, $dark){
+	/* used to display an extra background gradient on the right half */
+	content: '';
+	position: absolute;
+	display: block;
+	z-index: 10; /* sibling elements need non-static positioning and a higher z-index */
+	top: 0;
+	right: 0;
+	width: 50%;
+	height: 100%;
+	background: linear-gradient(to bottom, $light 30%,$dark 99%);
+	border-top-right-radius: inherit;
+    border-bottom-right-radius: inherit;
+}
+
 /* STRUCTURE */
 
 html{
@@ -3108,6 +3123,30 @@ a.toggle{
 .rock{ @include gradient($color-rock-dark, $color-rock-light); }
 .steel{ @include gradient($color-steel-dark, $color-steel-light); }
 .water{ @include gradient($color-water-dark, $color-water-light); }
+
+.rank[type-2='bug']::after { @include half-gradient($color-bug-dark, $color-bug-light); }
+.rank[type-2='dark']::after { @include half-gradient($color-dark-dark, $color-dark-light); }
+.rank[type-2='dragon']::after { @include half-gradient($color-dragon-dark, $color-dragon-light); }
+.rank[type-2='electric']::after { @include half-gradient($color-electric-dark, $color-electric-light); }
+.rank[type-2='fairy']::after { @include half-gradient($color-fairy-dark, $color-fairy-light); }
+.rank[type-2='fighting']::after { @include half-gradient($color-fighting-dark, $color-fighting-light); }
+.rank[type-2='fire']::after { @include half-gradient($color-fire-dark, $color-fire-light); }
+.rank[type-2='flying']::after { @include half-gradient($color-flying-dark, $color-flying-light); }
+.rank[type-2='ghost']::after { @include half-gradient($color-ghost-dark, $color-ghost-light); }
+.rank[type-2='grass']::after { @include half-gradient($color-grass-dark, $color-grass-light); }
+.rank[type-2='ground']::after { @include half-gradient($color-ground-dark, $color-ground-light); }
+.rank[type-2='ice']::after { @include half-gradient($color-ice-dark, $color-ice-light); }
+.rank[type-2='normal']::after { @include half-gradient($color-normal-dark, $color-normal-light); }
+.rank[type-2='poison']::after { @include half-gradient($color-poison-dark, $color-poison-light); }
+.rank[type-2='psychic']::after { @include half-gradient($color-psychic-dark, $color-psychic-light); }
+.rank[type-2='rock']::after { @include half-gradient($color-rock-dark, $color-rock-light); }
+.rank[type-2='steel']::after { @include half-gradient($color-steel-dark, $color-steel-light); }
+.rank[type-2='water']::after { @include half-gradient($color-water-dark, $color-water-light); }
+
+.rank[type-2] > :not(.expand-label) {
+	position:relative;
+	z-index: 20;
+}
 
 .dark, .dragon, .ghost {
 	> .name-container{
