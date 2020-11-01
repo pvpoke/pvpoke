@@ -43,7 +43,7 @@ var InterfaceMaster = (function () {
 			this.loadRankings = function(league, cup){
 				league = parseInt(league);
 
-				$(".rankings-container").html('');
+				//$(".rankings-container").html('');
 				$(".loading").show();
 
 				battle.setCP(league);
@@ -60,6 +60,10 @@ var InterfaceMaster = (function () {
 			// Displays the grabbed data. Showoff.
 
 			this.displayRankingData = function(rankings){
+
+				console.log(rankings);
+
+				return false;
 
 				data = rankings;
 

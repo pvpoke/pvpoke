@@ -3276,6 +3276,22 @@ a.toggle {
   margin: 5px 0;
 }
 
+/* TRAINING ANALYSIS */
+.train-table td.poke-name {
+  padding: 4px;
+  border-radius: 12px;
+  width: 200px;
+}
+.train-table td.poke-name .number {
+  padding-right: 10px;
+}
+.train-table td.poke-name .name {
+  font-weight: bold;
+}
+.train-table td.poke-name .moves {
+  font-size: 12px;
+}
+
 @media only screen and (min-width: 721px) {
   .menu {
     position: relative;

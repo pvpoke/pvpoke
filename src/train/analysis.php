@@ -93,9 +93,9 @@ require_once '../header.php';
 
 	<div class="clear"></div>
 
-	<p class="description pokemon"><b>The top performing Pokemon from Training Battles.</p>
+	<p class="description pokemon"><b>The top performing Pokemon from Training Battles.</b></p>
 
-	<p class="description teams"><b>The top performing teams from Training Battles.</p>
+	<p class="description teams"><b>The top performing teams from Training Battles.</b></p>
 
 	<div class="poke-search-container">
 		<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />
@@ -103,7 +103,41 @@ require_once '../header.php';
 	</div>
 
 	<h2 class="loading">Loading data...</h2>
-	<div class="rankings-container clear"></div>
+
+	<table class="train-table">
+		<thead>
+			<tr>
+				<td>Pokemon</td>
+				<td>Avg. Individual<br>Damage</td>
+				<td>Avg. Team<br>Rating</td>
+				<td>Games</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr data="azumarill">
+				<td class="poke-name water">
+					<span class="number">#1</span><span class="name">Azumarill</span>
+					<div class="moves">Bubble, Ice Beam, Hydro Pump</div>
+				</td>
+				<td>129.3%</td>
+				<td>509.3</td>
+				<td>1,024</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="rankings-container clear">
+		<div class="rank water" type-1="water" type-2="fairy" data="azumarill">
+			<div class="name-container">
+				<span class="number">#1</span><span class="name">Azumarill</span>
+				<div class="moves">Bubble, Ice Beam, Hydro Pump</div>
+			</div>
+			<div class="rating-container">
+				<div class="rating">97.2</div>
+				<div class="clear"></div>
+			</div>
+			<div class="details"></div>
+		</div>
+	</div>
 </div>
 
 <a href="#" class="button download-csv">Export to CSV</a>
