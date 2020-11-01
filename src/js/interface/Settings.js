@@ -36,7 +36,8 @@ var InterfaceMaster = (function () {
 						'theme': theme,
 						'matrixDirection': matrixDirection,
 						'gamemaster': gamemaster,
-						'pokeboxId': pokeboxId
+						'pokeboxId': pokeboxId,
+						'pokeboxLastDateTime': settings.pokeboxLastDateTime
 					},
 					dataType:'json',
 					success : function(data) {

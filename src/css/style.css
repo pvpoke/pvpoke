@@ -2717,6 +2717,16 @@ a.download-csv {
   background-size: 20px;
   padding: 4px 8px 4px 30px;
 }
+.modal .pokebox-options a.pvpoke-sponsor {
+  border: 1px solid #000;
+  color: #000;
+  background: url("../img/app_192.png") #eee;
+  background-repeat: no-repeat;
+  background-position: 5px center;
+  background-size: 20px;
+  padding: 4px 8px 4px 30px;
+  margin-left: auto;
+}
 .modal .pokebox-import ol {
   line-height: 30px;
 }

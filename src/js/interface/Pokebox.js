@@ -12,6 +12,7 @@ function Pokebox(element, selector, selectMode, b){
 	var box = [];
 	var filteredBox = [];
 	var maxCount = 100;
+	var lastDateTime = settings.pokeboxLastDateTime; // Last dateTime refreshed
 
 	$el.find("a.open-pokebox").click(openPokebox);
 	$el.find(".pokebox-import").attr("select-mode", selectMode);
@@ -25,10 +26,16 @@ function Pokebox(element, selector, selectMode, b){
 
 			// Add timestamp to bypass cache
 			if(forceLoad){
-				url = url + "?t=" + Date.now();
+				lastDateTime = Date.now();
+			}
+
+			if(lastDateTime > 0){
+				url = url + "?t=" + lastDateTime;
 			}
 
 			console.log(url);
+
+			// Load Pokebox data
 
 			$.ajax({
 				url:url,
@@ -61,9 +68,9 @@ function Pokebox(element, selector, selectMode, b){
 						}
 					}
 
-					// Sort box by CP
+					// Sort box by speciesName
 
-					box.sort((a,b) => (a.cp > b.cp) ? -1 : ((b.cp > a.cp) ? 1 : 0));
+					box.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
 
 					self.displayBox();
 				},
@@ -75,6 +82,29 @@ function Pokebox(element, selector, selectMode, b){
 					$(".modal p").first().hide();
 				}
 			});
+
+			// Save last Pokebox datetime
+			if(settings.pokeboxLastDateTime < lastDateTime){
+				settings.pokeboxLastDateTime = lastDateTime;
+
+				$.ajax({
+
+					url : host+'data/settingsCookie.php',
+					type : 'POST',
+					data : settings,
+					dataType:'json',
+					success : function(data) {
+						console.log("Datetime " + settings.pokeboxLastDateTime + " saved");
+
+					},
+					error : function(request,error)
+					{
+						console.log("Request: "+JSON.stringify(request));
+						console.log(error);
+					}
+				});
+			};
+
 		} else{
 			self.displayBox();
 		}

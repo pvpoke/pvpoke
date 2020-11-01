@@ -10,6 +10,7 @@
 			<div class="pokebox-options">
 				<a href="#" class="pokebox-refresh">Refresh</a>
 				<a href="https://www.pokebattler.com/pokebox" class="pokebox-edit" target="_blank">Edit Pokebox</a>
+				<a href="https://www.pokebattler.com/user/sponsor/pvpoke" class="pvpoke-sponsor" target="_blank">Sponsor PvPoke</a>
 			</div>
 			<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />
 

@@ -24,6 +24,10 @@ if(isset($_COOKIE['settings'])){
 		$_SETTINGS->pokeboxId = false;
 	}
 
+	if(! isset($_SETTINGS->pokeboxLastDateTime)){
+		$_SETTINGS->pokeboxLastDateTime = 0;
+	}
+
 	// Validate the gamemaster setting, only allow these options
 	$gamemasters = ["gamemaster", "gamemaster-mega"];
 
@@ -115,7 +119,8 @@ if(! isset($OG_IMAGE)){
 			animateTimeline: <?php echo htmlspecialchars($_SETTINGS->animateTimeline); ?>,
 			matrixDirection: "<?php echo htmlspecialchars($_SETTINGS->matrixDirection); ?>",
 			gamemaster: "<?php echo htmlspecialchars($_SETTINGS->gamemaster); ?>",
-			pokeboxId: "<?php echo intval($_SETTINGS->pokeboxId); ?>"
+			pokeboxId: "<?php echo intval($_SETTINGS->pokeboxId); ?>",
+			pokeboxLastDateTime: "<?php echo intval($_SETTINGS->pokeboxLastDateTime); ?>"
 		};
 	<?php else: ?>
 
@@ -124,7 +129,8 @@ if(! isset($OG_IMAGE)){
 			animateTimeline: 1,
 			matrixDirection: "row",
 			gamemaster: "gamemaster",
-			pokeboxId: 0
+			pokeboxId: 0,
+			pokeboxLastDateTime: 0
 		};
 
 	<?php endif; ?>

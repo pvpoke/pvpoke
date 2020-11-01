@@ -270,6 +270,12 @@ a.toggle {
   color: #fff;
 }
 
+.modal .pokebox-options a.pokebox-edit,
+.modal .pokebox-options a.pvpoke-sponsor {
+  color: #fff;
+  background-color: #222;
+}
+
 @media only screen and (min-width: 721px) {
   .menu .submenu .submenu-wrap {
     background: #444;
