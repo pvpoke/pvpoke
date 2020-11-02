@@ -170,7 +170,7 @@ function Pokebox(element, selector, selectMode, b){
 
 		modalWindow("Import Pokemon", $el.find(".pokebox-import"));
 
-		if(settings.pokeboxId){
+		if((settings.pokeboxId)&&(settings.pokeboxId > 0)){
 			$(".modal .pokebox-on").show();
 			$(".modal .pokebox-off").hide();
 			self.loadPokebox();

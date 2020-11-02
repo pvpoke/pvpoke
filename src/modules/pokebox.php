@@ -31,6 +31,7 @@
 				<li>Add Pokemon to your Pokebox.</li>
 				<li>Enter your Pokebattler ID (top right corner):<input type="text" class="pokebox-id" placeholder="Pokebattler ID" /></li>
 			</ol>
+			<p>With a Pokebattler subscription, you can store even more Pokemon and <a href="https://www.pokebattler.com/user/sponsor/pvpoke" target="_blank">sponsor PvPoke!</a></p>
 			<div class="center">
 				<div class="button save">Save Settings</div>
 			</div>
