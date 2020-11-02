@@ -3535,6 +3535,11 @@ a.toggle{
 /* TRAINING ANALYSIS */
 
 .train-table{
+	thead{
+		font-size: 12px;
+		font-weight: bold;
+	}
+
 	td.poke-name{
 		padding: 4px;
 		border-radius:12px;
@@ -3550,6 +3555,35 @@ a.toggle{
 
 		.moves{
 			font-size:12px;
+		}
+	}
+
+	td.individual-score,
+	td.team-score{
+		padding: 4px;
+		border-radius:12px;
+		font-weight: bold;
+	    font-size: 20px;
+	    line-height: 0;
+	    text-align: center;
+	}
+
+	td.individual-score{
+		color:#ffcea4;
+		background:rgba(184,35,40,1);
+	}
+
+	td.team-score{
+		background-image:url('../img/starburst_red.png');
+		background-color: rgb(41, 111, 177);
+		background-size: 25px;
+	    background-repeat: no-repeat;
+	    background-position: 0 center;
+	    padding-left: 30px;
+		color:#fff6d4;
+
+		&.win{
+			background-image:url('../img/starburst.png');
 		}
 	}
 }

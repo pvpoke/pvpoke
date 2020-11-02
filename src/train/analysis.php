@@ -112,6 +112,16 @@ require_once '../header.php';
 				<td>Avg. Team<br>Rating</td>
 				<td>Games</td>
 			</tr>
+			<!--Row html to clone-->
+			<tr class="hide">
+				<td class="poke-name">
+					<span class="number">#1</span><span class="name">Azumarill</span>
+					<div class="moves">Bubble, Ice Beam, Hydro Pump</div>
+				</td>
+				<td class="individual-score">129.3%</td>
+				<td class="team-score">509.3</td>
+				<td class="games">1,024</td>
+			</tr>
 		</thead>
 		<tbody>
 			<tr data="azumarill">
@@ -119,25 +129,12 @@ require_once '../header.php';
 					<span class="number">#1</span><span class="name">Azumarill</span>
 					<div class="moves">Bubble, Ice Beam, Hydro Pump</div>
 				</td>
-				<td>129.3%</td>
-				<td>509.3</td>
-				<td>1,024</td>
+				<td class="individual-score">129.3%</td>
+				<td class="team-score">509.3</td>
+				<td class="games">1,024</td>
 			</tr>
 		</tbody>
 	</table>
-	<div class="rankings-container clear">
-		<div class="rank water" type-1="water" type-2="fairy" data="azumarill">
-			<div class="name-container">
-				<span class="number">#1</span><span class="name">Azumarill</span>
-				<div class="moves">Bubble, Ice Beam, Hydro Pump</div>
-			</div>
-			<div class="rating-container">
-				<div class="rating">97.2</div>
-				<div class="clear"></div>
-			</div>
-			<div class="details"></div>
-		</div>
-	</div>
 </div>
 
 <a href="#" class="button download-csv">Export to CSV</a>

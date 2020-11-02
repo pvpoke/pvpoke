@@ -43,7 +43,7 @@ var InterfaceMaster = (function () {
 			this.loadRankings = function(league, cup){
 				league = parseInt(league);
 
-				//$(".rankings-container").html('');
+				$(".train-table tbody").html('');
 				$(".loading").show();
 
 				battle.setCP(league);
@@ -63,11 +63,9 @@ var InterfaceMaster = (function () {
 
 				console.log(rankings);
 
-				return false;
-
 				data = rankings;
 
-				$(".section.white > .rankings-container").html('');
+				$(".train-table tbody").html('');
 
 				// Initialize csv data
 
@@ -76,14 +74,43 @@ var InterfaceMaster = (function () {
 
 				// Create an element for each ranked Pokemon
 
-				for(var i = 0; i < rankings.length; i++){
-					var r = rankings[i];
+				for(var i = 0; i < rankings.performers.length; i++){
+					var r = rankings.performers[i];
 
-					var pokemon = new Pokemon(r.speciesId, 0, battle);
+					// For now, convert species name to a species ID
+					var arr = r.pokemon.split(" ");
+					var movesetStr = arr[arr.length-1];
+					var movesetArr = movesetStr.split(/\+|\//);
+					var speciesName = r.pokemon.replace(" " + movesetStr, "");
+					var speciesId = speciesName.toLowerCase();
+
+					speciesId = speciesId.replaceAll("(","");
+					speciesId = speciesId.replaceAll(")","");
+					speciesId = speciesId.replaceAll(" ","_");
+
+					var pokemon = new Pokemon(speciesId, 0, battle);
+
+					console.log(speciesId);
 
 					if(! pokemon.speciesId){
 						continue;
 					}
+
+					// Create a new row
+					var $row = $(".train-table thead tr.hide").clone();
+					$row.removeClass("hide");
+					$row.attr("data", speciesId);
+					$row.find(".poke-name").addClass(pokemon.types[0])
+					$row.find(".number").html("#"+(i+1));
+					$row.find(".name").html(speciesName);
+					$row.find(".moves").html(r.pokemon.split(" ")[1]);
+					$row.find(".individual-score").html(r.individualScore);
+					$row.find(".team-score").html(r.teamScore);
+					$row.find(".games").html(r.games);
+
+					$(".train-table tbody").append($row);
+
+					continue;
 
 					pokemon.initialize(true);
 					pokemon.selectMove("fast", r.moveset[0]);

@@ -3277,6 +3277,10 @@ a.toggle {
 }
 
 /* TRAINING ANALYSIS */
+.train-table thead {
+  font-size: 12px;
+  font-weight: bold;
+}
 .train-table td.poke-name {
   padding: 4px;
   border-radius: 12px;
@@ -3290,6 +3294,31 @@ a.toggle {
 }
 .train-table td.poke-name .moves {
   font-size: 12px;
+}
+.train-table td.individual-score,
+.train-table td.team-score {
+  padding: 4px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 0;
+  text-align: center;
+}
+.train-table td.individual-score {
+  color: #ffcea4;
+  background: #b82328;
+}
+.train-table td.team-score {
+  background-image: url("../img/starburst_red.png");
+  background-color: #296fb1;
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  padding-left: 30px;
+  color: #fff6d4;
+}
+.train-table td.team-score.win {
+  background-image: url("../img/starburst.png");
 }
 
 @media only screen and (min-width: 721px) {
