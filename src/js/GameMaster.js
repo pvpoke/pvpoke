@@ -201,7 +201,7 @@ var GameMaster = (function () {
 		object.generateDefaultIVs = function(){
 
 			$.each(object.data.pokemon, function(index, poke){
-				var leagues = [1500,2500];
+				var leagues = [500,1500,2500];
 				var battle = new Battle();
 
 				var pokemon = new Pokemon(poke.speciesId, 0, battle);

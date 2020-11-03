@@ -3,6 +3,7 @@
 	<option value="official" cup="premier">Premier Cup</option>
 	<option value="official" cup="halloween">Halloween Cup</option>
 	<option value="official" cup="flying">Flying Cup</option>
+	<option value="official" cup="kanto">Kanto Cup</option>
 	<option value="tsa-3" cup="marsh">Silph Marsh Cup</option>
 	<option value="community" cup="goteamup">GoStadium GOTeamUp</option>
 	<option value="community" cup="uber">Uber Tier Cup</option>
@@ -23,6 +24,7 @@
 	<option value="premier" cat="official">Premier Cup</option>
 	<option value="flying" cat="official">Flying Cup</option>
 	<option value="halloween" cat="official">Halloween Cup</option>
+	<option value="kanto" cat="official">Kanto Cup</option>
 	<option value="safari" cat="community">Montreal Safari Cup</option>
 	<option value="fantasy" cat="community">GO LIVE Fantasy Cup</option>
 	<option value="beam" cat="community">Get Beamed</option>

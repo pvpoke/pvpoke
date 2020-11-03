@@ -1,0 +1,102 @@
+[
+	{
+		"speciesId": "machamp_shadow",
+		"fastMove": "COUNTER",
+		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
+	},
+	{
+		"speciesId": "machamp",
+		"fastMove": "COUNTER",
+		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
+	},
+	{
+		"speciesId": "sandslash_alolan",
+		"fastMove": "POWDER_SNOW",
+		"chargedMoves": ["ICE_PUNCH", "BULLDOZE"]
+	},
+	{
+		"speciesId": "hypno",
+		"fastMove": "CONFUSION",
+		"chargedMoves": ["FIRE_PUNCH", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "hypno_shadow",
+		"fastMove": "CONFUSION",
+		"chargedMoves": ["FIRE_PUNCH", "THUNDER_PUNCH"]
+	},
+	{
+		"speciesId": "lapras",
+		"fastMove": "ICE_SHARD",
+		"chargedMoves": ["SURF", "SKULL_BASH"]
+	},
+	{
+		"speciesId": "lapras_shadow",
+		"fastMove": "ICE_SHARD",
+		"chargedMoves": ["SURF", "SKULL_BASH"]
+	},
+	{
+		"speciesId": "dewgong",
+		"fastMove": "ICE_SHARD",
+		"chargedMoves": ["ICY_WIND", "WATER_PULSE"]
+	},
+	{
+		"speciesId": "victreebel_shadow",
+		"chargedMoves": ["LEAF_BLADE", "ACID_SPRAY"]
+	},
+	{
+		"speciesId": "victreebel",
+		"chargedMoves": ["LEAF_BLADE", "ACID_SPRAY"]
+	},
+	{
+		"speciesId": "marowak_alolan",
+		"fastMove": "FIRE_SPIN"
+	},
+	{
+		"speciesId": "gyarados",
+		"fastMove": "DRAGON_BREATH"
+	},
+	{
+		"speciesId": "gyarados_shadow",
+		"fastMove": "DRAGON_BREATH"
+	},
+	{
+		"speciesId": "rapidash_galarian",
+		"chargedMoves": ["BODY_SLAM", "PLAY_ROUGH"]
+	},
+	{
+		"speciesId": "omastar_shadow",
+		"chargedMoves": ["ROCK_SLIDE", "HYDRO_PUMP"]
+	},
+	{
+		"speciesId": "omastar",
+		"chargedMoves": ["ROCK_SLIDE", "HYDRO_PUMP"]
+	},
+	{
+		"speciesId": "himtonchan",
+		"chargedMoves": ["ICE_PUNCH", "THUNDER_PUNCH"]
+	},
+	{
+		"speciesId": "himtonchan_shadow",
+		"chargedMoves": ["ICE_PUNCH", "THUNDER_PUNCH"]
+	},
+	{
+		"speciesId": "raichu_alolan",
+		"chargedMoves": ["THUNDER_PUNCH", "WILD_CHARGE"]
+	},
+	{
+		"speciesId": "charizard",
+		"fastMove": "DRAGON_BREATH"
+	},
+	{
+		"speciesId": "charizard_shadow",
+		"fastMove": "DRAGON_BREATH"
+	},
+	{
+		"speciesId": "ninetales",
+		"chargedMoves": ["PSYSHOCK", "OVERHEAT"]
+	},
+	{
+		"speciesId": "tentacruel",
+		"chargedMoves": ["ACID_SPRAY", "HYDRO_PUMP"]
+	}
+]
