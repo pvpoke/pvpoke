@@ -55,6 +55,14 @@ switch($cup){
 		$league = 'Uber Tier Cup';
 		break;
 
+	case "little":
+		$league = 'Little Cup';
+		break;
+
+	case "kanto":
+		$league = 'Kanto Cup';
+		break;
+
 }
 
 $META_TITLE = $league . ' PvP Rankings';

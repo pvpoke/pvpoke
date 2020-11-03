@@ -28,6 +28,11 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
+	<h4>v1.18.4 (November 2, 2020)</h4>
+	<ul>
+		<li>Rankings added for Kanto Cup and Little Cup!</li>
+	</ul>
+
 	<h4>v1.18.0 (November 2, 2020)</h4>
 	<ul>
 		<li>PvPoke now integrates with <a href="https://www.pokebattler.com/pokebox" class="pokebox-edit" target="_blank">Pokebattler's Pokebox</a>!</li>
