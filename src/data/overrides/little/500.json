@@ -2,5 +2,37 @@
 	{
 		"speciesId": "seel",
 		"fastMove": "ICE_SHARD"
+	},
+	{
+		"speciesId": "diglett",
+		"fastMove": "MUD_SLAP"
+	},
+	{
+		"speciesId": "diglett_shadow",
+		"fastMove": "MUD_SLAP"
+	},
+	{
+		"speciesId": "slowpoke",
+		"fastMove": "WATER_GUN"
+	},
+	{
+		"speciesId": "togepi",
+		"fastMove": "HIDDEN_POWER_GROUND"
+	},
+	{
+		"speciesId": "carvanha",
+		"fastMove": "BITE"
+	},
+	{
+		"speciesId": "carvanha_shadow",
+		"fastMove": "BITE"
+	},
+	{
+		"speciesId": "cottonee",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "shelmet",
+		"chargedMoves": ["BODY_SLAM", "BUG_BUZZ"]
 	}
 ]

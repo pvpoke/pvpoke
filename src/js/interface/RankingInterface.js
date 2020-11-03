@@ -670,10 +670,12 @@ var InterfaceMaster = (function () {
 
 				// Display moveset override notice where applicable
 
-				if( (pokemon.fastMove.moveId != fastMoves[0].moveId)
-					|| ((pokemon.chargedMoves[0].moveId != chargedMoves[0].moveId)&&(pokemon.chargedMoves[0].moveId != chargedMoves[1].moveId))
-				 	|| ((pokemon.chargedMoves[1].moveId != chargedMoves[0].moveId)&&(pokemon.chargedMoves[1].moveId != chargedMoves[1].moveId))){
-					$details.find(".detail-section.moveset-override").show();
+				if(pokemon.chargedMoves.length > 1){
+					if( (pokemon.fastMove.moveId != fastMoves[0].moveId)
+						|| ((pokemon.chargedMoves[0].moveId != chargedMoves[0].moveId)&&(pokemon.chargedMoves[0].moveId != chargedMoves[1].moveId))
+					 	|| ((pokemon.chargedMoves[1].moveId != chargedMoves[0].moveId)&&(pokemon.chargedMoves[1].moveId != chargedMoves[1].moveId))){
+						$details.find(".detail-section.moveset-override").show();
+					}
 				}
 
 				// Helper variables for displaying matchups and link URL
