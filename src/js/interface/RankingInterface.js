@@ -367,6 +367,10 @@ var InterfaceMaster = (function () {
 					return false;
 				}
 
+				if(cup == "little"){
+					cp = 500;
+				}
+
 				var url = webRoot+"rankings/"+cup+"/"+cp+"/"+category+"/";
 
 				if(speciesId){
