@@ -57,8 +57,6 @@ var InterfaceMaster = (function () {
 
 				var data = gm.data;
 
-				gm.generateDefaultIVs();
-
 				// Initialize selectors and push Pokemon data
 
 				battle = new Battle();
@@ -1554,7 +1552,7 @@ var InterfaceMaster = (function () {
 			// Event handler for changing the league select
 
 			function selectLeague(e){
-				var allowed = [1500, 2500, 10000];
+				var allowed = [500, 1500, 2500, 10000];
 				var cp = parseInt($(".league-select option:selected").val());
 
 				if(allowed.indexOf(cp) > -1){

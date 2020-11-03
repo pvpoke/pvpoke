@@ -31,6 +31,8 @@ var RankerMaster = (function () {
 				battle.setCup(cup.name);
 				battle.setCP(cp);
 
+				console.log(cp);
+
 				var leagues = [cp];
 
 				for(var i = 0; i < leagues.length; i++){

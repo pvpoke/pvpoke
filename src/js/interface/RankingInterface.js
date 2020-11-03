@@ -77,6 +77,12 @@ var InterfaceMaster = (function () {
 					$(".league-select option[value=\"10000\"]").prop("selected","selected");
 				}
 
+				if(cup == "little"){
+					league = 500;
+
+					$(".league-select option[value=\"500\"]").prop("selected","selected");
+				}
+
 				battle.setCP(league);
 
 				if(cup == "beam"){
@@ -218,7 +224,13 @@ var InterfaceMaster = (function () {
 
 					$(".section.white > .rankings-container").append($el);
 
-					csv += pokemon.speciesName+','+r.score+','+pokemon.types[0]+','+pokemon.types[1]+','+(Math.round(pokemon.stats.atk*10)/10)+','+(Math.round(pokemon.stats.def*10)/10)+','+Math.round(pokemon.stats.hp)+','+Math.round(pokemon.stats.atk*pokemon.stats.def*pokemon.stats.hp)+','+pokemon.level+','+pokemon.fastMove.name+','+pokemon.chargedMoves[0].name+','+pokemon.chargedMoves[1].name+'\n';
+					var chargedMove2Name = '';
+
+					if(pokemon.chargedMoves.length > 1){
+						chargedMove2Name = pokemon.chargedMoves[1].name;
+					}
+
+					csv += pokemon.speciesName+','+r.score+','+pokemon.types[0]+','+pokemon.types[1]+','+(Math.round(pokemon.stats.atk*10)/10)+','+(Math.round(pokemon.stats.def*10)/10)+','+Math.round(pokemon.stats.hp)+','+Math.round(pokemon.stats.atk*pokemon.stats.def*pokemon.stats.hp)+','+pokemon.level+','+pokemon.fastMove.name+','+pokemon.chargedMoves[0].name+','+chargedMove2Name+'\n';
 				}
 
 				$(".loading").hide();

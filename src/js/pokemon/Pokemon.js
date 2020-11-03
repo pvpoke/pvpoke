@@ -226,7 +226,7 @@ function Pokemon(id, i, b){
 					if(maxCP == 10000){
 						self.ivs.atk = self.ivs.def = self.ivs.hp = 15;
 						self.setLevel(40, false);
-					} else if(maxCP > 500){
+					} else{
 						var combination = data.defaultIVs["cp"+maxCP];
 						self.ivs.atk = combination[1];
 						self.ivs.def = combination[2];
