@@ -93,7 +93,8 @@
 	{
 		"speciesId": "lugia",
 		"fastMove": "DRAGON_TAIL",
-		"weight": 30
+		"chargedMoves": ["SKY_ATTACK", "AEROBLAST"],
+		"weight": 10
 	},
 	{
 		"speciesId": "raikou",
