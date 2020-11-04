@@ -7,7 +7,7 @@
 			<p>Create or select a group of custom Pokemon below.</p>
 			<div class="rankings-container clear"></div>
 			<button class="add-poke-btn button">+ Add Pokemon</button>
-			
+
 			<?php include 'pokebox.php'; ?>
 
 			<button class="export-btn">Import/Export</button>
@@ -21,8 +21,6 @@
 				<option value="premierultra" type="ultra" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="premier" type="master" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="flying" type="great" class="multi-battle">Flying Cup Meta</option>
-				<option value="halloween" type="great" class="multi-battle">Halloween Cup Meta</option>
-				<option value="sunrise" type="great" class="multi-battle">Silph Sunrise Cup Meta</option>
 				<option value="marsh" type="great" class="multi-battle">Silph Marsh Cup Meta</option>
 			</select>
 			<div class="flex quick-fill-buttons">
