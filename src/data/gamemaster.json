@@ -1317,14 +1317,14 @@
             "hp": 195
         },
         "types": ["normal", "flying"],
-        "fastMoves": ["AIR_SLASH", "STEEL_WING", "WING_ATTACK"],
+        "fastMoves": ["AIR_SLASH", "STEEL_WING", "WING_ATTACK", "GUST"],
         "chargedMoves": ["AERIAL_ACE", "AIR_CUTTER", "BRAVE_BIRD", "HURRICANE"],
         "defaultIVs": {
             "cp500": [8.5, 11, 13, 15],
             "cp1500": [25.5, 9, 14, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "eliteMoves": ["WING_ATTACK", "AIR_CUTTER"]
+        "eliteMoves": ["WING_ATTACK", "AIR_CUTTER", "GUST"]
     }, {
         "dex": 18,
         "speciesName": "Pidgeot (Mega)",
@@ -1335,7 +1335,7 @@
             "hp": 195
         },
         "types": ["normal", "flying"],
-        "fastMoves": ["AIR_SLASH", "STEEL_WING", "WING_ATTACK"],
+        "fastMoves": ["AIR_SLASH", "STEEL_WING", "WING_ATTACK", "GUST"],
         "chargedMoves": ["AERIAL_ACE", "AIR_CUTTER", "BRAVE_BIRD", "HURRICANE"],
         "defaultIVs": {
             "cp500": [5, 14, 12, 15],
@@ -1343,7 +1343,7 @@
             "cp2500": [24.5, 6, 13, 14]
         },
         "tags": ["mega"],
-        "eliteMoves": ["WING_ATTACK", "AIR_CUTTER"]
+        "eliteMoves": ["WING_ATTACK", "AIR_CUTTER", "GUST"]
     }, {
         "dex": 19,
         "speciesName": "Rattata",
@@ -8194,7 +8194,8 @@
         },
         "types": ["psychic", "flying"],
         "fastMoves": ["DRAGON_TAIL", "EXTRASENSORY"],
-        "chargedMoves": ["FUTURE_SIGHT", "HYDRO_PUMP", "SKY_ATTACK"],
+        "chargedMoves": ["FUTURE_SIGHT", "HYDRO_PUMP", "SKY_ATTACK", "AEROBLAST"],
+		"eliteMoves": ["AEROBLAST"],
         "tags": ["legendary"],
         "defaultIVs": {
             "cp500": [5, 14, 14, 10],

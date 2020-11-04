@@ -91,6 +91,11 @@
 		"chargedMoves": ["BLAST_BURN", "SOLAR_BEAM"]
 	},
 	{
+		"speciesId": "lugia",
+		"fastMove": "DRAGON_TAIL",
+		"weight": 30
+	},
+	{
 		"speciesId": "raikou",
 		"fastMove": "VOLT_SWITCH"
 	},
@@ -183,10 +188,6 @@
 		"speciesId": "kyogre",
 		"chargedMoves": ["SURF","BLIZZARD"],
 		"weight": 60
-	},
-	{
-		"speciesId": "lugia",
-		"chargedMoves": ["SKY_ATTACK","HYDRO_PUMP"]
 	},
 	{
 		"speciesId": "charizard",

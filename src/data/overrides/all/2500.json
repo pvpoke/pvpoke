@@ -83,6 +83,10 @@
 		"chargedMoves": ["FOUL_PLAY", "SHADOW_BALL"]
 	},
 	{
+		"speciesId": "lugia",
+		"fastMove": "DRAGON_TAIL"
+	},
+	{
 		"speciesId": "alomomola",
 		"fastMove": "WATERFALL"
 	},
@@ -126,10 +130,6 @@
 	{
 		"speciesId": "primeape",
 		"chargedMoves": ["CLOSE_COMBAT", "NIGHT_SLASH"]
-	},
-	{
-		"speciesId": "lugia",
-		"chargedMoves": ["SKY_ATTACK", "HYDRO_PUMP"]
 	},
 	{
 		"speciesId": "melmetal",
