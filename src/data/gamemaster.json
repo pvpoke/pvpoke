@@ -15328,7 +15328,7 @@
         },
         "types": ["ground", "ghost"],
         "fastMoves": ["ASTONISH"],
-        "chargedMoves": ["NIGHT_SHADE", "SAND_TOMB", "ROCK_TOMB"],
+        "chargedMoves": ["NIGHT_SHADE", "ROCK_TOMB"],
         "defaultIVs": {
             "cp500": [20, 6, 15, 7],
             "cp1500": [40, 15, 15, 15],
