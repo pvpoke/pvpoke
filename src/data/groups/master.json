@@ -67,6 +67,11 @@
 	{
 		"speciesId":"dialga",
 		"fastMove":"DRAGON_BREATH",
+		"chargedMoves":["IRON_HEAD","DRACO_METEOR"]
+	},
+	{
+		"speciesId":"dialga",
+		"fastMove":"DRAGON_BREATH",
 		"chargedMoves":["IRON_HEAD","THUNDER"]
 	},
 	{
@@ -93,6 +98,11 @@
 		"speciesId":"kyogre",
 		"fastMove":"WATERFALL",
 		"chargedMoves":["SURF","BLIZZARD"]
+	},
+	{
+		"speciesId":"kyogre",
+		"fastMove":"WATERFALL",
+		"chargedMoves":["SURF","THUNDER"]
 	},
 	{
 		"speciesId":"raikou",
