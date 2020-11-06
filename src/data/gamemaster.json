@@ -3588,8 +3588,7 @@
             "cp1500": [21.5, 13, 15, 15],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["galarian"],
-        "searchPriority": 2
+        "tags": ["galarian"]
     }, {
         "dex": 79,
         "speciesName": "Slowpoke",
@@ -15178,7 +15177,8 @@
             "cp500": [6, 13, 14, 7],
             "cp1500": [17.5, 9, 14, 10],
             "cp2500": [29, 5, 15, 14]
-        }
+        },
+		"searchPriority": 2
     }, {
         "dex": 555,
         "speciesId": "darmanitan_zen",
@@ -18174,6 +18174,14 @@
         "buffs": [-1, 0],
         "buffTarget": "opponent",
         "buffApplyChance": "1"
+    }, {
+        "moveId": "INCINERATE",
+        "name": "Incinerate",
+        "type": "fire",
+        "power": 15,
+        "energy": 0,
+        "energyGain": 20,
+        "cooldown": 2500
     }, {
         "moveId": "INFESTATION",
         "name": "Infestation",

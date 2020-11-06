@@ -20,7 +20,6 @@
 				<option value="master" type="master" class="hide multi-battle">Master League Meta</option>
 				<option value="premierultra" type="ultra" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="premier" type="master" class="hide multi-battle">Premier Cup Meta</option>
-				<option value="flying" type="great" class="multi-battle">Flying Cup Meta</option>
 				<option value="marsh" type="great" class="multi-battle">Silph Marsh Cup Meta</option>
 			</select>
 			<div class="flex quick-fill-buttons">
