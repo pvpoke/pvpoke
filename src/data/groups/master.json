@@ -50,9 +50,14 @@
 		"chargedMoves":["BODY_SLAM","EARTHQUAKE"]
 	},
 	{
+		"speciesId":"ho_oh",
+		"fastMove":"INCINERATE",
+		"chargedMoves":["EARTHQUAKE","BRAVE_BIRD"]
+	},
+	{
 		"speciesId":"lugia",
 		"fastMove":"DRAGON_TAIL",
-		"chargedMoves":["SKY_ATTACK","HYDRO_PUMP"]
+		"chargedMoves":["SKY_ATTACK","AEROBLAST"]
 	},
 	{
 		"speciesId":"mewtwo",
