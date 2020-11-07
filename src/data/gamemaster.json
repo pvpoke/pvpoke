@@ -1749,7 +1749,8 @@
             "cp500": [7.5, 12, 15, 11],
             "cp1500": [23, 7, 11, 10],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 2
     }, {
         "dex": 28,
         "speciesName": "Sandslash (Shadow)",
@@ -3369,7 +3370,7 @@
             "cp2500": [40, 15, 15, 15]
         },
         "tags": ["shadow"],
-        "searchPriority": 3
+        "searchPriority": 4
     }, {
         "dex": 72,
         "speciesName": "Tentacool",

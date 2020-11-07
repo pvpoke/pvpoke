@@ -297,6 +297,7 @@ function PokeMultiSelect(element){
 				$el.find(".quick-fill-select option[value='ultra']").hide();
 				$el.find(".quick-fill-select option[value='master']").hide();
 				$el.find(".quick-fill-select option[value='premier']").hide();
+				$el.find(".quick-fill-select option[value='little']").hide();
 				break;
 
 			case 2500:
@@ -307,6 +308,11 @@ function PokeMultiSelect(element){
 			case 10000:
 				$el.find(".quick-fill-select option[value='master']").show();
 				$el.find(".quick-fill-select option[type='master']").show();
+				break;
+
+			case 500:
+				$el.find(".quick-fill-select option[value='little']").show();
+				$el.find(".quick-fill-select option[type='little']").show();
 				break;
 		}
 
@@ -591,7 +597,7 @@ function PokeMultiSelect(element){
 			closeModalWindow();
 		});
 	});
-	
+
 	// Open the save window
 
 	$el.find(".save-btn").click(function(e){
