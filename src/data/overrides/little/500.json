@@ -24,7 +24,15 @@
 		"fastMove": "BITE"
 	},
 	{
+		"speciesId": "vullaby",
+		"fastMove": "FEINT_ATTACK"
+	},
+	{
 		"speciesId": "carvanha_shadow",
+		"fastMove": "BITE"
+	},
+	{
+		"speciesId": "grimer_alolan",
 		"fastMove": "BITE"
 	},
 	{
@@ -34,5 +42,13 @@
 	{
 		"speciesId": "shelmet",
 		"chargedMoves": ["BODY_SLAM", "BUG_BUZZ"]
+	},
+	{
+		"speciesId": "gible",
+		"chargedMoves": ["BODY_SLAM", "DIG"]
+	},
+	{
+		"speciesId": "igglybuff",
+		"chargedMoves": ["BODY_SLAM", "SHADOW_BALL"]
 	}
 ]

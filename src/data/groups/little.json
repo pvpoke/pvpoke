@@ -27,10 +27,17 @@
     "fastMove": "INFESTATION",
     "chargedMoves": ["BODY_SLAM", "BUG_BUZZ"]
 }, {
-    "speciesId": "stunky",
+    "speciesId": "stunky_shadow",
     "fastMove": "BITE",
     "chargedMoves": ["CRUNCH", "SLUDGE_BOMB"],
-    "shadowType": "shadow"
+}, {
+    "speciesId": "vullaby",
+    "fastMove": "FEINT_ATTACK",
+    "chargedMoves": ["FOUL_PLAY", "BRAVE_BIRD"],
+}, {
+    "speciesId": "pawniard",
+    "fastMove": "FURY_CUTTER",
+    "chargedMoves": ["NIGHT_SLASH", "X_SCISSOR"],
 }, {
     "speciesId": "seel",
     "fastMove": "ICE_SHARD",
