@@ -56,7 +56,7 @@ require_once 'header.php';
 				<td>Damage Per Energy</td>
 			</tr>
 		</table>
-		<input class="poke-search" context="move-search" type="text" placeholder="Search Move or Type" />
+		<input class="poke-search" context="move-search" type="text" placeholder="Search Move or Type" spellcheck="false" autocorrect="off" />
 		<div class="table-container">
 			<table class="sortable-table stats-table moves" cellpadding="0" cellspacing="0"></table>
 		</div>
@@ -65,7 +65,7 @@ require_once 'header.php';
 	<div class="move-explore-container explore hide">
 		<div class="move-select-container flex">
 			<div class="move-select-item" >
-				<input class="poke-search" context="move-search" type="text" placeholder="Search move"/>
+				<input class="poke-search" context="move-search" type="text" placeholder="Search move" spellcheck="false" autocorrect="off" />
 				<select class="move-select fast">
 					<option selected disabled value="">Select a Fast Move</option>
 				</select>
@@ -81,7 +81,7 @@ require_once 'header.php';
 				<div class="stab fast check on"><span></span>Same type attack bonus</div>
 			</div>
 			<div class="move-select-item">
-				<input class="poke-search" context="move-search" type="text" placeholder="Search move" />
+				<input class="poke-search" context="move-search" type="text" placeholder="Search move" spellcheck="false" autocorrect="off" />
 				<select class="move-select charged">
 					<option selected disabled value="">Select a Charged Move</option>
 				</select>

@@ -1,7 +1,7 @@
 <div class="poke single">
 	<a class="random" href="#">Random</a>
 	<a class="swap" href="#">Swap</a>
-	<input class="poke-search" type="text" placeholder="Search name">
+	<input class="poke-search" type="text" placeholder="Search name" spellcheck="false" autocorrect="off">
 	<select class="poke-select">
 		<option disabled selected value="">Select a Pokemon</option>
 	</select>
@@ -177,7 +177,7 @@
 	<div class="custom-move hide">
 		<p>Add a custom move for <b><span class="name"></span></b>:</p>
 
-		<input class="poke-search" context="move-search" type="text" placeholder="Search move"/>
+		<input class="poke-search" context="move-search" type="text" placeholder="Search move" spellcheck="false" autocorrect="off" />
 		<select class="move-select">
 			<option selected disabled value="">Select a Move</option>
 		</select>

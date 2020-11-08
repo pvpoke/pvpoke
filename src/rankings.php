@@ -139,7 +139,7 @@ require_once 'header.php';
 	</div>
 
 	<div class="poke-search-container">
-		<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />
+		<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" spellcheck="false" autocorrect="off" />
 		<a href="#" class="search-info">i</a>
 	</div>
 
