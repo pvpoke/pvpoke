@@ -314,7 +314,7 @@ require_once 'header.php';
 
 		<div class="toggle-content">
 			<div class="poke-search-container">
-				<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />
+				<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" spellcheck="false" autocorrect="off" />
 				<a href="#" class="search-info">i</a>
 
 				<button class="multi-battle-sort">Sort: Worst to best &#9650;</button>

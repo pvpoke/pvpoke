@@ -18,7 +18,7 @@ require_once 'header.php';
 
 	<h2 class="loading">Loading data...</h2>
 	<div class="poke-table-container">
-		<input class="poke-search" context="poke-search" type="text" placeholder="Search Move or Type" />
+		<input class="poke-search" context="poke-search" type="text" placeholder="Search Move or Type" spellcheck="false" autocorrect="off" />
 		<table class="sortable-table stats-table pokemon" cellpadding="0" cellspacing="0"></table>
 	</div>
 </div>
