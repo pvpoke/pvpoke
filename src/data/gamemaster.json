@@ -3566,8 +3566,8 @@
             "hp": 163
         },
         "types": ["fire", "none"],
-        "fastMoves": ["EMBER", "FIRE_SPIN", "LOW_KICK"],
-        "chargedMoves": ["DRILL_RUN", "FIRE_BLAST", "HEAT_WAVE"],
+        "fastMoves": ["EMBER", "FIRE_SPIN", "LOW_KICK", "INCINERATE"],
+        "chargedMoves": ["DRILL_RUN", "FIRE_BLAST", "HEAT_WAVE", "FLAME_CHARGE"],
         "defaultIVs": {
             "cp500": [7.5, 11, 9, 14],
             "cp1500": [21.5, 13, 15, 15],
@@ -5925,7 +5925,7 @@
             "hp": 186
         },
         "types": ["fire", "none"],
-        "fastMoves": ["EMBER", "SHADOW_CLAW"],
+        "fastMoves": ["EMBER", "SHADOW_CLAW", "INCINERATE"],
         "chargedMoves": ["BLAST_BURN", "FIRE_BLAST", "OVERHEAT", "SOLAR_BEAM"],
         "tags": ["starter"],
         "defaultIVs": {
@@ -8005,7 +8005,7 @@
         },
         "types": ["fire", "none"],
         "fastMoves": ["FIRE_FANG", "FIRE_SPIN"],
-        "chargedMoves": ["FIRE_BLAST", "FLAMETHROWER", "IRON_HEAD", "OVERHEAT"],
+        "chargedMoves": ["FIRE_BLAST", "FLAMETHROWER", "IRON_HEAD", "OVERHEAT", "FLAME_CHARGE"],
         "tags": ["legendary", "shadoweligible"],
         "defaultIVs": {
             "cp500": [5.5, 5, 14, 13],
@@ -8024,7 +8024,7 @@
         },
         "types": ["fire", "none"],
         "fastMoves": ["FIRE_FANG", "FIRE_SPIN"],
-        "chargedMoves": ["FIRE_BLAST", "FLAMETHROWER", "IRON_HEAD", "OVERHEAT"],
+        "chargedMoves": ["FIRE_BLAST", "FLAMETHROWER", "IRON_HEAD", "OVERHEAT", "FLAME_CHARGE"],
         "tags": ["legendary", "shadow"],
         "defaultIVs": {
             "cp500": [5.5, 5, 14, 13],
@@ -8214,7 +8214,7 @@
             "hp": 214
         },
         "types": ["fire", "flying"],
-        "fastMoves": ["EXTRASENSORY", "HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "STEEL_WING"],
+        "fastMoves": ["EXTRASENSORY", "HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "STEEL_WING", "INCINERATE"],
         "chargedMoves": ["BRAVE_BIRD", "FIRE_BLAST", "SOLAR_BEAM", "EARTHQUAKE"],
         "tags": ["legendary"],
         "defaultIVs": {
@@ -14175,7 +14175,7 @@
         },
         "types": ["fire", "fighting"],
         "fastMoves": ["LOW_KICK", "EMBER"],
-        "chargedMoves": ["HEAT_WAVE", "ROCK_SLIDE", "FOCUS_BLAST"],
+        "chargedMoves": ["HEAT_WAVE", "ROCK_SLIDE", "FOCUS_BLAST", "FLAME_CHARGE"],
         "tags": ["starter"],
         "defaultIVs": {
             "cp500": [6.5, 6, 5, 13],
@@ -15174,7 +15174,7 @@
             "hp": 233
         },
         "types": ["fire", "none"],
-        "fastMoves": ["TACKLE", "FIRE_FANG"],
+        "fastMoves": ["TACKLE", "FIRE_FANG", "INCINERATE"],
         "chargedMoves": ["OVERHEAT", "FOCUS_BLAST", "PSYCHIC", "ROCK_SLIDE"],
         "defaultIVs": {
             "cp500": [6, 13, 14, 7],
@@ -16134,8 +16134,8 @@
             "hp": 155
         },
         "types": ["ghost", "fire"],
-        "fastMoves": ["HEX", "FIRE_SPIN"],
-        "chargedMoves": ["ENERGY_BALL", "SHADOW_BALL", "OVERHEAT"],
+        "fastMoves": ["HEX", "FIRE_SPIN", "INCINERATE"],
+        "chargedMoves": ["ENERGY_BALL", "SHADOW_BALL", "OVERHEAT", "FLAME_CHARGE"],
         "defaultIVs": {
             "cp500": [6, 6, 5, 5],
             "cp1500": [17, 8, 12, 7],
@@ -18527,7 +18527,7 @@
         "type": "poison",
         "power": 3,
         "energy": 0,
-        "energyGain": 6,
+        "energyGain": 8,
         "cooldown": 1000
     }, {
         "moveId": "POUND",
