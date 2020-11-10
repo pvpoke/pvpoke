@@ -326,6 +326,20 @@
 		"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"]
 	},
 	{
+		"speciesId": "ariados",
+		"fastMove": "POISON_STING"
+	},
+	{
+		"speciesId": "qwilfish",
+		"fastMove": "POISON_STING",
+		"chargedMoves": ["AQUA_TAIL","SLUDGE_WAVE"]
+	},
+	{
+		"speciesId": "drapion",
+		"fastMove": "POISON_STING",
+		"chargedMoves": ["CRUNCH","SLUDGE_BOMB"]
+	},
+	{
 		"speciesId": "muk",
 		"chargedMoves": ["THUNDER_PUNCH", "DARK_PULSE"]
 	},
