@@ -423,6 +423,15 @@ var InterfaceMaster = (function () {
 					var category = $(".ranking-categories a.selected").attr("data");
 					var cup = $(".cup-select option:selected").val();
 
+
+					if(cp == 500){
+						$(".format-select option[cup=\"little\"]").prop("selected","selected");
+						cup = "little";
+					} else if(cup == "little"){
+						$(".format-select option[cup=\"all\"]").prop("selected","selected");
+						cup = "all";
+					}
+
 					battle.setCup(cup);
 
 					self.displayRankings(category, cp, cup);
