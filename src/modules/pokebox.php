@@ -12,7 +12,10 @@
 				<a href="https://www.pokebattler.com/pokebox" class="pokebox-edit" target="_blank">Edit Pokebox</a>
 				<a href="https://www.pokebattler.com/user/sponsor/pvpoke" class="pvpoke-sponsor" target="_blank">Sponsor PvPoke</a>
 			</div>
-			<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />
+
+			<div class="poke-search-container">
+				<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />
+			</div>
 
 			<div class="pokebox-list rankings-container">
 				Loading Pokebox...
