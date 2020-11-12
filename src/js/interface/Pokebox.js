@@ -116,10 +116,17 @@ function Pokebox(element, selector, selectMode, b){
 		if(type == "species"){
 			id = id.toLowerCase();
 			id = id.replace("_form","");
+			id = id.replace("_purified","");
 			id = id.replace("alola","alolan");
 		} else if(type == "move"){
 			id = id.replace("_FAST","");
 			id = id.replace("FUTURESIGHT","FUTURE_SIGHT");
+		}
+
+		switch(id){
+			case "darmanitan":
+				return "darmanitan_standard";
+				break;
 		}
 
 		return id;
