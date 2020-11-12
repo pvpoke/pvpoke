@@ -798,7 +798,7 @@ var BattlerMaster = (function () {
 
 					for(var n = 0; n < roster.length; n++){
 						var pokemon = roster[n];
-						var pokeStr = pokemon.speciesName + ' ' + pokemon.fastMove.abbreviation;
+						var pokeStr = pokemon.speciesId + ' ' + pokemon.fastMove.abbreviation;
 						var chargedMoveAbbrevations = [];
 
 						for(var k = 0; k < pokemon.chargedMoves.length; k++){
@@ -846,7 +846,7 @@ var BattlerMaster = (function () {
 
 					for(var n = 0; n < team.length; n++){
 						var pokemon = team[n];
-						var pokeStr = pokemon.speciesName + ' ' + pokemon.fastMove.abbreviation;
+						var pokeStr = pokemon.speciesId + ' ' + pokemon.fastMove.abbreviation;
 						var chargedMoveAbbrevations = [];
 
 						for(var k = 0; k < pokemon.chargedMoves.length; k++){
