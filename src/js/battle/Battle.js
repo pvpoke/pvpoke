@@ -1689,6 +1689,11 @@ function Battle(){
 			finalState.moves[0] = poke.activeChargedMoves[0];
 		}
 
+		// If shields are down, prefer non-debuffing moves if both sides have significant HP remaining
+		if (opponent.shields == 0 && poke.activeChargedMoves.length > 1 && finalState.moves[0].selfDebuffing && finalState.moves[0].energy > 50 && (poke.hp / poke.stats.hp) > .5 && (finalState.moves[0].damage / opponent.hp) < .8) {
+			finalState.moves[0] = poke.activeChargedMoves[0];
+		}
+
 		// Bandaid to force more efficient move of the same energy
 		if (poke.activeChargedMoves.length > 1 && poke.activeChargedMoves[0].energy == finalState.moves[0].energy && poke.activeChargedMoves[0].dpe > finalState.moves[0].dpe && (! poke.activeChargedMoves[0].selfDebuffing)) {
 			finalState.moves[0] = poke.activeChargedMoves[0];

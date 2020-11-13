@@ -28,18 +28,10 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.18.4 (November 2, 2020)</h4>
+	<h4>v1.18.6 (November 13, 2020)</h4>
 	<ul>
-		<li>Rankings added for Kanto Cup and Little Cup!</li>
-	</ul>
-
-	<h4>v1.18.0 (November 2, 2020)</h4>
-	<ul>
-		<li>PvPoke now integrates with <a href="https://www.pokebattler.com/pokebox" class="pokebox-edit" target="_blank">Pokebattler's Pokebox</a>!</li>
-		<ul>
-			<li>Store your Pokemon on Pokebattler and use them in PvPoke simulations.</li>
-			<li>Import them anywhere you can add a Pokemon, including battle simulations, the Team Builder, and Training Battles.</li>
-		</ul>
+		<li>Pokemon now use moves like Brave Bird more effectively to avoid taking extra damage.</li>
+		<li>Fast Move duration now factors into consistency score. Pokemon with shorter Fast Moves have higher consistency.</li>
 	</ul>
 
 	<h3>Latest Article</h3>

@@ -445,6 +445,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if(cup.name == "kanto"){
+					iterations = 1;
+				}
+
 				if(cup.name == "flying"){
 					iterations = 1;
 				}

@@ -40,6 +40,10 @@
 		"fastMove": "CHARM"
 	},
 	{
+		"speciesId": "barboach",
+		"chargedMoves": ["MUD_BOMB", "ICE_BEAM"]
+	},
+	{
 		"speciesId": "shelmet",
 		"chargedMoves": ["BODY_SLAM", "BUG_BUZZ"]
 	},

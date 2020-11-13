@@ -2,7 +2,8 @@
 	{
 		"speciesId": "machamp_shadow",
 		"fastMove": "COUNTER",
-		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
+		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
+		"weight": 2
 	},
 	{
 		"speciesId": "machamp",
@@ -12,12 +13,14 @@
 	{
 		"speciesId": "sandslash_alolan",
 		"fastMove": "POWDER_SNOW",
-		"chargedMoves": ["ICE_PUNCH", "BULLDOZE"]
+		"chargedMoves": ["ICE_PUNCH", "BULLDOZE"],
+		"weight": 4
 	},
 	{
 		"speciesId": "hypno",
 		"fastMove": "CONFUSION",
-		"chargedMoves": ["FIRE_PUNCH", "SHADOW_BALL"]
+		"chargedMoves": ["THUNDER_PUNCH", "SHADOW_BALL"],
+		"weight": 15
 	},
 	{
 		"speciesId": "hypno_shadow",
@@ -27,7 +30,8 @@
 	{
 		"speciesId": "lapras",
 		"fastMove": "ICE_SHARD",
-		"chargedMoves": ["SURF", "SKULL_BASH"]
+		"chargedMoves": ["SURF", "SKULL_BASH"],
+		"weight": 6
 	},
 	{
 		"speciesId": "lapras_shadow",
@@ -37,7 +41,8 @@
 	{
 		"speciesId": "dewgong",
 		"fastMove": "ICE_SHARD",
-		"chargedMoves": ["ICY_WIND", "WATER_PULSE"]
+		"chargedMoves": ["ICY_WIND", "WATER_PULSE"],
+		"weight": 2
 	},
 	{
 		"speciesId": "victreebel_shadow",
@@ -57,7 +62,8 @@
 	},
 	{
 		"speciesId": "marowak_alolan",
-		"fastMove": "FIRE_SPIN"
+		"fastMove": "FIRE_SPIN",
+		"weight": 15
 	},
 	{
 		"speciesId": "gyarados",
@@ -106,5 +112,21 @@
 	{
 		"speciesId": "tentacruel",
 		"chargedMoves": ["ACID_SPRAY", "HYDRO_PUMP"]
+	},
+	{
+		"speciesId": "wigglytuff",
+		"weight": 10
+	},
+	{
+		"speciesId": "snorlax",
+		"weight": 6
+	},
+	{
+		"speciesId": "dragonair",
+		"weight": 3
+	},
+	{
+		"speciesId": "clefable",
+		"weight": 2
 	}
 ]
