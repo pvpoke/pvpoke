@@ -18,14 +18,6 @@
         "slug": "switches",
         "shields": [1, 1],
         "energy": [4, 0]
-    }, {
-        "slug": "chargers",
-        "shields": [1, 1],
-        "energy": [6, 0]
-    }, {
-        "slug": "attackers",
-        "shields": [0, 1],
-        "energy": [0, 0]
     }],
     "cups": [{
         "name": "all",
@@ -13035,7 +13027,8 @@
         },
         "types": ["electric", "none"],
         "fastMoves": ["LOW_KICK", "THUNDER_SHOCK"],
-        "chargedMoves": ["THUNDER", "THUNDER_PUNCH", "WILD_CHARGE", "ICE_PUNCH"],
+        "chargedMoves": ["THUNDER", "THUNDER_PUNCH", "WILD_CHARGE", "ICE_PUNCH", "FLAMETHROWER"],
+		"eliteMoves": ["FLAMETHROWER"],
         "defaultIVs": {
             "cp500": [6, 9, 14, 15],
             "cp1500": [18, 5, 10, 12],
@@ -13054,7 +13047,8 @@
         },
         "types": ["electric", "none"],
         "fastMoves": ["LOW_KICK", "THUNDER_SHOCK"],
-        "chargedMoves": ["THUNDER", "THUNDER_PUNCH", "WILD_CHARGE", "ICE_PUNCH"],
+        "chargedMoves": ["THUNDER", "THUNDER_PUNCH", "WILD_CHARGE", "ICE_PUNCH", "FLAMETHROWER"],
+		"eliteMoves": ["FLAMETHROWER"],
         "defaultIVs": {
             "cp500": [6, 9, 14, 15],
             "cp1500": [18, 5, 10, 12],
