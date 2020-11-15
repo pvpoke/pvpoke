@@ -3535,15 +3535,27 @@ a.toggle{
 /* TRAINING ANALYSIS */
 
 .train-table{
+	width:100%;
+
 	thead{
 		font-size: 12px;
 		font-weight: bold;
 	}
 
 	td.poke-name{
-		padding: 4px;
-		border-radius:12px;
+		display:flex;
+		padding: 8px 4px;
 		width:200px;
+
+		.sprite-container{
+			width:30px;
+			height:30px;
+			position: relative;
+			background:none;
+			border:none;
+			margin: 0 5px 0 0;
+			padding: 0;
+		}
 
 		.number{
 			padding-right:10px;
@@ -3559,32 +3571,34 @@ a.toggle{
 	}
 
 	td.individual-score,
-	td.team-score{
-		padding: 4px;
-		border-radius:12px;
+	td.team-score,
+	td.usage{
+		padding: 4px 20px 4px 0;
 		font-weight: bold;
 	    font-size: 20px;
 	    line-height: 0;
-	    text-align: center;
 	}
 
-	td.individual-score{
-		color:#ffcea4;
-		background:rgba(184,35,40,1);
-	}
-
-	td.team-score{
+	td.team-score .score{
 		background-image:url('../img/starburst_red.png');
-		background-color: rgb(41, 111, 177);
+		background-color: rgb(52, 102, 174);
 		background-size: 25px;
 	    background-repeat: no-repeat;
 	    background-position: 0 center;
 	    padding-left: 30px;
+		line-height: 25px;
 		color:#fff6d4;
+		display: inline-block;
+	    padding: 4px 4px 4px 30px;
+	    border-radius: 12px;
 
 		&.win{
 			background-image:url('../img/starburst.png');
 		}
+	}
+
+	tr:nth-child(2n) {
+	    background: rgba(0, 0, 0, 0.15);
 	}
 }
 

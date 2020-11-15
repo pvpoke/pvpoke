@@ -100,13 +100,37 @@ var InterfaceMaster = (function () {
 					var $row = $(".train-table thead tr.hide").clone();
 					$row.removeClass("hide");
 					$row.attr("data", speciesId);
-					$row.find(".poke-name").addClass(pokemon.types[0])
+					$row.find(".sprite-container").attr("type-1", pokemon.types[0]);
+					$row.find(".sprite-container").attr("type-2", pokemon.types[0]);
+
+					if(pokemon.types[1] != "none"){
+						$row.find(".sprite-container").attr("type-2", pokemon.types[1]);
+					}
+
 					$row.find(".number").html("#"+(i+1));
 					$row.find(".name").html(speciesName);
 					$row.find(".moves").html(r.pokemon.split(" ")[1]);
-					$row.find(".individual-score").html(r.individualScore);
-					$row.find(".team-score").html(r.teamScore);
-					$row.find(".games").html(r.games);
+					$row.find(".individual-score").html(r.individualScore + '%');
+					$row.find(".team-score .score").html(r.teamScore);
+
+					if(r.teamScore >= 500){
+						$row.find(".team-score .score").addClass("win");
+					}
+
+					// Normalize rating so it has more visual effect
+					var colorRating = 500 + ((r.teamScore - 500) * 8);
+
+					if(colorRating > 1000){
+						colorRating = 1000;
+					} else if(colorRating < 0){
+						colorRating = 0;
+					}
+
+					var color = battle.getRatingColor(colorRating);
+
+					$row.find(".team-score .score").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
+
+					$row.find(".usage").html(r.games);
 
 					$(".train-table tbody").append($row);
 

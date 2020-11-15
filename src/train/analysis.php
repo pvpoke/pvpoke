@@ -49,7 +49,7 @@ switch($cup){
 
 }
 
-$META_TITLE = $league . ' PvP Rankings';
+$META_TITLE = $league . ' Train Analysis';
 
 $META_DESCRIPTION = 'Explore the top Pokemon for Pokemon GO PvP in the ' . $league . '. Rankings include top moves, matchups, and counters for every Pokemon, as well as ratings for different roles.';
 
@@ -87,7 +87,7 @@ require_once '../header.php';
 		<select class="sort-stat">
 			<option value="teamScore">Team Score</option>
 			<option value="individualScore">Individual Score</option>
-			<option value="games">Games</option>
+			<option value="games">Usage</option>
 		</select>
 	</div>
 
@@ -104,35 +104,32 @@ require_once '../header.php';
 
 	<h2 class="loading">Loading data...</h2>
 
-	<table class="train-table">
+	<table class="train-table" cellspacing="0">
 		<thead>
 			<tr>
 				<td>Pokemon</td>
-				<td>Avg. Individual<br>Damage</td>
 				<td>Avg. Team<br>Rating</td>
-				<td>Games</td>
+				<td>Avg. Individual<br>Damage</td>
+				<td>Usage</td>
 			</tr>
 			<!--Row html to clone-->
 			<tr class="hide">
 				<td class="poke-name">
-					<span class="number">#1</span><span class="name">Azumarill</span>
-					<div class="moves">Bubble, Ice Beam, Hydro Pump</div>
+					<div class="sprite-container pokemon">
+						<div class="main-sprite"></div>
+						<div class="secondary-sprite"></div>
+					</div>
+					<div class="name-container">
+						<div class="name">Azumarill</div>
+						<div class="moves">Bubble, Ice Beam, Hydro Pump</div>
+					</div>
 				</td>
+				<td class="team-score"><div class="score">509.3</div></td>
 				<td class="individual-score">129.3%</td>
-				<td class="team-score">509.3</td>
-				<td class="games">1,024</td>
+				<td class="usage">1,024</td>
 			</tr>
 		</thead>
 		<tbody>
-			<tr data="azumarill">
-				<td class="poke-name water">
-					<span class="number">#1</span><span class="name">Azumarill</span>
-					<div class="moves">Bubble, Ice Beam, Hydro Pump</div>
-				</td>
-				<td class="individual-score">129.3%</td>
-				<td class="team-score">509.3</td>
-				<td class="games">1,024</td>
-			</tr>
 		</tbody>
 	</table>
 </div>
