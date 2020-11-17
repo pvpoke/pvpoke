@@ -72,30 +72,21 @@ require_once '../header.php';
 <h1>Training Analysis</h1>
 <div class="section analysis-container white">
 
-	<div class="analysis-options">
-		<div class="analysis-formats">
-			<a class="selected" href="#" data="1500 halloween" scenario="leads">Halloween Cup</a>
-			<a class="selected" href="#" data="1500 halloween" scenario="leads">Master Premier</a>
-		</div>
-
-
-		<div class="analysis-category">
-			<a class="selected" href="#" data="pokemon">Top Pokemon</a>
-			<a href="#" data="pokemon">Top Teams</a>
-		</div>
-
-		<select class="sort-stat">
-			<option value="teamScore">Team Score</option>
-			<option value="individualScore">Individual Score</option>
-			<option value="games">Usage</option>
-		</select>
+	<div class="analysis-formats">
+		<a class="selected" href="#" data="1500 halloween" scenario="leads">Halloween Cup</a>
+		<a class="selected" href="#" data="1500 halloween" scenario="leads">Master Premier</a>
 	</div>
 
-	<div class="clear"></div>
+	<h3>Top Performers</h3>
 
-	<p class="description pokemon"><b>The top performing Pokemon from Training Battles.</b></p>
+	<div>Average performance for individual Pokemon and movesets in PvPoke.com <a href="<?php echo $WEB_ROOT; ?>train/">Training Battles</a>. Data is sampled from both players and bots in the Elite and Champion difficulties.</div>
 
-	<p class="description teams"><b>The top performing teams from Training Battles.</b></p>
+	<div class="sort-category performers">
+		<div class="label">Sort by</div>
+		<a class="selected" href="#" data="team">Team Rating</a>
+		<a href="#" data="individual">Individual Rating</a>
+		<a href="#" data="usage">Usage</a>
+	</div>
 
 	<div class="poke-search-container">
 		<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />
@@ -104,34 +95,81 @@ require_once '../header.php';
 
 	<h2 class="loading">Loading data...</h2>
 
-	<table class="train-table" cellspacing="0">
-		<thead>
-			<tr>
-				<td>Pokemon</td>
-				<td>Avg. Team<br>Rating</td>
-				<td>Avg. Individual<br>Damage</td>
-				<td>Usage</td>
-			</tr>
-			<!--Row html to clone-->
-			<tr class="hide">
-				<td class="poke-name">
-					<div class="sprite-container pokemon">
-						<div class="main-sprite"></div>
-						<div class="secondary-sprite"></div>
-					</div>
-					<div class="name-container">
-						<div class="name">Azumarill</div>
-						<div class="moves">Bubble, Ice Beam, Hydro Pump</div>
-					</div>
-				</td>
-				<td class="team-score"><div class="score">509.3</div></td>
-				<td class="individual-score">129.3%</td>
-				<td class="usage">1,024</td>
-			</tr>
-		</thead>
-		<tbody>
-		</tbody>
-	</table>
+	<div class="table-container">
+		<table class="train-table performers" cellspacing="0">
+			<thead>
+				<tr>
+					<td>Pokemon</td>
+					<td>Team Rating</td>
+					<td>Individual<br>Damage</td>
+					<td>Usage</td>
+				</tr>
+				<!--Row html to clone-->
+				<tr class="hide">
+					<td class="poke-name">
+						<div class="sprite-container pokemon">
+							<div class="main-sprite"></div>
+							<div class="secondary-sprite"></div>
+						</div>
+						<div class="name-container">
+							<div class="name">Azumarill</div>
+							<div class="moves">Bubble, Ice Beam, Hydro Pump</div>
+						</div>
+					</td>
+					<td class="team-score"><div class="score">509.3</div></td>
+					<td class="individual-score">129.3%</td>
+					<td class="usage">1,024</td>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+
+	<p class="column-description"><b>Team Rating - </b> Similar to the Battle Rating metric in battle simulations, the Team Rating metric is a number between 0 and 1000 that measures the quality of wins and losses depending on how much HP remains on the opposing team. An average team rating above 500 means teams including that Pokemon win more often. An average team rating below 500 indicates underperformance, and that teams including that Pokemon may struggle.</p>
+
+	<p class="column-description"><b>Individual Damage - </b> The individual damage metric measures the damage output of a Pokemon in battle. 100% equals 1 Pokemon worth of damage. This metric also includes shields drawn by the Pokemon: 1 shield is treated as 50% of a Pokemon in Great League, and 40% of a Pokemon in Ultra and Master League. Pokemon with high average individual damage have strong damage output and shield pressure. However, high individual damage output doesn't always correlate to success on a team.</p>
+
+	<p class="column-description"><b>Usage - </b> Usage by players and bots on teams of 3. A large sample size will yield higher confidence in the data. A small sample size may be the result of an individual player, and consequentially yield lower confidence in the data. The data is filtered by a mininum usage threshold.</p>
+
+	<h3>Top Teams</h3>
+
+	<div>Average performance for teams in PvPoke.com <a href="<?php echo $WEB_ROOT; ?>train/">Training Battles</a>. Data is sampled from both players and bots in the Elite and Champion difficulties.</div>
+
+	<div class="sort-category teams">
+		<div class="label">Sort by</div>
+		<a class="selected" href="#" data="team">Team Rating</a>
+		<a href="#" data="usage">Usage</a>
+	</div>
+
+	<div class="table-container">
+		<table class="train-table teams" cellspacing="0">
+			<thead>
+				<tr>
+					<td>Team</td>
+					<td>Team Rating</td>
+				</tr>
+				<!--Row html to clone-->
+				<tr class="hide">
+					<td class="poke-name">
+						<div class="sprite-container pokemon">
+							<div class="main-sprite"></div>
+							<div class="secondary-sprite"></div>
+						</div>
+						<div class="name-container">
+							<div class="name">Azumarill</div>
+							<div class="moves">Bubble, Ice Beam, Hydro Pump</div>
+						</div>
+					</td>
+					<td class="team-score"><div class="score">509.3</div></td>
+					<td class="individual-score">129.3%</td>
+					<td class="usage">1,024</td>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
 </div>
 
 <a href="#" class="button download-csv">Export to CSV</a>

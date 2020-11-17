@@ -3277,6 +3277,10 @@ a.toggle {
 }
 
 /* TRAINING ANALYSIS */
+.analysis-container .table-container {
+  max-height: 600px;
+}
+
 .train-table {
   width: 100%;
 }
@@ -3286,8 +3290,8 @@ a.toggle {
 }
 .train-table td.poke-name {
   display: flex;
-  padding: 8px 4px;
-  width: 200px;
+  padding: 6px 2px;
+  width: 125px;
 }
 .train-table td.poke-name .sprite-container {
   width: 30px;
@@ -3302,7 +3306,9 @@ a.toggle {
   padding-right: 10px;
 }
 .train-table td.poke-name .name {
+  font-size: 14px;
   font-weight: bold;
+  max-width: 100px;
 }
 .train-table td.poke-name .moves {
   font-size: 12px;
@@ -3310,9 +3316,9 @@ a.toggle {
 .train-table td.individual-score,
 .train-table td.team-score,
 .train-table td.usage {
-  padding: 4px 20px 4px 0;
+  padding: 2px 16px 2px 0;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 14px;
   line-height: 0;
 }
 .train-table td.team-score .score {
@@ -3327,6 +3333,8 @@ a.toggle {
   display: inline-block;
   padding: 4px 4px 4px 30px;
   border-radius: 12px;
+  min-width: 40px;
+  text-align: center;
 }
 .train-table td.team-score .score.win {
   background-image: url("../img/starburst.png");
@@ -3410,6 +3418,26 @@ a.toggle {
 
   .battle-results.matrix .table-container {
     max-height: 800px;
+  }
+
+  .train-table td.poke-name {
+    padding: 8px 4px;
+    width: 200px;
+  }
+  .train-table td.poke-name .name {
+    font-size: 16px;
+    max-width: none;
+  }
+  .train-table td.individual-score,
+.train-table td.team-score,
+.train-table td.usage {
+    font-size: 20px;
+    padding: 4px 20px 4px 0;
+  }
+  .train-table td.individual-score .score,
+.train-table td.team-score .score,
+.train-table td.usage .score {
+    min-width: 60px;
   }
 }
 /* Printing for meta scorecard */

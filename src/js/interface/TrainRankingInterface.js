@@ -97,7 +97,7 @@ var InterfaceMaster = (function () {
 					}
 
 					// Create a new row
-					var $row = $(".train-table thead tr.hide").clone();
+					var $row = $(".train-table.performers thead tr.hide").clone();
 					$row.removeClass("hide");
 					$row.attr("data", speciesId);
 					$row.find(".sprite-container").attr("type-1", pokemon.types[0]);
@@ -132,7 +132,7 @@ var InterfaceMaster = (function () {
 
 					$row.find(".usage").html(r.games);
 
-					$(".train-table tbody").append($row);
+					$(".train-table.performers tbody").append($row);
 
 					continue;
 
