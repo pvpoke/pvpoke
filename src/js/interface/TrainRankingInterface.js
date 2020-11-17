@@ -46,6 +46,7 @@ var InterfaceMaster = (function () {
 				$(".train-table tbody").html('');
 				$(".loading").show();
 
+				battle.setCup(cup);
 				battle.setCP(league);
 
 				/* This timeout allows the interface to display the loading message before
@@ -72,7 +73,7 @@ var InterfaceMaster = (function () {
 				csv = 'Pokemon,Score,Type 1,Type 2,Attack,Defense,Stamina,Stat Product,Level,Fast Move,Charged Move 1,Charged Move 2\n';
 
 
-				// Create an element for each ranked Pokemon
+				// Display top performers rankings
 
 				for(var i = 0; i < rankings.performers.length; i++){
 					var r = rankings.performers[i];
@@ -90,8 +91,6 @@ var InterfaceMaster = (function () {
 
 					var pokemon = new Pokemon(speciesId, 0, battle);
 
-					console.log(speciesId);
-
 					if(! pokemon.speciesId){
 						continue;
 					}
@@ -107,7 +106,6 @@ var InterfaceMaster = (function () {
 						$row.find(".sprite-container").attr("type-2", pokemon.types[1]);
 					}
 
-					$row.find(".number").html("#"+(i+1));
 					$row.find(".name").html(speciesName);
 					$row.find(".moves").html(r.pokemon.split(" ")[1]);
 					$row.find(".individual-score").html(r.individualScore + '%');
@@ -129,65 +127,67 @@ var InterfaceMaster = (function () {
 					var color = battle.getRatingColor(colorRating);
 
 					$row.find(".team-score .score").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
-
 					$row.find(".usage").html(r.games);
+					$row.find(".link a").attr("href", host+"rankings/" + battle.getCup().name + "/" + battle.getCP() + "/overall/" + pokemon.speciesId + "/");
 
 					$(".train-table.performers tbody").append($row);
+				}
 
-					continue;
+				// Display top teams rankings
 
-					pokemon.initialize(true);
-					pokemon.selectMove("fast", r.moveset[0]);
-					pokemon.selectMove("charged", r.moveset[1], 0);
+				for(var i = 0; i < rankings.teams.length; i++){
+					var r = rankings.teams[i];
+					var team = [];
+					var arr = r.team.split("|"); // Split string value into Pokemon
 
-					if(r.moveset.length > 2){
-						pokemon.selectMove("charged", r.moveset[2],1);
-					} else{
-						pokemon.selectMove("charged", "none", 1);
-					}
+					// Create a new row
+					var $row = $(".train-table.teams thead tr.hide").clone();
+					$row.removeClass("hide");
 
-					if(! pokemon.speciesId){
-						continue;
-					}
+					for(var n = 0; n < arr.length; n++){
+						var speciesId = arr[n].split(" ")[0];
+						var movesetStr = arr[n].split(" ")[1];
 
-					// Get names of of ranking moves
+						var pokemon = new Pokemon(speciesId, 0, battle);
 
-					var moveNameStr = "";
-
-					// Put together the recommended moveset string
-					for(var n = 0; n < r.moveset.length; n++){
-						if(n == 0){
-							for(var j = 0; j < pokemon.fastMovePool.length; j++){
-								if(r.moveset[n] == pokemon.fastMovePool[j].moveId){
-									moveNameStr += pokemon.fastMovePool[j].displayName;
-									break;
-								}
-							}
-						} else{
-							for(var j = 0; j < pokemon.chargedMovePool.length; j++){
-								if(r.moveset[n] == pokemon.chargedMovePool[j].moveId){
-									moveNameStr += pokemon.chargedMovePool[j].displayName;
-									break;
-								}
-							}
+						if(! pokemon.speciesId){
+							continue;
 						}
 
-						if(n < r.moveset.length - 1){
-							moveNameStr += ", "
+						$row.find(".sprite-container").eq(n).attr("type-1", pokemon.types[0]);
+						$row.find(".sprite-container").eq(n).attr("type-2", pokemon.types[0]);
+
+						if(pokemon.types[1] != "none"){
+							$row.find(".sprite-container").eq(n).attr("type-2", pokemon.types[1]);
 						}
+
+						$row.find(".name").eq(n).html(pokemon.speciesName);
+						$row.find(".moves").eq(n).html(movesetStr);
+
+						team.push(pokemon);
 					}
 
-					// Is this the best way to add HTML content? I'm gonna go with no here. But does it work? Yes!
+					$row.find(".team-score .score").html(r.score);
 
-					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"expand-label\"></div><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span><div class=\"moves\">"+moveNameStr+"</div></div><div class=\"rating-container\"><div class=\"rating\">"+r.score+"</span></div><div class=\"clear\"></div></div><div class=\"details\"></div>");
-
-					if(limitedPokemon.indexOf(pokemon.speciesId) > -1){
-						$el.addClass("limited-rank");
+					if(r.score >= 500){
+						$row.find(".team-score .score").addClass("win");
 					}
 
-					$(".section.white > .rankings-container").append($el);
+					// Normalize rating so it has more visual effect
+					var colorRating = 500 + ((r.score - 500) * 8);
 
-					csv += pokemon.speciesName+','+r.score+','+pokemon.types[0]+','+pokemon.types[1]+','+(Math.round(pokemon.stats.atk*10)/10)+','+(Math.round(pokemon.stats.def*10)/10)+','+Math.round(pokemon.stats.hp)+','+Math.round(pokemon.stats.atk*pokemon.stats.def*pokemon.stats.hp)+','+pokemon.level+','+pokemon.fastMove.name+','+pokemon.chargedMoves[0].name+','+pokemon.chargedMoves[1].name+'\n';
+					if(colorRating > 1000){
+						colorRating = 1000;
+					} else if(colorRating < 0){
+						colorRating = 0;
+					}
+
+					var color = battle.getRatingColor(colorRating);
+
+					$row.find(".team-score .score").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
+					$row.find(".usage").html(r.games);
+
+					$(".train-table.teams tbody").append($row);
 				}
 
 				$(".loading").hide();
@@ -214,21 +214,6 @@ var InterfaceMaster = (function () {
 
 				if($(".poke-search").val() != ''){
 					$(".poke-search").trigger("keyup");
-				}
-
-
-				// If a Pokemon has been selected via URL parameters, jump to it
-
-				if(jumpToPoke){
-					var $el = $(".rank[data=\""+jumpToPoke+"\"]")
-					$el.trigger("click");
-
-					// Scroll to element
-
-					$("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, 500);
-					$(".rankings-container").scrollTop($el.position().top-$(".rankings-container").position().top-20);
-
-					jumpToPoke = false;
 				}
 			}
 

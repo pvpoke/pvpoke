@@ -73,8 +73,8 @@ require_once '../header.php';
 <div class="section analysis-container white">
 
 	<div class="analysis-formats">
-		<a class="selected" href="#" data="1500 halloween" scenario="leads">Halloween Cup</a>
-		<a class="selected" href="#" data="1500 halloween" scenario="leads">Master Premier</a>
+		<a class="selected" href="#" data="1500 halloween">Halloween Cup</a>
+		<a class="selected" href="#" data="10000 premier">Master Premier</a>
 	</div>
 
 	<h3>Top Performers</h3>
@@ -100,6 +100,7 @@ require_once '../header.php';
 			<thead>
 				<tr>
 					<td>Pokemon</td>
+					<td></td>
 					<td>Team Rating</td>
 					<td>Individual<br>Damage</td>
 					<td>Usage</td>
@@ -116,6 +117,7 @@ require_once '../header.php';
 							<div class="moves">Bubble, Ice Beam, Hydro Pump</div>
 						</div>
 					</td>
+					<td class="link"><a href="#" target="_blank"></a></td>
 					<td class="team-score"><div class="score">509.3</div></td>
 					<td class="individual-score">129.3%</td>
 					<td class="usage">1,024</td>
@@ -146,23 +148,53 @@ require_once '../header.php';
 		<table class="train-table teams" cellspacing="0">
 			<thead>
 				<tr>
-					<td>Team</td>
+					<td class="poke-name">Team (Lead First)</td>
+					<td class="poke-name"></td>
+					<td class="poke-name"></td>
+					<td></td>
 					<td>Team Rating</td>
+					<td>Usage</td>
 				</tr>
 				<!--Row html to clone-->
 				<tr class="hide">
 					<td class="poke-name">
-						<div class="sprite-container pokemon">
-							<div class="main-sprite"></div>
-							<div class="secondary-sprite"></div>
-						</div>
-						<div class="name-container">
-							<div class="name">Azumarill</div>
-							<div class="moves">Bubble, Ice Beam, Hydro Pump</div>
+						<div class="team-member">
+							<div class="sprite-container pokemon">
+								<div class="main-sprite"></div>
+								<div class="secondary-sprite"></div>
+							</div>
+							<div class="name-container">
+								<div class="name">Azumarill</div>
+								<div class="moves">Bubble, Ice Beam, Hydro Pump</div>
+							</div>
 						</div>
 					</td>
+					<td class="poke-name">
+						<div class="team-member">
+							<div class="sprite-container pokemon">
+								<div class="main-sprite"></div>
+								<div class="secondary-sprite"></div>
+							</div>
+							<div class="name-container">
+								<div class="name">Azumarill</div>
+								<div class="moves">Bubble, Ice Beam, Hydro Pump</div>
+							</div>
+						</div>
+					</td>
+					<td class="poke-name">
+						<div class="team-member">
+							<div class="sprite-container pokemon">
+								<div class="main-sprite"></div>
+								<div class="secondary-sprite"></div>
+							</div>
+							<div class="name-container">
+								<div class="name">Azumarill</div>
+								<div class="moves">Bubble, Ice Beam, Hydro Pump</div>
+							</div>
+						</div>
+					</td>
+					<td class="link"><a href="#" target="_blank"></a></td>
 					<td class="team-score"><div class="score">509.3</div></td>
-					<td class="individual-score">129.3%</td>
 					<td class="usage">1,024</td>
 				</tr>
 			</thead>
@@ -170,7 +202,13 @@ require_once '../header.php';
 			</tbody>
 		</table>
 	</div>
+
+	<p class="column-description"><b>Team Rating - </b> Similar to the Battle Rating metric in battle simulations, the Team Rating metric is a number between 0 and 1000 that measures the quality of wins and losses depending on how much HP remains on the opposing team. An average team rating above 500 means teams including that team wins more often. An average team rating below 500 indicates underperformance.</p>
+
+	<p class="column-description"><b>Usage - </b> Usage by players and bots. A large sample size will yield higher confidence in the data. A small sample size may be the result of an individual player, and consequentially yield lower confidence in the data. The data is filtered by a mininum usage threshold.</p>
 </div>
+
+
 
 <a href="#" class="button download-csv">Export to CSV</a>
 

@@ -3279,6 +3279,10 @@ a.toggle {
 /* TRAINING ANALYSIS */
 .analysis-container .table-container {
   max-height: 600px;
+  margin-bottom: 20px;
+}
+.analysis-container .column-description {
+  font-size: 12px;
 }
 
 .train-table {
@@ -3287,6 +3291,10 @@ a.toggle {
 .train-table thead {
   font-size: 12px;
   font-weight: bold;
+}
+.train-table thead td.poke-name {
+  padding: 0;
+  width: auto;
 }
 .train-table td.poke-name {
   display: flex;
@@ -3313,6 +3321,9 @@ a.toggle {
 .train-table td.poke-name .moves {
   font-size: 12px;
 }
+.train-table td.poke-name .team-member {
+  display: flex;
+}
 .train-table td.individual-score,
 .train-table td.team-score,
 .train-table td.usage {
@@ -3338,6 +3349,16 @@ a.toggle {
 }
 .train-table td.team-score .score.win {
   background-image: url("../img/starburst.png");
+}
+.train-table td.link a {
+  display: block;
+  width: 32px;
+  height: 28px;
+  background-image: url(../img/eye.png);
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  margin-right: 10px;
+  opacity: 0.5;
 }
 .train-table tr:nth-child(2n) {
   background: rgba(0, 0, 0, 0.15);
@@ -3427,6 +3448,9 @@ a.toggle {
   .train-table td.poke-name .name {
     font-size: 16px;
     max-width: none;
+  }
+  .train-table.teams td.poke-name {
+    display: table-cell;
   }
   .train-table td.individual-score,
 .train-table td.team-score,

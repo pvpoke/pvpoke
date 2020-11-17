@@ -3537,6 +3537,11 @@ a.toggle{
 .analysis-container{
 	.table-container{
 		max-height: 600px;
+		margin-bottom:20px;
+	}
+
+	.column-description{
+		font-size:12px;
 	}
 }
 
@@ -3546,6 +3551,11 @@ a.toggle{
 	thead{
 		font-size: 12px;
 		font-weight: bold;
+
+		td.poke-name{
+			padding:0;
+			width:auto;
+		}
 	}
 
 	td.poke-name{
@@ -3576,6 +3586,10 @@ a.toggle{
 		.moves{
 			font-size:12px;
 		}
+
+		.team-member{
+			display: flex;
+		}
 	}
 
 	td.individual-score,
@@ -3605,6 +3619,17 @@ a.toggle{
 		&.win{
 			background-image:url('../img/starburst.png');
 		}
+	}
+
+	td.link a{
+		display: block;
+	    width: 32px;
+	    height: 28px;
+	    background-image: url(../img/eye.png);
+	    background-repeat: no-repeat;
+	    background-position: 0 center;
+	    margin-right: 10px;
+	    opacity: 0.5;
 	}
 
 	tr:nth-child(2n) {
@@ -3710,6 +3735,10 @@ a.toggle{
 				font-size:16px;
 				max-width:none;
 			}
+		}
+
+		&.teams td.poke-name{
+			display:table-cell;
 		}
 
 		td.individual-score,
