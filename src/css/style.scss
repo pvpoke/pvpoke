@@ -3543,6 +3543,28 @@ a.toggle{
 	.column-description{
 		font-size:12px;
 	}
+
+	.sort-category{
+		margin: 20px 0 10px 0;
+		display: flex;
+
+		div, a{
+			margin-right:15px;
+		}
+
+		a{
+			display:block;
+			background:$color-links;
+			padding:4px 8px;
+			text-decoration: none;
+			border-radius: 12px;
+			color:#fff;
+
+			&.selected{
+				font-weight: bold;
+			}
+		}
+	}
 }
 
 .train-table{

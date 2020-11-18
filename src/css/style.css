@@ -3284,6 +3284,24 @@ a.toggle {
 .analysis-container .column-description {
   font-size: 12px;
 }
+.analysis-container .sort-category {
+  margin: 20px 0 10px 0;
+  display: flex;
+}
+.analysis-container .sort-category div, .analysis-container .sort-category a {
+  margin-right: 15px;
+}
+.analysis-container .sort-category a {
+  display: block;
+  background: #003748;
+  padding: 4px 8px;
+  text-decoration: none;
+  border-radius: 12px;
+  color: #fff;
+}
+.analysis-container .sort-category a.selected {
+  font-weight: bold;
+}
 
 .train-table {
   width: 100%;

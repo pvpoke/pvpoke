@@ -29,7 +29,7 @@ var InterfaceMaster = (function () {
 				}
 
 				$(".format-select").on("change", selectFormat);
-				$(".ranking-categories a").on("click", selectCategory);
+				$(".sort-category a").on("click", sortTable);
 				$("body").on("click", ".check", checkBox);
 
 				window.addEventListener('popstate', function(e) {
@@ -156,6 +156,7 @@ var InterfaceMaster = (function () {
 
 						$row.find(".sprite-container").eq(n).attr("type-1", pokemon.types[0]);
 						$row.find(".sprite-container").eq(n).attr("type-2", pokemon.types[0]);
+						$row.find(".sprite-container").eq(n).attr("data", speciesId);
 
 						if(pokemon.types[1] != "none"){
 							$row.find(".sprite-container").eq(n).attr("type-2", pokemon.types[1]);
@@ -437,10 +438,12 @@ var InterfaceMaster = (function () {
 
 			// Event handler for selecting ranking category
 
-			function selectCategory(e){
+			function sortTable(e){
 
 				e.preventDefault();
 
+				var $parent = $(e).closest(".sort-category");
+				
 				$(".ranking-categories a").removeClass("selected");
 
 				$(e.target).addClass("selected");
@@ -462,9 +465,7 @@ var InterfaceMaster = (function () {
 					}
 				}
 
-				self.displayRankings(category, cp, cup);
-
-				self.pushHistoryState(cup, cp, category, null);
+				self.displayRankingData(data);
 			}
 
 			// Event handler clicking on a Pokemon item, load detail data

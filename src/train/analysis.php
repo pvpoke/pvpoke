@@ -102,7 +102,7 @@ require_once '../header.php';
 					<td>Pokemon</td>
 					<td></td>
 					<td>Team Rating</td>
-					<td>Individual<br>Damage</td>
+					<td>Individual<br>Rating</td>
 					<td>Usage</td>
 				</tr>
 				<!--Row html to clone-->
@@ -130,7 +130,7 @@ require_once '../header.php';
 
 	<p class="column-description"><b>Team Rating - </b> Similar to the Battle Rating metric in battle simulations, the Team Rating metric is a number between 0 and 1000 that measures the quality of wins and losses depending on how much HP remains on the opposing team. An average team rating above 500 means teams including that Pokemon win more often. An average team rating below 500 indicates underperformance, and that teams including that Pokemon may struggle.</p>
 
-	<p class="column-description"><b>Individual Damage - </b> The individual damage metric measures the damage output of a Pokemon in battle. 100% equals 1 Pokemon worth of damage. This metric also includes shields drawn by the Pokemon: 1 shield is treated as 50% of a Pokemon in Great League, and 40% of a Pokemon in Ultra and Master League. Pokemon with high average individual damage have strong damage output and shield pressure. However, high individual damage output doesn't always correlate to success on a team.</p>
+	<p class="column-description"><b>Individual Rating - </b> The individual rating metric measures the damage output of a Pokemon in battle. 100% equals 1 Pokemon worth of damage. This metric also includes shields drawn by the Pokemon: 1 shield is treated as 50% of a Pokemon in Great League, and 40% of a Pokemon in Ultra and Master League. Pokemon with high average individual rating have strong damage output and shield pressure. However, high individual rating doesn't always correlate to success on a team.</p>
 
 	<p class="column-description"><b>Usage - </b> Usage by players and bots on teams of 3. A large sample size will yield higher confidence in the data. A small sample size may be the result of an individual player, and consequentially yield lower confidence in the data. The data is filtered by a mininum usage threshold.</p>
 
@@ -140,6 +140,7 @@ require_once '../header.php';
 
 	<div class="sort-category teams">
 		<div class="label">Sort by</div>
+		<a href="#" data="lead">Lead</a>
 		<a class="selected" href="#" data="team">Team Rating</a>
 		<a href="#" data="usage">Usage</a>
 	</div>
