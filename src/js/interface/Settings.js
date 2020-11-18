@@ -42,7 +42,6 @@ var InterfaceMaster = (function () {
 					dataType:'json',
 					success : function(data) {
 						modalWindow("Settings Saved", $("<p>Your settings have been updated. (Refresh the page if you've updated the site appearance.)</p>"))
-
 					},
 					error : function(request,error)
 					{

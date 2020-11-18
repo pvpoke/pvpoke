@@ -18,21 +18,31 @@ var GameMaster = (function () {
 
 		var gmVersion = settings.gamemaster;
 
-		if(gmVersion == "gamemaster-mega"){
+		if((gmVersion == "gamemaster-mega")||(gmVersion == "gamemaster-kalos")){
 			gmVersion = "gamemaster";
 		}
 
 		$.getJSON( webRoot+"data/"+gmVersion+".json?v="+siteVersion, function( data ){
 			object.data = data;
 
-			if(settings.gamemaster != "gamemaster-mega"){
+			if(settings.gamemaster == "gamemaster"){
 				// Sort Pokemon alphabetically for searching
 				object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
 
 				InterfaceMaster.getInstance().init(object);
-			} else{
+			} else if(settings.gamemaster == "gamemaster-mega"){
 				// Load additional mega pokemon
 				$.getJSON( webRoot+"data/megas.json?v="+siteVersion, function( data ){
+
+					// Sort Pokemon alphabetically for searching
+					object.data.pokemon = object.data.pokemon.concat(data);
+					object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+
+					InterfaceMaster.getInstance().init(object);
+				});
+			} else if(settings.gamemaster == "gamemaster-kalos"){
+				// Load additional mega pokemon
+				$.getJSON( webRoot+"data/kalos.json?v="+siteVersion, function( data ){
 
 					// Sort Pokemon alphabetically for searching
 					object.data.pokemon = object.data.pokemon.concat(data);

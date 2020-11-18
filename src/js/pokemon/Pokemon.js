@@ -228,10 +228,19 @@ function Pokemon(id, i, b){
 						self.setLevel(40, false);
 					} else{
 						var combination = data.defaultIVs["cp"+maxCP];
-						self.ivs.atk = combination[1];
-						self.ivs.def = combination[2];
-						self.ivs.hp = combination[3];
-						self.setLevel(combination[0], false);
+
+						if(combination){
+							self.ivs.atk = combination[1];
+							self.ivs.def = combination[2];
+							self.ivs.hp = combination[3];
+							self.setLevel(combination[0], false);
+						} else{
+							self.ivs.atk = 15;
+							self.ivs.def = 15;
+							self.ivs.hp = 15;
+							self.setLevel(40, false);
+						}
+
 					}
 				break;
 			}

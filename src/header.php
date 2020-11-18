@@ -29,7 +29,7 @@ if(isset($_COOKIE['settings'])){
 	}
 
 	// Validate the gamemaster setting, only allow these options
-	$gamemasters = ["gamemaster", "gamemaster-mega"];
+	$gamemasters = ["gamemaster", "gamemaster-mega", "gamemaster-kalos"];
 
 	if(! in_array($_SETTINGS->gamemaster, $gamemasters)){
 		$_SETTINGS->gamemaster = "gamemaster";
