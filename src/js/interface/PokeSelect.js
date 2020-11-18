@@ -238,6 +238,14 @@ function PokeSelect(element, i){
 			} else{
 				$el.find(".mega-cp-container").hide();
 			}
+
+			// Show speculative warning for level 50 Pokemon
+
+			if(selectedPokemon.level > 45){
+				$el.find(".fifty-warning").show();
+			} else{
+				$el.find(".fifty-warning").hide();
+			}
 		}
 	}
 
@@ -779,7 +787,7 @@ function PokeSelect(element, i){
 
 		var value = parseFloat($el.find("input.level").val());
 
-		if((value >= 1) && (value <=45) && (value % 0.5 == 0)){
+		if((value >= 1) && (value <=50) && (value % 0.5 == 0)){
 			// Valid level
 
 			selectedPokemon.setLevel(value);

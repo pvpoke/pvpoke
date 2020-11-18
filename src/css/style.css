@@ -470,6 +470,15 @@ header {
 .poke .poke-stats .move-select.fast {
   margin-top: 5px;
 }
+.poke .fifty-warning {
+  display: none;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 4px;
+  border-radius: 8px;
+  border: 1px solid #000;
+  margin: 6px 0;
+}
 .poke .legacy {
   font-size: 12px;
   margin-top: 10px;

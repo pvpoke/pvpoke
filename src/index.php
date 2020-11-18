@@ -28,10 +28,9 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.18.6 (November 13, 2020)</h4>
+	<h4>v1.18.7 (November 18, 2020)</h4>
 	<ul>
-		<li>Pokemon now use moves like Brave Bird more effectively to avoid taking extra damage.</li>
-		<li>Fast Move duration now factors into consistency score. Pokemon with shorter Fast Moves have higher consistency.</li>
+		<li>The site now supports Pokemon levels up to 50. Note that the current values are speculative and should not be used to determine investments at this time.</li>
 	</ul>
 
 	<h3>Latest Article</h3>
