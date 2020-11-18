@@ -148,7 +148,7 @@ if(! isset($OG_IMAGE)){
 
 	foreach($kalos as $k){
 
-		if(strpos($_SERVER['REQUEST_URI'], 'carbink') !== false){
+		if(strpos($_SERVER['REQUEST_URI'], $k) !== false){
 			$_SETTINGS->gamemaster = 'gamemaster-kalos'; ?>
 			settings.gamemaster = "gamemaster-kalos";
 			<?php
