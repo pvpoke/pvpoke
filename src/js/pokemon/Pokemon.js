@@ -38,8 +38,8 @@ function Pokemon(id, i, b){
 	this.startHp = 0;
 	this.startEnergy = 0;
 	this.startCooldown = 0;
-	this.level = 40;
-	this.levelCap = 40;
+	this.level = 50;
+	this.levelCap = 50;
 	this.cpm = 0.79030001;
 	this.priority = 0; // Charged move priority
 	this.fastMovePool = [];
