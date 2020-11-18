@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.18.7';
+$SITE_VERSION = '1.18.8';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -141,6 +141,20 @@ if(! isset($OG_IMAGE)){
 		// If "Mega" is contained in the URL, default to the mega gamemaster
 		settings.gamemaster = "gamemaster-mega";
 	<?php endif; ?>
+
+	<?php
+	// Use Kalos gamemaster for eligible Pokemon
+	$kalos = array("chesnaught","delphox","greninja","diggersby","talonflame","gogoat","pancham","pangoro","aegislash_blade","aegislash_shield","malamar","dragalge","auroros","sylveon","hawlucha","carbink","sliggoo","goodra","xerneas","yveltal","zygarde","zygarde_complete","diancie","volcanion");
+
+	foreach($kalos as $k){
+
+		if(strpos($_SERVER['REQUEST_URI'], 'carbink') !== false){
+			$_SETTINGS->gamemaster = 'gamemaster-kalos'; ?>
+			settings.gamemaster = "gamemaster-kalos";
+			<?php
+		}
+	}
+ 	?>
 
 
 	// If $_GET request exists, output as JSON into Javascript

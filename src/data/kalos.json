@@ -144,8 +144,8 @@
 		"hp": 155
 	},
 	"types": ["ghost", "steel"],
-	"fastMoves": ["PSYCHO_CUT", "SHADOW_CLAW"],
-	"chargedMoves": ["SHADOW_SNEAK", "SACRED_SWORD", "CLOSE_COMBAT", "FLASH_CANNON", "NIGHT_SLASH", "SHADOW_BALL", "ROCK_SLIDE"],
+	"fastMoves": ["PSYCHO_CUT", "SHADOW_CLAW", "FURY_CUTTER", "TACKLE"],
+	"chargedMoves": ["SHADOW_SNEAK", "SACRED_SWORD", "CLOSE_COMBAT", "FLASH_CANNON", "NIGHT_SLASH", "SHADOW_BALL", "ROCK_SLIDE", "AERIAL_ACE"],
 	"defaultIVs": {
 		"cp500": [7, 10, 13, 12],
 		"cp1500": [21, 6, 13, 9],
@@ -161,13 +161,14 @@
 		"hp": 155
 	},
 	"types": ["ghost", "steel"],
-	"fastMoves": ["PSYCHO_CUT", "SHADOW_CLAW"],
-	"chargedMoves": ["SHADOW_SNEAK", "SACRED_SWORD", "CLOSE_COMBAT", "FLASH_CANNON", "NIGHT_SLASH", "SHADOW_BALL", "ROCK_SLIDE"],
+	"fastMoves": ["PSYCHO_CUT", "SHADOW_CLAW", "FURY_CUTTER", "TACKLE"],
+	"chargedMoves": ["SHADOW_SNEAK", "SACRED_SWORD", "CLOSE_COMBAT", "FLASH_CANNON", "NIGHT_SLASH", "SHADOW_BALL", "ROCK_SLIDE", "AERIAL_ACE"],
 	"defaultIVs": {
 		"cp500": [12, 5, 14, 12],
 		"cp1500": [36.5, 14, 15, 14],
 		"cp2500": [40, 15, 15, 15]
-	}
+	},
+	"searchPriority": 2
 }, {
 	"dex": 687,
 	"speciesName": "Malamar",
