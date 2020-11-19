@@ -13,9 +13,15 @@ function Pokemon(id, i, b){
 
 	// CP modifiers at each level
 
-	var cpms = [0.093999997,0.16639787,0.21573247,0.25572005,0.29024988,0.3210876,0.34921268,0.37523559,0.39956728,0.42250001,0.44310755,0.46279839,0.48168495,0.49985844,0.51739395,0.53435433,0.55079269,0.56675452,0.58227891,0.59740001,0.61215729,0.62656713,0.64065295,0.65443563,0.667934,0.68116492,0.69414365,0.70688421,0.71939909,0.7317,0.73776948,0.74378943,0.74976104,0.75568551,0.76156384,0.76739717,0.7731865,0.77893275,0.78463697,0.79030001,0.79530001,0.8003,0.8053,0.81029999,0.81529999];
+	var cpms = [0.09399999678, 0.1351374321, 0.1663978696, 0.1926509132, 0.2157324702, 0.2365726514, 0.2557200491, 0.2735303721, 0.2902498841, 0.3060573814, 0.3210875988, 0.335445032, 0.3492126763, 0.3624577366, 0.3752355874, 0.3875924077, 0.3995672762, 0.4111935532, 0.4225000143, 0.4329264205, 0.4431075454, 0.4530599482, 0.4627983868, 0.4723360853, 0.481684953, 0.4908558072, 0.499858439, 0.508701749, 0.5173939466, 0.5259425161, 0.5343543291, 0.5426357538, 0.5507926941, 0.5588305845, 0.5667545199, 0.5745691281, 0.5822789073, 0.5898879079, 0.5974000096, 0.6048236487, 0.6121572852, 0.619404108, 0.6265671253, 0.6336491787, 0.6406529546, 0.6475809714, 0.6544356346, 0.6612192658, 0.6679340005, 0.6745818856, 0.6811649203, 0.6876849013, 0.6941436529, 0.700542901, 0.7068842053, 0.7131690749, 0.7193990946, 0.7255755869, 0.7317000031, 0.7347410386, 0.7377694845, 0.7407855797, 0.7437894344, 0.7467811972, 0.749761045, 0.7527290997, 0.7556855083, 0.7586303702, 0.7615638375, 0.7644860496, 0.7673971653, 0.7702972937, 0.7731865048, 0.7760649471, 0.7789327502, 0.7817900508, 0.7846369743, 0.7874736085, 0.7903000116, 0.792803968, 0.7953000069, 0.7978038984, 0.8003000021, 0.8028038719, 0.8052999973, 0.8078038508, 0.8102999926, 0.8128038352, 0.8152999878, 0.8178038066, 0.820299983, 0.8228037786, 0.8252999783, 0.8278037509, 0.8302999735, 0.8328037534, 0.8353000283, 0.8378037559, 0.8403000236];
+
+	if(! data){
+		console.log(id + " not found");
+		return false;
+	}
 
 	// Base properties
+	this.data = data;
 	this.dex = data.dex;
 	this.speciesId = id;
 	this.speciesName = data.speciesName;
@@ -39,6 +45,7 @@ function Pokemon(id, i, b){
 	this.fastMovePool = [];
 	this.chargedMovePool = [];
 	this.legacyMoves = [];
+	this.eliteMoves = [];
 	this.shadowEligible = false;
 	this.shadowType = "normal"; // normal, shadow, or purified
 	this.shadowAtkMult = 1;
@@ -50,6 +57,7 @@ function Pokemon(id, i, b){
 	this.chargedMoves = [];
 
 	this.isCustom = false; // Does this Pokemon have custom set levels and IV's?
+	this.autoLevel = false; // Automatically adjust a Pokemon to league CP when adjusting IVs
 
 	this.index = i;
 
@@ -67,6 +75,7 @@ function Pokemon(id, i, b){
 	this.baitShields = true; // Use low energy attacks to bait shields
 	this.farmEnergy = false; // use fast moves only
 	this.chargedMovesOnly = false; // Only allow Charged Move actions
+	this.turnsToKO = -1;
 
 	// Training battle statistics
 
@@ -77,6 +86,10 @@ function Pokemon(id, i, b){
 
 	if(data.legacyMoves){
 		this.legacyMoves = data.legacyMoves;
+	}
+
+	if(data.eliteMoves){
+		this.eliteMoves = data.eliteMoves;
 	}
 
 	// Set tags
@@ -94,6 +107,19 @@ function Pokemon(id, i, b){
 
 		if(move){
 			move.legacy = (self.legacyMoves.indexOf(move.moveId) > -1);
+			move.elite = (self.eliteMoves.indexOf(move.moveId) > -1);
+
+			if(move.elite){
+				move.legacy = false;
+			}
+
+			move.displayName = move.name;
+
+			if(move.legacy){
+				move.displayName = move.name + "<sup>†</sup>";
+			} else if(move.elite){
+				move.displayName = move.name + "*";
+			}
 
 			this.fastMovePool.push(move);
 		}
@@ -104,10 +130,24 @@ function Pokemon(id, i, b){
 
 		if(move){
 			move.legacy = (self.legacyMoves.indexOf(move.moveId) > -1);
+			move.elite = (self.eliteMoves.indexOf(move.moveId) > -1);
+
+			if(move.elite){
+				move.legacy = false;
+			}
+
+			move.displayName = move.name;
+
+			if(move.legacy){
+				move.displayName = move.name + "<sup>†</sup>";
+			} else if(move.elite){
+				move.displayName = move.name + "*";
+			}
 
 			this.chargedMovePool.push(move);
 		}
 	}
+
 
 	// Add Return and Frustration for eligible Pokemon
 
@@ -153,7 +193,7 @@ function Pokemon(id, i, b){
 
 		var isDefault = false;
 
-		if((this.level == 40)&&(this.ivs.atk == 0) && (this.ivs.def == 0) && (this.ivs.hp == 0)){
+		if((this.level == 40)&&(this.ivs.atk == 0) && (this.ivs.def == 0) && (this.ivs.hp == 0) && (! self.autoLevel)){
 			isDefault = true;
 		}
 
@@ -188,10 +228,19 @@ function Pokemon(id, i, b){
 						self.setLevel(40, false);
 					} else{
 						var combination = data.defaultIVs["cp"+maxCP];
-						self.ivs.atk = combination[1];
-						self.ivs.def = combination[2];
-						self.ivs.hp = combination[3];
-						self.setLevel(combination[0], false);
+
+						if(combination){
+							self.ivs.atk = combination[1];
+							self.ivs.def = combination[2];
+							self.ivs.hp = combination[3];
+							self.setLevel(combination[0], false);
+						} else{
+							self.ivs.atk = 15;
+							self.ivs.def = 15;
+							self.ivs.hp = 15;
+							self.setLevel(40, false);
+						}
+
 					}
 				break;
 			}
@@ -221,10 +270,14 @@ function Pokemon(id, i, b){
 		// Set moves if unset
 
 		if(! self.fastMove){
-			self.autoSelectMoves();
-		} else{
-			this.resetMoves();
+			self.fastMove = self.fastMovePool[0];
+			self.chargedMoves = [self.chargedMovePool[0]];
+
+			if(self.chargedMovePool.length > 1){
+				self.chargedMoves.push(self.chargedMovePool[1]);
+			}
 		}
+		this.resetMoves();
 	}
 
 	// Calculate and return the Pokemon's CP
@@ -266,7 +319,7 @@ function Pokemon(id, i, b){
 
 	// Generate an array of IV combinations sorted by stat
 
-	this.generateIVCombinations = function(sortStat, sortDirection, resultCount, filters) {
+	this.generateIVCombinations = function(sortStat, sortDirection, resultCount, filters, ivFloor) {
 		var targetCP = battle.getCP();
 		var level = self.levelCap;
         var atkIV = 15;
@@ -284,19 +337,16 @@ function Pokemon(id, i, b){
 
 		var floor = 0;
 
-		var untradables = ["mew","celebi","deoxys_attack","deoxys_defense","deoxys_speed","deoxys","jirachi","darkrai"];
-		var maxNear1500 = ["bastiodon"]
-
 		if(self.hasTag("legendary")){
 			floor = 1;
 		}
 
-		if(untradables.indexOf(self.speciesId) > -1){
-			floor = 10;
+		if(ivFloor){
+			floor = ivFloor;
 		}
 
-		if((maxNear1500.indexOf(self.speciesId) > -1)&&(resultCount > 1)){
-			floor = 12;
+		if(self.hasTag("untradeable")){
+			floor = 10;
 		}
 
         hpIV = 15;
@@ -311,26 +361,30 @@ function Pokemon(id, i, b){
 					while((level < self.levelCap)&&(calcCP < targetCP)){
 						level += 0.5;
 
-						if(level % 1 == 0){
+						cpm = cpms[(level-1) * 2];
+
+						/*if(level % 1 == 0){
 							// Set CPM for whole levels
 							cpm = cpms[level - 1];
 						} else{
 							// Set CPM for half levels
 							cpm = Math.sqrt( (Math.pow(cpms[Math.floor(level-1)], 2) + Math.pow(cpms[Math.ceil(level-1)], 2)) / 2);
-						}
+						}*/
 
 						calcCP = self.calculateCP(cpm, atkIV, defIV, hpIV);
 					}
 
 					if(calcCP > targetCP){
 						level -= 0.5;
-						if(level % 1 == 0){
+
+						cpm = cpms[(level-1) * 2];
+						/*if(level % 1 == 0){
 							// Set CPM for whole levels
 							cpm = cpms[level - 1];
 						} else{
 							// Set CPM for half levels
 							cpm = Math.sqrt( (Math.pow(cpms[Math.floor(level-1)], 2) + Math.pow(cpms[Math.ceil(level-1)], 2)) / 2);
-						}
+						}*/
 						calcCP = this.calculateCP(cpm, atkIV, defIV, hpIV);
 					}
 
@@ -411,15 +465,16 @@ function Pokemon(id, i, b){
 		var effectiveness = defender.typeEffectiveness[self.fastMove.type];
 		var minAttack = self.generateIVCombinations("atk", -1, 1)[0].atk;
 		var maxAttack = self.generateIVCombinations("atk", 1, 1)[0].atk;
-		var maxDefense = defender.generateIVCombinations("def", 1, 1)[0].def * defender.shadowDefMult;
-		var minDamage = battle.calculateDamageByStats(minAttack, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
-		var maxDamage = battle.calculateDamageByStats(maxAttack, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
+		var maxDefense = defender.generateIVCombinations("def", 1, 1)[0].def;
+
+		var minDamage = battle.calculateDamageByStats(self, defender, minAttack, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
+		var maxDamage = battle.calculateDamageByStats(self, defender, maxAttack, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
 
 		var breakpoints = [];
 
 		for(var i = minDamage; i <= maxDamage; i++){
-			var breakpoint = battle.calculateBreakpoint(i, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
-			var maxDefenseBreakpoint = battle.calculateBreakpoint(i, maxDefense, effectiveness, self.fastMove);
+			var breakpoint = battle.calculateBreakpoint(self, defender, i, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
+			var maxDefenseBreakpoint = battle.calculateBreakpoint(self, defender, i, maxDefense, effectiveness, self.fastMove);
 
 			if(maxDefenseBreakpoint > maxAttack){
 				maxDefenseBreakpoint = -1;
@@ -442,14 +497,13 @@ function Pokemon(id, i, b){
 		var minDefense = self.generateIVCombinations("def", -1, 1)[0].def;
 		var maxDefense = self.generateIVCombinations("def", 1, 1)[0].def;
 		var maxAttack = attacker.generateIVCombinations("atk", 1, 1)[0].atk * attacker.shadowAtkMult;
-		var minDamage = battle.calculateDamageByStats(attacker.stats.atk * attacker.shadowAtkMult, maxDefense, effectiveness, attacker.fastMove);
-		var maxDamage = battle.calculateDamageByStats(attacker.stats.atk * attacker.shadowAtkMult, minDefense, effectiveness, attacker.fastMove);
-
+		var minDamage = battle.calculateDamageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult, maxDefense, effectiveness, attacker.fastMove);
+		var maxDamage = battle.calculateDamageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult, minDefense, effectiveness, attacker.fastMove);
 		var breakpoints = [];
 
 		for(var i = minDamage; i <= maxDamage; i++){
-			var bulkpoint = battle.calculateBulkpoint(i, attacker.stats.atk * attacker.shadowAtkMult, effectiveness, attacker.fastMove);
-			var maxAttackBulkpoint = battle.calculateBulkpoint(i, maxAttack, effectiveness, attacker.fastMove);
+			var bulkpoint = battle.calculateBulkpoint(attacker, self, i, attacker.stats.atk * attacker.shadowAtkMult, effectiveness, attacker.fastMove);
+			var maxAttackBulkpoint = battle.calculateBulkpoint(attacker, self, i, maxAttack, effectiveness, attacker.fastMove);
 
 			if(maxAttackBulkpoint > maxDefense){
 				maxAttackBulkpoint = -1;
@@ -503,9 +557,20 @@ function Pokemon(id, i, b){
 
 			if(self.activeChargedMoves.length > 1){
 
-				// If both moves cost the same energy and one has a buff effect, prioritize the buffing move
+				// If both moves cost the same energy and one has a buff effect, prioritize the buffing move, or the move that does more damage
 
-				if((self.activeChargedMoves[1].energy == self.activeChargedMoves[0].energy)&&(self.activeChargedMoves[1].buffs)&&(! self.activeChargedMoves[1].selfDebuffing)){
+				if((self.activeChargedMoves[1].energy == self.activeChargedMoves[0].energy)&&(! self.activeChargedMoves[1].selfDebuffing)){
+
+					if((self.activeChargedMoves[1].buffs)||(self.activeChargedMoves[1].damage > self.activeChargedMoves[0].damage)){
+						var move = self.activeChargedMoves[0];
+						self.activeChargedMoves.splice(0, 1);
+						self.activeChargedMoves.push(move);
+					}
+				}
+
+				// If both moves cost the same energy and one has a guaranteed buff effect, prioritize the buffing move
+
+				if((self.activeChargedMoves[1].energy == self.activeChargedMoves[0].energy)&&(self.activeChargedMoves[0].buffs)&&(self.activeChargedMoves[1].buffs)&&(! self.activeChargedMoves[1].selfDebuffing)&&(self.activeChargedMoves[0].buffs)&&(self.activeChargedMoves[1].buffApplyChance > self.activeChargedMoves[0].buffApplyChance)){
 					var move = self.activeChargedMoves[0];
 					self.activeChargedMoves.splice(0, 1);
 					self.activeChargedMoves.push(move);
@@ -514,6 +579,14 @@ function Pokemon(id, i, b){
 				// If the cheaper move is a self debuffing move and the other move is a close non-debuffing move, prioritize the non-debuffing move
 
 				if((self.activeChargedMoves[1].energy - self.activeChargedMoves[0].energy <= 10)&&(self.activeChargedMoves[0].selfAttackDebuffing)&&(! self.activeChargedMoves[1].selfDebuffing)){
+					var move = self.activeChargedMoves[0];
+					self.activeChargedMoves.splice(0, 1);
+					self.activeChargedMoves.push(move);
+				}
+
+				// If the cheaper move is a self debuffing move and the other move is a close non-debuffing move, prioritize the non-debuffing move if the self debuffing move cannot be stacked
+
+				if((self.activeChargedMoves[1].energy - self.activeChargedMoves[0].energy <= 10)&&(self.activeChargedMoves[0].selfDebuffing)&&(self.activeChargedMoves[0].energy > 50)&&(! self.activeChargedMoves[1].selfDebuffing)){
 					var move = self.activeChargedMoves[0];
 					self.activeChargedMoves.splice(0, 1);
 					self.activeChargedMoves.push(move);
@@ -528,7 +601,7 @@ function Pokemon(id, i, b){
 				move.dpe = move.damage / move.energy;
 
 				// Use moves that have higher DPE
-				if(move.dpe - self.bestChargedMove.dpe > .03){
+				if(((move.dpe - self.bestChargedMove.dpe > .03)&&(move.moveId != "SUPER_POWER"))||(move.dpe - self.bestChargedMove.dpe > .3)){
 					self.bestChargedMove = self.activeChargedMoves[i];
 				}
 
@@ -589,76 +662,15 @@ function Pokemon(id, i, b){
 
 		count = typeof count !== 'undefined' ? count : 2;
 
-		// First, initialize all moves to get updated damage numbers
-
-		this.resetMoves();
-
-		// Feed move pools into new arrays so they can be manipulated without affecting the originals
-
-		var fastMoves = [];
-		var chargedMoves = [];
-		var targetArrs = [fastMoves, chargedMoves];
-		var sourceArrs = [self.fastMovePool, self.chargedMovePool];
-
-		for(var i = 0; i < sourceArrs.length; i++){
-			for(var n = 0; n < sourceArrs[i].length; n++){
-				targetArrs[i].push(sourceArrs[i][n]);
-			}
-		}
-
-		// Sort charged moves by DPE
-
-		chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
-
-		// Calculate TDO for each fast move and sort
-
 		var opponent = battle.getOpponent(self.index);
+		var usage = self.generateMoveUsage(opponent, 1);
 
-		for(var i = 0; i < fastMoves.length; i++){
-			var move = fastMoves[i];
+		self.selectMove("fast", usage.fastMoves[0].moveId);
+		self.selectMove("charged", usage.chargedMoves[0].moveId, 0);
 
-			move.tdo = self.calculateTDO(move, chargedMoves[0], opponent, false);
+		if((usage.chargedMoves.length > 1)&&(count > 1)){
+			self.selectMove("charged", usage.chargedMoves[1].moveId, 1);
 		}
-
-		fastMoves.sort((a,b) => (a.tdo > b.tdo) ? -1 : ((b.tdo > a.tdo) ? 1 : 0));
-
-		// Do this for realsies so the opponent can compare
-
-		self.calculateTDO(fastMoves[0], chargedMoves[0], opponent, true);
-
-		self.fastMove = fastMoves[0];
-
-		self.chargedMoves = [];
-
-		if(count > 0){
-			self.chargedMoves.push(chargedMoves[0]);
-
-			chargedMoves.splice(0,1);
-		}
-
-
-		// Sort remaining charged moves by dpe, weighted by energy
-
-		for(var i = 0; i < chargedMoves.length; i++){
-			var move = chargedMoves[i];
-
-			move.dpe *= 1 / move.energy;
-
-			// If this move has a guaranteed stat effect, consider that as well
-
-			if((move.buffApplyChance)&&(move.buffApplyChance == 1)){
-				move.dpe *= 2;
-			}
-		}
-
-		if(chargedMoves.length > 0){
-			chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
-
-			for(var i = 0; i < count-1; i++){
-				self.chargedMoves.push(chargedMoves[i]);
-			}
-		}
-
 	}
 
 	// Given a type string, move id, and charged move index, set a specific move
@@ -736,6 +748,10 @@ function Pokemon(id, i, b){
 			cupName = battle.getCup().name;
 		}
 
+		if(cupName == "custom"){
+			cupName = "all";
+		}
+
 		var key = cupName + category + battle.getCP();
 
 		if(! gm.rankings[key]){
@@ -744,26 +760,168 @@ function Pokemon(id, i, b){
 		}
 
 		var rankings = gm.rankings[key];
+		var found = false;
 
 		for(var i = 0; i < rankings.length; i++){
 			var r = rankings[i];
 
 			if(r.speciesId == self.speciesId){
-				var moveIndexes = r.moveStr.split("-");
+				self.selectMove("fast", r.moveset[0]);
+				self.selectMove("charged", r.moveset[1], 0);
 
-				self.selectMove("fast", self.fastMovePool[moveIndexes[0]].moveId);
-				self.selectMove("charged", self.chargedMovePool[moveIndexes[1]-1].moveId, 0);
-
-				if(moveIndexes[2] != 0){
-					self.selectMove("charged", self.chargedMovePool[moveIndexes[2]-1].moveId, 1);
+				if(r.moveset.length > 2){
+					self.selectMove("charged", r.moveset[2], 1);
 				}
 
 				// Assign overall score for reference
 				self.overall = r.score;
 				self.scores = r.scores;
+
+				found = true;
 				break;
 			}
 		}
+
+		// If no results, auto select moveset
+		if(! found){
+			self.autoSelectMoves();
+		}
+	}
+
+	// Given an opponent, generate move usage stats
+
+	this.generateMoveUsage = function(opponent, weightModifier){
+		weightModifier = typeof weightModifier !== 'undefined' ? weightModifier : 1;
+
+		// First, initialize all moves to get updated damage numbers
+
+		this.resetMoves();
+
+		// Feed move pools into new arrays so they can be manipulated without affecting the originals
+
+		var fastMoves = [];
+		var chargedMoves = [];
+		var fastMoveUses = [];
+		var chargedMoveUses = [];
+		var targetArrs = [fastMoves, chargedMoves];
+		var sourceArrs = [self.fastMovePool, self.chargedMovePool];
+
+		for(var i = 0; i < sourceArrs.length; i++){
+			for(var n = 0; n < sourceArrs[i].length; n++){
+				targetArrs[i].push(sourceArrs[i][n]);
+			}
+		}
+
+		// Sort charged moves by DPE
+
+		chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
+
+		var highestDPE = chargedMoves[0].dpe;
+
+		for(var i = 0; i < chargedMoves.length; i++){
+			var move = chargedMoves[i];
+			var statChangeFactor = 1;
+
+			// Calculate the magnitude of stat changes, factoring in stages and buff chance
+			if(move.buffs){
+				for(var n = 0; n < move.buffs.length; n++){
+					// Don't factor self defense drops for move usage
+					if((move.selfDebuffing)&&(n == 1)){
+						continue;
+					}
+
+					if(move.buffs[n] > 0){
+						if(move.buffTarget == "self"){
+							statChangeFactor *= ((4+move.buffs[n]) / 4);
+						} else if(move.buffTarget == "opponent"){
+							statChangeFactor *= (1 / ((4+move.buffs[n]) / 4));
+						}
+					} else if(move.buffs[n] < 0){
+						if(move.buffTarget == "self"){
+							statChangeFactor *= (4 / (4-move.buffs[n]));
+						} else if(move.buffTarget == "opponent"){
+							statChangeFactor *= (1 / (4 / (4-move.buffs[n])));
+						}
+					}
+				}
+
+				statChangeFactor =  1 + ((statChangeFactor - 1) * move.buffApplyChance);
+			}
+
+			// Calculate usage based on raw damage, efficiency, and speed
+			move.uses = (Math.pow(move.damage, 2) / Math.pow(move.energy, 4)) * Math.pow(statChangeFactor, 2);
+		}
+
+		chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+
+		// For moves that have a strictly better preference, sharply reduce usage
+		total = chargedMoves[0].uses;
+
+		for(var i = 1; i < chargedMoves.length; i++){
+			for(var n = 0; n < i; n++){
+				if((chargedMoves[i].type == chargedMoves[n].type)&&(chargedMoves[i].energy >= chargedMoves[n].energy)&&(chargedMoves[i].dpe / chargedMoves[n].dpe < 1.3)){
+					chargedMoves[i].uses *= .5;
+					break;
+				}
+			}
+
+			total += chargedMoves[i].uses;
+		}
+
+		// Normalize move usage to total
+		for(var i = 0; i < chargedMoves.length; i++){
+			chargedMoves[i].uses = Math.round((chargedMoves[i].uses / total) * 100);
+		}
+
+		for(var i = 0; i < chargedMoves.length; i++){
+			chargedMoveUses.push({
+				moveId: chargedMoves[i].moveId,
+				uses: chargedMoves[i].uses * weightModifier
+			});
+		}
+
+		chargedMoveUses.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+
+
+		// Calculate TDO for each fast move and sort
+		var total = 0;
+
+		// Let's use Yawn as a baseline for comparison
+		var yawn = gm.getMoveById("YAWN");
+		yawn.damage = 1;
+
+		var baseline = self.calculateCycleDPT(yawn, chargedMoves[0]);
+
+		for(var i = 0; i < fastMoves.length; i++){
+			var move = fastMoves[i];
+			var ept = move.energyGain / (move.cooldown / 500);
+			var dpt = move.damage / (move.cooldown / 500);
+
+			move.uses = self.calculateCycleDPT(move, chargedMoves[0]);
+			move.uses = Math.max(move.uses - baseline, 0.1);
+			move.uses *= Math.pow(Math.pow(dpt*Math.pow(ept,4), 1/5), Math.max(highestDPE - 1, 1)); // Emphasize fast charging moves with access to powerful Charged Moves
+
+			total += move.uses;
+		}
+
+		// Normalize move usage to total
+		for(var i = 0; i < fastMoves.length; i++){
+			fastMoves[i].uses = Math.round((fastMoves[i].uses / total) * 100);
+
+			fastMoveUses.push({
+				moveId: fastMoves[i].moveId,
+				uses: fastMoves[i].uses * weightModifier
+			});
+		}
+
+		fastMoveUses.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+
+		var results = {
+			fastMoves: fastMoveUses,
+			chargedMoves: chargedMoveUses
+		};
+
+		return results;
 	}
 
 	// Add new move to the supplied move pool, with a flag to automatically select the new move
@@ -805,8 +963,9 @@ function Pokemon(id, i, b){
 			opponentDef = opponent.stats.def;
 		}
 
+		// Calculate multiple cycles to avoid issues with overflow energy
 		var cycleFastMoves = Math.ceil(chargedMove.energy / fastMove.energyGain);
-		var cycleTime = cycleFastMoves * (fastMove.cooldown / 2000);
+		var cycleTime = cycleFastMoves * (fastMove.cooldown / 1000);
 		var cycleDamage = (cycleFastMoves * fastMove.damage) + chargedMove.damage;
 		var cycleDPS = cycleDamage / cycleTime;
 
@@ -818,6 +977,18 @@ function Pokemon(id, i, b){
 		var tdo = cycleDPS * timeToFaint;
 
 		return tdo;
+	}
+
+	// This function calculates cycle DPT given a moveset
+
+	this.calculateCycleDPT = function(fastMove, chargedMove){
+		// Calculate multiple cycles to avoid issues with overflow energy
+		var cycleFastMoves = 150 / fastMove.energyGain;
+		var cycleTime = (cycleFastMoves * (fastMove.cooldown / 500)) + 1;
+		var cycleDamage = (cycleFastMoves * fastMove.damage) + (chargedMove.damage * ((150 / chargedMove.energy)-1)) + 1; // Emulate TDO with a shield
+		var cycleDPT = cycleDamage / cycleTime;
+
+		return cycleDPT;
 	}
 
 	// Return whether or not this Pokemon has a move with buff or debuff effects
@@ -862,10 +1033,6 @@ function Pokemon(id, i, b){
 
 		for(var n = 0; n < allTypes.length; n++){
 			effectiveness = battle.getEffectiveness(allTypes[n], self.types);
-
-			// Round to nearest thousandths to avoid Javascript floating point wonkiness
-
-			effectiveness = Math.floor(effectiveness * 1000) / 1000;
 			arr[allTypes[n].toLowerCase()] = effectiveness;
 		}
 
@@ -948,20 +1115,26 @@ function Pokemon(id, i, b){
 	this.setLevel = function(amount, initialize){
 		initialize = typeof initialize !== 'undefined' ? initialize : true;
 
-		this.level = amount;
-		var index = (amount - 1);
+		self.level = amount;
+		var index = ((amount-1) * 2);
 
-		if(index % 1 == 0){
+		self.cpm = cpms[index];
+
+		/*if(index % 1 == 0){
 			// Set CPM for whole levels
-			this.cpm = cpms[index];
+			self.cpm = cpms[index];
 		} else{
 			// Set CPM for half levels
-			this.cpm = Math.sqrt( (Math.pow(cpms[Math.floor(index)], 2) + Math.pow(cpms[Math.ceil(index)], 2)) / 2);
+			self.cpm = Math.sqrt( (Math.pow(cpms[Math.floor(index)], 2) + Math.pow(cpms[Math.ceil(index)], 2)) / 2);
+		}*/
+
+		if(amount > self.levelCap){
+			self.levelCap = amount;
 		}
 
 		if(initialize){
-			this.isCustom = true;
-			this.initialize(false);
+			self.isCustom = true;
+			self.initialize(false);
 		}
 	}
 
@@ -974,8 +1147,20 @@ function Pokemon(id, i, b){
 			this.ivs.hp = parseInt(amount);
 		}
 
-		this.isCustom = true;
-		this.initialize(false);
+		// Automatically adjust to league cap
+
+		if(self.autoLevel){
+			var level = self.levelCap;
+			self.cp = 100000;
+
+			while(self.cp > battle.getCP()){
+				self.setLevel(level, true);
+				level -= 0.5;
+			}
+		} else{
+			self.isCustom = true;
+			self.initialize(false);
+		}
 	}
 
 	// Set battle reference object
@@ -1147,5 +1332,83 @@ function Pokemon(id, i, b){
 				self.speciesName = self.speciesName.replace(" (Shadow)","");
 			}
 		}
+	}
+
+	// Calculate consistency score based on moveset, used in rankings and the team builder
+
+	this.calculateConsistency = function(){
+
+		var fastMove = self.fastMove;
+		var chargedMoves = self.chargedMoves;
+		var consistencyScore = 1;
+
+		// Reset move stats
+		fastMove.damage = Math.floor(fastMove.power * fastMove.stab);
+
+		for(var i = 0; i < chargedMoves.length; i++){
+			chargedMoves[i].damage = Math.floor(chargedMoves[i].power * chargedMoves[i].stab);
+		}
+
+		// Only calculate with two Charged Moves
+		if(chargedMoves.length == 2){
+
+			var effectivenessScenarios = [
+				[1, 1]
+				];
+
+			if(chargedMoves[0].type != chargedMoves[1].type){
+				effectivenessScenarios.push(
+					[0.625, 1],
+					[1, 0.625]
+				);
+			}
+
+			// Here we are looking at how depenendent each Pokemon is on baiting in scenarios where both moves are neutral, or one or the other is resisted
+			for(var n = 0; n < effectivenessScenarios.length; n++){
+				// Sort moves by name as a starting point
+				chargedMoves.sort((a,b) => (a.name > b.name) ? -1 : ((b.name > a.name) ? 1 : 0));
+
+				// Need to reset this number because of how movesets are generated
+				chargedMoves[0].dpe = (chargedMoves[0].damage / chargedMoves[0].energy) * effectivenessScenarios[n][0];
+				chargedMoves[1].dpe = (chargedMoves[1].damage / chargedMoves[1].energy) * effectivenessScenarios[n][1];
+				chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
+
+				// Factor in Power-Up Punch where Pokemon may be consistent spamming it
+
+				if(chargedMoves[1].moveId == "POWER_UP_PUNCH"){
+					chargedMoves[1].dpe *= 2;
+					chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
+				}
+
+				// Calculate how much fast move vs charged move damage this Pokemon puts out per cycle
+				var cycleFastMoves = Math.ceil(chargedMoves[0].energy / fastMove.energyGain);
+				var cycleFastDamage = fastMove.damage * cycleFastMoves;
+				var cycleDamage = cycleFastDamage + chargedMoves[0].damage;
+
+				var factor = 1;
+				if((chargedMoves[0].energy > chargedMoves[1].energy)||( (chargedMoves[0].energy == chargedMoves[1].energy) && (chargedMoves[1].moveId == "ACID_SPRAY")||((chargedMoves[0].selfAttackDebuffing)&&(! chargedMoves[1].selfDebuffing)&&(chargedMoves[1].energy - chargedMoves[0].energy <= 10))||((chargedMoves[0].selfDebuffing)&&(chargedMoves[0].energy > 50)&&(! chargedMoves[1].selfDebuffing)&&(chargedMoves[1].energy - chargedMoves[0].energy <= 10)))){
+					factor = (cycleFastDamage / cycleDamage) + ((chargedMoves[0].damage / cycleDamage) * (chargedMoves[1].dpe / chargedMoves[0].dpe));
+
+					// If the difference in energy is small, improve the consistency score as players may play straight more often
+					if(chargedMoves[1].energy < chargedMoves[0].energy){
+						factor += (1 - factor) * ((chargedMoves[1].energy-30) / (chargedMoves[0].energy-30)) * 0.5;
+					}
+				}
+
+				consistencyScore *= factor;
+			}
+
+			// Now do a square root mean
+			consistencyScore = Math.pow(consistencyScore, (1/effectivenessScenarios.length));
+		}
+
+		// Factor in fast move duration, slower moves are less consistent
+		var fastMoveConsistency = .5 + (.5 * (1 / (fastMove.cooldown / 500)));
+
+		consistencyScore = ((consistencyScore * 4) + (fastMoveConsistency * 1)) / 5;
+
+		consistencyScore = Math.round(consistencyScore * 1000) / 10;
+
+		return consistencyScore;
 	}
 }

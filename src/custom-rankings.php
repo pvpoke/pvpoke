@@ -111,7 +111,11 @@ require_once 'header.php'; ?>
 					<div class="check" value="legendary"><span></span> Legendary</div>
 					<div class="check" value="mythical"><span></span> Mythical</div>
 					<div class="check" value="alolan"><span></span> Alolan</div>
+					<div class="check" value="galarian"><span></span> Galarian</div>
 					<div class="check" value="regional"><span></span> Regional</div>
+					<div class="check" value="shadow"><span></span> Shadow</div>
+					<div class="check" value="shadoweligible"><span></span> Shadow Eligible</div>
+					<div class="check" value="mega"><span></span> Mega</div>
 				</div>
 			</div>
 
@@ -164,12 +168,8 @@ require_once 'header.php'; ?>
 	<div class="ranking-header right">Score</div>
 
 	<div class="rankings-container clear"></div>
-</div>
 
-<div class="section white custom-rankings-list">
-	<h3>Pokemon List (<span class="pokemon-count">0</span>)</h3>
-	<p>This list below contains eligible Pokemon for this cup. Pokemon that don't meet certain stat requirements, such as low CP Pokemon, aren't included for ranking purposes.</p>
-	<textarea class="pokemon-list"></textarea>
+	<a href="#" class="button download-csv">Export to CSV</a>
 </div>
 
 <div class="section white custom-rankings-import">
@@ -180,6 +180,19 @@ require_once 'header.php'; ?>
 	<textarea class="import"></textarea>
 	<div class="copy">Copy</div>
 </div>
+
+<div class="section white custom-rankings-list">
+	<h3>Pokemon List (<span class="pokemon-count">0</span>)</h3>
+	<p>This list below contains eligible Pokemon for this cup. Pokemon that don't meet certain stat requirements, such as low CP Pokemon, aren't included for ranking purposes.</p>
+	<textarea class="pokemon-list"></textarea>
+</div>
+
+<div class="section white custom-rankings-meta-group">
+	<h3>Custom Group</h3>
+	<p>Save or copy this custom group of the top 100 Pokemon to use in <a href="<?php echo $WEB_ROOT; ?>battle/" target="_blank">Multi-Battle</a> or the <a href="<?php echo $WEB_ROOT; ?>team-builder/" target="_blank">Team Builder</a>.</p>
+	<?php require 'modules/pokemultiselect.php'; ?>
+</div>
+
 
 <div class="hide">
 	<?php require 'modules/pokeselect.php'; ?>
@@ -236,6 +249,16 @@ require_once 'header.php'; ?>
 
 <div class="details-template hide">
 	<div class="detail-section float margin">
+		<div class="ranking-header">Key Wins</div>
+		<div class="ranking-header right">Battle Rating</div>
+		<div class="matchups clear"></div>
+	</div>
+	<div class="detail-section float">
+		<div class="ranking-header">Key Losses</div>
+		<div class="ranking-header right">Battle Rating</div>
+		<div class="counters clear"></div>
+	</div>
+	<div class="detail-section float margin">
 		<div class="ranking-header">Fast Moves</div>
 		<div class="ranking-header right">Usage</div>
 		<div class="moveset fast clear"></div>
@@ -245,15 +268,24 @@ require_once 'header.php'; ?>
 		<div class="ranking-header right">Usage</div>
 		<div class="moveset charged clear"></div>
 	</div>
+	<div class="clear"></div>
+	<div class="detail-section typing">
+		<div class="rating-container">
+			<div class="ranking-header">Primary Type</div>
+			<div class="type"></div>
+		</div>
+		<div class="rating-container">
+			<div class="ranking-header">Secondary Type</div>
+			<div class="type"></div>
+		</div>
+	</div>
 	<div class="detail-section float margin">
-		<div class="ranking-header">Key Matchups</div>
-		<div class="ranking-header right">Battle Rating</div>
-		<div class="matchups clear"></div>
+		<div class="ranking-header">Weaknesses</div>
+		<div class="weaknesses clear"></div>
 	</div>
 	<div class="detail-section float">
-		<div class="ranking-header">Top Counters</div>
-		<div class="ranking-header right">Battle Rating</div>
-		<div class="counters clear"></div>
+		<div class="ranking-header">Resistances</div>
+		<div class="resistances clear"></div>
 	</div>
 	<div class="clear"></div>
 	<div class="detail-section stats">
@@ -272,6 +304,10 @@ require_once 'header.php'; ?>
 			<div class="rating"></div>&nbsp;-
 			<div class="rating"></div>
 		</div>
+		<div class="rating-container">
+			<div class="ranking-header">Rank 1 Level &amp; IVs</div>
+			<div class="rating"></div>
+		</div>
 	</div>
 	<div class="share-link detail-section"><input type="text" readonly="">
 		<div class="copy">Copy</div>
@@ -286,6 +322,7 @@ require_once 'header.php'; ?>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/RankerSandboxWeightingMoveset.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/RankerMain.js"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/Pokebox.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/RankingInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeMultiSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>

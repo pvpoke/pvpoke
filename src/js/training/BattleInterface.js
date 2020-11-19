@@ -87,6 +87,12 @@ var BattlerMaster = (function () {
 					}
 				}
 
+				// Turn on autotapping if override set
+				if(props.autotapOverride){
+					autotap = true;
+					$(".controls .auto-tap").addClass("active");
+				}
+
 				$(".team-indicator .cmp").hide();
 				//$(".team-indicator .cmp").eq(priorityAssignment).show();
 
@@ -149,7 +155,11 @@ var BattlerMaster = (function () {
 					switch(response.phase){
 						case "suspend_charged_attack":
 							$(".charge-window .move-bars").html('');
-							$(".charge-window .move-bars").append($(".controls .move-bar").eq(response.move).clone().addClass(activePokemon[0].chargedMoves[response.move].type));
+
+							var $moveBar = $(".controls .move-bar").eq(response.move).clone();
+							$moveBar.addClass(activePokemon[0].chargedMoves[response.move].type);
+
+							$(".charge-window .move-bars").append($moveBar);
 							$(".battle-window .animate-message .text").html("Tap to charge up "+activePokemon[0].chargedMoves[response.move].name+"!");
 							$(".switch-window").removeClass("active");
 
@@ -163,6 +173,7 @@ var BattlerMaster = (function () {
 
 						case "suspend_charged_shield":
 							$(".shield-window").removeClass("closed");
+							$(".switch-window").removeClass("active");
 							phaseTimer = chargeTime;
 							phaseInterval = setInterval(phaseStep, 1000 / 60);
 							interfaceLockout = 750;
@@ -173,6 +184,7 @@ var BattlerMaster = (function () {
 
 						case "suspend_charged_no_shields":
 							$(".battle-window .animate-message .text").html("No Protect shields remaining");
+							$(".switch-window").removeClass("active");
 							break;
 
 
@@ -283,6 +295,12 @@ var BattlerMaster = (function () {
 							$(".team-indicator").eq(i).find(".cp").html("CP " + pokemon.cp);
 						}
 
+						// Display Pokemon types
+						$(".team-indicator").eq(i).find(".types .type").eq(0).attr("class","type " + pokemon.types[0]);
+						$(".team-indicator").eq(i).find(".types .type").eq(1).attr("class","type " + pokemon.types[1]);
+						$(".team-indicator").eq(i).find(".types .type").eq(0).html(pokemon.types[0].charAt(0));
+						$(".team-indicator").eq(i).find(".types .type").eq(1).html(pokemon.types[1].charAt(0));
+
 						if(i == 0){
 							$(".move-bar").hide();
 							$(".move-labels .label").hide();
@@ -308,10 +326,23 @@ var BattlerMaster = (function () {
 							var chargedMove = pokemon.chargedMoves[n];
 							var $bar = $(".battle-window .move-bar").eq(n);
 							var chargePercent = Math.min((pokemon.energy / chargedMove.energy), 1);
-							var position = 66 - (chargePercent * 66);
-							$bar.find(".bar").first().css("background-position-y", position+"px");
 
-							//$bar.find(".bar").first().css("height", chargePercent+"%");
+							$bar.find(".bar").each(function(index, value){
+								var extraEnergy = Math.min(((pokemon.energy - (chargedMove.energy * index)) / chargedMove.energy), 1);
+
+								// This provides extra spacing so the white border doesn't show up at the bottom at 0 charge
+								if(extraEnergy <= 0){
+									extraEnergy = 0;
+								}
+
+								var positionBase = 66;
+								if(index > 0){
+									positionBase = 68;
+								}
+
+								var position = Math.min(66 - (extraEnergy * positionBase), 66);
+								$bar.find(".bar").eq(index).css("top", position+"px");
+							});
 
 							if(chargePercent >= 1){
 								$bar.addClass("active");
@@ -422,6 +453,7 @@ var BattlerMaster = (function () {
 				for(var i = 0; i < response.animations.length; i++){
 					var animation = response.animations[i];
 					var fastAnimationOccurred = false;
+					var damageAnimationOccurred = false;
 
 					switch(animation.type){
 						case "fast":
@@ -449,13 +481,31 @@ var BattlerMaster = (function () {
 
 								$(".battle-window .scene .pokemon-container").eq(animation.actor).attr("animation-duration", duration);
 							}
+							break;
 
+						case "damage":
+							damageAnimationOccurred = true;
+							var effectiveness = "effective";
+
+							if(animation.value > 1){
+								effectiveness = "super-effective";
+							} else if(animation.value < 1){
+								effectiveness = "not-very-effective";
+							}
+
+							$(".battle-window .scene .pokemon-container").eq(animation.actor).find(".hp.bar-back").addClass(effectiveness);
 							break;
 					}
 
 					if(fastAnimationOccurred){
 						setTimeout(function(){
 							$(".battle-window .scene .pokemon-container").removeClass("animate-fast");
+						}, 250);
+					}
+
+					if(damageAnimationOccurred){
+						setTimeout(function(){
+							$(".battle-window .scene .pokemon-container .hp.bar-back").removeClass("effective super-effective not-very-effective");
 						}, 250);
 					}
 				}
@@ -539,7 +589,7 @@ var BattlerMaster = (function () {
 						$(this).eq(index).find(".name").attr("class", "name " + activePokemon[index].types[0]);
 
 						$(".team-indicator").eq(index).find(".name").html(activePokemon[index].speciesName);
-						$(".team-indicator").eq(index).find(".cp").html(activePokemon[index].cp);
+						$(".team-indicator").eq(index).find(".cp").html("CP " + activePokemon[index].cp);
 
 						if(activePokemon[index].types[1] != "none"){
 							$(this).find(".pokemon").attr("type-2", activePokemon[index].types[1]);
@@ -675,7 +725,7 @@ var BattlerMaster = (function () {
 
 					for(var n = 0; n < team.length; n++){
 						var pokemon = team[n];
-						var pokeStr = pokemon.speciesName + ' ' + pokemon.fastMove.abbreviation;
+						var pokeStr = pokemon.speciesId + ' ' + pokemon.fastMove.abbreviation;
 						var chargedMoveAbbrevations = [];
 
 						for(var k = 0; k < pokemon.chargedMoves.length; k++){
@@ -686,11 +736,7 @@ var BattlerMaster = (function () {
 						chargedMoveAbbrevations.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
 
 						for(var k = 0; k < chargedMoveAbbrevations.length; k++){
-							if(k == 0){
-								pokeStr += "+" + chargedMoveAbbrevations[k];
-							} else{
-								pokeStr += "/" + chargedMoveAbbrevations[k];
-							}
+							pokeStr += "/" + chargedMoveAbbrevations[k];
 						}
 
 						// Add to team string
@@ -702,7 +748,7 @@ var BattlerMaster = (function () {
 
 						// Assign this Pokemon's score in battle, damage done plus shields broken
 						var shieldValue = 50;
-						
+
 						if((battle.getCP() == 2500)||(battle.getCP() == 10000)){
 							shieldValue = 40;
 						}
@@ -715,7 +761,7 @@ var BattlerMaster = (function () {
 					backupPokeStrs.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
 
 					for(var n = 0; n < backupPokeStrs.length; n++){
-						teamStr += " " + backupPokeStrs[n];
+						teamStr += "|" + backupPokeStrs[n];
 					}
 
 					teamStrs.push(teamStr);
@@ -752,7 +798,7 @@ var BattlerMaster = (function () {
 
 					for(var n = 0; n < roster.length; n++){
 						var pokemon = roster[n];
-						var pokeStr = pokemon.speciesName + ' ' + pokemon.fastMove.abbreviation;
+						var pokeStr = pokemon.speciesId + ' ' + pokemon.fastMove.abbreviation;
 						var chargedMoveAbbrevations = [];
 
 						for(var k = 0; k < pokemon.chargedMoves.length; k++){
@@ -769,7 +815,7 @@ var BattlerMaster = (function () {
 								pokeStr += "/" + chargedMoveAbbrevations[k];
 							}
 						}
-						
+
 						if(properties.mode == "tournament"){
 							gtag('event', battleSummaryStr, {
 								  'event_category' : 'Training Roster Pokemon',
@@ -800,7 +846,7 @@ var BattlerMaster = (function () {
 
 					for(var n = 0; n < team.length; n++){
 						var pokemon = team[n];
-						var pokeStr = pokemon.speciesName + ' ' + pokemon.fastMove.abbreviation;
+						var pokeStr = pokemon.speciesId + ' ' + pokemon.fastMove.abbreviation;
 						var chargedMoveAbbrevations = [];
 
 						for(var k = 0; k < pokemon.chargedMoves.length; k++){
@@ -818,17 +864,14 @@ var BattlerMaster = (function () {
 							}
 						}
 
-						// Only report this Pokemon if it was used in battle
-						if(pokemon.hp < pokemon.stats.hp){
-							gtag('event', battleSummaryStr, {
-							  'event_category' : 'Training Pokemon',
-							  'event_label' : pokeStr,
-							  'value' : pokemon.battleStats.score+'',
-							  'player_type': playerType,
-							  'team_position': n+1,
-							  'team_rating': battleRating
-							});
-						}
+						gtag('event', battleSummaryStr, {
+						  'event_category' : 'Training Pokemon',
+						  'event_label' : pokeStr,
+						  'value' : pokemon.battleStats.score+'',
+						  'player_type': playerType,
+						  'team_position': n+1,
+						  'team_rating': battleRating
+						});
 
 					}
 				}

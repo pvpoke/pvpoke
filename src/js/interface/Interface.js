@@ -48,6 +48,7 @@ var InterfaceMaster = (function () {
 			var settingGetParams = false; // Flag to keep certain functions from running
 
 			var isLoadingPreset = false; // Flag that lets the sim know if it should wait for a preset list to finish loading
+			var getDataLoaded = false // Flag that tells the interface if it has already loaded variables passed through the url
 
 			var ranker = RankerMaster.getInstance();
 			ranker.context = this.context;
@@ -83,6 +84,7 @@ var InterfaceMaster = (function () {
 				$(".continue-container .button").on("click", continueBattle);
 				$(".timeline-container").on("mousemove",".item",timelineEventHover);
 				$(".poke a.swap").on("click", swapSelectedPokemon);
+				$(".poke.single").on("mousemove",".move-bar",moveBarHover);
 				$(".multi-battle-sort").on("click", sortMultiBattleResults);
 				$("body").on("mousemove",mainMouseMove);
 				$("body").on("mousedown",mainMouseMove);
@@ -112,15 +114,14 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".modal .sandbox-clear-confirm .button", confirmClearSandbox);
 				$(".update-btn").on("click", self.runSandboxSim);
 
-				// If get data exists, load settings
-
-				this.loadGetData();
-
 				// Load rankings for the current league
 
-				if(! get){
-					gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), "all");
+				var league = 1500;
+				if(get.cp){
+					league = get.cp;
 				}
+
+				gm.loadRankingData(self, "overall", league, "all");
 
 				window.addEventListener('popstate', function(e) {
 					get = e.state;
@@ -134,11 +135,16 @@ var InterfaceMaster = (function () {
 			this.displayRankingData = function(data){
 				console.log("Ranking data loaded");
 
-				if(self.battleMode == "multi"){
+				if(! getDataLoaded){
+					// If get data exists, load settings
+					getDataLoaded = true;
+					self.loadGetData();
+				} else if(self.battleMode == "multi"){
 					self.generateMultiBattleResults();
 
 					$("html, body").animate({ scrollTop: $(".battle-results."+self.battleMode).offset().top - 185 }, 500);
 				}
+
 			}
 
 			// If the opposing Pokemon is changed or updated, update both so damage numbers are accurate
@@ -224,6 +230,7 @@ var InterfaceMaster = (function () {
 				var duration = b.getDuration()+1000;
 				var pokemon = b.getPokemon();
 				var energy = [pokemon[0].startEnergy, pokemon[1].startEnergy]; // Store energy so valid editable moves can be displayed
+				var turnMargin = b.calculateTurnMargin();
 
 				$(".battle-results.single").show();
 				$(".timeline").html('');
@@ -312,7 +319,27 @@ var InterfaceMaster = (function () {
 
 				if(winner.pokemon){
 					var winnerRating = winner.rating;
-					$(".battle-results .summary").html("<span class=\"name\">"+winner.pokemon.speciesName+"</span> wins in <span class=\"time\">"+durationSeconds+"s</span> with a battle rating of <span class=\"rating star\">"+winnerRating+"</span>");
+					$(".battle-results .summary").html("<div><span class=\"name\">"+winner.pokemon.speciesName+"</span> wins in <span class=\"time\">"+durationSeconds+"s</span> with a battle rating of <span class=\"rating star\">"+winnerRating+"</span></div>");
+
+					if(turnMargin >= 20){
+						turnMargin = "20+";
+					}
+
+					var marginSummary = "It is generally safe from energy, IV, or lag factors."
+					var attr = "high";
+
+					if(turnMargin < 5){
+						marginSummary = "It is highly vulnerable to energy, IV, or lag factors."
+						attr = "extreme";
+					} else if(turnMargin <= 10){
+						marginSummary = "It is somewhat vulnerable to energy, IV, or lag factors."
+						attr = "low";
+					} else if(turnMargin <= 15){
+						marginSummary = "It is somewhat safe from energy, IV, or lag factors."
+						attr = "medium";
+					}
+
+					$(".battle-results .summary").append("<div class=\"turn-margin-description\"><span class=\"turn-margin\" value=\""+attr+"\">"+turnMargin + " turn(s)</span> of difference can flip this scenario. " + marginSummary + "</div>");
 
 					var color = battle.getRatingColor(winnerRating);
 					$(".battle-results .summary .rating").first().css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
@@ -671,7 +698,6 @@ var InterfaceMaster = (function () {
 				}
 
 				// Calculate breakpoints and bulkpoints
-
 				var breakpoints = pokemon[0].calculateBreakpoints(pokemon[1]);
 
 				// Output to table
@@ -764,7 +790,7 @@ var InterfaceMaster = (function () {
 					}
 				} else{
 					// Show blank if this Pokemon can't win CMP at all
-					$(".stats-table.cmp .output").append("<tr class=\"toggle\"><td>-</td><td>-</td><td>-</td></tr>");
+					$(".stats-table.cmp .output").append("<tr class=\"toggle\"><td>Can't win<br>CMP</td><td>Can't win<br>CMP</td><td>Can't win<br>CMP</td></tr>");
 				}
 
 			}
@@ -792,9 +818,6 @@ var InterfaceMaster = (function () {
 				battle.setCup(cup);
 
 				ranker.applySettings(multiSelectors[0].getSettings(), 1);
-				ranker.setShields(opponentShields, 1);
-				ranker.setChargedMoveCount(chargedMoveCount);
-				ranker.setShieldBaitOverride($(".poke.multi .check.shield-baiting").hasClass("on"), 1);
 
 				var team = [];
 				var poke = pokeSelectors[0].getPokemon();
@@ -858,12 +881,12 @@ var InterfaceMaster = (function () {
 					if(r.moveset){
 						pokemon.selectMove("fast", r.moveset.fastMove.moveId);
 
-						moveNameStr = r.moveset.fastMove.name;
+						moveNameStr = r.moveset.fastMove.displayName;
 
 						for(var n = 0; n < r.moveset.chargedMoves.length; n++){
 							pokemon.selectMove("charged", r.moveset.chargedMoves[n].moveId, n);
 
-							moveNameStr += ", " + r.moveset.chargedMoves[n].name;
+							moveNameStr += ", " + r.moveset.chargedMoves[n].displayName;
 						}
 					} else{
 						pokemon.autoSelectMoves(chargedMoveCount);
@@ -1010,9 +1033,9 @@ var InterfaceMaster = (function () {
 				var $row = $("<thead><tr><th></th></tr></thead>");
 
 				for(var n = 0; n < team.length; n++){
-					$row.find("tr").append("<th class=\"name-small\">"+team[n].speciesName+" <span>"+team[n].generateMovesetStr()+"</span></th>");
+					$row.find("tr").append("<th class=\"name-small\">"+team[n].speciesName+" <span>"+team[n].generateMovesetStr()+"<br>"+ team[n].ivs.atk + "/" + team[n].ivs.def + "/" + team[n].ivs.hp + "</span></th>");
 
-					csv += team[n].speciesName+" "+team[n].generateMovesetStr();
+					csv += team[n].speciesName+" "+team[n].generateMovesetStr() + " " + team[n].ivs.atk + "/" + team[n].ivs.def + "/" + team[n].ivs.hp;
 					if(n < team.length -1){
 						csv += ',';
 					}
@@ -1029,9 +1052,9 @@ var InterfaceMaster = (function () {
 
 					// Add results to matrix table
 
-					$row = $("<tr><th class=\"name\">"+pokemon.speciesName+" <span>"+pokemon.generateMovesetStr()+"</span></th></tr>");
+					$row = $("<tr><th class=\"name\">"+pokemon.speciesName+" <span>"+pokemon.generateMovesetStr()+"<br>" + pokemon.ivs.atk + "/" + pokemon.ivs.def + "/" + pokemon.ivs.hp + "</span></th></tr>");
 
-					csv += pokemon.speciesName + ' ' + pokemon.generateMovesetStr() + ',';
+					csv += pokemon.speciesName + ' ' + pokemon.generateMovesetStr() + ' ' + + pokemon.ivs.atk + "/" + pokemon.ivs.def + "/" + pokemon.ivs.hp + ',';
 
 					for(var n = 0; n < r.matchups.length; n++){
 						var $cell = $("<td><a class=\"rating star\" href=\"#\" target=\"blank\"><span></span></a></td>");
@@ -1094,7 +1117,7 @@ var InterfaceMaster = (function () {
 
 				var battles = [];
 				var ratings = [];
-				var simCount = 500;
+				var simCount = 250;
 
 				for(var i = 0; i < simCount; i++){
 					var b = new Battle();
@@ -1529,7 +1552,7 @@ var InterfaceMaster = (function () {
 			// Event handler for changing the league select
 
 			function selectLeague(e){
-				var allowed = [1500, 2500, 10000];
+				var allowed = [500, 1500, 2500, 10000];
 				var cp = parseInt($(".league-select option:selected").val());
 
 				if(allowed.indexOf(cp) > -1){
@@ -1541,13 +1564,11 @@ var InterfaceMaster = (function () {
 					}
 
 					for(var i = 0; i < multiSelectors.length; i++){
-						multiSelectors[i].updateLeague(cp);
+						multiSelectors[i].setCP(cp);
 					}
 				}
 
-				if(self.battleMode == "single"){
-					gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), "all");
-				}
+				gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), "all");
 			}
 
 			// Event handler for changing the battle mode
@@ -1567,6 +1588,10 @@ var InterfaceMaster = (function () {
 					pokeSelectors[0].setSelectedPokemon(pokeSelectors[0].getPokemon());
 					pokeSelectors[1].setSelectedPokemon(pokeSelectors[1].getPokemon());
 				}
+
+				if(self.battleMode == "matrix"){
+					$(".poke.multi .custom-options").show();
+				}
 			}
 
 			// Swap the selected Pokemon between the left and right Pokemon selectors
@@ -1581,6 +1606,24 @@ var InterfaceMaster = (function () {
 					pokeSelectors[0].setSelectedPokemon(pokemonB);
 					pokeSelectors[1].setSelectedPokemon(pokemonA);
 				}
+			}
+
+			// Animate amount of damage from the selected Charged Move on the opposing Pokemon
+
+			function moveBarHover(e){
+				e.preventDefault();
+
+				var pokeIndex = $(e.target).closest(".poke.single").index();
+				var selectorIndex = (pokeIndex == 0) ? 1 : 0;
+				var subject = pokeSelectors[pokeIndex].getPokemon();
+				var target = pokeSelectors[selectorIndex].getPokemon();
+				var moveIndex = $(e.target).closest(".move-bars").find(".move-bar").index($(e.target).closest(".move-bar"));
+				var move = subject.chargedMoves[moveIndex];
+				var effectiveness = target.typeEffectiveness[move.type];
+
+				displayDamage = battle.calculateDamageByStats(subject, target, subject.stats.atk * subject.shadowAtkMult, target.stats.def * target.shadowDefMult, effectiveness, move);
+
+				pokeSelectors[selectorIndex].animateDamage(displayDamage)
 			}
 
 			// Run simulation
@@ -2109,6 +2152,12 @@ var InterfaceMaster = (function () {
 
 					if(move.buffs){
 						$(".modal .check.buffs").show();
+
+						if(move.buffApplyChance == 1){
+							$(".modal .check.buffs").addClass("on");
+						} else{
+							$(".modal .check.buffs").removeClass("on");
+						}
 					} else{
 						$(".modal .check.buffs").hide();
 					}

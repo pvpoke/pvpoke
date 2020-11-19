@@ -14,6 +14,7 @@ function TrainingAI(l, p, b){
 	var battle = b;
 	var gm = GameMaster.getInstance();
 	var teamPool = [];
+	var currentTeamPool = null;
 	var partySize = 3;
 	var props = aiData[l];
 	var generateRosterCallback;
@@ -44,8 +45,18 @@ function TrainingAI(l, p, b){
 		}
 
 		var pool = teamPool[league+""+cup];
+		currentTeamPool = teamPool[league+""+cup];
+
+		// Test current pool for errors
+		self.testPool(pool);
+
+		if(pool.slots){
+			pool = pool.slots;
+		}
+
 		var slotBucket = [];
 		var slots = [];
+		var roles = []; // Array of roles that have been filled on the team
 
 		// Put all the slots in bucket, multiple times for its weight value
 
@@ -113,8 +124,13 @@ function TrainingAI(l, p, b){
 
 			for(var n = 0; n < slotPool.length; n++){
 				var poke = slotPool[n];
+				var role = "none";
+
+				if(poke.role){
+					role = poke.role;
+				}
 				// Is this Pokemon valid to be added to the team?
-				if((selectedIds.indexOf(poke.speciesId) === -1)&&(Math.abs(poke.difficulty - level) <= 1)){
+				if((selectedIds.indexOf(poke.speciesId) === -1)&&(Math.abs(poke.difficulty - level) <= 1)&&(roles.indexOf(role) == -1)){
 					for(var j = 0; j < poke.weight; j++){
 						pokeBucket.push(poke);
 					}
@@ -127,6 +143,8 @@ function TrainingAI(l, p, b){
 
 			var pokemon = new Pokemon(poke.speciesId, player.index, battle);
 			pokemon.initialize(battle.getCP());
+
+			roles.push(poke.role);
 
 			// Select a random IV spread according to difficulty
 			var ivCombos = pokemon.generateIVCombinations("overall", 1, props.ivComboRange);
@@ -154,6 +172,11 @@ function TrainingAI(l, p, b){
 
 			roster.push(pokemon);
 			selectedIds.push(poke.speciesId);
+		}
+
+		// Sort roster by dex number
+		if(cup == "voyager"){
+			roster.sort((a,b) => (a.dex > b.dex) ? 1 : ((b.dex > a.dex) ? -1 : 0));
 		}
 
 		player.setRoster(roster);
@@ -184,8 +207,8 @@ function TrainingAI(l, p, b){
 
 			// Make the teams more random in GO Battle League
 
-			if(battle.getCup().name == "gobattleleague"){
-				basicWeight *= 2;
+			if((battle.getCup().partySize)&&(battle.getCup().partySize == 3)){
+				basicWeight *= 3;
 			}
 		}
 
@@ -213,6 +236,11 @@ function TrainingAI(l, p, b){
 			pickStrategyOptions.push(new DecisionOption("SAME_TEAM_DIFFERENT_LEAD", winStratWeight));
 			pickStrategyOptions.push(new DecisionOption("COUNTER_LAST_LEAD", loseStratWeight));
 			pickStrategyOptions.push(new DecisionOption("COUNTER", loseStratWeight));
+		}
+
+		// Add option for presets
+		if((currentTeamPool)&&(currentTeamPool.presets)){
+			pickStrategyOptions.push(new DecisionOption("PRESET", 20));
 		}
 
 		var pickStrategy = self.chooseOption(pickStrategyOptions).name;
@@ -396,12 +424,99 @@ function TrainingAI(l, p, b){
 				}
 
 				break;
+
+			case "PRESET":
+				var presetBucket = [];
+
+				for(var i = 0; i < currentTeamPool.presets.length; i++){
+					for(var n = 0; n < currentTeamPool.presets[i].weight; n++){
+						presetBucket.push(currentTeamPool.presets[i]);
+					}
+				}
+
+				var presetIndex = Math.floor(Math.random() * presetBucket.length);
+				var preset = presetBucket[presetIndex];
+
+				for(var i = 0; i < preset.pokemon.length; i++){
+					var poke = preset.pokemon[i];
+					var pokemon = new Pokemon(poke.speciesId, player.index, battle);
+					pokemon.initialize(battle.getCP());
+
+					// Select a random IV spread according to difficulty
+					var ivCombos = pokemon.generateIVCombinations("overall", 1, props.ivComboRange);
+					var rank = Math.floor(Math.random() * ivCombos.length);
+
+					// If this Pokemon maxes under or near 1500, make sure it's close to 1500
+					if(ivCombos[0].level >= 39){
+						rank = Math.floor(Math.random() * 50 * (props.ivComboRange  / 4000));
+					}
+					var combo = ivCombos[rank];
+
+					pokemon.setIV("atk", combo.ivs.atk);
+					pokemon.setIV("def", combo.ivs.def);
+					pokemon.setIV("hp", combo.ivs.hp);
+					pokemon.setLevel(combo.level);
+
+					pokemon.selectMove("fast", poke.fastMove);
+					for(var n = 0; n < props.chargedMoveCount; n++){
+						pokemon.selectMove("charged", poke.chargedMoves[n], n);
+					}
+
+					if(props.chargedMoveCount == 1){
+						pokemon.selectMove("charged", "none", 1);
+					}
+
+					team.push(pokemon);
+				}
+
+				break;
 		}
 
 		console.log(pickStrategy);
 		console.log(team);
 
 		player.setTeam(team);
+	}
+
+	// Test a pool of Pokemon for moveset errors
+
+	this.testPool = function(pool){
+		var slots = pool;
+		var presets = [];
+		var pokes = [];
+
+		if(pool.slots){
+			slots = pool.slots;
+			presets = pool.presets;
+		}
+
+		for(var i = 0; i < slots.length; i++){
+			for(var n = 0; n < slots[i].pokemon.length; n++){
+				pokes.push(slots[i].pokemon[n]);
+			}
+		}
+
+		for(var i = 0; i < presets.length; i++){
+			for(var n = 0; n < presets[i].pokemon.length; n++){
+				pokes.push(presets[i].pokemon[n]);
+			}
+		}
+
+		for(var i = 0; i < pokes.length; i++){
+			var pokemon = new Pokemon(pokes[i].speciesId, 0, battle);
+
+			if(pokemon.data.fastMoves.indexOf(pokes[i].fastMove) == -1){
+				console.error(pokemon.speciesId + " doesn't know " + pokes[i].fastMove);
+			}
+
+			if(pokemon.data.chargedMoves.indexOf(pokes[i].chargedMoves[0]) == -1){
+				console.error(pokemon.speciesId + " doesn't know " + pokes[i].chargedMoves[0]);
+			}
+
+			if(pokemon.data.chargedMoves.indexOf(pokes[i].chargedMoves[0]) == -1){
+				console.error(pokemon.speciesId + " doesn't know " + pokes[i].chargedMoves[0]);
+			}
+		}
 	}
 
 	// Return an array of average performances of team A against team B
@@ -915,21 +1030,34 @@ function TrainingAI(l, p, b){
 
 				// Dramatically scale weight based on winning or losing
 				if(scenario.average < 500){
-					weight = Math.max(Math.round(Math.pow(scenario.average / 100, 4) / 20), 1);
+					weight = Math.round(Math.pow(scenario.average / 100, 4) / 20);
 				} else{
-					// If the opponent is switch locked, favor the hard counter
-					if(opponentPlayer.getSwitchTimer() < 10){
-						weight = Math.round((scenario.average-250) / 2);
-					} else{
+
+					if((opponentPlayer.getSwitchTimer() > 10)||(poke.hp <= 0)){
+						// If the opponent is switch locked, favor the hard counter
 						weight = Math.round(Math.pow((scenario.average-250) / 100, 4));
+					} else{
+						// If the opponent isn't switch locked, favor the softer counter
+						weight = Math.round(Math.pow((1000-scenario.average) / 100, 4));
 					}
 
+				}
+
+				if(weight < 1){
+					weight = 1;
 				}
 
 				switchOptions.push(new DecisionOption(i, weight));
 			}
 		}
 
+		if(self.hasStrategy("BAD_DECISION_PROTECTION")){
+			switchOptions.sort((a,b) => (a.weight > b.weight) ? -1 : ((b.weight > a.weight) ? 1 : 0));
+
+			if((switchOptions.length > 1)&&(switchOptions[0].weight > switchOptions[1].weight * 4)){
+				switchOptions.splice(1, 1);
+			}
+		}
 		var switchChoice = self.chooseOption(switchOptions);
 		return switchChoice.name;
 	}

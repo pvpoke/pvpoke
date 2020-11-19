@@ -1,0 +1,548 @@
+[
+	{
+		"name": "mathmagic10",
+		"slug": "mathmagic10",
+		"img": "mathmagic10",
+		"cup": "continentals-2",
+		"cupName": "Continentals",
+		"league": 1500,
+		"description": "Pokemon GO player. Math enthusiast. https://www.twitch.tv/mathmagic10",
+		"link": "https://twitter.com/mathmagic10",
+		"pokemon": [
+			{
+				"speciesId": "ludicolo",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["ENERGY_BALL","ICE_BEAM"]
+			},
+			{
+				"speciesId": "sableye",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["FOUL_PLAY","RETURN"]
+			},
+			{
+				"speciesId": "altaria",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["SKY_ATTACK","DRAGON_PULSE"]
+			},
+			{
+				"speciesId": "ninetales_alolan",
+				"fastMove": "CHARM",
+				"chargedMoves": ["PSYSHOCK","ICE_BEAM"]
+			},
+			{
+				"speciesId": "lanturn",
+				"fastMove": "SPARK",
+				"chargedMoves": ["THUNDERBOLT","HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "shiftry",
+				"fastMove": "SNARL",
+				"chargedMoves": ["LEAF_BLADE","FOUL_PLAY"]
+			}
+		]
+	},
+	{
+		"name": "Training Team 1",
+		"slug": "training-1",
+		"img": "pvpoke",
+		"cup": "continentals-2",
+		"cupName": "Continentals",
+		"league": 1500,
+		"description": "Train against this Continentals team featuring Azumarill and double Grass.",
+		"link": "#",
+		"pokemon": [
+			{
+				"speciesId": "serperior",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["GRASS_KNOT","AERIAL_ACE"]
+			},
+			{
+				"speciesId": "perrserker",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["FOUL_PLAY","CLOSE_COMBAT"]
+			},
+			{
+				"speciesId": "azumarill",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["ICE_BEAM","HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "cradily",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["GRASS_KNOT","STONE_EDGE"]
+			},
+			{
+				"speciesId": "stunfisk",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["MUD_BOMB","DISCHARGE"]
+			},
+			{
+				"speciesId": "beedrill",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["X_SCISSOR","DRILL_RUN"]
+			}
+		]
+	},
+	{
+		"name": "Training Team 2",
+		"slug": "training-2",
+		"img": "pvpoke",
+		"cup": "continentals-2",
+		"cupName": "Continentals",
+		"league": 1500,
+		"description": "Train against this Continentals team featuring Registeel and Sableye.",
+		"link": "#",
+		"pokemon": [
+			{
+				"speciesId": "castform_rainy",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["WEATHER_BALL_WATER","THUNDER"]
+			},
+			{
+				"speciesId": "sableye",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["FOUL_PLAY","RETURN"]
+			},
+			{
+				"speciesId": "registeel",
+				"fastMove": "LOCK_ON",
+				"chargedMoves": ["FLASH_CANNON","FOCUS_BLAST"]
+			},
+			{
+				"speciesId": "ninetales_alolan",
+				"fastMove": "CHARM",
+				"chargedMoves": ["PSYSHOCK","ICE_BEAM"]
+			},
+			{
+				"speciesId": "gliscor",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["NIGHT_SLASH","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "raichu_alolan",
+				"fastMove": "VOLT_SWITCH",
+				"chargedMoves": ["WILD_CHARGE","GRASS_KNOT"]
+			}
+		]
+	},
+	{
+		"name": "Training Team 3",
+		"slug": "training-3",
+		"img": "pvpoke",
+		"cup": "continentals-2",
+		"cupName": "Continentals",
+		"league": 1500,
+		"description": "Train against this Continentals team featuring Quagsire and double Flying.",
+		"link": "#",
+		"pokemon": [
+			{
+				"speciesId": "tangrowth",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["POWER_WHIP","ROCK_SLIDE"]
+			},
+			{
+				"speciesId": "lickilicky",
+				"fastMove": "LICK",
+				"chargedMoves": ["BODY_SLAM","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "skarmory",
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["SKY_ATTACK","FLASH_CANNON"]
+			},
+			{
+				"speciesId": "golbat",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["POISON_FANG","SHADOW_BALL"]
+			},
+			{
+				"speciesId": "quagsire",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["STONE_EDGE","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "raichu_alolan",
+				"fastMove": "VOLT_SWITCH",
+				"chargedMoves": ["WILD_CHARGE","GRASS_KNOT"]
+			}
+		]
+	},
+	{
+		"name": "Training Team 4",
+		"slug": "training-4",
+		"img": "pvpoke",
+		"cup": "continentals-2",
+		"cupName": "Continentals",
+		"league": 1500,
+		"description": "Train against this Continentals team featuring many familiar Pokemon.",
+		"link": "#",
+		"pokemon": [
+			{
+				"speciesId": "tangrowth",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["POWER_WHIP","ROCK_SLIDE"]
+			},
+			{
+				"speciesId": "marowak_alolan",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["SHADOW_BALL","BONE_CLUB"]
+			},
+			{
+				"speciesId": "azumarill",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["PLAY_ROUGH","HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "muk_alolan",
+				"fastMove": "SNARL",
+				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"]
+			},
+			{
+				"speciesId": "quagsire",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["STONE_EDGE","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "bronzong",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["PSYSHOCK","BULLDOZE"]
+			}
+		]
+	},
+	{
+		"name": "Training Team 5",
+		"slug": "training-5",
+		"img": "pvpoke",
+		"cup": "continentals-2",
+		"cupName": "Continentals",
+		"league": 1500,
+		"description": "Train against this Continentals team featuring Pokemon with stat-changing moves.",
+		"link": "#",
+		"pokemon": [
+			{
+				"speciesId": "cloyster",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["ICY_WIND","HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "snorlax",
+				"fastMove": "LICK",
+				"chargedMoves": ["BODY_SLAM","SUPER_POWER"]
+			},
+			{
+				"speciesId": "altaria",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["SKY_ATTACK","DRAGON_PULSE"]
+			},
+			{
+				"speciesId": "victreebel",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["LEAF_BLADE","ACID_SPRAY"]
+			},
+			{
+				"speciesId": "mantine",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["BUBBLE_BEAM","ICE_BEAM"]
+			},
+			{
+				"speciesId": "escavalier",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["DRILL_RUN","MEGAHORN"]
+			}
+		]
+	},
+	{
+		"name": "Training Team 6",
+		"slug": "training-6",
+		"img": "pvpoke",
+		"cup": "continentals-2",
+		"cupName": "Continentals",
+		"league": 1500,
+		"description": "Train against this Continentals team featuring Skarmory, Quagsire, and Sceptile.",
+		"link": "#",
+		"pokemon": [
+			{
+				"speciesId": "sceptile",
+				"fastMove": "BULLET_SEED",
+				"chargedMoves": ["LEAF_BLADE","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "munchlax",
+				"fastMove": "LICK",
+				"chargedMoves": ["BODY_SLAM","BULLDOZE"]
+			},
+			{
+				"speciesId": "skarmory",
+				"fastMove": "AIR_SLASH",
+				"chargedMoves": ["SKY_ATTACK","FLASH_CANNON"]
+			},
+			{
+				"speciesId": "ninetales_alolan",
+				"fastMove": "CHARM",
+				"chargedMoves": ["ICE_BEAM","PSYSHOCK"]
+			},
+			{
+				"speciesId": "quagsire",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["STONE_EDGE","EARTHQUAKE"]
+			},
+			{
+				"speciesId": "escavalier",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["DRILL_RUN","MEGAHORN"]
+			}
+		]
+	},
+	{
+		"name": "Training Team 7",
+		"slug": "training-7",
+		"img": "pvpoke",
+		"cup": "continentals-2",
+		"cupName": "Continentals",
+		"league": 1500,
+		"description": "Train against this Continentals team featuring Melmetal.",
+		"link": "#",
+		"pokemon": [
+			{
+				"speciesId": "tangela",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["GRASS_KNOT","SLUDGE_BOMB"]
+			},
+			{
+				"speciesId": "poliwrath",
+				"fastMove": "MUD_SHOT",
+				"chargedMoves": ["DYNAMIC_PUNCH","ICE_PUNCH"]
+			},
+			{
+				"speciesId": "melmetal",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["ROCK_SLIDE","SUPER_POWER"]
+			},
+			{
+				"speciesId": "muk_alolan",
+				"fastMove": "SNARL",
+				"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"]
+			},
+			{
+				"speciesId": "stunfisk",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["MUD_BOMB","DISCHARGE"]
+			},
+			{
+				"speciesId": "lugia",
+				"fastMove": "EXTRASENSORY",
+				"chargedMoves": ["SKY_ATTACK","HYDRO_PUMP"]
+			}
+		]
+	},
+	{
+		"name": "Training Team 8",
+		"slug": "training-8",
+		"img": "pvpoke",
+		"cup": "continentals-2",
+		"cupName": "Continentals",
+		"league": 1500,
+		"description": "Train against this Continentals team featuring Wigglytuff.",
+		"link": "#",
+		"pokemon": [
+			{
+				"speciesId": "castform_rainy",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["WEATHER_BALL_WATER","THUNDER"]
+			},
+			{
+				"speciesId": "primeape",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["CLOSE_COMBAT","NIGHT_SLASH"]
+			},
+			{
+				"speciesId": "wigglytuff",
+				"fastMove": "CHARM",
+				"chargedMoves": ["PLAY_ROUGH","ICE_BEAM"]
+			},
+			{
+				"speciesId": "gloom",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["SLUDGE_BOMB","MOONBLAST"]
+			},
+			{
+				"speciesId": "mantine",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["ICE_BEAM","BUBBLE_BEAM"]
+			},
+			{
+				"speciesId": "bronzong",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["PSYSHOCK","BULLDOZE"]
+			}
+		]
+	},
+	{
+		"name": "Training Team 9",
+		"slug": "training-9",
+		"img": "pvpoke",
+		"cup": "continentals-2",
+		"cupName": "Continentals",
+		"league": 1500,
+		"description": "Train against this Continentals team featuring Registeel and Lapras.",
+		"link": "#",
+		"pokemon": [
+			{
+				"speciesId": "charizard",
+				"fastMove": "FIRE_SPIN",
+				"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"]
+			},
+			{
+				"speciesId": "gallade",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["LEAF_BLADE","CLOSE_COMBAT"]
+			},
+			{
+				"speciesId": "registeel",
+				"fastMove": "LOCK_ON",
+				"chargedMoves": ["FLASH_CANNON","FOCUS_BLAST"]
+			},
+			{
+				"speciesId": "lapras",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["SURF","SKULL_BASH"]
+			},
+			{
+				"speciesId": "gliscor",
+				"fastMove": "FURY_CUTTER",
+				"chargedMoves": ["EARTHQUAKE","NIGHT_SLASH"]
+			},
+			{
+				"speciesId": "raichu_alolan",
+				"fastMove": "VOLT_SWITCH",
+				"chargedMoves": ["WILD_CHARGE","GRASS_KNOT"]
+			}
+		]
+	},
+	{
+		"name": "Training Team 10",
+		"slug": "training-10",
+		"img": "pvpoke",
+		"cup": "continentals-2",
+		"cupName": "Continentals",
+		"league": 1500,
+		"description": "Train against this Continentals team featuring Azumarill and Jirachi.",
+		"link": "#",
+		"pokemon": [
+			{
+				"speciesId": "grotle",
+				"fastMove": "RAZOR_LEAF",
+				"chargedMoves": ["BODY_SLAM","ENERGY_BALL"]
+			},
+			{
+				"speciesId": "lucario",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["POWER_UP_PUNCH","SHADOW_BALL"]
+			},
+			{
+				"speciesId": "azumarill",
+				"fastMove": "BUBBLE",
+				"chargedMoves": ["ICE_BEAM","HYDRO_PUMP"]
+			},
+			{
+				"speciesId": "probopass",
+				"fastMove": "SPARK",
+				"chargedMoves": ["ROCK_SLIDE","THUNDERBOLT"]
+			},
+			{
+				"speciesId": "mantine",
+				"fastMove": "WING_ATTACK",
+				"chargedMoves": ["BUBBLE_BEAM","ICE_BEAM"]
+			},
+			{
+				"speciesId": "jirachi",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["DOOM_DESIRE","PSYCHIC"]
+			}
+		]
+	},
+	{
+		"name": "Training Team 11",
+		"slug": "training-11",
+		"img": "pvpoke",
+		"cup": "continentals-2",
+		"cupName": "Continentals",
+		"league": 1500,
+		"description": "Train against this Continentals team featuring Altaria and Sableye.",
+		"link": "#",
+		"pokemon": [
+			{
+				"speciesId": "blastoise",
+				"fastMove": "WATER_GUN",
+				"chargedMoves": ["HYDRO_CANNON","SKULL_BASH"]
+			},
+			{
+				"speciesId": "sableye",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["FOUL_PLAY","RETURN"]
+			},
+			{
+				"speciesId": "altaria",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["SKY_ATTACK","DRAGON_PULSE"]
+			},
+			{
+				"speciesId": "ninetales_alolan",
+				"fastMove": "CHARM",
+				"chargedMoves": ["PSYSHOCK","ICE_BEAM"]
+			},
+			{
+				"speciesId": "steelix",
+				"fastMove": "DRAGON_TAIL",
+				"chargedMoves": ["EARTHQUAKE","CRUNCH"]
+			},
+			{
+				"speciesId": "beedrill",
+				"fastMove": "POISON_JAB",
+				"chargedMoves": ["X_SCISSOR","DRILL_RUN"]
+			}
+		]
+	},
+	{
+		"name": "Training Team 12",
+		"slug": "training-12",
+		"img": "pvpoke",
+		"cup": "continentals-2",
+		"cupName": "Continentals",
+		"league": 1500,
+		"description": "Train against this Continentals team featuring regional Pokemon.",
+		"link": "#",
+		"pokemon": [
+			{
+				"speciesId": "carnivine",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["POWER_WHIP","CRUNCH"]
+			},
+			{
+				"speciesId": "zangoose",
+				"fastMove": "SHADOW_CLAW",
+				"chargedMoves": ["NIGHT_SLASH","CLOSE_COMBAT"]
+			},
+			{
+				"speciesId": "melmetal",
+				"fastMove": "THUNDER_SHOCK",
+				"chargedMoves": ["ROCK_SLIDE","SUPER_POWER"]
+			},
+			{
+				"speciesId": "lunatone",
+				"fastMove": "CONFUSION",
+				"chargedMoves": ["ROCK_SLIDE","MOONBLAST"]
+			},
+			{
+				"speciesId": "pachirisu",
+				"fastMove": "VOLT_SWITCH",
+				"chargedMoves": ["THUNDER_PUNCH","THUNDERBOLT"]
+			},
+			{
+				"speciesId": "heracross",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["CLOSE_COMBAT","MEGAHORN"]
+			}
+		]
+	}
+]

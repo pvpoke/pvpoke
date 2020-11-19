@@ -14,16 +14,18 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".check", checkBox);
 				$(".save.button").click(saveSettings);
 			};
-			
+
 			// Given a name, save current list to a cookie
 
 			function saveSettings(e){
-				
+
 				var defaultIVs = $("#default-ivs option:selected").val();
 				var animateTimeline = $(".check.animate-timeline").hasClass("on") ? 1 : 0;
 				var theme = $("#theme-select option:selected").val();
 				var matrixDirection = $("#matrix-direction option:selected").val();
-				
+				var gamemaster = $("#gm-select option:selected").val();
+				var pokeboxId = $("#pokebox-id").val();
+
 				$.ajax({
 
 					url : host+'data/settingsCookie.php',
@@ -32,12 +34,14 @@ var InterfaceMaster = (function () {
 						'defaultIVs' : defaultIVs,
 						'animateTimeline' : animateTimeline,
 						'theme': theme,
-						'matrixDirection': matrixDirection
+						'matrixDirection': matrixDirection,
+						'gamemaster': gamemaster,
+						'pokeboxId': pokeboxId,
+						'pokeboxLastDateTime': settings.pokeboxLastDateTime
 					},
 					dataType:'json',
-					success : function(data) {              
+					success : function(data) {
 						modalWindow("Settings Saved", $("<p>Your settings have been updated. (Refresh the page if you've updated the site appearance.)</p>"))
-
 					},
 					error : function(request,error)
 					{

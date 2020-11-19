@@ -3,7 +3,7 @@
 */
 // Load AI archetypes
 
-var file = webRoot+"data/training/teams/featured/featured-february.json?v=4";
+var file = webRoot+"data/training/teams/featured/featured-july.json?v=1";
 var featuredTeams = [];
 
 $.getJSON( file, function( data ){
@@ -66,6 +66,7 @@ var InterfaceMaster = (function () {
 				$(".featured-team-select").on("change", selectFeaturedTeam);
 				$(".battle-btn").on("click", startBattle);
 				$(".lets-go-btn").on("click", startTournamentBattle);
+				$("a.return-to-setup").on("click", returnToSetup);
 				$("body").on("click", ".self .roster .pokemon", selectRosterPokemon);
 				$("a.random").on("click", randomizeTeam);
 				$("body").on("click", ".check", checkBox);
@@ -93,7 +94,7 @@ var InterfaceMaster = (function () {
 
 			this.open = function(){
 				for(var i = 0; i < 3; i++){
-					$(".section").eq(i).slideDown(500);
+					$(".section:not('.mega-warning')").eq(i).slideDown(500);
 				}
 
 				$(".section.updates").slideDown(500);
@@ -213,6 +214,8 @@ var InterfaceMaster = (function () {
 					return false;
 				}
 
+				var autotapOverride = $(".autotap-toggle").hasClass("on");
+
 				// Set the round number to 0 for tournament mode
 				roundNumber = 0;
 
@@ -224,7 +227,8 @@ var InterfaceMaster = (function () {
 					partySize: partySize,
 					league: battle.getCP(),
 					cup: battle.getCup().name,
-					featuredTeam: featuredTeam
+					featuredTeam: featuredTeam,
+					autotapOverride:autotapOverride
 					};
 
 				// Reset roster selection for tournament mode
@@ -277,7 +281,6 @@ var InterfaceMaster = (function () {
 				}
 
 				$(".featured-team-description").hide();
-				$(".featured-team-select option").eq(0).prop("selected","selected");
 				multiSelectors[1].setMaxPokemonCount(partySize);
 			}
 
@@ -452,8 +455,12 @@ var InterfaceMaster = (function () {
 				battle.setCP(cp);
 				battle.setCup(cup);
 
+				for(var i = 0; i < multiSelectors.length; i++){
+					multiSelectors[i].setCP(cp);
+				}
+
 				// Force featured team selection for Cliffhanger and hide randomize button
-				if(cup == "cliffhanger"){
+				if((cup == "cliffhanger")||(cup == "continentals-2")){
 					$(".team-method-select option[value=\"featured\"]").prop("selected","selected");
 					$(".team-method-select").trigger("change");
 					$(".team-method-select option[value=\"random\"]").hide();
@@ -464,13 +471,15 @@ var InterfaceMaster = (function () {
 				}
 
 				// Force 3v3 for GO Battle League
-				if(cup == "gobattleleague"){
+				if((battle.getCup().partySize)&&(battle.getCup().partySize == 3)){
 					$(".mode-select option[value=\"single\"]").prop("selected","selected");
 					$(".mode-select option[value=\"tournament\"]").prop("disabled","disabled");
 					$(".mode-select").trigger("change");
 				} else{
 					$(".mode-select option[value=\"tournament\"]").prop("disabled","");
 				}
+
+				gm.loadRankingData(self, "overall", cp, cup);
 			}
 
 			// Give the player a random team
@@ -488,6 +497,14 @@ var InterfaceMaster = (function () {
 			function checkBox(e){
 				$(this).toggleClass("on");
 				$(this).trigger("change");
+			}
+
+			// Return to the setup screen from the tournament team select screen
+
+			function returnToSetup(e){
+				e.preventDefault();
+
+				handler.returnToSetup();
 			}
 
 		}

@@ -6,6 +6,8 @@
 		<option disabled selected value="">Select a Pokemon</option>
 	</select>
 
+	<?php include 'pokebox.php'; ?>
+
 	<div class="poke-stats">
 		<h3 class="cp">cp <span class="stat"></span></h3>
 		<div class="types"></div>
@@ -45,6 +47,13 @@
 		</div>
 		<div class="clear"></div>
 
+		<div class="mega-cp-container">
+			<h3 class="base-name section-title">Pokemon</h3>
+			<h3 class="mega-cp">cp <span class="stat"></span></h3>
+		</div>
+
+		<div class="fifty-warning">Actual values for levels 45.5-50 are currently unknown. This information is speculative only. Do not invest any resources based on it.</div>
+
 		<div class="advanced-section">
 			<a class="advanced" href="#">Advanced Stats/IVs <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 			<div class="fields">
@@ -68,7 +77,9 @@
 						<div>Level Cap:</div>
 						<div class="check on" value="40"><span></span>40</div>
 						<div class="check" value="41"><span></span>41</div>
+						<div class="check" value="50"><span></span>50</div>
 					</div>
+					<div class="check auto-level on"><span></span>Auto level</div>
 					<button class="maximize-stats">Maximize</button>
 					<button class="restore-default">Default</button>
 				</div>
@@ -90,7 +101,7 @@
 			<select class="move-select charged"></select>
 			<select class="move-select charged"></select>
 			<button class="auto-select">Auto Select Moves</button>
-			<div class="legacy">* Legacy Move</div>
+			<div class="legacy">* Exclusive move<br><sup>†</sup> Unobtainable move</div>
 		</div>
 
 		<div class="options">
@@ -127,12 +138,15 @@
 
 		<div class="hp bar-back">
 			<div class="bar"></div>
+			<div class="bar damage"></div>
 			<div class="stat"></div>
 		</div>
 
 		<div class="move-bars">
 			<div class="move-bar">
 				<div class="label">CM</div>
+				<div class="bar"></div>
+				<div class="bar"></div>
 				<div class="bar"></div>
 				<div class="bar-back"></div>
 			</div>
@@ -142,6 +156,8 @@
 			</div>
 			<div class="move-bar">
 				<div class="label">CM</div>
+				<div class="bar"></div>
+				<div class="bar"></div>
 				<div class="bar"></div>
 				<div class="bar-back"></div>
 			</div>

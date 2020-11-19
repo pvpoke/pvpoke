@@ -22,20 +22,24 @@ require_once 'header.php';
 		</select>
 		<p>Currently, this will choose which IV's to set for Pokemon you select in Single Battle, Multi-Battle, and the Team Builder. Opponents in Multi-Battle and the Team Builder will still use the "typical" IV's.</p>
 
+		<h3>Pokebox</h3>
+		<p>PvPoke integrates with <a target="_blank" href="https://www.pokebattler.com/" class="pokebattler">Pokebattler</a> so you can permanently store your Pokemon and import them anywhere on the site. Enter your Pokebattler account ID below to link your Pokebox:</p>
+		<input type="text" class="input" id="pokebox-id" <?php if(isset($_SETTINGS->pokeboxId)) : ?>value="<?php echo intval($_SETTINGS->pokeboxId); ?>"<?php endif; ?> />
+
 		<h3>Battle Timeline</h3>
 		<div class="check animate-timeline <?php if($_SETTINGS->animateTimeline == 1) : ?>on<?php endif; ?>"><span></span> Animate after generating results</div>
-		
+
 		<h3>Matrix &amp; Team Builder Results</h3>
 		<p>Select whether to display results for Pokemon in rows versus Pokemon in columns, or vice versa, in the Matrix Battle tool and Team Builder scorecards.</p>
 		<select class="input" id="matrix-direction">
 			<option value="row" <?php if((isset($_SETTINGS->matrixDirection))&&($_SETTINGS->matrixDirection == "row")) : ?>selected<?php endif; ?>>Row vs Column</option>
 			<option value="column" <?php if((isset($_SETTINGS->matrixDirection))&&($_SETTINGS->matrixDirection == "column")) : ?>selected<?php endif; ?>>Column vs Row</option>
 		</select>
-		
+
 		<h3>Site Theme</h3>
 		<?php
 		$theme = "default";
-		
+
 		if(isset($_SETTINGS->theme)){
 			$theme = $_SETTINGS->theme;
 		}
@@ -44,6 +48,23 @@ require_once 'header.php';
 			<select class="input" id="theme-select">
 				<option value="default" <?php if($theme == "default") : ?>selected<?php endif; ?>>Default</option>
 				<option value="night" <?php if($theme == "night") : ?>selected<?php endif; ?>>Night</option>
+			</select>
+		</div>
+
+		<h3>Gamemaster Version</h3>
+		<p>Select the current Pokemon and move values, either the default values or an alternative set.</p>
+		<?php
+		$gamemaster = "gamemaster";
+
+		if(isset($_SETTINGS->gamemaster)){
+			$gamemaster = $_SETTINGS->gamemaster;
+		}
+		?>
+		<div>
+			<select class="input" id="gm-select">
+				<option value="gamemaster" <?php if($gamemaster == "gamemaster") : ?>selected<?php endif; ?>>Default</option>
+				<option value="gamemaster-mega" <?php if($gamemaster == "gamemaster-mega") : ?>selected<?php endif; ?>>Mega Evolutions (Speculative)</option>
+				<option value="gamemaster-kalos" <?php if($gamemaster == "gamemaster-kalos") : ?>selected<?php endif; ?>>Kalos (Speculative)</option>
 			</select>
 		</div>
 

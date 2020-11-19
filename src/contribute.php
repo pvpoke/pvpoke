@@ -36,8 +36,22 @@ require_once 'header.php'; ?>
 		<div class="supporter">JEngels21</div>
 		<div class="supporter">SparkSpencer</div>
 		<div class="supporter">Vexilus @PvPVexilus</div>
-
-
+		<div class="supporter">LindenRyu</div>
+		<div class="supporter">impoid</div>
+		<div class="supporter">t00fan</div>
+		<div class="supporter">jkg5150</div>
+		<div class="supporter">jrj1986</div>
+		<div class="supporter">robbied888</div>
+		<div class="supporter">PoGoCabCo</div>
+		<div class="supporter">Worsel55</div>
+		<div class="supporter">gerry3</div>
+		<div class="supporter">Third Shield Podcast</div>
+		<div class="supporter">Elite4al</div>
+		<div class="supporter">WillSimsMS</div>
+		<div class="supporter">Melgood711</div>
+		<div class="supporter">PvP&Me/BrajSF</div>
+		<div class="supporter">MysticalTrack</div>
+		<div class="supporter">findpanic</div>
 	</div>
 
 	<h2 class="center">Master Supporters</h2>
@@ -120,6 +134,66 @@ require_once 'header.php'; ?>
 		<div class="supporter-container">
 			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/wizap.jpg"/>
 			<div class="supporter"><a href="https://www.youtube.com/channel/UC77QyviuffB5xGKtAkn1XtQ" target="_blank">Wizap 7</a></div>
+		</div>
+		<div class="supporter-container">
+			<div class="space"></div>
+			<div class="supporter">TehPool</div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/spieletrend.png"/>
+			<div class="supporter"><a href="https://www.youtube.com/spieletrend" target="_blank">Daniel Schilling</a></div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/jigglydad.png"/>
+			<div class="supporter"><a href="http://jigglydad.com" target="_blank">J1gglyDad</a></div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/osmopvp.png"/>
+			<div class="supporter"><a href="https://discord.gg/RqUV4VA" target="_blank">OsMo PvP</a></div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/pogolookup.png"/>
+			<div class="supporter"><a href="https://pogolookup.com/" target="_blank">PoGoLookup.com</a></div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/tridentleague.jpg"/>
+			<div class="supporter"><a href="https://t.me/TridentPvP" target="_blank">Trident League</a></div>
+		</div>
+		<div class="supporter-container">
+			<div class="space"></div>
+			<div class="supporter"><a href="https://twitter.com/MysticSparkle24" target="_blank">MysticSparkle24</a></div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/scisensei.png"/>
+			<div class="supporter"><a href="https://www.twitch.tv/supersciencesensei" target="_blank">SuperScienceSensei</a></div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/sassifrass.jpg"/>
+			<div class="supporter"><a href="https://www.twitch.tv/sassifrass" target="_blank">sassifrass</a></div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/kaiser.jpg"/>
+			<div class="supporter"><a href="https://www.twitch.tv/kaiserneiner" target="_blank">KaiserNeiner</a></div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/graceunderfiero.png"/>
+			<div class="supporter"><a href="https://www.twitch.tv/GraceUnderFiero" target="_blank">GraceUnderFiero</a></div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/jordiepop.png"/>
+			<div class="supporter"><a href="https://www.youtube.com/user/jordangerm" target="_blank">Jordie Pop</a></div>
+		</div>
+		<div class="supporter-container">
+			<div class="space"></div>
+			<div class="supporter">theghost087</div>
+		</div>
+		<div class="supporter-container">
+			<div class="space"></div>
+			<div class="supporter">Riddermorten</div>
+		</div>
+		<div class="supporter-container">
+			<div class="space"></div>
+			<div class="supporter"><a href="https://twitter.com/Gamenasium" target="_blank">Gamenasium</a></div>
 		</div>
 	</div>
 </div>

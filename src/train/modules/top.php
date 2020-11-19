@@ -12,6 +12,10 @@
 		</div>
 		<div class="shields left">2</div>
 		<div class="cmp">CMP</div>
+		<div class="types">
+			<div class="type">G</div>
+			<div class="type">P</div>
+		</div>
 	</div>
 
 	<div class="team-indicator right">
@@ -27,5 +31,9 @@
 			<img>
 		</div>
 		<div class="cmp">CMP</div>
+		<div class="types">
+			<div class="type">G</div>
+			<div class="type">P</div>
+		</div>
 	</div>
 </div>

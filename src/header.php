@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.14.0';
+$SITE_VERSION = '1.18.9';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -14,11 +14,33 @@ if(isset($_COOKIE['settings'])){
 	if(! isset($_SETTINGS->matrixDirection)){
 		$_SETTINGS->matrixDirection = "row";
 	}
+
+	// Fill in missing settings with defaults
+	if(! isset($_SETTINGS->gamemaster)){
+		$_SETTINGS->gamemaster = "gamemaster";
+	}
+
+	if(! isset($_SETTINGS->pokeboxId)){
+		$_SETTINGS->pokeboxId = false;
+	}
+
+	if(! isset($_SETTINGS->pokeboxLastDateTime)){
+		$_SETTINGS->pokeboxLastDateTime = 0;
+	}
+
+	// Validate the gamemaster setting, only allow these options
+	$gamemasters = ["gamemaster", "gamemaster-mega", "gamemaster-kalos"];
+
+	if(! in_array($_SETTINGS->gamemaster, $gamemasters)){
+		$_SETTINGS->gamemaster = "gamemaster";
+	}
 } else{
 	$_SETTINGS = (object) [
 		'defaultIVs' => "gamemaster",
 		'animateTimeline' => 1,
-		'theme' => 'default'
+		'theme' => 'default',
+		'gamemaster' => 'gamemaster',
+		'pokeboxId' => 0
 	];
 }
 
@@ -66,17 +88,18 @@ if(! isset($OG_IMAGE)){
 
 <meta name="apple-mobile-web-app-capable">
 <meta name="mobile-web-app-capable">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json?v=2">
 
 <link rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=70">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=94">
 
 <?php if(strpos($META_TITLE, 'Train') !== false): ?>
-	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=11">
+	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=14">
 <?php endif; ?>
 
 <?php if((isset($_SETTINGS->theme))&&($_SETTINGS->theme != "default")): ?>
-	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/themes/<?php echo $_SETTINGS->theme; ?>.css?v=7">
+	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/themes/<?php echo $_SETTINGS->theme; ?>.css?v=11">
 <?php endif; ?>
 
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>
@@ -94,17 +117,44 @@ if(! isset($OG_IMAGE)){
 		var settings = {
 			defaultIVs: "<?php echo htmlspecialchars($_SETTINGS->defaultIVs); ?>",
 			animateTimeline: <?php echo htmlspecialchars($_SETTINGS->animateTimeline); ?>,
-			matrixDirection: "<?php echo htmlspecialchars($_SETTINGS->matrixDirection); ?>"
+			matrixDirection: "<?php echo htmlspecialchars($_SETTINGS->matrixDirection); ?>",
+			gamemaster: "<?php echo htmlspecialchars($_SETTINGS->gamemaster); ?>",
+			pokeboxId: "<?php echo intval($_SETTINGS->pokeboxId); ?>",
+			pokeboxLastDateTime: "<?php echo intval($_SETTINGS->pokeboxLastDateTime); ?>"
 		};
 	<?php else: ?>
 
 		var settings = {
 			defaultIVs: "gamemaster",
 			animateTimeline: 1,
-			matrixDirection: "row"
+			matrixDirection: "row",
+			gamemaster: "gamemaster",
+			pokeboxId: 0,
+			pokeboxLastDateTime: 0
 		};
 
 	<?php endif; ?>
+
+	<?php if((strpos($_SERVER['REQUEST_URI'], 'mega') !== false) && (strpos($_SERVER['REQUEST_URI'], 'meganium') === false) && (strpos($_SERVER['REQUEST_URI'], 'venusaur_mega') === false) && (strpos($_SERVER['REQUEST_URI'], 'blastoise_mega') === false) && ((strpos($_SERVER['REQUEST_URI'], 'charizard_mega_x') === false)) && (strpos($_SERVER['REQUEST_URI'], 'charizard_mega_y') === false) && (strpos($_SERVER['REQUEST_URI'], 'beedrill_mega') === false) && (strpos($_SERVER['REQUEST_URI'], 'pidgeot_mega') === false) && (strpos($_SERVER['REQUEST_URI'], 'houndoom_mega') === false)):
+		$_SETTINGS->gamemaster = 'gamemaster-mega';
+		?>
+		// If "Mega" is contained in the URL, default to the mega gamemaster
+		settings.gamemaster = "gamemaster-mega";
+	<?php endif; ?>
+
+	<?php
+	// Use Kalos gamemaster for eligible Pokemon
+	$kalos = array("chesnaught","delphox","greninja","diggersby","talonflame","gogoat","pancham","pangoro","aegislash_blade","aegislash_shield","malamar","dragalge","auroros","sylveon","hawlucha","carbink","sliggoo","goodra","xerneas","yveltal","zygarde","zygarde_complete","diancie","volcanion");
+
+	foreach($kalos as $k){
+
+		if(strpos($_SERVER['REQUEST_URI'], $k) !== false){
+			$_SETTINGS->gamemaster = 'gamemaster-kalos'; ?>
+			settings.gamemaster = "gamemaster-kalos";
+			<?php
+		}
+	}
+ 	?>
 
 
 	// If $_GET request exists, output as JSON into Javascript
@@ -128,13 +178,13 @@ if(! isset($OG_IMAGE)){
 <body>
 	<header>
 		<div class="header-wrap">
+			<h1 class="title"><a href="/">PvPoke.com</a></h1>
 			<div class="hamburger">
 				<!--Because I'm too lazy to make a graphic-->
 				<div class="meat"></div>
 				<div class="meat"></div>
 				<div class="meat"></div>
 			</div>
-			<h1 class="title"><a href="/">PvPoke.com</a></h1>
 			<div class="menu">
 				<a class="icon-battle" href="<?php echo $WEB_ROOT; ?>battle/">Battle</a>
 				<a class="icon-train" href="<?php echo $WEB_ROOT; ?>train/">Train</a>
@@ -160,8 +210,8 @@ if(! isset($OG_IMAGE)){
 					</div>
 				</div>
 			</div>
-			<div class="clear"></div>
 		</div>
 	</header>
 	<div class="main-wrap">
 		<div id="main">
+			<div class="hide mega-warning"><b>Stats for unreleased Mega Evolutions are speculative. Don't invest any resources until they're officially released.</b></div>

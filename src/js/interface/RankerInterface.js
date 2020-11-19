@@ -27,17 +27,28 @@ var InterfaceMaster = (function () {
 
 				battle = new Battle();
 
+				// Load initial overrides
+
+				$.getJSON( webRoot+"data/overrides/all/1500.json?v="+siteVersion, function( data ){
+					if(ranker.setMoveOverrides){
+						ranker.setMoveOverrides(1500, "all", data);
+						console.log("Ranking overrides loaded [" + data.length + "]");
+					}
+				});
+
 			};
 
 			// Event handler for changing the league select
 
 			function selectLeague(e){
-				var allowed = [1500, 2500, 10000];
+				var allowed = [500, 1500, 2500, 10000];
 				var cp = parseInt($(".league-select option:selected").val());
 
 				if(allowed.indexOf(cp) > -1){
 					battle.setCP(cp);
 				}
+
+				loadOverrides();
 
 			}
 
@@ -46,6 +57,8 @@ var InterfaceMaster = (function () {
 			function selectCup(e){
 				var cup = $(".cup-select option:selected").val();
 				battle.setCup(cup);
+
+				loadOverrides();
 			}
 
 			// Event handler for changing the format category
@@ -74,6 +87,23 @@ var InterfaceMaster = (function () {
 					// Redirect to the custom rankings page
 					window.location.href = webRoot+'custom-rankings/';
 				}
+
+				loadOverrides();
+			}
+
+			// Load overrides for the currently selected league and cup
+
+			function loadOverrides(){
+
+				var file = webRoot+"data/overrides/"+battle.getCup().name+"/"+battle.getCP()+".json?v="+siteVersion;
+
+				$.getJSON( file, function( data ){
+					if(ranker.setMoveOverrides){
+						ranker.setMoveOverrides(battle.getCP(), battle.getCup().name, data);
+						console.log("Ranking overrides loaded [" + data.length + "]");
+					}
+				});
+
 			}
 
 			// Run simulation

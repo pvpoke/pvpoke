@@ -1,6 +1,7 @@
 <?php require_once 'header.php'; ?>
 
 <div class="section home white">
+
 	<p>Welcome to PvPoke.com! We're an open-source tool for simulating, ranking, and building teams for Pokemon GO PvP (player versus player) battles. Check out the links below to get started.</p>
 
 	<a href="<?php echo $WEB_ROOT; ?>battle/" class="button">
@@ -27,33 +28,30 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.14.0 (March 14, 2020)</h4>
+	<h4>v1.18.8 (November 18, 2020)</h4>
 	<ul>
-		<li>Shadow Pokemon are now treated as separate Pokemon that you can search in the rankings and select for battle!</li>
+		<li>Select Pokemon from Generation VI are now available in simulations! Enable them by selecting the "Kalos" Gamemaster Version on the <a href="<?php echo $WEB_ROOT; ?>settings/">Settings page</a>.</li>
 	</ul>
 
-	<h4>v1.13.0 (March 2, 2020)</h4>
+	<h4>v1.18.7 (November 18, 2020)</h4>
 	<ul>
-		<li>Settings now added for Shadow Pokemon.</li>
-		<ul>
-			<li>Shadow Pokemon receive a x1.2 multiplier to Attack and a x0.83 multiplier to Defense.</li>
-			<li>Shadow Pokemon can be incorporated into custom groups.</li>
-		</ul>
+		<li>The site now supports Pokemon levels up to 50. Note that the current values are speculative and should not be used to determine investments at this time.</li>
 	</ul>
 
 	<h3>Latest Article</h3>
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/cliffhanger-team-building/">
-				<img src="<?php echo $WEB_ROOT; ?>assets/articles/cliffhanger-thumb.jpg" />
+			<a href="<?php echo $WEB_ROOT; ?>articles/ultimate-guide-to-team-building/">
+				<img src="<?php echo $WEB_ROOT; ?>assets/articles/team-building-thumb.jpg" />
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/cliffhanger-team-building/">Team Building for GO Stadium Cliffhanger</a></h4>
-			<div class="date"> January 4, 2020</div>
-			<p>GO Stadium has introduced an exciting new format called Cliffhanger! Learn how to spend your points and build your Cliffhanger team from the ground up.</p>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/ultimate-guide-to-team-building/">Ultimate Team Building Guide by PolymersUp</a></h4>
+			<div class="date">August 11, 2020</div>
+			<p>Learn the fundamentals of building a good team and how to use the PvPoke Team Builder to its full potential.</p>
 		</div>
+
 	</div>
 
 </div>

@@ -2,17 +2,12 @@
 	{
 		"speciesId":"giratina_altered",
 		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["DRAGON_CLAW","ANCIENT_POWER"]
+		"chargedMoves":["DRAGON_CLAW","SHADOW_SNEAK"]
 	},
 	{
 		"speciesId":"giratina_origin",
 		"fastMove":"SHADOW_CLAW",
 		"chargedMoves":["SHADOW_BALL","OMINOUS_WIND"]
-	},
-	{
-		"speciesId":"darkrai",
-		"fastMove":"SNARL",
-		"chargedMoves":["DARK_PULSE","FOCUS_BLAST"]
 	},
 	{
 		"speciesId":"machamp",
@@ -30,24 +25,19 @@
 		"chargedMoves":["ROCK_SLIDE","SUPER_POWER"]
 	},
 	{
-		"speciesId":"latios",
-		"fastMove":"DRAGON_BREATH",
-		"chargedMoves":["DRAGON_CLAW","SOLAR_BEAM"]
-	},
-	{
 		"speciesId":"dragonite",
 		"fastMove":"DRAGON_BREATH",
-		"chargedMoves":["DRAGON_CLAW","DRACO_METEOR"]
+		"chargedMoves":["DRAGON_CLAW","HURRICANE"]
+	},
+	{
+		"speciesId":"zekrom",
+		"fastMove":"DRAGON_BREATH",
+		"chargedMoves":["CRUNCH","WILD_CHARGE"]
 	},
 	{
 		"speciesId":"metagross",
 		"fastMove":"BULLET_PUNCH",
 		"chargedMoves":["METEOR_MASH","EARTHQUAKE"]
-	},
-	{
-		"speciesId":"tyranitar",
-		"fastMove":"SMACK_DOWN",
-		"chargedMoves":["CRUNCH","STONE_EDGE"]
 	},
 	{
 		"speciesId":"heatran",
@@ -60,14 +50,14 @@
 		"chargedMoves":["BODY_SLAM","EARTHQUAKE"]
 	},
 	{
-		"speciesId":"lugia",
-		"fastMove":"DRAGON_TAIL",
-		"chargedMoves":["SKY_ATTACK","HYDRO_PUMP"]
+		"speciesId":"ho_oh",
+		"fastMove":"INCINERATE",
+		"chargedMoves":["EARTHQUAKE","BRAVE_BIRD"]
 	},
 	{
-		"speciesId":"mew",
-		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["PSYSHOCK","FOCUS_BLAST"]
+		"speciesId":"lugia",
+		"fastMove":"DRAGON_TAIL",
+		"chargedMoves":["SKY_ATTACK","AEROBLAST"]
 	},
 	{
 		"speciesId":"mewtwo",
@@ -82,6 +72,11 @@
 	{
 		"speciesId":"dialga",
 		"fastMove":"DRAGON_BREATH",
+		"chargedMoves":["IRON_HEAD","DRACO_METEOR"]
+	},
+	{
+		"speciesId":"dialga",
+		"fastMove":"DRAGON_BREATH",
 		"chargedMoves":["IRON_HEAD","THUNDER"]
 	},
 	{
@@ -90,9 +85,19 @@
 		"chargedMoves":["OUTRAGE","EARTHQUAKE"]
 	},
 	{
+		"speciesId":"garchomp",
+		"fastMove":"MUD_SHOT",
+		"chargedMoves":["OUTRAGE","SAND_TOMB"]
+	},
+	{
 		"speciesId":"groudon",
 		"fastMove":"MUD_SHOT",
-		"chargedMoves":["EARTHQUAKE","FIRE_BLAST"]
+		"chargedMoves":["EARTHQUAKE","FIRE_PUNCH"]
+	},
+	{
+		"speciesId":"palkia",
+		"fastMove":"DRAGON_BREATH",
+		"chargedMoves":["AQUA_TAIL","DRACO_METEOR"]
 	},
 	{
 		"speciesId":"kyogre",
@@ -100,8 +105,13 @@
 		"chargedMoves":["SURF","BLIZZARD"]
 	},
 	{
+		"speciesId":"kyogre",
+		"fastMove":"WATERFALL",
+		"chargedMoves":["SURF","THUNDER"]
+	},
+	{
 		"speciesId":"raikou",
-		"fastMove":"THUNDER_SHOCK",
+		"fastMove":"VOLT_SWITCH",
 		"chargedMoves":["WILD_CHARGE","SHADOW_BALL"]
 	},
 	{
@@ -112,7 +122,7 @@
 	{
 		"speciesId":"gyarados",
 		"fastMove":"DRAGON_BREATH",
-		"chargedMoves":["OUTRAGE","CRUNCH"]
+		"chargedMoves":["AQUA_TAIL","CRUNCH"]
 	},
 	{
 		"speciesId":"rhyperior",

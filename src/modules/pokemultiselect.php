@@ -8,6 +8,8 @@
 			<div class="rankings-container clear"></div>
 			<button class="add-poke-btn button">+ Add Pokemon</button>
 
+			<?php include 'pokebox.php'; ?>
+
 			<button class="export-btn">Import/Export</button>
 
 			<h3 class="section-title">Quick Fill</h3>
@@ -16,12 +18,11 @@
 				<option value="great" type="great" class="multi-battle">Great League Meta</option>
 				<option value="ultra" type="ultra" class="hide multi-battle">Ultra League Meta</option>
 				<option value="master" type="master" class="hide multi-battle">Master League Meta</option>
-				<option value="toxic" type="toxic" class="multi-battle">Toxic Cup Meta</option>
-				<option value="rose" type="rose" class="multi-battle">Rose Cup Meta</option>
-				<option value="fusion" type="fusion" class="multi-battle">Fusion Cup Meta</option>
-				<option value="timeless" type="timeless" class="multi-battle">Timeless Cup Meta</option>
-				<option value="ferocious" type="ferocious" class="multi-battle">Ferocious Cup Meta</option>
-				<option value="sinister" type="sinister" class="multi-battle">Sinister Cup Meta</option>
+				<option value="premierultra" type="ultra" class="hide multi-battle">Premier Cup Meta</option>
+				<option value="premier" type="master" class="hide multi-battle">Premier Cup Meta</option>
+				<option value="little" type="little" class="hide multi-battle">Little Cup Meta</option>
+				<option value="kanto" type="great" class="multi-battle">Kanto Cup Meta</option>
+				<option value="marsh" type="great" class="multi-battle">Silph Marsh Cup Meta</option>
 			</select>
 			<div class="flex quick-fill-buttons">
 				<button class="save-btn save-custom">Save</button>
@@ -44,7 +45,7 @@
 			</select>
 			<select class="default-iv-select">
 				<option value="original">Original IV's</option>
-				<option value="gamemaster">Typical IV's (~Rank 500)</option>
+				<option value="gamemaster">Default IV's</option>
 				<option value="overall">Maximum stat product (Rank 1)</option>
 				<option value="atk">Maximum Attack</option>
 				<option value="def">Maximum Defense</option>

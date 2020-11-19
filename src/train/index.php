@@ -37,24 +37,27 @@ require_once '../header.php';
 				<option value="1500 gobattleleague">GO Battle League (Great)</option>
 				<option value="2500 gobattleleague">GO Battle League (Ultra)</option>
 				<option value="10000 gobattleleague">GO Battle League (Master)</option>
+				<option value="2500 premier">Premier Cup (Ultra)</option>
+				<option value="10000 premier">Premier Cup (Master)</option>
 				<option value="1500 all">Great League</option>
 				<option value="2500 all">Ultra League</option>
 				<option value="10000 all">Master League</option>
-				<option value="1500 toxic">Toxic Cup</option>
-				<option value="1500 rose">Rose Cup</option>
+				<option value="500 little">Little Cup</option>
+				<option value="1500 kanto">Kanto Cup</option>
+				<option value="1500 marsh">Silph Marsh Cup</option>
 			</select>
 			<h3 class="section-title">Difficulty</h3>
 			<select class="difficulty-select">
 				<option value="0">Novice</option>
 				<option value="1">Rival</option>
 				<option value="2">Elite</option>
-				<option value="3">Champion</option>
+				<option value="3" selected>Champion</option>
 			</select>
+			<div class="check autotap-toggle"><span></span>Autotap</div>
 			<h3 class="section-title">Team Selection</h3>
 			<select class="team-method-select">
 				<option value="random">Random</option>
 				<option value="manual">Manual</option>
-				<option value="featured">Featured Teams</option>
 			</select>
 			<?php require '../modules/pokemultiselect.php'; ?>
 			<div class="featured-team-section">
@@ -84,6 +87,7 @@ require_once '../header.php';
 </div>
 
 <div class="section team-select">
+	<a class="return-to-setup" href="#">&larr; Team Select &amp; Setup</a>
 	<div class="opponent">
 		<h3 class="center">Opponent's Roster</h3>
 		<div class="featured-team-description">
@@ -126,9 +130,9 @@ require_once '../header.php';
 <div class="section white updates">
 	<h3>What's New</h3>
 
-	<h4>v1.12.30 (February 6, 2020)</h4>
+	<h4>v1.17.6 (October 10, 2020)</h4>
 	<ul>
-		<li>GO Battle League (Ultra League) is now available in Training Battles! Go test your teams of 3 for the next league shift.</li>
+		<li>Training Battles for GO Battle League can now utilize preset teams to help you prepare for and recognize common teams of 3.</li>
 	</ul>
 </div>
 
@@ -142,6 +146,7 @@ require_once '../header.php';
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeMultiSelect.js?=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/Pokebox.js?=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineAction.js?v=<?php echo $SITE_VERSION; ?>"></script>

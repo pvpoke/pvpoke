@@ -19,6 +19,7 @@ function PokeMultiSelect(element){
 	var maxPokemonCount = 100;
 	var selectedGroup = "";
 	var selectedGroupType = "";
+	var pokebox;
 
 	var context = "";
 
@@ -27,6 +28,8 @@ function PokeMultiSelect(element){
 		ivs: "original",
 		bait: true
 	}
+
+	var cliffhangerMode = false;
 
 	this.init = function(pokes, b){
 		pokemon = pokes;
@@ -45,6 +48,8 @@ function PokeMultiSelect(element){
 
 			i++;
 		}
+
+		pokebox = new Pokebox($el.find(".pokebox"), self, "multi", b);
 	}
 
 	// Open Pokemon select modal window to add or edit a Pokemon
@@ -115,6 +120,13 @@ function PokeMultiSelect(element){
 
 		$el.find(".rankings-container").html('');
 
+		// For Cliffhanger, calculate points
+		var cliffObj;
+
+		if(cliffhangerMode){
+			cliffObj = self.calculateCliffhangerPoints();
+		}
+
 		for(var i = 0; i < pokemonList.length; i++){
 
 			var pokemon = pokemonList[i];
@@ -128,26 +140,42 @@ function PokeMultiSelect(element){
 			}
 
 			for(var n = 0; n < moveList.length; n++){
-				// Code for move icons, but I think the move names work better for readability
-
-				// $item.find(".moves").append("<div class=\"move " + moveList[n].type + "\">"+moveList[n].name+"</div>");
-
 				if(n > 0){
 					$item.find(".moves").append(", ");
 				}
 
-				$item.find(".moves").append(moveList[n].name);
+				$item.find(".moves").append(moveList[n].displayName);
+			}
+
+			if(cliffhangerMode){
+				$item.find(".name").prepend("<span class=\"cliffhanger-points\">"+pokemonList[i].cliffhangerPoints+"</span>");
 			}
 
 			$el.find(".rankings-container").append($item);
 		}
 
-		$el.find(".section-title .poke-count").html(pokemonList.length);
+		if(! cliffhangerMode){
+			$el.find(".section-title .poke-count").removeClass("error");
+			$el.find(".section-title .poke-count").html(pokemonList.length);
+			$el.find(".poke-max-count").html(maxPokemonCount);
+		} else{
+			$el.find(".section-title .poke-count").html(cliffObj.points);
+			$el.find(".section-title .poke-max-count").html(cliffObj.max + " points");
+
+			if(cliffObj.points > cliffObj.max){
+				$el.find(".section-title .poke-count").addClass("error");
+			} else{
+				$el.find(".section-title .poke-count").removeClass("error");
+			}
+		}
+
 
 		if(pokemonList.length >= maxPokemonCount){
 			$el.find(".add-poke-btn").hide();
+			$el.find(".pokebox").hide();
 		} else{
 			$el.find(".add-poke-btn").show();
+			$el.find(".pokebox").show();
 		}
 
 	}
@@ -253,13 +281,13 @@ function PokeMultiSelect(element){
 	// After loading from the GameMaster, fill in a preset group
 
 	this.setPokemonList = function(list){
-		pokemonList = list;
+		pokemonList = list.slice(0, maxPokemonCount);
 		self.updateListDisplay();
 	}
 
 	// Update the custom group selections when changing league
 
-	this.updateLeague = function(cp){
+	this.setCP = function(cp){
 		$el.find(".quick-fill-select option").hide();
 
 		switch(cp){
@@ -268,18 +296,32 @@ function PokeMultiSelect(element){
 				$el.find(".quick-fill-select option").show();
 				$el.find(".quick-fill-select option[value='ultra']").hide();
 				$el.find(".quick-fill-select option[value='master']").hide();
+				$el.find(".quick-fill-select option[value='premier']").hide();
+				$el.find(".quick-fill-select option[value='little']").hide();
 				break;
 
 			case 2500:
 				$el.find(".quick-fill-select option[value='ultra']").show();
+				$el.find(".quick-fill-select option[type='ultra']").show();
 				break;
 
 			case 10000:
 				$el.find(".quick-fill-select option[value='master']").show();
+				$el.find(".quick-fill-select option[type='master']").show();
+				break;
+
+			case 500:
+				$el.find(".quick-fill-select option[value='little']").show();
+				$el.find(".quick-fill-select option[type='little']").show();
 				break;
 		}
 
 		$el.find(".quick-fill-select option[type='custom']").show();
+
+		// Set all Pokemon to the new CP limit
+		for(var i = 0; i < pokemonList.length; i++){
+			pokemonList[i].initialize(cp, settings.defaultIVs);
+		}
 	}
 
 	// Convert the current Pokemon list into exportable and savable JSON
@@ -377,6 +419,47 @@ function PokeMultiSelect(element){
 		pokemonList = pokemonList.splice(0, maxPokemonCount);
 		$el.find(".poke-max-count").html(maxPokemonCount);
 		self.updateListDisplay();
+	}
+
+	// Set cliffhanger mode to true or false
+
+	this.setCliffhangerMode = function(val){
+		cliffhangerMode = val;
+
+		self.updateListDisplay();
+	}
+
+	// Calculate a team's cliffhanger points, returns object with current points, maximum allowed, and tiers
+
+	this.calculateCliffhangerPoints = function(){
+		var tiers = [];
+		var points = 0;
+		var max = 0;
+
+		// Grab tiers from GM data
+
+		for(var i = 0 ; i < gm.data.cliffhangerTiers.length; i++){
+			if(gm.data.cliffhangerTiers[i].league == battle.getCP()){
+				tiers = gm.data.cliffhangerTiers[i].tiers;
+				max = gm.data.cliffhangerTiers[i].max;
+				break;
+			}
+		}
+
+		for(var i = 0; i < pokemonList.length; i++){
+			var searchId = pokemonList[i].speciesId.replace("_shadow",""); // Do this so Shadow and non-Shadow ID's match
+			pokemonList[i].cliffhangerPoints = 0;
+
+			for(var n = 0; n < tiers.length; n++){
+				if(tiers[n].pokemon.indexOf(searchId) > -1){
+					points += tiers[n].points;
+					pokemonList[i].cliffhangerPoints = tiers[n].points;
+					break;
+				}
+			}
+		}
+
+		return {points: points, max: max, tiers: tiers};
 	}
 
 	// Show or hide custom options when changing the cup select
@@ -515,12 +598,6 @@ function PokeMultiSelect(element){
 		});
 	});
 
-	// Auto select list text to copy
-
-	$("body").on("click", ".modal textarea.list-text", function(e){
-		this.setSelectionRange(0, this.value.length);
-	});
-
 	// Open the save window
 
 	$el.find(".save-btn").click(function(e){
@@ -560,21 +637,22 @@ function PokeMultiSelect(element){
 		modalWindow("Delete Group", $(".delete-list-confirm").first());
 
 		$(".modal .name").html(name);
-	});
 
-	// Delete group cookie
 
-	$("body").on("click", ".modal .delete-list-confirm .button.yes", function(e){
+		// Trigger for deleting group cookie
 
-		window.localStorage.removeItem(selectedGroup);
+		$(".modal .delete-list-confirm .button.yes").click(function(e){
 
-		closeModalWindow();
+			window.localStorage.removeItem(selectedGroup);
 
-		// Remove option from quick fill selects
+			closeModalWindow();
 
-		$(".quick-fill-select option[value='"+selectedGroup+"']").remove();
-		$el.find(".quick-fill-select option").first().prop("selected", "selected");
-		$el.find(".quick-fill-select").trigger("change");
+			// Remove option from quick fill selects
+
+			$el.find(".quick-fill-select option[value='"+selectedGroup+"']").remove();
+			$el.find(".quick-fill-select option").first().prop("selected", "selected");
+			$el.find(".quick-fill-select").trigger("change");
+		});
 	});
 
 	// Change shield settings
@@ -655,6 +733,12 @@ function PokeMultiSelect(element){
 
 	this.setContext = function(val){
 		context = val;
+	}
+
+	// Return the number of remaining spots
+
+	this.getAvailableSpots = function(){
+		return maxPokemonCount - pokemonList.length;
 	}
 
 	// Force a group selection

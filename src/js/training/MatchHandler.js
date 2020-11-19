@@ -110,7 +110,7 @@ function MatchHandler(){
 	this.nextTournamentRoundSetup = function(result){
 		$(".battle-window").attr("phase","");
 		$("body").removeClass("battle-active");
-		
+
 		switch(result){
 			case "win":
 				roundRecord[0]++;
@@ -150,6 +150,7 @@ function MatchHandler(){
 
 	this.returnToSetup = function(){
 		$("body").removeClass("battle-active");
+		$(".section.team-select").hide();
 		$(".battle-window").attr("phase","");
 		interface.open();
 	}

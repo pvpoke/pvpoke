@@ -27,9 +27,16 @@
 			},
 			{
 				"speciesId": "lapras",
-				"fastMove": "WATER_GUN",
-				"chargedMoves": ["SURF","ICE_BEAM"],
-				"difficulty": 1,
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["SURF","SKULL_BASH"],
+				"difficulty": 2,
+				"weight":2
+			},
+			{
+				"speciesId": "dewgong",
+				"fastMove": "ICE_SHARD",
+				"chargedMoves": ["ICY_WIND","WAtER_PULSE"],
+				"difficulty": 2,
 				"weight":1
 			},
 			{
@@ -360,6 +367,13 @@
 				"chargedMoves": ["SKY_ATTACK","DRAGON_PULSE"],
 				"difficulty": 2,
 				"weight":12
+			},
+			{
+				"speciesId": "dragonite_shadow",
+				"fastMove": "DRAGON_BREATH",
+				"chargedMoves": ["DRAGON_CLAW","OUTRAGE"],
+				"difficulty": 2,
+				"weight":1
 			},
 			{
 				"speciesId": "tropius",
@@ -955,6 +969,13 @@
 				"chargedMoves": ["PLAY_ROUGH","ICE_BEAM"],
 				"difficulty": 2,
 				"weight":5
+			},
+			{
+				"speciesId": "gardevoir_shadow",
+				"fastMove": "CHARM",
+				"chargedMoves": ["SHADOW_BALL","PSYCHIC"],
+				"difficulty": 3,
+				"weight":2
 			},
 			{
 				"speciesId": "gardevoir",

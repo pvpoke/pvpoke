@@ -62,8 +62,6 @@ require_once 'header.php';
 			<div class="timeline"></div>
 			<div class="tracker"></div>
 		</div>
-		<div class="tip automated">Hover over or tap the timeline for details. <a href="<?php echo $WEB_ROOT; ?>articles/guide-to-fast-move-registration/">Read more</a> about the timeline.</div>
-		<div class="tip sandbox">Click the circles to edit actions.</div>
 		<div class="playback section white">
 			<div class="flex">
 				<div class="playback-btn replay"></div>
@@ -82,6 +80,8 @@ require_once 'header.php';
 			<div class="disclaimer">* Results may differ from actual gameplay depending on connectivity, device, player decisions, or other factors.</div>
 		</div>
 		<div class="summary section white"></div>
+		<div class="tip automated">Hover over or tap the timeline for details. <a href="<?php echo $WEB_ROOT; ?>articles/guide-to-fast-move-registration/">Read more</a> about the timeline.</div>
+		<div class="tip sandbox">Click the circles to edit actions.</div>
 		<div class="share-link-container">
 			<p>Share this battle:</p>
 			<div class="share-link">
@@ -104,17 +104,17 @@ require_once 'header.php';
 						<tr>
 							<td></td>
 							<td></td>
-							<td colspan="3"><span class="name name-2">Pokemon</span></td>
+							<td colspan="4"><span class="name name-2">Pokemon</span></td>
 						</tr>
 						<tr>
 							<td></td>
 							<td></td>
 							<td>0 <span class="shield shield-none"></span></td>
 							<td>1 <span class="shield"></span></td>
-							<td>2 <span class="shield shield"></span></td>
+							<td>2 <span class="shield"></span></td>
 						</tr>
 						<tr>
-							<td rowspan="3"><span class="name name-1">Pokemon</span></td>
+							<td rowspan="4"><span class="name name-1">Pokemon</span></td>
 							<td>0 <span class="shield shield-none"></span></td>
 							<td><a href="#" class="rating star battle-0-0" shields="0,0">100</a></td>
 							<td><a href="#" class="rating star battle-1-0" shields="1,0">100</a></td>
@@ -127,13 +127,14 @@ require_once 'header.php';
 							<td><a href="#" class="rating star battle-2-1" shields="2,1">100</a></td>
 						</tr>
 						<tr>
-							<td>2 <span class="shield shield"></span></td>
+							<td>2 <span class="shield"></span></td>
 							<td><a href="#" class="rating star battle-0-2" shields="0,2">100</a></td>
 							<td><a href="#" class="rating star battle-1-2" shields="1,2">100</a></td>
 							<td><a href="#" class="rating star battle-2-2" shields="2,2">100</a></td>
 						</tr>
 					</table>
 					<p class="center">Click or tap to view battles.</p>
+					<p>The grid above shows <span class="name-1">Pokemon</span>'s matchups against <span class="name-2">Pokemon</span> depending on how many shields each side uses. Look horizontally for the number of shields used by <span class="name-1">Pokemon</span> and vertically for the number of shields used by <span class="name-2">Pokemon</span>. Above 500 is a win and under 500 is a loss.</p>
 				</div>
 
 				<h2 class="center">Breakpoints &amp; Bulkpoints</h2>
@@ -254,7 +255,7 @@ require_once 'header.php';
 				<p>Battle Rating is a way of measuring battles beyond simply "win" and "loss"; it may be valuable to know not only which Pokemon can win, but which can do so while sustaining the least amount of damage, leaving them in a better position for the next fight.</p>
 				<h2>Pokemon Stats</h2>
 				<p>A Pokemon's actual stats are a result of its base stats, IV's, and a CP multiplier (determined by level). The stats shown are a Pokemon's actual stats at the given CP or level. "Overall" is a product of the three stats and gives a general idea for performance, mostly useful for comparing Pokemon of the same or similar species.</p>
-				<p>By default, Pokemon use the "maximum stat product" IV combination, which optimizes for the maximum amount of stats possible within the given CP limit.</p>
+				<p>By default, Pokemon have an IV combination that is the 64th best IV combination (sorted for stat product) using an IV floor of 5. Pokemon that are above level 35 to meet the CP cap have different default IV's to represent those found in lucky trades.</p>
 				<h2>Move Selection</h2>
 				<p>When using the auto select option, the simulator calculates which moves would be optimal in the current matchup. It does this in the steps below:</p>
 				<ol>
@@ -397,6 +398,7 @@ require_once 'header.php';
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeMultiSelect.js?=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/Pokebox.js?=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BattleHistogram.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=<?php echo $SITE_VERSION; ?>"></script>

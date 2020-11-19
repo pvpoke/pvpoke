@@ -6,7 +6,8 @@ $color-gold:#eabd49;
 $link-color:#30b5ab;
 
 body{
-	background:#030509;
+	background-color:#030509;
+	background-image:url('../../img/themes/night/bg.jpg');
 	color:$font-color;
 }
 
@@ -27,7 +28,7 @@ input,
 .poke-search{
     background: #222;
     color: #fff;
-	
+
 	&::-webkit-input-placeholder {
 	  color: #aaa;
 	}
@@ -57,16 +58,16 @@ input,
 
 header{
 	background:#444;
-	
+
 	.menu a,
 	.title a{
 		color:$color-gold;
 	}
-	
+
 	.hamburger .meat{
 		background:$color-gold;
 	}
-	
+
 	.icon-battle{
 		background-image:url('../../img/themes/night/icon_battle.png');
 	}
@@ -109,23 +110,23 @@ h1{
 		.stat-container{
 			color:$font-color;
 		}
-		
+
 		.stat-container .bar-back .bar{
 			background: rgba(255,255,255,0.6);
 		}
-		
+
 		a{
 			color:$link-color;
 		}
-		
+
 		h3.section-title{
 			color:$font-color;
 		}
-		
+
 		.move-select, .type{
 			color:#000;
 		}
-		
+
 	}
 }
 
@@ -144,17 +145,17 @@ a.toggle{
 .battle-results .timeline-container{
 	background:rgba(50,50,50,0.5);
 	border:1px solid #888;
-	
+
 	.timeline{
 		border-top: 1px dashed #888;
-		
+
 		.item-container{
 			.item.fast{
 				border:1px solid #888
 			}
 		}
 	}
-	
+
 	.tracker{
 		border-left:1px solid #aaa;
 	}
@@ -171,7 +172,7 @@ a.toggle{
 .histograms .histogram .chart {
     border: 1px solid #888;
     background: #222;
-	
+
 	.segment:nth-of-type(10) {
     	border-right: 1px dashed #888;
 	}
@@ -183,10 +184,10 @@ a.toggle{
 
 .ranking-categories{
 	margin-top:10px;
-	
+
 	a{
 		color:$link-color;
-		
+
 		&.selected{
 			background:#30b5ab;
 			color:$font-color;
@@ -198,11 +199,11 @@ a.toggle{
 	.modal-header{
 		color:#000;
 	}
-	
+
 	.modal-container{
 		border:2px solid #888;
 	}
-	
+
 	.modal-content{
 		background:#444;
 	}
@@ -212,7 +213,7 @@ a.toggle{
 	li span{
 		color:#000;
 	}
-	
+
 	table{
 		color: #000;
 		background: rgba(255,255,255,0.6);
@@ -226,18 +227,18 @@ a.toggle{
 
 .battle-window{
 	box-shadow:0px 5px 15px #000;
-	
+
 	.scene .background{
 		background-image: url('../../img/themes/night/pvp-background.jpg');
 	}
-	
+
 	.top .team-indicator{
 		color:#000;
 	}
-	
+
 	.end-screen-container .damage .damage-section{
 		background:#222;
-		
+
 		.avg-line{
 			border:1px dotted rgba(255, 255, 255, 0.5)
 		}
@@ -251,19 +252,19 @@ a.toggle{
 .custom-rankings{
 	.include .filter{
 		background:#29505b;
-		
+
 		.remove{
 			color:#ff8b8b;
 		}
 	}
-	
+
 	.exclude .filter{
 		background:#582b2b;
-		
+
 		a.toggle{
 			color:#f1b9b9;
 		}
-		
+
 		.remove{
 			color:#ff8b8b;
 		}
@@ -299,9 +300,24 @@ a.toggle{
 	color:#eee;
 }
 
+.electric{
+	color:#000;
+}
+
+.pokebox a.open-pokebox{
+	background-color:#222;
+	color:#fff;
+}
+
+.modal .pokebox-options a.pokebox-edit,
+.modal .pokebox-options a.pvpoke-sponsor{
+	color:#fff;
+	background-color:#222;
+}
+
 @media only screen and (min-width: 721px){
 	.menu .submenu .submenu-wrap{
 		background:#444;
 	}
-	
+
 }
