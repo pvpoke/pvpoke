@@ -898,7 +898,7 @@ function Pokemon(id, i, b){
 			var dpt = move.damage / (move.cooldown / 500);
 
 			move.uses = self.calculateCycleDPT(move, chargedMoves[0]);
-			move.uses = Math.max(move.uses - baseline, 0);
+			move.uses = Math.max(move.uses - baseline, 0.1);
 			move.uses *= Math.pow(Math.pow(dpt*Math.pow(ept,4), 1/5), Math.max(highestDPE - 1, 1)); // Emphasize fast charging moves with access to powerful Charged Moves
 
 			total += move.uses;
@@ -907,6 +907,7 @@ function Pokemon(id, i, b){
 		// Normalize move usage to total
 		for(var i = 0; i < fastMoves.length; i++){
 			fastMoves[i].uses = Math.round((fastMoves[i].uses / total) * 100);
+
 			fastMoveUses.push({
 				moveId: fastMoves[i].moveId,
 				uses: fastMoves[i].uses * weightModifier
