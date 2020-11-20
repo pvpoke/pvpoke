@@ -33,6 +33,14 @@
 		"chargedMoves": ["CRUNCH", "OVERHEAT"]
 	},
 	{
+		"speciesId": "hypno",
+		"chargedMoves": ["FIRE_PUNCH", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "hypno_shadow",
+		"chargedMoves": ["FIRE_PUNCH", "ICE_PUNCH"]
+	},
+	{
 		"speciesId": "zekrom",
 		"chargedMoves": ["CRUNCH", "WILD_CHARGE"]
 	},
