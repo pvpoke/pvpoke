@@ -225,7 +225,7 @@ function Pokemon(id, i, b){
 				case "gamemaster":
 					if(maxCP == 10000){
 						self.ivs.atk = self.ivs.def = self.ivs.hp = 15;
-						self.setLevel(40, false);
+						self.setLevel(50, false);
 					} else{
 						var combination = data.defaultIVs["cp"+maxCP];
 
