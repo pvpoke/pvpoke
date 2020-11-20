@@ -851,10 +851,7 @@ var InterfaceMaster = (function () {
 
 					multiBattleLink += "/";
 
-					var functionCall = "('" + pokemon.speciesId + "', " + battle.getCP() + ", [" + r.moveset.map(move => "'" + move + "'") + "])"
 					$details.find(".detail-section.float").eq(2).before($("<div class=\"multi-battle-link\"><p>See all of <b>" + pokemon.speciesName + "'s</b> matchups:</p><a target=\"_blank\" class=\"button\" href=\""+multiBattleLink+"\">"+pokemon.speciesName+" vs. " + cupName +"</a></div>"));
-					$details.find(".detail-section.float").eq(2).before($("<div class=\"multi-battle-link\"><p>Get all breakpoints of <b>" + pokemon.speciesName + "</b></p><a target=\"_blank\" class=\"button\" onclick=\"getBreakPoints" + functionCall + "\">Get Breakpoints</a></div>"));
-					$details.find(".detail-section.float").eq(2).before($("<div class=\"multi-battle-link\"><p>Get all breakpoints of <b>" + pokemon.speciesName + "</b></p><a target=\"_blank\" class=\"button\" onclick=\"getBulkPoints" + functionCall + "\">Get Breakpoints</a></div>"));
 				} else{
 					$details.find(".share-link").remove();
 				}
