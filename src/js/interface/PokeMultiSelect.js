@@ -26,7 +26,8 @@ function PokeMultiSelect(element){
 	var settings = {
 		shields: 1,
 		ivs: "original",
-		bait: true
+		bait: true,
+		levelCap: 40
 	}
 
 	var cliffhangerMode = false;
@@ -671,6 +672,10 @@ function PokeMultiSelect(element){
 
 	$el.find(".check.shield-baiting").on("click", function(e){
 		settings.bait = (! settings.bait == true);
+	});
+
+	$el.find(".pokemon-level-cap-select").on("change", function(e){
+		settings.levelCap = parseInt($el.find(".pokemon-level-cap-select option:selected").val());
 	});
 
 	// Event handler for changing the format select

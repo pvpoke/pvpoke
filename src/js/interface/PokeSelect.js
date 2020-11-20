@@ -238,14 +238,6 @@ function PokeSelect(element, i){
 			} else{
 				$el.find(".mega-cp-container").hide();
 			}
-
-			// Show speculative warning for level 50 Pokemon
-
-			if(selectedPokemon.level > 45){
-				$el.find(".fifty-warning").show();
-			} else{
-				$el.find(".fifty-warning").hide();
-			}
 		}
 	}
 

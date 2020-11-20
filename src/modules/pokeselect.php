@@ -52,8 +52,6 @@
 			<h3 class="mega-cp">cp <span class="stat"></span></h3>
 		</div>
 
-		<div class="fifty-warning">Actual values for levels 45.5-50 are currently unknown. This information is speculative only. Do not invest any resources based on it.</div>
-
 		<div class="advanced-section">
 			<a class="advanced" href="#">Advanced Stats/IVs <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 			<div class="fields">
