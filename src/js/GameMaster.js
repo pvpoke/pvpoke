@@ -17,13 +17,41 @@ var GameMaster = (function () {
 			$(".mega-warning").show();
 		}
 
-		$.getJSON( webRoot+"data/"+settings.gamemaster+".json?v="+siteVersion, function( data ){
+		var gmVersion = settings.gamemaster;
+
+		if((gmVersion == "gamemaster-mega")||(gmVersion == "gamemaster-kalos")){
+			gmVersion = "gamemaster";
+		}
+
+		$.getJSON( webRoot+"data/"+gmVersion+".json?v="+siteVersion, function( data ){
 			object.data = data;
 
-			// Sort Pokemon alphabetically for searching
-			object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+			if(settings.gamemaster == "gamemaster"){
+				// Sort Pokemon alphabetically for searching
+				object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
 
-			InterfaceMaster.getInstance().init(object);
+				InterfaceMaster.getInstance().init(object);
+			} else if(settings.gamemaster == "gamemaster-mega"){
+				// Load additional mega pokemon
+				$.getJSON( webRoot+"data/megas.json?v="+siteVersion, function( data ){
+
+					// Sort Pokemon alphabetically for searching
+					object.data.pokemon = object.data.pokemon.concat(data);
+					object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+
+					InterfaceMaster.getInstance().init(object);
+				});
+			} else if(settings.gamemaster == "gamemaster-kalos"){
+				// Load additional mega pokemon
+				$.getJSON( webRoot+"data/kalos.json?v="+siteVersion, function( data ){
+
+					// Sort Pokemon alphabetically for searching
+					object.data.pokemon = object.data.pokemon.concat(data);
+					object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+
+					InterfaceMaster.getInstance().init(object);
+				});
+			}
 		});
 
 		// Return a Pokemon object given species ID
@@ -184,7 +212,7 @@ var GameMaster = (function () {
 		object.generateDefaultIVs = function(){
 
 			$.each(object.data.pokemon, function(index, poke){
-				var leagues = [1500,2500];
+				var leagues = [500,1500,2500];
 				var battle = new Battle();
 
 				var pokemon = new Pokemon(poke.speciesId, 0, battle);
@@ -192,6 +220,7 @@ var GameMaster = (function () {
 				battle.setNewPokemon(pokemon, 0, false);
 
 				var defaultIVs = {
+					cp500: [],
 					cp1500: [],
 					cp2500: []
 				};
@@ -255,8 +284,14 @@ var GameMaster = (function () {
 					var arr = m.moveId.split('_');
 					var abbreviation = '';
 
-					for(var i = 0; i < arr.length; i++){
-						abbreviation += arr[i].charAt(0);
+					if(m.abbreviation){
+						// Use predefined abbreviation if set
+						abbreviation = m.abbreviation;
+					} else{
+						// Make abbreviation from first character of each word
+						for(var i = 0; i < arr.length; i++){
+							abbreviation += arr[i].charAt(0);
+						}
 					}
 
 					move = {
@@ -431,7 +466,9 @@ var GameMaster = (function () {
 
 			var minStats = 3500; // You must be this tall to ride this ride
 
-			if(battle.getCP() == 1500){
+			if(battle.getCP() == 500){
+				minStats = 0;
+			} else if(battle.getCP() == 1500){
 				minStats = 1250;
 			} else if(battle.getCP() == 2500){
 				minStats = 2800;
@@ -441,7 +478,7 @@ var GameMaster = (function () {
 			var permaBannedList = ["rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","phione","manaphy","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","kecleon"]; // Don't rank these Pokemon at all yet
 
 			var maxDexNumber = 493;
-			var releasedGen5 = ["snivy","servine","serperior","tepig","pignite","emboar","oshawott","dewott","samurott","lillipup","herdier","stoutland","purrloin","liepard","pidove","tranquill","unfezant","blitzle","zebstrika","foongus","amoonguss","drilbur","excadrill","litwick","lampent","chandelure","golett","golurk","deino","zweilous","hydreigon","pansage","panpour","pansear","simisage","simipour","simisear","ferroseed","ferrothorn","heatmor","durant","patrat","watchog","klink","klang","klinklang","yamask","cofagrigus","cobalion","terrakion","virizion","cryogonal","cubchoo","beartic","meltan","roggenrola","boldore","gigalith","tympole","palpitoad","seismitoad","dwebble","crustle","trubbish","garbodor","karrablast","escavalier","joltik","galvantula","shelmet","accelgor","timburr","gurdurr","conkeldurr","tirtouga","carracosta","archen","archeops","axew","fraxure","haxorus","throh","sawk","maractus","sigilyph","basculin","venipede","whirlipede","scolipede","minccino","cinccino","darumaka","darmanitan_standard","scraggy","scrafty","woobat","swoobat","tornadus_incarnate","audino","alomomola","thundurus_incarnate","rufflet","braviary","landorus_incarnate","genesect","solosis","duosion","reuniclus","gothita","gothitelle","gothorita","stunfisk","reshiram","zekrom","stunfisk_galarian","darumaka_galarian","darmanitan_galarian_standard","melmetal","obstagoon","perrserker","farfetchd_galarian", "kyurem", "ducklett", "swanna", "petilil", "lilligant", "victini", "elgyem", "beheeyem","bouffalant","sewaddle","leavanny","cottonee","whimsicott","emolga","deerling","sawsbuck","vullaby","mandibuzz","pawniard","bisharp","sandile","krokorok","krookodile"];
+			var releasedGen5 = ["snivy","servine","serperior","tepig","pignite","emboar","oshawott","dewott","samurott","lillipup","herdier","stoutland","purrloin","liepard","pidove","tranquill","unfezant","blitzle","zebstrika","foongus","amoonguss","drilbur","excadrill","litwick","lampent","chandelure","golett","golurk","deino","zweilous","hydreigon","pansage","panpour","pansear","simisage","simipour","simisear","ferroseed","ferrothorn","heatmor","durant","patrat","watchog","klink","klang","klinklang","yamask","cofagrigus","cobalion","terrakion","virizion","cryogonal","cubchoo","beartic","meltan","roggenrola","boldore","gigalith","tympole","palpitoad","seismitoad","dwebble","crustle","trubbish","garbodor","karrablast","escavalier","joltik","galvantula","shelmet","accelgor","timburr","gurdurr","conkeldurr","tirtouga","carracosta","archen","archeops","axew","fraxure","haxorus","throh","sawk","maractus","sigilyph","basculin","venipede","whirlipede","scolipede","minccino","cinccino","darumaka","darmanitan_standard","scraggy","scrafty","woobat","swoobat","tornadus_incarnate","audino","alomomola","thundurus_incarnate","rufflet","braviary","landorus_incarnate","genesect","solosis","duosion","reuniclus","gothita","gothitelle","gothorita","stunfisk","reshiram","zekrom","stunfisk_galarian","darumaka_galarian","darmanitan_galarian_standard","melmetal","obstagoon","perrserker","farfetchd_galarian", "kyurem", "ducklett", "swanna", "petilil", "lilligant", "victini", "elgyem", "beheeyem","bouffalant","sewaddle","leavanny","cottonee","whimsicott","emolga","deerling","sawsbuck","vullaby","mandibuzz","pawniard","bisharp","sandile","krokorok","krookodile","yamask_galarian","runerigus","sirfetchd"];
 
 			// Aggregate filters
 

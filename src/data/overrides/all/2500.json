@@ -6,6 +6,7 @@
 	},
 	{
 		"speciesId": "typhlosion",
+		"fastMove": "SHADOW_CLAW",
 		"chargedMoves": ["BLAST_BURN", "SOLAR_BEAM"]
 	},
 	{
@@ -38,6 +39,10 @@
 	{
 		"speciesId": "ursaring",
 		"chargedMoves": ["PLAY_ROUGH", "CLOSE_COMBAT"]
+	},
+	{
+		"speciesId": "rapidash_galarian",
+		"chargedMoves": ["BODY_SLAM", "PLAY_ROUGH"]
 	},
 	{
 		"speciesId": "ursaring_shadow",
@@ -79,8 +84,20 @@
 		"chargedMoves": ["FOUL_PLAY", "SHADOW_BALL"]
 	},
 	{
+		"speciesId": "lugia",
+		"fastMove": "DRAGON_TAIL"
+	},
+	{
 		"speciesId": "alomomola",
 		"fastMove": "WATERFALL"
+	},
+	{
+		"speciesId": "magmortar",
+		"chargedMoves": ["FIRE_PUNCH", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "magmortar_shadow",
+		"chargedMoves": ["FIRE_PUNCH", "THUNDERBOLT"]
 	},
 	{
 		"speciesId": "garchomp",
@@ -122,10 +139,6 @@
 	{
 		"speciesId": "primeape",
 		"chargedMoves": ["CLOSE_COMBAT", "NIGHT_SLASH"]
-	},
-	{
-		"speciesId": "lugia",
-		"chargedMoves": ["SKY_ATTACK", "HYDRO_PUMP"]
 	},
 	{
 		"speciesId": "melmetal",

@@ -1,9 +1,10 @@
 <select class="format-select">
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
-	<option value="official" cup="halloween">Halloween Cup</option>
-	<option value="official" cup="flying">Flying Cup</option>
-	<option value="tsa-3" cup="sunrise">Silph Sunrise Cup</option>
+	<option value="official" cup="kanto">Kanto Cup</option>
+	<option value="official" cup="little">Little Cup</option>
+	<option value="tsa-3" cup="marsh">Silph Marsh Cup</option>
+	<option value="community" cup="uber">Uber Tier Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>
@@ -21,6 +22,8 @@
 	<option value="premier" cat="official">Premier Cup</option>
 	<option value="flying" cat="official">Flying Cup</option>
 	<option value="halloween" cat="official">Halloween Cup</option>
+	<option value="kanto" cat="official">Kanto Cup</option>
+	<option value="little" cat="official">Little Cup</option>
 	<option value="safari" cat="community">Montreal Safari Cup</option>
 	<option value="fantasy" cat="community">GO LIVE Fantasy Cup</option>
 	<option value="beam" cat="community">Get Beamed</option>
@@ -28,6 +31,7 @@
 	<option value="shadow" cat="community">Shadow Cup</option>
 	<option value="goteamup" cat="community">GO Stadium GOTeamUp</option>
 	<option value="cliffhanger" cat="community">GO Stadium Cliffhanger</option>
+	<option value="uber" cat="community">Uber Tier Cup</option>
 	<option value="scoville" cat="community">Scoville Cup</option>
 	<option value="mexico" cat="community">México Cup</option>
 	<option value="kaiser" cat="community">Kaiser Invitational</option>
@@ -60,5 +64,6 @@
 	<option value="origin" cat="tsa-2">Origin Cup</option>
 	<option value="duet" cat="tsa-2">Duet Cup</option>
 	<option value="sunrise" cat="tsa-3">Sunrise Cup</option>
+	<option value="marsh" cat="tsa-3">Marsh Cup</option>
 	<option value="custom" cat="custom">Custom</option>
 </select>

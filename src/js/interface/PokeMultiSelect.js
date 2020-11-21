@@ -19,13 +19,15 @@ function PokeMultiSelect(element){
 	var maxPokemonCount = 100;
 	var selectedGroup = "";
 	var selectedGroupType = "";
+	var pokebox;
 
 	var context = "";
 
 	var settings = {
 		shields: 1,
 		ivs: "original",
-		bait: true
+		bait: true,
+		levelCap: 40
 	}
 
 	var cliffhangerMode = false;
@@ -47,6 +49,8 @@ function PokeMultiSelect(element){
 
 			i++;
 		}
+
+		pokebox = new Pokebox($el.find(".pokebox"), self, "multi", b);
 	}
 
 	// Open Pokemon select modal window to add or edit a Pokemon
@@ -137,10 +141,6 @@ function PokeMultiSelect(element){
 			}
 
 			for(var n = 0; n < moveList.length; n++){
-				// Code for move icons, but I think the move names work better for readability
-
-				// $item.find(".moves").append("<div class=\"move " + moveList[n].type + "\">"+moveList[n].name+"</div>");
-
 				if(n > 0){
 					$item.find(".moves").append(", ");
 				}
@@ -173,8 +173,10 @@ function PokeMultiSelect(element){
 
 		if(pokemonList.length >= maxPokemonCount){
 			$el.find(".add-poke-btn").hide();
+			$el.find(".pokebox").hide();
 		} else{
 			$el.find(".add-poke-btn").show();
+			$el.find(".pokebox").show();
 		}
 
 	}
@@ -280,7 +282,7 @@ function PokeMultiSelect(element){
 	// After loading from the GameMaster, fill in a preset group
 
 	this.setPokemonList = function(list){
-		pokemonList = list;
+		pokemonList = list.slice(0, maxPokemonCount);
 		self.updateListDisplay();
 	}
 
@@ -296,6 +298,7 @@ function PokeMultiSelect(element){
 				$el.find(".quick-fill-select option[value='ultra']").hide();
 				$el.find(".quick-fill-select option[value='master']").hide();
 				$el.find(".quick-fill-select option[value='premier']").hide();
+				$el.find(".quick-fill-select option[value='little']").hide();
 				break;
 
 			case 2500:
@@ -306,6 +309,11 @@ function PokeMultiSelect(element){
 			case 10000:
 				$el.find(".quick-fill-select option[value='master']").show();
 				$el.find(".quick-fill-select option[type='master']").show();
+				break;
+
+			case 500:
+				$el.find(".quick-fill-select option[value='little']").show();
+				$el.find(".quick-fill-select option[type='little']").show();
 				break;
 		}
 
@@ -590,7 +598,7 @@ function PokeMultiSelect(element){
 			closeModalWindow();
 		});
 	});
-	
+
 	// Open the save window
 
 	$el.find(".save-btn").click(function(e){
@@ -666,6 +674,10 @@ function PokeMultiSelect(element){
 		settings.bait = (! settings.bait == true);
 	});
 
+	$el.find(".pokemon-level-cap-select").on("change", function(e){
+		settings.levelCap = parseInt($el.find(".pokemon-level-cap-select option:selected").val());
+	});
+
 	// Event handler for changing the format select
 
 	$el.find(".format-select").on("change",function(e){
@@ -726,6 +738,12 @@ function PokeMultiSelect(element){
 
 	this.setContext = function(val){
 		context = val;
+	}
+
+	// Return the number of remaining spots
+
+	this.getAvailableSpots = function(){
+		return maxPokemonCount - pokemonList.length;
 	}
 
 	// Force a group selection

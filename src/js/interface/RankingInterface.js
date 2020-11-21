@@ -65,16 +65,22 @@ var InterfaceMaster = (function () {
 
 				// Force 1500 if not general
 
-				if((cup != 'all')&&(cup != 'gen-5')&&(cup != "premier")){
-					league = 1500;
-
-					$(".league-select option[value=\"1500\"]").prop("selected","selected");
-				}
-
 				if((cup == "premier")&&(league == 1500)){
 					league = 10000;
 
 					$(".league-select option[value=\"10000\"]").prop("selected","selected");
+				}
+
+				if((cup == "uber")&&(league != 10000)){
+					league = 10000;
+
+					$(".league-select option[value=\"10000\"]").prop("selected","selected");
+				}
+
+				if(cup == "little"){
+					league = 500;
+
+					$(".league-select option[value=\"500\"]").prop("selected","selected");
 				}
 
 				battle.setCP(league);
@@ -158,6 +164,8 @@ var InterfaceMaster = (function () {
 					var pokemon = new Pokemon(r.speciesId, 0, battle);
 
 					if(! pokemon.speciesId){
+						rankings.splice(i, 1);
+						i--;
 						continue;
 					}
 
@@ -216,7 +224,13 @@ var InterfaceMaster = (function () {
 
 					$(".section.white > .rankings-container").append($el);
 
-					csv += pokemon.speciesName+','+r.score+','+pokemon.types[0]+','+pokemon.types[1]+','+(Math.round(pokemon.stats.atk*10)/10)+','+(Math.round(pokemon.stats.def*10)/10)+','+Math.round(pokemon.stats.hp)+','+Math.round(pokemon.stats.atk*pokemon.stats.def*pokemon.stats.hp)+','+pokemon.level+','+pokemon.fastMove.name+','+pokemon.chargedMoves[0].name+','+pokemon.chargedMoves[1].name+'\n';
+					var chargedMove2Name = '';
+
+					if(pokemon.chargedMoves.length > 1){
+						chargedMove2Name = pokemon.chargedMoves[1].name;
+					}
+
+					csv += pokemon.speciesName+','+r.score+','+pokemon.types[0]+','+pokemon.types[1]+','+(Math.round(pokemon.stats.atk*10)/10)+','+(Math.round(pokemon.stats.def*10)/10)+','+Math.round(pokemon.stats.hp)+','+Math.round(pokemon.stats.atk*pokemon.stats.def*pokemon.stats.hp)+','+pokemon.level+','+pokemon.fastMove.name+','+pokemon.chargedMoves[0].name+','+chargedMove2Name+'\n';
 				}
 
 				$(".loading").hide();
@@ -353,6 +367,10 @@ var InterfaceMaster = (function () {
 					return false;
 				}
 
+				if(cup == "little"){
+					cp = 500;
+				}
+
 				var url = webRoot+"rankings/"+cup+"/"+cp+"/"+category+"/";
 
 				if(speciesId){
@@ -404,6 +422,15 @@ var InterfaceMaster = (function () {
 				if(context != "custom"){
 					var category = $(".ranking-categories a.selected").attr("data");
 					var cup = $(".cup-select option:selected").val();
+
+
+					if(cp == 500){
+						$(".format-select option[cup=\"little\"]").prop("selected","selected");
+						cup = "little";
+					} else if(cup == "little"){
+						$(".format-select option[cup=\"all\"]").prop("selected","selected");
+						cup = "all";
+					}
 
 					battle.setCup(cup);
 
@@ -652,10 +679,12 @@ var InterfaceMaster = (function () {
 
 				// Display moveset override notice where applicable
 
-				if( (pokemon.fastMove.moveId != fastMoves[0].moveId)
-					|| ((pokemon.chargedMoves[0].moveId != chargedMoves[0].moveId)&&(pokemon.chargedMoves[0].moveId != chargedMoves[1].moveId))
-				 	|| ((pokemon.chargedMoves[1].moveId != chargedMoves[0].moveId)&&(pokemon.chargedMoves[1].moveId != chargedMoves[1].moveId))){
-					$details.find(".detail-section.moveset-override").show();
+				if(pokemon.chargedMoves.length > 1){
+					if( (pokemon.fastMove.moveId != fastMoves[0].moveId)
+						|| ((pokemon.chargedMoves[0].moveId != chargedMoves[0].moveId)&&(pokemon.chargedMoves[0].moveId != chargedMoves[1].moveId))
+					 	|| ((pokemon.chargedMoves[1].moveId != chargedMoves[0].moveId)&&(pokemon.chargedMoves[1].moveId != chargedMoves[1].moveId))){
+						$details.find(".detail-section.moveset-override").show();
+					}
 				}
 
 				// Helper variables for displaying matchups and link URL

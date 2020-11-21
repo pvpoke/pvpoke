@@ -28,15 +28,14 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.17.7 (October 10, 2020)</h4>
+	<h4>v1.18.8 (November 18, 2020)</h4>
 	<ul>
-		<li>Mega Evolutions are now listed in the rankings. Note that Mega Evolutions are still not allowed in GO Battle League.</li>
+		<li>Select Pokemon from Generation VI are now available in simulations! Enable them by selecting the "Kalos" Gamemaster Version on the <a href="<?php echo $WEB_ROOT; ?>settings/">Settings page</a>.</li>
 	</ul>
 
-	<h4>v1.17.6 (October 10, 2020)</h4>
+	<h4>v1.18.7 (November 18, 2020)</h4>
 	<ul>
-		<li>In Sandbox Mode, moves with guaranteed stat changes will have those changes applied by default.</li>
-		<li>Training Battles for GO Battle League can now utilize preset teams to help you prepare for and recognize common teams of 3.</li>
+		<li>The site now supports Pokemon levels up to 50. Note that the current values are speculative and should not be used to determine investments at this time.</li>
 	</ul>
 
 	<h3>Latest Article</h3>

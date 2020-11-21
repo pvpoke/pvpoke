@@ -405,6 +405,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if((cup.name == "uber")&&(battle.getCP() == 10000)){
+					iterations = 1;
+				}
+
 				if((cup.name == "all")&&(battle.getCP() == 2500)){
 					iterations = 1;
 				}
@@ -438,6 +442,10 @@ var RankerMaster = (function () {
 				}
 
 				if((cup.name == "sorcerous-mirror")||(cup.name == "sinister-mirror")||(cup.name == "timeless-mirror")){
+					iterations = 1;
+				}
+
+				if(cup.name == "kanto"){
 					iterations = 1;
 				}
 
@@ -530,7 +538,7 @@ var RankerMaster = (function () {
 							if(rankings[j].scores[n] / bestScore < .1 + (rankCutoffIncrease * n)){
 								weight = 0;
 							}
-							
+
 							weights += weight;
 							matches[j].score = sc;
 							matches[j].opScore = opScore;

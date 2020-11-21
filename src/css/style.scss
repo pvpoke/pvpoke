@@ -641,6 +641,16 @@ header{
 
 	}
 
+	.fifty-warning{
+		display:none;
+		font-weight: bold;
+	    font-size: 12px;
+	    padding: 4px;
+	    border-radius: 8px;
+	    border: 1px solid #000;
+	    margin: 6px 0;
+	}
+
 	.legacy{
 		font-size:12px;
 		margin-top:10px;
@@ -1110,6 +1120,35 @@ select, input{
 
 	&.update-btn{
 		display:none;
+	}
+}
+
+.pokebox{
+	a.open-pokebox{
+		display:block;
+		border:1px solid #000;
+		padding: 10px;
+	    cursor: pointer;
+		text-decoration: none;
+		color:#000;
+		margin:10px auto;
+	    border-radius: 8px;
+		background:url('../img/pokebattler.png') $color-off-white;
+		background-size: 40px;
+	    background-position: 5px center;
+	    background-repeat: no-repeat;
+		padding: 5px 5px 5px 50px;
+		text-align: center;
+
+		span:first-of-type{
+			display:block;
+			font-size:10px;
+		}
+
+		span:nth-of-type(2){
+			display:block;
+			font-weight: bold;
+		}
 	}
 }
 
@@ -1899,6 +1938,34 @@ a.download-csv{
 
 	& > .rank:hover, > .rank.selected{
 		border-left:20px solid $color-highlight;
+	}
+
+	&.pokebox-list{
+		display:flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		max-height:350px;
+		margin-top:0;
+
+		.rank{
+		    width: 49%;
+		    border-left: none;
+		    box-sizing: border-box;
+			border:3px solid rgba(0,0,0,0);
+
+			&:hover{
+				border:3px solid rgba(0,0,0,.4);
+			}
+
+			&.selected{
+				border:3px solid #000;
+			}
+		}
+
+		.name-container{
+			float:none;
+			padding:0;
+		}
 	}
 }
 
@@ -2992,6 +3059,10 @@ a.download-csv{
 			.options .toggle-content{
 				display:none;
 			}
+
+			.pokebox{
+				display:none !important;
+			}
 		}
 
 		.poke-search{
@@ -3062,6 +3133,70 @@ a.download-csv{
 		display:inline-block;
 	}
 
+	.pokebox-options{
+		display:flex;
+
+		a{
+			padding: 4px 8px;
+			border-radius: 8px;
+			text-decoration: none;
+			font-size:14px;
+			color:#fff;
+			background:$color-links;
+			margin-right:10px;
+			margin-bottom:10px;
+
+			&.pokebox-edit{
+				border:1px solid #000;
+				color:#000;
+				background:url('../img/pokebattler_logo.png') $color-off-white;
+				background-repeat: no-repeat;
+				background-position: 5px center;
+				background-size: 20px;
+				padding: 4px 8px 4px 30px;
+			}
+
+			&.pvpoke-sponsor{
+				border:1px solid #000;
+				color:#000;
+				background:url('../img/app_192.png') $color-off-white;
+				background-repeat: no-repeat;
+				background-position: 5px center;
+				background-size: 20px;
+				padding: 4px 8px 4px 30px;
+				margin-left:auto;
+			}
+		}
+	}
+
+	.pokebox-import{
+
+		ol{
+			line-height:30px;
+		}
+
+		input.pokebox-id{
+			max-width:200px;
+		}
+
+		.poke-count-container{
+			font-size:12px;
+			margin-bottom:5px;
+		}
+	}
+
+	.pokebox-import[select-mode="multi"]{
+		.multi{
+			display:block;
+		}
+	}
+
+	.pokebox-import[select-mode="single"]{
+		.multi{
+			display:none;
+		}
+	}
+
 }
 
 
@@ -3082,6 +3217,13 @@ a.toggle{
 	text-decoration: none;
 	font-weight:bold;
 	display: block;
+}
+
+a.pokebattler{
+	background-image:url('../img/pokebattler_logo.png');
+	background-size: 20px;
+	background-repeat: no-repeat;
+	padding-left:24px;
 }
 
 .center{
@@ -3308,7 +3450,7 @@ a.toggle{
 /* SETTINGS */
 
 .settings{
-	select{
+	select, input{
 		max-width:200px;
 	}
 
@@ -3727,6 +3869,10 @@ a.toggle{
 
 	.rankings-container{
 		max-height:800px;
+
+		&.pokebox-list{
+			max-height:600px;
+		}
 	}
 
 	.table-container{

@@ -37,6 +37,14 @@
 		"chargedMoves": ["CLOSE_COMBAT", "HEAVY_SLAM"]
 	},
 	{
+		"speciesId": "magmortar",
+		"chargedMoves": ["FIRE_PUNCH", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "magmortar_shadow",
+		"chargedMoves": ["FIRE_PUNCH", "THUNDERBOLT"]
+	},
+	{
 		"speciesId": "scizor_shadow",
 		"fastMove": "BULLET_PUNCH",
 		"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
@@ -89,6 +97,12 @@
 	{
 		"speciesId": "typhlosion",
 		"chargedMoves": ["BLAST_BURN", "SOLAR_BEAM"]
+	},
+	{
+		"speciesId": "lugia",
+		"fastMove": "DRAGON_TAIL",
+		"chargedMoves": ["SKY_ATTACK", "AEROBLAST"],
+		"weight": 10
 	},
 	{
 		"speciesId": "raikou",
@@ -185,10 +199,6 @@
 		"weight": 60
 	},
 	{
-		"speciesId": "lugia",
-		"chargedMoves": ["SKY_ATTACK","HYDRO_PUMP"]
-	},
-	{
 		"speciesId": "charizard",
 		"fastMove": "DRAGON_BREATH",
 		"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
@@ -216,7 +226,7 @@
 	{
 		"speciesId": "giratina_origin",
 		"chargedMoves": ["SHADOW_BALL","OMINOUS_WIND"],
-		"weight": 70
+		"weight": 90
 	},
 	{
 		"speciesId": "groudon",
@@ -252,6 +262,10 @@
 	},
 	{
 		"speciesId": "houndoom_mega",
+		"weight": 0
+	},
+	{
+		"speciesId": "gengar_mega",
 		"weight": 0
 	}
 ]

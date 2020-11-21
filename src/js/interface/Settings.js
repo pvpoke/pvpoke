@@ -24,6 +24,7 @@ var InterfaceMaster = (function () {
 				var theme = $("#theme-select option:selected").val();
 				var matrixDirection = $("#matrix-direction option:selected").val();
 				var gamemaster = $("#gm-select option:selected").val();
+				var pokeboxId = $("#pokebox-id").val();
 
 				$.ajax({
 
@@ -34,12 +35,13 @@ var InterfaceMaster = (function () {
 						'animateTimeline' : animateTimeline,
 						'theme': theme,
 						'matrixDirection': matrixDirection,
-						'gamemaster': gamemaster
+						'gamemaster': gamemaster,
+						'pokeboxId': pokeboxId,
+						'pokeboxLastDateTime': settings.pokeboxLastDateTime
 					},
 					dataType:'json',
 					success : function(data) {
 						modalWindow("Settings Saved", $("<p>Your settings have been updated. (Refresh the page if you've updated the site appearance.)</p>"))
-
 					},
 					error : function(request,error)
 					{

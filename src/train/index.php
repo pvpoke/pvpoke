@@ -42,9 +42,9 @@ require_once '../header.php';
 				<option value="1500 all">Great League</option>
 				<option value="2500 all">Ultra League</option>
 				<option value="10000 all">Master League</option>
-				<option value="1500 flying">Flying Cup</option>
-				<option value="1500 halloween">Halloween Cup</option>
-				<option value="1500 sunrise">Silph Sunrise Cup</option>
+				<option value="500 little">Little Cup</option>
+				<option value="1500 kanto">Kanto Cup</option>
+				<option value="1500 marsh">Silph Marsh Cup</option>
 			</select>
 			<h3 class="section-title">Difficulty</h3>
 			<select class="difficulty-select">
@@ -146,6 +146,7 @@ require_once '../header.php';
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeMultiSelect.js?=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/Pokebox.js?=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineAction.js?v=<?php echo $SITE_VERSION; ?>"></script>

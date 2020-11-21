@@ -1272,7 +1272,7 @@ var InterfaceMaster = (function () {
 			// Event handler for changing the league select
 
 			function selectLeague(e){
-				var allowed = [1500, 2500, 10000];
+				var allowed = [500, 1500, 2500, 10000];
 				var cp = parseInt($(".league-select option:selected").val());
 
 				if(allowed.indexOf(cp) > -1){
@@ -1316,6 +1316,12 @@ var InterfaceMaster = (function () {
 				}
 
 				multiSelectors[0].setCliffhangerMode(cup == "cliffhanger");
+
+
+				if(cup.name == "little"){
+					$(".league-select option[value='500']").prop("selected","selected");
+					$(".league-select").trigger("change");
+				}
 
 				// Load ranking data for movesets
 				var key = battle.getCup().name + "overall" + battle.getCP();

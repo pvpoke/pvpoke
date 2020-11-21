@@ -34,6 +34,14 @@
 		"chargedMoves": ["LEAF_BLADE", "CLOSE_COMBAT"]
 	},
 	{
+		"speciesId": "lugia",
+		"chargedMoves": ["SKY_ATTACK", "AEROBLAST"]
+	},
+	{
+		"speciesId": "rapidash_galarian",
+		"chargedMoves": ["BODY_SLAM", "PLAY_ROUGH"]
+	},
+	{
 		"speciesId": "farfetchd_galarian",
 		"chargedMoves": ["LEAF_BLADE", "BRAVE_BIRD"]
 	},
@@ -182,10 +190,6 @@
 		"chargedMoves": ["EARTHQUAKE", "NIGHT_SLASH"]
 	},
 	{
-		"speciesId": "lugia",
-		"chargedMoves": ["SKY_ATTACK", "HYDRO_PUMP"]
-	},
-	{
 		"speciesId": "melmetal",
 		"chargedMoves": ["SUPER_POWER", "ROCK_SLIDE"]
 	},
@@ -326,6 +330,20 @@
 		"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"]
 	},
 	{
+		"speciesId": "ariados",
+		"fastMove": "POISON_STING"
+	},
+	{
+		"speciesId": "qwilfish",
+		"fastMove": "POISON_STING",
+		"chargedMoves": ["AQUA_TAIL","SLUDGE_WAVE"]
+	},
+	{
+		"speciesId": "drapion",
+		"fastMove": "POISON_STING",
+		"chargedMoves": ["CRUNCH","SLUDGE_BOMB"]
+	},
+	{
 		"speciesId": "muk",
 		"chargedMoves": ["THUNDER_PUNCH", "DARK_PULSE"]
 	},
@@ -344,6 +362,14 @@
 	{
 		"speciesId": "blaziken",
 		"chargedMoves": ["BLAZE_KICK", "STONE_EDGE"]
+	},
+	{
+		"speciesId": "magmortar",
+		"chargedMoves": ["FIRE_PUNCH", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "magmortar_shadow",
+		"chargedMoves": ["FIRE_PUNCH", "THUNDERBOLT"]
 	},
 	{
 		"speciesId": "piloswine",

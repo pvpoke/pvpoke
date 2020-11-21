@@ -391,13 +391,6 @@
 					"weight":1
 				},
 				{
-					"speciesId": "golem_alolan",
-					"fastMove": "VOLT_SWITCH",
-					"chargedMoves": ["THUNDERBOLT","DISCHARGE"],
-					"difficulty": 1,
-					"weight":1
-				},
-				{
 					"speciesId": "raichu",
 					"fastMove": "THUNDER_SHOCK",
 					"chargedMoves": ["WILD_CHARGE","BRICK_BREAK"],
@@ -701,7 +694,7 @@
 				{
 					"speciesId": "qwilfish",
 					"fastMove": "WATER_GUN",
-					"chargedMoves": ["SLUDGE_BOMB","AQUA_TAIL"],
+					"chargedMoves": ["SLUDGE_WAVE","AQUA_TAIL"],
 					"difficulty": 0,
 					"weight":1
 				},

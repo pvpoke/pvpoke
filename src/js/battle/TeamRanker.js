@@ -63,9 +63,10 @@ var RankerMaster = (function () {
 
 				for(var i = 0; i < team.length; i++){
 					teamRatings.push([]);
-
+					
 					// Adjust IVs as needed
 					if((overrideSettings[0].ivs != "gamemaster")&&(overrideSettings[0].ivs != "original")){
+						team[i].levelCap = overrideSettings[0].levelCap;
 						team[i].maximizeStat(overrideSettings[0].ivs);
 					} else if((overrideSettings[0].ivs == "gamemaster")&&(team[i].isCustom)){
 						team[i].isCustom = false;
@@ -142,6 +143,7 @@ var RankerMaster = (function () {
 					}
 
 					if((overrideSettings[1].ivs != "gamemaster")&&(overrideSettings[1].ivs != "original")){
+						pokemon.levelCap = overrideSettings[1].levelCap;
 						pokemon.maximizeStat(overrideSettings[1].ivs);
 					} else if((overrideSettings[1].ivs == "gamemaster")&&(pokemon.isCustom)){
 						pokemon.isCustom = false;
