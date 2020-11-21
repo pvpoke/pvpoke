@@ -29,7 +29,7 @@ var InterfaceMaster = (function () {
 				}
 
 				$(".format-select").on("change", selectFormat);
-				$(".sort-category a").on("click", sortTable);
+				$("thead a").on("click", sortTable);
 				$("body").on("click", ".check", checkBox);
 
 				window.addEventListener('popstate', function(e) {
@@ -168,14 +168,14 @@ var InterfaceMaster = (function () {
 						team.push(pokemon);
 					}
 
-					$row.find(".team-score .score").html(r.score);
+					$row.find(".team-score .score").html(r.teamScore);
 
-					if(r.score >= 500){
+					if(r.teamScore >= 500){
 						$row.find(".team-score .score").addClass("win");
 					}
 
 					// Normalize rating so it has more visual effect
-					var colorRating = 500 + ((r.score - 500) * 8);
+					var colorRating = 500 + ((r.teamScore - 500) * 8);
 
 					if(colorRating > 1000){
 						colorRating = 1000;
@@ -192,7 +192,6 @@ var InterfaceMaster = (function () {
 				}
 
 				$(".loading").hide();
-				$(".rank").on("click", selectPokemon);
 
 				// Update download link with new data
 				var filename = $(".cup-select option:selected").html() + " Rankings.csv";
@@ -329,30 +328,6 @@ var InterfaceMaster = (function () {
 				});
 			}
 
-			// Set a context so this interface can add or skip functionality
-
-			this.setContext = function(value){
-				context = value;
-			}
-
-			// Set a ranking scenario to be displayed
-
-			this.setScenario = function(value){
-				scenario = value;
-			}
-
-			// Link the custom ranking interface so these two can talk
-
-			this.setCustomRankingInterface = function(obj){
-				customRankingInterface = obj;
-			}
-
-			// Return a custom group of the top 100 Pokemon
-
-			this.getMetaGroup = function(){
-				return metaGroup;
-			}
-
 			// Event handler for changing the league select
 
 			function selectLeague(e){
@@ -442,356 +417,105 @@ var InterfaceMaster = (function () {
 
 				e.preventDefault();
 
-				var $parent = $(e).closest(".sort-category");
-				
-				$(".ranking-categories a").removeClass("selected");
+				var $parent = $(e.target).closest("table");
+
+				$parent.find("thead a").removeClass("selected");
 
 				$(e.target).addClass("selected");
 
-				var cp = $(".league-select option:selected").val();
-				var category = $(".ranking-categories a.selected").attr("data");
-				var scenarioStr = $(".ranking-categories a.selected").attr("scenario");
-				var cup = $(".cup-select option:selected").val();
+				var targetData = data.performers;
+				var sortColumn = $(e.target).attr("data");
 
-				$(".description").hide();
-				$(".description."+category).show();
-
-				// Set the corresponding scenario
-
-				for(var i = 0; i < scenarios.length; i++){
-					if(scenarios[i].slug == scenarioStr){
-						scenario = scenarios[i];
-						break;
-					}
+				if($parent.hasClass("teams")){
+					targetData = data.teams;
 				}
+
+				switch(sortColumn){
+					case "name":
+						targetData.sort((a,b) => (a.pokemon > b.pokemon) ? 1 : ((b.pokemon > a.pokemon) ? -1 : 0));
+						break;
+
+					case "lead":
+						targetData.sort((a,b) => (a.team > b.team) ? 1 : ((b.team > a.team) ? -1 : 0));
+						break;
+
+					case "individual":
+						targetData.sort((a,b) => (a.individualScore > b.individualScore) ? -1 : ((b.individualScore > a.individualScore) ? 1 : 0));
+						break;
+
+					case "team":
+						targetData.sort((a,b) => (a.teamScore > b.teamScore) ? -1 : ((b.teamScore > a.teamScore) ? 1 : 0));
+						break;
+
+					case "usage":
+						targetData.sort((a,b) => (a.games > b.games) ? -1 : ((b.games > a.games) ? 1 : 0));
+						break;
+				}
+
+
 
 				self.displayRankingData(data);
 			}
 
-			// Event handler clicking on a Pokemon item, load detail data
+			var searchTimeout;
+			var searchStr = '';
+			var $target = null;
 
-			function selectPokemon(e){
+			$("body").on("keyup", ".poke-search", function(e){
+				searchStr = $(this).val().toLowerCase();
 
-				// Don't collapse when clicking links or the share button
+				$target = $(".train-table."+$(e.target).attr("target"));
 
-				if(! $(e.target).is(".rank, .rank > .rating-container, .rank > .rating-container *, .rank > .name-container, .rank > .name-container *, .rank > .expand-label")||($(e.target).is("a"))){
-					return;
-				}
+				// Reset the timeout when a new key is typed. This prevents queries from being submitted too quickly and bogging things down on mobile.
+				window.clearTimeout(searchTimeout);
+				searchTimeout = window.setTimeout(submitSearchQuery, 200);
+			});
 
-				var cup = $(".cup-select option:selected").val();
-				var category = $(".ranking-categories a.selected").attr("data");
-				var $rank = $(this).closest(".rank");
+			$("a.search-info").click(function(e){
+				e.preventDefault();
+				modalWindow("Search Strings", $(".sandbox-search-strings"));
+			});
 
+			function submitSearchQuery(){
+				var list = GameMaster.getInstance().generatePokemonListFromSearchString(searchStr);
+				console.log($target);
 
-				$rank.toggleClass("selected");
-				$rank.find(".details").toggleClass("active");
+				if($target.hasClass("performers")){
 
-				var index = $(".rankings-container > .rank").index($rank);
-				var $details = $(".details").eq(index);
+					// Search rows of top performers
+					$target.find("tbody tr").each(function(index, value){
+						var id = $(this).attr("data");
 
-				if($details.html() != ''){
-					return;
-				}
-
-				var r = data[index];
-				var pokemon = new Pokemon(r.speciesId, 0, battle);
-				pokemon.initialize(battle.getCP(), "gamemaster");
-				pokemon.selectMove("fast", r.moveset[0]);
-				pokemon.selectMove("charged", r.moveset[1], 0);
-
-				if(r.moveset.length > 2){
-					pokemon.selectMove("charged", r.moveset[2],1);
-				} else{
-					pokemon.selectMove("charged", "none", 1);
-				}
-
-				var pokeMoveStr = pokemon.generateURLMoveStr();
-
-				// If overall, display score for each category
-
-				if(r.scores){
-					var categories = ["Lead","Closer","Switch","Charger","Attacker","Consistency"];
-
-					var $section = $("<div class=\"detail-section overall\"></div>");
-
-					for(var i = 0; i < r.scores.length; i++){
-						var $item = $("<div class=\"rating-container\"><div class=\"ranking-header\">"+categories[i]+"</div><div class=\"rating\">"+r.scores[i]+"</div></div>");
-
-						$section.append($item);
-					}
-
-					$details.append($section);
-				}
-
-				if(pokemon.hasTag("mega")){
-					$details.append("<div class=\"detail-section\"><b>Mega Evolutions are currently not allowed in GO Battle League. Use this information to help prepare if they are allowed in the future. Don't invest Mega Energy or Elite TM's until you can use these Pokemon.</b></div>");
-				}
-
-				// Display move data
-
-				var fastMoves = pokemon.fastMovePool;
-				var chargedMoves = pokemon.chargedMovePool;
-
-				for(var j = 0; j < fastMoves.length; j++){
-					fastMoves[j].uses = 0;
-
-					for(var n = 0; n < r.moves.fastMoves.length; n++){
-						var move = r.moves.fastMoves[n];
-
-						if(move.moveId == fastMoves[j].moveId){
-							fastMoves[j].uses = move.uses;
+						if(list.indexOf(id) > -1){
+							$(this).show();
+						} else{
+							$(this).hide();
 						}
-					}
-				}
+					});
 
-				for(var j = 0; j < chargedMoves.length; j++){
-					chargedMoves[j].uses = 0;
+				} else if($target.hasClass("teams")){
 
-					for(var n = 0; n < r.moves.chargedMoves.length; n++){
-						var move = r.moves.chargedMoves[n];
+					// Search makeups of team
+					$target.find("tbody tr").each(function(index, value){
+						var $row = $(this);
+						var found = 0;
 
-						if(move.moveId == chargedMoves[j].moveId){
-							chargedMoves[j].uses = move.uses;
+						$row.find(".pokemon").each(function(spriteIndex, spriteValue){
+							var id = $(this).attr("data");
+
+							if(list.indexOf(id) > -1){
+								found++;
+							}
+						});
+
+						if(found >= 3 || (! searchStr.includes("!")) && found > 0){
+							$row.show();
+						} else{
+							$row.hide();
 						}
-					}
+
+					});
 				}
-
-				fastMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
-				chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
-
-				// Buckle up, this is gonna get messy. This is the main detail HTML.
-
-				$details.append($(".details-template.hide").html());
-
-				// Need to calculate percentages
-
-				var totalFastUses = 0;
-
-				for(var n = 0; n < fastMoves.length; n++){
-					totalFastUses += fastMoves[n].uses;
-				}
-
-				// Display fast moves
-
-				for(var n = 0; n < fastMoves.length; n++){
-					var percentStr = (Math.floor((fastMoves[n].uses / totalFastUses) * 1000) / 10) + "%";
-					var displayWidth = (Math.floor((fastMoves[n].uses / totalFastUses) * 1000) / 20);
-
-					if(displayWidth < 14){
-						displayWidth = "14%";
-					} else{
-						displayWidth = displayWidth + "%";
-					}
-
-					$details.find(".moveset.fast").append("<div class=\"rank " + fastMoves[n].type + "\"><div class=\"name-container\"><span class=\"number\">#"+(n+1)+"</span><span class=\"name\">"+fastMoves[n].displayName+"</span></div><div class=\"rating-container\"><div class=\"rating\" style=\"width:"+displayWidth+"\">"+percentStr+"</span></div><div class=\"clear\"></div></div>");
-				}
-
-				// Display charged moves
-
-				var totalChargedUses = 0;
-
-				for(var n = 0; n < chargedMoves.length; n++){
-					totalChargedUses += chargedMoves[n].uses;
-				}
-
-				for(var n = 0; n < chargedMoves.length; n++){
-					percentStr = (Math.floor((chargedMoves[n].uses / totalChargedUses) * 1000) / 10) + "%";
-					displayWidth = (Math.floor((chargedMoves[n].uses / totalChargedUses) * 1000) / 20);
-
-					if(displayWidth < 14){
-						displayWidth = "14%";
-					} else{
-						displayWidth = displayWidth + "%";
-					}
-
-					$details.find(".moveset.charged").append("<div class=\"rank " + chargedMoves[n].type + "\"><div class=\"name-container\"><span class=\"number\">#"+(n+1)+"</span><span class=\"name\">"+chargedMoves[n].displayName+"</span></div><div class=\"rating-container\"><div class=\"rating\" style=\"width:"+displayWidth+"\">"+percentStr+"</span></div><div class=\"clear\"></div></div>");
-				}
-
-				// Display moveset override notice where applicable
-
-				if( (pokemon.fastMove.moveId != fastMoves[0].moveId)
-					|| ((pokemon.chargedMoves[0].moveId != chargedMoves[0].moveId)&&(pokemon.chargedMoves[0].moveId != chargedMoves[1].moveId))
-				 	|| ((pokemon.chargedMoves[1].moveId != chargedMoves[0].moveId)&&(pokemon.chargedMoves[1].moveId != chargedMoves[1].moveId))){
-					$details.find(".detail-section.moveset-override").show();
-				}
-
-				// Helper variables for displaying matchups and link URL
-
-				var cp = $(".league-select option:selected").val();
-
-				if(context == "custom"){
-					category = context;
-				}
-
-				// Display key matchups
-
-				for(var n = 0; n < r.matchups.length; n++){
-					var m = r.matchups[n];
-					var opponent = new Pokemon(m.opponent, 1, battle);
-					opponent.initialize(battle.getCP(), "gamemaster");
-					opponent.selectRecommendedMoveset(category);
-
-					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+pokeMoveStr+"/"+opponent.generateURLMoveStr()+"/";
-
-					// Append energy settings
-					battleLink += pokemon.stats.hp + "-" + opponent.stats.hp + "/";
-
-					if(scenario.energy[0] == 0){
-						battleLink += "0";
-					} else{
-						battleLink += Math.min(pokemon.fastMove.energyGain * (Math.floor((scenario.energy[0] * 500) / pokemon.fastMove.cooldown)), 100);
-					}
-
-					battleLink += "-";
-
-					if(scenario.energy[1] == 0){
-						battleLink += "0";
-					} else{
-						battleLink += Math.min(opponent.fastMove.energyGain * (Math.floor((scenario.energy[1] * 500) / opponent.fastMove.cooldown)), 100);
-					}
-
-					battleLink += "/";
-
-					var $item = $("<div class=\"rank " + opponent.types[0] + "\"><div class=\"name-container\"><span class=\"number\">#"+(n+1)+"</span><span class=\"name\">"+opponent.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star\">"+m.rating+"</span></div><a target=\"_blank\" href=\""+battleLink+"\"></a><div class=\"clear\"></div></div>");
-
-					$details.find(".matchups").append($item);
-				}
-
-				// Display top counters
-
-				for(var n = 0; n < r.counters.length; n++){
-					var c = r.counters[n];
-					var opponent = new Pokemon(c.opponent, 1, battle);
-					opponent.initialize(battle.getCP(), "gamemaster");
-					opponent.selectRecommendedMoveset(category);
-					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+pokeMoveStr+"/"+opponent.generateURLMoveStr()+"/";
-
-					// Append energy settings
-					battleLink += pokemon.stats.hp + "-" + opponent.stats.hp + "/";
-
-					if(scenario.energy[0] == 0){
-						battleLink += "0";
-					} else{
-						battleLink += Math.min(pokemon.fastMove.energyGain * (Math.floor((scenario.energy[0] * 500) / pokemon.fastMove.cooldown)), 100);
-					}
-
-					battleLink += "-";
-
-					if(scenario.energy[1] == 0){
-						battleLink += "0";
-					} else{
-						battleLink += Math.min(opponent.fastMove.energyGain * (Math.floor((scenario.energy[1] * 500) / opponent.fastMove.cooldown)), 100);
-					}
-
-					var $item = $("<div class=\"rank " + opponent.types[0] + "\"><div class=\"name-container\"><span class=\"number\">#"+(n+1)+"</span><span class=\"name\">"+opponent.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star\">"+(1000-c.rating)+"</span></div><a target=\"_blank\" href=\""+battleLink+"\"></a><div class=\"clear\"></div></div>");
-
-					$details.find(".counters").append($item);
-				}
-
-				// Display Pokemon's type information
-
-				$details.find(".typing .type").eq(0).addClass(pokemon.types[0]);
-				$details.find(".typing .type").eq(0).html(pokemon.types[0]);
-
-				if(pokemon.types[1] != "none"){
-					$details.find(".typing .type").eq(1).addClass(pokemon.types[1]);
-					$details.find(".typing .type").eq(1).html(pokemon.types[1]);
-				} else{
-					$details.find(".typing .rating-container").eq(1).hide();
-				}
-
-				// Display weaknesses and resistances
-				var effectivenessArr = []; // First we need to push the values into a sortable array, the original is key indexed (essentially an object)
-				for(var type in pokemon.typeEffectiveness) {
-					if (pokemon.typeEffectiveness.hasOwnProperty(type)) {
-						effectivenessArr.push({
-	 					   type: type,
-	 					   val: pokemon.typeEffectiveness[type]
-	 				   });
-					}
-				}
-
-				effectivenessArr.sort((a,b) => (a.val > b.val) ? -1 : ((b.val > a.val) ? 1 : 0));
-
-				for(var i = 0; i < effectivenessArr.length; i++){
-					var num = Math.floor(effectivenessArr[i].val * 1000) / 1000;
-					if(effectivenessArr[i].val > 1){
-						$details.find(".detail-section .weaknesses").append("<div class=\"type "+effectivenessArr[i].type+"\"><div class=\"multiplier\">x"+num+"</div><div>"+effectivenessArr[i].type+"</div></div>");
-					}
-				}
-
-				for(var i = effectivenessArr.length - 1; i >= 0; i--){
-					var num = Math.floor(effectivenessArr[i].val * 1000) / 1000;
-					if(effectivenessArr[i].val < 1){
-						$details.find(".detail-section .resistances").append("<div class=\"type "+effectivenessArr[i].type+"\"><div class=\"multiplier\">x"+num+"</div><div>"+effectivenessArr[i].type+"</div></div>");
-					}
-				}
-
-				// Display Pokemon's stat ranges
-
-				var statRanges = {
-					atk: {
-						min: pokemon.generateIVCombinations("atk", -1, 1)[0].atk,
-						max: pokemon.generateIVCombinations("atk", 1, 1)[0].atk,
-					},
-					def: {
-						min: pokemon.generateIVCombinations("def", -1, 1)[0].def,
-						max: pokemon.generateIVCombinations("def", 1, 1)[0].def,
-					},
-					hp: {
-						min: pokemon.generateIVCombinations("hp", -1, 1)[0].hp,
-						max: pokemon.generateIVCombinations("hp", 1, 1)[0].hp,
-					}
-				};
-
-				$details.find(".stats .rating").eq(0).html(Math.round(statRanges.atk.min * 10) / 10);
-				$details.find(".stats .rating").eq(1).html(Math.round(statRanges.atk.max * 10) / 10);
-				$details.find(".stats .rating").eq(2).html(Math.round(statRanges.def.min * 10) / 10);
-				$details.find(".stats .rating").eq(3).html(Math.round(statRanges.def.max * 10) / 10);
-				$details.find(".stats .rating").eq(4).html(Math.round(statRanges.hp.min * 10) / 10);
-				$details.find(".stats .rating").eq(5).html(Math.round(statRanges.hp.max * 10) / 10);
-
-				// Display Pokemon's highest IV's
-
-				var rank1Combo = pokemon.generateIVCombinations("overall", 1, 1)[0];
-				$details.find(".stats .rating").eq(6).html("Lvl " + rank1Combo.level + " " + rank1Combo.ivs.atk + "/" + rank1Combo.ivs.def + "/" + rank1Combo.ivs.hp);
-
-				// Show share link
-				var cup = $(".cup-select option:selected").val();
-				var cupName = $(".cup-select option:selected").html();
-
-				var link = host + "rankings/"+cup+"/"+cp+"/"+category+"/"+pokemon.speciesId+"/";
-
-				$details.find(".share-link input").val(link);
-
-				// Add multi-battle link
-				if(context != "custom"){
-					var multiBattleLink = host+"battle/multi/"+cp+"/"+cup+"/"+pokemon.speciesId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+pokeMoveStr+"/2-1/";
-
-					// Append energy settings
-					multiBattleLink += pokemon.stats.hp + "/";
-
-					if(scenario.energy[0] == 0){
-						multiBattleLink += "0";
-					} else{
-						multiBattleLink += Math.min(pokemon.fastMove.energyGain * (Math.floor((scenario.energy[0] * 500) / pokemon.fastMove.cooldown)), 100);
-					}
-
-					multiBattleLink += "/";
-
-					$details.find(".detail-section.float").eq(2).before($("<div class=\"multi-battle-link\"><p>See all of <b>" + pokemon.speciesName + "'s</b> matchups:</p><a target=\"_blank\" class=\"button\" href=\""+multiBattleLink+"\">"+pokemon.speciesName+" vs. " + cupName +"</a></div>"));
-				} else{
-					$details.find(".share-link").remove();
-				}
-
-
-				// Only execute if this was a direct action and not loaded from URL parameters, otherwise pushes infinite states when the user navigates back
-
-				if((get)&&(get.p == pokemon.speciesId)){
-					return;
-				}
-
-				self.pushHistoryState(cup, cp, category, pokemon.speciesId);
 			}
 
 			// Turn checkboxes on and off
@@ -799,44 +523,6 @@ var InterfaceMaster = (function () {
 			function checkBox(e){
 				$(this).toggleClass("on");
 				$(this).trigger("stateChange");
-			}
-
-			// Toggle the limited Pokemon from the Rankings
-
-			function toggleLimitedPokemon(e){
-				for(var i = 0; i < limitedPokemon.length; i++){
-					$(".rank[data='"+limitedPokemon[i]+"']").toggleClass("hide");
-				}
-			}
-
-			// Show or hide Continentals slots
-
-			function toggleContinentalsSlots(e){
-				var selectedSlots = [];
-
-				$(".continentals .check").each(function(index, value){
-					if($(this).hasClass("on")){
-						selectedSlots.push(index);
-					}
-				});
-
-				var slots = battle.getCup().slots;
-
-				for(var i = 0; i < slots.length; i++){
-					if(selectedSlots.indexOf(i) > -1){
-						for(var n = 0; n < slots[i].pokemon.length; n++){
-							$(".rank[data='"+slots[i].pokemon[n]+"']").removeClass("hide");
-						}
-					} else{
-						for(var n = 0; n < slots[i].pokemon.length; n++){
-							$(".rank[data='"+slots[i].pokemon[n]+"']").addClass("hide");
-						}
-					}
-				}
-
-				if(selectedSlots.length == 0){
-					$(".rank").removeClass("hide");
-				}
 			}
 		};
 

@@ -3711,6 +3711,7 @@ a.pokebattler{
 
 .train-table{
 	width:100%;
+	margin-top:5px;
 
 	thead{
 		font-size: 12px;
@@ -3719,6 +3720,15 @@ a.pokebattler{
 		td.poke-name{
 			padding:0;
 			width:auto;
+		}
+
+		a{
+			text-decoration: none;
+
+			&.selected,
+			&:hover{
+				text-decoration: underline;
+			}
 		}
 	}
 

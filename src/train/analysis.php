@@ -79,17 +79,12 @@ require_once '../header.php';
 
 	<h3>Top Performers</h3>
 
-	<div>Average performance for individual Pokemon and movesets in PvPoke.com <a href="<?php echo $WEB_ROOT; ?>train/">Training Battles</a>. Data is sampled from both players and bots in the Elite and Champion difficulties.</div>
+	<p>Average performance for individual Pokemon and movesets in PvPoke.com <a href="<?php echo $WEB_ROOT; ?>train/">Training Battles</a>. Data is sampled from both players and bots in the Elite and Champion difficulties.</p>
 
-	<div class="sort-category performers">
-		<div class="label">Sort by</div>
-		<a class="selected" href="#" data="team">Team Rating</a>
-		<a href="#" data="individual">Individual Rating</a>
-		<a href="#" data="usage">Usage</a>
-	</div>
+	<p></p>
 
 	<div class="poke-search-container">
-		<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />
+		<input class="poke-search" target="performers" type="text" placeholder="Search Pokemon" />
 		<a href="#" class="search-info">i</a>
 	</div>
 
@@ -99,11 +94,11 @@ require_once '../header.php';
 		<table class="train-table performers" cellspacing="0">
 			<thead>
 				<tr>
-					<td>Pokemon</td>
+					<td><a href="#" data="name">Pokemon</a></td>
 					<td></td>
-					<td>Team Rating</td>
-					<td>Individual<br>Rating</td>
-					<td>Usage</td>
+					<td><a href="#" class="selected" data="team">Team Rating</a></td>
+					<td><a href="#" data="individual">Individual<br>Rating</a></td>
+					<td><a href="#" data="usage">Usage</a></td>
 				</tr>
 				<!--Row html to clone-->
 				<tr class="hide">
@@ -138,23 +133,21 @@ require_once '../header.php';
 
 	<div>Average performance for teams in PvPoke.com <a href="<?php echo $WEB_ROOT; ?>train/">Training Battles</a>. Data is sampled from both players and bots in the Elite and Champion difficulties.</div>
 
-	<div class="sort-category teams">
-		<div class="label">Sort by</div>
-		<a href="#" data="lead">Lead</a>
-		<a class="selected" href="#" data="team">Team Rating</a>
-		<a href="#" data="usage">Usage</a>
+	<div class="poke-search-container">
+		<input class="poke-search" target="teams" type="text" placeholder="Search Pokemon" />
+		<a href="#" class="search-info">i</a>
 	</div>
 
 	<div class="table-container">
 		<table class="train-table teams" cellspacing="0">
 			<thead>
 				<tr>
-					<td class="poke-name">Team (Lead First)</td>
+					<td class="poke-name"><a href="#" data="lead">Team (Lead First)</a></td>
 					<td class="poke-name"></td>
 					<td class="poke-name"></td>
 					<td></td>
-					<td>Team Rating</td>
-					<td>Usage</td>
+					<td><a href="#" class="selected" data="team">Team Rating</a></td>
+					<td><a href="#" data="usage">Usage</td>
 				</tr>
 				<!--Row html to clone-->
 				<tr class="hide">

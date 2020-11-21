@@ -3420,6 +3420,7 @@ a.pokebattler {
 
 .train-table {
   width: 100%;
+  margin-top: 5px;
 }
 .train-table thead {
   font-size: 12px;
@@ -3428,6 +3429,12 @@ a.pokebattler {
 .train-table thead td.poke-name {
   padding: 0;
   width: auto;
+}
+.train-table thead a {
+  text-decoration: none;
+}
+.train-table thead a.selected, .train-table thead a:hover {
+  text-decoration: underline;
 }
 .train-table td.poke-name {
   display: flex;
