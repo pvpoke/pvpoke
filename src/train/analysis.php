@@ -72,10 +72,11 @@ require_once '../header.php';
 <h1>Training Analysis</h1>
 <div class="section analysis-container white">
 
-	<div class="analysis-formats">
-		<a class="selected" href="#" data="1500 halloween">Halloween Cup</a>
-		<a class="selected" href="#" data="10000 premier">Master Premier</a>
-	</div>
+	<select class="format-select">
+		<option value="1500 all" cup="all">Great League</option>
+		<option value="2500 all" cup="all">Ultra League</option>
+		<option value="10000 all" cup="all">Master League</option>
+	</select>
 
 	<h3>Top Performers</h3>
 

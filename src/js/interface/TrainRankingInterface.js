@@ -23,7 +23,7 @@ var InterfaceMaster = (function () {
 
 
 				if(! get){
-					this.loadRankings("1500","halloween");
+					this.loadRankings("1500","all");
 				} else{
 					this.loadGetData();
 				}
@@ -62,8 +62,6 @@ var InterfaceMaster = (function () {
 
 			this.displayRankingData = function(rankings){
 
-				console.log(rankings);
-
 				data = rankings;
 
 				$(".train-table tbody").html('');
@@ -82,12 +80,7 @@ var InterfaceMaster = (function () {
 					var arr = r.pokemon.split(" ");
 					var movesetStr = arr[arr.length-1];
 					var movesetArr = movesetStr.split(/\+|\//);
-					var speciesName = r.pokemon.replace(" " + movesetStr, "");
-					var speciesId = speciesName.toLowerCase();
-
-					speciesId = speciesId.replaceAll("(","");
-					speciesId = speciesId.replaceAll(")","");
-					speciesId = speciesId.replaceAll(" ","_");
+					var speciesId = r.pokemon.replace(" " + movesetStr, "");
 
 					var pokemon = new Pokemon(speciesId, 0, battle);
 
@@ -106,10 +99,10 @@ var InterfaceMaster = (function () {
 						$row.find(".sprite-container").attr("type-2", pokemon.types[1]);
 					}
 
-					$row.find(".name").html(speciesName);
+					$row.find(".name").html(pokemon.speciesName);
 					$row.find(".moves").html(r.pokemon.split(" ")[1]);
-					$row.find(".individual-score").html(r.individualScore + '%');
-					$row.find(".team-score .score").html(r.teamScore);
+					$row.find(".individual-score").html(r.individualScore.toFixed(1) + '%');
+					$row.find(".team-score .score").html(r.teamScore.toFixed(1));
 
 					if(r.teamScore >= 500){
 						$row.find(".team-score .score").addClass("win");
@@ -125,9 +118,10 @@ var InterfaceMaster = (function () {
 					}
 
 					var color = battle.getRatingColor(colorRating);
-
 					$row.find(".team-score .score").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
-					$row.find(".usage").html(r.games);
+
+					$row.find(".usage").html((r.games * 100).toFixed(1)+"%");
+
 					$row.find(".link a").attr("href", host+"rankings/" + battle.getCup().name + "/" + battle.getCP() + "/overall/" + pokemon.speciesId + "/");
 
 					$(".train-table.performers tbody").append($row);
@@ -168,7 +162,7 @@ var InterfaceMaster = (function () {
 						team.push(pokemon);
 					}
 
-					$row.find(".team-score .score").html(r.teamScore);
+					$row.find(".team-score .score").html(r.teamScore.toFixed(1));
 
 					if(r.teamScore >= 500){
 						$row.find(".team-score .score").addClass("win");
@@ -186,7 +180,7 @@ var InterfaceMaster = (function () {
 					var color = battle.getRatingColor(colorRating);
 
 					$row.find(".team-score .score").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
-					$row.find(".usage").html(r.games);
+					$row.find(".usage").html((r.games*100).toFixed(1)+"%");
 
 					$(".train-table.teams tbody").append($row);
 				}
@@ -478,7 +472,6 @@ var InterfaceMaster = (function () {
 
 			function submitSearchQuery(){
 				var list = GameMaster.getInstance().generatePokemonListFromSearchString(searchStr);
-				console.log($target);
 
 				if($target.hasClass("performers")){
 
