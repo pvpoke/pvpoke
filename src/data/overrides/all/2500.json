@@ -92,6 +92,14 @@
 		"fastMove": "WATERFALL"
 	},
 	{
+		"speciesId": "magmortar",
+		"chargedMoves": ["FIRE_PUNCH", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "magmortar_shadow",
+		"chargedMoves": ["FIRE_PUNCH", "THUNDERBOLT"]
+	},
+	{
 		"speciesId": "garchomp",
 		"chargedMoves": ["SAND_TOMB", "OUTRAGE"]
 	},

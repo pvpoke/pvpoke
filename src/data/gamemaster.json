@@ -13074,7 +13074,8 @@
         },
         "types": ["fire", "none"],
         "fastMoves": ["FIRE_SPIN", "KARATE_CHOP"],
-        "chargedMoves": ["BRICK_BREAK", "FIRE_BLAST", "FIRE_PUNCH", "PSYCHIC"],
+        "chargedMoves": ["BRICK_BREAK", "FIRE_BLAST", "FIRE_PUNCH", "PSYCHIC", "THUNDERBOLT"],
+		"eliteMoves": ["THUNDERBOLT"],
         "defaultIVs": {
             "cp500": [6, 9, 14, 9],
             "cp1500": [17.5, 5, 12, 14],
@@ -13093,7 +13094,8 @@
         },
         "types": ["fire", "none"],
         "fastMoves": ["FIRE_SPIN", "KARATE_CHOP"],
-        "chargedMoves": ["BRICK_BREAK", "FIRE_BLAST", "FIRE_PUNCH", "PSYCHIC"],
+        "chargedMoves": ["BRICK_BREAK", "FIRE_BLAST", "FIRE_PUNCH", "PSYCHIC", "THUNDERBOLT"],
+		"eliteMoves": ["THUNDERBOLT"],
         "defaultIVs": {
             "cp500": [6, 9, 14, 9],
             "cp1500": [17.5, 5, 12, 14],

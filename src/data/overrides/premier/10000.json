@@ -31,6 +31,14 @@
 		"chargedMoves": ["DARK_PULSE", "GUNK_SHOT"]
 	},
 	{
+		"speciesId": "magmortar",
+		"chargedMoves": ["FIRE_PUNCH", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "magmortar_shadow",
+		"chargedMoves": ["FIRE_PUNCH", "THUNDERBOLT"]
+	},
+	{
 		"speciesId": "scizor",
 		"fastMove": "BULLET_PUNCH",
 		"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
