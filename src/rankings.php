@@ -35,16 +35,8 @@ switch($cup){
 		$league = 'Premier';
 		break;
 
-	case "flying":
-		$league = 'Flying Cup';
-		break;
-
-	case "halloween":
-		$league = 'Halloween Cup';
-		break;
-
-	case "sunrise":
-		$league = 'Silph Sunrise Cup';
+	case "nightfall":
+		$league = 'Silph Nightfall Cup';
 		break;
 
 	case "marsh":
