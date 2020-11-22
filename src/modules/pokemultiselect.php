@@ -23,6 +23,7 @@
 				<option value="little" type="little" class="hide multi-battle">Little Cup Meta</option>
 				<option value="kanto" type="great" class="multi-battle">Kanto Cup Meta</option>
 				<option value="marsh" type="great" class="multi-battle">Silph Marsh Cup Meta</option>
+				<option value="nightfall" type="great" class="multi-battle">Silph Nightfall Cup Meta</option>
 			</select>
 			<div class="flex quick-fill-buttons">
 				<button class="save-btn save-custom">Save</button>

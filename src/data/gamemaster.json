@@ -620,7 +620,18 @@
             "values": ["mega"]
         }],
 		"partySize": 3
-    }],
+    }, {
+	    "name": "nightfall",
+	    "title": "Silph Nightfall Cup",
+	    "include": [{
+	        "filterType": "type",
+	        "values": ["ice","fighting","normal","poison","ground"]
+	    }],
+	    "exclude": [{
+	        "filterType": "tag",
+	        "values": ["mega"]
+	    }]
+	}],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega"],
     "pokemonRegions": [{
         "string": "gen1",
