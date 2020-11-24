@@ -28,14 +28,9 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.18.8 (November 18, 2020)</h4>
+	<h4>v1.18.11 (November 24, 2020)</h4>
 	<ul>
-		<li>Select Pokemon from Generation VI are now available in simulations! Enable them by selecting the "Kalos" Gamemaster Version on the <a href="<?php echo $WEB_ROOT; ?>settings/">Settings page</a>.</li>
-	</ul>
-
-	<h4>v1.18.7 (November 18, 2020)</h4>
-	<ul>
-		<li>The site now supports Pokemon levels up to 50. Note that the current values are speculative and should not be used to determine investments at this time.</li>
+		<li>Gen 6 has been added to the site! You can now simulate them in individual battles. Note that game data is subject to change until release.</li>
 	</ul>
 
 	<h3>Latest Article</h3>

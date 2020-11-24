@@ -64,7 +64,6 @@ require_once 'header.php';
 			<select class="input" id="gm-select">
 				<option value="gamemaster" <?php if($gamemaster == "gamemaster") : ?>selected<?php endif; ?>>Default</option>
 				<option value="gamemaster-mega" <?php if($gamemaster == "gamemaster-mega") : ?>selected<?php endif; ?>>Mega Evolutions (Speculative)</option>
-				<option value="gamemaster-kalos" <?php if($gamemaster == "gamemaster-kalos") : ?>selected<?php endif; ?>>Kalos (Speculative)</option>
 			</select>
 		</div>
 
