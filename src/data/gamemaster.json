@@ -9218,8 +9218,7 @@
         },
         "types": ["normal", "none"],
         "fastMoves": ["BITE", "ROCK_SMASH"],
-        "chargedMoves": ["CRUNCH", "DISARMING_VOICE", "FLAMETHROWER", "STOMP"],
-        "legacyMoves": ["CRUNCH"],
+        "chargedMoves": ["DISARMING_VOICE", "FLAMETHROWER", "STOMP"],
         "defaultIVs": {
             "cp500": [15, 5, 7, 8],
             "cp1500": [40, 15, 15, 15],
@@ -18232,9 +18231,9 @@
         "speciesName": "Yveltal",
         "speciesId": "yveltal",
         "baseStats": {
-            "atk": 275,
-            "def": 203,
-            "hp": 270
+            "atk": 250,
+            "def": 185,
+            "hp": 246
         },
         "types": ["dark", "flying"],
         "fastMoves": ["SUCKER_PUNCH", "SNARL", "GUST"],
