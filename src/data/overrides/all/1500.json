@@ -16,9 +16,17 @@
 		"weight": 74
 	},
 	{
+		"speciesId": "azumarill_xl",
+		"chargedMoves": ["ICE_BEAM", "HYDRO_PUMP"]
+	},
+	{
 		"speciesId": "medicham",
 		"chargedMoves": ["ICE_PUNCH", "PSYCHIC"],
 		"weight": 7
+	},
+	{
+		"speciesId": "medicham_xl",
+		"chargedMoves": ["ICE_PUNCH", "PSYCHIC"]
 	},
 	{
 		"speciesId": "mantine",
@@ -51,6 +59,10 @@
 	},
 	{
 		"speciesId": "lickitung",
+		"chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
+	},
+	{
+		"speciesId": "lickitung_xl",
 		"chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
 	},
 	{
@@ -586,6 +598,14 @@
 	},
 	{
 		"speciesId": "sableye_shadow",
+		"chargedMoves": ["FOUL_PLAY","SHADOW_SNEAK"]
+	},
+	{
+		"speciesId": "sableye_xl",
+		"chargedMoves": ["FOUL_PLAY","RETURN"]
+	},
+	{
+		"speciesId": "sableye_shadow_xl",
 		"chargedMoves": ["FOUL_PLAY","SHADOW_SNEAK"]
 	},
 	{
