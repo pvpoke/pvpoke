@@ -227,7 +227,10 @@ var GameMaster = (function () {
 				for(var i = 0; i < leagues.length; i++){
 					battle.setCP(leagues[i]);
 
-					var cp = pokemon.calculateCP(.79030001, 15, 15, 15);
+					pokemon.ivs.atk = pokemon.ivs.def = pokemon.ivs.hp = 15;
+					pokemon.setLevel(pokemon.levelCap, true);
+
+					var cp = pokemon.cp;
 					var level35cp = pokemon.calculateCP(0.76156384, 15, 15, 15);
 
 					if(cp > leagues[i]){
@@ -235,9 +238,14 @@ var GameMaster = (function () {
 						var defaultIndex = 63;
 
 						// For Pokemon that max near the league cap, default to lucky IV's
-						if(level35cp < leagues[i]){
+						if((level35cp < leagues[i])&&(pokemon.levelCap <= 40)){
 							floor = 12;
 							defaultIndex = 16;
+						}
+
+						// Use higher rank for XL Pokemon
+						if(pokemon.levelCap > 40){
+							var defaultIndex = 32;
 						}
 
 						var combinations = pokemon.generateIVCombinations("overall", 1, 4096, null, floor);
@@ -253,7 +261,7 @@ var GameMaster = (function () {
 
 						defaultIVs["cp"+leagues[i]] = combination;
 					} else{
-						defaultIVs["cp"+leagues[i]] = [40, 15, 15, 15];
+						defaultIVs["cp"+leagues[i]] = [pokemon.levelCap, 15, 15, 15];
 					}
 				}
 

@@ -100,6 +100,10 @@ function Pokemon(id, i, b){
 		this.tags = data.tags;
 	}
 
+	if(this.tags.indexOf("xl") > -1){
+		this.levelCap = 50;
+	}
+
 	// Set battle moves
 
 	for(var i = 0; i < data.fastMoves.length; i++){
@@ -225,7 +229,7 @@ function Pokemon(id, i, b){
 				case "gamemaster":
 					if(maxCP == 10000){
 						self.ivs.atk = self.ivs.def = self.ivs.hp = 15;
-						self.setLevel(40, false);
+						self.setLevel(self.levelCap, false);
 					} else{
 						var combination = data.defaultIVs["cp"+maxCP];
 
@@ -238,7 +242,7 @@ function Pokemon(id, i, b){
 							self.ivs.atk = 15;
 							self.ivs.def = 15;
 							self.ivs.hp = 15;
-							self.setLevel(40, false);
+							self.setLevel(self.levelCap, false);
 						}
 
 					}
