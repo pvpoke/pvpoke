@@ -121,6 +121,14 @@
 		"fastMove": "CHARM"
 	},
 	{
+		"speciesId": "gardevoir_xl",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "gardevoir_shadow_xl",
+		"fastMove": "CHARM"
+	},
+	{
 		"speciesId": "roserade",
 		"fastMove": "RAZOR_LEAF"
 	},
@@ -134,6 +142,11 @@
 		"fastMove": "MUD_SLAP",
 		"chargedMoves": ["ROCK_WRECKER","SURF"],
 		"weight": 6
+	},
+	{
+		"speciesId": "rhyperior_xl",
+		"fastMove": "MUD_SLAP",
+		"chargedMoves": ["ROCK_WRECKER","SURF"]
 	},
 	{
 		"speciesId": "zapdos",
@@ -204,6 +217,16 @@
 		"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
 	},
 	{
+		"speciesId": "charizard_xl",
+		"fastMove": "DRAGON_BREATH",
+		"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
+	},
+	{
+		"speciesId": "charizard_shadow_xl",
+		"fastMove": "DRAGON_BREATH",
+		"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
+	},
+	{
 		"speciesId": "charizard_mega_y",
 		"fastMove": "DRAGON_BREATH",
 		"weight": 0
@@ -219,9 +242,25 @@
 		"weight": 15
 	},
 	{
+		"speciesId": "dragonite_shadow",
+		"chargedMoves": ["DRAGON_CLAW","HURRICANE"]
+	},
+	{
+		"speciesId": "dragonite_xl",
+		"chargedMoves": ["DRAGON_CLAW","HURRICANE"]
+	},
+	{
+		"speciesId": "dragonite_shadow_xl",
+		"chargedMoves": ["DRAGON_CLAW","HURRICANE"]
+	},
+	{
 		"speciesId": "dialga",
 		"chargedMoves": ["IRON_HEAD","DRACO_METEOR"],
 		"weight": 120
+	},
+	{
+		"speciesId": "dialga_xl",
+		"chargedMoves": ["IRON_HEAD","DRACO_METEOR"]
 	},
 	{
 		"speciesId": "giratina_origin",

@@ -5914,6 +5914,26 @@
         "searchPriority": 10
     }, {
         "dex": 149,
+        "speciesName": "Dragonite (XL)",
+        "speciesId": "dragonite_xl",
+        "baseStats": {
+            "atk": 263,
+            "def": 198,
+            "hp": 209
+        },
+        "types": ["dragon", "flying"],
+        "fastMoves": ["DRAGON_BREATH", "DRAGON_TAIL", "STEEL_WING"],
+        "chargedMoves": ["DRACO_METEOR", "DRAGON_CLAW", "DRAGON_PULSE", "HURRICANE", "HYPER_BEAM", "OUTRAGE"],
+        "defaultIVs": {
+            "cp500": [5, 13, 14, 9],
+            "cp1500": [14.5, 7, 9, 12],
+            "cp2500": [24.5, 5, 8, 11]
+        },
+        "level25CP": 2386,
+        "tags": ["shadoweligible", "xl"],
+        "eliteMoves": ["DRACO_METEOR", "DRAGON_PULSE"]
+    }, {
+        "dex": 149,
         "speciesName": "Dragonite (Shadow)",
         "speciesId": "dragonite_shadow",
         "baseStats": {
@@ -5932,6 +5952,25 @@
         "tags": ["shadow"],
         "eliteMoves": ["DRACO_METEOR", "DRAGON_PULSE"],
         "searchPriority": 10
+    }, {
+        "dex": 149,
+        "speciesName": "Dragonite (Shadow XL)",
+        "speciesId": "dragonite_shadow_xl",
+        "baseStats": {
+            "atk": 263,
+            "def": 198,
+            "hp": 209
+        },
+        "types": ["dragon", "flying"],
+        "fastMoves": ["DRAGON_BREATH", "DRAGON_TAIL", "STEEL_WING"],
+        "chargedMoves": ["DRACO_METEOR", "DRAGON_CLAW", "DRAGON_PULSE", "HURRICANE", "HYPER_BEAM", "OUTRAGE"],
+        "defaultIVs": {
+            "cp500": [5, 13, 14, 9],
+            "cp1500": [14.5, 7, 9, 12],
+            "cp2500": [24.5, 5, 8, 11]
+        },
+        "tags": ["shadow", "xl"],
+        "eliteMoves": ["DRACO_METEOR", "DRAGON_PULSE"]
     }, {
         "dex": 150,
         "speciesName": "Mewtwo",
@@ -11531,6 +11570,26 @@
         "searchPriority": 20
     }, {
         "dex": 376,
+        "speciesName": "Metagross (XL)",
+        "speciesId": "metagross_xl",
+        "baseStats": {
+            "atk": 257,
+            "def": 228,
+            "hp": 190
+        },
+        "types": ["steel", "psychic"],
+        "fastMoves": ["BULLET_PUNCH", "ZEN_HEADBUTT"],
+        "chargedMoves": ["EARTHQUAKE", "FLASH_CANNON", "METEOR_MASH", "PSYCHIC"],
+        "defaultIVs": {
+            "cp500": [5, 12, 13, 11],
+            "cp1500": [14, 13, 13, 15],
+            "cp2500": [23.5, 11, 15, 13]
+        },
+        "level25CP": 2386,
+        "tags": ["shadoweligible", "xl"],
+        "eliteMoves": ["METEOR_MASH"]
+    }, {
+        "dex": 376,
         "speciesName": "Metagross (Shadow)",
         "speciesId": "metagross_shadow",
         "baseStats": {
@@ -11549,6 +11608,25 @@
         "tags": ["shadow"],
         "eliteMoves": ["METEOR_MASH"],
         "searchPriority": 20
+    }, {
+        "dex": 376,
+        "speciesName": "Metagross (Shadow XL)",
+        "speciesId": "metagross_shadow_xl",
+        "baseStats": {
+            "atk": 257,
+            "def": 228,
+            "hp": 190
+        },
+        "types": ["steel", "psychic"],
+        "fastMoves": ["BULLET_PUNCH", "ZEN_HEADBUTT"],
+        "chargedMoves": ["EARTHQUAKE", "FLASH_CANNON", "METEOR_MASH", "PSYCHIC"],
+        "defaultIVs": {
+            "cp500": [5, 12, 13, 11],
+            "cp1500": [14, 13, 13, 15],
+            "cp2500": [23.5, 11, 15, 13]
+        },
+        "tags": ["shadow", "xl"],
+        "eliteMoves": ["METEOR_MASH"]
     }, {
         "dex": 377,
         "speciesName": "Regirock",
@@ -11604,6 +11682,24 @@
             "cp2500": [40, 15, 15, 15]
         },
         "searchPriority": 40
+    }, {
+        "dex": 379,
+        "speciesName": "Registeel (XL)",
+        "speciesId": "registeel_xl",
+        "baseStats": {
+            "atk": 143,
+            "def": 285,
+            "hp": 190
+        },
+        "types": ["steel", "none"],
+        "fastMoves": ["METAL_CLAW", "ROCK_SMASH", "LOCK_ON"],
+        "chargedMoves": ["FLASH_CANNON", "FOCUS_BLAST", "HYPER_BEAM"],
+        "tags": ["legendary", "xl"],
+        "defaultIVs": {
+            "cp500": [7.5, 12, 11, 14],
+            "cp1500": [22.5, 8, 15, 13],
+            "cp2500": [47.5, 5, 13, 13]
+        }
     }, {
         "dex": 380,
         "speciesName": "Latias",
@@ -14210,6 +14306,24 @@
         },
         "searchPriority": 20
     }, {
+        "dex": 483,
+        "speciesName": "Dialga (XL)",
+        "speciesId": "dialga_xl",
+        "baseStats": {
+            "atk": 275,
+            "def": 211,
+            "hp": 205
+        },
+        "types": ["steel", "dragon"],
+        "fastMoves": ["DRAGON_BREATH", "METAL_CLAW"],
+        "chargedMoves": ["DRACO_METEOR", "IRON_HEAD", "THUNDER"],
+        "tags": ["legendary", "xl"],
+        "defaultIVs": {
+            "cp500": [4.5, 13, 14, 12],
+            "cp1500": [13.5, 7, 14, 9],
+            "cp2500": [22.5, 5, 12, 14]
+        }
+    }, {
         "dex": 484,
         "speciesName": "Palkia",
         "speciesId": "palkia",
@@ -16594,6 +16708,24 @@
         },
         "searchPriority": 3
     }, {
+        "dex": 596,
+        "speciesId": "galvantula_xl",
+        "speciesName": "Galvantula (XL)",
+        "baseStats": {
+            "atk": 201,
+            "def": 128,
+            "hp": 172
+        },
+        "types": ["bug", "electric"],
+        "fastMoves": ["VOLT_SWITCH", "FURY_CUTTER"],
+        "chargedMoves": ["CROSS_POISON", "BUG_BUZZ", "DISCHARGE", "ENERGY_BALL", "LUNGE"],
+        "defaultIVs": {
+            "cp500": [8.5, 8, 11, 10],
+            "cp1500": [25, 6, 14, 11],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "tags": ["xl"]
+    }, {
         "dex": 597,
         "speciesId": "ferroseed",
         "speciesName": "Ferroseed",
@@ -17210,7 +17342,26 @@
             "cp500": [9, 5, 5, 15],
             "cp1500": [26.5, 6, 11, 12],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 5
+    }, {
+        "dex": 630,
+        "speciesId": "mandibuzz_xl",
+        "speciesName": "Mandibuzz (XL)",
+        "baseStats": {
+            "atk": 129,
+            "def": 205,
+            "hp": 242
+        },
+        "types": ["dark", "flying"],
+        "fastMoves": ["SNARL", "AIR_SLASH"],
+        "chargedMoves": ["DARK_PULSE", "AERIAL_ACE", "FOUL_PLAY", "SHADOW_BALL"],
+        "defaultIVs": {
+            "cp500": [9, 5, 5, 15],
+            "cp1500": [26.5, 6, 11, 12],
+            "cp2500": [50, 15, 15, 15]
+        },
+		"tags": ["xl"]
     }, {
         "dex": 631,
         "speciesId": "heatmor",
