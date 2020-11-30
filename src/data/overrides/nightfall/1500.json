@@ -123,8 +123,13 @@
 	{
 		"speciesId": "medicham",
 		"fastMove": "COUNTER",
-		"chargedMoves": ["ICE_PUNCH", "DYNAMIC_PUNCH"],
+		"chargedMoves": ["ICE_PUNCH", "PSYCHIC"],
 		"weight": 30
+	},
+	{
+		"speciesId": "medicham_xl",
+		"fastMove": "COUNTER",
+		"chargedMoves": ["ICE_PUNCH", "PSYCHIC"]
 	},
 	{
 		"speciesId": "poliwrath",
