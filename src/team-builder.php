@@ -52,6 +52,10 @@ require_once 'header.php';
 				<div class="check allow-shadows"><span></span>Show Shadow Pokemon in results</div>
 			</div>
 			<div class="team-option">
+				<h3>XL Pokemon</h3>
+				<div class="check allow-xl"><span></span>Show Pokemon above level 40 in results</div>
+			</div>
+			<div class="team-option">
 				<h3>Shield Baiting</h3>
 				<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
 			</div>

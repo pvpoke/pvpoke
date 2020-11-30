@@ -20,8 +20,7 @@
 				<option value="master" type="master" class="hide multi-battle">Master League Meta</option>
 				<option value="premierultra" type="ultra" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="premier" type="master" class="hide multi-battle">Premier Cup Meta</option>
-				<option value="little" type="little" class="hide multi-battle">Little Cup Meta</option>
-				<option value="kanto" type="great" class="multi-battle">Kanto Cup Meta</option>
+				<option value="holiday" type="great" class="multi-battle">Holiday Cup Meta</option>
 				<option value="marsh" type="great" class="multi-battle">Silph Marsh Cup Meta</option>
 				<option value="nightfall" type="great" class="multi-battle">Silph Nightfall Cup Meta</option>
 			</select>

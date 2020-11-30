@@ -725,7 +725,7 @@ var BattlerMaster = (function () {
 
 					for(var n = 0; n < team.length; n++){
 						var pokemon = team[n];
-						var pokeStr = pokemon.speciesId + ' ' + pokemon.fastMove.abbreviation;
+						var pokeStr = pokemon.canonicalId + ' ' + pokemon.fastMove.abbreviation;
 						var chargedMoveAbbrevations = [];
 
 						for(var k = 0; k < pokemon.chargedMoves.length; k++){
@@ -791,6 +791,8 @@ var BattlerMaster = (function () {
 					  'player_type': playerType,
 					});
 
+					console.log(teamStrs[i]);
+
 					// Organize rosteer to report teams of 6
 
 					var roster = players[i].getRoster();
@@ -798,7 +800,7 @@ var BattlerMaster = (function () {
 
 					for(var n = 0; n < roster.length; n++){
 						var pokemon = roster[n];
-						var pokeStr = pokemon.speciesId + ' ' + pokemon.fastMove.abbreviation;
+						var pokeStr = pokemon.canonicalId + ' ' + pokemon.fastMove.abbreviation;
 						var chargedMoveAbbrevations = [];
 
 						for(var k = 0; k < pokemon.chargedMoves.length; k++){
@@ -819,7 +821,7 @@ var BattlerMaster = (function () {
 						if(properties.mode == "tournament"){
 							gtag('event', battleSummaryStr, {
 								  'event_category' : 'Training Roster Pokemon',
-								  'event_label' : pokemon.speciesId,
+								  'event_label' : pokemon.canonicalId,
 								  'value' : battleRating+'',
 								  'player_type': playerType
 								});
@@ -846,7 +848,7 @@ var BattlerMaster = (function () {
 
 					for(var n = 0; n < team.length; n++){
 						var pokemon = team[n];
-						var pokeStr = pokemon.speciesId + ' ' + pokemon.fastMove.abbreviation;
+						var pokeStr = pokemon.canonicalId + ' ' + pokemon.fastMove.abbreviation;
 						var chargedMoveAbbrevations = [];
 
 						for(var k = 0; k < pokemon.chargedMoves.length; k++){

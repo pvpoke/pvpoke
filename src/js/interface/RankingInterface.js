@@ -39,6 +39,10 @@ var InterfaceMaster = (function () {
 					this.loadGetData();
 				}
 
+				// Remove Little Cup from options (currently n/a)
+				if(context != "custom"){
+					$(".league-select option[value='500']").remove();
+				}
 
 				$(".league-select").on("change", selectLeague);
 				$(".cup-select").on("change", selectCup);
@@ -394,6 +398,10 @@ var InterfaceMaster = (function () {
 
 			this.setContext = function(value){
 				context = value;
+
+				if(context == "custom"){
+					$(".league-select option[value='500']").show();
+				}
 			}
 
 			// Set a ranking scenario to be displayed
