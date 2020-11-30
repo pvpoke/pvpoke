@@ -339,7 +339,7 @@
         "include": [],
         "exclude": [{
             "filterType": "tag",
-            "values": ["legendary", "mythical", "mega"]
+            "values": ["legendary", "mythical", "mega", "xl"]
         }],
         "partySize": 3
     }, {
@@ -640,7 +640,7 @@
         }],
         "exclude": [{
             "filterType": "tag",
-            "values": ["mega"]
+            "values": ["mega", "xl"]
         }]
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xl"],

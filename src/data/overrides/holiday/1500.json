@@ -2,7 +2,7 @@
 	{
 		"speciesId": "sandslash_alolan",
 		"chargedMoves": ["ICE_PUNCH", "BULLDOZE"],
-		"weight": 3
+		"weight": 2
 	},
 	{
 		"speciesId": "froslass",
@@ -11,7 +11,8 @@
 	{
 		"speciesId": "lapras",
 		"fastMove": "ICE_SHARD",
-		"chargedMoves": ["SURF", "SKULL_BASH"]
+		"chargedMoves": ["SURF", "SKULL_BASH"],
+		"weight": 3
 	},
 	{
 		"speciesId": "lapras_shadow",
@@ -20,7 +21,8 @@
 	},
 	{
 		"speciesId": "dewgong",
-		"chargedMoves": ["ICY_WIND", "WATER_PULSE"]
+		"chargedMoves": ["ICY_WIND", "WATER_PULSE"],
+		"weight": 4
 	},
 	{
 		"speciesId": "marowak_alolan",
@@ -38,7 +40,7 @@
 	{
 		"speciesId": "vigoroth",
 		"chargedMoves": ["BODY_SLAM", "BULLDOZE"],
-		"weight": 35
+		"weight": 38
 	},
 	{
 		"speciesId": "gliscor",
@@ -90,7 +92,7 @@
 	},
 	{
 		"speciesId": "altaria",
-		"weight": 15
+		"weight": 18
 	},
 	{
 		"speciesId": "charizard",
@@ -102,7 +104,7 @@
 	},
 	{
 		"speciesId": "stunfisk",
-		"weight": 10
+		"weight": 12
 	},
 	{
 		"speciesId": "obstagoon",
@@ -118,11 +120,11 @@
 	},
 	{
 		"speciesId": "lickitung_xl",
-		"weight": 3
+		"weight": 2
 	},
 	{
 		"speciesId": "galvantula",
-		"weight": 3
+		"weight": 6
 	},
 	{
 		"speciesId": "graveler_alolan",
