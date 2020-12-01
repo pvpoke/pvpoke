@@ -3992,6 +3992,25 @@
         },
         "eliteMoves": ["ICE_SHARD", "AQUA_JET", "ICY_WIND"]
     }, {
+        "dex": 87,
+        "speciesName": "Dewgong (XL)",
+        "speciesId": "dewgong_xl",
+        "baseStats": {
+            "atk": 139,
+            "def": 177,
+            "hp": 207
+        },
+        "types": ["water", "ice"],
+        "fastMoves": ["FROST_BREATH", "ICE_SHARD", "IRON_TAIL"],
+        "chargedMoves": ["AQUA_JET", "AURORA_BEAM", "BLIZZARD", "ICY_WIND", "WATER_PULSE"],
+        "defaultIVs": {
+            "cp500": [9.5, 5, 9, 15],
+            "cp1500": [28.5, 5, 14, 10],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "eliteMoves": ["ICE_SHARD", "AQUA_JET", "ICY_WIND"],
+		"tags": ["xl"]
+    }, {
         "dex": 88,
         "speciesName": "Grimer",
         "speciesId": "grimer",
@@ -17739,6 +17758,24 @@
             "cp2500": [25.5, 6, 15, 9]
         },
         "tags": ["legendary"]
+    }, {
+        "dex": 646,
+        "speciesId": "kyurem_xl",
+        "speciesName": "Kyurem (XL)",
+        "baseStats": {
+            "atk": 246,
+            "def": 170,
+            "hp": 245
+        },
+        "types": ["dragon", "ice"],
+        "fastMoves": ["DRAGON_BREATH", "STEEL_WING"],
+        "chargedMoves": ["DRAGON_CLAW", "BLIZZARD", "DRACO_METEOR"],
+        "defaultIVs": {
+            "cp500": [5.5, 6, 5, 7],
+            "cp1500": [15.5, 7, 12, 6],
+            "cp2500": [25.5, 6, 15, 9]
+        },
+        "tags": ["legendary", "xl"]
     }, {
         "dex": 646,
         "speciesId": "kyurem_black",
