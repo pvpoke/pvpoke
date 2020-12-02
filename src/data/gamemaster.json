@@ -343,6 +343,15 @@
         }],
         "partySize": 3
     }, {
+        "name": "classic",
+        "title": "Classic",
+        "include": [],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["xl","mega"]
+        }],
+        "partySize": 3
+    }, {
         "name": "grunt",
         "title": "Grunt Cup",
         "restrictedPokemon": ["ivysaur", "ivysaur_shadow", "venusaur", "venusaur_shadow", "wartortle", "wartortle_shadow", "blastoise", "blastoise_shadow", "charmeleon", "charmeleon_shadow", "charizard", "charizard_shadow"],
@@ -18157,6 +18166,24 @@
             "cp1500": [40, 13, 14, 15],
             "cp2500": [40, 15, 15, 15]
         }
+    }, {
+        "dex": 660,
+        "speciesName": "Diggersby (XL)",
+        "speciesId": "diggersby_xl",
+        "baseStats": {
+            "atk": 112,
+            "def": 155,
+            "hp": 198
+        },
+        "types": ["normal", "ground"],
+        "fastMoves": ["MUD_SHOT", "QUICK_ATTACK"],
+        "chargedMoves": ["DIG", "HYPER_BEAM", "EARTHQUAKE", "FIRE_PUNCH"],
+        "defaultIVs": {
+            "cp500": [12.5, 8, 12, 11],
+            "cp1500": [47, 4, 15, 13],
+            "cp2500": [50, 15, 15, 15]
+        },
+		"tags": ["xl"]
     }, {
         "dex": 661,
         "speciesName": "Fletchling",

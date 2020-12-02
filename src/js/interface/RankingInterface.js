@@ -75,7 +75,7 @@ var InterfaceMaster = (function () {
 					$(".league-select option[value=\"10000\"]").prop("selected","selected");
 				}
 
-				if((cup == "uber")&&(league != 10000)){
+				if((cup == "classic")&&(league != 10000)){
 					league = 10000;
 
 					$(".league-select option[value=\"10000\"]").prop("selected","selected");

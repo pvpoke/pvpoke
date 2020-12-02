@@ -409,6 +409,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if((cup.name == "classic")&&(battle.getCP() == 10000)){
+					iterations = 1;
+				}
+
 				if((cup.name == "uber")&&(battle.getCP() == 10000)){
 					iterations = 1;
 				}
