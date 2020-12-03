@@ -18234,7 +18234,26 @@
             "cp500": [8.5, 5, 13, 12],
             "cp1500": [26, 5, 10, 7],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 3
+    }, {
+        "dex": 663,
+        "speciesName": "Talonflame (XL)",
+        "speciesId": "talonflame_xl",
+        "baseStats": {
+            "atk": 176,
+            "def": 155,
+            "hp": 186
+        },
+        "types": ["fire", "flying"],
+        "fastMoves": ["PECK", "FIRE_SPIN", "STEEL_WING"],
+        "chargedMoves": ["BRAVE_BIRD", "FIRE_BLAST", "FLAME_CHARGE", "HURRICANE"],
+        "defaultIVs": {
+            "cp500": [8.5, 5, 13, 12],
+            "cp1500": [26, 5, 10, 7],
+            "cp2500": [50, 15, 15, 15]
+        },
+		"tags": ["xl"]
     }, {
         "dex": 664,
         "speciesName": "Scatterbug",
