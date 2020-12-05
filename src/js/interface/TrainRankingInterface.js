@@ -120,8 +120,7 @@ var InterfaceMaster = (function () {
 					var color = battle.getRatingColor(colorRating);
 					$row.find(".team-score .score").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
 
-					$row.find(".usage").html((r.games * 100).toFixed(1)+"%");
-
+					$row.find(".usage").html((r.games / (data.properties.totalPerformers / 3) * 100).toFixed(1)+"%");
 					$row.find(".link a").attr("href", host+"rankings/" + battle.getCup().name + "/" + battle.getCP() + "/overall/" + pokemon.speciesId + "/");
 
 					$(".train-table.performers tbody").append($row);
@@ -180,7 +179,7 @@ var InterfaceMaster = (function () {
 					var color = battle.getRatingColor(colorRating);
 
 					$row.find(".team-score .score").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
-					$row.find(".usage").html((r.games*100).toFixed(1)+"%");
+					$row.find(".usage").html(((r.games / data.properties.totalTeams)*100).toFixed(1)+"%");
 
 					$(".train-table.teams tbody").append($row);
 				}
