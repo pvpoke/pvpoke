@@ -82,7 +82,7 @@ require_once '../header.php';
 
 	<h3>Top Performers</h3>
 
-	<p>Average performance for individual Pokemon and movesets used in PvPoke.com <a href="<?php echo $WEB_ROOT; ?>train/">Training Battles</a>. Data is sampled from both players and bots in the Elite and Champion difficulties.</p>
+	<p>Average performance for individual Pokemon and movesets used in PvPoke.com <a href="<?php echo $WEB_ROOT; ?>train/">Training Battles</a>. Data is sampled from both players and bots in the Elite and Champion difficulties. If a Pokemon or moveset isn't listed, it may not have a sufficient usage.</p>
 
 	<div class="poke-search-container">
 		<input class="poke-search" target="performers" type="text" placeholder="Search Pokemon" />
@@ -212,7 +212,7 @@ require_once '../header.php';
 	<div class="toggle-content">
 		<p>This page offers another way to analyze the PvP meta to find Pokemon and teams that may work for you. Knowing what the data represents will help you make the most of it.</p>
 		<h2>Where does this data come from?</h2>
-		<p>Data is sampled from <a href="<?php echo $WEB_ROOT; ?>train/">Training Battles</a> people play against the site's bot. The sampled data is typically over a 7-day period. It includes Pokemon and team data as played by both players and the bot.</p>
+		<p>Data is sampled from <a href="<?php echo $WEB_ROOT; ?>train/">Training Battles</a> people play against the site's bot. The sampled data is typically over a 7-day period. It includes Pokemon and team data as played by both players and the bot. While it doesn't directly represent battles from the game, it is a close approximation.</p>
 		<p>The data is sampled with a threshold of around 150 minimum games for Pokemon, and 20 games minimum for teams. Pokemon and teams near these thresholds are marked orange to highlight their small sample sizes. Pokemon or teams with small sample sizes are more prone to being outliers (whether overperforming or underperforming). Consider these data points with some healthy skepticism.</p>
 		<h3>How does this page differ from the regular rankings?</h3>
 		<p>The regular rankings are generated using 1 vs 1 simulations between eligible Pokemon. The results are empirical and repeatable, but don't take into account team composition or full dynamic play like switching or failed/successful baits. It can provide immediate results for new Pokemon or move updates.</p>
