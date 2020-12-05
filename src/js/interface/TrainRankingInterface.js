@@ -16,7 +16,8 @@ var InterfaceMaster = (function () {
 			var context = "train_rankings";
 			var mode = "pokemon";
 			var battle = new Battle();
-			var csv = '';
+			var performerCSV = '';
+			var teamCSV = '';
 
 
 			this.init = function(){
@@ -68,7 +69,7 @@ var InterfaceMaster = (function () {
 
 				// Initialize csv data
 
-				csv = 'Pokemon,Score,Type 1,Type 2,Attack,Defense,Stamina,Stat Product,Level,Fast Move,Charged Move 1,Charged Move 2\n';
+				performerCSV = 'Pokemon,Team Rating,Individual Rating,Usage\n';
 
 
 				// Display top performers rankings
@@ -120,13 +121,21 @@ var InterfaceMaster = (function () {
 					var color = battle.getRatingColor(colorRating);
 					$row.find(".team-score .score").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
 
-					$row.find(".usage").html((r.games / (data.properties.totalPerformers / 3) * 100).toFixed(1)+"%");
+					var usage = (r.games / (data.properties.totalPerformers / 3) * 100).toFixed(1)+"%"
+					$row.find(".usage").html(usage);
 					$row.find(".link a").attr("href", host+"rankings/" + battle.getCup().name + "/" + battle.getCP() + "/overall/" + pokemon.speciesId + "/");
 
+					if(r.games < 250){
+						$row.find(".usage").addClass("low-volume");
+					}
+
 					$(".train-table.performers tbody").append($row);
+
+					performerCSV += pokemon.speciesName + ' ' + movesetStr + ',' + r.teamScore + ',' + r.individualScore + ',' + usage + '\n';
 				}
 
 				// Display top teams rankings
+				teamCSV = 'Team,Team Rating,Usage\n'
 
 				for(var i = 0; i < rankings.teams.length; i++){
 					var r = rankings.teams[i];
@@ -137,6 +146,9 @@ var InterfaceMaster = (function () {
 					var $row = $(".train-table.teams thead tr.hide").clone();
 					$row.removeClass("hide");
 
+					var teamURL = host + "team-builder/" + battle.getCup().name + "/" + battle.getCP() + "/";
+					var teamStr = '';
+
 					for(var n = 0; n < arr.length; n++){
 						var speciesId = arr[n].split(" ")[0];
 						var movesetStr = arr[n].split(" ")[1];
@@ -146,6 +158,8 @@ var InterfaceMaster = (function () {
 						if(! pokemon.speciesId){
 							continue;
 						}
+
+						teamStr += pokemon.speciesName + " " + movesetStr + " ";
 
 						$row.find(".sprite-container").eq(n).attr("type-1", pokemon.types[0]);
 						$row.find(".sprite-container").eq(n).attr("type-2", pokemon.types[0]);
@@ -158,9 +172,46 @@ var InterfaceMaster = (function () {
 						$row.find(".name").eq(n).html(pokemon.speciesName);
 						$row.find(".moves").eq(n).html(movesetStr);
 
+						var abbreviationArr = movesetStr.split("/");
+
+						// Identify fast move
+						var fastMoveIndex = 0;
+
+						for(var j = 0; j < pokemon.fastMovePool.length; j++){
+							if(pokemon.fastMovePool[j].abbreviation == abbreviationArr[0]){
+								fastMoveIndex = j;
+								break;
+							}
+						}
+
+						var chargedMoveIndexes = [];
+
+						for(var j = 0; j < pokemon.chargedMovePool.length; j++){
+							if(pokemon.chargedMovePool[j].abbreviation == abbreviationArr[1]){
+								chargedMoveIndexes.push(j+1);
+							}
+
+							if((abbreviationArr.length > 2)&&(pokemon.chargedMovePool[j].abbreviation == abbreviationArr[2])){
+								chargedMoveIndexes.push(j+1);
+							}
+						}
+
+						var pokeStr = pokemon.speciesId + "-m-" + fastMoveIndex + "-" + chargedMoveIndexes[0];
+
+						if(chargedMoveIndexes.length > 1){
+							pokeStr += "-" + chargedMoveIndexes[1];
+						}
+
+						if(n > 0){
+							teamURL += ",";
+						}
+
+						teamURL += pokeStr;
+
 						team.push(pokemon);
 					}
 
+					$row.find(".link a").attr("href", teamURL);
 					$row.find(".team-score .score").html(r.teamScore.toFixed(1));
 
 					if(r.teamScore >= 500){
@@ -177,9 +228,16 @@ var InterfaceMaster = (function () {
 					}
 
 					var color = battle.getRatingColor(colorRating);
+					var usage = ((r.games / data.properties.totalTeams)*100).toFixed(1)+"%";
 
 					$row.find(".team-score .score").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
-					$row.find(".usage").html(((r.games / data.properties.totalTeams)*100).toFixed(1)+"%");
+					$row.find(".usage").html(usage);
+
+					if(r.games < 30){
+						$row.find(".usage").addClass("low-volume");
+					}
+
+					teamCSV += teamStr + ',' + r.teamScore + ',' + usage + '\n';
 
 					$(".train-table.teams tbody").append($row);
 				}
@@ -187,21 +245,32 @@ var InterfaceMaster = (function () {
 				$(".loading").hide();
 
 				// Update download link with new data
-				var filename = $(".cup-select option:selected").html() + " Rankings.csv";
+				var filename = battle.getCup().name + " " + battle.getCP() + " Top Performers.csv";
 				var filedata = '';
 
-				if(context == "custom"){
-					filename = "Custom Rankings.csv";
-				}
-
-				if (!csv.match(/^data:text\/csv/i)) {
-					filedata = [csv];
+				if (!performerCSV.match(/^data:text\/csv/i)) {
+					filedata = [performerCSV];
 					filedata = new Blob(filedata, { type: 'text/csv'});
 				}
 
-				$(".button.download-csv").attr("href", window.URL.createObjectURL(filedata));
-				$(".button.download-csv").attr("download", filename);
+				$(".button.download-csv.performers").attr("href", window.URL.createObjectURL(filedata));
+				$(".button.download-csv.performers").attr("download", filename);
 
+				// Update download link with new data
+				var filename = battle.getCup().name + " " + battle.getCP() + " Top Teams.csv";
+				var filedata = '';
+
+				if (!performerCSV.match(/^data:text\/csv/i)) {
+					filedata = [teamCSV];
+					filedata = new Blob(filedata, { type: 'text/csv'});
+				}
+
+				$(".button.download-csv.teams").attr("href", window.URL.createObjectURL(filedata));
+				$(".button.download-csv.teams").attr("download", filename);
+
+				// Display last update date
+
+				$(".date-updated").html("Last updated " + data.properties.lastUpdated);
 
 				// If search string exists, process it
 
@@ -445,9 +514,9 @@ var InterfaceMaster = (function () {
 						break;
 				}
 
-
-
 				self.displayRankingData(data);
+
+				submitSearchQuery();
 			}
 
 			var searchTimeout;

@@ -173,7 +173,14 @@ if(! isset($OG_IMAGE)){
 			</div>
 			<div class="menu">
 				<a class="icon-battle" href="<?php echo $WEB_ROOT; ?>battle/">Battle</a>
-				<a class="icon-train" href="<?php echo $WEB_ROOT; ?>train/">Train</a>
+				<div class="parent-menu">
+					<a class="icon-train" href="<?php echo $WEB_ROOT; ?>train/">Train</a>
+					<div class="submenu">
+						<div class="submenu-wrap">
+							<a class="icon-rankings" href="<?php echo $WEB_ROOT; ?>train/analysis/">Training Analysis</a>
+						</div>
+					</div>
+				</div>
 				<div class="parent-menu">
 					<a class="icon-rankings" href="<?php echo $WEB_ROOT; ?>rankings/">Rankings</a>
 					<div class="submenu">

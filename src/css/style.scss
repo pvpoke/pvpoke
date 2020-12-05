@@ -3678,12 +3678,16 @@ a.pokebattler{
 
 .analysis-container{
 	.table-container{
-		max-height: 600px;
+		max-height: 500px;
 		margin-bottom:20px;
 	}
 
 	.column-description{
 		font-size:12px;
+	}
+
+	.poke-search-container{
+		margin: 15px 0;
 	}
 
 	.sort-category{
@@ -3706,6 +3710,21 @@ a.pokebattler{
 				font-weight: bold;
 			}
 		}
+	}
+
+	.low-volume{
+		color:#ff5115;
+		font-weight: bold;
+	}
+
+	a.download-csv{
+		margin:0;
+		font-size:14px;
+	}
+
+	.date-updated{
+		font-style: italic;
+	    font-size: 12px;
 	}
 }
 
@@ -3736,6 +3755,7 @@ a.pokebattler{
 		display:flex;
 		padding: 6px 2px;
 		width:125px;
+		vertical-align: top;
 
 		.sprite-container{
 			width:30px;
@@ -3745,6 +3765,7 @@ a.pokebattler{
 			border:none;
 			margin: 0 5px 0 0;
 			padding: 0;
+			flex-shrink: 0;
 		}
 
 		.number{
@@ -3780,7 +3801,7 @@ a.pokebattler{
 		background-color: rgb(52, 102, 174);
 		background-size: 25px;
 	    background-repeat: no-repeat;
-	    background-position: 0 center;
+	    background-position: 4px center;
 	    padding-left: 30px;
 		line-height: 25px;
 		color:#fff6d4;
@@ -3901,6 +3922,10 @@ a.pokebattler{
 
 	.battle-results.matrix .table-container{
 		max-height: 800px;
+	}
+
+	.analysis-container .table-container{
+		max-height: 600px;
 	}
 
 	.train-table{

@@ -15,6 +15,7 @@
 		// Submenu interaction on desktop
 
 		$(".menu .parent-menu").on("mouseover click", function(e){
+			$(".submenu").removeClass("active");
 			$(this).find(".submenu").addClass("active");
 		});
 
