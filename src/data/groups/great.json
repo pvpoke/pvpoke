@@ -27,7 +27,7 @@
 	{
 		"speciesId":"medicham",
 		"fastMove":"COUNTER",
-		"chargedMoves":["DYNAMIC_PUNCH","ICE_PUNCH"]
+		"chargedMoves":["PSYCHIC","ICE_PUNCH"]
 	},
 	{
 		"speciesId":"scrafty",
@@ -70,6 +70,11 @@
 		"chargedMoves":["LEAF_BLADE","FOUL_PLAY"]
 	},
 	{
+		"speciesId":"chesnaught",
+		"fastMove":"VINE_WHIP",
+		"chargedMoves":["ENERGY_BALL","SUPER_POWER"]
+	},
+	{
 		"speciesId":"dewgong",
 		"fastMove":"ICE_SHARD",
 		"chargedMoves":["ICY_WIND","WATER_PULSE"]
@@ -110,11 +115,6 @@
 		"chargedMoves":["HYDRO_CANNON","SLUDGE_WAVE"]
 	},
 	{
-		"speciesId":"swampert",
-		"fastMove":"MUD_SHOT",
-		"chargedMoves":["HYDRO_CANNON","EARTHQUAKE"]
-	},
-	{
 		"speciesId":"froslass",
 		"fastMove":"POWDER_SNOW",
 		"chargedMoves":["AVALANCHE","SHADOW_BALL"]
@@ -122,12 +122,12 @@
 	{
 		"speciesId":"sableye",
 		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["FOUL_PLAY","POWER_GEM"]
+		"chargedMoves":["FOUL_PLAY","RETURN"]
 	},
 	{
 		"speciesId":"marowak_alolan",
 		"fastMove":"FIRE_SPIN",
-		"chargedMoves":["SHADOW_BALL","BONE_CLUB"]
+		"chargedMoves":["SHADOW_BONE","BONE_CLUB"]
 	},
 	{
 		"speciesId":"deoxys_defense",
@@ -147,7 +147,7 @@
 	{
 		"speciesId":"mew",
 		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["WILD_CHARGE","SURF"]
+		"chargedMoves":["WILD_CHARGE","FLAME_CHARGE"]
 	},
 	{
 		"speciesId":"clefable",
@@ -167,7 +167,7 @@
 	{
 		"speciesId":"hypno_shadow",
 		"fastMove":"CONFUSION",
-		"chargedMoves":["ICE_PUNCH","THUNDER_PUNCH"]
+		"chargedMoves":["FIRE_PUNCH","THUNDER_PUNCH"]
 	},
 	{
 		"speciesId":"registeel",
@@ -210,11 +210,6 @@
 		"chargedMoves":["WEATHER_BALL_ICE","ENERGY_BALL"]
 	},
 	{
-		"speciesId":"pelipper",
-		"fastMove":"WING_ATTACK",
-		"chargedMoves":["WEATHER_BALL_WATER","HURRICANE"]
-	},
-	{
 		"speciesId":"zweilous",
 		"fastMove":"DRAGON_BREATH",
 		"chargedMoves":["BODY_SLAM","DARK_PULSE"]
@@ -228,6 +223,16 @@
 		"speciesId":"munchlax",
 		"fastMove":"LICK",
 		"chargedMoves":["BODY_SLAM","BULLDOZE"]
+	},
+	{
+		"speciesId":"diggersby",
+		"fastMove":"MUD_SHOT",
+		"chargedMoves":["FIRE_PUNCH","EARTHQUAKE"]
+	},
+	{
+		"speciesId":"lickitung_xl",
+		"fastMove":"LICK",
+		"chargedMoves":["BODY_SLAM","POWER_WHIP"]
 	},
 	{
 		"speciesId":"victreebel_shadow",

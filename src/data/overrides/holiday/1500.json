@@ -1,0 +1,153 @@
+[
+	{
+		"speciesId": "sandslash_alolan",
+		"chargedMoves": ["ICE_PUNCH", "BULLDOZE"],
+		"weight": 2
+	},
+	{
+		"speciesId": "froslass",
+		"chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "lapras",
+		"fastMove": "ICE_SHARD",
+		"chargedMoves": ["SURF", "SKULL_BASH"],
+		"weight": 3
+	},
+	{
+		"speciesId": "lapras_shadow",
+		"fastMove": "ICE_SHARD",
+		"chargedMoves": ["SURF", "SKULL_BASH"]
+	},
+	{
+		"speciesId": "dewgong",
+		"chargedMoves": ["ICY_WIND", "WATER_PULSE"],
+		"weight": 4
+	},
+	{
+		"speciesId": "marowak_alolan",
+		"chargedMoves": ["SHADOW_BONE", "BONE_CLUB"],
+		"weight": 35
+	},
+	{
+		"speciesId": "chansey",
+		"fastMove": "POUND"
+	},
+	{
+		"speciesId": "cloyster_shadow",
+		"chargedMoves": ["ICY_WIND", "FRUSTRATION"]
+	},
+	{
+		"speciesId": "vigoroth",
+		"chargedMoves": ["BODY_SLAM", "BULLDOZE"],
+		"weight": 40
+	},
+	{
+		"speciesId": "diggersby_xl",
+		"weight": 10
+	},
+	{
+		"speciesId": "gliscor",
+		"chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "gliscor_shadow",
+		"chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "castform_snowy",
+		"chargedMoves": ["WEATHER_BALL_ICE", "BLIZZARD"]
+	},
+	{
+		"speciesId": "piloswine",
+		"chargedMoves": ["AVALANCHE", "BULLDOZE"]
+	},
+	{
+		"speciesId": "mamoswine",
+		"chargedMoves": ["AVALANCHE", "BULLDOZE"]
+	},
+	{
+		"speciesId": "cloyster",
+		"chargedMoves": ["AVALANCHE", "HYDRO_PUMP"]
+	},
+	{
+		"speciesId": "ninetales_alolan",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "froslass",
+		"weight": 8
+	},
+	{
+		"speciesId": "articuno",
+		"weight": 1
+	},
+	{
+		"speciesId": "wigglytuff",
+		"weight": 10
+	},
+	{
+		"speciesId": "abomasnow",
+		"weight": 4
+	},
+	{
+		"speciesId": "skarmory",
+		"weight": 30
+	},
+	{
+		"speciesId": "altaria",
+		"weight": 18
+	},
+	{
+		"speciesId": "charizard",
+		"weight": 2
+	},
+	{
+		"speciesId": "lanturn",
+		"weight": 4
+	},
+	{
+		"speciesId": "stunfisk",
+		"weight": 12
+	},
+	{
+		"speciesId": "obstagoon",
+		"weight": 20
+	},
+	{
+		"speciesId": "snorlax",
+		"weight": 2
+	},
+	{
+		"speciesId": "castform_snowy",
+		"weight": 2
+	},
+	{
+		"speciesId": "lickitung_xl",
+		"weight": 2
+	},
+	{
+		"speciesId": "galvantula",
+		"weight": 6
+	},
+	{
+		"speciesId": "graveler_alolan",
+		"weight": 12
+	},
+	{
+		"speciesId": "golem_alolan",
+		"chargedMoves": ["ROCK_BLAST", "WILD_CHARGE"]
+	},
+	{
+		"speciesId": "victreebel_shadow",
+		"chargedMoves": ["LEAF_BLADE", "ACID_SPRAY"]
+	},
+	{
+		"speciesId": "victreebel",
+		"chargedMoves": ["LEAF_BLADE", "ACID_SPRAY"]
+	},
+	{
+		"speciesId": "venusaur",
+		"weight": 1
+	}
+]

@@ -677,24 +677,6 @@
     "tags": ["shadoweligible", "mega"],
     "eliteMoves": ["SYNCHRONOISE"]
 }, {
-    "dex": 460,
-    "speciesName": "Abomasnow (Mega)",
-    "speciesId": "abomasnow_mega",
-    "baseStats": {
-        "atk": 240,
-        "def": 191,
-        "hp": 207
-    },
-    "types": ["grass", "ice"],
-    "fastMoves": ["POWDER_SNOW", "RAZOR_LEAF"],
-    "chargedMoves": ["BLIZZARD", "ENERGY_BALL", "OUTRAGE", "WEATHER_BALL_ICE"],
-    "defaultIVs": {
-        "cp1500": [15.5, 14, 15, 14],
-        "cp2500": [27, 7, 8, 14]
-    },
-    "level25CP": 2129,
-    "tags": ["shadoweligible", "mega"]
-}, {
     "dex": 382,
     "speciesName": "Kyogre (Primal)",
     "speciesId": "kyogre_primal",

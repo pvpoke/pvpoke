@@ -13,6 +13,14 @@
 		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
 	},
 	{
+		"speciesId": "machamp_xl",
+		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
+	},
+	{
+		"speciesId": "machamp_shadow_xl",
+		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
+	},
+	{
 		"speciesId": "gliscor_shadow",
 		"chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"]
 	},
@@ -126,6 +134,14 @@
 		"fastMove": "CHARM"
 	},
 	{
+		"speciesId": "gardevoir_xl",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "gardevoir_shadow_xl",
+		"fastMove": "CHARM"
+	},
+	{
 		"speciesId": "roserade",
 		"fastMove": "RAZOR_LEAF"
 	},
@@ -139,6 +155,11 @@
 		"fastMove": "MUD_SLAP",
 		"chargedMoves": ["ROCK_WRECKER","SURF"],
 		"weight": 9
+	},
+	{
+		"speciesId": "rhyperior_xl",
+		"fastMove": "MUD_SLAP",
+		"chargedMoves": ["ROCK_WRECKER","SURF"]
 	},
 	{
 		"speciesId": "snorlax",
@@ -159,6 +180,14 @@
 		"chargedMoves": ["METEOR_MASH", "EARTHQUAKE"]
 	},
 	{
+		"speciesId": "metagross_xl",
+		"chargedMoves": ["METEOR_MASH", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "metagross_shadow_xl",
+		"chargedMoves": ["METEOR_MASH", "EARTHQUAKE"]
+	},
+	{
 		"speciesId": "togekiss",
 		"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"],
 		"weight": 35
@@ -173,6 +202,16 @@
 		"fastMove": "FIRE_SPIN"
 	},
 	{
+		"speciesId": "charizard_xl",
+		"fastMove": "FIRE_SPIN",
+		"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
+	},
+	{
+		"speciesId": "charizard_shadow_xl",
+		"fastMove": "FIRE_SPIN",
+		"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
+	},
+	{
 		"speciesId": "garchomp",
 		"chargedMoves": ["SAND_TOMB","OUTRAGE"],
 		"weight": 19
@@ -183,12 +222,28 @@
 		"weight": 38
 	},
 	{
+		"speciesId": "dragonite_xl",
+		"chargedMoves": ["DRAGON_CLAW","HURRICANE"]
+	},
+	{
+		"speciesId": "dragonite_shadow_xl",
+		"chargedMoves": ["DRAGON_CLAW","HURRICANE"]
+	},
+	{
 		"speciesId": "gyarados",
 		"fastMove": ["DRAGON_BREATH"],
 		"weight": 27
 	},
 	{
 		"speciesId": "gyarados_shadow",
+		"fastMove": ["DRAGON_BREATH"]
+	},
+	{
+		"speciesId": "gyarados_xl",
+		"fastMove": ["DRAGON_BREATH"]
+	},
+	{
+		"speciesId": "gyarados_shadow_xl",
 		"fastMove": ["DRAGON_BREATH"]
 	},
 	{
@@ -204,6 +259,10 @@
 		"speciesId": "mamoswine",
 		"chargedMoves": ["AVALANCHE","BULLDOZE"],
 		"weight": 6
+	},
+	{
+		"speciesId": "mamoswine_xl",
+		"chargedMoves": ["AVALANCHE","BULLDOZE"]
 	},
 	{
 		"speciesId": "conkeldurr",

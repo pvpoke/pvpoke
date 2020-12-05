@@ -1,10 +1,9 @@
 <select class="format-select">
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
-	<option value="official" cup="kanto">Kanto Cup</option>
-	<option value="official" cup="little">Little Cup</option>
-	<option value="tsa-3" cup="marsh">Silph Marsh Cup</option>
-	<option value="community" cup="uber">Uber Tier Cup</option>
+	<option value="official" cup="classic">Classic (ML Only)</option>
+	<option value="official" cup="holiday">Holiday Cup</option>
+	<option value="tsa-3" cup="nightfall">Silph Nightfall Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>
@@ -24,6 +23,8 @@
 	<option value="halloween" cat="official">Halloween Cup</option>
 	<option value="kanto" cat="official">Kanto Cup</option>
 	<option value="little" cat="official">Little Cup</option>
+	<option value="holiday" cat="official">Holiday Cup</option>
+	<option value="classic" cat="official">Classic (ML Only)</option>
 	<option value="safari" cat="community">Montreal Safari Cup</option>
 	<option value="fantasy" cat="community">GO LIVE Fantasy Cup</option>
 	<option value="beam" cat="community">Get Beamed</option>
@@ -65,5 +66,6 @@
 	<option value="duet" cat="tsa-2">Duet Cup</option>
 	<option value="sunrise" cat="tsa-3">Sunrise Cup</option>
 	<option value="marsh" cat="tsa-3">Marsh Cup</option>
+	<option value="nightfall" cat="tsa-3">Nightfall Cup</option>
 	<option value="custom" cat="custom">Custom</option>
 </select>

@@ -326,6 +326,7 @@ var InterfaceMaster = (function () {
 				// Gather advanced settings
 				var scorecardCount = parseInt($(".scorecard-length-select option:selected").val());
 				var allowShadows = $(".team-option .check.allow-shadows").hasClass("on");
+				var allowXL = $(".team-option .check.allow-xl").hasClass("on");
 				var baitShields = $(".team-option .check.shield-baiting").hasClass("on");
 
 				if(battle.getCup().name == "shadow"){
@@ -471,6 +472,11 @@ var InterfaceMaster = (function () {
 						continue;
 					}
 
+					if((r.speciesId.indexOf("_xl") > -1)&&(! allowXL)){
+						i++;
+						continue;
+					}
+
 					var pokemon = new Pokemon(r.speciesId, 1, battle);
 					pokemon.initialize(true);
 
@@ -590,6 +596,11 @@ var InterfaceMaster = (function () {
 					}
 
 					if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
+						i++;
+						continue;
+					}
+
+					if((r.speciesId.indexOf("_xl") > -1)&&(! allowXL)){
 						i++;
 						continue;
 					}
@@ -736,6 +747,11 @@ var InterfaceMaster = (function () {
 
 					if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
 						i++
+						continue;
+					}
+
+					if((r.speciesId.indexOf("_xl") > -1)&&(! allowXL)){
+						i++;
 						continue;
 					}
 

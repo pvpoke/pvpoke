@@ -385,6 +385,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if(cup.name == "holiday"){
+					iterations = 1;
+				}
+
 				if(cup.name == "rose"){
 					iterations = 1;
 				}
@@ -402,6 +406,10 @@ var RankerMaster = (function () {
 				}
 
 				if((cup.name == "all")&&(battle.getCP() == 10000)){
+					iterations = 1;
+				}
+
+				if((cup.name == "classic")&&(battle.getCP() == 10000)){
 					iterations = 1;
 				}
 

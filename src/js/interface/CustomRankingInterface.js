@@ -46,6 +46,7 @@ function interfaceObject(){
 	this.init = function(){
 
 		var data = GameMaster.getInstance().data;
+
 		rankingInterface.setContext("custom");
 		rankingInterface.setCustomRankingInterface(self);
 

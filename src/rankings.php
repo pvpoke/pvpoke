@@ -35,32 +35,15 @@ switch($cup){
 		$league = 'Premier';
 		break;
 
-	case "flying":
-		$league = 'Flying Cup';
+	case "nightfall":
+		$league = 'Silph Nightfall Cup';
+		break;
+	case "classic":
+		$league = 'Master League Classic';
 		break;
 
-	case "halloween":
-		$league = 'Halloween Cup';
-		break;
-
-	case "sunrise":
-		$league = 'Silph Sunrise Cup';
-		break;
-
-	case "marsh":
-		$league = 'Silph Marsh Cup';
-		break;
-
-	case "uber":
-		$league = 'Uber Tier Cup';
-		break;
-
-	case "little":
-		$league = 'Little Cup';
-		break;
-
-	case "kanto":
-		$league = 'Kanto Cup';
+	case "holiday":
+		$league = 'Holiday Cup';
 		break;
 
 }

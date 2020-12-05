@@ -30,6 +30,18 @@
 		"weight": 7
 	},
 	{
+		"speciesId": "toxicroak_xl",
+		"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
+	},
+	{
+		"speciesId": "dewgong_xl",
+		"chargedMoves": ["ICY_WIND", "WATER_PULSE"]
+	},
+	{
+		"speciesId": "dewgong",
+		"chargedMoves": ["ICY_WIND", "WATER_PULSE"]
+	},
+	{
 		"speciesId": "poliwrath",
 		"weight": 5
 	},
@@ -125,7 +137,7 @@
 	},
 	{
 		"speciesId": "blaziken",
-		"chargedMoves": ["BLAZE_KICK", "BRAVE_BIRD"]
+		"chargedMoves": ["BLAZE_KICK", "BLAST_BURN"]
 	},
 	{
 		"speciesId": "feraligatr",

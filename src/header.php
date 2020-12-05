@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.18.10.1';
+$SITE_VERSION = '1.19.1.1';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -29,7 +29,7 @@ if(isset($_COOKIE['settings'])){
 	}
 
 	// Validate the gamemaster setting, only allow these options
-	$gamemasters = ["gamemaster", "gamemaster-mega", "gamemaster-kalos"];
+	$gamemasters = ["gamemaster", "gamemaster-mega"];
 
 	if(! in_array($_SETTINGS->gamemaster, $gamemasters)){
 		$_SETTINGS->gamemaster = "gamemaster";
@@ -135,26 +135,12 @@ if(! isset($OG_IMAGE)){
 
 	<?php endif; ?>
 
-	<?php if((strpos($_SERVER['REQUEST_URI'], 'mega') !== false) && (strpos($_SERVER['REQUEST_URI'], 'meganium') === false) && (strpos($_SERVER['REQUEST_URI'], 'venusaur_mega') === false) && (strpos($_SERVER['REQUEST_URI'], 'blastoise_mega') === false) && ((strpos($_SERVER['REQUEST_URI'], 'charizard_mega_x') === false)) && (strpos($_SERVER['REQUEST_URI'], 'charizard_mega_y') === false) && (strpos($_SERVER['REQUEST_URI'], 'beedrill_mega') === false) && (strpos($_SERVER['REQUEST_URI'], 'pidgeot_mega') === false) && (strpos($_SERVER['REQUEST_URI'], 'houndoom_mega') === false)):
+	<?php if((strpos($_SERVER['REQUEST_URI'], 'mega') !== false) && (strpos($_SERVER['REQUEST_URI'], 'meganium') === false) && (strpos($_SERVER['REQUEST_URI'], 'venusaur_mega') === false) && (strpos($_SERVER['REQUEST_URI'], 'blastoise_mega') === false) && ((strpos($_SERVER['REQUEST_URI'], 'charizard_mega_x') === false)) && (strpos($_SERVER['REQUEST_URI'], 'charizard_mega_y') === false) && (strpos($_SERVER['REQUEST_URI'], 'beedrill_mega') === false) && (strpos($_SERVER['REQUEST_URI'], 'pidgeot_mega') === false) && (strpos($_SERVER['REQUEST_URI'], 'houndoom_mega') === false)&& (strpos($_SERVER['REQUEST_URI'], 'abomasnow_mega') === false)):
 		$_SETTINGS->gamemaster = 'gamemaster-mega';
 		?>
 		// If "Mega" is contained in the URL, default to the mega gamemaster
 		settings.gamemaster = "gamemaster-mega";
 	<?php endif; ?>
-
-	<?php
-	// Use Kalos gamemaster for eligible Pokemon
-	$kalos = array("chesnaught","delphox","greninja","diggersby","talonflame","gogoat","pancham","pangoro","aegislash_blade","aegislash_shield","malamar","dragalge","auroros","sylveon","hawlucha","carbink","sliggoo","goodra","xerneas","yveltal","zygarde","zygarde_complete","diancie","volcanion");
-
-	foreach($kalos as $k){
-
-		if(strpos($_SERVER['REQUEST_URI'], $k) !== false){
-			$_SETTINGS->gamemaster = 'gamemaster-kalos'; ?>
-			settings.gamemaster = "gamemaster-kalos";
-			<?php
-		}
-	}
- 	?>
 
 
 	// If $_GET request exists, output as JSON into Javascript
