@@ -49,7 +49,7 @@ switch($cup){
 
 }
 
-$META_TITLE = $league . ' Train Analysis';
+$META_TITLE = $league . ' Training Analysis';
 
 $META_DESCRIPTION = 'Search the top Pokemon, top movesets, and top teams teams measured from the site\'s simulated Training Battles.';
 
