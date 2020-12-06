@@ -111,9 +111,11 @@ var BattlerMaster = (function () {
 				$(".battle-window .scene .pokemon-container").removeClass("animate-switch");
 				$(".battle-window .scene .pokemon-container .messages").html("");
 				$(".battle-window .countdown .text").html("");
-				$(".battle-window .switch-btn").show();
+				$(".battle-window .switch-window").show();
 				$(".switch-window").removeClass("active")
 				$(".battle-window").attr("mode", props.mode);
+
+				self.updateSwitchWindow();
 
 				$("body").addClass("battle-active");
 
@@ -208,7 +210,6 @@ var BattlerMaster = (function () {
 						case "suspend_switch_self":
 							phaseTimer = switchTime;
 							phaseInterval = setInterval(phaseStep, 1000 / 60);
-							self.openSwitchWindow();
 							interfaceLockout = 750;
 
 							// Clear a previously buffered switch
@@ -259,6 +260,7 @@ var BattlerMaster = (function () {
 				}
 
 				// Update Pokemon displays
+				var playerSwitchOccurred = false;
 
 				for(var i = 0; i < response.pokemon.length; i++){
 					var pokemon = response.pokemon[i];
@@ -316,6 +318,8 @@ var BattlerMaster = (function () {
 								$bar.find(".bar-back").attr("class","bar-back " + chargedMove.type);
 								$(".battle-window .move-labels .label").eq(n).html(chargedMove.name);
 							}
+
+							playerSwitchOccurred = true;
 						}
 					}
 
@@ -386,14 +390,10 @@ var BattlerMaster = (function () {
 
 					if(i == 0){
 						if(player.getSwitchTimer() == 0){
-							$(".battle-window .switch-btn").addClass("active");
-							$(".battle-window .switch-btn").html("&#8645;");
+							$(".battle-window .switch-window").addClass("active");
 						} else{
 							$(".battle-window .switch-btn").removeClass("active");
-							$(".battle-window .switch-btn").html(Math.floor(player.getSwitchTimer() / 1000));
-
-							// Hide the switch window
-							$(".battle-window .switch-window").removeClass("active");
+							$(".battle-window .switch-timer").html(Math.floor(player.getSwitchTimer() / 1000));
 						}
 					}
 				}
@@ -424,6 +424,11 @@ var BattlerMaster = (function () {
 						}
 
 						break;
+				}
+
+				// Update the switch sidebar if the player has switched
+				if(playerSwitchOccurred){
+					self.updateSwitchWindow();
 				}
 
 				// Display messages for this turn
@@ -527,7 +532,7 @@ var BattlerMaster = (function () {
 				// Hide the switch button if only one Pokemon remains
 
 				if(players[0].getRemainingPokemon() == 1){
-					$(".battle-window .switch-btn").hide();
+					$(".battle-window .switch-window").hide();
 				}
 
 				// Complete any outstanding switch animations
@@ -547,7 +552,7 @@ var BattlerMaster = (function () {
 				}
 			}
 
-			self.openSwitchWindow = function(){
+			self.updateSwitchWindow = function(){
 				// Update the switch window Pokemon
 				var team = players[0].getTeam();
 				var index = 0;
@@ -556,7 +561,6 @@ var BattlerMaster = (function () {
 					if(team[i] != activePokemon[0]){
 						$(".switch-window .pokemon").eq(index).find(".cp").html(team[i].cp);
 						$(".switch-window .pokemon").eq(index).find(".name").html(team[i].speciesName);
-						$(".switch-window .pokemon").eq(index).find(".name").attr("class", "name " + team[i].types[0]);
 						$(".switch-window .pokemon").eq(index).attr("index", i);
 						$(".switch-window .pokemon").eq(index).attr("type-1", team[i].types[0]);
 						if(team[i].types[1] == "none"){
@@ -570,6 +574,13 @@ var BattlerMaster = (function () {
 						} else{
 							$(".switch-window .pokemon").eq(index).removeClass("active");
 						}
+
+						if(team[i].hp > 0){
+							$(".switch-window .pokemon").eq(index).show();
+						} else{
+							$(".switch-window .pokemon").eq(index).hide();
+						}
+
 						index++;
 					}
 				}
@@ -901,15 +912,6 @@ var BattlerMaster = (function () {
 			function battleWindowClick(e){
 				if(interfaceLockout > 0){
 					return false;
-				}
-
-				// Open or close switch window
-				if($(".battle-window .switch-btn.active:hover").length > 0){
-					$(".switch-window").toggleClass("active");
-					if($(".switch-window").hasClass("active")){
-						self.openSwitchWindow();
-					}
-					return;
 				}
 
 				// Press one of the side button controls

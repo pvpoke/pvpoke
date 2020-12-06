@@ -62,25 +62,28 @@
 	</div>
 </div>
 
-<div class="switch-window">
+<div class="switch-window active">
 	<div class="container">
-		<p>Switch in a new pokemon?</p>
 		<div class="pokemon-container">
 			<div class="pokemon">
-				<div class="cp">cp 1500</div>
 				<div class="sprite-container">
+					<div class="cp">cp 1500</div>
 					<div class="main-sprite"></div>
 					<div class="secondary-sprite"></div>
+					<div class="health"></div>
 				</div>
 				<div class="name">Pokemon 1</div>
+				<div class="switch-timer">60</div>
 			</div>
 			<div class="pokemon">
-				<div class="cp">cp 1500</div>
 				<div class="sprite-container">
+					<div class="cp">cp 1500</div>
 					<div class="main-sprite"></div>
 					<div class="secondary-sprite"></div>
+					<div class="health"></div>
 				</div>
 				<div class="name">Pokemon 2</div>
+				<div class="switch-timer">60</div>
 			</div>
 		</div>
 	</div>

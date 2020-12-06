@@ -546,6 +546,7 @@ a.random{
 				.bar{
 					position:relative;
 					top:-16px;
+					background-color:#31e8b7;
 
 					@include transition(width, 0.2s, ease, 0s);
 
@@ -770,7 +771,7 @@ a.random{
 		}
 	}
 
-	.shield-window, .switch-window, .charge-window{
+	.shield-window, .charge-window{
 		position:absolute;
 		height:50%;
 		bottom:0;
@@ -781,8 +782,7 @@ a.random{
 		pointer-events: none;
 	}
 
-	.shield-window .container,
-	.switch-window .container{
+	.shield-window .container{
 		width:90%;
 		margin:0 auto;
 		height:100%;
@@ -865,25 +865,80 @@ a.random{
 	}
 
 	.switch-window{
-		height:30%;
-		opacity:1;
+		position: absolute;
 		text-align: center;
 		z-index:20;
-		bottom:-30%;
+		bottom: 33%;
+		right:0;
+		pointer-events: all;
 
-		@include transition(all, 0.25s, ease, 0s);
-
-		&.active{
-			bottom:0;
-			pointer-events: all;
+		.pokemon{
+			position: relative;
 		}
 
-		p{
-			margin-top:0;
+		.sprite-container{
+			padding:0;
+			width:45px;
+			height:45px;
+			text-align: center;
+			color:#eee;
+
+			.main-sprite,
+			.secondary-sprite{
+				width:75%;
+				height:75%;
+				left:6px;
+				top:6px;
+			}
+
+			.cp{
+				position: absolute;
+			    z-index: 5;
+			    font-size: 10px;
+			    text-align: center;
+			    width: 100%;
+			}
+
+			.health{
+				width:100%;
+				height:2px;
+				background-color:#31e8b7;
+				position:absolute;
+				bottom:3px;
+				left:5px;
+				width:75%;
+			}
+		}
+
+		.switch-timer{
+			color: #eee;
+		    font-weight: bold;
+		    position: absolute;
+		    top: 12px;
+		    width: 100%;
+		    text-align: center;
+		    font-size: 24px;
+			display:none;
+		}
+
+		.name{
+			font-size:11px;
+			margin-bottom:5px;
+			width:60px;
+		}
+
+		&:not(.active){
+			.sprite-container{
+				opacity: 0.25;
+			}
+
+			.switch-timer{
+				display: block;
+			}
 		}
 
 		.container{
-			padding: 15px 30px;
+			padding: 10px;
 		}
 	}
 
@@ -1031,11 +1086,6 @@ a.random{
 			display:table;
 		}
 
-		.switch-window{
-			bottom:0;
-			pointer-events: all;
-		}
-
 		.controls .button-stack,
 		.controls .move-bar,
 		.controls .switch-btn,
@@ -1102,10 +1152,7 @@ a.random{
 
 }
 
-.team-select .pokemon-container,
-.switch-window .pokemon-container{
-	display:flex;
-	justify-content:space-around;
+.team-select .pokemon-container{
 
 	.sprite-container{
 		opacity:0.25;
