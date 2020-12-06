@@ -516,6 +516,11 @@ var GameMaster = (function () {
 						continue;
 					}
 
+					// Exclude XL Pokemon from Master League
+					if(pokemon.hasTag("xl") && battle.getCP() == 10000){
+						continue;
+					}
+
 					if((battle.getCP() == 1500)&&(bannedList.indexOf(pokemon.speciesId) > -1)){
 						continue;
 					}

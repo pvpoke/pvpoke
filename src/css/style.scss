@@ -3726,6 +3726,12 @@ a.pokebattler{
 		font-style: italic;
 	    font-size: 12px;
 	}
+
+	&.screenshot{
+		.poke-search-container, a.download-csv, p.column-description{
+			display: none;
+		}
+	}
 }
 
 .train-table{
