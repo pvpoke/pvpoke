@@ -3,12 +3,12 @@
 		"speciesId": "cresselia",
 		"fastMove": "PSYCHO_CUT",
 		"chargedMoves": ["GRASS_KNOT", "MOONBLAST"],
-		"weight": 5
+		"weight": 6
 	},
 	{
 		"speciesId": "umbreon",
 		"chargedMoves": ["FOUL_PLAY", "LAST_RESORT"],
-		"weight": 15
+		"weight": 13
 	},
 	{
 		"speciesId": "azumarill",
@@ -22,7 +22,7 @@
 	{
 		"speciesId": "medicham",
 		"chargedMoves": ["ICE_PUNCH", "PSYCHIC"],
-		"weight": 7
+		"weight": 6
 	},
 	{
 		"speciesId": "medicham_xl",
@@ -39,7 +39,8 @@
 	},
 	{
 		"speciesId": "sirfetchd",
-		"chargedMoves": ["LEAF_BLADE", "CLOSE_COMBAT"]
+		"chargedMoves": ["LEAF_BLADE", "CLOSE_COMBAT"],
+		"weight": 8
 	},
 	{
 		"speciesId": "lugia",
@@ -134,7 +135,7 @@
 	{
 		"speciesId": "toxicroak",
 		"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"],
-		"weight": 15
+		"weight": 14
 	},
 	{
 		"speciesId": "porygon",
@@ -180,7 +181,7 @@
 	{
 		"speciesId": "stunfisk",
 		"fastMove": "THUNDER_SHOCK",
-		"weight": 10
+		"weight": 6
 	},
 	{
 		"speciesId": "zapdos",
@@ -189,7 +190,7 @@
 	{
 		"speciesId": "dewgong",
 		"chargedMoves": ["ICY_WIND","WATER_PULSE"],
-		"weight": 2
+		"weight": 4
 	},
 	{
 		"speciesId": "gliscor",
@@ -203,7 +204,8 @@
 	},
 	{
 		"speciesId": "melmetal",
-		"chargedMoves": ["SUPER_POWER", "ROCK_SLIDE"]
+		"chargedMoves": ["SUPER_POWER", "ROCK_SLIDE"],
+		"weight": 4
 	},
 	{
 		"speciesId": "charizard",
@@ -266,7 +268,7 @@
 	{
 		"speciesId": "obstagoon",
 		"chargedMoves": ["NIGHT_SLASH", "GUNK_SHOT"],
-		"weight": 10
+		"weight": 12
 	},
 	{
 		"speciesId": "mew",
@@ -276,7 +278,7 @@
 	{
 		"speciesId": "marowak_alolan",
 		"fastMove": "FIRE_SPIN",
-		"weight": 17
+		"weight": 32
 	},
 	{
 		"speciesId": "raichu",
@@ -286,7 +288,7 @@
 		"speciesId": "raichu_alolan",
 		"fastMove": "VOLT_SWITCH",
 		"chargedMoves": ["WILD_CHARGE","GRASS_KNOT"],
-		"weight": 4
+		"weight": 3
 	},
 	{
 		"speciesId": "raikou",
@@ -298,7 +300,8 @@
 	},
 	{
 		"speciesId": "lanturn",
-		"fastMove": "SPARK"
+		"fastMove": "SPARK",
+		"weight": 2
 	},
 	{
 		"speciesId": "sealeo",
@@ -394,12 +397,12 @@
 	{
 		"speciesId": "hypno",
 		"chargedMoves": ["SHADOW_BALL", "THUNDER_PUNCH"],
-		"weight": 9
+		"weight": 12
 	},
 	{
 		"speciesId": "hypno_shadow",
 		"chargedMoves": ["THUNDER_PUNCH", "FIRE_PUNCH"],
-		"weight": 3
+		"weight": 4
 	},
 	{
 		"speciesId": "pidgeot",
@@ -524,7 +527,7 @@
 	{
 		"speciesId": "shiftry",
 		"fastMove": "SNARL",
-		"weight": 10
+		"weight": 8
 	},
 	{
 		"speciesId": "shiftry_shadow",
@@ -555,7 +558,7 @@
 	{
 		"speciesId": "galvantula",
 		"chargedMoves": ["DISCHARGE","LUNGE"],
-		"weight": 20
+		"weight": 11
 	},
 	{
 		"speciesId": "electrode",
@@ -622,15 +625,15 @@
 	},
 	{
 		"speciesId": "stunfisk_galarian",
-		"weight":44
+		"weight":48
 	},
 	{
 		"speciesId": "altaria",
-		"weight":25
+		"weight":17
 	},
 	{
 		"speciesId": "skarmory",
-		"weight":45
+		"weight":40
 	},
 	{
 		"speciesId": "froslass",
@@ -638,7 +641,8 @@
 	},
 	{
 		"speciesId": "mandibuzz",
-		"chargedMoves": ["FOUL_PLAY","SHADOW_BALL"]
+		"chargedMoves": ["FOUL_PLAY","AERIAL_ACE"],
+		"weight": 4
 	},
 	{
 		"speciesId": "deoxys_defense",
@@ -648,7 +652,7 @@
 	{
 		"speciesId": "swampert",
 		"chargedMoves": ["HYDRO_CANNON","SLUDGE_WAVE"],
-		"weight":13
+		"weight":10
 	},
 	{
 		"speciesId": "swampert_shadow",
@@ -656,11 +660,11 @@
 	},
 	{
 		"speciesId": "venusaur",
-		"weight":4
+		"weight":7
 	},
 	{
 		"speciesId": "meganium",
-		"weight":8
+		"weight":10
 	},
 	{
 		"speciesId": "whiscash",
@@ -685,7 +689,7 @@
 		"speciesId": "ferrothorn",
 		"fastMove": "BULLET_SEED",
 		"chargedMoves": ["POWER_WHIP","THUNDER"],
-		"weight": 7
+		"weight": 5
 	},
 	{
 		"speciesId": "sceptile",
@@ -705,7 +709,7 @@
 	},
 	{
 		"speciesId": "abomasnow",
-		"weight": 12
+		"weight": 10
 	},
 	{
 		"speciesId": "abomasnow_shadow",
@@ -713,21 +717,20 @@
 	},
 	{
 		"speciesId": "victreebel",
-		"chargedMoves": ["LEAF_BLADE", "ACID_SPRAY"],
-		"weight": 3
+		"chargedMoves": ["LEAF_BLADE", "ACID_SPRAY"]
 	},
 	{
 		"speciesId": "victreebel_shadow",
 		"chargedMoves": ["LEAF_BLADE", "ACID_SPRAY"],
-		"weight": 9
+		"weight": 16
 	},
 	{
 		"speciesId": "drifblim",
-		"weight": 4
+		"weight": 6
 	},
 	{
 		"speciesId": "scrafty",
-		"weight": 7
+		"weight": 10
 	},
 	{
 		"speciesId": "jirachi",
@@ -735,7 +738,7 @@
 	},
 	{
 		"speciesId": "wigglytuff",
-		"weight": 3
+		"weight": 8
 	},
 	{
 		"speciesId": "clefable",
