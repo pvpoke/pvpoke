@@ -567,7 +567,7 @@ Dialga. Top neutral damage generalist for the raiders in the room.        <stron
 <ul type="disc">
     <li>
         <strong>Earthquake Politoed: </strong>
-        Honorary mudboi with a lot of potential, capable of challenging Azumarill and Galarian STunfisk. Pure Water type so it
+        Honorary mudboi with a lot of potential, capable of challenging Azumarill and Galarian Stunfisk. Pure Water type so it
         fully resists Water and Ice-type attacks and isn’t double weak to
         Grass. Also handles meta favorites like Alolan Marowak, and
         even beats its compatriots Swampert and Whiscash head to head. Shadow

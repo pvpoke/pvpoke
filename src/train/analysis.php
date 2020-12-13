@@ -72,10 +72,10 @@ require_once '../header.php';
 <h1>Training Analysis</h1>
 <div class="section analysis-container white">
 
-	<select class="format-select hide">
-		<option value="1500 all" cup="all">Great League</option>
-		<option value="2500 all" cup="all">Ultra League</option>
-		<option value="10000 all" cup="all">Master League</option>
+	<select class="format-select">
+		<option value="1500" cup="all">Great League</option>
+		<option value="2500" cup="all">Ultra League</option>
+		<option value="2500" cup="premier">Ultra Premier Cup</option>
 	</select>
 
 	<div class="date-updated">Last updated</div>
