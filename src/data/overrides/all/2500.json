@@ -282,6 +282,21 @@
 		"weight": 10
 	},
 	{
+		"speciesId": "lapras_xl",
+		"fastMove": "ICE_SHARD",
+		"chargedMoves": ["SURF", "ICE_BEAM"]
+	},
+	{
+		"speciesId": "lapras_shadow",
+		"fastMove": "ICE_SHARD",
+		"chargedMoves": ["SURF", "ICE_BEAM"]
+	},
+	{
+		"speciesId": "lapras_shadow_xl",
+		"fastMove": "ICE_SHARD",
+		"chargedMoves": ["SURF", "ICE_BEAM"]
+	},
+	{
 		"speciesId": "arcanine",
 		"fastMove": "SNARL",
 		"chargedMoves": ["CRUNCH", "FLAMETHROWER"]

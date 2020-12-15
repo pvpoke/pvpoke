@@ -105,6 +105,8 @@ require_once 'header.php';
 
 	<p>Click or tap the rankings below for more details.</p>
 
+	<div class="check on xl" style="margin-bottom:15px;"><span></span>Show XL Pokemon</div>
+
 	<div class="check on limited hide"><span></span>Show <div class="limited-title">Limited Pokemon</div>*</div>
 	<div class="asterisk limited hide">* Only a limited number of these Pokemon can be selected per team.</div>
 

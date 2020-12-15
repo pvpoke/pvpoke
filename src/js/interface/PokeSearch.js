@@ -22,11 +22,11 @@ $(function(){
 
 	function submitSearchQuery(){
 		var list = GameMaster.getInstance().generatePokemonListFromSearchString(searchStr);
-		
+
 		$target.siblings(".rankings-container").find(".rank").each(function(index, value){
 			var id = $(this).attr("data");
 
-			if(list.indexOf(id) > -1){
+			if((list.indexOf(id) > -1)||(! id)){
 				$(this).show();
 			} else{
 				$(this).hide();

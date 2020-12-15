@@ -50,6 +50,7 @@ var InterfaceMaster = (function () {
 				$(".ranking-categories a").on("click", selectCategory);
 				$("body").on("click", ".check", checkBox);
 				$("body").on("click", ".check.limited", toggleLimitedPokemon);
+				$("body").on("click", ".check.xl", toggleXLPokemon);
 				$("body").on("click", ".continentals .check", toggleContinentalsSlots);
 
 				window.addEventListener('popstate', function(e) {
@@ -261,6 +262,10 @@ var InterfaceMaster = (function () {
 
 				if($(".poke-search").val() != ''){
 					$(".poke-search").trigger("keyup");
+				}
+
+				if(! $(".check.xl").hasClass("on")){
+					toggleXLPokemon();
 				}
 
 
@@ -605,6 +610,10 @@ var InterfaceMaster = (function () {
 					$details.append("<div class=\"detail-section\"><b>Mega Evolutions are currently not allowed in GO Battle League. Use this information to help prepare if they are allowed in the future. Don't invest Mega Energy or Elite TM's until you can use these Pokemon.</b></div>");
 				}
 
+				if(pokemon.hasTag("xl")){
+					$details.append("<div class=\"detail-section\"><b>This entry highlights this Pokemon's performance if it has been powered up beyond level 40 with Candy XL.</b></div>");
+				}
+
 				// Display move data
 
 				var fastMoves = pokemon.fastMovePool;
@@ -887,6 +896,17 @@ var InterfaceMaster = (function () {
 				for(var i = 0; i < limitedPokemon.length; i++){
 					$(".rank[data='"+limitedPokemon[i]+"']").toggleClass("hide");
 				}
+			}
+
+			// Toggle XL Pokemon from the Rankings
+
+			function toggleXLPokemon(e){
+
+				$(".rankings-container > .rank").each(function(index, value){
+					if($(this).attr("data").indexOf("xl") > -1){
+						$(this).toggleClass("hide");
+					}
+				});
 			}
 
 			// Show or hide Continentals slots

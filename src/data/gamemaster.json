@@ -1716,6 +1716,25 @@
         "eliteMoves": ["THUNDER"]
     }, {
         "dex": 26,
+        "speciesName": "Raichu (XL)",
+        "speciesId": "raichu_xl",
+        "baseStats": {
+            "atk": 193,
+            "def": 151,
+            "hp": 155
+        },
+        "types": ["electric", "none"],
+        "fastMoves": ["SPARK", "THUNDER_SHOCK", "VOLT_SWITCH", "CHARM"],
+        "chargedMoves": ["BRICK_BREAK", "THUNDER", "THUNDER_PUNCH", "WILD_CHARGE", "SKULL_BASH"],
+        "defaultIVs": {
+            "cp500": [9, 5, 5, 6],
+            "cp1500": [25, 10, 12, 13],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "eliteMoves": ["THUNDER"],
+		"tags": ["xl"]
+    }, {
+        "dex": 26,
         "speciesName": "Raichu (Alolan XL)",
         "speciesId": "raichu_alolan_xl",
         "baseStats": {
@@ -5404,6 +5423,27 @@
         "searchPriority": 10
     }, {
         "dex": 131,
+        "speciesName": "Lapras (XL)",
+        "speciesId": "lapras_xl",
+        "baseStats": {
+            "atk": 165,
+            "def": 174,
+            "hp": 277
+        },
+        "types": ["water", "ice"],
+        "fastMoves": ["FROST_BREATH", "ICE_SHARD", "WATER_GUN"],
+        "chargedMoves": ["BLIZZARD", "DRAGON_PULSE", "HYDRO_PUMP", "ICE_BEAM", "SURF", "SKULL_BASH"],
+        "defaultIVs": {
+            "cp500": [7, 11, 11, 13],
+            "cp1500": [21.5, 7, 5, 12],
+            "cp2500": [41.5, 2, 15, 15]
+        },
+        "level25CP": 1616,
+        "tags": ["shadoweligible","xl"],
+        "eliteMoves": ["ICE_SHARD", "DRAGON_PULSE", "ICE_BEAM"],
+        "searchPriority": 10
+    }, {
+        "dex": 131,
         "speciesName": "Lapras (Shadow)",
         "speciesId": "lapras_shadow",
         "baseStats": {
@@ -5420,6 +5460,26 @@
             "cp2500": [37.5, 12, 13, 15]
         },
         "tags": ["shadow"],
+        "eliteMoves": ["ICE_SHARD", "DRAGON_PULSE", "ICE_BEAM"],
+        "searchPriority": 10
+    }, {
+        "dex": 131,
+        "speciesName": "Lapras (Shadow XL)",
+        "speciesId": "lapras_shadow_xl",
+        "baseStats": {
+            "atk": 165,
+            "def": 174,
+            "hp": 277
+        },
+        "types": ["water", "ice"],
+        "fastMoves": ["FROST_BREATH", "ICE_SHARD", "WATER_GUN"],
+        "chargedMoves": ["BLIZZARD", "DRAGON_PULSE", "HYDRO_PUMP", "ICE_BEAM", "SURF", "SKULL_BASH"],
+        "defaultIVs": {
+            "cp500": [7, 11, 11, 13],
+            "cp1500": [21.5, 7, 5, 12],
+            "cp2500": [41.5, 2, 15, 15]
+        },
+        "tags": ["shadow", "xl"],
         "eliteMoves": ["ICE_SHARD", "DRAGON_PULSE", "ICE_BEAM"],
         "searchPriority": 10
     }, {
