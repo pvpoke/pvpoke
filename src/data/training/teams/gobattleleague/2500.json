@@ -781,6 +781,26 @@
 		{
 			"pokemon": [
 				{
+					"speciesId": "obstagoon",
+					"fastMove": "COUNTER",
+					"chargedMoves": ["NIGHT_SLASH","GUNK_SHOT"]
+				},
+				{
+					"speciesId": "lapras",
+					"fastMove": "ICE_SHARD",
+					"chargedMoves": ["SURF","ICE_BEAM"]
+				},
+				{
+					"speciesId": "articuno",
+					"fastMove": "ICE_SHARD",
+					"chargedMoves": ["ICY_WIND","ANCIENT_POWER"]
+				}
+			],
+			"weight": 1
+		},
+		{
+			"pokemon": [
+				{
 					"speciesId": "articuno",
 					"fastMove": "ICE_SHARD",
 					"chargedMoves": ["ICY_WIND","HURRICANE"]
