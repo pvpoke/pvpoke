@@ -30,6 +30,11 @@
 		"weight": 35
 	},
 	{
+		"speciesId": "mr_rime",
+		"fastMove": "ICE_SHARD",
+		"chargedMoves": ["ICY_WIND","PSYCHIC"]
+	},
+	{
 		"speciesId": "chansey",
 		"fastMove": "POUND"
 	},

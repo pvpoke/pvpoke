@@ -5094,6 +5094,24 @@
             "cp2500": [40, 15, 15, 15]
         }
     }, {
+        "dex": 122,
+        "speciesName": "Mr. Mime (Galarian)",
+        "speciesId": "mr_mime_galarian",
+        "baseStats": {
+            "atk": 183,
+            "def": 169,
+            "hp": 137
+        },
+        "types": ["ice", "psychic"],
+        "fastMoves": ["CONFUSION", "ZEN_HEADBUTT"],
+        "chargedMoves": ["PSYBEAM", "PSYCHIC", "ICE_PUNCH"],
+        "tags": ["galarian"],
+        "defaultIVs": {
+			"cp500": [9, 10, 12, 9],
+            "cp1500": [27, 5, 9, 15],
+            "cp2500": [40, 15, 15, 15]
+        }
+    }, {
         "dex": 123,
         "speciesName": "Scyther",
         "speciesId": "scyther",
@@ -19417,6 +19435,25 @@
             "cp2500": [31.5, 6, 13, 12]
         },
         "tags": ["galarian"]
+    }, {
+        "dex": 866,
+        "speciesName": "Mr. Rime",
+        "speciesId": "mr_rime",
+        "baseStats": {
+            "atk": 212,
+            "def": 179,
+            "hp": 190
+        },
+        "types": ["ice", "psychic"],
+        "fastMoves": ["CONFUSION", "ZEN_HEADBUTT", "ICE_SHARD"],
+        "chargedMoves": ["PSYBEAM", "PSYCHIC", "ICE_PUNCH", "ICY_WIND"],
+        "defaultIVs": {
+			"cp500": [6.5, 15, 9, 14],
+            "cp1500": [19.5, 9, 14, 7],
+            "cp2500": [36, 6, 6, 15]
+        },
+        "tags": ["galarian"],
+		"searchPriority": 2
     }, {
         "dex": 867,
         "speciesId": "runerigus",

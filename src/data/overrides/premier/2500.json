@@ -34,6 +34,11 @@
 		"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
 	},
 	{
+		"speciesId": "mr_rime",
+		"fastMove": "CONFUSION",
+		"chargedMoves": ["ICY_WIND","PSYCHIC"]
+	},
+	{
 		"speciesId": "dewgong_xl",
 		"chargedMoves": ["ICY_WIND", "WATER_PULSE"]
 	},
@@ -42,7 +47,7 @@
 		"chargedMoves": ["ICY_WIND", "WATER_PULSE"]
 	},
 	{
-		"speciesId": "poliwrath",
+		"speciesId": "sirfetchd",
 		"weight": 5
 	},
 	{
