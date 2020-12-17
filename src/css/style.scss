@@ -2371,6 +2371,11 @@ a.download-csv{
 	.poke.flex{
 		float:none;
 		max-width:none;
+		flex-wrap: wrap;
+
+		.flex-break{
+			flex-basis:100%;
+		}
 	}
 
 	.team-option{

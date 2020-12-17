@@ -55,6 +55,16 @@ require_once 'header.php';
 				<h3>XL Pokemon</h3>
 				<div class="check allow-xl"><span></span>Show Pokemon above level 40 in results</div>
 			</div>
+			<div class="flex-break"></div>
+			<div class="team-option">
+				<h3>Shields</h3>
+				<select class="shield-select">
+					<option value="average" selected>Average (0 & 1)</option>
+					<option value="0">No shields</option>
+					<option value="1">1 shield</option>
+					<option value="2">2 shields</option>
+				</select>
+			</div>
 			<div class="team-option">
 				<h3>Shield Baiting</h3>
 				<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>

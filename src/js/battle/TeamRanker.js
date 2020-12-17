@@ -63,7 +63,7 @@ var RankerMaster = (function () {
 
 				for(var i = 0; i < team.length; i++){
 					teamRatings.push([]);
-					
+
 					// Adjust IVs as needed
 					if((overrideSettings[0].ivs != "gamemaster")&&(overrideSettings[0].ivs != "original")){
 						team[i].levelCap = overrideSettings[0].levelCap;
@@ -157,6 +157,7 @@ var RankerMaster = (function () {
 
 					var avg = 0;
 					var matchupScore = 0; // A softer representation of wins/losses used for team builder threats and alternatives
+					var matchupAltScore = 0;
 					var opponentRating = 0;
 
 					// Simulate battle against each Pokemon
@@ -215,7 +216,7 @@ var RankerMaster = (function () {
 						for(var j = 0; j < shieldTestArr.length; j++){
 							pokemon.setShields(shieldTestArr[j][1]);
 
-							if((shieldMode == 'average')||(context == 'matrix')){
+							if((shieldMode == 'average')||(shieldMode == 'single')||(context == 'matrix')){
 								opponent.setShields(shieldTestArr[j][0]);
 							}
 
@@ -253,20 +254,39 @@ var RankerMaster = (function () {
 						opponentRating = avgOpRating;
 
 						var score = 500;
+						var alternativeScore = 500;
 
 						if(avgPokeRating > 500){
-							score = 500 + Math.pow(avgPokeRating - 500, .75);
+							alternativeScore = 500 + Math.pow(avgPokeRating - 500, .75);
+							alternativeScore = avgPokeRating;
+							score = avgPokeRating;
 						} else{
 							score = avgPokeRating / 2;
+							alternativeScore = avgPokeRating / 2;
 						}
 
+						//score = avgPokeRating;
+
 						if((pokemon.overall)&&(pokemon.scores[5])){
-							score *= Math.sqrt(pokemon.overall) * Math.pow(pokemon.scores[5], 1/4);
+							var adjustment = ((pokemon.overall * 400) + (pokemon.scores[5] * 20)) / 42;
+							alternativeScore = ((adjustment * 2) + (alternativeScore * 1)) / 3;
+
+							if(score > 500){
+								score = ((adjustment * 5) + (score)) / 6;
+								//alternativeScore = ((adjustment * 4) + (alternativeScore * 1)) / 5;
+							} else{
+								//score = ((adjustment * 2) + (score)) / 3;
+								score = score * (adjustment / 1000);
+								//alternativeScore = ((adjustment * 1) + (alternativeScore * 4)) / 5;
+							}
+
+							//score *= 34 * ( (Math.pow(pokemon.overall, 2) * Math.pow(pokemon.scores[5], 1/4)) / (Math.pow(100, 2) * Math.pow(100, 1/4)));
 						} else{
-							score *= 10 * Math.pow(100, 1/4);
+							//score *= 10 * Math.pow(100, 1/4);
 						}
 
 						matchupScore += score;
+						matchupAltScore += alternativeScore;
 
 						if(settings.matrixDirection == "column"){
 							avgPokeRating = 1000 - avgPokeRating;
@@ -276,16 +296,19 @@ var RankerMaster = (function () {
 						rankObj.matchups.push({
 							opponent: opponent,
 							rating: avgPokeRating,
-							score: score
+							score: score,
+							alternativeScore: score
 							});
 					}
 
 					avg = Math.floor(avg / team.length);
 					matchupScore = matchupScore / team.length;
+					matchupAltScore = matchupAltScore / team.length;
 
 					rankObj.rating = avg;
 					rankObj.opRating = opponentRating;
 					rankObj.score = matchupScore;
+					rankObj.matchupAltScore = matchupAltScore;
 					rankObj.overall = (pokemon.overall !== undefined) ? pokemon.overall : 0;
 					rankObj.speciesName = pokemon.speciesName;
 

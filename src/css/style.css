@@ -2061,6 +2061,10 @@ a.download-csv {
 .team-advanced .poke.flex {
   float: none;
   max-width: none;
+  flex-wrap: wrap;
+}
+.team-advanced .poke.flex .flex-break {
+  flex-basis: 100%;
 }
 .team-advanced .team-option {
   font-size: 12px;
