@@ -639,6 +639,9 @@
         "exclude": [{
             "filterType": "tag",
             "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["mr_rime", "mr_mime_galarian"]
         }]
     }, {
         "name": "holiday",
