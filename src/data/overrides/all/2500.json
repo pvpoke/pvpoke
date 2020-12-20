@@ -84,6 +84,22 @@
 		"chargedMoves": ["BUBBLE_BEAM", "ICE_BEAM"]
 	},
 	{
+		"speciesId": "hypno",
+		"chargedMoves": ["FIRE_PUNCH", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "hypno_xl",
+		"chargedMoves": ["FIRE_PUNCH", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "hypno_shadow",
+		"chargedMoves": ["FIRE_PUNCH", "ICE_PUNCH"]
+	},
+	{
+		"speciesId": "hypno_shadow_xl",
+		"chargedMoves": ["FIRE_PUNCH", "ICE_PUNCH"]
+	},
+	{
 		"speciesId": "rhyperior",
 		"fastMove": "MUD_SLAP",
 		"chargedMoves": ["ROCK_WRECKER","SURF"]

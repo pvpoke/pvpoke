@@ -72,6 +72,22 @@
 		"chargedMoves": ["SURF", "SKULL_BASH"]
 	},
 	{
+		"speciesId": "hypno",
+		"chargedMoves": ["THUNDER_PUNCH", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "hypno_xl",
+		"chargedMoves": ["THUNDER_PUNCH", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "hypno_shadow",
+		"chargedMoves": ["THUNDER_PUNCH", "FIRE_PUNCH"]
+	},
+	{
+		"speciesId": "hypno_shadow_xl",
+		"chargedMoves": ["THUNDER_PUNCH", "FIRE_PUNCH"]
+	},
+	{
 		"speciesId": "ferrothorn",
 		"chargedMoves": ["POWER_WHIP", "FLASH_CANNON"]
 	},

@@ -4387,6 +4387,27 @@
         "searchPriority": 14
     }, {
         "dex": 97,
+        "speciesName": "Hypno (XL)",
+        "speciesId": "hypno_xl",
+        "baseStats": {
+            "atk": 144,
+            "def": 193,
+            "hp": 198
+        },
+        "types": ["psychic", "none"],
+        "fastMoves": ["CONFUSION", "ZEN_HEADBUTT"],
+        "chargedMoves": ["FOCUS_BLAST", "FUTURE_SIGHT", "PSYCHIC", "PSYSHOCK", "SHADOW_BALL", "FIRE_PUNCH", "ICE_PUNCH", "THUNDER_PUNCH"],
+        "defaultIVs": {
+            "cp500": [9, 7, 9, 13],
+            "cp1500": [27, 7, 14, 7],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "level25CP": 1255,
+        "tags": ["shadoweligible", "xl"],
+        "eliteMoves": ["PSYSHOCK"],
+        "searchPriority": 14
+    }, {
+        "dex": 97,
         "speciesName": "Hypno (Shadow)",
         "speciesId": "hypno_shadow",
         "baseStats": {
@@ -4403,6 +4424,26 @@
             "cp2500": [40, 15, 15, 15]
         },
         "tags": ["shadow"],
+        "eliteMoves": ["PSYSHOCK"],
+        "searchPriority": 14
+    }, {
+        "dex": 97,
+        "speciesName": "Hypno (Shadow XL)",
+        "speciesId": "hypno_shadow_xl",
+        "baseStats": {
+            "atk": 144,
+            "def": 193,
+            "hp": 198
+        },
+        "types": ["psychic", "none"],
+        "fastMoves": ["CONFUSION", "ZEN_HEADBUTT"],
+        "chargedMoves": ["FOCUS_BLAST", "FUTURE_SIGHT", "PSYCHIC", "PSYSHOCK", "SHADOW_BALL", "FIRE_PUNCH", "ICE_PUNCH", "THUNDER_PUNCH"],
+        "defaultIVs": {
+            "cp500": [9, 7, 9, 13],
+            "cp1500": [27, 7, 14, 7],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "tags": ["shadow", "xl"],
         "eliteMoves": ["PSYSHOCK"],
         "searchPriority": 14
     }, {
@@ -7372,6 +7413,25 @@
         },
         "level25CP": 538,
         "tags": ["shadoweligible"]
+    }, {
+        "dex": 202,
+        "speciesName": "Wobbuffet (XL)",
+        "speciesId": "wobbuffet_xl",
+        "baseStats": {
+            "atk": 60,
+            "def": 106,
+            "hp": 382
+        },
+        "types": ["psychic", "none"],
+        "fastMoves": ["COUNTER", "SPLASH", "CHARM"],
+        "chargedMoves": ["MIRROR_COAT"],
+        "defaultIVs": {
+            "cp500": [19.5, 7, 11, 12],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "level25CP": 538,
+        "tags": ["shadoweligible", "xl"]
     }, {
         "dex": 202,
         "speciesName": "Wobbuffet (Shadow)",
