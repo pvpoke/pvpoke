@@ -21430,6 +21430,46 @@
         "energyGain": 8,
         "cooldown": 1500
     }, {
+        "moveId": "TECHNO_BLAST_NORMAL",
+        "name": "Techno Blast (Normal)",
+        "type": "normal",
+        "power": 120,
+        "energy": 55,
+        "energyGain": 0,
+        "cooldown": 500
+    }, {
+        "moveId": "TECHNO_BLAST_BURN",
+        "name": "Techno Blast (Burn)",
+        "type": "fire",
+        "power": 120,
+        "energy": 55,
+        "energyGain": 0,
+        "cooldown": 500
+    }, {
+        "moveId": "TECHNO_BLAST_CHILL",
+        "name": "Techno Blast (Chill)",
+        "type": "ice",
+        "power": 120,
+        "energy": 55,
+        "energyGain": 0,
+        "cooldown": 500
+    }, {
+        "moveId": "TECHNO_BLAST_DOUSE",
+        "name": "Techno Blast (Douse)",
+        "type": "water",
+        "power": 120,
+        "energy": 55,
+        "energyGain": 0,
+        "cooldown": 500
+    }, {
+        "moveId": "TECHNO_BLAST_SHOCK",
+        "name": "Techno Blast (Shock)",
+        "type": "electric",
+        "power": 120,
+        "energy": 55,
+        "energyGain": 0,
+        "cooldown": 500
+    }, {
         "moveId": "THUNDER",
         "name": "Thunder",
         "type": "electric",
