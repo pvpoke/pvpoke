@@ -824,7 +824,7 @@ var InterfaceMaster = (function () {
 
 				if(poke){
 					ranker.applySettings({
-						shields: poke.shields,
+						shields: poke.startingShields,
 						ivs: "original",
 						bait: poke.baitShields
 					}, 0);
