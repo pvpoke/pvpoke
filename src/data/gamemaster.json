@@ -1813,6 +1813,24 @@
         }
     }, {
         "dex": 27,
+        "speciesName": "Sandshrew (Alolan XL)",
+        "speciesId": "sandshrew_alolan_xl",
+        "baseStats": {
+            "atk": 125,
+            "def": 129,
+            "hp": 137
+        },
+        "types": ["ice", "steel"],
+        "fastMoves": ["METAL_CLAW", "POWDER_SNOW"],
+        "chargedMoves": ["BLIZZARD", "GYRO_BALL", "NIGHT_SLASH"],
+        "tags": ["alolan", "xl"],
+        "defaultIVs": {
+            "cp500": [14.5, 6, 13, 14],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        }
+    }, {
+        "dex": 27,
         "speciesName": "Sandshrew (Shadow)",
         "speciesId": "sandshrew_shadow",
         "baseStats": {
@@ -1868,6 +1886,24 @@
             "cp2500": [40, 15, 15, 15]
         },
         "searchPriority": 2
+    }, {
+        "dex": 28,
+        "speciesName": "Sandslash (Alolan XL)",
+        "speciesId": "sandslash_alolan_xl",
+        "baseStats": {
+            "atk": 177,
+            "def": 195,
+            "hp": 181
+        },
+        "types": ["ice", "steel"],
+        "fastMoves": ["METAL_CLAW", "POWDER_SNOW"],
+        "chargedMoves": ["BLIZZARD", "BULLDOZE", "GYRO_BALL", "ICE_PUNCH"],
+        "tags": ["alolan", "xl"],
+        "defaultIVs": {
+            "cp500": [7.5, 12, 12, 14],
+            "cp1500": [23, 7, 11, 10],
+            "cp2500": [47, 4, 14, 15]
+        }
     }, {
         "dex": 28,
         "speciesName": "Sandslash (Shadow)",
@@ -14373,6 +14409,24 @@
             "cp2500": [40, 15, 15, 15]
         },
         "searchPriority": 7
+    }, {
+        "dex": 478,
+        "speciesName": "Froslass (XL)",
+        "speciesId": "froslass_xl",
+        "baseStats": {
+            "atk": 171,
+            "def": 150,
+            "hp": 172
+        },
+        "types": ["ice", "ghost"],
+        "fastMoves": ["HEX", "POWDER_SNOW"],
+        "chargedMoves": ["AVALANCHE", "CRUNCH", "SHADOW_BALL"],
+        "defaultIVs": {
+            "cp500": [9, 10, 12, 12],
+            "cp1500": [27.5, 8, 6, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+		"tags": ["xl"]
     }, {
         "dex": 479,
         "speciesName": "Rotom",
