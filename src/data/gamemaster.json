@@ -654,6 +654,29 @@
             "filterType": "tag",
             "values": ["mega"]
         }]
+    }, {
+        "name": "cerberus",
+        "title": "Victory Road Cerberus Cup",
+		"link": "https://silph.gg/t/eh4b/the-three-heads-of-cerberus",
+        "restrictedPicks": 1,
+        "restrictedPokemon": ["sableye","sableye_xl","sableye_shadow","sableye_shadow_xl","zweilous","umbreon"],
+        "include": [{
+            "filterType": "type",
+            "values": ["dragon","ice","fire","psychic","fighting"]
+        }, {
+            "filterType": "id",
+            "values": ["sableye","sableye_xl","sableye_shadow","sableye_shadow_xl","zweilous","umbreon"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["legendary","mythical","mega"]
+        }, {
+            "filterType": "id",
+            "values": ["marowak_alolan","gardevoir_shadow"]
+        }, {
+            "filterType": "type",
+            "values": ["dark"]
+        }]
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xl"],
     "pokemonRegions": [{
