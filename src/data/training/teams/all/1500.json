@@ -105,9 +105,9 @@
 			{
 				"speciesId": "medicham",
 				"fastMove": "COUNTER",
-				"chargedMoves": ["DYNAMIC_PUNCH","ICE_PUNCH"],
+				"chargedMoves": ["PSYCHIC","ICE_PUNCH"],
 				"difficulty": 2,
-				"weight":8
+				"weight":6
 			},
 			{
 				"speciesId": "medicham",
@@ -142,12 +142,19 @@
 				"fastMove": "COUNTER",
 				"chargedMoves": ["MUD_BOMB","SLUDGE_BOMB"],
 				"difficulty": 2,
-				"weight":2
+				"weight":10
 			},
 			{
-				"speciesId": "machamp",
+				"speciesId": "machamp_shadow",
 				"fastMove": "COUNTER",
 				"chargedMoves": ["CROSS_CHOP","ROCK_SLIDE"],
+				"difficulty": 2,
+				"weight":3
+			},
+			{
+				"speciesId": "sirfetchd",
+				"fastMove": "COUNTER",
+				"chargedMoves": ["LEAF_BLADE","CLOSE_COMBAT"],
 				"difficulty": 2,
 				"weight":3
 			},
@@ -598,6 +605,13 @@
 				"chargedMoves": ["FRENZY_PLANT","EARTHQUAKE"],
 				"difficulty": 2,
 				"weight":6
+			},
+			{
+				"speciesId": "chesnaught",
+				"fastMove": "VINE_WHIP",
+				"chargedMoves": ["POWER_WHIP","SUPER_POWER"],
+				"difficulty": 2,
+				"weight":2
 			},
 			{
 				"speciesId": "meganium",

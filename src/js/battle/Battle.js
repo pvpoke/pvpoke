@@ -1738,7 +1738,7 @@ function Battle(){
 		for(var i = 0; i < actions.length; i++){
 			// Don't override a switch
 			if(actions[i].actor == actor){
-				if(actions[i].type != "switch"){
+				if((actions[i].type != "switch")||(type == "switch")){
 					actions.splice(i, 1);
 					break;
 				} else{

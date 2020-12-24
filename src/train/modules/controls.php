@@ -20,7 +20,7 @@
 			<div class="bar-back steel"></div>
 		</div>
 	</div>
-	<div class="switch-btn active"></div>
+
 	<div class="auto-tap-container">
 		<div class="auto-tap">Autotap</div>
 	</div>
@@ -62,6 +62,33 @@
 	</div>
 </div>
 
+<div class="switch-sidebar active">
+	<div class="container">
+		<div class="pokemon-container">
+			<div class="pokemon">
+				<div class="sprite-container">
+					<div class="cp">cp 1500</div>
+					<div class="main-sprite"></div>
+					<div class="secondary-sprite"></div>
+					<div class="health"></div>
+				</div>
+				<div class="name">Pokemon 1</div>
+				<div class="switch-timer">60</div>
+			</div>
+			<div class="pokemon">
+				<div class="sprite-container">
+					<div class="cp">cp 1500</div>
+					<div class="main-sprite"></div>
+					<div class="secondary-sprite"></div>
+					<div class="health"></div>
+				</div>
+				<div class="name">Pokemon 2</div>
+				<div class="switch-timer">60</div>
+			</div>
+		</div>
+	</div>
+</div>
+
 <div class="switch-window">
 	<div class="container">
 		<p>Switch in a new pokemon?</p>
@@ -71,6 +98,7 @@
 				<div class="sprite-container">
 					<div class="main-sprite"></div>
 					<div class="secondary-sprite"></div>
+					<div class="health"></div>
 				</div>
 				<div class="name">Pokemon 1</div>
 			</div>
@@ -79,6 +107,7 @@
 				<div class="sprite-container">
 					<div class="main-sprite"></div>
 					<div class="secondary-sprite"></div>
+					<div class="health"></div>
 				</div>
 				<div class="name">Pokemon 2</div>
 			</div>
