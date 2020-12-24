@@ -1239,6 +1239,7 @@ a.random{
 	display:none;
 
 	.pokemon-container{
+		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
 
@@ -1750,4 +1751,10 @@ a.random{
 		}
 	}
 
+}
+
+@media only screen and (max-width: 350px) {
+	.move-labels .label{
+		display:none !important;
+	}
 }

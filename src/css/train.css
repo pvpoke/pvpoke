@@ -1073,6 +1073,7 @@ a.random {
   display: none;
 }
 .team-select .pokemon-container {
+  display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
 }
@@ -1582,6 +1583,11 @@ a.random {
   }
   .team-select .number {
     padding-top: 2px !important;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .move-labels .label {
+    display: none !important;
   }
 }
 
