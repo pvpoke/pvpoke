@@ -108,7 +108,7 @@ require_once '../header.php';
 </div>
 
 <div class="section battle">
-	<div class="battle-window" style="display:inline-block;">
+	<div class="battle-window">
 		<img class="img-block" src="<?php echo $WEB_ROOT; ?>img/train/battle-window-block.png" />
 		<?php require_once 'modules/top.php'; ?>
 		<?php require_once 'modules/scene.php'; ?>

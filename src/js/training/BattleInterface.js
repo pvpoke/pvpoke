@@ -106,13 +106,14 @@ var BattlerMaster = (function () {
 
 				// Reset interface for new battle
 
-				$(".battle-window .switch-btn").removeClass("active");
 				$(".controls .button-stack .pause-btn").removeClass("active");
 				$(".battle-window .scene .pokemon-container").removeClass("animate-switch");
 				$(".battle-window .scene .pokemon-container .messages").html("");
 				$(".battle-window .countdown .text").html("");
-				$(".battle-window .switch-window").show();
-				$(".switch-window").removeClass("active")
+				$(".battle-window .switch-sidebar").show();
+				$(".switch-sidebar").removeClass("active");
+				$(".switch-window").removeClass("active");
+				$(".switch-window .pokemon, .switch-sidebar .pokemon").show();
 				$(".battle-window").attr("mode", props.mode);
 
 				self.updateSwitchWindow();
@@ -163,7 +164,7 @@ var BattlerMaster = (function () {
 
 							$(".charge-window .move-bars").append($moveBar);
 							$(".battle-window .animate-message .text").html("Tap to charge up "+activePokemon[0].chargedMoves[response.move].name+"!");
-							$(".switch-window").removeClass("active");
+							$(".switch-sidebar").removeClass("active");
 
 							charge = 0;
 							phaseTimer = chargeTime;
@@ -175,7 +176,7 @@ var BattlerMaster = (function () {
 
 						case "suspend_charged_shield":
 							$(".shield-window").removeClass("closed");
-							$(".switch-window").removeClass("active");
+							$(".switch-sidebar").removeClass("active");
 							phaseTimer = chargeTime;
 							phaseInterval = setInterval(phaseStep, 1000 / 60);
 							interfaceLockout = 750;
@@ -186,7 +187,7 @@ var BattlerMaster = (function () {
 
 						case "suspend_charged_no_shields":
 							$(".battle-window .animate-message .text").html("No Protect shields remaining");
-							$(".switch-window").removeClass("active");
+							$(".switch-sidebar").removeClass("active");
 							break;
 
 
@@ -389,11 +390,16 @@ var BattlerMaster = (function () {
 					// Update switch timer
 
 					if(i == 0){
-						if(player.getSwitchTimer() == 0){
-							$(".battle-window .switch-window").addClass("active");
+						if((player.getSwitchTimer() == 0)&&((phase == "animate")||(phase == "neutral"))){
+							$(".battle-window .switch-sidebar").addClass("active");
 						} else{
-							$(".battle-window .switch-btn").removeClass("active");
 							$(".battle-window .switch-timer").html(Math.floor(player.getSwitchTimer() / 1000));
+						}
+
+						if(player.getSwitchTimer() == 0){
+							$(".battle-window .switch-timer").css("visibility","hidden");
+						} else{
+							$(".battle-window .switch-timer").css("visibility","visible");
 						}
 					}
 				}
@@ -532,7 +538,7 @@ var BattlerMaster = (function () {
 				// Hide the switch button if only one Pokemon remains
 
 				if(players[0].getRemainingPokemon() == 1){
-					$(".battle-window .switch-window").hide();
+					$(".battle-window .switch-sidebar").hide();
 				}
 
 				// Complete any outstanding switch animations
@@ -559,27 +565,46 @@ var BattlerMaster = (function () {
 
 				for(var i = 0; i < team.length; i++){
 					if(team[i] != activePokemon[0]){
-						$(".switch-window .pokemon").eq(index).find(".cp").html(team[i].cp);
-						$(".switch-window .pokemon").eq(index).find(".name").html(team[i].speciesName);
-						$(".switch-window .pokemon").eq(index).attr("index", i);
-						$(".switch-window .pokemon").eq(index).attr("type-1", team[i].types[0]);
-						if(team[i].types[1] == "none"){
-							$(".switch-window .pokemon").eq(index).attr("type-2", team[i].types[0]);
-						} else{
-							$(".switch-window .pokemon").eq(index).attr("type-2", team[i].types[1]);
+						var $targetContainers = [$(".switch-sidebar"), $(".switch-window")];
+
+						for(var n = 0; n < $targetContainers.length; n++){
+							$targetContainers[n].find(".pokemon").eq(index).find(".cp").html(team[i].cp);
+							$targetContainers[n].find(".pokemon").eq(index).find(".name").html(team[i].speciesName);
+							$targetContainers[n].find(".pokemon").eq(index).attr("index", i);
+							$targetContainers[n].find(".pokemon").eq(index).attr("type-1", team[i].types[0]);
+
+
+							var health = ((team[i].hp / team[i].stats.hp) * 100);
+
+							$targetContainers[n].find(".pokemon").eq(index).find(".health").css("width", (.75 * health) + "%");
+
+							if(health >= 50){
+								$targetContainers[n].find(".pokemon").eq(index).find(".health").attr("color", "green");
+							} else if(health >= 25){
+								$targetContainers[n].find(".pokemon").eq(index).find(".health").attr("color", "yellow");
+							} else{
+								$targetContainers[n].find(".pokemon").eq(index).find(".health").attr("color", "red");
+							}
+
+							if(team[i].types[1] == "none"){
+								$targetContainers[n].find(".pokemon").eq(index).attr("type-2", team[i].types[0]);
+							} else{
+								$targetContainers[n].find(".pokemon").eq(index).attr("type-2", team[i].types[1]);
+							}
+
+							if(team[i].hp > 0){
+								$targetContainers[n].find(".pokemon").eq(index).addClass("active");
+							} else{
+								$targetContainers[n].find(".pokemon").eq(index).removeClass("active");
+							}
+
+							if(team[i].hp > 0){
+								$targetContainers[n].find(".pokemon").eq(index).show();
+							} else{
+								$targetContainers[n].find(".pokemon").eq(index).hide();
+							}
 						}
 
-						if(team[i].hp > 0){
-							$(".switch-window .pokemon").eq(index).addClass("active");
-						} else{
-							$(".switch-window .pokemon").eq(index).removeClass("active");
-						}
-
-						if(team[i].hp > 0){
-							$(".switch-window .pokemon").eq(index).show();
-						} else{
-							$(".switch-window .pokemon").eq(index).hide();
-						}
 
 						index++;
 					}
@@ -946,7 +971,7 @@ var BattlerMaster = (function () {
 				}
 
 				// Queue a switch
-				if($(".switch-window .pokemon.active:hover").length > 0){
+				if($(".switch-window .pokemon.active:hover, .switch-sidebar .pokemon.active:hover").length > 0){
 					var $target = $(e.target);
 
 					if(! $target.hasClass("pokemon")){
@@ -954,13 +979,18 @@ var BattlerMaster = (function () {
 					}
 
 					var index = parseInt($target.attr("index"));
-					battle.queueAction(0, "switch", index);
-					bufferedSwitch = index;
 
-					$(".switch-window").removeClass("active");
+					if((phase != "neutral")||$(".switch-sidebar").hasClass("active")){
+						battle.queueAction(0, "switch", index);
+						bufferedSwitch = index;
 
-					if(phase == "suspend_switch_self"){
-						clearInterval(phaseInterval);
+						$(".switch-window, .switch-sidebar").removeClass("active");
+
+						if(phase == "suspend_switch_self"){
+							clearInterval(phaseInterval);
+						}
+					} else{
+						battle.queueAction(0, "fast", 0);
 					}
 
 					return;

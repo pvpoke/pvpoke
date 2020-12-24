@@ -443,9 +443,9 @@ a.random {
   left: -52px;
 }
 .battle-window .scene .pokemon-container .hp.bar-back {
-  outline: 2px solid #666;
+  outline: 2px solid #ccc;
   border: none;
-  height: 20px;
+  height: 15px;
   width: 90%;
   margin: 0 auto 20px auto;
   -webkit-transition: all 0.4s ease 0s;
@@ -470,7 +470,7 @@ a.random {
 }
 .battle-window .scene .pokemon-container .hp.bar-back .bar {
   position: relative;
-  top: -16px;
+  top: -11px;
   background-color: #31e8b7;
   -webkit-transition: width 0.2s ease 0s;
   -moz-transition: width 0.2s ease 0s;
@@ -508,7 +508,7 @@ a.random {
 }
 .battle-window .controls .move-bars {
   position: absolute;
-  bottom: 35%;
+  bottom: 25%;
   width: 100%;
   z-index: 15;
 }
@@ -556,7 +556,7 @@ a.random {
 }
 .battle-window .controls .move-labels {
   position: absolute;
-  bottom: 72%;
+  bottom: 62%;
   width: 100%;
   display: flex;
   justify-content: space-around;
@@ -686,7 +686,7 @@ a.random {
   background: url("../img/train/shield.png");
   background-size: contain;
 }
-.battle-window .shield-window, .battle-window .charge-window {
+.battle-window .shield-window, .battle-window .switch-window, .battle-window .charge-window {
   position: absolute;
   height: 50%;
   bottom: 0;
@@ -696,7 +696,8 @@ a.random {
   opacity: 0;
   pointer-events: none;
 }
-.battle-window .shield-window .container {
+.battle-window .shield-window .container,
+.battle-window .switch-window .container {
   width: 90%;
   margin: 0 auto;
   height: 100%;
@@ -765,48 +766,39 @@ a.random {
   max-width: 100%;
   max-height: 100%;
 }
-.battle-window .switch-window {
+.battle-window .switch-sidebar {
   position: absolute;
   text-align: center;
   z-index: 20;
-  bottom: 33%;
+  bottom: 27%;
   right: 0;
   pointer-events: all;
 }
-.battle-window .switch-window .pokemon {
+.battle-window .switch-sidebar .pokemon {
   position: relative;
 }
-.battle-window .switch-window .sprite-container {
+.battle-window .switch-sidebar .sprite-container {
   padding: 0;
   width: 45px;
   height: 45px;
   text-align: center;
   color: #eee;
 }
-.battle-window .switch-window .sprite-container .main-sprite,
-.battle-window .switch-window .sprite-container .secondary-sprite {
+.battle-window .switch-sidebar .sprite-container .main-sprite,
+.battle-window .switch-sidebar .sprite-container .secondary-sprite {
   width: 75%;
   height: 75%;
   left: 6px;
   top: 6px;
 }
-.battle-window .switch-window .sprite-container .cp {
+.battle-window .switch-sidebar .sprite-container .cp {
   position: absolute;
   z-index: 5;
   font-size: 10px;
   text-align: center;
   width: 100%;
 }
-.battle-window .switch-window .sprite-container .health {
-  width: 100%;
-  height: 2px;
-  background-color: #31e8b7;
-  position: absolute;
-  bottom: 3px;
-  left: 5px;
-  width: 75%;
-}
-.battle-window .switch-window .switch-timer {
+.battle-window .switch-sidebar .switch-timer {
   color: #eee;
   font-weight: bold;
   position: absolute;
@@ -816,18 +808,73 @@ a.random {
   font-size: 24px;
   display: none;
 }
-.battle-window .switch-window .name {
-  font-size: 12px;
+.battle-window .switch-sidebar .name {
+  font-size: 11px;
   margin-bottom: 5px;
+  width: 60px;
+  min-height: 24px;
 }
-.battle-window .switch-window:not(.active) .sprite-container {
+.battle-window .switch-sidebar:not(.active) .sprite-container {
   opacity: 0.25;
 }
-.battle-window .switch-window:not(.active) .switch-timer {
+.battle-window .switch-sidebar:not(.active) .switch-timer {
   display: block;
 }
-.battle-window .switch-window .container {
+.battle-window .switch-sidebar .container {
   padding: 10px;
+}
+.battle-window .switch-window {
+  height: 30%;
+  opacity: 1;
+  text-align: center;
+  z-index: 20;
+  bottom: -30%;
+  -webkit-transition: all 0.25s ease 0s;
+  -moz-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+}
+.battle-window .switch-window.active {
+  bottom: 0;
+  pointer-events: all;
+}
+.battle-window .switch-window p {
+  margin-top: 0;
+}
+.battle-window .switch-window .container {
+  padding: 15px 30px;
+}
+.battle-window .switch-window .pokemon {
+  position: relative;
+}
+.battle-window .switch-window .pokemon-container {
+  display: flex;
+  justify-content: space-around;
+}
+.battle-window .switch-window .main-sprite,
+.battle-window .switch-window .secondary-sprite {
+  width: 85%;
+  height: 85%;
+  left: 4px;
+  top: 4px;
+}
+.battle-window .switch-window .health,
+.battle-window .switch-sidebar .health {
+  width: 100%;
+  height: 2px;
+  background-color: #31e8b7;
+  position: absolute;
+  bottom: 3px;
+  left: 5px;
+  width: 75%;
+}
+.battle-window .switch-window .health[color=yellow],
+.battle-window .switch-sidebar .health[color=yellow] {
+  background: #eabd49;
+}
+.battle-window .switch-window .health[color=red],
+.battle-window .switch-sidebar .health[color=red] {
+  background: #e11414;
 }
 .battle-window .animate-message {
   position: absolute;
@@ -889,7 +936,8 @@ a.random {
 }
 .battle-window[phase=suspend_charged_shield] .controls .button-stack,
 .battle-window[phase=suspend_charged_shield] .controls .move-bar,
-.battle-window[phase=suspend_charged_shield] .controls .switch-btn {
+.battle-window[phase=suspend_charged_shield] .controls .switch-btn,
+.battle-window[phase=suspend_charged_shield] .switch-sidebar {
   display: none !important;
 }
 .battle-window[phase=suspend_charged_shield] .team-indicator {
@@ -911,7 +959,8 @@ a.random {
 .battle-window[phase=suspend_charged_no_shields] .controls .button-stack,
 .battle-window[phase=suspend_charged_no_shields] .controls .move-bar,
 .battle-window[phase=suspend_charged_no_shields] .controls .switch-btn,
-.battle-window[phase=suspend_charged_no_shields] .controls .move-labels {
+.battle-window[phase=suspend_charged_no_shields] .controls .move-labels,
+.battle-window[phase=suspend_charged_no_shields] .switch-sidebar {
   display: none !important;
 }
 .battle-window[phase=suspend_charged_no_shields] .team-indicator {
@@ -940,7 +989,7 @@ a.random {
 }
 .battle-window[phase=suspend_charged_attack] .controls .button-stack,
 .battle-window[phase=suspend_charged_attack] .controls .move-bar,
-.battle-window[phase=suspend_charged_attack] .controls .switch-btn {
+.battle-window[phase=suspend_charged_attack] .switch-sidebar {
   display: none !important;
 }
 .battle-window[phase=suspend_charged_attack] .team-indicator {
@@ -956,10 +1005,14 @@ a.random {
 .battle-window[phase=suspend_switch_self] .timer {
   display: table;
 }
+.battle-window[phase=suspend_switch_self] .switch-window {
+  bottom: 0;
+  pointer-events: all;
+}
 .battle-window[phase=suspend_switch_self] .controls .button-stack,
 .battle-window[phase=suspend_switch_self] .controls .move-bar,
-.battle-window[phase=suspend_switch_self] .controls .switch-btn,
-.battle-window[phase=suspend_switch_self] .controls .move-labels {
+.battle-window[phase=suspend_switch_self] .controls .move-labels,
+.battle-window[phase=suspend_switch_self] .switch-sidebar {
   display: none !important;
 }
 .battle-window[phase=suspend_switch] .animate-message {
@@ -967,7 +1020,7 @@ a.random {
 }
 .battle-window[phase=suspend_switch] .controls .button-stack,
 .battle-window[phase=suspend_switch] .controls .move-bar,
-.battle-window[phase=suspend_switch] .controls .switch-btn {
+.battle-window[phase=suspend_switch] .switch-sidebar {
   display: none !important;
 }
 .battle-window[phase=animating] .animate-message {
@@ -980,7 +1033,7 @@ a.random {
   display: none !important;
 }
 .battle-window[phase=countdown] .top, .battle-window[phase=countdown] .controls {
-  display: none;
+  display: none !important;
 }
 .battle-window[phase=countdown] .countdown {
   display: flex;

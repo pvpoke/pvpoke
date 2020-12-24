@@ -519,9 +519,9 @@ a.random{
 			}
 
 			.hp.bar-back{
-				outline:2px solid #666;
+				outline:2px solid #ccc;
 				border:none;
-				height:20px;
+				height:15px;
 				width: 90%;
 				margin: 0 auto 20px auto;
 
@@ -545,7 +545,7 @@ a.random{
 
 				.bar{
 					position:relative;
-					top:-16px;
+					top:-11px;
 					background-color:#31e8b7;
 
 					@include transition(width, 0.2s, ease, 0s);
@@ -580,7 +580,7 @@ a.random{
 
 		.move-bars{
 			position:absolute;
-			bottom:35%;
+			bottom:25%;
 			width:100%;
 			z-index:15;
 
@@ -625,7 +625,7 @@ a.random{
 
 		.move-labels{
 			position: absolute;
-		    bottom: 72%;
+		    bottom: 62%;
 		    width: 100%;
 		    display: flex;
 		    justify-content: space-around;
@@ -771,7 +771,7 @@ a.random{
 		}
 	}
 
-	.shield-window, .charge-window{
+	.shield-window, .switch-window, .charge-window{
 		position:absolute;
 		height:50%;
 		bottom:0;
@@ -782,7 +782,8 @@ a.random{
 		pointer-events: none;
 	}
 
-	.shield-window .container{
+	.shield-window .container,
+	.switch-window .container{
 		width:90%;
 		margin:0 auto;
 		height:100%;
@@ -864,11 +865,11 @@ a.random{
 		}
 	}
 
-	.switch-window{
+	.switch-sidebar{
 		position: absolute;
 		text-align: center;
 		z-index:20;
-		bottom: 33%;
+		bottom: 27%;
 		right:0;
 		pointer-events: all;
 
@@ -898,16 +899,6 @@ a.random{
 			    text-align: center;
 			    width: 100%;
 			}
-
-			.health{
-				width:100%;
-				height:2px;
-				background-color:#31e8b7;
-				position:absolute;
-				bottom:3px;
-				left:5px;
-				width:75%;
-			}
 		}
 
 		.switch-timer{
@@ -925,6 +916,7 @@ a.random{
 			font-size:11px;
 			margin-bottom:5px;
 			width:60px;
+			min-height:24px;
 		}
 
 		&:not(.active){
@@ -939,6 +931,66 @@ a.random{
 
 		.container{
 			padding: 10px;
+		}
+	}
+
+	.switch-window{
+		height:30%;
+		opacity:1;
+		text-align: center;
+		z-index:20;
+		bottom:-30%;
+
+		@include transition(all, 0.25s, ease, 0s);
+
+		&.active{
+			bottom:0;
+			pointer-events: all;
+		}
+
+		p{
+			margin-top:0;
+		}
+
+		.container{
+			padding: 15px 30px;
+		}
+
+		.pokemon{
+			position:relative;
+		}
+
+		.pokemon-container{
+			display: flex;
+			justify-content: space-around;
+		}
+
+		.main-sprite,
+		.secondary-sprite{
+			width:85%;
+			height:85%;
+			left:4px;
+			top:4px;
+		}
+
+	}
+
+	.switch-window .health,
+	.switch-sidebar .health{
+		width:100%;
+		height:2px;
+		background-color:#31e8b7;
+		position:absolute;
+		bottom:3px;
+		left:5px;
+		width:75%;
+
+		&[color="yellow"]{
+			background:#eabd49;
+		}
+
+		&[color="red"]{
+			background:#e11414;
 		}
 	}
 
@@ -1009,7 +1061,8 @@ a.random{
 
 		.controls .button-stack,
 		.controls .move-bar,
-		.controls .switch-btn{
+		.controls .switch-btn,
+		.switch-sidebar{
 			display:none !important;
 		}
 
@@ -1034,7 +1087,8 @@ a.random{
 		.controls .button-stack,
 		.controls .move-bar,
 		.controls .switch-btn,
-		.controls .move-labels{
+		.controls .move-labels,
+		.switch-sidebar{
 			display:none !important;
 		}
 
@@ -1068,7 +1122,7 @@ a.random{
 
 		.controls .button-stack,
 		.controls .move-bar,
-		.controls .switch-btn{
+		.switch-sidebar{
 			display:none !important;
 		}
 
@@ -1086,10 +1140,15 @@ a.random{
 			display:table;
 		}
 
+		.switch-window{
+			bottom:0;
+			pointer-events: all;
+		}
+
 		.controls .button-stack,
 		.controls .move-bar,
-		.controls .switch-btn,
-		.controls .move-labels{
+		.controls .move-labels,
+		.switch-sidebar{
 			display:none !important;
 		}
 	}
@@ -1101,7 +1160,7 @@ a.random{
 
 		.controls .button-stack,
 		.controls .move-bar,
-		.controls .switch-btn{
+		.switch-sidebar{
 			display:none !important;
 		}
 	}
@@ -1122,7 +1181,7 @@ a.random{
 
 	&[phase="countdown"]{
 		.top, .controls{
-			display:none;
+			display:none !important;
 		}
 
 		.countdown{
