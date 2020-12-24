@@ -130,9 +130,9 @@ require_once '../header.php';
 <div class="section white updates">
 	<h3>What's New</h3>
 
-	<h4>v1.17.6 (October 10, 2020)</h4>
+	<h4>v1.20.4 (December 24, 2020)</h4>
 	<ul>
-		<li>Training Battles for GO Battle League can now utilize preset teams to help you prepare for and recognize common teams of 3.</li>
+		<li>Updated the Training Battle interface to use the same switch sidebar as the game.</li>
 	</ul>
 </div>
 
