@@ -1,0 +1,326 @@
+{
+    "properties": {
+        "lastUpdated": "December 27th, 2020",
+        "totalPerformers": 23899,
+        "totalTeams": 3275
+    },
+    "performers": [{
+            "pokemon": "froslass PS+Av/SB",
+            "individualScore": 141.27,
+            "games": 1588,
+            "teamScore": 521.64
+        },
+        {
+            "pokemon": "diggersby MS+Eq/FiP",
+            "individualScore": 122.38,
+            "games": 317,
+            "teamScore": 521.61
+        },
+        {
+            "pokemon": "lanturn WG+HP/Tb",
+            "individualScore": 119.48,
+            "games": 426,
+            "teamScore": 513.01
+        },
+        {
+            "pokemon": "ninetales_alolan Ch+IB/Psh",
+            "individualScore": 119.19,
+            "games": 211,
+            "teamScore": 509.07
+        },
+        {
+            "pokemon": "obstagoon C+CrC/NS",
+            "individualScore": 123.18,
+            "games": 1031,
+            "teamScore": 506.95
+        },
+        {
+            "pokemon": "lanturn Sp+HP/Tb",
+            "individualScore": 126.31,
+            "games": 517,
+            "teamScore": 506.55
+        },
+        {
+            "pokemon": "stunfisk TS+D/MB",
+            "individualScore": 124.86,
+            "games": 729,
+            "teamScore": 504.88
+        },
+        {
+            "pokemon": "graveler_alolan VS+RB/SE",
+            "individualScore": 124.19,
+            "games": 993,
+            "teamScore": 503.68
+        },
+        {
+            "pokemon": "mandibuzz Sn+AA/FoP",
+            "individualScore": 119.86,
+            "games": 161,
+            "teamScore": 503.36
+        },
+        {
+            "pokemon": "venusaur VW+FP/SlB",
+            "individualScore": 105.62,
+            "games": 452,
+            "teamScore": 501.58
+        },
+        {
+            "pokemon": "marowak_alolan FS+BC/SB",
+            "individualScore": 126.83,
+            "games": 383,
+            "teamScore": 501.55
+        },
+        {
+            "pokemon": "altaria DB+DgP/SA",
+            "individualScore": 131.71,
+            "games": 3248,
+            "teamScore": 500.06
+        },
+        {
+            "pokemon": "drifblim H+IW/SB",
+            "individualScore": 119.85,
+            "games": 422,
+            "teamScore": 499.17
+        },
+        {
+            "pokemon": "dewgong IS+IW/WP",
+            "individualScore": 130.13,
+            "games": 275,
+            "teamScore": 498.2
+        },
+        {
+            "pokemon": "vigoroth C+BS/Bd",
+            "individualScore": 116.9,
+            "games": 3194,
+            "teamScore": 496.57
+        },
+        {
+            "pokemon": "skarmory AS+BrB/SA",
+            "individualScore": 118.67,
+            "games": 1257,
+            "teamScore": 496.47
+        },
+        {
+            "pokemon": "wigglytuff Ch+IB/PR",
+            "individualScore": 125.38,
+            "games": 2036,
+            "teamScore": 496.17
+        },
+        {
+            "pokemon": "lapras IS+S/SkB",
+            "individualScore": 142.29,
+            "games": 330,
+            "teamScore": 495.41
+        },
+        {
+            "pokemon": "marowak_alolan FS+BC/SBo",
+            "individualScore": 114.68,
+            "games": 2419,
+            "teamScore": 492.45
+        },
+        {
+            "pokemon": "abomasnow PS+EB/WBI",
+            "individualScore": 112.22,
+            "games": 324,
+            "teamScore": 490.06
+        },
+        {
+            "pokemon": "hypno Cf+FiP/SB",
+            "individualScore": 131.52,
+            "games": 391,
+            "teamScore": 480.79
+        },
+        {
+            "pokemon": "dragonair DB+AT/DgP",
+            "individualScore": 105.72,
+            "games": 194,
+            "teamScore": 462.38
+        }
+    ],
+    "teams": [{
+            "team": "froslass PS/Av/SB|stunfisk TS/D/MB|venusaur VW/FP/SlB",
+            "teamScore": 561.03,
+            "games": 32
+        },
+        {
+            "team": "marowak_alolan H/FiB/SBo|altaria DB/DgP/SA|skarmory AS/SA",
+            "teamScore": 554.24,
+            "games": 21
+        },
+        {
+            "team": "obstagoon C/CrC/NS|froslass PS/Av/SB|marowak_alolan FS/BC/SBo",
+            "teamScore": 549,
+            "games": 21
+        },
+        {
+            "team": "froslass PS/Av/SB|lanturn WG/HP/Tb|ninetales_alolan Ch/IB/Psh",
+            "teamScore": 544.18,
+            "games": 40
+        },
+        {
+            "team": "froslass PS/Av/SB|graveler_alolan VS/RB/SE|vigoroth C/BS/Bd",
+            "teamScore": 542.93,
+            "games": 28
+        },
+        {
+            "team": "froslass PS/Av/SB|obstagoon C/CrC/NS|vigoroth C/BS/Bd",
+            "teamScore": 541.73,
+            "games": 26
+        },
+        {
+            "team": "obstagoon C/CrC/NS|froslass PS/Av/SB|skarmory AS/BrB/SA",
+            "teamScore": 541.7,
+            "games": 61
+        },
+        {
+            "team": "stunfisk MS/D/MB|froslass PS/Av/SB|marowak_alolan FS/BC/SB",
+            "teamScore": 539.71,
+            "games": 24
+        },
+        {
+            "team": "altaria DB/DgP/SA|dewgong IS/IW/WP|marowak_alolan FS/BC/SBo",
+            "teamScore": 538.94,
+            "games": 36
+        },
+        {
+            "team": "altaria DB/DgP/SA|froslass PS/Av/SB|graveler_alolan VS/RB/SE",
+            "teamScore": 538.03,
+            "games": 34
+        },
+        {
+            "team": "lanturn Sp/HP/Tb|drifblim H/IW/SB|skarmory AS/SA",
+            "teamScore": 535.95,
+            "games": 22
+        },
+        {
+            "team": "altaria DB/DgP/SA|magnezone Sp/MrS/WC|marowak_alolan FS/BC/SBo",
+            "teamScore": 534.45,
+            "games": 22
+        },
+        {
+            "team": "graveler_alolan VS/RB/SE|froslass PS/Av/SB|venusaur VW/FP/SlB",
+            "teamScore": 534.32,
+            "games": 22
+        },
+        {
+            "team": "graveler_alolan VS/RB/SE|froslass PS/Av/SB|vigoroth C/BS/Bd",
+            "teamScore": 533.23,
+            "games": 48
+        },
+        {
+            "team": "stunfisk TS/D/MB|obstagoon C/CrC/NS|skarmory AS/BrB/SA",
+            "teamScore": 532.44,
+            "games": 32
+        },
+        {
+            "team": "froslass PS/Av/SB|altaria DB/DgP/SA|vigoroth C/BS/Bd",
+            "teamScore": 531.71,
+            "games": 52
+        },
+        {
+            "team": "altaria DB/DgP/SA|froslass PS/Av/SB|lanturn WG/HP/Tb",
+            "teamScore": 520.07,
+            "games": 27
+        },
+        {
+            "team": "obstagoon C/HB/NS|froslass PS/Av/SB|talonflame FS/BrB/FmC",
+            "teamScore": 518.49,
+            "games": 57
+        },
+        {
+            "team": "altaria DB/DgP/SA|froslass PS/Av/SB|vigoroth C/BS/Bd",
+            "teamScore": 515.56,
+            "games": 32
+        },
+        {
+            "team": "graveler_alolan VS/RB/SE|altaria DB/DgP/SA|vigoroth C/BS/Bd",
+            "teamScore": 512.91,
+            "games": 54
+        },
+        {
+            "team": "obstagoon C/CrC/NS|froslass PS/Av/SB|wigglytuff Ch/IB/PR",
+            "teamScore": 510.86,
+            "games": 21
+        },
+        {
+            "team": "graveler_alolan VS/RB/SE|drifblim H/IW/SB|vigoroth C/BS/Bd",
+            "teamScore": 507.3,
+            "games": 30
+        },
+        {
+            "team": "wigglytuff Ch/IB/PR|altaria DB/DgP/SA|skarmory AS/SA",
+            "teamScore": 506.13,
+            "games": 38
+        },
+        {
+            "team": "lapras IS/S/SkB|hypno Cf/FiP/SB|marowak_alolan FS/BC/SBo",
+            "teamScore": 499.01,
+            "games": 196
+        },
+        {
+            "team": "altaria DB/DgP/SA|lanturn Sp/HP/Tb|vigoroth C/BS/Bd",
+            "teamScore": 497.07,
+            "games": 242
+        },
+        {
+            "team": "marowak_alolan FS/BC/SB|vigoroth C/BS/Bd|wigglytuff Ch/IB/PR",
+            "teamScore": 493.9,
+            "games": 21
+        },
+        {
+            "team": "altaria DB/DgP/SA|graveler_alolan VS/RB/SE|vigoroth C/BS/Bd",
+            "teamScore": 493.67,
+            "games": 275
+        },
+        {
+            "team": "skarmory AS/BrB/SA|stunfisk TS/D/MB|vigoroth C/BS/Bd",
+            "teamScore": 490.91,
+            "games": 242
+        },
+        {
+            "team": "altaria DB/DgP/SA|marowak_alolan FS/BC/SBo|obstagoon C/CrC/NS",
+            "teamScore": 490.28,
+            "games": 248
+        },
+        {
+            "team": "marowak_alolan FS/BC/SBo|altaria DB/DgP/SA|vigoroth C/BS/Bd",
+            "teamScore": 486.79,
+            "games": 33
+        },
+        {
+            "team": "altaria DB/DgP/SA|marowak_alolan FS/BC/SBo|vigoroth C/BS/Bd",
+            "teamScore": 485.24,
+            "games": 512
+        },
+        {
+            "team": "wigglytuff Ch/IB/PR|marowak_alolan FS/BC/SBo|vigoroth C/BS/Bd",
+            "teamScore": 485.07,
+            "games": 261
+        },
+        {
+            "team": "obstagoon C/CrC/NS|skarmory AS/BrB/SA|wigglytuff Ch/IB/PR",
+            "teamScore": 480.67,
+            "games": 54
+        },
+        {
+            "team": "altaria DB/DgP/SA|skarmory AS/BrB/SA|vigoroth C/BS/Bd",
+            "teamScore": 480.4,
+            "games": 161
+        },
+        {
+            "team": "marowak_alolan FS/BC/SBo|altaria DB/DgP/SA|wigglytuff Ch/IB/PR",
+            "teamScore": 479.87,
+            "games": 31
+        },
+        {
+            "team": "abomasnow PS/EB/WBI|mantine B/BuB/IB|pelipper WG/Hu/WBW",
+            "teamScore": 471.32,
+            "games": 31
+        },
+        {
+            "team": "hypno Cf/FiP/SB|dragonair DB/AT/DgP|marowak_alolan FS/BC/SBo",
+            "teamScore": 463.57,
+            "games": 188
+        }
+    ]
+}
