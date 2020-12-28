@@ -81,6 +81,8 @@ require_once 'header.php';
 <button class="rate-btn button">Rate Team</button>
 <div class="section white error">Please select one or more Pokemon.</div>
 
+<?php require 'modules/ads/body-728.php'; ?>
+
 <div class="section typings white">
 	<a href="#" class="toggle active">Overview <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content article">

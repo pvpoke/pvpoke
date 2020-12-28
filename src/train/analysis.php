@@ -127,6 +127,8 @@ require_once '../header.php';
 
 	<p class="column-description"><b>Usage - </b> Usage by players and bots on teams of 3. A large sample size will yield higher confidence in the data. A <span class="low-volume">small sample size</span> may be the result of an individual player, and consequentially yield lower confidence in the data. The data is filtered by a mininum usage threshold.</p>
 
+	<?php require '../modules/ads/body-728.php'; ?>
+
 	<h3>Top Teams</h3>
 
 	<div>Average performance for teams used in PvPoke.com <a href="<?php echo $WEB_ROOT; ?>train/">Training Battles</a>. Data is sampled from both players and bots in the Elite and Champion difficulties.</div>

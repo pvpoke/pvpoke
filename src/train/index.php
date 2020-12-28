@@ -127,6 +127,8 @@ require_once '../header.php';
 	</div>
 </div>
 
+<?php require '../modules/ads/body-728.php'; ?>
+
 <div class="section white updates">
 	<h3>What's New</h3>
 

@@ -25,6 +25,12 @@
 		<p>Check out the source code on Github or lend your support through Patreon.</p>
 	</a>
 
+	<?php require 'modules/ads/body-728.php'; ?>
+
+	<?php if($_SETTINGS->ads == 1) : ?>
+		<span data-ccpa-link="1"></span>
+	<?php endif; ?>
+
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 

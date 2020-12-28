@@ -1559,7 +1559,7 @@ select, input{
 }
 
 a.download-csv{
-	display:inline-block;
+	display:none;
 }
 
 .rating-table{
@@ -3931,6 +3931,10 @@ a.pokebattler{
 		}
 	}
 
+	a.download-csv{
+		display:inline-block;
+	}
+
 	.battle-results.matrix .table-container{
 		max-height: 800px;
 	}
@@ -3965,6 +3969,83 @@ a.pokebattler{
 				min-width: 60px;
 			}
 		}
+	}
+}
+
+/* Ad styling and display */
+
+#nitro-header-mobile,
+#nitro-body-mobile,
+#nitro-body-desktop,
+#nitro-body-mobile,
+#nitro-sidebar-right,
+#nitro-sidebar-left{
+	display:none;
+	background:#ccc;
+}
+
+.mobile-ad-container,
+.desktop-ad-container{
+	overflow: hidden;
+	clip-path: inset(0 0 0 0);
+	margin: 0 auto 5px auto;
+	display:none;
+}
+
+.section.battle .mobile-ad-container{
+	margin: 10px auto 5px auto;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+	#nitro-header-mobile{
+		display: block;
+	}
+
+	#nitro-body-mobile{
+		display: block;
+	}
+
+	.mobile-ad-container{
+		display:block;
+		width:320px;
+		height:70px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	#nitro-header-desktop{
+		display: block;
+	}
+
+	#nitro-body-desktop{
+		display: block;
+	}
+
+	.desktop-ad-container{
+		display:block;
+		width:728px;
+		height:110px;
+		margin:20px auto;
+
+		&.nitro-header{
+			margin:0 auto;
+		}
+	}
+}
+
+@media only screen and (min-width: 1150px) {
+	#nitro-sidebar-left{
+		display: block;
+		position: fixed;
+		top:95px;
+		left:0;
+	}
+
+	#nitro-sidebar-right{
+		display: block;
+		position: fixed;
+		top:95px;
+		right:0;
 	}
 }
 

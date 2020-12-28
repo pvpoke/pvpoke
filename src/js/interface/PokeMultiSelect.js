@@ -42,8 +42,9 @@ function PokeMultiSelect(element){
 
 		while(window.localStorage.key(i) !== null){
 			var key = window.localStorage.key(i);
+			var content = window.localStorage.getItem(key);
 
-			if((key !== "undefined")&&(key.indexOf("google") == -1)){
+			if(content.indexOf("_") > -1){
 				$el.find(".quick-fill-select").append("<option value=\""+key+"\" type=\"custom\">"+key+"</option>");
 			}
 
