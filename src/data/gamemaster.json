@@ -18590,7 +18590,7 @@
             "hp": 200
         },
         "types": ["fire", "normal"],
-        "fastMoves": ["FIRE_FANG", "TAKE_DOWN", "EMBER"],
+        "fastMoves": ["FIRE_FANG", "TAKE_DOWN"],
         "chargedMoves": ["FLAME_CHARGE", "SOLAR_BEAM", "DARK_PULSE", "OVERHEAT"],
         "defaultIVs": {
             "cp500": [6.5, 15, 15, 14],
