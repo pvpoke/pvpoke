@@ -3981,7 +3981,6 @@ a.pokebattler{
 #nitro-sidebar-right,
 #nitro-sidebar-left{
 	display:none;
-	background:#ccc;
 }
 
 .mobile-ad-container,
@@ -3997,8 +3996,16 @@ a.pokebattler{
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
+
+	.nitro-pin-container{
+		position: fixed;
+		bottom:0;
+		width:100%;
+		z-index:50;
+	}
 	#nitro-header-mobile{
 		display: block;
+		margin: 0 auto;
 	}
 
 	#nitro-body-mobile{
