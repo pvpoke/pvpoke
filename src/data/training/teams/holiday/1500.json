@@ -472,7 +472,7 @@
 					"speciesId": "graveler_alolan",
 					"fastMove": "VOLT_SWITCH",
 					"chargedMoves": ["STONE_EDGE","ROCK_BLAST"]
-				}
+				},
 				{
 					"speciesId": "altaria",
 					"fastMove": "DRAGON_BREATH",
@@ -482,7 +482,7 @@
 					"speciesId": "froslass",
 					"fastMove": "POWDER_SNOW",
 					"chargedMoves": ["AVALANCHE","SHADOW_BALL"]
-				},
+				}
 			],
 			"weight": 3
 		},
@@ -492,7 +492,7 @@
 					"speciesId": "graveler_alolan",
 					"fastMove": "VOLT_SWITCH",
 					"chargedMoves": ["STONE_EDGE","ROCK_BLAST"]
-				}
+				},
 				{
 					"speciesId": "wigglytuff",
 					"fastMove": "CHARM",
@@ -502,7 +502,7 @@
 					"speciesId": "ninetales_alolan",
 					"fastMove": "CHARM",
 					"chargedMoves": ["PSYSHOCK","ICE_BEAM"]
-				},
+				}
 			],
 			"weight": 2
 		}
