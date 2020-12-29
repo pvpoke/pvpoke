@@ -469,62 +469,42 @@
 		{
 			"pokemon": [
 				{
+					"speciesId": "graveler_alolan",
+					"fastMove": "VOLT_SWITCH",
+					"chargedMoves": ["STONE_EDGE","ROCK_BLAST"]
+				}
+				{
 					"speciesId": "altaria",
 					"fastMove": "DRAGON_BREATH",
 					"chargedMoves": ["SKY_ATTACK","DRAGON_PULSE"]
 				},
 				{
-					"speciesId": "vigoroth",
-					"fastMove": "COUNTER",
-					"chargedMoves": ["BODY_SLAM","BULLDOZE"]
+					"speciesId": "froslass",
+					"fastMove": "POWDER_SNOW",
+					"chargedMoves": ["AVALANCHE","SHADOW_BALL"]
 				},
+			],
+			"weight": 3
+		},
+		{
+			"pokemon": [
 				{
 					"speciesId": "graveler_alolan",
 					"fastMove": "VOLT_SWITCH",
 					"chargedMoves": ["STONE_EDGE","ROCK_BLAST"]
 				}
+				{
+					"speciesId": "wigglytuff",
+					"fastMove": "CHARM",
+					"chargedMoves": ["ICE_BEAM","PLAY_ROUGH"]
+				},
+				{
+					"speciesId": "ninetales_alolan",
+					"fastMove": "CHARM",
+					"chargedMoves": ["PSYSHOCK","ICE_BEAM"]
+				},
 			],
-			"weight": 1
-		},
-		{
-			"pokemon": [
-				{
-					"speciesId": "hypno",
-					"fastMove": "CONFUSION",
-					"chargedMoves": ["FIRE_PUNCH","SHADOW_BALL"]
-				},
-				{
-					"speciesId": "dragonair",
-					"fastMove": "DRAGON_BREATH",
-					"chargedMoves": ["AQUA_TAIL","DRAGON_PULSE"]
-				},
-				{
-					"speciesId": "marowak_alolan",
-					"fastMove": "FIRE_SPIN",
-					"chargedMoves": ["BONE_CLUB","SHADOW_BONE"]
-				}
-			],
-			"weight": 1
-		},
-		{
-			"pokemon": [
-				{
-					"speciesId": "lapras",
-					"fastMove": "ICE_SHARD",
-					"chargedMoves": ["SURF","SKULL_BASH"]
-				},
-				{
-					"speciesId": "hypno",
-					"fastMove": "CONFUSION",
-					"chargedMoves": ["FIRE_PUNCH","SHADOW_BALL"]
-				},
-				{
-					"speciesId": "marowak_alolan",
-					"fastMove": "FIRE_SPIN",
-					"chargedMoves": ["BONE_CLUB","SHADOW_BONE"]
-				}
-			],
-			"weight": 1
+			"weight": 2
 		}
 	]
 }
