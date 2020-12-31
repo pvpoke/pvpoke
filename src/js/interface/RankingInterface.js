@@ -411,7 +411,7 @@ var InterfaceMaster = (function () {
 			// Event handler for changing the league select
 
 			function selectLeague(e){
-				var cp = $(".league-select option:selected").val();
+				var cp = battle.getCP();
 
 				if(context != "custom"){
 					var category = $(".ranking-categories a.selected").attr("data");
@@ -643,7 +643,7 @@ var InterfaceMaster = (function () {
 
 				// Helper variables for displaying matchups and link URL
 
-				var cp = $(".league-select option:selected").val();
+				var cp = battle.getCP();
 
 				if(context == "custom"){
 					category = context;
