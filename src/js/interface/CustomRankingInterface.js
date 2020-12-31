@@ -379,7 +379,7 @@ function interfaceObject(){
 	// Event handler for changing the league select
 
 	function selectLeague(e){
-		var allowed = [1500, 2500, 10000];
+		var allowed = [500, 1500, 2500, 10000];
 		var cp = parseInt($(".league-select option:selected").val());
 
 		if(allowed.indexOf(cp) > -1){
