@@ -66,11 +66,11 @@ require_once '../header.php';
 
 	<select class="format-select">
 		<option value="1500" cup="all">Great League</option>
-		<option value="1500" cup="holiday">Holiday Cup</option>
 		<option value="2500" cup="all">Ultra League</option>
-		<option value="2500" cup="premier">Ultra Premier Cup</option>
 		<option value="10000" cup="all">Master League</option>
-		<option value="10000" cup="premier">Master Premier Cup</option>
+		<option value="2500" cup="premier">Premier Cup (Ultra)</option>
+		<option value="10000" cup="premier">Premier Cup (Master)</option>
+		<option value="1500" cup="holiday">Holiday Cup</option>
 	</select>
 
 	<div class="date-updated">Last updated</div>

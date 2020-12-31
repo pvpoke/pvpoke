@@ -34,9 +34,13 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.20.4 (December 24, 2020)</h4>
+	<h4>v1.20.6 (December 31, 2020)</h4>
 	<ul>
-		<li>Updated the Training Battle interface to use the same switch sidebar as the game.</li>
+		<li>Rankings page now has 1 format dropdown.</li>
+		<li>Histograms in Multi-Battle and the Team Builder now show average Battle Rating.</li>
+		<li>Added a "clear" option for custom group selection.</li>
+		<li>Adding a new Pokemon to a custom group will properly clear previous Pokemon search.</li>
+		<li>Switching between "Multi Battle" and "Matrix Battle" will keep any selected custom group on the right side.</li>
 	</ul>
 
 	<h3>Latest Article</h3>

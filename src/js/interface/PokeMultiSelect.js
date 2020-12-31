@@ -657,6 +657,22 @@ function PokeMultiSelect(element){
 		});
 	});
 
+	// Clear all selections
+
+	$el.find(".clear-selection").click(function(e){
+		e.preventDefault();
+
+		modalWindow("Clear Custom Group", $(".multi-clear-confirm").first());
+
+		$(".modal .yes").click(function(e){
+			pokemonList = [];
+			self.updateListDisplay();
+			$el.find(".quick-fill-select option").first().prop("selected", "selected");
+
+			closeModalWindow();
+		});
+	});
+
 	// Change shield settings
 
 	$el.find(".shield-select").on("change", function(e){

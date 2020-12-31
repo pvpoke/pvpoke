@@ -44,8 +44,6 @@ var InterfaceMaster = (function () {
 					$(".league-select option[value='500']").remove();
 				}
 
-				$(".league-select").on("change", selectLeague);
-				$(".cup-select").on("change", selectCup);
 				$(".format-select").on("change", selectFormat);
 				$(".ranking-categories a").on("click", selectCategory);
 				$("body").on("click", ".check", checkBox);
@@ -306,8 +304,7 @@ var InterfaceMaster = (function () {
 							// Don't process default values so data doesn't needlessly reload
 
 							case "cp":
-								$(".league-select option[value=\""+val+"\"]").prop("selected","selected");
-
+								battle.setCP(val);
 								break;
 
 							case "cat":
@@ -330,24 +327,6 @@ var InterfaceMaster = (function () {
 								break;
 
 							case "cup":
-								$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
-
-								if($(".format-select option[cup=\""+val+"\"]").length > 0){
-									$(".format-select option[cup=\""+val+"\"]").prop("selected","selected");
-								} else{
-									var cat = $(".cup-select option[value=\""+val+"\"]").attr("cat");
-									$(".format-select option[value=\""+cat+"\"]").prop("selected","selected");
-									selectFormat();
-
-									$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
-								}
-
-								if(val == "grunt"){
-									$(".continentals").removeClass("hide");
-								} else{
-									$(".continentals").addClass("hide");
-								}
-
 								battle.setCup(val);
 								break;
 
@@ -362,9 +341,11 @@ var InterfaceMaster = (function () {
 
 				// Load data via existing change function
 
-				var cp = $(".league-select option:selected").val();
+				var cp = battle.getCP();
 				var category = $(".ranking-categories a.selected").attr("data");
-				var cup = $(".cup-select option:selected").val();
+				var cup = battle.getCup().name;
+
+				$(".format-select option[value=\""+cp+"\"][cup=\""+cup+"\"]").prop("selected","selected");
 
 				self.displayRankings(category, cp, cup, null);
 			}
@@ -456,68 +437,24 @@ var InterfaceMaster = (function () {
 
 			// Event handler for changing the cup select
 
-			function selectCup(e){
-				var cp = $(".league-select option:selected").val();
+			function selectFormat(e){
+				var cp = $(".format-select option:selected").val();
+				var cup = $(".format-select option:selected").attr("cup");
 				var category = $(".ranking-categories a.selected").attr("data");
-				var cup = $(".cup-select option:selected").val();
 
 				if(! category){
 					category = "overall";
 				}
 
-				if(cup == "grunt"){
-					$(".continentals").removeClass("hide");
-				} else{
-					$(".continentals").addClass("hide");
-				}
-
-				self.displayRankings(category, cp, cup);
-				self.pushHistoryState(cup, cp, category, null);
-			}
-
-			// Event handler for changing the format category
-
-			function selectFormat(e){
-				var format = $(".format-select option:selected").val();
-				var cup = $(".format-select option:selected").attr("cup");
-
-				$(".cup-select option").hide();
-				$(".cup-select option[cat=\""+format+"\"]").show();
-
-				if(cup){
-					$(".cup-select option[value=\""+cup+"\"]").eq(0).prop("selected", true);
-				} else{
-					$(".cup-select option[cat=\""+format+"\"]").eq(0).prop("selected", true);
-				}
-
-				if((format == "all")||(cup)){
-					$(".cup-select").hide();
-				} else{
-					$(".cup-select").show();
-				}
-
-				var cp = $(".league-select option:selected").val();
-				var category = $(".ranking-categories a.selected").attr("data");
-				if(! cup){
-					cup = $(".cup-select option:selected").val();
-				}
-
-				battle.setCup(cup);
-
-				self.displayRankings(category, cp, cup);
-				self.pushHistoryState(cup, cp, category, null);
-
-				if(cup == "grunt"){
-					$(".continentals").removeClass("hide");
-				} else{
-					$(".continentals").addClass("hide");
-				}
-
-				if(format == "custom"){
-					// Redirect to the custom rankings page
+				if(cup == "custom"){
 					window.location.href = webRoot+'custom-rankings/';
+					return;
 				}
+
+				self.displayRankings(category, cp, cup);
+				self.pushHistoryState(cup, cp, category, null);
 			}
+
 
 			// Event handler for selecting ranking category
 
@@ -529,10 +466,10 @@ var InterfaceMaster = (function () {
 
 				$(e.target).addClass("selected");
 
-				var cp = $(".league-select option:selected").val();
+				var cp = $(".format-select option:selected").val();
 				var category = $(".ranking-categories a.selected").attr("data");
 				var scenarioStr = $(".ranking-categories a.selected").attr("scenario");
-				var cup = $(".cup-select option:selected").val();
+				var cup = $(".format-select option:selected").attr("cup");
 
 				$(".description").hide();
 				$(".description."+category).show();

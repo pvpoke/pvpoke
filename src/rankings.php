@@ -74,8 +74,7 @@ require_once 'header.php';
 
 <h1>Rankings</h1>
 <div class="section league-select-container white">
-	<?php require 'modules/leagueselect.php'; ?>
-	<?php require 'modules/cupselect.php'; ?>
+	<?php require 'modules/formatselect.php'; ?>
 
 	<div class="ranking-categories">
 		<a class="selected" href="#" data="overall" scenario="leads">Overall</a>

@@ -44,6 +44,7 @@ function PokeSelect(element, i){
 		});
 
 		$el.find(".check.auto-level").addClass("on");
+		$el.find(".poke-search").val("");
 
 		searchArr.sort((a,b) => (a.priority > b.priority) ? -1 : ((b.priority > a.priority) ? 1 : 0));
 

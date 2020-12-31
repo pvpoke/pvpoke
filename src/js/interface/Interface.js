@@ -1574,6 +1574,7 @@ var InterfaceMaster = (function () {
 			// Event handler for changing the battle mode
 
 			function selectMode(e){
+				var currentMode = self.battleMode;
 				self.battleMode = $(e.target).find("option:selected").val();
 
 				$("p.description").hide();
@@ -1591,6 +1592,18 @@ var InterfaceMaster = (function () {
 
 				if(self.battleMode == "matrix"){
 					$(".poke.multi .custom-options").show();
+				}
+
+				// When moving between Multi and Matrix, move multi custom group to the right Matrix group
+				if(currentMode == "multi" && self.battleMode == "matrix"){
+					multiSelectors[1].setPokemonList(multiSelectors[0].getPokemonList());
+					multiSelectors[0].setPokemonList([]);
+				}
+
+				// And vice versa
+				if(currentMode == "matrix" && self.battleMode == "multi"){
+					multiSelectors[0].setPokemonList(multiSelectors[1].getPokemonList());
+					multiSelectors[1].setPokemonList([]);
 				}
 			}
 
