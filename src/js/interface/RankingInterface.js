@@ -498,10 +498,9 @@ var InterfaceMaster = (function () {
 					return;
 				}
 
-				var cup = $(".cup-select option:selected").val();
+				var cup = $(".format-select option:selected").attr("cup");
 				var category = $(".ranking-categories a.selected").attr("data");
 				var $rank = $(this).closest(".rank");
-
 
 				$rank.toggleClass("selected");
 				$rank.find(".details").toggleClass("active");
@@ -783,7 +782,7 @@ var InterfaceMaster = (function () {
 				$details.find(".stats .rating").eq(6).html("Lvl " + rank1Combo.level + " " + rank1Combo.ivs.atk + "/" + rank1Combo.ivs.def + "/" + rank1Combo.ivs.hp);
 
 				// Show share link
-				var cup = $(".cup-select option:selected").val();
+				var cup = battle.getCup().name;
 				var cupName = $(".cup-select option:selected").html();
 
 				var link = host + "rankings/"+cup+"/"+cp+"/"+category+"/"+pokemon.speciesId+"/";
