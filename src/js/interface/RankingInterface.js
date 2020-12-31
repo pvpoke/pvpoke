@@ -126,7 +126,7 @@ var InterfaceMaster = (function () {
 				}
 
 				// Show any restrictions
-				var cup = $(".cup-select option:selected").val();
+				var cup = battle.getCup().name;
 				$(".limited").hide();
 				limitedPokemon = [];
 
@@ -240,7 +240,7 @@ var InterfaceMaster = (function () {
 				$(".rank").on("click", selectPokemon);
 
 				// Update download link with new data
-				var filename = $(".cup-select option:selected").html() + " Rankings.csv";
+				var filename = battle.getCup().name + " Rankings.csv";
 				var filedata = '';
 
 				if(context == "custom"){
@@ -415,7 +415,7 @@ var InterfaceMaster = (function () {
 
 				if(context != "custom"){
 					var category = $(".ranking-categories a.selected").attr("data");
-					var cup = $(".cup-select option:selected").val();
+					var cup = battle.getCup().name;
 
 
 					if(cp == 500){
@@ -783,7 +783,7 @@ var InterfaceMaster = (function () {
 
 				// Show share link
 				var cup = battle.getCup().name;
-				var cupName = $(".cup-select option:selected").html();
+				var cupName = $(".format-select option:selected").html();
 
 				var link = host + "rankings/"+cup+"/"+cp+"/"+category+"/"+pokemon.speciesId+"/";
 

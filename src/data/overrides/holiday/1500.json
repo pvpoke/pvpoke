@@ -5,14 +5,10 @@
 		"weight": 2
 	},
 	{
-		"speciesId": "froslass",
-		"chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
-	},
-	{
 		"speciesId": "lapras",
 		"fastMove": "ICE_SHARD",
 		"chargedMoves": ["SURF", "SKULL_BASH"],
-		"weight": 3
+		"weight": 5
 	},
 	{
 		"speciesId": "lapras_shadow",
@@ -27,7 +23,7 @@
 	{
 		"speciesId": "marowak_alolan",
 		"chargedMoves": ["SHADOW_BONE", "BONE_CLUB"],
-		"weight": 35
+		"weight": 38
 	},
 	{
 		"speciesId": "mr_rime",
@@ -53,11 +49,7 @@
 	{
 		"speciesId": "vigoroth",
 		"chargedMoves": ["BODY_SLAM", "BULLDOZE"],
-		"weight": 40
-	},
-	{
-		"speciesId": "diggersby_xl",
-		"weight": 10
+		"weight": 35
 	},
 	{
 		"speciesId": "gliscor",
@@ -89,15 +81,24 @@
 	},
 	{
 		"speciesId": "froslass",
-		"weight": 8
+		"chargedMoves": ["AVALANCHE", "SHADOW_BALL"],
+		"weight": 20
 	},
 	{
 		"speciesId": "articuno",
 		"weight": 1
 	},
 	{
+		"speciesId": "magnezone",
+		"weight": 3
+	},
+	{
 		"speciesId": "wigglytuff",
-		"weight": 10
+		"weight": 24
+	},
+	{
+		"speciesId": "castform_snowy",
+		"weight": 3
 	},
 	{
 		"speciesId": "abomasnow",
@@ -105,11 +106,11 @@
 	},
 	{
 		"speciesId": "skarmory",
-		"weight": 30
+		"weight": 20
 	},
 	{
 		"speciesId": "altaria",
-		"weight": 18
+		"weight": 30
 	},
 	{
 		"speciesId": "charizard",
@@ -126,7 +127,7 @@
 	},
 	{
 		"speciesId": "obstagoon",
-		"weight": 20
+		"weight": 33
 	},
 	{
 		"speciesId": "snorlax",
@@ -142,11 +143,11 @@
 	},
 	{
 		"speciesId": "galvantula",
-		"weight": 6
+		"weight": 2
 	},
 	{
 		"speciesId": "graveler_alolan",
-		"weight": 12
+		"weight": 15
 	},
 	{
 		"speciesId": "golem_alolan",
