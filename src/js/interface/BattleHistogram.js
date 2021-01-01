@@ -1,16 +1,16 @@
 // This class outputs a Battle Rating histogram to the tied Jquery object
 
 function BattleHistogram($element){
-	
+
 	var $el = $element;
 	var divisions = 20;
 	var increment = 1000 / divisions; // Max Battle Rating of 1000, so divide that into equal chunks
-	
+
 	var currentData;
 	var previousData;
-	
+
 	// Animate a previous or current histogram
-	
+
 	$el.on("click", ".button", function(e){
 
 		var data = previousData;
@@ -28,12 +28,13 @@ function BattleHistogram($element){
 
 		$el.find("h2").html(data.name);
 		$el.find(".move-label").html(data.moves);
-		
+		$el.find(".br-avg").html(data.avg);
+
 		// Set stats
-		
+
 		for(var i = 0; i < data.stats.length; i++){
 			var percent = Math.round((data.stats[i] / data.total) * 1000) / 10;
-			
+
 			$el.find(".stats .stat").eq(i).html(data.stats[i]);
 			$el.find(".stats .percent").eq(i).html(percent);
 		}
@@ -44,15 +45,15 @@ function BattleHistogram($element){
 			$el.find(".bar").eq(i).css("height", data.bars[i]+"%");
 		}
 	});
-	
+
 	this.generate = function(pokemon, ratings, scaleOverride){
-		
+
 		// Store previous data
-		
+
 		if(currentData){
 			previousData = currentData; // Save previous for comparison
-		}		
-		
+		}
+
 		var histogramCounts = []; // Stores the number of matchups in each bracket
 
 		for(var i = 0; i < divisions; i++){
@@ -60,15 +61,17 @@ function BattleHistogram($element){
 		}
 
 		// Bucket individual battle ratings into the histogram segments
-		
+
 		var stats = [0,0,0];
 		var statLabels = ["Wins","Losses","Draws"];
+		var avg = 0;
 
 		for(var n = 0; n < ratings.length; n++){
 			var division = Math.ceil(ratings[n] / increment) - 1; // Ensures a range of 0 to the number of divisions
 
 			histogramCounts[division]++;
-			
+			avg += ratings[n];
+
 			if(ratings[n] > 500){
 				stats[0]++;
 			} else if(ratings[n] < 500){
@@ -78,6 +81,8 @@ function BattleHistogram($element){
 			}
 		}
 
+		avg = Math.round(avg / ratings.length);
+
 		// Generate list of moves so it can be referenced above the chart
 
 		var moveStr = pokemon.fastMove.name;
@@ -85,15 +90,15 @@ function BattleHistogram($element){
 		for(var i = 0; i < pokemon.chargedMoves.length; i++){
 			moveStr += ", " + pokemon.chargedMoves[i].name;
 		}
-		
-		var $histogram = $("<div><h2>"+pokemon.speciesName+"</h2><div class=\"move-label\">"+moveStr+"</div><div class=\"chart\"></div><div class=\"x-axis\"><div>0</div><div>500</div><div>1000</div></div><div class=\"label rating star\">Battle Rating</div><div class=\"label-x-axis\">Matches</div><div class=\"button previous\">See Previous</div><div class=\"stats\"></div></div>");
+
+		var $histogram = $("<div><h2>"+pokemon.speciesName+"</h2><div class=\"move-label\">"+moveStr+"</div><div class=\"chart\"></div><div class=\"x-axis\"><div>0</div><div>500</div><div>1000</div></div><div class=\"label rating star\">Battle Rating (Avg: <span class=\"br-avg\">500</span>)</div><div class=\"label-x-axis\">Matches</div><div class=\"button previous\">See Previous</div><div class=\"stats\"></div></div>");
 
 		var scale = Math.floor(ratings.length / 4);
-		
+
 		if(scaleOverride){
 			scale = scaleOverride;
 		}
-		
+
 		var winColors = [
 			[93,71,165],
 			[0,143,187]
@@ -140,17 +145,19 @@ function BattleHistogram($element){
 				$histogram.find(".button").css("display","block");
 			}
 		}
-		
+
 		// Add stat info
-		
+
 		for(var i = 0; i < stats.length; i++){
 			var statPercent = Math.round((stats[i] / ratings.length) * 1000) / 10;
-			
+
 			$histogram.find(".stats").append("<div><b>"+statLabels[i]+": </b><span class=\"stat\">"+stats[i]+"</span> (<span class=\"percent\">"+statPercent+"</span>%)"+"</div>")
 		}
 
+		$histogram.find(".br-avg").html(avg);
+
 		$el.html($histogram);
-		
+
 
 		// Store histogram for later comparison
 
@@ -159,8 +166,9 @@ function BattleHistogram($element){
 			moves: moveStr,
 			bars: barHeights,
 			stats: stats,
-			total: ratings.length
+			total: ratings.length,
+			avg: avg
 		};
 	}
-	
+
 }

@@ -8,6 +8,7 @@ var GameMaster = (function () {
 
 		object.data = {};
 		object.rankings = [];
+		object.trainRankings = [];
 		object.groups = [];
 		object.teamPools = [];
 		object.loadedData = 0;
@@ -16,13 +17,41 @@ var GameMaster = (function () {
 			$(".mega-warning").show();
 		}
 
-		$.getJSON( webRoot+"data/"+settings.gamemaster+".json?v="+siteVersion, function( data ){
+		var gmVersion = settings.gamemaster;
+
+		if((gmVersion == "gamemaster-mega")||(gmVersion == "gamemaster-kalos")){
+			gmVersion = "gamemaster";
+		}
+
+		$.getJSON( webRoot+"data/"+gmVersion+".json?v="+siteVersion, function( data ){
 			object.data = data;
 
-			// Sort Pokemon alphabetically for searching
-			object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+			if(settings.gamemaster == "gamemaster"){
+				// Sort Pokemon alphabetically for searching
+				object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
 
-			InterfaceMaster.getInstance().init(object);
+				InterfaceMaster.getInstance().init(object);
+			} else if(settings.gamemaster == "gamemaster-mega"){
+				// Load additional mega pokemon
+				$.getJSON( webRoot+"data/megas.json?v="+siteVersion, function( data ){
+
+					// Sort Pokemon alphabetically for searching
+					object.data.pokemon = object.data.pokemon.concat(data);
+					object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+
+					InterfaceMaster.getInstance().init(object);
+				});
+			} else if(settings.gamemaster == "gamemaster-kalos"){
+				// Load additional mega pokemon
+				$.getJSON( webRoot+"data/kalos.json?v="+siteVersion, function( data ){
+
+					// Sort Pokemon alphabetically for searching
+					object.data.pokemon = object.data.pokemon.concat(data);
+					object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+
+					InterfaceMaster.getInstance().init(object);
+				});
+			}
 		});
 
 		// Return a Pokemon object given species ID
@@ -183,7 +212,7 @@ var GameMaster = (function () {
 		object.generateDefaultIVs = function(){
 
 			$.each(object.data.pokemon, function(index, poke){
-				var leagues = [1500,2500];
+				var leagues = [500,1500,2500];
 				var battle = new Battle();
 
 				var pokemon = new Pokemon(poke.speciesId, 0, battle);
@@ -191,6 +220,7 @@ var GameMaster = (function () {
 				battle.setNewPokemon(pokemon, 0, false);
 
 				var defaultIVs = {
+					cp500: [],
 					cp1500: [],
 					cp2500: []
 				};
@@ -198,7 +228,10 @@ var GameMaster = (function () {
 				for(var i = 0; i < leagues.length; i++){
 					battle.setCP(leagues[i]);
 
-					var cp = pokemon.calculateCP(.79030001, 15, 15, 15);
+					pokemon.ivs.atk = pokemon.ivs.def = pokemon.ivs.hp = 15;
+					pokemon.setLevel(pokemon.levelCap, true);
+
+					var cp = pokemon.cp;
 					var level35cp = pokemon.calculateCP(0.76156384, 15, 15, 15);
 
 					if(cp > leagues[i]){
@@ -206,9 +239,14 @@ var GameMaster = (function () {
 						var defaultIndex = 63;
 
 						// For Pokemon that max near the league cap, default to lucky IV's
-						if(level35cp < leagues[i]){
+						if((level35cp < leagues[i])&&(pokemon.levelCap <= 40)){
 							floor = 12;
 							defaultIndex = 16;
+						}
+
+						// Use higher rank for XL Pokemon
+						if(pokemon.levelCap > 40){
+							var defaultIndex = 32;
 						}
 
 						var combinations = pokemon.generateIVCombinations("overall", 1, 4096, null, floor);
@@ -224,7 +262,7 @@ var GameMaster = (function () {
 
 						defaultIVs["cp"+leagues[i]] = combination;
 					} else{
-						defaultIVs["cp"+leagues[i]] = [40, 15, 15, 15];
+						defaultIVs["cp"+leagues[i]] = [pokemon.levelCap, 15, 15, 15];
 					}
 				}
 
@@ -254,8 +292,14 @@ var GameMaster = (function () {
 					var arr = m.moveId.split('_');
 					var abbreviation = '';
 
-					for(var i = 0; i < arr.length; i++){
-						abbreviation += arr[i].charAt(0);
+					if(m.abbreviation){
+						// Use predefined abbreviation if set
+						abbreviation = m.abbreviation;
+					} else{
+						// Make abbreviation from first character of each word
+						for(var i = 0; i < arr.length; i++){
+							abbreviation += arr[i].charAt(0);
+						}
 					}
 
 					move = {
@@ -341,6 +385,27 @@ var GameMaster = (function () {
 			}
 		}
 
+		// Load and return ranking data JSON
+
+		object.loadTrainData = function(caller, league, cup){
+
+			var key = cup + "" + league;
+
+			if(! object.trainRankings[key]){
+				var file = webRoot+"data/training/analysis/"+cup+"/"+league+".json?v="+siteVersion;
+
+				console.log(file);
+
+				$.getJSON( file, function( data ){
+					object.trainRankings[key] = data;
+
+					caller.displayRankingData(data);
+				});
+			} else{
+				caller.displayRankingData(object.trainRankings[key]);
+			}
+		}
+
 		// Load quick fill group JSON
 
 		object.loadGroupData = function(caller, group){
@@ -409,17 +474,20 @@ var GameMaster = (function () {
 
 			var minStats = 3500; // You must be this tall to ride this ride
 
-			if(battle.getCP() == 1500){
+			if(battle.getCP() == 500){
+				minStats = 0;
+			} else if(battle.getCP() == 1500){
 				minStats = 1250;
 			} else if(battle.getCP() == 2500){
 				minStats = 2800;
 			}
 
-			var bannedList = ["mewtwo","mewtwo_armored","giratina_altered","groudon","kyogre","rayquaza","palkia","dialga","heatran","giratina_origin","darkrai","cobalion","terrakion","virizion","thundurus_incarnate","regigigas","tornadus_incarnate","landorus_incarnate", "reshiram", "zekrom", "kyurem", "mewtwo_shadow"];
+			var bannedList = ["mewtwo","mewtwo_armored","giratina_altered","groudon","kyogre","rayquaza","palkia","dialga","heatran","giratina_origin","darkrai","cobalion","terrakion","virizion","thundurus_incarnate","regigigas","tornadus_incarnate","landorus_incarnate", "reshiram", "zekrom", "kyurem"];
 			var permaBannedList = ["rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","phione","manaphy","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","kecleon"]; // Don't rank these Pokemon at all yet
 
+			// Someday I'm going to make a robust system to do this. But not today.
 			var maxDexNumber = 493;
-			var releasedGen5 = ["snivy","servine","serperior","tepig","pignite","emboar","oshawott","dewott","samurott","lillipup","herdier","stoutland","purrloin","liepard","pidove","tranquill","unfezant","blitzle","zebstrika","foongus","amoonguss","drilbur","excadrill","litwick","lampent","chandelure","golett","golurk","deino","zweilous","hydreigon","pansage","panpour","pansear","simisage","simipour","simisear","ferroseed","ferrothorn","heatmor","durant","patrat","watchog","klink","klang","klinklang","yamask","cofagrigus","cobalion","terrakion","virizion","cryogonal","cubchoo","beartic","meltan","roggenrola","boldore","gigalith","tympole","palpitoad","seismitoad","dwebble","crustle","trubbish","garbodor","karrablast","escavalier","joltik","galvantula","shelmet","accelgor","timburr","gurdurr","conkeldurr","tirtouga","carracosta","archen","archeops","axew","fraxure","haxorus","throh","sawk","maractus","sigilyph","basculin","venipede","whirlipede","scolipede","minccino","cinccino","darumaka","darmanitan_standard","scraggy","scrafty","woobat","swoobat","tornadus_incarnate","audino","alomomola","thundurus_incarnate","rufflet","braviary","landorus_incarnate","genesect","solosis","duosion","reuniclus","gothita","gothitelle","gothorita","stunfisk","reshiram","zekrom","stunfisk_galarian","darumaka_galarian","darmanitan_galarian_standard","melmetal","obstagoon","perrserker","farfetchd_galarian", "kyurem", "ducklett", "swanna", "petilil", "lilligant", "victini", "elgyem", "beheeyem","bouffalant","sewaddle","leavanny","cottonee","whimsicott","emolga"];
+			var releasedGen5 = ["snivy","servine","serperior","tepig","pignite","emboar","oshawott","dewott","samurott","lillipup","herdier","stoutland","purrloin","liepard","pidove","tranquill","unfezant","blitzle","zebstrika","foongus","amoonguss","drilbur","excadrill","litwick","lampent","chandelure","golett","golurk","deino","zweilous","hydreigon","pansage","panpour","pansear","simisage","simipour","simisear","ferroseed","ferrothorn","heatmor","durant","patrat","watchog","klink","klang","klinklang","yamask","cofagrigus","cobalion","terrakion","virizion","cryogonal","cubchoo","beartic","meltan","roggenrola","boldore","gigalith","tympole","palpitoad","seismitoad","dwebble","crustle","trubbish","garbodor","karrablast","escavalier","joltik","galvantula","shelmet","accelgor","timburr","gurdurr","conkeldurr","tirtouga","carracosta","archen","archeops","axew","fraxure","haxorus","throh","sawk","maractus","sigilyph","basculin","venipede","whirlipede","scolipede","minccino","cinccino","darumaka","darmanitan_standard","scraggy","scrafty","scrafty_xl","woobat","swoobat","tornadus_incarnate","audino","alomomola","thundurus_incarnate","rufflet","braviary","landorus_incarnate","genesect","solosis","duosion","reuniclus","gothita","gothitelle","gothorita","stunfisk","reshiram","zekrom","stunfisk_galarian","stunfisk_galarian_xl","darumaka_galarian","darmanitan_galarian_standard","melmetal","melmetal_xl","obstagoon","perrserker","farfetchd_galarian", "kyurem", "ducklett", "swanna", "petilil", "lilligant", "victini", "elgyem", "beheeyem","bouffalant","sewaddle","leavanny","cottonee","whimsicott","emolga","deerling","sawsbuck","vullaby","mandibuzz","pawniard","bisharp","sandile","krokorok","krookodile","yamask_galarian","runerigus","sirfetchd","chespin","quilladin","chesnaught","fennekin","braixen","delphox","froakie","frogadier","greninja","bunnelby","diggersby","fletchling","fletchinder","talonflame",,"talonflame_xl","litleo","pyroar","klefki","espurr","meowstic","meowstic_female","noibat","noivern","kyurem_xl","diggersby_xl","mandibuzz_xl","galvantula_xl","vanillite","vanillish","vanilluxe","mr_rime"];
 
 			// Aggregate filters
 
@@ -443,15 +511,21 @@ var GameMaster = (function () {
 						continue;
 					}
 
+					// Only include XL Pokemon if they are above level 40 for the selected format
+					if(pokemon.hasTag("xl") && pokemon.level <= 40){
+						continue;
+					}
+
+					// Exclude XL Pokemon from Master League
+					if(pokemon.hasTag("xl") && battle.getCP() == 10000){
+						continue;
+					}
+
 					if((battle.getCP() == 1500)&&(bannedList.indexOf(pokemon.speciesId) > -1)){
 						continue;
 					}
 
 					if(permaBannedList.indexOf(pokemon.speciesId) > -1){
-						continue;
-					}
-
-					if((settings.gamemaster != "gamemaster-mega")&&(pokemon.hasTag("mega"))){
 						continue;
 					}
 
@@ -713,7 +787,6 @@ var GameMaster = (function () {
 
 					for(var n = 0; n < pokemonList.length; n++){
 						if(pokemonList[n].speciesId == pokemon.speciesId){
-
 							// Set Fast Move
 
 							if(pokemonList[n].fastMove){
@@ -730,11 +803,9 @@ var GameMaster = (function () {
 							}
 
 							// Set weight modifier
-
-							if(pokemonList[n].weight){
+							if (typeof pokemonList[n].weight !== 'undefined') {
 								pokemon.weightModifier = pokemonList[n].weight;
 							}
-
 							break;
 						}
 					}

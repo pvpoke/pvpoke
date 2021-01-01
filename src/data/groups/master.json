@@ -50,9 +50,14 @@
 		"chargedMoves":["BODY_SLAM","EARTHQUAKE"]
 	},
 	{
+		"speciesId":"ho_oh",
+		"fastMove":"INCINERATE",
+		"chargedMoves":["EARTHQUAKE","BRAVE_BIRD"]
+	},
+	{
 		"speciesId":"lugia",
 		"fastMove":"DRAGON_TAIL",
-		"chargedMoves":["SKY_ATTACK","HYDRO_PUMP"]
+		"chargedMoves":["SKY_ATTACK","AEROBLAST"]
 	},
 	{
 		"speciesId":"mewtwo",
@@ -63,6 +68,11 @@
 		"speciesId":"swampert",
 		"fastMove":"MUD_SHOT",
 		"chargedMoves":["HYDRO_CANNON","EARTHQUAKE"]
+	},
+	{
+		"speciesId":"dialga",
+		"fastMove":"DRAGON_BREATH",
+		"chargedMoves":["IRON_HEAD","DRACO_METEOR"]
 	},
 	{
 		"speciesId":"dialga",
@@ -95,19 +105,14 @@
 		"chargedMoves":["SURF","BLIZZARD"]
 	},
 	{
-		"speciesId":"raikou",
-		"fastMove":"VOLT_SWITCH",
-		"chargedMoves":["WILD_CHARGE","SHADOW_BALL"]
+		"speciesId":"kyogre",
+		"fastMove":"WATERFALL",
+		"chargedMoves":["SURF","THUNDER"]
 	},
 	{
 		"speciesId":"mamoswine",
 		"fastMove":"POWDER_SNOW",
 		"chargedMoves":["AVALANCHE","BULLDOZE"]
-	},
-	{
-		"speciesId":"gyarados",
-		"fastMove":"DRAGON_BREATH",
-		"chargedMoves":["AQUA_TAIL","CRUNCH"]
 	},
 	{
 		"speciesId":"rhyperior",

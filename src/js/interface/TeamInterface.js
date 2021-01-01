@@ -326,6 +326,7 @@ var InterfaceMaster = (function () {
 				// Gather advanced settings
 				var scorecardCount = parseInt($(".scorecard-length-select option:selected").val());
 				var allowShadows = $(".team-option .check.allow-shadows").hasClass("on");
+				var allowXL = $(".team-option .check.allow-xl").hasClass("on");
 				var baitShields = $(".team-option .check.shield-baiting").hasClass("on");
 
 				if(battle.getCup().name == "shadow"){
@@ -386,16 +387,23 @@ var InterfaceMaster = (function () {
 				this.generateSummaries(defenseArr, offenseArr);
 
 				// Generate counters and histograms, and display that, too
+				var shieldMode = $(".team-advanced .flex.poke .shield-select option:selected").val();
+				var shieldCount = 1;
+
+				if(shieldMode != "average"){
+					shieldCount = parseInt(shieldMode);
+					shieldMode = "single";
+				}
 
 				var ranker = RankerMaster.getInstance();
-				ranker.setShieldMode("average");
+				ranker.setShieldMode(shieldMode);
 				ranker.applySettings({
-					shields: 1,
+					shields: shieldCount,
 					ivs: "original",
 					bait: baitShields
 				}, 0);
 				ranker.applySettings({
-					shields: 1,
+					shields: shieldCount,
 					ivs: "original",
 					bait: baitShields
 				}, 1);
@@ -461,7 +469,17 @@ var InterfaceMaster = (function () {
 				while((count < total)&&(i < counterRankings.length)){
 					var r = counterRankings[i];
 
+					if(r.speciesId.indexOf("_mega") > -1){
+						i++;
+						continue;
+					}
+
 					if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
+						i++;
+						continue;
+					}
+
+					if((r.speciesId.indexOf("_xl") > -1)&&(! allowXL)){
 						i++;
 						continue;
 					}
@@ -528,7 +546,8 @@ var InterfaceMaster = (function () {
 						var moveStr = pokemon.generateURLMoveStr();
 						var opPokeStr = r.matchups[n].opponent.generateURLPokeStr();
 						var opMoveStr = r.matchups[n].opponent.generateURLMoveStr();
-						var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/11/"+moveStr+"/"+opMoveStr+"/";
+						var shieldStr = shieldCount + "" + shieldCount;
+						var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
 						$cell.find("a").attr("href", battleLink);
 
 						$row.append($cell);
@@ -541,7 +560,7 @@ var InterfaceMaster = (function () {
 				}
 
 				// Display average threat score
-				avgThreatScore = Math.round(avgThreatScore / 400);
+				avgThreatScore = Math.round(avgThreatScore / 20);
 				$(".threat-score").html(avgThreatScore);
 
 				// Build CSV results
@@ -561,7 +580,7 @@ var InterfaceMaster = (function () {
 						}
 					}
 
-					csv += ',' + (Math.round(r.score/2)/10) + ',' + r.overall;
+					csv += ',' + (Math.round(r.score*10)/10) + ',' + r.overall;
 				}
 
 				// Display meta scorecard
@@ -579,7 +598,17 @@ var InterfaceMaster = (function () {
 				while((count < total)&&(i < counterRankings.length)){
 					var r = counterRankings[i];
 
+					if(r.speciesId.indexOf("_mega") > -1){
+						i++;
+						continue;
+					}
+
 					if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
+						i++;
+						continue;
+					}
+
+					if((r.speciesId.indexOf("_xl") > -1)&&(! allowXL)){
 						i++;
 						continue;
 					}
@@ -633,7 +662,8 @@ var InterfaceMaster = (function () {
 						var moveStr = pokemon.generateURLMoveStr();
 						var opPokeStr = r.matchups[n].opponent.generateURLPokeStr();
 						var opMoveStr = r.matchups[n].opponent.generateURLMoveStr();
-						var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/11/"+moveStr+"/"+opMoveStr+"/";
+						var shieldStr = shieldCount + "" + shieldCount;
+						var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
 						$cell.find("a").attr("href", battleLink);
 
 						$row.append($cell);
@@ -698,6 +728,8 @@ var InterfaceMaster = (function () {
 
 				var altRankings = ranker.rank(counterTeam, battle.getCP(), battle.getCup(), exclusionList).rankings;
 
+				altRankings.sort((a,b) => (a.matchupAltScore > b.matchupAltScore) ? -1 : ((b.matchupAltScore > a.matchupAltScore) ? 1 : 0));
+
 				// Clear targets so it will default to the normal format if the user changes settings
 				ranker.setTargets([]);
 
@@ -719,8 +751,18 @@ var InterfaceMaster = (function () {
 				while((count < total)&&(i < altRankings.length)){
 					var r = altRankings[i];
 
+					if(r.speciesId.indexOf("_mega") > -1){
+						i++
+						continue;
+					}
+
 					if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
 						i++
+						continue;
+					}
+
+					if((r.speciesId.indexOf("_xl") > -1)&&(! allowXL)){
+						i++;
 						continue;
 					}
 
@@ -772,7 +814,8 @@ var InterfaceMaster = (function () {
 						var moveStr = pokemon.generateURLMoveStr();
 						var opPokeStr = r.matchups[n].opponent.generateURLPokeStr();
 						var opMoveStr = r.matchups[n].opponent.generateURLMoveStr();
-						var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/11/"+moveStr+"/"+opMoveStr+"/";
+						var shieldStr = shieldCount + "" + shieldCount;
+						var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
 						$cell.find("a").attr("href", battleLink);
 
 						$row.append($cell);
@@ -1257,7 +1300,7 @@ var InterfaceMaster = (function () {
 			// Event handler for changing the league select
 
 			function selectLeague(e){
-				var allowed = [1500, 2500, 10000];
+				var allowed = [500, 1500, 2500, 10000];
 				var cp = parseInt($(".league-select option:selected").val());
 
 				if(allowed.indexOf(cp) > -1){
@@ -1301,6 +1344,12 @@ var InterfaceMaster = (function () {
 				}
 
 				multiSelectors[0].setCliffhangerMode(cup == "cliffhanger");
+
+
+				if(cup.name == "little"){
+					$(".league-select option[value='500']").prop("selected","selected");
+					$(".league-select").trigger("change");
+				}
 
 				// Load ranking data for movesets
 				var key = battle.getCup().name + "overall" + battle.getCP();

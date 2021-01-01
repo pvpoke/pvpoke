@@ -5,6 +5,11 @@
 		"chargedMoves":["DRAGON_CLAW","SHADOW_SNEAK"]
 	},
 	{
+		"speciesId":"giratina_altered",
+		"fastMove":"DRAGON_BREATH",
+		"chargedMoves":["DRAGON_CLAW","SHADOW_SNEAK"]
+	},
+	{
 		"speciesId":"giratina_origin",
 		"fastMove":"SHADOW_CLAW",
 		"chargedMoves":["SHADOW_BALL","OMINOUS_WIND"]
@@ -30,16 +35,6 @@
 		"chargedMoves":["CROSS_CHOP","ROCK_SLIDE"]
 	},
 	{
-		"speciesId":"typhlosion",
-		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["BLAST_BURN","SOLAR_BEAM"]
-	},
-	{
-		"speciesId":"blastoise",
-		"fastMove":"WATER_GUN",
-		"chargedMoves":["HYDRO_CANNON","ICE_BEAM"]
-	},
-	{
 		"speciesId":"gengar",
 		"fastMove":"SHADOW_CLAW",
 		"chargedMoves":["SHADOW_PUNCH","SHADOW_BALL"]
@@ -60,14 +55,19 @@
 		"chargedMoves":["DRAGON_CLAW","HURRICANE"]
 	},
 	{
+		"speciesId":"dragonite_shadow",
+		"fastMove":"DRAGON_BREATH",
+		"chargedMoves":["DRAGON_CLAW","HURRICANE"]
+	},
+	{
 		"speciesId":"charizard",
 		"fastMove":"FIRE_SPIN",
 		"chargedMoves":["BLAST_BURN","DRAGON_CLAW"]
 	},
 	{
-		"speciesId":"meganium",
-		"fastMove":"VINE_WHIP",
-		"chargedMoves":["FRENZY_PLANT","EARTHQUAKE"]
+		"speciesId":"charizard",
+		"fastMove":"DRAGON_BREATH",
+		"chargedMoves":["BLAST_BURN","DRAGON_CLAW"]
 	},
 	{
 		"speciesId":"venusaur",
@@ -120,11 +120,6 @@
 		"chargedMoves":["ICY_WIND","HURRICANE"]
 	},
 	{
-		"speciesId":"lickilicky",
-		"fastMove":"LICK",
-		"chargedMoves":["BODY_SLAM","EARTHQUAKE"]
-	},
-	{
 		"speciesId":"granbull",
 		"fastMove":"CHARM",
 		"chargedMoves":["CRUNCH","CLOSE_COMBAT"]
@@ -133,21 +128,6 @@
 		"speciesId":"empoleon",
 		"fastMove":"WATERFALL",
 		"chargedMoves":["HYDRO_CANNON","DRILL_PECK"]
-	},
-	{
-		"speciesId":"feraligatr",
-		"fastMove":"ICE_FANG",
-		"chargedMoves":["HYDRO_CANNON","CRUNCH"]
-	},
-	{
-		"speciesId":"shiftry",
-		"fastMove":"SNARL",
-		"chargedMoves":["LEAF_BLADE","FOUL_PLAY"]
-	},
-	{
-		"speciesId":"sceptile",
-		"fastMove":"BULLET_SEED",
-		"chargedMoves":["LEAF_BLADE","EARTHQUAKE"]
 	},
 	{
 		"speciesId":"ferrothorn",
@@ -178,5 +158,15 @@
 		"speciesId":"drifblim",
 		"fastMove":"HEX",
 		"chargedMoves":["ICY_WIND","SHADOW_BALL"]
+	},
+	{
+		"speciesId":"toxicroak",
+		"fastMove":"COUNTER",
+		"chargedMoves":["MUD_BOMB","SLUDGE_BOMB"]
+	},
+	{
+		"speciesId":"gallade",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["LEAF_BLADE","CLOSE_COMBAT"]
 	}
 ]

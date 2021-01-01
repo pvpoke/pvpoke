@@ -38,6 +38,8 @@ RewriteRule team-builder.?$ team-builder.php [L,QSA]
 
 RewriteRule ivs.?$ ivs.php [L,QSA]
 
+RewriteRule train/analysis.?$ train/analysis.php [L,QSA]
+RewriteRule ^train/analysis/([a-zA-Z0-9-]+)/(\d+).*$ train/analysis.php?cup=$1&cp=$2 [L,QSA]
 
 RewriteRule moves/([a-zA-Z_]+).*$ moves.php?mode=$1 [L,QSA]
 RewriteRule moves.?$ moves.php [L,QSA]

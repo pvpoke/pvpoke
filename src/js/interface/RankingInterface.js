@@ -39,13 +39,16 @@ var InterfaceMaster = (function () {
 					this.loadGetData();
 				}
 
+				// Remove Little Cup from options (currently n/a)
+				if(context != "custom"){
+					$(".league-select option[value='500']").remove();
+				}
 
-				$(".league-select").on("change", selectLeague);
-				$(".cup-select").on("change", selectCup);
 				$(".format-select").on("change", selectFormat);
 				$(".ranking-categories a").on("click", selectCategory);
 				$("body").on("click", ".check", checkBox);
 				$("body").on("click", ".check.limited", toggleLimitedPokemon);
+				$("body").on("click", ".check.xl", toggleXLPokemon);
 				$("body").on("click", ".continentals .check", toggleContinentalsSlots);
 
 				window.addEventListener('popstate', function(e) {
@@ -65,16 +68,22 @@ var InterfaceMaster = (function () {
 
 				// Force 1500 if not general
 
-				if((cup != 'all')&&(cup != 'gen-5')&&(cup != "premier")){
-					league = 1500;
-
-					$(".league-select option[value=\"1500\"]").prop("selected","selected");
-				}
-
 				if((cup == "premier")&&(league == 1500)){
 					league = 10000;
 
 					$(".league-select option[value=\"10000\"]").prop("selected","selected");
+				}
+
+				if((cup == "classic")&&(league != 10000)){
+					league = 10000;
+
+					$(".league-select option[value=\"10000\"]").prop("selected","selected");
+				}
+
+				if(cup == "little"){
+					league = 500;
+
+					$(".league-select option[value=\"500\"]").prop("selected","selected");
 				}
 
 				battle.setCP(league);
@@ -117,7 +126,7 @@ var InterfaceMaster = (function () {
 				}
 
 				// Show any restrictions
-				var cup = $(".cup-select option:selected").val();
+				var cup = battle.getCup().name;
 				$(".limited").hide();
 				limitedPokemon = [];
 
@@ -156,6 +165,13 @@ var InterfaceMaster = (function () {
 					var r = rankings[i];
 
 					var pokemon = new Pokemon(r.speciesId, 0, battle);
+
+					if(! pokemon.speciesId){
+						rankings.splice(i, 1);
+						i--;
+						continue;
+					}
+
 					pokemon.initialize(true);
 					pokemon.selectMove("fast", r.moveset[0]);
 					pokemon.selectMove("charged", r.moveset[1], 0);
@@ -211,14 +227,20 @@ var InterfaceMaster = (function () {
 
 					$(".section.white > .rankings-container").append($el);
 
-					csv += pokemon.speciesName+','+r.score+','+pokemon.types[0]+','+pokemon.types[1]+','+(Math.round(pokemon.stats.atk*10)/10)+','+(Math.round(pokemon.stats.def*10)/10)+','+Math.round(pokemon.stats.hp)+','+Math.round(pokemon.stats.atk*pokemon.stats.def*pokemon.stats.hp)+','+pokemon.level+','+pokemon.fastMove.name+','+pokemon.chargedMoves[0].name+','+pokemon.chargedMoves[1].name+'\n';
+					var chargedMove2Name = '';
+
+					if(pokemon.chargedMoves.length > 1){
+						chargedMove2Name = pokemon.chargedMoves[1].name;
+					}
+
+					csv += pokemon.speciesName+','+r.score+','+pokemon.types[0]+','+pokemon.types[1]+','+(Math.round(pokemon.stats.atk*10)/10)+','+(Math.round(pokemon.stats.def*10)/10)+','+Math.round(pokemon.stats.hp)+','+Math.round(pokemon.stats.atk*pokemon.stats.def*pokemon.stats.hp)+','+pokemon.level+','+pokemon.fastMove.name+','+pokemon.chargedMoves[0].name+','+chargedMove2Name+'\n';
 				}
 
 				$(".loading").hide();
 				$(".rank").on("click", selectPokemon);
 
 				// Update download link with new data
-				var filename = $(".cup-select option:selected").html() + " Rankings.csv";
+				var filename = battle.getCup().name + " Rankings.csv";
 				var filedata = '';
 
 				if(context == "custom"){
@@ -238,6 +260,10 @@ var InterfaceMaster = (function () {
 
 				if($(".poke-search").val() != ''){
 					$(".poke-search").trigger("keyup");
+				}
+
+				if(! $(".check.xl").hasClass("on")){
+					toggleXLPokemon();
 				}
 
 
@@ -278,8 +304,7 @@ var InterfaceMaster = (function () {
 							// Don't process default values so data doesn't needlessly reload
 
 							case "cp":
-								$(".league-select option[value=\""+val+"\"]").prop("selected","selected");
-
+								battle.setCP(val);
 								break;
 
 							case "cat":
@@ -302,24 +327,6 @@ var InterfaceMaster = (function () {
 								break;
 
 							case "cup":
-								$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
-
-								if($(".format-select option[cup=\""+val+"\"]").length > 0){
-									$(".format-select option[cup=\""+val+"\"]").prop("selected","selected");
-								} else{
-									var cat = $(".cup-select option[value=\""+val+"\"]").attr("cat");
-									$(".format-select option[value=\""+cat+"\"]").prop("selected","selected");
-									selectFormat();
-
-									$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
-								}
-
-								if(val == "grunt"){
-									$(".continentals").removeClass("hide");
-								} else{
-									$(".continentals").addClass("hide");
-								}
-
 								battle.setCup(val);
 								break;
 
@@ -334,9 +341,11 @@ var InterfaceMaster = (function () {
 
 				// Load data via existing change function
 
-				var cp = $(".league-select option:selected").val();
+				var cp = battle.getCP();
 				var category = $(".ranking-categories a.selected").attr("data");
-				var cup = $(".cup-select option:selected").val();
+				var cup = battle.getCup().name;
+
+				$(".format-select option[value=\""+cp+"\"][cup=\""+cup+"\"]").prop("selected","selected");
 
 				self.displayRankings(category, cp, cup, null);
 			}
@@ -346,6 +355,10 @@ var InterfaceMaster = (function () {
 			this.pushHistoryState = function(cup, cp, category, speciesId){
 				if(context == "custom"){
 					return false;
+				}
+
+				if(cup == "little"){
+					cp = 500;
 				}
 
 				var url = webRoot+"rankings/"+cup+"/"+cp+"/"+category+"/";
@@ -371,6 +384,10 @@ var InterfaceMaster = (function () {
 
 			this.setContext = function(value){
 				context = value;
+
+				if(context == "custom"){
+					$(".league-select option[value='500']").show();
+				}
 			}
 
 			// Set a ranking scenario to be displayed
@@ -394,11 +411,20 @@ var InterfaceMaster = (function () {
 			// Event handler for changing the league select
 
 			function selectLeague(e){
-				var cp = $(".league-select option:selected").val();
+				var cp = battle.getCP();
 
 				if(context != "custom"){
 					var category = $(".ranking-categories a.selected").attr("data");
-					var cup = $(".cup-select option:selected").val();
+					var cup = battle.getCup().name;
+
+
+					if(cp == 500){
+						$(".format-select option[cup=\"little\"]").prop("selected","selected");
+						cup = "little";
+					} else if(cup == "little"){
+						$(".format-select option[cup=\"all\"]").prop("selected","selected");
+						cup = "all";
+					}
 
 					battle.setCup(cup);
 
@@ -411,68 +437,24 @@ var InterfaceMaster = (function () {
 
 			// Event handler for changing the cup select
 
-			function selectCup(e){
-				var cp = $(".league-select option:selected").val();
+			function selectFormat(e){
+				var cp = $(".format-select option:selected").val();
+				var cup = $(".format-select option:selected").attr("cup");
 				var category = $(".ranking-categories a.selected").attr("data");
-				var cup = $(".cup-select option:selected").val();
 
 				if(! category){
 					category = "overall";
 				}
 
-				if(cup == "grunt"){
-					$(".continentals").removeClass("hide");
-				} else{
-					$(".continentals").addClass("hide");
-				}
-
-				self.displayRankings(category, cp, cup);
-				self.pushHistoryState(cup, cp, category, null);
-			}
-
-			// Event handler for changing the format category
-
-			function selectFormat(e){
-				var format = $(".format-select option:selected").val();
-				var cup = $(".format-select option:selected").attr("cup");
-
-				$(".cup-select option").hide();
-				$(".cup-select option[cat=\""+format+"\"]").show();
-
-				if(cup){
-					$(".cup-select option[value=\""+cup+"\"]").eq(0).prop("selected", true);
-				} else{
-					$(".cup-select option[cat=\""+format+"\"]").eq(0).prop("selected", true);
-				}
-
-				if((format == "all")||(cup)){
-					$(".cup-select").hide();
-				} else{
-					$(".cup-select").show();
-				}
-
-				var cp = $(".league-select option:selected").val();
-				var category = $(".ranking-categories a.selected").attr("data");
-				if(! cup){
-					cup = $(".cup-select option:selected").val();
-				}
-
-				battle.setCup(cup);
-
-				self.displayRankings(category, cp, cup);
-				self.pushHistoryState(cup, cp, category, null);
-
-				if(cup == "grunt"){
-					$(".continentals").removeClass("hide");
-				} else{
-					$(".continentals").addClass("hide");
-				}
-
-				if(format == "custom"){
-					// Redirect to the custom rankings page
+				if(cup == "custom"){
 					window.location.href = webRoot+'custom-rankings/';
+					return;
 				}
+
+				self.displayRankings(category, cp, cup);
+				self.pushHistoryState(cup, cp, category, null);
 			}
+
 
 			// Event handler for selecting ranking category
 
@@ -484,10 +466,10 @@ var InterfaceMaster = (function () {
 
 				$(e.target).addClass("selected");
 
-				var cp = $(".league-select option:selected").val();
+				var cp = $(".format-select option:selected").val();
 				var category = $(".ranking-categories a.selected").attr("data");
 				var scenarioStr = $(".ranking-categories a.selected").attr("scenario");
-				var cup = $(".cup-select option:selected").val();
+				var cup = $(".format-select option:selected").attr("cup");
 
 				$(".description").hide();
 				$(".description."+category).show();
@@ -516,10 +498,9 @@ var InterfaceMaster = (function () {
 					return;
 				}
 
-				var cup = $(".cup-select option:selected").val();
+				var cup = $(".format-select option:selected").attr("cup");
 				var category = $(".ranking-categories a.selected").attr("data");
 				var $rank = $(this).closest(".rank");
-
 
 				$rank.toggleClass("selected");
 				$rank.find(".details").toggleClass("active");
@@ -559,6 +540,14 @@ var InterfaceMaster = (function () {
 					}
 
 					$details.append($section);
+				}
+
+				if(pokemon.hasTag("mega")){
+					$details.append("<div class=\"detail-section\"><b>Mega Evolutions are currently not allowed in GO Battle League. Use this information to help prepare if they are allowed in the future. Don't invest Mega Energy or Elite TM's until you can use these Pokemon.</b></div>");
+				}
+
+				if(pokemon.hasTag("xl")){
+					$details.append("<div class=\"detail-section\"><b>This entry highlights this Pokemon's performance if it has been powered up beyond level 40 with Candy XL.</b></div>");
 				}
 
 				// Display move data
@@ -643,15 +632,17 @@ var InterfaceMaster = (function () {
 
 				// Display moveset override notice where applicable
 
-				if( (pokemon.fastMove.moveId != fastMoves[0].moveId)
-					|| ((pokemon.chargedMoves[0].moveId != chargedMoves[0].moveId)&&(pokemon.chargedMoves[0].moveId != chargedMoves[1].moveId))
-				 	|| ((pokemon.chargedMoves[1].moveId != chargedMoves[0].moveId)&&(pokemon.chargedMoves[1].moveId != chargedMoves[1].moveId))){
-					$details.find(".detail-section.moveset-override").show();
+				if(pokemon.chargedMoves.length > 1){
+					if( (pokemon.fastMove.moveId != fastMoves[0].moveId)
+						|| ((pokemon.chargedMoves[0].moveId != chargedMoves[0].moveId)&&(pokemon.chargedMoves[0].moveId != chargedMoves[1].moveId))
+					 	|| ((pokemon.chargedMoves[1].moveId != chargedMoves[0].moveId)&&(pokemon.chargedMoves[1].moveId != chargedMoves[1].moveId))){
+						$details.find(".detail-section.moveset-override").show();
+					}
 				}
 
 				// Helper variables for displaying matchups and link URL
 
-				var cp = $(".league-select option:selected").val();
+				var cp = battle.getCP();
 
 				if(context == "custom"){
 					category = context;
@@ -791,8 +782,8 @@ var InterfaceMaster = (function () {
 				$details.find(".stats .rating").eq(6).html("Lvl " + rank1Combo.level + " " + rank1Combo.ivs.atk + "/" + rank1Combo.ivs.def + "/" + rank1Combo.ivs.hp);
 
 				// Show share link
-				var cup = $(".cup-select option:selected").val();
-				var cupName = $(".cup-select option:selected").html();
+				var cup = battle.getCup().name;
+				var cupName = $(".format-select option:selected").html();
 
 				var link = host + "rankings/"+cup+"/"+cp+"/"+category+"/"+pokemon.speciesId+"/";
 
@@ -841,6 +832,17 @@ var InterfaceMaster = (function () {
 				for(var i = 0; i < limitedPokemon.length; i++){
 					$(".rank[data='"+limitedPokemon[i]+"']").toggleClass("hide");
 				}
+			}
+
+			// Toggle XL Pokemon from the Rankings
+
+			function toggleXLPokemon(e){
+
+				$(".rankings-container > .rank").each(function(index, value){
+					if($(this).attr("data").indexOf("xl") > -1){
+						$(this).toggleClass("hide");
+					}
+				});
 			}
 
 			// Show or hide Continentals slots

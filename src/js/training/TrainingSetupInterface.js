@@ -119,6 +119,7 @@ var InterfaceMaster = (function () {
 					for(var n = 0; n < roster.length; n++){
 						var pokemon = roster[n];
 						var $el = $(".switch-window .pokemon").first().clone();
+						$el.show();
 
 						$el.find(".name").attr("class","name");
 						$el.attr("type-1", pokemon.types[0]);

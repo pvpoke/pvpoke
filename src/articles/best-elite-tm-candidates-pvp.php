@@ -13,7 +13,7 @@ require_once '../header.php';
 
 <div class="section article white">
 	<h1>Best Elite TM Candidates for PvP</h1>
-	<div class="date">Last updated September 19, 2020</div>
+	<div class="date">Last updated December 12, 2020</div>
 	<img src="<?php echo $WEB_ROOT;?>assets/articles/elite-tm-banner.jpg" />
 <p>
     Elite TM's allow you to select a specific move or learn exclusive attacks. You can typically earn them as end-of-season rewards in GO Battle League for reaching Rank 7 or higher, or purchase them in Community Day boxes. These Elite TM's open up new and rare movesets! In this article, we’ll take a look at potential
@@ -32,6 +32,7 @@ require_once '../header.php';
 			<li><a href="#cresselia">Cresselia</a></li>
 			<li><a href="#dewgong">Dewgong</a></li>
 			<li><a href="#lapras">Lapras</a></li>
+			<li><a href="#ho-oh">Ho-Oh</a></li>
 			<li><a href="#zapdos">Zapdos</a></li>
 			<li><a href="#charizard">Charizard</a></li>
 			<li><a href="#blaziken">Blaziken</a></li>
@@ -153,6 +154,24 @@ require_once '../header.php';
   </p>
   <p>In the Premier Cup, Lapras is one of the bulkiest Pokemon and synergizes well with starters like Charizard and Venusaur. It's forgiving to use and can dish out damage even in its bad matchups. If you don't have an Ice Shard Lapras in your collection, it's one of the best Elite TM candidates to date.</p>
   <p><b>Shadow Lapras has tradeoffs with regular Lapras</b>, but offers a harder hitting variant. In Great League, Shadow Lapras's Surf attacks are strong enough to take on Galarian Stunfisk, which regular Lapras can struggle with. It's a steep cost for Ultra League and doesn't provide many advantages over regular Lapras, but if you have the resources, more power to you!</p>
+  </div>
+
+  <a name="ho-oh"></a>
+  <h3 class="article-header">Ho-Oh</h3>
+  <div class="article-section">
+  <p>
+  <strong>Moveset: </strong>
+  Incinerate + Brave Bird & <em>Earthquake</em>
+  <em>
+	  <br/>
+  </em>
+  <strong>Formats: </strong>
+  Master League
+  </p>
+<p>Ho-Oh received Earthquake as an exclusive move alongside Fire Punch Groudon and Grass Knot Cresselia. At the time it didn't spark much interest - not until the other shoe dropped with Incinerate. Now able to put its best foot forward, Ho-Oh with Incinerate and Earthquake is capable of contending with the best of Master League.</p>
+<p>Ho-Oh can challenge the reigning master, Dialga, as well as other key targets like Groudon, Togekiss, and Mewtwo. It can even survive a 2x super effective Rock Slide from Melmetal, and Brave Bird puts a decent dent into threats like Kyogre and Giratina. All in all, Ho-Oh has the moves and stats to be competitive.</p>
+<p>It's not all sunshine for the Rainbow Pokemon, however. Incinerate is the longest Fast Move in the game. Clocking in at 5 turns (1 turn longer than Confusion), Incinerate can be extremely cumbersome to use. If a Fast Move doesn't register properly or if you "overtap" to fire Incinerate instead of a Charged Move, matchups can quickly go south. Ho-Oh's fastest move (Brave Bird) also drops its Defense by 3 stages. Knowing when to Brave Bird and when to Earthquake will take a lot of experience to master.</p>
+<p>Overall, <b>Ho-Oh has a steep learning curve but is a worthy consideration</b> for an Elite TM.</p>
   </div>
 
 	<a name="zapdos"></a>
@@ -548,7 +567,7 @@ Dialga. Top neutral damage generalist for the raiders in the room.        <stron
 <ul type="disc">
     <li>
         <strong>Earthquake Politoed: </strong>
-        Honorary mudboi with a lot of potential, capable of challenging Azumarill and Galarian STunfisk. Pure Water type so it
+        Honorary mudboi with a lot of potential, capable of challenging Azumarill and Galarian Stunfisk. Pure Water type so it
         fully resists Water and Ice-type attacks and isn’t double weak to
         Grass. Also handles meta favorites like Alolan Marowak, and
         even beats its compatriots Swampert and Whiscash head to head. Shadow

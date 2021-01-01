@@ -30,160 +30,24 @@ switch($cp){
 }
 
 switch($cup){
-	case "boulder":
-		$league = 'Boulder Cup';
-		break;
-
-	case "twilight":
-		$league = 'Twilight Cup';
-		break;
-
-	case "tempest":
-		$league = 'Tempest Cup';
-		break;
-
-	case "kingdom":
-		$league = 'Kingdom Cup';
-		break;
-
-	case "nightmare":
-		$league = 'Nightmare Cup';
-		break;
-
-	case "regionals-1":
-		$league = 'Season 1 Regionals';
-		break;
-
-	case "championships-1":
-		$league = 'Season 1 Championships';
-		break;
-
-	case "rainbow":
-		$league = 'Rainbow Cup';
-		break;
-
-	case "jungle":
-		$league = 'Jungle Cup';
-		break;
-
-	case "safari":
-		$league = 'Safari Cup';
-		break;
-
-	case "fantasy":
-		$league = 'Fantasy Cup';
-		break;
-
-	case "sinister":
-	case "sinister-mirror":
-		$league = 'Sinister Cup';
-		break;
-
-	case "ferocious":
-	case "ferocious-mirror":
-		$league = 'Ferocious Cup';
-		break;
-
-	case "timeless":
-	case "timeless-mirror":
-		$league = 'Timeless Cup';
-		break;
-
-	case "fusion":
-		$league = 'Fusion Cup';
-		break;
-
-	case "rose":
-		$league = 'Rose Cup';
-		break;
-
-	case "toxic":
-		$league = 'Toxic Cup';
-		break;
-
-	case "voyager":
-		$league = 'Voyager Cup';
-		break;
-
-	case "beam":
-		$league = 'Get Beamed';
-		break;
-
-	case "forest":
-		$league = 'Forest';
-		break;
 
 	case "premier":
 		$league = 'Premier';
 		break;
 
-	case "grunt":
-		$league = 'Grunt Cup 4';
+	case "nightfall":
+		$league = 'Silph Nightfall Cup';
+		break;
+	case "classic":
+		$league = 'Master League Classic';
 		break;
 
-	case "sorcerous":
-	case "sorcerous-mirror":
-		$league = 'Sorcerous Cup';
+	case "holiday":
+		$league = 'Holiday Cup';
 		break;
 
-	case "sorcerous-bee":
-		$league = 'Sorcerous Cup';
-		break;
-
-	case "goteamup":
-		$league = 'GOTeamUp';
-		break;
-
-	case "continentals-2":
-		$league = 'Season 2 Continentals';
-		break;
-
-	case "catacomb":
-		$league = 'Catacomb Cup';
-		break;
-
-	case "scoville":
-		$league = 'Scoville Cup';
-		break;
-
-	case "mexico":
-		$league = 'México Cup';
-		break;
-
-	case "kaiser":
-		$league = 'Kaiser Invitational';
-		break;
-
-	case "shadow":
-		$league = 'Shadow Cup';
-		break;
-
-	case "flying":
-		$league = 'Flying Cup';
-		break;
-
-	case "halloween":
-		$league = 'Halloween Cup';
-		break;
-
-	case "circus":
-		$league = 'Circus Cup';
-		break;
-
-	case "maelstrom":
-		$league = 'Maelstrom Cup';
-		break;
-
-	case "origin":
-		$league = 'Origin Cup';
-		break;
-
-	case "duet":
-		$league = 'Duet Cup';
-		break;
-
-	case "sunrise":
-		$league = 'Silph Sunrise Cup';
+	case "cerberus":
+		$league = 'Cerberus Cup';
 		break;
 
 }
@@ -210,8 +74,7 @@ require_once 'header.php';
 
 <h1>Rankings</h1>
 <div class="section league-select-container white">
-	<?php require 'modules/leagueselect.php'; ?>
-	<?php require 'modules/cupselect.php'; ?>
+	<?php require 'modules/formatselect.php'; ?>
 
 	<div class="ranking-categories">
 		<a class="selected" href="#" data="overall" scenario="leads">Overall</a>
@@ -237,13 +100,15 @@ require_once 'header.php';
 
 	<p class="description chargers hide"><b>The best Pokemon with an energy advantage.</b> Fast energy gain or powerful moves make them dangerous after building up energy.</p>
 
-	<p class="description consistency hide"><b>These Pokemon perform the most dependably.</b> They provide consistent damage and rely less on baiting shields than other Pokemon.</p>
+	<p class="description consistency hide"><b>These Pokemon perform the most dependably.</b> They provide consistent damage and rely less on baiting shields than other Pokemon. Shorter Fast Moves also help improve consistency.</p>
 
 	<p class="description link hide"><b>Tournament Info:</b> <a href="#" target="_blank"></a></p>
 
 	<p>You can enter your GBL encounters <a href="https://docs.google.com/forms/d/e/1FAIpQLScc_gCvXLTUs5tHORiPpEmuF6yL6UJ0j0P03oSNDRQvNNHa0w/viewform" target="_blank">here</a> to help provide usage data for ranking updates.</p>
 
 	<p>Click or tap the rankings below for more details.</p>
+
+	<div class="check on xl" style="margin-bottom:15px;"><span></span>Show XL Pokemon</div>
 
 	<div class="check on limited hide"><span></span>Show <div class="limited-title">Limited Pokemon</div>*</div>
 	<div class="asterisk limited hide">* Only a limited number of these Pokemon can be selected per team.</div>
@@ -275,6 +140,8 @@ require_once 'header.php';
 </div>
 
 <a href="#" class="button download-csv">Export to CSV</a>
+
+<?php require 'modules/ads/body-728.php'; ?>
 
 <div class="section about white">
 	<a class="toggle" href="#">About Rankings <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>

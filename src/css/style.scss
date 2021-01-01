@@ -640,6 +640,16 @@ header{
 
 	}
 
+	.fifty-warning{
+		display:none;
+		font-weight: bold;
+	    font-size: 12px;
+	    padding: 4px;
+	    border-radius: 8px;
+	    border: 1px solid #000;
+	    margin: 6px 0;
+	}
+
 	.legacy{
 		font-size:12px;
 		margin-top:10px;
@@ -1112,6 +1122,35 @@ select, input{
 	}
 }
 
+.pokebox{
+	a.open-pokebox{
+		display:block;
+		border:1px solid #000;
+		padding: 10px;
+	    cursor: pointer;
+		text-decoration: none;
+		color:#000;
+		margin:10px auto;
+	    border-radius: 8px;
+		background:url('../img/pokebattler.png') $color-off-white;
+		background-size: 40px;
+	    background-position: 5px center;
+	    background-repeat: no-repeat;
+		padding: 5px 5px 5px 50px;
+		text-align: center;
+
+		span:first-of-type{
+			display:block;
+			font-size:10px;
+		}
+
+		span:nth-of-type(2){
+			display:block;
+			font-weight: bold;
+		}
+	}
+}
+
 .share-link-container{
 
 	text-align: center;
@@ -1519,7 +1558,7 @@ select, input{
 }
 
 a.download-csv{
-	display:inline-block;
+	display:none;
 }
 
 .rating-table{
@@ -1898,6 +1937,34 @@ a.download-csv{
 
 	& > .rank:hover, > .rank.selected{
 		border-left:20px solid $color-highlight;
+	}
+
+	&.pokebox-list{
+		display:flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		max-height:350px;
+		margin-top:0;
+
+		.rank{
+		    width: 49%;
+		    border-left: none;
+		    box-sizing: border-box;
+			border:3px solid rgba(0,0,0,0);
+
+			&:hover{
+				border:3px solid rgba(0,0,0,.4);
+			}
+
+			&.selected{
+				border:3px solid #000;
+			}
+		}
+
+		.name-container{
+			float:none;
+			padding:0;
+		}
 	}
 }
 
@@ -2303,6 +2370,11 @@ a.download-csv{
 	.poke.flex{
 		float:none;
 		max-width:none;
+		flex-wrap: wrap;
+
+		.flex-break{
+			flex-basis:100%;
+		}
 	}
 
 	.team-option{
@@ -2991,6 +3063,10 @@ a.download-csv{
 			.options .toggle-content{
 				display:none;
 			}
+
+			.pokebox{
+				display:none !important;
+			}
 		}
 
 		.poke-search{
@@ -3061,6 +3137,70 @@ a.download-csv{
 		display:inline-block;
 	}
 
+	.pokebox-options{
+		display:flex;
+
+		a{
+			padding: 4px 8px;
+			border-radius: 8px;
+			text-decoration: none;
+			font-size:14px;
+			color:#fff;
+			background:$color-links;
+			margin-right:10px;
+			margin-bottom:10px;
+
+			&.pokebox-edit{
+				border:1px solid #000;
+				color:#000;
+				background:url('../img/pokebattler_logo.png') $color-off-white;
+				background-repeat: no-repeat;
+				background-position: 5px center;
+				background-size: 20px;
+				padding: 4px 8px 4px 30px;
+			}
+
+			&.pvpoke-sponsor{
+				border:1px solid #000;
+				color:#000;
+				background:url('../img/app_192.png') $color-off-white;
+				background-repeat: no-repeat;
+				background-position: 5px center;
+				background-size: 20px;
+				padding: 4px 8px 4px 30px;
+				margin-left:auto;
+			}
+		}
+	}
+
+	.pokebox-import{
+
+		ol{
+			line-height:30px;
+		}
+
+		input.pokebox-id{
+			max-width:200px;
+		}
+
+		.poke-count-container{
+			font-size:12px;
+			margin-bottom:5px;
+		}
+	}
+
+	.pokebox-import[select-mode="multi"]{
+		.multi{
+			display:block;
+		}
+	}
+
+	.pokebox-import[select-mode="single"]{
+		.multi{
+			display:none;
+		}
+	}
+
 }
 
 
@@ -3081,6 +3221,13 @@ a.toggle{
 	text-decoration: none;
 	font-weight:bold;
 	display: block;
+}
+
+a.pokebattler{
+	background-image:url('../img/pokebattler_logo.png');
+	background-size: 20px;
+	background-repeat: no-repeat;
+	padding-left:24px;
 }
 
 .center{
@@ -3307,7 +3454,7 @@ a.toggle{
 /* SETTINGS */
 
 .settings{
-	select{
+	select, input{
 		max-width:200px;
 	}
 
@@ -3531,48 +3678,61 @@ a.toggle{
 	}
 }
 
-/* IV TOOL */
+/* TRAINING ANALYSIS */
 
-.iv-tool{
+.analysis-container{
+	.table-container{
+		max-height: 500px;
+		margin-bottom:20px;
+	}
 
-	.poke.single{
-		.move-select-container{
-			.move-select.charged,
-			.section-title:nth-of-type(2),
-			.auto-select{
-				display: none;
+	.column-description{
+		font-size:12px;
+	}
+
+	.poke-search-container{
+		margin: 15px 0;
+	}
+
+	.sort-category{
+		margin: 20px 0 10px 0;
+		display: flex;
+
+		div, a{
+			margin-right:15px;
+		}
+
+		a{
+			display:block;
+			background:$color-links;
+			padding:4px 8px;
+			text-decoration: none;
+			border-radius: 12px;
+			color:#fff;
+
+			&.selected{
+				font-weight: bold;
 			}
-		}
-
-		.shield-section,
-		.section-title.toggle,
-		.bar-back,
-		.move-bars,
-		.advanced,
-		.stat-modifiers{
-			display: none;
-		}
-
-		.fields{
-			display: block;
-			margin-top: 15px;
 		}
 	}
 
-	.poke.multi{
-		display:block;
-		text-align: left;
+	.low-volume{
+		color:#ff5115;
+		font-weight: bold;
+	}
 
-		.format-select{
-			display: none;
-		}
+	a.download-csv{
+		margin:0;
+		font-size:14px;
+	}
 
-		.custom-options{
-			display: block;
-		}
+	.date-updated{
+		font-style: italic;
+	    font-size: 12px;
+	}
 
-		.shield-select,
-		.check.shield-baiting{
+	&.screenshot{
+		.poke-search-container, a.download-csv, p.column-description{
 			display: none;
 		}
 	}
@@ -3681,6 +3841,10 @@ a.toggle{
 
 	.rankings-container{
 		max-height:800px;
+
+		&.pokebox-list{
+			max-height:600px;
+		}
 	}
 
 	.table-container{
@@ -3697,8 +3861,128 @@ a.toggle{
 		}
 	}
 
+	a.download-csv{
+		display:inline-block;
+	}
+
 	.battle-results.matrix .table-container{
 		max-height: 800px;
+	}
+
+	.analysis-container .table-container{
+		max-height: 600px;
+	}
+
+	.train-table{
+
+		td.poke-name{
+			padding: 8px 4px;
+			width:200px;
+
+			.name{
+				font-size:16px;
+				max-width:none;
+			}
+		}
+
+		&.teams td.poke-name{
+			display:table-cell;
+		}
+
+		td.individual-score,
+		td.team-score,
+		td.usage{
+		    font-size: 20px;
+			padding: 4px 20px 4px 0;
+
+			.score{
+				min-width: 60px;
+			}
+		}
+	}
+}
+
+/* Ad styling and display */
+
+#nitro-header-mobile,
+#nitro-body-mobile,
+#nitro-body-desktop,
+#nitro-body-mobile,
+#nitro-sidebar-right,
+#nitro-sidebar-left{
+	display:none;
+}
+
+.mobile-ad-container,
+.desktop-ad-container{
+	overflow: hidden;
+	clip-path: inset(0 0 0 0);
+	margin: 0 auto 5px auto;
+	display:none;
+}
+
+.section.battle .mobile-ad-container{
+	margin: 10px auto 5px auto;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+
+	.nitro-pin-container{
+		position: fixed;
+		bottom:0;
+		width:100%;
+		z-index:25;
+	}
+	#nitro-header-mobile{
+		display: block;
+		margin: 0 auto;
+	}
+
+	#nitro-body-mobile{
+		display: block;
+	}
+
+	.mobile-ad-container{
+		display:block;
+		width:320px;
+		height:70px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	#nitro-header-desktop{
+		display: block;
+	}
+
+	#nitro-body-desktop{
+		display: block;
+	}
+
+	.desktop-ad-container{
+		display:block;
+		width:728px;
+		height:110px;
+		margin:20px auto;
+
+		&.nitro-header{
+			margin:0 auto;
+		}
+	}
+}
+
+@media only screen and (min-width: 1150px) {
+	#nitro-sidebar-left{
+		display: block;
+		position: fixed;
+		top:95px;
+		left:0;
+	}
+
+	#nitro-sidebar-right{
+		display: block;
+		position: fixed;
+		top:95px;
+		right:0;
 	}
 }
 

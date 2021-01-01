@@ -25,6 +25,11 @@
 		"chargedMoves":["DRAGON_CLAW","HURRICANE"]
 	},
 	{
+		"speciesId":"dragonite_shadow",
+		"fastMove":"DRAGON_BREATH",
+		"chargedMoves":["DRAGON_CLAW","HURRICANE"]
+	},
+	{
 		"speciesId":"charizard",
 		"fastMove":"FIRE_SPIN",
 		"chargedMoves":["BLAST_BURN","DRAGON_CLAW"]
@@ -60,9 +65,9 @@
 		"chargedMoves":["HYDRO_CANNON","SLUDGE_WAVE"]
 	},
 	{
-		"speciesId":"swampert_shadow",
+		"speciesId":"swampert",
 		"fastMove":"MUD_SHOT",
-		"chargedMoves":["HYDRO_CANNON","SLUDGE_WAVE"]
+		"chargedMoves":["HYDRO_CANNON","EARTHQUAKE"]
 	},
 	{
 		"speciesId":"poliwrath",
@@ -110,11 +115,6 @@
 		"chargedMoves":["ICY_WIND","SHADOW_BALL"]
 	},
 	{
-		"speciesId":"honchkrow",
-		"fastMove":"SNARL",
-		"chargedMoves":["SKY_ATTACK","BRAVE_BIRD"]
-	},
-	{
 		"speciesId":"toxicroak",
 		"fastMove":"COUNTER",
 		"chargedMoves":["MUD_BOMB","SLUDGE_BOMB"]
@@ -130,9 +130,9 @@
 		"chargedMoves":["LEAF_BLADE","CLOSE_COMBAT"]
 	},
 	{
-		"speciesId":"electivire",
-		"fastMove":"THUNDER_SHOCK",
-		"chargedMoves":["ICE_PUNCH","WILD_CHARGE"]
+		"speciesId":"gallade_shadow",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["LEAF_BLADE","CLOSE_COMBAT"]
 	},
 	{
 		"speciesId":"tangrowth",
@@ -148,5 +148,20 @@
 		"speciesId":"slowbro",
 		"fastMove":"CONFUSION",
 		"chargedMoves":["PSYCHIC","ICE_BEAM"]
+	},
+	{
+		"speciesId":"kingdra",
+		"fastMove":"DRAGON_BREATH",
+		"chargedMoves":["OCTAZOOKA","OUTRAGE"]
+	},
+	{
+		"speciesId":"blaziken",
+		"fastMove":"COUNTER",
+		"chargedMoves":["BLAZE_KICK","BLAST_BURN"]
+	},
+	{
+		"speciesId":"exeggutor_shadow",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["SEED_BOMB","PSYCHIC"]
 	}
 ]

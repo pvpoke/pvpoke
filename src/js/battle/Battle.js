@@ -1607,7 +1607,6 @@ function Battle(){
 			return;
 		}
 
-
 		// If opponent KOs before our guaranteed KO, go for the least risky plan that still KOs before opponent KOs us.
 		var needsBoost = false;
 		if (stateList.length == 1) {
@@ -1678,12 +1677,19 @@ function Battle(){
 						self.logDecision(turns, poke, " doesn't use " + finalState.moves[0].name + " because it wants to minimize time debuffed and it can stack the move " + Math.floor(100 / finalState.moves[0].energy) + " times");
 						return;
 					}
+				} else if(poke.baitShields && opponent.shields > 0 && poke.activeChargedMoves[0].energy - finalState.moves[0].energy <= 10 && ! poke.activeChargedMoves[0].selfDebuffing){
+					finalState.moves[0] = poke.activeChargedMoves[0];
 				}
 			}
 		}
 
 		// If shields are up, prefer low energy moves that are more efficient
 		if (opponent.shields > 0 && poke.activeChargedMoves.length > 1 && poke.activeChargedMoves[0].energy <= finalState.moves[0].energy && poke.activeChargedMoves[0].dpe > finalState.moves[0].dpe && (! poke.activeChargedMoves[0].selfDebuffing)) {
+			finalState.moves[0] = poke.activeChargedMoves[0];
+		}
+
+		// If shields are down, prefer non-debuffing moves if both sides have significant HP remaining
+		if (opponent.shields == 0 && poke.activeChargedMoves.length > 1 && finalState.moves[0].selfDebuffing && finalState.moves[0].energy > 50 && (poke.hp / poke.stats.hp) > .5 && (finalState.moves[0].damage / opponent.hp) < .8) {
 			finalState.moves[0] = poke.activeChargedMoves[0];
 		}
 
@@ -1731,7 +1737,7 @@ function Battle(){
 		for(var i = 0; i < actions.length; i++){
 			// Don't override a switch
 			if(actions[i].actor == actor){
-				if(actions[i].type != "switch"){
+				if((actions[i].type != "switch")||(type == "switch")){
 					actions.splice(i, 1);
 					break;
 				} else{

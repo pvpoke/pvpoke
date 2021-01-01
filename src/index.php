@@ -25,17 +25,22 @@
 		<p>Check out the source code on Github or lend your support through Patreon.</p>
 	</a>
 
+	<?php require 'modules/ads/body-728.php'; ?>
+
+	<?php if($_SETTINGS->ads == 1) : ?>
+		<span data-ccpa-link="1"></span>
+	<?php endif; ?>
+
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.17.0 (September 28, 2020)</h4>
+	<h4>v1.20.6 (December 31, 2020)</h4>
 	<ul>
-		<li>Decision algorithm overhauled for simulations:</li>
-		<ul>
-			<li>Move usage is now based on fastest sequence to KO (was formerly based on move damage per energy).</li>
-			<li>This should significantly improve optimal play in default matchups.</li>
-			<li>Huge thanks to <a href="https://twitter.com/Brandon50619618" target="_blank">Brandon/BananaBread</a> for contributing the code for this update!</li>
-		</ul>
+		<li>Rankings page now has 1 format dropdown.</li>
+		<li>Histograms in Multi-Battle and the Team Builder now show average Battle Rating.</li>
+		<li>Added a "clear" option for custom group selection.</li>
+		<li>Adding a new Pokemon to a custom group will properly clear previous Pokemon search.</li>
+		<li>Switching between "Multi Battle" and "Matrix Battle" will keep any selected custom group on the right side.</li>
 	</ul>
 
 	<h3>Latest Article</h3>

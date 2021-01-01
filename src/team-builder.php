@@ -52,6 +52,20 @@ require_once 'header.php';
 				<div class="check allow-shadows"><span></span>Show Shadow Pokemon in results</div>
 			</div>
 			<div class="team-option">
+				<h3>XL Pokemon</h3>
+				<div class="check allow-xl"><span></span>Show Pokemon above level 40 in results</div>
+			</div>
+			<div class="flex-break"></div>
+			<div class="team-option">
+				<h3>Shields</h3>
+				<select class="shield-select">
+					<option value="average" selected>Average (0 & 1)</option>
+					<option value="0">No shields</option>
+					<option value="1">1 shield</option>
+					<option value="2">2 shields</option>
+				</select>
+			</div>
+			<div class="team-option">
 				<h3>Shield Baiting</h3>
 				<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
 			</div>
@@ -66,6 +80,8 @@ require_once 'header.php';
 
 <button class="rate-btn button">Rate Team</button>
 <div class="section white error">Please select one or more Pokemon.</div>
+
+<?php require 'modules/ads/body-728.php'; ?>
 
 <div class="section typings white">
 	<a href="#" class="toggle active">Overview <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
@@ -225,6 +241,7 @@ require_once 'header.php';
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/TeamInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeMultiSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/Pokebox.js?=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BattleHistogram.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>

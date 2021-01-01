@@ -82,6 +82,12 @@ require_once 'header.php';
 		<div class="summary section white"></div>
 		<div class="tip automated">Hover over or tap the timeline for details. <a href="<?php echo $WEB_ROOT; ?>articles/guide-to-fast-move-registration/">Read more</a> about the timeline.</div>
 		<div class="tip sandbox">Click the circles to edit actions.</div>
+	</div>
+
+	<?php require 'modules/ads/body-728.php'; ?>
+
+	<div class="battle-results single">
+
 		<div class="share-link-container">
 			<p>Share this battle:</p>
 			<div class="share-link">
@@ -89,6 +95,7 @@ require_once 'header.php';
 				<div class="copy">Copy</div>
 			</div>
 		</div>
+
 		<div class="continue-container">
 			<p>Continue with <span class="name">Pokemon</span> against another opponent:</p>
 			<div class="button">Continue Battling</div>
@@ -398,6 +405,7 @@ require_once 'header.php';
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeMultiSelect.js?=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/Pokebox.js?=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BattleHistogram.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=<?php echo $SITE_VERSION; ?>"></script>

@@ -519,9 +519,9 @@ a.random{
 			}
 
 			.hp.bar-back{
-				outline:2px solid #666;
+				outline:2px solid #ccc;
 				border:none;
-				height:20px;
+				height:15px;
 				width: 90%;
 				margin: 0 auto 20px auto;
 
@@ -545,7 +545,8 @@ a.random{
 
 				.bar{
 					position:relative;
-					top:-16px;
+					top:-11px;
+					background-color:#31e8b7;
 
 					@include transition(width, 0.2s, ease, 0s);
 
@@ -579,7 +580,7 @@ a.random{
 
 		.move-bars{
 			position:absolute;
-			bottom:35%;
+			bottom:25%;
 			width:100%;
 			z-index:15;
 
@@ -624,7 +625,7 @@ a.random{
 
 		.move-labels{
 			position: absolute;
-		    bottom: 72%;
+		    bottom: 62%;
 		    width: 100%;
 		    display: flex;
 		    justify-content: space-around;
@@ -864,6 +865,75 @@ a.random{
 		}
 	}
 
+	.switch-sidebar{
+		position: absolute;
+		text-align: center;
+		z-index:20;
+		bottom: 27%;
+		right:0;
+		pointer-events: all;
+
+		.pokemon{
+			position: relative;
+		}
+
+		.sprite-container{
+			padding:0;
+			width:45px;
+			height:45px;
+			text-align: center;
+			color:#eee;
+
+			.main-sprite,
+			.secondary-sprite{
+				width:75%;
+				height:75%;
+				left:6px;
+				top:6px;
+			}
+
+			.cp{
+				position: absolute;
+			    z-index: 5;
+			    font-size: 10px;
+			    text-align: center;
+			    width: 100%;
+			}
+		}
+
+		.switch-timer{
+			color: #eee;
+		    font-weight: bold;
+		    position: absolute;
+		    top: 12px;
+		    width: 100%;
+		    text-align: center;
+		    font-size: 24px;
+			display:none;
+		}
+
+		.name{
+			font-size:11px;
+			margin-bottom:5px;
+			width:60px;
+			min-height:24px;
+		}
+
+		&:not(.active){
+			.sprite-container{
+				opacity: 0.25;
+			}
+
+			.switch-timer{
+				display: block;
+			}
+		}
+
+		.container{
+			padding: 10px;
+		}
+	}
+
 	.switch-window{
 		height:30%;
 		opacity:1;
@@ -884,6 +954,43 @@ a.random{
 
 		.container{
 			padding: 15px 30px;
+		}
+
+		.pokemon{
+			position:relative;
+		}
+
+		.pokemon-container{
+			display: flex;
+			justify-content: space-around;
+		}
+
+		.main-sprite,
+		.secondary-sprite{
+			width:85%;
+			height:85%;
+			left:4px;
+			top:4px;
+		}
+
+	}
+
+	.switch-window .health,
+	.switch-sidebar .health{
+		width:100%;
+		height:2px;
+		background-color:#31e8b7;
+		position:absolute;
+		bottom:3px;
+		left:5px;
+		width:75%;
+
+		&[color="yellow"]{
+			background:#eabd49;
+		}
+
+		&[color="red"]{
+			background:#e11414;
 		}
 	}
 
@@ -954,7 +1061,8 @@ a.random{
 
 		.controls .button-stack,
 		.controls .move-bar,
-		.controls .switch-btn{
+		.controls .switch-btn,
+		.switch-sidebar{
 			display:none !important;
 		}
 
@@ -979,7 +1087,8 @@ a.random{
 		.controls .button-stack,
 		.controls .move-bar,
 		.controls .switch-btn,
-		.controls .move-labels{
+		.controls .move-labels,
+		.switch-sidebar{
 			display:none !important;
 		}
 
@@ -1013,7 +1122,7 @@ a.random{
 
 		.controls .button-stack,
 		.controls .move-bar,
-		.controls .switch-btn{
+		.switch-sidebar{
 			display:none !important;
 		}
 
@@ -1038,8 +1147,8 @@ a.random{
 
 		.controls .button-stack,
 		.controls .move-bar,
-		.controls .switch-btn,
-		.controls .move-labels{
+		.controls .move-labels,
+		.switch-sidebar{
 			display:none !important;
 		}
 	}
@@ -1051,7 +1160,7 @@ a.random{
 
 		.controls .button-stack,
 		.controls .move-bar,
-		.controls .switch-btn{
+		.switch-sidebar{
 			display:none !important;
 		}
 	}
@@ -1072,7 +1181,7 @@ a.random{
 
 	&[phase="countdown"]{
 		.top, .controls{
-			display:none;
+			display:none !important;
 		}
 
 		.countdown{
@@ -1102,10 +1211,7 @@ a.random{
 
 }
 
-.team-select .pokemon-container,
-.switch-window .pokemon-container{
-	display:flex;
-	justify-content:space-around;
+.team-select .pokemon-container{
 
 	.sprite-container{
 		opacity:0.25;
@@ -1133,6 +1239,7 @@ a.random{
 	display:none;
 
 	.pokemon-container{
+		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
 
@@ -1644,4 +1751,10 @@ a.random{
 		}
 	}
 
+}
+
+@media only screen and (max-width: 350px) {
+	.move-labels .label{
+		display:none !important;
+	}
 }

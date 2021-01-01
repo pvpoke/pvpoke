@@ -37,6 +37,14 @@
 		"chargedMoves": ["CLOSE_COMBAT", "HEAVY_SLAM"]
 	},
 	{
+		"speciesId": "magmortar",
+		"chargedMoves": ["FIRE_PUNCH", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "magmortar_shadow",
+		"chargedMoves": ["FIRE_PUNCH", "THUNDERBOLT"]
+	},
+	{
 		"speciesId": "scizor_shadow",
 		"fastMove": "BULLET_PUNCH",
 		"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
@@ -91,6 +99,12 @@
 		"chargedMoves": ["BLAST_BURN", "SOLAR_BEAM"]
 	},
 	{
+		"speciesId": "lugia",
+		"fastMove": "DRAGON_TAIL",
+		"chargedMoves": ["SKY_ATTACK", "AEROBLAST"],
+		"weight": 10
+	},
+	{
 		"speciesId": "raikou",
 		"fastMove": "VOLT_SWITCH"
 	},
@@ -107,6 +121,14 @@
 		"fastMove": "CHARM"
 	},
 	{
+		"speciesId": "gardevoir_xl",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "gardevoir_shadow_xl",
+		"fastMove": "CHARM"
+	},
+	{
 		"speciesId": "roserade",
 		"fastMove": "RAZOR_LEAF"
 	},
@@ -120,6 +142,11 @@
 		"fastMove": "MUD_SLAP",
 		"chargedMoves": ["ROCK_WRECKER","SURF"],
 		"weight": 6
+	},
+	{
+		"speciesId": "rhyperior_xl",
+		"fastMove": "MUD_SLAP",
+		"chargedMoves": ["ROCK_WRECKER","SURF"]
 	},
 	{
 		"speciesId": "zapdos",
@@ -147,6 +174,10 @@
 		"speciesId": "metagross",
 		"chargedMoves": ["METEOR_MASH","EARTHQUAKE"],
 		"weight": 5
+	},
+	{
+		"speciesId": "metagross_xl",
+		"chargedMoves": ["METEOR_MASH","EARTHQUAKE"]
 	},
 	{
 		"speciesId": "metagross_shadow",
@@ -185,13 +216,24 @@
 		"weight": 60
 	},
 	{
-		"speciesId": "lugia",
-		"chargedMoves": ["SKY_ATTACK","HYDRO_PUMP"]
+		"speciesId": "charizard",
+		"fastMove": "DRAGON_BREATH",
+		"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
 	},
 	{
-		"speciesId": "charizard",
-		"fastMove": "FIRE_SPIN",
+		"speciesId": "charizard_xl",
+		"fastMove": "DRAGON_BREATH",
 		"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
+	},
+	{
+		"speciesId": "charizard_shadow_xl",
+		"fastMove": "DRAGON_BREATH",
+		"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
+	},
+	{
+		"speciesId": "charizard_mega_y",
+		"fastMove": "DRAGON_BREATH",
+		"weight": 0
 	},
 	{
 		"speciesId": "garchomp",
@@ -204,14 +246,30 @@
 		"weight": 15
 	},
 	{
+		"speciesId": "dragonite_shadow",
+		"chargedMoves": ["DRAGON_CLAW","HURRICANE"]
+	},
+	{
+		"speciesId": "dragonite_xl",
+		"chargedMoves": ["DRAGON_CLAW","HURRICANE"]
+	},
+	{
+		"speciesId": "dragonite_shadow_xl",
+		"chargedMoves": ["DRAGON_CLAW","HURRICANE"]
+	},
+	{
 		"speciesId": "dialga",
 		"chargedMoves": ["IRON_HEAD","DRACO_METEOR"],
 		"weight": 120
 	},
 	{
+		"speciesId": "dialga_xl",
+		"chargedMoves": ["IRON_HEAD","DRACO_METEOR"]
+	},
+	{
 		"speciesId": "giratina_origin",
 		"chargedMoves": ["SHADOW_BALL","OMINOUS_WIND"],
-		"weight": 70
+		"weight": 90
 	},
 	{
 		"speciesId": "groudon",
@@ -226,6 +284,31 @@
 		"chargedMoves": ["AVALANCHE","BULLDOZE"]
 	},
 	{
-		"speciesId": "tyranitar"
+		"speciesId": "charizard_mega_x",
+		"weight": 0
+	},
+	{
+		"speciesId": "venusaur_mega",
+		"weight": 0
+	},
+	{
+		"speciesId": "blastoise_mega",
+		"weight": 0
+	},
+	{
+		"speciesId": "beedrill_mega",
+		"weight": 0
+	},
+	{
+		"speciesId": "pidgeot_mega",
+		"weight": 0
+	},
+	{
+		"speciesId": "houndoom_mega",
+		"weight": 0
+	},
+	{
+		"speciesId": "gengar_mega",
+		"weight": 0
 	}
 ]

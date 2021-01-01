@@ -51,6 +51,9 @@ require_once 'header.php'; ?>
 		<div class="supporter">Melgood711</div>
 		<div class="supporter">PvP&Me/BrajSF</div>
 		<div class="supporter">MysticalTrack</div>
+		<div class="supporter">findpanic</div>
+		<div class="supporter">Riddermorten</div>
+		<div class="supporter">Aweedds12</div>
 	</div>
 
 	<h2 class="center">Master Supporters</h2>
@@ -184,8 +187,17 @@ require_once 'header.php'; ?>
 		</div>
 		<div class="supporter-container">
 			<div class="space"></div>
-			<div class="supporter">	theghost087</div>
+			<div class="supporter">theghost087</div>
 		</div>
+		<div class="supporter-container">
+			<div class="space"></div>
+			<div class="supporter"><a href="https://twitter.com/Gamenasium" target="_blank">Gamenasium</a></div>
+		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/joingames.png"/>
+			<div class="supporter"><a href="https://joingames.net" target="_blank">JoinGames</a></div>
+		</div>
+
 	</div>
 </div>
 

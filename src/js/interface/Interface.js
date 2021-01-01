@@ -824,7 +824,7 @@ var InterfaceMaster = (function () {
 
 				if(poke){
 					ranker.applySettings({
-						shields: poke.shields,
+						shields: poke.startingShields,
 						ivs: "original",
 						bait: poke.baitShields
 					}, 0);
@@ -1033,9 +1033,9 @@ var InterfaceMaster = (function () {
 				var $row = $("<thead><tr><th></th></tr></thead>");
 
 				for(var n = 0; n < team.length; n++){
-					$row.find("tr").append("<th class=\"name-small\">"+team[n].speciesName+" <span>"+team[n].generateMovesetStr()+"</span></th>");
+					$row.find("tr").append("<th class=\"name-small\">"+team[n].speciesName+" <span>"+team[n].generateMovesetStr()+"<br>"+ team[n].ivs.atk + "/" + team[n].ivs.def + "/" + team[n].ivs.hp + "</span></th>");
 
-					csv += team[n].speciesName+" "+team[n].generateMovesetStr();
+					csv += team[n].speciesName+" "+team[n].generateMovesetStr() + " " + team[n].ivs.atk + "/" + team[n].ivs.def + "/" + team[n].ivs.hp;
 					if(n < team.length -1){
 						csv += ',';
 					}
@@ -1052,9 +1052,9 @@ var InterfaceMaster = (function () {
 
 					// Add results to matrix table
 
-					$row = $("<tr><th class=\"name\">"+pokemon.speciesName+" <span>"+pokemon.generateMovesetStr()+"</span></th></tr>");
+					$row = $("<tr><th class=\"name\">"+pokemon.speciesName+" <span>"+pokemon.generateMovesetStr()+"<br>" + pokemon.ivs.atk + "/" + pokemon.ivs.def + "/" + pokemon.ivs.hp + "</span></th></tr>");
 
-					csv += pokemon.speciesName + ' ' + pokemon.generateMovesetStr() + ',';
+					csv += pokemon.speciesName + ' ' + pokemon.generateMovesetStr() + ' ' + + pokemon.ivs.atk + "/" + pokemon.ivs.def + "/" + pokemon.ivs.hp + ',';
 
 					for(var n = 0; n < r.matchups.length; n++){
 						var $cell = $("<td><a class=\"rating star\" href=\"#\" target=\"blank\"><span></span></a></td>");
@@ -1552,7 +1552,7 @@ var InterfaceMaster = (function () {
 			// Event handler for changing the league select
 
 			function selectLeague(e){
-				var allowed = [1500, 2500, 10000];
+				var allowed = [500, 1500, 2500, 10000];
 				var cp = parseInt($(".league-select option:selected").val());
 
 				if(allowed.indexOf(cp) > -1){
@@ -1574,6 +1574,7 @@ var InterfaceMaster = (function () {
 			// Event handler for changing the battle mode
 
 			function selectMode(e){
+				var currentMode = self.battleMode;
 				self.battleMode = $(e.target).find("option:selected").val();
 
 				$("p.description").hide();
@@ -1591,6 +1592,18 @@ var InterfaceMaster = (function () {
 
 				if(self.battleMode == "matrix"){
 					$(".poke.multi .custom-options").show();
+				}
+
+				// When moving between Multi and Matrix, move multi custom group to the right Matrix group
+				if(currentMode == "multi" && self.battleMode == "matrix"){
+					multiSelectors[1].setPokemonList(multiSelectors[0].getPokemonList());
+					multiSelectors[0].setPokemonList([]);
+				}
+
+				// And vice versa
+				if(currentMode == "matrix" && self.battleMode == "multi"){
+					multiSelectors[0].setPokemonList(multiSelectors[1].getPokemonList());
+					multiSelectors[1].setPokemonList([]);
 				}
 			}
 
@@ -2152,6 +2165,12 @@ var InterfaceMaster = (function () {
 
 					if(move.buffs){
 						$(".modal .check.buffs").show();
+
+						if(move.buffApplyChance == 1){
+							$(".modal .check.buffs").addClass("on");
+						} else{
+							$(".modal .check.buffs").removeClass("on");
+						}
 					} else{
 						$(".modal .check.buffs").hide();
 					}

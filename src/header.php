@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.17.5';
+$SITE_VERSION = '1.20.6.4';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -20,6 +20,18 @@ if(isset($_COOKIE['settings'])){
 		$_SETTINGS->gamemaster = "gamemaster";
 	}
 
+	if(! isset($_SETTINGS->pokeboxId)){
+		$_SETTINGS->pokeboxId = false;
+	}
+
+	if(! isset($_SETTINGS->pokeboxLastDateTime)){
+		$_SETTINGS->pokeboxLastDateTime = 0;
+	}
+
+	if(! isset($_SETTINGS->ads)){
+		$_SETTINGS->ads = 1;
+	}
+
 	// Validate the gamemaster setting, only allow these options
 	$gamemasters = ["gamemaster", "gamemaster-mega"];
 
@@ -31,7 +43,9 @@ if(isset($_COOKIE['settings'])){
 		'defaultIVs' => "gamemaster",
 		'animateTimeline' => 1,
 		'theme' => 'default',
-		'gamemaster' => 'gamemaster'
+		'gamemaster' => 'gamemaster',
+		'pokeboxId' => 0,
+		'ads' => 1
 	];
 }
 
@@ -83,14 +97,14 @@ if(! isset($OG_IMAGE)){
 <link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json?v=2">
 
 <link rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=91">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=102">
 
 <?php if(strpos($META_TITLE, 'Train') !== false): ?>
-	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=14">
+	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=15">
 <?php endif; ?>
 
 <?php if((isset($_SETTINGS->theme))&&($_SETTINGS->theme != "default")): ?>
-	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/themes/<?php echo $_SETTINGS->theme; ?>.css?v=9">
+	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/themes/<?php echo $_SETTINGS->theme; ?>.css?v=13">
 <?php endif; ?>
 
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>
@@ -109,7 +123,9 @@ if(! isset($OG_IMAGE)){
 			defaultIVs: "<?php echo htmlspecialchars($_SETTINGS->defaultIVs); ?>",
 			animateTimeline: <?php echo htmlspecialchars($_SETTINGS->animateTimeline); ?>,
 			matrixDirection: "<?php echo htmlspecialchars($_SETTINGS->matrixDirection); ?>",
-			gamemaster: "<?php echo htmlspecialchars($_SETTINGS->gamemaster); ?>"
+			gamemaster: "<?php echo htmlspecialchars($_SETTINGS->gamemaster); ?>",
+			pokeboxId: "<?php echo intval($_SETTINGS->pokeboxId); ?>",
+			pokeboxLastDateTime: "<?php echo intval($_SETTINGS->pokeboxLastDateTime); ?>"
 		};
 	<?php else: ?>
 
@@ -117,12 +133,14 @@ if(! isset($OG_IMAGE)){
 			defaultIVs: "gamemaster",
 			animateTimeline: 1,
 			matrixDirection: "row",
-			gamemaster: "gamemaster"
+			gamemaster: "gamemaster",
+			pokeboxId: 0,
+			pokeboxLastDateTime: 0
 		};
 
 	<?php endif; ?>
 
-	<?php if((strpos($_SERVER['REQUEST_URI'], 'mega') !== false) && (strpos($_SERVER['REQUEST_URI'], 'meganium') === false) && (strpos($_SERVER['REQUEST_URI'], 'venusaur_mega') === false) && (strpos($_SERVER['REQUEST_URI'], 'blastoise_mega') === false) && ((strpos($_SERVER['REQUEST_URI'], 'charizard_mega_x') === false)) && (strpos($_SERVER['REQUEST_URI'], 'charizard_mega_y') === false) && (strpos($_SERVER['REQUEST_URI'], 'beedrill_mega') === false) && (strpos($_SERVER['REQUEST_URI'], 'pidgeot_mega') === false) && (strpos($_SERVER['REQUEST_URI'], 'houndoom_mega') === false)):
+	<?php if((strpos($_SERVER['REQUEST_URI'], 'mega') !== false) && (strpos($_SERVER['REQUEST_URI'], 'meganium') === false) && (strpos($_SERVER['REQUEST_URI'], 'venusaur_mega') === false) && (strpos($_SERVER['REQUEST_URI'], 'blastoise_mega') === false) && ((strpos($_SERVER['REQUEST_URI'], 'charizard_mega_x') === false)) && (strpos($_SERVER['REQUEST_URI'], 'charizard_mega_y') === false) && (strpos($_SERVER['REQUEST_URI'], 'beedrill_mega') === false) && (strpos($_SERVER['REQUEST_URI'], 'pidgeot_mega') === false) && (strpos($_SERVER['REQUEST_URI'], 'houndoom_mega') === false)&& (strpos($_SERVER['REQUEST_URI'], 'abomasnow_mega') === false)):
 		$_SETTINGS->gamemaster = 'gamemaster-mega';
 		?>
 		// If "Mega" is contained in the URL, default to the mega gamemaster
@@ -146,6 +164,8 @@ if(! isset($OG_IMAGE)){
 	?>
 </script>
 
+	<?php require_once 'modules/ads/base-code.php'; ?>
+
 </head>
 
 <body>
@@ -160,7 +180,14 @@ if(! isset($OG_IMAGE)){
 			</div>
 			<div class="menu">
 				<a class="icon-battle" href="<?php echo $WEB_ROOT; ?>battle/">Battle</a>
-				<a class="icon-train" href="<?php echo $WEB_ROOT; ?>train/">Train</a>
+				<div class="parent-menu">
+					<a class="icon-train" href="<?php echo $WEB_ROOT; ?>train/">Train</a>
+					<div class="submenu">
+						<div class="submenu-wrap">
+							<a class="icon-rankings" href="<?php echo $WEB_ROOT; ?>train/analysis/">Top Performers</a>
+						</div>
+					</div>
+				</div>
 				<div class="parent-menu">
 					<a class="icon-rankings" href="<?php echo $WEB_ROOT; ?>rankings/">Rankings</a>
 					<div class="submenu">
@@ -187,4 +214,4 @@ if(! isset($OG_IMAGE)){
 	</header>
 	<div class="main-wrap">
 		<div id="main">
-			<div class="hide mega-warning"><b>Stats for released Mega Evolutions are official but PvP performance is currently unknown. Simulation results should be disregarded until more info is available. Stats for unreleased Mega Evolutions are speculative and unofficial.</b></div>
+			<div class="hide mega-warning"><b>Stats for unreleased Mega Evolutions are speculative. Don't invest any resources until they're officially released.</b></div>

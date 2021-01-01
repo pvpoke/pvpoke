@@ -13,7 +13,7 @@ function Pokemon(id, i, b){
 
 	// CP modifiers at each level
 
-	var cpms = [0.093999997,0.16639787,0.21573247,0.25572005,0.29024988,0.3210876,0.34921268,0.37523559,0.39956728,0.42250001,0.44310755,0.46279839,0.48168495,0.49985844,0.51739395,0.53435433,0.55079269,0.56675452,0.58227891,0.59740001,0.61215729,0.62656713,0.64065295,0.65443563,0.667934,0.68116492,0.69414365,0.70688421,0.71939909,0.7317,0.73776948,0.74378943,0.74976104,0.75568551,0.76156384,0.76739717,0.7731865,0.77893275,0.78463697,0.79030001,0.79530001,0.8003,0.8053,0.81029999,0.81529999];
+	var cpms = [0.0939999967813491, 0.135137430784308, 0.166397869586944, 0.192650914456886, 0.215732470154762, 0.236572655026622, 0.255720049142837, 0.273530381100769, 0.290249884128570, 0.306057381335773, 0.321087598800659, 0.335445032295077, 0.349212676286697, 0.362457748778790, 0.375235587358474, 0.387592411085168, 0.399567276239395, 0.411193549517250, 0.422500014305114, 0.432926413410414, 0.443107545375824, 0.453059953871985, 0.462798386812210, 0.472336077786704, 0.481684952974319, 0.490855810259008, 0.499858438968658, 0.508701756943992, 0.517393946647644, 0.525942508771329, 0.534354329109191, 0.542635762230353, 0.550792694091796, 0.558830599438087, 0.566754519939422, 0.574569148039264, 0.582278907299041, 0.589887911977272, 0.597400009632110, 0.604823657502073, 0.612157285213470, 0.619404110566050, 0.626567125320434, 0.633649181622743, 0.640652954578399, 0.647580963301656, 0.654435634613037, 0.661219263506722, 0.667934000492096, 0.674581899290818, 0.681164920330047, 0.687684905887771, 0.694143652915954, 0.700542893277978, 0.706884205341339, 0.713169102333341, 0.719399094581604, 0.725575616972598, 0.731700003147125, 0.734741011137376, 0.737769484519958, 0.740785574597326, 0.743789434432983, 0.746781208702482, 0.749761044979095, 0.752729105305821, 0.755685508251190, 0.758630366519684, 0.761563837528228, 0.764486065255226, 0.767397165298461, 0.770297273971590, 0.773186504840850, 0.776064945942412, 0.778932750225067, 0.781790064808426, 0.784636974334716, 0.787473583646825, 0.790300011634826, 0.792803950958807, 0.795300006866455, 0.797803921486970, 0.800300002098083, 0.802803892322847, 0.805299997329711, 0.807803863460723, 0.810299992561340, 0.812803834895026, 0.815299987792968, 0.817803806620319, 0.820299983024597, 0.822803778631297, 0.825299978256225, 0.827803750922782, 0.830299973487854, 0.832803753381377, 0.835300028324127, 0.837803755931569, 0.840300023555755, 0.842803729034748, 0.845300018787384, 0.847803702398935, 0.850300014019012, 0.852803676019539, 0.855300009250640, 0.857803649892077, 0.860300004482269, 0.862803624012168, 0.865299999713897];
 
 	if(! data){
 		console.log(id + " not found");
@@ -21,8 +21,10 @@ function Pokemon(id, i, b){
 	}
 
 	// Base properties
+	this.data = data;
 	this.dex = data.dex;
 	this.speciesId = id;
+	this.canonicalId = id.replace("_xl","");
 	this.speciesName = data.speciesName;
 
 	this.baseStats = { atk: data.baseStats.atk, def: data.baseStats.def, hp: data.baseStats.hp};
@@ -97,6 +99,10 @@ function Pokemon(id, i, b){
 
 	if(data.tags){
 		this.tags = data.tags;
+	}
+
+	if(this.tags.indexOf("xl") > -1){
+		this.levelCap = 50;
 	}
 
 	// Set battle moves
@@ -224,13 +230,22 @@ function Pokemon(id, i, b){
 				case "gamemaster":
 					if(maxCP == 10000){
 						self.ivs.atk = self.ivs.def = self.ivs.hp = 15;
-						self.setLevel(40, false);
+						self.setLevel(self.levelCap, false);
 					} else{
 						var combination = data.defaultIVs["cp"+maxCP];
-						self.ivs.atk = combination[1];
-						self.ivs.def = combination[2];
-						self.ivs.hp = combination[3];
-						self.setLevel(combination[0], false);
+
+						if(combination){
+							self.ivs.atk = combination[1];
+							self.ivs.def = combination[2];
+							self.ivs.hp = combination[3];
+							self.setLevel(combination[0], false);
+						} else{
+							self.ivs.atk = 15;
+							self.ivs.def = 15;
+							self.ivs.hp = 15;
+							self.setLevel(self.levelCap, false);
+						}
+
 					}
 				break;
 			}
@@ -351,26 +366,30 @@ function Pokemon(id, i, b){
 					while((level < self.levelCap)&&(calcCP < targetCP)){
 						level += 0.5;
 
-						if(level % 1 == 0){
+						cpm = cpms[(level-1) * 2];
+
+						/*if(level % 1 == 0){
 							// Set CPM for whole levels
 							cpm = cpms[level - 1];
 						} else{
 							// Set CPM for half levels
 							cpm = Math.sqrt( (Math.pow(cpms[Math.floor(level-1)], 2) + Math.pow(cpms[Math.ceil(level-1)], 2)) / 2);
-						}
+						}*/
 
 						calcCP = self.calculateCP(cpm, atkIV, defIV, hpIV);
 					}
 
 					if(calcCP > targetCP){
 						level -= 0.5;
-						if(level % 1 == 0){
+
+						cpm = cpms[(level-1) * 2];
+						/*if(level % 1 == 0){
 							// Set CPM for whole levels
 							cpm = cpms[level - 1];
 						} else{
 							// Set CPM for half levels
 							cpm = Math.sqrt( (Math.pow(cpms[Math.floor(level-1)], 2) + Math.pow(cpms[Math.ceil(level-1)], 2)) / 2);
-						}
+						}*/
 						calcCP = this.calculateCP(cpm, atkIV, defIV, hpIV);
 					}
 
@@ -565,6 +584,14 @@ function Pokemon(id, i, b){
 				// If the cheaper move is a self debuffing move and the other move is a close non-debuffing move, prioritize the non-debuffing move
 
 				if((self.activeChargedMoves[1].energy - self.activeChargedMoves[0].energy <= 10)&&(self.activeChargedMoves[0].selfAttackDebuffing)&&(! self.activeChargedMoves[1].selfDebuffing)){
+					var move = self.activeChargedMoves[0];
+					self.activeChargedMoves.splice(0, 1);
+					self.activeChargedMoves.push(move);
+				}
+
+				// If the cheaper move is a self debuffing move and the other move is a close non-debuffing move, prioritize the non-debuffing move if the self debuffing move cannot be stacked
+
+				if((self.activeChargedMoves[1].energy - self.activeChargedMoves[0].energy <= 10)&&(self.activeChargedMoves[0].selfDebuffing)&&(self.activeChargedMoves[0].energy > 50)&&(! self.activeChargedMoves[1].selfDebuffing)){
 					var move = self.activeChargedMoves[0];
 					self.activeChargedMoves.splice(0, 1);
 					self.activeChargedMoves.push(move);
@@ -876,7 +903,7 @@ function Pokemon(id, i, b){
 			var dpt = move.damage / (move.cooldown / 500);
 
 			move.uses = self.calculateCycleDPT(move, chargedMoves[0]);
-			move.uses = Math.max(move.uses - baseline, 0);
+			move.uses = Math.max(move.uses - baseline, 0.1);
 			move.uses *= Math.pow(Math.pow(dpt*Math.pow(ept,4), 1/5), Math.max(highestDPE - 1, 1)); // Emphasize fast charging moves with access to powerful Charged Moves
 
 			total += move.uses;
@@ -885,6 +912,7 @@ function Pokemon(id, i, b){
 		// Normalize move usage to total
 		for(var i = 0; i < fastMoves.length; i++){
 			fastMoves[i].uses = Math.round((fastMoves[i].uses / total) * 100);
+
 			fastMoveUses.push({
 				moveId: fastMoves[i].moveId,
 				uses: fastMoves[i].uses * weightModifier
@@ -1093,15 +1121,17 @@ function Pokemon(id, i, b){
 		initialize = typeof initialize !== 'undefined' ? initialize : true;
 
 		self.level = amount;
-		var index = (amount - 1);
+		var index = ((amount-1) * 2);
 
-		if(index % 1 == 0){
+		self.cpm = cpms[index];
+
+		/*if(index % 1 == 0){
 			// Set CPM for whole levels
 			self.cpm = cpms[index];
 		} else{
 			// Set CPM for half levels
 			self.cpm = Math.sqrt( (Math.pow(cpms[Math.floor(index)], 2) + Math.pow(cpms[Math.ceil(index)], 2)) / 2);
-		}
+		}*/
 
 		if(amount > self.levelCap){
 			self.levelCap = amount;
@@ -1361,7 +1391,7 @@ function Pokemon(id, i, b){
 				var cycleDamage = cycleFastDamage + chargedMoves[0].damage;
 
 				var factor = 1;
-				if((chargedMoves[0].energy > chargedMoves[1].energy)||( (chargedMoves[0].energy == chargedMoves[1].energy) && (chargedMoves[1].moveId == "ACID_SPRAY")||((chargedMoves[0].selfAttackDebuffing)&&(! chargedMoves[1].selfDebuffing)&&(chargedMoves[1].energy - chargedMoves[0].energy <= 10)))){
+				if((chargedMoves[0].energy > chargedMoves[1].energy)||( (chargedMoves[0].energy == chargedMoves[1].energy) && (chargedMoves[1].moveId == "ACID_SPRAY")||((chargedMoves[0].selfAttackDebuffing)&&(! chargedMoves[1].selfDebuffing)&&(chargedMoves[1].energy - chargedMoves[0].energy <= 10))||((chargedMoves[0].selfDebuffing)&&(chargedMoves[0].energy > 50)&&(! chargedMoves[1].selfDebuffing)&&(chargedMoves[1].energy - chargedMoves[0].energy <= 10)))){
 					factor = (cycleFastDamage / cycleDamage) + ((chargedMoves[0].damage / cycleDamage) * (chargedMoves[1].dpe / chargedMoves[0].dpe));
 
 					// If the difference in energy is small, improve the consistency score as players may play straight more often
@@ -1377,8 +1407,13 @@ function Pokemon(id, i, b){
 			consistencyScore = Math.pow(consistencyScore, (1/effectivenessScenarios.length));
 		}
 
+		// Factor in fast move duration, slower moves are less consistent
+		var fastMoveConsistency = .5 + (.5 * (1 / (fastMove.cooldown / 500)));
+
+		consistencyScore = ((consistencyScore * 4) + (fastMoveConsistency * 1)) / 5;
+
 		consistencyScore = Math.round(consistencyScore * 1000) / 10;
 
-		return consistencyScore
+		return consistencyScore;
 	}
 }
