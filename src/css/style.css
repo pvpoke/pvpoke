@@ -3528,6 +3528,66 @@ a.pokebattler {
   background: rgba(0, 0, 0, 0.15);
 }
 
+/* IV TOOL */
+.iv-table .iv-row {
+  display: flex;
+  margin-bottom: 5px;
+}
+.iv-table .iv-row .iv-name {
+  width: 200px;
+  padding: 4px;
+  font-weight: bold;
+}
+.iv-table .iv-row .iv-data {
+  display: flex;
+  flex-wrap: wrap;
+}
+.iv-table .iv-row .iv-data .iv-item {
+  padding: 4px;
+  border: 2px solid #000;
+  text-align: center;
+  margin-right: 5px;
+}
+.iv-table .iv-row .iv-data .iv-item.possible {
+  border: 2px dotted #000;
+}
+
+.iv-title {
+  font-size: 16px;
+  text-align: center;
+}
+
+.iv-tool .poke.single .move-select-container .move-select.charged,
+.iv-tool .poke.single .move-select-container .section-title:nth-of-type(2),
+.iv-tool .poke.single .move-select-container .auto-select {
+  display: none;
+}
+.iv-tool .poke.single .shield-section,
+.iv-tool .poke.single .section-title.toggle,
+.iv-tool .poke.single .bar-back,
+.iv-tool .poke.single .move-bars,
+.iv-tool .poke.single .advanced,
+.iv-tool .poke.single .stat-modifiers {
+  display: none;
+}
+.iv-tool .poke.multi {
+  display: block;
+  text-align: left;
+}
+.iv-tool .poke.multi .poke-stats {
+  text-align: left;
+}
+.iv-tool .poke.multi .format-select {
+  display: none;
+}
+.iv-tool .poke.multi .shield-select,
+.iv-tool .poke.multi .check.shield-baiting {
+  display: none;
+}
+.iv-tool .poke.multi .custom-options {
+  display: block;
+}
+
 @media only screen and (min-width: 721px) {
   .menu {
     position: relative;

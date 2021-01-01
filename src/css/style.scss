@@ -359,6 +359,7 @@ header{
 		float:right;
 
 		.poke-stats{
+			text-align: right;
 
 			.stat-label{
 				float:right !important;
@@ -3738,6 +3739,112 @@ a.pokebattler{
 	}
 }
 
+.train-table{
+	width:100%;
+	margin-top:5px;
+
+	thead{
+		font-size: 12px;
+		font-weight: bold;
+
+		td.poke-name{
+			padding:0;
+			width:auto;
+		}
+
+		a{
+			text-decoration: none;
+
+			&.selected,
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+
+	td.poke-name{
+		display:flex;
+		padding: 6px 2px;
+		width:125px;
+		vertical-align: top;
+
+		.sprite-container{
+			width:30px;
+			height:30px;
+			position: relative;
+			background:none;
+			border:none;
+			margin: 0 5px 0 0;
+			padding: 0;
+			flex-shrink: 0;
+		}
+
+		.number{
+			padding-right:10px;
+		}
+
+		.name{
+			font-size:14px;
+			font-weight: bold;
+			max-width:100px;
+		}
+
+		.moves{
+			font-size:12px;
+		}
+
+		.team-member{
+			display: flex;
+		}
+	}
+
+	td.individual-score,
+	td.team-score,
+	td.usage{
+		padding: 2px 16px 2px 0;
+		font-weight: bold;
+	    font-size: 14px;
+	    line-height: 0;
+	}
+
+	td.team-score .score{
+		background-image:url('../img/starburst_red.png');
+		background-color: rgb(52, 102, 174);
+		background-size: 25px;
+	    background-repeat: no-repeat;
+	    background-position: 4px center;
+	    padding-left: 30px;
+		line-height: 25px;
+		color:#fff6d4;
+		display: inline-block;
+	    padding: 4px 4px 4px 30px;
+	    border-radius: 12px;
+		min-width:40px;
+		text-align: center;
+
+		&.win{
+			background-image:url('../img/starburst.png');
+		}
+	}
+
+	td.link a{
+		display: block;
+	    width: 32px;
+	    height: 28px;
+	    background-image: url(../img/eye.png);
+	    background-repeat: no-repeat;
+	    background-position: 0 center;
+	    margin-right: 10px;
+	    opacity: 0.5;
+	}
+
+	tr:nth-child(2n) {
+	    background: rgba(0, 0, 0, 0.15);
+	}
+}
+
+/* IV TOOL */
+
 .iv-table{
 
 	.iv-row{
@@ -3771,6 +3878,49 @@ a.pokebattler{
 .iv-title{
 	font-size:16px;
 	text-align: center;
+}
+
+.iv-tool{
+	.poke.single{
+		.move-select-container{
+			.move-select.charged,
+			.section-title:nth-of-type(2),
+			.auto-select{
+				display: none;
+			}
+		}
+
+		.shield-section,
+		.section-title.toggle,
+		.bar-back,
+		.move-bars,
+		.advanced,
+		.stat-modifiers{
+			display: none;
+		}
+	}
+
+	.poke.multi{
+		display:block;
+		text-align: left;
+
+		.poke-stats{
+			text-align: left;
+		}
+
+		.format-select{
+			display: none;
+		}
+
+		.shield-select,
+		.check.shield-baiting{
+			display:none;
+		}
+
+		.custom-options{
+			display: block;
+		}
+	}
 }
 
 @media only screen and (min-width: 721px) {
