@@ -21,8 +21,6 @@
 				<option value="premierultra" type="ultra" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="premier" type="master" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="holiday" type="great" class="multi-battle">Holiday Cup Meta</option>
-				<option value="marsh" type="great" class="multi-battle">Silph Marsh Cup Meta</option>
-				<option value="nightfall" type="great" class="multi-battle">Silph Nightfall Cup Meta</option>
 				<option value="cerberus" type="great" class="multi-battle">VR Cerberus Cup Meta</option>
 			</select>
 			<div class="flex quick-fill-buttons">

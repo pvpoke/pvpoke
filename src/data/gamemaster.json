@@ -18580,6 +18580,24 @@
             "cp2500": [40, 15, 15, 15]
         }
     }, {
+        "dex": 667,
+        "speciesName": "Litleo (XL)",
+        "speciesId": "litleo_xl",
+        "baseStats": {
+            "atk": 139,
+            "def": 112,
+            "hp": 158
+        },
+        "types": ["fire", "normal"],
+        "fastMoves": ["FIRE_FANG", "TACKLE", "EMBER"],
+        "chargedMoves": ["FLAME_CHARGE", "FLAMETHROWER", "CRUNCH"],
+        "defaultIVs": {
+            "cp500": [13, 10, 12, 11],
+            "cp1500": [50, 6, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+		"tags": ["xl"]
+    }, {
         "dex": 668,
         "speciesName": "Pyroar",
         "speciesId": "pyroar",
