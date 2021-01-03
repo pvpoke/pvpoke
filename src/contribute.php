@@ -197,7 +197,10 @@ require_once 'header.php'; ?>
 			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/joingames.png"/>
 			<div class="supporter"><a href="https://joingames.net" target="_blank">JoinGames</a></div>
 		</div>
-
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/theunderground.png"/>
+			<div class="supporter"><a href="https://discord.com/invite/hW6eVnmSqa" target="_blank">The Underground</a></div>
+		</div>
 	</div>
 </div>
 
