@@ -3863,14 +3863,26 @@ a.pokebattler{
 
 			.iv-item{
 				padding:4px;
-				border: 2px solid #000;
+				border: 3px solid #000;
 				text-align: center;
 				margin-right: 5px;
+				color:#fff6d4;
+				font-weight: bold;
+				font-size:20px;
+				min-width:20px;
 
 				&.possible{
-					border: 2px dotted #000;
+					border: 3px dotted rgba(0,0,0,0);
+				}
+
+				.rating.star{
+					font-size:12px;
 				}
 			}
+		}
+
+		&:nth-child(2n) {
+			background: rgba(0, 0, 0, 0.15);
 		}
 	}
 }
@@ -3882,21 +3894,19 @@ a.pokebattler{
 
 .iv-tool{
 	.poke.single{
-		.move-select-container{
-			.move-select.charged,
-			.section-title:nth-of-type(2),
-			.auto-select{
-				display: none;
-			}
-		}
 
 		.shield-section,
 		.section-title.toggle,
 		.bar-back,
 		.move-bars,
-		.advanced,
+		a.advanced,
 		.stat-modifiers{
 			display: none;
+		}
+
+		.advanced-section .fields{
+			margin-top:5px;
+			display:block;
 		}
 	}
 

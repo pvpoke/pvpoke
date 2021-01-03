@@ -269,45 +269,25 @@ var InterfaceMaster = (function () {
 
 				for(var i = 0; i < targets.length; i++){
 					var target = targets[i];
-					var move = pokemon.fastMove;
-					var effectiveness = target.typeEffectiveness[move.type];
-					var minStat = target.generateIVCombinations(targetStat, -1, 1)[0].def;
-					var maxStat = target.generateIVCombinations(targetStat, 1, 1)[0].def;
-					var minDamage = battle.calculateDamageByStats(target, pokemon, pokemon.stats.atk * pokemon.shadowAtkMult, maxStat * target.shadowDefMult, effectiveness, move);
-					var maxDamage = battle.calculateDamageByStats(target, pokemon, pokemon.stats.atk * pokemon.shadowAtkMult, minStat * target.shadowDefMult, effectiveness, move);
-					var absoluteMaxDamage = battle.calculateDamageByStats(target, pokemon, maxSubjectStat * pokemon.shadowAtkMult, minStat * target.shadowDefMult, effectiveness, move);
+					target.maximizeStat("def");
+					target.startingShields = 1;
 
-					if(minDamage < minOverallDamage){
-						minOverallDamage = Math.floor(minDamage);
-					}
-
-					if(maxDamage > maxOverallDamage){
-						maxOverallDamage = Math.floor(maxDamage);
-					}
+					var breakpoints = pokemon.calculateBreakpoints(target);
 
 					results.push({
 						pokemon: target,
-						min: minDamage,
-						max: maxDamage,
-						absoluteMax:absoluteMaxDamage
+						breakpoints: breakpoints
 					})
 				}
 
 				// Create the graph
 				$(".iv-title").html(pokemon.fastMove.name + " Damage");
 
-				$(".iv-table .iv-header").html("");
-
-				for(var i = minOverallDamage; i < maxOverallDamage; i++){
-					$(".iv-table .iv-header").append("<div>"+i+"</div>");
-				}
-
-				var scale = $(".iv-header div").width();
-
-				$(".iv-table .iv-body").html("");
+				$(".iv-table").html("");
 
 				for(var i = 0; i < results.length; i++){
 					var target = results[i].pokemon;
+					var breakpoints = results[i].breakpoints;
 
 					var $row = $("<div class=\"iv-row\"></div>");
 
@@ -315,12 +295,47 @@ var InterfaceMaster = (function () {
 
 					var $data = $("<div class=\"iv-data\"></div>");
 
-					for(var n = results[i].min; n <= results[i].absoluteMax; n++){
-						var $item = $("<div class=\"iv-item\">"+n+"</div>");
+					for(var n = 0; n < breakpoints.length; n++){
+						var $item = $("<div class=\"iv-item\">"+breakpoints[n].damage+"</div>");
+						var subjectPokemon = pokemon;
 
-						if(n > results[i].max){
+						if(n == 0){
+							battle.setNewPokemon(pokemon, 0, false);
+						} else{
+							// Find the best combinations that reaches this value
+							var combinations = pokemon.generateIVCombinations("overall", 1, 2, [{stat: "atk", value: breakpoints[n].attack}]);
+							var newPokemon = new Pokemon(pokemon.speciesId, 0, battle);
+							newPokemon.initialize(true);
+							newPokemon.startingShields = 1;
+							newPokemon.selectMove("fast", pokemon.fastMove.moveId);
+							newPokemon.selectMove("charged", pokemon.chargedMoves[0].moveId, 0);
+							newPokemon.selectMove("charged", pokemon.chargedMoves[1].moveId, 1);
+							newPokemon.setIV("atk", combinations[0].ivs.atk);
+							newPokemon.setIV("def", combinations[0].ivs.def);
+							newPokemon.setIV("hp", combinations[0].ivs.hp);
+							newPokemon.setLevel(combinations[0].level);
+
+							subjectPokemon = newPokemon;
+
+							battle.setNewPokemon(newPokemon, 0, false);
 							$item.addClass("possible");
 						}
+
+						battle.setNewPokemon(target, 1, false);
+						battle.simulate();
+
+						var rating = subjectPokemon.getBattleRating();
+						var ratingColor;
+
+						if(rating > 500){
+							ratingColor = battle.getRatingColor(1000);
+						} else if(rating < 500){
+							ratingColor = battle.getRatingColor(0);
+						} else if(rating == 500){
+							ratingColor = battle.getRatingColor(500);
+						}
+
+						$item.attr("style", "background:rgb("+ratingColor[0]+","+ratingColor[1]+","+ratingColor[2]+")");
 
 						$data.append($item);
 					}
@@ -339,15 +354,7 @@ var InterfaceMaster = (function () {
 
 				if(allowed.indexOf(cp) > -1){
 					battle.setCP(cp);
-
-					for(var i = 0; i < pokeSelectors.length; i++){
-						pokeSelectors[i].setBattle(battle);
-						pokeSelectors[i].setCP(cp);
-					}
-
-					for(var i = 0; i < multiSelectors.length; i++){
-						multiSelectors[i].setCP(cp);
-					}
+					multiSelector.setCP(cp);
 				}
 
 				gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), "all");
