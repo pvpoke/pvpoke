@@ -1099,13 +1099,16 @@ function Battle(){
 			var currState = queue.shift();
 
 			// If turn > when you can act before your opponent, move to the next item in the queue
-			if (winsCMP) {
-				if (currState.turn > poke.fastMove.cooldown / 500) {
-					continue;
-				}
-			} else {
-				if (currState.turn > poke.fastMove.cooldown / 500 + 1) {
-					continue;
+
+			if(currState.hp > oppFastDamage){
+				if (winsCMP) {
+					if (currState.turn > poke.fastMove.cooldown / 500) {
+						continue;
+					}
+				} else {
+					if (currState.turn > poke.fastMove.cooldown / 500 + 1) {
+						continue;
+					}
 				}
 			}
 
@@ -1147,7 +1150,7 @@ function Battle(){
 
 			// Check if a fast move faints, add results to queue
 			if (currState.hp - oppFastDamage <= 0) {
-				turnsToLive = Math.min(currState.turn + opponent.fastMove.cooldown / 500, turnsToLive);
+				turnsToLive = Math.min(currState.turn + (opponent.fastMove.cooldown / 500), turnsToLive);
 				break;
 			} else {
 				queue.unshift(
@@ -1169,6 +1172,15 @@ function Battle(){
 		if (turnsToLive != -1) {
 			if(opponent.fastMove.cooldown == 500){
 				turnsToLive--;
+			}
+
+			// Anticipate a Fast Move landing that has already initiated
+			if((poke.hp <= opponent.fastMove.damage)&&(opponent.cooldown > 0)&&(opponent.fastMove.cooldown > 500)){
+				turnsToLive = opponent.cooldown / 500;
+
+				if(opponent.hp > poke.fastMove.damage){
+					turnsToLive--;
+				}
 			}
 
 			if (turnsToLive * 500 < poke.fastMove.cooldown || (turnsToLive * 500 == poke.fastMove.cooldown && !winsCMP) || (turnsToLive * 500 == poke.fastMove.cooldown && poke.hp <= opponent.fastMove.damage)) {
