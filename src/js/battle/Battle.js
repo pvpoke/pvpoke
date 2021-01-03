@@ -1109,21 +1109,6 @@ function Battle(){
 				}
 			}
 
-			// Check if a fast move faints, add results to queue
-			if (currState.hp - oppFastDamage <= 0) {
-				turnsToLive = Math.min(currState.turn + opponent.fastMove.cooldown / 500, turnsToLive);
-				break;
-			} else {
-				queue.unshift(
-					{
-						hp: currState.hp - oppFastDamage,
-						opEnergy: currState.opEnergy + opponent.fastMove.energyGain,
-						turn: currState.turn + opponent.fastMove.cooldown / 500,
-						shields: currState.shields
-					}
-				);
-			}
-
 			// Shield bait if shields are up, otherwise try to KO
 			if (currState.shields != 0) {
 				if (currState.opEnergy >= opponent.fastestChargedMove.energy) {
@@ -1139,8 +1124,10 @@ function Battle(){
 			} else {
 				// Check if any charge move KO's, add results to queue
 				for(var n = 0; n < opponent.activeChargedMoves.length; n++) {
+
 					if (currState.opEnergy >= opponent.activeChargedMoves[n].energy) {
-						moveDamage = self.calculateDamage(opponent, poke, opponent.activeChargedMoves[n]);
+						var moveDamage = self.calculateDamage(opponent, poke, opponent.activeChargedMoves[n]);
+
 						if (moveDamage >= currState.hp) {
 							turnsToLive = Math.min(currState.turn, turnsToLive);
 							self.logDecision(turns, poke, " opponent has energy to use " + opponent.activeChargedMoves[n].name + " and it would do " + moveDamage + " damage. I have " + turnsToLive + " turn(s) to live, opponent has " + currState.opEnergy);
@@ -1157,7 +1144,26 @@ function Battle(){
 					}
 				}
 			}
+
+			// Check if a fast move faints, add results to queue
+			if (currState.hp - oppFastDamage <= 0) {
+				turnsToLive = Math.min(currState.turn + opponent.fastMove.cooldown / 500, turnsToLive);
+				break;
+			} else {
+				queue.unshift(
+					{
+						hp: currState.hp - oppFastDamage,
+						opEnergy: currState.opEnergy + opponent.fastMove.energyGain,
+						turn: currState.turn + opponent.fastMove.cooldown / 500,
+						shields: currState.shields
+					}
+				);
+			}
 		}
+
+		self.logDecision(turns, poke, " turns to live " + turnsToLive);
+
+
 
 		// If you can't throw a fast move and live, throw whatever move you can with the most damage
 		if (turnsToLive != -1) {
@@ -1696,6 +1702,11 @@ function Battle(){
 
 		// Bandaid to force more efficient move of the same energy
 		if (poke.activeChargedMoves.length > 1 && poke.activeChargedMoves[0].energy == finalState.moves[0].energy && poke.activeChargedMoves[0].dpe > finalState.moves[0].dpe && (! poke.activeChargedMoves[0].selfDebuffing)) {
+			finalState.moves[0] = poke.activeChargedMoves[0];
+		}
+
+		// Bandaid to force more efficient move of the similar energy if chosen move is self debuffing
+		if (poke.activeChargedMoves.length > 1 && poke.activeChargedMoves[0].energy - 10 <= finalState.moves[0].energy && poke.activeChargedMoves[0].dpe > finalState.moves[0].dpe && finalState.moves[0].selfDebuffing && (! poke.activeChargedMoves[0].selfDebuffing)) {
 			finalState.moves[0] = poke.activeChargedMoves[0];
 		}
 
