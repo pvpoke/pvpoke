@@ -15219,6 +15219,24 @@
             "cp2500": [40, 15, 15, 15]
         }
     }, {
+        "dex": 497,
+        "speciesId": "serperior_xl",
+        "speciesName": "Serperior (XL)",
+        "baseStats": {
+            "atk": 161,
+            "def": 204,
+            "hp": 181
+        },
+        "types": ["grass", "none"],
+        "fastMoves": ["IRON_TAIL", "VINE_WHIP"],
+        "chargedMoves": ["GRASS_KNOT", "LEAF_TORNADO", "AERIAL_ACE"],
+        "tags": ["starter", "xl"],
+        "defaultIVs": {
+            "cp500": [8, 10, 13, 14],
+            "cp1500": [24, 7, 14, 15],
+            "cp2500": [49.5, 11, 14, 15]
+        }
+    }, {
         "dex": 498,
         "speciesId": "tepig",
         "speciesName": "Tepig",
@@ -16342,6 +16360,24 @@
             "cp2500": [40, 13, 13, 14]
         }
     }, {
+        "dex": 558,
+        "speciesId": "crustle_xl",
+        "speciesName": "Crustle (XL)",
+        "baseStats": {
+            "atk": 188,
+            "def": 200,
+            "hp": 172
+        },
+        "types": ["bug", "rock"],
+        "fastMoves": ["FURY_CUTTER", "SMACK_DOWN"],
+        "chargedMoves": ["ROCK_BLAST", "X_SCISSOR", "ROCK_SLIDE"],
+        "defaultIVs": {
+            "cp500": [7.5, 5, 6, 15],
+            "cp1500": [22, 5, 12, 11],
+            "cp2500": [44, 2, 14, 15]
+        },
+		"tags": ["xl"]
+    }, {
         "dex": 559,
         "speciesId": "scraggy",
         "speciesName": "Scraggy",
@@ -17080,6 +17116,24 @@
             "cp2500": [40, 15, 15, 15]
         },
         "searchPriority": 13
+    }, {
+        "dex": 598,
+        "speciesId": "ferrothorn_xl",
+        "speciesName": "Ferrothorn (XL)",
+        "baseStats": {
+            "atk": 158,
+            "def": 223,
+            "hp": 179
+        },
+        "types": ["grass", "steel"],
+        "fastMoves": ["BULLET_SEED", "METAL_CLAW"],
+        "chargedMoves": ["POWER_WHIP", "FLASH_CANNON", "ACID_SPRAY", "THUNDER", "MIRROR_SHOT"],
+        "defaultIVs": {
+            "cp500": [8, 7, 12, 15],
+            "cp1500": [23.5, 10, 15, 11],
+            "cp2500": [49, 9, 14, 15]
+        },
+		"tags": ["xl"]
     }, {
         "dex": 599,
         "speciesId": "klink",
@@ -18175,12 +18229,13 @@
         },
         "types": ["bug", "steel"],
         "fastMoves": ["METAL_CLAW", "FURY_CUTTER"],
-        "chargedMoves": ["X_SCISSOR", "MAGNET_BOMB", "FLAMETHROWER"],
+        "chargedMoves": ["X_SCISSOR", "MAGNET_BOMB", "FLAMETHROWER", "TECHNO_BLAST_BURN"],
         "defaultIVs": {
             "cp500": [5.5, 14, 15, 12],
             "cp1500": [16, 10, 15, 11],
             "cp2500": [26.5, 10, 13, 15]
         },
+		"eliteMoves": ["TECHNO_BLAST_BURN"],
         "tags": ["mythical", "untradeable"]
     }, {
         "dex": 649,

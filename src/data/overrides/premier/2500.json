@@ -96,6 +96,10 @@
 		"chargedMoves": ["POWER_WHIP", "FLASH_CANNON"]
 	},
 	{
+		"speciesId": "ferrothorn_xl",
+		"chargedMoves": ["POWER_WHIP", "FLASH_CANNON"]
+	},
+	{
 		"speciesId": "porygon_z",
 		"chargedMoves": ["TRI_ATTACK", "RETURN"]
 	},
@@ -130,6 +134,10 @@
 	},
 	{
 		"speciesId": "serperior",
+		"chargedMoves": ["GRASS_KNOT", "AERIAL_ACE"]
+	},
+	{
+		"speciesId": "serperior_xl",
 		"chargedMoves": ["GRASS_KNOT", "AERIAL_ACE"]
 	},
 	{
@@ -280,6 +288,11 @@
 	},
 	{
 		"speciesId": "crustle",
+		"fastMove": "SMACK_DOWN",
 		"weight": 2
+	},
+	{
+		"speciesId": "crustle_xl",
+		"fastMove": "SMACK_DOWN"
 	}
 ]

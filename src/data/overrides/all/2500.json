@@ -511,11 +511,19 @@
 		"weight": 2
 	},
 	{
+		"speciesId": "ferrothorn_xl",
+		"chargedMoves": ["POWER_WHIP","FLASH_CANNON"]
+	},
+	{
 		"speciesId": "cherrim_sunny",
 		"chargedMoves": ["WEATHER_BALL_FIRE","SOLAR_BEAM"]
 	},
 	{
 		"speciesId": "serperior",
+		"chargedMoves": ["GRASS_KNOT", "AERIAL_ACE"]
+	},
+	{
+		"speciesId": "serperior_xl",
 		"chargedMoves": ["GRASS_KNOT", "AERIAL_ACE"]
 	}
 ]
