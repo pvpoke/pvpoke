@@ -130,6 +130,7 @@
 				<button class="add-fast-move">+ Move</button>
 				<button class="pull-from-timeline">Pull from timeline</button>
 				<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
+				<div class="check optimize-timing on"><span></span>Optimize move timing</div>
 			</div>
 		</div>
 

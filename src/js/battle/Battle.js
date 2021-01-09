@@ -1013,7 +1013,8 @@ function Battle(){
 
 		// Optimize move timing to reduce free turns
 		if(poke.optimizeMoveTiming){
-			if (poke.fastMove.cooldown != opponent.fastMove.cooldown && opponent.fastMove.cooldown > 500 && opponent.cooldown != 500) {
+
+			if ( (! (poke.fastMove.cooldown % opponent.fastMove.cooldown == 0 || opponent.fastMove.cooldown % poke.fastMove.cooldown == 0) || (poke.fastMove.cooldown == 500 && opponent.fastMove.cooldown > 500)) && opponent.cooldown != 500) {
 				var optimizeTiming = true;
 
 				// Don't optimize if we're about to faint from a fast move
@@ -1028,7 +1029,10 @@ function Battle(){
 
 				// Don't optimize if we can KO with a Charged Move
 				for(var n = 0; n < poke.activeChargedMoves.length; n++) {
-					if (poke.energy >= poke.activeChargedMoves[n].energy && poke.activeChargedMoves[n].damage >= opponent.hp) {
+					poke.activeChargedMoves[n].damage = self.calculateDamage(poke, opponent, poke.activeChargedMoves[n]);
+
+					if (poke.energy >= poke.activeChargedMoves[n].energy && poke.activeChargedMoves[n].damage >= opponent.hp && opponent.shields == 0) {
+
 						optimizeTiming = false;
 						break;
 					}
@@ -1038,6 +1042,9 @@ function Battle(){
 				for(var n = 0; n < opponent.activeChargedMoves.length; n++) {
 					var fastMovesFromCharged = Math.ceil((opponent.activeChargedMoves[n].energy - opponent.energy) / opponent.fastMove.energyGain);
 					var turnsFromMove = (fastMovesFromCharged * (opponent.fastMove.cooldown / 500)) + 1;
+
+					opponent.activeChargedMoves[n].damage = self.calculateDamage(opponent, poke, opponent.activeChargedMoves[n]);
+
 					var moveDamage = opponent.activeChargedMoves[n].damage + (opponent.fastMove.damage * fastMovesFromCharged);
 
 					if (turnsFromMove <= (poke.fastMove.cooldown / 500) && moveDamage >= poke.hp) {

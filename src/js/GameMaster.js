@@ -343,8 +343,6 @@ var GameMaster = (function () {
 						}
 					}
 
-					console.log(move);
-
 					return;
 				}
 			});

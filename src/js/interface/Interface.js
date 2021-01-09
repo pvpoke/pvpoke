@@ -1207,6 +1207,12 @@ var InterfaceMaster = (function () {
 											if(! pokemon.baitShields){
 												$(".poke.single .shield-baiting").eq(index).removeClass("on");
 											}
+
+											pokemon.optimizeMoveTiming = (parseInt(arr[8]) == 1);
+
+											if(! pokemon.optimizeMoveTiming){
+												$(".poke.single .optimize-timing").eq(index).removeClass("on");
+											}
 										}
 									}
 
