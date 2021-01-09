@@ -307,6 +307,7 @@ function PokeSelect(element, i){
 		$el.find(".move-select").html('');
 		$el.find(".starting-health").val(selectedPokemon.stats.hp);
 		$el.find(".check.shield-baiting").addClass("on");
+		$el.find(".check.optimizeMoveTiming").addClass("on");
 		$el.find(".check.priority").removeClass("on");
 		$el.find(".check.negate-fast-moves").addClass("on");
 		$el.find(".hp .bar.damage").hide();
@@ -670,6 +671,15 @@ function PokeSelect(element, i){
 
 	$el.find(".check.shield-baiting").on("click", function(e){
 		selectedPokemon.baitShields = (! selectedPokemon.baitShields);
+
+		selectedPokemon.isCustom = true;
+		isCustom = true;
+	});
+
+	// Turn move optimization on or off
+
+	$el.find(".check.optimize-timing").on("click", function(e){
+		selectedPokemon.optimizeMoveTiming = (! selectedPokemon.optimizeMoveTiming);
 
 		selectedPokemon.isCustom = true;
 		isCustom = true;

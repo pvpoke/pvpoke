@@ -313,6 +313,7 @@ var GameMaster = (function () {
 						energyGain: m.energyGain,
 						cooldown: m.cooldown,
 						selfDebuffing: false,
+						selfBuffing: false,
 						selfAttackDebuffing: false,
 						legacy: false,
 						elite: false
@@ -336,7 +337,13 @@ var GameMaster = (function () {
 								move.selfAttackDebuffing = true;
 							}
 						}
+
+						if(move.buffApplyChance == 1 && (move.buffTarget == "opponent" || (move.buffTarget == "self" && (move.buffs[0] > 0 || move.buffs[1] > 0)))){
+							move.selfBuffing = true;
+						}
 					}
+
+					console.log(move);
 
 					return;
 				}

@@ -1011,6 +1011,49 @@ function Battle(){
 			return;
 		}
 
+		// Optimize move timing to reduce free turns
+		if(poke.optimizeMoveTiming){
+			if (poke.fastMove.cooldown != opponent.fastMove.cooldown && opponent.fastMove.cooldown > 500 && opponent.cooldown != 500) {
+				var optimizeTiming = true;
+
+				// Don't optimize if we're about to faint from a fast move
+				if(poke.hp <= opponent.fastMove.damage){
+					optimizeTiming = false;
+				}
+
+				// Don't optimize if we'll go over 100 energy
+				if(poke.energy + poke.fastMove.energyGain > 100){
+					optimizeTiming = false;
+				}
+
+				// Don't optimize if we can KO with a Charged Move
+				for(var n = 0; n < poke.activeChargedMoves.length; n++) {
+					if (poke.energy >= poke.activeChargedMoves[n].energy && poke.activeChargedMoves[n].damage >= opponent.hp) {
+						optimizeTiming = false;
+						break;
+					}
+				}
+
+				// Don't optimize if our opponent can KO with a Charged Move
+				for(var n = 0; n < opponent.activeChargedMoves.length; n++) {
+					var fastMovesFromCharged = Math.ceil((opponent.activeChargedMoves[n].energy - opponent.energy) / opponent.fastMove.energyGain);
+					var turnsFromMove = (fastMovesFromCharged * (opponent.fastMove.cooldown / 500)) + 1;
+					var moveDamage = opponent.activeChargedMoves[n].damage + (opponent.fastMove.damage * fastMovesFromCharged);
+
+					if (turnsFromMove <= (poke.fastMove.cooldown / 500) && moveDamage >= poke.hp) {
+						optimizeTiming = false;
+						break;
+					}
+				}
+
+				if(optimizeTiming){
+					useChargedMove = false;
+					self.logDecision(turns, poke, " is optimizing move timing");
+					return;
+				}
+			}
+		}
+
 		// Evaluate if opponent can't be fainted in a limited number of cycles. If so, do a simpler move selection.
 
 		var bestChargedDamage = self.calculateDamage(poke, opponent, poke.bestChargedMove);
@@ -1164,13 +1207,9 @@ function Battle(){
 			}
 		}
 
-		self.logDecision(turns, poke, " turns to live " + turnsToLive);
-
-
-
 		// If you can't throw a fast move and live, throw whatever move you can with the most damage
 		if (turnsToLive != -1) {
-			if(opponent.fastMove.cooldown == 500){
+			if(poke.hp <= opponent.fastMove.damage && opponent.fastMove.cooldown == 500){
 				turnsToLive--;
 			}
 
@@ -1691,7 +1730,7 @@ function Battle(){
 			if (finalState.moves[0].selfDebuffing) {
 				if (poke.energy < Math.floor(100 / finalState.moves[0].energy) * finalState.moves[0].energy) {
 					var moveDamage = self.calculateDamage(poke, opponent, finalState.moves[0]);
-					if (opponent.hp > moveDamage || opponent.shields != 0) {
+					if ((opponent.hp > moveDamage || opponent.shields != 0) && (poke.hp > opponent.fastMove.damage || opponent.fastMove.cooldown - poke.fastMove.cooldown > 500)){
 						useChargedMove = false;
 						self.logDecision(turns, poke, " doesn't use " + finalState.moves[0].name + " because it wants to minimize time debuffed and it can stack the move " + Math.floor(100 / finalState.moves[0].energy) + " times");
 						return;
