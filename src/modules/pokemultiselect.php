@@ -20,7 +20,7 @@
 				<option value="master" type="master" class="hide multi-battle">Master League Meta</option>
 				<option value="premierultra" type="ultra" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="premier" type="master" class="hide multi-battle">Premier Cup Meta</option>
-				<option value="holiday" type="great" class="multi-battle">Holiday Cup Meta</option>
+				<option value="kanto" type="great" class="multi-battle">Kanto Cup Meta</option>
 				<option value="cerberus" type="great" class="multi-battle">VR Cerberus Cup Meta</option>
 			</select>
 			<div class="flex quick-fill-buttons">

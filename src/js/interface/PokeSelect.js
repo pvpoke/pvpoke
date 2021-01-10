@@ -307,7 +307,7 @@ function PokeSelect(element, i){
 		$el.find(".move-select").html('');
 		$el.find(".starting-health").val(selectedPokemon.stats.hp);
 		$el.find(".check.shield-baiting").addClass("on");
-		$el.find(".check.optimizeMoveTiming").addClass("on");
+		$el.find(".check.optimizeMoveTiming").removeClass("on");
 		$el.find(".check.priority").removeClass("on");
 		$el.find(".check.negate-fast-moves").addClass("on");
 		$el.find(".hp .bar.damage").hide();
