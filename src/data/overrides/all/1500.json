@@ -76,6 +76,11 @@
 		"chargedMoves": ["NIGHT_SLASH", "DIG"]
 	},
 	{
+		"speciesId": "jellicent",
+		"fastMove": "BUBBLE",
+		"chargedMoves": ["BUBBLE_BEAM","SHADOW_BALL"]
+	},
+	{
 		"speciesId": "gligar_shadow",
 		"chargedMoves": ["NIGHT_SLASH", "DIG"]
 	},
@@ -346,7 +351,11 @@
 	},
 	{
 		"speciesId": "ninetales",
-		"chargedMoves": ["OVERHEAT", "PSYSHOCK"]
+		"chargedMoves": ["WEATHER_BALL_FIRE", "SOLAR_BEAM"]
+	},
+	{
+		"speciesId": "ninetales_shadow",
+		"chargedMoves": ["WEATHER_BALL_FIRE", "PSYSHOCK"]
 	},
 	{
 		"speciesId": "pinsir_shadow",
@@ -558,11 +567,12 @@
 	{
 		"speciesId": "politoed",
 		"fastMove": "MUD_SHOT",
-		"chargedMoves": ["SURF","EARTHQUAKE"]
+		"chargedMoves": ["WEATHER_BALL_WATER","EARTHQUAKE"]
 	},
 	{
 		"speciesId": "politoed_shadow",
-		"fastMove": "MUD_SHOT"
+		"fastMove": "MUD_SHOT",
+		"chargedMoves": ["WEATHER_BALL_WATER","EARTHQUAKE"]
 	},
 	{
 		"speciesId": "accelgor",

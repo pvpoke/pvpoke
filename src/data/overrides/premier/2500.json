@@ -25,6 +25,16 @@
 		"weight": 5
 	},
 	{
+		"speciesId": "jellicent",
+		"fastMove": "BUBBLE",
+		"chargedMoves": ["BUBBLE_BEAM","SHADOW_BALL"]
+	},
+	{
+		"speciesId": "jellicent_xl",
+		"fastMove": "BUBBLE",
+		"chargedMoves": ["BUBBLE_BEAM","SHADOW_BALL"]
+	},
+	{
 		"speciesId": "toxicroak",
 		"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"],
 		"weight": 7
@@ -141,8 +151,24 @@
 		"chargedMoves": ["GRASS_KNOT", "AERIAL_ACE"]
 	},
 	{
+		"speciesId": "politoed",
+		"chargedMoves": ["WEATHER_BALL_WATER", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "politoed_xl",
+		"chargedMoves": ["WEATHER_BALL_WATER", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "politoed_xl",
+		"chargedMoves": ["WEATHER_BALL_WATER", "EARTHQUAKE"]
+	},
+	{
 		"speciesId": "ninetales",
-		"chargedMoves": ["PSYSHOCK", "OVERHEAT"]
+		"chargedMoves": ["SOLAR_BEAM", "WEATHER_BALL_FIRE"]
+	},
+	{
+		"speciesId": "ninetales_xl",
+		"chargedMoves": ["SOLAR_BEAM", "WEATHER_BALL_FIRE"]
 	},
 	{
 		"speciesId": "gliscor",
