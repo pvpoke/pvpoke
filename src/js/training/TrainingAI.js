@@ -144,6 +144,10 @@ function TrainingAI(l, p, b){
 			var pokemon = new Pokemon(poke.speciesId, player.index, battle);
 			pokemon.initialize(battle.getCP());
 
+			if(self.hasStrategy("OPTIMIZE_TIMING")){
+				pokemon.optimizeMoveTiming = true;
+			}
+
 			roles.push(poke.role);
 
 			// Select a random IV spread according to difficulty
