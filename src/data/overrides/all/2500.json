@@ -258,10 +258,6 @@
 		"chargedMoves": ["WILD_CHARGE", "MIRROR_SHOT"]
 	},
 	{
-		"speciesId": "ninetales",
-		"chargedMoves": ["OVERHEAT", "PSYSHOCK"]
-	},
-	{
 		"speciesId": "kangaskhan",
 		"chargedMoves": ["POWER_UP_PUNCH", "OUTRAGE"]
 	},
@@ -298,7 +294,7 @@
 	{
 		"speciesId": "cresselia",
 		"fastMove": "PSYCHO_CUT",
-		"chargedMoves": ["FUTURE_SIGHT", "MOONBLAST"],
+		"chargedMoves": ["GRASS_KNOT", "MOONBLAST"],
 		"weight": 40
 	},
 	{
@@ -415,7 +411,11 @@
 	},
 	{
 		"speciesId": "ninetales_alolan",
-		"fastMove": "CHARM"
+		"fastMove": "POWDER_SNOW"
+	},
+	{
+		"speciesId": "ninetales_alolan_xl",
+		"fastMove": "POWDER_SNOW"
 	},
 	{
 		"speciesId": "muk_alolan",
