@@ -104,7 +104,7 @@ require_once 'header.php';
 
 	<p class="description link hide"><b>Tournament Info:</b> <a href="#" target="_blank"></a></p>
 
-	<p>You can enter your GBL encounters <a href="https://docs.google.com/forms/d/e/1FAIpQLScc_gCvXLTUs5tHORiPpEmuF6yL6UJ0j0P03oSNDRQvNNHa0w/viewform" target="_blank">here</a> to help provide usage data for ranking updates.</p>
+	<p>You can enter your GBL encounters <a href="https://docs.google.com/forms/d/e/1FAIpQLScc_gCvXLTUs5tHORiPpEmuF6yL6UJ0j0P03oSNDRQvNNHa0w/viewform" target="_blank">here</a> or at <a href="https://gobattlelog.com/" target="_blank">gobattlelog.com</a> to help provide usage data for ranking updates.</p>
 
 	<p>Click or tap the rankings below for more details.</p>
 
