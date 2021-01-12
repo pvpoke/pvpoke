@@ -48,9 +48,9 @@ function Pokebox(element, selector, selectMode, b){
 						var obj = json.pokemon[i];
 						var id = self.translateId(obj.pokemon, "species");
 						var pokemon = new Pokemon(id, 0, battle);
-						pokemon.initialize();
 
 						if(pokemon){
+							pokemon.initialize();
 							pokemon.selectMove("fast", self.translateId(obj.quickMove, "move"));
 							pokemon.selectMove("charged", self.translateId(obj.cinematicMove, "move"), 0);
 							if(obj.cinematicMove2){
@@ -126,6 +126,18 @@ function Pokebox(element, selector, selectMode, b){
 		switch(id){
 			case "darmanitan":
 				return "darmanitan_standard";
+				break;
+
+			case "thundurus":
+				return "thundurus_incarnate";
+				break;
+
+			case "landorus":
+				return "landorus_incarnate";
+				break;
+
+			case "tornadus":
+				return "tornadus_incarnate";
 				break;
 		}
 
