@@ -76,6 +76,10 @@
 		"chargedMoves": ["NIGHT_SLASH", "DIG"]
 	},
 	{
+		"speciesId": "claydol",
+		"chargedMoves": ["EARTH_POWER", "SHADOW_BALL"]
+	},
+	{
 		"speciesId": "jellicent",
 		"fastMove": "BUBBLE",
 		"chargedMoves": ["BUBBLE_BEAM","SHADOW_BALL"]
@@ -521,7 +525,7 @@
 	},
 	{
 		"speciesId": "ninetales_alolan",
-		"fastMove": "CHARM"
+		"fastMove": "POWDER_SNOW"
 	},
 	{
 		"speciesId": "tropius",

@@ -356,6 +356,13 @@
 					"weight":40
 				},
 				{
+					"speciesId": "excadrill",
+					"fastMove": "MUD_SHOT",
+					"chargedMoves": ["DRILL_RUN","ROCK_SLIDE"],
+					"difficulty": 2,
+					"weight":10
+				},
+				{
 					"speciesId": "metagross",
 					"fastMove": "BULLET_PUNCH",
 					"chargedMoves": ["METEOR_MASH","PSYCHIC"],

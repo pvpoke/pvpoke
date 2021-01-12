@@ -220,11 +220,12 @@
 	{
 		"speciesId": "politoed",
 		"fastMove": "MUD_SHOT",
-		"chargedMoves": ["SURF", "EARTHQUAKE"]
+		"chargedMoves": ["WEATHER_BALL_WATER", "BLIZZARD"]
 	},
 	{
 		"speciesId": "politoed_shadow",
-		"fastMove": "MUD_SHOT"
+		"fastMove": "MUD_SHOT",
+		"chargedMoves": ["WEATHER_BALL_WATER", "BLIZZARD"]
 	},
 	{
 		"speciesId": "moltres",

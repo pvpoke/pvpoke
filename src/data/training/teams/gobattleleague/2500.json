@@ -570,7 +570,14 @@
 					"fastMove": "PSYCHO_CUT",
 					"chargedMoves": ["FUTURE_SIGHT","MOONBLAST"],
 					"difficulty": 3,
-					"weight":65
+					"weight":45
+				},
+				{
+					"speciesId": "cresselia",
+					"fastMove": "PSYCHO_CUT",
+					"chargedMoves": ["GRASS_KNOT","MOONBLAST"],
+					"difficulty": 3,
+					"weight":25
 				},
 				{
 					"speciesId": "lugia",
@@ -808,7 +815,7 @@
 				{
 					"speciesId": "cresselia",
 					"fastMove": "PSYCHO_CUT",
-					"chargedMoves": ["MOONBLAST","FUTURE_SIGHT"]
+					"chargedMoves": ["MOONBLAST","GRASS_KNOT"]
 				},
 				{
 					"speciesId": "swampert",

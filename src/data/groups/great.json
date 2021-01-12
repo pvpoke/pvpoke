@@ -15,6 +15,11 @@
 		"chargedMoves":["LEAF_BLADE","AERIAL_ACE"]
 	},
 	{
+		"speciesId":"jellicent",
+		"fastMove":"HEX",
+		"chargedMoves":["ICE_BEAM","SHADOW_BALL"]
+	},
+	{
 		"speciesId":"altaria",
 		"fastMove":"DRAGON_BREATH",
 		"chargedMoves":["SKY_ATTACK","DRAGON_PULSE"]
@@ -228,11 +233,6 @@
 		"speciesId":"diggersby",
 		"fastMove":"MUD_SHOT",
 		"chargedMoves":["FIRE_PUNCH","EARTHQUAKE"]
-	},
-	{
-		"speciesId":"lickitung_xl",
-		"fastMove":"LICK",
-		"chargedMoves":["BODY_SLAM","POWER_WHIP"]
 	},
 	{
 		"speciesId":"victreebel_shadow",

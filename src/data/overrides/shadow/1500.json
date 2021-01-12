@@ -1,0 +1,36 @@
+[
+	{
+		"speciesId": "scizor_shadow",
+		"fastMove": "BULLET_PUNCH",
+		"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
+	},
+	{
+		"speciesId": "mawile_shadow",
+		"fastMove": "FIRE_FANG",
+		"chargedMoves": ["POWER_UP_PUNCH", "PLAY_ROUGH"]
+	},
+	{
+		"speciesId": "hypno_shadow",
+		"chargedMoves": ["FIRE_PUNCH", "ICE_PUNCH"]
+	},
+	{
+		"speciesId": "machamp_shadow",
+		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
+	},
+	{
+		"speciesId": "gliscor_shadow",
+		"chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "skuntank_shadow",
+		"chargedMoves": ["CRUNCH", "FLAMETHROWER"]
+	},
+	{
+		"speciesId": "beedrill_shadow",
+		"fastMove": "POISON_JAB"
+	},
+	{
+		"speciesId": "gardevoir_shadow",
+		"fastMove": "CHARM"
+	}
+]

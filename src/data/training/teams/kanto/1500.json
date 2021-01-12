@@ -99,9 +99,9 @@
 				{
 					"speciesId": "ninetales",
 					"fastMove": "FIRE_SPIN",
-					"chargedMoves": ["PSYSHOCK","OVERHEAT"],
+					"chargedMoves": ["PSYSHOCK","WEATHER_BALL_FIRE"],
 					"difficulty": 2,
-					"weight":2
+					"weight":5
 				},
 				{
 					"speciesId": "dragonite_shadow",
@@ -213,7 +213,14 @@
 					"fastMove": "POWDER_SNOW",
 					"chargedMoves": ["ICE_PUNCH","BULLDOZE"],
 					"difficulty": 2,
-					"weight":20
+					"weight":15
+				},
+				{
+					"speciesId": "ninetales_alolan",
+					"fastMove": "POWDER_SNOW",
+					"chargedMoves": ["WEATHER_BALL_ICE","PSYSHOCK"],
+					"difficulty": 2,
+					"weight":15
 				},
 				{
 					"speciesId": "magneton",

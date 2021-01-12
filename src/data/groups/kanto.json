@@ -88,7 +88,11 @@
 }, {
     "speciesId": "ninetales_alolan",
     "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["ICE_BEAM", "PSYSHOCK"]
+    "chargedMoves": ["WEATHER_BALL_ICE", "PSYSHOCK"]
+}, {
+    "speciesId": "ninetales",
+    "fastMove": "FIRE_SPIN",
+    "chargedMoves": ["WEATHER_BALL_FIRE", "PSYSHOCK"]
 }, {
     "speciesId": "magneton",
     "fastMove": "THUNDER_SHOCK",

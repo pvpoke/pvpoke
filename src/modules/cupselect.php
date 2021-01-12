@@ -1,8 +1,9 @@
 <select class="format-select">
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
-	<option value="official" cup="holiday">Holiday Cup</option>
+	<option value="official" cup="kanto">Kanto Cup</option>
 	<option value="comnmunity" cup="cerberus">VR Cerberus Cup</option>
+	<option value="comnmunity" cup="shadow">TeamRocketPVP Shadow Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>
