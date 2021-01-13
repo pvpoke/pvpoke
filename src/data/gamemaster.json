@@ -3480,13 +3480,13 @@
         },
         "types": ["fighting", "none"],
         "fastMoves": ["BULLET_PUNCH", "COUNTER", "KARATE_CHOP"],
-        "chargedMoves": ["CLOSE_COMBAT", "CROSS_CHOP", "DYNAMIC_PUNCH", "HEAVY_SLAM", "ROCK_SLIDE", "STONE_EDGE", "SUBMISSION"],
+        "chargedMoves": ["CLOSE_COMBAT", "CROSS_CHOP", "DYNAMIC_PUNCH", "HEAVY_SLAM", "ROCK_SLIDE", "STONE_EDGE", "SUBMISSION", "PAYBACK"],
         "defaultIVs": {
             "cp500": [6, 7, 15, 15],
             "cp1500": [18, 6, 10, 15],
             "cp2500": [30, 5, 12, 14]
         },
-        "eliteMoves": ["KARATE_CHOP", "STONE_EDGE", "SUBMISSION"],
+        "eliteMoves": ["KARATE_CHOP", "STONE_EDGE", "SUBMISSION", "PAYBACK"],
         "searchPriority": 5,
         "level25CP": 1893,
         "tags": ["shadoweligible"]
@@ -12168,7 +12168,8 @@
         },
         "types": ["dragon", "flying"],
         "fastMoves": ["AIR_SLASH", "DRAGON_TAIL"],
-        "chargedMoves": ["AERIAL_ACE", "ANCIENT_POWER", "OUTRAGE"],
+        "chargedMoves": ["AERIAL_ACE", "ANCIENT_POWER", "OUTRAGE", "HURRICANE"],
+		"eliteMoves": ["HURRICANE"],
         "tags": ["legendary"],
         "defaultIVs": {
             "cp500": [5, 8, 15, 8],
@@ -21111,6 +21112,15 @@
         "type": "electric",
         "power": 25,
         "energy": 55,
+        "energyGain": 0,
+        "cooldown": 500
+    }, {
+        "moveId": "PAYBACK",
+        "name": "Payback",
+        "abbreviation": "Pbk",
+        "type": "dark",
+        "power": 110,
+        "energy": 60,
         "energyGain": 0,
         "cooldown": 500
     }, {

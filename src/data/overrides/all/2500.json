@@ -66,12 +66,14 @@
 	},
 	{
 		"speciesId": "machamp",
-		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
+		"fastMove": "COUNTER",
+		"chargedMoves": ["CROSS_CHOP", "PAYBACK"],
 		"weight": 4
 	},
 	{
 		"speciesId": "machamp_shadow",
-		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
+		"fastMove": "COUNTER",
+		"chargedMoves": ["CROSS_CHOP", "PAYBACK"],
 		"weight": 2
 	},
 	{
