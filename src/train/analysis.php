@@ -70,7 +70,6 @@ require_once '../header.php';
 		<option value="10000" cup="all">Master League</option>
 		<option value="2500" cup="premier">Premier Cup (Ultra)</option>
 		<option value="10000" cup="premier">Premier Cup (Master)</option>
-		<option value="1500" cup="holiday">Holiday Cup</option>
 	</select>
 
 	<div class="date-updated">Last updated</div>
