@@ -2,6 +2,7 @@
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
 	<option value="official" cup="kanto">Kanto Cup</option>
+	<option value="comnmunity" cup="goteamup">GO Stadium GOTeamUp</option>
 	<option value="comnmunity" cup="cerberus">VR Cerberus Cup</option>
 	<option value="comnmunity" cup="shadow">TeamRocketPVP Shadow Cup</option>
 

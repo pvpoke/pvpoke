@@ -50,6 +50,10 @@ switch($cup){
 		$league = 'Cerberus Cup';
 		break;
 
+	case "goteamup":
+		$league = 'GO Stadium GOTeamUp';
+		break;
+
 }
 
 $META_TITLE = $league . ' PvP Rankings';
