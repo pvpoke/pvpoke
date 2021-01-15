@@ -408,7 +408,7 @@
         "include": [],
         "exclude": [{
             "filterType": "id",
-            "values": ["skarmory", "altaria", "registeel", "meganium", "abomasnow", "abomasnow_shadow"]
+            "values": ["skarmory", "skarmory_shadow", "altaria", "registeel", "meganium", "abomasnow", "abomasnow_shadow"]
         }, {
             "filterType": "tag",
             "values": ["mega"]
