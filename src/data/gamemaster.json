@@ -6946,6 +6946,25 @@
         "tags": ["shadow"],
         "eliteMoves": ["DRAGON_PULSE"]
     }, {
+	    "dex": 181,
+	    "speciesName": "Ampharos (Mega)",
+	    "speciesId": "ampharos_mega",
+	    "baseStats": {
+	        "atk": 294,
+	        "def": 203,
+	        "hp": 207
+	    },
+	    "types": ["electric", "dragon"],
+	    "fastMoves": ["CHARGE_BEAM", "VOLT_SWITCH"],
+	    "chargedMoves": ["DRAGON_PULSE", "FOCUS_BLAST", "POWER_GEM", "THUNDER", "ZAP_CANNON", "THUNDER_PUNCH"],
+	    "defaultIVs": {
+	        "cp1500": [13, 7, 7, 12],
+	        "cp2500": [22, 5, 10, 6]
+	    },
+	    "tags": ["shadoweligible", "mega"],
+	    "level25CP": 2688,
+	    "eliteMoves": ["DRAGON_PULSE"]
+	}, {
         "dex": 182,
         "speciesName": "Bellossom",
         "speciesId": "bellossom",
