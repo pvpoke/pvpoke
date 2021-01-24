@@ -171,6 +171,70 @@ function PokeMultiSelect(element){
 			}
 		}
 
+		// Check team eligiblity
+
+		var context = interface.context;
+
+		$el.find(".team-warning").hide();
+
+		if((context == "team")&&(pokemonList.length > 0)){
+			// Check for any ineligible Pokemon
+			var eligibleList =  gm.generateFilteredPokemonList(battle, battle.getCup().include, battle.getCup().exclude);
+
+			for(var i = 0; i < pokemonList.length; i++){
+				var speciesId = pokemonList[i].speciesId;
+				var found = false;
+
+				for(var n = 0; n < eligibleList.length; n++){
+					if(eligibleList[n].speciesId == speciesId){
+						found = true;
+						break;
+					}
+				}
+
+				if(! found){
+					$el.find(".rank").eq(i).addClass("warning");
+					$el.find(".team-warning.ineligible").show();
+				}
+			}
+
+			// For Labyrinth Cup, check there are no repeated types
+			 if(battle.getCup().name == "labyrinth"){
+				var usedTypes = [];
+				var doubleTypes = [];
+
+				// First, gather any double used types
+				for(var i = 0; i < pokemonList.length; i++){
+					if(usedTypes.indexOf(pokemonList[i].types[0]) > -1){
+						doubleTypes.push(pokemonList[i].types[0]);
+					}
+
+					if(usedTypes.indexOf(pokemonList[i].types[1]) > -1){
+						doubleTypes.push(pokemonList[i].types[1]);
+					}
+
+					if(usedTypes.indexOf(pokemonList[i].types[0]) > -1 || usedTypes.indexOf(pokemonList[i].types[1]) > -1){
+
+						$el.find(".rank").eq(i).addClass("warning");
+						$el.find(".team-warning.labyrinth").show();
+					}
+
+					usedTypes.push(pokemonList[i].types[0]);
+
+					if(pokemonList[i].types[1] != "none"){
+						usedTypes.push(pokemonList[i].types[1]);
+					}
+				}
+
+				 // Mark Pokemon with double used types with a warning
+				 for(var i = 0; i < pokemonList.length; i++){
+					 if(doubleTypes.indexOf(pokemonList[i].types[0]) > -1 || doubleTypes.indexOf(pokemonList[i].types[1]) > -1){
+						 $el.find(".rank").eq(i).addClass("warning");
+						 $el.find(".team-warning.labyrinth").show();
+					 }
+				 }
+			 }
+		}
 
 		if(pokemonList.length >= maxPokemonCount){
 			$el.find(".add-poke-btn").hide();
@@ -319,6 +383,10 @@ function PokeMultiSelect(element){
 		}
 
 		$el.find(".quick-fill-select option[type='custom']").show();
+
+		if(pokemonList.length > 0){
+			self.updateListDisplay();
+		}
 
 		// Set all Pokemon to the new CP limit
 		for(var i = 0; i < pokemonList.length; i++){

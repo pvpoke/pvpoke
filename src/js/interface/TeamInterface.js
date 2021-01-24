@@ -697,6 +697,7 @@ var InterfaceMaster = (function () {
 							for(var n = 0; n < tiers[i].pokemon.length; n++){
 								exclusionList.push(tiers[i].pokemon[n]);
 								exclusionList.push(tiers[i].pokemon[n]+"_shadow");
+								exclusionList.push(tiers[i].pokemon[n]+"_xl");
 							}
 						}
 					}
@@ -748,6 +749,19 @@ var InterfaceMaster = (function () {
 				total = scorecardCount;
 				i = 0;
 
+				// For labyrinth cup, exclude types already on team
+				var excludedTypes = [];
+
+				if(battle.getCup().name == "labyrinth"){
+					for(var n = 0; n < team.length; n++){
+						excludedTypes.push(team[n].types[0]);
+
+						if(team[n].types[1] != "none"){
+							excludedTypes.push(team[n].types[1]);
+						}
+					}
+				}
+
 				while((count < total)&&(i < altRankings.length)){
 					var r = altRankings[i];
 
@@ -767,6 +781,14 @@ var InterfaceMaster = (function () {
 					}
 
 					var pokemon = new Pokemon(r.speciesId, 1, battle);
+
+					// For Labyrinth Cup, exclude Pokemon of existing types
+					if(battle.getCup().name == "labyrinth"){
+						if(excludedTypes.indexOf(pokemon.types[0]) > -1 || excludedTypes.indexOf(pokemon.types[1]) > -1){
+							i++;
+							continue;
+						}
+					}
 
 					// Manually set moves if previously selected, otherwise autoselect
 					var moveNameStr = '';
@@ -856,6 +878,7 @@ var InterfaceMaster = (function () {
 						var tierName = "";
 						var pointsName = "points";
 						var searchId = pokemon.speciesId.replace("_shadow","");
+						searchId = pokemon.speciesId.replace("_xl","");
 						var points = 0;
 
 						for(var j = 0; j < tiers.length; j++){

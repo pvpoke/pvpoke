@@ -586,7 +586,7 @@ header {
   display: block;
 }
 .poke.multi .poke-count.error {
-  color: #b9008f;
+  color: #e66a19;
 }
 .poke.multi .format-select {
   margin-top: 62px;
@@ -627,6 +627,9 @@ header {
   border-left: none;
   box-shadow: 0px 2px;
 }
+.poke.multi .rankings-container .rank.warning {
+  border: 3px solid #e66a19;
+}
 .poke.multi .rankings-container .rank .name-container {
   float: none;
 }
@@ -662,6 +665,16 @@ header {
 }
 .poke.multi .quick-fill-buttons {
   justify-content: space-around;
+}
+.poke.multi .team-warning {
+  display: none;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px;
+  border-radius: 8px;
+  border: 3px solid #e66a19;
+  color: #e66a19;
+  margin-bottom: 5px;
 }
 .poke .energy-label {
   margin-top: 15px;

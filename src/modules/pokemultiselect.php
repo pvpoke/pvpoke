@@ -6,6 +6,9 @@
 			<h3 class="section-title">Pokemon (<span class="poke-count">0</span> / <span class="poke-max-count">100</span>)</h3>
 			<p>Create or select a group of custom Pokemon below.</p>
 			<div class="rankings-container clear"></div>
+			<div class="team-warning ineligible">Your team may have ineligible Pokemon.</div>
+			<div class="team-warning labyrinth">Your Labyrinth Cup team can't share any typings.</div>
+
 			<button class="add-poke-btn button">+ Add Pokemon</button>
 
 			<?php include 'pokebox.php'; ?>
@@ -20,8 +23,8 @@
 				<option value="master" type="master" class="hide multi-battle">Master League Meta</option>
 				<option value="premierultra" type="ultra" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="premier" type="master" class="hide multi-battle">Premier Cup Meta</option>
+				<option value="labyrinth" type="great" class="multi-battle">Silph Labyrinth Cup</option>
 				<option value="kanto" type="great" class="multi-battle">Kanto Cup Meta</option>
-				<option value="cerberus" type="great" class="multi-battle">VR Cerberus Cup Meta</option>
 			</select>
 			<div class="flex quick-fill-buttons">
 				<button class="save-btn save-custom">Save</button>

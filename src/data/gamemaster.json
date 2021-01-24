@@ -678,6 +678,17 @@
             "filterType": "type",
             "values": ["dark"]
         }]
+    }, {
+        "name": "labyrinth",
+        "title": "Silph Labyrinth Cup",
+        "include": [],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["azumarill","azumarill_xl","medicham","medicham_xl","stunfisk_galarian","hypno","hypno_shadow","deoxys_defense","cresselia","umbreon","machamp","machamp_shadow","scrafty","sirfetchd","altaria","bastiodon","bastiodon_xl","primeape","swampert","swampert_shadow","mew","wobbuffet","wobbuffet_shadow","wobbuffet_xl"]
+        }]
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xl"],
     "pokemonRegions": [{
@@ -717,13 +728,13 @@
         "max": 17,
         "tiers": [{
             "points": 9,
-            "pokemon": ["altaria", "azumarill", "skarmory", "deoxys_defense", "registeel", "stunfisk_galarian", "tropius"]
+            "pokemon": ["altaria", "azumarill", "skarmory", "deoxys_defense", "medicham", "registeel", "stunfisk_galarian", "tropius"]
         }, {
             "points": 5,
-            "pokemon": ["abomasnow", "bastiodon", "bronzong", "cresselia", "ferrothorn", "galvantula", "hypno", "ivysaur", "jirachi", "mandibuzz", "marowak_alolan", "medicham", "meganium", "melmetal", "probopass", "regirock", "sableye", "scrafty", "swampert", "umbreon", "venusaur", "whiscash", "zweilous"]
+            "pokemon": ["abomasnow", "bastiodon", "cresselia", "dewgong", "diggersby", "ferrothorn", "galvantula", "hypno", "hypno_shadow", "ivysaur", "jellicent", "lapras", "lickitung", "marowak_alolan", "machamp", "mandibuzz", "meganium", "politoed", "sableye", "scrafty", "swampert", "umbreon", "venusaur", "whiscash", "wobbuffet", "zweilous"]
         }, {
             "points": 1,
-            "pokemon": ["cherrim_sunny", "clefable", "dewgong", "drifblim", "empoleon", "froslass", "gardevoir", "gengar", "golbat", "haunter", "jumpluff", "lanturn", "lapras", "lugia", "machamp", "mantine", "mew", "muk_alolan", "noctowl", "obstagoon", "pelipper", "raichu", "raichu_alolan", "raikou", "regice", "shiftry", "sirfetchd", "stunfisk", "togekiss", "toxicroak", "uxie", "victreebel", "vigoroth", "wigglytuff", "zapdos"]
+            "pokemon": ["bronzong", "cherrim_sunny", "castform_rainy", "castform_sunny", "chesnaught", "clefable", "drifblim", "empoleon", "froslass", "gardevoir", "gengar", "golbat", "haunter", "jirachi", "jumpluff", "lanturn", "lugia", "mantine", "melmetal", "mew", "muk_alolan", "ninetales", "ninetales_alolan", "noctowl", "obstagoon", "pelipper", "probopass", "regirock", "raichu", "raichu_alolan", "raikou", "shiftry", "sirfetchd", "stunfisk", "togekiss", "toxicroak", "victreebel", "vigoroth", "wigglytuff", "zapdos"]
         }]
     }],
     "pokemon": [{

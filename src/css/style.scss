@@ -777,7 +777,7 @@ header{
 		}
 
 		.poke-count.error{
-			color:#b9008f;
+			color:#e66a19;
 		}
 
 		.format-select{
@@ -829,6 +829,10 @@ header{
 					box-shadow:0px 2px;
 				}
 
+				&.warning{
+					border: 3px solid #e66a19;
+				}
+
 				.name-container{
 					float:none;
 				}
@@ -873,6 +877,17 @@ header{
 
 		.quick-fill-buttons{
 			justify-content: space-around;
+		}
+
+		.team-warning{
+			display:none;
+			font-size: 12px;
+		    font-weight: bold;
+		    padding: 4px;
+		    border-radius: 8px;
+		    border: 3px solid #e66a19;
+		    color: #e66a19;
+			margin-bottom:5px;
 		}
 	}
 

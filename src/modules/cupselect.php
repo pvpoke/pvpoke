@@ -2,8 +2,8 @@
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
 	<option value="official" cup="kanto">Kanto Cup</option>
+	<option value="tsa-3" cup="labyrinth">Silph Labyrinth Cup</option>
 	<option value="comnmunity" cup="goteamup">GO Stadium GOTeamUp</option>
-	<option value="comnmunity" cup="cerberus">VR Cerberus Cup</option>
 	<option value="comnmunity" cup="shadow">TeamRocketPVP Shadow Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
@@ -69,5 +69,6 @@
 	<option value="sunrise" cat="tsa-3">Sunrise Cup</option>
 	<option value="marsh" cat="tsa-3">Marsh Cup</option>
 	<option value="nightfall" cat="tsa-3">Nightfall Cup</option>
+	<option value="labyrinth" cat="tsa-3">Labyrinth Cup</option>
 	<option value="custom" cat="custom">Custom</option>
 </select>
