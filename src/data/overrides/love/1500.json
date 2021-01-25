@@ -1,0 +1,70 @@
+[
+	{
+		"speciesId": "seaking",
+		"fastMove": "POISON_JAB",
+		"chargedMoves": ["ICY_WIND", "DRILL_RUN"]
+	},
+	{
+		"speciesId": "blaziken",
+		"chargedMoves": ["BLAZE_KICK", "BRAVE_BIRD"]
+	},
+	{
+		"speciesId": "medicham_xl",
+		"chargedMoves": ["POWER_UP_PUNCH", "PSYCHIC"],
+		"weight": 9
+	},
+	{
+		"speciesId": "medicham",
+		"chargedMoves": ["POWER_UP_PUNCH", "PSYCHIC"]
+	},
+	{
+		"speciesId": "wigglytuff",
+		"chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"],
+		"weight": 6
+	},
+	{
+		"speciesId": "clefable",
+		"chargedMoves": ["METEOR_MASH", "PSYCHIC"],
+		"weight": 2
+	},
+	{
+		"speciesId": "porygon2",
+		"chargedMoves": ["TRI_ATTACK", "ZAP_CANNON"]
+	},
+	{
+		"speciesId": "porygon2_shadow",
+		"chargedMoves": ["TRI_ATTACK", "ZAP_CANNON"]
+	},
+	{
+		"speciesId": "porygon",
+		"fastMove": "CHARGE_BEAM",
+		"chargedMoves": ["DISCHARGE", "RETURN"]
+	},
+	{
+		"speciesId": "porygon_shadow",
+		"fastMove": "CHARGE_BEAM",
+		"chargedMoves": ["DISCHARGE", "HYPER_BEAM"]
+	},
+	{
+		"speciesId": "charizard",
+		"fastMove": "WING_ATTACK",
+		"chargedMoves": ["DRAGON_CLAW", "BLAST_BURN"],
+		"weight": 5
+	},
+	{
+		"speciesId": "alomomola",
+		"weight": 7
+	},
+	{
+		"speciesId": "scrafty",
+		"weight": 3
+	},
+	{
+		"speciesId": "vileplume_shadow",
+		"weight": 2
+	},
+	{
+		"speciesId": "electrode",
+		"weight": 2
+	}
+]
