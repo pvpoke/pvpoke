@@ -46,6 +46,16 @@
 		"chargedMoves": ["DISCHARGE", "HYPER_BEAM"]
 	},
 	{
+		"speciesId": "scizor",
+		"fastMove": "BULLET_PUNCH",
+		"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
+	},
+	{
+		"speciesId": "scizor_shadow",
+		"fastMove": "BULLET_PUNCH",
+		"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
+	},
+	{
 		"speciesId": "charizard",
 		"fastMove": "WING_ATTACK",
 		"chargedMoves": ["DRAGON_CLAW", "BLAST_BURN"],
