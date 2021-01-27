@@ -7,7 +7,6 @@
 	<option value="1500" cup="kanto">Kanto Cup</option>
 	<option value="1500" cup="love">Love Cup</option>
 	<option value="1500" cup="labyrinth">Silph Labyrinth Cup</option>
-	<option value="1500" cup="goteamup">GO Stadium GOTeamUp</option>
 	<option value="1500" cup="shadow">TeamRocketPVP Shadow Cup</option>
 	<option value="1500" cup="custom">Custom</option>
 </select>

@@ -412,7 +412,15 @@
 		"chargedMoves": ["AVALANCHE", "BULLDOZE"]
 	},
 	{
+		"speciesId": "piloswine_shadow",
+		"chargedMoves": ["AVALANCHE", "BULLDOZE"]
+	},
+	{
 		"speciesId": "mamoswine",
+		"chargedMoves": ["AVALANCHE", "BULLDOZE"]
+	},
+	{
+		"speciesId": "mamoswine_shadow",
 		"chargedMoves": ["AVALANCHE", "BULLDOZE"]
 	},
 	{
@@ -530,6 +538,11 @@
 	},
 	{
 		"speciesId": "probopass",
+		"fastMove": "SPARK",
+		"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "probopass_shadow",
 		"fastMove": "SPARK",
 		"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
 	},
