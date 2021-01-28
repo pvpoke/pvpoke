@@ -56,6 +56,7 @@ require_once 'header.php'; ?>
 		<div class="supporter">Aweedds12</div>
 		<div class="supporter">Lariioo</div>
 		<div class="supporter">MeFool1990ce</div>
+		<div class="supporter">Lariioo</div>
 	</div>
 
 	<h2 class="center">Master Supporters</h2>

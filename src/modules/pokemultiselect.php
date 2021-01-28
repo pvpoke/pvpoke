@@ -25,8 +25,8 @@
 				<option value="premier" type="master" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="kanto" type="great" class="multi-battle">Kanto Cup Meta</option>
 				<option value="love" type="great" class="multi-battle">Love Cup Meta</option>
-				<option value="labyrinth" type="great" class="multi-battle">Silph Labyrinth Cup</option>
-
+				<option value="labyrinth" type="great" class="multi-battle">Silph Labyrinth Cup Meta</option>
+				<option value="cerberus" type="great" class="multi-battle">VR Cerberus Cup Meta</option>
 			</select>
 			<div class="flex quick-fill-buttons">
 				<button class="save-btn save-custom">Save</button>

@@ -10,6 +10,11 @@
 		"chargedMoves":["HYDRO_PUMP","PSYCHIC"]
 	},
 	{
+		"speciesId":"milotic",
+		"fastMove":"WATERFALL",
+		"chargedMoves":["SURF","HYPER_BEAM"]
+	},
+	{
 		"speciesId":"medicham_xl",
 		"fastMove":"COUNTER",
 		"chargedMoves":["POWER_UP_PUNCH","PSYCHIC"]
@@ -62,6 +67,16 @@
 	{
 		"speciesId":"crustle",
 		"fastMove":"FURY_CUTTER",
+		"chargedMoves":["X_SCISSOR","ROCK_SLIDE"]
+	},
+	{
+		"speciesId":"magcargo",
+		"fastMove":"ROCK_THROW",
+		"chargedMoves":["STONe_EDGE","OVERHEAT"]
+	},
+	{
+		"speciesId":"crustle",
+		"fastMove":"SMACK_DOWN",
 		"chargedMoves":["X_SCISSOR","ROCK_SLIDE"]
 	}
 ]
