@@ -2303,25 +2303,6 @@
         "eliteMoves": ["EMBER", "FIRE_BLAST", "FLAMETHROWER"]
     }, {
         "dex": 38,
-        "speciesName": "Ninetales (Alolan XL)",
-        "speciesId": "ninetales_alolan_xl",
-        "baseStats": {
-            "atk": 170,
-            "def": 193,
-            "hp": 177
-        },
-        "types": ["ice", "fairy"],
-        "fastMoves": ["FEINT_ATTACK", "POWDER_SNOW", "CHARM"],
-        "chargedMoves": ["BLIZZARD", "DAZZLING_GLEAM", "ICE_BEAM", "PSYSHOCK", "WEATHER_BALL_ICE"],
-        "tags": ["alolan", "xl"],
-        "defaultIVs": {
-            "cp500": [8, 11, 9, 14],
-            "cp1500": [23.5, 9, 15, 14],
-            "cp2500": [49, 9, 15, 15]
-        },
-        "searchPriority": 2
-    }, {
-        "dex": 38,
         "speciesName": "Ninetales (Alolan)",
         "speciesId": "ninetales_alolan",
         "baseStats": {
@@ -2339,6 +2320,24 @@
             "cp2500": [40, 15, 15, 15]
         },
         "searchPriority": 2
+    }, {
+        "dex": 38,
+        "speciesName": "Ninetales (Alolan XL)",
+        "speciesId": "ninetales_alolan_xl",
+        "baseStats": {
+            "atk": 170,
+            "def": 193,
+            "hp": 177
+        },
+        "types": ["ice", "fairy"],
+        "fastMoves": ["FEINT_ATTACK", "POWDER_SNOW", "CHARM"],
+        "chargedMoves": ["BLIZZARD", "DAZZLING_GLEAM", "ICE_BEAM", "PSYSHOCK", "WEATHER_BALL_ICE"],
+        "tags": ["alolan", "xl"],
+        "defaultIVs": {
+            "cp500": [8, 11, 9, 14],
+            "cp1500": [23.5, 9, 15, 14],
+            "cp2500": [49, 9, 15, 15]
+        }
     }, {
         "dex": 38,
         "speciesName": "Ninetales (XL)",
