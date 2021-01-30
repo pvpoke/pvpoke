@@ -184,6 +184,7 @@
 	},
 	{
 		"speciesId": "gliscor",
+		"fastMove": "WING_ATTACK",
 		"chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"]
 	},
 	{
@@ -328,6 +329,14 @@
 		"speciesId": "crustle",
 		"fastMove": "SMACK_DOWN",
 		"weight": 2
+	},
+	{
+		"speciesId": "skarmory_xl",
+		"weight": 4
+	},
+	{
+		"speciesId": "galvantula_xl",
+		"weight": 4
 	},
 	{
 		"speciesId": "crustle_xl",

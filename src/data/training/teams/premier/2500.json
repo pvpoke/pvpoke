@@ -217,10 +217,10 @@
 				},
 				{
 					"speciesId": "charizard",
-					"fastMove": "WING_ATTACK",
+					"fastMove": "DRAGON_BREATH",
 					"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"],
-					"difficulty": 3,
-					"weight":4
+					"difficulty": 2,
+					"weight":25
 				},
 				{
 					"speciesId": "charizard_shadow",
@@ -230,7 +230,7 @@
 					"weight":3
 				},
 				{
-					"speciesId": "drifblim",
+					"speciesId": "drifblim_xl",
 					"fastMove": "HEX",
 					"chargedMoves": ["ICY_WIND","SHADOW_BALL"],
 					"difficulty": 3,
@@ -280,7 +280,7 @@
 				},
 				{
 					"speciesId": "typhlosion",
-					"fastMove": "SHADOW_CLAW",
+					"fastMove": "INCINERATE",
 					"chargedMoves": ["BLAST_BURN","SOLAR_BEAM"],
 					"difficulty": 2,
 					"weight":5
@@ -332,14 +332,21 @@
 					"fastMove": "FIRE_SPIN",
 					"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"],
 					"difficulty": 2,
-					"weight":60
+					"weight":40
+				},
+				{
+					"speciesId": "charizard",
+					"fastMove": "DRAGON_BREATH",
+					"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"],
+					"difficulty": 2,
+					"weight":25
 				},
 				{
 					"speciesId": "charizard",
 					"fastMove": "WING_ATTACK",
 					"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"],
 					"difficulty": 3,
-					"weight":8
+					"weight":5
 				},
 				{
 					"speciesId": "charizard_shadow",
@@ -349,18 +356,18 @@
 					"weight":3
 				},
 				{
-					"speciesId": "drifblim",
+					"speciesId": "drifblim_xl",
 					"fastMove": "HEX",
 					"chargedMoves": ["ICY_WIND","SHADOW_BALL"],
 					"difficulty": 3,
-					"weight":25
+					"weight":30
 				},
 				{
 					"speciesId": "honchkrow",
 					"fastMove": "SNARL",
 					"chargedMoves": ["SKY_ATTACK","BRAVE_BIRD"],
 					"difficulty": 2,
-					"weight":5
+					"weight":3
 				},
 				{
 					"speciesId": "togekiss",
@@ -398,18 +405,11 @@
 					"weight":3
 				},
 				{
-					"speciesId": "typhlosion",
-					"fastMove": "SHADOW_CLAW",
-					"chargedMoves": ["BLAST_BURN","SOLAR_BEAM"],
-					"difficulty": 2,
-					"weight":5
-				},
-				{
 					"speciesId": "gliscor",
 					"fastMove": "WING_ATTACK",
 					"chargedMoves": ["NIGHT_SLASH","EARTHQUAKE"],
 					"difficulty": 2,
-					"weight":5
+					"weight":2
 				},
 				{
 					"speciesId": "gengar",
@@ -424,6 +424,13 @@
 					"chargedMoves": ["SHADOW_PUNCH","SLUDGE_BOMB"],
 					"difficulty": 2,
 					"weight":4
+				},
+				{
+					"speciesId": "skarmory_xl",
+					"fastMove": "AIR_SLASH",
+					"chargedMoves": ["SKY_ATTACK","BRAVE_BIRD"],
+					"difficulty": 3,
+					"weight":6
 				},
 				{
 					"speciesId": "skarmory",
@@ -888,19 +895,19 @@
 		{
 			"pokemon": [
 				{
-					"speciesId": "sirfetchd",
-					"fastMove": "COUNTER",
-					"chargedMoves": ["LEAF_BLADE","NIGHT_SLASH"]
+					"speciesId": "empoleon",
+					"fastMove": "WATERFALL",
+					"chargedMoves": ["HYDRO_CANNON","DRILL_PECK"]
 				},
 				{
-					"speciesId": "muk_alolan",
-					"fastMove": "SNARL",
-					"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"]
+					"speciesId": "dragonite",
+					"fastMove": "DRAGON_BREATH",
+					"chargedMoves": ["DRAGON_CLAW","HURRICANE"]
 				},
 				{
-					"speciesId": "gengar",
-					"fastMove": "SHADOW_CLAW",
-					"chargedMoves": ["SHADOW_PUNCH","SHADOW_BALL"]
+					"speciesId": "kingdra",
+					"fastMove": "DRAGON_BREATH",
+					"chargedMoves": ["OCTAZOOKA","OUTRAGE"]
 				}
 			],
 			"weight": 1
@@ -908,19 +915,39 @@
 		{
 			"pokemon": [
 				{
-					"speciesId": "dragonite",
-					"fastMove": "DRAGON_BREATH",
-					"chargedMoves": ["DRAGON_CLAW","HURRICANE"]
-				},
-				{
-					"speciesId": "escavalier",
+					"speciesId": "machamp_shadow",
 					"fastMove": "COUNTER",
-					"chargedMoves": ["DRILL_RUN","AERIAL_ACE"]
+					"chargedMoves": ["CROSS_CHOP","ROCK_SLIDE"]
 				},
 				{
-					"speciesId": "venusaur",
-					"fastMove": "VINE_WHIP",
-					"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"]
+					"speciesId": "drifblim",
+					"fastMove": "HEX",
+					"chargedMoves": ["ICY_WIND","SHADOW_BALL"]
+				},
+				{
+					"speciesId": "abomasnow_xl",
+					"fastMove": "POWDER_SNOW",
+					"chargedMoves": ["WEATHER_BALL_ICE","ENERGY_BALL"]
+				}
+			],
+			"weight": 1
+		},
+		{
+			"pokemon": [
+				{
+					"speciesId": "galvantula_xl",
+					"fastMove": "VOLT_SWITCH",
+					"chargedMoves": ["DISCHARGE","LUNGE"]
+				},
+				{
+					"speciesId": "machamp_shadow",
+					"fastMove": "COUNTER",
+					"chargedMoves": ["CROSS_CHOP","ROCK_SLIDE"]
+				},
+				{
+					"speciesId": "skarmory_xl",
+					"fastMove": "AIR_SLASH",
+					"chargedMoves": ["SKY_ATTACK","BRAVE_BIRD"]
 				}
 			],
 			"weight": 1

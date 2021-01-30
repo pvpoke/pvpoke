@@ -209,11 +209,11 @@
 					"weight":1
 				},
 				{
-					"speciesId": "umbreon",
+					"speciesId": "umbreon_xl",
 					"fastMove": "SNARL",
 					"chargedMoves": ["FOUL_PLAY","LAST_RESORT"],
-					"difficulty": 0,
-					"weight":1
+					"difficulty": 3,
+					"weight":3
 				}
 			]
 		},
@@ -339,7 +339,7 @@
 					"fastMove": "COUNTER",
 					"chargedMoves": ["NIGHT_SLASH","CROSS_CHOP"],
 					"difficulty": 3,
-					"weight":2
+					"weight":4
 				},
 				{
 					"speciesId": "obstagoon",
@@ -356,8 +356,22 @@
 					"weight": 5
 				},
 				{
+					"speciesId": "charizard",
+					"fastMove": "DRAGON_BREATH",
+					"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"],
+					"difficulty": 2,
+					"weight": 8
+				},
+				{
+					"speciesId": "ho_oh",
+					"fastMove": "INCINERATE",
+					"chargedMoves": ["EARTHQUAKE","BRAVE_BIRD"],
+					"difficulty": 3,
+					"weight": 5
+				},
+				{
 					"speciesId": "typhlosion",
-					"fastMove": "SHADOW_CLAW",
+					"fastMove": "INCINERATE",
 					"chargedMoves": ["SOLAR_BEAM","BLAST_BURN"],
 					"difficulty": 2,
 					"weight": 4
@@ -402,21 +416,35 @@
 					"fastMove": "CONFUSION",
 					"chargedMoves": ["PSYSTRIKE","DYNAMIC_PUNCH"],
 					"difficulty": 2,
-					"weight":6
+					"weight":3
 				},
 				{
 					"speciesId": "heracross",
 					"fastMove": "COUNTER",
 					"chargedMoves": ["MEGAHORN","CLOSE_COMBAT"],
 					"difficulty": 2,
-					"weight":2
+					"weight":1
+				},
+				{
+					"speciesId": "machamp_shadow",
+					"fastMove": "COUNTER",
+					"chargedMoves": ["CROSS_CHOP","ROCK_SLIDE"],
+					"difficulty": 2,
+					"weight":10
 				},
 				{
 					"speciesId": "machamp",
 					"fastMove": "COUNTER",
 					"chargedMoves": ["CROSS_CHOP","ROCK_SLIDE"],
 					"difficulty": 2,
-					"weight":1
+					"weight":4
+				},
+				{
+					"speciesId": "machamp",
+					"fastMove": "COUNTER",
+					"chargedMoves": ["CROSS_CHOP","PAYBACK"],
+					"difficulty": 2,
+					"weight":5
 				},
 				{
 					"speciesId": "hariyama",
@@ -471,14 +499,14 @@
 					"speciesId": "flygon",
 					"fastMove": "MUD_SHOT",
 					"chargedMoves": ["DRAGON_CLAW","EARTHQUAKE"],
-					"difficulty": 2,
+					"difficulty": 1,
 					"weight":1
 				},
 				{
 					"speciesId": "garchomp",
 					"fastMove": "MUD_SHOT",
 					"chargedMoves": ["SAND_TOMB","OUTRAGE"],
-					"difficulty": 2,
+					"difficulty": 1,
 					"weight":1
 				},
 				{
@@ -500,24 +528,31 @@
 					"fastMove": "VINE_WHIP",
 					"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"],
 					"difficulty": 2,
-					"weight": 12
-				},
-				{
-					"speciesId": "meganium",
-					"fastMove": "VINE_WHIP",
-					"chargedMoves": ["FRENZY_PLANT","EARTHQUAKE"],
-					"difficulty": 2,
 					"weight": 2
 				},
 				{
-					"speciesId": "abomasnow",
+					"speciesId": "meganium_xl",
+					"fastMove": "VINE_WHIP",
+					"chargedMoves": ["FRENZY_PLANT","EARTHQUAKE"],
+					"difficulty": 2,
+					"weight": 4
+				},
+				{
+					"speciesId": "abomasnow_xl",
 					"fastMove": "POWDER_SNOW",
 					"chargedMoves": ["WEATHER_BALL_ICE","ENERGY_BALL"],
 					"difficulty": 2,
-					"weight": 8
+					"weight": 14
 				},
 				{
-					"speciesId": "ferrothorn",
+					"speciesId": "abomasnow_shadow_xl",
+					"fastMove": "POWDER_SNOW",
+					"chargedMoves": ["WEATHER_BALL_ICE","ENERGY_BALL"],
+					"difficulty": 2,
+					"weight": 4
+				},
+				{
+					"speciesId": "ferrothorn_xl",
 					"fastMove": "BULLET_SEED",
 					"chargedMoves": ["POWER_WHIP","FLASH_CANNON"],
 					"difficulty": 2,
@@ -861,6 +896,26 @@
 					"speciesId": "togekiss",
 					"fastMove": "CHARM",
 					"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
+				}
+			],
+			"weight": 1
+		},
+		{
+			"pokemon": [
+				{
+					"speciesId": "abomasnow_xl",
+					"fastMove": "POWDER_SNOW",
+					"chargedMoves": ["WEATHER_BALL_ICE","ENERGY_BALL"]
+				},
+				{
+					"speciesId": "cresselia",
+					"fastMove": "PSYCHO_CUT",
+					"chargedMoves": ["MOONBLAST","GRASS_KNOT"]
+				},
+				{
+					"speciesId": "swampert",
+					"fastMove": "MUD_SHOT",
+					"chargedMoves": ["HYDRO_CANNON","EARTHQUAKE"]
 				}
 			],
 			"weight": 1

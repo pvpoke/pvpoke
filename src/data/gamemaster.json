@@ -13979,8 +13979,25 @@
             "cp1500": [23.5, 5, 14, 11],
             "cp2500": [40, 15, 15, 15]
         },
-        "tags": ["shadow"],
-        "searchPriority": 5
+        "tags": ["shadow"]
+    }, {
+        "dex": 460,
+        "speciesName": "Abomasnow (Shadow XL)",
+        "speciesId": "abomasnow_shadow_xl",
+        "baseStats": {
+            "atk": 178,
+            "def": 158,
+            "hp": 207
+        },
+        "types": ["grass", "ice"],
+        "fastMoves": ["POWDER_SNOW", "RAZOR_LEAF"],
+        "chargedMoves": ["BLIZZARD", "ENERGY_BALL", "OUTRAGE", "WEATHER_BALL_ICE"],
+        "defaultIVs": {
+            "cp500": [8, 7, 11, 9],
+            "cp1500": [23.5, 5, 14, 11],
+            "cp2500": [49.5, 5, 12, 15]
+        },
+        "tags": ["shadow", "xl"]
     }, {
         "dex": 461,
         "speciesName": "Weavile",
