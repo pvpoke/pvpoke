@@ -58,6 +58,34 @@ function TrainingAI(l, p, b){
 		var slots = [];
 		var roles = []; // Array of roles that have been filled on the team
 
+
+		// Choose presets
+		if((pool.presets)&&(battle.getCup().name == "labyrinth")){
+			// Select a random preset team
+			var presets = pool.presets;
+			var presetIndex = Math.floor(Math.random() * pool.presets.length);
+			var preset = pool.presets[presetIndex];
+			pool = [];
+
+			// For each Pokemon in the preset team, make a new "slot"
+
+			for(var i = 0; i < preset.pokemon.length; i++){
+				var slot = {
+					slot: i,
+					synergies: [],
+					pokemon: [],
+					weight: 1
+				};
+
+				preset.pokemon[i].weight = 1;
+				preset.pokemon[i].difficulty = level;
+
+				slot.pokemon.push(preset.pokemon[i]);
+
+				pool.push(slot);
+			}
+		}
+
 		// Put all the slots in bucket, multiple times for its weight value
 
 		for(var i = 0; i < pool.length; i++){
@@ -243,7 +271,7 @@ function TrainingAI(l, p, b){
 		}
 
 		// Add option for presets
-		if((currentTeamPool)&&(currentTeamPool.presets)){
+		if((currentTeamPool)&&(currentTeamPool.presets)&&(partySize == 3)){
 			pickStrategyOptions.push(new DecisionOption("PRESET", 20));
 		}
 
