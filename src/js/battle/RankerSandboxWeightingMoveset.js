@@ -492,31 +492,15 @@ var RankerMaster = (function () {
 
 							var weight = Math.pow( Math.max((rankings[j].scores[n] / bestScore) - (.1 + (rankCutoffIncrease * n)), 0), rankWeightExponent);
 
-							if(cup.name == "sorcerous"){
-								weight = 1;
-							}
-
-							if(cup.name == "catacomb"){
-								weight = 1;
-							}
-
-							if(cup.name == "continentals-2"){
-								weight = 1;
-							}
-
 							if(cup.name == "premier"){
 								weight = 1;
 							}
 
-							if(cup.name == "flying"){
-								weight = 1;
-							}
-
-							if(cup.name == "halloween"){
-								weight = 1;
-							}
-
 							if((cup.name == "sorcerous-mirror")||(cup.name == "sinister-mirror")||(cup.name == "timeless-mirror")){
+								weight = 1;
+							}
+
+							if(cup.name == "labyrinth"){
 								weight = 1;
 							}
 
