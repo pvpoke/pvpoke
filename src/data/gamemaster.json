@@ -12750,7 +12750,8 @@
             "cp1500": [18.5, 10, 6, 14],
             "cp2500": [31, 7, 15, 13]
         },
-		"eliteMoves": ["BULLET_SEED", "WEATHER_BALL_FIRE"]
+		"eliteMoves": ["BULLET_SEED", "WEATHER_BALL_FIRE"],
+		"searchPriority": 3
     }, {
         "dex": 408,
         "speciesName": "Cranidos",
