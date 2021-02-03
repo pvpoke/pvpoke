@@ -72,25 +72,6 @@
     "level25CP": 2640,
     "eliteMoves": ["SUBMISSION"]
 }, {
-    "dex": 130,
-    "speciesName": "Gyarados (Mega)",
-    "speciesId": "gyarados_mega",
-    "baseStats": {
-        "atk": 292,
-        "def": 247,
-        "hp": 216
-    },
-    "types": ["water", "dark"],
-    "fastMoves": ["BITE", "DRAGON_BREATH", "DRAGON_TAIL", "WATERFALL"],
-    "chargedMoves": ["CRUNCH", "DRAGON_PULSE", "HYDRO_PUMP", "OUTRAGE", "TWISTER", "AQUA_TAIL"],
-    "defaultIVs": {
-        "cp1500": [11.5, 11, 6, 14],
-        "cp2500": [19, 9, 13, 13]
-    },
-    "tags": ["shadoweligible", "mega"],
-    "level25CP": 3009,
-    "eliteMoves": ["DRAGON_TAIL", "DRAGON_PULSE", "AQUA_TAIL"]
-}, {
     "dex": 142,
     "speciesName": "Aerodactyl (Mega)",
     "speciesId": "aerodactyl_mega",

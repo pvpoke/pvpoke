@@ -4,8 +4,6 @@
 	<option value="official" cup="kanto">Kanto Cup</option>
 	<option value="official" cup="love">Love Cup</option>
 	<option value="tsa-3" cup="labyrinth">Silph Labyrinth Cup</option>
-	<option value="comnmunity" cup="shadow">TeamRocketPVP Shadow Cup</option>
-	<option value="comnmunity" cup="cerberus">VR Cerberus Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>

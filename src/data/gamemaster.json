@@ -5504,6 +5504,25 @@
         "eliteMoves": ["DRAGON_TAIL", "DRAGON_PULSE", "AQUA_TAIL"],
         "searchPriority": 4
     }, {
+	    "dex": 130,
+	    "speciesName": "Gyarados (Mega)",
+	    "speciesId": "gyarados_mega",
+	    "baseStats": {
+	        "atk": 292,
+	        "def": 247,
+	        "hp": 216
+	    },
+	    "types": ["water", "dark"],
+	    "fastMoves": ["BITE", "DRAGON_BREATH", "DRAGON_TAIL", "WATERFALL"],
+	    "chargedMoves": ["CRUNCH", "DRAGON_PULSE", "HYDRO_PUMP", "OUTRAGE", "TWISTER", "AQUA_TAIL"],
+	    "defaultIVs": {
+	        "cp1500": [11.5, 11, 6, 14],
+	        "cp2500": [19, 9, 13, 13]
+	    },
+	    "tags": ["shadoweligible", "mega"],
+	    "level25CP": 3009,
+	    "eliteMoves": ["DRAGON_TAIL", "DRAGON_PULSE", "AQUA_TAIL"]
+	}, {
         "dex": 131,
         "speciesName": "Lapras",
         "speciesId": "lapras",
@@ -12724,13 +12743,14 @@
             "hp": 155
         },
         "types": ["grass", "poison"],
-        "fastMoves": ["POISON_JAB", "RAZOR_LEAF"],
-        "chargedMoves": ["DAZZLING_GLEAM", "GRASS_KNOT", "SLUDGE_BOMB", "SOLAR_BEAM"],
+        "fastMoves": ["POISON_JAB", "RAZOR_LEAF", "BULLET_SEED"],
+        "chargedMoves": ["DAZZLING_GLEAM", "GRASS_KNOT", "SLUDGE_BOMB", "SOLAR_BEAM", "WEATHER_BALL_FIRE"],
         "defaultIVs": {
             "cp500": [6.5, 6, 10, 8],
             "cp1500": [18.5, 10, 6, 14],
             "cp2500": [31, 7, 15, 13]
-        }
+        },
+		"eliteMoves": ["BULLET_SEED", "WEATHER_BALL_FIRE"]
     }, {
         "dex": 408,
         "speciesName": "Cranidos",
