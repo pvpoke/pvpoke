@@ -75,6 +75,13 @@
 				"weight":1
 			},
 			{
+				"speciesId": "castform_sunny",
+				"fastMove": "EMBER",
+				"chargedMoves": ["WEATHER_BALL_FIRE","SOLAR_BEAM"],
+				"difficulty": 3,
+				"weight":4
+			},
+			{
 				"speciesId": "magcargo",
 				"fastMove": "ROCK_THROW",
 				"chargedMoves": ["STONe_EDGE","OVERHEAT"],
