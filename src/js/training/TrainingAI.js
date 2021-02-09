@@ -271,7 +271,7 @@ function TrainingAI(l, p, b){
 		}
 
 		// Add option for presets
-		if((currentTeamPool)&&(currentTeamPool.presets)&&(partySize == 3)){
+		if((currentTeamPool)&&(currentTeamPool.presets)&&(battle.getCup().name != "labyrinth")){
 			pickStrategyOptions.push(new DecisionOption("PRESET", 20));
 		}
 
