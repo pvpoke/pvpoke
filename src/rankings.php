@@ -116,7 +116,7 @@ require_once 'header.php';
 
 	<p class="description link hide"><b>Tournament Info:</b> <a href="#" target="_blank"></a></p>
 
-	<p>Help provide usage data for the rankings <a href="https://docs.google.com/forms/d/e/1FAIpQLScc_gCvXLTUs5tHORiPpEmuF6yL6UJ0j0P03oSNDRQvNNHa0w/viewform" target="_blank">here</a> or at <a href="https://gobattlelog.com/" target="_blank">gobattlelog.com</a>.</p>
+	<p>Help provide usage data for the rankings at <a href="https://gobattlelog.com/pvpoke" target="_blank">gobattlelog.com</a>.</p>
 
 	<p>Click or tap the rankings below for more details.</p>
 

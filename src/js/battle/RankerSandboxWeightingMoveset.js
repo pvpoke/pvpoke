@@ -496,7 +496,7 @@ var RankerMaster = (function () {
 								weight = 1;
 							}
 
-							if((cup.name == "sorcerous-mirror")||(cup.name == "sinister-mirror")||(cup.name == "timeless-mirror")){
+							if(cup.name == "love"){
 								weight = 1;
 							}
 
