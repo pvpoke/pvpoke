@@ -34,11 +34,19 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.20.7 (January 11, 2020)</h4>
+	<h4>v1.20.9 (February 11, 2020)</h4>
 	<ul>
-		<li>The site is updated with the latest move and movepool changes!</li>
-		<li>In battle simulations, Pokemon now more accurately fire moves before fainting.</li>
-		<li>Added a toggle to optimize move timing, preventing extra turns.</li>
+		<li>Damage multipliers from the Shadow boost or stat changes are no longer displayed as part of a Pokemon's stats. Instead, the multipliers are now shown in the Advanced/IV's section.</li>
+		<ul>
+			<li>Previously, Shadow Pokemon would appear to have higher Attack stats than their regular counterparts, which isn't functionally the case.</li>
+		</ul>
+		<li>Resolved interface issues where IV's and level cap settings weren't displayed correctly when selecting new Pokemon.</li>
+		<li>Custom ranking fixes:</li>
+		<ul>
+			<li>XL Pokemon now appear correctly in the custom rankings (when allowed).</li>
+			<li>Banning a Pokemon with the "Species" filter now also bans Shadow and XL versions of that Pokemon - no need to separately list their ID's.</li>
+		</ul>
+		<li>When adding new Pokemon to Matrix Battle, the new "Add &amp; Compare" button adds other IV spreads of that same Pokemon in a single click.</li>
 	</ul>
 
 	<h3>Latest Article</h3>

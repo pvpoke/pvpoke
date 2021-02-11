@@ -116,6 +116,22 @@ function PokeSelect(element, i){
 
 			$el.find(".types").html('');
 
+			if(selectedPokemon.autoLevel){
+				$el.find(".check.auto-level").addClass("on");
+			} else{
+				$el.find(".check.auto-level").removeClass("on");
+			}
+
+			$el.find(".level-cap-group .check").removeClass("on");
+			$el.find(".level-cap-group .check[value=\""+selectedPokemon.levelCap+"\"]").addClass("on");
+
+			if($el.find("input.level:focus, input.iv:focus").length == 0){
+				$el.find("input.level").val(selectedPokemon.level);
+				$el.find("input.iv").eq(0).val(selectedPokemon.ivs.atk);
+				$el.find("input.iv").eq(1).val(selectedPokemon.ivs.def);
+				$el.find("input.iv").eq(2).val(selectedPokemon.ivs.hp);
+			}
+
 			for(var i = 0; i < selectedPokemon.types.length; i++){
 
 				var typeStr = selectedPokemon.types[i].charAt(0).toUpperCase() + selectedPokemon.types[i].slice(1);
@@ -753,6 +769,16 @@ function PokeSelect(element, i){
 		if(interface.resetSelectedPokemon){
 			interface.resetSelectedPokemon();
 		}
+    });
+
+	// Turn maximize stats on and off
+
+    $el.find(".level-cap-group .check").on("click", function(e){
+		// This is really dumb, but needs to be set on a delay because this processes before the checks actually change
+		setTimeout(function(){
+			var levelCap = parseInt($el.find(".maximize-section .level-cap-group .check.on").first().attr("value"));
+			selectedPokemon.levelCap = levelCap;
+		}, 25);
     });
 
 	// Select an option from the maximize section

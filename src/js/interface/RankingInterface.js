@@ -263,7 +263,7 @@ var InterfaceMaster = (function () {
 					$(".poke-search").trigger("keyup");
 				}
 
-				if(! $(".check.xl").hasClass("on")){
+				if((! $(".check.xl").hasClass("on"))&&(context != "custom")){
 					toggleXLPokemon();
 				}
 

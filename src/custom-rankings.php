@@ -121,7 +121,7 @@ require_once 'header.php'; ?>
 			</div>
 
 			<div class="field-section id">
-				<p>Enter a list of Pokemon ID's below, separated by commas. For inclusion, these Pokemon will be included regardless of the other filters.</p>
+				<p>Enter a list of Pokemon ID's below, separated by commas. For inclusion, these Pokemon will be included regardless of the other filters. For exclusion, Shadow and XL versions of a listed ID will also be excluded.</p>
 				<p>Pokemon ID's are lowercase. Some examples:</p>
 				<ul>
 					<li><em>pikachu</em></li>

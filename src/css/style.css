@@ -2800,6 +2800,10 @@ a.download-csv {
 .modal .pokebox-import[select-mode=single] .multi {
   display: none;
 }
+.modal .button.compare-poke {
+  font-size: 14px;
+  padding: 5px;
+}
 
 /* TEXTS & FONTS */
 h1.title {

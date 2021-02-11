@@ -7012,7 +7012,8 @@
         },
         "level25CP": 1494,
         "tags": ["shadoweligible"],
-        "eliteMoves": ["EARTHQUAKE"]
+        "eliteMoves": ["EARTHQUAKE"],
+		"searchPriority": 10
     }, {
         "dex": 186,
         "speciesName": "Politoed (XL)",

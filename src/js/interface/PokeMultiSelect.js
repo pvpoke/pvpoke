@@ -44,7 +44,9 @@ function PokeMultiSelect(element){
 			var key = window.localStorage.key(i);
 			var content = window.localStorage.getItem(key);
 
-			if(content.indexOf("_") > -1){
+			var groupRegex = new RegExp("([a-z_]*),([A-Z_]*),([A-Z_]*),([A-Z_]*)");
+
+			if(groupRegex.test(content)){
 				$el.find(".quick-fill-select").append("<option value=\""+key+"\" type=\"custom\">"+key+"</option>");
 			}
 
@@ -72,6 +74,12 @@ function PokeMultiSelect(element){
 			pokeSelector.clear();
 
 			$(".modal-content").append("<div class=\"center\"><div class=\"save-poke button\">Add Pokemon</div></div>");
+
+
+			if(interface.battleMode && interface.battleMode == "matrix"){
+				$(".modal-content").append("<div class=\"center\"><div class=\"compare-poke button\">Add & Compare</div></div>");
+			}
+
 
 
 			$(".modal .poke-search").focus();
@@ -114,7 +122,71 @@ function PokeMultiSelect(element){
 
 		});
 
+		// Add this Pokemon and other IV spreads
+
+		$(".modal .compare-poke").on("click", function(e){
+
+			// Make sure something's selected
+			if(! pokeSelector){
+				return false;
+			}
+
+			var pokemon = pokeSelector.getPokemon();
+
+			if(! pokemon){
+				return false;
+			}
+
+			pokemonList.push(pokemon);
+
+			// Add multiple IV spreads of the same Pokemon
+			var spreads = ["max"];
+
+			if(battle.getCP() < 10000){
+				spreads.push("def", "atk");
+			}
+
+			for(var i = 0; i < spreads.length; i++){
+				var newPokemon = new Pokemon(pokemon.speciesId, 0, battle);
+				newPokemon.initialize(false);
+
+				newPokemon.selectMove("fast", pokemon.fastMove.moveId);
+
+				if(pokemon.chargedMoves.length > 0){
+					newPokemon.selectMove("charged", pokemon.chargedMoves[0].moveId, 0);
+				}
+
+				if(pokemon.chargedMoves.length > 1){
+					newPokemon.selectMove("charged", pokemon.chargedMoves[1].moveId, 1);
+				}
+
+				newPokemon.setShadowType(pokemon.shadowType);
+				newPokemon.levelCap = pokemon.levelCap;
+
+				switch(spreads[i]){
+					case "max":
+						newPokemon.maximizeStat("overall");
+						break;
+
+					case "def":
+						newPokemon.maximizeStat("def");
+						break;
+
+					case "atk":
+						newPokemon.maximizeStat("atk");
+						break;
+				}
+
+				pokemonList.push(newPokemon);
+			}
+
+			closeModalWindow();
+
+			self.updateListDisplay();
+
+		});
 	}
+
 
 	// Display the selected Pokemon list
 
@@ -147,6 +219,11 @@ function PokeMultiSelect(element){
 				}
 
 				$item.find(".moves").append(moveList[n].displayName);
+			}
+
+
+			if(pokemon.isCustom){
+				$item.find(".moves").append("<br>Lvl "+pokemon.level+ " "+pokemon.ivs.atk+"/"+pokemon.ivs.def+"/"+pokemon.ivs.hp)
 			}
 
 			if(cliffhangerMode){
