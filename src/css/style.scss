@@ -456,6 +456,34 @@ header{
 			}
 		}
 
+		.damage-adjustments{
+			display:flex;
+			border: 1px solid #888;
+		    border-radius: 8px;
+			font-size:10px;
+			justify-content: center;
+			text-align: center;
+			margin: 5px 0 10px 0;
+
+			.adjustment{
+				padding:5px;
+				width:50%;
+
+				.value{
+					font-size:14px;
+					font-weight:bold;
+
+					&.buff{
+						color:$color-stat-buff;
+					}
+
+					&.debuff{
+						color:$color-stat-debuff;
+					}
+				}
+			}
+		}
+
 		.types {
 			text-align: center;
 
@@ -474,6 +502,14 @@ header{
 
 			&.cp{
 				text-align:center;
+
+				.identifier{
+					display:inline-block;
+					width: 12px;
+				    height: 12px;
+				    border-radius: 20px;
+					background:#9e34ef;
+				}
 			}
 
 			&.section-title{
