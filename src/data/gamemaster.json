@@ -2378,6 +2378,26 @@
         "tags": ["shadow"],
         "eliteMoves": ["EMBER", "FIRE_BLAST", "FLAMETHROWER"]
     }, {
+        "dex": 38,
+        "speciesName": "Ninetales (Shadow XL)",
+        "speciesId": "ninetales_shadow_xl",
+        "baseStats": {
+            "atk": 169,
+            "def": 190,
+            "hp": 177
+        },
+        "types": ["fire", "none"],
+        "fastMoves": ["EMBER", "FEINT_ATTACK", "FIRE_SPIN"],
+        "chargedMoves": ["FIRE_BLAST", "FLAMETHROWER", "HEAT_WAVE", "OVERHEAT", "PSYSHOCK", "SOLAR_BEAM", "WEATHER_BALL_FIRE"],
+        "defaultIVs": {
+            "cp500": [8, 14, 12, 10],
+            "cp1500": [25, 5, 6, 13],
+            "cp2500": [49.5, 10, 15, 15]
+        },
+        "level25CP": 1382,
+        "tags": ["shadow", "xl"],
+        "eliteMoves": ["EMBER", "FIRE_BLAST", "FLAMETHROWER"]
+    }, {
         "dex": 39,
         "speciesName": "Jigglypuff",
         "speciesId": "jigglypuff",
@@ -7054,6 +7074,26 @@
         "tags": ["shadow"],
         "eliteMoves": ["EARTHQUAKE"]
     }, {
+        "dex": 186,
+        "speciesName": "Politoed (Shadow XL)",
+        "speciesId": "politoed__shadow_xl",
+        "baseStats": {
+            "atk": 174,
+            "def": 179,
+            "hp": 207
+        },
+        "types": ["water", "none"],
+        "fastMoves": ["BUBBLE", "MUD_SHOT"],
+        "chargedMoves": ["BLIZZARD", "EARTHQUAKE", "HYDRO_PUMP", "SURF", "WEATHER_BALL_WATER"],
+        "defaultIVs": {
+            "cp500": [7.5, 12, 9, 15],
+            "cp1500": [22.5, 9, 12, 11],
+            "cp2500": [47.5, 2, 15, 14]
+        },
+        "level25CP": 1494,
+        "tags": ["shadow", "xl"],
+        "eliteMoves": ["EARTHQUAKE"]
+    }, {
         "dex": 187,
         "speciesName": "Hoppip",
         "speciesId": "hoppip",
@@ -9521,6 +9561,26 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         }
+    }, {
+        "dex": 275,
+        "speciesName": "Shiftry (Shadow XL)",
+        "speciesId": "shiftry_shadow_xl",
+        "baseStats": {
+            "atk": 200,
+            "def": 121,
+            "hp": 207
+        },
+        "types": ["grass", "dark"],
+        "fastMoves": ["FEINT_ATTACK", "RAZOR_LEAF", "SNARL", "BULLET_SEED"],
+        "chargedMoves": ["FOUL_PLAY", "HURRICANE", "LEAF_BLADE", "LEAF_TORNADO"],
+        "defaultIVs": {
+            "cp500": [8, 8, 15, 8],
+            "cp1500": [24, 5, 15, 6],
+            "cp2500": [48, 9, 15, 14]
+        },
+        "level25CP": 1412,
+        "tags": ["shadow", "xl"],
+        "eliteMoves": ["BULLET_SEED"]
     }, {
         "dex": 277,
         "speciesName": "Swellow",
