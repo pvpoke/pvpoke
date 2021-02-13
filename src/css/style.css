@@ -525,6 +525,7 @@ header {
   justify-content: space-between;
 }
 .poke .options .shield-baiting,
+.poke .options .show-ivs,
 .poke .options .optimize-timing,
 .poke .options .priority,
 .poke .options .negate-fast-moves {

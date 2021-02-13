@@ -20,6 +20,7 @@ function PokeMultiSelect(element){
 	var selectedGroup = "";
 	var selectedGroupType = "";
 	var pokebox;
+	var showIVs = false;
 
 	var context = "";
 
@@ -182,6 +183,10 @@ function PokeMultiSelect(element){
 
 			closeModalWindow();
 
+			showIVs = true;
+
+			$el.find(".check.show-ivs").addClass("on");
+
 			self.updateListDisplay();
 
 		});
@@ -222,7 +227,7 @@ function PokeMultiSelect(element){
 			}
 
 
-			if(pokemon.isCustom){
+			if(showIVs){
 				$item.find(".moves").append("<br>Lvl "+pokemon.level+ " "+pokemon.ivs.atk+"/"+pokemon.ivs.def+"/"+pokemon.ivs.hp)
 			}
 
@@ -839,8 +844,18 @@ function PokeMultiSelect(element){
 		settings.bait = (! settings.bait == true);
 	});
 
+	// Change level cap
+
 	$el.find(".pokemon-level-cap-select").on("change", function(e){
 		settings.levelCap = parseInt($el.find(".pokemon-level-cap-select option:selected").val());
+	});
+
+	// Show or hide IV's
+
+	$el.find(".check.show-ivs").on("click", function(e){
+		showIVs = (! showIVs == true);
+
+		self.updateListDisplay();
 	});
 
 	// Event handler for changing the format select

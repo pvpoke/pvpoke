@@ -60,6 +60,7 @@
 				<option value="51">New Buddy Level Cap (51)</option>
 			</select>
 			<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
+			<div class="check show-ivs"><span></span>Show level &amp; IV's</div>
 		</div>
 
 		<a href="#" class="clear-selection">Clear Selections</a>
