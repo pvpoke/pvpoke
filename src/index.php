@@ -44,7 +44,7 @@
 			<li>"Attack" tab displays Attack stat differential for analyzing Charged Move ties.</li>
 		</ul>
 		<li>Matrix Battle page is now directly linkable</li>
-		<li>Modes on the Battle page are now in tabs instead of a dropdown.</li>s
+		<li>Modes on the Battle page are now in tabs instead of a dropdown.</li>
 	</ul>
 
 	<h4>v1.20.9 (February 11, 2020)</h4>
