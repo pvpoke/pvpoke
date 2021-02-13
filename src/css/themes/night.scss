@@ -21,7 +21,7 @@ a{
 	background:$dark;
 }
 
-select, .league-select, .cup-select, .mode-select,
+select, .league-select, .cup-select,
 option,
 .poke input, .poke select,
 input,
@@ -183,8 +183,6 @@ a.toggle{
 }
 
 .ranking-categories{
-	margin-top:10px;
-
 	a{
 		color:$link-color;
 

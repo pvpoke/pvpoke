@@ -1544,6 +1544,12 @@ select, input{
 					background-image:url('../img/starburst.png');
 				}
 			}
+
+			&[mode='attack'] .rating{
+				font-size:14px;
+				line-height:18px;
+				padding: 5px 10px 5px 31px;
+			}
 		}
 
 		.breakpoints-section,
@@ -1575,6 +1581,16 @@ select, input{
 				background:$color-off-black !important;
 				color:$color-off-white;
 			}
+		}
+
+		.ranking-categories{
+			float: none;
+			margin-top:10px;
+		}
+
+		p{
+			font-size:14px;
+			margin-bottom:0 !important;
 		}
 	}
 
@@ -2280,16 +2296,20 @@ a.download-csv{
 
 .ranking-categories{
 	float:right;
+    display: flex;
+    flex-wrap: wrap;
 
 	a{
 		text-decoration: none;
 		color:$color-off-black;
-		padding:10px;
+		font-size:14px;
+		padding:8px;
 		border-radius:8px;
 		display:inline-block;
 
 		&.selected{
-			background:#fff;
+			background:$color-off-black;
+			color:$color-off-white;
 			font-weight:bold;
 		}
 	}
@@ -3506,6 +3526,11 @@ a.pokebattler{
 	.cup-select{
 		max-width:48%;
 		margin-bottom:5px;
+	}
+
+	.ranking-categories a{
+		font-size: 14px;
+		padding: 5px;
 	}
 }
 

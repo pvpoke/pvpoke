@@ -293,12 +293,35 @@ var RankerMaster = (function () {
 						}
 
 						teamRatings[n].push(avgOpRating);
-						rankObj.matchups.push({
+
+
+						var matchup = {
 							opponent: opponent,
 							rating: avgPokeRating,
 							score: score,
 							alternativeScore: score
-							});
+						};
+
+						// Calculate breakpoint and bulkpoint
+						if(context == "matrix"){
+							var breakpoint = battle.calculateDamageByStats(pokemon, opponent, pokemon.stats.atk * pokemon.shadowAtkMult, opponent.stats.def * opponent.shadowDefMult, opponent.typeEffectiveness[pokemon.fastMove.type], pokemon.fastMove);
+
+							var bulkpoint = battle.calculateDamageByStats(opponent, pokemon, opponent.stats.atk * opponent.shadowAtkMult, pokemon.stats.def * pokemon.shadowDefMult, pokemon.typeEffectiveness[opponent.fastMove.type], opponent.fastMove);
+
+							if(settings.matrixDirection == "column"){
+								matchup.breakpoint = bulkpoint;
+								matchup.bulkpoint = breakpoint;
+								matchup.atkDifferential = opponent.stats.atk - pokemon.stats.atk;
+							} else{
+								matchup.breakpoint = breakpoint;
+								matchup.bulkpoint = bulkpoint;
+								matchup.atkDifferential = pokemon.stats.atk - opponent.stats.atk;
+							}
+
+
+						}
+
+						rankObj.matchups.push(matchup);
 					}
 
 					avg = Math.floor(avg / team.length);

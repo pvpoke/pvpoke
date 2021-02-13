@@ -26,9 +26,11 @@ var InterfaceMaster = (function () {
 			var histogram;
 			var bulkHistogram;
 			var bulkResults;
+			var matrixResults;
 
 			this.context = "battle";
 			this.battleMode = "single";
+			this.matrixMode = "battle";
 
 			var sandbox = false;
 			var actions = [];
@@ -79,13 +81,14 @@ var InterfaceMaster = (function () {
 
 
 				$(".league-select").on("change", selectLeague);
-				$(".mode-select").on("change", selectMode);
+				$(".mode-select a").on("click", selectMode);
 				$(".battle-btn").on("click", startBattle);
 				$(".continue-container .button").on("click", continueBattle);
 				$(".timeline-container").on("mousemove",".item",timelineEventHover);
 				$(".poke a.swap").on("click", swapSelectedPokemon);
 				$(".poke.single").on("mousemove",".move-bar",moveBarHover);
 				$(".multi-battle-sort").on("click", sortMultiBattleResults);
+				$(".battle-results.matrix .ranking-categories a").on("click", selectMatrixMode);
 				$("body").on("mousemove",mainMouseMove);
 				$("body").on("mousedown",mainMouseMove);
 				$("body").on("click", ".check", checkBox);
@@ -1024,7 +1027,23 @@ var InterfaceMaster = (function () {
 				// Run battles through the ranker
 
 				var data = ranker.rank(team, battle.getCP(), battle.getCup(), [], "matrix");
-				var rankings = data.rankings;
+				matrixResults = data.rankings;
+				self.displayMatrixResults(matrixResults);
+
+				// Push state to browser history so it can be navigated, only if not from URL parameters
+
+				gtag('event', 'Lookup', {
+				  'event_category' : 'Simulation',
+				  'event_label' : 'Matrix'
+				});
+			}
+
+			// Process both groups of Pokemon through the team ranker
+
+			this.displayMatrixResults = function(rankings){
+
+				var team = multiSelectors[1].getPokemonList();
+				var targets = multiSelectors[0].getPokemonList();
 
 				// Display results
 				var csv = ','; // CSV data of all matchups
@@ -1045,6 +1064,7 @@ var InterfaceMaster = (function () {
 
 				$(".matrix-table").append($row);
 				$(".matrix-table").append("<tbody></tbody>");
+				$(".matrix-table").attr("mode", self.matrixMode);
 
 				for(var i = 0; i < rankings.length; i++){
 					var r = rankings[i];
@@ -1059,9 +1079,38 @@ var InterfaceMaster = (function () {
 					for(var n = 0; n < r.matchups.length; n++){
 						var $cell = $("<td><a class=\"rating star\" href=\"#\" target=\"blank\"><span></span></a></td>");
 						var rating = r.matchups[n].rating;
+						var displayStat = r.matchups[n].rating;
 						var color = battle.getRatingColor(rating);
 
-						$cell.find("a").html(rating);
+						switch(self.matrixMode){
+							case "breakpoint":
+								displayStat = r.matchups[n].breakpoint;
+								break;
+
+							case "bulkpoint":
+								displayStat = r.matchups[n].bulkpoint;
+								break;
+
+							case "attack":
+								displayStat = r.matchups[n].atkDifferential;
+						}
+
+						csv += displayStat;
+
+						if(n < r.matchups.length-1){
+							csv += ',';
+						}
+
+						// Make the attack differential stat pretty
+						if(self.matrixMode == "attack"){
+							displayStat = Math.round(displayStat * 10) / 10;
+
+							if(displayStat >= 0){
+								displayStat = "+" + displayStat;
+							}
+						}
+
+						$cell.find("a").html(displayStat);
 						$cell.find("a").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
 
 						if(rating > 500){
@@ -1076,12 +1125,6 @@ var InterfaceMaster = (function () {
 						$cell.find("a").attr("href", battleLink);
 
 						$row.append($cell);
-
-						csv += rating;
-
-						if(n < r.matchups.length-1){
-							csv += ',';
-						}
 					}
 
 					$(".matrix-table tbody").append($row);
@@ -1090,6 +1133,9 @@ var InterfaceMaster = (function () {
 				}
 
 				$(".battle-results.matrix").show();
+
+				$(".battle-results.matrix p").hide();
+				$(".battle-results.matrix p."+self.matrixMode).show();
 
 				// Update download link with new data
 				var filename = multiSelectors[0].getSelectedGroup() + " vs " + multiSelectors[1].getSelectedGroup() + ".csv";
@@ -1102,13 +1148,19 @@ var InterfaceMaster = (function () {
 
 				$(".button.download-csv").attr("href", window.URL.createObjectURL(filedata));
 				$(".button.download-csv").attr("download", filename);
+			}
 
-				// Push state to browser history so it can be navigated, only if not from URL parameters
+			// Event handler for changing the battle mode
 
-				gtag('event', 'Lookup', {
-				  'event_category' : 'Simulation',
-				  'event_label' : 'Matrix'
-				});
+			function selectMatrixMode(e){
+				e.preventDefault();
+
+				self.matrixMode = $(e.target).attr("data");
+
+				$(e.target).parent().find("a").removeClass("selected");
+				$(e.target).addClass("selected");
+
+				self.displayMatrixResults(matrixResults);
 			}
 
 			// For battles with buffs or debuffs, run bulk sims and return median match
@@ -1414,8 +1466,7 @@ var InterfaceMaster = (function () {
 								break;
 
 							case "mode":
-								$(".mode-select option[value=\""+val+"\"]").prop("selected","selected");
-								$(".mode-select").trigger("change");
+								$(".mode-select a[data=\""+val+"\"]").trigger("click");
 								break;
 
 							case "cup":
@@ -1581,7 +1632,13 @@ var InterfaceMaster = (function () {
 
 			function selectMode(e){
 				var currentMode = self.battleMode;
-				self.battleMode = $(e.target).find("option:selected").val();
+
+				e.preventDefault();
+
+				self.battleMode = $(e.target).attr("data");
+
+				$(e.target).parent().find("a").removeClass("selected");
+				$(e.target).addClass("selected");
 
 				$("p.description").hide();
 				$("p."+self.battleMode).show();
@@ -1598,6 +1655,8 @@ var InterfaceMaster = (function () {
 
 				if(self.battleMode == "matrix"){
 					$(".poke.multi .custom-options").show();
+
+					window.history.pushState({mode: "matrix"}, "Battle", webRoot + "battle/matrix/");
 				}
 
 				// When moving between Multi and Matrix, move multi custom group to the right Matrix group

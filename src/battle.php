@@ -23,11 +23,11 @@ require_once 'header.php';
 
 <div class="section league-select-container white">
 	<?php require 'modules/leagueselect.php'; ?>
-	<select class="mode-select">
-		<option value="single">Single Battle</option>
-		<option value="multi">Multi Battle</option>
-		<option value="matrix">Matrix Battle</option>
-	</select>
+	<div class="ranking-categories mode-select">
+		<a class="selected" href="#" data="single">Single</a>
+		<a href="#" data="multi">Multi</a>
+		<a href="#" data="matrix">Matrix</a>
+	</div>
 	<p class="description single">Select two Pokemon from any league to fight a simulated battle. Customize movesets, levels, IV's, and shields.</p>
 	<p class="description multi hide">Battle one Pokemon against an entire league or cup. Explore overall performance or individual matchups against a group of Pokemon.</p>
 	<p class="description matrix hide">Battle two groups of Pokemon against each other and see a matrix of the results. Use this to explore mass matchups or compare different Pokemon, movesets, or IV's. You can change how the matrix results display on the <a href="<?php echo $WEB_ROOT; ?>settings/">Settings page</a>.</p>
@@ -344,9 +344,22 @@ require_once 'header.php';
 	</div>
 
 	<div class="section white battle-results matrix article">
+
 		<a class="toggle active" href="#">Matchups <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 
 		<div class="toggle-content">
+			<div class="ranking-categories">
+				<a class="selected" href="#" data="battle">Battle Rating</a>
+				<a href="#" data="breakpoint">Breakpoints</a>
+				<a href="#" data="bulkpoint">Bulkpoints</a>
+				<a href="#" data="attack">Attack</a>
+			</div>
+
+			<p class="battle">Explore battle results against this group of Pokemon.</p>
+			<p class="breakpoint">Explore Fast Move damage dealt to this group of Pokemon.</p>
+			<p class="bulkpoint">Explore Fast Move damage received from this group.</p>
+			<p class="attack">Explore Attack stat differential against this group of Pokemon to analyze Charged Move ties.</p>
+
 			<div class="table-container">
 				<table class="matrix-table rating-table" cellspacing="0">
 				</table>

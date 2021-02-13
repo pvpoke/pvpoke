@@ -1268,6 +1268,11 @@ select, input {
 .battle-results .battle-details table .rating.star.win, .battle-results.matrix table .rating.star.win {
   background-image: url("../img/starburst.png");
 }
+.battle-results .battle-details table[mode=attack] .rating, .battle-results.matrix table[mode=attack] .rating {
+  font-size: 14px;
+  line-height: 18px;
+  padding: 5px 10px 5px 31px;
+}
 .battle-results .battle-details .breakpoints-section,
 .battle-results .battle-details .matchup-detail-section,
 .battle-results .battle-details .cmp-section, .battle-results.matrix .breakpoints-section,
@@ -1308,6 +1313,14 @@ select, input {
   border: none;
   background: #333 !important;
   color: #eee;
+}
+.battle-results .battle-details .ranking-categories, .battle-results.matrix .ranking-categories {
+  float: none;
+  margin-top: 10px;
+}
+.battle-results .battle-details p, .battle-results.matrix p {
+  font-size: 14px;
+  margin-bottom: 0 !important;
 }
 .battle-results.multi {
   text-align: left;
@@ -1974,16 +1987,20 @@ a.download-csv {
 
 .ranking-categories {
   float: right;
+  display: flex;
+  flex-wrap: wrap;
 }
 .ranking-categories a {
   text-decoration: none;
   color: #333;
-  padding: 10px;
+  font-size: 14px;
+  padding: 8px;
   border-radius: 8px;
   display: inline-block;
 }
 .ranking-categories a.selected {
-  background: #fff;
+  background: #333;
+  color: #eee;
   font-weight: bold;
 }
 
@@ -3266,6 +3283,11 @@ a.pokebattler {
 .cup-select {
     max-width: 48%;
     margin-bottom: 5px;
+  }
+
+  .ranking-categories a {
+    font-size: 14px;
+    padding: 5px;
   }
 }
 /* SETTINGS */

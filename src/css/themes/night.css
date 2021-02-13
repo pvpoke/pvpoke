@@ -14,7 +14,7 @@ a {
   background: #444;
 }
 
-select, .league-select, .cup-select, .mode-select,
+select, .league-select, .cup-select,
 option,
 .poke input, .poke select,
 input,
@@ -22,28 +22,28 @@ input,
   background: #222;
   color: #fff;
 }
-select::-webkit-input-placeholder, .league-select::-webkit-input-placeholder, .cup-select::-webkit-input-placeholder, .mode-select::-webkit-input-placeholder,
+select::-webkit-input-placeholder, .league-select::-webkit-input-placeholder, .cup-select::-webkit-input-placeholder,
 option::-webkit-input-placeholder,
 .poke input::-webkit-input-placeholder, .poke select::-webkit-input-placeholder,
 input::-webkit-input-placeholder,
 .poke-search::-webkit-input-placeholder {
   color: #aaa;
 }
-select::-moz-placeholder, .league-select::-moz-placeholder, .cup-select::-moz-placeholder, .mode-select::-moz-placeholder,
+select::-moz-placeholder, .league-select::-moz-placeholder, .cup-select::-moz-placeholder,
 option::-moz-placeholder,
 .poke input::-moz-placeholder, .poke select::-moz-placeholder,
 input::-moz-placeholder,
 .poke-search::-moz-placeholder {
   color: #aaa;
 }
-select:-ms-input-placeholder, .league-select:-ms-input-placeholder, .cup-select:-ms-input-placeholder, .mode-select:-ms-input-placeholder,
+select:-ms-input-placeholder, .league-select:-ms-input-placeholder, .cup-select:-ms-input-placeholder,
 option:-ms-input-placeholder,
 .poke input:-ms-input-placeholder, .poke select:-ms-input-placeholder,
 input:-ms-input-placeholder,
 .poke-search:-ms-input-placeholder {
   color: #aaa;
 }
-select:-moz-placeholder, .league-select:-moz-placeholder, .cup-select:-moz-placeholder, .mode-select:-moz-placeholder,
+select:-moz-placeholder, .league-select:-moz-placeholder, .cup-select:-moz-placeholder,
 option:-moz-placeholder,
 .poke input:-moz-placeholder, .poke select:-moz-placeholder,
 input:-moz-placeholder,
@@ -164,9 +164,6 @@ a.toggle {
   color: #000;
 }
 
-.ranking-categories {
-  margin-top: 10px;
-}
 .ranking-categories a {
   color: #30b5ab;
 }

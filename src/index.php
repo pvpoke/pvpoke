@@ -34,6 +34,19 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
+	<h4>v1.20.11 (February 13, 2020)</h4>
+	<ul>
+		<li>Matrix Battle now has additional result tabs:</li>
+		<ul>
+			<li>"Battle" tab displays matchup results as before.</li>
+			<li>"Breakpoint" tab displays Fast Move damage dealt.</li>
+			<li>"Bulkpoint" tab displays Fast Move damage received.</li>
+			<li>"Attack" tab displays Attack stat differential for analyzing Charged Move ties.</li>
+		</ul>
+		<li>Matrix Battle page is now directly linkable</li>
+		<li>Modes on the Battle page are now in tabs instead of a dropdown.</li>s
+	</ul>
+
 	<h4>v1.20.9 (February 11, 2020)</h4>
 	<ul>
 		<li>Damage multipliers from the Shadow boost or stat changes are no longer displayed as part of a Pokemon's stats. Instead, the multipliers are now shown in the Advanced/IV's section.</li>
