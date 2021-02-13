@@ -461,12 +461,15 @@ function PokeMultiSelect(element){
 
 		$el.find(".quick-fill-select option[type='custom']").show();
 
+		battle.setCP(cp);
+
 		if(pokemonList.length > 0){
 			self.updateListDisplay();
 		}
 
 		// Set all Pokemon to the new CP limit
 		for(var i = 0; i < pokemonList.length; i++){
+			pokemonList[i].setBattle(battle);
 			pokemonList[i].initialize(cp, settings.defaultIVs);
 		}
 	}
