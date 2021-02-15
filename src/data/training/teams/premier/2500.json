@@ -815,9 +815,29 @@
 		{
 			"pokemon": [
 				{
-					"speciesId": "tangrowth",
+					"speciesId": "togekiss",
+					"fastMove": "CHARM",
+					"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
+				},
+				{
+					"speciesId": "charizard",
+					"fastMove": "FIRE_SPIN",
+					"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"]
+				},
+				{
+					"speciesId": "swampert",
+					"fastMove": "MUD_SHOT",
+					"chargedMoves": ["HYDRO_CANNON","EARTHQUAKE"]
+				}
+			],
+			"weight": 1
+		},
+		{
+			"pokemon": [
+				{
+					"speciesId": "venusaur",
 					"fastMove": "VINE_WHIP",
-					"chargedMoves": ["POWER_WHIP","ROCK_SLIDE"]
+					"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"]
 				},
 				{
 					"speciesId": "empoleon",
@@ -835,9 +855,9 @@
 		{
 			"pokemon": [
 				{
-					"speciesId": "magnezone",
-					"fastMove": "SPARK",
-					"chargedMoves": ["WILD_CHARGE","MIRROR_SHOT"]
+					"speciesId": "ampharos",
+					"fastMove": "VOLT_SWITCH",
+					"chargedMoves": ["THUNDER_PUNCH","FOCUS_BLAST"]
 				},
 				{
 					"speciesId": "venusaur",
@@ -868,26 +888,6 @@
 					"speciesId": "swampert",
 					"fastMove": "MUD_SHOT",
 					"chargedMoves": ["HYDRO_CANNON","EARTHQUAKE"]
-				}
-			],
-			"weight": 1
-		},
-		{
-			"pokemon": [
-				{
-					"speciesId": "swampert",
-					"fastMove": "MUD_SHOT",
-					"chargedMoves": ["HYDRO_CANNON","EARTHQUAKE"]
-				},
-				{
-					"speciesId": "venusaur",
-					"fastMove": "VINE_WHIP",
-					"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"]
-				},
-				{
-					"speciesId": "charizard",
-					"fastMove": "FIRE_SPIN",
-					"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
 				}
 			],
 			"weight": 1
@@ -915,6 +915,26 @@
 		{
 			"pokemon": [
 				{
+					"speciesId": "dragonite",
+					"fastMove": "DRAGON_BREATH",
+					"chargedMoves": ["DRAGON_CLAW","HURRICANE"]
+				},
+				{
+					"speciesId": "venusaur",
+					"fastMove": "VINE_WHIP",
+					"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"]
+				},
+				{
+					"speciesId": "swampert",
+					"fastMove": "MUD_SHOT",
+					"chargedMoves": ["HYDRO_CANNON","SLUDGE_WAVE"]
+				}
+			],
+			"weight": 1
+		},
+		{
+			"pokemon": [
+				{
 					"speciesId": "machamp_shadow",
 					"fastMove": "COUNTER",
 					"chargedMoves": ["CROSS_CHOP","ROCK_SLIDE"]
@@ -935,6 +955,26 @@
 		{
 			"pokemon": [
 				{
+					"speciesId": "gengar",
+					"fastMove": "SHADOW_CLAW",
+					"chargedMoves": ["SHADOW_PUNCH","SHADOW_BALL"]
+				},
+				{
+					"speciesId": "machamp_shadow",
+					"fastMove": "COUNTER",
+					"chargedMoves": ["CROSS_CHOP","ROCK_SLIDE"]
+				},
+				{
+					"speciesId": "venusaur",
+					"fastMove": "VINE_WHIP",
+					"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"]
+				}
+			],
+			"weight": 1
+		},
+		{
+			"pokemon": [
+				{
 					"speciesId": "galvantula_xl",
 					"fastMove": "VOLT_SWITCH",
 					"chargedMoves": ["DISCHARGE","LUNGE"]
@@ -948,6 +988,66 @@
 					"speciesId": "skarmory_xl",
 					"fastMove": "AIR_SLASH",
 					"chargedMoves": ["SKY_ATTACK","BRAVE_BIRD"]
+				}
+			],
+			"weight": 1
+		},
+		{
+			"pokemon": [
+				{
+					"speciesId": "gallade",
+					"fastMove": "CONFUSION",
+					"chargedMoves": ["LEAF_BLADE","CLOSE_COMBAT"]
+				},
+				{
+					"speciesId": "charizard",
+					"fastMove": "FIRE_SPIN",
+					"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"]
+				},
+				{
+					"speciesId": "empoleon",
+					"fastMove": "WATERFALL",
+					"chargedMoves": ["HYDRO_CANNON","DRILL_PECK"]
+				}
+			],
+			"weight": 1
+		},
+		{
+			"pokemon": [
+				{
+					"speciesId": "swampert",
+					"fastMove": "MUD_SHOT",
+					"chargedMoves": ["HYDRO_CANNON","SLUDGE_WAVE"]
+				},
+				{
+					"speciesId": "charizard",
+					"fastMove": "FIRE_SPIN",
+					"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"]
+				},
+				{
+					"speciesId": "venusaur",
+					"fastMove": "VINE_WHIP",
+					"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"]
+				}
+			],
+			"weight": 1
+		},
+		{
+			"pokemon": [
+				{
+					"speciesId": "lapras",
+					"fastMove": "ICE_SHARD",
+					"chargedMoves": ["SURF","SKULL_BASH"]
+				},
+				{
+					"speciesId": "charizard",
+					"fastMove": "FIRE_SPIN",
+					"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"]
+				},
+				{
+					"speciesId": "venusaur",
+					"fastMove": "VINE_WHIP",
+					"chargedMoves": ["FRENZY_PLANT","SLUDGE_BOMB"]
 				}
 			],
 			"weight": 1

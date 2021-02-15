@@ -1,595 +1,562 @@
 {
     "properties": {
-        "lastUpdated": "January 14th, 2020",
-        "totalPerformers": 41764,
-        "totalTeams": 4490
+        "lastUpdated": "February 15th, 2020",
+        "totalPerformers": 35576,
+        "totalTeams": 4952
     },
     "performers": [{
-            "pokemon": "deoxys_defense C+PB/Tb",
-            "individualScore": 130.21,
-            "games": 184,
-            "teamScore": 530.55
-        },
-        {
-            "pokemon": "jellicent H+IB/SB",
-            "individualScore": 127.64,
-            "games": 270,
-            "teamScore": 529.43
-        },
-        {
-            "pokemon": "abomasnow_shadow PS+EB/WBI",
-            "individualScore": 135.66,
-            "games": 394,
-            "teamScore": 524.47
-        },
-        {
-            "pokemon": "mew SC+FmC/WC",
-            "individualScore": 144.95,
-            "games": 192,
-            "teamScore": 523.91
-        },
-        {
-            "pokemon": "tropius AS+AA/LB",
-            "individualScore": 125.54,
-            "games": 730,
-            "teamScore": 522.32
-        },
-        {
-            "pokemon": "registeel LO+FB/FC",
-            "individualScore": 125.67,
-            "games": 619,
-            "teamScore": 515.22
-        },
-        {
-            "pokemon": "deoxys_defense C+PB/RS",
-            "individualScore": 129.5,
-            "games": 339,
-            "teamScore": 515.11
-        },
-        {
-            "pokemon": "scrafty C+FoP/PUP",
-            "individualScore": 120.11,
-            "games": 712,
-            "teamScore": 514.06
-        },
-        {
-            "pokemon": "shiftry Sn+FoP/LB",
-            "individualScore": 123.99,
-            "games": 427,
-            "teamScore": 512.24
-        },
-        {
-            "pokemon": "cresselia PC+GK/M",
-            "individualScore": 123.96,
-            "games": 329,
-            "teamScore": 510.48
+            "pokemon": "skarmory AS+BrB/SA",
+            "individualScore": 126.09,
+            "games": 2408,
+            "teamScore": 528.79
         },
         {
             "pokemon": "venusaur VW+FP/SlB",
-            "individualScore": 126.78,
-            "games": 714,
-            "teamScore": 510.47
-        },
-        {
-            "pokemon": "medicham C+IP/P",
-            "individualScore": 126.83,
-            "games": 437,
-            "teamScore": 509.24
-        },
-        {
-            "pokemon": "umbreon Sn+FoP/LR",
-            "individualScore": 115.85,
-            "games": 1044,
-            "teamScore": 508.73
-        },
-        {
-            "pokemon": "chesnaught VW+EB/SP",
-            "individualScore": 112.67,
-            "games": 224,
-            "teamScore": 508.26
-        },
-        {
-            "pokemon": "swampert_shadow MS+HC/SW",
-            "individualScore": 128.04,
-            "games": 400,
-            "teamScore": 507.8
-        },
-        {
-            "pokemon": "sirfetchd C+LB/NS",
-            "individualScore": 145.31,
-            "games": 269,
-            "teamScore": 506.53
-        },
-        {
-            "pokemon": "ninetales_alolan PS+Psh/WBI",
-            "individualScore": 118.32,
-            "games": 621,
-            "teamScore": 505.11
-        },
-        {
-            "pokemon": "lanturn Sp+HP/Tb",
-            "individualScore": 116.98,
-            "games": 218,
-            "teamScore": 504.04
-        },
-        {
-            "pokemon": "obstagoon C+GS/NS",
-            "individualScore": 135.86,
-            "games": 262,
-            "teamScore": 503.41
-        },
-        {
-            "pokemon": "hypno_shadow Cf+IP/TP",
-            "individualScore": 138.4,
-            "games": 226,
-            "teamScore": 503.17
-        },
-        {
-            "pokemon": "bastiodon SD+Ft/SE",
-            "individualScore": 121.47,
-            "games": 1550,
-            "teamScore": 502.73
-        },
-        {
-            "pokemon": "abomasnow PS+EB/WBI",
-            "individualScore": 123.97,
-            "games": 1429,
-            "teamScore": 500.74
-        },
-        {
-            "pokemon": "politoed MS+Eq/WBW",
-            "individualScore": 131.55,
-            "games": 751,
-            "teamScore": 499.98
-        },
-        {
-            "pokemon": "altaria DB+DgP/SA",
-            "individualScore": 123.53,
-            "games": 1849,
-            "teamScore": 499.83
-        },
-        {
-            "pokemon": "ninetales_alolan Ch+Psh/WBI",
-            "individualScore": 125.64,
-            "games": 203,
-            "teamScore": 499.52
-        },
-        {
-            "pokemon": "machamp_shadow C+CrC/RS",
-            "individualScore": 114.7,
-            "games": 362,
-            "teamScore": 499.42
-        },
-        {
-            "pokemon": "swampert MS+HC/SW",
-            "individualScore": 125.62,
-            "games": 1374,
-            "teamScore": 499.4
-        },
-        {
-            "pokemon": "stunfisk_galarian MS+Eq/RS",
-            "individualScore": 119.53,
-            "games": 4640,
-            "teamScore": 499.28
-        },
-        {
-            "pokemon": "pelipper WA+Hu/WBW",
-            "individualScore": 115.97,
-            "games": 619,
-            "teamScore": 499.21
-        },
-        {
-            "pokemon": "skarmory AS+BrB/SA",
-            "individualScore": 126.92,
-            "games": 2667,
-            "teamScore": 498.64
-        },
-        {
-            "pokemon": "azumarill B+HP/IB",
-            "individualScore": 118.5,
-            "games": 1820,
-            "teamScore": 498.55
-        },
-        {
-            "pokemon": "hypno Cf+SB/TP",
-            "individualScore": 116.56,
-            "games": 221,
-            "teamScore": 498.25
-        },
-        {
-            "pokemon": "drifblim H+IW/SB",
-            "individualScore": 118.1,
-            "games": 382,
-            "teamScore": 498.04
-        },
-        {
-            "pokemon": "toxicroak C+MB/SlB",
-            "individualScore": 126.06,
-            "games": 1192,
-            "teamScore": 497.93
-        },
-        {
-            "pokemon": "marowak_alolan FS+BC/SBo",
-            "individualScore": 115.49,
-            "games": 1064,
-            "teamScore": 497.83
-        },
-        {
-            "pokemon": "tropius RL+AA/LB",
-            "individualScore": 120.37,
-            "games": 361,
-            "teamScore": 497.75
-        },
-        {
-            "pokemon": "swampert MS+Eq/HC",
-            "individualScore": 117.63,
-            "games": 262,
-            "teamScore": 497.5
-        },
-        {
-            "pokemon": "politoed MS+Bl/WBW",
-            "individualScore": 116.21,
-            "games": 283,
-            "teamScore": 497.46
-        },
-        {
-            "pokemon": "meganium VW+Eq/FP",
-            "individualScore": 119.02,
-            "games": 1214,
-            "teamScore": 497.19
-        },
-        {
-            "pokemon": "deoxys_defense C+RS/Tb",
-            "individualScore": 123.94,
-            "games": 1152,
-            "teamScore": 496.9
-        },
-        {
-            "pokemon": "wigglytuff Ch+IB/PR",
-            "individualScore": 117.04,
-            "games": 565,
-            "teamScore": 496.84
+            "individualScore": 128.77,
+            "games": 848,
+            "teamScore": 524.23
         },
         {
             "pokemon": "skarmory AS+FC/SA",
-            "individualScore": 126.1,
-            "games": 373,
-            "teamScore": 495.81
+            "individualScore": 134.64,
+            "games": 306,
+            "teamScore": 523.88
         },
         {
-            "pokemon": "dewgong IS+IW/WP",
-            "individualScore": 127.26,
-            "games": 170,
-            "teamScore": 495.46
+            "pokemon": "pelipper WA+Hu/WBW",
+            "individualScore": 118.74,
+            "games": 496,
+            "teamScore": 522.05
         },
         {
-            "pokemon": "galvantula VS+D/Lu",
-            "individualScore": 131.17,
-            "games": 1256,
-            "teamScore": 495.38
+            "pokemon": "sirfetchd C+LB/NS",
+            "individualScore": 134.97,
+            "games": 228,
+            "teamScore": 520.69
+        },
+        {
+            "pokemon": "swampert MS+HC/SW",
+            "individualScore": 126.23,
+            "games": 1432,
+            "teamScore": 519.58
         },
         {
             "pokemon": "azumarill B+HP/PR",
-            "individualScore": 122.82,
-            "games": 971,
-            "teamScore": 494.65
+            "individualScore": 116.7,
+            "games": 1212,
+            "teamScore": 517.7
         },
         {
-            "pokemon": "sableye SC+FoP/Re",
-            "individualScore": 124.9,
-            "games": 693,
-            "teamScore": 494.42
+            "pokemon": "toxicroak C+MB/SlB",
+            "individualScore": 125.3,
+            "games": 463,
+            "teamScore": 517.15
         },
         {
-            "pokemon": "azumarill B+IB/PR",
-            "individualScore": 123.73,
-            "games": 2529,
-            "teamScore": 494.39
+            "pokemon": "tropius AS+AA/LB",
+            "individualScore": 133.63,
+            "games": 695,
+            "teamScore": 515.64
         },
         {
-            "pokemon": "clefable Ch+MM/P",
-            "individualScore": 123.65,
-            "games": 221,
-            "teamScore": 493.46
+            "pokemon": "jellicent H+IB/SB",
+            "individualScore": 112.97,
+            "games": 298,
+            "teamScore": 514.84
         },
         {
-            "pokemon": "froslass PS+Av/SB",
-            "individualScore": 125.24,
-            "games": 527,
-            "teamScore": 493.34
+            "pokemon": "deoxys_defense C+PB/RS",
+            "individualScore": 127.81,
+            "games": 302,
+            "teamScore": 514.8
         },
         {
-            "pokemon": "lapras IS+S/SkB",
-            "individualScore": 140.71,
-            "games": 171,
-            "teamScore": 491.46
-        },
-        {
-            "pokemon": "victreebel_shadow RL+AS/LB",
-            "individualScore": 113.38,
-            "games": 641,
-            "teamScore": 490.58
-        },
-        {
-            "pokemon": "cherrim_sunny RL+SoB/WBF",
-            "individualScore": 117.37,
-            "games": 197,
-            "teamScore": 484.84
-        },
-        {
-            "pokemon": "vigoroth C+BS/Bd",
-            "individualScore": 118.39,
-            "games": 179,
-            "teamScore": 483.36
+            "pokemon": "drifblim H+IW/SB",
+            "individualScore": 106.66,
+            "games": 273,
+            "teamScore": 514.73
         },
         {
             "pokemon": "whiscash MS+Bl/MB",
-            "individualScore": 114.45,
-            "games": 484,
-            "teamScore": 483.15
+            "individualScore": 111.29,
+            "games": 426,
+            "teamScore": 514.73
         },
         {
-            "pokemon": "marowak_alolan FS+BC/SB",
-            "individualScore": 121.17,
-            "games": 302,
-            "teamScore": 479.45
+            "pokemon": "mew SC+FmC/WC",
+            "individualScore": 128.38,
+            "games": 298,
+            "teamScore": 514.65
         },
         {
-            "pokemon": "ferrothorn BS+PW/T",
-            "individualScore": 119.22,
-            "games": 485,
-            "teamScore": 478.49
+            "pokemon": "tropius RL+AA/LB",
+            "individualScore": 113.21,
+            "games": 323,
+            "teamScore": 513.72
+        },
+        {
+            "pokemon": "altaria DB+DgP/SA",
+            "individualScore": 115.78,
+            "games": 1287,
+            "teamScore": 513.43
+        },
+        {
+            "pokemon": "registeel LO+FB/FC",
+            "individualScore": 121.73,
+            "games": 381,
+            "teamScore": 511.46
+        },
+        {
+            "pokemon": "stunfisk_galarian MS+Eq/RS",
+            "individualScore": 125.14,
+            "games": 3024,
+            "teamScore": 509.47
+        },
+        {
+            "pokemon": "sableye SC+FoP/Re",
+            "individualScore": 124.07,
+            "games": 832,
+            "teamScore": 509.05
+        },
+        {
+            "pokemon": "deoxys_defense C+RS/Tb",
+            "individualScore": 134.53,
+            "games": 509,
+            "teamScore": 508.44
+        },
+        {
+            "pokemon": "bastiodon SD+Ft/SE",
+            "individualScore": 122.63,
+            "games": 943,
+            "teamScore": 507.6
+        },
+        {
+            "pokemon": "marowak_alolan FS+BC/SBo",
+            "individualScore": 119.7,
+            "games": 819,
+            "teamScore": 504.9
+        },
+        {
+            "pokemon": "azumarill B+IB/PR",
+            "individualScore": 122.36,
+            "games": 1887,
+            "teamScore": 504.28
+        },
+        {
+            "pokemon": "swampert MS+Eq/HC",
+            "individualScore": 103.55,
+            "games": 439,
+            "teamScore": 502.19
+        },
+        {
+            "pokemon": "medicham C+IP/P",
+            "individualScore": 137.41,
+            "games": 707,
+            "teamScore": 501.79
+        },
+        {
+            "pokemon": "hypno Cf+SB/TP",
+            "individualScore": 142.41,
+            "games": 153,
+            "teamScore": 500.92
+        },
+        {
+            "pokemon": "abomasnow PS+EB/WBI",
+            "individualScore": 117.49,
+            "games": 1221,
+            "teamScore": 499.75
+        },
+        {
+            "pokemon": "azumarill B+HP/IB",
+            "individualScore": 120.12,
+            "games": 1258,
+            "teamScore": 499.11
+        },
+        {
+            "pokemon": "hypno_shadow Cf+IP/TP",
+            "individualScore": 129.44,
+            "games": 393,
+            "teamScore": 498.92
+        },
+        {
+            "pokemon": "whimsicott Ch+GK/M",
+            "individualScore": 105.38,
+            "games": 194,
+            "teamScore": 497.75
+        },
+        {
+            "pokemon": "umbreon Sn+FoP/LR",
+            "individualScore": 118.73,
+            "games": 1249,
+            "teamScore": 497.74
+        },
+        {
+            "pokemon": "cherrim_sunny RL+SoB/WBF",
+            "individualScore": 108.02,
+            "games": 157,
+            "teamScore": 495.69
+        },
+        {
+            "pokemon": "jirachi Cf+DD/P",
+            "individualScore": 138.3,
+            "games": 588,
+            "teamScore": 494.59
+        },
+        {
+            "pokemon": "ninetales_shadow FS+Psh/WBF",
+            "individualScore": 140.05,
+            "games": 153,
+            "teamScore": 493.95
+        },
+        {
+            "pokemon": "machamp_shadow C+CrC/RS",
+            "individualScore": 107.36,
+            "games": 343,
+            "teamScore": 492.89
+        },
+        {
+            "pokemon": "stunfisk TS+D/MB",
+            "individualScore": 101.45,
+            "games": 161,
+            "teamScore": 492.84
+        },
+        {
+            "pokemon": "wigglytuff Ch+IB/PR",
+            "individualScore": 115.49,
+            "games": 563,
+            "teamScore": 492.57
+        },
+        {
+            "pokemon": "scrafty C+FoP/PUP",
+            "individualScore": 118.95,
+            "games": 732,
+            "teamScore": 491.07
+        },
+        {
+            "pokemon": "shiftry Sn+FoP/LB",
+            "individualScore": 120.6,
+            "games": 418,
+            "teamScore": 489.59
+        },
+        {
+            "pokemon": "victreebel_shadow RL+AS/LB",
+            "individualScore": 102.22,
+            "games": 393,
+            "teamScore": 487.11
+        },
+        {
+            "pokemon": "galvantula VS+D/Lu",
+            "individualScore": 127.52,
+            "games": 794,
+            "teamScore": 486.59
+        },
+        {
+            "pokemon": "meganium VW+Eq/FP",
+            "individualScore": 120.06,
+            "games": 1278,
+            "teamScore": 485.15
+        },
+        {
+            "pokemon": "ninetales_alolan PS+DG/WBI",
+            "individualScore": 143.76,
+            "games": 356,
+            "teamScore": 484.97
+        },
+        {
+            "pokemon": "politoed MS+Eq/WBW",
+            "individualScore": 108.39,
+            "games": 799,
+            "teamScore": 484.27
+        },
+        {
+            "pokemon": "deoxys_defense C+PB/Tb",
+            "individualScore": 132.99,
+            "games": 265,
+            "teamScore": 481.37
+        },
+        {
+            "pokemon": "ninetales_alolan PS+Psh/WBI",
+            "individualScore": 136.47,
+            "games": 281,
+            "teamScore": 480.45
+        },
+        {
+            "pokemon": "chesnaught VW+EB/SP",
+            "individualScore": 105.49,
+            "games": 252,
+            "teamScore": 470.68
+        },
+        {
+            "pokemon": "froslass PS+Av/SB",
+            "individualScore": 115.41,
+            "games": 447,
+            "teamScore": 470.43
+        },
+        {
+            "pokemon": "jellicent B+BuB/SB",
+            "individualScore": 102.77,
+            "games": 199,
+            "teamScore": 465.3
+        },
+        {
+            "pokemon": "politoed MS+Bl/WBW",
+            "individualScore": 113.16,
+            "games": 232,
+            "teamScore": 463.19
+        },
+        {
+            "pokemon": "aggron SD+SE/T",
+            "individualScore": 77.35,
+            "games": 190,
+            "teamScore": 409.1
+        },
+        {
+            "pokemon": "roserade BS+GK/WBF",
+            "individualScore": 130.72,
+            "games": 190,
+            "teamScore": 409.1
+        },
+        {
+            "pokemon": "nidoking_shadow FC+EP/Mh",
+            "individualScore": 102.54,
+            "games": 240,
+            "teamScore": 405.38
         }
     ],
     "teams": [{
-            "team": "deoxys_defense C/PB/Tb|abomasnow_shadow PS/EB/WBI|swampert_shadow MS/HC/SW",
-            "teamScore": 587.21,
-            "games": 28
-        },
-        {
-            "team": "abomasnow_shadow PS/EB/WBI|deoxys_defense C/PB/RS|swampert_shadow MS/HC/SW",
-            "teamScore": 567.57,
-            "games": 30
+            "team": "pelipper WA/Hu/WBW|meganium VW/Eq/FP|stunfisk_galarian MS/Eq/RS",
+            "teamScore": 572.25,
+            "games": 104
         },
         {
             "team": "stunfisk_galarian MS/Eq/RS|pelipper WA/Hu/WBW|tropius AS/AA/LB",
-            "teamScore": 562.69,
-            "games": 29
-        },
-        {
-            "team": "swampert MS/HC/SW|ninetales_alolan PS/Psh/WBI|skarmory AS/BrB/SA",
-            "teamScore": 558.96,
-            "games": 26
-        },
-        {
-            "team": "sirfetchd C/BrB/LB|azumarill B/IB/PR|stunfisk_galarian MS/Eq/RS",
-            "teamScore": 555.93,
-            "games": 44
-        },
-        {
-            "team": "marowak_alolan FS/BC/SBo|ferrothorn BS/FC/PW|shiftry Sn/FoP/LB",
-            "teamScore": 549.52,
-            "games": 48
-        },
-        {
-            "team": "swampert MS/HC/SW|registeel LO/FB/FC|skarmory AS/FC/SA",
-            "teamScore": 541.56,
-            "games": 41
-        },
-        {
-            "team": "swampert MS/HC/SW|serperior VW/AA/LT|skarmory AS/BrB/SA",
-            "teamScore": 537.24,
-            "games": 37
-        },
-        {
-            "team": "tropius AS/AA/LB|mew SC/FmC/GK|stunfisk_galarian MS/Eq/RS",
-            "teamScore": 536.92,
-            "games": 37
-        },
-        {
-            "team": "tropius RL/AA/LB|bastiodon SD/Ft/SE|stunfisk_galarian MS/Eq/RS",
-            "teamScore": 536.42,
-            "games": 26
-        },
-        {
-            "team": "galvantula VS/D/Lu|azumarill B/IB/PR|stunfisk_galarian MS/Eq/RS",
-            "teamScore": 525.52,
-            "games": 42
-        },
-        {
-            "team": "venusaur VW/FP/SlB|mew SC/FmC/WC|stunfisk_galarian MS/Eq/RS",
-            "teamScore": 524.68,
-            "games": 28
-        },
-        {
-            "team": "bastiodon SD/Ft/SE|medicham C/IP/PUP|meganium VW/Eq/FP",
-            "teamScore": 523.47,
-            "games": 43
-        },
-        {
-            "team": "shiftry Sn/FoP/LB|registeel LO/FB/FC|whiscash MS/Bl/MB",
-            "teamScore": 520.77,
-            "games": 39
-        },
-        {
-            "team": "abomasnow_shadow PS/EB/WBI|azumarill B/HP/PR|jellicent H/IB/SB",
-            "teamScore": 520.35,
-            "games": 34
-        },
-        {
-            "team": "tropius AS/AA/LB|sableye SC/FoP/Re|umbreon Sn/FoP/LR",
-            "teamScore": 520.25,
-            "games": 32
-        },
-        {
-            "team": "mantine WA/BuB/IB|jellicent H/IB/SB|swampert MS/HC/SW",
-            "teamScore": 518.9,
-            "games": 29
-        },
-        {
-            "team": "beedrill PJ/DR/XS|azumarill B/HP/IB|swampert_shadow MS/HC/SW",
-            "teamScore": 517.93,
-            "games": 30
-        },
-        {
-            "team": "venusaur VW/FP/SlB|marowak_alolan H/FiB/SBo|stunfisk_galarian MS/Eq/RS",
-            "teamScore": 517.86,
-            "games": 28
-        },
-        {
-            "team": "hypno_shadow Cf/IP/TP|scrafty C/FoP/PUP|umbreon Sn/FoP/LR",
-            "teamScore": 516.49,
-            "games": 138
-        },
-        {
-            "team": "sirfetchd C/LB/NS|skarmory AS/BrB/SA|stunfisk_galarian MS/Eq/RS",
-            "teamScore": 513.71,
-            "games": 38
-        },
-        {
-            "team": "scrafty C/FoP/PUP|cresselia PC/GK/M|registeel LO/FB/FC",
-            "teamScore": 508.3,
-            "games": 73
-        },
-        {
-            "team": "umbreon Sn/FoP/LR|deoxys_defense C/PB/Tb|ninetales_alolan Ch/Psh/WBI",
-            "teamScore": 506.58,
+            "teamScore": 566.79,
             "games": 52
         },
         {
-            "team": "altaria DB/DgP/SA|azumarill B/IB/PR|toxicroak C/MB/SlB",
-            "teamScore": 506.4,
-            "games": 161
-        },
-        {
-            "team": "obstagoon C/GS/NS|azumarill B/IB/PR|marowak_alolan FS/BC/SBo",
-            "teamScore": 502.23,
-            "games": 163
-        },
-        {
-            "team": "altaria DB/DgP/SA|scrafty C/FoP/PUP|victreebel_shadow RL/LB/SlB",
-            "teamScore": 501.94,
-            "games": 32
-        },
-        {
-            "team": "galvantula VS/D/Lu|meganium VW/Eq/FP|obstagoon C/CrC/NS",
-            "teamScore": 499.07,
+            "team": "stunfisk_galarian MS/Eq/RS|mew SC/FmC/GK|venusaur VW/FP/SlB",
+            "teamScore": 565.17,
             "games": 29
         },
         {
-            "team": "victreebel_shadow RL/AS/LB|bastiodon SD/Ft/SE|deoxys_defense C/RS/Tb",
-            "teamScore": 498.59,
-            "games": 187
+            "team": "medicham C/IP/P|stunfisk_galarian MS/Eq/RS|umbreon Sn/FoP/LR",
+            "teamScore": 560.74,
+            "games": 31
         },
         {
-            "team": "altaria DB/DgP/SA|azumarill B/IB/PR|stunfisk_galarian MS/Eq/RS",
-            "teamScore": 497.53,
-            "games": 168
+            "team": "mew SC/FmC/Tb|sirfetchd C/BrB/LB|skarmory AS/BrB/SA",
+            "teamScore": 558.09,
+            "games": 170
         },
         {
-            "team": "deoxys_defense C/RS/Tb|mew SC/FmC/WC|umbreon Sn/FoP/LR",
-            "teamScore": 493.79,
-            "games": 28
+            "team": "mew SC/S/WC|altaria DB/DgP/SA|stunfisk_galarian MS/Eq/RS",
+            "teamScore": 551.63,
+            "games": 27
         },
         {
-            "team": "azumarill B/IB/PR|sableye SC/FoP/Re|stunfisk_galarian MS/Eq/RS",
-            "teamScore": 493.21,
-            "games": 167
+            "team": "dewgong IS/IW/WP|medicham C/IP/P|sableye SC/FoP/Re",
+            "teamScore": 545.88,
+            "games": 32
         },
         {
-            "team": "galvantula VS/D/Lu|pelipper WA/Hu/WBW|stunfisk_galarian MS/Eq/RS",
-            "teamScore": 491.28,
-            "games": 320
+            "team": "swampert MS/HC/SW|registeel LO/FB/FC|skarmory AS/BrB/SA",
+            "teamScore": 543.84,
+            "games": 31
         },
         {
-            "team": "politoed MS/Eq/WBW|froslass PS/Av/SB|ninetales_alolan PS/Psh/WBI",
-            "teamScore": 489.77,
-            "games": 209
+            "team": "swampert MS/HC/SW|abomasnow PS/EB/WBI|skarmory AS/BrB/SA",
+            "teamScore": 542.91,
+            "games": 32
         },
         {
-            "team": "galvantula VS/D/Lu|diggersby MS/Eq/FiP|froslass PS/Av/SB",
-            "teamScore": 489.46,
-            "games": 28
+            "team": "jellicent B/BuB/SB|meganium VW/Eq/FP|ninetales_alolan PS/DG/WBI",
+            "teamScore": 538.74,
+            "games": 39
         },
         {
-            "team": "azumarill B/IB/PR|altaria DB/DgP/SA|stunfisk_galarian MS/Eq/RS",
-            "teamScore": 489.1,
-            "games": 175
-        },
-        {
-            "team": "bastiodon SD/Ft/SE|deoxys_defense C/RS/Tb|meganium VW/Eq/FP",
-            "teamScore": 488.77,
-            "games": 168
-        },
-        {
-            "team": "skarmory AS/BrB/SA|meganium VW/Eq/FP|stunfisk_galarian MS/Eq/RS",
-            "teamScore": 485.91,
-            "games": 157
-        },
-        {
-            "team": "bastiodon SD/Ft/SE|cherrim_sunny RL/SoB/WBF|victreebel_shadow RL/AS/LB",
-            "teamScore": 484.99,
-            "games": 177
-        },
-        {
-            "team": "skarmory AS/BrB/SA|azumarill B/HP/IB|stunfisk_galarian MS/Eq/RS",
-            "teamScore": 484.22,
-            "games": 166
-        },
-        {
-            "team": "toxicroak C/MB/SlB|azumarill B/HP/IB|stunfisk_galarian MS/Eq/RS",
-            "teamScore": 483.62,
-            "games": 175
-        },
-        {
-            "team": "stunfisk_galarian MS/Eq/RS|azumarill B/HP/IB|skarmory AS/BrB/SA",
-            "teamScore": 480.08,
-            "games": 159
-        },
-        {
-            "team": "azumarill B/IB/PR|marowak_alolan FS/BC/SBo|stunfisk_galarian MS/Eq/RS",
-            "teamScore": 478.34,
+            "team": "altaria DB/DgP/SA|azumarill B/HP/IB|stunfisk_galarian MS/Eq/RS",
+            "teamScore": 537.92,
             "games": 143
         },
         {
-            "team": "ferrothorn BS/PW/T|sableye SC/FoP/PG|swampert MS/HC/SW",
-            "teamScore": 475.96,
-            "games": 26
+            "team": "medicham C/IP/P|azumarill B/HP/PR|umbreon Sn/DP/LR",
+            "teamScore": 533,
+            "games": 46
         },
         {
-            "team": "hitmontop C/CC/SE|jirachi Cf/DD|mew SC/WC",
-            "teamScore": 474.5,
+            "team": "medicham C/IP/P|sableye SC/FoP/Re|stunfisk_galarian MS/Eq/RS",
+            "teamScore": 526,
+            "games": 76
+        },
+        {
+            "team": "bastiodon SD/Ft/SE|medicham C/IP/P|toxicroak C/MB/SlB",
+            "teamScore": 524.13,
+            "games": 31
+        },
+        {
+            "team": "azumarill B/IB/PR|marowak_alolan FS/BC/SBo|sableye SC/FoP/Re",
+            "teamScore": 523.89,
+            "games": 38
+        },
+        {
+            "team": "obstagoon C/CrC/NS|hypno Cf/FB/SB|mew SC/FmC/WC",
+            "teamScore": 521.54,
+            "games": 93
+        },
+        {
+            "team": "jellicent H/BuB/SB|hypno Cf/IP/TP|scrafty C/FoP/PUP",
+            "teamScore": 521.09,
+            "games": 43
+        },
+        {
+            "team": "tropius AS/AA/LB|sableye SC/FoP/Re|umbreon Sn/FoP/LR",
+            "teamScore": 517.76,
+            "games": 202
+        },
+        {
+            "team": "registeel LO/FB/FC|meganium VW/Eq/FP|zweilous DB/BS/DP",
+            "teamScore": 511.98,
+            "games": 61
+        },
+        {
+            "team": "mew SC/S/WC|stunfisk_galarian MS/Eq/RS|venusaur VW/FP/SlB",
+            "teamScore": 511.27,
+            "games": 56
+        },
+        {
+            "team": "haunter SC/ShP/SlB|medicham C/IP/P|umbreon Sn/FoP/LR",
+            "teamScore": 509.76,
+            "games": 34
+        },
+        {
+            "team": "hypno_shadow Cf/IP/TP|scrafty C/FoP/PUP|umbreon Sn/FoP/LR",
+            "teamScore": 506.95,
+            "games": 293
+        },
+        {
+            "team": "jumpluff BS/AA/EB|mew SC/S/WC|stunfisk_galarian MS/Eq/RS",
+            "teamScore": 506.39,
+            "games": 28
+        },
+        {
+            "team": "skarmory AS/BrB/SA|meganium VW/Eq/FP|vigoroth C/BS/Bd",
+            "teamScore": 503.84,
+            "games": 45
+        },
+        {
+            "team": "swampert MS/HC/SW|deoxys_defense C/PB/RS|skarmory AS/BrB/SA",
+            "teamScore": 503.25,
+            "games": 146
+        },
+        {
+            "team": "zapdos TS/DrlP/Tb|sableye SC/FoP/PG|vigoroth C/BS/Bd",
+            "teamScore": 502.42,
             "games": 26
         },
         {
             "team": "azumarill B/IB/PR|abomasnow PS/EB/WBI|stunfisk_galarian MS/Eq/RS",
-            "teamScore": 472.5,
-            "games": 278
+            "teamScore": 502.4,
+            "games": 151
         },
         {
-            "team": "marowak_alolan FS/BC/SB|azumarill B/HP/PR|ferrothorn BS/PW/T",
-            "teamScore": 471.92,
-            "games": 143
+            "team": "venusaur VW/FP/SlB|mew SC/FmC/WC|stunfisk_galarian MS/Eq/RS",
+            "teamScore": 499.16,
+            "games": 183
         },
         {
-            "team": "ferrothorn BS/PW/T|marowak_alolan FS/BC/SBo|sableye SC/FoP/Re",
-            "teamScore": 467.7,
-            "games": 125
+            "team": "marowak_alolan FS/BC/SBo|azumarill B/HP/PR|skarmory AS/BrB/SA",
+            "teamScore": 499.14,
+            "games": 168
         },
         {
-            "team": "perrserker SC/CC/FoP|lanturn Sp/HP/Tb|parasect FC/SoB/XS",
-            "teamScore": 467.65,
+            "team": "ninetales_alolan PS/DG/WBI|jellicent H/IB/SB|politoed MS/Eq/WBW",
+            "teamScore": 499,
+            "games": 39
+        },
+        {
+            "team": "galvantula VS/D/Lu|pelipper WA/Hu/WBW|stunfisk_galarian MS/Eq/RS",
+            "teamScore": 497.75,
+            "games": 217
+        },
+        {
+            "team": "deoxys_defense C/PB/Tb|azumarill B/IB/PR|umbreon Sn/FoP/LR",
+            "teamScore": 497.09,
+            "games": 169
+        },
+        {
+            "team": "skarmory AS/BrB/SA|azumarill B/HP/IB|swampert MS/HC/SW",
+            "teamScore": 496.68,
+            "games": 152
+        },
+        {
+            "team": "bastiodon SD/Ft/SE|cherrim_sunny RL/SoB/WBF|victreebel_shadow RL/AS/LB",
+            "teamScore": 494.86,
+            "games": 168
+        },
+        {
+            "team": "ninetales_shadow FS/Psh/WBF|whimsicott Ch/GK/M|wigglytuff Ch/IB/PR",
+            "teamScore": 493.68,
             "games": 37
         },
         {
-            "team": "gardevoir Ch/P/SB|drifblim H/IW/SB|empoleon W/DrlP/HC",
-            "teamScore": 438.23,
+            "team": "politoed MS/Eq/WBW|froslass PS/Av/SB|ninetales_alolan PS/Psh/WBI",
+            "teamScore": 492.47,
+            "games": 167
+        },
+        {
+            "team": "abomasnow PS/EB/WBI|azumarill B/HP/PR|sableye SC/FoP/Re",
+            "teamScore": 491.54,
+            "games": 312
+        },
+        {
+            "team": "galvantula VS/D/Lu|azumarill B/IB/PR|stunfisk_galarian MS/Eq/RS",
+            "teamScore": 489.7,
+            "games": 140
+        },
+        {
+            "team": "machamp_shadow C/CrC/RS|azumarill B/IB/PR|stunfisk_galarian MS/Eq/RS",
+            "teamScore": 488.99,
+            "games": 172
+        },
+        {
+            "team": "sirfetchd C/LB/NS|drifblim H/IW/SB|skarmory AS/BrB/SA",
+            "teamScore": 485.26,
+            "games": 171
+        },
+        {
+            "team": "azumarill B/HP/PR|abomasnow PS/EB/WBI|marowak_alolan FS/BC/SBo",
+            "teamScore": 480.64,
+            "games": 146
+        },
+        {
+            "team": "medicham C/P/PUP|dewgong IS/IW/WP|stunfisk_galarian MS/Eq/RS",
+            "teamScore": 479.5,
             "games": 26
         },
         {
-            "team": "swampert_shadow MS/HC/SW|marowak_alolan H/FiB/SBo|skarmory AS/BrB/SA",
-            "teamScore": 436.48,
-            "games": 63
+            "team": "skarmory AS/BrB/SA|meganium VW/Eq/FP|shiftry Sn/FoP/LB",
+            "teamScore": 475.67,
+            "games": 167
+        },
+        {
+            "team": "abomasnow PS/EB/WBI|azumarill B/IB/PR|stunfisk_galarian MS/Eq/RS",
+            "teamScore": 473.16,
+            "games": 140
+        },
+        {
+            "team": "scrafty C/FoP/PUP|galvantula VS/D/Lu|swampert MS/HC/SW",
+            "teamScore": 453.82,
+            "games": 33
+        },
+        {
+            "team": "melmetal TS/RS/SP|froslass PS/Av/SB|toxicroak C/DyP/SlB",
+            "teamScore": 453.73,
+            "games": 41
+        },
+        {
+            "team": "nidoking_shadow FC/EP/Mh|aggron SD/SE/T|roserade BS/GK/WBF",
+            "teamScore": 408.41,
+            "games": 46
         }
     ]
 }
