@@ -8,7 +8,7 @@
 				{
 					"speciesId": "hypno",
 					"fastMove": "CONFUSION",
-					"chargedMoves": ["FIRE_PUNCH","SHADOW_BALL"],
+					"chargedMoves": ["THUNDER","SHADOW_BALL"],
 					"difficulty": 2,
 					"weight":15
 				},
@@ -17,7 +17,7 @@
 					"fastMove": "CONFUSION",
 					"chargedMoves": ["FIRE_PUNCH","THUNDER_PUNCH"],
 					"difficulty": 2,
-					"weight":12
+					"weight":8
 				},
 				{
 					"speciesId": "hypno",
@@ -334,7 +334,7 @@
 				{
 					"speciesId": "hypno",
 					"fastMove": "CONFUSION",
-					"chargedMoves": ["FIRE_PUNCH","SHADOW_BALL"]
+					"chargedMoves": ["THUNDER_PUNCH","SHADOW_BALL"]
 				},
 				{
 					"speciesId": "wigglytuff",
@@ -354,7 +354,7 @@
 				{
 					"speciesId": "hypno",
 					"fastMove": "CONFUSION",
-					"chargedMoves": ["FIRE_PUNCH","SHADOW_BALL"]
+					"chargedMoves": ["THUNDER_PUNCH","SHADOW_BALL"]
 				},
 				{
 					"speciesId": "marowak_alolan",
@@ -434,7 +434,7 @@
 				{
 					"speciesId": "hypno",
 					"fastMove": "CONFUSION",
-					"chargedMoves": ["FIRE_PUNCH","SHADOW_BALL"]
+					"chargedMoves": ["THUNDER_PUNCH","SHADOW_BALL"]
 				},
 				{
 					"speciesId": "marowak_alolan",
@@ -449,7 +449,7 @@
 				{
 					"speciesId": "hypno",
 					"fastMove": "CONFUSION",
-					"chargedMoves": ["FIRE_PUNCH","SHADOW_BALL"]
+					"chargedMoves": ["THUNDER_PUNCH","SHADOW_BALL"]
 				},
 				{
 					"speciesId": "dragonair",
@@ -474,7 +474,7 @@
 				{
 					"speciesId": "hypno",
 					"fastMove": "CONFUSION",
-					"chargedMoves": ["FIRE_PUNCH","SHADOW_BALL"]
+					"chargedMoves": ["THUNDER_PUNCH","SHADOW_BALL"]
 				},
 				{
 					"speciesId": "marowak_alolan",
