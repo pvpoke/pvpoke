@@ -62,6 +62,14 @@ switch($cup){
 		$league = 'Silph Vortex Cup';
 		break;
 
+	case "retro":
+		$league = 'Retro Cup';
+		break;
+
+	case "remix":
+		$league = 'Great League Remix';
+		break;
+
 	case "goteamup":
 		$league = 'GO Stadium GOTeamUp';
 		break;

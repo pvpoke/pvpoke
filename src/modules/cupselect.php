@@ -2,7 +2,7 @@
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
 	<option value="official" cup="kanto">Kanto Cup</option>
-	<option value="official" cup="love">Love Cup</option>
+	<option value="official" cup="retro">Retro Cup</option>
 	<option value="tsa-3" cup="labyrinth">Silph Labyrinth Cup</option>
 	<option value="tsa-3" cup="vortex">Silph Vortex Cup</option>
 
@@ -24,6 +24,7 @@
 	<option value="halloween" cat="official">Halloween Cup</option>
 	<option value="kanto" cat="official">Kanto Cup</option>
 	<option value="love" cat="official">Love Cup</option>
+	<option value="retro" cat="official">Retro Cup</option>
 	<option value="little" cat="official">Little Cup</option>
 	<option value="holiday" cat="official">Holiday Cup</option>
 	<option value="classic" cat="official">Classic (ML Only)</option>

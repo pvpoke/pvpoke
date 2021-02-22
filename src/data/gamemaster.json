@@ -640,6 +640,18 @@
         "exclude": [],
         "partySize": 3
     }, {
+        "name": "retro",
+        "title": "Retro Cup",
+        "include": [],
+        "exclude": [{
+            "filterType": "type",
+            "values": ["dark", "fairy", "steel"]
+        }, {
+            "filterType": "tag",
+            "values": ["mega"]
+        }],
+        "partySize": 3
+    }, {
         "name": "nightfall",
         "title": "Silph Nightfall Cup",
         "include": [{
@@ -2314,7 +2326,8 @@
         },
         "level25CP": 1382,
         "tags": ["shadoweligible"],
-        "eliteMoves": ["EMBER", "FIRE_BLAST", "FLAMETHROWER"]
+        "eliteMoves": ["EMBER", "FIRE_BLAST", "FLAMETHROWER"],
+        "searchPriority": 3
     }, {
         "dex": 38,
         "speciesName": "Ninetales (Alolan)",
@@ -2332,8 +2345,7 @@
             "cp500": [8, 11, 9, 14],
             "cp1500": [23.5, 9, 15, 14],
             "cp2500": [40, 15, 15, 15]
-        },
-        "searchPriority": 2
+        }
     }, {
         "dex": 38,
         "speciesName": "Ninetales (Alolan XL)",

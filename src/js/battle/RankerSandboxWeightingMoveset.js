@@ -372,48 +372,11 @@ var RankerMaster = (function () {
 				var rankCutoffIncrease = 0.06;
 				var rankWeightExponent = 1.65;
 
-				if(cup.name == "kingdom"){
-					rankCutoffIncrease = 0.05;
-					rankWeightExponent = 1.5;
-				}
-
-				if(cup.name == "tempest"){
-					rankWeightExponent = 1.25;
-				}
-
-				if(cup.name == "toxic"){
-					iterations = 1;
-				}
-
-				if(cup.name == "holiday"){
-					iterations = 1;
-				}
-
-				if(cup.name == "rose"){
-					iterations = 1;
-				}
-
-				if(cup.name == "sorcerous"){
-					iterations = 1;
-				}
-
-				if(cup.name == "continentals-2"){
-					iterations = 1;
-				}
-
-				if(cup.name == "catacomb"){
-					iterations = 1;
-				}
-
 				if((cup.name == "all")&&(battle.getCP() == 10000)){
 					iterations = 1;
 				}
 
 				if((cup.name == "classic")&&(battle.getCP() == 10000)){
-					iterations = 1;
-				}
-
-				if((cup.name == "uber")&&(battle.getCP() == 10000)){
 					iterations = 1;
 				}
 
@@ -426,18 +389,6 @@ var RankerMaster = (function () {
 				}
 
 				if((cup.name == "goteamup")&&(battle.getCP() == 1500)){
-					iterations = 1;
-				}
-
-				if((cup.name == "voyager")&&(battle.getCP() == 1500)){
-					iterations = 1;
-				}
-
-				if((cup.name == "grunt-4")&&(battle.getCP() == 1500)){
-					iterations = 1;
-				}
-
-				if((cup.name == "forest")&&(battle.getCP() == 1500)){
 					iterations = 1;
 				}
 
@@ -457,15 +408,7 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
-				if(cup.name == "flying"){
-					iterations = 1;
-				}
-
-				if(cup.name == "halloween"){
-					iterations = 1;
-				}
-
-				if(cup.name == "sunrise"){
+				if(cup.name == "retro"){
 					iterations = 1;
 				}
 
