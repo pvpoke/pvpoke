@@ -4,6 +4,7 @@
 	<option value="official" cup="kanto">Kanto Cup</option>
 	<option value="official" cup="love">Love Cup</option>
 	<option value="tsa-3" cup="labyrinth">Silph Labyrinth Cup</option>
+	<option value="tsa-3" cup="vortex">Silph Vortex Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>
@@ -70,5 +71,6 @@
 	<option value="marsh" cat="tsa-3">Marsh Cup</option>
 	<option value="nightfall" cat="tsa-3">Nightfall Cup</option>
 	<option value="labyrinth" cat="tsa-3">Labyrinth Cup</option>
+	<option value="vortex" cat="tsa-3">Vortex Cup</option>
 	<option value="custom" cat="custom">Custom</option>
 </select>

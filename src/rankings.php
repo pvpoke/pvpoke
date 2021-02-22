@@ -58,6 +58,10 @@ switch($cup){
 		$league = 'Silph Labyrinth Cup';
 		break;
 
+	case "vortex":
+		$league = 'Silph Vortex Cup';
+		break;
+
 	case "goteamup":
 		$league = 'GO Stadium GOTeamUp';
 		break;

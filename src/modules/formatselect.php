@@ -5,7 +5,7 @@
 	<option value="2500" cup="premier">Premier Cup (Ultra)</option>
 	<option value="10000" cup="premier">Premier Cup (Master)</option>
 	<option value="1500" cup="kanto">Kanto Cup</option>
-	<option value="1500" cup="love">Love Cup</option>
 	<option value="1500" cup="labyrinth">Silph Labyrinth Cup</option>
+	<option value="1500" cup="vortex">Silph Vortex Cup</option>
 	<option value="1500" cup="custom">Custom</option>
 </select>
