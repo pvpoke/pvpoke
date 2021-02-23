@@ -70,6 +70,10 @@ switch($cup){
 		$league = 'Great League Remix';
 		break;
 
+	case "ou":
+		$league = 'PoGoRaids Overused Tournament';
+		break;
+
 	case "goteamup":
 		$league = 'GO Stadium GOTeamUp';
 		break;
