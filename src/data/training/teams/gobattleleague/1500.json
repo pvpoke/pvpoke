@@ -1392,19 +1392,19 @@
 		{
 			"pokemon": [
 				{
-					"speciesId": "sirfetchd",
-					"fastMove": "COUNTER",
-					"chargedMoves": ["LEAF_BLADE","NIGHT_SLASH"]
+					"speciesId": "azumarill",
+					"fastMove": "BUBBLE",
+					"chargedMoves": ["HYDRO_PUMP","PLAY_ROUGH"]
 				},
 				{
-					"speciesId": "drifblim",
-					"fastMove": "HEX",
-					"chargedMoves": ["ICY_WIND","SHADOW_BALL"]
+					"speciesId": "sableye",
+					"fastMove": "SHADOW_CLAW",
+					"chargedMoves": ["FOUL_PLAY","RETURN"]
 				},
 				{
-					"speciesId": "skarmory",
-					"fastMove": "AIR_SLASH",
-					"chargedMoves": ["SKY_ATTACK","BRAVE_BIRD"]
+					"speciesId": "marowak_alolan",
+					"fastMove": "FIRE_SPIN",
+					"chargedMoves": ["SHADOW_BONE","BONE_CLUB"]
 				}
 			],
 			"weight": 1
@@ -1417,9 +1417,9 @@
 					"chargedMoves": ["HYDRO_CANNON","SLUDGE_WAVE"]
 				},
 				{
-					"speciesId": "deoxys_defense",
-					"fastMove": "COUNTER",
-					"chargedMoves": ["ROCK_SLIDE","PSYCHO_BOOST"]
+					"speciesId": "galvantula",
+					"fastMove": "VOLT_SWITCH",
+					"chargedMoves": ["DISCHARGE","LUNGE"]
 				},
 				{
 					"speciesId": "skarmory",
@@ -1442,9 +1442,9 @@
 					"chargedMoves": ["ICE_BEAM","HYDRO_PUMP"]
 				},
 				{
-					"speciesId": "swampert",
+					"speciesId": "stunfisk_galarian",
 					"fastMove": "MUD_SHOT",
-					"chargedMoves": ["HYDRO_CANNON","SLUDGE_WAVE"]
+					"chargedMoves": ["ROCK_SLIDE","EARTHQUAKE"]
 				}
 			],
 			"weight": 1
@@ -1594,7 +1594,7 @@
 				{
 					"speciesId": "hypno_shadow",
 					"fastMove": "CONFUSION",
-					"chargedMoves": ["THUNDER_PUNCH","ICE_PUNCH"]
+					"chargedMoves": ["THUNDER_PUNCH","FIRE_PUNCH"]
 				},
 				{
 					"speciesId": "scrafty",
@@ -1617,9 +1617,9 @@
 					"chargedMoves": ["WEATHER_BALL_WATER","EARTHQUAKE"]
 				},
 				{
-					"speciesId": "froslass",
-					"fastMove": "POWDER_SNOW",
-					"chargedMoves": ["AVALANCHE","SHADOW_BALL"]
+					"speciesId": "stunfisk_galarian",
+					"fastMove": "MUD_SHOT",
+					"chargedMoves": ["ROCK_SLIDE","EARTHQUAKE"]
 				},
 				{
 					"speciesId": "ninetales_alolan",
