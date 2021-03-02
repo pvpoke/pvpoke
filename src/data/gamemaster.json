@@ -1188,6 +1188,26 @@
         "eliteMoves": ["HYDRO_CANNON"]
     }, {
         "dex": 9,
+        "speciesName": "Blastoise (XL)",
+        "speciesId": "blastoise_xl",
+        "baseStats": {
+            "atk": 171,
+            "def": 207,
+            "hp": 188
+        },
+        "types": ["water", "none"],
+        "fastMoves": ["BITE", "WATER_GUN"],
+        "chargedMoves": ["FLASH_CANNON", "HYDRO_CANNON", "HYDRO_PUMP", "ICE_BEAM", "SKULL_BASH"],
+        "tags": ["starter", "shadoweligible", "xl"],
+        "defaultIVs": {
+            "cp500": [7.5, 11, 11, 11],
+            "cp1500": [22, 9, 13, 15],
+            "cp2500": [48, 1, 12, 15]
+        },
+        "level25CP": 1504,
+        "eliteMoves": ["HYDRO_CANNON"]
+    }, {
+        "dex": 9,
         "speciesName": "Blastoise (Mega)",
         "speciesId": "blastoise_mega",
         "baseStats": {
@@ -9393,6 +9413,24 @@
             "cp2500": [40, 15, 15, 15]
         }
     }, {
+        "dex": 269,
+        "speciesName": "Dustox (XL)",
+        "speciesId": "dustox_xl",
+        "baseStats": {
+            "atk": 98,
+            "def": 162,
+            "hp": 155
+        },
+        "types": ["bug", "poison"],
+        "fastMoves": ["CONFUSION", "STRUGGLE_BUG"],
+        "chargedMoves": ["BUG_BUZZ", "SILVER_WIND", "SLUDGE_BOMB"],
+        "defaultIVs": {
+            "cp500": [16.5, 5, 5, 8],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+		"tags": ["xl"]
+    }, {
         "dex": 270,
         "speciesName": "Lotad",
         "speciesId": "lotad",
@@ -9443,6 +9481,24 @@
             "cp1500": [23.5, 8, 13, 15],
             "cp2500": [40, 15, 15, 15]
         }
+    }, {
+        "dex": 272,
+        "speciesName": "Ludicolo (XL)",
+        "speciesId": "ludicolo_xl",
+        "baseStats": {
+            "atk": 173,
+            "def": 176,
+            "hp": 190
+        },
+        "types": ["water", "grass"],
+        "fastMoves": ["BUBBLE", "RAZOR_LEAF"],
+        "chargedMoves": ["BLIZZARD", "HYDRO_PUMP", "ENERGY_BALL", "ICE_BEAM", "SOLAR_BEAM"],
+        "defaultIVs": {
+            "cp500": [8, 5, 14, 15],
+            "cp1500": [23.5, 8, 13, 15],
+            "cp2500": [49.5, 7, 15, 15]
+        },
+		"tags": ["xl"]
     }, {
         "dex": 273,
         "speciesName": "Seedot",
@@ -14650,6 +14706,25 @@
         "tags": ["shadoweligible"]
     }, {
         "dex": 476,
+        "speciesName": "Probopass (XL)",
+        "speciesId": "probopass_xl",
+        "baseStats": {
+            "atk": 135,
+            "def": 275,
+            "hp": 155
+        },
+        "types": ["rock", "steel"],
+        "fastMoves": ["ROCK_THROW", "SPARK"],
+        "chargedMoves": ["MAGNET_BOMB", "ROCK_SLIDE", "THUNDERBOLT"],
+        "defaultIVs": {
+            "cp500": [9, 6, 11, 13],
+            "cp1500": [27.5, 5, 14, 9],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "level25CP": 1243,
+        "tags": ["shadoweligible", "xl"]
+    }, {
+        "dex": 476,
         "speciesName": "Probopass (Shadow)",
         "speciesId": "probopass_shadow",
         "baseStats": {
@@ -18956,7 +19031,7 @@
         "chargedMoves": ["FLAME_CHARGE", "FLAMETHROWER", "CRUNCH"],
         "defaultIVs": {
             "cp500": [13, 10, 12, 11],
-            "cp1500": [50, 6, 15, 15],
+            "cp1500": [49, 6, 15, 15],
             "cp2500": [50, 15, 15, 15]
         },
         "tags": ["xl"]

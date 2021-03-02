@@ -25,6 +25,14 @@
 		"weight": 7
 	},
 	{
+		"speciesId": "probopass",
+		"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "probopass_xl",
+		"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
+	},
+	{
 		"speciesId": "jellicent",
 		"fastMove": "BUBBLE",
 		"chargedMoves": ["BUBBLE_BEAM","SHADOW_BALL"]
@@ -181,6 +189,14 @@
 	{
 		"speciesId": "ninetales_xl",
 		"chargedMoves": ["SOLAR_BEAM", "WEATHER_BALL_FIRE"]
+	},
+	{
+		"speciesId": "blastoise",
+		"chargedMoves": ["HYDRO_CANNON", "SKULL_BASH"]
+	},
+	{
+		"speciesId": "blastoise_xl",
+		"chargedMoves": ["HYDRO_CANNON", "SKULL_BASH"]
 	},
 	{
 		"speciesId": "gliscor",
