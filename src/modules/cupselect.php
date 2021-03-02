@@ -1,9 +1,7 @@
 <select class="format-select">
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
-	<option value="official" cup="kanto">Kanto Cup</option>
 	<option value="official" cup="retro">Retro Cup</option>
-	<option value="tsa-3" cup="labyrinth">Silph Labyrinth Cup</option>
 	<option value="tsa-3" cup="vortex">Silph Vortex Cup</option>
 	<option value="community" cup="ou">PoGoRaids Overused Tournament</option>
 
