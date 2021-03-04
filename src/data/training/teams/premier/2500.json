@@ -223,6 +223,13 @@
 					"weight":25
 				},
 				{
+					"speciesId": "talonflame_xl",
+					"fastMove": "INCINERATE",
+					"chargedMoves": ["FLAME_CHARGE","BRAVE_BIRD"],
+					"difficulty": 2,
+					"weight":20
+				},
+				{
 					"speciesId": "charizard_shadow",
 					"fastMove": "FIRE_SPIN",
 					"chargedMoves": ["DRAGON_CLAW","BLAST_BURN"],

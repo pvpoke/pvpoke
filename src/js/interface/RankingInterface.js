@@ -45,6 +45,7 @@ var InterfaceMaster = (function () {
 				}
 
 				$(".format-select").on("change", selectFormat);
+				$(".league-select").on("change", selectLeague);
 				$(".ranking-categories a").on("click", selectCategory);
 				$("body").on("click", ".check", checkBox);
 				$("body").on("click", ".check.limited", toggleLimitedPokemon);
@@ -431,6 +432,8 @@ var InterfaceMaster = (function () {
 
 					self.displayRankings(category, cp, cup);
 					self.pushHistoryState(cup, cp, category, null);
+				} else{
+					cp = $(".league-select option:selected").val();
 				}
 
 				battle.setCP(cp);

@@ -200,7 +200,7 @@ require_once '../header.php';
 
 	<a href="#" class="button download-csv teams">Export to CSV</a>
 
-	<p class="column-description"><b>Team Rating - </b> Similar to the Battle Rating metric in battle simulations, the Team Rating metric is a number between 0 and 1000 that measures the quality of wins and losses depending on how much HP remains on the opposing team. An average team rating above 500 means teams including that team wins more often. An average team rating below 500 indicates underperformance.</p>
+	<p class="column-description"><b>Team Rating - </b> Similar to the Battle Rating metric in battle simulations, the Team Rating metric is a number between 0 and 1000 that measures the quality of wins and losses depending on how much HP remains on the opposing team. An average team rating above 500 means this team wins more often. An average team rating below 500 indicates underperformance.</p>
 
 	<p class="column-description"><b>Usage - </b> Usage by players and bots. A large sample size will yield higher confidence in the data. A <span class="low-volume">small sample size</span> may be the result of an individual player, and consequentially yield lower confidence in the data. The data is filtered by a mininum usage threshold.</p>
 </div>

@@ -582,7 +582,7 @@ var GameMaster = (function () {
 										testId = testId.replace("_xl","");
 									}
 
-									if(filter.values.indexOf(testId) > -1){
+									if( filter.values.indexOf(testId) > -1 || filter.values.indexOf(pokemon.speciesId) > -1 ) {
 										filtersMatched += filters.length; // If a Pokemon is explicitly included, ignore all other filters
 
 										if(include){

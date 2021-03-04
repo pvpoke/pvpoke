@@ -3,7 +3,9 @@ $global-font-color:#000;
 
 $color-attack:#ed6774;
 $color-defense:#6696ed;
-$color-hp:#0088a6;
+$color-hp:#0eb084;
+$color-hp-yellow:#eabd49;
+$color-hp-red:#aa0505;
 
 $color-move-power:#a60087;
 $color-move-energy:#0087a6;
@@ -965,6 +967,14 @@ header{
 		width:100%;
 		height:100%;
 		background-color:$color-hp;
+
+		&[color="yellow"]{
+			background-color:$color-hp-yellow;
+		}
+
+		&[color="red"]{
+			background-color:$color-hp-red;
+		}
 
 		&:nth-child(1){
 			@include transition(width, 0.2s, ease-out, 0s);

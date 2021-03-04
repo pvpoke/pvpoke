@@ -738,7 +738,13 @@ header {
 .hp.bar-back .bar {
   width: 100%;
   height: 100%;
-  background-color: #0088a6;
+  background-color: #0eb084;
+}
+.hp.bar-back .bar[color=yellow] {
+  background-color: #eabd49;
+}
+.hp.bar-back .bar[color=red] {
+  background-color: #aa0505;
 }
 .hp.bar-back .bar:nth-child(1) {
   -webkit-transition: width 0.2s ease-out 0s;
