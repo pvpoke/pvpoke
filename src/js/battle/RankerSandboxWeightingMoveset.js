@@ -35,6 +35,7 @@ var RankerMaster = (function () {
 			var startTime = 0; // For debugging and performance testing
 
 			var pokemonList = [];
+			var targets = [];
 
 			var self = this;
 
@@ -68,8 +69,23 @@ var RankerMaster = (function () {
 
 				if(moveSelectMode == "auto"){
 					pokemonList = gm.generateFilteredPokemonList(battle, cup.include, cup.exclude);
+					targets = pokemonList;
 				} else if(moveSelectMode == "force"){
 					pokemonList = gm.generateFilteredPokemonList(battle, cup.include, cup.exclude, rankingData, overrides);
+
+					// Filter targets from pokemonList
+					targets = [];
+
+					for(var i = 0; i < pokemonList.length; i++){
+						if(cup.filterTargets){
+							if(pokemonList[i].weightModifier > 1){
+								targets.push(pokemonList[i]);
+							}
+						} else{
+							targets.push(pokemonList[i]);
+						}
+					}
+
 				}
 
 				console.log("List generated in: " + (Date.now() - startTime));
@@ -179,13 +195,13 @@ var RankerMaster = (function () {
 
 					// Simulate battle against each Pokemon
 
-					for(var n = 0; n < rankCount; n++){
+					for(var n = 0; n < targets.length; n++){
 
-						var opponent = pokemonList[n];
+						var opponent = targets[n];
 
 						// If battle has already been simulated, skip
 
-						if(rankings[n]){
+						if(rankings[n] && pokemonList.length == targets.length){
 
 							// When shields are the same, A vs B is the same as B vs A, so take the existing result
 
@@ -437,7 +453,11 @@ var RankerMaster = (function () {
 
 						for(var j = 0; j < matches.length; j++){
 
-							var weight = Math.pow( Math.max((rankings[j].scores[n] / bestScore) - (.1 + (rankCutoffIncrease * n)), 0), rankWeightExponent);
+							var weight = 1;
+
+							if(pokemonList.length == targets.length){
+								weight = Math.pow( Math.max((rankings[j].scores[n] / bestScore) - (.1 + (rankCutoffIncrease * n)), 0), rankWeightExponent);
+							}
 
 							if(cup.name == "premier"){
 								weight = 1;
@@ -453,12 +473,12 @@ var RankerMaster = (function () {
 
 							// Don't score Pokemon in the mirror match
 
-							if(rankings[j].speciesId == pokemonList[i].speciesId){
+							if(targets[j].speciesId == pokemonList[i].speciesId){
 								weight = 0;
 							}
 
-							if (typeof pokemonList[j].weightModifier !== 'undefined') {
-								weight *= pokemonList[j].weightModifier;
+							if (typeof targets[j].weightModifier !== 'undefined') {
+								weight *= targets[j].weightModifier;
 							} else{
 								if((cup.name == "all")&&(battle.getCP() == 1500)){
 									weight = 0;
