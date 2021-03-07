@@ -1198,14 +1198,21 @@ function Pokemon(id, i, b){
 
 	// Return effective stat after applying modifier, 0 - attack, 1 - defense
 
-	this.getEffectiveStat = function(index){
+	this.getEffectiveStat = function(index, useStartStatBuffs){
+		useStartStatBuffs = (typeof useStartStatBuffs !== 'undefined') ?  useStartStatBuffs : false
+
 		var buffDivisor = gm.data.settings.buffDivisor;
+		var sourceBuffs = self.statBuffs;
 		var multiplier;
 
-		if(self.statBuffs[index] > 0){
-			multiplier = (buffDivisor + self.statBuffs[index]) / buffDivisor;
+		if(useStartStatBuffs){
+			sourceBuffs = self.startStatBuffs;
+		}
+
+		if(sourceBuffs[index] > 0){
+			multiplier = (buffDivisor + sourceBuffs[index]) / buffDivisor;
 		} else{
-			multiplier = buffDivisor / (buffDivisor - self.statBuffs[index]);
+			multiplier = buffDivisor / (buffDivisor - sourceBuffs[index]);
 		}
 
 		if(self.shadowType == "shadow"){
