@@ -10518,6 +10518,23 @@
             "cp2500": [40, 15, 15, 15]
         }
     }, {
+	    "dex": 310,
+	    "speciesName": "Manectric (Mega)",
+	    "speciesId": "manectric_mega",
+	    "baseStats": {
+	        "atk": 286,
+	        "def": 179,
+	        "hp": 172
+	    },
+	    "types": ["electric", "none"],
+	    "fastMoves": ["CHARGE_BEAM", "SNARL"],
+	    "chargedMoves": ["FLAME_BURST", "THUNDER", "WILD_CHARGE"],
+	    "tags": ["mega"],
+	    "defaultIVs": {
+	        "cp1500": [15, 13, 10, 14],
+	        "cp2500": [25, 9, 13, 14]
+	    }
+	}, {
         "dex": 311,
         "speciesName": "Plusle",
         "speciesId": "plusle",
@@ -17676,7 +17693,8 @@
             "cp500": [7, 5, 8, 13],
             "cp1500": [20, 9, 11, 13],
             "cp2500": [36, 8, 15, 14]
-        }
+        },
+		"searchPriority": 2
     }, {
         "dex": 605,
         "speciesId": "elgyem",
