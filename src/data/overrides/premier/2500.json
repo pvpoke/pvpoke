@@ -33,14 +33,18 @@
 		"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
 	},
 	{
+		"speciesId": "golem_alolan",
+		"chargedMoves": ["ROCK_BLAST", "WILD_CHARGE"]
+	},
+	{
 		"speciesId": "jellicent",
-		"fastMove": "BUBBLE",
-		"chargedMoves": ["BUBBLE_BEAM","SHADOW_BALL"]
+		"fastMove": "HEX",
+		"chargedMoves": ["ICE_BEAM","SHADOW_BALL"]
 	},
 	{
 		"speciesId": "jellicent_xl",
-		"fastMove": "BUBBLE",
-		"chargedMoves": ["BUBBLE_BEAM","SHADOW_BALL"]
+		"fastMove": "HEX",
+		"chargedMoves": ["ICE_BEAM","SHADOW_BALL"]
 	},
 	{
 		"speciesId": "toxicroak",
@@ -306,12 +310,15 @@
 	{
 		"speciesId": "charizard",
 		"fastMove": "FIRE_SPIN",
-		"weight": 20
+		"weight": 14
+	},
+	{
+		"speciesId": "talonflame_xl",
+		"weight": 7
 	},
 	{
 		"speciesId": "charizard_shadow",
-		"fastMove": "FIRE_SPIN",
-		"weight": 2
+		"fastMove": "FIRE_SPIN"
 	},
 	{
 		"speciesId": "ampharos",

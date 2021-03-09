@@ -132,25 +132,32 @@
 					"weight":2
 				},
 				{
-					"speciesId": "medicham",
+					"speciesId": "medicham_xl",
 					"fastMove": "COUNTER",
 					"chargedMoves": ["ICE_PUNCH","PSYCHIC"],
-					"difficulty": 2,
-					"weight":6
+					"difficulty": 3,
+					"weight":50
 				},
 				{
 					"speciesId": "deoxys_defense",
 					"fastMove": "COUNTER",
-					"chargedMoves": ["ROCK_SLIDE","PSYCHO_BOOST"],
+					"chargedMoves": ["THUNDERBOLT","PSYCHO_BOOST"],
 					"difficulty": 3,
-					"weight":15
+					"weight":25
 				},
 				{
 					"speciesId": "deoxys_defense",
 					"fastMove": "COUNTER",
 					"chargedMoves": ["THUNDERBOLT","ROCK_SLIDE"],
 					"difficulty": 3,
-					"weight":40
+					"weight":20
+				},
+				{
+					"speciesId": "deoxys_defense",
+					"fastMove": "COUNTER",
+					"chargedMoves": ["THUNDERBOLT","ROCK_SLIDE"],
+					"difficulty": 3,
+					"weight":10
 				},
 				{
 					"speciesId": "toxicroak",
@@ -1612,19 +1619,39 @@
 		{
 			"pokemon": [
 				{
-					"speciesId": "marowak_alolan",
-					"fastMove": "FIRE_SPIN",
-					"chargedMoves": ["BONE_CLUB","SHADOW_BONE"]
+					"speciesId": "stunfisk_galarian",
+					"fastMove": "MUD_SHOT",
+					"chargedMoves": ["ROCK_SLIDE","EARTHQUAKE"]
 				},
 				{
-					"speciesId": "skarmory",
-					"fastMove": "AIR_SLASH",
-					"chargedMoves": ["SKY_ATTACK","BRAVE_BIRD"]
+					"speciesId": "medicham_xl",
+					"fastMove": "COUNTER",
+					"chargedMoves": ["ICE_PUNCH","PSYCHIC"]
 				},
 				{
 					"speciesId": "azumarill",
 					"fastMove": "BUBBLE",
 					"chargedMoves": ["PLAY_ROUGH","HYDRO_PUMP"]
+				}
+			],
+			"weight": 1
+		},
+		{
+			"pokemon": [
+				{
+					"speciesId": "medicham_xl",
+					"fastMove": "COUNTER",
+					"chargedMoves": ["ICE_PUNCH","PSYCHIC"]
+				},
+				{
+					"speciesId": "stunfisk_galarian",
+					"fastMove": "MUD_SHOT",
+					"chargedMoves": ["ROCK_SLIDE","EARTHQUAKE"]
+				},
+				{
+					"speciesId": "umbreon",
+					"fastMove": "SNARL",
+					"chargedMoves": ["FOUL_PLAY","LAST_RESORT"]
 				}
 			],
 			"weight": 1

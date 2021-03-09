@@ -152,12 +152,15 @@
 	},
 	{
 		"speciesId": "dragonite",
-		"chargedMoves": ["DRAGON_CLAW", "OUTRAGE"],
-		"weight": 4
+		"weight": 2
 	},
 	{
 		"speciesId": "alakazam",
 		"chargedMoves": ["FIRE_PUNCH", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "golem_alolan",
+		"chargedMoves": ["ROCK_BLAST", "STONE_EDGE"]
 	},
 	{
 		"speciesId": "alakazam_shadow",
