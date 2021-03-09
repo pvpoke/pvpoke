@@ -4581,6 +4581,26 @@
         "eliteMoves": ["PSYSHOCK"],
         "searchPriority": 14
     }, {
+        "dex": 97,
+        "speciesName": "Hypno (Shadow XL)",
+        "speciesId": "hypno_shadow_xl",
+        "baseStats": {
+            "atk": 144,
+            "def": 193,
+            "hp": 198
+        },
+        "types": ["psychic", "none"],
+        "fastMoves": ["CONFUSION", "ZEN_HEADBUTT"],
+        "chargedMoves": ["FOCUS_BLAST", "FUTURE_SIGHT", "PSYCHIC", "PSYSHOCK", "SHADOW_BALL", "FIRE_PUNCH", "ICE_PUNCH", "THUNDER_PUNCH"],
+        "defaultIVs": {
+            "cp500": [9, 7, 9, 13],
+            "cp1500": [27, 7, 14, 7],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "tags": ["shadow", "xl"],
+        "eliteMoves": ["PSYSHOCK"],
+        "searchPriority": 14
+    }, {
         "dex": 98,
         "speciesName": "Krabby",
         "speciesId": "krabby",
