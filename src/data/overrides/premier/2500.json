@@ -38,13 +38,13 @@
 	},
 	{
 		"speciesId": "jellicent",
-		"fastMove": "HEX",
-		"chargedMoves": ["ICE_BEAM","SHADOW_BALL"]
+		"fastMove": "BUBBLE",
+		"chargedMoves": ["BUBBLE_BEAM","SHADOW_BALL"]
 	},
 	{
 		"speciesId": "jellicent_xl",
-		"fastMove": "HEX",
-		"chargedMoves": ["ICE_BEAM","SHADOW_BALL"]
+		"fastMove": "BUBBLE",
+		"chargedMoves": ["BUBBLE_BEAM","SHADOW_BALL"]
 	},
 	{
 		"speciesId": "toxicroak",
@@ -82,6 +82,7 @@
 	},
 	{
 		"speciesId": "sirfetchd",
+		"chargedMoves": ["LEAF_BLADE", "BRAVE_BIRD"],
 		"weight": 6
 	},
 	{
