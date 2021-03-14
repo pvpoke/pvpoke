@@ -3315,6 +3315,26 @@
         "searchPriority": 6
     }, {
         "dex": 62,
+        "speciesName": "Poliwrath (XL)",
+        "speciesId": "poliwrath_xl",
+        "baseStats": {
+            "atk": 182,
+            "def": 184,
+            "hp": 207
+        },
+        "types": ["water", "fighting"],
+        "fastMoves": ["BUBBLE", "MUD_SHOT", "ROCK_SMASH"],
+        "chargedMoves": ["DYNAMIC_PUNCH", "HYDRO_PUMP", "ICE_PUNCH", "SUBMISSION", "POWER_UP_PUNCH"],
+        "defaultIVs": {
+            "cp500": [7.5, 5, 7, 6],
+            "cp1500": [21.5, 8, 11, 10],
+            "cp2500": [43.5, 1, 14, 14]
+        },
+        "level25CP": 1584,
+        "tags": ["shadoweligible", "xl"],
+        "eliteMoves": ["SUBMISSION"]
+    }, {
+        "dex": 62,
         "speciesName": "Poliwrath (Shadow)",
         "speciesId": "poliwrath_shadow",
         "baseStats": {
@@ -7858,6 +7878,24 @@
             "cp1500": [22, 7, 8, 12],
             "cp2500": [39, 15, 13, 15]
         }
+    }, {
+        "dex": 210,
+        "speciesName": "Granbull (XL)",
+        "speciesId": "granbull_xl",
+        "baseStats": {
+            "atk": 212,
+            "def": 131,
+            "hp": 207
+        },
+        "types": ["fairy", "none"],
+        "fastMoves": ["BITE", "SNARL", "CHARM"],
+        "chargedMoves": ["CLOSE_COMBAT", "CRUNCH", "PLAY_ROUGH"],
+        "defaultIVs": {
+            "cp500": [7.5, 5, 11, 8],
+            "cp1500": [22, 7, 8, 12],
+            "cp2500": [43.5, 1, 15, 14]
+        },
+		"tags": ["xl"]
     }, {
         "dex": 211,
         "speciesName": "Qwilfish",

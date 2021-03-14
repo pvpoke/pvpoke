@@ -212,6 +212,11 @@ require_once 'header.php'; ?>
 			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/catchmon.png"/>
 			<div class="supporter"><a href="https://twitter.com/CatchmonGo" target="_blank">CatchmonGo</a></div>
 		</div>
+		<div class="supporter-container">
+			<div class="space"></div>
+			<div class="supporter"><a href="https://twitter.com/DucksPool" target="_blank">KingDucksPool (KDP)</a></div>
+		</div>
+
 	</div>
 </div>
 
