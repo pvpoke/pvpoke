@@ -18474,8 +18474,8 @@
             "hp": 188
         },
         "types": ["electric", "flying"],
-        "fastMoves": ["ASTONISH", "THUNDER_SHOCK"],
-        "chargedMoves": ["CRUNCH", "THUNDER", "BRICK_BREAK", "THUNDER_PUNCH"],
+        "fastMoves": ["BITE", "VOLT_SWITCH"],
+        "chargedMoves": ["SLUDGE_WAVE","THUNDER","FOCUS_BLAST","THUNDERBOLT"],
         "defaultIVs": {
             "cp500": [5, 9, 15, 15],
             "cp1500": [15, 8, 11, 10],
