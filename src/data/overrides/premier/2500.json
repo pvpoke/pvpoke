@@ -7,22 +7,22 @@
 	{
 		"speciesId": "machamp_shadow",
 		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
-		"weight": 10
+		"weight": 9
 	},
 	{
 		"speciesId": "swampert",
-		"chargedMoves": ["HYDRO_CANNON", "SLUDGE_WAVE"],
-		"weight": 27
+		"chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"],
+		"weight": 28
 	},
 	{
 		"speciesId": "swampert_shadow",
-		"chargedMoves": ["HYDRO_CANNON", "SLUDGE_WAVE"],
+		"chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"],
 		"weight": 2
 	},
 	{
 		"speciesId": "obstagoon",
-		"chargedMoves": ["NIGHT_SLASH", "GUNK_SHOT"],
-		"weight": 7
+		"chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"],
+		"weight": 4
 	},
 	{
 		"speciesId": "probopass",
@@ -49,7 +49,7 @@
 	{
 		"speciesId": "toxicroak",
 		"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"],
-		"weight": 6
+		"weight": 4
 	},
 	{
 		"speciesId": "toxicroak_xl",
@@ -83,16 +83,16 @@
 	{
 		"speciesId": "sirfetchd",
 		"chargedMoves": ["LEAF_BLADE", "BRAVE_BIRD"],
-		"weight": 6
+		"weight": 4
 	},
 	{
 		"speciesId": "gallade",
-		"weight": 14
+		"weight": 10
 	},
 	{
 		"speciesId": "lapras",
 		"chargedMoves": ["SURF", "SKULL_BASH"],
-		"weight": 11
+		"weight": 6
 	},
 	{
 		"speciesId": "lapras_shadow",
@@ -139,6 +139,10 @@
 		"chargedMoves": ["TRI_ATTACK", "BLIZZARD"]
 	},
 	{
+		"speciesId": "lucario",
+		"chargedMoves": ["POWER_UP_PUNCH", "SHADOW_BALL"]
+	},
+	{
 		"speciesId": "bouffalant",
 		"chargedMoves": ["STOMP", "SKULL_BASH"]
 	},
@@ -160,8 +164,7 @@
 	},
 	{
 		"speciesId": "sceptile",
-		"chargedMoves": ["LEAF_BLADE", "EARTHQUAKE"],
-		"weight": 2
+		"chargedMoves": ["LEAF_BLADE", "EARTHQUAKE"]
 	},
 	{
 		"speciesId": "serperior",
@@ -216,8 +219,7 @@
 	{
 		"speciesId": "scizor",
 		"fastMove": "BULLET_PUNCH",
-		"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"],
-		"weight": 2
+		"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
 	},
 	{
 		"speciesId": "leavanny",
@@ -239,6 +241,22 @@
 	{
 		"speciesId": "blaziken",
 		"chargedMoves": ["BLAZE_KICK", "BLAST_BURN"]
+	},
+	{
+		"speciesId": "mantine",
+		"chargedMoves": ["BUBBLE_BEAM", "ICE_BEAM"]
+	},
+	{
+		"speciesId": "mantine_xl",
+		"chargedMoves": ["BUBBLE_BEAM", "ICE_BEAM"]
+	},
+	{
+		"speciesId": "electrode",
+		"chargedMoves": ["DISCHARGE", "HYPER_BEAM"]
+	},
+	{
+		"speciesId": "electrode_xl",
+		"chargedMoves": ["DISCHARGE", "HYPER_BEAM"]
 	},
 	{
 		"speciesId": "feraligatr",
@@ -265,40 +283,40 @@
 	{
 		"speciesId": "togekiss",
 		"fastMove": "CHARM",
-		"weight": 9
+		"weight": 8
 	},
 	{
 		"speciesId": "empoleon",
-		"weight": 20
+		"weight": 19
 	},
 	{
 		"speciesId": "muk_alolan",
 		"fastMove": "SNARL",
-		"weight": 7
+		"weight": 6
 	},
 	{
 		"speciesId": "drifblim",
-		"weight": 5
-	},
-	{
-		"speciesId": "clefable",
-		"weight": 5
-	},
-	{
-		"speciesId": "snorlax",
-		"weight": 11
-	},
-	{
-		"speciesId": "snorlax_shadow",
 		"weight": 3
 	},
 	{
+		"speciesId": "clefable",
+		"weight": 3
+	},
+	{
+		"speciesId": "snorlax",
+		"weight": 6
+	},
+	{
+		"speciesId": "snorlax_shadow",
+		"weight": 2
+	},
+	{
 		"speciesId": "venusaur",
-		"weight": 22
+		"weight": 27
 	},
 	{
 		"speciesId": "dragonite",
-		"weight": 10
+		"weight": 17
 	},
 	{
 		"speciesId": "dragonite_shadow",
@@ -306,20 +324,21 @@
 	},
 	{
 		"speciesId": "escavalier",
-		"weight": 8
+		"weight": 6
 	},
 	{
 		"speciesId": "gengar",
+		"chargedMoves": ["SHADOW_PUNCH", "SLUDGE_BOMB"],
 		"weight": 9
 	},
 	{
 		"speciesId": "charizard",
 		"fastMove": "FIRE_SPIN",
-		"weight": 14
+		"weight": 18
 	},
 	{
 		"speciesId": "talonflame_xl",
-		"weight": 7
+		"weight": 8
 	},
 	{
 		"speciesId": "charizard_shadow",
@@ -331,7 +350,7 @@
 	},
 	{
 		"speciesId": "gyarados",
-		"weight": 6
+		"weight": 7
 	},
 	{
 		"speciesId": "magnezone",
@@ -339,15 +358,15 @@
 	},
 	{
 		"speciesId": "abomasnow",
-		"weight": 12
+		"weight": 8
 	},
 	{
 		"speciesId": "kingdra",
-		"weight": 5
+		"weight": 10
 	},
 	{
 		"speciesId": "tangrowth",
-		"weight": 6
+		"weight": 3
 	},
 	{
 		"speciesId": "muk",
@@ -360,7 +379,7 @@
 	},
 	{
 		"speciesId": "skarmory_xl",
-		"weight": 4
+		"weight": 3
 	},
 	{
 		"speciesId": "galvantula_xl",
@@ -371,8 +390,12 @@
 		"weight": 4
 	},
 	{
-		"speciesId": "umbreon",
-		"weight": 3
+		"speciesId": "umbreon_xl",
+		"weight": 5
+	},
+	{
+		"speciesId": "roserade",
+		"weight": 4
 	},
 	{
 		"speciesId": "crustle_xl",

@@ -4692,6 +4692,25 @@
         },
         "eliteMoves": ["TACKLE"]
     }, {
+        "dex": 101,
+        "speciesName": "Electrode (XL)",
+        "speciesId": "electrode_xl",
+        "baseStats": {
+            "atk": 173,
+            "def": 173,
+            "hp": 155
+        },
+        "types": ["electric", "none"],
+        "fastMoves": ["SPARK", "TACKLE", "VOLT_SWITCH"],
+        "chargedMoves": ["DISCHARGE", "HYPER_BEAM", "THUNDERBOLT", "FOUL_PLAY"],
+        "defaultIVs": {
+            "cp500": [9, 6, 12, 9],
+            "cp1500": [26, 10, 13, 13],
+            "cp2500": [50, 15, 15, 15]
+        },
+		"tags": ["xl"],
+        "eliteMoves": ["TACKLE"]
+    }, {
         "dex": 102,
         "speciesName": "Exeggcute",
         "speciesId": "exeggcute",
@@ -8335,6 +8354,24 @@
         },
         "searchPriority": 13
     }, {
+        "dex": 226,
+        "speciesName": "Mantine (XL)",
+        "speciesId": "mantine_xl",
+        "baseStats": {
+            "atk": 148,
+            "def": 226,
+            "hp": 163
+        },
+        "types": ["water", "flying"],
+        "fastMoves": ["BUBBLE", "BULLET_SEED", "WING_ATTACK"],
+        "chargedMoves": ["AERIAL_ACE", "ICE_BEAM", "WATER_PULSE", "BUBBLE_BEAM"],
+        "defaultIVs": {
+            "cp500": [9, 6, 13, 9],
+            "cp1500": [27, 6, 9, 10],
+            "cp2500": [50, 15, 15, 15]
+        },
+		"tags": ["xl"]
+    }, {
         "dex": 227,
         "speciesName": "Skarmory",
         "speciesId": "skarmory",
@@ -9780,6 +9817,24 @@
             "cp1500": [26, 8, 13, 11],
             "cp2500": [40, 15, 15, 15]
         }
+    }, {
+        "dex": 279,
+        "speciesName": "Pelipper (XL)",
+        "speciesId": "pelipper_xl",
+        "baseStats": {
+            "atk": 175,
+            "def": 174,
+            "hp": 155
+        },
+        "types": ["water", "flying"],
+        "fastMoves": ["WATER_GUN", "WING_ATTACK"],
+        "chargedMoves": ["BLIZZARD", "HURRICANE", "HYDRO_PUMP", "WEATHER_BALL_WATER"],
+        "defaultIVs": {
+            "cp500": [9, 6, 13, 5],
+            "cp1500": [26, 8, 13, 11],
+            "cp2500": [50, 15, 15, 15]
+        },
+		"tags": ["xl"]
     }, {
         "dex": 280,
         "speciesName": "Ralts",
@@ -17972,6 +18027,24 @@
             "cp2500": [40, 15, 15, 15]
         },
         "searchPriority": 10
+    }, {
+        "dex": 618,
+        "speciesId": "stunfisk_xl",
+        "speciesName": "Stunfisk (XL)",
+        "baseStats": {
+            "atk": 144,
+            "def": 171,
+            "hp": 240
+        },
+        "types": ["ground", "electric"],
+        "fastMoves": ["THUNDER_SHOCK", "MUD_SHOT"],
+        "chargedMoves": ["MUD_BOMB", "DISCHARGE", "MUDDY_WATER"],
+        "defaultIVs": {
+            "cp500": [8.5, 10, 15, 10],
+            "cp1500": [26, 7, 15, 6],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "tags": ["xl"]
     }, {
         "dex": 618,
         "speciesName": "Stunfisk (Galarian XL)",
