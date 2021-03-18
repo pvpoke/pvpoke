@@ -395,8 +395,8 @@ function Pokemon(id, i, b){
 					}
 
                     if (calcCP <= targetCP) {
-                        let atk = cpm * (self.baseStats.atk + atkIV) * self.shadowAtkMult;
-                        let def = cpm * (self.baseStats.def + defIV) * self.shadowDefMult;
+                        let atk = cpm * (self.baseStats.atk + atkIV);
+                        let def = cpm * (self.baseStats.def + defIV);
                         let hp = Math.floor(cpm * (self.baseStats.hp + hpIV));
                         overall = (hp * atk * def);
 
@@ -469,8 +469,8 @@ function Pokemon(id, i, b){
 
 	this.calculateBreakpoints = function(defender){
 		var effectiveness = defender.typeEffectiveness[self.fastMove.type];
-		var minAttack = self.generateIVCombinations("atk", -1, 1)[0].atk;
-		var maxAttack = self.generateIVCombinations("atk", 1, 1)[0].atk;
+		var minAttack = self.generateIVCombinations("atk", -1, 1)[0].atk * self.shadowAtkMult;
+		var maxAttack = self.generateIVCombinations("atk", 1, 1)[0].atk * self.shadowAtkMult;
 		var maxDefense = defender.generateIVCombinations("def", 1, 1)[0].def;
 
 		var minDamage = battle.calculateDamageByStats(self, defender, minAttack, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
@@ -500,8 +500,8 @@ function Pokemon(id, i, b){
 
 	this.calculateBulkpoints = function(attacker){
 		var effectiveness = self.typeEffectiveness[attacker.fastMove.type];
-		var minDefense = self.generateIVCombinations("def", -1, 1)[0].def;
-		var maxDefense = self.generateIVCombinations("def", 1, 1)[0].def;
+		var minDefense = self.generateIVCombinations("def", -1, 1)[0].def * self.shadowDefMult;
+		var maxDefense = self.generateIVCombinations("def", 1, 1)[0].def * self.shadowDefMult;
 		var maxAttack = attacker.generateIVCombinations("atk", 1, 1)[0].atk * attacker.shadowAtkMult;
 		var minDamage = battle.calculateDamageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult, maxDefense, effectiveness, attacker.fastMove);
 		var maxDamage = battle.calculateDamageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult, minDefense, effectiveness, attacker.fastMove);
