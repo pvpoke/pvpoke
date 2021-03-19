@@ -1090,8 +1090,26 @@
             "cp1500": [19.5, 6, 8, 10],
             "cp2500": [35, 5, 13, 6]
         },
-        "eliteMoves": ["EMBER", "WING_ATTACK", "BLAST_BURN", "FLAMETHROWER", "DRAGON_BREATH"],
-        "searchPriority": 10
+        "eliteMoves": ["EMBER", "WING_ATTACK", "BLAST_BURN", "FLAMETHROWER", "DRAGON_BREATH"]
+    }, {
+        "dex": 6,
+        "speciesName": "Charizard (Shadow XL)",
+        "speciesId": "charizard_shadow",
+        "baseStats": {
+            "atk": 223,
+            "def": 173,
+            "hp": 186
+        },
+        "types": ["fire", "flying"],
+        "fastMoves": ["AIR_SLASH", "EMBER", "FIRE_SPIN", "WING_ATTACK", "DRAGON_BREATH"],
+        "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW", "FIRE_BLAST", "FLAMETHROWER", "OVERHEAT"],
+        "tags": ["starter", "shadow", "xl"],
+        "defaultIVs": {
+            "cp500": [6.5, 9, 9, 15],
+            "cp1500": [19.5, 6, 8, 10],
+            "cp2500": [35, 5, 13, 6]
+        },
+        "eliteMoves": ["EMBER", "WING_ATTACK", "BLAST_BURN", "FLAMETHROWER", "DRAGON_BREATH"]
     }, {
         "dex": 7,
         "speciesName": "Squirtle",
@@ -3606,6 +3624,25 @@
         "searchPriority": 5,
         "tags": ["shadow"]
     }, {
+        "dex": 68,
+        "speciesName": "Machamp (Shadow XL)",
+        "speciesId": "machamp_shadow_xl",
+        "baseStats": {
+            "atk": 234,
+            "def": 159,
+            "hp": 207
+        },
+        "types": ["fighting", "none"],
+        "fastMoves": ["BULLET_PUNCH", "COUNTER", "KARATE_CHOP"],
+        "chargedMoves": ["CLOSE_COMBAT", "CROSS_CHOP", "DYNAMIC_PUNCH", "HEAVY_SLAM", "ROCK_SLIDE", "STONE_EDGE", "SUBMISSION", "PAYBACK"],
+        "defaultIVs": {
+            "cp500": [6, 7, 15, 15],
+            "cp1500": [18, 6, 10, 15],
+            "cp2500": [30, 5, 12, 14]
+        },
+        "eliteMoves": ["KARATE_CHOP", "STONE_EDGE", "SUBMISSION", "PAYBACK"],
+        "tags": ["shadow", "xl"]
+    }, {
         "dex": 69,
         "speciesName": "Bellsprout",
         "speciesId": "bellsprout",
@@ -5636,6 +5673,25 @@
         "tags": ["shadow"],
         "eliteMoves": ["DRAGON_TAIL", "DRAGON_PULSE", "AQUA_TAIL"],
         "searchPriority": 4
+    },  {
+        "dex": 130,
+        "speciesName": "Gyarados (Shadow XL)",
+        "speciesId": "gyarados_shadow_xl",
+        "baseStats": {
+            "atk": 237,
+            "def": 186,
+            "hp": 216
+        },
+        "types": ["water", "flying"],
+        "fastMoves": ["BITE", "DRAGON_BREATH", "DRAGON_TAIL", "WATERFALL"],
+        "chargedMoves": ["CRUNCH", "DRAGON_PULSE", "HYDRO_PUMP", "OUTRAGE", "TWISTER", "AQUA_TAIL"],
+        "defaultIVs": {
+            "cp500": [5.5, 14, 10, 13],
+            "cp1500": [16, 10, 11, 13],
+            "cp2500": [27.5, 6, 7, 11]
+        },
+        "tags": ["shadow", "xl"],
+        "eliteMoves": ["DRAGON_TAIL", "DRAGON_PULSE", "AQUA_TAIL"]
     }, {
 	    "dex": 130,
 	    "speciesName": "Gyarados (Mega)",
@@ -6251,26 +6307,6 @@
         "tags": ["shadoweligible"],
         "eliteMoves": ["DRACO_METEOR", "DRAGON_PULSE"],
         "searchPriority": 10
-    }, {
-        "dex": 149,
-        "speciesName": "Dragonite (XL)",
-        "speciesId": "dragonite_xl",
-        "baseStats": {
-            "atk": 263,
-            "def": 198,
-            "hp": 209
-        },
-        "types": ["dragon", "flying"],
-        "fastMoves": ["DRAGON_BREATH", "DRAGON_TAIL", "STEEL_WING"],
-        "chargedMoves": ["DRACO_METEOR", "DRAGON_CLAW", "DRAGON_PULSE", "HURRICANE", "HYPER_BEAM", "OUTRAGE"],
-        "defaultIVs": {
-            "cp500": [5, 13, 14, 9],
-            "cp1500": [14.5, 7, 9, 12],
-            "cp2500": [24.5, 5, 8, 11]
-        },
-        "level25CP": 2386,
-        "tags": ["shadoweligible", "xl"],
-        "eliteMoves": ["DRACO_METEOR", "DRAGON_PULSE"]
     }, {
         "dex": 149,
         "speciesName": "Dragonite (Shadow)",
@@ -9319,6 +9355,26 @@
         "eliteMoves": ["HYDRO_CANNON"],
         "searchPriority": 31
     }, {
+        "dex": 260,
+        "speciesName": "Swampert (Shadow XL)",
+        "speciesId": "swampert_shadow_xl",
+        "baseStats": {
+            "atk": 208,
+            "def": 175,
+            "hp": 225
+        },
+        "types": ["water", "ground"],
+        "fastMoves": ["MUD_SHOT", "WATER_GUN"],
+        "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "SURF", "HYDRO_CANNON", "MUDDY_WATER"],
+        "tags": ["starter", "shadow", "xl"],
+        "defaultIVs": {
+            "cp500": [6.5, 5, 9, 9],
+            "cp1500": [19, 5, 7, 11],
+            "cp2500": [32, 6, 11, 14]
+        },
+        "eliteMoves": ["HYDRO_CANNON"],
+        "searchPriority": 31
+    }, {
         "dex": 261,
         "speciesName": "Poochyena",
         "speciesId": "poochyena",
@@ -11591,8 +11647,7 @@
             "cp500": [11.5, 8, 8, 14],
             "cp1500": [39.5, 6, 12, 12],
             "cp2500": [40, 15, 15, 15]
-        },
-        "searchPriority": 3
+        }
     }, {
         "dex": 351,
         "speciesName": "Castform (Rainy)",
@@ -14434,6 +14489,25 @@
         "tags": ["shadow"],
         "searchPriority": 4
     }, {
+        "dex": 462,
+        "speciesName": "Magnezone (Shadow XL)",
+        "speciesId": "magnezone_shadow_xl",
+        "baseStats": {
+            "atk": 238,
+            "def": 205,
+            "hp": 172
+        },
+        "types": ["electric", "steel"],
+        "fastMoves": ["CHARGE_BEAM", "SPARK"],
+        "chargedMoves": ["FLASH_CANNON", "WILD_CHARGE", "ZAP_CANNON", "MIRROR_SHOT"],
+        "defaultIVs": {
+            "cp500": [6, 5, 8, 12],
+            "cp1500": [17, 10, 15, 8],
+            "cp2500": [29, 5, 15, 6]
+        },
+        "tags": ["shadow"],
+        "searchPriority": 4
+    }, {
         "dex": 463,
         "speciesName": "Lickilicky",
         "speciesId": "lickilicky",
@@ -14773,6 +14847,26 @@
         "eliteMoves": ["ANCIENT_POWER"],
         "searchPriority": 2,
         "tags": ["shadow"]
+    }, {
+        "dex": 473,
+        "speciesName": "Mamoswine (Shadow XL)",
+        "speciesId": "mamoswine_shadow_xl",
+        "baseStats": {
+            "atk": 247,
+            "def": 146,
+            "hp": 242
+        },
+        "types": ["ice", "ground"],
+        "fastMoves": ["MUD_SLAP", "POWDER_SNOW"],
+        "chargedMoves": ["AVALANCHE", "BULLDOZE", "STONE_EDGE", "ANCIENT_POWER"],
+        "defaultIVs": {
+            "cp500": [5.5, 9, 15, 15],
+            "cp1500": [16, 11, 14, 15],
+            "cp2500": [27.5, 8, 15, 5]
+        },
+        "eliteMoves": ["ANCIENT_POWER"],
+        "searchPriority": 2,
+        "tags": ["shadow", "xl"]
     }, {
         "dex": 474,
         "speciesName": "Porygon-Z",
@@ -15158,24 +15252,6 @@
             "cp2500": [22.5, 5, 12, 14]
         },
         "searchPriority": 20
-    }, {
-        "dex": 483,
-        "speciesName": "Dialga (XL)",
-        "speciesId": "dialga_xl",
-        "baseStats": {
-            "atk": 275,
-            "def": 211,
-            "hp": 205
-        },
-        "types": ["steel", "dragon"],
-        "fastMoves": ["DRAGON_BREATH", "METAL_CLAW"],
-        "chargedMoves": ["DRACO_METEOR", "IRON_HEAD", "THUNDER"],
-        "tags": ["legendary", "xl"],
-        "defaultIVs": {
-            "cp500": [4.5, 13, 14, 12],
-            "cp1500": [13.5, 7, 14, 9],
-            "cp2500": [22.5, 5, 12, 14]
-        }
     }, {
         "dex": 484,
         "speciesName": "Palkia",
@@ -16342,6 +16418,24 @@
             "cp1500": [17, 5, 12, 12],
             "cp2500": [27.5, 11, 13, 15]
         }
+    }, {
+        "dex": 530,
+        "speciesId": "excadrill_xl",
+        "speciesName": "Excadrill (XL)",
+        "baseStats": {
+            "atk": 255,
+            "def": 129,
+            "hp": 242
+        },
+        "types": ["ground", "steel"],
+        "fastMoves": ["METAL_CLAW", "MUD_SLAP", "MUD_SHOT"],
+        "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE", "DRILL_RUN", "IRON_HEAD"],
+        "defaultIVs": {
+            "cp500": [6, 10, 7, 5],
+            "cp1500": [17, 5, 12, 12],
+            "cp2500": [27.5, 11, 13, 15]
+        },
+		"tags": ["xl"]
     }, {
         "dex": 531,
         "speciesId": "audino",
@@ -18539,6 +18633,24 @@
         "tags": ["legendary"]
     }, {
         "dex": 642,
+        "speciesId": "thundurus_incarnate_xl",
+        "speciesName": "Thundurus (Incarnate XL)",
+        "baseStats": {
+            "atk": 266,
+            "def": 164,
+            "hp": 188
+        },
+        "types": ["electric", "flying"],
+        "fastMoves": ["ASTONISH", "THUNDER_SHOCK"],
+        "chargedMoves": ["CRUNCH", "THUNDER", "BRICK_BREAK", "THUNDER_PUNCH"],
+        "defaultIVs": {
+            "cp500": [5.5, 12, 14, 14],
+            "cp1500": [16.5, 9, 13, 6],
+            "cp2500": [27, 7, 15, 12]
+        },
+        "tags": ["legendary", "xl"]
+    }, {
+        "dex": 642,
         "speciesId": "thundurus_therian",
         "speciesName": "Thundurus (Therian)",
         "baseStats": {
@@ -18555,6 +18667,24 @@
             "cp2500": [25, 5, 13, 11]
         },
         "tags": ["legendary"]
+    }, {
+        "dex": 642,
+        "speciesId": "thundurus_therian_xl",
+        "speciesName": "Thundurus (Therian XL)",
+        "baseStats": {
+            "atk": 295,
+            "def": 161,
+            "hp": 188
+        },
+        "types": ["electric", "flying"],
+        "fastMoves": ["BITE", "VOLT_SWITCH"],
+        "chargedMoves": ["SLUDGE_WAVE","THUNDER","FOCUS_BLAST","THUNDERBOLT"],
+        "defaultIVs": {
+            "cp500": [5, 9, 15, 15],
+            "cp1500": [15, 8, 11, 10],
+            "cp2500": [25, 5, 13, 11]
+        },
+        "tags": ["legendary", "xl"]
     }, {
         "dex": 643,
         "speciesId": "reshiram",
@@ -18684,24 +18814,6 @@
             "cp2500": [20, 7, 6, 13]
         },
         "tags": ["legendary"]
-    }, {
-        "dex": 646,
-        "speciesId": "kyurem_xl",
-        "speciesName": "Kyurem (XL)",
-        "baseStats": {
-            "atk": 246,
-            "def": 170,
-            "hp": 245
-        },
-        "types": ["dragon", "ice"],
-        "fastMoves": ["DRAGON_BREATH", "STEEL_WING"],
-        "chargedMoves": ["DRAGON_CLAW", "BLIZZARD", "DRACO_METEOR"],
-        "defaultIVs": {
-            "cp500": [5.5, 6, 5, 7],
-            "cp1500": [15.5, 7, 12, 6],
-            "cp2500": [25.5, 6, 15, 9]
-        },
-        "tags": ["legendary", "xl"]
     }, {
         "dex": 647,
         "speciesId": "keldeo_ordinary",

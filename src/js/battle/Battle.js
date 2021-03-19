@@ -8,7 +8,10 @@ function Battle(){
 	var pokemon = [null, null];
 	var players = [];
 	var cp = 1500;
-	var cup = {name: "all", include: [], exclude: []}; // List of allowed types
+	var cup = {name: "all", include: [], exclude: [{
+		filterType: "tag",
+		values: ["mega"]
+	}]}; // List of allowed types
 
 	var decisionLog = []; // For debugging
 	var debug = false;
