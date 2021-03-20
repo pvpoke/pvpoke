@@ -2227,11 +2227,22 @@ function Battle(){
 
 				if(mode == "emulate"){
 					var statNames = ["Attack","Defense"];
-					var statDescriptions = ["fell sharply","fell","","rose","rose sharply"];
 
 					for(var i = move.buffs.length-1; i >= 0; i--){
 						if(move.buffs[i] != 0){
-							turnMessages.push({ index: buffTarget.index, str: statNames[i] + " " + statDescriptions[move.buffs[i]+2] +"!"});
+							var statDescription = "";
+
+							if(move.buffs[i] < -1){
+								statDescription = "fell sharply";
+							} else if(move.buffs[i] == -1){
+								statDescription = "fell";
+							} else if(move.buffs[i] == 1){
+								statDescription = "rose";
+							} else if(move.buffs[i] > 1){
+								statDescription = "rose sharply";
+							}
+
+							turnMessages.push({ index: buffTarget.index, str: statNames[i] + " " + statDescription +"!"});
 						}
 					}
 				}
