@@ -732,6 +732,15 @@
             "filterType": "id",
             "values": ["dialga","palkia","giratina_altered","giratina_origin","charizard_mega_x","charizard_mega_y","blastoise_mega","gengar_mega","melmetal","kyogre","groudon","zekrom","reshiram","mewtwo","lugia","ho_oh","dragonite","gyarados_mega"]
         }]
+    }, {
+        "name": "slitzko",
+        "title": "Slitzko Memorial Cup",
+        "include": [{
+            "filterType": "id",
+            "values": ["lapras","steelix","blaziken","bastiodon","lucario","altaria","graveler_alolan","beedrill","vigoroth","forretress","noctowl","heracross","charizard","quagsire","mantine","qwilfish","hypno","mightyena","skuntank","raichu_alolan","toxicroak","skarmory","melmetal","kingdra","registeel","marshtomp","magneton","tropius","ninetales_alolan","houndoom","muk","arbok","absol","azumarill","toxicroak","muk_alolan","noctowl","venusaur","swampert","wigglytuff","golbat","sableye","probopass","scrafty","marowak_alolan","whiscash","shiftry","cloyster","bronzong","steelix","dusclops","drifblim","cresselia","medicham","abomasnow","stunfisk_galarian","ferrothorn","pelipper","dewgong","whimsicott","poliwrath","pidgeot","forretress","munchlax","zweilous","politoed","toxicroak","froslass","umbreon","gliscor","medicham_xl","azumarill_xl","sableye_xl","bastiodon_xl"]
+        }],
+        "exclude": [],
+		"link": "https://silph.gg/t/5wvm"
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xl"],
     "pokemonRegions": [{
