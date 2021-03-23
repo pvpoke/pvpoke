@@ -3,6 +3,7 @@
 	<option value="official" cup="premier">Premier Cup</option>
 	<option value="official" cup="retro">Retro Cup</option>
 	<option value="tsa-3" cup="vortex">Silph Vortex Cup</option>
+	<option value="tsa-3" cup="prismatic">Silph Prismatic Cup</option>
 	<option value="community" cup="ou">PoGoRaids Overused Tournament</option>
 	<option value="community" cup="slitzko">Slitzko Memorial Cup</option>
 
@@ -75,5 +76,6 @@
 	<option value="nightfall" cat="tsa-3">Nightfall Cup</option>
 	<option value="labyrinth" cat="tsa-3">Labyrinth Cup</option>
 	<option value="vortex" cat="tsa-3">Vortex Cup</option>
+	<option value="prismatic" cat="tsa-3">Prismatic Cup</option>
 	<option value="custom" cat="custom">Custom</option>
 </select>

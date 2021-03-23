@@ -87,6 +87,10 @@ var InterfaceMaster = (function () {
 					$(".league-select option[value=\"500\"]").prop("selected","selected");
 				}
 
+				if(cup == "prismatic"){
+					$(".continentals").show();
+				}
+
 				battle.setCup(cup);
 				battle.setCP(league);
 
