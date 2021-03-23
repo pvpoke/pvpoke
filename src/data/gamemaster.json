@@ -12742,6 +12742,25 @@
             "cp2500": [23.5, 9, 11, 14]
         }
     }, {
+        "dex": 384,
+        "speciesName": "Rayquaza (XL)",
+        "speciesId": "rayquaza_xl",
+        "baseStats": {
+            "atk": 284,
+            "def": 170,
+            "hp": 213
+        },
+        "types": ["dragon", "flying"],
+        "fastMoves": ["AIR_SLASH", "DRAGON_TAIL"],
+        "chargedMoves": ["AERIAL_ACE", "ANCIENT_POWER", "OUTRAGE", "HURRICANE"],
+        "eliteMoves": ["HURRICANE"],
+        "tags": ["legendary", "xl"],
+        "defaultIVs": {
+            "cp500": [5, 8, 15, 8],
+            "cp1500": [14.5, 6, 13, 5],
+            "cp2500": [23.5, 9, 11, 14]
+        }
+    }, {
         "dex": 385,
         "speciesName": "Jirachi",
         "speciesId": "jirachi",
