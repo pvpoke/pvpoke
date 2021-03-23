@@ -153,15 +153,15 @@ require_once 'header.php';
 
 	<div class="continentals hide">
 		<div class="flex">
-			<div class="check" value="0"><span></span>Cliff</div>
-			<div class="check" value="1"><span></span>Sierra</div>
-			<div class="check" value="2"><span></span>Arlo</div>
-			<div class="check" value="3"><span></span>Giovanni</div>
-			<div class="check" value="4"><span></span>James</div>
-			<div class="check" value="5"><span></span>Jessie</div>
+			<div class="check" value="0"><span></span>Blue</div>
+			<div class="check" value="1"><span></span>Red</div>
+			<div class="check" value="2"><span></span>Yellow + White</div>
+			<div class="check" value="3"><span></span>Green + Black</div>
+			<div class="check" value="4"><span></span>Brown + Pink</div>
+			<div class="check" value="5"><span></span>Purple + Gray</div>
 		</div>
 	</div>
-
+	
 	<div class="poke-search-container">
 		<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />
 		<a href="#" class="search-info">i</a>

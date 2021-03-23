@@ -73,7 +73,8 @@
 	},
 	{
 		"speciesId": "gligar",
-		"chargedMoves": ["NIGHT_SLASH", "DIG"]
+		"fastMove": "WING_ATTACK",
+		"chargedMoves": ["NIGHT_SLASH", "RETURN"]
 	},
 	{
 		"speciesId": "scolipede",
@@ -90,6 +91,7 @@
 	},
 	{
 		"speciesId": "gligar_shadow",
+		"fastMove": "WING_ATTACK",
 		"chargedMoves": ["NIGHT_SLASH", "DIG"]
 	},
 	{
@@ -219,12 +221,12 @@
 	},
 	{
 		"speciesId": "gliscor",
-		"fastMove": "FURY_CUTTER",
+		"fastMove": "WING_ATTACK",
 		"chargedMoves": ["EARTHQUAKE", "NIGHT_SLASH"]
 	},
 	{
 		"speciesId": "gliscor_shadow",
-		"fastMove": "FURY_CUTTER",
+		"fastMove": "WING_ATTACK",
 		"chargedMoves": ["EARTHQUAKE", "NIGHT_SLASH"]
 	},
 	{
@@ -250,6 +252,14 @@
 		"speciesId": "lapras_shadow",
 		"fastMove": "ICE_SHARD",
 		"chargedMoves": ["SURF", "SKULL_BASH"]
+	},
+	{
+		"speciesId": "servine",
+		"chargedMoves": ["GRASS_KNOT", "WRAP"]
+	},
+	{
+		"speciesId": "servine_xl",
+		"chargedMoves": ["GRASS_KNOT", "WRAP"]
 	},
 	{
 		"speciesId": "vespiquen",

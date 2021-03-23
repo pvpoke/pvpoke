@@ -5343,6 +5343,25 @@
         },
         "eliteMoves": ["POISON_JAB", "ICY_WIND", "DRILL_RUN"]
     }, {
+        "dex": 119,
+        "speciesName": "Seaking (XL)",
+        "speciesId": "seaking_xl",
+        "baseStats": {
+            "atk": 175,
+            "def": 147,
+            "hp": 190
+        },
+        "types": ["water", "none"],
+        "fastMoves": ["PECK", "POISON_JAB", "WATERFALL"],
+        "chargedMoves": ["DRILL_RUN", "ICE_BEAM", "ICY_WIND", "MEGAHORN", "WATER_PULSE"],
+        "defaultIVs": {
+            "cp500": [8.5, 10, 14, 10],
+            "cp1500": [26, 7, 7, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "eliteMoves": ["POISON_JAB", "ICY_WIND", "DRILL_RUN"],
+		"tags": ["xl"]
+    }, {
         "dex": 120,
         "speciesName": "Staryu",
         "speciesId": "staryu",
@@ -6828,6 +6847,24 @@
             "cp2500": [40, 15, 15, 15]
         },
         "searchPriority": 3
+    }, {
+        "dex": 171,
+        "speciesName": "Lanturn (XL)",
+        "speciesId": "lanturn_xl",
+        "baseStats": {
+            "atk": 146,
+            "def": 137,
+            "hp": 268
+        },
+        "types": ["water", "electric"],
+        "fastMoves": ["CHARGE_BEAM", "WATER_GUN", "SPARK"],
+        "chargedMoves": ["HYDRO_PUMP", "THUNDER", "THUNDERBOLT"],
+        "defaultIVs": {
+            "cp500": [9, 7, 12, 10],
+            "cp1500": [27, 5, 14, 9],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "tags": ["xl"]
     }, {
         "dex": 172,
         "speciesName": "Pichu",
@@ -11680,6 +11717,24 @@
         }
     }, {
         "dex": 351,
+        "speciesName": "Castform (XL)",
+        "speciesId": "castform_xl",
+        "baseStats": {
+            "atk": 139,
+            "def": 139,
+            "hp": 172
+        },
+        "types": ["normal", "none"],
+        "fastMoves": ["HEX", "TACKLE"],
+        "chargedMoves": ["ENERGY_BALL", "HURRICANE", "WEATHER_BALL_ROCK"],
+        "defaultIVs": {
+            "cp500": [11.5, 8, 8, 14],
+            "cp1500": [41.5, 0, 14, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+		"tags": ["xl"]
+    }, {
+        "dex": 351,
         "speciesName": "Castform (Rainy)",
         "speciesId": "castform_rainy",
         "baseStats": {
@@ -11696,6 +11751,24 @@
             "cp2500": [40, 15, 15, 15]
         },
 		"searchPriority": 2
+    }, {
+        "dex": 351,
+        "speciesName": "Castform (Rainy XL)",
+        "speciesId": "castform_rainy_xl",
+        "baseStats": {
+            "atk": 139,
+            "def": 139,
+            "hp": 172
+        },
+        "types": ["water", "none"],
+        "fastMoves": ["TACKLE", "WATER_GUN"],
+        "chargedMoves": ["HYDRO_PUMP", "THUNDER", "WEATHER_BALL_WATER"],
+        "defaultIVs": {
+            "cp500": [11.5, 8, 8, 14],
+			"cp1500": [41.5, 0, 14, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+		"tags": ["xl"]
     }, {
         "dex": 351,
         "speciesName": "Castform (Snowy)",
@@ -11715,6 +11788,24 @@
         }
     }, {
         "dex": 351,
+        "speciesName": "Castform (Snowy XL)",
+        "speciesId": "castform_snowy_xl",
+        "baseStats": {
+            "atk": 139,
+            "def": 139,
+            "hp": 172
+        },
+        "types": ["ice", "none"],
+        "fastMoves": ["POWDER_SNOW", "TACKLE"],
+        "chargedMoves": ["BLIZZARD", "ICE_BEAM", "WEATHER_BALL_ICE"],
+        "defaultIVs": {
+			"cp500": [11.5, 8, 8, 14],
+			"cp1500": [41.5, 0, 14, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+		"tags": ["xl"]
+    }, {
+        "dex": 351,
         "speciesName": "Castform (Sunny)",
         "speciesId": "castform_sunny",
         "baseStats": {
@@ -11730,6 +11821,24 @@
             "cp1500": [39.5, 6, 12, 12],
             "cp2500": [40, 15, 15, 15]
         }
+    }, {
+        "dex": 351,
+        "speciesName": "Castform (Sunny XL)",
+        "speciesId": "castform_sunny_xl",
+        "baseStats": {
+            "atk": 139,
+            "def": 139,
+            "hp": 172
+        },
+        "types": ["fire", "none"],
+        "fastMoves": ["EMBER", "TACKLE"],
+        "chargedMoves": ["FIRE_BLAST", "SOLAR_BEAM", "WEATHER_BALL_FIRE"],
+        "defaultIVs": {
+			"cp500": [11.5, 8, 8, 14],
+			"cp1500": [41.5, 0, 14, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+		"tags": ["xl"]
     }, {
         "dex": 352,
         "speciesName": "Kecleon",
@@ -15840,6 +15949,25 @@
             "cp2500": [40, 15, 15, 15]
         }
     }, {
+        "dex": 496,
+        "speciesId": "servine_xl",
+        "speciesName": "Servine (XL)",
+        "baseStats": {
+            "atk": 122,
+            "def": 152,
+            "hp": 155
+        },
+        "types": ["grass", "none"],
+        "fastMoves": ["IRON_TAIL", "VINE_WHIP"],
+        "chargedMoves": ["GRASS_KNOT", "LEAF_TORNADO", "WRAP"],
+        "tags": ["starter"],
+        "defaultIVs": {
+            "cp500": [13.5, 6, 6, 11],
+            "cp1500": [49.5, 5, 15, 14],
+            "cp2500": [50, 15, 15, 15]
+        },
+		"tags": ["xl"]
+    }, {
         "dex": 497,
         "speciesId": "serperior",
         "speciesName": "Serperior",
@@ -19242,6 +19370,24 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         }
+    }, {
+        "dex": 662,
+        "speciesName": "Fletchinder (XL)",
+        "speciesId": "fletchinder_xl",
+        "baseStats": {
+            "atk": 145,
+            "def": 110,
+            "hp": 158
+        },
+        "types": ["fire", "flying"],
+        "fastMoves": ["PECK", "EMBER", "STEEL_WING"],
+        "chargedMoves": ["AERIAL_ACE", "HEAT_WAVE", "FLAME_CHARGE"],
+        "defaultIVs": {
+            "cp500": [12.5, 10, 11, 15],
+            "cp1500": [49.5, 1, 14, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+		"tags": ["xl"]
     }, {
         "dex": 663,
         "speciesName": "Talonflame",
