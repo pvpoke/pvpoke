@@ -233,6 +233,19 @@ var InterfaceMaster = (function () {
 
 					$(".section.white > .rankings-container").append($el);
 
+					// For Prismatic Cup, show color category
+
+					if(cup == "prismatic"){
+						var slots = battle.getCup().slots;
+
+						for(var n = 0; n < slots.length; n++){
+							if(slots[n].pokemon.indexOf(pokemon.speciesId) > -1){
+								$el.find(".moves").prepend("<b>Slot " + (n+1) + ".</b>&nbsp;");
+								break;
+							}
+						}
+					}
+
 					var chargedMove2Name = '';
 
 					if(pokemon.chargedMoves.length > 1){

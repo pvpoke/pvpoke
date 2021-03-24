@@ -9,5 +9,6 @@
 	<option value="1500" cup="prismatic">Silph Prismatic Cup</option>
 	<option value="10000" cup="ou">PoGoRaids Overused Tournament</option>
 	<option value="1500" cup="slitzko">Slitzko Memorial Cup</option>
+	<option value="1500" cup="kanto">Nexus League Kanto Cup</option>
 	<option value="1500" cup="custom">Custom</option>
 </select>

@@ -6,6 +6,7 @@
 	<option value="tsa-3" cup="prismatic">Silph Prismatic Cup</option>
 	<option value="community" cup="ou">PoGoRaids Overused Tournament</option>
 	<option value="community" cup="slitzko">Slitzko Memorial Cup</option>
+	<option value="official" cup="kanto">Nexus League Kanto Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>
