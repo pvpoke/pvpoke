@@ -75,13 +75,13 @@
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["SHADOW_BALL", "SHADOW_PUNCH"]
 }, {
+    "speciesId": "haunter",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["SHADOW_BALL", "SHADOW_PUNCH"]
+}, {
     "speciesId": "froslass",
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
-}, {
-    "speciesId": "zapdos",
-    "fastMove": "THUNDER_SHOCK",
-    "chargedMoves": ["DRILL_PECK", "THUNDERBOLT"]
 }, {
     "speciesId": "talonflame",
     "fastMove": "INCINERATE",
@@ -103,14 +103,6 @@
     "fastMove": "CONFUSION",
     "chargedMoves": ["PSYSHOCK", "BULLDOZE"]
 }, {
-    "speciesId": "tangrowth",
-    "fastMove": "VINE_WHIP",
-    "chargedMoves": ["POWER_WHIP", "ROCK_SLIDE"]
-}, {
-    "speciesId": "magnezone",
-    "fastMove": "SPARK",
-    "chargedMoves": ["WILD_CHARGE", "MIRROR_SHOT"]
-}, {
     "speciesId": "kingdra",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["OUTRAGE", "OCTAZOOKA"]
@@ -130,4 +122,24 @@
     "speciesId": "flygon",
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["DRAGON_CLAW", "STONE_EDGE"]
+}, {
+    "speciesId": "whimsicott",
+    "fastMove": "CHARM",
+    "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
+}, {
+    "speciesId": "raichu_alolan",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["WILD_CHARGE", "THUNDER_PUNCH"]
+}, {
+    "speciesId": "golem_alolan",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["ROCK_BLAST", "STONE_EDGE"]
+}, {
+    "speciesId": "gliscor",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"]
+}, {
+    "speciesId": "tangrowth",
+    "fastMove": "VINE_WHIP",
+    "chargedMoves": ["ROCK_SLIDE", "POWER_WHIP"]
 }]

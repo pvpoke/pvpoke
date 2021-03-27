@@ -424,6 +424,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if(cup.name == "prismatic"){
+					iterations = 1;
+				}
+
 				if(cup.name == "kanto"){
 					iterations = 1;
 				}
