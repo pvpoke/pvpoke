@@ -18820,8 +18820,8 @@
             "hp": 188
         },
         "types": ["flying", "none"],
-        "fastMoves": ["BITE", "AIR_SLASH"],
-        "chargedMoves": ["GRASS_KNOT", "DARK_PULSE", "HYPER_BEAM", "HURRICANE"],
+        "fastMoves": ["ASTONISH", "GUST"],
+        "chargedMoves": ["HEAT_WAVE", "PSYCHIC", "FOCUS_BLAST", "HURRICANE"],
         "defaultIVs": {
             "cp500": [6, 5, 7, 13],
             "cp1500": [16.5, 13, 15, 14],
