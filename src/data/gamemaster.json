@@ -1125,7 +1125,7 @@
     }, {
         "dex": 6,
         "speciesName": "Charizard (Shadow XL)",
-        "speciesId": "charizard_shadow",
+        "speciesId": "charizard_shadow_xl",
         "baseStats": {
             "atk": 223,
             "def": 173,
@@ -2422,7 +2422,8 @@
             "cp500": [8, 11, 9, 14],
             "cp1500": [23.5, 9, 15, 14],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"searchPriority": 2
     }, {
         "dex": 38,
         "speciesName": "Ninetales (Alolan XL)",
@@ -5235,6 +5236,25 @@
             "cp1500": [40, 15, 15, 15],
             "cp2500": [40, 15, 15, 15]
         }
+    }, {
+        "dex": 113,
+        "speciesName": "Chansey (XL)",
+        "speciesId": "chansey_xl",
+        "baseStats": {
+            "atk": 60,
+            "def": 128,
+            "hp": 487
+        },
+        "types": ["normal", "none"],
+        "fastMoves": ["POUND", "ZEN_HEADBUTT"],
+        "chargedMoves": ["DAZZLING_GLEAM", "HYPER_BEAM", "PSYBEAM", "PSYCHIC"],
+        "legacyMoves": ["PSYBEAM"],
+        "defaultIVs": {
+            "cp500": [15.5, 7, 15, 15],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+		"tags": ["xl","evil"]
     }, {
         "dex": 114,
         "speciesName": "Tangela",
@@ -13323,6 +13343,25 @@
 		"eliteMoves": ["BULLET_SEED", "WEATHER_BALL_FIRE"],
 		"searchPriority": 3
     }, {
+        "dex": 407,
+        "speciesName": "Roserade (XL)",
+        "speciesId": "roserade_xl",
+        "baseStats": {
+            "atk": 243,
+            "def": 185,
+            "hp": 155
+        },
+        "types": ["grass", "poison"],
+        "fastMoves": ["POISON_JAB", "RAZOR_LEAF", "BULLET_SEED"],
+        "chargedMoves": ["DAZZLING_GLEAM", "GRASS_KNOT", "SLUDGE_BOMB", "SOLAR_BEAM", "WEATHER_BALL_FIRE"],
+        "defaultIVs": {
+            "cp500": [6.5, 6, 10, 8],
+            "cp1500": [18.5, 10, 6, 14],
+            "cp2500": [31, 7, 15, 13]
+        },
+		"eliteMoves": ["BULLET_SEED", "WEATHER_BALL_FIRE"],
+		"tags": ["xl"]
+    }, {
         "dex": 408,
         "speciesName": "Cranidos",
         "speciesId": "cranidos",
@@ -14701,7 +14740,7 @@
             "cp1500": [17, 10, 15, 8],
             "cp2500": [29, 5, 15, 6]
         },
-        "tags": ["shadow"],
+        "tags": ["shadow", "xl"],
         "searchPriority": 4
     }, {
         "dex": 463,
@@ -18828,6 +18867,24 @@
             "cp2500": [28.5, 7, 13, 10]
         },
         "tags": ["legendary"]
+    }, {
+        "dex": 641,
+        "speciesId": "tornadus_therian_xl",
+        "speciesName": "Tornadus (Therian XL)",
+        "baseStats": {
+            "atk": 238,
+            "def": 189,
+            "hp": 188
+        },
+        "types": ["flying", "none"],
+        "fastMoves": ["ASTONISH", "GUST"],
+        "chargedMoves": ["HEAT_WAVE", "PSYCHIC", "FOCUS_BLAST", "HURRICANE"],
+        "defaultIVs": {
+            "cp500": [6, 5, 7, 13],
+            "cp1500": [16.5, 13, 15, 14],
+            "cp2500": [28.5, 7, 13, 10]
+        },
+        "tags": ["legendary", "xl"]
     }, {
         "dex": 642,
         "speciesId": "thundurus_incarnate",
