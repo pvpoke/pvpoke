@@ -34,11 +34,10 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.20.12 (March 4, 2021)</h4>
+	<h4>v1.20.15 (March 30, 2021)</h4>
 	<ul>
-		<li>Health bars on the Battle page change colors with HP.</li>
-		<li>Fixed issues with Shadow Pokemon not being excluded properly in custom rankings.</li>
-		<li>Mega Evolutions now appear in Team Builder results when they're eligible (OU).</li>
+		<li>A switch timer setting is now available in Training Battles to test your teams in battles with a 30 second switch timer.</li>
+		<li>An additional icon now shows when the 30 second switch timer expires in simulations.</li>
 	</ul>
 
 	<h3>Latest Article</h3>

@@ -91,6 +91,12 @@ function Player(i, ai, b){
 		return switchTimer;
 	}
 
+	// Set the duration of the switch clock
+
+	this.setSwitchTime = function(val){
+		switchTime = val;
+	}
+
 	// Set the switch timer to its maximum value
 
 	this.startSwitchTimer = function(){

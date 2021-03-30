@@ -45,6 +45,7 @@ function Battle(){
 	var mainLoopInterval;
 	var isPaused = false; // A flag for whether or not to pause the battle
 	var sixtySecondMarked = false; // Flag for if the 60 second marker has been displayed yet in the timeline
+	var thirtySecondMarked = false; // Flag for if the 60 second marker has been displayed yet in the timeline
 
 	var roundChargedMoveUsed;
 	var roundChargedMovesInitiated; // used in decision making
@@ -420,6 +421,7 @@ function Battle(){
 		queuedActions = [];
 		turnActions = [];
 		sixtySecondMarked = false;
+		thirtySecondMarked = false;
 	}
 
 	// Process a turn
@@ -694,6 +696,11 @@ function Battle(){
 		if((mode == "simulate")&&(time >= 60000)&&(! sixtySecondMarked)){
 			timeline.push(new TimelineEvent("switchAvailable", "Switch Available (60 seconds)", 0, time, turns));
 			sixtySecondMarked = true;
+		}
+
+		if((mode == "simulate")&&(time >= 30000)&&(! thirtySecondMarked)){
+			timeline.push(new TimelineEvent("switchAvailable", "Switch Available (30 seconds)", 0, time, turns));
+			thirtySecondMarked = true;
 		}
 
 		// Check for faint

@@ -53,6 +53,11 @@ require_once '../header.php';
 				<option value="2">Elite</option>
 				<option value="3" selected>Champion</option>
 			</select>
+			<h3 class="section-title">Switch Timer</h3>
+			<select class="switch-time-select">
+				<option value="30000">30s</option>
+				<option value="60000" selected>60s</option>
+			</select>
 			<div class="check autotap-toggle"><span></span>Autotap</div>
 			<h3 class="section-title">Team Selection</h3>
 			<select class="team-method-select">
@@ -132,9 +137,9 @@ require_once '../header.php';
 <div class="section white updates">
 	<h3>What's New</h3>
 
-	<h4>v1.20.4 (December 24, 2020)</h4>
+	<h4>v1.20.15 (April 30, 2021)</h4>
 	<ul>
-		<li>Updated the Training Battle interface to use the same switch sidebar as the game.</li>
+		<li>A switch timer setting is now available to test your teams in battles with a 30 second switch timer.</li>
 	</ul>
 </div>
 
