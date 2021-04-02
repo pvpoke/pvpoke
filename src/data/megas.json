@@ -552,23 +552,6 @@
         "cp2500": [18, 7, 7, 15]
     }
 }, {
-    "dex": 428,
-    "speciesName": "Lopunny (Mega)",
-    "speciesId": "lopunny_mega",
-    "baseStats": {
-        "atk": 282,
-        "def": 214,
-        "hp": 163
-    },
-    "types": ["normal", "fighting"],
-    "fastMoves": ["LOW_KICK", "POUND"],
-    "chargedMoves": ["FIRE_PUNCH", "FOCUS_BLAST", "HYPER_BEAM"],
-    "defaultIVs": {
-        "cp1500": [14.5, 7, 15, 11],
-        "cp2500": [24, 5, 14, 15]
-    },
-    "tags": ["mega"]
-}, {
     "dex": 445,
     "speciesName": "Garchomp (Mega)",
     "speciesId": "garchomp_mega",

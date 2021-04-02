@@ -13898,6 +13898,23 @@
             "cp2500": [40, 15, 15, 15]
         }
     }, {
+	    "dex": 428,
+	    "speciesName": "Lopunny (Mega)",
+	    "speciesId": "lopunny_mega",
+	    "baseStats": {
+	        "atk": 282,
+	        "def": 214,
+	        "hp": 163
+	    },
+	    "types": ["normal", "fighting"],
+	    "fastMoves": ["LOW_KICK", "POUND"],
+	    "chargedMoves": ["FIRE_PUNCH", "FOCUS_BLAST", "HYPER_BEAM"],
+	    "defaultIVs": {
+	        "cp1500": [14.5, 7, 15, 11],
+	        "cp2500": [24, 5, 14, 15]
+	    },
+	    "tags": ["mega"]
+	}, {
         "dex": 429,
         "speciesName": "Mismagius",
         "speciesId": "mismagius",
