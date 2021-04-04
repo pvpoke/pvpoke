@@ -4800,6 +4800,25 @@
         "tags": ["shadoweligible"]
     }, {
         "dex": 102,
+        "speciesName": "Exeggcute (XL)",
+        "speciesId": "exeggcute_xl",
+        "baseStats": {
+            "atk": 107,
+            "def": 125,
+            "hp": 155
+        },
+        "types": ["grass", "psychic"],
+        "fastMoves": ["BULLET_SEED", "CONFUSION"],
+        "chargedMoves": ["ANCIENT_POWER", "PSYCHIC", "SEED_BOMB"],
+        "defaultIVs": {
+            "cp500": [16, 5, 15, 14],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "level25CP": 664,
+        "tags": ["shadoweligible", "xl"]
+    }, {
+        "dex": 102,
         "speciesName": "Exeggcute (Shadow)",
         "speciesId": "exeggcute_shadow",
         "baseStats": {
@@ -4816,6 +4835,24 @@
             "cp2500": [40, 15, 15, 15]
         },
         "tags": ["shadow"]
+    }, {
+        "dex": 102,
+        "speciesName": "Exeggcute (Shadow XL)",
+        "speciesId": "exeggcute_shadow_xl",
+        "baseStats": {
+            "atk": 107,
+            "def": 125,
+            "hp": 155
+        },
+        "types": ["grass", "psychic"],
+        "fastMoves": ["BULLET_SEED", "CONFUSION"],
+        "chargedMoves": ["ANCIENT_POWER", "PSYCHIC", "SEED_BOMB"],
+        "defaultIVs": {
+            "cp500": [16, 5, 15, 14],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "tags": ["shadow", "xl"]
     }, {
         "dex": 103,
         "speciesName": "Exeggutor",
