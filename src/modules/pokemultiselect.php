@@ -23,6 +23,7 @@
 				<option value="master" type="master" class="hide multi-battle">Master League Meta</option>
 				<option value="premierultra" type="ultra" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="premier" type="master" class="hide multi-battle">Premier Cup Meta</option>
+				<option value="remix" type="great" class="multi-battle">Remix</option>
 				<option value="retro" type="great" class="multi-battle">Retro Cup Meta</option>
 				<option value="kanto" type="great" class="multi-battle">Kanto Cup Meta</option>
 				<option value="prismatic" type="great" class="multi-battle">Silph Prismatic Cup Meta</option>

@@ -1,11 +1,10 @@
 <select class="format-select">
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
+	<option value="official" cup="remix">Remix</option>
 	<option value="official" cup="retro">Retro Cup</option>
-	<option value="tsa-3" cup="vortex">Silph Vortex Cup</option>
 	<option value="tsa-3" cup="prismatic">Silph Prismatic Cup</option>
 	<option value="community" cup="ou">PoGoRaids Overused Tournament</option>
-	<option value="community" cup="slitzko">Slitzko Memorial Cup</option>
 	<option value="official" cup="kanto">Nexus League Kanto Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
@@ -27,6 +26,7 @@
 	<option value="kanto" cat="official">Kanto Cup</option>
 	<option value="love" cat="official">Love Cup</option>
 	<option value="retro" cat="official">Retro Cup</option>
+	<option value="remix" cat="official">Great League Remix</option>
 	<option value="little" cat="official">Little Cup</option>
 	<option value="holiday" cat="official">Holiday Cup</option>
 	<option value="classic" cat="official">Classic (ML Only)</option>
