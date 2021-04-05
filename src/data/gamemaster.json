@@ -16156,7 +16156,8 @@
         },
         "types": ["grass", "none"],
         "fastMoves": ["IRON_TAIL", "VINE_WHIP"],
-        "chargedMoves": ["GRASS_KNOT", "LEAF_TORNADO", "AERIAL_ACE"],
+        "chargedMoves": ["GRASS_KNOT", "LEAF_TORNADO", "AERIAL_ACE", "FRENZY_PLANT"],
+		"eliteMoves": ["FRENZY_PLANT"],
         "tags": ["starter"],
         "defaultIVs": {
             "cp500": [8, 10, 13, 14],
@@ -16174,7 +16175,8 @@
         },
         "types": ["grass", "none"],
         "fastMoves": ["IRON_TAIL", "VINE_WHIP"],
-        "chargedMoves": ["GRASS_KNOT", "LEAF_TORNADO", "AERIAL_ACE"],
+		"chargedMoves": ["GRASS_KNOT", "LEAF_TORNADO", "AERIAL_ACE", "FRENZY_PLANT"],
+		"eliteMoves": ["FRENZY_PLANT"],
         "tags": ["starter", "xl"],
         "defaultIVs": {
             "cp500": [8, 10, 13, 14],
@@ -20142,6 +20144,24 @@
             "cp1500": [23.5, 5, 7, 15],
             "cp2500": [40, 15, 15, 15]
         }
+    }, {
+        "dex": 691,
+        "speciesName": "Dragalge (XL)",
+        "speciesId": "dragalge_xl",
+        "baseStats": {
+            "atk": 177,
+            "def": 207,
+            "hp": 163
+        },
+        "types": ["poison", "dragon"],
+        "fastMoves": ["WATER_GUN", "ACID", "DRAGON_TAIL"],
+        "chargedMoves": ["HYDRO_PUMP", "AQUA_TAIL", "OUTRAGE", "GUNK_SHOT"],
+        "defaultIVs": {
+            "cp500": [8, 6, 14, 6],
+            "cp1500": [23.5, 5, 7, 15],
+            "cp2500": [49.5, 2, 15, 15]
+        },
+		"tags": ["xl"]
     }, {
         "dex": 692,
         "speciesName": "Clauncher",

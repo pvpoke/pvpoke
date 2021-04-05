@@ -136,6 +136,14 @@
 		"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
 	},
 	{
+		"speciesId": "dragalge",
+		"chargedMoves": ["AQUA_TAIL", "GUNK_SHOT"]
+	},
+	{
+		"speciesId": "clawitzer",
+		"chargedMoves": ["CRABHAMMER", "ICE_BEAM"]
+	},
+	{
 		"speciesId": "alakazam",
 		"chargedMoves": ["FIRE_PUNCH", "SHADOW_BALL"]
 	},
@@ -746,7 +754,7 @@
 	},
 	{
 		"speciesId": "serperior",
-		"chargedMoves": ["GRASS_KNOT", "AERIAL_ACE"]
+		"chargedMoves": ["FRENZY_PLANT", "AERIAL_ACE"]
 	},
 	{
 		"speciesId": "exeggutor_alolan",
