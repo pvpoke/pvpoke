@@ -20552,17 +20552,17 @@
         "speciesName": "Yveltal",
         "speciesId": "yveltal",
         "baseStats": {
-            "atk": 250,
-            "def": 185,
-            "hp": 246
+			"atk": 275,
+            "def": 203,
+            "hp": 270
         },
         "types": ["dark", "flying"],
         "fastMoves": ["SUCKER_PUNCH", "SNARL", "GUST"],
         "chargedMoves": ["DARK_PULSE", "HURRICANE", "FOCUS_BLAST", "HYPER_BEAM", "PSYCHIC"],
         "defaultIVs": {
-            "cp500": [5, 13, 13, 9],
-            "cp1500": [14.5, 8, 11, 11],
-            "cp2500": [24, 5, 14, 13]
+			"cp500": [4, 10, 15, 12],
+            "cp1500": [12, 5, 13, 15],
+            "cp2500": [20, 10, 10, 13]
         }
     }, {
         "dex": 718,
