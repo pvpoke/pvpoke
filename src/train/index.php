@@ -54,7 +54,7 @@ require_once '../header.php';
 				<option value="3" selected>Champion</option>
 			</select>
 			<h3 class="section-title">Switch Timer</h3>
-			<select class="switch-time-select">
+			<select class="switch-time-select hide">
 				<option value="30000">30s</option>
 				<option value="60000" selected>60s</option>
 			</select>
