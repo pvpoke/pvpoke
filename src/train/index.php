@@ -40,7 +40,7 @@ require_once '../header.php';
 				<option value="10000 gobattleleague">GO Battle League (Master)</option>
 				<option value="2500 premier">Premier Cup (Ultra)</option>
 				<option value="1500 retro">Retro Cup</option>
-				<option value="1500 vortex">Silph Vortex Cup</option>
+				<option value="1500 remix">Remix</option>
 				<option value="1500 prismatic">Silph Prismatic Cup</option>
 				<option value="1500 all">Great League</option>
 				<option value="2500 all">Ultra League</option>
@@ -54,7 +54,7 @@ require_once '../header.php';
 				<option value="3" selected>Champion</option>
 			</select>
 			<h3 class="section-title">Switch Timer</h3>
-			<select class="switch-time-select hide">
+			<select class="switch-time-select" style="display:none;">
 				<option value="30000">30s</option>
 				<option value="60000" selected>60s</option>
 			</select>
@@ -137,9 +137,9 @@ require_once '../header.php';
 <div class="section white updates">
 	<h3>What's New</h3>
 
-	<h4>v1.20.15 (April 30, 2021)</h4>
+	<h4>v1.20.15 (April 7, 2021)</h4>
 	<ul>
-		<li>A switch timer setting is now available to test your teams in battles with a 30 second switch timer.</li>
+		<li>Training for Great League Remix is now available.</li>
 	</ul>
 </div>
 
