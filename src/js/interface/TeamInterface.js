@@ -766,6 +766,7 @@ var InterfaceMaster = (function () {
 					}
 
 					var pokemon = new Pokemon(r.speciesId, 1, battle);
+					pokemon.initialize(true);
 
 					// For Labyrinth Cup, exclude Pokemon of existing types
 					if(battle.getCup().name == "labyrinth"){

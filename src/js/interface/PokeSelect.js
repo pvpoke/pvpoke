@@ -125,6 +125,13 @@ function PokeSelect(element, i){
 			$el.find(".level-cap-group .check").removeClass("on");
 			$el.find(".level-cap-group .check[value=\""+selectedPokemon.levelCap+"\"]").addClass("on");
 
+
+			if(selectedPokemon.optimizeMoveTiming){
+				$el.find(".check.optimize-timing").addClass("on");
+			} else{
+				$el.find(".check.optimize-timing").removeClass("on");
+			}
+
 			if($el.find("input.level:focus, input.iv:focus").length == 0){
 				$el.find("input.level").val(selectedPokemon.level);
 				$el.find("input.iv").eq(0).val(selectedPokemon.ivs.atk);
@@ -363,7 +370,7 @@ function PokeSelect(element, i){
 		$el.find(".move-select").html('');
 		$el.find(".starting-health").val(selectedPokemon.stats.hp);
 		$el.find(".check.shield-baiting").addClass("on");
-		$el.find(".check.optimizeMoveTiming").removeClass("on");
+		$el.find(".check.optimize-timing").removeClass("on");
 		$el.find(".check.priority").removeClass("on");
 		$el.find(".check.negate-fast-moves").addClass("on");
 		$el.find(".hp .bar.damage").hide();

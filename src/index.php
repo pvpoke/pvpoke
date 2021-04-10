@@ -34,10 +34,11 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.20.15 (March 30, 2021)</h4>
+	<h4>v1.20.16 (April 10, 2021)</h4>
 	<ul>
-		<li>A switch timer setting is now available in Training Battles to test your teams in battles with a 30 second switch timer.</li>
-		<li>An additional icon now shows when the 30 second switch timer expires in simulations.</li>
+		<li>Fixed an issue where the Team Builder would link to level 40 Pokemon when baiting was turned off.</li>
+		<li>Team Builder now allows up to 80 results on the meta scorecard, threats, and alternatives section.</li>
+		<li>The optimize move timing checkbox now properly updates when setting a new Pokemon or swapping Pokemon.</li>
 	</ul>
 
 	<h3>Latest Article</h3>
