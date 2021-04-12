@@ -21858,6 +21858,18 @@
         "buffTarget": "opponent",
         "buffApplyChance": ".5"
     }, {
+        "moveId": "LEAF_STORM",
+        "name": "Leaf Storm",
+        "abbreviation": "LfS",
+        "type": "grass",
+        "power": 130,
+        "energy": 55,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [-2, 0],
+        "buffTarget": "self",
+        "buffApplyChance": "1"
+    }, {
         "moveId": "LICK",
         "name": "Lick",
         "type": "ghost",
