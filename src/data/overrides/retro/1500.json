@@ -19,6 +19,30 @@
 		"weight": 15
 	},
 	{
+		"speciesId": "persian_alolan",
+		"chargedMoves": ["FOUL_PLAY", "PLAY_ROUGH"]
+	},
+	{
+		"speciesId": "cacturne",
+		"chargedMoves": ["GRASS_KNOT", "PAYBACK"]
+	},
+	{
+		"speciesId": "liepard",
+		"chargedMoves": ["DARK_PULSE", "PLAY_ROUGH"]
+	},
+	{
+		"speciesId": "ludicolo",
+		"chargedMoves": ["ICE_BEAM", "LEAF_STORM"]
+	},
+	{
+		"speciesId": "roserade",
+		"chargedMoves": ["WEATHER_BALL_FIRE", "LEAF_STORM"]
+	},
+	{
+		"speciesId": "bronzong",
+		"chargedMoves": ["PSYSHOCK", "PAYBACK"]
+	},
+	{
 		"speciesId": "mantine",
 		"fastMove": "WING_ATTACK",
 		"chargedMoves": ["BUBBLE_BEAM", "ICE_BEAM"]
@@ -152,10 +176,6 @@
 	{
 		"speciesId": "castform_sunny",
 		"chargedMoves": ["WEATHER_BALL_FIRE", "SOLAR_BEAM"]
-	},
-	{
-		"speciesId": "bronzong",
-		"chargedMoves": ["PSYSHOCK", "BULLDOZE"]
 	},
 	{
 		"speciesId": "suicune",
@@ -376,10 +396,6 @@
 	{
 		"speciesId": "muk",
 		"chargedMoves": ["THUNDER_PUNCH", "DARK_PULSE"]
-	},
-	{
-		"speciesId": "ludicolo",
-		"fastMove": "BUBBLE"
 	},
 	{
 		"speciesId": "magneton",

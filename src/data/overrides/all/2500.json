@@ -312,11 +312,11 @@
 	},
 	{
 		"speciesId": "bronzong",
-		"chargedMoves": ["PSYSHOCK", "BULLDOZE"]
+		"chargedMoves": ["PSYSHOCK", "PAYBACK"]
 	},
 	{
 		"speciesId": "bronzong_xl",
-		"chargedMoves": ["PSYSHOCK", "BULLDOZE"]
+		"chargedMoves": ["PSYSHOCK", "PAYBACK"]
 	},
 	{
 		"speciesId": "cresselia",
@@ -329,6 +329,14 @@
 		"fastMove": "ICE_SHARD",
 		"chargedMoves": ["SURF", "ICE_BEAM"],
 		"weight": 10
+	},
+	{
+		"speciesId": "ludicolo",
+		"chargedMoves": ["ICE_BEAM", "LEAF_STORM"]
+	},
+	{
+		"speciesId": "ludicolo_xl",
+		"chargedMoves": ["ICE_BEAM", "LEAF_STORM"]
 	},
 	{
 		"speciesId": "lapras_xl",

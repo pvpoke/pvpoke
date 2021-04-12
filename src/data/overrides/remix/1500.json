@@ -53,6 +53,26 @@
 		"chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
 	},
 	{
+		"speciesId": "persian_alolan",
+		"chargedMoves": ["FOUL_PLAY", "PLAY_ROUGH"]
+	},
+	{
+		"speciesId": "cacturne",
+		"chargedMoves": ["GRASS_KNOT", "PAYBACK"]
+	},
+	{
+		"speciesId": "liepard",
+		"chargedMoves": ["DARK_PULSE", "PLAY_ROUGH"]
+	},
+	{
+		"speciesId": "ludicolo",
+		"chargedMoves": ["ICE_BEAM", "LEAF_STORM"]
+	},
+	{
+		"speciesId": "roserade",
+		"chargedMoves": ["WEATHER_BALL_FIRE", "LEAF_STORM"]
+	},
+	{
 		"speciesId": "machamp_shadow",
 		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
 		"weight": 11
@@ -377,10 +397,6 @@
 	{
 		"speciesId": "muk",
 		"chargedMoves": ["THUNDER_PUNCH", "DARK_PULSE"]
-	},
-	{
-		"speciesId": "ludicolo",
-		"fastMove": "BUBBLE"
 	},
 	{
 		"speciesId": "magneton",

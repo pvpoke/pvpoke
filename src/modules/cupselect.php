@@ -4,8 +4,6 @@
 	<option value="official" cup="remix">Remix</option>
 	<option value="official" cup="retro">Retro Cup</option>
 	<option value="tsa-3" cup="prismatic">Silph Prismatic Cup</option>
-	<option value="community" cup="ou">PoGoRaids Overused Tournament</option>
-	<option value="official" cup="kanto">Nexus League Kanto Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>

@@ -57,11 +57,11 @@
 	},
 	{
 		"speciesId": "bronzong",
-		"chargedMoves": ["PSYSHOCK", "BULLDOZE"]
+		"chargedMoves": ["PSYSHOCK", "PAYBACK"]
 	},
 	{
 		"speciesId": "bronzong_xl",
-		"chargedMoves": ["PSYSHOCK", "BULLDOZE"]
+		"chargedMoves": ["PSYSHOCK", "PAYBACK"]
 	},
 	{
 		"speciesId": "sandslash_alolan_xl",
@@ -267,6 +267,14 @@
 		"chargedMoves": ["DISCHARGE", "HYPER_BEAM"]
 	},
 	{
+		"speciesId": "ludicolo",
+		"chargedMoves": ["ICE_BEAM", "LEAF_STORM"]
+	},
+	{
+		"speciesId": "ludicolo_xl",
+		"chargedMoves": ["ICE_BEAM", "LEAF_STORM"]
+	},
+	{
 		"speciesId": "feraligatr",
 		"fastMove": "WATERFALL"
 	},
@@ -403,6 +411,7 @@
 	},
 	{
 		"speciesId": "roserade",
+		"chargedMoves": ["WEATHER_BALL_FIRE", "LEAF_STORM"],
 		"weight": 4
 	},
 	{

@@ -7,6 +7,5 @@
 	<option value="1500" cup="remix">Remix</option>
 	<option value="1500" cup="retro">Retro Cup</option>
 	<option value="1500" cup="prismatic">Silph Prismatic Cup</option>
-	<option value="1500" cup="kanto">Nexus League Kanto Cup</option>
 	<option value="1500" cup="custom">Custom</option>
 </select>

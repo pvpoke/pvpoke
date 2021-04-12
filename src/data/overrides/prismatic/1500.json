@@ -32,14 +32,34 @@
 		"weight": 11
 	},
 	{
-		"speciesId": "bronzong",
-		"chargedMoves": ["PSYSHOCK", "BULLDOZE"],
-		"weight": 3
-	},
-	{
 		"speciesId": "hypno",
 		"chargedMoves": ["THUNDER_PUNCH", "SHADOW_BALL"],
 		"weight": 49
+	},
+	{
+		"speciesId": "persian_alolan",
+		"chargedMoves": ["FOUL_PLAY", "PLAY_ROUGH"]
+	},
+	{
+		"speciesId": "cacturne",
+		"chargedMoves": ["GRASS_KNOT", "PAYBACK"]
+	},
+	{
+		"speciesId": "liepard",
+		"chargedMoves": ["DARK_PULSE", "PLAY_ROUGH"]
+	},
+	{
+		"speciesId": "ludicolo",
+		"chargedMoves": ["ICE_BEAM", "LEAF_STORM"]
+	},
+	{
+		"speciesId": "roserade",
+		"chargedMoves": ["WEATHER_BALL_FIRE", "LEAF_STORM"]
+	},
+	{
+		"speciesId": "bronzong",
+		"chargedMoves": ["PSYSHOCK", "PAYBACK"],
+		"weight": 3
 	},
 	{
 		"speciesId": "dewgong",
