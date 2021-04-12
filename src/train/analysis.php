@@ -70,8 +70,7 @@ require_once '../header.php';
 		<option value="10000" cup="all">Master League</option>
 		<option value="2500" cup="premier">Premier Cup (Ultra)</option>
 		<option value="10000" cup="premier">Premier Cup (Master)</option>
-		<option value="1500" cup="kanto">Kanto Cup</option>
-		<option value="1500" cup="labyrinth">Silph Labyrinth Cup</option>
+		<option value="1500" cup="remix">Remix</option>
 	</select>
 
 	<div class="date-updated">Last updated</div>
