@@ -3780,19 +3780,19 @@ a.pokebattler {
     margin: 0 auto;
   }
 }
-@media only screen and (min-width: 1150px) {
+@media only screen and (min-width: 1190px) {
   #nitro-sidebar-left {
     display: block;
     position: fixed;
     top: 95px;
-    left: 0;
+    left: 20px;
   }
 
   #nitro-sidebar-right {
     display: block;
     position: fixed;
     top: 95px;
-    right: 0;
+    right: 20px;
   }
 }
 /* Printing for meta scorecard */
