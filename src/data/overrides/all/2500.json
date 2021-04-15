@@ -29,6 +29,14 @@
 		"weight": 12
 	},
 	{
+		"speciesId": "primeape",
+		"chargedMoves": ["NIGHT_SLASH", "CLOSE_COMBAT"]
+	},
+	{
+		"speciesId": "primeape_xl",
+		"chargedMoves": ["NIGHT_SLASH", "CLOSE_COMBAT"]
+	},
+	{
 		"speciesId": "sandslash_alolan_xl",
 		"chargedMoves": ["ICE_PUNCH", "BULLDOZE"]
 	},
