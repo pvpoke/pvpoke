@@ -12,7 +12,7 @@
 	{
 		"speciesId":"jellicent",
 		"fastMove":"HEX",
-		"chargedMoves":["ICE_BEAM","SHADOW_BALL"]
+		"chargedMoves":["BUBBLE_BEAM","SHADOW_BALL"]
 	},
 	{
 		"speciesId":"altaria",
@@ -25,9 +25,9 @@
 		"chargedMoves":["FOUL_PLAY","SHADOW_BALL"]
 	},
 	{
-		"speciesId":"medicham",
+		"speciesId":"medicham_xl",
 		"fastMove":"COUNTER",
-		"chargedMoves":["PSYCHIC","ICE_PUNCH"]
+		"chargedMoves":["PSYCHIC","POWER_UP_PUNCH"]
 	},
 	{
 		"speciesId":"scrafty",
@@ -45,24 +45,14 @@
 		"chargedMoves":["FRENZY_PLANT","EARTHQUAKE"]
 	},
 	{
+		"speciesId":"serperior",
+		"fastMove":"VINE_WHIP",
+		"chargedMoves":["FRENZY_PLANT","AERIAL_ACE"]
+	},
+	{
 		"speciesId":"shiftry",
 		"fastMove":"SNARL",
 		"chargedMoves":["LEAF_BLADE","FOUL_PLAY"]
-	},
-	{
-		"speciesId":"chesnaught",
-		"fastMove":"VINE_WHIP",
-		"chargedMoves":["ENERGY_BALL","SUPER_POWER"]
-	},
-	{
-		"speciesId":"dewgong",
-		"fastMove":"ICE_SHARD",
-		"chargedMoves":["ICY_WIND","WATER_PULSE"]
-	},
-	{
-		"speciesId":"lapras",
-		"fastMove":"ICE_SHARD",
-		"chargedMoves":["SURF","SKULL_BASH"]
 	},
 	{
 		"speciesId":"bastiodon",
@@ -127,12 +117,12 @@
 	{
 		"speciesId":"hypno",
 		"fastMove":"CONFUSION",
-		"chargedMoves":["THUNDER_PUNCH","SHADOW_BALL"]
+		"chargedMoves":["FIRE_PUNCH","SHADOW_BALL"]
 	},
 	{
 		"speciesId":"hypno_shadow",
 		"fastMove":"CONFUSION",
-		"chargedMoves":["FIRE_PUNCH","THUNDER_PUNCH"]
+		"chargedMoves":["FIRE_PUNCH","SHADOW_BALL"]
 	},
 	{
 		"speciesId":"registeel",
@@ -140,19 +130,9 @@
 		"chargedMoves":["FLASH_CANNON","FOCUS_BLAST"]
 	},
 	{
-		"speciesId":"mantine",
-		"fastMove":"BUBBLE",
-		"chargedMoves":["BUBBLE_BEAM","ICE_BEAM"]
-	},
-	{
 		"speciesId":"vigoroth",
 		"fastMove":"COUNTER",
 		"chargedMoves":["BODY_SLAM","BULLDOZE"]
-	},
-	{
-		"speciesId":"ferrothorn",
-		"fastMove":"BULLET_SEED",
-		"chargedMoves":["POWER_WHIP","THUNDER"]
 	},
 	{
 		"speciesId":"machamp_shadow",
@@ -173,11 +153,6 @@
 		"speciesId":"munchlax",
 		"fastMove":"LICK",
 		"chargedMoves":["BODY_SLAM","BULLDOZE"]
-	},
-	{
-		"speciesId":"diggersby",
-		"fastMove":"MUD_SHOT",
-		"chargedMoves":["FIRE_PUNCH","EARTHQUAKE"]
 	},
 	{
 		"speciesId":"victreebel_shadow",
