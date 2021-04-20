@@ -42,6 +42,20 @@
   display: none;
 }
 
+.editor .poke.multi {
+  float: none;
+}
+.editor .poke.multi .poke-stats {
+  background: none;
+}
+.editor .multi-selector {
+  display: none;
+}
+.editor .button.new-team,
+.editor .button.add-team {
+  margin: 10px 0;
+}
+
 .featured-team-description {
   display: none;
   text-align: center;

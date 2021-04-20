@@ -8,7 +8,7 @@ $META_DESCRIPTION = 'Edit the teams you battle in training.';
 require_once '../header.php';
 ?>
 <h1>Training Battle Editor</h1>
-<div class="section home white train">
+<div class="section home white train editor">
 	<p>Create your own team pool below to customize the teams you face in <a href="<?php echo $WEB_ROOT; ?>train/">training battles</a>.</p>
 
 
@@ -70,10 +70,11 @@ require_once '../header.php';
 			</table>
 		</div>
 
-		<button class="button new-team">+ Add Team</button>
+		<button class="button new-team">+ New Team</button>
 
-		<div class="poke">
+		<div class="multi-selector">
 			<?php require '../modules/pokemultiselect.php'; ?>
+			<button class="button add-team">Add Team</button>
 		</div>
 
 	</div>

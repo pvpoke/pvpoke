@@ -79,6 +79,25 @@
 	}
 }
 
+.editor{
+	.poke.multi{
+		float:none;
+
+		.poke-stats{
+			background:none;
+		}
+	}
+
+	.multi-selector{
+		display:none;
+	}
+
+	.button.new-team,
+	.button.add-team{
+		margin:10px 0;
+	}
+}
+
 
 .featured-team-description{
 	display: none;
