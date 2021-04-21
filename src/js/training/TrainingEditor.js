@@ -15,6 +15,7 @@ var InterfaceMaster = (function () {
 			var battle;
 			var teams = [];
 			var multiSelector;
+			var selectedTeamIndex; // Store index of the selected team when editing
 
 			self.init = function(){
 				battle = new Battle();
@@ -32,6 +33,9 @@ var InterfaceMaster = (function () {
 
 				$(".button.new-team").click(setupNewTeam);
 				$(".button.add-team").click(addNewTeam);
+				$(".league-select").change(selectLeague);
+				$("body").on("click", ".button.edit", setupEditTeam);
+				$(".button.save-changes").click(editTeam);
 			}
 
 			self.displayRankingData = function(data){
@@ -119,7 +123,20 @@ var InterfaceMaster = (function () {
 				multiSelector.setPokemonList([]);
 				multiSelector.updateListDisplay();
 				$(".multi-selector").show();
+				$(".multi-selector").attr("mode", "new");
 				$(".button.new-team").hide();
+			}
+
+
+			// Edit an existing team
+
+			function setupEditTeam(e){
+				// Subtract 1 because the first button is in the hidden template
+				selectedTeamIndex = $(".button.edit").index($(e.target)) - 1;
+				multiSelector.setPokemonList(teams[selectedTeamIndex]);
+				multiSelector.updateListDisplay();
+				$(".multi-selector").show();
+				$(".multi-selector").attr("mode", "edit");
 			}
 
 			// Validate and add currently selected team
@@ -134,6 +151,30 @@ var InterfaceMaster = (function () {
 
 					self.updateTeamList();
 				}
+			}
+
+			// Save changes to selected team
+
+			function editTeam(e){
+				var team = multiSelector.getPokemonList();
+
+				if(team.length > 0){
+					teams[selectedTeamIndex] = team;
+					$(".multi-selector").hide();
+					$(".button.new-team").show();
+
+					self.updateTeamList();
+				}
+			}
+
+			// Set a new battle CP
+
+			function selectLeague(e){
+				var cp = parseInt($(".league-select option:selected").val());
+
+				battle.setCP(cp);
+
+				gm.loadRankingData(self, "overall", cp, "all");
 			}
 
 

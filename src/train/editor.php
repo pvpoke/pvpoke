@@ -9,6 +9,8 @@ require_once '../header.php';
 ?>
 <h1>Training Battle Editor</h1>
 <div class="section home white train editor">
+	<?php require_once '../modules/leagueselect.php'; ?>
+
 	<p>Create your own team pool below to customize the teams you face in <a href="<?php echo $WEB_ROOT; ?>train/">training battles</a>.</p>
 
 
@@ -72,9 +74,10 @@ require_once '../header.php';
 
 		<button class="button new-team">+ New Team</button>
 
-		<div class="multi-selector">
+		<div class="multi-selector" mode="new">
 			<?php require '../modules/pokemultiselect.php'; ?>
 			<button class="button add-team">Add Team</button>
+			<button class="button save-changes">Save Changes</button>
 		</div>
 
 	</div>

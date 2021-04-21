@@ -51,8 +51,21 @@
 .editor .multi-selector {
   display: none;
 }
+.editor .multi-selector[mode=new] .button.add-team {
+  display: block;
+}
+.editor .multi-selector[mode=new] .button.save-changes {
+  display: none;
+}
+.editor .multi-selector[mode=edit] .button.add-team {
+  display: none;
+}
+.editor .multi-selector[mode=edit] .button.save-changes {
+  display: block;
+}
 .editor .button.new-team,
-.editor .button.add-team {
+.editor .button.add-team,
+.editor .button.save-changes {
   margin: 10px 0;
 }
 

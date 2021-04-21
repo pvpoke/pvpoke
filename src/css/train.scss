@@ -90,10 +90,31 @@
 
 	.multi-selector{
 		display:none;
+
+		&[mode="new"]{
+			.button.add-team{
+				display:block;
+			}
+
+			.button.save-changes{
+				display:none;
+			}
+		}
+
+		&[mode="edit"]{
+			.button.add-team{
+				display:none;
+			}
+
+			.button.save-changes{
+				display:block;
+			}
+		}
 	}
 
 	.button.new-team,
-	.button.add-team{
+	.button.add-team,
+	.button.save-changes{
 		margin:10px 0;
 	}
 }
