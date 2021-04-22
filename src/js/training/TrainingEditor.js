@@ -36,6 +36,10 @@ var InterfaceMaster = (function () {
 				$(".league-select").change(selectLeague);
 				$("body").on("click", ".button.edit", setupEditTeam);
 				$(".button.save-changes").click(editTeam);
+				$(".training-editor-import textarea").change(function(e){
+					var data = JSON.parse($(".training-editor-import textarea").val());
+					self.importTeams(data);
+				});
 			}
 
 			self.displayRankingData = function(data){
@@ -120,7 +124,12 @@ var InterfaceMaster = (function () {
 					// Hijack the multiSelector JSOn export to export the JSON for this team
 
 					multiSelector.setPokemonList(team);
-					teamJSON.push(JSON.parse(multiSelector.convertListToJSON())); // Oh boy
+
+					var teamObj = {
+						pokemon: JSON.parse(multiSelector.convertListToJSON()), // Oh boy
+						weight: 1
+					};
+					teamJSON.push(teamObj);
 					multiSelector.setPokemonList([]);
 				}
 
@@ -130,7 +139,38 @@ var InterfaceMaster = (function () {
 					data: teamJSON
 				};
 
-				$(".training-editor-import textarea").html(JSON.stringify(data));
+				$(".training-editor-import textarea").val(JSON.stringify(data));
+			}
+
+			// Import JSON data
+
+			self.importTeams = function(obj){
+				// If the data isn't preformatted, adjust it to match export JSON format
+
+				if(! obj.dataType){
+					// I heard you liked objects so I put an object in your object
+					obj = {
+						dataType: "training-teams",
+						data: obj
+					};
+				}
+
+				console.log(obj);
+
+				if(! obj.data){
+					return false;
+				}
+
+				// Hijack the multiSelector import to import each team
+
+				for(var i = 0; i < obj.data.length; i++){
+					var team = obj.data[i].pokemon;
+
+					multiSelector.quickFillGroup(team);
+					teams.push(multiSelector.getPokemonList());
+				}
+
+				self.updateTeamList();
 			}
 
 			// Clear and display the multiSelector

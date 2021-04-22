@@ -68,6 +68,9 @@
 .editor .button.save-changes {
   margin: 10px 0;
 }
+.editor .table-container {
+  max-height: 800px;
+}
 
 .training-editor-import h3 {
   margin-top: 0;
