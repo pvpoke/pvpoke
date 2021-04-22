@@ -86,6 +86,10 @@ switch($cup){
 		$league = 'Silph Prismatic Cup';
 		break;
 
+	case "commander":
+		$league = 'Silph Commander Cup';
+		break;
+
 }
 
 $META_TITLE = $league . ' PvP Rankings';
@@ -149,8 +153,6 @@ require_once 'header.php';
 	<div class="check on limited hide"><span></span>Show <div class="limited-title">Limited Pokemon</div>*</div>
 	<div class="asterisk limited hide">* Only a limited number of these Pokemon can be selected per team.</div>
 
-	<p class="limited hide">Search for Pokemon by region or generation by typing "kanto", "johto", etc. or "gen1", "gen2", etc.</p>
-
 	<div class="continentals hide">
 		<div class="flex">
 			<div class="check" value="0"><span></span>Blue</div>
@@ -161,7 +163,7 @@ require_once 'header.php';
 			<div class="check" value="5"><span></span>Purple + Gray</div>
 		</div>
 	</div>
-	
+
 	<div class="poke-search-container">
 		<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />
 		<a href="#" class="search-info">i</a>

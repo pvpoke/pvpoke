@@ -775,6 +775,28 @@
         }, {
             "pokemon": ["arbok", "nidoking", "golbat", "crobat", "venomoth", "grimer", "muk", "cloyster", "haunter", "gengar", "weezing", "aerodactyl", "espeon", "forretress", "gligar", "granbull", "mantine", "delcatty", "swalot", "drifblim", "mismagius", "skuntank", "spiritomb", "drapion", "gliscor", "gothitelle", "noivern", "machoke", "graveler_alolan", "golem_alolan", "magneton", "rhydon", "misdreavus", "steelix", "qwilfish", "donphan", "mightyena", "lairon", "aggron", "armaldo", "glalie", "relicanth", "purugly", "magnezone", "rhyperior", "probopass", "tranquill", "unfezant", "excadrill", "cinccino", "escavalier", "ferrothorn", "klinklang", "durant", "liepard"]
         }]
+    }, {
+        "name": "commander",
+        "title": "Silph Commander Cup",
+		"restrictedPicks": 1,
+		"restrictedPokemon": ["munchlax","shiftry","escavalier","steelix","empoleon","jellicent","bronzong","noctowl","marowak_alolan","poliwrath"],
+        "include": [{
+            "filterType": "id",
+            "values": ["munchlax","shiftry","escavalier","steelix","empoleon","jellicent","bronzong","noctowl","marowak_alolan","poliwrath"]
+        }, {
+            "filterType": "type",
+            "values": ["rock", "ice", "electric", "poison", "psychic"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega", "legendary", "mythical", "shadow"]
+        }, {
+            "filterType": "type",
+            "values": ["steel"]
+        }, {
+            "filterType": "id",
+            "values": ["abomasnow", "galvantula", "regirock", "stunfisk", "medicham", "wobbuffet", "drapion", "pachirisu"]
+        }]
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xl"],
     "pokemonRegions": [{

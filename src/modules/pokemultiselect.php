@@ -27,7 +27,7 @@
 				<option value="retro" type="great" class="multi-battle">Retro Cup Meta</option>
 				<option value="kanto" type="great" class="multi-battle">Kanto Cup Meta</option>
 				<option value="prismatic" type="great" class="multi-battle">Silph Prismatic Cup Meta</option>
-				<option value="vortex" type="great" class="multi-battle">Silph Vortex Cup Meta</option>
+				<option value="commander" type="great" class="multi-battle">Silph Commander Cup Meta</option>
 			</select>
 			<div class="flex quick-fill-buttons">
 				<button class="save-btn save-custom">Save</button>
