@@ -63,8 +63,8 @@ require_once '../header.php';
 								</div>
 							</div>
 						</td>
-						<td><button class="button edit">Edit</button></td>
-						<td><button class="button delete">Delete</button></td>
+						<td><a href="#" class="edit">Edit</a></td>
+						<td><a href="#" class="delete">Delete</a></td>
 					</tr>
 				</thead>
 				<tbody>
@@ -84,9 +84,9 @@ require_once '../header.php';
 </div>
 
 <div class="section white training-editor-import">
-	<h3>Import/Export Settings</h3>
+	<h3>Import/Export Teams</h3>
 
-	<p>Copy the text below to export your custom team pool or paste to import teams.</p>
+	<p>Copy the text below to export your custom team pool or paste to import teams. Sign up with <a href="https://gobattlelog.com" target="_blank">GoBattleLog.com</a> to export your most frequently encountered teams!</p>
 
 	<textarea class="import"></textarea>
 	<div class="copy">Copy</div>

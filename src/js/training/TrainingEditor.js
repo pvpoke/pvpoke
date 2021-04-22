@@ -34,7 +34,7 @@ var InterfaceMaster = (function () {
 				$(".button.new-team").click(setupNewTeam);
 				$(".button.add-team").click(addNewTeam);
 				$(".league-select").change(selectLeague);
-				$("body").on("click", ".button.edit", setupEditTeam);
+				$("body").on("click", "a.edit", setupEditTeam);
 				$(".button.save-changes").click(editTeam);
 				$(".training-editor-import textarea").change(function(e){
 					var data = JSON.parse($(".training-editor-import textarea").val());
@@ -60,14 +60,8 @@ var InterfaceMaster = (function () {
 					var $row = $(".train-table.teams thead tr.hide").clone();
 					$row.removeClass("hide");
 
-					var teamURL = host + "team-builder/" + battle.getCup().name + "/" + battle.getCP() + "/";
-					var teamStr = '';
-					var movesetStr = '';
-
 					for(var n = 0; n < team.length; n++){
 						var pokemon = team[n];
-
-						teamStr += pokemon.speciesName + " " + pokemon.generateMovesetStr() + " ";
 
 						$row.find(".sprite-container").eq(n).attr("type-1", pokemon.types[0]);
 						$row.find(".sprite-container").eq(n).attr("type-2", pokemon.types[0]);
@@ -77,47 +71,15 @@ var InterfaceMaster = (function () {
 							$row.find(".sprite-container").eq(n).attr("type-2", pokemon.types[1]);
 						}
 
+						var movesetStr = pokemon.fastMove.abbreviation+"+"+pokemon.chargedMoves[0].abbreviation;
+
+						if(pokemon.chargedMoves.length > 1){
+							movesetStr += "/" + pokemon.chargedMoves[1].abbreviation;
+						}
+
 						$row.find(".name").eq(n).html(pokemon.speciesName);
 						$row.find(".moves").eq(n).html(movesetStr);
-
-						var abbreviationArr = movesetStr.split("/");
-
-						// Identify fast move
-						var fastMoveIndex = 0;
-
-						for(var j = 0; j < pokemon.fastMovePool.length; j++){
-							if(pokemon.fastMovePool[j].abbreviation == abbreviationArr[0]){
-								fastMoveIndex = j;
-								break;
-							}
-						}
-
-						var chargedMoveIndexes = [];
-
-						for(var j = 0; j < pokemon.chargedMovePool.length; j++){
-							if(pokemon.chargedMovePool[j].abbreviation == abbreviationArr[1]){
-								chargedMoveIndexes.push(j+1);
-							}
-
-							if((abbreviationArr.length > 2)&&(pokemon.chargedMovePool[j].abbreviation == abbreviationArr[2])){
-								chargedMoveIndexes.push(j+1);
-							}
-						}
-
-						var pokeStr = pokemon.speciesId + "-m-" + fastMoveIndex + "-" + chargedMoveIndexes[0];
-
-						if(chargedMoveIndexes.length > 1){
-							pokeStr += "-" + chargedMoveIndexes[1];
-						}
-
-						if(n > 0){
-							teamURL += ",";
-						}
-
-						teamURL += pokeStr;
 					}
-
-					$row.find(".link a").attr("href", teamURL);
 
 					$(".train-table.teams tbody").append($row);
 
@@ -170,6 +132,9 @@ var InterfaceMaster = (function () {
 					teams.push(multiSelector.getPokemonList());
 				}
 
+				$(".multi-selector").hide();
+				$(".button.new-team").show();
+
 				self.updateTeamList();
 			}
 
@@ -181,18 +146,26 @@ var InterfaceMaster = (function () {
 				$(".multi-selector").show();
 				$(".multi-selector").attr("mode", "new");
 				$(".button.new-team").hide();
+
+				// Scroll to multiSelector
+				$("html, body").animate({ scrollTop: $(".multi-selector").offset().top - 185 }, 500);
 			}
 
 
 			// Edit an existing team
 
 			function setupEditTeam(e){
+				e.preventDefault();
+
 				// Subtract 1 because the first button is in the hidden template
-				selectedTeamIndex = $(".button.edit").index($(e.target)) - 1;
+				selectedTeamIndex = $("a.edit").index($(e.target)) - 1;
 				multiSelector.setPokemonList(teams[selectedTeamIndex]);
 				multiSelector.updateListDisplay();
 				$(".multi-selector").show();
 				$(".multi-selector").attr("mode", "edit");
+
+				// Scroll to multiSelector
+				$("html, body").animate({ scrollTop: $(".multi-selector").offset().top - 185 }, 500);
 			}
 
 			// Validate and add currently selected team

@@ -90,6 +90,9 @@
 
 	.multi-selector{
 		display:none;
+	    border-top: 1px solid;
+	    padding-top: 20px;
+	    margin-top: 20px;
 
 		&[mode="new"]{
 			.button.add-team{
@@ -109,6 +112,12 @@
 			.button.save-changes{
 				display:block;
 			}
+		}
+
+		.poke{
+			h3:nth-of-type(2){ display:none; }
+			.quick-fill-select{ display:none; }
+			.quick-fill-buttons{ display:none; }
 		}
 	}
 

@@ -50,6 +50,9 @@
 }
 .editor .multi-selector {
   display: none;
+  border-top: 1px solid;
+  padding-top: 20px;
+  margin-top: 20px;
 }
 .editor .multi-selector[mode=new] .button.add-team {
   display: block;
@@ -62,6 +65,15 @@
 }
 .editor .multi-selector[mode=edit] .button.save-changes {
   display: block;
+}
+.editor .multi-selector .poke h3:nth-of-type(2) {
+  display: none;
+}
+.editor .multi-selector .poke .quick-fill-select {
+  display: none;
+}
+.editor .multi-selector .poke .quick-fill-buttons {
+  display: none;
 }
 .editor .button.new-team,
 .editor .button.add-team,
