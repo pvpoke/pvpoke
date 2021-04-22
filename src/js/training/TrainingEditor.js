@@ -47,6 +47,8 @@ var InterfaceMaster = (function () {
 			self.updateTeamList = function(){
 				$(".train-table tbody").html('');
 
+				var teamJSON = [];
+
 				for(var i = 0; i < teams.length; i++){
 					var team = teams[i];
 
@@ -114,7 +116,21 @@ var InterfaceMaster = (function () {
 					$row.find(".link a").attr("href", teamURL);
 
 					$(".train-table.teams tbody").append($row);
+
+					// Hijack the multiSelector JSOn export to export the JSON for this team
+
+					multiSelector.setPokemonList(team);
+					teamJSON.push(JSON.parse(multiSelector.convertListToJSON())); // Oh boy
+					multiSelector.setPokemonList([]);
 				}
+
+				// Display export json
+				var data = {
+					dataType: "training-teams",
+					data: teamJSON
+				};
+
+				$(".training-editor-import textarea").html(JSON.stringify(data));
 			}
 
 			// Clear and display the multiSelector

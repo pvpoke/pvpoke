@@ -83,6 +83,16 @@ require_once '../header.php';
 	</div>
 </div>
 
+<div class="section white training-editor-import">
+	<h3>Import/Export Settings</h3>
+
+	<p>Copy the text below to export your custom team pool or paste to import teams.</p>
+
+	<textarea class="import"></textarea>
+	<div class="copy">Copy</div>
+</div>
+
+
 <div class="hide">
 	<?php require '../modules/pokeselect.php'; ?>
 </div>

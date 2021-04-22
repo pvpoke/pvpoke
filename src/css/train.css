@@ -69,6 +69,24 @@
   margin: 10px 0;
 }
 
+.training-editor-import h3 {
+  margin-top: 0;
+}
+.training-editor-import textarea.import {
+  width: 100%;
+  height: 100px;
+}
+.training-editor-import .copy {
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  background: #004c66;
+  color: #eee;
+  padding: 5px;
+  border-radius: 8px;
+  margin: 5px 0;
+}
+
 .featured-team-description {
   display: none;
   text-align: center;
