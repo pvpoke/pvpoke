@@ -97,6 +97,7 @@ var InterfaceMaster = (function () {
 
 				// Display export json
 				var data = {
+					name: "New Team Pool",
 					dataType: "training-teams",
 					data: teamJSON
 				};
@@ -112,6 +113,7 @@ var InterfaceMaster = (function () {
 				if(! obj.dataType){
 					// I heard you liked objects so I put an object in your object
 					obj = {
+						name: "New Team Pool",
 						dataType: "training-teams",
 						data: obj
 					};
@@ -205,6 +207,22 @@ var InterfaceMaster = (function () {
 
 				gm.loadRankingData(self, "overall", cp, "all");
 			}
+
+			// Oh yeah, it's big brain copy + paste time
+			// Copy list text
+
+			$(".training-editor-import .copy").click(function(e){
+				var el = $(e.target).prev()[0];
+				el.focus();
+				el.setSelectionRange(0, el.value.length);
+				document.execCommand("copy");
+			});
+
+			// Copy text to import
+
+			$(".training-editor-import textarea.import").on("click", function(e){
+				this.setSelectionRange(0, this.value.length);
+			});
 
 
 		}

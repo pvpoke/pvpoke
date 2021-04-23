@@ -15,6 +15,7 @@ function TrainingAI(l, p, b){
 	var gm = GameMaster.getInstance();
 	var teamPool = [];
 	var currentTeamPool = null;
+	var teamSelectMode = "normal";
 	var partySize = 3;
 	var props = aiData[l];
 	var generateRosterCallback;
@@ -32,20 +33,38 @@ function TrainingAI(l, p, b){
 
 	// Generate a random roster of 6 given a cup and league
 
-	this.generateRoster = function(size, callback){
+	this.generateRoster = function(size, callback, customTeamPool){
 		partySize = size;
 		generateRosterCallback = callback;
 
 		var league = battle.getCP();
 		var cup = battle.getCup().name;
 
-		if(! teamPool[league+""+cup]){
+		if((! teamPool[league+""+cup])&&(!customTeamPool)){
 			gm.loadTeamData(league, cup, self.setTeamPool);
 			return;
 		}
 
-		var pool = teamPool[league+""+cup];
-		currentTeamPool = teamPool[league+""+cup];
+		var pool;
+
+		if(! customTeamPool){
+			pool = teamPool[league+""+cup];
+			currentTeamPool = teamPool[league+""+cup];
+			teamSelectMode = "normal";
+		} else{
+			if(customTeamPool.data){
+				pool = {
+					"presets": customTeamPool.data
+				}
+			} else{
+				pool = {
+					"presets": customTeamPool
+				}
+			}
+
+			currentTeamPool = pool;
+			teamSelectMode = "preset";
+		}
 
 		// Test current pool for errors
 		self.testPool(pool);
@@ -60,7 +79,7 @@ function TrainingAI(l, p, b){
 
 
 		// Choose presets
-		if((pool.presets)&&(battle.getCup().name == "labyrinth")){
+		if((pool.presets)&&(customTeamPool)){
 			// Select a random preset team
 			var presets = pool.presets;
 			var presetIndex = Math.floor(Math.random() * pool.presets.length);
@@ -68,6 +87,7 @@ function TrainingAI(l, p, b){
 			pool = [];
 
 			// For each Pokemon in the preset team, make a new "slot"
+			console.log(customTeamPool);
 
 			for(var i = 0; i < preset.pokemon.length; i++){
 				var slot = {
@@ -94,9 +114,14 @@ function TrainingAI(l, p, b){
 			}
 		}
 
-		// Draw 6 unique slots from the bucket
+		// Draw unique slots from the bucket
+		var rosterSize = 6;
 
-		for(var i = 0; i < 6; i++){
+		if((teamSelectMode == "preset")&&(partySize == 3)){
+			rosterSize = 3;
+		}
+
+		for(var i = 0; i < rosterSize; i++){
 			var index = Math.floor(Math.random() * slotBucket.length);
 			var slot = slotBucket[index];
 			var synergies = pool.filter(obj => {
@@ -206,11 +231,6 @@ function TrainingAI(l, p, b){
 			selectedIds.push(poke.speciesId);
 		}
 
-		// Sort roster by dex number
-		if(cup == "voyager"){
-			roster.sort((a,b) => (a.dex > b.dex) ? 1 : ((b.dex > a.dex) ? -1 : 0));
-		}
-
 		player.setRoster(roster);
 		generateRosterCallback(roster);
 	}
@@ -271,11 +291,17 @@ function TrainingAI(l, p, b){
 		}
 
 		// Add option for presets
-		if((currentTeamPool)&&(currentTeamPool.presets)&&(battle.getCup().name != "labyrinth")){
+		if((currentTeamPool)&&(currentTeamPool.presets)){
 			pickStrategyOptions.push(new DecisionOption("PRESET", 20));
 		}
 
 		var pickStrategy = self.chooseOption(pickStrategyOptions).name;
+
+		// If the team pool only has presets, use a preset
+
+		if(partySize == 3 && teamSelectMode == "preset"){
+			pickStrategy = "PRESET";
+		}
 
 		switch(pickStrategy){
 			// Choose a random set of 3 from the roster

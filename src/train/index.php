@@ -63,8 +63,14 @@ require_once '../header.php';
 			<select class="team-method-select">
 				<option value="random">Random</option>
 				<option value="manual">Manual</option>
+				<option value="custom">Custom</option>
 			</select>
 			<?php require '../modules/pokemultiselect.php'; ?>
+			<div class="custom-team-section">
+				<h3 class="section-title">Custom Teams</h3>
+				<p>Select a custom team pool built in the Training Team Editor or paste a code.</p>
+				<textarea class="team-import"></textarea>
+			</div>
 			<div class="featured-team-section">
 				<h3 class="section-title">Featured Teams</h3>
 				<p>Play against teams from your favorite content creators and top players.</p>

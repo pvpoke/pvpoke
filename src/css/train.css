@@ -41,6 +41,13 @@
   margin-top: 10px;
   display: none;
 }
+.train .custom-team-section {
+  display: none;
+}
+.train .custom-team-section .team-import {
+  width: 95%;
+  display: block;
+}
 
 .editor .poke.multi {
   float: none;

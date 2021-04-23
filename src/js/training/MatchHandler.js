@@ -53,6 +53,8 @@ function MatchHandler(){
 		} else if(props.teamSelectMethod == "featured"){
 			opponent.setRoster(props.teams[1]);
 			self.rosterReady();
+		} else if(props.teamSelectMethod == "custom"){
+			opponent.generateRoster(props.partySize, self.rosterReady, props.customTeamPool);
 		}
 	}
 

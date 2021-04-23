@@ -233,13 +233,20 @@ var InterfaceMaster = (function () {
 					cup: battle.getCup().name,
 					featuredTeam: featuredTeam,
 					autotapOverride:autotapOverride,
-					switchTime: switchTime
+					switchTime: switchTime,
+					customTeamPool: []
 					};
 
 				// Reset roster selection for tournament mode
 				if(mode == "tournament"){
 					currentTeamIndex = 0;
 					currentTeam = [];
+				}
+
+				// Set custom team pool
+
+				if(teamSelectMethod == "custom"){
+					props.customTeamPool = JSON.parse($("textarea.team-import").val());
 				}
 
 				handler.initBattle(props);
@@ -269,18 +276,28 @@ var InterfaceMaster = (function () {
 					case "random":
 						$(".poke.multi").eq(1).hide();
 						$(".featured-team-section").hide();
+						$(".custom-team-section").hide();
 						featuredTeam = null;
 						break;
 
 					case "manual":
 						$(".poke.multi").eq(1).show();
 						$(".featured-team-section").hide();
+						$(".custom-team-section").hide();
 						featuredTeam = null;
 						break;
 
 					case "featured":
 						$(".poke.multi").eq(1).hide();
 						$(".featured-team-section").show();
+						$(".custom-team-section").hide();
+						featuredTeam = null;
+						break;
+
+					case "custom":
+						$(".poke.multi").eq(1).hide();
+						$(".featured-team-section").hide();
+						$(".custom-team-section").show();
 						featuredTeam = null;
 						break;
 				}
