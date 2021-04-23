@@ -85,6 +85,25 @@
 			width:95%;
 			display:block;
 		}
+
+		.custom-team-validation{
+			border-radius:8px;
+			padding: 8px;
+			font-size:12px;
+			text-align: left;
+			display: none;
+			margin-top:5px;
+
+			&.true{
+				border: 1px solid #0eb084;
+				color:#0eb084;
+			}
+
+			&.false{
+				border: 1px solid #ff5115;
+				color:#ff5115;
+			}
+		}
 	}
 }
 

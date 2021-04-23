@@ -70,6 +70,7 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".self .roster .pokemon", selectRosterPokemon);
 				$("a.random").on("click", randomizeTeam);
 				$("body").on("click", ".check", checkBox);
+				$("textarea.team-import").on("change", initTeamCodeCheck);
 			};
 
 			// Callback after ranking data is loaded
@@ -512,6 +513,43 @@ var InterfaceMaster = (function () {
 				var difficulty = $(".difficulty-select option:selected").val();
 				var player = new Player(0, difficulty, battle);
 				player.getAI().generateRoster(partySize, self.importRandomizedRoster);
+			}
+
+			// Provide visual feedback that the user entered the correct code in the correct place
+
+			function initTeamCodeCheck(e){
+				$(".custom-team-validation.true").hide();
+
+				if(validateTeamCode($(e.target).val())){
+					$(".custom-team-validation.true").show();
+				} else{
+					$(".custom-team-validation.false").show();
+				}
+			}
+
+			function validateTeamCode(code){
+				var obj;
+
+				if(JSON.parse(code)){
+					obj = JSON.parse(code);
+					console.log(obj);
+				} else{
+					return false;
+				}
+
+				var teams = [];
+
+				if(obj.dataType){
+					teams = obj.data;
+				} else{
+					teams = obj;
+				}
+
+				if(teams.length < 1){
+					return false;
+				}
+
+				return true;
 			}
 
 			// Turn checkboxes on and off

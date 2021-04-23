@@ -48,6 +48,22 @@
   width: 95%;
   display: block;
 }
+.train .custom-team-section .custom-team-validation {
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 12px;
+  text-align: left;
+  display: none;
+  margin-top: 5px;
+}
+.train .custom-team-section .custom-team-validation.true {
+  border: 1px solid #0eb084;
+  color: #0eb084;
+}
+.train .custom-team-section .custom-team-validation.false {
+  border: 1px solid #ff5115;
+  color: #ff5115;
+}
 
 .editor .poke.multi {
   float: none;
