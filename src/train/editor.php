@@ -84,6 +84,21 @@ require_once '../header.php';
 </div>
 
 <div class="section white training-editor-import">
+	<h3>Save/Load Teams</h3>
+
+	<p>Save this team pool locally or load an existing team pool.</p>
+
+	<select class="team-fill-select">
+		<option value="new">New Team Pool</option>
+	</select>
+	<div class="flex team-fill-buttons">
+		<button class="save-btn save-custom">Save</button>
+		<button class="save-btn save-as hide">Save As</button>
+		<button class="delete-btn hide">Delete</button>
+	</div>
+</div>
+
+<div class="section white training-editor-import">
 	<h3>Import/Export Teams</h3>
 
 	<p>Copy the text below to export your custom team pool or paste to import teams. Sign up with <a href="https://gobattlelog.com" target="_blank">GoBattleLog.com</a> to export your most frequently encountered teams!</p>
@@ -109,6 +124,23 @@ require_once '../header.php';
 
 <div class="enter-full-team hide">
 	<p>Please enter a full team.</p>
+</div>
+
+<div class="save-pool hide">
+	<input class="list-name" placeholder="Team pool name" />
+	<p>This will save your team pool locally to your device. Use the export code to transfer this pool between devices.</p>
+	<div class="center">
+		<div class="button save">Save</div>
+	</div>
+</div>
+
+<div class="delete-list-confirm hide">
+	<p>Delete <b><span class="name"></span></b>? This team pool will be permanently removed from your device.</p>
+
+	<div class="center flex">
+		<div class="button yes">Yes</div>
+		<div class="button no">No</div>
+	</div>
 </div>
 
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>

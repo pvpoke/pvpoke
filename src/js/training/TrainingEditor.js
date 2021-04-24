@@ -16,6 +16,7 @@ var InterfaceMaster = (function () {
 			var teams = [];
 			var multiSelector;
 			var selectedTeamIndex; // Store index of the selected team when editing
+			var selectedTeamPool = false; // Store the id of the selected team pool
 			var partySize = 3;
 
 			self.init = function(){
@@ -42,6 +43,26 @@ var InterfaceMaster = (function () {
 					var data = JSON.parse($(".training-editor-import textarea").val());
 					self.importTeams(data);
 				});
+
+				// Load pools from local storage
+				var i = 0;
+
+				while(window.localStorage.key(i) !== null){
+					var key = window.localStorage.key(i);
+					var content = window.localStorage.getItem(key);
+
+					try{
+						var data = JSON.parse(content);
+
+						if((data.dataType)&&(data.dataType == "training-teams")){
+							$(".team-fill-select").append("<option value=\""+key+"\" type=\"custom\">"+data.name+"</option>");
+						}
+					} catch{
+
+					}
+
+					i++;
+				}
 			}
 
 			self.displayRankingData = function(data){
@@ -104,7 +125,7 @@ var InterfaceMaster = (function () {
 					data: teamJSON
 				};
 
-				$(".training-editor-import textarea").val(JSON.stringify(data));
+				$(".training-editor-import textarea").val(self.convertListToJSON(""));
 			}
 
 			// Import JSON data
@@ -128,6 +149,7 @@ var InterfaceMaster = (function () {
 				}
 
 				// Hijack the multiSelector import to import each team
+				teams = [];
 
 				for(var i = 0; i < obj.data.length; i++){
 					var team = obj.data[i].pokemon;
@@ -140,6 +162,60 @@ var InterfaceMaster = (function () {
 				$(".button.new-team").show();
 
 				self.updateTeamList();
+			}
+
+			// Given an id, save current team pool to localstorage
+
+			self.saveTeamPool = function(name, isNew){
+				var data = self.convertListToJSON(name);
+
+				if(name == ''){
+					return;
+				}
+
+				window.localStorage.setItem("team-pool-" + name, data);
+
+				if(! isNew){
+					modalWindow("Custom Group Saved", $("<p><b>"+name+"</b> has been updated.</p>"))
+				} else{
+					// Add new group to all dropdowns
+
+					$(".team-fill-select").append($("<option value=\"team-pool-"+name+"\" type=\"custom\">"+name+"</option>"));
+					$(".team-fill-select option").last().prop("selected", "selected");
+
+					$(".team-fill-buttons .save-as").hide();
+					$(".team-fill-buttons .save-custom").show();
+					$(".team-fill-buttons .delete-btn").show();
+				}
+			}
+
+			self.convertListToJSON = function(name){
+				var teamJSON = [];
+
+				for(var i = 0; i < teams.length; i++){
+					var team = teams[i];
+
+					// Hijack the multiSelector JSOn export to export the JSON for this team
+
+					multiSelector.setPokemonList(team);
+
+					var teamObj = {
+						pokemon: JSON.parse(multiSelector.convertListToJSON()), // Oh boy
+						weight: 1
+					};
+					teamJSON.push(teamObj);
+					multiSelector.setPokemonList([]);
+				}
+
+				// Display export json
+				var data = {
+					name: name,
+					cp: battle.getCP(),
+					dataType: "training-teams",
+					data: teamJSON
+				};
+
+				return JSON.stringify(data);
 			}
 
 			// Clear and display the multiSelector
@@ -275,7 +351,59 @@ var InterfaceMaster = (function () {
 				this.setSelectionRange(0, this.value.length);
 			});
 
+			// Open the save window
 
+			$(".save-btn").click(function(e){
+
+				if(! selectedTeamPool){
+					// Prompt to save a new group if a custom one isn't selected
+					modalWindow("Save Team Pool", $(".save-pool").eq(0));
+				} else{
+					self.saveTeamPool(selectedTeamPool, false);
+				}
+
+			});
+
+			// Close the save window and save new group
+
+			$("body").on("click", ".modal .button.save", function(e){
+				self.saveTeamPool($(".modal input.list-name").val(), true);
+
+				closeModalWindow();
+			});
+
+			// Load an existing group
+
+			$(".team-fill-select").change(function(e){
+				var val = $(this).find("option:selected").val();
+
+				// Create a new group
+
+				if(val == "new"){
+					teams = [];
+
+					self.updateTeamList();
+
+					// Show the save button
+
+					$(".team-fill-buttons .save-as").hide();
+					$(".team-fill-buttons .save-custom").show();
+					$(".team-fill-buttons .delete-btn").hide();
+
+					selectedTeamPool = false;
+				} else{
+					var data = window.localStorage.getItem(val);
+					self.importTeams(JSON.parse(data));
+
+					// Show the save and delete buttons
+
+					$(".team-fill-buttons .save-as").hide();
+					$(".team-fill-buttons .save-custom").show();
+					$(".team-fill-buttons .delete-btn").show();
+
+					selectedTeamPool = val;
+				}
+			});
 		}
 
         return object;
