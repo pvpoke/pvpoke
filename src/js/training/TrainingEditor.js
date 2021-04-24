@@ -16,6 +16,7 @@ var InterfaceMaster = (function () {
 			var teams = [];
 			var multiSelector;
 			var selectedTeamIndex; // Store index of the selected team when editing
+			var partySize = 3;
 
 			self.init = function(){
 				battle = new Battle();
@@ -23,7 +24,7 @@ var InterfaceMaster = (function () {
 				// Init the multiselector
 				multiSelector = new PokeMultiSelect($(".poke.multi"));
 				multiSelector.init(gm.data.pokemon, battle);
-				multiSelector.setMaxPokemonCount(6);
+				multiSelector.setMaxPokemonCount(partySize);
 
 				// Load Great League movesets by default
 
@@ -35,6 +36,7 @@ var InterfaceMaster = (function () {
 				$(".button.add-team").click(addNewTeam);
 				$(".league-select").change(selectLeague);
 				$("body").on("click", "a.edit", setupEditTeam);
+				$("body").on("click", "a.delete", confirmDeleteTeam);
 				$(".button.save-changes").click(editTeam);
 				$(".training-editor-import textarea").change(function(e){
 					var data = JSON.parse($(".training-editor-import textarea").val());
@@ -170,12 +172,57 @@ var InterfaceMaster = (function () {
 				$("html, body").animate({ scrollTop: $(".multi-selector").offset().top - 185 }, 500);
 			}
 
+			// Confirm the user wants to delete this team
+
+			function confirmDeleteTeam(e){
+				e.preventDefault();
+
+				// Subtract 1 because the first button is in the hidden template
+				selectedTeamIndex = $("a.delete").index($(e.target)) - 1;
+
+				var selectedTeam = teams[selectedTeamIndex];
+
+				modalWindow("Delete Team", $(".team-delete-confirm").first());
+
+				var teamList = "";
+
+				for(var i = 0; i < selectedTeam.length; i++){
+					if(i > 0){
+						teamList += ", ";
+					}
+
+					teamList += selectedTeam[i].speciesName;
+				}
+
+				$(".modal p").eq(1).html("<b>"+teamList+"</b>");
+
+				// Hide the multiSelector so selected teams don't get mixed up
+
+				$(".multi-selector").hide();
+				$(".button.new-team").show();
+
+				$(".modal .yes").click(function(e){
+					teams.splice(selectedTeamIndex, 1);
+					self.updateTeamList();
+
+					closeModalWindow();
+				});
+
+				$(".modal .no").click(function(e){
+					closeModalWindow();
+				});
+			}
+
 			// Validate and add currently selected team
 
 			function addNewTeam(e){
 				var team = multiSelector.getPokemonList();
 
-				if(team.length > 0){
+				if(team.length < partySize){
+					modalWindow("Enter Full Team", $(".enter-full-team").first());
+
+					return false;
+				} else if(team.length == partySize){
 					teams.push(team);
 					$(".multi-selector").hide();
 					$(".button.new-team").show();
@@ -189,7 +236,11 @@ var InterfaceMaster = (function () {
 			function editTeam(e){
 				var team = multiSelector.getPokemonList();
 
-				if(team.length > 0){
+				if(team.length < partySize){
+					modalWindow("Enter Full Team", $(".enter-full-team").first());
+
+					return false;
+				} else if(team.length == partySize){
 					teams[selectedTeamIndex] = team;
 					$(".multi-selector").hide();
 					$(".button.new-team").show();

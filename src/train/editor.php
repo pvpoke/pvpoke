@@ -97,6 +97,20 @@ require_once '../header.php';
 	<?php require '../modules/pokeselect.php'; ?>
 </div>
 
+<div class="team-delete-confirm hide">
+	<p>Delete this team?</p>
+	<p></p>
+
+	<div class="center flex">
+		<div class="button yes">Yes</div>
+		<div class="button no">No</div>
+	</div>
+</div>
+
+<div class="enter-full-team hide">
+	<p>Please enter a full team.</p>
+</div>
+
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Player.js?v=<?php echo $SITE_VERSION; ?>"></script>
