@@ -34,11 +34,10 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.20.16 (April 10, 2021)</h4>
+	<h4>v1.21.0 (April 25, 2021)</h4>
 	<ul>
-		<li>Fixed an issue where the Team Builder would link to level 40 Pokemon when baiting was turned off.</li>
-		<li>Team Builder now allows up to 80 results on the meta scorecard, threats, and alternatives section.</li>
-		<li>The optimize move timing checkbox now properly updates when setting a new Pokemon or swapping Pokemon.</li>
+		<li>New <a href="<?php echo $WEB_ROOT; ?>train/editor/">Training Team Editor</a> allows you to customize the teams you fight in the Training Battles.</li>
+		<li><a href="<?php echo $WEB_ROOT; ?>train/">Training Battles</a> allows you to import teams from the editor or from your most frequently encountered teams from <li><a href="https://gobattlelog.com">GoBattleLog.com</a> </li>.</li>
 	</ul>
 
 	<h3>Latest Article</h3>
