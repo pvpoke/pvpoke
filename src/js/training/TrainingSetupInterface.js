@@ -70,6 +70,28 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".self .roster .pokemon", selectRosterPokemon);
 				$("a.random").on("click", randomizeTeam);
 				$("body").on("click", ".check", checkBox);
+				$("textarea.team-import").on("change", initTeamCodeCheck);
+				$(".team-fill-select").on("change", loadTeamPool);
+
+				// Load pools from local storage
+				var i = 0;
+
+				while(window.localStorage.key(i) !== null){
+					var key = window.localStorage.key(i);
+					var content = window.localStorage.getItem(key);
+
+					try{
+						var data = JSON.parse(content);
+
+						if((data.dataType)&&(data.dataType == "training-teams")){
+							$(".team-fill-select").append("<option value=\""+key+"\" type=\"custom\">"+data.name+"</option>");
+						}
+					} catch{
+
+					}
+
+					i++;
+				}
 			};
 
 			// Callback after ranking data is loaded
@@ -233,13 +255,20 @@ var InterfaceMaster = (function () {
 					cup: battle.getCup().name,
 					featuredTeam: featuredTeam,
 					autotapOverride:autotapOverride,
-					switchTime: switchTime
+					switchTime: switchTime,
+					customTeamPool: []
 					};
 
 				// Reset roster selection for tournament mode
 				if(mode == "tournament"){
 					currentTeamIndex = 0;
 					currentTeam = [];
+				}
+
+				// Set custom team pool
+
+				if(teamSelectMethod == "custom"){
+					props.customTeamPool = JSON.parse($("textarea.team-import").val());
 				}
 
 				handler.initBattle(props);
@@ -269,18 +298,28 @@ var InterfaceMaster = (function () {
 					case "random":
 						$(".poke.multi").eq(1).hide();
 						$(".featured-team-section").hide();
+						$(".custom-team-section").hide();
 						featuredTeam = null;
 						break;
 
 					case "manual":
 						$(".poke.multi").eq(1).show();
 						$(".featured-team-section").hide();
+						$(".custom-team-section").hide();
 						featuredTeam = null;
 						break;
 
 					case "featured":
 						$(".poke.multi").eq(1).hide();
 						$(".featured-team-section").show();
+						$(".custom-team-section").hide();
+						featuredTeam = null;
+						break;
+
+					case "custom":
+						$(".poke.multi").eq(1).hide();
+						$(".featured-team-section").hide();
+						$(".custom-team-section").show();
 						featuredTeam = null;
 						break;
 				}
@@ -495,6 +534,55 @@ var InterfaceMaster = (function () {
 				var difficulty = $(".difficulty-select option:selected").val();
 				var player = new Player(0, difficulty, battle);
 				player.getAI().generateRoster(partySize, self.importRandomizedRoster);
+			}
+
+			// Provide visual feedback that the user entered the correct code in the correct place
+
+			function initTeamCodeCheck(e){
+				$(".custom-team-validation").hide();
+
+				setTimeout(function(){
+					if(validateTeamCode($(e.target).val())){
+						$(".custom-team-validation.true").show();
+					} else{
+						$(".custom-team-validation.false").show();
+					}
+				}, 250);
+			}
+
+			// Load a team pool from local storage
+
+			function loadTeamPool(e){
+				var val = $(e.target).find("option:selected").val();
+				var data = window.localStorage.getItem(val);
+
+				$(".team-import").val(data);
+				$(".team-import").trigger("change");
+			}
+
+			function validateTeamCode(code){
+				var obj;
+
+				try{
+					obj = JSON.parse(code);
+					console.log(obj);
+				} catch{
+					return false;
+				}
+
+				var teams = [];
+
+				if(obj.dataType){
+					teams = obj.data;
+				} else{
+					teams = obj;
+				}
+
+				if(teams.length < 1){
+					return false;
+				}
+
+				return true;
 			}
 
 			// Turn checkboxes on and off

@@ -159,8 +159,10 @@ function Player(i, ai, b){
 
 	// Generate a random roster for this player
 
-	this.generateRoster = function(partySize, callback){
-		ai.generateRoster(partySize, callback);
+	this.generateRoster = function(partySize, callback, customTeamPool){
+		customTeamPool = typeof customTeamPool !== 'undefined' ? customTeamPool : false;
+		
+		ai.generateRoster(partySize, callback, customTeamPool);
 	}
 
 	// Generate a team of 3 with an established roster

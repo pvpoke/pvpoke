@@ -77,8 +77,123 @@
 		margin-top:10px;
 		display:none;
 	}
+
+	.custom-team-section{
+		display:none;
+
+		.team-import{
+			width:95%;
+			display:block;
+		}
+
+		.custom-team-validation{
+			border-radius:8px;
+			padding: 8px;
+			font-size:12px;
+			text-align: left;
+			display: none;
+			margin-top:5px;
+
+			&.true{
+				border: 1px solid #0eb084;
+				color:#0eb084;
+			}
+
+			&.false{
+				border: 1px solid #ff5115;
+				color:#ff5115;
+			}
+		}
+	}
 }
 
+.editor{
+	.poke.multi{
+		float:none;
+
+		.poke-stats{
+			background:none;
+		}
+	}
+
+	.multi-selector{
+		display:none;
+	    border-top: 1px solid;
+	    padding-top: 20px;
+	    margin-top: 20px;
+
+		&[mode="new"]{
+			.button.add-team{
+				display:block;
+			}
+
+			.button.save-changes{
+				display:none;
+			}
+		}
+
+		&[mode="edit"]{
+			.button.add-team{
+				display:none;
+			}
+
+			.button.save-changes{
+				display:block;
+			}
+		}
+
+		.poke{
+			h3:nth-of-type(2){ display:none; }
+			.quick-fill-select{ display:none; }
+			.quick-fill-buttons{ display:none; }
+		}
+
+		.pokebox{
+			display:none !important;
+		}
+	}
+
+	.button.new-team,
+	.button.add-team,
+	.button.save-changes{
+		margin:10px 0;
+	}
+
+	.table-container{
+		max-height: 800px;
+	}
+}
+
+.training-editor-import{
+	h3{
+		margin-top:0;
+	}
+
+	textarea.import {
+	    width: 100%;
+	    height: 100px;
+	}
+
+	.copy {
+	    display: inline-block;
+	    cursor: pointer;
+	    font-weight: bold;
+	    background: #004c66;
+	    color: #eee;
+	    padding: 5px;
+	    border-radius: 8px;
+	    margin: 5px 0;
+	}
+
+	.team-fill-select{
+		max-width:200px;
+		margin-bottom:10px;
+	}
+
+	.team-fill-buttons button{
+		margin-right:10px;
+	}
+}
 
 .featured-team-description{
 	display: none;
@@ -148,6 +263,21 @@
 	.poke-stats{
 		background:none;
 		padding:0;
+	}
+}
+
+.poke.ai-options a.inline-link{
+	font-size:12px;
+	font-weight:bold;
+	text-decoration: underline;
+	margin:0;
+	display:inline;
+
+
+	&.train-editor-link{
+		display:block;
+		text-align: left;
+		margin-top:10px;
 	}
 }
 

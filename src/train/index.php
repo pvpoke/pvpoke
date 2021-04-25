@@ -54,8 +54,8 @@ require_once '../header.php';
 				<option value="2">Elite</option>
 				<option value="3" selected>Champion</option>
 			</select>
-			<h3 class="section-title">Switch Timer</h3>
-			<select class="switch-time-select" style="display:none;">
+			<h3 class="section-title" style="display:none;">Switch Timer</h3>
+			<select class="switch-time-select"  style="display:none;">
 				<option value="30000">30s</option>
 				<option value="60000" selected>60s</option>
 			</select>
@@ -64,8 +64,19 @@ require_once '../header.php';
 			<select class="team-method-select">
 				<option value="random">Random</option>
 				<option value="manual">Manual</option>
+				<option value="custom">Import</option>
 			</select>
 			<?php require '../modules/pokemultiselect.php'; ?>
+			<div class="custom-team-section">
+				<h3 class="section-title">Import Teams</h3>
+				<p>Select a custom team pool built in the <a href="<?php echo $WEB_ROOT; ?>train/editor/" class="inline-link" target="_blank">Training Team Editor</a>, or paste a code from the editor or <a href="https://gobattlelog.com" class="inline-link" target="_blank">GoBattleLog.com</a>.</p>
+				<select class="team-fill-select">
+					<option disabled selected value="">Select a team pool</option>
+				</select>
+				<textarea class="team-import" placeholder="Paste team pool code"></textarea>
+				<div class="custom-team-validation true">Looks good! Teams successfully imported.</div>
+				<div class="custom-team-validation false">The code you entered may not be correct. Double check the source.</div>
+			</div>
 			<div class="featured-team-section">
 				<h3 class="section-title">Featured Teams</h3>
 				<p>Play against teams from your favorite content creators and top players.</p>
@@ -83,6 +94,7 @@ require_once '../header.php';
 					</div>
 				</div>
 			</div>
+			<a href="<?php echo $WEB_ROOT; ?>train/editor/" class="inline-link train-editor-link" target="_blank">Training Team Editor</a>
 		</div>
 	</div>
 	<div class="clear"></div>

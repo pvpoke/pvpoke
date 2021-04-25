@@ -41,6 +41,99 @@
   margin-top: 10px;
   display: none;
 }
+.train .custom-team-section {
+  display: none;
+}
+.train .custom-team-section .team-import {
+  width: 95%;
+  display: block;
+}
+.train .custom-team-section .custom-team-validation {
+  border-radius: 8px;
+  padding: 8px;
+  font-size: 12px;
+  text-align: left;
+  display: none;
+  margin-top: 5px;
+}
+.train .custom-team-section .custom-team-validation.true {
+  border: 1px solid #0eb084;
+  color: #0eb084;
+}
+.train .custom-team-section .custom-team-validation.false {
+  border: 1px solid #ff5115;
+  color: #ff5115;
+}
+
+.editor .poke.multi {
+  float: none;
+}
+.editor .poke.multi .poke-stats {
+  background: none;
+}
+.editor .multi-selector {
+  display: none;
+  border-top: 1px solid;
+  padding-top: 20px;
+  margin-top: 20px;
+}
+.editor .multi-selector[mode=new] .button.add-team {
+  display: block;
+}
+.editor .multi-selector[mode=new] .button.save-changes {
+  display: none;
+}
+.editor .multi-selector[mode=edit] .button.add-team {
+  display: none;
+}
+.editor .multi-selector[mode=edit] .button.save-changes {
+  display: block;
+}
+.editor .multi-selector .poke h3:nth-of-type(2) {
+  display: none;
+}
+.editor .multi-selector .poke .quick-fill-select {
+  display: none;
+}
+.editor .multi-selector .poke .quick-fill-buttons {
+  display: none;
+}
+.editor .multi-selector .pokebox {
+  display: none !important;
+}
+.editor .button.new-team,
+.editor .button.add-team,
+.editor .button.save-changes {
+  margin: 10px 0;
+}
+.editor .table-container {
+  max-height: 800px;
+}
+
+.training-editor-import h3 {
+  margin-top: 0;
+}
+.training-editor-import textarea.import {
+  width: 100%;
+  height: 100px;
+}
+.training-editor-import .copy {
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  background: #004c66;
+  color: #eee;
+  padding: 5px;
+  border-radius: 8px;
+  margin: 5px 0;
+}
+.training-editor-import .team-fill-select {
+  max-width: 200px;
+  margin-bottom: 10px;
+}
+.training-editor-import .team-fill-buttons button {
+  margin-right: 10px;
+}
 
 .featured-team-description {
   display: none;
@@ -100,6 +193,19 @@
 .ai-options .poke.multi .poke-stats {
   background: none;
   padding: 0;
+}
+
+.poke.ai-options a.inline-link {
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: underline;
+  margin: 0;
+  display: inline;
+}
+.poke.ai-options a.inline-link.train-editor-link {
+  display: block;
+  text-align: left;
+  margin-top: 10px;
 }
 
 .autotap-toggle {
