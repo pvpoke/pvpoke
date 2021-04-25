@@ -1,18 +1,15 @@
 <?php
 
-$META_TITLE = 'Training Battle Editor';
+$META_TITLE = 'Training Team Editor';
 
 $META_DESCRIPTION = 'Edit the teams you battle in training.';
 
 
 require_once '../header.php';
 ?>
-<h1>Training Battle Editor</h1>
+<h1>Training Team Editor</h1>
 <div class="section home white train editor">
-	<?php require_once '../modules/leagueselect.php'; ?>
-
-	<p>Create your own team pool below to customize the teams you face in <a href="<?php echo $WEB_ROOT; ?>train/">training battles</a>.</p>
-
+	<p>Create your own team pool below to customize the teams you face in <a href="<?php echo $WEB_ROOT; ?>train/" target="_blank">Training Battles</a>. Note that CP and IV values are determined when the team is selected during play.</p>
 
 	<div class="team-selector">
 		<div class="table-container">

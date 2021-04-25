@@ -27,6 +27,9 @@ var InterfaceMaster = (function () {
 				multiSelector.init(gm.data.pokemon, battle);
 				multiSelector.setMaxPokemonCount(partySize);
 
+				// Hide the CP and advanced IV's section of the pokeSelector
+				$(".poke.single h3.cp, .poke.single .advanced-section").hide();
+
 				// Load Great League movesets by default
 
 				gm.loadRankingData(self, "overall", 1500, "all");
@@ -183,7 +186,7 @@ var InterfaceMaster = (function () {
 					$(".team-fill-select").append($("<option value=\"team-pool-"+name+"\" type=\"custom\">"+name+"</option>"));
 					$(".team-fill-select option").last().prop("selected", "selected");
 
-					$(".team-fill-buttons .save-as").hide();
+					$(".team-fill-buttons .save-as").show();
 					$(".team-fill-buttons .save-custom").show();
 					$(".team-fill-buttons .delete-btn").show();
 				}
@@ -210,7 +213,6 @@ var InterfaceMaster = (function () {
 				// Display export json
 				var data = {
 					name: name,
-					cp: battle.getCP(),
 					dataType: "training-teams",
 					data: teamJSON
 				};
@@ -229,6 +231,7 @@ var InterfaceMaster = (function () {
 
 				// Scroll to multiSelector
 				$("html, body").animate({ scrollTop: $(".multi-selector").offset().top - 185 }, 500);
+				$(".button.add-poke-btn").click();
 			}
 
 
@@ -353,13 +356,13 @@ var InterfaceMaster = (function () {
 
 			// Open the save window
 
-			$(".save-btn").click(function(e){
+			$(".team-fill-buttons .save-btn").click(function(e){
 
-				if(! selectedTeamPool){
+				if((! selectedTeamPool)||($(e.target).hasClass("save-as"))){
 					// Prompt to save a new group if a custom one isn't selected
 					modalWindow("Save Team Pool", $(".save-pool").eq(0));
 				} else{
-					self.saveTeamPool(selectedTeamPool, false);
+					self.saveTeamPool(selectedTeamPool.replace("team-pool-",""), false);
 				}
 
 			});
@@ -397,12 +400,38 @@ var InterfaceMaster = (function () {
 
 					// Show the save and delete buttons
 
-					$(".team-fill-buttons .save-as").hide();
+					$(".team-fill-buttons .save-as").show();
 					$(".team-fill-buttons .save-custom").show();
 					$(".team-fill-buttons .delete-btn").show();
 
 					selectedTeamPool = val;
 				}
+			});
+
+			// Open the delete group window
+
+			$(".team-fill-buttons .delete-btn").click(function(e){
+				var name = $(".team-fill-select option:selected").html();
+
+				modalWindow("Delete Group", $(".delete-list-confirm").first());
+
+				$(".modal .name").html(name);
+
+
+				// Trigger for deleting group cookie
+
+				$(".modal .delete-list-confirm .button.yes").click(function(e){
+
+					window.localStorage.removeItem(selectedTeamPool);
+
+					closeModalWindow();
+
+					// Remove option from quick fill selects
+
+					$(".team-fill-select option[value='"+selectedTeamPool+"']").remove();
+					$(".team-fill-select option").first().prop("selected", "selected");
+					$(".team-fill-select").trigger("change");
+				});
 			});
 		}
 

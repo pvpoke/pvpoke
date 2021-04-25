@@ -98,6 +98,9 @@
 .editor .multi-selector .poke .quick-fill-buttons {
   display: none;
 }
+.editor .multi-selector .pokebox {
+  display: none !important;
+}
 .editor .button.new-team,
 .editor .button.add-team,
 .editor .button.save-changes {
@@ -127,6 +130,9 @@
 .training-editor-import .team-fill-select {
   max-width: 200px;
   margin-bottom: 10px;
+}
+.training-editor-import .team-fill-buttons button {
+  margin-right: 10px;
 }
 
 .featured-team-description {
@@ -187,6 +193,19 @@
 .ai-options .poke.multi .poke-stats {
   background: none;
   padding: 0;
+}
+
+.poke.ai-options a.inline-link {
+  font-size: 12px;
+  font-weight: bold;
+  text-decoration: underline;
+  margin: 0;
+  display: inline;
+}
+.poke.ai-options a.inline-link.train-editor-link {
+  display: block;
+  text-align: left;
+  margin-top: 10px;
 }
 
 .autotap-toggle {

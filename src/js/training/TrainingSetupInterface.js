@@ -71,6 +71,27 @@ var InterfaceMaster = (function () {
 				$("a.random").on("click", randomizeTeam);
 				$("body").on("click", ".check", checkBox);
 				$("textarea.team-import").on("change", initTeamCodeCheck);
+				$(".team-fill-select").on("change", loadTeamPool);
+
+				// Load pools from local storage
+				var i = 0;
+
+				while(window.localStorage.key(i) !== null){
+					var key = window.localStorage.key(i);
+					var content = window.localStorage.getItem(key);
+
+					try{
+						var data = JSON.parse(content);
+
+						if((data.dataType)&&(data.dataType == "training-teams")){
+							$(".team-fill-select").append("<option value=\""+key+"\" type=\"custom\">"+data.name+"</option>");
+						}
+					} catch{
+
+					}
+
+					i++;
+				}
 			};
 
 			// Callback after ranking data is loaded
@@ -518,22 +539,34 @@ var InterfaceMaster = (function () {
 			// Provide visual feedback that the user entered the correct code in the correct place
 
 			function initTeamCodeCheck(e){
-				$(".custom-team-validation.true").hide();
+				$(".custom-team-validation").hide();
 
-				if(validateTeamCode($(e.target).val())){
-					$(".custom-team-validation.true").show();
-				} else{
-					$(".custom-team-validation.false").show();
-				}
+				setTimeout(function(){
+					if(validateTeamCode($(e.target).val())){
+						$(".custom-team-validation.true").show();
+					} else{
+						$(".custom-team-validation.false").show();
+					}
+				}, 250);
+			}
+
+			// Load a team pool from local storage
+
+			function loadTeamPool(e){
+				var val = $(e.target).find("option:selected").val();
+				var data = window.localStorage.getItem(val);
+
+				$(".team-import").val(data);
+				$(".team-import").trigger("change");
 			}
 
 			function validateTeamCode(code){
 				var obj;
 
-				if(JSON.parse(code)){
+				try{
 					obj = JSON.parse(code);
 					console.log(obj);
-				} else{
+				} catch{
 					return false;
 				}
 

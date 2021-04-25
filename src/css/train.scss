@@ -147,6 +147,10 @@
 			.quick-fill-select{ display:none; }
 			.quick-fill-buttons{ display:none; }
 		}
+
+		.pokebox{
+			display:none !important;
+		}
 	}
 
 	.button.new-team,
@@ -184,6 +188,10 @@
 	.team-fill-select{
 		max-width:200px;
 		margin-bottom:10px;
+	}
+
+	.team-fill-buttons button{
+		margin-right:10px;
 	}
 }
 
@@ -255,6 +263,21 @@
 	.poke-stats{
 		background:none;
 		padding:0;
+	}
+}
+
+.poke.ai-options a.inline-link{
+	font-size:12px;
+	font-weight:bold;
+	text-decoration: underline;
+	margin:0;
+	display:inline;
+
+
+	&.train-editor-link{
+		display:block;
+		text-align: left;
+		margin-top:10px;
 	}
 }
 
