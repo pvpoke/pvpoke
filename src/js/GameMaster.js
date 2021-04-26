@@ -233,27 +233,23 @@ var GameMaster = (function () {
 
 					var cp = pokemon.cp;
 					var level35cp = pokemon.calculateCP(0.76156384, 15, 15, 15);
+					var level45cp = pokemon.calculateCP(0.815299987792968, 15, 15, 15);
 
 					if(cp > leagues[i]){
-						var floor = 5;
-						var defaultIndex = 63;
+						var floor = 4;
+						var defaultIndex = 15;
 
 						// For Pokemon that max near the league cap, default to lucky IV's
-						if((level35cp < leagues[i])&&(pokemon.levelCap <= 40)){
+						if((level45cp < leagues[i])&&(pokemon.levelCap > 40)){
 							floor = 12;
-							defaultIndex = 16;
-						}
-
-						// Use higher rank for XL Pokemon
-						if(pokemon.levelCap > 40){
-							var defaultIndex = 32;
+							defaultIndex = 7;
 						}
 
 						var combinations = pokemon.generateIVCombinations("overall", 1, 4096, null, floor);
 
 						// For untradable Pokemon, set the index to the 54th rank
 						if(pokemon.hasTag("untradeable")){
-							defaultIndex = 53;
+							defaultIndex = 31;
 						}
 
 						var level = combinations[defaultIndex].level;
@@ -267,6 +263,32 @@ var GameMaster = (function () {
 				}
 
 				entry.defaultIVs = defaultIVs;
+			});
+
+			// Sort Pokemon by dex
+
+			object.data.pokemon.sort((a,b) => (a.dex > b.dex) ? 1 : ((b.dex > a.dex) ? -1 : 0));
+
+			var json = JSON.stringify(object.data);
+
+			console.log(json);
+		}
+
+		// Set level caps for gamemaster data
+
+		object.setLevelCapData = function(){
+
+			// List of legendaries and mythicals to be excluded from the level cap
+			var levelCapExclusion = ["melmetal","thundurus_incarnate","thundurus_therian","landorus_incarnate","landorus_therian","tornadus_incarnate","tornadus_therian","rayquaza"];
+
+			$.each(object.data.pokemon, function(index, poke){
+				var battle = new Battle();
+				var pokemon = new Pokemon(poke.speciesId, 0, battle);
+				var entry = object.getPokemonById(poke.speciesId);
+
+				if((pokemon.hasTag("legendary")||pokemon.hasTag("mythical")) && (levelCapExclusion.indexOf(pokemon.speciesId) == -1)){
+					entry.levelCap = 40;
+				}
 			});
 
 			// Sort Pokemon by dex
