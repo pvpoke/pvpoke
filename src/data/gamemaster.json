@@ -20824,6 +20824,7 @@
         "types": ["steel", "fairy"],
         "fastMoves": ["ASTONISH", "TACKLE"],
         "chargedMoves": ["FLASH_CANNON", "PLAY_ROUGH", "DRAINING_KISS", "FOUL_PLAY"],
+        "tags": ["regional"],
         "defaultIVs": {
             "cp500": [9.5, 9, 10, 13],
             "cp1500": [29, 6, 15, 8],
