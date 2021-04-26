@@ -190,7 +190,7 @@ require_once 'header.php'; ?>
 		</div>
 		<div class="supporter-container">
 			<div class="space"></div>
-			<div class="supporter">theghost087</div>
+			<div class="supporter"><a href="https://www.twitch.tv/inadequance_" target="_blank">Inadequance</a></div>
 		</div>
 		<div class="supporter-container">
 			<div class="space"></div>
