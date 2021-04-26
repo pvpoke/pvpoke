@@ -5,6 +5,7 @@
 	<option value="official" cup="retro">Retro Cup</option>
 	<option value="tsa-3" cup="prismatic">Silph Prismatic Cup</option>
 	<option value="tsa-3" cup="commander">Silph Commander Cup</option>
+	<option value="tsa-3" cup="factions">Silph Factions (Floating City)</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>
@@ -78,5 +79,6 @@
 	<option value="vortex" cat="tsa-3">Vortex Cup</option>
 	<option value="prismatic" cat="tsa-3">Prismatic Cup</option>
 	<option value="commander" cat="tsa-3">Commander Cup</option>
+	<option value="factions" cat="tsa-3">Floating City</option>
 	<option value="custom" cat="custom">Custom</option>
 </select>

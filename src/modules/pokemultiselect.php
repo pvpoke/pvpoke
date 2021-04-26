@@ -28,6 +28,7 @@
 				<option value="kanto" type="great" class="multi-battle">Kanto Cup Meta</option>
 				<option value="prismatic" type="great" class="multi-battle">Silph Prismatic Cup Meta</option>
 				<option value="commander" type="great" class="multi-battle">Silph Commander Cup Meta</option>
+				<option value="factions" type="great" class="multi-battle">Silph Factions Meta (Floating City)</option>
 			</select>
 			<div class="flex quick-fill-buttons">
 				<button class="save-btn save-custom">Save</button>
