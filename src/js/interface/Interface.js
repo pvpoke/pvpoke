@@ -59,8 +59,6 @@ var InterfaceMaster = (function () {
 
 				var data = gm.data;
 
-				gm.generateDefaultIVs();
-
 				// Initialize selectors and push Pokemon data
 
 				battle = new Battle();
