@@ -90,6 +90,10 @@ switch($cup){
 		$league = 'Silph Commander Cup';
 		break;
 
+	case "factions":
+		$league = 'Silph Factions Rankings';
+		break;
+
 }
 
 $META_TITLE = $league . ' PvP Rankings';
