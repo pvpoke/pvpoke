@@ -21752,6 +21752,7 @@
             "cp1500": [29.5, 4, 6, 14],
             "cp2500": [50, 15, 15, 15]
         },
+        "tags": ["regional"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
@@ -22224,7 +22225,7 @@
         "energy": 55,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "High Energy"
+        "archetype": "Nuke"
     }, {
         "moveId": "AURORA_BEAM",
         "name": "Aurora Beam",
@@ -22302,7 +22303,7 @@
         "buffs": [0, -3],
         "buffTarget": "self",
         "buffApplyChance": "1",
-        "archetype": "High Energy Self-Debuff"
+        "archetype": "Self-Debuff Nuke"
     }, {
         "moveId": "BRICK_BREAK",
         "name": "Brick Break",
@@ -23288,7 +23289,7 @@
         "buffs": [-2, 0],
         "buffTarget": "self",
         "buffApplyChance": "1",
-        "archetype": "High Energy Self-Debuff"
+        "archetype": "Self-Debuff Nuke"
     }, {
         "moveId": "LICK",
         "name": "Lick",
@@ -23363,7 +23364,7 @@
         "energy": 55,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "High Energy"
+        "archetype": "Nuke"
     }, {
         "moveId": "METAL_CLAW",
         "name": "Metal Claw",
@@ -23415,7 +23416,7 @@
         "buffs": [-1, 0],
         "buffTarget": "opponent",
         "buffApplyChance": ".1",
-        "archetype": "High Energy Debuff"
+        "archetype": "Debuff Nuke"
     }, {
         "moveId": "MUD_BOMB",
         "name": "Mud Bomb",
@@ -23509,7 +23510,7 @@
         "energy": 60,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "High Energy"
+        "archetype": "Nuke"
     }, {
         "moveId": "OUTRAGE",
         "name": "Outrage",
@@ -23518,7 +23519,7 @@
         "energy": 60,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "High Energy"
+        "archetype": "Nuke"
     }, {
         "moveId": "OVERHEAT",
         "name": "Overheat",
@@ -23531,7 +23532,7 @@
         "buffs": [-2, 0],
         "buffTarget": "self",
         "buffApplyChance": "1",
-        "archetype": "High Energy Self-Debuff"
+        "archetype": "Self-Debuff Nuke"
     }, {
         "moveId": "PARABOLIC_CHARGE",
         "name": "Parabolic Charge",
@@ -23551,7 +23552,7 @@
         "energy": 60,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "High Energy"
+        "archetype": "Nuke"
     }, {
         "moveId": "PECK",
         "name": "Peck",
@@ -23662,7 +23663,7 @@
         "energy": 60,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "High Energy"
+        "archetype": "Nuke"
     }, {
         "moveId": "PRESENT",
         "name": "Present",
@@ -23891,7 +23892,7 @@
         "energy": 55,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "High Energy"
+        "archetype": "Nuke"
     }, {
         "moveId": "SHADOW_BONE",
         "name": "Shadow Bone",
@@ -24079,7 +24080,7 @@
         "energy": 55,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "High Energy"
+        "archetype": "Nuke"
     }, {
         "moveId": "STRUGGLE",
         "name": "Struggle",
@@ -24184,7 +24185,7 @@
         "energy": 55,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "High Energy"
+        "archetype": "Nuke"
     }, {
         "moveId": "TECHNO_BLAST_BURN",
         "name": "Techno Blast (Burn)",
@@ -24193,7 +24194,7 @@
         "energy": 55,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "High Energy"
+        "archetype": "Nuke"
     }, {
         "moveId": "TECHNO_BLAST_CHILL",
         "name": "Techno Blast (Chill)",
@@ -24202,7 +24203,7 @@
         "energy": 55,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "High Energy"
+        "archetype": "Nuke"
     }, {
         "moveId": "TECHNO_BLAST_DOUSE",
         "name": "Techno Blast (Douse)",
@@ -24211,7 +24212,7 @@
         "energy": 55,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "High Energy"
+        "archetype": "Nuke"
     }, {
         "moveId": "TECHNO_BLAST_SHOCK",
         "name": "Techno Blast (Shock)",
@@ -24220,7 +24221,7 @@
         "energy": 55,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "High Energy"
+        "archetype": "Nuke"
     }, {
         "moveId": "THUNDER",
         "name": "Thunder",

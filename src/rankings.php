@@ -252,8 +252,16 @@ require_once 'header.php';
 	</div>
 	<div class="detail-section float margin">
 		<div class="ranking-header">Fast Moves</div>
-		<div class="ranking-header right">Preference</div>
-		<div class="moveset fast clear"></div>
+		<div class="moveset fast clear">
+			<div class="move-detail-template rank hide">
+				<div class="name-container"><span class="name">Counter</span></div>
+				<div class="stats-container name-container flex">
+					<div class="dpt"><b class="value">0</b> dpt</div>
+					<div class="ept"><b class="value">0</b> ept</div>
+					<div class="turns"><b class="value">0</b> turns</div>
+				</div>
+			</div>
+		</div>
 		<div class="footnote">
 			* Event or Elite TM exclusive<br>
 			<sup>†</sup> Unobtainable via TM
@@ -261,8 +269,16 @@ require_once 'header.php';
 	</div>
 	<div class="detail-section float">
 		<div class="ranking-header">Charged Moves</div>
-		<div class="ranking-header right">Preference</div>
-		<div class="moveset charged clear"></div>
+		<div class="moveset charged clear">
+			<div class="move-detail-template rank hide">
+				<div class="name-container"><span class="name">Counter</span></div>
+				<div class="stats-container name-container flex">
+					<div class="damage"><b class="value">0</b> damage</div>
+					<div class="energy"><b class="value">0</b> energy</div>
+					<div class="dpe"><b class="value">0</b> dpe</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<div class="clear"></div>
 	<div class="detail-section moveset-override">This Pokemon's recommended moveset has been manually set over the calculated move preferences. This may be to prevent an impossible moveset or take advantage of specific matchups.</div>

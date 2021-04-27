@@ -627,7 +627,16 @@ var InterfaceMaster = (function () {
 						displayWidth = displayWidth + "%";
 					}
 
-					$details.find(".moveset.fast").append("<div class=\"rank " + fastMoves[n].type + "\"><div class=\"name-container\"><span class=\"number\">#"+(n+1)+"</span><span class=\"name\">"+fastMoves[n].displayName+"</span></div><div class=\"rating-container\"><div class=\"rating\" style=\"width:"+displayWidth+"\">"+percentStr+"</span></div><div class=\"clear\"></div></div>");
+					var $moveDetails = $details.find(".moveset.fast .move-detail-template.hide").clone();
+					$moveDetails.removeClass("hide");
+
+					$moveDetails.addClass(fastMoves[n].type);
+					$moveDetails.find(".name").html(fastMoves[n].displayName);
+					$moveDetails.find(".dpt .value").html(Math.round( (fastMoves[n].power / (fastMoves[n].cooldown / 500)) * 100) / 100);
+					$moveDetails.find(".ept .value").html(Math.round( (fastMoves[n].energyGain / (fastMoves[n].cooldown / 500)) * 100) / 100);
+					$moveDetails.find(".turns .value").html( fastMoves[n].cooldown / 500 );
+
+					$details.find(".moveset.fast").append($moveDetails);
 				}
 
 				// Display charged moves
@@ -648,7 +657,16 @@ var InterfaceMaster = (function () {
 						displayWidth = displayWidth + "%";
 					}
 
-					$details.find(".moveset.charged").append("<div class=\"rank " + chargedMoves[n].type + "\"><div class=\"name-container\"><span class=\"number\">#"+(n+1)+"</span><span class=\"name\">"+chargedMoves[n].displayName+"</span></div><div class=\"rating-container\"><div class=\"rating\" style=\"width:"+displayWidth+"\">"+percentStr+"</span></div><div class=\"clear\"></div></div>");
+					var $moveDetails = $details.find(".moveset.charged .move-detail-template.hide").clone();
+					$moveDetails.removeClass("hide");
+
+					$moveDetails.addClass(chargedMoves[n].type);
+					$moveDetails.find(".name").html(chargedMoves[n].displayName);
+					$moveDetails.find(".damage .value").html(chargedMoves[n].power);
+					$moveDetails.find(".energy .value").html(chargedMoves[n].energy);
+					$moveDetails.find(".dpe .value").html( Math.round( (chargedMoves[n].power / chargedMoves[n].energy) * 100) / 100);
+
+					$details.find(".moveset.charged").append($moveDetails);
 				}
 
 				// Display moveset override notice where applicable

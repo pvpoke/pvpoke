@@ -316,7 +316,12 @@ var GameMaster = (function () {
 					if((move.energy > 60)&&(dpe > 1.5)){
 						archetype = "Nuke";
 					} else if(move.energy > 50){
-						archetype = "High Energy";
+						if(dpe > 1.75){
+							archetype = "Nuke";
+						} else{
+							archetype = "High Energy";
+						}
+
 					} else if(move.energy < 45){
 						archetype = "Spam/Bait"
 					}

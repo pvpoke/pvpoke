@@ -1907,6 +1907,21 @@ a.download-csv {
   font-size: 12px;
   padding: 10px;
 }
+.rank .details .detail-section .moveset .name-container {
+  float: none;
+  border-bottom: 1px solid;
+  padding-bottom: 5px;
+  margin-bottom: 0px;
+}
+.rank .details .detail-section .moveset .name-container.stats-container {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.rank .details .detail-section .moveset .stats-container {
+  font-size: 12px;
+  justify-content: space-between;
+}
 .rank .details .detail-section .footnote {
   font-size: 12px;
 }

@@ -2207,6 +2207,26 @@ a.download-csv{
 				padding: 10px;
 			}
 
+			.moveset{
+				.name-container{
+					float:none;
+					border-bottom: 1px solid;
+					padding-bottom:5px;
+					margin-bottom:0px;
+
+					&.stats-container{
+						border:none;
+						margin:0;
+						padding:0;
+					}
+				}
+
+				.stats-container{
+					font-size:12px;
+					justify-content: space-between;
+				}
+			}
+
 			.footnote{
 				font-size: 12px;
 			}

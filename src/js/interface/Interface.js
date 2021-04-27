@@ -59,8 +59,6 @@ var InterfaceMaster = (function () {
 
 				var data = gm.data;
 
-				gm.generateMoveArchetypes();
-
 				// Initialize selectors and push Pokemon data
 
 				battle = new Battle();
