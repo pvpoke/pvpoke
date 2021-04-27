@@ -51,6 +51,9 @@ function Pokemon(id, i, b){
 	this.shadowType = "normal"; // normal, shadow, or purified
 	this.shadowAtkMult = 1;
 	this.shadowDefMult = 1;
+	this.released = data.released; // Used to filter Pokemon in rankings
+	this.buddyDistance = data.buddyDistance;
+	this.thirdMoveCost = data.thirdMoveCost;
 
 	this.typeEffectiveness = getTypeEffectivenessArray(b);
 
