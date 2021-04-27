@@ -300,6 +300,71 @@ var GameMaster = (function () {
 			console.log(json);
 		}
 
+		// Analyze Charged Moves and bucket them into archetypes
+
+		object.generateMoveArchetypes = function(){
+
+			// List of legendaries and mythicals to be excluded from the level cap
+
+			$.each(object.data.moves, function(index, move){
+				var archetype = "General"; // Default archetype
+
+				if(move.energy > 0){
+					var dpe = move.power / move.energy;
+
+					// Categorize by energy
+					if((move.energy > 60)&&(dpe > 1.5)){
+						archetype = "Nuke";
+					} else if(move.energy > 50){
+						archetype = "High Energy";
+					} else if(move.energy < 45){
+						archetype = "Spam/Bait"
+					}
+
+					var descriptor = "";
+
+					if(move.buffs){
+
+						if((move.buffTarget == "self")&&((move.buffs[0] > 0)||(move.buffs[1] > 0))){
+							descriptor = "Boost"
+						}
+
+						if((move.buffTarget == "self")&&((move.buffs[0] < 0)||(move.buffs[1] < 0))){
+							descriptor = "Self-Debuff"
+						}
+
+						if((move.buffTarget == "opponent")&&((move.buffs[0] < 0)||(move.buffs[1] < 0))){
+							descriptor = "Debuff"
+						}
+
+						if(descriptor != ""){
+							if(archetype == "General"){
+								archetype = descriptor;
+							} else if(archetype == "High Energy"){
+								archetype = archetype + " " + descriptor;
+							} else{
+								archetype = descriptor + " " + archetype;
+							}
+
+							if(archetype == "Self-Debuff Spam/Bait"){
+								archetype = "Self-Debuff Spam"
+							}
+						}
+					}
+
+					move.archetype = archetype;
+				}
+			});
+
+			// Sort Pokemon by dex
+
+			object.data.pokemon.sort((a,b) => (a.dex > b.dex) ? 1 : ((b.dex > a.dex) ? -1 : 0));
+
+			var json = JSON.stringify(object.data);
+
+			console.log(json);
+		}
+
 		// Return a move object from the GameMaster file given move ID
 
 		object.getMoveById = function(id){
