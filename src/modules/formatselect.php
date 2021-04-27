@@ -9,5 +9,6 @@
 	<option value="1500" cup="prismatic">Silph Prismatic Cup</option>
 	<option value="1500" cup="commander">Silph Commander Cup</option>
 	<option value="1500" cup="factions">Silph Factions (Floating City)</option>
+	<option value="10000" cup="ou">PoGoRaids Overused Tournament</option>
 	<option value="1500" cup="custom">Custom</option>
 </select>

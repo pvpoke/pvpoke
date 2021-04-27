@@ -744,7 +744,10 @@
         "exclude": [{
             "filterType": "id",
             "values": ["dialga","palkia","giratina_altered","giratina_origin","charizard_mega_x","charizard_mega_y","blastoise_mega","gengar_mega","melmetal","kyogre","groudon","zekrom","reshiram","mewtwo","lugia","ho_oh","dragonite","gyarados_mega"]
-        }]
+        }, {
+			"filterType": "tag",
+			"values": ["xl"]
+			}]
     }, {
         "name": "slitzko",
         "title": "Slitzko Memorial Cup",
@@ -809,7 +812,7 @@
             "values": ["mega", "mythical", "shadow", "regional"]
         }, {
             "filterType": "id",
-            "values": ["stunfisk_galarian","skarmory","altaria","bastiodon","registeel"]
+            "values": ["stunfisk_galarian","skarmory","altaria","bastiodon","registeel","chansey"]
         }]
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xl"],
@@ -20828,7 +20831,8 @@
             "cp500": [9.5, 9, 10, 13],
             "cp1500": [29, 6, 15, 8],
             "cp2500": [40, 15, 15, 15]
-        }
+        },
+		"tags": ["regional"]
     }, {
         "dex": 708,
         "speciesName": "Phantump",

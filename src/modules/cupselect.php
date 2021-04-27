@@ -6,6 +6,7 @@
 	<option value="tsa-3" cup="prismatic">Silph Prismatic Cup</option>
 	<option value="tsa-3" cup="commander">Silph Commander Cup</option>
 	<option value="tsa-3" cup="factions">Silph Factions (Floating City)</option>
+	<option value="community" cup="ou">PoGoRaids Overused Tournament</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>
