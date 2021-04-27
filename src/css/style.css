@@ -1912,6 +1912,7 @@ a.download-csv {
   border-bottom: 1px solid;
   padding-bottom: 5px;
   margin-bottom: 0px;
+  justify-content: space-between;
 }
 .rank .details .detail-section .moveset .name-container.stats-container {
   border: none;
@@ -1921,6 +1922,10 @@ a.download-csv {
 .rank .details .detail-section .moveset .stats-container {
   font-size: 12px;
   justify-content: space-between;
+}
+.rank .details .detail-section .moveset .archetype {
+  margin-top: 2px;
+  font-size: 12px;
 }
 .rank .details .detail-section .footnote {
   font-size: 12px;

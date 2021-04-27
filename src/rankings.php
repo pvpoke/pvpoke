@@ -271,7 +271,10 @@ require_once 'header.php';
 		<div class="ranking-header">Charged Moves</div>
 		<div class="moveset charged clear">
 			<div class="move-detail-template rank hide">
-				<div class="name-container"><span class="name">Counter</span></div>
+				<div class="name-container flex">
+					<span class="name">Counter</span>
+					<span class="archetype">General</span>
+				</div>
 				<div class="stats-container name-container flex">
 					<div class="damage"><b class="value">0</b> damage</div>
 					<div class="energy"><b class="value">0</b> energy</div>

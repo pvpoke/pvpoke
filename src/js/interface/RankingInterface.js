@@ -660,8 +660,33 @@ var InterfaceMaster = (function () {
 					var $moveDetails = $details.find(".moveset.charged .move-detail-template.hide").clone();
 					$moveDetails.removeClass("hide");
 
+					// Contextualize the move archetype for this Pokemon
+					var archetype = chargedMoves[n].archetype;
+
+					if(chargedMoves[n].stab == 1){
+						switch(archetype){
+							case "General":
+								archetype = "Coverage";
+								break;
+
+							case "High Energy":
+								archetype = "High Energy Coverage";
+								break;
+
+							case "Spam/Bait":
+								archetype = "Coverage Spam/Bait";
+								break;
+
+							case "Nuke":
+								archetype = "Coverage Nuke";
+								break;
+
+						}
+					}
+
 					$moveDetails.addClass(chargedMoves[n].type);
 					$moveDetails.find(".name").html(chargedMoves[n].displayName);
+					$moveDetails.find(".archetype").html(archetype);
 					$moveDetails.find(".damage .value").html(chargedMoves[n].power);
 					$moveDetails.find(".energy .value").html(chargedMoves[n].energy);
 					$moveDetails.find(".dpe .value").html( Math.round( (chargedMoves[n].power / chargedMoves[n].energy) * 100) / 100);

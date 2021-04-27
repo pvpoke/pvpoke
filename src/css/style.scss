@@ -2213,6 +2213,7 @@ a.download-csv{
 					border-bottom: 1px solid;
 					padding-bottom:5px;
 					margin-bottom:0px;
+					justify-content: space-between;
 
 					&.stats-container{
 						border:none;
@@ -2224,6 +2225,11 @@ a.download-csv{
 				.stats-container{
 					font-size:12px;
 					justify-content: space-between;
+				}
+
+				.archetype{
+					margin-top:2px;
+					font-size:12px;
 				}
 			}
 

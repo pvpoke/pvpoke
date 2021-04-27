@@ -394,11 +394,18 @@ var GameMaster = (function () {
 						}
 					}
 
+					var archetype = '';
+
+					if(m.archetype){
+						archetype = m.archetype;
+					}
+
 					move = {
 						moveId: m.moveId,
 						name: m.name,
 						displayName: m.name,
 						abbreviation: abbreviation,
+						archetype: archetype,
 						type: m.type,
 						power: m.power,
 						energy: m.energy,
