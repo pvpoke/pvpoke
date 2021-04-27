@@ -12,6 +12,7 @@ var InterfaceMaster = (function () {
 
 			var self = this;
 			var data;
+			var gm = GameMaster.getInstance();
 			var jumpToPoke = false;
 			var limitedPokemon = [];
 			var context = "rankings";
@@ -664,21 +665,29 @@ var InterfaceMaster = (function () {
 					var archetype = chargedMoves[n].archetype;
 
 					if(chargedMoves[n].stab == 1){
+						var descriptor = "Coverage";
+
+						if(chargedMoves[n].type == "normal"){
+							descriptor = "Neutral"
+						}
+
 						switch(archetype){
 							case "General":
-								archetype = "Coverage";
+								archetype = descriptor;
 								break;
 
 							case "High Energy":
-								archetype = "High Energy Coverage";
+								if(descriptor == "Coverage"){
+									archetype = "High Energy Coverage";
+								}
 								break;
 
 							case "Spam/Bait":
-								archetype = "Coverage Spam/Bait";
+								archetype = descriptor + " Spam/Bait";
 								break;
 
 							case "Nuke":
-								archetype = "Coverage Nuke";
+								archetype = descriptor + " Nuke";
 								break;
 
 						}
@@ -690,6 +699,11 @@ var InterfaceMaster = (function () {
 					$moveDetails.find(".damage .value").html(chargedMoves[n].power);
 					$moveDetails.find(".energy .value").html(chargedMoves[n].energy);
 					$moveDetails.find(".dpe .value").html( Math.round( (chargedMoves[n].power / chargedMoves[n].energy) * 100) / 100);
+
+					if(chargedMoves[n].buffs){
+						$moveDetails.find(".move-effect").html(gm.getStatusEffectString(chargedMoves[n]));
+					}
+
 
 					$details.find(".moveset.charged").append($moveDetails);
 				}
@@ -873,6 +887,11 @@ var InterfaceMaster = (function () {
 					$details.find(".share-link").remove();
 				}
 
+				// Display buddy distance and second move cost
+				var moveCostStr = pokemon.thirdMoveCost.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","); // Ugh regex
+
+				$details.find(".buddy-distance").html(pokemon.buddyDistance + " km");
+				$details.find(".third-move-cost").html(moveCostStr + " Stardust");
 
 				// Only execute if this was a direct action and not loaded from URL parameters, otherwise pushes infinite states when the user navigates back
 

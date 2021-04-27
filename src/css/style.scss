@@ -1997,7 +1997,7 @@ a.download-csv{
 	width:50%;
 	float:left;
 	font-weight: bold;
-	padding:5px 10px;
+	padding:5px 0px;
 	box-sizing:border-box;
 
 	&.right{
@@ -2211,14 +2211,33 @@ a.download-csv{
 				.name-container{
 					float:none;
 					border-bottom: 1px solid;
-					padding-bottom:5px;
-					margin-bottom:0px;
+					padding-bottom:3px;
+					margin-bottom:3px;
 					justify-content: space-between;
+					align-items: baseline;
+					font-size:14px;
 
 					&.stats-container{
 						border:none;
 						margin:0;
 						padding:0;
+
+						.damage,.energy,.dpe,.dpt,.ept,.turns{
+							min-width:75px;
+						}
+
+						.dpe,.turns{
+							min-width:50px;
+							text-align: right;
+						}
+
+						&.move-effect{
+							justify-content: flex-start;
+
+							div{
+								margin:5px 5px 0 0;
+							}
+						}
 					}
 				}
 

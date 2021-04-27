@@ -280,6 +280,7 @@ require_once 'header.php';
 					<div class="energy"><b class="value">0</b> energy</div>
 					<div class="dpe"><b class="value">0</b> dpe</div>
 				</div>
+				<div class="stats-container name-container move-effect flex"></div>
 			</div>
 		</div>
 	</div>
@@ -324,6 +325,14 @@ require_once 'header.php';
 			<div class="ranking-header">Rank 1 Level &amp; IVs</div>
 			<div class="rating"></div>
 		</div>
+	</div>
+	<div class="detail-section float margin">
+		<div class="ranking-header">Buddy Distance</div>
+		<div class="buddy-distance clear"></div>
+	</div>
+	<div class="detail-section float">
+		<div class="ranking-header">Charged Move Cost</div>
+		<div class="third-move-cost clear"></div>
 	</div>
 	<div class="share-link detail-section"><input type="text" readonly="">
 		<div class="copy">Copy</div>

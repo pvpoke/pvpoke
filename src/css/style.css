@@ -1734,7 +1734,7 @@ a.download-csv {
   width: 50%;
   float: left;
   font-weight: bold;
-  padding: 5px 10px;
+  padding: 5px 0px;
   box-sizing: border-box;
 }
 .ranking-header.right {
@@ -1910,14 +1910,29 @@ a.download-csv {
 .rank .details .detail-section .moveset .name-container {
   float: none;
   border-bottom: 1px solid;
-  padding-bottom: 5px;
-  margin-bottom: 0px;
+  padding-bottom: 3px;
+  margin-bottom: 3px;
   justify-content: space-between;
+  align-items: baseline;
+  font-size: 14px;
 }
 .rank .details .detail-section .moveset .name-container.stats-container {
   border: none;
   margin: 0;
   padding: 0;
+}
+.rank .details .detail-section .moveset .name-container.stats-container .damage, .rank .details .detail-section .moveset .name-container.stats-container .energy, .rank .details .detail-section .moveset .name-container.stats-container .dpe, .rank .details .detail-section .moveset .name-container.stats-container .dpt, .rank .details .detail-section .moveset .name-container.stats-container .ept, .rank .details .detail-section .moveset .name-container.stats-container .turns {
+  min-width: 75px;
+}
+.rank .details .detail-section .moveset .name-container.stats-container .dpe, .rank .details .detail-section .moveset .name-container.stats-container .turns {
+  min-width: 50px;
+  text-align: right;
+}
+.rank .details .detail-section .moveset .name-container.stats-container.move-effect {
+  justify-content: flex-start;
+}
+.rank .details .detail-section .moveset .name-container.stats-container.move-effect div {
+  margin: 5px 5px 0 0;
 }
 .rank .details .detail-section .moveset .stats-container {
   font-size: 12px;

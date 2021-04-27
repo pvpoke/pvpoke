@@ -453,6 +453,34 @@ var GameMaster = (function () {
 			return move;
 		}
 
+
+		// Get status effect string from a move
+
+		object.getStatusEffectString = function(move){
+			if (!move.buffs) {
+				return '';
+			}
+			var atk = object.getStatusEffectStatString(move.buffs[0], 'Atk');
+			var def = object.getStatusEffectStatString(move.buffs[1], 'Def');
+			var buffApplyChance = parseFloat(move.buffApplyChance)*100 + '%';
+			var buffTarget = move.buffTarget;
+			var stringArray = [buffApplyChance + " chance", atk, def, buffTarget];
+			return "<div class=\"status-effect-description\">"+stringArray.join(' ')+"</div>";
+		}
+
+		// Get stats string from move for status effects
+
+		object.getStatusEffectStatString = function(stat, type){
+			if (stat === 0) {
+				return "";
+			}
+			var statString = stat;
+			if (stat > 0) {
+				statString = "+" + statString;
+			}
+			return statString + " " + type;
+		}
+
 		// Return a cup object given an id name
 
 		object.getCupById = function(id){

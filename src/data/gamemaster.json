@@ -21913,17 +21913,17 @@
         "speciesName": "Xerneas",
         "speciesId": "xerneas",
         "baseStats": {
-            "atk": 275,
-            "def": 203,
-            "hp": 270
+			"atk": 250,
+			"def": 185,
+			"hp": 246
         },
         "types": ["fairy", "none"],
         "fastMoves": ["TACKLE", "ZEN_HEADBUTT"],
         "chargedMoves": ["MOONBLAST", "MEGAHORN", "CLOSE_COMBAT", "GIGA_IMPACT", "THUNDER"],
         "defaultIVs": {
-            "cp500": [4.5, 4, 4, 4],
-            "cp1500": [12, 7, 13, 14],
-            "cp2500": [20, 8, 13, 13]
+			"cp500": [5, 13, 13, 9],
+			"cp1500": [14.5, 8, 11, 11],
+			"cp2500": [24, 5, 14, 13]
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
@@ -21933,17 +21933,17 @@
         "speciesName": "Yveltal",
         "speciesId": "yveltal",
         "baseStats": {
-            "atk": 275,
-            "def": 203,
-            "hp": 270
+			"atk": 250,
+			"def": 185,
+			"hp": 246
         },
         "types": ["dark", "flying"],
         "fastMoves": ["SUCKER_PUNCH", "SNARL", "GUST"],
         "chargedMoves": ["DARK_PULSE", "HURRICANE", "FOCUS_BLAST", "HYPER_BEAM", "PSYCHIC"],
         "defaultIVs": {
-            "cp500": [4.5, 4, 4, 4],
-            "cp1500": [12, 7, 13, 14],
-            "cp2500": [20, 8, 13, 13]
+			"cp500": [5, 13, 13, 9],
+			"cp1500": [14.5, 8, 11, 11],
+			"cp2500": [24, 5, 14, 13]
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
