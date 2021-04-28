@@ -188,7 +188,7 @@ var RankerMaster = (function () {
 
 						pokemon.baitShields = overrideSettings[1].bait;
 
-						if(context == "matrix"){
+						if(context == "matrix" || context == "team-counters"){
 							opponent.baitShields = overrideSettings[0].bait;
 						}
 
