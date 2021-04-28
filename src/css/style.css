@@ -1907,6 +1907,39 @@ a.download-csv {
   font-size: 12px;
   padding: 10px;
 }
+.rank .details .detail-section .stat-details .stat-row {
+  display: flex;
+  align-items: baseline;
+  margin: 5px 0;
+}
+.rank .details .detail-section .stat-details .stat-row .label {
+  font-size: 12px;
+  min-width: 50px;
+}
+.rank .details .detail-section .stat-details .stat-row .value {
+  font-weight: bold;
+  font-size: 12px;
+  padding: 5px;
+  text-align: right;
+  font-weight: bold;
+  border-radius: 8px;
+  min-width: 45px;
+  margin-right: 5px;
+}
+.rank .details .detail-section .stat-details .stat-row .value.overall {
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.65);
+  text-align: center;
+  color: #fff6d4;
+}
+.rank .details .detail-section .stat-details .stat-row .bar-container {
+  flex-grow: 1;
+  overflow: hidden;
+}
+.rank .details .detail-section .stat-details .stat-row .bar-container .bar {
+  height: 7px;
+  border-radius: 4px;
+}
 .rank .details .detail-section .moveset .name-container {
   float: none;
   border-bottom: 1px solid;

@@ -241,6 +241,43 @@ require_once 'header.php';
 
 <div class="details-template hide">
 	<div class="detail-section float margin">
+		<div class="ranking-header">Stats</div>
+		<div class="stat-details clear">
+			<div class="stat-row">
+				<div class="label">Attack</div>
+				<div class="value">0</div>
+				<div class="bar-container">
+					<div class="bar"></div>
+				</div>
+			</div>
+			<div class="stat-row">
+				<div class="label">Defense</div>
+				<div class="value">0</div>
+				<div class="bar-container">
+					<div class="bar"></div>
+				</div>
+			</div>
+			<div class="stat-row">
+				<div class="label">Stamina</div>
+				<div class="value">0</div>
+				<div class="bar-container">
+					<div class="bar"></div>
+				</div>
+			</div>
+			<div class="stat-row">
+				<div class="label">Overall</div>
+				<div class="value overall">0</div>
+				<div class="bar-container">
+					<div class="bar"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="detail-section float">
+		<div class="ranking-header">Performance</div>
+		<div class="third-move-cost clear"></div>
+	</div>
+	<div class="detail-section float margin">
 		<div class="ranking-header">Key Wins</div>
 		<div class="ranking-header right">Battle Rating</div>
 		<div class="matchups clear"></div>

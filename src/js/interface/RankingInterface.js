@@ -608,6 +608,57 @@ var InterfaceMaster = (function () {
 
 				$details.append($(".details-template.hide").html());
 
+
+				// Display Pokemon stats
+				var overall = Math.round((pokemon.stats.hp * pokemon.stats.atk * pokemon.stats.def) / 1000);
+
+				$details.find(".stat-details .stat-row .value").eq(0).html(Math.floor(pokemon.stats.atk*10)/10);
+				$details.find(".stat-details .stat-row .value").eq(1).html(Math.floor(pokemon.stats.def*10)/10);
+				$details.find(".stat-details .stat-row .value").eq(2).html(pokemon.stats.hp);
+				$details.find(".stat-details .stat-row .value").eq(3).html(overall);
+
+				// Display bars
+				$details.find(".stat-details .stat-row .bar").addClass(pokemon.types[0]);
+
+				/*
+				* Explanation for the following section: Instead of displaying stats proportionally,
+				* I'm shifting the baseline so the scale goes from e.g. 100-350 instead of 0-350.
+				* This has the effect of making high or low stats appear more extreme, giving the
+				* stat bars a stronger visual impact.
+				*
+				* For example, Haunter is one of the squishiest Great League Pokemon. Its stat
+				* product (1400) is half that Bastiodon (2800). If Bastiodon represents a full stat
+				* bar, representing Haunter as half of that length doesn't truly convey the difference
+				* between the two. Thus, the adjustments here make for a more striking scale.
+				*
+				* Thanks for coming to by TED talk.
+				*/
+
+				var statCeiling = 230;
+				var statSubtraction = 80;
+				var statProductCeiling = 4500;
+				var statProductSubstraction = 4500;
+
+				if(battle.getCP() == 500){
+					statProductCeiling = 1000;
+					statCeiling = 200;
+				} else if(battle.getCP() == 1500){
+					statProductCeiling = 2100;
+					statProductSubstraction = 1100;
+					statCeiling = 250;
+					statSubtraction = 50;
+				} else if(battle.getCP() == 2500){
+					statProductCeiling = 3000;
+					statProductSubstraction = 2600;
+					statCeiling = 300;
+					statSubtraction = 50;
+				}
+
+				$details.find(".stat-details .stat-row .bar").eq(0).css("width", (( (pokemon.stats.atk - statSubtraction) / statCeiling) * 100) + "%");
+				$details.find(".stat-details .stat-row .bar").eq(1).css("width", (((pokemon.stats.def - statSubtraction) / statCeiling) * 100) + "%");
+				$details.find(".stat-details .stat-row .bar").eq(2).css("width", (((pokemon.stats.hp - statSubtraction) / statCeiling) * 100) + "%");
+				$details.find(".stat-details .stat-row .bar").eq(3).css("width", (((overall - statProductSubstraction) / statProductCeiling) * 100) + "%");
+
 				// Need to calculate percentages
 
 				var totalFastUses = 0;
@@ -633,7 +684,7 @@ var InterfaceMaster = (function () {
 
 					$moveDetails.addClass(fastMoves[n].type);
 					$moveDetails.find(".name").html(fastMoves[n].displayName);
-					$moveDetails.find(".dpt .value").html(Math.round( (fastMoves[n].power / (fastMoves[n].cooldown / 500)) * 100) / 100);
+					$moveDetails.find(".dpt .value").html(Math.round( ((fastMoves[n].power * fastMoves[n].stab) / (fastMoves[n].cooldown / 500)) * 100) / 100);
 					$moveDetails.find(".ept .value").html(Math.round( (fastMoves[n].energyGain / (fastMoves[n].cooldown / 500)) * 100) / 100);
 					$moveDetails.find(".turns .value").html( fastMoves[n].cooldown / 500 );
 
@@ -696,9 +747,9 @@ var InterfaceMaster = (function () {
 					$moveDetails.addClass(chargedMoves[n].type);
 					$moveDetails.find(".name").html(chargedMoves[n].displayName);
 					$moveDetails.find(".archetype").html(archetype);
-					$moveDetails.find(".damage .value").html(chargedMoves[n].power);
+					$moveDetails.find(".damage .value").html(Math.round((chargedMoves[n].power * chargedMoves[n].stab) * 100) / 100);
 					$moveDetails.find(".energy .value").html(chargedMoves[n].energy);
-					$moveDetails.find(".dpe .value").html( Math.round( (chargedMoves[n].power / chargedMoves[n].energy) * 100) / 100);
+					$moveDetails.find(".dpe .value").html( Math.round( ((chargedMoves[n].power * chargedMoves[n].stab) / chargedMoves[n].energy) * 100) / 100);
 
 					if(chargedMoves[n].buffs){
 						$moveDetails.find(".move-effect").html(gm.getStatusEffectString(chargedMoves[n]));
