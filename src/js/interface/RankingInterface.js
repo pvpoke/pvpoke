@@ -883,7 +883,7 @@ var InterfaceMaster = (function () {
 
 				// Display Pokemon's stat ranges
 
-				var statRanges = {
+				/*var statRanges = {
 					atk: {
 						min: pokemon.generateIVCombinations("atk", -1, 1)[0].atk,
 						max: pokemon.generateIVCombinations("atk", 1, 1)[0].atk,
@@ -896,19 +896,7 @@ var InterfaceMaster = (function () {
 						min: pokemon.generateIVCombinations("hp", -1, 1)[0].hp,
 						max: pokemon.generateIVCombinations("hp", 1, 1)[0].hp,
 					}
-				};
-
-				$details.find(".stats .rating").eq(0).html(Math.round(statRanges.atk.min * 10) / 10);
-				$details.find(".stats .rating").eq(1).html(Math.round(statRanges.atk.max * 10) / 10);
-				$details.find(".stats .rating").eq(2).html(Math.round(statRanges.def.min * 10) / 10);
-				$details.find(".stats .rating").eq(3).html(Math.round(statRanges.def.max * 10) / 10);
-				$details.find(".stats .rating").eq(4).html(Math.round(statRanges.hp.min * 10) / 10);
-				$details.find(".stats .rating").eq(5).html(Math.round(statRanges.hp.max * 10) / 10);
-
-				// Display Pokemon's highest IV's
-
-				var rank1Combo = pokemon.generateIVCombinations("overall", 1, 1)[0];
-				$details.find(".stats .rating").eq(6).html("Lvl " + rank1Combo.level + " " + rank1Combo.ivs.atk + "/" + rank1Combo.ivs.def + "/" + rank1Combo.ivs.hp);
+				};*/
 
 				// Show share link
 				var cup = battle.getCup().name;
@@ -933,7 +921,7 @@ var InterfaceMaster = (function () {
 
 					multiBattleLink += "/";
 
-					$details.find(".detail-section.float").eq(4).before($("<div class=\"multi-battle-link\"><p>See all of <b>" + pokemon.speciesName + "'s</b> matchups:</p><a target=\"_blank\" class=\"button\" href=\""+multiBattleLink+"\">"+pokemon.speciesName+" vs. " + cupName +"</a></div>"));
+					$details.find(".detail-section.float").eq(2).before($("<div class=\"multi-battle-link\"><p>See all of <b>" + pokemon.speciesName + "'s</b> matchups:</p><a target=\"_blank\" class=\"button\" href=\""+multiBattleLink+"\">"+pokemon.speciesName+" vs. " + cupName +"</a></div>"));
 				} else{
 					$details.find(".share-link").remove();
 				}
@@ -966,6 +954,53 @@ var InterfaceMaster = (function () {
 
 				$details.find(".buddy-distance").html(pokemon.buddyDistance + " km");
 				$details.find(".third-move-cost").html(moveCostStr + " Stardust");
+
+				// Display Pokemon's highest IV's
+
+				var rank1Combo = pokemon.generateIVCombinations("overall", 1, 1)[0];
+				$details.find(".stat-row.rank-1 .value").html("Lvl " + rank1Combo.level + " " + rank1Combo.ivs.atk + "/" + rank1Combo.ivs.def + "/" + rank1Combo.ivs.hp);
+
+				var level41CP = pokemon.calculateCP(0.795300006866455, 15, 15, 15);
+
+				pokemon.autoLevel = true;
+				pokemon.setIV("atk", 15);
+				pokemon.setIV("def", 15);
+				pokemon.setIV("hp", 15);
+
+				var hundoLevel = pokemon.level; // Getting the lowest possible level
+
+				// Can this Pokemon get close the CP limit at level 41?
+
+				if(level41CP >= battle.getCP() - 20){
+
+					// This Pokemon can get close to the CP limit at level 41
+					if(rank1Combo.level <= 41){
+						$details.find(".xl-info.regular").show();
+					} else{
+						$details.find(".xl-info.mixed").show();
+					}
+				} else{
+					if(pokemon.levelCap == 40){
+						$details.find(".xl-info.unavailable").show();
+					} else{
+						if(level41CP >= battle.getCP() - 75){
+							$details.find(".xl-info.mixed").show();
+						} else{
+							$details.find(".xl-info.xl").show();
+						}
+
+					}
+
+				}
+
+				// Display level range
+
+				if(rank1Combo.level > hundoLevel){
+					$details.find(".stat-row.level .value").html(hundoLevel + " - " + rank1Combo.level);
+				} else{
+					$details.find(".stat-row.level .value").html(rank1Combo.level);
+				}
+
 
 				// Only execute if this was a direct action and not loaded from URL parameters, otherwise pushes infinite states when the user navigates back
 

@@ -241,6 +241,16 @@ require_once 'header.php';
 
 <div class="details-template hide">
 	<div class="detail-section float margin">
+		<div class="ranking-header">Key Wins</div>
+		<div class="ranking-header right">Battle Rating</div>
+		<div class="matchups clear"></div>
+	</div>
+	<div class="detail-section float">
+		<div class="ranking-header">Key Losses</div>
+		<div class="ranking-header right">Battle Rating</div>
+		<div class="counters clear"></div>
+	</div>
+	<div class="detail-section float margin">
 		<div class="ranking-header">Performance</div>
 		<canvas class="hexagon"></canvas>
 	</div>
@@ -268,24 +278,26 @@ require_once 'header.php';
 					<div class="bar"></div>
 				</div>
 			</div>
-			<div class="stat-row">
+			<div class="stat-row overall">
 				<div class="label">Overall</div>
-				<div class="value overall">0</div>
+				<div class="value">0</div>
 				<div class="bar-container">
 					<div class="bar"></div>
 				</div>
 			</div>
+			<div class="stat-row level">
+				<div class="label">Level</div>
+				<div class="value">0</div>
+			</div>
+			<div class="stat-row rank-1">
+				<div class="label">Rank 1</div>
+				<div class="value">0</div>
+			</div>
+			<div class="xl-info regular hide">No Candy XL required.</div>
+			<div class="xl-info mixed hide">Candy XL recommended but not required.</div>
+			<div class="xl-info xl hide">Candy XL strongly recommended.</div>
+			<div class="xl-info unavailable hide">Candy XL not readily available yet for this Pokemon.</div>
 		</div>
-	</div>
-	<div class="detail-section float margin">
-		<div class="ranking-header">Key Wins</div>
-		<div class="ranking-header right">Battle Rating</div>
-		<div class="matchups clear"></div>
-	</div>
-	<div class="detail-section float">
-		<div class="ranking-header">Key Losses</div>
-		<div class="ranking-header right">Battle Rating</div>
-		<div class="counters clear"></div>
 	</div>
 	<div class="detail-section float margin">
 		<div class="ranking-header">Fast Moves</div>
@@ -342,27 +354,6 @@ require_once 'header.php';
 		<div class="resistances clear"></div>
 	</div>
 	<div class="clear"></div>
-	<div class="detail-section stats">
-		<div class="rating-container">
-			<div class="ranking-header">Attack</div>
-			<div class="rating"></div>&nbsp;-
-			<div class="rating"></div>
-		</div>
-		<div class="rating-container">
-			<div class="ranking-header">Defense</div>
-			<div class="rating"></div>&nbsp;-
-			<div class="rating"></div>
-		</div>
-		<div class="rating-container">
-			<div class="ranking-header">Stamina</div>
-			<div class="rating"></div>&nbsp;-
-			<div class="rating"></div>
-		</div>
-		<div class="rating-container">
-			<div class="ranking-header">Rank 1 Level &amp; IVs</div>
-			<div class="rating"></div>
-		</div>
-	</div>
 	<div class="detail-section float margin">
 		<div class="ranking-header">Buddy Distance</div>
 		<div class="buddy-distance clear"></div>
