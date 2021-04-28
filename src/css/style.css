@@ -1743,7 +1743,7 @@ a.download-csv {
 
 .rankings-container {
   margin-top: 20px;
-  max-height: 400px;
+  max-height: 600px;
   overflow-y: scroll;
 }
 .rankings-container.threats, .rankings-container.alternatives {
@@ -1948,6 +1948,40 @@ a.download-csv {
   height: 10px;
   border-radius: 4px;
 }
+.rank .details .detail-section .stat-details .xl-info-container {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+.rank .details .detail-section .stat-details .xl-info-container .icon {
+  width: 28px;
+  height: 28px;
+  background-image: url("../img/xl-icons.png");
+}
+.rank .details .detail-section .stat-details .xl-info-container.regular .xl-info.regular {
+  display: block;
+}
+.rank .details .detail-section .stat-details .xl-info-container.regular .icon {
+  background-position: 0px;
+}
+.rank .details .detail-section .stat-details .xl-info-container.mixed .xl-info.mixed {
+  display: block;
+}
+.rank .details .detail-section .stat-details .xl-info-container.mixed .icon {
+  background-position: -28px;
+}
+.rank .details .detail-section .stat-details .xl-info-container.xl .xl-info.xl {
+  display: block;
+}
+.rank .details .detail-section .stat-details .xl-info-container.xl .icon {
+  background-position: -56px;
+}
+.rank .details .detail-section .stat-details .xl-info-container.unavailable .xl-info.unavailable {
+  display: block;
+}
+.rank .details .detail-section .stat-details .xl-info-container.unavailable .icon {
+  background-position: -84px;
+}
 .rank .details .detail-section .hexagon {
   margin: 10px auto;
   display: block;
@@ -1985,7 +2019,48 @@ a.download-csv {
   justify-content: space-between;
 }
 .rank .details .detail-section .moveset .archetype {
+  display: flex;
+  align-items: center;
   margin-top: 2px;
+  font-size: 12px;
+}
+.rank .details .detail-section .moveset .archetype .name, .rank .details .detail-section .moveset .archetype .icon {
+  display: block;
+}
+.rank .details .detail-section .moveset .archetype .icon {
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/move-archetype-icons.png");
+  background-repeat: no-repeat;
+  margin-left: 5px;
+}
+.rank .details .detail-section .moveset .archetype .icon.spam {
+  background-position: -16px 0;
+}
+.rank .details .detail-section .moveset .archetype .icon.self-debuff {
+  background-position: -32px 0;
+}
+.rank .details .detail-section .moveset .archetype .icon.debuff {
+  background-position: -48px 0;
+}
+.rank .details .detail-section .moveset .archetype .icon.boost {
+  background-position: -64px 0;
+}
+.rank .details .detail-section .moveset .archetype .icon.high-energy {
+  background-position: -80px 0;
+}
+.rank .details .detail-section .moveset .archetype .icon.general {
+  background-position: -96px 0;
+}
+.rank .details .detail-section .rank {
+  border-left: 10px solid rgba(0, 0, 0, 0.1);
+}
+.rank .details .detail-section .rank.selected {
+  border-left: 10px solid black;
+}
+.rank .details .detail-section .rank.recommended {
+  border-left: 10px solid black;
+  margin: 20px 0 10px 0;
   font-size: 12px;
 }
 .rank .details .detail-section .footnote {
@@ -3746,7 +3821,7 @@ a.pokebattler {
   }
 
   .rankings-container {
-    max-height: 800px;
+    max-height: 1000px;
   }
   .rankings-container.pokebox-list {
     max-height: 600px;

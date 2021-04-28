@@ -2258,6 +2258,38 @@ a.download-csv{
 						}
 					}
 				}
+
+				.xl-info-container{
+					display: flex;
+					align-items: center;
+					font-size:14px;
+
+					.icon{
+						width:28px;
+						height:28px;
+						background-image:url('../img/xl-icons.png');
+					}
+
+					&.regular{
+						.xl-info.regular{ display: block; }
+						.icon{ background-position: 0px; }
+					}
+
+					&.mixed{
+						.xl-info.mixed{ display: block; }
+						.icon{ background-position: -28px * 1; }
+					}
+
+					&.xl{
+						.xl-info.xl{ display: block; }
+						.icon{ background-position: -28px * 2; }
+					}
+
+					&.unavailable{
+						.xl-info.unavailable{ display: block; }
+						.icon{ background-position: -28px * 3; }
+					}
+				}
 			}
 
 			.hexagon{
@@ -2306,7 +2338,42 @@ a.download-csv{
 				}
 
 				.archetype{
+					display:flex;
+					align-items: center;
 					margin-top:2px;
+					font-size:12px;
+
+					.name,.icon{
+						display: block;
+					}
+
+					.icon{
+						width:16px;
+						height:16px;
+						background-image:url('../img/move-archetype-icons.png');
+						background-repeat:no-repeat;
+						margin-left:5px;
+
+						&.spam{ background-position: (-16px * 1) 0; }
+						&.self-debuff{ background-position: (-16px * 2) 0; }
+						&.debuff{ background-position: (-16px * 3) 0; }
+						&.boost{ background-position: (-16px * 4) 0; }
+						&.high-energy{ background-position: (-16px * 5) 0; }
+						&.general{ background-position: (-16px * 6) 0; }
+					}
+				}
+			}
+
+			.rank{
+				border-left: 10px solid rgba(0, 0, 0, 0.1);
+
+				&.selected{
+					border-left: 10px solid rgba(0, 0, 0, 1);
+				}
+
+				&.recommended{
+					border-left: 10px solid rgba(0, 0, 0, 1);
+					margin:20px 0 10px 0;
 					font-size:12px;
 				}
 			}

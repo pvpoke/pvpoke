@@ -688,6 +688,12 @@ var InterfaceMaster = (function () {
 					$moveDetails.find(".ept .value").html(Math.round( (fastMoves[n].energyGain / (fastMoves[n].cooldown / 500)) * 100) / 100);
 					$moveDetails.find(".turns .value").html( fastMoves[n].cooldown / 500 );
 
+					// Highlight this move if it's in the recommended moveset
+
+					if(fastMoves[n] == pokemon.fastMove){
+						$moveDetails.addClass("selected");
+					}
+
 					$details.find(".moveset.fast").append($moveDetails);
 				}
 
@@ -714,6 +720,7 @@ var InterfaceMaster = (function () {
 
 					// Contextualize the move archetype for this Pokemon
 					var archetype = chargedMoves[n].archetype;
+					var archetypeClass = 'general'; // For CSS
 
 					if(chargedMoves[n].stab == 1){
 						var descriptor = "Coverage";
@@ -744,9 +751,24 @@ var InterfaceMaster = (function () {
 						}
 					}
 
+					if(chargedMoves[n].archetype.indexOf("Boost") > -1){
+					  archetypeClass = "boost"
+				  	} else if(chargedMoves[n].archetype.indexOf("Self-Debuff") > -1){
+						archetypeClass = "self-debuff"
+					} else if(chargedMoves[n].archetype.indexOf("Spam") > -1){
+						archetypeClass = "spam";
+					} else if(chargedMoves[n].archetype.indexOf("High Energy") > -1){
+						archetypeClass = "high-energy"
+					} else if(chargedMoves[n].archetype.indexOf("Nuke") > -1){
+						archetypeClass = "nuke"
+					} else if(chargedMoves[n].archetype.indexOf("Debuff") > -1){
+						archetypeClass = "debuff"
+					}
+
 					$moveDetails.addClass(chargedMoves[n].type);
 					$moveDetails.find(".name").html(chargedMoves[n].displayName);
-					$moveDetails.find(".archetype").html(archetype);
+					$moveDetails.find(".archetype .name").html(archetype);
+					$moveDetails.find(".archetype .icon").addClass(archetypeClass);
 					$moveDetails.find(".damage .value").html(Math.round((chargedMoves[n].power * chargedMoves[n].stab) * 100) / 100);
 					$moveDetails.find(".energy .value").html(chargedMoves[n].energy);
 					$moveDetails.find(".dpe .value").html( Math.round( ((chargedMoves[n].power * chargedMoves[n].stab) / chargedMoves[n].energy) * 100) / 100);
@@ -755,6 +777,13 @@ var InterfaceMaster = (function () {
 						$moveDetails.find(".move-effect").html(gm.getStatusEffectString(chargedMoves[n]));
 					}
 
+					// Highlight this move if it's in the recommended moveset
+
+					for(var j = 0; j < pokemon.chargedMoves.length; j++){
+						if(chargedMoves[n] == pokemon.chargedMoves[j]){
+							$moveDetails.addClass("selected");
+						}
+					}
 
 					$details.find(".moveset.charged").append($moveDetails);
 				}
@@ -975,18 +1004,18 @@ var InterfaceMaster = (function () {
 
 					// This Pokemon can get close to the CP limit at level 41
 					if(rank1Combo.level <= 41){
-						$details.find(".xl-info.regular").show();
+						$details.find(".xl-info-container").addClass("regular");
 					} else{
-						$details.find(".xl-info.mixed").show();
+						$details.find(".xl-info-container").addClass("mixed");
 					}
 				} else{
 					if(pokemon.levelCap == 40){
-						$details.find(".xl-info.unavailable").show();
+						$details.find(".xl-info-container").addClass("unavailable");
 					} else{
 						if(level41CP >= battle.getCP() - 75){
-							$details.find(".xl-info.mixed").show();
+							$details.find(".xl-info-container").addClass("mixed");
 						} else{
-							$details.find(".xl-info.xl").show();
+							$details.find(".xl-info-container").addClass("xl");
 						}
 
 					}

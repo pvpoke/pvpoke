@@ -293,10 +293,13 @@ require_once 'header.php';
 				<div class="label">Rank 1</div>
 				<div class="value">0</div>
 			</div>
-			<div class="xl-info regular hide">No Candy XL required.</div>
-			<div class="xl-info mixed hide">Candy XL recommended but not required.</div>
-			<div class="xl-info xl hide">Candy XL strongly recommended.</div>
-			<div class="xl-info unavailable hide">Candy XL not readily available yet for this Pokemon.</div>
+			<div class="stat-row xl-info-container">
+				<div class="label"><div class="icon"></div></div>
+				<div class="xl-info regular hide">No Candy XL required.</div>
+				<div class="xl-info mixed hide">Candy XL recommended but not required.</div>
+				<div class="xl-info xl hide">Candy XL strongly recommended.</div>
+				<div class="xl-info unavailable hide">Candy XL not readily available yet for this Pokemon.</div>
+			</div>
 		</div>
 	</div>
 	<div class="detail-section float margin">
@@ -311,6 +314,7 @@ require_once 'header.php';
 				</div>
 			</div>
 		</div>
+		<div class="rank selected recommended">Recommended move</div>
 		<div class="footnote">
 			* Event or Elite TM exclusive<br>
 			<sup>†</sup> Unobtainable via TM
@@ -322,7 +326,7 @@ require_once 'header.php';
 			<div class="move-detail-template rank hide">
 				<div class="name-container flex">
 					<span class="name">Counter</span>
-					<span class="archetype">General</span>
+					<span class="archetype"><span class="name"></span><span class="icon"></span></span>
 				</div>
 				<div class="stats-container name-container flex">
 					<div class="damage"><b class="value">0</b> damage</div>
