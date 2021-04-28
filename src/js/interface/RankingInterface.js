@@ -568,10 +568,6 @@ var InterfaceMaster = (function () {
 					$details.append("<div class=\"detail-section\"><b>Mega Evolutions are currently not allowed in GO Battle League. Use this information to help prepare if they are allowed in the future. Don't invest Mega Energy or Elite TM's until you can use these Pokemon.</b></div>");
 				}
 
-				if(pokemon.hasTag("xl")){
-					$details.append("<div class=\"detail-section\"><b>This entry highlights this Pokemon's performance if it has been powered up beyond level 40 with Candy XL.</b></div>");
-				}
-
 				// Display move data
 
 				var fastMoves = pokemon.fastMovePool;
@@ -786,16 +782,6 @@ var InterfaceMaster = (function () {
 					}
 
 					$details.find(".moveset.charged").append($moveDetails);
-				}
-
-				// Display moveset override notice where applicable
-
-				if(pokemon.chargedMoves.length > 1){
-					if( (pokemon.fastMove.moveId != fastMoves[0].moveId)
-						|| ((pokemon.chargedMoves[0].moveId != chargedMoves[0].moveId)&&(pokemon.chargedMoves[0].moveId != chargedMoves[1].moveId))
-					 	|| ((pokemon.chargedMoves[1].moveId != chargedMoves[0].moveId)&&(pokemon.chargedMoves[1].moveId != chargedMoves[1].moveId))){
-						$details.find(".detail-section.moveset-override").show();
-					}
 				}
 
 				// Helper variables for displaying matchups and link URL

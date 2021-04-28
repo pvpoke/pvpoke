@@ -338,7 +338,6 @@ require_once 'header.php';
 		</div>
 	</div>
 	<div class="clear"></div>
-	<div class="detail-section moveset-override">This Pokemon's recommended moveset has been manually set over the calculated move preferences. This may be to prevent an impossible moveset or take advantage of specific matchups.</div>
 	<div class="detail-section typing">
 		<div class="rating-container">
 			<div class="ranking-header">Primary Type</div>
