@@ -8,6 +8,7 @@ function Battle(){
 	var pokemon = [null, null];
 	var players = [];
 	var cp = 1500;
+	var levelCap = 50;
 	var cup = {name: "all", include: [], exclude: [{
 		filterType: "tag",
 		values: ["mega"]
@@ -128,8 +129,15 @@ function Battle(){
 		}
 	}
 
-	this.getCP = function(){
-		return cp;
+	this.getCP = function(forURLStr){
+		forURLStr = typeof forURLStr !== 'undefined' ? forURLStr : false;
+
+		if((forURLStr)&&(levelCap != 50)){
+			return cp + "-"+ + levelCap;
+		} else{
+			return cp;
+		}
+
 	}
 
 	this.setCP = function(cpLimit){
@@ -140,6 +148,20 @@ function Battle(){
 				pokemon[i].initialize(cp);
 			}
 		}
+	}
+
+	this.setLevelCap = function(val){
+		levelCap = val;
+
+		for(var i = 0; i < pokemon.length; i++){
+			if(pokemon[i]){
+				pokemon[i].initialize(cp);
+			}
+		}
+	}
+
+	this.getLevelCap = function(){
+		return levelCap;
 	}
 
 	// Set cup object from Game Master

@@ -949,14 +949,16 @@ var InterfaceMaster = (function () {
 					bgArr = bgArr[1].split(" 30%");
 					var bgStr = bgArr[0]
 
+
+
 					hexagon.init($details.find(".hexagon"), 100);
 	                hexagon.draw([
-						Math.pow(r.scores[0], 1.25) / 317,
-						Math.pow(r.scores[2], 1.25) / 317,
-						Math.pow(r.scores[3], 1.25) / 317,
-						Math.pow(r.scores[1], 1.25) / 317,
-						Math.pow(r.scores[5], 1.25) / 317,
-						Math.pow(r.scores[4], 1.25) / 317,
+						Math.max( (r.scores[0] - 30) / 70 , .05 ),
+						Math.max( (r.scores[2] - 30) / 70 , .05 ),
+						Math.max( (r.scores[3] - 30) / 70 , .05 ),
+						Math.max( (r.scores[1] - 30) / 70 , .05 ),
+						Math.max( (r.scores[5] - 30) / 70 , .05 ),
+						Math.max( (r.scores[4] - 30) / 70 , .05 ),
 					], ['Lead', 'Switch', 'Charger', 'Closer', 'Consistency', 'Attacker'], bgStr);
 				} else{
 					$details.find(".detail-section").eq(0).remove();

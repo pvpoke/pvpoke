@@ -481,14 +481,30 @@ function PokeMultiSelect(element){
 
 		battle.setCP(cp);
 
-		if(pokemonList.length > 0){
-			self.updateListDisplay();
-		}
-
 		// Set all Pokemon to the new CP limit
 		for(var i = 0; i < pokemonList.length; i++){
 			pokemonList[i].setBattle(battle);
 			pokemonList[i].initialize(cp, settings.defaultIVs);
+		}
+
+		if(pokemonList.length > 0){
+			self.updateListDisplay();
+		}
+	}
+
+	// Update the custom group selections when changing league
+
+	this.setLevelCap = function(levelCap){
+		battle.setLevelCap(levelCap);
+
+		// Set all Pokemon to the new level cap
+		for(var i = 0; i < pokemonList.length; i++){
+			pokemonList[i].setBattle(battle);
+			pokemonList[i].initialize(battle.getCP(), settings.defaultIVs);
+		}
+
+		if(pokemonList.length > 0){
+			self.updateListDisplay();
 		}
 	}
 

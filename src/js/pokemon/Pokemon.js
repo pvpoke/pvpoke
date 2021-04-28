@@ -40,7 +40,8 @@ function Pokemon(id, i, b){
 	this.startEnergy = 0;
 	this.startCooldown = 0;
 	this.level = 50;
-	this.levelCap = 50;
+	this.levelCap = 50; // Variable level cap as determined by the battle settings
+	this.baseLevelCap = 50; // The default level cap as determined by the game master
 	this.cpm = 0.840300023555755;
 	this.priority = 0; // Charged move priority
 	this.fastMovePool = [];
@@ -106,8 +107,10 @@ function Pokemon(id, i, b){
 	}
 
 	// Set level cap
+	this.levelCap = b.getLevelCap();
 
 	if(data.levelCap){
+		this.baseLevelCap = data.levelCap;
 		this.levelCap = data.levelCap;
 	}
 
@@ -193,6 +196,10 @@ function Pokemon(id, i, b){
 		defaultMode = typeof defaultMode !== 'undefined' ? defaultMode : "gamemaster";
 
 		this.cp = self.calculateCP();
+
+		if(b.getLevelCap() <= self.baseLevelCap){
+			self.levelCap = b.getLevelCap();
+		}
 
 		var maxCP = 10000;
 

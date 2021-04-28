@@ -186,7 +186,18 @@ var InterfaceMaster = (function () {
 								break;
 
 							case "cp":
-								$(".league-select option[value=\""+val+"\"]").prop("selected","selected");
+								//Parse this out if it contains level cap
+								var getCP = val;
+
+								if(val.indexOf("-") > -1){
+									getCP = val.split("-")[0];
+									var getCap = val.split("-")[1];
+
+									$(".league-select option[value=\""+getCP+"\"][level-cap=\""+getCap+"\"]").prop("selected","selected");
+								} else{
+									$(".league-select option[value=\""+getCP+"\"]").prop("selected","selected");
+								}
+
 								$(".league-select").trigger("change");
 								break;
 
@@ -542,7 +553,7 @@ var InterfaceMaster = (function () {
 						var opPokeStr = r.matchups[n].opponent.generateURLPokeStr();
 						var opMoveStr = r.matchups[n].opponent.generateURLMoveStr();
 						var shieldStr = shieldCount + "" + shieldCount;
-						var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
+						var battleLink = host+"battle/"+battle.getCP(true)+"/"+pokeStr+"/"+opPokeStr+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
 						$cell.find("a").attr("href", battleLink);
 
 						$row.append($cell);
@@ -653,7 +664,7 @@ var InterfaceMaster = (function () {
 						var opPokeStr = r.matchups[n].opponent.generateURLPokeStr();
 						var opMoveStr = r.matchups[n].opponent.generateURLMoveStr();
 						var shieldStr = shieldCount + "" + shieldCount;
-						var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
+						var battleLink = host+"battle/"+battle.getCP(true)+"/"+pokeStr+"/"+opPokeStr+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
 						$cell.find("a").attr("href", battleLink);
 
 						$row.append($cell);
@@ -836,7 +847,7 @@ var InterfaceMaster = (function () {
 						var opPokeStr = r.matchups[n].opponent.generateURLPokeStr();
 						var opMoveStr = r.matchups[n].opponent.generateURLMoveStr();
 						var shieldStr = shieldCount + "" + shieldCount;
-						var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
+						var battleLink = host+"battle/"+battle.getCP(true)+"/"+pokeStr+"/"+opPokeStr+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
 						$cell.find("a").attr("href", battleLink);
 
 						$row.append($cell);
@@ -1324,14 +1335,16 @@ var InterfaceMaster = (function () {
 			function selectLeague(e){
 				var allowed = [500, 1500, 2500, 10000];
 				var cp = parseInt($(".league-select option:selected").val());
+				var levelCap = parseInt($(".league-select option:selected").attr("level-cap"));
 
 				if(allowed.indexOf(cp) > -1){
-
 					battle.setCP(cp);
+					battle.setLevelCap(levelCap);
 
 					// Set the selected team to the new CP
 					for(var i = 0; i < multiSelectors.length; i++){
 						multiSelectors[i].setCP(cp);
+						multiSelectors[i].setLevelCap(levelCap);
 					}
 
 				}
@@ -1423,7 +1436,7 @@ var InterfaceMaster = (function () {
 					var results = self.updateTeamResults();
 
 					// Set new page state
-					var cp = battle.getCP();
+					var cp = battle.getCP(true);
 					var cup = battle.getCup().name;
 
 					var pokes = multiSelectors[0].getPokemonList();
