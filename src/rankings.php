@@ -241,6 +241,10 @@ require_once 'header.php';
 
 <div class="details-template hide">
 	<div class="detail-section float margin">
+		<div class="ranking-header">Performance</div>
+		<canvas class="hexagon"></canvas>
+	</div>
+	<div class="detail-section float">
 		<div class="ranking-header">Stats</div>
 		<div class="stat-details clear">
 			<div class="stat-row">
@@ -272,10 +276,6 @@ require_once 'header.php';
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="detail-section float">
-		<div class="ranking-header">Performance</div>
-		<div class="third-move-cost clear"></div>
 	</div>
 	<div class="detail-section float margin">
 		<div class="ranking-header">Key Wins</div>
@@ -385,5 +385,6 @@ require_once 'header.php';
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/RankingMain.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/libs/hexagon-chart.js?v=<?php echo $SITE_VERSION; ?>"></script>
 
 <?php require_once 'footer.php'; ?>

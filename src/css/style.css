@@ -1940,6 +1940,11 @@ a.download-csv {
   height: 7px;
   border-radius: 4px;
 }
+.rank .details .detail-section .hexagon {
+  margin: 10px auto;
+  display: block;
+  max-width: 100%;
+}
 .rank .details .detail-section .moveset .name-container {
   float: none;
   border-bottom: 1px solid;

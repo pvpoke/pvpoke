@@ -933,9 +933,32 @@ var InterfaceMaster = (function () {
 
 					multiBattleLink += "/";
 
-					$details.find(".detail-section.float").eq(2).before($("<div class=\"multi-battle-link\"><p>See all of <b>" + pokemon.speciesName + "'s</b> matchups:</p><a target=\"_blank\" class=\"button\" href=\""+multiBattleLink+"\">"+pokemon.speciesName+" vs. " + cupName +"</a></div>"));
+					$details.find(".detail-section.float").eq(4).before($("<div class=\"multi-battle-link\"><p>See all of <b>" + pokemon.speciesName + "'s</b> matchups:</p><a target=\"_blank\" class=\"button\" href=\""+multiBattleLink+"\">"+pokemon.speciesName+" vs. " + cupName +"</a></div>"));
 				} else{
 					$details.find(".share-link").remove();
+				}
+
+				if(r.scores){
+					// Display rating hexagon
+
+					// This is really dumb but we're pulling the type color out of the background gradient
+					var bgArr = $rank.css("background").split("linear-gradient(");
+					bgArr = bgArr[1].split(" 30%");
+					var bgStr = bgArr[0]
+
+					hexagon.init($details.find(".hexagon"), 100);
+	                hexagon.draw([
+						Math.pow(r.scores[0], 1.25) / 317,
+						Math.pow(r.scores[2], 1.25) / 317,
+						Math.pow(r.scores[3], 1.25) / 317,
+						Math.pow(r.scores[1], 1.25) / 317,
+						Math.pow(r.scores[5], 1.25) / 317,
+						Math.pow(r.scores[4], 1.25) / 317,
+					], ['Lead', 'Switch', 'Charger', 'Closer', 'Consistency', 'Attacker'], bgStr);
+				} else{
+					$details.find(".detail-section").eq(0).remove();
+					$details.find(".detail-section").eq(0).css("width", "100%");
+					$details.find(".detail-section").eq(0).css("float", "none");
 				}
 
 				// Display buddy distance and second move cost
