@@ -1009,6 +1009,183 @@ function Pokemon(id, i, b){
 		return cycleDPT;
 	}
 
+	// This function generates a list of descriptive traits displayed on the rankings page
+
+	this.generateTraits = function(){
+		var cupName = "all";
+		var category = "overall";
+
+		if(battle.getCup()){
+			cupName = battle.getCup().name;
+		}
+
+		if(cupName == "custom"){
+			cupName = "all";
+		}
+
+		// First, look up ranking data to use as a reference
+
+		var key = cupName + category + battle.getCP();
+
+		if(! gm.rankings[key]){
+			console.log("Ranking data not loaded yet");
+			return;
+		}
+
+		var rankings = gm.rankings[key];
+		var r = false;
+		var found = false;
+
+		for(var i = 0; i < rankings.length; i++){
+			r = rankings[i];
+		}
+
+		if(! r){
+			return false;
+		}
+
+		// Initialize lists of positive and negative traits
+		var pros = [];
+		var cons = [];
+
+		// Bulkiness
+		var bulk = self.stats.def * self.stats.hp;
+		var bulkScale = [12500,14000,17000,24000];
+
+		if(bulk <= bulkScale[0]){
+			if(Math.pow(self.stats.atk, 2) > bulk){
+				cons.push("Glass Cannon");
+			} else{
+				cons.push("Glassy");
+			}
+
+		} else if(bulk <= bulkScale[1]){
+			cons.push("Lower Bulk");
+		} else if(bulk >= bulkScale[3]){
+			pros.push("Tanky");
+		} else if(bulk >= bulkScale[2]){
+			pros.push("Bulky");
+		}
+
+		// Charged Move activation speed
+		var activationSpeed = Math.ceil( (self.fastestChargedMove.energy * 2) / self.fastMove.energyGain ) * self.fastMove.cooldown * (1 / 1000); // Avg speed over two cycles to account for overflow energy
+
+		if(activationSpeed <= 13){
+			pros.push("Fast");
+		} else if(activationSpeed >= 19){
+			cons.push("Slow");
+		}
+
+		// Fast Move duration
+
+		if(self.fastMove.cooldown == 500){
+			pros.push("Agile");
+		} else if(self.fastMove.cooldown >= 2000){
+			cons.push("Clunky");
+		}
+
+		// Fast Move pressure
+		var targetDef = 120;
+
+		if(battle.getCP() == 2500){
+			targetDef = 150;
+		} else if(battle.getCP() == 10000){
+			targetDef = 170;
+		}
+
+		var effectiveDPT = ((self.fastMove.power * self.fastMove.stab * self.shadowAtkMult) * (self.stats.atk / targetDef)) / (self.fastMove.cooldown / 500);
+
+		if(effectiveDPT >= 4){
+			pros.push("Strong Fast Move Pressure");
+		} else if(effectiveDPT <= 2){
+			cons.push("Low Fast Move Pressure");
+		}
+
+		// Charged Move/Shield Pressure
+		var effectivePower = ((self.bestChargedMove.power * self.bestChargedMove.stab * self.shadowAtkMult) * (self.stats.atk / targetDef));
+		var bestChargedMoveSpeed = Math.ceil(self.bestChargedMove.energy / self.fastMove.energyGain) * (self.fastMove.cooldown / 500);
+		effectivePower = effectivePower * (30 / bestChargedMoveSpeed);
+
+		if(effectivePower >= 210){
+			pros.push("Strong Shield Pressure");
+		} else if(effectivePower <= 150){
+			cons.push("Low Shield Pressure");
+		}
+
+		// Charged Move coverage
+		var types = getAllTypes();
+		var averagePower = 0;
+		var totalResistingTypes = 0;
+
+		for(var i = 0; i < types.length; i++){
+			var powerVSType = 0;
+			var bestEffectiveness = 0;
+
+			for(var n = 0; n < self.chargedMoves.length; n++){
+				var effectiveness = battle.getEffectiveness(self.chargedMoves[n].type, [types[i].toLowerCase(), "none"]);
+				var effectivePower = ((self.chargedMoves[n].power * self.chargedMoves[n].stab * self.shadowAtkMult * effectiveness) * (self.stats.atk / targetDef));
+				var bestChargedMoveSpeed = Math.ceil(self.chargedMoves[n].energy / self.fastMove.energyGain) * (self.fastMove.cooldown / 500);
+				effectivePower = effectivePower * (30 / bestChargedMoveSpeed);
+
+				if(effectivePower > powerVSType){
+					powerVSType = effectivePower;
+				}
+
+				if(effectiveness > bestEffectiveness){
+					bestEffectiveness = effectiveness;
+				}
+			}
+
+			averagePower += powerVSType;
+
+			if(bestEffectiveness < 1){
+				totalResistingTypes++;
+			}
+		}
+
+		averagePower /= types.length;
+
+		if((totalResistingTypes == 0)&&(averagePower >= 210)){
+			pros.push("Good Coverage");
+			console.log("Good Coverage");
+		} else if((totalResistingTypes >= 2)&&(averagePower <= 210)){
+			cons.push("Poor Coverage");
+			console.log("Poor Coverage");
+		}
+
+		// Defensive typing
+		var totalResistances = 0;
+		var totalWeaknesses = 0;
+		var doubleWeaknesses = 0;
+
+		for(var key in self.typeEffectiveness){
+			if(self.typeEffectiveness[key] < 1){
+				totalResistances++;
+			} else if(self.typeEffectiveness[key] > 1){
+				totalWeaknesses++;
+
+				if(self.typeEffectiveness[key] > 1.6){
+					doubleWeaknesses++;
+				}
+			}
+		}
+
+		if((totalResistances >= 6)&&(totalWeaknesses < totalResistances)){
+			pros.push("Strong Defensive Typing");
+		} else if((totalWeaknesses >= 6)&&(totalWeaknesses > totalResistances)){
+			cons.push("Weak Defensive Typing");
+		}
+
+		if(doubleWeaknesses > 0){
+			cons.push("Exploitable Weaknesses");
+		}
+
+		return {
+			pros: pros,
+			cons: cons
+		};
+	}
+
 	// Return whether or not this Pokemon has a move with buff or debuff effects
 
 	this.hasBuffMove = function(){

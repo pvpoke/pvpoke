@@ -639,8 +639,8 @@ var InterfaceMaster = (function () {
 					statProductCeiling = 1000;
 					statCeiling = 200;
 				} else if(battle.getCP() == 1500){
-					statProductCeiling = 2100;
-					statProductSubstraction = 1100;
+					statProductCeiling = 2000;
+					statProductSubstraction = 1000;
 					statCeiling = 250;
 					statSubtraction = 50;
 				} else if(battle.getCP() == 2500){
@@ -1018,6 +1018,17 @@ var InterfaceMaster = (function () {
 					$details.find(".stat-row.level .value").html(rank1Combo.level);
 				}
 
+				// Display Pokemon traits
+
+				var traits = pokemon.generateTraits();
+
+				for(var i = 0; i < traits.pros.length; i++){
+					$details.find(".traits").append("<div class=\"pro\">+ "+traits.pros[i]+"</div>");
+				}
+
+				for(var i = 0; i < traits.cons.length; i++){
+					$details.find(".traits").append("<div class=\"con\">- "+traits.cons[i]+"</div>");
+				}
 
 				// Only execute if this was a direct action and not loaded from URL parameters, otherwise pushes infinite states when the user navigates back
 

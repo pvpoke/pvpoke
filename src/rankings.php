@@ -357,6 +357,10 @@ require_once 'header.php';
 		<div class="resistances clear"></div>
 	</div>
 	<div class="clear"></div>
+	<div class="detail-section traits-container">
+		<div class="ranking-header">Traits</div>
+		<div class="traits"></div>
+	</div>
 	<div class="detail-section float margin">
 		<div class="ranking-header">Buddy Distance</div>
 		<div class="buddy-distance clear"></div>

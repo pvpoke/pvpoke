@@ -2201,10 +2201,27 @@ a.download-csv{
 				}
 			}
 
-			&.moveset-override{
-				display:none;
-				font-size: 12px;
-				padding: 10px;
+			&.traits-container{
+				width:100%;
+
+				.ranking-header{
+					float:none;
+					width:100%;
+				}
+
+				.traits{
+					display:flex;
+					flex-wrap: wrap;
+
+					div{
+						margin:3px;
+						padding:5px 8px;
+						border-radius:12px;
+
+						&.pro{ background:rgb(23 222 75 / 44%);	}
+						&.con{ background:rgb(255 88 88 / 67%);	}
+					}
+				}
 			}
 
 			.stat-details{

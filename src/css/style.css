@@ -1902,10 +1902,27 @@ a.download-csv {
   text-transform: capitalize;
   padding: 2px 12px;
 }
-.rank .details .detail-section.moveset-override {
-  display: none;
-  font-size: 12px;
-  padding: 10px;
+.rank .details .detail-section.traits-container {
+  width: 100%;
+}
+.rank .details .detail-section.traits-container .ranking-header {
+  float: none;
+  width: 100%;
+}
+.rank .details .detail-section.traits-container .traits {
+  display: flex;
+  flex-wrap: wrap;
+}
+.rank .details .detail-section.traits-container .traits div {
+  margin: 3px;
+  padding: 5px 8px;
+  border-radius: 12px;
+}
+.rank .details .detail-section.traits-container .traits div.pro {
+  background: rgba(23, 222, 75, 0.44);
+}
+.rank .details .detail-section.traits-container .traits div.con {
+  background: rgba(255, 88, 88, 0.67);
 }
 .rank .details .detail-section .stat-details .stat-row {
   display: flex;
