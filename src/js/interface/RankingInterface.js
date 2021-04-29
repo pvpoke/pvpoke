@@ -1023,11 +1023,11 @@ var InterfaceMaster = (function () {
 				var traits = pokemon.generateTraits();
 
 				for(var i = 0; i < traits.pros.length; i++){
-					$details.find(".traits").append("<div class=\"pro\">+ "+traits.pros[i]+"</div>");
+					$details.find(".traits").append("<div class=\"pro\" title=\""+traits.pros[i].desc+"\">+ "+traits.pros[i].trait+"</div>");
 				}
 
 				for(var i = 0; i < traits.cons.length; i++){
-					$details.find(".traits").append("<div class=\"con\">- "+traits.cons[i]+"</div>");
+					$details.find(".traits").append("<div class=\"con\" title=\""+traits.cons[i].desc+"\">- "+traits.cons[i].trait+"</div>");
 				}
 
 				// Only execute if this was a direct action and not loaded from URL parameters, otherwise pushes infinite states when the user navigates back
