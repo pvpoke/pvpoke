@@ -674,8 +674,10 @@ function Pokemon(id, i, b){
 		self.selectMove("fast", usage.fastMoves[0].moveId);
 		self.selectMove("charged", usage.chargedMoves[0].moveId, 0);
 
-		if((usage.chargedMoves.length > 1)&&(count > 1)){
+		if((usage.chargedMoves.length > 1)&&(count > 1)&&(self.speciesId != "smeargle")){
 			self.selectMove("charged", usage.chargedMoves[1].moveId, 1);
+		} else if(self.speciesId == "smeargle"){
+			self.selectMove("charged", "none", 1);
 		}
 	}
 

@@ -720,8 +720,9 @@ var InterfaceMaster = (function () {
 							for(var n = 0; n < battle.getCup().restrictedPokemon.length; n++){
 								exclusionList.push(battle.getCup().restrictedPokemon[n]);
 							}
+
+							break;
 						}
-						break;
 					}
 				}
 
