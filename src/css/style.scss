@@ -3815,7 +3815,9 @@ a.pokebattler{
 				display:none;
 
 				&.type,
-				&.tag{
+				&.tag,
+				&.cost,
+				&.distance{
 					.check{
 						margin: 10px 5px;
 					}
@@ -3854,6 +3856,14 @@ a.pokebattler{
 			}
 
 			&[type="dex"] .field-section.dex{
+				display:block;
+			}
+
+			&[type="cost"] .field-section.cost{
+				display:block;
+			}
+
+			&[type="distance"] .field-section.distance{
 				display:block;
 			}
 		}

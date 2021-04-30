@@ -677,6 +677,18 @@ var GameMaster = (function () {
 									}
 									break;
 
+								case "cost":
+									if(filter.values.indexOf(pokemon.thirdMoveCost) > -1){
+										filtersMatched++;
+									}
+									break;
+
+								case "distance":
+									if(filter.values.indexOf(pokemon.buddyDistance) > -1){
+										filtersMatched++;
+									}
+									break;
+
 								case "id":
 									if((include)&&(filters.length > 1)){
 										requiredFilters--;
@@ -861,6 +873,22 @@ var GameMaster = (function () {
 
 							if(pokemon.dex == param){
 								valid = true;
+							}
+
+							// Move cost search
+							if(param.indexOf("k") > -1){
+								var arr = param.split("k");
+								if(pokemon.thirdMoveCost == parseInt(arr[0]) * 1000){
+									valid = true;
+								}
+							}
+
+							// Buddy distance search
+							if(param.indexOf("km") > -1){
+								var arr = param.split("km");
+								if(pokemon.buddyDistance == parseInt(arr[0])){
+									valid = true;
+								}
 							}
 
 							// Region/generation search

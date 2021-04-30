@@ -74,6 +74,8 @@ require_once 'header.php'; ?>
 					<option value="tag">Tag</option>
 					<option value="id">Species</option>
 					<option value="dex">Pokedex Number</option>
+					<option value="cost">Charged Move Cost</option>
+					<option value="distance">Buddy Walk Distance</option>
 				</select>
 			</div>
 			<div class="field-section type">
@@ -146,6 +148,26 @@ require_once 'header.php'; ?>
 				<div class="field-container">
 					<input class="start-range" placeholder="Start #" />
 					<input class="end-range" placeholder="End #" />
+				</div>
+			</div>
+
+			<div class="field-section cost">
+				<p>Select eligible or ineligible second Charged Move costs.</p>
+				<div class="field-container">
+					<div class="check" value="10000"><span></span> 10,000</div>
+					<div class="check" value="50000"><span></span> 50,000</div>
+					<div class="check" value="75000"><span></span> 75,000</div>
+					<div class="check" value="100000"><span></span> 100,000</div>
+				</div>
+			</div>
+
+			<div class="field-section distance">
+				<p>Select eligible or ineligible buddy walk distances.</p>
+				<div class="field-container">
+					<div class="check" value="1"><span></span> 1km</div>
+					<div class="check" value="3"><span></span> 3km</div>
+					<div class="check" value="5"><span></span> 5km</div>
+					<div class="check" value="20"><span></span> 20km</div>
 				</div>
 			</div>
 		</div>
@@ -248,72 +270,7 @@ require_once 'header.php'; ?>
 	</table>
 </div>
 
-<div class="details-template hide">
-	<div class="detail-section float margin">
-		<div class="ranking-header">Key Wins</div>
-		<div class="ranking-header right">Battle Rating</div>
-		<div class="matchups clear"></div>
-	</div>
-	<div class="detail-section float">
-		<div class="ranking-header">Key Losses</div>
-		<div class="ranking-header right">Battle Rating</div>
-		<div class="counters clear"></div>
-	</div>
-	<div class="detail-section float margin">
-		<div class="ranking-header">Fast Moves</div>
-		<div class="ranking-header right">Usage</div>
-		<div class="moveset fast clear"></div>
-	</div>
-	<div class="detail-section float">
-		<div class="ranking-header">Charged Moves</div>
-		<div class="ranking-header right">Usage</div>
-		<div class="moveset charged clear"></div>
-	</div>
-	<div class="clear"></div>
-	<div class="detail-section typing">
-		<div class="rating-container">
-			<div class="ranking-header">Primary Type</div>
-			<div class="type"></div>
-		</div>
-		<div class="rating-container">
-			<div class="ranking-header">Secondary Type</div>
-			<div class="type"></div>
-		</div>
-	</div>
-	<div class="detail-section float margin">
-		<div class="ranking-header">Weaknesses</div>
-		<div class="weaknesses clear"></div>
-	</div>
-	<div class="detail-section float">
-		<div class="ranking-header">Resistances</div>
-		<div class="resistances clear"></div>
-	</div>
-	<div class="clear"></div>
-	<div class="detail-section stats">
-		<div class="rating-container">
-			<div class="ranking-header">Attack</div>
-			<div class="rating"></div>&nbsp;-
-			<div class="rating"></div>
-		</div>
-		<div class="rating-container">
-			<div class="ranking-header">Defense</div>
-			<div class="rating"></div>&nbsp;-
-			<div class="rating"></div>
-		</div>
-		<div class="rating-container">
-			<div class="ranking-header">Stamina</div>
-			<div class="rating"></div>&nbsp;-
-			<div class="rating"></div>
-		</div>
-		<div class="rating-container">
-			<div class="ranking-header">Rank 1 Level &amp; IVs</div>
-			<div class="rating"></div>
-		</div>
-	</div>
-	<div class="share-link detail-section"><input type="text" readonly="">
-		<div class="copy">Copy</div>
-	</div>
-</div>
+<?php require_once 'modules/rankingdetails.php'; ?>
 
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>

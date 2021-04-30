@@ -22,6 +22,14 @@
 			<td>184</td>
 		</tr>
 		<tr>
+			<td><strong>Charged Move Cost</strong></td>
+			<td>10k, 50k, 75k, 100k</td>
+		</tr>
+		<tr>
+			<td><strong>Buddy Walk Distance</strong></td>
+			<td>1km, 3km, 5km, 20km</td>
+		</tr>
+		<tr>
 			<td><strong>Move Name</strong></td>
 			<td>@counter</td>
 		</tr>

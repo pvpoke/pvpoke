@@ -134,6 +134,18 @@ function interfaceObject(){
 			case "dex":
 				filter.values = [parseInt($el.find("input.start-range").val()), parseInt($el.find("input.end-range").val())];
 				break;
+
+			case "cost":
+				$el.find(".cost .check.on").each(function(index, value){
+					filter.values.push(parseInt($(this).attr("value")));
+				});
+				break;
+
+			case "distance":
+				$el.find(".distance .check.on").each(function(index, value){
+					filter.values.push(parseInt($(this).attr("value")));
+				});
+				break;
 		}
 
 		// Output the cup data to JSON
@@ -280,6 +292,8 @@ function interfaceObject(){
 		switch(data.filterType){
 			case "type":
 			case "tag":
+			case "cost":
+			case "distance":
 				for(var i = 0; i < data.values.length; i++){
 					$filter.find(".check[value=\""+data.values[i]+"\"]").addClass("on");
 				}

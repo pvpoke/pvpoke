@@ -961,9 +961,9 @@ var InterfaceMaster = (function () {
 						Math.max( (r.scores[4] - 30) / 70 , .05 ),
 					], ['Lead', 'Switch', 'Charger', 'Closer', 'Consistency', 'Attacker'], bgStr);
 				} else{
-					$details.find(".detail-section").eq(0).remove();
-					$details.find(".detail-section").eq(0).css("width", "100%");
-					$details.find(".detail-section").eq(0).css("float", "none");
+					$details.find(".detail-section").eq(2).remove();
+					$details.find(".detail-section").eq(2).css("width", "100%");
+					$details.find(".detail-section").eq(2).css("float", "none");
 				}
 
 				// Display buddy distance and second move cost

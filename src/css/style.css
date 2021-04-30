@@ -3531,10 +3531,10 @@ a.pokebattler {
 .custom-rankings .filters .filter .field-section {
   display: none;
 }
-.custom-rankings .filters .filter .field-section.type .check, .custom-rankings .filters .filter .field-section.tag .check {
+.custom-rankings .filters .filter .field-section.type .check, .custom-rankings .filters .filter .field-section.tag .check, .custom-rankings .filters .filter .field-section.cost .check, .custom-rankings .filters .filter .field-section.distance .check {
   margin: 10px 5px;
 }
-.custom-rankings .filters .filter .field-section.type .select-all, .custom-rankings .filters .filter .field-section.tag .select-all {
+.custom-rankings .filters .filter .field-section.type .select-all, .custom-rankings .filters .filter .field-section.tag .select-all, .custom-rankings .filters .filter .field-section.cost .select-all, .custom-rankings .filters .filter .field-section.distance .select-all {
   margin-right: 10px;
 }
 .custom-rankings .filters .filter .field-section.dex input {
@@ -3558,6 +3558,12 @@ a.pokebattler {
   display: block;
 }
 .custom-rankings .filters .filter[type=dex] .field-section.dex {
+  display: block;
+}
+.custom-rankings .filters .filter[type=cost] .field-section.cost {
+  display: block;
+}
+.custom-rankings .filters .filter[type=distance] .field-section.distance {
   display: block;
 }
 .custom-rankings .advanced .flex-section {
