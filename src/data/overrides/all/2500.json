@@ -458,7 +458,8 @@
 	},
 	{
 		"speciesId": "ninetales_alolan",
-		"fastMove": "POWDER_SNOW"
+		"fastMove": "POWDER_SNOW",
+		"chargedMoves": ["WEATHER_BALL_ICE","DAZZLING_GLEAM"]
 	},
 	{
 		"speciesId": "ninetales_alolan_xl",

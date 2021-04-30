@@ -437,7 +437,6 @@ var InterfaceMaster = (function () {
 					var category = $(".ranking-categories a.selected").attr("data");
 					var cup = battle.getCup().name;
 
-
 					if(cp == 500){
 						$(".format-select option[cup=\"little\"]").prop("selected","selected");
 						cup = "little";
@@ -680,7 +679,7 @@ var InterfaceMaster = (function () {
 
 					$moveDetails.addClass(fastMoves[n].type);
 					$moveDetails.find(".name").html(fastMoves[n].displayName);
-					$moveDetails.find(".dpt .value").html(Math.round( ((fastMoves[n].power * fastMoves[n].stab) / (fastMoves[n].cooldown / 500)) * 100) / 100);
+					$moveDetails.find(".dpt .value").html(Math.round( ((fastMoves[n].power * fastMoves[n].stab * pokemon.shadowAtkMult) / (fastMoves[n].cooldown / 500)) * 100) / 100);
 					$moveDetails.find(".ept .value").html(Math.round( (fastMoves[n].energyGain / (fastMoves[n].cooldown / 500)) * 100) / 100);
 					$moveDetails.find(".turns .value").html( fastMoves[n].cooldown / 500 );
 
@@ -765,9 +764,9 @@ var InterfaceMaster = (function () {
 					$moveDetails.find(".name").html(chargedMoves[n].displayName);
 					$moveDetails.find(".archetype .name").html(archetype);
 					$moveDetails.find(".archetype .icon").addClass(archetypeClass);
-					$moveDetails.find(".damage .value").html(Math.round((chargedMoves[n].power * chargedMoves[n].stab) * 100) / 100);
+					$moveDetails.find(".damage .value").html(Math.round((chargedMoves[n].power * chargedMoves[n].stab * pokemon.shadowAtkMult) * 100) / 100);
 					$moveDetails.find(".energy .value").html(chargedMoves[n].energy);
-					$moveDetails.find(".dpe .value").html( Math.round( ((chargedMoves[n].power * chargedMoves[n].stab) / chargedMoves[n].energy) * 100) / 100);
+					$moveDetails.find(".dpe .value").html( Math.round( ((chargedMoves[n].power * chargedMoves[n].stab * pokemon.shadowAtkMult) / chargedMoves[n].energy) * 100) / 100);
 
 					if(chargedMoves[n].buffs){
 						$moveDetails.find(".move-effect").html(gm.getStatusEffectString(chargedMoves[n]));

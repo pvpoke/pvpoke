@@ -1052,7 +1052,7 @@ function Pokemon(id, i, b){
 
 		// Bulkiness
 		var bulk = self.stats.def * self.stats.hp * self.shadowDefMult;
-		var bulkScale = [12500,14000,17000,24000];
+		var bulkScale = [12500,14000,17000,23000];
 		var bulkRating = 0;
 
 		if(bulk <= bulkScale[0]){
@@ -1098,7 +1098,7 @@ function Pokemon(id, i, b){
 
 		if(activationSpeed <= 12){
 			pros.push({
-				trait: "Quick",
+				trait: "Spammy",
 				desc: "This Pokemon reaches its Charged Moves quickly."
 			});
 		} else if(activationSpeed >= 19){
@@ -1119,46 +1119,6 @@ function Pokemon(id, i, b){
 			cons.push({
 				trait: "Clumsy",
 				desc: "This Pokemon has long animations and is stuck while attacking."
-			});
-		}
-
-		// Fast Move pressure
-		var targetDef = 120;
-
-		if(battle.getCP() == 2500){
-			targetDef = 150;
-		} else if(battle.getCP() == 10000){
-			targetDef = 170;
-		}
-
-		var effectiveDPT = ((self.fastMove.power * self.fastMove.stab * self.shadowAtkMult) * (self.stats.atk / targetDef)) / (self.fastMove.cooldown / 500);
-
-		if(effectiveDPT >= 4){
-			pros.push({
-				trait: "Heavy Hitting",
-				desc: "This Pokemon deals heavy damage with its Fast Move. It's strong against shields and weakened opponents."
-			});
-		} else if(effectiveDPT <= 2){
-			cons.push({
-				trait: "Low Fast Pressure",
-				desc: "This Pokemon deals low damage with its Fast Move. It may struggle to bring down weakened opponents."
-			});
-		}
-
-		// Charged Move/Shield Pressure
-		var effectivePower = ((self.bestChargedMove.power * self.bestChargedMove.stab * self.shadowAtkMult) * (self.stats.atk / targetDef));
-		var bestChargedMoveSpeed = Math.ceil(self.bestChargedMove.energy / self.fastMove.energyGain) * (self.fastMove.cooldown / 500);
-		effectivePower = effectivePower * (30 / bestChargedMoveSpeed);
-
-		if(effectivePower >= 210){
-			pros.push({
-				trait: "Aggressive",
-				desc: "Opponents will be pressured to shield this Pokemon's strong or rapid attacks."
-			});
-		} else if(effectivePower <= 150){
-			cons.push({
-				trait: "Low Shield Pressure",
-				desc: "This Pokemon may struggle to draw shields because of its weaker or slower attacks."
 			});
 		}
 
@@ -1207,6 +1167,55 @@ function Pokemon(id, i, b){
 			});
 		}
 
+		// Switch and safety scores
+
+		if(((r.scores[2] >= 90)||(r.scores[3] >= 90)) && ( (self.fastMove.energyGain / self.fastMove.cooldown) >= (3 / 500))) {
+			pros.push({
+				trait: "Dynamic",
+				desc: "This Pokemon performs well with energy and has a dynamic playstyle."
+			});
+		}
+
+		// Fast Move pressure
+		var targetDef = 120;
+
+		if(battle.getCP() == 2500){
+			targetDef = 150;
+		} else if(battle.getCP() == 10000){
+			targetDef = 170;
+		}
+
+		var effectiveDPT = ((self.fastMove.power * self.fastMove.stab * self.shadowAtkMult) * (self.stats.atk / targetDef)) / (self.fastMove.cooldown / 500);
+
+		if(effectiveDPT >= 4){
+			pros.push({
+				trait: "Fast Move Pressure",
+				desc: "This Pokemon deals heavy damage with its Fast Move. It's strong against shields and weakened opponents."
+			});
+		} else if(effectiveDPT <= 2){
+			cons.push({
+				trait: "Low Fast Move Pressure",
+				desc: "This Pokemon deals low damage with its Fast Move. It is more dependent on Charged Moves."
+			});
+		}
+
+		// Charged Move/Shield Pressure
+		var effectivePower = ((self.bestChargedMove.power * self.bestChargedMove.stab * self.shadowAtkMult) * (self.stats.atk / targetDef));
+		var bestChargedMoveSpeed = Math.ceil(self.bestChargedMove.energy / self.fastMove.energyGain) * (self.fastMove.cooldown / 500);
+		effectivePower = effectivePower * (30 / bestChargedMoveSpeed);
+
+		if(effectivePower >= 210){
+			pros.push({
+				trait: "Shield Pressure",
+				desc: "Opponents will be pressured to shield this Pokemon's strong or rapid attacks."
+			});
+		} else if(effectivePower <= 150){
+			cons.push({
+				trait: "Low Shield Pressure",
+				desc: "This Pokemon may struggle to draw shields because of its weaker or slower attacks."
+			});
+		}
+
 		// Defensive typing
 		var totalResistances = 0;
 		var totalWeaknesses = 0;
@@ -1243,27 +1252,6 @@ function Pokemon(id, i, b){
 			});
 		}
 
-		// Well Rounded or Specialist
-		var highRatedCategories = 0;
-
-		for(var i = 0; i < 5; i++){
-			if(r.scores[i] >= 85){
-				highRatedCategories++;
-			}
-		}
-
-		if(highRatedCategories >= 4){
-			pros.push({
-				trait: "Well-Rounded",
-				desc: "This Pokemon performs well in multiple scenarios."
-			});
-		} else if(highRatedCategories == 1 || highRatedCategories == 2){
-			pros.push({
-				trait: "Specialized",
-				desc: "This Pokemon performs well in specific scenarios."
-			});
-		}
-
 		// Check for specific move archetypes
 
 		if(self.hasMove("OCTAZOOKA") || self.hasMove("LEAF_TORNADO") || self.hasMove("MIRROR_SHOT") || self.hasMove("MUDDY_WATER") || self.hasMove("TRI_ATTACK")){
@@ -1291,7 +1279,7 @@ function Pokemon(id, i, b){
 		if(self.hasMove("BUBBLE_BEAM") || self.hasMove("ICY_WIND") || self.hasMove("LUNGE") || self.hasMove("SAND_TOMB") || self.hasMove("ACID_SPRAY") || hasSelfDebuffingMove){
 			cons.push({
 				trait: "Technical",
-				desc: "This Pokemon has complex moves that can alter momentum but may be difficult to use."
+				desc: "This Pokemon has complex moves that may be difficult to use."
 			});
 		}
 

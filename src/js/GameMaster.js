@@ -609,7 +609,7 @@ var GameMaster = (function () {
 			if(battle.getCP() == 500){
 				minStats = 0;
 			} else if(battle.getCP() == 1500){
-				minStats = 1250;
+				minStats = 1370;
 			} else if(battle.getCP() == 2500){
 				minStats = 2800;
 			}
