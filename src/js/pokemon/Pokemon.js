@@ -1055,6 +1055,12 @@ function Pokemon(id, i, b){
 		var bulkScale = [12500,14000,17000,23000];
 		var bulkRating = 0;
 
+		if(battle.getCP() == 2500){
+			bulkScale = [19000,22000,25000,31000];
+		} else if(battle.getCP() == 10000){
+			bulkScale = [27000,30000,34000,39000];
+		}
+
 		if(bulk <= bulkScale[0]){
 			if(Math.pow(self.stats.atk * self.shadowAtkMult, 2) > bulk){
 				cons.push({
@@ -1296,6 +1302,18 @@ function Pokemon(id, i, b){
 			pros: pros,
 			cons: cons
 		};
+	}
+
+	// Returns a string that describes how this Pokemon uses XL Candy
+
+	this.needsXLCandy = function(){
+		var level41CP = self.calculateCP(0.795300006866455, 15, 15, 15);
+
+		if(level41CP >= battle.getCP() + 150){
+			return false;
+		} else{
+			return true
+		}
 	}
 
 	// Return whether or not this Pokemon has a specific move

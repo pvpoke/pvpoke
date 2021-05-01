@@ -2089,6 +2089,19 @@ a.download-csv{
 		font-weight:bold;
 	}
 
+	.xl-info-icon{
+		display: inline-block;
+	    margin-left: 15px;
+	    background: #000;
+	    border-radius: 4px;
+	    padding: 2px 6px;
+	    color: #fff;
+	    opacity: .3;
+	    font-size: 12px;
+		position: relative;
+		top: -1px;
+	}
+
 	.rating-container{
 		.rating{
 			float:right;

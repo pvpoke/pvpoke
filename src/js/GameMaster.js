@@ -766,7 +766,7 @@ var GameMaster = (function () {
 
 		// Generate a list of Pokemon given a search string
 
-		object.generatePokemonListFromSearchString = function(str){
+		object.generatePokemonListFromSearchString = function(str, cp){
 			// Break the search string up into queries
 			var str = str.replace(/, /g, '').toLowerCase();
 			var queries = str.split(',');
@@ -783,6 +783,7 @@ var GameMaster = (function () {
 
 				for(var n = 0; n < object.data.pokemon.length; n++){
 					var pokemon = new Pokemon(object.data.pokemon[n].speciesId, 0, battle);
+
 					var paramsMet = 0;
 
 					for(var j = 0; j < params.length; j++){
@@ -887,6 +888,19 @@ var GameMaster = (function () {
 							if(param.indexOf("km") > -1){
 								var arr = param.split("km");
 								if(pokemon.buddyDistance == parseInt(arr[0])){
+									valid = true;
+								}
+							}
+
+							// Hundo search
+							if(param == "hundo"){
+								pokemon.initialize(true);
+
+								if(pokemon.speciesId == "talonflame"){
+									console.log(pokemon.ivs);
+								}
+
+								if(pokemon.ivs.atk == 15 && pokemon.ivs.def == 15 && pokemon.ivs.hp == 15){
 									valid = true;
 								}
 							}

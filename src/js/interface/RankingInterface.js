@@ -234,6 +234,12 @@ var InterfaceMaster = (function () {
 
 					$(".section.white > .rankings-container").append($el);
 
+					// Determine XL category
+
+					if(pokemon.needsXLCandy()){
+						$el.find(".name").append("<span class=\"xl-info-icon\">XL</span>");
+					}
+
 					// For Prismatic Cup, show color category
 
 					if(cup == "prismatic"){

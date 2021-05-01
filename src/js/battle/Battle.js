@@ -135,7 +135,7 @@ function Battle(){
 		if((forURLStr)&&(levelCap != 50)){
 			return cp + "-"+ + levelCap;
 		} else{
-			return cp;
+			return parseInt(cp);
 		}
 
 	}

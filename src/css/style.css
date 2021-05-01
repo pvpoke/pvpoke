@@ -1811,6 +1811,18 @@ a.download-csv {
 .rank .name {
   font-weight: bold;
 }
+.rank .xl-info-icon {
+  display: inline-block;
+  margin-left: 15px;
+  background: #000;
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: #fff;
+  opacity: 0.3;
+  font-size: 12px;
+  position: relative;
+  top: -1px;
+}
 .rank .rating-container .rating {
   float: right;
   color: #fff6d4;
