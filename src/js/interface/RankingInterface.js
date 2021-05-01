@@ -1027,7 +1027,8 @@ var InterfaceMaster = (function () {
 				}
 
 				// Display Pokemon traits
-
+				pokemon.isCustom = false;
+				pokemon.initialize(battle.getCP()); // Reset to default IVs
 				var traits = pokemon.generateTraits();
 
 				for(var i = 0; i < traits.pros.length; i++){

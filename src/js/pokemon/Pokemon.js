@@ -1060,7 +1060,7 @@ function Pokemon(id, i, b){
 		if(battle.getCP() == 2500){
 			bulkScale = [19000,22000,25000,31000];
 		} else if(battle.getCP() == 10000){
-			bulkScale = [27000,30000,34000,39000];
+			bulkScale = [27000,30000,35000,39000];
 		}
 
 		if(bulk <= bulkScale[0]){
