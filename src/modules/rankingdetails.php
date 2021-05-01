@@ -117,7 +117,7 @@
 	</div>
 	<div class="clear"></div>
 	<div class="detail-section traits-container">
-		<div class="ranking-header">Traits</div>
+		<div class="ranking-header">Traits <a href="#" class="trait-info">?</a></div>
 		<div class="traits"></div>
 	</div>
 	<div class="detail-section float margin">
@@ -130,5 +130,12 @@
 	</div>
 	<div class="share-link detail-section"><input type="text" readonly="">
 		<div class="copy">Copy</div>
+	</div>
+</div>
+
+<div class="trait-modal hide">
+	<p><b class="name"></b> has the following traits and playstyles:</p>
+
+	<div class="traits">
 	</div>
 </div>

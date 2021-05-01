@@ -52,6 +52,9 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".check.limited", toggleLimitedPokemon);
 				$("body").on("click", ".check.xl", toggleXLPokemon);
 				$("body").on("click", ".continentals .check", toggleContinentalsSlots);
+				$("body").on("click", ".detail-section .trait-info", openTraitPopup);
+
+				pokeSearch.setBattle(battle);
 
 				window.addEventListener('popstate', function(e) {
 					get = e.state;
@@ -1098,6 +1101,23 @@ var InterfaceMaster = (function () {
 				if(selectedSlots.length == 0){
 					$(".rank").removeClass("hide");
 				}
+			}
+
+			// Display trait details in the modal window
+
+			function openTraitPopup(e){
+				e.preventDefault();
+
+				var $rank = $(e.target).closest(".rank")
+				var $traits = $rank.find(".traits")
+
+				modalWindow("Traits", $(".trait-modal"));
+
+				$(".modal .name").first().html($rank.find(".name-container .name").first().html().replace("XL",""));
+
+				$traits.find("div").each(function(index, value){
+					$(".modal .traits").append("<div class=\""+$(this).attr("class")+"\"><div class=\"name\">"+$(this).html()+"</div><div class=\"desc\">"+$(this).attr("title")+"</div></div>");
+				});
 			}
 		};
 

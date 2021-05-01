@@ -1921,20 +1921,20 @@ a.download-csv {
   float: none;
   width: 100%;
 }
-.rank .details .detail-section.traits-container .traits {
-  display: flex;
-  flex-wrap: wrap;
-}
-.rank .details .detail-section.traits-container .traits div {
-  margin: 3px;
-  padding: 5px 8px;
-  border-radius: 12px;
-}
-.rank .details .detail-section.traits-container .traits div.pro {
-  background: rgba(23, 222, 75, 0.44);
-}
-.rank .details .detail-section.traits-container .traits div.con {
-  background: rgba(255, 88, 88, 0.67);
+.rank .details .detail-section.traits-container .ranking-header a.trait-info {
+  text-decoration: none;
+  color: #00171c;
+  border: 1px solid #00171c;
+  border-radius: 20px;
+  text-align: center;
+  width: 15px;
+  height: 15px;
+  font-weight: bold;
+  margin-left: 5px;
+  display: inline-block;
+  font-size: 12px;
+  position: relative;
+  top: -4px;
 }
 .rank .details .detail-section .stat-details .stat-row {
   display: flex;
@@ -2147,6 +2147,37 @@ a.download-csv {
 }
 .rank .details h2 {
   margin: 0 0 5px 0;
+}
+
+.traits {
+  display: flex;
+  flex-wrap: wrap;
+}
+.traits > div {
+  margin: 3px;
+  padding: 5px 8px;
+  border-radius: 12px;
+}
+.traits > div.pro {
+  background: rgba(23, 222, 75, 0.44);
+}
+.traits > div.con {
+  background: rgba(255, 88, 88, 0.67);
+}
+
+.modal .traits > div {
+  display: table;
+  width: 100%;
+}
+.modal .traits > div .name {
+  display: table-cell;
+  font-weight: bold;
+  font-size: 14px;
+  width: 100px;
+}
+.modal .traits > div .desc {
+  display: table-cell;
+  font-size: 12px;
 }
 
 .rankings-container > .rank,

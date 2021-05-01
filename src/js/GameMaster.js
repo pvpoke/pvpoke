@@ -766,7 +766,7 @@ var GameMaster = (function () {
 
 		// Generate a list of Pokemon given a search string
 
-		object.generatePokemonListFromSearchString = function(str, cp){
+		object.generatePokemonListFromSearchString = function(str, battle){
 			// Break the search string up into queries
 			var str = str.replace(/, /g, '').toLowerCase();
 			var queries = str.split(',');
@@ -775,7 +775,10 @@ var GameMaster = (function () {
 			var types = ["bug","dark","dragon","electric","fairy","fighting","fire","flying","ghost","grass","ground","ice","normal","poison","psychic","rock","steel","water"];
 			var tags = object.data.pokemonTags;
 			var regions = object.data.pokemonRegions;
-			var battle = new Battle();
+
+			if(! battle){
+				battle = new Battle();
+			}
 
 			for(var i = 0; i < queries.length; i++){
 				var query = queries[i];
@@ -893,14 +896,17 @@ var GameMaster = (function () {
 							}
 
 							// Hundo search
-							if(param == "hundo"){
+							if((param == "hundo")||(param == "4*")){
 								pokemon.initialize(true);
 
-								if(pokemon.speciesId == "talonflame"){
-									console.log(pokemon.ivs);
-								}
-
 								if(pokemon.ivs.atk == 15 && pokemon.ivs.def == 15 && pokemon.ivs.hp == 15){
+									valid = true;
+								}
+							}
+
+							// New XL search, no longer a tag
+							if(param == "xl"){
+								if(pokemon.needsXLCandy()){
 									valid = true;
 								}
 							}
@@ -914,6 +920,48 @@ var GameMaster = (function () {
 										// Exclude Alolan Pokemon from Gen1
 										if((pokemon.hasTag("alolan"))&&(regions[k].string == "gen1")){
 											valid = false;
+										}
+									}
+								}
+							}
+
+							// Trait search
+
+							if(object.data.pokemonTraits.indexOf(param) > -1){
+								pokemon.initialize(true);
+								pokemon.selectRecommendedMoveset("overall");
+								var traits = pokemon.generateTraits();
+								var searchTraits = [param];
+
+								if(pokemon.speciesId == "drifblim"){
+									console.log(traits);
+								}
+
+								// Add bulk traits above or below the searched trait if applicable
+
+								if(param == "bulky"){
+									searchTraits.push("extremely bulky");
+								}
+
+								if(param == "less bulky"){
+									searchTraits.push("frail", "glass cannon");
+								}
+
+								if(traits){
+									// Search traits for search term
+									for(var k = 0; k < traits.pros.length; k++){
+										if(searchTraits.indexOf(traits.pros[k].trait.toLowerCase()) > -1){
+											valid = true;
+
+											break;
+										}
+									}
+
+									for(var k = 0; k < traits.cons.length; k++){
+										if(searchTraits.indexOf(traits.cons[k].trait.toLowerCase()) > -1){
+											valid = true;
+
+											break;
 										}
 									}
 								}

@@ -1,9 +1,14 @@
 // Search input handler
 
-$(function(){
+var pokeSearch = new function(){
 	var searchTimeout;
 	var searchStr = '';
 	var $target = null;
+	var battle;
+
+	this.setBattle = function(b){
+		battle = b;
+	}
 
 	$("body").on("keyup", ".poke-search[context='ranking-search']", function(e){
 		searchStr = $(this).val().toLowerCase();
@@ -12,7 +17,13 @@ $(function(){
 
 		// Reset the timeout when a new key is typed. This prevents queries from being submitted too quickly and bogging things down on mobile.
 		window.clearTimeout(searchTimeout);
-		searchTimeout = window.setTimeout(submitSearchQuery, 200);
+
+		if($(window).width() >= 768){
+			searchTimeout = window.setTimeout(submitSearchQuery, 25);
+		} else{
+			searchTimeout = window.setTimeout(submitSearchQuery, 250);
+		}
+
 	});
 
 	$("a.search-info").click(function(e){
@@ -21,7 +32,7 @@ $(function(){
 	});
 
 	function submitSearchQuery(){
-		var list = GameMaster.getInstance().generatePokemonListFromSearchString(searchStr);
+		var list = GameMaster.getInstance().generatePokemonListFromSearchString(searchStr, battle);
 
 		$target.siblings(".rankings-container").find(".rank").each(function(index, value){
 			var id = $(this).attr("data");
@@ -33,4 +44,5 @@ $(function(){
 			}
 		});
 	}
-})
+
+};
