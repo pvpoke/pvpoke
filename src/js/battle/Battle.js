@@ -153,6 +153,8 @@ function Battle(){
 	this.setLevelCap = function(val){
 		levelCap = val;
 
+		console.log("Level Cap " + val);
+
 		for(var i = 0; i < pokemon.length; i++){
 			if(pokemon[i]){
 				pokemon[i].initialize(cp);
@@ -168,6 +170,14 @@ function Battle(){
 
 	this.setCup = function(cupName){
 		cup = gm.getCupById(cupName);
+
+		if(! cup){
+			return false;
+		}
+
+		if(cup.levelCap){
+			self.setLevelCap(cup.levelCap);
+		}
 	}
 
 	// Set a custom cup object

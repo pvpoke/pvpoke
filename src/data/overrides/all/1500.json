@@ -16,7 +16,7 @@
 		"weight": 48
 	},
 	{
-		"speciesId": "azumarill_xl",
+		"speciesId": "azumarill_xs",
 		"chargedMoves": ["ICE_BEAM", "HYDRO_PUMP"]
 	},
 	{
@@ -25,7 +25,7 @@
 		"weight": 7
 	},
 	{
-		"speciesId": "medicham_xl",
+		"speciesId": "medicham_xs",
 		"chargedMoves": ["ICE_PUNCH", "PSYCHIC"]
 	},
 	{
@@ -397,6 +397,14 @@
 	{
 		"speciesId": "shelgon",
 		"chargedMoves": ["FLAMETHROWER", "TWISTER"]
+	},
+	{
+		"speciesId": "vibrava",
+		"chargedMoves": ["SAND_TOMB", "BUG_BUZZ"]
+	},
+	{
+		"speciesId": "vibrava_shadow",
+		"chargedMoves": ["SAND_TOMB", "BUG_BUZZ"]
 	},
 	{
 		"speciesId": "cloyster_shadow",

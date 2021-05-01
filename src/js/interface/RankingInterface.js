@@ -52,7 +52,7 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".check.limited", toggleLimitedPokemon);
 				$("body").on("click", ".check.xl", toggleXLPokemon);
 				$("body").on("click", ".continentals .check", toggleContinentalsSlots);
-				$("body").on("click", ".detail-section .trait-info", openTraitPopup);
+				$("body").on("click", ".detail-section .trait-info, .detail-section .traits > div", openTraitPopup);
 
 				pokeSearch.setBattle(battle);
 
@@ -756,17 +756,21 @@ var InterfaceMaster = (function () {
 					}
 
 					if(chargedMoves[n].archetype.indexOf("Boost") > -1){
-					  archetypeClass = "boost"
+					  archetypeClass = "boost";
 				  	} else if(chargedMoves[n].archetype.indexOf("Self-Debuff") > -1){
-						archetypeClass = "self-debuff"
+						archetypeClass = "self-debuff";
 					} else if(chargedMoves[n].archetype.indexOf("Spam") > -1){
 						archetypeClass = "spam";
 					} else if(chargedMoves[n].archetype.indexOf("High Energy") > -1){
-						archetypeClass = "high-energy"
+						archetypeClass = "high-energy";
 					} else if(chargedMoves[n].archetype.indexOf("Nuke") > -1){
-						archetypeClass = "nuke"
+						archetypeClass = "nuke";
 					} else if(chargedMoves[n].archetype.indexOf("Debuff") > -1){
-						archetypeClass = "debuff"
+						archetypeClass = "debuff";
+					}
+
+					if(chargedMoves[n].archetype == "Debuff Spam/Bait"){
+						archetypeClass = "debuff";
 					}
 
 					$moveDetails.addClass(chargedMoves[n].type);
@@ -808,7 +812,7 @@ var InterfaceMaster = (function () {
 					opponent.initialize(battle.getCP(), "gamemaster");
 					opponent.selectRecommendedMoveset(category);
 
-					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+pokeMoveStr+"/"+opponent.generateURLMoveStr()+"/";
+					var battleLink = host+"battle/"+battle.getCP(true)+"/"+pokemon.speciesId+"/"+opponent.speciesId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+pokeMoveStr+"/"+opponent.generateURLMoveStr()+"/";
 
 					// Append energy settings
 					battleLink += pokemon.stats.hp + "-" + opponent.stats.hp + "/";
@@ -841,7 +845,7 @@ var InterfaceMaster = (function () {
 					var opponent = new Pokemon(c.opponent, 1, battle);
 					opponent.initialize(battle.getCP(), "gamemaster");
 					opponent.selectRecommendedMoveset(category);
-					var battleLink = host+"battle/"+cp+"/"+pokemon.speciesId+"/"+opponent.speciesId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+pokeMoveStr+"/"+opponent.generateURLMoveStr()+"/";
+					var battleLink = host+"battle/"+battle.getCP(true)+"/"+pokemon.speciesId+"/"+opponent.speciesId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+pokeMoveStr+"/"+opponent.generateURLMoveStr()+"/";
 
 					// Append energy settings
 					battleLink += pokemon.stats.hp + "-" + opponent.stats.hp + "/";
@@ -1006,7 +1010,11 @@ var InterfaceMaster = (function () {
 					}
 				} else{
 					if(pokemon.levelCap == 40){
-						$details.find(".xl-info-container").addClass("unavailable");
+						if(pokemon.hasTag("xs")){
+							$details.find(".xl-info-container").addClass("xs");
+						} else{
+							$details.find(".xl-info-container").addClass("unavailable");
+						}
 					} else{
 						if(level41CP >= battle.getCP() - 75){
 							$details.find(".xl-info-container").addClass("mixed");
@@ -1068,7 +1076,7 @@ var InterfaceMaster = (function () {
 			function toggleXLPokemon(e){
 
 				$(".rankings-container > .rank").each(function(index, value){
-					if($(this).attr("data").indexOf("xl") > -1){
+					if($(this).find(".xl-info-icon").length > 0){
 						$(this).toggleClass("hide");
 					}
 				});

@@ -2011,6 +2011,12 @@ a.download-csv {
 .rank .details .detail-section .stat-details .xl-info-container.unavailable .icon {
   background-position: -84px;
 }
+.rank .details .detail-section .stat-details .xl-info-container.xs .xl-info.xs {
+  display: block;
+}
+.rank .details .detail-section .stat-details .xl-info-container.xs .icon {
+  background-position: -84px;
+}
 .rank .details .detail-section .hexagon {
   margin: 10px auto;
   display: block;
@@ -2157,6 +2163,11 @@ a.download-csv {
   margin: 3px;
   padding: 5px 8px;
   border-radius: 12px;
+  cursor: pointer;
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+.traits > div:hover {
+  border: 2px solid rgba(0, 0, 0, 0.25);
 }
 .traits > div.pro {
   background: rgba(23, 222, 75, 0.44);
@@ -2181,14 +2192,14 @@ a.download-csv {
   padding-left: 5px;
 }
 
+.modal .trait-modal .traits > div {
+  cursor: default;
+  border: none !important;
+}
+
 .modal .search-traits-selector .traits > div {
   display: block;
   width: auto;
-  border: 2px solid rgba(0, 0, 0, 0);
-  cursor: pointer;
-}
-.modal .search-traits-selector .traits > div:hover {
-  border: 2px solid rgba(0, 0, 0, 0.25);
 }
 .modal .search-traits-selector .traits > div.selected {
   border: 2px solid black;

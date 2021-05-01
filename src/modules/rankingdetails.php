@@ -58,8 +58,13 @@
 				<div class="xl-info mixed hide">Candy XL recommended but not required.</div>
 				<div class="xl-info xl hide">Candy XL strongly recommended.</div>
 				<div class="xl-info unavailable hide">Candy XL not readily available yet for this Pokemon.</div>
+				<div class="xl-info xs hide">This entry respresents this Pokemon without the use of Candy XL.</div>
 			</div>
 		</div>
+	</div>
+	<div class="detail-section traits-container">
+		<div class="ranking-header">Traits <a href="#" class="trait-info">?</a></div>
+		<div class="traits"></div>
 	</div>
 	<div class="detail-section float margin">
 		<div class="ranking-header">Fast Moves</div>
@@ -116,10 +121,6 @@
 		<div class="resistances clear"></div>
 	</div>
 	<div class="clear"></div>
-	<div class="detail-section traits-container">
-		<div class="ranking-header">Traits <a href="#" class="trait-info">?</a></div>
-		<div class="traits"></div>
-	</div>
 	<div class="detail-section float margin">
 		<div class="ranking-header">Buddy Distance</div>
 		<div class="buddy-distance clear"></div>

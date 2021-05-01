@@ -2321,6 +2321,11 @@ a.download-csv{
 						.xl-info.unavailable{ display: block; }
 						.icon{ background-position: -28px * 3; }
 					}
+
+					&.xs{
+						.xl-info.xs{ display: block; }
+						.icon{ background-position: -28px * 3; }
+					}
 				}
 			}
 
@@ -2488,6 +2493,12 @@ a.download-csv{
 		margin:3px;
 		padding:5px 8px;
 		border-radius:12px;
+		cursor:pointer;
+		border:2px solid rgba(0,0,0,0);
+
+		&:hover{
+			border:2px solid rgba(0,0,0,.25);
+		}
 
 		&.pro{ background:rgb(23 222 75 / 44%);	}
 		&.con{ background:rgb(255 88 88 / 67%);	}
@@ -2512,16 +2523,15 @@ a.download-csv{
 	}
 }
 
+.modal .trait-modal .traits > div{
+	cursor:default;
+	border:none !important;
+}
+
 .modal .search-traits-selector{
 	.traits > div{
 		display:block;
 		width:auto;
-		border:2px solid rgba(0,0,0,0);
-		cursor:pointer;
-
-		&:hover{
-			border:2px solid rgba(0,0,0,.25);
-		}
 
 		&.selected{
 			border:2px solid rgba(0,0,0,1);

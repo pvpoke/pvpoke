@@ -105,6 +105,10 @@ var RankerMaster = (function () {
 					battle.setCustomCup(cup);
 				}
 
+				if(cup.levelCap){
+					battle.setLevelCap(cup.levelCap);
+				}
+
 
 				currentLeagueIndex = 0;
 				currentScenarioIndex = 0;
@@ -482,6 +486,12 @@ var RankerMaster = (function () {
 							// Don't score Pokemon in the mirror match
 
 							if(targets[j].speciesId == pokemonList[i].speciesId){
+								weight = 0;
+							}
+
+							// Don't score XS Pokemon
+
+							if(targets[j].hasTag("xs")){
 								weight = 0;
 							}
 

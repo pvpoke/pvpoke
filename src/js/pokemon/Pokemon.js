@@ -1316,6 +1316,10 @@ function Pokemon(id, i, b){
 	// Returns a string that describes how this Pokemon uses XL Candy
 
 	this.needsXLCandy = function(){
+		if((self.baseLevelCap <= 40)||(self.levelCap <= 40)){
+			return false;
+		}
+
 		var level41CP = self.calculateCP(0.795300006866455, 15, 15, 15);
 
 		if(level41CP >= battle.getCP() + 150){
