@@ -2178,6 +2178,20 @@ a.download-csv {
 .modal .traits > div .desc {
   display: table-cell;
   font-size: 12px;
+  padding-left: 5px;
+}
+
+.modal .search-traits-selector .traits > div {
+  display: block;
+  width: auto;
+  border: 2px solid rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+.modal .search-traits-selector .traits > div:hover {
+  border: 2px solid rgba(0, 0, 0, 0.25);
+}
+.modal .search-traits-selector .traits > div.selected {
+  border: 2px solid black;
 }
 
 .rankings-container > .rank,
@@ -2233,7 +2247,8 @@ a.download-csv {
   max-width: 200px;
   display: block;
 }
-.poke-search-container a.search-info {
+.poke-search-container a.search-info,
+.poke-search-container a.search-traits {
   text-decoration: none;
   color: #00171c;
   border: 1px solid #00171c;
@@ -2243,6 +2258,9 @@ a.download-csv {
   height: 15px;
   font-weight: bold;
   margin-left: 5px;
+}
+.poke-search-container a.search-traits {
+  background: rgba(23, 222, 75, 0.44);
 }
 
 .options {
@@ -3482,6 +3500,10 @@ a.pokebattler {
   }
   .rank .rating-container .rating {
     width: auto !important;
+  }
+
+  .modal .search-traits-selector .traits > div {
+    font-size: 12px;
   }
 
   .histograms {

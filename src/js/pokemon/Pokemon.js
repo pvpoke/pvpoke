@@ -1067,14 +1067,15 @@ function Pokemon(id, i, b){
 			if(Math.pow(self.stats.atk * self.shadowAtkMult, 2) > bulk){
 				cons.push({
 					trait: "Glass Cannon",
-					desc: "Hits hard but struggles to take hits."
+					desc: "Hits hard but struggles to take hits. Depends on shields"
 				});
 			} else{
 				cons.push({
-					trait: "Frail",
+					trait: "Glassy",
 					desc: "Struggles to take hits and depends on shields."
 				});
 			}
+
 
 			bulkRating = -2;
 
@@ -1121,12 +1122,12 @@ function Pokemon(id, i, b){
 		if(self.fastMove.cooldown == 500){
 			pros.push({
 				trait: "Agile",
-				desc: "Uses short animations, can react quickly, and reliably fires Charged Moves."
+				desc: "Uses short animations, can react quickly and reliably fire Charged Moves."
 			});
 		} else if(self.fastMove.cooldown >= 2000){
 			cons.push({
 				trait: "Clumsy",
-				desc: "Uses long animations, is stuck while attacking, and may not reliably fire Charged Moves."
+				desc: "Uses long animations, is stuck while attacking and may not reliably fire Charged Moves."
 			});
 		}
 
@@ -1134,6 +1135,14 @@ function Pokemon(id, i, b){
 		var types = getAllTypes();
 		var averagePower = 0;
 		var totalResistingTypes = 0;
+		var totalSuperEffectiveTypes = 0;
+
+		var targetDef = 120;
+		if(battle.getCP() == 2500){
+			targetDef = 150;
+		} else if(battle.getCP() == 10000){
+			targetDef = 170;
+		}
 
 		for(var i = 0; i < types.length; i++){
 			var powerVSType = 0;
@@ -1158,12 +1167,14 @@ function Pokemon(id, i, b){
 
 			if(bestEffectiveness < 1){
 				totalResistingTypes++;
+			} else if(bestEffectiveness > 1){
+				totalSuperEffectiveTypes++;
 			}
 		}
 
 		averagePower /= types.length;
 
-		if((totalResistingTypes == 0)&&(averagePower >= 210)){
+		if((totalResistingTypes == 0)&&(totalSuperEffectiveTypes >= 5)&&(averagePower >= 200)){
 			pros.push({
 				trait: "Flexible",
 				desc: "Can hit a wide variety of types."
@@ -1185,13 +1196,6 @@ function Pokemon(id, i, b){
 		}
 
 		// Fast Move pressure
-		var targetDef = 120;
-
-		if(battle.getCP() == 2500){
-			targetDef = 150;
-		} else if(battle.getCP() == 10000){
-			targetDef = 170;
-		}
 
 		var effectiveDPT = ((self.fastMove.power * self.fastMove.stab * self.shadowAtkMult) * (self.stats.atk / targetDef)) / (self.fastMove.cooldown / 500);
 
@@ -1203,7 +1207,7 @@ function Pokemon(id, i, b){
 		} else if(effectiveDPT <= 2){
 			cons.push({
 				trait: "Low Fast Move Pressure",
-				desc: "Deals low Fast Move damage. It is more dependent on Charged Moves."
+				desc: "Deals low Fast Move damage. It may struggle to bring down weakened opponents."
 			});
 		}
 
@@ -1246,7 +1250,7 @@ function Pokemon(id, i, b){
 				trait: "Defensive",
 				desc: "Resists attacks from a wide variety of types."
 			});
-		} else if((totalWeaknesses >= 6)&&(totalWeaknesses > totalResistances)){
+		} else if((totalWeaknesses >= 5)&&(totalWeaknesses > totalResistances)){
 			cons.push({
 				trait: "Vulnerable",
 				desc: "Takes super effective damage from a wide variety of types."
@@ -1272,7 +1276,7 @@ function Pokemon(id, i, b){
 		if(self.hasMove("POWER_UP_PUNCH") || self.hasMove("FLAME_CHARGE") || self.hasMove("FELL_STINGER")){
 			pros.push({
 				trait: "Momentum",
-				desc: "Uses stat boosts to build momentum and sweep teams."
+				desc: "Uses stat boosts to build momentum and power through teams."
 			});
 		}
 
@@ -1285,10 +1289,13 @@ function Pokemon(id, i, b){
 		}
 
 		if(self.hasMove("BUBBLE_BEAM") || self.hasMove("ICY_WIND") || self.hasMove("LUNGE") || self.hasMove("SAND_TOMB") || self.hasMove("ACID_SPRAY") || hasSelfDebuffingMove){
-			cons.push({
-				trait: "Technical",
-				desc: "Uses complex moves that may have a high learning curve."
-			});
+			// Only give this trait to energy driven Pokemon
+			if(self.fastMove.energyGain / self.fastMove.cooldown >= 3 / 500){
+				cons.push({
+					trait: "Technical",
+					desc: "Uses complex moves that may have a high learning curve."
+				});
+			}
 		}
 
 		// Consistency

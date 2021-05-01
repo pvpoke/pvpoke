@@ -2512,6 +2512,23 @@ a.download-csv{
 	}
 }
 
+.modal .search-traits-selector{
+	.traits > div{
+		display:block;
+		width:auto;
+		border:2px solid rgba(0,0,0,0);
+		cursor:pointer;
+
+		&:hover{
+			border:2px solid rgba(0,0,0,.25);
+		}
+
+		&.selected{
+			border:2px solid rgba(0,0,0,1);
+		}
+	}
+}
+
 .rankings-container > .rank,
 .rankings-container > .rank > .rating-container{
 	cursor: pointer;
@@ -2568,7 +2585,8 @@ a.download-csv{
 		display:block;
 	}
 
-	a.search-info{
+	a.search-info,
+	a.search-traits{
 		text-decoration: none;
 		color:#00171c;
 		border:1px solid #00171c;
@@ -2578,6 +2596,10 @@ a.download-csv{
 		height:15px;
 		font-weight: bold;
 		margin-left:5px;
+	}
+
+	a.search-traits{
+		background:rgba(23, 222, 75, 0.44);
 	}
 }
 
@@ -3746,6 +3768,11 @@ a.pokebattler{
 			width:auto !important;
 		}
 	}
+
+	.modal .search-traits-selector .traits > div{
+		font-size:12px;
+	}
+
 
 	.histograms{
 		display:block;

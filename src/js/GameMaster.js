@@ -927,15 +927,11 @@ var GameMaster = (function () {
 
 							// Trait search
 
-							if(object.data.pokemonTraits.indexOf(param) > -1){
+							if((object.data.pokemonTraits.pros.indexOf(param) > -1)||(object.data.pokemonTraits.cons.indexOf(param) > -1)){
 								pokemon.initialize(true);
 								pokemon.selectRecommendedMoveset("overall");
 								var traits = pokemon.generateTraits();
 								var searchTraits = [param];
-
-								if(pokemon.speciesId == "drifblim"){
-									console.log(traits);
-								}
 
 								// Add bulk traits above or below the searched trait if applicable
 

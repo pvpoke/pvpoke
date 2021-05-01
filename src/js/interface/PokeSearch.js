@@ -31,6 +31,53 @@ var pokeSearch = new function(){
 		modalWindow("Search Strings", $(".sandbox-search-strings"));
 	});
 
+	// Open trait search
+
+	$("a.search-traits").click(function(e){
+		e.preventDefault();
+		modalWindow("Search Traits", $(".search-traits-selector"));
+
+		// Populate traits
+		var traits = GameMaster.getInstance().data.pokemonTraits;
+
+		for(var i = 0; i < traits.pros.length; i++){
+			$(".modal .traits").append("<div class=\"pro\" value=\""+traits.pros[i]+"\">+ "+toTitleCase(traits.pros[i])+"</div>");
+		}
+
+		for(var i = 0; i < traits.cons.length; i++){
+			$(".modal .traits").append("<div class=\"con\" value=\""+traits.cons[i]+"\">- "+toTitleCase(traits.cons[i])+"</div>");
+		}
+
+		// Prefill with existing search query
+
+		var searchArr = $(".poke-search").val().split("&");
+
+		for(var i = 0; i < searchArr.length; i++){
+			$(".modal .traits > div[value=\""+searchArr[i]+"\"]").addClass("selected");
+		}
+
+		$(".modal .traits > div").click(function(e){
+			$(this).toggleClass("selected");
+		});
+
+		// Submit search
+		$(".modal .button.search").click(function(e){
+			e.preventDefault();
+
+			searchArr = [];
+
+			$(".modal .traits .selected").each(function(index, value){
+				searchArr.push($(this).attr("value"));
+			});
+
+			$(".poke-search").val(searchArr.join("&"));
+			$(".poke-search").trigger("keyup");
+
+			closeModalWindow();
+		});
+
+	})
+
 	function submitSearchQuery(){
 		var list = GameMaster.getInstance().generatePokemonListFromSearchString(searchStr, battle);
 
@@ -43,6 +90,13 @@ var pokeSearch = new function(){
 				$(this).hide();
 			}
 		});
+	}
+
+	// Thanks stackoverflow
+	function toTitleCase(str) {
+	    return str.replace(/\w\S*/g, function(txt){
+	        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+	    });
 	}
 
 };

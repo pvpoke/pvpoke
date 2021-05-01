@@ -814,7 +814,10 @@
         }]
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xl"],
-    "pokemonTraits": ["glass cannon", "frail", "less bulky", "bulky", "extremely bulky", "spammy", "slow", "agile", "clumsy", "flexible", "inflexible", "dynamic", "fast move pressure", "low fast move pressure", "shield pressure", "low shield pressure", "defensive", "vulnerable", "risky", "chaotic", "momentum", "technical", "inconsistent"],
+    "pokemonTraits": {
+		"pros": ["bulky", "extremely bulky", "spammy", "agile", "flexible", "dynamic", "fast move pressure", "shield pressure", "defensive", "momentum"],
+		"cons": ["less bulky", "glass cannon", "slow", "clumsy", "inflexible",  "low fast move pressure", "low shield pressure", "vulnerable", "risky", "chaotic", "technical","inconsistent"]
+	},
     "pokemonRegions": [{
         "string": "gen1",
         "name": "kanto",
