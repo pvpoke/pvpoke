@@ -2276,19 +2276,18 @@ a.download-csv {
 }
 
 .modal .traits > div {
-  display: table;
+  display: flex;
   width: 100%;
 }
 .modal .traits > div .name {
-  display: table-cell;
   font-weight: bold;
   font-size: 14px;
-  width: 100px;
+  flex-basis: 35%;
 }
 .modal .traits > div .desc {
-  display: table-cell;
   font-size: 12px;
   padding-left: 5px;
+  flex-basis: 65%;
 }
 
 .modal .trait-modal .traits > div {

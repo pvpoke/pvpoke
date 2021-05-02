@@ -309,7 +309,7 @@ var InterfaceMaster = (function () {
 
 					// Scroll to element
 
-					$("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, 500);
+					$("html, body").animate({ scrollTop: 350}, 500);
 					$(".rankings-container").scrollTop($el.position().top-$(".rankings-container").position().top-20);
 
 					jumpToPoke = false;

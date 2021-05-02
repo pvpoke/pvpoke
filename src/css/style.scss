@@ -2628,20 +2628,19 @@ a.download-csv{
 }
 
 .modal .traits > div{
-	display:table;
+	display:flex;
 	width:100%;
 
 	.name{
-		display:table-cell;
 		font-weight:bold;
 		font-size:14px;
-		width:100px;
+		flex-basis:35%;
 	}
 
 	.desc{
-		display:table-cell;
 		font-size:12px;
 		padding-left:5px;
+		flex-basis:65%;
 	}
 }
 
