@@ -199,7 +199,7 @@ function Pokemon(id, i, b){
 
 		this.cp = self.calculateCP();
 
-		if(b.getLevelCap() <= self.baseLevelCap){
+		if((b.getLevelCap() <= self.baseLevelCap)&&(self.levelCap - b.getLevelCap() > 1)){
 			self.levelCap = b.getLevelCap();
 		}
 

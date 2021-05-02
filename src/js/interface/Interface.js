@@ -1536,11 +1536,15 @@ var InterfaceMaster = (function () {
 				// Set to recommend moves if no moveset string provided
 
 				if(! get["m1"]){
-					pokeSelectors[0].getPokemon().selectRecommendedMoveset();
+					if(pokeSelectors[0].getPokemon()){
+						pokeSelectors[0].getPokemon().selectRecommendedMoveset();
+					}
 				}
 
 				if(! get["m2"]){
-					pokeSelectors[1].getPokemon().selectRecommendedMoveset();
+					if(pokeSelectors[1].getPokemon()){
+						pokeSelectors[1].getPokemon().selectRecommendedMoveset();
+					}
 				}
 
 				// Update both Pokemon selectors

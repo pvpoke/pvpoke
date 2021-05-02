@@ -499,6 +499,10 @@ var InterfaceMaster = (function () {
 				battle.setCP(cp);
 				battle.setCup(cup);
 
+				if(cup != "classic"){
+					battle.setLevelCap(50);
+				}
+
 				for(var i = 0; i < multiSelectors.length; i++){
 					multiSelectors[i].setCP(cp);
 				}
