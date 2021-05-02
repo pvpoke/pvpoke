@@ -1172,12 +1172,23 @@ function Pokemon(id, i, b){
 
 		averagePower /= types.length;
 
+		var inflexible = false;
+
 		if((totalResistingTypes == 0)&&(totalSuperEffectiveTypes >= 5)&&(averagePower >= 200)){
 			pros.push({
 				trait: "Flexible",
 				desc: "Can hit a wide variety of types."
 			});
 		} else if((totalResistingTypes >= 2)&&(averagePower <= 240)&&(self.speciesId != "mew")){
+			cons.push({
+				trait: "Inflexible",
+				desc: "May struggle to hit multiple types."
+			});
+
+			inflexible = true;
+		}
+
+		if((self.chargedMoves.length == 1) || (self.chargedMoves.length == 2) && (self.chargedMoves[0].type == self.chargedMoves[1].type) && (! inflexible)){
 			cons.push({
 				trait: "Inflexible",
 				desc: "May struggle to hit multiple types."
