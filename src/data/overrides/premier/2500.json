@@ -62,7 +62,7 @@
 	},
 	{
 		"speciesId": "jellicent",
-		"fastMove": "BUBBLE",
+		"fastMove": "HEX",
 		"chargedMoves": ["BUBBLE_BEAM","SHADOW_BALL"]
 	},
 	{
@@ -213,6 +213,10 @@
 	{
 		"speciesId": "politoed__shadow_xl",
 		"chargedMoves": ["WEATHER_BALL_WATER", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "ninetales_alolan",
+		"chargedMoves": ["WEATHER_BALL_ICE", "DAZZLING_GLEAM"]
 	},
 	{
 		"speciesId": "ninetales",

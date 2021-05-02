@@ -16,7 +16,7 @@
 		"weight": 48
 	},
 	{
-		"speciesId": "azumarill_xl",
+		"speciesId": "azumarill_xs",
 		"chargedMoves": ["ICE_BEAM", "HYDRO_PUMP"]
 	},
 	{
@@ -25,7 +25,7 @@
 		"weight": 7
 	},
 	{
-		"speciesId": "medicham_xl",
+		"speciesId": "medicham_xs",
 		"chargedMoves": ["ICE_PUNCH", "PSYCHIC"]
 	},
 	{
@@ -45,6 +45,10 @@
 	{
 		"speciesId": "lugia",
 		"chargedMoves": ["SKY_ATTACK", "AEROBLAST"]
+	},
+	{
+		"speciesId": "dusclops",
+		"chargedMoves": ["FIRE_PUNCH", "RETURN"]
 	},
 	{
 		"speciesId": "rapidash_galarian",
@@ -118,7 +122,7 @@
 	},
 	{
 		"speciesId": "jellicent",
-		"fastMove": "BUBBLE",
+		"fastMove": "HEX",
 		"chargedMoves": ["BUBBLE_BEAM","SHADOW_BALL"]
 	},
 	{
@@ -379,6 +383,10 @@
 		"fastMove": "AIR_SLASH"
 	},
 	{
+		"speciesId": "delcatty",
+		"fastMove": "CHARM"
+	},
+	{
 		"speciesId": "hitmonchan",
 		"chargedMoves": ["ICE_PUNCH", "THUNDER_PUNCH"]
 	},
@@ -388,11 +396,19 @@
 	},
 	{
 		"speciesId": "dragonair",
-		"chargedMoves": ["AQUA_TAIL", "WRAP"]
+		"chargedMoves": ["AQUA_TAIL", "RETURN"]
 	},
 	{
 		"speciesId": "shelgon",
 		"chargedMoves": ["FLAMETHROWER", "TWISTER"]
+	},
+	{
+		"speciesId": "vibrava",
+		"chargedMoves": ["SAND_TOMB", "BUG_BUZZ"]
+	},
+	{
+		"speciesId": "vibrava_shadow",
+		"chargedMoves": ["SAND_TOMB", "BUG_BUZZ"]
 	},
 	{
 		"speciesId": "cloyster_shadow",
@@ -574,6 +590,7 @@
 	{
 		"speciesId": "ninetales_alolan",
 		"fastMove": "POWDER_SNOW",
+		"chargedMoves": ["WEATHER_BALL_ICE", "DAZZLING_GLEAM"],
 		"weight": 10
 	},
 	{

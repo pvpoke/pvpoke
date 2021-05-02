@@ -152,7 +152,7 @@ require_once 'header.php';
 
 	<p>Click or tap the rankings below for more details.</p>
 
-	<div class="check on xl" style="margin-bottom:15px;"><span></span>Show XL Pokemon</div>
+	<div class="check <?php if($_SETTINGS->xls): echo "on"; endif; ?> xl" style="margin-bottom:15px;"><span></span>Show XL Pokemon</div>
 
 	<div class="check on limited hide"><span></span>Show <div class="limited-title">Limited Pokemon</div>*</div>
 	<div class="asterisk limited hide">* Only a limited number of these Pokemon can be selected per team.</div>
@@ -170,7 +170,8 @@ require_once 'header.php';
 
 	<div class="poke-search-container">
 		<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />
-		<a href="#" class="search-info">i</a>
+		<a href="#" class="search-info" title="Search Help">?</a>
+		<a href="#" class="search-traits" title="Search Traits">+</a>
 	</div>
 
 
@@ -239,77 +240,18 @@ require_once 'header.php';
 
 <?php require_once 'modules/search-string-help.php'; ?>
 
-<div class="details-template hide">
-	<div class="detail-section float margin">
-		<div class="ranking-header">Key Wins</div>
-		<div class="ranking-header right">Battle Rating</div>
-		<div class="matchups clear"></div>
-	</div>
-	<div class="detail-section float">
-		<div class="ranking-header">Key Losses</div>
-		<div class="ranking-header right">Battle Rating</div>
-		<div class="counters clear"></div>
-	</div>
-	<div class="detail-section float margin">
-		<div class="ranking-header">Fast Moves</div>
-		<div class="ranking-header right">Preference</div>
-		<div class="moveset fast clear"></div>
-		<div class="footnote">
-			* Event or Elite TM exclusive<br>
-			<sup>†</sup> Unobtainable via TM
-		</div>
-	</div>
-	<div class="detail-section float">
-		<div class="ranking-header">Charged Moves</div>
-		<div class="ranking-header right">Preference</div>
-		<div class="moveset charged clear"></div>
-	</div>
-	<div class="clear"></div>
-	<div class="detail-section moveset-override">This Pokemon's recommended moveset has been manually set over the calculated move preferences. This may be to prevent an impossible moveset or take advantage of specific matchups.</div>
-	<div class="detail-section typing">
-		<div class="rating-container">
-			<div class="ranking-header">Primary Type</div>
-			<div class="type"></div>
-		</div>
-		<div class="rating-container">
-			<div class="ranking-header">Secondary Type</div>
-			<div class="type"></div>
-		</div>
-	</div>
-	<div class="detail-section float margin">
-		<div class="ranking-header">Weaknesses</div>
-		<div class="weaknesses clear"></div>
-	</div>
-	<div class="detail-section float">
-		<div class="ranking-header">Resistances</div>
-		<div class="resistances clear"></div>
-	</div>
-	<div class="clear"></div>
-	<div class="detail-section stats">
-		<div class="rating-container">
-			<div class="ranking-header">Attack</div>
-			<div class="rating"></div>&nbsp;-
-			<div class="rating"></div>
-		</div>
-		<div class="rating-container">
-			<div class="ranking-header">Defense</div>
-			<div class="rating"></div>&nbsp;-
-			<div class="rating"></div>
-		</div>
-		<div class="rating-container">
-			<div class="ranking-header">Stamina</div>
-			<div class="rating"></div>&nbsp;-
-			<div class="rating"></div>
-		</div>
-		<div class="rating-container">
-			<div class="ranking-header">Rank 1 Level &amp; IVs</div>
-			<div class="rating"></div>
-		</div>
-	</div>
-	<div class="share-link detail-section"><input type="text" readonly="">
-		<div class="copy">Copy</div>
+<div class="search-traits-selector hide">
+	<p>Select the options below to search for Pokemon traits and playstyles.</p>
+
+	<div class="traits"></div>
+
+	<div class="center flex">
+		<div class="button search">Search</div>
 	</div>
 </div>
+
+
+<?php require_once 'modules/rankingdetails.php'; ?>
 
 <!--test 2-->
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
@@ -320,5 +262,6 @@ require_once 'header.php';
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/RankingMain.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/libs/hexagon-chart.js?v=<?php echo $SITE_VERSION; ?>"></script>
 
 <?php require_once 'footer.php'; ?>

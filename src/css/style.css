@@ -1734,7 +1734,7 @@ a.download-csv {
   width: 50%;
   float: left;
   font-weight: bold;
-  padding: 5px 10px;
+  padding: 5px 0px;
   box-sizing: border-box;
 }
 .ranking-header.right {
@@ -1743,7 +1743,7 @@ a.download-csv {
 
 .rankings-container {
   margin-top: 20px;
-  max-height: 400px;
+  max-height: 600px;
   overflow-y: scroll;
 }
 .rankings-container.threats, .rankings-container.alternatives {
@@ -1810,6 +1810,18 @@ a.download-csv {
 }
 .rank .name {
   font-weight: bold;
+}
+.rank .xl-info-icon {
+  display: inline-block;
+  margin-left: 15px;
+  background: #000;
+  border-radius: 4px;
+  padding: 2px 6px;
+  color: #fff;
+  opacity: 0.3;
+  font-size: 12px;
+  position: relative;
+  top: -1px;
 }
 .rank .rating-container .rating {
   float: right;
@@ -1902,10 +1914,287 @@ a.download-csv {
   text-transform: capitalize;
   padding: 2px 12px;
 }
-.rank .details .detail-section.moveset-override {
-  display: none;
+.rank .details .detail-section.traits-container {
+  width: 100%;
+}
+.rank .details .detail-section.traits-container .ranking-header {
+  float: none;
+  width: 100%;
+}
+.rank .details .detail-section.traits-container .ranking-header a.trait-info {
+  text-decoration: none;
+  color: #00171c;
+  border: 1px solid #00171c;
+  border-radius: 20px;
+  text-align: center;
+  width: 15px;
+  height: 15px;
+  font-weight: bold;
+  margin-left: 5px;
+  display: inline-block;
   font-size: 12px;
-  padding: 10px;
+  position: relative;
+  top: -4px;
+}
+.rank .details .detail-section .stat-details .stat-row {
+  display: flex;
+  align-items: baseline;
+  margin: 5px 0;
+}
+.rank .details .detail-section .stat-details .stat-row.overall {
+  border-bottom: 1px solid;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+.rank .details .detail-section .stat-details .stat-row.overall .value {
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.65);
+  text-align: center;
+  color: #fff6d4;
+}
+.rank .details .detail-section .stat-details .stat-row.level .value, .rank .details .detail-section .stat-details .stat-row.rank-1 .value {
+  text-align: left;
+}
+.rank .details .detail-section .stat-details .stat-row .label {
+  font-size: 12px;
+  min-width: 50px;
+}
+.rank .details .detail-section .stat-details .stat-row .value {
+  font-size: 14px;
+  font-weight: bold;
+  padding: 2px 5px;
+  text-align: right;
+  font-weight: bold;
+  border-radius: 8px;
+  min-width: 45px;
+  margin-right: 5px;
+}
+.rank .details .detail-section .stat-details .stat-row .bar-container {
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+  align-items: center;
+}
+.rank .details .detail-section .stat-details .stat-row .bar-container .bar {
+  width: 0px;
+  height: 10px;
+  border-radius: 4px;
+}
+.rank .details .detail-section .stat-details .stat-row .bar-container .bar.shadow {
+  position: relative;
+  background: rgba(158, 52, 255, 0.5);
+}
+.rank .details .detail-section .stat-details .stat-row .bar-container .shadow-mult {
+  background: #9e34ef;
+  color: #fff;
+  padding: 2px 4px;
+  font-size: 12px;
+  border-radius: 4px;
+  margin-left: 5px;
+  display: none;
+  position: relative;
+}
+.rank .details .detail-section .stat-details .xl-info-container {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+.rank .details .detail-section .stat-details .xl-info-container .icon {
+  width: 28px;
+  height: 28px;
+  background-image: url("../img/xl-icons.png");
+}
+.rank .details .detail-section .stat-details .xl-info-container.regular .xl-info.regular {
+  display: block;
+}
+.rank .details .detail-section .stat-details .xl-info-container.regular .icon {
+  background-position: 0px;
+}
+.rank .details .detail-section .stat-details .xl-info-container.mixed .xl-info.mixed {
+  display: block;
+}
+.rank .details .detail-section .stat-details .xl-info-container.mixed .icon {
+  background-position: -28px;
+}
+.rank .details .detail-section .stat-details .xl-info-container.xl .xl-info.xl {
+  display: block;
+}
+.rank .details .detail-section .stat-details .xl-info-container.xl .icon {
+  background-position: -56px;
+}
+.rank .details .detail-section .stat-details .xl-info-container.unavailable .xl-info.unavailable {
+  display: block;
+}
+.rank .details .detail-section .stat-details .xl-info-container.unavailable .icon {
+  background-position: -84px;
+}
+.rank .details .detail-section .stat-details .xl-info-container.xs .xl-info.xs {
+  display: block;
+}
+.rank .details .detail-section .stat-details .xl-info-container.xs .icon {
+  background-position: -84px;
+}
+.rank .details .detail-section.performance .ranking-header {
+  float: none;
+}
+.rank .details .detail-section.performance .hexagon-container {
+  padding: 20px;
+  position: relative;
+  max-width: 350px;
+  margin: 0 auto;
+}
+.rank .details .detail-section.performance .hexagon-container .hexagon {
+  margin: 10px auto;
+  display: block;
+  max-width: 100%;
+}
+.rank .details .detail-section.performance .hexagon-container .chart-label {
+  text-align: center;
+  position: absolute;
+  font-size: 12px;
+}
+.rank .details .detail-section.performance .hexagon-container .chart-label .label {
+  font-size: 10px;
+}
+.rank .details .detail-section.performance .hexagon-container .chart-label .value {
+  font-weight: bold;
+}
+.rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(1) {
+  top: 0%;
+  left: 47%;
+}
+.rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(2) {
+  top: 87%;
+  left: 46%;
+}
+.rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(3) {
+  top: 25%;
+  left: 72%;
+}
+.rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(4) {
+  top: 72%;
+  left: 70%;
+}
+.rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(5) {
+  top: 25%;
+  left: 18%;
+}
+.rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(6) {
+  top: 72%;
+  left: 15%;
+}
+.rank .details .detail-section .moveset.show-stats .name-container {
+  border-bottom: 1px solid;
+}
+.rank .details .detail-section .moveset.show-stats .name-container.stats-container {
+  display: flex;
+}
+.rank .details .detail-section .moveset .name-container {
+  float: none;
+  padding-bottom: 3px;
+  margin-bottom: 3px;
+  justify-content: space-between;
+  align-items: baseline;
+  font-size: 14px;
+}
+.rank .details .detail-section .moveset .name-container.stats-container {
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: none;
+  overflow: hidden;
+}
+.rank .details .detail-section .moveset .name-container.stats-container .damage, .rank .details .detail-section .moveset .name-container.stats-container .energy, .rank .details .detail-section .moveset .name-container.stats-container .dpe, .rank .details .detail-section .moveset .name-container.stats-container .dpt, .rank .details .detail-section .moveset .name-container.stats-container .ept, .rank .details .detail-section .moveset .name-container.stats-container .turns {
+  min-width: 75px;
+}
+.rank .details .detail-section .moveset .name-container.stats-container .dpe, .rank .details .detail-section .moveset .name-container.stats-container .turns {
+  min-width: 50px;
+  text-align: right;
+}
+.rank .details .detail-section .moveset .name-container.stats-container.move-effect {
+  justify-content: flex-start;
+}
+.rank .details .detail-section .moveset .name-container.stats-container.move-effect div {
+  margin: 5px 5px 0 0;
+}
+.rank .details .detail-section .moveset .stats-container {
+  font-size: 12px;
+  justify-content: space-between;
+}
+.rank .details .detail-section .moveset .archetype {
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
+  font-size: 12px;
+}
+.rank .details .detail-section .moveset .archetype .name, .rank .details .detail-section .moveset .archetype .icon {
+  display: block;
+}
+.rank .details .detail-section .moveset .archetype .icon {
+  width: 16px;
+  height: 16px;
+  background-image: url("../img/move-archetype-icons.png");
+  background-repeat: no-repeat;
+  margin-left: 5px;
+}
+.rank .details .detail-section .moveset .archetype .icon.spam {
+  background-position: -16px 0;
+}
+.rank .details .detail-section .moveset .archetype .icon.self-debuff {
+  background-position: -32px 0;
+}
+.rank .details .detail-section .moveset .archetype .icon.debuff {
+  background-position: -48px 0;
+}
+.rank .details .detail-section .moveset .archetype .icon.boost {
+  background-position: -64px 0;
+}
+.rank .details .detail-section .moveset .archetype .icon.high-energy {
+  background-position: -80px 0;
+}
+.rank .details .detail-section .moveset .archetype .icon.general {
+  background-position: -96px 0;
+}
+.rank .details .detail-section .moveset .archetype .icon.low-quality {
+  border-radius: 16px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+}
+.rank .details .detail-section .moveset .archetype .icon.low-quality:before {
+  content: "x";
+}
+.rank .details .detail-section .ranking-header.stat-toggle {
+  text-align: right;
+}
+.rank .details .detail-section .ranking-header.stat-toggle a.show-move-stats {
+  padding: 2px 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: normal;
+  border: 1px solid #000;
+  color: #000;
+  font-size: 12px;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+.rank .details .detail-section .ranking-header.stat-toggle a.show-move-stats.on {
+  background: #444;
+  color: #fff;
+}
+.rank .details .detail-section .rank {
+  border-left: 10px solid rgba(0, 0, 0, 0.1);
+}
+.rank .details .detail-section .rank.selected {
+  border-left: 10px solid black;
+}
+.rank .details .detail-section .rank.recommended {
+  border-left: 10px solid black;
+  margin: 20px 0 10px 0;
+  font-size: 12px;
 }
 .rank .details .detail-section .footnote {
   font-size: 12px;
@@ -1964,6 +2253,56 @@ a.download-csv {
   margin: 0 0 5px 0;
 }
 
+.traits {
+  display: flex;
+  flex-wrap: wrap;
+}
+.traits > div {
+  margin: 3px;
+  padding: 5px 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+.traits > div:hover {
+  border: 2px solid rgba(0, 0, 0, 0.25);
+}
+.traits > div.pro {
+  background: rgba(23, 222, 75, 0.44);
+}
+.traits > div.con {
+  background: rgba(255, 88, 88, 0.67);
+}
+
+.modal .traits > div {
+  display: table;
+  width: 100%;
+}
+.modal .traits > div .name {
+  display: table-cell;
+  font-weight: bold;
+  font-size: 14px;
+  width: 100px;
+}
+.modal .traits > div .desc {
+  display: table-cell;
+  font-size: 12px;
+  padding-left: 5px;
+}
+
+.modal .trait-modal .traits > div {
+  cursor: default;
+  border: none !important;
+}
+
+.modal .search-traits-selector .traits > div {
+  display: block;
+  width: auto;
+}
+.modal .search-traits-selector .traits > div.selected {
+  border: 2px solid black;
+}
+
 .rankings-container > .rank,
 .rankings-container > .rank > .rating-container {
   cursor: pointer;
@@ -2017,7 +2356,8 @@ a.download-csv {
   max-width: 200px;
   display: block;
 }
-.poke-search-container a.search-info {
+.poke-search-container a.search-info,
+.poke-search-container a.search-traits {
   text-decoration: none;
   color: #00171c;
   border: 1px solid #00171c;
@@ -2027,6 +2367,9 @@ a.download-csv {
   height: 15px;
   font-weight: bold;
   margin-left: 5px;
+}
+.poke-search-container a.search-traits {
+  background: rgba(23, 222, 75, 0.44);
 }
 
 .options {
@@ -3172,6 +3515,37 @@ a.pokebattler {
 }
 
 /* RESPONSIVE */
+@media only screen and (max-width: 468px) {
+  .rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(1) {
+    top: 0%;
+    left: 44%;
+  }
+
+  .rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(2) {
+    top: 87%;
+    left: 43%;
+  }
+
+  .rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(3) {
+    top: 25%;
+    left: 74%;
+  }
+
+  .rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(4) {
+    top: 72%;
+    left: 72%;
+  }
+
+  .rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(5) {
+    top: 25%;
+    left: 10%;
+  }
+
+  .rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(6) {
+    top: 72%;
+    left: 7%;
+  }
+}
 @media only screen and (max-width: 720px) {
   .mobile {
     display: block;
@@ -3261,11 +3635,18 @@ a.pokebattler {
   .rank .details .detail-section .name {
     font-size: 14px;
   }
+  .rank .details .detail-section .archetype .name {
+    font-size: 10px;
+  }
   .rank .moves {
     max-width: 180px;
   }
   .rank .rating-container .rating {
     width: auto !important;
+  }
+
+  .modal .search-traits-selector .traits > div {
+    font-size: 12px;
   }
 
   .histograms {
@@ -3294,6 +3675,14 @@ a.pokebattler {
   .ranking-categories a {
     font-size: 14px;
     padding: 5px;
+  }
+
+  .rank .details .detail-section .moveset .name-container.stats-container > div {
+    min-width: auto !important;
+  }
+
+  .traits > div {
+    font-size: 12px;
   }
 }
 /* SETTINGS */
@@ -3358,10 +3747,10 @@ a.pokebattler {
 .custom-rankings .filters .filter .field-section {
   display: none;
 }
-.custom-rankings .filters .filter .field-section.type .check, .custom-rankings .filters .filter .field-section.tag .check {
+.custom-rankings .filters .filter .field-section.type .check, .custom-rankings .filters .filter .field-section.tag .check, .custom-rankings .filters .filter .field-section.cost .check, .custom-rankings .filters .filter .field-section.distance .check {
   margin: 10px 5px;
 }
-.custom-rankings .filters .filter .field-section.type .select-all, .custom-rankings .filters .filter .field-section.tag .select-all {
+.custom-rankings .filters .filter .field-section.type .select-all, .custom-rankings .filters .filter .field-section.tag .select-all, .custom-rankings .filters .filter .field-section.cost .select-all, .custom-rankings .filters .filter .field-section.distance .select-all {
   margin-right: 10px;
 }
 .custom-rankings .filters .filter .field-section.dex input {
@@ -3385,6 +3774,12 @@ a.pokebattler {
   display: block;
 }
 .custom-rankings .filters .filter[type=dex] .field-section.dex {
+  display: block;
+}
+.custom-rankings .filters .filter[type=cost] .field-section.cost {
+  display: block;
+}
+.custom-rankings .filters .filter[type=distance] .field-section.distance {
   display: block;
 }
 .custom-rankings .advanced .flex-section {
@@ -3665,7 +4060,7 @@ a.pokebattler {
   }
 
   .rankings-container {
-    max-height: 800px;
+    max-height: 1000px;
   }
   .rankings-container.pokebox-list {
     max-height: 600px;

@@ -38,6 +38,18 @@
 			<td>@special</td>
 		</tr>
 		<tr>
+			<td><strong>Charged Move Cost</strong></td>
+			<td>10k, 50k, 75k, 100k</td>
+		</tr>
+		<tr>
+			<td><strong>Buddy Walk Distance</strong></td>
+			<td>1km, 3km, 5km, 20km</td>
+		</tr>
+		<tr>
+			<td><strong>4* Pokemon</strong></td>
+			<td>4*, Hundo</td>
+		</tr>
+		<tr>
 			<td><strong>And</strong></td>
 			<td>water&amp;@fighting</td>
 		</tr>

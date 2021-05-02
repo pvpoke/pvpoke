@@ -121,7 +121,11 @@ var InterfaceMaster = (function () {
 
 				var league = 1500;
 				if(get.cp){
-					league = get.cp;
+					if(get.cp.indexOf("-") == -1){
+						league = get.cp;
+					} else{
+						league = get.cp.split("-")[0];
+					}
 				}
 
 				gm.loadRankingData(self, "overall", league, "all");
@@ -408,7 +412,7 @@ var InterfaceMaster = (function () {
 
 				if(! sandbox){
 					var pokes = b.getPokemon();
-					var cp = b.getCP();
+					var cp = b.getCP(true);
 					var moveStrs = [];
 
 					for(var i = 0; i < pokes.length; i++){
@@ -458,7 +462,7 @@ var InterfaceMaster = (function () {
 			this.generateSingleBattleLinkString = function(sandbox){
 				// Generate and display share link
 
-				var cp = battle.getCP();
+				var cp = battle.getCP(true);
 				var pokes = battle.getPokemon();
 
 				var pokeStrs = [];
@@ -903,7 +907,7 @@ var InterfaceMaster = (function () {
 					var opPokeStr = pokemon.generateURLPokeStr();
 					var opMoveStr = pokemon.generateURLMoveStr();
 
-					var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
+					var battleLink = host+"battle/"+battle.getCP(true)+"/"+pokeStr+"/"+opPokeStr+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
 
 					// Append extra options
 
@@ -935,7 +939,7 @@ var InterfaceMaster = (function () {
 
 				// Generate and display share link
 
-				var cp = battle.getCP();
+				var cp = battle.getCP(true);
 				var battleStr = "battle/multi/"+cp+"/"+cup+"/"+pokeStr+"/"+poke.startingShields+opponentShields+"/"+moveStr+"/"+chargedMoveCount+"-"+shieldBaiting;
 
 				if(multiSelectors[0].getSettings().ivs != "original"){
@@ -1121,7 +1125,7 @@ var InterfaceMaster = (function () {
 						var moveStr = pokemon.generateURLMoveStr();
 						var opPokeStr = r.matchups[n].opponent.generateURLPokeStr();
 						var opMoveStr = r.matchups[n].opponent.generateURLMoveStr();
-						var battleLink = host+"battle/"+battle.getCP()+"/"+pokeStr+"/"+opPokeStr+"/"+pokemon.startingShields+""+r.matchups[n].opponent.startingShields+"/"+moveStr+"/"+opMoveStr+"/";
+						var battleLink = host+"battle/"+battle.getCP(true)+"/"+pokeStr+"/"+opPokeStr+"/"+pokemon.startingShields+""+r.matchups[n].opponent.startingShields+"/"+moveStr+"/"+opMoveStr+"/";
 						$cell.find("a").attr("href", battleLink);
 
 						$row.append($cell);
@@ -1294,7 +1298,18 @@ var InterfaceMaster = (function () {
 								break;
 
 							case "cp":
-								$(".league-select option[value=\""+val+"\"]").prop("selected","selected");
+								//Parse this out if it contains level cap
+								var getCP = val;
+
+								if(val.indexOf("-") > -1){
+									getCP = val.split("-")[0];
+									var getCap = val.split("-")[1];
+
+									$(".league-select option[value=\""+getCP+"\"][level-cap=\""+getCap+"\"]").prop("selected","selected");
+								} else{
+									$(".league-select option[value=\""+getCP+"\"]").prop("selected","selected");
+								}
+
 								$(".league-select").trigger("change");
 								break;
 
@@ -1611,9 +1626,13 @@ var InterfaceMaster = (function () {
 			function selectLeague(e){
 				var allowed = [500, 1500, 2500, 10000];
 				var cp = parseInt($(".league-select option:selected").val());
+				var levelCap = parseInt($(".league-select option:selected").attr("level-cap"));
 
 				if(allowed.indexOf(cp) > -1){
 					battle.setCP(cp);
+					battle.setLevelCap(levelCap);
+
+					// Set level cap
 
 					for(var i = 0; i < pokeSelectors.length; i++){
 						pokeSelectors[i].setBattle(battle);
@@ -1621,11 +1640,19 @@ var InterfaceMaster = (function () {
 					}
 
 					for(var i = 0; i < multiSelectors.length; i++){
+						multiSelectors[i].setLevelCap(levelCap);
 						multiSelectors[i].setCP(cp);
 					}
 				}
 
-				gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), "all");
+				var cupName = "all";
+
+				if((cp == 10000)&&(levelCap == 40)){
+					cupName = "classic";
+					battle.setCup("classic");
+				}
+
+				gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), cupName);
 			}
 
 			// Event handler for changing the battle mode

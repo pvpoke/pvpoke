@@ -59,6 +59,8 @@ var GameMaster = (function () {
 		object.getPokemonById = function(id){
 			var pokemon;
 
+			id = id.replace("_xl", "");
+
 			$.each(object.data.pokemon, function(index, poke){
 
 				if(poke.speciesId == id){
@@ -233,27 +235,23 @@ var GameMaster = (function () {
 
 					var cp = pokemon.cp;
 					var level35cp = pokemon.calculateCP(0.76156384, 15, 15, 15);
+					var level45cp = pokemon.calculateCP(0.815299987792968, 15, 15, 15);
 
 					if(cp > leagues[i]){
-						var floor = 5;
-						var defaultIndex = 63;
+						var floor = 4;
+						var defaultIndex = 15;
 
 						// For Pokemon that max near the league cap, default to lucky IV's
-						if((level35cp < leagues[i])&&(pokemon.levelCap <= 40)){
+						if((level45cp < leagues[i])&&(pokemon.levelCap > 40)){
 							floor = 12;
-							defaultIndex = 16;
-						}
-
-						// Use higher rank for XL Pokemon
-						if(pokemon.levelCap > 40){
-							var defaultIndex = 32;
+							defaultIndex = 7;
 						}
 
 						var combinations = pokemon.generateIVCombinations("overall", 1, 4096, null, floor);
 
 						// For untradable Pokemon, set the index to the 54th rank
 						if(pokemon.hasTag("untradeable")){
-							defaultIndex = 53;
+							defaultIndex = 31;
 						}
 
 						var level = combinations[defaultIndex].level;
@@ -267,6 +265,130 @@ var GameMaster = (function () {
 				}
 
 				entry.defaultIVs = defaultIVs;
+			});
+
+			// Sort Pokemon by dex
+
+			object.data.pokemon.sort((a,b) => (a.dex > b.dex) ? 1 : ((b.dex > a.dex) ? -1 : 0));
+
+			var json = JSON.stringify(object.data);
+
+			console.log(json);
+		}
+
+		// Set level caps for gamemaster data
+
+		object.setLevelCapData = function(){
+
+			// List of legendaries and mythicals to be excluded from the level cap
+			var levelCapExclusion = ["melmetal","thundurus_incarnate","thundurus_therian","landorus_incarnate","landorus_therian","tornadus_incarnate","tornadus_therian","rayquaza"];
+
+			$.each(object.data.pokemon, function(index, poke){
+				var battle = new Battle();
+				var pokemon = new Pokemon(poke.speciesId, 0, battle);
+				var entry = object.getPokemonById(poke.speciesId);
+
+				if((pokemon.hasTag("legendary")||pokemon.hasTag("mythical")) && (levelCapExclusion.indexOf(pokemon.speciesId) == -1)){
+					entry.levelCap = 40;
+				}
+			});
+
+			// Sort Pokemon by dex
+
+			object.data.pokemon.sort((a,b) => (a.dex > b.dex) ? 1 : ((b.dex > a.dex) ? -1 : 0));
+
+			var json = JSON.stringify(object.data);
+
+			console.log(json);
+		}
+
+		// Analyze Charged Moves and bucket them into archetypes
+
+		object.generateMoveArchetypes = function(){
+
+			// List of legendaries and mythicals to be excluded from the level cap
+
+			$.each(object.data.moves, function(index, move){
+				var archetype = "General"; // Default archetype
+
+				// Charged Moves
+
+				if(move.energy > 0){
+					var dpe = move.power / move.energy;
+
+					// Categorize by energy
+					if((move.energy > 60)&&(dpe > 1.5)){
+						archetype = "Nuke";
+					} else if(move.energy > 50){
+						if(dpe > 1.75){
+							archetype = "Nuke";
+						} else{
+							archetype = "High Energy";
+						}
+
+					} else if(move.energy < 45){
+						archetype = "Spam/Bait"
+					}
+
+					var descriptor = "";
+
+					if(move.buffs){
+
+						if((move.buffTarget == "self")&&((move.buffs[0] > 0)||(move.buffs[1] > 0))){
+							descriptor = "Boost"
+						}
+
+						if((move.buffTarget == "self")&&((move.buffs[0] < 0)||(move.buffs[1] < 0))){
+							descriptor = "Self-Debuff"
+						}
+
+						if((move.buffTarget == "opponent")&&((move.buffs[0] < 0)||(move.buffs[1] < 0))){
+							descriptor = "Debuff"
+						}
+
+						if(descriptor != ""){
+							if(archetype == "General"){
+								archetype = descriptor;
+							} else if(archetype == "High Energy"){
+								archetype = archetype + " " + descriptor;
+							} else{
+								archetype = descriptor + " " + archetype;
+							}
+
+							if(archetype == "Self-Debuff Spam/Bait"){
+								archetype = "Self-Debuff Spam"
+							}
+						}
+					}
+
+					move.archetype = archetype;
+				}
+
+
+				// Fast Moves
+
+				if(move.energyGain > 0){
+					var dpt = move.power / (move.cooldown / 500)
+					var ept = move.energyGain / (move.cooldown / 500)
+
+					if((dpt >= 3.5) && (dpt > ept)){
+						archetype = "Heavy Damage"
+					}
+
+					if((ept >= 3.5) && (ept > dpt)){
+						archetype = "Fast Charge"
+					}
+
+					if( ((dpt >= 4) && (ept >= 3)) || ((dpt >= 3) && (ept >= 4)) ){
+						archetype = "Multipurpose"
+					}
+
+					if( ((dpt < 3) && (ept <= 3)) || ((dpt <= 3) && (ept < 3)) ){
+						archetype = "Low Quality"
+					}
+
+					move.archetype = archetype;
+				}
 			});
 
 			// Sort Pokemon by dex
@@ -302,11 +424,18 @@ var GameMaster = (function () {
 						}
 					}
 
+					var archetype = '';
+
+					if(m.archetype){
+						archetype = m.archetype;
+					}
+
 					move = {
 						moveId: m.moveId,
 						name: m.name,
 						displayName: m.name,
 						abbreviation: abbreviation,
+						archetype: archetype,
 						type: m.type,
 						power: m.power,
 						energy: m.energy,
@@ -352,6 +481,34 @@ var GameMaster = (function () {
 			}
 
 			return move;
+		}
+
+
+		// Get status effect string from a move
+
+		object.getStatusEffectString = function(move){
+			if (!move.buffs) {
+				return '';
+			}
+			var atk = object.getStatusEffectStatString(move.buffs[0], 'Atk');
+			var def = object.getStatusEffectStatString(move.buffs[1], 'Def');
+			var buffApplyChance = parseFloat(move.buffApplyChance)*100 + '%';
+			var buffTarget = move.buffTarget;
+			var stringArray = [buffApplyChance + " chance", atk, def, buffTarget];
+			return "<div class=\"status-effect-description\">"+stringArray.join(' ')+"</div>";
+		}
+
+		// Get stats string from move for status effects
+
+		object.getStatusEffectStatString = function(stat, type){
+			if (stat === 0) {
+				return "";
+			}
+			var statString = stat;
+			if (stat > 0) {
+				statString = "+" + statString;
+			}
+			return statString + " " + type;
 		}
 
 		// Return a cup object given an id name
@@ -482,17 +639,12 @@ var GameMaster = (function () {
 			if(battle.getCP() == 500){
 				minStats = 0;
 			} else if(battle.getCP() == 1500){
-				minStats = 1250;
+				minStats = 1370;
 			} else if(battle.getCP() == 2500){
 				minStats = 2800;
 			}
 
 			var bannedList = ["mewtwo","mewtwo_armored","giratina_altered","groudon","kyogre","palkia","dialga","heatran","giratina_origin","darkrai","cobalion","terrakion","virizion","thundurus_incarnate","regigigas","tornadus_incarnate","tornadus_therian","tornadus_therian_xl","landorus_incarnate", "landorus_therian", "reshiram", "zekrom", "kyurem", "genesect_burn"];
-			var permaBannedList = ["rotom","rotom_fan","rotom_frost","rotom_heat","rotom_mow","phione","manaphy","shaymin_land","shaymin_sky","arceus","arceus_bug","arceus_dark","arceus_dragon","arceus_electric","arceus_fairy","arceus_fighting","arceus_fire","arceus_flying","arceus_ghost","arceus_grass","arceus_ground","arceus_ice","arceus_poison","arceus_psychic","arceus_rock","arceus_steel","arceus_water","kecleon"]; // Don't rank these Pokemon at all yet
-
-			// Someday I'm going to make a robust system to do this. But not today.
-			var maxDexNumber = 493;
-			var releasedGen5 = ["snivy","servine","servine_xl","serperior","tepig","pignite","emboar","oshawott","dewott","samurott","lillipup","herdier","stoutland","purrloin","liepard","pidove","tranquill","unfezant","blitzle","zebstrika","foongus","amoonguss","drilbur","excadrill","excadrill_xl","litwick","lampent","chandelure","golett","golurk","deino","zweilous","hydreigon","pansage","panpour","pansear","simisage","simipour","simisear","ferroseed","ferrothorn","heatmor","durant","patrat","watchog","klink","klang","klinklang","yamask","cofagrigus","cobalion","terrakion","virizion","cryogonal","cubchoo","beartic","meltan","roggenrola","boldore","gigalith","tympole","palpitoad","seismitoad","dwebble","crustle","trubbish","garbodor","karrablast","escavalier","joltik","galvantula","shelmet","accelgor","timburr","gurdurr","conkeldurr","tirtouga","carracosta","archen","archeops","axew","fraxure","haxorus","throh","sawk","maractus","sigilyph","basculin","venipede","whirlipede","scolipede","minccino","cinccino","darumaka","darmanitan_standard","scraggy","scrafty","scrafty_xl","woobat","swoobat","tornadus_incarnate","tornadus_therian","tornadus_therian_xl","audino","alomomola","thundurus_incarnate","thundurus_incarnate_xl","thundurus_therian_xl","rufflet","braviary","landorus_incarnate","landorus_incarnate_xl","landorus_therian","landorus_therian_xl","genesect","solosis","duosion","reuniclus","gothita","gothitelle","gothorita","stunfisk","stunfisk_xl","reshiram","zekrom","stunfisk_galarian","stunfisk_galarian_xl","darumaka_galarian","darmanitan_galarian_standard","melmetal","melmetal_xl","obstagoon","perrserker","perrserker_xl","farfetchd_galarian", "kyurem", "ducklett", "swanna", "petilil", "lilligant", "victini", "elgyem", "beheeyem","bouffalant","sewaddle","leavanny","cottonee","whimsicott","emolga","deerling","sawsbuck","vullaby","mandibuzz","pawniard","bisharp","sandile","krokorok","krookodile","yamask_galarian","runerigus","sirfetchd","chespin","quilladin","chesnaught","fennekin","braixen","delphox","froakie","frogadier","greninja","bunnelby","diggersby","fletchling","fletchinder","fletchinder_xl","talonflame","talonflame_xl","litleo","pyroar","klefki","espurr","meowstic","meowstic_female","noibat","noivern","kyurem_xl","diggersby_xl","mandibuzz_xl","galvantula_xl","vanillite","vanillish","vanilluxe","mr_rime","litleo_xl","crustle_xl","ferrothorn_xl","serperior_xl","genesect_burn","frillish","jellicent","jellicent_xl","munna","musharna", "tynamo", "eelektrik", "eelektross", "thundurus_therian", "skrelp", "dragalge", "dragalge_xl", "clauncher", "clawitzer", "binacle", "barbaracle", "garbodor_xl"];
 
 			// Aggregate filters
 
@@ -511,21 +663,12 @@ var GameMaster = (function () {
 				var stats = (pokemon.stats.hp * pokemon.stats.atk * pokemon.stats.def) / 1000;
 
 				if(stats >= minStats){
-					// Only include releasedGen 5  Pokemon
-					if((pokemon.dex > maxDexNumber)&&(releasedGen5.indexOf(pokemon.speciesId) == -1)&&(battle.getCup().name != "gen-5")){
-						continue;
-					}
-
-					// Only include XL Pokemon if they are above level 40 for the selected format
-					if(pokemon.hasTag("xl") && pokemon.level <= 40){
+					// Today is the day
+					if(! pokemon.released){
 						continue;
 					}
 
 					if((battle.getCP() < 2500)&&(bannedList.indexOf(pokemon.speciesId) > -1)){
-						continue;
-					}
-
-					if(permaBannedList.indexOf(pokemon.speciesId) > -1){
 						continue;
 					}
 
@@ -564,6 +707,18 @@ var GameMaster = (function () {
 									}
 									break;
 
+								case "cost":
+									if(filter.values.indexOf(pokemon.thirdMoveCost) > -1){
+										filtersMatched++;
+									}
+									break;
+
+								case "distance":
+									if(filter.values.indexOf(pokemon.buddyDistance) > -1){
+										filtersMatched++;
+									}
+									break;
+
 								case "id":
 									if((include)&&(filters.length > 1)){
 										requiredFilters--;
@@ -574,7 +729,7 @@ var GameMaster = (function () {
 									// Exclude Shadow and XL versions of a listed Pokemon
 									if(! include){
 										testId = testId.replace("_shadow","");
-										testId = testId.replace("_xl","");
+										testId = testId.replace("_xs","");
 									}
 
 									if( filter.values.indexOf(testId) > -1 || filter.values.indexOf(pokemon.speciesId) > -1 ) {
@@ -641,7 +796,7 @@ var GameMaster = (function () {
 
 		// Generate a list of Pokemon given a search string
 
-		object.generatePokemonListFromSearchString = function(str){
+		object.generatePokemonListFromSearchString = function(str, battle){
 			// Break the search string up into queries
 			var str = str.replace(/, /g, '').toLowerCase();
 			var queries = str.split(',');
@@ -650,7 +805,10 @@ var GameMaster = (function () {
 			var types = ["bug","dark","dragon","electric","fairy","fighting","fire","flying","ghost","grass","ground","ice","normal","poison","psychic","rock","steel","water"];
 			var tags = object.data.pokemonTags;
 			var regions = object.data.pokemonRegions;
-			var battle = new Battle();
+
+			if(! battle){
+				battle = new Battle();
+			}
 
 			for(var i = 0; i < queries.length; i++){
 				var query = queries[i];
@@ -658,6 +816,7 @@ var GameMaster = (function () {
 
 				for(var n = 0; n < object.data.pokemon.length; n++){
 					var pokemon = new Pokemon(object.data.pokemon[n].speciesId, 0, battle);
+
 					var paramsMet = 0;
 
 					for(var j = 0; j < params.length; j++){
@@ -750,6 +909,38 @@ var GameMaster = (function () {
 								valid = true;
 							}
 
+							// Move cost search
+							if(param.indexOf("k") > -1){
+								var arr = param.split("k");
+								if(pokemon.thirdMoveCost == parseInt(arr[0]) * 1000){
+									valid = true;
+								}
+							}
+
+							// Buddy distance search
+							if(param.indexOf("km") > -1){
+								var arr = param.split("km");
+								if(pokemon.buddyDistance == parseInt(arr[0])){
+									valid = true;
+								}
+							}
+
+							// Hundo search
+							if((param == "hundo")||(param == "4*")){
+								pokemon.initialize(true);
+
+								if(pokemon.ivs.atk == 15 && pokemon.ivs.def == 15 && pokemon.ivs.hp == 15){
+									valid = true;
+								}
+							}
+
+							// New XL search, no longer a tag
+							if(param == "xl"){
+								if(pokemon.needsXLCandy()){
+									valid = true;
+								}
+							}
+
 							// Region/generation search
 							for(k = 0; k < regions.length; k++){
 								if((param == regions[k].string)||(param==regions[k].name)){
@@ -759,6 +950,44 @@ var GameMaster = (function () {
 										// Exclude Alolan Pokemon from Gen1
 										if((pokemon.hasTag("alolan"))&&(regions[k].string == "gen1")){
 											valid = false;
+										}
+									}
+								}
+							}
+
+							// Trait search
+
+							if((object.data.pokemonTraits.pros.indexOf(param) > -1)||(object.data.pokemonTraits.cons.indexOf(param) > -1)){
+								pokemon.initialize(true);
+								pokemon.selectRecommendedMoveset("overall");
+								var traits = pokemon.generateTraits();
+								var searchTraits = [param];
+
+								// Add bulk traits above or below the searched trait if applicable
+
+								if(param == "bulky"){
+									searchTraits.push("extremely bulky");
+								}
+
+								if(param == "less bulky"){
+									searchTraits.push("frail", "glass cannon");
+								}
+
+								if(traits){
+									// Search traits for search term
+									for(var k = 0; k < traits.pros.length; k++){
+										if(searchTraits.indexOf(traits.pros[k].trait.toLowerCase()) > -1){
+											valid = true;
+
+											break;
+										}
+									}
+
+									for(var k = 0; k < traits.cons.length; k++){
+										if(searchTraits.indexOf(traits.cons[k].trait.toLowerCase()) > -1){
+											valid = true;
+
+											break;
 										}
 									}
 								}

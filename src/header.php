@@ -32,6 +32,10 @@ if(isset($_COOKIE['settings'])){
 		$_SETTINGS->ads = 1;
 	}
 
+	if(! isset($_SETTINGS->xls)){
+		$_SETTINGS->xls = 1;
+	}
+
 	// Validate the gamemaster setting, only allow these options
 	$gamemasters = ["gamemaster", "gamemaster-mega"];
 
@@ -45,7 +49,8 @@ if(isset($_COOKIE['settings'])){
 		'theme' => 'default',
 		'gamemaster' => 'gamemaster',
 		'pokeboxId' => 0,
-		'ads' => 1
+		'ads' => 1,
+		'xls' => 1
 	];
 }
 
@@ -125,7 +130,8 @@ if(! isset($OG_IMAGE)){
 			matrixDirection: "<?php echo htmlspecialchars($_SETTINGS->matrixDirection); ?>",
 			gamemaster: "<?php echo htmlspecialchars($_SETTINGS->gamemaster); ?>",
 			pokeboxId: "<?php echo intval($_SETTINGS->pokeboxId); ?>",
-			pokeboxLastDateTime: "<?php echo intval($_SETTINGS->pokeboxLastDateTime); ?>"
+			pokeboxLastDateTime: "<?php echo intval($_SETTINGS->pokeboxLastDateTime); ?>",
+			xls: <?php echo $_SETTINGS->xls; ?>
 		};
 	<?php else: ?>
 
@@ -135,7 +141,8 @@ if(! isset($OG_IMAGE)){
 			matrixDirection: "row",
 			gamemaster: "gamemaster",
 			pokeboxId: 0,
-			pokeboxLastDateTime: 0
+			pokeboxLastDateTime: 0,
+			xls: true
 		};
 
 	<?php endif; ?>

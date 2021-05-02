@@ -33,8 +33,16 @@
 		"chargedMoves": ["NIGHT_SLASH", "CLOSE_COMBAT"]
 	},
 	{
+		"speciesId": "goodra",
+		"chargedMoves": ["MUDDY_WATER", "DRACO_METEOR"]
+	},
+	{
 		"speciesId": "primeape_xl",
 		"chargedMoves": ["NIGHT_SLASH", "CLOSE_COMBAT"]
+	},
+	{
+		"speciesId": "tentacruel",
+		"chargedMoves": ["ACID_SPRAY", "HYDRO_PUMP"]
 	},
 	{
 		"speciesId": "sandslash_alolan_xl",
@@ -458,7 +466,8 @@
 	},
 	{
 		"speciesId": "ninetales_alolan",
-		"fastMove": "POWDER_SNOW"
+		"fastMove": "POWDER_SNOW",
+		"chargedMoves": ["WEATHER_BALL_ICE","DAZZLING_GLEAM"]
 	},
 	{
 		"speciesId": "ninetales_alolan_xl",

@@ -65,12 +65,12 @@ require_once '../header.php';
 <div class="section analysis-container white">
 
 	<select class="format-select">
-		<option value="1500" cup="all">Great League</option>
-		<option value="2500" cup="all">Ultra League</option>
-		<option value="10000" cup="all">Master League</option>
-		<option value="2500" cup="premier">Premier Cup (Ultra)</option>
-		<option value="10000" cup="premier">Premier Cup (Master)</option>
-		<option value="1500" cup="remix">Remix</option>
+		<option value="1500" cup="all" level-cap="50">Great League</option>
+		<option value="2500" cup="all" level-cap="50">Ultra League</option>
+		<option value="10000" cup="classic" level-cap="40">Master League (Classic)</option>
+		<option value="2500" cup="premier" level-cap="50">Premier Cup (Ultra)</option>
+		<option value="10000" cup="premier" level-cap="50">Premier Cup (Master)</option>
+		<option value="1500" cup="remix" level-cap="50">Remix</option>
 	</select>
 
 	<div class="date-updated">Last updated</div>

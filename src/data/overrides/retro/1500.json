@@ -11,12 +11,12 @@
 	},
 	{
 		"speciesId": "medicham",
-		"chargedMoves": ["ICE_PUNCH", "PSYCHIC"]
-	},
-	{
-		"speciesId": "medicham_xl",
 		"chargedMoves": ["ICE_PUNCH", "PSYCHIC"],
 		"weight": 15
+	},
+	{
+		"speciesId": "medicham_xs",
+		"chargedMoves": ["ICE_PUNCH", "PSYCHIC"]
 	},
 	{
 		"speciesId": "persian_alolan",

@@ -43,9 +43,11 @@ var InterfaceMaster = (function () {
 			function selectLeague(e){
 				var allowed = [500, 1500, 2500, 10000];
 				var cp = parseInt($(".league-select option:selected").val());
+				var levelCap = parseInt($(".league-select option:selected").attr("level-cap"));
 
 				if(allowed.indexOf(cp) > -1){
 					battle.setCP(cp);
+					battle.setLevelCap(levelCap);
 				}
 
 				loadOverrides();

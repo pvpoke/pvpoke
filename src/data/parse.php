@@ -71,7 +71,6 @@
 					types[1] = settings.type2.replace("POKEMON_TYPE_","").toLowerCase();
 				}
 
-
 				var poke = {
 					dex: dexNumber,
 					speciesName: speciesName,
@@ -87,7 +86,9 @@
 					defaultIVs: {
 						cp1500: [20, 15, 15, 15],
 						cp2500: [20, 15, 15, 15]
-					}
+					},
+					buddyDistance: settings.kmBuddyDistance,
+					thirdMoveCost: settings.thirdMove.stardustToUnlock
 				};
 
 				pokemon.push(poke);

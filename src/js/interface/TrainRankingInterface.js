@@ -146,7 +146,13 @@ var InterfaceMaster = (function () {
 					var $row = $(".train-table.teams thead tr.hide").clone();
 					$row.removeClass("hide");
 
-					var teamURL = host + "team-builder/" + battle.getCup().name + "/" + battle.getCP() + "/";
+					var cupName = battle.getCup().name;
+
+					if(cupName == "classic"){
+						cupName = "all";
+					}
+
+					var teamURL = host + "team-builder/" + cupName + "/" + battle.getCP(true) + "/";
 					var teamStr = '';
 
 					for(var n = 0; n < arr.length; n++){
@@ -333,32 +339,17 @@ var InterfaceMaster = (function () {
 				window.history.pushState(data, "Rankings", url);
 			}
 
-			// Event handler for changing the league select
-
-			function selectLeague(e){
-				var cp = $(".league-select option:selected").val();
-
-				if(context != "custom"){
-					var category = $(".ranking-categories a.selected").attr("data");
-					var cup = $(".cup-select option:selected").val();
-
-					battle.setCup(cup);
-
-					self.displayRankings(category, cp, cup);
-					self.pushHistoryState(cup, cp, category, null);
-				}
-
-				battle.setCP(cp);
-			}
 
 			// Event handler for changing the format category
 
 			function selectFormat(e){
 				var cp = $(".format-select option:selected").val();
 				var cup = $(".format-select option:selected").attr("cup");
+				var levelCap = parseInt($(".format-select option:selected").attr("level-cap"));
 
 				battle.setCP(cp);
 				battle.setCup(cup);
+				battle.setLevelCap(levelCap);
 
 				self.loadRankings(cp, cup);
 				self.pushHistoryState(cup, cp);
