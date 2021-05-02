@@ -311,6 +311,8 @@ var GameMaster = (function () {
 			$.each(object.data.moves, function(index, move){
 				var archetype = "General"; // Default archetype
 
+				// Charged Moves
+
 				if(move.energy > 0){
 					var dpe = move.power / move.energy;
 
@@ -357,6 +359,32 @@ var GameMaster = (function () {
 								archetype = "Self-Debuff Spam"
 							}
 						}
+					}
+
+					move.archetype = archetype;
+				}
+
+
+				// Fast Moves
+
+				if(move.energyGain > 0){
+					var dpt = move.power / (move.cooldown / 500)
+					var ept = move.energyGain / (move.cooldown / 500)
+
+					if((dpt >= 3.5) && (dpt > ept)){
+						archetype = "Heavy Damage"
+					}
+
+					if((ept >= 3.5) && (ept > dpt)){
+						archetype = "Fast Charge"
+					}
+
+					if( ((dpt >= 4) && (ept >= 3)) || ((dpt >= 3) && (ept >= 4)) ){
+						archetype = "Multipurpose"
+					}
+
+					if( ((dpt < 3) && (ept <= 3)) || ((dpt <= 3) && (ept < 3)) ){
+						archetype = "Low Quality"
 					}
 
 					move.archetype = archetype;

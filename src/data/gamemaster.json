@@ -22252,7 +22252,8 @@
         "power": 6,
         "energy": 0,
         "energyGain": 5,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Low Quality"
     }, {
         "moveId": "ACID_SPRAY",
         "name": "Acid Spray",
@@ -22302,7 +22303,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 9,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "General"
     }, {
         "moveId": "ANCIENT_POWER",
         "name": "Ancient Power",
@@ -22340,7 +22342,8 @@
         "power": 5,
         "energy": 0,
         "energyGain": 9,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "AURA_SPHERE",
         "name": "Aura Sphere",
@@ -22377,7 +22380,8 @@
         "power": 4,
         "energy": 0,
         "energyGain": 2,
-        "cooldown": 500
+        "cooldown": 500,
+        "archetype": "Heavy Damage"
     }, {
         "moveId": "BLAST_BURN",
         "name": "Blast Burn",
@@ -22455,7 +22459,8 @@
         "power": 7,
         "energy": 0,
         "energyGain": 11,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "BUBBLE_BEAM",
         "name": "Bubble Beam",
@@ -22477,7 +22482,8 @@
         "power": 3,
         "energy": 0,
         "energyGain": 3,
-        "cooldown": 500
+        "cooldown": 500,
+        "archetype": "General"
     }, {
         "moveId": "BUG_BUZZ",
         "name": "Bug Buzz",
@@ -22508,7 +22514,8 @@
         "power": 6,
         "energy": 0,
         "energyGain": 7,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "BULLET_SEED",
         "name": "Bullet Seed",
@@ -22516,7 +22523,8 @@
         "power": 5,
         "energy": 0,
         "energyGain": 13,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "CHARGE_BEAM",
         "name": "Charge Beam",
@@ -22524,7 +22532,8 @@
         "power": 5,
         "energy": 0,
         "energyGain": 11,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "CHARM",
         "name": "Charm",
@@ -22533,7 +22542,8 @@
         "power": 16,
         "energy": 0,
         "energyGain": 6,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Heavy Damage"
     }, {
         "moveId": "CLOSE_COMBAT",
         "name": "Close Combat",
@@ -22554,7 +22564,8 @@
         "power": 16,
         "energy": 0,
         "energyGain": 12,
-        "cooldown": 2000
+        "cooldown": 2000,
+        "archetype": "Multipurpose"
     }, {
         "moveId": "COUNTER",
         "name": "Counter",
@@ -22563,7 +22574,8 @@
         "power": 8,
         "energy": 0,
         "energyGain": 7,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Multipurpose"
     }, {
         "moveId": "CRABHAMMER",
         "name": "Crabhammer",
@@ -22614,7 +22626,8 @@
         "power": 3,
         "energy": 0,
         "energyGain": 2,
-        "cooldown": 500
+        "cooldown": 500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "DARK_PULSE",
         "name": "Dark Pulse",
@@ -22689,7 +22702,8 @@
         "power": 4,
         "energy": 0,
         "energyGain": 3,
-        "cooldown": 500
+        "cooldown": 500,
+        "archetype": "Multipurpose"
     }, {
         "moveId": "DRAGON_CLAW",
         "name": "Dragon Claw",
@@ -22716,7 +22730,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 10,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "General"
     }, {
         "moveId": "DRAINING_KISS",
         "name": "Draining Kiss",
@@ -22784,7 +22799,8 @@
         "power": 7,
         "energy": 0,
         "energyGain": 6,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Heavy Damage"
     }, {
         "moveId": "ENERGY_BALL",
         "name": "Energy Ball",
@@ -22805,7 +22821,8 @@
         "power": 8,
         "energy": 0,
         "energyGain": 10,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "General"
     }, {
         "moveId": "FEINT_ATTACK",
         "name": "Feint Attack",
@@ -22813,7 +22830,8 @@
         "power": 6,
         "energy": 0,
         "energyGain": 6,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "General"
     }, {
         "moveId": "FELL_STINGER",
         "name": "Fell Stinger",
@@ -22844,7 +22862,8 @@
         "power": 8,
         "energy": 0,
         "energyGain": 5,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Heavy Damage"
     }, {
         "moveId": "FIRE_PUNCH",
         "name": "Fire Punch",
@@ -22871,7 +22890,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 10,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "General"
     }, {
         "moveId": "FLAME_BURST",
         "name": "Flame Burst",
@@ -22977,7 +22997,8 @@
         "power": 7,
         "energy": 0,
         "energyGain": 5,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Heavy Damage"
     }, {
         "moveId": "FRUSTRATION",
         "name": "Frustration",
@@ -22994,7 +23015,8 @@
         "power": 2,
         "energy": 0,
         "energyGain": 4,
-        "cooldown": 500
+        "cooldown": 500,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "FUTURE_SIGHT",
         "name": "Future Sight",
@@ -23047,7 +23069,8 @@
         "power": 16,
         "energy": 0,
         "energyGain": 12,
-        "cooldown": 2000
+        "cooldown": 2000,
+        "archetype": "Multipurpose"
     }, {
         "moveId": "GYRO_BALL",
         "name": "Gyro Ball",
@@ -23091,7 +23114,8 @@
         "power": 6,
         "energy": 0,
         "energyGain": 12,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "HIDDEN_POWER_BUG",
         "name": "Hidden Power (Bug)",
@@ -23099,7 +23123,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "HIDDEN_POWER_DARK",
         "name": "Hidden Power (Dark)",
@@ -23107,7 +23132,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "HIDDEN_POWER_DRAGON",
         "name": "Hidden Power (Dragon)",
@@ -23115,7 +23141,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "HIDDEN_POWER_ELECTRIC",
         "name": "Hidden Power (Electric)",
@@ -23123,7 +23150,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "HIDDEN_POWER_FIGHTING",
         "name": "Hidden Power (Fighting)",
@@ -23131,7 +23159,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "HIDDEN_POWER_FIRE",
         "name": "Hidden Power (Fire)",
@@ -23139,7 +23168,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "HIDDEN_POWER_FLYING",
         "name": "Hidden Power (Flying)",
@@ -23147,7 +23177,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "HIDDEN_POWER_GHOST",
         "name": "Hidden Power (Ghost)",
@@ -23155,7 +23186,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "HIDDEN_POWER_GRASS",
         "name": "Hidden Power (Grass)",
@@ -23163,7 +23195,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "HIDDEN_POWER_GROUND",
         "name": "Hidden Power (Ground)",
@@ -23171,7 +23204,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "HIDDEN_POWER_ICE",
         "name": "Hidden Power (Ice)",
@@ -23179,7 +23213,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "HIDDEN_POWER_POISON",
         "name": "Hidden Power (Poison)",
@@ -23187,7 +23222,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "HIDDEN_POWER_PSYCHIC",
         "name": "Hidden Power (Psychic)",
@@ -23195,7 +23231,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "HIDDEN_POWER_ROCK",
         "name": "Hidden Power (Rock)",
@@ -23203,7 +23240,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "HIDDEN_POWER_STEEL",
         "name": "Hidden Power (Steel)",
@@ -23211,7 +23249,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "HIDDEN_POWER_WATER",
         "name": "Hidden Power (Water)",
@@ -23219,7 +23258,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "HORN_ATTACK",
         "name": "Horn Attack",
@@ -23300,7 +23340,8 @@
         "power": 8,
         "energy": 0,
         "energyGain": 5,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Heavy Damage"
     }, {
         "moveId": "ICE_PUNCH",
         "name": "Ice Punch",
@@ -23317,7 +23358,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 10,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "General"
     }, {
         "moveId": "ICY_WIND",
         "name": "Icy Wind",
@@ -23337,7 +23379,8 @@
         "power": 15,
         "energy": 0,
         "energyGain": 20,
-        "cooldown": 2500
+        "cooldown": 2500,
+        "archetype": "Multipurpose"
     }, {
         "moveId": "INFESTATION",
         "name": "Infestation",
@@ -23345,7 +23388,8 @@
         "power": 6,
         "energy": 0,
         "energyGain": 12,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "IRON_HEAD",
         "name": "Iron Head",
@@ -23362,7 +23406,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 6,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "KARATE_CHOP",
         "name": "Karate Chop",
@@ -23370,7 +23415,8 @@
         "power": 5,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "LAST_RESORT",
         "name": "Last Resort",
@@ -23421,7 +23467,8 @@
         "power": 3,
         "energy": 0,
         "energyGain": 3,
-        "cooldown": 500
+        "cooldown": 500,
+        "archetype": "General"
     }, {
         "moveId": "LOCK_ON",
         "name": "Lock On",
@@ -23429,7 +23476,8 @@
         "power": 1,
         "energy": 0,
         "energyGain": 5,
-        "cooldown": 500
+        "cooldown": 500,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "LOW_KICK",
         "name": "Low Kick",
@@ -23437,7 +23485,8 @@
         "power": 4,
         "energy": 0,
         "energyGain": 5,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Low Quality"
     }, {
         "moveId": "LOW_SWEEP",
         "name": "Low Sweep",
@@ -23496,7 +23545,8 @@
         "power": 5,
         "energy": 0,
         "energyGain": 6,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Low Quality"
     }, {
         "moveId": "METEOR_MASH",
         "name": "Meteor Mash",
@@ -23569,7 +23619,8 @@
         "power": 3,
         "energy": 0,
         "energyGain": 9,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "MUD_SLAP",
         "name": "Mud Slap",
@@ -23578,7 +23629,8 @@
         "power": 11,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Heavy Damage"
     }, {
         "moveId": "NIGHT_SHADE",
         "name": "Night Shade",
@@ -23685,7 +23737,8 @@
         "power": 6,
         "energy": 0,
         "energyGain": 5,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Low Quality"
     }, {
         "moveId": "PETAL_BLIZZARD",
         "name": "Petal Blizzard",
@@ -23721,7 +23774,8 @@
         "power": 6,
         "energy": 0,
         "energyGain": 7,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "POISON_STING",
         "name": "Poison Sting",
@@ -23730,7 +23784,8 @@
         "power": 3,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "POUND",
         "name": "Pound",
@@ -23739,7 +23794,8 @@
         "power": 5,
         "energy": 0,
         "energyGain": 4,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Low Quality"
     }, {
         "moveId": "POWDER_SNOW",
         "name": "Powder Snow",
@@ -23747,7 +23803,8 @@
         "power": 5,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "POWER_GEM",
         "name": "Power Gem",
@@ -23796,7 +23853,8 @@
         "power": 3,
         "energy": 0,
         "energyGain": 12,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "PSYBEAM",
         "name": "Psybeam",
@@ -23838,7 +23896,8 @@
         "power": 3,
         "energy": 0,
         "energyGain": 9,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "PSYSHOCK",
         "name": "Psyshock",
@@ -23866,7 +23925,8 @@
         "power": 5,
         "energy": 0,
         "energyGain": 7,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "RAZOR_LEAF",
         "name": "Razor Leaf",
@@ -23874,7 +23934,8 @@
         "power": 10,
         "energy": 0,
         "energyGain": 4,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Heavy Damage"
     }, {
         "moveId": "REST",
         "name": "Rest",
@@ -23920,7 +23981,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 7,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "ROCK_THROW",
         "name": "Rock Throw",
@@ -23929,7 +23991,8 @@
         "power": 8,
         "energy": 0,
         "energyGain": 5,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Heavy Damage"
     }, {
         "moveId": "ROCK_TOMB",
         "name": "Rock Tomb",
@@ -23997,7 +24060,8 @@
         "power": 4,
         "energy": 0,
         "energyGain": 2,
-        "cooldown": 500
+        "cooldown": 500,
+        "archetype": "Heavy Damage"
     }, {
         "moveId": "SEED_BOMB",
         "name": "Seed Bomb",
@@ -24037,7 +24101,8 @@
         "power": 6,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Multipurpose"
     }, {
         "moveId": "SHADOW_PUNCH",
         "name": "Shadow Punch",
@@ -24139,7 +24204,8 @@
         "power": 12,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Heavy Damage"
     }, {
         "moveId": "SNARL",
         "name": "Snarl",
@@ -24148,7 +24214,8 @@
         "power": 5,
         "energy": 0,
         "energyGain": 13,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "SOLAR_BEAM",
         "name": "Solar Beam",
@@ -24167,7 +24234,8 @@
         "power": 4,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "SPLASH",
         "name": "Splash",
@@ -24176,7 +24244,8 @@
         "power": 0,
         "energy": 0,
         "energyGain": 12,
-        "cooldown": 2000
+        "cooldown": 2000,
+        "archetype": "Low Quality"
     }, {
         "moveId": "STEEL_WING",
         "name": "Steel Wing",
@@ -24185,7 +24254,8 @@
         "power": 7,
         "energy": 0,
         "energyGain": 5,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Heavy Damage"
     }, {
         "moveId": "STOMP",
         "name": "Stomp",
@@ -24223,7 +24293,8 @@
         "power": 9,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "SUBMISSION",
         "name": "Submission",
@@ -24242,7 +24313,8 @@
         "power": 5,
         "energy": 0,
         "energyGain": 7,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "SUPER_POWER",
         "name": "Superpower",
@@ -24292,7 +24364,8 @@
         "power": 3,
         "energy": 0,
         "energyGain": 2,
-        "cooldown": 500
+        "cooldown": 500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "TAKE_DOWN",
         "name": "Take Down",
@@ -24300,7 +24373,8 @@
         "power": 5,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Low Quality"
     }, {
         "moveId": "TECHNO_BLAST_NORMAL",
         "name": "Techno Blast (Normal)",
@@ -24362,7 +24436,8 @@
         "power": 8,
         "energy": 0,
         "energyGain": 5,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Heavy Damage"
     }, {
         "moveId": "THUNDER_PUNCH",
         "name": "Thunder Punch",
@@ -24379,7 +24454,8 @@
         "power": 3,
         "energy": 0,
         "energyGain": 9,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "THUNDERBOLT",
         "name": "Thunderbolt",
@@ -24448,7 +24524,8 @@
         "power": 5,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "VOLT_SWITCH",
         "name": "Volt Switch",
@@ -24456,7 +24533,8 @@
         "power": 12,
         "energy": 0,
         "energyGain": 16,
-        "cooldown": 2000
+        "cooldown": 2000,
+        "archetype": "Multipurpose"
     }, {
         "moveId": "WATER_GUN",
         "name": "Water Gun",
@@ -24464,7 +24542,8 @@
         "power": 3,
         "energy": 0,
         "energyGain": 3,
-        "cooldown": 500
+        "cooldown": 500,
+        "archetype": "General"
     }, {
         "moveId": "WATER_GUN_FAST_BLASTOISE",
         "name": "Water Gun Fast Blastoise",
@@ -24472,7 +24551,8 @@
         "power": 6,
         "energy": 0,
         "energyGain": 4,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Low Quality"
     }, {
         "moveId": "WATER_PULSE",
         "name": "Water Pulse",
@@ -24489,7 +24569,8 @@
         "power": 12,
         "energy": 0,
         "energyGain": 8,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Heavy Damage"
     }, {
         "moveId": "WEATHER_BALL_FIRE",
         "name": "Weather Ball (Fire)",
@@ -24545,7 +24626,8 @@
         "power": 5,
         "energy": 0,
         "energyGain": 7,
-        "cooldown": 1000
+        "cooldown": 1000,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "WRAP",
         "name": "Wrap",
@@ -24590,7 +24672,8 @@
         "power": 0,
         "energy": 0,
         "energyGain": 12,
-        "cooldown": 2000
+        "cooldown": 2000,
+        "archetype": "Low Quality"
     }, {
         "moveId": "ZAP_CANNON",
         "name": "Zap Cannon",
@@ -24607,6 +24690,7 @@
         "power": 8,
         "energy": 0,
         "energyGain": 6,
-        "cooldown": 1500
+        "cooldown": 1500,
+        "archetype": "Low Quality"
     }]
 }

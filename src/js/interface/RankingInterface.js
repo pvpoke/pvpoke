@@ -53,6 +53,7 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".check.xl", toggleXLPokemon);
 				$("body").on("click", ".continentals .check", toggleContinentalsSlots);
 				$("body").on("click", ".detail-section .trait-info, .detail-section .traits > div", openTraitPopup);
+				$("body").on("click", ".detail-section a.show-move-stats", toggleMoveStats);
 
 				pokeSearch.setBattle(battle);
 
@@ -684,8 +685,25 @@ var InterfaceMaster = (function () {
 					var $moveDetails = $details.find(".moveset.fast .move-detail-template.hide").clone();
 					$moveDetails.removeClass("hide");
 
+					// Contextualize the move archetype for this Pokemon
+					var archetype = fastMoves[n].archetype;
+					var archetypeClass = 'general'; // For CSS
+
+					if(fastMoves[n].archetype == "Fast Charge"){
+						archetypeClass = "spam";
+					} else if(fastMoves[n].archetype == "Heavy Damage"){
+						archetypeClass = "nuke";
+					} else if(fastMoves[n].archetype == "Multipurpose"){
+   						archetypeClass = "high-energy";
+					} else if(fastMoves[n].archetype == "Low Quality"){
+						archetypeClass = "low-quality";
+					}
+
+
 					$moveDetails.addClass(fastMoves[n].type);
 					$moveDetails.find(".name").html(fastMoves[n].displayName);
+					$moveDetails.find(".archetype .name").html(archetype);
+					$moveDetails.find(".archetype .icon").addClass(archetypeClass);
 					$moveDetails.find(".dpt .value").html(Math.round( ((fastMoves[n].power * fastMoves[n].stab * pokemon.shadowAtkMult) / (fastMoves[n].cooldown / 500)) * 100) / 100);
 					$moveDetails.find(".ept .value").html(Math.round( (fastMoves[n].energyGain / (fastMoves[n].cooldown / 500)) * 100) / 100);
 					$moveDetails.find(".turns .value").html( fastMoves[n].cooldown / 500 );
@@ -1123,6 +1141,16 @@ var InterfaceMaster = (function () {
 				$traits.find("div").each(function(index, value){
 					$(".modal .traits").append("<div class=\""+$(this).attr("class")+"\"><div class=\"name\">"+$(this).html()+"</div><div class=\"desc\">"+$(this).attr("title")+"</div></div>");
 				});
+			}
+
+			// Toggle move stats in the ranking details
+
+			function toggleMoveStats(e){
+				e.preventDefault();
+
+				var $rank = $(e.target).closest(".rank")
+				$(e.target).toggleClass("on");
+				$rank.find(".moveset").toggleClass("show-stats");
 			}
 		};
 

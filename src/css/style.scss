@@ -2285,6 +2285,7 @@ a.download-csv{
 						overflow: hidden;
 
 						.bar{
+							width:0px;
 							height:10px;
 							border-radius:4px;
 						}
@@ -2336,9 +2337,19 @@ a.download-csv{
 			}
 
 			.moveset{
+
+				&.show-stats{
+					.name-container{
+						border-bottom: 1px solid;
+
+						&.stats-container{
+							display:flex;
+						}
+					}
+				}
+
 				.name-container{
 					float:none;
-					border-bottom: 1px solid;
 					padding-bottom:3px;
 					margin-bottom:3px;
 					justify-content: space-between;
@@ -2349,6 +2360,8 @@ a.download-csv{
 						border:none;
 						margin:0;
 						padding:0;
+						display:none;
+						overflow: hidden;
 
 						.damage,.energy,.dpe,.dpt,.ept,.turns{
 							min-width:75px;
@@ -2397,6 +2410,38 @@ a.download-csv{
 						&.boost{ background-position: (-16px * 4) 0; }
 						&.high-energy{ background-position: (-16px * 5) 0; }
 						&.general{ background-position: (-16px * 6) 0; }
+						&.low-quality{
+							&:before{
+								content:'x';
+							}
+
+							border-radius:16px;
+							background:#000;
+							color:#fff;
+							text-align: center;
+							font-weight: bold;
+						}
+					}
+				}
+			}
+
+			.ranking-header.stat-toggle{
+				text-align: right;
+
+				a.show-move-stats{
+					padding: 2px 8px;
+				    border-radius: 8px;
+				    text-decoration: none;
+				    font-weight: normal;
+				    border: 1px solid #000;
+				    color: #000;
+				    font-size: 12px;
+
+					@include transition(all, 0.3s, ease-out, 0s);
+
+					&.on{
+						background:#444;
+						color:#fff;
 					}
 				}
 			}
@@ -3768,6 +3813,11 @@ a.pokebattler{
 			.name{
 				font-size:14px;
 			}
+
+
+			.archetype .name{
+				font-size:10px;
+			}
 		}
 
 		.moves{
@@ -3813,6 +3863,14 @@ a.pokebattler{
 	.ranking-categories a{
 		font-size: 14px;
 		padding: 5px;
+	}
+
+	.rank .details .detail-section .moveset .name-container.stats-container > div{
+		min-width:auto !important;
+	}
+
+	.traits > div{
+		font-size:12px;
 	}
 }
 

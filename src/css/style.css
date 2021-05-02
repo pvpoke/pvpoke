@@ -1974,6 +1974,7 @@ a.download-csv {
   overflow: hidden;
 }
 .rank .details .detail-section .stat-details .stat-row .bar-container .bar {
+  width: 0px;
   height: 10px;
   border-radius: 4px;
 }
@@ -2022,9 +2023,14 @@ a.download-csv {
   display: block;
   max-width: 100%;
 }
+.rank .details .detail-section .moveset.show-stats .name-container {
+  border-bottom: 1px solid;
+}
+.rank .details .detail-section .moveset.show-stats .name-container.stats-container {
+  display: flex;
+}
 .rank .details .detail-section .moveset .name-container {
   float: none;
-  border-bottom: 1px solid;
   padding-bottom: 3px;
   margin-bottom: 3px;
   justify-content: space-between;
@@ -2035,6 +2041,8 @@ a.download-csv {
   border: none;
   margin: 0;
   padding: 0;
+  display: none;
+  overflow: hidden;
 }
 .rank .details .detail-section .moveset .name-container.stats-container .damage, .rank .details .detail-section .moveset .name-container.stats-container .energy, .rank .details .detail-section .moveset .name-container.stats-container .dpe, .rank .details .detail-section .moveset .name-container.stats-container .dpt, .rank .details .detail-section .moveset .name-container.stats-container .ept, .rank .details .detail-section .moveset .name-container.stats-container .turns {
   min-width: 75px;
@@ -2086,6 +2094,36 @@ a.download-csv {
 }
 .rank .details .detail-section .moveset .archetype .icon.general {
   background-position: -96px 0;
+}
+.rank .details .detail-section .moveset .archetype .icon.low-quality {
+  border-radius: 16px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+}
+.rank .details .detail-section .moveset .archetype .icon.low-quality:before {
+  content: "x";
+}
+.rank .details .detail-section .ranking-header.stat-toggle {
+  text-align: right;
+}
+.rank .details .detail-section .ranking-header.stat-toggle a.show-move-stats {
+  padding: 2px 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: normal;
+  border: 1px solid #000;
+  color: #000;
+  font-size: 12px;
+  -webkit-transition: all 0.3s ease-out 0s;
+  -moz-transition: all 0.3s ease-out 0s;
+  -o-transition: all 0.3s ease-out 0s;
+  transition: all 0.3s ease-out 0s;
+}
+.rank .details .detail-section .ranking-header.stat-toggle a.show-move-stats.on {
+  background: #444;
+  color: #fff;
 }
 .rank .details .detail-section .rank {
   border-left: 10px solid rgba(0, 0, 0, 0.1);
@@ -3506,6 +3544,9 @@ a.pokebattler {
   .rank .details .detail-section .name {
     font-size: 14px;
   }
+  .rank .details .detail-section .archetype .name {
+    font-size: 10px;
+  }
   .rank .moves {
     max-width: 180px;
   }
@@ -3543,6 +3584,14 @@ a.pokebattler {
   .ranking-categories a {
     font-size: 14px;
     padding: 5px;
+  }
+
+  .rank .details .detail-section .moveset .name-container.stats-container > div {
+    min-width: auto !important;
+  }
+
+  .traits > div {
+    font-size: 12px;
   }
 }
 /* SETTINGS */

@@ -1061,7 +1061,7 @@ function Pokemon(id, i, b){
 			if(Math.pow(self.stats.atk * self.shadowAtkMult, 2) > bulk){
 				cons.push({
 					trait: "Glass Cannon",
-					desc: "Hits hard but struggles to take hits. Depends on shields"
+					desc: "Hits hard but struggles to take hits. Depends on shields."
 				});
 			} else{
 				cons.push({
@@ -1076,7 +1076,7 @@ function Pokemon(id, i, b){
 		} else if(bulk <= bulkScale[1]){
 			cons.push({
 				trait: "Less Bulky",
-				desc: "Below average bulk and may depend on shields."
+				desc: "Below average defensive stats and may struggle to take hits."
 			});
 
 			bulkRating = -1;

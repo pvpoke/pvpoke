@@ -68,9 +68,13 @@
 	</div>
 	<div class="detail-section float margin">
 		<div class="ranking-header">Fast Moves</div>
+		<div class="ranking-header stat-toggle"><a class="show-move-stats" href="#">Show Stats</a></div>
 		<div class="moveset fast clear">
 			<div class="move-detail-template rank hide">
-				<div class="name-container"><span class="name">Counter</span></div>
+				<div class="name-container flex">
+					<span class="name">Counter</span>
+					<span class="archetype"><span class="name"></span><span class="icon"></span></span>
+				</div>
 				<div class="stats-container name-container flex">
 					<div class="dpt"><b class="value">0</b> dpt</div>
 					<div class="ept"><b class="value">0</b> ept</div>
