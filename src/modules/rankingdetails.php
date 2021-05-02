@@ -9,11 +9,11 @@
 		<div class="ranking-header right">Battle Rating</div>
 		<div class="counters clear"></div>
 	</div>
-	<div class="detail-section float margin">
+	<div class="detail-section performance float margin">
 		<div class="ranking-header">Performance</div>
 		<canvas class="hexagon"></canvas>
 	</div>
-	<div class="detail-section float">
+	<div class="detail-section poke-stats float">
 		<div class="ranking-header">Stats</div>
 		<div class="stat-details clear">
 			<div class="stat-row">

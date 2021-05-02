@@ -208,6 +208,11 @@ function interfaceObject(){
 			$(".button.simulate").html("Simulate");
 			$(".custom-rankings-results").show();
 			$(".custom-rankings-list").show();
+
+			// Set this ranking data in the gamemaster for recommended move reference
+			var key = "allcustom"+battle.getCP();
+			gm.rankings[key] = data[0];
+
 			rankingInterface.displayRankingData(data[0]);
 
 			customMetaSelector.setPokemonList(rankingInterface.getMetaGroup());
@@ -395,10 +400,13 @@ function interfaceObject(){
 	function selectLeague(e){
 		var allowed = [500, 1500, 2500, 10000];
 		var cp = parseInt($(".league-select option:selected").val());
+		var levelCap = parseInt($(".league-select option:selected").attr("level-cap"));
 
 		if(allowed.indexOf(cp) > -1){
 			battle.setCP(cp);
+			battle.setLevelCap(levelCap);
 			cup.league = cp;
+			cup.levelCap = levelCap;
 		}
 	}
 
@@ -465,13 +473,13 @@ function interfaceObject(){
 			// Generate movesets
 			ranker.setMoveSelectMode("auto");
 			ranker.setScenarioOverrides([scenario]);
-			ranker.rankLoop(battle.getCP(), cup, self.receiveRankingData);
+			ranker.rankLoop(battle.getCP(true), cup, self.receiveRankingData);
 		} else{
 			// Generate rankings with movesets established
 			ranker.setMoveSelectMode("force");
 			ranker.setScenarioOverrides([scenario]);
 			rankingInterface.setScenario(scenario);
-			ranker.rankLoop(battle.getCP(), cup, self.receiveRankingData, data[0]);
+			ranker.rankLoop(battle.getCP(true), cup, self.receiveRankingData, data[0]);
 		}
 	}
 

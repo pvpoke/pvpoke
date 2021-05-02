@@ -1028,24 +1028,18 @@ function Pokemon(id, i, b){
 		// First, look up ranking data to use as a reference
 
 		var key = cupName + category + battle.getCP();
-
-		if(! gm.rankings[key]){
-			console.log("Ranking data not loaded yet");
-			return;
-		}
-
 		var rankings = gm.rankings[key];
 		var r = false;
 		var found = false;
 
-		for(var i = 0; i < rankings.length; i++){
-			if(rankings[i].speciesId == self.speciesId){
-				r = rankings[i];
-			}
-		}
+		if(gm.rankings[key]){
+			rankings = gm.rankings[key];
 
-		if(! r){
-			return false;
+			for(var i = 0; i < rankings.length; i++){
+				if(rankings[i].speciesId == self.speciesId){
+					r = rankings[i];
+				}
+			}
 		}
 
 		// Initialize lists of positive and negative traits
@@ -1188,11 +1182,13 @@ function Pokemon(id, i, b){
 
 		// Switch and safety scores
 
-		if(((r.scores[2] >= 90)||(r.scores[3] >= 90)) && ( (self.fastMove.energyGain / self.fastMove.cooldown) >= (3 / 500))) {
-			pros.push({
-				trait: "Dynamic",
-				desc: "Performs well with energy and has fluid, dynamic matchups."
-			});
+		if(r){
+			if(((r.scores[2] >= 90)||(r.scores[3] >= 90)) && ( (self.fastMove.energyGain / self.fastMove.cooldown) >= (3 / 500))) {
+				pros.push({
+					trait: "Dynamic",
+					desc: "Performs well with energy and has fluid, dynamic matchups."
+				});
+			}
 		}
 
 		// Fast Move pressure
@@ -1300,7 +1296,7 @@ function Pokemon(id, i, b){
 
 		// Consistency
 
-		if(r.scores[5] <= 75){
+		if((r)&&(r.scores[5] <= 75)){
 			cons.push({
 				trait: "Inconsistent",
 				desc: "May depend on baits and performs inconsistently."

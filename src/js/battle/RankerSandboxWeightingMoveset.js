@@ -98,6 +98,12 @@ var RankerMaster = (function () {
 
 				startTime = Date.now();
 
+				if(isNaN(cp)){
+					var levelCap = parseInt(cp.split("-")[1]);
+					cp = parseInt(cp.split("-")[0]);
+					battle.setLevelCap(levelCap);
+				}
+
 				battle.setCP(cp);
 				if(cup.name != "custom"){
 					battle.setCup(cup.name);
@@ -108,7 +114,6 @@ var RankerMaster = (function () {
 				if(cup.levelCap){
 					battle.setLevelCap(cup.levelCap);
 				}
-
 
 				currentLeagueIndex = 0;
 				currentScenarioIndex = 0;

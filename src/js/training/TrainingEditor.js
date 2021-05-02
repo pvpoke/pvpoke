@@ -332,8 +332,10 @@ var InterfaceMaster = (function () {
 
 			function selectLeague(e){
 				var cp = parseInt($(".league-select option:selected").val());
+				var levelCap = parseInt($(".league-select option:selected").attr("level-cap"));
 
 				battle.setCP(cp);
+				battle.setLevelCap(levelCap);
 
 				gm.loadRankingData(self, "overall", cp, "all");
 			}

@@ -54,8 +54,8 @@ require_once 'header.php';
 				<div class="check allow-shadows"><span></span>Show Shadow Pokemon in results</div>
 			</div>
 			<div class="team-option">
-				<h3>XL Pokemon</h3>
-				<div class="check allow-xl"><span></span>Show Pokemon above level 40 in results</div>
+				<h3>Recommend XL Pokemon</h3>
+				<div class="check allow-xl <?php if($_SETTINGS->xls): echo "on"; endif; ?>"><span></span>Show Pokemon above level 40 in suggested alternatives</div>
 			</div>
 			<div class="flex-break"></div>
 			<div class="team-option">

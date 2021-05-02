@@ -485,7 +485,7 @@ var InterfaceMaster = (function () {
 						continue;
 					}
 
-					if((r.speciesId.indexOf("_xl") > -1)&&(! allowXL)){
+					if(r.speciesId.indexOf("_xs") > -1){
 						i++;
 						continue;
 					}
@@ -609,7 +609,7 @@ var InterfaceMaster = (function () {
 						continue;
 					}
 
-					if((r.speciesId.indexOf("_xl") > -1)&&(! allowXL)){
+					if(r.speciesId.indexOf("_xs") > -1){
 						i++;
 						continue;
 					}
@@ -784,7 +784,12 @@ var InterfaceMaster = (function () {
 						continue;
 					}
 
-					if((r.speciesId.indexOf("_xl") > -1)&&(! allowXL)){
+					if((r.speciesId.indexOf("_xs") > -1)&&(allowXL)){
+						i++;
+						continue;
+					}
+
+					if((r.pokemon.needsXLCandy())&&(! allowXL)){
 						i++;
 						continue;
 					}
@@ -1349,7 +1354,14 @@ var InterfaceMaster = (function () {
 
 				}
 
-				gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), "all");
+				var cupName = battle.getCup().name;
+
+				if((cp == 10000)&&(levelCap == 40)){
+					cupName = "classic";
+					battle.setCup("classic");
+				}
+
+				gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), cupName);
 			}
 
 			// Event handler for changing the cup select

@@ -152,9 +152,7 @@ function Battle(){
 
 	this.setLevelCap = function(val){
 		levelCap = val;
-
-		console.log("Level Cap " + val);
-
+		
 		for(var i = 0; i < pokemon.length; i++){
 			if(pokemon[i]){
 				pokemon[i].initialize(cp);

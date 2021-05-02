@@ -1645,7 +1645,14 @@ var InterfaceMaster = (function () {
 					}
 				}
 
-				gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), "all");
+				var cupName = "all";
+
+				if((cp == 10000)&&(levelCap == 40)){
+					cupName = "classic";
+					battle.setCup("classic");
+				}
+
+				gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), cupName);
 			}
 
 			// Event handler for changing the battle mode

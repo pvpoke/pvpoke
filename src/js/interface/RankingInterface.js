@@ -441,6 +441,7 @@ var InterfaceMaster = (function () {
 
 			function selectLeague(e){
 				var cp = battle.getCP();
+				var levelCap = parseInt($(".league-select option:selected").attr("level-cap"));
 
 				if(context != "custom"){
 					var category = $(".ranking-categories a.selected").attr("data");
@@ -463,6 +464,7 @@ var InterfaceMaster = (function () {
 				}
 
 				battle.setCP(cp);
+				battle.setLevelCap(levelCap);
 			}
 
 			// Event handler for changing the cup select
@@ -570,10 +572,6 @@ var InterfaceMaster = (function () {
 					}
 
 					$details.append($section);
-				}
-
-				if(pokemon.hasTag("mega")){
-					$details.append("<div class=\"detail-section\"><b>Mega Evolutions are currently not allowed in GO Battle League. Use this information to help prepare if they are allowed in the future. Don't invest Mega Energy or Elite TM's until you can use these Pokemon.</b></div>");
 				}
 
 				// Display move data
@@ -961,8 +959,6 @@ var InterfaceMaster = (function () {
 					bgArr = bgArr[1].split(" 30%");
 					var bgStr = bgArr[0]
 
-
-
 					hexagon.init($details.find(".hexagon"), 100);
 	                hexagon.draw([
 						Math.max( (r.scores[0] - 30) / 70 , .05 ),
@@ -973,9 +969,9 @@ var InterfaceMaster = (function () {
 						Math.max( (r.scores[4] - 30) / 70 , .05 ),
 					], ['Lead', 'Switch', 'Charger', 'Closer', 'Consistency', 'Attacker'], bgStr);
 				} else{
-					$details.find(".detail-section").eq(2).remove();
-					$details.find(".detail-section").eq(2).css("width", "100%");
-					$details.find(".detail-section").eq(2).css("float", "none");
+					$details.find(".detail-section.performance").remove();
+					$details.find(".detail-section.poke-stats").css("width", "100%");
+					$details.find(".detail-section.poke-stats").css("float", "none");
 				}
 
 				// Display buddy distance and second move cost

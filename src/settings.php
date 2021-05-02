@@ -26,6 +26,10 @@ require_once 'header.php';
 		<p>PvPoke integrates with <a target="_blank" href="https://www.pokebattler.com/" class="pokebattler">Pokebattler</a> so you can permanently store your Pokemon and import them anywhere on the site. Enter your Pokebattler account ID below to link your Pokebox:</p>
 		<input type="text" class="input" id="pokebox-id" <?php if(isset($_SETTINGS->pokeboxId)) : ?>value="<?php echo intval($_SETTINGS->pokeboxId); ?>"<?php endif; ?> />
 
+		<h3>XL Pokemon</h3>
+		<div class="check xls <?php if($_SETTINGS->xls == 1) : ?>on<?php endif; ?>"><span></span> Show XL Pokemon</div>
+		<p>Choose whether to show Pokemon over Level 40 in the primary rankings or Team Builder suggestions. You can temporarily toggle them on the respective pages. XL Pokemon will still appear in ranking matchups, simulations, and Team Builder threats.</p>
+
 		<h3>Advertisements</h3>
 		<div class="check ads <?php if($_SETTINGS->ads == 1) : ?>on<?php endif; ?>"><span></span> Show ads</div>
 		<p>Ads help support the site and the Pokemon GO community!</p>

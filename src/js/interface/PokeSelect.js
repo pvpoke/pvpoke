@@ -40,9 +40,13 @@ function PokeSelect(element, i){
 				priority: priority
 			});
 
-			if(poke.speciesId.indexOf("_xs") < 0){
-				$pokeSelect.append("<option value=\""+poke.speciesId+"\" type-1=\""+poke.types[0]+"\" type-2=\""+poke.types[1]+"\">"+poke.speciesName+"</option");
+			var displayName = poke.speciesName;
+
+			if(poke.speciesId.indexOf("_xs") > -1){
+				displayName += " (Non XL)";
 			}
+
+			$pokeSelect.append("<option value=\""+poke.speciesId+"\" type-1=\""+poke.types[0]+"\" type-2=\""+poke.types[1]+"\">"+displayName+"</option");
 		});
 
 		$el.find(".check.auto-level").addClass("on");
