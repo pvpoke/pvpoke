@@ -22,7 +22,6 @@ var InterfaceMaster = (function () {
 
 			this.init = function(){
 
-
 				if(! get){
 					this.loadRankings("1500","all");
 				} else{
@@ -49,6 +48,8 @@ var InterfaceMaster = (function () {
 
 				battle.setCup(cup);
 				battle.setCP(league);
+
+				pokeSearch.setBattle(battle);
 
 				/* This timeout allows the interface to display the loading message before
 				being thrown into the data loading loop */

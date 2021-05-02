@@ -43,7 +43,7 @@ var RankerMaster = (function () {
 
 			// Run an individual rank set
 
-			this.rank = function(team, league, cup, exclusionList, context){
+			this.rank = function(team, cp, cup, exclusionList, context){
 				if(context){
 					self.context = context;
 				}
@@ -51,7 +51,15 @@ var RankerMaster = (function () {
 				var totalBattles = 0;
 
 				battle = new Battle();
-				battle.setCP(league);
+
+				if(isNaN(cp)){
+					var levelCap = parseInt(cp.split("-")[1]);
+					cp = parseInt(cp.split("-")[0]);
+					battle.setLevelCap(levelCap);
+				}
+
+				battle.setCP(cp);
+
 				if(cup.name != "custom"){
 					battle.setCup(cup.name);
 				} else{

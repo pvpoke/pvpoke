@@ -99,6 +99,10 @@ var InterfaceMaster = (function () {
 				battle.setCup(cup);
 				battle.setCP(league);
 
+				if(cup !== "classic"){
+					battle.setLevelCap(50);
+				}
+
 				if(cup == "beam"){
 					category = "beaminess";
 					$(".description").hide();
@@ -527,7 +531,7 @@ var InterfaceMaster = (function () {
 
 				// Don't collapse when clicking links or the share button
 
-				if(! $(e.target).is(".rank, .rank > .rating-container, .rank > .rating-container *, .rank > .name-container, .rank > .name-container *, .rank > .expand-label")||($(e.target).is("a"))){
+				if(! $(e.target).is(".rank, .rank > .rating-container, .rank > .rating-container *, .rank > .name-container, .rank > .name-container *, .rank > .expand-label")||($(e.target).is("a"))||($(e.target).is(".detail-section div, .detail-section span"))){
 					return;
 				}
 
@@ -540,6 +544,15 @@ var InterfaceMaster = (function () {
 
 				var index = $(".rankings-container > .rank").index($rank);
 				var $details = $(".details").eq(index);
+
+				// Only execute if this was a direct action and not loaded from URL parameters, otherwise pushes infinite states when the user navigates back
+				if($rank.hasClass("selected")){
+					if((get)&&(data[index])&&(get.p == data[index].speciesId)){
+						get.p = false; // Unset this so URL properly sets if reselected
+					} else{
+						self.pushHistoryState(cup, battle.getCP(), category, data[index].speciesId);
+					}
+				}
 
 				if($details.html() != ''){
 					return;
@@ -933,13 +946,17 @@ var InterfaceMaster = (function () {
 				var cup = battle.getCup().name;
 				var cupName = $(".format-select option:selected").html();
 
+				if(cup == "classic"){
+					cup = "all";
+				}
+
 				var link = host + "rankings/"+cup+"/"+cp+"/"+category+"/"+pokemon.speciesId+"/";
 
 				$details.find(".share-link input").val(link);
 
 				// Add multi-battle link
 				if(context != "custom"){
-					var multiBattleLink = host+"battle/multi/"+cp+"/"+cup+"/"+pokemon.speciesId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+pokeMoveStr+"/2-1/";
+					var multiBattleLink = host+"battle/multi/"+battle.getCP(true)+"/"+cup+"/"+pokemon.speciesId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+pokeMoveStr+"/2-1/";
 
 					// Append energy settings
 					multiBattleLink += pokemon.stats.hp + "/";
@@ -976,7 +993,7 @@ var InterfaceMaster = (function () {
 					}
 				}
 
-				if(scores){
+				if((scores)&&(context != "custom")){
 					// Display rating hexagon
 
 					// This is really dumb but we're pulling the type color out of the background gradient
@@ -1012,6 +1029,7 @@ var InterfaceMaster = (function () {
 				// Display Pokemon's highest IV's
 
 				var rank1Combo = pokemon.generateIVCombinations("overall", 1, 1)[0];
+				var highestLevelCombo = pokemon.generateIVCombinations("level", 1, 1)[0];
 				$details.find(".stat-row.rank-1 .value").html("Lvl " + rank1Combo.level + " " + rank1Combo.ivs.atk + "/" + rank1Combo.ivs.def + "/" + rank1Combo.ivs.hp);
 
 				var level41CP = pokemon.calculateCP(0.795300006866455, 15, 15, 15);
@@ -1025,7 +1043,9 @@ var InterfaceMaster = (function () {
 
 				// Can this Pokemon get close the CP limit at level 41?
 
-				if(level41CP >= battle.getCP() - 20){
+				if(pokemon.hasTag("xs")){
+					$details.find(".xl-info-container").addClass("xs");
+				} else	if(level41CP >= battle.getCP() - 20){
 
 					// This Pokemon can get close to the CP limit at level 41
 					if(rank1Combo.level <= 41){
@@ -1035,11 +1055,7 @@ var InterfaceMaster = (function () {
 					}
 				} else{
 					if(pokemon.levelCap == 40){
-						if(pokemon.hasTag("xs")){
-							$details.find(".xl-info-container").addClass("xs");
-						} else{
-							$details.find(".xl-info-container").addClass("unavailable");
-						}
+						$details.find(".xl-info-container").addClass("unavailable");
 					} else{
 						if(level41CP >= battle.getCP() - 75){
 							$details.find(".xl-info-container").addClass("mixed");
@@ -1054,7 +1070,7 @@ var InterfaceMaster = (function () {
 				// Display level range
 
 				if(rank1Combo.level > hundoLevel){
-					$details.find(".stat-row.level .value").html(hundoLevel + " - " + rank1Combo.level);
+					$details.find(".stat-row.level .value").html(hundoLevel + " - " + highestLevelCombo.level);
 				} else{
 					$details.find(".stat-row.level .value").html(rank1Combo.level);
 				}
@@ -1071,14 +1087,6 @@ var InterfaceMaster = (function () {
 				for(var i = 0; i < traits.cons.length; i++){
 					$details.find(".traits").append("<div class=\"con\" title=\""+traits.cons[i].desc+"\">- "+traits.cons[i].trait+"</div>");
 				}
-
-				// Only execute if this was a direct action and not loaded from URL parameters, otherwise pushes infinite states when the user navigates back
-
-				if((get)&&(get.p == pokemon.speciesId)){
-					return;
-				}
-
-				self.pushHistoryState(cup, cp, category, pokemon.speciesId);
 			}
 
 			// Turn checkboxes on and off

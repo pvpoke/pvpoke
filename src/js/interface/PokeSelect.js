@@ -470,6 +470,8 @@ function PokeSelect(element, i){
 	// Sets a selected Pokemon given an Id
 
 	this.setPokemon = function(id){
+		id = id.replace("_xl","");
+
 		$pokeSelect.find("option[value=\""+id+"\"]").prop("selected","selected");
 		$pokeSelect.trigger("change", true);
 	}

@@ -6,6 +6,8 @@
 
 function Pokemon(id, i, b){
 
+	id = id.replace("_xl","");
+
 	var gm = GameMaster.getInstance();
 	var data = gm.getPokemonById(id);
 	var battle = b;
@@ -24,7 +26,7 @@ function Pokemon(id, i, b){
 	this.data = data;
 	this.dex = data.dex;
 	this.speciesId = id;
-	this.canonicalId = id.replace("_xl","");
+	this.canonicalId = id.replace("_xs","");
 	this.speciesName = data.speciesName;
 
 	this.baseStats = { atk: data.baseStats.atk, def: data.baseStats.def, hp: data.baseStats.hp};
@@ -1258,7 +1260,7 @@ function Pokemon(id, i, b){
 		if(doubleWeaknesses > 0){
 			cons.push({
 				trait: "Risky",
-				desc: "Vulnerable to one or more double weaknesses."
+				desc: "Susceptible to one or more double weaknesses."
 			});
 		}
 

@@ -202,6 +202,10 @@ var InterfaceMaster = (function () {
 								break;
 
 							case "cup":
+								if(val == "classic"){
+									val = "all";
+								}
+
 								$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
 
 								if($(".format-select option[cup=\""+val+"\"]").length > 0){
@@ -951,7 +955,7 @@ var InterfaceMaster = (function () {
 				$(".overview-section .notes div").hide();
 
 				// Coverage grade, take threat score
-				var threatGrade = self.calculateLetterGrade(1200 - avgThreatScore, 670);
+				var threatGrade = self.calculateLetterGrade(1200 - avgThreatScore, 640);
 
 				$(".overview-section.coverage .grade").html(threatGrade.letter);
 				$(".overview-section.coverage .grade").attr("grade", threatGrade.letter);
@@ -1365,6 +1369,11 @@ var InterfaceMaster = (function () {
 				if((cp == 10000)&&(levelCap == 40)){
 					cupName = "classic";
 					battle.setCup("classic");
+				}
+
+				if((cp == 10000)&&(levelCap > 40)){
+					cupName = "all";
+					battle.setCup("all");
 				}
 
 				gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), cupName);

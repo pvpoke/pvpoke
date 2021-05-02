@@ -27,6 +27,10 @@ switch($cp){
 	case "10000":
 		$league = 'Master League';
 		break;
+
+	case "10000-40":
+		$league = 'Master League Classic';
+		break;
 }
 
 switch($cup){

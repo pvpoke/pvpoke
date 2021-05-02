@@ -117,7 +117,7 @@
 		<div class="footnote">
 			* Event or Elite TM exclusive<br>
 			<sup>†</sup> Unobtainable via TM<br><br>
-			<p>Move stats include same type and Shadow attack bonuses.</p>
+			<div>Move stats include same type and Shadow attack bonuses.</div>
 		</div>
 	</div>
 	<div class="detail-section float">

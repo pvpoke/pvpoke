@@ -226,6 +226,8 @@ function interfaceObject(){
 		cup.include = data.include;
 		cup.exclude = data.exclude;
 		cup.league = data.league
+		cup.levelCap = data.levelCap;
+		
 		if(data.overrides){
 			cup.overrides = data.overrides;
 		}
@@ -248,7 +250,7 @@ function interfaceObject(){
 		overrideSelector.quickFillGroup(cup.overrides);
 
 		// Set league
-		$(".league-select option[value=\""+cup.league+"\"]").prop("selected","selected");
+		$(".league-select option[value=\""+cup.league+"\"][level-cap=\""+cup.levelCap+"\"]").prop("selected","selected");
 		$(".league-select").trigger("change");
 	}
 

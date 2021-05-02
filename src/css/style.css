@@ -1954,6 +1954,7 @@ a.download-csv {
 }
 .rank .details .detail-section .stat-details .stat-row.level .value, .rank .details .detail-section .stat-details .stat-row.rank-1 .value {
   text-align: left;
+  padding: 0;
 }
 .rank .details .detail-section .stat-details .stat-row .label {
   font-size: 12px;

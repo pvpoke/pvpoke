@@ -152,7 +152,7 @@ function Battle(){
 
 	this.setLevelCap = function(val){
 		levelCap = val;
-		
+
 		for(var i = 0; i < pokemon.length; i++){
 			if(pokemon[i]){
 				pokemon[i].initialize(cp);
@@ -452,6 +452,7 @@ function Battle(){
 		turnActions = [];
 		sixtySecondMarked = false;
 		thirtySecondMarked = false;
+		decisionLog = [];
 	}
 
 	// Process a turn

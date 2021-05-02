@@ -56,7 +56,7 @@
 				<option value="atk">Maximum Attack</option>
 				<option value="def">Maximum Defense</option>
 			</select>
-			<select class="pokemon-level-cap-select">
+			<select class="pokemon-level-cap-select" style="display:none;">
 				<option value="40">Default Level Cap (40)</option>
 				<option value="41">Buddy Level Cap (41)</option>
 				<option value="50">New Level Cap (50)</option>

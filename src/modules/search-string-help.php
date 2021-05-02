@@ -38,6 +38,10 @@
 			<td>@special</td>
 		</tr>
 		<tr>
+			<td><strong>Traits</strong></td>
+			<td>Bulky, Spammy, Risky, etc. See adjacent trait guide.</td>
+		</tr>
+		<tr>
 			<td><strong>Charged Move Cost</strong></td>
 			<td>10k, 50k, 75k, 100k</td>
 		</tr>

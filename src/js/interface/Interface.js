@@ -64,6 +64,8 @@ var InterfaceMaster = (function () {
 				battle = new Battle();
 				battle.setBuffChanceModifier(0);
 
+				pokeSearch.setBattle(battle);
+
 				$(".poke-select-container .poke.single").each(function(index, value){
 					var selector = new PokeSelect($(this), index);
 					selector.setBattle(battle);
@@ -851,7 +853,7 @@ var InterfaceMaster = (function () {
 
 				// Run battles through the ranker
 
-				var data = ranker.rank(team, battle.getCP(), battle.getCup());
+				var data = ranker.rank(team, battle.getCP(true), battle.getCup());
 				var rankings = data.rankings;
 				var shieldStr = poke.startingShields + "" + opponentShields;
 				var pokeStr = poke.generateURLPokeStr();
@@ -1030,7 +1032,7 @@ var InterfaceMaster = (function () {
 
 				// Run battles through the ranker
 
-				var data = ranker.rank(team, battle.getCP(), battle.getCup(), [], "matrix");
+				var data = ranker.rank(team, battle.getCP(true), battle.getCup(), [], "matrix");
 				matrixResults = data.rankings;
 				self.displayMatrixResults(matrixResults);
 
@@ -1529,6 +1531,16 @@ var InterfaceMaster = (function () {
 						}
 					}
 
+				}
+
+				// Set to recommend moves if no moveset string provided
+
+				if(! get["m1"]){
+					pokeSelectors[0].getPokemon().selectRecommendedMoveset();
+				}
+
+				if(! get["m2"]){
+					pokeSelectors[1].getPokemon().selectRecommendedMoveset();
 				}
 
 				// Update both Pokemon selectors

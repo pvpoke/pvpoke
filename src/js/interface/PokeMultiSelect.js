@@ -28,7 +28,7 @@ function PokeMultiSelect(element){
 		shields: 1,
 		ivs: "original",
 		bait: true,
-		levelCap: 40
+		levelCap: 50
 	}
 
 	var cliffhangerMode = false;
