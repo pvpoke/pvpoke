@@ -701,7 +701,7 @@ var GameMaster = (function () {
 									// Exclude Shadow and XL versions of a listed Pokemon
 									if(! include){
 										testId = testId.replace("_shadow","");
-										testId = testId.replace("_xl","");
+										testId = testId.replace("_xs","");
 									}
 
 									if( filter.values.indexOf(testId) > -1 || filter.values.indexOf(pokemon.speciesId) > -1 ) {

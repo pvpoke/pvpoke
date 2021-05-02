@@ -1,9 +1,7 @@
 <select class="format-select">
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
-	<option value="official" cup="remix">Remix</option>
 	<option value="official" cup="retro">Retro Cup</option>
-	<option value="tsa-3" cup="prismatic">Silph Prismatic Cup</option>
 	<option value="tsa-3" cup="commander">Silph Commander Cup</option>
 	<option value="tsa-3" cup="factions">Silph Factions (Floating City)</option>
 
