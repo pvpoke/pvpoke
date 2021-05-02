@@ -609,7 +609,12 @@ var InterfaceMaster = (function () {
 						continue;
 					}
 
-					if(r.speciesId.indexOf("_xs") > -1){
+					if((r.speciesId.indexOf("_xs") > -1)&&(allowXL)){
+						i++;
+						continue;
+					}
+
+					if((r.pokemon.needsXLCandy())&&(! allowXL)){
 						i++;
 						continue;
 					}

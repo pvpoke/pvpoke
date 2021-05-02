@@ -559,22 +559,6 @@ var InterfaceMaster = (function () {
 
 				var pokeMoveStr = pokemon.generateURLMoveStr();
 
-				// If overall, display score for each category
-
-				if(r.scores){
-					var categories = ["Lead","Closer","Switch","Charger","Attacker","Consistency"];
-
-					var $section = $("<div class=\"detail-section overall\"></div>");
-
-					for(var i = 0; i < r.scores.length; i++){
-						var $item = $("<div class=\"rating-container\"><div class=\"ranking-header\">"+categories[i]+"</div><div class=\"rating\">"+r.scores[i]+"</div></div>");
-
-						$section.append($item);
-					}
-
-					$details.append($section);
-				}
-
 				// Display move data
 
 				var fastMoves = pokemon.fastMovePool;
@@ -621,7 +605,7 @@ var InterfaceMaster = (function () {
 				$details.find(".stat-details .stat-row .value").eq(3).html(overall);
 
 				// Display bars
-				$details.find(".stat-details .stat-row .bar").addClass(pokemon.types[0]);
+				$details.find(".stat-details .stat-row .bar:first-of-type").addClass(pokemon.types[0]);
 
 				/*
 				* Explanation for the following section: Instead of displaying stats proportionally,
@@ -657,10 +641,14 @@ var InterfaceMaster = (function () {
 					statSubtraction = 50;
 				}
 
-				$details.find(".stat-details .stat-row .bar").eq(0).css("width", (( (pokemon.stats.atk - statSubtraction) / statCeiling) * 100) + "%");
-				$details.find(".stat-details .stat-row .bar").eq(1).css("width", (((pokemon.stats.def - statSubtraction) / statCeiling) * 100) + "%");
-				$details.find(".stat-details .stat-row .bar").eq(2).css("width", (((pokemon.stats.hp - statSubtraction) / statCeiling) * 100) + "%");
-				$details.find(".stat-details .stat-row .bar").eq(3).css("width", (((overall - statProductSubstraction) / statProductCeiling) * 100) + "%");
+				$details.find(".stat-details .stat-row .bar:first-of-type").eq(0).css("width", (( (pokemon.stats.atk - statSubtraction) / statCeiling) * 100) + "%");
+				$details.find(".stat-details .stat-row .bar:first-of-type").eq(1).css("width", (((pokemon.stats.def - statSubtraction) / statCeiling) * 100) + "%");
+				$details.find(".stat-details .stat-row .bar:first-of-type").eq(2).css("width", (((pokemon.stats.hp - statSubtraction) / statCeiling) * 100) + "%");
+				$details.find(".stat-details .stat-row .bar:first-of-type").eq(3).css("width", (((overall - statProductSubstraction) / statProductCeiling) * 100) + "%");
+
+				if(pokemon.hasTag("shadow")){
+					$details.find(".shadow-mult").show();
+				}
 
 				// Need to calculate percentages
 
@@ -969,7 +957,26 @@ var InterfaceMaster = (function () {
 					$details.find(".share-link").remove();
 				}
 
+				var scores;
+
 				if(r.scores){
+					scores = r.scores;
+				} else{
+					// If overall rankings have been loaded, grab overall scores from there
+
+					var key = battle.getCup().name + "overall" + battle.getCP();
+
+					if(gm.rankings[key]){
+						for(var i = 0; i < gm.rankings[key].length; i++){
+							if(gm.rankings[key][i].speciesId == pokemon.speciesId){
+								scores = gm.rankings[key][i].scores;
+								break;
+							}
+						}
+					}
+				}
+
+				if(scores){
 					// Display rating hexagon
 
 					// This is really dumb but we're pulling the type color out of the background gradient
@@ -977,15 +984,19 @@ var InterfaceMaster = (function () {
 					bgArr = bgArr[1].split(" 30%");
 					var bgStr = bgArr[0]
 
-					hexagon.init($details.find(".hexagon"), 100);
+					hexagon.init($details.find(".hexagon"), 80);
 	                hexagon.draw([
-						Math.max( (r.scores[0] - 30) / 70 , .05 ),
-						Math.max( (r.scores[2] - 30) / 70 , .05 ),
-						Math.max( (r.scores[3] - 30) / 70 , .05 ),
-						Math.max( (r.scores[1] - 30) / 70 , .05 ),
-						Math.max( (r.scores[5] - 30) / 70 , .05 ),
-						Math.max( (r.scores[4] - 30) / 70 , .05 ),
-					], ['Lead', 'Switch', 'Charger', 'Closer', 'Consistency', 'Attacker'], bgStr);
+						Math.max( (scores[0] - 30) / 70 , .05 ),
+						Math.max( (scores[2] - 30) / 70 , .05 ),
+						Math.max( (scores[3] - 30) / 70 , .05 ),
+						Math.max( (scores[1] - 30) / 70 , .05 ),
+						Math.max( (scores[5] - 30) / 70 , .05 ),
+						Math.max( (scores[4] - 30) / 70 , .05 ),
+					], bgStr);
+
+					for(var i = 0; i < scores.length; i++){
+						$details.find(".hexagon-container .value").eq(i).html(scores[i]);
+					}
 				} else{
 					$details.find(".detail-section.performance").remove();
 					$details.find(".detail-section.poke-stats").css("width", "100%");

@@ -2281,13 +2281,31 @@ a.download-csv{
 					}
 
 					.bar-container{
+						display:flex;
 						flex-grow: 1;
 						overflow: hidden;
+						align-items: center;
 
 						.bar{
 							width:0px;
 							height:10px;
 							border-radius:4px;
+
+							&.shadow{
+								position:relative;
+								background:rgba(158,52,259,0.5);
+							}
+						}
+
+						.shadow-mult{
+							background:#9e34ef;
+							color:#fff;
+							padding:2px 4px;
+							font-size:12px;
+							border-radius:4px;
+							margin-left:5px;
+							display: none;
+							position:relative;
 						}
 					}
 				}
@@ -2330,11 +2348,69 @@ a.download-csv{
 				}
 			}
 
-			.hexagon{
-				margin:10px auto;
-				display:block;
-				max-width:100%;
+			&.performance{
+				.ranking-header{
+					float:none;
+				}
+
+				.hexagon-container{
+					padding:20px;
+					position:relative;
+					max-width: 350px;
+    				margin: 0 auto;
+
+					.hexagon{
+						margin:10px auto;
+						display:block;
+						max-width:100%;
+					}
+
+					.chart-label{
+						text-align: center;
+						position:absolute;
+						font-size:12px;
+
+						.label{
+							font-size:10px;
+						}
+
+						.value{
+							font-weight:bold;
+						}
+
+						&:nth-of-type(1){
+							top: 0%;
+							left: 47%;
+						}
+
+						&:nth-of-type(2){
+							top: 87%;
+							left: 46%;
+						}
+
+						&:nth-of-type(3){
+							top: 25%;
+							left: 72%;
+						}
+
+						&:nth-of-type(4){
+							top: 72%;
+							left: 70%;
+						}
+
+						&:nth-of-type(5){
+							top: 25%;
+							left: 18%;
+						}
+
+						&:nth-of-type(6){
+							top: 72%;
+							left: 15%;
+						}
+					}
+				}
 			}
+
 
 			.moveset{
 
@@ -3708,6 +3784,40 @@ a.pokebattler{
 }
 
 /* RESPONSIVE */
+
+
+@media only screen and (max-width: 468px) {
+
+	.rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(1){
+		top: 0%;
+		left: 44%;
+	}
+
+	.rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(2){
+		top: 87%;
+		left: 43%;
+	}
+
+	.rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(3){
+		top: 25%;
+		left: 74%;
+	}
+
+	.rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(4){
+		top: 72%;
+		left: 72%;
+	}
+
+	.rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(5){
+		top: 25%;
+		left: 10%;
+	}
+
+	.rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(6){
+		top: 72%;
+		left: 7%;
+	}
+}
 
 @media only screen and (max-width: 720px) {
 

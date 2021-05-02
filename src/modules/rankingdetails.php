@@ -11,7 +11,34 @@
 	</div>
 	<div class="detail-section performance float margin">
 		<div class="ranking-header">Performance</div>
-		<canvas class="hexagon"></canvas>
+		<div class="hexagon-container">
+			<div class="chart-label">
+				<div class="value">0</div>
+				<div class="label">Lead</div>
+			</div>
+			<div class="chart-label">
+				<div class="value">0</div>
+				<div class="label">Closer</div>
+			</div>
+			<div class="chart-label">
+				<div class="value">0</div>
+				<div class="label">Switch</div>
+			</div>
+			<div class="chart-label">
+				<div class="value">0</div>
+				<div class="label">Charger</div>
+			</div>
+			<div class="chart-label">
+				<div class="value">0</div>
+				<div class="label">Attacker</div>
+			</div>
+			<div class="chart-label">
+				<div class="value">0</div>
+				<div class="label">Consistency</div>
+			</div>
+			<canvas class="hexagon"></canvas>
+		</div>
+
 	</div>
 	<div class="detail-section poke-stats float">
 		<div class="ranking-header">Stats</div>
@@ -21,6 +48,8 @@
 				<div class="value">0</div>
 				<div class="bar-container">
 					<div class="bar"></div>
+					<div class="bar shadow"></div>
+					<div class="shadow-mult">+20%</div>
 				</div>
 			</div>
 			<div class="stat-row">
@@ -28,6 +57,8 @@
 				<div class="value">0</div>
 				<div class="bar-container">
 					<div class="bar"></div>
+					<div class="bar shadow"></div>
+					<div class="shadow-mult">-20%</div>
 				</div>
 			</div>
 			<div class="stat-row">
@@ -85,7 +116,8 @@
 		<div class="rank selected recommended">Recommended move</div>
 		<div class="footnote">
 			* Event or Elite TM exclusive<br>
-			<sup>†</sup> Unobtainable via TM
+			<sup>†</sup> Unobtainable via TM<br><br>
+			<p>Move stats include same type and Shadow attack bonuses.</p>
 		</div>
 	</div>
 	<div class="detail-section float">

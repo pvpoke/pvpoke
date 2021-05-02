@@ -6,7 +6,8 @@
 var hexagon = {
     bg_default_color: 'rgba(255,255,255,0.75)',
     value_default_color: '#ffff99',
-    x_offset: 30,
+    x_offset: 60,
+	y_offset: 20,
     ssin: function(degree) {
         return Math.sin(degree * Math.PI / 180);
     },
@@ -38,7 +39,7 @@ var hexagon = {
         hexagoncontext.stroke();
         hexagoncontext.fill();
     },
-    draw: function(values, names, color) {
+    draw: function(values, color) {
         if (values.length < 6) {
             return false;
         }
@@ -77,13 +78,13 @@ var hexagon = {
 		var width = this.hexagon.width;
 		var height = this.hexagon.height;
 
-		hexagoncontext.strokeStyle = '#000';
+		/*hexagoncontext.strokeStyle = '#000';
 		hexagoncontext.fillStyle = '#000';
-        hexagoncontext.fillText(names[0], width / 2 + S / 2, 10);
+        hexagoncontext.fillText(names[0] + '98', width / 2 + S / 2, 10);
         hexagoncontext.fillText(names[1], width - S, height / 4);
         hexagoncontext.fillText(names[2], width - S, height * 3 / 4);
         hexagoncontext.fillText(names[3], width / 2 + S / 2, height);
         hexagoncontext.fillText(names[4], 0, height * 3 / 4);
-        hexagoncontext.fillText(names[5], 0, height / 4);
+        hexagoncontext.fillText(names[5], 0, height / 4);*/
     }
 };
