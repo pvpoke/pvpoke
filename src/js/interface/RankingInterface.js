@@ -170,7 +170,7 @@ var InterfaceMaster = (function () {
 
 				// Initialize csv data
 
-				csv = 'Pokemon,Score,Type 1,Type 2,Attack,Defense,Stamina,Stat Product,Level,Fast Move,Charged Move 1,Charged Move 2\n';
+				csv = 'Pokemon,Score,Type 1,Type 2,Attack,Defense,Stamina,Stat Product,Level,Fast Move,Charged Move 1,Charged Move 2,Buddy Distance,Charged Move Cost\n';
 
 
 				// Create an element for each ranked Pokemon
@@ -267,7 +267,7 @@ var InterfaceMaster = (function () {
 						chargedMove2Name = pokemon.chargedMoves[1].name;
 					}
 
-					csv += pokemon.speciesName+','+r.score+','+pokemon.types[0]+','+pokemon.types[1]+','+(Math.round(pokemon.stats.atk*10)/10)+','+(Math.round(pokemon.stats.def*10)/10)+','+Math.round(pokemon.stats.hp)+','+Math.round(pokemon.stats.atk*pokemon.stats.def*pokemon.stats.hp)+','+pokemon.level+','+pokemon.fastMove.name+','+pokemon.chargedMoves[0].name+','+chargedMove2Name+'\n';
+					csv += pokemon.speciesName+','+r.score+','+pokemon.types[0]+','+pokemon.types[1]+','+(Math.round(pokemon.stats.atk*10)/10)+','+(Math.round(pokemon.stats.def*10)/10)+','+Math.round(pokemon.stats.hp)+','+Math.round(pokemon.stats.atk*pokemon.stats.def*pokemon.stats.hp)+','+pokemon.level+','+pokemon.fastMove.name+','+pokemon.chargedMoves[0].name+','+chargedMove2Name+','+pokemon.buddyDistance+','+pokemon.thirdMoveCost+'\n';
 				}
 
 				$(".loading").hide();

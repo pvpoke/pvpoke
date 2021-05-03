@@ -816,7 +816,7 @@
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xs"],
     "pokemonTraits": {
         "pros": ["bulky", "extremely bulky", "spammy", "agile", "flexible", "dynamic", "fast move pressure", "shield pressure", "defensive", "momentum"],
-        "cons": ["less bulky", "glass cannon", "slow", "clumsy", "inflexible", "low fast move pressure", "low shield pressure", "vulnerable", "risky", "chaotic", "technical", "inconsistent"]
+        "cons": ["less bulky", "glass cannon", "slow", "clumsy", "inflexible", "low fast move pressure", "low shield pressure", "vulnerable", "volatile", "chaotic", "technical", "inconsistent"]
     },
     "pokemonRegions": [{
         "string": "gen1",
@@ -18117,7 +18117,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 542,
         "speciesId": "leavanny",

@@ -1188,7 +1188,7 @@ function Pokemon(id, i, b){
 			inflexible = true;
 		}
 
-		if((self.chargedMoves.length == 1) || (self.chargedMoves.length == 2) && (self.chargedMoves[0].type == self.chargedMoves[1].type) && (! inflexible)){
+		if(((self.chargedMoves.length == 1) || ((self.chargedMoves.length == 2) && (self.chargedMoves[0].type == self.chargedMoves[1].type))) && (! inflexible)){
 			cons.push({
 				trait: "Inflexible",
 				desc: "May struggle to hit multiple types."
@@ -1270,7 +1270,7 @@ function Pokemon(id, i, b){
 
 		if(doubleWeaknesses > 0){
 			cons.push({
-				trait: "Risky",
+				trait: "Volatile",
 				desc: "Susceptible to one or more double weaknesses."
 			});
 		}
