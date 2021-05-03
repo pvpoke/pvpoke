@@ -1106,11 +1106,14 @@ var InterfaceMaster = (function () {
 
 				// Display similar pokemon
 				if((gm.rankings[key])&&(context != "custom")){
-					var similarPokemon = pokemon.generateSimilarPokemon(traits);
+					// Delay this to avoid tying up the interface
+					setTimeout(function(){
+						var similarPokemon = pokemon.generateSimilarPokemon(traits);
 
-					for(var i = 0; i < 8; i++){
-						$details.find(".similar-pokemon .list").append("<a href=\"#\" class=\""+similarPokemon[i].types[0]+"\" data=\""+similarPokemon[i].speciesId+"\">"+similarPokemon[i].speciesName+"</a>");
-					}
+						for(var i = 0; i < 8; i++){
+							$details.find(".similar-pokemon .list").append("<a href=\"#\" class=\""+similarPokemon[i].types[0]+"\" data=\""+similarPokemon[i].speciesId+"\">"+similarPokemon[i].speciesName+"</a>");
+						}
+					}, 100);
 				} else{
 					$details.find(".similar-pokemon").remove();
 				}
