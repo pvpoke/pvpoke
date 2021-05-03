@@ -2214,7 +2214,8 @@ a.download-csv{
 				}
 			}
 
-			&.traits-container{
+			&.traits-container,
+			&.similar-pokemon{
 				width:100%;
 
 				.ranking-header{
@@ -2236,6 +2237,10 @@ a.download-csv{
 						position: relative;
 						top: -4px;
 					}
+				}
+
+				.list{
+					justify-content: center;
 				}
 			}
 
@@ -2607,16 +2612,24 @@ a.download-csv{
 	}
 }
 
-.traits{
+.traits,
+.similar-pokemon .list{
 	display:flex;
 	flex-wrap: wrap;
 
-	& > div{
+	& > div,
+	& > a{
 		margin:3px;
 		padding:5px 8px;
 		border-radius:12px;
 		cursor:pointer;
 		border:2px solid rgba(0,0,0,0);
+		text-decoration: none;
+		color:#000;
+
+		&.dark,&.dragon{
+			color:#fff;
+		}
 
 		&:hover{
 			border:2px solid rgba(0,0,0,.25);
@@ -3939,9 +3952,12 @@ a.pokebattler{
 		}
 	}
 
-	.modal .search-traits-selector .traits > div{
+	.modal .search-traits-selector .traits > div,
+	.similar-pokemon a{
 		font-size:12px;
 	}
+
+
 
 
 	.histograms{

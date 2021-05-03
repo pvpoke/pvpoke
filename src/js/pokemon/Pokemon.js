@@ -1324,6 +1324,122 @@ function Pokemon(id, i, b){
 		};
 	}
 
+	// Generates a list of comparable Pokemon, comparing types, moves, and traits, receives existing as an input
+
+	this.generateSimilarPokemon = function(traits){
+
+		var pokemonList = gm.generateFilteredPokemonList(battle, battle.getCup().include, battle.getCup().exclude);
+
+		for(var i = 0; i < pokemonList.length; i++){
+			var pokemon = pokemonList[i];
+			pokemon.selectRecommendedMoveset();
+
+			pokemon.similarityScore = 0;
+
+			var id = pokemon.speciesId.replace("_shadow","")
+
+			if(id.indexOf("_xs") > -1){
+				continue;
+			}
+
+			// A bunch of filtering here to remove Shadows of the same Pokemon and XS entries
+
+			if(id == self.speciesId.replace("_xs","")){
+				continue;
+			}
+
+			if(id == self.speciesId.replace("_shadow","")){
+				continue;
+			}
+
+			var similarityScore = 0; // Used to compare similarity between Pokemon
+
+			// Favor Pokemon with the same or similar types
+			for(var n = 0; n < pokemon.types.length; n++){
+				if((self.types.indexOf(pokemon.types[n]) > -1)&&(pokemon.types[n] != "none")){
+					similarityScore += 400;
+				}
+			}
+
+			// Favor Pokemon with the same or similar moves
+
+			if(pokemon.fastMove.moveId == self.fastMove.moveId){
+				similarityScore += 350;
+			} else if(pokemon.fastMove.type == self.fastMove.moveId){
+				similarityScore += 50;
+			}
+
+			for(var n = 0; n < pokemon.chargedMoves.length; n++){
+				for(var j = 0; j < self.chargedMoves.length; j++){
+					if(pokemon.chargedMoves[n].moveId == self.chargedMoves[j].moveId){
+						similarityScore += 200;
+					} else if(pokemon.chargedMoves[n].type == self.chargedMoves[j].moveId){
+						similarityScore += 50;
+					}
+				}
+			}
+
+			// Favor Pokemon with similar traits
+			if(! traits){
+				traits = self.generateTraits();
+			}
+
+			pokemon.traits = pokemon.generateTraits();
+
+			for(var n = 0; n < pokemon.traits.pros.length; n++){
+				for(var k = 0; k < traits.pros.length; k++){
+					if(pokemon.traits.pros[n].trait == traits.pros[k].trait){
+						similarityScore += 100;
+
+						// Favor Pokemon with similar bulk
+						if((pokemon.traits.pros[n].trait == "Bulky")){
+							similarityScore += 150;
+						}
+
+						// Favor Pokemon with similar bulk
+						if((pokemon.traits.pros[n].trait == "Extremely Bulky")){
+							similarityScore += 350;
+						}
+					}
+
+					if((pokemon.traits.pros[n].trait == "Bulky") && (traits.pros[k].trait == "Extremely Bulky")){
+						similarityScore += 25;
+					}
+
+					if((pokemon.traits.pros[n].trait == "Extremely Bulky") && (traits.pros[k].trait == "Bulky")){
+						similarityScore += 25;
+					}
+				}
+			}
+
+			for(var n = 0; n < pokemon.traits.cons.length; n++){
+				for(var k = 0; k < traits.cons.length; k++){
+					if(pokemon.traits.cons[n].trait == traits.cons[k].trait){
+						similarityScore += 50;
+					}
+
+					if((pokemon.traits.cons[n].trait == "Less Bulky") && (traits.cons[k].trait == "Glass Cannon")){
+						similarityScore += 25;
+					}
+
+					if((pokemon.traits.cons[n].trait == "Glass Cannon") && (traits.cons[k].trait == "Less Bulky")){
+						similarityScore += 25;
+					}
+				}
+			}
+
+			if(pokemon.overall){
+				similarityScore *= Math.pow(pokemon.overall, 1.5);
+			}
+
+			pokemon.similarityScore = similarityScore;
+		}
+
+		pokemonList.sort((a,b) => (a.similarityScore > b.similarityScore) ? -1 : ((b.similarityScore > a.similarityScore) ? 1 : 0));
+
+		return pokemonList;
+	}
+
 	// Returns a string that describes how this Pokemon uses XL Candy
 
 	this.needsXLCandy = function(){

@@ -1914,14 +1914,14 @@ a.download-csv {
   text-transform: capitalize;
   padding: 2px 12px;
 }
-.rank .details .detail-section.traits-container {
+.rank .details .detail-section.traits-container, .rank .details .detail-section.similar-pokemon {
   width: 100%;
 }
-.rank .details .detail-section.traits-container .ranking-header {
+.rank .details .detail-section.traits-container .ranking-header, .rank .details .detail-section.similar-pokemon .ranking-header {
   float: none;
   width: 100%;
 }
-.rank .details .detail-section.traits-container .ranking-header a.trait-info {
+.rank .details .detail-section.traits-container .ranking-header a.trait-info, .rank .details .detail-section.similar-pokemon .ranking-header a.trait-info {
   text-decoration: none;
   color: #00171c;
   border: 1px solid #00171c;
@@ -1935,6 +1935,9 @@ a.download-csv {
   font-size: 12px;
   position: relative;
   top: -4px;
+}
+.rank .details .detail-section.traits-container .list, .rank .details .detail-section.similar-pokemon .list {
+  justify-content: center;
 }
 .rank .details .detail-section .stat-details .stat-row {
   display: flex;
@@ -2254,24 +2257,42 @@ a.download-csv {
   margin: 0 0 5px 0;
 }
 
-.traits {
+.traits,
+.similar-pokemon .list {
   display: flex;
   flex-wrap: wrap;
 }
-.traits > div {
+.traits > div, .traits > a,
+.similar-pokemon .list > div,
+.similar-pokemon .list > a {
   margin: 3px;
   padding: 5px 8px;
   border-radius: 12px;
   cursor: pointer;
   border: 2px solid rgba(0, 0, 0, 0);
+  text-decoration: none;
+  color: #000;
 }
-.traits > div:hover {
+.traits > div.dark, .traits > div.dragon, .traits > a.dark, .traits > a.dragon,
+.similar-pokemon .list > div.dark,
+.similar-pokemon .list > div.dragon,
+.similar-pokemon .list > a.dark,
+.similar-pokemon .list > a.dragon {
+  color: #fff;
+}
+.traits > div:hover, .traits > a:hover,
+.similar-pokemon .list > div:hover,
+.similar-pokemon .list > a:hover {
   border: 2px solid rgba(0, 0, 0, 0.25);
 }
-.traits > div.pro {
+.traits > div.pro, .traits > a.pro,
+.similar-pokemon .list > div.pro,
+.similar-pokemon .list > a.pro {
   background: rgba(23, 222, 75, 0.44);
 }
-.traits > div.con {
+.traits > div.con, .traits > a.con,
+.similar-pokemon .list > div.con,
+.similar-pokemon .list > a.con {
   background: rgba(255, 88, 88, 0.67);
 }
 
@@ -3645,7 +3666,8 @@ a.pokebattler {
     width: auto !important;
   }
 
-  .modal .search-traits-selector .traits > div {
+  .modal .search-traits-selector .traits > div,
+.similar-pokemon a {
     font-size: 12px;
   }
 

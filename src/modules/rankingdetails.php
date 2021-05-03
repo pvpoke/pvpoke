@@ -165,6 +165,11 @@
 		<div class="ranking-header">Charged Move Cost</div>
 		<div class="third-move-cost clear"></div>
 	</div>
+	<div class="clear"></div>
+	<div class="detail-section similar-pokemon">
+		<div class="ranking-header">Similar Pokemon</div>
+		<div class="list"></div>
+	</div>
 	<div class="share-link detail-section"><input type="text" readonly="">
 		<div class="copy">Copy</div>
 	</div>

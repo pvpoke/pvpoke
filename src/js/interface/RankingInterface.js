@@ -54,6 +54,7 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".continentals .check", toggleContinentalsSlots);
 				$("body").on("click", ".detail-section .trait-info, .detail-section .traits > div", openTraitPopup);
 				$("body").on("click", ".detail-section a.show-move-stats", toggleMoveStats);
+				$("body").on("click", ".detail-section.similar-pokemon a", jumpToSimilarPokemon);
 
 				pokeSearch.setBattle(battle);
 
@@ -304,13 +305,7 @@ var InterfaceMaster = (function () {
 				// If a Pokemon has been selected via URL parameters, jump to it
 
 				if(jumpToPoke){
-					var $el = $(".rank[data=\""+jumpToPoke+"\"]")
-					$el.trigger("click");
-
-					// Scroll to element
-
-					$("html, body").animate({ scrollTop: 350}, 500);
-					$(".rankings-container").scrollTop($el.position().top-$(".rankings-container").position().top-20);
+					self.jumpToPokemon(jumpToPoke);
 
 					jumpToPoke = false;
 				}
@@ -440,6 +435,29 @@ var InterfaceMaster = (function () {
 
 			this.getMetaGroup = function(){
 				return metaGroup;
+			}
+
+			// Open and scroll to a specified Pokemon
+
+			this.jumpToPokemon = function(id){
+				var $el = $(".rank[data=\""+id+"\"]")
+				$el.show();
+
+				// Close all ranking details
+				$(".rankings-container > .rank").removeClass("selected");
+				$(".rankings-container > .rank > .details").removeClass("active");
+
+				$(".rankings-container").scrollTop(0); // This is dumb but it works for reasons I do not understand
+
+				// Scroll to element
+				var elTop = $el.position().top;
+				var containerTop = $(".rankings-container").position().top;
+				var gotoTop = elTop - containerTop - 20;
+
+				$("html, body").animate({ scrollTop: 350}, 500);
+				$(".rankings-container").scrollTop(gotoTop);
+
+				$el.trigger("click");
 			}
 
 			// Event handler for changing the league select
@@ -699,7 +717,6 @@ var InterfaceMaster = (function () {
 					} else if(fastMoves[n].archetype == "Low Quality"){
 						archetypeClass = "low-quality";
 					}
-
 
 					$moveDetails.addClass(fastMoves[n].type);
 					$moveDetails.find(".name").html(fastMoves[n].displayName);
@@ -975,13 +992,12 @@ var InterfaceMaster = (function () {
 				}
 
 				var scores;
+				var key = battle.getCup().name + "overall" + battle.getCP();
 
 				if(r.scores){
 					scores = r.scores;
 				} else{
 					// If overall rankings have been loaded, grab overall scores from there
-
-					var key = battle.getCup().name + "overall" + battle.getCP();
 
 					if(gm.rankings[key]){
 						for(var i = 0; i < gm.rankings[key].length; i++){
@@ -1087,6 +1103,17 @@ var InterfaceMaster = (function () {
 				for(var i = 0; i < traits.cons.length; i++){
 					$details.find(".traits").append("<div class=\"con\" title=\""+traits.cons[i].desc+"\">- "+traits.cons[i].trait+"</div>");
 				}
+
+				// Display similar pokemon
+				if((gm.rankings[key])&&(context != "custom")){
+					var similarPokemon = pokemon.generateSimilarPokemon(traits);
+
+					for(var i = 0; i < 8; i++){
+						$details.find(".similar-pokemon .list").append("<a href=\"#\" class=\""+similarPokemon[i].types[0]+"\" data=\""+similarPokemon[i].speciesId+"\">"+similarPokemon[i].speciesName+"</a>");
+					}
+				} else{
+					$details.find(".similar-pokemon").remove();
+				}
 			}
 
 			// Turn checkboxes on and off
@@ -1160,6 +1187,14 @@ var InterfaceMaster = (function () {
 				$traits.find("div").each(function(index, value){
 					$(".modal .traits").append("<div class=\""+$(this).attr("class")+"\"><div class=\"name\">"+$(this).html()+"</div><div class=\"desc\">"+$(this).attr("title")+"</div></div>");
 				});
+			}
+
+			// Jump to a Pokemon entry from the similar Pokemon section
+
+			function jumpToSimilarPokemon(e){
+				e.preventDefault();
+
+				self.jumpToPokemon($(e.target).attr("data"));
 			}
 
 			// Toggle move stats in the ranking details
