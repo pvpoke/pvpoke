@@ -45,6 +45,10 @@ var InterfaceMaster = (function () {
 				var cp = parseInt($(".league-select option:selected").val());
 				var levelCap = parseInt($(".league-select option:selected").attr("level-cap"));
 
+				if(levelCap == 40){
+					battle.setCup("classic");
+				}
+
 				if(allowed.indexOf(cp) > -1){
 					battle.setCP(cp);
 					battle.setLevelCap(levelCap);
