@@ -1014,6 +1014,11 @@ var InterfaceMaster = (function () {
 
 					// This is really dumb but we're pulling the type color out of the background gradient
 					var bgArr = $rank.css("background").split("linear-gradient(");
+
+					if(bgArr.length < 2){
+						bgArr = $rank.css("background-image").split("linear-gradient(");
+					}
+
 					bgArr = bgArr[1].split(" 30%");
 					var bgStr = bgArr[0]
 
