@@ -3844,7 +3844,7 @@
             "cp2500": [30, 4, 14, 14]
         },
         "eliteMoves": ["KARATE_CHOP", "STONE_EDGE", "SUBMISSION", "PAYBACK"],
-        "searchPriority": 5,
+        "searchPriority": 10,
         "level25CP": 1893,
         "tags": ["shadoweligible"],
         "buddyDistance": 3,
@@ -7783,6 +7783,7 @@
             "cp1500": [23, 5, 11, 12],
             "cp2500": [45.5, 6, 15, 15]
         },
+		"searchPriority": 15,
         "level25CP": 1494,
         "tags": ["shadoweligible"],
         "eliteMoves": ["EARTHQUAKE"],
@@ -9080,7 +9081,7 @@
             "cp1500": [27, 5, 9, 13],
             "cp2500": [50, 15, 15, 15]
         },
-        "searchPriority": 13,
+        "searchPriority": 5,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
@@ -9255,7 +9256,7 @@
             "cp2500": [40, 4, 15, 13]
         },
         "eliteMoves": ["WATER_GUN"],
-        "searchPriority": 5,
+        "searchPriority": 12,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
@@ -10640,6 +10641,7 @@
             "cp1500": [26, 6, 15, 13],
             "cp2500": [50, 15, 15, 15]
         },
+		"searchPriority": 10,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
@@ -15888,6 +15890,7 @@
             "cp1500": [18, 5, 10, 14],
             "cp2500": [30, 4, 15, 9]
         },
+		"searchPriority": 2,
         "level25CP": 1908,
         "tags": ["shadoweligible"],
         "buddyDistance": 5,
@@ -17895,6 +17898,7 @@
             "cp1500": [17, 4, 14, 11],
             "cp2500": [28, 5, 14, 15]
         },
+		"searchPriority": 5,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
@@ -19265,6 +19269,7 @@
             "cp1500": [24, 4, 12, 15],
             "cp2500": [46.5, 13, 14, 15]
         },
+		"searchPriority": 10,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
@@ -21848,6 +21853,7 @@
             "cp1500": [16, 4, 14, 7],
             "cp2500": [26, 7, 13, 14]
         },
+		"searchPriority": 5,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
