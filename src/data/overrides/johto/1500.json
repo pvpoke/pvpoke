@@ -1,0 +1,71 @@
+[
+	{
+		"speciesId": "politoed",
+		"chargedMoves": ["WEATHER_BALL_WATER", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "politoed_shadow",
+		"chargedMoves": ["WEATHER_BALL_WATER", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "forretress",
+		"chargedMoves": ["MIRROR_SHOT", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "forretress_shadow",
+		"chargedMoves": ["MIRROR_SHOT", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "mantine",
+		"chargedMoves": ["BUBBLE_BEAM", "ICE_BEAM"]
+	},
+	{
+		"speciesId": "feraligatr",
+		"fastMove": "ICE_FANG"
+	},
+	{
+		"speciesId": "gligar_shadow",
+		"fastMove": "WING_ATTACK"
+	},
+	{
+		"speciesId": "granbull",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "ariados",
+		"fastMove": "POISON_STING"
+	},
+	{
+		"speciesId": "magcargo",
+		"fastMove": "ROCK_THROW"
+	},
+	{
+		"speciesId": "raikou",
+		"fastMove": "THUNDER_SHOCK"
+	},
+	{
+		"speciesId": "raikou_shadow",
+		"fastMove": "THUNDER_SHOCK"
+	},
+	{
+		"speciesId": "gligar",
+		"fastMove": "WING_ATTACK",
+		"chargedMoves": ["NIGHT_SLASH", "RETURN"]
+	},
+	{
+		"speciesId": "azumarill",
+		"weight": 2
+	},
+	{
+		"speciesId": "umbreon",
+		"weight": 2
+	},
+	{
+		"speciesId": "skarmory",
+		"weight": 2
+	},
+	{
+		"speciesId": "meganium",
+		"weight": 2
+	}
+]

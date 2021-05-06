@@ -39,55 +39,20 @@ switch($cup){
 		$league = 'Premier';
 		break;
 
-	case "nightfall":
-		$league = 'Silph Nightfall Cup';
-		break;
 	case "classic":
 		$league = 'Master League Classic';
 		break;
 
-	case "kanto":
-		$league = 'Kanto Cup';
-		break;
-
-	case "love":
-		$league = 'Love Cup';
-		break;
-
-	case "cerberus":
-		$league = 'Cerberus Cup';
-		break;
-
-	case "labyrinth":
-		$league = 'Silph Labyrinth Cup';
-		break;
-
-	case "vortex":
-		$league = 'Silph Vortex Cup';
+	case "johto":
+		$league = 'Johto Cup';
 		break;
 
 	case "retro":
 		$league = 'Retro Cup';
 		break;
 
-	case "remix":
-		$league = 'Great League Remix';
-		break;
-
-	case "ou":
-		$league = 'PoGoRaids Overused Tournament';
-		break;
-
 	case "goteamup":
 		$league = 'GO Stadium GOTeamUp';
-		break;
-
-	case "slitzko":
-		$league = 'Slitzko Memorial Cup';
-		break;
-
-	case "prismatic":
-		$league = 'Silph Prismatic Cup';
 		break;
 
 	case "commander":

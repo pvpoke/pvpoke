@@ -633,6 +633,18 @@
         "partySize": 3,
         "link": "https://antimatter.gg/nexusleague"
     }, {
+        "name": "johto",
+        "title": "Johto Cup",
+        "include": [{
+            "filterType": "dex",
+            "values": [152, 251]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }],
+        "link": "https://antimatter.gg/nexusleague"
+    }, {
         "name": "love",
         "title": "Love Cup",
         "include": [{
