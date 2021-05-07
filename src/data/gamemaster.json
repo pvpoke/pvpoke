@@ -21215,7 +21215,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false
+        "released": true
     }, {
         "dex": 675,
         "speciesName": "Pangoro",
@@ -21228,14 +21228,15 @@
         "types": ["fighting", "dark"],
         "fastMoves": ["LOW_KICK", "SNARL", "BULLET_PUNCH"],
         "chargedMoves": ["CLOSE_COMBAT", "NIGHT_SLASH", "IRON_HEAD", "ROCK_SLIDE"],
-        "defaultIVs": {
+		"defaultIVs": {
             "cp500": [6.5, 7, 14, 11],
-            "cp1500": [19, 5, 12, 15],
+            "cp1500": [20, 4, 5, 4],
             "cp2500": [33, 4, 15, 14]
         },
+        "levelFloor": 20,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false
+        "released": true
     }, {
         "dex": 676,
         "speciesName": "Furfrou",

@@ -254,6 +254,10 @@ var GameMaster = (function () {
 							defaultIndex = 31;
 						}
 
+						if(defaultIndex > combinations.length){
+							defaultIndex = Math.floor(combinations.length / 2);
+						}
+
 						var level = combinations[defaultIndex].level;
 						var ivs = combinations[defaultIndex].ivs;
 						var combination = [level, ivs.atk, ivs.def, ivs.hp];

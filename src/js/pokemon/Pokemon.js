@@ -44,6 +44,7 @@ function Pokemon(id, i, b){
 	this.level = 50;
 	this.levelCap = 50; // Variable level cap as determined by the battle settings
 	this.baseLevelCap = 50; // The default level cap as determined by the game master
+	this.baseLevelFloor = 1; // IV combinations won't go lower than this level
 	this.cpm = 0.840300023555755;
 	this.priority = 0; // Charged move priority
 	this.fastMovePool = [];
@@ -114,6 +115,10 @@ function Pokemon(id, i, b){
 	if(data.levelCap){
 		this.baseLevelCap = data.levelCap;
 		this.levelCap = data.levelCap;
+	}
+
+	if(data.levelFloor){
+		this.baseLevelFloor = data.levelFloor;
 	}
 
 	// Set battle moves
@@ -369,13 +374,22 @@ function Pokemon(id, i, b){
 			floor = 10;
 		}
 
+		if(self.hasMove("RETURN")){
+			floor = 2;
+		}
+
         hpIV = 15;
         while (hpIV >= floor) {
             defIV = 15;
             while (defIV >= floor) {
                 atkIV = 15;
                 while (atkIV >= floor) {
-					level = 0.5;
+					if(targetCP > 500){ // Ignore level floor for Little Cup right now
+						level = self.baseLevelFloor;
+					} else{
+						level = 0.5;
+					}
+
 					calcCP = 0;
 
 					while((level < self.levelCap)&&(calcCP < targetCP)){
