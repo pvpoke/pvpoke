@@ -1474,7 +1474,7 @@ function Pokemon(id, i, b){
 
 	this.hasMove = function(moveId){
 
-		if(self.fastMove.moveId == moveId){
+		if((self.fastMove)&&(self.fastMove.moveId == moveId)){
 			return true;
 		}
 

@@ -21233,6 +21233,7 @@
             "cp1500": [20, 4, 5, 4],
             "cp2500": [33, 4, 15, 14]
         },
+		"searchPriority": 5,
         "levelFloor": 20,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
