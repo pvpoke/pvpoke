@@ -30,11 +30,6 @@
 		"chargedMoves":["SURF","SKULL_BASH"]
 	},
 	{
-		"speciesId":"sealeo",
-		"fastMove":"POWDER_SNOW",
-		"chargedMoves":["BODY_SLAM","AURORA_BEAM"]
-	},
-	{
 		"speciesId":"cresselia",
 		"fastMove":"PSYCHO_CUT",
 		"chargedMoves":["GRASS_KNOT","MOONBLAST"]
@@ -62,7 +57,7 @@
 	{
 		"speciesId":"mew",
 		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["ROCK_SLIDE","ICE_BEAM"]
+		"chargedMoves":["DRAGON_CLAW","WILD_CHARGE"]
 	},
 	{
 		"speciesId":"hypno",
@@ -78,11 +73,6 @@
 		"speciesId":"regirock",
 		"fastMove":"LOCK_ON",
 		"chargedMoves":["STONE_EDGE","FOCUS_BLAST"]
-	},
-	{
-		"speciesId":"mantine",
-		"fastMove":"WING_ATTACK",
-		"chargedMoves":["BUBBLE_BEAM","ICE_BEAM"]
 	},
 	{
 		"speciesId":"galvantula",
@@ -105,6 +95,11 @@
 		"chargedMoves":["WEATHER_BALL_ICE","ENERGY_BALL"]
 	},
 	{
+		"speciesId":"meganium",
+		"fastMove":"VINE_WHIP",
+		"chargedMoves":["FRENZY_PLANT","EARTHQUAKE"]
+	},
+	{
 		"speciesId":"drifblim",
 		"fastMove":"HEX",
 		"chargedMoves":["ICY_WIND","SHADOW_BALL"]
@@ -118,5 +113,55 @@
 		"speciesId":"lickitung",
 		"fastMove":"LICK",
 		"chargedMoves":["BODY_SLAM","POWER_WHIP"]
+	},
+	{
+		"speciesId":"snorlax",
+		"fastMove":"LICK",
+		"chargedMoves":["BODY_SLAM","SUPER_POWER"]
+	},
+	{
+		"speciesId":"dusclops",
+		"fastMove":"HEX",
+		"chargedMoves":["SHADOW_PUNCH","ICE_PUNCH"]
+	},
+	{
+		"speciesId":"dusclops_shadow",
+		"fastMove":"HEX",
+		"chargedMoves":["SHADOW_PUNCH","ICE_PUNCH"]
+	},
+	{
+		"speciesId":"graveler_alolan",
+		"fastMove":"VOLT_SWITCH",
+		"chargedMoves":["ROCK_BLAST","STONE_EDGE"]
+	},
+	{
+		"speciesId":"magcargo",
+		"fastMove":"ROCK_THROW",
+		"chargedMoves":["STONE_EDGE","OVERHEAT"]
+	},
+	{
+		"speciesId":"talonflame",
+		"fastMove":"INCINERATE",
+		"chargedMoves":["FLAME_CHARGE","BRAVE_BIRD"]
+	},
+	{
+		"speciesId":"politoed",
+		"fastMove":"MUD_SHOT",
+		"chargedMoves":["WEATHER_BALL_WATER","EARTHQUAKE"]
+	},
+	{
+		"speciesId":"vigoroth",
+		"fastMove":"COUNTER",
+		"chargedMoves":["BODY_SLAM","BULLDOZE"]
+	},
+	{
+		"speciesId":"zangoose",
+		"fastMove":"SHADOW_CLAW",
+		"chargedMoves":["NIGHT_SLASH","CLOSE_COMBAT"]
+	},
+	{
+		"speciesId":"gengar",
+		"fastMove":"SHADOW_CLAW",
+		"chargedMoves":["SHADOW_PUNCH","SLUDGE_BOMB"]
 	}
 ]
