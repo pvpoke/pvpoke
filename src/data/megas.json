@@ -376,23 +376,6 @@
         "cp2500": [28.5, 6, 11, 13]
     }
 }, {
-    "dex": 334,
-    "speciesName": "Altaria (Mega)",
-    "speciesId": "altaria_mega",
-    "baseStats": {
-        "atk": 222,
-        "def": 218,
-        "hp": 181
-    },
-    "types": ["dragon", "fairy"],
-    "fastMoves": ["DRAGON_BREATH", "PECK"],
-    "chargedMoves": ["DAZZLING_GLEAM", "DRAGON_PULSE", "SKY_ATTACK"],
-    "tags": ["mega"],
-    "defaultIVs": {
-        "cp1500": [17.5, 7, 14, 7],
-        "cp2500": [29, 7, 12, 11]
-    }
-}, {
     "dex": 354,
     "speciesName": "Banette (Mega)",
     "speciesId": "banette_mega",

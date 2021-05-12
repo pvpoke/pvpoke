@@ -12175,7 +12175,8 @@
         },
         "types": ["dragon", "flying"],
         "fastMoves": ["DRAGON_BREATH", "PECK"],
-        "chargedMoves": ["DAZZLING_GLEAM", "DRAGON_PULSE", "SKY_ATTACK"],
+        "chargedMoves": ["DAZZLING_GLEAM", "DRAGON_PULSE", "SKY_ATTACK", "MOONBLAST"],
+		"eliteMoves": ["MOONBLAST"],
         "defaultIVs": {
             "cp500": [9.5, 5, 14, 10],
             "cp1500": [28.5, 4, 14, 11],
@@ -12186,6 +12187,27 @@
         "thirdMoveCost": 10000,
         "released": true
     }, {
+	    "dex": 334,
+	    "speciesName": "Altaria (Mega)",
+	    "speciesId": "altaria_mega",
+	    "baseStats": {
+	        "atk": 222,
+	        "def": 218,
+	        "hp": 181
+	    },
+	    "types": ["dragon", "fairy"],
+	    "fastMoves": ["DRAGON_BREATH", "PECK"],
+	    "chargedMoves": ["DAZZLING_GLEAM", "DRAGON_PULSE", "SKY_ATTACK", "MOONBLAST"],
+		"eliteMoves": ["MOONBLAST"],
+	    "tags": ["mega"],
+	    "defaultIVs": {
+	        "cp1500": [17.5, 7, 14, 7],
+	        "cp2500": [29, 7, 12, 11]
+	    },
+		"buddyDistance": 1,
+        "thirdMoveCost": 10000,
+		"released": true
+	}, {
         "dex": 335,
         "speciesName": "Zangoose",
         "speciesId": "zangoose",
@@ -21757,7 +21779,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false
+        "released": true
     }, {
         "dex": 701,
         "speciesName": "Hawlucha",
