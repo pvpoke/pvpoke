@@ -21771,7 +21771,8 @@
         },
         "types": ["fairy", "none"],
         "fastMoves": ["CHARM", "QUICK_ATTACK"],
-        "chargedMoves": ["MOONBLAST", "DAZZLING_GLEAM", "DRAINING_KISS"],
+        "chargedMoves": ["MOONBLAST", "DAZZLING_GLEAM", "DRAINING_KISS", "LAST_RESORT"],
+		"eliteMoves": ["LAST_RESORT"],
         "defaultIVs": {
             "cp500": [6, 11, 14, 15],
             "cp1500": [18.5, 4, 6, 12],
