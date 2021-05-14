@@ -22,6 +22,11 @@
 		"weight": 10
 	},
 	{
+		"speciesId": "yveltal",
+		"chargedMoves": ["DARK_PULSE", "FOCUS_BLAST"],
+		"weight": 15
+	},
+	{
 		"speciesId": "machamp_shadow",
 		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
 		"weight": 5
@@ -211,7 +216,7 @@
 	{
 		"speciesId": "togekiss",
 		"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"],
-		"weight": 20
+		"weight": 30
 	},
 	{
 		"speciesId": "mewtwo_armored",
@@ -233,7 +238,7 @@
 	{
 		"speciesId": "kyogre",
 		"chargedMoves": ["SURF","BLIZZARD"],
-		"weight": 15
+		"weight": 12
 	},
 	{
 		"speciesId": "charizard",
@@ -263,7 +268,7 @@
 	{
 		"speciesId": "dragonite",
 		"chargedMoves": ["DRAGON_CLAW","HURRICANE"],
-		"weight": 10
+		"weight": 25
 	},
 	{
 		"speciesId": "dragonite_shadow",
@@ -307,7 +312,7 @@
 	{
 		"speciesId": "gyarados",
 		"fastMove": "DRAGON_BREATH",
-		"weight": 20
+		"weight": 25
 	},
 	{
 		"speciesId": "gyarados",

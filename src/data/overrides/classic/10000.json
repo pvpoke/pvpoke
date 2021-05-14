@@ -45,6 +45,11 @@
 		"chargedMoves": ["SUPER_POWER", "STONE_EDGE"]
 	},
 	{
+		"speciesId": "yveltal",
+		"chargedMoves": ["DARK_PULSE", "FOCUS_BLAST"],
+		"weight": 25
+	},
+	{
 		"speciesId": "magmortar",
 		"chargedMoves": ["FIRE_PUNCH", "THUNDERBOLT"]
 	},
@@ -204,7 +209,7 @@
 	{
 		"speciesId": "mewtwo",
 		"chargedMoves": ["PSYSTRIKE", "FOCUS_BLAST"],
-		"weight": 10
+		"weight": 20
 	},
 	{
 		"speciesId": "mewtwo_shadow",
@@ -247,7 +252,7 @@
 	{
 		"speciesId": "dragonite",
 		"chargedMoves": ["DRAGON_CLAW","HURRICANE"],
-		"weight": 15
+		"weight": 25
 	},
 	{
 		"speciesId": "dragonite_shadow",
@@ -277,11 +282,11 @@
 	},
 	{
 		"speciesId": "groudon",
-		"weight": 30
+		"weight": 25
 	},
 	{
 		"speciesId": "darkrai",
-		"weight": 4
+		"chargedMoves": ["DARK_PULSE","FOCUS_BLAST"]
 	},
 	{
 		"speciesId": "mamoswine",

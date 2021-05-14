@@ -101,6 +101,11 @@
 		"weight": 2
 	},
 	{
+		"speciesId": "yveltal",
+		"fastMove": "SNARL",
+		"chargedMoves": ["DARK_PULSE", "HURRICANE"]
+	},
+	{
 		"speciesId": "suicune",
 		"chargedMoves": ["BUBBLE_BEAM", "ICE_BEAM"]
 	},
