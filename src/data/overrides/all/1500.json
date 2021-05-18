@@ -568,6 +568,10 @@
 		"chargedMoves": ["CLOSE_COMBAT", "HEAVY_SLAM"]
 	},
 	{
+		"speciesId": "hariyama_shadow",
+		"chargedMoves": ["CLOSE_COMBAT", "HEAVY_SLAM"]
+	},
+	{
 		"speciesId": "pinsir",
 		"chargedMoves": ["CLOSE_COMBAT", "X_SCISSOR"]
 	},
@@ -611,6 +615,10 @@
 	},
 	{
 		"speciesId": "granbull",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "granbull_shadow",
 		"fastMove": "CHARM"
 	},
 	{

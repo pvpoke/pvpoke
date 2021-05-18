@@ -187,6 +187,10 @@
 		"chargedMoves": ["CLOSE_COMBAT", "HEAVY_SLAM"]
 	},
 	{
+		"speciesId": "hariyama_shadow",
+		"chargedMoves": ["CLOSE_COMBAT", "HEAVY_SLAM"]
+	},
+	{
 		"speciesId": "sceptile",
 		"chargedMoves": ["LEAF_BLADE", "EARTHQUAKE"]
 	},
@@ -321,7 +325,7 @@
 		"weight": 2
 	},
 	{
-		"speciesId": "granbull_xl",
+		"speciesId": "granbull_shadow",
 		"fastMove": "CHARM"
 	},
 	{

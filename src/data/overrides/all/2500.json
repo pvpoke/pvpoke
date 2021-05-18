@@ -323,6 +323,10 @@
 		"chargedMoves": ["CLOSE_COMBAT", "HEAVY_SLAM"]
 	},
 	{
+		"speciesId": "hariyama_shadow",
+		"chargedMoves": ["CLOSE_COMBAT", "HEAVY_SLAM"]
+	},
+	{
 		"speciesId": "drapion",
 		"fastMove": "ICE_FANG",
 		"chargedMoves": ["CRUNCH", "AQUA_TAIL"]
@@ -537,6 +541,12 @@
 	},
 	{
 		"speciesId": "granbull",
+		"fastMove": "CHARM",
+		"weight": 3
+	},
+	{
+		"speciesId": "granbull_shadow",
+		"fastMove": "CHARM",
 		"weight": 3
 	},
 	{
