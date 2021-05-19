@@ -5,6 +5,7 @@
 	<option value="tsa-3" cup="commander">Silph Commander Cup</option>
 	<option value="tsa-3" cup="factions">Silph Factions (Floating City)</option>
 	<option value="community" cup="johto">Nexus League Johto Cup</option>
+	<option value="community" cup="adl">Arrohh Draft League</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>
@@ -44,6 +45,7 @@
 	<option value="ou" cat="community">PoGoRaids Overused Tournament</option>
 	<option value="slitzko" cat="community">Slitzko Cup</option>
 	<option value="johto" cat="community">Johto Cup</option>
+	<option value="adl" cat="community">ADL</option>
 	<option value="jungle"  cat="tsa-1">Jungle Cup</option>
 	<option value="rainbow" cat="tsa-1">Rainbow Cup</option>
 	<option value="championships-1" cat="tsa-1">Season 1 Championships</option>

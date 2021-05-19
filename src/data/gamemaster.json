@@ -3976,6 +3976,24 @@
          ]
       },
       {
+         "name":"adl",
+         "title":"Arrohh Draft League",
+         "include":[
+         ],
+         "exclude":[
+            {
+               "filterType":"tag",
+               "values":[
+                  "mega"
+               ]
+            },
+            {
+               "filterType":"id",
+               "values":["stunfisk_galarian","tropius","lickitung","medicham","azumarill","galvantula","altaria","jellicent","vigoroth","ninetales_alolan","marowak_alolan","umbreon","cresselia","swampert","swampert_shadow","toxicroak","deoxys_defense"]
+            }
+         ]
+      },
+      {
          "name":"cerberus",
          "title":"Victory Road Cerberus Cup",
          "link":"https://silph.gg/t/eh4b/the-three-heads-of-cerberus",
