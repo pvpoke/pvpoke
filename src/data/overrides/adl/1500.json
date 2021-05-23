@@ -519,7 +519,7 @@
 	{
 		"speciesId": "slaking",
 		"chargedMoves": ["EARTHQUAKE", "PLAY_ROUGH"]
-	},	
+	},
 	{
 		"speciesId": "blaziken",
 		"chargedMoves": ["BLAZE_KICK", "STONE_EDGE"]
@@ -865,6 +865,10 @@
 	},
 	{
 		"speciesId": "venusaur",
+		"chargedMoves": ["PETAL_BLIZZARD","SLUDGE_BOMB"]
+	},
+	{
+		"speciesId": "venusaur_shadow",
 		"chargedMoves": ["PETAL_BLIZZARD","SLUDGE_BOMB"]
 	},
 	{

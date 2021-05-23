@@ -17,7 +17,7 @@
 	{
 		"speciesId":"jellicent",
 		"fastMove":"HEX",
-		"chargedMoves":["ICE_BEAM","SHADOW_BALL"]
+		"chargedMoves":["BUBBLE_BEAM","SHADOW_BALL"]
 	},
 	{
 		"speciesId":"talonflame",
@@ -25,9 +25,24 @@
 		"chargedMoves":["FLAME_CHARGE","BRAVE_BIRD"]
 	},
 	{
+		"speciesId":"ninetales_alolan",
+		"fastMove":"POWDER_SNOW",
+		"chargedMoves":["WEATHER_BALL_ICE","DAZZLING_GLEAM"]
+	},
+	{
+		"speciesId":"ninetales_alolan",
+		"fastMove":"CHARM",
+		"chargedMoves":["WEATHER_BALL_ICE","PSYSHOCK"]
+	},
+	{
+		"speciesId":"politoed",
+		"fastMove":"MUD_SHOT",
+		"chargedMoves":["WEATHER_BALL_WATER","EARTHQUAKE"]
+	},
+	{
 		"speciesId":"altaria",
 		"fastMove":"DRAGON_BREATH",
-		"chargedMoves":["SKY_ATTACK","DRAGON_PULSE"]
+		"chargedMoves":["SKY_ATTACK","MOONBLAST"]
 	},
 	{
 		"speciesId":"mandibuzz",
@@ -78,6 +93,11 @@
 		"speciesId":"meganium",
 		"fastMove":"VINE_WHIP",
 		"chargedMoves":["FRENZY_PLANT","EARTHQUAKE"]
+	},
+	{
+		"speciesId":"serperior",
+		"fastMove":"VINE_WHIP",
+		"chargedMoves":["FRENZY_PLANT","AERIAL_ACE"]
 	},
 	{
 		"speciesId":"shiftry",
@@ -190,19 +210,9 @@
 		"chargedMoves":["FLASH_CANNON","FOCUS_BLAST"]
 	},
 	{
-		"speciesId":"mantine",
-		"fastMove":"BUBBLE",
-		"chargedMoves":["BUBBLE_BEAM","ICE_BEAM"]
-	},
-	{
 		"speciesId":"vigoroth",
 		"fastMove":"COUNTER",
 		"chargedMoves":["BODY_SLAM","BULLDOZE"]
-	},
-	{
-		"speciesId":"raichu_alolan",
-		"fastMove":"VOLT_SWITCH",
-		"chargedMoves":["THUNDER_PUNCH","WILD_CHARGE"]
 	},
 	{
 		"speciesId":"galvantula",
@@ -223,11 +233,6 @@
 		"speciesId":"abomasnow",
 		"fastMove":"POWDER_SNOW",
 		"chargedMoves":["WEATHER_BALL_ICE","ENERGY_BALL"]
-	},
-	{
-		"speciesId":"zweilous",
-		"fastMove":"DRAGON_BREATH",
-		"chargedMoves":["BODY_SLAM","DARK_PULSE"]
 	},
 	{
 		"speciesId":"drifblim",
