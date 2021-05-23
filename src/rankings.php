@@ -43,8 +43,8 @@ switch($cup){
 		$league = 'Master League Classic';
 		break;
 
-	case "johto":
-		$league = 'Johto Cup';
+	case "kanto":
+		$league = 'Kanto Cup';
 		break;
 
 	case "retro":
