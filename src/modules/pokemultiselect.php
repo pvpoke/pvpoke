@@ -24,8 +24,8 @@
 				<option value="premierultra" type="ultra" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="premier" type="master" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="kanto" type="great" class="multi-battle">Kanto Cup Meta</option>
-				<option value="retro" type="great" class="multi-battle">Retro Cup Meta</option>
 				<option value="commander" type="great" class="multi-battle">Silph Commander Cup Meta</option>
+				<option value="venture" type="great" class="multi-battle">Silph Venture Cup Meta</option>
 				<option value="factions" type="great" class="multi-battle">Silph Factions Meta (Floating City)</option>
 			</select>
 			<div class="flex quick-fill-buttons">
