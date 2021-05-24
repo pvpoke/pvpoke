@@ -2,8 +2,8 @@
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
 	<option value="community" cup="kanto">Kanto Cup</option>
-	<option value="official" cup="retro">Retro Cup</option>
 	<option value="tsa-3" cup="commander">Silph Commander Cup</option>
+	<option value="tsa-3" cup="venture">Silph Venture Cup</option>
 	<option value="tsa-3" cup="factions">Silph Factions (Floating City)</option>
 	<option value="community" cup="adl">Arrohh Draft League</option>
 
@@ -81,6 +81,7 @@
 	<option value="vortex" cat="tsa-3">Vortex Cup</option>
 	<option value="prismatic" cat="tsa-3">Prismatic Cup</option>
 	<option value="commander" cat="tsa-3">Commander Cup</option>
+	<option value="venture" cat="tsa-3">Venture Cup</option>
 	<option value="factions" cat="tsa-3">Floating City</option>
 	<option value="custom" cat="custom">Custom</option>
 </select>

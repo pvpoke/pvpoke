@@ -161,7 +161,21 @@
         "name": "cliffhanger",
         "title": "Cliffhanger",
         "include": [],
-        "exclude": []
+        "exclude": [],
+		"tierRules": {
+	        "max": 17,
+			"floor": 0,
+	        "tiers": [{
+	            "points": 9,
+	            "pokemon": ["altaria", "azumarill", "skarmory", "deoxys_defense", "medicham", "registeel", "stunfisk_galarian", "tropius"]
+	        }, {
+	            "points": 5,
+	            "pokemon": ["abomasnow", "bastiodon", "cresselia", "dewgong", "diggersby", "ferrothorn", "galvantula", "hypno", "hypno_shadow", "ivysaur", "jellicent", "lapras", "lickitung", "marowak_alolan", "machamp", "mandibuzz", "meganium", "politoed", "sableye", "scrafty", "swampert", "umbreon", "venusaur", "whiscash", "wobbuffet", "zweilous"]
+	        }, {
+	            "points": 1,
+	            "pokemon": ["bronzong", "cherrim_sunny", "castform_rainy", "castform_sunny", "chesnaught", "clefable", "drifblim", "empoleon", "froslass", "gardevoir", "gengar", "golbat", "haunter", "jirachi", "jumpluff", "lanturn", "lugia", "mantine", "melmetal", "mew", "muk_alolan", "ninetales", "ninetales_alolan", "noctowl", "obstagoon", "pelipper", "probopass", "regirock", "raichu", "raichu_alolan", "raikou", "shiftry", "sirfetchd", "stunfisk", "togekiss", "toxicroak", "victreebel", "vigoroth", "wigglytuff", "zapdos"]
+	        }]
+	    }
     }, {
         "name": "sinister",
         "title": "Sinister Cup",
@@ -834,6 +848,34 @@
             "filterType": "id",
             "values": ["stunfisk_galarian", "skarmory", "altaria", "bastiodon", "registeel", "chansey"]
         }]
+    }, {
+        "name": "venture",
+        "title": "Venture Cup",
+        "include": [],
+        "exclude": [{
+            "filterType": "type",
+            "values": ["dark", "fairy", "steel"]
+        }, {
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["chansey"]
+        }],
+		"tierRules": {
+	        "max": 20,
+			"floor": 1,
+	        "tiers": [{
+	            "points": 10,
+	            "pokemon": ["hypno","hypno_shadow","lickitung","altaria","froslass","cresselia","marowak_alolan"]
+	        }, {
+	            "points": 6,
+	            "pokemon": ["dewgong","lapras","snorlax","dragonair","politoed","kingdra","vigoroth","medicham","regirock","deoxys_defense","munchlax","lickilicky","jellicent","galvantula","talonflame"]
+	        }, {
+	            "points": 4,
+	            "pokemon": ["machamp","haunter","gengar","dragonite","mew","lanturn","wobbuffet","mantine","swampert","pelipper","zangoose","whiscash","cradily","dusclops","tropius","seasealeo","pachirisu","drifblim","abomasnow","crustle","stunfisk","goodra","gravelgraveler_alolan","sirfetchd"]
+	        }]
+	    }
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xs"],
     "pokemonTraits": {
@@ -872,20 +914,6 @@
         "dexEnd": 719
     }],
     "shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "venusaur_mega", "charmander", "charmeleon", "charizard", "charizard_mega_x", "charizard_mega_y", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "beedrill_mega", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "alakazam_mega", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "gyarados_mega", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "ampharos_mega", "bellossom", "politoed", "scizor", "scizor_mega", "houndour", "houndoom", "houndoom_mega", "larvitar", "pupitar", "tyranitar", "tyranitar_mega", "mudkip", "marshtomp", "swampert", "swampert_mega", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "gardevoir_mega", "trapinch", "vibrava", "flygon", "shuppet", "banette", "banette_mega", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "gallade_mega", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "sableye", "sableye_mega", "zapdos", "moltres", "delibird", "stantler", "absol", "bagon", "shelgon", "salamence", "salamence_mega", "snover", "abomasnow", "abomasnow_mega", "raikou", "vulpix", "ninetales", "exeggcute", "exeggutor", "omanyte", "omastar", "misdreavus", "mismagius", "carvanha", "sharpedo", "sharpedo_mega", "pinsir", "pinsir_mega", "mawile", "mawile_mega", "beldum", "metang", "metagross", "metagross_mega", "entei", "ekans", "arbok", "koffing", "weezing", "nidoran_female", "nidorina", "nidoran_male", "nidorino", "nidoqueen", "nidoking", "machop", "machoke", "machamp", "gligar", "gliscor", "shuckle", "stunky", "skuntank", "suicune", "pineco", "forretress", "mewtwo", "mewtwo_mega_x", "mewtwo_mega_y", "diglett", "dugtrio", "shellder", "cloyster", "slowpoke", "slowbro", "slowking", "aerodactyl", "skarmory", "teddiursa", "ursaring", "hoppip", "skiploom", "jumpluff", "wooper", "quagsire", "swinub", "piloswine", "mamoswine", "nosepass", "probopass", "aron", "lairon", "aggron", "spheal", "sealeo", "walrein", "lileep", "cradily", "anorith", "armaldo", "aipom", "ambipom", "skorupi", "drapion", "poochyena", "mightyena", "murkrow", "honchkrow", "electrike", "manectric", "snubbull", "granbull", "makuhita", "hariyama", "starly", "staravia", "staraptor", "tangela", "tangrowth", "horsea", "seadra", "kingdra"],
-    "cliffhangerTiers": [{
-        "league": 1500,
-        "max": 17,
-        "tiers": [{
-            "points": 9,
-            "pokemon": ["altaria", "azumarill", "skarmory", "deoxys_defense", "medicham", "registeel", "stunfisk_galarian", "tropius"]
-        }, {
-            "points": 5,
-            "pokemon": ["abomasnow", "bastiodon", "cresselia", "dewgong", "diggersby", "ferrothorn", "galvantula", "hypno", "hypno_shadow", "ivysaur", "jellicent", "lapras", "lickitung", "marowak_alolan", "machamp", "mandibuzz", "meganium", "politoed", "sableye", "scrafty", "swampert", "umbreon", "venusaur", "whiscash", "wobbuffet", "zweilous"]
-        }, {
-            "points": 1,
-            "pokemon": ["bronzong", "cherrim_sunny", "castform_rainy", "castform_sunny", "chesnaught", "clefable", "drifblim", "empoleon", "froslass", "gardevoir", "gengar", "golbat", "haunter", "jirachi", "jumpluff", "lanturn", "lugia", "mantine", "melmetal", "mew", "muk_alolan", "ninetales", "ninetales_alolan", "noctowl", "obstagoon", "pelipper", "probopass", "regirock", "raichu", "raichu_alolan", "raikou", "shiftry", "sirfetchd", "stunfisk", "togekiss", "toxicroak", "victreebel", "vigoroth", "wigglytuff", "zapdos"]
-        }]
-    }],
     "pokemon": [{
         "dex": 460,
         "speciesName": "Abomasnow",

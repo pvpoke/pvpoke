@@ -647,7 +647,7 @@ header {
   font-size: 12px;
 }
 .poke.multi .rankings-container {
-  max-height: 360px;
+  max-height: 410px;
 }
 .poke.multi .rankings-container .rank {
   padding: 0 5px;
@@ -1857,6 +1857,16 @@ a.download-csv {
 }
 .rank .moves .move:first-of-type {
   border: none;
+}
+.rank .cliffhanger-points {
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 0 2px;
+  margin-right: 5px;
+  text-align: center;
+  width: 38px;
+  position: relative;
+  top: -1px;
 }
 .rank .moveset .rating {
   background: rgba(0, 0, 0, 0.7);

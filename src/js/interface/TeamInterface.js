@@ -224,10 +224,13 @@ var InterfaceMaster = (function () {
 									$("#main h1").html("Team Wizard");
 								}
 
-								if(cup == "cliffhanger"){
-									multiSelectors[0].setCliffhangerMode(true);
-								}
 								battle.setCup(cup);
+
+								if(battle.getCup().tierRules){
+									multiSelectors[0].setCliffhangerMode(true);
+								} else{
+									multiSelectors[0].setCliffhangerMode(false);
+								}
 								break;
 
 							case "m1":
@@ -696,10 +699,16 @@ var InterfaceMaster = (function () {
 				// In Cliffhanger, exclude Pokemon that would put the team over the point limit
 				var tiers = [];
 
-				if(battle.getCup().name == "cliffhanger"){
+				if(battle.getCup().tierRules){
 					var cliffObj = multiSelectors[0].calculateCliffhangerPoints();
 					var remainingPoints = cliffObj.max - cliffObj.points;
 					tiers = cliffObj.tiers;
+					var remainingPicks = 6 - team.length;
+
+					// Reduce remaining points by the cost of remaining picks so incompatible tiers aren't suggested
+					remainingPoints -= (remainingPicks - 1) * cliffObj.floor;
+
+					console.log("remaining points:" + remainingPoints);
 
 					// Add ineligible tiers to the exclusion list
 					for(var i = 0; i < tiers.length; i++){
@@ -899,21 +908,10 @@ var InterfaceMaster = (function () {
 					}
 
 					// Add points for alternative Pokemon for Cliffhanger
-					if(battle.getCup().name == "cliffhanger"){
+					if(battle.getCup().tierRules){
 						var tierName = "";
 						var pointsName = "points";
-						var searchId = pokemon.speciesId.replace("_shadow","");
-						searchId = pokemon.speciesId.replace("_xl","");
-						var points = 0;
-
-						for(var j = 0; j < tiers.length; j++){
-							if(tiers[j].pokemon.indexOf(searchId) > -1){
-								// Being sneaky here and borrowing Voyager Cup name colors
-								tierName = gm.data.pokemonRegions[j].name;
-								points = tiers[j].points;
-								break;
-							}
-						}
+						var points = gm.getPokemonTier(pokemon.speciesId, battle.getCup());
 
 						if(points == 1){
 							pointsName = "point";
@@ -1405,8 +1403,11 @@ var InterfaceMaster = (function () {
 					$("#main h1").html("Team Builder");
 				}
 
-				multiSelectors[0].setCliffhangerMode(cup == "cliffhanger");
-
+				if(battle.getCup().tierRules){
+					multiSelectors[0].setCliffhangerMode(true);
+				} else{
+					multiSelectors[0].setCliffhangerMode(false);
+				}
 
 				if(cup.name == "little"){
 					$(".league-select option[value='500']").prop("selected","selected");
@@ -1448,7 +1449,11 @@ var InterfaceMaster = (function () {
 					window.location.href = webRoot+'custom-rankings/';
 				}
 
-				multiSelectors[0].setCliffhangerMode(cup == "cliffhanger");
+				if(battle.getCup().tierRules){
+					multiSelectors[0].setCliffhangerMode(true);
+				} else{
+					multiSelectors[0].setCliffhangerMode(false);
+				}
 			}
 
 			// Event handler for clicking the rate button

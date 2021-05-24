@@ -241,6 +241,18 @@ var InterfaceMaster = (function () {
 						$el.addClass("limited-rank");
 					}
 
+					// Show points if applicable
+					if(battle.getCup().tierRules){
+						var points = gm.getPokemonTier(pokemon.speciesId, battle.getCup());
+						var ptStr = " pts";
+
+						if(points == 1){
+							ptStr = " pt";
+						}
+
+						$el.find(".moves").prepend("<span class=\"cliffhanger-points\">"+points+ptStr+"</span>");
+					}
+
 					$(".section.white > .rankings-container").append($el);
 
 					// Determine XL category

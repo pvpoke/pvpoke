@@ -856,7 +856,7 @@ header{
 
 		.rankings-container{
 
-			max-height:360px;
+			max-height:410px;
 
 			.rank{
 				padding: 0 5px;
@@ -2143,6 +2143,17 @@ a.download-csv{
 				border:none;
 			}
 		}
+	}
+
+	.cliffhanger-points{
+		border: 1px solid;
+		border-radius: 8px;
+		padding: 0 2px;
+		margin-right: 5px;
+		text-align: center;
+		width: 38px;
+		position: relative;
+		top: -1px;
 	}
 
 	.moveset{

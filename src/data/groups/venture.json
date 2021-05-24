@@ -7,12 +7,27 @@
 	{
 		"speciesId":"altaria",
 		"fastMove":"DRAGON_BREATH",
-		"chargedMoves":["SKY_ATTACK","DRAGON_PULSE"]
+		"chargedMoves":["SKY_ATTACK","MOONBLAST"]
+	},
+	{
+		"speciesId":"dragonite_shadow",
+		"fastMove":"DRAGON_BREATH",
+		"chargedMoves":["DRAGON_CLAW","HURRICANE"]
+	},
+	{
+		"speciesId":"dragonair",
+		"fastMove":"DRAGON_BREATH",
+		"chargedMoves":["AQUA_TAIL","DRAGON_PULSE"]
 	},
 	{
 		"speciesId":"dragonair_shadow",
 		"fastMove":"DRAGON_BREATH",
 		"chargedMoves":["AQUA_TAIL","DRAGON_PULSE"]
+	},
+	{
+		"speciesId":"goodra",
+		"fastMove":"DRAGON_BREATH",
+		"chargedMoves":["MUDDY_WATER","POWER_WHIP"]
 	},
 	{
 		"speciesId":"medicham",
@@ -135,6 +150,11 @@
 		"chargedMoves":["ROCK_BLAST","STONE_EDGE"]
 	},
 	{
+		"speciesId":"golem_alolan",
+		"fastMove":"VOLT_SWITCH",
+		"chargedMoves":["ROCK_BLAST","STONE_EDGE"]
+	},
+	{
 		"speciesId":"magcargo",
 		"fastMove":"ROCK_THROW",
 		"chargedMoves":["STONE_EDGE","OVERHEAT"]
@@ -163,5 +183,10 @@
 		"speciesId":"gengar",
 		"fastMove":"SHADOW_CLAW",
 		"chargedMoves":["SHADOW_PUNCH","SLUDGE_BOMB"]
+	},
+	{
+		"speciesId":"castform",
+		"fastMove":"HEX",
+		"chargedMoves":["WEATHER_BALL_ROCK","ENERGY_BALL"]
 	}
 ]

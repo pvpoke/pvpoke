@@ -72,6 +72,33 @@ var GameMaster = (function () {
 			return pokemon;
 		}
 
+		// Returns the point value of a Pokemon in a tiered meta
+
+		object.getPokemonTier = function(id, cup){
+			id = id.replace("_xs", "");
+			id = id.replace("_shadow", "");
+
+			if(! cup.tierRules){
+				return false;
+			}
+
+			var tierRules = cup.tierRules;
+			var tiers = cup.tierRules.tiers;
+			var points = cup.tierRules.floor;
+
+			for(var i = 0; i < tiers.length; i++){
+				for(var n = 0; n < tiers[i].pokemon.length; n++){
+					if(tiers[i].pokemon[n] == id){
+						points = tiers[i].points;
+						break;
+					}
+				}
+			}
+
+			return points;
+		}
+
+
 		// Iterate through the Pokemon entries and apply shadow Pokemon traits
 
 		object.updateShadowStatus = function(){
@@ -956,6 +983,17 @@ var GameMaster = (function () {
 											valid = false;
 										}
 									}
+								}
+							}
+
+							// Point/tier search
+							if((param.indexOf("pt") > -1)||(param.indexOf("pts") > -1)){
+								var val = param.replace("pt","");
+								val = param.replace("pts","");
+								val = parseInt(val);
+
+								if(object.getPokemonTier(pokemon.speciesId, pokemon.getBattle().getCup()) == val){
+									valid = true;
 								}
 							}
 
