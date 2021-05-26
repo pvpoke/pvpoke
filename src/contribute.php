@@ -220,6 +220,10 @@ require_once 'header.php'; ?>
 			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/panick.png" width="85" height="85" />
 			<div class="supporter"><a href="https://www.twitch.tv/panick23" target="_blank">PanicK23</a></div>
 		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/adellion.png" width="85" height="85" />
+			<div class="supporter"><a href="https://twitch.tv/Adelli0n" target="_blank">Adelli0n</a></div>
+		</div>
 	</div>
 </div>
 
