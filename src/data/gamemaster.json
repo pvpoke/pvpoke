@@ -3651,7 +3651,7 @@
         },
         "types": ["normal", "none"],
         "fastMoves": ["HEX", "TACKLE"],
-        "chargedMoves": ["ENERGY_BALL", "HURRICANE", "WEATHER_BALL_ROCK"],
+        "chargedMoves": ["ENERGY_BALL", "HURRICANE", "WEATHER_BALL_NORMAL"],
         "defaultIVs": {
             "cp500": [12, 4, 6, 12],
             "cp1500": [38.5, 6, 14, 15],
@@ -4730,6 +4730,7 @@
             "cp2500": [41, 4, 10, 14]
         },
         "level25CP": 1624,
+		"searchPriority": 3,
         "tags": ["shadoweligible"],
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
@@ -8179,6 +8180,7 @@
         "level25CP": 1183,
         "tags": ["shadoweligible"],
         "eliteMoves": ["OMINOUS_WIND"],
+		"searchPriority": 8,
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
         "released": true
@@ -9212,6 +9214,7 @@
             "cp1500": [18, 4, 15, 11],
             "cp2500": [30.5, 4, 14, 10]
         },
+		"searchPriority": 2,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
@@ -13054,6 +13057,7 @@
             "cp1500": [20, 4, 15, 15],
             "cp2500": [36.5, 6, 15, 15]
         },
+		"searchPriority": 2,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": false
@@ -13738,6 +13742,7 @@
         },
         "tags": ["shadoweligible"],
         "level25CP": 1519,
+		"searchPriority": 2,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
@@ -13996,7 +14001,7 @@
             "cp1500": [24.5, 4, 9, 15],
             "cp2500": [47.5, 13, 14, 15]
         },
-        "searchPriority": 2,
+        "searchPriority": 5,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
@@ -14904,6 +14909,7 @@
             "cp2500": [50, 15, 15, 15]
         },
         "eliteMoves": ["WING_ATTACK", "AIR_CUTTER", "GUST"],
+		"searchPriority": 2,
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
         "released": true
@@ -25130,6 +25136,15 @@
         "archetype": "Spam/Bait"
     }, {
         "moveId": "WEATHER_BALL_ROCK",
+        "name": "Weather Ball (Rock)",
+        "type": "rock",
+        "power": 60,
+        "energy": 35,
+        "energyGain": 0,
+        "cooldown": 500,
+        "archetype": "Spam/Bait"
+    }, {
+        "moveId": "WEATHER_BALL_NORMAL",
         "name": "Weather Ball (Normal)",
         "type": "normal",
         "power": 60,
