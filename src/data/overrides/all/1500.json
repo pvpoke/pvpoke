@@ -100,6 +100,7 @@
 	},
 	{
 		"speciesId": "roserade",
+		"fastMove": "BULLET_SEED",
 		"chargedMoves": ["WEATHER_BALL_FIRE", "LEAF_STORM"]
 	},
 	{
@@ -437,7 +438,8 @@
 	},
 	{
 		"speciesId": "ariados",
-		"fastMove": "POISON_STING"
+		"fastMove": "POISON_STING",
+		"chargedMoves": ["CROSS_POISON","LUNGE"]
 	},
 	{
 		"speciesId": "qwilfish",
@@ -450,12 +452,21 @@
 		"chargedMoves": ["CRUNCH","SLUDGE_BOMB"]
 	},
 	{
+		"speciesId": "drapion_shadow",
+		"fastMove": "POISON_STING",
+		"chargedMoves": ["CRUNCH","SLUDGE_BOMB"]
+	},
+	{
 		"speciesId": "muk",
 		"chargedMoves": ["THUNDER_PUNCH", "DARK_PULSE"]
 	},
 	{
 		"speciesId": "magneton",
 		"chargedMoves": ["DISCHARGE", "MAGNET_BOMB"]
+	},
+	{
+		"speciesId": "skuntank_shadow",
+		"chargedMoves": ["CRUNCH", "FLAMETHROWER"]
 	},
 	{
 		"speciesId": "typhlosion",
@@ -648,7 +659,11 @@
 	},
 	{
 		"speciesId": "crobat",
-		"chargedMoves": ["SLUDGE_BOMB","SHADOW_BALL"]
+		"chargedMoves": ["POISON_FANG","SHADOW_BALL"]
+	},
+	{
+		"speciesId": "crobat_shadow",
+		"chargedMoves": ["POISON_FANG","SHADOW_BALL"]
 	},
 	{
 		"speciesId": "politoed",

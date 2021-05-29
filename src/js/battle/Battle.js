@@ -2094,6 +2094,7 @@ function Battle(){
 					}
 
 					// If the defender can't afford to let a charged move connect, block
+					var fastDPT = fastDamage / (attacker.fastMove.cooldown / 500);
 
 					for (var i = 0; i < attacker.chargedMoves.length; i++){
 						var chargedMove = attacker.chargedMoves[i];
@@ -2101,7 +2102,11 @@ function Battle(){
 						if(attacker.energy + chargedMove.energy >= chargedMove.energy){
 							var chargedDamage = self.calculateDamage(attacker, defender, chargedMove);
 
-							if(chargedDamage >= defender.hp / 1.5){
+							if((chargedDamage >= defender.hp / 1.5)&&(fastDPT > 1.5)){
+								useShield = true;
+							}
+
+							if(chargedDamage >= defender.hp - cycleDamage){
 								useShield = true;
 							}
 						}
