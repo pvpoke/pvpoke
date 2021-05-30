@@ -876,16 +876,7 @@
 	            "pokemon": ["machamp","haunter","gengar","dragonite","mew","lanturn","wobbuffet","mantine","swampert","pelipper","zangoose","whiscash","cradily","dusclops","tropius","sealeo","pachirisu","drifblim","abomasnow","crustle","stunfisk","goodra","graveler_alolan","sirfetchd"]
 	        }]
 	    }
-    },
-	{
-	    "name": "element",
-	    "title": "Element Cup",
-	    "include": [{
-	        "filterType": "id",
-	        "values": ["litleo", "barboach", "bellsprout", "budew", "buizel", "bulbasaur", "cacnea", "carvanha", "charmander", "cherubi", "chikorita", "chimchar", "chinchou", "corphish", "cyndaquil", "darumaka", "darumaka_galarian", "deerling", "ducklett", "exeggcute", "feebas", "ferroseed", "finneon", "foongus", "frillish", "goldeen", "growlithe", "hoppip", "horsea", "houndour", "kabuto", "krabby", "larvesta", "lileep", "litwick", "lotad", "magby", "magikarp", "mantyke", "mudkip", "numel", "oddish", "omanyte", "oshawott", "pansage", "pansear", "paras", "piplup", "poliwag", "ponyta", "psyduck", "remoraid", "seedot", "seel", "sewaddle", "shellos_east_sea", "shellos_west_sea", "shroomish", "slowpoke", "slugma", "snivy", "snover", "spheal", "squirtle", "surskit", "tangela", "tentacool", "tepig", "tirtouga", "torchic", "totodile", "treecko", "turtwig", "tympole", "vulpix", "wailmer", "wingull", "wooper", "vulpix_shadow", "turtwig_shadow", "growlithe_shadow", "psyduck_shadow", "oddish_shadow", "hoppip_shadow", "houndour_shadow", "squirtle_shadow", "seedot_shadow", "mudkip_shadow", "poliwag_shadow", "exeggcute_shadow", "slowpoke_shadow", "charmander_shadow", "snover_shadow", "bulbusaur_shadow", "omanyte_shadow", "carvanha_shadow", "cacnea_shadow", "bellsprout_shadow", "magikarp_shadow", "shellder", "shellder_shadow", "cottonee", "sunkern", "clamperl", "shellos", "panpour", "petilil", "chespin", "froakie", "fennekin", "skrelp", "clauncher", "deerling"]
-	    }],
-	    "exclude": []
-	}],
+    }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xs"],
     "pokemonTraits": {
         "pros": ["bulky", "extremely bulky", "spammy", "agile", "flexible", "dynamic", "fast move pressure", "shield pressure", "defensive", "momentum"],
@@ -2046,7 +2037,7 @@
         },
         "types": ["bug", "poison"],
         "fastMoves": ["INFESTATION", "POISON_STING"],
-        "chargedMoves": ["CROSS_POISON", "MEGAHORN", "SHADOW_SNEAK"],
+        "chargedMoves": ["CROSS_POISON", "MEGAHORN", "SHADOW_SNEAK", "LUNGE"],
         "defaultIVs": {
             "cp500": [10.5, 7, 12, 14],
             "cp1500": [34, 4, 11, 15],
@@ -4732,7 +4723,7 @@
         },
         "types": ["poison", "flying"],
         "fastMoves": ["AIR_SLASH", "BITE"],
-        "chargedMoves": ["AIR_CUTTER", "SHADOW_BALL", "SLUDGE_BOMB"],
+        "chargedMoves": ["AIR_CUTTER", "SHADOW_BALL", "SLUDGE_BOMB", "POISON_FANG", "CROSS_POISON"],
         "defaultIVs": {
             "cp500": [7, 11, 11, 14],
             "cp1500": [21, 5, 11, 15],
@@ -4755,7 +4746,7 @@
         },
         "types": ["poison", "flying"],
         "fastMoves": ["AIR_SLASH", "BITE"],
-        "chargedMoves": ["AIR_CUTTER", "SHADOW_BALL", "SLUDGE_BOMB"],
+        "chargedMoves": ["AIR_CUTTER", "SHADOW_BALL", "SLUDGE_BOMB", "POISON_FANG", "CROSS_POISON"],
         "defaultIVs": {
             "cp500": [7, 11, 11, 14],
             "cp1500": [21, 5, 11, 15],
@@ -13744,7 +13735,7 @@
         },
         "types": ["poison", "ground"],
         "fastMoves": ["BITE", "POISON_JAB"],
-        "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "STONE_EDGE", "EARTH_POWER"],
+        "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "STONE_EDGE", "EARTH_POWER", "POISON_FANG"],
         "defaultIVs": {
             "cp500": [7.5, 9, 11, 14],
             "cp1500": [22, 8, 13, 15],
@@ -13767,7 +13758,7 @@
         },
         "types": ["poison", "ground"],
         "fastMoves": ["BITE", "POISON_JAB"],
-        "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "STONE_EDGE", "EARTH_POWER"],
+        "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "STONE_EDGE", "EARTH_POWER", "POISON_FANG"],
         "defaultIVs": {
             "cp500": [7.5, 9, 11, 14],
             "cp1500": [22, 8, 13, 15],
@@ -22814,7 +22805,7 @@
         "name": "Acid Spray",
         "type": "poison",
         "power": 20,
-        "energy": 50,
+        "energy": 45,
         "energyGain": 0,
         "cooldown": 500,
         "buffs": [0, -2],
@@ -23158,11 +23149,15 @@
         "moveId": "CROSS_POISON",
         "name": "Cross Poison",
         "type": "poison",
-        "power": 40,
+        "power": 50,
         "energy": 35,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "Spam/Bait"
+        "archetype": "Spam/Bait",
+		"buffs": [2, 0],
+        "buffTarget": "self",
+        "buffApplyChance": ".125",
+        "archetype": "Boost Spam/Bait"
     }, {
         "moveId": "CRUNCH",
         "name": "Crunch",
@@ -23282,9 +23277,9 @@
         "moveId": "DRAGON_TAIL",
         "name": "Dragon Tail",
         "type": "dragon",
-        "power": 9,
+        "power": 12,
         "energy": 0,
-        "energyGain": 10,
+        "energyGain": 8,
         "cooldown": 1500,
         "archetype": "General"
     }, {
@@ -23521,7 +23516,7 @@
         "moveId": "FOCUS_BLAST",
         "name": "Focus Blast",
         "type": "fighting",
-        "power": 140,
+        "power": 150,
         "energy": 75,
         "energyGain": 0,
         "cooldown": 500,
@@ -24222,6 +24217,19 @@
         "buffApplyChance": "0.5",
         "archetype": "Debuff"
     }, {
+        "moveId": "FEATHER_DANCE",
+        "name": "Feather Dance",
+        "abbreviation": "Oc",
+        "type": "flying",
+        "power": 50,
+        "energy": 50,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [-2, 0],
+        "buffTarget": "opponent",
+        "buffApplyChance": "1",
+        "archetype": "Debuff"
+    }, {
         "moveId": "OMINOUS_WIND",
         "name": "Ominous Wind",
         "type": "ghost",
@@ -24321,12 +24329,16 @@
         "energy": 35,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "Spam/Bait"
+        "archetype": "Spam/Bait",
+		"buffs": [0, -1],
+        "buffTarget": "opponent",
+        "buffApplyChance": "1",
+        "archetype": "Debuff"
     }, {
         "moveId": "POISON_JAB",
         "name": "Poison Jab",
         "type": "poison",
-        "power": 6,
+        "power": 7,
         "energy": 0,
         "energyGain": 7,
         "cooldown": 1000,
@@ -24338,7 +24350,7 @@
         "type": "poison",
         "power": 3,
         "energy": 0,
-        "energyGain": 8,
+        "energyGain": 9,
         "cooldown": 1000,
         "archetype": "Fast Charge"
     }, {

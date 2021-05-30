@@ -960,7 +960,7 @@ var InterfaceMaster = (function () {
 				$(".overview-section.coverage .notes div[grade=\""+threatGrade.letter+"\"]").show();
 
 				// Bulk grade, average HP x Defense stats
-				var leagueAverageBulk = [22000,35000,35000];
+				var leagueAverageBulk = [22000,35000,35000,10000];
 				var averageBulk = 0;
 				var goalBulk = leagueAverageBulk[0];
 
@@ -978,6 +978,8 @@ var InterfaceMaster = (function () {
 					}
 				} else if(battle.getCP() == 10000){
 					goalBulk = leagueAverageBulk[2];
+				} else if(battle.getCP() == 500){
+					goalBulk = leagueAverageBulk[3];
 				}
 
 				var bulkGrade = self.calculateLetterGrade(averageBulk, goalBulk);

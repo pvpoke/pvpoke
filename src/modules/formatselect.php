@@ -4,6 +4,7 @@
 	<option value="10000" cup="all">Master League</option>
 	<option value="10000" cup="classic">Master League (Classic)</option>
 	<option value="2500" cup="premier">Premier Cup (Ultra)</option>
+	<option value="500" cup="element">Element Cup</option>
 	<option value="1500" cup="kanto">Kanto Cup</option>
 	<option value="1500" cup="commander">Silph Commander Cup</option>
 	<option value="1500" cup="venture">Silph Venture Cup</option>

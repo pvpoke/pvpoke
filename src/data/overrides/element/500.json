@@ -1,0 +1,52 @@
+[
+	{
+		"speciesId": "cottonee",
+		"fastMove": "CHARM",
+		"weight": 3
+	},
+	{
+		"speciesId": "seel",
+		"fastMove": "ICE_SHARD"
+	},
+	{
+		"speciesId": "slugma",
+		"fastMove": "ROCK_THROW"
+	},
+	{
+		"speciesId": "exeggcute",
+		"chargedMoves": ["SEED_BOMB","ANCIENT_POWER"]
+	},
+	{
+		"speciesId": "exeggcute_shadow",
+		"chargedMoves": ["SEED_BOMB","ANCIENT_POWER"]
+	},
+	{
+		"speciesId": "omanyte",
+		"chargedMoves": ["ROCK_BLAST","BRINE"]
+	},
+	{
+		"speciesId": "omanyte_shadow",
+		"chargedMoves": ["ROCK_BLAST","BRINE"]
+	},
+	{
+		"speciesId": "hoppip",
+		"chargedMoves": ["SEED_BOMB","RETURN"]
+	},
+	{
+		"speciesId": "shellder",
+		"chargedMoves": ["ICY_WIND","WATER_PULSE"]
+	},
+	{
+		"speciesId": "ducklett",
+		"chargedMoves": ["AERIAL_ACE","BRAVE_BIRD"],
+		"weight": 5
+	},
+	{
+		"speciesId": "vulpix",
+		"weight": 2
+	},
+	{
+		"speciesId": "chinchou",
+		"weight": 2
+	}
+]

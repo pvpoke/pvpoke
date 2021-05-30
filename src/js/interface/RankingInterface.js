@@ -670,8 +670,10 @@ var InterfaceMaster = (function () {
 				var statProductSubstraction = 4500;
 
 				if(battle.getCP() == 500){
-					statProductCeiling = 1000;
-					statCeiling = 200;
+					statProductCeiling = 700;
+					statProductSubstraction = 100;
+					statCeiling = 150;
+					statSubtraction = 20;
 				} else if(battle.getCP() == 1500){
 					statProductCeiling = 2000;
 					statProductSubstraction = 1000;

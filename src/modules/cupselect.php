@@ -1,6 +1,7 @@
 <select class="format-select">
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
+	<option value="official" cup="element">Element Cup</option>
 	<option value="community" cup="kanto">Kanto Cup</option>
 	<option value="tsa-3" cup="commander">Silph Commander Cup</option>
 	<option value="tsa-3" cup="venture">Silph Venture Cup</option>
@@ -28,6 +29,7 @@
 	<option value="retro" cat="official">Retro Cup</option>
 	<option value="remix" cat="official">Great League Remix</option>
 	<option value="little" cat="official">Little Cup</option>
+	<option value="element" cat="official">Little Cup</option>
 	<option value="holiday" cat="official">Holiday Cup</option>
 	<option value="classic" cat="official">Classic (ML Only)</option>
 	<option value="safari" cat="community">Montreal Safari Cup</option>

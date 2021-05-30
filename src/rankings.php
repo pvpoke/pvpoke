@@ -67,6 +67,10 @@ switch($cup){
 		$league = 'Silph Venture Cup';
 		break;
 
+	case "element":
+		$league = 'Element Cup';
+		break;
+
 }
 
 $META_TITLE = $league . ' PvP Rankings';

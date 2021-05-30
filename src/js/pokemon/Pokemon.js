@@ -1069,7 +1069,9 @@ function Pokemon(id, i, b){
 		var bulkScale = [12500,14000,17000,23000];
 		var bulkRating = 0;
 
-		if(battle.getCP() == 2500){
+		if(battle.getCP() == 500){
+			bulkScale = [4000,6000,8000,12000];
+		} else if(battle.getCP() == 2500){
 			bulkScale = [19000,22000,25000,31000];
 		} else if(battle.getCP() == 10000){
 			bulkScale = [27000,30000,35000,39000];
@@ -1150,7 +1152,9 @@ function Pokemon(id, i, b){
 		var totalSuperEffectiveTypes = 0;
 
 		var targetDef = 120;
-		if(battle.getCP() == 2500){
+		if(battle.getCP() == 500){
+			targetDef = 75;
+		} else if(battle.getCP() == 2500){
 			targetDef = 150;
 		} else if(battle.getCP() == 10000){
 			targetDef = 170;
