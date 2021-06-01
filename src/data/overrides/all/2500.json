@@ -21,11 +21,28 @@
 	},
 	{
 		"speciesId": "garchomp",
+		"fastMove": "DRAGON_TAIL",
 		"chargedMoves": ["SAND_TOMB", "OUTRAGE"]
+	},
+	{
+		"speciesId": "crobat",
+		"chargedMoves": ["POISON_FANG", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "crobat_shadow",
+		"chargedMoves": ["POISON_FANG", "SHADOW_BALL"]
 	},
 	{
 		"speciesId": "charizard_shadow",
 		"fastMove": "DRAGON_BREATH"
+	},
+	{
+		"speciesId": "flygon",
+		"fastMove": "DRAGON_TAIL"
+	},
+	{
+		"speciesId": "flygon_shadow",
+		"fastMove": "DRAGON_TAIL"
 	},
 	{
 		"speciesId": "escavalier",
@@ -177,7 +194,12 @@
 	},
 	{
 		"speciesId": "dragonite",
+		"fastMove": "DRAGON_BREATH",
 		"weight": 2
+	},
+	{
+		"speciesId": "dragonite_shadow",
+		"fastMove": "DRAGON_BREATH"
 	},
 	{
 		"speciesId": "alakazam",
@@ -538,6 +560,10 @@
 	{
 		"speciesId": "clefable",
 		"weight": 6
+	},
+	{
+		"speciesId": "palkia",
+		"fastMove": "DRAGON_TAIL"
 	},
 	{
 		"speciesId": "shiftry",

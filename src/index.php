@@ -34,33 +34,9 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.22.0 (May 2, 2021)</h4>
+	<h4>v1.22.6 (May 31, 2021)</h4>
 	<ul>
-		<li>Backend adjustments to default IV's and level cap.</li>
-		<ul>
-			<li>Default IV's now have a level cap of 50 for most Pokemon.</li>
-			<ul>
-				<li>Legendaries that haven't been available in raids since the Candy XL adjustments still have a level cap of 40.</li>
-			</ul>
-			<li>Default IV combinations are now higher ranked (~rank 100-200), still keeping some Attack weight.</li>
-			<li>Level 40 and Level 50 Master League are now separate dropdowns in the league selector.</li>
-			<li>Added a global toggle on the Settings page to filter XL eligible Pokemon across the site.</li>
-		</ul>
-		<li>Added new info and features to rankings section:</li>
-		<ul>
-			<li>Each Pokemon's performance ratings are now displayed in a radar chart.</li>
-			<li>Moves are displayed with archetypes describing their strength and behavior.</li>
-			<ul>
-				<li>Move stats can now be viewed directly in the rankings.</li>
-			</ul>
-			<li>Ranking entries now list traits, short descriptions that illustrate each Pokemon's playstyle, strengths, and weaknesses. Traits can be searched in the searchbar.</li>
-			<li>Ranking entries also list Charged Move cost and buddy distance. These can also be searched.</li>
-			<ul>
-				<li>Charged Move cost and buddy distance are also available as filters in Custom Rankings.</li>
-			</ul>
-		</ul>
-		<li>Fixed an issue in Custom Rankings where battles linked in the key matchups section weren't using the movesets recommended in the rankings.</li>
-		<li>Links to single battles no longer require movesets to be specified in the URL. The Pokemon will default to their recommended movesets.</li>
+		<li>The site is updated with the latest Season 8 attack updates!</li>
 	</ul>
 
 	<h3>Latest Article</h3>

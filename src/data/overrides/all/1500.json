@@ -35,6 +35,7 @@
 	},
 	{
 		"speciesId": "garchomp",
+		"fastMove": "DRAGON_TAIL",
 		"chargedMoves": ["SAND_TOMB", "OUTRAGE"]
 	},
 	{
@@ -449,12 +450,12 @@
 	{
 		"speciesId": "drapion",
 		"fastMove": "POISON_STING",
-		"chargedMoves": ["CRUNCH","SLUDGE_BOMB"]
+		"chargedMoves": ["AQUA_TAIL","SLUDGE_BOMB"]
 	},
 	{
 		"speciesId": "drapion_shadow",
 		"fastMove": "POISON_STING",
-		"chargedMoves": ["CRUNCH","SLUDGE_BOMB"]
+		"chargedMoves": ["AQUA_TAIL","SLUDGE_BOMB"]
 	},
 	{
 		"speciesId": "muk",
@@ -512,11 +513,15 @@
 	},
 	{
 		"speciesId": "pidgeot",
-		"chargedMoves": ["AERIAL_ACE", "BRAVE_BIRD"]
+		"chargedMoves": ["FEATHER_DANCE", "BRAVE_BIRD"]
 	},
 	{
 		"speciesId": "snorlax",
 		"chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
+	},
+	{
+		"speciesId": "mienshao",
+		"chargedMoves": ["BRICK_BREAK", "GRASS_KNOT"]
 	},
 	{
 		"speciesId": "primeape",
@@ -711,7 +716,12 @@
 		"chargedMoves": ["ROCK_SLIDE","BULLDOZE"]
 	},
 	{
+		"speciesId": "dragonite_shadow",
+		"fastMove": "DRAGON_BREATH"
+	},
+	{
 		"speciesId": "dragonite",
+		"fastMove": "DRAGON_BREATH",
 		"chargedMoves": ["DRAGON_CLAW","HURRICANE"]
 	},
 	{
@@ -823,10 +833,6 @@
 	{
 		"speciesId": "serperior",
 		"chargedMoves": ["FRENZY_PLANT", "AERIAL_ACE"]
-	},
-	{
-		"speciesId": "exeggutor_alolan",
-		"fastMove": "BULLET_SEED"
 	},
 	{
 		"speciesId": "maractus",

@@ -25,6 +25,10 @@
 		"weight": 4
 	},
 	{
+		"speciesId": "pidgeot",
+		"chargedMoves": ["FEATHER_DANCE", "BRAVE_BIRD"]
+	},
+	{
 		"speciesId": "hitmonchan",
 		"chargedMoves": ["ICE_PUNCH", "THUNDER_PUNCH"]
 	},
@@ -103,6 +107,18 @@
 	{
 		"speciesId": "dewgong",
 		"chargedMoves": ["ICY_WIND", "WATER_PULSE"]
+	},
+	{
+		"speciesId": "hippowdon",
+		"chargedMoves": ["WEATHER_BALL_ROCK", "EARTH_POWER"]
+	},
+	{
+		"speciesId": "crobat",
+		"chargedMoves": ["POISON_FANG", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "crobat_shadow",
+		"chargedMoves": ["POISON_FANG", "SHADOW_BALL"]
 	},
 	{
 		"speciesId": "sirfetchd",
