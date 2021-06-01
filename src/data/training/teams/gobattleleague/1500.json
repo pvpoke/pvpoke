@@ -498,16 +498,23 @@
 				{
 					"speciesId": "lugia",
 					"fastMove": "DRAGON_TAIL",
-					"chargedMoves": ["SKY_ATTACK","HYDRO_PUMP"],
+					"chargedMoves": ["SKY_ATTACK","AEROBLAST"],
 					"difficulty": 2,
 					"weight":1
+				},
+				{
+					"speciesId": "pidgeot",
+					"fastMove": "GUST",
+					"chargedMoves": ["FEATHER_DANCE","BRAVE_BIRD"],
+					"difficulty": 2,
+					"weight":5
 				},
 				{
 					"speciesId": "golbat",
 					"fastMove": "WING_ATTACK",
 					"chargedMoves": ["POISON_FANG","SHADOW_BALL"],
-					"difficulty": 1,
-					"weight":1
+					"difficulty": 2,
+					"weight":2
 				},
 				{
 					"speciesId": "noctowl",
@@ -1166,6 +1173,13 @@
 					"chargedMoves": ["HYDRO_CANNON","SLUDGE_WAVE"],
 					"difficulty": 2,
 					"weight":45
+				},
+				{
+					"speciesId": "nidoqueen_shadow",
+					"fastMove": "POISON_JAB",
+					"chargedMoves": ["POISON_FANG","EARTH_POWER"],
+					"difficulty": 2,
+					"weight":10
 				},
 				{
 					"speciesId": "flygon",

@@ -58,5 +58,10 @@
 		"speciesId":"slugma",
 		"fastMove":"ROCK_THROW",
 		"chargedMoves":["ROCK_SLIDE","FLAME_CHARGE"]
+	},
+	{
+		"speciesId":"tentacool",
+		"fastMove":"POISON_STING",
+		"chargedMoves":["BUBBLE_BEAM","WRAP"]
 	}
 ]

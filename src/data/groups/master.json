@@ -15,11 +15,6 @@
 		"chargedMoves":["CROSS_CHOP","ROCK_SLIDE"]
 	},
 	{
-		"speciesId":"conkeldurr",
-		"fastMove":"COUNTER",
-		"chargedMoves":["DYNAMIC_PUNCH","STONE_EDGE"]
-	},
-	{
 		"speciesId":"yveltal",
 		"fastMove":"SNARL",
 		"chargedMoves":["DARK_PULSE","FOCUS_BLAST"]
@@ -55,6 +50,16 @@
 		"chargedMoves":["IRON_HEAD","FLAMETHROWER"]
 	},
 	{
+		"speciesId":"magnezone",
+		"fastMove":"SPARK",
+		"chargedMoves":["MIRROR_SHOT","WILD_CHARGE"]
+	},
+	{
+		"speciesId":"gyarados",
+		"fastMove":"DRAGON_BREATH",
+		"chargedMoves":["AQUA_TAIL","CRUNCH"]
+	},
+	{
 		"speciesId":"snorlax",
 		"fastMove":"LICK",
 		"chargedMoves":["BODY_SLAM","EARTHQUAKE"]
@@ -68,6 +73,11 @@
 		"speciesId":"lugia",
 		"fastMove":"DRAGON_TAIL",
 		"chargedMoves":["SKY_ATTACK","AEROBLAST"]
+	},
+	{
+		"speciesId":"excadrill",
+		"fastMove":"MUD_SHOT",
+		"chargedMoves":["ROCK_SLIDE","DRILL_RUN"]
 	},
 	{
 		"speciesId":"mewtwo",
@@ -92,11 +102,11 @@
 	{
 		"speciesId":"garchomp",
 		"fastMove":"MUD_SHOT",
-		"chargedMoves":["OUTRAGE","EARTHQUAKE"]
+		"chargedMoves":["OUTRAGE","EARTH_POWER"]
 	},
 	{
 		"speciesId":"garchomp",
-		"fastMove":"MUD_SHOT",
+		"fastMove":"DRAGON_TAIL",
 		"chargedMoves":["OUTRAGE","SAND_TOMB"]
 	},
 	{

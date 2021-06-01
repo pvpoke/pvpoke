@@ -237,11 +237,18 @@
 			"weight": 1,
 			"pokemon": [
 				{
+					"speciesId": "yveltal",
+					"fastMove": "SNARL",
+					"chargedMoves": ["DARK_PULSE","FOCUS_BLAST"],
+					"difficulty": 2,
+					"weight":14
+				},
+				{
 					"speciesId": "lugia",
 					"fastMove": "DRAGON_TAIL",
-					"chargedMoves": ["SKY_ATTACK","HYDRO_PUMP"],
+					"chargedMoves": ["SKY_ATTACK","AEROBLAST"],
 					"difficulty": 2,
-					"weight":2
+					"weight":6
 				},
 				{
 					"speciesId": "mewtwo",
@@ -841,7 +848,21 @@
 				{
 					"speciesId": "garchomp",
 					"fastMove": "MUD_SHOT",
-					"chargedMoves": ["EARTHQUAKE","OUTRAGE"],
+					"chargedMoves": ["EARTH_POWER","OUTRAGE"],
+					"difficulty": 3,
+					"weight":12
+				},
+				{
+					"speciesId": "garchomp",
+					"fastMove": "MUD_SHOT",
+					"chargedMoves": ["SAND_TOMB","OUTRAGE"],
+					"difficulty": 3,
+					"weight":3
+				},
+				{
+					"speciesId": "garchomp",
+					"fastMove": "DRAGON_TAIL",
+					"chargedMoves": ["SAND_TOMB","OUTRAGE"],
 					"difficulty": 3,
 					"weight":5
 				},

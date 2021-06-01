@@ -870,10 +870,10 @@
                 "pokemon": ["hypno", "hypno_shadow", "lickitung", "altaria", "froslass", "cresselia", "marowak_alolan"]
             }, {
                 "points": 6,
-                "pokemon": ["dewgong", "lapras", "snorlax", "dragonair", "politoed", "kingdra", "vigoroth", "medicham", "regirock", "deoxys_defense", "munchlax", "lickilicky", "jellicent", "galvantula", "talonflame"]
+                "pokemon": ["dewgong", "lapras", "snorlax", "dragonair", "politoed", "kingdra", "vigoroth", "medicham", "regirock", "deoxys_defense", "munchlax", "lickilicky", "jellicent", "galvantula", "talonflame", "dragalge", "lugia", "pidgeot"]
             }, {
                 "points": 4,
-                "pokemon": ["machamp", "haunter", "gengar", "dragonite", "mew", "lanturn", "wobbuffet", "mantine", "swampert", "pelipper", "zangoose", "whiscash", "cradily", "dusclops", "tropius", "sealeo", "pachirisu", "drifblim", "abomasnow", "crustle", "stunfisk", "goodra", "graveler_alolan", "sirfetchd"]
+                "pokemon": ["machamp", "haunter", "gengar", "dragonite", "mew", "lanturn", "wobbuffet", "mantine", "swampert", "pelipper", "zangoose", "whiscash", "cradily", "dusclops", "tropius", "sealeo", "pachirisu", "drifblim", "abomasnow", "crustle", "stunfisk", "goodra", "graveler_alolan", "sirfetchd", "nidoqueen", "flygon"]
             }]
         }
     }, {
@@ -22619,7 +22619,7 @@
             "cp1500": [14.5, 4, 13, 15],
             "cp2500": [23.5, 11, 15, 15]
         },
-		"tags": ["legendary"],
+        "tags": ["legendary"],
         "searchPriority": 10,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
@@ -22641,7 +22641,7 @@
             "cp1500": [16.5, 4, 10, 10],
             "cp2500": [27, 4, 14, 14]
         },
-		"tags": ["legendary"],
+        "tags": ["legendary"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": false
@@ -23160,7 +23160,7 @@
         "energy": 35,
         "energyGain": 0,
         "cooldown": 500,
-		"buffs": [2, 0],
+        "buffs": [2, 0],
         "buffTarget": "self",
         "buffApplyChance": ".125",
         "archetype": "Boost Spam/Bait"
@@ -23287,7 +23287,7 @@
         "energy": 0,
         "energyGain": 9,
         "cooldown": 1500,
-        "archetype": "General"
+        "archetype": "Multipurpose"
     }, {
         "moveId": "DRAINING_KISS",
         "name": "Draining Kiss",
@@ -24335,10 +24335,10 @@
         "energy": 35,
         "energyGain": 0,
         "cooldown": 500,
-		"buffs": [0, -1],
+        "buffs": [0, -1],
         "buffTarget": "opponent",
         "buffApplyChance": "1",
-        "archetype": "Debuff"
+        "archetype": "Debuff Spam/Bait"
     }, {
         "moveId": "POISON_JAB",
         "name": "Poison Jab",
@@ -24347,7 +24347,7 @@
         "energy": 0,
         "energyGain": 7,
         "cooldown": 1000,
-        "archetype": "Fast Charge"
+        "archetype": "General"
     }, {
         "moveId": "POISON_STING",
         "name": "Poison Sting",

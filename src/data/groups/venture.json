@@ -15,6 +15,21 @@
 		"chargedMoves":["DRAGON_CLAW","HURRICANE"]
 	},
 	{
+		"speciesId":"pidgeot",
+		"fastMove":"GUST",
+		"chargedMoves":["FEATHER_DANCE","BRAVE_BIRD"]
+	},
+	{
+		"speciesId":"lugia",
+		"fastMove":"DRAGON_TAIL",
+		"chargedMoves":["SKY_ATTACK","AEROBLAST"]
+	},
+	{
+		"speciesId":"dragalge",
+		"fastMove":"DRAGON_TAIL",
+		"chargedMoves":["AQUA_TAIL","OUTRAGE"]
+	},
+	{
 		"speciesId":"dragonair",
 		"fastMove":"DRAGON_BREATH",
 		"chargedMoves":["AQUA_TAIL","DRAGON_PULSE"]
@@ -28,6 +43,11 @@
 		"speciesId":"goodra",
 		"fastMove":"DRAGON_BREATH",
 		"chargedMoves":["MUDDY_WATER","POWER_WHIP"]
+	},
+	{
+		"speciesId":"nidoqueen",
+		"fastMove":"POISON_JAB",
+		"chargedMoves":["POISON_FANG","EARTH_POWER"]
 	},
 	{
 		"speciesId":"medicham",

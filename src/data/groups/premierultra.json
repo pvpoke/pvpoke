@@ -236,4 +236,20 @@
     "speciesId": "venusaur",
     "fastMove": "VINE_WHIP",
     "chargedMoves": ["FRENZY_PLANT", "SLUDGE_BOMB"]
+}, {
+	"speciesId":"pidgeot",
+	"fastMove":"GUST",
+	"chargedMoves":["FEATHER_DANCE","BRAVE_BIRD"]
+}, {
+	"speciesId":"nidoqueen",
+	"fastMove":"POISON_JAB",
+	"chargedMoves":["POISON_FANG","EARTH_POWER"]
+}, {
+	"speciesId":"crobat",
+	"fastMove":"AIR_SLASH",
+	"chargedMoves":["POISON_FANG","SHADOW_BALL"]
+}, {
+	"speciesId":"dragalge",
+	"fastMove":"DRAGON_TAIL",
+	"chargedMoves":["AQUA_TAIL","OUTRAGE"]
 }]
