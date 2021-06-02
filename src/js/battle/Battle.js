@@ -1742,9 +1742,15 @@ function Battle(){
 
 		// Return if plan is the farm down
 		if (finalState.moves.length == 0) {
-			self.logDecision(turns, poke, " wants to farm down");
-			useChargedMove = false;
-			return;
+
+			if(! poke.getBoostMove()){
+				self.logDecision(turns, poke, " wants to farm down");
+				useChargedMove = false;
+				return;
+			} else{
+				finalState.moves.push(poke.getBoostMove());
+				self.logDecision(turns, poke, " will force throw a boost move");
+			}
 		}
 
 		// Find if there are any debuffing moves and the most expensive move in planned move list

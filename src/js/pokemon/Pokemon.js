@@ -1496,10 +1496,6 @@ function Pokemon(id, i, b){
 	this.hasBuffMove = function(){
 		var hasBuffMove = false;
 
-		if((self.fastMove.buffs)&&(self.fastMove.buffApplyChance < 1)){
-			hasBuffMove = true;
-		}
-
 		for(var i = 0; i < self.chargedMoves.length; i++){
 			if((self.chargedMoves[i].buffs)&&(self.chargedMoves[i].buffApplyChance < 1)){
 				hasBuffMove = true;
@@ -1507,6 +1503,21 @@ function Pokemon(id, i, b){
 		}
 
 		return hasBuffMove;
+	}
+
+	// Return whether or not this Pokemon has a move with guaranteed or high chance of boosting itself or debuffing the opponent
+	// This is used for some battle/AI logic
+
+	this.getBoostMove = function(){
+		var boostMove = false;
+
+		for(var i = 0; i < self.chargedMoves.length; i++){
+			if((self.chargedMoves[i].buffs)&&(self.chargedMoves[i].buffApplyChance >= 0.5)&&(! self.chargedMoves[i].selfDebuffing)){
+				boostMove = self.chargedMoves[i];
+			}
+		}
+
+		return boostMove;
 	}
 
 	// Return effectiveness array for offense or defense

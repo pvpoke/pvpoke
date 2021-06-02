@@ -860,7 +860,7 @@
             "values": ["mega"]
         }, {
             "filterType": "id",
-            "values": ["chansey"]
+            "values": ["chansey", "pidgeot"]
         }],
         "tierRules": {
             "max": 20,
@@ -870,7 +870,7 @@
                 "pokemon": ["hypno", "hypno_shadow", "lickitung", "altaria", "froslass", "cresselia", "marowak_alolan"]
             }, {
                 "points": 6,
-                "pokemon": ["dewgong", "lapras", "snorlax", "dragonair", "politoed", "kingdra", "vigoroth", "medicham", "regirock", "deoxys_defense", "munchlax", "lickilicky", "jellicent", "galvantula", "talonflame", "dragalge", "lugia", "pidgeot"]
+                "pokemon": ["dewgong", "lapras", "snorlax", "dragonair", "politoed", "kingdra", "vigoroth", "medicham", "regirock", "deoxys_defense", "munchlax", "lickilicky", "jellicent", "galvantula", "talonflame", "dragalge", "lugia"]
             }, {
                 "points": 4,
                 "pokemon": ["machamp", "haunter", "gengar", "dragonite", "mew", "lanturn", "wobbuffet", "mantine", "swampert", "pelipper", "zangoose", "whiscash", "cradily", "dusclops", "tropius", "sealeo", "pachirisu", "drifblim", "abomasnow", "crustle", "stunfisk", "goodra", "graveler_alolan", "sirfetchd", "nidoqueen", "flygon"]
@@ -12118,7 +12118,7 @@
             "cp2500": [50, 15, 15, 15]
         },
         "level25CP": 1295,
-        "tags": ["shadoweligible"],
+        "tags": ["shadoweligible", "include1500"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
@@ -12139,7 +12139,7 @@
             "cp1500": [25.5, 4, 13, 12],
             "cp2500": [50, 15, 15, 15]
         },
-        "tags": ["shadow"],
+        "tags": ["shadow", "include1500"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
