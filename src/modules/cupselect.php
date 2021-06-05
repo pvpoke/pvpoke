@@ -1,6 +1,7 @@
 <select class="format-select">
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
+	<option value="official" cup="remix">Remix</option>
 	<option value="official" cup="element">Element Cup</option>
 	<option value="tsa-3" cup="venture">Silph Venture Cup</option>
 	<option value="tsa-3" cup="factions">Silph Factions (Atlantis)</option>
@@ -25,7 +26,7 @@
 	<option value="kanto" cat="official">Kanto Cup</option>
 	<option value="love" cat="official">Love Cup</option>
 	<option value="retro" cat="official">Retro Cup</option>
-	<option value="remix" cat="official">Great League Remix</option>
+	<option value="remix" cat="official">Remix</option>
 	<option value="little" cat="official">Little Cup</option>
 	<option value="element" cat="official">Little Cup</option>
 	<option value="holiday" cat="official">Holiday Cup</option>

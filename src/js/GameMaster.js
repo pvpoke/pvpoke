@@ -716,6 +716,14 @@ var GameMaster = (function () {
 						for(var j = 0; j < filters.length; j++){
 							var filter = filters[j];
 
+							// Check if this filter is valid for this league
+							if(filter.leagues){
+								if(filter.leagues.indexOf(battle.getCP()) == -1){
+									requiredFilters--;
+									continue;
+								}
+							}
+
 							switch(filter.filterType){
 								case "type":
 
