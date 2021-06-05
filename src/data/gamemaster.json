@@ -4368,6 +4368,27 @@
         "thirdMoveCost": 50000,
         "released": true
     }, {
+        "dex": 79,
+        "speciesName": "Slowpoke (Galarian)",
+        "speciesId": "slowpoke_galarian",
+        "baseStats": {
+            "atk": 109,
+            "def": 98,
+            "hp": 207
+        },
+        "types": ["psychic", "none"],
+        "fastMoves": ["CONFUSION", "IRON_TAIL"],
+        "chargedMoves": ["SURF", "PSYSHOCK", "PSYCHIC"],
+        "defaultIVs": {
+            "cp500": [16, 5, 10, 12],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "tags": ["galarian"],
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true
+    }, {
         "dex": 80,
         "speciesName": "Slowbro",
         "speciesId": "slowbro",
@@ -4410,7 +4431,28 @@
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
-    },  {
+    }, {
+        "dex": 80,
+        "speciesName": "Slowbro (Galarian)",
+        "speciesId": "slowbro_galarian",
+        "baseStats": {
+            "atk": 182,
+            "def": 156,
+            "hp": 216
+        },
+        "types": ["poison", "psychic"],
+        "fastMoves": ["CONFUSION", "WATER_GUN", "POISON_JAB"],
+        "chargedMoves": ["FOCUS_BLAST", "PSYCHIC", "SLUDGE_BOMB"],
+        "defaultIVs": {
+			"cp500": [7.5, 9, 15, 13],
+            "cp1500": [22.5, 6, 15, 13],
+            "cp2500": [46, 5, 15, 14]
+        },
+        "tags": ["galarian"],
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true
+    }, {
 	    "dex": 80,
 	    "speciesName": "Slowbro (Mega)",
 	    "speciesId": "slowbro_mega",
@@ -8414,6 +8456,27 @@
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
+    }, {
+        "dex": 199,
+        "speciesName": "Slowking (Galarian)",
+        "speciesId": "slowking_galarian",
+        "baseStats": {
+            "atk": 190,
+            "def": 180,
+            "hp": 216
+        },
+        "types": ["poison", "psychic"],
+        "fastMoves": ["HEX", "CONFUSION", "ACID"],
+        "chargedMoves": ["FUTURE_SIGHT", "SHADOW_BALL", "SLUDGE_WAVE"],
+        "defaultIVs": {
+			"cp500": [7, 6, 15, 8],
+            "cp1500": [20.5, 5, 11, 15],
+            "cp2500": [38.5, 4, 14, 12]
+        },
+        "tags": ["galarian"],
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
     }, {
         "dex": 200,
         "speciesName": "Misdreavus",
