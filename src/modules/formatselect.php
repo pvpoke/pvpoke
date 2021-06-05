@@ -6,7 +6,7 @@
 	<option value="2500" cup="premier">Premier Cup (Ultra)</option>
 	<option value="500" cup="element">Element Cup</option>
 	<option value="1500" cup="venture">Silph Venture Cup</option>
-	<option value="1500" cup="factions">Silph Factions (Floating City)</option>
+	<option value="1500" cup="factions">Silph Factions (Atlantis)</option>
 	<option value="1500" cup="adl">Arrohh Draft League</option>
 	<option value="1500" cup="custom">Custom</option>
 </select>

@@ -45,6 +45,10 @@
 		"fastMove": "DRAGON_TAIL"
 	},
 	{
+		"speciesId": "slowbro_galarian",
+		"chargedMoves": ["SLUDGE_BOMB", "FOCUS_BLAST"]
+	},
+	{
 		"speciesId": "escavalier",
 		"chargedMoves": ["MEGAHORN", "DRILL_RUN"],
 		"weight": 12

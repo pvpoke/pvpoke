@@ -3,7 +3,7 @@
 	<option value="official" cup="premier">Premier Cup</option>
 	<option value="official" cup="element">Element Cup</option>
 	<option value="tsa-3" cup="venture">Silph Venture Cup</option>
-	<option value="tsa-3" cup="factions">Silph Factions (Floating City)</option>
+	<option value="tsa-3" cup="factions">Silph Factions (Atlantis)</option>
 	<option value="community" cup="adl">Arrohh Draft League</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
