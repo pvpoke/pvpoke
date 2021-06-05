@@ -4410,7 +4410,24 @@
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
-    }, {
+    },  {
+	    "dex": 80,
+	    "speciesName": "Slowbro (Mega)",
+	    "speciesId": "slowbro_mega",
+	    "baseStats": {
+	        "atk": 224,
+	        "def": 259,
+	        "hp": 216
+	    },
+	    "types": ["water", "psychic"],
+	    "fastMoves": ["CONFUSION", "WATER_GUN"],
+	    "chargedMoves": ["ICE_BEAM", "PSYCHIC", "WATER_PULSE"],
+	    "defaultIVs": {
+	        "cp1500": [14.5, 9, 15, 9],
+	        "cp2500": [25, 5, 10, 6]
+	    },
+	    "tags": ["mega"]
+	}, {
         "dex": 81,
         "speciesName": "Magnemite",
         "speciesId": "magnemite",
