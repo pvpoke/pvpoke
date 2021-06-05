@@ -71,6 +71,14 @@ switch($cup){
 		$league = 'Element Cup';
 		break;
 
+	case "atlantis":
+		$league = 'atlantis';
+		break;
+
+	case "remix":
+		$league = $league . ' Remix';
+		break;
+
 }
 
 $META_TITLE = $league . ' PvP Rankings';
