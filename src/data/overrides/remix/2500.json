@@ -1,7 +1,6 @@
 [
 	{
 		"speciesId": "typhlosion",
-		"fastMove": "SHADOW_CLAW",
 		"chargedMoves": ["BLAST_BURN", "SOLAR_BEAM"]
 	},
 	{
@@ -84,7 +83,7 @@
 	},
 	{
 		"speciesId": "lickilicky_xl",
-		"chargedMoves": ["BODY_SLAM", "SHADOW_BALL"]
+		"chargedMoves": ["BODY_SLAM", "EARTHQUAKE"]
 	},
 	{
 		"speciesId": "reshiram",

@@ -19,7 +19,9 @@
 			<select class="quick-fill-select">
 				<option value="new">New Custom Group</option>
 				<option value="great" type="great" class="multi-battle">Great League Meta</option>
+				<option value="remix" type="great" class="multi-battle">Great League Remix Meta</option>
 				<option value="ultra" type="ultra" class="hide multi-battle">Ultra League Meta</option>
+				<option value="remixultra" type="ultra" class="hide multi-battle">Ultra League Remix Meta</option>
 				<option value="master" type="master" class="hide multi-battle">Master League Meta</option>
 				<option value="premierultra" type="ultra" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="premier" type="master" class="hide multi-battle">Premier Cup Meta</option>
