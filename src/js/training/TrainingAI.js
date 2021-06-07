@@ -79,7 +79,7 @@ function TrainingAI(l, p, b){
 
 
 		// Choose presets
-		if((pool.presets)&&(customTeamPool)){
+		if(pool.presets){
 			// Select a random preset team
 			var presets = pool.presets;
 			var presetIndex = Math.floor(Math.random() * pool.presets.length);
