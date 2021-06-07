@@ -545,9 +545,9 @@
 		},
 		{
 			"pokemon": [{
-					"speciesId": "abomasnow",
-					"fastMove": "POWDER_SNOW",
-					"chargedMoves": ["WEATHER_BALL_ICE", "BLIZZARD"]
+					"speciesId": "venusaur",
+					"fastMove": "VINE_WHIP",
+					"chargedMoves": ["FRENZY_PLANT", "SLUDGE_BOMB"]
 				},
 				{
 					"speciesId": "mew",
@@ -565,9 +565,9 @@
 					"chargedMoves": ["MUD_BOMB", "BLIZZARD"]
 				},
 				{
-					"speciesId": "munchlax",
-					"fastMove": "LICK",
-					"chargedMoves": ["BODY_SLAM", "BULLDOZE"]
+					"speciesId": "drifblim",
+					"fastMove": "HEX",
+					"chargedMoves": ["ICY_WIND", "SHADOW_BALL"]
 				},
 				{
 					"speciesId": "castform",
