@@ -26,7 +26,7 @@ Because we’re flexible like that.
 If you haven’t already, you may need to change your Apache settings to allow .htaccess to modify incoming requests. If you’re using XAMPP, find the `apache/conf/httpd.config` file and change:
 
 ```
-`<Directory />
+<Directory />
     AllowOverride None
     Require all denied
 </Directory>
