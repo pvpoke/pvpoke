@@ -756,6 +756,20 @@ function TrainingAI(l, p, b){
 				}
 
 				options.push(new DecisionOption("BAIT_SHIELDS", baitWeight));
+
+				// If this Pokemon's most powerful Charged Move doesn't threaten shields, be less likely to bait
+				var biggestDamage = 0;
+
+				for(var i = 0; i < pokemon.chargedMoves.length; i++){
+					if(pokemon.chargedMoves[i].damage > biggestDamage){
+						biggestDamage = pokemon.chargedMoves[i].damage;
+					}
+				}
+
+				if((biggestDamage < pokemon.hp * .9)&&(!pokemon.getBoostMove())){
+					var defaultWeight = Math.ceil(pokemon.hp / biggestDamage);
+					options.push(new DecisionOption("DEFAULT", defaultWeight));
+				}
 			}
 
 			if(self.hasStrategy("FARM_ENERGY")){

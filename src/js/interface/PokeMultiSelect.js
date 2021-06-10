@@ -274,7 +274,7 @@ function PokeMultiSelect(element){
 
 		if((context == "team")&&(pokemonList.length > 0)){
 			// Check for any ineligible Pokemon
-			var eligibleList =  gm.generateFilteredPokemonList(battle, battle.getCup().include, battle.getCup().exclude);
+			var eligibleList =  gm.generateFilteredPokemonList(battle, battle.getCup().include, battle.getCup().exclude, false, false, false);
 
 			for(var i = 0; i < pokemonList.length; i++){
 				var speciesId = pokemonList[i].speciesId;

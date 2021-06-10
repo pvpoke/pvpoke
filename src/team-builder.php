@@ -35,6 +35,13 @@ require_once 'header.php';
 					<?php require 'modules/pokemultiselect.php'; ?>
 				</div>
 			</div>
+			<div class="flex-section">
+				<h3 class="section-title">Exclude</h3>
+				<p>Exclude these Pokemon from your suggested alternatives.</p>
+				<div class="team-build exclude-alternatives">
+					<?php require 'modules/pokemultiselect.php'; ?>
+				</div>
+			</div>
 		</div>
 		<h3 class="section-title">Options</h3>
 		<div class="flex poke">

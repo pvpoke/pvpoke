@@ -59,6 +59,7 @@
 				</div>
 			</div>
 		</div>
+		<div class="charge">25%</div>
 	</div>
 </div>
 

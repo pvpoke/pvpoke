@@ -16,7 +16,8 @@ var InterfaceMaster = (function () {
 			var multiSelectors = [
 				new PokeMultiSelect($(".team .poke.multi")),
 				new PokeMultiSelect($(".custom-threats .poke.multi")),
-				new PokeMultiSelect($(".custom-alternatives .poke.multi"))
+				new PokeMultiSelect($(".custom-alternatives .poke.multi")),
+				new PokeMultiSelect($(".exclude-alternatives .poke.multi"))
 			];
 			var results; // Store team matchup results for later reference
 			var self = this;
@@ -694,6 +695,14 @@ var InterfaceMaster = (function () {
 
 				for(var i = 0; i < team.length; i++){
 					exclusionList.push(team[i].speciesId);
+				}
+
+				// Exclude any Pokemon specified in the advanced settings
+
+				var manuallyExcluded = multiSelectors[3].getPokemonList();
+
+				for(var i = 0; i < manuallyExcluded.length; i++){
+					exclusionList.push(manuallyExcluded[i].speciesId);
 				}
 
 				// In Cliffhanger, exclude Pokemon that would put the team over the point limit

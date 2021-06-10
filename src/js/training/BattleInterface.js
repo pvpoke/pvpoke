@@ -25,13 +25,14 @@ var BattlerMaster = (function () {
 			// Variables for handling charge up
 			var charge = 0;
 			var maxCharge = 100;
-			var chargeRate = 20;
-			var chargeDecayRate = 0.5;
+			var chargeRate = 2;
+			var chargeDecayRate = 0;
 			var phaseInterval;
 			var chargeTime = 6000;
 			var switchTime = 13000;
 			var phaseTimer = 4000;
 			var countdown = 0;
+			var charging = false;
 
 			// Helper variables
 			var turn = 0;
@@ -60,6 +61,8 @@ var BattlerMaster = (function () {
 				// Event listeners
 				if(! listenersInitialized){
 					$(".battle-window").on("click", battleWindowClick);
+					$(".battle-window").on("mousedown touchstart", battleWindowMouseDown);
+					$(".battle-window").on("mouseup touchend", battleWindowMouseUp);
 					$(".shield-window .close").on("click", closeShieldClick);
 					$(".shield-window .shield").on("click", useShieldClick);
 					$(".end-screen .replay").on("click", replayBattleClick);
@@ -163,10 +166,11 @@ var BattlerMaster = (function () {
 							$moveBar.addClass(activePokemon[0].chargedMoves[response.move].type);
 
 							$(".charge-window .move-bars").append($moveBar);
-							$(".battle-window .animate-message .text").html("Tap to charge up "+activePokemon[0].chargedMoves[response.move].name+"!");
+							$(".battle-window .animate-message .text").html("Hold to charge up "+activePokemon[0].chargedMoves[response.move].name+"!");
 							$(".switch-sidebar").removeClass("active");
 
 							charge = 0;
+							charging = false;
 							phaseTimer = chargeTime;
 							phaseInterval = setInterval(chargeUpStep, 1000 / 60);
 
@@ -919,15 +923,18 @@ var BattlerMaster = (function () {
 
 			function chargeUpStep(){
 				// Lock charge at 100 once user reaches 100
-				if(charge < maxCharge){
-					charge = Math.max(charge - chargeDecayRate, 0);
+
+				if(charging){
+					charge = Math.min(charge + chargeRate, maxCharge);
 				}
 
 				// Update rings
 				var percent = (charge / maxCharge) * 100;
+				var displayPercent = Math.round(25 + ((charge / maxCharge) * 75));
 
 				$(".battle-window .charge-window .ring").css("width", percent + "%");
 				$(".battle-window .charge-window .ring").css("height", percent + "%");
+				$(".battle-window .charge-window .charge").html(displayPercent + "%");
 
 				self.updatePhaseTimer();
 			}
@@ -1028,17 +1035,24 @@ var BattlerMaster = (function () {
 						battle.queueAction(0, "charged", index);
 					}
 				}
+			}
 
-				// Charge up a Charged Move
+			// Handler for clicking down or tapping
+
+			function battleWindowMouseDown(e){
 				if(phase == "suspend_charged_attack"){
-					chargeUpClick(e);
+					e.preventDefault();
+					charging = true;
 				}
 			}
 
-			// Click handler for sending input to the Battle object
+			// Handler for clicking down or tapping
 
-			function chargeUpClick(e){
-				charge = Math.min(charge + chargeRate, maxCharge);
+			function battleWindowMouseUp(e){
+				if(phase == "suspend_charged_attack"){
+					e.preventDefault();
+					charging = false;
+				}
 			}
 
 			// Close the shield window

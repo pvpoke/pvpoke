@@ -993,6 +993,17 @@ a.random{
 				max-height:100%;
 			}
 		}
+
+		.charge{
+			font-weight: bold;
+			font-size:18px;
+			padding:10px;
+			border-radius: 12px;
+			background:rgba(0,0,0,0.5);
+			display:inline-block;
+			position: relative;
+			top: 170px;
+		}
 	}
 
 	.switch-sidebar{

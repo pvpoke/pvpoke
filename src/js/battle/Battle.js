@@ -734,7 +734,7 @@ function Battle(){
 		}
 
 		if((mode == "simulate")&&(time >= 30000)&&(! thirtySecondMarked)){
-			timeline.push(new TimelineEvent("switchAvailable", "Switch Available (30 seconds)", 0, time, turns));
+			//timeline.push(new TimelineEvent("switchAvailable", "Switch Available (30 seconds)", 0, time, turns));
 			thirtySecondMarked = true;
 		}
 

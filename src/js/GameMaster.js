@@ -662,7 +662,9 @@ var GameMaster = (function () {
 
 		// Return a list of eligible Pokemon given a Battle object, and include and exclude filters
 
-		object.generateFilteredPokemonList = function(battle, include, exclude, rankingData, overrides){
+		object.generateFilteredPokemonList = function(battle, include, exclude, rankingData, overrides, excludeByStatProduct){
+			excludeByStatProduct = typeof excludeByStatProduct !== 'undefined' ? excludeByStatProduct : true;
+
 			// Gather all eligible Pokemon
 
 			var minStats = 3500; // You must be this tall to ride this ride
@@ -673,6 +675,10 @@ var GameMaster = (function () {
 				minStats = 1370;
 			} else if(battle.getCP() == 2500){
 				minStats = 2800;
+			}
+
+			if(! excludeByStatProduct){
+				minStats = 0;
 			}
 
 			var bannedList = ["mewtwo","mewtwo_armored","giratina_altered","groudon","kyogre","palkia","dialga","heatran","giratina_origin","darkrai","cobalion","terrakion","virizion","thundurus_incarnate","regigigas","tornadus_incarnate","tornadus_therian","tornadus_therian_xl","landorus_incarnate", "landorus_therian", "reshiram", "zekrom", "kyurem", "genesect_burn", "xerneas", "thundurus_therian", "yveltal"];

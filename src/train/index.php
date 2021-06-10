@@ -148,10 +148,10 @@ require_once '../header.php';
 <div class="section white updates">
 	<h3>What's New</h3>
 
-	<h4>v1.21.0 (April 25, 2021)</h4>
+	<h4>v1.22.9 (June 10, 2021)</h4>
 	<ul>
-		<li>New <a href="<?php echo $WEB_ROOT; ?>train/editor/">Training Team Editor</a> allows you to customize the teams you fight in the Training Battles.</li>
-		<li><a href="<?php echo $WEB_ROOT; ?>train/">Training Battles</a> allows you to import teams from the editor or from your most frequently encountered teams from <li><a href="https://gobattlelog.com">GoBattleLog.com</a> </li>.</li>
+		<li>Charged Move minigame now charges on hold instead of rapid clicks/taps. Also displays damage percent.</li>
+		<li>The Training bot now avoids baiting if its best Charged Move doesn't threaten a shield. (e.g. Galarian Stunfisk players typically throw Earthquake against Azumarill rather than Rock Slide.)</li>
 	</ul>
 
 </div>
