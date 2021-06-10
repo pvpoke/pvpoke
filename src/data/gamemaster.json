@@ -926,7 +926,7 @@
         "dexStart": 650,
         "dexEnd": 719
     }],
-    "shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "venusaur_mega", "charmander", "charmeleon", "charizard", "charizard_mega_x", "charizard_mega_y", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "beedrill_mega", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "alakazam_mega", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "gyarados_mega", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "ampharos_mega", "bellossom", "politoed", "scizor", "scizor_mega", "houndour", "houndoom", "houndoom_mega", "larvitar", "pupitar", "tyranitar", "tyranitar_mega", "mudkip", "marshtomp", "swampert", "swampert_mega", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "gardevoir_mega", "trapinch", "vibrava", "flygon", "shuppet", "banette", "banette_mega", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "gallade_mega", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "sableye", "sableye_mega", "zapdos", "moltres", "delibird", "stantler", "absol", "bagon", "shelgon", "salamence", "salamence_mega", "snover", "abomasnow", "abomasnow_mega", "raikou", "vulpix", "ninetales", "exeggcute", "exeggutor", "omanyte", "omastar", "misdreavus", "mismagius", "carvanha", "sharpedo", "sharpedo_mega", "pinsir", "pinsir_mega", "mawile", "mawile_mega", "beldum", "metang", "metagross", "metagross_mega", "entei", "ekans", "arbok", "koffing", "weezing", "nidoran_female", "nidorina", "nidoran_male", "nidorino", "nidoqueen", "nidoking", "machop", "machoke", "machamp", "gligar", "gliscor", "shuckle", "stunky", "skuntank", "suicune", "pineco", "forretress", "mewtwo", "mewtwo_mega_x", "mewtwo_mega_y", "diglett", "dugtrio", "shellder", "cloyster", "slowpoke", "slowbro", "slowking", "aerodactyl", "skarmory", "teddiursa", "ursaring", "hoppip", "skiploom", "jumpluff", "wooper", "quagsire", "swinub", "piloswine", "mamoswine", "nosepass", "probopass", "aron", "lairon", "aggron", "spheal", "sealeo", "walrein", "lileep", "cradily", "anorith", "armaldo", "aipom", "ambipom", "skorupi", "drapion", "poochyena", "mightyena", "murkrow", "honchkrow", "electrike", "manectric", "snubbull", "granbull", "makuhita", "hariyama", "starly", "staravia", "staraptor", "tangela", "tangrowth", "horsea", "seadra", "kingdra"],
+    "shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "venusaur_mega", "charmander", "charmeleon", "charizard", "charizard_mega_x", "charizard_mega_y", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "beedrill_mega", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "alakazam_mega", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "gyarados_mega", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "ampharos_mega", "bellossom", "politoed", "scizor", "scizor_mega", "houndour", "houndoom", "houndoom_mega", "larvitar", "pupitar", "tyranitar", "tyranitar_mega", "mudkip", "marshtomp", "swampert", "swampert_mega", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "gardevoir_mega", "trapinch", "vibrava", "flygon", "shuppet", "banette", "banette_mega", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "gallade_mega", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "sableye", "sableye_mega", "zapdos", "moltres", "delibird", "stantler", "absol", "bagon", "shelgon", "salamence", "salamence_mega", "snover", "abomasnow", "abomasnow_mega", "raikou", "vulpix", "ninetales", "exeggcute", "exeggutor", "omanyte", "omastar", "misdreavus", "mismagius", "carvanha", "sharpedo", "sharpedo_mega", "pinsir", "pinsir_mega", "mawile", "mawile_mega", "beldum", "metang", "metagross", "metagross_mega", "entei", "ekans", "arbok", "koffing", "weezing", "nidoran_female", "nidorina", "nidoran_male", "nidorino", "nidoqueen", "nidoking", "machop", "machoke", "machamp", "gligar", "gliscor", "shuckle", "stunky", "skuntank", "suicune", "pineco", "forretress", "mewtwo", "mewtwo_mega_x", "mewtwo_mega_y", "diglett", "dugtrio", "shellder", "cloyster", "slowpoke", "slowbro", "slowking", "aerodactyl", "skarmory", "teddiursa", "ursaring", "hoppip", "skiploom", "jumpluff", "wooper", "quagsire", "swinub", "piloswine", "mamoswine", "nosepass", "probopass", "aron", "lairon", "aggron", "spheal", "sealeo", "walrein", "lileep", "cradily", "anorith", "armaldo", "aipom", "ambipom", "skorupi", "drapion", "poochyena", "mightyena", "murkrow", "honchkrow", "electrike", "manectric", "snubbull", "granbull", "makuhita", "hariyama", "starly", "staravia", "staraptor", "tangela", "tangrowth", "horsea", "seadra", "kingdra", "ho_oh"],
     "pokemon": [{
         "dex": 1,
         "speciesName": "Bulbasaur",
@@ -10168,7 +10168,31 @@
         "types": ["fire", "flying"],
         "fastMoves": ["EXTRASENSORY", "HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "STEEL_WING", "INCINERATE"],
         "chargedMoves": ["BRAVE_BIRD", "FIRE_BLAST", "SOLAR_BEAM", "EARTHQUAKE"],
-        "tags": ["legendary"],
+        "tags": ["legendary", "shadoweligible"],
+        "defaultIVs": {
+            "cp500": [5, 7, 11, 14],
+            "cp1500": [14.5, 4, 8, 12],
+            "cp2500": [23.5, 5, 14, 15]
+        },
+        "eliteMoves": ["EARTHQUAKE"],
+		"level25CP": 2457,
+        "levelCap": 40,
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": true
+    }, {
+        "dex": 250,
+        "speciesName": "Ho-Oh",
+        "speciesId": "ho_oh_shadow",
+        "baseStats": {
+            "atk": 239,
+            "def": 244,
+            "hp": 214
+        },
+        "types": ["fire", "flying"],
+        "fastMoves": ["EXTRASENSORY", "HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "STEEL_WING", "INCINERATE"],
+        "chargedMoves": ["BRAVE_BIRD", "FIRE_BLAST", "SOLAR_BEAM", "EARTHQUAKE"],
+        "tags": ["legendary", "shadow"],
         "defaultIVs": {
             "cp500": [5, 7, 11, 14],
             "cp1500": [14.5, 4, 8, 12],
