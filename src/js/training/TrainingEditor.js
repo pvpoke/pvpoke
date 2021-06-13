@@ -42,6 +42,9 @@ var InterfaceMaster = (function () {
 				$("body").on("click", "a.edit", setupEditTeam);
 				$("body").on("click", "a.delete", confirmDeleteTeam);
 				$(".button.save-changes").click(editTeam);
+				$("body").on("click", ".check", checkBox);
+
+
 				$(".training-editor-import textarea").change(function(e){
 					var data = JSON.parse($(".training-editor-import textarea").val());
 					self.importTeams(data);
@@ -435,6 +438,13 @@ var InterfaceMaster = (function () {
 					$(".team-fill-select").trigger("change");
 				});
 			});
+		}
+
+		// Turn checkboxes on and off
+
+		function checkBox(e){
+			$(this).toggleClass("on");
+			$(this).trigger("change");
 		}
 
         return object;

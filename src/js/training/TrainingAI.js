@@ -87,7 +87,6 @@ function TrainingAI(l, p, b){
 			pool = [];
 
 			// For each Pokemon in the preset team, make a new "slot"
-			console.log(customTeamPool);
 
 			for(var i = 0; i < preset.pokemon.length; i++){
 				var slot = {
@@ -116,6 +115,10 @@ function TrainingAI(l, p, b){
 
 		// Draw unique slots from the bucket
 		var rosterSize = 6;
+
+		if((battle.getCup().partySize == 3)&&(battle.getCup().name == "element")){
+			rosterSize = battle.getCup().partySize;
+		}
 
 		if((teamSelectMode == "preset")&&(partySize == 3)){
 			rosterSize = 3;
@@ -300,6 +303,10 @@ function TrainingAI(l, p, b){
 		// If the team pool only has presets, use a preset
 
 		if(partySize == 3 && teamSelectMode == "preset"){
+			pickStrategy = "PRESET";
+		}
+
+		if(! currentTeamPool.slots){
 			pickStrategy = "PRESET";
 		}
 
