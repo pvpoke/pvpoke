@@ -302,7 +302,7 @@ function TrainingAI(l, p, b){
 
 		// If the team pool only has presets, use a preset
 
-		if(partySize == 3){
+		if((partySize == 3)&&(currentTeamPool)){
 			if(teamSelectMode == "preset" || ! currentTeamPool.slots){
 				pickStrategy = "PRESET";
 			}
