@@ -302,13 +302,12 @@ function TrainingAI(l, p, b){
 
 		// If the team pool only has presets, use a preset
 
-		if(partySize == 3 && teamSelectMode == "preset"){
-			pickStrategy = "PRESET";
+		if(partySize == 3){
+			if(teamSelectMode == "preset" || ! currentTeamPool.slots){
+				pickStrategy = "PRESET";
+			}
 		}
 
-		if(! currentTeamPool.slots){
-			pickStrategy = "PRESET";
-		}
 
 		switch(pickStrategy){
 			// Choose a random set of 3 from the roster
