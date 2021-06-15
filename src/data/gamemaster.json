@@ -927,7 +927,7 @@
         "dexStart": 650,
         "dexEnd": 719
     }],
-    "shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "venusaur_mega", "charmander", "charmeleon", "charizard", "charizard_mega_x", "charizard_mega_y", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "beedrill_mega", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "alakazam_mega", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "gyarados_mega", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "ampharos_mega", "bellossom", "politoed", "scizor", "scizor_mega", "houndour", "houndoom", "houndoom_mega", "larvitar", "pupitar", "tyranitar", "tyranitar_mega", "mudkip", "marshtomp", "swampert", "swampert_mega", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "gardevoir_mega", "trapinch", "vibrava", "flygon", "shuppet", "banette", "banette_mega", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "gallade_mega", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "sableye", "sableye_mega", "zapdos", "moltres", "delibird", "stantler", "absol", "bagon", "shelgon", "salamence", "salamence_mega", "snover", "abomasnow", "abomasnow_mega", "raikou", "vulpix", "ninetales", "exeggcute", "exeggutor", "omanyte", "omastar", "misdreavus", "mismagius", "carvanha", "sharpedo", "sharpedo_mega", "pinsir", "pinsir_mega", "mawile", "mawile_mega", "beldum", "metang", "metagross", "metagross_mega", "entei", "ekans", "arbok", "koffing", "weezing", "nidoran_female", "nidorina", "nidoran_male", "nidorino", "nidoqueen", "nidoking", "machop", "machoke", "machamp", "gligar", "gliscor", "shuckle", "stunky", "skuntank", "suicune", "pineco", "forretress", "mewtwo", "mewtwo_mega_x", "mewtwo_mega_y", "diglett", "dugtrio", "shellder", "cloyster", "slowpoke", "slowbro", "slowking", "aerodactyl", "skarmory", "teddiursa", "ursaring", "hoppip", "skiploom", "jumpluff", "wooper", "quagsire", "swinub", "piloswine", "mamoswine", "nosepass", "probopass", "aron", "lairon", "aggron", "spheal", "sealeo", "walrein", "lileep", "cradily", "anorith", "armaldo", "aipom", "ambipom", "skorupi", "drapion", "poochyena", "mightyena", "murkrow", "honchkrow", "electrike", "manectric", "snubbull", "granbull", "makuhita", "hariyama", "starly", "staravia", "staraptor", "tangela", "tangrowth", "horsea", "seadra", "kingdra", "ho_oh"],
+    "shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "venusaur_mega", "charmander", "charmeleon", "charizard", "charizard_mega_x", "charizard_mega_y", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "beedrill_mega", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "alakazam_mega", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "gyarados_mega", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "ampharos_mega", "bellossom", "politoed", "scizor", "scizor_mega", "houndour", "houndoom", "houndoom_mega", "larvitar", "pupitar", "tyranitar", "tyranitar_mega", "mudkip", "marshtomp", "swampert", "swampert_mega", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "gardevoir_mega", "trapinch", "vibrava", "flygon", "shuppet", "banette", "banette_mega", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "gallade_mega", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "sableye", "sableye_mega", "zapdos", "moltres", "delibird", "stantler", "absol", "bagon", "shelgon", "salamence", "salamence_mega", "snover", "abomasnow", "abomasnow_mega", "raikou", "vulpix", "ninetales", "exeggcute", "exeggutor", "omanyte", "omastar", "misdreavus", "mismagius", "carvanha", "sharpedo", "sharpedo_mega", "pinsir", "pinsir_mega", "mawile", "mawile_mega", "beldum", "metang", "metagross", "metagross_mega", "entei", "ekans", "arbok", "koffing", "weezing", "nidoran_female", "nidorina", "nidoran_male", "nidorino", "nidoqueen", "nidoking", "machop", "machoke", "machamp", "gligar", "gliscor", "shuckle", "stunky", "skuntank", "suicune", "pineco", "forretress", "mewtwo", "mewtwo_mega_x", "mewtwo_mega_y", "diglett", "dugtrio", "shellder", "cloyster", "slowpoke", "slowbro", "slowking", "aerodactyl", "skarmory", "teddiursa", "ursaring", "hoppip", "skiploom", "jumpluff", "wooper", "quagsire", "swinub", "piloswine", "mamoswine", "nosepass", "probopass", "aron", "lairon", "aggron", "spheal", "sealeo", "walrein", "lileep", "cradily", "anorith", "armaldo", "aipom", "ambipom", "skorupi", "drapion", "poochyena", "mightyena", "murkrow", "honchkrow", "electrike", "manectric", "snubbull", "granbull", "makuhita", "hariyama", "starly", "staravia", "staraptor", "tangela", "tangrowth", "horsea", "seadra", "kingdra", "ho_oh", "bidoof", "bibarel"],
     "pokemon": [{
         "dex": 1,
         "speciesName": "Bulbasaur",
@@ -7028,7 +7028,6 @@
         },
         "level25CP": 2641,
         "eliteMoves": ["PSYSTRIKE", "SHADOW_BALL", "HYPER_BEAM"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -7074,7 +7073,6 @@
             "cp2500": [22, 4, 13, 10]
         },
         "eliteMoves": ["PSYSTRIKE", "SHADOW_BALL", "HYPER_BEAM"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -10183,7 +10181,7 @@
         "released": true
     }, {
         "dex": 250,
-        "speciesName": "Ho-Oh",
+        "speciesName": "Ho-Oh (Shadow)",
         "speciesId": "ho_oh_shadow",
         "baseStats": {
             "atk": 239,
@@ -14676,12 +14674,38 @@
         },
         "types": ["normal", "none"],
         "fastMoves": ["TACKLE", "TAKE_DOWN"],
-        "chargedMoves": ["CRUNCH", "GRASS_KNOT", "HYPER_FANG"],
+        "chargedMoves": ["CRUNCH", "GRASS_KNOT", "HYPER_FANG", "ICE_BEAM", "THUNDERBOLT", "SHADOW_BALL"],
+		"eliteMoves": ["ICE_BEAM", "THUNDERBOLT", "SHADOW_BALL"],
         "defaultIVs": {
             "cp500": [28.5, 4, 9, 14],
             "cp1500": [50, 15, 15, 15],
             "cp2500": [50, 15, 15, 15]
         },
+		"tags": ["shadoweligible"],
+		"level25CP": 385,
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": true
+    },  {
+        "dex": 399,
+        "speciesName": "Bidoof (Shadow)",
+        "speciesId": "bidoof_shadow",
+        "baseStats": {
+            "atk": 80,
+            "def": 73,
+            "hp": 153
+        },
+        "types": ["normal", "none"],
+        "fastMoves": ["TACKLE", "TAKE_DOWN"],
+        "chargedMoves": ["CRUNCH", "GRASS_KNOT", "HYPER_FANG", "ICE_BEAM", "THUNDERBOLT", "SHADOW_BALL"],
+		"eliteMoves": ["ICE_BEAM", "THUNDERBOLT", "SHADOW_BALL"],
+        "defaultIVs": {
+            "cp500": [28.5, 4, 9, 14],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+		"tags": ["shadow"],
+		"level25CP": 385,
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
         "released": true
@@ -14702,6 +14726,30 @@
             "cp1500": [30.5, 7, 14, 15],
             "cp2500": [50, 15, 15, 15]
         },
+		"tags": ["shadoweligible"],
+		"level25CP": 1095,
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": true
+    }, {
+        "dex": 400,
+        "speciesName": "Bibarel (Shadow)",
+        "speciesId": "bibarel_shadow",
+        "baseStats": {
+            "atk": 162,
+            "def": 119,
+            "hp": 188
+        },
+        "types": ["normal", "water"],
+        "fastMoves": ["TAKE_DOWN", "WATER_GUN"],
+        "chargedMoves": ["HYPER_BEAM", "HYPER_FANG", "SURF"],
+        "defaultIVs": {
+            "cp500": [10.5, 4, 13, 8],
+            "cp1500": [30.5, 7, 14, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+		"tags": ["shadow"],
+		"level25CP": 1095,
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
         "released": true
@@ -17250,7 +17298,6 @@
             "cp1500": [12.5, 6, 14, 13],
             "cp2500": [21, 5, 15, 10]
         },
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
