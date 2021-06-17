@@ -71,10 +71,8 @@ require_once '../header.php';
 	<select class="format-select">
 		<option value="1500" cup="all" level-cap="50">Great League</option>
 		<option value="2500" cup="all" level-cap="50">Ultra League</option>
+		<option value="2500" cup="premier" level-cap="50">Ultra League (Premier)</option>
 		<option value="10000" cup="classic" level-cap="40">Master League (Classic)</option>
-		<option value="2500" cup="premier" level-cap="50">Premier Cup (Ultra)</option>
-		<option value="10000" cup="premier" level-cap="50">Premier Cup (Master)</option>
-		<option value="1500" cup="kanto" level-cap="50">Kanto Cup</option>
 	</select>
 
 	<div class="date-updated">Last updated</div>

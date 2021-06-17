@@ -34,26 +34,14 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.22.9 (June 10, 2021)</h4>
+	<h4>v1.22.10 (June 17, 2021)</h4>
 	<ul>
-		<li>Pokemon selected in Matrix Battle and custom groups now display their stat values.</li>
-		<li>Team Builder updates:
-			<ul>
-				<li>Team Builder has an exclusion list in the advanced settings so you can remove specific Pokemon from the suggestions.</li>
-				<li>Fixed an issue where low stat product Pokemon that are excluded from the rankings were marked as ineligible in the Team Builder.</li>
-			</ul>
-		</li>
-		<li>Training Battle updates:
-			<ul>
-				<li>Charged Move minigame now charges on hold instead of rapid clicks/taps. Also displays damage percent.</li>
-				<li>The Training bot now avoids baiting if its best Charged Move doesn't threaten a shield. (e.g. Galarian Stunfisk players typically throw Earthquake against Azumarill rather than Rock Slide.)</li>
-			</ul>
-		</li>
-
-		<li>CSV exports of the rankings now include move counts for each Pokemon's recommended Charged Moves.</li>
-		<li>Removed the 30 second switch timer marker from the battle timeline.</li>
+		<li>The Team Builder now has a single format dropdown instead of selecting the league and cup separately.</li>
+		<li>Pokemon shown in the Team Builder's "Meta Scorecard" now correlate to the prebuilt "meta group" for the selected format.</li>
+		<ul>
+			<li>Previously the Meta Scorecard showed Pokemon sorted by their rankings, but included highly ranked Pokemon that are not meta relevant.</li>
+		</ul>
 	</ul>
-
 	<h3>Latest Article</h3>
 
 	<div class="article-item flex">

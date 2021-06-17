@@ -27,6 +27,7 @@ var InterfaceMaster = (function () {
 
 			this.context = "team";
 
+
 			this.init = function(){
 
 				gm = GameMaster.getInstance();
@@ -50,8 +51,6 @@ var InterfaceMaster = (function () {
 				multiSelectors[0].setMaxPokemonCount(6);
 
 
-				$(".league-select").on("change", selectLeague);
-				$(".cup-select").on("change", selectCup);
 				$(".format-select").on("change", selectFormat);
 				$(".rate-btn").on("click", rateClick);
 				$(".print-scorecard").on("click", printScorecard);
@@ -65,7 +64,7 @@ var InterfaceMaster = (function () {
 				// Load rankings for the current league
 
 				if(! get){
-					gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), "all");
+					gm.loadRankingData(self, "overall", parseInt($(".format-select option:selected").attr("value")), "all");
 				}
 
 				window.addEventListener('popstate', function(e) {
@@ -192,46 +191,17 @@ var InterfaceMaster = (function () {
 
 								if(val.indexOf("-") > -1){
 									getCP = val.split("-")[0];
-									var getCap = val.split("-")[1];
-
-									$(".league-select option[value=\""+getCP+"\"][level-cap=\""+getCap+"\"]").prop("selected","selected");
-								} else{
-									$(".league-select option[value=\""+getCP+"\"]").prop("selected","selected");
 								}
 
-								$(".league-select").trigger("change");
+								battle.setCP(getCP);
+
+								// Set format
+
+								$(".format-select option[value=\""+getCP+"\"][cup=\""+battle.getCup().name+"\"]").prop("selected","selected");
 								break;
 
 							case "cup":
-								if(val == "classic"){
-									val = "all";
-								}
-
-								$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
-
-								if($(".format-select option[cup=\""+val+"\"]").length > 0){
-									$(".format-select option[cup=\""+val+"\"]").prop("selected","selected");
-								} else{
-									var cat = $(".cup-select option[value=\""+val+"\"]").attr("cat");
-									$(".format-select option[value=\""+cat+"\"]").prop("selected","selected");
-									selectFormat();
-
-									$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
-								}
-
-								var cup = $(".cup-select option:selected").val();
-
-								if(cup == "sorcerous"){
-									$("#main h1").html("Team Wizard");
-								}
-
-								battle.setCup(cup);
-
-								if(battle.getCup().tierRules){
-									multiSelectors[0].setCliffhangerMode(true);
-								} else{
-									multiSelectors[0].setCliffhangerMode(false);
-								}
+								battle.setCup(val);
 								break;
 
 							case "m1":
@@ -341,6 +311,16 @@ var InterfaceMaster = (function () {
 					gm.loadRankingData(self, "overall", battle.getCP(), battle.getCup().name);
 					return false;
 				}
+
+				var metaKey = $(".format-select option:selected").attr("meta-group");
+
+				if(! gm.groups[metaKey]){
+					runningResults = true;
+					gm.loadGroupData(self, metaKey);
+					return false;
+				}
+
+				var metaGroup = gm.groups[metaKey];
 
 				// Gather advanced settings
 				var scorecardCount = parseInt($(".scorecard-length-select option:selected").val());
@@ -521,8 +501,6 @@ var InterfaceMaster = (function () {
 						avgThreatScore += r.score;
 					}
 
-
-
 					// Push to counter team
 
 					if(count < 6){
@@ -623,6 +601,20 @@ var InterfaceMaster = (function () {
 					}
 
 					if((r.pokemon.needsXLCandy())&&(! allowXL)){
+						i++;
+						continue;
+					}
+
+					// Skip Pokemon if it isn't in the current meta group
+					var inMetaGroup = false;
+
+					for(var n = 0; n < metaGroup.length; n++){
+						if(metaGroup[n].speciesId == r.speciesId){
+							inMetaGroup = true;
+						}
+					}
+
+					if(! inMetaGroup){
 						i++;
 						continue;
 					}
@@ -1354,75 +1346,33 @@ var InterfaceMaster = (function () {
 				return str;
 			}
 
-			// Event handler for changing the league select
-
-			function selectLeague(e){
-				var allowed = [500, 1500, 2500, 10000];
-				var cp = parseInt($(".league-select option:selected").val());
-				var levelCap = parseInt($(".league-select option:selected").attr("level-cap"));
-
-				if(allowed.indexOf(cp) > -1){
-					battle.setCP(cp);
-					battle.setLevelCap(levelCap);
-
-					// Set the selected team to the new CP
-					for(var i = 0; i < multiSelectors.length; i++){
-						multiSelectors[i].setCP(cp);
-						multiSelectors[i].setLevelCap(levelCap);
-					}
-
-				}
-
-				var cupName = battle.getCup().name;
-
-				if((cp == 10000)&&(levelCap == 40)){
-					cupName = "classic";
-					battle.setCup("classic");
-				}
-
-				if((cp == 10000)&&(levelCap > 40)){
-					cupName = "all";
-					battle.setCup("all");
-				}
-
-				gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), cupName);
-			}
-
 			// Event handler for changing the cup select
 
-			function selectCup(e){
-				var cup = $(".cup-select option:selected").val();
+			function selectFormat(e){
+				var cp = $(".format-select option:selected").val();
+				var cup = $(".format-select option:selected").attr("cup");
+
+				battle.setCP(cp);
 				battle.setCup(cup);
 
-				// Filter PokeSelect options by type
-				var cupTypes = [];
-				cup = battle.getCup();
+				var levelCap = 50;
 
-				for(var i = 0; i < cup.include.length; i++){
-					if(cup.include[i].filterType == "type"){
-						cupTypes = cup.include[i].values;
-					}
+				if(battle.getCup().levelCap){
+					levelCap = battle.getCup().levelCap;
 				}
 
-				for(var i = 0; i < pokeSelectors.length; i++){
-					pokeSelectors[i].filterByTypes(cupTypes);
-				}
+				battle.setLevelCap(levelCap);
 
-				if(cup.name == "sorcerous"){
-					$("#main h1").html("Team Wizard");
-				} else{
-					$("#main h1").html("Team Builder");
+				// Set the selected team to the new CP
+				for(var i = 0; i < multiSelectors.length; i++){
+					multiSelectors[i].setCP(cp);
+					multiSelectors[i].setLevelCap(levelCap);
 				}
 
 				if(battle.getCup().tierRules){
 					multiSelectors[0].setCliffhangerMode(true);
 				} else{
 					multiSelectors[0].setCliffhangerMode(false);
-				}
-
-				if(cup.name == "little"){
-					$(".league-select option[value='500']").prop("selected","selected");
-					$(".league-select").trigger("change");
 				}
 
 				// Load ranking data for movesets
@@ -1430,40 +1380,6 @@ var InterfaceMaster = (function () {
 
 				if(! gm.rankings[key]){
 					gm.loadRankingData(self, "overall", battle.getCP(), battle.getCup().name);
-				}
-			}
-
-			// Event handler for changing the format category
-
-			function selectFormat(e){
-				var format = $(".format-select option:selected").val();
-				var cup = $(".format-select option:selected").attr("cup");
-
-				$(".cup-select option").hide();
-				$(".cup-select option[cat=\""+format+"\"]").show();
-				$(".cup-select option[cat=\""+format+"\"]").eq(0).prop("selected", true);
-
-				if(cup){
-					$(".cup-select option[value=\""+cup+"\"]").eq(0).prop("selected", true);
-				}
-
-				$(".cup-select").change();
-
-				if((format == "all")||(cup)){
-					$(".cup-select").hide();
-				} else{
-					$(".cup-select").show();
-				}
-
-				if(format == "custom"){
-					// Redirect to the custom rankings page
-					window.location.href = webRoot+'custom-rankings/';
-				}
-
-				if(battle.getCup().tierRules){
-					multiSelectors[0].setCliffhangerMode(true);
-				} else{
-					multiSelectors[0].setCliffhangerMode(false);
 				}
 			}
 

@@ -615,10 +615,20 @@ var GameMaster = (function () {
 					data.sort((a,b) => (a.speciesId > b.speciesId) ? 1 : ((b.speciesId > a.speciesId) ? -1 : 0));
 
 					object.groups[key] = data;
-					caller.quickFillGroup(data);
+					if(caller.context != "team"){
+						caller.quickFillGroup(data);
+					} else{
+						caller.displayRankingData(data);
+					}
 				});
 			} else{
-				caller.quickFillGroup(object.groups[key]);
+
+				if(caller.context != "team"){
+					caller.quickFillGroup(object.groups[key]);
+				} else{
+					caller.displayRankingData(data);
+				}
+
 			}
 		}
 

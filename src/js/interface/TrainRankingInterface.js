@@ -148,11 +148,6 @@ var InterfaceMaster = (function () {
 					$row.removeClass("hide");
 
 					var cupName = battle.getCup().name;
-
-					if(cupName == "classic"){
-						cupName = "all";
-					}
-
 					var teamURL = host + "team-builder/" + cupName + "/" + battle.getCP(true) + "/";
 					var teamStr = '';
 
