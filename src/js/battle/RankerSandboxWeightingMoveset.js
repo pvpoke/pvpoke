@@ -15,8 +15,6 @@ var RankerMaster = (function () {
 		function rankerObject(){
 			var gm = GameMaster.getInstance();
 			var battle = new Battle();
-
-			var rankings = [];
 			var rankingCombinations = [];
 
 			var moveSelectMode = "force";
@@ -52,7 +50,12 @@ var RankerMaster = (function () {
 
 				for(currentScenarioIndex = 0; currentScenarioIndex < scenarios.length; currentScenarioIndex++){
 					var r = self.rank(leagues[currentLeagueIndex], scenarios[currentScenarioIndex]);
-					allResults.push(r);
+
+					if(! callback){
+						delete r;
+					} else{
+						allResults.push(r);
+					}
 				}
 
 				callback(allResults);
@@ -145,7 +148,6 @@ var RankerMaster = (function () {
 						}
 
 					}
-
 				}
 
 				var currentRankings = rankingCombinations.length;
@@ -168,7 +170,6 @@ var RankerMaster = (function () {
 						}
 					}
 				}, 1000);
-
 			}
 
 			// Run an individual rank set
@@ -178,7 +179,7 @@ var RankerMaster = (function () {
 				var totalBattles = 0;
 				var shieldCounts = scenario.shields;
 
-				rankings = [];
+				var rankings = [];
 
 				// For all eligible Pokemon, simulate battles and gather rating data
 
@@ -661,6 +662,8 @@ var RankerMaster = (function () {
 						dataType:'json',
 						success : function(data) {
 							console.log(data);
+
+							delete rankings;
 						},
 						error : function(request,error)
 						{

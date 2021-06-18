@@ -450,6 +450,8 @@ function Battle(){
 		timeline = [];
 		queuedActions = [];
 		turnActions = [];
+		turnMessages = [];
+		turnAnimations = [];
 		sixtySecondMarked = false;
 		thirtySecondMarked = false;
 		decisionLog = [];
@@ -2131,7 +2133,9 @@ function Battle(){
 						players[defender.index].useShield();
 					}
 
-					turnMessages.push({ index: defender.index, str: "Blocked!"});
+					if(mode == "emulate"){
+						turnMessages.push({ index: defender.index, str: "Blocked!"});
+					}
 
 					// Don't debuff if it shields
 
