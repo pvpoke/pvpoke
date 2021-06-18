@@ -18,7 +18,7 @@
                 {
                     "speciesId": "castform",
                     "fastMove": "HEX",
-                    "chargedMoves": ["ROCK_SLIDE", "ENERGY_BALL"]
+                    "chargedMoves": ["WEATHER_BALL_ROCK", "ENERGY_BALL"]
                 },
                 {
                     "speciesId": "nidoqueen_shadow",
@@ -635,8 +635,8 @@
 				},
 				{
 					"speciesId": "meganium",
-					"fastMove": "FIRE_SPIN",
-					"chargedMoves": ["WEATHER_BALL_FIRE", "SOLAR_BEAM"]
+					"fastMove": "VINE_WHIP",
+					"chargedMoves": ["FRENZY_PLANT", "EARTHQUAKE"]
 				},
 				{
 					"speciesId": "castform_snowy",

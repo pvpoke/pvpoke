@@ -77,7 +77,6 @@ function TrainingAI(l, p, b){
 		var slots = [];
 		var roles = []; // Array of roles that have been filled on the team
 
-
 		// Choose presets
 		if(pool.presets){
 			// Select a random preset team
@@ -551,6 +550,9 @@ function TrainingAI(l, p, b){
 
 		if(pool.slots){
 			slots = pool.slots;
+		}
+
+		if(pool.presets){
 			presets = pool.presets;
 		}
 

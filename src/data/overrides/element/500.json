@@ -41,6 +41,14 @@
 		"chargedMoves": ["ICY_WIND","WATER_PULSE"]
 	},
 	{
+		"speciesId": "bulbasaur",
+		"chargedMoves": ["SEED_BOMB","SLUDGE_BOMB"]
+	},
+	{
+		"speciesId": "bulbasaur_shadow",
+		"chargedMoves": ["SEED_BOMB","SLUDGE_BOMB"]
+	},
+	{
 		"speciesId": "ducklett",
 		"chargedMoves": ["AERIAL_ACE","BRAVE_BIRD"],
 		"weight": 5

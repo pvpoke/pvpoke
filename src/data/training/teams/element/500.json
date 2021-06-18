@@ -108,7 +108,7 @@
         "pokemon": [{
             "speciesId": "bulbasaur",
             "fastMove": "VINE_WHIP",
-            "chargedMoves": ["POWER_WHIP", "SLUDGE_BOMB"]
+            "chargedMoves": ["SEED_BOMB", "SLUDGE_BOMB"]
         }, {
             "speciesId": "ducklett",
             "fastMove": "WING_ATTACK",
@@ -162,7 +162,7 @@
         }, {
             "speciesId": "bulbasaur",
             "fastMove": "VINE_WHIP",
-            "chargedMoves": ["POWER_WHIP", "SLUDGE_BOMB"]
+            "chargedMoves": ["SEED_BOMB", "SLUDGE_BOMB"]
         }],
         "weight": 1
     }, {
@@ -222,7 +222,7 @@
         }, {
             "speciesId": "bulbasaur",
             "fastMove": "VINE_WHIP",
-            "chargedMoves": ["POWER_WHIP", "SLUDGE_BOMB"]
+            "chargedMoves": ["SEED_BOMB", "SLUDGE_BOMB"]
         }],
         "weight": 1
     }, {
@@ -233,7 +233,7 @@
         }, {
             "speciesId": "bulbasaur",
             "fastMove": "VINE_WHIP",
-            "chargedMoves": ["POWER_WHIP", "SLUDGE_BOMB"]
+            "chargedMoves": ["SEED_BOMB", "SLUDGE_BOMB"]
         }, {
             "speciesId": "chikorita",
             "fastMove": "VINE_WHIP",
@@ -278,7 +278,7 @@
         }, {
             "speciesId": "bulbasaur",
             "fastMove": "VINE_WHIP",
-            "chargedMoves": ["POWER_WHIP", "SLUDGE_BOMB"]
+            "chargedMoves": ["SEED_BOMB", "SLUDGE_BOMB"]
         }, {
             "speciesId": "cottonee",
             "fastMove": "CHARM",
@@ -289,7 +289,7 @@
         "pokemon": [{
             "speciesId": "bulbasaur",
             "fastMove": "VINE_WHIP",
-            "chargedMoves": ["POWER_WHIP", "SLUDGE_BOMB"]
+            "chargedMoves": ["SEED_BOMB", "SLUDGE_BOMB"]
         }, {
             "speciesId": "growlithe",
             "fastMove": "EMBER",

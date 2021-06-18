@@ -20,6 +20,11 @@
 		"chargedMoves":["BODY_SLAM","GRASS_KNOT"]
 	},
 	{
+		"speciesId":"growlithe",
+		"fastMove":"EMBER",
+		"chargedMoves":["BODY_SLAM","FLAMETHROWER"]
+	},
+	{
 		"speciesId":"growlithe_shadow",
 		"fastMove":"EMBER",
 		"chargedMoves":["BODY_SLAM","FLAMETHROWER"]
@@ -52,12 +57,47 @@
 	{
 		"speciesId":"bulbasaur",
 		"fastMove":"VINE_WHIP",
-		"chargedMoves":["SLUDGE_BOMB","POWER_WHIP"]
+		"chargedMoves":["SLUDGE_BOMB","SEED_BOMB"]
+	},
+	{
+		"speciesId":"bulbasaur_shadow",
+		"fastMove":"VINE_WHIP",
+		"chargedMoves":["SLUDGE_BOMB","SEED_BOMB"]
 	},
 	{
 		"speciesId":"slugma",
 		"fastMove":"ROCK_THROW",
 		"chargedMoves":["ROCK_SLIDE","FLAME_CHARGE"]
+	},
+	{
+		"speciesId":"oddish",
+		"fastMove":"RAZOR_LEAF",
+		"chargedMoves":["SLUDGE_BOMB","SEED_BOMB"]
+	},
+	{
+		"speciesId":"oddish_shadow",
+		"fastMove":"RAZOR_LEAF",
+		"chargedMoves":["SLUDGE_BOMB","SEED_BOMB"]
+	},
+	{
+		"speciesId":"tepig",
+		"fastMove":"EMBER",
+		"chargedMoves":["BODY_SLAM","FLAME_CHARGE"]
+	},
+	{
+		"speciesId":"slowpoke",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["PSYSHOCK","PSYCHIC"]
+	},
+	{
+		"speciesId":"slowpoke_shadow",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["PSYSHOCK","PSYCHIC"]
+	},
+	{
+		"speciesId":"skrelp",
+		"fastMove":"WATER_GUN",
+		"chargedMoves":["SLUDGE_BOMB","AQUA_TAIL"]
 	},
 	{
 		"speciesId":"tentacool",
