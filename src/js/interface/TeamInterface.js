@@ -606,17 +606,19 @@ var InterfaceMaster = (function () {
 					}
 
 					// Skip Pokemon if it isn't in the current meta group
-					var inMetaGroup = false;
+					if(multiSelectors[1].getPokemonList().length == 0){
+						var inMetaGroup = false;
 
-					for(var n = 0; n < metaGroup.length; n++){
-						if(metaGroup[n].speciesId == r.speciesId){
-							inMetaGroup = true;
+						for(var n = 0; n < metaGroup.length; n++){
+							if(metaGroup[n].speciesId == r.speciesId){
+								inMetaGroup = true;
+							}
 						}
-					}
 
-					if(! inMetaGroup){
-						i++;
-						continue;
+						if(! inMetaGroup){
+							i++;
+							continue;
+						}
 					}
 
 					var pokemon = new Pokemon(r.speciesId, 1, battle);
