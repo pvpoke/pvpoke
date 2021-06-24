@@ -22,12 +22,22 @@
 	{
 		"speciesId":"bidoof_shadow",
 		"fastMove":"TACKLE",
-		"chargedMoves":["CRUNCH","HYPER_FANG"]
+		"chargedMoves":["HYPER_FANG","FRUSTRATION"]
+	},
+	{
+		"speciesId":"bidoof_shadow",
+		"fastMove":"TACKLE",
+		"chargedMoves":["CRUNCH","FRUSTRATION"]
 	},
 	{
 		"speciesId":"bidoof_shadow",
 		"fastMove":"TAKE_DOWN",
-		"chargedMoves":["CRUNCH","HYPER_FANG"]
+		"chargedMoves":["CRUNCH","FRUSTRATION"]
+	},
+	{
+		"speciesId":"bidoof_shadow",
+		"fastMove":"TAKE_DOWN",
+		"chargedMoves":["HYPER_FANG","FRUSTRATION"]
 	},
 	{
 		"speciesId":"bidoof",
