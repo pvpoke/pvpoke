@@ -1,0 +1,37 @@
+[
+	{
+		"speciesId":"bidoof",
+		"fastMove":"TACKLE",
+		"chargedMoves":["CRUNCH","HYPER_FANG"]
+	},
+	{
+		"speciesId":"bidoof",
+		"fastMove":"TACKLE",
+		"chargedMoves":["CRUNCH","RETURN"]
+	},
+	{
+		"speciesId":"bidoof",
+		"fastMove":"TAKE_DOWN",
+		"chargedMoves":["CRUNCH","HYPER_FANG"]
+	},
+	{
+		"speciesId":"bidoof",
+		"fastMove":"TAKE_DOWN",
+		"chargedMoves":["CRUNCH","RETURN"]
+	},
+	{
+		"speciesId":"bidoof_shadow",
+		"fastMove":"TACKLE",
+		"chargedMoves":["CRUNCH","HYPER_FANG"]
+	},
+	{
+		"speciesId":"bidoof_shadow",
+		"fastMove":"TAKE_DOWN",
+		"chargedMoves":["CRUNCH","HYPER_FANG"]
+	},
+	{
+		"speciesId":"bidoof",
+		"fastMove":"TACKLE",
+		"chargedMoves":["HYPER_FANG","SHADOW_BALL"]
+	}
+]

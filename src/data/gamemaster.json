@@ -890,6 +890,15 @@
         }],
         "exclude": [],
 		"partySize": 3
+    }, {
+        "name": "bidoof",
+        "title": "Bidoof Cup",
+        "include": [{
+            "filterType": "id",
+            "values": ["bidoof","bidoof_shadow"]
+        }],
+        "exclude": [],
+		"partySize": 3
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xs"],
     "pokemonTraits": {

@@ -312,6 +312,11 @@ var RankerMaster = (function () {
 								winMultiplier = 0;
 							}
 
+							if(rating == 500){
+								winMultiplier = 0;
+								opWinMultiplier = 0;
+							}
+
 							adjRating = rating + ( (100 * (opponent.startingShields - opponent.shields) * winMultiplier) + (100 * pokemon.shields * winMultiplier));
 							adjOpRating = opRating + ( (100 * (pokemon.startingShields - pokemon.shields) * opWinMultiplier) + (100 * opponent.shields * opWinMultiplier));
 						}
@@ -450,6 +455,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if(cup.name == "bidoof"){
+					iterations = 1;
+				}
+
 				if(cup.name == "custom"){
 					iterations = 7;
 				}
@@ -585,7 +594,7 @@ var RankerMaster = (function () {
 						delete match.adjOpRating;
 						delete match.opRating;
 
-						if(match.rating < 500){
+						if((match.rating < 500)||(cup.name == "bidoof")){
 							rankings[i].counters.push(match);
 							keyMatchupsCount++;
 
@@ -612,7 +621,7 @@ var RankerMaster = (function () {
 						delete match.adjOpRating;
 						delete match.OpRating;
 
-						if(match.rating > 500){
+						if((match.rating > 500)||(cup.name == "bidoof")){
 							rankings[i].matchups.push(match);
 							keyMatchupsCount++;
 
