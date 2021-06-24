@@ -6753,7 +6753,6 @@
         "level25CP": 1893,
         "eliteMoves": ["HURRICANE"],
         "searchPriority": 6,
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -6777,7 +6776,6 @@
         },
         "eliteMoves": ["HURRICANE"],
         "searchPriority": 6,
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -6801,7 +6799,6 @@
         },
         "level25CP": 2208,
         "eliteMoves": ["THUNDER_SHOCK"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -6824,7 +6821,6 @@
             "cp2500": [26, 5, 13, 13]
         },
         "eliteMoves": ["THUNDER_SHOCK"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -6848,7 +6844,6 @@
         },
         "level25CP": 2167,
         "eliteMoves": ["SKY_ATTACK"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -6871,7 +6866,6 @@
             "cp2500": [26.5, 6, 15, 9]
         },
         "eliteMoves": ["SKY_ATTACK"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -7050,7 +7044,6 @@
             "cp1500": [17.5, 4, 14, 13],
             "cp2500": [29.5, 4, 9, 13]
         },
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -9881,7 +9874,6 @@
             "cp1500": [16, 4, 11, 14],
             "cp2500": [27, 4, 9, 13]
         },
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -9903,7 +9895,6 @@
             "cp1500": [16, 4, 11, 14],
             "cp2500": [27, 4, 9, 13]
         },
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -9926,7 +9917,6 @@
             "cp2500": [26.5, 4, 15, 10]
         },
         "level25CP": 2172,
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -9948,7 +9938,6 @@
             "cp1500": [16, 6, 9, 13],
             "cp2500": [26.5, 4, 15, 10]
         },
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -9972,7 +9961,6 @@
         },
         "eliteMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER"],
         "level25CP": 1846,
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -9995,7 +9983,6 @@
             "cp2500": [32, 4, 14, 15]
         },
         "eliteMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -10151,7 +10138,6 @@
             "cp1500": [15, 5, 9, 15],
             "cp2500": [25, 5, 10, 14]
         },
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -10175,7 +10161,6 @@
         },
         "eliteMoves": ["EARTHQUAKE"],
 		"level25CP": 2457,
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -10198,7 +10183,6 @@
             "cp2500": [23.5, 5, 14, 15]
         },
         "eliteMoves": ["EARTHQUAKE"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -14065,7 +14049,6 @@
             "cp1500": [16, 5, 12, 7],
             "cp2500": [26.5, 4, 13, 10]
         },
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -14087,7 +14070,6 @@
             "cp1500": [14.5, 4, 10, 14],
             "cp2500": [24, 5, 13, 12]
         },
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -14110,7 +14092,6 @@
             "cp2500": [22.5, 5, 14, 7]
         },
         "searchPriority": 10,
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -14134,7 +14115,6 @@
         },
         "eliteMoves": ["FIRE_PUNCH"],
         "searchPriority": 20,
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -17167,7 +17147,6 @@
             "cp1500": [22.5, 5, 9, 12],
             "cp2500": [39.5, 14, 14, 15]
         },
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -17189,7 +17168,6 @@
             "cp1500": [18, 7, 10, 15],
             "cp2500": [31, 4, 14, 10]
         },
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -17211,7 +17189,6 @@
             "cp1500": [17, 7, 15, 11],
             "cp2500": [28, 6, 15, 15]
         },
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -17234,7 +17211,6 @@
             "cp2500": [23, 4, 8, 12]
         },
         "searchPriority": 20,
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -17256,7 +17232,6 @@
             "cp1500": [14, 4, 5, 14],
             "cp2500": [23, 4, 15, 10]
         },
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -17278,7 +17253,6 @@
             "cp1500": [14.5, 7, 12, 15],
             "cp2500": [24.5, 4, 14, 11]
         },
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -17322,7 +17296,6 @@
             "cp2500": [27.5, 4, 11, 15]
         },
         "searchPriority": 32,
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -17344,7 +17317,6 @@
             "cp1500": [15, 6, 13, 10],
             "cp2500": [25, 4, 14, 11]
         },
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -17368,7 +17340,6 @@
         },
         "eliteMoves": ["GRASS_KNOT"],
         "searchPriority": 32,
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -20896,7 +20867,6 @@
         },
         "tags": ["legendary"],
         "eliteMoves": ["SACRED_SWORD"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -20918,7 +20888,6 @@
             "cp2500": [24.5, 6, 14, 14]
         },
         "tags": ["legendary"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -20940,7 +20909,6 @@
             "cp2500": [30.5, 7, 15, 13]
         },
         "tags": ["legendary"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -21047,7 +21015,6 @@
         },
         "tags": ["legendary"],
         "searchPriority": 4,
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -21070,7 +21037,6 @@
         },
         "tags": ["legendary"],
         "searchPriority": 2,
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -21136,7 +21102,6 @@
             "cp2500": [26, 4, 8, 15]
         },
         "tags": ["legendary"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -21158,7 +21123,6 @@
             "cp2500": [20, 4, 9, 14]
         },
         "tags": ["legendary"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": false
@@ -21180,7 +21144,6 @@
             "cp2500": [20, 4, 9, 14]
         },
         "tags": ["legendary"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": false
@@ -21282,7 +21245,6 @@
             "cp2500": [27, 10, 13, 10]
         },
         "tags": ["mythical", "untradeable"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -21305,7 +21267,6 @@
         },
         "eliteMoves": ["TECHNO_BLAST_BURN"],
         "tags": ["mythical", "untradeable"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -21327,7 +21288,6 @@
             "cp2500": [27, 10, 13, 10]
         },
         "tags": ["mythical", "untradeable"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": false
@@ -21349,7 +21309,6 @@
             "cp2500": [27, 10, 13, 10]
         },
         "tags": ["mythical", "untradeable"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": false
@@ -21371,7 +21330,6 @@
             "cp2500": [27, 10, 13, 10]
         },
         "tags": ["mythical", "untradeable"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": false
@@ -22823,7 +22781,6 @@
             "cp2500": [40, 15, 15, 15]
         },
         "tags": ["mythical"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
