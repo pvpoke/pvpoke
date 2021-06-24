@@ -72,11 +72,15 @@ switch($cup){
 		break;
 
 	case "atlantis":
-		$league = 'atlantis';
+		$league = 'Atlantis';
 		break;
 
 	case "remix":
 		$league = $league . ' Remix';
+		break;
+
+	case "bidoof":
+		$league = 'Bidoof Cup';
 		break;
 
 }
