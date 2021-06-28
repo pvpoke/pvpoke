@@ -43,6 +43,10 @@ switch($cup){
 		$league = 'Kanto Cup';
 		break;
 
+	case "element":
+		$league = 'Element Cup';
+		break;
+
 }
 
 $META_TITLE = $league . ' Training Analysis';
@@ -73,6 +77,7 @@ require_once '../header.php';
 		<option value="2500" cup="all" level-cap="50">Ultra League</option>
 		<option value="2500" cup="premier" level-cap="50">Ultra League (Premier)</option>
 		<option value="10000" cup="classic" level-cap="40">Master League (Classic)</option>
+		<option value="500" cup="element" level-cap="50">Element Cup</option>
 	</select>
 
 	<div class="date-updated">Last updated</div>
