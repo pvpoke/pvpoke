@@ -610,7 +610,12 @@ var InterfaceMaster = (function () {
 						var inMetaGroup = false;
 
 						for(var n = 0; n < metaGroup.length; n++){
-							if(metaGroup[n].speciesId == r.speciesId){
+							var searchId = metaGroup[n].speciesId;
+							searchId = searchId.replace("_shadow","");
+							searchId = searchId.replace("_xs","");
+							searchId = searchId.replace("_xl","");
+
+							if(searchId == r.speciesId){
 								inMetaGroup = true;
 							}
 						}
