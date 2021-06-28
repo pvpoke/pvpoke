@@ -43,5 +43,25 @@
 		"speciesId":"bidoof",
 		"fastMove":"TACKLE",
 		"chargedMoves":["HYPER_FANG","SHADOW_BALL"]
+	},
+	{
+		"speciesId":"bidoof_shadow",
+		"fastMove":"TAKE_DOWN",
+		"chargedMoves":["SUPER_POWER","FRUSTRATION"]
+	},
+	{
+		"speciesId":"bidoof",
+		"fastMove":"TAKE_DOWN",
+		"chargedMoves":["SUPER_POWER","CRUNCH"]
+	},
+	{
+		"speciesId":"bidoof_shadow",
+		"fastMove":"TACKLE",
+		"chargedMoves":["SUPER_POWER","FRUSTRATION"]
+	},
+	{
+		"speciesId":"bidoof",
+		"fastMove":"TACKLE",
+		"chargedMoves":["SUPER_POWER","CRUNCH"]
 	}
 ]

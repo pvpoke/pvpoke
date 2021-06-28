@@ -1,10 +1,12 @@
 [
 	{
 		"speciesId": "bidoof",
-		"chargedMoves": ["HYPER_FANG","CRUNCH"]
+		"fastMove": "TAKE_DOWN",
+		"chargedMoves": ["SUPER_POWER","CRUNCH"]
 	},
 	{
 		"speciesId": "bidoof_shadow",
-		"chargedMoves": ["CRUNCH","FRUSTRATION"]
+		"fastMove": "TAKE_DOWN",
+		"chargedMoves": ["SUPER_POWER","FRUSTRATION"]
 	}
 ]
