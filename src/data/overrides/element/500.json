@@ -59,7 +59,12 @@
 	},
 	{
 		"speciesId": "vulpix",
+		"fastMove": "QUICK_ATTACK",
 		"weight": 2
+	},
+	{
+		"speciesId": "vulpix_shadow",
+		"fastMove": "QUICK_ATTACK"
 	},
 	{
 		"speciesId": "chinchou",

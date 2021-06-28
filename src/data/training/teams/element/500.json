@@ -92,7 +92,7 @@
     }, {
         "pokemon": [{
             "speciesId": "vulpix",
-            "fastMove": "EMBER",
+            "fastMove": "QUICK_ATTACK",
             "chargedMoves": ["WEATHER_BALL_FIRE", "BODY_SLAM"]
         }, {
             "speciesId": "chinchou",
@@ -115,7 +115,7 @@
             "chargedMoves": ["BRAVE_BIRD", "BUBBLE_BEAM"]
         }, {
             "speciesId": "vulpix",
-            "fastMove": "EMBER",
+            "fastMove": "QUICK_ATTACK",
             "chargedMoves": ["WEATHER_BALL_FIRE", "BODY_SLAM"]
         }],
         "weight": 1
@@ -137,13 +137,13 @@
     }, {
         "pokemon": [{
             "speciesId": "vulpix",
-            "fastMove": "EMBER",
+            "fastMove": "QUICK_ATTACK",
             "chargedMoves": ["WEATHER_BALL_FIRE", "BODY_SLAM"],
             "shadowType": "shadow"
         }, {
-            "speciesId": "tentacool",
-            "fastMove": "BUBBLE",
-            "chargedMoves": ["WRAP", "BUBBLE_BEAM"]
+            "speciesId": "chinchou",
+            "fastMove": "SPARK",
+            "chargedMoves": ["THUNDERBOLT", "BUBBLE_BEAM"]
         }, {
             "speciesId": "cottonee",
             "fastMove": "CHARM",
