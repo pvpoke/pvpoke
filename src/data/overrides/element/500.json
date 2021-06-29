@@ -17,6 +17,11 @@
 		"fastMove": "SCRATCH"
 	},
 	{
+		"speciesId": "staryu",
+		"fastMove": "QUICK_ATTACK",
+		"chargedMoves": ["BUBBLE_BEAM","POWER_GEM"]
+	},
+	{
 		"speciesId": "exeggcute",
 		"chargedMoves": ["SEED_BOMB","ANCIENT_POWER"]
 	},
