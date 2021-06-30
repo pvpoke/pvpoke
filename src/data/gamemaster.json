@@ -17950,7 +17950,8 @@
         },
         "types": ["fire", "fighting"],
         "fastMoves": ["LOW_KICK", "EMBER"],
-        "chargedMoves": ["HEAT_WAVE", "ROCK_SLIDE", "FOCUS_BLAST", "FLAME_CHARGE"],
+        "chargedMoves": ["HEAT_WAVE", "ROCK_SLIDE", "FOCUS_BLAST", "FLAME_CHARGE", "BLAST_BURN"],
+		"eliteMoves": ["BLAST_BURN"],
         "tags": ["starter"],
         "defaultIVs": {
             "cp500": [6.5, 5, 6, 15],
