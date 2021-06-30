@@ -1649,6 +1649,11 @@ function Pokemon(id, i, b){
 		}
 	}
 
+	// Set this Pokemon's level cap
+	this.setLevelCap = function(levelCap){
+		self.levelCap = Math.min(levelCap, self.baseLevelCap);
+	}
+
 	this.setIV = function(iv, amount){
 		if(iv == "atk"){
 			this.ivs.atk = parseInt(amount);
@@ -1678,6 +1683,8 @@ function Pokemon(id, i, b){
 
 	this.setBattle = function(b){
 		battle = b;
+
+		self.setLevelCap(battle.getLevelCap());
 	}
 
 	// Get battle reference object

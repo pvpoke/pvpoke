@@ -499,6 +499,7 @@ function PokeMultiSelect(element){
 
 		// Set all Pokemon to the new level cap
 		for(var i = 0; i < pokemonList.length; i++){
+			pokemonList[i].setLevelCap(levelCap);
 			pokemonList[i].setBattle(battle);
 			pokemonList[i].initialize(battle.getCP(), settings.defaultIVs);
 		}
@@ -506,6 +507,10 @@ function PokeMultiSelect(element){
 		if(pokemonList.length > 0){
 			self.updateListDisplay();
 		}
+
+		settings.levelCap = levelCap;
+
+		console.log(settings.levelCap);
 	}
 
 	// Convert the current Pokemon list into exportable and savable JSON
