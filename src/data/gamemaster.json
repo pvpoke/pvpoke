@@ -2050,6 +2050,87 @@
         "thirdMoveCost": 10000,
         "released": true
     }, {
+        "dex": 25,
+        "speciesName": "Pikachu (Kariyushi)",
+        "speciesId": "pikachu_kariyushi",
+        "baseStats": {
+            "atk": 112,
+            "def": 96,
+            "hp": 111
+        },
+        "types": ["electric", "none"],
+        "fastMoves": ["THUNDER_SHOCK", "QUICK_ATTACK"],
+        "chargedMoves": ["DISCHARGE", "THUNDERBOLT", "WILD_CHARGE"],
+        "defaultIVs": {
+            "cp500": [20, 7, 15, 13],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": true
+    }, {
+        "dex": 25,
+        "speciesName": "Pikachu (Pop Star)",
+        "speciesId": "pikachu_pop_star",
+        "baseStats": {
+            "atk": 112,
+            "def": 96,
+            "hp": 111
+        },
+        "types": ["electric", "none"],
+        "fastMoves": ["THUNDER_SHOCK", "CHARM"],
+        "chargedMoves": ["DRAINING_KISS", "THUNDER_PUNCH", "PLAY_ROUGH"],
+        "defaultIVs": {
+            "cp500": [20, 7, 15, 13],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": true
+    }, {
+        "dex": 25,
+        "speciesName": "Pikachu (Rock Star)",
+        "speciesId": "pikachu_rock_star",
+        "baseStats": {
+            "atk": 112,
+            "def": 96,
+            "hp": 111
+        },
+        "types": ["electric", "none"],
+        "fastMoves": ["THUNDER_SHOCK", "CHARM"],
+        "chargedMoves": ["METEOR_MASH", "THUNDER_PUNCH", "PLAY_ROUGH"],
+        "defaultIVs": {
+            "cp500": [20, 7, 15, 13],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": true
+    }, {
+        "dex": 25,
+        "speciesName": "Pikachu (5th Anniversary)",
+        "speciesId": "pikachu_5th_anniversary",
+        "baseStats": {
+            "atk": 112,
+            "def": 96,
+            "hp": 111
+        },
+        "types": ["electric", "none"],
+        "fastMoves": ["THUNDER_SHOCK", "QUICK_ATTACK", "PRESENT"],
+        "chargedMoves": ["DISCHARGE", "THUNDERBOLT", "WILD_CHARGE","FLY"],
+		"eliteMoves": ["PRESENT"],
+        "defaultIVs": {
+            "cp500": [20, 7, 15, 13],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": true
+    }, {
         "dex": 26,
         "speciesName": "Raichu",
         "speciesId": "raichu",
