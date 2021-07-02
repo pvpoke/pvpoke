@@ -7,8 +7,7 @@
 	<option value="10000" cup="all" meta-group="master">Master League</option>
 	<option value="10000" cup="classic" meta-group="master">Master League (Classic)</option>
 	<option value="500" cup="element" meta-group="element">Element Cup</option>
-	<option value="500" cup="bidoof" meta-group="bidoof">Bidoof Cup</option>
-	<option value="1500" cup="venture" meta-group="venture">Silph Venture Cup</option>
+	<option value="1500" cup="nightfall" meta-group="nightfall">Silph Nightfall Cup</option>
 	<option value="1500" cup="factions" meta-group="factions">Silph Factions (Atlantis)</option>
 	<option value="1500" cup="adl" meta-group="great">Arrohh Draft League</option>
 

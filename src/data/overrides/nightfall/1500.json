@@ -1,0 +1,217 @@
+[
+	{
+		"speciesId": "lapras",
+		"fastMove": "ICE_SHARD",
+		"chargedMoves": ["SURF", "SKULL_BASH"],
+		"weight": 5
+	},
+	{
+		"speciesId": "lapras_shadow",
+		"fastMove": "ICE_SHARD",
+		"chargedMoves": ["SURF", "SKULL_BASH"]
+	},
+	{
+		"speciesId": "dewgong",
+		"chargedMoves": ["ICY_WIND", "WATER_PULSE"]
+	},
+	{
+		"speciesId": "toxicroak",
+		"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"],
+		"weight": 5
+	},
+	{
+		"speciesId": "qwilfish",
+		"fastMove": "WATER_GUN",
+		"chargedMoves": ["AQUA_TAIL", "SLUDGE_WAVE"]
+	},
+	{
+		"speciesId": "muk_alolan",
+		"fastMove": "SNARL"
+	},
+	{
+		"speciesId": "chansey",
+		"fastMove": "POUND"
+	},
+	{
+		"speciesId": "drapion",
+		"fastMove": "BITE"
+	},
+	{
+		"speciesId": "skuntank_shadow",
+		"chargedMoves": ["CRUNCH", "FLAMETHROWER"]
+	},
+	{
+		"speciesId": "beedrill_shadow",
+		"chargedMoves": ["X_SCISSOR", "DRILL_RUN"],
+		"weight": 2
+	},
+	{
+		"speciesId": "cloyster_shadow",
+		"chargedMoves": ["ICY_WIND", "FRUSTRATION"]
+	},
+	{
+		"speciesId": "vigoroth",
+		"chargedMoves": ["BODY_SLAM", "BULLDOZE"],
+		"weight": 2
+	},
+	{
+		"speciesId": "machamp",
+		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
+	},
+	{
+		"speciesId": "primeape",
+		"chargedMoves": ["NIGHT_SLASH", "CLOSE_COMBAT"]
+	},
+	{
+		"speciesId": "hariyama",
+		"chargedMoves": ["CLOSE_COMBAT", "HEAVY_SLAM"]
+	},
+	{
+		"speciesId": "gliscor",
+		"chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"],
+		"weight": 3
+	},
+	{
+		"speciesId": "machamp_shadow",
+		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
+		"weight": 6
+	},
+	{
+		"speciesId": "sirfetchd",
+		"chargedMoves": ["NIGHT_SLASH", "LEAF_BLADE"]
+	},
+	{
+		"speciesId": "swampert",
+		"chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"],
+		"weight": 10
+	},
+	{
+		"speciesId": "swampert_shadow",
+		"chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "castform_snowy",
+		"chargedMoves": ["WEATHER_BALL_ICE", "BLIZZARD"]
+	},
+	{
+		"speciesId": "piloswine",
+		"chargedMoves": ["AVALANCHE", "BULLDOZE"]
+	},
+	{
+		"speciesId": "mamoswine",
+		"chargedMoves": ["AVALANCHE", "BULLDOZE"]
+	},
+	{
+		"speciesId": "blaziken",
+		"chargedMoves": ["BLAZE_KICK", "BLAST_BURN"]
+	},
+	{
+		"speciesId": "crobat",
+		"chargedMoves": ["POISON_FANG", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "crobat_shadow",
+		"chargedMoves": ["POISON_FANG", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "steelix",
+		"chargedMoves": ["CRUNCH", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "cloyster",
+		"chargedMoves": ["AVALANCHE", "HYDRO_PUMP"]
+	},
+	{
+		"speciesId": "tentacruel",
+		"chargedMoves": ["ACID_SPRAY", "HYDRO_PUMP"]
+	},
+	{
+		"speciesId": "lucario",
+		"chargedMoves": ["POWER_UP_PUNCH", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "medicham",
+		"fastMove": "COUNTER",
+		"chargedMoves": ["ICE_PUNCH", "DYNAMIC_PUNCH"],
+		"weight": 30
+	},
+	{
+		"speciesId": "poliwrath",
+		"fastMove": "MUD_SHOT"
+	},
+	{
+		"speciesId": "poliwrath_shadow",
+		"fastMove": "MUD_SHOT"
+	},
+	{
+		"speciesId": "ninetales_alolan",
+		"fastMove": "CHARM",
+		"weight": 2
+	},
+	{
+		"speciesId": "stunfisk_galarian",
+		"weight": 45
+	},
+	{
+		"speciesId": "froslass",
+		"weight": 40
+	},
+	{
+		"speciesId": "articuno",
+		"weight": 5
+	},
+	{
+		"speciesId": "dewgong",
+		"weight": 2
+	},
+	{
+		"speciesId": "scrafty",
+		"weight": 2
+	},
+	{
+		"speciesId": "wigglytuff",
+		"weight": 25
+	},
+	{
+		"speciesId": "whiscash",
+		"weight": 2
+	},
+	{
+		"speciesId": "golbat_shadow",
+		"weight": 8
+	},
+	{
+		"speciesId": "golbat",
+		"weight": 2
+	},
+	{
+		"speciesId": "abomasnow",
+		"weight": 2
+	},
+	{
+		"speciesId": "victreebel_shadow",
+		"chargedMoves": ["LEAF_BLADE", "ACID_SPRAY"],
+		"weight": 15
+	},
+	{
+		"speciesId": "victreebel",
+		"chargedMoves": ["LEAF_BLADE", "ACID_SPRAY"]
+	},
+	{
+		"speciesId": "venusaur",
+		"weight": 3
+	},
+	{
+		"speciesId": "noctowl",
+		"weight": 2
+	},
+	{
+		"speciesId": "gallade",
+		"chargedMoves": ["LEAF_BLADE", "CLOSE_COMBAT"],
+		"weight": 3
+	},
+	{
+		"speciesId": "gallade_shadow",
+		"chargedMoves": ["LEAF_BLADE", "CLOSE_COMBAT"]
+	}
+]

@@ -4,7 +4,7 @@
 	<option value="official" cup="remix">Remix</option>
 	<option value="official" cup="element">Element Cup</option>
 	<option value="official" cup="bidoof">Bidoof Cup</option>
-	<option value="tsa-3" cup="venture">Silph Venture Cup</option>
+	<option value="tsa-3" cup="nightfall">Silph Nightfall Cup</option>
 	<option value="tsa-3" cup="factions">Silph Factions (Atlantis)</option>
 	<option value="community" cup="adl">Arrohh Draft League</option>
 
