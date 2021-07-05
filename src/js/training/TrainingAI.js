@@ -115,7 +115,7 @@ function TrainingAI(l, p, b){
 		// Draw unique slots from the bucket
 		var rosterSize = 6;
 
-		if((battle.getCup().partySize == 3)&&(battle.getCup().name == "element")){
+		if((battle.getCup().partySize == 3)&&(battle.getCup().presetOnly)){
 			rosterSize = battle.getCup().partySize;
 		}
 
