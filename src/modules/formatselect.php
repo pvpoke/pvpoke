@@ -9,7 +9,7 @@
 	<option value="500" cup="element" meta-group="element">Element Cup</option>
 	<option value="1500" cup="nightfall" meta-group="nightfall">Silph Nightfall Cup</option>
 	<option value="1500" cup="factions" meta-group="factions">Silph Factions (Atlantis)</option>
-	<option value="1500" cup="adl" meta-group="great">Arrohh Draft League</option>
+	<option value="1500" cup="marsh" meta-group="marsh">7-Eleven Marsh Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="1500" cup="cliffhanger" meta-group="great">GO Stadium Cliffhanger</option>

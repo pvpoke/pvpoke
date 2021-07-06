@@ -6,7 +6,7 @@
 	<option value="official" cup="bidoof">Bidoof Cup</option>
 	<option value="tsa-3" cup="nightfall">Silph Nightfall Cup</option>
 	<option value="tsa-3" cup="factions">Silph Factions (Atlantis)</option>
-	<option value="community" cup="adl">Arrohh Draft League</option>
+	<option value="tsa-3" cup="marsh">7-Eleven Marsh Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>
