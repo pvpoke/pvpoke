@@ -918,13 +918,13 @@
 			"floor": 1,
 			"tiers": [{
 				"points": 10,
-				"pokemon": ["hypno", "hypno_shadow", "lickitung", "altaria", "froslass", "cresselia", "marowak_alolan"]
+				"pokemon": ["lickitung", "mew", "hypno", "azumarill", "skarmory", "umbreon", "registeel", "altaria", "sableye", "medicham", "deoxys_defense", "abomasnow", "bastiodon", "cresselia", "jellicent", "mandibuzz", "stunfisk_galarian", "marowak_alolan", "talonflame", "ninetales_alolan", "diggersby"]
 			}, {
 				"points": 6,
-				"pokemon": ["dewgong", "lapras", "snorlax", "dragonair", "politoed", "kingdra", "vigoroth", "medicham", "regirock", "deoxys_defense", "munchlax", "lickilicky", "jellicent", "galvantula", "talonflame", "dragalge", "lugia"]
+				"pokemon": ["clefable", "nidoqueen", "machamp", "venusaur", "dewgong", "wigglytuff", "meganium", "jumpluff", "politoed", "granbull", "lugia", "wobbuffet", "swampert", "tropius", "vigoroth", "gardevoir", "regirock", "togekiss", "drifblim", "froslass", "toxicroak", "munchlax", "lickilicky", "ferrothorn", "zweilous", "whimsicott", "stunfisk", "scrafty", "galvantula", "aromatisse", "spritzee", "raichu_alolan", "melmetal", "sylveon", "slurpuff", "muk_alolan"]
 			}, {
 				"points": 4,
-				"pokemon": ["machamp", "haunter", "gengar", "dragonite", "mew", "lanturn", "wobbuffet", "mantine", "swampert", "pelipper", "zangoose", "whiscash", "cradily", "dusclops", "tropius", "sealeo", "pachirisu", "drifblim", "abomasnow", "crustle", "stunfisk", "goodra", "graveler_alolan", "sirfetchd", "nidoqueen", "flygon"]
+				"pokemon": ["golbat", "articuno", "beedrill", "zapdos", "snorlax", "seaking", "primeape", "lapras", "quagsire", "noctowl", "ariados", "lanturn", "bellossom", "raikou", "mantine", "steelix", "castform_rainy", "castform_snowy", "castform", "castform_sunny", "regice", "whiscash", "shiftry", "pelipper", "skuntank", "gliscor", "electivire", "pachirisu", "roserade", "empoleon", "magnezone", "drapion", "zebstrika", "serperior", "fraxure", "alomomola", "excadrill", "escavalier", "victini", "crustle", "chesnaught", "dragalge", "obstagoon", "sirfetchd", "pangoro", "goodra"]
 			}]
 		}
     }],

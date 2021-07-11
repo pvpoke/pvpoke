@@ -3,7 +3,6 @@
 	<option value="official" cup="premier">Premier Cup</option>
 	<option value="official" cup="remix">Remix</option>
 	<option value="official" cup="element">Element Cup</option>
-	<option value="official" cup="bidoof">Bidoof Cup</option>
 	<option value="tsa-3" cup="continentals-3">Silph Continentals</option>
 	<option value="tsa-3" cup="nightfall">Silph Nightfall Cup</option>
 	<option value="tsa-3" cup="factions">Silph Factions (Atlantis)</option>
