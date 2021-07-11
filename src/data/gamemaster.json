@@ -902,6 +902,31 @@
         }],
         "exclude": [],
 		"partySize": 3
+    }, {
+        "name": "continentals-3",
+        "title": "Silph Season 3 Continentals",
+        "include": [],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["pidgeot", "chansey"]
+        }],
+		"tierRules": {
+			"max": 20,
+			"floor": 1,
+			"tiers": [{
+				"points": 10,
+				"pokemon": ["hypno", "hypno_shadow", "lickitung", "altaria", "froslass", "cresselia", "marowak_alolan"]
+			}, {
+				"points": 6,
+				"pokemon": ["dewgong", "lapras", "snorlax", "dragonair", "politoed", "kingdra", "vigoroth", "medicham", "regirock", "deoxys_defense", "munchlax", "lickilicky", "jellicent", "galvantula", "talonflame", "dragalge", "lugia"]
+			}, {
+				"points": 4,
+				"pokemon": ["machamp", "haunter", "gengar", "dragonite", "mew", "lanturn", "wobbuffet", "mantine", "swampert", "pelipper", "zangoose", "whiscash", "cradily", "dusclops", "tropius", "sealeo", "pachirisu", "drifblim", "abomasnow", "crustle", "stunfisk", "goodra", "graveler_alolan", "sirfetchd", "nidoqueen", "flygon"]
+			}]
+		}
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xs"],
     "pokemonTraits": {

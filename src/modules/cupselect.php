@@ -4,6 +4,7 @@
 	<option value="official" cup="remix">Remix</option>
 	<option value="official" cup="element">Element Cup</option>
 	<option value="official" cup="bidoof">Bidoof Cup</option>
+	<option value="tsa-3" cup="continentals-3">Silph Continentals</option>
 	<option value="tsa-3" cup="nightfall">Silph Nightfall Cup</option>
 	<option value="tsa-3" cup="factions">Silph Factions (Atlantis)</option>
 	<option value="tsa-3" cup="marsh">7-Eleven Marsh Cup</option>
@@ -85,6 +86,7 @@
 	<option value="prismatic" cat="tsa-3">Prismatic Cup</option>
 	<option value="commander" cat="tsa-3">Commander Cup</option>
 	<option value="venture" cat="tsa-3">Venture Cup</option>
+	<option value="continentals-3" cat="tsa-3">Continentals</option>
 	<option value="factions" cat="tsa-3">Floating City</option>
 	<option value="custom" cat="custom">Custom</option>
 </select>

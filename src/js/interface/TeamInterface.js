@@ -886,7 +886,7 @@ var InterfaceMaster = (function () {
 					}
 
 					// Add region for alternative Pokemon for Voyager
-					if(battle.getCup().name == "voyager"){
+					if(battle.getCup().name == "continentals-3"){
 						var regions = gm.data.pokemonRegions;
 						var regionName = "";
 						var regionNumber = "";

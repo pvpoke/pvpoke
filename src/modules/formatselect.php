@@ -7,6 +7,7 @@
 	<option value="10000" cup="all" meta-group="master">Master League</option>
 	<option value="10000" cup="classic" meta-group="master">Master League (Classic)</option>
 	<option value="500" cup="element" meta-group="element">Element Cup</option>
+	<option value="1500" cup="continentals-3" meta-group="continentals">Silph Continentals</option>
 	<option value="1500" cup="nightfall" meta-group="nightfall">Silph Nightfall Cup</option>
 	<option value="1500" cup="factions" meta-group="factions">Silph Factions (Atlantis)</option>
 	<option value="1500" cup="marsh" meta-group="marsh">7-Eleven Marsh Cup</option>
