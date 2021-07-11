@@ -156,12 +156,12 @@ require_once 'header.php';
 
 	<div class="continentals hide">
 		<div class="flex">
-			<div class="check" value="0"><span></span>Blue</div>
-			<div class="check" value="1"><span></span>Red</div>
-			<div class="check" value="2"><span></span>Yellow + White</div>
-			<div class="check" value="3"><span></span>Green + Black</div>
-			<div class="check" value="4"><span></span>Brown + Pink</div>
-			<div class="check" value="5"><span></span>Purple + Gray</div>
+			<div class="check" value="1"><span></span>Slot 1</div>
+			<div class="check" value="2"><span></span>Slot 2</div>
+			<div class="check" value="3"><span></span>Slot 3</div>
+			<div class="check" value="4"><span></span>Slot 4</div>
+			<div class="check" value="5"><span></span>Slot 5</div>
+			<div class="check" value="6"><span></span>Slot 6</div>
 		</div>
 	</div>
 

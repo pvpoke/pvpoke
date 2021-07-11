@@ -202,6 +202,12 @@ var InterfaceMaster = (function () {
 
 							case "cup":
 								battle.setCup(val);
+
+								if(battle.getCup().tierRules){
+									multiSelectors[0].setCliffhangerMode(true);
+								} else{
+									multiSelectors[0].setCliffhangerMode(false);
+								}
 								break;
 
 							case "m1":
@@ -803,6 +809,15 @@ var InterfaceMaster = (function () {
 					}
 				}
 
+				// For Continentals, exclude slots that are already filled
+				var usedSlots = [];
+
+				if(battle.getCup().name == "continentals-3"){
+					for(var n = 0; n < team.length; n++){
+						usedSlots.push(team[n].getContinentalSlot());
+					}
+				}
+
 				while((count < total)&&(i < altRankings.length)){
 					var r = altRankings[i];
 
@@ -827,6 +842,14 @@ var InterfaceMaster = (function () {
 					// For Labyrinth Cup, exclude Pokemon of existing types
 					if(battle.getCup().name == "labyrinth"){
 						if(excludedTypes.indexOf(pokemon.types[0]) > -1 || excludedTypes.indexOf(pokemon.types[1]) > -1){
+							i++;
+							continue;
+						}
+					}
+
+					// For Continentals, exclude Pokemon of existing slots
+					if(battle.getCup().name == "continentals-3"){
+						if(usedSlots.indexOf(pokemon.getContinentalSlot()) > -1){
 							i++;
 							continue;
 						}
@@ -885,34 +908,13 @@ var InterfaceMaster = (function () {
 						$row.append($cell);
 					}
 
-					// Add region for alternative Pokemon for Voyager
+					// Add region for alternative Pokemon for Continentals
 					if(battle.getCup().name == "continentals-3"){
+						var slotNumber = pokemon.getContinentalSlot();
 						var regions = gm.data.pokemonRegions;
-						var regionName = "";
-						var regionNumber = "";
+						var regionName = regions[slotNumber-1].name;
 
-						for(var j = 0; j < regions.length; j++){
-							if((pokemon.dex >= regions[j].dexStart)&&(pokemon.dex >= regions[j].dexStart)){
-								regionName = regions[j].name;
-								regionNumber = "Gen " + (j+1);
-
-								if(j > 3){
-									regionNumber = "Gen 5+";
-								}
-							}
-
-							if(pokemon.hasTag("alolan")){
-								regionName = "Alola";
-								regionNumber = "Gen 5+";
-							}
-
-							if((pokemon.hasTag("galarian"))||(pokemon.speciesId == "melmetal")){
-								regionName = "Galar";
-								regionNumber = "Gen 5+";
-							}
-						}
-
-						$row.find("th.name").append("<div class=\"region-label "+regionName.toLowerCase()+"\">"+regionName+" (" + regionNumber + ")</div>");
+						$row.find("th.name").append("<div class=\"region-label "+regionName.toLowerCase()+"\">Slot "+ slotNumber + "</div>");
 					}
 
 					// Add points for alternative Pokemon for Cliffhanger

@@ -93,7 +93,7 @@ var InterfaceMaster = (function () {
 					$(".league-select option[value=\"500\"]").prop("selected","selected");
 				}
 
-				if(cup == "prismatic"){
+				if(cup == "continentals-3"){
 					$(".continentals").show();
 				}
 
@@ -251,6 +251,11 @@ var InterfaceMaster = (function () {
 						}
 
 						$el.find(".moves").prepend("<span class=\"cliffhanger-points\">"+points+ptStr+"</span>");
+
+						if(battle.getCup().name == "continentals-3"){
+							$el.find(".moves").prepend("<span class=\"cliffhanger-points\">Slot " + pokemon.getContinentalSlot() + "</span>");
+							$el.attr("slot", pokemon.getContinentalSlot());
+						}
 					}
 
 					$(".section.white > .rankings-container").append($el);
@@ -1176,21 +1181,15 @@ var InterfaceMaster = (function () {
 
 				$(".continentals .check").each(function(index, value){
 					if($(this).hasClass("on")){
-						selectedSlots.push(index);
+						selectedSlots.push(parseInt($(this).attr("value")));
 					}
 				});
 
-				var slots = battle.getCup().slots;
-
-				for(var i = 0; i < slots.length; i++){
+				for(var i = 1; i < 7; i++){
 					if(selectedSlots.indexOf(i) > -1){
-						for(var n = 0; n < slots[i].pokemon.length; n++){
-							$(".rank[data='"+slots[i].pokemon[n]+"']").removeClass("hide");
-						}
+						$(".rank[slot='"+i+"']").removeClass("hide");
 					} else{
-						for(var n = 0; n < slots[i].pokemon.length; n++){
-							$(".rank[data='"+slots[i].pokemon[n]+"']").addClass("hide");
-						}
+						$(".rank[slot='"+i+"']").addClass("hide");
 					}
 				}
 

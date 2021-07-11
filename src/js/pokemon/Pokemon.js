@@ -1936,4 +1936,35 @@ function Pokemon(id, i, b){
 
 		return consistencyScore;
 	}
+
+	// Return the slot number for this Pokemon for Silph Season 3 Continentals
+
+	this.getContinentalSlot = function(){
+		var regions = gm.data.pokemonRegions;
+		var slotNumber = 0;
+
+		for(var j = 0; j < regions.length; j++){
+			if((self.dex >= regions[j].dexStart)&&(self.dex >= regions[j].dexStart)){
+				slotNumber = j+1;
+			}
+
+			if(self.hasTag("alolan")){
+				slotNumber = 6;
+			}
+
+			if((self.hasTag("galarian"))||(self.speciesId == "melmetal")){
+				slotNumber = 6;
+			}
+
+			if(self.speciesId == "stunfisk_galarian"){
+				slotNumber = 5;
+			}
+		}
+
+		if(slotNumber == 0){
+			slotNumber = 6;
+		}
+
+		return slotNumber;
+	}
 }
