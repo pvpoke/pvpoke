@@ -435,6 +435,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if((cup.name == "remix")&&(battle.getCP() == 1500)){
+					iterations = 1;
+				}
+
 				if((cup.name == "sorcerous-mirror")||(cup.name == "sinister-mirror")||(cup.name == "timeless-mirror")){
 					iterations = 1;
 				}
