@@ -1,932 +1,388 @@
 {
-    "presets": [
-		{
-			"pokemon":[
-				{
-					"speciesId":"registeel",
-					"fastMove":"LOCK_ON",
-					"chargedMoves":[
-						"FOCUS_BLAST",
-						"FLASH_CANNON"
-					]
-				},
-				{
-					"speciesId":"cresselia",
-					"fastMove":"PSYCHO_CUT",
-					"chargedMoves":[
-						"GRASS_KNOT",
-						"MOONBLAST"
-					]
-				},
-				{
-					"speciesId":"mandibuzz",
-					"fastMove":"SNARL",
-					"chargedMoves":[
-						"FOUL_PLAY",
-						"AERIAL_ACE"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"registeel",
-					"fastMove":"LOCK_ON",
-					"chargedMoves":[
-						"FOCUS_BLAST",
-						"FLASH_CANNON"
-					]
-				},
-				{
-					"speciesId":"diggersby",
-					"fastMove":"MUD_SHOT",
-					"chargedMoves":[
-						"EARTHQUAKE",
-						"FIRE_PUNCH"
-					]
-				},
-				{
-					"speciesId":"jellicent",
-					"fastMove":"HEX",
-					"chargedMoves":[
-						"BUBBLE_BEAM",
-						"SHADOW_BALL"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"hypno_shadow",
-					"fastMove":"CONFUSION",
-					"chargedMoves":[
-						"ICE_PUNCH",
-						"THUNDER_PUNCH"
-					]
-				},
-				{
-					"speciesId":"lickitung",
-					"fastMove":"LICK",
-					"chargedMoves":[
-						"BODY_SLAM",
-						"POWER_WHIP"
-					]
-				},
-				{
-					"speciesId":"obstagoon",
-					"fastMove":"COUNTER",
-					"chargedMoves":[
-						"NIGHT_SLASH",
-						"CROSS_CHOP"
-					]
-				}
-			],
-			"weight":3
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"charizard",
-					"fastMove":"FIRE_SPIN",
-					"chargedMoves":[
-						"DRAGON_CLAW",
-						"BLAST_BURN"
-					]
-				},
-				{
-					"speciesId":"whiscash",
-					"fastMove":"MUD_SHOT",
-					"chargedMoves":[
-						"MUD_BOMB",
-						"BLIZZARD"
-					]
-				},
-				{
-					"speciesId":"obstagoon",
-					"fastMove":"COUNTER",
-					"chargedMoves":[
-						"NIGHT_SLASH",
-						"CROSS_CHOP"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"nidoqueen_shadow",
-					"fastMove":"POISON_JAB",
-					"chargedMoves":[
-						"POISON_FANG",
-						"EARTH_POWER"
-					]
-				},
-				{
-					"speciesId":"mandibuzz",
-					"fastMove":"SNARL",
-					"chargedMoves":[
-						"FOUL_PLAY",
-						"AERIAL_ACE"
-					]
-				},
-				{
-					"speciesId":"jellicent",
-					"fastMove":"HEX",
-					"chargedMoves":[
-						"BUBBLE_BEAM",
-						"SHADOW_BALL"
-					]
-				}
-			],
-			"weight":2
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"nidoqueen_shadow",
-					"fastMove":"POISON_JAB",
-					"chargedMoves":[
-						"POISON_FANG",
-						"EARTH_POWER"
-					]
-				},
-				{
-					"speciesId":"mandibuzz",
-					"fastMove":"SNARL",
-					"chargedMoves":[
-						"FOUL_PLAY",
-						"AERIAL_ACE"
-					]
-				},
-				{
-					"speciesId":"obstagoon",
-					"fastMove":"COUNTER",
-					"chargedMoves":[
-						"NIGHT_SLASH",
-						"CROSS_CHOP"
-					]
-				}
-			],
-			"weight":3
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"jellicent",
-					"fastMove":"HEX",
-					"chargedMoves":[
-						"BUBBLE_BEAM",
-						"SHADOW_BALL"
-					]
-				},
-				{
-					"speciesId":"machamp_shadow",
-					"fastMove":"COUNTER",
-					"chargedMoves":[
-						"CROSS_CHOP",
-						"ROCK_SLIDE"
-					]
-				},
-				{
-					"speciesId":"wigglytuff",
-					"fastMove":"CHARM",
-					"chargedMoves":[
-						"ICE_BEAM",
-						"PLAY_ROUGH"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"diggersby",
-					"fastMove":"MUD_SHOT",
-					"chargedMoves":[
-						"EARTHQUAKE",
-						"FIRE_PUNCH"
-					]
-				},
-				{
-					"speciesId":"registeel",
-					"fastMove":"LOCK_ON",
-					"chargedMoves":[
-						"FOCUS_BLAST",
-						"FLASH_CANNON"
-					]
-				},
-				{
-					"speciesId":"jellicent",
-					"fastMove":"HEX",
-					"chargedMoves":[
-						"BUBBLE_BEAM",
-						"SHADOW_BALL"
-					]
-				}
-			],
-			"weight":3
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"diggersby",
-					"fastMove":"MUD_SHOT",
-					"chargedMoves":[
-						"EARTHQUAKE",
-						"FIRE_PUNCH"
-					]
-				},
-				{
-					"speciesId":"cresselia",
-					"fastMove":"PSYCHO_CUT",
-					"chargedMoves":[
-						"GRASS_KNOT",
-						"MOONBLAST"
-					]
-				},
-				{
-					"speciesId":"registeel",
-					"fastMove":"LOCK_ON",
-					"chargedMoves":[
-						"FOCUS_BLAST",
-						"FLASH_CANNON"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"obstagoon",
-					"fastMove":"COUNTER",
-					"chargedMoves":[
-						"CROSS_CHOP",
-						"NIGHT_SLASH"
-					]
-				},
-				{
-					"speciesId":"jellicent",
-					"fastMove":"HEX",
-					"chargedMoves":[
-						"ICE_BEAM",
-						"SHADOW_BALL"
-					]
-				},
-				{
-					"speciesId":"hypno",
-					"fastMove":"CONFUSION",
-					"chargedMoves":[
-						"ICE_PUNCH",
-						"THUNDER_PUNCH"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"sirfetchd",
-					"fastMove":"COUNTER",
-					"chargedMoves":[
-						"LEAF_BLADE",
-						"NIGHT_SLASH"
-					]
-				},
-				{
-					"speciesId":"registeel",
-					"fastMove":"LOCK_ON",
-					"chargedMoves":[
-						"FOCUS_BLAST",
-						"FLASH_CANNON"
-					]
-				},
-				{
-					"speciesId":"zweilous",
-					"fastMove":"DRAGON_BREATH",
-					"chargedMoves":[
-						"BODY_SLAM",
-						"DARK_PULSE"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"mandibuzz",
-					"fastMove":"SNARL",
-					"chargedMoves":[
-						"FOUL_PLAY",
-						"AERIAL_ACE"
-					]
-				},
-				{
-					"speciesId":"registeel",
-					"fastMove":"LOCK_ON",
-					"chargedMoves":[
-						"FOCUS_BLAST",
-						"FLASH_CANNON"
-					]
-				},
-				{
-					"speciesId":"cresselia",
-					"fastMove":"PSYCHO_CUT",
-					"chargedMoves":[
-						"GRASS_KNOT",
-						"MOONBLAST"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"registeel",
-					"fastMove":"LOCK_ON",
-					"chargedMoves":[
-						"FOCUS_BLAST",
-						"FLASH_CANNON"
-					]
-				},
-				{
-					"speciesId":"sableye",
-					"fastMove":"SHADOW_CLAW",
-					"chargedMoves":[
-						"FOUL_PLAY",
-						"RETURN"
-					]
-				},
-				{
-					"speciesId":"jellicent",
-					"fastMove":"HEX",
-					"chargedMoves":[
-						"BUBBLE_BEAM",
-						"SHADOW_BALL"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"machamp_shadow",
-					"fastMove":"COUNTER",
-					"chargedMoves":[
-						"CROSS_CHOP",
-						"ROCK_SLIDE"
-					]
-				},
-				{
-					"speciesId":"jellicent",
-					"fastMove":"HEX",
-					"chargedMoves":[
-						"ICE_BEAM",
-						"SHADOW_BALL"
-					]
-				},
-				{
-					"speciesId":"registeel",
-					"fastMove":"LOCK_ON",
-					"chargedMoves":[
-						"FOCUS_BLAST",
-						"FLASH_CANNON"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"diggersby",
-					"fastMove":"MUD_SHOT",
-					"chargedMoves":[
-						"EARTHQUAKE",
-						"FIRE_PUNCH"
-					]
-				},
-				{
-					"speciesId":"registeel",
-					"fastMove":"LOCK_ON",
-					"chargedMoves":[
-						"FOCUS_BLAST",
-						"FLASH_CANNON"
-					]
-				},
-				{
-					"speciesId":"mandibuzz",
-					"fastMove":"SNARL",
-					"chargedMoves":[
-						"FOUL_PLAY",
-						"AERIAL_ACE"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"jellicent",
-					"fastMove":"HEX",
-					"chargedMoves":[
-						"BUBBLE_BEAM",
-						"SHADOW_BALL"
-					]
-				},
-				{
-					"speciesId":"registeel",
-					"fastMove":"LOCK_ON",
-					"chargedMoves":[
-						"FOCUS_BLAST",
-						"FLASH_CANNON"
-					]
-				},
-				{
-					"speciesId":"diggersby",
-					"fastMove":"MUD_SHOT",
-					"chargedMoves":[
-						"EARTHQUAKE",
-						"FIRE_PUNCH"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"abomasnow",
-					"fastMove":"POWDER_SNOW",
-					"chargedMoves":[
-						"WEATHER_BALL_ICE",
-						"ENERGY_BALL"
-					]
-				},
-				{
-					"speciesId":"jellicent",
-					"fastMove":"HEX",
-					"chargedMoves":[
-						"BUBBLE_BEAM",
-						"SHADOW_BALL"
-					]
-				},
-				{
-					"speciesId":"castform_rainy",
-					"fastMove":"WATER_GUN",
-					"chargedMoves":[
-						"WEATHER_BALL_WATER",
-						"THUNDER"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"jellicent",
-					"fastMove":"HEX",
-					"chargedMoves":[
-						"BUBBLE_BEAM",
-						"SHADOW_BALL"
-					]
-				},
-				{
-					"speciesId":"registeel",
-					"fastMove":"LOCK_ON",
-					"chargedMoves":[
-						"FOCUS_BLAST",
-						"FLASH_CANNON"
-					]
-				},
-				{
-					"speciesId":"steelix",
-					"fastMove":"DRAGON_TAIL",
-					"chargedMoves":[
-						"EARTHQUAKE",
-						"CRUNCH"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"froslass",
-					"fastMove":"POWDER_SNOW",
-					"chargedMoves":[
-						"AVALANCHE",
-						"SHADOW_BALL"
-					]
-				},
-				{
-					"speciesId":"diggersby",
-					"fastMove":"MUD_SHOT",
-					"chargedMoves":[
-						"EARTHQUAKE",
-						"FIRE_PUNCH"
-					]
-				},
-				{
-					"speciesId":"whiscash",
-					"fastMove":"MUD_SHOT",
-					"chargedMoves":[
-						"MUD_BOMB",
-						"BLIZZARD"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"diggersby",
-					"fastMove":"MUD_SHOT",
-					"chargedMoves":[
-						"EARTHQUAKE",
-						"FIRE_PUNCH"
-					]
-				},
-				{
-					"speciesId":"froslass",
-					"fastMove":"POWDER_SNOW",
-					"chargedMoves":[
-						"AVALANCHE",
-						"SHADOW_BALL"
-					]
-				},
-				{
-					"speciesId":"wigglytuff",
-					"fastMove":"CHARM",
-					"chargedMoves":[
-						"ICE_BEAM",
-						"PLAY_ROUGH"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"diggersby",
-					"fastMove":"MUD_SHOT",
-					"chargedMoves":[
-						"EARTHQUAKE",
-						"FIRE_PUNCH"
-					]
-				},
-				{
-					"speciesId":"froslass",
-					"fastMove":"POWDER_SNOW",
-					"chargedMoves":[
-						"AVALANCHE",
-						"SHADOW_BALL"
-					]
-				},
-				{
-					"speciesId":"jellicent",
-					"fastMove":"HEX",
-					"chargedMoves":[
-						"BUBBLE_BEAM",
-						"SHADOW_BALL"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"obstagoon",
-					"fastMove":"COUNTER",
-					"chargedMoves":[
-						"NIGHT_SLASH",
-						"CROSS_CHOP"
-					]
-				},
-				{
-					"speciesId":"cresselia",
-					"fastMove":"PSYCHO_CUT",
-					"chargedMoves":[
-						"GRASS_KNOT",
-						"MOONBLAST"
-					]
-				},
-				{
-					"speciesId":"gengar",
-					"fastMove":"SHADOW_CLAW",
-					"chargedMoves":[
-						"SHADOW_BALL",
-						"SHADOW_PUNCH"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"whiscash",
-					"fastMove":"MUD_SHOT",
-					"chargedMoves":[
-						"MUD_BOMB",
-						"BLIZZARD"
-					]
-				},
-				{
-					"speciesId":"wigglytuff",
-					"fastMove":"CHARM",
-					"chargedMoves":[
-						"ICE_BEAM",
-						"PLAY_ROUGH"
-					]
-				},
-				{
-					"speciesId":"clefable",
-					"fastMove":"CHARM",
-					"chargedMoves":[
-						"METEOR_MASH",
-						"DAZZLING_GLEAM"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"diggersby",
-					"fastMove":"MUD_SHOT",
-					"chargedMoves":[
-						"EARTHQUAKE",
-						"FIRE_PUNCH"
-					]
-				},
-				{
-					"speciesId":"jellicent",
-					"fastMove":"HEX",
-					"chargedMoves":[
-						"BUBBLE_BEAM",
-						"SHADOW_BALL"
-					]
-				},
-				{
-					"speciesId":"wigglytuff",
-					"fastMove":"CHARM",
-					"chargedMoves":[
-						"ICE_BEAM",
-						"PLAY_ROUGH"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"nidoqueen_shadow",
-					"fastMove":"POISON_JAB",
-					"chargedMoves":[
-						"POISON_FANG",
-						"EARTH_POWER"
-					]
-				},
-				{
-					"speciesId":"mandibuzz",
-					"fastMove":"SNARL",
-					"chargedMoves":[
-						"FOUL_PLAY",
-						"AERIAL_ACE"
-					]
-				},
-				{
-					"speciesId":"registeel",
-					"fastMove":"LOCK_ON",
-					"chargedMoves":[
-						"FOCUS_BLAST",
-						"FLASH_CANNON"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"registeel",
-					"fastMove":"LOCK_ON",
-					"chargedMoves":[
-						"FOCUS_BLAST",
-						"FLASH_CANNON"
-					]
-				},
-				{
-					"speciesId":"sableye",
-					"fastMove":"SHADOW_CLAW",
-					"chargedMoves":[
-						"FOUL_PLAY",
-						"RETURN"
-					]
-				},
-				{
-					"speciesId":"tropius",
-					"fastMove":"AIR_SLASH",
-					"chargedMoves":[
-						"LEAF_BLADE",
-						"AERIAL_ACE"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"diggersby",
-					"fastMove":"MUD_SHOT",
-					"chargedMoves":[
-						"EARTHQUAKE",
-						"FIRE_PUNCH"
-					]
-				},
-				{
-					"speciesId":"sableye",
-					"fastMove":"SHADOW_CLAW",
-					"chargedMoves":[
-						"FOUL_PLAY",
-						"RETURN"
-					]
-				},
-				{
-					"speciesId":"jellicent",
-					"fastMove":"HEX",
-					"chargedMoves":[
-						"BUBBLE_BEAM",
-						"SHADOW_BALL"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"wigglytuff",
-					"fastMove":"CHARM",
-					"chargedMoves":[
-						"ICE_BEAM",
-						"PLAY_ROUGH"
-					]
-				},
-				{
-					"speciesId":"whiscash",
-					"fastMove":"MUD_SHOT",
-					"chargedMoves":[
-						"MUD_BOMB",
-						"BLIZZARD"
-					]
-				},
-				{
-					"speciesId":"diggersby",
-					"fastMove":"MUD_SHOT",
-					"chargedMoves":[
-						"EARTHQUAKE",
-						"FIRE_PUNCH"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"cresselia",
-					"fastMove":"PSYCHO_CUT",
-					"chargedMoves":[
-						"GRASS_KNOT",
-						"MOONBLAST"
-					]
-				},
-				{
-					"speciesId":"registeel",
-					"fastMove":"LOCK_ON",
-					"chargedMoves":[
-						"FOCUS_BLAST",
-						"FLASH_CANNON"
-					]
-				},
-				{
-					"speciesId":"diggersby",
-					"fastMove":"MUD_SHOT",
-					"chargedMoves":[
-						"EARTHQUAKE",
-						"FIRE_PUNCH"
-					]
-				}
-			],
-			"weight":2
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"diggersby",
-					"fastMove":"MUD_SHOT",
-					"chargedMoves":[
-						"EARTHQUAKE",
-						"FIRE_PUNCH"
-					]
-				},
-				{
-					"speciesId":"jellicent",
-					"fastMove":"HEX",
-					"chargedMoves":[
-						"BUBBLE_BEAM",
-						"SHADOW_BALL"
-					]
-				},
-				{
-					"speciesId":"mandibuzz",
-					"fastMove":"SNARL",
-					"chargedMoves":[
-						"FOUL_PLAY",
-						"AERIAL_ACE"
-					]
-				}
-			],
-			"weight":2
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"ninetales_shadow",
-					"fastMove":"FIRE_SPIN",
-					"chargedMoves":[
-						"WEATHER_BALL_FIRE",
-						"PSYSHOCK"
-					]
-				},
-				{
-					"speciesId":"cresselia",
-					"fastMove":"PSYCHO_CUT",
-					"chargedMoves":[
-						"GRASS_KNOT",
-						"MOONBLAST"
-					]
-				},
-				{
-					"speciesId":"zweilous",
-					"fastMove":"DRAGON_BREATH",
-					"chargedMoves":[
-						"BODY_SLAM",
-						"DARK_PULSE"
-					]
-				}
-			],
-			"weight":1
-		},
-		{
-			"pokemon":[
-				{
-					"speciesId":"diggersby",
-					"fastMove":"MUD_SHOT",
-					"chargedMoves":[
-						"EARTHQUAKE",
-						"FIRE_PUNCH"
-					]
-				},
-				{
-					"speciesId":"lickitung",
-					"fastMove":"LICK",
-					"chargedMoves":[
-						"BODY_SLAM",
-						"POWER_WHIP"
-					]
-				},
-				{
-					"speciesId":"froslass",
-					"fastMove":"POWDER_SNOW",
-					"chargedMoves":[
-						"AVALANCHE",
-						"SHADOW_BALL"
-					]
-				}
-			],
-			"weight":1
-		}
-	]
+    "presets": [{
+        "pokemon": [{
+            "speciesId": "diggersby",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["EARTHQUAKE", "FIRE_PUNCH"]
+        }, {
+            "speciesId": "froslass",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
+        }, {
+            "speciesId": "wigglytuff",
+            "fastMove": "CHARM",
+            "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "nidoqueen",
+            "fastMove": "POISON_JAB",
+            "chargedMoves": ["POISON_FANG", "EARTH_POWER"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "mandibuzz",
+            "fastMove": "SNARL",
+            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+        }, {
+            "speciesId": "obstagoon",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "cresselia",
+            "fastMove": "PSYCHO_CUT",
+            "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
+        }, {
+            "speciesId": "whiscash",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["MUD_BOMB", "BLIZZARD"]
+        }, {
+            "speciesId": "wigglytuff",
+            "fastMove": "CHARM",
+            "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "nidoqueen",
+            "fastMove": "POISON_JAB",
+            "chargedMoves": ["POISON_FANG", "EARTH_POWER"]
+        }, {
+            "speciesId": "jellicent",
+            "fastMove": "HEX",
+            "chargedMoves": ["ICE_BEAM", "SHADOW_BALL"]
+        }, {
+            "speciesId": "obstagoon",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "obstagoon",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
+        }, {
+            "speciesId": "jellicent",
+            "fastMove": "HEX",
+            "chargedMoves": ["ICE_BEAM", "SHADOW_BALL"]
+        }, {
+            "speciesId": "nidoqueen",
+            "fastMove": "POISON_JAB",
+            "chargedMoves": ["POISON_FANG", "EARTH_POWER"],
+            "shadowType": "shadow"
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "obstagoon",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
+        }, {
+            "speciesId": "froslass",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
+        }, {
+            "speciesId": "golbat",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["POISON_FANG", "SHADOW_BALL"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "mandibuzz",
+            "fastMove": "SNARL",
+            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+        }, {
+            "speciesId": "diggersby",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["EARTHQUAKE", "FIRE_PUNCH"]
+        }, {
+            "speciesId": "registeel",
+            "fastMove": "LOCK_ON",
+            "chargedMoves": ["FOCUS_BLAST", "FLASH_CANNON"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "wigglytuff",
+            "fastMove": "CHARM",
+            "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
+        }, {
+            "speciesId": "diggersby",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["EARTHQUAKE", "FIRE_PUNCH"]
+        }, {
+            "speciesId": "froslass",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "obstagoon",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
+        }, {
+            "speciesId": "golbat",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["POISON_FANG", "SHADOW_BALL"]
+        }, {
+            "speciesId": "nidoqueen",
+            "fastMove": "POISON_JAB",
+            "chargedMoves": ["POISON_FANG", "EARTH_POWER"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "jellicent",
+            "fastMove": "BUBBLE",
+            "chargedMoves": ["ICE_BEAM", "SHADOW_BALL"]
+        }, {
+            "speciesId": "mandibuzz",
+            "fastMove": "SNARL",
+            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+        }, {
+            "speciesId": "wigglytuff",
+            "fastMove": "CHARM",
+            "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "nidoqueen",
+            "fastMove": "POISON_JAB",
+            "chargedMoves": ["POISON_FANG", "EARTH_POWER"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "mandibuzz",
+            "fastMove": "SNARL",
+            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+        }, {
+            "speciesId": "sableye",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["FOUL_PLAY", "RETURN"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "cresselia",
+            "fastMove": "PSYCHO_CUT",
+            "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
+        }, {
+            "speciesId": "mandibuzz",
+            "fastMove": "SNARL",
+            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+        }, {
+            "speciesId": "registeel",
+            "fastMove": "LOCK_ON",
+            "chargedMoves": ["FOCUS_BLAST", "FLASH_CANNON"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "beedrill",
+            "fastMove": "POISON_JAB",
+            "chargedMoves": ["X_SCISSOR", "DRILL_RUN"]
+        }, {
+            "speciesId": "mandibuzz",
+            "fastMove": "SNARL",
+            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+        }, {
+            "speciesId": "obstagoon",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "whiscash",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["MUD_BOMB", "BLIZZARD"]
+        }, {
+            "speciesId": "mandibuzz",
+            "fastMove": "SNARL",
+            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+        }, {
+            "speciesId": "registeel",
+            "fastMove": "LOCK_ON",
+            "chargedMoves": ["FOCUS_BLAST", "FLASH_CANNON"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "obstagoon",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
+        }, {
+            "speciesId": "hypno",
+            "fastMove": "CONFUSION",
+            "chargedMoves": ["FIRE_PUNCH", "THUNDER_PUNCH"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "nidoqueen",
+            "fastMove": "POISON_JAB",
+            "chargedMoves": ["POISON_FANG", "EARTH_POWER"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "nidoqueen",
+            "fastMove": "POISON_JAB",
+            "chargedMoves": ["POISON_FANG", "EARTH_POWER"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "obstagoon",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
+        }, {
+            "speciesId": "sableye",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["FOUL_PLAY", "RETURN"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "froslass",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
+        }, {
+            "speciesId": "diggersby",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["EARTHQUAKE", "FIRE_PUNCH"]
+        }, {
+            "speciesId": "whiscash",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["MUD_BOMB", "BLIZZARD"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "abomasnow",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"]
+        }, {
+            "speciesId": "castform_rainy",
+            "fastMove": "WATER_GUN",
+            "chargedMoves": ["WEATHER_BALL_WATER", "THUNDER"]
+        }, {
+            "speciesId": "jellicent",
+            "fastMove": "HEX",
+            "chargedMoves": ["BUBBLE_BEAM", "SHADOW_BALL"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "diggersby",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["EARTHQUAKE", "FIRE_PUNCH"]
+        }, {
+            "speciesId": "cresselia",
+            "fastMove": "PSYCHO_CUT",
+            "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
+        }, {
+            "speciesId": "froslass",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "jellicent",
+            "fastMove": "BUBBLE",
+            "chargedMoves": ["ICE_BEAM", "SHADOW_BALL"]
+        }, {
+            "speciesId": "abomasnow",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"]
+        }, {
+            "speciesId": "machamp",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
+            "shadowType": "shadow"
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "jellicent",
+            "fastMove": "HEX",
+            "chargedMoves": ["BUBBLE_BEAM", "SHADOW_BALL"]
+        }, {
+            "speciesId": "granbull",
+            "fastMove": "CHARM",
+            "chargedMoves": ["CLOSE_COMBAT", "CRUNCH"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "wigglytuff",
+            "fastMove": "CHARM",
+            "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "wigglytuff",
+            "fastMove": "CHARM",
+            "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
+        }, {
+            "speciesId": "jellicent",
+            "fastMove": "HEX",
+            "chargedMoves": ["ICE_BEAM", "SHADOW_BALL"]
+        }, {
+            "speciesId": "mandibuzz",
+            "fastMove": "SNARL",
+            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "obstagoon",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
+        }, {
+            "speciesId": "froslass",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
+        }, {
+            "speciesId": "nidoqueen",
+            "fastMove": "POISON_JAB",
+            "chargedMoves": ["POISON_FANG", "EARTH_POWER"],
+            "shadowType": "shadow"
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "machamp",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "diggersby",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["EARTHQUAKE", "FIRE_PUNCH"]
+        }, {
+            "speciesId": "mandibuzz",
+            "fastMove": "SNARL",
+            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "whiscash",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["MUD_BOMB", "BLIZZARD"]
+        }, {
+            "speciesId": "mandibuzz",
+            "fastMove": "SNARL",
+            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+        }, {
+            "speciesId": "nidoqueen",
+            "fastMove": "POISON_JAB",
+            "chargedMoves": ["POISON_FANG", "EARTH_POWER"],
+            "shadowType": "shadow"
+        }],
+        "weight": 1
+    }]
 }

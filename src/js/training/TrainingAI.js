@@ -229,6 +229,10 @@ function TrainingAI(l, p, b){
 				pokemon.selectMove("charged", "none", 1);
 			}
 
+			if(poke.shadowType){
+				pokemon.setShadowType(poke.shadowType);
+			}
+
 			roster.push(pokemon);
 			selectedIds.push(poke.speciesId);
 		}
