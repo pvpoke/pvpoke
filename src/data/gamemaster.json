@@ -21315,13 +21315,15 @@
         "fastMoves": ["QUICK_ATTACK", "CONFUSION"],
         "chargedMoves": ["PSYSHOCK", "THUNDERBOLT", "DAZZLING_GLEAM", "HYPER_BEAM"],
         "defaultIVs": {
-            "cp500": [5, 5, 9, 7],
-            "cp1500": [14, 5, 7, 14],
-            "cp2500": [22.5, 9, 15, 15]
+			"cp500": [4.5, 11, 15, 14],
+            "cp1500": [13.5, 12, 14, 10],
+            "cp2500": [22.5, 10, 12, 14]
         },
+		"tags": ["mythical", "untradeable"],
+		"levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": true
     }, {
         "dex": 648,
         "speciesId": "meloetta_pirouette",
@@ -21335,10 +21337,11 @@
         "fastMoves": ["QUICK_ATTACK", "LOW_KICK"],
         "chargedMoves": ["CLOSE_COMBAT", "FIRE_PUNCH", "ICE_PUNCH", "HYPER_BEAM"],
         "defaultIVs": {
-            "cp500": [5, 4, 15, 7],
-            "cp1500": [14, 4, 14, 12],
-            "cp2500": [23.5, 4, 11, 13]
+			"cp500": [4.5, 15, 12, 14],
+            "cp1500": [13.5, 14, 12, 15],
+            "cp2500": [22.5, 10, 15, 15]
         },
+		"tags": ["mythical", "untradeable"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": false
