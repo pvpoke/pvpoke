@@ -628,20 +628,9 @@ function TrainingAI(l, p, b){
 	// Evaluate the current matchup and decide a high level strategy
 
 	this.evaluateMatchup = function(turn, pokemon, opponent, opponentPlayer){
-		// Preserve current HP, energy, and stat boosts
-		pokemon.startHp = pokemon.hp;
-		pokemon.startEnergy = pokemon.energy;
-		pokemon.startStatBuffs = [pokemon.statBuffs[0], pokemon.statBuffs[1]];
-		pokemon.startCooldown = pokemon.cooldown;
-		pokemon.startingShields = pokemon.shields;
 		pokemon.baitShields = true;
 		pokemon.farmEnergy = false;
 
-		opponent.startHp = opponent.hp;
-		opponent.startEnergy = opponent.energy;
-		opponent.startStatBuffs = [opponent.statBuffs[0], opponent.statBuffs[1]];
-		opponent.startCooldown = opponent.cooldown;
-		opponent.startingShields = opponent.shields;
 		opponent.baitShields = true;
 		opponent.farmEnergy = false;
 
@@ -846,6 +835,19 @@ function TrainingAI(l, p, b){
 				index: opponent.index
 			}
 		];
+		
+		// Preserve current HP, energy, and stat boosts which get reset during simulate()
+		pokemon.startHp = pokemon.hp;
+		pokemon.startEnergy = pokemon.energy;
+		pokemon.startStatBuffs = [pokemon.statBuffs[0], pokemon.statBuffs[1]];
+		pokemon.startCooldown = pokemon.cooldown;
+		pokemon.startingShields = pokemon.shields;
+		
+		opponent.startHp = opponent.hp;
+		opponent.startEnergy = opponent.energy;
+		opponent.startStatBuffs = [opponent.statBuffs[0], opponent.statBuffs[1]];
+		opponent.startCooldown = opponent.cooldown;
+		opponent.startingShields = opponent.shields;
 
 		switch(type){
 			case "BOTH_BAIT":
