@@ -289,7 +289,7 @@ require_once 'header.php';
 				<p>This algorithm produces the following behavior:</p>
 				<ol>
 					<li>Pokemon will use any move available if it would result in a KO.</li>
-					<li>Pokemon will use any move available to deal the most possible damage before they feint.</li>
+					<li>Pokemon will use any move available to deal the most possible damage before they faint.</li>
 					<li>Pokemon will always shield themselves if possible.</li>
 					<li>Pokemon will use their fastest Charged Move to remove an opponent's shields.</li>
 				</ol>
