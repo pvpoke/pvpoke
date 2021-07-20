@@ -23,7 +23,7 @@ If you are running the site in a subdirectory, you’ll need to edit the `module
 
 Because we’re flexible like that.
 
-If you haven’t already, you may need to change your Apache settings to allow .htaccess to modify incoming requests. If you’re using XAMPP, find the `apache/conf/httpd.config` file and change:
+If you haven’t already, you may need to change your Apache settings. First, to allow .htaccess to modify incoming requests. If you’re using XAMPP, find the `apache/conf/httpd.config` file and change:
 
 ```
 `<Directory />
@@ -41,7 +41,17 @@ To the following:
 </Directory>
 ```
 
-You can also set this specifically for the project directory. You may need to restart the server afterward.
+You can also set this specifically for the project directory. You may need to restart the server afterward. Second, to use `Mod_Rewrite` , you may need to enable it by this command with proper priviledge:
+
+```
+a2enmod rewrite
+```
+
+After executing this command, restart Apache:
+
+```
+service apache2 restart
+```
 
 ## Site Structure
 
