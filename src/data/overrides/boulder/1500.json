@@ -1,0 +1,147 @@
+[
+	{
+		"speciesId": "medicham",
+		"chargedMoves": ["POWER_UP_PUNCH", "PSYCHIC"],
+		"weight": 8
+	},
+	{
+		"speciesId": "medicham_xs",
+		"chargedMoves": ["POWER_UP_PUNCH", "PSYCHIC"]
+	},
+	{
+		"speciesId": "skarmory",
+		"weight": 8
+	},
+	{
+		"speciesId": "swampert",
+		"weight": 6
+	},
+	{
+		"speciesId": "machamp",
+		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
+	},
+	{
+		"speciesId": "machamp_shadow",
+		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
+	},
+	{
+		"speciesId": "hariyama",
+		"chargedMoves": ["HEAVY_SLAM", "CLOSE_COMBAT"]
+	},
+	{
+		"speciesId": "hariyama_shadow",
+		"chargedMoves": ["HEAVY_SLAM", "CLOSE_COMBAT"]
+	},
+	{
+		"speciesId": "hitmonchan",
+		"chargedMoves": ["THUNDER_PUNCH", "ICE_PUNCH"]
+	},
+	{
+		"speciesId": "hitmonchan_shadow",
+		"chargedMoves": ["THUNDER_PUNCH", "ICE_PUNCH"]
+	},
+	{
+		"speciesId": "gliscor",
+		"fastMove": "WING_ATTACK"
+	},
+	{
+		"speciesId": "gliscor_shadow",
+		"fastMove": "WING_ATTACK"
+	},
+	{
+		"speciesId": "gligar",
+		"fastMove": "WING_ATTACK"
+	},
+	{
+		"speciesId": "gligar_shadow",
+		"fastMove": "WING_ATTACK"
+	},
+	{
+		"speciesId": "flygon",
+		"fastMove": "DRAGON_TAIL"
+	},
+	{
+		"speciesId": "flygon_shadow",
+		"fastMove": "DRAGON_TAIL"
+	},
+	{
+		"speciesId": "mawile",
+		"fastMove": "FIRE_FANG"
+	},
+	{
+		"speciesId": "mawile_shadow",
+		"fastMove": "FIRE_FANG"
+	},
+	{
+		"speciesId": "hippowdon",
+		"fastMove": "FIRE_FANG",
+		"chargedMoves": ["WEATHER_BALL_ROCK", "EARTH_POWER"]
+	},
+	{
+		"speciesId": "steelix",
+		"chargedMoves": ["CRUNCH", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "heracross",
+		"chargedMoves": ["CLOSE_COMBAT", "MEGAHORN"]
+	},
+	{
+		"speciesId": "torterra",
+		"chargedMoves": ["FRENZY_PLANT", "SAND_TOMB"]
+	},
+	{
+		"speciesId": "torterra_shadow",
+		"chargedMoves": ["FRENZY_PLANT", "SAND_TOMB"]
+	},
+	{
+		"speciesId": "blaziken",
+		"chargedMoves": ["BLAZE_KICK", "BLAST_BURN"]
+	},
+	{
+		"speciesId": "claydol",
+		"chargedMoves": ["EARTH_POWER", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "stunfisk",
+		"fastMove": "THUNDER_SHOCK",
+		"chargedMoves": ["MUD_BOMB", "DISCHARGE"]
+	},
+	{
+		"speciesId": "lucario",
+		"chargedMoves": ["POWER_UP_PUNCH", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "toxicroak",
+		"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
+	},
+	{
+		"speciesId": "bronzong",
+		"chargedMoves": ["PSYSHOCK", "PAYBACK"]
+	},
+	{
+		"speciesId": "perrserker",
+		"chargedMoves": ["FOUL_PLAY", "CLOSE_COMBAT"]
+	},
+	{
+		"speciesId": "ferrothorn",
+		"chargedMoves": ["POWER_WHIP", "THUNDER"],
+		"weight": 3
+	},
+	{
+		"speciesId": "primeape",
+		"chargedMoves": ["NIGHT_SLASH", "CLOSE_COMBAT"]
+	},
+	{
+		"speciesId": "farfetchd_galarian",
+		"chargedMoves": ["LEAF_BLADE", "BRAVE_BIRD"]
+	},
+	{
+		"speciesId": "stunfisk_galarian",
+		"chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"],
+		"weight": 2
+	},
+	{
+		"speciesId": "bastiodon",
+		"weight": 2
+	}
+]
