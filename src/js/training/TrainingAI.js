@@ -817,6 +817,20 @@ function TrainingAI(l, p, b){
 			average: 0,
 			minShields: 3
 		};
+		
+		// Preserve current HP, energy, and stat boosts which get reset during simulation
+		// Otherwise old values of startHp, startingShields, etc. may get used during the reset
+		pokemon.startHp = pokemon.hp;
+		pokemon.startEnergy = pokemon.energy;
+		pokemon.startStatBuffs = [pokemon.statBuffs[0], pokemon.statBuffs[1]];
+		pokemon.startCooldown = pokemon.cooldown;
+		pokemon.startingShields = pokemon.shields;
+		
+		opponent.startHp = opponent.hp;
+		opponent.startEnergy = opponent.energy;
+		opponent.startStatBuffs = [opponent.statBuffs[0], opponent.statBuffs[1]];
+		opponent.startCooldown = opponent.cooldown;
+		opponent.startingShields = opponent.shields;
 
 		// Preserve old Pokemon stats
 		var startStats = [
@@ -836,18 +850,7 @@ function TrainingAI(l, p, b){
 			}
 		];
 		
-		// Preserve current HP, energy, and stat boosts which get reset during simulate()
-		pokemon.startHp = pokemon.hp;
-		pokemon.startEnergy = pokemon.energy;
-		pokemon.startStatBuffs = [pokemon.statBuffs[0], pokemon.statBuffs[1]];
-		pokemon.startCooldown = pokemon.cooldown;
-		pokemon.startingShields = pokemon.shields;
-		
-		opponent.startHp = opponent.hp;
-		opponent.startEnergy = opponent.energy;
-		opponent.startStatBuffs = [opponent.statBuffs[0], opponent.statBuffs[1]];
-		opponent.startCooldown = opponent.cooldown;
-		opponent.startingShields = opponent.shields;
+
 
 		switch(type){
 			case "BOTH_BAIT":
