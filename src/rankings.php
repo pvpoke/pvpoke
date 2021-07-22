@@ -63,20 +63,12 @@ switch($cup){
 		$league = 'Silph Factions Rankings';
 		break;
 
-	case "nightfall":
-		$league = 'Silph Nightfall Cup';
-		break;
-
 	case "continentals-3":
 		$league = 'Continentals';
 		break;
 
-	case "element":
-		$league = 'Element Cup';
-		break;
-
-	case "marsh":
-		$league = 'Marsh Cup';
+	case "boulder":
+		$league = 'Boulder Cup';
 		break;
 
 	case "atlantis":
@@ -85,10 +77,6 @@ switch($cup){
 
 	case "remix":
 		$league = $league . ' Remix';
-		break;
-
-	case "bidoof":
-		$league = 'Bidoof Cup';
 		break;
 
 }

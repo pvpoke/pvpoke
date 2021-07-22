@@ -9,6 +9,7 @@
 	<option value="1500" cup="continentals-3" meta-group="continentals">Silph Continentals</option>
 	<option value="1500" cup="factions" meta-group="factions">Silph Factions (Atlantis)</option>
 	<option value="1500" cup="marsh" meta-group="marsh">7-Eleven Marsh Cup</option>
+	<option value="1500" cup="boulder" meta-group="boulder">Best in Midwest Boulder Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="1500" cup="cliffhanger" meta-group="great">GO Stadium Cliffhanger</option>
