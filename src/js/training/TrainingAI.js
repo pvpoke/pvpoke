@@ -849,8 +849,6 @@ function TrainingAI(l, p, b){
 				index: opponent.index
 			}
 		];
-		
-
 
 		switch(type){
 			case "BOTH_BAIT":
