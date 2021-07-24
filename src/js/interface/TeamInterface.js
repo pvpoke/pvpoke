@@ -484,23 +484,7 @@ var InterfaceMaster = (function () {
 						continue;
 					}
 
-					var pokemon = new Pokemon(r.speciesId, 1, battle);
-					pokemon.initialize(true);
-
-					// Manually set moves if previously selected, otherwise autoselect
-					var moveNameStr = '';
-
-					if(r.moveset){
-						pokemon.selectMove("fast", r.moveset.fastMove.moveId);
-
-						moveNameStr = r.moveset.fastMove.name;
-
-						for(var n = 0; n < r.moveset.chargedMoves.length; n++){
-							pokemon.selectMove("charged", r.moveset.chargedMoves[n].moveId, n);
-
-							moveNameStr += ", " + r.moveset.chargedMoves[n].name;
-						}
-					}
+					var pokemon = r.pokemon;
 
 					// Display threat score
 					if(count < 20){
@@ -632,23 +616,7 @@ var InterfaceMaster = (function () {
 						}
 					}
 
-					var pokemon = new Pokemon(r.speciesId, 1, battle);
-					pokemon.initialize(true);
-
-					// Manually set moves if previously selected, otherwise autoselect
-					var moveNameStr = '';
-
-					if(r.moveset){
-						pokemon.selectMove("fast", r.moveset.fastMove.moveId);
-
-						moveNameStr = r.moveset.fastMove.name;
-
-						for(var n = 0; n < r.moveset.chargedMoves.length; n++){
-							pokemon.selectMove("charged", r.moveset.chargedMoves[n].moveId, n);
-
-							moveNameStr += ", " + r.moveset.chargedMoves[n].name;
-						}
-					}
+					var pokemon = r.pokemon;
 
 					// Add results to meta table
 
@@ -836,8 +804,7 @@ var InterfaceMaster = (function () {
 						continue;
 					}
 
-					var pokemon = new Pokemon(r.speciesId, 1, battle);
-					pokemon.initialize(true);
+					var pokemon = r.pokemon;
 
 					// For Labyrinth Cup, exclude Pokemon of existing types
 					if(battle.getCup().name == "labyrinth"){
@@ -854,22 +821,7 @@ var InterfaceMaster = (function () {
 							continue;
 						}
 					}
-
-					// Manually set moves if previously selected, otherwise autoselect
-					var moveNameStr = '';
-
-					if(r.moveset){
-						pokemon.selectMove("fast", r.moveset.fastMove.moveId);
-
-						moveNameStr = r.moveset.fastMove.name;
-
-						for(var n = 0; n < r.moveset.chargedMoves.length; n++){
-							pokemon.selectMove("charged", r.moveset.chargedMoves[n].moveId, n);
-
-							moveNameStr += ", " + r.moveset.chargedMoves[n].name;
-						}
-					}
-
+					
 					// Add results to alternatives table
 
 					$row = $("<tr><th class=\"name\"><b>"+(count+1)+". "+pokemon.speciesName+"<div class=\"button add\" pokemon=\""+pokemon.speciesId+"\">+</div></b></th></tr>");

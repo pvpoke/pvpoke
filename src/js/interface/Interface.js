@@ -586,6 +586,7 @@ var InterfaceMaster = (function () {
 
 							if(! ((n == originalShields[0]) && (i == originalShields[1])) ) {
 								var b = new Battle();
+								b.setLevelCap(battle.getLevelCap());
 								b.setCP(battle.getCP());
 								b.setNewPokemon(pokemon[0], 0, false);
 								b.setNewPokemon(pokemon[1], 1, false);

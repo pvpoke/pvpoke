@@ -34,13 +34,11 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.22.10 (June 17, 2021)</h4>
+	<h4>v1.22.18 (Juky 24, 2021)</h4>
 	<ul>
-		<li>The Team Builder now has a single format dropdown instead of selecting the league and cup separately.</li>
-		<li>Pokemon shown in the Team Builder's "Meta Scorecard" now correlate to the prebuilt "meta group" for the selected format.</li>
-		<ul>
-			<li>Previously the Meta Scorecard showed Pokemon sorted by their rankings, but included highly ranked Pokemon that are not meta relevant.</li>
-		</ul>
+		<li>Fixed an issue with the training AI evaluating some scenarios incorrectly</li>
+		<li>Fixed an issue where individual battles in Master League Classic would set the Pokemon to level 50.</li>
+		<li>Fixed an issue where custom threats and alternatives entered in the Team Builder weren't reflected correctly in battle links.</li>
 	</ul>
 	<h3>Latest Article</h3>
 
