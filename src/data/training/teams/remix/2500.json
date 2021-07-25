@@ -1,0 +1,475 @@
+{
+    "presets": [{
+        "pokemon": [{
+            "speciesId": "stunfisk_galarian",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+        }, {
+            "speciesId": "jellicent",
+            "fastMove": "HEX",
+            "chargedMoves": ["ICE_BEAM", "SHADOW_BALL"]
+        }, {
+            "speciesId": "nidoqueen",
+            "fastMove": "POISON_JAB",
+            "chargedMoves": ["POISON_FANG", "EARTH_POWER"],
+            "shadowType": "shadow"
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "abomasnow",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"]
+        }, {
+            "speciesId": "jellicent",
+            "fastMove": "HEX",
+            "chargedMoves": ["BUBBLE_BEAM", "SHADOW_BALL"]
+        }, {
+            "speciesId": "politoed",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["WEATHER_BALL_WATER", "EARTHQUAKE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "ninetales_alolan",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["WEATHER_BALL_ICE", "DAZZLING_GLEAM"]
+        }, {
+            "speciesId": "politoed",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["WEATHER_BALL_WATER", "EARTHQUAKE"]
+        }, {
+            "speciesId": "giratina_origin",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["SHADOW_BALL", "OMINOUS_WIND"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "mewtwo_armored",
+            "fastMove": "CONFUSION",
+            "chargedMoves": ["PSYSTRIKE", "DYNAMIC_PUNCH"]
+        }, {
+            "speciesId": "snorlax",
+            "fastMove": "LICK",
+            "chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
+        }, {
+            "speciesId": "scrafty",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["FOUL_PLAY", "POWER_UP_PUNCH"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "nidoqueen",
+            "fastMove": "POISON_JAB",
+            "chargedMoves": ["POISON_FANG", "EARTH_POWER"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "scrafty",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["FOUL_PLAY", "POWER_UP_PUNCH"]
+        }, {
+            "speciesId": "mandibuzz",
+            "fastMove": "SNARL",
+            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "deoxys_defense",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["PSYCHO_BOOST", "ROCK_SLIDE"]
+        }, {
+            "speciesId": "snorlax",
+            "fastMove": "LICK",
+            "chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
+        }, {
+            "speciesId": "stunfisk_galarian",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "jellicent",
+            "fastMove": "HEX",
+            "chargedMoves": ["BUBBLE_BEAM", "SHADOW_BALL"]
+        }, {
+            "speciesId": "stunfisk_galarian",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+        }, {
+            "speciesId": "abomasnow",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "machamp",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "drifblim",
+            "fastMove": "HEX",
+            "chargedMoves": ["ICY_WIND", "SHADOW_BALL"]
+        }, {
+            "speciesId": "snorlax",
+            "fastMove": "LICK",
+            "chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "politoed",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["WEATHER_BALL_WATER", "EARTHQUAKE"]
+        }, {
+            "speciesId": "ninetales_alolan",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["WEATHER_BALL_ICE", "DAZZLING_GLEAM"]
+        }, {
+            "speciesId": "stunfisk_galarian",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "stunfisk_galarian",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+        }, {
+            "speciesId": "clefable",
+            "fastMove": "CHARM",
+            "chargedMoves": ["METEOR_MASH", "PSYCHIC"]
+        }, {
+            "speciesId": "granbull",
+            "fastMove": "CHARM",
+            "chargedMoves": ["CLOSE_COMBAT", "CRUNCH"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "snorlax",
+            "fastMove": "LICK",
+            "chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
+        }, {
+            "speciesId": "gengar",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["SHADOW_BALL", "SHADOW_PUNCH"]
+        }, {
+            "speciesId": "machamp",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
+            "shadowType": "shadow"
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "scrafty",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["FOUL_PLAY", "POWER_UP_PUNCH"]
+        }, {
+            "speciesId": "gengar",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["SHADOW_BALL", "SHADOW_PUNCH"]
+        }, {
+            "speciesId": "nidoqueen",
+            "fastMove": "POISON_JAB",
+            "chargedMoves": ["POISON_FANG", "EARTH_POWER"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "jellicent",
+            "fastMove": "HEX",
+            "chargedMoves": ["ICE_BEAM", "SHADOW_BALL"]
+        }, {
+            "speciesId": "stunfisk_galarian",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+        }, {
+            "speciesId": "scrafty",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["FOUL_PLAY", "POWER_UP_PUNCH"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "stunfisk_galarian",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+        }, {
+            "speciesId": "deoxys_defense",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["PSYCHO_BOOST", "ROCK_SLIDE"]
+        }, {
+            "speciesId": "abomasnow",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "stunfisk_galarian",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+        }, {
+            "speciesId": "jellicent",
+            "fastMove": "HEX",
+            "chargedMoves": ["ICE_BEAM", "SHADOW_BALL"]
+        }, {
+            "speciesId": "ninetales_alolan",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["WEATHER_BALL_ICE", "DAZZLING_GLEAM"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "jellicent",
+            "fastMove": "HEX",
+            "chargedMoves": ["BUBBLE_BEAM", "SHADOW_BALL"]
+        }, {
+            "speciesId": "stunfisk_galarian",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+        }, {
+            "speciesId": "mandibuzz",
+            "fastMove": "SNARL",
+            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "stunfisk_galarian",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+        }, {
+            "speciesId": "jellicent",
+            "fastMove": "HEX",
+            "chargedMoves": ["ICE_BEAM", "SHADOW_BALL"]
+        }, {
+            "speciesId": "deoxys_defense",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["PSYCHO_BOOST", "THUNDERBOLT"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "machamp",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "gengar",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["SHADOW_BALL", "SHADOW_PUNCH"]
+        }, {
+            "speciesId": "lugia",
+            "fastMove": "DRAGON_TAIL",
+            "chargedMoves": ["SKY_ATTACK", "AEROBLAST"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "stunfisk_galarian",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+        }, {
+            "speciesId": "lugia",
+            "fastMove": "DRAGON_TAIL",
+            "chargedMoves": ["SKY_ATTACK", "AEROBLAST"]
+        }, {
+            "speciesId": "mandibuzz",
+            "fastMove": "SNARL",
+            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "toxicroak",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
+        }, {
+            "speciesId": "jellicent",
+            "fastMove": "HEX",
+            "chargedMoves": ["BUBBLE_BEAM", "SHADOW_BALL"]
+        }, {
+            "speciesId": "mandibuzz",
+            "fastMove": "SNARL",
+            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "nidoqueen",
+            "fastMove": "POISON_JAB",
+            "chargedMoves": ["POISON_FANG", "EARTH_POWER"]
+        }, {
+            "speciesId": "jellicent",
+            "fastMove": "HEX",
+            "chargedMoves": ["BUBBLE_BEAM", "SHADOW_BALL"]
+        }, {
+            "speciesId": "ninetales_alolan",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["WEATHER_BALL_ICE", "DAZZLING_GLEAM"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "politoed",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["WEATHER_BALL_WATER", "EARTHQUAKE"]
+        }, {
+            "speciesId": "scrafty",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["FOUL_PLAY", "POWER_UP_PUNCH"]
+        }, {
+            "speciesId": "nidoqueen",
+            "fastMove": "POISON_JAB",
+            "chargedMoves": ["POISON_FANG", "EARTH_POWER"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "deoxys_defense",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["PSYCHO_BOOST", "THUNDERBOLT"]
+        }, {
+            "speciesId": "stunfisk_galarian",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+        }, {
+            "speciesId": "abomasnow",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "drifblim",
+            "fastMove": "HEX",
+            "chargedMoves": ["ICY_WIND", "SHADOW_BALL"]
+        }, {
+            "speciesId": "stunfisk_galarian",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+        }, {
+            "speciesId": "scrafty",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["FOUL_PLAY", "POWER_UP_PUNCH"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "jellicent",
+            "fastMove": "HEX",
+            "chargedMoves": ["ICE_BEAM", "SHADOW_BALL"]
+        }, {
+            "speciesId": "nidoqueen",
+            "fastMove": "POISON_JAB",
+            "chargedMoves": ["POISON_FANG", "EARTH_POWER"]
+        }, {
+            "speciesId": "machamp",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
+            "shadowType": "shadow"
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "nidoqueen",
+            "fastMove": "POISON_JAB",
+            "chargedMoves": ["POISON_FANG", "EARTH_POWER"]
+        }, {
+            "speciesId": "jellicent",
+            "fastMove": "HEX",
+            "chargedMoves": ["ICE_BEAM", "SHADOW_BALL"]
+        }, {
+            "speciesId": "mandibuzz",
+            "fastMove": "SNARL",
+            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "mewtwo_armored",
+            "fastMove": "CONFUSION",
+            "chargedMoves": ["PSYSTRIKE", "DYNAMIC_PUNCH"]
+        }, {
+            "speciesId": "stunfisk_galarian",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+        }, {
+            "speciesId": "abomasnow",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "politoed",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["WEATHER_BALL_WATER", "EARTHQUAKE"]
+        }, {
+            "speciesId": "giratina_origin",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["SHADOW_BALL", "OMINOUS_WIND"]
+        }, {
+            "speciesId": "ninetales_alolan",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["WEATHER_BALL_ICE", "DAZZLING_GLEAM"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "typhlosion",
+            "fastMove": "INCINERATE",
+            "chargedMoves": ["BLAST_BURN", "SOLAR_BEAM"]
+        }, {
+            "speciesId": "jellicent",
+            "fastMove": "HEX",
+            "chargedMoves": ["BUBBLE_BEAM", "SHADOW_BALL"]
+        }, {
+            "speciesId": "politoed",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["WEATHER_BALL_WATER", "EARTHQUAKE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "gengar",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["SHADOW_BALL", "SHADOW_PUNCH"]
+        }, {
+            "speciesId": "abomasnow",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"]
+        }, {
+            "speciesId": "stunfisk_galarian",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "machamp",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "snorlax",
+            "fastMove": "LICK",
+            "chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
+        }, {
+            "speciesId": "gengar",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["SHADOW_BALL", "SHADOW_PUNCH"]
+        }],
+        "weight": 1
+    }]
+}
