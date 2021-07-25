@@ -1,0 +1,141 @@
+[
+	{
+		"speciesId": "scizor_shadow",
+		"fastMove": "BULLET_PUNCH",
+		"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
+	},
+	{
+		"speciesId": "mawile_shadow",
+		"fastMove": "FIRE_FANG",
+		"chargedMoves": ["POWER_UP_PUNCH", "PLAY_ROUGH"]
+	},
+	{
+		"speciesId": "hypno_shadow",
+		"chargedMoves": ["FIRE_PUNCH", "ICE_PUNCH"]
+	},
+	{
+		"speciesId": "machamp_shadow",
+		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
+		"weight": 5
+	},
+	{
+		"speciesId": "gliscor_shadow",
+		"chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "hariyama_shadow",
+		"chargedMoves": ["CLOSE_COMBAT", "HEAVY_SLAM"]
+	},
+	{
+		"speciesId": "skuntank_shadow",
+		"chargedMoves": ["CRUNCH", "FLAMETHROWER"]
+	},
+	{
+		"speciesId": "hitmonchan_shadow",
+		"chargedMoves": ["FIRE_PUNCH", "ICE_PUNCH"]
+	},
+	{
+		"speciesId": "forretress_shadow",
+		"chargedMoves": ["MIRROR_SHOT", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "aggron_shadow",
+		"chargedMoves": ["STONE_EDGE", "THUNDER"]
+	},
+	{
+		"speciesId": "dusclops_shadow",
+		"chargedMoves": ["FIRE_PUNCH", "SHADOW_PUNCH"]
+	},
+	{
+		"speciesId": "crobat_shadow",
+		"chargedMoves": ["POISON_FANG", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "hypno_shadow",
+		"chargedMoves": ["FIRE_PUNCH", "SHADOW_BALL"],
+		"weight": 8
+	},
+	{
+		"speciesId": "victreebel_shadow",
+		"chargedMoves": ["LEAF_BLADE", "ACID_SPRAY"],
+		"weight": 4
+	},
+	{
+		"speciesId": "beedrill_shadow",
+		"fastMove": "POISON_JAB"
+	},
+	{
+		"speciesId": "flygon_shadow",
+		"fastMove": "DRAGON_TAIL"
+	},
+	{
+		"speciesId": "venomoth_shadow",
+		"fastMove": "CONFUSION"
+	},
+	{
+		"speciesId": "gardevoir_shadow",
+		"fastMove": "CHARM",
+		"weight": 2
+	},
+	{
+		"speciesId": "granbull_shadow",
+		"fastMove": "CHARM",
+		"weight": 6
+	},
+	{
+		"speciesId": "snorlax_shadow",
+		"weight": 3
+	},
+	{
+		"speciesId": "nidoqueen_shadow",
+		"weight": 4
+	},
+	{
+		"speciesId": "abomasnow_shadow",
+		"weight": 6
+	},
+	{
+		"speciesId": "swampert_shadow",
+		"chargedMoves": ["HYDRO_CANNON", "SLUDGE_WAVE"],
+		"weight": 9
+	},
+	{
+		"speciesId": "ninetales_shadow",
+		"weight": 9
+	},
+	{
+		"speciesId": "dragonair_shadow",
+		"weight": 3
+	},
+	{
+		"speciesId": "dragonite_shadow",
+		"chargedMoves": ["DRAGON_CLAW","HURRICANE"],
+		"weight": 3
+	},
+	{
+		"speciesId": "politoed_shadow",
+		"chargedMoves": ["WEATHER_BALL_WATER","EARTHQUAKE"],
+		"weight": 2
+	},
+	{
+		"speciesId": "skarmory_shadow",
+		"weight": 4
+	},
+	{
+		"speciesId": "golbat_shadow",
+		"weight": 4
+	},
+	{
+		"speciesId": "magnezone_shadow",
+		"weight": 4
+	},
+	{
+		"speciesId": "lapras_shadow",
+		"chargedMoves": ["SURF", "SKULL_BASH"],
+		"weight": 3
+	},
+	{
+		"speciesId": "venusaur_shadow",
+		"weight": 2
+	}
+]

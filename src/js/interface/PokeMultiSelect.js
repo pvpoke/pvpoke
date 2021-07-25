@@ -284,6 +284,10 @@ function PokeMultiSelect(element){
 				var speciesId = pokemonList[i].speciesId;
 				var found = false;
 
+				if((pokemonList[i].shadowType == "shadow")&&(speciesId.indexOf("_shadow") == -1)){
+					speciesId += "_shadow";
+				}
+
 				for(var n = 0; n < eligibleList.length; n++){
 					if(eligibleList[n].speciesId == speciesId){
 						found = true;

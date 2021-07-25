@@ -6,6 +6,7 @@
 	<option value="tsa-3" cup="factions">Silph Factions (Atlantis)</option>
 	<option value="tsa-3" cup="marsh">7-Eleven Marsh Cup</option>
 	<option value="tsa-1" cup="boulder">Best in Midwest Boulder Cup</option>
+	<option value="community" cup="shadow">TeamRocketPvP Shadow Cup 3.0</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>

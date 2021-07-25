@@ -32,6 +32,7 @@
 				<option value="factions" type="great" class="multi-battle">Silph Factions Meta (Atlantis)</option>
 				<option value="marsh" type="great" class="multi-battle">7-Eleven Marsh Cup Meta<option>
 				<option value="boulder" type="great" class="multi-battle">Best in Midwest Boulder Cup Meta<option>
+				<option value="shadow" type="great" class="multi-battle">Shadow Cup Meta<option>
 			</select>
 			<div class="flex quick-fill-buttons">
 				<button class="save-btn save-custom">Save</button>
