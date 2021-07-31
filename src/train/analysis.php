@@ -80,6 +80,7 @@ require_once '../header.php';
 		<option value="1500" cup="all" level-cap="50">Great League</option>
 		<option value="1500" cup="remix" level-cap="50">Great League (Remix)</option>
 		<option value="2500" cup="all" level-cap="50">Ultra League</option>
+		<option value="2500" cup="remix" level-cap="50">Ultra League (Remix)</option>
 		<option value="2500" cup="premier" level-cap="50">Ultra League (Premier)</option>
 		<option value="10000" cup="classic" level-cap="40">Master League (Classic)</option>
 	</select>
