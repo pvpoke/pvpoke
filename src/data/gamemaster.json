@@ -171,7 +171,7 @@
                 "pokemon": ["altaria", "azumarill", "bastiodon", "chansey", "skarmory", "deoxys_defense", "medicham", "pidgeot", "stunfisk_galarian", "tropius"]
             }, {
                 "points": 5,
-                "pokemon": ["abomasnow", "cresselia", "dewgong", "diggersby", "ferrothorn", "galvantula", "granbull", "hypno", "hypno_shadow", "ivysaur", "jellicent", "lapras", "lickitung", "marowak_alolan", "machamp", "mandibuzz", "meganium", "nidoqueen", "ninetales_alolan", "politoed", "sableye", "scrafty", "serperior", "swampert", "talonflame", "umbreon", "venusaur", "whiscash", "wobbuffet", "zweilous"]
+                "pokemon": ["abomasnow", "cresselia", "dewgong", "diggersby", "ferrothorn", "galvantula", "granbull", "hypno", "hypno_shadow", "ivysaur", "jellicent", "lapras", "lickitung", "marowak_alolan", "machamp", "mandibuzz", "meganium", "nidoqueen", "ninetales_alolan", "politoed", "registeel", "sableye", "scrafty", "serperior", "swampert", "talonflame", "umbreon", "venusaur", "whiscash", "wobbuffet", "zweilous"]
             }, {
                 "points": 1,
                 "pokemon": ["aromatisse", "beedrill", "bronzong", "cherrim_sunny", "castform_rainy", "castform_sunny", "chesnaught", "clefable", "drapion", "drifblim", "empoleon", "froslass", "gardevoir", "gengar", "golbat", "haunter", "jirachi", "jumpluff", "lanturn", "lugia", "mantine", "melmetal", "mew", "muk_alolan", "ninetales", "noctowl", "obstagoon", "pachirisu", "pelipper", "probopass", "regirock", "raichu_alolan", "roserade", "shiftry", "sirfetchd", "slurpuff", "spritzee", "stunfisk", "sylveon", "toxicroak", "victreebel", "vigoroth", "whimsicott", "wigglytuff", "zapdos"]
@@ -928,7 +928,33 @@
 				"pokemon": ["golbat", "articuno", "beedrill", "zapdos", "snorlax", "seaking", "primeape", "lapras", "quagsire", "noctowl", "ariados", "lanturn", "bellossom", "raikou", "mantine", "steelix", "castform_rainy", "castform_snowy", "castform", "castform_sunny", "regice", "whiscash", "shiftry", "pelipper", "skuntank", "gliscor", "electivire", "pachirisu", "roserade", "empoleon", "magnezone", "drapion", "zebstrika", "serperior", "fraxure", "alomomola", "excadrill", "escavalier", "victini", "crustle", "chesnaught", "dragalge", "obstagoon", "sirfetchd", "pangoro", "goodra"]
 			}]
 		}
-    }],
+    }, {
+	    "name": "cutie",
+	    "title": "Cutie Cup",
+		"link": "https://silph.gg/t/rk55/regicide-charity-tournament",
+	    "include": [{
+	        "filterType": "type",
+	        "name": "Type",
+	        "values": ["bug", "dragon", "electric", "fairy", "fire", "flying", "grass", "ice", "normal", "psychic", "water"]
+	    }, {
+	        "filterType": "id",
+	        "name": "Species",
+	        "values": ["jirachi", "froslass", "wormadam_trash", "perrserker", "magneton", "mawile", "magcargo", "piloswine", "drifblim"]
+	    }],
+	    "exclude": [{
+	        "filterType": "id",
+	        "name": "Species",
+	        "values": ["vigoroth", "deoxys_defense", "hypno", "venusaur", "abomasnow", "haxorus", "azumarill", "altaria", "cresselia", "chansey", "lickitung", "pidgeot"]
+	    }, {
+	        "filterType": "type",
+	        "name": "Type",
+	        "values": ["dark", "fighting", "ghost", "ground", "rock", "steel"]
+	    }, {
+	        "filterType": "tag",
+	        "name": "Tag",
+	        "values": ["shadow", "mega"]
+	    }]
+	}],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xs"],
     "pokemonTraits": {
         "pros": ["bulky", "extremely bulky", "spammy", "agile", "flexible", "dynamic", "fast move pressure", "shield pressure", "defensive", "momentum"],
