@@ -23058,6 +23058,48 @@
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
+    }, {
+        "dex": 888,
+        "speciesId": "zacian",
+        "speciesName": "Zacian (Speculative)",
+        "baseStats": {
+            "atk": 254,
+            "def": 236,
+            "hp": 192
+        },
+        "types": ["fairy", "none"],
+        "fastMoves": ["THUNDER_FANG", "ICE_FANG", "FIRE_FANG", "PSYCHO_CUT", "SNARL"],
+        "chargedMoves": ["IRON_HEAD", "CRUNCH", "WILD_CHARGE", "PLAY_ROUGH", "CLOSE_COMBAT"],
+        "defaultIVs": {
+			"cp500": [5, 8, 15, 12],
+            "cp1500": [14, 9, 15, 15],
+            "cp2500": [23.5, 6, 15, 15]
+        },
+        "tags": ["galarian", "legendary"],
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 888,
+        "speciesId": "zamazenta",
+        "speciesName": "Zamzenta (Speculative)",
+        "baseStats": {
+            "atk": 254,
+            "def": 236,
+            "hp": 192
+        },
+        "types": ["fighting", "none"],
+        "fastMoves": ["SNARL", "FIRE_FANG", "THUNDER_FANG", "ICE_FANG"],
+        "chargedMoves": ["IRON_HEAD", "CRUNCH", "WILD_CHARGE", "PLAY_ROUGH", "CLOSE_COMBAT"],
+        "defaultIVs": {
+			"cp500": [5, 8, 15, 12],
+            "cp1500": [14, 9, 15, 15],
+            "cp2500": [23.5, 6, 15, 15]
+        },
+        "tags": ["galarian", "legendary"],
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
     }],
     "moves": [{
         "moveId": "ACID",
