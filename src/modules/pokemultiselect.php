@@ -29,7 +29,8 @@
 				<option value="premierultra" type="ultra" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="premier" type="master" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="continentals" type="great" class="multi-battle">Silph Continentals Meta</option>
-				<option value="factions" type="great" class="multi-battle">Silph Factions Meta (Atlantis)</option>
+				<option value="factions" type="great" class="multi-battle">Silph Factions Meta (Dungeon)</option>
+				<option value="nightfall" type="great" class="multi-battle">Silph Factions Meta (Nightfall)</option>
 				<option value="marsh" type="great" class="multi-battle">7-Eleven Marsh Cup Meta<option>
 				<option value="boulder" type="great" class="multi-battle">Best in Midwest Boulder Cup Meta<option>
 				<option value="shadow" type="great" class="multi-battle">Shadow Cup Meta<option>

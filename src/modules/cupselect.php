@@ -2,7 +2,8 @@
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
 	<option value="official" cup="remix">Remix</option>
-	<option value="tsa-3" cup="factions">Silph Factions (Atlantis)</option>
+	<option value="tsa-3" cup="factions">Silph Factions (Dungeon)</option>
+	<option value="tsa-3" cup="nightfall">Silph Factions (Nightfall)</option>
 	<option value="tsa-3" cup="marsh">7-Eleven Marsh Cup</option>
 	<option value="community" cup="shadow">TeamRocketPvP Shadow Cup 3.0</option>
 	<option value="community" cup="cutie">Regicide PvP Charity Tournament</option>

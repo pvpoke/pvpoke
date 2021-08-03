@@ -847,14 +847,14 @@
         "title": "Silph Factions",
         "include": [{
             "filterType": "type",
-            "values": ["bug", "dark", "fairy", "poison", "water"]
+            "values": ["bug", "dragon", "fairy", "steel", "water"]
         }],
         "exclude": [{
             "filterType": "tag",
-            "values": ["mega", "mythical", "shadow", "regional"]
+            "values": ["mega", "shadow"]
         }, {
             "filterType": "id",
-            "values": ["azumarill"]
+            "values": ["azumarill", "stunfisk_galarian", "skarmory", "altaria", "bastiodon"]
         }]
     }, {
         "name": "venture",
