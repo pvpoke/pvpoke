@@ -847,7 +847,7 @@
         "title": "Silph Factions",
         "include": [{
             "filterType": "type",
-            "values": ["bug", "dragon", "fairy", "steel", "water"]
+            "values": ["bug", "dragon", "poison", "steel", "water"]
         }],
         "exclude": [{
             "filterType": "tag",

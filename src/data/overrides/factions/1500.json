@@ -1,12 +1,20 @@
 [
 	{
 		"speciesId": "ferrothorn",
-		"chargedMoves": ["POWER_WHIP","THUNDER"],
-		"weight": 9
+		"chargedMoves": ["POWER_WHIP","FLASH_CANNON"],
+		"weight": 6
+	},
+	{
+		"speciesId": "venusaur",
+		"weight": 5
 	},
 	{
 		"speciesId": "leavanny",
 		"fastMove": "RAZOR_LEAF"
+	},
+	{
+		"speciesId": "flygon",
+		"fastMove": "DRAGON_TAIL"
 	},
 	{
 		"speciesId": "lucario",
@@ -15,6 +23,10 @@
 	{
 		"speciesId": "mawile",
 		"chargedMoves": ["POWER_UP_PUNCH","PLAY_ROUGH"]
+	},
+	{
+		"speciesId": "toxicroak",
+		"chargedMoves": ["MUD_BOMB","SLUDGE_BOMB"]
 	},
 	{
 		"speciesId": "dewgong",
@@ -34,6 +46,10 @@
 		"fastMove": "WING_ATTACK",
 		"chargedMoves": ["BUBBLE_BEAM","ICE_BEAM"],
 		"weight": 4
+	},
+	{
+		"speciesId": "nidoqueen",
+		"weight": 2
 	},
 	{
 		"speciesId": "registeel",
