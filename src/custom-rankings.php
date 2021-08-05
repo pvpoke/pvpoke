@@ -129,6 +129,7 @@ require_once 'header.php'; ?>
 					<li><em>raichu_alolan</em></li>
 					<li><em>giratina_altered</em></li>
 					<li><em>deoxys_defense</em></li>
+					<li><em>sirfetchd</em></li>
 				</ul>
 				<div class="field-container">
 					<input class="ids" placeholder="Pokemon ID's" />
