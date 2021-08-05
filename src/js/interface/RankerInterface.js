@@ -20,8 +20,6 @@ var InterfaceMaster = (function () {
 
 				var data = GameMaster.getInstance().data;
 
-				$(".league-select").on("change", selectLeague);
-				$(".cup-select").on("change", selectCup);
 				$(".format-select").on("change", selectFormat);
 				$(".simulate").on("click", startRanker);
 
@@ -40,61 +38,15 @@ var InterfaceMaster = (function () {
 
 			// Event handler for changing the league select
 
-			function selectLeague(e){
-				var allowed = [500, 1500, 2500, 10000];
-				var cp = parseInt($(".league-select option:selected").val());
-				var levelCap = parseInt($(".league-select option:selected").attr("level-cap"));
+			function selectFormat(e){
+				var cp = $(".format-select option:selected").val();
+				var cup = $(".format-select option:selected").attr("cup");
 
-				if(levelCap == 40){
-					battle.setCup("classic");
-				}
-
-				if(allowed.indexOf(cp) > -1){
-					battle.setCP(cp);
-					battle.setLevelCap(levelCap);
-				}
-
-				loadOverrides();
-
-			}
-
-			// Event handler for changing the cup select
-
-			function selectCup(e){
-				var cup = $(".cup-select option:selected").val();
+				battle.setCP(cp);
 				battle.setCup(cup);
 
 				loadOverrides();
-			}
 
-			// Event handler for changing the format category
-
-			function selectFormat(e){
-				var format = $(".format-select option:selected").val();
-				var cup = $(".format-select option:selected").attr("cup");
-
-				$(".cup-select option").hide();
-				$(".cup-select option[cat=\""+format+"\"]").show();
-				$(".cup-select option[cat=\""+format+"\"]").eq(0).prop("selected", "selected");
-
-				if(cup){
-					$(".cup-select option[value=\""+cup+"\"]").eq(0).prop("selected", "selected");
-				}
-
-				$(".cup-select").trigger("change");
-
-				if((format == "all")||(cup)){
-					$(".cup-select").hide();
-				} else{
-					$(".cup-select").show();
-				}
-
-				if(format == "custom"){
-					// Redirect to the custom rankings page
-					window.location.href = webRoot+'custom-rankings/';
-				}
-
-				loadOverrides();
 			}
 
 			// Load overrides for the currently selected league and cup
