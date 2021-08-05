@@ -26,7 +26,7 @@ Because we’re flexible like that.
 If you haven’t already, you may need to change your Apache settings to allow .htaccess to modify incoming requests. If you’re using XAMPP, find the `apache/conf/httpd.config` file and change:
 
 ```
-`<Directory />
+<Directory />
     AllowOverride None
     Require all denied
 </Directory>
@@ -88,7 +88,7 @@ This project operates on a two-week development cycle. I guess they’d be calle
 4. Deploy on production site
 5. Gather user and contributor feedback for next cycle
 
-Some tasks may supercede this development cycle, such as fixes for critical issues or data and ranking updates for newly released Pokemon, moves, or mechanics. Some tasks, such as new tools or features, may also take longer than a single cycle. In this case, we’ll do our best to segment that task into individual milestones that can be completed in a two-week period.
+Some tasks may supersede this development cycle, such as fixes for critical issues or data and ranking updates for newly released Pokemon, moves, or mechanics. Some tasks, such as new tools or features, may also take longer than a single cycle. In this case, we’ll do our best to segment that task into individual milestones that can be completed in a two-week period.
 
 ### Examples
 
