@@ -8,7 +8,7 @@
 	<option value="10000" cup="classic" meta-group="master">Master League (Classic)</option>
 	<option value="1500" cup="factions" meta-group="factions">Silph Factions (Dungeon)</option>
 	<option value="1500" cup="nightfall" meta-group="nightfall">Silph Factions (Nightfall)</option>
-	<option value="1500" cup="continentals-3" meta-group="continentals-3">Silph Season 3 Continentals</option>
+	<option value="1500" cup="continentals-3" meta-group="continentals">Silph Season 3 Continentals</option>
 	<option value="1500" cup="marsh" meta-group="marsh">7-Eleven Marsh Cup</option>
 	<option value="1500" cup="shadow" meta-group="shadow">TeamRocketPvP Shadow Cup 3.0</option>
 	<option value="1500" cup="cutie" meta-group="great">Regicide PvP Charity Tournament</option>
