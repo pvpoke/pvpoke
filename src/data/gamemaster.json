@@ -6558,13 +6558,13 @@
         },
         "types": ["water", "none"],
         "fastMoves": ["WATER_GUN"],
-        "chargedMoves": ["AQUA_TAIL", "HYDRO_PUMP", "LAST_RESORT", "WATER_PULSE"],
+        "chargedMoves": ["AQUA_TAIL", "HYDRO_PUMP", "LAST_RESORT", "WATER_PULSE", "SCALD"],
         "defaultIVs": {
             "cp500": [6, 10, 15, 11],
             "cp1500": [17.5, 8, 13, 15],
             "cp2500": [29.5, 6, 15, 11]
         },
-        "eliteMoves": ["LAST_RESORT"],
+        "eliteMoves": ["LAST_RESORT", "SCALD"],
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
@@ -6579,13 +6579,13 @@
         },
         "types": ["electric", "none"],
         "fastMoves": ["THUNDER_SHOCK", "VOLT_SWITCH"],
-        "chargedMoves": ["DISCHARGE", "LAST_RESORT", "THUNDER", "THUNDERBOLT"],
+        "chargedMoves": ["DISCHARGE", "LAST_RESORT", "THUNDER", "THUNDERBOLT", "ZAP_CANNON"],
         "defaultIVs": {
             "cp500": [6.5, 8, 12, 14],
             "cp1500": [19, 6, 12, 14],
             "cp2500": [33, 6, 15, 14]
         },
-        "eliteMoves": ["LAST_RESORT"],
+        "eliteMoves": ["LAST_RESORT", "ZAP_CANNON"],
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
@@ -6600,13 +6600,13 @@
         },
         "types": ["fire", "none"],
         "fastMoves": ["EMBER", "FIRE_SPIN"],
-        "chargedMoves": ["FIRE_BLAST", "FLAMETHROWER", "HEAT_WAVE", "LAST_RESORT", "OVERHEAT"],
+        "chargedMoves": ["FIRE_BLAST", "FLAMETHROWER", "HEAT_WAVE", "LAST_RESORT", "OVERHEAT", "SUPER_POWER"],
         "defaultIVs": {
             "cp500": [6.5, 5, 8, 5],
             "cp1500": [18, 4, 15, 14],
             "cp2500": [31, 4, 10, 15]
         },
-        "eliteMoves": ["LAST_RESORT", "HEAT_WAVE"],
+        "eliteMoves": ["LAST_RESORT", "HEAT_WAVE", "SUPER_POWER"],
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
@@ -8480,13 +8480,13 @@
         },
         "types": ["psychic", "none"],
         "fastMoves": ["CONFUSION", "ZEN_HEADBUTT"],
-        "chargedMoves": ["FUTURE_SIGHT", "LAST_RESORT", "PSYBEAM", "PSYCHIC"],
+        "chargedMoves": ["FUTURE_SIGHT", "LAST_RESORT", "PSYBEAM", "PSYCHIC", "SHADOW_BALL"],
         "defaultIVs": {
             "cp500": [6, 4, 11, 15],
             "cp1500": [17, 7, 14, 15],
             "cp2500": [28.5, 7, 14, 15]
         },
-        "eliteMoves": ["LAST_RESORT"],
+        "eliteMoves": ["LAST_RESORT", "SHADOW_BALL"],
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
@@ -8501,13 +8501,13 @@
         },
         "types": ["dark", "none"],
         "fastMoves": ["FEINT_ATTACK", "SNARL"],
-        "chargedMoves": ["DARK_PULSE", "FOUL_PLAY", "LAST_RESORT"],
+        "chargedMoves": ["DARK_PULSE", "FOUL_PLAY", "LAST_RESORT", "PSYCHIC"],
         "defaultIVs": {
             "cp500": [9, 4, 12, 13],
             "cp1500": [27, 4, 15, 8],
             "cp2500": [50, 15, 15, 15]
         },
-        "eliteMoves": ["LAST_RESORT"],
+        "eliteMoves": ["LAST_RESORT", "PSYCHIC"],
         "searchPriority": 13,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
@@ -16828,14 +16828,14 @@
             "hp": 163
         },
         "types": ["grass", "none"],
-        "fastMoves": ["QUICK_ATTACK", "RAZOR_LEAF"],
+        "fastMoves": ["QUICK_ATTACK", "RAZOR_LEAF", "BULLET_SEED"],
         "chargedMoves": ["ENERGY_BALL", "LEAF_BLADE", "SOLAR_BEAM", "LAST_RESORT"],
         "defaultIVs": {
             "cp500": [6.5, 4, 11, 14],
             "cp1500": [18.5, 7, 13, 15],
             "cp2500": [32, 5, 14, 15]
         },
-        "eliteMoves": ["LAST_RESORT"],
+        "eliteMoves": ["LAST_RESORT", "BULLET_SEED"],
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
@@ -16850,13 +16850,13 @@
         },
         "types": ["ice", "none"],
         "fastMoves": ["FROST_BREATH", "ICE_SHARD"],
-        "chargedMoves": ["AVALANCHE", "ICE_BEAM", "ICY_WIND", "LAST_RESORT"],
+        "chargedMoves": ["AVALANCHE", "ICE_BEAM", "ICY_WIND", "LAST_RESORT", "WATER_PULSE"],
         "defaultIVs": {
             "cp500": [6, 5, 14, 15],
             "cp1500": [18, 4, 14, 7],
             "cp2500": [29.5, 5, 12, 13]
         },
-        "eliteMoves": ["LAST_RESORT"],
+        "eliteMoves": ["LAST_RESORT", "WATER_PULSE"],
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
@@ -22533,8 +22533,8 @@
         },
         "types": ["fairy", "none"],
         "fastMoves": ["CHARM", "QUICK_ATTACK"],
-        "chargedMoves": ["MOONBLAST", "DAZZLING_GLEAM", "DRAINING_KISS", "LAST_RESORT"],
-        "eliteMoves": ["LAST_RESORT"],
+        "chargedMoves": ["MOONBLAST", "DAZZLING_GLEAM", "DRAINING_KISS", "LAST_RESORT", "PSYSHOCK"],
+        "eliteMoves": ["LAST_RESORT", "PSYSHOCK"],
         "defaultIVs": {
             "cp500": [6, 11, 14, 15],
             "cp1500": [18.5, 4, 6, 12],

@@ -22,18 +22,13 @@
 			<select class="quick-fill-select">
 				<option value="new">New Custom Group</option>
 				<option value="great" type="great" class="multi-battle">Great League Meta</option>
-				<option value="remix" type="great" class="multi-battle">Great League Remix Meta</option>
 				<option value="ultra" type="ultra" class="hide multi-battle">Ultra League Meta</option>
-				<option value="remixultra" type="ultra" class="hide multi-battle">Ultra League Remix Meta</option>
 				<option value="master" type="master" class="hide multi-battle">Master League Meta</option>
 				<option value="premierultra" type="ultra" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="premier" type="master" class="hide multi-battle">Premier Cup Meta</option>
-				<option value="continentals" type="great" class="multi-battle">Silph Continentals Meta</option>
 				<option value="factions" type="great" class="multi-battle">Silph Factions Meta (Dungeon)</option>
 				<option value="nightfall" type="great" class="multi-battle">Silph Factions Meta (Nightfall)</option>
 				<option value="marsh" type="great" class="multi-battle">7-Eleven Marsh Cup Meta<option>
-				<option value="boulder" type="great" class="multi-battle">Best in Midwest Boulder Cup Meta<option>
-				<option value="shadow" type="great" class="multi-battle">Shadow Cup Meta<option>
 			</select>
 			<div class="flex quick-fill-buttons">
 				<button class="save-btn save-custom">Save</button>

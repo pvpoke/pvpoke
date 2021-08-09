@@ -140,6 +140,11 @@
 		"chargedMoves":["FOUL_PLAY","LAST_RESORT"]
 	},
 	{
+		"speciesId":"umbreon",
+		"fastMove":"SNARL",
+		"chargedMoves":["FOUL_PLAY","PSYCHIC"]
+	},
+	{
 		"speciesId":"whiscash",
 		"fastMove":"MUD_SHOT",
 		"chargedMoves":["MUD_BOMB","BLIZZARD"]
@@ -188,6 +193,11 @@
 		"speciesId":"clefable",
 		"fastMove":"CHARM",
 		"chargedMoves":["METEOR_MASH","PSYCHIC"]
+	},
+	{
+		"speciesId":"sylveon",
+		"fastMove":"CHARM",
+		"chargedMoves":["PSYSHOCK","MOONBLAST"]
 	},
 	{
 		"speciesId":"wigglytuff",

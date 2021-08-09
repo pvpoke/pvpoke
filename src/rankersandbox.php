@@ -2,10 +2,9 @@
 
 <h1>Ranker</h1>
 <div class="section league-select-container">
-	<?php require 'modules/leagueselect.php'; ?>
-	<?php require 'modules/cupselect.php'; ?>
+	<?php require 'modules/formatselect.php'; ?>
 	<button class="simulate">Simulate</button>
-	
+
 	<div class="output"></div>
 </div>
 

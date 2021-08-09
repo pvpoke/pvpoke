@@ -32,6 +32,10 @@
     "fastMove": "CHARM",
     "chargedMoves": ["METEOR_MASH", "MOONBLAST"]
 }, {
+    "speciesId": "sylveon",
+    "fastMove": "CHARM",
+    "chargedMoves": ["PSYSHOCK", "MOONBLAST"]
+}, {
     "speciesId": "crustle",
     "fastMove": "SMACK_DOWN",
     "chargedMoves": ["ROCK_SLIDE", "X_SCISSOR"]
@@ -232,6 +236,10 @@
     "speciesId": "umbreon",
     "fastMove": "SNARL",
     "chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
+}, {
+    "speciesId": "umbreon",
+    "fastMove": "SNARL",
+    "chargedMoves": ["FOUL_PLAY", "PSYCHIC"]
 }, {
     "speciesId": "venusaur",
     "fastMove": "VINE_WHIP",
