@@ -19,6 +19,10 @@
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
 }, {
+    "speciesId": "flygon",
+    "fastMove": "DRAGON_TAIL",
+    "chargedMoves": ["DRAGON_CLAW", "EARTH_POWER"]
+}, {
     "speciesId": "magnezone",
     "fastMove": "SPARK",
     "chargedMoves": ["WILD_CHARGE", "MIRROR_SHOT"]
