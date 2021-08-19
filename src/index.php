@@ -34,6 +34,15 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
+	<h4>v1.22.20 (August 19, 2021)</h4>
+	<ul>
+		<li>Added upcoming Galar Pokemon to rankings</li>
+		<li>Pokemon no longer bait with self-debuffing moves</li>
+		<ul>
+			<li>For example, Zacian was baiting with close Combat when trying to land Play Rough</li>
+		</ul>
+	</ul>
+
 	<h4>v1.22.19 (August 18, 2021)</h4>
 	<ul>
 		<li>Galar Pokemon are now available in simulations!</li>

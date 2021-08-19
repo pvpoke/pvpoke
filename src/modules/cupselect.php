@@ -3,7 +3,6 @@
 	<option value="official" cup="premier">Premier Cup</option>
 	<option value="tsa-3" cup="factions">Silph Factions (Dungeon)</option>
 	<option value="tsa-3" cup="nightfall">Silph Factions (Nightfall)</option>
-	<option value="tsa-3" cup="marsh">7-Eleven Marsh Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>

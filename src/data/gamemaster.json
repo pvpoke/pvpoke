@@ -22864,6 +22864,7 @@
             "cp1500": [14.5, 4, 13, 15],
             "cp2500": [23.5, 11, 15, 15]
         },
+		"tags": ["legendary"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -23252,7 +23253,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 820,
         "speciesName": "Greedent",
@@ -23272,7 +23273,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 821,
         "speciesName": "Rookidee",
@@ -23492,7 +23493,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 832,
         "speciesName": "Dubwool",
@@ -23512,7 +23513,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 833,
         "speciesName": "Chewtle",
@@ -24399,7 +24400,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false
+        "released": true
     }, {
         "dex": 871,
         "speciesName": "Pincurchin",
@@ -24919,7 +24920,7 @@
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false,
+        "released": true,
 		"searchPriority": 5
     }, {
         "dex": 889,
@@ -24980,7 +24981,7 @@
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false,
+        "released": true,
 		"searchPriority": 5
     }, {
         "dex": 890,

@@ -1823,6 +1823,15 @@ function Battle(){
 			finalState.moves[0] = poke.activeChargedMoves[0];
 		}
 
+		// Don't bait with self debuffing moves
+		if (poke.baitShields && opponent.shields > 0 && poke.activeChargedMoves.length > 1) {
+			if ((poke.energy >= poke.activeChargedMoves[1].energy)&&(poke.activeChargedMoves[1].dpe > finalState.moves[0].dpe)) {
+				if((finalState.moves[0].selfDebuffing)&&(! poke.activeChargedMoves[1].selfDebuffing)){
+					finalState.moves[0] = poke.activeChargedMoves[1];
+				}
+			}
+		}
+
 		if (poke.energy >= finalState.moves[0].energy) {
 			if (finalState.moves.length > 1) {
 				self.logDecision(turns, poke, " uses " + finalState.moves[0].name + " because it thinks that using " + (finalState.moves.length - 1) + " moves afterwards is the best plan.");
