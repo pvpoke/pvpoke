@@ -24899,11 +24899,10 @@
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false,
-		"searchPriority": 5
+        "released": false
     }, {
         "dex": 888,
-        "speciesName": "Zacian_hero",
+        "speciesName": "Zacian (Hero)",
         "speciesId": "zacian_hero",
         "baseStats": {
             "atk": 254,
@@ -24920,7 +24919,8 @@
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": false,
+		"searchPriority": 5
     }, {
         "dex": 889,
         "speciesName": "Zamazenta",
@@ -24940,8 +24940,7 @@
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false,
-		"searchPriority": 5
+        "released": false
     }, {
         "dex": 889,
         "speciesName": "Zamazenta_crowned_shield",
@@ -24964,7 +24963,7 @@
         "released": false
     }, {
         "dex": 889,
-        "speciesName": "Zamazenta_hero",
+        "speciesName": "Zamazenta (Hero)",
         "speciesId": "zamazenta_hero",
         "baseStats": {
             "atk": 254,
@@ -24981,7 +24980,8 @@
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": false,
+		"searchPriority": 5
     }, {
         "dex": 890,
         "speciesName": "Eternatus",
