@@ -3198,7 +3198,7 @@
         "types": ["ground", "none"],
         "fastMoves": ["MUD_SHOT", "MUD_SLAP", "SCRATCH"],
         "chargedMoves": ["DIG", "MUD_BOMB", "ROCK_TOMB"],
-        "legacyMoves": ["MUD_SHOT", "RETURN"],
+        "legacyMoves": ["MUD_SHOT", "RETURN", "RETURN"],
         "defaultIVs": {
             "cp500": [28.5, 6, 13, 13],
             "cp1500": [50, 15, 15, 15],
@@ -3263,7 +3263,7 @@
         "types": ["ground", "none"],
         "fastMoves": ["MUD_SHOT", "MUD_SLAP", "SUCKER_PUNCH"],
         "chargedMoves": ["EARTHQUAKE", "MUD_BOMB", "STONE_EDGE"],
-        "legacyMoves": ["MUD_SHOT", "RETURN"],
+        "legacyMoves": ["MUD_SHOT", "RETURN", "RETURN"],
         "defaultIVs": {
             "cp500": [12, 7, 9, 15],
             "cp1500": [42, 4, 14, 15],
@@ -4846,7 +4846,7 @@
         "types": ["poison", "none"],
         "fastMoves": ["ACID", "MUD_SLAP", "POISON_JAB"],
         "chargedMoves": ["MUD_BOMB", "SLUDGE", "SLUDGE_BOMB"],
-        "legacyMoves": ["ACID", "RETURN"],
+        "legacyMoves": ["ACID", "RETURN", "RETURN"],
         "defaultIVs": {
             "cp500": [14, 3, 15, 10],
             "cp1500": [49.5, 10, 15, 15],
@@ -5682,7 +5682,7 @@
         "types": ["poison", "none"],
         "fastMoves": ["ACID", "INFESTATION", "TACKLE"],
         "chargedMoves": ["DARK_PULSE", "SLUDGE", "SLUDGE_BOMB"],
-        "legacyMoves": ["ACID", "RETURN"],
+        "legacyMoves": ["ACID", "RETURN", "RETURN"],
         "defaultIVs": {
             "cp500": [16, 3, 15, 11],
             "cp1500": [50, 15, 15, 15],
@@ -5726,7 +5726,7 @@
         "types": ["poison", "none"],
         "fastMoves": ["ACID", "INFESTATION", "TACKLE"],
         "chargedMoves": ["DARK_PULSE", "SHADOW_BALL", "SLUDGE_BOMB", "THUNDERBOLT"],
-        "legacyMoves": ["ACID", "RETURN"],
+        "legacyMoves": ["ACID", "RETURN", "RETURN"],
         "defaultIVs": {
             "cp500": [8.5, 2, 5, 13],
             "cp1500": [24.5, 3, 13, 14],
@@ -6623,7 +6623,7 @@
         "types": ["normal", "none"],
         "fastMoves": ["CHARGE_BEAM", "HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "QUICK_ATTACK", "TACKLE", "ZEN_HEADBUTT"],
         "chargedMoves": ["DISCHARGE", "HYPER_BEAM", "PSYBEAM", "SIGNAL_BEAM", "SOLAR_BEAM", "ZAP_CANNON"],
-        "legacyMoves": ["QUICK_ATTACK", "RETURN"],
+        "legacyMoves": ["QUICK_ATTACK", "RETURN", "RETURN"],
         "defaultIVs": {
             "cp500": [11, 4, 13, 13],
             "cp1500": [35.5, 5, 14, 13],
@@ -9459,7 +9459,7 @@
         "types": ["ice", "flying"],
         "fastMoves": ["PRESENT", "QUICK_ATTACK"],
         "chargedMoves": ["AERIAL_ACE", "ICE_PUNCH", "ICY_WIND"],
-        "legacyMoves": ["QUICK_ATTACK", "RETURN"],
+        "legacyMoves": ["QUICK_ATTACK", "RETURN", "RETURN"],
         "defaultIVs": {
             "cp500": [17.5, 4, 15, 10],
             "cp1500": [50, 15, 15, 15],
@@ -12997,7 +12997,7 @@
         "types": ["rock", "grass"],
         "fastMoves": ["ACID", "INFESTATION", "BULLET_SEED"],
         "chargedMoves": ["ANCIENT_POWER", "GRASS_KNOT", "MIRROR_COAT"],
-        "legacyMoves": ["BULLET_SEED", "RETURN"],
+        "legacyMoves": ["BULLET_SEED", "RETURN", "RETURN"],
         "defaultIVs": {
             "cp500": [15, 5, 13, 12],
             "cp1500": [50, 15, 15, 15],
@@ -22864,7 +22864,7 @@
             "cp1500": [14.5, 4, 13, 15],
             "cp2500": [23.5, 11, 15, 15]
         },
-		"tags": ["legendary"],
+        "tags": ["legendary"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -23699,17 +23699,17 @@
         "speciesName": "Appletun",
         "speciesId": "appletun",
         "baseStats": {
-            "atk": 214,
-            "def": 144,
-            "hp": 172
+            "atk": 178,
+            "def": 146,
+            "hp": 242
         },
         "types": ["grass", "dragon"],
         "fastMoves": ["BULLET_SEED", "ASTONISH"],
         "chargedMoves": ["DRAGON_PULSE", "ENERGY_BALL", "OUTRAGE", "SEED_BOMB"],
         "defaultIVs": {
-            "cp500": [7.5, 7, 14, 14],
-            "cp1500": [22.5, 5, 15, 11],
-            "cp2500": [46.5, 4, 11, 13]
+            "cp500": [8, 5, 6, 6],
+            "cp1500": [22.5, 7, 13, 14],
+            "cp2500": [46, 5, 14, 15]
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
@@ -24883,6 +24883,27 @@
         "released": false
     }, {
         "dex": 888,
+        "speciesName": "Zacian (Hero)",
+        "speciesId": "zacian_hero",
+        "baseStats": {
+            "atk": 254,
+            "def": 236,
+            "hp": 192
+        },
+        "types": ["fairy", "none"],
+        "fastMoves": ["METAL_CLAW", "SNARL", "QUICK_ATTACK", "FIRE_FANG"],
+        "chargedMoves": ["PLAY_ROUGH", "IRON_HEAD", "WILD_CHARGE", "CLOSE_COMBAT"],
+        "defaultIVs": {
+            "cp500": [5, 8, 15, 12],
+            "cp1500": [14, 9, 15, 15],
+            "cp2500": [23.5, 6, 15, 15]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": true,
+        "searchPriority": 5
+    }, {
+        "dex": 888,
         "speciesName": "Zacian_crowned_sword",
         "speciesId": "zacian_crowned_sword",
         "baseStats": {
@@ -24902,27 +24923,6 @@
         "thirdMoveCost": 100000,
         "released": false
     }, {
-        "dex": 888,
-        "speciesName": "Zacian (Hero)",
-        "speciesId": "zacian_hero",
-        "baseStats": {
-            "atk": 254,
-            "def": 236,
-            "hp": 192
-        },
-        "types": ["fairy", "none"],
-        "fastMoves": ["METAL_CLAW", "SNARL", "QUICK_ATTACK", "FIRE_FANG"],
-        "chargedMoves": ["PLAY_ROUGH", "IRON_HEAD", "WILD_CHARGE", "CLOSE_COMBAT"],
-        "defaultIVs": {
-            "cp500": [5, 8, 15, 12],
-            "cp1500": [14, 9, 15, 15],
-            "cp2500": [23.5, 6, 15, 15]
-        },
-        "buddyDistance": 20,
-        "thirdMoveCost": 100000,
-        "released": true,
-		"searchPriority": 5
-    }, {
         "dex": 889,
         "speciesName": "Zamazenta",
         "speciesId": "zamazenta",
@@ -24938,26 +24938,6 @@
             "cp500": [5, 8, 15, 12],
             "cp1500": [14, 9, 15, 15],
             "cp2500": [23.5, 6, 15, 15]
-        },
-        "buddyDistance": 20,
-        "thirdMoveCost": 100000,
-        "released": false
-    }, {
-        "dex": 889,
-        "speciesName": "Zamazenta_crowned_shield",
-        "speciesId": "zamazenta_crowned_shield",
-        "baseStats": {
-            "atk": 250,
-            "def": 292,
-            "hp": 192
-        },
-        "types": ["fighting", "steel"],
-        "fastMoves": ["METAL_CLAW", "SNARL", "QUICK_ATTACK", "ICE_FANG"],
-        "chargedMoves": ["MOONBLAST", "IRON_HEAD", "CRUNCH", "CLOSE_COMBAT"],
-        "defaultIVs": {
-            "cp500": [4.5, 13, 15, 15],
-            "cp1500": [13, 5, 15, 15],
-            "cp2500": [22, 4, 15, 11]
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
@@ -24982,7 +24962,27 @@
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true,
-		"searchPriority": 5
+        "searchPriority": 5
+    }, {
+        "dex": 889,
+        "speciesName": "Zamazenta_crowned_shield",
+        "speciesId": "zamazenta_crowned_shield",
+        "baseStats": {
+            "atk": 250,
+            "def": 292,
+            "hp": 192
+        },
+        "types": ["fighting", "steel"],
+        "fastMoves": ["METAL_CLAW", "SNARL", "QUICK_ATTACK", "ICE_FANG"],
+        "chargedMoves": ["MOONBLAST", "IRON_HEAD", "CRUNCH", "CLOSE_COMBAT"],
+        "defaultIVs": {
+            "cp500": [4.5, 13, 15, 15],
+            "cp1500": [13, 5, 15, 15],
+            "cp2500": [22, 4, 15, 11]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
     }, {
         "dex": 890,
         "speciesName": "Eternatus",
@@ -25048,17 +25048,17 @@
         "speciesName": "Urshifu",
         "speciesId": "urshifu",
         "baseStats": {
-            "atk": 231,
-            "def": 162,
-            "hp": 205
+            "atk": 254,
+            "def": 177,
+            "hp": 225
         },
         "types": ["fighting", "none"],
         "fastMoves": ["ROCK_SMASH", "COUNTER"],
         "chargedMoves": ["BRICK_BREAK", "DYNAMIC_PUNCH", "CLOSE_COMBAT"],
         "defaultIVs": {
-            "cp500": [6.5, 5, 7, 5],
-            "cp1500": [18, 4, 15, 14],
-            "cp2500": [30.5, 6, 14, 12]
+            "cp500": [5.5, 5, 8, 5],
+            "cp1500": [15, 7, 15, 14],
+            "cp2500": [25.5, 6, 12, 11]
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
@@ -25068,17 +25068,17 @@
         "speciesName": "Urshifu_rapid_strike",
         "speciesId": "urshifu_rapid_strike",
         "baseStats": {
-            "atk": 231,
-            "def": 162,
-            "hp": 205
+            "atk": 254,
+            "def": 177,
+            "hp": 225
         },
         "types": ["fighting", "water"],
         "fastMoves": ["ROCK_SMASH", "COUNTER", "WATERFALL"],
         "chargedMoves": ["BRICK_BREAK", "DYNAMIC_PUNCH", "CLOSE_COMBAT", "AQUA_JET"],
         "defaultIVs": {
-            "cp500": [6.5, 5, 7, 5],
-            "cp1500": [18, 4, 15, 14],
-            "cp2500": [30.5, 6, 14, 12]
+            "cp500": [5.5, 5, 8, 5],
+            "cp1500": [15, 7, 15, 14],
+            "cp2500": [25.5, 6, 12, 11]
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
@@ -25088,17 +25088,17 @@
         "speciesName": "Urshifu_single_strike",
         "speciesId": "urshifu_single_strike",
         "baseStats": {
-            "atk": 231,
-            "def": 162,
-            "hp": 205
+            "atk": 254,
+            "def": 177,
+            "hp": 225
         },
         "types": ["fighting", "dark"],
         "fastMoves": ["ROCK_SMASH", "COUNTER", "SUCKER_PUNCH"],
         "chargedMoves": ["BRICK_BREAK", "DYNAMIC_PUNCH", "CLOSE_COMBAT", "PAYBACK"],
         "defaultIVs": {
-            "cp500": [6.5, 5, 7, 5],
-            "cp1500": [18, 4, 15, 14],
-            "cp2500": [30.5, 6, 14, 12]
+            "cp500": [5.5, 5, 8, 5],
+            "cp1500": [15, 7, 15, 14],
+            "cp2500": [25.5, 6, 12, 11]
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
@@ -25128,17 +25128,17 @@
         "speciesName": "Regieleki",
         "speciesId": "regieleki",
         "baseStats": {
-            "atk": 228,
-            "def": 114,
-            "hp": 173
+            "atk": 250,
+            "def": 125,
+            "hp": 190
         },
         "types": ["electric", "none"],
         "fastMoves": ["THUNDER_SHOCK", "LOCK_ON"],
-        "chargedMoves": ["THUNDERBOLT", "THUNDER", "WILD_CHARGE"],
+        "chargedMoves": ["THUNDERBOLT", "THUNDER", "HYPER_BEAM"],
         "defaultIVs": {
-            "cp500": [8, 4, 12, 13],
-            "cp1500": [23.5, 6, 15, 8],
-            "cp2500": [48.5, 5, 13, 15]
+            "cp500": [7, 6, 7, 5],
+            "cp1500": [20, 4, 13, 8],
+            "cp2500": [36, 4, 11, 15]
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
@@ -25148,17 +25148,17 @@
         "speciesName": "Regidrago",
         "speciesId": "regidrago",
         "baseStats": {
-            "atk": 184,
-            "def": 92,
-            "hp": 364
+            "atk": 202,
+            "def": 101,
+            "hp": 400
         },
         "types": ["dragon", "none"],
-        "fastMoves": ["BITE", "LOCK_ON"],
-        "chargedMoves": ["DRAGON_CLAW", "OUTRAGE", "DRAGON_PULSE"],
+        "fastMoves": ["BITE"],
+        "chargedMoves": ["HYPER_BEAM", "OUTRAGE", "DRAGON_PULSE"],
         "defaultIVs": {
-            "cp500": [7.5, 6, 15, 10],
-            "cp1500": [22, 7, 14, 14],
-            "cp2500": [45.5, 4, 13, 12]
+            "cp500": [6.5, 4, 12, 11],
+            "cp1500": [19, 4, 12, 8],
+            "cp2500": [31.5, 6, 15, 13]
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
@@ -25168,17 +25168,17 @@
         "speciesName": "Glastrier",
         "speciesId": "glastrier",
         "baseStats": {
-            "atk": 224,
-            "def": 203,
-            "hp": 205
+            "atk": 246,
+            "def": 223,
+            "hp": 225
         },
         "types": ["ice", "none"],
         "fastMoves": ["TACKLE", "TAKE_DOWN"],
         "chargedMoves": ["AVALANCHE", "ICY_WIND", "BULLDOZE"],
         "defaultIVs": {
-            "cp500": [6, 4, 6, 10],
-            "cp1500": [17, 5, 10, 14],
-            "cp2500": [28, 4, 15, 13]
+            "cp500": [5, 4, 15, 10],
+            "cp1500": [14, 7, 14, 12],
+            "cp2500": [23.5, 4, 15, 12]
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
@@ -25208,17 +25208,17 @@
         "speciesName": "Calyrex",
         "speciesId": "calyrex",
         "baseStats": {
-            "atk": 147,
-            "def": 147,
-            "hp": 205
+            "atk": 162,
+            "def": 162,
+            "hp": 225
         },
         "types": ["psychic", "grass"],
         "fastMoves": ["POUND", "CONFUSION"],
         "chargedMoves": ["PSYSHOCK", "PSYCHIC", "ENERGY_BALL"],
         "defaultIVs": {
-            "cp500": [10, 5, 10, 12],
-            "cp1500": [29.5, 6, 13, 12],
-            "cp2500": [50, 15, 15, 15]
+            "cp500": [8, 11, 14, 15],
+            "cp1500": [25, 4, 15, 7],
+            "cp2500": [49, 13, 15, 12]
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
