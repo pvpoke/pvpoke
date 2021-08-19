@@ -23,6 +23,11 @@ var GameMaster = (function () {
 			gmVersion = "gamemaster";
 		}
 
+		// By default, load the minified version
+		if(gmVersion == "gamemaster"){
+			gmVersion = "gamemaster.min";
+		}
+
 		$.getJSON( webRoot+"data/"+gmVersion+".json?v="+siteVersion, function( data ){
 			object.data = data;
 

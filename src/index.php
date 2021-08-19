@@ -34,11 +34,13 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.22.18 (Juky 24, 2021)</h4>
+	<h4>v1.22.19 (August 18, 2021)</h4>
 	<ul>
-		<li>Fixed an issue with the training AI evaluating some scenarios incorrectly</li>
-		<li>Fixed an issue where individual battles in Master League Classic would set the Pokemon to level 50.</li>
-		<li>Fixed an issue where custom threats and alternatives entered in the Team Builder weren't reflected correctly in battle links.</li>
+		<li>Galar Pokemon are now available in simulations!</li>
+		<li>Fixed an issue where Classic battles would reset to level 50 after running simulations for Pokemon that have buff chance moves.</li>
+		<ul>
+			<li>This could only have been caused by quality programming</li>
+		</ul>
 	</ul>
 	<h3>Latest Article</h3>
 

@@ -1181,6 +1181,7 @@ var InterfaceMaster = (function () {
 
 				for(var i = 0; i < simCount; i++){
 					var b = new Battle();
+					b.setLevelCap(battle.getLevelCap());
 					b.setCP(battle.getCP());
 					b.setCup(battle.getCup());
 					b.setBuffChanceModifier(0);

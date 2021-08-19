@@ -88,7 +88,8 @@
 						cp2500: [20, 15, 15, 15]
 					},
 					buddyDistance: settings.kmBuddyDistance,
-					thirdMoveCost: settings.thirdMove.stardustToUnlock
+					thirdMoveCost: settings.thirdMove.stardustToUnlock,
+					released: false
 				};
 
 				pokemon.push(poke);
