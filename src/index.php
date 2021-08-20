@@ -34,6 +34,14 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
+	<h4>v1.22.21 (August 20, 2021)</h4>
+	<ul>
+		<li>Added search terms for "gen8" and "galar".</li>
+		<ul>
+			<li>The former "Galarian" tag is now only applied to Pokemon that are Galarian forms of previous Pokemon (Galarian Stunfisk, Galarian Slowbro, etc.)</li>
+		</ul>
+	</ul>
+
 	<h4>v1.22.20 (August 19, 2021)</h4>
 	<ul>
 		<li>Added upcoming Galar Pokemon to rankings</li>

@@ -989,7 +989,12 @@
         "string": "gen6",
         "name": "kalos",
         "dexStart": 650,
-        "dexEnd": 719
+        "dexEnd": 721
+    }, {
+        "string": "gen8",
+        "name": "galar",
+        "dexStart": 808,
+        "dexEnd": 898
     }],
     "shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "venusaur_mega", "charmander", "charmeleon", "charizard", "charizard_mega_x", "charizard_mega_y", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "beedrill_mega", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "alakazam_mega", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "gyarados_mega", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "ampharos_mega", "bellossom", "politoed", "scizor", "scizor_mega", "houndour", "houndoom", "houndoom_mega", "larvitar", "pupitar", "tyranitar", "tyranitar_mega", "mudkip", "marshtomp", "swampert", "swampert_mega", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "gardevoir_mega", "trapinch", "vibrava", "flygon", "shuppet", "banette", "banette_mega", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "gallade_mega", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "sableye", "sableye_mega", "zapdos", "moltres", "delibird", "stantler", "absol", "bagon", "shelgon", "salamence", "salamence_mega", "snover", "abomasnow", "abomasnow_mega", "raikou", "vulpix", "ninetales", "exeggcute", "exeggutor", "omanyte", "omastar", "misdreavus", "mismagius", "carvanha", "sharpedo", "sharpedo_mega", "pinsir", "pinsir_mega", "mawile", "mawile_mega", "beldum", "metang", "metagross", "metagross_mega", "entei", "ekans", "arbok", "koffing", "weezing", "nidoran_female", "nidorina", "nidoran_male", "nidorino", "nidoqueen", "nidoking", "machop", "machoke", "machamp", "gligar", "gliscor", "shuckle", "stunky", "skuntank", "suicune", "pineco", "forretress", "mewtwo", "mewtwo_mega_x", "mewtwo_mega_y", "diglett", "dugtrio", "shellder", "cloyster", "slowpoke", "slowbro", "slowking", "aerodactyl", "skarmory", "teddiursa", "ursaring", "hoppip", "skiploom", "jumpluff", "wooper", "quagsire", "swinub", "piloswine", "mamoswine", "nosepass", "probopass", "aron", "lairon", "aggron", "spheal", "sealeo", "walrein", "lileep", "cradily", "anorith", "armaldo", "aipom", "ambipom", "skorupi", "drapion", "poochyena", "mightyena", "murkrow", "honchkrow", "electrike", "manectric", "snubbull", "granbull", "makuhita", "hariyama", "starly", "staravia", "staraptor", "tangela", "tangrowth", "horsea", "seadra", "kingdra", "ho_oh", "bidoof", "bibarel"],
     "pokemon": [{
@@ -24231,7 +24236,6 @@
             "cp1500": [21, 4, 13, 15],
             "cp2500": [40.5, 5, 14, 10]
         },
-        "tags": ["galarian"],
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
         "released": true
@@ -24252,7 +24256,6 @@
             "cp1500": [23.5, 4, 15, 9],
             "cp2500": [50, 4, 13, 9]
         },
-        "tags": ["galarian"],
         "searchPriority": 3,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
@@ -24294,7 +24297,6 @@
             "cp1500": [18.5, 6, 11, 13],
             "cp2500": [31, 6, 13, 15]
         },
-        "tags": ["galarian"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
@@ -24315,7 +24317,6 @@
             "cp1500": [20, 4, 12, 8],
             "cp2500": [35.5, 5, 12, 13]
         },
-        "tags": ["galarian"],
         "searchPriority": 2,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
@@ -24337,7 +24338,6 @@
             "cp1500": [25, 5, 15, 8],
             "cp2500": [49, 12, 14, 15]
         },
-        "tags": ["galarian"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true

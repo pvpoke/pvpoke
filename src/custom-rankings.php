@@ -144,6 +144,8 @@ require_once 'header.php'; ?>
 					<li><strong>Generation 3:</strong> 252-386</li>
 					<li><strong>Generation 4:</strong> 387-493</li>
 					<li><strong>Generation 5:</strong> 494-649</li>
+					<li><strong>Generation 6:</strong> 650-721</li>
+					<li><strong>Generation 8:</strong> 808-898</li>
 				</ul>
 				<div class="field-container">
 					<input class="start-range" placeholder="Start #" />
