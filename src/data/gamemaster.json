@@ -954,6 +954,14 @@
             "name": "Tag",
             "values": ["shadow", "mega"]
         }]
+    }, {
+        "name": "worlds",
+        "title": "Silph Worlds",
+        "include": [],
+        "exclude": [{
+            "filterType": "id",
+            "values": ["venusaur","lickitung","chansey","azumarill","umbreon","wobbuffet","skarmory","sableye","medicham","altaria","jellicent","ninetales_alolan","stunfisk_galarian"]
+        }]
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xs"],
     "pokemonTraits": {

@@ -419,6 +419,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if((cup.name == "worlds")&&(battle.getCP() == 1500)){
+					iterations = 1;
+				}
+
 				if(cup.name == "continentals-3"){
 					iterations = 1;
 				}
@@ -439,31 +443,7 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
-				if((cup.name == "sorcerous-mirror")||(cup.name == "sinister-mirror")||(cup.name == "timeless-mirror")){
-					iterations = 1;
-				}
-
-				if(cup.name == "vortex"){
-					iterations = 1;
-				}
-
-				if(cup.name == "prismatic"){
-					iterations = 1;
-				}
-
 				if(cup.name == "kanto"){
-					iterations = 1;
-				}
-
-				if(cup.name == "retro"){
-					iterations = 1;
-				}
-
-				if(cup.name == "venture"){
-					iterations = 1;
-				}
-
-				if(cup.name == "bidoof"){
 					iterations = 1;
 				}
 
@@ -522,6 +502,10 @@ var RankerMaster = (function () {
 								weight *= targets[j].weightModifier;
 							} else{
 								if((cup.name == "all")&&(battle.getCP() == 1500)){
+									weight = 0;
+								}
+
+								if((cup.name == "worlds")&&(battle.getCP() == 1500)){
 									weight = 0;
 								}
 							}

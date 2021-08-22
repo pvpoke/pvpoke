@@ -3,6 +3,7 @@
 	<option value="official" cup="premier">Premier Cup</option>
 	<option value="tsa-3" cup="factions">Silph Factions (Dungeon)</option>
 	<option value="tsa-3" cup="nightfall">Silph Factions (Nightfall)</option>
+	<option value="tsa-3" cup="worlds">Silph Worlds</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>
@@ -84,5 +85,6 @@
 	<option value="venture" cat="tsa-3">Venture Cup</option>
 	<option value="continentals-3" cat="tsa-3">Continentals</option>
 	<option value="factions" cat="tsa-3">Floating City</option>
+	<option value="worlds" cat="tsa-3">Silph Worlds</option>
 	<option value="custom" cat="custom">Custom</option>
 </select>

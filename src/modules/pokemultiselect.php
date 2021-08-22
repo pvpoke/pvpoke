@@ -28,6 +28,7 @@
 				<option value="premier" type="master" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="factions" type="great" class="multi-battle">Silph Factions Meta (Dungeon)</option>
 				<option value="nightfall" type="great" class="multi-battle">Silph Factions Meta (Nightfall)</option>
+				<option value="worlds" type="great" class="multi-battle">Silph Worlds Meta</option>
 			</select>
 			<div class="flex quick-fill-buttons">
 				<button class="save-btn save-custom">Save</button>
