@@ -960,7 +960,7 @@
         "include": [],
         "exclude": [{
             "filterType": "id",
-            "values": ["venusaur","lickitung","chansey","azumarill","umbreon","wobbuffet","skarmory","sableye","medicham","altaria","jellicent","ninetales_alolan","stunfisk_galarian"]
+            "values": ["venusaur", "lickitung", "chansey", "azumarill", "umbreon", "wobbuffet", "skarmory", "sableye", "medicham", "altaria", "jellicent", "ninetales_alolan", "stunfisk_galarian"]
         }]
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xs"],
@@ -3211,7 +3211,7 @@
         "types": ["ground", "none"],
         "fastMoves": ["MUD_SHOT", "MUD_SLAP", "SCRATCH"],
         "chargedMoves": ["DIG", "MUD_BOMB", "ROCK_TOMB"],
-        "legacyMoves": ["MUD_SHOT", "RETURN", "RETURN"],
+        "legacyMoves": ["MUD_SHOT"],
         "defaultIVs": {
             "cp500": [28.5, 6, 13, 13],
             "cp1500": [50, 15, 15, 15],
@@ -3276,7 +3276,7 @@
         "types": ["ground", "none"],
         "fastMoves": ["MUD_SHOT", "MUD_SLAP", "SUCKER_PUNCH"],
         "chargedMoves": ["EARTHQUAKE", "MUD_BOMB", "STONE_EDGE"],
-        "legacyMoves": ["MUD_SHOT", "RETURN", "RETURN"],
+        "legacyMoves": ["MUD_SHOT"],
         "defaultIVs": {
             "cp500": [12, 7, 9, 15],
             "cp1500": [42, 4, 14, 15],
@@ -4859,7 +4859,7 @@
         "types": ["poison", "none"],
         "fastMoves": ["ACID", "MUD_SLAP", "POISON_JAB"],
         "chargedMoves": ["MUD_BOMB", "SLUDGE", "SLUDGE_BOMB"],
-        "legacyMoves": ["ACID", "RETURN", "RETURN"],
+        "legacyMoves": ["ACID"],
         "defaultIVs": {
             "cp500": [14, 3, 15, 10],
             "cp1500": [49.5, 10, 15, 15],
@@ -5695,7 +5695,7 @@
         "types": ["poison", "none"],
         "fastMoves": ["ACID", "INFESTATION", "TACKLE"],
         "chargedMoves": ["DARK_PULSE", "SLUDGE", "SLUDGE_BOMB"],
-        "legacyMoves": ["ACID", "RETURN", "RETURN"],
+        "legacyMoves": ["ACID"],
         "defaultIVs": {
             "cp500": [16, 3, 15, 11],
             "cp1500": [50, 15, 15, 15],
@@ -5739,7 +5739,7 @@
         "types": ["poison", "none"],
         "fastMoves": ["ACID", "INFESTATION", "TACKLE"],
         "chargedMoves": ["DARK_PULSE", "SHADOW_BALL", "SLUDGE_BOMB", "THUNDERBOLT"],
-        "legacyMoves": ["ACID", "RETURN", "RETURN"],
+        "legacyMoves": ["ACID"],
         "defaultIVs": {
             "cp500": [8.5, 2, 5, 13],
             "cp1500": [24.5, 3, 13, 14],
@@ -6636,7 +6636,7 @@
         "types": ["normal", "none"],
         "fastMoves": ["CHARGE_BEAM", "HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "QUICK_ATTACK", "TACKLE", "ZEN_HEADBUTT"],
         "chargedMoves": ["DISCHARGE", "HYPER_BEAM", "PSYBEAM", "SIGNAL_BEAM", "SOLAR_BEAM", "ZAP_CANNON"],
-        "legacyMoves": ["QUICK_ATTACK", "RETURN", "RETURN"],
+        "legacyMoves": ["QUICK_ATTACK"],
         "defaultIVs": {
             "cp500": [11, 4, 13, 13],
             "cp1500": [35.5, 5, 14, 13],
@@ -9472,7 +9472,7 @@
         "types": ["ice", "flying"],
         "fastMoves": ["PRESENT", "QUICK_ATTACK"],
         "chargedMoves": ["AERIAL_ACE", "ICE_PUNCH", "ICY_WIND"],
-        "legacyMoves": ["QUICK_ATTACK", "RETURN", "RETURN"],
+        "legacyMoves": ["QUICK_ATTACK"],
         "defaultIVs": {
             "cp500": [17.5, 4, 15, 10],
             "cp1500": [50, 15, 15, 15],
@@ -13010,7 +13010,7 @@
         "types": ["rock", "grass"],
         "fastMoves": ["ACID", "INFESTATION", "BULLET_SEED"],
         "chargedMoves": ["ANCIENT_POWER", "GRASS_KNOT", "MIRROR_COAT"],
-        "legacyMoves": ["BULLET_SEED", "RETURN", "RETURN"],
+        "legacyMoves": ["BULLET_SEED"],
         "defaultIVs": {
             "cp500": [15, 5, 13, 12],
             "cp1500": [50, 15, 15, 15],
@@ -24906,7 +24906,7 @@
             "cp1500": [14, 9, 15, 15],
             "cp2500": [23.5, 6, 15, 15]
         },
-		"tags": ["legendary"],
+        "tags": ["legendary"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true,
@@ -24968,7 +24968,7 @@
             "cp1500": [14, 9, 15, 15],
             "cp2500": [23.5, 6, 15, 15]
         },
-		"tags": ["legendary"],
+        "tags": ["legendary"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true,
