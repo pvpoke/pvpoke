@@ -94,7 +94,7 @@ function Pokemon(id, i, b){
 	// Set legacy moves
 
 	if(data.legacyMoves){
-		this.legacyMoves = data.legacyMoves;
+		this.legacyMoves = data.legacyMoves.slice();
 	}
 
 	if(data.eliteMoves){
@@ -254,11 +254,17 @@ function Pokemon(id, i, b){
 					} else{
 						var combination = data.defaultIVs["cp"+maxCP];
 
+						if((self.levelCap == 40)&&(data.defaultIVs["cp"+maxCP+"l40"])){
+							combination = data.defaultIVs["cp"+maxCP+"l40"];
+						}
+
+						var level = Math.min(self.levelCap, combination[0]);
+
 						if(combination){
 							self.ivs.atk = combination[1];
 							self.ivs.def = combination[2];
 							self.ivs.hp = combination[3];
-							self.setLevel(combination[0], false);
+							self.setLevel(level, false);
 						} else{
 							self.ivs.atk = 15;
 							self.ivs.def = 15;

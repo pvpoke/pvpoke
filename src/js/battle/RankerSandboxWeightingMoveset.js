@@ -423,7 +423,7 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
-				if(cup.name == "continentals-3"){
+				if(cup.name == "halloween"){
 					iterations = 1;
 				}
 
@@ -436,6 +436,10 @@ var RankerMaster = (function () {
 				}
 
 				if((cup.name == "premier")&&(battle.getCP() == 2500)){
+					iterations = 1;
+				}
+
+				if(cup.name == "premierclassic"){
 					iterations = 1;
 				}
 

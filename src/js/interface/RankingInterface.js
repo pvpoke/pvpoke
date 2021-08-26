@@ -100,7 +100,7 @@ var InterfaceMaster = (function () {
 				battle.setCup(cup);
 				battle.setCP(league);
 
-				if(cup !== "classic"){
+				if(! battle.getCup().levelCap){
 					battle.setLevelCap(50);
 				}
 

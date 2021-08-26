@@ -270,31 +270,16 @@ var GameMaster = (function () {
 					var level45cp = pokemon.calculateCP(0.815299987792968, 15, 15, 15);
 
 					if(cp > leagues[i]){
-						var floor = 4;
-						var defaultIndex = 15;
+						var combo = object.generateDefaultIVCombo(pokemon, pokemon.levelCap, leagues[i], level45cp);
 
-						// For Pokemon that max near the league cap, default to lucky IV's
-						if((level45cp < leagues[i])&&(pokemon.levelCap > 40)){
-							floor = 12;
-							defaultIndex = 7;
+						defaultIVs["cp"+leagues[i]] = [combo.level, combo.ivs.atk, combo.ivs.def, combo.ivs.hp]
+
+						if(combo.level > 40){
+							combo = object.generateDefaultIVCombo(pokemon, 40, leagues[i], level35cp);
+
+							defaultIVs["cp"+leagues[i] + "l40"] = [combo.level, combo.ivs.atk, combo.ivs.def, combo.ivs.hp]
+
 						}
-
-						var combinations = pokemon.generateIVCombinations("overall", 1, 4096, null, floor);
-
-						// For untradable Pokemon, set the index to the 54th rank
-						if(pokemon.hasTag("untradeable")){
-							defaultIndex = 31;
-						}
-
-						if(defaultIndex > combinations.length){
-							defaultIndex = Math.floor(combinations.length / 2);
-						}
-
-						var level = combinations[defaultIndex].level;
-						var ivs = combinations[defaultIndex].ivs;
-						var combination = [level, ivs.atk, ivs.def, ivs.hp];
-
-						defaultIVs["cp"+leagues[i]] = combination;
 					} else{
 						defaultIVs["cp"+leagues[i]] = [pokemon.levelCap, 15, 15, 15];
 					}
@@ -310,6 +295,36 @@ var GameMaster = (function () {
 			var json = JSON.stringify(object.data);
 
 			console.log(json);
+		}
+
+		// Generate a singular default IV combo given league and level cap
+
+		object.generateDefaultIVCombo = function(pokemon, levelCap, league, nearCapCP){
+			var floor = 4;
+			var defaultIndex = 15;
+
+			// For Pokemon that max near the league cap, default to lucky IV's
+			if(nearCapCP < league){
+				floor = 12;
+				defaultIndex = 7;
+			}
+
+			pokemon.setLevelCap(levelCap);
+
+			var combinations = pokemon.generateIVCombinations("overall", 1, 4096, null, floor);
+
+			// For untradable Pokemon, set the index to the 54th rank
+			if(pokemon.hasTag("untradeable")){
+				defaultIndex = 31;
+			}
+
+			if(defaultIndex > combinations.length){
+				defaultIndex = Math.floor(combinations.length / 2);
+			}
+
+			pokemon.setLevelCap(50);
+
+			return combinations[defaultIndex];
 		}
 
 		// Set level caps for gamemaster data

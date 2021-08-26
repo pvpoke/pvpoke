@@ -1,0 +1,888 @@
+[
+	{
+		"speciesId": "cresselia",
+		"fastMove": "PSYCHO_CUT",
+		"chargedMoves": ["GRASS_KNOT", "MOONBLAST"],
+		"weight": 2
+	},
+	{
+		"speciesId": "umbreon",
+		"chargedMoves": ["FOUL_PLAY", "LAST_RESORT"],
+		"weight": 20
+	},
+	{
+		"speciesId": "azumarill",
+		"chargedMoves": ["ICE_BEAM", "HYDRO_PUMP"],
+		"weight": 48
+	},
+	{
+		"speciesId": "azumarill_xs",
+		"chargedMoves": ["ICE_BEAM", "HYDRO_PUMP"]
+	},
+	{
+		"speciesId": "medicham",
+		"chargedMoves": ["ICE_PUNCH", "PSYCHIC"],
+		"weight": 35
+	},
+	{
+		"speciesId": "medicham_xs",
+		"chargedMoves": ["ICE_PUNCH", "PSYCHIC"]
+	},
+	{
+		"speciesId": "slowbro_galarian",
+		"chargedMoves": ["SLUDGE_BOMB", "FOCUS_BLAST"]
+	},
+	{
+		"speciesId": "mantine",
+		"fastMove": "BUBBLE",
+		"chargedMoves": ["BUBBLE_BEAM", "ICE_BEAM"]
+	},
+	{
+		"speciesId": "garchomp",
+		"fastMove": "DRAGON_TAIL",
+		"chargedMoves": ["SAND_TOMB", "OUTRAGE"]
+	},
+	{
+		"speciesId": "wormadam_trash",
+		"fastMove": "CONFUSION"
+	},
+	{
+		"speciesId": "sirfetchd",
+		"chargedMoves": ["LEAF_BLADE", "NIGHT_SLASH"]
+	},
+	{
+		"speciesId": "lugia",
+		"chargedMoves": ["SKY_ATTACK", "AEROBLAST"]
+	},
+	{
+		"speciesId": "dusclops",
+		"chargedMoves": ["FIRE_PUNCH", "RETURN"]
+	},
+	{
+		"speciesId": "rapidash_galarian",
+		"chargedMoves": ["BODY_SLAM", "PLAY_ROUGH"]
+	},
+	{
+		"speciesId": "farfetchd_galarian",
+		"chargedMoves": ["LEAF_BLADE", "BRAVE_BIRD"]
+	},
+	{
+		"speciesId": "mewtwo_shadow",
+		"chargedMoves": ["PSYSTRIKE", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "falinks",
+		"chargedMoves": ["SUPER_POWER", "MEGAHORN"]
+	},
+	{
+		"speciesId": "lickitung",
+		"chargedMoves": ["BODY_SLAM", "POWER_WHIP"],
+		"weight": 2
+	},
+	{
+		"speciesId": "lickitung_xl",
+		"chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
+	},
+	{
+		"speciesId": "persian_alolan",
+		"chargedMoves": ["FOUL_PLAY", "PLAY_ROUGH"]
+	},
+	{
+		"speciesId": "cacturne",
+		"chargedMoves": ["GRASS_KNOT", "PAYBACK"]
+	},
+	{
+		"speciesId": "nidorina",
+		"chargedMoves": ["POISON_FANG", "RETURN"]
+	},
+	{
+		"speciesId": "nidorina_xl",
+		"chargedMoves": ["POISON_FANG", "RETURN"]
+	},
+	{
+		"speciesId": "liepard",
+		"chargedMoves": ["DARK_PULSE", "PLAY_ROUGH"]
+	},
+	{
+		"speciesId": "ludicolo",
+		"chargedMoves": ["ICE_BEAM", "LEAF_STORM"]
+	},
+	{
+		"speciesId": "roserade",
+		"fastMove": "BULLET_SEED",
+		"chargedMoves": ["WEATHER_BALL_FIRE", "LEAF_STORM"]
+	},
+	{
+		"speciesId": "bronzong",
+		"chargedMoves": ["PSYSHOCK", "PAYBACK"]
+	},
+	{
+		"speciesId": "machamp_shadow",
+		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
+		"weight": 2
+	},
+	{
+		"speciesId": "gligar",
+		"fastMove": "WING_ATTACK",
+		"chargedMoves": ["NIGHT_SLASH", "RETURN"]
+	},
+	{
+		"speciesId": "scolipede",
+		"chargedMoves": ["X_SCISSOR", "SLUDGE_BOMB"]
+	},
+	{
+		"speciesId": "claydol",
+		"chargedMoves": ["EARTH_POWER", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "jellicent",
+		"fastMove": "HEX",
+		"chargedMoves": ["BUBBLE_BEAM","SHADOW_BALL"],
+		"weight": 16
+	},
+	{
+		"speciesId": "gligar_shadow",
+		"fastMove": "WING_ATTACK",
+		"chargedMoves": ["NIGHT_SLASH", "DIG"]
+	},
+	{
+		"speciesId": "escavalier",
+		"chargedMoves": ["DRILL_RUN", "MEGAHORN"]
+	},
+	{
+		"speciesId": "tentacruel",
+		"chargedMoves": ["ACID_SPRAY", "HYDRO_PUMP"]
+	},
+	{
+		"speciesId": "scizor",
+		"fastMove": "BULLET_PUNCH",
+		"chargedMoves": ["X_SCISSOR","IRON_HEAD"]
+	},
+	{
+		"speciesId": "scizor_shadow",
+		"fastMove": "BULLET_PUNCH",
+		"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
+	},
+	{
+		"speciesId": "mr_rime",
+		"fastMove": "CONFUSION",
+		"chargedMoves": ["ICY_WIND","PSYCHIC"]
+	},
+	{
+		"speciesId": "mawile",
+		"fastMove": "FIRE_FANG",
+		"chargedMoves": ["POWER_UP_PUNCH","PLAY_ROUGH"]
+	},
+	{
+		"speciesId": "mawile_shadow",
+		"fastMove": "FIRE_FANG",
+		"chargedMoves": ["POWER_UP_PUNCH","PLAY_ROUGH"]
+	},
+	{
+		"speciesId": "poliwrath",
+		"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
+	},
+	{
+		"speciesId": "poliwrath_shadow",
+		"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
+	},
+	{
+		"speciesId": "dragalge",
+		"chargedMoves": ["AQUA_TAIL", "GUNK_SHOT"]
+	},
+	{
+		"speciesId": "clawitzer",
+		"chargedMoves": ["CRABHAMMER", "ICE_BEAM"]
+	},
+	{
+		"speciesId": "alakazam",
+		"chargedMoves": ["FIRE_PUNCH", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "alakazam_shadow",
+		"chargedMoves": ["FIRE_PUNCH", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "electivire",
+		"chargedMoves": ["ICE_PUNCH", "WILD_CHARGE"]
+	},
+	{
+		"speciesId": "electivire_shadow",
+		"chargedMoves": ["ICE_PUNCH", "WILD_CHARGE"]
+	},
+	{
+		"speciesId": "toxicroak",
+		"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"],
+		"weight": 6
+	},
+	{
+		"speciesId": "porygon",
+		"chargedMoves": ["DISCHARGE", "HYPER_BEAM"]
+	},
+	{
+		"speciesId": "rhyperior",
+		"fastMove": "MUD_SLAP",
+		"chargedMoves": ["ROCK_WRECKER","SURF"]
+	},
+	{
+		"speciesId": "castform_sunny",
+		"chargedMoves": ["WEATHER_BALL_FIRE", "SOLAR_BEAM"]
+	},
+	{
+		"speciesId": "suicune",
+		"chargedMoves": ["BUBBLE_BEAM", "HYDRO_PUMP"]
+	},
+	{
+		"speciesId": "suicune_shadow",
+		"chargedMoves": ["BUBBLE_BEAM", "HYDRO_PUMP"]
+	},
+	{
+		"speciesId": "forretress",
+		"chargedMoves": ["EARTHQUAKE", "MIRROR_SHOT"]
+	},
+	{
+		"speciesId": "forretress_shadow",
+		"chargedMoves": ["EARTHQUAKE", "MIRROR_SHOT"]
+	},
+	{
+		"speciesId": "lilligant",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "leavanny",
+		"fastMove": "RAZOR_LEAF"
+	},
+	{
+		"speciesId": "litleo",
+		"fastMove": "EMBER"
+	},
+	{
+		"speciesId": "litleo_xl",
+		"fastMove": "EMBER"
+	},
+	{
+		"speciesId": "stunfisk",
+		"fastMove": "THUNDER_SHOCK",
+		"weight": 2
+	},
+	{
+		"speciesId": "zapdos",
+		"chargedMoves": ["DRILL_PECK", "THUNDER"]
+	},
+	{
+		"speciesId": "dewgong",
+		"chargedMoves": ["ICY_WIND","WATER_PULSE"]
+	},
+	{
+		"speciesId": "gliscor",
+		"fastMove": "WING_ATTACK",
+		"chargedMoves": ["EARTHQUAKE", "NIGHT_SLASH"]
+	},
+	{
+		"speciesId": "gliscor_shadow",
+		"fastMove": "WING_ATTACK",
+		"chargedMoves": ["EARTHQUAKE", "NIGHT_SLASH"]
+	},
+	{
+		"speciesId": "melmetal",
+		"chargedMoves": ["SUPER_POWER", "ROCK_SLIDE"]
+	},
+	{
+		"speciesId": "charizard",
+		"fastMove": "FIRE_SPIN",
+		"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
+	},
+	{
+		"speciesId": "charizard_shadow",
+		"fastMove": "FIRE_SPIN",
+		"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
+	},
+	{
+		"speciesId": "lapras",
+		"fastMove": "ICE_SHARD",
+		"chargedMoves": ["SURF", "SKULL_BASH"]
+	},
+	{
+		"speciesId": "lapras_shadow",
+		"fastMove": "ICE_SHARD",
+		"chargedMoves": ["SURF", "SKULL_BASH"]
+	},
+	{
+		"speciesId": "servine",
+		"chargedMoves": ["GRASS_KNOT", "WRAP"]
+	},
+	{
+		"speciesId": "servine_xl",
+		"chargedMoves": ["GRASS_KNOT", "WRAP"]
+	},
+	{
+		"speciesId": "vespiquen",
+		"chargedMoves": ["X_SCISSOR", "POWER_GEM"]
+	},
+	{
+		"speciesId": "porygon_z",
+		"chargedMoves": ["TRI_ATTACK", "ZAP_CANNON"]
+	},
+	{
+		"speciesId": "porygon_z_shadow",
+		"chargedMoves": ["TRI_ATTACK", "ZAP_CANNON"]
+	},
+	{
+		"speciesId": "masquerain",
+		"fastMove": "AIR_SLASH",
+		"chargedMoves": ["BUBBLE_BEAM", "LUNGE"]
+	},
+	{
+		"speciesId": "zebstrika",
+		"chargedMoves": ["WILD_CHARGE", "FLAME_CHARGE"]
+	},
+	{
+		"speciesId": "castform_snowy",
+		"chargedMoves": ["WEATHER_BALL_ICE", "BLIZZARD"]
+	},
+	{
+		"speciesId": "golem_alolan",
+		"chargedMoves": ["WILD_CHARGE", "ROCK_BLAST"]
+	},
+	{
+		"speciesId": "sandslash_alolan",
+		"chargedMoves": ["ICE_PUNCH", "BULLDOZE"]
+	},
+	{
+		"speciesId": "sandslash_alolan",
+		"chargedMoves": ["ICE_PUNCH", "BULLDOZE"]
+	},
+	{
+		"speciesId": "obstagoon",
+		"chargedMoves": ["NIGHT_SLASH", "GUNK_SHOT"],
+		"weight": 10
+	},
+	{
+		"speciesId": "mew",
+		"fastMove": "SHADOW_CLAW",
+		"chargedMoves": ["WILD_CHARGE", "SURF"],
+		"weight": 5
+	},
+	{
+		"speciesId": "marowak_alolan",
+		"fastMove": "FIRE_SPIN",
+		"weight": 6
+	},
+	{
+		"speciesId": "raichu",
+		"fastMove": "VOLT_SWITCH"
+	},
+	{
+		"speciesId": "raichu_alolan",
+		"fastMove": "VOLT_SWITCH",
+		"chargedMoves": ["WILD_CHARGE","GRASS_KNOT"]
+	},
+	{
+		"speciesId": "raikou",
+		"fastMove": "THUNDER_SHOCK"
+	},
+	{
+		"speciesId": "raikou_shadow",
+		"fastMove": "THUNDER_SHOCK"
+	},
+	{
+		"speciesId": "lanturn",
+		"fastMove": "SPARK"
+	},
+	{
+		"speciesId": "sealeo",
+		"fastMove": "POWDER_SNOW"
+	},
+	{
+		"speciesId": "swanna",
+		"fastMove": "AIR_SLASH"
+	},
+	{
+		"speciesId": "delcatty",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "hitmonchan",
+		"chargedMoves": ["ICE_PUNCH", "THUNDER_PUNCH"]
+	},
+	{
+		"speciesId": "hitmonchan_shadow",
+		"chargedMoves": ["ICE_PUNCH", "THUNDER_PUNCH"]
+	},
+	{
+		"speciesId": "dragonair",
+		"chargedMoves": ["AQUA_TAIL", "RETURN"]
+	},
+	{
+		"speciesId": "shelgon",
+		"chargedMoves": ["FLAMETHROWER", "TWISTER"]
+	},
+	{
+		"speciesId": "vibrava",
+		"chargedMoves": ["SAND_TOMB", "BUG_BUZZ"]
+	},
+	{
+		"speciesId": "vibrava_shadow",
+		"chargedMoves": ["SAND_TOMB", "BUG_BUZZ"]
+	},
+	{
+		"speciesId": "cloyster_shadow",
+		"chargedMoves": ["ICY_WIND", "HYDRO_PUMP"]
+	},
+	{
+		"speciesId": "ninetales",
+		"chargedMoves": ["WEATHER_BALL_FIRE", "SOLAR_BEAM"]
+	},
+	{
+		"speciesId": "ninetales_shadow",
+		"chargedMoves": ["WEATHER_BALL_FIRE", "PSYSHOCK"]
+	},
+	{
+		"speciesId": "pinsir_shadow",
+		"chargedMoves": ["CLOSE_COMBAT", "X_SCISSOR"]
+	},
+	{
+		"speciesId": "muk_alolan",
+		"fastMove": "SNARL",
+		"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"]
+	},
+	{
+		"speciesId": "ariados",
+		"fastMove": "POISON_STING",
+		"chargedMoves": ["CROSS_POISON","LUNGE"]
+	},
+	{
+		"speciesId": "qwilfish",
+		"fastMove": "POISON_STING",
+		"chargedMoves": ["AQUA_TAIL","SLUDGE_WAVE"]
+	},
+	{
+		"speciesId": "drapion",
+		"fastMove": "POISON_STING",
+		"chargedMoves": ["AQUA_TAIL","SLUDGE_BOMB"]
+	},
+	{
+		"speciesId": "drapion_shadow",
+		"fastMove": "POISON_STING",
+		"chargedMoves": ["AQUA_TAIL","SLUDGE_BOMB"]
+	},
+	{
+		"speciesId": "muk",
+		"chargedMoves": ["THUNDER_PUNCH", "DARK_PULSE"]
+	},
+	{
+		"speciesId": "magneton",
+		"chargedMoves": ["DISCHARGE", "MAGNET_BOMB"]
+	},
+	{
+		"speciesId": "skuntank_shadow",
+		"chargedMoves": ["CRUNCH", "FLAMETHROWER"]
+	},
+	{
+		"speciesId": "typhlosion",
+		"chargedMoves": ["BLAST_BURN", "SOLAR_BEAM"]
+	},
+	{
+		"speciesId": "blaziken",
+		"chargedMoves": ["BLAZE_KICK", "STONE_EDGE"]
+	},
+	{
+		"speciesId": "magmortar",
+		"chargedMoves": ["FIRE_PUNCH", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "magmortar_shadow",
+		"chargedMoves": ["FIRE_PUNCH", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "piloswine",
+		"chargedMoves": ["AVALANCHE", "BULLDOZE"]
+	},
+	{
+		"speciesId": "piloswine_shadow",
+		"chargedMoves": ["AVALANCHE", "BULLDOZE"]
+	},
+	{
+		"speciesId": "mamoswine",
+		"chargedMoves": ["AVALANCHE", "BULLDOZE"]
+	},
+	{
+		"speciesId": "mamoswine_shadow",
+		"chargedMoves": ["AVALANCHE", "BULLDOZE"]
+	},
+	{
+		"speciesId": "hypno",
+		"chargedMoves": ["SHADOW_BALL", "THUNDER_PUNCH"],
+		"weight": 14
+	},
+	{
+		"speciesId": "hypno_shadow",
+		"chargedMoves": ["THUNDER_PUNCH", "FIRE_PUNCH"],
+		"weight": 4
+	},
+	{
+		"speciesId": "pidgeot",
+		"chargedMoves": ["FEATHER_DANCE", "BRAVE_BIRD"]
+	},
+	{
+		"speciesId": "snorlax",
+		"chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
+	},
+	{
+		"speciesId": "mienshao",
+		"chargedMoves": ["BRICK_BREAK", "GRASS_KNOT"]
+	},
+	{
+		"speciesId": "primeape",
+		"chargedMoves": ["NIGHT_SLASH", "CLOSE_COMBAT"]
+	},
+	{
+		"speciesId": "lucario",
+		"chargedMoves": ["POWER_UP_PUNCH", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "hitmonchan",
+		"chargedMoves": ["THUNDER_PUNCH", "ICE_PUNCH"]
+	},
+	{
+		"speciesId": "hitmonchan_shadow",
+		"chargedMoves": ["THUNDER_PUNCH", "ICE_PUNCH"]
+	},
+	{
+		"speciesId": "beedrill",
+		"fastMove": "POISON_JAB",
+		"chargedMoves": ["X_SCISSOR", "DRILL_RUN"]
+	},
+	{
+		"speciesId": "beedrill_shadow",
+		"fastMove": "POISON_JAB",
+		"chargedMoves": ["X_SCISSOR", "DRILL_RUN"]
+	},
+	{
+		"speciesId": "venomoth",
+		"fastMove": "INFESTATION",
+		"chargedMoves": ["POISON_FANG", "BUG_BUZZ"]
+	},
+	{
+		"speciesId": "venomoth_shadow",
+		"fastMove": "INFESTATION",
+		"chargedMoves": ["POISON_FANG", "BUG_BUZZ"]
+	},
+	{
+		"speciesId": "vespiquen",
+		"chargedMoves": ["FELL_STINGER", "POWER_GEM"]
+	},
+	{
+		"speciesId": "golbat",
+		"chargedMoves": ["POISON_FANG", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "golbat_shadow",
+		"chargedMoves": ["POISON_FANG", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "cloyster",
+		"chargedMoves": ["ICY_WIND", "HYDRO_PUMP"]
+	},
+	{
+		"speciesId": "machamp",
+		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
+	},
+	{
+		"speciesId": "vileplume",
+		"chargedMoves": ["SLUDGE_BOMB", "PETAL_BLIZZARD"]
+	},
+	{
+		"speciesId": "hariyama",
+		"chargedMoves": ["CLOSE_COMBAT", "HEAVY_SLAM"]
+	},
+	{
+		"speciesId": "hariyama_shadow",
+		"chargedMoves": ["CLOSE_COMBAT", "HEAVY_SLAM"]
+	},
+	{
+		"speciesId": "pinsir",
+		"chargedMoves": ["CLOSE_COMBAT", "X_SCISSOR"]
+	},
+	{
+		"speciesId": "grotle",
+		"chargedMoves": ["BODY_SLAM", "ENERGY_BALL"]
+	},
+	{
+		"speciesId": "torterra",
+		"chargedMoves": ["FRENZY_PLANT", "STONE_EDGE"]
+	},
+	{
+		"speciesId": "tyranitar",
+		"chargedMoves": ["CRUNCH", "STONE_EDGE"]
+	},
+	{
+		"speciesId": "venomoth",
+		"fastMove": "CONFUSION"
+	},
+	{
+		"speciesId": "ninetales_alolan",
+		"fastMove": "POWDER_SNOW",
+		"chargedMoves": ["WEATHER_BALL_ICE", "DAZZLING_GLEAM"],
+		"weight": 16
+	},
+	{
+		"speciesId": "tropius",
+		"fastMove": "AIR_SLASH",
+		"chargedMoves": ["LEAF_BLADE", "AERIAL_ACE"],
+		"weight": 2
+	},
+	{
+		"speciesId": "probopass",
+		"fastMove": "SPARK",
+		"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "probopass_shadow",
+		"fastMove": "SPARK",
+		"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "granbull",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "granbull_shadow",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "gardevoir",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "gardevoir_shadow",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "shiftry",
+		"fastMove": "SNARL"
+	},
+	{
+		"speciesId": "shiftry_shadow",
+		"fastMove": "SNARL"
+	},
+	{
+		"speciesId": "togekiss",
+		"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
+	},
+	{
+		"speciesId": "crobat",
+		"chargedMoves": ["POISON_FANG","SHADOW_BALL"]
+	},
+	{
+		"speciesId": "crobat_shadow",
+		"chargedMoves": ["POISON_FANG","SHADOW_BALL"]
+	},
+	{
+		"speciesId": "politoed",
+		"fastMove": "MUD_SHOT",
+		"chargedMoves": ["WEATHER_BALL_WATER","EARTHQUAKE"],
+		"weight": 18
+	},
+	{
+		"speciesId": "politoed_shadow",
+		"fastMove": "MUD_SHOT",
+		"chargedMoves": ["WEATHER_BALL_WATER","EARTHQUAKE"]
+	},
+	{
+		"speciesId": "accelgor",
+		"chargedMoves": ["BUG_BUZZ","ACID_SPRAY"]
+	},
+	{
+		"speciesId": "galvantula",
+		"chargedMoves": ["DISCHARGE","LUNGE"],
+		"weight": 11
+	},
+	{
+		"speciesId": "electrode",
+		"chargedMoves": ["FOUL_PLAY","THUNDERBOLT"]
+	},
+	{
+		"speciesId": "minun",
+		"chargedMoves": ["THUNDERBOLT","GRASS_KNOT"]
+	},
+	{
+		"speciesId": "plusle",
+		"chargedMoves": ["THUNDERBOLT","GRASS_KNOT"]
+	},
+	{
+		"speciesId": "reuniclus",
+		"fastMove": "HIDDEN_POWER_FIGHTING"
+	},
+	{
+		"speciesId": "seismitoad",
+		"fastMove": "MUD_SHOT",
+		"chargedMoves": ["EARTH_POWER","SLUDGE_BOMB"]
+	},
+	{
+		"speciesId": "boldore",
+		"chargedMoves": ["ROCK_SLIDE","BULLDOZE"]
+	},
+	{
+		"speciesId": "dragonite_shadow",
+		"fastMove": "DRAGON_BREATH"
+	},
+	{
+		"speciesId": "dragonite",
+		"fastMove": "DRAGON_BREATH",
+		"chargedMoves": ["DRAGON_CLAW","HURRICANE"]
+	},
+	{
+		"speciesId": "vigoroth",
+		"chargedMoves": ["BODY_SLAM","BULLDOZE"],
+		"weight": 11
+	},
+	{
+		"speciesId": "sableye",
+		"chargedMoves": ["FOUL_PLAY","RETURN"],
+		"weight":20
+	},
+	{
+		"speciesId": "sableye_shadow",
+		"chargedMoves": ["FOUL_PLAY","POWER_GEM"]
+	},
+	{
+		"speciesId": "sableye_xs",
+		"chargedMoves": ["FOUL_PLAY","RETURN"]
+	},
+	{
+		"speciesId": "sableye_shadow_xs",
+		"chargedMoves": ["FOUL_PLAY","POWER_GEM"]
+	},
+	{
+		"speciesId": "haunter",
+		"chargedMoves": ["SHADOW_PUNCH","SHADOW_BALL"]
+	},
+	{
+		"speciesId": "probopass",
+		"chargedMoves": ["ROCK_SLIDE","THUNDERBOLT"]
+	},
+	{
+		"speciesId": "registeel",
+		"weight":6
+	},
+	{
+		"speciesId": "stunfisk_galarian",
+		"weight":40
+	},
+	{
+		"speciesId": "altaria",
+		"weight":24
+	},
+	{
+		"speciesId": "skarmory",
+		"weight":27
+	},
+	{
+		"speciesId": "froslass",
+		"chargedMoves": ["AVALANCHE","SHADOW_BALL"]
+	},
+	{
+		"speciesId": "mandibuzz",
+		"chargedMoves": ["FOUL_PLAY","AERIAL_ACE"],
+		"weight": 10
+	},
+	{
+		"speciesId": "deoxys_defense",
+		"chargedMoves": ["PSYCHO_BOOST","THUNDERBOLT"],
+		"weight":10
+	},
+	{
+		"speciesId": "swampert",
+		"chargedMoves": ["HYDRO_CANNON","SLUDGE_WAVE"],
+		"weight":19
+	},
+	{
+		"speciesId": "swampert_shadow",
+		"chargedMoves": ["HYDRO_CANNON","SLUDGE_WAVE"]
+	},
+	{
+		"speciesId": "venusaur",
+		"weight":15
+	},
+	{
+		"speciesId": "meganium",
+		"weight":2
+	},
+	{
+		"speciesId": "whiscash",
+		"weight":2
+	},
+	{
+		"speciesId": "bastiodon",
+		"weight":20
+	},
+	{
+		"speciesId": "bellossom_shadow",
+		"fastMove": "BULLET_SEED",
+		"chargedMoves": ["LEAF_BLADE","DAZZLING_GLEAM"]
+	},
+	{
+		"speciesId": "cherrim_sunny",
+		"fastMove": "BULLET_SEED",
+		"chargedMoves": ["WEATHER_BALL_FIRE","SOLAR_BEAM"]
+	},
+	{
+		"speciesId": "flygon_shadow",
+		"fastMove": "DRAGON_TAIL"
+	},
+	{
+		"speciesId": "ferrothorn",
+		"fastMove": "BULLET_SEED",
+		"chargedMoves": ["POWER_WHIP","THUNDER"]
+	},
+	{
+		"speciesId": "sceptile",
+		"chargedMoves": ["LEAF_BLADE", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "serperior",
+		"chargedMoves": ["FRENZY_PLANT", "AERIAL_ACE"]
+	},
+	{
+		"speciesId": "maractus",
+		"fastMove": "BULLET_SEED"
+	},
+	{
+		"speciesId": "abomasnow",
+		"weight": 2
+	},
+	{
+		"speciesId": "abomasnow_shadow",
+		"weight": 6
+	},
+	{
+		"speciesId": "victreebel",
+		"chargedMoves": ["LEAF_BLADE", "ACID_SPRAY"]
+	},
+	{
+		"speciesId": "victreebel_shadow",
+		"chargedMoves": ["LEAF_BLADE", "ACID_SPRAY"],
+		"weight": 5
+	},
+	{
+		"speciesId": "nidoqueen_shadow",
+		"weight": 16
+	},
+	{
+		"speciesId": "scrafty",
+		"weight": 15
+	},
+	{
+		"speciesId": "pelipper",
+		"weight": 15
+	},
+	{
+		"speciesId": "wigglytuff",
+		"weight": 2
+	},
+	{
+		"speciesId": "talonflame",
+		"weight": 8
+	}
+]
