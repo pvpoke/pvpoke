@@ -34,31 +34,14 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.22.21 (August 20, 2021)</h4>
+	<h4>v1.23.0 (August 26, 2021)</h4>
 	<ul>
-		<li>Added search terms for "gen8" and "galar".</li>
+		<li>Site is updated with rankings and resources for upcoming Season 9 formats including Classic formats.</li>
 		<ul>
-			<li>The former "Galarian" tag is now only applied to Pokemon that are Galarian forms of previous Pokemon (Galarian Stunfisk, Galarian Slowbro, etc.)</li>
+			<li>Moves currently use their Season 8 values. Rankings will be updated at the beginning of Season 9 once the full move values are known.</li>
 		</ul>
 	</ul>
 
-	<h4>v1.22.20 (August 19, 2021)</h4>
-	<ul>
-		<li>Added upcoming Galar Pokemon to rankings</li>
-		<li>Pokemon no longer bait with self-debuffing moves</li>
-		<ul>
-			<li>For example, Zacian was baiting with close Combat when trying to land Play Rough</li>
-		</ul>
-	</ul>
-
-	<h4>v1.22.19 (August 18, 2021)</h4>
-	<ul>
-		<li>Galar Pokemon are now available in simulations!</li>
-		<li>Fixed an issue where Classic battles would reset to level 50 after running simulations for Pokemon that have buff chance moves.</li>
-		<ul>
-			<li>This could only have been caused by quality programming</li>
-		</ul>
-	</ul>
 	<h3>Latest Article</h3>
 
 	<div class="article-item flex">
