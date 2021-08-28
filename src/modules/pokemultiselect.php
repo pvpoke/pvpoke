@@ -25,8 +25,9 @@
 				<option value="great" type="great" class="multi-battle">Great League Meta</option>
 				<option value="ultra" type="ultra" class="hide multi-battle">Ultra League Meta</option>
 				<option value="master" type="master" class="hide multi-battle">Master League Meta</option>
+				<option value="remix" type="great" class="multi-battle">Remix Meta</option>
+				<option value="remixultra" type="ultra" class="hide multi-battle">Remix Meta</option>
 				<option value="premierultra" type="ultra" class="hide multi-battle">Premier Cup Meta</option>
-				<option value="premier" type="master" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="ultrapremierclassic" type="ultra" class="hide multi-battle">Premier Classic Meta</option>
 				<option value="masterpremierclassic" type="master" class="hide multi-battle">Premier Classic Meta</option>
 				<option value="halloween" type="great" class="multi-battle">Halloween Cup Meta</option>

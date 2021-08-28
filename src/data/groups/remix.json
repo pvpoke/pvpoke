@@ -35,17 +35,17 @@
     "fastMove": "COUNTER",
     "chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
 }, {
-    "speciesId": "jellicent",
-    "fastMove": "HEX",
-    "chargedMoves": ["BUBBLE_BEAM", "SHADOW_BALL"]
-}, {
-    "speciesId": "sableye",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["FOUL_PLAY", "RETURN"]
-}, {
     "speciesId": "abomasnow",
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"]
+}, {
+    "speciesId": "meganium",
+    "fastMove": "VINE_WHIP",
+    "chargedMoves": ["FRENZY_PLANT", "EARTHQUAKE"]
+}, {
+    "speciesId": "toxicroak",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
 }, {
     "speciesId": "wigglytuff",
     "fastMove": "CHARM",

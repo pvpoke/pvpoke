@@ -27,6 +27,42 @@
 		"fastMove":"COUNTER",
 		"chargedMoves":["PSYCHO_BOOST","ROCK_SLIDE"]
 }, {
+    "speciesId": "venusaur",
+    "fastMove": "VINE_WHIP",
+    "chargedMoves": ["FRENZY_PLANT", "SLUDGE_BOMB"]
+}, {
+    "speciesId": "charizard",
+    "fastMove": "FIRE_SPIN",
+    "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"]
+}, {
+    "speciesId": "gyarados",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["AQUA_TAIL", "CRUNCH"]
+}, {
+    "speciesId": "articuno",
+    "fastMove": "ICE_SHARD",
+    "chargedMoves": ["ICY_WIND", "HURRICANE"]
+}, {
+    "speciesId": "lapras",
+    "fastMove": "ICE_SHARD",
+    "chargedMoves": ["SURF", "SKULL_BASH"]
+}, {
+    "speciesId": "umbreon",
+    "fastMove": "SNARL",
+    "chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
+}, {
+    "speciesId": "umbreon",
+    "fastMove": "SNARL",
+    "chargedMoves": ["FOUL_PLAY", "PSYCHIC"]
+}, {
+    "speciesId": "registeel",
+    "fastMove": "LOCK_ON",
+    "chargedMoves": ["FLASH_CANNON", "FOCUS_BLAST"]
+}, {
+    "speciesId": "escavalier",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["MEGAHORN", "DRILL_RUN"]
+}, {
     "speciesId": "nidoqueen",
     "fastMove": "POISON_JAB",
     "chargedMoves": ["POISON_FANG", "EARTH_POWER"]

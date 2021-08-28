@@ -93,8 +93,10 @@ var InterfaceMaster = (function () {
 					$(".league-select option[value=\"500\"]").prop("selected","selected");
 				}
 
-				if(cup == "continentals-3"){
-					$(".continentals").show();
+				if(cup == "littlejungle"){
+					$(".little-jungle").show();
+				} else{
+					$(".little-jungle").hide();
 				}
 
 				battle.setCup(cup);

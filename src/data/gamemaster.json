@@ -696,11 +696,11 @@
         "include": [],
         "exclude": [{
             "filterType": "id",
-            "values": ["venusaur", "ninetales_alolan", "marowak_alolan", "meganium", "azumarill", "politoed", "umbreon", "skarmory", "swampert", "pelipper", "vigoroth", "medicham", "altaria", "deoxys_defense", "bastiodon", "toxicroak", "scrafty", "galvantula", "stunfisk_galarian", "talonflame"],
+            "values": ["venusaur", "ninetales_alolan", "marowak_alolan", "azumarill", "politoed", "umbreon", "skarmory", "swampert", "pelipper", "vigoroth", "sableye", "medicham", "altaria", "deoxys_defense", "bastiodon", "scrafty", "jellicent", "galvantula", "stunfisk_galarian", "talonflame"],
             "leagues": [1500]
         }, {
             "filterType": "id",
-            "values": ["venusaur", "charizard", "clefable", "poliwrath", "muk_alolan", "gyarados", "lapras", "articuno", "umbreon", "scizor", "swampert", "registeel", "empoleon", "togekiss", "giratina_altered", "cresselia", "escavalier", "talonflame", "melmetal", "obstagoon"],
+            "values": ["clefable", "muk_alolan", "swampert", "empoleon", "togekiss", "giratina_altered", "cresselia", "talonflame", "melmetal", "obstagoon"],
             "leagues": [2500]
         }, {
             "filterType": "tag",

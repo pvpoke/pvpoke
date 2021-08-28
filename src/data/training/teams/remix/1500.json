@@ -51,9 +51,9 @@
             "fastMove": "POISON_JAB",
             "chargedMoves": ["POISON_FANG", "EARTH_POWER"]
         }, {
-            "speciesId": "jellicent",
-            "fastMove": "HEX",
-            "chargedMoves": ["ICE_BEAM", "SHADOW_BALL"]
+            "speciesId": "froslass",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
         }, {
             "speciesId": "obstagoon",
             "fastMove": "COUNTER",
@@ -66,9 +66,9 @@
             "fastMove": "COUNTER",
             "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
         }, {
-            "speciesId": "jellicent",
-            "fastMove": "HEX",
-            "chargedMoves": ["ICE_BEAM", "SHADOW_BALL"]
+            "speciesId": "froslass",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
         }, {
             "speciesId": "nidoqueen",
             "fastMove": "POISON_JAB",
@@ -138,9 +138,9 @@
         "weight": 1
     }, {
         "pokemon": [{
-            "speciesId": "jellicent",
-            "fastMove": "BUBBLE",
-            "chargedMoves": ["ICE_BEAM", "SHADOW_BALL"]
+            "speciesId": "froslass",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
         }, {
             "speciesId": "mandibuzz",
             "fastMove": "SNARL",
@@ -162,9 +162,9 @@
             "fastMove": "SNARL",
             "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
         }, {
-            "speciesId": "sableye",
-            "fastMove": "SHADOW_CLAW",
-            "chargedMoves": ["FOUL_PLAY", "RETURN"]
+            "speciesId": "obstagoon",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
         }],
         "weight": 1
     }, {
@@ -230,22 +230,6 @@
         "weight": 1
     }, {
         "pokemon": [{
-            "speciesId": "nidoqueen",
-            "fastMove": "POISON_JAB",
-            "chargedMoves": ["POISON_FANG", "EARTH_POWER"],
-            "shadowType": "shadow"
-        }, {
-            "speciesId": "obstagoon",
-            "fastMove": "COUNTER",
-            "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
-        }, {
-            "speciesId": "sableye",
-            "fastMove": "SHADOW_CLAW",
-            "chargedMoves": ["FOUL_PLAY", "RETURN"]
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
             "speciesId": "froslass",
             "fastMove": "POWDER_SNOW",
             "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
@@ -257,21 +241,6 @@
             "speciesId": "whiscash",
             "fastMove": "MUD_SHOT",
             "chargedMoves": ["MUD_BOMB", "BLIZZARD"]
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
-            "speciesId": "abomasnow",
-            "fastMove": "POWDER_SNOW",
-            "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"]
-        }, {
-            "speciesId": "castform_rainy",
-            "fastMove": "WATER_GUN",
-            "chargedMoves": ["WEATHER_BALL_WATER", "THUNDER"]
-        }, {
-            "speciesId": "jellicent",
-            "fastMove": "HEX",
-            "chargedMoves": ["BUBBLE_BEAM", "SHADOW_BALL"]
         }],
         "weight": 1
     }, {
@@ -291,9 +260,9 @@
         "weight": 1
     }, {
         "pokemon": [{
-            "speciesId": "jellicent",
-            "fastMove": "BUBBLE",
-            "chargedMoves": ["ICE_BEAM", "SHADOW_BALL"]
+            "speciesId": "whiscash",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["MUD_BOMB", "BLIZZARD"]
         }, {
             "speciesId": "abomasnow",
             "fastMove": "POWDER_SNOW",
@@ -307,9 +276,9 @@
         "weight": 1
     }, {
         "pokemon": [{
-            "speciesId": "jellicent",
-            "fastMove": "HEX",
-            "chargedMoves": ["BUBBLE_BEAM", "SHADOW_BALL"]
+            "speciesId": "whiscash",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["MUD_BOMB", "BLIZZARD"]
         }, {
             "speciesId": "granbull",
             "fastMove": "CHARM",
@@ -327,9 +296,9 @@
             "fastMove": "CHARM",
             "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
         }, {
-            "speciesId": "jellicent",
-            "fastMove": "HEX",
-            "chargedMoves": ["ICE_BEAM", "SHADOW_BALL"]
+            "speciesId": "whiscash",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["MUD_BOMB", "BLIZZARD"]
         }, {
             "speciesId": "mandibuzz",
             "fastMove": "SNARL",

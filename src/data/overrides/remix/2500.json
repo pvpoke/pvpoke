@@ -5,17 +5,29 @@
 	},
 	{
 		"speciesId": "charizard",
-		"fastMove": "DRAGON_BREATH",
+		"fastMove": "FIRE_SPIN",
 		"chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"]
 	},
 	{
 		"speciesId": "charizard_shadow",
-		"fastMove": "DRAGON_BREATH"
+		"fastMove": "FIRE_SPIN"
+	},
+	{
+		"speciesId": "gyarados",
+		"fastMove": "WATERFALL"
+	},
+	{
+		"speciesId": "gyarados_shadow",
+		"fastMove": "WATERFALL"
 	},
 	{
 		"speciesId": "garchomp",
 		"fastMove": "DRAGON_TAIL",
 		"chargedMoves": ["SAND_TOMB", "OUTRAGE"]
+	},
+	{
+		"speciesId": "falinks",
+		"chargedMoves": ["SUPER_POWER", "MEGAHORN"]
 	},
 	{
 		"speciesId": "crobat",
@@ -348,14 +360,18 @@
 		"chargedMoves": ["ICE_BEAM", "LEAF_STORM"]
 	},
 	{
+		"speciesId": "articuno",
+		"chargedMoves": ["ICY_WIND", "HURRICANE"]
+	},
+	{
 		"speciesId": "lapras_xl",
 		"fastMove": "ICE_SHARD",
-		"chargedMoves": ["SURF", "ICE_BEAM"]
+		"chargedMoves": ["SURF", "SKULL_BASH"]
 	},
 	{
 		"speciesId": "lapras_shadow",
 		"fastMove": "ICE_SHARD",
-		"chargedMoves": ["SURF", "ICE_BEAM"]
+		"chargedMoves": ["SURF", "SKULL_BASH"]
 	},
 	{
 		"speciesId": "lapras_shadow_xl",
@@ -554,6 +570,11 @@
 		"weight": 4
 	},
 	{
+		"speciesId": "deoxys_defense",
+		"chargedMoves": ["PSYCHO_BOOST","THUNDERBOLT"],
+		"weight": 2
+	},
+	{
 		"speciesId": "abomasnow",
 		"weight": 3
 	},
@@ -576,6 +597,10 @@
 	{
 		"speciesId": "lugia",
 		"weight": 2
+	},
+	{
+		"speciesId": "registeel",
+		"weight": 3
 	},
 	{
 		"speciesId": "regirock",
