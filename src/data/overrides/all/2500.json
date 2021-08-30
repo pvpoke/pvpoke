@@ -33,6 +33,10 @@
 		"chargedMoves": ["SUPER_POWER", "MEGAHORN"]
 	},
 	{
+		"speciesId": "cofagrigus",
+		"chargedMoves": ["SHADOW_BALL", "PSYCHIC"]
+	},
+	{
 		"speciesId": "crobat_shadow",
 		"chargedMoves": ["POISON_FANG", "SHADOW_BALL"]
 	},
@@ -332,7 +336,25 @@
 		"weight": 7
 	},
 	{
+		"speciesId": "heracross",
+		"chargedMoves": ["ROCK_BLAST", "MEGAHORN"]
+	},
+	{
+		"speciesId": "nidoking",
+		"fastMove": "POISON_JAB",
+		"chargedMoves": ["SAND_TOMB", "EARTH_POWER"]
+	},
+	{
+		"speciesId": "nidoking_shadow",
+		"fastMove": "POISON_JAB",
+		"chargedMoves": ["SAND_TOMB", "EARTH_POWER"]
+	},
+	{
 		"speciesId": "ampharos",
+		"chargedMoves": ["THUNDER_PUNCH", "FOCUS_BLAST"]
+	},
+	{
+		"speciesId": "ampharos_shadow",
 		"chargedMoves": ["THUNDER_PUNCH", "FOCUS_BLAST"]
 	},
 	{
@@ -613,10 +635,6 @@
 	{
 		"speciesId": "gengar",
 		"weight": 2
-	},
-	{
-		"speciesId": "ampharos",
-		"weight": 1
 	},
 	{
 		"speciesId": "tangrowth",

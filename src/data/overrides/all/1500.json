@@ -47,6 +47,10 @@
 		"fastMove": "CONFUSION"
 	},
 	{
+		"speciesId": "cofagrigus",
+		"chargedMoves": ["SHADOW_BALL", "PSYCHIC"]
+	},
+	{
 		"speciesId": "sirfetchd",
 		"chargedMoves": ["LEAF_BLADE", "NIGHT_SLASH"]
 	},
@@ -180,11 +184,19 @@
 	},
 	{
 		"speciesId": "poliwrath",
-		"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
+		"chargedMoves": ["SCALD", "ICE_PUNCH"]
 	},
 	{
 		"speciesId": "poliwrath_shadow",
-		"chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
+		"chargedMoves": ["SCALD", "ICE_PUNCH"]
+	},
+	{
+		"speciesId": "ampharos",
+		"chargedMoves": ["THUNDER_PUNCH", "FOCUS_BLAST"]
+	},
+	{
+		"speciesId": "ampharos_shadow",
+		"chargedMoves": ["THUNDER_PUNCH", "FOCUS_BLAST"]
 	},
 	{
 		"speciesId": "dragalge",
@@ -333,8 +345,31 @@
 		"chargedMoves": ["BUBBLE_BEAM", "LUNGE"]
 	},
 	{
+		"speciesId": "nidoking",
+		"fastMove": "POISON_JAB",
+		"chargedMoves": ["SAND_TOMB", "EARTH_POWER"]
+	},
+	{
+		"speciesId": "nidoking_shadow",
+		"fastMove": "POISON_JAB",
+		"chargedMoves": ["SAND_TOMB", "EARTH_POWER"]
+	},
+	{
+		"speciesId": "ariados",
+		"fastMove": "POISON_STING",
+		"chargedMoves": ["CROSS_POISON","MEGAHORN"]
+	},
+	{
+		"speciesId": "heracross",
+		"chargedMoves": ["CLOSE_COMBAT", "ROCK_BLAST"]
+	},
+	{
 		"speciesId": "zebstrika",
 		"chargedMoves": ["WILD_CHARGE", "FLAME_CHARGE"]
+	},
+	{
+		"speciesId": "castform",
+		"chargedMoves": ["WEATHER_BALL_ROCK", "ENERGY_BALL"]
 	},
 	{
 		"speciesId": "castform_snowy",
@@ -445,11 +480,6 @@
 		"speciesId": "muk_alolan",
 		"fastMove": "SNARL",
 		"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"]
-	},
-	{
-		"speciesId": "ariados",
-		"fastMove": "POISON_STING",
-		"chargedMoves": ["CROSS_POISON","LUNGE"]
 	},
 	{
 		"speciesId": "qwilfish",

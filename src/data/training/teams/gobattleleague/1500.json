@@ -580,6 +580,13 @@
 					"weight":30
 				},
 				{
+					"speciesId": "cofagrigus",
+					"fastMove": "SHADOW_CLAW",
+					"chargedMoves": ["SHADOW_BALL","PSYCHIC"],
+					"difficulty": 3,
+					"weight":10
+				},
+				{
 					"speciesId": "haunter",
 					"fastMove": "SHADOW_CLAW",
 					"chargedMoves": ["SHADOW_PUNCH","SLUDGE_BOMB"],
@@ -1647,6 +1654,21 @@
             "speciesId": "politoed",
             "fastMove": "MUD_SHOT",
             "chargedMoves": ["WEATHER_BALL_WATER", "EARTHQUAKE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "cofagrigus",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["SHADOW_BALL", "PSYCHIC"]
+        }, {
+            "speciesId": "azumarill",
+            "fastMove": "BUBBLE",
+            "chargedMoves": ["PLAY_ROUGH", "HYDRO_PUMP"]
+        }, {
+            "speciesId": "vigoroth",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["BODY_SLAM", "BULLDOZE"]
         }],
         "weight": 1
     }, {

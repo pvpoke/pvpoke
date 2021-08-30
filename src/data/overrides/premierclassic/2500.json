@@ -29,6 +29,22 @@
 		"fastMove": "DRAGON_TAIL"
 	},
 	{
+		"speciesId": "heracross",
+		"chargedMoves": ["ROCK_BLAST", "CLOSE_COMBAT"]
+	},
+	{
+		"speciesId": "cofagrigus",
+		"chargedMoves": ["SHADOW_BALL", "PSYCHIC"]
+	},
+	{
+		"speciesId": "ampharos",
+		"chargedMoves": ["THUNDER_PUNCH", "FOCUS_BLAST"]
+	},
+	{
+		"speciesId": "ampharos_shadow",
+		"chargedMoves": ["THUNDER_PUNCH", "FOCUS_BLAST"]
+	},
+	{
 		"speciesId": "flygon_shadow",
 		"fastMove": "DRAGON_TAIL"
 	},

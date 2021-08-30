@@ -31,6 +31,10 @@
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["MUD_BOMB", "BLIZZARD"]
 }, {
+		"speciesId":"cofagrigus",
+		"fastMove":"SHADOW_CLAW",
+		"chargedMoves":["SHADOW_BALL","PSYCHIC"]
+}, {
     "speciesId": "machamp_shadow",
     "fastMove": "COUNTER",
     "chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]

@@ -45,9 +45,14 @@
 		"chargedMoves":["SKY_ATTACK","MOONBLAST"]
 	},
 	{
+		"speciesId":"cofagrigus",
+		"fastMove":"SHADOW_CLAW",
+		"chargedMoves":["SHADOW_BALL","PSYCHIC"]
+	},
+	{
 		"speciesId":"mandibuzz",
 		"fastMove":"SNARL",
-		"chargedMoves":["FOUL_PLAY","SHADOW_BALL"]
+		"chargedMoves":["FOUL_PLAY","AERIAL_ACE"]
 	},
 	{
 		"speciesId":"medicham",

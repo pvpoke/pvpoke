@@ -27,6 +27,36 @@
 		"chargedMoves": ["BUBBLE_BEAM", "ICE_BEAM"]
 	},
 	{
+		"speciesId": "cofagrigus",
+		"chargedMoves": ["SHADOW_BALL", "PSYCHIC"]
+	},
+	{
+		"speciesId": "heracross",
+		"chargedMoves": ["MEGAHORN", "ROCK_BLAST"]
+	},
+	{
+		"speciesId": "ampharos",
+		"chargedMoves": ["THUNDER_PUNCH", "FOCUS_BLAST"]
+	},
+	{
+		"speciesId": "ampharos_shadow",
+		"chargedMoves": ["THUNDER_PUNCH", "FOCUS_BLAST"]
+	},
+	{
+		"speciesId": "falinks",
+		"chargedMoves": ["SUPER_POWER", "MEGAHORN"]
+	},
+	{
+		"speciesId": "nidoking",
+		"fastMove": "POISON_JAB",
+		"chargedMoves": ["SAND_TOMB", "EARTH_POWER"]
+	},
+	{
+		"speciesId": "nidoking_shadow",
+		"fastMove": "POISON_JAB",
+		"chargedMoves": ["SAND_TOMB", "EARTH_POWER"]
+	},
+	{
 		"speciesId": "garchomp",
 		"fastMove": "DRAGON_TAIL",
 		"chargedMoves": ["SAND_TOMB", "OUTRAGE"]
@@ -429,7 +459,7 @@
 	{
 		"speciesId": "ariados",
 		"fastMove": "POISON_STING",
-		"chargedMoves": ["CROSS_POISON","LUNGE"]
+		"chargedMoves": ["CROSS_POISON","MEGAHORN"]
 	},
 	{
 		"speciesId": "qwilfish",

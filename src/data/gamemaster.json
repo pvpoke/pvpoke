@@ -971,6 +971,9 @@
         "exclude": [{
             "filterType": "id",
             "values": ["venusaur", "lickitung", "chansey", "azumarill", "umbreon", "wobbuffet", "skarmory", "sableye", "medicham", "altaria", "jellicent", "ninetales_alolan", "stunfisk_galarian"]
+        }, {
+            "filterType": "tag",
+            "values": ["mega"]
         }]
     }, {
         "name": "littlejungle",
@@ -2638,7 +2641,7 @@
         },
         "types": ["poison", "ground"],
         "fastMoves": ["FURY_CUTTER", "IRON_TAIL", "POISON_JAB"],
-        "chargedMoves": ["EARTHQUAKE", "MEGAHORN", "SLUDGE_WAVE", "EARTH_POWER"],
+        "chargedMoves": ["EARTHQUAKE", "MEGAHORN", "SLUDGE_WAVE", "EARTH_POWER", "SAND_TOMB"],
         "defaultIVs": {
             "cp500": [7.5, 5, 8, 12],
             "cp1500": [21.5, 6, 12, 15],
@@ -2662,7 +2665,7 @@
         },
         "types": ["poison", "ground"],
         "fastMoves": ["FURY_CUTTER", "IRON_TAIL", "POISON_JAB"],
-        "chargedMoves": ["EARTHQUAKE", "MEGAHORN", "SLUDGE_WAVE", "EARTH_POWER"],
+        "chargedMoves": ["EARTHQUAKE", "MEGAHORN", "SLUDGE_WAVE", "EARTH_POWER", "SAND_TOMB"],
         "defaultIVs": {
             "cp500": [7.5, 5, 8, 12],
             "cp1500": [21.5, 6, 12, 15],
@@ -3850,7 +3853,7 @@
         },
         "types": ["water", "fighting"],
         "fastMoves": ["BUBBLE", "MUD_SHOT", "ROCK_SMASH"],
-        "chargedMoves": ["DYNAMIC_PUNCH", "HYDRO_PUMP", "ICE_PUNCH", "SUBMISSION", "POWER_UP_PUNCH"],
+        "chargedMoves": ["DYNAMIC_PUNCH", "HYDRO_PUMP", "ICE_PUNCH", "SUBMISSION", "POWER_UP_PUNCH", "SCALD"],
         "defaultIVs": {
             "cp500": [7.5, 5, 8, 9],
             "cp1500": [22, 4, 7, 14],
@@ -3875,7 +3878,7 @@
         },
         "types": ["water", "fighting"],
         "fastMoves": ["BUBBLE", "MUD_SHOT", "ROCK_SMASH"],
-        "chargedMoves": ["DYNAMIC_PUNCH", "HYDRO_PUMP", "ICE_PUNCH", "SUBMISSION", "POWER_UP_PUNCH"],
+        "chargedMoves": ["DYNAMIC_PUNCH", "HYDRO_PUMP", "ICE_PUNCH", "SUBMISSION", "POWER_UP_PUNCH", "SCALD"],
         "defaultIVs": {
             "cp500": [7.5, 5, 8, 9],
             "cp1500": [22, 4, 7, 14],
@@ -9264,7 +9267,7 @@
         },
         "types": ["bug", "fighting"],
         "fastMoves": ["COUNTER", "STRUGGLE_BUG"],
-        "chargedMoves": ["CLOSE_COMBAT", "EARTHQUAKE", "MEGAHORN"],
+        "chargedMoves": ["CLOSE_COMBAT", "EARTHQUAKE", "MEGAHORN", "ROCK_BLAST"],
         "tags": ["regional"],
         "defaultIVs": {
             "cp500": [6, 12, 12, 13],
@@ -12267,8 +12270,8 @@
             "hp": 172
         },
         "types": ["electric", "none"],
-        "fastMoves": ["CHARGE_BEAM", "SNARL"],
-        "chargedMoves": ["FLAME_BURST", "THUNDER", "WILD_CHARGE"],
+        "fastMoves": ["CHARGE_BEAM", "SNARL", "THUNDER_FANG"],
+        "chargedMoves": ["FLAME_BURST", "THUNDER", "WILD_CHARGE", "OVERHEAT"],
         "defaultIVs": {
             "cp500": [8, 3, 15, 12],
             "cp1500": [24, 3, 13, 12],
@@ -12290,8 +12293,8 @@
             "hp": 172
         },
         "types": ["electric", "none"],
-        "fastMoves": ["CHARGE_BEAM", "SNARL"],
-        "chargedMoves": ["FLAME_BURST", "THUNDER", "WILD_CHARGE"],
+		"fastMoves": ["CHARGE_BEAM", "SNARL", "THUNDER_FANG"],
+        "chargedMoves": ["FLAME_BURST", "THUNDER", "WILD_CHARGE", "OVERHEAT"],
         "tags": ["mega"],
         "defaultIVs": {
             "cp500": [5.5, 5, 4, 11],
@@ -12311,8 +12314,8 @@
             "hp": 172
         },
         "types": ["electric", "none"],
-        "fastMoves": ["CHARGE_BEAM", "SNARL"],
-        "chargedMoves": ["FLAME_BURST", "THUNDER", "WILD_CHARGE"],
+		"fastMoves": ["CHARGE_BEAM", "SNARL", "THUNDER_FANG"],
+        "chargedMoves": ["FLAME_BURST", "THUNDER", "WILD_CHARGE", "OVERHEAT"],
         "defaultIVs": {
             "cp500": [8, 4, 14, 12],
             "cp1500": [23.5, 5, 14, 14],
@@ -13393,7 +13396,7 @@
         },
         "types": ["normal", "none"],
         "fastMoves": ["HEX", "TACKLE"],
-        "chargedMoves": ["ENERGY_BALL", "HURRICANE", "WEATHER_BALL_ROCK"],
+        "chargedMoves": ["ENERGY_BALL", "HURRICANE", "WEATHER_BALL_ROCK", "WEATHER_BALL_NORMAL"],
         "defaultIVs": {
             "cp500": [12, 4, 6, 12],
             "cp1500": [38.5, 6, 14, 15],
@@ -19721,7 +19724,7 @@
             "hp": 151
         },
         "types": ["ghost", "none"],
-        "fastMoves": ["ASTONISH", "ZEN_HEADBUTT"],
+        "fastMoves": ["ASTONISH", "ZEN_HEADBUTT", "SHADOW_CLAW"],
         "chargedMoves": ["SHADOW_BALL", "DARK_PULSE", "PSYCHIC"],
         "defaultIVs": {
             "cp500": [8.5, 4, 9, 9],
@@ -25936,7 +25939,10 @@
         "energy": 45,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "General"
+		"buffs": [0, -1],
+        "buffTarget": "opponent",
+        "buffApplyChance": "0.3",
+        "archetype": "Debuff"
     }, {
         "moveId": "CUT",
         "name": "Cut",
@@ -26208,7 +26214,7 @@
         "abbreviation": "FrD",
         "type": "flying",
         "power": 35,
-        "energy": 45,
+        "energy": 50,
         "energyGain": 0,
         "cooldown": 500,
         "buffs": [-2, 0],
@@ -26865,7 +26871,7 @@
         "name": "Megahorn",
         "abbreviation": "Mh",
         "type": "bug",
-        "power": 100,
+        "power": 110,
         "energy": 55,
         "energyGain": 0,
         "cooldown": 500,
@@ -27374,10 +27380,13 @@
         "abbreviation": "Sc",
         "type": "water",
         "power": 80,
-        "energy": 60,
+        "energy": 50,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "High Energy"
+		"buffs": [-1, 0],
+        "buffTarget": "self",
+        "buffApplyChance": "0.3",
+        "archetype": "High Energy Debuff"
     }, {
         "moveId": "SCALD_BLASTOISE",
         "name": "Scald Blastoise",
@@ -27910,7 +27919,7 @@
         "moveId": "WEATHER_BALL_FIRE",
         "name": "Weather Ball (Fire)",
         "type": "fire",
-        "power": 60,
+        "power": 55,
         "energy": 35,
         "energyGain": 0,
         "cooldown": 500,
@@ -27919,7 +27928,7 @@
         "moveId": "WEATHER_BALL_ICE",
         "name": "Weather Ball (Ice)",
         "type": "ice",
-        "power": 60,
+        "power": 55,
         "energy": 35,
         "energyGain": 0,
         "cooldown": 500,
@@ -27928,7 +27937,7 @@
         "moveId": "WEATHER_BALL_ROCK",
         "name": "Weather Ball (Rock)",
         "type": "rock",
-        "power": 60,
+        "power": 55,
         "energy": 35,
         "energyGain": 0,
         "cooldown": 500,
@@ -27937,7 +27946,7 @@
         "moveId": "WEATHER_BALL_NORMAL",
         "name": "Weather Ball (Normal)",
         "type": "normal",
-        "power": 60,
+        "power": 55,
         "energy": 35,
         "energyGain": 0,
         "cooldown": 500,
@@ -27946,7 +27955,7 @@
         "moveId": "WEATHER_BALL_WATER",
         "name": "Weather Ball (Water)",
         "type": "water",
-        "power": 60,
+        "power": 55,
         "energy": 35,
         "energyGain": 0,
         "cooldown": 500,
@@ -28026,7 +28035,10 @@
         "energy": 80,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "Nuke"
+		"buffs": [-1, 0],
+        "buffTarget": "opponent",
+        "buffApplyChance": "1",
+        "archetype": "Debuff Nuke"
     }, {
         "moveId": "ZEN_HEADBUTT",
         "name": "Zen Headbutt",

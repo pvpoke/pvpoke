@@ -34,12 +34,9 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.23.0 (August 26, 2021)</h4>
+	<h4>v1.23.1 (August 30, 2021)</h4>
 	<ul>
-		<li>Site is updated with rankings and resources for upcoming Season 9 formats including Classic formats.</li>
-		<ul>
-			<li>Moves currently use their Season 8 values. Rankings will be updated at the beginning of Season 9 once the full move values are known.</li>
-		</ul>
+		<li>Site is updated with move changes for Season 9!</li>
 	</ul>
 
 	<h3>Latest Article</h3>

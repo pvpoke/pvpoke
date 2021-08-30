@@ -30,6 +30,10 @@
 		"chargedMoves": ["SUPER_POWER", "MEGAHORN"]
 	},
 	{
+		"speciesId": "cofagrigus",
+		"chargedMoves": ["SHADOW_BALL", "PSYCHIC"]
+	},
+	{
 		"speciesId": "crobat",
 		"chargedMoves": ["POISON_FANG", "SHADOW_BALL"]
 	},
@@ -305,6 +309,24 @@
 	{
 		"speciesId": "ampharos",
 		"chargedMoves": ["THUNDER_PUNCH", "FOCUS_BLAST"]
+	},
+	{
+		"speciesId": "ampharos_shadow",
+		"chargedMoves": ["THUNDER_PUNCH", "FOCUS_BLAST"]
+	},
+	{
+		"speciesId": "nidoking",
+		"fastMove": "POISON_JAB",
+		"chargedMoves": ["SAND_TOMB", "EARTH_POWER"]
+	},
+	{
+		"speciesId": "nidoking_shadow",
+		"fastMove": "POISON_JAB",
+		"chargedMoves": ["SAND_TOMB", "EARTH_POWER"]
+	},
+	{
+		"speciesId": "heracross",
+		"chargedMoves": ["ROCK_BLAST", "MEGAHORN"]
 	},
 	{
 		"speciesId": "sceptile",
