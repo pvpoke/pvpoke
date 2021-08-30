@@ -27384,7 +27384,7 @@
         "energyGain": 0,
         "cooldown": 500,
 		"buffs": [-1, 0],
-        "buffTarget": "self",
+        "buffTarget": "opponent",
         "buffApplyChance": "0.3",
         "archetype": "High Energy Debuff"
     }, {
