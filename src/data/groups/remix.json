@@ -30,10 +30,14 @@
     "speciesId": "whiscash",
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["MUD_BOMB", "BLIZZARD"]
+},	{
+	"speciesId":"greedent",
+	"fastMove":"BULLET_SEED",
+	"chargedMoves":["BODY_SLAM","CRUNCH"]
 }, {
-		"speciesId":"cofagrigus",
-		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["SHADOW_BALL","PSYCHIC"]
+	"speciesId":"cofagrigus",
+	"fastMove":"SHADOW_CLAW",
+	"chargedMoves":["SHADOW_BALL","PSYCHIC"]
 }, {
     "speciesId": "machamp_shadow",
     "fastMove": "COUNTER",
