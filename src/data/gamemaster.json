@@ -984,7 +984,7 @@
         }],
         "exclude": [{
             "filterType": "id",
-            "values": ["shuckle", "shuckle_shadow", "smeargle", "genesect", "celebi"]
+            "values": ["shuckle", "shuckle_shadow", "smeargle", "genesect", "celebi", "hoopa"]
         }, {
             "filterType": "tag",
             "values": ["legendary", "mega"]
@@ -22554,7 +22554,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false
+        "released": true
     }, {
         "dex": 687,
         "speciesName": "Malamar",
@@ -22575,7 +22575,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false
+        "released": true
     }, {
         "dex": 688,
         "speciesName": "Binacle",
@@ -23247,9 +23247,10 @@
             "cp1500": [16, 9, 14, 15],
             "cp2500": [27.5, 5, 13, 10]
         },
+		"tags": ["mythical"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": true
     }, {
         "dex": 720,
         "speciesName": "Hoopa_confined",
@@ -23267,6 +23268,7 @@
             "cp1500": [16, 9, 14, 15],
             "cp2500": [27.5, 5, 13, 10]
         },
+		"tags": ["mythical"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": false
@@ -23287,6 +23289,7 @@
             "cp1500": [13.5, 8, 11, 15],
             "cp2500": [23, 4, 11, 12]
         },
+		"tags": ["mythical"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": false
