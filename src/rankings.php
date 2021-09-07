@@ -153,8 +153,6 @@ require_once 'header.php';
 
 	<p>Click or tap the rankings below for more details.</p>
 
-	<p class="little-jungle hide" style="padding:5px; color: rgb(225 111 35); border-radius:8px; border: 1px solid rgb(225 111 35); font-size:14px;">Details on the Little Jungle Cup ruleset currently need confirmation. Consider waiting before making any investments.</p>
-
 	<div class="check <?php if($_SETTINGS->xls): echo "on"; endif; ?> xl" style="margin-bottom:15px;"><span></span>Show XL Pokemon</div>
 
 	<div class="check on limited hide"><span></span>Show <div class="limited-title">Limited Pokemon</div>*</div>
