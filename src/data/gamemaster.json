@@ -21771,6 +21771,7 @@
         "types": ["grass", "none"],
         "fastMoves": ["TAKE_DOWN", "VINE_WHIP"],
         "chargedMoves": ["GYRO_BALL", "SEED_BOMB", "BODY_SLAM"],
+        "tags": ["starter"],
         "defaultIVs": {
             "cp500": [18, 4, 12, 10],
             "cp1500": [50, 15, 15, 15],
@@ -21791,6 +21792,7 @@
         "types": ["grass", "none"],
         "fastMoves": ["LOW_KICK", "VINE_WHIP"],
         "chargedMoves": ["GYRO_BALL", "ENERGY_BALL", "BODY_SLAM"],
+        "tags": ["starter"],
         "defaultIVs": {
             "cp500": [11, 6, 9, 14],
             "cp1500": [35.5, 5, 14, 13],
@@ -21811,6 +21813,7 @@
         "types": ["grass", "fighting"],
         "fastMoves": ["LOW_KICK", "SMACK_DOWN", "VINE_WHIP"],
         "chargedMoves": ["GYRO_BALL", "ENERGY_BALL", "SUPER_POWER", "SOLAR_BEAM"],
+        "tags": ["starter"],
         "defaultIVs": {
             "cp500": [6.5, 5, 15, 9],
             "cp1500": [19, 5, 10, 11],
@@ -21831,6 +21834,7 @@
         "types": ["fire", "none"],
         "fastMoves": ["SCRATCH", "EMBER"],
         "chargedMoves": ["PSYSHOCK", "FLAMETHROWER", "FLAME_CHARGE"],
+        "tags": ["starter"],
         "defaultIVs": {
             "cp500": [19, 4, 14, 9],
             "cp1500": [50, 15, 15, 15],
@@ -21851,6 +21855,7 @@
         "types": ["fire", "none"],
         "fastMoves": ["SCRATCH", "EMBER"],
         "chargedMoves": ["PSYSHOCK", "FLAMETHROWER", "FLAME_CHARGE"],
+        "tags": ["starter"],
         "defaultIVs": {
             "cp500": [10.5, 4, 12, 9],
             "cp1500": [31.5, 5, 14, 14],
@@ -21871,6 +21876,7 @@
         "types": ["fire", "psychic"],
         "fastMoves": ["SCRATCH", "FIRE_SPIN", "ZEN_HEADBUTT"],
         "chargedMoves": ["PSYCHIC", "FLAMETHROWER", "FLAME_CHARGE", "FIRE_BLAST"],
+        "tags": ["starter"],
         "defaultIVs": {
             "cp500": [6, 13, 14, 15],
             "cp1500": [18, 4, 15, 12],
@@ -21891,6 +21897,7 @@
         "types": ["water", "none"],
         "fastMoves": ["POUND", "BUBBLE"],
         "chargedMoves": ["WATER_PULSE", "AERIAL_ACE", "SURF"],
+        "tags": ["starter"],
         "defaultIVs": {
             "cp500": [19.5, 5, 15, 8],
             "cp1500": [50, 15, 15, 15],
@@ -21911,6 +21918,7 @@
         "types": ["water", "none"],
         "fastMoves": ["POUND", "BUBBLE"],
         "chargedMoves": ["WATER_PULSE", "AERIAL_ACE", "SURF"],
+        "tags": ["starter"],
         "defaultIVs": {
             "cp500": [11.5, 5, 15, 10],
             "cp1500": [39.5, 4, 12, 13],
@@ -21930,6 +21938,7 @@
         },
         "types": ["water", "dark"],
         "fastMoves": ["FEINT_ATTACK", "BUBBLE"],
+        "tags": ["starter"],
         "chargedMoves": ["NIGHT_SLASH", "AERIAL_ACE", "SURF", "HYDRO_PUMP"],
         "defaultIVs": {
             "cp500": [7, 9, 15, 11],
