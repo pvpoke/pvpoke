@@ -168,13 +168,13 @@
             "floor": 0,
             "tiers": [{
                 "points": 9,
-                "pokemon": ["altaria", "azumarill", "bastiodon", "chansey", "skarmory", "deoxys_defense", "medicham", "pidgeot", "stunfisk_galarian", "tropius"]
+                "pokemon": ["altaria", "azumarill", "bastiodon", "deoxys_defense", "lickitung", "skarmory", "medicham", "stunfisk_galarian"]
             }, {
                 "points": 5,
-                "pokemon": ["abomasnow", "cresselia", "dewgong", "diggersby", "ferrothorn", "galvantula", "granbull", "hypno", "hypno_shadow", "ivysaur", "jellicent", "lapras", "lickitung", "marowak_alolan", "machamp", "mandibuzz", "meganium", "nidoqueen", "ninetales_alolan", "politoed", "registeel", "sableye", "scrafty", "serperior", "swampert", "talonflame", "umbreon", "venusaur", "whiscash", "wobbuffet", "zweilous"]
+                "pokemon": ["abomasnow", "chansey", "cofagrigus", "cresselia", "dewgong", "diggersby", "ferrothorn", "galvantula", "hypno", "jellicent", "lapras", "marowak_alolan", "machamp", "mandibuzz", "meganium", "nidoqueen", "ninetales_alolan", "pidgeot", "politoed", "registeel", "sableye", "scrafty", "serperior", "swampert", "talonflame", "tropius", "umbreon", "venusaur", "whiscash", "wobbuffet", "zweilous"]
             }, {
                 "points": 1,
-                "pokemon": ["aromatisse", "beedrill", "bronzong", "cherrim_sunny", "castform_rainy", "castform_sunny", "chesnaught", "clefable", "drapion", "drifblim", "empoleon", "froslass", "gardevoir", "gengar", "golbat", "haunter", "jirachi", "jumpluff", "lanturn", "lugia", "mantine", "melmetal", "mew", "muk_alolan", "ninetales", "noctowl", "obstagoon", "pachirisu", "pelipper", "probopass", "regirock", "raichu_alolan", "roserade", "shiftry", "sirfetchd", "slurpuff", "spritzee", "stunfisk", "sylveon", "toxicroak", "victreebel", "vigoroth", "whimsicott", "wigglytuff", "zapdos"]
+                "pokemon": ["aromatisse", "beedrill", "bronzong", "castform_rainy", "castform_sunny", "chesnaught", "clefable", "drapion", "drifblim", "empoleon", "froslass", "gardevoir", "granbull", "greedent", "gengar", "golbat", "grimer_alolan", "haunter", "jirachi", "jumpluff", "lanturn", "lugia", "mantine", "melmetal", "mew", "muk_alolan", "ninetales", "noctowl", "obstagoon", "pachirisu", "pelipper", "probopass", "regirock", "raichu_alolan", "roserade", "shiftry", "sirfetchd", "skuntank", "slurpuff", "spritzee", "stunfisk", "sylveon", "toxicroak", "victreebel", "vigoroth", "whimsicott", "wigglytuff", "zapdos"]
             }]
         }
     }, {
