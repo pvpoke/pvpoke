@@ -104,12 +104,12 @@ var InterfaceMaster = (function () {
 
 			this.close = function(){
 				for(var i = 0; i < 4; i++){
-					$(".section").eq(i).slideUp(500);
+					$(".section").eq(i).hide();
 				}
 
-				$(".section.updates").slideUp(500);
+				$(".section.updates").hide();
 
-				$("#main h1").slideUp(500);
+				$("#main h1").hide();
 				$("footer").hide();
 			}
 
@@ -117,12 +117,12 @@ var InterfaceMaster = (function () {
 
 			this.open = function(){
 				for(var i = 0; i < 3; i++){
-					$(".section:not('.mega-warning')").eq(i).slideDown(500);
+					$(".section:not('.mega-warning')").eq(i).show();
 				}
 
-				$(".section.updates").slideDown(500);
+				$(".section.updates").show();
 
-				$("#main h1").slideDown(500);
+				$("#main h1").show();
 				$("footer").show();
 			}
 
