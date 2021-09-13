@@ -18387,7 +18387,8 @@
         },
         "types": ["water", "none"],
         "fastMoves": ["FURY_CUTTER", "WATERFALL"],
-        "chargedMoves": ["HYDRO_PUMP", "BLIZZARD", "MEGAHORN"],
+        "chargedMoves": ["HYDRO_PUMP", "BLIZZARD", "MEGAHORN", "HYDRO_CANNON"],
+		"eliteMoves": ["HYDRO_CANNON"],
         "tags": ["starter"],
         "defaultIVs": {
             "cp500": [6.5, 12, 15, 13],
@@ -22339,7 +22340,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false
+        "released": true
     }, {
         "dex": 677,
         "speciesName": "Espurr",
@@ -23339,7 +23340,7 @@
             "cp1500": [50, 15, 15, 15],
             "cp2500": [50, 15, 15, 15]
         },
-        "tags": ["mythical"],
+        "tags": ["mythical", "include1500"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
