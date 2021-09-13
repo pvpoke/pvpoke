@@ -110,6 +110,7 @@ var InterfaceMaster = (function () {
 				$(".section.updates").slideUp(500);
 
 				$("#main h1").slideUp(500);
+				$("footer").hide();
 			}
 
 			// Show setup after battle
@@ -122,6 +123,7 @@ var InterfaceMaster = (function () {
 				$(".section.updates").slideDown(500);
 
 				$("#main h1").slideDown(500);
+				$("footer").show();
 			}
 
 			this.openTeamSelect = function(players, roundRecord){
