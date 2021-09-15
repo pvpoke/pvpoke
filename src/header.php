@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.23.1.14';
+$SITE_VERSION = '1.23.2';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -102,7 +102,7 @@ if(! isset($OG_IMAGE)){
 <link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json?v=2">
 
 <link rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=121">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=122">
 
 <?php if(strpos($META_TITLE, 'Train') !== false): ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=20">
@@ -214,6 +214,7 @@ if(! isset($OG_IMAGE)){
 							<a class="icon-contribute" href="<?php echo $WEB_ROOT; ?>contribute/">Contribute</a>
 							<a class="icon-settings" href="<?php echo $WEB_ROOT; ?>settings/">Settings</a>
 							<a class="icon-twitter" href="https://twitter.com/pvpoke" target="_blank">Twitter</a>
+							<a class="icon-unite" href="https://unite.pvpoke.com">PvPoke Unite</a>
 						</div>
 					</div>
 				</div>

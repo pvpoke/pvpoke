@@ -224,6 +224,14 @@ header {
   display: none;
 }
 
+.icon-unite {
+  background-image: url("../img/favicon-unite.png");
+  min-height: 18px;
+}
+.icon-unite span {
+  display: none;
+}
+
 .flex {
   display: flex;
 }
