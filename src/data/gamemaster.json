@@ -18387,7 +18387,7 @@
         },
         "types": ["water", "none"],
         "fastMoves": ["FURY_CUTTER", "WATERFALL"],
-        "chargedMoves": ["HYDRO_PUMP", "BLIZZARD", "MEGAHORN", "HYDRO_CANNON"],
+        "chargedMoves": ["HYDRO_PUMP", "BLIZZARD", "MEGAHORN", "RAZOR_SHELL", "HYDRO_CANNON"],
 		"eliteMoves": ["HYDRO_CANNON"],
         "tags": ["starter"],
         "defaultIVs": {
@@ -27290,6 +27290,19 @@
         "energyGain": 4,
         "cooldown": 1000,
         "archetype": "Heavy Damage"
+    }, {
+        "moveId": "RAZOR_SHELL",
+        "name": "Razor Shell",
+        "abbreviation": "RSh",
+        "type": "water",
+        "power": 35,
+        "energy": 35,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [0, -1],
+        "buffTarget": "opponent",
+        "buffApplyChance": "0.5",
+        "archetype": "Debuff"
     }, {
         "moveId": "REST",
         "name": "Rest",
