@@ -17,6 +17,7 @@
 	},
 	{
 		"speciesId": "swinub",
+		"chargedMoves": ["ICY_WIND", "ROCK_SLIDE"],
 		"weight": 3
 	},
 	{
@@ -34,6 +35,14 @@
 	{
 		"speciesId": "forretress",
 		"chargedMoves": ["MIRROR_SHOT", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "gliscor",
+		"chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "gliscor_shadow",
+		"chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"]
 	},
 	{
 		"speciesId": "litleo",
@@ -141,6 +150,22 @@
 	{
 		"speciesId": "skorupi",
 		"chargedMoves": ["AQUA_TAIL", "SLUDGE_BOMB"]
+	},
+	{
+		"speciesId": "whimsicott",
+		"chargedMoves": ["GRASS_KNOT", "HURRICANE"]
+	},
+	{
+		"speciesId": "shelmet",
+		"chargedMoves": ["BODY_SLAM", "BUG_BUZZ"]
+	},
+	{
+		"speciesId": "escavalier",
+		"chargedMoves": ["DRILL_RUN", "AERIAL_ACE"]
+	},
+	{
+		"speciesId": "heracross",
+		"chargedMoves": ["ROCK_BLAST", "MEGAHORN"]
 	},
 	{
 		"speciesId": "drapion",
