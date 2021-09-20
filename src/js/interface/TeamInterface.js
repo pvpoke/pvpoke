@@ -17,7 +17,8 @@ var InterfaceMaster = (function () {
 				new PokeMultiSelect($(".team .poke.multi")),
 				new PokeMultiSelect($(".custom-threats .poke.multi")),
 				new PokeMultiSelect($(".custom-alternatives .poke.multi")),
-				new PokeMultiSelect($(".exclude-alternatives .poke.multi"))
+				new PokeMultiSelect($(".exclude-alternatives .poke.multi")),
+				new PokeMultiSelect($(".exclude-threats .poke.multi"))
 			];
 			var results; // Store team matchup results for later reference
 			var self = this;
@@ -470,6 +471,12 @@ var InterfaceMaster = (function () {
 				var count = 0;
 				var total = scorecardCount;
 				var i = 0;
+				var excludedThreats = multiSelectors[4].getPokemonList();
+				var excludedThreatIDs = [];
+
+				for(var i = 0; i < excludedThreats.length; i++){
+					excludedThreatIDs.push(excludedThreats[i].speciesId);
+				}
 
 				while((count < total)&&(i < counterRankings.length)){
 					var r = counterRankings[i];
@@ -480,6 +487,11 @@ var InterfaceMaster = (function () {
 					}
 
 					if(r.speciesId.indexOf("_xs") > -1){
+						i++;
+						continue;
+					}
+
+					if(excludedThreatIDs.indexOf(r.speciesId) > -1){
 						i++;
 						continue;
 					}
@@ -586,6 +598,11 @@ var InterfaceMaster = (function () {
 					}
 
 					if((r.speciesId.indexOf("_xs") > -1)&&(allowXL)){
+						i++;
+						continue;
+					}
+
+					if(excludedThreatIDs.indexOf(r.speciesId) > -1){
 						i++;
 						continue;
 					}
@@ -821,7 +838,7 @@ var InterfaceMaster = (function () {
 							continue;
 						}
 					}
-					
+
 					// Add results to alternatives table
 
 					$row = $("<tr><th class=\"name\"><b>"+(count+1)+". "+pokemon.speciesName+"<div class=\"button add\" pokemon=\""+pokemon.speciesId+"\">+</div></b></th></tr>");

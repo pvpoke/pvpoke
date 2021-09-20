@@ -1256,7 +1256,7 @@ select, input {
   background: #43ff85;
 }
 .battle-results .tip {
-  margin-top: 15px;
+  margin: 15px;
   text-align: center;
 }
 .battle-results .battle-details, .battle-results.matrix {
@@ -1852,6 +1852,7 @@ a.download-csv {
 }
 .rank .moves {
   display: flex;
+  flex-wrap: wrap;
   font-size: 12px;
 }
 .rank .moves .move {
@@ -1866,6 +1867,17 @@ a.download-csv {
 }
 .rank .moves .move:first-of-type {
   border: none;
+}
+.rank .moves .count {
+  display: none;
+  margin-left: 5px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  border-radius: 20px;
+  min-width: 16px;
+  text-align: center;
+  font-size: 11px;
+  padding-top: 1px;
 }
 .rank .cliffhanger-points {
   border: 1px solid;
@@ -2134,10 +2146,10 @@ a.download-csv {
   min-width: 50px;
   text-align: right;
 }
-.rank .details .detail-section .moveset .name-container.stats-container.move-effect {
+.rank .details .detail-section .moveset .name-container.stats-container.move-effect, .rank .details .detail-section .moveset .name-container.stats-container.move-count {
   justify-content: flex-start;
 }
-.rank .details .detail-section .moveset .name-container.stats-container.move-effect div {
+.rank .details .detail-section .moveset .name-container.stats-container.move-effect div, .rank .details .detail-section .moveset .name-container.stats-container.move-count div {
   margin: 5px 5px 0 0;
 }
 .rank .details .detail-section .moveset .stats-container {
@@ -2274,6 +2286,17 @@ a.download-csv {
 }
 .rank .details h2 {
   margin: 0 0 5px 0;
+}
+
+.rankings-container.show-move-counts .count {
+  display: inline-block;
+}
+
+.ranking-checks {
+  font-size: 14px;
+}
+.ranking-checks .check.xl {
+  margin-right: 10px;
 }
 
 .traits,

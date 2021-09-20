@@ -35,7 +35,14 @@ require_once 'header.php';
 				</div>
 			</div>
 			<div class="flex-section">
-				<h3 class="section-title">Exclude</h3>
+				<h3 class="section-title">Exclude Threats</h3>
+				<p>Exclude these Pokemon from the list of threats.</p>
+				<div class="team-build exclude-threats">
+					<?php require 'modules/pokemultiselect.php'; ?>
+				</div>
+			</div>
+			<div class="flex-section">
+				<h3 class="section-title">Exclude Alternatives</h3>
 				<p>Exclude these Pokemon from your suggested alternatives.</p>
 				<div class="team-build exclude-alternatives">
 					<?php require 'modules/pokemultiselect.php'; ?>

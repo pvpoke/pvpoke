@@ -134,6 +134,7 @@
 					<div class="dpe"><b class="value">0</b> dpe</div>
 				</div>
 				<div class="stats-container name-container move-effect flex"></div>
+				<div class="stats-container name-container move-count"><div>Fast Move Count: <span></span></div></div>
 			</div>
 		</div>
 	</div>

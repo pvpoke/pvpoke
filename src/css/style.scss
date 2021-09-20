@@ -1531,7 +1531,7 @@ select, input{
 	}
 
 	.tip{
-		margin-top:15px;
+		margin:15px;
 		text-align:center;
 	}
 
@@ -2136,6 +2136,7 @@ a.download-csv{
 
 	.moves{
 		display:flex;
+		flex-wrap: wrap;
 		font-size:12px;
 
 		.move{
@@ -2151,6 +2152,18 @@ a.download-csv{
 			&:first-of-type{
 				border:none;
 			}
+		}
+
+		.count{
+			display:none;
+			margin-left:5px;
+			background:rgba(0,0,0,0.6);
+			color:#fff;
+			border-radius: 20px;
+			min-width: 16px;
+			text-align: center;
+			font-size:11px;
+			padding-top: 1px;
 		}
 	}
 
@@ -2474,7 +2487,8 @@ a.download-csv{
 							text-align: right;
 						}
 
-						&.move-effect{
+						&.move-effect,
+						&.move-count{
 							justify-content: flex-start;
 
 							div{
@@ -2629,6 +2643,18 @@ a.download-csv{
 		}
 
 		h2{ margin: 0 0 5px 0; }
+	}
+}
+
+.rankings-container.show-move-counts .count{
+	display:inline-block;
+}
+
+.ranking-checks{
+	font-size:14px;
+
+	.check.xl{
+		margin-right:10px;
 	}
 }
 
