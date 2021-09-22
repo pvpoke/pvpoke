@@ -6,7 +6,7 @@
 	<option value="official" cup="littlejungle">Little Jungle Cup</option>
 	<option value="tsa-3" cup="factions">Silph Factions (Dungeon)</option>
 	<option value="tsa-3" cup="nightfall">Silph Factions (Nightfall)</option>
-	<option value="tsa-3" cup="worlds">Silph Worlds</option>
+	<option value="tsa-3" cup="lunar">Silph Lunar Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>
