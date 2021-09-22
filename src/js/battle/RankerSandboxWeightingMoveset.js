@@ -419,7 +419,7 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
-				if((cup.name == "worlds")&&(battle.getCP() == 1500)){
+				if(cup.name == "lunar"){
 					iterations = 1;
 				}
 

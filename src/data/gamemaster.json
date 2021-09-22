@@ -989,7 +989,21 @@
             "filterType": "tag",
             "values": ["legendary", "mega"]
         }]
-    }],
+    }, {
+        "name": "lunar",
+        "title": "Lunar Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["bug","dark","electric","ghost","grass"]
+        }],
+        "exclude": [{
+            "filterType": "id",
+            "values": ["scrafty","pachirisu","stunfisk","marowak_alolan","whimsicott","vullaby"]
+        }, {
+            "filterType": "tag",
+            "values": ["mega", "shadow"]
+        }]
+    } ],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xs"],
     "pokemonTraits": {
         "pros": ["bulky", "extremely bulky", "spammy", "agile", "flexible", "dynamic", "fast move pressure", "shield pressure", "defensive", "momentum"],

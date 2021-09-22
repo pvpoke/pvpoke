@@ -1,0 +1,196 @@
+[
+	{
+		"speciesId": "forretress",
+		"chargedMoves": ["MIRROR_SHOT", "EARTHQUAKE"],
+		"weight": 10
+	},
+	{
+		"speciesId": "forretress_shadow",
+		"chargedMoves": ["MIRROR_SHOT", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "ariados",
+		"fastMove": "POISON_STING",
+		"chargedMoves": ["LUNGE", "MEGAHORN"]
+	},
+	{
+		"speciesId": "breloom",
+		"chargedMoves": ["SEED_BOMB", "DYNAMIC_PUNCH"]
+	},
+	{
+		"speciesId": "muk_alolan",
+		"chargedMoves": ["ACID_SPRAY", "DARK_PULSE"]
+	},
+	{
+		"speciesId": "sableye",
+		"chargedMoves": ["FOUL_PLAY", "RETURN"],
+		"weight": 15
+	},
+	{
+		"speciesId": "sableye_xs",
+		"chargedMoves": ["FOUL_PLAY", "RETURN"]
+	},
+	{
+		"speciesId": "heracross",
+		"chargedMoves": ["ROCK_BLAST", "MEGAHORN"],
+		"weight": 4
+	},
+	{
+		"speciesId": "victreebel",
+		"fastMove": "RAZOR_LEAF",
+		"chargedMoves": ["ACID_SPRAY", "LEAF_BLADE"]
+	},
+	{
+		"speciesId": "victreebel_shadow",
+		"fastMove": "RAZOR_LEAF",
+		"chargedMoves": ["ACID_SPRAY", "LEAF_BLADE"]
+	},
+	{
+		"speciesId": "electivire",
+		"chargedMoves": ["ICE_PUNCH", "WILD_CHARGE"]
+	},
+	{
+		"speciesId": "electivire_shadow",
+		"chargedMoves": ["ICE_PUNCH", "WILD_CHARGE"]
+	},
+	{
+		"speciesId": "ampharos",
+		"chargedMoves": ["THUNDER_PUNCH", "FOCUS_BLAST"]
+	},
+	{
+		"speciesId": "ampharos_shadow",
+		"chargedMoves": ["THUNDER_PUNCH", "FOCUS_BLAST"]
+	},
+	{
+		"speciesId": "bellossom",
+		"chargedMoves": ["LEAF_BLADE", "DAZZLING_GLEAM"]
+	},
+	{
+		"speciesId": "jellicent",
+		"chargedMoves": ["BUBBLE_BEAM", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "haunter",
+		"chargedMoves": ["SHADOW_PUNCH", "SLUDGE_BOMB"]
+	},
+	{
+		"speciesId": "gengar",
+		"chargedMoves": ["SHADOW_PUNCH", "SLUDGE_BOMB"]
+	},
+	{
+		"speciesId": "bellossom_shadow",
+		"chargedMoves": ["LEAF_BLADE", "DAZZLING_GLEAM"]
+	},
+	{
+		"speciesId": "ferrothorn",
+		"chargedMoves": ["POWER_WHIP", "THUNDER"],
+		"weight": 4
+	},
+	{
+		"speciesId": "golem_alolan",
+		"chargedMoves": ["ROCK_BLAST", "STONE_EDGE"]
+	},
+	{
+		"speciesId": "electrode",
+		"chargedMoves": ["DISCHARGE", "HYPER_BEAM"]
+	},
+	{
+		"speciesId": "torterra",
+		"chargedMoves": ["FRENZY_PLANT", "SAND_TOMB"]
+	},
+	{
+		"speciesId": "electivire",
+		"chargedMoves": ["WILD_CHARGE", "ICE_PUNCH"]
+	},
+	{
+		"speciesId": "dusclops",
+		"chargedMoves": ["FIRE_PUNCH", "RETURN"]
+	},
+	{
+		"speciesId": "galvantula",
+		"chargedMoves": ["DISCHARGE", "LUNGE"],
+		"weight": 20
+	},
+	{
+		"speciesId": "wormadam_trash",
+		"fastMove": "BUG_BITE",
+		"weight": 5
+	},
+	{
+		"speciesId": "wormadam_sandy",
+		"fastMove": "BUG_BITE"
+	},
+	{
+		"speciesId": "chesnaught",
+		"fastMove": "SMACK_DOWN"
+	},
+	{
+		"speciesId": "crustle",
+		"fastMove": "SMACK_DOWN",
+		"weight": 5
+	},
+	{
+		"speciesId": "jumpluff",
+		"fastMove": "BULLET_SEED"
+	},
+	{
+		"speciesId": "houndoom",
+		"fastMove": "FIRE_FANG"
+	},
+	{
+		"speciesId": "roserade",
+		"fastMove": "POISON_JAB",
+		"chargedMoves": ["WEATHER_BALL_FIRE", "LEAF_STORM"],
+		"weight": 3
+	},
+	{
+		"speciesId": "lanturn",
+		"fastMove": "SPARK",
+		"weight": 9
+	},
+	{
+		"speciesId": "mandibuzz",
+		"fastMove": "AIR_SLASH",
+		"weight": 35
+	},
+	{
+		"speciesId": "magnezone",
+		"weight": 6
+	},
+	{
+		"speciesId": "cradily",
+		"weight": 4
+	},
+	{
+		"speciesId": "umbreon",
+		"weight": 10
+	},
+	{
+		"speciesId": "obstagoon",
+		"weight": 15
+	},
+	{
+		"speciesId": "escavalier",
+		"weight": 8
+	},
+	{
+		"speciesId": "graveler_alolan",
+		"weight": 15
+	},
+	{
+		"speciesId": "zweilous",
+		"weight": 10
+	},
+	{
+		"speciesId": "froslass",
+		"weight": 25
+	},
+	{
+		"speciesId": "raichu",
+		"weight": 2
+	},
+	{
+		"speciesId": "venusaur",
+		"weight": 6
+	}
+]

@@ -90,5 +90,6 @@
 	<option value="continentals-3" cat="tsa-3">Continentals</option>
 	<option value="factions" cat="tsa-3">Floating City</option>
 	<option value="worlds" cat="tsa-3">Silph Worlds</option>
+	<option value="lunar" cat="tsa-4">Silph Lunar Cup</option>
 	<option value="custom" cat="custom">Custom</option>
 </select>
