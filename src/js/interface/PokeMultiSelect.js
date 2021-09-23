@@ -550,7 +550,7 @@ function PokeMultiSelect(element){
 		return JSON.stringify(arr);
 	}
 
-	// Convert the current Pokemon list into exportable and saveable JSON
+	// Convert the current Pokemon list into exportable and savable JSON
 
 	this.convertListToCSV = function(){
 		var arr = [];
@@ -1007,8 +1007,6 @@ function PokeMultiSelect(element){
 			CP   	: $(".modal .check.cp-option").hasClass("on"),
 			region 	: $(".modal .check.region-option").hasClass("on")
 		}
-		
-		console.log(team);
 
 		// Sets values for each Pokemon
 
@@ -1021,6 +1019,11 @@ function PokeMultiSelect(element){
 			custom.CP[i] = (team[i].isCustom && toggles.CP) ? team[i].cp : false;
 			custom.HP[i] = (team[i].isCustom && toggles.HP) ? team[i].stats.hp : false;
 			duplicates[i] = false;
+
+			// Checks for Weather Ball (otherwise it will exclude all pokemon that have the move)
+
+			charge1[i] = charge1[i].includes("Weather Ball") ? "Weather Ball" : charge1[i]
+			charge2[i] = charge2[i].includes("Weather Ball") ? "Weather Ball" : charge2[i]
 
 			// Checks for duplicate pokemon IDs
 
@@ -1042,6 +1045,8 @@ function PokeMultiSelect(element){
 
 		var searchString = "";
 		var shadowString = "!shadow";
+		var nonshadowString = "shadow"
+		var idString = ""
 
 		for(var i = 0; i < team.length; i++){
 			var fastMoveString = "";
@@ -1051,6 +1056,7 @@ function PokeMultiSelect(element){
 			var hpString = "";
 			var regionString = "";
 			var currentIndex = i;
+			var isShadow = ""
 
 			// Builds combined search string for all pokemon that share this pokemon's id
 
@@ -1071,6 +1077,11 @@ function PokeMultiSelect(element){
 								&& regionString !== region[currentIndex]) 
 								? ((regionString === "") ? "" : ",") + region[currentIndex] : ""
 				region[i] = (this.getRegion(pokeID[i]) === region[currentIndex]) || region[i]
+				if(isShadow === "") {
+					isShadow = shadow[currentIndex] ? "yes" : "no"
+				} else {
+					isShadow = (isShadow === (shadow[currentIndex] ? "yes" : "no")) ? isShadow : "mixed"
+				}
 
 				if(duplicates[currentIndex]){
 					fastMoveString += ",";
@@ -1085,13 +1096,15 @@ function PokeMultiSelect(element){
 					fastMoveString += ",!" + pokeID[currentIndex] + "&"
 					charge1String += ",!" + pokeID[currentIndex] + "&"
 					charge2String += ",!" + pokeID[currentIndex] + "&"
+					idString += ((idString === "") ? "" : ",") + pokeID[i]
 					regionString += (region[i] === true) 
 								? ((regionString === "") ? "" : ",") 
 								+ this.getRegion(pokeID[i]) : ""
 					regionString += (regionString === "") ? "" : ",!" + pokeID[currentIndex] + "&"
 					cpString = custom.CP[i] ? (cpString + ",!" + pokeID[currentIndex] + "&") : "";
 					hpString = custom.HP[i] ? (hpString + ",!" + pokeID[currentIndex] + "&") : "";
-
+					shadowString += (isShadow !== "no") ? (((shadowString === "") ? "" : ",") + pokeID[i]) : "";
+					nonshadowString += (isShadow !== "yes") ? (((nonshadowString === "") ? "" : ",") + pokeID[i]) : "";
 					for(var j = team.length - 1; j >= 0; j--){
 						duplicates[j] = (pokeID[i] === pokeID[j]) ? true : duplicates[j]
 					}
@@ -1108,6 +1121,7 @@ function PokeMultiSelect(element){
 							+ ",@3" + charge1[i]
 							+ ",!" + pokeID[i] + "&"
 							;
+
 				if(charge2[i]) {
 					searchString += "@2" + charge2[i]
 								+ ",@3" + charge2[i]
@@ -1118,21 +1132,21 @@ function PokeMultiSelect(element){
 								+ ",!" + pokeID[i] + "&"
 								;
 				}
+
 				searchString += custom.CP[i] ? ("CP" + custom.CP[i] + ",!" + pokeID[i] + "&") : "";
 				searchString += custom.HP[i] ? ("HP" + custom.HP[i] + ",!" + pokeID[i] + "&") : "";
 				searchString += region[i] ? (region[i] + ",!" + pokeID[i] + "&") : "";
+				idString += ((idString === "") ? "" : ",") + pokeID[i]
+				shadowString += shadow[i] ? ("," + pokeID[i] + "") : "";
+				nonshadowString += shadow[i] ? "" : ("," + pokeID[i] + "");
 			} else {
 				searchString += fastMoveString + charge1String + charge2String + cpString + hpString + regionString;
 			}
-
-			shadowString += shadow[i] ? ("," + pokeID[i]) : "";
-			// previous method, saved until new method is fully tested
-			//searchString += (shadow[i] ? "&" : "&!") + "shadow,!" + pokeID[i] + "&"
-			//			+ (team[i + 1] ? "&" : "")
-			//			;
 		}
 
-		searchString += (team.length > 0) ? shadowString : ""
+		nonshadowString = (shadowString === "!shadow") ? "" : nonshadowString + "&" ;
+		searchString += ((team.length > 0) ? shadowString + "&" + nonshadowString : "") + idString;
+
 		$(".modal .team-string-text").val(searchString);
 		return searchString
 	}
