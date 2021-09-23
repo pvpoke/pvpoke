@@ -228,7 +228,15 @@ var InterfaceMaster = (function () {
 								if(r.moveset[n] == pokemon.chargedMovePool[j].moveId){
 									moveNameStr += pokemon.chargedMovePool[j].displayName;
 
-									var moveCount = Math.ceil(pokemon.chargedMovePool[j].energy / pokemon.fastMove.energyGain);
+									var cycle1Count = Math.ceil( (pokemon.chargedMovePool[j].energy * 1) / pokemon.fastMove.energyGain);
+									var cycle2Count = Math.ceil( (pokemon.chargedMovePool[j].energy * 2) / pokemon.fastMove.energyGain) - cycle1Count;
+									var cycle3Count = Math.ceil( (pokemon.chargedMovePool[j].energy * 3) / pokemon.fastMove.energyGain) - cycle1Count - cycle2Count;
+									var moveCount = cycle1Count;
+
+									if((cycle1Count > cycle2Count)||(cycle1Count > cycle3Count)){
+										moveCount+="-";
+									}
+
 									moveNameStr += "<span class=\"count\">"+moveCount+"</span>";
 									break;
 								}
