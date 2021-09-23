@@ -1497,6 +1497,47 @@ function Pokemon(id, i, b){
 		return false;
 	}
 
+	// Return whether or not this Pokemon has a specific move in its movepool
+
+	this.knowsMove = function(moveId){
+		moveId = moveId.toUpperCase();
+
+		for(var i = 0; i < self.fastMovePool.length; i++){
+			if(self.fastMovePool[i].moveId == moveId){
+				return true;
+			}
+		}
+
+		for(var i = 0; i < self.chargedMovePool.length; i++){
+			if(self.chargedMovePool[i].moveId == moveId){
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	// Return whether or not this Pokemon has a move of a specific type
+
+	this.knowsMoveType = function(type){
+
+		for(var i = 0; i < self.fastMovePool.length; i++){
+			if(self.fastMovePool[i].type == type){
+				if(self.fastMovePool[i].moveId.indexOf("HIDDEN_POWER") == -1){
+					return true;
+				}
+			}
+		}
+
+		for(var i = 0; i < self.chargedMovePool.length; i++){
+			if(self.chargedMovePool[i].type == type){
+				return true;
+			}
+		}
+
+		return false;
+	}
+
 	// Return whether or not this Pokemon has a move with buff or debuff effects
 
 	this.hasBuffMove = function(){

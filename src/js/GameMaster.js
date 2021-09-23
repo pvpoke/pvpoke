@@ -815,6 +815,22 @@ var GameMaster = (function () {
 										}
 									}
 									break;
+
+								case "move":
+									for(var k = 0; k < filter.values.length; k++){
+										if(pokemon.knowsMove(filter.values[k])){
+											filtersMatched++;
+										}
+									}
+									break;
+
+								case "moveType":
+									for(var k = 0; k < filter.values.length; k++){
+										if(pokemon.knowsMoveType(filter.values[k])){
+											filtersMatched++;
+										}
+									}
+									break;
 							}
 						}
 

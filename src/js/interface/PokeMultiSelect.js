@@ -413,35 +413,42 @@ function PokeMultiSelect(element){
 
 			var pokemon = new Pokemon(pokeSettings[0].toLowerCase(), 1, battle);
 
-			pokemon.initialize(cp);
-			if(pokeSettings[1]){
-				pokemon.setShadowType(pokeSettings[1]);
+			if(pokemon.initialize){
+				pokemon.initialize(cp);
+				if(pokeSettings[1]){
+					pokemon.setShadowType(pokeSettings[1]);
+				}
+
+				if(poke.length > 1){
+					// Set moves
+
+					pokemon.selectMove("fast", poke[1]);
+					pokemon.selectMove("charged", poke[2], 0);
+					pokemon.selectMove("charged", poke[3], 1);
+
+					// Set first slot to none if both are none
+
+					if((poke[2] == 'none')&&(poke[3] == 'none')){
+						pokemon.selectMove("charged", poke[3], 0);
+					}
+
+				} else{
+					// Select recommended moves
+					pokemon.selectRecommendedMoveset();
+				}
+				// Set any custom levels or ivs
+
+				if(poke.length > 4){
+					pokemon.isCustom = true;
+
+					pokemon.setLevel(parseFloat(poke[4]));
+					pokemon.setIV("atk", parseFloat(poke[5]));
+					pokemon.setIV("def", parseFloat(poke[6]));
+					pokemon.setIV("hp", parseFloat(poke[7]));
+				}
+
+				pokemonList.push(pokemon);
 			}
-
-			// Set moves
-
-			pokemon.selectMove("fast", poke[1]);
-			pokemon.selectMove("charged", poke[2], 0);
-			pokemon.selectMove("charged", poke[3], 1);
-
-			// Set first slot to none if both are none
-
-			if((poke[2] == 'none')&&(poke[3] == 'none')){
-				pokemon.selectMove("charged", poke[3], 0);
-			}
-
-			// Set any custom levels or ivs
-
-			if(poke.length > 4){
-				pokemon.isCustom = true;
-
-				pokemon.setLevel(parseFloat(poke[4]));
-				pokemon.setIV("atk", parseFloat(poke[5]));
-				pokemon.setIV("def", parseFloat(poke[6]));
-				pokemon.setIV("hp", parseFloat(poke[7]));
-			}
-
-			pokemonList.push(pokemon);
 		}
 
 		self.updateListDisplay();

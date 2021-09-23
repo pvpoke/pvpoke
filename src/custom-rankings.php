@@ -74,6 +74,8 @@ require_once 'header.php'; ?>
 					<option value="tag">Tag</option>
 					<option value="id">Species</option>
 					<option value="dex">Pokedex Number</option>
+					<option value="move">Move</option>
+					<option value="moveType">Move Type</option>
 					<option value="cost">Charged Move Cost</option>
 					<option value="distance">Buddy Walk Distance</option>
 				</select>
@@ -170,6 +172,47 @@ require_once 'header.php'; ?>
 					<div class="check" value="3"><span></span> 3km</div>
 					<div class="check" value="5"><span></span> 5km</div>
 					<div class="check" value="20"><span></span> 20km</div>
+				</div>
+			</div>
+
+			<div class="field-section move">
+				<p>Enter a list of move ID's below, separated by commas. This filter will match any Pokemon that can learn one of the listed moves. This filter does not force a Pokemon to use a specific move.</p>
+				<p>Move ID examples:</p>
+				<ul>
+					<li><em>counter</em></li>
+					<li><em>ice_beam</em></li>
+					<li><em>weather_ball_fire</em></li>
+				</ul>
+				<div class="field-container">
+					<input class="move-ids" placeholder="Move ID's" />
+				</div>
+			</div>
+
+			<div class="field-section move-type">
+				<p>Select one or more Pokemon types below. A Pokemon will be included or excluded if it has a move matching any of these types in its movepool. This filter does not force a Pokemon to use a specific move. This filter will not match Hidden Power.</p>
+				<div class="field-container">
+					<div class="check" value="bug"><span></span> Bug</div>
+					<div class="check" value="dark"><span></span> Dark</div>
+					<div class="check" value="dragon"><span></span> Dragon</div>
+					<div class="check" value="electric"><span></span> Electric</div>
+					<div class="check" value="fairy"><span></span> Fairy</div>
+					<div class="check" value="fighting"><span></span> Fighting</div>
+					<div class="check" value="fire"><span></span> Fire</div>
+					<div class="check" value="flying"><span></span> Flying</div>
+					<div class="check" value="ghost"><span></span> Ghost</div>
+					<div class="check" value="grass"><span></span> Grass</div>
+					<div class="check" value="ground"><span></span> Ground</div>
+					<div class="check" value="ice"><span></span> Ice</div>
+					<div class="check" value="normal"><span></span> Normal</div>
+					<div class="check" value="poison"><span></span> Poison</div>
+					<div class="check" value="psychic"><span></span> Psychic</div>
+					<div class="check" value="rock"><span></span> Rock</div>
+					<div class="check" value="steel"><span></span> Steel</div>
+					<div class="check" value="water"><span></span> Water</div>
+				</div>
+				<div class="field-container">
+					<button class="select-all">Select All</button>
+					<button class="deselect-all">Deselect All</button>
 				</div>
 			</div>
 		</div>

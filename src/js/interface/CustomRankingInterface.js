@@ -131,6 +131,17 @@ function interfaceObject(){
 				filter.values = str.split(",");
 				break;
 
+			case "move":
+				var str = $el.find("input.move-ids").val().toLowerCase().replace(/ /g,'');
+				filter.values = str.split(",");
+				break;
+
+			case "moveType":
+				$el.find(".move-type .check.on").each(function(index, value){
+					filter.values.push($(this).attr("value"));
+				});
+				break;
+
 			case "dex":
 				filter.values = [parseInt($el.find("input.start-range").val()), parseInt($el.find("input.end-range").val())];
 				break;
@@ -227,7 +238,7 @@ function interfaceObject(){
 		cup.exclude = data.exclude;
 		cup.league = data.league
 		cup.levelCap = data.levelCap;
-		
+
 		if(data.overrides){
 			cup.overrides = data.overrides;
 		}
@@ -301,6 +312,7 @@ function interfaceObject(){
 			case "tag":
 			case "cost":
 			case "distance":
+			case "moveType":
 				for(var i = 0; i < data.values.length; i++){
 					$filter.find(".check[value=\""+data.values[i]+"\"]").addClass("on");
 				}
@@ -308,6 +320,10 @@ function interfaceObject(){
 
 			case "id":
 				$filter.find("input.ids").val(data.values.join(","));
+				break;
+
+			case "move":
+				$filter.find("input.move-ids").val(data.values.join(","));
 				break;
 
 			case "dex":

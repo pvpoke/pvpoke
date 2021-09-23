@@ -4131,7 +4131,8 @@ a.pokebattler{
 				&.type,
 				&.tag,
 				&.cost,
-				&.distance{
+				&.distance,
+				&.move-type{
 					.check{
 						margin: 10px 5px;
 					}
@@ -4178,6 +4179,14 @@ a.pokebattler{
 			}
 
 			&[type="distance"] .field-section.distance{
+				display:block;
+			}
+
+			&[type="move"] .field-section.move{
+				display:block;
+			}
+
+			&[type="moveType"] .field-section.move-type{
 				display:block;
 			}
 		}
