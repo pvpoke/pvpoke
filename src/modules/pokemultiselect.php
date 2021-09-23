@@ -15,6 +15,7 @@
 			<button class="add-poke-btn button">+ Add Pokemon</button>
 
 			<?php include 'pokebox.php'; ?>
+			
 			<button class="export-btn">Import/Export</button>
 			<button class="search-string-btn">Generate Search String</button>
 
