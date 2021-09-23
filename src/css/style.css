@@ -895,6 +895,7 @@ select, input {
   padding: 3px 8px;
   box-sizing: border-box;
   width: 100%;
+  color: #333;
 }
 
 .league-select,
@@ -3463,6 +3464,9 @@ a.pokebattler {
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
+.dark, .dragon, .ghost {
+  color: #eee;
+}
 .dark > .name-container, .dragon > .name-container, .ghost > .name-container {
   color: #eee;
 }
