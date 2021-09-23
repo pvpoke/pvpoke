@@ -550,7 +550,7 @@ function PokeMultiSelect(element){
 		return JSON.stringify(arr);
 	}
 
-	// Convert the current Pokemon list into exportable and savable JSON
+	// Convert the current Pokemon list into exportable and saveable JSON
 
 	this.convertListToCSV = function(){
 		var arr = [];
@@ -959,5 +959,206 @@ function PokeMultiSelect(element){
 	this.selectGroup = function(id){
 		$el.find(".quick-fill-select option[value='"+id+"']").prop("selected", "selected");
 		$el.find(".quick-fill-select").trigger("change");
+	}
+
+	// Open the search string generation window
+
+	$el.find(".search-string-btn").click(function(e){
+		modalWindow("Search String", $(".search-string").eq(0));
+
+		self.generateSearchString();
+
+		// Generate new search string on option toggle
+		
+		$(".modal .search-string-options .check").click(function(e){
+			$(this).toggleClass('on');
+			self.generateSearchString();
+			$(this).toggleClass('on');
+		});
+
+		// Copy search string text
+
+		$(".modal .search-string .copy").click(function(e){
+			var el = $(e.target).prev()[0];
+			el.focus();
+			el.setSelectionRange(0, el.value.length);
+			document.execCommand("copy");
+		});
+
+	});
+
+	// Creates a search string for the current team
+
+	this.generateSearchString = function(){
+		var team = pokemonList
+		var pokeID = []
+		var fast = []
+		var charge1 = []
+		var charge2 = []
+		var shadow = []
+		var region = []
+		var duplicates = []
+		var custom = {
+			HP   : [],
+			CP   : []
+		};
+		var toggles = {
+			HP   	: $(".modal .check.hp-option").hasClass("on"),
+			CP   	: $(".modal .check.cp-option").hasClass("on"),
+			region 	: $(".modal .check.region-option").hasClass("on")
+		}
+		
+		console.log(team);
+
+		// Sets values for each Pokemon
+
+		for(var i = 0; i < team.length; i++){
+			pokeID[i] = team[i].dex;
+			fast[i] = team[i].fastMove.name;
+			charge1[i] = team[i].chargedMoves[0].name;
+			charge2[i] = (team[i].chargedMoves.length > 1) ? team[i].chargedMoves[1].name : false;
+			shadow[i] = team[i].shadowType === "shadow";
+			custom.CP[i] = (team[i].isCustom && toggles.CP) ? team[i].cp : false;
+			custom.HP[i] = (team[i].isCustom && toggles.HP) ? team[i].stats.hp : false;
+			duplicates[i] = false;
+
+			// Checks for duplicate pokemon IDs
+
+			for(var j = i - 1; j >= 0; j--){
+				duplicates[j] = duplicates[j] || ((pokeID[i] === pokeID[j]) ? i : false)
+			}
+
+			// Checks for region tag
+
+			for(var j = 0; j < team[i].tags.length; j++){
+				region[i] = ((j < 1) ? false : region[i])
+							|| (team[i].tags[j] === "alolan") ? "alola" : false
+							|| (team[i].tags[j] === "galarian") ? "galar" : false
+							;
+			}
+
+			region[i] = region[i] || (toggles.region ? this.getRegion(pokeID[i]) : false)
+		}
+
+		var searchString = "";
+		var shadowString = "!shadow";
+
+		for(var i = 0; i < team.length; i++){
+			var fastMoveString = "";
+			var charge1String = "";
+			var charge2String = "";
+			var cpString = "";
+			var hpString = "";
+			var regionString = "";
+			var currentIndex = i;
+
+			// Builds combined search string for all pokemon that share this pokemon's id
+
+			while(duplicates[i] && (duplicates[i] !== true)){
+				fastMoveString += "@1" + fast[currentIndex];
+				charge1String += "@2" + charge1[currentIndex] + ",@3" + charge1[currentIndex];
+
+				if(charge2[currentIndex]) {
+					charge2String += "@2" + charge2[currentIndex] + ",@3" + charge2[currentIndex];
+				} else {
+					charge2String += "@3move";
+				}
+
+				cpString += custom.CP[currentIndex] ? ("CP" + custom.CP[currentIndex]) : "";
+				hpString += custom.HP[currentIndex] ? ("HP" + custom.HP[currentIndex]) : "";
+				region[currentIndex] = region[currentIndex] || this.getRegion(pokeID[i])
+				regionString += (this.getRegion(pokeID[i]) !== region[currentIndex] 
+								&& regionString !== region[currentIndex]) 
+								? ((regionString === "") ? "" : ",") + region[currentIndex] : ""
+				region[i] = (this.getRegion(pokeID[i]) === region[currentIndex]) || region[i]
+
+				if(duplicates[currentIndex]){
+					fastMoveString += ",";
+					charge1String += ",";
+					charge2String += ",";
+					currentIndex = duplicates[currentIndex];
+					custom.CP[i] = custom.CP[i] && custom.CP[currentIndex];
+					custom.HP[i] = custom.HP[i] && custom.HP[currentIndex];
+					cpString += custom.CP[currentIndex] ? "," : "";
+					hpString += custom.HP[currentIndex] ? "," : "";
+				} else {
+					fastMoveString += ",!" + pokeID[currentIndex] + "&"
+					charge1String += ",!" + pokeID[currentIndex] + "&"
+					charge2String += ",!" + pokeID[currentIndex] + "&"
+					regionString += (region[i] === true) 
+								? ((regionString === "") ? "" : ",") 
+								+ this.getRegion(pokeID[i]) : ""
+					regionString += (regionString === "") ? "" : ",!" + pokeID[currentIndex] + "&"
+					cpString = custom.CP[i] ? (cpString + ",!" + pokeID[currentIndex] + "&") : "";
+					hpString = custom.HP[i] ? (hpString + ",!" + pokeID[currentIndex] + "&") : "";
+
+					for(var j = team.length - 1; j >= 0; j--){
+						duplicates[j] = (pokeID[i] === pokeID[j]) ? true : duplicates[j]
+					}
+				}
+				
+			}
+
+			// Builds search string for non-duplicates, one pokemon at a time
+
+			if(!duplicates[i]){
+				searchString += "@1" + fast[i]
+							+ ",!" + pokeID[i] + "&"
+							+ "@2" + charge1[i]
+							+ ",@3" + charge1[i]
+							+ ",!" + pokeID[i] + "&"
+							;
+				if(charge2[i]) {
+					searchString += "@2" + charge2[i]
+								+ ",@3" + charge2[i]
+								+ ",!" + pokeID[i] + "&"
+								;
+				} else {
+					searchString += "@3move"
+								+ ",!" + pokeID[i] + "&"
+								;
+				}
+				searchString += custom.CP[i] ? ("CP" + custom.CP[i] + ",!" + pokeID[i] + "&") : "";
+				searchString += custom.HP[i] ? ("HP" + custom.HP[i] + ",!" + pokeID[i] + "&") : "";
+				searchString += region[i] ? (region[i] + ",!" + pokeID[i] + "&") : "";
+			} else {
+				searchString += fastMoveString + charge1String + charge2String + cpString + hpString + regionString;
+			}
+
+			shadowString += shadow[i] ? ("," + pokeID[i]) : "";
+			// previous method, saved until new method is fully tested
+			//searchString += (shadow[i] ? "&" : "&!") + "shadow,!" + pokeID[i] + "&"
+			//			+ (team[i + 1] ? "&" : "")
+			//			;
+		}
+
+		searchString += (team.length > 0) ? shadowString : ""
+		$(".modal .team-string-text").val(searchString);
+		return searchString
+	}
+
+	// Returns a region based on dex number
+
+	this.getRegion = function(dexNumber){
+		if(dexNumber < 1 || dexNumber > 898){
+			return false
+		} else if(dexNumber < 152){
+			return "kanto"
+		} else if(dexNumber < 252){
+			return "johto"
+		} else if(dexNumber < 387){
+			return "hoenn"
+		} else if(dexNumber < 494){
+			return "sinnoh"
+		} else if(dexNumber < 650){
+			return "unova"
+		} else if(dexNumber < 722){
+		 	return "kalos"
+		} else if(dexNumber < 810){
+			return "alola"
+		} else if(dexNumber < 899){
+			return "galar"
+		}
+		return
 	}
 }
