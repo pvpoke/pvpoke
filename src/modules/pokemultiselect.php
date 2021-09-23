@@ -15,7 +15,7 @@
 			<button class="add-poke-btn button">+ Add Pokemon</button>
 
 			<?php include 'pokebox.php'; ?>
-			
+
 			<button class="export-btn">Import/Export</button>
 			<button class="search-string-btn">Generate Search String</button>
 
@@ -121,14 +121,14 @@
 	</div>
 </div>
 
-<div class="search-string hide">
+<div class="search-string-window hide">
 	<p>Copy the search string for your team below.</p>
 	<div class="search-string-options flex">
 		<div class="check hp-option on"><span></span>HP</div>
 		<div class="check cp-option on"><span></span>CP</div>
 		<div class="check region-option"><span></span>Always include region</div>
 	</div>
-	<h5>Note CP and HP are not used for pokemon with default IVs.</h5>
+	<h5>Note CP and HP are not used for Pokemon with default IVs.</h5>
 	<textarea class="team-string-text" type="text" readonly></textarea>
 	<div class="copy">Copy</div>
 </div>

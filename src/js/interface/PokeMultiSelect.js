@@ -964,21 +964,32 @@ function PokeMultiSelect(element){
 	// Open the search string generation window
 
 	$el.find(".search-string-btn").click(function(e){
-		modalWindow("Search String", $(".search-string").eq(0));
+		var showHP = true;
+		var showCP = true;
+		var showRegion = false;
 
-		self.generateSearchString();
+		modalWindow("Search String", $(".search-string-window").eq(0));
+
+		self.generateSearchString(showHP, showCP, showRegion);
 
 		// Generate new search string on option toggle
-		
+
 		$(".modal .search-string-options .check").click(function(e){
-			$(this).toggleClass('on');
-			self.generateSearchString();
-			$(this).toggleClass('on');
+
+			if($(this).hasClass("hp-option")){
+				showHP = (! showHP);
+			} else if($(this).hasClass("cp-option")){
+				showCP = (! showCP);
+			} else if($(this).hasClass("region-option")){
+				showRegion = (! showRegion);
+			}
+
+			self.generateSearchString(showHP, showCP, showRegion);
 		});
 
 		// Copy search string text
 
-		$(".modal .search-string .copy").click(function(e){
+		$(".modal .search-string-window .copy").click(function(e){
 			var el = $(e.target).prev()[0];
 			el.focus();
 			el.setSelectionRange(0, el.value.length);
@@ -989,7 +1000,7 @@ function PokeMultiSelect(element){
 
 	// Creates a search string for the current team
 
-	this.generateSearchString = function(){
+	this.generateSearchString = function(showHP, showCP, showRegion){
 		var team = pokemonList
 		var pokeID = []
 		var fast = []
@@ -1002,11 +1013,6 @@ function PokeMultiSelect(element){
 			HP   : [],
 			CP   : []
 		};
-		var toggles = {
-			HP   	: $(".modal .check.hp-option").hasClass("on"),
-			CP   	: $(".modal .check.cp-option").hasClass("on"),
-			region 	: $(".modal .check.region-option").hasClass("on")
-		}
 
 		// Sets values for each Pokemon
 
@@ -1016,8 +1022,8 @@ function PokeMultiSelect(element){
 			charge1[i] = team[i].chargedMoves[0].name;
 			charge2[i] = (team[i].chargedMoves.length > 1) ? team[i].chargedMoves[1].name : false;
 			shadow[i] = team[i].shadowType === "shadow";
-			custom.CP[i] = (team[i].isCustom && toggles.CP) ? team[i].cp : false;
-			custom.HP[i] = (team[i].isCustom && toggles.HP) ? team[i].stats.hp : false;
+			custom.CP[i] = (team[i].isCustom && showCP) ? team[i].cp : false;
+			custom.HP[i] = (team[i].isCustom && showHP) ? team[i].stats.hp : false;
 			duplicates[i] = false;
 
 			// Checks for Weather Ball (otherwise it will exclude all pokemon that have the move)
@@ -1040,7 +1046,7 @@ function PokeMultiSelect(element){
 							;
 			}
 
-			region[i] = region[i] || (toggles.region ? this.getRegion(pokeID[i]) : false)
+			region[i] = region[i] || (showRegion ? this.getRegion(pokeID[i]) : false)
 		}
 
 		var searchString = "";
@@ -1073,8 +1079,8 @@ function PokeMultiSelect(element){
 				cpString += custom.CP[currentIndex] ? ("CP" + custom.CP[currentIndex]) : "";
 				hpString += custom.HP[currentIndex] ? ("HP" + custom.HP[currentIndex]) : "";
 				region[currentIndex] = region[currentIndex] || this.getRegion(pokeID[i])
-				regionString += (this.getRegion(pokeID[i]) !== region[currentIndex] 
-								&& regionString !== region[currentIndex]) 
+				regionString += (this.getRegion(pokeID[i]) !== region[currentIndex]
+								&& regionString !== region[currentIndex])
 								? ((regionString === "") ? "" : ",") + region[currentIndex] : ""
 				region[i] = (this.getRegion(pokeID[i]) === region[currentIndex]) || region[i]
 				if(isShadow === "") {
@@ -1097,8 +1103,8 @@ function PokeMultiSelect(element){
 					charge1String += ",!" + pokeID[currentIndex] + "&"
 					charge2String += ",!" + pokeID[currentIndex] + "&"
 					idString += ((idString === "") ? "" : ",") + pokeID[i]
-					regionString += (region[i] === true) 
-								? ((regionString === "") ? "" : ",") 
+					regionString += (region[i] === true)
+								? ((regionString === "") ? "" : ",")
 								+ this.getRegion(pokeID[i]) : ""
 					regionString += (regionString === "") ? "" : ",!" + pokeID[currentIndex] + "&"
 					cpString = custom.CP[i] ? (cpString + ",!" + pokeID[currentIndex] + "&") : "";
@@ -1109,7 +1115,7 @@ function PokeMultiSelect(element){
 						duplicates[j] = (pokeID[i] === pokeID[j]) ? true : duplicates[j]
 					}
 				}
-				
+
 			}
 
 			// Builds search string for non-duplicates, one pokemon at a time

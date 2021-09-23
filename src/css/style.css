@@ -240,14 +240,13 @@ header {
 }
 
 /* POKEMON SELECT */
+.poke-select-container {
+  display: flex;
+  justify-content: space-between;
+}
+
 .poke {
   max-width: 200px;
-}
-.poke:first-of-type {
-  float: left;
-}
-.poke:nth-of-type(2) {
-  float: right;
 }
 .poke:nth-of-type(2) .poke-stats {
   text-align: right;
@@ -649,8 +648,8 @@ header {
   width: 100%;
   margin-bottom: 0;
 }
-.poke.multi .custom-options .search-string-btn,
-.poke.multi .custom-options .export-btn {
+.poke.multi .custom-options .export-btn,
+.poke.multi .custom-options .search-string-btn {
   margin-top: 15px;
 }
 .poke.multi .custom-options p {
@@ -856,6 +855,9 @@ header {
 }
 .poke-select-container.multi .poke:nth-of-type(3) {
   display: block;
+}
+.poke-select-container.multi a.swap {
+  display: none;
 }
 .poke-select-container.matrix .poke.single,
 .poke-select-container.matrix .hp.bar-back,
@@ -3162,15 +3164,15 @@ a.download-csv {
   display: block;
   font-weight: bold;
 }
-.modal .search-string-options .check{
-  margin-right: 20px;
-}
-.modal .search-string .team-string-text,
-.modal .list-export .list-text {
+.modal .list-export .list-text,
+.modal .list-export .team-string-text,
+.modal .search-string-window .list-text,
+.modal .search-string-window .team-string-text {
   width: 100%;
   height: 200px;
 }
-.modal .copy {
+.modal .list-export .copy,
+.modal .search-string-window .copy {
   display: inline-block;
   cursor: pointer;
   font-weight: bold;
@@ -3179,6 +3181,10 @@ a.download-csv {
   padding: 5px;
   border-radius: 8px;
   margin: 5px 0;
+}
+.modal .list-export .search-string-options .check,
+.modal .search-string-window .search-string-options .check {
+  margin-right: 10px;
 }
 .modal .save-list input {
   font-size: 18px;

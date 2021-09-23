@@ -39,7 +39,6 @@ require_once 'header.php';
 	<?php require 'modules/pokeselect.php'; ?>
 	<?php require 'modules/pokemultiselect.php'; ?>
 	<?php require 'modules/pokemultiselect.php'; ?>
-	<div class="clear"></div>
 </div>
 
 <div class="section battle">
