@@ -649,6 +649,7 @@ header {
   width: 100%;
   margin-bottom: 0;
 }
+.poke.multi .custom-options .search-string-btn,
 .poke.multi .custom-options .export-btn {
   margin-top: 15px;
 }
@@ -3161,11 +3162,15 @@ a.download-csv {
   display: block;
   font-weight: bold;
 }
+.modal .search-string-options .check{
+  margin-right: 20px;
+}
+.modal .search-string .team-string-text,
 .modal .list-export .list-text {
   width: 100%;
   height: 200px;
 }
-.modal .list-export .copy {
+.modal .copy {
   display: inline-block;
   cursor: pointer;
   font-weight: bold;
