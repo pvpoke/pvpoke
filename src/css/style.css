@@ -3470,6 +3470,9 @@ a.pokebattler {
 .dark > .name-container, .dragon > .name-container, .ghost > .name-container {
   color: #eee;
 }
+.dark .detail-section, .dragon .detail-section, .ghost .detail-section {
+  color: #333;
+}
 
 .buff.bug, .debuff.bug {
   background-color: #9bc231 !important;
