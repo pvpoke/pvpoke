@@ -1026,10 +1026,12 @@ function PokeMultiSelect(element){
 			custom.HP[i] = (team[i].isCustom && showHP) ? team[i].stats.hp : false;
 			duplicates[i] = false;
 
-			// Checks for Weather Ball (otherwise it will exclude all pokemon that have the move)
+			// Checks for Weather Ball and Techno Blast (otherwise it will exclude all pokemon that have the move)
 
 			charge1[i] = charge1[i].includes("Weather Ball") ? "Weather Ball" : charge1[i]
 			charge2[i] = charge2[i].includes("Weather Ball") ? "Weather Ball" : charge2[i]
+			charge1[i] = charge1[i].includes("Techno Blast") ? "Techno Blast" : charge1[i]
+			charge2[i] = charge2[i].includes("Techno Blast") ? "Techno Blast" : charge2[i]
 
 			// Checks for duplicate pokemon IDs
 
