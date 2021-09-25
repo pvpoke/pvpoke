@@ -22,7 +22,8 @@
 	},
 	{
 		"speciesId": "samurott",
-		"fastMove": "WATERFALL"
+		"fastMove": "FURY_CUTTER",
+		"chargedMoves": ["HYDRO_CANNON", "RAZOR_SHELL"]
 	},
 	{
 		"speciesId": "garchomp",
