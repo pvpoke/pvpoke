@@ -1878,8 +1878,9 @@ function Battle(){
 		// Evaluate when to randomly use Charged Moves
 		for(var i = 0; i < poke.activeChargedMoves.length; i++){
 			if(poke.energy >= poke.activeChargedMoves[i].energy){
+				poke.activeChargedMoves[i].damage = self.calculateDamage(poke, opponent, poke.activeChargedMoves[i]);
 				let chargedMoveWeight = Math.round(poke.energy / 4);
-				let damage = self.calculateDamage(poke, opponent, poke.activeChargedMoves[i]);
+				let damage = poke.activeChargedMoves[i].damage;
 
 				if(poke.energy < poke.bestChargedMove.energy){
 					chargedMoveWeight = Math.round(poke.energy / 25);
