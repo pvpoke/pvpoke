@@ -79,6 +79,7 @@ require_once 'header.php';
 			</div>
 			<div class="disclaimer">* Results may differ from actual gameplay depending on connectivity, device, player decisions, or other factors.</div>
 		</div>
+		<button class="bulk-btn button">Find Win Conditions</button>
 		<div class="summary section white"></div>
 		<div class="tip automated">Hover over or tap the timeline for details. <a href="<?php echo $WEB_ROOT; ?>articles/guide-to-fast-move-registration/">Read more</a> about the timeline.</div>
 		<div class="tip sandbox">Click the circles to edit actions.</div>
@@ -423,6 +424,7 @@ require_once 'header.php';
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineAction.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/training/DecisionOption.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TeamRanker.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/Main.js?v=<?php echo $SITE_VERSION; ?>"></script>

@@ -25,6 +25,7 @@ function Battle(){
 	var queuedActions = []; // Input registered from previous turns to be processed on future turns
 	var sandbox = false; // Is this automated or following user instructions?
 	var mode = "simulate"; // Simulate or emulate?
+	var decisionMethod = "default"; // Default or random
 
 	// Battle properties
 
@@ -951,7 +952,12 @@ function Battle(){
 				poke.hasActed = true;
 
 				if(mode == "simulate"){
-					action = self.decideAction(poke, opponent);
+					if(decisionMethod == "default"){
+						action = self.decideAction(poke, opponent);
+					} else{
+						action = self.decideRandomAction(poke, opponent);
+					}
+
 				} else{
 					action = players[poke.index].getAI().decideAction(turns, poke, opponent);
 				}
@@ -1863,6 +1869,105 @@ function Battle(){
 		return action;
 	}
 
+	// Select a randomized action for this turn
+	this.decideRandomAction = function(poke, opponent){
+		var fastMoveWeight = 10;
+		var hasKnockoutMove = false;
+		var actionOptions = [];
+
+		// Evaluate when to randomly use Charged Moves
+		for(var i = 0; i < poke.activeChargedMoves.length; i++){
+			if(poke.energy >= poke.activeChargedMoves[i].energy){
+				let chargedMoveWeight = Math.round(poke.energy / 4);
+				let damage = self.calculateDamage(poke, opponent, poke.activeChargedMoves[i]);
+
+				if(hasKnockoutMove){
+					chargedMoveWeight = 0;
+				}
+
+				// Go for the KO if it's there
+				if((damage >= opponent.hp)&&(opponent.shields == 0)){
+					fastMoveWeight = 0;
+					hasKnockoutMove = true;
+				}
+
+				// Don't use Charged Move if it's strictly worse than the other option
+				if((i > 0)&&(poke.activeChargedMoves[i].damage < poke.activeChargedMoves[0].damage)&&(poke.activeChargedMoves[i].energy >= poke.activeChargedMoves[0].energy)&&(! poke.activeChargedMoves[i].selfBuffing)){
+					chargedMoveWeight = 0;
+				}
+
+				// Use Charged Moves if capped on energy
+				if(poke.energy == 100){
+					chargedMoveWeight *= 2;
+				}
+
+				actionOptions.push(new DecisionOption("CHARGED_MOVE_"+i, chargedMoveWeight));
+			}
+		}
+
+		actionOptions.push(new DecisionOption("FAST_MOVE", fastMoveWeight));
+
+		let actionType = self.chooseOption(actionOptions);
+		let action;
+
+		switch(actionType.name){
+			case "FAST_MOVE":
+				return;
+				break;
+
+			case "CHARGED_MOVE_0":
+				action = new TimelineAction(
+					"charged",
+					poke.index,
+					turns,
+					poke.chargedMoves.indexOf(poke.activeChargedMoves[0]),
+					{shielded: false, buffs: false, priority: poke.priority});
+
+				chargedMoveUsed = true;
+				break;
+
+			case "CHARGED_MOVE_1":
+				action = new TimelineAction(
+					"charged",
+					poke.index,
+					turns,
+					poke.chargedMoves.indexOf(poke.activeChargedMoves[1]),
+					{shielded: false, buffs: false, priority: poke.priority});
+
+				chargedMoveUsed = true;
+				break;
+		}
+
+		return action;
+	}
+
+	// Choose an option from an array
+	this.chooseOption = function(options){
+		var optionBucket = [];
+
+		// Put all the options in bucket, multiple times for its weight value
+
+		for(var i = 0; i < options.length; i++){
+			for(var n = 0; n < options[i].weight; n++){
+				optionBucket.push(options[i].name);
+			}
+		}
+
+		// If all options have 0 weight, just toss the first option in there
+
+		if(optionBucket.length == 0){
+			optionBucket.push(options[0].name);
+		}
+
+		var index = Math.floor(Math.random() * optionBucket.length);
+		var optionName = optionBucket[index];
+		var option = options.filter(obj => {
+			return obj.name === optionName
+		})[0];
+
+		return option;
+	}
+
 	// Queue an action to be processed on the next available turn
 
 	this.queueAction = function(actor, type, value){
@@ -2657,6 +2762,12 @@ function Battle(){
 		} else{
 			buffChanceModifier = 0;
 		}
+	}
+
+	// Set whether decisions are decided by the default deterministic method, or random
+
+	this.setDecisionMethod = function(val){
+		decisionMethod = val;
 	}
 
 	// Override another Pokemon's priority, used to remove priority from one Pokemon when it is given to another

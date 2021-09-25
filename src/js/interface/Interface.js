@@ -84,7 +84,12 @@ var InterfaceMaster = (function () {
 
 				$(".league-select").on("change", selectLeague);
 				$(".mode-select a").on("click", selectMode);
-				$(".battle-btn").on("click", startBattle);
+				$(".battle-btn").on("click", function(e){
+					startBattle();
+				});
+				$(".bulk-btn").on("click", function(e){
+					startBattle(true);
+				});
 				$(".continue-container .button").on("click", continueBattle);
 				$(".timeline-container").on("mousemove",".item",timelineEventHover);
 				$(".poke a.swap").on("click", swapSelectedPokemon);
@@ -556,7 +561,7 @@ var InterfaceMaster = (function () {
 
 			// Generate matchup details after main battle has been simulated
 
-			this.generateMatchupDetails = function(battle, doBulk){
+			this.generateMatchupDetails = function(battle, bulkResults){
 
 				// Run simulations for every shield matchup
 
@@ -591,8 +596,8 @@ var InterfaceMaster = (function () {
 								b.setNewPokemon(pokemon[0], 0, false);
 								b.setNewPokemon(pokemon[1], 1, false);
 
-								if(doBulk){
-									b = self.generateBulkSims(b).median;
+								if(bulkResults){
+									b = bulkResults.median;
 								} else{
 									b.simulate();
 								}
@@ -1173,11 +1178,11 @@ var InterfaceMaster = (function () {
 
 			// For battles with buffs or debuffs, run bulk sims and return median match
 
-			this.generateBulkSims = function(battle){
+			this.generateBulkSims = function(battle, n, isRandom){
 
 				var battles = [];
 				var ratings = [];
-				var simCount = 250;
+				var simCount = n;
 
 				for(var i = 0; i < simCount; i++){
 					var b = new Battle();
@@ -1185,6 +1190,10 @@ var InterfaceMaster = (function () {
 					b.setCP(battle.getCP());
 					b.setCup(battle.getCup());
 					b.setBuffChanceModifier(0);
+
+					if(isRandom){
+						b.setDecisionMethod("random");
+					}
 
 					b.setNewPokemon(pokeSelectors[0].getPokemon(), 0, false);
 					b.setNewPokemon(pokeSelectors[1].getPokemon(), 1, false);
@@ -1752,7 +1761,7 @@ var InterfaceMaster = (function () {
 
 			// Run simulation
 
-			function startBattle(){
+			function startBattle(doRandomBulk){
 
 				// Hide advanced sections so they don't push the timeline down
 
@@ -1778,7 +1787,7 @@ var InterfaceMaster = (function () {
 								usesBuffs = false;
 							}
 
-							if(! usesBuffs){
+							if((! usesBuffs)&&(! doRandomBulk)){
 
 								// If no, do a single sim
 
@@ -1795,8 +1804,13 @@ var InterfaceMaster = (function () {
 							} else{
 
 								// If yes, bulk sim and display median battle
+								var simCount = 250;
 
-								bulkResults = self.generateBulkSims(battle);
+								if(doRandomBulk){
+									simCount = 1000;
+								}
+
+								bulkResults = self.generateBulkSims(battle, simCount, doRandomBulk);
 								battle = bulkResults.median;
 								battle.debug();
 
@@ -1810,7 +1824,7 @@ var InterfaceMaster = (function () {
 
 							}
 
-							self.generateMatchupDetails(battle, usesBuffs);
+							self.generateMatchupDetails(battle, bulkResults);
 						}
 
 					} else if(self.battleMode == "multi"){
