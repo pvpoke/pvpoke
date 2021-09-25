@@ -1881,6 +1881,10 @@ function Battle(){
 				let chargedMoveWeight = Math.round(poke.energy / 4);
 				let damage = self.calculateDamage(poke, opponent, poke.activeChargedMoves[i]);
 
+				if(poke.energy < poke.bestChargedMove.energy){
+					chargedMoveWeight = Math.round(poke.energy / 25);
+				}
+
 				if(hasKnockoutMove){
 					chargedMoveWeight = 0;
 				}
@@ -2179,21 +2183,32 @@ function Battle(){
 
 			if( ((sandbox) && (forceShields) && (defender.shields > 0)) || ((! sandbox) && (defender.shields > 0)) ){
 				var useShield = true;
+				var shieldWeight = 1;
+				var noShieldWeight = 1; // Used for randomized shielding decisions
 
 				// For PuP, Acid Spray and similar moves, don't shield if it's survivable
 
-				if((! sandbox)&&(move.buffs)&&(((move.buffs[0] > 0) && (move.buffTarget == "self")) || ((move.buffs[1] < 0) && (move.buffTarget == "opponent")))&&(move.buffApplyChance == 1)){
+				if( ((! sandbox)&&(move.buffs)&&(((move.buffs[0] > 0) && (move.buffTarget == "self")) || ((move.buffs[1] < 0) && (move.buffTarget == "opponent")))&&(move.buffApplyChance == 1))
+					|| (decisionMethod == "random")){
 					useShield = false;
+
+					noShieldWeight = 2;
 
 					var postMoveHP = defender.hp - damage; // How much HP will be left after the attack
 					// Capture current buffs for pokemon whose buffs will change
 					var currentBuffs;
-					if (move.buffs[0] > 0) {
+					var moveBuffs = [0, 0];
+
+					if(move.buffs){
+						moveBuffs = move.buffs;
+					}
+
+					if (moveBuffs[0] > 0) {
 						currentBuffs = [attacker.statBuffs[0], attacker.statBuffs[1]];
-						attacker.applyStatBuffs(move.buffs);
+						attacker.applyStatBuffs(moveBuffs);
 					} else {
 						currentBuffs = [defender.statBuffs[0], defender.statBuffs[1]];
-						defender.applyStatBuffs(move.buffs);
+						defender.applyStatBuffs(moveBuffs);
 					}
 
 					var fastDamage = self.calculateDamage(attacker, defender, attacker.fastMove);
@@ -2206,10 +2221,11 @@ function Battle(){
 
 					if(postMoveHP <= cycleDamage){
 						useShield = true;
+						shieldWeight = 2;
 					}
 
 					// Reset buffs to original
-					if (move.buffs[0] > 0) {
+					if (moveBuffs[0] > 0) {
 						attacker.statBuffs = [currentBuffs[0], currentBuffs[1]];
 					} else {
 						defender.statBuffs = [currentBuffs[0], currentBuffs[1]];
@@ -2226,12 +2242,46 @@ function Battle(){
 
 							if((chargedDamage >= defender.hp / 1.5)&&(fastDPT > 1.5)){
 								useShield = true;
+								shieldWeight = 4
 							}
 
 							if(chargedDamage >= defender.hp - cycleDamage){
 								useShield = true;
+								shieldWeight = 4
 							}
 						}
+					}
+				}
+
+				// For randomized battles, randomize shield usage
+				if(decisionMethod == "random"){
+					// Shield the move if it's the lowest energy move and guaranteed to KO
+
+					var lowestMoveEnergy = attacker.chargedMoves[0].energy;
+
+					if((attacker.chargedMoves.length > 1)&&(attacker.chargedMoves[1].energy < lowestMoveEnergy)){
+						lowestMoveEnergy = attacker.chargedMoves[1].energy;
+					}
+
+					if((move.energy == lowestMoveEnergy)&&(damage >= defender.hp * .75)){
+						shieldWeight += 10;
+					}
+
+					if((move.energy == lowestMoveEnergy)&&(damage >= defender.hp * .95)){
+						noShieldWeight = 0;
+					}
+
+					var shieldOptions = [
+						new DecisionOption("YES", shieldWeight),
+						new DecisionOption("NO", noShieldWeight)
+					];
+
+					var option = self.chooseOption(shieldOptions);
+
+					if(option.name == "YES"){
+						useShield = true;
+					} else{
+						useShield = false;
 					}
 				}
 

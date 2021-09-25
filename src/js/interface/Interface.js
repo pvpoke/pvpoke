@@ -235,9 +235,10 @@ var InterfaceMaster = (function () {
 
 			// Display battle timeline
 
-			this.displayTimeline = function(b, bulkRatings, animate){
+			this.displayTimeline = function(b, bulkRatings, doRandomBulk, animate){
 
 				bulkRatings = typeof bulkRatings !== 'undefined' ? bulkRatings : false;
+				doRandomBulk = typeof doRandomBulk !== 'undefined' ? doRandomBulk : false;
 				animate = typeof animate !== 'undefined' ? animate : true;
 
 				var timeline = b.getTimeline();
@@ -373,7 +374,11 @@ var InterfaceMaster = (function () {
 
 					$(".battle-results .summary").append("<div class=\"bulk-summary\"></div>");
 
-					$(".battle-results .bulk-summary").append("<div class=\"disclaimer\">This matchup contains moves that have a chance to buff or debuff stats. These results are generated from 500 simulations, and may vary.</div>");
+					if(! doRandomBulk){
+						$(".battle-results .bulk-summary").append("<div class=\"disclaimer\">This matchup contains moves that have a chance to buff or debuff stats. These results are generated from 500 simulations, and may vary.</div>");
+					} else{
+						$(".battle-results .bulk-summary").append("<div class=\"disclaimer\">Below is a histogram of  battle results if both Pokemon take random actions. Explore the best, worst, and average outcomes. Due to randomness, results may change and may not always represent realistic scenarios.</div>");
+					}
 
 					var bestRating = bulkResults.best.getBattleRatings()[0];
 					var bestColor = battle.getRatingColor(bestRating);
@@ -1800,7 +1805,7 @@ var InterfaceMaster = (function () {
 
 								battle.simulate();
 								battle.debug();
-								self.displayTimeline(battle, false, (settings.animateTimeline !== 0));
+								self.displayTimeline(battle, false, false, (settings.animateTimeline !== 0));
 							} else{
 
 								// If yes, bulk sim and display median battle
@@ -1820,7 +1825,7 @@ var InterfaceMaster = (function () {
 									pokeSelectors[i].setBattle(battle);
 								}
 
-								self.displayTimeline(battle, bulkResults.ratings);
+								self.displayTimeline(battle, bulkResults.ratings, doRandomBulk, (settings.animateTimeline !== 0));
 
 							}
 
