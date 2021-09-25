@@ -1,7 +1,9 @@
 [
 	{
 		"speciesId": "typhlosion",
-		"chargedMoves": ["BLAST_BURN", "SOLAR_BEAM"]
+		"fastMove": "SHADOW_CLAW",
+		"chargedMoves": ["BLAST_BURN", "SOLAR_BEAM"],
+		"weight": 2
 	},
 	{
 		"speciesId": "charizard",
@@ -60,7 +62,9 @@
 	},
 	{
 		"speciesId": "pidgeot",
-		"chargedMoves": ["FEATHER_DANCE", "BRAVE_BIRD"]
+		"fastMove": "GUST",
+		"chargedMoves": ["FEATHER_DANCE", "BRAVE_BIRD"],
+		"weight": 2
 	},
 	{
 		"speciesId": "flygon_shadow",
@@ -72,7 +76,8 @@
 	},
 	{
 		"speciesId": "escavalier",
-		"chargedMoves": ["MEGAHORN", "DRILL_RUN"]
+		"chargedMoves": ["MEGAHORN", "DRILL_RUN"],
+		"weight": 4
 	},
 	{
 		"speciesId": "primeape",
@@ -137,7 +142,7 @@
 	{
 		"speciesId": "machamp",
 		"fastMove": "COUNTER",
-		"chargedMoves": ["CROSS_CHOP", "PAYBACK"]
+		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
 	},
 	{
 		"speciesId": "machamp_shadow",
@@ -347,7 +352,8 @@
 	},
 	{
 		"speciesId": "umbreon",
-		"chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
+		"chargedMoves": ["FOUL_PLAY", "LAST_RESORT"],
+		"weight": 3
 	},
 	{
 		"speciesId": "blaziken",
@@ -364,7 +370,8 @@
 	{
 		"speciesId": "drapion",
 		"fastMove": "POISON_STING",
-		"chargedMoves": ["CRUNCH", "AQUA_TAIL"]
+		"chargedMoves": ["CRUNCH", "AQUA_TAIL"],
+		"weight": 2
 	},
 	{
 		"speciesId": "forretress",
@@ -522,7 +529,7 @@
 	{
 		"speciesId": "mewtwo_armored",
 		"chargedMoves": ["PSYSTRIKE","DYNAMIC_PUNCH"],
-		"weight": 4
+		"weight": 3
 	},
 	{
 		"speciesId": "seismitoad",
@@ -580,29 +587,32 @@
 	{
 		"speciesId": "jellicent",
 		"chargedMoves": ["BUBBLE_BEAM", "SHADOW_BALL"],
-		"weight": 2
+		"weight": 4
 	},
 	{
 		"speciesId": "giratina_origin",
 		"chargedMoves": ["SHADOW_BALL", "DRAGON_PULSE"],
-		"weight": 4
+		"weight": 2
 	},
 	{
 		"speciesId": "sirfetchd",
-		"chargedMoves": ["LEAF_BLADE", "NIGHT_SLASH"],
-		"weight": 2
+		"chargedMoves": ["LEAF_BLADE", "NIGHT_SLASH"]
 	},
 	{
 		"speciesId": "stunfisk_galarian",
-		"weight": 4
+		"weight": 5
 	},
 	{
 		"speciesId": "deoxys_defense",
-		"chargedMoves": ["PSYCHO_BOOST","THUNDERBOLT"],
+		"chargedMoves": ["PSYCHO_BOOST","ROCK_SLIDE"],
 		"weight": 2
 	},
 	{
-		"speciesId": "abomasnow",
+		"speciesId": "gengar",
+		"weight": 2
+	},
+	{
+		"speciesId": "mandibuzz",
 		"weight": 3
 	},
 	{
@@ -611,26 +621,27 @@
 	},
 	{
 		"speciesId": "nidoqueen",
-		"weight": 2
+		"weight": 4
 	},
 	{
 		"speciesId": "sylveon",
-		"weight": 2
+		"weight": 3
 	},
 	{
-		"speciesId": "drifblim",
-		"weight": 2
+		"speciesId": "venusaur",
+		"weight": 3
 	},
 	{
-		"speciesId": "lugia",
-		"weight": 2
+		"speciesId": "galvantula",
+		"chargedMoves": ["LUNGE","DISCHARGE"],
+		"weight": 3
+	},
+	{
+		"speciesId": "scrafty",
+		"weight": 4
 	},
 	{
 		"speciesId": "registeel",
 		"weight": 3
-	},
-	{
-		"speciesId": "regirock",
-		"weight": 2
 	}
 ]
