@@ -1239,6 +1239,7 @@ select, input {
 .battle-results .summary .disclaimer {
   margin: 15px 0;
   font-size: 14px;
+  text-align: left;
 }
 .battle-results .summary p {
   font-size: 14px;
