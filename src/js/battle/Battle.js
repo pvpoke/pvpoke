@@ -1874,6 +1874,7 @@ function Battle(){
 		var fastMoveWeight = 10;
 		var hasKnockoutMove = false;
 		var actionOptions = [];
+		var chargedMoveValues = [];
 
 		// Evaluate when to randomly use Charged Moves
 		for(var i = 0; i < poke.activeChargedMoves.length; i++){
@@ -1883,7 +1884,7 @@ function Battle(){
 				let damage = poke.activeChargedMoves[i].damage;
 
 				if(poke.energy < poke.bestChargedMove.energy){
-					chargedMoveWeight = Math.round(poke.energy / 25);
+					chargedMoveWeight = Math.round(poke.energy / 50);
 				}
 
 				if(hasKnockoutMove){
@@ -1906,8 +1907,23 @@ function Battle(){
 					chargedMoveWeight *= 2;
 				}
 
-				actionOptions.push(new DecisionOption("CHARGED_MOVE_"+i, chargedMoveWeight));
+				chargedMoveValues.push({move: poke.activeChargedMoves[i], damage: damage, weight: chargedMoveWeight, index: i});
 			}
+		}
+
+		if(chargedMoveValues.length > 1){
+			// If shields are up and both moves would KO, prefer non debuffing moves
+			if((chargedMoveValues[0].damage >= opponent.hp)&&(chargedMoveValues[1].damage >= opponent.hp)&&(opponent.shields > 0)){
+				if((chargedMoveValues[0].move.selfDebuffing)&&(! chargedMoveValues[1].move.selfDebuffing)&&(chargedMoveValues[1].move.energy <= chargedMoveValues[0].move.energy)){
+					chargedMoveValues[0].weight = 0;
+				} else if((chargedMoveValues[1].move.selfDebuffing)&&(! chargedMoveValues[0].move.selfDebuffing)&&(chargedMoveValues[0].move.energy <= chargedMoveValues[1].move.energy)){
+					chargedMoveValues[1].weight = 0;
+				}
+			}
+		}
+
+		for(var i = 0; i < chargedMoveValues.length; i++){
+			actionOptions.push(new DecisionOption("CHARGED_MOVE_"+chargedMoveValues[i].index, chargedMoveValues[i].weight));
 		}
 
 		actionOptions.push(new DecisionOption("FAST_MOVE", fastMoveWeight));
@@ -2250,6 +2266,10 @@ function Battle(){
 								useShield = true;
 								shieldWeight = 4
 							}
+
+							if((chargedDamage >= defender.hp / 2)&&(fastDPT > 1.5)){
+								shieldWeight = 12
+							}
 						}
 					}
 				}
@@ -2259,9 +2279,14 @@ function Battle(){
 					// Shield the move if it's the lowest energy move and guaranteed to KO
 
 					var lowestMoveEnergy = attacker.chargedMoves[0].energy;
+					var lowestMoveDamage = attacker.chargedMoves[0].damage;
 
 					if((attacker.chargedMoves.length > 1)&&(attacker.chargedMoves[1].energy < lowestMoveEnergy)){
 						lowestMoveEnergy = attacker.chargedMoves[1].energy;
+					}
+
+					if((attacker.chargedMoves.length > 1)&&(attacker.chargedMoves[1].damage < lowestMoveDamage)){
+						lowestMoveDamage = attacker.chargedMoves[1].damage;
 					}
 
 					if((move.energy == lowestMoveEnergy)&&(damage >= defender.hp * .75)){
@@ -2269,6 +2294,10 @@ function Battle(){
 					}
 
 					if((move.energy == lowestMoveEnergy)&&(damage >= defender.hp * .95)){
+						noShieldWeight = 0;
+					}
+
+					if(lowestMoveDamage >= defender.hp * .95){
 						noShieldWeight = 0;
 					}
 

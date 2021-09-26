@@ -1222,6 +1222,9 @@ select, input {
 .battle-results .bulk-btn {
   font-size: 14px;
   margin-top: 30px;
+  color: #eee;
+  background: url("../img/histogram-icon.png") no-repeat 8px center, #3e5eac !important;
+  padding-left: 30px;
 }
 .battle-results .summary {
   display: inline-block;
@@ -1269,8 +1272,12 @@ select, input {
   padding: 0 2px;
 }
 .battle-results .summary .bulk-outcomes a.rating.star {
-  font-size: 14px;
+  font-size: 12px;
   padding-left: 30px;
+  background-image: url("../img/starburst_red.png");
+}
+.battle-results .summary .bulk-outcomes a.rating.star.win {
+  background-image: url("../img/starburst.png");
 }
 .battle-results .summary .bulk-outcomes .outcome-label {
   font-size: 14px;
@@ -2412,6 +2419,10 @@ a.download-csv {
   font-weight: bold;
   width: auto;
   text-decoration: none;
+}
+.rating.star.loss,
+.rankings-container > .rank > .rating-container > .rating.star.loss {
+  background-image: url("../img/starburst_red.png");
 }
 
 .rankings-container > .rank > .rating-container > .rating {

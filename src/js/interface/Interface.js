@@ -330,11 +330,17 @@ var InterfaceMaster = (function () {
 				// Show battle summary text
 
 				var winner = b.getWinner();
+				var rating = b.getBattleRatings()[0];
 				var durationSeconds = Math.floor(duration / 100) / 10;
 
-				if(winner.pokemon){
-					var winnerRating = winner.rating;
-					$(".battle-results .summary").html("<div><span class=\"name\">"+winner.pokemon.speciesName+"</span> wins in <span class=\"time\">"+durationSeconds+"s</span> with a battle rating of <span class=\"rating star\">"+winnerRating+"</span></div>");
+				if(rating != 500){
+					var description = "wins";
+
+					if(rating < 500){
+						description = "loses";
+					}
+
+					$(".battle-results .summary").html("<div><span class=\"name\">"+pokemon[0].speciesName+"</span> "+description+" in <span class=\"time\">"+durationSeconds+"s</span> with a battle rating of <span class=\"rating star\">"+rating+"</span></div>");
 
 					if(turnMargin >= 20){
 						turnMargin = "20+";
@@ -356,8 +362,12 @@ var InterfaceMaster = (function () {
 
 					$(".battle-results .summary").append("<div class=\"turn-margin-description\"><span class=\"turn-margin\" value=\""+attr+"\">"+turnMargin + " turn(s)</span> of difference can flip this scenario. " + marginSummary + "</div>");
 
-					var color = battle.getRatingColor(winnerRating);
+					var color = battle.getRatingColor(rating);
 					$(".battle-results .summary .rating").first().css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
+
+					if(rating < 500){
+						$(".battle-results .summary .rating").addClass("loss");
+					}
 
 					$(".continue-container").show();
 					$(".continue-container .name").html(winner.pokemon.speciesName + " (" + winner.hp + " HP, " + winner.energy + " energy)");
@@ -374,9 +384,6 @@ var InterfaceMaster = (function () {
 
 					$(".battle-results .summary").append("<div class=\"bulk-summary\"></div>");
 
-
-					$(".battle-results .bulk-summary").append("<div class=\"disclaimer\">Below is a collection of outcomes if both Pokemon take random actions. Explore the best, worst, and average results. Due to each Pokemon's randomized behavior, results may change and may not always represent realistic scenarios.</div>");
-
 					var $outcomes = $("<div class=\"bulk-outcomes\"></div>");
 
 					var bestRating = bulkResults.best.getBattleRatings()[0];
@@ -390,6 +397,10 @@ var InterfaceMaster = (function () {
 
 					$outcomes.append("<div class=\"outcome\"><div class=\"outcome-label\">Worst</div><a href=\"#\" class=\"rating star worst\">"+worstRating+"</a></div>");
 
+					if(worstRating >= 500){
+						$outcomes.find("a.worst").addClass("win");
+					}
+
 					if((bulkResults.medianLoss)&&(bulkResults.medianWin)){
 						var medianLossRating = bulkResults.medianLoss.getBattleRatings()[0];
 						var medianLossColor = battle.getRatingColor(medianLossRating);
@@ -400,15 +411,23 @@ var InterfaceMaster = (function () {
 
 					$outcomes.append("<div class=\"outcome\"><div class=\"outcome-label\">Median</div><a href=\"#\" class=\"rating star median\">"+medianRating+"</a></div>");
 
+					if(medianRating >= 500){
+						$outcomes.find("a.median").addClass("win");
+					}
+
 					if((bulkResults.medianLoss)&&(bulkResults.medianWin)){
 						var medianWinRating = bulkResults.medianWin.getBattleRatings()[0];
 						var medianWinColor = battle.getRatingColor(medianWinRating);
 
-						$outcomes.append("<div class=\"outcome\"><div class=\"outcome-label\">Median<br>Win</div><a href=\"#\" class=\"rating star median-win\">"+medianWinRating+"</a></div>");
+						$outcomes.append("<div class=\"outcome\"><div class=\"outcome-label\">Median<br>Win</div><a href=\"#\" class=\"rating star median-win win\">"+medianWinRating+"</a></div>");
 						$outcomes.find(".rating.median-win").css("background-color", "rgb("+medianWinColor[0]+","+medianWinColor[1]+","+medianWinColor[2]+")");
 					}
 
 					$outcomes.append("<div class=\"outcome\"><div class=\"outcome-label\">Best</div><a href=\"#\" class=\"rating star best\">"+bestRating+"</a></div>");
+
+					if(bestRating >= 500){
+						$outcomes.find("a.best").addClass("win");
+					}
 
 					$outcomes.find(".rating.best").css("background-color", "rgb("+bestColor[0]+","+bestColor[1]+","+bestColor[2]+")");
 					$outcomes.find(".rating.median").css("background-color", "rgb("+medianColor[0]+","+medianColor[1]+","+medianColor[2]+")");
@@ -422,6 +441,8 @@ var InterfaceMaster = (function () {
 
 					bulkHistogram = new BattleHistogram($(".battle-results .bulk-summary .histogram"));
 					bulkHistogram.generate(pokeSelectors[0].getPokemon(), bulkRatings, 400);
+
+					$(".battle-results .bulk-summary").append("<div class=\"disclaimer\">Above is a collection of outcomes if both Pokemon take random move and shield actions. Explore the best, worst, and average results. Due to each Pokemon's randomized behavior, results may change and may not always represent realistic scenarios. Pokemon are not guaranteed to use all available shields or energy.</div>");
 				}
 
 				// Animate timelines
@@ -600,7 +621,6 @@ var InterfaceMaster = (function () {
 				$(".battle-details .name-2").html(pokemon[1].speciesName);
 
 				if(! sandbox){
-					var originalShields = [pokemon[0].startingShields, pokemon[1].startingShields];
 
 					for(var i = 0; i < 3; i++){
 
@@ -613,25 +633,23 @@ var InterfaceMaster = (function () {
 							var rating;
 							var color;
 
-							if(! ((n == originalShields[0]) && (i == originalShields[1])) ) {
-								var b = new Battle();
-								b.setLevelCap(battle.getLevelCap());
-								b.setCP(battle.getCP());
-								b.setNewPokemon(pokemon[0], 0, false);
-								b.setNewPokemon(pokemon[1], 1, false);
+							var b = new Battle();
+							b.setLevelCap(battle.getLevelCap());
+							b.setCP(battle.getCP());
+							b.setNewPokemon(pokemon[0], 0, false);
+							b.setNewPokemon(pokemon[1], 1, false);
 
-								if(bulkResults){
-									b = bulkResults.median;
-								} else{
-									b.simulate();
-								}
+							b.simulate();
 
-								rating = b.getBattleRatings()[0];
-								color = b.getRatingColor(rating);
+
+							/*if(bulkResults){
+								b = bulkResults.median;
 							} else{
-								rating = battle.getBattleRatings()[0];
-								color = battle.getRatingColor(rating);
-							}
+								b.simulate();
+							}*/
+
+							rating = b.getBattleRatings()[0];
+							color = b.getRatingColor(rating);
 
 							$(".rating-table .battle-"+i+"-"+n).html(rating);
 							$(".rating-table .battle-"+i+"-"+n).css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");

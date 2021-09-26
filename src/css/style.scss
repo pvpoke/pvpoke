@@ -1498,6 +1498,9 @@ select, input{
 	.bulk-btn{
 		font-size: 14px;
 		margin-top: 30px;
+		color:$color-off-white;
+		background:url('../img/histogram-icon.png') no-repeat 8px center, rgb(62, 94, 172) !important;
+		padding-left:30px;
 	}
 
 	.summary{
@@ -1545,8 +1548,13 @@ select, input{
 			}
 
 			a.rating.star{
-				font-size:14px;
+				font-size:12px;
 				padding-left:30px;
+				background-image:url("../img/starburst_red.png");
+
+				&.win{
+					background-image:url("../img/starburst.png");
+				}
 			}
 
 			.outcome-label{
@@ -2771,6 +2779,10 @@ a.download-csv{
 	font-weight: bold;
 	width:auto;
 	text-decoration: none;
+
+	&.loss{
+		background-image:url('../img/starburst_red.png');
+	}
 }
 
 .rankings-container > .rank > .rating-container > .rating{
