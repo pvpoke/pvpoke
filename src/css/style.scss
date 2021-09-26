@@ -1559,6 +1559,10 @@ select, input{
 			    align-items: center;
 			}
 		}
+
+		.histogram span{
+			padding:0;
+		}
 	}
 
 	.tip{
@@ -3176,8 +3180,8 @@ a.download-csv{
 			margin: 10px 0;
 			display:flex;
 			font-size:12px;
+			line-height: 16px;
 		}
-
 	}
 }
 

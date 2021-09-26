@@ -1281,6 +1281,9 @@ select, input {
   justify-content: center;
   align-items: center;
 }
+.battle-results .summary .histogram span {
+  padding: 0;
+}
 .battle-results .tip {
   margin: 15px;
   text-align: center;
@@ -2775,6 +2778,7 @@ a.download-csv {
   margin: 10px 0;
   display: flex;
   font-size: 12px;
+  line-height: 16px;
 }
 
 /* ARTICLE */
