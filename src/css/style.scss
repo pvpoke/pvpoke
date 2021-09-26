@@ -1495,6 +1495,11 @@ select, input{
 		}
 	}
 
+	.bulk-btn{
+		font-size: 14px;
+		margin-top: 30px;
+	}
+
 	.summary{
 		display:inline-block;
 		margin:15px auto;
@@ -1528,6 +1533,31 @@ select, input{
 			span.turn-margin[value="low"]{ background:#fff943; }
 			span.turn-margin[value="medium"]{ background:#94ff43; }
 			span.turn-margin[value="high"]{ background:#43ff85; }
+		}
+
+		.bulk-outcomes{
+			display:flex;
+			justify-content: center;
+			flex-wrap: wrap;
+
+			.outcome{
+				padding: 0 2px;
+			}
+
+			a.rating.star{
+				font-size:14px;
+				padding-left:30px;
+			}
+
+			.outcome-label{
+				font-size: 14px;
+			    font-weight: bold;
+			    line-height: 16px;
+			    min-height: 40px;
+			    display: flex;
+			    justify-content: center;
+			    align-items: center;
+			}
 		}
 	}
 
@@ -3135,8 +3165,8 @@ a.download-csv{
 
 		.label-x-axis{
 			position:absolute;
-			left:-20px;
-			top:50%;
+			left:-25px;
+			top:40%;
 
 			@include transform(rotate(270deg));
 		}

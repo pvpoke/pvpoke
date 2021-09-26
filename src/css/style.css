@@ -1219,6 +1219,10 @@ select, input {
   font-size: 12px;
   margin-top: 10px;
 }
+.battle-results .bulk-btn {
+  font-size: 14px;
+  margin-top: 30px;
+}
 .battle-results .summary {
   display: inline-block;
   margin: 15px auto;
@@ -1255,6 +1259,27 @@ select, input {
 }
 .battle-results .summary .turn-margin-description span.turn-margin[value=high] {
   background: #43ff85;
+}
+.battle-results .summary .bulk-outcomes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.battle-results .summary .bulk-outcomes .outcome {
+  padding: 0 2px;
+}
+.battle-results .summary .bulk-outcomes a.rating.star {
+  font-size: 14px;
+  padding-left: 30px;
+}
+.battle-results .summary .bulk-outcomes .outcome-label {
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 16px;
+  min-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .battle-results .tip {
   margin: 15px;
@@ -2737,8 +2762,8 @@ a.download-csv {
 }
 .histograms .histogram .label-x-axis {
   position: absolute;
-  left: -20px;
-  top: 50%;
+  left: -25px;
+  top: 40%;
   -moz-transform: rotate(270deg);
   -webkit-transform: rotate(270deg);
   -o-transform: rotate(270deg);

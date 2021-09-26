@@ -2316,6 +2316,10 @@ function Battle(){
 						time+=chargedMinigameTime;
 					}
 
+					if((usePriority)&&(roundChargedMoveUsed > 0)&&(roundShieldUsed > 0)){
+						displayTime+=chargedMinigameTime;
+					}
+
 					// Accumulate battle stats
 
 					if(mode == "emulate"){
