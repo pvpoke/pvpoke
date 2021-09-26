@@ -2312,12 +2312,12 @@ function Battle(){
 
 					// If a shield has already been used, add time so events don't visually overlap
 
-					if(roundChargedMoveUsed == 0){
-						time+=chargedMinigameTime;
+					if((usePriority)&&(roundChargedMoveUsed > 0)&&(roundShieldUsed > 0)){
+						displayTime = time;
 					}
 
-					if((usePriority)&&(roundChargedMoveUsed > 0)&&(roundShieldUsed > 0)){
-						displayTime+=chargedMinigameTime;
+					if(roundChargedMoveUsed == 0){
+						time+=chargedMinigameTime;
 					}
 
 					// Accumulate battle stats
