@@ -3511,6 +3511,9 @@ a.pokebattler {
 .dark > .name-container, .dragon > .name-container, .ghost > .name-container {
   color: #eee;
 }
+.dark option, .dragon option, .ghost option {
+  color: #333;
+}
 .dark .detail-section, .dragon .detail-section, .ghost .detail-section {
   color: #333;
 }
