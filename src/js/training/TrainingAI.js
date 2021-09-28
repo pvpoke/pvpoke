@@ -305,7 +305,7 @@ function TrainingAI(l, p, b){
 
 		// If the team pool only has presets, use a preset
 
-		if((partySize == 3)&&(currentTeamPool)){
+		if(currentTeamPool && battle.getCup().partySize && (battle.getCup().partySize == 3)){
 			if(teamSelectMode == "preset" || ! currentTeamPool.slots){
 				pickStrategy = "PRESET";
 			}
@@ -817,7 +817,7 @@ function TrainingAI(l, p, b){
 			average: 0,
 			minShields: 3
 		};
-		
+
 		// Preserve current HP, energy, and stat boosts which get reset during simulation
 		// Otherwise old values of startHp, startingShields, etc. may get used during the reset
 		pokemon.startHp = pokemon.hp;
@@ -825,7 +825,7 @@ function TrainingAI(l, p, b){
 		pokemon.startStatBuffs = [pokemon.statBuffs[0], pokemon.statBuffs[1]];
 		pokemon.startCooldown = pokemon.cooldown;
 		pokemon.startingShields = pokemon.shields;
-		
+
 		opponent.startHp = opponent.hp;
 		opponent.startEnergy = opponent.energy;
 		opponent.startStatBuffs = [opponent.statBuffs[0], opponent.statBuffs[1]];
