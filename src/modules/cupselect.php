@@ -1,7 +1,6 @@
 <select class="format-select">
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
-	<option value="official" cup="remix">Remix Cup</option>
 	<option value="official" cup="halloween">Halloween Cup</option>
 	<option value="official" cup="littlejungle">Little Jungle Cup</option>
 	<option value="tsa-3" cup="factions">Silph Factions (Dungeon)</option>

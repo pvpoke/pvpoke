@@ -43,7 +43,12 @@
 	},
 	{
 		"speciesId": "zacian_hero",
-		"chargedMoves": ["CLOSE_COMBAT", "PLAY_ROUGH"]
+		"chargedMoves": ["CLOSE_COMBAT", "PLAY_ROUGH"],
+		"weight": 25
+	},
+	{
+		"speciesId": "zarude",
+		"weight": 5
 	},
 	{
 		"speciesId": "hariyama",
