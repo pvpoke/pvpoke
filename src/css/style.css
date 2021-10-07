@@ -3512,10 +3512,10 @@ a.pokebattler {
   color: #eee;
 }
 .dark option, .dragon option, .ghost option {
-  color: #333;
+  color: #000;
 }
 .dark .detail-section, .dragon .detail-section, .ghost .detail-section {
-  color: #333;
+  color: #000;
 }
 
 .buff.bug, .debuff.bug {

@@ -31,8 +31,6 @@
 				<option value="ultrapremierclassic" type="ultra" class="hide multi-battle">Premier Classic Meta</option>
 				<option value="masterpremierclassic" type="master" class="hide multi-battle">Premier Classic Meta</option>
 				<option value="halloween" type="great" class="multi-battle">Halloween Cup Meta</option>
-				<option value="factions" type="great" class="multi-battle">Silph Factions Meta (Dungeon)</option>
-				<option value="nightfall" type="great" class="multi-battle">Silph Factions Meta (Nightfall)</option>
 				<option value="lunar" type="great" class="multi-battle">Silph Lunar Cup Meta</option>
 			</select>
 			<div class="flex quick-fill-buttons">

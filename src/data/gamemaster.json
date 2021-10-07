@@ -17338,7 +17338,8 @@
         },
         "types": ["ghost", "none"],
         "fastMoves": ["ASTONISH", "HEX"],
-        "chargedMoves": ["DARK_PULSE", "OMINOUS_WIND", "PSYCHIC"],
+        "chargedMoves": ["DARK_PULSE", "OMINOUS_WIND", "PSYCHIC", "SHADOW_BALL"],
+		"eliteMoves": ["SHADOW_BALL"],
         "defaultIVs": {
             "cp500": [8, 6, 14, 8],
             "cp1500": [23.5, 5, 13, 12],
@@ -17361,7 +17362,8 @@
         },
         "types": ["ghost", "none"],
         "fastMoves": ["ASTONISH", "HEX"],
-        "chargedMoves": ["DARK_PULSE", "OMINOUS_WIND", "PSYCHIC"],
+		"chargedMoves": ["DARK_PULSE", "OMINOUS_WIND", "PSYCHIC", "SHADOW_BALL"],
+		"eliteMoves": ["SHADOW_BALL"],
         "defaultIVs": {
             "cp500": [8, 6, 14, 8],
             "cp1500": [23.5, 5, 13, 12],

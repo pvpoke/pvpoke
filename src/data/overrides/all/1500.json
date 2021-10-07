@@ -51,6 +51,14 @@
 		"chargedMoves": ["SHADOW_BALL", "PSYCHIC"]
 	},
 	{
+		"speciesId": "dusknoir",
+		"chargedMoves": ["SHADOW_BALL", "DARK_PULSE"]
+	},
+	{
+		"speciesId": "dusknoir_shadow",
+		"chargedMoves": ["SHADOW_BALL", "DARK_PULSE"]
+	},
+	{
 		"speciesId": "sirfetchd",
 		"chargedMoves": ["LEAF_BLADE", "NIGHT_SLASH"]
 	},
