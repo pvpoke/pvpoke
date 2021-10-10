@@ -186,13 +186,18 @@
 	},
 	{
 		"speciesId":"jellicent",
-		"fastMove":"BUBBLE",
+		"fastMove":"HEX",
 		"chargedMoves":["BUBBLE_BEAM","SHADOW_BALL"]
+	},
+	{
+		"speciesId":"jellicent",
+		"fastMove":"HEX",
+		"chargedMoves":["ICE_BEAM","SHADOW_BALL"]
 	},
 	{
 		"speciesId":"drapion",
 		"fastMove":"POISON_STING",
-		"chargedMoves":["AQUA_TAIL","SLUDGE_BOMB"]
+		"chargedMoves":["CRUNCH","SLUDGE_BOMB"]
 	},
 	{
 		"speciesId":"sylveon",

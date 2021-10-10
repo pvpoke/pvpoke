@@ -96,7 +96,7 @@
 	},
 	{
 		"speciesId": "jellicent",
-		"fastMove": "BUBBLE",
+		"fastMove": "HEX",
 		"chargedMoves": ["BUBBLE_BEAM", "SHADOW_BALL"],
 		"weight": 12
 	},
@@ -128,11 +128,19 @@
 	},
 	{
 		"speciesId": "drapion",
-		"chargedMoves": ["AQUA_TAIL", "SLUDGE_BOMB"]
+		"chargedMoves": ["CRUNCH", "SLUDGE_BOMB"]
 	},
 	{
 		"speciesId": "drapion_shadow",
-		"chargedMoves": ["AQUA_TAIL", "SLUDGE_BOMB"]
+		"chargedMoves": ["CRUNCH", "SLUDGE_BOMB"]
+	},
+	{
+		"speciesId": "nidoking",
+		"chargedMoves": ["SAND_TOMB", "EARTH_POWER"]
+	},
+	{
+		"speciesId": "nidoking_shadow",
+		"chargedMoves": ["SAND_TOMB", "EARTH_POWER"]
 	},
 	{
 		"speciesId": "galvantula",
@@ -141,6 +149,7 @@
 	},
 	{
 		"speciesId": "crustle",
+		"fastMove": "SMACK_DOWN",
 		"chargedMoves": ["X_SCISSOR", "ROCK_SLIDE"],
 		"weight": 4
 	},
@@ -166,7 +175,12 @@
 	},
 	{
 		"speciesId": "nidoqueen_shadow",
+		"chargedMoves": ["POISON_FANG", "EARTH_POWER"],
 		"weight": 24
+	},
+	{
+		"speciesId": "nidoqueen",
+		"chargedMoves": ["POISON_FANG", "EARTH_POWER"]
 	},
 	{
 		"speciesId": "umbreon",
@@ -175,7 +189,8 @@
 	},
 	{
 		"speciesId": "ninetales_alolan",
-		"chargedMoves": ["WEATHER_BALL_ICE", "DAZZLING_GLEAM"],
+		"fastMove": "CHARM",
+		"chargedMoves": ["WEATHER_BALL_ICE", "PSYSHOCK"],
 		"weight": 25
 	},
 	{
@@ -197,6 +212,7 @@
 	},
 	{
 		"speciesId": "wormadam_trash",
+		"fastMove": "CONFUSION",
 		"weight": 10
 	},
 	{
@@ -205,6 +221,7 @@
 	},
 	{
 		"speciesId": "qwilfish",
+		"chargedMoves": ["AQUA_TAIL", "SLUDGE_WAVE"],
 		"weight": 6
 	},
 	{
