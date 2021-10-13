@@ -23055,8 +23055,8 @@
         "released": false
     }, {
         "dex": 710,
-        "speciesName": "Pumpkaboo",
-        "speciesId": "pumpkaboo",
+        "speciesName": "Pumpkaboo (Average)",
+        "speciesId": "pumpkaboo_average",
         "baseStats": {
             "atk": 121,
             "def": 123,
@@ -23064,7 +23064,7 @@
         },
         "types": ["ghost", "grass"],
         "fastMoves": ["ASTONISH", "RAZOR_LEAF"],
-        "chargedMoves": ["GRASS_KNOT", "SHADOW_SNEAK", "FOUL_PLAY", "EARTHQUAKE"],
+        "chargedMoves": ["GRASS_KNOT", "SHADOW_SNEAK", "FOUL_PLAY"],
         "defaultIVs": {
             "cp500": [15.5, 7, 15, 10],
             "cp1500": [50, 15, 15, 15],
@@ -23074,9 +23074,70 @@
         "thirdMoveCost": 75000,
         "released": false
     }, {
+        "dex": 710,
+        "speciesName": "Pumpkaboo (Large)",
+        "speciesId": "pumpkaboo_large",
+        "baseStats": {
+            "atk": 120,
+            "def": 122,
+            "hp": 144
+        },
+        "types": ["ghost", "grass"],
+        "fastMoves": ["ASTONISH", "RAZOR_LEAF"],
+        "chargedMoves": ["GRASS_KNOT", "SHADOW_SNEAK", "FOUL_PLAY"],
+        "defaultIVs": {
+            "cp500": [15.5, 5, 13, 11],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": false
+    }, {
+        "dex": 710,
+        "speciesName": "Pumpkaboo (Small)",
+        "speciesId": "pumpkaboo_small",
+        "baseStats": {
+            "atk": 122,
+            "def": 124,
+            "hp": 127
+        },
+        "types": ["ghost", "grass"],
+        "fastMoves": ["ASTONISH", "RAZOR_LEAF"],
+        "chargedMoves": ["GRASS_KNOT", "SHADOW_SNEAK", "FOUL_PLAY"],
+        "defaultIVs": {
+            "cp500": [16, 6, 13, 10],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": false
+    }, {
+        "dex": 710,
+        "speciesName": "Pumpkaboo (Super)",
+        "speciesId": "pumpkaboo_super",
+        "baseStats": {
+            "atk": 118,
+            "def": 120,
+            "hp": 153
+        },
+        "types": ["ghost", "grass"],
+        "fastMoves": ["ASTONISH", "RAZOR_LEAF"],
+        "chargedMoves": ["GRASS_KNOT", "SHADOW_SNEAK", "FOUL_PLAY"],
+        "defaultIVs": {
+            "cp500": [15.5, 5, 13, 10],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": false,
+		"searchPriority": 2
+    }, {
         "dex": 711,
-        "speciesName": "Gourgeist",
-        "speciesId": "gourgeist",
+        "speciesName": "Gourgeist (Average)",
+        "speciesId": "gourgeist_average",
         "baseStats": {
             "atk": 175,
             "def": 213,
@@ -23094,6 +23155,70 @@
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": false
+    }, {
+        "dex": 711,
+        "speciesName": "Gourgeist (Large)",
+        "speciesId": "gourgeist_large",
+        "baseStats": {
+            "atk": 179,
+            "def": 206,
+            "hp": 181
+        },
+        "types": ["ghost", "grass"],
+        "fastMoves": ["HEX", "RAZOR_LEAF"],
+        "chargedMoves": ["SEED_BOMB", "SHADOW_BALL", "FOUL_PLAY", "FIRE_BLAST"],
+        "defaultIVs": {
+            "cp500": [7.5, 6, 9, 15],
+            "cp1500": [22.5, 5, 10, 10],
+            "cp2500": [45.5, 4, 7, 15],
+            "cp2500l40": [39.5, 15, 15, 14]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": false
+    }, {
+        "dex": 711,
+        "speciesName": "Gourgeist (Small)",
+        "speciesId": "gourgeist_small",
+        "baseStats": {
+            "atk": 171,
+            "def": 219,
+            "hp": 146
+        },
+        "types": ["ghost", "grass"],
+        "fastMoves": ["HEX", "RAZOR_LEAF"],
+        "chargedMoves": ["SEED_BOMB", "SHADOW_BALL", "FOUL_PLAY", "FIRE_BLAST"],
+        "defaultIVs": {
+            "cp500": [8.5, 6, 10, 9],
+            "cp1500": [24.5, 6, 13, 15],
+            "cp2500": [48.5, 15, 14, 15],
+            "cp2500l40": [40, 15, 14, 14]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": false
+    }, {
+        "dex": 711,
+        "speciesName": "Gourgeist (Super)",
+        "speciesId": "gourgeist_super",
+        "baseStats": {
+            "atk": 182,
+            "def": 200,
+            "hp": 198
+        },
+        "types": ["ghost", "grass"],
+        "fastMoves": ["HEX", "RAZOR_LEAF"],
+        "chargedMoves": ["SEED_BOMB", "SHADOW_BALL", "FOUL_PLAY", "FIRE_BLAST"],
+        "defaultIVs": {
+            "cp500": [7, 10, 13, 14],
+            "cp1500": [21.5, 5, 8, 12],
+            "cp2500": [40.5, 4, 15, 13],
+            "cp2500l40": [37.5, 12, 13, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": false,
+		"searchPriority": 2
     }, {
         "dex": 712,
         "speciesName": "Bergmite",
