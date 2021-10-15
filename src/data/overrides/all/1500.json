@@ -91,6 +91,11 @@
 		"chargedMoves": ["SUPER_POWER", "MEGAHORN"]
 	},
 	{
+		"speciesId": "slowking_galarian",
+		"fastMove": "HEX",
+		"chargedMoves": ["SHADOW_BALL", "SLUDGE_WAVE"]
+	},
+	{
 		"speciesId": "lickitung",
 		"chargedMoves": ["BODY_SLAM", "POWER_WHIP"],
 		"weight": 2

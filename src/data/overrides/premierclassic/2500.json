@@ -37,6 +37,11 @@
 		"fastMove": "DRAGON_TAIL"
 	},
 	{
+		"speciesId": "slowking_galarian",
+		"fastMove": "CONFUSION",
+		"chargedMoves": ["SHADOW_BALL", "FUTURE_SIGHT"]
+	},
+	{
 		"speciesId": "heracross",
 		"chargedMoves": ["ROCK_BLAST", "CLOSE_COMBAT"]
 	},
