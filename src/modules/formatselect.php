@@ -9,6 +9,7 @@
 	<option value="1500" cup="factions" meta-group="factions">Silph Factions (Dungeon)</option>
 	<option value="1500" cup="nightfall" meta-group="nightfall">Silph Factions (Nightfall)</option>
 	<option value="1500" cup="lunar" meta-group="lunar">Silph Lunar Cup</option>
+	<option value="1500" cup="adl" meta-group="great">Arrohh Draft League</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="1500" cup="cliffhanger" meta-group="great">GO Stadium Cliffhanger</option>

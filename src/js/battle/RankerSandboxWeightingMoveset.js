@@ -419,6 +419,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if((cup.name == "adl")&&(battle.getCP() == 1500)){
+					iterations = 1;
+				}
+
 				if(cup.name == "lunar"){
 					iterations = 1;
 				}
