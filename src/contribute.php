@@ -230,6 +230,10 @@ require_once 'header.php'; ?>
 			<div class="space"></div>
 			<div class="supporter"><a href="http://twitter.com/ennamaruna" target="_blank">Ennamaruna</a></div>
 		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/evan.jpg" width="85" height="85" />
+			<div class="supporter"><a href="https://twitter.com/Evan71320" target="_blank">Evan777713</a></div>
+		</div>
 	</div>
 </div>
 
