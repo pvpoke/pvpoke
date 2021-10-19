@@ -69,6 +69,20 @@
         }],
         "exclude": []
     }, {
+        "name": "twilightfactions",
+        "title": "Twilight Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["dark", "poison", "fairy", "ghost"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["nidoqueen","pawniard"]
+        }]
+    }, {
         "name": "tempest",
         "title": "Tempest Cup",
         "include": [{
@@ -857,14 +871,14 @@
         "title": "Silph Factions",
         "include": [{
             "filterType": "type",
-            "values": ["bug", "dragon", "poison", "steel", "water"]
+            "values": ["fire","flying","ice","normal","psychic"]
         }],
         "exclude": [{
             "filterType": "tag",
-            "values": ["mega", "shadow"]
+            "values": ["mega"]
         }, {
             "filterType": "id",
-            "values": ["azumarill", "stunfisk_galarian", "skarmory", "altaria", "bastiodon"]
+            "values": ["altaria","deoxys_defense","medicham","wobbuffet","chansey","mantine"]
         }]
     }, {
         "name": "venture",

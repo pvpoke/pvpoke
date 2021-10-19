@@ -6,8 +6,8 @@
 	<option value="10000" cup="classic" meta-group="master">Master League (Classic)</option>
 	<option value="10000" cup="premierclassic" meta-group="masterpremierclassic">Master League (Premier Classic)</option>
 	<option value="1500" cup="halloween" meta-group="halloween">Halloween Cup</option>
-	<option value="1500" cup="factions" meta-group="factions">Silph Factions (Dungeon)</option>
-	<option value="1500" cup="nightfall" meta-group="nightfall">Silph Factions (Nightfall)</option>
+	<option value="1500" cup="factions" meta-group="factions">Silph Factions (Comet)</option>
+	<option value="1500" cup="twilightfactions" meta-group="twilight">Silph Factions (Twilight)</option>
 	<option value="1500" cup="lunar" meta-group="lunar">Silph Lunar Cup</option>
 	<option value="1500" cup="adl" meta-group="great">Arrohh Draft League</option>
 

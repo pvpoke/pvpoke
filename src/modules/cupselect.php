@@ -2,8 +2,8 @@
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
 	<option value="official" cup="halloween">Halloween Cup</option>
-	<option value="tsa-3" cup="factions">Silph Factions (Dungeon)</option>
-	<option value="tsa-3" cup="nightfall">Silph Factions (Nightfall)</option>
+	<option value="tsa-3" cup="factions">Silph Factions (Comet)</option>
+	<option value="tsa-3" cup="twilightfactions">Silph Factions (Twilight)</option>
 	<option value="tsa-4" cup="lunar">Silph Lunar Cup</option>
 	<option value="community" cup="adl">Arrohh Draft League</option>
 
@@ -58,6 +58,7 @@
 	<option value="kingdom" cat="tsa-1">Kingdom Cup</option>
 	<option value="tempest" cat="tsa-1">Tempest Cup</option>
 	<option value="twilight" cat="tsa-1">Twilight Cup</option>
+	<option value="twilightfactions" cat="tsa-1">Twilight Cup</option>
 	<option value="boulder" cat="tsa-1">Boulder Cup</option>
 	<option value="catacomb" cat="tsa-2">Silph Catacomb Cup</option>
 	<option value="continentals-2" cat="tsa-2">Season 2 Continentals</option>
