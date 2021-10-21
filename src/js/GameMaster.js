@@ -285,6 +285,12 @@ var GameMaster = (function () {
 					}
 				}
 
+				// Pokemon exceptions
+
+				if(pokemon.speciesId == "trevenant"){
+					defaultIVs["cp1500"] = [22, 3, 13, 12];
+				}
+
 				entry.defaultIVs = defaultIVs;
 			});
 

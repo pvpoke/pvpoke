@@ -28,6 +28,10 @@
     "fastMove": "AIR_SLASH",
     "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
 }, {
+		"speciesId":"trevenant",
+		"fastMove":"SHADOW_CLAW",
+		"chargedMoves":["SEED_BOMB","SHADOW_BALL"]
+}, {
     "speciesId": "muk_alolan",
     "fastMove": "POISON_JAB",
     "chargedMoves": ["DARK_PULSE", "ACID_SPRAY"]

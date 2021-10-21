@@ -32,6 +32,10 @@
     "fastMove": "CHARM",
     "chargedMoves": ["MOONBLAST", "PSYSHOCK"]
 }, {
+	"speciesId":"trevenant",
+	"fastMove":"SHADOW_CLAW",
+	"chargedMoves":["SEED_BOMB","SHADOW_BALL"]
+}, {
     "speciesId": "cresselia",
     "fastMove": "PSYCHO_CUT",
     "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]

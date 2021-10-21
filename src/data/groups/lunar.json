@@ -22,6 +22,10 @@
     "speciesId": "crustle",
     "fastMove": "SMACK_DOWN",
     "chargedMoves": ["ROCK_SLIDE", "X_SCISSOR"]
+}, 	{
+		"speciesId":"trevenant",
+		"fastMove":"SHADOW_CLAW",
+		"chargedMoves":["SEED_BOMB","SHADOW_BALL"]
 }, {
     "speciesId": "galvantula",
     "fastMove": "VOLT_SWITCH",

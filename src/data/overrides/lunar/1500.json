@@ -196,5 +196,33 @@
 	{
 		"speciesId": "venusaur",
 		"weight": 6
+	},
+	{
+		"speciesId": "trevenant",
+		"chargedMoves": ["SEED_BOMB","SHADOW_BALL"]
+	},
+	{
+		"speciesId": "gourgeist_small",
+		"weight": 0
+	},
+	{
+		"speciesId": "gourgeist_average",
+		"weight": 0
+	},
+	{
+		"speciesId": "gourgeist_large",
+		"weight": 0
+	},
+	{
+		"speciesId": "pumpkaboo_small",
+		"weight": 0
+	},
+	{
+		"speciesId": "pumpkaboo_average",
+		"weight": 0
+	},
+	{
+		"speciesId": "pumpkaboo_large",
+		"weight": 0
 	}
 ]
