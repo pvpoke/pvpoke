@@ -23085,6 +23085,7 @@
             "cp1500": [50, 15, 15, 15],
             "cp2500": [50, 15, 15, 15]
         },
+		"tags": ["teambuilderexclude"],
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
@@ -23105,6 +23106,7 @@
             "cp1500": [50, 15, 15, 15],
             "cp2500": [50, 15, 15, 15]
         },
+		"tags": ["teambuilderexclude"],
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
@@ -23125,6 +23127,7 @@
             "cp1500": [50, 15, 15, 15],
             "cp2500": [50, 15, 15, 15]
         },
+		"tags": ["teambuilderexclude"],
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
@@ -23167,6 +23170,7 @@
             "cp2500": [49, 4, 13, 14],
             "cp2500l40": [40, 13, 15, 15]
         },
+		"tags": ["teambuilderexclude"],
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
@@ -23188,6 +23192,7 @@
             "cp2500": [45.5, 4, 7, 15],
             "cp2500l40": [39.5, 15, 15, 14]
         },
+		"tags": ["teambuilderexclude"],
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
@@ -23209,6 +23214,7 @@
             "cp2500": [48.5, 15, 14, 15],
             "cp2500l40": [40, 15, 14, 14]
         },
+		"tags": ["teambuilderexclude"],
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true

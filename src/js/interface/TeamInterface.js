@@ -491,6 +491,11 @@ var InterfaceMaster = (function () {
 						continue;
 					}
 
+					if(r.pokemon.hasTag("teambuilderexclude")){
+						i++;
+						continue;
+					}
+
 					if(excludedThreatIDs.indexOf(r.speciesId) > -1){
 						i++;
 						continue;
