@@ -5,6 +5,7 @@
 	<option value="tsa-3" cup="factions">Silph Factions (Comet)</option>
 	<option value="tsa-3" cup="twilightfactions">Silph Factions (Twilight)</option>
 	<option value="tsa-4" cup="lunar">Silph Lunar Cup</option>
+	<option value="tsa-4" cup="brawler">Silph Brawler Cup</option>
 	<option value="community" cup="adl">Arrohh Draft League</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
@@ -91,5 +92,6 @@
 	<option value="factions" cat="tsa-3">Floating City</option>
 	<option value="worlds" cat="tsa-3">Silph Worlds</option>
 	<option value="lunar" cat="tsa-4">Silph Lunar Cup</option>
+	<option value="brawler" cat="tsa-4">Silph Brawler Cup</option>
 	<option value="custom" cat="custom">Custom</option>
 </select>

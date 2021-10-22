@@ -9,6 +9,7 @@
 	<option value="1500" cup="factions" meta-group="factions">Silph Factions (Comet)</option>
 	<option value="1500" cup="twilightfactions" meta-group="twilight">Silph Factions (Twilight)</option>
 	<option value="1500" cup="lunar" meta-group="lunar">Silph Lunar Cup</option>
+	<option value="1500" cup="brawler" meta-group="lunar">Silph Brawler Cup</option>
 	<option value="1500" cup="adl" meta-group="great">Arrohh Draft League</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>

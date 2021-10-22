@@ -237,8 +237,8 @@ function PokeMultiSelect(element){
 				$item.find(".name").prepend("<span class=\"cliffhanger-points\">"+pokemonList[i].cliffhangerPoints+"</span>");
 			}
 
-			if(battle.getCup().name == "continentals-3"){
-				$item.find(".moves").prepend("(Slot " + pokemon.getContinentalSlot() + ") ");
+			if(battle.getCup().slots){
+				$item.find(".moves").prepend("(Slot " + (pokemon.getSlot(battle.getCup())+1) + ") ");
 			}
 
 			// For Prismatic Cup, show color category

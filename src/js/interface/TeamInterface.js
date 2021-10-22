@@ -728,7 +728,7 @@ var InterfaceMaster = (function () {
 
 				// For Season 2 continentals, exclude Pokemon in already occupied slots
 
-				if((battle.getCup().name == "prismatic")&&(team.length < 6)){
+				if((battle.getCup().slots)&&(team.length < 6)){
 					// Add ineligible Pokemon to the exclusion list
 					var slots = battle.getCup().slots;
 
@@ -737,6 +737,7 @@ var InterfaceMaster = (function () {
 							if(slots[i].pokemon.indexOf(team[n].speciesId) > -1){
 								for(var j = 0; j < slots[i].pokemon.length; j++){
 									exclusionList.push(slots[i].pokemon[j]);
+									exclusionList.push(slots[i].pokemon[j]+"_shadow");
 								}
 
 								continue;
@@ -802,9 +803,9 @@ var InterfaceMaster = (function () {
 				// For Continentals, exclude slots that are already filled
 				var usedSlots = [];
 
-				if(battle.getCup().name == "continentals-3"){
+				if(battle.getCup().slots){
 					for(var n = 0; n < team.length; n++){
-						usedSlots.push(team[n].getContinentalSlot());
+						usedSlots.push(team[n].getSlot(battle.getCup()));
 					}
 				}
 
@@ -905,14 +906,14 @@ var InterfaceMaster = (function () {
 					}
 
 					// Add slot label for Continentals
-					if(battle.getCup().name == "prismatic"){
+					if(battle.getCup().slots){
 						var tierName = "";
 						var slot = 0;
 
 						var slots = battle.getCup().slots;
 
 						for(var j = 0; j < slots.length; j++){
-							if(slots[j].pokemon.indexOf(pokemon.speciesId) > -1){
+							if((slots[j].pokemon.indexOf(pokemon.speciesId) > -1)||(slots[j].pokemon.indexOf(pokemon.speciesId.replace("_shadow","")) > -1)){
 								slot = j+1;
 								break;
 							}
