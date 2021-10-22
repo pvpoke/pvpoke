@@ -17801,14 +17801,14 @@
         },
         "types": ["dark", "none"],
         "fastMoves": ["FEINT_ATTACK", "SNARL"],
-        "chargedMoves": ["DARK_PULSE", "FOCUS_BLAST", "SHADOW_BALL"],
+        "chargedMoves": ["DARK_PULSE", "FOCUS_BLAST", "SHADOW_BALL", "SLUDGE_BOMB"],
+		"eliteMoves": ["SLUDGE_BOMB"],
         "defaultIVs": {
             "cp500": [5, 10, 13, 15],
             "cp1500": [14, 14, 13, 15],
             "cp2500": [24, 10, 11, 13]
         },
         "tags": ["mythical", "untradeable"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -27391,6 +27391,18 @@
         "buffTarget": "opponent",
         "buffApplyChance": ".1",
         "archetype": "High Energy Debuff"
+    }, {
+        "moveId": "PSYCHIC_FANGS",
+        "name": "Psychic Fangs (Speculative)",
+        "type": "psychic",
+        "power": 40,
+        "energy": 35,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [0, -1],
+        "buffTarget": "opponent",
+        "buffApplyChance": "1",
+        "archetype": "Debuff Spam/Bait"
     }, {
         "moveId": "PSYCHO_BOOST",
         "name": "Psycho Boost",
