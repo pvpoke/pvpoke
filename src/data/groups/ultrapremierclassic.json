@@ -17,7 +17,7 @@
 	{
 		"speciesId":"gengar",
 		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["SHADOW_PUNCH","SHADOW_BALL"]
+		"chargedMoves":["SHADOW_PUNCH","SLUDGE_BOMB"]
 	},
 	{
 		"speciesId":"dragonite",
@@ -40,28 +40,23 @@
 		"chargedMoves":["BLAST_BURN","DRAGON_CLAW"]
 	},
 	{
+		"speciesId":"charizard",
+		"fastMove":"DRAGON_BREATH",
+		"chargedMoves":["BLAST_BURN","DRAGON_CLAW"]
+	},
+	{
 		"speciesId":"venusaur",
 		"fastMove":"VINE_WHIP",
 		"chargedMoves":["FRENZY_PLANT","SLUDGE_BOMB"]
 	},
 	{
-		"speciesId":"ferrothorn",
+		"speciesId":"roserade",
 		"fastMove":"BULLET_SEED",
-		"chargedMoves":["POWER_WHIP","FLASH_CANNON"]
-	},
-	{
-		"speciesId":"politoed",
-		"fastMove":"MUD_SHOT",
-		"chargedMoves":["WEATHER_BALL_WATER","EARTHQUAKE"]
-	},
-	{
-		"speciesId":"jellicent",
-		"fastMove":"HEX",
-		"chargedMoves":["BUBBLE_BEAM","ICE_BEAM"]
+		"chargedMoves":["wEATHER_BALL_FIRE","LEAF_STORM"]
 	},
 	{
 		"speciesId":"roserade",
-		"fastMove":"BULLET_SEED",
+		"fastMove":"POISON_JAB",
 		"chargedMoves":["wEATHER_BALL_FIRE","LEAF_STORM"]
 	},
 	{
@@ -72,6 +67,11 @@
 	{
 		"speciesId":"typhlosion",
 		"fastMove":"INCINERATE",
+		"chargedMoves":["BLAST_BURN","SOLAR_BEAM"]
+	},
+	{
+		"speciesId":"typhlosion",
+		"fastMove":"SHADOW_CLAW",
 		"chargedMoves":["BLAST_BURN","SOLAR_BEAM"]
 	},
 	{
@@ -190,23 +190,28 @@
 		"chargedMoves":["LEAF_BLADE","CLOSE_COMBAT"]
 	},
 	{
-		"speciesId":"tangrowth",
-		"fastMove":"VINE_WHIP",
-		"chargedMoves":["ROCK_SLIDE","POWER_WHIP"]
-	},
-	{
-		"speciesId":"ampharos",
-		"fastMove":"VOLT_SWITCH",
-		"chargedMoves":["THUNDER_PUNCH","FOCUS_BLAST"]
-	},
-	{
-		"speciesId":"slowbro",
-		"fastMove":"CONFUSION",
-		"chargedMoves":["PSYCHIC","ICE_BEAM"]
-	},
-	{
 		"speciesId":"kingdra",
 		"fastMove":"DRAGON_BREATH",
 		"chargedMoves":["OCTAZOOKA","OUTRAGE"]
+	},
+	{
+		"speciesId":"gyarados",
+		"fastMove":"DRAGON_BREATH",
+		"chargedMoves":["AQUA_TAIL","CRUNCH"]
+	},
+	{
+		"speciesId":"crobat",
+		"fastMove":"AIR_SLASH",
+		"chargedMoves":["POISON_FANG","SHADOW_BALL"]
+	},
+	{
+		"speciesId":"gliscor",
+		"fastMove":"WING_ATTACK",
+		"chargedMoves":["NIGHT_SLASH","EARTHQUAKE"]
+	},
+	{
+		"speciesId":"drapion",
+		"fastMove":"POISON_STING",
+		"chargedMoves":["CRUNCH","SLUDGE_BOMB"]
 	}
 ]
