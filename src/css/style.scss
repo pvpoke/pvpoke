@@ -357,17 +357,16 @@ header{
 }
 
 /* POKEMON SELECT */
+.poke-select-container{
+	display: flex;
+	justify-content: space-between;
+}
 
 .poke{
 
 	max-width:200px;
 
-	&:first-of-type{
-		float:left;
-	}
-
 	&:nth-of-type(2){
-		float:right;
 
 		.poke-stats{
 			text-align: right;
@@ -854,7 +853,8 @@ header{
 				margin-bottom: 0;
 			}
 
-			.export-btn{
+			.export-btn,
+			.search-string-btn{
 				margin-top:15px;
 			}
 
@@ -1103,6 +1103,9 @@ header{
 		}
 		.poke:nth-of-type(3){
 			display: block;
+		}
+		a.swap{
+			display:none;
 		}
 	}
 
@@ -3685,9 +3688,11 @@ a.download-csv{
 		}
 	}
 
-	.list-export{
+	.list-export,
+	.search-string-window{
 
-		.list-text{
+		.list-text,
+		.team-string-text{
 			width:100%;
 			height:200px;
 		}
@@ -3701,6 +3706,10 @@ a.download-csv{
 			padding:5px;
 			border-radius:8px;
 			margin:5px 0;
+		}
+
+		.search-string-options .check{
+			margin-right: 10px;
 		}
 	}
 
