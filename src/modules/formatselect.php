@@ -10,7 +10,7 @@
 	<option value="1500" cup="twilightfactions" meta-group="twilight">Silph Factions (Twilight)</option>
 	<option value="1500" cup="lunar" meta-group="lunar">Silph Lunar Cup</option>
 	<option value="1500" cup="brawler" meta-group="brawler">Silph Brawler Cup</option>
-	<option value="1500" cup="adl" meta-group="great">Arrohh Draft League</option>
+	<option value="1500" cup="safari" meta-group="safari">Victory Road Safari Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="1500" cup="cliffhanger" meta-group="great">GO Stadium Cliffhanger</option>

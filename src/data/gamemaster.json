@@ -157,12 +157,16 @@
         "name": "safari",
         "title": "Safari Cup",
         "restrictedPicks": 2,
-        "restrictedPokemon": ["azumarill", "swampert", "vigoroth", "venusaur", "meganium", "tropius", "forretress", "wormadam_trash", "skarmory", "altaria", "bastiodon", "probopass", "whiscash", "dewgong"],
+        "restrictedPokemon": ["steelix", "swampert", "swampert_shadow", "bastiodon", "bastiodon_xs", "vigoroth", "stunfisk_galarian", "azumarill", "azumarill_xs", "skarmory", "skarmory_shadow", "altaria", "abomasnow", "abomasnow_shadow", "dragalge"],
         "include": [{
             "filterType": "type",
             "values": ["grass", "ground", "rock", "bug", "normal", "poison", "flying", "water"]
         }],
-        "exclude": []
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }],
+		"link": "https://www.challengermode.com/tournaments/5f92f3d5-ef90-4b52-bf88-08d98fb816d9"
     }, {
         "name": "fantasy",
         "title": "Fantasy Cup",

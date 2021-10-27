@@ -6,7 +6,7 @@
 	<option value="tsa-3" cup="twilightfactions">Silph Factions (Twilight)</option>
 	<option value="tsa-4" cup="lunar">Silph Lunar Cup</option>
 	<option value="tsa-4" cup="brawler">Silph Brawler Cup</option>
-	<option value="community" cup="adl">Arrohh Draft League</option>
+	<option value="community" cup="safari">Victory Road Safari Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>

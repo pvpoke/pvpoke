@@ -36,6 +36,7 @@
 				<option value="twilight" type="great" class="multi-battle">Silph Factions Meta (Twilight)</option>
 				<option value="lunar" type="great" class="multi-battle">Silph Lunar Cup Meta</option>
 				<option value="brawler" type="great" class="multi-battle">Silph Brawler Cup Meta</option>
+				<option value="safari" type="great" class="multi-battle">Victory Road Safari Cup Meta</option>
 			</select>
 			<div class="flex quick-fill-buttons">
 				<button class="save-btn save-custom">Save</button>
