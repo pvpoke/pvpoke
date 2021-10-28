@@ -17,7 +17,6 @@
 			<?php include 'pokebox.php'; ?>
 
 			<button class="export-btn">Import/Export</button>
-			<button class="search-string-btn">Generate Search String</button>
 
 			<h3 class="section-title">Quick Fill</h3>
 			<select class="quick-fill-select">
@@ -32,6 +31,7 @@
 				<option value="ultrapremierclassic" type="ultra" class="hide multi-battle">Premier Classic Meta</option>
 				<option value="masterpremierclassic" type="master" class="hide multi-battle">Premier Classic Meta</option>
 				<option value="halloween" type="great" class="multi-battle">Halloween Cup Meta</option>
+				<option value="kanto" type="great" class="multi-battle">Kanto Cup Meta</option>
 				<option value="factions" type="great" class="multi-battle">Silph Factions Meta (Comet)</option>
 				<option value="twilight" type="great" class="multi-battle">Silph Factions Meta (Twilight)</option>
 				<option value="lunar" type="great" class="multi-battle">Silph Lunar Cup Meta</option>
@@ -43,6 +43,9 @@
 				<button class="save-btn save-as hide">Save As</button>
 				<button class="delete-btn hide">Delete</button>
 			</div>
+
+			<h3 class="section-title">Search String</h3>
+			<button class="search-string-btn">Generate Search String</button>
 		</div>
 
 		<div class="options">

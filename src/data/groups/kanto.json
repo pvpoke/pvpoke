@@ -1,7 +1,7 @@
 [{
     "speciesId": "hypno",
     "fastMove": "CONFUSION",
-    "chargedMoves": ["SHADOW_BALL", "FIRE_PUNCH"]
+    "chargedMoves": ["SHADOW_BALL", "THUNDER_PUNCH"]
 }, {
     "speciesId": "sandslash_alolan",
     "fastMove": "POWDER_SNOW",
@@ -51,11 +51,15 @@
 }, {
     "speciesId": "mew",
     "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["WILD_CHARGE", "PSYSHOCK"]
+    "chargedMoves": ["WILD_CHARGE", "SURF"]
 }, {
     "speciesId": "muk_alolan",
     "fastMove": "SNARL",
     "chargedMoves": ["DARK_PULSE", "SLUDGE_WAVE"]
+}, {
+    "speciesId": "muk_alolan",
+    "fastMove": "POISON_JAB",
+    "chargedMoves": ["DARK_PULSE", "ACID_SPRAY"]
 }, {
     "speciesId": "machamp",
     "fastMove": "COUNTER",
@@ -88,11 +92,15 @@
 }, {
     "speciesId": "ninetales_alolan",
     "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["WEATHER_BALL_ICE", "DAZZLING_GLEAM"]
+}, {
+    "speciesId": "ninetales_alolan",
+    "fastMove": "CHARM",
     "chargedMoves": ["WEATHER_BALL_ICE", "PSYSHOCK"]
 }, {
     "speciesId": "ninetales",
     "fastMove": "FIRE_SPIN",
-    "chargedMoves": ["WEATHER_BALL_FIRE", "PSYSHOCK"]
+    "chargedMoves": ["WEATHER_BALL_FIRE", "OVERHEAT"]
 }, {
     "speciesId": "magneton",
     "fastMove": "THUNDER_SHOCK",
@@ -108,7 +116,7 @@
 }, {
     "speciesId": "haunter",
     "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["SHADOW_PUNCH", "SHADOW_BALL"]
+    "chargedMoves": ["SHADOW_PUNCH", "SLUDGE_BOMB"]
 }, {
     "speciesId": "poliwrath",
     "fastMove": "MUD_SHOT",
@@ -118,9 +126,25 @@
     "fastMove": "POISON_JAB",
     "chargedMoves": ["THUNDER_PUNCH", "DARK_PULSE"]
 }, {
+    "speciesId": "grimer_alolan",
+    "fastMove": "POISON_JAB",
+    "chargedMoves": ["CRUNCH", "SLUDGE_BOMB"]
+},  {
+    "speciesId": "lickitung",
+    "fastMove": "LICK",
+    "chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
+}, {
+    "speciesId": "nidoqueen",
+    "fastMove": "POISON_JAB",
+    "chargedMoves": ["POISON_FANG", "EARTH_POWER"]
+}, {
     "speciesId": "zapdos",
     "fastMove": "THUNDER_SHOCK",
     "chargedMoves": ["DRILL_PECK", "THUNDERBOLT"]
+}, {
+    "speciesId": "blastoise",
+    "fastMove": "WATER_GUN",
+    "chargedMoves": ["HYDRO_CANNON", "SKULL_BASH"]
 }, {
     "speciesId": "articuno",
     "fastMove": "ICE_SHARD",

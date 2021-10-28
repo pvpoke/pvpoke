@@ -2,6 +2,7 @@
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="premier">Premier Cup</option>
 	<option value="official" cup="halloween">Halloween Cup</option>
+	<option value="official" cup="kanto">Kanto Cup</option>
 	<option value="tsa-3" cup="factions">Silph Factions (Comet)</option>
 	<option value="tsa-3" cup="twilightfactions">Silph Factions (Twilight)</option>
 	<option value="tsa-4" cup="lunar">Silph Lunar Cup</option>
