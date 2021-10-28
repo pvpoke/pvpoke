@@ -22941,7 +22941,7 @@
         },
         "types": ["electric", "fairy"],
         "fastMoves": ["TACKLE", "THUNDER_SHOCK"],
-        "chargedMoves": ["PARABOLIC_CHARGE", "DISCHARGE", "PLAY_ROUGH"],
+        "chargedMoves": ["DISCHARGE", "PLAY_ROUGH"],
         "defaultIVs": {
             "cp500": [10.5, 4, 11, 7],
             "cp1500": [30.5, 5, 14, 15],
