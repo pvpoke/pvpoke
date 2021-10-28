@@ -237,6 +237,16 @@
 		"chargedMoves": ["MUD_BOMB", "RETURN"]
 	},
 	{
+		"speciesId": "alakazam",
+		"fastMove": "PSYCHO_CUT",
+		"chargedMoves": ["FIRE_PUNCH", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "alakazam_shadow",
+		"fastMove": "PSYCHO_CUT",
+		"chargedMoves": ["FIRE_PUNCH", "SHADOW_BALL"]
+	},
+	{
 		"speciesId": "graveler_alolan",
 		"weight": 3
 	},
