@@ -139,6 +139,14 @@ function Pokebox(element, selector, selectMode, b){
 			case "tornadus":
 				return "tornadus_incarnate";
 				break;
+
+			case "jellicent_female":
+				return "jellicent";
+				break;
+
+			case "jellicent_male":
+				return "jellicent";
+				break;
 		}
 
 		return id;
