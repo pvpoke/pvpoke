@@ -809,8 +809,6 @@ var InterfaceMaster = (function () {
 					}
 				}
 
-				console.log(usedSlots);
-
 				while((count < total)&&(i < altRankings.length)){
 					var r = altRankings[i];
 
@@ -840,7 +838,7 @@ var InterfaceMaster = (function () {
 					}
 
 					// For Continentals, exclude Pokemon of existing slots
-					if(battle.getCup().slots){
+					if((battle.getCup().slots)&&(team.length < 6)){
 						if(usedSlots.indexOf(pokemon.getSlot(battle.getCup())) > -1){
 							i++;
 							continue;
