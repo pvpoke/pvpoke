@@ -21363,7 +21363,8 @@
         },
         "types": ["rock", "fighting"],
         "fastMoves": ["SMACK_DOWN", "ZEN_HEADBUTT"],
-        "chargedMoves": ["CLOSE_COMBAT", "EARTHQUAKE", "ROCK_SLIDE"],
+        "chargedMoves": ["CLOSE_COMBAT", "EARTHQUAKE", "ROCK_SLIDE", "SACRED_SWORD"],
+		"eliteMoves": ["SACRED_SWORD"],
         "defaultIVs": {
             "cp500": [5, 13, 13, 15],
             "cp1500": [15, 4, 14, 8],
@@ -21384,7 +21385,8 @@
         },
         "types": ["grass", "fighting"],
         "fastMoves": ["QUICK_ATTACK", "ZEN_HEADBUTT"],
-        "chargedMoves": ["CLOSE_COMBAT", "LEAF_BLADE", "STONE_EDGE"],
+        "chargedMoves": ["CLOSE_COMBAT", "LEAF_BLADE", "STONE_EDGE", "SACRED_SWORD"],
+		"eliteMoves": ["SACRED_SWORD"],
         "defaultIVs": {
             "cp500": [6.5, 6, 6, 6],
             "cp1500": [18.5, 5, 14, 9],
@@ -22949,7 +22951,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false
+        "released": true
     }, {
         "dex": 703,
         "speciesName": "Carbink",
