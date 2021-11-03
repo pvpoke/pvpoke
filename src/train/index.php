@@ -41,9 +41,7 @@ require_once '../header.php';
 				<option value="2500 premierclassic">Premier Classic (Ultra)</option>
 				<option value="10000 premierclassic">Premier Classic (Master)</option>
 				<option value="10000 classic">Master League (Classic)</option>
-				<option value="500 littlejungle">Little Jungle Cup</option>
-				<option value="1500 halloween">Halloween Cup</option>
-				<option value="1500 lunar">Silph Lunar Cup</option>
+				<option value="1500 kanto">Kanto Cup</option>
 				<option value="1500 all">Great League</option>
 				<option value="2500 all">Ultra League</option>
 				<option value="10000 all">Master League</option>

@@ -8,7 +8,7 @@
 				{
 					"speciesId": "hypno",
 					"fastMove": "CONFUSION",
-					"chargedMoves": ["THUNDER","SHADOW_BALL"],
+					"chargedMoves": ["THUNDER_PUNCH","SHADOW_BALL"],
 					"difficulty": 2,
 					"weight":15
 				},
@@ -99,16 +99,23 @@
 				{
 					"speciesId": "ninetales",
 					"fastMove": "FIRE_SPIN",
-					"chargedMoves": ["PSYSHOCK","WEATHER_BALL_FIRE"],
+					"chargedMoves": ["OVERHEAT","WEATHER_BALL_FIRE"],
 					"difficulty": 2,
-					"weight":5
+					"weight":15
+				},
+				{
+					"speciesId": "pidgeot",
+					"fastMove": "GUST",
+					"chargedMoves": ["FEATHER_DANCE","BRAVE_BIRD"],
+					"difficulty": 2,
+					"weight":15
 				},
 				{
 					"speciesId": "dragonite_shadow",
 					"fastMove": "DRAGON_BREATH",
 					"chargedMoves": ["DRAGON_CLAW","HURRICANE"],
 					"difficulty": 3,
-					"weight":15
+					"weight":5
 				},
 				{
 					"speciesId": "dragonair",
@@ -164,7 +171,7 @@
 					"fastMove": "COUNTER",
 					"chargedMoves": ["CROSS_CHOP","ROCK_SLIDE"],
 					"difficulty": 3,
-					"weight":20
+					"weight":14
 				},
 				{
 					"speciesId": "poliwrath",
@@ -188,11 +195,18 @@
 					"weight":2
 				},
 				{
+					"speciesId": "lickitung",
+					"fastMove": "LICK",
+					"chargedMoves": ["BODY_SLAM","POWER_WHIP"],
+					"difficulty": 2,
+					"weight":20
+				},
+				{
 					"speciesId": "snorlax",
 					"fastMove": "LICK",
 					"chargedMoves": ["BODY_SLAM","SUPER_POWER"],
 					"difficulty": 2,
-					"weight":8
+					"weight":10
 				},
 				{
 					"speciesId": "beedrill",
@@ -304,12 +318,47 @@
 					"fastMove": "SNARL",
 					"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"],
 					"difficulty": 3,
-					"weight":20
+					"weight":10
+				},
+				{
+					"speciesId": "muk_alolan",
+					"fastMove": "POISON_JAB",
+					"chargedMoves": ["DARK_PULSE","ACID_SPRAY"],
+					"difficulty": 3,
+					"weight":15
+				},
+				{
+					"speciesId": "grimer_alolan",
+					"fastMove": "POISON_JAB",
+					"chargedMoves": ["CRUNCH","SLUDGE_BOMB"],
+					"difficulty": 3,
+					"weight":3
+				},
+				{
+					"speciesId": "nidoqueen",
+					"fastMove": "POISON_JAB",
+					"chargedMoves": ["POISON_FANG","EARTH_POWER"],
+					"difficulty": 3,
+					"weight":10
+				},
+				{
+					"speciesId": "nidoqueen_shadow",
+					"fastMove": "POISON_JAB",
+					"chargedMoves": ["POISON_FANG","EARTH_POWER"],
+					"difficulty": 3,
+					"weight":15
 				},
 				{
 					"speciesId": "clefable",
 					"fastMove": "CHARM",
 					"chargedMoves": ["METEOR_MASH","MOONBLAST"],
+					"difficulty": 2,
+					"weight":5
+				},
+				{
+					"speciesId": "chansey",
+					"fastMove": "POUND",
+					"chargedMoves": ["HYPER_BEAM","PSYCHIC"],
 					"difficulty": 2,
 					"weight":5
 				},
@@ -480,6 +529,106 @@
 					"speciesId": "marowak_alolan",
 					"fastMove": "FIRE_SPIN",
 					"chargedMoves": ["BONE_CLUB","SHADOW_BONE"]
+				}
+			],
+			"weight": 1
+		},
+		{
+			"pokemon": [
+				{
+					"speciesId": "nidoqueen",
+					"fastMove": "POISON_JAB",
+					"chargedMoves": ["POISON_FANG","EARTH_POWER"]
+				},
+				{
+					"speciesId": "hypno",
+					"fastMove": "CONFUSION",
+					"chargedMoves": ["THUNDER_PUNCH","SHADOW_BALL"]
+				},
+				{
+					"speciesId": "lapras",
+					"fastMove": "ICE_SHARD",
+					"chargedMoves": ["SURF","SKULL_BASH"]
+				}
+			],
+			"weight": 1
+		},
+		{
+			"pokemon": [
+				{
+					"speciesId": "nidoqueen",
+					"fastMove": "POISON_JAB",
+					"chargedMoves": ["POISON_FANG","EARTH_POWER"]
+				},
+				{
+					"speciesId": "hypno",
+					"fastMove": "CONFUSION",
+					"chargedMoves": ["THUNDER_PUNCH","SHADOW_BALL"]
+				},
+				{
+					"speciesId": "machamp_shadow",
+					"fastMove": "COUNTER",
+					"chargedMoves": ["CROSS_CHOP","ROCK_SLIDE"]
+				}
+			],
+			"weight": 1
+		},
+		{
+			"pokemon": [
+				{
+					"speciesId": "pidgeot",
+					"fastMove": "GUST",
+					"chargedMoves": ["FEATHER_DANCE","BRAVE_BIRD"]
+				},
+				{
+					"speciesId": "nidoqueen",
+					"fastMove": "POISON_JAB",
+					"chargedMoves": ["POISON_FANG","EARTH_POWER"]
+				},
+				{
+					"speciesId": "lapras",
+					"fastMove": "ICE_SHARD",
+					"chargedMoves": ["SURF","SKULL_BASH"]
+				}
+			],
+			"weight": 1
+		},
+		{
+			"pokemon": [
+				{
+					"speciesId": "pidgeot",
+					"fastMove": "GUST",
+					"chargedMoves": ["FEATHER_DANCE","BRAVE_BIRD"]
+				},
+				{
+					"speciesId": "nidoqueen",
+					"fastMove": "POISON_JAB",
+					"chargedMoves": ["POISON_FANG","EARTH_POWER"]
+				},
+				{
+					"speciesId": "lapras",
+					"fastMove": "ICE_SHARD",
+					"chargedMoves": ["SURF","SKULL_BASH"]
+				}
+			],
+			"weight": 1
+		},
+		{
+			"pokemon": [
+				{
+					"speciesId": "nidoqueen",
+					"fastMove": "POISON_JAB",
+					"chargedMoves": ["POISON_FANG","EARTH_POWER"]
+				},
+				{
+					"speciesId": "chansey",
+					"fastMove": "POUND",
+					"chargedMoves": ["HYPER_BEAM","PSYCHIC"]
+				},
+				{
+					"speciesId": "lickitung",
+					"fastMove": "LICK",
+					"chargedMoves": ["BODY_SLAM","POWER_WHIP"]
 				}
 			],
 			"weight": 1
