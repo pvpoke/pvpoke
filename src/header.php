@@ -48,7 +48,7 @@ if(isset($_COOKIE['settings'])){
 	}
 
 	// Validate the maxPokemonCount, only numbers greater than 1
-	if (!preg_match('/^\d+$/', $_SETTINGS->maxPokemonCount) || intval($_SETTINGS->maxPokemonCount) < 1) {
+	if (!preg_match('/^\d+$/', $_SETTINGS->maxPokemonCount) || intval($_SETTINGS->maxPokemonCount) < 1 || intval($_SETTINGS->maxPokemonCount) > 100000) {
 		$_SETTINGS->maxPokemonCount = 100;
 	}
 

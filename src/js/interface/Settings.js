@@ -31,7 +31,7 @@ var InterfaceMaster = (function () {
 
 				// Make sure cookie is a valid number (as a string)
 				var maxPokemonCountValue = parseInt(maxPokemonCount)
-				if (isNaN(maxPokemonCountValue) || maxPokemonCountValue < 1) {
+				if (isNaN(maxPokemonCountValue) || maxPokemonCountValue < 1 || maxPokemonCountValue > 100000) {
 					maxPokemonCount = "100"
 				}
 
