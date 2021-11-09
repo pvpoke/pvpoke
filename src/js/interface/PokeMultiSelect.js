@@ -55,8 +55,7 @@ function PokeMultiSelect(element){
 
 		pokebox = new Pokebox($el.find(".pokebox"), self, "multi", b);
 
-		console.log(window.settings)
-		$el.find(".section-title .poke-max-count").html(window.settings.maxPokemonCount);
+		$el.find(".section-title .poke-max-count").html(maxPokemonCount);
 	}
 
 	// Open Pokemon select modal window to add or edit a Pokemon
