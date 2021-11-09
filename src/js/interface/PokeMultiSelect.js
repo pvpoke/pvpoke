@@ -15,8 +15,7 @@ function PokeMultiSelect(element){
 
 	var selectedIndex = -1;
 	var pokeSelector;
-
-	var maxPokemonCount = 100;
+	var maxPokemonCount = window.settings.maxPokemonCount;
 	var selectedGroup = "";
 	var selectedGroupType = "";
 	var pokebox;
@@ -55,6 +54,9 @@ function PokeMultiSelect(element){
 		}
 
 		pokebox = new Pokebox($el.find(".pokebox"), self, "multi", b);
+
+		console.log(window.settings)
+		$el.find(".section-title .poke-max-count").html(window.settings.maxPokemonCount);
 	}
 
 	// Open Pokemon select modal window to add or edit a Pokemon

@@ -27,8 +27,13 @@ var InterfaceMaster = (function () {
 				var gamemaster = $("#gm-select option:selected").val();
 				var pokeboxId = $("#pokebox-id").val();
 				var xls = $(".check.xls").hasClass("on") ? 1 : 0;
+				var maxPokemonCount = $("#max-pokemon-count").val();
 
-				console.log(xls);
+				// Make sure cookie is a valid number (as a string)
+				var maxPokemonCountValue = parseInt(maxPokemonCount)
+				if (isNaN(maxPokemonCountValue) || maxPokemonCountValue < 1) {
+					maxPokemonCount = "100"
+				}
 
 				$.ajax({
 
@@ -43,7 +48,8 @@ var InterfaceMaster = (function () {
 						'pokeboxId': pokeboxId,
 						'pokeboxLastDateTime': settings.pokeboxLastDateTime,
 						'ads': ads,
-						'xls': xls
+						'xls': xls,
+						'maxPokemonCount': maxPokemonCount
 					},
 					dataType:'json',
 					success : function(data) {

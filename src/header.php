@@ -36,12 +36,22 @@ if(isset($_COOKIE['settings'])){
 		$_SETTINGS->xls = 1;
 	}
 
+	if(! isset($_SETTINGS->maxPokemonCount)){
+		$_SETTINGS->maxPokemonCount = 100;
+	}
+
 	// Validate the gamemaster setting, only allow these options
 	$gamemasters = ["gamemaster", "gamemaster-mega"];
 
 	if(! in_array($_SETTINGS->gamemaster, $gamemasters)){
 		$_SETTINGS->gamemaster = "gamemaster";
 	}
+
+	// Validate the maxPokemonCount, only numbers greater than 1
+	if (!preg_match('/^\d+$/', $_SETTINGS->maxPokemonCount) || intval($_SETTINGS->maxPokemonCount) < 1) {
+		$_SETTINGS->maxPokemonCount = 100;
+	}
+
 } else{
 	$_SETTINGS = (object) [
 		'defaultIVs' => "gamemaster",
@@ -50,7 +60,8 @@ if(isset($_COOKIE['settings'])){
 		'gamemaster' => 'gamemaster',
 		'pokeboxId' => 0,
 		'ads' => 1,
-		'xls' => 1
+		'xls' => 1,
+		'maxPokemonCount' => 100
 	];
 }
 
@@ -131,7 +142,8 @@ if(! isset($OG_IMAGE)){
 			gamemaster: "<?php echo htmlspecialchars($_SETTINGS->gamemaster); ?>",
 			pokeboxId: "<?php echo intval($_SETTINGS->pokeboxId); ?>",
 			pokeboxLastDateTime: "<?php echo intval($_SETTINGS->pokeboxLastDateTime); ?>",
-			xls: <?php echo $_SETTINGS->xls; ?>
+			xls: <?php echo $_SETTINGS->xls; ?>,
+			maxPokemonCount: <?php echo intval($_SETTINGS->maxPokemonCount); ?>
 		};
 	<?php else: ?>
 
@@ -142,7 +154,8 @@ if(! isset($OG_IMAGE)){
 			gamemaster: "gamemaster",
 			pokeboxId: 0,
 			pokeboxLastDateTime: 0,
-			xls: true
+			xls: true,
+			maxPokemonCount: 100
 		};
 
 	<?php endif; ?>
