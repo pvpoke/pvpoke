@@ -15292,12 +15292,14 @@
         },
         "types": ["electric", "none"],
         "fastMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "SNARL", "SPARK"],
-        "chargedMoves": ["CRUNCH", "HYPER_BEAM", "WILD_CHARGE"],
+        "chargedMoves": ["CRUNCH", "HYPER_BEAM", "WILD_CHARGE", "PSYCHIC_FANGS"],
+		"eliteMoves": ["PSYCHIC_FANGS"],
         "defaultIVs": {
             "cp500": [6.5, 7, 13, 14],
             "cp1500": [19, 5, 14, 14],
             "cp2500": [34, 5, 11, 14]
         },
+		"searchPriority": 2,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
