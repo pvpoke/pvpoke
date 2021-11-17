@@ -212,7 +212,7 @@ var InterfaceMaster = (function () {
 						continue;
 					}
 
-					if(i < 100){
+					if(i < window.settings.maxPokemonCount){
 						metaGroup.push(pokemon);
 					}
 

@@ -274,7 +274,7 @@ function interfaceObject(){
 
 		var list = [];
 
-		for(var i = 0; i < Math.min(data.length,100); i++){
+		for(var i = 0; i < Math.min(data.length, window.settings.maxPokemonCount); i++){
 			var r = data[i];
 
 			var pokemon = new Pokemon(r.speciesId, 0, battle);

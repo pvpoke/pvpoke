@@ -75,6 +75,11 @@ require_once 'header.php';
 			</select>
 		</div>
 
+		<h3>Max Custom Group Size</h3>
+		<p>If you would like to use custom groups larger than the default of 100, enter a value below:</p>
+		<input type="text" class="input" id="max-pokemon-count" <?php if(isset($_SETTINGS->maxPokemonCount)) : ?>value="<?php echo intval($_SETTINGS->maxPokemonCount); ?>"<?php endif; ?> />
+		<p>
+
 		<div class="save button">Save Settings</div>
 	</div>
 </div>
