@@ -23521,13 +23521,14 @@
             "cp1500": [16, 9, 14, 15],
             "cp2500": [27.5, 5, 13, 10]
         },
-        "tags": ["mythical"],
+        "tags": ["mythical", "untradeable"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
+        "levelCap": 40,
         "released": true
     }, {
         "dex": 720,
-        "speciesName": "Hoopa_confined",
+        "speciesName": "Hoopa (Confined)",
         "speciesId": "hoopa_confined",
         "baseStats": {
             "atk": 261,
@@ -23545,10 +23546,11 @@
         "tags": ["mythical"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
+        "levelCap": 40,
         "released": false
     }, {
         "dex": 720,
-        "speciesName": "Hoopa_unbound",
+        "speciesName": "Hoopa (Unbound)",
         "speciesId": "hoopa_unbound",
         "baseStats": {
             "atk": 311,
@@ -23563,10 +23565,11 @@
             "cp1500": [13.5, 8, 11, 15],
             "cp2500": [23, 4, 11, 12]
         },
-        "tags": ["mythical"],
+        "tags": ["mythical", "untradeable"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "levelCap": 40,
+        "released": true
     }, {
         "dex": 721,
         "speciesName": "Volcanion",
