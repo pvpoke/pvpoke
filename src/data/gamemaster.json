@@ -23569,7 +23569,8 @@
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "levelCap": 40,
-        "released": true
+        "released": true,
+        "searchPriority": 2
     }, {
         "dex": 721,
         "speciesName": "Volcanion",
