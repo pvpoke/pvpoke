@@ -34,9 +34,12 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.24.5 (October 27, 2021)</h4>
+	<h4>v1.24.5 (November 29, 2021)</h4>
 	<ul>
-		<li>Custom groups can now generate a search string for the selected Pokemon.</li>
+		<li>The site is updated with Season 10 move updates and rankings for upcoming formats!</li>
+		<ul>
+			<li>Rankings are not currently available for every GO Battle League format in Season 10. Rankings for upcoming GO Battle League formats will be posted 2 weeks in advance.</li>
+		</ul>
 	</ul>
 
 	<h3>Latest Article</h3>

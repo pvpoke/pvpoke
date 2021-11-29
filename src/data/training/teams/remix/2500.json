@@ -420,20 +420,5 @@
             "chargedMoves": ["FOUL_PLAY", "POWER_UP_PUNCH"]
         }],
         "weight": 1
-    }, {
-        "pokemon": [{
-            "speciesId": "venusaur",
-            "fastMove": "VINE_WHIP",
-            "chargedMoves": ["FRENZY_PLANT", "SLUDGE_BOMB"]
-        }, {
-            "speciesId": "charizard",
-            "fastMove": "FIRE_SPIN",
-            "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"]
-        }, {
-            "speciesId": "politoed",
-            "fastMove": "MUD_SHOT",
-            "chargedMoves": ["WEATHER_BALL_WATER", "EARTHQUAKE"]
-        }],
-        "weight": 1
     }]
 }

@@ -306,7 +306,7 @@ function TrainingAI(l, p, b){
 		// If the team pool only has presets, use a preset
 
 		if(currentTeamPool && battle.getCup().partySize && (battle.getCup().partySize == 3)){
-			if(teamSelectMode == "preset" || ((! currentTeamPool.slots) && (! currentTeamPool[0].slot))){
+			if(teamSelectMode == "preset" || (battle.getCup().presetOnly) || ((! currentTeamPool.slots) && (! currentTeamPool[0].slot))){
 
 				pickStrategy = "PRESET";
 			}

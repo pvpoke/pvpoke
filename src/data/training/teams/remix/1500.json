@@ -16,22 +16,6 @@
         "weight": 1
     }, {
         "pokemon": [{
-            "speciesId": "nidoqueen",
-            "fastMove": "POISON_JAB",
-            "chargedMoves": ["POISON_FANG", "EARTH_POWER"],
-            "shadowType": "shadow"
-        }, {
-            "speciesId": "mandibuzz",
-            "fastMove": "SNARL",
-            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
-        }, {
-            "speciesId": "obstagoon",
-            "fastMove": "COUNTER",
-            "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
             "speciesId": "cresselia",
             "fastMove": "PSYCHO_CUT",
             "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
@@ -47,40 +31,9 @@
         "weight": 1
     }, {
         "pokemon": [{
-            "speciesId": "nidoqueen",
-            "fastMove": "POISON_JAB",
-            "chargedMoves": ["POISON_FANG", "EARTH_POWER"]
-        }, {
-            "speciesId": "froslass",
-            "fastMove": "POWDER_SNOW",
-            "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
-        }, {
-            "speciesId": "obstagoon",
-            "fastMove": "COUNTER",
-            "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
-            "speciesId": "obstagoon",
-            "fastMove": "COUNTER",
-            "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
-        }, {
-            "speciesId": "froslass",
-            "fastMove": "POWDER_SNOW",
-            "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
-        }, {
-            "speciesId": "nidoqueen",
-            "fastMove": "POISON_JAB",
-            "chargedMoves": ["POISON_FANG", "EARTH_POWER"],
-            "shadowType": "shadow"
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
-            "speciesId": "obstagoon",
-            "fastMove": "COUNTER",
-            "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
+            "speciesId": "zweilous",
+            "fastMove": "DRAGON_BREATH",
+            "chargedMoves": ["BODY_SLAM", "SLUDGE_BOMB"]
         }, {
             "speciesId": "froslass",
             "fastMove": "POWDER_SNOW",
@@ -93,9 +46,9 @@
         "weight": 1
     }, {
         "pokemon": [{
-            "speciesId": "mandibuzz",
-            "fastMove": "SNARL",
-            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+            "speciesId": "noctowl",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["SKY_ATTACK", "SHADOW_BALL"]
         }, {
             "speciesId": "diggersby",
             "fastMove": "MUD_SHOT",
@@ -123,28 +76,13 @@
         "weight": 1
     }, {
         "pokemon": [{
-            "speciesId": "obstagoon",
-            "fastMove": "COUNTER",
-            "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
-        }, {
-            "speciesId": "golbat",
-            "fastMove": "WING_ATTACK",
-            "chargedMoves": ["POISON_FANG", "SHADOW_BALL"]
-        }, {
-            "speciesId": "nidoqueen",
-            "fastMove": "POISON_JAB",
-            "chargedMoves": ["POISON_FANG", "EARTH_POWER"]
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
             "speciesId": "froslass",
             "fastMove": "POWDER_SNOW",
             "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
         }, {
-            "speciesId": "mandibuzz",
-            "fastMove": "SNARL",
-            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+            "speciesId": "drapion",
+            "fastMove": "POISON_STING",
+            "chargedMoves": ["CRUNCH", "SLUDGE_BOMB"]
         }, {
             "speciesId": "wigglytuff",
             "fastMove": "CHARM",
@@ -153,29 +91,13 @@
         "weight": 1
     }, {
         "pokemon": [{
-            "speciesId": "nidoqueen",
-            "fastMove": "POISON_JAB",
-            "chargedMoves": ["POISON_FANG", "EARTH_POWER"],
-            "shadowType": "shadow"
-        }, {
-            "speciesId": "mandibuzz",
-            "fastMove": "SNARL",
-            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
-        }, {
-            "speciesId": "obstagoon",
-            "fastMove": "COUNTER",
-            "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
             "speciesId": "cresselia",
             "fastMove": "PSYCHO_CUT",
             "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
         }, {
-            "speciesId": "mandibuzz",
-            "fastMove": "SNARL",
-            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+            "speciesId": "noctowl",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["SKY_ATTACK", "SHADOW_BALL"]
         }, {
             "speciesId": "registeel",
             "fastMove": "LOCK_ON",
@@ -188,13 +110,13 @@
             "fastMove": "POISON_JAB",
             "chargedMoves": ["X_SCISSOR", "DRILL_RUN"]
         }, {
-            "speciesId": "mandibuzz",
-            "fastMove": "SNARL",
-            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+            "speciesId": "drapion",
+            "fastMove": "POISON_STING",
+            "chargedMoves": ["CRUNCH", "SLUDGE_BOMB"]
         }, {
-            "speciesId": "obstagoon",
-            "fastMove": "COUNTER",
-            "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
+            "speciesId": "zweilous",
+            "fastMove": "DRAGON_BREATH",
+            "chargedMoves": ["BODY_SLAM", "DARK_PULSE"]
         }],
         "weight": 1
     }, {
@@ -203,9 +125,9 @@
             "fastMove": "MUD_SHOT",
             "chargedMoves": ["MUD_BOMB", "BLIZZARD"]
         }, {
-            "speciesId": "mandibuzz",
-            "fastMove": "SNARL",
-            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+            "speciesId": "noctowl",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["SKY_ATTACK", "SHADOW_BALL"]
         }, {
             "speciesId": "registeel",
             "fastMove": "LOCK_ON",
@@ -214,18 +136,17 @@
         "weight": 1
     }, {
         "pokemon": [{
-            "speciesId": "obstagoon",
-            "fastMove": "COUNTER",
-            "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
+            "speciesId": "trevenant",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["SEED_BOMB", "SHADOW_BALL"]
         }, {
-            "speciesId": "hypno",
-            "fastMove": "CONFUSION",
-            "chargedMoves": ["FIRE_PUNCH", "THUNDER_PUNCH"],
-            "shadowType": "shadow"
+            "speciesId": "lapras",
+            "fastMove": "ICE_SHARD",
+            "chargedMoves": ["SURF", "SKULL_BASH"]
         }, {
-            "speciesId": "nidoqueen",
-            "fastMove": "POISON_JAB",
-            "chargedMoves": ["POISON_FANG", "EARTH_POWER"]
+            "speciesId": "empoleon",
+            "fastMove": "WATERFALL",
+            "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
         }],
         "weight": 1
     }, {
@@ -292,33 +213,19 @@
         "weight": 1
     }, {
         "pokemon": [{
-            "speciesId": "wigglytuff",
-            "fastMove": "CHARM",
-            "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
-        }, {
-            "speciesId": "whiscash",
-            "fastMove": "MUD_SHOT",
-            "chargedMoves": ["MUD_BOMB", "BLIZZARD"]
-        }, {
-            "speciesId": "mandibuzz",
-            "fastMove": "SNARL",
-            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
-            "speciesId": "obstagoon",
-            "fastMove": "COUNTER",
-            "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
-        }, {
-            "speciesId": "froslass",
-            "fastMove": "POWDER_SNOW",
-            "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
-        }, {
-            "speciesId": "nidoqueen",
-            "fastMove": "POISON_JAB",
-            "chargedMoves": ["POISON_FANG", "EARTH_POWER"],
-            "shadowType": "shadow"
+            "speciesId": "lapras",
+            "fastMove": "ICE_SHARD",
+            "chargedMoves": ["SURF", "SKULL_BASH"]
+        },
+		{
+            "speciesId": "marowak_alolan",
+            "fastMove": "FIRE_SPIN",
+            "chargedMoves": ["BONE_CLUB", "SHADOW_BALL"]
+        },
+		{
+            "speciesId": "trevenant",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["SEED_BOMB", "SHADOW_BALL"]
         }],
         "weight": 1
     }, {
@@ -332,9 +239,9 @@
             "fastMove": "MUD_SHOT",
             "chargedMoves": ["EARTHQUAKE", "FIRE_PUNCH"]
         }, {
-            "speciesId": "mandibuzz",
-            "fastMove": "SNARL",
-            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+            "speciesId": "marowak_alolan",
+            "fastMove": "FIRE_SPIN",
+            "chargedMoves": ["BONE_CLUB", "SHADOW_BALL"]
         }],
         "weight": 1
     }, {
@@ -342,14 +249,14 @@
             "speciesId": "whiscash",
             "fastMove": "MUD_SHOT",
             "chargedMoves": ["MUD_BOMB", "BLIZZARD"]
+        },  {
+            "speciesId": "marowak_alolan",
+            "fastMove": "FIRE_SPIN",
+            "chargedMoves": ["BONE_CLUB", "SHADOW_BALL"]
         }, {
-            "speciesId": "mandibuzz",
-            "fastMove": "SNARL",
-            "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
-        }, {
-            "speciesId": "nidoqueen",
-            "fastMove": "POISON_JAB",
-            "chargedMoves": ["POISON_FANG", "EARTH_POWER"],
+            "speciesId": "ninetales",
+            "fastMove": "FIRE_SPIN",
+            "chargedMoves": ["WEATHER_BALL_FIRE", "OVERHEAT"],
             "shadowType": "shadow"
         }],
         "weight": 1
