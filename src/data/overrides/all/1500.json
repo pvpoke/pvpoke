@@ -56,6 +56,10 @@
 		"weight": 8
 	},
 	{
+		"speciesId": "magcargo",
+		"chargedMoves": ["ROCK_TOMB", "OVERHEAT"]
+	},
+	{
 		"speciesId": "dusknoir",
 		"chargedMoves": ["SHADOW_BALL", "DARK_PULSE"]
 	},
@@ -149,8 +153,21 @@
 		"chargedMoves": ["NIGHT_SLASH", "RETURN"]
 	},
 	{
+		"speciesId": "octillery",
+		"fastMove": "LOCK_ON",
+		"chargedMoves": ["OCTAZOOKA", "GUNK_SHOT"]
+	},
+	{
 		"speciesId": "scolipede",
 		"chargedMoves": ["X_SCISSOR", "SLUDGE_BOMB"]
+	},
+	{
+		"speciesId": "aggron",
+		"chargedMoves": ["STONE_EDGE", "THUNDER"]
+	},
+	{
+		"speciesId": "aggron_shadow",
+		"chargedMoves": ["STONE_EDGE", "THUNDER"]
 	},
 	{
 		"speciesId": "claydol",

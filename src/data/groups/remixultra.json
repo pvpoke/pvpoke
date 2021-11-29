@@ -31,10 +31,6 @@
 		"fastMove":"SHADOW_CLAW",
 		"chargedMoves":["SHADOW_BALL","PSYCHIC"]
 }, {
-    "speciesId": "venusaur",
-    "fastMove": "VINE_WHIP",
-    "chargedMoves": ["FRENZY_PLANT", "SLUDGE_BOMB"]
-}, {
     "speciesId": "charizard",
     "fastMove": "FIRE_SPIN",
     "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"]
@@ -50,14 +46,6 @@
     "speciesId": "lapras",
     "fastMove": "ICE_SHARD",
     "chargedMoves": ["SURF", "SKULL_BASH"]
-}, {
-    "speciesId": "umbreon",
-    "fastMove": "SNARL",
-    "chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
-}, {
-    "speciesId": "umbreon",
-    "fastMove": "SNARL",
-    "chargedMoves": ["FOUL_PLAY", "PSYCHIC"]
 }, {
     "speciesId": "registeel",
     "fastMove": "LOCK_ON",
@@ -150,4 +138,8 @@
     "speciesId": "bronzong",
     "fastMove": "CONFUSION",
     "chargedMoves": ["PSYSHOCK", "PAYBACK"]
+}, {
+    "speciesId": "melmetal",
+    "fastMove": "THUNDER_SHOCK",
+    "chargedMoves": ["ROCK_SLIDE", "SUPER_POWER"]
 }]

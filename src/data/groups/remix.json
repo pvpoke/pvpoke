@@ -7,21 +7,9 @@
     "fastMove": "LOCK_ON",
     "chargedMoves": ["FOCUS_BLAST", "FLASH_CANNON"]
 }, {
-    "speciesId": "mandibuzz",
-    "fastMove": "SNARL",
-    "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
-}, {
-    "speciesId": "mandibuzz",
-    "fastMove": "AIR_SLASH",
-    "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
-}, {
     "speciesId": "lickitung",
     "fastMove": "LICK",
     "chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
-}, {
-    "speciesId": "nidoqueen",
-    "fastMove": "POISON_JAB",
-    "chargedMoves": ["POISON_FANG", "EARTH_POWER"]
 }, {
     "speciesId": "cresselia",
     "fastMove": "PSYCHO_CUT",
@@ -75,10 +63,6 @@
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
 }, {
-    "speciesId": "castform_rainy",
-    "fastMove": "WATER_GUN",
-    "chargedMoves": ["WEATHER_BALL_WATER", "THUNDER"]
-}, {
     "speciesId": "granbull_shadow",
     "fastMove": "CHARM",
     "chargedMoves": ["CLOSE_COMBAT", "CRUNCH"]
@@ -91,6 +75,10 @@
     "fastMove": "FIRE_SPIN",
     "chargedMoves": ["WEATHER_BALL_FIRE", "PSYSHOCK"]
 }, {
+    "speciesId": "noctowl",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["SKY_ATTACK", "SHADOW_BALL"]
+}, {
     "speciesId": "clefable",
     "fastMove": "CHARM",
     "chargedMoves": ["METEOR_MASH", "PSYCHIC"]
@@ -98,10 +86,6 @@
     "speciesId": "escavalier",
     "fastMove": "COUNTER",
     "chargedMoves": ["DRILL_RUN", "MEGAHORN"]
-}, {
-    "speciesId": "obstagoon",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
 }, {
     "speciesId": "golbat",
     "fastMove": "WING_ATTACK",
@@ -111,13 +95,21 @@
     "fastMove": "HEX",
     "chargedMoves": ["ICY_WIND", "SHADOW_BALL"]
 }, {
-    "speciesId": "victreebel_shadow",
-    "fastMove": "RAZOR_LEAF",
-    "chargedMoves": ["LEAF_BLADE", "ACID_SPRAY"]
+    "speciesId": "marowak_alolan",
+    "fastMove": "FIRE_SPIN",
+    "chargedMoves": ["BONE_CLUB", "SHADOW_BONE"]
+}, {
+    "speciesId": "trevenant",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["SEED_BOMB", "SHADOW_BALL"]
 }, {
     "speciesId": "ferrothorn",
     "fastMove": "BULLET_SEED",
     "chargedMoves": ["POWER_WHIP", "THUNDER"]
+}, {
+    "speciesId": "drapion",
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["CRUNCH", "SLUDGE_BOMB"]
 }, {
     "speciesId": "charizard",
     "fastMove": "FIRE_SPIN",

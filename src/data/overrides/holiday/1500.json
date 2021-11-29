@@ -26,6 +26,11 @@
 		"weight": 38
 	},
 	{
+		"speciesId": "trevenant",
+		"chargedMoves": ["SEED_BOMB","SHADOW_BALL"],
+		"weight": 15
+	},
+	{
 		"speciesId": "mr_rime",
 		"fastMove": "ICE_SHARD",
 		"chargedMoves": ["ICY_WIND","PSYCHIC"]
@@ -92,6 +97,11 @@
 		"fastMove": "CHARM"
 	},
 	{
+		"speciesId": "sableye",
+		"chargedMoves": ["FOUL_PLAY", "RETURN"],
+		"weight": 10
+	},
+	{
 		"speciesId": "froslass",
 		"chargedMoves": ["AVALANCHE", "SHADOW_BALL"],
 		"weight": 20
@@ -135,6 +145,10 @@
 	},
 	{
 		"speciesId": "stunfisk",
+		"weight": 12
+	},
+	{
+		"speciesId": "talonflame",
 		"weight": 12
 	},
 	{

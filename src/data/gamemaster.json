@@ -9516,7 +9516,8 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "released": true
+        "released": true,
+		"searchPriority": 5
     }, {
         "dex": 220,
         "speciesName": "Swinub",
