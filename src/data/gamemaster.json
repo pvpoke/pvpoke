@@ -685,8 +685,18 @@
         "exclude": [{
             "filterType": "tag",
             "values": ["mega"]
+        }]
+    }, {
+        "name": "sinnoh",
+        "title": "Sinnoh Cup",
+        "include": [{
+            "filterType": "dex",
+            "values": [152, 251]
         }],
-        "link": "https://antimatter.gg/nexusleague"
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }]
     }, {
         "name": "love",
         "title": "Love Cup",
@@ -714,11 +724,11 @@
         "include": [],
         "exclude": [{
             "filterType": "id",
-            "values": ["venusaur", "ninetales_alolan", "marowak_alolan", "azumarill", "politoed", "umbreon", "skarmory", "swampert", "pelipper", "vigoroth", "sableye", "medicham", "altaria", "deoxys_defense", "bastiodon", "scrafty", "jellicent", "galvantula", "stunfisk_galarian", "talonflame"],
+            "values": ["venusaur", "nidoqueen", "ninetales_alolan", "azumarill", "umbreon", "skarmory", "swampert", "vigoroth", "sableye", "medicham", "altaria", "deoxys_defense", "bastiodon", "scrafty", "jellicent", "galvantula", "stunfisk_galarian", "mandibuzz", "talonflame", "obstagoon"],
             "leagues": [1500]
         }, {
             "filterType": "id",
-            "values": ["clefable", "muk_alolan", "swampert", "empoleon", "togekiss", "giratina_altered", "cresselia", "talonflame", "melmetal", "obstagoon"],
+            "values": ["venusaur", "muk_alolan", "umbreon", "swampert", "empoleon", "togekiss", "giratina_altered", "cresselia", "talonflame", "obstagoon"],
             "leagues": [2500]
         }, {
             "filterType": "tag",
@@ -7678,7 +7688,7 @@
         },
         "types": ["normal", "flying"],
         "fastMoves": ["EXTRASENSORY", "WING_ATTACK"],
-        "chargedMoves": ["NIGHT_SHADE", "PSYCHIC", "SKY_ATTACK"],
+        "chargedMoves": ["NIGHT_SHADE", "PSYCHIC", "SKY_ATTACK", "SHADOW_BALL"],
         "defaultIVs": {
             "cp500": [9.5, 4, 8, 15],
             "cp1500": [28, 4, 14, 12],
@@ -8281,7 +8291,7 @@
         },
         "types": ["rock", "none"],
         "fastMoves": ["COUNTER", "ROCK_THROW"],
-        "chargedMoves": ["EARTHQUAKE", "ROCK_SLIDE", "STONE_EDGE"],
+        "chargedMoves": ["EARTHQUAKE", "ROCK_SLIDE", "STONE_EDGE", "ROCK_TOMB"],
         "defaultIVs": {
             "cp500": [8.5, 9, 15, 14],
             "cp1500": [26, 5, 15, 12],
@@ -9497,8 +9507,8 @@
             "hp": 137
         },
         "types": ["fire", "rock"],
-        "fastMoves": ["EMBER", "ROCK_THROW"],
-        "chargedMoves": ["HEAT_WAVE", "OVERHEAT", "STONE_EDGE"],
+        "fastMoves": ["EMBER", "ROCK_THROW", "INCINERATE"],
+        "chargedMoves": ["HEAT_WAVE", "OVERHEAT", "STONE_EDGE", "ROCK_TOMB"],
         "defaultIVs": {
             "cp500": [11, 6, 14, 12],
             "cp1500": [36.5, 4, 14, 14],
@@ -9647,7 +9657,7 @@
             "hp": 181
         },
         "types": ["water", "none"],
-        "fastMoves": ["MUD_SHOT", "WATER_GUN"],
+        "fastMoves": ["MUD_SHOT", "WATER_GUN", "LOCK_ON"],
         "chargedMoves": ["AURORA_BEAM", "GUNK_SHOT", "WATER_PULSE", "ACID_SPRAY", "OCTAZOOKA"],
         "defaultIVs": {
             "cp500": [8, 7, 15, 13],
@@ -9954,7 +9964,7 @@
         },
         "types": ["ground", "none"],
         "fastMoves": ["COUNTER", "MUD_SLAP", "TACKLE", "CHARM"],
-        "chargedMoves": ["EARTHQUAKE", "HEAVY_SLAM", "PLAY_ROUGH"],
+        "chargedMoves": ["EARTHQUAKE", "HEAVY_SLAM", "PLAY_ROUGH", "BODY_SLAM"],
         "defaultIVs": {
             "cp500": [6.5, 4, 7, 9],
             "cp1500": [18.5, 5, 10, 14],
@@ -12160,7 +12170,7 @@
         },
         "types": ["steel", "rock"],
         "fastMoves": ["IRON_TAIL", "METAL_CLAW"],
-        "chargedMoves": ["BODY_SLAM", "HEAVY_SLAM", "ROCK_SLIDE"],
+        "chargedMoves": ["BODY_SLAM", "HEAVY_SLAM", "ROCK_SLIDE", "ROCK_TOMB"],
         "defaultIVs": {
             "cp500": [9, 6, 15, 13],
             "cp1500": [28, 4, 4, 15],
@@ -12182,7 +12192,7 @@
         },
         "types": ["steel", "rock"],
         "fastMoves": ["IRON_TAIL", "METAL_CLAW"],
-        "chargedMoves": ["BODY_SLAM", "HEAVY_SLAM", "ROCK_SLIDE"],
+        "chargedMoves": ["BODY_SLAM", "HEAVY_SLAM", "ROCK_SLIDE", "ROCK_TOMB"],
         "defaultIVs": {
             "cp500": [9, 6, 15, 13],
             "cp1500": [28, 4, 4, 15],
@@ -12203,7 +12213,7 @@
         },
         "types": ["steel", "rock"],
         "fastMoves": ["DRAGON_TAIL", "IRON_TAIL", "SMACK_DOWN"],
-        "chargedMoves": ["HEAVY_SLAM", "STONE_EDGE", "THUNDER"],
+        "chargedMoves": ["HEAVY_SLAM", "STONE_EDGE", "THUNDER", "ROCK_TOMB"],
         "defaultIVs": {
             "cp500": [6.5, 4, 7, 12],
             "cp1500": [18.5, 4, 11, 15],
@@ -12225,7 +12235,7 @@
         },
         "types": ["steel", "rock"],
         "fastMoves": ["DRAGON_TAIL", "IRON_TAIL", "SMACK_DOWN"],
-        "chargedMoves": ["HEAVY_SLAM", "STONE_EDGE", "THUNDER"],
+        "chargedMoves": ["HEAVY_SLAM", "STONE_EDGE", "THUNDER", "ROCK_TOMB"],
         "defaultIVs": {
             "cp500": [6.5, 4, 7, 12],
             "cp1500": [18.5, 4, 11, 15],
@@ -13286,7 +13296,7 @@
         },
         "types": ["ground", "psychic"],
         "fastMoves": ["CONFUSION", "EXTRASENSORY", "MUD_SLAP"],
-        "chargedMoves": ["EARTHQUAKE", "GYRO_BALL", "PSYCHIC", "EARTH_POWER", "ICE_BEAM", "SHADOW_BALL"],
+        "chargedMoves": ["EARTHQUAKE", "GYRO_BALL", "PSYCHIC", "EARTH_POWER", "ICE_BEAM", "SHADOW_BALL", "ROCK_TOMB"],
         "defaultIVs": {
             "cp500": [9.5, 5, 14, 13],
             "cp1500": [28.5, 4, 14, 15],
@@ -26091,7 +26101,7 @@
         "name": "Bug Buzz",
         "abbreviation": "BBu",
         "type": "bug",
-        "power": 90,
+        "power": 100,
         "energy": 60,
         "energyGain": 0,
         "cooldown": 500,
@@ -27415,7 +27425,7 @@
         "name": "Pound",
         "abbreviation": "Pd",
         "type": "normal",
-        "power": 5,
+        "power": 4,
         "energy": 0,
         "energyGain": 4,
         "cooldown": 1000,
@@ -27650,7 +27660,10 @@
         "energy": 60,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "High Energy"
+		"buffs": [-1, 0],
+        "buffTarget": "opponent",
+        "buffApplyChance": "1",
+        "archetype": "High Energy Debuff"
     }, {
         "moveId": "ROCK_WRECKER",
         "name": "Rock Wrecker",

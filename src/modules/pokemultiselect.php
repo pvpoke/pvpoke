@@ -27,11 +27,9 @@
 				<option value="master" type="master" class="hide multi-battle">Master League Meta</option>
 				<option value="remix" type="great" class="multi-battle">Remix Meta</option>
 				<option value="remixultra" type="ultra" class="hide multi-battle">Remix Meta</option>
-				<option value="premierultra" type="ultra" class="hide multi-battle">Premier Cup Meta</option>
 				<option value="ultrapremierclassic" type="ultra" class="hide multi-battle">Premier Classic Meta</option>
 				<option value="masterpremierclassic" type="master" class="hide multi-battle">Premier Classic Meta</option>
-				<option value="halloween" type="great" class="multi-battle">Halloween Cup Meta</option>
-				<option value="kanto" type="great" class="multi-battle">Kanto Cup Meta</option>
+				<option value="holiday" type="great" class="multi-battle">Holiday Cup Meta</option>
 				<option value="factions" type="great" class="multi-battle">Silph Factions Meta (Comet)</option>
 				<option value="twilight" type="great" class="multi-battle">Silph Factions Meta (Twilight)</option>
 				<option value="lunar" type="great" class="multi-battle">Silph Lunar Cup Meta</option>

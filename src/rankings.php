@@ -47,24 +47,20 @@ switch($cup){
 		$league = 'Master League Classic';
 		break;
 
-	case "halloween":
-		$league = 'Halloween Cup';
+	case "holiday":
+		$league = 'Holiday Cup';
 		break;
 
-	case "kanto":
-		$league = 'Kanto Cup';
+	case "johto":
+		$league = 'Johto Cup';
 		break;
 
-	case "retro":
-		$league = 'Retro Cup';
+	case "sinnoh":
+		$league = 'Johto Cup';
 		break;
 
-	case "shadow":
-		$league = 'Shadow Cup';
-		break;
-
-	case "littlejungle":
-		$league = 'Little Jungle Cup';
+	case "love":
+		$league = 'Love Cup';
 		break;
 
 	case "goteamup":
@@ -75,20 +71,12 @@ switch($cup){
 		$league = 'Silph Twilight Cup';
 		break;
 
-	case "lunar":
-		$league = 'Silph Lunar Cup';
-		break;
-
 	case "factions":
 		$league = 'Silph Factions Rankings';
 		break;
 
 	case "brawler":
 		$league = 'Silph Brawler Cup';
-		break;
-
-	case "safari":
-		$league = 'Victory Road Safari Cup';
 		break;
 
 	case "remix":
