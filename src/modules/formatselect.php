@@ -9,6 +9,7 @@
 	<option value="1500" cup="factions" meta-group="factions">Silph Factions (Comet)</option>
 	<option value="1500" cup="twilightfactions" meta-group="twilight">Silph Factions (Twilight)</option>
 	<option value="1500" cup="brawler" meta-group="brawler">Silph Brawler Cup</option>
+	<option value="1500" cup="glacial" meta-group="glacial">Silph Glacial Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="1500" cup="cliffhanger" meta-group="great">GO Stadium Cliffhanger</option>

@@ -5,6 +5,7 @@
 	<option value="tsa-3" cup="factions">Silph Factions (Comet)</option>
 	<option value="tsa-3" cup="twilightfactions">Silph Factions (Twilight)</option>
 	<option value="tsa-4" cup="brawler">Silph Brawler Cup</option>
+	<option value="tsa-4" cup="glacial">Silph Glacial Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>
@@ -91,5 +92,6 @@
 	<option value="worlds" cat="tsa-3">Silph Worlds</option>
 	<option value="lunar" cat="tsa-4">Silph Lunar Cup</option>
 	<option value="brawler" cat="tsa-4">Silph Brawler Cup</option>
+	<option value="glacial" cat="tsa-4">Silph Glacial Cup</option>
 	<option value="custom" cat="custom">Custom</option>
 </select>
