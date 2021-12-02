@@ -18,6 +18,7 @@ function PokeSelect(element, i){
 	var context = "main";
 	var searchArr = []; // Array of searchable Pokemon sorted by priority
 	var pokebox;
+	var searchTimeout;
 
 	var currentHP; // The currently animated HP
 	var currentEnergy; // The currently animated energy
@@ -36,7 +37,7 @@ function PokeSelect(element, i){
 
 			searchArr.push({
 				speciesId: poke.speciesId,
-				speciesName: poke.speciesName,
+				speciesName: poke.speciesName.toLowerCase(),
 				priority: priority
 			});
 
@@ -642,6 +643,21 @@ function PokeSelect(element, i){
 
 	$el.find(".poke-search").on("keyup", function(e){
 
+		// Reset the timeout when a new key is typed. This prevents queries from being submitted too quickly and bogging things down on mobile.
+		window.clearTimeout(searchTimeout);
+
+		if($(window).width() >= 768){
+			searchTimeout = window.setTimeout(submitSearchQuery, 25);
+		} else{
+			searchTimeout = window.setTimeout(submitSearchQuery, 250);
+		}
+	});
+
+	// Submit search query after specified input delay
+	// Prevents submitting repeated searches and reduce lag on mobile
+
+	function submitSearchQuery(){
+
 		var searchStr = $el.find(".poke-search").val().toLowerCase();
 
 		if(searchStr == 'spooder'){
@@ -652,7 +668,7 @@ function PokeSelect(element, i){
 			return;
 
 		for(var i = 0; i < searchArr.length; i++){
-			var pokeName = searchArr[i].speciesName.toLowerCase();
+			var pokeName = searchArr[i].speciesName;
 
 			if(pokeName.startsWith(searchStr)){
 				$pokeSelect.find("option[value=\""+searchArr[i].speciesId+"\"]").prop("selected", "selected");
@@ -661,8 +677,14 @@ function PokeSelect(element, i){
 		}
 
 		var id = $pokeSelect.find("option:selected").val();
+		var idAlreadySelected = false;
 
-		if(id){
+		if(selectedPokemon && (id == selectedPokemon.speciesId)){
+			idAlreadySelected = true;
+		}
+
+		if((id)&&(! idAlreadySelected)){
+
 			selectedPokemon = new Pokemon(id, index, battle);
 			selectedPokemon.initialize(battle.getCP(), settings.defaultIVs);
 
@@ -692,8 +714,7 @@ function PokeSelect(element, i){
 			$el.find("input.iv[iv='def']").val(selectedPokemon.ivs.def);
 			$el.find("input.iv[iv='hp']").val(selectedPokemon.ivs.hp);
 		}
-
-	});
+	}
 
 	// Auto select Pokemon moves
 
