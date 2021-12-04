@@ -78,6 +78,8 @@ var InterfaceMaster = (function () {
 				for(var i = 0; i < rankings.performers.length; i++){
 					var r = rankings.performers[i];
 
+					console.log(r);
+
 					// For now, convert species name to a species ID
 					var arr = r.pokemon.split(" ");
 					var movesetStr = arr[arr.length-1];

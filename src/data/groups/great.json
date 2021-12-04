@@ -40,6 +40,11 @@
 		"chargedMoves":["FLAME_CHARGE","BRAVE_BIRD"]
 	},
 	{
+		"speciesId":"drapion",
+		"fastMove":"POISON_STING",
+		"chargedMoves":["CRUNCH","SLUDGE_BOMB"]
+	},
+	{
 		"speciesId":"greedent",
 		"fastMove":"BULLET_SEED",
 		"chargedMoves":["BODY_SLAM","CRUNCH"]
@@ -125,21 +130,6 @@
 		"chargedMoves":["FRENZY_PLANT","EARTHQUAKE"]
 	},
 	{
-		"speciesId":"serperior",
-		"fastMove":"VINE_WHIP",
-		"chargedMoves":["FRENZY_PLANT","AERIAL_ACE"]
-	},
-	{
-		"speciesId":"shiftry",
-		"fastMove":"SNARL",
-		"chargedMoves":["LEAF_BLADE","FOUL_PLAY"]
-	},
-	{
-		"speciesId":"chesnaught",
-		"fastMove":"VINE_WHIP",
-		"chargedMoves":["ENERGY_BALL","SUPER_POWER"]
-	},
-	{
 		"speciesId":"dewgong",
 		"fastMove":"ICE_SHARD",
 		"chargedMoves":["ICY_WIND","WATER_PULSE"]
@@ -153,11 +143,6 @@
 		"speciesId":"bastiodon",
 		"fastMove":"SMACK_DOWN",
 		"chargedMoves":["STONE_EDGE","FLAMETHROWER"]
-	},
-	{
-		"speciesId":"melmetal",
-		"fastMove":"THUNDER_SHOCK",
-		"chargedMoves":["ROCK_SLIDE","SUPER_POWER"]
 	},
 	{
 		"speciesId":"cresselia",
@@ -205,11 +190,6 @@
 		"chargedMoves":["THUNDERBOLT","ROCK_SLIDE"]
 	},
 	{
-		"speciesId":"haunter",
-		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["SHADOW_PUNCH","SHADOW_BALL"]
-	},
-	{
 		"speciesId":"toxicroak",
 		"fastMove":"COUNTER",
 		"chargedMoves":["MUD_BOMB","SLUDGE_BOMB"]
@@ -218,11 +198,6 @@
 		"speciesId":"mew",
 		"fastMove":"SHADOW_CLAW",
 		"chargedMoves":["WILD_CHARGE","FLAME_CHARGE"]
-	},
-	{
-		"speciesId":"clefable",
-		"fastMove":"CHARM",
-		"chargedMoves":["METEOR_MASH","PSYCHIC"]
 	},
 	{
 		"speciesId":"sylveon",
@@ -280,19 +255,9 @@
 		"chargedMoves":["ICY_WIND","SHADOW_BALL"]
 	},
 	{
-		"speciesId":"munchlax",
-		"fastMove":"LICK",
-		"chargedMoves":["BODY_SLAM","BULLDOZE"]
-	},
-	{
 		"speciesId":"diggersby",
 		"fastMove":"MUD_SHOT",
 		"chargedMoves":["FIRE_PUNCH","EARTHQUAKE"]
-	},
-	{
-		"speciesId":"victreebel_shadow",
-		"fastMove":"RAZOR_LEAF",
-		"chargedMoves":["LEAF_BLADE","SLUDGE_BOMB"]
 	},
 	{
 		"speciesId":"nidoqueen_shadow",
@@ -303,5 +268,10 @@
 		"speciesId":"pidgeot",
 		"fastMove":"GUST",
 		"chargedMoves":["FEATHER_DANCE","BRAVE_BIRD"]
+	},
+	{
+		"speciesId":"noctowl",
+		"fastMove":"WING_ATTACK",
+		"chargedMoves":["SKY_ATTACK","SHADOW_BALL"]
 	}
 ]

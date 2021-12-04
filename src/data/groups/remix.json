@@ -78,6 +78,10 @@
     "speciesId": "noctowl",
     "fastMove": "WING_ATTACK",
     "chargedMoves": ["SKY_ATTACK", "SHADOW_BALL"]
+}, 	{
+		"speciesId":"magcargo",
+		"fastMove":"INCINERATE",
+		"chargedMoves":["ROCK_TOMB","OVERHEAT"]
 }, {
     "speciesId": "clefable",
     "fastMove": "CHARM",
