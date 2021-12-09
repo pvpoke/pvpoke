@@ -157,7 +157,7 @@ var InterfaceMaster = (function () {
 					limitedPokemon = gm.getCupById(cup).restrictedPokemon;
 				}
 
-				if(cup == "brawler"){
+				if(battle.getCup().slots){
 					$(".continentals").show();
 				} else{
 					$(".continentals").hide();
@@ -278,7 +278,7 @@ var InterfaceMaster = (function () {
 						$el.find(".moves").prepend("<span class=\"cliffhanger-points\">"+points+ptStr+"</span>");
 					}
 
-					if(battle.getCup().name == "brawler"){
+					if(battle.getCup().name == "unity"){
 						let slotNumber = 0;
 
 						for(var n = 0; n < battle.getCup().slots.length; n++){
@@ -303,7 +303,7 @@ var InterfaceMaster = (function () {
 
 					// For Prismatic Cup, show color category
 
-					if(cup == "brawler"){
+					if(battle.getCup().slots){
 						var slots = battle.getCup().slots;
 
 						for(var n = 0; n < slots.length; n++){

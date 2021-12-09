@@ -6,6 +6,7 @@
 	<option value="tsa-3" cup="twilightfactions">Silph Factions (Twilight)</option>
 	<option value="tsa-4" cup="brawler">Silph Brawler Cup</option>
 	<option value="tsa-4" cup="glacial">Silph Glacial Cup</option>
+	<option value="tsa-4" cup="unity">Unity Cup Charity Tournament</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>
@@ -50,6 +51,7 @@
 	<option value="johto" cat="community">Johto Cup</option>
 	<option value="adl" cat="community">ADL</option>
 	<option value="cutie" cat="community">Cutie Cup</option>
+	<option value="unity" cat="community">Unity Cup</option>
 	<option value="jungle"  cat="tsa-1">Jungle Cup</option>
 	<option value="rainbow" cat="tsa-1">Rainbow Cup</option>
 	<option value="championships-1" cat="tsa-1">Season 1 Championships</option>

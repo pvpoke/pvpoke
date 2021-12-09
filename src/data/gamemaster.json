@@ -1055,6 +1055,29 @@
             "pokemon": ["crustle", "scolipede", "tyranitar", "metang", "rayquaza", "onix", "dragonite", "lugia", "lapras", "mantine", "camerupt", "gyarados", "hariyama", "glalie", "gigalith", "beartic", "rhyperior", "mamoswine", "golem", "hippowdon", "torterra", "golem_alolan", "golurk", "probopass", "aggron", "wailord", "steelix", "exeggutor_alolan", "snorlax", "metagross", "melmetal"]
         }]
     }, {
+        "name": "unity",
+        "title": "Unity Cup",
+        "include": [{
+            "filterType": "id",
+            "includeShadows": 0,
+            "values": ["ivysaur", "venusaur", "charizard", "blastoise", "beedrill", "pidgeot", "nidoking", "golbat", "tentacruel", "rapidash", "magneton", "dewgong", "muk", "gyarados", "lapras", "snorlax", "dragonair", "dragonite", "meganium", "typhlosion", "feraligatr", "noctowl", "lanturn", "ampharos", "sudowoodo", "politoed", "jumpluff", "quagsire", "forretress", "magcargo", "piloswine", "mantine", "kingdra", "hitmontop", "tyranitar", "sceptile", "blaziken", "swampert", "ludicolo", "pelipper", "vigoroth", "flygon", "whiscash", "cradily", "milotic", "sealeo", "walrein", "shelgon", "salamence", "grotle", "torterra", "infernape", "empoleon", "bibarel", "roserade", "garchomp", "lucario", "hippowdon", "abomasnow", "magnezone", "lickilicky", "rhyperior", "tangrowth", "electivire", "magmortar", "mamoswine", "probopass", "serperior", "emboar", "samurott", "zebstrika", "excadrill", "seismitoad", "scolipede", "crustle", "garbodor", "escavalier", "alomomola", "galvantula", "ferrothorn", "eelektross", "chesnaught", "delphox", "greninja", "talonflame", "pyroar", "barbaracle", "clawitzer", "dedenne", "goodra", "noivern", "raichu_alolan", "sandslash_alolan", "melmetal", "perrserker", "greedent", "dubwool"]
+        }],
+        "exclude": [],
+        "slots": [{
+            "pokemon": ["ivysaur", "venusaur", "charizard", "blastoise", "beedrill", "pidgeot", "nidoking", "golbat", "tentacruel", "rapidash", "magneton", "dewgong", "muk", "gyarados", "lapras", "snorlax", "dragonair", "dragonite"]
+        }, {
+            "pokemon": ["meganium", "typhlosion", "feraligatr", "noctowl", "lanturn", "ampharos", "sudowoodo", "politoed", "jumpluff", "quagsire", "forretress", "magcargo", "piloswine", "mantine", "kingdra", "hitmontop", "tyranitar"]
+        }, {
+            "pokemon": ["sceptile", "blaziken", "swampert", "ludicolo", "pelipper", "vigoroth", "flygon", "whiscash", "cradily", "milotic", "sealeo", "walrein", "shelgon", "salamence"]
+        }, {
+            "pokemon": ["grotle", "torterra", "infernape", "empoleon", "bibarel", "roserade", "garchomp", "lucario", "hippowdon", "abomasnow", "magnezone", "lickilicky", "rhyperior", "tangrowth", "electivire", "magmortar", "mamoswine", "probopass"]
+        }, {
+            "pokemon": ["serperior", "emboar", "samurott", "zebstrika", "excadrill", "seismitoad", "scolipede", "crustle", "garbodor", "escavalier", "alomomola", "galvantula", "ferrothorn", "eelektross"]
+        }, {
+            "pokemon": ["chesnaught", "delphox", "greninja", "talonflame", "pyroar", "barbaracle", "clawitzer", "dedenne", "goodra", "noivern", "raichu_alolan", "sandslash_alolan", "melmetal", "perrserker", "greedent", "dubwool"]
+        }],
+		"link": "https://twitter.com/SkyDragonsGami1/status/1465726406059569156"
+    }, {
         "name": "glacial",
         "title": "Glacial Cup",
         "include": [{
