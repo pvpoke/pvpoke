@@ -34,11 +34,18 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.24.5 (November 29, 2021)</h4>
+	<h4>v1.24.7 (December 10, 2021)</h4>
 	<ul>
-		<li>The site is updated with Season 10 move updates and rankings for upcoming formats!</li>
+		<li>Battle timeline tooltips now show a move's damage in percent alongside the damage value.</li>
+		<li>Future ranking updates will sort key wins and losses by Battle Rating.</li>
 		<ul>
-			<li>Rankings are not currently available for every GO Battle League format in Season 10. Rankings for upcoming GO Battle League formats will be posted 2 weeks in advance.</li>
+			<li>These were previously sorted by a behind-the-scenes score used to determine the key win and key loss lists.</li>
+			<li>This change is currently present in custom rankings, and will take effect in the main rankings when those are updated in the future.<li>
+		</ul>
+		<li>Clicking the "Battle" button after using the "Explore Win Conditions" feature will revert the simulation to non-random results.</li>
+		<li>On mobile, the Pokemon search function on the Battle and Team Builder pages now completes when you finish typing rather than every keypress.</li>
+		<ul>
+			<li>This change is aimed at mitigating input lag on some mobile devices.</li>
 		</ul>
 	</ul>
 

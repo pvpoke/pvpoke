@@ -2509,13 +2509,14 @@ function Battle(){
 		// Set energy value for TimelineEvent
 
 		var energyValue = move.energyGain;
+		var percentDamage = Math.round((damage / defender.stats.hp) * 1000) / 10;
 
 		if(move.energy > 0){
 			energyValue = -move.energy;
 		}
 
 		if(! buffApplied){
-			timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, turns, [damage, energyValue]));
+			timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, turns, [damage, energyValue, percentDamage]));
 		} else{
 			var buffStr = "";
 
@@ -2529,9 +2530,11 @@ function Battle(){
 				buffStr += "+";
 			}
 
-			buffStr += move.buffs[1] + " Defense";
+			if(move.buffs[1] != 0){
+				buffStr += move.buffs[1] + " Defense";
+			}
 
-			timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, turns, [damage, energyValue, buffStr]));
+			timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, turns, [damage, energyValue, percentDamage, buffStr]));
 		}
 
 		// If a Pokemon has fainted, clear the action queue

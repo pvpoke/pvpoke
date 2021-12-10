@@ -1867,6 +1867,7 @@ var InterfaceMaster = (function () {
 									pokeSelectors[i].setBattle(battle);
 								}
 
+								battle.setDecisionMethod("default");
 								battle.simulate();
 								battle.debug();
 								self.displayTimeline(battle, false, false, (settings.animateTimeline !== 0));
@@ -1958,10 +1959,18 @@ var InterfaceMaster = (function () {
 
 					var values = $(this).attr("values").split(',');
 
-					$tooltip.find(".details").html(values[0] + " damage<br>" + values[1] + " energy");
+					$tooltip.find(".details").html(values[0] + " damage");
 
-					if(values.length == 3){
-						$tooltip.find(".details").append("<br>"+values[2]);
+					// Append damage percentage
+					if(values.length > 2){
+						$tooltip.find(".details").append(" ("+values[2]+"%)");
+					}
+
+					$tooltip.find(".details").append("<br>" + values[1] + " energy");
+
+					// Append stat boost string, if any
+					if(values.length == 4){
+						$tooltip.find(".details").append("<br>"+values[3]);
 					}
 
 				}
