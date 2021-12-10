@@ -40,7 +40,7 @@
 		<li>Future ranking updates will sort key wins and losses by Battle Rating.</li>
 		<ul>
 			<li>These were previously sorted by a behind-the-scenes score used to determine the key win and key loss lists.</li>
-			<li>This change is currently present in custom rankings, and will take effect in the main rankings when those are updated in the future.<li>
+			<li>This change is currently present in custom rankings, and will take effect in the main rankings when those are updated in the future.</li>
 		</ul>
 		<li>Clicking the "Battle" button after using the "Explore Win Conditions" feature will revert the simulation to non-random results.</li>
 		<li>On mobile, the Pokemon search function on the Battle and Team Builder pages now completes when you finish typing rather than every keypress.</li>
