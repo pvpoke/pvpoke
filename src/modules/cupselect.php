@@ -6,7 +6,6 @@
 	<option value="tsa-3" cup="factions">Silph Factions (Comet)</option>
 	<option value="tsa-3" cup="twilightfactions">Silph Factions (Twilight)</option>
 	<option value="tsa-4" cup="glacial">Silph Glacial Cup</option>
-	<option value="tsa-4" cup="unity">Unity Cup Charity Tournament</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>
