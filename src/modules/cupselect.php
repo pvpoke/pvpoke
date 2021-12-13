@@ -2,6 +2,7 @@
 	<option value="all" cup="all">All Pokemon</option>
 	<option value="official" cup="remix">Remix Cup</option>
 	<option value="official" cup="holiday">Holiday Cup</option>
+	<option value="official" cup="sinnoh">Sinnoh Cup</option>
 	<option value="tsa-3" cup="factions">Silph Factions (Comet)</option>
 	<option value="tsa-3" cup="twilightfactions">Silph Factions (Twilight)</option>
 	<option value="tsa-4" cup="brawler">Silph Brawler Cup</option>
@@ -32,6 +33,7 @@
 	<option value="element" cat="official">Element Cup</option>
 	<option value="bidoof" cat="official">Bidoof Cup</option>
 	<option value="holiday" cat="official">Holiday Cup</option>
+	<option value="sinnoh" cat="official">Sinnoh Cup</option>
 	<option value="classic" cat="official">Classic (ML Only)</option>
 	<option value="littlejungle" cat="official">Little Jungle Cup</option>
 	<option value="safari" cat="community">Montreal Safari Cup</option>

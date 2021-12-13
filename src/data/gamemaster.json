@@ -691,11 +691,14 @@
         "title": "Sinnoh Cup",
         "include": [{
             "filterType": "dex",
-            "values": [152, 251]
+            "values": [387, 493]
         }],
         "exclude": [{
             "filterType": "tag",
             "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["bastiodon_xs", "gastrodon_west_sea"]
         }]
     }, {
         "name": "love",
