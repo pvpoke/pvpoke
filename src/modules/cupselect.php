@@ -5,7 +5,6 @@
 	<option value="official" cup="sinnoh">Sinnoh Cup</option>
 	<option value="tsa-3" cup="factions">Silph Factions (Comet)</option>
 	<option value="tsa-3" cup="twilightfactions">Silph Factions (Twilight)</option>
-	<option value="tsa-4" cup="brawler">Silph Brawler Cup</option>
 	<option value="tsa-4" cup="glacial">Silph Glacial Cup</option>
 	<option value="tsa-4" cup="unity">Unity Cup Charity Tournament</option>
 

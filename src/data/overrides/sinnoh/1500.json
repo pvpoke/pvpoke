@@ -10,16 +10,17 @@
 	},
 	{
 		"speciesId": "drapion",
-		"chargedMoves": ["CRUNCH", "SLUDGE_BOMB"]
+		"chargedMoves": ["AQUA_TAIL", "CRUNCH"],
+		"weight": 2
 	},
 	{
 		"speciesId": "drapion_shadow",
-		"chargedMoves": ["CRUNCH", "SLUDGE_BOMB"]
+		"chargedMoves": ["AQUA_TAIL", "CRUNCH"]
 	},
 	{
 		"speciesId": "cresselia",
 		"chargedMoves": ["GRASS_KNOT", "MOONBLAST"],
-		"weight": 5
+		"weight": 4
 	},
 	{
 		"speciesId": "lickilicky",
@@ -45,7 +46,7 @@
 	{
 		"speciesId": "toxicroak",
 		"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"],
-		"weight": 6
+		"weight": 5
 	},
 	{
 		"speciesId": "gliscor",
@@ -113,26 +114,22 @@
 	},
 	{
 		"speciesId": "bastiodon",
-		"weight": 8
+		"weight": 6
 	},
 	{
 		"speciesId": "gallade",
-		"weight": 4
-	},
-	{
-		"speciesId": "abomasnow",
-		"weight": 5
-	},
-	{
-		"speciesId": "munchlax",
-		"weight": 3
-	},
-	{
-		"speciesId": "lickilicky",
 		"weight": 2
 	},
 	{
-		"speciesId": "gastrodon_east_sea",
+		"speciesId": "abomasnow",
+		"weight": 4
+	},
+	{
+		"speciesId": "munchlax",
+		"weight": 2
+	},
+	{
+		"speciesId": "gastrodon",
 		"weight": 2
 	},
 	{
@@ -141,7 +138,7 @@
 	},
 	{
 		"speciesId": "empoleon",
-		"weight": 4
+		"weight": 3
 	},
 	{
 		"speciesId": "magnezone",
@@ -150,9 +147,5 @@
 	{
 		"speciesId": "drifblim",
 		"weight": 3
-	},
-	{
-		"speciesId": "gastrodon_west_sea",
-		"weight": 0
 	}
 ]
