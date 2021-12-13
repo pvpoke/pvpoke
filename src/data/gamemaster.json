@@ -699,7 +699,9 @@
         }, {
             "filterType": "id",
             "values": ["bastiodon_xs"]
-        }]
+        }],
+		"partySize": 3,
+		"presetOnly": true
     }, {
         "name": "love",
         "title": "Love Cup",
