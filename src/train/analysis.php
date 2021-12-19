@@ -31,6 +31,10 @@ switch($cp){
 
 switch($cup){
 
+	case "holiday":
+		$league = 'Holiday';
+		break;
+
 	case "premier":
 		$league = 'Premier';
 		break;
@@ -83,10 +87,11 @@ require_once '../header.php';
 	<select class="format-select">
 		<option value="1500" cup="all" level-cap="50">Great League</option>
 		<option value="2500" cup="all" level-cap="50">Ultra League</option>
+		<option value="2500" cup="remix" level-cap="50">Ultra League (Remix)</option>
 		<option value="2500" cup="premierclassic" level-cap="40">Ultra League (Premier Classic)</option>
 		<option value="10000" cup="premierclassic" level-cap="40">Master League (Premier Classic)</option>
 		<option value="10000" cup="classic" level-cap="40">Master League (Classic)</option>
-		<option value="1500" cup="kanto" level-cap="50">Kanto Cup</option>
+		<option value="1500" cup="holiday" level-cap="50">Holiday Cup</option>
 	</select>
 
 	<div class="date-updated">Last updated</div>
