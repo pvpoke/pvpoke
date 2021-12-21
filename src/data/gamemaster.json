@@ -7058,6 +7058,27 @@
         "thirdMoveCost": 75000,
         "released": true
     }, {
+	    "dex": 142,
+	    "speciesName": "Aerodactyl (Mega)",
+	    "speciesId": "aerodactyl_mega",
+	    "baseStats": {
+	        "atk": 292,
+	        "def": 210,
+	        "hp": 190
+	    },
+	    "types": ["rock", "flying"],
+	    "fastMoves": ["BITE", "STEEL_WING", "ROCK_THROW"],
+	    "chargedMoves": ["ANCIENT_POWER", "HYPER_BEAM", "IRON_HEAD", "ROCK_SLIDE", "EARTH_POWER"],
+	    "tags": ["mega"],
+	    "defaultIVs": {
+			"cp1500": [4.5, 9, 15, 14],
+	        "cp1500": [13, 6, 15, 14],
+	        "cp2500": [22, 6, 10, 15]
+	    },
+		"buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true
+	}, {
         "dex": 143,
         "speciesName": "Snorlax",
         "speciesId": "snorlax",
@@ -9183,6 +9204,7 @@
 	    "chargedMoves": ["CRUNCH", "EARTHQUAKE", "HEAVY_SLAM"],
 	    "tags": ["mega"],
 	    "defaultIVs": {
+			"cp500": [5, 12, 15, 15],
 	        "cp1500": [15, 7, 11, 11],
 	        "cp2500": [25, 5, 12, 13]
 	    }
@@ -13938,6 +13960,7 @@
 	    "fastMoves": ["PSYCHO_CUT", "SNARL"],
 	    "chargedMoves": ["DARK_PULSE", "MEGAHORN", "THUNDER", "PAYBACK"],
 	    "defaultIVs": {
+			"cp500": [6, 3, 6, 9],
 	        "cp1500": [17, 6, 8, 10],
 	        "cp2500": [27, 10, 13, 15]
 	    },

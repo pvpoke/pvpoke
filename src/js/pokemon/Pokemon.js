@@ -258,19 +258,28 @@ function Pokemon(id, i, b){
 							combination = data.defaultIVs["cp"+maxCP+"l40"];
 						}
 
-						var level = Math.min(self.levelCap, combination[0]);
-
+						// If a valid combination exists for this CP cap
 						if(combination){
-							self.ivs.atk = combination[1];
-							self.ivs.def = combination[2];
-							self.ivs.hp = combination[3];
-							self.setLevel(level, false);
+							var level = Math.min(self.levelCap, combination[0]);
+
+							if(combination){
+								self.ivs.atk = combination[1];
+								self.ivs.def = combination[2];
+								self.ivs.hp = combination[3];
+								self.setLevel(level, false);
+							} else{
+								self.ivs.atk = 15;
+								self.ivs.def = 15;
+								self.ivs.hp = 15;
+								self.setLevel(self.levelCap, false);
+							}
 						} else{
 							self.ivs.atk = 15;
 							self.ivs.def = 15;
 							self.ivs.hp = 15;
-							self.setLevel(self.levelCap, false);
+							self.setLevel(1, false);
 						}
+
 
 					}
 				break;
