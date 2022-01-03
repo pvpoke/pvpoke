@@ -34,7 +34,13 @@
     "speciesId": "charizard",
     "fastMove": "FIRE_SPIN",
     "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"]
-}, {
+},
+{
+    "speciesId": "trevenant",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["SHADOW_BALL", "SEED_BOMB"]
+},
+{
     "speciesId": "gyarados",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["AQUA_TAIL", "CRUNCH"]
