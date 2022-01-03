@@ -1941,6 +1941,35 @@ a.download-csv {
   display: flex;
   flex-wrap: wrap;
 }
+.rank .details .detail-tab-nav {
+  margin-top: 10px;
+  flex-basis: 100%;
+  display: flex;
+}
+.rank .details .detail-tab-nav a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  padding: 2px 5px;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-right: 5px;
+}
+.rank .details .detail-tab-nav a:hover {
+  background: rgba(0, 0, 0, 0.15);
+}
+.rank .details .detail-tab-nav a.active {
+  background: #333;
+  color: #eee;
+}
+.rank .details .detail-tab {
+  display: none;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+}
+.rank .details .detail-tab.active {
+  display: flex;
+}
 .rank .details .detail-section {
   background: rgba(255, 255, 255, 0.8);
   padding: 5px;

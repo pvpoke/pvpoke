@@ -54,6 +54,7 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".check.xl", toggleXLPokemon);
 				$("body").on("click", ".continentals .check", toggleContinentalsSlots);
 				$("body").on("click", ".detail-section .trait-info, .detail-section .traits > div", openTraitPopup);
+				$("body").on("click", ".detail-tab-nav a", toggleDetailTab);
 				$("body").on("click", ".detail-section a.show-move-stats", toggleMoveStats);
 				$("body").on("click", ".check.move-counts", toggleMoveCounts);
 				$("body").on("click", ".detail-section.similar-pokemon a", jumpToSimilarPokemon);
@@ -1057,7 +1058,9 @@ var InterfaceMaster = (function () {
 
 					multiBattleLink += "/";
 
-					$details.find(".detail-section.float").eq(2).before($("<div class=\"multi-battle-link\"><p>See all of <b>" + pokemon.speciesName + "'s</b> matchups:</p><a target=\"_blank\" class=\"button\" href=\""+multiBattleLink+"\">"+pokemon.speciesName+" vs. " + cupName +"</a></div>"));
+					$details.find(".multi-battle-link a").attr("href", multiBattleLink);
+					$details.find(".multi-battle-link a").html(pokemon.speciesName+" vs. " + cupName);
+					$details.find(".multi-battle-link .name").html(pokemon.speciesName+"'s");
 				} else{
 					$details.find(".share-link").remove();
 				}
@@ -1286,6 +1289,23 @@ var InterfaceMaster = (function () {
 				var $rank = $(e.target).closest(".rank")
 				$(e.target).toggleClass("on");
 				$rank.find(".moveset").toggleClass("show-stats");
+			}
+
+			// Switch to a different detail tab
+
+			function toggleDetailTab(e){
+				e.preventDefault();
+
+				var $rank = $(e.target).closest(".rank")
+				var tab = $(e.target).attr("tab");
+
+				// Display selected tab nav
+				$rank.find(".detail-tab-nav a").removeClass("active");
+				$(e.target).addClass("active");
+
+				// Display selected tab items
+				$rank.find(".detail-tab").hide();
+				$rank.find(".detail-tab[tab=\""+tab+"\"]").css("display", "flex");
 			}
 		};
 

@@ -2241,6 +2241,42 @@ a.download-csv{
 			flex-wrap:wrap;
 		}
 
+		.detail-tab-nav{
+			margin-top:10px;
+			flex-basis: 100%;
+			display:flex;
+
+			a{
+				color:$color-off-black;
+				text-decoration: none;
+				display:block;
+				padding: 2px 5px;
+				font-size:14px;
+				font-weight: bold;
+				border-radius: 8px;
+			    margin-right: 5px;
+
+				&:hover{
+					background:rgba(0,0,0,0.15);
+				}
+
+				&.active{
+					background:$color-off-black;
+					color:$color-off-white;
+				}
+			}
+		}
+
+		.detail-tab{
+			display:none;
+			flex-wrap:wrap;
+			flex-basis:100%;
+
+			&.active{
+				display:flex;
+			}
+		}
+
 		.detail-section{
 			background:rgba(255,255,255,0.8);
 			padding:5px;
@@ -4677,6 +4713,12 @@ a.pokebattler{
 
 .section.battle .mobile-ad-container{
 	margin: 10px auto 5px auto;
+}
+
+@media only screen and (min-width: 360px) {
+	.detail-tab-nav a{
+		font-size: 16px;
+	}
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {
