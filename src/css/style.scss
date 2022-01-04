@@ -2245,24 +2245,63 @@ a.download-csv{
 			margin-top:10px;
 			flex-basis: 100%;
 			display:flex;
+			flex-wrap: wrap;
 
 			a{
 				color:$color-off-black;
 				text-decoration: none;
-				display:block;
-				padding: 2px 5px;
-				font-size:14px;
+				display:flex;
+				align-items: center;
+				padding: 5px 5px;
+				font-size:12px;
 				font-weight: bold;
 				border-radius: 8px;
 			    margin-right: 5px;
 
+				.icon{
+					display:block;
+					background-size:200%;
+					background-repeat: no-repeat;
+					background-position: 0 center;
+					margin: 0 4px 0 2px;
+				}
+
+				&[tab="matchups"] .icon{
+					width:18px;
+					height:18px;
+					background-image:url('../img/detail-tab-matchups.png');
+				}
+
+				&[tab="moves"] .icon{
+					width:17px;
+					height:17px;
+					background-image:url('../img/detail-tab-moves.png');
+				}
+
+				&[tab="misc"] .icon{
+					width:17px;
+					height:5px;
+					background-image:url('../img/detail-tab-misc.png');
+				}
+
+				&[tab="stats"] .icon{
+					width:15px;
+					height:17px;
+					background-image:url('../img/detail-tab-stats.png');
+				}
+
+
 				&:hover{
-					background:rgba(0,0,0,0.15);
+					background-color:rgba(0,0,0,0.15);
 				}
 
 				&.active{
-					background:$color-off-black;
+					background-color:$color-off-black;
 					color:$color-off-white;
+
+					.icon{
+						background-position: 100% center;
+					}
 				}
 			}
 		}
@@ -4715,9 +4754,9 @@ a.pokebattler{
 	margin: 10px auto 5px auto;
 }
 
-@media only screen and (min-width: 360px) {
-	.detail-tab-nav a{
-		font-size: 16px;
+@media only screen and (min-width: 420px) {
+	.rank .details .detail-tab-nav a{
+		font-size: 14px;
 	}
 }
 

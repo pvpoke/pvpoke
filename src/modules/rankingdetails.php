@@ -1,12 +1,12 @@
 <div class="details-template hide">
 	<div class="detail-section detail-tab-nav">
-		<a class="tab-stats active" href="#" tab="stats">Stats</a>
-		<a class="tab-moves" href="#" tab="moves">Moves</a>
-		<a class="tab-moves" href="#" tab="matchups">Matchups</a>
-		<a class="tab-moves" href="#" tab="misc">Misc</a>
+		<a class="tab-moves active" href="#" tab="matchups"><span class="icon"></span>Matchups</a>
+		<a class="tab-moves" href="#" tab="moves"><span class="icon"></span>Moves</a>
+		<a class="tab-stats" href="#" tab="stats"><span class="icon"></span>Stats</a>
+		<a class="tab-moves" href="#" tab="misc"><span class="icon"></span>Misc</a>
 	</div>
 
-	<div class="detail-tab" tab="matchups">
+	<div class="detail-tab active" tab="matchups">
 		<div class="detail-section float margin">
 			<div class="ranking-header">Key Wins</div>
 			<div class="ranking-header right">Battle Rating</div>
@@ -17,9 +17,11 @@
 			<div class="ranking-header right">Battle Rating</div>
 			<div class="counters clear"></div>
 		</div>
+
+		<div class="multi-battle-link"><p>See all of <b class="name"></b> matchups:</p><a target="_blank" class="button" href="#">Pokemon vs. Great League</a></div>
 	</div><!-- end tab matchups-->
 
-	<div class="detail-tab active" tab="stats">
+	<div class="detail-tab" tab="stats">
 		<div class="detail-section performance float margin">
 			<div class="ranking-header">Performance</div>
 			<div class="hexagon-container">
@@ -104,16 +106,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="detail-section typing">
-			<div class="rating-container">
-				<div class="ranking-header">Primary Type</div>
-				<div class="type"></div>
-			</div>
-			<div class="rating-container">
-				<div class="ranking-header">Secondary Type</div>
-				<div class="type"></div>
-			</div>
-		</div>
 		<div class="detail-section traits-container">
 			<div class="ranking-header">Traits <a href="#" class="trait-info">?</a></div>
 			<div class="traits"></div>
@@ -167,6 +159,16 @@
 	<div class="clear"></div>
 
 	<div class="detail-tab" tab="misc">
+		<div class="detail-section typing">
+			<div class="rating-container">
+				<div class="ranking-header">Primary Type</div>
+				<div class="type"></div>
+			</div>
+			<div class="rating-container">
+				<div class="ranking-header">Secondary Type</div>
+				<div class="type"></div>
+			</div>
+		</div>
 		<div class="detail-section float margin">
 			<div class="ranking-header">Weaknesses</div>
 			<div class="weaknesses clear"></div>
@@ -190,8 +192,6 @@
 			<div class="list"></div>
 		</div>
 	</div><!--end tab misc-->
-
-	<div class="multi-battle-link"><p>See all of <b class="name"></b> matchups:</p><a target="_blank" class="button" href="#">Pokemon vs. Great League</a></div>
 
 	<div class="share-link detail-section"><input type="text" readonly="">
 		<div class="copy">Copy</div>

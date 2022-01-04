@@ -1297,11 +1297,11 @@ var InterfaceMaster = (function () {
 				e.preventDefault();
 
 				var $rank = $(e.target).closest(".rank")
-				var tab = $(e.target).attr("tab");
+				var tab = $(e.target).closest("a").attr("tab");
 
 				// Display selected tab nav
 				$rank.find(".detail-tab-nav a").removeClass("active");
-				$(e.target).addClass("active");
+				$(e.target).closest("a").addClass("active");
 
 				// Display selected tab items
 				$rank.find(".detail-tab").hide();
