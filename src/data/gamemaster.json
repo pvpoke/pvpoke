@@ -10635,6 +10635,7 @@
         },
         "eliteMoves": ["EARTHQUAKE"],
         "level25CP": 2436,
+		"searchPriority": 4,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
