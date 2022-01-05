@@ -3,9 +3,8 @@
 	<option value="official" cup="remix">Remix Cup</option>
 	<option value="official" cup="holiday">Holiday Cup</option>
 	<option value="official" cup="sinnoh">Sinnoh Cup</option>
-	<option value="tsa-3" cup="factions">Silph Factions (Comet)</option>
-	<option value="tsa-3" cup="twilightfactions">Silph Factions (Twilight)</option>
 	<option value="tsa-4" cup="glacial">Silph Glacial Cup</option>
+	<option value="community" cup="comet">Gymbreakers Comet Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>
@@ -52,6 +51,7 @@
 	<option value="adl" cat="community">ADL</option>
 	<option value="cutie" cat="community">Cutie Cup</option>
 	<option value="unity" cat="community">Unity Cup</option>
+	<option value="comet" cat="community">Comet Cup</option>
 	<option value="jungle"  cat="tsa-1">Jungle Cup</option>
 	<option value="rainbow" cat="tsa-1">Rainbow Cup</option>
 	<option value="championships-1" cat="tsa-1">Season 1 Championships</option>

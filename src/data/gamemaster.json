@@ -900,6 +900,21 @@
             "values": ["altaria", "deoxys_defense", "medicham", "wobbuffet", "chansey", "mantine"]
         }]
     }, {
+        "name": "comet",
+        "title": "Comet Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["fire", "flying", "ice", "normal", "psychic"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["altaria", "deoxys_defense", "medicham", "wobbuffet", "chansey", "mantine"]
+        }],
+		"link": "https://discord.gg/ybTf7ZYNzt?event=925020319037669387"
+    }, {
         "name": "venture",
         "title": "Venture Cup",
         "include": [],

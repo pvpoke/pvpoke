@@ -30,9 +30,8 @@
 				<option value="masterpremierclassic" type="master" class="hide multi-battle">Premier Classic Meta</option>
 				<option value="holiday" type="great" class="multi-battle">Holiday Cup Meta</option>
 				<option value="sinnoh" type="great" class="multi-battle">Sinnoh Cup Meta</option>
-				<option value="factions" type="great" class="multi-battle">Silph Factions Meta (Comet)</option>
-				<option value="twilight" type="great" class="multi-battle">Silph Factions Meta (Twilight)</option>
 				<option value="glacial" type="great" class="multi-battle">Silph Glacial Cup Meta</option>
+				<option value="comet" type="great" class="multi-battle">Gymbreakers Comet Cup Meta</option>
 			</select>
 			<div class="flex quick-fill-buttons">
 				<button class="save-btn save-custom">Save</button>

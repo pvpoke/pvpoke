@@ -1,0 +1,143 @@
+[
+	{
+		"speciesId": "lapras",
+		"fastMove": "ICE_SHARD",
+		"chargedMoves": ["SURF","SKULL_BASH"],
+		"weight": 4
+	},
+	{
+		"speciesId": "lapras_shadow",
+		"fastMove": "ICE_SHARD",
+		"chargedMoves": ["SURF","SKULL_BASH"]
+	},
+	{
+		"speciesId": "vigoroth",
+		"chargedMoves": ["BODY_SLAM","BULLDOZE"],
+		"weight": 8
+	},
+	{
+		"speciesId": "cresselia",
+		"chargedMoves": ["GRASS_KNOT","MOONBLAST"],
+		"weight": 3
+	},
+	{
+		"speciesId": "sandslash_alolan",
+		"chargedMoves": ["ICE_PUNCH","BULLDOZE"]
+	},
+	{
+		"speciesId": "magcargo",
+		"chargedMoves": ["ROCK_TOMB","OVERHEAT"]
+	},
+	{
+		"speciesId": "dewgong",
+		"chargedMoves": ["ICY_WIND","WATER_PULSE"],
+		"weight": 2
+	},
+	{
+		"speciesId": "rapidash_galarian",
+		"chargedMoves": ["BODY_SLAM","PLAY_ROUGH"]
+	},
+	{
+		"speciesId": "togekiss",
+		"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"]
+	},
+	{
+		"speciesId": "typhlosion",
+		"chargedMoves": ["BLAST_BURN","SOLAR_BEAM"]
+	},
+	{
+		"speciesId": "froslass",
+		"chargedMoves": ["AVALANCHE","SHADOW_BALL"]
+	},
+	{
+		"speciesId": "blaziken",
+		"chargedMoves": ["BLAZE_KICK","STONE_EDGE"]
+	},
+	{
+		"speciesId": "hypno",
+		"chargedMoves": ["THUNDER_PUNCH","SHADOW_BALL"]
+	},
+	{
+		"speciesId": "hypno_shadow",
+		"chargedMoves": ["THUNDER_PUNCH","ICE_PUNCH"]
+	},
+	{
+		"speciesId": "crobat",
+		"chargedMoves": ["POISON_FANG","SHADOW_BALL"]
+	},
+	{
+		"speciesId": "crobat_shadow",
+		"chargedMoves": ["POISON_FANG","SHADOW_BALL"]
+	},
+	{
+		"speciesId": "mew",
+		"fastMove": "VOLT_SWITCH",
+		"chargedMoves": ["WILD_CHARGE","SURF"]
+	},
+	{
+		"speciesId": "ninetales",
+		"weight": 3
+	},
+	{
+		"speciesId": "ninetales_alolan",
+		"fastMove": "CHARM",
+		"weight": 6
+	},
+	{
+		"speciesId": "wigglytuff",
+		"weight": 3
+	},
+	{
+		"speciesId": "gardevoir",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "gardevoir_shadow",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "vullaby",
+		"fastMove": "AIR_SLASH"
+	},
+	{
+		"speciesId": "mandibuzz",
+		"fastMove": "SNARL",
+		"weight": 7
+	},
+	{
+		"speciesId": "lickitung",
+		"weight": 11
+	},
+	{
+		"speciesId": "pelipper",
+		"weight": 3
+	},
+	{
+		"speciesId": "skarmory",
+		"weight": 4
+	},
+	{
+		"speciesId": "marowak_alolan",
+		"weight": 2
+	},
+	{
+		"speciesId": "obstagoon",
+		"weight": 3
+	},
+	{
+		"speciesId": "talonflame",
+		"weight": 3
+	},
+	{
+		"speciesId": "magcargo",
+		"weight": 2
+	},
+	{
+		"speciesId": "diggersby",
+		"weight": 2
+	},
+	{
+		"speciesId": "raichu_alolan",
+		"weight": 4
+	}
+]
