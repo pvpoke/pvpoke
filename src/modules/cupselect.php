@@ -4,6 +4,7 @@
 	<option value="official" cup="holiday">Holiday Cup</option>
 	<option value="official" cup="sinnoh">Sinnoh Cup</option>
 	<option value="tsa-4" cup="glacial">Silph Glacial Cup</option>
+	<option value="tsa-2" cup="fusionfactions">Silph Factions (Fusion)</option>
 	<option value="community" cup="comet">Gymbreakers Comet Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
@@ -71,6 +72,7 @@
 	<option value="toxic" cat="tsa-2">Toxic Cup</option>
 	<option value="rose" cat="tsa-2">Rose Cup</option>
 	<option value="fusion" cat="tsa-2">Fusion Cup</option>
+	<option value="fusionfactions" cat="tsa-2">Fusion Cup</option>
 	<option value="timeless" cat="tsa-2">Timeless Cup</option>
 	<option value="timeless-mirror" cat="tsa-2">Timeless Cup (Mirror)</option>
 	<option value="ferocious" cat="tsa-2">Ferocious Cup</option>

@@ -307,6 +307,23 @@
             "values": ["azumarill", "medicham", "dewgong", "wormadam_trash", "wormadam_plant", "wormadam_sandy", "hypno", "munchlax", "linoone", "onix", "hitmonlee", "hitmonchan", "chansey", "mr.mime", "scyther", "jynx", "electabuzz", "magmar", "magmar_shadow", "pinsir", "lapras", "eevee", "vaporeon", "jolteon", "flareon", "omanyte", "omastar", "omastar_shadow", "kabuto", "kabutops", "aerodactyl", "snorlax", "dratini", "dragonair", "dragonite", "mareep", "flaafy", "ampharos", "sudowoodo", "espeon", "umbreon", "pineco", "forretress", "gligar", "steelix", "scizor", "delibird", "mantine", "skarmory", "hitmontop", "miltank", "blissey", "larvitar", "pupitar", "tyranitar", "ralts", "kirlia", "gardevoir", "slakoth", "vigoroth", "slaking", "nincada", "ninjask", "sableye", "mawile", "trapinch", "vibrava", "flygon", "milotic", "castform", "castform_sunny", "castform_rainy", "castform_snowy", "tropius", "chimecho", "absol", "absol_shadow", "relicanth", "bagon", "shelgon", "salamence", "metang", "metagross", "shinx", "luxio", "luxray", "cranidos", "rampardos", "shieldon", "bastiodon", "pachirisu", "drifloon", "drifblim", "chatot", "spiritomb", "gible", "gabite", "garchomp", "lucario", "skorupi", "drapion", "carnivine", "electivire", "magmortar", "leafeon", "glaceon", "gliscor", "gallade", "ferroseed", "ferrothorn", "klink", "klang", "klinklang", "litwick", "lampent", "chandelure", "golett", "golurk", "deino", "zweilous", "hydreigon", "mr_mime", "tirtouga", "carracosta", "archeops", "archen", "stunfisk", "alomomola", "timburr", "gurdurr", "conkeldurr", "rufflet", "braviary", "cryogonal", "axew", "haxorus", "fraxure", "sigilyph", "tirtouga", "carracosta"]
         }]
     }, {
+        "name": "fusionfactions",
+        "title": "Fusion Cup",
+        "include": [{
+            "filterType": "cost",
+            "values": [10000,50000]
+        }],
+        "exclude": [{
+            "filterType": "id",
+            "values": ["azumarill", "medicham", "dewgong", "scrafty", "jellicent", "nidoqueen", "diggersby"]
+        }, {
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "type",
+            "values": ["none"]
+        }]
+    }, {
         "name": "rose",
         "title": "Rose Cup",
         "include": [{
