@@ -67,8 +67,8 @@ switch($cup){
 		$league = 'GO Stadium GOTeamUp';
 		break;
 
-	case "twilightfactions":
-		$league = 'Silph Twilight Cup';
+	case "fusionfactions":
+		$league = 'Silph Fusion Cup';
 		break;
 
 	case "factions":

@@ -1,7 +1,8 @@
 [
 	{
 	    "speciesId": "probopass",
-	    "chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
+	    "chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"],
+		"weight": 3
 	},
 	{
 	    "speciesId": "wormadam_trash",
@@ -13,11 +14,13 @@
 	},
 	{
 	    "speciesId": "bronzong",
-	    "chargedMoves": ["PSYSHOCK", "BULLDOZE"]
+	    "chargedMoves": ["PSYSHOCK", "BULLDOZE"],
+		"weight": 2
 	},
 	{
 	    "speciesId": "sandslash_alolan",
-	    "chargedMoves": ["ICE_PUNCH", "BULLDOZE"]
+	    "chargedMoves": ["ICE_PUNCH", "BULLDOZE"],
+		"weight": 2
 	},
 	{
 	    "speciesId": "qwilfish",
@@ -57,7 +60,8 @@
 	},
 	{
 	    "speciesId": "toxicroak",
-	    "chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
+	    "chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"],
+		"weight": 4
 	},
 	{
 	    "speciesId": "blaziken",
@@ -82,7 +86,8 @@
 	{
 	    "speciesId": "muk_alolan",
 		"fastMove": "SNARL",
-	    "chargedMoves": ["DARK_PULSE", "SLUDGE_WAVE"]
+	    "chargedMoves": ["DARK_PULSE", "SLUDGE_WAVE"],
+		"weight": 2
 	},
 	{
 	    "speciesId": "crobat",
@@ -106,10 +111,93 @@
 	},
 	{
 	    "speciesId": "ninetales_alolan",
-	    "fastMove": "CHARM"
+	    "fastMove": "POWDER_SNOW",
+		"chargedMoves": ["WEATHER_BALL_ICE", "DAZZLING_GLEAM"],
+		"weight": 3
 	},
 	{
 	    "speciesId": "togekiss",
 	    "fastMove": "CHARM"
+	},
+	{
+	    "speciesId": "whiscash",
+	    "weight": 5
+	},
+	{
+	    "speciesId": "swampert",
+		"chargedMoves": ["HYDRO_CANNON", "SLUDGE_WAVE"],
+	    "weight": 7
+	},
+	{
+	    "speciesId": "swampert_shadow",
+		"chargedMoves": ["HYDRO_CANNON", "SLUDGE_WAVE"]
+	},
+	{
+	    "speciesId": "altaria",
+	    "weight": 4
+	},
+	{
+	    "speciesId": "venusaur",
+	    "weight": 5
+	},
+	{
+	    "speciesId": "escavalier",
+	    "weight": 2
+	},
+	{
+	    "speciesId": "froslass",
+	    "weight": 3
+	},
+	{
+	    "speciesId": "obstagoon",
+	    "weight": 3
+	},
+	{
+	    "speciesId": "abomasnow",
+	    "weight": 4
+	},
+	{
+	    "speciesId": "marowak_alolan",
+	    "weight": 3
+	},
+	{
+	    "speciesId": "golbat",
+	    "weight": 2
+	},
+	{
+	    "speciesId": "wigglytuff",
+	    "weight": 2
+	},
+	{
+	    "speciesId": "wigglytuff",
+	    "weight": 2
+	},
+	{
+	    "speciesId": "galvantula",
+	    "weight": 2
+	},
+	{
+	    "speciesId": "lanturn",
+	    "weight": 3
+	},
+	{
+	    "speciesId": "dragalge",
+	    "weight": 2
+	},
+	{
+	    "speciesId": "noctowl",
+	    "weight": 2
+	},
+	{
+	    "speciesId": "excadrill",
+	    "weight": 2
+	},
+	{
+	    "speciesId": "empoleon",
+	    "weight": 4
+	},
+	{
+	    "speciesId": "talonflame",
+	    "weight": 3
 	}
 ]
