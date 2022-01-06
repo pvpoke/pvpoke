@@ -907,14 +907,14 @@
         "title": "Silph Factions",
         "include": [{
             "filterType": "type",
-            "values": ["fire", "flying", "ice", "normal", "psychic"]
+            "values": ["bug", "dark", "dragon", "flying", "rock"]
         }],
         "exclude": [{
             "filterType": "tag",
             "values": ["mega"]
         }, {
             "filterType": "id",
-            "values": ["altaria", "deoxys_defense", "medicham", "wobbuffet", "chansey", "mantine"]
+            "values": ["bastiodon", "probopass", "regirock", "scrafty", "togekiss", "heracross", "skarmory", "altaria", "mantine"]
         }]
     }, {
         "name": "comet",

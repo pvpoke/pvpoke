@@ -4,6 +4,7 @@
 	<option value="official" cup="holiday">Holiday Cup</option>
 	<option value="official" cup="sinnoh">Sinnoh Cup</option>
 	<option value="tsa-4" cup="glacial">Silph Glacial Cup</option>
+	<option value="tsa-2" cup="factions">Silph Factions (Cave)</option>
 	<option value="tsa-2" cup="fusionfactions">Silph Factions (Fusion)</option>
 	<option value="community" cup="comet">Gymbreakers Comet Cup</option>
 

@@ -447,6 +447,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if(cup.name == "factions"){
+					iterations = 1;
+				}
+
 				if((cup.name == "remix")&&(battle.getCP() == 1500)){
 					iterations = 1;
 				}

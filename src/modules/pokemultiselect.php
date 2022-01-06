@@ -30,6 +30,7 @@
 				<option value="masterpremierclassic" type="master" class="hide multi-battle">Premier Classic Meta</option>
 				<option value="sinnoh" type="great" class="multi-battle">Sinnoh Cup Meta</option>
 				<option value="glacial" type="great" class="multi-battle">Silph Glacial Cup Meta</option>
+				<option value="factions" type="great" class="multi-battle">Silph Factions Meta (Cave)</option>
 				<option value="fusion" type="great" class="multi-battle">Silph Factions Meta (Fusion)</option>
 				<option value="comet" type="great" class="multi-battle">Gymbreakers Comet Cup Meta</option>
 			</select>

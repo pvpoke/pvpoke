@@ -7,6 +7,7 @@
 	<option value="1500" cup="holiday" meta-group="holiday">Holiday Cup</option>
 	<option value="1500" cup="sinnoh" meta-group="sinnoh">Sinnoh Cup</option>
 	<option value="1500" cup="glacial" meta-group="glacial">Silph Glacial Cup</option>
+	<option value="1500" cup="factions" meta-group="fusion">Silph Factions (Cave)</option>
 	<option value="1500" cup="fusionfactions" meta-group="fusion">Silph Factions (Fusion)</option>
 	<option value="1500" cup="comet" meta-group="comet">Gymbreakers Comet Cup</option>
 
