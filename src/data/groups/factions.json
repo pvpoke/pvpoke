@@ -88,6 +88,10 @@
     "fastMove": "FIRE_SPIN",
     "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"]
 }, {
+    "speciesId": "charizard",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"]
+}, {
     "speciesId": "drifblim",
     "fastMove": "HEX",
     "chargedMoves": ["ICY_WIND", "SHADOW_BALL"]
@@ -119,4 +123,20 @@
     "speciesId": "noctowl",
     "fastMove": "WING_ATTACK",
     "chargedMoves": ["SKY_ATTACK", "SHADOW_BALL"]
+}, {
+    "speciesId": "pidgeot",
+    "fastMove": "GUST",
+    "chargedMoves": ["FEATHER_DANCE", "BRAVE_BIRD"]
+}, {
+    "speciesId": "galvantula",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["DISCHARGE", "LUNGE"]
+}, {
+    "speciesId": "goodra",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["MUDDY_WATER", "DRACO_METEOR"]
+}, {
+    "speciesId": "togetic",
+    "fastMove": "HIDDEN_POWER_ICE",
+    "chargedMoves": ["AERIAL_ACE", "DAZZLING_GLEAM"]
 }]
