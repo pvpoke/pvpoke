@@ -39,8 +39,7 @@ require_once '../header.php';
 				<option value="2500 gobattleleague">GO Battle League (Ultra)</option>
 				<option value="10000 gobattleleague">GO Battle League (Master)</option>
 				<option value="10000 classic">GO Battle League (Master Classic)</option>
-				<option value="2500 remix">Ultra League Remix</option>
-				<option value="1500 holiday">Holiday Cup</option>
+				<option value="2500 premierclassic">Ultra Premier Classic</option>
 				<option value="1500 sinnoh">Sinnoh Cup</option>
 				<option value="1500 all">Great League</option>
 				<option value="2500 all">Ultra League</option>

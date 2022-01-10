@@ -1,10 +1,9 @@
 <select class="format-select">
 	<option value="1500" cup="all" meta-group="great">Great League</option>
 	<option value="2500" cup="all" meta-group="ultra">Ultra League</option>
+	<option value="2500" cup="premierclassic" meta-group="ultrapremierclassic">Ultra League (Premier Classic)</option>
 	<option value="10000" cup="all" meta-group="master">Master League</option>
 	<option value="10000" cup="classic" meta-group="master">Master League (Classic)</option>
-	<option value="2500" cup="remix" meta-group="remixultra">Ultra League Remix</option>
-	<option value="1500" cup="holiday" meta-group="holiday">Holiday Cup</option>
 	<option value="1500" cup="sinnoh" meta-group="sinnoh">Sinnoh Cup</option>
 	<option value="1500" cup="glacial" meta-group="glacial">Silph Glacial Cup</option>
 	<option value="1500" cup="factions" meta-group="factions">Silph Factions (Cave)</option>
