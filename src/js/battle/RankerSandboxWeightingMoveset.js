@@ -498,10 +498,6 @@ var RankerMaster = (function () {
 								weight = 1;
 							}
 
-							if(cup.name == "labyrinth"){
-								weight = 1;
-							}
-
 							// Don't score Pokemon in the mirror match
 
 							if(targets[j].speciesId == pokemonList[i].speciesId){

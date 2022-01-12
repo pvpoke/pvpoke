@@ -11,7 +11,7 @@
 	{
 		"speciesId": "drapion",
 		"chargedMoves": ["AQUA_TAIL", "CRUNCH"],
-		"weight": 2
+		"weight": 4
 	},
 	{
 		"speciesId": "drapion_shadow",
@@ -52,7 +52,7 @@
 		"speciesId": "gliscor",
 		"fastMove": "WING_ATTACK",
 		"chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"],
-		"weight": 3
+		"weight": 2
 	},
 	{
 		"speciesId": "gliscor_shadow",
@@ -114,7 +114,7 @@
 	},
 	{
 		"speciesId": "bastiodon",
-		"weight": 6
+		"weight": 3
 	},
 	{
 		"speciesId": "gallade",
@@ -122,7 +122,7 @@
 	},
 	{
 		"speciesId": "abomasnow",
-		"weight": 4
+		"weight": 2
 	},
 	{
 		"speciesId": "munchlax",
@@ -130,15 +130,15 @@
 	},
 	{
 		"speciesId": "gastrodon",
-		"weight": 2
+		"weight": 4
 	},
 	{
 		"speciesId": "froslass",
-		"weight": 3
+		"weight": 5
 	},
 	{
 		"speciesId": "empoleon",
-		"weight": 3
+		"weight": 6
 	},
 	{
 		"speciesId": "magnezone",
@@ -146,6 +146,6 @@
 	},
 	{
 		"speciesId": "drifblim",
-		"weight": 3
+		"weight": 5
 	}
 ]
