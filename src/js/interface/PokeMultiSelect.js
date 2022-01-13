@@ -763,7 +763,7 @@ function PokeMultiSelect(element){
 	$el.find(".export-btn").click(function(e){
 		modalWindow("Import/Export Custom Group", $(".list-export").eq(0));
 
-		var csv = self.convertListToJSON();
+		var csv = self.convertListToCSV();
 
 		$(".modal .list-text").html(csv);
 
