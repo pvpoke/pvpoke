@@ -124,6 +124,12 @@ var InterfaceMaster = (function () {
 					$(".description.link").hide();
 				}
 
+				// Check ranking details settings to show ranking details in one page or tabs
+
+				if(settings.rankingDetails == "tabs"){
+					$(".rankings-container").addClass("detail-tabs-on");
+				}
+
 				/* This timeout allows the interface to display the loading message before
 				being thrown into the data loading loop */
 

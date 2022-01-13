@@ -1941,68 +1941,6 @@ a.download-csv {
   display: flex;
   flex-wrap: wrap;
 }
-.rank .details .detail-tab-nav {
-  margin-top: 10px;
-  flex-basis: 100%;
-  display: flex;
-  flex-wrap: wrap;
-}
-.rank .details .detail-tab-nav a {
-  color: #333;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  padding: 5px 5px;
-  font-size: 12px;
-  font-weight: bold;
-  border-radius: 8px;
-  margin-right: 5px;
-}
-.rank .details .detail-tab-nav a .icon {
-  display: block;
-  background-size: 200%;
-  background-repeat: no-repeat;
-  background-position: 0 center;
-  margin: 0 4px 0 2px;
-}
-.rank .details .detail-tab-nav a[tab=matchups] .icon {
-  width: 18px;
-  height: 18px;
-  background-image: url("../img/detail-tab-matchups.png");
-}
-.rank .details .detail-tab-nav a[tab=moves] .icon {
-  width: 17px;
-  height: 17px;
-  background-image: url("../img/detail-tab-moves.png");
-}
-.rank .details .detail-tab-nav a[tab=misc] .icon {
-  width: 17px;
-  height: 5px;
-  background-image: url("../img/detail-tab-misc.png");
-}
-.rank .details .detail-tab-nav a[tab=stats] .icon {
-  width: 15px;
-  height: 17px;
-  background-image: url("../img/detail-tab-stats.png");
-}
-.rank .details .detail-tab-nav a:hover {
-  background-color: rgba(0, 0, 0, 0.15);
-}
-.rank .details .detail-tab-nav a.active {
-  background-color: #333;
-  color: #eee;
-}
-.rank .details .detail-tab-nav a.active .icon {
-  background-position: 100% center;
-}
-.rank .details .detail-tab {
-  display: none;
-  flex-wrap: wrap;
-  flex-basis: 100%;
-}
-.rank .details .detail-tab.active {
-  display: flex;
-}
 .rank .details .detail-section {
   background: rgba(255, 255, 255, 0.8);
   padding: 5px;
@@ -2388,6 +2326,81 @@ a.download-csv {
 }
 .rank .details h2 {
   margin: 0 0 5px 0;
+}
+
+/* Detail tabs */
+.detail-tab-nav {
+  display: none;
+}
+
+.detail-tab {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+}
+.detail-tab.active {
+  display: flex;
+}
+
+.detail-tabs-on .detail-tab-nav {
+  margin-top: 10px;
+  flex-basis: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.detail-tabs-on .detail-tab-nav a {
+  color: #333;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding: 5px 5px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 8px;
+  margin-right: 5px;
+}
+.detail-tabs-on .detail-tab-nav a .icon {
+  display: block;
+  background-size: 200%;
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  margin: 0 4px 0 2px;
+}
+.detail-tabs-on .detail-tab-nav a[tab=matchups] .icon {
+  width: 18px;
+  height: 18px;
+  background-image: url("../img/detail-tab-matchups.png");
+}
+.detail-tabs-on .detail-tab-nav a[tab=moves] .icon {
+  width: 17px;
+  height: 17px;
+  background-image: url("../img/detail-tab-moves.png");
+}
+.detail-tabs-on .detail-tab-nav a[tab=misc] .icon {
+  width: 17px;
+  height: 5px;
+  background-image: url("../img/detail-tab-misc.png");
+}
+.detail-tabs-on .detail-tab-nav a[tab=stats] .icon {
+  width: 15px;
+  height: 17px;
+  background-image: url("../img/detail-tab-stats.png");
+}
+.detail-tabs-on .detail-tab-nav a:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+.detail-tabs-on .detail-tab-nav a.active {
+  background-color: #333;
+  color: #eee;
+}
+.detail-tabs-on .detail-tab-nav a.active .icon {
+  background-position: 100% center;
+}
+.detail-tabs-on .detail-tab {
+  display: none;
+}
+.detail-tabs-on .detail-tab.active {
+  display: flex;
 }
 
 .rankings-container.show-move-counts .count {

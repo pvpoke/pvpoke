@@ -27,8 +27,7 @@ var InterfaceMaster = (function () {
 				var gamemaster = $("#gm-select option:selected").val();
 				var pokeboxId = $("#pokebox-id").val();
 				var xls = $(".check.xls").hasClass("on") ? 1 : 0;
-
-				console.log(xls);
+				var rankingDetails = $("#ranking-details option:selected").val();
 
 				$.ajax({
 
@@ -43,7 +42,8 @@ var InterfaceMaster = (function () {
 						'pokeboxId': pokeboxId,
 						'pokeboxLastDateTime': settings.pokeboxLastDateTime,
 						'ads': ads,
-						'xls': xls
+						'xls': xls,
+						'rankingDetails': rankingDetails
 					},
 					dataType:'json',
 					success : function(data) {

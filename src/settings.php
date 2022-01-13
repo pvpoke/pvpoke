@@ -44,6 +44,13 @@ require_once 'header.php';
 			<option value="column" <?php if((isset($_SETTINGS->matrixDirection))&&($_SETTINGS->matrixDirection == "column")) : ?>selected<?php endif; ?>>Column vs Row</option>
 		</select>
 
+		<h3>Ranking Details Display</h3>
+		<p>Select how to display a Pokemon's stats, moves, matchups, and other details on the rankings pages.</p>
+		<select class="input" id="ranking-details">
+			<option value="one-page" <?php if((isset($_SETTINGS->rankingDetails))&&($_SETTINGS->rankingDetails == "one-page")) : ?>selected<?php endif; ?>>One Page</option>
+			<option value="tabs" <?php if((isset($_SETTINGS->rankingDetails))&&($_SETTINGS->rankingDetails == "tabs")) : ?>selected<?php endif; ?>>Tabs</option>
+		</select>
+
 		<h3>Site Theme</h3>
 		<?php
 		$theme = "default";

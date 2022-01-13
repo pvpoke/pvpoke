@@ -2241,81 +2241,6 @@ a.download-csv{
 			flex-wrap:wrap;
 		}
 
-		.detail-tab-nav{
-			margin-top:10px;
-			flex-basis: 100%;
-			display:flex;
-			flex-wrap: wrap;
-
-			a{
-				color:$color-off-black;
-				text-decoration: none;
-				display:flex;
-				align-items: center;
-				padding: 5px 5px;
-				font-size:12px;
-				font-weight: bold;
-				border-radius: 8px;
-			    margin-right: 5px;
-
-				.icon{
-					display:block;
-					background-size:200%;
-					background-repeat: no-repeat;
-					background-position: 0 center;
-					margin: 0 4px 0 2px;
-				}
-
-				&[tab="matchups"] .icon{
-					width:18px;
-					height:18px;
-					background-image:url('../img/detail-tab-matchups.png');
-				}
-
-				&[tab="moves"] .icon{
-					width:17px;
-					height:17px;
-					background-image:url('../img/detail-tab-moves.png');
-				}
-
-				&[tab="misc"] .icon{
-					width:17px;
-					height:5px;
-					background-image:url('../img/detail-tab-misc.png');
-				}
-
-				&[tab="stats"] .icon{
-					width:15px;
-					height:17px;
-					background-image:url('../img/detail-tab-stats.png');
-				}
-
-
-				&:hover{
-					background-color:rgba(0,0,0,0.15);
-				}
-
-				&.active{
-					background-color:$color-off-black;
-					color:$color-off-white;
-
-					.icon{
-						background-position: 100% center;
-					}
-				}
-			}
-		}
-
-		.detail-tab{
-			display:none;
-			flex-wrap:wrap;
-			flex-basis:100%;
-
-			&.active{
-				display:flex;
-			}
-		}
-
 		.detail-section{
 			background:rgba(255,255,255,0.8);
 			padding:5px;
@@ -2767,6 +2692,99 @@ a.download-csv{
 		h2{ margin: 0 0 5px 0; }
 	}
 }
+
+/* Detail tabs */
+
+.detail-tab-nav{
+	display: none;
+}
+
+.detail-tab{
+	display:flex;
+	flex-wrap:wrap;
+	flex-basis:100%;
+
+	&.active{
+		display:flex;
+	}
+}
+
+.detail-tabs-on{
+
+	.detail-tab-nav{
+		margin-top:10px;
+		flex-basis: 100%;
+		display:flex;
+		flex-wrap: wrap;
+
+		a{
+			color:$color-off-black;
+			text-decoration: none;
+			display:flex;
+			align-items: center;
+			padding: 5px 5px;
+			font-size:12px;
+			font-weight: bold;
+			border-radius: 8px;
+			margin-right: 5px;
+
+			.icon{
+				display:block;
+				background-size:200%;
+				background-repeat: no-repeat;
+				background-position: 0 center;
+				margin: 0 4px 0 2px;
+			}
+
+			&[tab="matchups"] .icon{
+				width:18px;
+				height:18px;
+				background-image:url('../img/detail-tab-matchups.png');
+			}
+
+			&[tab="moves"] .icon{
+				width:17px;
+				height:17px;
+				background-image:url('../img/detail-tab-moves.png');
+			}
+
+			&[tab="misc"] .icon{
+				width:17px;
+				height:5px;
+				background-image:url('../img/detail-tab-misc.png');
+			}
+
+			&[tab="stats"] .icon{
+				width:15px;
+				height:17px;
+				background-image:url('../img/detail-tab-stats.png');
+			}
+
+
+			&:hover{
+				background-color:rgba(0,0,0,0.15);
+			}
+
+			&.active{
+				background-color:$color-off-black;
+				color:$color-off-white;
+
+				.icon{
+					background-position: 100% center;
+				}
+			}
+		}
+	}
+
+	.detail-tab{
+		display:none;
+
+		&.active{
+			display:flex;
+		}
+	}
+}
+
 
 .rankings-container.show-move-counts .count{
 	display:inline-block;
