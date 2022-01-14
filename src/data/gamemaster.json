@@ -21984,7 +21984,7 @@
         },
         "types": ["bug", "steel"],
         "fastMoves": ["METAL_CLAW", "FURY_CUTTER"],
-        "chargedMoves": ["X_SCISSOR", "MAGNET_BOMB", "ZAP_CANNON"],
+        "chargedMoves": ["X_SCISSOR", "MAGNET_BOMB", "ZAP_CANNON", "TECHNO_BLAST_SHOCK"],
         "defaultIVs": {
             "cp500": [5.5, 12, 14, 13],
             "cp1500": [16, 12, 10, 15],
@@ -21993,7 +21993,7 @@
         "tags": ["mythical", "untradeable"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": true
     }, {
         "dex": 650,
         "speciesName": "Chespin",
