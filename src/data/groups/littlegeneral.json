@@ -18,6 +18,10 @@
     "speciesId": "wooper",
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["BODY_SLAM", "MUD_BOMB"]
+}, 	{
+		"speciesId":"walrein",
+		"fastMove":"POWDER_SNOW",
+		"chargedMoves":["ICICLE_SPEAR","EARTHQUAKE"]
 }, {
     "speciesId": "barboach",
     "fastMove": "MUD_SHOT",
