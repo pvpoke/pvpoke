@@ -129,13 +129,27 @@
 					"fastMove": "ICE_SHARD",
 					"chargedMoves": ["SURF","SKULL_BASH"],
 					"difficulty": 2,
-					"weight":55
+					"weight":25
 				},
 				{
 					"speciesId": "lapras",
 					"fastMove": "ICE_SHARD",
 					"chargedMoves": ["SURF","ICE_BEAM"],
 					"difficulty": 2,
+					"weight":5
+				},
+				{
+					"speciesId": "walrein",
+					"fastMove": "POWDER_SNOW",
+					"chargedMoves": ["ICICLE_SPEAR","EARTHQUAKE"],
+					"difficulty": 2,
+					"weight":35
+				},
+				{
+					"speciesId": "walrein_shadow",
+					"fastMove": "POWDER_SNOW",
+					"chargedMoves": ["ICICLE_SPEAR","EARTHQUAKE"],
+					"difficulty": 3,
 					"weight":5
 				},
 				{
@@ -779,9 +793,9 @@
 					"chargedMoves": ["MUD_BOMB","SLUDGE_BOMB"]
 				},
 				{
-					"speciesId": "lapras",
-					"fastMove": "ICE_SHARD",
-					"chargedMoves": ["SURF","SKULL_BASH"]
+					"speciesId": "walrein",
+					"fastMove": "POWDER_SNOW",
+					"chargedMoves": ["ICICLE_SPEAR","EARTHQUAKE"]
 				},
 				{
 					"speciesId": "snorlax",
@@ -892,11 +906,11 @@
 	            "speciesId": "empoleon",
 	            "fastMove": "WATERFALL",
 	            "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
-	        }, {
-	            "speciesId": "lapras",
-	            "fastMove": "ICE_SHARD",
-	            "chargedMoves": ["SURF", "SKULL_BASH"]
-	        }],
+        	}, 	{
+				"speciesId": "walrein",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["ICICLE_SPEAR","EARTHQUAKE"]
+			}],
 	        "weight": 1
 	    }, {
 	        "pokemon": [{
@@ -979,9 +993,9 @@
 	            "fastMove": "SHADOW_CLAW",
 	            "chargedMoves": ["SHADOW_BALL", "SEED_BOMB"]
 	        }, {
-	            "speciesId": "lapras",
-	            "fastMove": "ICE_SHARD",
-	            "chargedMoves": ["SURF", "SKULL_BASH"]
+	            "speciesId": "walrein",
+	            "fastMove": "POWDER_SNOW",
+	            "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
 	        }, {
 	            "speciesId": "machamp",
 	            "fastMove": "COUNTER",
@@ -1159,10 +1173,10 @@
 	            "fastMove": "AIR_SLASH",
 	            "chargedMoves": ["POISON_FANG", "SHADOW_BALL"]
 	        }, {
-	            "speciesId": "lapras",
-	            "fastMove": "ICE_SHARD",
-	            "chargedMoves": ["SURF", "SKULL_BASH"]
-	        }, {
+				"speciesId": "walrein",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["ICICLE_SPEAR","EARTHQUAKE"]
+			}, {
 	            "speciesId": "magnezone",
 	            "fastMove": "SPARK",
 	            "chargedMoves": ["WILD_CHARGE", "MIRROR_SHOT"]
@@ -1312,11 +1326,11 @@
 	            "speciesId": "empoleon",
 	            "fastMove": "WATERFALL",
 	            "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
-	        }, {
-	            "speciesId": "lapras",
-	            "fastMove": "ICE_SHARD",
-	            "chargedMoves": ["SURF", "SKULL_BASH"]
-	        }],
+	        }, 	{
+				"speciesId": "walrein_shadow",
+				"fastMove": "POWDER_SNOW",
+				"chargedMoves": ["ICICLE_SPEAR","EARTHQUAKE"]
+			}],
 	        "weight": 1
 	    }, {
 	        "pokemon": [{
