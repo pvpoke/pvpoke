@@ -827,12 +827,11 @@ header{
 			color:#e66a19;
 		}
 
-		.format-select{
+		.format-select, .cup-select{
 			margin-top:62px;
 		}
 
 		.cup-select{
-			margin-top:0;
 			width:100%;
 
 			option[value="custom"]{
@@ -1120,12 +1119,16 @@ header{
 			display: block;
 			float:left;
 
-			.format-select{
+			.format-select, .cup-select{
 				display:none;
 			}
 
 			.custom-options{
 				display:block;
+			}
+
+			.multi-battle-options{
+				display: none;
 			}
 		}
 
@@ -1173,12 +1176,6 @@ select, input{
     background: none;
     font-weight: bold;
 	max-width:250px;
-}
-
-.league-select-container, .poke{
-	.cup-select{
-		display:none;
-	}
 }
 
 .button{

@@ -44,6 +44,14 @@
 			<button class="search-string-btn">Generate Search String</button>
 		</div>
 
+		<div class="options multi-battle-options">
+			<h3 class="section-title">Filter</h3>
+			<div class="form-group">
+				<div class="check on" value="meta"><span></span>Meta</div>
+				<div class="check" value="all"><span></span>All Pokemon</div>
+			</div>
+		</div>
+
 		<div class="options">
 			<h3 class="section-title">Options</h3>
 			<select class="shield-select">
