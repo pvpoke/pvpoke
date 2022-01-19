@@ -110,23 +110,6 @@
     },
     "eliteMoves": ["PSYSTRIKE", "SHADOW_BALL", "HYPER_BEAM"]
 }, {
-    "dex": 208,
-    "speciesName": "Steelix (Mega)",
-    "speciesId": "steelix_mega",
-    "baseStats": {
-        "atk": 212,
-        "def": 327,
-        "hp": 181
-    },
-    "types": ["steel", "ground"],
-    "fastMoves": ["DRAGON_TAIL", "IRON_TAIL", "THUNDER_FANG"],
-    "chargedMoves": ["CRUNCH", "EARTHQUAKE", "HEAVY_SLAM"],
-    "tags": ["mega"],
-    "defaultIVs": {
-        "cp1500": [15, 7, 11, 11],
-        "cp2500": [25, 5, 12, 13]
-    }
-}, {
     "dex": 212,
     "speciesName": "Scizor (Mega)",
     "speciesId": "scizor_mega",
