@@ -660,6 +660,14 @@ function PokeMultiSelect(element){
 		return filterMode;
 	}
 
+	// Returns the currently selected filter mode
+
+	this.setFilterMode = function(val){
+		$el.find(".form-group .check").removeClass("on");
+		$el.find(".form-group .check[value=\""+val+"\"]").addClass("on");
+		filterMode = val;
+	}
+
 	// Show or hide custom options when changing the cup select
 
 	$el.find(".cup-select").change(function(e){
@@ -667,14 +675,16 @@ function PokeMultiSelect(element){
 
 		if(cup == "custom"){
 			$(".custom-options").show();
+			$(".multi-battle-options").hide();
 			$(".charged-count-select").hide();
 		} else{
 			$(".custom-options").hide();
 			$(".charged-count-select").show();
+			$(".multi-battle-options").show();
 
 			// Load meta group for selected format
 			var metaGroup = $(this).find("option:selected").attr("meta-group"+battle.getCP());
-			gm.loadGroupData(self, metaGroup);
+			self.selectGroup(metaGroup);
 		}
 	});
 

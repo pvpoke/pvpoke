@@ -1603,8 +1603,11 @@ var InterfaceMaster = (function () {
 								break;
 
 							case "g1":
-								multiSelectors[0].selectGroup(val);
-								isLoadingPreset = true;
+								if(val != "all"){
+									multiSelectors[0].selectGroup(val);
+								} else{
+									multiSelectors[0].setFilterMode(val);
+								}
 								break;
 
 						}
@@ -1639,6 +1642,11 @@ var InterfaceMaster = (function () {
 				settingGetParams = false;
 
 				// Auto run the battle
+
+				if(self.battleMode == "multi"){
+					isLoadingPreset = true;
+				}
+
 
 				if(! isLoadingPreset){
 					$(".battle-btn").trigger("click");
@@ -1745,6 +1753,11 @@ var InterfaceMaster = (function () {
 				if((cp == 10000)&&(levelCap == 40)){
 					cupName = "classic";
 					battle.setCup("classic");
+				}
+
+				// Load default meta group when switching to Multi Battle
+				if((self.battleMode == "multi") && (! settingGetParams)){
+					$(".cup-select").trigger("change");
 				}
 
 				gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), cupName);
