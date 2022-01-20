@@ -36,6 +36,10 @@ if(isset($_COOKIE['settings'])){
 		$_SETTINGS->xls = 1;
 	}
 
+	if(! isset($_SETTINGS->rankingDetails)){
+		$_SETTINGS->rankingDetails = "one-page";
+	}
+
 	// Validate the gamemaster setting, only allow these options
 	$gamemasters = ["gamemaster", "gamemaster-mega"];
 
@@ -50,7 +54,8 @@ if(isset($_COOKIE['settings'])){
 		'gamemaster' => 'gamemaster',
 		'pokeboxId' => 0,
 		'ads' => 1,
-		'xls' => 1
+		'xls' => 1,
+		'rankingDetails' => 'one-page'
 	];
 }
 
@@ -131,7 +136,8 @@ if(! isset($OG_IMAGE)){
 			gamemaster: "<?php echo htmlspecialchars($_SETTINGS->gamemaster); ?>",
 			pokeboxId: "<?php echo intval($_SETTINGS->pokeboxId); ?>",
 			pokeboxLastDateTime: "<?php echo intval($_SETTINGS->pokeboxLastDateTime); ?>",
-			xls: <?php echo $_SETTINGS->xls; ?>
+			xls: <?php echo $_SETTINGS->xls; ?>,
+			rankingDetails: "<?php echo htmlspecialchars($_SETTINGS->rankingDetails); ?>"
 		};
 	<?php else: ?>
 
@@ -142,7 +148,8 @@ if(! isset($OG_IMAGE)){
 			gamemaster: "gamemaster",
 			pokeboxId: 0,
 			pokeboxLastDateTime: 0,
-			xls: true
+			xls: true,
+			rankingDetails: "one-page"
 		};
 
 	<?php endif; ?>

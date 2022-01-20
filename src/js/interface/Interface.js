@@ -862,6 +862,7 @@ var InterfaceMaster = (function () {
 				var opponentShields = parseInt($(".poke.multi").eq(0).find(".shield-select option:selected").val());
 				var chargedMoveCount = parseInt($(".poke.multi .charged-count-select option:selected").val());
 				var shieldBaiting = $(".poke.multi").eq(0).find(".check.shield-baiting").hasClass("on") ? 1 : 0;
+				var multiBattleFilter = multiSelectors[0].getFilterMode();
 
 				// Load rankings and movesets
 
@@ -892,8 +893,7 @@ var InterfaceMaster = (function () {
 				}
 
 				// Set multi selected Pokemon if available
-
-				if(cup == "custom"){
+				if((multiBattleFilter == "meta")||(cup == "custom")){
 					ranker.setTargets(multiSelectors[0].getPokemonList());
 				} else{
 					ranker.setTargets([]);
@@ -1013,6 +1013,8 @@ var InterfaceMaster = (function () {
 					if(multiSelectors[0].getSelectedGroupType() != "custom"){
 						battleStr += groupName + "/";
 					}
+				} else if(multiBattleFilter == "all"){
+					battleStr += "all/";
 				}
 
 
@@ -1573,10 +1575,6 @@ var InterfaceMaster = (function () {
 								if($(".format-select option[cup=\""+val+"\"]").length > 0){
 									$(".format-select option[cup=\""+val+"\"]").prop("selected","selected");
 								} else{
-									var cat = $(".cup-select option[value=\""+val+"\"]").attr("cat");
-									$(".format-select option[value=\""+cat+"\"]").prop("selected","selected");
-									multiSelectors[0].changeFormatSelect();
-
 									$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
 								}
 
@@ -1605,8 +1603,11 @@ var InterfaceMaster = (function () {
 								break;
 
 							case "g1":
-								multiSelectors[0].selectGroup(val);
-								isLoadingPreset = true;
+								if(val != "all"){
+									multiSelectors[0].selectGroup(val);
+								} else{
+									multiSelectors[0].setFilterMode(val);
+								}
 								break;
 
 						}
@@ -1641,6 +1642,11 @@ var InterfaceMaster = (function () {
 				settingGetParams = false;
 
 				// Auto run the battle
+
+				if(self.battleMode == "multi"){
+					isLoadingPreset = true;
+				}
+
 
 				if(! isLoadingPreset){
 					$(".battle-btn").trigger("click");
@@ -1749,6 +1755,11 @@ var InterfaceMaster = (function () {
 					battle.setCup("classic");
 				}
 
+				// Load default meta group when switching to Multi Battle
+				if((self.battleMode == "multi") && (! settingGetParams)){
+					$(".cup-select").trigger("change");
+				}
+
 				gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), cupName);
 			}
 
@@ -1781,6 +1792,11 @@ var InterfaceMaster = (function () {
 					$(".poke.multi .custom-options").show();
 
 					window.history.pushState({mode: "matrix"}, "Battle", webRoot + "battle/matrix/");
+				}
+
+				// Load default meta group when switching to Multi Battle
+				if((self.battleMode == "multi") && (! settingGetParams)){
+					$(".cup-select").trigger("change");
 				}
 
 				// When moving between Multi and Matrix, move multi custom group to the right Matrix group

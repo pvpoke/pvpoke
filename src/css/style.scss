@@ -744,6 +744,10 @@ header{
 		.label{
 			margin:5px 5px 5px 0;
 		}
+
+		&.multi-battle-options{
+			margin-top:0;
+		}
 	}
 
 	.form-group{
@@ -827,12 +831,11 @@ header{
 			color:#e66a19;
 		}
 
-		.format-select{
+		.format-select, .cup-select{
 			margin-top:62px;
 		}
 
 		.cup-select{
-			margin-top:0;
 			width:100%;
 
 			option[value="custom"]{
@@ -1120,12 +1123,16 @@ header{
 			display: block;
 			float:left;
 
-			.format-select{
+			.format-select, .cup-select{
 				display:none;
 			}
 
 			.custom-options{
 				display:block;
+			}
+
+			.multi-battle-options{
+				display: none;
 			}
 		}
 
@@ -1173,12 +1180,6 @@ select, input{
     background: none;
     font-weight: bold;
 	max-width:250px;
-}
-
-.league-select-container, .poke{
-	.cup-select{
-		display:none;
-	}
 }
 
 .button{
@@ -2692,6 +2693,99 @@ a.download-csv{
 		h2{ margin: 0 0 5px 0; }
 	}
 }
+
+/* Detail tabs */
+
+.detail-tab-nav{
+	display: none;
+}
+
+.detail-tab{
+	display:flex;
+	flex-wrap:wrap;
+	flex-basis:100%;
+
+	&.active{
+		display:flex;
+	}
+}
+
+.detail-tabs-on{
+
+	.detail-tab-nav{
+		margin-top:10px;
+		flex-basis: 100%;
+		display:flex;
+		flex-wrap: wrap;
+
+		a{
+			color:$color-off-black;
+			text-decoration: none;
+			display:flex;
+			align-items: center;
+			padding: 5px 5px;
+			font-size:12px;
+			font-weight: bold;
+			border-radius: 8px;
+			margin-right: 5px;
+
+			.icon{
+				display:block;
+				background-size:200%;
+				background-repeat: no-repeat;
+				background-position: 0 center;
+				margin: 0 4px 0 2px;
+			}
+
+			&[tab="matchups"] .icon{
+				width:18px;
+				height:18px;
+				background-image:url('../img/detail-tab-matchups.png');
+			}
+
+			&[tab="moves"] .icon{
+				width:17px;
+				height:17px;
+				background-image:url('../img/detail-tab-moves.png');
+			}
+
+			&[tab="misc"] .icon{
+				width:17px;
+				height:5px;
+				background-image:url('../img/detail-tab-misc.png');
+			}
+
+			&[tab="stats"] .icon{
+				width:15px;
+				height:17px;
+				background-image:url('../img/detail-tab-stats.png');
+			}
+
+
+			&:hover{
+				background-color:rgba(0,0,0,0.15);
+			}
+
+			&.active{
+				background-color:$color-off-black;
+				color:$color-off-white;
+
+				.icon{
+					background-position: 100% center;
+				}
+			}
+		}
+	}
+
+	.detail-tab{
+		display:none;
+
+		&.active{
+			display:flex;
+		}
+	}
+}
+
 
 .rankings-container.show-move-counts .count{
 	display:inline-block;
@@ -4677,6 +4771,12 @@ a.pokebattler{
 
 .section.battle .mobile-ad-container{
 	margin: 10px auto 5px auto;
+}
+
+@media only screen and (min-width: 420px) {
+	.rank .details .detail-tab-nav a{
+		font-size: 14px;
+	}
 }
 
 @media only screen and (min-width: 320px) and (max-width: 767px) {

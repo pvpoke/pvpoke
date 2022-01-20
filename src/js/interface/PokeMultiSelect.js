@@ -24,6 +24,8 @@ function PokeMultiSelect(element){
 
 	var context = "";
 
+	var filterMode = "meta";
+
 	var settings = {
 		shields: 1,
 		ivs: "original",
@@ -652,15 +654,37 @@ function PokeMultiSelect(element){
 		return {points: points, max: max, floor: floor, tiers: battle.getCup().tierRules.tiers};
 	}
 
+	// Returns the currently selected filter mode
+
+	this.getFilterMode = function(){
+		return filterMode;
+	}
+
+	// Returns the currently selected filter mode
+
+	this.setFilterMode = function(val){
+		$el.find(".form-group .check").removeClass("on");
+		$el.find(".form-group .check[value=\""+val+"\"]").addClass("on");
+		filterMode = val;
+	}
+
 	// Show or hide custom options when changing the cup select
 
 	$el.find(".cup-select").change(function(e){
-		if($(this).find("option:selected").val() == "custom"){
+		var cup = $(this).find("option:selected").val();
+
+		if(cup == "custom"){
 			$(".custom-options").show();
+			$(".multi-battle-options").hide();
 			$(".charged-count-select").hide();
 		} else{
 			$(".custom-options").hide();
 			$(".charged-count-select").show();
+			$(".multi-battle-options").show();
+
+			// Load meta group for selected format
+			var metaGroup = $(this).find("option:selected").attr("meta-group"+battle.getCP());
+			self.selectGroup(metaGroup);
 		}
 	});
 
@@ -706,6 +730,18 @@ function PokeMultiSelect(element){
 			self.updateListDisplay();
 			closeModalWindow();
 		});
+	});
+
+	// Select an option from the form section
+
+	$el.find(".form-group .check").on("click", function(e){
+		$(e.target).closest(".check").parent().find(".check").removeClass("on");
+	});
+
+	// Change a form option
+
+	$el.find(".form-group .check").on("change", function(e){
+		filterMode = $(e.target).attr("value");
 	});
 
 	// Select a quick fill group
@@ -898,28 +934,6 @@ function PokeMultiSelect(element){
 	$el.find(".format-select").on("change",function(e){
 		self.changeFormatSelect();
 	});
-
-	this.changeFormatSelect = function(){
-		var format = $(".format-select option:selected").val();
-		var cup = $(".format-select option:selected").attr("cup");
-
-		$(".cup-select option").hide();
-		$(".cup-select option[cat=\""+format+"\"]").show();
-
-		if(cup){
-			$(".cup-select option[value=\""+cup+"\"]").prop("selected", true);
-		} else{
-			$(".cup-select option[cat=\""+format+"\"]").eq(0).prop("selected", true);
-		}
-
-		$(".cup-select").change();
-
-		if((format == "all")||(cup)){
-			$(".cup-select").hide();
-		} else{
-			$(".cup-select").show();
-		}
-	}
 
 	this.setBaitSetting = function(val){
 		settings.bait = val;
