@@ -1,8 +1,7 @@
 
 // Other interfaces are singleton, but this one needs to interact with the RankingInterface
 
-var object = new interfaceObject();
-object.init();
+var customRankingInterface = new interfaceObject();
 
 function interfaceObject(){
 
@@ -71,6 +70,28 @@ function interfaceObject(){
 		overrideSelector = new PokeMultiSelect($(".poke.multi").eq(1));
 		overrideSelector.init(data.pokemon, battle);
 		overrideSelector.setContext("customrankings");
+
+		// Fill the advanced cup dropdown with cups from the gamemaster
+		$(".cup-select").html("");
+
+		var cups = [];
+		for(var i = 0; i < data.cups.length; i++){
+			var c = data.cups[i];
+
+			if((c.include.length > 0)||(c.exclude.length > 0)){
+				cups.push({
+					name: c.name,
+					title: c.title
+				});
+			}
+		}
+
+		cups.sort((a,b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0));
+
+		for(var i = 0; i < cups.length; i++){
+			var c = cups[i];
+			$(".cup-select").append("<option value=\""+c.name+"\">"+c.title+"</option");
+		}
 	};
 
 	// Update the displayed filters
@@ -301,10 +322,15 @@ function interfaceObject(){
 	this.addFilterFromData = function(category, data, index){
 		var $filter = $(".filter.clone").clone();
 		$filter.removeClass("hide clone");
-		$filter.find("a.toggle .name").html(data.name);
+		if(data.name){
+			$filter.find("a.toggle .name").html(data.name);
+		}
 		$filter.attr("index", index);
 		$filter.attr("type", data.filterType);
+		$filter.find(".filter-type option[value=\""+data.filterType+"\"]").prop("selected", "selected");
 		$("." + category + " .filters").append($filter);
+
+		console.log(data);
 
 		// Process and select current values
 		switch(data.filterType){

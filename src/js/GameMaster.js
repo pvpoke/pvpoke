@@ -36,6 +36,10 @@ var GameMaster = (function () {
 				object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
 
 				InterfaceMaster.getInstance().init(object);
+
+				if(customRankingInterface){
+					customRankingInterface.init(object);
+				}
 			} else if(settings.gamemaster == "gamemaster-mega"){
 				// Load additional mega pokemon
 				$.getJSON( webRoot+"data/megas.json?v="+siteVersion, function( data ){
