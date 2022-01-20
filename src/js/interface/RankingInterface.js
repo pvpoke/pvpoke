@@ -41,11 +41,6 @@ var InterfaceMaster = (function () {
 					this.loadGetData();
 				}
 
-				// Remove Little Cup from options (currently n/a)
-				if(context != "custom"){
-					$(".league-select option[value='500']").remove();
-				}
-
 				$(".format-select").on("change", selectFormat);
 				$(".league-select").on("change", selectLeague);
 				$(".ranking-categories a").on("click", selectCategory);
