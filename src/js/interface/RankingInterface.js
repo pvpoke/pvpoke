@@ -1069,6 +1069,7 @@ var InterfaceMaster = (function () {
 					$details.find(".multi-battle-link .name").html(pokemon.speciesName+"'s");
 				} else{
 					$details.find(".share-link").remove();
+					$details.find(".multi-battle-link").remove();
 				}
 
 				var scores;

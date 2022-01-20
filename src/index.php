@@ -34,18 +34,17 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.24.7 (December 10, 2021)</h4>
+	<h4>v1.25.0 (January 20, 2022)</h4>
 	<ul>
-		<li>Battle timeline tooltips now show a move's damage in percent alongside the damage value.</li>
-		<li>Future ranking updates will sort key wins and losses by Battle Rating.</li>
+		<li>Multi-Battle now uses meta Pokemon by default instead of all eligible Pokemon, with a toggle to switch between them.</li>
 		<ul>
-			<li>These were previously sorted by a behind-the-scenes score used to determine the key win and key loss lists.</li>
-			<li>This change is currently present in custom rankings, and will take effect in the main rankings when those are updated in the future.</li>
+			<li>The meta group feature has existed for a long time but was previously buried in submenus. I hope this change helps  provide more useful results!</li>
 		</ul>
-		<li>Clicking the "Battle" button after using the "Explore Win Conditions" feature will revert the simulation to non-random results.</li>
-		<li>On mobile, the Pokemon search function on the Battle and Team Builder pages now completes when you finish typing rather than every keypress.</li>
+		<li>The <a href="<?php echo $WEB_ROOT; ?>settings/">Settings page</a> has a new option to dispaly a Pokemon's ranking details in tabs instead of a full page.</li>
+		<li>Fixes for Custom Rankings:</li>
 		<ul>
-			<li>This change is aimed at mitigating input lag on some mobile devices.</li>
+			<li>Cup selection in the advanced settings is now listed alphabetically.</li>
+			<li>Fixed an issue with importing cups and filters not being assigned the correct types.</li>
 		</ul>
 	</ul>
 
