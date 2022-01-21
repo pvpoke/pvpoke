@@ -1128,7 +1128,28 @@
             "filterType": "id",
             "values": ["altaria","azumarill","jellicent","swampert","deoxys_defense","wobbuffet","cresselia","medicham","ninetales_alolan","sandshrew_alolan","lanturn","gardevoir","toxicroak"]
         }]
-    } ],
+    }, {
+	    "name": "guardian",
+	    "title": "Guardian Cup",
+	    "include": [{
+	        "filterType": "moveType",
+	        "name": "Move Type",
+	        "values": ["electric", "fighting", "flying", "psychic", "fire"]
+	    }],
+	    "exclude": [{
+	        "filterType": "tag",
+	        "name": "Tag",
+	        "values": ["legendary", "mythical", "shadow", "mega"]
+	    }, {
+	        "filterType": "type",
+	        "name": "Type",
+	        "values": ["fairy"]
+	    }, {
+	        "filterType": "id",
+	        "name": "Species",
+	        "values": ["lickitung", "medicham", "altaria", "pachirisu", "wobbuffet", "stunfisk", "umbreon", "mandibuzz", "scrafty", "vullaby", "chansey", "hypno", "obstagoon", "cofagrigus", "bastiodon", "diggersby", "tropius", "lanturn"]
+	    }]
+	} ],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xs"],
     "pokemonTraits": {
         "pros": ["bulky", "extremely bulky", "spammy", "agile", "flexible", "dynamic", "fast move pressure", "shield pressure", "defensive", "momentum"],
