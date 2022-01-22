@@ -37,7 +37,7 @@ var GameMaster = (function () {
 
 				InterfaceMaster.getInstance().init(object);
 
-				if(customRankingInterface){
+				if(typeof customRankingInterface !== 'undefined'){
 					customRankingInterface.init(object);
 				}
 			} else if(settings.gamemaster == "gamemaster-mega"){
