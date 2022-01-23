@@ -46,6 +46,14 @@
 		"chargedMoves": ["CLOSE_COMBAT", "ROCK_BLAST"]
 	},
 	{
+		"speciesId": "hippowdon",
+		"chargedMoves": ["WEATHER_BALL_ROCK", "EARTH_POWER"]
+	},
+	{
+		"speciesId": "hippowdon_shadow",
+		"chargedMoves": ["WEATHER_BALL_ROCK", "EARTH_POWER"]
+	},
+	{
 		"speciesId": "zacian_hero",
 		"chargedMoves": ["CLOSE_COMBAT", "PLAY_ROUGH"],
 		"weight": 25

@@ -149,6 +149,10 @@
 		"chargedMoves": ["WEATHER_BALL_ROCK", "EARTH_POWER"]
 	},
 	{
+		"speciesId": "hippowdon_shadow",
+		"chargedMoves": ["WEATHER_BALL_ROCK", "EARTH_POWER"]
+	},
+	{
 		"speciesId": "crobat",
 		"chargedMoves": ["POISON_FANG", "SHADOW_BALL"],
 		"weight": 8
@@ -358,7 +362,11 @@
 	},
 	{
 		"speciesId": "feraligatr",
-		"fastMove": "WATERFALL"
+		"fastMove": "ICE_FANG"
+	},
+	{
+		"speciesId": "feraligatr_shadow",
+		"fastMove": "ICE_FANG"
 	},
 	{
 		"speciesId": "exeggutor",

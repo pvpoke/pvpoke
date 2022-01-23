@@ -769,10 +769,6 @@
 		"weight": 7
 	},
 	{
-		"speciesId": "electrode",
-		"chargedMoves": ["FOUL_PLAY","THUNDERBOLT"]
-	},
-	{
 		"speciesId": "minun",
 		"chargedMoves": ["THUNDERBOLT","GRASS_KNOT"]
 	},
@@ -781,8 +777,26 @@
 		"chargedMoves": ["THUNDERBOLT","GRASS_KNOT"]
 	},
 	{
+		"speciesId": "hippowdon",
+		"fastMove": "FIRE_FANG",
+		"chargedMoves": ["WEATHER_BALL_ROCK","EARTH_POWER"]
+	},
+	{
+		"speciesId": "hippowdon_shadow",
+		"fastMove": "FIRE_FANG",
+		"chargedMoves": ["WEATHER_BALL_ROCK","EARTH_POWER"]
+	},
+	{
 		"speciesId": "reuniclus",
 		"fastMove": "HIDDEN_POWER_FIGHTING"
+	},
+	{
+		"speciesId": "feraligatr",
+		"fastMove": "WATERFALL"
+	},
+	{
+		"speciesId": "feraligatr_shadow",
+		"fastMove": "WATERFALL"
 	},
 	{
 		"speciesId": "seismitoad",

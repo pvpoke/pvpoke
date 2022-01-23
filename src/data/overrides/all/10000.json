@@ -36,6 +36,14 @@
 		"weight": 5
 	},
 	{
+		"speciesId": "hippowdon",
+		"chargedMoves": ["WEATHER_BALL_ROCK", "EARTH_POWER"]
+	},
+	{
+		"speciesId": "hippowdon_shadow",
+		"chargedMoves": ["WEATHER_BALL_ROCK", "EARTH_POWER"]
+	},
+	{
 		"speciesId": "goodra",
 		"chargedMoves": ["MUDDY_WATER", "DRACO_METEOR"]
 	},

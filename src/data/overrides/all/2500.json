@@ -10,6 +10,11 @@
 		"chargedMoves": ["BLAST_BURN", "SOLAR_BEAM"]
 	},
 	{
+		"speciesId": "typhlosion_shadow",
+		"fastMove": "SHADOW_CLAW",
+		"chargedMoves": ["BLAST_BURN", "SOLAR_BEAM"]
+	},
+	{
 		"speciesId": "charizard",
 		"fastMove": "DRAGON_BREATH",
 		"chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"],
@@ -489,10 +494,6 @@
 		"fastMove": "VOLT_SWITCH"
 	},
 	{
-		"speciesId": "hippowdon",
-		"fastMove": "ICE_FANG"
-	},
-	{
 		"speciesId": "gardevoir_shadow",
 		"fastMove": "CHARM"
 	},
@@ -554,6 +555,10 @@
 		"fastMove": "ICE_FANG"
 	},
 	{
+		"speciesId": "feraligatr_shadow",
+		"fastMove": "ICE_FANG"
+	},
+	{
 		"speciesId": "ninetales_alolan",
 		"fastMove": "CHARM",
 		"chargedMoves": ["WEATHER_BALL_ICE","DAZZLING_GLEAM"],
@@ -568,6 +573,16 @@
 		"fastMove": "SNARL",
 		"chargedMoves": ["DARK_PULSE","SLUDGE_WAVE"],
 		"weight": 10
+	},
+	{
+		"speciesId": "hippowdon",
+		"fastMove": "ICE_FANG",
+		"chargedMoves": ["WEATHER_BALL_ROCK","EARTH_POWER"]
+	},
+	{
+		"speciesId": "hippowdon_shadow",
+		"fastMove": "ICE_FANG",
+		"chargedMoves": ["WEATHER_BALL_ROCK","EARTH_POWER"]
 	},
 	{
 		"speciesId": "gardevoir",
