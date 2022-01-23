@@ -5614,6 +5614,7 @@
             "cp2500": [50, 15, 15, 15]
         },
         "eliteMoves": ["TACKLE"],
+		"searchPriority": 4,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
