@@ -342,13 +342,6 @@
 			"synergies": ["Flying","Charm"],
 			"pokemon": [
 				{
-					"speciesId": "scizor",
-					"fastMove": "BULLET_PUNCH",
-					"chargedMoves": ["NIGHT_SLASH","IRON_HEAD"],
-					"difficulty": 2,
-					"weight":3
-				},
-				{
 					"speciesId": "scizor_shadow",
 					"fastMove": "BULLET_PUNCH",
 					"chargedMoves": ["NIGHT_SLASH","IRON_HEAD"],
@@ -402,7 +395,7 @@
 					"fastMove": "SPARK",
 					"chargedMoves": ["WILD_CHARGE","MIRROR_SHOT"],
 					"difficulty": 2,
-					"weight":13
+					"weight":15
 				},
 				{
 					"speciesId": "magnezone_shadow",
@@ -412,11 +405,18 @@
 					"weight":1
 				},
 				{
+					"speciesId": "walrein",
+					"fastMove": "POWDER_SNOW",
+					"chargedMoves": ["ICICLE_SPEAR","EARTHQUAKE"],
+					"difficulty": 2,
+					"weight":10
+				},
+				{
 					"speciesId": "mamoswine",
 					"fastMove": "POWDER_SNOW",
 					"chargedMoves": ["AVALANCHE","BULLDOZE"],
 					"difficulty": 2,
-					"weight":4
+					"weight":10
 				},
 				{
 					"speciesId": "glaceon",
@@ -670,6 +670,26 @@
 					"speciesId": "metagross",
 					"fastMove": "BULLET_PUNCH",
 					"chargedMoves": ["METEOR_MASH","EARTHQUAKE"]
+				}
+			],
+			"weight": 1
+		},
+		{
+			"pokemon": [
+				{
+					"speciesId": "garchomp",
+					"fastMove": "MUD_SHOT",
+					"chargedMoves": ["SAND_TOMB","OUTRAGE"]
+				},
+				{
+					"speciesId": "metagross",
+					"fastMove": "BULLET_PUNCH",
+					"chargedMoves": ["METEOR_MASH","EARTHQUAKE"]
+				},
+				{
+					"speciesId": "walrein",
+					"fastMove": "POWDER_SNOW",
+					"chargedMoves": ["ICICLE_SPEAR","EARTHQUAKE"]
 				}
 			],
 			"weight": 1

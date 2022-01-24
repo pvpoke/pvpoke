@@ -28,7 +28,7 @@
 				<option value="remixultra" type="ultra" class="hide multi-battle">Remix Meta</option>
 				<option value="ultrapremierclassic" type="ultra" class="hide multi-battle">Premier Classic Meta</option>
 				<option value="masterpremierclassic" type="master" class="hide multi-battle">Premier Classic Meta</option>
-				<option value="sinnoh" type="great" class="multi-battle">Sinnoh Cup Meta</option>
+				<option value="love" type="great" class="multi-battle">Love Cup Meta</option>
 				<option value="guardian" type="great" class="multi-battle">Silph Guardian Cup Meta</option>
 				<option value="factions" type="great" class="multi-battle">Silph Factions Meta (Cave)</option>
 				<option value="fusion" type="great" class="multi-battle">Silph Factions Meta (Fusion)</option>

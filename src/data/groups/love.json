@@ -40,14 +40,34 @@
 		"chargedMoves":["ICE_BEAM","PLAY_ROUGH"]
 	},
 	{
+		"speciesId":"sylveon",
+		"fastMove":"CHARM",
+		"chargedMoves":["PSYSHOCK","MOONBLAST"]
+	},
+	{
+		"speciesId":"aromatisse",
+		"fastMove":"CHARM",
+		"chargedMoves":["PSYCHIC","THUNDERBOLT"]
+	},
+	{
 		"speciesId":"electrode",
 		"fastMove":"VOLT_SWITCH",
-		"chargedMoves":["DISCHARGE","FOUL_PLAY"]
+		"chargedMoves":["DISCHARGE","HYPER_BEAM"]
+	},
+	{
+		"speciesId":"magcargo",
+		"fastMove":"INCINERATE",
+		"chargedMoves":["OVERHEAT","ROCK_TOMB"]
 	},
 	{
 		"speciesId":"scrafty",
 		"fastMove":"COUNTER",
 		"chargedMoves":["POWER_UP_PUNCH","FOUL_PLAY"]
+	},
+	{
+		"speciesId":"wormadam_trash",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["IRON_HEAD","BUG_BUZZ"]
 	},
 	{
 		"speciesId":"slowbro",
@@ -63,16 +83,6 @@
 		"speciesId":"vileplume_shadow",
 		"fastMove":"RAZOR_LEAF",
 		"chargedMoves":["SLUDGE_BOMB","MOONBLAST"]
-	},
-	{
-		"speciesId":"crustle",
-		"fastMove":"FURY_CUTTER",
-		"chargedMoves":["X_SCISSOR","ROCK_SLIDE"]
-	},
-	{
-		"speciesId":"magcargo",
-		"fastMove":"ROCK_THROW",
-		"chargedMoves":["STONe_EDGE","OVERHEAT"]
 	},
 	{
 		"speciesId":"crustle",

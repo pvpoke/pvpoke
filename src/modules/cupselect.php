@@ -1,7 +1,7 @@
 <select class="cup-select">
 	<option value="all" cup="all" meta-group500="littlegeneral" meta-group1500="great" meta-group2500="ultra" meta-group10000="master">Open League</option>
-	<option value="premierclassic" meta-group2500="ultrapremierclassic" meta-group2500="masterpremierclassic">Premier Classic</option>
-	<option value="sinnoh" meta-group1500="sinnoh">Sinnoh Cup</option>
+	<option value="premierclassic" meta-group2500="ultrapremierclassic" meta-group10000="masterpremierclassic">Premier Classic</option>
+	<option value="love" meta-group1500="love">Love Cup</option>
 	<option value="guardian" meta-group1500="guardian">Silph Guardian Cup</option>
 	<option value="fusionfactions" meta-group1500="fusion">Silph Factions (Fusion)</option>
 	<option value="factions" meta-group1500="factions">Silph Factions (Cave)</option>

@@ -4,7 +4,8 @@
 	<option value="2500" cup="premierclassic" meta-group="ultrapremierclassic">Ultra League (Premier Classic)</option>
 	<option value="10000" cup="all" meta-group="master">Master League</option>
 	<option value="10000" cup="classic" meta-group="master">Master League (Classic)</option>
-	<option value="1500" cup="sinnoh" meta-group="sinnoh">Sinnoh Cup</option>
+	<option value="10000" cup="premierclassic" meta-group="master">Master League (Premier Classic)</option>
+	<option value="1500" cup="love" meta-group="love">Love Cup</option>
 	<option value="1500" cup="guardian" meta-group="guardian">Silph Guardian Cup</option>
 	<option value="1500" cup="factions" meta-group="factions">Silph Factions (Cave)</option>
 	<option value="1500" cup="fusionfactions" meta-group="fusion">Silph Factions (Fusion)</option>
