@@ -75,6 +75,10 @@
 		"fastMove": "HIDDEN_POWER_ICE"
 	},
 	{
+		"speciesId": "regice",
+		"chargedMoves": ["THUNDERBOLT", "EARTHQUAKE"]
+	},
+	{
 		"speciesId": "landorus_therian",
 		"chargedMoves": ["SUPER_POWER", "STONE_EDGE"]
 	},

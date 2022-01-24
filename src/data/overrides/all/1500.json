@@ -12,17 +12,21 @@
 	},
 	{
 		"speciesId": "azumarill",
-		"chargedMoves": ["ICE_BEAM", "HYDRO_PUMP"],
+		"chargedMoves": ["PLAY_ROUGH", "HYDRO_PUMP"],
 		"weight": 56
 	},
 	{
 		"speciesId": "azumarill_xs",
-		"chargedMoves": ["ICE_BEAM", "HYDRO_PUMP"]
+		"chargedMoves": ["PLAY_ROUGH", "HYDRO_PUMP"]
 	},
 	{
 		"speciesId": "medicham",
 		"chargedMoves": ["ICE_PUNCH", "PSYCHIC"],
 		"weight": 35
+	},
+	{
+		"speciesId": "walrein",
+		"weight": 20
 	},
 	{
 		"speciesId": "medicham_xs",
@@ -35,6 +39,10 @@
 	{
 		"speciesId": "regirock",
 		"chargedMoves": ["STONE_EDGE", "FOCUS_BLAST"]
+	},
+	{
+		"speciesId": "regice",
+		"chargedMoves": ["THUNDER", "BLIZZARD"]
 	},
 	{
 		"speciesId": "mantine",
@@ -856,11 +864,11 @@
 	},
 	{
 		"speciesId": "altaria",
-		"weight":21
+		"weight":16
 	},
 	{
 		"speciesId": "skarmory",
-		"weight":27
+		"weight":23
 	},
 	{
 		"speciesId": "froslass",

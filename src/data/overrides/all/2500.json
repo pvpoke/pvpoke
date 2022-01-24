@@ -85,7 +85,7 @@
 	{
 		"speciesId": "escavalier",
 		"chargedMoves": ["MEGAHORN", "DRILL_RUN"],
-		"weight": 6
+		"weight": 10
 	},
 	{
 		"speciesId": "primeape",
@@ -435,10 +435,14 @@
 		"weight": 65
 	},
 	{
+		"speciesId": "walrein",
+		"weight": 20
+	},
+	{
 		"speciesId": "lapras",
 		"fastMove": "ICE_SHARD",
 		"chargedMoves": ["SURF", "ICE_BEAM"],
-		"weight": 11
+		"weight": 4
 	},
 	{
 		"speciesId": "ludicolo",
@@ -604,6 +608,10 @@
 	{
 		"speciesId": "regirock",
 		"chargedMoves": ["STONE_EDGE","FOCUS_BLAST"]
+	},
+	{
+		"speciesId": "regice",
+		"chargedMoves": ["THUNDER","BLIZZARD"]
 	},
 	{
 		"speciesId": "sirfetchd",

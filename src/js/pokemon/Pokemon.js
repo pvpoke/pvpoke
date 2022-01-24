@@ -1924,10 +1924,10 @@ function Pokemon(id, i, b){
 		var consistencyScore = 1;
 
 		// Reset move stats
-		fastMove.damage = Math.floor(fastMove.power * fastMove.stab);
+		fastMove.damage = fastMove.power * fastMove.stab;
 
 		for(var i = 0; i < chargedMoves.length; i++){
-			chargedMoves[i].damage = Math.floor(chargedMoves[i].power * chargedMoves[i].stab);
+			chargedMoves[i].damage = chargedMoves[i].power * chargedMoves[i].stab;
 		}
 
 		// Only calculate with two Charged Moves
@@ -1965,6 +1965,12 @@ function Pokemon(id, i, b){
 				var cycleFastMoves = Math.ceil(chargedMoves[0].energy / fastMove.energyGain);
 				var cycleFastDamage = fastMove.damage * cycleFastMoves;
 				var cycleDamage = cycleFastDamage + chargedMoves[0].damage;
+
+				if(fastMove.type == chargedMoves[0].type){
+					cycleFastDamage *= effectivenessScenarios[n][0];
+				} else if(fastMove.type == chargedMoves[1].type){
+					cycleFastDamage *= effectivenessScenarios[n][1];
+				}
 
 				var factor = 1;
 				if((chargedMoves[0].energy > chargedMoves[1].energy)||( (chargedMoves[0].energy == chargedMoves[1].energy) && (chargedMoves[1].moveId == "ACID_SPRAY")||((chargedMoves[0].selfAttackDebuffing)&&(! chargedMoves[1].selfDebuffing)&&(chargedMoves[1].energy - chargedMoves[0].energy <= 10))||((chargedMoves[0].selfDebuffing)&&(chargedMoves[0].energy > 50)&&(! chargedMoves[1].selfDebuffing)&&(chargedMoves[1].energy - chargedMoves[0].energy <= 10)))){

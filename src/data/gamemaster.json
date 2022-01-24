@@ -14961,7 +14961,8 @@
         },
         "types": ["ice", "none"],
         "fastMoves": ["FROST_BREATH", "ROCK_SMASH", "LOCK_ON"],
-        "chargedMoves": ["BLIZZARD", "EARTHQUAKE", "FOCUS_BLAST"],
+        "chargedMoves": ["BLIZZARD", "EARTHQUAKE", "FOCUS_BLAST", "THUNDER"],
+		"eliteMoves": ["THUNDER"],
         "tags": ["legendary"],
         "defaultIVs": {
             "cp500": [6, 12, 9, 13],
