@@ -26368,6 +26368,15 @@
         "buffApplyChance": "1",
         "archetype": "Debuff"
     }, {
+        "moveId": "ACROBATICS",
+        "name": "Acrobatics (Speculative)",
+        "type": "flying",
+        "power": 110,
+        "energy": 60,
+        "energyGain": 0,
+        "cooldown": 500,
+        "archetype": "General"
+    }, {
         "moveId": "AERIAL_ACE",
         "name": "Aerial Ace",
         "type": "flying",
