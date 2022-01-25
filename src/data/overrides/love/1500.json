@@ -33,6 +33,15 @@
 		"weight": 6
 	},
 	{
+		"speciesId": "slowbro_galarian",
+		"chargedMoves": ["SLUDGE_BOMB", "FOCUS_BLAST"]
+	},
+	{
+		"speciesId": "slowking_galarian",
+		"fastMove": "CONFUSION",
+		"chargedMoves": ["SLUDGE_WAVE", "SHADOW_BALL"]
+	},
+	{
 		"speciesId": "lickilicky",
 		"chargedMoves": ["BODY_SLAM", "EARTHQUAKE"]
 	},
