@@ -628,10 +628,14 @@ function Pokemon(id, i, b){
 				// The Zap Cannon Registeel clause! It will treat Focus Blast like a self debuffing move and prefer Zap Cannon shields up
 
 				if((self.activeChargedMoves[0].moveId == "FOCUS_BLAST")&&(self.activeChargedMoves[1].moveId == "ZAP_CANNON")){
-					if(self.activeChargedMoves[1].dpe - self.activeChargedMoves[0].dpe > .3){
+					if(self.activeChargedMoves[1].dpe - self.activeChargedMoves[0].dpe > -.3){
 						self.activeChargedMoves[0].buffs = [0,0];
 						self.activeChargedMoves[0].buffTarget = "self";
 						self.activeChargedMoves[0].selfDebuffing = true;
+					} else{
+						delete self.activeChargedMoves[0].buffs;
+						delete self.activeChargedMoves[0].buffTarget;
+						delete self.activeChargedMoves[0].selfDebuffing;
 					}
 				}
 
@@ -704,7 +708,11 @@ function Pokemon(id, i, b){
 					buffEffect = Math.abs(move.buffs[1]) * (80 / move.energy);
 				}
 
-				var multiplier = ( (gm.data.settings.buffDivisor +(buffEffect* move.buffApplyChance)) / gm.data.settings.buffDivisor);
+				var multiplier = 1;
+
+				if(buffEffect > 0){
+					multiplier = ( (gm.data.settings.buffDivisor +(buffEffect* move.buffApplyChance)) / gm.data.settings.buffDivisor);
+				}
 
 				move.dpe *= multiplier;
 			}
