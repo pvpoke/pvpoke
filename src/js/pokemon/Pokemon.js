@@ -625,6 +625,16 @@ function Pokemon(id, i, b){
 					self.activeChargedMoves.push(move);
 				}
 
+				// The Zap Cannon Registeel clause! It will treat Focus Blast like a self debuffing move and prefer Zap Cannon shields up
+
+				if((self.activeChargedMoves[0].moveId == "FOCUS_BLAST")&&(self.activeChargedMoves[1].moveId == "ZAP_CANNON")){
+					if(self.activeChargedMoves[1].dpe - self.activeChargedMoves[0].dpe > .3){
+						self.activeChargedMoves[0].buffs = [0,0];
+						self.activeChargedMoves[0].buffTarget = "self";
+						self.activeChargedMoves[0].selfDebuffing = true;
+					}
+				}
+
 				// If the cheaper move is a self debuffing move and the other move is a close non-debuffing move, prioritize the non-debuffing move
 
 				if((self.activeChargedMoves[1].energy - self.activeChargedMoves[0].energy <= 10)&&(self.activeChargedMoves[0].selfAttackDebuffing)&&(! self.activeChargedMoves[1].selfDebuffing)){
