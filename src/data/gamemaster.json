@@ -27,6 +27,19 @@
         "shields": [0, 1],
         "energy": [0, 0]
     }],
+	"rankingTraits": [{
+        "slug": "bulk"
+    }, {
+        "slug": "speed"
+    }, {
+        "slug": "power"
+    }, {
+        "slug": "safety"
+    }, {
+        "slug": "consistency"
+    }, {
+        "slug": "synergy"
+    }],
     "cups": [{
         "name": "all",
         "title": "All Pokemon",
