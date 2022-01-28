@@ -35,6 +35,11 @@
 		"chargedMoves":["ICICLE_SPEAR","EARTHQUAKE"]
 	},
 	{
+		"speciesId":"blaziken",
+		"fastMove":"COUNTER",
+		"chargedMoves":["BLAZE_KICK","BRAVE_BIRD"]
+	},
+	{
 		"speciesId":"trevenant",
 		"fastMove":"SHADOW_CLAW",
 		"chargedMoves":["SEED_BOMB","SHADOW_BALL"]
@@ -75,11 +80,6 @@
 		"chargedMoves":["BLAST_BURN","SOLAR_BEAM"]
 	},
 	{
-		"speciesId":"typhlosion",
-		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["BLAST_BURN","SOLAR_BEAM"]
-	},
-	{
 		"speciesId":"nidoqueen",
 		"fastMove":"POISON_JAB",
 		"chargedMoves":["POISON_FANG","EARTH_POWER"]
@@ -97,7 +97,7 @@
 	{
 		"speciesId":"sirfetchd",
 		"fastMove":"COUNTER",
-		"chargedMoves":["LEAF_BLADE","BRAVE_BIRD"]
+		"chargedMoves":["LEAF_BLADE","NIGHT_SLASH"]
 	},
 	{
 		"speciesId":"snorlax",
