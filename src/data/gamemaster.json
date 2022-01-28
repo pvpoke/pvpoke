@@ -1151,7 +1151,7 @@
             "values": ["lickitung", "medicham", "altaria", "pachirisu", "wobbuffet", "stunfisk", "umbreon", "mandibuzz", "scrafty", "vullaby", "chansey", "hypno", "obstagoon", "cofagrigus", "bastiodon", "diggersby", "tropius", "lanturn"]
         }]
     }],
-    "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xs"],
+    "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xs", "hisuian"],
     "pokemonTraits": {
         "pros": ["bulky", "extremely bulky", "spammy", "agile", "flexible", "dynamic", "fast move pressure", "shield pressure", "defensive", "momentum"],
         "cons": ["less bulky", "glass cannon", "slow", "clumsy", "inflexible", "low fast move pressure", "low shield pressure", "vulnerable", "volatile", "chaotic", "technical", "inconsistent"]
@@ -5597,6 +5597,27 @@
         "thirdMoveCost": 50000,
         "released": true,
         "tags": ["shadow"]
+    }, {
+        "dex": 100,
+        "speciesName": "Voltorb (Hisuian)",
+        "speciesId": "voltorb_hisuian",
+        "baseStats": {
+            "atk": 109,
+            "def": 111,
+            "hp": 120
+        },
+        "types": ["grass", "electric"],
+        "fastMoves": ["CHARGE_BEAM", "TACKLE"],
+        "chargedMoves": ["SWIFT", "THUNDERBOLT", "ENERGY_BALL"],
+        "defaultIVs": {
+            "cp500": [19.5, 4, 9, 14],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "tags": ["hisuian"],
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
     }, {
         "dex": 101,
         "speciesName": "Electrode",
