@@ -15,11 +15,6 @@
 		"chargedMoves":["CROSS_CHOP","ROCK_SLIDE"]
 	},
 	{
-		"speciesId":"gengar",
-		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["SHADOW_PUNCH","SLUDGE_BOMB"]
-	},
-	{
 		"speciesId":"dragonite",
 		"fastMove":"DRAGON_BREATH",
 		"chargedMoves":["DRAGON_CLAW","HURRICANE"]
@@ -86,11 +81,6 @@
 	},
 	{
 		"speciesId":"muk_alolan",
-		"fastMove":"SNARL",
-		"chargedMoves":["DARK_PULSE","SLUDGE_WAVE"]
-	},
-	{
-		"speciesId":"muk_alolan",
 		"fastMove":"POISON_JAB",
 		"chargedMoves":["DARK_PULSE","ACID_SPRAY"]
 	},
@@ -135,11 +125,6 @@
 		"chargedMoves":["ANCIENT_POWER","FLAMETHROWER"]
 	},
 	{
-		"speciesId":"clefable",
-		"fastMove":"CHARM",
-		"chargedMoves":["METEOR_MASH","MOONBLAST"]
-	},
-	{
 		"speciesId":"sylveon",
 		"fastMove":"CHARM",
 		"chargedMoves":["PSYSHOCK","MOONBLAST"]
@@ -158,16 +143,6 @@
 		"speciesId":"scizor",
 		"fastMove":"BULLET_PUNCH",
 		"chargedMoves":["NIGHT_SLASH","IRON_HEAD"]
-	},
-	{
-		"speciesId":"abomasnow_shadow",
-		"fastMove":"POWDER_SNOW",
-		"chargedMoves":["WEATHER_BALL_ICE","ENERGY_BALL"]
-	},
-	{
-		"speciesId":"abomasnow",
-		"fastMove":"POWDER_SNOW",
-		"chargedMoves":["WEATHER_BALL_ICE","ENERGY_BALL"]
 	},
 	{
 		"speciesId":"drifblim",
