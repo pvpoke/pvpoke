@@ -14965,7 +14965,8 @@
         },
         "types": ["rock", "none"],
         "fastMoves": ["ROCK_SMASH", "ROCK_THROW", "LOCK_ON"],
-        "chargedMoves": ["FOCUS_BLAST", "STONE_EDGE", "ZAP_CANNON"],
+        "chargedMoves": ["FOCUS_BLAST", "STONE_EDGE", "ZAP_CANNON", "EARTHQUAKE"],
+		"eliteMoves": ["EARTHQUAKE"],
         "tags": ["legendary"],
         "defaultIVs": {
             "cp500": [6, 12, 9, 13],
