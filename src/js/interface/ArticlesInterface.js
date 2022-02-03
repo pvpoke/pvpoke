@@ -35,16 +35,7 @@ var InterfaceMaster = (function () {
 				$(".section .articles").html("");
 
 				for(var i = 0; i < data.length; i++){
-					var a = data[i];
-
-					// Clone the article preview template and fill in content
-					var $article = $(".article-item.template").clone().removeClass("hide");
-
-					$article.find("h4 a").html(a.title);
-					$article.find(".date").html(a.date);
-					$article.find("p").html(a.description);
-					$article.find("img").attr("src", webRoot+"articles/article-assets/"+a.id+"/thumb.jpg");
-					$article.find("a").attr("href", webRoot+"articles/"+a.path+"/"+a.id+"/");
+					var $article = makeArticleItem(data[i]);
 
 					$(".section .articles").append($article);
 				}

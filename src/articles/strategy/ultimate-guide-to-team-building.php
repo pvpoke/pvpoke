@@ -5,9 +5,9 @@ $META_TITLE = 'Ultimate Guide to Team Building';
 
 $META_DESCRIPTION = 'Learn the fundamentals of building a good team and how to use the PvPoke Team Builder to its full potential.';
 
-$OG_IMAGE = 'https://pvpoke.com/assets/articles/team-building-og.jpg';
+$OG_IMAGE = 'https://pvpoke.com/articles/article-assets/ultimate-guide-to-team-building/og.jpg';
 
-require_once '../header.php';
+require_once '../../header.php';
 
 ?>
 
@@ -15,7 +15,7 @@ require_once '../header.php';
 	<h1>Ultimate Guide to Team Building</h1>
 	<div class="date">By <a href="https://twitter.com/PolymersUp">PolymersUp</a></div>
 	<div class="date">Last updated August 11, 2020</div>
-	<img src="<?php echo $WEB_ROOT;?>assets/articles/team-building-banner.jpg" />
+	<img src="<?php echo $WEB_ROOT;?>articles/article-assets/ultimate-guide-to-team-building/banner.jpg" />
 	<p>The <a href="<?php echo $WEB_ROOT;?>team-builder/">Team Builder</a> feature was previously an underutilized tool, but now is integral to team building for any meta. As battlers have come to discover its extensive utility, that has also brought about questions of how much stock to put into achieving the lowest Threat Score and alternatives on how to approach team building. In addition to the Meta Scorecard, Threats section and Alternatives section, PvPoke recently added a Graded Overview as well to provide a multi-faceted evaluation of teams. In this article, we hopefully can shed some light on how to help you get the most out of Team Builder.</p>
 	<p>Jump to a section:
   		<ol>
@@ -29,7 +29,7 @@ require_once '../header.php';
 		</ol>
 	</p>
 
-	<img src="<?php echo $WEB_ROOT;?>assets/articles/team-building-infographic.jpg" />
+	<img src="<?php echo $WEB_ROOT;?>articles/article-assets/ultimate-guide-to-team-building/team-building-infographic.jpg" />
 
 	<a name="grades"></a>
 	<h3 class="article-header">Graded Overview Explained</h3>
@@ -108,8 +108,8 @@ require_once '../header.php';
   <div class="share-link-container">
 		<p>Share this article:</p>
 		<div class="share-link">
-			<input type="text" value="https://pvpoke.com/articles/ultimate-guide-to-team-building/" readonly>
+			<input type="text" value="https://pvpoke.com/articles/strategy/ultimate-guide-to-team-building/" readonly>
 			<div class="copy">Copy</div>
 		</div>
 	</div>
-<?php require_once '../footer.php'; ?>
+<?php require_once '../../footer.php'; ?>

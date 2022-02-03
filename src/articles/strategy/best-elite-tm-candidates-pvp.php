@@ -5,16 +5,16 @@ $META_TITLE = 'Best Elite TM Candidates for PvP';
 
 $META_DESCRIPTION = 'Elite TM\'s are now available! Which exclusive moves and Pokemon are the best for your PvP team?';
 
-$OG_IMAGE = 'https://pvpoke.com/assets/articles/elite-tm-og.jpg';
+$OG_IMAGE = 'https://pvpoke.com/articles/article-assets/best-elite-tm-candidates-pvp/og.jpg';
 
-require_once '../header.php';
+require_once '../../header.php';
 
 ?>
 
 <div class="section article white">
 	<h1>Best Elite TM Candidates for PvP</h1>
 	<div class="date">Last updated December 12, 2020</div>
-	<img src="<?php echo $WEB_ROOT;?>assets/articles/elite-tm-banner.jpg" />
+	<img src="<?php echo $WEB_ROOT;?>articles/article-assets/best-elite-tm-candidates-pvp/banner.jpg" />
 <p>
     Elite TM's allow you to select a specific move or learn exclusive attacks. You can typically earn them as end-of-season rewards in GO Battle League for reaching Rank 7 or higher, or purchase them in Community Day boxes. These Elite TM's open up new and rare movesets! In this article, we’ll take a look at potential
     candidates if you're looking to use a precious Elite TM in your bag.
@@ -591,8 +591,8 @@ pool, but could be fun to play with, especially the Shadow variant.<strong></str
   <div class="share-link-container">
 		<p>Share this article:</p>
 		<div class="share-link">
-			<input type="text" value="https://pvpoke.com/articles/best-elite-tm-candidates-pvp/" readonly>
+			<input type="text" value="https://pvpoke.com/articles/strategy/best-elite-tm-candidates-pvp/" readonly>
 			<div class="copy">Copy</div>
 		</div>
 	</div>
-<?php require_once '../footer.php'; ?>
+<?php require_once '../../footer.php'; ?>

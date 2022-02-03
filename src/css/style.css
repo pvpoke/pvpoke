@@ -26,6 +26,13 @@ body {
   clear: both;
 }
 
+.flex {
+  display: flex;
+}
+.flex.cols-3 > div {
+  flex-basis: 33%;
+}
+
 .hide {
   display: none;
 }
@@ -230,13 +237,6 @@ header {
 }
 .icon-unite span {
   display: none;
-}
-
-.flex {
-  display: flex;
-}
-.flex.cols-3 > div {
-  flex-basis: 33%;
 }
 
 /* POKEMON SELECT */
@@ -3078,6 +3078,19 @@ a.download-csv {
 }
 .article-item h4 {
   margin-top: 0;
+}
+.article-item .tags {
+  display: flex;
+}
+.article-item .tags a {
+  display: block;
+  text-decoration: none;
+  background: #003748;
+  color: #eee;
+  border-radius: 8px;
+  font-size: 12px;
+  padding: 4px 8px;
+  margin-right: 5px;
 }
 
 .article .date, .article-item .date {

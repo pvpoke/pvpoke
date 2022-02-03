@@ -5,7 +5,7 @@ $META_TITLE = 'Team Building for GO Stadium Cliffhanger';
 
 $META_DESCRIPTION = 'GO Stadium has introduced an exciting new format called Cliffhanger! Learn how to spend your points and build your team.';
 
-require_once '../header.php';
+require_once '../../header.php';
 
 ?>
 
@@ -22,7 +22,7 @@ require_once '../header.php';
 	  </ol>
 	<a name="rules"></a>
 <h3 class="article-header"><strong>Cliffhanger Rules &amp; Team Archetypes</strong></h3>
-	<p><img src="<?php echo $WEB_ROOT; ?>assets/articles/cliffhanger-rules-3-1.jpg" /></p>
+	<p><img src="<?php echo $WEB_ROOT; ?>articles/article-assets/cliffhanger-team-building/cliffhanger-rules-3-1.jpg" /></p>
 <p>You have 17 points to build to your team! The  graphic above shows which Pokemon belong to which tiers. The tiers are a team  building challenge, so how can you rise to meet it? </p>
 <p>There are several different team archetypes you  can choose from. Some will allow you to pick that powerful T0 Pokemon while  others give you broader choices from the lower tiers. </p>
 <ul type="disc">
@@ -38,7 +38,7 @@ require_once '../header.php';
 <h3 class="article-header"><strong>Team-Building with Slots</strong></h3>
 <p>So you have a team archetype picked out or maybe  you&rsquo;re not even sure yet! Where do you begin with choosing the actual Pokemon  on your team? One way to approach it is to think about your team in terms of  slots. Your team has 6 slots and you need each one to fill a certain kind of  role or coverage. </p>
 <p>The infographic below highlights a few of the  possible picks in different slots and the roles they play for your team: </p>
-	<p><img src="<?php echo $WEB_ROOT; ?>assets/articles/cliffhanger-infographic-3-1.jpg?v=2" /></p>
+	<p><img src="<?php echo $WEB_ROOT; ?>articles/article-assets/cliffhanger-team-building/cliffhanger-infographic-3-1.jpg?v=2" /></p>
 <p>What&rsquo;s the best way to start? Pick a Pokemon you  really like, think about which Pokemon it loses to, and then pick a Pokemon  that covers its weaknesses. Skarmory is countered by Steel-type tanks, for  example, so Whiscash makes a great partner. Toxicroak evaporates against  Confusion users, so it would appreciate a buddy like Sableye or Umbreon. </p>
 <p>Here&rsquo;s a team building example that walks  through each pick: </p>
 <ol start="1" type="1">
@@ -65,9 +65,9 @@ require_once '../header.php';
 	<div class="share-link-container">
 		<p>Share this article:</p>
 		<div class="share-link">
-			<input type="text" value="https://pvpoke.com/articles/cliffhanger-team-building/" readonly>
+			<input type="text" value="https://pvpoke.com/articles/strategy/cliffhanger-team-building/" readonly>
 			<div class="copy">Copy</div>
 		</div>
 	</div>
 </div>
-<?php require_once '../footer.php'; ?>
+<?php require_once '../../footer.php'; ?>

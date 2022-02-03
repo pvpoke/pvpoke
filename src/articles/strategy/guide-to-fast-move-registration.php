@@ -5,15 +5,15 @@ $META_TITLE = 'Guide to Fast Move Mechanics';
 
 $META_DESCRIPTION = 'How exactly do Fast Moves work and register? This guide will walk you through the basics of understanding the nuts and bolts of Trainer Battles.';
 
-$OG_IMAGE = 'https://pvpoke.com/assets/articles/mechanics-og.jpg';
+$OG_IMAGE = 'https://pvpoke.com/articles/article-assets/guide-to-fast-move-registration/og.jpg';
 
-require_once '../header.php';
+require_once '../../header.php';
 
 ?>
 
 <div class="section article white">
 	<h1>Guide to Fast Move Mechanics</h1>
-	<p><img src="<?php echo $WEB_ROOT; ?>assets/articles/mechanics-banner.jpg" style="border:none;"/></p>
+	<p><img src="<?php echo $WEB_ROOT; ?>articles/article-assets/guide-to-fast-move-registration/banner.jpg" style="border:none;"/></p>
 	<div class="date">Last updated October 9th, 2019</div>
 	<p><b>Update October 9th, 2019</b> - Since app version 0.157.0, the mechanics for Fast Move registration have changed! This article and the site simulations have been updated to reflect those changes.</p>
 	<p>How exactly does Fast Move damage and energy work? In this article, we&rsquo;ll go over the mysterious mechanics behind Fast Moves and how they impact gameplay. </p>
@@ -34,7 +34,7 @@ require_once '../header.php';
 		<h3 class="article-header">Fast Move Duration</h3>
 	<p>
       Each Fast Move lasts a certain number of turns,  usually referred to as its &ldquo;duration&rdquo; or &ldquo;cooldown&rdquo;. <strong>Duration determines the  amount of time between your Fast Moves.</strong> The timelines below illustrate  different Fast Moves and their durations. Each circle represents a new action. </p>
-	<p><img src="<?php echo $WEB_ROOT; ?>assets/articles/mechanics-duration-timeline.png" style="border:none;"/></p>
+	<p><img src="<?php echo $WEB_ROOT; ?>articles/article-assets/guide-to-fast-move-registration/mechanics-duration-timeline.png" style="border:none;"/></p>
 	<p>As you can see, a shorter duration allows more  frequent actions. </p>
 	<a name="registration"></a>
 	<h3 class="article-header"> Fast Move Registration</h3>
@@ -76,16 +76,16 @@ require_once '../header.php';
 		</table>
 		<p>So what does this look like in action? The  examples below show circles for when you tap to use a Fast Move and squares for  when the move actually hits. </p>
 		  <h3>2-Turn Move vs. 2-Turn Move</h3>
-		<p><img src="<?php echo $WEB_ROOT; ?>assets/articles/mechanics-register-2-2-new.png" style="border:none;" /></p>
+		<p><img src="<?php echo $WEB_ROOT; ?>articles/article-assets/guide-to-fast-move-registration/mechanics-register-2-2-new.png" style="border:none;" /></p>
 		  <p>Above we have a mirror match where both Pokemon&rsquo;s  Fast Moves have the same duration. Damage and energy register on the 2nd turn of the move, so play alternates between Fast Moves being used and Fast Moves hitting. </p>
 		  <h3>2-Turn Move vs. 4-Turn Move</h3>
-	<p><img src="<?php echo $WEB_ROOT; ?>assets/articles/mechanics-register-2-4-new.png" style="border:none;"/></p>
+	<p><img src="<?php echo $WEB_ROOT; ?>articles/article-assets/guide-to-fast-move-registration/mechanics-register-2-4-new.png" style="border:none;"/></p>
 		  <p>Things play out similarly when the Fast Moves involved  are even with one another. For example, Counter (2 turns) and Confusion (4  turns) happen in step so Confusion registers simultaneously with every other Counter. If you're a Confusion user, you're no longer stuck performing extra Confusions like you were pre-0.157.0.</p>
 		<h3>1-Turn Move vs. 3-Turn Move</h3>
-<p><img src="<?php echo $WEB_ROOT; ?>assets/articles/mechanics-register-1-3.png" style="border:none;"/></p>
+<p><img src="<?php echo $WEB_ROOT; ?>articles/article-assets/guide-to-fast-move-registration/mechanics-register-1-3.png" style="border:none;"/></p>
 		<p>Battles against Pokemon with 1-turn moves will play exactly like before, since 1-turn moves previously registered their opponent's Fast Moves at the earliest possible time.</p>
 		  <h3>2-Turn Move vs. 3-Turn Move</h3>
-<p><img src="<?php echo $WEB_ROOT; ?>assets/articles/mechanics-register-2-3-new.png" style="border:none;"/></p>
+<p><img src="<?php echo $WEB_ROOT; ?>articles/article-assets/guide-to-fast-move-registration/assets/articles/mechanics-register-2-3-new.png" style="border:none;"/></p>
 		  Pre-0.157.0, 2-turn vs. 3-turn move interactions were complex and unpredictable. Now both moves register at steady intervals.</p>
 	</div>
 <a name="sandbox"></a>
@@ -126,7 +126,7 @@ require_once '../header.php';
 	<div class="share-link-container">
 		<p>Share this article:</p>
 		<div class="share-link">
-			<input type="text" value="https://pvpoke.com/articles/guide-to-fast-move-registration/" readonly>
+			<input type="text" value="https://pvpoke.com/articles/strategy/guide-to-fast-move-registration/" readonly>
 			<div class="copy">Copy</div>
 		</div>
 	</div>
@@ -175,4 +175,4 @@ require_once '../header.php';
 	});
 
 </script>
-<?php require_once '../footer.php'; ?>
+<?php require_once '../../footer.php'; ?>
