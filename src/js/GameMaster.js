@@ -680,6 +680,16 @@ var GameMaster = (function () {
 			}
 		}
 
+		// Load article metadata json and return it to the interface
+
+		object.loadArticleData = function(callback){
+			var file = webRoot+"articles/articles.json?v="+siteVersion;
+
+			$.getJSON( file, function( data ){
+				console.log("article metadata loaded [" + data.length + "]");
+				callback(data);
+			});
+		}
 
 		// Modify a Pokemon data entry
 
