@@ -22,7 +22,7 @@ require_once '../../header.php';
 		<div class="feature">
 			<h4>Date &amp; Time</h4>
 			<div class="value">Saturday, February 12th<br></div>
-			<div class="detail">11 am - 5 pm local time</div>
+			<div class="detail">11am - 5pm local time</div>
 		</div>
 		<div class="feature">
 			<h4>Exclusive Charged Move</h4>
@@ -61,6 +61,33 @@ require_once '../../header.php';
 				<div class="mega-image"></div>
 				<div class="mega-label">Abomasnow</div>
 			</div>
+		</div>
+	</div>
+
+	<a name="faq"></a>
+	<div class="faq-item">
+		<h3 class="article-header"><strong>How good is Jumpluff with Acrobatics?</strong></h3>
+		<div class="faq-answer">
+			<p><b>Acrobatics is a minor upgrade for Jumpluff but it's unlikely to push Jumpluff above its current standing among Grass types.</b> Jumpluff is a solid Pokemon for Great League PvP that's usually overshadowed by stronger Grass options like Venusaur or Tropius, who shares its Grass/Flying typing. </p>
+			<p>Acrobatics replaces Aerial Ace as Jumpluff's most efficient Charged Move. It gives Jumpluff more closing power, shield pressure, and Flying-type damage output. However, Acrobatics sacrifices speed and leaves Jumpluff with 55- and 60-energy Charged Moves. For this reason, Acrobatics isn't a strict upgrade, and Jumpluff may find itself missing Aerial Ace in scenarios where it can't reach Acrobatics.</p>
+			<p>Jumpluff maxes at 1636 CP, so it isn't relevant for Ultra League or Master League. It's viable in potential Little Cup formats but not a priority.</p>
+		</div>
+	</div>
+
+	<a name="faq"></a>
+	<div class="faq-item">
+		<h3 class="article-header"><strong>My Shadow Jumpluff still has Frustration. Can it learn Acrobatics if I evolve it during Community Day?</strong></h3>
+		<div class="faq-answer">
+			<p><b>No, a Shadow Pokemon with Frustration cannot learn an exclusive Charged Move when it evolves, </b> even if it has a 2nd Charged Move unlocked. You must have removed Frustration during a previous Team Rocket event.</p>
+		</div>
+	</div>
+
+	<a name="faq"></a>
+	<div class="faq-item">
+		<h3 class="article-header"><strong>Is Return Jumpluff worth a look?</strong></h3>
+		<div class="faq-answer">
+			<p><b>No, Acrobatics is now a better Charged Move option than Return.</b> Almost all Pokemon that resist Acrobatics and Energy Ball also resist Return.</p>
+			<p></p>
 		</div>
 	</div>
 

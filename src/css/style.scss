@@ -3304,7 +3304,8 @@ a.download-csv{
 	}
 
 	p, ul{
-		line-height:26px;
+		font-size:14px;
+		line-height:20px;
 	}
 
 	ul li{
@@ -3329,7 +3330,7 @@ a.download-csv{
 		padding: 10px;
 		border-radius: 8px;
 		color:$color-off-white;
-		text-transform: uppercase;
+		line-height: 24px;
 	}
 
 	table{

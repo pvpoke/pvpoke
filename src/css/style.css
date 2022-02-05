@@ -2877,7 +2877,8 @@ a.download-csv {
   margin-top: 1em;
 }
 .article p, .article ul {
-  line-height: 26px;
+  font-size: 14px;
+  line-height: 20px;
 }
 .article ul li {
   margin-bottom: 10px;
@@ -2895,7 +2896,7 @@ a.download-csv {
   padding: 10px;
   border-radius: 8px;
   color: #eee;
-  text-transform: uppercase;
+  line-height: 24px;
 }
 .article table {
   border: none;

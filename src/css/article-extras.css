@@ -1,3 +1,4 @@
+/* Top community day event feature list */
 .cd-features {
   display: flex;
   flex-wrap: wrap;
@@ -22,6 +23,7 @@
   font-size: 14px;
 }
 
+/* Mega section details and sprites */
 .mega-section {
   border-radius: 8px;
   margin: 1em 0;
@@ -32,7 +34,6 @@
   display: flex;
   font-size: 18px;
   font-weight: bold;
-  text-transform: uppercase;
   align-items: center;
 }
 .mega-section .mega-title .mega-icon {
@@ -52,9 +53,54 @@
   justify-content: center;
 }
 .mega-section .mega-list .mega-item {
-  margin: 0 5px 5px 0;
+  margin: 0 15px 5px 0;
+}
+.mega-section .mega-list .mega-item .mega-image {
+  width: 75px;
+  height: 75px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin: 0 auto;
 }
 
+[mega=venusaur] .mega-image {
+  background-image: url("../articles/article-assets/cd/megas/venusaur.png");
+}
+
+[mega=charizard-y] .mega-image {
+  background-image: url("../articles/article-assets/cd/megas/charizard-y.png");
+}
+
+[mega=pidgeot] .mega-image {
+  background-image: url("../articles/article-assets/cd/megas/pidgeot.png");
+}
+
+[mega=aerodactyl] .mega-image {
+  background-image: url("../articles/article-assets/cd/megas/aerodactyl.png");
+}
+
+[mega=abomasnow] .mega-image {
+  background-image: url("../articles/article-assets/cd/megas/abomasnow.png");
+}
+
+/* FAQ styling */
+.faq-item {
+  border-radius: 8px;
+}
+.faq-item h3.article-header {
+  margin-bottom: 0;
+}
+.faq-item .faq-answer {
+  padding: 10px;
+}
+.faq-item .faq-answer p:first-of-type {
+  margin-top: 0;
+}
+.faq-item .faq-answer p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Specific Pokemon styling */
 .section.hoppip {
   background: #afe8d5;
   background: -moz-linear-gradient(0deg, #afe8d5 20%, #ddf5ed 55%);
@@ -69,7 +115,11 @@
   color: #834569;
   border-bottom: 1px solid #834569;
 }
+.section.hoppip .faq-item {
+  background: #c6eee1;
+}
 
+/* Responsive styling */
 @media only screen and (min-width: 401px) {
   .cd-features .feature {
     flex-basis: auto;
