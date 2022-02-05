@@ -2895,6 +2895,7 @@ a.download-csv {
   padding: 10px;
   border-radius: 8px;
   color: #eee;
+  text-transform: uppercase;
 }
 .article table {
   border: none;
