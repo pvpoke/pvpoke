@@ -1,6 +1,6 @@
 <div class="checklist-item template">
 	<div class="title-section">
-		<div class="check"><span></span></div>
+		<div class="check"><span><div class="checkmark">&#10004;</div></span></div>
 		<h4>High Rank Jumpluff</h4>
 		<div class="league"></div>
 	</div>
