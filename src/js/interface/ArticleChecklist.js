@@ -127,6 +127,13 @@ var InterfaceMaster = (function () {
 				self.saveChecklist();
 			});
 
+			// Trigger checkbox click on title click
+
+			$("body").on("click", ".title-section h4", function(e){
+				var $el = $(this).closest(".checklist-item");
+				$el.find(".check").trigger("click");
+			});
+
 		}
 
         return object;
