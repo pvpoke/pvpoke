@@ -104,6 +104,7 @@
 .cd-checklist {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .checklist-item {
@@ -111,7 +112,8 @@
   border-radius: 8px;
   box-sizing: border-box;
   padding: 10px;
-  flex-basis: 33%;
+  flex-basis: 31.5%;
+  margin-bottom: 10px;
 }
 .checklist-item.template {
   display: none;

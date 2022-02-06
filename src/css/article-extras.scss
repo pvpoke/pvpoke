@@ -128,6 +128,7 @@
 .cd-checklist{
 	display:flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
 }
 
 
@@ -136,7 +137,8 @@
 	border-radius: 8px;
 	box-sizing: border-box;
 	padding:10px;
-	flex-basis: 33%;
+	flex-basis: 31.5%;
+	margin-bottom:10px;
 
 	&.template{
 		display:none;

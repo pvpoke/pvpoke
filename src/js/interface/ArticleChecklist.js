@@ -14,9 +14,12 @@ var InterfaceMaster = (function () {
 
 			var self = this;
 			var data;
+			var defaultData;
 			var gm = GameMaster.getInstance();
 			var checklist = [];
-			var priorities = ["Priority", "Nice to Have", "Extra Mile"]
+			var priorities = ["Priority", "Nice to Have", "Extra Mile"];
+
+			var storageKey = "cd-" + articleId;
 
 			this.init = function(){
 				// Load checklist from JSON
@@ -26,9 +29,17 @@ var InterfaceMaster = (function () {
 					console.log("article checklist loaded");
 
 					data = d;
+					defaultData = d;
 					checklist = data.checklist;
 
-					self.displayChecklist(checklist);
+					// Check for a locally stored checklist
+					if(window.localStorage.getItem(storageKey) !== null){
+						data = JSON.parse(window.localStorage.getItem(storageKey));
+						checklist = data.checklist;
+						self.displayChecklist(checklist);
+					} else{
+						self.displayChecklist(checklist);
+					}
 				});
 			};
 
@@ -60,9 +71,25 @@ var InterfaceMaster = (function () {
 					var baseCP = self.calculateBaseCP(item.baseSpeciesId, item.ivs, 30, item.cp);
 
 					$el.find(".base-form-section .cp-label").html("CP " + baseCP);
+					$el.find(".base-form-section img").attr("src", "../../article-assets/cd/base/"+item.baseSpeciesId+".png");
+
+					// Show if caught already
+					if(item.caught){
+						$el.find(".check").addClass("on");
+						$el.addClass("caught");
+					}
+
 
 					$(".cd-checklist").append($el);
 				}
+			}
+
+			// Store the current checklist in local storage
+			this.saveChecklist = function(){
+				var json = JSON.stringify(data);
+
+				window.localStorage.setItem(storageKey, json);
+				console.log("checklist saved");
 			}
 
 			// Calculate the CP of the Pokemon's base species
@@ -85,6 +112,19 @@ var InterfaceMaster = (function () {
 
 			$("body").on("click", ".check", function(e){
 				$(this).toggleClass("on");
+
+				var $el = $(this).closest(".checklist-item");
+				$el.toggleClass("caught");
+
+				var itemIndex = $(".cd-checklist .checklist-item").index($el);
+
+				if($(this).hasClass("on")){
+					checklist[itemIndex].caught = 1;
+				} else{
+					checklist[itemIndex].caught = 0;
+				}
+
+				self.saveChecklist();
 			});
 
 		}

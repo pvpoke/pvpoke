@@ -28,7 +28,7 @@
 		</div>
 	</div>
 	<div class="base-form-section">
-		<img src="../../article-assets/cd/base/hoppip.png" />
+		<img src="" />
 		<div class="cp-label">CP 100</div>
 	</div>
 	<div class="priority-section">
