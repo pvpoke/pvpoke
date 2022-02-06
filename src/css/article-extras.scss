@@ -128,63 +128,167 @@
 .cd-checklist{
 	display:flex;
 	flex-wrap: wrap;
+}
 
-	.checklist-item{
-		border:2px solid #000;
-		border-radius: 8px;
-		box-sizing: border-box;
-		padding:10px;
-		flex-basis: 33%;
 
-		.title-section{
+.checklist-item{
+	border:2px solid #000;
+	border-radius: 8px;
+	box-sizing: border-box;
+	padding:10px;
+	flex-basis: 33%;
+
+	&.template{
+		display:none;
+	}
+
+	&[priority="1"]{
+		background:#fecb5f;
+
+		.iv-bar .divider{
+			background:#fecb5f;
+		}
+	}
+
+	&[priority="2"]{
+		background:#add0ed;
+
+		.iv-bar .divider{
+			background:#add0ed;
+		}
+	}
+
+	&[priority="3"]{
+		background:#c3b19a;
+
+		.iv-bar .divider{
+			background:#c3b19a;
+		}
+	}
+
+	.title-section{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.check, .check span{
+			margin:0;
+			width:20px;
+			height:20px;
+			border-radius: 4px;
+		}
+
+		h4{
+			flex-basis: 60%;
+		}
+
+		.league{
+			width:38px;
+			height:37px;
+			background-size:100%;
+			background-repeat: no-repeat;
+
+			&.great{ background-image:url("../articles/article-assets/cd/league-great.png"); }
+			&.ultra{ background-image:url("../articles/article-assets/cd/league-ultra.png"); }
+			&.master{ background-image:url("../articles/article-assets/cd/league-master.png"); }
+			&.special{ background-image:url("../articles/article-assets/cd/league-special.png"); }
+		}
+	}
+
+	.iv-section{
+		margin: 30px 0 15px 0;
+
+		.iv-label{
+			margin-bottom: 5px;
 			display: flex;
-			align-items: center;
 
-			.check, .check span{
-				margin:0;
-				width:20px;
-				height:20px;
-				border-radius: 4px;
-			}
-
-			h4{
-				margin-left:10px;
+			.level{
+				flex-basis: 33%;
+				margin-right:15px;
 			}
 		}
 
-		.iv-section{
-			margin: 30px 0 15px 0;
+		.iv-bar{
+			position: relative;
+			height:12px;
+			margin-bottom: 8px;
 
-			.iv-label{
-				margin-bottom: 5px;
-				display: flex;
+			.divider{
+				position: absolute;
+				height:100%;
+				width:2px;
 
-				.level{
-					flex-basis: 33%;
-					margin-right:15px;
+				&:nth-of-type(1){
+					left:33%;
+				}
+
+				&:nth-of-type(2){
+					left:66%;
 				}
 			}
 
-			.iv-bar{
-				height:12px;
-				border-radius: 8px;
+			.bar{
 				background:#000;
 				width:100%;
-				margin-bottom: 8px;
-			}
-		}
-
-		.base-form-section{
-			display: flex;
-			align-items: center;
-
-			img{
-				border:none;
-				margin-right: 5px;
+				height:100%;
+				border-radius: 8px;
 			}
 		}
 	}
+
+	.base-form-section{
+		display: flex;
+		align-items: center;
+
+		img{
+			border:none;
+			margin-right: 5px;
+		}
+	}
+
+	.priority-section{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding:5px;
+		border-radius: 8px;
+		background:rgba(255,255,255,0.35);
+		margin-top:5px;
+
+		h4{
+			text-transform: uppercase;
+			font-size:12px;
+		}
+
+		a.info{
+			display: block;
+			text-decoration: none;
+			background:#000;
+			color:#fff;
+			border-radius:20px;
+			border: 1px solid #000;
+			width:16px;
+			height:16px;
+			text-align: center;
+			font-size:14px;
+			font-weight: bold;
+		}
+	}
 }
+
+
+@keyframes animatedgradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 
 
 /* Specific Pokemon styling */

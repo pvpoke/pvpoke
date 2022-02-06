@@ -39,29 +39,9 @@ require_once '../../header.php';
 	<h3 class="article-header"><strong>League &amp; IV Recommendations</strong></h3>
 
 	<div class="cd-checklist">
-		<div class="checklist-item">
-			<div class="title-section">
-				<div class="check"><span></span></div>
-				<h4>High Rank Jumpluff</h4>
-				<div class="league"></div>
-			</div>
-			<div class="iv-section">
-				<div class="iv-label">
-					<div class="level">Level 20</div>
-					<div class="ivs">0/15/15</div>
-				</div>
-				<div class="iv-bars">
-					<div class="iv-bar"></div>
-					<div class="iv-bar"></div>
-					<div class="iv-bar"></div>
-				</div>
-			</div>
-			<div class="base-form-section">
-				<img src="../../article-assets/cd/base/hoppip.png" />
-				<div class="cp-label">CP 100</div>
-			</div>
-		</div>
 	</div>
+
+	<?php require_once 'templates/checklist-item.php'; ?>
 
 	<div class="mega-section">
 		<div class="mega-title">

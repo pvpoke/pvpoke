@@ -105,53 +105,146 @@
   display: flex;
   flex-wrap: wrap;
 }
-.cd-checklist .checklist-item {
+
+.checklist-item {
   border: 2px solid #000;
   border-radius: 8px;
   box-sizing: border-box;
   padding: 10px;
   flex-basis: 33%;
 }
-.cd-checklist .checklist-item .title-section {
+.checklist-item.template {
+  display: none;
+}
+.checklist-item[priority="1"] {
+  background: #fecb5f;
+}
+.checklist-item[priority="1"] .iv-bar .divider {
+  background: #fecb5f;
+}
+.checklist-item[priority="2"] {
+  background: #add0ed;
+}
+.checklist-item[priority="2"] .iv-bar .divider {
+  background: #add0ed;
+}
+.checklist-item[priority="3"] {
+  background: #c3b19a;
+}
+.checklist-item[priority="3"] .iv-bar .divider {
+  background: #c3b19a;
+}
+.checklist-item .title-section {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
-.cd-checklist .checklist-item .title-section .check, .cd-checklist .checklist-item .title-section .check span {
+.checklist-item .title-section .check, .checklist-item .title-section .check span {
   margin: 0;
   width: 20px;
   height: 20px;
   border-radius: 4px;
 }
-.cd-checklist .checklist-item .title-section h4 {
-  margin-left: 10px;
+.checklist-item .title-section h4 {
+  flex-basis: 60%;
 }
-.cd-checklist .checklist-item .iv-section {
+.checklist-item .title-section .league {
+  width: 38px;
+  height: 37px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.checklist-item .title-section .league.great {
+  background-image: url("../articles/article-assets/cd/league-great.png");
+}
+.checklist-item .title-section .league.ultra {
+  background-image: url("../articles/article-assets/cd/league-ultra.png");
+}
+.checklist-item .title-section .league.master {
+  background-image: url("../articles/article-assets/cd/league-master.png");
+}
+.checklist-item .title-section .league.special {
+  background-image: url("../articles/article-assets/cd/league-special.png");
+}
+.checklist-item .iv-section {
   margin: 30px 0 15px 0;
 }
-.cd-checklist .checklist-item .iv-section .iv-label {
+.checklist-item .iv-section .iv-label {
   margin-bottom: 5px;
   display: flex;
 }
-.cd-checklist .checklist-item .iv-section .iv-label .level {
+.checklist-item .iv-section .iv-label .level {
   flex-basis: 33%;
   margin-right: 15px;
 }
-.cd-checklist .checklist-item .iv-section .iv-bar {
+.checklist-item .iv-section .iv-bar {
+  position: relative;
   height: 12px;
-  border-radius: 8px;
-  background: #000;
-  width: 100%;
   margin-bottom: 8px;
 }
-.cd-checklist .checklist-item .base-form-section {
+.checklist-item .iv-section .iv-bar .divider {
+  position: absolute;
+  height: 100%;
+  width: 2px;
+}
+.checklist-item .iv-section .iv-bar .divider:nth-of-type(1) {
+  left: 33%;
+}
+.checklist-item .iv-section .iv-bar .divider:nth-of-type(2) {
+  left: 66%;
+}
+.checklist-item .iv-section .iv-bar .bar {
+  background: #000;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+.checklist-item .base-form-section {
   display: flex;
   align-items: center;
 }
-.cd-checklist .checklist-item .base-form-section img {
+.checklist-item .base-form-section img {
   border: none;
   margin-right: 5px;
 }
+.checklist-item .priority-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.35);
+  margin-top: 5px;
+}
+.checklist-item .priority-section h4 {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.checklist-item .priority-section a.info {
+  display: block;
+  text-decoration: none;
+  background: #000;
+  color: #fff;
+  border-radius: 20px;
+  border: 1px solid #000;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
 
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 /* Specific Pokemon styling */
 .section.hoppip {
   background: #afe8d5;

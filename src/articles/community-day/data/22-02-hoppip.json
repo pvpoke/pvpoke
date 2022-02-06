@@ -1,0 +1,32 @@
+{
+	"species": ["jumpluff", "skiploom", "hoppip"],
+	"checklist": [
+		{
+			"title": "High Rank Jumpluff",
+			"speciesId": "jumpluff",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [43, 0, 14, 14],
+			"shadowType": "normal",
+			"priority": 1
+		},
+		{
+			"title": "Shadow Jumpluff",
+			"speciesId": "jumpluff",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [43, 0, 14, 14],
+			"shadowType": "shadow",
+			"priority": 2
+		},
+		{
+			"title": "Little Cup Jumpluff",
+			"speciesId": "jumpluff",
+			"league": "special",
+			"cp": 500,
+			"ivs": [12, 1, 15, 14],
+			"shadowType": "shadow",
+			"priority": 3
+		}
+	]
+}
