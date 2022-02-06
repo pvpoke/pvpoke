@@ -4,6 +4,7 @@
 		{
 			"title": "High Rank Jumpluff",
 			"speciesId": "jumpluff",
+			"baseSpeciesId": "hoppip",
 			"league": "great",
 			"cp": 1500,
 			"ivs": [43, 0, 14, 14],
@@ -13,6 +14,7 @@
 		{
 			"title": "Shadow Jumpluff",
 			"speciesId": "jumpluff",
+			"baseSpeciesId": "hoppip",
 			"league": "great",
 			"cp": 1500,
 			"ivs": [43, 0, 14, 14],
@@ -22,6 +24,7 @@
 		{
 			"title": "Little Cup Jumpluff",
 			"speciesId": "jumpluff",
+			"baseSpeciesId": "hoppip",
 			"league": "special",
 			"cp": 500,
 			"ivs": [12, 1, 15, 14],

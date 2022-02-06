@@ -1,8 +1,8 @@
-<div class="checklist-item template" priority="1">
+<div class="checklist-item template">
 	<div class="title-section">
 		<div class="check"><span></span></div>
 		<h4>High Rank Jumpluff</h4>
-		<div class="league great"></div>
+		<div class="league"></div>
 	</div>
 	<div class="iv-section">
 		<div class="iv-label">
