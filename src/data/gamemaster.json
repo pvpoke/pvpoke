@@ -703,7 +703,8 @@
             "filterType": "tag",
             "values": ["mega"]
         }],
-        "partySize": 3
+        "partySize": 3,
+		"presetOnly": true
     }, {
         "name": "sinnoh",
         "title": "Sinnoh Cup",
@@ -8512,6 +8513,7 @@
             "cp1500": [19.5, 5, 12, 13],
             "cp2500": [35.5, 4, 15, 8]
         },
+		"searchPriority": 3,
         "level25CP": 1760,
         "tags": ["shadoweligible"],
         "eliteMoves": ["DRAGON_PULSE"],
@@ -10530,6 +10532,7 @@
             "cp1500": [26.5, 4, 13, 9],
             "cp2500": [50, 15, 15, 15]
         },
+		"searchPriority": 4,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
@@ -26398,6 +26401,7 @@
     }, {
         "moveId": "ACROBATICS",
         "name": "Acrobatics (Speculative)",
+		"abbreviation": "Acr",
         "type": "flying",
         "power": 110,
         "energy": 60,
