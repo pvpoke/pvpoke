@@ -8842,7 +8842,8 @@
         },
         "types": ["grass", "flying"],
         "fastMoves": ["BULLET_SEED", "INFESTATION"],
-        "chargedMoves": ["DAZZLING_GLEAM", "ENERGY_BALL", "AERIAL_ACE", "SOLAR_BEAM"],
+        "chargedMoves": ["DAZZLING_GLEAM", "ENERGY_BALL", "AERIAL_ACE", "SOLAR_BEAM", "ACROBATICS"],
+		"eliteMoves": ["ACROBATICS"],
         "defaultIVs": {
             "cp500": [11.5, 5, 15, 14],
             "cp1500": [41, 4, 10, 15],
@@ -8866,7 +8867,8 @@
         },
         "types": ["grass", "flying"],
         "fastMoves": ["BULLET_SEED", "INFESTATION"],
-        "chargedMoves": ["DAZZLING_GLEAM", "ENERGY_BALL", "AERIAL_ACE", "SOLAR_BEAM"],
+		"chargedMoves": ["DAZZLING_GLEAM", "ENERGY_BALL", "AERIAL_ACE", "SOLAR_BEAM", "ACROBATICS"],
+		"eliteMoves": ["ACROBATICS"],
         "defaultIVs": {
             "cp500": [11.5, 5, 15, 14],
             "cp1500": [41, 4, 10, 15],
@@ -26400,7 +26402,7 @@
         "archetype": "Debuff"
     }, {
         "moveId": "ACROBATICS",
-        "name": "Acrobatics (Speculative)",
+        "name": "Acrobatics",
 		"abbreviation": "Acr",
         "type": "flying",
         "power": 110,

@@ -29,6 +29,14 @@
 		"chargedMoves": ["DRAGON_CLAW","EARTH_POWER"]
 	},
 	{
+	    "speciesId": "jumpluff",
+	    "chargedMoves": ["ACROBATICS", "ENERGY_BALL"]
+	},
+	{
+	    "speciesId": "jumpluff_shadow",
+	    "chargedMoves": ["ACROBATICS", "ENERGY_BALL"]
+	},
+	{
 		"speciesId": "golem",
 		"fastMove": "MUD_SLAP",
 		"chargedMoves": ["ROCK_BLAST","EARTHQUAKE"]
