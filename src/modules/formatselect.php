@@ -1,7 +1,6 @@
 <select class="format-select">
 	<option value="1500" cup="all" meta-group="great">Great League</option>
 	<option value="2500" cup="all" meta-group="ultra">Ultra League</option>
-	<option value="2500" cup="premierclassic" meta-group="ultrapremierclassic">Ultra League (Premier Classic)</option>
 	<option value="10000" cup="all" meta-group="master">Master League</option>
 	<option value="10000" cup="classic" meta-group="master">Master League (Classic)</option>
 	<option value="10000" cup="premierclassic" meta-group="master">Master League (Premier Classic)</option>

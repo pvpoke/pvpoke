@@ -1,6 +1,6 @@
 [
 	{
-		"speciesId":"lickitung_xl",
+		"speciesId":"lickitung",
 		"fastMove":"LICK",
 		"chargedMoves":["BODY_SLAM","POWER_WHIP"]
 	},
@@ -15,9 +15,14 @@
 		"chargedMoves":["SURF","HYPER_BEAM"]
 	},
 	{
-		"speciesId":"medicham_xl",
+		"speciesId":"medicham",
 		"fastMove":"COUNTER",
 		"chargedMoves":["POWER_UP_PUNCH","PSYCHIC"]
+	},
+	{
+		"speciesId":"talonflame",
+		"fastMove":"INCINERATE",
+		"chargedMoves":["FLAME_CHARGE","BRAVE_BIRD"]
 	},
 	{
 		"speciesId":"charizard",
