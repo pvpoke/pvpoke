@@ -79,6 +79,14 @@ var InterfaceMaster = (function () {
 						$el.addClass("caught");
 					}
 
+					// Show notes tooltip if notes exist
+
+					if((item.notes)&&(item.notes != "")){
+						$el.find("a.info").show();
+					} else{
+						$el.find("a.info").hide();
+					}
+
 
 					$(".cd-checklist").append($el);
 				}
@@ -107,6 +115,19 @@ var InterfaceMaster = (function () {
 
 				return pokemon.cp;
 			}
+
+			// Display notes in popup
+
+			$("body").on("click", ".checklist-item a.info", function(e){
+				e.preventDefault();
+
+				var $el = $(this).closest(".checklist-item");
+				var itemIndex = $(".cd-checklist .checklist-item").index($el);
+				var $desc = $("<div>"+checklist[itemIndex].notes+"</div>");
+
+
+				modalWindow(checklist[itemIndex].title, $desc);
+			});
 
 			// Turn checkboxes on and off
 

@@ -172,6 +172,9 @@
 .checklist-item .title-section .check {
   border: 2px solid #000;
 }
+.checklist-item .title-section .check:hover {
+  background: rgba(0, 0, 0, 0.1) !important;
+}
 .checklist-item .title-section .checkmark {
   font-size: 30px;
   line-height: 10px;

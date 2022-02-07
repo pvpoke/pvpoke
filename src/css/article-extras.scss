@@ -210,6 +210,10 @@ $color-check:#000;
 
 		.check{
 			border: 2px solid #000;
+
+			&:hover{
+				background:rgba(0,0,0,0.1) !important;
+			}
 		}
 
 		.checkmark{
