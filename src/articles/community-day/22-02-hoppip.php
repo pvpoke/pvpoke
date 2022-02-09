@@ -12,7 +12,7 @@ require_once '../../header.php';
 <div class="section article white hoppip">
 	<h1>Hoppip Community Day Guide for PvP</h1>
 	<div class="date">Last updated February 5th, 2022</div>
-	<img src="<?php echo $WEB_ROOT;?>articles/article-assets/developing-trainer-battle-ai/banner.jpg" />
+	<img src="<?php echo $WEB_ROOT;?>articles/article-assets/community-day/22-02-hoppip/banner.jpg" />
 	<p>Jumpluff's time to shine may be a skip and a hop away! Hoppip Community Day is Saturday, February 12th, and Jumpluff will receive a Flying-type Charged Move, Acrobatics. You can find more info about Hoppip Community Day at the official <a href="https://pokemongolive.com/en/post/communityday-feb22-hoppip/" target="_blank">Pokemon GO blog</a>. Below are the leagues and IV spreads to look out for, and answers to frequently asked questions.</p>
 
 	<a name="overview"></a>

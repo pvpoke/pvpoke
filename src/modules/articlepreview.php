@@ -18,10 +18,16 @@ function makeArticleItem(a){
 	// Clone the article preview template and fill in content
 	var $article = $(".article-item.template").clone().removeClass("hide template");
 
+	var thumbPath = webRoot+"articles/article-assets/"+a.id+"/thumb.jpg";
+
+	if(a.tags.indexOf("Community Day") > -1){
+		thumbPath = webRoot+"articles/article-assets/community-day/"+a.id+"/thumb.jpg";
+	}
+
 	$article.find("h4 a").html(a.title);
 	$article.find(".date").html(a.date);
 	$article.find("p").html(a.description);
-	$article.find("img").attr("src", webRoot+"articles/article-assets/"+a.id+"/thumb.jpg");
+	$article.find("img").attr("src", thumbPath);
 	$article.find("a").attr("href", webRoot+"articles/"+a.path+"/"+a.id+"/");
 
 	for(var i = 0; i < a.tags.length; i++){

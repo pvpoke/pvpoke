@@ -71,7 +71,7 @@ var InterfaceMaster = (function () {
 					var baseCP = self.calculateBaseCP(item.baseSpeciesId, item.ivs, 30, item.cp);
 
 					$el.find(".base-form-section .cp-label").html("CP " + baseCP);
-					$el.find(".base-form-section img").attr("src", "../../article-assets/cd/base/"+item.baseSpeciesId+".png");
+					$el.find(".base-form-section img").attr("src", "../../article-assets/community-day/base/"+item.baseSpeciesId+".png");
 
 					// Show if caught already
 					if(item.caught){
