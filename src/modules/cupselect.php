@@ -6,7 +6,6 @@
 	<option value="guardian" meta-group1500="guardian">Silph Guardian Cup</option>
 	<option value="fusionfactions" meta-group1500="fusion">Silph Factions (Fusion)</option>
 	<option value="factions" meta-group1500="factions">Silph Factions (Cave)</option>
-	<option value="comet" meta-group1500="comet">Gymbreakers Comet Cup</option>
 
 	<?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 		<option value="community" cup="cliffhanger">GO Stadium Cliffhanger</option>

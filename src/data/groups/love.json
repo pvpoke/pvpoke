@@ -35,9 +35,24 @@
 		"chargedMoves":["DRAGON_CLAW","BLAST_BURN"]
 	},
 	{
+		"speciesId":"slowpoke",
+		"fastMove":"CONFUSION",
+		"chargedMoves":["PSYSHOCK","WATER_PULSE"]
+	},
+	{
 		"speciesId":"slowbro_galarian",
 		"fastMove":"POISON_JAB",
 		"chargedMoves":["SLUDGE_BOMB","FOCUS_BLAST"]
+	},
+	{
+		"speciesId":"seaking",
+		"fastMove":"POISON_JAB",
+		"chargedMoves":["ICY_WIND","DRILL_RUN"]
+	},
+	{
+		"speciesId":"druddigon",
+		"fastMove":"DRAGON_TAIL",
+		"chargedMoves":["DRAGON_CLAW","NIGHT_SLASH"]
 	},
 	{
 		"speciesId":"clefable",
@@ -78,6 +93,11 @@
 		"speciesId":"wormadam_trash",
 		"fastMove":"CONFUSION",
 		"chargedMoves":["IRON_HEAD","BUG_BUZZ"]
+	},
+	{
+		"speciesId":"ariados",
+		"fastMove":"POISON_STING",
+		"chargedMoves":["CROSS_POISON","LUNGE"]
 	},
 	{
 		"speciesId":"slowbro",

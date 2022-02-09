@@ -33,7 +33,6 @@
 				<option value="guardian" type="great" class="multi-battle">Silph Guardian Cup Meta</option>
 				<option value="factions" type="great" class="multi-battle">Silph Factions Meta (Cave)</option>
 				<option value="fusion" type="great" class="multi-battle">Silph Factions Meta (Fusion)</option>
-				<option value="comet" type="great" class="multi-battle">Gymbreakers Comet Cup Meta</option>
 			</select>
 			<div class="flex quick-fill-buttons">
 				<button class="save-btn save-custom">Save</button>
