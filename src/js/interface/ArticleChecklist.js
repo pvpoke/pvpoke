@@ -121,9 +121,19 @@ var InterfaceMaster = (function () {
 			$("body").on("click", ".checklist-item a.info", function(e){
 				e.preventDefault();
 
+
+
 				var $el = $(this).closest(".checklist-item");
 				var itemIndex = $(".cd-checklist .checklist-item").index($el);
-				var $desc = $("<div>"+checklist[itemIndex].notes+"</div>");
+				var notes = checklist[itemIndex].notes;
+
+				// Apply bold formatting to Attack, Defense, and HP values in the description.
+
+				notes = notes.replace(/(^|\s)([0-9.]*\sAttack)(|$)/ig, '$1<b>$2</b>$3');
+				notes = notes.replace(/(^|\s)([0-9.]*\sDefense)(|$)/ig, '$1<b>$2</b>$3');
+				notes = notes.replace(/(^|\s)([0-9.]*\sHP)(|$)/ig, '$1<b>$2</b>$3');
+
+				var $desc = $("<div>"+notes+"</div>");
 
 
 				modalWindow(checklist[itemIndex].title, $desc);
