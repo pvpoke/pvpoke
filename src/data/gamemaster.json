@@ -27686,9 +27686,9 @@
         "moveId": "MAGICAL_LEAF",
         "name": "Magical Leaf",
         "type": "grass",
-        "power": 9,
+        "power": 10,
         "energy": 0,
-        "energyGain": 9,
+        "energyGain": 10,
         "cooldown": 1500,
         "archetype": "General"
     }, {
@@ -28228,8 +28228,8 @@
         "moveId": "SACRED_FIRE",
         "name": "Sacred Fire",
         "type": "fire",
-        "power": 120,
-        "energy": 70,
+        "power": 130,
+        "energy": 65,
         "energyGain": 0,
         "cooldown": 500,
         "buffs": [-1, 0],
