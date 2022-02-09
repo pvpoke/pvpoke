@@ -11,6 +11,11 @@ $color-check:#000;
 	font-size:24px;
 }
 
+input.article-search{
+	max-width:200px;
+	margin-bottom: 15px;
+}
+
 /* Top community day event feature list */
 
 
@@ -125,6 +130,7 @@ $color-check:#000;
 
 	.faq-answer{
 		padding:10px;
+		color:#000;
 
 		p:first-of-type{
 			margin-top:0;
@@ -153,6 +159,7 @@ $color-check:#000;
 	flex-basis: 100%;
 	margin-bottom:10px;
 	font-size:14px;
+	color:#000;
 
 	&.template{
 		display:none;
@@ -249,10 +256,10 @@ $color-check:#000;
 			background-size:100%;
 			background-repeat: no-repeat;
 
-			&.great{ background-image:url("../articles/article-assets/cd/league-great.png"); }
-			&.ultra{ background-image:url("../articles/article-assets/cd/league-ultra.png"); }
-			&.master{ background-image:url("../articles/article-assets/cd/league-master.png"); }
-			&.special{ background-image:url("../articles/article-assets/cd/league-special.png"); }
+			&.great{ background-image:url("../articles/article-assets/community-day/league-great.png"); }
+			&.ultra{ background-image:url("../articles/article-assets/community-day/league-ultra.png"); }
+			&.master{ background-image:url("../articles/article-assets/community-day/league-master.png"); }
+			&.special{ background-image:url("../articles/article-assets/community-day/league-special.png"); }
 		}
 	}
 
@@ -339,6 +346,25 @@ $color-check:#000;
 	}
 }
 
+.further-resource-links{
+	flex-wrap: wrap;
+
+	a{
+		display: flex;
+		align-items: center;
+		padding:10px;
+		margin-right:10px;
+		text-decoration: none;
+		color:#fff;
+		border-radius: 8px;
+		background:#555;
+
+		&.gostadium{
+			background:#0b1326;
+		}
+	}
+}
+
 
 @keyframes animatedgradient {
 	0% {
@@ -366,12 +392,12 @@ $color-check:#000;
 	border:4px solid #91ccc3;
 
 	.article-header, .mega-section{
-		background:#834569 !important;
+		background:#9b547d !important;
 	}
 
 	.feature{
 		h4{
-			color:#834569;
+			color:#9b547d;
 			border-bottom:1px solid #834569;
 		}
 	}

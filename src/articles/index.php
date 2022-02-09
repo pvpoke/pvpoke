@@ -11,6 +11,8 @@ require_once '../header.php';
 <h1>Articles</h1>
 <div class="section home white">
 
+	<input type="text" class="article-search" placeholder="Search title or tag" />
+
 	<div class="articles"></div>
 	<?php require_once '../modules/articlepreview.php'; ?>
 

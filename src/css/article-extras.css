@@ -8,6 +8,11 @@
   font-size: 24px;
 }
 
+input.article-search {
+  max-width: 200px;
+  margin-bottom: 15px;
+}
+
 /* Top community day event feature list */
 .cd-features {
   display: flex;
@@ -102,6 +107,7 @@
 }
 .faq-item .faq-answer {
   padding: 10px;
+  color: #000;
 }
 .faq-item .faq-answer p:first-of-type {
   margin-top: 0;
@@ -125,6 +131,7 @@
   flex-basis: 100%;
   margin-bottom: 10px;
   font-size: 14px;
+  color: #000;
 }
 .checklist-item.template {
   display: none;
@@ -209,16 +216,16 @@
   background-repeat: no-repeat;
 }
 .checklist-item .title-section .league.great {
-  background-image: url("../articles/article-assets/cd/league-great.png");
+  background-image: url("../articles/article-assets/community-day/league-great.png");
 }
 .checklist-item .title-section .league.ultra {
-  background-image: url("../articles/article-assets/cd/league-ultra.png");
+  background-image: url("../articles/article-assets/community-day/league-ultra.png");
 }
 .checklist-item .title-section .league.master {
-  background-image: url("../articles/article-assets/cd/league-master.png");
+  background-image: url("../articles/article-assets/community-day/league-master.png");
 }
 .checklist-item .title-section .league.special {
-  background-image: url("../articles/article-assets/cd/league-special.png");
+  background-image: url("../articles/article-assets/community-day/league-special.png");
 }
 .checklist-item .iv-section {
   margin: 30px 0 15px 0;
@@ -290,6 +297,23 @@
   font-weight: bold;
 }
 
+.further-resource-links {
+  flex-wrap: wrap;
+}
+.further-resource-links a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-right: 10px;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 8px;
+  background: #555;
+}
+.further-resource-links a.gostadium {
+  background: #0b1326;
+}
+
 @keyframes animatedgradient {
   0% {
     background-position: 0% 50%;
@@ -310,10 +334,10 @@
   border: 4px solid #91ccc3;
 }
 .section.hoppip .article-header, .section.hoppip .mega-section {
-  background: #834569 !important;
+  background: #9b547d !important;
 }
 .section.hoppip .feature h4 {
-  color: #834569;
+  color: #9b547d;
   border-bottom: 1px solid #834569;
 }
 .section.hoppip .faq-item {
