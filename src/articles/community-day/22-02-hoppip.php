@@ -99,7 +99,7 @@ require_once '../../header.php';
 		<h3 class="article-header"><strong>Is Return Jumpluff worth a look?</strong></h3>
 		<div class="faq-answer">
 			<p><b>No, Acrobatics is now a better Charged Move option than Return.</b> Almost all Pokemon that resist Acrobatics and Energy Ball also resist Return.</p>
-			<p>Acrobatics will replace Return if you evolve a purified Jumpluff during event hours. To obtain a Jumpluff with both Acrobatics and Return, you must use an Elite TM to obtain Return after the event.</p>
+			<p>Acrobatics will replace Return if you evolve a purified Jumpluff during event hours. To obtain a Jumpluff with both Acrobatics and Return, you must use an Elite TM to obtain Acrobatics after the event.</p>
 		</div>
 	</div>
 
