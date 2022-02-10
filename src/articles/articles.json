@@ -13,7 +13,15 @@
 		"description": "Which exclusive moves and Pokemon are the best for your PvP team? Find the best use for your Elite Fast and Charged TM's.",
 		"path": "strategy",
 		"tags": ["Strategy"],
-		"date": "February 2, 2022"
+		"date": "February 10, 2022"
+	},
+	{
+		"id": "guide-to-fast-move-registration",
+		"title": "Guide to Fast Move Mechanics",
+		"description": "How exactly do Fast Moves work and register? This guide will walk through some of PvP's mysterious nuts and bolts.",
+		"path": "strategy",
+		"tags": ["Strategy", "Mechanics"],
+		"date": "February 10, 2022"
 	},
 	{
 		"id": "ultimate-guide-to-team-building",
@@ -30,13 +38,5 @@
 		"path": "development",
 		"tags": ["Development"],
 		"date": "July 30, 2019"
-	},
-	{
-		"id": "guide-to-fast-move-registration",
-		"title": "Guide to Fast Move Mechanics",
-		"description": "How does the AI on the site's training battles work? Read all about how I approached development and strategies the AI uses to mimic player behavior.",
-		"path": "strategy",
-		"tags": ["Strategy", "Mechanics"],
-		"date": "June 24, 2019"
 	}
 ]

@@ -2884,7 +2884,9 @@ a.download-csv {
   margin-bottom: 10px;
 }
 .article .article-section h3 {
-  font-weight: normal;
+  font-size: 18px;
+  border-bottom: 1px solid;
+  padding-bottom: 4px;
 }
 .article h2 {
   font-size: 22px;
