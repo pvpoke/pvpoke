@@ -26,6 +26,13 @@ body {
   clear: both;
 }
 
+.flex {
+  display: flex;
+}
+.flex.cols-3 > div {
+  flex-basis: 33%;
+}
+
 .hide {
   display: none;
 }
@@ -230,13 +237,6 @@ header {
 }
 .icon-unite span {
   display: none;
-}
-
-.flex {
-  display: flex;
-}
-.flex.cols-3 > div {
-  flex-basis: 33%;
 }
 
 /* POKEMON SELECT */
@@ -2877,13 +2877,16 @@ a.download-csv {
   margin-top: 1em;
 }
 .article p, .article ul {
-  line-height: 26px;
+  font-size: 14px;
+  line-height: 20px;
 }
 .article ul li {
   margin-bottom: 10px;
 }
 .article .article-section h3 {
-  font-weight: normal;
+  font-size: 18px;
+  border-bottom: 1px solid;
+  padding-bottom: 4px;
 }
 .article h2 {
   font-size: 22px;
@@ -2895,6 +2898,7 @@ a.download-csv {
   padding: 10px;
   border-radius: 8px;
   color: #eee;
+  line-height: 24px;
 }
 .article table {
   border: none;
@@ -3078,6 +3082,19 @@ a.download-csv {
 }
 .article-item h4 {
   margin-top: 0;
+}
+.article-item .tags {
+  display: flex;
+}
+.article-item .tags a {
+  display: block;
+  text-decoration: none;
+  background: #003748;
+  color: #eee;
+  border-radius: 8px;
+  font-size: 12px;
+  padding: 4px 8px;
+  margin-right: 5px;
 }
 
 .article .date, .article-item .date {

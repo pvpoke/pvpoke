@@ -120,6 +120,14 @@ body{
 	clear:both;
 }
 
+.flex{
+	display:flex;
+
+	&.cols-3 > div{
+		flex-basis:33%;
+	}
+}
+
 .hide{
 	display:none;
 }
@@ -346,14 +354,6 @@ header{
 	min-height:18px;
 
 	span{ display:none; }
-}
-
-.flex{
-	display:flex;
-
-	&.cols-3 > div{
-		flex-basis:33%;
-	}
 }
 
 /* POKEMON SELECT */
@@ -3304,7 +3304,8 @@ a.download-csv{
 	}
 
 	p, ul{
-		line-height:26px;
+		font-size:14px;
+		line-height:20px;
 	}
 
 	ul li{
@@ -3314,7 +3315,9 @@ a.download-csv{
 	.article-section{
 
 		h3{
-			font-weight:normal;
+			font-size: 18px;
+		    border-bottom: 1px solid;
+		    padding-bottom: 4px;
 		}
 	}
 
@@ -3329,6 +3332,7 @@ a.download-csv{
 		padding: 10px;
 		border-radius: 8px;
 		color:$color-off-white;
+		line-height: 24px;
 	}
 
 	table{
@@ -3519,6 +3523,21 @@ a.download-csv{
 
 	h4{
 		margin-top:0;
+	}
+
+	.tags{
+		display: flex;
+
+		a{
+			display: block;
+			text-decoration: none;
+			background:$color-links;
+			color:$color-off-white;
+			border-radius: 8px;
+			font-size:12px;
+			padding:4px 8px;
+			margin-right:5px;
+		}
 	}
 }
 

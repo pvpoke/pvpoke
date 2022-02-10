@@ -113,6 +113,10 @@ if(! isset($OG_IMAGE)){
 	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=20">
 <?php endif; ?>
 
+<?php if(strpos($_SERVER['REQUEST_URI'], 'articles') !== false): ?>
+	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/article-extras.css?v=1">
+<?php endif; ?>
+
 <?php if((isset($_SETTINGS->theme))&&($_SETTINGS->theme != "default")): ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/themes/<?php echo $_SETTINGS->theme; ?>.css?v=19">
 <?php endif; ?>

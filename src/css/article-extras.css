@@ -1,0 +1,385 @@
+/* General */
+.article h3.article-header {
+  font-size: 16px;
+  padding: 5px 10px;
+}
+
+.article h1 {
+  font-size: 24px;
+}
+
+input.article-search {
+  max-width: 200px;
+  margin-bottom: 15px;
+}
+
+/* Top community day event feature list */
+.cd-features {
+  display: flex;
+  flex-wrap: wrap;
+}
+.cd-features .feature {
+  margin: 0 5px 5px 0;
+  padding: 5px;
+  flex-basis: 100%;
+}
+.cd-features .feature h4 {
+  color: #777;
+  font-size: 11px;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+.cd-features .feature .value {
+  font-weight: bold;
+}
+.cd-features .feature .detail {
+  font-style: italic;
+  font-size: 14px;
+}
+
+/* Mega section details and sprites */
+.mega-section {
+  border-radius: 8px;
+  margin: 1em 0;
+  padding: 10px 10px;
+  color: #fff;
+}
+.mega-section .mega-title {
+  display: flex;
+  font-size: 18px;
+  font-weight: bold;
+  align-items: center;
+}
+.mega-section .mega-title .mega-icon {
+  width: 75px;
+  height: 75px;
+  background: url("../articles/article-assets/community-day/mega-icon.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin-right: 10px;
+}
+.mega-section .mega-title h4 {
+  flex-basis: 75%;
+}
+.mega-section .mega-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.mega-section .mega-list .mega-item {
+  margin: 0 15px 5px 0;
+}
+.mega-section .mega-list .mega-item .mega-image {
+  width: 75px;
+  height: 75px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin: 0 auto;
+}
+
+[mega=venusaur] .mega-image {
+  background-image: url("../articles/article-assets/community-day/megas/venusaur.png");
+}
+
+[mega=charizard-y] .mega-image {
+  background-image: url("../articles/article-assets/community-day/megas/charizard-y.png");
+}
+
+[mega=pidgeot] .mega-image {
+  background-image: url("../articles/article-assets/community-day/megas/pidgeot.png");
+}
+
+[mega=aerodactyl] .mega-image {
+  background-image: url("../articles/article-assets/community-day/megas/aerodactyl.png");
+}
+
+[mega=abomasnow] .mega-image {
+  background-image: url("../articles/article-assets/community-day/megas/abomasnow.png");
+}
+
+/* FAQ styling */
+.faq-item {
+  border-radius: 8px;
+}
+.faq-item h3.article-header {
+  margin-bottom: 0;
+}
+.faq-item .faq-answer {
+  padding: 10px;
+  color: #000;
+}
+.faq-item .faq-answer p:first-of-type {
+  margin-top: 0;
+}
+.faq-item .faq-answer p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* CD Checklist styling */
+.cd-checklist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.checklist-item {
+  border: 4px solid black;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 5px;
+  flex-basis: 100%;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #000;
+}
+.checklist-item.template {
+  display: none;
+}
+.checklist-item.caught {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+}
+.checklist-item.caught > *, .checklist-item.caught .league {
+  opacity: 0.5;
+}
+.checklist-item.caught > .check, .checklist-item.caught .checkmark, .checklist-item.caught .title-section, .checklist-item.caught .title-section h4 {
+  opacity: 1;
+}
+.checklist-item[priority="1"] {
+  background: #ebd19a;
+}
+.checklist-item[priority="1"] .iv-bar .divider {
+  background: #ebd19a;
+}
+.checklist-item[priority="2"] {
+  background: #add0ed;
+}
+.checklist-item[priority="2"] .iv-bar .divider {
+  background: #add0ed;
+}
+.checklist-item[priority="3"] {
+  background: #c3a49a;
+}
+.checklist-item[priority="3"] .iv-bar .divider {
+  background: #c3a49a;
+}
+.checklist-item .title-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.checklist-item .title-section .check, .checklist-item .title-section .check span, .checklist-item .title-section .check.on span {
+  margin: 0 5px 0 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: none;
+  background: none !important;
+}
+.checklist-item .title-section .check {
+  border: 2px solid #000;
+}
+.checklist-item .title-section .check:hover {
+  background: rgba(0, 0, 0, 0.1) !important;
+}
+.checklist-item .title-section .checkmark {
+  font-size: 30px;
+  line-height: 10px;
+  font-weight: bold;
+  color: #000;
+  display: none;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+     supported by Chrome, Edge, Opera and Firefox */
+}
+.checklist-item .title-section .check.on .checkmark {
+  display: block;
+}
+.checklist-item .title-section h4 {
+  cursor: pointer;
+  flex-basis: 60%;
+}
+.checklist-item .title-section .league {
+  width: 24px;
+  height: 24px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+.checklist-item .title-section .league.great {
+  background-image: url("../articles/article-assets/community-day/league-great.png");
+}
+.checklist-item .title-section .league.ultra {
+  background-image: url("../articles/article-assets/community-day/league-ultra.png");
+}
+.checklist-item .title-section .league.master {
+  background-image: url("../articles/article-assets/community-day/league-master.png");
+}
+.checklist-item .title-section .league.special {
+  background-image: url("../articles/article-assets/community-day/league-special.png");
+}
+.checklist-item .iv-section {
+  margin: 30px 0 15px 0;
+}
+.checklist-item .iv-section .iv-label {
+  margin-bottom: 5px;
+  display: flex;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+  padding-bottom: 2px;
+}
+.checklist-item .iv-section .iv-label .level {
+  min-width: 75px;
+  margin-right: 15px;
+}
+.checklist-item .iv-section .iv-bar {
+  position: relative;
+  height: 12px;
+  margin-bottom: 8px;
+}
+.checklist-item .iv-section .iv-bar .divider {
+  position: absolute;
+  height: 100%;
+  width: 2px;
+}
+.checklist-item .iv-section .iv-bar .divider:nth-of-type(1) {
+  left: 33%;
+}
+.checklist-item .iv-section .iv-bar .divider:nth-of-type(2) {
+  left: 66%;
+}
+.checklist-item .iv-section .iv-bar .bar {
+  background: #000;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+}
+.checklist-item .base-form-section {
+  display: flex;
+  align-items: center;
+}
+.checklist-item .base-form-section img {
+  border: none;
+  margin-right: 5px;
+}
+.checklist-item .priority-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.35);
+  margin-top: 5px;
+}
+.checklist-item .priority-section h4 {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+.checklist-item .priority-section a.info {
+  display: block;
+  text-decoration: none;
+  background: #000;
+  color: #fff;
+  border-radius: 20px;
+  border: 1px solid #000;
+  width: 16px;
+  height: 16px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.further-resource-links {
+  flex-wrap: wrap;
+}
+.further-resource-links a {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-right: 10px;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 8px;
+  background: #555;
+}
+.further-resource-links a.gostadium {
+  background: #0b1326;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/* Specific Pokemon styling */
+.section.hoppip {
+  background: #afe8d5;
+  background: -moz-linear-gradient(0deg, #afe8d5 20%, #ddf5ed 55%);
+  background: -webkit-linear-gradient(0deg, #afe8d5 20%, #ddf5ed 55%);
+  background: linear-gradient(0deg, #afe8d5 20%, #ddf5ed 55%);
+  border: 4px solid #91ccc3;
+}
+.section.hoppip .article-header, .section.hoppip .mega-section {
+  background: #9b547d !important;
+}
+.section.hoppip .feature h4 {
+  color: #9b547d;
+  border-bottom: 1px solid #834569;
+}
+.section.hoppip .faq-item {
+  background: #e4fff6;
+}
+.section.hoppip a.infographic {
+  background: #9b547d;
+}
+
+/* Responsive styling */
+@media only screen and (min-width: 361px) {
+  .checklist-item {
+    flex-basis: 48.5%;
+  }
+}
+@media only screen and (min-width: 421px) {
+  .cd-features .feature {
+    flex-basis: auto;
+  }
+
+  .article h3.article-header {
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  .checklist-item {
+    padding: 10px;
+    font-size: 16px;
+  }
+  .checklist-item .title-section .league {
+    width: 38px;
+    height: 37px;
+  }
+}
+@media only screen and (min-width: 728px) {
+  .article h1 {
+    font-size: 32px;
+  }
+
+  .checklist-item {
+    flex-basis: 31.5%;
+  }
+}
+
+/*# sourceMappingURL=article-extras.css.map */

@@ -1,0 +1,47 @@
+{
+	"species": ["jumpluff", "skiploom", "hoppip"],
+	"checklist": [
+		{
+			"title": "High Rank Jumpluff",
+			"speciesId": "jumpluff",
+			"baseSpeciesId": "hoppip",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [43, 0, 14, 14],
+			"shadowType": "normal",
+			"priority": 1,
+			"notes": "If you haven't reached Level 40 yet, 4/15/14 is the highest rank Jumpluff you can catch that doesn't require Candy XL."
+		},
+		{
+			"title": "Shadow Jumpluff",
+			"speciesId": "jumpluff",
+			"baseSpeciesId": "hoppip",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [43, 0, 14, 14],
+			"shadowType": "shadow",
+			"priority": 2
+		},
+		{
+			"title": "High Attack Jumpluff",
+			"speciesId": "jumpluff",
+			"baseSpeciesId": "hoppip",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [39, 10, 13, 4],
+			"shadowType": "normal",
+			"priority": 3,
+			"notes": "At 100.23 Attack, Jumpluff guarantees extra Bullet Seed damage against Galarian Stunfisk, although this may not be enough to flip the matchup. High Attack also makes Acrobatics more likely to KO Venusaur, who can survive and defeat high rank Jumpluff."
+		},
+		{
+			"title": "Little Cup Jumpluff",
+			"speciesId": "jumpluff",
+			"baseSpeciesId": "hoppip",
+			"league": "special",
+			"cp": 500,
+			"ivs": [12, 1, 15, 14],
+			"shadowType": "shadow",
+			"priority": 3
+		}
+	]
+}
