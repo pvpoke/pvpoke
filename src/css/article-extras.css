@@ -343,6 +343,9 @@ input.article-search {
 .section.hoppip .faq-item {
   background: #e4fff6;
 }
+.section.hoppip a.infographic {
+  background: #9b547d;
+}
 
 /* Responsive styling */
 @media only screen and (min-width: 361px) {

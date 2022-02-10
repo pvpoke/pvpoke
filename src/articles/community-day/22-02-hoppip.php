@@ -5,6 +5,8 @@ $META_TITLE = 'Hoppip Community Day Guide for PvP';
 
 $META_DESCRIPTION = 'Learn about Hoppip\'s upcoming Community Day, how Acrobatics will be relevant for PvP, and which Jumpluff IV\'s to look out for.';
 
+$OG_IMAGE = 'https://pvpoke.com/articles/article-assets/community-day/22-02-hoppip/og.jpg';
+
 require_once '../../header.php';
 
 ?>
@@ -27,7 +29,7 @@ require_once '../../header.php';
 		<div class="feature">
 			<h4>Exclusive Charged Move</h4>
 			<div class="value">Acrobatics</div>
-			<div class="detail">110 power, 60 energy</div>
+			<div class="detail">110 power</div>
 		</div>
 		<div class="feature">
 			<h4>Event Bonus</h4>
@@ -74,7 +76,7 @@ require_once '../../header.php';
 		<h3 class="article-header"><strong>How good is Jumpluff with Acrobatics?</strong></h3>
 		<div class="faq-answer">
 			<p><b>Acrobatics is a minor upgrade for Jumpluff but it's unlikely to push Jumpluff above its current standing among Grass types.</b> Jumpluff is a solid Pokemon for Great League PvP that's usually overshadowed by stronger Grass options like Venusaur or Tropius. It will be strongest in themed cups where those Grass types are unavailable, such as Johto Cup.</p>
-			<p>Acrobatics replaces Aerial Ace and is Jumpluff's most efficient Charged Move. It gives Jumpluff more closing power, shield pressure, and Flying damage output. However, Acrobatics sacrifices speed and leaves Jumpluff with 55- and 60-energy Charged Moves. For this reason, Acrobatics isn't a strict upgrade, and Jumpluff may find itself missing Aerial Ace in scenarios where it can't reach Acrobatics.</p>
+			<p>Acrobatics takes the spot of Aerial Ace and is Jumpluff's most efficient Charged Move. It gives Jumpluff more closing power, shield pressure, and Flying damage output. However, Acrobatics sacrifices speed and leaves Jumpluff with high energy Charged Moves. For this reason, Acrobatics isn't a strict upgrade, and Jumpluff may find itself missing Aerial Ace in scenarios where it can't reach Acrobatics.</p>
 			<p>Jumpluff maxes at 1636 CP, so it isn't relevant for Ultra League or Master League. It's viable in potential Little Cup formats but not a priority.</p>
 		</div>
 	</div>
@@ -97,7 +99,7 @@ require_once '../../header.php';
 		<h3 class="article-header"><strong>Is Return Jumpluff worth a look?</strong></h3>
 		<div class="faq-answer">
 			<p><b>No, Acrobatics is now a better Charged Move option than Return.</b> Almost all Pokemon that resist Acrobatics and Energy Ball also resist Return.</p>
-			<p>Acrobatics will replace Return if you evolve a purified Jumpluff during event hours. To obtain a Jumpluff with both Acrobatics and Return, you must use an ELite TM to obtain Return after the event.</p>
+			<p>Acrobatics will replace Return if you evolve a purified Jumpluff during event hours. To obtain a Jumpluff with both Acrobatics and Return, you must use an Elite TM to obtain Return after the event.</p>
 		</div>
 	</div>
 
@@ -105,6 +107,7 @@ require_once '../../header.php';
 	<h3 class="article-header"><strong>Additional Resources</strong></h3>
 
 	<div class="flex further-resource-links">
+		<a href="<?php echo $WEB_ROOT;?>articles/article-assets/community-day/22-02-hoppip/hoppip-infographic.jpg" class="infographic" target="_blank">&darr; Infographic Version</a>
 		<a href="https://www.stadiumgaming.gg/rank-checker" class="gostadium" target="_blank">Stadium Gaming<br>Rank Checker</a>
 		<a href="https://pvpivs.com/" target="_blank">pvpivs.com</a>
 	</div>

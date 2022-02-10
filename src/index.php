@@ -52,14 +52,14 @@
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/ultimate-guide-to-team-building/">
-				<img src="<?php echo $WEB_ROOT; ?>assets/articles/team-building-thumb.jpg" />
+			<a href="<?php echo $WEB_ROOT; ?>articles/community-day/22-02-hoppip/">
+				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/community-day/22-02-hoppip/thumb.jpg" />
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/ultimate-guide-to-team-building/">Ultimate Team Building Guide by PolymersUp</a></h4>
-			<div class="date">August 11, 2020</div>
-			<p>Learn the fundamentals of building a good team and how to use the PvPoke Team Builder to its full potential.</p>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/community-day/22-02-hoppip/">Hoppip Community Day Guide for PvP</a></h4>
+			<div class="date">February 10, 2022</div>
+			<p>Learn about Hoppip's upcoming Community Day, how Acrobatics will be relevant for PvP, and which Jumpluff IV's to look out for.</p>
 		</div>
 
 	</div>
