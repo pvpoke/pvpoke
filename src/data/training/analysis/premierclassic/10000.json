@@ -1,441 +1,285 @@
 {
     "properties": {
-        "lastUpdated": "November 11, 2021",
-        "totalPerformers": 43906,
-        "totalTeams": 8690
+        "lastUpdated": "February 11, 2022",
+        "totalPerformers": 16348,
+        "totalTeams": 3519
     },
-    "performers": [
-  {
-    "pokemon": "dragonite DT+DC/Hu",
-    "individualScore": 122.1,
-    "games": 315,
-    "teamScore": 546.33
-  },
-  {
-    "pokemon": "excadrill MS+DR/RS",
-    "individualScore": 141.22,
-    "games": 4114,
-    "teamScore": 542.58
-  },
-  {
-    "pokemon": "snorlax_shadow L+BS/SP",
-    "individualScore": 135.59,
-    "games": 293,
-    "teamScore": 539.3
-  },
-  {
-    "pokemon": "gyarados_shadow DB+AT/Cr",
-    "individualScore": 122.56,
-    "games": 204,
-    "teamScore": 534.06
-  },
-  {
-    "pokemon": "garchomp MS+EP/O",
-    "individualScore": 102.13,
-    "games": 319,
-    "teamScore": 528.94
-  },
-  {
-    "pokemon": "dragonite DB+DC/DM",
-    "individualScore": 110.42,
-    "games": 208,
-    "teamScore": 525.93
-  },
-  {
-    "pokemon": "heracross C+CC/RB",
-    "individualScore": 98.36,
-    "games": 167,
-    "teamScore": 525.62
-  },
-  {
-    "pokemon": "swampert MS+HC/SW",
-    "individualScore": 111.66,
-    "games": 245,
-    "teamScore": 522.2
-  },
-  {
-    "pokemon": "dragonite DB+DC/O",
-    "individualScore": 114.22,
-    "games": 267,
-    "teamScore": 517.77
-  },
-  {
-    "pokemon": "gyarados DB+AT/Cr",
-    "individualScore": 126.26,
-    "games": 2594,
-    "teamScore": 515.43
-  },
-  {
-    "pokemon": "snorlax L+BS/Eq",
-    "individualScore": 107.2,
-    "games": 756,
-    "teamScore": 515.17
-  },
-  {
-    "pokemon": "conkeldurr C+DyP/SE",
-    "individualScore": 119.88,
-    "games": 623,
-    "teamScore": 513.42
-  },
-  {
-    "pokemon": "garchomp DT+O/ST",
-    "individualScore": 114.52,
-    "games": 1308,
-    "teamScore": 511.43
-  },
-  {
-    "pokemon": "rhyperior MSl+RW/S",
-    "individualScore": 112.56,
-    "games": 178,
-    "teamScore": 509.61
-  },
-  {
-    "pokemon": "gyarados W+AT/Cr",
-    "individualScore": 116.66,
-    "games": 193,
-    "teamScore": 507.67
-  },
-  {
-    "pokemon": "sylveon Ch+M/Psh",
-    "individualScore": 94.91,
-    "games": 1079,
-    "teamScore": 502.36
-  },
-  {
-    "pokemon": "magnezone Sp+FC/WC",
-    "individualScore": 98.43,
-    "games": 167,
-    "teamScore": 502.25
-  },
-  {
-    "pokemon": "swampert MS+Eq/HC",
-    "individualScore": 98.93,
-    "games": 549,
-    "teamScore": 502.19
-  },
-  {
-    "pokemon": "snorlax L+BS/SP",
-    "individualScore": 117.24,
-    "games": 2113,
-    "teamScore": 501.84
-  },
-  {
-    "pokemon": "garchomp MS+O/ST",
-    "individualScore": 106.91,
-    "games": 1757,
-    "teamScore": 501.59
-  },
-  {
-    "pokemon": "togekiss Ch+AP/Ft",
-    "individualScore": 100.73,
-    "games": 4155,
-    "teamScore": 497.22
-  },
-  {
-    "pokemon": "milotic DT+Bl/S",
-    "individualScore": 98.41,
-    "games": 219,
-    "teamScore": 494.99
-  },
-  {
-    "pokemon": "haxorus C+DC/NS",
-    "individualScore": 132.78,
-    "games": 2101,
-    "teamScore": 492.59
-  },
-  {
-    "pokemon": "metagross BP+Eq/MM",
-    "individualScore": 115.81,
-    "games": 9480,
-    "teamScore": 492.37
-  },
-  {
-    "pokemon": "gyarados W+AT/O",
-    "individualScore": 120.49,
-    "games": 841,
-    "teamScore": 490.78
-  },
-  {
-    "pokemon": "mamoswine PS+Av/Bd",
-    "individualScore": 111.31,
-    "games": 971,
-    "teamScore": 490.42
-  },
-  {
-    "pokemon": "togekiss Ch+AA/Ft",
-    "individualScore": 105.1,
-    "games": 185,
-    "teamScore": 479.22
-  },
-  {
-    "pokemon": "dragonite DB+DC/Hu",
-    "individualScore": 116.75,
-    "games": 4440,
-    "teamScore": 476.29
-  },
-  {
-    "pokemon": "machamp C+CrC/RS",
-    "individualScore": 125.96,
-    "games": 637,
-    "teamScore": 468.67
-  },
-  {
-    "pokemon": "magnezone Sp+MrS/WC",
-    "individualScore": 86.58,
-    "games": 2891,
-    "teamScore": 451.99
-  }
-],
-    "teams": [
-  {
-    "team": "dragonite DT/DC/Hu|excadrill MS/DR/RS|metagross BP/Eq/MM",
-    "teamScore": 584.12,
-    "games": 57
-  },
-  {
-    "team": "garchomp MS/O/ST|excadrill MS/DR/RS|togekiss Ch/AP/Ft",
-    "teamScore": 577,
-    "games": 116
-  },
-  {
-    "team": "excadrill MS/DR/RS|gyarados DB/AT/Cr|metagross BP/Eq/MM",
-    "teamScore": 574.76,
-    "games": 82
-  },
-  {
-    "team": "garchomp MS/EP/O|mamoswine PS/Av/Bd|metagross BP/Eq/MM",
-    "teamScore": 571.62,
-    "games": 50
-  },
-  {
-    "team": "haxorus C/DC/NS|excadrill MS/DR/RS|metagross BP/Eq/MM",
-    "teamScore": 569.09,
-    "games": 100
-  },
-  {
-    "team": "togekiss Ch/AP/Ft|excadrill MS/DR/RS|mamoswine PS/Av/Bd",
-    "teamScore": 567.54,
-    "games": 26
-  },
-  {
-    "team": "excadrill MS/DR/RS|dragonite DB/DC/Hu|gyarados DB/AT/Cr",
-    "teamScore": 564.39,
-    "games": 64
-  },
-  {
-    "team": "gyarados DT/AT/Cr|excadrill MS/DR/RS|metagross BP/Eq/MM",
-    "teamScore": 563.68,
-    "games": 40
-  },
-  {
-    "team": "snorlax_shadow L/BS/SP|garchomp MS/Eq/O|metagross BP/Eq/MM",
-    "teamScore": 562.77,
-    "games": 31
-  },
-  {
-    "team": "togekiss Ch/AP/Ft|excadrill MS/DR/RS|snorlax L/BS/SP",
-    "teamScore": 561.71,
-    "games": 293
-  },
-  {
-    "team": "excadrill MS/DR/RS|dragonite DB/DC/Hu|garchomp DT/EP/ST",
-    "teamScore": 560.98,
-    "games": 52
-  },
-  {
-    "team": "garchomp MS/O/ST|excadrill MS/DR/RS|metagross BP/Eq/MM",
-    "teamScore": 559.83,
-    "games": 84
-  },
-  {
-    "team": "dragonite DB/DC/O|excadrill MS/DR/RS|metagross BP/Eq/MM",
-    "teamScore": 559.69,
-    "games": 29
-  },
-  {
-    "team": "haxorus C/DC/NS|excadrill MS/DR/RS|snorlax L/BS/SP",
-    "teamScore": 558.85,
-    "games": 33
-  },
-  {
-    "team": "dragonite DB/DC/Hu|magnezone_shadow Sp/MrS/WC|snorlax_shadow L/BS/SP",
-    "teamScore": 557.54,
-    "games": 46
-  },
-  {
-    "team": "gyarados DB/AT/Cr|excadrill MS/DR/RS|garchomp DT/O/ST",
-    "teamScore": 556.98,
-    "games": 49
-  },
-  {
-    "team": "excadrill MS/DR/RS|gyarados DB/AT/Cr|togekiss Ch/AP/Ft",
-    "teamScore": 556.59,
-    "games": 124
-  },
-  {
-    "team": "metagross BP/Eq/MM|garchomp DT/EP/ST|gyarados DB/AT/Cr",
-    "teamScore": 555.24,
-    "games": 86
-  },
-  {
-    "team": "haxorus C/DC/NS|metagross BP/Eq/MM|snorlax L/BS/SP",
-    "teamScore": 555.02,
-    "games": 57
-  },
-  {
-    "team": "sylveon Ch/M/Psh|excadrill MS/DR/RS|machamp C/CrC/RS",
-    "teamScore": 554.58,
-    "games": 48
-  },
-  {
-    "team": "togekiss Ch/AP/Ft|excadrill MS/DR/RS|metagross BP/Eq/MM",
-    "teamScore": 552.85,
-    "games": 72
-  },
-  {
-    "team": "dragonite DB/DC/Hu|excadrill MS/DR/RS|metagross BP/Eq/MM",
-    "teamScore": 552.48,
-    "games": 85
-  },
-  {
-    "team": "garchomp MS/O/ST|excadrill MS/DR/RS|snorlax L/BS/SP",
-    "teamScore": 551.1,
-    "games": 48
-  },
-  {
-    "team": "gyarados DB/AT/Cr|excadrill MS/DR/RS|metagross BP/Eq/MM",
-    "teamScore": 548.88,
-    "games": 40
-  },
-  {
-    "team": "gyarados DB/AT/Cr|metagross BP/Eq/MM|snorlax L/BS/Eq",
-    "teamScore": 546.3,
-    "games": 53
-  },
-  {
-    "team": "gyarados DB/AT/Cr|excadrill MS/DR/RS|togekiss Ch/AP/Ft",
-    "teamScore": 546.18,
-    "games": 100
-  },
-  {
-    "team": "metagross BP/Eq/MM|excadrill MS/DR/RS|gyarados_shadow DB/AT/Cr",
-    "teamScore": 545.89,
-    "games": 88
-  },
-  {
-    "team": "snorlax_shadow L/BS/SP|garchomp DT/O/ST|metagross BP/Eq/MM",
-    "teamScore": 544.51,
-    "games": 55
-  },
-  {
-    "team": "gyarados DB/AT/Cr|metagross BP/Eq/MM|snorlax L/BS/SP",
-    "teamScore": 542.63,
-    "games": 48
-  },
-  {
-    "team": "dragonite DB/DC/Hu|excadrill MS/DR/RS|mamoswine PS/Av/Bd",
-    "teamScore": 541.78,
-    "games": 132
-  },
-  {
-    "team": "haxorus C/DC/NS|metagross BP/Eq/MM|snorlax L/BS/Eq",
-    "teamScore": 541.48,
-    "games": 256
-  },
-  {
-    "team": "swampert MS/HC/SW|metagross BP/Eq/MM|togekiss Ch/AP/Ft",
-    "teamScore": 538.68,
-    "games": 47
-  },
-  {
-    "team": "excadrill MS/DR/RS|gyarados DB/AT/Cr|milotic DT/Bl/S",
-    "teamScore": 538.4,
-    "games": 65
-  },
-  {
-    "team": "magnezone Sp/MrS/WC|garchomp DT/EP/ST|milotic DT/Bl/S",
-    "teamScore": 536.93,
-    "games": 29
-  },
-  {
-    "team": "gyarados_shadow W/AT/O|excadrill MS/DR/RS|togekiss Ch/AP/Ft",
-    "teamScore": 534.67,
-    "games": 27
-  },
-  {
-    "team": "dragonite DB/DC/Hu|metagross BP/Eq/MM|snorlax L/BS/SP",
-    "teamScore": 533.7,
-    "games": 27
-  },
-  {
-    "team": "garchomp DT/O/ST|metagross BP/Eq/MM|snorlax_shadow L/BS/SP",
-    "teamScore": 528.61,
-    "games": 31
-  },
-  {
-    "team": "metagross BP/Eq/MM|conkeldurr C/DyP/SE|gyarados_shadow DB/AT/Cr",
-    "teamScore": 525.21,
-    "games": 42
-  },
-  {
-    "team": "excadrill MS/DR/RS|conkeldurr C/DyP/SE|gyarados DB/AT/Cr",
-    "teamScore": 525.02,
-    "games": 81
-  },
-  {
-    "team": "garchomp DT/O/ST|excadrill MS/DR/RS|togekiss Ch/AP/Ft",
-    "teamScore": 523.95,
-    "games": 159
-  },
-  {
-    "team": "metagross BP/Eq/MM|dragonite DB/DC/Hu|garchomp DT/O/ST",
-    "teamScore": 523.82,
-    "games": 135
-  },
-  {
-    "team": "excadrill MS/DR/RS|conkeldurr C/DyP/SE|dragonite DB/DC/Hu",
-    "teamScore": 522.96,
-    "games": 27
-  },
-  {
-    "team": "haxorus C/DC/NS|snorlax L/BS/Eq|togekiss Ch/AP/Ft",
-    "teamScore": 521.66,
-    "games": 97
-  },
-  {
-    "team": "mamoswine PS/Av/Bd|swampert MS/Eq/HC|togekiss Ch/AP/Ft",
-    "teamScore": 518.78,
-    "games": 32
-  },
-  {
-    "team": "milotic DT/Bl/S|excadrill MS/DR/RS|metagross BP/Eq/MM",
-    "teamScore": 517.03,
-    "games": 60
-  },
-  {
-    "team": "gyarados W/AT/Cr|snorlax L/BS/SP|togekiss Ch/AP/Ft",
-    "teamScore": 510.3,
-    "games": 46
-  },
-  {
-    "team": "excadrill MS/DR/RS|garchomp DT/O/ST|metagross BP/Eq/MM",
-    "teamScore": 508.58,
-    "games": 31
-  },
-  {
-    "team": "excadrill MS/DR/RS|dragonite DB/DC/Hu|haxorus C/DC/NS",
-    "teamScore": 508.36,
-    "games": 91
-  },
-  {
-    "team": "gyarados DB/AT/Cr|metagross BP/Eq/MM|swampert MS/Eq/HC",
-    "teamScore": 506.35,
-    "games": 385
-  },
-  {
-    "team": "metagross BP/Eq/MM|garchomp MS/O/ST|sylveon Ch/M/Psh",
-    "teamScore": 504.38,
-    "games": 48
-  }
-]
+    "performers": [{
+            "pokemon": "excadrill MS+DR/RS",
+            "individualScore": 141.91,
+            "games": 1863,
+            "teamScore": 549.45
+        },
+        {
+            "pokemon": "dragonite DT+DC/Hu",
+            "individualScore": 112.04,
+            "games": 229,
+            "teamScore": 535.9
+        },
+        {
+            "pokemon": "gyarados DB+AT/Cr",
+            "individualScore": 123.44,
+            "games": 905,
+            "teamScore": 532.82
+        },
+        {
+            "pokemon": "garchomp DT+O/ST",
+            "individualScore": 103.58,
+            "games": 191,
+            "teamScore": 527.91
+        },
+        {
+            "pokemon": "snorlax L+BS/Eq",
+            "individualScore": 118.71,
+            "games": 185,
+            "teamScore": 519.15
+        },
+        {
+            "pokemon": "walrein PS+Eq/ISp",
+            "individualScore": 112.99,
+            "games": 739,
+            "teamScore": 517.01
+        },
+        {
+            "pokemon": "gyarados W+AT/Cr",
+            "individualScore": 116.4,
+            "games": 213,
+            "teamScore": 514.85
+        },
+        {
+            "pokemon": "garchomp MS+EP/O",
+            "individualScore": 109.04,
+            "games": 208,
+            "teamScore": 514.78
+        },
+        {
+            "pokemon": "mamoswine PS+Av/Bd",
+            "individualScore": 105.38,
+            "games": 398,
+            "teamScore": 504.96
+        },
+        {
+            "pokemon": "machamp C+CrC/RS",
+            "individualScore": 111.95,
+            "games": 476,
+            "teamScore": 504.92
+        },
+        {
+            "pokemon": "swampert MS+Eq/HC",
+            "individualScore": 110.77,
+            "games": 232,
+            "teamScore": 497.57
+        },
+        {
+            "pokemon": "togekiss Ch+AP/Ft",
+            "individualScore": 103.54,
+            "games": 1326,
+            "teamScore": 493.16
+        },
+        {
+            "pokemon": "snorlax L+BS/SP",
+            "individualScore": 119.74,
+            "games": 1015,
+            "teamScore": 492.44
+        },
+        {
+            "pokemon": "metagross BP+Eq/MM",
+            "individualScore": 112.47,
+            "games": 3412,
+            "teamScore": 490.47
+        },
+        {
+            "pokemon": "heracross C+CC/RB",
+            "individualScore": 117.31,
+            "games": 200,
+            "teamScore": 489.25
+        },
+        {
+            "pokemon": "sylveon Ch+M/Psh",
+            "individualScore": 105.27,
+            "games": 269,
+            "teamScore": 486.52
+        },
+        {
+            "pokemon": "haxorus C+DC/NS",
+            "individualScore": 132.11,
+            "games": 676,
+            "teamScore": 484.11
+        },
+        {
+            "pokemon": "garchomp MS+O/ST",
+            "individualScore": 101.41,
+            "games": 456,
+            "teamScore": 480.41
+        },
+        {
+            "pokemon": "gyarados W+AT/O",
+            "individualScore": 120.86,
+            "games": 456,
+            "teamScore": 479.7
+        },
+        {
+            "pokemon": "dragonite DB+DC/Hu",
+            "individualScore": 115.07,
+            "games": 1718,
+            "teamScore": 478.77
+        },
+        {
+            "pokemon": "magnezone Sp+MrS/WC",
+            "individualScore": 86.28,
+            "games": 1182,
+            "teamScore": 454.3
+        }
+    ],
+    "teams": [{
+            "team": "garchomp DT/EP/O|excadrill MS/DR/RS|metagross BP/Eq/MM",
+            "teamScore": 589.14,
+            "games": 22
+        },
+        {
+            "team": "gyarados DB/AT/Cr|excadrill MS/DR/RS|metagross BP/Eq/MM",
+            "teamScore": 586.29,
+            "games": 117
+        },
+        {
+            "team": "togekiss Ch/AP/Ft|excadrill MS/DR/RS|snorlax L/BS/SP",
+            "teamScore": 584.29,
+            "games": 56
+        },
+        {
+            "team": "excadrill MS/DR/RS|dragonite DB/DC/Hu|metagross BP/Eq/MM",
+            "teamScore": 583.36,
+            "games": 67
+        },
+        {
+            "team": "gyarados DB/AT/Cr|excadrill MS/DR/RS|snorlax_shadow L/BS/SP",
+            "teamScore": 574.13,
+            "games": 32
+        },
+        {
+            "team": "excadrill MS/DR/RS|gyarados DB/AT/Cr|metagross BP/Eq/MM",
+            "teamScore": 572.32,
+            "games": 25
+        },
+        {
+            "team": "excadrill MS/DR/RS|dragonite DB/DC/Hu|gyarados DB/AT/Cr",
+            "teamScore": 571.92,
+            "games": 25
+        },
+        {
+            "team": "haxorus C/DC/NS|excadrill MS/DR/RS|metagross BP/Eq/MM",
+            "teamScore": 570.24,
+            "games": 67
+        },
+        {
+            "team": "dragonite DB/DC/Hu|excadrill MS/DR/RS|metagross BP/Eq/MM",
+            "teamScore": 569.56,
+            "games": 107
+        },
+        {
+            "team": "togekiss Ch/AP/Ft|excadrill MS/DR/RS|swampert MS/Eq/HC",
+            "teamScore": 567.75,
+            "games": 32
+        },
+        {
+            "team": "togekiss Ch/AP/Ft|chandelure I/FmC/SB|snorlax L/BS/SP",
+            "teamScore": 558.1,
+            "games": 21
+        },
+        {
+            "team": "machamp C/CrC/RS|excadrill MS/DR/RS|metagross BP/Eq/MM",
+            "teamScore": 556.35,
+            "games": 26
+        },
+        {
+            "team": "dragonite DT/DC/Hu|excadrill MS/DR/RS|metagross BP/Eq/MM",
+            "teamScore": 555.32,
+            "games": 63
+        },
+        {
+            "team": "togekiss Ch/AP/Ft|gyarados DB/AT/Cr|machamp C/CrC/Pbk",
+            "teamScore": 554.86,
+            "games": 22
+        },
+        {
+            "team": "excadrill MS/DR/RS|gyarados DB/AT/Cr|togekiss Ch/AP/Ft",
+            "teamScore": 549.49,
+            "games": 37
+        },
+        {
+            "team": "machamp C/CrC/RS|excadrill MS/DR/RS|walrein PS/Eq/ISp",
+            "teamScore": 549.38,
+            "games": 29
+        },
+        {
+            "team": "togekiss Ch/AP/Ft|excadrill MS/DR/RS|mamoswine PS/Av/Bd",
+            "teamScore": 548.88,
+            "games": 32
+        },
+        {
+            "team": "gyarados DB/AT/Cr|excadrill MS/DR/RS|walrein PS/Eq/ISp",
+            "teamScore": 546.74,
+            "games": 31
+        },
+        {
+            "team": "garchomp MS/O/ST|gyarados DB/AT/Cr|metagross BP/Eq/MM",
+            "teamScore": 546.3,
+            "games": 27
+        },
+        {
+            "team": "garchomp MS/EP/O|metagross BP/Eq/MM|walrein PS/Eq/ISp",
+            "teamScore": 546,
+            "games": 35
+        },
+        {
+            "team": "haxorus C/DC/NS|snorlax L/BS/SP|walrein PS/Eq/ISp",
+            "teamScore": 545.56,
+            "games": 79
+        },
+        {
+            "team": "togekiss Ch/AP/Ft|excadrill MS/DR/RS|swampert MS/HC/SW",
+            "teamScore": 544.47,
+            "games": 49
+        },
+        {
+            "team": "haxorus C/DC/NS|metagross BP/Eq/MM|snorlax L/BS/SP",
+            "teamScore": 536.23,
+            "games": 22
+        },
+        {
+            "team": "gyarados DB/AT/Cr|excadrill MS/DR/RS|garchomp DT/O/ST",
+            "teamScore": 534.08,
+            "games": 40
+        },
+        {
+            "team": "dragonite DB/DC/Hu|metagross BP/Eq/MM|snorlax L/BS/SP",
+            "teamScore": 533.81,
+            "games": 27
+        },
+        {
+            "team": "gyarados DB/AT/Cr|excadrill MS/DR/RS|togekiss Ch/AP/Ft",
+            "teamScore": 527.45,
+            "games": 22
+        },
+        {
+            "team": "heracross C/CC/RB|snorlax L/BS/SP|walrein PS/Eq/ISp",
+            "teamScore": 514.89,
+            "games": 35
+        },
+        {
+            "team": "conkeldurr C/DyP/SE|excadrill MS/DR/RS|walrein PS/Eq/ISp",
+            "teamScore": 513.24,
+            "games": 21
+        },
+        {
+            "team": "dragonite DB/DC/Hu|gyarados DB/AT/Cr|metagross BP/Eq/MM",
+            "teamScore": 510.74,
+            "games": 23
+        },
+        {
+            "team": "gyarados DB/AT/Cr|metagross BP/Eq/MM|swampert MS/Eq/HC",
+            "teamScore": 491.72,
+            "games": 148
+        }
+    ]
 }
