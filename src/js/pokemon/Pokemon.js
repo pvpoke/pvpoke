@@ -98,7 +98,7 @@ function Pokemon(id, i, b){
 	}
 
 	if(data.eliteMoves){
-		this.eliteMoves = data.eliteMoves;
+		this.eliteMoves = data.eliteMoves.slice();
 	}
 
 	// Set tags
@@ -106,7 +106,7 @@ function Pokemon(id, i, b){
 	this.tags = [];
 
 	if(data.tags){
-		this.tags = data.tags;
+		this.tags = data.tags.slice();
 	}
 
 	// Set level cap
