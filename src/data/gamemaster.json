@@ -5668,6 +5668,30 @@
         "released": true,
         "tags": ["shadow"]
     }, {
+        "dex": 101,
+        "speciesName": "Electrode (Hisuian)",
+        "speciesId": "electrode_hisuian",
+        "baseStats": {
+            "atk": 155,
+            "def": 176,
+            "hp": 176
+        },
+        "types": ["grass", "electric"],
+        "fastMoves": ["THUNDER_SHOCK", "TACKLE"],
+        "chargedMoves": ["SWIFT", "WILD_CHARGE", "ENERGY_BALL"],
+        "defaultIVs": {
+			"cp500": [9.5, 5, 6, 12],
+            "cp1500": [27.5, 4, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "eliteMoves": ["TACKLE"],
+        "searchPriority": 4,
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false,
+        "level25CP": 1263,
+        "tags": ["hisuian"]
+    }, {
         "dex": 102,
         "speciesName": "Exeggcute",
         "speciesId": "exeggcute",
