@@ -1838,6 +1838,21 @@ function Battle(){
 			}
 		}
 
+		// While shields are up, prefer close non debuffing moves in scenarios where debuffing move won't KO
+
+		if (opponent.shields > 0 && poke.activeChargedMoves.length > 1) {
+			// Is one self debuffing and the other non self debuffing, and will the first Charged Move
+			if((poke.activeChargedMoves[0].selfDebuffing)&&(! poke.activeChargedMoves[1].selfBuffing)){
+				// Is the Pokemon baiting or will the self debuffing move not come close to a KO?
+				if(poke.baitShields || (opponent.hp - poke.activeChargedMoves[0].damage > 10)){
+					// Is the second move close in energy and dpe?
+					if((poke.activeChargedMoves[1].energy - poke.activeChargedMoves[0].energy <= 10) && (poke.activeChargedMoves[1].dpe / poke.activeChargedMoves[0].dpe > 0.7)){
+						finalState.moves[0] = poke.activeChargedMoves[1];
+					}
+				}
+			}
+		}
+
 		if (poke.energy >= finalState.moves[0].energy) {
 			if (finalState.moves.length > 1) {
 				self.logDecision(turns, poke, " uses " + finalState.moves[0].name + " because it thinks that using " + (finalState.moves.length - 1) + " moves afterwards is the best plan.");
