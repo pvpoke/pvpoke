@@ -5672,16 +5672,16 @@
         "speciesName": "Electrode (Hisuian)",
         "speciesId": "electrode_hisuian",
         "baseStats": {
-            "atk": 155,
+            "atk": 176,
             "def": 176,
-            "hp": 176
+            "hp": 155
         },
         "types": ["grass", "electric"],
         "fastMoves": ["THUNDER_SHOCK", "TACKLE"],
         "chargedMoves": ["SWIFT", "WILD_CHARGE", "ENERGY_BALL"],
         "defaultIVs": {
-			"cp500": [9.5, 5, 6, 12],
-            "cp1500": [27.5, 4, 15, 15],
+			"cp500": [8.5, 9, 15, 14],
+            "cp1500": [26, 5, 15, 11],
             "cp2500": [50, 15, 15, 15]
         },
         "eliteMoves": ["TACKLE"],
