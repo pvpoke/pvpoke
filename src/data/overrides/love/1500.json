@@ -21,16 +21,16 @@
 	{
 		"speciesId": "wigglytuff",
 		"chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"],
-		"weight": 8
+		"weight": 6
 	},
 	{
 		"speciesId": "clefable",
 		"chargedMoves": ["METEOR_MASH", "PSYCHIC"],
-		"weight": 18
+		"weight": 5
 	},
 	{
 		"speciesId": "sylveon",
-		"weight": 6
+		"weight": 2
 	},
 	{
 		"speciesId": "slowpoke_galarian",
@@ -38,7 +38,7 @@
 	},
 	{
 		"speciesId": "slowbro_galarian",
-		"chargedMoves": ["SLUDGE_BOMB", "FOCUS_BLAST"]
+		"chargedMoves": ["SLUDGE_BOMB", "PSYCHIC"]
 	},
 	{
 		"speciesId": "slowking_galarian",
@@ -90,28 +90,31 @@
 	{
 		"speciesId": "charizard",
 		"fastMove": "WING_ATTACK",
-		"chargedMoves": ["DRAGON_CLAW", "BLAST_BURN"],
-		"weight": 7
+		"chargedMoves": ["DRAGON_CLAW", "BLAST_BURN"]
 	},
 	{
 		"speciesId": "talonflame",
-		"weight": 18
+		"weight": 7
 	},
 	{
 		"speciesId": "wormadam_trash",
 		"weight": 3
 	},
 	{
-		"speciesId": "alolomola",
-		"weight": 14
+		"speciesId": "alolomomola",
+		"weight": 16
 	},
 	{
 		"speciesId": "slowbro",
-		"weight": 2
+		"weight": 7
 	},
 	{
 		"speciesId": "lickitung",
-		"weight": 24
+		"weight": 5
+	},
+	{
+		"speciesId": "druddigon",
+		"weight": 7
 	},
 	{
 		"speciesId": "magcargo",
@@ -122,28 +125,27 @@
 		"speciesId": "crustle",
 		"fastMove": "SMACK_DOWN",
 		"chargedMoves": ["X_SCISSOR", "ROCK_SLIDE"],
-		"weight": 4
-	},
-	{
-		"speciesId": "alomomola",
-		"weight": 12
+		"weight": 5
 	},
 	{
 		"speciesId": "scrafty",
-		"weight": 9
+		"weight": 8
 	},
 	{
 		"speciesId": "scolipede",
-		"weight": 6
+		"weight": 2
 	},
 	{
 		"speciesId": "ariados",
+		"weight": 18
+	},
+	{
+		"speciesId": "electrode_hisuian",
 		"weight": 2
 	},
 	{
 		"speciesId": "vileplume_shadow",
-		"fastMove": "RAZOR_LEAF",
-		"weight": 12
+		"fastMove": "RAZOR_LEAF"
 	},
 	{
 		"speciesId": "vileplume",
@@ -152,7 +154,7 @@
 	{
 		"speciesId": "electrode",
 		"chargedMoves": ["DISCHARGE", "HYPER_BEAM"],
-		"weight": 6
+		"weight": 18
 	},
 	{
 		"speciesId": "electrode_shadow",

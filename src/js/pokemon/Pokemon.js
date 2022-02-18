@@ -639,6 +639,17 @@ function Pokemon(id, i, b){
 					}
 				}
 
+				// If both moves cost similar energy and DPE and one has a buff effect, prioritize the buffing move
+
+				if((self.activeChargedMoves[1].energy - self.activeChargedMoves[0].energy <= 10)&&(! self.activeChargedMoves[1].selfDebuffing)){
+
+					if((self.activeChargedMoves[1].selfBuffing)&&(self.activeChargedMoves[0].dpe - self.activeChargedMoves[1].dpe < .3)){
+						var move = self.activeChargedMoves[0];
+						self.activeChargedMoves.splice(0, 1);
+						self.activeChargedMoves.push(move);
+					}
+				}
+
 				// If the cheaper move is a self debuffing move and the other move is a close non-debuffing move, prioritize the non-debuffing move
 
 				if((self.activeChargedMoves[1].energy - self.activeChargedMoves[0].energy <= 10)&&(self.activeChargedMoves[0].selfAttackDebuffing)&&(! self.activeChargedMoves[1].selfDebuffing)){
@@ -665,7 +676,10 @@ function Pokemon(id, i, b){
 
 				// Use moves that have higher DPE
 				if(((move.dpe - self.bestChargedMove.dpe > .03)&&(move.moveId != "SUPER_POWER"))||(move.dpe - self.bestChargedMove.dpe > .3)){
-					self.bestChargedMove = self.activeChargedMoves[i];
+					if((! self.bestChargedMove.selfBuffing)||((self.bestChargedMove.selfBuffing)&&(move.dpe - self.bestChargedMove.dpe > .3))){
+						self.bestChargedMove = self.activeChargedMoves[i];
+					}
+
 				}
 
 				// When DPE is close, favor moves with guaranteed buff effects
