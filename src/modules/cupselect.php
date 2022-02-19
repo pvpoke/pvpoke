@@ -4,6 +4,7 @@
 	<option value="love" meta-group1500="love">Love Cup</option>
 	<option value="johto" meta-group1500="johto">Johto Cup</option>
 	<option value="guardian" meta-group1500="guardian">Silph Guardian Cup</option>
+	<option value="obsidian" meta-group1500="obsidian">Silph Obsidian Cup</option>
 	<option value="fusionfactions" meta-group1500="fusion">Silph Factions (Fusion)</option>
 	<option value="factions" meta-group1500="factions">Silph Factions (Cave)</option>
 

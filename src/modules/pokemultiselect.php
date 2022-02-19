@@ -31,6 +31,7 @@
 				<option value="love" type="great" class="multi-battle">Love Cup Meta</option>
 				<option value="johto" type="great" class="multi-battle">Johto Cup Meta</option>
 				<option value="guardian" type="great" class="multi-battle">Silph Guardian Cup Meta</option>
+				<option value="obsidian" type="great" class="multi-battle">Silph Obsidian Cup Meta</option>
 				<option value="factions" type="great" class="multi-battle">Silph Factions Meta (Cave)</option>
 				<option value="fusion" type="great" class="multi-battle">Silph Factions Meta (Fusion)</option>
 			</select>

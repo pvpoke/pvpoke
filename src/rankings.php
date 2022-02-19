@@ -75,8 +75,8 @@ switch($cup){
 		$league = 'Silph Factions Rankings';
 		break;
 
-	case "brawler":
-		$league = 'Silph Brawler Cup';
+	case "obsidian":
+		$league = 'Silph Obsidian Cup';
 		break;
 
 	case "guardian":

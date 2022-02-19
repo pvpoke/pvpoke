@@ -1152,7 +1152,24 @@
             "name": "Species",
             "values": ["lickitung", "medicham", "altaria", "pachirisu", "wobbuffet", "stunfisk", "umbreon", "mandibuzz", "scrafty", "vullaby", "chansey", "hypno", "obstagoon", "cofagrigus", "bastiodon", "diggersby", "tropius", "lanturn"]
         }]
-    }],
+    }, {
+	    "name": "obsidian",
+	    "title": "Obsidian Cup",
+	    "include": [],
+	    "exclude": [{
+	        "filterType": "type",
+	        "name": "Type",
+	        "values": ["fairy", "fighting", "flying", "grass", "ground"]
+	    }, {
+	        "filterType": "id",
+	        "name": "Species",
+	        "values": ["lickitung", "bastiodon", "pachirisu", "vigoroth", "registeel"]
+	    }, {
+	        "filterType": "tag",
+	        "name": "Tag",
+	        "values": ["mega", "shadow"]
+	    }]
+	}],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xs", "hisuian"],
     "pokemonTraits": {
         "pros": ["bulky", "extremely bulky", "spammy", "agile", "flexible", "dynamic", "fast move pressure", "shield pressure", "defensive", "momentum"],
