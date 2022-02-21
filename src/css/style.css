@@ -1406,6 +1406,8 @@ a.download-csv {
 }
 
 .rating-table {
+  border-radius: 12px;
+  overflow: hidden;
   text-align: center;
 }
 .rating-table tr {
@@ -2998,6 +3000,34 @@ a.download-csv {
 }
 .article .rating-table.matrix-table a {
   padding: 5px 5px 5px 36px;
+}
+.article .rating-table.matrix-table .matrix-record,
+.article .rating-table.matrix-table .matrix-average {
+  font-size: 14px;
+  white-space: nowrap;
+  padding: 8px 10px 0px 10px;
+}
+.article .rating-table.matrix-table .rating.average {
+  padding: 5px 5px 5px 27px;
+  width: 60px;
+}
+.article .rating-table.matrix-table .rating.average span {
+  width: auto;
+  background: none !important;
+}
+.article .rating-table.matrix-table th:first-of-type, .article .rating-table.matrix-table thead td:first-of-type, .article .rating-table.meta-table th:first-of-type, .article .rating-table.meta-table thead td:first-of-type, .article .rating-table.threats-table th:first-of-type, .article .rating-table.threats-table thead td:first-of-type, .article .rating-table.alternatives-table th:first-of-type, .article .rating-table.alternatives-table thead td:first-of-type {
+  background-image: url("../img/matrix-arrow-header.png");
+  background-repeat: no-repeat;
+  background-position: right 4px bottom 4px;
+}
+.article .rating-table.matrix-table th.name, .article .rating-table.meta-table th.name, .article .rating-table.threats-table th.name, .article .rating-table.alternatives-table th.name {
+  background-image: url("../img/matrix-arrow.png");
+  background-repeat: no-repeat;
+  background-position: right 4px center;
+  padding-right: 20px;
+}
+.article .rating-table.matrix-table td.name-small, .article .rating-table.meta-table td.name-small, .article .rating-table.threats-table td.name-small, .article .rating-table.alternatives-table td.name-small {
+  padding-bottom: 12px;
 }
 .article .results-buttons {
   display: flex;

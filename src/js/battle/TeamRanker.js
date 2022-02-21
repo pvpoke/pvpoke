@@ -317,17 +317,9 @@ var RankerMaster = (function () {
 
 							var bulkpoint = battle.calculateDamageByStats(opponent, pokemon, opponent.stats.atk * opponent.shadowAtkMult, pokemon.stats.def * pokemon.shadowDefMult, pokemon.typeEffectiveness[opponent.fastMove.type], opponent.fastMove);
 
-							if(settings.matrixDirection == "column"){
-								matchup.breakpoint = bulkpoint;
-								matchup.bulkpoint = breakpoint;
-								matchup.atkDifferential = opponent.stats.atk - pokemon.stats.atk;
-							} else{
-								matchup.breakpoint = breakpoint;
-								matchup.bulkpoint = bulkpoint;
-								matchup.atkDifferential = pokemon.stats.atk - opponent.stats.atk;
-							}
-
-
+							matchup.breakpoint = breakpoint;
+							matchup.bulkpoint = bulkpoint;
+							matchup.atkDifferential = pokemon.stats.atk - opponent.stats.atk;
 						}
 
 						rankObj.matchups.push(matchup);

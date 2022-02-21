@@ -281,6 +281,10 @@ a.toggle {
   background-color: #222;
 }
 
+.matrix-table thead td:first-of-type, .meta-table thead td:first-of-type, .threats-table thead td:first-of-type, .alternatives-table thead td:first-of-type {
+  background-image: url("../../img/matrix-arrow-header-dark.png") !important;
+}
+
 @media only screen and (min-width: 721px) {
   .menu .submenu .submenu-wrap {
     background: #444;

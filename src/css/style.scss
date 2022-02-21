@@ -1699,7 +1699,8 @@ a.download-csv{
 }
 
 .rating-table{
-
+	border-radius: 12px;
+	overflow: hidden;
 	text-align: center;
 
 	tr{
@@ -3458,8 +3459,46 @@ a.download-csv{
 			}
 		}
 
-		&.matrix-table a{
-			padding: 5px 5px 5px 36px;
+		&.matrix-table{
+			a{
+				padding: 5px 5px 5px 36px;
+			}
+
+			.matrix-record,
+			.matrix-average{
+				font-size:14px;
+				white-space: nowrap;
+				padding:8px 10px 0px 10px;
+			}
+
+			.rating.average{
+				padding: 5px 5px 5px 27px;
+				width: 60px;
+
+				span{
+					width:auto;
+					background:none !important;
+				}
+			}
+		}
+
+		&.matrix-table, &.meta-table, &.threats-table, &.alternatives-table{
+			th:first-of-type, thead td:first-of-type{
+				background-image:url('../img/matrix-arrow-header.png');
+				background-repeat: no-repeat;
+				background-position: right 4px bottom 4px;
+			}
+
+			th.name{
+				background-image:url('../img/matrix-arrow.png');
+				background-repeat: no-repeat;
+				background-position: right 4px center;
+				padding-right: 20px;
+			}
+
+			td.name-small{
+				padding-bottom:12px;
+			}
 		}
 	}
 

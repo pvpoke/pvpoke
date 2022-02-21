@@ -14,7 +14,6 @@ require_once 'header.php';
 
 <div class="section league-select-container team-content white">
 	<p>Select your Pokemon and movesets below. You'll see how your team matches up against top Pokemon, which Pokemon pose a potential threat, and potential alternatives for your team. You can also use this tool to identify strong team cores and how to break them.</p>
-	<p>You can change how the scorecards results display on the <a href="<?php echo $WEB_ROOT; ?>settings/">Settings page</a>.</p>
 	<?php require 'modules/formatselect.php'; ?>
 
 	<a class="toggle" href="#">Advanced <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>

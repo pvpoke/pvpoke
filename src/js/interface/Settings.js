@@ -23,7 +23,6 @@ var InterfaceMaster = (function () {
 				var animateTimeline = $(".check.animate-timeline").hasClass("on") ? 1 : 0;
 				var ads = $(".check.ads").hasClass("on") ? 1 : 0;
 				var theme = $("#theme-select option:selected").val();
-				var matrixDirection = $("#matrix-direction option:selected").val();
 				var gamemaster = $("#gm-select option:selected").val();
 				var pokeboxId = $("#pokebox-id").val();
 				var xls = $(".check.xls").hasClass("on") ? 1 : 0;
@@ -37,7 +36,7 @@ var InterfaceMaster = (function () {
 						'defaultIVs' : defaultIVs,
 						'animateTimeline' : animateTimeline,
 						'theme': theme,
-						'matrixDirection': matrixDirection,
+						'matrixDirection': "row",
 						'gamemaster': gamemaster,
 						'pokeboxId': pokeboxId,
 						'pokeboxLastDateTime': settings.pokeboxLastDateTime,

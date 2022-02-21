@@ -1108,15 +1108,23 @@ var InterfaceMaster = (function () {
 
 				var $row = $("<thead><tr><th></th></tr></thead>");
 
+				// Add matrix table headings for all Pokemon on the right side
+
 				for(var n = 0; n < team.length; n++){
 					$row.find("tr").append("<th class=\"name-small\">"+team[n].speciesName+" <span>"+team[n].generateMovesetStr()+"<br>"+ team[n].ivs.atk + "/" + team[n].ivs.def + "/" + team[n].ivs.hp + "</span></th>");
 
-					csv += team[n].speciesName+" "+team[n].generateMovesetStr() + " " + team[n].ivs.atk + "/" + team[n].ivs.def + "/" + team[n].ivs.hp;
-					if(n < team.length -1){
-						csv += ',';
-					}
+					csv += team[n].speciesName+" "+team[n].generateMovesetStr() + " " + team[n].ivs.atk + "/" + team[n].ivs.def + "/" + team[n].ivs.hp + ',';
 				}
 
+				// Add win-loss-draw and average columns
+
+				csv +='Wins,Losses,Draws,';
+
+				$row.find("tr").append("<th class=\"name-small\">Record (W/L/D)</th>");
+
+				$row.find("tr").append("<th class=\"name-small\">Average</th>");
+
+				csv +='Average';
 				csv += '\n';
 
 				$(".matrix-table").append($row);
@@ -1128,6 +1136,13 @@ var InterfaceMaster = (function () {
 					var pokemon = r.pokemon;
 
 					// Add results to matrix table
+					var record = {
+						wins: 0,
+						losses: 0,
+						draws: 0
+					};
+
+					var average = 0;
 
 					$row = $("<tr><th class=\"name\">"+pokemon.speciesName+" <span>"+pokemon.generateMovesetStr()+"<br>" + pokemon.ivs.atk + "/" + pokemon.ivs.def + "/" + pokemon.ivs.hp + "</span></th></tr>");
 
@@ -1152,18 +1167,32 @@ var InterfaceMaster = (function () {
 								displayStat = r.matchups[n].atkDifferential;
 						}
 
-						csv += displayStat;
-
-						if(n < r.matchups.length-1){
-							csv += ',';
-						}
+						csv += displayStat + ',';
+						average += displayStat;
 
 						// Make the attack differential stat pretty
 						if(self.matrixMode == "attack"){
 							displayStat = Math.round(displayStat * 10) / 10;
 
-							if(displayStat >= 0){
+							if(displayStat > 0){
 								displayStat = "+" + displayStat;
+								record.wins++;
+							} else if(displayStat == 0){
+								displayStat = "+" + displayStat;
+								record.draws++;
+							} else if(displayStat < 0){
+								record.losses++;
+							}
+						}
+
+						// Show battle result wins for all settings except Attack, which shows CMP tie records
+						if(self.matrixMode != "attack"){
+							if(rating > 500){
+								record.wins++;
+							} else if(rating == 500){
+								record.draws++;
+							} else if(rating < 500){
+								record.losses++;
 							}
 						}
 
@@ -1184,10 +1213,45 @@ var InterfaceMaster = (function () {
 						$row.append($cell);
 					}
 
+					average = average / r.matchups.length
+
+					// Display win-loss record
+					var recordStr = record.wins+"-"+record.losses+"-"+record.draws;
+
+					var $cell = $("<td class=\"matrix-record\">"+recordStr+"</td>");
+					$row.append($cell);
+
+					csv += record.wins + ',' + record.losses + ',' + record.draws + ',';
+
+					// Display average
+					var displayAverage = Math.round(average * 100) / 100;
+
+					if(self.matrixMode == "battle"){
+						var color = battle.getRatingColor(displayAverage);
+						var $cell = $("<td><a class=\"rating average star\" target=\"blank\"><span>"+displayAverage+"</span></a></td>");
+
+						$cell.find("a").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
+						$row.append($cell);
+
+						if(displayAverage > 500){
+							$cell.find("a").addClass("win");
+						}
+					} else{
+						var $cell = $("<td class=\"matrix-average\">"+displayAverage+"</td>");
+						$row.append($cell);
+					}
+
+
+					csv += displayAverage;
+
+
 					$(".matrix-table tbody").append($row);
 
 					csv += '\n';
 				}
+
+				// Display win loss records
+
 
 				$(".battle-results.matrix").show();
 
