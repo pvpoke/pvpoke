@@ -3,8 +3,6 @@
 	<option value="2500" cup="all" meta-group="ultra">Ultra League</option>
 	<option value="10000" cup="all" meta-group="master">Master League</option>
 	<option value="10000" cup="classic" meta-group="master">Master League (Classic)</option>
-	<option value="10000" cup="premierclassic" meta-group="master">Master League (Premier Classic)</option>
-	<option value="1500" cup="love" meta-group="love">Love Cup</option>
 	<option value="1500" cup="johto" meta-group="johto">Johto Cup</option>
 	<option value="1500" cup="guardian" meta-group="guardian">Silph Guardian Cup</option>
 	<option value="1500" cup="obsidian" meta-group="obsidian">Silph Obsidian Cup</option>

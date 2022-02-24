@@ -11003,14 +11003,14 @@
         },
         "types": ["fire", "flying"],
         "fastMoves": ["EXTRASENSORY", "HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "STEEL_WING", "INCINERATE"],
-        "chargedMoves": ["BRAVE_BIRD", "FIRE_BLAST", "SOLAR_BEAM", "EARTHQUAKE"],
+        "chargedMoves": ["BRAVE_BIRD", "FIRE_BLAST", "SOLAR_BEAM", "EARTHQUAKE", "SACRED_FIRE"],
         "tags": ["legendary", "shadoweligible"],
         "defaultIVs": {
             "cp500": [5, 7, 11, 14],
             "cp1500": [14.5, 4, 8, 12],
             "cp2500": [23.5, 5, 14, 15]
         },
-        "eliteMoves": ["EARTHQUAKE"],
+        "eliteMoves": ["EARTHQUAKE", "SACRED_FIRE"],
         "level25CP": 2436,
         "searchPriority": 4,
         "buddyDistance": 20,
@@ -11027,14 +11027,14 @@
         },
         "types": ["fire", "flying"],
         "fastMoves": ["EXTRASENSORY", "HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "STEEL_WING", "INCINERATE"],
-        "chargedMoves": ["BRAVE_BIRD", "FIRE_BLAST", "SOLAR_BEAM", "EARTHQUAKE"],
+        "chargedMoves": ["BRAVE_BIRD", "FIRE_BLAST", "SOLAR_BEAM", "EARTHQUAKE", "SACRED_FIRE"],
         "tags": ["legendary", "shadow"],
         "defaultIVs": {
             "cp500": [5, 7, 11, 14],
             "cp1500": [14.5, 4, 8, 12],
             "cp2500": [23.5, 5, 14, 15]
         },
-        "eliteMoves": ["EARTHQUAKE"],
+        "eliteMoves": ["EARTHQUAKE", "SACRED_FIRE"],
         "searchPriority": 4,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
@@ -11049,8 +11049,9 @@
             "hp": 225
         },
         "types": ["psychic", "grass"],
-        "fastMoves": ["CHARGE_BEAM", "CONFUSION"],
+        "fastMoves": ["CHARGE_BEAM", "CONFUSION", "MAGICAL_LEAF"],
         "chargedMoves": ["DAZZLING_GLEAM", "HYPER_BEAM", "PSYCHIC", "SEED_BOMB", "LEAF_STORM"],
+		"eliteMoves": ["MAGICAL_LEAF"],
         "tags": ["mythical", "untradeable"],
         "defaultIVs": {
             "cp500": [5.5, 11, 15, 14],
