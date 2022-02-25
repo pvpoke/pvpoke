@@ -704,7 +704,7 @@
             "values": ["mega"]
         }],
         "partySize": 3,
-		"presetOnly": true
+        "presetOnly": true
     }, {
         "name": "sinnoh",
         "title": "Sinnoh Cup",
@@ -1153,23 +1153,23 @@
             "values": ["lickitung", "medicham", "altaria", "pachirisu", "wobbuffet", "stunfisk", "umbreon", "mandibuzz", "scrafty", "vullaby", "chansey", "hypno", "obstagoon", "cofagrigus", "bastiodon", "diggersby", "tropius", "lanturn"]
         }]
     }, {
-	    "name": "obsidian",
-	    "title": "Obsidian Cup",
-	    "include": [],
-	    "exclude": [{
-	        "filterType": "type",
-	        "name": "Type",
-	        "values": ["fairy", "fighting", "flying", "grass", "ground"]
-	    }, {
-	        "filterType": "id",
-	        "name": "Species",
-	        "values": ["lickitung", "bastiodon", "pachirisu", "vigoroth", "registeel"]
-	    }, {
-	        "filterType": "tag",
-	        "name": "Tag",
-	        "values": ["mega", "shadow"]
-	    }]
-	}],
+        "name": "obsidian",
+        "title": "Obsidian Cup",
+        "include": [],
+        "exclude": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["fairy", "fighting", "flying", "grass", "ground"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["lickitung", "bastiodon", "pachirisu", "vigoroth", "registeel"]
+        }, {
+            "filterType": "tag",
+            "name": "Tag",
+            "values": ["mega", "shadow"]
+        }]
+    }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xs", "hisuian"],
     "pokemonTraits": {
         "pros": ["bulky", "extremely bulky", "spammy", "agile", "flexible", "dynamic", "fast move pressure", "shield pressure", "defensive", "momentum"],
@@ -1248,7 +1248,7 @@
         "chargedMoves": ["POWER_WHIP", "SEED_BOMB", "SLUDGE_BOMB"],
         "tags": ["starter", "shadow"],
         "defaultIVs": {
-            "cp500": [18, 2, 14, 7],
+            "cp500": [17.5, 4, 13, 10],
             "cp1500": [50, 15, 15, 15],
             "cp2500": [50, 15, 15, 15]
         },
@@ -1291,8 +1291,8 @@
         "chargedMoves": ["POWER_WHIP", "SLUDGE_BOMB", "SOLAR_BEAM"],
         "tags": ["starter", "shadow"],
         "defaultIVs": {
-            "cp500": [11.5, 2, 7, 13],
-            "cp1500": [36.5, 3, 15, 14],
+            "cp500": [11, 5, 14, 13],
+            "cp1500": [37.5, 4, 13, 10],
             "cp2500": [50, 15, 15, 15]
         },
         "buddyDistance": 3,
@@ -2513,7 +2513,7 @@
         "fastMoves": ["MUD_SHOT", "SCRATCH"],
         "chargedMoves": ["DIG", "ROCK_SLIDE", "ROCK_TOMB", "SAND_TOMB"],
         "defaultIVs": {
-            "cp500": [15.5, 2, 11, 15],
+            "cp500": [15, 5, 13, 15],
             "cp1500": [50, 15, 15, 15],
             "cp2500": [50, 15, 15, 15]
         },
@@ -3206,7 +3206,7 @@
         "fastMoves": ["ACID", "RAZOR_LEAF"],
         "chargedMoves": ["MOONBLAST", "SEED_BOMB", "SLUDGE_BOMB"],
         "defaultIVs": {
-            "cp500": [16, 2, 12, 12],
+            "cp500": [16, 4, 11, 9],
             "cp1500": [50, 15, 15, 15],
             "cp2500": [50, 15, 15, 15]
         },
@@ -4109,8 +4109,8 @@
         "fastMoves": ["CHARGE_BEAM", "ZEN_HEADBUTT"],
         "chargedMoves": ["PSYSHOCK", "SHADOW_BALL", "SIGNAL_BEAM"],
         "defaultIVs": {
-            "cp500": [14, 2, 13, 15],
-            "cp1500": [50, 13, 14, 15],
+            "cp500": [14, 6, 11, 14],
+            "cp1500": [50, 13, 15, 14],
             "cp2500": [50, 15, 15, 15],
             "cp1500l40": [40, 14, 15, 14]
         },
@@ -4378,7 +4378,7 @@
         "fastMoves": ["ACID", "VINE_WHIP"],
         "chargedMoves": ["POWER_WHIP", "SLUDGE_BOMB", "WRAP"],
         "defaultIVs": {
-            "cp500": [19, 2, 11, 15],
+            "cp500": [18, 6, 15, 14],
             "cp1500": [50, 15, 15, 15],
             "cp2500": [50, 15, 15, 15]
         },
@@ -4422,8 +4422,8 @@
         "fastMoves": ["ACID", "BULLET_SEED", "RAZOR_LEAF"],
         "chargedMoves": ["POWER_WHIP", "SEED_BOMB", "SLUDGE_BOMB"],
         "defaultIVs": {
-            "cp500": [12, 3, 12, 8],
-            "cp1500": [39.5, 3, 15, 14],
+            "cp500": [11.5, 7, 15, 10],
+            "cp1500": [38.5, 6, 15, 14],
             "cp2500": [50, 15, 15, 15]
         },
         "tags": ["shadow"],
@@ -5163,8 +5163,8 @@
         "fastMoves": ["MUD_SLAP", "POISON_JAB"],
         "chargedMoves": ["MUD_BOMB", "SLUDGE", "SLUDGE_BOMB"],
         "defaultIVs": {
-            "cp500": [14, 3, 15, 10],
-            "cp1500": [49.5, 10, 15, 15],
+            "cp500": [14, 5, 13, 9],
+            "cp1500": [49, 13, 13, 15],
             "cp2500": [50, 15, 15, 15],
             "cp1500l40": [40, 15, 14, 14]
         },
@@ -5596,6 +5596,27 @@
         "tags": ["shadoweligible"]
     }, {
         "dex": 100,
+        "speciesName": "Voltorb (Hisuian)",
+        "speciesId": "voltorb_hisuian",
+        "baseStats": {
+            "atk": 109,
+            "def": 111,
+            "hp": 120
+        },
+        "types": ["grass", "electric"],
+        "fastMoves": ["CHARGE_BEAM", "TACKLE"],
+        "chargedMoves": ["SWIFT", "THUNDERBOLT", "ENERGY_BALL"],
+        "defaultIVs": {
+            "cp500": [19.5, 4, 9, 14],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "tags": ["hisuian"],
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 100,
         "speciesName": "Voltorb (Shadow)",
         "speciesId": "voltorb_shadow",
         "baseStats": {
@@ -5616,27 +5637,6 @@
         "thirdMoveCost": 50000,
         "released": true,
         "tags": ["shadow"]
-    }, {
-        "dex": 100,
-        "speciesName": "Voltorb (Hisuian)",
-        "speciesId": "voltorb_hisuian",
-        "baseStats": {
-            "atk": 109,
-            "def": 111,
-            "hp": 120
-        },
-        "types": ["grass", "electric"],
-        "fastMoves": ["CHARGE_BEAM", "TACKLE"],
-        "chargedMoves": ["SWIFT", "THUNDERBOLT", "ENERGY_BALL"],
-        "defaultIVs": {
-            "cp500": [19.5, 4, 9, 14],
-            "cp1500": [50, 15, 15, 15],
-            "cp2500": [50, 15, 15, 15]
-        },
-        "tags": ["hisuian"],
-        "buddyDistance": 3,
-        "thirdMoveCost": 50000,
-        "released": false
     }, {
         "dex": 101,
         "speciesName": "Electrode",
@@ -5663,6 +5663,30 @@
         "tags": ["shadoweligible"]
     }, {
         "dex": 101,
+        "speciesName": "Electrode (Hisuian)",
+        "speciesId": "electrode_hisuian",
+        "baseStats": {
+            "atk": 176,
+            "def": 176,
+            "hp": 155
+        },
+        "types": ["electric", "grass"],
+        "fastMoves": ["THUNDER_SHOCK", "TACKLE"],
+        "chargedMoves": ["SWIFT", "WILD_CHARGE", "ENERGY_BALL"],
+        "defaultIVs": {
+            "cp500": [8.5, 9, 15, 14],
+            "cp1500": [26, 5, 15, 11],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "eliteMoves": ["TACKLE"],
+        "searchPriority": 4,
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true,
+        "level25CP": 1263,
+        "tags": ["hisuian"]
+    }, {
+        "dex": 101,
         "speciesName": "Electrode (Shadow)",
         "speciesId": "electrode_shadow",
         "baseStats": {
@@ -5684,30 +5708,6 @@
         "thirdMoveCost": 50000,
         "released": true,
         "tags": ["shadow"]
-    }, {
-        "dex": 101,
-        "speciesName": "Electrode (Hisuian)",
-        "speciesId": "electrode_hisuian",
-        "baseStats": {
-            "atk": 176,
-            "def": 176,
-            "hp": 155
-        },
-        "types": ["electric", "grass"],
-        "fastMoves": ["THUNDER_SHOCK", "TACKLE"],
-        "chargedMoves": ["SWIFT", "WILD_CHARGE", "ENERGY_BALL"],
-        "defaultIVs": {
-			"cp500": [8.5, 9, 15, 14],
-            "cp1500": [26, 5, 15, 11],
-            "cp2500": [50, 15, 15, 15]
-        },
-        "eliteMoves": ["TACKLE"],
-        "searchPriority": 4,
-        "buddyDistance": 3,
-        "thirdMoveCost": 50000,
-        "released": true,
-        "level25CP": 1263,
-        "tags": ["hisuian"]
     }, {
         "dex": 102,
         "speciesName": "Exeggcute",
@@ -6081,7 +6081,7 @@
         "fastMoves": ["INFESTATION", "TACKLE"],
         "chargedMoves": ["DARK_PULSE", "SLUDGE", "SLUDGE_BOMB"],
         "defaultIVs": {
-            "cp500": [16, 3, 15, 11],
+            "cp500": [15.5, 4, 15, 15],
             "cp1500": [50, 15, 15, 15],
             "cp2500": [50, 15, 15, 15]
         },
@@ -6148,9 +6148,9 @@
         "fastMoves": ["INFESTATION", "TACKLE"],
         "chargedMoves": ["DARK_PULSE", "SHADOW_BALL", "SLUDGE_BOMB", "THUNDERBOLT"],
         "defaultIVs": {
-            "cp500": [8.5, 2, 5, 13],
-            "cp1500": [24.5, 3, 13, 14],
-            "cp2500": [50, 9, 14, 14],
+            "cp500": [8.5, 4, 10, 6],
+            "cp1500": [24.5, 5, 13, 11],
+            "cp2500": [48.5, 12, 14, 14],
             "cp2500l40": [40, 13, 15, 15]
         },
         "tags": ["shadow"],
@@ -6614,8 +6614,8 @@
         "chargedMoves": ["THUNDER", "THUNDER_PUNCH", "THUNDERBOLT"],
         "defaultIVs": {
             "cp500": [8, 8, 11, 13],
-            "cp1500": [24, 2, 14, 13],
-            "cp2500": [49.5, 6, 13, 15],
+            "cp1500": [23.5, 7, 14, 14],
+            "cp2500": [46.5, 13, 15, 14],
             "cp2500l40": [40, 15, 13, 15]
         },
         "tags": ["shadow"],
@@ -7218,8 +7218,9 @@
         "chargedMoves": ["ANCIENT_POWER", "HYPER_BEAM", "IRON_HEAD", "ROCK_SLIDE", "EARTH_POWER"],
         "tags": ["mega"],
         "defaultIVs": {
-            "cp1500": [13, 6, 15, 14],
-            "cp2500": [22, 6, 10, 15]
+            "cp500": [4.5, 11, 14, 15],
+            "cp1500": [13.5, 4, 10, 11],
+            "cp2500": [22, 4, 15, 14]
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
@@ -7464,7 +7465,7 @@
         "fastMoves": ["DRAGON_BREATH", "IRON_TAIL"],
         "chargedMoves": ["AQUA_TAIL", "TWISTER", "WRAP"],
         "defaultIVs": {
-            "cp500": [19, 5, 13, 15],
+            "cp500": [19, 4, 13, 15],
             "cp1500": [50, 15, 15, 15],
             "cp2500": [50, 15, 15, 15]
         },
@@ -8554,7 +8555,7 @@
             "cp1500": [19.5, 5, 12, 13],
             "cp2500": [35.5, 4, 15, 8]
         },
-		"searchPriority": 3,
+        "searchPriority": 3,
         "level25CP": 1760,
         "tags": ["shadoweligible"],
         "eliteMoves": ["DRAGON_PULSE"],
@@ -8884,7 +8885,7 @@
         "types": ["grass", "flying"],
         "fastMoves": ["BULLET_SEED", "INFESTATION"],
         "chargedMoves": ["DAZZLING_GLEAM", "ENERGY_BALL", "AERIAL_ACE", "SOLAR_BEAM", "ACROBATICS"],
-		"eliteMoves": ["ACROBATICS"],
+        "eliteMoves": ["ACROBATICS"],
         "defaultIVs": {
             "cp500": [11.5, 5, 15, 14],
             "cp1500": [41, 4, 10, 15],
@@ -8908,8 +8909,8 @@
         },
         "types": ["grass", "flying"],
         "fastMoves": ["BULLET_SEED", "INFESTATION"],
-		"chargedMoves": ["DAZZLING_GLEAM", "ENERGY_BALL", "AERIAL_ACE", "SOLAR_BEAM", "ACROBATICS"],
-		"eliteMoves": ["ACROBATICS"],
+        "chargedMoves": ["DAZZLING_GLEAM", "ENERGY_BALL", "AERIAL_ACE", "SOLAR_BEAM", "ACROBATICS"],
+        "eliteMoves": ["ACROBATICS"],
         "defaultIVs": {
             "cp500": [11.5, 5, 15, 14],
             "cp1500": [41, 4, 10, 15],
@@ -9365,7 +9366,7 @@
         "fastMoves": ["COUNTER", "SPLASH", "CHARM"],
         "chargedMoves": ["MIRROR_COAT"],
         "defaultIVs": {
-            "cp500": [20.5, 3, 15, 8],
+            "cp500": [20, 4, 14, 12],
             "cp1500": [50, 15, 15, 15],
             "cp2500": [50, 15, 15, 15]
         },
@@ -9428,7 +9429,7 @@
         "fastMoves": ["BUG_BITE", "TACKLE"],
         "chargedMoves": ["GYRO_BALL", "ROCK_TOMB", "SAND_TOMB"],
         "defaultIVs": {
-            "cp500": [18, 3, 12, 10],
+            "cp500": [17, 6, 15, 14],
             "cp1500": [50, 15, 15, 15],
             "cp2500": [50, 15, 15, 15]
         },
@@ -9579,9 +9580,9 @@
         "chargedMoves": ["CRUNCH", "EARTHQUAKE", "HEAVY_SLAM"],
         "tags": ["mega"],
         "defaultIVs": {
-            "cp500": [5, 12, 15, 15],
-            "cp1500": [15, 7, 11, 11],
-            "cp2500": [25, 5, 12, 13]
+            "cp500": [5, 15, 13, 13],
+            "cp1500": [15, 7, 14, 11],
+            "cp2500": [25.5, 4, 15, 8]
         },
         "released": true
     }, {
@@ -10509,8 +10510,8 @@
         "fastMoves": ["TACKLE", "ZEN_HEADBUTT"],
         "chargedMoves": ["MEGAHORN", "STOMP", "WILD_CHARGE"],
         "defaultIVs": {
-            "cp500": [9, 2, 7, 11],
-            "cp1500": [26, 3, 13, 13],
+            "cp500": [8.5, 9, 14, 12],
+            "cp1500": [26, 4, 15, 8],
             "cp2500": [50, 15, 15, 15]
         },
         "tags": ["shadow"],
@@ -10575,7 +10576,7 @@
             "cp1500": [26.5, 4, 13, 9],
             "cp2500": [50, 15, 15, 15]
         },
-		"searchPriority": 4,
+        "searchPriority": 4,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
@@ -11051,7 +11052,7 @@
         "types": ["psychic", "grass"],
         "fastMoves": ["CHARGE_BEAM", "CONFUSION", "MAGICAL_LEAF"],
         "chargedMoves": ["DAZZLING_GLEAM", "HYPER_BEAM", "PSYCHIC", "SEED_BOMB", "LEAF_STORM"],
-		"eliteMoves": ["MAGICAL_LEAF"],
+        "eliteMoves": ["MAGICAL_LEAF"],
         "tags": ["mythical", "untradeable"],
         "defaultIVs": {
             "cp500": [5.5, 11, 15, 14],
@@ -11226,7 +11227,7 @@
         "fastMoves": ["TACKLE", "WATER_GUN"],
         "chargedMoves": ["DIG", "SLUDGE", "STOMP"],
         "defaultIVs": {
-            "cp500": [17, 3, 15, 12],
+            "cp500": [16.5, 7, 14, 15],
             "cp1500": [50, 15, 15, 15],
             "cp2500": [50, 15, 15, 15]
         },
@@ -11270,8 +11271,8 @@
         "chargedMoves": ["MUD_BOMB", "SLUDGE", "SURF"],
         "tags": ["starter", "shadow"],
         "defaultIVs": {
-            "cp500": [10.5, 5, 14, 15],
-            "cp1500": [35, 2, 10, 15],
+            "cp500": [10.5, 7, 15, 9],
+            "cp1500": [33.5, 5, 13, 13],
             "cp2500": [50, 15, 15, 15]
         },
         "buddyDistance": 3,
@@ -12486,7 +12487,7 @@
         "fastMoves": ["ROCK_THROW", "SPARK"],
         "chargedMoves": ["ROCK_BLAST", "ROCK_SLIDE", "THUNDERBOLT"],
         "defaultIVs": {
-            "cp500": [21, 2, 8, 11],
+            "cp500": [20, 4, 11, 15],
             "cp1500": [50, 15, 15, 15],
             "cp2500": [50, 15, 15, 15]
         },
@@ -12876,7 +12877,7 @@
         "fastMoves": ["QUICK_ATTACK", "SPARK"],
         "chargedMoves": ["DISCHARGE", "SWIFT", "THUNDERBOLT"],
         "defaultIVs": {
-            "cp500": [20, 2, 15, 13],
+            "cp500": [20, 4, 14, 11],
             "cp1500": [50, 15, 15, 15],
             "cp2500": [50, 15, 15, 15]
         },
@@ -12897,9 +12898,9 @@
         "fastMoves": ["CHARGE_BEAM", "SNARL", "THUNDER_FANG"],
         "chargedMoves": ["FLAME_BURST", "THUNDER", "WILD_CHARGE", "OVERHEAT"],
         "defaultIVs": {
-            "cp500": [8, 3, 15, 12],
-            "cp1500": [24, 3, 13, 12],
-            "cp2500": [49, 4, 15, 15],
+            "cp500": [8, 4, 14, 12],
+            "cp1500": [23.5, 5, 14, 14],
+            "cp2500": [46.5, 12, 14, 14],
             "cp2500l40": [40, 14, 15, 13]
         },
         "buddyDistance": 3,
@@ -12941,9 +12942,9 @@
         "fastMoves": ["CHARGE_BEAM", "SNARL", "THUNDER_FANG"],
         "chargedMoves": ["FLAME_BURST", "THUNDER", "WILD_CHARGE", "OVERHEAT"],
         "defaultIVs": {
-            "cp500": [8, 3, 15, 12],
-            "cp1500": [24, 3, 13, 12],
-            "cp2500": [49, 4, 15, 15],
+            "cp500": [8, 4, 14, 12],
+            "cp1500": [23.5, 5, 14, 14],
+            "cp2500": [46.5, 12, 14, 14],
             "cp2500l40": [40, 14, 15, 13]
         },
         "buddyDistance": 3,
@@ -14234,9 +14235,9 @@
         "fastMoves": ["HEX", "SHADOW_CLAW"],
         "chargedMoves": ["DAZZLING_GLEAM", "SHADOW_BALL", "THUNDER"],
         "defaultIVs": {
-            "cp500": [8, 5, 15, 14],
-            "cp1500": [24.5, 4, 9, 15],
-            "cp2500": [50, 8, 15, 12],
+            "cp500": [8, 8, 15, 13],
+            "cp1500": [24.5, 4, 13, 10],
+            "cp2500": [47, 15, 14, 15],
             "cp2500l40": [40, 13, 15, 15]
         },
         "tags": ["shadow"],
@@ -14410,9 +14411,9 @@
         "fastMoves": ["PSYCHO_CUT", "SNARL"],
         "chargedMoves": ["DARK_PULSE", "MEGAHORN", "THUNDER", "PAYBACK"],
         "defaultIVs": {
-            "cp500": [6, 3, 6, 9],
-            "cp1500": [17, 6, 8, 10],
-            "cp2500": [27, 10, 13, 15]
+            "cp500": [6, 4, 9, 4],
+            "cp1500": [16.5, 6, 12, 15],
+            "cp2500": [27.5, 4, 13, 15]
         },
         "level25CP": 1534,
         "tags": ["mega"]
@@ -14904,7 +14905,7 @@
         "fastMoves": ["TAKE_DOWN"],
         "chargedMoves": ["STRUGGLE"],
         "defaultIVs": {
-            "cp500": [20, 3, 15, 14],
+            "cp500": [20.5, 4, 7, 14],
             "cp1500": [50, 15, 15, 15],
             "cp2500": [50, 15, 15, 15]
         },
@@ -15014,7 +15015,7 @@
         "types": ["rock", "none"],
         "fastMoves": ["ROCK_SMASH", "ROCK_THROW", "LOCK_ON"],
         "chargedMoves": ["FOCUS_BLAST", "STONE_EDGE", "ZAP_CANNON", "EARTHQUAKE"],
-		"eliteMoves": ["EARTHQUAKE"],
+        "eliteMoves": ["EARTHQUAKE"],
         "tags": ["legendary"],
         "defaultIVs": {
             "cp500": [6, 12, 9, 13],
@@ -15058,7 +15059,7 @@
         "types": ["steel", "none"],
         "fastMoves": ["METAL_CLAW", "ROCK_SMASH", "LOCK_ON"],
         "chargedMoves": ["FLASH_CANNON", "FOCUS_BLAST", "HYPER_BEAM", "ZAP_CANNON"],
-		"eliteMoves": ["ZAP_CANNON"],
+        "eliteMoves": ["ZAP_CANNON"],
         "tags": ["legendary"],
         "defaultIVs": {
             "cp500": [8, 4, 8, 9],
@@ -18005,8 +18006,8 @@
         "fastMoves": ["ROCK_THROW", "SPARK"],
         "chargedMoves": ["MAGNET_BOMB", "ROCK_SLIDE", "THUNDERBOLT"],
         "defaultIVs": {
-            "cp500": [9.5, 2, 13, 7],
-            "cp1500": [28, 2, 8, 14],
+            "cp500": [9, 6, 14, 14],
+            "cp1500": [27.5, 4, 7, 15],
             "cp2500": [50, 15, 15, 15]
         },
         "tags": ["shadow"],
@@ -22941,7 +22942,7 @@
             "cp1500": [17, 6, 14, 12],
             "cp2500": [28.5, 6, 9, 15]
         },
-		"searchPriority": 2,
+        "searchPriority": 2,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
@@ -24092,9 +24093,9 @@
         "fastMoves": ["CONFUSION", "ASTONISH"],
         "chargedMoves": ["SHADOW_BALL", "PSYBEAM", "PSYCHIC"],
         "defaultIVs": {
-            "cp500": [5.5, 15, 12, 14],
-            "cp1500": [16, 9, 14, 15],
-            "cp2500": [27.5, 5, 13, 10]
+            "cp500": [5.5, 12, 13, 15],
+            "cp1500": [16, 10, 12, 13],
+            "cp2500": [26.5, 11, 13, 14]
         },
         "tags": ["mythical", "untradeable"],
         "buddyDistance": 20,
@@ -24136,9 +24137,9 @@
         "fastMoves": ["CONFUSION", "ASTONISH"],
         "chargedMoves": ["SHADOW_BALL", "DARK_PULSE", "PSYCHIC"],
         "defaultIVs": {
-            "cp500": [5, 4, 8, 5],
-            "cp1500": [13.5, 8, 11, 15],
-            "cp2500": [23, 4, 11, 12]
+            "cp500": [4.5, 14, 12, 14],
+            "cp1500": [13.5, 13, 10, 10],
+            "cp2500": [22, 10, 15, 14]
         },
         "tags": ["mythical", "untradeable"],
         "buddyDistance": 20,
@@ -24162,6 +24163,2223 @@
             "cp500": [5.5, 6, 4, 5],
             "cp1500": [15, 5, 15, 13],
             "cp2500": [25, 8, 15, 11]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 722,
+        "speciesName": "Rowlet",
+        "speciesId": "rowlet",
+        "baseStats": {
+            "atk": 102,
+            "def": 99,
+            "hp": 169
+        },
+        "types": ["grass", "flying"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [18, 7, 12, 15],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 723,
+        "speciesName": "Dartrix",
+        "speciesId": "dartrix",
+        "baseStats": {
+            "atk": 142,
+            "def": 139,
+            "hp": 186
+        },
+        "types": ["grass", "flying"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [11, 5, 11, 14],
+            "cp1500": [34.5, 6, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 724,
+        "speciesName": "Decidueye",
+        "speciesId": "decidueye",
+        "baseStats": {
+            "atk": 210,
+            "def": 179,
+            "hp": 186
+        },
+        "types": ["grass", "ghost"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [7, 5, 10, 6],
+            "cp1500": [20, 4, 14, 12],
+            "cp2500": [37, 4, 13, 12]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 725,
+        "speciesName": "Litten",
+        "speciesId": "litten",
+        "baseStats": {
+            "atk": 128,
+            "def": 79,
+            "hp": 128
+        },
+        "types": ["fire", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [19, 4, 14, 6],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 726,
+        "speciesName": "Torracat",
+        "speciesId": "torracat",
+        "baseStats": {
+            "atk": 174,
+            "def": 103,
+            "hp": 163
+        },
+        "types": ["fire", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [11, 5, 11, 14],
+            "cp1500": [34.5, 6, 15, 14],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 727,
+        "speciesName": "Incineroar",
+        "speciesId": "incineroar",
+        "baseStats": {
+            "atk": 214,
+            "def": 175,
+            "hp": 216
+        },
+        "types": ["fire", "dark"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 4, 7, 13],
+            "cp1500": [18.5, 5, 11, 15],
+            "cp2500": [31.5, 6, 14, 11]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 728,
+        "speciesName": "Popplio",
+        "speciesId": "popplio",
+        "baseStats": {
+            "atk": 120,
+            "def": 103,
+            "hp": 137
+        },
+        "types": ["water", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [17, 4, 15, 11],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 729,
+        "speciesName": "Brionne",
+        "speciesId": "brionne",
+        "baseStats": {
+            "atk": 168,
+            "def": 145,
+            "hp": 155
+        },
+        "types": ["water", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [10, 4, 15, 10],
+            "cp1500": [29.5, 4, 14, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 730,
+        "speciesName": "Primarina",
+        "speciesId": "primarina",
+        "baseStats": {
+            "atk": 232,
+            "def": 195,
+            "hp": 190
+        },
+        "types": ["water", "fairy"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6, 4, 11, 13],
+            "cp1500": [17.5, 4, 14, 8],
+            "cp2500": [29, 4, 13, 11]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 731,
+        "speciesName": "Pikipek",
+        "speciesId": "pikipek",
+        "baseStats": {
+            "atk": 136,
+            "def": 59,
+            "hp": 111
+        },
+        "types": ["normal", "flying"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [21, 4, 14, 12],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 732,
+        "speciesName": "Trumbeak",
+        "speciesId": "trumbeak",
+        "baseStats": {
+            "atk": 159,
+            "def": 100,
+            "hp": 146
+        },
+        "types": ["normal", "flying"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [13, 5, 11, 10],
+            "cp1500": [47.5, 4, 15, 11],
+            "cp2500": [50, 15, 15, 15],
+            "cp1500l40": [40, 15, 15, 13]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 733,
+        "speciesName": "Toucannon",
+        "speciesId": "toucannon",
+        "baseStats": {
+            "atk": 222,
+            "def": 146,
+            "hp": 190
+        },
+        "types": ["normal", "flying"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [7, 8, 15, 8],
+            "cp1500": [20.5, 5, 14, 12],
+            "cp2500": [38, 5, 15, 14]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 734,
+        "speciesName": "Yungoos",
+        "speciesId": "yungoos",
+        "baseStats": {
+            "atk": 122,
+            "def": 56,
+            "hp": 134
+        },
+        "types": ["normal", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [21.5, 7, 15, 10],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 735,
+        "speciesName": "Gumshoos",
+        "speciesId": "gumshoos",
+        "baseStats": {
+            "atk": 194,
+            "def": 113,
+            "hp": 204
+        },
+        "types": ["normal", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [8.5, 5, 14, 14],
+            "cp1500": [25.5, 6, 14, 10],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 736,
+        "speciesName": "Grubbin",
+        "speciesId": "grubbin",
+        "baseStats": {
+            "atk": 115,
+            "def": 85,
+            "hp": 132
+        },
+        "types": ["bug", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [20, 4, 13, 9],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 737,
+        "speciesName": "Charjabug",
+        "speciesId": "charjabug",
+        "baseStats": {
+            "atk": 145,
+            "def": 161,
+            "hp": 149
+        },
+        "types": ["bug", "electric"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [11, 7, 11, 14],
+            "cp1500": [38, 4, 9, 13],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 738,
+        "speciesName": "Vikavolt",
+        "speciesId": "vikavolt",
+        "baseStats": {
+            "atk": 254,
+            "def": 158,
+            "hp": 184
+        },
+        "types": ["bug", "electric"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6, 12, 14, 10],
+            "cp1500": [17.5, 8, 11, 15],
+            "cp2500": [29.5, 4, 11, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 739,
+        "speciesName": "Crabrawler",
+        "speciesId": "crabrawler",
+        "baseStats": {
+            "atk": 150,
+            "def": 104,
+            "hp": 132
+        },
+        "types": ["fighting", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [13.5, 9, 12, 15],
+            "cp1500": [48.5, 13, 15, 15],
+            "cp2500": [50, 15, 15, 15],
+            "cp1500l40": [40, 15, 13, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 740,
+        "speciesName": "Crabominable",
+        "speciesId": "crabominable",
+        "baseStats": {
+            "atk": 231,
+            "def": 138,
+            "hp": 219
+        },
+        "types": ["fighting", "ice"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 6, 14, 13],
+            "cp1500": [19, 4, 13, 14],
+            "cp2500": [32.5, 7, 14, 14]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 742,
+        "speciesName": "Cutiefly",
+        "speciesId": "cutiefly",
+        "baseStats": {
+            "atk": 110,
+            "def": 81,
+            "hp": 120
+        },
+        "types": ["bug", "fairy"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [22.5, 4, 9, 13],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 743,
+        "speciesName": "Ribombee",
+        "speciesId": "ribombee",
+        "baseStats": {
+            "atk": 198,
+            "def": 146,
+            "hp": 155
+        },
+        "types": ["bug", "fairy"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [8.5, 6, 14, 11],
+            "cp1500": [25.5, 5, 12, 12],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 744,
+        "speciesName": "Rockruff",
+        "speciesId": "rockruff",
+        "baseStats": {
+            "atk": 117,
+            "def": 78,
+            "hp": 128
+        },
+        "types": ["rock", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [20.5, 4, 14, 10],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 745,
+        "speciesName": "Lycanroc",
+        "speciesId": "lycanroc",
+        "baseStats": {
+            "atk": 231,
+            "def": 140,
+            "hp": 181
+        },
+        "types": ["rock", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [7, 7, 14, 12],
+            "cp1500": [20, 11, 14, 15],
+            "cp2500": [38, 6, 14, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 745,
+        "speciesName": "Lycanroc (Dusk)",
+        "speciesId": "lycanroc_dusk",
+        "baseStats": {
+            "atk": 234,
+            "def": 139,
+            "hp": 181
+        },
+        "types": ["rock", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [7, 6, 15, 9],
+            "cp1500": [20.5, 6, 14, 10],
+            "cp2500": [37.5, 6, 15, 13]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 745,
+        "speciesName": "Lycanroc (Midday)",
+        "speciesId": "lycanroc_midday",
+        "baseStats": {
+            "atk": 231,
+            "def": 140,
+            "hp": 181
+        },
+        "types": ["rock", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [7, 7, 14, 12],
+            "cp1500": [20, 11, 14, 15],
+            "cp2500": [38, 6, 14, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 745,
+        "speciesName": "Lycanroc (Midnight)",
+        "speciesId": "lycanroc_midnight",
+        "baseStats": {
+            "atk": 218,
+            "def": 152,
+            "hp": 198
+        },
+        "types": ["rock", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [7, 5, 9, 12],
+            "cp1500": [20.5, 4, 15, 6],
+            "cp2500": [36.5, 5, 14, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 746,
+        "speciesName": "Wishiwashi",
+        "speciesId": "wishiwashi",
+        "baseStats": {
+            "atk": 46,
+            "def": 43,
+            "hp": 128
+        },
+        "types": ["water", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [50, 15, 15, 15],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 75000,
+        "released": false
+    }, {
+        "dex": 746,
+        "speciesName": "Wishiwashi (School)",
+        "speciesId": "wishiwashi_school",
+        "baseStats": {
+            "atk": 255,
+            "def": 242,
+            "hp": 128
+        },
+        "types": ["water", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6, 5, 4, 13],
+            "cp1500": [17, 4, 15, 13],
+            "cp2500": [28.5, 5, 9, 14]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 75000,
+        "released": false
+    }, {
+        "dex": 746,
+        "speciesName": "Wishiwashi_solo",
+        "speciesId": "wishiwashi_solo",
+        "baseStats": {
+            "atk": 46,
+            "def": 43,
+            "hp": 128
+        },
+        "types": ["water", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [50, 15, 15, 15],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 75000,
+        "released": false
+    }, {
+        "dex": 747,
+        "speciesName": "Mareanie",
+        "speciesId": "mareanie",
+        "baseStats": {
+            "atk": 98,
+            "def": 110,
+            "hp": 137
+        },
+        "types": ["poison", "water"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [20.5, 4, 10, 13],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 748,
+        "speciesName": "Toxapex",
+        "speciesId": "toxapex",
+        "baseStats": {
+            "atk": 114,
+            "def": 273,
+            "hp": 137
+        },
+        "types": ["poison", "water"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [11.5, 4, 12, 11],
+            "cp1500": [38.5, 4, 11, 14],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 749,
+        "speciesName": "Mudbray",
+        "speciesId": "mudbray",
+        "baseStats": {
+            "atk": 175,
+            "def": 121,
+            "hp": 172
+        },
+        "types": ["ground", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [10, 4, 12, 11],
+            "cp1500": [30, 4, 11, 13],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 750,
+        "speciesName": "Mudsdale",
+        "speciesId": "mudsdale",
+        "baseStats": {
+            "atk": 214,
+            "def": 174,
+            "hp": 225
+        },
+        "types": ["ground", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6, 12, 15, 15],
+            "cp1500": [18, 6, 15, 12],
+            "cp2500": [30.5, 5, 15, 11]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 751,
+        "speciesName": "Dewpider",
+        "speciesId": "dewpider",
+        "baseStats": {
+            "atk": 72,
+            "def": 117,
+            "hp": 116
+        },
+        "types": ["water", "bug"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [29, 4, 9, 12],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 752,
+        "speciesName": "Araquanid",
+        "speciesId": "araquanid",
+        "baseStats": {
+            "atk": 126,
+            "def": 219,
+            "hp": 169
+        },
+        "types": ["water", "bug"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [10.5, 4, 9, 15],
+            "cp1500": [33.5, 4, 15, 8],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 753,
+        "speciesName": "Fomantis",
+        "speciesId": "fomantis",
+        "baseStats": {
+            "atk": 100,
+            "def": 64,
+            "hp": 120
+        },
+        "types": ["grass", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [26.5, 4, 14, 11],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 754,
+        "speciesName": "Lurantis",
+        "speciesId": "lurantis",
+        "baseStats": {
+            "atk": 192,
+            "def": 169,
+            "hp": 172
+        },
+        "types": ["grass", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [8, 4, 8, 14],
+            "cp1500": [23.5, 4, 8, 15],
+            "cp2500": [48, 5, 14, 13],
+            "cp2500l40": [40, 15, 13, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 755,
+        "speciesName": "Morelull",
+        "speciesId": "morelull",
+        "baseStats": {
+            "atk": 108,
+            "def": 119,
+            "hp": 120
+        },
+        "types": ["grass", "fairy"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [19.5, 4, 9, 9],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 756,
+        "speciesName": "Shiinotic",
+        "speciesId": "shiinotic",
+        "baseStats": {
+            "atk": 154,
+            "def": 168,
+            "hp": 155
+        },
+        "types": ["grass", "fairy"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [10, 8, 15, 9],
+            "cp1500": [30.5, 5, 12, 14],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 757,
+        "speciesName": "Salandit",
+        "speciesId": "salandit",
+        "baseStats": {
+            "atk": 136,
+            "def": 80,
+            "hp": 134
+        },
+        "types": ["poison", "fire"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [17.5, 4, 9, 13],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 758,
+        "speciesName": "Salazzle",
+        "speciesId": "salazzle",
+        "baseStats": {
+            "atk": 228,
+            "def": 130,
+            "hp": 169
+        },
+        "types": ["poison", "fire"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [7.5, 8, 14, 12],
+            "cp1500": [22, 6, 15, 13],
+            "cp2500": [46, 4, 15, 8],
+            "cp2500l40": [40, 12, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 759,
+        "speciesName": "Stufful",
+        "speciesId": "stufful",
+        "baseStats": {
+            "atk": 136,
+            "def": 95,
+            "hp": 172
+        },
+        "types": ["normal", "fighting"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [14, 4, 15, 12],
+            "cp1500": [50, 13, 13, 15],
+            "cp2500": [50, 15, 15, 15],
+            "cp1500l40": [40, 14, 15, 13]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 760,
+        "speciesName": "Bewear",
+        "speciesId": "bewear",
+        "baseStats": {
+            "atk": 226,
+            "def": 141,
+            "hp": 260
+        },
+        "types": ["normal", "fighting"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6, 10, 14, 11],
+            "cp1500": [18, 4, 10, 12],
+            "cp2500": [29.5, 6, 13, 12]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 761,
+        "speciesName": "Bounsweet",
+        "speciesId": "bounsweet",
+        "baseStats": {
+            "atk": 55,
+            "def": 69,
+            "hp": 123
+        },
+        "types": ["grass", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [50, 11, 15, 12],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15],
+            "cp500l40": [40, 15, 13, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 762,
+        "speciesName": "Steenee",
+        "speciesId": "steenee",
+        "baseStats": {
+            "atk": 78,
+            "def": 94,
+            "hp": 141
+        },
+        "types": ["grass", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [26.5, 5, 12, 12],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 763,
+        "speciesName": "Tsareena",
+        "speciesId": "tsareena",
+        "baseStats": {
+            "atk": 222,
+            "def": 195,
+            "hp": 176
+        },
+        "types": ["grass", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 6, 14, 6],
+            "cp1500": [19, 4, 11, 10],
+            "cp2500": [32.5, 4, 12, 14]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 764,
+        "speciesName": "Comfey",
+        "speciesId": "comfey",
+        "baseStats": {
+            "atk": 165,
+            "def": 215,
+            "hp": 139
+        },
+        "types": ["fairy", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [9, 4, 11, 13],
+            "cp1500": [26.5, 5, 11, 14],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 765,
+        "speciesName": "Oranguru",
+        "speciesId": "oranguru",
+        "baseStats": {
+            "atk": 168,
+            "def": 192,
+            "hp": 207
+        },
+        "types": ["normal", "psychic"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [8, 4, 9, 5],
+            "cp1500": [22.5, 7, 15, 13],
+            "cp2500": [47, 4, 14, 13],
+            "cp2500l40": [40, 13, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 75000,
+        "released": false
+    }, {
+        "dex": 766,
+        "speciesName": "Passimian",
+        "speciesId": "passimian",
+        "baseStats": {
+            "atk": 222,
+            "def": 160,
+            "hp": 225
+        },
+        "types": ["fighting", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 5, 4, 9],
+            "cp1500": [18.5, 4, 15, 5],
+            "cp2500": [31, 4, 13, 13]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 75000,
+        "released": false
+    }, {
+        "dex": 767,
+        "speciesName": "Wimpod",
+        "speciesId": "wimpod",
+        "baseStats": {
+            "atk": 67,
+            "def": 74,
+            "hp": 93
+        },
+        "types": ["bug", "water"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [50, 5, 14, 15],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15],
+            "cp500l40": [40, 15, 15, 13]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 768,
+        "speciesName": "Golisopod",
+        "speciesId": "golisopod",
+        "baseStats": {
+            "atk": 218,
+            "def": 226,
+            "hp": 181
+        },
+        "types": ["bug", "water"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6, 8, 15, 10],
+            "cp1500": [17.5, 6, 13, 11],
+            "cp2500": [29.5, 4, 10, 13]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": false
+    }, {
+        "dex": 769,
+        "speciesName": "Sandygast",
+        "speciesId": "sandygast",
+        "baseStats": {
+            "atk": 120,
+            "def": 118,
+            "hp": 146
+        },
+        "types": ["ghost", "ground"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [15.5, 6, 14, 10],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 770,
+        "speciesName": "Palossand",
+        "speciesId": "palossand",
+        "baseStats": {
+            "atk": 178,
+            "def": 178,
+            "hp": 198
+        },
+        "types": ["ghost", "ground"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [7.5, 12, 11, 15],
+            "cp1500": [23, 4, 10, 15],
+            "cp2500": [48, 4, 9, 14],
+            "cp2500l40": [40, 14, 15, 14]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 771,
+        "speciesName": "Pyukumuku",
+        "speciesId": "pyukumuku",
+        "baseStats": {
+            "atk": 97,
+            "def": 224,
+            "hp": 146
+        },
+        "types": ["water", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [14.5, 4, 4, 15],
+            "cp1500": [49.5, 12, 14, 15],
+            "cp2500": [50, 15, 15, 15],
+            "cp1500l40": [40, 14, 14, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 75000,
+        "released": false
+    }, {
+        "dex": 772,
+        "speciesName": "Type (Null)",
+        "speciesId": "type_null",
+        "baseStats": {
+            "atk": 184,
+            "def": 184,
+            "hp": 216
+        },
+        "types": ["normal", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [7, 10, 13, 11],
+            "cp1500": [21, 4, 12, 14],
+            "cp2500": [41, 4, 9, 13],
+            "cp2500l40": [36.5, 13, 14, 14]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 773,
+        "speciesName": "Silvally",
+        "speciesId": "silvally",
+        "baseStats": {
+            "atk": 198,
+            "def": 198,
+            "hp": 216
+        },
+        "types": ["normal", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 6, 14, 8],
+            "cp1500": [19, 4, 10, 14],
+            "cp2500": [33.5, 4, 14, 9]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 773,
+        "speciesName": "Silvally (Bug)",
+        "speciesId": "silvally_bug",
+        "baseStats": {
+            "atk": 198,
+            "def": 198,
+            "hp": 216
+        },
+        "types": ["bug", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 6, 14, 8],
+            "cp1500": [19, 4, 10, 14],
+            "cp2500": [33.5, 4, 14, 9]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 773,
+        "speciesName": "Silvally (Dark)",
+        "speciesId": "silvally_dark",
+        "baseStats": {
+            "atk": 198,
+            "def": 198,
+            "hp": 216
+        },
+        "types": ["dark", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 6, 14, 8],
+            "cp1500": [19, 4, 10, 14],
+            "cp2500": [33.5, 4, 14, 9]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 773,
+        "speciesName": "Silvally (Dragon)",
+        "speciesId": "silvally_dragon",
+        "baseStats": {
+            "atk": 198,
+            "def": 198,
+            "hp": 216
+        },
+        "types": ["dragon", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 6, 14, 8],
+            "cp1500": [19, 4, 10, 14],
+            "cp2500": [33.5, 4, 14, 9]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 773,
+        "speciesName": "Silvally (Electric)",
+        "speciesId": "silvally_electric",
+        "baseStats": {
+            "atk": 198,
+            "def": 198,
+            "hp": 216
+        },
+        "types": ["electric", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 6, 14, 8],
+            "cp1500": [19, 4, 10, 14],
+            "cp2500": [33.5, 4, 14, 9]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 773,
+        "speciesName": "Silvally (Fairy)",
+        "speciesId": "silvally_fairy",
+        "baseStats": {
+            "atk": 198,
+            "def": 198,
+            "hp": 216
+        },
+        "types": ["fairy", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 6, 14, 8],
+            "cp1500": [19, 4, 10, 14],
+            "cp2500": [33.5, 4, 14, 9]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 773,
+        "speciesName": "Silvally (Fighting)",
+        "speciesId": "silvally_fighting",
+        "baseStats": {
+            "atk": 198,
+            "def": 198,
+            "hp": 216
+        },
+        "types": ["fighting", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 6, 14, 8],
+            "cp1500": [19, 4, 10, 14],
+            "cp2500": [33.5, 4, 14, 9]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 773,
+        "speciesName": "Silvally (Fire)",
+        "speciesId": "silvally_fire",
+        "baseStats": {
+            "atk": 198,
+            "def": 198,
+            "hp": 216
+        },
+        "types": ["fire", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 6, 14, 8],
+            "cp1500": [19, 4, 10, 14],
+            "cp2500": [33.5, 4, 14, 9]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 773,
+        "speciesName": "Silvally (Flying)",
+        "speciesId": "silvally_flying",
+        "baseStats": {
+            "atk": 198,
+            "def": 198,
+            "hp": 216
+        },
+        "types": ["flying", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 6, 14, 8],
+            "cp1500": [19, 4, 10, 14],
+            "cp2500": [33.5, 4, 14, 9]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 773,
+        "speciesName": "Silvally (Ghost)",
+        "speciesId": "silvally_ghost",
+        "baseStats": {
+            "atk": 198,
+            "def": 198,
+            "hp": 216
+        },
+        "types": ["ghost", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 6, 14, 8],
+            "cp1500": [19, 4, 10, 14],
+            "cp2500": [33.5, 4, 14, 9]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 773,
+        "speciesName": "Silvally (Grass)",
+        "speciesId": "silvally_grass",
+        "baseStats": {
+            "atk": 198,
+            "def": 198,
+            "hp": 216
+        },
+        "types": ["grass", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 6, 14, 8],
+            "cp1500": [19, 4, 10, 14],
+            "cp2500": [33.5, 4, 14, 9]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 773,
+        "speciesName": "Silvally (Ground)",
+        "speciesId": "silvally_ground",
+        "baseStats": {
+            "atk": 198,
+            "def": 198,
+            "hp": 216
+        },
+        "types": ["ground", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 6, 14, 8],
+            "cp1500": [19, 4, 10, 14],
+            "cp2500": [33.5, 4, 14, 9]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 773,
+        "speciesName": "Silvally (Ice)",
+        "speciesId": "silvally_ice",
+        "baseStats": {
+            "atk": 198,
+            "def": 198,
+            "hp": 216
+        },
+        "types": ["ice", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 6, 14, 8],
+            "cp1500": [19, 4, 10, 14],
+            "cp2500": [33.5, 4, 14, 9]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 773,
+        "speciesName": "Silvally (Poison)",
+        "speciesId": "silvally_poison",
+        "baseStats": {
+            "atk": 198,
+            "def": 198,
+            "hp": 216
+        },
+        "types": ["poison", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 6, 14, 8],
+            "cp1500": [19, 4, 10, 14],
+            "cp2500": [33.5, 4, 14, 9]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 773,
+        "speciesName": "Silvally (Psychic)",
+        "speciesId": "silvally_psychic",
+        "baseStats": {
+            "atk": 198,
+            "def": 198,
+            "hp": 216
+        },
+        "types": ["psychic", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 6, 14, 8],
+            "cp1500": [19, 4, 10, 14],
+            "cp2500": [33.5, 4, 14, 9]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 773,
+        "speciesName": "Silvally (Rock)",
+        "speciesId": "silvally_rock",
+        "baseStats": {
+            "atk": 198,
+            "def": 198,
+            "hp": 216
+        },
+        "types": ["rock", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 6, 14, 8],
+            "cp1500": [19, 4, 10, 14],
+            "cp2500": [33.5, 4, 14, 9]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 773,
+        "speciesName": "Silvally (Steel)",
+        "speciesId": "silvally_steel",
+        "baseStats": {
+            "atk": 198,
+            "def": 198,
+            "hp": 216
+        },
+        "types": ["steel", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 6, 14, 8],
+            "cp1500": [19, 4, 10, 14],
+            "cp2500": [33.5, 4, 14, 9]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 773,
+        "speciesName": "Silvally (Water)",
+        "speciesId": "silvally_water",
+        "baseStats": {
+            "atk": 198,
+            "def": 198,
+            "hp": 216
+        },
+        "types": ["water", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 6, 14, 8],
+            "cp1500": [19, 4, 10, 14],
+            "cp2500": [33.5, 4, 14, 9]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 774,
+        "speciesName": "Minior (Core)",
+        "speciesId": "minior_core",
+        "baseStats": {
+            "atk": 218,
+            "def": 131,
+            "hp": 155
+        },
+        "types": ["rock", "flying"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [8, 11, 12, 13],
+            "cp1500": [24, 7, 14, 12],
+            "cp2500": [48.5, 12, 14, 14],
+            "cp2500l40": [40, 12, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 774,
+        "speciesName": "Minior (Meteor)",
+        "speciesId": "minior_meteor",
+        "baseStats": {
+            "atk": 116,
+            "def": 194,
+            "hp": 155
+        },
+        "types": ["rock", "flying"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [12.5, 4, 14, 12],
+            "cp1500": [45.5, 4, 13, 13],
+            "cp2500": [50, 15, 15, 15],
+            "cp1500l40": [39.5, 12, 15, 14]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 775,
+        "speciesName": "Komala",
+        "speciesId": "komala",
+        "baseStats": {
+            "atk": 216,
+            "def": 165,
+            "hp": 163
+        },
+        "types": ["normal", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [7.5, 4, 11, 7],
+            "cp1500": [21, 8, 15, 14],
+            "cp2500": [42, 4, 15, 11],
+            "cp2500l40": [38.5, 12, 14, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 776,
+        "speciesName": "Turtonator",
+        "speciesId": "turtonator",
+        "baseStats": {
+            "atk": 165,
+            "def": 215,
+            "hp": 155
+        },
+        "types": ["fire", "dragon"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [8.5, 5, 15, 11],
+            "cp1500": [25, 6, 14, 13],
+            "cp2500": [50, 14, 14, 14],
+            "cp2500l40": [40, 15, 14, 14]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": false
+    }, {
+        "dex": 777,
+        "speciesName": "Togedemaru",
+        "speciesId": "togedemaru",
+        "baseStats": {
+            "atk": 190,
+            "def": 145,
+            "hp": 163
+        },
+        "types": ["electric", "steel"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [8.5, 9, 13, 14],
+            "cp1500": [26, 4, 10, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 778,
+        "speciesName": "Mimikyu",
+        "speciesId": "mimikyu",
+        "baseStats": {
+            "atk": 177,
+            "def": 199,
+            "hp": 146
+        },
+        "types": ["ghost", "fairy"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [8.5, 6, 11, 12],
+            "cp1500": [25, 4, 15, 13],
+            "cp2500": [50, 13, 14, 15],
+            "cp2500l40": [40, 15, 14, 14]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 779,
+        "speciesName": "Bruxish",
+        "speciesId": "bruxish",
+        "baseStats": {
+            "atk": 208,
+            "def": 145,
+            "hp": 169
+        },
+        "types": ["water", "psychic"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [8, 5, 10, 11],
+            "cp1500": [23.5, 4, 10, 14],
+            "cp2500": [46.5, 7, 15, 15],
+            "cp2500l40": [40, 15, 13, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 780,
+        "speciesName": "Drampa",
+        "speciesId": "drampa",
+        "baseStats": {
+            "atk": 231,
+            "def": 164,
+            "hp": 186
+        },
+        "types": ["normal", "dragon"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 7, 13, 11],
+            "cp1500": [19, 4, 15, 10],
+            "cp2500": [33, 6, 13, 13]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": false
+    }, {
+        "dex": 781,
+        "speciesName": "Dhelmise",
+        "speciesId": "dhelmise",
+        "baseStats": {
+            "atk": 233,
+            "def": 179,
+            "hp": 172
+        },
+        "types": ["ghost", "grass"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 6, 11, 10],
+            "cp1500": [19, 5, 14, 7],
+            "cp2500": [32.5, 5, 15, 11]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 50000,
+        "released": false
+    }, {
+        "dex": 782,
+        "speciesName": "Jangmo-o",
+        "speciesId": "jangmo_o",
+        "baseStats": {
+            "atk": 102,
+            "def": 108,
+            "hp": 128
+        },
+        "types": ["dragon", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [20, 4, 14, 13],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": false
+    }, {
+        "dex": 783,
+        "speciesName": "Hakamo-o",
+        "speciesId": "hakamo_o",
+        "baseStats": {
+            "atk": 145,
+            "def": 162,
+            "hp": 146
+        },
+        "types": ["dragon", "fighting"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [11.5, 4, 15, 5],
+            "cp1500": [36.5, 5, 13, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": false
+    }, {
+        "dex": 784,
+        "speciesName": "Kommo-o",
+        "speciesId": "kommo_o",
+        "baseStats": {
+            "atk": 222,
+            "def": 240,
+            "hp": 181
+        },
+        "types": ["dragon", "fighting"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6, 5, 6, 4],
+            "cp1500": [16.5, 6, 15, 14],
+            "cp2500": [27.5, 7, 12, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": false
+    }, {
+        "dex": 785,
+        "speciesName": "Tapu Koko",
+        "speciesId": "tapu_koko",
+        "baseStats": {
+            "atk": 250,
+            "def": 181,
+            "hp": 172
+        },
+        "types": ["electric", "fairy"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6, 5, 14, 14],
+            "cp1500": [17.5, 5, 12, 12],
+            "cp2500": [28.5, 8, 13, 15]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 786,
+        "speciesName": "Tapu Lele",
+        "speciesId": "tapu_lele",
+        "baseStats": {
+            "atk": 259,
+            "def": 208,
+            "hp": 172
+        },
+        "types": ["psychic", "fairy"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [5.5, 6, 9, 15],
+            "cp1500": [16, 4, 15, 7],
+            "cp2500": [26, 5, 13, 15]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 787,
+        "speciesName": "Tapu Bulu",
+        "speciesId": "tapu_bulu",
+        "baseStats": {
+            "atk": 249,
+            "def": 215,
+            "hp": 172
+        },
+        "types": ["grass", "fairy"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [5.5, 10, 15, 13],
+            "cp1500": [16, 7, 11, 14],
+            "cp2500": [27, 4, 13, 12]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 788,
+        "speciesName": "Tapu Fini",
+        "speciesId": "tapu_fini",
+        "baseStats": {
+            "atk": 189,
+            "def": 254,
+            "hp": 172
+        },
+        "types": ["water", "fairy"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 12, 10, 13],
+            "cp1500": [19.5, 4, 10, 15],
+            "cp2500": [36, 4, 9, 12]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 789,
+        "speciesName": "Cosmog",
+        "speciesId": "cosmog",
+        "baseStats": {
+            "atk": 54,
+            "def": 57,
+            "hp": 125
+        },
+        "types": ["psychic", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [50, 15, 15, 15],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 790,
+        "speciesName": "Cosmoem",
+        "speciesId": "cosmoem",
+        "baseStats": {
+            "atk": 54,
+            "def": 242,
+            "hp": 125
+        },
+        "types": ["psychic", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [26, 4, 4, 15],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 791,
+        "speciesName": "Solgaleo",
+        "speciesId": "solgaleo",
+        "baseStats": {
+            "atk": 255,
+            "def": 191,
+            "hp": 264
+        },
+        "types": ["psychic", "steel"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [4.5, 15, 13, 15],
+            "cp1500": [13.5, 6, 14, 12],
+            "cp2500": [22.5, 7, 13, 13]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 792,
+        "speciesName": "Lunala",
+        "speciesId": "lunala",
+        "baseStats": {
+            "atk": 255,
+            "def": 191,
+            "hp": 264
+        },
+        "types": ["psychic", "ghost"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [4.5, 15, 13, 15],
+            "cp1500": [13.5, 6, 14, 12],
+            "cp2500": [22.5, 7, 13, 13]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 793,
+        "speciesName": "Nihilego",
+        "speciesId": "nihilego",
+        "baseStats": {
+            "atk": 249,
+            "def": 210,
+            "hp": 240
+        },
+        "types": ["rock", "poison"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [5, 4, 7, 13],
+            "cp1500": [14, 6, 11, 11],
+            "cp2500": [23.5, 5, 6, 15]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 794,
+        "speciesName": "Buzzwole",
+        "speciesId": "buzzwole",
+        "baseStats": {
+            "atk": 236,
+            "def": 196,
+            "hp": 216
+        },
+        "types": ["bug", "fighting"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [5.5, 7, 13, 14],
+            "cp1500": [16, 6, 15, 7],
+            "cp2500": [26.5, 6, 11, 14]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 795,
+        "speciesName": "Pheromosa",
+        "speciesId": "pheromosa",
+        "baseStats": {
+            "atk": 316,
+            "def": 85,
+            "hp": 174
+        },
+        "types": ["bug", "fighting"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 8, 14, 14],
+            "cp1500": [19, 8, 13, 15],
+            "cp2500": [34.5, 4, 15, 10]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 796,
+        "speciesName": "Xurkitree",
+        "speciesId": "xurkitree",
+        "baseStats": {
+            "atk": 330,
+            "def": 144,
+            "hp": 195
+        },
+        "types": ["electric", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [5, 4, 10, 9],
+            "cp1500": [13.5, 8, 15, 15],
+            "cp2500": [23, 7, 15, 10]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 797,
+        "speciesName": "Celesteela",
+        "speciesId": "celesteela",
+        "baseStats": {
+            "atk": 207,
+            "def": 199,
+            "hp": 219
+        },
+        "types": ["steel", "flying"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6, 11, 14, 14],
+            "cp1500": [18, 4, 11, 13],
+            "cp2500": [30.5, 4, 15, 6]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 798,
+        "speciesName": "Kartana",
+        "speciesId": "kartana",
+        "baseStats": {
+            "atk": 323,
+            "def": 182,
+            "hp": 139
+        },
+        "types": ["grass", "steel"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [5, 14, 14, 14],
+            "cp1500": [15, 4, 11, 13],
+            "cp2500": [25, 4, 9, 14]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 799,
+        "speciesName": "Guzzlord",
+        "speciesId": "guzzlord",
+        "baseStats": {
+            "atk": 188,
+            "def": 99,
+            "hp": 440
+        },
+        "types": ["dark", "ghost"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6.5, 9, 13, 14],
+            "cp1500": [19.5, 4, 12, 11],
+            "cp2500": [35, 4, 14, 6]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 800,
+        "speciesName": "Necrozma",
+        "speciesId": "necrozma",
+        "baseStats": {
+            "atk": 251,
+            "def": 195,
+            "hp": 219
+        },
+        "types": ["psychic", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [5, 13, 15, 12],
+            "cp1500": [15, 6, 8, 15],
+            "cp2500": [25, 5, 13, 11]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 800,
+        "speciesName": "Necrozma (Dawn Wings)",
+        "speciesId": "necrozma_dawn_wings",
+        "baseStats": {
+            "atk": 277,
+            "def": 220,
+            "hp": 200
+        },
+        "types": ["psychic", "ghost"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [4.5, 15, 13, 15],
+            "cp1500": [13.5, 6, 15, 6],
+            "cp2500": [22.5, 5, 15, 7]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 800,
+        "speciesName": "Necrozma (Dusk Mane)",
+        "speciesId": "necrozma_dusk_mane",
+        "baseStats": {
+            "atk": 277,
+            "def": 220,
+            "hp": 200
+        },
+        "types": ["psychic", "steel"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [4.5, 15, 13, 15],
+            "cp1500": [13.5, 6, 15, 6],
+            "cp2500": [22.5, 5, 15, 7]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 800,
+        "speciesName": "Necrozma (Ultra)",
+        "speciesId": "necrozma_ultra",
+        "baseStats": {
+            "atk": 337,
+            "def": 196,
+            "hp": 200
+        },
+        "types": ["psychic", "dragon"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [4, 13, 15, 12],
+            "cp1500": [11.5, 8, 14, 13],
+            "cp2500": [19.5, 4, 10, 15]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 801,
+        "speciesName": "Magearna",
+        "speciesId": "magearna",
+        "baseStats": {
+            "atk": 246,
+            "def": 225,
+            "hp": 190
+        },
+        "types": ["steel", "fairy"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [5.5, 4, 8, 6],
+            "cp1500": [15.5, 5, 11, 8],
+            "cp2500": [25.5, 5, 13, 11]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 803,
+        "speciesName": "Poipole",
+        "speciesId": "poipole",
+        "baseStats": {
+            "atk": 145,
+            "def": 133,
+            "hp": 167
+        },
+        "types": ["poison", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [11.5, 6, 14, 10],
+            "cp1500": [39.5, 4, 13, 13],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 804,
+        "speciesName": "Naganadel",
+        "speciesId": "naganadel",
+        "baseStats": {
+            "atk": 263,
+            "def": 159,
+            "hp": 177
+        },
+        "types": ["poison", "dragon"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6, 5, 12, 15],
+            "cp1500": [17.5, 4, 15, 9],
+            "cp2500": [28.5, 5, 15, 14]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 805,
+        "speciesName": "Stakataka",
+        "speciesId": "stakataka",
+        "baseStats": {
+            "atk": 213,
+            "def": 298,
+            "hp": 156
+        },
+        "types": ["rock", "steel"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [6, 4, 13, 5],
+            "cp1500": [16.5, 7, 15, 15],
+            "cp2500": [28, 5, 10, 14]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 806,
+        "speciesName": "Blacephalon",
+        "speciesId": "blacephalon",
+        "baseStats": {
+            "atk": 315,
+            "def": 148,
+            "hp": 142
+        },
+        "types": ["fire", "ghost"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [5.5, 15, 14, 15],
+            "cp1500": [16.5, 6, 15, 12],
+            "cp2500": [28, 6, 14, 8]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 807,
+        "speciesName": "Zeraora",
+        "speciesId": "zeraora",
+        "baseStats": {
+            "atk": 252,
+            "def": 177,
+            "hp": 204
+        },
+        "types": ["electric", "none"],
+        "fastMoves": ["STRUGGLE"],
+        "chargedMoves": ["STRUGGLE"],
+        "defaultIVs": {
+            "cp500": [5.5, 12, 10, 15],
+            "cp1500": [16, 5, 15, 12],
+            "cp2500": [26.5, 6, 15, 13]
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
@@ -26446,7 +28664,7 @@
     }, {
         "moveId": "ACROBATICS",
         "name": "Acrobatics",
-		"abbreviation": "Acr",
+        "abbreviation": "Acr",
         "type": "flying",
         "power": 110,
         "energy": 60,
