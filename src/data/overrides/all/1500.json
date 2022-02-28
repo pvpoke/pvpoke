@@ -75,6 +75,18 @@
 		"fastMove": "SNARL"
 	},
 	{
+		"speciesId": "primarina",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "brionne",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "incineroar",
+		"chargedMoves": ["DARK_PULSE", "FIRE_BLAST"]
+	},
+	{
 		"speciesId": "cofagrigus",
 		"chargedMoves": ["SHADOW_BALL", "PSYCHIC"],
 		"weight": 8

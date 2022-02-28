@@ -23,6 +23,18 @@
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["AQUA_TAIL", "OUTRAGE"]
 }, {
+    "speciesId": "hakamo_o",
+    "fastMove": "DRAGON_TAIL",
+    "chargedMoves": ["DRAGON_CLAW", "BRICK_BREAK"]
+}, {
+    "speciesId": "kommo_o",
+    "fastMove": "DRAGON_TAIL",
+    "chargedMoves": ["DRAGON_CLAW", "CLOSE_COMBAT"]
+}, {
+    "speciesId": "lycanroc_midnight",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["PSYCHIC_FANGS", "STONE_EDGE"]
+}, {
     "speciesId": "obstagoon",
     "fastMove": "COUNTER",
     "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]

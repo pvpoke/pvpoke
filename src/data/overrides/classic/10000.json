@@ -38,6 +38,15 @@
 		"weight": 2
 	},
 	{
+		"speciesId": "primarina",
+		"fastMove": "CHARM",
+		"chargedMoves": ["MOONBLAST", "HYDRO_PUMP"]
+	},
+	{
+		"speciesId": "tapu_koko",
+		"chargedMoves": ["THUNDERBOLT", "DAZZLING_GLEAM"]
+	},
+	{
 		"speciesId": "goodra",
 		"chargedMoves": ["MUDDY_WATER", "DRACO_METEOR"]
 	},
@@ -272,7 +281,7 @@
 	},
 	{
 		"speciesId": "mew",
-		"chargedMoves": ["PSYSHOCK","FOCUS_BLAST"]
+		"chargedMoves": ["SURF","WILD_CHARGE"]
 	},
 	{
 		"speciesId": "kyogre",

@@ -25,6 +25,14 @@
 		"weight": 17
 	},
 	{
+		"speciesId": "primarina",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "incineroar",
+		"chargedMoves": ["DARK_PULSE", "FIRE_BLAST"]
+	},
+	{
 		"speciesId": "gardevoir",
 		"fastMove": "CHARM"
 	},

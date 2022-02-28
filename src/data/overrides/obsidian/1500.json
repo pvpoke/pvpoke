@@ -76,6 +76,18 @@
 	"weight": 3
 },
 {
+    "speciesId": "lycanroc_midnight",
+    "chargedMoves": ["PSYCHIC_FANGS", "STONE_EDGE"]
+},
+{
+    "speciesId": "incineroar",
+    "chargedMoves": ["DARK_PULSE", "FIRE_BLAST"]
+},
+{
+    "speciesId": "brionne",
+    "fastMove": "CHARM"
+},
+{
     "speciesId": "haunter",
     "chargedMoves": ["SHADOW_PUNCH", "SLUDGE_BOMB"]
 },

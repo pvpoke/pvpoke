@@ -37,6 +37,15 @@
 		"chargedMoves": ["HYDRO_CANNON", "BLIZZARD"]
 	},
 	{
+		"speciesId": "primarina",
+		"fastMove": "CHARM",
+		"chargedMoves": ["MOONBLAST", "HYDRO_PUMP"]
+	},
+	{
+		"speciesId": "incineroar",
+		"chargedMoves": ["DARK_PULSE", "FIRE_BLAST"]
+	},
+	{
 		"speciesId": "scizor_shadow",
 		"fastMove": "BULLET_PUNCH",
 		"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]

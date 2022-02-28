@@ -27,6 +27,15 @@
 		"weight": 25
 	},
 	{
+		"speciesId": "primarina",
+		"fastMove": "CHARM",
+		"chargedMoves": ["MOONBLAST", "HYDRO_PUMP"]
+	},
+	{
+		"speciesId": "tapu_koko",
+		"chargedMoves": ["THUNDERBOLT", "DAZZLING_GLEAM"]
+	},
+	{
 		"speciesId": "regice",
 		"chargedMoves": ["THUNDER", "EARTHQUAKE"]
 	},
@@ -282,7 +291,11 @@
 	},
 	{
 		"speciesId": "mew",
-		"chargedMoves": ["DRAGON_CLAW","WILD_CHARGE"]
+		"chargedMoves": ["SURF","WILD_CHARGE"]
+	},
+	{
+		"speciesId": "incineroar",
+		"chargedMoves": ["DARK_PULSE", "FIRE_BLAST"]
 	},
 	{
 		"speciesId": "kyogre",

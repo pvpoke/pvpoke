@@ -44,6 +44,14 @@
 		"chargedMoves": ["POISON_FANG", "SHADOW_BALL"]
 	},
 	{
+		"speciesId": "incineroar",
+		"chargedMoves": ["DARK_PULSE", "FIRE_BLAST"]
+	},
+	{
+		"speciesId": "lycanroc_midnight",
+		"chargedMoves": ["PSYCHIC_FANGS", "CRUNCH"]
+	},
+	{
 		"speciesId": "falinks",
 		"chargedMoves": ["SUPER_POWER", "MEGAHORN"]
 	},
@@ -70,6 +78,14 @@
 	{
 		"speciesId": "luxray",
 		"fastMove": "SNARL"
+	},
+	{
+		"speciesId": "tapu_koko",
+		"chargedMoves": ["THUNDERBOLT", "DAZZLING_GLEAM"]
+	},
+	{
+		"speciesId": "primarina",
+		"fastMove": "CHARM"
 	},
 	{
 		"speciesId": "flygon",
