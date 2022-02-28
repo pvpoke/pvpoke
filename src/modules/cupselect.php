@@ -1,5 +1,6 @@
 <select class="cup-select">
 	<option value="all" cup="all" meta-group500="littlegeneral" meta-group1500="great" meta-group2500="ultra" meta-group10000="master">Open League</option>
+	<option value="premierclassic" meta-group2500="ultrapremierclassic" meta-group10000="masterpremierclassic">Premier Classic</option>
 	<option value="johto" meta-group1500="johto">Johto Cup</option>
 	<option value="guardian" meta-group1500="guardian">Silph Guardian Cup</option>
 	<option value="obsidian" meta-group1500="obsidian">Silph Obsidian Cup</option>

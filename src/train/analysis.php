@@ -79,6 +79,7 @@ require_once '../header.php';
 	<select class="format-select">
 		<option value="1500" cup="all" level-cap="50">Great League</option>
 		<option value="2500" cup="all" level-cap="50">Ultra League</option>
+		<option value="2500" cup="premierclassic" level-cap="40">Ultra League (Premier Classic)</option>
 		<option value="10000" cup="classic" level-cap="40">Master League (Classic)</option>
 		<option value="1500" cup="johto" level-cap="50">Johto Cup</option>
 	</select>

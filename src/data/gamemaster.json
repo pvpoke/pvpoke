@@ -1206,6 +1206,11 @@
         "dexStart": 650,
         "dexEnd": 721
     }, {
+        "string": "gen7",
+        "name": "alola",
+        "dexStart": 722,
+        "dexEnd": 807
+    }, {
         "string": "gen8",
         "name": "galar",
         "dexStart": 808,
@@ -7648,7 +7653,6 @@
             "cp1500": [16.5, 12, 10, 14],
             "cp2500": [27.5, 12, 11, 12]
         },
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -11059,7 +11063,6 @@
             "cp1500": [16.5, 12, 10, 14],
             "cp2500": [27.5, 12, 11, 12]
         },
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -15198,7 +15201,6 @@
             "cp1500": [16.5, 12, 10, 14],
             "cp2500": [27.5, 12, 11, 12]
         },
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -18903,7 +18905,6 @@
             "cp1500": [16.5, 12, 10, 14],
             "cp2500": [27.5, 12, 11, 12]
         },
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -22335,7 +22336,6 @@
             "cp2500": [22.5, 10, 12, 14]
         },
         "tags": ["mythical", "untradeable"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -24100,7 +24100,6 @@
         "tags": ["mythical", "untradeable"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "levelCap": 40,
         "released": true
     }, {
         "dex": 720,
@@ -24122,7 +24121,6 @@
         "tags": ["mythical"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "levelCap": 40,
         "released": false
     }, {
         "dex": 720,
@@ -24144,7 +24142,6 @@
         "tags": ["mythical", "untradeable"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "levelCap": 40,
         "released": true,
         "searchPriority": 2
     }, {
@@ -24177,8 +24174,8 @@
             "hp": 169
         },
         "types": ["grass", "flying"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["TACKLE", "RAZOR_LEAF"],
+	    "chargedMoves": ["SEED_BOMB", "ENERGY_BALL"],
         "defaultIVs": {
             "cp500": [18, 7, 12, 15],
             "cp1500": [50, 15, 15, 15],
@@ -24186,7 +24183,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 723,
         "speciesName": "Dartrix",
@@ -24197,8 +24194,8 @@
             "hp": 186
         },
         "types": ["grass", "flying"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["PECK", "RAZOR_LEAF"],
+	    "chargedMoves": ["SEED_BOMB", "ENERGY_BALL", "BRAVE_BIRD"],
         "defaultIVs": {
             "cp500": [11, 5, 11, 14],
             "cp1500": [34.5, 6, 15, 15],
@@ -24206,7 +24203,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 724,
         "speciesName": "Decidueye",
@@ -24217,8 +24214,8 @@
             "hp": 186
         },
         "types": ["grass", "ghost"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["ASTONISH", "RAZOR_LEAF"],
+	    "chargedMoves": ["SHADOW_SNEAK", "ENERGY_BALL", "BRAVE_BIRD"],
         "defaultIVs": {
             "cp500": [7, 5, 10, 6],
             "cp1500": [20, 4, 14, 12],
@@ -24226,7 +24223,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 725,
         "speciesName": "Litten",
@@ -24237,8 +24234,8 @@
             "hp": 128
         },
         "types": ["fire", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["SCRATCH", "EMBER"],
+	    "chargedMoves": ["FLAMETHROWER", "FLAME_CHARGE", "CRUNCH"],
         "defaultIVs": {
             "cp500": [19, 4, 14, 6],
             "cp1500": [50, 15, 15, 15],
@@ -24246,7 +24243,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 726,
         "speciesName": "Torracat",
@@ -24257,8 +24254,8 @@
             "hp": 163
         },
         "types": ["fire", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["BITE", "EMBER"],
+	    "chargedMoves": ["FLAMETHROWER", "FLAME_CHARGE", "CRUNCH"],
         "defaultIVs": {
             "cp500": [11, 5, 11, 14],
             "cp1500": [34.5, 6, 15, 14],
@@ -24266,7 +24263,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 727,
         "speciesName": "Incineroar",
@@ -24277,8 +24274,8 @@
             "hp": 216
         },
         "types": ["fire", "dark"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["SNARL", "FIRE_FANG"],
+	    "chargedMoves": ["FIRE_BLAST", "FLAME_CHARGE", "DARK_PULSE"],
         "defaultIVs": {
             "cp500": [6.5, 4, 7, 13],
             "cp1500": [18.5, 5, 11, 15],
@@ -24286,7 +24283,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 728,
         "speciesName": "Popplio",
@@ -24297,8 +24294,8 @@
             "hp": 137
         },
         "types": ["water", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["POUND", "WATER_GUN"],
+	    "chargedMoves": ["AQUA_JET", "WATER_PULSE", "AQUA_TAIL"],
         "defaultIVs": {
             "cp500": [17, 4, 15, 11],
             "cp1500": [50, 15, 15, 15],
@@ -24306,7 +24303,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 729,
         "speciesName": "Brionne",
@@ -24317,8 +24314,8 @@
             "hp": 155
         },
         "types": ["water", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["CHARM", "WATER_GUN"],
+	    "chargedMoves": ["AQUA_JET", "WATER_PULSE", "DISARMING_VOICE"],
         "defaultIVs": {
             "cp500": [10, 4, 15, 10],
             "cp1500": [29.5, 4, 14, 15],
@@ -24326,7 +24323,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 730,
         "speciesName": "Primarina",
@@ -24337,8 +24334,8 @@
             "hp": 190
         },
         "types": ["water", "fairy"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["CHARM", "WATERFALL"],
+	    "chargedMoves": ["PSYCHIC", "HYDRO_PUMP", "MOONBLAST"],
         "defaultIVs": {
             "cp500": [6, 4, 11, 13],
             "cp1500": [17.5, 4, 14, 8],
@@ -24346,7 +24343,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 731,
         "speciesName": "Pikipek",
@@ -24357,8 +24354,8 @@
             "hp": 111
         },
         "types": ["normal", "flying"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["PECK", "ROCK_SMASH"],
+	    "chargedMoves": ["DRILL_PECK", "AERIAL_ACE", "SKY_ATTACK"],
         "defaultIVs": {
             "cp500": [21, 4, 14, 12],
             "cp1500": [50, 15, 15, 15],
@@ -24366,7 +24363,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 732,
         "speciesName": "Trumbeak",
@@ -24377,8 +24374,8 @@
             "hp": 146
         },
         "types": ["normal", "flying"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["PECK", "ROCK_SMASH"],
+	    "chargedMoves": ["DRILL_PECK", "ROCK_BLAST", "SKY_ATTACK"],
         "defaultIVs": {
             "cp500": [13, 5, 11, 10],
             "cp1500": [47.5, 4, 15, 11],
@@ -24387,7 +24384,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 733,
         "speciesName": "Toucannon",
@@ -24398,8 +24395,8 @@
             "hp": 190
         },
         "types": ["normal", "flying"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["PECK", "ROCK_SMASH", "BULLET_SEED"],
+	    "chargedMoves": ["DRILL_PECK", "ROCK_BLAST", "FLASH_CANNON"],
         "defaultIVs": {
             "cp500": [7, 8, 15, 8],
             "cp1500": [20.5, 5, 14, 12],
@@ -24407,7 +24404,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 734,
         "speciesName": "Yungoos",
@@ -24418,8 +24415,8 @@
             "hp": 134
         },
         "types": ["normal", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["TACKLE", "BITE"],
+	    "chargedMoves": ["HYPER_FANG", "CRUNCH", "ROCK_TOMB"],
         "defaultIVs": {
             "cp500": [21.5, 7, 15, 10],
             "cp1500": [50, 15, 15, 15],
@@ -24427,7 +24424,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 735,
         "speciesName": "Gumshoos",
@@ -24438,8 +24435,8 @@
             "hp": 204
         },
         "types": ["normal", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["TAKE_DOWN", "BITE"],
+	    "chargedMoves": ["HYPER_FANG", "CRUNCH", "ROCK_TOMB"],
         "defaultIVs": {
             "cp500": [8.5, 5, 14, 14],
             "cp1500": [25.5, 6, 14, 10],
@@ -24447,7 +24444,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 736,
         "speciesName": "Grubbin",
@@ -24599,8 +24596,8 @@
             "hp": 128
         },
         "types": ["rock", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["TACKLE", "ROCK_THROW"],
+	    "chargedMoves": ["STONE_EDGE", "ROCK_TOMB", "CRUNCH"],
         "defaultIVs": {
             "cp500": [20.5, 4, 14, 10],
             "cp1500": [50, 15, 15, 15],
@@ -24608,27 +24605,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 50000,
-        "released": false
-    }, {
-        "dex": 745,
-        "speciesName": "Lycanroc",
-        "speciesId": "lycanroc",
-        "baseStats": {
-            "atk": 231,
-            "def": 140,
-            "hp": 181
-        },
-        "types": ["rock", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
-        "defaultIVs": {
-            "cp500": [7, 7, 14, 12],
-            "cp1500": [20, 11, 14, 15],
-            "cp2500": [38, 6, 14, 15]
-        },
-        "buddyDistance": 5,
-        "thirdMoveCost": 50000,
-        "released": false
+        "released": true
     }, {
         "dex": 745,
         "speciesName": "Lycanroc (Dusk)",
@@ -24659,8 +24636,8 @@
             "hp": 181
         },
         "types": ["rock", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["SUCKER_PUNCH", "ROCK_THROW"],
+	    "chargedMoves": ["STONE_EDGE", "DRILL_RUN", "CRUNCH"],
         "defaultIVs": {
             "cp500": [7, 7, 14, 12],
             "cp1500": [20, 11, 14, 15],
@@ -24668,7 +24645,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 50000,
-        "released": false
+        "released": true
     }, {
         "dex": 745,
         "speciesName": "Lycanroc (Midnight)",
@@ -24679,16 +24656,17 @@
             "hp": 198
         },
         "types": ["rock", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["COUNTER", "ROCK_THROW"],
+	    "chargedMoves": ["STONE_EDGE", "PSYCHIC_FANGS", "CRUNCH"],
         "defaultIVs": {
             "cp500": [7, 5, 9, 12],
             "cp1500": [20.5, 4, 15, 6],
             "cp2500": [36.5, 5, 14, 15]
         },
+		"searchPriority": 3,
         "buddyDistance": 5,
         "thirdMoveCost": 50000,
-        "released": false
+        "released": true
     }, {
         "dex": 746,
         "speciesName": "Wishiwashi",
@@ -25103,8 +25081,8 @@
             "hp": 139
         },
         "types": ["fairy", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["VINE_WHIP", "HIDDEN_POWER"],
+	    "chargedMoves": ["PETAL_BLIZZARD", "GRASS_KNOT", "DRAINING_KISS"],
         "defaultIVs": {
             "cp500": [9, 4, 11, 13],
             "cp1500": [26.5, 5, 11, 14],
@@ -25112,7 +25090,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false
+        "released": true
     }, {
         "dex": 765,
         "speciesName": "Oranguru",
@@ -25834,8 +25812,8 @@
             "hp": 128
         },
         "types": ["dragon", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["TACKLE", "DRAGON_TAIL"],
+	    "chargedMoves": ["DRAGON_CLAW", "BRICK_BREAK", "DRAGON_PULSE"],
         "defaultIVs": {
             "cp500": [20, 4, 14, 13],
             "cp1500": [50, 15, 15, 15],
@@ -25843,7 +25821,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false
+        "released": true
     }, {
         "dex": 783,
         "speciesName": "Hakamo-o",
@@ -25854,8 +25832,8 @@
             "hp": 146
         },
         "types": ["dragon", "fighting"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["TACKLE", "DRAGON_TAIL"],
+	    "chargedMoves": ["DRAGON_CLAW", "BRICK_BREAK", "DRAGON_PULSE"],
         "defaultIVs": {
             "cp500": [11.5, 4, 15, 5],
             "cp1500": [36.5, 5, 13, 15],
@@ -25863,7 +25841,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false
+        "released": true
     }, {
         "dex": 784,
         "speciesName": "Kommo-o",
@@ -25874,13 +25852,14 @@
             "hp": 181
         },
         "types": ["dragon", "fighting"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["POISON_JAB", "DRAGON_TAIL"],
+	    "chargedMoves": ["DRAGON_CLAW", "CLOSE_COMBAT", "FLAMETHROWER"],
         "defaultIVs": {
             "cp500": [6, 5, 6, 4],
             "cp1500": [16.5, 6, 15, 14],
             "cp2500": [27.5, 7, 12, 15]
         },
+		"searchPriority": 3,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": false
@@ -25894,16 +25873,18 @@
             "hp": 172
         },
         "types": ["electric", "fairy"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["VOLT_SWITCH", "QUICK_ATTACK"],
+	    "chargedMoves": ["THUNDERBOLT", "DAZZLING_GLEAM", "BRAVE_BIRD", "THUNDER"],
         "defaultIVs": {
             "cp500": [6, 5, 14, 14],
             "cp1500": [17.5, 5, 12, 12],
             "cp2500": [28.5, 8, 13, 15]
         },
+		"tags": ["legendary"],
+		"searchPriority": 2,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": true
     }, {
         "dex": 786,
         "speciesName": "Tapu Lele",
@@ -25921,6 +25902,7 @@
             "cp1500": [16, 4, 15, 7],
             "cp2500": [26, 5, 13, 15]
         },
+		"tags": ["legendary"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": false
@@ -25941,6 +25923,7 @@
             "cp1500": [16, 7, 11, 14],
             "cp2500": [27, 4, 13, 12]
         },
+		"tags": ["legendary"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": false
@@ -25961,6 +25944,7 @@
             "cp1500": [19.5, 4, 10, 15],
             "cp2500": [36, 4, 9, 12]
         },
+		"tags": ["legendary"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": false
@@ -28513,7 +28497,6 @@
             "cp2500": [23.5, 11, 12, 10]
         },
         "tags": ["mythical", "untradeable"],
-        "levelCap": 40,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
