@@ -147,6 +147,14 @@ function Pokebox(element, selector, selectMode, b){
 			case "jellicent_male":
 				return "jellicent";
 				break;
+
+			case "gastrodon_east_sea":
+				return "gastrodon";
+				break;
+
+			case "gastrodon_west_sea":
+				return "gastrodon";
+				break;
 		}
 
 		return id;
