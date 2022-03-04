@@ -397,6 +397,12 @@ header{
 		&.poke-select{
 			font-size:18px;
 			font-weight:bold;
+			
+			option:checked{
+				font-weight:bold;
+				background:#ddd;
+				color:#000;
+			}
 		}
 
 		&.charged{

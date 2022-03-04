@@ -276,6 +276,11 @@ header {
   font-size: 18px;
   font-weight: bold;
 }
+.poke input.poke-select option:checked, .poke select.poke-select option:checked {
+  font-weight: bold;
+  background: #ddd;
+  color: #000;
+}
 .poke input.charged, .poke select.charged {
   font-weight: bold;
 }
