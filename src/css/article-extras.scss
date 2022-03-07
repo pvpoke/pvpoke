@@ -91,6 +91,10 @@ input.article-search{
 				background-repeat: no-repeat;
 				margin:0 auto;
 			}
+
+			.mega-label{
+				text-align: center;
+			}
 		}
 	}
 }
@@ -113,6 +117,10 @@ input.article-search{
 
 [mega="abomasnow"] .mega-image{
 	background-image:url("../articles/article-assets/community-day/megas/abomasnow.png");
+}
+
+[mega="steelix"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/steelix.png");
 }
 
 
@@ -147,7 +155,6 @@ input.article-search{
 .cd-checklist{
 	display:flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
 }
 
 
@@ -411,11 +418,42 @@ input.article-search{
 	}
 }
 
+
+.section.sandshrew{
+
+	background: #f4f4f0;
+	border:4px solid #b1a07d;
+
+	.article-header, .mega-section{
+		background:#917439 !important;
+	}
+
+	.feature{
+		h4{
+			color:#917439;
+			border-bottom:1px solid #834569;
+		}
+	}
+
+	.faq-item{
+    	background: #ffffff;
+	}
+
+	a.infographic{
+		background: #917439;
+	}
+}
+
 /* Responsive styling */
 
 @media only screen and (min-width: 361px) {
 	.checklist-item{
-		flex-basis:48.5%
+		flex-basis:48.5%;
+		margin-right: 3%;
+
+		&:nth-of-type(2n){
+			margin-right: 0;
+		}
 	}
 }
 
@@ -446,6 +484,15 @@ input.article-search{
 	}
 
 	.checklist-item{
-		flex-basis:31.5%
+		flex-basis:31.5%;
+		margin-right: 2.75%;
+
+		&:nth-of-type(2n){
+			margin-right: 2.75%;
+		}
+
+		&:nth-of-type(3n){
+			margin-right: 0;
+		}
 	}
 }

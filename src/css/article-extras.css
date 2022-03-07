@@ -77,6 +77,9 @@ input.article-search {
   background-repeat: no-repeat;
   margin: 0 auto;
 }
+.mega-section .mega-list .mega-item .mega-label {
+  text-align: center;
+}
 
 [mega=venusaur] .mega-image {
   background-image: url("../articles/article-assets/community-day/megas/venusaur.png");
@@ -96,6 +99,10 @@ input.article-search {
 
 [mega=abomasnow] .mega-image {
   background-image: url("../articles/article-assets/community-day/megas/abomasnow.png");
+}
+
+[mega=steelix] .mega-image {
+  background-image: url("../articles/article-assets/community-day/megas/steelix.png");
 }
 
 /* FAQ styling */
@@ -120,7 +127,6 @@ input.article-search {
 .cd-checklist {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .checklist-item {
@@ -347,10 +353,32 @@ input.article-search {
   background: #9b547d;
 }
 
+.section.sandshrew {
+  background: #f4f4f0;
+  border: 4px solid #b1a07d;
+}
+.section.sandshrew .article-header, .section.sandshrew .mega-section {
+  background: #917439 !important;
+}
+.section.sandshrew .feature h4 {
+  color: #917439;
+  border-bottom: 1px solid #834569;
+}
+.section.sandshrew .faq-item {
+  background: #ffffff;
+}
+.section.sandshrew a.infographic {
+  background: #917439;
+}
+
 /* Responsive styling */
 @media only screen and (min-width: 361px) {
   .checklist-item {
     flex-basis: 48.5%;
+    margin-right: 3%;
+  }
+  .checklist-item:nth-of-type(2n) {
+    margin-right: 0;
   }
 }
 @media only screen and (min-width: 421px) {
@@ -379,6 +407,13 @@ input.article-search {
 
   .checklist-item {
     flex-basis: 31.5%;
+    margin-right: 2.75%;
+  }
+  .checklist-item:nth-of-type(2n) {
+    margin-right: 2.75%;
+  }
+  .checklist-item:nth-of-type(3n) {
+    margin-right: 0;
   }
 }
 

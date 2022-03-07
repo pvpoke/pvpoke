@@ -1,0 +1,82 @@
+{
+	"species": ["sandshrew", "sandshrew_alolan"],
+	"checklist": [
+		{
+			"title": "High Rank A-Sandslash",
+			"speciesId": "sandslash_alolan",
+			"baseSpeciesId": "sandshrew_alolan",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [23.5, 0, 14, 14],
+			"shadowType": "normal",
+			"priority": 1
+		},
+		{
+			"title": "High Rank K-Sandslash",
+			"speciesId": "sandslash",
+			"baseSpeciesId": "sandshrew",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [24, 0, 14, 15],
+			"priority": 1,
+			"notes": "Kanto Sandslash occupies the same Attack range as popular Pokemon like Swampert, Venusaur, Sableye, and Froslass, so an alternate with extra Attack (e.g. 8/14/14) may help win Charged Move ties."
+		},
+		{
+			"title": "XL A-Sandslash",
+			"speciesId": "sandslash_alolan",
+			"baseSpeciesId": "sandshrew_alolan",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [49, 0, 14, 15],
+			"priority": 1,
+			"notes": "If you're looking to save resources, a lucky Alolan Sandslash performs similarly without major drawbacks."
+		},
+		{
+			"title": "Shadow K-Sandslash",
+			"speciesId": "sandslash",
+			"baseSpeciesId": "sandshrew",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [24, 0, 14, 15],
+			"shadowType": "shadow",
+			"priority": 2
+		},
+		{
+			"title": "XL A-Sandshrew",
+			"speciesId": "sandshrew_alolan",
+			"baseSpeciesId": "sandshrew_alolan",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [50, 15, 15, 15],
+			"priority": 2
+		},
+		{
+			"title": "Little Cup A-Sandshrew",
+			"speciesId": "sandshrew_alolan",
+			"baseSpeciesId": "sandshrew_alolan",
+			"league": "special",
+			"cp": 500,
+			"ivs": [15.5, 0, 10, 14],
+			"priority": 2
+		},
+		{
+			"title": "XL K-Sandslash",
+			"speciesId": "sandlash",
+			"baseSpeciesId": "sandshrew",
+			"league": "ultra",
+			"cp": 500,
+			"ivs": [50, 2, 14, 15],
+			"priority": 3
+		},
+		{
+			"title": "Little Cup A-Sandslash",
+			"speciesId": "sandslash_alolan",
+			"baseSpeciesId": "sandshrew_alolan",
+			"league": "special",
+			"cp": 2500,
+			"ivs": [8, 0, 15, 11],
+			"priority": 3,
+			"notes": "In Little Jungle Cup, Alolan Sandslash performs similarly to Alolan Sandshrew, but has advantage over it with a neutral Fast Move and Bulldoze coverage."
+		}
+	]
+}
