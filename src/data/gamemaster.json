@@ -917,7 +917,7 @@
             "values": ["mega"]
         }, {
             "filterType": "id",
-            "values": ["bastiodon", "probopass", "regirock", "scrafty", "togekiss", "heracross", "skarmory", "altaria", "mantine", "hakamo_o", "kommo_o", "lycanroc_midnight", "lycanroc_midday", "inceroar", "dartrix", "toucannon", "trumbeak", "rowlet"]
+            "values": ["bastiodon", "probopass", "regirock", "scrafty", "togekiss", "heracross", "skarmory", "altaria", "mantine", "hakamo_o", "kommo_o", "lycanroc_midnight", "lycanroc_midday", "incineroar", "dartrix", "toucannon", "trumbeak", "rowlet"]
         }]
     }, {
         "name": "comet",
@@ -1163,7 +1163,7 @@
         }, {
             "filterType": "id",
             "name": "Species",
-            "values": ["lickitung", "bastiodon", "pachirisu", "vigoroth", "registeel"]
+            "values": ["lickitung", "bastiodon", "pachirisu", "vigoroth", "registeel", "hakamo_o", "kommo_o", "lycanroc_midnight", "lycanroc_midday", "incineroar", "dartrix", "toucannon", "trumbeak", "rowlet", "brionne", "torracat", "popplio", "gumshoos"]
         }, {
             "filterType": "tag",
             "name": "Tag",
