@@ -1,3 +1,24 @@
+
+<div class="checklist-controls">
+	<div class="control-container">
+		<label>Sort: </label>
+		<select class="sort">
+			<option value="priority" direction="1">Priority</option>
+			<option value="cp" direction="1">League</option>
+			<option value="speciesId" direction="1">Species</option>
+			<option value="caught" direction="1">Completed</option>
+		</select>
+	</div>
+
+	<div class="control-container">
+		<button class="edit">Edit</button>
+	</div>
+
+	<div class="control-container">
+		<button class="reset">Reset</button>
+	</div>
+</div>
+
 <div class="cd-checklist"></div>
 
 <div class="checklist-item template">

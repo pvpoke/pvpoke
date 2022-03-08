@@ -61,10 +61,10 @@
 		},
 		{
 			"title": "XL K-Sandslash",
-			"speciesId": "sandlash",
+			"speciesId": "sandslash",
 			"baseSpeciesId": "sandshrew",
 			"league": "ultra",
-			"cp": 500,
+			"cp": 2500,
 			"ivs": [50, 2, 14, 15],
 			"priority": 3
 		},
@@ -73,7 +73,7 @@
 			"speciesId": "sandslash_alolan",
 			"baseSpeciesId": "sandshrew_alolan",
 			"league": "special",
-			"cp": 2500,
+			"cp": 500,
 			"ivs": [8, 0, 15, 11],
 			"priority": 3,
 			"notes": "In Little Jungle Cup, Alolan Sandslash performs similarly to Alolan Sandshrew, but has advantage over it with a neutral Fast Move and Bulldoze coverage."

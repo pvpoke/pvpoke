@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* General */
 .article h3.article-header {
   font-size: 16px;
@@ -121,6 +122,38 @@ input.article-search {
 }
 .faq-item .faq-answer p:last-of-type {
   margin-bottom: 0;
+}
+
+/* CD checklist controls and forms styling */
+.checklist-controls {
+  display: flex;
+  flex-wrap: wrap;
+}
+.checklist-controls .control-container {
+  margin-right: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+.checklist-controls label {
+  margin-right: 5px;
+}
+.checklist-controls select, .checklist-controls button {
+  display: inline-block;
+  font-weight: bold;
+  max-width: 150px;
+}
+.checklist-controls label, .checklist-controls select, .checklist-controls button {
+  font-size: 12px;
+}
+.checklist-controls button {
+  padding: 3px 6px;
+}
+.checklist-controls .reset::before {
+  content: "↻ ";
+}
+.checklist-controls .edit::before {
+  content: "✎ ";
 }
 
 /* CD Checklist styling */
@@ -372,7 +405,7 @@ input.article-search {
 }
 
 /* Responsive styling */
-@media only screen and (min-width: 361px) {
+@media only screen and (min-width: 421px) {
   .checklist-item {
     flex-basis: 48.5%;
     margin-right: 3%;
@@ -414,6 +447,10 @@ input.article-search {
   }
   .checklist-item:nth-of-type(3n) {
     margin-right: 0;
+  }
+
+  .checklist-controls label, .checklist-controls select, .checklist-controls button {
+    font-size: 16px;
   }
 }
 

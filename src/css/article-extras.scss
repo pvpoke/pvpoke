@@ -150,6 +150,46 @@ input.article-search{
 	}
 }
 
+/* CD checklist controls and forms styling */
+
+.checklist-controls{
+	display: flex;
+	flex-wrap: wrap;
+
+	.control-container{
+		margin-right: 20px;
+		margin-bottom: 10px;
+		display: flex;
+		align-items: center;
+	}
+
+	label{
+		margin-right: 5px;
+	}
+
+	select, button{
+		display: inline-block;
+		font-weight: bold;
+		max-width: 150px;
+	}
+
+	label, select, button{
+		font-size: 12px;
+	}
+
+	button{
+		padding: 3px 6px;
+	}
+
+	.reset::before{
+		content: "↻\00a0"
+	}
+
+	.edit::before{
+		content: "\270E\00a0"
+	}
+}
+
 /* CD Checklist styling */
 
 .cd-checklist{
@@ -446,7 +486,7 @@ input.article-search{
 
 /* Responsive styling */
 
-@media only screen and (min-width: 361px) {
+@media only screen and (min-width: 421px) {
 	.checklist-item{
 		flex-basis:48.5%;
 		margin-right: 3%;
@@ -493,6 +533,12 @@ input.article-search{
 
 		&:nth-of-type(3n){
 			margin-right: 0;
+		}
+	}
+
+	.checklist-controls{
+		label, select, button{
+			font-size: 16px;
 		}
 	}
 }

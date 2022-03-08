@@ -47,6 +47,14 @@ var InterfaceMaster = (function () {
 			this.displayChecklist = function(list, sort){
 				sort = typeof sort !== 'undefined' ? sort : "priority";
 
+				// Give list items a caught value of 0 if undefined
+
+				for(var i = 0; i < list.length; i++){
+					if(! list[i].caught){
+						list[i].caught = 0;
+					}
+				}
+
 				list.sort((a,b) => (a[sort] > b[sort]) ? 1 : ((b[sort] > a[sort]) ? -1 : 0));
 
 				$(".cd-checklist").html("");
@@ -66,6 +74,7 @@ var InterfaceMaster = (function () {
 					$el.find(".priority-section h4").html(priorities[item.priority-1]);
 					$el.attr("priority", item.priority);
 					$el.attr("cp", item.cp);
+					$el.attr("index", i);
 
 					// Display CP of base evolution
 					var baseCP = self.calculateBaseCP(item.baseSpeciesId, item.ivs, 30, item.cp);
@@ -163,6 +172,15 @@ var InterfaceMaster = (function () {
 			$("body").on("click", ".title-section h4", function(e){
 				var $el = $(this).closest(".checklist-item");
 				$el.find(".check").trigger("click");
+			});
+
+			// Change the checklist sorting
+
+			$(".checklist-controls .sort").on("change", function(e){
+				var sort = $(this).find("option:selected").val();
+				var direction = $(this).find("option:selected").attr("direction");
+
+				self.displayChecklist(checklist, sort);
 			});
 
 		}
