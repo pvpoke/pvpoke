@@ -18,6 +18,8 @@ var InterfaceMaster = (function () {
 			var gm = GameMaster.getInstance();
 			var checklist = [];
 			var priorities = ["Priority", "Nice to Have", "Extra Mile"];
+			var selectedIndex = -1;
+			var selectedSort = "priority";
 
 			var storageKey = "cd-" + articleId;
 
@@ -29,8 +31,8 @@ var InterfaceMaster = (function () {
 					console.log("article checklist loaded");
 
 					data = d;
-					defaultData = d;
-					checklist = data.checklist;
+					defaultData = d.checklist;
+					checklist = d.checklist;
 
 					// Check for a locally stored checklist
 					if(window.localStorage.getItem(storageKey) !== null){
@@ -45,7 +47,7 @@ var InterfaceMaster = (function () {
 
 			// Given a checklist, display it in the article
 			this.displayChecklist = function(list, sort){
-				sort = typeof sort !== 'undefined' ? sort : "priority";
+				sort = typeof sort !== 'undefined' ? sort : selectedSort;
 
 				// Give list items a caught value of 0 if undefined
 
@@ -167,6 +169,12 @@ var InterfaceMaster = (function () {
 				self.saveChecklist();
 			});
 
+			// Turn on edit controls
+
+			$("button.edit").on("click", function(e){
+				$("#main").attr("edit", "on");
+			});
+
 			// Trigger checkbox click on title click
 
 			$("body").on("click", ".title-section h4", function(e){
@@ -180,7 +188,51 @@ var InterfaceMaster = (function () {
 				var sort = $(this).find("option:selected").val();
 				var direction = $(this).find("option:selected").attr("direction");
 
+				selectedSort = sort;
+
 				self.displayChecklist(checklist, sort);
+			});
+
+			// Confirm to reset the checklist
+
+			$(".checklist-controls button.reset").on("click", function(e){
+				modalWindow("Reset Checklist", $(".checklist-reset-confirm"));
+
+				// Confirm reset
+
+				$(".modal .checklist-reset-confirm .yes").click(function(e){
+					checklist = defaultData;
+					data.checklist = checklist;
+					self.saveChecklist();
+
+					self.displayChecklist(checklist);
+
+					closeModalWindow();
+				});
+			});
+
+			// Confirm to delete an item
+
+			$("body").on("click", ".checklist-item a.delete", function(e){
+				e.preventDefault();
+
+				selectedIndex = $(this).closest(".checklist-item").attr("index");
+
+				var item = checklist[selectedIndex];
+
+				modalWindow("Delete Item", $(".checklist-delete-confirm"));
+
+				$(".modal .checklist-delete-confirm .item-name").html(item.title);
+
+				// Confirm reset
+
+				$(".modal .checklist-delete-confirm .yes").click(function(e){
+					checklist.splice(selectedIndex, 1);
+					self.saveChecklist();
+					self.displayChecklist(checklist);
+
+					closeModalWindow();
+				});
 			});
 
 		}

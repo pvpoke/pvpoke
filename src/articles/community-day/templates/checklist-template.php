@@ -10,11 +10,11 @@
 		</select>
 	</div>
 
-	<div class="control-container">
+	<div class="control-container edit-control-off">
 		<button class="edit">Edit</button>
 	</div>
 
-	<div class="control-container">
+	<div class="control-container edit-control-on">
 		<button class="reset">Reset</button>
 	</div>
 </div>
@@ -56,6 +56,31 @@
 	</div>
 	<div class="priority-section">
 		<h4>Priority</h4>
-		<a href="#" class="info">?</a>
+		<div class="item-controls">
+			<a href="#" class="info">?</a>
+			<a href="#" class="edit edit-control-on"></a>
+			<a href="#" class="delete edit-control-on"></a>
+		</div>
+	</div>
+</div>
+
+<!--Modal window forms-->
+
+<div class="checklist-reset-confirm hide">
+	<p>Do you want to reset to the default checklist?</p>
+
+	<div class="center flex">
+		<div class="button yes">Yes</div>
+		<div class="button no">No</div>
+	</div>
+</div>
+
+
+<div class="checklist-delete-confirm hide">
+	<p>Delete <b class="item-name"></b> from the checklist?</p>
+
+	<div class="center flex">
+		<div class="button yes">Yes</div>
+		<div class="button no">No</div>
 	</div>
 </div>

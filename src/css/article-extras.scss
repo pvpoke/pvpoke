@@ -155,12 +155,18 @@ input.article-search{
 .checklist-controls{
 	display: flex;
 	flex-wrap: wrap;
+	justify-content: space-between;
 
 	.control-container{
 		margin-right: 20px;
 		margin-bottom: 10px;
 		display: flex;
 		align-items: center;
+
+		&.edit-control-on,
+		&.edit-control-off{
+			margin-right: 0;
+		}
 	}
 
 	label{
@@ -377,6 +383,10 @@ input.article-search{
 			font-size:12px;
 		}
 
+		.item-controls{
+			display: flex;
+		}
+
 		a.info{
 			display: block;
 			text-decoration: none;
@@ -389,6 +399,22 @@ input.article-search{
 			text-align: center;
 			font-size:14px;
 			font-weight: bold;
+		}
+
+
+		a.edit, a.delete{
+			margin-left:10px;
+			color: #000;
+			text-decoration: none;
+			font-size: 12px;
+		}
+
+		a.edit::before{
+			content: "\270E";
+		}
+
+		a.delete::before{
+			content: "\2715";
 		}
 	}
 }
@@ -481,6 +507,22 @@ input.article-search{
 
 	a.infographic{
 		background: #917439;
+	}
+}
+
+/* Edit control toggle */
+
+.edit-control-on{
+	display: none !important;
+}
+
+[edit="on"]{
+	.edit-control-on{
+		display: block !important;
+	}
+
+	.edit-control-off{
+		display: none !important;
 	}
 }
 

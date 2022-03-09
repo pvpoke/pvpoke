@@ -51,21 +51,21 @@
 			"priority": 2
 		},
 		{
-			"title": "Little Cup A-Sandshrew",
-			"speciesId": "sandshrew_alolan",
-			"baseSpeciesId": "sandshrew_alolan",
-			"league": "special",
-			"cp": 500,
-			"ivs": [15.5, 0, 10, 14],
-			"priority": 2
-		},
-		{
 			"title": "XL K-Sandslash",
 			"speciesId": "sandslash",
 			"baseSpeciesId": "sandshrew",
 			"league": "ultra",
 			"cp": 2500,
 			"ivs": [50, 2, 14, 15],
+			"priority": 3
+		},
+		{
+			"title": "Little Cup A-Sandshrew",
+			"speciesId": "sandshrew_alolan",
+			"baseSpeciesId": "sandshrew_alolan",
+			"league": "special",
+			"cp": 500,
+			"ivs": [15.5, 0, 10, 14],
 			"priority": 3
 		},
 		{

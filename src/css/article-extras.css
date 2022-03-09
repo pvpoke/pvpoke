@@ -128,12 +128,16 @@ input.article-search {
 .checklist-controls {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 .checklist-controls .control-container {
   margin-right: 20px;
   margin-bottom: 10px;
   display: flex;
   align-items: center;
+}
+.checklist-controls .control-container.edit-control-on, .checklist-controls .control-container.edit-control-off {
+  margin-right: 0;
 }
 .checklist-controls label {
   margin-right: 5px;
@@ -322,6 +326,9 @@ input.article-search {
   text-transform: uppercase;
   font-size: 12px;
 }
+.checklist-item .priority-section .item-controls {
+  display: flex;
+}
 .checklist-item .priority-section a.info {
   display: block;
   text-decoration: none;
@@ -334,6 +341,18 @@ input.article-search {
   text-align: center;
   font-size: 14px;
   font-weight: bold;
+}
+.checklist-item .priority-section a.edit, .checklist-item .priority-section a.delete {
+  margin-left: 10px;
+  color: #000;
+  text-decoration: none;
+  font-size: 12px;
+}
+.checklist-item .priority-section a.edit::before {
+  content: "✎";
+}
+.checklist-item .priority-section a.delete::before {
+  content: "✕";
 }
 
 .further-resource-links {
@@ -402,6 +421,18 @@ input.article-search {
 }
 .section.sandshrew a.infographic {
   background: #917439;
+}
+
+/* Edit control toggle */
+.edit-control-on {
+  display: none !important;
+}
+
+[edit=on] .edit-control-on {
+  display: block !important;
+}
+[edit=on] .edit-control-off {
+  display: none !important;
 }
 
 /* Responsive styling */
