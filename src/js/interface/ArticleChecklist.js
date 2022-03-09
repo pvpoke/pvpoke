@@ -31,7 +31,7 @@ var InterfaceMaster = (function () {
 					console.log("article checklist loaded");
 
 					data = d;
-					defaultData = d.checklist;
+					defaultData = d;
 					checklist = d.checklist;
 
 					// Check for a locally stored checklist
@@ -81,8 +81,8 @@ var InterfaceMaster = (function () {
 					// Display CP of base evolution
 					var baseCP = self.calculateBaseCP(item.baseSpeciesId, item.ivs, 30, item.cp);
 
-					$el.find(".base-form-section .cp-label").html("CP " + baseCP);
-					$el.find(".base-form-section img").attr("src", "../../article-assets/community-day/base/"+item.baseSpeciesId+".png");
+					$el.find(".base-form-section .cp-item").eq(0).find(".cp").html("CP "+baseCP);
+					$el.find(".base-form-section img").attr("src", "../../article-assets/community-day/base/"+item.speciesId+".png");
 
 					// Show if caught already
 					if(item.caught){
@@ -101,6 +101,11 @@ var InterfaceMaster = (function () {
 
 					$(".cd-checklist").append($el);
 				}
+
+				// Add new item button
+
+				var $newItem = $("<div class=\"checklist-item new-item edit-control-on\"><span>+ New</span></div>");
+				$(".cd-checklist").append($newItem);
 			}
 
 			// Store the current checklist in local storage
@@ -132,11 +137,12 @@ var InterfaceMaster = (function () {
 			$("body").on("click", ".checklist-item a.info", function(e){
 				e.preventDefault();
 
-
-
 				var $el = $(this).closest(".checklist-item");
 				var itemIndex = $(".cd-checklist .checklist-item").index($el);
 				var notes = checklist[itemIndex].notes;
+
+				// Replace all line breaks with HTML <br>
+				notes = notes.replace(/(?:\r\n|\r|\n)/g, '<br>');
 
 				// Apply bold formatting to Attack, Defense, and HP values in the description.
 
@@ -149,6 +155,146 @@ var InterfaceMaster = (function () {
 
 				modalWindow(checklist[itemIndex].title, $desc);
 			});
+
+			// Open the new item or edit item window
+
+			this.openItemEditor = function(item){
+				modalWindow("New Item", $(".checklist-new-item"));
+
+				// Populate species dropdown
+
+				for(var i = 0; i < data.species.length; i++){
+					var battle = new Battle();
+					var pokemon = new Pokemon(data.species[i].speciesId, 0, battle);
+
+					var $option = $("<option>"+pokemon.speciesName+"</option>");
+					$option.attr("value", data.species[i].speciesId);
+					$option.attr("baseSpeciesId", data.species[i].baseSpeciesId);
+
+					if((data.species[i].default)&&(typeof item == 'undefined')){
+						$option.attr("selected", "selected");
+					}
+
+					$(".modal .checklist-new-item select.speciesId").append($option);
+				}
+
+				// If a selected item is set, fill in values
+				if(typeof item !== 'undefined'){
+					$(".modal input.title").val(item.title);
+
+					$(".modal select.speciesId option[value=\""+item.speciesId+"\"]").prop("selected", "selected");
+					$(".modal select.league option[value=\""+item.league+"\"]").prop("selected", "selected");
+					$(".modal select.priority option[value=\""+item.priority+"\"]").prop("selected", "selected");
+
+					$(".modal input.iv").eq(0).val(item.ivs[1]);
+					$(".modal input.iv").eq(1).val(item.ivs[2]);
+					$(".modal input.iv").eq(2).val(item.ivs[3]);
+
+					$(".modal textarea.notes").val(item.notes);
+
+					$(".modal .checklist-new-item .button.add").hide();
+				} else{
+					$(".modal .checklist-new-item .button.save").hide();
+				}
+			}
+
+			// Add a new item from the form inputs
+
+			this.saveItem = function(index){
+				if(! self.validateItemForm()){
+					return false;
+				}
+
+				var speciesId = $(".modal select.speciesId option:selected").val();
+				var cp = parseInt($(".modal select.league option:selected").attr("cp"));
+				var ivs = [];
+
+				ivs.push(parseInt($(".modal input.iv").eq(0).val()));
+				ivs.push(parseInt($(".modal input.iv").eq(1).val()));
+				ivs.push(parseInt($(".modal input.iv").eq(2).val()));
+
+				var battle = new Battle();
+				battle.setCP(cp);
+
+				var pokemon = new Pokemon(speciesId, 0, battle);
+				pokemon.autoLevel = true;
+				pokemon.setIV("atk", ivs[0]);
+				pokemon.setIV("def", ivs[1]);
+				pokemon.setIV("hp", ivs[2]);
+
+				ivs.unshift(pokemon.level);
+
+				var item = {
+					title: $(".modal input.title").val(),
+					speciesId: speciesId,
+					baseSpeciesId: $(".modal select.speciesId option:selected").attr("baseSpeciesId"),
+					league: $(".modal select.league option:selected").val(),
+					cp: cp,
+					ivs: ivs,
+					priority: parseInt($(".modal select.priority option:selected").val())
+				};
+
+				var notes = $(".modal textarea.notes").val();
+
+				if(notes != ""){
+					item.notes = notes;
+				}
+
+
+				if(typeof index == 'undefined'){
+					// Save new item
+					checklist.push(item);
+				} else{
+					// Preserve caught attribute
+					if(checklist[index].caught){
+						item.caught = checklist[index].caught;
+					};
+
+					checklist[index] = item;
+				}
+
+				closeModalWindow();
+				self.saveChecklist();
+				self.displayChecklist(checklist);
+			}
+
+			// Validate form fields for new or updated item
+
+			this.validateItemForm = function(){
+				var valid = true;
+				var inputs = [
+					".modal input.title",
+					".modal input.iv[iv=\"atk\"]",
+					".modal input.iv[iv=\"def\"]",
+					".modal input.iv[iv=\"hp\"]"
+				];
+
+				for(var i = 0; i < inputs.length; i++){
+					$(inputs[i]).removeClass("invalid");
+
+					if($(inputs[i]).val() == ""){
+						$(inputs[i]).addClass("invalid");
+						valid = false;
+					}
+				}
+
+				// Check that IV's are within valid range
+				$(".modal input.iv").each(function(index, value){
+					var value = $(this).val();
+
+					if(value % 1 != 0){
+						$(this).addClass("invalid");
+						valid = false;
+					}
+
+					if(value < 0 || value > 15){
+						$(this).addClass("invalid");
+						valid = false;
+					}
+				});
+
+				return valid;
+			}
 
 			// Turn checkboxes on and off
 
@@ -171,7 +317,7 @@ var InterfaceMaster = (function () {
 
 			// Turn on edit controls
 
-			$("button.edit").on("click", function(e){
+			$(".control-container button.edit").on("click", function(e){
 				$("#main").attr("edit", "on");
 			});
 
@@ -201,8 +347,8 @@ var InterfaceMaster = (function () {
 				// Confirm reset
 
 				$(".modal .checklist-reset-confirm .yes").click(function(e){
-					checklist = defaultData;
-					data.checklist = checklist;
+					data = defaultData;
+					checklist = defaultData.checklist;
 					self.saveChecklist();
 
 					self.displayChecklist(checklist);
@@ -233,6 +379,36 @@ var InterfaceMaster = (function () {
 
 					closeModalWindow();
 				});
+			});
+
+			// Open new item form
+
+			$("body").on("click", ".checklist-item.new-item", function(e){
+				self.openItemEditor();
+			});
+
+			// Open edit item form
+
+			$("body").on("click", ".checklist-item a.edit", function(e){
+				e.preventDefault();
+
+				selectedIndex = $(this).closest(".checklist-item").attr("index");
+
+				var item = checklist[selectedIndex];
+
+				self.openItemEditor(item);
+			});
+
+			// Add a new item
+
+			$("body").on("click", ".modal .checklist-new-item .button.add", function(e){
+				self.saveItem();
+			});
+
+			// Save a selected item
+
+			$("body").on("click", ".modal .checklist-new-item .button.save", function(e){
+				self.saveItem(selectedIndex);
 			});
 
 		}

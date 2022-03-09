@@ -15,7 +15,7 @@ require_once '../../header.php';
 	<h1>Sandshrew Community Day Guide for PvP</h1>
 	<div class="date">Last updated March 9th, 2022</div>
 	<img src="<?php echo $WEB_ROOT;?>articles/article-assets/community-day/22-02-hoppip/banner.jpg" />
-	<p>Jumpluff's time to shine is skip and a hop away! Hoppip Community Day is Saturday, February 12th, and Jumpluff will receive a Flying-type Charged Move, Acrobatics. You can find more info about Hoppip Community Day at the official <a href="https://pokemongolive.com/en/post/communityday-feb22-hoppip/" target="_blank">Pokemon GO blog</a>. Below are the leagues and IV spreads to look out for, and answers to frequently asked questions.</p>
+	<p>Both forms of Sandshrew are rolling out this Community Day with some implications for future themed cups in PvP. You can find more info about Sandshrew Community Day at the official <a href="https://pokemongolive.com/en/post/communityday-mar22-sandshrew/" target="_blank">Pokemon GO blog</a>. Below are the leagues and IV spreads to look out for, and answers to frequently asked questions.</p>
 
 	<a name="overview"></a>
 	<h3 class="article-header"><strong>Overview</strong></h3>
@@ -38,7 +38,7 @@ require_once '../../header.php';
 		</div>
 		<div class="feature">
 			<h4>Event Bonus</h4>
-			<div class="value">3x Catch Stardust</div>
+			<div class="value">1/4 Hatch Distance</div>
 		</div>
 	</div>
 
@@ -106,7 +106,6 @@ require_once '../../header.php';
 	<h3 class="article-header"><strong>Additional Resources</strong></h3>
 
 	<div class="flex further-resource-links">
-		<a href="<?php echo $WEB_ROOT;?>articles/article-assets/community-day/22-02-hoppip/hoppip-infographic.jpg" class="infographic" target="_blank">&darr; Infographic Version</a>
 		<a href="https://www.stadiumgaming.gg/rank-checker" class="gostadium" target="_blank">Stadium Gaming<br>Rank Checker</a>
 		<a href="https://pvpivs.com/" target="_blank">pvpivs.com</a>
 	</div>

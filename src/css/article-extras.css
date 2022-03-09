@@ -206,6 +206,22 @@ input.article-search {
 .checklist-item[priority="3"] .iv-bar .divider {
   background: #c3a49a;
 }
+.checklist-item.new-item {
+  font-size: 24px;
+  opacity: 0.25;
+  background: #fff;
+  cursor: pointer;
+}
+.checklist-item.new-item:hover {
+  opacity: 0.5;
+}
+.checklist-item.new-item span {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
 .checklist-item .title-section {
   display: flex;
   align-items: center;
@@ -313,6 +329,13 @@ input.article-search {
   border: none;
   margin-right: 5px;
 }
+.checklist-item .base-form-section .label {
+  font-size: 12px;
+  font-weight: bold;
+}
+.checklist-item .base-form-section .cp {
+  font-size: 14px;
+}
 .checklist-item .priority-section {
   display: flex;
   align-items: center;
@@ -353,6 +376,51 @@ input.article-search {
 }
 .checklist-item .priority-section a.delete::before {
   content: "✕";
+}
+
+/* New checklist item form */
+.checklist-new-item input.title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.checklist-new-item input.title.invalid {
+  border: 1px solid #ff0000;
+}
+.checklist-new-item select.priority {
+  margin-bottom: 15px;
+}
+.checklist-new-item label {
+  font-size: 14px;
+  font-weight: bold;
+}
+.checklist-new-item .species-section, .checklist-new-item .league-section, .checklist-new-item .ivs-section {
+  display: flex;
+  margin-bottom: 15px;
+}
+.checklist-new-item input.iv {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #888;
+  border-radius: 0px;
+  width: auto;
+}
+.checklist-new-item input.iv:focus {
+  outline: none;
+  border-bottom: 3px solid #eabd49;
+}
+.checklist-new-item input.iv.invalid {
+  border-bottom: 1px solid #ff0000;
+}
+.checklist-new-item textarea.notes {
+  resize: none;
+  width: 100%;
+  height: 150px;
+  font-family: arial, sans-serif;
+  font-size: 12px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 8px;
 }
 
 .further-resource-links {

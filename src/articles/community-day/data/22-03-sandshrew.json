@@ -1,5 +1,23 @@
 {
-	"species": ["sandshrew", "sandshrew_alolan"],
+	"species": [
+		{
+			"speciesId": "sandshrew",
+			"baseSpeciesId": "sandshrew"
+		},
+		{
+			"speciesId": "sandslash",
+			"baseSpeciesId": "sandshrew"
+		},
+		{
+			"speciesId": "sandshrew_alolan",
+			"baseSpeciesId": "sandshrew_alolan"
+		},
+		{
+			"speciesId": "sandslash_alolan",
+			"baseSpeciesId": "sandshrew_alolan",
+			"default": true
+		}
+	],
 	"checklist": [
 		{
 			"title": "High Rank A-Sandslash",
@@ -75,8 +93,7 @@
 			"league": "special",
 			"cp": 500,
 			"ivs": [8, 0, 15, 11],
-			"priority": 3,
-			"notes": "In Little Jungle Cup, Alolan Sandslash performs similarly to Alolan Sandshrew, but has advantage over it with a neutral Fast Move and Bulldoze coverage."
+			"priority": 3
 		}
 	]
 }

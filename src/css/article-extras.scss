@@ -254,6 +254,25 @@ input.article-search{
 		}
 	}
 
+	&.new-item{
+		font-size: 24px;
+		opacity: 0.25;
+		background:#fff;
+		cursor:pointer;
+
+		&:hover{
+			opacity: 0.5;
+		}
+
+		span{
+			display:flex;
+			width:100%;
+			height:100%;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+
 	.title-section{
 		display: flex;
 		align-items: center;
@@ -367,6 +386,15 @@ input.article-search{
 			border:none;
 			margin-right: 5px;
 		}
+
+		.label{
+			font-size: 12px;
+			font-weight: bold;
+		}
+
+		.cp{
+		 	font-size: 14px;
+		}
 	}
 
 	.priority-section{
@@ -416,6 +444,62 @@ input.article-search{
 		a.delete::before{
 			content: "\2715";
 		}
+	}
+}
+
+/* New checklist item form */
+
+.checklist-new-item{
+	input.title{
+		font-size: 16px;
+		font-weight: bold;
+		margin-bottom: 15px;
+
+		&.invalid{
+			border:1px solid #ff0000;
+		}
+	}
+
+	select.priority{
+		margin-bottom: 15px;
+	}
+
+	label{
+		font-size: 14px;
+		font-weight: bold;
+	}
+
+	.species-section, .league-section, .ivs-section{
+		display: flex;
+		margin-bottom: 15px;
+	}
+
+	input.iv{
+		background: none;
+		border: none;
+		border-bottom: 1px solid #888;
+		border-radius: 0px;
+		width: auto;
+
+		&:focus{
+			outline: none;
+			border-bottom: 3px solid #eabd49;
+		}
+
+		&.invalid{
+			border-bottom: 1px solid #ff0000;
+		}
+	}
+
+	textarea.notes{
+		resize: none;
+		width: 100%;
+		height: 150px;
+		font-family: arial, sans-serif;
+		font-size: 12px;
+		box-sizing: border-box;
+		border-radius: 4px;
+		padding: 8px;
 	}
 }
 
