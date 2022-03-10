@@ -125,14 +125,6 @@
 		"chargedMoves": ["ACID_SPRAY", "HYDRO_PUMP"]
 	},
 	{
-		"speciesId": "sandslash_alolan_xl",
-		"chargedMoves": ["ICE_PUNCH", "BULLDOZE"]
-	},
-	{
-		"speciesId": "dewgong_xl",
-		"chargedMoves": ["ICY_WIND", "WATER_PULSE"]
-	},
-	{
 		"speciesId": "probopass",
 		"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
 	},
@@ -565,6 +557,7 @@
 	},
 	{
 		"speciesId": "sandslash_alolan",
+		"fastMove": "SHADOW_CLAW",
 		"chargedMoves": ["ICE_PUNCH", "BULLDOZE"]
 	},
 	{

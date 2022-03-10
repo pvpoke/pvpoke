@@ -2538,7 +2538,8 @@
         },
         "types": ["ground", "none"],
         "fastMoves": ["METAL_CLAW", "MUD_SHOT"],
-        "chargedMoves": ["BULLDOZE", "EARTHQUAKE", "ROCK_TOMB"],
+        "chargedMoves": ["BULLDOZE", "EARTHQUAKE", "ROCK_TOMB", "NIGHT_SLASH"],
+		"eliteMoves": ["NIGHT_SLASH"],
         "defaultIVs": {
             "cp500": [8, 4, 10, 15],
             "cp1500": [23.5, 4, 12, 15],
@@ -2560,8 +2561,9 @@
             "hp": 181
         },
         "types": ["ice", "steel"],
-        "fastMoves": ["METAL_CLAW", "POWDER_SNOW"],
+        "fastMoves": ["METAL_CLAW", "POWDER_SNOW", "SHADOW_CLAW"],
         "chargedMoves": ["BLIZZARD", "BULLDOZE", "GYRO_BALL", "ICE_PUNCH"],
+		"eliteMoves": ["SHADOW_CLAW"],
         "tags": ["alolan"],
         "defaultIVs": {
             "cp500": [8, 4, 4, 13],
@@ -2584,7 +2586,8 @@
         },
         "types": ["ground", "none"],
         "fastMoves": ["METAL_CLAW", "MUD_SHOT"],
-        "chargedMoves": ["BULLDOZE", "EARTHQUAKE", "ROCK_TOMB"],
+		"chargedMoves": ["BULLDOZE", "EARTHQUAKE", "ROCK_TOMB", "NIGHT_SLASH"],
+		"eliteMoves": ["NIGHT_SLASH"],
         "defaultIVs": {
             "cp500": [8, 4, 10, 15],
             "cp1500": [23.5, 4, 12, 15],

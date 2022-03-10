@@ -22,8 +22,9 @@
 		"weight": 2
 	},
 	{
-	    "speciesId": "sandslash_alolan",
-	    "chargedMoves": ["ICE_PUNCH", "BULLDOZE"],
+		"speciesId": "sandslash_alolan",
+		"fastMove": "SHADOW_CLAW",
+		"chargedMoves": ["ICE_PUNCH", "BULLDOZE"],
 		"weight": 2
 	},
 	{

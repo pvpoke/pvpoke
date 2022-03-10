@@ -51,16 +51,16 @@
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/community-day/22-02-hoppip/">
-				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/community-day/22-02-hoppip/thumb.jpg" />
+			<a href="<?php echo $WEB_ROOT; ?>articles/community-day/22-03-sandshrew/">
+				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/community-day/22-03-sandshrew/thumb.jpg">
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/community-day/22-02-hoppip/">Hoppip Community Day Guide for PvP</a></h4>
-			<div class="date">February 10, 2022</div>
-			<p>Learn about Hoppip's upcoming Community Day, how Acrobatics will be relevant for PvP, and which Jumpluff IV's to look out for.</p>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/community-day/22-03-sandshrew/">Sandshrew Community Day Guide for PvP</a></h4>
+			<div class="date">March 10, 2022</div>
+			<p>Learn about Sandshrew's upcoming Community Day and how both of its Alolan and Kanto families will be relevant for PvP!</p>
+			<div class="tags"><a href="/pvpoke/src/articles?tag=Community Day"># Community Day</a><a href="/pvpoke/src/articles?tag=Infographic"># Infographic</a></div>
 		</div>
-
 	</div>
 
 </div>

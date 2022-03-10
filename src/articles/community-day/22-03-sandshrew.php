@@ -13,8 +13,8 @@ require_once '../../header.php';
 
 <div class="section article white sandshrew">
 	<h1>Sandshrew Community Day Guide for PvP</h1>
-	<div class="date">Last updated March 9th, 2022</div>
-	<img src="<?php echo $WEB_ROOT;?>articles/article-assets/community-day/22-02-hoppip/banner.jpg" />
+	<div class="date">Last updated March 10th, 2022</div>
+	<img src="<?php echo $WEB_ROOT;?>articles/article-assets/community-day/22-03-sandshrew/banner.jpg" />
 	<p>Both forms of Sandshrew are rolling out this Community Day with some implications for future themed cups in PvP. You can find more info about Sandshrew Community Day at the official <a href="https://pokemongolive.com/en/post/communityday-mar22-sandshrew/" target="_blank">Pokemon GO blog</a>. Below are the leagues and IV spreads to look out for, and answers to frequently asked questions.</p>
 
 	<a name="overview"></a>
@@ -23,7 +23,7 @@ require_once '../../header.php';
 	<div class="cd-features">
 		<div class="feature">
 			<h4>Date &amp; Time</h4>
-			<div class="value">Sundary, March 13th<br></div>
+			<div class="value">Sunday, March 13th<br></div>
 			<div class="detail">11am - 5pm local time</div>
 		</div>
 		<div class="feature">
@@ -98,7 +98,7 @@ require_once '../../header.php';
 	<div class="faq-item">
 		<h3 class="article-header"><strong>What will happen if I evolve a Purified Sandshrew during Community Day? Is there a way to obtain a Sandslash that knows both Night Slash and Return?</strong></h3>
 		<div class="faq-answer">
-			<p><b>Exclusive Charged Moves will replace Return if you evolve a Purified Pokemon during its Community Day event.</b> To obtain both Night Slash and Return, you must evolve your Pokemon after the event, unlock a 2nd Charged Move, and use an Elite TM to obtain Night Slash.</p>
+			<p><b>Exclusive Charged Moves will replace Return if you evolve a Purified Pokemon during its Community Day event.</b> To obtain both Night Slash and Return, you must evolve your Pokemon after the event's evolution window (7pm local time), unlock a 2nd Charged Move, and use an Elite TM to obtain Night Slash.</p>
 		</div>
 	</div>
 
