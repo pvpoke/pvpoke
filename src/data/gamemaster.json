@@ -315,7 +315,7 @@
         }],
         "exclude": [{
             "filterType": "id",
-            "values": ["azumarill", "medicham", "dewgong", "scrafty", "jellicent", "nidoqueen", "diggersby", "walrein", "electrode_hisuian"]
+            "values": ["azumarill", "medicham", "dewgong", "scrafty", "jellicent", "nidoqueen", "diggersby", "walrein", "electrode_hisuian", "oricorio_baile", "oricorio_pau", "oricorio_pom_pom", "oricorio_sensu"]
         }, {
             "filterType": "tag",
             "values": ["mega"]
@@ -917,7 +917,7 @@
             "values": ["mega"]
         }, {
             "filterType": "id",
-            "values": ["bastiodon", "probopass", "regirock", "scrafty", "togekiss", "heracross", "skarmory", "altaria", "mantine", "hakamo_o", "kommo_o", "lycanroc_midnight", "lycanroc_midday", "incineroar", "dartrix", "toucannon", "trumbeak", "rowlet"]
+            "values": ["bastiodon", "probopass", "regirock", "scrafty", "togekiss", "heracross", "skarmory", "altaria", "mantine", "hakamo_o", "kommo_o", "lycanroc_midnight", "lycanroc_midday", "incineroar", "dartrix", "toucannon", "trumbeak", "rowlet", "oricorio_baile", "oricorio_pau", "oricorio_pom_pom", "oricorio_sensu"]
         }]
     }, {
         "name": "comet",
@@ -1163,7 +1163,7 @@
         }, {
             "filterType": "id",
             "name": "Species",
-            "values": ["lickitung", "bastiodon", "pachirisu", "vigoroth", "registeel", "hakamo_o", "kommo_o", "lycanroc_midnight", "lycanroc_midday", "incineroar", "dartrix", "toucannon", "trumbeak", "rowlet", "brionne", "torracat", "popplio", "gumshoos"]
+            "values": ["lickitung", "bastiodon", "pachirisu", "vigoroth", "registeel", "hakamo_o", "kommo_o", "lycanroc_midnight", "lycanroc_midday", "incineroar", "dartrix", "toucannon", "trumbeak", "rowlet", "brionne", "torracat", "popplio", "gumshoos", "oricorio_baile", "oricorio_pau", "oricorio_pom_pom", "oricorio_sensu"]
         }, {
             "filterType": "tag",
             "name": "Tag",
@@ -24550,6 +24550,90 @@
         "thirdMoveCost": 50000,
         "released": false
     }, {
+        "dex": 741,
+        "speciesName": "Oricorio (Baile)",
+        "speciesId": "oricorio_baile",
+        "baseStats": {
+            "atk": 196,
+            "def": 145,
+            "hp": 181
+        },
+        "types": ["fire", "flying"],
+        "fastMoves": ["POUND", "AIR_SLASH"],
+        "chargedMoves": ["AERIAL_ACE", "AIR_CUTTER", "HURRICANE"],
+        "defaultIVs": {
+			"cp500": [8, 4, 14, 15],
+            "cp1500": [24, 4, 10, 15],
+            "cp2500": [45.5, 15, 15, 15],
+            "cp2500l40": [40, 13, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 75000,
+        "released": true
+    }, {
+        "dex": 741,
+        "speciesName": "Oricorio (Pa'u)",
+        "speciesId": "oricorio_pau",
+        "baseStats": {
+            "atk": 196,
+            "def": 145,
+            "hp": 181
+        },
+        "types": ["psychic", "flying"],
+        "fastMoves": ["POUND", "AIR_SLASH"],
+        "chargedMoves": ["AERIAL_ACE", "AIR_CUTTER", "HURRICANE"],
+        "defaultIVs": {
+			"cp500": [8, 4, 14, 15],
+            "cp1500": [24, 4, 10, 15],
+            "cp2500": [45.5, 15, 15, 15],
+            "cp2500l40": [40, 13, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 75000,
+        "released": true
+    }, {
+        "dex": 741,
+        "speciesName": "Oricorio (Pom-Pom)",
+        "speciesId": "oricorio_pom_pom",
+        "baseStats": {
+            "atk": 196,
+            "def": 145,
+            "hp": 181
+        },
+        "types": ["electric", "flying"],
+        "fastMoves": ["POUND", "AIR_SLASH"],
+        "chargedMoves": ["AERIAL_ACE", "AIR_CUTTER", "HURRICANE"],
+        "defaultIVs": {
+			"cp500": [8, 4, 14, 15],
+            "cp1500": [24, 4, 10, 15],
+            "cp2500": [45.5, 15, 15, 15],
+            "cp2500l40": [40, 13, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 75000,
+        "released": true
+    }, {
+        "dex": 741,
+        "speciesName": "Oricorio (Sensu)",
+        "speciesId": "oricorio_sensu",
+        "baseStats": {
+            "atk": 196,
+            "def": 145,
+            "hp": 181
+        },
+        "types": ["ghost", "flying"],
+        "fastMoves": ["POUND", "AIR_SLASH"],
+        "chargedMoves": ["AERIAL_ACE", "AIR_CUTTER", "HURRICANE"],
+        "defaultIVs": {
+			"cp500": [8, 4, 14, 15],
+            "cp1500": [24, 4, 10, 15],
+            "cp2500": [45.5, 15, 15, 15],
+            "cp2500l40": [40, 13, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 75000,
+        "released": true
+    }, {
         "dex": 742,
         "speciesName": "Cutiefly",
         "speciesId": "cutiefly",
@@ -25898,8 +25982,8 @@
             "hp": 172
         },
         "types": ["psychic", "fairy"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["CONFUSION", "ASTONISH"],
+        "chargedMoves": ["PSYSHOCK", "MOONBLAST", "FOCUS_BLAST", "FUTURE_SIGHT"],
         "defaultIVs": {
             "cp500": [5.5, 6, 9, 15],
             "cp1500": [16, 4, 15, 7],
