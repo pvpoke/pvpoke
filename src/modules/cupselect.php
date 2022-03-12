@@ -3,6 +3,7 @@
 	<option value="premierclassic" meta-group2500="ultrapremierclassic" meta-group10000="masterpremierclassic">Premier Classic</option>
 	<option value="johto" meta-group1500="johto">Johto Cup</option>
 	<option value="love" meta-group1500="love">Love Cup</option>
+	<option value="littlejungle" meta-group500="littlejungle">Little Jungle Cup</option>
 	<option value="guardian" meta-group1500="guardian">Silph Guardian Cup</option>
 	<option value="obsidian" meta-group1500="obsidian">Silph Obsidian Cup</option>
 	<option value="fusionfactions" meta-group1500="fusion">Silph Factions (Fusion)</option>

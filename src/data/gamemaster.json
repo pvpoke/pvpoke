@@ -1052,7 +1052,7 @@
         }],
         "exclude": [{
             "filterType": "id",
-            "values": ["shuckle", "shuckle_shadow", "smeargle", "genesect", "celebi", "hoopa", "aerodactyl_shadow", "obstagoon", "zarude", "genesect_douse", "genesect_burn"]
+            "values": ["shuckle", "shuckle_shadow", "smeargle", "genesect", "celebi", "hoopa", "hoopa_unbound", "aerodactyl_shadow", "obstagoon", "zarude", "genesect_douse", "genesect_burn"]
         }, {
             "filterType": "tag",
             "values": ["legendary", "mega"]

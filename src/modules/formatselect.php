@@ -5,6 +5,7 @@
 	<option value="10000" cup="all" meta-group="master">Master League</option>
 	<option value="10000" cup="classic" meta-group="master">Master League (Classic)</option>
 	<option value="1500" cup="love" meta-group="love">Love Cup</option>
+	<option value="500" cup="littlejungle" meta-group="littlejungle">Little Jungle Cup</option>
 	<option value="1500" cup="obsidian" meta-group="obsidian">Silph Obsidian Cup</option>
 	<option value="1500" cup="factions" meta-group="factions">Silph Factions (Cave)</option>
 	<option value="1500" cup="fusionfactions" meta-group="fusion">Silph Factions (Fusion)</option>
