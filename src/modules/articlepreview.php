@@ -24,6 +24,10 @@ function makeArticleItem(a){
 		thumbPath = webRoot+"articles/article-assets/community-day/"+a.id+"/thumb.jpg";
 	}
 
+	if(a.path == "infographics"){
+		thumbPath = webRoot+"articles/article-assets/infographics/"+a.id+"/thumb.jpg";
+	}
+
 	$article.find("h4 a").html(a.title);
 	$article.find(".date").html(a.date);
 	$article.find("p").html(a.description);
