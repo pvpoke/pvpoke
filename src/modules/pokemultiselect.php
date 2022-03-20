@@ -31,8 +31,7 @@
 				<option value="love" type="great" class="multi-battle">Love Cup Meta</option>
 				<option value="littlejungle" type="little" class="hide multi-battle">Little Jungle Cup Meta</option>
 				<option value="obsidian" type="great" class="multi-battle">Silph Obsidian Cup Meta</option>
-				<option value="factions" type="great" class="multi-battle">Silph Factions Meta (Cave)</option>
-				<option value="fusion" type="great" class="multi-battle">Silph Factions Meta (Fusion)</option>
+				<option value="nemesis" type="great" class="multi-battle">Silph Nemesis Cup</option>
 			</select>
 			<div class="flex quick-fill-buttons">
 				<button class="save-btn save-custom">Save</button>

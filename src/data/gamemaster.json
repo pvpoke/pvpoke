@@ -1169,6 +1169,29 @@
             "name": "Tag",
             "values": ["mega", "shadow"]
         }]
+    }, {
+        "name": "nemesis",
+        "title": "Nemesis Cup",
+		"restrictedPicks": 2,
+		"restrictedPokemon": ["obstagoon", "gallade", "lucario", "poliwrath", "pangoro", "blaziken", "chesnaught", "quagsire", "flygon", "excadrill", "jumpluff", "dedenne", "froslass", "gourgeist_small", "gourgeist_average", "gourgeist_large", "gourgeist_super", "noctowl", "gyarados", "charizard", "gengar", "rapidash_galarian", "mawile"],
+        "include": [{
+            "filterType": "id",
+			"includeShadows": true,
+            "values": ["obstagoon", "gallade", "lucario", "poliwrath", "pangoro", "blaziken", "chesnaught", "quagsire", "flygon", "excadrill", "jumpluff", "dedenne", "froslass", "gourgeist_small", "gourgeist_average", "gourgeist_large", "gourgeist_super", "noctowl", "gyarados", "charizard", "gengar", "rapidash_galarian", "mawile"]
+        }, {
+            "filterType": "type",
+            "values": ["bug", "dark", "fire", "grass", "ice", "psychic", "water"]
+        }],
+        "exclude": [{
+            "filterType": "id",
+            "values": ["escavalier"]
+        }, {
+            "filterType": "type",
+            "values": ["none", "fairy", "flying", "fighting", "ground", "ghost", "normal"]
+        }, {
+            "filterType": "tag",
+            "values": ["mega"]
+        }]
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xs", "hisuian"],
     "pokemonTraits": {
@@ -9464,6 +9487,7 @@
         },
         "level25CP": 1383,
         "tags": ["shadoweligible"],
+		"searchPriority": 2,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
@@ -11195,6 +11219,7 @@
             "cp2500": [34, 4, 15, 14]
         },
         "eliteMoves": ["BLAST_BURN", "STONE_EDGE"],
+		"searchPriority":  2,
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
         "released": true
