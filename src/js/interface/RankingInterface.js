@@ -1200,6 +1200,7 @@ var InterfaceMaster = (function () {
 			function toggleLimitedPokemon(e){
 				for(var i = 0; i < limitedPokemon.length; i++){
 					$(".rank[data='"+limitedPokemon[i]+"']").toggleClass("hide");
+					$(".rank[data='"+limitedPokemon[i]+"_shadow']").toggleClass("hide");
 				}
 			}
 
