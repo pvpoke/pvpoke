@@ -24969,8 +24969,8 @@
             "hp": 120
         },
         "types": ["grass", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["RAZOR_LEAF", "BULLET_SEED"],
+        "chargedMoves": ["ENERGY_BALL", "GRASS_KNOT"],
         "defaultIVs": {
             "cp500": [26.5, 4, 14, 11],
             "cp1500": [50, 15, 15, 15],
@@ -24978,7 +24978,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false
+        "released": true
     }, {
         "dex": 754,
         "speciesName": "Lurantis",
@@ -24989,8 +24989,8 @@
             "hp": 172
         },
         "types": ["grass", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+		"fastMoves": ["RAZOR_LEAF", "BULLET_SEED"],
+        "chargedMoves": ["ENERGY_BALL", "GRASS_KNOT"],
         "defaultIVs": {
             "cp500": [8, 4, 8, 14],
             "cp1500": [23.5, 4, 8, 15],
@@ -24999,7 +24999,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false
+        "released": true
     }, {
         "dex": 755,
         "speciesName": "Morelull",
@@ -26017,7 +26017,7 @@
 		"tags": ["legendary"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": true
     }, {
         "dex": 787,
         "speciesName": "Tapu Bulu",
