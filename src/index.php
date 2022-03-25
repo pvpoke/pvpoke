@@ -51,15 +51,15 @@
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>/infographics/22-03-great-league-meta-snapshot/">
-				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/infographics/22-03-great-league-meta-snapshot/thumb.jpg">
+			<a href="<?php echo $WEB_ROOT; ?>articles/strategy/tournament-guide/">
+				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/tournament-guide/thumb.jpg">
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/infographics/22-03-great-league-meta-snapshot/">Great League Tournament Meta Snapshot, March 2022</a></h4>
-			<div class="date">March 19, 2022</div>
-			<p>Get a preview of the Pokemon GO Championship Series meta for your regional tournament.</p>
-			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a></div>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/strategy/tournament-guide/">Strategy Guide for Tournament Play</a></h4>
+			<div class="date">March 25, 2022</div>
+			<p>How do you build a team for tournament play and pick your Pokemon for battle? Get an in depth look at tournament strategies with advice from veteran trainers!</p>
+			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Strategy"># Strategy</a></div>
 		</div>
 	</div>
 

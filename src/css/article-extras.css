@@ -482,8 +482,13 @@ input.article-search {
   outline: 5px solid #456c8a;
 }
 .article-note.quote .quote-text {
-  overflow-y: auto;
   flex-basis: 100%;
+}
+.article-note.quote .quote-text.max-height {
+  max-height: 500px;
+  overflow-y: scroll;
+  padding-right: 10px;
+  margin-bottom: 1em;
 }
 .article-note.quote .quote-text::before, .article-note.quote .quote-text::after {
   font-size: 70px;
