@@ -397,7 +397,7 @@ header{
 		&.poke-select{
 			font-size:18px;
 			font-weight:bold;
-			
+
 			option:checked{
 				font-weight:bold;
 				background:#ddd;
@@ -3333,7 +3333,7 @@ a.download-csv{
 
 	h3.article-header,
 	.tip{
-		background: rgba(0,0,0,.5);
+		background: rgb(98 114 139);
 		padding: 10px;
 		border-radius: 8px;
 		color:$color-off-white;

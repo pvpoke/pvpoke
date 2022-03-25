@@ -535,6 +535,76 @@ input.article-search{
 	}
 }
 
+/* Quote styling */
+
+.article-note{
+	margin: 20px auto;
+	width: 85%;
+	max-width: 500px;
+	border-radius: 12px;
+	box-sizing: border-box;
+	border: 1px solid #eee;
+	padding: 10px;
+	background:#628b78;
+	outline: 5px solid #628b78;
+	color:#eee;
+
+	h4{
+		margin-bottom: 1em !important;
+		font-size: 16px;
+	}
+
+	p:first-of-type{
+		margin-top: 0;
+	}
+
+	p:last-of-type{
+		margin-bottom: 0;
+	}
+
+	&.quote{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: flex-end;
+		background: #456c8a;
+		outline: 5px solid #456c8a;
+
+		.quote-text{
+			overflow-y: auto;
+			flex-basis: 100%;
+
+			&::before, &::after{
+				font-size: 70px;
+			    color: #6696bb;
+			    height: 30px;
+			    display: block;
+			    line-height: 60px;
+				overflow: hidden;
+			}
+
+			&::before{
+				content: "\201C";
+			}
+
+			&::after{
+				text-align: right;
+				content: "\201D";
+			}
+
+			 a{
+				 color: #eee;
+			 }
+		}
+
+		a.quote-byline{
+			display: block;
+			font-weight: bold;
+			font-size: 16px;
+			color:#eee;
+		}
+	}
+}
+
 
 
 /* Specific Pokemon styling */
@@ -630,7 +700,7 @@ input.article-search{
 
 	.article h3.article-header{
 		padding:10px;
-		font-size:18px;
+		font-size:22px;
 	}
 
 	.checklist-item{

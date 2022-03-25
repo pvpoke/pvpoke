@@ -451,6 +451,65 @@ input.article-search {
     background-position: 0% 50%;
   }
 }
+/* Quote styling */
+.article-note {
+  margin: 20px auto;
+  width: 85%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  border: 1px solid #eee;
+  padding: 10px;
+  background: #628b78;
+  outline: 5px solid #628b78;
+  color: #eee;
+}
+.article-note h4 {
+  margin-bottom: 1em !important;
+  font-size: 16px;
+}
+.article-note p:first-of-type {
+  margin-top: 0;
+}
+.article-note p:last-of-type {
+  margin-bottom: 0;
+}
+.article-note.quote {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  background: #456c8a;
+  outline: 5px solid #456c8a;
+}
+.article-note.quote .quote-text {
+  overflow-y: auto;
+  flex-basis: 100%;
+}
+.article-note.quote .quote-text::before, .article-note.quote .quote-text::after {
+  font-size: 70px;
+  color: #6696bb;
+  height: 30px;
+  display: block;
+  line-height: 60px;
+  overflow: hidden;
+}
+.article-note.quote .quote-text::before {
+  content: "“";
+}
+.article-note.quote .quote-text::after {
+  text-align: right;
+  content: "”";
+}
+.article-note.quote .quote-text a {
+  color: #eee;
+}
+.article-note.quote a.quote-byline {
+  display: block;
+  font-weight: bold;
+  font-size: 16px;
+  color: #eee;
+}
+
 /* Specific Pokemon styling */
 .section.hoppip {
   background: #afe8d5;
@@ -520,7 +579,7 @@ input.article-search {
 
   .article h3.article-header {
     padding: 10px;
-    font-size: 18px;
+    font-size: 22px;
   }
 
   .checklist-item {

@@ -2899,7 +2899,7 @@ a.download-csv {
 }
 .article h3.article-header,
 .article .tip {
-  background: rgba(0, 0, 0, 0.5);
+  background: #62728b;
   padding: 10px;
   border-radius: 8px;
   color: #eee;
