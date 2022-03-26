@@ -209,6 +209,10 @@ var InterfaceMaster = (function () {
 								} else{
 									multiSelectors[0].setCliffhangerMode(false);
 								}
+
+								if(battle.getCup().partySize == 8){
+									multiSelectors[0].setMaxPokemonCount(8);
+								}
 								break;
 
 							case "m1":
@@ -935,7 +939,7 @@ var InterfaceMaster = (function () {
 
 
 
-				if(team.length == 6){
+				if(multiSelectors[0].getAvailableSpots() <= 0){
 					$(".alternatives-table .button.add").hide();
 				}
 
@@ -1362,6 +1366,12 @@ var InterfaceMaster = (function () {
 					multiSelectors[0].setCliffhangerMode(true);
 				} else{
 					multiSelectors[0].setCliffhangerMode(false);
+				}
+
+				if(battle.getCup().partySize == 8){
+					multiSelectors[0].setMaxPokemonCount(8);
+				} else{
+					multiSelectors[0].setMaxPokemonCount(6);
 				}
 
 				// Load ranking data for movesets

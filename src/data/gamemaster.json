@@ -932,7 +932,8 @@
         }, {
             "filterType": "id",
             "values": ["stunfisk_galarian", "skarmory", "altaria", "bastiodon", "registeel", "chansey", "pidgeot"]
-        }]
+        }],
+		"partySize": 8
     }, {
         "name": "dungeon",
         "title": "Dungeon Field",
@@ -946,7 +947,8 @@
         }, {
             "filterType": "id",
             "values": ["azumarill", "stunfisk_galarian", "skarmory", "altaria", "bastiodon"]
-        }]
+        }],
+		"partySize": 8
     }, {
         "name": "comet",
         "title": "Comet Cup",
@@ -967,12 +969,13 @@
         "title": "Comet Cup",
         "include": [{
             "filterType": "type",
-            "values": ["fire", "flying", "ice", "normal", "psychic"]
+            "values": ["fire", "flying", "ice", "normal", "psychic", "electric"]
         }],
         "exclude": [{
             "filterType": "tag",
             "values": ["mega", "mythical"]
-        }]
+        }],
+		"partySize": 8
     }, {
         "name": "venture",
         "title": "Venture Cup",
