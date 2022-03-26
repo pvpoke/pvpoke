@@ -920,6 +920,34 @@
             "values": ["bastiodon", "probopass", "regirock", "scrafty", "togekiss", "heracross", "skarmory", "altaria", "mantine", "hakamo_o", "kommo_o", "lycanroc_midnight", "lycanroc_midday", "incineroar", "dartrix", "toucannon", "trumbeak", "rowlet", "oricorio_baile", "oricorio_pau", "oricorio_pom_pom", "oricorio_sensu"]
         }]
     }, {
+        "name": "floatingcity",
+        "title": "Floating City Field",
+        "include": [{
+            "filterType": "type",
+            "values": ["ground", "flying", "steel", "normal"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega", "mythical", "shadow", "regional"]
+        }, {
+            "filterType": "id",
+            "values": ["stunfisk_galarian", "skarmory", "altaria", "bastiodon", "registeel", "chansey", "pidgeot"]
+        }]
+    }, {
+        "name": "dungeon",
+        "title": "Dungeon Field",
+        "include": [{
+            "filterType": "type",
+            "values": ["bug", "dragon", "poison", "steel", "water"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega", "shadow"]
+        }, {
+            "filterType": "id",
+            "values": ["azumarill", "stunfisk_galarian", "skarmory", "altaria", "bastiodon"]
+        }]
+    }, {
         "name": "comet",
         "title": "Comet Cup",
         "include": [{
@@ -934,6 +962,17 @@
             "values": ["altaria", "deoxys_defense", "medicham", "wobbuffet", "chansey", "mantine"]
         }],
         "link": "https://discord.gg/ybTf7ZYNzt?event=925020319037669387"
+    },  {
+        "name": "cometultra",
+        "title": "Comet Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["fire", "flying", "ice", "normal", "psychic"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega", "mythical"]
+        }]
     }, {
         "name": "venture",
         "title": "Venture Cup",
@@ -25200,6 +25239,7 @@
             "cp1500": [26.5, 5, 11, 14],
             "cp2500": [50, 15, 15, 15]
         },
+		"tags": ["regional"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true

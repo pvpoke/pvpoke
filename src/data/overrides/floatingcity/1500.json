@@ -1,0 +1,107 @@
+[
+	{
+		"speciesId": "lucario",
+		"chargedMoves": ["POWER_UP_PUNCH", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "vigoroth",
+		"chargedMoves": ["BODY_SLAM", "BRICK_BREAK"],
+		"weight": 6
+	},
+	{
+		"speciesId": "swampert",
+		"chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"],
+		"weight": 6
+	},
+	{
+		"speciesId": "pelipper",
+		"fastMove": "WING_ATTACK",
+		"chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"],
+		"weight": 3
+	},
+	{
+		"speciesId": "ferrothorn",
+		"chargedMoves": ["POWER_WHIP", "THUNDER"],
+		"weight": 5
+	},
+	{
+		"speciesId": "sandslash_alolan",
+		"chargedMoves": ["ICE_PUNCH", "BULLDOZE"]
+	},
+	{
+		"speciesId": "mantine",
+		"chargedMoves": ["BUBBLE_BEAM", "ICE_BEAM"]
+	},
+	{
+		"speciesId": "whiscash",
+		"fastMove": "MUD_SHOT"
+	},
+	{
+		"speciesId": "garchomp",
+		"chargedMoves": ["SAND_TOMB", "OUTRAGE"]
+	},
+	{
+		"speciesId": "probopass",
+		"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "gliscor",
+		"chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "gliscor_shadow",
+		"chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "probopass_shadow",
+		"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "ho_oh",
+		"chargedMoves": ["BRAVE_BIRD", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "vullaby",
+		"fastMove": "AIR_SLASH"
+	},
+	{
+		"speciesId": "forretress",
+		"chargedMoves": ["MIRROR_SHOT", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "steelix",
+		"chargedMoves": ["CRUNCH", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "bronzong",
+		"chargedMoves": ["PSYSHOCK", "PAYBACK"]
+	},
+	{
+		"speciesId": "talonflame",
+		"weight": 4
+	},
+	{
+		"speciesId": "mandibuzz",
+		"weight": 4
+	},
+	{
+		"speciesId": "drifblim",
+		"weight": 3
+	},
+	{
+		"speciesId": "obstagoon",
+		"weight": 3
+	},
+	{
+		"speciesId": "wigglytuff",
+		"weight": 3
+	},
+	{
+		"speciesId": "articuno",
+		"weight": 2
+	},
+	{
+		"speciesId": "stunfisk",
+		"weight": 2
+	}
+]

@@ -32,6 +32,9 @@
 				<option value="littlejungle" type="little" class="hide multi-battle">Little Jungle Cup Meta</option>
 				<option value="obsidian" type="great" class="multi-battle">Silph Obsidian Cup Meta</option>
 				<option value="nemesis" type="great" class="multi-battle">Silph Nemesis Cup</option>
+				<option value="cometultra" type="ultra" class="multi-battle">Silph Factions (Ultra Comet)</option>
+				<option value="floatingcity" type="great" class="multi-battle">Silph Factions (Floating City)</option>
+				<option value="dungeon" type="great" class="multi-battle">Silph Factions (Dungeon)</option>
 			</select>
 			<div class="flex quick-fill-buttons">
 				<button class="save-btn save-custom">Save</button>
