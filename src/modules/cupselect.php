@@ -1,9 +1,8 @@
 <select class="cup-select">
 	<option value="all" cup="all" meta-group500="littlegeneral" meta-group1500="great" meta-group2500="ultra" meta-group10000="master">Open League</option>
 	<option value="premierclassic" meta-group2500="ultrapremierclassic" meta-group10000="masterpremierclassic">Premier Classic</option>
-	<option value="johto" meta-group1500="johto">Johto Cup</option>
-	<option value="love" meta-group1500="love">Love Cup</option>
 	<option value="littlejungle" meta-group500="littlejungle">Little Jungle Cup</option>
+	<option value="halloween" meta-group1500="halloween">Halloween Cup</option>
 	<option value="obsidian" meta-group1500="obsidian">Silph Obsidian Cup</option>
 	<option value="nemesis" meta-group1500="nemesis">Silph Nemesis Cup</option>
 	<option value="cometultra" meta-group2500="cometultra">Silph Factions (Ultra Comet)</option>
