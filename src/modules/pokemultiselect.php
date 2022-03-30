@@ -8,6 +8,7 @@
 		<div class="custom-options">
 			<h3 class="section-title">Pokemon (<span class="poke-count">0</span> / <span class="poke-max-count">100</span>)</h3>
 			<p>Create or select a group of custom Pokemon below.</p>
+			<a class="custom-group-sort" href="#">Sort ...</a>
 			<div class="rankings-container clear"></div>
 			<div class="team-warning ineligible">Your team may have ineligible Pokemon.</div>
 			<div class="team-warning labyrinth">Your Labyrinth Cup team can't share any typings.</div>
@@ -29,7 +30,6 @@
 				<option value="ultrapremierclassic" type="ultra" class="hide multi-battle">Premier Classic Meta</option>
 				<option value="masterpremierclassic" type="master" class="hide multi-battle">Premier Classic Meta</option>
 				<option value="halloween" type="great" class="multi-battle">Halloween Cup Meta</option>
-				<option value="littlejungle" type="little" class="hide multi-battle">Little Jungle Cup Meta</option>
 				<option value="obsidian" type="great" class="multi-battle">Silph Obsidian Cup Meta</option>
 				<option value="nemesis" type="great" class="multi-battle">Silph Nemesis Cup</option>
 				<option value="cometultra" type="ultra" class="multi-battle">Silph Factions (Ultra Comet)</option>
@@ -129,6 +129,16 @@
 	<div class="center flex">
 		<div class="button yes">Yes</div>
 		<div class="button no">No</div>
+	</div>
+</div>
+
+<div class="sort-group hide">
+	<p>Sort this group by one of the following:</p>
+
+	<div class="center">
+		<div class="button name">Name</div>
+		<div class="button attack">Attack</div>
+		<div class="button defense">Defense</div>
 	</div>
 </div>
 

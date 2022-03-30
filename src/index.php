@@ -34,17 +34,11 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.26.2 (February 21, 2022)</h4>
+	<h4>v1.26.4 (March 30, 2022)</h4>
 	<ul>
-		<li>Matchup tables such as in Matrix Battle and the Team Builder now always read row vs column.</li>
-		<ul>
-			<li>This was previously an option in the settings, and the default was column vs row. This tended to cause confusion and made it unclear how the tables were intended to read.</li>
-			<li>Added visuals to indicate correct reading direction.</li>
-		</ul>
-		<li>Matrix Battle results now include win/loss record and average.</li>
-		<ul>
-			<li>Win/Loss records show battle wins and losses for the row. When viewing the "Attack" tab, this record shows Charged Move tie wins and losses.</li>
-		</ul>
+		<li>Team Builder now has a max team size option in the advanced settings for Silph Factions play. This doesn't change how teams are evaluated.</li>
+		<li>Fixed an issue where entering Shadow Pokemon in the Team Builder's excluded threats or alternatives wouldn't exclude them.</li>
+		<li>Custom groups can now be sorted by Attack, Defense, or name.</li>
 	</ul>
 
 	<h3>Latest Article</h3>

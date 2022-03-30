@@ -57,6 +57,7 @@ var InterfaceMaster = (function () {
 				$(".print-scorecard").on("click", printScorecard);
 				$("body").on("click", ".alternatives-table .button.add", addAlternativePokemon);
 				$("body").on("click", ".check", checkBox);
+				$(".team-size-select").on("change", selectTeamSize);
 
 				// If get data exists, load settings
 
@@ -104,6 +105,10 @@ var InterfaceMaster = (function () {
 								// Add each team member to the multi-selector
 								var list = val.split(",");
 								var pokeList = [];
+
+								// Set max team size to length of list, if option exists
+								$(".team-size-select option[value="+list.length+"]").prop("selected", "selected");
+								$(".team-size-select").trigger("change");
 
 								for(var i = 0; i < list.length; i++){
 									var arr = list[i].split('-');
@@ -211,7 +216,8 @@ var InterfaceMaster = (function () {
 								}
 
 								if(battle.getCup().partySize == 8){
-									multiSelectors[0].setMaxPokemonCount(8);
+									$(".team-size-select option[value=8]").prop("selected", "selected");
+									$(".team-size-select").trigger("change");
 								}
 								break;
 
@@ -478,7 +484,14 @@ var InterfaceMaster = (function () {
 				var excludedThreatIDs = [];
 
 				for(var i = 0; i < excludedThreats.length; i++){
-					excludedThreatIDs.push(excludedThreats[i].speciesId);
+					// Include shadow ID's for Shadow Pokemon
+					var excludedId = excludedThreats[i].speciesId;
+
+					if((excludedThreats[i].shadowType == "shadow")&&(excludedId.indexOf("_shadow") == -1)){
+						excludedId = excludedId + "_shadow";
+					}
+
+					excludedThreatIDs.push(excludedId);
 				}
 
 				var i = 0;
@@ -699,10 +712,17 @@ var InterfaceMaster = (function () {
 
 				// Exclude any Pokemon specified in the advanced settings
 
-				var manuallyExcluded = multiSelectors[3].getPokemonList();
+				var excludedAlternatives = multiSelectors[3].getPokemonList();
 
-				for(var i = 0; i < manuallyExcluded.length; i++){
-					exclusionList.push(manuallyExcluded[i].speciesId);
+				for(var i = 0; i < excludedAlternatives.length; i++){
+					// Include shadow ID's for Shadow Pokemon
+					var excludedId = excludedAlternatives[i].speciesId;
+
+					if((excludedAlternatives[i].shadowType == "shadow")&&(excludedId.indexOf("_shadow") == -1)){
+						excludedId = excludedId + "_shadow";
+					}
+
+					exclusionList.push(excludedId);
 				}
 
 				// In Cliffhanger, exclude Pokemon that would put the team over the point limit
@@ -1369,9 +1389,8 @@ var InterfaceMaster = (function () {
 				}
 
 				if(battle.getCup().partySize == 8){
-					multiSelectors[0].setMaxPokemonCount(8);
-				} else{
-					multiSelectors[0].setMaxPokemonCount(6);
+					$(".team-size-select option[value=8]").prop("selected", "selected");
+					$(".team-size-select").trigger("change");
 				}
 
 				// Load ranking data for movesets
@@ -1500,6 +1519,12 @@ var InterfaceMaster = (function () {
 			function checkBox(e){
 				$(this).toggleClass("on");
 				$(this).trigger("change");
+			}
+
+			// Change the maximum team size in the advanced settings
+
+			function selectTeamSize(e){
+				multiSelectors[0].setMaxPokemonCount($(e.target).find("option:selected").val());
 			}
 		};
 

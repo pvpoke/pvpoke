@@ -341,6 +341,13 @@ function PokeMultiSelect(element){
 			 }
 		}
 
+		// Show or hide sort button
+		if(pokemonList.length > 0){
+			$el.find("a.custom-group-sort").css("visibility", "visible");
+		} else{
+			$el.find("a.custom-group-sort").css("visibility", "hidden");
+		}
+
 		if(pokemonList.length >= maxPokemonCount){
 			$el.find(".add-poke-btn").hide();
 			$el.find(".pokebox").hide();
@@ -933,6 +940,41 @@ function PokeMultiSelect(element){
 
 	$el.find(".format-select").on("change",function(e){
 		self.changeFormatSelect();
+	});
+
+	// Open the sort modal window and handle group sorting
+
+	$el.find("a.custom-group-sort").on("click",function(e){
+		e.preventDefault();
+
+		modalWindow("Sort Group", $(".sort-group").first());
+
+		$(".modal .name").click(function(e){
+			// Sort alphabetically
+
+			pokemonList.sort((a,b) => (a.speciesId > b.speciesId) ? 1 : ((b.speciesId > a.speciesId) ? -1 : 0));
+			self.updateListDisplay();
+
+			closeModalWindow();
+		});
+
+		$(".modal .attack").click(function(e){
+			// Sort by Attack stats
+
+			pokemonList.sort((a,b) => (a.stats.atk > b.stats.atk) ? -1 : ((b.stats.atk > a.stats.atk) ? 1 : 0));
+			self.updateListDisplay();
+
+			closeModalWindow();
+		});
+
+		$(".modal .defense").click(function(e){
+			// Sort by Defense stats
+
+			pokemonList.sort((a,b) => (a.stats.def > b.stats.def) ? -1 : ((b.stats.def > a.stats.def) ? 1 : 0));
+			self.updateListDisplay();
+
+			closeModalWindow();
+		});
 	});
 
 	this.setBaitSetting = function(val){

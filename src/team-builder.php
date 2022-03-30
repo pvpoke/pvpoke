@@ -18,38 +18,15 @@ require_once 'header.php';
 
 	<a class="toggle" href="#">Advanced <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content team-advanced">
-		<div class="flex">
-			<div class="flex-section">
-				<h3 class="section-title">Custom Threats</h3>
-				<p>Enter a custom group of Pokemon to evaluate threats. These Pokemon will also make up the meta scorecard.</p>
-				<div class="team-build custom-threats">
-					<?php require 'modules/pokemultiselect.php'; ?>
-				</div>
-			</div>
-			<div class="flex-section">
-				<h3 class="section-title">Custom Alternatives</h3>
-				<p>Enter a custom group of Pokemon to evaluate alternatives. These will appear as suggestions for your team.</p>
-				<div class="team-build custom-alternatives">
-					<?php require 'modules/pokemultiselect.php'; ?>
-				</div>
-			</div>
-			<div class="flex-section">
-				<h3 class="section-title">Exclude Threats</h3>
-				<p>Exclude these Pokemon from the list of threats.</p>
-				<div class="team-build exclude-threats">
-					<?php require 'modules/pokemultiselect.php'; ?>
-				</div>
-			</div>
-			<div class="flex-section">
-				<h3 class="section-title">Exclude Alternatives</h3>
-				<p>Exclude these Pokemon from your suggested alternatives.</p>
-				<div class="team-build exclude-alternatives">
-					<?php require 'modules/pokemultiselect.php'; ?>
-				</div>
-			</div>
-		</div>
 		<h3 class="section-title">Options</h3>
 		<div class="flex poke">
+			<div class="team-option">
+				<h3>Max Team Size</h3>
+				<select class="team-size-select">
+					<option value="6" selected>6</option>
+					<option value="8">8</option>
+				</select>
+			</div>
 			<div class="team-option">
 				<h3>Scorecard Length</h3>
 				<select class="scorecard-length-select">
@@ -85,6 +62,36 @@ require_once 'header.php';
 			</div>
 		</div>
 		<p>Note that links will not currently preserve these advanced settings.</p>
+		<div class="flex">
+			<div class="flex-section">
+				<h3 class="section-title">Custom Threats</h3>
+				<p>Enter a custom group of Pokemon to evaluate threats. These Pokemon will also make up the meta scorecard.</p>
+				<div class="team-build custom-threats">
+					<?php require 'modules/pokemultiselect.php'; ?>
+				</div>
+			</div>
+			<div class="flex-section">
+				<h3 class="section-title">Custom Alternatives</h3>
+				<p>Enter a custom group of Pokemon to evaluate alternatives. These will appear as suggestions for your team.</p>
+				<div class="team-build custom-alternatives">
+					<?php require 'modules/pokemultiselect.php'; ?>
+				</div>
+			</div>
+			<div class="flex-section">
+				<h3 class="section-title">Exclude Threats</h3>
+				<p>Exclude these Pokemon from the list of threats.</p>
+				<div class="team-build exclude-threats">
+					<?php require 'modules/pokemultiselect.php'; ?>
+				</div>
+			</div>
+			<div class="flex-section">
+				<h3 class="section-title">Exclude Alternatives</h3>
+				<p>Exclude these Pokemon from your suggested alternatives.</p>
+				<div class="team-build exclude-alternatives">
+					<?php require 'modules/pokemultiselect.php'; ?>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 

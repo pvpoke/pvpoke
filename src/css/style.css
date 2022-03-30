@@ -650,6 +650,12 @@ header {
 .poke.multi .custom-options {
   display: none;
 }
+.poke.multi .custom-options a.custom-group-sort {
+  font-weight: bold;
+  font-size: 12px;
+  text-decoration: underline;
+  visibility: hidden;
+}
 .poke.multi .custom-options .add-poke-btn {
   font-size: 14px;
   width: 100%;
@@ -658,6 +664,9 @@ header {
 .poke.multi .custom-options .export-btn,
 .poke.multi .custom-options .search-string-btn {
   margin-top: 15px;
+}
+.poke.multi .custom-options .rankings-container {
+  margin-top: 5px;
 }
 .poke.multi .custom-options p {
   font-size: 12px;
@@ -2487,6 +2496,11 @@ a.download-csv {
   border: 2px solid black;
 }
 
+.modal .sort-group .center .button {
+  display: block;
+  min-width: 200px;
+}
+
 .rankings-container > .rank,
 .rankings-container > .rank > .rating-container {
   cursor: pointer;
@@ -2650,11 +2664,11 @@ a.download-csv {
 .team-advanced .poke .poke-stats {
   background: none;
 }
-.team-advanced .flex:first-of-type {
+.team-advanced .flex:nth-of-type(2) {
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.team-advanced .flex:first-of-type .flex-section {
+.team-advanced .flex:nth-of-type(2) .flex-section {
   max-width: 350px;
 }
 .team-advanced .poke.flex {
@@ -2668,6 +2682,7 @@ a.download-csv {
 .team-advanced .team-option {
   font-size: 12px;
   margin-right: 20px;
+  margin-bottom: 10px;
 }
 .team-advanced .team-option h3 {
   font-size: 14px;

@@ -856,6 +856,13 @@ header{
 		.custom-options{
 			display:none;
 
+			a.custom-group-sort{
+				font-weight: bold;
+				font-size: 12px;
+				text-decoration: underline;
+				visibility: hidden;
+			}
+
 			.add-poke-btn{
 				font-size: 14px;
 				width: 100%;
@@ -865,6 +872,10 @@ header{
 			.export-btn,
 			.search-string-btn{
 				margin-top:15px;
+			}
+
+			.rankings-container{
+				margin-top: 5px;
 			}
 
 			p{
@@ -2865,6 +2876,11 @@ a.download-csv{
 	}
 }
 
+.modal .sort-group .center .button{
+	display: block;
+	min-width: 200px;
+}
+
 .rankings-container > .rank,
 .rankings-container > .rank > .rating-container{
 	cursor: pointer;
@@ -3039,7 +3055,7 @@ a.download-csv{
 		background:none;
 	}
 
-	.flex:first-of-type{
+	.flex:nth-of-type(2){
 		justify-content: space-between;
 		flex-wrap: wrap;
 
@@ -3061,6 +3077,7 @@ a.download-csv{
 	.team-option{
 		font-size:12px;
 		margin-right:20px;
+		margin-bottom:10px;
 
 		h3{
 			font-size:14px;
