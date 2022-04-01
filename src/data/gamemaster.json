@@ -25092,8 +25092,8 @@
             "hp": 134
         },
         "types": ["poison", "fire"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["EMBER", "POISON_JAB"],
+        "chargedMoves": ["POISON_FANG", "FLAMETHROWER", "DRAGON_PULSE"],
         "defaultIVs": {
             "cp500": [17.5, 4, 9, 13],
             "cp1500": [50, 15, 15, 15],
@@ -25112,8 +25112,8 @@
             "hp": 169
         },
         "types": ["poison", "fire"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["INCINERATE", "POISON_JAB"],
+        "chargedMoves": ["POISON_FANG", "FIRE_BLAST", "DRAGON_PULSE", "FOUL_PLAY"],
         "defaultIVs": {
             "cp500": [7.5, 8, 14, 12],
             "cp1500": [22, 6, 15, 13],
