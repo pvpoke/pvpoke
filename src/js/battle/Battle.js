@@ -1552,7 +1552,7 @@ function Battle(){
 							}
 						} else {
 							while (DPQueue[i].turn <= currState.turn + 1) {
-								if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue.buffs >= attackMult && DPQueue.shields <= newShields) {
+								if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue[i].buffs >= attackMult && DPQueue[i].shields <= newShields) {
 									insert = false;
 									break;
 								}
@@ -1600,7 +1600,7 @@ function Battle(){
 								}
 							} else {
 								while (DPQueue[i].turn <= newTurn) {
-									if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue.buffs >= attackMult && DPQueue.shields <= newShields) {
+									if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue[i].buffs >= attackMult && DPQueue[i].shields <= newShields) {
 										insertElement = false;
 										break;
 									}
@@ -1649,7 +1649,7 @@ function Battle(){
 						}
 					} else {
 						while (DPQueue[i].turn < newTurn) {
-							if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue.buffs >= attackMult && DPQueue.shields <= newShields) {
+							if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue[i].buffs >= attackMult && DPQueue[i].shields <= newShields) {
 								insertElement = false;
 								break;
 							}
@@ -1695,7 +1695,7 @@ function Battle(){
 							}
 						} else {
 							while (DPQueue[i].turn < newTurn) {
-								if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue.buffs >= attackMult && DPQueue.shields <= newShields) {
+								if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue[i].buffs >= attackMult && DPQueue[i].shields <= newShields) {
 									insertElement = false;
 									break;
 								}
