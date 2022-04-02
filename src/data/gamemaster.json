@@ -24971,8 +24971,8 @@
             "hp": 116
         },
         "types": ["water", "bug"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["WATER_GUN", "BUBBLE"],
+        "chargedMoves": ["WATER_PULSE", "BUBBLE_BEAM", "CRUNCH"],
         "defaultIVs": {
             "cp500": [29, 4, 9, 12],
             "cp1500": [50, 15, 15, 15],
@@ -24991,8 +24991,8 @@
             "hp": 169
         },
         "types": ["water", "bug"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["INFESTATION", "BUBBLE"],
+        "chargedMoves": ["LUNGE", "BUBBLE_BEAM", "CRUNCH"],
         "defaultIVs": {
             "cp500": [10.5, 4, 9, 15],
             "cp1500": [33.5, 4, 15, 8],
@@ -25113,7 +25113,7 @@
         },
         "types": ["poison", "fire"],
         "fastMoves": ["INCINERATE", "POISON_JAB"],
-        "chargedMoves": ["POISON_FANG", "FIRE_BLAST", "DRAGON_PULSE", "FOUL_PLAY"],
+        "chargedMoves": ["POISON_FANG", "FIRE_BLAST", "DRAGON_PULSE", "SLUDGE_WAVE"],
         "defaultIVs": {
             "cp500": [7.5, 8, 14, 12],
             "cp1500": [22, 6, 15, 13],
@@ -25133,8 +25133,8 @@
             "hp": 172
         },
         "types": ["normal", "fighting"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["TACKLE", "TAKE_DOWN"],
+        "chargedMoves": ["SUPER_POWER", "BRICK_BREAK", "STOMP"],
         "defaultIVs": {
             "cp500": [14, 4, 15, 12],
             "cp1500": [50, 13, 13, 15],
@@ -25154,8 +25154,9 @@
             "hp": 260
         },
         "types": ["normal", "fighting"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["TACKLE", "LOW_KICK", "SHADOW_CLAW"],
+        "chargedMoves": ["SUPER_POWER", "PAYBACK", "STOMP", "DRAIN_PUNCH"],
+		"eliteMoves": ["DRAIN_PUNCH"],
         "defaultIVs": {
             "cp500": [6, 10, 14, 11],
             "cp1500": [18, 4, 10, 12],
@@ -25256,8 +25257,8 @@
             "hp": 207
         },
         "types": ["normal", "psychic"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["CONFUSION", "ZEN_HEADBUTT", "YAWN"],
+        "chargedMoves": ["PSYCHIC", "FOUL_PLAY", "FUTURE_SIGHT"],
         "defaultIVs": {
             "cp500": [8, 4, 9, 5],
             "cp1500": [22.5, 7, 15, 13],
@@ -26071,8 +26072,8 @@
             "hp": 172
         },
         "types": ["grass", "fairy"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["BULLET_SEED", "ROCK_SMASH"],
+        "chargedMoves": ["GRASS_KNOT", "DAZZLING_GLEAM", "MEGAHORN", "SOLAR_BEAM"],
         "defaultIVs": {
             "cp500": [5.5, 10, 15, 13],
             "cp1500": [16, 7, 11, 14],
@@ -26092,8 +26093,8 @@
             "hp": 172
         },
         "types": ["water", "fairy"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["WATER_GUN", "HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER"],
+        "chargedMoves": ["SURF", "MOONBLAST", "IcE_BEAM", "HYDRO_PUMP"],
         "defaultIVs": {
             "cp500": [6.5, 12, 10, 13],
             "cp1500": [19.5, 4, 10, 15],
@@ -29281,6 +29282,18 @@
         "energyGain": 9,
         "cooldown": 1500,
         "archetype": "Multipurpose"
+    }, {
+        "moveId": "DRAIN_PUNCH",
+        "name": "Drain Punch (Speculative)",
+        "type": "fighting",
+        "power": 20,
+        "energy": 35,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [0, 1],
+        "buffTarget": "self",
+        "buffApplyChance": "1",
+        "archetype": "Boost Spam/Bait"
     }, {
         "moveId": "DRAINING_KISS",
         "name": "Draining Kiss",
