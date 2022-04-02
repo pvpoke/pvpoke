@@ -40,6 +40,10 @@
 		"chargedMoves": ["SHADOW_BALL", "SLUDGE_WAVE"]
 	},
 	{
+		"speciesId": "salazzle",
+		"chargedMoves": ["POISON_FANG", "DRAGON_PULSE"]
+	},
+	{
 		"speciesId": "crobat",
 		"chargedMoves": ["POISON_FANG", "SHADOW_BALL"]
 	},
@@ -557,6 +561,11 @@
 	},
 	{
 		"speciesId": "sandslash_alolan",
+		"fastMove": "SHADOW_CLAW",
+		"chargedMoves": ["ICE_PUNCH", "BULLDOZE"]
+	},
+	{
+		"speciesId": "sandslash_alolan_shadow",
 		"fastMove": "SHADOW_CLAW",
 		"chargedMoves": ["ICE_PUNCH", "BULLDOZE"]
 	},

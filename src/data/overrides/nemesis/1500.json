@@ -47,6 +47,15 @@
 		"chargedMoves": ["SHADOW_PUNCH", "SLUDGE_BOMB"]
 	},
 	{
+		"speciesId": "salazzle",
+		"chargedMoves": ["POISON_FANG", "DRAGON_PULSE"]
+	},
+	{
+		"speciesId": "sandslash_alolan",
+		"fastMove": "SHADOW_CLAW",
+		"chargedMoves": ["ICE_PUNCH", "BULLDOZE"]
+	},
+	{
 		"speciesId": "ferrothorn",
 		"chargedMoves": ["POWER_WHIP", "THUNDER"],
 		"weight": 5

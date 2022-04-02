@@ -33,6 +33,10 @@
 		"chargedMoves": ["ICE_PUNCH", "PSYCHIC"]
 	},
 	{
+		"speciesId": "salazzle",
+		"chargedMoves": ["POISON_FANG", "DRAGON_PULSE"]
+	},
+	{
 		"speciesId": "slowbro_galarian",
 		"chargedMoves": ["SLUDGE_BOMB", "FOCUS_BLAST"]
 	},
@@ -456,6 +460,11 @@
 	},
 	{
 		"speciesId": "sandslash_alolan",
+		"fastMove": "SHADOW_CLAW",
+		"chargedMoves": ["ICE_PUNCH", "BULLDOZE"]
+	},
+	{
+		"speciesId": "sandslash_alolan_shadow",
 		"fastMove": "SHADOW_CLAW",
 		"chargedMoves": ["ICE_PUNCH", "BULLDOZE"]
 	},
