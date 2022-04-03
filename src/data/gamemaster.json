@@ -1229,7 +1229,7 @@
         }],
         "exclude": [{
             "filterType": "id",
-            "values": ["escavalier"]
+            "values": ["escavalier", "salazzle"]
         }, {
             "filterType": "type",
             "values": ["none", "fairy", "flying", "fighting", "ground", "ghost", "normal"]
