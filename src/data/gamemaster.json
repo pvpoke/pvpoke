@@ -25205,8 +25205,8 @@
             "hp": 116
         },
         "types": ["water", "bug"],
-        "fastMoves": ["WATER_GUN", "BUBBLE"],
-        "chargedMoves": ["WATER_PULSE", "BUBBLE_BEAM", "CRUNCH"],
+        "fastMoves": ["INFESTATION", "BUG_BITE"],
+        "chargedMoves": ["WATER_PULSE", "BUBBLE_BEAM", "MIRROR_COAT"],
         "defaultIVs": {
             "cp500": [29, 4, 9, 12],
             "cp1500": [50, 15, 15, 15],
@@ -25225,8 +25225,8 @@
             "hp": 169
         },
         "types": ["water", "bug"],
-        "fastMoves": ["INFESTATION", "BUBBLE"],
-        "chargedMoves": ["LUNGE", "BUBBLE_BEAM", "CRUNCH", "MIRROR_COAT"],
+        "fastMoves": ["INFESTATION", "BUG_BITE"],
+        "chargedMoves": ["BUG_BUZZ", "BUBBLE_BEAM", "MIRROR_COAT"],
         "defaultIVs": {
             "cp500": [10.5, 4, 9, 15],
             "cp1500": [33.5, 4, 15, 8],
@@ -29519,10 +29519,10 @@
         "archetype": "Multipurpose"
     }, {
         "moveId": "DRAIN_PUNCH",
-        "name": "Drain Punch (Speculative)",
+        "name": "Drain Punch",
         "type": "fighting",
         "power": 20,
-        "energy": 35,
+        "energy": 40,
         "energyGain": 0,
         "cooldown": 500,
         "buffs": [0, 1],
