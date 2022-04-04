@@ -1334,14 +1334,14 @@ function Battle(){
 			// Build up to best move
 			var selectedMove = poke.bestChargedMove;
 
-			if(poke.activeChargedMoves.length > 0){
-				if(poke.baitShields && opponent.shields > 0 && ! poke.activeChargedMoves[0].selfDebuffing){
+			if(poke.activeChargedMoves.length > 1){
+				if(poke.baitShields && opponent.shields > 0 && ! poke.activeChargedMoves[0].selfDebuffing && self.wouldShield(poke, opponent, poke.activeChargedMoves[1]).value){
 					selectedMove = poke.activeChargedMoves[0];
 				}
 
 				if(poke.bestChargedMove.selfDebuffing){
 					for(var i = 0; i < poke.activeChargedMoves.length; i++){
-						if(! poke.activeChargedMoves[i].selfDebuffing){
+						if((! poke.activeChargedMoves[i].selfDebuffing) && (selectedMove.dpe / poke.activeChargedMoves[i].dpe < 2)){
 							selectedMove = poke.activeChargedMoves[i];
 						}
 					}
