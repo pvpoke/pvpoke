@@ -1202,7 +1202,7 @@ function Battle(){
 					// Find highest damage available move
 					if (chargedMoveReady[n] == 0) {
 						var moveDamage = self.calculateDamage(poke, opponent, poke.activeChargedMoves[n]);
-						if (moveDamage > prevMoveDamage) {
+						if ((moveDamage > prevMoveDamage) && (prevMoveDamage < opponent.hp)){
 							maxDamageMoveIndex = poke.chargedMoves.indexOf(poke.activeChargedMoves[n]);
 							prevMoveDamage = moveDamage;
 						}
@@ -1217,7 +1217,7 @@ function Battle(){
 				// Throw highest damage move
 				} else {
 
-					self.logDecision(turns, poke, " uses " + poke.activeChargedMoves[maxDamageMoveIndex].name + " because it is has " + turnsToLive + " turn(s) before it is KO'd.");
+					self.logDecision(turns, poke, " uses " + poke.chargedMoves[maxDamageMoveIndex].name + " because it is has " + turnsToLive + " turn(s) before it is KO'd.");
 
 					action = new TimelineAction(
 						"charged",
@@ -1274,6 +1274,19 @@ function Battle(){
 				if(poke.energy + poke.fastMove.energyGain > 100){
 					optimizeTiming = false;
 				}
+
+				// Don't optimize if we have fewer turns to live than we can throw Charged Moves
+				var turnsPlanned = (poke.fastMove.cooldown / 500) + Math.floor(poke.energy / poke.activeChargedMoves[0].energy);
+
+				if(poke.stats.atk < opponent.stats.atk){
+					turnsPlanned++;
+				}
+
+				if(turnsPlanned > turnsToLive){
+					optimizeTiming = false;
+				}
+
+				self.logDecision(turns, poke, " has " + turnsToLive + " turns to live");
 
 				// Don't optimize if we can KO with a Charged Move
 				if(opponent.shields == 0){
@@ -1565,7 +1578,7 @@ function Battle(){
 							}
 						} else {
 							while (DPQueue[i].turn <= currState.turn + 1) {
-								if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue.buffs >= attackMult && DPQueue.shields <= newShields) {
+								if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue[i].buffs >= attackMult && DPQueue[i].shields <= newShields) {
 									insert = false;
 									break;
 								}
@@ -1613,7 +1626,7 @@ function Battle(){
 								}
 							} else {
 								while (DPQueue[i].turn <= newTurn) {
-									if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue.buffs >= attackMult && DPQueue.shields <= newShields) {
+									if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue[i].buffs >= attackMult && DPQueue[i].shields <= newShields) {
 										insertElement = false;
 										break;
 									}
@@ -1662,7 +1675,7 @@ function Battle(){
 						}
 					} else {
 						while (DPQueue[i].turn < newTurn) {
-							if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue.buffs >= attackMult && DPQueue.shields <= newShields) {
+							if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue[i].buffs >= attackMult && DPQueue[i].shields <= newShields) {
 								insertElement = false;
 								break;
 							}
@@ -1708,7 +1721,7 @@ function Battle(){
 							}
 						} else {
 							while (DPQueue[i].turn < newTurn) {
-								if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue.buffs >= attackMult && DPQueue.shields <= newShields) {
+								if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue[i].buffs >= attackMult && DPQueue[i].shields <= newShields) {
 									insertElement = false;
 									break;
 								}
@@ -1875,7 +1888,7 @@ function Battle(){
 
 		// Defer self debuffing moves until after survivable Charged Moves
 		if(finalState.moves[0].selfDebuffing && poke.shields == 0 && poke.energy < 100){
-			if((opponent.energy >= opponent.bestChargedMove.energy)&&(! self.wouldShield(opponent, poke, opponent.bestChargedMove).value)){
+			if((opponent.energy >= opponent.bestChargedMove.energy)&&(! self.wouldShield(opponent, poke, opponent.bestChargedMove).value)&&(! poke.activeChargedMoves[0].selfBuffing)){
 				useChargedMove = false;
 				self.logDecision(turns, poke, " is deferring its self debuffing move until after the opponent fires its move");
 				return;
@@ -2578,7 +2591,7 @@ function Battle(){
 
 		// Determine how much damage will be dealt per cycle to see if the defender will survive to shield the next cycle
 
-		var fastAttacks = Math.ceil(Math.max(move.energy - attacker.energy, 0) / attacker.fastMove.energyGain) + 2; // Give some margin for error here
+		var fastAttacks = Math.ceil(Math.max(attacker.energy - move.energy, 0) / attacker.fastMove.energyGain) + 1; // Give some margin for error here
 		var fastAttackDamage = fastAttacks * fastDamage;
 		var cycleDamage = (fastAttackDamage + 1) * defender.shields;
 
