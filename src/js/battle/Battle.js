@@ -1783,6 +1783,16 @@ function Battle(){
 			}
 		}
 
+		// Don't bait if the opponent won't shield
+		if (poke.baitShields && opponent.shields > 0 && poke.activeChargedMoves.length > 1) {
+			var dpeRatio = (poke.activeChargedMoves[1].damage / poke.activeChargedMoves[1].energy) / (finalState.moves[0].damage / finalState.moves[0].energy);
+			if ((poke.energy >= poke.activeChargedMoves[1].energy)&&(dpeRatio > 1)) {
+				if(! self.wouldShield(poke, opponent, poke.activeChargedMoves[1]).value){
+					finalState.moves[0] = poke.activeChargedMoves[1];
+				}
+			}
+		}
+
 		// If pokemon needs boost, we cannot reorder and no moves both buff and debuff
 		if (!needsBoost) {
 			// If not baiting shields or shields are down and no moves debuff, throw most damaging move first
@@ -2217,80 +2227,18 @@ function Battle(){
 				var useShield = true;
 				var shieldWeight = 1;
 				var noShieldWeight = 1; // Used for randomized shielding decisions
+				var shieldDecision = self.wouldShield(attacker, defender, move);
 
-				// For PuP, Acid Spray and similar moves, don't shield if it's survivable
-
-				if( ((! sandbox)&&(move.buffs)&&(((move.buffs[0] > 0) && (move.buffTarget == "self")) || ((move.buffs[1] < 0) && (move.buffTarget == "opponent")))&&(move.buffApplyChance == 1))
-					|| (decisionMethod == "random")){
-					useShield = false;
-
-					noShieldWeight = 2;
-
-					var postMoveHP = defender.hp - damage; // How much HP will be left after the attack
-					// Capture current buffs for pokemon whose buffs will change
-					var currentBuffs;
-					var moveBuffs = [0, 0];
-
-					if(move.buffs){
-						moveBuffs = move.buffs;
-					}
-
-					if (moveBuffs[0] > 0) {
-						currentBuffs = [attacker.statBuffs[0], attacker.statBuffs[1]];
-						attacker.applyStatBuffs(moveBuffs);
-					} else {
-						currentBuffs = [defender.statBuffs[0], defender.statBuffs[1]];
-						defender.applyStatBuffs(moveBuffs);
-					}
-
-					var fastDamage = self.calculateDamage(attacker, defender, attacker.fastMove);
-
-					// Determine how much damage will be dealt per cycle to see if the defender will survive to shield the next cycle
-
-					var fastAttacks = Math.ceil(Math.max(move.energy - attacker.energy, 0) / attacker.fastMove.energyGain) + 2; // Give some margin for error here
-					var fastAttackDamage = fastAttacks * fastDamage;
-					var cycleDamage = (fastAttackDamage + 1) * defender.shields;
-
-					if(postMoveHP <= cycleDamage){
-						useShield = true;
-						shieldWeight = 2;
-					}
-
-					// Reset buffs to original
-					if (moveBuffs[0] > 0) {
-						attacker.statBuffs = [currentBuffs[0], currentBuffs[1]];
-					} else {
-						defender.statBuffs = [currentBuffs[0], currentBuffs[1]];
-					}
-
-					// If the defender can't afford to let a charged move connect, block
-					var fastDPT = fastDamage / (attacker.fastMove.cooldown / 500);
-
-					for (var i = 0; i < attacker.chargedMoves.length; i++){
-						var chargedMove = attacker.chargedMoves[i];
-
-						if(attacker.energy + chargedMove.energy >= chargedMove.energy){
-							var chargedDamage = self.calculateDamage(attacker, defender, chargedMove);
-
-							if((chargedDamage >= defender.hp / 1.5)&&(fastDPT > 1.5)){
-								useShield = true;
-								shieldWeight = 4
-							}
-
-							if(chargedDamage >= defender.hp - cycleDamage){
-								useShield = true;
-								shieldWeight = 4
-							}
-
-							if((chargedDamage >= defender.hp / 2)&&(fastDPT > 1.5)){
-								shieldWeight = 12
-							}
-						}
-					}
+				// Don't shield early PUP's, Acid Sprays, or similar moves
+				if((! sandbox)&&(move.buffs)&&(((move.buffs[0] > 0) && (move.buffTarget == "self")) || ((move.buffs[1] < 0) && (move.buffTarget == "opponent")))&&(move.buffApplyChance == 1)){
+					useShield = shieldDecision.value;
 				}
 
-				// For randomized battles, randomize shield usage
 				if(decisionMethod == "random"){
+					// For randomized battles, randomize shield usage
+					shieldWeight = shieldDecision.shieldWeight;
+					noShieldWeight = shieldDecision.noShieldWeight;
+
 					// Shield the move if it's the lowest energy move and guaranteed to KO
 
 					var lowestMoveEnergy = attacker.chargedMoves[0].energy;
@@ -2560,6 +2508,84 @@ function Battle(){
 		}
 
 		return time;
+	}
+
+	// Returns a boolean for default sims, and weights for randomized sims to determine if a Pokemon would shield a Charged Move
+
+	this.wouldShield = function(attacker, defender, move){
+		var useShield = false;
+		var shieldWeight = 1;
+		var noShieldWeight = 2; // Used for randomized shielding decisions
+		var damage = self.calculateDamage(attacker, defender, move);
+		move.damage = damage;
+
+		var postMoveHP = defender.hp - damage; // How much HP will be left after the attack
+		// Capture current buffs for pokemon whose buffs will change
+		var currentBuffs;
+		var moveBuffs = [0, 0];
+
+		if(move.buffs){
+			moveBuffs = move.buffs;
+		}
+
+		if (moveBuffs[0] > 0) {
+			currentBuffs = [attacker.statBuffs[0], attacker.statBuffs[1]];
+			attacker.applyStatBuffs(moveBuffs);
+		} else {
+			currentBuffs = [defender.statBuffs[0], defender.statBuffs[1]];
+			defender.applyStatBuffs(moveBuffs);
+		}
+
+		var fastDamage = self.calculateDamage(attacker, defender, attacker.fastMove);
+
+		// Determine how much damage will be dealt per cycle to see if the defender will survive to shield the next cycle
+
+		var fastAttacks = Math.ceil(Math.max(move.energy - attacker.energy, 0) / attacker.fastMove.energyGain) + 2; // Give some margin for error here
+		var fastAttackDamage = fastAttacks * fastDamage;
+		var cycleDamage = (fastAttackDamage + 1) * defender.shields;
+
+		if(postMoveHP <= cycleDamage){
+			useShield = true;
+			shieldWeight = 2;
+		}
+
+		// Reset buffs to original
+		if (moveBuffs[0] > 0) {
+			attacker.statBuffs = [currentBuffs[0], currentBuffs[1]];
+		} else {
+			defender.statBuffs = [currentBuffs[0], currentBuffs[1]];
+		}
+
+		// If the defender can't afford to let a charged move connect, block
+		var fastDPT = fastDamage / (attacker.fastMove.cooldown / 500);
+
+		for (var i = 0; i < attacker.chargedMoves.length; i++){
+			var chargedMove = attacker.chargedMoves[i];
+
+			if(attacker.energy + chargedMove.energy >= chargedMove.energy){
+				var chargedDamage = self.calculateDamage(attacker, defender, chargedMove);
+
+				if((chargedDamage >= defender.hp / 1.5)&&(fastDPT > 1.5)){
+					useShield = true;
+					shieldWeight = 4
+				}
+
+				if(chargedDamage >= defender.hp - cycleDamage){
+					useShield = true;
+					shieldWeight = 4
+				}
+
+				if((chargedDamage >= defender.hp / 2)&&(fastDPT > 1.5)){
+					shieldWeight = 12
+				}
+			}
+		}
+
+		return {
+			value: useShield,
+			shieldWeight: shieldWeight,
+			noShieldWeight: noShieldWeight
+		};
 	}
 
 

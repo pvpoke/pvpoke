@@ -83,7 +83,7 @@ function Pokemon(id, i, b){
 	this.baitShields = true; // Use low energy attacks to bait shields
 	this.farmEnergy = false; // use fast moves only
 	this.chargedMovesOnly = false; // Only allow Charged Move actions
-	this.optimizeMoveTiming = false; // Optimize move timing to prevent opponent from getting extra turns
+	this.optimizeMoveTiming = true; // Optimize move timing to prevent opponent from getting extra turns
 	this.turnsToKO = -1;
 
 	// Training battle statistics
