@@ -48,24 +48,26 @@
 
 		<div class="options multi-battle-options">
 			<h3 class="section-title">Filter</h3>
-			<div class="form-group">
-				<div class="check on" value="meta"><span></span>Meta</div>
-				<div class="check" value="all"><span></span>All Pokemon</div>
+			<div class="form-group filter-picker">
+				<div class="option on" value="meta">Meta</div>
+				<div class="option" value="all">All Pokemon</div>
 			</div>
 		</div>
 
 		<div class="options">
-			<h3 class="section-title">Options</h3>
-			<select class="shield-select">
-				<option value="0">No shields</option>
-				<option value="1" selected>1 shield</option>
-				<option value="2">2 shields</option>
-			</select>
-			<select class="charged-count-select">
-				<option value="0">0 Charged Moves</option>
-				<option value="1">1 Charged Move</option>
-				<option value="2" selected="">2 Charged Moves</option>
-			</select>
+			<h3 class="section-title">Shields</h3>
+			<div class="form-group shield-picker">
+				<div class="option" value="0"><div class="icon"></div> 0</div>
+				<div class="option on" value="1"><div class="icon"></div> 1</div>
+				<div class="option" value="2"><div class="icon"></div> 2</div>
+			</div>
+			<h3 class="section-title">Baiting</h3>
+			<div class="form-group bait-picker">
+				<div class="option" value="0">Off</div>
+				<div class="option on" value="1">Selective</div>
+				<div class="option" value="2">On</div>
+			</div>
+			<h3 class="section-title">IV's</h3>
 			<select class="default-iv-select">
 				<option value="original">Original IV's</option>
 				<option value="gamemaster">Default IV's</option>
@@ -79,7 +81,6 @@
 				<option value="50">New Level Cap (50)</option>
 				<option value="51">New Buddy Level Cap (51)</option>
 			</select>
-			<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
 			<div class="check show-ivs"><span></span>Show level &amp; IV's</div>
 		</div>
 

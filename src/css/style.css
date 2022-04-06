@@ -545,6 +545,9 @@ header {
 .poke .options.multi-battle-options {
   margin-top: 0;
 }
+.poke .options.multi-battle-options h3:first-of-type {
+  margin-top: 0;
+}
 .poke .form-group {
   border: 1px solid #888;
   border-radius: 8px;

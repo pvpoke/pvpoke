@@ -873,7 +873,7 @@ function PokeSelect(element, i){
 
 	// Change a form option
 
-	$el.find(".form-group.shadow-picker .option").on("change", function(e){
+	$el.find(".form-group.shadow-picker .option").on("click", function(e){
 		var formType = $(e.target).attr("value");
 		selectedPokemon.setShadowType(formType);
 

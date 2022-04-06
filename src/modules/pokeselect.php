@@ -140,11 +140,11 @@
 				</div>
 				<button class="add-fast-move">+ Move</button>
 				<button class="pull-from-timeline">Pull from timeline</button>
-				<h3 class="section-title">Bait Shields</h3>
+				<h3 class="section-title">Baiting</h3>
 				<div class="form-group bait-picker">
-					<div class="option" value="0">Never</div>
-					<div class="option on" value="1"><div class="icon"></div>Selectively</div>
-					<div class="option" value="2"><div class="icon"></div>Always</div>
+					<div class="option" value="0">Off</div>
+					<div class="option on" value="1">Selective</div>
+					<div class="option" value="2">On</div>
 				</div>
 				<div class="check optimize-timing on"><span></span>Optimize move timing</div>
 			</div>

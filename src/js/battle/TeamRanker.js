@@ -30,11 +30,11 @@ var RankerMaster = (function () {
 			var overrideSettings = [{
 				shields: 1,
 				ivs: "original",
-				bait: true
+				bait: 1
 			}, {
 				shields: 1,
 				ivs: "original",
-				bait: true
+				bait: 1
 			}];
 
 			var csv = '';
@@ -79,7 +79,7 @@ var RankerMaster = (function () {
 					} else if((overrideSettings[0].ivs == "gamemaster")&&(team[i].isCustom)){
 						team[i].isCustom = false;
 						team[i].initialize(battle.getCP());
-						if(! team[i].baitShields){
+						if(team[i].baitShields != 1){
 							team[i].isCustom = true;
 						}
 					}
@@ -156,7 +156,7 @@ var RankerMaster = (function () {
 					} else if((overrideSettings[1].ivs == "gamemaster")&&(pokemon.isCustom)){
 						pokemon.isCustom = false;
 						pokemon.initialize(battle.getCP());
-						if(! pokemon.baitShields){
+						if(pokemon.baitShields != 1){
 							pokemon.isCustom = true;
 						}
 					}
@@ -200,11 +200,11 @@ var RankerMaster = (function () {
 							opponent.baitShields = overrideSettings[0].bait;
 						}
 
-						if(! overrideSettings[1].bait){
+						if(overrideSettings[1].bait != 1){
 							pokemon.isCustom = true;
 						}
 
-						if(! overrideSettings[0].bait){
+						if(overrideSettings[0].bait != 1){
 							opponent.isCustom = true;
 						}
 
