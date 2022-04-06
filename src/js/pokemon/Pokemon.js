@@ -80,7 +80,7 @@ function Pokemon(id, i, b){
 	this.startingShields = 0;
 	this.hasActed = false; // This Pokemon has acted this turn
 
-	this.baitShields = true; // Use low energy attacks to bait shields
+	this.baitShields = 1; // 0 - doesn't bait, 1 - baits selectively, 2 - always baits
 	this.farmEnergy = false; // use fast moves only
 	this.chargedMovesOnly = false; // Only allow Charged Move actions
 	this.optimizeMoveTiming = true; // Optimize move timing to prevent opponent from getting extra turns
@@ -1858,7 +1858,7 @@ function Pokemon(id, i, b){
 		if((self.isCustom)||(self.startStatBuffs[0] != 0)||(self.startStatBuffs[1] != 0)){
 			var arr = [self.level];
 
-			arr.push(self.ivs.atk, self.ivs.def, self.ivs.hp, self.startStatBuffs[0]+gm.data.settings.maxBuffStages, self.startStatBuffs[1]+gm.data.settings.maxBuffStages, self.baitShields ? 1 : 0, self.optimizeMoveTiming ? 1 : 0);
+			arr.push(self.ivs.atk, self.ivs.def, self.ivs.hp, self.startStatBuffs[0]+gm.data.settings.maxBuffStages, self.startStatBuffs[1]+gm.data.settings.maxBuffStages, self.baitShields, self.optimizeMoveTiming ? 1 : 0);
 
 			// Stat buffs are increased by 4 so the URL doesn't have to deal with parsing negative numbers
 

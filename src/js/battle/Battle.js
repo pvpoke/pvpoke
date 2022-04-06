@@ -2632,6 +2632,11 @@ function Battle(){
 			}
 		}
 
+		// When a Pokemon is set to always bait, always return true for this value
+		if((mode == "simulate")&&(attacker.baitShields == 2)){
+			useShield = true;
+		}
+
 		return {
 			value: useShield,
 			shieldWeight: shieldWeight,

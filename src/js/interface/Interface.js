@@ -664,7 +664,8 @@ var InterfaceMaster = (function () {
 
 					// Reset shields for future battles
 
-					$(".shield-select").trigger("change");
+					pokeSelectors[0].resetShields();
+					pokeSelectors[1].resetShields();
 				}
 
 				// Calculate stats
@@ -1407,11 +1408,7 @@ var InterfaceMaster = (function () {
 										$("input.stat-mod[iv='def']").eq(index).val(parseInt(arr[6]) - 4);
 
 										if(arr[7]){
-											pokemon.baitShields = (parseInt(arr[7]) == 1);
-
-											if(! pokemon.baitShields){
-												$(".poke.single .shield-baiting").eq(index).removeClass("on");
-											}
+											pokemon.baitShields = parseInt(arr[7]);
 
 											pokemon.optimizeMoveTiming = (parseInt(arr[8]) == 1);
 
@@ -1427,8 +1424,8 @@ var InterfaceMaster = (function () {
 											case "shadow":
 											case "purified":
 												pokemon.setShadowType(arr[i]);
-												$(".poke.single .form-group").eq(index).find(".check").removeClass("on");
-												$(".poke.single .form-group").eq(index).find(".check[value=\""+arr[i]+"\"]").addClass("on");
+												$(".poke.single .form-group").eq(index).find(".form").removeClass("on");
+												$(".poke.single .form-group").eq(index).find(".form[value=\""+arr[i]+"\"]").addClass("on");
 												break;
 										}
 									}
@@ -1533,8 +1530,7 @@ var InterfaceMaster = (function () {
 								for(var i = 0; i < Math.min(arr.length, 2); i++){
 
 									if((i == 0)||((i == 1)&&(self.battleMode == "single"))){
-										$(".shield-select").eq(i).find("option[value=\""+arr[i]+"\"]").prop("selected", "selected");
-										pokeSelectors[i].getPokemon().setShields(arr[i]);
+										pokeSelectors[i].setShields(arr[i]);
 									} else if((i == 1)&&(self.battleMode == "multi")){
 										$(".poke.multi .shield-select").find("option[value=\""+arr[i]+"\"]").prop("selected", "selected");
 										$(".poke.multi .shield-select").trigger("change");
@@ -1999,6 +1995,7 @@ var InterfaceMaster = (function () {
 				$(".poke.single").eq(index).find(".start-energy").val(winner.energy);
 				$(".poke.single").eq(index).find(".stat-mod").eq(0).val(winner.buffs[0]);
 				$(".poke.single").eq(index).find(".stat-mod").eq(1).val(winner.buffs[1]);
+
 				$(".poke.single").eq(index).find(".shield-select option[value='"+winner.shields+"']").prop("selected","selected");
 
 
@@ -2187,10 +2184,9 @@ var InterfaceMaster = (function () {
 
 				var shields = $(e.target).attr("shields").split(",");
 
-				$(".shield-select").eq(0).find("option[value=\""+shields[1]+"\"]").prop("selected", "selected");
-				$(".shield-select").eq(0).trigger("change");
-				$(".shield-select").eq(1).find("option[value=\""+shields[0]+"\"]").prop("selected", "selected");
-				$(".shield-select").eq(1).trigger("change");
+
+				pokeSelectors[0].setShields(shields[1]);
+				pokeSelectors[1].setShields(shields[0]);
 
 				startBattle();
 			}

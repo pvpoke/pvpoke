@@ -117,17 +117,17 @@
 		<div class="options">
 			<div class="shield-section">
 				<h3 class="section-title">Shields</h3>
-				<select class="shield-select">
-					<option value="0">No shields</option>
-					<option value="1" selected>1 shield</option>
-					<option value="2">2 shields</option>
-				</select>
+				<div class="form-group shield-picker">
+					<div class="option" value="0"><div class="icon"></div> 0</div>
+					<div class="option on" value="1"><div class="icon"></div> 1</div>
+					<div class="option" value="2"><div class="icon"></div> 2</div>
+				</div>
 			</div>
 			<div class="shadow-section">
 				<h3 class="section-title">Pokemon Form</h3>
-				<div class="form-group">
-					<div class="check on" value="normal"><span></span>Normal</div>
-					<div class="check" value="shadow"><span></span>Shadow</div>
+				<div class="form-group shadow-picker">
+					<div class="option on" value="normal">Normal</div>
+					<div class="option" value="shadow">Shadow</div>
 				</div>
 			</div>
 			<a href="#" class="section-title toggle">Options <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
@@ -140,7 +140,12 @@
 				</div>
 				<button class="add-fast-move">+ Move</button>
 				<button class="pull-from-timeline">Pull from timeline</button>
-				<div class="check shield-baiting on"><span></span>Bait shields with low-energy moves</div>
+				<h3 class="section-title">Bait Shields</h3>
+				<div class="form-group bait-picker">
+					<div class="option" value="0">Never</div>
+					<div class="option on" value="1"><div class="icon"></div>Selectively</div>
+					<div class="option" value="2"><div class="icon"></div>Always</div>
+				</div>
 				<div class="check optimize-timing on"><span></span>Optimize move timing</div>
 			</div>
 		</div>

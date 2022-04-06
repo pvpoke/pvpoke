@@ -368,20 +368,6 @@ header{
 
 	&:nth-of-type(2){
 
-		.poke-stats{
-			text-align: right;
-
-			.stat-label{
-				float:right !important;
-			}
-
-			.stat-container .bar-back{
-				float:right;
-
-				@include transform(scale(-1, 1));
-			}
-		}
-
 		a.swap{
 			display:none;
 		}
@@ -533,10 +519,6 @@ header{
 				font-weight: bold;
 				color: $color-off-black;
 				margin-top: 20px;
-			}
-
-			&.section-title:first-of-type{
-				margin-top:0;
 			}
 		}
 
@@ -730,10 +712,6 @@ header{
 			font-size:14px;
 		}
 
-		.pull-from-timeline{
-			margin-bottom:15px;
-		}
-
 		.add-fast-move{
 			border: 1px solid #000;
 		    outline: none;
@@ -759,24 +737,75 @@ header{
 	.form-group{
 		border: 1px solid #888;
 		border-radius: 8px;
-		padding: 5px;
 		margin-bottom:15px;
 		clear:both;
 		display:flex;
 		flex-wrap:wrap;
 		margin-top:10px;
+		overflow: hidden;
 
-		.check{
-			display: inline-block;
+		.option{
+			text-align: left;
+			padding: 5px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
 			font-size: 12px;
-			margin-right:10px;
-			margin-bottom: 5px;
-			margin-top:5px;
+			flex-grow: 1;
+			margin-top: 0;
+			border-left: 1px solid #999;
+			border-right: 1px solid #999;
+			background:#eee;
+			cursor: pointer;
 
-			span{
-				width:12px;
-				height:12px;
-				margin-right:2px;
+			&.on{
+				background: #ddd;
+				-moz-box-shadow:    inset 0 0 10px #999;
+			    -webkit-box-shadow: inset 0 0 10px #999;
+			    box-shadow:         inset 0 0 10px #999;
+
+				div.icon{
+					opacity: 1;
+				}
+			}
+
+			&:first-of-type{
+				border-left: none;
+			}
+
+			&:last-of-type{
+				border-right: none;
+			}
+		}
+
+
+		&.shield-picker{
+			.option{
+				font-size: 14px;
+			}
+
+			div.icon{
+				width: 20px;
+				height: 15px;
+				background-position: center center;
+				background-repeat: no-repeat;
+				background-size: contain;
+				margin-right: 5px;
+				opacity: 0.25;
+			}
+
+			.option:nth-of-type(1) div.icon{
+				background-image: url('../img/shield_none.png');
+			}
+
+			.option:nth-of-type(2) div.icon{
+				background-image: url('../img/shield.png');
+			}
+
+			.option:nth-of-type(3) div.icon{
+				background-image: url('../img/shield_two.png');
+				width: 25px;
+				height: 20px;
 			}
 		}
 	}
