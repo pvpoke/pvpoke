@@ -44,6 +44,22 @@
 
 			<h3 class="section-title">Search String</h3>
 			<button class="search-string-btn">Generate Search String</button>
+
+			<h3 class="section-title">Player Option</h3>
+			<select class="player-select">
+				<option value="manual">Manual</option>
+				<option value="ai">AI</option>
+			</select>
+
+			<h3 class="section-title">AI Matches</h3>
+			<select class="ai-matches">
+				<option value="1">1</option>
+				<option value="5">5</option>
+				<option value="10">10</option>
+				<option value="100">100</option>
+				<option value="1000">1000</option>
+				<option value="10000">10000</option>
+			</select>
 		</div>
 
 		<div class="options multi-battle-options">
