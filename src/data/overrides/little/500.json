@@ -1,0 +1,145 @@
+[
+	{
+		"speciesId": "seel",
+		"fastMove": "LICK"
+	},
+	{
+		"speciesId": "diglett",
+		"fastMove": "MUD_SLAP"
+	},
+	{
+		"speciesId": "diglett_shadow",
+		"fastMove": "MUD_SLAP"
+	},
+	{
+		"speciesId": "slowpoke",
+		"fastMove": "WATER_GUN"
+	},
+	{
+		"speciesId": "togepi",
+		"fastMove": "HIDDEN_POWER_GROUND"
+	},
+	{
+		"speciesId": "carvanha",
+		"fastMove": "BITE"
+	},
+	{
+		"speciesId": "vullaby",
+		"fastMove": "FEINT_ATTACK",
+		"weight": 2
+	},
+	{
+		"speciesId": "carvanha_shadow",
+		"fastMove": "BITE"
+	},
+	{
+		"speciesId": "grimer_alolan",
+		"fastMove": "BITE"
+	},
+	{
+		"speciesId": "cottonee",
+		"fastMove": "CHARM",
+		"weight": 5
+	},
+	{
+		"speciesId": "bronzor",
+		"chargedMoves": ["PSYSHOCK", "PAYBACK"],
+		"weight": 10
+	},
+	{
+		"speciesId": "shelmet",
+		"chargedMoves": ["BODY_SLAM", "BUG_BUZZ"],
+		"weight": 2
+	},
+	{
+		"speciesId": "gible",
+		"chargedMoves": ["BODY_SLAM", "DIG"]
+	},
+	{
+		"speciesId": "igglybuff",
+		"chargedMoves": ["BODY_SLAM", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "purrloin",
+		"chargedMoves": ["NIGHT_SLASH", "PLAY_ROUGH"]
+	},
+	{
+		"speciesId": "nosepass",
+		"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "nosepass_shadow",
+		"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "pawniard",
+		"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
+	},
+	{
+		"speciesId": "bulbasaur",
+		"chargedMoves": ["SEED_BOMB", "SLUDGE_BOMB"]
+	},
+	{
+		"speciesId": "eevee",
+		"chargedMoves": ["BODY_SLAM", "DIG"]
+	},
+	{
+		"speciesId": "onix",
+		"chargedMoves": ["ROCK_SLIDE", "SAND_TOMB"]
+	},
+	{
+		"speciesId": "hoothoot",
+		"chargedMoves": ["SKY_ATTACK", "NIGHT_SHADE"]
+	},
+	{
+		"speciesId": "togepi",
+		"chargedMoves": ["PSYSHOCK", "DAZZLING_GLEAM"]
+	},
+	{
+		"speciesId": "ducklett",
+		"chargedMoves": ["BUBBLE_BEAM", "BRAVE_BIRD"],
+		"weight": 3
+	},
+	{
+		"speciesId": "porygon",
+		"fastMove": "CHARGE_BEAM",
+		"chargedMoves": ["DISCHARGE", "HYPER_BEAM"]
+	},
+	{
+		"speciesId": "porygon_shadow",
+		"fastMove": "CHARGE_BEAM",
+		"chargedMoves": ["DISCHARGE", "HYPER_BEAM"]
+	},
+	{
+		"speciesId": "vulpix_alolan",
+		"weight": 2
+	},
+	{
+		"speciesId": "spritzee",
+		"weight": 3
+	},
+	{
+		"speciesId": "growlithe",
+		"weight": 3
+	},
+	{
+		"speciesId": "deino",
+		"weight": 3
+	},
+	{
+		"speciesId": "vulpix",
+		"weight": 3
+	},
+	{
+		"speciesId": "wooper",
+		"weight": 4
+	},
+	{
+		"speciesId": "wynaut",
+		"weight": 3
+	},
+	{
+		"speciesId": "stunky_shadow",
+		"weight": 3
+	}
+]
