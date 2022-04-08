@@ -26,7 +26,7 @@
 	{
 		"speciesId": "vullaby",
 		"fastMove": "FEINT_ATTACK",
-		"weight": 2
+		"weight": 5
 	},
 	{
 		"speciesId": "carvanha_shadow",
@@ -39,17 +39,17 @@
 	{
 		"speciesId": "cottonee",
 		"fastMove": "CHARM",
-		"weight": 5
+		"weight": 35
 	},
 	{
 		"speciesId": "bronzor",
 		"chargedMoves": ["HEAVY_SLAM", "PAYBACK"],
-		"weight": 10
+		"weight": 55
 	},
 	{
 		"speciesId": "shelmet",
 		"chargedMoves": ["BODY_SLAM", "BUG_BUZZ"],
-		"weight": 2
+		"weight": 15
 	},
 	{
 		"speciesId": "gible",
@@ -98,7 +98,7 @@
 	{
 		"speciesId": "ducklett",
 		"chargedMoves": ["BUBBLE_BEAM", "BRAVE_BIRD"],
-		"weight": 3
+		"weight": 8
 	},
 	{
 		"speciesId": "porygon",
@@ -112,34 +112,34 @@
 	},
 	{
 		"speciesId": "vulpix_alolan",
-		"weight": 2
+		"weight": 9
 	},
 	{
 		"speciesId": "spritzee",
-		"weight": 3
+		"weight": 8
 	},
 	{
 		"speciesId": "growlithe",
-		"weight": 3
+		"weight": 8
 	},
 	{
 		"speciesId": "deino",
-		"weight": 3
+		"weight": 25
 	},
 	{
 		"speciesId": "vulpix",
-		"weight": 3
+		"weight": 15
 	},
 	{
 		"speciesId": "wooper",
-		"weight": 4
+		"weight": 20
 	},
 	{
 		"speciesId": "wynaut",
-		"weight": 3
+		"weight": 10
 	},
 	{
 		"speciesId": "stunky_shadow",
-		"weight": 3
+		"weight": 4
 	}
 ]
