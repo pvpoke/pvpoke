@@ -903,7 +903,7 @@ function Pokemon(id, i, b){
 			// Calculate the magnitude of stat changes, factoring in stages and buff chance
 			if(move.buffs){
 				statChangeFactor = 1;
-				
+
 				for(var n = 0; n < move.buffs.length; n++){
 					// Don't factor self defense drops for move usage
 					if((move.selfDebuffing)&&(n == 1)){
@@ -960,7 +960,7 @@ function Pokemon(id, i, b){
 			  ...data,
 			  VAL: (25000 + CD) / (QT + CA)
 			};
-		});
+		}).sort((a, b) => { return b.VAL - a.VAL; });
 
 		fastMoves.length = 1;
 
