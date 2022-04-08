@@ -1,11 +1,11 @@
 [{
     "speciesId": "bronzor",
     "fastMove": "CONFUSION",
-    "chargedMoves": ["PSYSHOCK", "HEAVY_SLAM"]
+    "chargedMoves": ["PSYSHOCK", "PAYBACK"]
 }, {
     "speciesId": "bronzor",
     "fastMove": "CONFUSION",
-    "chargedMoves": ["PSYSHOCK", "PAYBACK"]
+    "chargedMoves": ["HEAVY_SLAM", "PAYBACK"]
 }, {
     "speciesId": "deino",
     "fastMove": "DRAGON_BREATH",
