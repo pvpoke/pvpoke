@@ -144,8 +144,8 @@ function Pokebox(element, selector, selectMode, b){
 				return "jellicent";
 				break;
 
-			case "jellicent_male":
-				return "jellicent";
+			case "frillish_female":
+				return "frillish";
 				break;
 
 			case "gastrodon_east_sea":
