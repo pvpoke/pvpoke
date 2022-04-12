@@ -744,7 +744,7 @@ function PokeSelect(element, i){
 	$el.find(".auto-select").on("click", function(e){
 
 		selectedPokemon.resetMoves();
-		selectedPokemon.autoSelectMoves();
+		selectedPokemon.selectRecommendedMoveset();
 
 		self.update();
 	});

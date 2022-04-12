@@ -270,6 +270,9 @@ header {
 .poke input.charged, .poke select.charged {
   font-weight: bold;
 }
+.poke button.auto-select {
+  font-size: 11px;
+}
 .poke .poke-stats {
   box-sizing: border-box;
   border-radius: 8px;
