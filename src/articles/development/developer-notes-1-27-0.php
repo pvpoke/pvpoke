@@ -11,7 +11,7 @@ require_once '../../header.php';
 
 <div class="section article white">
 	<h1>PvPoke Developer Notes - Update 1.27.0</h1>
-	<div class="date">Last updated April 12th, 2022</div>
+	<div class="date">Last updated April 16th, 2022</div>
 	<p>Developer of PvPoke here! The latest site update makes some core changes to how the simulations work, and I'll be diving into those changes and how Pokemon are evaluated differently compared to before. I’ll also be sharing some behind the scenes thoughts and challenges.</p>
 <p>Jump to a section:
   <ol>

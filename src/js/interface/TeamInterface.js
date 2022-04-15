@@ -554,9 +554,9 @@ var InterfaceMaster = (function () {
 
 						if(! baitShields){
 							pokemon.isCustom = true;
-							pokemon.baitShields = false;
+							pokemon.baitShields = 0;
 							r.matchups[n].opponent.isCustom = true;
-							r.matchups[n].opponent.baitShields = false;
+							r.matchups[n].opponent.baitShields = 0;
 						}
 
 						var pokeStr = pokemon.generateURLPokeStr();
@@ -680,9 +680,9 @@ var InterfaceMaster = (function () {
 
 						if(! baitShields){
 							pokemon.isCustom = true;
-							pokemon.baitShields = false;
+							pokemon.baitShields = 0;
 							r.matchups[n].opponent.isCustom = true;
-							r.matchups[n].opponent.baitShields = false;
+							r.matchups[n].opponent.baitShields = 0;
 						}
 
 						var pokeStr = pokemon.generateURLPokeStr();
@@ -896,9 +896,9 @@ var InterfaceMaster = (function () {
 
 						if(! baitShields){
 							pokemon.isCustom = true;
-							pokemon.baitShields = false;
+							pokemon.baitShields = 0;
 							r.matchups[n].opponent.isCustom = true;
-							r.matchups[n].opponent.baitShields = false;
+							r.matchups[n].opponent.baitShields = 0;
 						}
 
 						var pokeStr = pokemon.generateURLPokeStr();
