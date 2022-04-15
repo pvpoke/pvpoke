@@ -2,7 +2,7 @@
 	{
 		"speciesId": "giratina_altered",
 		"fastMove": ["SHADOW_CLAW"],
-		"weight": 20
+		"weight": 10
 	},
 	{
 		"speciesId": "blaziken",
@@ -11,7 +11,7 @@
 	{
 		"speciesId": "machamp",
 		"chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
-		"weight": 2
+		"weight": 4
 	},
 	{
 		"speciesId": "machamp_shadow",
@@ -21,16 +21,28 @@
 		"speciesId": "palkia",
 		"fastMove": "DRAGON_BREATH",
 		"chargedMoves": ["AQUA_TAIL", "DRACO_METEOR"],
-		"weight": 2
+		"weight": 8
 	},
 	{
 		"speciesId": "zekrom",
 		"chargedMoves": ["CRUNCH", "WILD_CHARGE"],
-		"weight": 4
+		"weight": 15
 	},
 	{
 		"speciesId": "terrakion",
 		"chargedMoves": ["SACRED_SWORD", "ROCK_SLIDE"]
+	},
+	{
+		"speciesId": "exeggutor_alolan",
+		"chargedMoves": ["SEED_BOMB", "DRACO_METEOR"]
+	},
+	{
+		"speciesId": "exeggutor_alolan_shadow",
+		"chargedMoves": ["SEED_BOMB", "DRACO_METEOR"]
+	},
+	{
+		"speciesId": "tapu_bulu",
+		"chargedMoves": ["GRASS_KNOT", "DAZZLING_GLEAM"]
 	},
 	{
 		"speciesId": "reshiram",
@@ -82,7 +94,7 @@
 	{
 		"speciesId": "zacian_hero",
 		"chargedMoves": ["CLOSE_COMBAT", "PLAY_ROUGH"],
-		"weight": 25
+		"weight": 50
 	},
 	{
 		"speciesId": "zarude",
@@ -111,7 +123,7 @@
 	{
 		"speciesId": "yveltal",
 		"chargedMoves": ["DARK_PULSE", "FOCUS_BLAST"],
-		"weight": 25
+		"weight": 10
 	},
 	{
 		"speciesId": "magmortar",
@@ -258,12 +270,17 @@
 	{
 		"speciesId": "melmetal",
 		"chargedMoves": ["SUPER_POWER","ROCK_SLIDE"],
-		"weight": 50
+		"weight": 40
+	},
+	{
+		"speciesId": "excadrill",
+		"chargedMoves": ["DRILL_RUN","ROCK_SLIDE"],
+		"weight": 25
 	},
 	{
 		"speciesId": "togekiss",
 		"chargedMoves": ["ANCIENT_POWER","FLAMETHROWER"],
-		"weight": 100
+		"weight": 80
 	},
 	{
 		"speciesId": "mewtwo_armored",
@@ -317,7 +334,7 @@
 		"speciesId": "dragonite",
 		"fastMove": "DRAGON_BREATH",
 		"chargedMoves": ["DRAGON_CLAW","HURRICANE"],
-		"weight": 25
+		"weight": 5
 	},
 	{
 		"speciesId": "dragonite_shadow",
@@ -327,7 +344,7 @@
 	{
 		"speciesId": "dialga",
 		"chargedMoves": ["IRON_HEAD","DRACO_METEOR"],
-		"weight": 120
+		"weight": 122
 	},
 	{
 		"speciesId": "dialga_xl",
@@ -336,11 +353,11 @@
 	{
 		"speciesId": "giratina_origin",
 		"chargedMoves": ["SHADOW_BALL","OMINOUS_WIND"],
-		"weight": 90
+		"weight": 60
 	},
 	{
 		"speciesId": "groudon",
-		"weight": 25
+		"weight": 15
 	},
 	{
 		"speciesId": "darkrai",

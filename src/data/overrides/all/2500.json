@@ -30,6 +30,10 @@
 		"chargedMoves": ["SAND_TOMB", "OUTRAGE"]
 	},
 	{
+		"speciesId": "tapu_bulu",
+		"chargedMoves": ["GRASS_KNOT", "DAZZLING_GLEAM"]
+	},
+	{
 		"speciesId": "celebi",
 		"fastMove": "CONFUSION",
 		"chargedMoves": ["SEED_BOMB", "LEAF_STORM"]
@@ -38,6 +42,14 @@
 		"speciesId": "slowking_galarian",
 		"fastMove": "HEX",
 		"chargedMoves": ["SHADOW_BALL", "SLUDGE_WAVE"]
+	},
+	{
+		"speciesId": "exeggutor_alolan",
+		"chargedMoves": ["SEED_BOMB", "DRACO_METEOR"]
+	},
+	{
+		"speciesId": "exeggutor_alolan_shadow",
+		"chargedMoves": ["SEED_BOMB", "DRACO_METEOR"]
 	},
 	{
 		"speciesId": "salazzle",
