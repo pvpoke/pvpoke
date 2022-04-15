@@ -1908,7 +1908,10 @@ function Battle(){
 					return;
 				}
 			} else if(poke.baitShields && opponent.shields > 0 && poke.activeChargedMoves[0].energy - finalState.moves[0].energy <= 10 && ! poke.activeChargedMoves[0].selfDebuffing){
-				finalState.moves[0] = poke.activeChargedMoves[0];
+				// Use the lower energy move if it's a boosting move or if the opponent would shield the bigger move
+				if(poke.activeChargedMoves[0].selfBuffing || self.wouldShield(poke, opponent, finalState.moves[0]).value){
+					finalState.moves[0] = poke.activeChargedMoves[0];
+				}
 			}
 		}
 
@@ -2630,6 +2633,12 @@ function Battle(){
 					shieldWeight = 12
 				}
 			}
+		}
+
+		// Shield the first in a series of Attack debuffing moves like Superpower, if they would do major damage
+		if(move.selfAttackDebuffing && (move.damage / defender.hp > 0.55)){
+			useShield = true;
+			shieldWeight = 4;
 		}
 
 		// When a Pokemon is set to always bait, always return true for this value
