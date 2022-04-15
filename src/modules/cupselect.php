@@ -2,6 +2,7 @@
 	<option value="all" cup="all" meta-group500="littlegeneral" meta-group1500="great" meta-group2500="ultra" meta-group10000="master">Open League</option>
 	<option value="premierclassic" meta-group2500="ultrapremierclassic" meta-group10000="masterpremierclassic">Premier Classic</option>
 	<option value="halloween" meta-group1500="halloween">Halloween Cup</option>
+	<option value="little" meta-group500="little">Little Cup</option>
 	<option value="nemesis" meta-group1500="nemesis">Silph Nemesis Cup</option>
 	<option value="cometultra" meta-group2500="cometultra">Silph Factions (Ultra Comet)</option>
 	<option value="floatingcity" meta-group1500="floatingcity">Silph Factions (Floating City)</option>

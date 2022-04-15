@@ -4,6 +4,7 @@
 	<option value="10000" cup="all" meta-group="master">Master League</option>
 	<option value="10000" cup="classic" meta-group="master">Master League (Classic)</option>
 	<option value="1500" cup="halloween" meta-group="halloween">Halloween Cup</option>
+	<option value="500" cup="little" meta-group="little">Little Cup</option>
 	<option value="1500" cup="nemesis" meta-group="nemesis">Silph Nemesis Cup</option>
 	<option value="2500" cup="cometultra" meta-group="cometultra">Silph Factions (Ultra Comet)</option>
 	<option value="1500" cup="floatingcity" meta-group="floatingcity">Silph Factions (Floating City)</option>
