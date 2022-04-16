@@ -15,17 +15,19 @@ require_once '../../header.php';
 	<p>Developer of PvPoke here! The latest site update makes some core changes to how the simulations work, and I'll be diving into those changes and how Pokemon are evaluated differently compared to before. I’ll also be sharing some behind the scenes thoughts and challenges.</p>
 <p>Jump to a section:
   <ol>
-	  			<li><a href="#intro">Intro to Simulation Behavior</a></li>
+	  			<li><a href="#intro">Overview</a></li>
 				<li><a href="#baiting">New Baiting Behaviors</a></li>
 				<li><a href="#timing">Optimized Move Timing</a></li>
 				<li><a href="#other">Other Updates &amp; Fixes</a></li>
 	  </ol>
 
 	  <a name="intro"></a>
-  	<h3 class="article-header">Intro to Simulation Behavior</h3>
+  	<h3 class="article-header">Overview</h3>
 	<p>Before we get into the details, let&rsquo;s lay a quick groundwork on how PvPoke works and what these changes mean!</p>
 	<p>The PvPoke simulator determines the result of a Pokemon matchup by playing it out using a set of behavior rules. These behavior rules range from simple ones like &ldquo;use your Charged Move when you have the energy&rdquo; to more complicated ones like &ldquo;don&rsquo;t throw self-debuffing moves early in a matchup if you have a non-debuffing move with comparable damage output&rdquo;. All in all, these behavior rules attempt to produce a single result that represents a typical matchup between two Pokemon, and arrive at a number that can be used for analysis.</p>
 	<p>Of course, the behavior rules and results aren&rsquo;t perfect! (No, Melmetal isn&rsquo;t supposed to helplessly throw Rock Slides into Steelix.) This article highlights some changes I&rsquo;ve made to improve them and what to expect from the results and rankings.</p>
+
+	<img src="<?php echo $WEB_ROOT;?>articles/article-assets/developer-notes-1-27-0/sim-update-rankings.jpg" />
 
 	<a name="baiting"></a>
 	<h3 class="article-header">New Baiting Behaviors</h3>
