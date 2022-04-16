@@ -56,7 +56,7 @@
 		</div>
 		<div class="col-9">
 			<h4><a href="<?php echo $WEB_ROOT; ?>articles/development/developer-notes-1-27-0/">PvPoke Developer Notes - Update 1.27.0</a></h4>
-			<div class="date">April 12, 2022</div>
+			<div class="date">April 16, 2022</div>
 			<p>Get an overview on updates to the core simulation logic and default settings, including baiting behavior and optimized move timing.</p>
 			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Development"># Development</a></div>
 		</div>
