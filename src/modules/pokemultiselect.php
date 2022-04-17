@@ -30,8 +30,8 @@
 				<option value="remixultra" type="ultra" class="hide multi-battle">Remix Meta</option>
 				<option value="ultrapremierclassic" type="ultra" class="hide multi-battle">Premier Classic Meta</option>
 				<option value="masterpremierclassic" type="master" class="hide multi-battle">Premier Classic Meta</option>
-				<option value="halloween" type="great" class="multi-battle">Halloween Cup Meta</option>
-				<option value="obsidian" type="great" class="multi-battle">Silph Obsidian Cup Meta</option>
+				<option value="retro" type="great" class="multi-battle">Retro Cup Meta</option>
+				<option value="kanto" type="great" class="multi-battle">Kanto Cup Meta</option>
 				<option value="nemesis" type="great" class="multi-battle">Silph Nemesis Cup</option>
 				<option value="cometultra" type="ultra" class="multi-battle">Silph Factions (Ultra Comet)</option>
 				<option value="floatingcity" type="great" class="multi-battle">Silph Factions (Floating City)</option>

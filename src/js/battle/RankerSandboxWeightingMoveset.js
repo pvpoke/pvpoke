@@ -419,6 +419,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if((cup.name == "retro")&&(battle.getCP() == 1500)){
+					iterations = 1;
+				}
+
 				if((cup.name == "adl")&&(battle.getCP() == 1500)){
 					iterations = 1;
 				}
@@ -429,11 +433,7 @@ var RankerMaster = (function () {
 
 				if(cup.name == "halloween"){
 					iterations = 1;
-				}
-
-				if(cup.name == "nemesis"){
-					iterations = 1;
-				}
+				}				
 
 				if((cup.name == "goteamup")&&(battle.getCP() == 1500)){
 					iterations = 1;
