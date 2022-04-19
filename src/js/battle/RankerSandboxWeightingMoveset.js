@@ -433,7 +433,7 @@ var RankerMaster = (function () {
 
 				if(cup.name == "halloween"){
 					iterations = 1;
-				}				
+				}
 
 				if((cup.name == "goteamup")&&(battle.getCP() == 1500)){
 					iterations = 1;

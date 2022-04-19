@@ -3,7 +3,6 @@
 	<option value="2500" cup="all" meta-group="ultra">Ultra League</option>
 	<option value="10000" cup="all" meta-group="master">Master League</option>
 	<option value="10000" cup="classic" meta-group="master">Master League (Classic)</option>
-	<option value="500" cup="little" meta-group="little">Little Cup</option>
 	<option value="1500" cup="retro" meta-group="retro">Retro Cup</option>
 	<option value="1500" cup="kanto" meta-group="kanto">Kanto Cup</option>
 	<option value="1500" cup="nemesis" meta-group="nemesis">Silph Nemesis Cup</option>
