@@ -62,7 +62,6 @@ var InterfaceMaster = (function () {
 				// Initialize selectors and push Pokemon data
 
 				battle = new Battle();
-				battle.setBuffChanceModifier(0);
 
 				pokeSearch.setBattle(battle);
 
@@ -1941,6 +1940,7 @@ var InterfaceMaster = (function () {
 								}
 
 								battle.setDecisionMethod("default");
+								battle.setBuffChanceModifier(-1);
 								battle.simulate();
 								battle.debug();
 								self.displayTimeline(battle, false, false, (settings.animateTimeline !== 0));

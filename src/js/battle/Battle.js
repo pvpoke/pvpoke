@@ -2828,7 +2828,7 @@ function Battle(){
 					shielded = true;
 				}
 
-				var buffs = (event.values[2] !== undefined); // Check to see if any buff or debuff values are associated with this event
+				var buffs = (event.values[3] !== undefined); // Check to see if any buff or debuff values are associated with this event
 
 				actions.push(new TimelineAction(
 					"charged",
