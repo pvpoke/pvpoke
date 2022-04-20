@@ -1238,6 +1238,23 @@
             "filterType": "tag",
             "values": ["mega"]
         }]
+    }, {
+        "name": "firefly",
+        "title": "Firefly Cup",
+        "include": [{
+            "filterType": "type",
+            "values":  ["normal", "electric", "bug", "poison", "ice"]
+        }],
+        "exclude": [{
+            "filterType": "type",
+            "values":  ["ground"]
+        }, {
+            "filterType": "id",
+            "values": ["escavalier", "salazzle", "walrein", "dragalge", "pachirisu"]
+        }, {
+            "filterType": "tag",
+            "values": ["mega"]
+        }]
     }],
     "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xs", "hisuian"],
     "pokemonTraits": {
