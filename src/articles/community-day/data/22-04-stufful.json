@@ -1,0 +1,62 @@
+{
+	"species": [
+		{
+			"speciesId": "stufful",
+			"baseSpeciesId": "stufful"
+		},
+		{
+			"speciesId": "bewear",
+			"baseSpeciesId": "stufful",
+			"default": true
+		}
+	],
+	"checklist": [
+		{
+			"title": "High Rank Bewear",
+			"speciesId": "bewear",
+			"baseSpeciesId": "stufful",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [18, 0, 15, 14],
+			"priority": 1
+		},
+		{
+			"title": "High Rank Bewear",
+			"speciesId": "bewear",
+			"baseSpeciesId": "stufful",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [30, 0, 14, 15],
+			"priority": 1
+		},
+		{
+			"title": "High IV Bewear (Classic)",
+			"speciesId": "bewear",
+			"baseSpeciesId": "stufful",
+			"league": "master",
+			"cp": 10000,
+			"ivs": [40, 15, 15, 15],
+			"priority": 1,
+			"notes": "Best Buddy Bewear has some notable pickups! It wins Charged Move ties against Melmetal, reaches a major breakpoint and bulkpoint against Snorlax, and gains some miscellaneous bulkpoints against Kyogre and Ho-Oh."
+		},
+		{
+			"title": "High IV Bewear",
+			"speciesId": "bewear",
+			"baseSpeciesId": "stufful",
+			"league": "master",
+			"cp": 10000,
+			"ivs": [50, 15, 15, 15],
+			"priority": 1
+		},
+		{
+			"title": "High Attack Bewear",
+			"speciesId": "bewear",
+			"baseSpeciesId": "stufful",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [24, 14, 13, 0],
+			"priority": 3,
+			"notes": "Stufful can reach a Shadow Claw breakpoint against Galarian Stunfisk with at least 133.7 Attack, alongside other Shadow Claw breakpoints. This IV spread aims to hit those breakpoints while maintaining bulkpoints against Azumarill, Skarmory, Medicham, and Obstagoon."
+		}
+	]
+}

@@ -123,6 +123,11 @@ input.article-search{
 	background-image:url("../articles/article-assets/community-day/megas/steelix.png");
 }
 
+[mega="lopunny"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/lopunny.png");
+}
+
+
 
 
 
@@ -667,6 +672,28 @@ input.article-search{
 
 	a.infographic{
 		background: #917439;
+	}
+}
+
+.section.bewear{
+
+	background: #f6f6f5;
+	border:4px solid #be6373;
+
+	.article-header, .mega-section{
+		color:#fff;
+		background:#be6373 !important;
+	}
+
+	.feature{
+		h4{
+			color:#be6373;
+			border-bottom:1px solid #be6373;
+		}
+	}
+
+	.faq-item{
+    	background: #ffffff;
 	}
 }
 
