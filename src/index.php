@@ -50,15 +50,15 @@
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/development/developer-notes-1-27-0/">
-				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/developer-notes-1-27-0/thumb.jpg">
+			<a href="<?php echo $WEB_ROOT; ?>articles/community-day/22-04-stufful/">
+				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/community-day/22-04-stufful/thumb.jpg">
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/development/developer-notes-1-27-0/">PvPoke Developer Notes - Update 1.27.0</a></h4>
-			<div class="date">April 16, 2022</div>
-			<p>Get an overview on updates to the core simulation logic and default settings, including baiting behavior and optimized move timing.</p>
-			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Development"># Development</a></div>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/community-day/22-04-stufful/">Stufful Community Day Guide for PvP</a></h4>
+			<div class="date">April 22, 2022</div>
+			<p>Learn about the brand new Pokemon Stufful, and how its evolution may perform in PvP!</p>
+			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Community Day"># Community Day</a><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a></div>
 		</div>
 	</div>
 
