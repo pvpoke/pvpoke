@@ -1250,7 +1250,7 @@
             "values":  ["ground"]
         }, {
             "filterType": "id",
-            "values": ["escavalier", "salazzle", "walrein", "dragalge", "pachirisu"]
+            "values": ["escavalier", "salazzle", "walrein", "dragalge", "pachirisu", "bewear", "stufful"]
         }, {
             "filterType": "tag",
             "values": ["mega"]
@@ -25398,7 +25398,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 760,
         "speciesName": "Bewear",
@@ -25419,7 +25419,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 761,
         "speciesName": "Bounsweet",
