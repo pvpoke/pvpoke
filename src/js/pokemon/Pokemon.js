@@ -896,7 +896,7 @@ function Pokemon(id, i, b){
 				targetArrs[i].push(sourceArrs[i][n]);
 			}
 		}
-		
+
 		chargedMoves.map((data) => {
 			var statChangeFactor = 0;
 
@@ -927,24 +927,24 @@ function Pokemon(id, i, b){
 
 				statChangeFactor =  1 + ((statChangeFactor - 1) * move.buffApplyChance);
 			}
-	
+
 			return {
 			  ...data,
-			  FACTOR: FACTOR,
+			  FACTOR: statChangeFactor,
 			  VAL: ((data.dmg / data.energy) / data.energy)
 			};
 		}).sort((a, b) => { return b.VAL - a.VAL; });
 
 		const move_1 = chargedMoves[0]; chargedMoves.shift();
-		
+
 		if (chargedMoves.length) {
-			chargedMoves.sort((a, b) => { 
+			chargedMoves.sort((a, b) => {
 			return (((a.energy - move_1.energy) / (move_1.dpe - a.dpe / (a.dpe * .44))) * (-(a.FACTOR * 2.01) || 1)) -
 					(((b.energy - move_1.energy) / (move_1.dpe - b.dpe / (b.dpe * .44))) * (-(b.FACTOR * 2.01) || 1));
 			});
 			const move_2 = chargedMoves[0].moveId !== move_1.moveId ? chargedMoves[0] : chargedMoves[1];
 
-			if (move_2) { 
+			if (move_2) {
 				chargedMoveUses = [move_1, move_2];
 			} else {
 				chargedMoveUses = [move_1];
@@ -957,10 +957,10 @@ function Pokemon(id, i, b){
 			var QA = 25000 / data.damage;
 			var QT = QA * data.cooldown;
 			var QE = QA * data.energyGain;
-	
+
 			var CA = QE / chargedMoveUses[0].energy;
 			var CD = CA * chargedMoveUses[0].damage;
-	
+
 			return {
 			  ...data,
 			  VAL: (25000 + CD) / (QT + CA)
