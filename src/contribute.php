@@ -65,6 +65,11 @@ require_once 'header.php'; ?>
 
 	<div class="supporters flex center">
 		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/kieng.png" />
+			<div class="supporter"><a href="https://twitter.com/PoGoKieng" target="_blank">Kieng</a></div>
+		</div>
+
+		<div class="supporter-container">
 			<div class="space"></div>
 			<div class="supporter"><a href="https://www.youtube.com/channel/UCz0vZmmKHbGa1ZVNgJEw2bw" target="_blank">Elite Four TV</a></div>
 		</div>

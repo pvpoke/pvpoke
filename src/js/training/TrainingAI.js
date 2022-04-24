@@ -629,10 +629,10 @@ function TrainingAI(l, p, b){
 	// Evaluate the current matchup and decide a high level strategy
 
 	this.evaluateMatchup = function(turn, pokemon, opponent, opponentPlayer){
-		pokemon.baitShields = true;
+		pokemon.baitShields = 1;
 		pokemon.farmEnergy = false;
 
-		opponent.baitShields = true;
+		opponent.baitShields = 1;
 		opponent.farmEnergy = false;
 
 		// Sim multiple scenarios to help determine strategy
@@ -853,30 +853,30 @@ function TrainingAI(l, p, b){
 
 		switch(type){
 			case "BOTH_BAIT":
-				pokemon.baitShields = true;
+				pokemon.baitShields = 1;
 				pokemon.farmEnergy = false;
-				opponent.baitShields = true;
+				opponent.baitShields = 1;
 				opponent.farmEnergy = false;
 				break;
 
 			case "NEITHER_BAIT":
-				pokemon.baitShields = false;
+				pokemon.baitShields = 0;
 				pokemon.farmEnergy = false;
-				opponent.baitShields = false;
+				opponent.baitShields = 0;
 				opponent.farmEnergy = false;
 				break;
 
 			case "NO_BAIT":
-				pokemon.baitShields = false;
+				pokemon.baitShields = 0;
 				pokemon.farmEnergy = false;
-				opponent.baitShields = true;
+				opponent.baitShields = 0;
 				opponent.farmEnergy = false;
 				break;
 
 			case "FARM":
-				pokemon.baitShields = true;
+				pokemon.baitShields = 1;
 				pokemon.farmEnergy = true;
-				opponent.baitShields = true;
+				opponent.baitShields = 1;
 				opponent.farmEnergy = false;
 				break;
 		}
@@ -988,12 +988,12 @@ function TrainingAI(l, p, b){
 				break;
 
 			case "DEFAULT":
-				pokemon.baitShields = false;
+				pokemon.baitShields = 0;
 				pokemon.farmEnergy = false;
 				break;
 
 			case "BAIT_SHIELDS":
-				pokemon.baitShields = true;
+				pokemon.baitShields = 1;
 				pokemon.farmEnergy = false;
 				break;
 

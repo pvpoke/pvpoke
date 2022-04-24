@@ -45,6 +45,10 @@
 		"chargedMoves": ["STONE_EDGE", "FOCUS_BLAST"]
 	},
 	{
+		"speciesId": "oranguru",
+		"chargedMoves": ["FOUL_PLAY", "FUTURE_SIGHT"]
+	},
+	{
 		"speciesId": "ho_oh",
 		"chargedMoves": ["BRAVE_BIRD", "EARTHQUAKE"]
 	},
@@ -59,6 +63,14 @@
 	{
 		"speciesId": "regice",
 		"chargedMoves": ["THUNDER", "BLIZZARD"]
+	},
+	{
+		"speciesId": "exeggutor_alolan",
+		"chargedMoves": ["SEED_BOMB", "DRACO_METEOR"]
+	},
+	{
+		"speciesId": "exeggutor_alolan_shadow",
+		"chargedMoves": ["SEED_BOMB", "DRACO_METEOR"]
 	},
 	{
 		"speciesId": "mantine",

@@ -16,6 +16,10 @@ $CANONICAL = '/rankings/' . $cup . '/' . $cp . '/overall/';
 $league = 'Great League';
 
 switch($cp){
+	case "500":
+		$league = 'Little Cup';
+		break;
+
 	case "1500":
 		$league = 'Great League';
 		break;
@@ -55,12 +59,12 @@ switch($cup){
 		$league = 'Little Jungle Cup';
 		break;
 
-	case "sinnoh":
-		$league = 'Sinnoh Cup';
+	case "kanto":
+		$league = 'Kanto Cup';
 		break;
 
-	case "halloween":
-		$league = 'Halloween Cup';
+	case "retro":
+		$league = 'Retro Cup';
 		break;
 
 	case "goteamup":
@@ -72,7 +76,7 @@ switch($cup){
 		break;
 
 	case "factions":
-		$league = 'Silph Factions Rankings';
+		$league = 'Silph Factions';
 		break;
 
 	case "obsidian":
@@ -84,15 +88,23 @@ switch($cup){
 		break;
 
 	case "floatingcity":
-		$league = 'Silph Factions Rankings';
+		$league = 'Silph Factions';
 		break;
 
 	case "dungeon":
-		$league = 'Silph Factions Rankings';
+		$league = 'Silph Factions';
+		break;
+
+	case "firefly":
+		$league = 'Silph Firefly Cup';
 		break;
 
 	case "cometultra":
-		$league = 'Silph Factions Rankings';
+		$league = 'Silph Factions';
+		break;
+
+	case "little":
+		$league = 'Little Cup';
 		break;
 
 	case "remix":

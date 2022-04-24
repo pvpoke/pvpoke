@@ -1066,98 +1066,6 @@ function Battle(){
 			return;
 		}
 
-		// Optimize move timing to reduce free turns
-		if(poke.optimizeMoveTiming){
-
-			if ( (! (poke.fastMove.cooldown % opponent.fastMove.cooldown == 0 || opponent.fastMove.cooldown % poke.fastMove.cooldown == 0) || (poke.fastMove.cooldown == 500 && opponent.fastMove.cooldown > 500)) && opponent.cooldown != 500) {
-				var optimizeTiming = true;
-
-				// Don't optimize if we're about to faint from a fast move
-				if(poke.hp <= opponent.fastMove.damage){
-					optimizeTiming = false;
-				}
-
-				// Don't optimize if we'll go over 100 energy
-				if(poke.energy + poke.fastMove.energyGain > 100){
-					optimizeTiming = false;
-				}
-
-				// Don't optimize if we can KO with a Charged Move
-				for(var n = 0; n < poke.activeChargedMoves.length; n++) {
-					poke.activeChargedMoves[n].damage = self.calculateDamage(poke, opponent, poke.activeChargedMoves[n]);
-
-					if (poke.energy >= poke.activeChargedMoves[n].energy && poke.activeChargedMoves[n].damage >= opponent.hp && opponent.shields == 0) {
-
-						optimizeTiming = false;
-						break;
-					}
-				}
-
-				// Don't optimize if our opponent can KO with a Charged Move
-				for(var n = 0; n < opponent.activeChargedMoves.length; n++) {
-					var fastMovesFromCharged = Math.ceil((opponent.activeChargedMoves[n].energy - opponent.energy) / opponent.fastMove.energyGain);
-					var turnsFromMove = (fastMovesFromCharged * (opponent.fastMove.cooldown / 500)) + 1;
-
-					opponent.activeChargedMoves[n].damage = self.calculateDamage(opponent, poke, opponent.activeChargedMoves[n]);
-
-					var moveDamage = opponent.activeChargedMoves[n].damage + (opponent.fastMove.damage * fastMovesFromCharged);
-
-					if (turnsFromMove <= (poke.fastMove.cooldown / 500) && moveDamage >= poke.hp) {
-						optimizeTiming = false;
-						break;
-					}
-				}
-
-				if(optimizeTiming){
-					useChargedMove = false;
-					self.logDecision(turns, poke, " is optimizing move timing");
-					return;
-				}
-			}
-		}
-
-		// Evaluate if opponent can't be fainted in a limited number of cycles. If so, do a simpler move selection.
-
-		var bestChargedDamage = self.calculateDamage(poke, opponent, poke.bestChargedMove);
-		var bestCycleDamage = bestChargedDamage + (fastDamage * Math.ceil(poke.bestChargedMove.energy / poke.fastMove.energyGain));
-		var minimumCycleThreshold = 2;
-
-		if(opponent.hp / bestCycleDamage > minimumCycleThreshold){
-			// It's going to take a lot of cycles to KO, so just throw the best move
-
-			// Build up to best move
-			var selectedMove = poke.bestChargedMove;
-
-			if(poke.activeChargedMoves.length > 0){
-				if(poke.baitShields && opponent.shields > 0 && ! poke.activeChargedMoves[0].selfDebuffing){
-					selectedMove = poke.activeChargedMoves[0];
-				}
-
-				if(poke.bestChargedMove.selfDebuffing){
-					for(var i = 0; i < poke.activeChargedMoves.length; i++){
-						if(! poke.activeChargedMoves[i].selfDebuffing){
-							selectedMove = poke.activeChargedMoves[i];
-						}
-					}
-				}
-			}
-
-			if(poke.energy < selectedMove.energy){
-				useChargedMove = false;
-				return;
-			} else{
-				action = new TimelineAction(
-					"charged",
-					poke.index,
-					turns,
-					poke.chargedMoves.indexOf(selectedMove),
-					{shielded: false, buffs: false, priority: poke.priority});
-
-				chargedMoveUsed = true;
-				return action;
-			}
-		}
-
 		// Evaluate cooldown to reach each charge move
 		for(var n = 0; n < poke.activeChargedMoves.length; n++) {
 			if (!poke.activeChargedMoves[n].selfDebuffing) {
@@ -1294,7 +1202,7 @@ function Battle(){
 					// Find highest damage available move
 					if (chargedMoveReady[n] == 0) {
 						var moveDamage = self.calculateDamage(poke, opponent, poke.activeChargedMoves[n]);
-						if (moveDamage > prevMoveDamage) {
+						if ((moveDamage > prevMoveDamage) && (prevMoveDamage < opponent.hp)){
 							maxDamageMoveIndex = poke.chargedMoves.indexOf(poke.activeChargedMoves[n]);
 							prevMoveDamage = moveDamage;
 						}
@@ -1309,7 +1217,7 @@ function Battle(){
 				// Throw highest damage move
 				} else {
 
-					self.logDecision(turns, poke, " uses " + poke.activeChargedMoves[maxDamageMoveIndex].name + " because it is has " + turnsToLive + " turn(s) before it is KO'd.");
+					self.logDecision(turns, poke, " uses " + poke.chargedMoves[maxDamageMoveIndex].name + " because it is has " + turnsToLive + " turn(s) before it is KO'd.");
 
 					action = new TimelineAction(
 						"charged",
@@ -1348,6 +1256,124 @@ function Battle(){
 						return action;
 					}
 				}
+			}
+		}
+
+		// Optimize move timing to reduce free turns
+		if(poke.optimizeMoveTiming){
+
+			if ( (! (poke.fastMove.cooldown % opponent.fastMove.cooldown == 0 || opponent.fastMove.cooldown % poke.fastMove.cooldown == 0) || (poke.fastMove.cooldown == 500 && opponent.fastMove.cooldown > 500)) && opponent.cooldown != 500) {
+				var optimizeTiming = true;
+
+				// Don't optimize if we're about to faint from a fast move
+				if(poke.hp <= opponent.fastMove.damage){
+					optimizeTiming = false;
+				}
+
+				// Don't optimize if we'll go over 100 energy
+				if(poke.energy + poke.fastMove.energyGain > 100){
+					optimizeTiming = false;
+				}
+
+				// Don't optimize if we have fewer turns to live than we can throw Charged Moves
+				var turnsPlanned = (poke.fastMove.cooldown / 500) + Math.floor(poke.energy / poke.activeChargedMoves[0].energy);
+
+				if(poke.stats.atk < opponent.stats.atk){
+					turnsPlanned++;
+				}
+
+				if(turnsPlanned > turnsToLive){
+					optimizeTiming = false;
+				}
+
+				self.logDecision(turns, poke, " has " + turnsToLive + " turns to live");
+
+				// Don't optimize if we can KO with a Charged Move
+				if(opponent.shields == 0){
+					for(var n = 0; n < poke.activeChargedMoves.length; n++) {
+						poke.activeChargedMoves[n].damage = self.calculateDamage(poke, opponent, poke.activeChargedMoves[n]);
+
+						if (poke.energy >= poke.activeChargedMoves[n].energy && poke.activeChargedMoves[n].damage >= opponent.hp) {
+
+							optimizeTiming = false;
+							break;
+						}
+					}
+				}
+
+				// Don't optimize if our opponent can KO with a Charged Move
+				for(var n = 0; n < opponent.activeChargedMoves.length; n++) {
+					var fastMovesFromCharged = Math.ceil((opponent.activeChargedMoves[n].energy - opponent.energy) / opponent.fastMove.energyGain);
+					var fastMovesInFastMove = Math.floor(poke.fastMove.cooldown / opponent.fastMove.cooldown); // How many Fast Moves can the opponent get in if we do an extra move?
+					var turnsFromMove = (fastMovesFromCharged * (opponent.fastMove.cooldown / 500)) + 1;
+
+					opponent.activeChargedMoves[n].damage = self.calculateDamage(opponent, poke, opponent.activeChargedMoves[n]);
+
+					var moveDamage = opponent.activeChargedMoves[n].damage + (opponent.fastMove.damage * fastMovesInFastMove);
+
+					if(poke.shields > 0){
+						moveDamage = 1 + (opponent.fastMove.damage * fastMovesInFastMove)
+					}
+
+					if (turnsFromMove <= (poke.fastMove.cooldown / 500) && moveDamage >= poke.hp) {
+						optimizeTiming = false;
+						break;
+					}
+				}
+
+				// Don't optimize if the opponent will KO with Fast Moves it can fit into our Fast Move
+				var fastMovesInFastMove = Math.floor( (poke.fastMove.cooldown + 500) / opponent.fastMove.cooldown);
+				if(poke.hp <= opponent.fastMove.damage * fastMovesInFastMove){
+					optimizeTiming = false;
+				}
+
+				if(optimizeTiming){
+					useChargedMove = false;
+					self.logDecision(turns, poke, " is optimizing move timing");
+					return;
+				}
+			}
+		}
+
+		// Evaluate if opponent can't be fainted in a limited number of cycles. If so, do a simpler move selection.
+
+		var bestChargedDamage = self.calculateDamage(poke, opponent, poke.bestChargedMove);
+		var bestCycleDamage = bestChargedDamage + (fastDamage * Math.ceil(poke.bestChargedMove.energy / poke.fastMove.energyGain));
+		var minimumCycleThreshold = 2;
+
+		if(opponent.hp / bestCycleDamage > minimumCycleThreshold){
+			// It's going to take a lot of cycles to KO, so just throw the best move
+
+			// Build up to best move
+			var selectedMove = poke.bestChargedMove;
+
+			if(poke.activeChargedMoves.length > 1){
+				if(poke.baitShields && opponent.shields > 0 && ! poke.activeChargedMoves[0].selfDebuffing && self.wouldShield(poke, opponent, poke.activeChargedMoves[1]).value){
+					selectedMove = poke.activeChargedMoves[0];
+				}
+
+				if(poke.bestChargedMove.selfDebuffing){
+					for(var i = 0; i < poke.activeChargedMoves.length; i++){
+						if((! poke.activeChargedMoves[i].selfDebuffing) && (selectedMove.dpe / poke.activeChargedMoves[i].dpe < 2)){
+							selectedMove = poke.activeChargedMoves[i];
+						}
+					}
+				}
+			}
+
+			if(poke.energy < selectedMove.energy){
+				useChargedMove = false;
+				return;
+			} else{
+				action = new TimelineAction(
+					"charged",
+					poke.index,
+					turns,
+					poke.chargedMoves.indexOf(selectedMove),
+					{shielded: false, buffs: false, priority: poke.priority});
+
+				chargedMoveUsed = true;
+				return action;
 			}
 		}
 
@@ -1552,7 +1578,7 @@ function Battle(){
 							}
 						} else {
 							while (DPQueue[i].turn <= currState.turn + 1) {
-								if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue.buffs >= attackMult && DPQueue.shields <= newShields) {
+								if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue[i].buffs >= attackMult && DPQueue[i].shields <= newShields) {
 									insert = false;
 									break;
 								}
@@ -1600,7 +1626,7 @@ function Battle(){
 								}
 							} else {
 								while (DPQueue[i].turn <= newTurn) {
-									if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue.buffs >= attackMult && DPQueue.shields <= newShields) {
+									if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue[i].buffs >= attackMult && DPQueue[i].shields <= newShields) {
 										insertElement = false;
 										break;
 									}
@@ -1649,7 +1675,7 @@ function Battle(){
 						}
 					} else {
 						while (DPQueue[i].turn < newTurn) {
-							if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue.buffs >= attackMult && DPQueue.shields <= newShields) {
+							if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue[i].buffs >= attackMult && DPQueue[i].shields <= newShields) {
 								insertElement = false;
 								break;
 							}
@@ -1695,7 +1721,7 @@ function Battle(){
 							}
 						} else {
 							while (DPQueue[i].turn < newTurn) {
-								if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue.buffs >= attackMult && DPQueue.shields <= newShields) {
+								if (DPQueue[i].hp <= newOppHealth && DPQueue[i].energy >= newEnergy && DPQueue[i].buffs >= attackMult && DPQueue[i].shields <= newShields) {
 									insertElement = false;
 									break;
 								}
@@ -1777,9 +1803,30 @@ function Battle(){
 		// If bait shields, build up to most expensive charge move in planned move list
 		if (poke.baitShields && opponent.shields > 0 && poke.activeChargedMoves.length > 1) {
 			if ((poke.energy < poke.activeChargedMoves[1].energy)&&(poke.activeChargedMoves[1].dpe > finalState.moves[0].dpe)) {
-				self.logDecision(turns, poke, " doesn't use " + finalState.moves[0].name + " because it wants to bait");
-				useChargedMove = false;
-				return;
+				var bait = true;
+
+				// Don't go for baits if you have an effective self buffing move
+				if((poke.activeChargedMoves[1].dpe / poke.activeChargedMoves[0].dpe <= 1.5)&&(poke.activeChargedMoves[0].selfBuffing)){
+					bait = false;
+				}
+
+
+				if(bait){
+					self.logDecision(turns, poke, " doesn't use " + finalState.moves[0].name + " because it wants to bait");
+					useChargedMove = false;
+					return;
+				}
+			}
+		}
+
+		// Don't bait if the opponent won't shield
+		if (poke.baitShields && opponent.shields > 0 && poke.activeChargedMoves.length > 1) {
+			var dpeRatio = (poke.activeChargedMoves[1].damage / poke.activeChargedMoves[1].energy) / (finalState.moves[0].damage / finalState.moves[0].energy);
+
+			if ((poke.energy >= poke.activeChargedMoves[1].energy)&&(dpeRatio > 1.5)) {
+				if(! self.wouldShield(poke, opponent, poke.activeChargedMoves[1]).value){
+					finalState.moves[0] = poke.activeChargedMoves[1];
+				}
 			}
 		}
 
@@ -1792,20 +1839,6 @@ function Battle(){
 					var moveDamage2 = self.calculateDamage(poke, opponent, b);
 					return moveDamage2 - moveDamage1;
 				})
-			}
-
-			// If move is self debuffing and doesn't KO, try to stack as much as you can
-			if (finalState.moves[0].selfDebuffing) {
-				if (poke.energy < Math.floor(100 / finalState.moves[0].energy) * finalState.moves[0].energy) {
-					var moveDamage = self.calculateDamage(poke, opponent, finalState.moves[0]);
-					if ((opponent.hp > moveDamage || opponent.shields != 0) && (poke.hp > opponent.fastMove.damage || opponent.fastMove.cooldown - poke.fastMove.cooldown > 500)){
-						useChargedMove = false;
-						self.logDecision(turns, poke, " doesn't use " + finalState.moves[0].name + " because it wants to minimize time debuffed and it can stack the move " + Math.floor(100 / finalState.moves[0].energy) + " times");
-						return;
-					}
-				} else if(poke.baitShields && opponent.shields > 0 && poke.activeChargedMoves[0].energy - finalState.moves[0].energy <= 10 && ! poke.activeChargedMoves[0].selfDebuffing){
-					finalState.moves[0] = poke.activeChargedMoves[0];
-				}
 			}
 		}
 
@@ -1853,6 +1886,37 @@ function Battle(){
 			}
 		}
 
+		// Defer self debuffing moves until after survivable Charged Moves
+		if(finalState.moves[0].selfDebuffing && poke.shields == 0 && poke.energy < 100){
+			if((opponent.energy >= opponent.bestChargedMove.energy)&&(! self.wouldShield(opponent, poke, opponent.bestChargedMove).value)&&(! poke.activeChargedMoves[0].selfBuffing)){
+				useChargedMove = false;
+				self.logDecision(turns, poke, " is deferring its self debuffing move until after the opponent fires its move");
+				return;
+			}
+		}
+
+		// If move is self debuffing and doesn't KO, try to stack as much as you can
+		if (finalState.moves[0].selfDebuffing) {
+			//var targetEnergy = poke.energy + (Math.round( (100 - poke.energy) / poke.fastMove.energyGain) * poke.fastMove.energyGain);
+			targetEnergy = Math.floor(100 / finalState.moves[0].energy) * finalState.moves[0].energy;
+
+			if (poke.energy < targetEnergy) {
+				var moveDamage = self.calculateDamage(poke, opponent, finalState.moves[0]);
+				if ((opponent.hp > moveDamage || opponent.shields != 0) && (poke.hp > opponent.fastMove.damage * 2 || opponent.fastMove.cooldown - poke.fastMove.cooldown > 500)){
+					useChargedMove = false;
+					self.logDecision(turns, poke, " doesn't use " + finalState.moves[0].name + " because it wants to minimize time debuffed and it can stack the move " + Math.floor(100 / finalState.moves[0].energy) + " times");
+					return;
+				}
+			} else if(poke.baitShields && opponent.shields > 0 && poke.activeChargedMoves[0].energy - finalState.moves[0].energy <= 10 && ! poke.activeChargedMoves[0].selfDebuffing){
+				// Use the lower energy move if it's a boosting move or if the opponent would shield the bigger move
+				if(poke.activeChargedMoves[0].selfBuffing || self.wouldShield(poke, opponent, finalState.moves[0]).value){
+					finalState.moves[0] = poke.activeChargedMoves[0];
+				}
+			}
+		}
+
+
+		// Use the final move, or a Fast Move if not enough energy
 		if (poke.energy >= finalState.moves[0].energy) {
 			if (finalState.moves.length > 1) {
 				self.logDecision(turns, poke, " uses " + finalState.moves[0].name + " because it thinks that using " + (finalState.moves.length - 1) + " moves afterwards is the best plan.");
@@ -2217,80 +2281,18 @@ function Battle(){
 				var useShield = true;
 				var shieldWeight = 1;
 				var noShieldWeight = 1; // Used for randomized shielding decisions
+				var shieldDecision = self.wouldShield(attacker, defender, move);
 
-				// For PuP, Acid Spray and similar moves, don't shield if it's survivable
-
-				if( ((! sandbox)&&(move.buffs)&&(((move.buffs[0] > 0) && (move.buffTarget == "self")) || ((move.buffs[1] < 0) && (move.buffTarget == "opponent")))&&(move.buffApplyChance == 1))
-					|| (decisionMethod == "random")){
-					useShield = false;
-
-					noShieldWeight = 2;
-
-					var postMoveHP = defender.hp - damage; // How much HP will be left after the attack
-					// Capture current buffs for pokemon whose buffs will change
-					var currentBuffs;
-					var moveBuffs = [0, 0];
-
-					if(move.buffs){
-						moveBuffs = move.buffs;
-					}
-
-					if (moveBuffs[0] > 0) {
-						currentBuffs = [attacker.statBuffs[0], attacker.statBuffs[1]];
-						attacker.applyStatBuffs(moveBuffs);
-					} else {
-						currentBuffs = [defender.statBuffs[0], defender.statBuffs[1]];
-						defender.applyStatBuffs(moveBuffs);
-					}
-
-					var fastDamage = self.calculateDamage(attacker, defender, attacker.fastMove);
-
-					// Determine how much damage will be dealt per cycle to see if the defender will survive to shield the next cycle
-
-					var fastAttacks = Math.ceil(Math.max(move.energy - attacker.energy, 0) / attacker.fastMove.energyGain) + 2; // Give some margin for error here
-					var fastAttackDamage = fastAttacks * fastDamage;
-					var cycleDamage = (fastAttackDamage + 1) * defender.shields;
-
-					if(postMoveHP <= cycleDamage){
-						useShield = true;
-						shieldWeight = 2;
-					}
-
-					// Reset buffs to original
-					if (moveBuffs[0] > 0) {
-						attacker.statBuffs = [currentBuffs[0], currentBuffs[1]];
-					} else {
-						defender.statBuffs = [currentBuffs[0], currentBuffs[1]];
-					}
-
-					// If the defender can't afford to let a charged move connect, block
-					var fastDPT = fastDamage / (attacker.fastMove.cooldown / 500);
-
-					for (var i = 0; i < attacker.chargedMoves.length; i++){
-						var chargedMove = attacker.chargedMoves[i];
-
-						if(attacker.energy + chargedMove.energy >= chargedMove.energy){
-							var chargedDamage = self.calculateDamage(attacker, defender, chargedMove);
-
-							if((chargedDamage >= defender.hp / 1.5)&&(fastDPT > 1.5)){
-								useShield = true;
-								shieldWeight = 4
-							}
-
-							if(chargedDamage >= defender.hp - cycleDamage){
-								useShield = true;
-								shieldWeight = 4
-							}
-
-							if((chargedDamage >= defender.hp / 2)&&(fastDPT > 1.5)){
-								shieldWeight = 12
-							}
-						}
-					}
+				// Don't shield early PUP's, Acid Sprays, or similar moves
+				if((! sandbox)&&(move.buffs)&&(((move.selfBuffing) && (move.buffTarget == "self")) || ((move.buffs[1] < 0) && (move.buffTarget == "opponent")))&&(move.buffApplyChance == 1)){
+					useShield = shieldDecision.value;
 				}
 
-				// For randomized battles, randomize shield usage
 				if(decisionMethod == "random"){
+					// For randomized battles, randomize shield usage
+					shieldWeight = shieldDecision.shieldWeight;
+					noShieldWeight = shieldDecision.noShieldWeight;
+
 					// Shield the move if it's the lowest energy move and guaranteed to KO
 
 					var lowestMoveEnergy = attacker.chargedMoves[0].energy;
@@ -2562,6 +2564,95 @@ function Battle(){
 		return time;
 	}
 
+	// Returns a boolean for default sims, and weights for randomized sims to determine if a Pokemon would shield a Charged Move
+
+	this.wouldShield = function(attacker, defender, move){
+		var useShield = false;
+		var shieldWeight = 1;
+		var noShieldWeight = 2; // Used for randomized shielding decisions
+		var damage = self.calculateDamage(attacker, defender, move);
+		move.damage = damage;
+
+		var postMoveHP = defender.hp - damage; // How much HP will be left after the attack
+		// Capture current buffs for pokemon whose buffs will change
+		var currentBuffs;
+		var moveBuffs = [0, 0];
+
+		if(move.buffs){
+			moveBuffs = move.buffs;
+		}
+
+		if (moveBuffs[0] > 0) {
+			currentBuffs = [attacker.statBuffs[0], attacker.statBuffs[1]];
+			attacker.applyStatBuffs(moveBuffs);
+		} else {
+			currentBuffs = [defender.statBuffs[0], defender.statBuffs[1]];
+			defender.applyStatBuffs(moveBuffs);
+		}
+
+		var fastDamage = self.calculateDamage(attacker, defender, attacker.fastMove);
+
+		// Determine how much damage will be dealt per cycle to see if the defender will survive to shield the next cycle
+
+		var fastAttacks = Math.ceil(Math.max(attacker.energy - move.energy, 0) / attacker.fastMove.energyGain) + 1; // Give some margin for error here
+		var fastAttackDamage = fastAttacks * fastDamage;
+		var cycleDamage = (fastAttackDamage + 1) * defender.shields;
+
+		if(postMoveHP <= cycleDamage){
+			useShield = true;
+			shieldWeight = 2;
+		}
+
+		// Reset buffs to original
+		if (moveBuffs[0] > 0) {
+			attacker.statBuffs = [currentBuffs[0], currentBuffs[1]];
+		} else {
+			defender.statBuffs = [currentBuffs[0], currentBuffs[1]];
+		}
+
+		// If the defender can't afford to let a charged move connect, block
+		var fastDPT = fastDamage / (attacker.fastMove.cooldown / 500);
+
+		for (var i = 0; i < attacker.chargedMoves.length; i++){
+			var chargedMove = attacker.chargedMoves[i];
+
+			if(attacker.energy + chargedMove.energy >= chargedMove.energy){
+				var chargedDamage = self.calculateDamage(attacker, defender, chargedMove);
+
+				if((chargedDamage >= defender.hp / 1.5)&&(fastDPT > 1.5)){
+					useShield = true;
+					shieldWeight = 4
+				}
+
+				if(chargedDamage >= defender.hp - cycleDamage){
+					useShield = true;
+					shieldWeight = 4
+				}
+
+				if((chargedDamage >= defender.hp / 2)&&(fastDPT > 1.5)){
+					shieldWeight = 12
+				}
+			}
+		}
+
+		// Shield the first in a series of Attack debuffing moves like Superpower, if they would do major damage
+		if(move.selfAttackDebuffing && (move.damage / defender.hp > 0.55)){
+			useShield = true;
+			shieldWeight = 4;
+		}
+
+		// When a Pokemon is set to always bait, always return true for this value
+		if((mode == "simulate")&&(attacker.baitShields == 2)){
+			useShield = true;
+		}
+
+		return {
+			value: useShield,
+			shieldWeight: shieldWeight,
+			noShieldWeight: noShieldWeight
+		};
+	}
+
 
 	// Send a battle update to the interface
 
@@ -2737,7 +2828,7 @@ function Battle(){
 					shielded = true;
 				}
 
-				var buffs = (event.values[2] !== undefined); // Check to see if any buff or debuff values are associated with this event
+				var buffs = (event.values[3] !== undefined); // Check to see if any buff or debuff values are associated with this event
 
 				actions.push(new TimelineAction(
 					"charged",

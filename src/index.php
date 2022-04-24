@@ -34,26 +34,31 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.26.4 (March 30, 2022)</h4>
+	<h4>v1.27.0 (April 16, 2022)</h4>
 	<ul>
-		<li>Team Builder now has a max team size option in the advanced settings for Silph Factions play. This doesn't change how teams are evaluated.</li>
-		<li>Fixed an issue where entering Shadow Pokemon in the Team Builder's excluded threats or alternatives wouldn't exclude them.</li>
-		<li>Custom groups can now be sorted by Attack, Defense, or name.</li>
+		<li>Core simulation logic has been updated with several changes and fixes:</li>
+		<ul>
+			<li>Added a new baiting behavior, "selective baiting", which only baits shields when it can meaningfully threaten the opponent. This behavior is now the default behavior.</li>
+			<li>Optimized move timing is now default behavior.</li>
+			<li>In some scenarios, Pokemon with self-debuffing moves like Close Combat will wait to use their moves if they can survive an imminent Charged Move.</li>
+			<li>Fixed some issues surrounding faint predictions. Pokemon will now more reliably throw available energy before they faint.</li>
+		</ul>
+		<li>Updated Pokemon select interface with new shield, bait, and Shadow toggles</li>
 	</ul>
 
 	<h3>Latest Article</h3>
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/strategy/tournament-guide/">
-				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/tournament-guide/thumb.jpg">
+			<a href="<?php echo $WEB_ROOT; ?>articles/community-day/22-04-stufful/">
+				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/community-day/22-04-stufful/thumb.jpg">
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/strategy/tournament-guide/">Strategy Guide for Tournament Play</a></h4>
-			<div class="date">March 25, 2022</div>
-			<p>How do you build a team for tournament play and pick your Pokemon for battle? Get an in depth look at tournament strategies with advice from veteran trainers!</p>
-			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Strategy"># Strategy</a></div>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/community-day/22-04-stufful/">Stufful Community Day Guide for PvP</a></h4>
+			<div class="date">April 22, 2022</div>
+			<p>Learn about the brand new Pokemon Stufful, and how its evolution may perform in PvP!</p>
+			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Community Day"># Community Day</a><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a></div>
 		</div>
 	</div>
 

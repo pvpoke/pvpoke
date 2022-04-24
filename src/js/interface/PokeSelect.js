@@ -221,6 +221,7 @@ function PokeSelect(element, i){
 			}
 
 			// Display starting HP
+			$el.find(".hp .bar.damage").hide();
 
 			if(selectedPokemon.startHp < selectedPokemon.stats.hp){
 				self.animateHealth(0);
@@ -248,8 +249,13 @@ function PokeSelect(element, i){
 
 			// Update the Shadow form radio buttons to display the currently selected setting
 
-			$el.find(".form-group .check").removeClass("on");
-			$el.find(".form-group .check[value=\""+selectedPokemon.shadowType+"\"]").addClass("on");
+			$el.find(".form-group.shadow-picker .option").removeClass("on");
+			$el.find(".form-group.shadow-picker .option[value=\""+selectedPokemon.shadowType+"\"]").addClass("on");
+
+			// Update the bait form radio buttons to display the currently selected setting
+
+			$el.find(".form-group.bait-picker .option").removeClass("on");
+			$el.find(".form-group.bait-picker .option[value=\""+selectedPokemon.baitShields+"\"]").addClass("on");
 
 			if(selectedPokemon.hasTag("shadow")){
 				$el.find(".shadow-section").hide();
@@ -376,7 +382,6 @@ function PokeSelect(element, i){
 		$el.find(".start-energy").val('');
 		$el.find(".move-select").html('');
 		$el.find(".starting-health").val(selectedPokemon.stats.hp);
-		$el.find(".check.shield-baiting").addClass("on");
 		$el.find(".check.optimize-timing").removeClass("on");
 		$el.find(".check.priority").removeClass("on");
 		$el.find(".check.negate-fast-moves").addClass("on");
@@ -438,7 +443,7 @@ function PokeSelect(element, i){
 
 		// Set shields to correct amount
 
-		poke.startingShields = $el.find(".shield-select option:selected").val();
+		poke.startingShields = $el.find(".shield-picker .option.on").attr("value");
 
 		// Set level and iv fields
 		$el.find("input.level").val(selectedPokemon.level);
@@ -516,6 +521,24 @@ function PokeSelect(element, i){
 		}
 	}
 
+	// Externally select the number of shields
+
+	this.setShields = function(value){
+		$el.find(".shield-picker .option[value="+value+"]").trigger("click");
+	}
+
+	// Return the number of selected shields
+
+	this.getShields = function(value){
+		return parseInt($el.find(".shield-picker .option.on").attr("value"));
+	}
+
+	// Reset the selected Pokemon's starting shields to the selected value
+
+	this.resetShields = function(){
+		$el.find(".shield-picker .option.on").trigger("click");
+	}
+
 	// Select different Pokemon
 
 	$pokeSelect.on("change", function(e, fromURL){
@@ -534,7 +557,7 @@ function PokeSelect(element, i){
 			battle.setNewPokemon(selectedPokemon, index);
 		}
 
-		var value = parseInt($el.find(".shield-select option:selected").val());
+		var value = parseInt($el.find(".shield-picker .option.on").attr("value"));
 
 		selectedPokemon.setShields(value);
 		selectedPokemon.autoLevel = true;
@@ -694,7 +717,7 @@ function PokeSelect(element, i){
 				battle.setNewPokemon(selectedPokemon, index);
 			}
 
-			var value = parseInt($el.find(".shield-select option:selected").val());
+			var value = parseInt($el.find(".shield-picker .option.on").attr("value"));
 
 			selectedPokemon.setShields(value);
 			selectedPokemon.autoLevel = true;
@@ -721,16 +744,16 @@ function PokeSelect(element, i){
 	$el.find(".auto-select").on("click", function(e){
 
 		selectedPokemon.resetMoves();
-		selectedPokemon.autoSelectMoves();
+		selectedPokemon.selectRecommendedMoveset();
 
 		self.update();
 	});
 
 	// Select number of shields for Pokemon
 
-	$el.find(".shield-select").on("change", function(e){
+	$el.find(".shield-picker .option").on("click", function(e){
 
-		var value = parseInt($el.find(".shield-select option:selected").val());
+		var value = parseInt($(e.target).closest(".option").attr("value"));
 
 		selectedPokemon.setShields(value);
 
@@ -761,8 +784,8 @@ function PokeSelect(element, i){
 
 	// Turn shield baiting on and off
 
-	$el.find(".check.shield-baiting").on("click", function(e){
-		selectedPokemon.baitShields = (! selectedPokemon.baitShields);
+	$el.find(".form-group.bait-picker .option").on("click", function(e){
+		selectedPokemon.baitShields = parseInt($(e.target).attr("value"));
 
 		selectedPokemon.isCustom = true;
 		isCustom = true;
@@ -843,13 +866,14 @@ function PokeSelect(element, i){
 
 	// Select an option from the form section
 
-	$el.find(".form-group .check").on("click", function(e){
-		$(e.target).closest(".check").parent().find(".check").removeClass("on");
+	$el.find(".form-group .option").on("click", function(e){
+		$(e.target).closest(".form-group").find(".option").removeClass("on");
+		$(e.target).closest(".option").addClass("on");
 	});
 
 	// Change a form option
 
-	$el.find(".form-group .check").on("change", function(e){
+	$el.find(".form-group.shadow-picker .option").on("click", function(e){
 		var formType = $(e.target).attr("value");
 		selectedPokemon.setShadowType(formType);
 

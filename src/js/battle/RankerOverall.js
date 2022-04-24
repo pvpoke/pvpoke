@@ -182,7 +182,7 @@ var RankerMaster = (function () {
 
 					sortedScores.sort((a,b) => (a > b) ? -1 : ((b > a) ? 1 : 0));
 
-					rankings[i].score = Math.pow( Math.pow(sortedScores[0], 9) * Math.pow(sortedScores[1], 7) * Math.pow(sortedScores[2], 6) * Math.pow(sortedScores[3], 2) * Math.pow(consistencyScore, 4), (1/28));
+					rankings[i].score = Math.pow( Math.pow(sortedScores[0], 12) * Math.pow(sortedScores[1], 6) * Math.pow(sortedScores[2], 4) * Math.pow(sortedScores[3], 2) * Math.pow(consistencyScore, 2), (1/26));
 
 					rankings[i].score = Math.floor(rankings[i].score*10) / 10;
 				}
