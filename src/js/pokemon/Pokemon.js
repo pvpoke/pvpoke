@@ -745,7 +745,7 @@ function Pokemon(id, i, b){
 
 		var opponent = battle.getOpponent(self.index);
 		var usage = self.generateMoveUsage(opponent, 1);
-
+		
 		self.selectMove("fast", usage.fastMoves[0].moveId);
 		self.selectMove("charged", usage.chargedMoves[0].moveId, 0);
 
@@ -967,11 +967,9 @@ function Pokemon(id, i, b){
 			};
 		}).sort((a, b) => { return b.VAL - a.VAL; });
 
-		fastMoves.length = 1;
-
 		var results = {
-			fastMoves: fastMoveUses,
-			chargedMoves: chargedMoveUses
+			fastMoves: fastMoves,
+			chargedMoves: chargedMoves
 		};
 
 		return results;
