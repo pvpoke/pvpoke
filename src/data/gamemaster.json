@@ -30893,6 +30893,16 @@
         "cooldown": 500,
         "archetype": "General"
     }, {
+        "moveId": "ROLLOUT",
+        "name": "Rollout (Speculative)",
+        "abbreviation": "RO",
+        "type": "rock",
+        "power": 4,
+        "energy": 0,
+        "energyGain": 8,
+        "cooldown": 1000,
+        "archetype": "Fast Charge"
+    }, {
         "moveId": "SACRED_FIRE",
         "name": "Sacred Fire",
         "type": "fire",
