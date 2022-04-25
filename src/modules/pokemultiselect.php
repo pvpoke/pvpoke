@@ -31,6 +31,7 @@
 				<option value="masterpremierclassic" type="master" class="hide multi-battle">Premier Classic Meta</option>
 				<option value="retro" type="great" class="multi-battle">Retro Cup Meta</option>
 				<option value="kanto" type="great" class="multi-battle">Kanto Cup Meta</option>
+				<option value="flying" type="great" class="multi-battle">Flying Cup Meta</option>
 				<option value="nemesis" type="great" class="multi-battle">Silph Nemesis Cup</option>
 				<option value="firefly" type="great" class="multi-battle">Silph Firefly Cup</option>
 				<option value="cometultra" type="ultra" class="multi-battle">Silph Factions (Ultra Comet)</option>

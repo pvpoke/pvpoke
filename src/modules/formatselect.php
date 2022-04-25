@@ -5,6 +5,7 @@
 	<option value="10000" cup="classic" meta-group="master">Master League (Classic)</option>
 	<option value="1500" cup="retro" meta-group="retro">Retro Cup</option>
 	<option value="1500" cup="kanto" meta-group="kanto">Kanto Cup</option>
+	<option value="1500" cup="flying" meta-group="flying">Flying Cup</option>
 	<option value="1500" cup="nemesis" meta-group="nemesis">Silph Nemesis Cup</option>
 	<option value="1500" cup="firefly" meta-group="firefly">Silph Firefly Cup</option>
 	<option value="2500" cup="cometultra" meta-group="cometultra">Silph Factions (Ultra Comet)</option>

@@ -4,6 +4,7 @@
 	<option value="halloween" meta-group1500="halloween">Halloween Cup</option>
 	<option value="retro" meta-group1500="retro">Retro Cup</option>
 	<option value="kanto" meta-group1500="kanto">Kanto Cup</option>
+	<option value="flying" meta-group1500="flying">Flying Cup</option>
 	<option value="nemesis" meta-group1500="nemesis">Silph Nemesis Cup</option>
 	<option value="firefly" meta-group1500="firefly">Silph Firefly Cup</option>
 	<option value="cometultra" meta-group2500="cometultra">Silph Factions (Ultra Comet)</option>

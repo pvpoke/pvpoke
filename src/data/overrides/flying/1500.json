@@ -1,0 +1,76 @@
+[
+	{
+		"speciesId": "skarmory",
+		"fastMove": "STEEL_WING",
+		"weight": 65
+	},
+	{
+		"speciesId": "skarmory_shadow",
+		"fastMove": "STEEL_WING"
+	},
+	{
+		"speciesId": "togekiss",
+		"fastMove": "CHARM",
+		"weight": 10
+	},
+	{
+		"speciesId": "mantine",
+		"fastMove": "BUBBLE",
+		"chargedMoves": ["BUBBLE_BEAM","ICE_BEAM"],
+		"weight": 20
+	},
+	{
+		"speciesId": "pelipper",
+		"fastMove": ["WATER_GUN"]
+	},
+	{
+		"speciesId": "gyarados",
+		"fastMove": ["WATERFALL"]
+	},
+	{
+		"speciesId": "gyarados_shadow",
+		"fastMove": ["WATERFALL"]
+	},
+	{
+		"speciesId": "ho_oh",
+		"fastMove": ["HIDDEN_POWER_ROCK"]
+	},
+	{
+		"speciesId": "charizard",
+		"fastMove": ["FIRE_SPIN"]
+	},
+	{
+		"speciesId": "charizard_shadow",
+		"fastMove": ["FIRE_SPIN"]
+	},
+	{
+		"speciesId": "aerodactyl",
+		"weight": 75
+	},
+	{
+		"speciesId": "emolga",
+		"weight": 5
+	},
+	{
+		"speciesId": "zapdos",
+		"chargedMoves": ["DRILL_PECK", "THUNDER"],
+		"weight": 25
+	},
+	{
+		"speciesId": "zapdos_shadow",
+		"weight": 5
+	},
+	{
+		"speciesId": "altaria",
+		"weight": 55
+	},
+	{
+		"speciesId": "articuno",
+		"weight": 10
+	},
+	{
+		"speciesId": "gligar",
+		"chargedMoves": ["NIGHT_SLASH","RETURN"],
+		"weight": 2
+	}
+]
