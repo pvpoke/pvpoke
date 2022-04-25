@@ -5048,7 +5048,8 @@
             "cp1500": [15, 4, 14, 5],
             "cp2500": [24.5, 5, 14, 11]
         },
-        "tags": ["mega"]
+        "tags": ["mega"],
+		"released": "true"
     }, {
         "dex": 80,
         "speciesName": "Slowbro (Shadow)",
@@ -14721,7 +14722,8 @@
             "cp2500": [27.5, 4, 13, 15]
         },
         "level25CP": 1534,
-        "tags": ["mega"]
+        "tags": ["mega"],
+		"released": "true"
     }, {
         "dex": 359,
         "speciesName": "Absol (Shadow)",
