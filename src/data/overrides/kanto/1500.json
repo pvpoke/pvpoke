@@ -72,6 +72,14 @@
 		"chargedMoves": ["ICE_PUNCH", "THUNDER_PUNCH"]
 	},
 	{
+		"speciesId": "exeggutor_alolan",
+		"chargedMoves": ["SEED_BOMB", "DRACO_METEOR"]
+	},
+	{
+		"speciesId": "exeggutor_alolan_shadow",
+		"chargedMoves": ["SEED_BOMB", "DRACO_METEOR"]
+	},
+	{
 		"speciesId": "marowak_alolan",
 		"fastMove": "FIRE_SPIN",
 		"weight": 34
