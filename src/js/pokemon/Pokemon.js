@@ -898,8 +898,82 @@ function Pokemon(id, i, b){
 		}
 
 		// Sort charged moves by DPE
+		chargedMoves = chargedMoves.map((data) => {
+			let FACTOR = 0;
 
-		chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
+			if(move.buffs){
+				FACTOR = 1;
+				for(var n = 0; n < move.buffs.length; n++){
+					// Don't factor self defense drops for move usage
+					if((move.selfDebuffing)&&(n == 1)){
+						continue;
+					}
+
+					if(move.buffs[n] > 0){
+						if(move.buffTarget == "self"){
+							statChangeFactor *= ((4+move.buffs[n]) / 4);
+						} else if(move.buffTarget == "opponent"){
+							statChangeFactor *= (1 / ((4+move.buffs[n]) / 4));
+						}
+					} else if(move.buffs[n] < 0){
+						if(move.buffTarget == "self"){
+							statChangeFactor *= (4 / (4-move.buffs[n]));
+						} else if(move.buffTarget == "opponent"){
+							statChangeFactor *= (1 / (4 / (4-move.buffs[n])));
+						}
+					}
+				}
+
+				statChangeFactor =  1 + ((statChangeFactor - 1) * move.buffApplyChance);
+			}
+
+			return {
+				...data,
+				FACTOR: FACTOR, //don't need it for both moves? only the second charged move I would think
+				VAL: ((data.damage / data.energy) / data.energy) //first move is pure DPE
+			};
+		}).sort((a, b) => { return b.VAL - a.VAL; });
+		const move_1 = chargedMoves[0]; chargedMoves.shift(); //-- one of our best two charged moves
+
+		fastMoves = fastMoves.map((data) => {
+			const QA = 25000 / data.damage; //25000 damage should be enough to get a good avg
+			const QT = QA * data.cooldown;
+			const QE = QA * data.energyGain;
+
+			const Cdmg = move_1.damage;
+			const CA = QE / move_1.energy;
+			const CD = CA * Cdmg;
+
+			return {
+				...data,
+				VAL: (25000 + CD) / (QT + CA) //how long did it take to reach 25000 damage
+			};
+		}).sort((a, b) => { return b.VAL - a.VAL; });
+		fastMoves.length = 1; //-- our best fast move
+
+		if (chargedMoves.length) {
+			const QA = 25000 / fastMoves[0].damage;
+			const QT = QA * fastMoves[0].cooldown;
+			const QE = QA * fastMoves[0].energyGain;
+
+			chargedMoves.sort((a, b) => { //--which moves gets us to 25000 damage the fastest / here we use the buff factor
+				return ((25000 + ((QE / b.energy) * b.damage)) / (QT + (QE / b.energy)) * (b.FACTOR * 1.5 || 1)) - ((25000 + ((QE / a.energy) * a.damage)) / (QT + (QE / a.energy)) * (a.FACTOR * 1.5 || 1));
+			});
+
+			const move_2 = chargedMoves[0];
+			chargedMoves = [move_1, move_2];
+		} else {
+			chargedMoves = [move_1];
+		}
+
+		var results = {
+			fastMoves: fastMoves,
+			chargedMoves: chargedMoves
+		};
+
+		return results;
+
+		/*chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
 
 		var highestDPE = chargedMoves[0].dpe;
 
@@ -967,7 +1041,6 @@ function Pokemon(id, i, b){
 
 		chargedMoveUses.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
 
-
 		// Calculate TDO for each fast move and sort
 		var total = 0;
 
@@ -1006,7 +1079,7 @@ function Pokemon(id, i, b){
 			chargedMoves: chargedMoveUses
 		};
 
-		return results;
+		return results;*/
 	}
 
 	// Add new move to the supplied move pool, with a flag to automatically select the new move
