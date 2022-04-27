@@ -30353,6 +30353,19 @@
         "buffApplyChance": "1",
         "archetype": "Debuff"
     }, {
+        "moveId": "LUSTER_PURGE",
+        "name": "Luster Purge",
+        "abbreviation": "LrP",
+        "type": "psychic",
+        "power": 120,
+        "energy": 60,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [0, -1],
+        "buffTarget": "opponent",
+        "buffApplyChance": "0.5",
+        "archetype": "Debuff"
+    }, {
         "moveId": "MAGICAL_LEAF",
         "name": "Magical Leaf",
         "type": "grass",
@@ -30431,6 +30444,19 @@
         "buffTarget": "opponent",
         "buffApplyChance": ".3",
         "archetype": "Debuff Spam/Bait"
+    }, {
+        "moveId": "MIST_BALL",
+        "name": "Mist Ball",
+        "abbreviation": "MsB",
+        "type": "psychic",
+        "power": 120,
+        "energy": 60,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [-1, 0],
+        "buffTarget": "opponent",
+        "buffApplyChance": "0.5",
+        "archetype": "Debuff"
     }, {
         "moveId": "MOONBLAST",
         "name": "Moonblast",
