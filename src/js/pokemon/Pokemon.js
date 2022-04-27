@@ -897,10 +897,10 @@ function Pokemon(id, i, b){
 
 		// Sort charged moves by DPE
 		chargedMoves = chargedMoves.map((data) => {
-			let FACTOR = 0;
+			let statChangeFactor = 0;
 
 			if(move.buffs){
-				FACTOR = 1;
+				statChangeFactor = 1;
 				for(var n = 0; n < move.buffs.length; n++){
 					// Don't factor self defense drops for move usage
 					if((move.selfDebuffing)&&(n == 1)){
@@ -927,8 +927,8 @@ function Pokemon(id, i, b){
 
 			return {
 				...data,
-				FACTOR: FACTOR, //don't need it for both moves? only the second charged move I would think
-				VAL: ((data.damage / data.energy) / data.energy) //first move is pure DPE
+				FACTOR: statChangeFactor, //don't need it for both moves? only the second charged move I would think
+				uses: ((data.damage / data.energy) / data.energy) //first move is pure DPE
 			};
 		}).sort((a, b) => { return b.VAL - a.VAL; });
 		const move_1 = chargedMoves[0]; chargedMoves.shift(); //-- one of our best two charged moves
@@ -944,10 +944,9 @@ function Pokemon(id, i, b){
 
 			return {
 				...data,
-				VAL: (25000 + CD) / (QT + CA) //how long did it take to reach 25000 damage
+				uses: (25000 + CD) / (QT + CA) //how long did it take to reach 25000 damage
 			};
-		}).sort((a, b) => { return b.VAL - a.VAL; });
-		fastMoves.length = 1; //-- our best fast move
+		}).sort((a, b) => { return b.uses - a.uses; });
 
 		if (chargedMoves.length) {
 			const QA = 25000 / fastMoves[0].damage;
