@@ -5049,7 +5049,9 @@
             "cp2500": [24.5, 5, 14, 11]
         },
         "tags": ["mega"],
-		"released": "true"
+		"buddyDistance": 3,
+        "thirdMoveCost": 50000,
+		"released": true
     }, {
         "dex": 80,
         "speciesName": "Slowbro (Shadow)",
@@ -9844,6 +9846,8 @@
             "cp1500": [15, 7, 14, 11],
             "cp2500": [25.5, 4, 15, 8]
         },
+		"buddyDistance": 5,
+        "thirdMoveCost": 75000,
         "released": true
     }, {
         "dex": 209,
@@ -14723,7 +14727,9 @@
         },
         "level25CP": 1534,
         "tags": ["mega"],
-		"released": "true"
+		"buddyDistance": 5,
+        "thirdMoveCost": 75000,
+		"released": true
     }, {
         "dex": 359,
         "speciesName": "Absol (Shadow)",

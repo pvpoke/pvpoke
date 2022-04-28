@@ -749,7 +749,9 @@ var GameMaster = (function () {
 
 				var stats = (pokemon.stats.hp * pokemon.stats.atk * pokemon.stats.def) / 1000;
 
-				if((stats >= minStats)||((battle.getCP() == 1500)&&(pokemon.hasTag("include1500")))){
+				if((stats >= minStats) ||
+				 ( (battle.getCP() == 1500) &&
+				 (pokemon.hasTag("include1500") || pokemon.hasTag("mega") ))){
 					// Today is the day
 					if(! pokemon.released){
 						continue;
