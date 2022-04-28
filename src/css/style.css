@@ -400,6 +400,7 @@ header {
 }
 .poke .poke-stats .mega-cp-container h3.section-title {
   font-size: 12px;
+  margin-top: 0;
 }
 .poke .poke-stats .mega-cp-container .mega-cp {
   font-size: 14px;
