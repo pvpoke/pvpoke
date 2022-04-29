@@ -1,0 +1,13 @@
+{
+	"name": "flying",
+	"title": "Flying Cup",
+	"include": [{
+		"filterType": "type",
+		"values": ["flying"]
+	}],
+	"exclude": [{
+		"filterType": "tag",
+		"values": ["mega"]
+	}],
+	"partySize": 3
+}

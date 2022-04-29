@@ -1,0 +1,24 @@
+{
+   "name": "nemesis",
+   "title": "Nemesis Cup",
+   "restrictedPicks": 2,
+   "restrictedPokemon": ["obstagoon", "gallade", "lucario", "poliwrath", "pangoro", "blaziken", "chesnaught", "quagsire", "flygon", "excadrill", "jumpluff", "dedenne", "froslass", "gourgeist_small", "gourgeist_average", "gourgeist_large", "gourgeist_super", "noctowl", "gyarados", "charizard", "gengar", "rapidash_galarian", "mawile"],
+   "include": [{
+	   "filterType": "id",
+	   "includeShadows": true,
+	   "values": ["obstagoon", "gallade", "lucario", "poliwrath", "pangoro", "blaziken", "chesnaught", "quagsire", "flygon", "excadrill", "jumpluff", "dedenne", "froslass", "gourgeist_small", "gourgeist_average", "gourgeist_large", "gourgeist_super", "noctowl", "gyarados", "charizard", "gengar", "rapidash_galarian", "mawile"]
+   }, {
+	   "filterType": "type",
+	   "values": ["bug", "dark", "fire", "grass", "ice", "psychic", "water"]
+   }],
+   "exclude": [{
+	   "filterType": "id",
+	   "values": ["escavalier", "salazzle"]
+   }, {
+	   "filterType": "type",
+	   "values": ["none", "fairy", "flying", "fighting", "ground", "ghost", "normal"]
+   }, {
+	   "filterType": "tag",
+	   "values": ["mega"]
+   }]
+}

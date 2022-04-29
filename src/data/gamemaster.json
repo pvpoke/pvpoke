@@ -676,7 +676,7 @@
         "title": "Little Cup",
         "include": [{
             "filterType": "id",
-			"includeShadows": 1,
+            "includeShadows": 1,
             "values": ["abra", "aipom", "anorith", "archen", "aron", "axew", "azurill", "bagon", "baltoy", "barboach", "beldum", "bellsprout", "bidoof", "blitzle", "bonsly", "bronzor", "budew", "buizel", "bulbasaur", "buneary", "burmy", "cacnea", "carvanha", "caterpie", "charmander", "cherubi", "chikorita", "chimchar", "chinchou", "chingling", "cleffa", "combee", "corphish", "cranidos", "croagunk", "cubchoo", "cubone", "cyndaquil", "darumaka", "darumaka_galarian", "deerling", "deino", "diglett", "diglett_alolan", "doduo", "dratini", "drifloon", "drilbur", "drowzee", "ducklett", "duskull", "dwebble", "ekans", "electrike", "elekid", "elgyem", "exeggcute", "farfetchd_galarian", "feebas", "ferroseed", "finneon", "foongus", "frillish", "gastly", "geodude", "geodude_alolan", "gible", "glameow", "gligar", "goldeen", "golett", "gothita", "grimer", "grimer_alolan", "growlithe", "gulpin", "happiny", "hippopotas", "hoothoot", "hoppip", "horsea", "houndour", "igglybuff", "joltik", "kabuto", "klink", "koffing", "krabby", "kricketot", "larvesta", "larvitar", "ledyba", "lickitung", "lileep", "lillipup", "litwick", "lotad", "machop", "magby", "magikarp", "magnemite", "makuhita", "mankey", "mantyke", "mareep", "meditite", "meowth", "meowth_alolan", "meowth_galarian", "mienfoo", "mime jr.", "misdreavus", "mudkip", "munchlax", "munna", "murkrow", "natu", "nidoran_male", "nidoran_female", "nincada", "nosepass", "numel", "oddish", "omanyte", "oshawott", "pansage", "pansear", "paras", "patrat", "phanpy", "pichu", "pidgey", "pidove", "pineco", "piplup", "poliwag", "ponyta", "ponyta", "poochyena", "psyduck", "purrloin", "ralts", "rattata", "rattata_alolan", "remoraid", "rhyhorn", "riolu", "roggenrola", "rufflet", "sandile", "sandshrew", "sandshrew_alolan", "scraggy", "seedot", "seel", "sentret", "sewaddle", "shellos_east_sea", "shellos_west_sea", "shieldon", "shinx", "shroomish", "shuppet", "skitty", "skorupi", "slakoth", "slowpoke", "", "slugma", "smoochum", "sneasel", "snivy", "snorunt", "snover", "snubbull", "solosis", "spearow", "spheal", "spinarak", "spoink", "squirtle", "starly", "stunky", "surskit", "swablu", "swinub", "taillow", "tangela", "teddiursa", "tentacool", "tepig", "timburr", "tirtouga", "togepi", "torchic", "totodile", "trapinch", "treecko", "trubbish", "turtwig", "tympole", "tynamo", "tyrogue", "vanillite", "venipede", "venonat", "voltorb", "vulpix", "vulpix_alolan", "wailmer", "weedle", "whismur", "wingull", "woobat", "wooper", "wurmple", "wynaut", "yamask", "yanma", "zigzagoon", "zigzagoon_galarian", "zubat", "meltan", "yamask_galarian", "vulpix_shadow", "dratini_shadow", "stunky_shadow", "cubone_shadow", "gligar_shadow", "mareep_shadow", "turtwig_shadow", "growlithe_shadow", "psyduck_shadow", "duskull_shadow", "oddish_shadow", "hoppip_shadow", "houndour_shadow", "venonat_shadow", "squirtle_shadow", "drowzee_shadow", "nidoran_male_shadow", "seedot_shadow", "meowth_shadow", "pineco_shadow", "sandshrew_shadow", "mudkip_shadow", "poliwag_shadow", "machop_shadow", "exeggcute_shadow", "slowpoke_shadow", "magnemite_shadow", "grimer_shadow", "zubat_shadow", "teddiursa_shadow", "charmander_shadow", "rattata_shadow", "misdreavus_shadow", "snover_shadow", "bulbusaur_shadow", "ralts_shadow", "larvitar_shadow", "omanyte_shadow", "sneasel_shadow", "koffing_shadow", "carvanha_shadow", "bagon_shadow", "diglett_shadow", "trapinch_shadow", "cacnea_shadow", "weedle_shadow", "nidoran_female_shadow", "shuppet_shadow", "bellsprout_shadow", "ekans_shadow", "abra_shadow", "beldum_shadow", "magikarp_shadow", "shellder", "shellder_shadow", "cottonee", "scyther", "scyther_shadow", "onix", "mime_jr", "eevee", "porygon", "sunkern", "clamperl", "burmy", "shellos", "panpour", "petilil", "minccino", "karrablast", "shelmet", "vullaby", "pawniard", "staryu", "chespin", "fennekin", "froakie", "bunnelby", "fletchling", "litleo", "flabebe", "pancham", "espurr", "spritzee", "swirlix", "inkay", "binacle", "skrelp", "clauncher", "helioptile", "goomy", "phantump", "pumpkaboo_small", "pumpkaboo_average", "pumpkaboo_large", "pumpkaboo_super", "bergmite", "noibat", "rowlet", "litten", "popplio", "pikipek", "yungoos", "rockruff", "fomantis", "salandit", "jangmo_o", "skwovet", "wooloo", "zigzagoon_galarian", "farfetchd_galarian", "mr_mime_galarian", "yamask_galarian"]
         }],
         "exclude": [],
@@ -1124,13 +1124,13 @@
         "include": [{
             "filterType": "id",
             "includeShadows": 1,
-            "values": ["haunter", "uxie", "mesprit", "azelf", "spritzee", "castform", "castform_sunny", "castform_rainy", "castform_snowy", "misdreavus", "chimecho", "jirachi", "drifloon", "chatot", "roselia", "murkrow", "exeggcute", "jumpluff", "klefki", "espurr", "masquerain", "qwilfish", "victini", "plusle", "minun", "mismagius", "corsola", "celebi", "spinda", "emolga", "slurpuff", "bellossom", "magnemite", "greedent", "weepinbell", "wormadam_plant", "wormadam_sand", "wormadam_trash", "whimsicott", "swadloon", "omanyte", "pancham", "meltan", "cinccino", "sunflora", "drilbur", "meowstic", "meowstic_female", "gloom", "teddiursa", "hoopa", "cherrim_overcast", "cherrim_sunny", "weezing", "archen", "pawniard", "swoobat", "amoonguss", "rufflet", "frogadier", "sableye", "stunfisk", "mawile", "wigglytuff", "ninjask", "venomoth", "banette", "ivysaur", "lampent", "litleo", "dunsparce", "galvantula", "roserade", "dwebble", "braixen", "farfetch’d", "xatu", "drifblim", "bonsly", "tranquill", "vibrava", "victreebel", "aromatisse", "bayleef", "weezing_galarian", "servine", "lilligant", "dragonair", "tirtouga", "palpitoad", "sliggoo", "volbeat", "illumise", "basculin", "raticate", "vileplume", "charmeleon", "quilava", "nidorino", "machop", "combusken", "swellow", "ninetales", "nidorina", "poliwhirl", "reuniclus", "geodude_alolan", "ambipom", "leavanny", "raichu_alolan", "grovyle", "monferno", "eelektrik", "wartortle", "lanturn", "gorebyss", "prinplup", "mothim", "relicanth", "sylveon", "whiscash", "lumineon", "swanna", "jolteon", "dewott", "talonflame", "staraptor", "flareon", "croconaw", "kricketune", "leafeon", "raticate_alolan", "glaceon", "froslass", "honchkrow", "marshtomp", "pelipper", "furfrou", "perrserker", "vaporeon", "unfezant", "quilladin", "beedrill", "gastrodon", "gastrodon", "raichu", "grimer", "muk", "electabuzz", "dusclops", "bibarel", "dustox", "alomomola", "primeape", "furret", "porygon2", "linoone", "linoone_galarian", "crawdaunt", "escavalier", "durant", "ariados", "politoed", "marowak_alolan", "weavile", "chandelure", "omastar", "houndoom", "ledian", "fraxure", "sudowoodo", "skuntank", "togekiss", "vespiquen", "seaking", "delphox", "breloom", "pidgeot", "sandshrew_alolan", "clefable", "greninja", "manectric", "zangoose", "excadrill", "gengar", "noctowl", "grimer_alolan", "luxray", "diggersby", "gliscor", "purugly", "gothitelle", "toxicroak", "magmar", "obstagoon", "vigoroth", "malamar", "alakazam", "hitmontop", "gardevoir", "granbull", "zweilous", "hitmonchan", "muk_alolan", "blaziken", "gallade", "sceptile", "seviper", "zapdos", "poliwrath", "heracross", "lucario", "sandslash_alolan", "golbat", "tentacruel", "pinsir", "magcargo", "ludicolo", "infernape", "articuno", "pignite", "piloswine", "heatmor", "aerodactyl", "shiftry", "magneton", "kingler", "cradily", "ampharos", "drapion", "nidoking", "seismitoad", "falinks", "serperior", "gligar", "electrode", "magmortar", "bisharp", "machoke", "slowbro_galarian", "crobat", "quagsire", "cofagrigus", "golduck", "slowbro", "typhlosion", "slowking", "zebstrika", "swalot", "rapidash_galarian", "eelektross", "carracosta", "pyroar", "dragalge", "flygon", "empoleon", "blastoise", "sealeo", "feraligatr", "sharpedo", "chesnaught", "charizard", "darmanitan_standard", "samurott", "rapidash", "garchomp", "barbaracle", "krookodile", "grotle", "venusaur", "tropius", "meganium", "boldore", "rampardos", "salamence", "graveler", "munchlax", "haxorus", "dusknoir", "garbodor", "claydol", "spiritomb", "graveler_alolan", "ferrothorn", "shelgon", "rhyhorn", "sirfetchd", "scizor", "dewgong", "exeggutor", "rhydon", "donphan", "lairon", "darmanitan_galarian_standard", "mewtwo", "forretress", "ursaring", "tangrowth", "machamp", "wailmer", "slaking", "cloyster", "abomasnow", "pangoro", "electivire", "lickilicky", "cryogonal", "emboar", "goodra", "walrein", "kingdra", "solrock", "arcanine", "hydreigon", "milotic", "lunatone", "regice", "raikou", "magnezone", "suicune", "bronzong", "entei", "ho_oh", "crustle", "scolipede", "tyranitar", "metang", "rayquaza", "onix", "dragonite", "lugia", "lapras", "mantine", "camerupt", "gyarados", "hariyama", "glalie", "gigalith", "beartic", "rhyperior", "mamoswine", "golem", "hippowdon", "torterra", "golem_alolan", "golurk", "probopass", "aggron", "wailord", "steelix", "exeggutor_alolan", "snorlax", "metagross", "melmetal"]
+            "values": ["haunter", "uxie", "mesprit", "azelf", "spritzee", "castform", "castform_sunny", "castform_rainy", "castform_snowy", "misdreavus", "chimecho", "jirachi", "drifloon", "chatot", "roselia", "murkrow", "exeggcute", "jumpluff", "klefki", "espurr", "masquerain", "qwilfish", "victini", "plusle", "minun", "mismagius", "corsola", "celebi", "spinda", "emolga", "slurpuff", "bellossom", "magnemite", "greedent", "weepinbell", "wormadam_plant", "wormadam_sand", "wormadam_trash", "whimsicott", "swadloon", "omanyte", "pancham", "meltan", "cinccino", "sunflora", "drilbur", "meowstic", "meowstic_female", "gloom", "teddiursa", "hoopa", "cherrim_overcast", "cherrim_sunny", "weezing", "archen", "pawniard", "swoobat", "amoonguss", "rufflet", "frogadier", "sableye", "stunfisk", "mawile", "wigglytuff", "ninjask", "venomoth", "banette", "ivysaur", "lampent", "litleo", "dunsparce", "galvantula", "roserade", "dwebble", "braixen", "farfetch\u2019d", "xatu", "drifblim", "bonsly", "tranquill", "vibrava", "victreebel", "aromatisse", "bayleef", "weezing_galarian", "servine", "lilligant", "dragonair", "tirtouga", "palpitoad", "sliggoo", "volbeat", "illumise", "basculin", "raticate", "vileplume", "charmeleon", "quilava", "nidorino", "machop", "combusken", "swellow", "ninetales", "nidorina", "poliwhirl", "reuniclus", "geodude_alolan", "ambipom", "leavanny", "raichu_alolan", "grovyle", "monferno", "eelektrik", "wartortle", "lanturn", "gorebyss", "prinplup", "mothim", "relicanth", "sylveon", "whiscash", "lumineon", "swanna", "jolteon", "dewott", "talonflame", "staraptor", "flareon", "croconaw", "kricketune", "leafeon", "raticate_alolan", "glaceon", "froslass", "honchkrow", "marshtomp", "pelipper", "furfrou", "perrserker", "vaporeon", "unfezant", "quilladin", "beedrill", "gastrodon", "gastrodon", "raichu", "grimer", "muk", "electabuzz", "dusclops", "bibarel", "dustox", "alomomola", "primeape", "furret", "porygon2", "linoone", "linoone_galarian", "crawdaunt", "escavalier", "durant", "ariados", "politoed", "marowak_alolan", "weavile", "chandelure", "omastar", "houndoom", "ledian", "fraxure", "sudowoodo", "skuntank", "togekiss", "vespiquen", "seaking", "delphox", "breloom", "pidgeot", "sandshrew_alolan", "clefable", "greninja", "manectric", "zangoose", "excadrill", "gengar", "noctowl", "grimer_alolan", "luxray", "diggersby", "gliscor", "purugly", "gothitelle", "toxicroak", "magmar", "obstagoon", "vigoroth", "malamar", "alakazam", "hitmontop", "gardevoir", "granbull", "zweilous", "hitmonchan", "muk_alolan", "blaziken", "gallade", "sceptile", "seviper", "zapdos", "poliwrath", "heracross", "lucario", "sandslash_alolan", "golbat", "tentacruel", "pinsir", "magcargo", "ludicolo", "infernape", "articuno", "pignite", "piloswine", "heatmor", "aerodactyl", "shiftry", "magneton", "kingler", "cradily", "ampharos", "drapion", "nidoking", "seismitoad", "falinks", "serperior", "gligar", "electrode", "magmortar", "bisharp", "machoke", "slowbro_galarian", "crobat", "quagsire", "cofagrigus", "golduck", "slowbro", "typhlosion", "slowking", "zebstrika", "swalot", "rapidash_galarian", "eelektross", "carracosta", "pyroar", "dragalge", "flygon", "empoleon", "blastoise", "sealeo", "feraligatr", "sharpedo", "chesnaught", "charizard", "darmanitan_standard", "samurott", "rapidash", "garchomp", "barbaracle", "krookodile", "grotle", "venusaur", "tropius", "meganium", "boldore", "rampardos", "salamence", "graveler", "munchlax", "haxorus", "dusknoir", "garbodor", "claydol", "spiritomb", "graveler_alolan", "ferrothorn", "shelgon", "rhyhorn", "sirfetchd", "scizor", "dewgong", "exeggutor", "rhydon", "donphan", "lairon", "darmanitan_galarian_standard", "mewtwo", "forretress", "ursaring", "tangrowth", "machamp", "wailmer", "slaking", "cloyster", "abomasnow", "pangoro", "electivire", "lickilicky", "cryogonal", "emboar", "goodra", "walrein", "kingdra", "solrock", "arcanine", "hydreigon", "milotic", "lunatone", "regice", "raikou", "magnezone", "suicune", "bronzong", "entei", "ho_oh", "crustle", "scolipede", "tyranitar", "metang", "rayquaza", "onix", "dragonite", "lugia", "lapras", "mantine", "camerupt", "gyarados", "hariyama", "glalie", "gigalith", "beartic", "rhyperior", "mamoswine", "golem", "hippowdon", "torterra", "golem_alolan", "golurk", "probopass", "aggron", "wailord", "steelix", "exeggutor_alolan", "snorlax", "metagross", "melmetal"]
         }],
         "exclude": [],
         "slots": [{
             "pokemon": ["haunter", "uxie", "mesprit", "azelf", "spritzee", "castform", "castform_sunny", "castform_rainy", "castform_snowy", "misdreavus", "chimecho", "jirachi", "drifloon", "chatot", "roselia", "murkrow", "exeggcute", "jumpluff", "klefki", "espurr", "masquerain", "qwilfish", "victini", "plusle", "minun", "mismagius", "corsola", "celebi", "spinda", "emolga", "slurpuff", "bellossom", "magnemite", "greedent", "weepinbell", "wormadam_plant", "wormadam_sand", "wormadam_trash", "whimsicott", "swadloon", "omanyte", "pancham", "meltan", "cinccino", "sunflora", "drilbur", "meowstic", "meowstic_female", "gloom", "teddiursa", "hoopa", "cherrim", "weezing", "archen", "cherrim_overcast", "cherrim_sunny"]
         }, {
-            "pokemon": ["pawniard", "swoobat", "amoonguss", "rufflet", "frogadier", "sableye", "sableye_xs", "stunfisk", "mawile", "wigglytuff", "ninjask", "venomoth", "banette", "ivysaur", "lampent", "litleo", "dunsparce", "galvantula", "roserade", "dwebble", "braixen", "farfetch’d", "xatu", "drifblim", "bonsly", "tranquill", "vibrava", "victreebel", "aromatisse", "bayleef", "weezing_galarian", "servine", "lilligant", "dragonair", "tirtouga", "palpitoad", "sliggoo", "volbeat", "illumise", "basculin", "raticate", "vileplume", "charmeleon", "quilava", "nidorino", "machop", "combusken", "swellow", "ninetales", "nidorina", "poliwhirl", "reuniclus", "geodude_alolan", "ambipom", "leavanny", "raichu_alolan", "grovyle", "monferno", "eelektrik", "wartortle", "lanturn", "gorebyss", "prinplup", "mothim", "relicanth", "sylveon", "whiscash", "lumineon", "swanna", "jolteon", "dewott", "talonflame", "staraptor"]
+            "pokemon": ["pawniard", "swoobat", "amoonguss", "rufflet", "frogadier", "sableye", "sableye_xs", "stunfisk", "mawile", "wigglytuff", "ninjask", "venomoth", "banette", "ivysaur", "lampent", "litleo", "dunsparce", "galvantula", "roserade", "dwebble", "braixen", "farfetch\u2019d", "xatu", "drifblim", "bonsly", "tranquill", "vibrava", "victreebel", "aromatisse", "bayleef", "weezing_galarian", "servine", "lilligant", "dragonair", "tirtouga", "palpitoad", "sliggoo", "volbeat", "illumise", "basculin", "raticate", "vileplume", "charmeleon", "quilava", "nidorino", "machop", "combusken", "swellow", "ninetales", "nidorina", "poliwhirl", "reuniclus", "geodude_alolan", "ambipom", "leavanny", "raichu_alolan", "grovyle", "monferno", "eelektrik", "wartortle", "lanturn", "gorebyss", "prinplup", "mothim", "relicanth", "sylveon", "whiscash", "lumineon", "swanna", "jolteon", "dewott", "talonflame", "staraptor"]
         }, {
             "pokemon": ["flareon", "croconaw", "kricketune", "leafeon", "raticate_alolan", "glaceon", "froslass", "honchkrow", "marshtomp", "pelipper", "furfrou", "perrserker", "vaporeon", "unfezant", "quilladin", "beedrill", "gastrodon", "gastrodon", "raichu", "grimer", "muk", "electabuzz", "dusclops", "bibarel", "dustox", "alomomola", "primeape", "furret", "porygon2", "linoone", "linoone_galarian", "crawdaunt", "escavalier", "durant", "ariados", "politoed", "marowak_alolan", "weavile", "chandelure", "omastar", "houndoom", "ledian", "fraxure", "sudowoodo", "skuntank", "togekiss", "vespiquen", "seaking", "delphox", "breloom", "pidgeot", "sandshrew_alolan", "clefable", "greninja", "manectric", "zangoose", "excadrill", "gengar", "noctowl", "grimer_alolan", "luxray", "diggersby", "gliscor", "purugly", "gothitelle", "toxicroak", "magmar", "obstagoon", "vigoroth", "malamar", "alakazam", "hitmontop", "gardevoir", "granbull"]
         }, {
@@ -1243,11 +1243,11 @@
         "title": "Firefly Cup",
         "include": [{
             "filterType": "type",
-            "values":  ["normal", "electric", "bug", "poison", "ice"]
+            "values": ["normal", "electric", "bug", "poison", "ice"]
         }],
         "exclude": [{
             "filterType": "type",
-            "values":  ["ground"]
+            "values": ["ground"]
         }, {
             "filterType": "id",
             "values": ["escavalier", "salazzle", "walrein", "dragalge", "pachirisu"]
@@ -5049,9 +5049,9 @@
             "cp2500": [24.5, 5, 14, 11]
         },
         "tags": ["mega"],
-		"buddyDistance": 3,
+        "buddyDistance": 3,
         "thirdMoveCost": 50000,
-		"released": true
+        "released": true
     }, {
         "dex": 80,
         "speciesName": "Slowbro (Shadow)",
@@ -5975,8 +5975,8 @@
         },
         "types": ["grass", "dragon"],
         "fastMoves": ["BULLET_SEED", "DRAGON_TAIL"],
-		"chargedMoves": ["DRAGON_PULSE", "SEED_BOMB", "SOLAR_BEAM", "DRACO_METEOR"],
-		"eliteMoves": ["DRACO_METEOR"],
+        "chargedMoves": ["DRAGON_PULSE", "SEED_BOMB", "SOLAR_BEAM", "DRACO_METEOR"],
+        "eliteMoves": ["DRACO_METEOR"],
         "tags": ["alolan", "shadoweligible"],
         "defaultIVs": {
             "cp500": [6.5, 4, 9, 7],
@@ -6022,7 +6022,7 @@
         "types": ["grass", "dragon"],
         "fastMoves": ["BULLET_SEED", "DRAGON_TAIL"],
         "chargedMoves": ["DRAGON_PULSE", "SEED_BOMB", "SOLAR_BEAM", "DRACO_METEOR"],
-		"eliteMoves": ["DRACO_METEOR"],
+        "eliteMoves": ["DRACO_METEOR"],
         "tags": ["alolan", "shadow"],
         "defaultIVs": {
             "cp500": [6.5, 4, 9, 7],
@@ -9846,7 +9846,7 @@
             "cp1500": [15, 7, 14, 11],
             "cp2500": [25.5, 4, 15, 8]
         },
-		"buddyDistance": 5,
+        "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
     }, {
@@ -14727,9 +14727,9 @@
         },
         "level25CP": 1534,
         "tags": ["mega"],
-		"buddyDistance": 5,
+        "buddyDistance": 5,
         "thirdMoveCost": 75000,
-		"released": true
+        "released": true
     }, {
         "dex": 359,
         "speciesName": "Absol (Shadow)",
@@ -25382,7 +25382,7 @@
             "cp2500": [46, 4, 15, 8],
             "cp2500l40": [40, 12, 15, 15]
         },
-		"searchPriority": 3,
+        "searchPriority": 3,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
@@ -26343,7 +26343,7 @@
             "cp2500": [27, 4, 13, 12]
         },
         "tags": ["legendary"],
-		"searchPriority": 3,
+        "searchPriority": 3,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true

@@ -1,0 +1,11 @@
+{
+	"name": "classic",
+	"title": "Classic",
+	"include": [],
+	"exclude": [{
+		"filterType": "tag",
+		"values": ["mega"]
+	}],
+	"partySize": 3,
+	"levelCap": 40
+}

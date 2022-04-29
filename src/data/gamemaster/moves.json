@@ -1,0 +1,2603 @@
+[{
+    "moveId": "ACID",
+    "name": "Acid",
+    "abbreviation": "Ac",
+    "type": "poison",
+    "power": 6,
+    "energy": 0,
+    "energyGain": 5,
+    "cooldown": 1000,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "ACID_SPRAY",
+    "name": "Acid Spray",
+    "type": "poison",
+    "power": 20,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, -2],
+    "buffTarget": "opponent",
+    "buffApplyChance": "1",
+    "archetype": "Debuff"
+}, {
+    "moveId": "ACROBATICS",
+    "name": "Acrobatics",
+    "abbreviation": "Acr",
+    "type": "flying",
+    "power": 110,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "AERIAL_ACE",
+    "name": "Aerial Ace",
+    "type": "flying",
+    "power": 55,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "AEROBLAST",
+    "name": "Aeroblast",
+    "type": "flying",
+    "power": 170,
+    "energy": 75,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [2, 0],
+    "buffTarget": "self",
+    "buffApplyChance": ".125",
+    "archetype": "Boost Nuke"
+}, {
+    "moveId": "AIR_CUTTER",
+    "name": "Air Cutter",
+    "type": "flying",
+    "power": 60,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "AIR_SLASH",
+    "name": "Air Slash",
+    "type": "flying",
+    "power": 9,
+    "energy": 0,
+    "energyGain": 9,
+    "cooldown": 1500,
+    "archetype": "General"
+}, {
+    "moveId": "ANCIENT_POWER",
+    "name": "Ancient Power",
+    "type": "rock",
+    "power": 45,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [2, 2],
+    "buffTarget": "self",
+    "buffApplyChance": ".1",
+    "archetype": "Boost"
+}, {
+    "moveId": "AQUA_JET",
+    "name": "Aqua Jet",
+    "type": "water",
+    "power": 45,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "AQUA_TAIL",
+    "name": "Aqua Tail",
+    "type": "water",
+    "power": 50,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "ASTONISH",
+    "name": "Astonish",
+    "type": "ghost",
+    "power": 5,
+    "energy": 0,
+    "energyGain": 9,
+    "cooldown": 1500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "AURA_SPHERE",
+    "name": "Aura Sphere",
+    "type": "fighting",
+    "power": 100,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "AURORA_BEAM",
+    "name": "Aurora Beam",
+    "type": "ice",
+    "power": 80,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "AVALANCHE",
+    "name": "Avalanche",
+    "abbreviation": "Av",
+    "type": "ice",
+    "power": 90,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "BITE",
+    "name": "Bite",
+    "abbreviation": "Bi",
+    "type": "dark",
+    "power": 4,
+    "energy": 0,
+    "energyGain": 2,
+    "cooldown": 500,
+    "archetype": "Heavy Damage"
+}, {
+    "moveId": "BLAST_BURN",
+    "name": "Blast Burn",
+    "type": "fire",
+    "power": 110,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "BLIZZARD",
+    "name": "Blizzard",
+    "abbreviation": "Bl",
+    "type": "ice",
+    "power": 140,
+    "energy": 75,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "BODY_SLAM",
+    "name": "Body Slam",
+    "type": "normal",
+    "power": 60,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "BONE_CLUB",
+    "name": "Bone Club",
+    "type": "ground",
+    "power": 40,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "BRAVE_BIRD",
+    "name": "Brave Bird",
+    "abbreviation": "BrB",
+    "type": "flying",
+    "power": 130,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, -3],
+    "buffTarget": "self",
+    "buffApplyChance": "1",
+    "archetype": "Self-Debuff Nuke"
+}, {
+    "moveId": "BRICK_BREAK",
+    "name": "Brick Break",
+    "abbreviation": "BkB",
+    "type": "fighting",
+    "power": 40,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "BRINE",
+    "name": "Brine",
+    "abbreviation": "Bri",
+    "type": "water",
+    "power": 60,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "BUBBLE",
+    "name": "Bubble",
+    "type": "water",
+    "power": 7,
+    "energy": 0,
+    "energyGain": 11,
+    "cooldown": 1500,
+    "archetype": "Fast Charge"
+}, {
+    "moveId": "BUBBLE_BEAM",
+    "name": "Bubble Beam",
+    "abbreviation": "BuB",
+    "type": "water",
+    "power": 25,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": "1",
+    "archetype": "Debuff Spam/Bait"
+}, {
+    "moveId": "BUG_BITE",
+    "name": "Bug Bite",
+    "abbreviation": "BBi",
+    "type": "bug",
+    "power": 3,
+    "energy": 0,
+    "energyGain": 3,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "BUG_BUZZ",
+    "name": "Bug Buzz",
+    "abbreviation": "BBu",
+    "type": "bug",
+    "power": 100,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": ".3",
+    "archetype": "High Energy Debuff"
+}, {
+    "moveId": "BULLDOZE",
+    "name": "Bulldoze",
+    "abbreviation": "Bd",
+    "type": "ground",
+    "power": 80,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "BULLET_PUNCH",
+    "name": "Bullet Punch",
+    "type": "steel",
+    "power": 6,
+    "energy": 0,
+    "energyGain": 7,
+    "cooldown": 1000,
+    "archetype": "Fast Charge"
+}, {
+    "moveId": "BULLET_SEED",
+    "name": "Bullet Seed",
+    "type": "grass",
+    "power": 5,
+    "energy": 0,
+    "energyGain": 13,
+    "cooldown": 1500,
+    "archetype": "Fast Charge"
+}, {
+    "moveId": "CHARGE_BEAM",
+    "name": "Charge Beam",
+    "type": "electric",
+    "power": 5,
+    "energy": 0,
+    "energyGain": 11,
+    "cooldown": 1500,
+    "archetype": "Fast Charge"
+}, {
+    "moveId": "CHARM",
+    "name": "Charm",
+    "abbreviation": "Ch",
+    "type": "fairy",
+    "power": 16,
+    "energy": 0,
+    "energyGain": 6,
+    "cooldown": 1500,
+    "archetype": "Heavy Damage"
+}, {
+    "moveId": "CLOSE_COMBAT",
+    "name": "Close Combat",
+    "type": "fighting",
+    "power": 100,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, -2],
+    "buffTarget": "self",
+    "buffApplyChance": "1",
+    "archetype": "Self-Debuff"
+}, {
+    "moveId": "CONFUSION",
+    "name": "Confusion",
+    "abbreviation": "Cf",
+    "type": "psychic",
+    "power": 16,
+    "energy": 0,
+    "energyGain": 12,
+    "cooldown": 2000,
+    "archetype": "Multipurpose"
+}, {
+    "moveId": "COUNTER",
+    "name": "Counter",
+    "abbreviation": "C",
+    "type": "fighting",
+    "power": 8,
+    "energy": 0,
+    "energyGain": 7,
+    "cooldown": 1000,
+    "archetype": "Multipurpose"
+}, {
+    "moveId": "CRABHAMMER",
+    "name": "Crabhammer",
+    "abbreviation": "Crbh",
+    "type": "water",
+    "power": 85,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [2, 0],
+    "buffTarget": "self",
+    "buffApplyChance": ".125",
+    "archetype": "Boost"
+}, {
+    "moveId": "CROSS_CHOP",
+    "name": "Cross Chop",
+    "abbreviation": "CrC",
+    "type": "fighting",
+    "power": 50,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "CROSS_POISON",
+    "name": "Cross Poison",
+    "type": "poison",
+    "power": 50,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [2, 0],
+    "buffTarget": "self",
+    "buffApplyChance": ".125",
+    "archetype": "Boost Spam/Bait"
+}, {
+    "moveId": "CRUNCH",
+    "name": "Crunch",
+    "abbreviation": "Cr",
+    "type": "dark",
+    "power": 70,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": "0.3",
+    "archetype": "Debuff"
+}, {
+    "moveId": "CUT",
+    "name": "Cut",
+    "abbreviation": "Cu",
+    "type": "normal",
+    "power": 3,
+    "energy": 0,
+    "energyGain": 2,
+    "cooldown": 500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "DARK_PULSE",
+    "name": "Dark Pulse",
+    "type": "dark",
+    "power": 80,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "DAZZLING_GLEAM",
+    "name": "Dazzling Gleam",
+    "type": "fairy",
+    "power": 110,
+    "energy": 70,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "DIG",
+    "name": "Dig",
+    "abbreviation": "Dg",
+    "type": "ground",
+    "power": 100,
+    "energy": 80,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "DISARMING_VOICE",
+    "name": "Disarming Voice",
+    "type": "fairy",
+    "power": 70,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "DISCHARGE",
+    "name": "Discharge",
+    "type": "electric",
+    "power": 65,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "DOOM_DESIRE",
+    "name": "Doom Desire",
+    "type": "steel",
+    "power": 75,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "DRACO_METEOR",
+    "name": "Draco Meteor",
+    "type": "dragon",
+    "power": 150,
+    "energy": 65,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-2, 0],
+    "buffTarget": "self",
+    "buffApplyChance": "1",
+    "archetype": "Self-Debuff Nuke"
+}, {
+    "moveId": "DRAGON_BREATH",
+    "name": "Dragon Breath",
+    "type": "dragon",
+    "power": 4,
+    "energy": 0,
+    "energyGain": 3,
+    "cooldown": 500,
+    "archetype": "Multipurpose"
+}, {
+    "moveId": "DRAGON_CLAW",
+    "name": "Dragon Claw",
+    "type": "dragon",
+    "power": 50,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "DRAGON_PULSE",
+    "name": "Dragon Pulse",
+    "abbreviation": "DgP",
+    "type": "dragon",
+    "power": 90,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "DRAGON_TAIL",
+    "name": "Dragon Tail",
+    "type": "dragon",
+    "power": 13,
+    "energy": 0,
+    "energyGain": 9,
+    "cooldown": 1500,
+    "archetype": "Multipurpose"
+}, {
+    "moveId": "DRAIN_PUNCH",
+    "name": "Drain Punch",
+    "type": "fighting",
+    "power": 20,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, 1],
+    "buffTarget": "self",
+    "buffApplyChance": "1",
+    "archetype": "Boost Spam/Bait"
+}, {
+    "moveId": "DRAINING_KISS",
+    "name": "Draining Kiss",
+    "type": "fairy",
+    "power": 60,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "DRILL_PECK",
+    "name": "Drill Peck",
+    "abbreviation": "DrlP",
+    "type": "flying",
+    "power": 65,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "DRILL_RUN",
+    "name": "Drill Run",
+    "type": "ground",
+    "power": 80,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "DYNAMIC_PUNCH",
+    "name": "Dynamic Punch",
+    "abbreviation": "DyP",
+    "type": "fighting",
+    "power": 90,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "EARTHQUAKE",
+    "name": "Earthquake",
+    "abbreviation": "Eq",
+    "type": "ground",
+    "power": 120,
+    "energy": 65,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "EARTH_POWER",
+    "name": "Earth Power",
+    "type": "ground",
+    "power": 90,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": ".1",
+    "archetype": "High Energy Debuff"
+}, {
+    "moveId": "EMBER",
+    "name": "Ember",
+    "type": "fire",
+    "power": 7,
+    "energy": 0,
+    "energyGain": 6,
+    "cooldown": 1000,
+    "archetype": "Heavy Damage"
+}, {
+    "moveId": "ENERGY_BALL",
+    "name": "Energy Ball",
+    "type": "grass",
+    "power": 90,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": ".1",
+    "archetype": "High Energy Debuff"
+}, {
+    "moveId": "EXTRASENSORY",
+    "name": "Extrasensory",
+    "abbreviation": "Ex",
+    "type": "psychic",
+    "power": 8,
+    "energy": 0,
+    "energyGain": 10,
+    "cooldown": 1500,
+    "archetype": "General"
+}, {
+    "moveId": "FEINT_ATTACK",
+    "name": "Feint Attack",
+    "type": "dark",
+    "power": 6,
+    "energy": 0,
+    "energyGain": 6,
+    "cooldown": 1000,
+    "archetype": "General"
+}, {
+    "moveId": "FELL_STINGER",
+    "name": "Fell Stinger",
+    "abbreviation": "FeS",
+    "type": "bug",
+    "power": 20,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [1, 0],
+    "buffTarget": "self",
+    "buffApplyChance": "1",
+    "archetype": "Boost Spam/Bait"
+}, {
+    "moveId": "FIRE_BLAST",
+    "name": "Fire Blast",
+    "abbreviation": "FiB",
+    "type": "fire",
+    "power": 140,
+    "energy": 80,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "FIRE_FANG",
+    "name": "Fire Fang",
+    "type": "fire",
+    "power": 8,
+    "energy": 0,
+    "energyGain": 5,
+    "cooldown": 1000,
+    "archetype": "Heavy Damage"
+}, {
+    "moveId": "FIRE_PUNCH",
+    "name": "Fire Punch",
+    "abbreviation": "FiP",
+    "type": "fire",
+    "power": 55,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "BLAZE_KICK",
+    "name": "Blaze Kick",
+    "type": "fire",
+    "power": 55,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "FEATHER_DANCE",
+    "name": "Feather Dance",
+    "abbreviation": "FrD",
+    "type": "flying",
+    "power": 35,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-2, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": "1",
+    "archetype": "Debuff"
+}, {
+    "moveId": "FIRE_SPIN",
+    "name": "Fire Spin",
+    "type": "fire",
+    "power": 9,
+    "energy": 0,
+    "energyGain": 10,
+    "cooldown": 1500,
+    "archetype": "General"
+}, {
+    "moveId": "FLAME_BURST",
+    "name": "Flame Burst",
+    "abbreviation": "FmB",
+    "type": "fire",
+    "power": 70,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "FLAME_CHARGE",
+    "name": "Flame Charge",
+    "abbreviation": "FmC",
+    "type": "fire",
+    "power": 65,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [1, 0],
+    "buffTarget": "self",
+    "buffApplyChance": "1",
+    "archetype": "Boost"
+}, {
+    "moveId": "FLAME_WHEEL",
+    "name": "Flame Wheel",
+    "type": "fire",
+    "power": 60,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "FLAMETHROWER",
+    "name": "Flamethrower",
+    "abbreviation": "Ft",
+    "type": "fire",
+    "power": 90,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "FLASH_CANNON",
+    "name": "Flash Cannon",
+    "type": "steel",
+    "power": 110,
+    "energy": 70,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "FLY",
+    "name": "Fly",
+    "type": "flying",
+    "power": 80,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "FLYING_PRESS",
+    "name": "Flying Press",
+    "abbreviation": "FlP",
+    "type": "fighting",
+    "power": 90,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "FOCUS_BLAST",
+    "name": "Focus Blast",
+    "type": "fighting",
+    "power": 150,
+    "energy": 75,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "FOUL_PLAY",
+    "name": "Foul Play",
+    "abbreviation": "FoP",
+    "type": "dark",
+    "power": 70,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "FRENZY_PLANT",
+    "name": "Frenzy Plant",
+    "type": "grass",
+    "power": 100,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "FROST_BREATH",
+    "name": "Frost Breath",
+    "type": "ice",
+    "power": 7,
+    "energy": 0,
+    "energyGain": 5,
+    "cooldown": 1000,
+    "archetype": "Heavy Damage"
+}, {
+    "moveId": "FRUSTRATION",
+    "name": "Frustration",
+    "type": "normal",
+    "power": 10,
+    "energy": 70,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "FURY_CUTTER",
+    "name": "Fury Cutter",
+    "type": "bug",
+    "power": 2,
+    "energy": 0,
+    "energyGain": 4,
+    "cooldown": 500,
+    "archetype": "Fast Charge"
+}, {
+    "moveId": "FUTURE_SIGHT",
+    "name": "Future Sight",
+    "type": "psychic",
+    "power": 120,
+    "energy": 65,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "GIGA_DRAIN",
+    "name": "Giga Drain",
+    "type": "grass",
+    "power": 50,
+    "energy": 80,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "GIGA_IMPACT",
+    "name": "Giga Impact",
+    "type": "normal",
+    "power": 150,
+    "energy": 80,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "GRASS_KNOT",
+    "name": "Grass Knot",
+    "type": "grass",
+    "power": 90,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "GUNK_SHOT",
+    "name": "Gunk Shot",
+    "type": "poison",
+    "power": 130,
+    "energy": 75,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "GUST",
+    "name": "Gust",
+    "type": "flying",
+    "power": 16,
+    "energy": 0,
+    "energyGain": 12,
+    "cooldown": 2000,
+    "archetype": "Multipurpose"
+}, {
+    "moveId": "GYRO_BALL",
+    "name": "Gyro Ball",
+    "type": "steel",
+    "power": 80,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "HEART_STAMP",
+    "name": "Heart Stamp",
+    "type": "psychic",
+    "power": 40,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "HEAT_WAVE",
+    "name": "Heat Wave",
+    "type": "fire",
+    "power": 95,
+    "energy": 75,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "HEAVY_SLAM",
+    "name": "Heavy Slam",
+    "type": "steel",
+    "power": 70,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "HEX",
+    "name": "Hex",
+    "type": "ghost",
+    "power": 6,
+    "energy": 0,
+    "energyGain": 12,
+    "cooldown": 1500,
+    "archetype": "Fast Charge"
+}, {
+    "moveId": "HIDDEN_POWER_BUG",
+    "name": "Hidden Power (Bug)",
+    "type": "bug",
+    "power": 9,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "HIDDEN_POWER_DARK",
+    "name": "Hidden Power (Dark)",
+    "type": "dark",
+    "power": 9,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "HIDDEN_POWER_DRAGON",
+    "name": "Hidden Power (Dragon)",
+    "type": "dragon",
+    "power": 9,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "HIDDEN_POWER_ELECTRIC",
+    "name": "Hidden Power (Electric)",
+    "type": "electric",
+    "power": 9,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "HIDDEN_POWER_FIGHTING",
+    "name": "Hidden Power (Fighting)",
+    "type": "fighting",
+    "power": 9,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "HIDDEN_POWER_FIRE",
+    "name": "Hidden Power (Fire)",
+    "type": "fire",
+    "power": 9,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "HIDDEN_POWER_FLYING",
+    "name": "Hidden Power (Flying)",
+    "type": "flying",
+    "power": 9,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "HIDDEN_POWER_GHOST",
+    "name": "Hidden Power (Ghost)",
+    "type": "ghost",
+    "power": 9,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "HIDDEN_POWER_GRASS",
+    "name": "Hidden Power (Grass)",
+    "type": "grass",
+    "power": 9,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "HIDDEN_POWER_GROUND",
+    "name": "Hidden Power (Ground)",
+    "type": "ground",
+    "power": 9,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "HIDDEN_POWER_ICE",
+    "name": "Hidden Power (Ice)",
+    "type": "ice",
+    "power": 9,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "HIDDEN_POWER_POISON",
+    "name": "Hidden Power (Poison)",
+    "type": "poison",
+    "power": 9,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "HIDDEN_POWER_PSYCHIC",
+    "name": "Hidden Power (Psychic)",
+    "type": "psychic",
+    "power": 9,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "HIDDEN_POWER_ROCK",
+    "name": "Hidden Power (Rock)",
+    "type": "rock",
+    "power": 9,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "HIDDEN_POWER_STEEL",
+    "name": "Hidden Power (Steel)",
+    "type": "steel",
+    "power": 9,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "HIDDEN_POWER_WATER",
+    "name": "Hidden Power (Water)",
+    "type": "water",
+    "power": 9,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "HORN_ATTACK",
+    "name": "Horn Attack",
+    "type": "normal",
+    "power": 40,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "HURRICANE",
+    "name": "Hurricane",
+    "abbreviation": "Hu",
+    "type": "flying",
+    "power": 110,
+    "energy": 65,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "HYDRO_CANNON",
+    "name": "Hydro Cannon",
+    "type": "water",
+    "power": 80,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "HYDRO_PUMP",
+    "name": "Hydro Pump",
+    "type": "water",
+    "power": 130,
+    "energy": 75,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "HYDRO_PUMP_BLASTOISE",
+    "name": "Hydro Pump Blastoise",
+    "type": "water",
+    "power": 90,
+    "energy": 80,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "HYPER_BEAM",
+    "name": "Hyper Beam",
+    "type": "normal",
+    "power": 150,
+    "energy": 80,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "HYPER_FANG",
+    "name": "Hyper Fang",
+    "type": "normal",
+    "power": 80,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "ICE_BEAM",
+    "name": "Ice Beam",
+    "type": "ice",
+    "power": 90,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "ICE_FANG",
+    "name": "Ice Fang",
+    "type": "ice",
+    "power": 8,
+    "energy": 0,
+    "energyGain": 5,
+    "cooldown": 1000,
+    "archetype": "Heavy Damage"
+}, {
+    "moveId": "ICE_PUNCH",
+    "name": "Ice Punch",
+    "type": "ice",
+    "power": 55,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "ICE_SHARD",
+    "name": "Ice Shard",
+    "type": "ice",
+    "power": 9,
+    "energy": 0,
+    "energyGain": 10,
+    "cooldown": 1500,
+    "archetype": "General"
+}, {
+    "moveId": "ICICLE_SPEAR",
+    "name": "Icicle Spear",
+    "type": "ice",
+    "power": 60,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait",
+    "abbreviation": "ISp"
+}, {
+    "moveId": "ICY_WIND",
+    "name": "Icy Wind",
+    "type": "ice",
+    "power": 60,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": "1",
+    "archetype": "Debuff"
+}, {
+    "moveId": "INCINERATE",
+    "name": "Incinerate",
+    "type": "fire",
+    "power": 15,
+    "energy": 0,
+    "energyGain": 20,
+    "cooldown": 2500,
+    "archetype": "Multipurpose"
+}, {
+    "moveId": "INFESTATION",
+    "name": "Infestation",
+    "type": "bug",
+    "power": 6,
+    "energy": 0,
+    "energyGain": 12,
+    "cooldown": 1500,
+    "archetype": "Fast Charge"
+}, {
+    "moveId": "IRON_HEAD",
+    "name": "Iron Head",
+    "type": "steel",
+    "power": 70,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "IRON_TAIL",
+    "name": "Iron Tail",
+    "type": "steel",
+    "power": 9,
+    "energy": 0,
+    "energyGain": 6,
+    "cooldown": 1500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "KARATE_CHOP",
+    "name": "Karate Chop",
+    "type": "fighting",
+    "power": 5,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1000,
+    "archetype": "Fast Charge"
+}, {
+    "moveId": "LAST_RESORT",
+    "name": "Last Resort",
+    "type": "normal",
+    "power": 90,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "LEAF_BLADE",
+    "name": "Leaf Blade",
+    "type": "grass",
+    "power": 70,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "LEAF_TORNADO",
+    "name": "Leaf Tornado",
+    "type": "grass",
+    "power": 45,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-2, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": ".5",
+    "archetype": "Debuff Spam/Bait"
+}, {
+    "moveId": "LEAF_STORM",
+    "name": "Leaf Storm",
+    "abbreviation": "LfS",
+    "type": "grass",
+    "power": 130,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-2, 0],
+    "buffTarget": "self",
+    "buffApplyChance": "1",
+    "archetype": "Self-Debuff Nuke"
+}, {
+    "moveId": "LICK",
+    "name": "Lick",
+    "type": "ghost",
+    "power": 3,
+    "energy": 0,
+    "energyGain": 3,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "LOCK_ON",
+    "name": "Lock On",
+    "type": "normal",
+    "power": 1,
+    "energy": 0,
+    "energyGain": 5,
+    "cooldown": 500,
+    "archetype": "Fast Charge"
+}, {
+    "moveId": "LOW_KICK",
+    "name": "Low Kick",
+    "type": "fighting",
+    "power": 4,
+    "energy": 0,
+    "energyGain": 5,
+    "cooldown": 1000,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "LOW_SWEEP",
+    "name": "Low Sweep",
+    "type": "fighting",
+    "power": 40,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "LUNGE",
+    "name": "Lunge",
+    "abbreviation": "Lu",
+    "type": "bug",
+    "power": 60,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": "1",
+    "archetype": "Debuff"
+}, {
+    "moveId": "LUSTER_PURGE",
+    "name": "Luster Purge",
+    "abbreviation": "LrP",
+    "type": "psychic",
+    "power": 120,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": "0.5",
+    "archetype": "Debuff"
+}, {
+    "moveId": "MAGICAL_LEAF",
+    "name": "Magical Leaf",
+    "type": "grass",
+    "power": 10,
+    "energy": 0,
+    "energyGain": 10,
+    "cooldown": 1500,
+    "archetype": "General"
+}, {
+    "moveId": "MAGNET_BOMB",
+    "name": "Magnet Bomb",
+    "abbreviation": "MgB",
+    "type": "steel",
+    "power": 70,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "MEGA_DRAIN",
+    "name": "Mega Drain",
+    "type": "grass",
+    "power": 25,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "MEGAHORN",
+    "name": "Megahorn",
+    "abbreviation": "Mh",
+    "type": "bug",
+    "power": 110,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "METAL_CLAW",
+    "name": "Metal Claw",
+    "type": "steel",
+    "power": 5,
+    "energy": 0,
+    "energyGain": 6,
+    "cooldown": 1000,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "METEOR_MASH",
+    "name": "Meteor Mash",
+    "type": "steel",
+    "power": 100,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "MIRROR_COAT",
+    "name": "Mirror Coat",
+    "abbreviation": "MrC",
+    "type": "psychic",
+    "power": 60,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "MIRROR_SHOT",
+    "name": "Mirror Shot",
+    "abbreviation": "MrS",
+    "type": "steel",
+    "power": 35,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": ".3",
+    "archetype": "Debuff Spam/Bait"
+}, {
+    "moveId": "MIST_BALL",
+    "name": "Mist Ball",
+    "abbreviation": "MsB",
+    "type": "psychic",
+    "power": 120,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": "0.5",
+    "archetype": "Debuff"
+}, {
+    "moveId": "MOONBLAST",
+    "name": "Moonblast",
+    "type": "fairy",
+    "power": 110,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": ".1",
+    "archetype": "Debuff Nuke"
+}, {
+    "moveId": "MUD_BOMB",
+    "name": "Mud Bomb",
+    "type": "ground",
+    "power": 55,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "MUDDY_WATER",
+    "name": "Muddy Water",
+    "type": "water",
+    "power": 35,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 1000,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": ".3",
+    "archetype": "Debuff Spam/Bait"
+}, {
+    "moveId": "MUD_SHOT",
+    "name": "Mud Shot",
+    "type": "ground",
+    "power": 3,
+    "energy": 0,
+    "energyGain": 9,
+    "cooldown": 1000,
+    "archetype": "Fast Charge"
+}, {
+    "moveId": "MUD_SLAP",
+    "name": "Mud Slap",
+    "abbreviation": "MSl",
+    "type": "ground",
+    "power": 11,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1500,
+    "archetype": "Heavy Damage"
+}, {
+    "moveId": "NIGHT_SHADE",
+    "name": "Night Shade",
+    "abbreviation": "NSh",
+    "type": "ghost",
+    "power": 60,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "NIGHT_SLASH",
+    "name": "Night Slash",
+    "type": "dark",
+    "power": 50,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [2, 0],
+    "buffTarget": "self",
+    "buffApplyChance": ".125",
+    "archetype": "Boost Spam/Bait"
+}, {
+    "moveId": "OCTAZOOKA",
+    "name": "Octazooka",
+    "abbreviation": "Oc",
+    "type": "water",
+    "power": 50,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-2, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": "0.5",
+    "archetype": "Debuff"
+}, {
+    "moveId": "OMINOUS_WIND",
+    "name": "Ominous Wind",
+    "type": "ghost",
+    "power": 45,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [2, 2],
+    "buffTarget": "self",
+    "buffApplyChance": ".1",
+    "archetype": "Boost"
+}, {
+    "moveId": "ORIGIN_PULSE",
+    "name": "Origin Pulse",
+    "type": "water",
+    "power": 130,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "OUTRAGE",
+    "name": "Outrage",
+    "type": "dragon",
+    "power": 110,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "OVERHEAT",
+    "name": "Overheat",
+    "abbreviation": "Ov",
+    "type": "fire",
+    "power": 130,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-2, 0],
+    "buffTarget": "self",
+    "buffApplyChance": "1",
+    "archetype": "Self-Debuff Nuke"
+}, {
+    "moveId": "PARABOLIC_CHARGE",
+    "name": "Parabolic Charge",
+    "abbreviation": "PbC",
+    "type": "electric",
+    "power": 65,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "PAYBACK",
+    "name": "Payback",
+    "abbreviation": "Pbk",
+    "type": "dark",
+    "power": 110,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "PECK",
+    "name": "Peck",
+    "abbreviation": "Pk",
+    "type": "flying",
+    "power": 6,
+    "energy": 0,
+    "energyGain": 5,
+    "cooldown": 1000,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "PETAL_BLIZZARD",
+    "name": "Petal Blizzard",
+    "abbreviation": "PlB",
+    "type": "grass",
+    "power": 110,
+    "energy": 65,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "PLAY_ROUGH",
+    "name": "Play Rough",
+    "type": "fairy",
+    "power": 90,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "POISON_FANG",
+    "name": "Poison Fang",
+    "type": "poison",
+    "power": 40,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": "1",
+    "archetype": "Debuff Spam/Bait"
+}, {
+    "moveId": "POISON_JAB",
+    "name": "Poison Jab",
+    "type": "poison",
+    "power": 7,
+    "energy": 0,
+    "energyGain": 7,
+    "cooldown": 1000,
+    "archetype": "General"
+}, {
+    "moveId": "POISON_STING",
+    "name": "Poison Sting",
+    "abbreviation": "PSt",
+    "type": "poison",
+    "power": 3,
+    "energy": 0,
+    "energyGain": 9,
+    "cooldown": 1000,
+    "archetype": "Fast Charge"
+}, {
+    "moveId": "POUND",
+    "name": "Pound",
+    "abbreviation": "Pd",
+    "type": "normal",
+    "power": 4,
+    "energy": 0,
+    "energyGain": 4,
+    "cooldown": 1000,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "POWDER_SNOW",
+    "name": "Powder Snow",
+    "type": "ice",
+    "power": 5,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1000,
+    "archetype": "Fast Charge"
+}, {
+    "moveId": "POWER_GEM",
+    "name": "Power Gem",
+    "type": "rock",
+    "power": 80,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "POWER_UP_PUNCH",
+    "name": "Power-Up Punch",
+    "type": "fighting",
+    "power": 20,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [1, 0],
+    "buffTarget": "self",
+    "buffApplyChance": "1",
+    "archetype": "Boost Spam/Bait"
+}, {
+    "moveId": "POWER_WHIP",
+    "name": "Power Whip",
+    "type": "grass",
+    "power": 90,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "PRECIPICE_BLADES",
+    "name": "Precipice Blades",
+    "abbreviation": "PrB",
+    "type": "ground",
+    "power": 130,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "PRESENT",
+    "name": "Present",
+    "abbreviation": "Pr",
+    "type": "normal",
+    "power": 3,
+    "energy": 0,
+    "energyGain": 12,
+    "cooldown": 1500,
+    "archetype": "Fast Charge"
+}, {
+    "moveId": "PSYBEAM",
+    "name": "Psybeam",
+    "abbreviation": "Psb",
+    "type": "psychic",
+    "power": 70,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "PSYCHIC",
+    "name": "Psychic",
+    "type": "psychic",
+    "power": 90,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": ".1",
+    "archetype": "High Energy Debuff"
+}, {
+    "moveId": "PSYCHIC_FANGS",
+    "name": "Psychic Fangs",
+    "type": "psychic",
+    "power": 40,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": "1",
+    "archetype": "Debuff Spam/Bait"
+}, {
+    "moveId": "PSYCHO_BOOST",
+    "name": "Psycho Boost",
+    "type": "psychic",
+    "power": 70,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-2, 0],
+    "buffTarget": "self",
+    "buffApplyChance": "1",
+    "archetype": "Self-Debuff Spam"
+}, {
+    "moveId": "PSYCHO_CUT",
+    "name": "Psycho Cut",
+    "type": "psychic",
+    "power": 3,
+    "energy": 0,
+    "energyGain": 9,
+    "cooldown": 1000,
+    "archetype": "Fast Charge"
+}, {
+    "moveId": "PSYSHOCK",
+    "name": "Psyshock",
+    "abbreviation": "Psh",
+    "type": "psychic",
+    "power": 70,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "PSYSTRIKE",
+    "name": "Psystrike",
+    "abbreviation": "Pst",
+    "type": "psychic",
+    "power": 90,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "QUICK_ATTACK",
+    "name": "Quick Attack",
+    "type": "normal",
+    "power": 5,
+    "energy": 0,
+    "energyGain": 7,
+    "cooldown": 1000,
+    "archetype": "Fast Charge"
+}, {
+    "moveId": "RAZOR_LEAF",
+    "name": "Razor Leaf",
+    "type": "grass",
+    "power": 10,
+    "energy": 0,
+    "energyGain": 4,
+    "cooldown": 1000,
+    "archetype": "Heavy Damage"
+}, {
+    "moveId": "RAZOR_SHELL",
+    "name": "Razor Shell",
+    "abbreviation": "RSh",
+    "type": "water",
+    "power": 35,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": "0.5",
+    "archetype": "Spam/Bait Debuff"
+}, {
+    "moveId": "REST",
+    "name": "Rest",
+    "type": "normal",
+    "power": 50,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "RETURN",
+    "name": "Return",
+    "abbreviation": "Re",
+    "type": "normal",
+    "power": 130,
+    "energy": 70,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "ROCK_BLAST",
+    "name": "Rock Blast",
+    "type": "rock",
+    "power": 50,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "ROCK_SLIDE",
+    "name": "Rock Slide",
+    "type": "rock",
+    "power": 75,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "ROCK_SMASH",
+    "name": "Rock Smash",
+    "abbreviation": "RSm",
+    "type": "fighting",
+    "power": 9,
+    "energy": 0,
+    "energyGain": 7,
+    "cooldown": 1500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "ROCK_THROW",
+    "name": "Rock Throw",
+    "abbreviation": "RTh",
+    "type": "rock",
+    "power": 8,
+    "energy": 0,
+    "energyGain": 5,
+    "cooldown": 1000,
+    "archetype": "Heavy Damage"
+}, {
+    "moveId": "ROCK_TOMB",
+    "name": "Rock Tomb",
+    "type": "rock",
+    "power": 70,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": "1",
+    "archetype": "High Energy Debuff"
+}, {
+    "moveId": "ROCK_WRECKER",
+    "name": "Rock Wrecker",
+    "type": "rock",
+    "power": 110,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "ROLLOUT",
+    "name": "Rollout (Speculative)",
+    "abbreviation": "RO",
+    "type": "rock",
+    "power": 4,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1000,
+    "archetype": "Fast Charge"
+}, {
+    "moveId": "SACRED_FIRE",
+    "name": "Sacred Fire",
+    "type": "fire",
+    "power": 130,
+    "energy": 65,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": "0.5",
+    "archetype": "Debuff"
+}, {
+    "moveId": "SACRED_SWORD",
+    "name": "Sacred Sword",
+    "abbreviation": "SSw",
+    "type": "fighting",
+    "power": 60,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "SAND_TOMB",
+    "name": "Sand Tomb",
+    "type": "ground",
+    "power": 25,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": "1",
+    "archetype": "Debuff Spam/Bait"
+}, {
+    "moveId": "SCALD",
+    "name": "Scald",
+    "abbreviation": "Sc",
+    "type": "water",
+    "power": 80,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": "0.3",
+    "archetype": "High Energy Debuff"
+}, {
+    "moveId": "SCALD_BLASTOISE",
+    "name": "Scald Blastoise",
+    "type": "water",
+    "power": 50,
+    "energy": 80,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "SCRATCH",
+    "name": "Scratch",
+    "abbreviation": "Scr",
+    "type": "normal",
+    "power": 4,
+    "energy": 0,
+    "energyGain": 2,
+    "cooldown": 500,
+    "archetype": "Heavy Damage"
+}, {
+    "moveId": "SEED_BOMB",
+    "name": "Seed Bomb",
+    "abbreviation": "SeB",
+    "type": "grass",
+    "power": 55,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "SHADOW_BALL",
+    "name": "Shadow Ball",
+    "type": "ghost",
+    "power": 100,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "SHADOW_BONE",
+    "name": "Shadow Bone",
+    "abbreviation": "SBo",
+    "type": "ghost",
+    "power": 75,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": ".2",
+    "archetype": "Debuff"
+}, {
+    "moveId": "SHADOW_CLAW",
+    "name": "Shadow Claw",
+    "type": "ghost",
+    "power": 6,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1000,
+    "archetype": "Multipurpose"
+}, {
+    "moveId": "SHADOW_PUNCH",
+    "name": "Shadow Punch",
+    "abbreviation": "ShP",
+    "type": "ghost",
+    "power": 40,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "SHADOW_SNEAK",
+    "name": "Shadow Sneak",
+    "type": "ghost",
+    "power": 50,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "SIGNAL_BEAM",
+    "name": "Signal Beam",
+    "type": "bug",
+    "power": 75,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-1, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": ".2",
+    "archetype": "High Energy Debuff"
+}, {
+    "moveId": "SILVER_WIND",
+    "name": "Silver Wind",
+    "abbreviation": "SvW",
+    "type": "bug",
+    "power": 45,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [2, 2],
+    "buffTarget": "self",
+    "buffApplyChance": ".1",
+    "archetype": "Boost"
+}, {
+    "moveId": "SKULL_BASH",
+    "name": "Skull Bash",
+    "abbreviation": "SkB",
+    "type": "normal",
+    "power": 130,
+    "energy": 75,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, 1],
+    "buffTarget": "self",
+    "buffApplyChance": "1",
+    "archetype": "Boost Nuke"
+}, {
+    "moveId": "SKY_ATTACK",
+    "name": "Sky Attack",
+    "type": "flying",
+    "power": 75,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "SLUDGE",
+    "name": "Sludge",
+    "type": "poison",
+    "power": 50,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "SLUDGE_BOMB",
+    "name": "Sludge Bomb",
+    "abbreviation": "SlB",
+    "type": "poison",
+    "power": 80,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "SLUDGE_WAVE",
+    "name": "Sludge Wave",
+    "type": "poison",
+    "power": 110,
+    "energy": 65,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "SMACK_DOWN",
+    "name": "Smack Down",
+    "type": "rock",
+    "power": 12,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1500,
+    "archetype": "Heavy Damage"
+}, {
+    "moveId": "SNARL",
+    "name": "Snarl",
+    "abbreviation": "Sn",
+    "type": "dark",
+    "power": 5,
+    "energy": 0,
+    "energyGain": 13,
+    "cooldown": 1500,
+    "archetype": "Fast Charge"
+}, {
+    "moveId": "SOLAR_BEAM",
+    "name": "Solar Beam",
+    "abbreviation": "SoB",
+    "type": "grass",
+    "power": 150,
+    "energy": 80,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "SPARK",
+    "name": "Spark",
+    "abbreviation": "Sp",
+    "type": "electric",
+    "power": 4,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1000,
+    "archetype": "Fast Charge"
+}, {
+    "moveId": "SPLASH",
+    "name": "Splash",
+    "abbreviation": "Spl",
+    "type": "water",
+    "power": 0,
+    "energy": 0,
+    "energyGain": 12,
+    "cooldown": 2000,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "STEEL_WING",
+    "name": "Steel Wing",
+    "abbreviation": "StW",
+    "type": "steel",
+    "power": 7,
+    "energy": 0,
+    "energyGain": 5,
+    "cooldown": 1000,
+    "archetype": "Heavy Damage"
+}, {
+    "moveId": "STOMP",
+    "name": "Stomp",
+    "abbreviation": "St",
+    "type": "normal",
+    "power": 55,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "STONE_EDGE",
+    "name": "Stone Edge",
+    "type": "rock",
+    "power": 100,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "STRUGGLE",
+    "name": "Struggle",
+    "abbreviation": "Str",
+    "type": "normal",
+    "power": 35,
+    "energy": 100,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "STRUGGLE_BUG",
+    "name": "Struggle Bug",
+    "abbreviation": "StB",
+    "type": "bug",
+    "power": 9,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "SUBMISSION",
+    "name": "Submission",
+    "abbreviation": "Sm",
+    "type": "fighting",
+    "power": 60,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "SUCKER_PUNCH",
+    "name": "Sucker Punch",
+    "abbreviation": "SkP",
+    "type": "dark",
+    "power": 5,
+    "energy": 0,
+    "energyGain": 7,
+    "cooldown": 1000,
+    "archetype": "Fast Charge"
+}, {
+    "moveId": "SUPER_POWER",
+    "name": "Superpower",
+    "type": "fighting",
+    "power": 85,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-1, -1],
+    "buffTarget": "self",
+    "buffApplyChance": "1",
+    "archetype": "Self-Debuff Spam"
+}, {
+    "moveId": "SURF",
+    "name": "Surf",
+    "type": "water",
+    "power": 65,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "SWIFT",
+    "name": "Swift",
+    "abbreviation": "Sw",
+    "type": "normal",
+    "power": 60,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "SYNCHRONOISE",
+    "name": "Synchronoise",
+    "abbreviation": "Sy",
+    "type": "psychic",
+    "power": 80,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "TACKLE",
+    "name": "Tackle",
+    "abbreviation": "Tk",
+    "type": "normal",
+    "power": 3,
+    "energy": 0,
+    "energyGain": 2,
+    "cooldown": 500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "TAKE_DOWN",
+    "name": "Take Down",
+    "type": "normal",
+    "power": 5,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1500,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "TECHNO_BLAST_NORMAL",
+    "name": "Techno Blast (Normal)",
+    "type": "normal",
+    "power": 120,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "TECHNO_BLAST_BURN",
+    "name": "Techno Blast (Burn)",
+    "type": "fire",
+    "power": 120,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "TECHNO_BLAST_CHILL",
+    "name": "Techno Blast (Chill)",
+    "type": "ice",
+    "power": 120,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "TECHNO_BLAST_DOUSE",
+    "name": "Techno Blast (Douse)",
+    "type": "water",
+    "power": 120,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "TECHNO_BLAST_SHOCK",
+    "name": "Techno Blast (Shock)",
+    "type": "electric",
+    "power": 120,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
+    "moveId": "THUNDER",
+    "name": "Thunder",
+    "type": "electric",
+    "power": 100,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "THUNDER_FANG",
+    "name": "Thunder Fang",
+    "type": "electric",
+    "power": 8,
+    "energy": 0,
+    "energyGain": 5,
+    "cooldown": 1000,
+    "archetype": "Heavy Damage"
+}, {
+    "moveId": "THUNDER_PUNCH",
+    "name": "Thunder Punch",
+    "type": "electric",
+    "power": 55,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "THUNDER_SHOCK",
+    "name": "Thunder Shock",
+    "type": "electric",
+    "power": 3,
+    "energy": 0,
+    "energyGain": 9,
+    "cooldown": 1000,
+    "archetype": "Fast Charge"
+}, {
+    "moveId": "THUNDERBOLT",
+    "name": "Thunderbolt",
+    "abbreviation": "Tb",
+    "type": "electric",
+    "power": 90,
+    "energy": 55,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "TRANSFORM",
+    "name": "Transform",
+    "type": "normal",
+    "power": 0,
+    "energy": 0,
+    "energyGain": 0,
+    "cooldown": 1500
+}, {
+    "moveId": "TRI_ATTACK",
+    "name": "Tri Attack",
+    "type": "normal",
+    "power": 65,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-1, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": ".5",
+    "archetype": "Debuff"
+}, {
+    "moveId": "TWISTER",
+    "name": "Twister",
+    "abbreviation": "Tw",
+    "type": "dragon",
+    "power": 45,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "V_CREATE",
+    "name": "V-Create",
+    "type": "fire",
+    "power": 95,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, -3],
+    "buffTarget": "self",
+    "buffApplyChance": "1",
+    "archetype": "Self-Debuff Spam"
+}, {
+    "moveId": "VICE_GRIP",
+    "name": "Vise Grip",
+    "type": "normal",
+    "power": 40,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "VINE_WHIP",
+    "name": "Vine Whip",
+    "type": "grass",
+    "power": 5,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1000,
+    "archetype": "Fast Charge"
+}, {
+    "moveId": "VOLT_SWITCH",
+    "name": "Volt Switch",
+    "type": "electric",
+    "power": 12,
+    "energy": 0,
+    "energyGain": 16,
+    "cooldown": 2000,
+    "archetype": "Multipurpose"
+}, {
+    "moveId": "WATER_GUN",
+    "name": "Water Gun",
+    "type": "water",
+    "power": 3,
+    "energy": 0,
+    "energyGain": 3,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "WATER_GUN_FAST_BLASTOISE",
+    "name": "Water Gun Fast Blastoise",
+    "type": "water",
+    "power": 6,
+    "energy": 0,
+    "energyGain": 4,
+    "cooldown": 1000,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "WATER_PULSE",
+    "name": "Water Pulse",
+    "type": "water",
+    "power": 70,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "High Energy"
+}, {
+    "moveId": "WATERFALL",
+    "name": "Waterfall",
+    "type": "water",
+    "power": 12,
+    "energy": 0,
+    "energyGain": 8,
+    "cooldown": 1500,
+    "archetype": "Heavy Damage"
+}, {
+    "moveId": "WEATHER_BALL_FIRE",
+    "name": "Weather Ball (Fire)",
+    "type": "fire",
+    "power": 55,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "WEATHER_BALL_ICE",
+    "name": "Weather Ball (Ice)",
+    "type": "ice",
+    "power": 55,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "WEATHER_BALL_ROCK",
+    "name": "Weather Ball (Rock)",
+    "type": "rock",
+    "power": 55,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "WEATHER_BALL_NORMAL",
+    "name": "Weather Ball (Normal)",
+    "type": "normal",
+    "power": 55,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "WEATHER_BALL_WATER",
+    "name": "Weather Ball (Water)",
+    "type": "water",
+    "power": 55,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "WILD_CHARGE",
+    "name": "Wild Charge",
+    "type": "electric",
+    "power": 100,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, -2],
+    "buffTarget": "self",
+    "buffApplyChance": "1",
+    "archetype": "Self-Debuff"
+}, {
+    "moveId": "WING_ATTACK",
+    "name": "Wing Attack",
+    "type": "flying",
+    "power": 5,
+    "energy": 0,
+    "energyGain": 7,
+    "cooldown": 1000,
+    "archetype": "Fast Charge"
+}, {
+    "moveId": "WRAP",
+    "name": "Wrap",
+    "abbreviation": "Wr",
+    "type": "normal",
+    "power": 60,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "WRAP_GREEN",
+    "name": "Wrap Green",
+    "type": "normal",
+    "power": 25,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "WRAP_PINK",
+    "name": "Wrap Pink",
+    "type": "normal",
+    "power": 25,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
+    "moveId": "X_SCISSOR",
+    "name": "X-Scissor",
+    "type": "bug",
+    "power": 45,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
+    "moveId": "YAWN",
+    "name": "Yawn",
+    "type": "normal",
+    "power": 0,
+    "energy": 0,
+    "energyGain": 12,
+    "cooldown": 2000,
+    "archetype": "Low Quality"
+}, {
+    "moveId": "ZAP_CANNON",
+    "name": "Zap Cannon",
+    "type": "electric",
+    "power": 150,
+    "energy": 80,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": "1",
+    "archetype": "Debuff Nuke"
+}, {
+    "moveId": "ZEN_HEADBUTT",
+    "name": "Zen Headbutt",
+    "type": "psychic",
+    "power": 8,
+    "energy": 0,
+    "energyGain": 6,
+    "cooldown": 1500,
+    "archetype": "Low Quality"
+}]
