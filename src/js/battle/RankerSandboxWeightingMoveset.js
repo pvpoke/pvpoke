@@ -431,6 +431,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if(cup.name == "colony"){
+					iterations = 1;
+				}
+
 				if(cup.name == "halloween"){
 					iterations = 1;
 				}

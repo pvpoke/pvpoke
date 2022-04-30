@@ -1,0 +1,18 @@
+{
+	"name": "colony",
+	"title": "Silph Factions Colony Field",
+	"include": [{
+		"filterType": "type",
+		"values":  ["bug", "electric", "ground", "ice", "psychic", "water"]
+	}],
+	"exclude": [{
+		"filterType": "type",
+		"values":  ["fairy","fighting","flying"]
+	}, {
+		"filterType": "id",
+		"values": ["abomasnow", "deoxys_defense", "diggersby", "escavalier", "forretress", "genesect", "jellicent", "pachirisu", "steelix", "stunfisk_galarian", "swampert", "whiscash", "walrein", "wobbuffet", "wormadam_trash"]
+	}, {
+		"filterType": "tag",
+		"values": ["mega","shadow"]
+	}]
+}

@@ -99,8 +99,12 @@ switch($cup){
 		$league = 'Silph Firefly Cup';
 		break;
 
-	case "cometultra":
-		$league = 'Silph Factions';
+	case "alchemy":
+		$league = 'Silph Factions (Alchemy)';
+		break;
+
+	case "colony":
+		$league = 'Silph Factions (Colony)';
 		break;
 
 	case "flying":

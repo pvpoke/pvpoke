@@ -1,0 +1,18 @@
+{
+	"name": "alchemy",
+	"title": "Silph Factions Alchemy Field",
+	"include": [{
+		"filterType": "type",
+		"values":  ["fire", "flying", "ghost", "ground", "psychic", "steel"]
+	}],
+	"exclude": [{
+		"filterType": "type",
+		"values":  ["water","dark"]
+	}, {
+		"filterType": "id",
+		"values": ["altaria", "bastiodon", "cresselia", "diggersby", "golem", "graveler", "medicham", "mew", "probopass", "registeel", "stunfisk_galarian"]
+	}, {
+		"filterType": "tag",
+		"values": ["mega"]
+	}]
+}
