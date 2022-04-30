@@ -1261,8 +1261,17 @@ function Battle(){
 
 		// Optimize move timing to reduce free turns
 		if(poke.optimizeMoveTiming){
+			var targetCooldown = 500; // Look to throw moves when opponent is at this cooldown or lower
 
-			if ( (! (poke.fastMove.cooldown % opponent.fastMove.cooldown == 0 || opponent.fastMove.cooldown % poke.fastMove.cooldown == 0) || (poke.fastMove.cooldown == 500 && opponent.fastMove.cooldown > 500)) && opponent.cooldown != 500) {
+			if(poke.fastMove.cooldown >= 2000){
+				targetCooldown = 1000
+			}
+
+			if((poke.fastMove.cooldown >= 1500)&&(opponent.fastMove.cooldown == 2500)){
+				targetCooldown = 1000
+			}
+
+			if ( (! (poke.fastMove.cooldown % opponent.fastMove.cooldown == 0 || opponent.fastMove.cooldown % poke.fastMove.cooldown == 0) || (poke.fastMove.cooldown == 500 && opponent.fastMove.cooldown > 500)) && ((opponent.cooldown == 0) || (opponent.cooldown > targetCooldown)) ) {
 				var optimizeTiming = true;
 
 				// Don't optimize if we're about to faint from a fast move
@@ -1271,7 +1280,16 @@ function Battle(){
 				}
 
 				// Don't optimize if we'll go over 100 energy
-				if(poke.energy + poke.fastMove.energyGain > 100){
+				var queuedFastMoves = 0;
+				for(var i = 0; i < queuedActions.length; i++){
+					if((queuedActions[i].actor == poke.index)&&(queuedActions[i].type == "fast")){
+						queuedFastMoves++;
+					}
+				}
+
+				queuedFastMoves++; // Add 1 for the Fast Move we are thinking about doing
+
+				if(poke.energy + (poke.fastMove.energyGain * queuedFastMoves) > 100){
 					optimizeTiming = false;
 				}
 
@@ -2284,8 +2302,11 @@ function Battle(){
 				var shieldDecision = self.wouldShield(attacker, defender, move);
 
 				// Don't shield early PUP's, Acid Sprays, or similar moves
-				if((! sandbox)&&(move.buffs)&&(((move.selfBuffing) && (move.buffTarget == "self")) || ((move.buffs[1] < 0) && (move.buffTarget == "opponent")))&&(move.buffApplyChance == 1)){
-					useShield = shieldDecision.value;
+				if( (! sandbox) && move.buffs && move.selfBuffing){
+					if( ((move.buffTarget == "self") && (move.buffs[0] > 0)) ||
+					((move.buffTarget == "opponent") && (move.buffs[1] < 0) ) ){
+						useShield = shieldDecision.value;
+					}
 				}
 
 				if(decisionMethod == "random"){
@@ -2594,7 +2615,7 @@ function Battle(){
 
 		// Determine how much damage will be dealt per cycle to see if the defender will survive to shield the next cycle
 
-		var fastAttacks = Math.ceil(Math.max(attacker.energy - move.energy, 0) / attacker.fastMove.energyGain) + 1; // Give some margin for error here
+		var fastAttacks = Math.ceil( (move.energy - Math.max(attacker.energy - move.energy, 0)) / attacker.fastMove.energyGain) + 1; // Give some margin for error here
 		var fastAttackDamage = fastAttacks * fastDamage;
 		var cycleDamage = (fastAttackDamage + 1) * defender.shields;
 
