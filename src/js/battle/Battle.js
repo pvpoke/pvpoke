@@ -817,6 +817,18 @@ function Battle(){
 					result = "loss";
 				}
 
+				/*
+				// if player 0 is AI
+				if (player[0]) {
+					// send final state and reward to memory
+					let reward = result == "win" ? 1 : 0;
+					player[0][~PlayerModel~].memory.addEvent(state, reward, null);
+					// update Q tables and train model
+					player[0][~PlayerModel~].updateQ();
+					player[0][~PlayerModel~].train();
+				}
+				*/
+
 				self.dispatchUpdate({ result: result });
 				clearInterval(mainLoopInterval);
 			}
