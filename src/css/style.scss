@@ -3922,6 +3922,15 @@ a.download-csv{
 		.search-string-options .check{
 			margin-right: 10px;
 		}
+
+		.export-options{
+			display: flex;
+			justify-content: space-between;
+
+			a.json{
+				font-size: 12px;
+			}
+		}
 	}
 
 	.save-list{

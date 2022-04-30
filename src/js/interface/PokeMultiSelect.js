@@ -874,6 +874,14 @@ function PokeMultiSelect(element){
 
 			closeModalWindow();
 		});
+
+		// Display export in JSON format
+
+		$(".modal a.json").on("click", function(e){
+			e.preventDefault();
+
+			$(".modal .list-text").html(self.convertListToJSON());
+		});
 	});
 
 	// Open the save window

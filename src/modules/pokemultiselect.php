@@ -91,7 +91,11 @@
 <div class="list-export hide">
 	<p>Copy the text below or paste to import a custom group.</p>
 	<textarea class="list-text" type="text"></textarea>
-	<div class="copy">Copy</div>
+	<div class="export-options">
+		<div class="copy">Copy</div>
+		<a class="json" href="#">JSON Export</a>
+	</div>
+
 	<div class="center">
 		<div class="button import">Import</div>
 	</div>

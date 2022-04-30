@@ -3396,6 +3396,15 @@ a.download-csv {
 .modal .search-string-window .search-string-options .check {
   margin-right: 10px;
 }
+.modal .list-export .export-options,
+.modal .search-string-window .export-options {
+  display: flex;
+  justify-content: space-between;
+}
+.modal .list-export .export-options a.json,
+.modal .search-string-window .export-options a.json {
+  font-size: 12px;
+}
 .modal .save-list input {
   font-size: 18px;
 }
