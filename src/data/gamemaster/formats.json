@@ -1,0 +1,84 @@
+[
+	{
+		"title": "Master League (Classic)",
+		"cup": "classic",
+		"cp": 10000,
+		"meta": "master",
+		"showCup": false,
+		"showFormat": true,
+		"showMeta": false
+	},
+	{
+		"title": "Premier Classic",
+		"cup": "premierclassic",
+		"cp": 2500,
+		"meta": "ultrapremierclassic",
+		"showCup": false,
+		"showFormat": false,
+		"showMeta": true
+	},
+	{
+		"title": "Premier Classic",
+		"cup": "premierclassic",
+		"cp": 10000,
+		"meta": "masterpremierclassic",
+		"showCup": false,
+		"showFormat": false,
+		"showMeta": true
+	},
+	{
+		"title": "Kanto Cup",
+		"cup": "kanto",
+		"cp": 1500,
+		"meta": "kanto",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Flying Cup",
+		"cup": "flying",
+		"cp": 1500,
+		"meta": "flying",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Silph Nemesis Cup",
+		"cup": "nemesis",
+		"cp": 1500,
+		"meta": "nemesis",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Silph Firefly Cup",
+		"cup": "firefly",
+		"cp": 1500,
+		"meta": "firefly",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "GO Stadium Cliffhanger",
+		"cup": "cliffhanger",
+		"cp": 1500,
+		"meta": "great",
+		"showCup": false,
+		"showFormat": true,
+		"showMeta": false,
+		"hideRankings": true
+	},
+	{
+		"title": "Custom",
+		"cup": "custom",
+		"cp": 1500,
+		"meta": "great",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": false
+	}
+]

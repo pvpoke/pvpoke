@@ -86,12 +86,27 @@ function interfaceObject(){
 			}
 		}
 
-		cups.sort((a,b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0));
+		// Load cups from archive
+		$.getJSON( webRoot+"data/gamemaster/cups/archive/cups.json?v="+siteVersion, function( archive ){
 
-		for(var i = 0; i < cups.length; i++){
-			var c = cups[i];
-			$(".cup-select").append("<option value=\""+c.name+"\">"+c.title+"</option");
-		}
+			for(var i = 0; i < archive.length; i++){
+				var c = archive[i];
+
+				if((c.include.length > 0)||(c.exclude.length > 0)){
+					cups.push({
+						name: c.name,
+						title: c.title
+					});
+				}
+			}
+
+			cups.sort((a,b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0));
+
+			for(var i = 0; i < cups.length; i++){
+				var c = cups[i];
+				$(".cup-select").append("<option value=\""+c.name+"\">"+c.title+"</option");
+			}
+		});
 	};
 
 	// Update the displayed filters

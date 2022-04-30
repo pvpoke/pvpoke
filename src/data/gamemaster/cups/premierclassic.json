@@ -1,0 +1,11 @@
+{
+	"name": "premierclassic",
+	"title": "Premier Classic",
+	"include": [],
+	"exclude": [{
+		"filterType": "tag",
+		"values": ["legendary", "mythical", "mega"]
+	}],
+	"partySize": 3,
+	"levelCap": 40
+}

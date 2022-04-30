@@ -31,6 +31,15 @@ var GameMaster = (function () {
 		$.getJSON( webRoot+"data/"+gmVersion+".json?v="+siteVersion, function( data ){
 			object.data = data;
 
+			// Insert cup and format values into cup and format select dropdowns
+			if(typeof updateFormatSelect === "function"){
+				updateFormatSelect(object.data.formats, InterfaceMaster.getInstance());
+			}
+
+			if(typeof updateCupSelect === "function"){
+				updateCupSelect(object.data.formats, InterfaceMaster.getInstance());
+			}
+
 			if(settings.gamemaster == "gamemaster"){
 				// Sort Pokemon alphabetically for searching
 				object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));

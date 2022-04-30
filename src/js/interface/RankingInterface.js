@@ -15,7 +15,7 @@ var InterfaceMaster = (function () {
 			var gm = GameMaster.getInstance();
 			var jumpToPoke = false;
 			var limitedPokemon = [];
-			var context = "rankings";
+			var context = "rankings"; // Used for internal reference
 			var battle = new Battle();
 			var customRankingInterface;
 			var metaGroup = [];
@@ -31,6 +31,8 @@ var InterfaceMaster = (function () {
 			};
 
 			var scenarios = [];
+
+			this.context = "rankings"; // Used for external reference
 
 			this.init = function(){
 				scenarios = GameMaster.getInstance().data.rankingScenarios;

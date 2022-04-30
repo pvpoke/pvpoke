@@ -40,6 +40,44 @@ function PokeMultiSelect(element){
 		battle = b;
 		interface = InterfaceMaster.getInstance();
 
+		// Add quick fill lists for current cups
+		var formats = gm.data.formats;
+		for(var i = 0; i < formats.length; i++){
+			if(formats[i].showMeta){
+				var $meta = $("<option>"+formats[i].title+" Meta</option>");
+				$meta.attr("value", formats[i].meta);
+
+				var leagueName = "";
+
+				switch(formats[i].cp){
+					case 500:
+					leagueName = "little";
+					break;
+
+					case 1500:
+					leagueName = "great";
+					break;
+
+					case 2500:
+					leagueName = "ultra";
+					break;
+
+					case 10000:
+					leagueName = "master";
+					break;
+				}
+
+				$meta.attr("type", leagueName);
+				$meta.addClass("multi-battle");
+
+				if(leagueName != "great"){
+					$meta.addClass("hide");
+				}
+
+				$el.find(".quick-fill-select").append($meta);
+			}
+		}
+
 		// Load groups from local storage
 		var i = 0;
 
