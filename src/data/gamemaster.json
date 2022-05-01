@@ -204,6 +204,14 @@
         "showFormat": true,
         "showMeta": false
     }, {
+        "title": "Mega Master League",
+        "cup": "all",
+        "cp": 10000,
+        "meta": "mastermega",
+        "showCup": false,
+        "showFormat": false,
+        "showMeta": true
+    }, {
         "title": "Premier Classic",
         "cup": "premierclassic",
         "cp": 2500,

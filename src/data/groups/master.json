@@ -20,24 +20,9 @@
 		"chargedMoves":["DARK_PULSE","FOCUS_BLAST"]
 	},
 	{
-		"speciesId":"walrein",
-		"fastMove":"POWDER_SNOW",
-		"chargedMoves":["ICICLE_SPEAR","EARTHQUAKE"]
-	},
-	{
 		"speciesId":"sylveon",
 		"fastMove":"CHARM",
 		"chargedMoves":["MOONBLAST","PSYSHOCK"]
-	},
-	{
-		"speciesId":"florges",
-		"fastMove":"VINE_WHIP",
-		"chargedMoves":["DISARMING_VOICE","MOONBLAST"]
-	},
-	{
-		"speciesId":"avalugg",
-		"fastMove":"ICE_FANG",
-		"chargedMoves":["BODY_SLAM","AVALANCHE"]
 	},
 	{
 		"speciesId":"melmetal",
@@ -70,24 +55,14 @@
 		"chargedMoves":["CLOSE_COMBAT","PLAY_ROUGH"]
 	},
 	{
-		"speciesId":"zarude",
-		"fastMove":"VINE_WHIP",
-		"chargedMoves":["POWER_WHIP","DARK_PULSE"]
-	},
-	{
 		"speciesId":"zacian_hero",
 		"fastMove":"SNARL",
 		"chargedMoves":["CLOSE_COMBAT","WILD_CHARGE"]
 	},
 	{
-		"speciesId":"zamazenta_hero",
-		"fastMove":"SNARL",
-		"chargedMoves":["CLOSE_COMBAT","CRUNCH"]
-	},
-	{
-		"speciesId":"heatran",
-		"fastMove":"FIRE_SPIN",
-		"chargedMoves":["IRON_HEAD","FLAMETHROWER"]
+		"speciesId":"zarude",
+		"fastMove":"VINE_WHIP",
+		"chargedMoves":["POWER_WHIP","DARK_PULSE"]
 	},
 	{
 		"speciesId":"magnezone",
@@ -122,7 +97,12 @@
 	{
 		"speciesId":"mewtwo",
 		"fastMove":"PSYCHO_CUT",
-		"chargedMoves":["ICE_BEAM","PSYSTRIKE"]
+		"chargedMoves":["SHADOW_BALL","PSYSTRIKE"]
+	},
+	{
+		"speciesId":"mewtwo",
+		"fastMove":"PSYCHO_CUT",
+		"chargedMoves":["FOCUS_BLAST","PSYSTRIKE"]
 	},
 	{
 		"speciesId":"swampert",
@@ -155,11 +135,6 @@
 		"chargedMoves":["EARTHQUAKE","FIRE_PUNCH"]
 	},
 	{
-		"speciesId":"groudon",
-		"fastMove":"DRAGON_TAIL",
-		"chargedMoves":["EARTHQUAKE","FIRE_PUNCH"]
-	},
-	{
 		"speciesId":"landorus_therian",
 		"fastMove":"MUD_SHOT",
 		"chargedMoves":["SUPER_POWER","STONE_EDGE"]
@@ -188,11 +163,6 @@
 		"speciesId":"mamoswine",
 		"fastMove":"POWDER_SNOW",
 		"chargedMoves":["AVALANCHE","BULLDOZE"]
-	},
-	{
-		"speciesId":"rhyperior",
-		"fastMove":"MUD_SLAP",
-		"chargedMoves":["ROCK_WRECKER","SURF"]
 	},
 	{
 		"speciesId":"togekiss",
