@@ -538,6 +538,8 @@ var InterfaceMaster = (function () {
 				e.preventDefault();
 
 				var difficulty = $(".difficulty-select option:selected").val();
+				// spot when randomizing team, changing to 2, originally 'difficulty'
+				// probably doesn't matter since this player is just used to generate a team
 				var player = new Player(0, difficulty, battle);
 				player.getAI().generateRoster(partySize, self.importRandomizedRoster);
 			}

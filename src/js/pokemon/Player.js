@@ -7,7 +7,11 @@ function Player(i, ai, b){
 	var battle = b;
 
 	if(ai !== false){
-		ai = new TrainingAI(ai, self, battle);
+		if (ai == 2) {
+			ai = new PlayerAI(self, battle);
+		} else{
+			ai = new TrainingAI(ai, self, battle);
+		}
 	}
 
 	var team = []; // Array of Pokemon in the battle

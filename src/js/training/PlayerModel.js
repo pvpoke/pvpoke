@@ -23,7 +23,7 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
     var eps = 0.1;
     var gamma = 0.1;
 
-    var memory = PlayerMemory();
+    var memory = new PlayerMemory();
 
     this.defineModel = function(hiddenLayerSizes) {
         if (!Array.isArray(hiddenLayerSizes)){

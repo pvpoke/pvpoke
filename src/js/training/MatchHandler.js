@@ -35,7 +35,8 @@ function MatchHandler(){
 		// Set up players
 		players = [];
 
-		var player = new Player(0, false, battle);
+		// 2nd arg originally false
+		var player = new Player(0, 2, battle);
 		player.setRoster(props.teams[0]);
 		players.push(player);
 
