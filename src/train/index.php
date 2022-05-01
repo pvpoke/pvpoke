@@ -42,6 +42,7 @@ require_once '../header.php';
 				<option value="2500 premierclassic">Ultra Premier Classic</option>
 				<option value="10000 premierclassic">Master Premier Classic</option>
 				<option value="1500 kanto">Kanto Cup</option>
+				<option value="500 kanto">Element Cup</option>
 				<option value="1500 all">Great League</option>
 				<option value="2500 all">Ultra League</option>
 				<option value="10000 all">Master League</option>

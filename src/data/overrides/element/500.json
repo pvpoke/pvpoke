@@ -1,0 +1,100 @@
+[
+	{
+		"speciesId": "cottonee",
+		"fastMove": "CHARM",
+		"weight": 17
+	},
+	{
+		"speciesId": "seel",
+		"fastMove": "ICE_SHARD",
+		"weight": 8
+	},
+	{
+		"speciesId": "slugma",
+		"fastMove": "ROCK_THROW"
+	},
+	{
+		"speciesId": "binacle",
+		"fastMove": "SCRATCH"
+	},
+	{
+		"speciesId": "staryu",
+		"fastMove": "QUICK_ATTACK",
+		"chargedMoves": ["BUBBLE_BEAM","POWER_GEM"]
+	},
+	{
+		"speciesId": "exeggcute",
+		"chargedMoves": ["SEED_BOMB","ANCIENT_POWER"]
+	},
+	{
+		"speciesId": "exeggcute_shadow",
+		"chargedMoves": ["SEED_BOMB","ANCIENT_POWER"]
+	},
+	{
+		"speciesId": "omanyte",
+		"chargedMoves": ["ROCK_BLAST","BRINE"]
+	},
+	{
+		"speciesId": "omanyte_shadow",
+		"chargedMoves": ["ROCK_BLAST","BRINE"]
+	},
+	{
+		"speciesId": "slowpoke",
+		"chargedMoves": ["PSYSHOCK","PSYCHIC"],
+		"weight": 8
+	},
+	{
+		"speciesId": "hoppip",
+		"chargedMoves": ["SEED_BOMB","RETURN"]
+	},
+	{
+		"speciesId": "shellder",
+		"chargedMoves": ["ICY_WIND","WATER_PULSE"]
+	},
+	{
+		"speciesId": "bulbasaur",
+		"chargedMoves": ["SEED_BOMB","SLUDGE_BOMB"]
+	},
+	{
+		"speciesId": "bulbasaur_shadow",
+		"chargedMoves": ["SEED_BOMB","SLUDGE_BOMB"]
+	},
+	{
+		"speciesId": "ducklett",
+		"chargedMoves": ["BUBBLE_BEAM","BRAVE_BIRD"],
+		"weight": 35
+	},
+	{
+		"speciesId": "vulpix",
+		"fastMove": "QUICK_ATTACK",
+		"weight": 20
+	},
+	{
+		"speciesId": "vulpix_shadow",
+		"fastMove": "QUICK_ATTACK"
+	},
+	{
+		"speciesId": "chinchou",
+		"weight": 14
+	},
+	{
+		"speciesId": "growlithe",
+		"weight": 5
+	},
+	{
+		"speciesId": "chikorita",
+		"weight": 15
+	},
+	{
+		"speciesId": "bulbasaur",
+		"weight": 8
+	},
+	{
+		"speciesId": "salandit",
+		"weight": 14
+	},
+	{
+		"speciesId": "skrelp",
+		"weight": 8
+	}
+]
