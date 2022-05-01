@@ -18,6 +18,14 @@ function PlayerAI(p, b){
 		chargedMoveCount = 1;
 	}
 
+	var hiddenLayerSizes = [10,10,10];
+	// battle state = 126
+	var numStates = this.getBattleState(0, player.getTeam()[0], battle.getPlayers[1].getTeam()[0], player, battle.getPlayers[1]).length;
+	var m = new PlayerModel(b, hiddenLayerSizes, numStates , 5, 100);
+
+	var playerPrevRemaining = 3;
+	var oppPrevRemaining = 3;
+
 	// Generate a random roster of 6 given a cup and league
 	// keeping
 
@@ -643,6 +651,19 @@ function PlayerAI(p, b){
 	// uses pokemon.hp, pokemon.energy, pokemon.cooldown, pokemon.shields, pokemon.statBuffs (arr length 2), and all same for opponent pokemon
 
 	this.computeReward = function(poke, opponent){
+		let reward = 0;
+		opponentPlayer = battle.getPlayers()[opponent.index];
+
+		if (player.getRemainingPokemon() < playerPrevRemaining) {
+			reward -= 0.2;
+		}
+		if (opponentPlayer.getRemainingPokemon() < oppPrevRemaining) {
+			reward += 0.1;
+		}
+
+		// additional options are... did opp/player use a shield
+
+		return reward;
 
 	}
 
@@ -655,6 +676,8 @@ function PlayerAI(p, b){
 	// wait: action = new TimelineAction("wait", poke or player, turns, poke)
 	this.decideAction = function(turn, poke, opponent){
 		var action = null;
+
+		var state = this.getBattleState(turn, poke, opponent, player, battle.getPlayers()[opponent.index]);
 
 		////////////////
 		// pieces stolen from decideActionOLD
@@ -987,6 +1010,66 @@ function PlayerAI(p, b){
 		} else{
 			return Math.max.apply(Math, totalDamage);
 		}
+	}
+
+	// state values are normalized here
+	this.getBattleState = function(turn, poke, opp, player, opponent){
+		var state = {};
+		state[turn] = t/480;
+
+		// Player state
+		state['P.switchTimer'] = player.getSwitchTimer()/60;
+		state['P.switchTimer.remainingPokes'] = player.getRemainingPokemon()/3;
+		state['P.shields'] = player.getShields()/2;
+
+		// Lead pokemon battle state
+		state['p.hp'] = poke.hp/poke.startHp;
+		state['p.energy'] = poke.energy/100;
+		state['p.atkBuff'] = (poke.statBuffs[0]+4)/8;
+		state['p.defBuff'] = (poke.statBuffs[1]+4)/8;
+		state['p.cooldown'] = poke.cooldown/4;
+
+		// Lead pokemon move stats
+		state['p.fast.damage'] = poke.fastMove.damage/opp.stats.hp;
+		state['p.fast.energy'] = poke.fastMove.energyGain/100;
+		state['p.fast.cooldown'] = poke.fastMove.cooldown/4;
+
+		// charged moves
+		for (var i = 1; i<=poke.chargedMoves.length;i++){
+			let charged = poke.chargedMoves[i-1];
+
+			state['p.charged'+i+'.damage'] = Math.min(charged.damage/opp.stats.hp, 1);
+			state['p.charged'+i+'.energy'] = charged.energy/100;
+
+			state['p.charged'+i+'.self.atk'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[0]+4)/8 : 0.5;
+			state['p.charged'+i+'.self.def'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[1]+4)/8 : 0.5;
+			state['p.charged'+i+'.opp.atk'] = (charged.buffs && charged.buffTarget == 'opponent') ? (charged.buffs[0]+4)/8 : 0.5;
+			state['p.charged'+i+'.opp.def'] = (charged.buffs && charged.buffTarget == 'opponent') ? (charged.buffs[1]+4)/8 : 0.5;
+
+			state['p.charged'+i+'.chance'] = (charged.buffs) ? charged.buffApplyChance : 0;
+		}
+
+		// Party pokemon
+		// battle state
+
+		// move stats
+
+		// charged moves
+
+		// Opponent Player state
+
+		// Opponent lead pokemon battle state
+
+		// Opponent lead move stats
+
+		// charged moves
+
+		// Opponent party pokemon
+		// battle state
+
+		// move stats
+
+		// charged moves
 	}
 
 }
