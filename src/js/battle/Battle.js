@@ -810,27 +810,26 @@ function Battle(){
 			} else{
 				var result = "tie";
 				phase = "game_over";
+				let reward = 0;
 
 				if(players[0].getRemainingPokemon() > players[1].getRemainingPokemon()){
 					result = "win";
+					reward = 1;
 				} else{
 					result = "loss";
+					reward = -1;
 				}
-
-				/*
-				// if player 0 is AI
-				if (player[0]) {
-					// send final state and reward to memory
-					let reward = result == "win" ? 1 : 0;
-					player[0][~PlayerModel~].memory.addEvent(state, reward, null);
-					// update Q tables and train model
-					player[0][~PlayerModel~].updateQ();
-					player[0][~PlayerModel~].train();
-				}
-				*/
 
 				self.dispatchUpdate({ result: result });
 				clearInterval(mainLoopInterval);
+
+				if (player[0].getAI()) {
+					// send final state and reward to memory
+					player[0].getAI().memory.addEvent(state, reward, null);
+					// update Q tables and train model
+					player[0].getAI().updateQ();
+					player[0].getAI().train();
+				}
 			}
 
 			// If a Pokemon has fainted, clear the action queue
