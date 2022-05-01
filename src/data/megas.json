@@ -450,40 +450,6 @@
     "tags": ["shadoweligible", "mega"],
     "eliteMoves": ["METEOR_MASH"]
 }, {
-    "dex": 380,
-    "speciesName": "Latias (Mega)",
-    "speciesId": "latias_mega",
-    "baseStats": {
-        "atk": 289,
-        "def": 297,
-        "hp": 190
-    },
-    "types": ["dragon", "psychic"],
-    "fastMoves": ["DRAGON_BREATH", "ZEN_HEADBUTT", "CHARM"],
-    "chargedMoves": ["OUTRAGE", "PSYCHIC", "THUNDER"],
-    "tags": ["legendary", "mega"],
-    "defaultIVs": {
-        "cp1500": [11.5, 9, 5, 9],
-        "cp2500": [19, 5, 14, 10]
-    }
-}, {
-    "dex": 381,
-    "speciesName": "Latios (Mega)",
-    "speciesId": "latios_mega",
-    "baseStats": {
-        "atk": 335,
-        "def": 241,
-        "hp": 190
-    },
-    "types": ["dragon", "psychic"],
-    "fastMoves": ["DRAGON_BREATH", "ZEN_HEADBUTT"],
-    "chargedMoves": ["DRAGON_CLAW", "PSYCHIC", "SOLAR_BEAM"],
-    "tags": ["legendary", "mega"],
-    "defaultIVs": {
-        "cp1500": [11, 7, 8, 9],
-        "cp2500": [18.5, 6, 7, 9]
-    }
-}, {
     "dex": 384,
     "speciesName": "Rayquaza (Mega)",
     "speciesId": "rayquaza_mega",

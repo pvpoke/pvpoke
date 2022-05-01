@@ -14413,7 +14413,8 @@
         },
         "types": ["dragon", "psychic"],
         "fastMoves": ["DRAGON_BREATH", "ZEN_HEADBUTT", "CHARM"],
-        "chargedMoves": ["OUTRAGE", "PSYCHIC", "THUNDER"],
+        "chargedMoves": ["OUTRAGE", "PSYCHIC", "THUNDER", "MIST_BALL"],
+        "eliteMoves": ["MIST_BALL"],
         "tags": ["legendary", "shadoweligible"],
         "defaultIVs": {
             "cp500": [5.5, 5, 11, 14],
@@ -14435,12 +14436,34 @@
         },
         "types": ["dragon", "psychic"],
         "fastMoves": ["DRAGON_BREATH", "ZEN_HEADBUTT", "CHARM"],
-        "chargedMoves": ["OUTRAGE", "PSYCHIC", "THUNDER"],
+        "chargedMoves": ["OUTRAGE", "PSYCHIC", "THUNDER", "MIST_BALL"],
+        "eliteMoves": ["MIST_BALL"],
         "tags": ["legendary", "shadow"],
         "defaultIVs": {
             "cp500": [5.5, 5, 11, 14],
             "cp1500": [16, 5, 12, 7],
             "cp2500": [26.5, 4, 13, 10]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": true
+    }, {
+        "dex": 380,
+        "speciesName": "Latias (Mega)",
+        "speciesId": "latias_mega",
+        "baseStats": {
+            "atk": 289,
+            "def": 297,
+            "hp": 190
+        },
+        "types": ["dragon", "psychic"],
+        "fastMoves": ["DRAGON_BREATH", "ZEN_HEADBUTT", "CHARM"],
+        "chargedMoves": ["OUTRAGE", "PSYCHIC", "THUNDER", "MIST_BALL"],
+        "eliteMoves": ["MIST_BALL"],
+        "tags": ["legendary", "mega"],
+        "defaultIVs": {
+            "cp1500": [11.5, 9, 5, 9],
+            "cp2500": [19, 5, 14, 10]
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
@@ -14456,12 +14479,35 @@
         },
         "types": ["dragon", "psychic"],
         "fastMoves": ["DRAGON_BREATH", "ZEN_HEADBUTT"],
-        "chargedMoves": ["DRAGON_CLAW", "PSYCHIC", "SOLAR_BEAM"],
+        "chargedMoves": ["DRAGON_CLAW", "PSYCHIC", "SOLAR_BEAM", "LUSTER_PURGE"],
+        "eliteMoves": ["LUSTER_PURGE"],
         "tags": ["legendary"],
         "defaultIVs": {
             "cp500": [5, 9, 12, 14],
             "cp1500": [14.5, 4, 10, 14],
             "cp2500": [24, 5, 13, 12]
+        },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": true
+    }, {
+        "dex": 381,
+        "speciesName": "Latios (Mega)",
+        "speciesId": "latios_mega",
+        "baseStats": {
+            "atk": 335,
+            "def": 241,
+            "hp": 190
+        },
+        "types": ["dragon", "psychic"],
+        "fastMoves": ["DRAGON_BREATH", "ZEN_HEADBUTT"],
+        "chargedMoves": ["DRAGON_CLAW", "PSYCHIC", "SOLAR_BEAM", "LUSTER_PURGE"],
+        "eliteMoves": ["LUSTER_PURGE"],
+        "tags": ["legendary", "mega"],
+        "defaultIVs": {
+            "cp500": [4, 7, 8, 9],
+            "cp1500": [11, 7, 8, 9],
+            "cp2500": [18.5, 6, 7, 9]
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
@@ -29388,7 +29434,7 @@
         "buffs": [0, -1],
         "buffTarget": "opponent",
         "buffApplyChance": "0.5",
-        "archetype": "Debuff"
+        "archetype": "Debuff Nuke"
     }, {
         "moveId": "MAGICAL_LEAF",
         "name": "Magical Leaf",
@@ -29480,7 +29526,7 @@
         "buffs": [-1, 0],
         "buffTarget": "opponent",
         "buffApplyChance": "0.5",
-        "archetype": "Debuff"
+        "archetype": "Debuff Nuke"
     }, {
         "moveId": "MOONBLAST",
         "name": "Moonblast",

@@ -1326,7 +1326,7 @@
     "buffs": [0, -1],
     "buffTarget": "opponent",
     "buffApplyChance": "0.5",
-    "archetype": "Debuff"
+    "archetype": "Debuff Nuke"
 }, {
     "moveId": "MAGICAL_LEAF",
     "name": "Magical Leaf",
@@ -1418,7 +1418,7 @@
     "buffs": [-1, 0],
     "buffTarget": "opponent",
     "buffApplyChance": "0.5",
-    "archetype": "Debuff"
+    "archetype": "Debuff Nuke"
 }, {
     "moveId": "MOONBLAST",
     "name": "Moonblast",
