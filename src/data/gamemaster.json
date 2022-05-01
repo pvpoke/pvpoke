@@ -1109,7 +1109,7 @@
         },
         "types": ["normal", "flying"],
         "fastMoves": ["AIR_SLASH", "STEEL_WING", "WING_ATTACK", "GUST"],
-        "chargedMoves": ["AERIAL_ACE", "AIR_CUTTER", "BRAVE_BIRD", "HURRICANE"],
+        "chargedMoves": ["AERIAL_ACE", "AIR_CUTTER", "BRAVE_BIRD", "HURRICANE", "FEATHER_DANCE"],
         "defaultIVs": {
             "cp500": [5, 13, 15, 12],
             "cp1500": [15, 6, 12, 10],
@@ -5521,6 +5521,28 @@
             "cp2500l40": [39, 13, 13, 13]
         },
         "level25CP": 1583,
+        "eliteMoves": ["BRICK_BREAK", "STOMP"],
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true
+    }, {
+        "dex": 115,
+        "speciesName": "Kangaskhan (Mega)",
+        "speciesId": "kangaskhan_mega",
+        "baseStats": {
+            "atk": 246,
+            "def": 210,
+            "hp": 233
+        },
+        "types": ["normal", "none"],
+        "fastMoves": ["LOW_KICK", "MUD_SLAP"],
+        "chargedMoves": ["BRICK_BREAK", "CRUNCH", "EARTHQUAKE", "OUTRAGE", "STOMP", "POWER_UP_PUNCH"],
+        "tags": ["regional", "mega"],
+        "defaultIVs": {
+            "cp500": [5, 7, 13, 11],
+            "cp1500": [14, 10, 15, 11],
+            "cp2500": [23.5, 9, 10, 15]
+        },
         "eliteMoves": ["BRICK_BREAK", "STOMP"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,

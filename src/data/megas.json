@@ -18,24 +18,6 @@
     "level25CP": 2748,
     "eliteMoves": ["COUNTER", "DAZZLING_GLEAM", "PSYCHIC"]
 }, {
-    "dex": 115,
-    "speciesName": "Kangaskhan (Mega)",
-    "speciesId": "kangaskhan_mega",
-    "baseStats": {
-        "atk": 246,
-        "def": 210,
-        "hp": 233
-    },
-    "types": ["normal", "none"],
-    "fastMoves": ["LOW_KICK", "MUD_SLAP"],
-    "chargedMoves": ["BRICK_BREAK", "CRUNCH", "EARTHQUAKE", "OUTRAGE", "STOMP", "POWER_UP_PUNCH"],
-    "tags": ["regional", "mega"],
-    "defaultIVs": {
-        "cp1500": [14, 10, 15, 11],
-        "cp2500": [23.5, 9, 10, 15]
-    },
-    "eliteMoves": ["BRICK_BREAK", "STOMP"]
-}, {
     "dex": 127,
     "speciesName": "Pinsir (Mega)",
     "speciesId": "pinsir_mega",
@@ -54,23 +36,6 @@
     "tags": ["shadoweligible", "mega"],
     "level25CP": 2640,
     "eliteMoves": ["SUBMISSION"]
-}, {
-    "dex": 142,
-    "speciesName": "Aerodactyl (Mega)",
-    "speciesId": "aerodactyl_mega",
-    "baseStats": {
-        "atk": 292,
-        "def": 210,
-        "hp": 190
-    },
-    "types": ["rock", "flying"],
-    "fastMoves": ["BITE", "STEEL_WING", "ROCK_THROW"],
-    "chargedMoves": ["ANCIENT_POWER", "HYPER_BEAM", "IRON_HEAD", "ROCK_SLIDE", "EARTH_POWER"],
-    "tags": ["mega"],
-    "defaultIVs": {
-        "cp1500": [13, 6, 15, 14],
-        "cp2500": [22, 6, 10, 15]
-    }
 }, {
     "dex": 150,
     "speciesName": "Mewtwo (Mega X)",

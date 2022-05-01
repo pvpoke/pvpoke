@@ -1908,12 +1908,16 @@ function Pokemon(id, i, b){
 			fastMoveStr = self.fastMove.moveId;
 		}
 
-		if(((self.chargedMoves.length > 0)&&(self.chargedMoves[0].isCustom)) || settings.hardMovesetLinks){
-			chargedMove1Str = self.chargedMoves[0].moveId;
+		if(self.chargedMoves.length > 0){
+			if(self.chargedMoves[0].isCustom || settings.hardMovesetLinks){
+				chargedMove1Str = self.chargedMoves[0].moveId;
+			}
 		}
 
-		if(((self.chargedMoves.length > 1)&&(self.chargedMoves[1].isCustom)) || settings.hardMovesetLinks){
-			chargedMove2Str = self.chargedMoves[1].moveId;
+		if(self.chargedMoves.length > 1){
+			if(self.chargedMoves[1].isCustom || settings.hardMovesetLinks){
+				chargedMove1Str = self.chargedMoves[1].moveId;
+			}
 		}
 
 		moveStr = fastMoveStr + "-" + chargedMove1Str + "-" + chargedMove2Str;
