@@ -27,6 +27,7 @@ var InterfaceMaster = (function () {
 				var pokeboxId = $("#pokebox-id").val();
 				var xls = $(".check.xls").hasClass("on") ? 1 : 0;
 				var rankingDetails = $("#ranking-details option:selected").val();
+				var hardMovesetLinks = $(".check.hard-moveset-links").hasClass("on") ? 1 : 0;
 
 				$.ajax({
 
@@ -42,7 +43,8 @@ var InterfaceMaster = (function () {
 						'pokeboxLastDateTime': settings.pokeboxLastDateTime,
 						'ads': ads,
 						'xls': xls,
-						'rankingDetails': rankingDetails
+						'rankingDetails': rankingDetails,
+						'hardMovesetLinks': hardMovesetLinks
 					},
 					dataType:'json',
 					success : function(data) {

@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.28.0.1';
+$SITE_VERSION = '1.28.1';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -40,6 +40,10 @@ if(isset($_COOKIE['settings'])){
 		$_SETTINGS->rankingDetails = "one-page";
 	}
 
+	if(! isset($_SETTINGS->hardMovesetLinks)){
+		$_SETTINGS->hardMovesetLinks = 0;
+	}
+
 	// Validate the gamemaster setting, only allow these options
 	$gamemasters = ["gamemaster", "gamemaster-mega"];
 
@@ -55,7 +59,8 @@ if(isset($_COOKIE['settings'])){
 		'pokeboxId' => 0,
 		'ads' => 1,
 		'xls' => 1,
-		'rankingDetails' => 'one-page'
+		'rankingDetails' => 'one-page',
+		'hardMovesetLinks' => 0
 	];
 }
 
@@ -141,7 +146,8 @@ if(! isset($OG_IMAGE)){
 			pokeboxId: "<?php echo intval($_SETTINGS->pokeboxId); ?>",
 			pokeboxLastDateTime: "<?php echo intval($_SETTINGS->pokeboxLastDateTime); ?>",
 			xls: <?php echo $_SETTINGS->xls; ?>,
-			rankingDetails: "<?php echo htmlspecialchars($_SETTINGS->rankingDetails); ?>"
+			rankingDetails: "<?php echo htmlspecialchars($_SETTINGS->rankingDetails); ?>",
+			hardMovesetLinks: <?php echo intval($_SETTINGS->hardMovesetLinks); ?>
 		};
 	<?php else: ?>
 
@@ -153,7 +159,8 @@ if(! isset($OG_IMAGE)){
 			pokeboxId: 0,
 			pokeboxLastDateTime: 0,
 			xls: true,
-			rankingDetails: "one-page"
+			rankingDetails: "one-page",
+			hardMovesetLinks: 0
 		};
 
 	<?php endif; ?>

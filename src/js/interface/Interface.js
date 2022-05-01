@@ -1470,30 +1470,16 @@ var InterfaceMaster = (function () {
 								var poke = pokeSelectors[index].getPokemon();
 								var arr = val.split('-');
 
-								// Legacy move construction
-
-								if(arr.length <= 1){
-									arr = val.split('');
-								}
-
 								// Search string for any custom moves to add
-								var customMoveIndexes = [];
 
 								for(var i = 0; i < arr.length; i++){
 									if(arr[i].match('([A-Z_]+)')){
 										var move = gm.getMoveById(arr[i]);
 										var movePool = (move.energyGain > 0) ? poke.fastMovePool : poke.chargedMovePool;
 										var moveType = (move.energyGain > 0) ? "fast" : "charged";
-										var moveIndex = 0;
-
-										if(arr[i+1]){
-											moveIndex = parseInt(arr[i+1]);
-										}
+										var moveIndex = i-1;
 
 										poke.addNewMove(arr[i], movePool, true, moveType, moveIndex);
-										if(moveType == "charged"){
-											customMoveIndexes.push(moveIndex);
-										}
 									}
 								}
 
@@ -1504,7 +1490,7 @@ var InterfaceMaster = (function () {
 								for(var i = 1; i < arr.length; i++){
 									// Don't set this move if already set as a custom move
 
-									if(customMoveIndexes.indexOf(i-1) > -1){
+									if(arr[i].match('([A-Z_]+)')){
 										continue;
 									}
 

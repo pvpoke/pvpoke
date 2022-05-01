@@ -112,7 +112,7 @@ var InterfaceMaster = (function () {
 
 								for(var i = 0; i < list.length; i++){
 									var arr = list[i].split('-');
-									var pokemon = new Pokemon(arr[0], index, battle);
+									var pokemon = new Pokemon(arr[0], 0, battle);
 
 									pokemon.initialize(battle.getCP());
 
@@ -138,34 +138,34 @@ var InterfaceMaster = (function () {
 									var moveStr = list[i].split("-m-")[1];
 									arr = moveStr.split("-");
 
-									// Search string for any custom moves
-									var customMoveIndexes = [];
+									// Search string for any custom moves to add
+									var customFastMove = false;
 
 									for(var n = 0; n < arr.length; n++){
 										if(arr[n].match('([A-Z_]+)')){
-											var move = gm.getMoveById(arr[i]);
+											var move = gm.getMoveById(arr[n]);
 											var movePool = (move.energyGain > 0) ? pokemon.fastMovePool : pokemon.chargedMovePool;
 											var moveType = (move.energyGain > 0) ? "fast" : "charged";
-											var moveIndex = 0;
+											var moveIndex = n-1;
 
-											if(arr[i+1]){
-												moveIndex = parseInt(arr[i+1]);
+											if(moveType == "fast"){
+												customFastMove = true;
 											}
 
-											pokemon.addNewMove(arr[i], movePool, true, moveType, moveIndex);
-											customMoveIndexes.push(moveIndex);
+											pokemon.addNewMove(arr[n], movePool, true, moveType, moveIndex);
 										}
 									}
 
-									pokemon.selectMove("fast", pokemon.fastMovePool[arr[0]].moveId, 0);
+									if(! customFastMove){
+										pokemon.selectMove("fast", pokemon.fastMovePool[arr[0]].moveId, 0);
+									}
 
 									for(var n = 1; n < arr.length; n++){
 										// Don't set this move if already set as a custom move
 
-										if(customMoveIndexes.indexOf(n-1) > -1){
+										if(arr[n].match('([A-Z_]+)')){
 											continue;
 										}
-
 
 										var moveId = "none";
 
@@ -219,72 +219,6 @@ var InterfaceMaster = (function () {
 									$(".team-size-select option[value=8]").prop("selected", "selected");
 									$(".team-size-select").trigger("change");
 								}
-								break;
-
-							case "m1":
-							case "m2":
-							case "m3":
-								var index = 0;
-
-								if(key == "m2"){
-									index = 1;
-								} else if(key == "m3"){
-									index = 2;
-								}
-
-								var poke = pokeSelectors[index].getPokemon();
-								var arr = val.split('-');
-
-								// Legacy move construction
-
-								if(arr.length <= 1){
-									arr = val.split('');
-								}
-
-								// Search string for any custom moves to add
-								var customMoveIndexes = [];
-
-								for(var i = 0; i < arr.length; i++){
-									if(arr[i].match('([A-Z_]+)')){
-										var move = gm.getMoveById(arr[i]);
-										var movePool = (move.energyGain > 0) ? poke.fastMovePool : poke.chargedMovePool;
-										var moveType = (move.energyGain > 0) ? "fast" : "charged";
-										var moveIndex = 0;
-
-										if(arr[i+1]){
-											moveIndex = parseInt(arr[i+1]);
-										}
-
-										poke.addNewMove(arr[i], movePool, true, moveType, moveIndex);
-										customMoveIndexes.push(moveIndex);
-									}
-								}
-
-
-								var fastMoveId = $(".poke").eq(index).find(".move-select.fast option").eq(parseInt(arr[0])).val();
-								poke.selectMove("fast", fastMoveId, 0);
-
-								for(var i = 1; i < arr.length; i++){
-									// Don't set this move if already set as a custom move
-
-									if(customMoveIndexes.indexOf(i-1) > -1){
-										continue;
-									}
-
-									var moveId = $(".poke").eq(index).find(".move-select.charged").eq(i-1).find("option").eq(parseInt(arr[i])).val();
-
-									if(moveId != "none"){
-										poke.selectMove("charged", moveId, i-1);
-									} else{
-										if((arr[1] == "0")&&(arr[2] == "0")){
-											poke.selectMove("charged", moveId, 0); // Always deselect the first move because removing it pops the 2nd move up
-										} else{
-											poke.selectMove("charged", moveId, i-1);
-										}
-									}
-
-								}
-
 								break;
 						}
 					}

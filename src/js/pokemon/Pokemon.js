@@ -1018,6 +1018,16 @@ function Pokemon(id, i, b){
 			return false;
 		}
 
+		// Don't add move if it's already in the movepool
+		if(this.knowsMove(id)){
+			// Select the move that already exists
+			if(selectNewMove){
+				self.selectMove(moveType, id, index, true)
+			}
+
+			return false;
+		}
+
 		move.isCustom = true;
 		movepool.push(move);
 
@@ -1888,23 +1898,25 @@ function Pokemon(id, i, b){
 	this.generateURLMoveStr = function(){
 		var moveStr = '';
 
-		var fastMoveIndex = self.fastMovePool.indexOf(self.fastMove);
-		var chargedMove1Index = self.chargedMovePool.indexOf(self.chargedMoves[0])+1;
-		var chargedMove2Index = self.chargedMovePool.indexOf(self.chargedMoves[1])+1;
-
-		moveStr = fastMoveIndex + "-" + chargedMove1Index + "-" + chargedMove2Index;
+		var fastMoveStr = self.fastMovePool.indexOf(self.fastMove);
+		var chargedMove1Str = self.chargedMovePool.indexOf(self.chargedMoves[0])+1;
+		var chargedMove2Str = self.chargedMovePool.indexOf(self.chargedMoves[1])+1;
 
 		// Check for any custom moves;
 
-		if(self.fastMove.isCustom){
-			moveStr += "-" + self.fastMove.moveId;
+		if(self.fastMove.isCustom || settings.hardMovesetLinks){
+			fastMoveStr = self.fastMove.moveId;
 		}
 
-		for(var i = 0; i < self.chargedMoves.length; i++){
-			if(self.chargedMoves[i].isCustom){
-				moveStr += "-" + self.chargedMoves[i].moveId + "-" + i;
-			}
+		if(((self.chargedMoves.length > 0)&&(self.chargedMoves[0].isCustom)) || settings.hardMovesetLinks){
+			chargedMove1Str = self.chargedMoves[0].moveId;
 		}
+
+		if(((self.chargedMoves.length > 1)&&(self.chargedMoves[1].isCustom)) || settings.hardMovesetLinks){
+			chargedMove2Str = self.chargedMoves[1].moveId;
+		}
+
+		moveStr = fastMoveStr + "-" + chargedMove1Str + "-" + chargedMove2Str;
 
 		return moveStr;
 	}

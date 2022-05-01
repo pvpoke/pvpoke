@@ -44,6 +44,10 @@ require_once 'header.php';
 			<option value="tabs" <?php if((isset($_SETTINGS->rankingDetails))&&($_SETTINGS->rankingDetails == "tabs")) : ?>selected<?php endif; ?>>Tabs</option>
 		</select>
 
+		<h3>Hard Moveset Links</h3>
+		<div class="check hard-moveset-links <?php if($_SETTINGS->hardMovesetLinks == 1) : ?>on<?php endif; ?>"><span></span> Bake move ID's into battle links</div>
+		<p>This setting is for article writing purposes. When active, movesets are hard coded into the URL so battle links are preserved during future moveset updates.</p>
+
 		<h3>Site Theme</h3>
 		<?php
 		$theme = "default";
