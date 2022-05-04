@@ -45,15 +45,15 @@
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/community-day/22-04-stufful/">
-				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/community-day/22-04-stufful/thumb.jpg">
+			<a href="<?php echo $WEB_ROOT; ?>articles/infographics/22-05-latias-latios-counters/">
+				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/infographics/22-05-latias-latios-counters/thumb.jpg">
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/community-day/22-04-stufful/">Stufful Community Day Guide for PvP</a></h4>
-			<div class="date">April 22, 2022</div>
-			<p>Learn about the brand new Pokemon Stufful, and how its evolution may perform in PvP!</p>
-			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Community Day"># Community Day</a><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a></div>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/infographics/22-05-latias-latios-counters/">Latias and Latios Counters for Master League</a></h4>
+			<div class="date">May 3, 2022</div>
+			<p>See which Latias and Latios raid counters also double as top Master League picks!</p>
+			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a></div>
 		</div>
 	</div>
 
