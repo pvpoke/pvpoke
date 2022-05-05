@@ -49,6 +49,12 @@ function Pokebox(element, selector, selectMode, b){
 						var id = self.translateId(obj.pokemon, "species");
 						var pokemon = new Pokemon(id, 0, battle);
 
+						// Grab the base value of the ID as a failsafe if no other matches
+						if(! pokemon.initialize){
+							id = id.split("_")[0];
+							pokemon = new Pokemon(id, 0, battle);
+						}
+
 						if(pokemon.initialize){
 							pokemon.initialize();
 							pokemon.selectMove("fast", self.translateId(obj.quickMove, "move"));
