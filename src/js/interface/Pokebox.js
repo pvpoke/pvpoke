@@ -49,7 +49,7 @@ function Pokebox(element, selector, selectMode, b){
 						var id = self.translateId(obj.pokemon, "species");
 						var pokemon = new Pokemon(id, 0, battle);
 
-						if(pokemon){
+						if(pokemon.initialize){
 							pokemon.initialize();
 							pokemon.selectMove("fast", self.translateId(obj.quickMove, "move"));
 							pokemon.selectMove("charged", self.translateId(obj.cinematicMove, "move"), 0);
@@ -121,6 +121,10 @@ function Pokebox(element, selector, selectMode, b){
 		} else if(type == "move"){
 			id = id.replace("_FAST","");
 			id = id.replace("FUTURESIGHT","FUTURE_SIGHT");
+			id = id.replace("SACRED_FIRE_PLUS","SACRED_FIRE");
+			id = id.replace("SACRED_FIRE_PLUS_PLUS","SACRED_FIRE");
+			id = id.replace("AEROBLAST_PLUS","AEROBLAST");
+			id = id.replace("AEROBLAST_PLUS_PLUS","AEROBLAST");
 		}
 
 		switch(id){
@@ -162,6 +166,14 @@ function Pokebox(element, selector, selectMode, b){
 
 			case "mewtwo_a":
 				return "mewtwo_armored";
+				break;
+
+			case "ho_oh_s":
+				return "ho_oh_shadow";
+				break;
+
+			case "lugia_s":
+				return "lugia_shadow";
 				break;
 		}
 
