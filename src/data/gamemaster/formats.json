@@ -27,19 +27,10 @@
 		"showMeta": true
 	},
 	{
-		"title": "Premier Classic",
+		"title": "Master League (Premier Classic)",
 		"cup": "premierclassic",
 		"cp": 10000,
 		"meta": "masterpremierclassic",
-		"showCup": false,
-		"showFormat": false,
-		"showMeta": true
-	},
-	{
-		"title": "Flying Cup",
-		"cup": "flying",
-		"cp": 1500,
-		"meta": "flying",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
@@ -76,6 +67,15 @@
 		"cup": "colony",
 		"cp": 1500,
 		"meta": "colony",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Thedanies89's River Cup",
+		"cup": "river",
+		"cp": 1500,
+		"meta": "river",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true

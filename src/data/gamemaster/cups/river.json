@@ -1,0 +1,28 @@
+{
+   "name": "river",
+   "title": "Thedanies89's River Cup",
+   "link": "https://twitter.com/vaNNiiRL/status/1521861716744810497",
+   "restrictedPicks": 1,
+   "restrictedPokemon": ["malamar", "deoxys_defense", "melmetal", "froslass", "luxray", "sableye", "escavalier"],
+   "include": [{
+	   "filterType": "type",
+	   "name": "Type",
+	   "values": ["fire", "grass", "ground", "normal", "poison", "water"]
+   }, {
+	   "filterType": "id",
+	   "values": ["malamar", "deoxys_defense", "melmetal", "froslass", "luxray", "sableye", "sableye_shadow", "escavalier"]
+   }],
+   "exclude": [{
+	   "filterType": "type",
+	   "name": "Type",
+	   "values": ["flying"]
+   }, {
+	   "filterType": "tag",
+	   "name": "Tag",
+	   "values": ["mega"]
+   }, {
+	   "filterType": "id",
+	   "name": "Species",
+	   "values": ["walrein", "abomasnow"]
+   }]
+}
