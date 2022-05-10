@@ -206,7 +206,7 @@
             "values": ["fire", "grass", "ground", "normal", "poison", "water"]
         }, {
             "filterType": "id",
-            "values": ["malamar", "deoxys_defense", "melmetal", "froslass", "luxray", "sableye", "escavalier"]
+            "values": ["malamar", "deoxys_defense", "melmetal", "froslass", "luxray", "sableye", "sableye_shadow", "escavalier"]
         }],
         "exclude": [{
             "filterType": "type",
@@ -287,7 +287,7 @@
         "showFormat": true,
         "showMeta": true
     }, {
-        "title": "Thedanies89's River Cup",
+        "title": "San Benedetto River Cup",
         "cup": "river",
         "cp": 1500,
         "meta": "river",
