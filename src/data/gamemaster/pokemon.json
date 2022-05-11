@@ -6243,7 +6243,7 @@
     },
     "level25CP": 1893,
     "eliteMoves": ["HURRICANE"],
-    "searchPriority": 6,
+    "searchPriority": 2,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true
@@ -24024,7 +24024,7 @@
         "cp1500": [33.5, 4, 15, 8],
         "cp2500": [50, 15, 15, 15]
     },
-	"searchPriority": 5,
+	"searchPriority": 10,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true
