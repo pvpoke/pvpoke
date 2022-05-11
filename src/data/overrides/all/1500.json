@@ -91,6 +91,10 @@
 		"chargedMoves": ["SAND_TOMB", "OUTRAGE"]
 	},
 	{
+		"speciesId": "crustle",
+		"fastMove": "SMACK_DOWN"
+	},
+	{
 		"speciesId": "dartrix",
 		"fastMove": "RAZOR_LEAF"
 	},
@@ -1035,6 +1039,10 @@
 	{
 		"speciesId": "trevenant",
 		"weight": 14
+	},
+	{
+		"speciesId": "araquanid",
+		"weight": 9
 	},
 	{
 		"speciesId": "gourgeist_small",

@@ -109,7 +109,7 @@
         "includeShadows": true,
         "include": [{
             "filterType": "id",
-            "values": ["litleo", "barboach", "bellsprout", "budew", "buizel", "bulbasaur", "bulbasaur_shadow", "cacnea", "carvanha", "charmander", "cherubi", "chikorita", "chimchar", "chinchou", "corphish", "cyndaquil", "darumaka", "deerling", "ducklett", "exeggcute", "feebas", "ferroseed", "finneon", "foongus", "frillish", "goldeen", "growlithe", "hoppip", "horsea", "houndour", "kabuto", "krabby", "larvesta", "lileep", "litwick", "lotad", "magby", "magikarp", "mantyke", "mudkip", "numel", "oddish", "omanyte", "oshawott", "pansage", "pansear", "paras", "piplup", "poliwag", "ponyta", "psyduck", "remoraid", "seedot", "seel", "sewaddle", "shellos_east_sea", "shellos_west_sea", "shroomish", "slowpoke", "slugma", "snivy", "snover", "spheal", "squirtle", "surskit", "tangela", "tangela_shadow", "tentacool", "tepig", "tirtouga", "torchic", "totodile", "treecko", "turtwig", "tympole", "vulpix", "wailmer", "wingull", "wooper", "vulpix_shadow", "turtwig_shadow", "growlithe_shadow", "psyduck_shadow", "oddish_shadow", "hoppip_shadow", "houndour_shadow", "squirtle_shadow", "seedot_shadow", "mudkip_shadow", "poliwag_shadow", "exeggcute_shadow", "slowpoke_shadow", "charmander_shadow", "snover_shadow", "bulbusaur_shadow", "omanyte_shadow", "carvanha_shadow", "cacnea_shadow", "bellsprout_shadow", "magikarp_shadow", "shellder", "shellder_shadow", "cottonee", "sunkern", "clamperl", "shellos", "panpour", "petilil", "chespin", "froakie", "fennekin", "skrelp", "clauncher", "deerling", "binacle", "wooper_shadow", "horsea_shadow", "staryu", "lileep_shadow", "salandit", "fomantis", "popplio", "litten", "rowlet", "phantump", "pumpkaboo_small", "pumpkaboo_average", "pumpkaboo_large", "pumpkaboo_super"]
+            "values": ["litleo", "barboach", "bellsprout", "budew", "buizel", "bulbasaur", "bulbasaur_shadow", "cacnea", "carvanha", "charmander", "cherubi", "chikorita", "chimchar", "chinchou", "corphish", "cyndaquil", "darumaka", "deerling", "ducklett", "exeggcute", "feebas", "ferroseed", "finneon", "foongus", "frillish", "goldeen", "growlithe", "hoppip", "horsea", "houndour", "kabuto", "krabby", "larvesta", "lileep", "litwick", "lotad", "magby", "magikarp", "mantyke", "mudkip", "numel", "oddish", "omanyte", "oshawott", "pansage", "pansear", "paras", "piplup", "poliwag", "ponyta", "psyduck", "remoraid", "seedot", "seel", "sewaddle", "shellos_east_sea", "shellos_west_sea", "shroomish", "slowpoke", "slugma", "snivy", "snover", "spheal", "squirtle", "surskit", "tangela", "tangela_shadow", "tentacool", "tepig", "tirtouga", "torchic", "totodile", "treecko", "turtwig", "tympole", "vulpix", "wailmer", "wingull", "wooper", "vulpix_shadow", "turtwig_shadow", "growlithe_shadow", "psyduck_shadow", "oddish_shadow", "hoppip_shadow", "houndour_shadow", "squirtle_shadow", "seedot_shadow", "mudkip_shadow", "poliwag_shadow", "exeggcute_shadow", "slowpoke_shadow", "charmander_shadow", "snover_shadow", "bulbusaur_shadow", "omanyte_shadow", "carvanha_shadow", "cacnea_shadow", "bellsprout_shadow", "magikarp_shadow", "shellder", "shellder_shadow", "cottonee", "sunkern", "clamperl", "shellos", "panpour", "petilil", "chespin", "froakie", "fennekin", "skrelp", "clauncher", "deerling", "binacle", "wooper_shadow", "horsea_shadow", "staryu", "lileep_shadow", "salandit", "fomantis", "popplio", "litten", "rowlet", "phantump", "pumpkaboo_small", "pumpkaboo_average", "pumpkaboo_large", "pumpkaboo_super", "dewpider"]
         }],
         "exclude": [],
         "partySize": 3,
@@ -24366,7 +24366,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false
+        "released": true
     }, {
         "dex": 752,
         "speciesName": "Araquanid",
@@ -24384,9 +24384,10 @@
             "cp1500": [33.5, 4, 15, 8],
             "cp2500": [50, 15, 15, 15]
         },
+        "searchPriority": 5,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false
+        "released": true
     }, {
         "dex": 753,
         "speciesName": "Fomantis",

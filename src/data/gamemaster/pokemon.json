@@ -24006,7 +24006,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
-    "released": false
+    "released": true
 }, {
     "dex": 752,
     "speciesName": "Araquanid",
@@ -24024,9 +24024,10 @@
         "cp1500": [33.5, 4, 15, 8],
         "cp2500": [50, 15, 15, 15]
     },
+	"searchPriority": 5,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
-    "released": false
+    "released": true
 }, {
     "dex": 753,
     "speciesName": "Fomantis",

@@ -12,10 +12,6 @@
     "fastMove": "ICE_SHARD",
     "chargedMoves": ["ICY_WIND", "HURRICANE"]
 }, {
-    "speciesId": "bronzong",
-    "fastMove": "CONFUSION",
-    "chargedMoves": ["PSYSHOCK", "PAYBACK"]
-}, {
     "speciesId": "charizard",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"]
@@ -23,7 +19,7 @@
     "speciesId": "clefable",
     "fastMove": "CHARM",
     "chargedMoves": ["MOONBLAST", "METEOR_MASH"]
-}, 	{
+}, {
 		"speciesId":"cofagrigus",
 		"fastMove":"SHADOW_CLAW",
 		"chargedMoves":["SHADOW_BALL","PSYCHIC"]
@@ -31,7 +27,7 @@
     "speciesId": "sylveon",
     "fastMove": "CHARM",
     "chargedMoves": ["MOONBLAST", "PSYSHOCK"]
-}, 	{
+}, {
 		"speciesId":"walrein",
 		"fastMove":"POWDER_SNOW",
 		"chargedMoves":["ICICLE_SPEAR","EARTHQUAKE"]
@@ -80,10 +76,6 @@
     "speciesId": "ferrothorn",
     "fastMove": "BULLET_SEED",
     "chargedMoves": ["POWER_WHIP", "FLASH_CANNON"]
-}, {
-    "speciesId": "gallade",
-    "fastMove": "CONFUSION",
-    "chargedMoves": ["CLOSE_COMBAT", "LEAF_BLADE"]
 }, {
     "speciesId": "galvantula",
     "fastMove": "VOLT_SWITCH",
@@ -149,6 +141,10 @@
     "speciesId": "muk_alolan",
     "fastMove": "SNARL",
     "chargedMoves": ["DARK_PULSE", "SLUDGE_WAVE"]
+}, {
+    "speciesId": "muk_alolan",
+    "fastMove": "POISON_JAB",
+    "chargedMoves": ["DARK_PULSE", "ACID_SPRAY"]
 }, {
     "speciesId": "nidoqueen",
     "fastMove": "POISON_JAB",
@@ -242,10 +238,6 @@
     "fastMove": "SNARL",
     "chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
 }, {
-    "speciesId": "umbreon",
-    "fastMove": "SNARL",
-    "chargedMoves": ["FOUL_PLAY", "PSYCHIC"]
-}, {
     "speciesId": "venusaur",
     "fastMove": "VINE_WHIP",
     "chargedMoves": ["FRENZY_PLANT", "SLUDGE_BOMB"]
@@ -254,7 +246,7 @@
     "fastMove": "FIRE_SPIN",
     "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"]
 }, {
-    "speciesId": "muk_alolan",
-    "fastMove": "POISON_JAB",
-    "chargedMoves": ["DARK_PULSE", "ACID_SPRAY"]
+    "speciesId": "drapion",
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["AQUA_TAIL", "CRUNCH"]
 }]
