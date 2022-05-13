@@ -9,7 +9,8 @@
 	},
 	{
 		"speciesId": "forretress",
-		"chargedMoves": ["MIRROR_SHOT", "EARTHQUAKE"]
+		"chargedMoves": ["MIRROR_SHOT", "EARTHQUAKE"],
+		"weight": 5
 	},
 	{
 		"speciesId": "forretress_shadow",
@@ -38,7 +39,7 @@
 	{
 		"speciesId": "froslass",
 		"chargedMoves": ["AVALANCHE", "SHADOW_BALL"],
-		"weight": 12
+		"weight": 21
 	},
 	{
 		"speciesId": "gengar",
@@ -122,8 +123,7 @@
 	},
 	{
 		"speciesId": "pidgeot",
-		"chargedMoves": ["FEATHER_DANCE", "BRAVE_BIRD"],
-		"weight": 3
+		"chargedMoves": ["FEATHER_DANCE", "BRAVE_BIRD"]
 	},
 	{
 		"speciesId": "scizor",
@@ -152,6 +152,10 @@
 		"fastMove": "CHARM"
 	},
 	{
+		"speciesId": "araquanid",
+		"fastMove": "BUG_BITE"
+	},
+	{
 		"speciesId": "ninetales_alolan",
 		"fastMove": "POWDER_SNOW",
 		"weight": 4
@@ -159,82 +163,65 @@
 	{
 		"speciesId": "vigoroth",
 		"chargedMoves": ["BODY_SLAM", "BULLDOZE"],
-		"weight": 14
+		"weight": 35
 	},
 	{
 		"speciesId": "beedrill",
 		"weight": 15
 	},
 	{
-		"speciesId": "pachirisu",
-		"weight": 2
-	},
-	{
 		"speciesId": "litleo",
-		"weight": 4
+		"weight": 11
 	},
 	{
 		"speciesId": "wormadam_trash",
-		"weight": 10
+		"weight": 33
 	},
 	{
 		"speciesId": "lanturn",
 		"fastMove": "SPARK",
-		"weight": 6
+		"weight": 7
 	},
 	{
 		"speciesId": "lickitung",
-		"weight": 10
+		"weight": 6
 	},
 	{
 		"speciesId": "toxicroak",
 		"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"],
-		"weight": 19
+		"weight": 36
 	},
 	{
 		"speciesId": "galvantula",
-		"weight": 12
-	},
-	{
-		"speciesId": "galvantula",
-		"weight": 12
+		"weight": 16
 	},
 	{
 		"speciesId": "graveler_alolan",
-		"weight": 15
+		"weight": 13
 	},
 	{
 		"speciesId": "obstagoon",
-		"weight": 6
-	},
-	{
-		"speciesId": "magnezone",
-		"weight": 12
-	},
-	{
-		"speciesId": "luxray",
 		"weight": 3
 	},
 	{
+		"speciesId": "magnezone",
+		"weight": 4
+	},
+	{
+		"speciesId": "luxray",
+		"weight": 9
+	},
+	{
 		"speciesId": "drapion",
-		"weight": 2
+		"weight": 16
 	},
 	{
 		"speciesId": "crustle",
 		"weight": 2
 	},
 	{
-		"speciesId": "venusaur",
-		"weight": 2
-	},
-	{
-		"speciesId": "greedent",
-		"weight": 2
-	},
-	{
 		"speciesId": "roserade",
 		"fastMove": "BULLET_SEED",
-		"chargedMoves": ["WEATHER_BALL_FIRE", "LEAF_STORM"],
-		"weight": 2
+		"chargedMoves": ["WEATHER_BALL_FIRE", "LEAF_STORM"]
 	}
 ]

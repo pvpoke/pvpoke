@@ -56,10 +56,6 @@
     "fastMove": "LICK",
     "chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
 }, {
-    "speciesId": "snorlax",
-    "fastMove": "LICK",
-    "chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
-}, {
     "speciesId": "froslass",
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
@@ -76,14 +72,6 @@
     "fastMove": "VOLT_SWITCH",
     "chargedMoves": ["DISCHARGE", "LUNGE"]
 }, {
-    "speciesId": "scizor",
-    "fastMove": "BULLET_PUNCH",
-    "chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
-}, {
-    "speciesId": "sandslash_alolan",
-    "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["ICE_PUNCH", "BULLDOZE"]
-}, {
     "speciesId": "ninetales_alolan",
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["WEATHER_BALL_ICE", "PSYSHOCK"]
@@ -96,38 +84,9 @@
     "fastMove": "POISON_JAB",
     "chargedMoves": ["CRUNCH", "FLAMETHROWER"]
 }, {
-    "speciesId": "gengar",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["SLUDGE_BOMB", "SHADOW_PUNCH"]
-}, {
-    "speciesId": "ariados",
-    "fastMove": "POISON_STING",
-    "chargedMoves": ["CROSS_POISON", "MEGAHORN"]
-}, {
     "speciesId": "roserade",
     "fastMove": "BULLET_SEED",
     "chargedMoves": ["WEATHER_BALL_FIRE", "LEAF_STORM"]
-}, {
-    "speciesId": "greedent",
-    "fastMove": "BULLET_SEED",
-    "chargedMoves": ["BODY_SLAM", "CRUNCH"]
-}, {
-    "speciesId": "venusaur",
-    "fastMove": "VINE_WHIP",
-    "chargedMoves": ["FRENZY_PLANT", "SLUDGE_BOMB"]
-}, {
-    "speciesId": "abomasnow",
-    "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"]
-}, {
-    "speciesId": "victreebel",
-    "fastMove": "RAZOR_LEAF",
-    "chargedMoves": ["LEAF_BLADE", "ACID_SPRAY"],
-    "shadowType": "shadow"
-}, {
-    "speciesId": "pidgeot",
-    "fastMove": "GUST",
-    "chargedMoves": ["FEATHER_DANCE", "BRAVE_BIRD"]
 }, {
     "speciesId": "noctowl",
     "fastMove": "WING_ATTACK",
@@ -137,11 +96,23 @@
     "fastMove": "WING_ATTACK",
     "chargedMoves": ["POISON_FANG", "SHADOW_BALL"]
 }, {
-    "speciesId": "ampharos",
-    "fastMove": "VOLT_SWITCH",
-    "chargedMoves": ["THUNDER_PUNCH", "FOCUS_BLAST"]
-}, {
     "speciesId": "oranguru",
     "fastMove": "CONFUSION",
     "chargedMoves": ["FOUL_PLAY", "FUTURE_SIGHT"]
+}, {
+    "speciesId": "raichu",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["BRICK_BREAK", "WILD_CHARGE"]
+}, {
+    "speciesId": "raichu_alolan",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["THUNDER_PUNCH", "WILD_CHARGE"]
+}, {
+    "speciesId": "araquanid",
+    "fastMove": "BUG_BITE",
+    "chargedMoves": ["BUBBLE_BEAM", "BUG_BUZZ"]
+}, {
+    "speciesId": "pyroar",
+    "fastMove": "FIRE_FANG",
+    "chargedMoves": ["FLAME_CHARGE", "DARK_PULSE"]
 }]
