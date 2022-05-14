@@ -11,9 +11,14 @@
 
 ## Todo
 
-PlayerAI.js : finish writing battle state, write decideAction() to get battle state, get prediction from PlayerModel, and then format action for push to actionqueue (eventually, replace generateTeam, generateRoster, decideSwitch, and decideShield)
+PlayerAI.js : refine battle state(opponent quantities), write decideAction() to get battle state, get prediction from PlayerModel, and then format action for push to actionqueue (eventually, replace generateTeam, generateRoster, decideSwitch, and decideShield)
 
 PlayerModel.js : write formatState to take state dictionary and return array for input to network
 
 Battle.js : adjust time intervals to make emulate() run faster. or add to simulate() to allow full 3v3 battles.
 MatchHandler.js : incorporate user choice between AI and manual. allow opponent to use PlayerAI.
+
+## Notes
+
+duplicate data with lead charged moves (x2), party pokemon(x2), party pokemon charged moves(x4), opponent lead charged moves(x2), opponent party pokemon(x2), opponent party pokemon charged moves(x4) swapped for x2^8 (x256) more data points
+each game has up to 480 (122880 with duplicates) state-action-reward data points

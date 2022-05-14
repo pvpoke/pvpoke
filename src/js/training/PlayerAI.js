@@ -1025,8 +1025,8 @@ function PlayerAI(p, b){
 		// Lead pokemon battle state
 		state['p.hp'] = poke.hp/poke.startHp;
 		state['p.energy'] = poke.energy/100;
-		state['p.atkBuff'] = (poke.statBuffs[0]+4)/8;
-		state['p.defBuff'] = (poke.statBuffs[1]+4)/8;
+		state['p.atk'] = (poke.statBuffs[0]+4)/8;
+		state['p.def'] = (poke.statBuffs[1]+4)/8;
 		state['p.cooldown'] = poke.cooldown/4;
 
 		// Lead pokemon move stats
@@ -1034,7 +1034,7 @@ function PlayerAI(p, b){
 		state['p.fast.energy'] = poke.fastMove.energyGain/100;
 		state['p.fast.cooldown'] = poke.fastMove.cooldown/4;
 
-		// charged moves
+		// charged moves -- state size changes if only one charged move
 		for (var i = 1; i<=poke.chargedMoves.length;i++){
 			let charged = poke.chargedMoves[i-1];
 
@@ -1050,26 +1050,103 @@ function PlayerAI(p, b){
 		}
 
 		// Party pokemon
-		// battle state
+		let i = 0;
+		for (var pokemon of player.getTeam()){
+			if (pokemon.index !== poke.index) {
+				// battle state
+				state['party.'+i+'.hp'] = pokemon.hp/pokemon.startHp;
+				state['party.'+i+'.energy'] = pokemon.energy/100;
 
-		// move stats
+				// move stats
+				state['party.'+i+'.fast.damage'] = pokemon.fastMove.damage/opp.stats.hp;
+				state['party.'+i+'.fast.energy'] = pokemon.fastMove.energyGain/100;
+				state['party.'+i+'.fast.cooldown'] = pokemon.fastMove.cooldown/4;
 
-		// charged moves
+				// charged moves -- state size changes if only one charged move, need to fill with zeros
+				for (var j = 1; j<=pokemon.chargedMoves.length;j++){
+					let charged = pokemon.chargedMoves[i-1];
+
+					state['party.'+i+'.charged'+j+'.damage'] = Math.min(charged.damage/opp.stats.hp, 1);
+					state['party.'+i+'.charged'+j+'.energy'] = charged.energy/100;
+
+					state['party.'+i+'.charged'+j+'.self.atk'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[0]+4)/8 : 0.5;
+					state['party.'+i+'.charged'+j+'.self.def'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[1]+4)/8 : 0.5;
+					state['party.'+i+'.charged'+j+'.opp.atk'] = (charged.buffs && charged.buffTarget == 'opponent') ? (charged.buffs[0]+4)/8 : 0.5;
+					state['party.'+i+'.charged'+j+'.opp.def'] = (charged.buffs && charged.buffTarget == 'opponent') ? (charged.buffs[1]+4)/8 : 0.5;
+
+					state['party.'+i+'.charged'+j+'.chance'] = (charged.buffs) ? charged.buffApplyChance : 0;
+				}
+			}
+			i++;
+		}
+
 
 		// Opponent Player state
+		state['O.switchTimer'] = opponent.getSwitchTimer()/60;
+		state['O.switchTimer.remainingPokes'] = opponent.getRemainingPokemon()/3;
+		state['O.shields'] = opponent.getShields()/2;
 
 		// Opponent lead pokemon battle state
+		state['o.hp'] = opp.hp/poke.startHp;
+		state['o.energy'] = opp.energy/100; // can't know this?
+		state['o.atk'] = (opp.statBuffs[0]+4)/8;
+		state['o.def'] = (opp.statBuffs[1]+4)/8;
+		state['o.cooldown'] = opp.cooldown/4;
 
 		// Opponent lead move stats
+		state['o.fast.damage'] = opp.fastMove.damage/poke.stats.hp;
+		state['o.fast.energy'] = opp.fastMove.energyGain/100;
+		state['o.fast.cooldown'] = opp.fastMove.cooldown/4;
 
-		// charged moves
+		// charged moves -- state size changes if only one charged move
+		// can't know all of this at the start of the battle in practice,
+		// charged move can only be added when it is seen
+		for (var i = 1; i<=opp.chargedMoves.length;i++){
+			let charged = opp.chargedMoves[i-1];
+
+			state['p.charged'+i+'.damage'] = Math.min(charged.damage/poke.stats.hp, 1);
+			state['p.charged'+i+'.energy'] = charged.energy/100;
+
+			state['p.charged'+i+'.self.atk'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[0]+4)/8 : 0.5;
+			state['p.charged'+i+'.self.def'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[1]+4)/8 : 0.5;
+			state['p.charged'+i+'.opp.atk'] = (charged.buffs && charged.buffTarget == 'opponent') ? (charged.buffs[0]+4)/8 : 0.5;
+			state['p.charged'+i+'.opp.def'] = (charged.buffs && charged.buffTarget == 'opponent') ? (charged.buffs[1]+4)/8 : 0.5;
+
+			state['p.charged'+i+'.chance'] = (charged.buffs) ? charged.buffApplyChance : 0;
+		}
 
 		// Opponent party pokemon
-		// battle state
+		// can't know this all at start
+		// can only know a party pokemon when opponent player switches one out
+		let i = 0;
+		for (var pokemon of opponent.getTeam()){
+			if (pokemon.index !== opp.index) {
+				// battle state
+				state['O.party.'+i+'.hp'] = pokemon.hp/pokemon.startHp;
+				state['O.party.'+i+'.energy'] = pokemon.energy/100;
 
-		// move stats
+				// move stats
+				state['O.party.'+i+'.fast.damage'] = pokemon.fastMove.damage/poke.stats.hp;
+				state['O.party.'+i+'.fast.energy'] = pokemon.fastMove.energyGain/100;
+				state['O.party.'+i+'.fast.cooldown'] = pokemon.fastMove.cooldown/4;
 
-		// charged moves
+				// charged moves -- state size changes if only one charged move, need to fill with zeros
+				for (var j = 1; j<=pokemon.chargedMoves.length;j++){
+					let charged = pokemon.chargedMoves[i-1];
+
+					state['O.party.'+i+'.charged'+j+'.damage'] = Math.min(charged.damage/poke.stats.hp, 1);
+					state['O.party.'+i+'.charged'+j+'.energy'] = charged.energy/100;
+
+					state['O.party.'+i+'.charged'+j+'.self.atk'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[0]+4)/8 : 0.5;
+					state['O.party.'+i+'.charged'+j+'.self.def'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[1]+4)/8 : 0.5;
+					state['O.party.'+i+'.charged'+j+'.opp.atk'] = (charged.buffs && charged.buffTarget == 'opponent') ? (charged.buffs[0]+4)/8 : 0.5;
+					state['O.party.'+i+'.charged'+j+'.opp.def'] = (charged.buffs && charged.buffTarget == 'opponent') ? (charged.buffs[1]+4)/8 : 0.5;
+
+					state['O.party.'+i+'.charged'+j+'.chance'] = (charged.buffs) ? charged.buffApplyChance : 0;
+				}
+			}
+			i++;
+		}
 	}
 
 }
