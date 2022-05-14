@@ -670,14 +670,38 @@ function PlayerAI(p, b){
 	// THE ACTUAL decideAction
 	// action types: fast, charged, switch
 	// var action = new TimelineAction(type, actor, turns, value, { shielded: false, buffs: false, priority: pokemon[actor].priority });
-	// switch: action = new TimelineAction("switch", player.getIndex(), turn, switchChoice, {priority: poke.priority});
-	// fast: action = new TimelineAction("fast", poke.index, turn, 0, {priority: poke.priority});
-	// charged: action = new TimelineAction("charged", poke.index, turns, poke.chargedMoves.indexOf(selectedMove), {shielded: false, buffs: false, priority: poke.priority});
 	// wait: action = new TimelineAction("wait", poke or player, turns, poke)
 	this.decideAction = function(turn, poke, opponent){
 		var action = null;
 
 		var state = this.getBattleState(turn, poke, opponent, player, battle.getPlayers()[opponent.index]);
+
+		var actionNum = m.predict(state);
+
+		switch (actionNum){
+			case 0:	// fast: action = new TimelineAction("fast", poke.index, turn, 0, {priority: poke.priority});
+				action = new TimelineAction("fast", poke.index, turn, 0, {priority: poke.priority});
+				break;
+			
+			case 1:	// charged move #1: action = new TimelineAction("charged", poke.index, turns, poke.chargedMoves.indexOf(selectedMove), {shielded: false, buffs: false, priority: poke.priority});
+				action = new TimelineAction("charged", poke.index, turns, 0, {shielded: false, buffs: false, priority: poke.priority});
+				break;
+
+			case 2:
+				action = new TimelineAction("charged", poke.index, turns, 1, {shielded: false, buffs: false, priority: poke.priority});
+				break;
+
+			case -1: // switch: action = new TimelineAction("switch", player.getIndex(), turn, switchChoice, {priority: poke.priority});
+				action = new TimelineAction("switch", player.getIndex(), turn, 0, {priority: poke.priority});
+				break;
+
+			case -2:
+				action = new TimelineAction("switch", player.getIndex(), turn, 0, {priority: poke.priority});
+				break;
+			
+			default: // default to a fast move
+				action = new TimelineAction("fast", poke.index, turn, 0, {priority: poke.priority});
+		}
 
 		////////////////
 		// pieces stolen from decideActionOLD
@@ -702,10 +726,6 @@ function PlayerAI(p, b){
 
 		var switchChoice = self.decideSwitch();
 		*/
-
-		opponent.fastMove.energyGain/100.0
-
-		poke.fastMove.energyGain/100.0
 
 
 

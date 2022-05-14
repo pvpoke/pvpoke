@@ -46,7 +46,8 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
 
     // format state dictionary into array appropriate for network model
     this.formatState = function(state){
-
+        // how to enforce order?
+        return Object.values(state);
     }
 
     // format policy dictionary into array appropriate for network model
@@ -56,9 +57,9 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
 
     this.predict = function(state) {
         // format state
-        let formattedState = this.formatState(state);
+        let stateArr = this.formatState(state);
 
-        return tf.tidy(() => network.predict(formattedState));
+        return tf.tidy(() => network.predict(stateArr));
     }
 
     // async?
