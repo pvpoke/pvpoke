@@ -45,14 +45,14 @@
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/infographics/22-05-latias-latios-counters/">
-				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/infographics/22-05-latias-latios-counters/thumb.jpg">
+			<a href="<?php echo $WEB_ROOT; ?>articles/infographics/22-05-friend-trade-tier-list/">
+				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/infographics/22-05-friend-trade-tier-list/thumb.jpg">
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/infographics/22-05-latias-latios-counters/">Latias and Latios Counters for Master League</a></h4>
-			<div class="date">May 3, 2022</div>
-			<p>See which Latias and Latios raid counters also double as top Master League picks!</p>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/infographics/22-05-friend-trade-tier-list/">Sh!tty Friend Trade Tier List</a></h4>
+			<div class="date">May 14, 2022</div>
+			<p>Whether you meet new friends or that one person who doesn't open your gifts, here's a list of PvP trade ideas with low friendship level!</p>
 			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a></div>
 		</div>
 	</div>
