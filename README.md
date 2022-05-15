@@ -11,11 +11,13 @@
 
 ## Todo
 
-PlayerAI.js : refine battle state(opponent quantities), write decideAction() to get battle state, get prediction from PlayerModel, and then format action for push to actionqueue (eventually, replace generateTeam, generateRoster, decideSwitch, and decideShield)
+PlayerAI.js : refine battle state(opponent quantities), check that actions are being queued correctly, filter action decisions to prevent switches to fainted pokemon
+(eventually, replace generateTeam, generateRoster, decideSwitch, and decideShield)
 
-PlayerModel.js : write formatState to take state dictionary and return array for input to network
+PlayerModel.js : allow for saving network and Q table to server as files, enforce order for game state
 
 Battle.js : adjust time intervals to make emulate() run faster. or add to simulate() to allow full 3v3 battles.
+
 MatchHandler.js : incorporate user choice between AI and manual. allow opponent to use PlayerAI.
 
 ## Notes

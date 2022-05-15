@@ -815,24 +815,25 @@ function PlayerAI(p, b){
 				break;
 			
 			case 1:	// charged move #1: action = new TimelineAction("charged", poke.index, turns, poke.chargedMoves.indexOf(selectedMove), {shielded: false, buffs: false, priority: poke.priority});
-				action = new TimelineAction("charged", poke.index, turns, 0, {shielded: false, buffs: false, priority: poke.priority});
+				action = new TimelineAction("charged", poke.index, turn, 0, {shielded: false, buffs: false, priority: poke.priority});
 				break;
 
 			case 2:
-				action = new TimelineAction("charged", poke.index, turns, 1, {shielded: false, buffs: false, priority: poke.priority});
+				action = new TimelineAction("charged", poke.index, turn, 1, {shielded: false, buffs: false, priority: poke.priority});
 				break;
 
 			case -1: // switch: action = new TimelineAction("switch", player.getIndex(), turn, switchChoice, {priority: poke.priority});
-				action = new TimelineAction("switch", player.getIndex(), turn, 0, {priority: poke.priority});
+				action = new TimelineAction("switch", player.getIndex(), turn, 1, {priority: poke.priority});
 				break;
 
 			case -2:
-				action = new TimelineAction("switch", player.getIndex(), turn, 0, {priority: poke.priority});
+				action = new TimelineAction("switch", player.getIndex(), turn, 2, {priority: poke.priority});
 				break;
 			
 			default: // default to a fast move
 				action = new TimelineAction("fast", poke.index, turn, 0, {priority: poke.priority});
 		}
+		console.log(action);
 
 		////////////////
 		// pieces stolen from decideActionOLD

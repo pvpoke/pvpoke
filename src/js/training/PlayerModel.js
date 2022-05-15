@@ -119,7 +119,7 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
         }
         memory.addEvent(state, reward, action);
 
-        return action;
+        return actionNum;
     }
 
     // returns the expected rewards for each action given a state and Q-function
