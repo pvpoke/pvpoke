@@ -823,11 +823,15 @@ function PlayerAI(p, b){
 				break;
 
 			case -1: // switch: action = new TimelineAction("switch", player.getIndex(), turn, switchChoice, {priority: poke.priority});
-				action = new TimelineAction("switch", player.getIndex(), turn, 1, {priority: poke.priority});
-				break;
+				if (player.getTeam()[1].hp > 0 && player.getTeam()[1].data.dex != poke.data.dex) {
+					action = new TimelineAction("switch", player.getIndex(), turn, 1, {priority: poke.priority});
+				}
+					break;
 
 			case -2:
-				action = new TimelineAction("switch", player.getIndex(), turn, 2, {priority: poke.priority});
+				if (player.getTeam()[2].hp > 0 && player.getTeam()[2].data.dex != poke.data.dex) {
+					action = new TimelineAction("switch", player.getIndex(), turn, 2, {priority: poke.priority});
+				}
 				break;
 			
 			default: // default to a fast move

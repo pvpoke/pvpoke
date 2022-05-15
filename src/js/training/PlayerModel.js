@@ -187,9 +187,9 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
         // save updated results to server
         // does this work?
         // or $.post()
-        network.save(webRoot+"data/network-test.json?v="+siteVersion);
+        network.save(webRoot+"data/training/network-test?v="+siteVersion);
 
-        $.post(webRoot+"data/Q-table.json?v="+siteVersion, Q);
+        $.post(webRoot+"data/training/Q-table.json?v="+siteVersion, Q);
 
 
     }
