@@ -32,23 +32,23 @@ function PlayerMemory() {
             let frontNode = front;
             front = frontNode.getNext();
             frontNode.setNext(null);
-            length -= 1;
-            if (length == 0) {
+            if (length == 1){
                 back = null;
             }
-            return frontNode.getData();
+            length -= 1;
+            return frontNode.getEvent();
         } else {
             return null;
         }
     }
 
     this.addEvent = function (state, reward, action){
-        let newNode = MemoryNode(state, reward, action);
+        let newNode = new MemoryNode(state, reward, action);
         if (length == 0) {
-            front = back = newNode;
+            front = newNode;
+            back = newNode;
         } else {
-            let prevBack = back;
-            prevBack.setNext(newNode);
+            back.setNext(newNode);
             back = newNode;
         }
         length += 1;

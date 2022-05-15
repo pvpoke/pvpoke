@@ -14,17 +14,27 @@ function PlayerAI(p, b){
 
 	var turnLastEvaluated = 0;
 
-	if(level == 0){
-		chargedMoveCount = 1;
-	}
-
 	var hiddenLayerSizes = [10,10,10];
 	// battle state = 126
-	var numStates = this.getBattleState(0, player.getTeam()[0], battle.getPlayers[1].getTeam()[0], player, battle.getPlayers[1]).length;
-	var m = new PlayerModel(b, hiddenLayerSizes, numStates , 5, 100);
+	var numStates = 127;//this.getBattleState(0, player.getTeam()[0], battle.getPlayers[1].getTeam()[0], player, battle.getPlayers[1]).length;
+	var m = null;//new PlayerModel(b, hiddenLayerSizes, numStates , 5, 100);
 
 	var playerPrevRemaining = 3;
 	var oppPrevRemaining = 3;
+
+	this.init = function(player, opponent){
+		let poke = player.getTeam()[0];
+		let opp = opponent.getTeam()[0];
+		initState = this.getBattleState(0, poke, opp, player, opponent);
+		console.log(Object.keys(initState).length)
+		numStates = Object.keys(initState).length;
+		m = new PlayerModel(b, hiddenLayerSizes, numStates, 5, 100);
+		m.defineModel(hiddenLayerSizes);
+	}
+
+	this.getModel = function(){
+		return m;
+	}
 
 	// Generate a random roster of 6 given a cup and league
 	// keeping
@@ -525,12 +535,8 @@ function PlayerAI(p, b){
 					pokemon.setLevel(combo.level);
 
 					pokemon.selectMove("fast", poke.fastMove);
-					for(var n = 0; n < props.chargedMoveCount; n++){
+					for(var n = 0; n < 2; n++){
 						pokemon.selectMove("charged", poke.chargedMoves[n], n);
-					}
-
-					if(props.chargedMoveCount == 1){
-						pokemon.selectMove("charged", "none", 1);
 					}
 
 					team.push(pokemon);
@@ -650,16 +656,138 @@ function PlayerAI(p, b){
 
 	// uses pokemon.hp, pokemon.energy, pokemon.cooldown, pokemon.shields, pokemon.statBuffs (arr length 2), and all same for opponent pokemon
 
+	this.runScenario = function(type, pokemon, opponent){
+		var scenario = {
+			opponent: opponent,
+			name: type,
+			matchups: [],
+			average: 0,
+			minShields: 3
+		};
+
+		// Preserve current HP, energy, and stat boosts which get reset during simulation
+		// Otherwise old values of startHp, startingShields, etc. may get used during the reset
+		pokemon.startHp = pokemon.hp;
+		pokemon.startEnergy = pokemon.energy;
+		pokemon.startStatBuffs = [pokemon.statBuffs[0], pokemon.statBuffs[1]];
+		pokemon.startCooldown = pokemon.cooldown;
+		pokemon.startingShields = pokemon.shields;
+
+		opponent.startHp = opponent.hp;
+		opponent.startEnergy = opponent.energy;
+		opponent.startStatBuffs = [opponent.statBuffs[0], opponent.statBuffs[1]];
+		opponent.startCooldown = opponent.cooldown;
+		opponent.startingShields = opponent.shields;
+
+		// Preserve old Pokemon stats
+		var startStats = [
+			{
+				shields: pokemon.startingShields,
+				hp: pokemon.hp,
+				energy: pokemon.energy,
+				cooldown: pokemon.cooldown,
+				index: pokemon.index
+			},
+			{
+				shields: opponent.startingShields,
+				hp: opponent.hp,
+				energy: opponent.energy,
+				cooldown: opponent.cooldown,
+				index: opponent.index
+			}
+		];
+
+		switch(type){
+			case "BOTH_BAIT":
+				pokemon.baitShields = true;
+				pokemon.farmEnergy = false;
+				opponent.baitShields = true;
+				opponent.farmEnergy = false;
+				break;
+
+			case "NEITHER_BAIT":
+				pokemon.baitShields = false;
+				pokemon.farmEnergy = false;
+				opponent.baitShields = false;
+				opponent.farmEnergy = false;
+				break;
+
+			case "NO_BAIT":
+				pokemon.baitShields = false;
+				pokemon.farmEnergy = false;
+				opponent.baitShields = true;
+				opponent.farmEnergy = false;
+				break;
+
+			case "FARM":
+				pokemon.baitShields = true;
+				pokemon.farmEnergy = true;
+				opponent.baitShields = true;
+				opponent.farmEnergy = false;
+				break;
+		}
+
+		var b = new Battle();
+		b.setNewPokemon(pokemon, 0, false);
+		b.setNewPokemon(opponent, 1, false);
+
+		var shieldWeights = [4,4,1];
+		var totalWeight = 0;
+
+		var maxShields = Math.max(pokemon.startingShields, opponent.startingShields);
+
+		for(var i = 0; i <= startStats[0].shields; i++){
+			for(n = 0; n <= startStats[1].shields; n++){
+				pokemon.startingShields = i;
+				opponent.startingShields = n;
+				b.simulate();
+
+				var rating = b.getBattleRatings()[0];
+
+				scenario.matchups.push(rating);
+
+				var shieldWeight = shieldWeights[i] * shieldWeights[n];
+				totalWeight += shieldWeight;
+				scenario.average += (rating * shieldWeight);
+
+				if((rating >= 500)&&(i < scenario.minShields)){
+					scenario.minShields = i;
+				}
+			}
+		}
+
+		scenario.average /= totalWeight;
+
+		pokemon.startingShields = startStats[0].shields;
+		pokemon.startHp = startStats[0].hp;
+		pokemon.startEnergy = startStats[0].energy;
+		pokemon.startCooldown = startStats[0].cooldown;
+
+		opponent.startingShields = startStats[1].shields;
+		opponent.startHp = startStats[1].hp;
+		opponent.startEnergy = startStats[1].energy;
+		opponent.startCooldown = startStats[1].cooldown;
+
+		pokemon.reset();
+		opponent.reset();
+		pokemon.index = startStats[0].index;
+		pokemon.farmEnergy = false;
+		opponent.index = startStats[1].index;
+		opponent.farmEnergy = false;
+
+		return scenario;
+	}
+
 	this.computeReward = function(poke, opponent){
 		let reward = 0;
 		opponentPlayer = battle.getPlayers()[opponent.index];
 
-		if (player.getRemainingPokemon() < playerPrevRemaining) {
+		/*if (player.getRemainingPokemon() < playerPrevRemaining) {
 			reward -= 0.2;
 		}
 		if (opponentPlayer.getRemainingPokemon() < oppPrevRemaining) {
 			reward += 0.1;
-		}
+		}*/
 
 		// additional options are... did opp/player use a shield
 
@@ -676,7 +804,10 @@ function PlayerAI(p, b){
 
 		var state = this.getBattleState(turn, poke, opponent, player, battle.getPlayers()[opponent.index]);
 
-		var actionNum = m.predict(state);
+		var reward = this.computeReward(poke, opponent);
+
+
+		var actionNum = m.chooseAction(state, reward, 0.2);
 
 		switch (actionNum){
 			case 0:	// fast: action = new TimelineAction("fast", poke.index, turn, 0, {priority: poke.priority});
@@ -739,269 +870,11 @@ function PlayerAI(p, b){
 
 		// pass data to network, get decision and parse to var action
 
-		return action
+		return action;
 	}
-
-	// Return the index of a Pokemon to switch to
-	// USEFUL
-	// uses poke.hp (current battling pokemon), player.getTeam()[i].hp (other party members), opponentPlayer.getSwitchTimer(), and self.runScenario("NO_BAIT", pokemon, opponent).average
-	// opponent refers to opposing battling pokemon
-
-	this.decideSwitch = function(){
-		var switchOptions = [];
-		var team = player.getTeam();
-		var poke = battle.getPokemon()[player.getIndex()];
-		var opponent = battle.getOpponent(player.getIndex());
-		var opponentPlayer = battle.getPlayers()[opponent.index];
-
-		for(var i = 0; i < team.length; i++){
-			var pokemon = team[i];
-
-			if((pokemon.hp > 0)&&(pokemon != poke)){
-				var scenario = self.runScenario("NO_BAIT", pokemon, opponent);
-				var weight = 1;
-
-				// Dramatically scale weight based on winning or losing
-				if(scenario.average < 500){
-					weight = Math.round(Math.pow(scenario.average / 100, 4) / 20);
-				} else{
-
-					if((opponentPlayer.getSwitchTimer() > 10)||(poke.hp <= 0)){
-						// If the opponent is switch locked, favor the hard counter
-						weight = Math.round(Math.pow((scenario.average-250) / 100, 4));
-					} else{
-						// If the opponent isn't switch locked, favor the softer counter
-						weight = Math.round(Math.pow((1000-scenario.average) / 100, 4));
-					}
-
-				}
-
-				if(weight < 1){
-					weight = 1;
-				}
-
-				switchOptions.push(new DecisionOption(i, weight));
-			}
-		}
-
-		if(self.hasStrategy("BAD_DECISION_PROTECTION")){
-			switchOptions.sort((a,b) => (a.weight > b.weight) ? -1 : ((b.weight > a.weight) ? 1 : 0));
-
-			if((switchOptions.length > 1)&&(switchOptions[0].weight > switchOptions[1].weight * 4)){
-				switchOptions.splice(1, 1);
-			}
-		}
-		var switchChoice = self.chooseOption(switchOptions);
-		return switchChoice.name;
-	}
-
-	// Decide whether or not to shield a Charged Attack
-	// USEFUL
-
-	// uses poke.hp, opponent.energy, props.energyGuessRange,
-	// minimumEnergy = min(opponent.chargedMoves.energy),
-	// opponent.chargedMoves[i].damage, opponent.hp, opponent.stats.hp, 
-	// player.getShields(), player.getRemainingPokemon(),
-	// opponent.fastMove.damage, player.getSwitchTimer(),
-	// opponentPlayer.battleStats.shieldsUsed,
-	// poke.energy, poke.chargedMoves[i].energy,
-	// poke.chargedMoves[i].damage,
 
 	this.decideShield = function(attacker, defender, m){
-		// First, how hot are we looking in this current matchup?
-		var currentScenario = self.runScenario("NO_BAIT", defender, attacker);
-		var currentRating = currentScenario.average;
-		var currentHp = defender.hp;
-		var estimatedEnergy = attacker.energy + (Math.floor(Math.random() * (props.energyGuessRange * 2)) - props.energyGuessRange);
-		var potentialDamage = 0;
-		var potentialHp = defender.hp - potentialDamage;
-
-		// Which move do we think the attacker is using?
-		var moves = [];
-		var minimumEnergy = 100;
-
-		// Don't allow the AI to guess less energy than the opponent's fastest move
-		for(var i = 0; i < attacker.chargedMoves.length; i++){
-			if(minimumEnergy > attacker.chargedMoves[i].energy){
-				minimumEnergy = attacker.chargedMoves[i].energy;
-			}
-		}
-
-		if(estimatedEnergy < minimumEnergy){
-			estimatedEnergy = minimumEnergy; // Want to make sure at least one valid move can be guessed
-		}
-
-		for(var i = 0; i < attacker.chargedMoves.length; i++){
-			if(estimatedEnergy >= attacker.chargedMoves[i].energy){
-				attacker.chargedMoves.damage = battle.calculateDamage(attacker, defender, attacker.chargedMoves[i], true);
-				moves.push(attacker.chargedMoves[i]);
-			}
-		}
-
-		// Sort moves by damage
-
-		moves.sort((a,b) => (a.damage > b.damage) ? -1 : ((b.damage > a.damage) ? 1 : 0));
-
-		var moveGuessOptions = [];
-
-		for(var i = 0; i < moves.length; i++){
-			var moveWeight = 1;
-
-			// Is the opponent low on HP? Probably the higher damage move
-			if((i == 0)&&(attacker.hp / attacker.stats.hp <= .25)){
-				moveWeight += 8;
-
-				if(moves[i].name == "Acid Spray"){
-					moveWeight += 12;
-				}
-			}
-
-			// Be more cautious when you have more shields
-			if(i == 0){
-				moveWeight += player.getShields();
-			}
-
-			// Am I the last Pokemon and will this move faint me? Better protect myself
-			if((player.getRemainingPokemon() == 1)&&(moves[i].damage >= defender.hp)){
-				moveWeight += 4;
-			}
-
-			// Is this move lower damage and higher energy? Definitely the other one, then
-			if((i == 1)&&(moves[i].damage < moves[0].damage)&&(moves[i].energy >= moves[0].energy)&&(moves[i].name != "Acid Spray")){
-				moveGuessOptions[0].weight += 20;
-			}
-			moveGuessOptions.push(new DecisionOption(i, moveWeight));
-		}
-
-		var move = moves[self.chooseOption(moveGuessOptions).name]; // The guessed move of the attacker
-
-		// Great! We've guessed the move, now let's analyze if we should shield like a player would
-		var yesWeight = 4 + ((3-level)*2); // Lower difficulties will make more random choices
-		var noWeight = 4 + ((3-level)*2);
-
-		// Will this attack hurt?
-		var damageWeight = Math.min(Math.round((move.damage / Math.max(defender.hp, defender.stats.hp / 2)) * 10), 10);
-		var moveDamage = move.damage;
-		var fastMoveDamage = attacker.fastMove.damage;
-
-		// Prefer shielding high damage moves over low damage moves
-		if(damageWeight >= 5){
-			yesWeight += ((damageWeight - 3) * (player.getShields()+1));
-		} else{
-			noWeight += (8 - damageWeight) * 2;
-		}
-
-		// Prefer to shield hard hitting or knockout moves in good matchups over bad matchups
-
-		if((damageWeight >= 6)||(moveDamage + (fastMoveDamage * 2) >= defender.hp)){
-
-			if(player.getRemainingPokemon() > 1){
-				var yesRating = currentRating - 400;
-				var noRating = 400 - currentRating;
-
-				if(defender.hp / defender.stats.hp < .35){
-					yesRating = currentRating - 500;
-					noRating = 500 - currentRating;
-				}
-
-				// If we're locked in, prefer to shield good matchups and let bad matchups go
-				if((player.getSwitchTimer() > 0)&&(player.getRemainingPokemon() > 1)){
-					yesRating *= 2;
-					noRating *= 2;
-				}
-
-				yesWeight += Math.round( (yesRating / 100) * damageWeight);
-				noWeight += Math.round( (noRating / 100) * (10 - damageWeight));
-			} else{
-				yesWeight += damageWeight;
-				noWeight -= damageWeight;
-			}
-
-		}
-
-		// Monkey see, monkey do
-		if((attacker.battleStats.shieldsUsed > 0)&&(damageWeight > 2)&&(! self.hasStrategy("ADVANCED_SHIELDING"))){
-			yesWeight += 4;
-		}
-
-		// Is this Pokemon close to a move that will faint or seriously injure the attacker?
-		for(var i = 0; i < defender.chargedMoves.length; i++){
-			var move = defender.chargedMoves[i];
-			var turnsAway = Math.ceil( (move.energy - defender.energy) / defender.fastMove.energyGain ) * (defender.fastMove.cooldown / 500);
-
-			if( ((moveDamage >= attacker.hp)||((moveDamage >= defender.stats.hp * .8)))&&(turnsAway <= 1)){
-				if(self.hasStrategy("ADVANCED_SHIELDING")){
-					yesWeight += 4;
-				}
-			}
-		}
-
-		// Preserve shield advantage where possible
-		if((player.getRemainingPokemon() > 1)&&(attacker.startingShields >= defender.startingShields)&&(defender.battleStats.shieldsUsed > 0)){
-			yesWeight = Math.round(yesWeight / 2);
-
-			if(currentScenario < 500){
-				yesWeight = Math.round(yesWeight / 4);
-			}
-		}
-
-		// Is this the last Pokemon remaining? If so, protect it at all costs
-		if(player.getRemainingPokemon() == 1){
-			yesWeight *= 2;
-			noWeight = Math.round(noWeight / 4);
-		}
-
-		/*
-
-		// Does my current Pokemon have a better matchup against the attacker than my remaining Pokemon?
-		if((self.hasStrategy("ADVANCED_SHIELDING"))&&(player.getRemainingPokemon() > 1)){
-			var team = player.getTeam();
-			var remainingPokemon = [];
-
-			for(var i = 0; i < team.length; i++){
-				if((team[i].hp > 0)&&(team[i] != defender)){
-					remainingPokemon.push(team[i]);
-				}
-			}
-
-			var betterMatchupExists = false;
-
-			for(var i = 0; i < remainingPokemon.length; i++){
-				var scenario = self.runScenario("NO_BAIT", remainingPokemon[i], attacker);
-
-				if(scenario.average >= currentRating){
-					betterMatchupExists = true;
-				}
-			}
-
-			if((! betterMatchupExists)&&(currentRating >= 500)&&((damageWeight > 4)||(moveDamage + (fastMoveDamage * 2) >= defender.hp))){
-				yesWeight += 20;
-				noWeight = Math.round(noWeight / 2);
-			}
-
-			// Avoid shielding twice if it won't be fatal
-			if((betterMatchupExists)&&(moveDamage + (fastMoveDamage * 2) < defender.hp)&&(defender.battleStats.shieldsUsed > 0)){
-				yesWeight = Math.round(yesWeight / 2);
-			}
-		}
-		*/
-
-		// If one of these options is significantly more weighted than the other, make it the only option
-		if(self.hasStrategy("BAD_DECISION_PROTECTION")){
-			if(yesWeight / noWeight >= 4){
-				noWeight = 0;
-			} else if (noWeight / yesWeight >= 4){
-				yesWeight = 0;
-			}
-		}
-
-		var options = [];
-		options.push(new DecisionOption(true, yesWeight));
-		options.push(new DecisionOption(false, noWeight));
-
-		var decision = self.chooseOption(options).name;
-
-		return decision;
+		return true;
 	}
 
 	// Given a pokemon and its stored energy, how much potential damage can it deal?
@@ -1035,11 +908,11 @@ function PlayerAI(p, b){
 	// state values are normalized here
 	this.getBattleState = function(turn, poke, opp, player, opponent){
 		var state = {};
-		state[turn] = t/480;
+		state['turn'] = turn/480;
 
 		// Player state
 		state['P.switchTimer'] = player.getSwitchTimer()/60;
-		state['P.switchTimer.remainingPokes'] = player.getRemainingPokemon()/3;
+		state['P.remainingPokes'] = player.getRemainingPokemon()/3;
 		state['P.shields'] = player.getShields()/2;
 
 		// Lead pokemon battle state
@@ -1047,18 +920,18 @@ function PlayerAI(p, b){
 		state['p.energy'] = poke.energy/100;
 		state['p.atk'] = (poke.statBuffs[0]+4)/8;
 		state['p.def'] = (poke.statBuffs[1]+4)/8;
-		state['p.cooldown'] = poke.cooldown/4;
+		state['p.cooldown'] = poke.cooldown/4000;
 
 		// Lead pokemon move stats
-		state['p.fast.damage'] = poke.fastMove.damage/opp.stats.hp;
+		state['p.fast.damage'] = poke.fastMove.damage/opp.startHp;
 		state['p.fast.energy'] = poke.fastMove.energyGain/100;
-		state['p.fast.cooldown'] = poke.fastMove.cooldown/4;
+		state['p.fast.cooldown'] = poke.fastMove.cooldown/4000;
 
 		// charged moves -- state size changes if only one charged move
-		for (var i = 1; i<=poke.chargedMoves.length;i++){
+		for (var i = 1; i<=2;i++){
 			let charged = poke.chargedMoves[i-1];
 
-			state['p.charged'+i+'.damage'] = Math.min(charged.damage/opp.stats.hp, 1);
+			state['p.charged'+i+'.damage'] = Math.min(charged.damage/opp.startHp, 1);
 			state['p.charged'+i+'.energy'] = charged.energy/100;
 
 			state['p.charged'+i+'.self.atk'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[0]+4)/8 : 0.5;
@@ -1070,34 +943,35 @@ function PlayerAI(p, b){
 		}
 
 		// Party pokemon
-		let i = 0;
-		for (var pokemon of player.getTeam()){
-			if (pokemon.index !== poke.index) {
+		let n = 1;
+		for (i = 0; i < 3; i++){
+			pokemon = player.getTeam()[i];
+			if (pokemon.data.dex !== poke.data.dex) {
 				// battle state
-				state['party.'+i+'.hp'] = pokemon.hp/pokemon.startHp;
-				state['party.'+i+'.energy'] = pokemon.energy/100;
+				state['party.'+n+'.hp'] = pokemon.hp/pokemon.startHp;
+				state['party.'+n+'.energy'] = pokemon.energy/100;
 
 				// move stats
-				state['party.'+i+'.fast.damage'] = pokemon.fastMove.damage/opp.stats.hp;
-				state['party.'+i+'.fast.energy'] = pokemon.fastMove.energyGain/100;
-				state['party.'+i+'.fast.cooldown'] = pokemon.fastMove.cooldown/4;
+				state['party.'+n+'.fast.damage'] = pokemon.fastMove.damage/opp.startHp;
+				state['party.'+n+'.fast.energy'] = pokemon.fastMove.energyGain/100;
+				state['party.'+n+'.fast.cooldown'] = pokemon.fastMove.cooldown/4000;
 
 				// charged moves -- state size changes if only one charged move, need to fill with zeros
-				for (var j = 1; j<=pokemon.chargedMoves.length;j++){
-					let charged = pokemon.chargedMoves[i-1];
+				for (var j = 1; j <= 2; j++){
+					let charged = pokemon.chargedMoves[j-1];
 
-					state['party.'+i+'.charged'+j+'.damage'] = Math.min(charged.damage/opp.stats.hp, 1);
-					state['party.'+i+'.charged'+j+'.energy'] = charged.energy/100;
+					state['party.'+n+'.charged'+j+'.damage'] = Math.min(charged.damage/opp.startHp, 1);
+					state['party.'+n+'.charged'+j+'.energy'] = charged.energy/100;
 
-					state['party.'+i+'.charged'+j+'.self.atk'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[0]+4)/8 : 0.5;
-					state['party.'+i+'.charged'+j+'.self.def'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[1]+4)/8 : 0.5;
-					state['party.'+i+'.charged'+j+'.opp.atk'] = (charged.buffs && charged.buffTarget == 'opponent') ? (charged.buffs[0]+4)/8 : 0.5;
-					state['party.'+i+'.charged'+j+'.opp.def'] = (charged.buffs && charged.buffTarget == 'opponent') ? (charged.buffs[1]+4)/8 : 0.5;
+					state['party.'+n+'.charged'+j+'.self.atk'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[0]+4)/8 : 0.5;
+					state['party.'+n+'.charged'+j+'.self.def'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[1]+4)/8 : 0.5;
+					state['party.'+n+'.charged'+j+'.opp.atk'] = (charged.buffs && charged.buffTarget == 'opponent') ? (charged.buffs[0]+4)/8 : 0.5;
+					state['party.'+n+'.charged'+j+'.opp.def'] = (charged.buffs && charged.buffTarget == 'opponent') ? (charged.buffs[1]+4)/8 : 0.5;
 
-					state['party.'+i+'.charged'+j+'.chance'] = (charged.buffs) ? charged.buffApplyChance : 0;
+					state['party.'+n+'.charged'+j+'.chance'] = (charged.buffs) ? charged.buffApplyChance : 0;
 				}
+				n++;
 			}
-			i++;
 		}
 
 
@@ -1107,66 +981,68 @@ function PlayerAI(p, b){
 		state['O.shields'] = opponent.getShields()/2;
 
 		// Opponent lead pokemon battle state
-		state['o.hp'] = opp.hp/poke.startHp;
+		state['o.hp'] = opp.hp/opp.startHp;
 		state['o.energy'] = opp.energy/100; // can't know this?
 		state['o.atk'] = (opp.statBuffs[0]+4)/8;
 		state['o.def'] = (opp.statBuffs[1]+4)/8;
-		state['o.cooldown'] = opp.cooldown/4;
+		state['o.cooldown'] = opp.cooldown/4000;
 
 		// Opponent lead move stats
-		state['o.fast.damage'] = opp.fastMove.damage/poke.stats.hp;
+		state['o.fast.damage'] = opp.fastMove.damage/poke.startHp;
 		state['o.fast.energy'] = opp.fastMove.energyGain/100;
-		state['o.fast.cooldown'] = opp.fastMove.cooldown/4;
+		state['o.fast.cooldown'] = opp.fastMove.cooldown/4000;
 
 		// charged moves -- state size changes if only one charged move
 		// can't know all of this at the start of the battle in practice,
 		// charged move can only be added when it is seen
-		for (var i = 1; i<=opp.chargedMoves.length;i++){
+		for (i = 1; i <= 2; i++){
 			let charged = opp.chargedMoves[i-1];
 
-			state['p.charged'+i+'.damage'] = Math.min(charged.damage/poke.stats.hp, 1);
-			state['p.charged'+i+'.energy'] = charged.energy/100;
+			state['o.charged'+i+'.damage'] = Math.min(charged.damage/poke.startHp, 1);
+			state['o.charged'+i+'.energy'] = charged.energy/100;
 
-			state['p.charged'+i+'.self.atk'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[0]+4)/8 : 0.5;
-			state['p.charged'+i+'.self.def'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[1]+4)/8 : 0.5;
-			state['p.charged'+i+'.opp.atk'] = (charged.buffs && charged.buffTarget == 'opponent') ? (charged.buffs[0]+4)/8 : 0.5;
-			state['p.charged'+i+'.opp.def'] = (charged.buffs && charged.buffTarget == 'opponent') ? (charged.buffs[1]+4)/8 : 0.5;
+			state['o.charged'+i+'.self.atk'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[0]+4)/8 : 0.5;
+			state['o.charged'+i+'.self.def'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[1]+4)/8 : 0.5;
+			state['o.charged'+i+'.opp.atk'] = (charged.buffs && charged.buffTarget == 'opponent') ? (charged.buffs[0]+4)/8 : 0.5;
+			state['o.charged'+i+'.opp.def'] = (charged.buffs && charged.buffTarget == 'opponent') ? (charged.buffs[1]+4)/8 : 0.5;
 
-			state['p.charged'+i+'.chance'] = (charged.buffs) ? charged.buffApplyChance : 0;
+			state['o.charged'+i+'.chance'] = (charged.buffs) ? charged.buffApplyChance : 0;
 		}
 
 		// Opponent party pokemon
 		// can't know this all at start
 		// can only know a party pokemon when opponent player switches one out
-		let i = 0;
-		for (var pokemon of opponent.getTeam()){
-			if (pokemon.index !== opp.index) {
+		n = 1;
+		for (i = 0; i < 3; i++){
+			pokemon = opponent.getTeam()[i];
+			if (pokemon.data.dex !== opp.data.dex) {
 				// battle state
-				state['O.party.'+i+'.hp'] = pokemon.hp/pokemon.startHp;
-				state['O.party.'+i+'.energy'] = pokemon.energy/100;
+				state['O.party.'+n+'.hp'] = pokemon.hp/pokemon.startHp;
+				state['O.party.'+n+'.energy'] = pokemon.energy/100;
 
 				// move stats
-				state['O.party.'+i+'.fast.damage'] = pokemon.fastMove.damage/poke.stats.hp;
-				state['O.party.'+i+'.fast.energy'] = pokemon.fastMove.energyGain/100;
-				state['O.party.'+i+'.fast.cooldown'] = pokemon.fastMove.cooldown/4;
+				state['O.party.'+n+'.fast.damage'] = pokemon.fastMove.damage/poke.startHp;
+				state['O.party.'+n+'.fast.energy'] = pokemon.fastMove.energyGain/100;
+				state['O.party.'+n+'.fast.cooldown'] = pokemon.fastMove.cooldown/4000;
 
 				// charged moves -- state size changes if only one charged move, need to fill with zeros
-				for (var j = 1; j<=pokemon.chargedMoves.length;j++){
-					let charged = pokemon.chargedMoves[i-1];
+				for (var j = 1; j<=2;j++){
+					let charged = pokemon.chargedMoves[j-1];
 
-					state['O.party.'+i+'.charged'+j+'.damage'] = Math.min(charged.damage/poke.stats.hp, 1);
-					state['O.party.'+i+'.charged'+j+'.energy'] = charged.energy/100;
+					state['O.party.'+n+'.charged'+j+'.damage'] = Math.min(charged.damage/poke.stats.hp, 1);
+					state['O.party.'+n+'.charged'+j+'.energy'] = charged.energy/100;
 
-					state['O.party.'+i+'.charged'+j+'.self.atk'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[0]+4)/8 : 0.5;
-					state['O.party.'+i+'.charged'+j+'.self.def'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[1]+4)/8 : 0.5;
-					state['O.party.'+i+'.charged'+j+'.opp.atk'] = (charged.buffs && charged.buffTarget == 'opponent') ? (charged.buffs[0]+4)/8 : 0.5;
-					state['O.party.'+i+'.charged'+j+'.opp.def'] = (charged.buffs && charged.buffTarget == 'opponent') ? (charged.buffs[1]+4)/8 : 0.5;
+					state['O.party.'+n+'.charged'+j+'.self.atk'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[0]+4)/8 : 0.5;
+					state['O.party.'+n+'.charged'+j+'.self.def'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[1]+4)/8 : 0.5;
+					state['O.party.'+n+'.charged'+j+'.opp.atk'] = (charged.buffs && charged.buffTarget == 'opponent') ? (charged.buffs[0]+4)/8 : 0.5;
+					state['O.party.'+n+'.charged'+j+'.opp.def'] = (charged.buffs && charged.buffTarget == 'opponent') ? (charged.buffs[1]+4)/8 : 0.5;
 
-					state['O.party.'+i+'.charged'+j+'.chance'] = (charged.buffs) ? charged.buffApplyChance : 0;
+					state['O.party.'+n+'.charged'+j+'.chance'] = (charged.buffs) ? charged.buffApplyChance : 0;
 				}
+				n++;
 			}
-			i++;
 		}
+		return state;
 	}
 
 }

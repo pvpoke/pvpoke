@@ -102,7 +102,7 @@ function Battle(){
 				for(var i = 0; i < pokemon.length; i++){
 					pokemon[i].resetMoves();
 
-					if(players[i].getAI()){
+					if(players[i].getAI() instanceof TrainingAI){
 						players[i].getAI().evaluateMatchup(turns, pokemon[i], self.getOpponent(i), players[(i == 0) ? 1 : 0]);
 					}
 				}
@@ -823,12 +823,13 @@ function Battle(){
 				self.dispatchUpdate({ result: result });
 				clearInterval(mainLoopInterval);
 
-				if (player[0].getAI()) {
+				if (players[0].getAI() instanceof PlayerAI) {
 					// send final state and reward to memory
-					player[0].getAI().memory.addEvent(state, reward, null);
+					let model = players[0].getAI().getModel();
+					state = players[0].getAI().getBattleState(480, pokemon[0], pokemon[1], players[0], players[1]);
+					model.addEvent(state, reward, null);
 					// update Q tables and train model
-					player[0].getAI().updateQ();
-					player[0].getAI().train();
+					model.update();
 				}
 			}
 

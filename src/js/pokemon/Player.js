@@ -6,14 +6,6 @@ function Player(i, ai, b){
 	var ai = ai;
 	var battle = b;
 
-	if(ai !== false){
-		if (ai == 2) {
-			ai = new PlayerAI(self, battle);
-		} else{
-			ai = new TrainingAI(ai, self, battle);
-		}
-	}
-
 	var team = []; // Array of Pokemon in the battle
 	var roster = []; // Array of full 6 Pokemon on the team
 
@@ -178,5 +170,13 @@ function Player(i, ai, b){
 			ai.generateTeam(opponentRoster, previousResult, previousTeams);
 		}
 
+	}
+
+	if(ai !== false){
+		if (ai == 2) {
+			ai = new PlayerAI(self, battle);
+		} else{
+			ai = new TrainingAI(ai, self, battle);
+		}
 	}
 }

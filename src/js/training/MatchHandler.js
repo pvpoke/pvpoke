@@ -81,6 +81,7 @@ function MatchHandler(){
 		} else if(properties.mode == "tournament"){
 			interface.openTeamSelect(players, roundRecord);
 		}
+		player.getAI().init(player, opponent);
 	}
 
 	// Initiate a new tournament battle
