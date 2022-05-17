@@ -3440,6 +3440,7 @@
         "cp1500": [50, 15, 15, 15],
         "cp2500": [50, 15, 15, 15]
     },
+	"searchPriority": 2,
     "buddyDistance": 1,
     "thirdMoveCost": 10000,
     "released": true
@@ -3528,6 +3529,7 @@
         "cp1500": [19, 4, 11, 12],
         "cp2500": [32.5, 6, 10, 15]
     },
+	"searchPriority": 2,
     "buddyDistance": 1,
     "thirdMoveCost": 10000,
     "released": true
@@ -6266,7 +6268,6 @@
         "cp2500": [31, 4, 14, 12]
     },
     "eliteMoves": ["HURRICANE"],
-    "searchPriority": 6,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true

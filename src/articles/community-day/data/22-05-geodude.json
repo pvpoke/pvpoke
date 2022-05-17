@@ -1,0 +1,57 @@
+{
+	"species": [
+		{
+			"speciesId": "geodude_alolan",
+			"baseSpeciesId": "geodude_alolan"
+		},
+		{
+			"speciesId": "graveler_alolan",
+			"baseSpeciesId": "geodude_alolan"
+		},
+		{
+			"speciesId": "golem_alolan",
+			"baseSpeciesId": "geodude_alolan",
+			"default": true
+		}
+	],
+	"checklist": [
+		{
+			"title": "High Rank Golem",
+			"speciesId": "golem_alolan",
+			"baseSpeciesId": "geodude_alolan",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [19, 1, 14, 15],
+			"priority": 1
+		},
+		{
+			"title": "High Rank Golem",
+			"speciesId": "golem_alolan",
+			"baseSpeciesId": "geodude_alolan",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [33.5, 0, 15, 15],
+			"priority": 1
+		},
+		{
+			"title": "High Rank Graveler",
+			"speciesId": "graveler_alolan",
+			"baseSpeciesId": "geodude_alolan",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [30.5, 0, 14, 15],
+			"priority": 2,
+			"notes": "Alolan Graveler is bulkier than Alolan Golem, and is generally preferred over Alolan Golem in Great League themed cups."
+		},
+		{
+			"title": "High IV Geodude",
+			"speciesId": "geodude_alolan",
+			"baseSpeciesId": "geodude_alolan",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [50, 15, 15, 15],
+			"priority": 3,
+			"notes": "Alolan Geodude caps at 1479 CP! It's generally worse than Graveler and Golem, but it's an option if you want to rock some spice."
+		}
+	]
+}
