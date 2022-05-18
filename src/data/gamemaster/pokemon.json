@@ -4807,7 +4807,31 @@
     "fastMoves": ["HEX", "ROCK_SMASH", "FIRE_SPIN"],
     "chargedMoves": ["BONE_CLUB", "FIRE_BLAST", "SHADOW_BALL", "FLAME_WHEEL", "SHADOW_BONE"],
     "eliteMoves": ["SHADOW_BONE"],
-    "tags": ["alolan"],
+    "tags": ["alolan", "shadoweligible"],
+    "defaultIVs": {
+        "cp500": [10.5, 5, 9, 10],
+        "cp1500": [32, 5, 9, 15],
+        "cp2500": [50, 15, 15, 15]
+    },
+	"level25CP": 1119,
+    "searchPriority": 8,
+    "buddyDistance": 3,
+    "thirdMoveCost": 50000,
+    "released": true
+}, {
+    "dex": 105,
+    "speciesName": "Marowak (Alolan) (Shadow)",
+    "speciesId": "marowak_alolan_shadow",
+    "baseStats": {
+        "atk": 144,
+        "def": 186,
+        "hp": 155
+    },
+    "types": ["fire", "ghost"],
+    "fastMoves": ["HEX", "ROCK_SMASH", "FIRE_SPIN"],
+    "chargedMoves": ["BONE_CLUB", "FIRE_BLAST", "SHADOW_BALL", "FLAME_WHEEL", "SHADOW_BONE"],
+    "eliteMoves": ["SHADOW_BONE"],
+    "tags": ["alolan", "shadow"],
     "defaultIVs": {
         "cp500": [10.5, 5, 9, 10],
         "cp1500": [32, 5, 9, 15],
