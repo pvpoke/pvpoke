@@ -32,7 +32,7 @@ Almost inclined to fix Battle-Player-TrainingAI interactions so TrainingAI is mo
 
 What are the roles and responsibilities?:
 
-MatchHandler.js : 
+MatchHandler.js : backend for train battle setup page
 
 Battle.js : manage and update battle state at each turn, query actions from players, execute actions on action queue
 
