@@ -87,7 +87,7 @@ function PokeMultiSelect(element){
 
 			var groupRegex = new RegExp("([a-z_]*),([A-Z_]*),([A-Z_]*),([A-Z_]*)");
 
-			if(groupRegex.test(content)){
+			if((groupRegex.test(content))&&(key.indexOf("criteo") == -1)){
 				$el.find(".quick-fill-select").append("<option value=\""+key+"\" type=\"custom\">"+key+"</option>");
 			}
 
