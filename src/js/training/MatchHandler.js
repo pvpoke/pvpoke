@@ -14,6 +14,9 @@ function MatchHandler(){
 	var previousRoundResult = null;
 	var previousRoundTeams = [];
 
+	// other options are false for manual, "DT" (to be implemented)
+	var playerAI = "Q";
+
 	// Initialize handler
 
 	this.init = function(){
@@ -36,7 +39,7 @@ function MatchHandler(){
 		players = [];
 
 		// 2nd arg originally false
-		var player = new Player(0, 2, battle);
+		var player = new Player(0, playerAI, battle);
 		player.setRoster(props.teams[0]);
 		players.push(player);
 

@@ -172,10 +172,14 @@ function Player(i, ai, b){
 
 	}
 
+	// initialize playerAI if using AI
 	if(ai !== false){
-		if (ai == 2) {
+		if (ai == "Q") {
 			ai = new PlayerAI(self, battle);
-		} else{
+		} else if (ai == "DT") {
+			// to be implemented to use decision tree AI instead
+			ai = new PlayerAI(self, battle);
+		} else {
 			ai = new TrainingAI(ai, self, battle);
 		}
 	}

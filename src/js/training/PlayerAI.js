@@ -800,6 +800,7 @@ function PlayerAI(p, b){
 	// var action = new TimelineAction(type, actor, turns, value, { shielded: false, buffs: false, priority: pokemon[actor].priority });
 	// wait: action = new TimelineAction("wait", poke or player, turns, poke)
 	this.decideAction = function(turn, poke, opponent){
+
 		var action = null;
 
 		var state = this.getBattleState(turn, poke, opponent, player, battle.getPlayers()[opponent.index]);
@@ -837,7 +838,7 @@ function PlayerAI(p, b){
 			default: // default to a fast move
 				action = new TimelineAction("fast", poke.index, turn, 0, {priority: poke.priority});
 		}
-		console.log(action);
+		//console.log(action);
 
 		////////////////
 		// pieces stolen from decideActionOLD
