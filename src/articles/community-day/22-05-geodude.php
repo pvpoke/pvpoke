@@ -11,7 +11,7 @@ require_once '../../header.php';
 
 ?>
 
-<div class="section article white bewear">
+<div class="section article white geodude">
 	<h1>Alolan Geodude Community Day Guide for PvP</h1>
 	<div class="date">Last updated May 19, 2022</div>
 	<img src="<?php echo $WEB_ROOT;?>articles/article-assets/community-day/22-05-geodude/banner.jpg" />
@@ -79,8 +79,8 @@ require_once '../../header.php';
 	<div class="faq-item">
 		<h3 class="article-header"><strong>How good is Alolan Golem with Rollout?</strong></h3>
 		<div class="faq-answer">
-			<p><b>Rollout is a sidegrade for Alolan Golem. It will likely remain a themed cup Pokemon and won't have play in open league metas.</b> Alolan Golem and its pre-evolutions are Rock/Electric type Pokemon with average stat product and decent movepools. Their typing is a major hindrance in open metas, where they are vulnerable to prominent Grass, Ground, and Fighting types. The Alolan Golem family shines best in themed cups where Ground types are uncommon and where their solid moves can hit for neutral damage. In these scenarios, Alolan Graveler is usually preferred over Alolan Golem due to Graveler's slight bulk advantage.</p>
-			<p>Rollout is a high energy generating Rock-type Fast Move, comparable to [Spark]. Rollout is only a sidegrade to Volt Switch, which is generates high energy as well as decent damage output. Which move is preferred may depend on the themed cup and its key meta targets. Look to keep multiple Alolan Golem so you have the ability to use both Rollout and Volt Switch in the future.</p>
+			<p><b>Rollout is most likely a sidegrade for Alolan Golem. It will remain a themed cup Pokemon and won't have much play in open league metas.</b> Alolan Golem and its pre-evolutions are Rock/Electric type Pokemon with average stat product and decent movepools. Their typing is a major hindrance in open metas, where they are vulnerable to prominent Grass, Ground, and Fighting types. The Alolan Golem family shines best in themed cups where Ground types are uncommon and where their solid moves can hit for neutral damage. In these scenarios, Alolan Graveler is usually preferred over Alolan Golem due to Graveler's slight bulk advantage.</p>
+			<p>Rollout is a high energy generating Rock-type Fast Move. Alolan Golem already has Volt Switch, which generates high energy as well as decent damage output. Which move is preferred may depend on the themed cup and its key meta targets. Look to keep multiple Alolan Golem so you have the ability to use both Rollout and Volt Switch in the future.</p>
 		</div>
 	</div>
 
