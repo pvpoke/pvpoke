@@ -3882,8 +3882,9 @@
             "hp": 190
         },
         "types": ["rock", "electric"],
-        "fastMoves": ["ROCK_THROW", "VOLT_SWITCH"],
+        "fastMoves": ["ROCK_THROW", "VOLT_SWITCH", "ROLLOUT"],
         "chargedMoves": ["ROCK_BLAST", "STONE_EDGE", "WILD_CHARGE"],
+        "eliteMoves": ["ROLLOUT"],
         "tags": ["alolan"],
         "defaultIVs": {
             "cp500": [6.5, 4, 14, 10],
@@ -30080,7 +30081,7 @@
         "archetype": "General"
     }, {
         "moveId": "ROLLOUT",
-        "name": "Rollout (Speculative)",
+        "name": "Rollout",
         "abbreviation": "RO",
         "type": "rock",
         "power": 4,
