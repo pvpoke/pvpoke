@@ -23,6 +23,22 @@
 		"chargedMoves": ["SHADOW_BALL", "DARK_PULSE"]
 	},
 	{
+		"speciesId": "ninetales",
+		"chargedMoves": ["WEATHER_BALL_FIRE", "OVERHEHAT"]
+	},
+	{
+		"speciesId": "ninetales_shadow",
+		"chargedMoves": ["WEATHER_BALL_FIRE", "OVERHEHAT"]
+	},
+	{
+		"speciesId": "marowak_alolan",
+		"fastMove": "FIRE_SPIN"
+	},
+	{
+		"speciesId": "marowak_alolan_shadow",
+		"fastMove": "FIRE_SPIN"
+	},
+	{
 		"speciesId": "crustle",
 		"fastMove": "SMACK_DOWN"
 	},
