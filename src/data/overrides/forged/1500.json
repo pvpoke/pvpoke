@@ -15,20 +15,8 @@
 		"chargedMoves": ["ICY_WIND", "WATER_PULSE"]
 	},
 	{
-		"speciesId": "ninetales",
-		"chargedMoves": ["WEATHER_BALL_ICE", "DAZZLING_GLEAM"]
-	},
-	{
 		"speciesId": "cofagrigus",
 		"chargedMoves": ["SHADOW_BALL", "DARK_PULSE"]
-	},
-	{
-		"speciesId": "ninetales",
-		"chargedMoves": ["WEATHER_BALL_FIRE", "OVERHEHAT"]
-	},
-	{
-		"speciesId": "ninetales_shadow",
-		"chargedMoves": ["WEATHER_BALL_FIRE", "OVERHEHAT"]
 	},
 	{
 		"speciesId": "marowak_alolan",
@@ -212,6 +200,14 @@
 		"speciesId": "ninetales_alolan",
 		"chargedMoves": ["WEATHER_BALL_ICE", "DAZZLING_GLEAM"],
 		"weight": 6
+	},
+	{
+		"speciesId": "ninetales",
+		"chargedMoves": ["WEATHER_BALL_FIRE", "OVERHEAT"]
+	},
+	{
+		"speciesId": "ninetales_shadow",
+		"chargedMoves": ["WEATHER_BALL_FIRE", "OVERHEAT"]
 	},
 	{
 		"speciesId": "araquanid",
