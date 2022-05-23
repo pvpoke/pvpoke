@@ -411,6 +411,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if((cup.name == "mega")&&(battle.getCP() == 10000)){
+					iterations = 1;
+				}
+
 				if((cup.name == "all")&&(battle.getCP() == 2500)){
 					iterations = 1;
 				}

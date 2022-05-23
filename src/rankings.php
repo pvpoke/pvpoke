@@ -67,6 +67,10 @@ switch($cup){
 		$league = 'Retro Cup';
 		break;
 
+	case "mega":
+		$league = 'Mega Master League';
+		break;
+
 	case "goteamup":
 		$league = 'GO Stadium GOTeamUp';
 		break;
