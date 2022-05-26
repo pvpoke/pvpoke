@@ -1969,6 +1969,19 @@
     "cooldown": 500,
     "archetype": "Spam/Bait"
 }, {
+    "moveId": "SEED_FLARE",
+    "name": "Seed Flare",
+    "abbreviation": "SFl",
+    "type": "grass",
+    "power": 130,
+    "energy": 75,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, -2],
+	"buffTarget": "opponent",
+    "buffApplyChance": ".4",
+    "archetype": "Nuke Debuff"
+}, {
     "moveId": "SHADOW_BALL",
     "name": "Shadow Ball",
     "type": "ghost",

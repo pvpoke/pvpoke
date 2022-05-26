@@ -218,7 +218,12 @@
 	},
 	{
 		"speciesId": "ninetales",
+		"chargedMoves": ["WEATHER_BALL_FIRE", "OVERHEAT"],
 		"weight": 2
+	},
+	{
+		"speciesId": "ninetales_shadow",
+		"chargedMoves": ["WEATHER_BALL_FIRE", "OVERHEAT"]
 	},
 	{
 		"speciesId": "magcargo",

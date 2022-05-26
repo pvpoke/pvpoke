@@ -17620,7 +17620,7 @@
     },
     "types": ["grass", "none"],
     "fastMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "ZEN_HEADBUTT"],
-    "chargedMoves": ["ENERGY_BALL", "GRASS_KNOT", "SOLAR_BEAM"],
+    "chargedMoves": ["ENERGY_BALL", "GRASS_KNOT", "SOLAR_BEAM", "SEED_FLARE"],
     "defaultIVs": {
         "cp500": [6, 5, 10, 7],
         "cp1500": [17, 4, 12, 13],
@@ -17640,7 +17640,7 @@
     },
     "types": ["grass", "flying"],
     "fastMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "ZEN_HEADBUTT"],
-    "chargedMoves": ["ENERGY_BALL", "GRASS_KNOT", "SOLAR_BEAM"],
+    "chargedMoves": ["ENERGY_BALL", "GRASS_KNOT", "SOLAR_BEAM", "SEED_FLARE"],
     "defaultIVs": {
         "cp500": [5.5, 4, 10, 6],
         "cp1500": [15, 6, 15, 15],
@@ -25251,8 +25251,8 @@
         "hp": 240
     },
     "types": ["rock", "poison"],
-    "fastMoves": ["STRUGGLE"],
-    "chargedMoves": ["STRUGGLE"],
+    "fastMoves": ["ACID", "POUND"],
+    "chargedMoves": ["POWER_GEM", "GUNK_SHOT", "SLUDGE_BOMB", "ROCK_SLIDE"],
     "defaultIVs": {
         "cp500": [5, 4, 7, 13],
         "cp1500": [14, 6, 11, 11],
