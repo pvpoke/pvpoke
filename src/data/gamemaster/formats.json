@@ -1,14 +1,5 @@
 [
 	{
-		"title": "Master League (Classic)",
-		"cup": "classic",
-		"cp": 10000,
-		"meta": "master",
-		"showCup": false,
-		"showFormat": true,
-		"showMeta": false
-	},
-	{
 		"title": "Master League (Megas)",
 		"cup": "mega",
 		"cp": 10000,
@@ -24,7 +15,7 @@
 		"meta": "remix",
 		"showCup": true,
 		"showFormat": true,
-		"showMeta": false
+		"showMeta": true
 	},
 	{
 		"title": "Premier Classic",

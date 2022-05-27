@@ -165,7 +165,7 @@
         "include": [],
         "exclude": [{
             "filterType": "id",
-            "values": ["venusaur", "nidoqueen", "ninetales_alolan", "azumarill", "umbreon", "skarmory", "swampert", "sableye", "medicham", "altaria", "walrein", "deoxys_defense", "bastiodon", "scrafty", "jellicent", "stunfisk_galarian", "talonflame", "trevenant", "obstagoon"],
+            "values": ["venusaur", "nidoqueen", "ninetales_alolan", "azumarill", "umbreon", "skarmory", "swampert", "sableye", "medicham", "altaria", "walrein", "deoxys_defense", "bastiodon", "scrafty", "drapion", "jellicent", "stunfisk_galarian", "talonflame", "trevenant", "obstagoon"],
             "leagues": [1500]
         }, {
             "filterType": "id",
@@ -206,14 +206,6 @@
         }]
     }],
     "formats": [{
-        "title": "Master League (Classic)",
-        "cup": "classic",
-        "cp": 10000,
-        "meta": "master",
-        "showCup": false,
-        "showFormat": true,
-        "showMeta": false
-    }, {
         "title": "Master League (Megas)",
         "cup": "mega",
         "cp": 10000,
@@ -228,7 +220,7 @@
         "meta": "remix",
         "showCup": true,
         "showFormat": true,
-        "showMeta": false
+        "showMeta": true
     }, {
         "title": "Premier Classic",
         "cup": "premierclassic",

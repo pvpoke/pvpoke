@@ -775,12 +775,12 @@
 	},
 	{
 		"speciesId": "registeel",
-		"weight":11
+		"weight":18
 	},
 	{
 		"speciesId": "froslass",
 		"chargedMoves": ["AVALANCHE","SHADOW_BALL"],
-		"weight": 24
+		"weight": 16
 	},
 	{
 		"speciesId": "swampert_shadow",
@@ -823,8 +823,16 @@
 		"chargedMoves": ["FRENZY_PLANT", "AERIAL_ACE"]
 	},
 	{
+		"speciesId": "dragalge",
+		"chargedMoves": ["AQUA_TAIL", "OUTRAGE"]
+	},
+	{
 		"speciesId": "maractus",
 		"fastMove": "BULLET_SEED"
+	},
+	{
+		"speciesId": "crustle",
+		"fastMove": "SMACK_DOWN"
 	},
 	{
 		"speciesId": "abomasnow",
@@ -858,6 +866,10 @@
 	{
 		"speciesId": "wigglytuff",
 		"weight": 18
+	},
+	{
+		"speciesId": "araquanid",
+		"weight": 12
 	},
 	{
 		"speciesId": "empoleon",

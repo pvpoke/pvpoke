@@ -5,7 +5,7 @@
 }, {
     "speciesId": "registeel",
     "fastMove": "LOCK_ON",
-    "chargedMoves": ["FOCUS_BLAST", "FLASH_CANNON"]
+    "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
 }, {
     "speciesId": "lickitung",
     "fastMove": "LICK",
@@ -23,6 +23,10 @@
 	"fastMove":"BULLET_SEED",
 	"chargedMoves":["BODY_SLAM","CRUNCH"]
 }, {
+	"speciesId":"kommo_o",
+	"fastMove":"DRAGON_TAIL",
+	"chargedMoves":["DRAGON_CLAW","CLOSE_COMBAT"]
+},{
 	"speciesId":"cofagrigus",
 	"fastMove":"SHADOW_CLAW",
 	"chargedMoves":["SHADOW_BALL","PSYCHIC"]
@@ -34,7 +38,11 @@
     "speciesId": "abomasnow",
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"]
-}, {
+},{
+    "speciesId": "araquanid",
+    "fastMove": "BUBBLE",
+    "chargedMoves": ["BUBBLE_BEAM", "BUG_BUZZ"]
+},{
     "speciesId": "meganium",
     "fastMove": "VINE_WHIP",
     "chargedMoves": ["FRENZY_PLANT", "EARTHQUAKE"]
@@ -103,17 +111,13 @@
     "fastMove": "FIRE_SPIN",
     "chargedMoves": ["BONE_CLUB", "SHADOW_BONE"]
 }, {
-    "speciesId": "trevenant",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["SEED_BOMB", "SHADOW_BALL"]
+    "speciesId": "marowak_alolan_shadow",
+    "fastMove": "FIRE_SPIN",
+    "chargedMoves": ["BONE_CLUB", "SHADOW_BONE"]
 }, {
     "speciesId": "ferrothorn",
     "fastMove": "BULLET_SEED",
     "chargedMoves": ["POWER_WHIP", "THUNDER"]
-}, {
-    "speciesId": "drapion",
-    "fastMove": "POISON_STING",
-    "chargedMoves": ["CRUNCH", "SLUDGE_BOMB"]
 }, {
     "speciesId": "charizard",
     "fastMove": "FIRE_SPIN",
