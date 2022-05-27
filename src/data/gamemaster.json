@@ -53,6 +53,16 @@
             "values": ["mega"]
         }]
     }, {
+        "name": "classic",
+        "title": "Classic",
+        "include": [],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }],
+        "partySize": 3,
+        "levelCap": 40
+    }, {
         "name": "cliffhanger",
         "title": "Cliffhanger",
         "include": [],
@@ -206,6 +216,14 @@
         }]
     }],
     "formats": [{
+        "title": "Master League (Classic)",
+        "cup": "classic",
+        "cp": 10000,
+        "meta": "master",
+        "showCup": false,
+        "showFormat": true,
+        "showMeta": false
+    }, {
         "title": "Master League (Megas)",
         "cup": "mega",
         "cp": 10000,
