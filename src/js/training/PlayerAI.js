@@ -26,7 +26,7 @@ function PlayerAI(p, b){
 		let poke = player.getTeam()[0];
 		let opp = opponent.getTeam()[0];
 		initState = this.getBattleState(0, poke, opp, player, opponent);
-		console.log(Object.keys(initState).length)
+		console.log('number of states:' + Object.keys(initState).length);
 		numStates = Object.keys(initState).length;
 		m = new PlayerModel(b, hiddenLayerSizes, numStates, 5, 100);
 		m.defineModel(hiddenLayerSizes);

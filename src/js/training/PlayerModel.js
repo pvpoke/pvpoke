@@ -162,7 +162,7 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
         Q[state][action] += alpha*(eRewardChange);
     }
 
-    this.update = function(){
+    this.update = async function(){
         modelXBatch = [];
         modelYBatch = [];
         let prevEvent = null;
@@ -187,9 +187,15 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
         // save updated results to server
         // does this work?
         // or $.post()
-        network.save(webRoot+"data/training/network-test?v="+siteVersion);
 
-        $.post(webRoot+"data/training/Q-table.json?v="+siteVersion, Q);
+        console.log("saving and loading to localhost"+webRoot+"data/network.php");
+        const saveResult = await network.save("http://localhost"+webRoot+"data/network.php");
+        console.log(saveResult);
+
+        //const loadTest = await tf.loadLayersModel("http://localhost"+webRoot+"data/training/network-test?v="+siteVersion);
+        //console.log(loadTest);
+
+        // $.post(webRoot+"data/training/Q-table.json?v="+siteVersion, Q);
 
 
     }

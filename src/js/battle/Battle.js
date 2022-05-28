@@ -1056,6 +1056,7 @@ function Battle(){
 	}
 
 	// Run AI decision making to determine battle action this turn, and return the resulting action
+	// ONLY FOR SIMULATED BATTLES
 
 	this.decideAction = function(poke, opponent){
 

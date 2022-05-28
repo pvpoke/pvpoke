@@ -312,7 +312,7 @@ function TrainingAI(l, p, b){
 			}
 		}
 
-		console.log(pickStrategyOptions);
+		//console.log(pickStrategyOptions);
 
 
 		switch(pickStrategy){
@@ -542,8 +542,8 @@ function TrainingAI(l, p, b){
 				break;
 		}
 
-		console.log(pickStrategy);
-		console.log(team);
+		//console.log(pickStrategy);
+		//console.log(team);
 
 		player.setTeam(team);
 	}

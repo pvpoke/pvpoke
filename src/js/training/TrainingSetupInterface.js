@@ -242,8 +242,6 @@ var InterfaceMaster = (function () {
 				var autotapOverride = $(".autotap-toggle").hasClass("on");
 				var switchTime = parseInt($(".switch-time-select option:selected").val());
 
-				console.log(switchTime);
-
 				// Set the round number to 0 for tournament mode
 				roundNumber = 0;
 
