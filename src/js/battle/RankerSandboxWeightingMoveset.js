@@ -423,6 +423,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if((cup.name == "championship")&&(battle.getCP() == 1500)){
+					iterations = 1;
+				}
+
 				if((cup.name == "retro")&&(battle.getCP() == 1500)){
 					iterations = 1;
 				}
@@ -549,7 +553,7 @@ var RankerMaster = (function () {
 									weight = 0;
 								}
 
-								if((cup.name == "worlds")&&(battle.getCP() == 1500)){
+								if((cup.name == "championship")&&(battle.getCP() == 1500)){
 									weight = 0;
 								}
 							}

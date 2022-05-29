@@ -12,8 +12,8 @@
 	},
 	{
 		"speciesId": "azumarill",
-		"chargedMoves": ["PLAY_ROUGH", "HYDRO_PUMP"],
-		"weight": 40
+		"chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"],
+		"weight": 30
 	},
 	{
 		"speciesId": "azumarill_xs",
@@ -26,7 +26,7 @@
 	},
 	{
 		"speciesId": "walrein",
-		"weight": 25
+		"weight": 40
 	},
 	{
 		"speciesId": "medicham_xs",
@@ -249,7 +249,7 @@
 		"speciesId": "jellicent",
 		"fastMove": "HEX",
 		"chargedMoves": ["BUBBLE_BEAM","SHADOW_BALL"],
-		"weight": 7
+		"weight": 3
 	},
 	{
 		"speciesId": "gligar_shadow",
@@ -583,7 +583,9 @@
 	},
 	{
 		"speciesId": "ninetales_shadow",
-		"chargedMoves": ["WEATHER_BALL_FIRE", "OVERHEAT"]
+		"fastMove": "EMBER",
+		"chargedMoves": ["WEATHER_BALL_FIRE", "OVERHEAT"],
+		"weight": 12
 	},
 	{
 		"speciesId": "pinsir_shadow",
@@ -919,15 +921,15 @@
 	{
 		"speciesId": "registeel",
 		"chargedMoves": ["FOCUS_BLAST","ZAP_CANNON"],
-		"weight": 16
-	},
-	{
-		"speciesId": "stunfisk_galarian",
 		"weight": 35
 	},
 	{
+		"speciesId": "stunfisk_galarian",
+		"weight": 25
+	},
+	{
 		"speciesId": "altaria",
-		"weight":10
+		"weight":6
 	},
 	{
 		"speciesId": "skarmory",
@@ -939,6 +941,7 @@
 	},
 	{
 		"speciesId": "mandibuzz",
+		"fastMove": "AIR_SLASH",
 		"chargedMoves": ["FOUL_PLAY","AERIAL_ACE"],
 		"weight": 14
 	},
@@ -958,11 +961,11 @@
 	},
 	{
 		"speciesId": "venusaur",
-		"weight":9
+		"weight":2
 	},
 	{
 		"speciesId": "bastiodon",
-		"weight": 14
+		"weight":6
 	},
 	{
 		"speciesId": "bellossom_shadow",
@@ -1025,7 +1028,7 @@
 	},
 	{
 		"speciesId": "araquanid",
-		"weight": 13
+		"weight": 19
 	},
 	{
 		"speciesId": "gourgeist_small",

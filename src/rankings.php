@@ -67,6 +67,10 @@ switch($cup){
 		$league = 'Retro Cup';
 		break;
 
+	case "championship":
+		$league = '2022 Championship Series';
+		break;
+
 	case "mega":
 		$league = 'Mega Master League';
 		break;

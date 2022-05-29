@@ -45,6 +45,14 @@
             "values": ["mega"]
         }]
     }, {
+        "name": "championship",
+        "title": "2022 Championship Series",
+        "include": [],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }]
+    }, {
         "name": "all",
         "title": "All Pokemon",
         "include": [],
@@ -236,6 +244,14 @@
         "cup": "remix",
         "cp": 1500,
         "meta": "remix",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "2022 Championship Series",
+        "cup": "championship",
+        "cp": 1500,
+        "meta": "great",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
