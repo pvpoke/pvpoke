@@ -45,15 +45,15 @@
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/community-day/22-05-geodude/">
-				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/community-day/22-05-geodude/thumb.jpg">
+			<a href="<?php echo $WEB_ROOT; ?>articles/infographics/22-05-season-11-great-league-starter-pack/">
+				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/infographics/22-05-season-11-great-league-starter-pack/thumb.jpg">
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/community-day/22-05-geodude/">Alolan Geodude Community Day Guide for PvP</a></h4>
-			<div class="date">May 19, 2022</div>
-			<p>The Alolan Geodude family is ready to rock! Which leagues and Pokemon should you be on the lookout for and how impactful will Rollout be on the meta?</p>
-			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Community Day"># Community Day</a><a href="/pvpoke/src/articles?tag=Infographic"># Infographic</a></div>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/infographics/22-05-season-11-great-league-starter-pack/">Great League Starter Pack for Season 11</a></h4>
+			<div class="date">May 30, 2022</div>
+			<p>Check out the premiere and budget picks to get started in Great League for GO Battle League Season 11!</p>
+			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a><a href="<?php echo $WEB_ROOT; ?>articles?tag=Starter Pack"># Starter Pack</a></div>
 		</div>
 	</div>
 
