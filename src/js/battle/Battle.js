@@ -1905,7 +1905,7 @@ function Battle(){
 		}
 
 		// Defer self debuffing moves until after survivable Charged Moves
-		if(finalState.moves[0].selfDebuffing && poke.shields == 0 && poke.energy < 100){
+		if(finalState.moves[0].selfDebuffing && poke.shields == 0 && poke.energy < 100 && opponent.bestChargedMove){
 			if((opponent.energy >= opponent.bestChargedMove.energy)&&(! self.wouldShield(opponent, poke, opponent.bestChargedMove).value)&&(! poke.activeChargedMoves[0].selfBuffing)){
 				useChargedMove = false;
 				self.logDecision(turns, poke, " is deferring its self debuffing move until after the opponent fires its move");
