@@ -119,8 +119,8 @@ switch($cup){
 		$league = 'Silph Factions (Colony)';
 		break;
 
-	case "flying":
-		$league = 'Flying Cup';
+	case "catchgofest":
+		$league = 'Catch Cup GO Fest Edition';
 		break;
 
 	case "river":

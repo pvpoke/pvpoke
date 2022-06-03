@@ -1,0 +1,147 @@
+[
+	{
+		"speciesId": "machamp_shadow",
+		"chargedMoves": ["CROSS_CHOP", "FRUSTRATION"]
+	},
+	{
+		"speciesId": "granbull_shadow",
+		"fastMove": "CHARM",
+		"chargedMoves": ["CLOSE_COMBAT", "FRUSTRATION"]
+	},
+	{
+		"speciesId": "granbull",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "gardevoir_shadow",
+		"fastMove": "CHARM",
+		"chargedMoves": ["SHADOW_BALL", "FRUSTRATION"]
+	},
+	{
+		"speciesId": "gardevoir",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "primarina",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "mantine",
+		"chargedMoves": ["BUBBLE_BEAM", "ICE_BEAM"]
+	},
+	{
+		"speciesId": "scolipede",
+		"chargedMoves": ["X_SCISSOR", "SLUDGE_BOMB"],
+		"weight": 2
+	},
+	{
+		"speciesId": "sableye",
+		"chargedMoves": ["FOUL_PLAY", "RETURN"],
+		"weight": 6
+	},
+	{
+		"speciesId": "blaziken",
+		"chargedMoves": ["BLAZE_KICK", "BRAVE_BIRD"],
+		"weight": 3
+	},
+	{
+		"speciesId": "sceptile",
+		"chargedMoves": ["LEAF_BLADE", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "umbreon",
+		"chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
+	},
+	{
+		"speciesId": "poliwrath",
+		"chargedMoves": ["ICE_PUNCH", "DYNAMIC_PUNCH"]
+	},
+	{
+		"speciesId": "politoed",
+		"chargedMoves": ["WEATHER_BALL_WATER", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "bronzong",
+		"chargedMoves": ["PSYSHOCK", "PAYBACK"]
+	},
+	{
+		"speciesId": "hitmonchan",
+		"chargedMoves": ["THUNDER_PUNCH", "ICE_PUNCH"]
+	},
+	{
+		"speciesId": "raticate_alolan",
+		"chargedMoves": ["CRUNCH", "RETURN"]
+	},
+	{
+		"speciesId": "torterra",
+		"chargedMoves": ["SAND_TOMB", "STONE_EDGE"]
+	},
+	{
+		"speciesId": "omastar",
+		"chargedMoves": ["ROCK_BLAST", "HYDRO_PUMP"]
+	},
+	{
+		"speciesId": "feraligatr",
+		"fastMove": "WATERFALL"
+	},
+	{
+		"speciesId": "muk_alolan",
+		"chargedMoves": ["ACID_SPRAY", "DARK_PULSE"]
+	},
+	{
+		"speciesId": "shiftry",
+		"fastMove": "SNARL"
+	},
+	{
+		"speciesId": "ninetales",
+		"chargedMoves": ["WEATHER_BALL_FIRE", "OVERHEAT"],
+		"weight": 2
+	},
+	{
+		"speciesId": "lanturn",
+		"fastMove": "SPARK",
+		"weight": 3
+	},
+	{
+		"speciesId": "mandibuzz",
+		"fastMove": "AIR_SLASH"
+	},
+	{
+		"speciesId": "wormadam_trash",
+		"fastMove": "CONFUSION",
+		"weight": 5
+	},
+	{
+		"speciesId": "medicham",
+		"weight": 7
+	},
+	{
+		"speciesId": "walrein",
+		"weight": 6
+	},
+	{
+		"speciesId": "vigoroth",
+		"chargedMoves": ["BODY_SLAM", "BULLDOZE"],
+		"weight": 5
+	},
+	{
+		"speciesId": "pelipper",
+		"weight": 4
+	},
+	{
+		"speciesId": "golbat",
+		"weight": 2
+	},
+	{
+		"speciesId": "beedrill",
+		"weight": 3
+	},
+	{
+		"speciesId": "ivysaur",
+		"weight": 2
+	},
+	{
+		"speciesId": "beedrill",
+		"weight": 3
+	}
+]

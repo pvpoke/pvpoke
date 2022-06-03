@@ -27,6 +27,15 @@
 		"showMeta": true
 	},
 	{
+		"title": "Catch Cup (GO Fest)",
+		"cup": "catchgofest",
+		"cp": 1500,
+		"meta": "catchgofest",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
 		"title": "2022 Championship Series",
 		"cup": "championship",
 		"cp": 1500,
@@ -51,15 +60,6 @@
 		"meta": "masterpremierclassic",
 		"showCup": false,
 		"showFormat": false,
-		"showMeta": true
-	},
-	{
-		"title": "Silph Firefly Cup",
-		"cup": "firefly",
-		"cp": 1500,
-		"meta": "firefly",
-		"showCup": true,
-		"showFormat": true,
 		"showMeta": true
 	},
 	{
