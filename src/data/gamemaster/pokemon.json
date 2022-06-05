@@ -17621,14 +17621,16 @@
     "types": ["grass", "none"],
     "fastMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "ZEN_HEADBUTT"],
     "chargedMoves": ["ENERGY_BALL", "GRASS_KNOT", "SOLAR_BEAM", "SEED_FLARE"],
+	"eliteMoves": ["SEED_FLARE"],
     "defaultIVs": {
         "cp500": [6, 5, 10, 7],
         "cp1500": [17, 4, 12, 13],
         "cp2500": [28.5, 4, 11, 12]
     },
+	"tags": ["mythical"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false
+    "released": true
 }, {
     "dex": 492,
     "speciesName": "Shaymin (Sky)",
@@ -17641,11 +17643,13 @@
     "types": ["grass", "flying"],
     "fastMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "ZEN_HEADBUTT"],
     "chargedMoves": ["ENERGY_BALL", "GRASS_KNOT", "SOLAR_BEAM", "SEED_FLARE"],
+	"eliteMoves": ["SEED_FLARE"],
     "defaultIVs": {
         "cp500": [5.5, 4, 10, 6],
         "cp1500": [15, 6, 15, 15],
         "cp2500": [26, 4, 12, 7]
     },
+	"tags": ["mythical"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": false
@@ -25258,9 +25262,10 @@
         "cp1500": [14, 6, 11, 11],
         "cp2500": [23.5, 5, 6, 15]
     },
+	"tags": ["legendary"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false
+    "released": true
 }, {
     "dex": 794,
     "speciesName": "Buzzwole",

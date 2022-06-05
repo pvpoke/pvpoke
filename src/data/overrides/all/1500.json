@@ -103,6 +103,11 @@
 		"fastMove": "RAZOR_LEAF"
 	},
 	{
+		"speciesId": "shaymin_land",
+		"fastMove": "ZEN_HEADBUTT",
+		"chargedMoves": ["GRASS_KNOT", "SEED_FLARE"]
+	},
+	{
 		"speciesId": "wormadam_trash",
 		"fastMove": "CONFUSION"
 	},
