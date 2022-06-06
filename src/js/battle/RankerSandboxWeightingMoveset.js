@@ -439,6 +439,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if(cup.name == "fossil"){
+					iterations = 1;
+				}
+
 				if(cup.name == "colony"){
 					iterations = 1;
 				}

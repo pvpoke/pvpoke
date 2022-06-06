@@ -123,8 +123,8 @@ switch($cup){
 		$league = 'Catch Cup GO Fest Edition';
 		break;
 
-	case "river":
-		$league = 'River Cup';
+	case "fossil":
+		$league = 'Fossil Cup';
 		break;
 
 	case "remix":

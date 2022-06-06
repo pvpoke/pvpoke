@@ -1,0 +1,12 @@
+{
+	"name": "fossil",
+	"title": "Fossil Cup",
+	"include": [{
+		"filterType": "type",
+		"values":  ["water", "rock", "steel"]
+	}],
+	"exclude": [{
+		"filterType": "tag",
+		"values":  ["mega"]
+	}]
+}

@@ -1,0 +1,134 @@
+[
+	{
+		"speciesId": "lucario",
+		"chargedMoves": ["POWER_UP_PUNCH", "SHADOW_BALL"],
+		"weight": 10
+	},
+	{
+		"speciesId": "melmetal",
+		"chargedMoves": ["ROCK_SLIDE", "SUPER_POWER"]
+	},
+	{
+		"speciesId": "pelipper",
+		"fastMove": "WING_ATTACK",
+		"weight": 15
+	},
+	{
+		"speciesId": "crustle",
+		"fastMove": "SMACK_DOWN"
+	},
+	{
+		"speciesId": "golem_alolan",
+		"fastMove": "VOLT_SWITCH",
+		"chargedMoves": ["ROCK_BLAST", "STONE_EDGE"]
+	},
+	{
+		"speciesId": "graveler_alolan",
+		"chargedMoves": ["ROCK_BLAST", "STONE_EDGE"]
+	},
+	{
+		"speciesId": "politoed",
+		"chargedMoves": ["WEATHER_BALL_WATER", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "politoed_shadow",
+		"chargedMoves": ["WEATHER_BALL_WATER", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "tentacruel",
+		"chargedMoves": ["ACID_SPRAY", "HYDRO_PUMP"]
+	},
+	{
+		"speciesId": "seaking",
+		"chargedMoves": ["DRILL_RUN", "ICY_WIND"]
+	},
+	{
+		"speciesId": "ludicolo",
+		"fastMove": "RAZOR_LEAF",
+		"chargedMoves": ["ICE_BEAM", "LEAF_STORM"]
+	},
+	{
+		"speciesId": "whiscash",
+		"chargedMoves": ["MUD_BOMB", "BLIZZARD"]
+	},
+	{
+		"speciesId": "mawile",
+		"fastMove": "FIRE_FANG",
+		"chargedMoves": ["POWER_UP_PUNCH", "PLAY_ROUGH"],
+		"weight": 5
+	},
+	{
+		"speciesId": "mawile_shadow",
+		"fastMove": "FIRE_FANG",
+		"chargedMoves": ["POWER_UP_PUNCH", "PLAY_ROUGH"]
+	},
+	{
+		"speciesId": "lapras",
+		"fastMove": "ICE_SHARD",
+		"chargedMoves": ["SURF", "SKULL_BASH"]
+	},
+	{
+		"speciesId": "lapras_shadow",
+		"fastMove": "ICE_SHARD",
+		"chargedMoves": ["SURF", "SKULL_BASH"]
+	},
+	{
+		"speciesId": "dewgong",
+		"chargedMoves": ["ICY_WIND", "WATER_PULSE"]
+	},
+	{
+		"speciesId": "omastar",
+		"chargedMoves": ["ROCK_SLIDE", "HYDRO_PUMP"]
+	},
+	{
+		"speciesId": "omastar_shadow",
+		"chargedMoves": ["ROCK_SLIDE", "HYDRO_PUMP"]
+	},
+	{
+		"speciesId": "azumarill",
+		"chargedMoves": ["ICE_BEAM", "HYDRO_PUMP"],
+		"weight": 2
+	},
+	{
+		"speciesId": "poliwrath",
+		"chargedMoves": ["ICE_PUNCH", "DYNAMIC_PUNCH"]
+	},
+	{
+		"speciesId": "poliwrath_shadow",
+		"chargedMoves": ["ICE_PUNCH", "DYNAMIC_PUNCH"]
+	},
+	{
+		"speciesId": "ferrothorn",
+		"chargedMoves": ["POWER_WHIP", "THUNDER"],
+		"weight": 35
+	},
+	{
+		"speciesId": "swampert",
+		"weight": 50
+	},
+	{
+		"speciesId": "araquanid",
+		"weight": 20
+	},
+	{
+		"speciesId": "registeel",
+		"chargedMoves": ["ZAP_CANNON", "FOCUS_BLAST"],
+		"weight": 25
+	},
+	{
+		"speciesId": "escavalier",
+		"weight": 18
+	},
+	{
+		"speciesId": "stunfisk_galarian",
+		"weight": 8
+	},
+	{
+		"speciesId": "jellicent",
+		"weight": 9
+	},
+	{
+		"speciesId": "quagsire",
+		"weight": 4
+	}
+]
