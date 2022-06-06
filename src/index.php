@@ -45,14 +45,14 @@
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/infographics/22-05-season-11-great-league-starter-pack/">
-				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/infographics/22-05-season-11-great-league-starter-pack/thumb.jpg">
+			<a href="<?php echo $WEB_ROOT; ?>articles/infographics/22-06-season-11-ultra-league-starter-pack/">
+				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/infographics/22-06-season-11-ultra-league-starter-pack/thumb.jpg">
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/infographics/22-05-season-11-great-league-starter-pack/">Great League Starter Pack for Season 11</a></h4>
-			<div class="date">May 30, 2022</div>
-			<p>Check out the premiere and budget picks to get started in Great League for GO Battle League Season 11!</p>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/infographics/22-06-season-11-ultra-league-starter-pack/">Ultra League Starter Pack for Season 11</a></h4>
+			<div class="date">June 6, 2022</div>
+			<p>Check out the premiere and budget picks to get started in Ultra League for GO Battle League Season 11!</p>
 			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a><a href="<?php echo $WEB_ROOT; ?>articles?tag=Starter Pack"># Starter Pack</a></div>
 		</div>
 	</div>
