@@ -296,14 +296,6 @@
         "showFormat": true,
         "showMeta": true
     }, {
-        "title": "San Benedetto River Cup",
-        "cup": "river",
-        "cp": 1500,
-        "meta": "river",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "GO Stadium Cliffhanger",
         "cup": "cliffhanger",
         "cp": 1500,
@@ -22520,7 +22512,6 @@
             "cp2500": [33, 4, 15, 14]
         },
         "searchPriority": 5,
-        "levelFloor": 20,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
@@ -22970,7 +22961,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false
+        "released": true
     }, {
         "dex": 697,
         "speciesName": "Tyrantrum",
@@ -22990,7 +22981,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false
+        "released": true
     }, {
         "dex": 698,
         "speciesName": "Amaura",
@@ -23011,7 +23002,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false
+        "released": true
     }, {
         "dex": 699,
         "speciesName": "Aurorus",
@@ -23031,7 +23022,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false
+        "released": true
     }, {
         "dex": 700,
         "speciesName": "Sylveon",
