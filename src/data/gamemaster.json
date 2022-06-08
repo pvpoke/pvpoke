@@ -52,7 +52,7 @@
             "filterType": "tag",
             "values": ["mega"]
         }]
-    }, null, {
+    }, {
         "name": "all",
         "title": "All Pokemon",
         "include": [],
@@ -171,6 +171,16 @@
         "title": "All Pokemon",
         "include": [],
         "exclude": []
+    }, {
+        "name": "premierclassic",
+        "title": "Premier Classic",
+        "include": [],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["legendary", "mythical", "mega"]
+        }],
+        "partySize": 3,
+        "levelCap": 40
     }, {
         "name": "remix",
         "title": "Remix",

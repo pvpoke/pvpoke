@@ -26,7 +26,12 @@ $dir = new DirectoryIterator(dirname(__FILE__) . '/gamemaster/cups');
 foreach ($dir as $file) {
     if ($file->getExtension() == 'json') {
 		$cup = json_decode(file_get_contents('gamemaster/cups/'. $file->getFilename()), true);
-		array_push($base["cups"], $cup);
+
+		if(! is_null($cup)){
+			array_push($base["cups"], $cup);
+		} else{
+			echo $file->getFilename() . ' is missing or invalid<br>';
+		}
     }
 }
 
