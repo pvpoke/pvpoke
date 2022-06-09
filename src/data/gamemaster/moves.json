@@ -207,6 +207,16 @@
     "cooldown": 500,
     "archetype": "Spam/Bait"
 }, {
+    "moveId": "BRUTAL_SWING",
+    "name": "Brutal Swing (Speculative)",
+    "abbreviation": "BrS",
+    "type": "dark",
+    "power": 65,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
     "moveId": "BRINE",
     "name": "Brine",
     "abbreviation": "Bri",
