@@ -37,6 +37,8 @@ var RankerMaster = (function () {
 				bait: 1
 			}];
 
+			var useRecommendedMoves = true;
+
 			var csv = '';
 
 			this.context = "team-builder";
@@ -120,7 +122,7 @@ var RankerMaster = (function () {
 
 					var pokemon = pokemonList[i];
 
-					if(targets.length == 0){
+					if((targets.length == 0)&&(useRecommendedMoves)){
 						pokemon.selectRecommendedMoveset();
 					}
 
@@ -178,19 +180,13 @@ var RankerMaster = (function () {
 
 						totalBattles++;
 
-						var initialize = true;
-
-						if(targets.length > 0){
-							initialize = false;
-						}
-
 						battle.setNewPokemon(pokemon, 0, false);
 						battle.setNewPokemon(opponent, 1, false);
 
 
 						// Force best moves on counters but not on the user's selected Pokemon
 
-						if((context != "team-counters")&&(context != "matrix")&&(team.length > 1)){
+						if((context != "team-counters")&&(context != "matrix")&&(team.length > 1)&&(useRecommendedMoves)){
 							opponent.selectRecommendedMoveset();
 						}
 
@@ -380,6 +376,12 @@ var RankerMaster = (function () {
 
 			this.applySettings = function(settings, index){
 				overrideSettings[index] = settings;
+			}
+
+			// Set whether to use recommended movesets for threats
+
+			this.setRecommendMoveUsage = function(val){
+				useRecommendedMoves = val;
 			}
 
 		};

@@ -1047,6 +1047,25 @@ function Pokemon(id, i, b){
 		self.resetMoves();
 	}
 
+	// Remove a specific move from the movepool (used for removing Frustration when Shadow type is changed)
+
+	this.removeMove = function(id){
+		for(var i = 0; i < self.chargedMovePool.length; i++){
+			if(self.chargedMovePool[i].moveId == id){
+				self.chargedMovePool.splice(i, 1);
+
+				// Reset to the default moveset if the removed move is selected
+				if(self.hasMove(id)){
+					self.selectRecommendedMoveset();
+				}
+
+				return true;
+			}
+		}
+
+		return false;
+	}
+
 	// This function calculates TDO given moveset and opponent, used for move selection
 
 	this.calculateTDO = function(fastMove, chargedMove, opponent, final){
@@ -1916,7 +1935,7 @@ function Pokemon(id, i, b){
 
 		if(self.chargedMoves.length > 1){
 			if(self.chargedMoves[1].isCustom || settings.hardMovesetLinks){
-				chargedMove1Str = self.chargedMoves[1].moveId;
+				chargedMove2Str = self.chargedMoves[1].moveId;
 			}
 		}
 
@@ -1952,6 +1971,11 @@ function Pokemon(id, i, b){
 
 			if(self.speciesName.indexOf("Shadow") == -1){
 				self.speciesName = self.speciesName + " (Shadow)";
+
+				// Add Frustration as a custom move
+				if(! self.knowsMove("FRUSTRATION")){
+					self.addNewMove("FRUSTRATION", self.chargedMovePool, false);
+				}
 			}
 		} else{
 			self.shadowAtkMult = 1;
@@ -1959,6 +1983,9 @@ function Pokemon(id, i, b){
 
 			if(self.speciesName.indexOf(" (Shadow)") > -1){
 				self.speciesName = self.speciesName.replace(" (Shadow)","");
+
+				// Remove Frustration if added as a Custom Move
+				self.removeMove("FRUSTRATION");
 			}
 		}
 	}

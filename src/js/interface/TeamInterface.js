@@ -358,9 +358,12 @@ var InterfaceMaster = (function () {
 					bait: baitShields
 				}, 1);
 
+				ranker.setRecommendMoveUsage(true);
+
 				// Set targets for custom threats
 				if(multiSelectors[1].getPokemonList().length > 0){
 					ranker.setTargets(multiSelectors[1].getPokemonList());
+					ranker.setRecommendMoveUsage(false);
 				}
 
 				var data = ranker.rank(team, battle.getCP(), battle.getCup(), [], "team-counters");
@@ -433,20 +436,25 @@ var InterfaceMaster = (function () {
 				while((count < total)&&(i < counterRankings.length)){
 					var r = counterRankings[i];
 
-					if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
-						i++;
-						continue;
+					// Don't exclude threats that are part of a custom threat list
+
+					if(multiSelectors[1].getPokemonList().length == 0){
+						if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
+							i++;
+							continue;
+						}
+
+						if(r.speciesId.indexOf("_xs") > -1){
+							i++;
+							continue;
+						}
+
+						if(r.pokemon.hasTag("teambuilderexclude")){
+							i++;
+							continue;
+						}
 					}
 
-					if(r.speciesId.indexOf("_xs") > -1){
-						i++;
-						continue;
-					}
-
-					if(r.pokemon.hasTag("teambuilderexclude")){
-						i++;
-						continue;
-					}
 
 					if(excludedThreatIDs.indexOf(r.speciesId) > -1){
 						i++;
@@ -549,14 +557,16 @@ var InterfaceMaster = (function () {
 				while((count < total)&&(i < counterRankings.length)){
 					var r = counterRankings[i];
 
-					if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
-						i++;
-						continue;
-					}
+					if(multiSelectors[1].getPokemonList().length == 0){
+						if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
+							i++;
+							continue;
+						}
 
-					if((r.speciesId.indexOf("_xs") > -1)&&(allowXL)){
-						i++;
-						continue;
+						if((r.speciesId.indexOf("_xs") > -1)&&(allowXL)){
+							i++;
+							continue;
+						}
 					}
 
 					if(excludedThreatIDs.indexOf(r.speciesId) > -1){
@@ -775,19 +785,22 @@ var InterfaceMaster = (function () {
 				while((count < total)&&(i < altRankings.length)){
 					var r = altRankings[i];
 
-					if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
-						i++
-						continue;
-					}
+					// Don't exclude alternatives from a custom alternatives list
+					if(multiSelectors[2].getPokemonList().length == 0){
+						if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
+							i++
+							continue;
+						}
 
-					if((r.speciesId.indexOf("_xs") > -1)&&(allowXL)){
-						i++;
-						continue;
-					}
+						if((r.speciesId.indexOf("_xs") > -1)&&(allowXL)){
+							i++;
+							continue;
+						}
 
-					if((r.pokemon.needsXLCandy())&&(! allowXL)){
-						i++;
-						continue;
+						if((r.pokemon.needsXLCandy())&&(! allowXL)){
+							i++;
+							continue;
+						}
 					}
 
 					var pokemon = r.pokemon;
@@ -988,6 +1001,23 @@ var InterfaceMaster = (function () {
 
 				$(".button.download-csv").attr("href", window.URL.createObjectURL(filedata));
 				$(".button.download-csv").attr("download", filename);
+
+
+				// Update page title with team name
+
+				var teamNameStr = team[0].speciesName;
+				var i = 1;
+
+				for(i = 1; i < Math.min(team.length, 3); i++){
+					teamNameStr += ", " + team[i].speciesName;
+				}
+
+				if(i < team.length){
+					teamNameStr += "+" + (team.length - i);
+				}
+
+				document.title = teamNameStr + " - Team Builder | PvPoke";
+
 
 				runningResults = false;
 			}
@@ -1410,8 +1440,6 @@ var InterfaceMaster = (function () {
 					// Send Google Analytics pageview
 
 					gtag('config', UA_ID, {page_location: (host+url), page_path: url});
-
-
 
 					if(results === false){
 						return;

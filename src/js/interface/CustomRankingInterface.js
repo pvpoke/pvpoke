@@ -21,6 +21,8 @@ function interfaceObject(){
 	var selectedListIndex;
 	var selectedFilterIndex;
 
+	var archivedCups = []; // Array of archived cup formats
+
 	var cup = {
 		name: "custom",
 		title: "Custom",
@@ -88,6 +90,8 @@ function interfaceObject(){
 
 		// Load cups from archive
 		$.getJSON( webRoot+"data/gamemaster/cups/archive/cups.json?v="+siteVersion, function( archive ){
+
+			archivedCups = archive;
 
 			for(var i = 0; i < archive.length; i++){
 				var c = archive[i];
@@ -497,7 +501,16 @@ function interfaceObject(){
 
 	function selectCup(e){
 		var val = $(".cup-select option:selected").val();
-		var c = gm.getCupById(val);
+		var c = false;
+		//var c = gm.getCupById(val);
+
+		// Search archive for cup
+		for(var i = 0; i < archivedCups.length; i++){
+			if(archivedCups[i].name == val){
+				c = archivedCups[i];
+				continue;
+			}
+		}
 
 		if(c){
 			c.name = "custom";

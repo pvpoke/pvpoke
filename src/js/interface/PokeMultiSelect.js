@@ -859,7 +859,7 @@ function PokeMultiSelect(element){
 		// Copy list text
 
 		$(".modal .list-export .copy").click(function(e){
-			var el = $(e.target).prev()[0];
+			var el = $(e.target).parent().prev()[0];
 			el.focus();
 			el.setSelectionRange(0, el.value.length);
 			document.execCommand("copy");

@@ -477,7 +477,7 @@ var InterfaceMaster = (function () {
 
 					// Set document title
 
-					document.title = "Battle - " + pokes[0].speciesName + " vs. " + pokes[1].speciesName + " | PvPoke";
+					document.title = pokes[0].speciesName + " vs. " + pokes[1].speciesName + " - Battle | PvPoke";
 
 					// Push state to browser history so it can be navigated, only if not from URL parameters
 
@@ -1043,6 +1043,8 @@ var InterfaceMaster = (function () {
 				  'event_category' : 'Simulation',
 				  'event_label' : pokemon.speciesId
 				});
+
+				document.title = poke.speciesName + " Multi-Battle | PvPoke";
 
 				if(get){
 					get = false;
@@ -1757,7 +1759,7 @@ var InterfaceMaster = (function () {
 
 				// Set document title
 
-				document.title = "Battle - " + pokes[0].speciesName + " vs. " + pokes[1].speciesName + " | PvPoke";
+				document.title = pokes[0].speciesName + " vs. " + pokes[1].speciesName + " - Battle | PvPoke";
 
 				var url = webRoot+battleStr;
 
@@ -1826,14 +1828,31 @@ var InterfaceMaster = (function () {
 				$(".battle-results").hide();
 
 				if(self.battleMode == "single"){
-					pokeSelectors[0].setSelectedPokemon(pokeSelectors[0].getPokemon());
-					pokeSelectors[1].setSelectedPokemon(pokeSelectors[1].getPokemon());
+					if(pokeSelectors[0].getPokemon()){
+						pokeSelectors[0].setSelectedPokemon(pokeSelectors[0].getPokemon());
+					}
+
+					if(pokeSelectors[1].getPokemon()){
+						pokeSelectors[1].setSelectedPokemon(pokeSelectors[1].getPokemon());
+					}
+
+					document.title = "Battle | PvPoke";
+					$("#favicon").attr("href", webRoot+"img/favicon.png");
 				}
 
 				if(self.battleMode == "matrix"){
 					$(".poke.multi .custom-options").show();
 
 					window.history.pushState({mode: "matrix"}, "Battle", webRoot + "battle/matrix/");
+
+					// Update document title and favicon
+					document.title = "Matrix | PvPoke";
+					$("#favicon").attr("href", webRoot+"img/favicon_matrix.png");
+				}
+
+				if(self.battleMode == "multi"){
+					document.title = "Multi-Battle | PvPoke";
+					$("#favicon").attr("href", webRoot+"img/favicon_multi_battle.png");
 				}
 
 				// Load default meta group when switching to Multi Battle

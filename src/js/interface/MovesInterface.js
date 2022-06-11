@@ -174,7 +174,7 @@ var InterfaceMaster = (function () {
 
 			this.tableSortCallback = function(){
 				if($(".poke-search").val() != ''){
-					$(".poke-search").trigger("keyup");
+					$(".poke-search").first().trigger("keyup");
 				}
 			}
 
@@ -321,6 +321,11 @@ var InterfaceMaster = (function () {
 
 						for(var i = 0; i < searches.length; i++){
 							// Don't filter out the headers
+
+							// Remove leading spaces
+							if(searches[i][0] == " "){
+								searches[i] = searches[i].substring(1);
+							}
 
 							if(index == 0){
 								return;

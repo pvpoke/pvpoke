@@ -34,11 +34,28 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.27.2 (April 30, 2022)</h4>
+	<h4>v1.28.4 (June 11, 2022)</h4>
 	<ul>
-		<li>Fixed shielding issues surrounding boosting moves like Flame Charge, which sometimes weren't being shielded correctly before.</li>
-		<li>Relaxed optimized move timing for Pokemon with long duration Fast Moves; these Pokemon will now use Charged Moves with mostly optimal timing but not perfectly optimal timing. They will throw energy earlier and more consistently.</li>
-		<li>Fixed an issue with optimized timing where Pokemon would sometimes go over 100 energy.</li>
+		<li>Tab title and icon updates:</li>
+		<ul>
+			<li>Multi-Battle and Matrix Battle tabs are now labeled in the page title</li>
+			<li>Team Builder tabs list Pokemon names in the page title</li>
+			<li>Added new favicons to help distinguish between Ranking, Multi-Battle, Matrix Battle, and Team Builder pages.</li>
+		</ul>
+		<li>Team Builder fixes/updates:</li>
+		<ul>
+			<li>Fixed an issue in the Team Builder where custom threats would revert to their default movesets.</li>
+			<li>Shadow Pokemon in custom threats and alternatives lists will automatically appear in the results without needing to manually enable the Shadow Pokemon setting.</li>
+		</ul>
+		<li>Custom Rankings fixes:</li>
+		<ul>
+			<li>Fixed the "Import League or Cup" dropdown to import cup settings. This dropdown currently has duplicate entries and is missing recent cups - stay tuned for more updates.</li>
+			<li>An issue where the Custom Rankings buttons would sometimes do nothing should be resolved.</li>
+		</ul>
+		<li>Fixed the "Copy" button for importing and exporting custom groups.</li>
+		<li>Fixed an issue where battles with multiple custom added moves didn't generate links correctly.</li>
+		<li>Fixed the Moves page search after sorting the table, and searching now allows for spaces between a list of move types or names.</li>
+		<li>Normal Pokemon will have Frustration automatically added or removed from their movepools when changing the Pokemon Form setting.</li>
 	</ul>
 
 	<h3>Latest Article</h3>
