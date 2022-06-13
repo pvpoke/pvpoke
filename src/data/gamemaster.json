@@ -23933,8 +23933,8 @@
             "hp": 132
         },
         "types": ["bug", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["BUG_BITE", "SPARK"],
+        "chargedMoves": ["X_SCISSOR", "VICE_GRIP", "CRUNCH"],
         "defaultIVs": {
             "cp500": [20, 4, 13, 9],
             "cp1500": [50, 15, 15, 15],
@@ -23953,8 +23953,8 @@
             "hp": 149
         },
         "types": ["bug", "electric"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["BUG_BITE", "SPARK"],
+        "chargedMoves": ["X_SCISSOR", "DISCHARGE", "CRUNCH"],
         "defaultIVs": {
             "cp500": [11, 7, 11, 14],
             "cp1500": [38, 4, 9, 13],
@@ -23973,8 +23973,8 @@
             "hp": 184
         },
         "types": ["bug", "electric"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["BUG_BITE", "SPARK", "MUD_SLAP"],
+        "chargedMoves": ["X_SCISSOR", "DISCHARGE", "CRUNCH"],
         "defaultIVs": {
             "cp500": [6, 12, 14, 10],
             "cp1500": [17.5, 8, 11, 15],
@@ -23993,8 +23993,8 @@
             "hp": 132
         },
         "types": ["fighting", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["ROCK_SMASH", "PAYBACK"],
+        "chargedMoves": ["POWER_UP_PUNCH", "CRABHAMMER", "PAYBACK"],
         "defaultIVs": {
             "cp500": [13.5, 9, 12, 15],
             "cp1500": [48.5, 13, 15, 15],
@@ -24014,8 +24014,8 @@
             "hp": 219
         },
         "types": ["fighting", "ice"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["ROCK_SMASH", "PAYBACK"],
+        "chargedMoves": ["POWER_UP_PUNCH", "CRABHAMMER", "PAYBACK", "ICE_PUNCH"],
         "defaultIVs": {
             "cp500": [6.5, 6, 14, 13],
             "cp1500": [19, 4, 13, 14],
@@ -24118,8 +24118,8 @@
             "hp": 120
         },
         "types": ["bug", "fairy"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["FAIRY_WIND", "STRUGGLE_BUG"],
+        "chargedMoves": ["DAZZLING_GLEAM", "BUG_BUZZ"],
         "defaultIVs": {
             "cp500": [22.5, 4, 9, 13],
             "cp1500": [50, 15, 15, 15],
@@ -24138,8 +24138,8 @@
             "hp": 155
         },
         "types": ["bug", "fairy"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["FAIRY_WIND", "STRUGGLE_BUG"],
+        "chargedMoves": ["DAZZLING_GLEAM", "BUG_BUZZ"],
         "defaultIVs": {
             "cp500": [8.5, 6, 14, 11],
             "cp1500": [25.5, 5, 12, 12],
@@ -24178,8 +24178,8 @@
             "hp": 181
         },
         "types": ["rock", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["CRUSH_CLAW", "ROCK_THROW"],
+        "chargedMoves": ["STONE_EDGE", "IRON_HEAD", "CRUNCH"],
         "defaultIVs": {
             "cp500": [7, 6, 15, 9],
             "cp1500": [20.5, 6, 14, 10],
@@ -24239,8 +24239,8 @@
             "hp": 128
         },
         "types": ["water", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["WATER_GUN", "WATERFALL", "IRON_TAIL"],
+        "chargedMoves": ["BRINE", "SURF", "AQUA_TAIL"],
         "defaultIVs": {
             "cp500": [50, 15, 15, 15],
             "cp1500": [50, 15, 15, 15],
@@ -24259,8 +24259,8 @@
             "hp": 128
         },
         "types": ["water", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["WATER_GUN", "WATERFALL", "IRON_TAIL"],
+        "chargedMoves": ["BRINE", "SURF", "AQUA_TAIL"],
         "defaultIVs": {
             "cp500": [6, 5, 4, 13],
             "cp1500": [17, 4, 15, 13],
@@ -24279,8 +24279,8 @@
             "hp": 128
         },
         "types": ["water", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["WATER_GUN", "WATERFALL", "IRON_TAIL"],
+        "chargedMoves": ["BRINE", "SURF", "AQUA_TAIL"],
         "defaultIVs": {
             "cp500": [50, 15, 15, 15],
             "cp1500": [50, 15, 15, 15],
@@ -24299,8 +24299,8 @@
             "hp": 137
         },
         "types": ["poison", "water"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["POISON_STING", "BITE"],
+        "chargedMoves": ["MUDDY_WATER", "GUNK_SHOT", "SLUDGE_WAVE"],
         "defaultIVs": {
             "cp500": [20.5, 4, 10, 13],
             "cp1500": [50, 15, 15, 15],
@@ -24319,8 +24319,8 @@
             "hp": 137
         },
         "types": ["poison", "water"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["POISON_JAB", "BITE"],
+        "chargedMoves": ["MUDDY_WATER", "GUNK_SHOT", "SLUDGE_WAVE"],
         "defaultIVs": {
             "cp500": [11.5, 4, 12, 11],
             "cp1500": [38.5, 4, 11, 14],
@@ -24339,8 +24339,8 @@
             "hp": 172
         },
         "types": ["ground", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["MUD_SLAP", "ROCK_SMASH"],
+        "chargedMoves": ["BULLDOZE", "BODY_SLAM", "EARTHQUAKE"],
         "defaultIVs": {
             "cp500": [10, 4, 12, 11],
             "cp1500": [30, 4, 11, 13],
@@ -24359,8 +24359,8 @@
             "hp": 225
         },
         "types": ["ground", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["MUD_SLAP", "ROCK_SMASH"],
+        "chargedMoves": ["BULLDOZE", "BODY_SLAM", "EARTHQUAKE", "HEAVY_SLAM"],
         "defaultIVs": {
             "cp500": [6, 12, 15, 15],
             "cp1500": [18, 6, 15, 12],
@@ -24461,8 +24461,8 @@
             "hp": 120
         },
         "types": ["grass", "fairy"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["ASTONISH"],
+        "chargedMoves": ["GIGA_DRAIN", "DAZZLING_GLEAM", "SEED_BOMB"],
         "defaultIVs": {
             "cp500": [19.5, 4, 9, 9],
             "cp1500": [50, 15, 15, 15],
@@ -24481,8 +24481,8 @@
             "hp": 155
         },
         "types": ["grass", "fairy"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["ASTONISH"],
+        "chargedMoves": ["GIGA_DRAIN", "MOONBLAST", "SEED_BOMB", "SLUDGE_BOMB"],
         "defaultIVs": {
             "cp500": [10, 8, 15, 9],
             "cp1500": [30.5, 5, 12, 14],
@@ -24585,8 +24585,8 @@
             "hp": 123
         },
         "types": ["grass", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["RAZOR_LEAF", "CHARM"],
+        "chargedMoves": ["ENERGY_BALL", "DRAINING_KISS"],
         "defaultIVs": {
             "cp500": [50, 11, 15, 12],
             "cp1500": [50, 15, 15, 15],
@@ -24606,8 +24606,8 @@
             "hp": 141
         },
         "types": ["grass", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["RAZOR_LEAF", "CHARM"],
+        "chargedMoves": ["ENERGY_BALL", "DRAINING_KISS", "GRASS_KNOT"],
         "defaultIVs": {
             "cp500": [26.5, 5, 12, 12],
             "cp1500": [50, 15, 15, 15],
@@ -24626,8 +24626,8 @@
             "hp": 176
         },
         "types": ["grass", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["RAZOR_LEAF", "CHARM", "MAGICAL_LEAF"],
+        "chargedMoves": ["ENERGY_BALL", "DRAINING_KISS", "GRASS_KNOT", "STOMP"],
         "defaultIVs": {
             "cp500": [6.5, 6, 14, 6],
             "cp1500": [19, 4, 11, 10],
@@ -24688,8 +24688,8 @@
             "hp": 225
         },
         "types": ["fighting", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["COUNTER", "ROCK_SMASH", "TAKE_DOWN"],
+        "chargedMoves": ["BRICK_BREAK", "CLOSE_COMBAT", "SUPER_POWER"],
         "defaultIVs": {
             "cp500": [6.5, 5, 4, 9],
             "cp1500": [18.5, 4, 15, 5],
@@ -24708,8 +24708,8 @@
             "hp": 93
         },
         "types": ["bug", "water"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["STRUGGLE_BUG"],
+        "chargedMoves": ["BUG_BUZZ"],
         "defaultIVs": {
             "cp500": [50, 5, 14, 15],
             "cp1500": [50, 15, 15, 15],
@@ -24729,8 +24729,8 @@
             "hp": 181
         },
         "types": ["bug", "water"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["FURY_CUTTER", "METAL_CLAW", "WATERFALL"],
+        "chargedMoves": ["X_SCISSOR", "AQUA_JET", "AERIAL_ACE"],
         "defaultIVs": {
             "cp500": [6, 8, 15, 10],
             "cp1500": [17.5, 6, 13, 11],
@@ -24749,8 +24749,8 @@
             "hp": 146
         },
         "types": ["ghost", "ground"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["ASTONISH", "MUD_SHOT"],
+        "chargedMoves": ["SAND_TOMB", "SHADOW_BALL", "EARTH_POWER"],
         "defaultIVs": {
             "cp500": [15.5, 6, 14, 10],
             "cp1500": [50, 15, 15, 15],
@@ -24769,8 +24769,8 @@
             "hp": 198
         },
         "types": ["ghost", "ground"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["ASTONISH", "MUD_SHOT"],
+        "chargedMoves": ["SAND_TOMB", "SHADOW_BALL", "EARTH_POWER"],
         "defaultIVs": {
             "cp500": [7.5, 12, 11, 15],
             "cp1500": [23, 4, 10, 15],
@@ -24790,8 +24790,8 @@
             "hp": 146
         },
         "types": ["water", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["COUNTER"],
+        "chargedMoves": ["MIRROR_COAT"],
         "defaultIVs": {
             "cp500": [14.5, 4, 4, 15],
             "cp1500": [49.5, 12, 14, 15],
@@ -24811,8 +24811,8 @@
             "hp": 216
         },
         "types": ["normal", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["TACKLE", "TAKE_DOWN"],
+        "chargedMoves": ["TRI_ATTACK", "IRON_HEAD", "AERIAL_ACE"],
         "defaultIVs": {
             "cp500": [7, 10, 13, 11],
             "cp1500": [21, 4, 12, 14],
@@ -24832,8 +24832,8 @@
             "hp": 216
         },
         "types": ["normal", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["TACKLE", "TAKE_DOWN", "BITE"],
+        "chargedMoves": ["TRI_ATTACK", "IRON_HEAD", "AERIAL_ACE", "X_SCISSOR"],
         "defaultIVs": {
             "cp500": [6.5, 6, 14, 8],
             "cp1500": [19, 4, 10, 14],
@@ -24852,8 +24852,8 @@
             "hp": 216
         },
         "types": ["bug", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["TACKLE", "TAKE_DOWN", "BITE"],
+        "chargedMoves": ["TRI_ATTACK", "IRON_HEAD", "AERIAL_ACE", "X_SCISSOR"],
         "defaultIVs": {
             "cp500": [6.5, 6, 14, 8],
             "cp1500": [19, 4, 10, 14],
@@ -24872,8 +24872,8 @@
             "hp": 216
         },
         "types": ["dark", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["TACKLE", "TAKE_DOWN", "BITE"],
+        "chargedMoves": ["TRI_ATTACK", "IRON_HEAD", "AERIAL_ACE", "X_SCISSOR"],
         "defaultIVs": {
             "cp500": [6.5, 6, 14, 8],
             "cp1500": [19, 4, 10, 14],
@@ -24892,8 +24892,8 @@
             "hp": 216
         },
         "types": ["dragon", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["TACKLE", "TAKE_DOWN", "BITE"],
+        "chargedMoves": ["TRI_ATTACK", "IRON_HEAD", "AERIAL_ACE", "X_SCISSOR"],
         "defaultIVs": {
             "cp500": [6.5, 6, 14, 8],
             "cp1500": [19, 4, 10, 14],
@@ -24912,8 +24912,8 @@
             "hp": 216
         },
         "types": ["electric", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["TACKLE", "TAKE_DOWN", "BITE"],
+        "chargedMoves": ["TRI_ATTACK", "IRON_HEAD", "AERIAL_ACE", "X_SCISSOR"],
         "defaultIVs": {
             "cp500": [6.5, 6, 14, 8],
             "cp1500": [19, 4, 10, 14],
@@ -24932,8 +24932,8 @@
             "hp": 216
         },
         "types": ["fairy", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["TACKLE", "TAKE_DOWN", "BITE"],
+        "chargedMoves": ["TRI_ATTACK", "IRON_HEAD", "AERIAL_ACE", "X_SCISSOR"],
         "defaultIVs": {
             "cp500": [6.5, 6, 14, 8],
             "cp1500": [19, 4, 10, 14],
@@ -24952,8 +24952,8 @@
             "hp": 216
         },
         "types": ["fighting", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["TACKLE", "TAKE_DOWN", "BITE"],
+        "chargedMoves": ["TRI_ATTACK", "IRON_HEAD", "AERIAL_ACE", "X_SCISSOR"],
         "defaultIVs": {
             "cp500": [6.5, 6, 14, 8],
             "cp1500": [19, 4, 10, 14],
@@ -24972,8 +24972,8 @@
             "hp": 216
         },
         "types": ["fire", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["TACKLE", "TAKE_DOWN", "BITE"],
+        "chargedMoves": ["TRI_ATTACK", "IRON_HEAD", "AERIAL_ACE", "X_SCISSOR"],
         "defaultIVs": {
             "cp500": [6.5, 6, 14, 8],
             "cp1500": [19, 4, 10, 14],
@@ -24992,8 +24992,8 @@
             "hp": 216
         },
         "types": ["flying", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["TACKLE", "TAKE_DOWN", "BITE"],
+        "chargedMoves": ["TRI_ATTACK", "IRON_HEAD", "AERIAL_ACE", "X_SCISSOR"],
         "defaultIVs": {
             "cp500": [6.5, 6, 14, 8],
             "cp1500": [19, 4, 10, 14],
@@ -25012,8 +25012,8 @@
             "hp": 216
         },
         "types": ["ghost", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["TACKLE", "TAKE_DOWN", "BITE"],
+        "chargedMoves": ["TRI_ATTACK", "IRON_HEAD", "AERIAL_ACE", "X_SCISSOR"],
         "defaultIVs": {
             "cp500": [6.5, 6, 14, 8],
             "cp1500": [19, 4, 10, 14],
@@ -25032,8 +25032,8 @@
             "hp": 216
         },
         "types": ["grass", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["TACKLE", "TAKE_DOWN", "BITE"],
+        "chargedMoves": ["TRI_ATTACK", "IRON_HEAD", "AERIAL_ACE", "X_SCISSOR"],
         "defaultIVs": {
             "cp500": [6.5, 6, 14, 8],
             "cp1500": [19, 4, 10, 14],
@@ -25052,8 +25052,8 @@
             "hp": 216
         },
         "types": ["ground", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["TACKLE", "TAKE_DOWN", "BITE"],
+        "chargedMoves": ["TRI_ATTACK", "IRON_HEAD", "AERIAL_ACE", "X_SCISSOR"],
         "defaultIVs": {
             "cp500": [6.5, 6, 14, 8],
             "cp1500": [19, 4, 10, 14],
@@ -25072,8 +25072,8 @@
             "hp": 216
         },
         "types": ["ice", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["TACKLE", "TAKE_DOWN", "BITE"],
+        "chargedMoves": ["TRI_ATTACK", "IRON_HEAD", "AERIAL_ACE", "X_SCISSOR"],
         "defaultIVs": {
             "cp500": [6.5, 6, 14, 8],
             "cp1500": [19, 4, 10, 14],
@@ -25092,8 +25092,8 @@
             "hp": 216
         },
         "types": ["poison", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["TACKLE", "TAKE_DOWN", "BITE"],
+        "chargedMoves": ["TRI_ATTACK", "IRON_HEAD", "AERIAL_ACE", "X_SCISSOR"],
         "defaultIVs": {
             "cp500": [6.5, 6, 14, 8],
             "cp1500": [19, 4, 10, 14],
@@ -25112,8 +25112,8 @@
             "hp": 216
         },
         "types": ["psychic", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["TACKLE", "TAKE_DOWN", "BITE"],
+        "chargedMoves": ["TRI_ATTACK", "IRON_HEAD", "AERIAL_ACE", "X_SCISSOR"],
         "defaultIVs": {
             "cp500": [6.5, 6, 14, 8],
             "cp1500": [19, 4, 10, 14],
@@ -25132,8 +25132,8 @@
             "hp": 216
         },
         "types": ["rock", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["TACKLE", "TAKE_DOWN", "BITE"],
+        "chargedMoves": ["TRI_ATTACK", "IRON_HEAD", "AERIAL_ACE", "X_SCISSOR"],
         "defaultIVs": {
             "cp500": [6.5, 6, 14, 8],
             "cp1500": [19, 4, 10, 14],
@@ -25152,8 +25152,8 @@
             "hp": 216
         },
         "types": ["steel", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["TACKLE", "TAKE_DOWN", "BITE"],
+        "chargedMoves": ["TRI_ATTACK", "IRON_HEAD", "AERIAL_ACE", "X_SCISSOR"],
         "defaultIVs": {
             "cp500": [6.5, 6, 14, 8],
             "cp1500": [19, 4, 10, 14],
@@ -25172,8 +25172,8 @@
             "hp": 216
         },
         "types": ["water", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["TACKLE", "TAKE_DOWN", "BITE"],
+        "chargedMoves": ["TRI_ATTACK", "IRON_HEAD", "AERIAL_ACE", "X_SCISSOR"],
         "defaultIVs": {
             "cp500": [6.5, 6, 14, 8],
             "cp1500": [19, 4, 10, 14],
@@ -25192,8 +25192,8 @@
             "hp": 155
         },
         "types": ["rock", "flying"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["ROLLOUT", "TAKE_DOWN"],
+        "chargedMoves": ["POWER_GEM", "ANCIENT_POWER", "ACROBATICS"],
         "defaultIVs": {
             "cp500": [8, 11, 12, 13],
             "cp1500": [24, 7, 14, 12],
@@ -25213,8 +25213,8 @@
             "hp": 155
         },
         "types": ["rock", "flying"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["ROLLOUT", "TAKE_DOWN"],
+        "chargedMoves": ["POWER_GEM", "ANCIENT_POWER", "ACROBATICS"],
         "defaultIVs": {
             "cp500": [12.5, 4, 14, 12],
             "cp1500": [45.5, 4, 13, 13],
@@ -25234,8 +25234,8 @@
             "hp": 163
         },
         "types": ["normal", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["ROLLOUT", "YAWN"],
+        "chargedMoves": ["PLAY_ROUGH", "BULLDOZE", "PAYBACK"],
         "defaultIVs": {
             "cp500": [7.5, 4, 11, 7],
             "cp1500": [21, 8, 15, 14],
@@ -25255,8 +25255,8 @@
             "hp": 155
         },
         "types": ["fire", "dragon"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["EMBER", "FIRE_SPIN"],
+        "chargedMoves": ["OVERHEAT", "FLAMETHROWER", "DRAGON_PULSE"],
         "defaultIVs": {
             "cp500": [8.5, 5, 15, 11],
             "cp1500": [25, 6, 14, 13],
@@ -25276,8 +25276,8 @@
             "hp": 163
         },
         "types": ["electric", "steel"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["THUNDER_SHOCK", "SPARK"],
+        "chargedMoves": ["FELL_STINGER", "WILD_CHARGE", "GYRO_BALL"],
         "defaultIVs": {
             "cp500": [8.5, 9, 13, 14],
             "cp1500": [26, 4, 10, 15],
@@ -25296,8 +25296,8 @@
             "hp": 146
         },
         "types": ["ghost", "fairy"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["SHADOW_CLAW", "CHARM"],
+        "chargedMoves": ["SHADOW_SNEAK", "PLAY_ROUGH", "SHADOW_BALL"],
         "defaultIVs": {
             "cp500": [8.5, 6, 11, 12],
             "cp1500": [25, 4, 15, 13],
@@ -25317,8 +25317,8 @@
             "hp": 169
         },
         "types": ["water", "psychic"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["WATER_GUN", "CONFUSION", "BITE"],
+        "chargedMoves": ["PSYCHIC_FANGS", "AQUA_TAIL", "CRUNCH"],
         "defaultIVs": {
             "cp500": [8, 5, 10, 11],
             "cp1500": [23.5, 4, 10, 14],
@@ -25338,8 +25338,8 @@
             "hp": 186
         },
         "types": ["normal", "dragon"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["DRAGON_BREATH", "EXTRASENSORY"],
+        "chargedMoves": ["OUTRAGE", "DRAGON_PULSE", "FLY"],
         "defaultIVs": {
             "cp500": [6.5, 7, 13, 11],
             "cp1500": [19, 4, 15, 10],
@@ -25358,8 +25358,8 @@
             "hp": 172
         },
         "types": ["ghost", "grass"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["ASTONISH", "SHADOW_CLAW"],
+        "chargedMoves": ["POWER_WHIP", "SHADOW_BALL", "HEAVY_SLAM"],
         "defaultIVs": {
             "cp500": [6.5, 6, 11, 10],
             "cp1500": [19, 5, 14, 7],
@@ -25628,8 +25628,8 @@
             "hp": 216
         },
         "types": ["bug", "fighting"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["COUNTER", "POISON_JAB"],
+        "chargedMoves": ["POWER_UP_PUNCH", "FELL_STINGER", "LUNGE", "SUPER_POWER"],
         "defaultIVs": {
             "cp500": [5.5, 7, 13, 14],
             "cp1500": [16, 6, 15, 7],
@@ -25648,8 +25648,8 @@
             "hp": 174
         },
         "types": ["bug", "fighting"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["BUG_BITE", "LOW_KICK"],
+        "chargedMoves": ["FOCUS_BLAST", "BUG_BUZZ", "LUNGE", "CLOSE_COMBAT"],
         "defaultIVs": {
             "cp500": [6.5, 8, 14, 14],
             "cp1500": [19, 8, 13, 15],
@@ -25668,8 +25668,8 @@
             "hp": 195
         },
         "types": ["electric", "none"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["THUNDER_SHOCK", "SPARK"],
+        "chargedMoves": ["DISCHARGE", "THUNDER", "POWER_WHIP", "DAZZLING_GLEAM"],
         "defaultIVs": {
             "cp500": [5, 4, 10, 9],
             "cp1500": [13.5, 8, 15, 15],
