@@ -1,0 +1,337 @@
+{
+    "presets": [{
+        "pokemon": [{
+            "speciesId": "registeel",
+            "fastMove": "LOCK_ON",
+            "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
+        }, {
+            "speciesId": "pelipper",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
+        }, {
+            "speciesId": "swampert",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "registeel",
+            "fastMove": "LOCK_ON",
+            "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
+        }, {
+            "speciesId": "pelipper",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
+        }, {
+            "speciesId": "swampert",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"],
+            "shadowType": "shadow"
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "registeel",
+            "fastMove": "LOCK_ON",
+            "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
+        }, {
+            "speciesId": "ferrothorn",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["POWER_WHIP", "THUNDER"]
+        }, {
+            "speciesId": "swampert",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "swampert",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
+        }, {
+            "speciesId": "ferrothorn",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["POWER_WHIP", "THUNDER"]
+        }, {
+            "speciesId": "escavalier",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["DRILL_RUN", "MEGAHORN"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "swampert",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
+        }, {
+            "speciesId": "registeel",
+            "fastMove": "LOCK_ON",
+            "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
+        }, {
+            "speciesId": "ferrothorn",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["POWER_WHIP", "THUNDER"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "ferrothorn",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["POWER_WHIP", "THUNDER"]
+        }, {
+            "speciesId": "swampert",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "registeel",
+            "fastMove": "LOCK_ON",
+            "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "registeel",
+            "fastMove": "LOCK_ON",
+            "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
+        }, {
+            "speciesId": "araquanid",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["BUG_BUZZ", "BUBBLE_BEAM"]
+        }, {
+            "speciesId": "swampert",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "swampert",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "escavalier",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["DRILL_RUN", "MEGAHORN"]
+        }, {
+            "speciesId": "ferrothorn",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["POWER_WHIP", "THUNDER"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "swampert",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
+        }, {
+            "speciesId": "lucario",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["POWER_UP_PUNCH", "SHADOW_BALL"]
+        }, {
+            "speciesId": "registeel",
+            "fastMove": "LOCK_ON",
+            "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "lucario",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["POWER_UP_PUNCH", "SHADOW_BALL"]
+        }, {
+            "speciesId": "pelipper",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
+        }, {
+            "speciesId": "ferrothorn",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["POWER_WHIP", "THUNDER"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "registeel",
+            "fastMove": "LOCK_ON",
+            "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
+        }, {
+            "speciesId": "pelipper",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
+        }, {
+            "speciesId": "araquanid",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["BUG_BUZZ", "BUBBLE_BEAM"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "swampert",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
+        }, {
+            "speciesId": "ferrothorn",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["POWER_WHIP", "THUNDER"]
+        }, {
+            "speciesId": "lucario",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["POWER_UP_PUNCH", "SHADOW_BALL"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "pelipper",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
+        }, {
+            "speciesId": "lucario",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["POWER_UP_PUNCH", "SHADOW_BALL"]
+        }, {
+            "speciesId": "registeel",
+            "fastMove": "LOCK_ON",
+            "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "araquanid",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["BUG_BUZZ", "BUBBLE_BEAM"]
+        }, {
+            "speciesId": "swampert",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "registeel",
+            "fastMove": "LOCK_ON",
+            "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "lucario",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["POWER_UP_PUNCH", "SHADOW_BALL"]
+        }, {
+            "speciesId": "ferrothorn",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["POWER_WHIP", "THUNDER"]
+        }, {
+            "speciesId": "swampert",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "escavalier",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["DRILL_RUN", "MEGAHORN"]
+        }, {
+            "speciesId": "pelipper",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
+        }, {
+            "speciesId": "registeel",
+            "fastMove": "LOCK_ON",
+            "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "escavalier",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["DRILL_RUN", "MEGAHORN"]
+        }, {
+            "speciesId": "swampert",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
+        }, {
+            "speciesId": "pelipper",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "araquanid",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["BUG_BUZZ", "BUBBLE_BEAM"]
+        }, {
+            "speciesId": "lucario",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["POWER_UP_PUNCH", "SHADOW_BALL"]
+        }, {
+            "speciesId": "swampert",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "ferrothorn",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["POWER_WHIP", "THUNDER"]
+        }, {
+            "speciesId": "pelipper",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
+        }, {
+            "speciesId": "stunfisk_galarian",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "ferrothorn",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["POWER_WHIP", "THUNDER"]
+        }, {
+            "speciesId": "pelipper",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
+        }, {
+            "speciesId": "swampert",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "swampert",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
+        }, {
+            "speciesId": "skarmory",
+            "fastMove": "AIR_SLASH",
+            "chargedMoves": ["BRAVE_BIRD", "SKY_ATTACK"]
+        }, {
+            "speciesId": "registeel",
+            "fastMove": "LOCK_ON",
+            "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "pelipper",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
+        }, {
+            "speciesId": "escavalier",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["DRILL_RUN", "MEGAHORN"]
+        }, {
+            "speciesId": "registeel",
+            "fastMove": "LOCK_ON",
+            "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
+        }],
+        "weight": 1
+    }]
+}

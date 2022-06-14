@@ -156,7 +156,9 @@
         "exclude": [{
             "filterType": "tag",
             "values": ["mega"]
-        }]
+        }],
+        "partySize": 3,
+        "presetOnly": true
     }, {
         "name": "gobattleleague",
         "title": "GO Battle League",
