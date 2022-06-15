@@ -304,7 +304,12 @@
 	{
 		"speciesId": "marowak_alolan",
 		"fastMove": "FIRE_SPIN",
-		"weight": 10
+		"weight": 2
+	},
+	{
+		"speciesId": "marowak_alolan_shadow",
+		"fastMove": "FIRE_SPIN",
+		"weight": 8
 	},
 	{
 		"speciesId": "raichu",
@@ -724,6 +729,10 @@
 	{
 		"speciesId": "abomasnow",
 		"weight": 12
+	},
+	{
+		"speciesId": "araquanid",
+		"weight": 9
 	},
 	{
 		"speciesId": "victreebel",

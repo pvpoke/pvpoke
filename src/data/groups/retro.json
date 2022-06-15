@@ -30,6 +30,11 @@
 		"chargedMoves":["SURF","SKULL_BASH"]
 	},
 	{
+		"speciesId":"araquanid",
+		"fastMove":"BUG_BITE",
+		"chargedMoves":["BUBBLE_BEAM","BUG_BUZZ"]
+	},
+	{
 		"speciesId":"cresselia",
 		"fastMove":"PSYCHO_CUT",
 		"chargedMoves":["GRASS_KNOT","MOONBLAST"]
@@ -47,7 +52,8 @@
 	{
 		"speciesId":"marowak_alolan",
 		"fastMove":"FIRE_SPIN",
-		"chargedMoves":["SHADOW_BONE","BONE_CLUB"]
+		"chargedMoves":["SHADOW_BONE","BONE_CLUB"],
+		"shadowType": "shadow"
 	},
 	{
 		"speciesId":"deoxys_defense",

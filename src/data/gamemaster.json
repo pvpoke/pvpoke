@@ -53,15 +53,6 @@
             "values": ["mega"]
         }]
     }, {
-        "name": "catchgofest",
-        "title": "Catch Cup (GO Fest)",
-        "include": [{
-            "filterType": "id",
-            "values": ["magnemite", "magneton", "magnezone", "grimer_alolan", "muk_alolan", "hitmonchan", "baltoy", "claydol", "wormadam_trash", "bronzor", "bronzong", "pidove", "tranquill", "unfezant", "trubbish", "garbador", "gothita", "gothorita", "gothitelle", "golett", "golurk", "litten", "torracat", "incineroar", "pikachu", "raichu", "weezing_galarian", "girafarig", "dunsparce", "larvitar", "pupitar", "tyranitar", "numel", "camerupt", "trapinch", "vibrava", "flygon", "buizel", "floatzel", "patrat", "watchog", "drilbur", "excadrill", "shelmet", "accelgor", "rufflet", "braviary", "litleo", "pyroar", "axew", "fraxure", "haxorus", "mudkip", "marshtomp", "swampert", "seedot", "nuzleaf", "shiftry", "shroomish", "breloom", "slakoth", "vigoroth", "slaking", "turtwig", "grotle", "torterra", "chimchar", "monferno", "infernape", "venipede", "whirlipede", "scolipede", "karrablast", "escavalier", "binacle", "skrelp", "dragalge", "rowlet", "dartrix", "decidueye", "pancham", "pangoro", "omanyte", "omastar", "swinub", "piloswine", "mamoswine", "wingull", "pelipper", "meditite", "medicham", "wailmer", "wailord", "spheal", "sealeo", "walrein", "piplup", "prinplup", "empoleon", "vanillite", "vanillish", "vanilluxe", "bergmite", "avalugg", "popplio", "brionne", "primarina", "darumaka_galarian", "darmanitan_galarian_standard", "rockruff", "lycanroc", "lycanroc_midnight", "druddigon", "geodude", "graveler", "golem", "poliwag", "poliwhirl", "poliwrath", "politoed", "vulpix", "ninetales", "hippopotas", "hippowdon", "snover", "abomasnow", "diglett", "diglett_alolan", "dugtrio", "dugtrio_alolan", "magikarp", "gyarados", "dratini", "dragonair", "bagon", "shelgon", "murkrow", "honchkrow", "hoppip", "skiploom", "jumpluff", "yanma", "yanmega", "mantine", "umbreon", "espeon", "vaporeon", "jolteon", "flareon", "sylveon", "leafeon", "glaceon", "sudowoodo", "rhyhorn", "rhydon", "rhyperior", "ralts", "kirlia", "gardevoir", "gallade", "beldum", "metang", "metagross", "anorith", "armaldo", "lileep", "cradily", "snubbull", "granbull", "onix", "steelix", "spinda", "gible", "gabite", "bulbasaur", "ivysaur", "venusaur", "charmander", "charmeleon", "charizard", "squirtle", "wartortle", "blastoise", "chikorita", "bayleef", "meganium", "cyndaquil", "quilava", "typhlosion", "totodile", "croconaw", "feraligatr", "treecko", "grovyle", "sceptile", "torchic", "combusken", "blaziken", "koffing", "weezing", "venonat", "venomoth", "joltik", "galvantula", "kabuto", "kabutops", "aerodactyl", "grimer", "muk", "hitmonlee", "bunnelby", "diggersby", "chinchou", "lanturn", "stunfisk", "vullaby", "mandibuzz", "pawniard", "bisharp", "scraggy", "scrafty", "sandile", "krokorok", "deino", "zweilous", "skorupi", "drapion", "salandit", "salazzle", "absol", "starly", "staravia", "golbat", "stunky", "skuntank", "raticate_alolan", "beedrill", "forretress", "nidorino", "granbull_shadow", "machamp_shadow", "sableye", "electrode", "bibarel", "gardevoir_shadow", "mr_mime_galarian", "unown", "torkoal", "tropius", "klink", "klang", "klinklang", "garbodor"]
-        }],
-        "exclude": [],
-        "partySize": 3
-    }, {
         "name": "all",
         "title": "All Pokemon",
         "include": [],
@@ -166,40 +157,22 @@
         "exclude": [],
         "partySize": 3
     }, {
-        "name": "kanto",
-        "title": "Kanto Cup",
-        "include": [{
-            "filterType": "dex",
-            "values": [1, 151]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "values": ["mega"]
-        }],
-        "partySize": 3
-    }, {
         "name": "mega",
         "title": "All Pokemon",
         "include": [],
         "exclude": []
     }, {
-        "name": "remix",
-        "title": "Remix",
+        "name": "retro",
+        "title": "Retro Cup",
         "include": [],
         "exclude": [{
-            "filterType": "id",
-            "values": ["venusaur", "nidoqueen", "ninetales_alolan", "azumarill", "umbreon", "skarmory", "swampert", "sableye", "medicham", "altaria", "walrein", "deoxys_defense", "bastiodon", "scrafty", "drapion", "jellicent", "stunfisk_galarian", "talonflame", "trevenant", "obstagoon"],
-            "leagues": [1500]
-        }, {
-            "filterType": "id",
-            "values": ["venusaur", "muk_alolan", "umbreon", "swampert", "empoleon", "togekiss", "giratina_altered", "cresselia", "talonflame", "obstagoon"],
-            "leagues": [2500]
+            "filterType": "type",
+            "values": ["dark", "fairy", "steel"]
         }, {
             "filterType": "tag",
             "values": ["mega"]
         }],
-        "partySize": 3,
-        "presetOnly": true
+        "partySize": 3
     }],
     "formats": [{
         "title": "Master League (Classic)",
@@ -218,18 +191,10 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Great League Remix",
-        "cup": "remix",
+        "title": "Retro Cup",
+        "cup": "retro",
         "cp": 1500,
-        "meta": "remix",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Catch Cup (GO Fest)",
-        "cup": "catchgofest",
-        "cp": 1500,
-        "meta": "catchgofest",
+        "meta": "retro",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -24720,7 +24685,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 768,
         "speciesName": "Golisopod",
@@ -24740,7 +24705,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "released": false
+        "released": true
     }, {
         "dex": 769,
         "speciesName": "Sandygast",
