@@ -175,6 +175,18 @@
 		"chargedMoves": ["SACRED_SWORD", "STONE_EDGE"]
 	},
 	{
+		"speciesId": "genesect_douse",
+		"chargedMoves": ["X_SCISSOR", "TECHNO_BLAST_DOUSE"]
+	},
+	{
+		"speciesId": "genesect_shock",
+		"chargedMoves": ["X_SCISSOR", "TECHNO_BLAST_SHOCK"]
+	},
+	{
+		"speciesId": "genesect_burn",
+		"chargedMoves": ["X_SCISSOR", "TECHNO_BLAST_BURN"]
+	},
+	{
 		"speciesId": "regigigas",
 		"fastMove": "HIDDEN_POWER_ICE"
 	},

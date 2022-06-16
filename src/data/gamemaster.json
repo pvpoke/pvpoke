@@ -162,6 +162,14 @@
         "include": [],
         "exclude": []
     }, {
+        "name": "ou",
+        "title": "Overused Cup",
+        "include": [],
+        "exclude": [{
+            "filterType": "id",
+            "values": ["dialga", "palkia", "giratina_altered", "giratina_origin", "charizard_mega_x", "charizard_mega_y", "blastoise_mega", "gengar_mega", "melmetal", "kyogre", "groudon", "zekrom", "reshiram", "mewtwo", "lugia", "ho_oh", "dragonite", "gyarados_mega"]
+        }]
+    }, {
         "name": "retro",
         "title": "Retro Cup",
         "include": [],
@@ -187,6 +195,14 @@
         "cup": "mega",
         "cp": 10000,
         "meta": "mastermega",
+        "showCup": false,
+        "showFormat": false,
+        "showMeta": true
+    }, {
+        "title": "ML Overused",
+        "cup": "overused",
+        "cp": 10000,
+        "meta": "overused",
         "showCup": false,
         "showFormat": false,
         "showMeta": true
