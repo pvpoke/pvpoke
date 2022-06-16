@@ -36,15 +36,6 @@ var InterfaceMaster = (function () {
 
 				battle = new Battle();
 
-				// Initialize selectors and push Pokemon data
-
-				$(".poke.single").each(function(index, value){
-					var selector = new PokeSelect($(this), index);
-					pokeSelectors.push(selector);
-
-					selector.init(data.pokemon, battle);
-				});
-
 				for(var i = 0; i < multiSelectors.length; i++){
 					multiSelectors[i].init(data.pokemon, battle);
 				}
@@ -248,6 +239,10 @@ var InterfaceMaster = (function () {
 
 
 					$(".rate-btn").html("Rate Team");
+				} else{
+					// Update MultiSelect to display Pokemon eligibility
+
+					multiSelectors[0].updateListDisplay();
 				}
 			}
 

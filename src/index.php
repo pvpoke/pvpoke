@@ -34,6 +34,11 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
+	<h4>v1.28.5 (June 16, 2022)</h4>
+	<ul>
+		<li>Adjusted the Team Builder interface to mitigate lag or freezes when adding a new Pokemon, especially on Android or other mobile devices.</li>
+	</ul>
+
 	<h4>v1.28.4 (June 11, 2022)</h4>
 	<ul>
 		<li>Tab title and icon updates:</li>

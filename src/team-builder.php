@@ -253,10 +253,6 @@ require_once 'header.php';
 	</div>
 </div>
 
-<div class="hide">
-	<?php require 'modules/pokeselect.php'; ?>
-</div>
-
 <!--test 4-->
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>

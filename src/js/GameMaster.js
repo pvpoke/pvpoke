@@ -547,7 +547,7 @@ var GameMaster = (function () {
 			});
 
 			if(!move){
-				console.log(id + " missing");
+				console.error(id + " missing");
 			}
 
 			return move;

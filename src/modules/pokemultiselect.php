@@ -10,7 +10,7 @@
 			<p>Create or select a group of custom Pokemon below.</p>
 			<a class="custom-group-sort" href="#">Sort ...</a>
 			<div class="rankings-container clear"></div>
-			<div class="team-warning ineligible">Your team may have ineligible Pokemon.</div>
+			<div class="team-warning ineligible">A Pokemon may have too low stats or be ineligible.</div>
 			<div class="team-warning labyrinth">Your Labyrinth Cup team can't share any typings.</div>
 
 			<button class="add-poke-btn button">+ Add Pokemon</button>
@@ -76,6 +76,10 @@
 		</div>
 
 		<a href="#" class="clear-selection">Clear Selections</a>
+	</div>
+
+	<div class="hide">
+		<?php require 'pokeselect.php'; ?>
 	</div>
 </div>
 
