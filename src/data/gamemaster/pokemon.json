@@ -2702,6 +2702,7 @@
         "cp1500": [50, 15, 15, 15],
         "cp2500": [50, 15, 15, 15]
     },
+	"tags": ["include1500"],
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true
@@ -15075,6 +15076,7 @@
         "cp1500": [16, 13, 15, 15],
         "cp2500": [27, 9, 15, 15]
     },
+	"tags": ["include1500"],
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
     "released": true
