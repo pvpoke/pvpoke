@@ -65,7 +65,7 @@ var InterfaceMaster = (function () {
 
 				pokeSearch.setBattle(battle);
 
-				$(".poke-select-container .poke.single").each(function(index, value){
+				$(".poke-select-container > .poke.single").each(function(index, value){
 					var selector = new PokeSelect($(this), index);
 					selector.setBattle(battle);
 					pokeSelectors.push(selector);
