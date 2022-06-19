@@ -124,9 +124,20 @@
 		"weight": 8
 	},
 	{
+		"speciesId": "sharpedo",
+		"fastMove": "BITE",
+		"chargedMoves": ["POISON_FANG", "CRUNCH"]
+	},
+	{
+		"speciesId": "sharpedo_shadow",
+		"fastMove": "BITE",
+		"chargedMoves": ["POISON_FANG", "CRUNCH"],
+		"weight": 6
+	},
+	{
 		"speciesId": "jellicent",
 		"chargedMoves": ["BUBBLE_BEAM", "SHADOW_BALL"],
-		"weight": 9
+		"weight": 15
 	},
 	{
 		"speciesId": "quagsire",

@@ -76,4 +76,12 @@
     "speciesId": "bastiodon",
     "fastMove": "SMACK_DOWN",
     "chargedMoves": ["STONE_EDGE", "FLAMETHROWER"]
+}, {
+    "speciesId": "ludicolo",
+    "fastMove": "RAZOR_LEAF",
+    "chargedMoves": ["ICE_BEAM", "LEAF_STORM"]
+}, {
+    "speciesId": "sharpedo_shadow",
+    "fastMove": "BITE",
+    "chargedMoves": ["POISON_FANG", "CRUNCH"]
 }]
