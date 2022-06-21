@@ -21,6 +21,7 @@ function PlayerAI(p, b){
 
 	var playerPrevRemaining = 3;
 	var oppPrevRemaining = 3;
+	var prevLead = null;
 
 	this.init = function(player, opponent){
 		let poke = player.getTeam()[0];
@@ -783,14 +784,23 @@ function PlayerAI(p, b){
 		opponentPlayer = battle.getPlayers()[opponent.index];
 
 		if (player.getRemainingPokemon() < playerPrevRemaining) {
-			reward -= 0.2;
+			reward -= 0.4;
 		}
 		if (opponentPlayer.getRemainingPokemon() < oppPrevRemaining) {
-			reward += 0.1;
+			reward += 0.5;
+		}
+		// need to discourage switching a little bit
+		if (prevLead.index !== poke.index){
+			reward -= 0.1;
+		}
+		// need to punish null actions a little bit
+		if (prevAction == null){
+			reward -= 0.1;
 		}
 
 		playerPrevRemaining = player.getRemainingPokemon();
 		oppPrevRemaining = opponentPlayer.getRemainingPokemon();
+		prevLead = poke;
 
 		// additional options are... did opp/player use a shield
 
