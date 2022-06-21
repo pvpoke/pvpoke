@@ -31,6 +31,7 @@ function PlayerAI(p, b){
 		numStates = Object.keys(initState).length;
 		m = new PlayerModel(b, hiddenLayerSizes, numStates, 5, 100);
 		m.defineModel(hiddenLayerSizes);
+		prevLead = poke;
 	}
 
 	this.getModel = function(){
