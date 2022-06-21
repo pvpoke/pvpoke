@@ -22,6 +22,7 @@ function PlayerAI(p, b){
 	var playerPrevRemaining = 3;
 	var oppPrevRemaining = 3;
 	var prevLead = null;
+	var prevAction = null;
 
 	this.init = function(player, opponent){
 		let poke = player.getTeam()[0];
@@ -901,6 +902,7 @@ function PlayerAI(p, b){
 		if (action == null){
 			console.log("null action decided in PlayerAI, action num", actionNum);
 		}
+		prevAction = action;
 		return action;
 	}
 
