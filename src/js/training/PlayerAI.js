@@ -782,15 +782,21 @@ function PlayerAI(p, b){
 		let reward = 0;
 		opponentPlayer = battle.getPlayers()[opponent.index];
 
-		/*if (player.getRemainingPokemon() < playerPrevRemaining) {
+		if (player.getRemainingPokemon() < playerPrevRemaining) {
 			reward -= 0.2;
 		}
 		if (opponentPlayer.getRemainingPokemon() < oppPrevRemaining) {
 			reward += 0.1;
-		}*/
+		}
+
+		playerPrevRemaining = player.getRemainingPokemon();
+		oppPrevRemaining = opponentPlayer.getRemainingPokemon();
 
 		// additional options are... did opp/player use a shield
 
+		if (reward !== 0.0){
+			console.log("reward: ", reward);
+		}
 		return reward;
 
 	}
@@ -816,11 +822,15 @@ function PlayerAI(p, b){
 				break;
 			
 			case 1:	// charged move #1: action = new TimelineAction("charged", poke.index, turns, poke.chargedMoves.indexOf(selectedMove), {shielded: false, buffs: false, priority: poke.priority});
-				action = new TimelineAction("charged", poke.index, turn, 0, {shielded: false, buffs: false, priority: poke.priority});
+				if (poke.energy >= poke.chargedMoves[0].energy) {
+					action = new TimelineAction("charged", poke.index, turn, 0, {shielded: false, buffs: false, priority: poke.priority});
+				}
 				break;
 
 			case 2:
-				action = new TimelineAction("charged", poke.index, turn, 1, {shielded: false, buffs: false, priority: poke.priority});
+				if (poke.energy >= poke.chargedMoves[1].energy) {
+					action = new TimelineAction("charged", poke.index, turn, 1, {shielded: false, buffs: false, priority: poke.priority});
+				}
 				break;
 
 			case -1: // switch: action = new TimelineAction("switch", player.getIndex(), turn, switchChoice, {priority: poke.priority});
@@ -878,7 +888,7 @@ function PlayerAI(p, b){
 		// pass data to network, get decision and parse to var action
 
 		if (action == null){
-			console.log("null action decided in PlayerAI");
+			console.log("null action decided in PlayerAI, action num", actionNum);
 		}
 		return action;
 	}
