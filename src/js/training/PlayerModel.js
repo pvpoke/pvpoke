@@ -17,17 +17,25 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
 
     var memory = new PlayerMemory();
 
-    this.defineModel = function(hiddenLayerSizesOrModel) {
+    this.defineModel = async function(hiddenLayerSizes) {
 
-        if (hiddenLayerSizesOrModel instanceof tf.LayersModel) {
-            network = hiddenLayerSizesOrModel;
+        // check if previous model exists on server
+        // there must be a cleaner way to do this
+        var xhr = new XMLHttpRequest();
+        xhr.open('HEAD', "http://localhost"+webRoot+"data/training/ainetwork/model.json", false);
+        xhr.send();
+        console.log(xhr.status);
+
+        if (xhr.status == 200) {
+            network = await tf.loadLayersModel("http://localhost"+webRoot+"data/training/ainetwork/model.json");
+            console.log(typeof network);
         } else {
-            if (!Array.isArray(hiddenLayerSizesOrModel)){
-                hiddenLayerSizesOrModel = [hiddenLayerSizesOrModel];
+            if (!Array.isArray(hiddenLayerSizes)){
+                hiddenLayerSizes = [hiddenLayerSizes];
             }
 
             network = tf.sequential();
-            hiddenLayerSizesOrModel.forEach((hiddenLayerSize, i) => {
+            hiddenLayerSizes.forEach((hiddenLayerSize, i) => {
                 network.add(tf.layers.dense({
                     units: hiddenLayerSize,
                     activation: 'relu',
@@ -99,7 +107,7 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
         }
 
         // shouldn't need breaks because returns
-        let action = 'fast';
+        let action = '';
         switch (actionNum) {
             case -2:
                 action = 'switch2';
@@ -191,12 +199,6 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
         console.log("saving and loading to localhost"+webRoot+"data/network.php");
         const saveResult = await network.save("http://localhost"+webRoot+"data/network.php");
         console.log(saveResult);
-
-        //const loadTest = await tf.loadLayersModel("http://localhost"+webRoot+"data/training/network-test?v="+siteVersion);
-        //console.log(loadTest);
-
-        // $.post(webRoot+"data/training/Q-table.json?v="+siteVersion, Q);
-
 
     }
 }

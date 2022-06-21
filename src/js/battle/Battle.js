@@ -972,6 +972,9 @@ function Battle(){
 
 				} else{
 					action = players[poke.index].getAI().decideAction(turns, poke, opponent);
+					if (action == null){
+						console.log("null action recieved in getTurnAction");
+					}
 				}
 			} else{
 				// Search for a charged move action
@@ -997,8 +1000,11 @@ function Battle(){
 			}
 
 			// If no other action set, use a fast move
-			if((! action)&&( (mode == "simulate") || ((mode == "emulate")&&(players[poke.index].getAI() !== false)))){
+			if((! action)&&( (mode == "simulate") || ((mode == "emulate")&&(players[poke.index].getAI() !== false)&&(!(players[poke.index].getAI() instanceof PlayerAI))))){
 				action = new TimelineAction("fast", poke.index, turns, 0, {priority: poke.priority});
+			}
+			if (action == null){
+				console.log("null action survived across default to fast move");
 			}
 
 			// Set cooldown

@@ -23,7 +23,9 @@ var BattlerMaster = (function () {
 			var multiSelectors = [];
 
 			// Variables for handling charge up
-			var charge = 0;
+
+			//manually maxing out for ai
+			var charge = 100;
 			var maxCharge = 100;
 			var chargeRate = 2;
 			var chargeDecayRate = 0;
@@ -169,7 +171,8 @@ var BattlerMaster = (function () {
 							$(".battle-window .animate-message .text").html("Hold to charge up "+activePokemon[0].chargedMoves[response.move].name+"!");
 							$(".switch-sidebar").removeClass("active");
 
-							charge = 0;
+							// remove resetting charge so it stays at 100 for ai
+							//charge = 0;
 							charging = false;
 							phaseTimer = chargeTime;
 							phaseInterval = setInterval(chargeUpStep, 1000 / 60);

@@ -835,8 +835,9 @@ function PlayerAI(p, b){
 				}
 				break;
 			
-			default: // default to a fast move
-				action = new TimelineAction("fast", poke.index, turn, 0, {priority: poke.priority});
+			// defaulting to fast move is bad idea, network will always just choose random numbers
+			//default: // default to a fast move
+				//action = new TimelineAction("fast", poke.index, turn, 0, {priority: poke.priority});
 		}
 		//console.log(action);
 
@@ -876,6 +877,9 @@ function PlayerAI(p, b){
 
 		// pass data to network, get decision and parse to var action
 
+		if (action == null){
+			console.log("null action decided in PlayerAI");
+		}
 		return action;
 	}
 
