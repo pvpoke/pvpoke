@@ -22,7 +22,6 @@ function PlayerAI(p, b){
 	var playerPrevRemaining = 3;
 	var oppPrevRemaining = 3;
 	var prevLead = null;
-	var prevAction = null;
 
 	this.init = function(player, opponent){
 		let poke = player.getTeam()[0];
@@ -795,10 +794,6 @@ function PlayerAI(p, b){
 		if (prevLead.index !== poke.index){
 			reward -= 0.1;
 		}
-		// need to punish null actions a little bit
-		if (prevAction == null){
-			reward -= 0.1;
-		}
 
 		playerPrevRemaining = player.getRemainingPokemon();
 		oppPrevRemaining = opponentPlayer.getRemainingPokemon();
@@ -899,10 +894,7 @@ function PlayerAI(p, b){
 
 		// pass data to network, get decision and parse to var action
 
-		if (action == null){
-			console.log("null action decided in PlayerAI, action num", actionNum);
-		}
-		prevAction = action;
+
 		return action;
 	}
 

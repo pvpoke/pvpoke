@@ -97,8 +97,6 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
         if (Math.random() < eps) {
             // range -2 to 2
             actionNum = Math.floor(Math.random() * numActions) - 2;
-        } else if (Math.random < 2*eps){
-            actionNum = 0;
         } else {
             actionNum = tf.tidy(() => {
                 const logits = this.predict(state);
@@ -127,6 +125,8 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
                 action = 'charged2';
                 break;
         }
+
+        // TODO: use battle state to check if charged or switch choices are invalid, if so choose fast instead
         memory.addEvent(state, reward, action);
 
         return actionNum;
@@ -195,8 +195,6 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
         this.train(modelXBatch, modelYBatch);
 
         // save updated results to server
-        // does this work?
-        // or $.post()
 
         console.log("saving and loading to localhost"+webRoot+"data/network.php");
         const saveResult = await network.save("http://localhost"+webRoot+"data/network.php");
