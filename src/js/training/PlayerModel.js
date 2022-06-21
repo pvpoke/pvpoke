@@ -12,7 +12,7 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
 
     var Q ={};
     var alpha = 0.06;
-    var eps = 0.1;
+    var eps = 0.4;
     var gamma = 0.1;
 
     var memory = new PlayerMemory();
@@ -97,6 +97,8 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
         if (Math.random() < eps) {
             // range -2 to 2
             actionNum = Math.floor(Math.random() * numActions) - 2;
+        } else if (Math.random < 2*eps){
+            actionNum = 0;
         } else {
             actionNum = tf.tidy(() => {
                 const logits = this.predict(state);
