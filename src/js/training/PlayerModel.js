@@ -135,10 +135,11 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
     // returns the expected rewards for each action given a state and Q-function
     // initializes table values if not previously existed
     this.policy = function(state) {
-        if (!(state in Q)) {
-            Q[state] = {'fast': 0, 'charged1': 0, 'charged2': 0, 'switch1': 0, 'switch2': 0};
+        stateKey = this.formatState(state);
+        if (!(stateKey in Q)) {
+            Q[stateKey] = {'fast': 0, 'charged1': 0, 'charged2': 0, 'switch1': 0, 'switch2': 0};
         }
-        return Q[state];
+        return Q[stateKey];
     };
 
     // returns the expected reward for a specific state-action and Q-function
@@ -169,7 +170,7 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
         let eFutureReward = this.policy(newState)[this.bestAction(newState)];
         // lines are separated to ensure that Q Table for current state is initialized
         let eRewardChange = reward + gamma*eFutureReward - this.eReward(state, action);
-        Q[state][action] += alpha*(eRewardChange);
+        Q[this.formatState(state)][action] += alpha*(eRewardChange);
     }
 
     this.update = async function(){
@@ -186,6 +187,7 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
             // Build training x set for network model
             modelXBatch.push(prevEvent['state']);
         }
+
         // build training y set in separate loop to ensure Q tables are fully updated
         for (const state of modelXBatch) {
             modelYBatch.push(this.policy(state));

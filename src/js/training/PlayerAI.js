@@ -796,7 +796,7 @@ function PlayerAI(p, b){
 		}
 		// need to discourage switching a little bit
 		if ((prevLead !== undefined) && (prevLead.data.dex !== poke.data.dex)){
-			console.log("player switch, reward -1");
+			console.log("player switch, reward -2");
 			reward -= 2;
 		}
 		// one attempt at discouraging null actions - really bad rewards
