@@ -16,12 +16,14 @@ function PlayerAI(p, b){
 
 	var hiddenLayerSizes = [10,10,10];
 	// battle state = 126
-	var numStates = 127;//this.getBattleState(0, player.getTeam()[0], battle.getPlayers[1].getTeam()[0], player, battle.getPlayers[1]).length;
+	var numStates = 134;//this.getBattleState(0, player.getTeam()[0], battle.getPlayers[1].getTeam()[0], player, battle.getPlayers[1]).length;
 	var m = null;//new PlayerModel(b, hiddenLayerSizes, numStates , 5, 100);
 
 	var playerPrevRemaining = 3;
 	var oppPrevRemaining = 3;
-	var prevLead = null;
+	var prevLead = undefined;
+	var prevAction = undefined;
+	var oppPrevShields = 2;
 
 	this.init = function(player, opponent){
 		let poke = player.getTeam()[0];
@@ -785,25 +787,38 @@ function PlayerAI(p, b){
 		opponentPlayer = battle.getPlayers()[opponent.index];
 
 		if (player.getRemainingPokemon() < playerPrevRemaining) {
-			reward -= 0.4;
+			console.log("lost a pokemon, reward -4");
+			reward -= 4;
 		}
 		if (opponentPlayer.getRemainingPokemon() < oppPrevRemaining) {
-			reward += 0.5;
+			console.log("opponent lost a pokemon, reward +5");
+			reward += 5;
 		}
 		// need to discourage switching a little bit
-		if (prevLead.index !== poke.index){
-			reward -= 0.1;
+		if ((prevLead !== undefined) && (prevLead.data.dex !== poke.data.dex)){
+			console.log("player switch, reward -1");
+			reward -= 2;
+		}
+		// one attempt at discouraging null actions - really bad rewards
+		if (prevAction == null){
+			console.log("invalid action, reward -100");
+			reward -= 100;
+		} else {
+			// at same time, encourage not null actions with small reward
+			console.log("valid action, reward +1");
+			reward += 1;
+		}
+		// reward for making opponent use shield
+		if (opponentPlayer.getShields() < oppPrevShields){
+			console.log("opponent used a shield, reward +2");
+			reward += 2;
 		}
 
 		playerPrevRemaining = player.getRemainingPokemon();
 		oppPrevRemaining = opponentPlayer.getRemainingPokemon();
 		prevLead = poke;
+		oppPrevShields = opponentPlayer.getShields();
 
-		// additional options are... did opp/player use a shield
-
-		if (reward !== 0.0){
-			console.log("reward: ", reward);
-		}
 		return reward;
 
 	}
@@ -895,6 +910,7 @@ function PlayerAI(p, b){
 		// pass data to network, get decision and parse to var action
 
 
+		prevAction = action;
 		return action;
 	}
 
@@ -937,6 +953,7 @@ function PlayerAI(p, b){
 
 		// Player state
 		state['P.switchTimer'] = player.getSwitchTimer()/60000;
+		state['P.canSwitch'] = player.getSwitchTimer() == 0 ? 1 : 0;
 		state['P.remainingPokes'] = player.getRemainingPokemon()/3;
 		state['P.shields'] = player.getShields()/2;
 
@@ -958,6 +975,7 @@ function PlayerAI(p, b){
 
 			state['p.charged'+i+'.damage'] = Math.min(b.calculateDamage(poke, opp, charged, 1)/opp.stats.hp, 1);
 			state['p.charged'+i+'.energy'] = charged.energy/100;
+			state['p.charged'+i+'.canUse'] = poke.energy >= charged.energy ? 1 : 0;
 
 			state['p.charged'+i+'.self.atk'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[0]+4)/8 : 0.5;
 			state['p.charged'+i+'.self.def'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[1]+4)/8 : 0.5;
@@ -987,6 +1005,7 @@ function PlayerAI(p, b){
 
 					state['party.'+n+'.charged'+j+'.damage'] = Math.min(b.calculateDamage(pokemon, opp, charged, 1)/opp.stats.hp, 1);
 					state['party.'+n+'.charged'+j+'.energy'] = charged.energy/100;
+					state['party.'+n+'.charged'+j+'.canUse'] = pokemon.energy >= charged.energy ? 1 : 0;
 
 					state['party.'+n+'.charged'+j+'.self.atk'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[0]+4)/8 : 0.5;
 					state['party.'+n+'.charged'+j+'.self.def'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[1]+4)/8 : 0.5;

@@ -12,7 +12,7 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
 
     var Q ={};
     var alpha = 0.06;
-    var eps = 0.4;
+    var eps = 0.1;
     var gamma = 0.1;
 
     var memory = new PlayerMemory();
