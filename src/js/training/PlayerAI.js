@@ -948,7 +948,7 @@ function PlayerAI(p, b){
 		state['p.cooldown'] = poke.cooldown/4000;
 
 		// Lead pokemon move stats
-		state['p.fast.damage'] = poke.fastMove.damage/opp.startHp;
+		state['p.fast.damage'] = (poke.fastMove.damage * opp.typeEffectiveness[poke.fastMove.type])/opp.startHp;
 		state['p.fast.energy'] = poke.fastMove.energyGain/100;
 		state['p.fast.cooldown'] = poke.fastMove.cooldown/4000;
 
@@ -956,7 +956,7 @@ function PlayerAI(p, b){
 		for (var i = 1; i<=2;i++){
 			let charged = poke.chargedMoves[i-1];
 
-			state['p.charged'+i+'.damage'] = Math.min(charged.damage/opp.startHp, 1);
+			state['p.charged'+i+'.damage'] = Math.min((charged.damage * opp.typeEffectiveness[charged.type])/opp.startHp, 1);
 			state['p.charged'+i+'.energy'] = charged.energy/100;
 
 			state['p.charged'+i+'.self.atk'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[0]+4)/8 : 0.5;
@@ -977,7 +977,7 @@ function PlayerAI(p, b){
 				state['party.'+n+'.energy'] = pokemon.energy/100;
 
 				// move stats
-				state['party.'+n+'.fast.damage'] = pokemon.fastMove.damage/opp.startHp;
+				state['party.'+n+'.fast.damage'] = (pokemon.fastMove.damage * opp.typeEffectiveness[pokemon.fastMove.type])/opp.startHp;
 				state['party.'+n+'.fast.energy'] = pokemon.fastMove.energyGain/100;
 				state['party.'+n+'.fast.cooldown'] = pokemon.fastMove.cooldown/4000;
 
@@ -985,7 +985,7 @@ function PlayerAI(p, b){
 				for (var j = 1; j <= 2; j++){
 					let charged = pokemon.chargedMoves[j-1];
 
-					state['party.'+n+'.charged'+j+'.damage'] = Math.min(charged.damage/opp.startHp, 1);
+					state['party.'+n+'.charged'+j+'.damage'] = Math.min((charged.damage * opp.typeEffectiveness[charged.type])/opp.startHp, 1);
 					state['party.'+n+'.charged'+j+'.energy'] = charged.energy/100;
 
 					state['party.'+n+'.charged'+j+'.self.atk'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[0]+4)/8 : 0.5;
@@ -1013,7 +1013,7 @@ function PlayerAI(p, b){
 		state['o.cooldown'] = opp.cooldown/4000;
 
 		// Opponent lead move stats
-		state['o.fast.damage'] = opp.fastMove.damage/poke.startHp;
+		state['o.fast.damage'] = (opp.fastMove.damage * poke.typeEffectiveness[opp.fastMove.type])/poke.startHp;
 		state['o.fast.energy'] = opp.fastMove.energyGain/100;
 		state['o.fast.cooldown'] = opp.fastMove.cooldown/4000;
 
@@ -1023,7 +1023,7 @@ function PlayerAI(p, b){
 		for (i = 1; i <= 2; i++){
 			let charged = opp.chargedMoves[i-1];
 
-			state['o.charged'+i+'.damage'] = Math.min(charged.damage/poke.startHp, 1);
+			state['o.charged'+i+'.damage'] = Math.min((charged.damage * poke.typeEffectiveness[charged.type])/poke.startHp, 1);
 			state['o.charged'+i+'.energy'] = charged.energy/100;
 
 			state['o.charged'+i+'.self.atk'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[0]+4)/8 : 0.5;
@@ -1046,7 +1046,7 @@ function PlayerAI(p, b){
 				state['O.party.'+n+'.energy'] = pokemon.energy/100;
 
 				// move stats
-				state['O.party.'+n+'.fast.damage'] = pokemon.fastMove.damage/poke.startHp;
+				state['O.party.'+n+'.fast.damage'] = (pokemon.fastMove.damage * poke.typeEffectiveness[pokemon.fastMove.type])/poke.startHp;
 				state['O.party.'+n+'.fast.energy'] = pokemon.fastMove.energyGain/100;
 				state['O.party.'+n+'.fast.cooldown'] = pokemon.fastMove.cooldown/4000;
 
@@ -1054,7 +1054,7 @@ function PlayerAI(p, b){
 				for (var j = 1; j<=2;j++){
 					let charged = pokemon.chargedMoves[j-1];
 
-					state['O.party.'+n+'.charged'+j+'.damage'] = Math.min(charged.damage/poke.stats.hp, 1);
+					state['O.party.'+n+'.charged'+j+'.damage'] = Math.min((charged.damage/poke.stats.hp * poke.typeEffectiveness[charged.type]), 1);
 					state['O.party.'+n+'.charged'+j+'.energy'] = charged.energy/100;
 
 					state['O.party.'+n+'.charged'+j+'.self.atk'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[0]+4)/8 : 0.5;
