@@ -228,7 +228,11 @@ var InterfaceMaster = (function () {
 
 				// TEMPORARY FOR TRAINING
 				if (teams[0].length < partySize){
-					randomizeTeam();
+					var difficulty = $(".difficulty-select option:selected").val();
+					// spot when randomizing team, changing to 2, originally 'difficulty'
+					// probably doesn't matter since this player is just used to generate a team
+					var player = new Player(0, difficulty, battle);
+					player.getAI().generateRoster(partySize, self.importRandomizedRoster);
 					teams[0] = multiSelectors[0].getPokemonList();
 				}
 				var difficulty = $(".difficulty-select option:selected").val();
