@@ -225,6 +225,12 @@ var InterfaceMaster = (function () {
 					 multiSelectors[0].getPokemonList(),
 					 multiSelectors[1].getPokemonList()
 					];
+
+				// TEMPORARY FOR TRAINING
+				if (teams[0].length < partySize){
+					randomizeTeam();
+					teams[0] = multiSelectors[0].getPokemonList();
+				}
 				var difficulty = $(".difficulty-select option:selected").val();
 
 				if((teams[0].length < partySize)||((teamSelectMethod == "manual")&&(teams[1].length < partySize))){
