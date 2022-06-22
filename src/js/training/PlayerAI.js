@@ -803,10 +803,6 @@ function PlayerAI(p, b){
 		if (prevAction == null){
 			console.log("invalid action, reward -100");
 			reward -= 100;
-		} else {
-			// at same time, encourage not null actions with small reward
-			console.log("valid action, reward +1");
-			reward += 1;
 		}
 		// reward for making opponent use shield
 		if (opponentPlayer.getShields() < oppPrevShields){
@@ -836,32 +832,32 @@ function PlayerAI(p, b){
 		var reward = this.computeReward(poke, opponent);
 
 
-		var actionNum = m.chooseAction(state, reward, 0.2);
+		var networkAction = m.chooseAction(state, reward, 0.2);
 
-		switch (actionNum){
-			case 0:	// fast: action = new TimelineAction("fast", poke.index, turn, 0, {priority: poke.priority});
+		switch (networkAction){
+			case 'fast':	// fast: action = new TimelineAction("fast", poke.index, turn, 0, {priority: poke.priority});
 				action = new TimelineAction("fast", poke.index, turn, 0, {priority: poke.priority});
 				break;
 			
-			case 1:	// charged move #1: action = new TimelineAction("charged", poke.index, turns, poke.chargedMoves.indexOf(selectedMove), {shielded: false, buffs: false, priority: poke.priority});
+			case 'charged1':	// charged move #1: action = new TimelineAction("charged", poke.index, turns, poke.chargedMoves.indexOf(selectedMove), {shielded: false, buffs: false, priority: poke.priority});
 				if (poke.energy >= poke.chargedMoves[0].energy) {
 					action = new TimelineAction("charged", poke.index, turn, 0, {shielded: false, buffs: false, priority: poke.priority});
 				}
 				break;
 
-			case 2:
+			case 'charged2':
 				if (poke.energy >= poke.chargedMoves[1].energy) {
 					action = new TimelineAction("charged", poke.index, turn, 1, {shielded: false, buffs: false, priority: poke.priority});
 				}
 				break;
 
-			case -1: // switch: action = new TimelineAction("switch", player.getIndex(), turn, switchChoice, {priority: poke.priority});
+			case 'switch1': // switch: action = new TimelineAction("switch", player.getIndex(), turn, switchChoice, {priority: poke.priority});
 				if (player.getTeam()[1].hp > 0 && player.getTeam()[1].data.dex != poke.data.dex) {
 					action = new TimelineAction("switch", player.getIndex(), turn, 1, {priority: poke.priority});
 				}
 					break;
 
-			case -2:
+			case 'switch2':
 				if (player.getTeam()[2].hp > 0 && player.getTeam()[2].data.dex != poke.data.dex) {
 					action = new TimelineAction("switch", player.getIndex(), turn, 2, {priority: poke.priority});
 				}
@@ -1073,7 +1069,7 @@ function PlayerAI(p, b){
 				for (var j = 1; j<=2;j++){
 					let charged = pokemon.chargedMoves[j-1];
 
-					state['O.party.'+n+'.charged'+j+'.damage'] = Math.min((b.calculateDamage(pokemon, poke, charged, 1))/poke.stats.hasStrategyp, 1);
+					state['O.party.'+n+'.charged'+j+'.damage'] = Math.min((b.calculateDamage(pokemon, poke, charged, 1))/poke.stats.hp, 1);
 					state['O.party.'+n+'.charged'+j+'.energy'] = charged.energy/100;
 
 					state['O.party.'+n+'.charged'+j+'.self.atk'] = (charged.buffs && charged.buffTarget == 'self') ? (charged.buffs[0]+4)/8 : 0.5;
@@ -1087,11 +1083,6 @@ function PlayerAI(p, b){
 			}
 		}
 
-		for (var key in state){
-			if (state[key] > 1){
-				console.log("Battle state value ", key, " not normalized: ", state[key]);
-			}
-		}
 		return state;
 	}
 

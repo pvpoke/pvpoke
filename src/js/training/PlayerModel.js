@@ -5,14 +5,14 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
     var numActions = numActions;
     var batchSize = batchSize;
 
-    const optimizer = 'adam';
+    const optimizer = 'sgd';
     const loss = 'meanSquaredError';
 
     var network = null;
 
     var Q ={};
     var alpha = 0.06;
-    var eps = 0.1;
+    var eps = 0.2;
     var gamma = 0.1;
 
     var memory = new PlayerMemory();
@@ -42,11 +42,11 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
                     inputShape: ((i == 0) ? [numStates] : undefined)
                 }));
             });
-            network.add(tf.layers.dense({units: numActions}));
+            network.add(tf.layers.dense({units: numActions, activation: 'linear'}));
         }
 
         network.summary();
-        network.compile({optimizer: optimizer, loss: loss});
+        network.compile({optimizer: optimizer, loss: loss, metrics: ['acc']});
     }
 
     // format state dictionary into array appropriate for network model
@@ -57,19 +57,17 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
 
     // format policy dictionary into array appropriate for network model
     this.formatPolicy = function(policy){
-        return [policy['switch2'], policy['switch1'], policy['fast'], policy['charged1'], policy['charged2']];
+        return [policy['fast'], policy['charged1'], policy['charged2'],policy['switch1'], policy['switch2']];
     }
 
     this.predict = function(state) {
         // format state
         let stateArr = tf.stack([this.formatState(state)]);
-
-        return tf.tidy(() => network.predict(stateArr));
+        let predictionsArr = tf.tidy(() => network.predict(stateArr)).arraySync();
+        return predictionsArr[0];
     }
 
-    // async?
-    this.train = function(xBatch, yBatch) {
-        // await?
+    this.train = async function(xBatch, yBatch) {
         let formattedXBatch = [];
         let formattedYBatch = [];
         // format xBatch
@@ -82,54 +80,49 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
             formattedYBatch.push(this.formatPolicy(policy));
         }
 
-        network.fit(tf.stack(formattedXBatch), tf.stack(formattedYBatch));
+        // can make a metrics function here to refactor later
+
+        console.log("Fitting network to new data");
+        const h = await network.fit(tf.stack(formattedXBatch), tf.stack(formattedYBatch));
+        console.log("Network accuracy: " + h.history.acc);
+        console.log("Network loss: " + h.history.loss);
     }
 
     // action mapping:
-    // -2: switch pokemon 2
-    // -1: switch pokemon 1
     // 0: fast move
     // 1: charged move 1
     // 2: charged move 2
+    // 3: switch pokemon 1
+    // 4: switch pokemon 2
     this.chooseAction = function(state, reward, eps) {
-        let actionNum = 0;
+        let action = this.bestAction(state);
         // randomness inserted here
         if (Math.random() < eps) {
             // range -2 to 2
-            actionNum = Math.floor(Math.random() * numActions) - 2;
-        } else {
-            actionNum = tf.tidy(() => {
-                const logits = this.predict(state);
-                const sigmoid = tf.sigmoid(logits);
-                const probs = tf.div(sigmoid, tf.sum(sigmoid));
-                return tf.multinomial(probs, 1).dataSync()[0] - 2;
-            });
-        }
-
-        // shouldn't need breaks because returns
-        let action = '';
-        switch (actionNum) {
-            case -2:
-                action = 'switch2';
-                break;
-            case -1:
-                action = 'switch1';
-                break;
-            case 0: 
-                action = 'fast';
-                break;
-            case 1: 
-                action = 'charged1';
-                break;
-            case 2: 
-                action = 'charged2';
-                break;
-        }
+            let actionNum = Math.floor(Math.random() * numActions);
+            switch (actionNum) {
+                case 0: 
+                    action = 'fast';
+                    break;
+                case 1: 
+                    action = 'charged1';
+                    break;
+                case 2: 
+                    action = 'charged2';
+                    break;
+                case 3:
+                    action = 'switch1';
+                    break;
+                case 4:
+                    action = 'switch2';
+                    break;
+            }
+        }   
 
         // TODO: use battle state to check if charged or switch choices are invalid, if so choose fast instead
         memory.addEvent(state, reward, action);
 
-        return actionNum;
+        return action;
     }
 
     // returns the expected rewards for each action given a state and Q-function
@@ -137,7 +130,14 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
     this.policy = function(state) {
         stateKey = this.formatState(state);
         if (!(stateKey in Q)) {
-            Q[stateKey] = {'fast': 0, 'charged1': 0, 'charged2': 0, 'switch1': 0, 'switch2': 0};
+            Qvalues = this.predict(state);
+            Q[stateKey] = {
+                'fast': Qvalues[0],
+                'charged1': Qvalues[1],
+                'charged2': Qvalues[2],
+                'switch1': Qvalues[3],
+                'switch2': Qvalues[4]
+            };
         }
         return Q[stateKey];
     };
@@ -148,15 +148,15 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
     }
 
     this.bestAction = function(state) {
-        QTable = this.policy(state);
+        Qvalues = this.policy(state);
 
         // default to fast move, it makes sense i guess
-        let bestReward = QTable['fast'];
+        let bestReward = Qvalues['fast'];
         let best = 'fast';
-        for (const action of Object.keys(QTable)){
-            if (QTable[action] > bestReward) {
+        for (const action of Object.keys(Qvalues)){
+            if (Qvalues[action] > bestReward) {
                 best = action;
-                bestReward = QTable[action];
+                bestReward = Qvalues[action];
             }
         }
         return best;
