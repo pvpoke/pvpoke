@@ -226,16 +226,6 @@ var InterfaceMaster = (function () {
 					 multiSelectors[1].getPokemonList()
 					];
 
-				// TEMPORARY FOR TRAINING
-				if (teams[0].length < partySize){
-					var difficulty = $(".difficulty-select option:selected").val();
-					// spot when randomizing team, changing to 2, originally 'difficulty'
-					// probably doesn't matter since this player is just used to generate a team
-					var player = new Player(0, difficulty, battle);
-					player.getAI().generateRoster(partySize, self.importRandomizedRoster);
-					teams[0] = multiSelectors[0].getPokemonList();
-					console.log(teams[0]);
-				}
 				var difficulty = $(".difficulty-select option:selected").val();
 
 				if((teams[0].length < partySize)||((teamSelectMethod == "manual")&&(teams[1].length < partySize))){
@@ -539,6 +529,13 @@ var InterfaceMaster = (function () {
 				}
 
 				gm.loadRankingData(self, "overall", cp, cup);
+
+				//TEMPORARY - create random team here
+				var difficulty = $(".difficulty-select option:selected").val();
+				// spot when randomizing team, changing to 2, originally 'difficulty'
+				// probably doesn't matter since this player is just used to generate a team
+				var player = new Player(0, difficulty, battle);
+				player.getAI().generateRoster(partySize, self.importRandomizedRoster);
 			}
 
 			// Give the player a random team
