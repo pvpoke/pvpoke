@@ -234,6 +234,7 @@ var InterfaceMaster = (function () {
 					var player = new Player(0, difficulty, battle);
 					player.getAI().generateRoster(partySize, self.importRandomizedRoster);
 					teams[0] = multiSelectors[0].getPokemonList();
+					console.log(teams[0]);
 				}
 				var difficulty = $(".difficulty-select option:selected").val();
 
