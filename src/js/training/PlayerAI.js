@@ -1067,6 +1067,12 @@ function PlayerAI(p, b){
 				n++;
 			}
 		}
+
+		for (var key in state){
+			if (state[key] > 1){
+				console.log("Battle state value ", key, " not normalized: ", state[key]);
+			}
+		}
 		return state;
 	}
 
