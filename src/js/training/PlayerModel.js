@@ -98,7 +98,7 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
     // 2: charged move 2
     // 3: switch pokemon 1
     // 4: switch pokemon 2
-    this.chooseAction = function(state, reward, eps) {
+    this.chooseAction = function(state, reward) {
         let action = this.bestAction(state);
         // randomness inserted here
         if (Math.random() < eps) {
