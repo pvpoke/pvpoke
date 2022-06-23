@@ -832,7 +832,7 @@ function PlayerAI(p, b){
 		var reward = this.computeReward(poke, opponent);
 
 
-		var networkAction = m.chooseAction(state, reward, 0.2);
+		var networkAction = m.chooseAction(state, reward);
 
 		switch (networkAction){
 			case 'fast':	// fast: action = new TimelineAction("fast", poke.index, turn, 0, {priority: poke.priority});
