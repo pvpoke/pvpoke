@@ -1,0 +1,85 @@
+{
+	"species": [
+		{
+			"speciesId": "deino",
+			"baseSpeciesId": "deino"
+		},
+		{
+			"speciesId": "zweilous",
+			"baseSpeciesId": "deino"
+		},
+		{
+			"speciesId": "hydreigon",
+			"baseSpeciesId": "deino",
+			"default": true
+		}
+	],
+	"checklist": [
+		{
+			"title": "High IV Hydreigon #1",
+			"speciesId": "hydreigon",
+			"baseSpeciesId": "deino",
+			"league": "master",
+			"cp": 10000,
+			"ivs": [40, 15, 15, 15],
+			"priority": 1,
+			"notes": "Hydreigon doesn't have make-or-break IV requirements for Master League. 13/13/13 is a recommended minimum."
+		},
+		{
+			"title": "High IV Hydreigon #2",
+			"speciesId": "hydreigon",
+			"baseSpeciesId": "deino",
+			"league": "master",
+			"cp": 10000,
+			"ivs": [50, 15, 15, 15],
+			"priority": 1,
+			"notes": "Hydreigon doesn't have make-or-break IV requirements for Master League. 13/13/13 is a recommended minimum."
+		},
+		{
+			"title": "High Rank Hydreigon",
+			"speciesId": "hydreigon",
+			"baseSpeciesId": "deino",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [15.5, 0, 15, 10],
+			"priority": 2
+		},
+		{
+			"title": "High Rank Hydreigon",
+			"speciesId": "hydreigon",
+			"baseSpeciesId": "deino",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [25.5, 0, 15, 15],
+			"priority": 2
+		},
+		{
+			"title": "High Rank Zweilous",
+			"speciesId": "zweilous",
+			"baseSpeciesId": "deino",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [32.5, 0, 15, 15],
+			"priority": 2
+		},
+		{
+			"title": "Attack Weighted Zweilous",
+			"speciesId": "zweilous",
+			"baseSpeciesId": "deino",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [31.5, 7, 15, 5],
+			"priority": 3,
+			"notes": "This IV spread balances multiple breakpoints and bulkpoints. With at least 122.1 Attack, you reach extra breakpoints against Jellicent, Sableye, and Toxicroak. With at least 122.82 Attack, Zweilous flips Lickitung. \n\n With 108 Defense or more, Zweilous reaches bulkpoints against Azumarill, Altaria, Defense Deoxys, Froslass, and Umbreon. \n\n 3/12/3 is another similar IV spread that performs comparably but misses against some Lickitung spreads."
+		},
+		{
+			"title": "Little Cup Deino",
+			"speciesId": "deino",
+			"baseSpeciesId": "deino",
+			"league": "special",
+			"cp": 500,
+			"ivs": [32.5, 0, 15, 15],
+			"priority": 3
+		}
+	]
+}

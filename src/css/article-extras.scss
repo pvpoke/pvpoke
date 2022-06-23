@@ -103,6 +103,10 @@ input.article-search{
 	background-image:url("../articles/article-assets/community-day/megas/venusaur.png");
 }
 
+[mega="charizard-x"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/charizard-x.png");
+}
+
 [mega="charizard-y"] .mega-image{
 	background-image:url("../articles/article-assets/community-day/megas/charizard-y.png");
 }
@@ -135,9 +139,26 @@ input.article-search{
 	background-image:url("../articles/article-assets/community-day/megas/ampharos.png");
 }
 
+[mega="absol"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/absol.png");
+}
+
+[mega="altaria"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/altaria.png");
+}
+
+[mega="gyarados"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/gyarados.png");
+}
+
+[mega="houndoom"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/houndoom.png");
+}
 
 
-
+[mega="latios"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/latios.png");
+}
 
 
 /* FAQ styling */
@@ -726,6 +747,30 @@ input.article-search{
     	background: #ffffff;
 	}
 }
+
+
+.section.deino{
+
+	background: #f4f3f1;
+	border:4px solid #201e1f;
+
+	.article-header, .mega-section{
+		color:#fff;
+		background:#383336 !important;
+	}
+
+	.feature{
+		h4{
+			color:#383336;
+			border-bottom:1px solid #383336;
+		}
+	}
+
+	.faq-item{
+    	background: #ffffff;
+	}
+}
+
 
 /* Edit control toggle */
 
