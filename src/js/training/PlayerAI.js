@@ -22,7 +22,7 @@ function PlayerAI(p, b){
 	var playerPrevRemaining = 3;
 	var oppPrevRemaining = 3;
 	var prevLead = undefined;
-	var prevAction = undefined;
+	//var prevAction = undefined;
 	var oppPrevShields = 2;
 
 	this.init = function(player, opponent){
@@ -786,28 +786,30 @@ function PlayerAI(p, b){
 		let reward = 0;
 		opponentPlayer = battle.getPlayers()[opponent.index];
 
-		if (player.getRemainingPokemon() < playerPrevRemaining) {
-			console.log("lost a pokemon, reward -4");
-			reward -= 4;
-		}
-		if (opponentPlayer.getRemainingPokemon() < oppPrevRemaining) {
-			console.log("opponent lost a pokemon, reward +5");
-			reward += 5;
-		}
 		// need to discourage switching a little bit
 		if ((prevLead !== undefined) && (prevLead.data.dex !== poke.data.dex)){
 			console.log("player switch, reward -2");
-			reward -= 2;
+			reward = -2;
 		}
+
+		if (player.getRemainingPokemon() < playerPrevRemaining) {
+			console.log("lost a pokemon, reward -4");
+			reward = -4;
+		}
+		if (opponentPlayer.getRemainingPokemon() < oppPrevRemaining) {
+			console.log("opponent lost a pokemon, reward +5");
+			reward = 5;
+		}
+
 		// one attempt at discouraging null actions - really bad rewards
-		if (prevAction == null){
+		/*if (prevAction == null){
 			console.log("invalid action, reward -100");
 			reward -= 100;
-		}
+		}*/
 		// reward for making opponent use shield
 		if (opponentPlayer.getShields() < oppPrevShields){
 			console.log("opponent used a shield, reward +2");
-			reward += 2;
+			reward = 2;
 		}
 
 		playerPrevRemaining = player.getRemainingPokemon();
@@ -863,9 +865,19 @@ function PlayerAI(p, b){
 				}
 				break;
 			
-			// defaulting to fast move is bad idea, network will always just choose random numbers
-			//default: // default to a fast move
-				//action = new TimelineAction("fast", poke.index, turn, 0, {priority: poke.priority});
+		}
+
+		// If we encountered an invalid move, change to do a fast move
+		if (action == null) {
+			action = new TimelineAction("fast", poke.index, turn, 0, {priority: poke.priority});
+			// maybe don't add these events, bc then the data will be unbalanced
+			// or maybe only add a fraction of them
+			// or reward more for using opponent shields or making them faint or winning?
+			if (Math.random() < 0.1){
+				m.addEvent(state, reward, 'fast');
+			}
+		} else {
+			m.addEvent(state, reward, networkAction);
 		}
 		//console.log(action);
 
@@ -906,7 +918,7 @@ function PlayerAI(p, b){
 		// pass data to network, get decision and parse to var action
 
 
-		prevAction = action;
+		//prevAction = action;
 		return action;
 	}
 

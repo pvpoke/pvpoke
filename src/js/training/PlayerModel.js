@@ -81,10 +81,10 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
         }
 
         // can make a metrics function here to refactor later
-        console.log("x");
-        console.log(formattedXBatch);
-        console.log("YTrue");
-        console.log(formattedYBatch);
+        //console.log("x");
+        //console.log(formattedXBatch);
+        //console.log("YTrue");
+        //console.log(formattedYBatch);
 
         console.log("Fitting network to new data");
         const h = await network.fit(tf.stack(formattedXBatch), tf.stack(formattedYBatch));
@@ -98,7 +98,7 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
     // 2: charged move 2
     // 3: switch pokemon 1
     // 4: switch pokemon 2
-    this.chooseAction = function(state, reward) {
+    this.chooseAction = function(state) {
         let action = this.bestAction(state);
         // randomness inserted here
         if (Math.random() < eps) {
@@ -123,9 +123,6 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
             }
             console.log("Randomly choosing action " + action);
         }  
-
-        // TODO: use battle state to check if charged or switch choices are invalid, if so choose fast instead
-        memory.addEvent(state, reward, action);
 
         return action;
     }

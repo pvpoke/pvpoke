@@ -811,14 +811,19 @@ function Battle(){
 				var result = "tie";
 				phase = "game_over";
 				let reward = 0;
+				let margin = 0;
 
 				if(players[0].getRemainingPokemon() > players[1].getRemainingPokemon()){
 					result = "win";
-					reward = 10;
+					reward = 50;
+					players[0].getTeam().forEach(pokemon => {margin += pokemon.hp/pokemon.stats.hp;});
 				} else{
 					result = "loss";
-					reward = -10;
+					reward = -50;
+					players[1].getTeam().forEach(pokemon => {margin -= pokemon.hp/pokemon.stats.hp;});
 				}
+
+				console.log("Margin of victory (total %hp remaining): " + margin);
 
 				self.dispatchUpdate({ result: result });
 				clearInterval(mainLoopInterval);
