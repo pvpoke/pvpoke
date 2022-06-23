@@ -12,7 +12,7 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
 
     var Q ={};
     var alpha = 0.06;
-    var eps = 0.2;
+    var eps = 1.0;
     var gamma = 0.1;
 
     var memory = new PlayerMemory();
@@ -121,7 +121,8 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
                     action = 'switch2';
                     break;
             }
-        }   
+            console.log("Randomly choosing action " + action);
+        }  
 
         // TODO: use battle state to check if charged or switch choices are invalid, if so choose fast instead
         memory.addEvent(state, reward, action);
