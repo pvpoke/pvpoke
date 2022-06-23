@@ -81,6 +81,10 @@ function PlayerModel(b, hiddenLayerSizesOrModel, numStates, numActions, batchSiz
         }
 
         // can make a metrics function here to refactor later
+        console.log("x");
+        console.log(formattedXBatch);
+        console.log("YTrue");
+        console.log(formattedYBatch);
 
         console.log("Fitting network to new data");
         const h = await network.fit(tf.stack(formattedXBatch), tf.stack(formattedYBatch));
