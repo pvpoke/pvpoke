@@ -20,11 +20,6 @@
 		"chargedMoves":["DRAGON_CLAW","HURRICANE"]
 	},
 	{
-		"speciesId":"avalugg",
-		"fastMove":"ICE_FANG",
-		"chargedMoves":["BODY_SLAM","AVALANCHE"]
-	},
-	{
 		"speciesId":"dragonite_shadow",
 		"fastMove":"DRAGON_BREATH",
 		"chargedMoves":["DRAGON_CLAW","HURRICANE"]
@@ -150,21 +145,6 @@
 		"chargedMoves":["WILD_CHARGE","MIRROR_SHOT"]
 	},
 	{
-		"speciesId":"electivire",
-		"fastMove":"THUNDER_SHOCK",
-		"chargedMoves":["WILD_CHARGE","ICE_PUNCH"]
-	},
-	{
-		"speciesId":"glaceon",
-		"fastMove":"ICE_SHARD",
-		"chargedMoves":["AVALANCHE","ICY_WIND"]
-	},
-	{
-		"speciesId":"goodra",
-		"fastMove":"DRAGON_BREATH",
-		"chargedMoves":["MUDDY_WATER","POWER_WHIP"]
-	},
-	{
 		"speciesId":"gengar",
 		"fastMove":"SHADOW_CLAW",
 		"chargedMoves":["SHADOW_PUNCH","SHADOW_BALL"]
@@ -175,8 +155,8 @@
 		"chargedMoves":["BLAST_BURN","SOLAR_BEAM"]
 	},
 	{
-		"speciesId":"charizard",
-		"fastMove":"FIRE_SPIN",
-		"chargedMoves":["BLAST_BURN","DRAGON_CLAW"]
+		"speciesId":"hydreigon",
+		"fastMove":"DRAGON_BREATH",
+		"chargedMoves":["BRUTAL_SWING","FLASH_CANNON"]
 	}
 ]
