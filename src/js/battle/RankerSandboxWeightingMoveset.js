@@ -499,6 +499,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if(cup.name == "architect"){
+					iterations = 1;
+				}
+
 				if(cup.name == "river"){
 					iterations = 1;
 				}

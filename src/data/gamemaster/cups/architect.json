@@ -1,0 +1,10 @@
+{
+    "name": "architect",
+    "title": "Silph Architect Cup",
+    "include": [{
+        "filterType": "id",
+        "includeShadows": true,
+        "values": ["marowak_alolan", "froslass", "drapion", "skuntank", "qwilfish", "muk_alolan", "muk", "lapras", "sealeo", "cradily", "sudowoodo", "munchlax", "snorlax", "golbat", "poliwrath", "pelipper", "beedrill", "milotic", "charizard", "bewear", "trevenant", "castform", "ariados", "linoone", "venomoth", "gyarados", "malamar", "lickilicky", "shiftry", "jumpluff", "typhlosion", "gengar", "haunter", "glalie", "donphan", "sandslash", "scolipede", "banette", "slowbro_galarian", "dusclops"]
+    }],
+    "exclude": []
+}
