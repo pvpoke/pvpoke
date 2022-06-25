@@ -1,0 +1,13 @@
+{
+   "name": "kanto",
+   "title": "Kanto Cup",
+   "include": [{
+	   "filterType": "dex",
+	   "values": [1, 151]
+   }],
+   "exclude": [{
+	   "filterType": "tag",
+	   "values": ["mega"]
+   }],
+   "partySize": 3
+}

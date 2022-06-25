@@ -24,7 +24,7 @@
 	{
 		"speciesId": "hypno",
 		"fastMove": "CONFUSION",
-		"chargedMoves": ["FIRE_PUNCH", "SHADOW_BALL"],
+		"chargedMoves": ["THUNDER_PUNCH", "SHADOW_BALL"],
 		"weight": 35
 	},
 	{
@@ -85,6 +85,10 @@
 		"weight": 34
 	},
 	{
+		"speciesId": "marowak_alolan_shadow",
+		"fastMove": "FIRE_SPIN"
+	},
+	{
 		"speciesId": "gyarados",
 		"fastMove": "DRAGON_BREATH",
 		"weight": 3
@@ -143,6 +147,7 @@
 	},
 	{
 		"speciesId": "ninetales_shadow",
+		"fastMove": "EMBER",
 		"chargedMoves": ["WEATHER_BALL_FIRE", "OVERHEAT"]
 	},
 	{

@@ -166,6 +166,18 @@
         "exclude": [],
         "partySize": 3
     }, {
+        "name": "kanto",
+        "title": "Kanto Cup",
+        "include": [{
+            "filterType": "dex",
+            "values": [1, 151]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }],
+        "partySize": 3
+    }, {
         "name": "mega",
         "title": "All Pokemon",
         "include": [],
@@ -220,6 +232,14 @@
         "cup": "retro",
         "cp": 1500,
         "meta": "retro",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Kanto Cup",
+        "cup": "kanto",
+        "cp": 1500,
+        "meta": "kanto",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
