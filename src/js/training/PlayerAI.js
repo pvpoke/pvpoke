@@ -786,22 +786,27 @@ function PlayerAI(p, b){
 		let reward = 0;
 		opponentPlayer = battle.getPlayers()[opponent.index];
 
+		/*
 		// need to discourage switching a little bit
 		if ((prevLead !== undefined) && (prevLead.data.dex !== poke.data.dex)){
 			console.log("player switch, reward -2");
 			reward = -2;
 		}
-
+		*/
+		/*
 		if (player.getRemainingPokemon() < playerPrevRemaining) {
 			console.log("lost a pokemon, reward -4");
 			reward = -4;
 		}
+		*/
 		if (opponentPlayer.getRemainingPokemon() < oppPrevRemaining) {
 			console.log("opponent lost a pokemon, reward +5");
 			reward = 5;
 		}
 
 		// one attempt at discouraging null actions - really bad rewards
+		// seems like model has a hard time distinguising what it is being penalized for
+		// kind of like in real life woah
 		/*if (prevAction == null){
 			console.log("invalid action, reward -100");
 			reward -= 100;
