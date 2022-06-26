@@ -825,6 +825,8 @@ function Battle(){
 
 				console.log("Margin of victory (total %hp remaining): " + margin);
 
+				$.post("http://localhost" + webRoot + "data/battleLog.php", result + "," + margin + '\n');
+
 				self.dispatchUpdate({ result: result });
 				clearInterval(mainLoopInterval);
 
