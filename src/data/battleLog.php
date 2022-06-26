@@ -10,10 +10,10 @@ if(! isset($_POST)){
 	exit();
 }
 
-$data = $_POST['data'];
+$results = $_POST['results'];
 
-file_put_contents('battleLog.csv', $json);
+file_put_contents('battleLog.csv', $results, FILE_APPEND);
 
-$response = ['response' => 'success'];
+$response = ['response' => 'success', 'data' => $results];
 echo json_encode($response);
 ?>
