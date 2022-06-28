@@ -202,6 +202,18 @@
             "values": ["mega"]
         }],
         "partySize": 3
+    }, {
+        "name": "summer",
+        "title": "Summer Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["normal", "grass", "fire", "water", "electric", "bug"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }],
+        "link": "https://bit.ly/3OHDut7"
     }],
     "formats": [{
         "title": "Master League (Classic)",
@@ -240,6 +252,14 @@
         "cup": "kanto",
         "cp": 1500,
         "meta": "kanto",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Summer Cup",
+        "cup": "summer",
+        "cp": 1500,
+        "meta": "summer",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
