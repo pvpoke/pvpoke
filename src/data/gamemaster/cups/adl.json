@@ -1,0 +1,12 @@
+{
+	"name": "adl",
+	"title": "Arrohh Draft League",
+	"include": [],
+	"exclude": [{
+		"filterType": "tag",
+		"values": ["mega"]
+	}, {
+		"filterType": "id",
+		"values": ["mew", "registeel", "bastiodon", "azumarill", "stunfisk_galarian", "sableye", "trevenant", "swampert", "medicham", "walrein", "nidoqueen", "scrafty", "kommo_o", "diggersby", "talonflame", "pachirisu", "lickitung", "mandibuzz", "ninetales_alolan", "regirock", "altaria", "cofagrigus", "deoxys_defense", "marowak_alolan", "primeape", "araquanid", "vigoroth", "jellicent", "skarmory", "galvantula", "wigglytuff", "drapion", "tropius", "umbreon", "greedent", "froslass", "cresselia", "zweilous", "toxicroak", "granbull", "hakamo_o", "wobbuffet"]
+	}]
+}

@@ -28,6 +28,17 @@
         "energy": [0, 0]
     }],
     "cups": [{
+        "name": "adl",
+        "title": "Arrohh Draft League",
+        "include": [],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["mew", "registeel", "bastiodon", "azumarill", "stunfisk_galarian", "sableye", "trevenant", "swampert", "medicham", "walrein", "nidoqueen", "scrafty", "kommo_o", "diggersby", "talonflame", "pachirisu", "lickitung", "mandibuzz", "ninetales_alolan", "regirock", "altaria", "cofagrigus", "deoxys_defense", "marowak_alolan", "primeape", "araquanid", "vigoroth", "jellicent", "skarmory", "galvantula", "wigglytuff", "drapion", "tropius", "umbreon", "greedent", "froslass", "cresselia", "zweilous", "toxicroak", "granbull", "hakamo_o", "wobbuffet"]
+        }]
+    }, {
         "name": "alchemy",
         "title": "Silph Factions Alchemy Field",
         "include": [{
@@ -316,6 +327,14 @@
         "cup": "colony",
         "cp": 1500,
         "meta": "colony",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Arrohh Draft League",
+        "cup": "adl",
+        "cp": 1500,
+        "meta": "adl",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -25690,9 +25709,10 @@
             "cp1500": [19, 8, 13, 15],
             "cp2500": [34.5, 4, 15, 10]
         },
+        "tags": ["legendary"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": true
     }, {
         "dex": 796,
         "speciesName": "Xurkitree",
