@@ -27,15 +27,6 @@
 		"showMeta": true
 	},
 	{
-		"title": "Retro Cup",
-		"cup": "retro",
-		"cp": 1500,
-		"meta": "retro",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
 		"title": "Kanto Cup",
 		"cup": "kanto",
 		"cp": 1500,
@@ -45,10 +36,10 @@
 		"showMeta": true
 	},
 	{
-		"title": "Summer Cup",
-		"cup": "summer",
+		"title": "Flying Cup",
+		"cup": "flying",
 		"cp": 1500,
-		"meta": "summer",
+		"meta": "flying",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
@@ -81,15 +72,6 @@
 		"showMeta": true
 	},
 	{
-		"title": "Silph Forged Cup",
-		"cup": "forged",
-		"cp": 1500,
-		"meta": "forged",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
 		"title": "Silph Architect Cup",
 		"cup": "architect",
 		"cp": 1500,
@@ -112,15 +94,6 @@
 		"cup": "colony",
 		"cp": 1500,
 		"meta": "colony",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Arrohh Draft League",
-		"cup": "adl",
-		"cp": 1500,
-		"meta": "adl",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true

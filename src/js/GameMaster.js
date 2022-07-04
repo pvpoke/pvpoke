@@ -249,7 +249,7 @@ var GameMaster = (function () {
 
 			object.data.pokemon.sort((a,b) => (a.dex > b.dex) ? 1 : ((b.dex > a.dex) ? -1 : 0));
 
-			var json = JSON.stringify(object.data);
+			var json = JSON.stringify(object.data.pokemon);
 
 			console.log(json);
 		}
