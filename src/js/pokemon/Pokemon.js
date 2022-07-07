@@ -2067,7 +2067,7 @@ function Pokemon(id, i, b){
 		// Factor in fast move duration, slower moves are less consistent
 		var fastMoveConsistency = .5 + (.5 * (1 / (fastMove.cooldown / 500)));
 
-		consistencyScore = ((consistencyScore * 4) + (fastMoveConsistency * 1)) / 5;
+		consistencyScore = ((consistencyScore * 6) + (fastMoveConsistency * 1)) / 7;
 
 		consistencyScore = Math.round(consistencyScore * 1000) / 10;
 
