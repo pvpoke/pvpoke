@@ -201,6 +201,8 @@ function TrainingAI(l, p, b){
 
 			if(self.hasStrategy("OPTIMIZE_TIMING")){
 				pokemon.optimizeMoveTiming = true;
+			} else{
+				pokemon.optimizeMoveTiming = false;
 			}
 
 			roles.push(poke.role);
