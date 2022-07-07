@@ -34,33 +34,21 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.28.5 (June 16, 2022)</h4>
+	<h4>v1.29.0 (July 7th, 2022)</h4>
 	<ul>
-		<li>Adjusted the Team Builder interface to mitigate lag or freezes when adding a new Pokemon, especially on Android or other mobile devices.</li>
-	</ul>
-
-	<h4>v1.28.4 (June 11, 2022)</h4>
-	<ul>
-		<li>Tab title and icon updates:</li>
+		<li>Updated simulation mechanics to match behavior from the latest game version:</li>
 		<ul>
-			<li>Multi-Battle and Matrix Battle tabs are now labeled in the page title</li>
-			<li>Team Builder tabs list Pokemon names in the page title</li>
-			<li>Added new favicons to help distinguish between Ranking, Multi-Battle, Matrix Battle, and Team Builder pages.</li>
+			<li>Floating Fast Moves now apply immediately after a Charged Move instead of the turn after.</li>
+			<ul>
+				<li>This change effectively removes "overtapping" from the simulations.</li>
+				<li>Fast Moves in the simulations still apply before Charged Moves. This will remain until in-game behavior is tested and confirmed otherwise.</li>
+			</ul>
+			<li>In battles using the Train feature, Fast Move damage now applies before switches that occur on the same turn.</li>
+			<ul>
+				<li>If you attempt to switch after a Charged Move, any floating Fast Moves will also apply to the current Pokemon first.</li>
+			</ul>
 		</ul>
-		<li>Team Builder fixes/updates:</li>
-		<ul>
-			<li>Fixed an issue in the Team Builder where custom threats would revert to their default movesets.</li>
-			<li>Shadow Pokemon in custom threats and alternatives lists will automatically appear in the results without needing to manually enable the Shadow Pokemon setting.</li>
-		</ul>
-		<li>Custom Rankings fixes:</li>
-		<ul>
-			<li>Fixed the "Import League or Cup" dropdown to import cup settings. This dropdown currently has duplicate entries and is missing recent cups - stay tuned for more updates.</li>
-			<li>An issue where the Custom Rankings buttons would sometimes do nothing should be resolved.</li>
-		</ul>
-		<li>Fixed the "Copy" button for importing and exporting custom groups.</li>
-		<li>Fixed an issue where battles with multiple custom added moves didn't generate links correctly.</li>
-		<li>Fixed the Moves page search after sorting the table, and searching now allows for spaces between a list of move types or names.</li>
-		<li>Normal Pokemon will have Frustration automatically added or removed from their movepools when changing the Pokemon Form setting.</li>
+		<li>"Consistency" score formula has been updated to weigh Fast Move duration less. Pokemon with long duration Fast Moves now have marginally higher Consistency scores.</li>
 	</ul>
 
 	<h3>Latest Article</h3>
