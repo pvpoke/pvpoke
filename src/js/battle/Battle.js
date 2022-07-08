@@ -2598,7 +2598,7 @@ function Battle(){
 
 		// If a Pokemon has fainted, clear the action queue
 
-		if(defender.hp < 1){
+		if((defender.hp < 1)&&(move.energy > 0)){
 			turnActions = [];
 			queuedActions = [];
 		}
