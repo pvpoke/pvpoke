@@ -1,0 +1,281 @@
+{
+    "properties": {
+        "lastUpdated": "July 8, 2022",
+        "totalPerformers": 17862,
+        "totalTeams": 4629
+    },
+    "performers": [{
+            "pokemon": "garchomp MS+EP/O",
+            "individualScore": 114.81,
+            "games": 362,
+            "teamScore": 521.52
+        },
+        {
+            "pokemon": "giratina_origin SC+OW/SB",
+            "individualScore": 121.77,
+            "games": 1505,
+            "teamScore": 512.95
+        },
+        {
+            "pokemon": "mewtwo PC+FB/Pst",
+            "individualScore": 113.26,
+            "games": 894,
+            "teamScore": 510.79
+        },
+        {
+            "pokemon": "dialga DB+IH/T",
+            "individualScore": 112.51,
+            "games": 158,
+            "teamScore": 509.96
+        },
+        {
+            "pokemon": "metagross BP+Eq/MM",
+            "individualScore": 117.73,
+            "games": 509,
+            "teamScore": 506.57
+        },
+        {
+            "pokemon": "excadrill MS+DR/RS",
+            "individualScore": 145.4,
+            "games": 328,
+            "teamScore": 503.89
+        },
+        {
+            "pokemon": "garchomp DT+EP/ST",
+            "individualScore": 88.4,
+            "games": 192,
+            "teamScore": 503.57
+        },
+        {
+            "pokemon": "lugia DT+A/SA",
+            "individualScore": 122.88,
+            "games": 407,
+            "teamScore": 502.81
+        },
+        {
+            "pokemon": "melmetal TS+RS/SP",
+            "individualScore": 114.41,
+            "games": 2399,
+            "teamScore": 500.87
+        },
+        {
+            "pokemon": "zekrom DB+Cr/WC",
+            "individualScore": 106.83,
+            "games": 385,
+            "teamScore": 500
+        },
+        {
+            "pokemon": "dialga DB+DM/IH",
+            "individualScore": 109.18,
+            "games": 3870,
+            "teamScore": 499.1
+        },
+        {
+            "pokemon": "groudon MS+Eq/FiP",
+            "individualScore": 120.74,
+            "games": 1448,
+            "teamScore": 498.67
+        },
+        {
+            "pokemon": "kyogre W+Bl/S",
+            "individualScore": 123.59,
+            "games": 837,
+            "teamScore": 496.53
+        },
+        {
+            "pokemon": "mewtwo PC+Pst/SB",
+            "individualScore": 121.86,
+            "games": 837,
+            "teamScore": 492.42
+        },
+        {
+            "pokemon": "togekiss Ch+AP/Ft",
+            "individualScore": 105.87,
+            "games": 1075,
+            "teamScore": 488.35
+        },
+        {
+            "pokemon": "swampert MS+Eq/HC",
+            "individualScore": 127.66,
+            "games": 170,
+            "teamScore": 482.02
+        },
+        {
+            "pokemon": "dragonite DB+DC/Hu",
+            "individualScore": 86.89,
+            "games": 758,
+            "teamScore": 474.61
+        },
+        {
+            "pokemon": "snorlax L+BS/SP",
+            "individualScore": 116.01,
+            "games": 158,
+            "teamScore": 474.51
+        },
+        {
+            "pokemon": "zacian_hero Sn+CC/PR",
+            "individualScore": 123.99,
+            "games": 192,
+            "teamScore": 463.97
+        },
+        {
+            "pokemon": "snorlax L+BS/Eq",
+            "individualScore": 114.2,
+            "games": 226,
+            "teamScore": 443.13
+        },
+        {
+            "pokemon": "machamp C+CrC/RS",
+            "individualScore": 87.37,
+            "games": 226,
+            "teamScore": 429.82
+        },
+        {
+            "pokemon": "mewtwo PC+IB/Pst",
+            "individualScore": 85.71,
+            "games": 226,
+            "teamScore": 419.45
+        }
+    ],
+    "teams": [{
+            "team": "lugia DT/A/SA|groudon MS/Eq/FiP|zacian_hero Sn/CC/PR",
+            "teamScore": 638.07,
+            "games": 27
+        },
+        {
+            "team": "dragonite DT/DC/Hu|excadrill MS/DR/RS|metagross BP/Eq/MM",
+            "teamScore": 597.06,
+            "games": 36
+        },
+        {
+            "team": "togekiss Ch/AP/Ft|gyarados_mega DB/AT/Cr|melmetal TS/RS/SP",
+            "teamScore": 585.89,
+            "games": 27
+        },
+        {
+            "team": "dragonite DB/DC/Hu|excadrill MS/DR/RS|metagross BP/Eq/MM",
+            "teamScore": 577.43,
+            "games": 40
+        },
+        {
+            "team": "palkia DT/AT/DM|metagross BP/Eq/MM|zacian_hero Sn/CC/PR",
+            "teamScore": 571.4,
+            "games": 42
+        },
+        {
+            "team": "zekrom DB/Cr/WC|dialga DB/DM/IH|lugia DT/A/SA",
+            "teamScore": 571.14,
+            "games": 22
+        },
+        {
+            "team": "excadrill MS/DR/RS|dialga DB/DM/IH|lugia DT/A/SA",
+            "teamScore": 562.39,
+            "games": 33
+        },
+        {
+            "team": "giratina_origin DT/OW/SB|dialga DB/DM/IH|excadrill MS/DR/RS",
+            "teamScore": 553.33,
+            "games": 63
+        },
+        {
+            "team": "dialga DB/DM/IH|melmetal TS/RS/SP|mewtwo PC/FB/Pst",
+            "teamScore": 551.41,
+            "games": 100
+        },
+        {
+            "team": "giratina_altered SC/DC/SS|dialga DB/DM/IH|excadrill MS/DR/RS",
+            "teamScore": 549.62,
+            "games": 39
+        },
+        {
+            "team": "lugia_shadow DT/A/SA|mewtwo PC/FB/Pst|zekrom DB/Cr/WC",
+            "teamScore": 543.75,
+            "games": 24
+        },
+        {
+            "team": "dialga DB/DM/IH|kyogre W/S/T|mewtwo PC/Pst/SB",
+            "teamScore": 543.38,
+            "games": 29
+        },
+        {
+            "team": "giratina_origin SC/OW/SB|dialga DB/DM/IH|mewtwo PC/IB/Pst",
+            "teamScore": 542.76,
+            "games": 21
+        },
+        {
+            "team": "zekrom DB/Cr/WC|ho_oh I/BrB/SF|zacian_hero Sn/CC/PR",
+            "teamScore": 542.48,
+            "games": 21
+        },
+        {
+            "team": "garchomp DT/EP/ST|excadrill MS/DR/RS|metagross BP/Eq/MM",
+            "teamScore": 542.22,
+            "games": 49
+        },
+        {
+            "team": "garchomp DT/EP/ST|melmetal TS/RS/SP|mewtwo PC/IB/Pst",
+            "teamScore": 540.92,
+            "games": 37
+        },
+        {
+            "team": "mewtwo PC/Pst/SB|groudon MS/Eq/FiP|gyarados DB/AT/Cr",
+            "teamScore": 536.11,
+            "games": 37
+        },
+        {
+            "team": "lugia DT/A/SA|dialga DB/DM/IH|kyogre W/Bl/S",
+            "teamScore": 522.14,
+            "games": 36
+        },
+        {
+            "team": "lugia DT/A/SA|excadrill MS/DR/RS|melmetal TS/RS/SP",
+            "teamScore": 521.7,
+            "games": 27
+        },
+        {
+            "team": "garchomp MS/EP/O|dragonite DB/DC/Hu|melmetal TS/RS/SP",
+            "teamScore": 520.33,
+            "games": 27
+        },
+        {
+            "team": "groudon MS/Eq/FiP|dialga DB/DM/IH|zekrom DB/Cr/WC",
+            "teamScore": 520.07,
+            "games": 27
+        },
+        {
+            "team": "mewtwo PC/Pst/SB|groudon MS/Eq/FiP|regice LO/Bl/T",
+            "teamScore": 517.62,
+            "games": 21
+        },
+        {
+            "team": "kyogre W/Bl/S|dialga DB/DM/IH|togekiss Ch/AP/Ft",
+            "teamScore": 499.83,
+            "games": 334
+        },
+        {
+            "team": "dialga DB/DM/IH|gyarados DB/AT/Cr|mewtwo PC/Pst/SB",
+            "teamScore": 492.14,
+            "games": 29
+        },
+        {
+            "team": "giratina_origin SC/OW/SB|dialga DB/DM/IH|melmetal TS/RS/SP",
+            "teamScore": 491.23,
+            "games": 919
+        },
+        {
+            "team": "dialga DB/DM/IH|groudon MS/Eq/FiP|mewtwo PC/FB/Pst",
+            "teamScore": 489.83,
+            "games": 347
+        },
+        {
+            "team": "giratina_origin SC/OW/SB|dialga DB/DM/IH|togekiss Ch/AP/Ft",
+            "teamScore": 486.52,
+            "games": 322
+        },
+        {
+            "team": "zacian_hero Sn/CC/WC|dialga DB/DM/IH|mewtwo PC/Pst/SB",
+            "teamScore": 483.32,
+            "games": 22
+        }
+    ]
+}
