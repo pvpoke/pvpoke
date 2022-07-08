@@ -653,6 +653,10 @@ function Battle(){
 					if(opponent.hp < 1){
 						action.valid = false;
 					}
+
+					if((poke.hp < 1)&&(chargedMoveUsed)){
+						action.valid = false;
+					}
 					break;
 
 				case "charged":
@@ -2598,7 +2602,7 @@ function Battle(){
 
 		// If a Pokemon has fainted, clear the action queue
 
-		if((defender.hp < 1)&&(move.energy > 0)){
+		if((defender.hp < 1)&&(mode == "emulate")){
 			turnActions = [];
 			queuedActions = [];
 		}
