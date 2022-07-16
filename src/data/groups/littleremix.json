@@ -87,4 +87,12 @@
     "speciesId": "lickitung",
     "fastMove": "LICK",
     "chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
+}, {
+    "speciesId": "bulbasaur",
+    "fastMove": "VINE_WHIP",
+    "chargedMoves": ["SEED_BOMB", "SLUDGE_BOMB"]
+}, {
+    "speciesId": "tepig",
+    "fastMove": "EMBER",
+    "chargedMoves": ["BODY_SLAM", "FLAME_CHARGE"]
 }]
