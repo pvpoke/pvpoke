@@ -111,8 +111,8 @@ switch($cup){
 		$league = 'Silph Firefly Cup';
 		break;
 
-	case "forged":
-		$league = 'Silph Forged Cup';
+	case "littleremix":
+		$league = 'Little Cup Remix';
 		break;
 
 	case "alchemy":

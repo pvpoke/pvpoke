@@ -495,6 +495,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if(cup.name == "littleremix"){
+					iterations = 1;
+				}
+
 				if(cup.name == "firefly"){
 					iterations = 1;
 				}

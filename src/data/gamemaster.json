@@ -15268,7 +15268,7 @@
         "types": ["normal", "flying"],
         "fastMoves": ["QUICK_ATTACK", "WING_ATTACK", "GUST"],
         "chargedMoves": ["BRAVE_BIRD", "CLOSE_COMBAT", "HEAT_WAVE"],
-        "eliteMove": ["GUST"],
+        "eliteMoves": ["GUST"],
         "defaultIVs": {
             "cp500": [6.5, 12, 13, 14],
             "cp1500": [19.5, 4, 14, 13],
@@ -15291,7 +15291,7 @@
         "types": ["normal", "flying"],
         "fastMoves": ["QUICK_ATTACK", "WING_ATTACK", "GUST"],
         "chargedMoves": ["BRAVE_BIRD", "CLOSE_COMBAT", "HEAT_WAVE"],
-        "eliteMove": ["GUST"],
+        "eliteMoves": ["GUST"],
         "defaultIVs": {
             "cp500": [6.5, 12, 13, 14],
             "cp1500": [19.5, 4, 14, 13],

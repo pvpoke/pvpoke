@@ -1,7 +1,7 @@
 [ {
     "speciesId": "wynaut",
     "fastMove": "COUNTER",
-    "chargedMoves": ["MIRROR_COAT"]
+    "chargedMoves": ["MIRROR_COAT", "NONE"]
 }, {
     "speciesId": "wooper",
     "fastMove": "MUD_SHOT",
@@ -27,10 +27,6 @@
     "fastMove": "FEINT_ATTACK",
     "chargedMoves": ["FOUL_PLAY", "BRAVE_BIRD"]
 }, {
-    "speciesId": "pawniard",
-    "fastMove": "FURY_CUTTER",
-    "chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
-}, {
     "speciesId": "seel",
     "fastMove": "ICE_SHARD",
     "chargedMoves": ["AQUA_TAIL", "ICY_WIND"]
@@ -38,10 +34,6 @@
     "speciesId": "seel",
     "fastMove": "LICK",
     "chargedMoves": ["AQUA_TAIL", "ICY_WIND"]
-}, {
-    "speciesId": "igglybuff",
-    "fastMove": "FEINT_ATTACK",
-    "chargedMoves": ["BODY_SLAM", "SHADOW_BALL"]
 }, {
     "speciesId": "drifloon",
     "fastMove": "HEX",
@@ -55,16 +47,44 @@
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["WEATHER_BALL_ICE", "DARK_PULSE"]
 }, {
-    "speciesId": "onix",
-    "fastMove": "ROCK_THROW",
-    "chargedMoves": ["SAND_TOMB", "STONE_EDGE"]
-}, {
-    "speciesId": "bonsly",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
-}, {
     "speciesId": "oddish",
     "fastMove": "RAZOR_LEAF",
     "chargedMoves": ["SEED_BOMB", "SLUDGE_BOMB"],
     "shadowType": "shadow"
+}, {
+    "speciesId": "skorupi",
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["AQUA_TAIL", "CROSS_POISON"]
+}, {
+    "speciesId": "rowlet",
+    "fastMove": "RAZOR_LEAF",
+    "chargedMoves": ["SEED_BOMB", "ENERGY_BALL"]
+}, {
+    "speciesId": "dratini",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["AQUA_TAIL", "WRAP"]
+}, {
+    "speciesId": "nosepass",
+    "fastMove": "ROCK_THROW",
+    "chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
+}, {
+    "speciesId": "dewpider",
+    "fastMove": "BUG_BITE",
+    "chargedMoves": ["BUBBLE_BEAM", "MIRROR_COAT"]
+}, {
+    "speciesId": "nidoran_female",
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["BODY_SLAM", "POISON_FANG"]
+}, {
+    "speciesId": "chinchou",
+    "fastMove": "SPARK",
+    "chargedMoves": ["BUBBLE_BEAM", "THUNDERBOLT"]
+}, {
+    "speciesId": "chikorita",
+    "fastMove": "VINE_WHIP",
+    "chargedMoves": ["BODY_SLAM", "GRASS_KNOT"]
+}, {
+    "speciesId": "lickitung",
+    "fastMove": "LICK",
+    "chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
 }]

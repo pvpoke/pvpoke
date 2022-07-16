@@ -1,0 +1,161 @@
+[
+	{
+		"speciesId": "seel",
+		"fastMove": "LICK"
+	},
+	{
+		"speciesId": "diglett",
+		"fastMove": "MUD_SLAP"
+	},
+	{
+		"speciesId": "diglett_shadow",
+		"fastMove": "MUD_SLAP"
+	},
+	{
+		"speciesId": "slowpoke",
+		"fastMove": "WATER_GUN"
+	},
+	{
+		"speciesId": "togepi",
+		"fastMove": "HIDDEN_POWER_GROUND"
+	},
+	{
+		"speciesId": "carvanha",
+		"fastMove": "BITE"
+	},
+	{
+		"speciesId": "vullaby",
+		"fastMove": "FEINT_ATTACK",
+		"weight": 4
+	},
+	{
+		"speciesId": "carvanha_shadow",
+		"fastMove": "BITE"
+	},
+	{
+		"speciesId": "grimer_alolan",
+		"fastMove": "POISON_JAB"
+	},
+	{
+		"speciesId": "shelmet",
+		"chargedMoves": ["BODY_SLAM", "BUG_BUZZ"],
+		"weight": 15
+	},
+	{
+		"speciesId": "gible",
+		"chargedMoves": ["BODY_SLAM", "DIG"]
+	},
+	{
+		"speciesId": "igglybuff",
+		"chargedMoves": ["BODY_SLAM", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "purrloin",
+		"chargedMoves": ["NIGHT_SLASH", "PLAY_ROUGH"]
+	},
+	{
+		"speciesId": "nosepass",
+		"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"],
+		"weight": 3
+	},
+	{
+		"speciesId": "nosepass_shadow",
+		"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "pawniard",
+		"chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
+	},
+	{
+		"speciesId": "bulbasaur",
+		"chargedMoves": ["SEED_BOMB", "SLUDGE_BOMB"]
+	},
+	{
+		"speciesId": "eevee",
+		"chargedMoves": ["BODY_SLAM", "DIG"]
+	},
+	{
+		"speciesId": "onix",
+		"chargedMoves": ["ROCK_SLIDE", "SAND_TOMB"]
+	},
+	{
+		"speciesId": "hoothoot",
+		"chargedMoves": ["SKY_ATTACK", "NIGHT_SHADE"]
+	},
+	{
+		"speciesId": "amaura",
+		"chargedMoves": ["WEATHER_BALL_ICE", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "togepi",
+		"chargedMoves": ["PSYSHOCK", "DAZZLING_GLEAM"]
+	},
+	{
+		"speciesId": "ducklett",
+		"chargedMoves": ["BUBBLE_BEAM", "BRAVE_BIRD"],
+		"weight": 20
+	},
+	{
+		"speciesId": "ducklett_shadow",
+		"chargedMoves": ["BUBBLE_BEAM", "BRAVE_BIRD"]
+	},
+	{
+		"speciesId": "porygon",
+		"fastMove": "CHARGE_BEAM",
+		"chargedMoves": ["DISCHARGE", "HYPER_BEAM"]
+	},
+	{
+		"speciesId": "porygon_shadow",
+		"fastMove": "CHARGE_BEAM",
+		"chargedMoves": ["DISCHARGE", "HYPER_BEAM"]
+	},
+	{
+		"speciesId": "dewpider",
+		"chargedMoves": ["BUBBLE_BEAM", "MIRROR_COAT"],
+		"weight": 6
+	},
+	{
+		"speciesId": "vulpix_alolan",
+		"weight": 3
+	},
+	{
+		"speciesId": "chinchou",
+		"weight": 10
+	},
+	{
+		"speciesId": "spritzee",
+		"weight": 8
+	},
+	{
+		"speciesId": "growlithe",
+		"weight": 2
+	},
+	{
+		"speciesId": "chikorita",
+		"weight": 4
+	},
+	{
+		"speciesId": "wooper",
+		"weight": 3
+	},
+	{
+		"speciesId": "spritzee",
+		"weight": 5
+	},
+	{
+		"speciesId": "skorupi",
+		"weight": 10
+	},
+	{
+		"speciesId": "drifloon",
+		"weight": 9
+	},
+	{
+		"speciesId": "wynaut",
+		"weight": 25
+	},
+	{
+		"speciesId": "stunky_shadow",
+		"weight": 4
+	}
+]
