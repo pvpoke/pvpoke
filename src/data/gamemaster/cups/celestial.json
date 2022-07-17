@@ -1,0 +1,22 @@
+{
+	"name": "celestial",
+	"title": "Silph Factions Celestial Field",
+	"include": [{
+		"filterType": "type",
+		"values":  ["dragon", "flying", "normal", "ghost", "psychic", "rock", "water"]
+	}, {
+		"filterType": "id",
+		"includeShadows": true,
+		"values":  ["scizor", "durant", "muk_alolan", "skuntank", "drapion"]
+	}],
+	"exclude": [{
+		"filterType": "type",
+		"values":  ["fairy","fire","fighting"]
+	}, {
+		"filterType": "id",
+		"values": ["swampert", "quagsire", "gastrodon", "whiscash", "seismitoad", "marshtomp", "giratina_altered", "obstagoon", "walrein", "trevenant", "mandibuzz", "deoxys_defense"]
+	}, {
+		"filterType": "tag",
+		"values": ["mega"]
+	}]
+}
