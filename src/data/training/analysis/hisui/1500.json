@@ -1,0 +1,373 @@
+{
+    "properties": {
+        "lastUpdated": "January 10th, 2022",
+        "totalPerformers": 40470,
+        "totalTeams": 10000
+    },
+    "performers": [{
+            "pokemon": "drapion_shadow PSt+AT/Cr",
+            "individualScore": 124.16,
+            "games": 232,
+            "teamScore": 517.58
+        },
+        {
+            "pokemon": "probopass Sp+RS/Tb",
+            "individualScore": 119.44,
+            "games": 233,
+            "teamScore": 515.73
+        },
+        {
+            "pokemon": "empoleon W+DrlP/HC",
+            "individualScore": 140.07,
+            "games": 3992,
+            "teamScore": 512.52
+        },
+        {
+            "pokemon": "drapion PSt+AT/Cr",
+            "individualScore": 124.78,
+            "games": 1134,
+            "teamScore": 510.95
+        },
+        {
+            "pokemon": "cresselia PC+GK/M",
+            "individualScore": 126.98,
+            "games": 2101,
+            "teamScore": 508.38
+        },
+        {
+            "pokemon": "drifblim H+IW/SB",
+            "individualScore": 115.31,
+            "games": 3356,
+            "teamScore": 506.8
+        },
+        {
+            "pokemon": "gastrodon MSl+BS/EP",
+            "individualScore": 124.34,
+            "games": 3732,
+            "teamScore": 505.68
+        },
+        {
+            "pokemon": "bastiodon SD+Ft/SE",
+            "individualScore": 117.54,
+            "games": 4310,
+            "teamScore": 502.85
+        },
+        {
+            "pokemon": "gallade Cf+CC/LB",
+            "individualScore": 126.03,
+            "games": 1763,
+            "teamScore": 501.16
+        },
+        {
+            "pokemon": "lucario C+PUP/SB",
+            "individualScore": 122.02,
+            "games": 2157,
+            "teamScore": 501.15
+        },
+        {
+            "pokemon": "froslass PS+Av/SB",
+            "individualScore": 118.09,
+            "games": 5338,
+            "teamScore": 499.17
+        },
+        {
+            "pokemon": "bronzong Cf+Bd/Psh",
+            "individualScore": 131,
+            "games": 468,
+            "teamScore": 496.6
+        },
+        {
+            "pokemon": "toxicroak C+MB/SlB",
+            "individualScore": 114.91,
+            "games": 3220,
+            "teamScore": 492.75
+        },
+        {
+            "pokemon": "drapion PSt+Cr/SlB",
+            "individualScore": 105.76,
+            "games": 509,
+            "teamScore": 491.17
+        },
+        {
+            "pokemon": "munchlax L+BS/Bd",
+            "individualScore": 125.95,
+            "games": 2642,
+            "teamScore": 490.62
+        },
+        {
+            "pokemon": "abomasnow PS+EB/WBI",
+            "individualScore": 114.25,
+            "games": 2407,
+            "teamScore": 484.63
+        },
+        {
+            "pokemon": "gliscor WA+Eq/NS",
+            "individualScore": 117.61,
+            "games": 1555,
+            "teamScore": 483.27
+        },
+        {
+            "pokemon": "magnezone Sp+MrS/WC",
+            "individualScore": 105.49,
+            "games": 943,
+            "teamScore": 483.1
+        },
+        {
+            "pokemon": "togekiss Ch+AP/Ft",
+            "individualScore": 100.53,
+            "games": 385,
+            "teamScore": 480.25
+        }
+    ],
+    "teams": [{
+            "team": "froslass PS/Av/SB|bastiodon SD/Ft/SE|gastrodon MSl/BS/EP",
+            "teamScore": 602.81,
+            "games": 68
+        },
+        {
+            "team": "bastiodon SD/Ft/SE|cresselia PC/GK/M|froslass PS/Av/SB",
+            "teamScore": 592.32,
+            "games": 31
+        },
+        {
+            "team": "magnezone Sp/MrS/WC|cresselia PC/GK/M|froslass PS/Av/SB",
+            "teamScore": 575.91,
+            "games": 32
+        },
+        {
+            "team": "gastrodon MSl/BS/EP|bastiodon SD/Ft/SE|drapion PSt/AT/Cr",
+            "teamScore": 571.57,
+            "games": 68
+        },
+        {
+            "team": "gastrodon MSl/BS/EP|bastiodon SD/Ft/SE|empoleon W/DrlP/HC",
+            "teamScore": 570.37,
+            "games": 82
+        },
+        {
+            "team": "lucario C/PUP/SB|bastiodon SD/Ft/SE|gallade Cf/CC/LB",
+            "teamScore": 569.71,
+            "games": 28
+        },
+        {
+            "team": "drifblim H/IW/SB|empoleon W/DrlP/HC|toxicroak C/MB/SlB",
+            "teamScore": 568.65,
+            "games": 57
+        },
+        {
+            "team": "empoleon W/DrlP/HC|drifblim H/IW/SB|gliscor_shadow WA/Eq/NS",
+            "teamScore": 565.17,
+            "games": 36
+        },
+        {
+            "team": "drifblim H/IW/SB|bastiodon SD/Ft/SE|empoleon W/DrlP/HC",
+            "teamScore": 561.04,
+            "games": 45
+        },
+        {
+            "team": "drifblim H/IW/SB|empoleon W/DrlP/HC|infernape FS/BB/CC",
+            "teamScore": 558.9,
+            "games": 39
+        },
+        {
+            "team": "drifblim H/IW/SB|bastiodon SD/Ft/SE|gastrodon MSl/BS/EP",
+            "teamScore": 557.58,
+            "games": 26
+        },
+        {
+            "team": "gastrodon MSl/BS/EP|bastiodon SD/Ft/SE|cresselia PC/GK/M",
+            "teamScore": 554.6,
+            "games": 43
+        },
+        {
+            "team": "drifblim H/IW/SB|drapion PSt/AT/Cr|lucario C/PUP/SB",
+            "teamScore": 552.96,
+            "games": 26
+        },
+        {
+            "team": "drifblim H/IW/SB|bronzong Cf/Bd/Psh|lucario C/PUP/SB",
+            "teamScore": 552.15,
+            "games": 39
+        },
+        {
+            "team": "drifblim H/IW/SB|lucario C/PUP/SB|toxicroak C/MB/SlB",
+            "teamScore": 551.21,
+            "games": 39
+        },
+        {
+            "team": "gastrodon MSl/BS/EP|bastiodon SD/Ft/SE|froslass PS/Av/SB",
+            "teamScore": 550.72,
+            "games": 127
+        },
+        {
+            "team": "empoleon W/DrlP/HC|bastiodon SD/Ft/SE|drifblim H/IW/SB",
+            "teamScore": 549.18,
+            "games": 50
+        },
+        {
+            "team": "empoleon W/DrlP/HC|froslass PS/Av/SB|gallade Cf/CC/LB",
+            "teamScore": 547.91,
+            "games": 86
+        },
+        {
+            "team": "drapion PSt/AT/Cr|gastrodon MSl/BS/EP|lucario C/PUP/SB",
+            "teamScore": 546.17,
+            "games": 42
+        },
+        {
+            "team": "froslass PS/Av/SB|drapion PSt/AT/Cr|gastrodon MSl/BS/EP",
+            "teamScore": 544.15,
+            "games": 26
+        },
+        {
+            "team": "empoleon W/DrlP/HC|gallade Cf/CC/LB|gliscor WA/Eq/NS",
+            "teamScore": 542.31,
+            "games": 139
+        },
+        {
+            "team": "drifblim H/IW/SB|bastiodon SD/Ft/SE|lucario C/PUP/SB",
+            "teamScore": 541.65,
+            "games": 104
+        },
+        {
+            "team": "gastrodon MSl/BS/EP|drapion PSt/AT/Cr|froslass PS/Av/SB",
+            "teamScore": 541.47,
+            "games": 100
+        },
+        {
+            "team": "cresselia PC/FS/GK|empoleon W/DrlP/HC|lucario C/PUP/SB",
+            "teamScore": 538.24,
+            "games": 33
+        },
+        {
+            "team": "froslass PS/Av/SB|empoleon W/DrlP/HC|munchlax L/BS/Bd",
+            "teamScore": 534.25,
+            "games": 28
+        },
+        {
+            "team": "toxicroak C/MB/SlB|cresselia PC/GK/M|munchlax L/BS/Bd",
+            "teamScore": 533.03,
+            "games": 32
+        },
+        {
+            "team": "drifblim H/IW/SB|empoleon W/DrlP/HC|lucario C/PUP/SB",
+            "teamScore": 532.38,
+            "games": 45
+        },
+        {
+            "team": "froslass PS/Av/SB|empoleon W/DrlP/HC|lucario C/PUP/SB",
+            "teamScore": 532.03,
+            "games": 38
+        },
+        {
+            "team": "drifblim H/IW/SB|lucario C/PUP/SB|munchlax L/BS/Bd",
+            "teamScore": 531.42,
+            "games": 72
+        },
+        {
+            "team": "gallade Cf/CC/LB|drapion PSt/AT/Cr|lucario C/PUP/SB",
+            "teamScore": 530.55,
+            "games": 31
+        },
+        {
+            "team": "empoleon W/DrlP/HC|froslass PS/Av/SB|gastrodon MSl/BS/EP",
+            "teamScore": 527.77,
+            "games": 73
+        },
+        {
+            "team": "gastrodon MSl/BS/EP|bastiodon SD/Ft/SE|lucario C/PUP/SB",
+            "teamScore": 527,
+            "games": 34
+        },
+        {
+            "team": "gallade Cf/CC/LB|drapion PSt/Cr/SlB|gastrodon MSl/BS/EP",
+            "teamScore": 525.74,
+            "games": 61
+        },
+        {
+            "team": "toxicroak C/MB/SlB|drifblim H/IW/SB|froslass PS/Av/SB",
+            "teamScore": 524.24,
+            "games": 46
+        },
+        {
+            "team": "froslass PS/Av/SB|lucario C/PUP/SB|toxicroak C/MB/SlB",
+            "teamScore": 523.93,
+            "games": 29
+        },
+        {
+            "team": "gastrodon MSl/BS/EP|abomasnow PS/EB/WBI|drapion PSt/AT/Cr",
+            "teamScore": 519.16,
+            "games": 55
+        },
+        {
+            "team": "toxicroak C/MB/SlB|drapion PSt/AT/Cr|froslass PS/Av/SB",
+            "teamScore": 515.19,
+            "games": 59
+        },
+        {
+            "team": "abomasnow PS/EB/WBI|lucario C/PUP/SB|toxicroak C/MB/SlB",
+            "teamScore": 515.12,
+            "games": 26
+        },
+        {
+            "team": "gliscor WA/Eq/NS|drapion PSt/AT/Cr|empoleon W/DrlP/HC",
+            "teamScore": 510.47,
+            "games": 38
+        },
+        {
+            "team": "empoleon W/DrlP/HC|froslass PS/Av/SB|toxicroak C/MB/SlB",
+            "teamScore": 510.45,
+            "games": 42
+        },
+        {
+            "team": "gastrodon MSl/BS/EP|abomasnow PS/EB/WBI|empoleon W/DrlP/HC",
+            "teamScore": 509.35,
+            "games": 46
+        },
+        {
+            "team": "froslass PS/Av/SB|empoleon W/DrlP/HC|gastrodon MSl/BS/EP",
+            "teamScore": 507.81,
+            "games": 376
+        },
+        {
+            "team": "empoleon W/DrlP/HC|drifblim H/IW/SB|froslass PS/Av/SB",
+            "teamScore": 507.79,
+            "games": 523
+        },
+        {
+            "team": "abomasnow_shadow PS/EB/WBI|drifblim H/IW/SB|gastrodon MSl/BS/EP",
+            "teamScore": 504.89,
+            "games": 28
+        },
+        {
+            "team": "gliscor WA/Eq/NS|drapion PSt/AT/Cr|gallade Cf/CC/LB",
+            "teamScore": 502.5,
+            "games": 38
+        },
+        {
+            "team": "froslass PS/Av/SB|empoleon W/DrlP/HC|toxicroak C/MB/SlB",
+            "teamScore": 502.49,
+            "games": 53
+        },
+        {
+            "team": "cresselia PC/GK/M|bastiodon SD/Ft/SE|munchlax L/BS/Bd",
+            "teamScore": 501.29,
+            "games": 324
+        },
+        {
+            "team": "empoleon W/DrlP/HC|cresselia PC/GK/M|froslass PS/Av/SB",
+            "teamScore": 501.08,
+            "games": 310
+        },
+        {
+            "team": "toxicroak C/MB/SlB|empoleon W/DrlP/HC|munchlax L/BS/Bd",
+            "teamScore": 497.13,
+            "games": 381
+        },
+        {
+            "team": "abomasnow PS/EB/WBI|gastrodon MSl/BS/EP|toxicroak C/MB/SlB",
+            "teamScore": 496.62,
+            "games": 319
+        }
+    ]
+}

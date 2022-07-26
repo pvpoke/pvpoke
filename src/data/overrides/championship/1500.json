@@ -33,12 +33,33 @@
 		"chargedMoves": ["ICE_PUNCH", "PSYCHIC"]
 	},
 	{
+		"speciesId": "qwilfish_hisuian",
+		"chargedMoves": ["AQUA_TAIL", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "overqwil",
+		"chargedMoves": ["AQUA_TAIL", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "moltres_galarian",
+		"chargedMoves": ["ANCIENT_POWER", "BRAVE_BIRD"]
+	},
+	{
+		"speciesId": "articuno_galarian",
+		"chargedMoves": ["ANCIENT_POWER", "BRAVE_BIRD"]
+	},
+	{
 		"speciesId": "salazzle",
 		"chargedMoves": ["POISON_FANG", "DRAGON_PULSE"]
 	},
 	{
 		"speciesId": "slowbro_galarian",
 		"chargedMoves": ["SLUDGE_BOMB", "FOCUS_BLAST"]
+	},
+	{
+		"speciesId": "sneasler",
+		"fastMove": "SHADOW_CLAW",
+		"chargedMoves": ["X_SCISSOR", "CLOSE_COMBAT"]
 	},
 	{
 		"speciesId": "regirock",
