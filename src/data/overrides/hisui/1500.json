@@ -27,6 +27,14 @@
 		"chargedMoves": ["BODY_SLAM", "EARTHQUAKE"]
 	},
 	{
+		"speciesId": "luxray",
+		"chargedMoves": ["PSYCHIC_FANGS", "WILD_CHARGE"]
+	},
+	{
+		"speciesId": "luxray_shadow",
+		"chargedMoves": ["PSYCHIC_FANGS", "WILD_CHARGE"]
+	},
+	{
 		"speciesId": "wormadam_trash",
 		"fastMove": "CONFUSION"
 	},
