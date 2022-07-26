@@ -1,0 +1,151 @@
+[
+	{
+		"speciesId": "lucario",
+		"chargedMoves": ["POWER_UP_PUNCH", "SHADOW_BALL"],
+		"weight": 3
+	},
+	{
+		"speciesId": "lucario",
+		"chargedMoves": ["POWER_UP_PUNCH", "SHADOW_BALL"]
+	},
+	{
+		"speciesId": "drapion",
+		"chargedMoves": ["AQUA_TAIL", "CRUNCH"],
+		"weight": 4
+	},
+	{
+		"speciesId": "drapion_shadow",
+		"chargedMoves": ["AQUA_TAIL", "CRUNCH"]
+	},
+	{
+		"speciesId": "cresselia",
+		"chargedMoves": ["GRASS_KNOT", "MOONBLAST"],
+		"weight": 4
+	},
+	{
+		"speciesId": "lickilicky",
+		"chargedMoves": ["BODY_SLAM", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "wormadam_trash",
+		"fastMove": "CONFUSION"
+	},
+	{
+		"speciesId": "probopass",
+		"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "probopass_shadow",
+		"chargedMoves": ["ROCK_SLIDE", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "roserade",
+		"fastMove": "BULLET_SEED",
+		"chargedMoves": ["WEATHER_BALL_FIRE", "LEAF_STORM"]
+	},
+	{
+		"speciesId": "toxicroak",
+		"chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"],
+		"weight": 5
+	},
+	{
+		"speciesId": "gliscor",
+		"fastMove": "WING_ATTACK",
+		"chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"],
+		"weight": 2
+	},
+	{
+		"speciesId": "gliscor_shadow",
+		"fastMove": "WING_ATTACK",
+		"chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"]
+	},
+	{
+		"speciesId": "skuntank",
+		"chargedMoves": ["CRUNCH", "FLAMETHROWER"]
+	},
+	{
+		"speciesId": "skuntank_shadow",
+		"chargedMoves": ["CRUNCH", "FLAMETHROWER"]
+	},
+	{
+		"speciesId": "hippowdon",
+		"fastMove": "FIRE_FANG",
+		"chargedMoves": ["WEATHER_BALL_ROCK", "EARTH_POWER"]
+	},
+	{
+		"speciesId": "rhyperior",
+		"fastMove": "MUD_SLAP",
+		"chargedMoves": ["ROCK_WRECKER", "SURF"]
+	},
+	{
+		"speciesId": "lumineon",
+		"fastMove": "WATERFALL"
+	},
+	{
+		"speciesId": "togekiss",
+		"fastMove": "CHARM",
+		"chargedMoves": ["AERIAL_ACE", "FLAMETHROWER"]
+	},
+	{
+		"speciesId": "garchomp",
+		"fastMove": "DRAGON_TAIL",
+		"chargedMoves": ["SAND_TOMB", "OUTRAGE"]
+	},
+	{
+		"speciesId": "bronzong",
+		"fastMove": "CONFUSION",
+		"chargedMoves": ["PSYSHOCK", "BULLDOZE"]
+	},
+	{
+		"speciesId": "mamoswine",
+		"chargedMoves": ["AVALANCHE", "BULLDOZE"]
+	},
+	{
+		"speciesId": "mamoswine_shadow",
+		"chargedMoves": ["AVALANCHE", "BULLDOZE"]
+	},
+	{
+		"speciesId": "torterra",
+		"chargedMoves": ["FRENZY_PLANT", "SAND_TOMB"]
+	},
+	{
+		"speciesId": "torterra_shadow",
+		"chargedMoves": ["FRENZY_PLANT", "SAND_TOMB"]
+	},
+	{
+		"speciesId": "bastiodon",
+		"weight": 3
+	},
+	{
+		"speciesId": "gallade",
+		"weight": 2
+	},
+	{
+		"speciesId": "abomasnow",
+		"weight": 2
+	},
+	{
+		"speciesId": "munchlax",
+		"weight": 2
+	},
+	{
+		"speciesId": "gastrodon",
+		"weight": 4
+	},
+	{
+		"speciesId": "froslass",
+		"weight": 5
+	},
+	{
+		"speciesId": "empoleon",
+		"weight": 6
+	},
+	{
+		"speciesId": "magnezone",
+		"weight": 2
+	},
+	{
+		"speciesId": "drifblim",
+		"weight": 5
+	}
+]

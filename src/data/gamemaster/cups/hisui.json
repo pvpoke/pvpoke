@@ -1,0 +1,20 @@
+{
+	"name": "hisui",
+	"title": "Hisui Cup",
+	"include": [{
+		"filterType": "dex",
+		"values": [387, 493]
+	}, {
+		"filterType": "id",
+		"values": ["sneasel_hisuian", "sneasler", "qwilfish_hisuian", "overqwil", "growlithe_hisuian", "arcanine_hisuian", "braviary_hisuian", "voltorb_hisuian", "electrode_hisuian"]
+	}],
+	"exclude": [{
+		"filterType": "tag",
+		"values": ["mega"]
+	}, {
+		"filterType": "id",
+		"values": ["bastiodon_xs"]
+	}],
+	"partySize": 3,
+	"presetOnly": true
+}

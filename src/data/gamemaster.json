@@ -28,34 +28,6 @@
         "energy": [0, 0]
     }],
     "cups": [{
-        "name": "adl",
-        "title": "Arrohh Draft League",
-        "include": [],
-        "exclude": [{
-            "filterType": "tag",
-            "values": ["mega"]
-        }, {
-            "filterType": "id",
-            "values": ["mew", "registeel", "bastiodon", "azumarill", "stunfisk_galarian", "sableye", "trevenant", "swampert", "medicham", "walrein", "nidoqueen", "scrafty", "kommo_o", "diggersby", "talonflame", "pachirisu", "lickitung", "mandibuzz", "ninetales_alolan", "regirock", "altaria", "cofagrigus", "deoxys_defense", "marowak_alolan", "primeape", "araquanid", "vigoroth", "jellicent", "skarmory", "galvantula", "wigglytuff", "drapion", "tropius", "umbreon", "greedent", "froslass", "cresselia", "zweilous", "toxicroak", "granbull", "hakamo_o", "wobbuffet"]
-        }]
-    }, {
-        "name": "alchemy",
-        "title": "Silph Factions Alchemy Field",
-        "include": [{
-            "filterType": "type",
-            "values": ["fire", "flying", "ghost", "ground", "psychic", "steel"]
-        }],
-        "exclude": [{
-            "filterType": "type",
-            "values": ["water", "dark"]
-        }, {
-            "filterType": "id",
-            "values": ["altaria", "bastiodon", "cresselia", "diggersby", "golem", "graveler", "medicham", "mew", "probopass", "registeel", "stunfisk_galarian"]
-        }, {
-            "filterType": "tag",
-            "values": ["mega"]
-        }]
-    }, {
         "name": "championship",
         "title": "2022 Championship Series",
         "include": [],
@@ -131,84 +103,35 @@
             }]
         }
     }, {
-        "name": "colony",
-        "title": "Silph Factions Colony Field",
-        "include": [{
-            "filterType": "type",
-            "values": ["bug", "electric", "ground", "ice", "psychic", "water"]
-        }],
-        "exclude": [{
-            "filterType": "type",
-            "values": ["fairy", "fighting", "flying"]
-        }, {
-            "filterType": "id",
-            "values": ["abomasnow", "deoxys_defense", "diggersby", "escavalier", "forretress", "genesect", "jellicent", "pachirisu", "steelix", "stunfisk_galarian", "swampert", "whiscash", "walrein", "wobbuffet", "wormadam_trash", "tapu_fini", "araquanid"]
-        }, {
-            "filterType": "tag",
-            "values": ["mega", "shadow"]
-        }]
-    }, {
         "name": "custom",
         "title": "Custom",
         "include": [],
         "exclude": []
-    }, {
-        "name": "flying",
-        "title": "Flying Cup",
-        "include": [{
-            "filterType": "type",
-            "values": ["flying"]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "values": ["mega"]
-        }],
-        "partySize": 3
-    }, {
-        "name": "forged",
-        "title": "Silph Forged Cup",
-        "include": [{
-            "filterType": "id",
-            "includeShadows": true,
-            "values": ["nidoqueen", "cresselia", "wobbuffet", "lickitung", "diggersby", "ninetales_alolan", "abomasnow", "talonflame", "trevenant", "cofagrigus", "azumarill", "jellicent", "froslass", "chansey", "araquanid", "tapu_fini", "nidorina", "golbat", "beedrill", "hypno", "mew", "pidgeot", "noctowl", "lickilicky", "snorlax", "munchlax", "greedent", "granbull", "wigglytuff", "clefable", "sylveon", "dewgong", "lapras", "marowak_alolan", "ninetales", "stunfisk", "galvantula", "pachirisu", "lanturn", "mantine", "politoed", "venusaur", "meganium", "serperior", "jumpluff", "muk", "grimer", "nidorino", "scolipede", "venomoth", "crobat", "tentacruel", "garbodor", "amoonguss", "nidoking", "arbok", "weezing", "mewtwo", "rapidash_galarian", "slowpoke", "slowpoke_galarian", "slowbro", "slowking", "slowbro_galarian", "slowking_galarian", "celebi", "uxie", "espeon", "exeggcute", "exeggutor", "mr_rime", "gothitelle", "girafarig", "meowstic", "meowstic_female", "swoobat", "alakazam", "bouffalant", "bibarel", "litleo", "pyroar", "furfrou", "porygon2", "porygon_z", "purugly", "toucannon", "farfetchd", "bewear", "florges", "floette", "togetic", "hitmonchan", "hitmontop", "heracross", "machoke", "gurdurr", "farfetchd_galarian", "avalugg", "piloswine", "mamoswine", "cryogonal", "glaceon", "beartic", "cloyster", "darmanitan_galarian_standard", "charizard", "fletchinder", "magmortar", "rapidash", "heatmor", "typhlosion", "arcanine", "darminitan_standard", "chandelure", "delphox", "emboar", "infernape", "flareon", "barbaracle", "dwebble", "carracosta", "omastar", "kabutops", "aerodactyl", "sudowoodo", "bonsly", "rhyperior", "rhydon", "gigalith", "lycanroc_midday", "gengar", "haunter", "decidueye", "golurk", "dusknoir", "raichu", "raichu_alolan", "raikou", "electivire", "electrode", "electrode_hisuian", "dedenne", "emolga", "ampharos", "zebstrika", "eelektross", "jolteon", "heliolisk", "samurott", "poliwrath", "gyarados", "blastoise", "seaking", "gastrodon", "seismitoad", "vaporeon", "poliwhirl", "golduck", "feraligatr", "kingler", "lumineon", "prinplup", "swanna", "chesnaught", "quilladin", "servine", "leafeon", "tangrowth", "leavanny", "cherrim_sunny", "wormadam_plant", "wormadam_sandy", "sandslash", "donphan", "marowak", "hippowdon", "vespiquen", "pinsir", "ledian", "kricketune", "parasect", "scyther", "yanmega", "qwilfish", "roserade", "ariados", "salazzle", "oranguru", "victini", "lugia", "gallade", "whimsicott", "aromatisse", "slurpuff", "spritzee", "togekiss", "primarina", "machamp", "primeape", "sirfetchd", "toxicroak", "articuno", "crustle", "graveler_alolan", "golem_alolan", "geodude_alolan", "magcargo", "lycanroc", "lycanroc_midnight", "gourgeist_super", "gourgeist_large", "gourgeist_average", "gourgeist_small", "drifblim", "drifloon", "zapdos", "luxray", "alomomola", "quagsire", "lurantis", "bellossom", "victreebel", "weepinbell", "gloom", "vileplume", "oddish", "grotle", "torterra", "bayleef", "ivysaur", "gligar", "gliscor"]
-        }],
-        "exclude": [],
-        "tierRules": {
-            "max": 17,
-            "floor": 1,
-            "tiers": [{
-                "points": 8,
-                "pokemon": ["nidoqueen", "cresselia", "wobbuffet", "lickitung", "diggersby", "ninetales_alolan", "abomasnow", "talonflame", "trevenant", "cofagrigus", "azumarill", "jellicent", "froslass", "chansey", "araquanid", "tapu_fini"]
-            }, {
-                "points": 4,
-                "pokemon": ["nidorina", "golbat", "beedrill", "hypno", "mew", "pidgeot", "noctowl", "lickilicky", "snorlax", "munchlax", "greedent", "granbull", "wigglytuff", "clefable", "sylveon", "dewgong", "lapras", "marowak_alolan", "ninetales", "stunfisk", "galvantula", "pachirisu", "lanturn", "mantine", "politoed", "venusaur", "meganium", "serperior", "jumpluff"]
-            }, {
-                "points": 2,
-                "pokemon": ["qwilfish", "roserade", "ariados", "salazzle", "oranguru", "victini", "lugia", "gallade", "whimsicott", "aromatisse", "slurpuff", "spritzee", "togekiss", "primarina", "machamp", "primeape", "sirfetchd", "toxicroak", "articuno", "crustle", "graveler_alolan", "golem_alolan", "geodude_alolan", "magcargo", "lycanroc", "lycanroc_midnight", "gourgeist_super", "gourgeist_large", "gourgeist_average", "gourgeist_small", "drifblim", "drifloon", "zapdos", "luxray", "alomomola", "quagsire", "lurantis", "bellossom", "victreebel", "weepinbell", "gloom", "vileplume", "oddish", "grotle", "torterra", "bayleef", "ivysaur", "gligar", "gliscor"]
-            }, {
-                "points": 1,
-                "pokemon": ["muk", "grimer", "nidorino", "scolipede", "venomoth", "crobat", "tentacruel", "garbodor", "amoonguss", "nidoking", "arbok", "weezing", "mewtwo", "rapidash_galarian", "slowpoke", "slowpoke_galarian", "slowbro", "slowking", "slowbro_galarian", "slowking_galarian", "celebi", "uxie", "espeon", "exeggcute", "exeggutor", "mr_rime", "gothitelle", "girafarig", "meowstic", "meowstic_female", "swoobat", "alakazam", "bouffalant", "bibarel", "litleo", "pyroar", "furfrou", "porygon2", "porygon_z", "purugly", "toucannon", "farfetchd", "bewear", "florges", "floette", "togetic", "hitmonchan", "hitmontop", "heracross", "machoke", "gurdurr", "farfetchd_galarian", "avalugg", "piloswine", "mamoswine", "cryogonal", "glaceon", "beartic", "cloyster", "darmanitan_galarian_standard", "charizard", "fletchinder", "magmortar", "rapidash", "heatmor", "typhlosion", "arcanine", "darminitan_standard", "chandelure", "delphox", "emboar", "infernape", "flareon", "barbaracle", "dwebble", "carracosta", "omastar", "kabutops", "aerodactyl", "sudowoodo", "bonsly", "rhyperior", "rhydon", "gigalith", "lycanroc_midday", "gengar", "haunter", "decidueye", "golurk", "dusknoir", "raichu", "raichu_alolan", "raikou", "electivire", "electrode", "nelectrode_hisuian", "dedenne", "emolga", "ampharos", "zebstrika", "eelektross", "jolteon", "heliolisk", "samurott", "poliwrath", "gyarados", "blastoise", "seaking", "gastrodon", "seismitoad", "vaporeon", "poliwhirl", "golduck", "feraligatr", "kingler", "lumineon", "prinplup", "swanna", "chesnaught", "quilladin", "servine", "leafeon", "tangrowth", "leavanny", "cherrim_sunny", "wormadam_plant", "wormadam_sandy", "sandslash", "donphan", "marowak", "hippowdon", "vespiquen", "pinsir", "ledian", "kricketune", "parasect", "scyther", "yanmega"]
-            }]
-        }
-    }, {
-        "name": "fossil",
-        "title": "Fossil Cup",
-        "include": [{
-            "filterType": "type",
-            "values": ["water", "rock", "steel"]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "values": ["mega"]
-        }],
-        "partySize": 3,
-        "presetOnly": true
     }, {
         "name": "gobattleleague",
         "title": "GO Battle League",
         "include": [],
         "exclude": [],
         "partySize": 3
+    }, {
+        "name": "hisui",
+        "title": "Hisui Cup",
+        "include": [{
+            "filterType": "dex",
+            "values": [387, 493]
+        }, {
+            "filterType": "id",
+            "values": ["sneasel_hisuian", "sneasler", "qwilfish_hisuian", "overqwil", "growlithe_hisuian", "arcanine_hisuian", "braviary_hisuian", "voltorb_hisuian", "electrode_hisuian"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["bastiodon_xs"]
+        }],
+        "partySize": 3,
+        "presetOnly": true
     }, {
         "name": "kanto",
         "title": "Kanto Cup",
@@ -294,18 +217,18 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Flying Cup",
-        "cup": "flying",
-        "cp": 1500,
-        "meta": "flying",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Little Cup Remix",
         "cup": "littleremix",
         "cp": 500,
         "meta": "littleremix",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Hisui Cup",
+        "cup": "hisui",
+        "cp": 1500,
+        "meta": "hisui",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -338,22 +261,6 @@
         "cup": "architect",
         "cp": 1500,
         "meta": "architect",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Silph Factions (Alchemy)",
-        "cup": "alchemy",
-        "cp": 1500,
-        "meta": "alchemy",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Silph Factions (Colony)",
-        "cup": "colony",
-        "cp": 1500,
-        "meta": "colony",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -21823,6 +21730,26 @@
             "cp1500": [46, 4, 14, 15],
             "cp2500": [50, 15, 15, 15],
             "cp1500l40": [40, 14, 15, 13]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true
+    }, {
+        "dex": 628,
+        "speciesId": "braviary",
+        "speciesName": "Braviary",
+        "baseStats": {
+            "atk": 232,
+            "def": 152,
+            "hp": 225
+        },
+        "types": ["normal", "flying"],
+        "fastMoves": ["STEEL_WING", "AIR_SLASH"],
+        "chargedMoves": ["HEAT_WAVE", "BRAVE_BIRD", "ROCK_SLIDE", "CLOSE_COMBAT"],
+        "defaultIVs": {
+            "cp500": [6, 13, 11, 15],
+            "cp1500": [18, 5, 14, 8],
+            "cp2500": [30.5, 4, 14, 7]
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,

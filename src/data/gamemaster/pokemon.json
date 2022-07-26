@@ -21397,6 +21397,26 @@
     "released": true
 }, {
     "dex": 628,
+    "speciesId": "braviary",
+    "speciesName": "Braviary",
+    "baseStats": {
+        "atk": 232,
+        "def": 152,
+        "hp": 225
+    },
+    "types": ["normal", "flying"],
+    "fastMoves": ["STEEL_WING", "AIR_SLASH"],
+    "chargedMoves": ["HEAT_WAVE", "BRAVE_BIRD", "ROCK_SLIDE", "CLOSE_COMBAT"],
+    "defaultIVs": {
+        "cp500": [6, 13, 11, 15],
+        "cp1500": [18, 5, 14, 8],
+        "cp2500": [30.5, 4, 14, 7]
+    },
+    "buddyDistance": 5,
+    "thirdMoveCost": 75000,
+    "released": true
+}, {
+    "dex": 628,
     "speciesId": "braviary_hisuian",
     "speciesName": "Braviary (Hisuian)",
     "baseStats": {
