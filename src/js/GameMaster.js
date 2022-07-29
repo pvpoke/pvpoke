@@ -570,6 +570,16 @@ var GameMaster = (function () {
 			var buffApplyChance = parseFloat(move.buffApplyChance)*100 + '%';
 			var buffTarget = move.buffTarget;
 			var stringArray = [buffApplyChance + " chance", atk, def, buffTarget];
+
+			if(move.buffTarget == "both"){
+				stringArray[3] = "self";
+
+				var atkOpp = object.getStatusEffectStatString(move.buffsOpponent[0], 'Atk');
+				var defOpp = object.getStatusEffectStatString(move.buffsOpponent[1], 'Def');
+				var buffApplyChance = parseFloat(move.buffApplyChance)*100 + '%';
+				stringArray.push(buffApplyChance + " chance", atkOpp, defOpp, "opponent");
+			}
+
 			return "<div class=\"status-effect-description\">"+stringArray.join(' ')+"</div>";
 		}
 

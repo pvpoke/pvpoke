@@ -665,6 +665,15 @@ function Pokemon(id, i, b){
 					self.activeChargedMoves.splice(0, 1);
 					self.activeChargedMoves.push(move);
 				}
+
+				// If the second move is a close energy, self buffing move, prioritize it as the bait move
+
+				if(self.activeChargedMoves[1].energy - self.activeChargedMoves[0].energy <= 5 && self.activeChargedMoves[1].selfBuffing){
+					var move = self.activeChargedMoves[0];
+					self.activeChargedMoves.splice(0, 1);
+					self.activeChargedMoves.push(move);
+				}
+
 			}
 
 			self.bestChargedMove = self.activeChargedMoves[0];
@@ -686,6 +695,18 @@ function Pokemon(id, i, b){
 				if((Math.abs(move.dpe - self.bestChargedMove.dpe) < .03)&&(self.bestChargedMove.buffs)&&(move.buffs)&&(move.buffApplyChance > self.bestChargedMove.buffApplyChance)&&(! move.selfDebuffing)){
 					self.bestChargedMove = self.activeChargedMoves[i];
 				}
+
+
+
+				// Favor Obstruct over close energy moves
+				if(self.activeChargedMoves[i].moveId == "OBSTRUCT"){
+					self.bestChargedMove = self.activeChargedMoves[i];
+				}
+			}
+
+			// Favor Obstruct over close energy moves
+			if(self.activeChargedMoves[0].moveId == "OBSTRUCT" && self.activeChargedMoves[0].energy - self.bestChargedMove.energy <= 5 && self.activeChargedMoves[0].dpe / self.bestChargedMove.dpe > .2){
+				self.bestChargedMove = self.activeChargedMoves[0];
 			}
 
 		} else{
