@@ -2523,15 +2523,83 @@ function Battle(){
 
 			if(buffRoll > 1 - move.buffApplyChance){
 
-				var buffTarget = attacker;
+				// Gather targets for move buffs or debuffs
+				var buffTargets = [];
+				var buffType = "debuff";
 
-				if(move.buffTarget == "opponent"){
-					buffTarget = defender;
+				if((move.buffTarget == "opponent")||(move.buffTarget == "both")){
+					var buffType = "debuff";
+					var buffs = move.buffs;
+
+					if(move.buffTarget == "both"){
+						buffs = move.buffsOpponent;
+					}
+
+					if((buffs[0] > 0) || (buffs[1] > 0)){
+						buffType = "buff";
+					}
+
+					buffTargets.push({
+						target: defender,
+						buffs: buffs,
+						buffType: buffType
+					});
 				}
 
-				buffTarget.applyStatBuffs(move.buffs);
+				if((move.buffTarget == "self")||(move.buffTarget == "both")){
+					buffType = "debuff";
+					buffs = move.buffs;
+
+					if(move.buffTarget == "both"){
+						buffs = move.buffsSelf;
+					}
+
+					if((buffs[0] > 0) || (buffs[1] > 0)){
+						buffType = "buff";
+					}
+
+					buffTargets.push({
+						target: attacker,
+						buffs: buffs,
+						buffType: buffType
+					});
+				}
+
+				// Apply all buff effects to their relevant targets
+
+				for(var i = 0; i < buffTargets.length; i++){
+					var buffs = buffTargets[i].buffs;
+
+					buffTargets[i].target.applyStatBuffs(buffs);
+
+					// In emulated battles, add buff messages
+
+					if(mode == "emulate"){
+						var statNames = ["Attack","Defense"];
+
+						for(var n = buffs.length-1; n >= 0; n--){
+							if(buffs[n] != 0){
+								var statDescription = "";
+
+								if(buffs[n] < -1){
+									statDescription = "fell sharply";
+								} else if(buffs[n] == -1){
+									statDescription = "fell";
+								} else if(buffs[n] == 1){
+									statDescription = "rose";
+								} else if(buffs[n] > 1){
+									statDescription = "rose sharply";
+								}
+
+								turnMessages.push({ index: buffTargets[i].target.index, str: statNames[n] + " " + statDescription +"!"});
+							}
+						}
+					}
+				}
 
 				buffApplied = true;
+
+				// Set string for Charged Move timeline event
 
 				var buffType = "debuff";
 
@@ -2540,30 +2608,6 @@ function Battle(){
 				}
 
 				type += " " + buffType;
-
-				// In emulated battles, add buff messages
-
-				if(mode == "emulate"){
-					var statNames = ["Attack","Defense"];
-
-					for(var i = move.buffs.length-1; i >= 0; i--){
-						if(move.buffs[i] != 0){
-							var statDescription = "";
-
-							if(move.buffs[i] < -1){
-								statDescription = "fell sharply";
-							} else if(move.buffs[i] == -1){
-								statDescription = "fell";
-							} else if(move.buffs[i] == 1){
-								statDescription = "rose";
-							} else if(move.buffs[i] > 1){
-								statDescription = "rose sharply";
-							}
-
-							turnMessages.push({ index: buffTarget.index, str: statNames[i] + " " + statDescription +"!"});
-						}
-					}
-				}
 
 			}
 

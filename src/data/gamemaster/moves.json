@@ -1504,6 +1504,20 @@
     "buffApplyChance": ".125",
     "archetype": "Boost Spam/Bait"
 }, {
+    "moveId": "OBSTRUCT",
+    "name": "Obstruct",
+    "type": "dark",
+    "power": 15,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, 1],
+	"buffsSelf": [0, 1],
+	"buffsOpponent": [0, -1],
+    "buffTarget": "both",
+    "buffApplyChance": "1",
+    "archetype": "Boost Spam/Bait"
+}, {
     "moveId": "OCTAZOOKA",
     "name": "Octazooka",
     "abbreviation": "Oc",
