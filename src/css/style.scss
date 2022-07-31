@@ -4887,6 +4887,53 @@ a.pokebattler{
 	overflow:hidden;
 }
 
+// Developer panel styling and display
+
+#dev-panel{
+	width: 300px;
+	position: fixed;
+	right: -320px;
+	top: 100px;
+	background: #01475f;
+	z-index: 1000;
+	padding: 10px;
+
+	@include transition(right, 0.2s, ease-out, 0s);
+
+	&.active{
+		right: 0px;
+	}
+
+	a.wrench{
+		width: 50px;
+		height: 50px;
+		background: url('../articles/article-assets/developer-notes-1-27-0/thumb.jpg');
+		background-size: 100%;
+		display: block;
+		position:absolute;
+		left: -50px;
+		top: 0;
+	}
+
+	a{
+		display: block;
+		width: 100%;
+		box-sizing: border-box;
+		font-size: 14px;
+	}
+
+	h3{
+		color: #eee;
+		margin-top: 0;
+	}
+
+	h4{
+		color: #ccc;
+		border-bottom: 1px solid #bbb;
+		margin-bottom: 0;
+	}
+}
+
 .mobile-ad-container,
 .desktop-ad-container{
 	overflow: hidden;
