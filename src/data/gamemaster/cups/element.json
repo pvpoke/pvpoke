@@ -1,0 +1,12 @@
+{
+	"name": "element",
+	"title": "Element Cup",
+	"include": [{
+		"filterType": "id",
+		"includeShadows": true,
+		"values": ["litleo", "barboach", "bellsprout", "budew", "buizel", "bulbasaur", "cacnea", "carvanha", "charmander", "cherubi", "chikorita", "chimchar", "chinchou", "corphish", "cyndaquil", "darumaka", "deerling", "ducklett", "exeggcute", "feebas", "ferroseed", "finneon", "foongus", "frillish", "goldeen", "growlithe", "hoppip", "horsea", "houndour", "kabuto", "krabby", "larvesta", "lileep", "litwick", "lotad", "magby", "magikarp", "mantyke", "mudkip", "numel", "oddish", "omanyte", "oshawott", "pansage", "pansear", "paras", "piplup", "poliwag", "ponyta", "psyduck", "remoraid", "seedot", "seel", "sewaddle", "shellos_east_sea", "shellos_west_sea", "shroomish", "slowpoke", "slugma", "snivy", "snover", "spheal", "squirtle", "surskit", "tangela", "tentacool", "tepig", "tirtouga", "torchic", "totodile", "treecko", "turtwig", "tympole", "vulpix", "wailmer", "wingull", "wooper", "cottonee", "sunkern", "clamperl", "shellos", "panpour", "petilil", "chespin", "froakie", "fennekin", "skrelp", "clauncher", "deerling", "binacle", "shellder", "staryu", "salandit", "fomantis", "popplio", "litten", "rowlet", "phantump", "pumpkaboo_small", "pumpkaboo_average", "pumpkaboo_large", "pumpkaboo_super", "dewpider", "voltorb_hisuian", "wimpod", "growlithe_hisuian"]
+	}],
+	"exclude": [],
+	"partySize": 3,
+	"presetOnly": true
+}
