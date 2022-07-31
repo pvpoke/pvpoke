@@ -1117,7 +1117,7 @@ var InterfaceMaster = (function () {
 
 				var rank1Combo = pokemon.generateIVCombinations("overall", 1, 1)[0];
 				var highestLevelCombo = pokemon.generateIVCombinations("level", 1, 1)[0];
-				$details.find(".stat-row.rank-1 .value").html("Lvl " + rank1Combo.level + " " + rank1Combo.ivs.atk + "/" + rank1Combo.ivs.def + "/" + rank1Combo.ivs.hp);
+				$details.find(".stat-row.rank-1 .value").html("Lvl " + rank1Combo.level + " " + rank1Combo.ivs.atk + "/" + rank1Combo.ivs.def + "/" + rank1Combo.ivs.hp + "<br>CP " + rank1Combo.cp);
 
 				var level41CP = pokemon.calculateCP(0.795300006866455, 15, 15, 15);
 

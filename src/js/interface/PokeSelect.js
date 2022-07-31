@@ -676,6 +676,12 @@ function PokeSelect(element, i){
 		}
 	});
 
+	// Clear Poke Search on focus
+
+	$el.find(".poke-search").on("focus", function(e){
+		$(this).val("");
+	});
+
 	// Submit search query after specified input delay
 	// Prevents submitting repeated searches and reduce lag on mobile
 

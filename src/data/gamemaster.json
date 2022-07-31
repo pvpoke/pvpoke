@@ -7005,7 +7005,7 @@
         "level25CP": 2386,
         "tags": ["shadoweligible"],
         "eliteMoves": ["DRACO_METEOR", "DRAGON_PULSE"],
-        "searchPriority": 10,
+        "searchPriority": 3,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
@@ -7028,7 +7028,7 @@
         },
         "tags": ["shadow"],
         "eliteMoves": ["DRACO_METEOR", "DRAGON_PULSE"],
-        "searchPriority": 10,
+        "searchPriority": 3,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
@@ -16951,7 +16951,7 @@
             "cp2500": [47, 5, 13, 11],
             "cp2500l40": [40, 13, 15, 15]
         },
-        "searchPriority": 2,
+        "searchPriority": 4,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true,
@@ -17962,7 +17962,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false
+        "released": true
     }, {
         "dex": 479,
         "speciesName": "Rotom (Wash)",
