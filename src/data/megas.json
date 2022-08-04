@@ -75,24 +75,6 @@
     },
     "eliteMoves": ["PSYSTRIKE", "SHADOW_BALL", "HYPER_BEAM"]
 }, {
-    "dex": 212,
-    "speciesName": "Scizor (Mega)",
-    "speciesId": "scizor_mega",
-    "baseStats": {
-        "atk": 279,
-        "def": 250,
-        "hp": 172
-    },
-    "types": ["bug", "steel"],
-    "fastMoves": ["BULLET_PUNCH", "FURY_CUTTER"],
-    "chargedMoves": ["IRON_HEAD", "NIGHT_SLASH", "X_SCISSOR"],
-    "defaultIVs": {
-        "cp1500": [13.5, 7, 9, 11],
-        "cp2500": [22.5, 6, 13, 8]
-    },
-    "tags": ["shadoweligible", "mega"],
-    "level25CP": 2581
-}, {
     "dex": 214,
     "speciesName": "Heracross (Mega)",
     "speciesId": "heracross_mega",

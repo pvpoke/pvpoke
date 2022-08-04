@@ -23,6 +23,7 @@
 	},
 	{
 		"speciesId": "yveltal",
+		"fastMove": "SNARL",
 		"chargedMoves": ["DARK_PULSE", "FOCUS_BLAST"],
 		"weight": 4
 	},
@@ -42,6 +43,10 @@
 	{
 		"speciesId": "aurorus",
 		"chargedMoves": ["WEATHER_BALL_ICE", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "xurkitree",
+		"chargedMoves": ["DISCHARGE", "DAZZLING_GLEAM"]
 	},
 	{
 		"speciesId": "overqwil",
