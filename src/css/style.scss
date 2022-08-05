@@ -1973,7 +1973,8 @@ a.download-csv{
 		text-align: center;
 
 		&.dark,
-		&.dragon{
+		&.dragon,
+		&.ghost{
 			color:$color-off-white;
 		}
 	}
@@ -2870,7 +2871,7 @@ a.download-csv{
 		text-decoration: none;
 		color:#000;
 
-		&.dark,&.dragon{
+		&.dark,&.dragon,&.ghost{
 			color:#fff;
 		}
 

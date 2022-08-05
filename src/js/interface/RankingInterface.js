@@ -1213,7 +1213,12 @@ var InterfaceMaster = (function () {
 						baseSpeciesId = baseSpeciesId.replace("_xs", "");
 
 						if(usedPartnerSpecies.indexOf(baseSpeciesId) == -1){
-							$details.find(".partner-pokemon .list").append("<a href=\"#\" class=\""+partnerPokemon[i].types[0]+"\" data=\""+partnerPokemon[i].speciesId+"\">"+partnerPokemon[i].speciesName+"</a>");
+
+							// Build team builder link
+
+							var teamURL = host + "team-builder/" + battle.getCup().name + "/" + battle.getCP(true) + "/" + pokemon.speciesId + "-m-" + pokeMoveStr + "," + partnerPokemon[i].speciesId + "-m-" + partnerPokemon[i].generateURLMoveStr();
+
+							$details.find(".partner-pokemon .list").append("<a href=\""+teamURL+"\" target=\"blank\" class=\""+partnerPokemon[i].types[0]+"\" data=\""+partnerPokemon[i].speciesId+"\">"+partnerPokemon[i].speciesName+" &rarr;</a>");
 							usedPartnerSpecies.push(baseSpeciesId);
 							partnerPokemonCount++;
 						}
@@ -1248,6 +1253,7 @@ var InterfaceMaster = (function () {
 				// First, get ratings of source Pokemon vs meta
 
 				ranker.setTargets(metaGroup);
+
 				var sourceRankings = ranker.rank([pokemon], battle.getCP(true), battle.getCup()).rankings;
 
 				sourceRankings.sort((a,b) => (a.speciesId > b.speciesId) ? 1 : ((b.speciesId > a.speciesId) ? -1 : 0));
@@ -1260,7 +1266,7 @@ var InterfaceMaster = (function () {
 					partnerRankings.sort((a,b) => (a.speciesId > b.speciesId) ? 1 : ((b.speciesId > a.speciesId) ? -1 : 0));
 
 					for(var n = 0; n < partnerRankings.length; n++){
-						var score = Math.min(1000, sourceRankings[n].opRating + partnerRankings[n].opRating);
+						var score = Math.min(800, sourceRankings[n].opRating + partnerRankings[n].opRating);
 						var matchupWeight = 1;
 
 						// If this Pokemon is a key loss, weigh this matchup more

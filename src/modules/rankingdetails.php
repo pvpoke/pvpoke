@@ -187,7 +187,10 @@
 			<div class="third-move-cost clear"></div>
 		</div>
 		<div class="detail-section partner-pokemon">
-			<div class="ranking-header">Potential Teammates</div>
+			<div class="ranking-header">Suggested Teammates</div>
+			<div class="footnote">
+				Get a quick start to team building with these Pokemon:
+			</div>
 			<div class="list"></div>
 		</div>
 		<div class="clear"></div>

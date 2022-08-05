@@ -127,6 +127,7 @@ var InterfaceMaster = (function () {
 									// Split out the move string and select moves
 
 									var moveStr = list[i].split("-m-")[1];
+
 									arr = moveStr.split("-");
 
 									// Search string for any custom moves to add

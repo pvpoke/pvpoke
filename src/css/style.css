@@ -1651,7 +1651,7 @@ a.download-csv {
   padding: 2px 4px;
   text-align: center;
 }
-.stats-table span.type.dark, .stats-table span.type.dragon {
+.stats-table span.type.dark, .stats-table span.type.dragon, .stats-table span.type.ghost {
   color: #eee;
 }
 .stats-table.sortable-table .label {
@@ -2475,15 +2475,19 @@ a.download-csv {
   text-decoration: none;
   color: #000;
 }
-.traits > div.dark, .traits > div.dragon, .traits > a.dark, .traits > a.dragon,
+.traits > div.dark, .traits > div.dragon, .traits > div.ghost, .traits > a.dark, .traits > a.dragon, .traits > a.ghost,
 .similar-pokemon .list > div.dark,
 .similar-pokemon .list > div.dragon,
+.similar-pokemon .list > div.ghost,
 .similar-pokemon .list > a.dark,
 .similar-pokemon .list > a.dragon,
+.similar-pokemon .list > a.ghost,
 .partner-pokemon .list > div.dark,
 .partner-pokemon .list > div.dragon,
+.partner-pokemon .list > div.ghost,
 .partner-pokemon .list > a.dark,
-.partner-pokemon .list > a.dragon {
+.partner-pokemon .list > a.dragon,
+.partner-pokemon .list > a.ghost {
   color: #fff;
 }
 .traits > div:hover, .traits > a:hover,
