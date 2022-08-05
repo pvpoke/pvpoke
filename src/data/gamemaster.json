@@ -36,15 +36,6 @@
             "values": ["mega"]
         }]
     }, {
-        "name": "architect",
-        "title": "Silph Architect Cup",
-        "include": [{
-            "filterType": "id",
-            "includeShadows": true,
-            "values": ["marowak_alolan", "froslass", "drapion", "skuntank", "qwilfish", "muk_alolan", "muk", "lapras", "sealeo", "cradily", "sudowoodo", "munchlax", "snorlax", "golbat", "poliwrath", "pelipper", "beedrill", "milotic", "charizard", "bewear", "trevenant", "castform", "ariados", "linoone", "venomoth", "gyarados", "malamar", "lickilicky", "shiftry", "jumpluff", "typhlosion", "gengar", "haunter", "glalie", "donphan", "sandslash", "scolipede", "banette", "slowbro_galarian", "dusclops"]
-        }],
-        "exclude": []
-    }, {
         "name": "celestial",
         "title": "Silph Factions Celestial Field",
         "include": [{
@@ -125,25 +116,6 @@
         "exclude": [],
         "partySize": 3
     }, {
-        "name": "hisui",
-        "title": "Hisui Cup",
-        "include": [{
-            "filterType": "dex",
-            "values": [387, 493]
-        }, {
-            "filterType": "id",
-            "values": ["sneasel_hisuian", "sneasler", "qwilfish_hisuian", "overqwil", "growlithe_hisuian", "arcanine_hisuian", "braviary_hisuian", "voltorb_hisuian", "electrode_hisuian"]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "values": ["mega"]
-        }, {
-            "filterType": "id",
-            "values": ["bastiodon_xs"]
-        }],
-        "partySize": 3,
-        "presetOnly": true
-    }, {
         "name": "kanto",
         "title": "Kanto Cup",
         "include": [{
@@ -218,14 +190,6 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Hisui Cup",
-        "cup": "hisui",
-        "cp": 1500,
-        "meta": "hisui",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Element Cup",
         "cup": "element",
         "cp": 500,
@@ -256,14 +220,6 @@
         "meta": "masterpremierclassic",
         "showCup": false,
         "showFormat": false,
-        "showMeta": true
-    }, {
-        "title": "Silph Architect Cup",
-        "cup": "architect",
-        "cp": 1500,
-        "meta": "architect",
-        "showCup": true,
-        "showFormat": true,
         "showMeta": true
     }, {
         "title": "Silph Factions (Celestial)",
@@ -9299,7 +9255,8 @@
             "cp2500": [22.5, 6, 13, 8]
         },
         "tags": ["shadoweligible", "mega"],
-        "level25CP": 2581
+        "level25CP": 2581,
+        "released": "true"
     }, {
         "dex": 213,
         "speciesName": "Shuckle",

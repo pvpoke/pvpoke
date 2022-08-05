@@ -1209,17 +1209,15 @@ var InterfaceMaster = (function () {
 					var partnerPokemon = generatePartnerPokemon(pokemon, r.counters);
 
 					for(var i = 0; i < partnerPokemon.length; i++){
-						var baseSpeciesId = partnerPokemon[i].speciesId.replace("_shadow", "");
-						baseSpeciesId = baseSpeciesId.replace("_xs", "");
 
-						if(usedPartnerSpecies.indexOf(baseSpeciesId) == -1){
+						if((usedPartnerSpecies.indexOf(partnerPokemon[i].dex) == -1)&&(partnerPokemon[i].dex != pokemon.dex)){
 
 							// Build team builder link
 
 							var teamURL = host + "team-builder/" + battle.getCup().name + "/" + battle.getCP(true) + "/" + pokemon.speciesId + "-m-" + pokeMoveStr + "," + partnerPokemon[i].speciesId + "-m-" + partnerPokemon[i].generateURLMoveStr();
 
 							$details.find(".partner-pokemon .list").append("<a href=\""+teamURL+"\" target=\"blank\" class=\""+partnerPokemon[i].types[0]+"\" data=\""+partnerPokemon[i].speciesId+"\">"+partnerPokemon[i].speciesName+" &rarr;</a>");
-							usedPartnerSpecies.push(baseSpeciesId);
+							usedPartnerSpecies.push(partnerPokemon[i].dex);
 							partnerPokemonCount++;
 						}
 

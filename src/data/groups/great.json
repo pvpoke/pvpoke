@@ -110,19 +110,9 @@
 		"chargedMoves":["NIGHT_SLASH","GUNK_SHOT"]
 	},
 	{
-		"speciesId":"meganium",
-		"fastMove":"VINE_WHIP",
-		"chargedMoves":["FRENZY_PLANT","EARTHQUAKE"]
-	},
-	{
-		"speciesId":"dewgong",
-		"fastMove":"ICE_SHARD",
-		"chargedMoves":["ICY_WIND","WATER_PULSE"]
-	},
-	{
-		"speciesId":"lapras",
-		"fastMove":"ICE_SHARD",
-		"chargedMoves":["SURF","SKULL_BASH"]
+		"speciesId":"victreebel_shadow",
+		"fastMove":"RAZOR_LEAF",
+		"chargedMoves":["ACID_SPRAY","LEAF_BLADE"]
 	},
 	{
 		"speciesId":"stunfisk",
@@ -233,16 +223,6 @@
 		"speciesId":"araquanid",
 		"fastMove":"BUG_BITE",
 		"chargedMoves":["BUBBLE_BEAM","BUG_BUZZ"]
-	},
-	{
-		"speciesId":"abomasnow",
-		"fastMove":"POWDER_SNOW",
-		"chargedMoves":["WEATHER_BALL_ICE","ENERGY_BALL"]
-	},
-	{
-		"speciesId":"drifblim",
-		"fastMove":"HEX",
-		"chargedMoves":["ICY_WIND","SHADOW_BALL"]
 	},
 	{
 		"speciesId":"diggersby",

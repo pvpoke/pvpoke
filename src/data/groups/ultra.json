@@ -1,24 +1,7 @@
 [{
-    "speciesId": "abomasnow",
-    "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"],
-    "shadowType": "shadow"
-}, {
-    "speciesId": "abomasnow",
-    "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"]
-}, {
-    "speciesId": "articuno",
-    "fastMove": "ICE_SHARD",
-    "chargedMoves": ["ICY_WIND", "HURRICANE"]
-}, {
     "speciesId": "charizard",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"]
-}, {
-    "speciesId": "clefable",
-    "fastMove": "CHARM",
-    "chargedMoves": ["MOONBLAST", "METEOR_MASH"]
 }, {
 		"speciesId":"cofagrigus",
 		"fastMove":"SHADOW_CLAW",
@@ -48,19 +31,6 @@
     "fastMove": "COUNTER",
     "chargedMoves": ["PSYCHO_BOOST", "ROCK_SLIDE"]
 }, {
-    "speciesId": "dragonite",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["DRAGON_CLAW", "HURRICANE"],
-    "shadowType": "shadow"
-}, {
-    "speciesId": "dragonite",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["DRAGON_CLAW", "HURRICANE"]
-}, {
-    "speciesId": "drifblim",
-    "fastMove": "HEX",
-    "chargedMoves": ["SHADOW_BALL", "ICY_WIND"]
-}, {
     "speciesId": "empoleon",
     "fastMove": "WATERFALL",
     "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
@@ -80,10 +50,6 @@
     "speciesId": "galvantula",
     "fastMove": "VOLT_SWITCH",
     "chargedMoves": ["DISCHARGE", "LUNGE"]
-}, {
-    "speciesId": "gengar",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["SLUDGE_BOMB", "SHADOW_PUNCH"]
 }, {
     "speciesId": "giratina_altered",
     "fastMove": "DRAGON_BREATH",
@@ -109,14 +75,6 @@
     "fastMove": "HEX",
     "chargedMoves": ["SHADOW_BALL", "ICE_BEAM"]
 }, {
-    "speciesId": "lapras",
-    "fastMove": "ICE_SHARD",
-    "chargedMoves": ["SURF", "SKULL_BASH"]
-}, {
-    "speciesId": "lugia",
-    "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["SKY_ATTACK", "AEROBLAST"]
-}, {
     "speciesId": "machamp",
     "fastMove": "COUNTER",
     "chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
@@ -126,17 +84,9 @@
     "fastMove": "COUNTER",
     "chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"]
 }, {
-    "speciesId": "meganium",
-    "fastMove": "VINE_WHIP",
-    "chargedMoves": ["FRENZY_PLANT", "EARTHQUAKE"]
-}, {
     "speciesId": "melmetal",
     "fastMove": "THUNDER_SHOCK",
     "chargedMoves": ["ROCK_SLIDE", "SUPER_POWER"]
-}, {
-    "speciesId": "mewtwo_armored",
-    "fastMove": "CONFUSION",
-    "chargedMoves": ["PSYSTRIKE", "DYNAMIC_PUNCH"]
 }, {
     "speciesId": "muk_alolan",
     "fastMove": "SNARL",
@@ -196,10 +146,6 @@
     "fastMove": "COUNTER",
     "chargedMoves": ["NIGHT_SLASH", "LEAF_BLADE"]
 }, {
-    "speciesId": "skarmory",
-    "fastMove": "AIR_SLASH",
-    "chargedMoves": ["BRAVE_BIRD", "SKY_ATTACK"]
-}, {
     "speciesId": "snorlax",
     "fastMove": "LICK",
     "chargedMoves": ["BODY_SLAM", "SUPER_POWER"],
@@ -249,4 +195,12 @@
     "speciesId": "drapion",
     "fastMove": "POISON_STING",
     "chargedMoves": ["AQUA_TAIL", "CRUNCH"]
+}, {
+    "speciesId": "drapion",
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["AQUA_TAIL", "CRUNCH"]
+}, {
+    "speciesId": "mandibuzz",
+    "fastMove": "SNARL",
+    "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
 }]
