@@ -2027,14 +2027,14 @@ a.download-csv {
   text-transform: capitalize;
   padding: 2px 12px;
 }
-.rank .details .detail-section.traits-container, .rank .details .detail-section.similar-pokemon {
+.rank .details .detail-section.traits-container, .rank .details .detail-section.similar-pokemon, .rank .details .detail-section.partner-pokemon {
   width: 100%;
 }
-.rank .details .detail-section.traits-container .ranking-header, .rank .details .detail-section.similar-pokemon .ranking-header {
+.rank .details .detail-section.traits-container .ranking-header, .rank .details .detail-section.similar-pokemon .ranking-header, .rank .details .detail-section.partner-pokemon .ranking-header {
   float: none;
   width: 100%;
 }
-.rank .details .detail-section.traits-container .ranking-header a.trait-info, .rank .details .detail-section.similar-pokemon .ranking-header a.trait-info {
+.rank .details .detail-section.traits-container .ranking-header a.trait-info, .rank .details .detail-section.similar-pokemon .ranking-header a.trait-info, .rank .details .detail-section.partner-pokemon .ranking-header a.trait-info {
   text-decoration: none;
   color: #00171c;
   border: 1px solid #00171c;
@@ -2049,7 +2049,7 @@ a.download-csv {
   position: relative;
   top: -4px;
 }
-.rank .details .detail-section.traits-container .list, .rank .details .detail-section.similar-pokemon .list {
+.rank .details .detail-section.traits-container .list, .rank .details .detail-section.similar-pokemon .list, .rank .details .detail-section.partner-pokemon .list {
   justify-content: center;
 }
 .rank .details .detail-section .stat-details .stat-row {
@@ -2457,13 +2457,16 @@ a.download-csv {
 }
 
 .traits,
-.similar-pokemon .list {
+.similar-pokemon .list,
+.partner-pokemon .list {
   display: flex;
   flex-wrap: wrap;
 }
 .traits > div, .traits > a,
 .similar-pokemon .list > div,
-.similar-pokemon .list > a {
+.similar-pokemon .list > a,
+.partner-pokemon .list > div,
+.partner-pokemon .list > a {
   margin: 3px;
   padding: 5px 8px;
   border-radius: 12px;
@@ -2476,22 +2479,32 @@ a.download-csv {
 .similar-pokemon .list > div.dark,
 .similar-pokemon .list > div.dragon,
 .similar-pokemon .list > a.dark,
-.similar-pokemon .list > a.dragon {
+.similar-pokemon .list > a.dragon,
+.partner-pokemon .list > div.dark,
+.partner-pokemon .list > div.dragon,
+.partner-pokemon .list > a.dark,
+.partner-pokemon .list > a.dragon {
   color: #fff;
 }
 .traits > div:hover, .traits > a:hover,
 .similar-pokemon .list > div:hover,
-.similar-pokemon .list > a:hover {
+.similar-pokemon .list > a:hover,
+.partner-pokemon .list > div:hover,
+.partner-pokemon .list > a:hover {
   border: 2px solid rgba(0, 0, 0, 0.25);
 }
 .traits > div.pro, .traits > a.pro,
 .similar-pokemon .list > div.pro,
-.similar-pokemon .list > a.pro {
+.similar-pokemon .list > a.pro,
+.partner-pokemon .list > div.pro,
+.partner-pokemon .list > a.pro {
   background: rgba(23, 222, 75, 0.44);
 }
 .traits > div.con, .traits > a.con,
 .similar-pokemon .list > div.con,
-.similar-pokemon .list > a.con {
+.similar-pokemon .list > a.con,
+.partner-pokemon .list > div.con,
+.partner-pokemon .list > a.con {
   background: rgba(255, 88, 88, 0.67);
 }
 
@@ -3948,7 +3961,7 @@ a.pokebattler {
   }
 
   .modal .search-traits-selector .traits > div,
-.similar-pokemon a {
+.similar-pokemon a, .partner-pokemon a {
     font-size: 12px;
   }
 

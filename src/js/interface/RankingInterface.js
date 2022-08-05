@@ -19,6 +19,7 @@ var InterfaceMaster = (function () {
 			var battle = new Battle();
 			var customRankingInterface;
 			var metaGroup = [];
+			var metaGroupData = [];
 			var csv = '';
 			var showMoveCounts = false;
 
@@ -144,6 +145,19 @@ var InterfaceMaster = (function () {
 
 				data = rankings;
 
+				// Load meta group
+				if(context != "custom"){
+					var metaKey = $(".format-select option:selected").attr("meta-group");
+
+					if(! gm.groups[metaKey]){
+						runningResults = true;
+						gm.loadGroupData(self, metaKey, data);
+						return false;
+					} else{
+						metaGroupData = gm.groups[metaKey];
+					}
+				}
+
 				// Pass this along to the custom ranking interface to fill in movesets
 				if(context == "custom"){
 					customRankingInterface.importMovesetsFromRankings(data);
@@ -175,6 +189,7 @@ var InterfaceMaster = (function () {
 
 
 				// Create an element for each ranked Pokemon
+
 				metaGroup = [];
 
 				for(var i = 0; i < rankings.length; i++){
@@ -202,8 +217,19 @@ var InterfaceMaster = (function () {
 						continue;
 					}
 
-					if(i < 100){
+					// Construct meta group from ranked Pokemon
+					if((i < 100)&&(context == "custom")){
 						metaGroup.push(pokemon);
+					}
+
+					if(context != "custom"){
+						for(var n = 0; n < metaGroupData.length; n++){
+							if(metaGroupData[n].speciesId == pokemon.speciesId){
+								pokemon.score = r.score;
+								metaGroup.push(pokemon);
+								break;
+							}
+						}
 					}
 
 					// Get names of of ranking moves
@@ -1175,6 +1201,31 @@ var InterfaceMaster = (function () {
 					$details.find(".traits").append("<div class=\"con\" title=\""+traits.cons[i].desc+"\">- "+traits.cons[i].trait+"</div>");
 				}
 
+				// Display partner pokemon
+				if((gm.rankings[key])&&(context != "custom")){
+					var partnerPokemonMax = 5;
+					var partnerPokemonCount = 0;
+					var usedPartnerSpecies = [];
+					var partnerPokemon = generatePartnerPokemon(pokemon, r.counters);
+
+					for(var i = 0; i < partnerPokemon.length; i++){
+						var baseSpeciesId = partnerPokemon[i].speciesId.replace("_shadow", "");
+						baseSpeciesId = baseSpeciesId.replace("_xs", "");
+
+						if(usedPartnerSpecies.indexOf(baseSpeciesId) == -1){
+							$details.find(".partner-pokemon .list").append("<a href=\"#\" class=\""+partnerPokemon[i].types[0]+"\" data=\""+partnerPokemon[i].speciesId+"\">"+partnerPokemon[i].speciesName+"</a>");
+							usedPartnerSpecies.push(baseSpeciesId);
+							partnerPokemonCount++;
+						}
+
+						if(partnerPokemonCount >= partnerPokemonMax){
+							break;
+						}
+					}
+				} else{
+					$details.find(".partner-pokemon").remove();
+				}
+
 				// Display similar pokemon
 				if((gm.rankings[key])&&(context != "custom")){
 					// Delay this to avoid tying up the interface
@@ -1184,10 +1235,50 @@ var InterfaceMaster = (function () {
 						for(var i = 0; i < 8; i++){
 							$details.find(".similar-pokemon .list").append("<a href=\"#\" class=\""+similarPokemon[i].types[0]+"\" data=\""+similarPokemon[i].speciesId+"\">"+similarPokemon[i].speciesName+"</a>");
 						}
-					}, 100);
+					}, 50);
 				} else{
 					$details.find(".similar-pokemon").remove();
 				}
+			}
+
+			// Use the team ranker to generate a list of partner Pokemon
+			function generatePartnerPokemon(pokemon, counters){
+				var ranker = RankerMaster.getInstance();
+
+				// First, get ratings of source Pokemon vs meta
+
+				ranker.setTargets(metaGroup);
+				var sourceRankings = ranker.rank([pokemon], battle.getCP(true), battle.getCup()).rankings;
+
+				sourceRankings.sort((a,b) => (a.speciesId > b.speciesId) ? 1 : ((b.speciesId > a.speciesId) ? -1 : 0));
+
+				// Check matchups for each eligible Pokemon
+				for(var i = 0; i < metaGroup.length; i++){
+					var partner = metaGroup[i];
+					var partnerScore = 0;
+					var partnerRankings = ranker.rank([partner], battle.getCP(true), battle.getCup()).rankings;
+					partnerRankings.sort((a,b) => (a.speciesId > b.speciesId) ? 1 : ((b.speciesId > a.speciesId) ? -1 : 0));
+
+					for(var n = 0; n < partnerRankings.length; n++){
+						var score = Math.min(1000, sourceRankings[n].opRating + partnerRankings[n].opRating);
+						var matchupWeight = 1;
+
+						// If this Pokemon is a key loss, weigh this matchup more
+						for(var j = 0; j < counters.length; j++){
+							if(counters[j].opponent == partnerRankings[n].speciesId){
+								matchupWeight = 3;
+							}
+						}
+
+						partnerScore += score * matchupWeight;
+					}
+
+					partner.partnerScore = (0.75 * partnerScore) + (0.25 * partnerScore * (partner.score / 100)); // Multiply by overall ranking to show higher ranked Pokemon first
+				}
+
+				metaGroup.sort((a,b) => (a.partnerScore > b.partnerScore) ? -1 : ((b.partnerScore > a.partnerScore) ? 1 : 0));
+
+				return metaGroup;
 			}
 
 			// Turn checkboxes on and off

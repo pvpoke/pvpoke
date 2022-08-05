@@ -2350,7 +2350,8 @@ a.download-csv{
 			}
 
 			&.traits-container,
-			&.similar-pokemon{
+			&.similar-pokemon,
+			&.partner-pokemon{
 				width:100%;
 
 				.ranking-header{
@@ -2854,7 +2855,8 @@ a.download-csv{
 }
 
 .traits,
-.similar-pokemon .list{
+.similar-pokemon .list,
+.partner-pokemon .list{
 	display:flex;
 	flex-wrap: wrap;
 
@@ -4285,7 +4287,7 @@ a.pokebattler{
 	}
 
 	.modal .search-traits-selector .traits > div,
-	.similar-pokemon a{
+	.similar-pokemon a, .partner-pokemon a{
 		font-size:12px;
 	}
 

@@ -655,7 +655,7 @@ var GameMaster = (function () {
 
 		// Load quick fill group JSON
 
-		object.loadGroupData = function(caller, group){
+		object.loadGroupData = function(caller, group, rankingData){
 
 			var key = group;
 
@@ -669,18 +669,26 @@ var GameMaster = (function () {
 					data.sort((a,b) => (a.speciesId > b.speciesId) ? 1 : ((b.speciesId > a.speciesId) ? -1 : 0));
 
 					object.groups[key] = data;
-					if(caller.context != "team"){
-						caller.quickFillGroup(data);
+
+					// Return group data for all contexts except rankings
+					var returnData = data;
+
+					if(rankingData){
+						returnData = rankingData;
+					}
+
+					if(caller.context != "team" && caller.context != "rankings"){
+						caller.quickFillGroup(returnData);
 					} else{
-						caller.displayRankingData(data);
+						caller.displayRankingData(returnData);
 					}
 				});
 			} else{
 
-				if(caller.context != "team"){
+				if(caller.context != "team" && caller.context != "rankings"){
 					caller.quickFillGroup(object.groups[key]);
 				} else{
-					caller.displayRankingData(data);
+					caller.displayRankingData(returnData);
 				}
 
 			}
