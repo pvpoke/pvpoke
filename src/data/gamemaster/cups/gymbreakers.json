@@ -1,0 +1,18 @@
+{
+    "name": "gymbreakers",
+    "title": "Gymbreakers Invitational 2022",
+    "include": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["bug", "dark", "dragon", "electric", "normal"]
+    }],
+    "exclude": [{
+        "filterType": "id",
+        "name": "Species",
+        "values": ["buzzwole", "articuno_galarian", "zapdos_galarian", "moltres_galarian", "xurkitree", "pheromosa", "shaymin_sky", "sneasler", "sneasel_hisuian", "arcanine_hisuian", "growlithe_hisuian", "dragalge", "altaria", "diggersby", "wigglytuff", "forretress", "kommo_o", "scrafty", "stunfisk", "dedenne", "hakamo_o"]
+    }, {
+        "filterType": "tag",
+        "name": "Tag",
+        "values": ["mega"]
+    }]
+}

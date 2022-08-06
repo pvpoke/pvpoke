@@ -1,0 +1,92 @@
+[{
+    "speciesId": "sneasler",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["CLOSE_COMBAT", "AERIAL_ACE"],
+	"weight": 6
+}, {
+    "speciesId": "machamp",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["CROSS_CHOP", "HEAVY_SLAM"]
+}, {
+    "speciesId": "machamp_shadow",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["CROSS_CHOP", "HEAVY_SLAM"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "toxicroak",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"],
+	"weight": 12
+}, {
+    "speciesId": "hariyama",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["CLOSE_COMBAT", "HEAVY_SLAM"]
+}, {
+    "speciesId": "hariyama_shadow",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["CLOSE_COMBAT", "HEAVY_SLAM"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "zapdos_galarian",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["ANCIENT_POWER", "BRAVE_BIRD"]
+}, {
+    "speciesId": "combusken",
+    "fastMove": "PECK",
+    "chargedMoves": ["ROCK_SLIDE", "FLAME_CHARGE"],
+	"weight": 2
+}, {
+    "speciesId": "scrafty",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["ACID_SPRAY", "POWER_UP_PUNCH"]
+}, {
+    "speciesId": "lucario",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["POWER_UP_PUNCH", "SHADOW_BALL"]
+}, {
+    "speciesId": "blaziken",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["BLAZE_KICK", "BRAVE_BIRD"]
+}, {
+    "speciesId": "sirfetchd",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["LEAF_BLADE", "BRAVE_BIRD"]
+}, {
+    "speciesId": "primeape",
+    "chargedMoves": ["ICE_PUNCH", "CLOSE_COMBAT"]
+}, {
+    "speciesId": "hitmonchan",
+    "chargedMoves": ["ICE_PUNCH", "THUNDER_PUNCH"]
+}, {
+    "speciesId": "hitmonchan_shadow",
+    "chargedMoves": ["ICE_PUNCH", "THUNDER_PUNCH"]
+}, {
+    "speciesId": "hakamo_o",
+    "chargedMoves": ["DRAGON_CLAW", "BRICK_BREAK"],
+	"weight": 2
+}, {
+    "speciesId": "falinks",
+    "chargedMoves": ["SUPER_POWER", "MEGAHORN"]
+}, {
+    "speciesId": "poliwrath",
+    "chargedMoves": ["ICE_PUNCH", "SCALD"]
+}, {
+    "speciesId": "poliwrath_shadow",
+    "chargedMoves": ["ICE_PUNCH", "SCALD"]
+}, {
+    "speciesId": "throh",
+    "weight": 6
+}, {
+    "speciesId": "sneasel_hisuian",
+    "weight": 2
+}, {
+    "speciesId": "buzzwole",
+    "weight": 3
+}, {
+    "speciesId": "kommo_o",
+    "weight": 3
+}, {
+    "speciesId": "heracross",
+	"chargedMoves": ["MEGAHORN", "ROCK_BLAST"],
+    "weight": 4
+}]

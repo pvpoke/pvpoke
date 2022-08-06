@@ -36,12 +36,39 @@
 		"showMeta": true
 	},
 	{
+		"title": "Summer Cup",
+		"cup": "summer",
+		"cp": 1500,
+		"meta": "summer",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Fighting Cup",
+		"cup": "fighting",
+		"cp": 1500,
+		"meta": "fighting",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
 		"title": "2022 Championship Series",
 		"cup": "championship",
 		"cp": 1500,
 		"meta": "great",
 		"showCup": true,
 		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Gymbreakers Invitational 2022",
+		"cup": "gymbreakers",
+		"cp": 1500,
+		"meta": "gymbreakers",
+		"showCup": false,
+		"showFormat": false,
 		"showMeta": true
 	},
 	{

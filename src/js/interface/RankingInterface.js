@@ -115,7 +115,6 @@ var InterfaceMaster = (function () {
 
 				if(battle.getCup().link){
 					$(".description.link").show();
-					console.log(battle.getCup());
 					$(".description.link a").attr("href", battle.getCup().link);
 					$(".description.link a").html(battle.getCup().link);
 				} else{
@@ -1203,28 +1202,32 @@ var InterfaceMaster = (function () {
 
 				// Display partner pokemon
 				if((gm.rankings[key])&&(context != "custom")){
-					var partnerPokemonMax = 5;
-					var partnerPokemonCount = 0;
-					var usedPartnerSpecies = [];
-					var partnerPokemon = generatePartnerPokemon(pokemon, r.counters);
 
-					for(var i = 0; i < partnerPokemon.length; i++){
+					setTimeout(function(){
+						var partnerPokemonMax = 5;
+						var partnerPokemonCount = 0;
+						var usedPartnerSpecies = [];
+						var partnerPokemon = generatePartnerPokemon(pokemon, r.counters);
 
-						if((usedPartnerSpecies.indexOf(partnerPokemon[i].dex) == -1)&&(partnerPokemon[i].dex != pokemon.dex)){
+						for(var i = 0; i < partnerPokemon.length; i++){
 
-							// Build team builder link
+							if((usedPartnerSpecies.indexOf(partnerPokemon[i].dex) == -1)&&(partnerPokemon[i].dex != pokemon.dex)){
 
-							var teamURL = host + "team-builder/" + battle.getCup().name + "/" + battle.getCP(true) + "/" + pokemon.speciesId + "-m-" + pokeMoveStr + "," + partnerPokemon[i].speciesId + "-m-" + partnerPokemon[i].generateURLMoveStr();
+								// Build team builder link
 
-							$details.find(".partner-pokemon .list").append("<a href=\""+teamURL+"\" target=\"blank\" class=\""+partnerPokemon[i].types[0]+"\" data=\""+partnerPokemon[i].speciesId+"\">"+partnerPokemon[i].speciesName+" &rarr;</a>");
-							usedPartnerSpecies.push(partnerPokemon[i].dex);
-							partnerPokemonCount++;
+								var teamURL = host + "team-builder/" + battle.getCup().name + "/" + battle.getCP(true) + "/" + pokemon.speciesId + "-m-" + pokeMoveStr + "," + partnerPokemon[i].speciesId + "-m-" + partnerPokemon[i].generateURLMoveStr();
+
+								$details.find(".partner-pokemon .list").append("<a href=\""+teamURL+"\" target=\"blank\" class=\""+partnerPokemon[i].types[0]+"\" data=\""+partnerPokemon[i].speciesId+"\">"+partnerPokemon[i].speciesName+" &rarr;</a>");
+								usedPartnerSpecies.push(partnerPokemon[i].dex);
+								partnerPokemonCount++;
+							}
+
+							if(partnerPokemonCount >= partnerPokemonMax){
+								break;
+							}
 						}
+					}, 100);
 
-						if(partnerPokemonCount >= partnerPokemonMax){
-							break;
-						}
-					}
 				} else{
 					$details.find(".partner-pokemon").remove();
 				}

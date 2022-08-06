@@ -43,11 +43,19 @@
     "fastMove": "FIRE_SPIN",
     "chargedMoves": ["WEATHER_BALL_FIRE", "OVERHEAT"]
 }, {
+    "speciesId": "ninetales_shadow",
+    "fastMove": "EMBER",
+    "chargedMoves": ["WEATHER_BALL_FIRE", "OVERHEAT"]
+}, {
     "speciesId": "beedrill",
     "fastMove": "POISON_JAB",
     "chargedMoves": ["X_SCISSOR", "DRILL_RUN"]
 }, {
     "speciesId": "marowak_alolan",
+    "fastMove": "FIRE_SPIN",
+    "chargedMoves": ["SHADOW_BONE", "BONE_CLUB"]
+}, {
+    "speciesId": "marowak_alolan_shadow",
     "fastMove": "FIRE_SPIN",
     "chargedMoves": ["SHADOW_BONE", "BONE_CLUB"]
 }, {
@@ -119,6 +127,10 @@
     "fastMove": "BUBBLE",
     "chargedMoves": ["PLAY_ROUGH", "ICE_BEAM"]
 }, {
+    "speciesId": "tapu_fini",
+    "fastMove": "WATER_GUN",
+    "chargedMoves": ["MOONBLAST", "SURF"]
+}, {
     "speciesId": "kingdra",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["OUTRAGE", "OCTAZOOKA"]
@@ -130,4 +142,12 @@
     "speciesId": "graveler_alolan",
     "fastMove": "VOLT_SWITCH",
     "chargedMoves": ["STONE_EDGE", "ROCK_BLAST"]
+}, {
+    "speciesId": "cradily",
+    "fastMove": "BULLET_SEED",
+    "chargedMoves": ["STONE_EDGE", "GRASS_KNOT"]
+}, {
+    "speciesId": "wigglytuff",
+    "fastMove": "CHARM",
+    "chargedMoves": ["PLAY_ROUGH", "ICE_BEAM"]
 }]

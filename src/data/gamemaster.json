@@ -110,11 +110,43 @@
         "partySize": 3,
         "presetOnly": true
     }, {
+        "name": "fighting",
+        "title": "Fighting Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["fighting"]
+        }],
+        "exclude": [{
+            "filterType": "type",
+            "values": ["psychic"]
+        }, {
+            "filterType": "tag",
+            "values": ["mega"]
+        }],
+        "link": "https://bit.ly/3OHDut7"
+    }, {
         "name": "gobattleleague",
         "title": "GO Battle League",
         "include": [],
         "exclude": [],
         "partySize": 3
+    }, {
+        "name": "gymbreakers",
+        "title": "Gymbreakers Invitational 2022",
+        "include": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["bug", "dark", "dragon", "electric", "normal"]
+        }],
+        "exclude": [{
+            "filterType": "id",
+            "name": "Species",
+            "values": ["buzzwole", "articuno_galarian", "zapdos_galarian", "moltres_galarian", "xurkitree", "pheromosa", "shaymin_sky", "sneasler", "sneasel_hisuian", "arcanine_hisuian", "growlithe_hisuian", "dragalge", "altaria", "diggersby", "wigglytuff", "forretress", "kommo_o", "scrafty", "stunfisk", "dedenne", "hakamo_o"]
+        }, {
+            "filterType": "tag",
+            "name": "Tag",
+            "values": ["mega"]
+        }]
     }, {
         "name": "kanto",
         "title": "Kanto Cup",
@@ -198,12 +230,36 @@
         "showFormat": true,
         "showMeta": true
     }, {
+        "title": "Summer Cup",
+        "cup": "summer",
+        "cp": 1500,
+        "meta": "summer",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Fighting Cup",
+        "cup": "fighting",
+        "cp": 1500,
+        "meta": "fighting",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
         "title": "2022 Championship Series",
         "cup": "championship",
         "cp": 1500,
         "meta": "great",
         "showCup": true,
         "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Gymbreakers Invitational 2022",
+        "cup": "gymbreakers",
+        "cp": 1500,
+        "meta": "gymbreakers",
+        "showCup": false,
+        "showFormat": false,
         "showMeta": true
     }, {
         "title": "Premier Classic",
@@ -28692,6 +28748,7 @@
             "cp1500": [17, 6, 15, 10],
             "cp2500": [28.5, 6, 12, 12]
         },
+        "searchPriority": 3,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true

@@ -1,0 +1,16 @@
+{
+	"name": "fighting",
+	"title": "Fighting Cup",
+	"include": [{
+		"filterType": "type",
+		"values":  ["fighting"]
+	}],
+	"exclude": [{
+		"filterType": "type",
+		"values":  ["psychic"]
+	}, {
+		"filterType": "tag",
+		"values":  ["mega"]
+	}],
+	"link": "https://bit.ly/3OHDut7"
+}

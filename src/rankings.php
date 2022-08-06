@@ -51,8 +51,8 @@ switch($cup){
 		$league = 'Master League Classic';
 		break;
 
-	case "hisui":
-		$league = 'Hisui Cup';
+	case "fighting":
+		$league = 'Fighting Cup';
 		break;
 
 	case "summer":
@@ -75,28 +75,8 @@ switch($cup){
 		$league = 'Silph Factions';
 		break;
 
-	case "architect":
-		$league = 'Silph Architect Cup';
-		break;
-
 	case "element":
 		$league = 'Element Cup';
-		break;
-
-	case "alchemy":
-		$league = 'Silph Factions (Alchemy)';
-		break;
-
-	case "colony":
-		$league = 'Silph Factions (Colony)';
-		break;
-
-	case "colony":
-		$league = 'Silph Factions (Colony)';
-		break;
-
-	case "catchgofest":
-		$league = 'Catch Cup GO Fest Edition';
 		break;
 
 	case "remix":

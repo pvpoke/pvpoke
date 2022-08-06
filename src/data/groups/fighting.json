@@ -1,0 +1,54 @@
+[{
+    "speciesId": "hakamo_o",
+    "fastMove": "DRAGON_TAIL",
+    "chargedMoves": ["DRAGON_CLAW", "BRICK_BREAK"]
+}, {
+    "speciesId": "sneasler",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["CLOSE_COMBAT", "X_SCISSOR"]
+}, {
+    "speciesId": "buzzwole",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["SUPER_POWER", "LUNGE"]
+}, {
+    "speciesId": "toxicroak",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
+}, {
+    "speciesId": "kommo_o",
+    "fastMove": "DRAGON_TAIL",
+    "chargedMoves": ["CLOSE_COMBAT", "DRAGON_CLAW"]
+}, {
+    "speciesId": "throh",
+    "fastMove": "ZEN_HEADBUTT",
+    "chargedMoves": ["BODY_SLAM", "FOCUS_BLAST"]
+}, {
+    "speciesId": "combusken",
+    "fastMove": "PECK",
+    "chargedMoves": ["ROCK_SLIDE", "FLAME_CHARGE"]
+}, {
+    "speciesId": "sneasel_hisuian",
+    "fastMove": "POISON_JAB",
+    "chargedMoves": ["CLOSE_COMBAT", "AERIAL_ACE"]
+}, {
+    "speciesId": "heracross",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["MEGAHORN", "ROCK_BLAST"]
+}, {
+    "speciesId": "poliwrath",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["SCALD", "ICE_PUNCH"]
+}, {
+    "speciesId": "primeape",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["ICE_PUNCH", "CLOSE_COMBAT"]
+}, {
+    "speciesId": "machamp",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["CROSS_CHOP", "HEAVY_SLAM"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "sirfetchd",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["LEAF_BLADE", "BRAVE_BIRD"]
+}]
