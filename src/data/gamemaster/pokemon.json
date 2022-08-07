@@ -22079,7 +22079,8 @@
     },
     "types": ["bug", "steel"],
     "fastMoves": ["METAL_CLAW", "FURY_CUTTER"],
-    "chargedMoves": ["X_SCISSOR", "MAGNET_BOMB", "ICE_BEAM"],
+    "chargedMoves": ["X_SCISSOR", "MAGNET_BOMB", "ICE_BEAM", "TECHNO_BLAST_CHILL"],
+	"eliteMoves": ["TECHNO_BLAST_CHILL"],
     "defaultIVs": {
         "cp500": [5.5, 12, 14, 13],
         "cp1500": [16, 12, 10, 15],
@@ -22088,7 +22089,7 @@
     "tags": ["mythical", "untradeable"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false
+    "released": true
 }, {
     "dex": 649,
     "speciesId": "genesect_douse",
