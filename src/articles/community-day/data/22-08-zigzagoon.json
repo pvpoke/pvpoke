@@ -1,0 +1,75 @@
+{
+	"species": [
+		{
+			"speciesId": "zigzagoon_galarian",
+			"baseSpeciesId": "zigzagoon_galarian"
+		},
+		{
+			"speciesId": "linoone_galarian",
+			"baseSpeciesId": "zigzagoon_galarian"
+		},
+		{
+			"speciesId": "obstagoon",
+			"baseSpeciesId": "zigzagoon_galarian",
+			"default": true
+		}
+	],
+	"checklist": [
+		{
+			"title": "High Rank Obstagoon",
+			"speciesId": "obstagoon",
+			"baseSpeciesId": "zigzagoon_galarian",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [21.5, 0, 14, 15],
+			"priority": 1
+		},
+		{
+			"title": "High Rank Obstagoon",
+			"speciesId": "obstagoon",
+			"baseSpeciesId": "zigzagoon_galarian",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [42, 0, 15, 13],
+			"priority": 1,
+			"notes": "Consider an Obstagoon that doesn't exceed level 40 so it is eligible for Premier Cup formats!"
+		},
+		{
+			"title": "High Rank Obstagoon (Premier)",
+			"speciesId": "obstagoon",
+			"baseSpeciesId": "zigzagoon_galarian",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [40, 4, 14, 15],
+			"priority": 1,
+			"notes": "Consider an Obstagoon that doesn't exceed level 40 so it is eligible for Premier Cup formats!"
+		},
+		{
+			"title": "High IV Obstagoon",
+			"speciesId": "obstagoon",
+			"baseSpeciesId": "zigzagoon_galarian",
+			"league": "master",
+			"cp": 10000,
+			"ivs": [50, 15, 15, 15],
+			"priority": 2
+		},
+		{
+			"title": "Little Cup Obstagoon",
+			"speciesId": "obstagoon",
+			"baseSpeciesId": "zigzagoon_galarian",
+			"league": "special",
+			"cp": 500,
+			"ivs": [7.5, 0, 9, 9],
+			"priority": 3
+		},
+		{
+			"title": "High Rank Linoone",
+			"speciesId": "linoone_galarian",
+			"baseSpeciesId": "zigzagoon_galarian",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [40, 0, 15, 14],
+			"priority": 3
+		}
+	]
+}
