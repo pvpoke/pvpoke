@@ -27,6 +27,10 @@
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["FIRE_PUNCH", "EARTHQUAKE"]
 }, {
+    "speciesId": "galvantula",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["DISCHARGE", "LUNGE"]
+}, {
     "speciesId": "walrein",
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
