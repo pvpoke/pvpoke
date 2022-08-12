@@ -55,18 +55,17 @@
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/infographics/22-07-shadow-pokemon-pvp/">
-				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/infographics/22-07-shadow-pokemon-pvp/thumb.jpg">
+			<a href="<?php echo $WEB_ROOT; ?>articles/community-day/22-08-zigzagoon/">
+				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/community-day/22-08-zigzagoon/thumb.jpg">
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/infographics/22-07-shadow-pokemon-pvp/">Best Shadow Pokemon to TM for PvP</a></h4>
-			<div class="date">July 9, 2022</div>
-			<p>When a Team Rocket event arrives, which Shadow Pokemon should you prepare for trouble? Check out the top Shadow Pokemon in each league!</p>
-			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a></div>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/community-day/22-08-zigzagoon/">Galarian Zigzagoon Community Day Guide for PvP</a></h4>
+			<div class="date">August 12, 2022</div>
+			<p>Obstagoon is already a top tier Pokemon for PvP! Will Obstruct elevate it even further?</p>
+			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Community Day"># Community Day</a><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a></div>
 		</div>
 	</div>
-
 </div>
 
 <?php require_once 'footer.php'; ?>

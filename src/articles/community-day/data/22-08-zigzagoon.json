@@ -45,6 +45,16 @@
 			"notes": "Consider an Obstagoon that doesn't exceed level 40 so it is eligible for Premier Cup formats!"
 		},
 		{
+			"title": "SwgTips Approved Obstagoon",
+			"speciesId": "obstagoon",
+			"baseSpeciesId": "zigzagoon_galarian",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [21.5, 6, 7, 8],
+			"priority": 2,
+			"notes": "This Obstagoon reaches a mix of breakpoints and bulkpoints, targeting 115 Attack and 123.23 Defense."
+		},
+		{
 			"title": "High IV Obstagoon",
 			"speciesId": "obstagoon",
 			"baseSpeciesId": "zigzagoon_galarian",

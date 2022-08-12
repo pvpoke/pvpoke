@@ -11,12 +11,12 @@ require_once '../../header.php';
 
 ?>
 
-<div class="section article white geodude">
+<div class="section article white zigzagoon">
 	<h1>Galarian Zigzagoon Community Day Guide for PvP</h1>
-	<div class="date">Last updated August 11, 2022</div>
-	<img src="<?php echo $WEB_ROOT;?>articles/article-assets/community-day/22-05-geodude/banner.jpg" />
+	<div class="date">Last updated August 12, 2022</div>
+	<img src="<?php echo $WEB_ROOT;?>articles/article-assets/community-day/22-08-zigzagoon/banner.jpg" />
 	<p>Galarian Zigzagoon will be making a special appearance in the wild this Community Day, bringing the chance to obtain optimal PvP IV's and Obstagoon's signature move, Obstruct. You can find more info on Galarian Zigzagoon Community Day at the <a href="https://pokemongolive.com/en/post/communityday-august-2022-galarian-zigzagoon/" target="_blank">Pokemon GO blog</a>. Below are the leagues and IV spreads to look out for, and answers to frequently asked questions.</p>
-
+	<p>Special thanks to <a href="https://twitter.com/SwgTips" target="_blank">@SwgTips</a> for the IV research! Check out his <a href="https://gamepress.gg/pokemongo/obstagoon-pvp-iv-deep-dive" target="_blank">deep dive article</a> on Obstagoon IV's for more on Obstagoon breakpoints and bulkpoints.</p>
 	<a name="overview"></a>
 	<h3 class="article-header"><strong>Overview</strong></h3>
 
@@ -27,17 +27,17 @@ require_once '../../header.php';
 			<div class="detail">11am - 2pm local time</div>
 		</div>
 		<div class="feature">
-			<h4>Exclusive Charged Move</h4>
-			<div class="value">Obstruct</div>
-			<div class="detail">15 power, 100% chance to lower opponent's Defense and raise user's Defense by 1 stage</div>
-		</div>
-		<div class="feature">
 			<h4>Event Bonus</h4>
 			<div class="value">x3 Catch Stardust</div>
 		</div>
 		<div class="feature">
 			<h4>Event Bonus</h4>
 			<div class="value">50% trade Stardust cost</div>
+		</div>
+		<div class="feature">
+			<h4>Exclusive Charged Move</h4>
+			<div class="value">Obstruct</div>
+			<div class="detail">15 power, 40 energy,  100% chance to lower opponent's Defense and raise user's Defense by 1 stage</div>
 		</div>
 	</div>
 
@@ -64,6 +64,10 @@ require_once '../../header.php';
 				<div class="mega-image"></div>
 				<div class="mega-label">Houndoom</div>
 			</div>
+			<div class="mega-item" mega="kangaskhan">
+				<div class="mega-image"></div>
+				<div class="mega-label">Kangaskhan</div>
+			</div>
 			<div class="mega-item" mega="lopunny">
 				<div class="mega-image"></div>
 				<div class="mega-label">Lopunny</div>
@@ -79,8 +83,8 @@ require_once '../../header.php';
 	<div class="faq-item">
 		<h3 class="article-header"><strong>How good is Obstagoon with Obstruct?</strong></h3>
 		<div class="faq-answer">
-			<p><b>Obstagoon is already a top contender in Great and Ultra League, and Obstruct may boost Obstagoon even further into core meta relevancy.</b> Obstruct's energy value is currently unknown; realistically, it may end up as a sidegrade to Obstagoon's secondary Charged Moves. At best, Obstruct's double stat effects have the potential to increase Obstagoon's performance even further and give it more dynamic play than before.</p>
-			<p>Obstruct has lower base power than Power-Up Punch or Bubble Beam. However, the double stat effects pair extremely well with Obstagoon's powerful Fast Move, Counter, and its solid bulk. This could allow Obstagoon to power through neutral matchups similar to Poison Fang Nidoqueen, and provide setup for its teammates. Obstagoon is likely to continue using Night Slash as its primary Charged Move, but could run Obstruct as a bait move alongside Hyper Beam or Gunk Shot.</p>
+			<p><b>Obstagoon is already a top contender in Great and Ultra League. At worse, Obstruct will be a sidegrade to its existing move options.</b> At best, Obstruct gives Obstagoon more dynamic play than before and allows it power through neutral matchups similar to Nidoqueen. Obstruct has two guaranteed stat effects at 40 energy (compared to Acid Spray at 45 energy and Feather Dance at 50 energy). Obstagoon can leverage this best in the Ultra League where it has more bulk to take advantage of the stat boosts.</p>
+			<p>Obstagoon is likely to continue using Night Slash as its primary Charged Move, with Obstruct as a secondary move option. Obstruct Obstagoon should shield early, throw Obstruct once or twice early in a matchup, and rely on Counter and Night Slash damage the rest of the way.</p>
 		</div>
 	</div>
 

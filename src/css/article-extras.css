@@ -142,6 +142,10 @@ input.article-search {
   background-image: url("../articles/article-assets/community-day/megas/latios.png");
 }
 
+[mega=kangaskhan] .mega-image {
+  background-image: url("../articles/article-assets/community-day/megas/kangaskhan.png");
+}
+
 /* FAQ styling */
 .faq-item {
   border-radius: 8px;
@@ -620,6 +624,22 @@ input.article-search {
   border-bottom: 1px solid #6a6554;
 }
 .section.geodude .faq-item {
+  background: #ffffff;
+}
+
+.section.zigzagoon {
+  background: #ebebeb;
+  border: 4px solid #363636;
+}
+.section.zigzagoon .article-header, .section.zigzagoon .mega-section {
+  color: #fff;
+  background: #363636 !important;
+}
+.section.zigzagoon .feature h4 {
+  color: #363636;
+  border-bottom: 1px solid #363636;
+}
+.section.zigzagoon .faq-item {
   background: #ffffff;
 }
 

@@ -155,9 +155,12 @@ input.article-search{
 	background-image:url("../articles/article-assets/community-day/megas/houndoom.png");
 }
 
-
 [mega="latios"] .mega-image{
 	background-image:url("../articles/article-assets/community-day/megas/latios.png");
+}
+
+[mega="kangaskhan"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/kangaskhan.png");
 }
 
 
@@ -740,6 +743,28 @@ input.article-search{
 		h4{
 			color:#6a6554;
 			border-bottom:1px solid #6a6554;
+		}
+	}
+
+	.faq-item{
+    	background: #ffffff;
+	}
+}
+
+.section.zigzagoon{
+
+	background: #ebebeb;
+	border:4px solid #363636;
+
+	.article-header, .mega-section{
+		color:#fff;
+		background:#363636 !important;
+	}
+
+	.feature{
+		h4{
+			color:#363636;
+			border-bottom:1px solid #363636;
 		}
 	}
 
