@@ -27349,7 +27349,8 @@
     },
     "types": ["dark", "normal"],
     "fastMoves": ["COUNTER", "LICK"],
-    "chargedMoves": ["CROSS_CHOP", "NIGHT_SLASH", "HYPER_BEAM", "GUNK_SHOT"],
+    "chargedMoves": ["CROSS_CHOP", "NIGHT_SLASH", "HYPER_BEAM", "GUNK_SHOT", "OBSTRUCT"],
+	"eliteMoves": ["OBSTRUCT"],
     "defaultIVs": {
         "cp500": [7, 11, 12, 12],
         "cp1500": [21, 4, 13, 15],

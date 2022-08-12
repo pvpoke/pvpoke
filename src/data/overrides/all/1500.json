@@ -535,7 +535,7 @@
 	},
 	{
 		"speciesId": "obstagoon",
-		"chargedMoves": ["NIGHT_SLASH", "GUNK_SHOT"],
+		"chargedMoves": ["NIGHT_SLASH", "OBSTRUCT"],
 		"weight": 3
 	},
 	{
@@ -986,12 +986,12 @@
 	},
 	{
 		"speciesId": "swampert",
-		"chargedMoves": ["HYDRO_CANNON","SLUDGE_WAVE"],
+		"chargedMoves": ["HYDRO_CANNON","EARTHQUAKE"],
 		"weight": 23
 	},
 	{
 		"speciesId": "swampert_shadow",
-		"chargedMoves": ["HYDRO_CANNON","SLUDGE_WAVE"]
+		"chargedMoves": ["HYDRO_CANNON","EARTHQUAKE"]
 	},
 	{
 		"speciesId": "venusaur",

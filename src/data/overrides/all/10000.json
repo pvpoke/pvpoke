@@ -22,6 +22,10 @@
 		"weight": 2
 	},
 	{
+		"speciesId": "obstagoon",
+		"chargedMoves": ["NIGHT_SLASH", "OBSTRUCT"]
+	},
+	{
 		"speciesId": "yveltal",
 		"fastMove": "SNARL",
 		"chargedMoves": ["DARK_PULSE", "FOCUS_BLAST"],
