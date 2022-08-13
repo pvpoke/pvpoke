@@ -45,7 +45,12 @@
 }, {
     "speciesId": "machamp",
     "fastMove": "COUNTER",
-    "chargedMoves": ["CROSS_CHOP", "HEAVY_SLAM"],
+    "chargedMoves": ["CROSS_CHOP", "CLOSE_COMBAT"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "hitmonchan",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["POWER_UP_PUNCH", "FIRE_PUNCH"],
     "shadowType": "shadow"
 }, {
     "speciesId": "sirfetchd",

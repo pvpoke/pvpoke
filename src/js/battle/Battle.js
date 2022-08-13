@@ -718,10 +718,6 @@ function Battle(){
 				time += chargedMinigameTime;
 			}
 
-			if((roundChargedMoveUsed > 1) && (pokemon[0].stats.atk == pokemon[1].stats.atk) && (!roundShieldUsed)){
-				time += chargedMinigameTime;
-			}
-
 		}
 
 		duration = time;

@@ -6,11 +6,11 @@
 }, {
     "speciesId": "machamp",
     "fastMove": "COUNTER",
-    "chargedMoves": ["CROSS_CHOP", "HEAVY_SLAM"]
+    "chargedMoves": ["CROSS_CHOP", "CLOSE_COMBAT"]
 }, {
     "speciesId": "machamp_shadow",
     "fastMove": "COUNTER",
-    "chargedMoves": ["CROSS_CHOP", "HEAVY_SLAM"],
+    "chargedMoves": ["CROSS_CHOP", "CLOSE_COMBAT"],
     "shadowType": "shadow"
 }, {
     "speciesId": "toxicroak",
@@ -56,10 +56,10 @@
     "chargedMoves": ["ICE_PUNCH", "CLOSE_COMBAT"]
 }, {
     "speciesId": "hitmonchan",
-    "chargedMoves": ["ICE_PUNCH", "THUNDER_PUNCH"]
+    "chargedMoves": ["POWER_UP_PUNCH", "FIRE_PUNCH"]
 }, {
     "speciesId": "hitmonchan_shadow",
-    "chargedMoves": ["ICE_PUNCH", "THUNDER_PUNCH"]
+    "chargedMoves": ["POWER_UP_PUNCH", "FIRE_PUNCH"]
 }, {
     "speciesId": "hakamo_o",
     "chargedMoves": ["DRAGON_CLAW", "BRICK_BREAK"],
