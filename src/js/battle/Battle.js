@@ -630,21 +630,6 @@ function Battle(){
 			var poke = pokemon[action.actor];
 			var opponent = pokemon[ (action.actor == 0) ? 1 : 0 ];
 
-			var chargedMoveThisTurn = false;
-			var priorityChargedMoveThisTurn = false;
-
-			for(var j = 0; j < turnActions.length; j++){
-				var a = turnActions[j];
-
-				if(a.type == "charged"){
-					chargedMoveThisTurn = true;
-
-					if(a.settings.priority > 0){
-						priorityChargedMoveThisTurn = true;
-					}
-				}
-			}
-
 			switch(action.type){
 
 				case "fast":
@@ -668,16 +653,10 @@ function Battle(){
 						if(poke.energy >= move.energy){
 							action.valid = true;
 						}
-
-						// Check if knocked out from a priority move
-
-						if((usePriority)&&(poke.hp <= 0)&&(poke.priority == 0)&&(priorityChargedMoveThisTurn)){
-							action.valid = false;
-						}
 					}
 
 					// Check if knocked out from a priority move
-					if((usePriority)&&(poke.hp <= 0)){
+					if((usePriority)&&(poke.hp <= 0)&&(poke.faintSource == "charged")){
 						action.valid = false;
 					}
 
@@ -699,8 +678,9 @@ function Battle(){
 						}
 					}
 
+					// This prevents Charged Moves from being used on the same turn as lethal Fast Moves
 					if((lethalFastMove)&&(! opponentChargedMoveThisTurn)){
-						action.valid = false;
+					//	action.valid = false;
 					}
 
 					break;
@@ -776,21 +756,21 @@ function Battle(){
 				}
 
 				faintedPokemonIndexes.push(poke.index);
-
-				if(mode == "emulate"){
-					self.pushAnimation(poke.index, "switch", true);
-				}
 			}
 
 			// Reset after a charged move
 
 			if(roundChargedMoveUsed){
-				poke.damageWindow = 0;
 				poke.cooldown = 0;
 			}
 		}
 
-		if((mode == "emulate")&&(faintedPokemonIndexes.length > 0)){
+		if((mode == "emulate")&&(faintedPokemonIndexes.length > 0)&&(phase == "neutral")){
+
+			// Push faint animations
+			for(var i = 0; i < faintedPokemonIndexes.length; i++){
+				self.pushAnimation(faintedPokemonIndexes[i], "switch", true);
+			}
 
 			// Are all Pokemon fainted or should the battle continue?
 
@@ -2652,9 +2632,20 @@ function Battle(){
 
 		// If a Pokemon has fainted, clear the action queue
 
-		if((defender.hp < 1)&&(mode == "emulate")){
-			turnActions = [];
-			queuedActions = [];
+		if(defender.hp <= 0){
+
+			// Mark how this Pokemon fainted
+			var moveType = "fast";
+
+			if(move.energy > 0){
+				moveType = "charged";
+			}
+
+			defender.faintSource = moveType;
+
+			if(mode == "emulate"){
+				queuedActions = [];
+			}
 		}
 
 		return time;
