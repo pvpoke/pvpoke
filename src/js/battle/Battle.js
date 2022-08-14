@@ -680,7 +680,7 @@ function Battle(){
 
 					// This prevents Charged Moves from being used on the same turn as lethal Fast Moves
 					if((lethalFastMove)&&(! opponentChargedMoveThisTurn)){
-					//	action.valid = false;
+						action.valid = false;
 					}
 
 					break;

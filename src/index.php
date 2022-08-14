@@ -34,6 +34,11 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
+	<h4>v1.29.6 (August 14th, 2022)</h4>
+	<ul>
+		<li>The below changes are now reverted.</li>
+	</ul>
+
 	<h4>v1.29.5 (August 13th, 2022)</h4>
 	<ul>
 		<li>Simulation mechanics updated:</li>
