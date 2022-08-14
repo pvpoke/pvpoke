@@ -59,6 +59,10 @@ function Pokemon(id, i, b){
 	this.buddyDistance = data.buddyDistance;
 	this.thirdMoveCost = data.thirdMoveCost;
 
+	if(data.family){
+		this.family = data.family;
+	}
+
 	this.typeEffectiveness = getTypeEffectivenessArray(b);
 
 	this.fastMove = null;

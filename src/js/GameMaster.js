@@ -202,6 +202,20 @@ var GameMaster = (function () {
 						entry.tags.splice(entry.tags.indexOf("shadowEligible"), 1);
 						entry.tags.push("shadow");
 
+						// Adjust IDs for evolutions
+
+						if(entry.family){
+							if(entry.family.parent && object.data.shadowPokemon.indexOf(entry.family.parent) > -1){
+								entry.family.parent += "_shadow";
+							}
+
+							if(entry.family.evolutions){
+								for(var i = 0; i < entry.family.evolutions.length; i++){
+									entry.family.evolutions[i] += "_shadow";
+								}
+							}
+						}
+
 						// Remove all legacy and exclusive moves that aren't available via Elite TM
 						if(entry.legacyMoves){
 							for(var i = 0; i < entry.fastMoves.length; i++){
@@ -370,6 +384,36 @@ var GameMaster = (function () {
 			var json = JSON.stringify(object.data);
 
 			console.log(json);
+		}
+
+		// Check parent and evolution IDs to validate Pokemon family data
+
+		object.validateFamilyData = function(){
+
+			$.each(object.data.pokemon, function(index, poke){
+
+				if(poke.family){
+					if(poke.family.parent){
+						var parent = object.getPokemonById(poke.family.parent);
+						if(! parent){
+							console.error(poke.family.parent + " does not exist");
+						}
+					}
+
+					if(poke.family.evolutions){
+						for(var i = 0; i < poke.family.evolutions.length; i++){
+							var evolution = object.getPokemonById(poke.family.evolutions[i]);
+
+							if(! evolution){
+								console.error(poke.family.evolutions[i] + " does not exist");
+							}
+						}
+					}
+				}
+
+			});
+
+			console.log("Family validation complete");
 		}
 
 		// Analyze Charged Moves and bucket them into archetypes
