@@ -22,6 +22,10 @@
 			<td>184</td>
 		</tr>
 		<tr>
+			<td><strong>Evolution Family</strong></td>
+			<td>+politoed</td>
+		</tr>
+		<tr>
 			<td><strong>Move Name</strong></td>
 			<td>@counter</td>
 		</tr>

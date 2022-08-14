@@ -892,6 +892,12 @@ var GameMaster = (function () {
 									}
 									break;
 
+								case "evolution":
+									if(filter.values.indexOf(pokemon.getEvolutionStage()) > -1){
+										filtersMatched++;
+									}
+									break;
+
 								case "id":
 									if((include)&&(filters.length > 1)){
 										requiredFilters--;
@@ -1023,6 +1029,17 @@ var GameMaster = (function () {
 						if((param.charAt(0) == "!")&&(param.length > 1)){
 							isNot = true;
 							param = param.substr(1, param.length-1);
+						}
+
+						// Evolution family search
+						if((param.charAt(0) == "+")&&(param.length > 2)){
+							param = param.substr(1, param.length-1);
+
+							var searchPokemon = object.getPokemonById(param);
+
+							if(searchPokemon && searchPokemon.family && pokemon.family && searchPokemon.family.id == pokemon.family.id){
+								valid = true;
+							}
 						}
 
 						// Move search

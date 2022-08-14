@@ -34,6 +34,15 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
+	<h4>v1.29.7 (August 14th, 2022)</h4>
+	<ul>
+		<li>Pokemon data now includes evolution data.</li>
+		<ul>
+			<li>A new "Evolution" filter for Custom Rankings allows you to filter by first stage, middle stage, final stage, or Pokemon that don't evolve at all.</li>
+			<li>A new search term for the rankings allows searching for Pokemon in an evolutionary family (e.g. "+poliwag").</li>
+		</ul>
+	</ul>
+
 	<h4>v1.29.6 (August 14th, 2022)</h4>
 	<ul>
 		<li>The below changes are now reverted.</li>

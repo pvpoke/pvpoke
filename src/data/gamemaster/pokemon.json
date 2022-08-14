@@ -9181,28 +9181,6 @@
         "parent": "marill"
     }
 }, {
-    "dex": 184,
-    "speciesName": "Azumarill",
-    "speciesId": "azumarill_xs",
-    "baseStats": {
-        "atk": 112,
-        "def": 152,
-        "hp": 225
-    },
-    "types": ["water", "fairy"],
-    "fastMoves": ["BUBBLE", "ROCK_SMASH"],
-    "chargedMoves": ["HYDRO_PUMP", "ICE_BEAM", "PLAY_ROUGH"],
-    "defaultIVs": {
-        "cp500": [12, 5, 12, 15],
-        "cp1500": [39.5, 9, 14, 14],
-        "cp2500": [40, 15, 15, 15]
-    },
-    "levelCap": 40,
-    "tags": ["xs"],
-    "buddyDistance": 3,
-    "thirdMoveCost": 50000,
-    "released": true
-}, {
     "dex": 185,
     "speciesName": "Sudowoodo",
     "speciesId": "sudowoodo",
@@ -13799,29 +13777,6 @@
     "released": true
 }, {
     "dex": 302,
-    "speciesName": "Sableye",
-    "speciesId": "sableye_xs",
-    "baseStats": {
-        "atk": 141,
-        "def": 136,
-        "hp": 137
-    },
-    "types": ["dark", "ghost"],
-    "fastMoves": ["FEINT_ATTACK", "SHADOW_CLAW"],
-    "chargedMoves": ["FOUL_PLAY", "POWER_GEM", "SHADOW_SNEAK"],
-    "defaultIVs": {
-        "cp500": [13, 5, 13, 9],
-        "cp1500": [40, 15, 15, 15],
-        "cp2500": [40, 15, 15, 15]
-    },
-    "level25CP": 858,
-    "levelCap": 40,
-    "tags": ["shadoweligible", "xs"],
-    "buddyDistance": 5,
-    "thirdMoveCost": 75000,
-    "released": true
-}, {
-    "dex": 302,
     "speciesName": "Sableye (Shadow)",
     "speciesId": "sableye_shadow",
     "baseStats": {
@@ -14091,28 +14046,6 @@
         "id": "FAMILY_MEDITITE",
         "parent": "meditite"
     }
-}, {
-    "dex": 308,
-    "speciesName": "Medicham",
-    "speciesId": "medicham_xs",
-    "baseStats": {
-        "atk": 121,
-        "def": 152,
-        "hp": 155
-    },
-    "types": ["fighting", "psychic"],
-    "fastMoves": ["COUNTER", "PSYCHO_CUT"],
-    "chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH", "PSYCHIC", "POWER_UP_PUNCH"],
-    "defaultIVs": {
-        "cp500": [13.5, 4, 15, 9],
-        "cp1500": [40, 15, 15, 15],
-        "cp2500": [40, 15, 15, 15]
-    },
-    "tags": ["xs"],
-    "levelCap": 40,
-    "buddyDistance": 3,
-    "thirdMoveCost": 50000,
-    "released": true
 }, {
     "dex": 309,
     "speciesName": "Electrike",
@@ -17973,28 +17906,6 @@
         "id": "FAMILY_SHIELDON",
         "parent": "shieldon"
     }
-}, {
-    "dex": 411,
-    "speciesName": "Bastiodon",
-    "speciesId": "bastiodon_xs",
-    "baseStats": {
-        "atk": 94,
-        "def": 286,
-        "hp": 155
-    },
-    "types": ["rock", "steel"],
-    "fastMoves": ["IRON_TAIL", "SMACK_DOWN"],
-    "chargedMoves": ["FLAMETHROWER", "FLASH_CANNON", "STONE_EDGE"],
-    "defaultIVs": {
-        "cp500": [12.5, 6, 9, 15],
-        "cp1500": [39, 14, 15, 14],
-        "cp2500": [40, 15, 15, 15]
-    },
-    "tags": ["xs"],
-    "levelCap": 40,
-    "buddyDistance": 5,
-    "thirdMoveCost": 75000,
-    "released": true
 }, {
     "dex": 412,
     "speciesName": "Burmy (Plant)",

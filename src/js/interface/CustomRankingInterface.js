@@ -197,6 +197,12 @@ function interfaceObject(){
 					filter.values.push(parseInt($(this).attr("value")));
 				});
 				break;
+
+			case "evolution":
+				$el.find(".evolution .check.on").each(function(index, value){
+					filter.values.push(parseInt($(this).attr("value")));
+				});
+				break;
 		}
 
 		// Output the cup data to JSON
@@ -358,6 +364,7 @@ function interfaceObject(){
 			case "cost":
 			case "distance":
 			case "moveType":
+			case "evolution":
 				for(var i = 0; i < data.values.length; i++){
 					$filter.find(".check[value=\""+data.values[i]+"\"]").addClass("on");
 				}

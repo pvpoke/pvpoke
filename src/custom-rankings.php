@@ -78,6 +78,7 @@ require_once 'header.php'; ?>
 					<option value="moveType">Move Type</option>
 					<option value="cost">Charged Move Cost</option>
 					<option value="distance">Buddy Walk Distance</option>
+					<option value="evolution">Evolution</option>
 				</select>
 			</div>
 			<div class="field-section type">
@@ -121,6 +122,16 @@ require_once 'header.php'; ?>
 					<div class="check" value="shadow"><span></span> Shadow</div>
 					<div class="check" value="shadoweligible"><span></span> Shadow Eligible</div>
 					<div class="check" value="mega"><span></span> Mega</div>
+				</div>
+			</div>
+
+			<div class="field-section evolution">
+				<p>Select evolution requirements below.</p>
+				<div class="field-container">
+					<div class="check" value="0"><span></span> No evolution</div>
+					<div class="check" value="1"><span></span> First stage</div>
+					<div class="check" value="2"><span></span> Middle stage</div>
+					<div class="check" value="3"><span></span> Final stage</div>
 				</div>
 			</div>
 

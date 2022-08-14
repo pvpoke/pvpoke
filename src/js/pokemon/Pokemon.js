@@ -2113,4 +2113,30 @@ function Pokemon(id, i, b){
 
 		return slotNumber;
 	}
+
+	// Return a numerical value for this Pokemon's evolution stage
+
+	this.getEvolutionStage = function(){
+		// Does not evolve and has no pre-evolution
+		var stage = 0;
+
+		if(this.family){
+			// Evolves and has no pre-evolution
+			if(this.family.evolutions && ! this.family.parent){
+				stage = 1;
+			}
+
+			// Evolves and has a pre-evolution
+			if(this.family.evolutions && this.family.parent){
+				stage = 2;
+			}
+
+			// Does not evolve and has a pre-evolution
+			if(! this.family.evolutions && this.family.parent){
+				stage = 3;
+			}
+		}
+
+		return stage;
+	}
 }
