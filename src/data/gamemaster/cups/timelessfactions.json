@@ -1,0 +1,24 @@
+{
+	"name": "timelessfactions",
+	"title": "Silph Factions (Timeless)",
+	"restrictedPicks": 1,
+	"restrictedPokemon": ["bulbasaur", "ivysaur", "venusaur", "squirtle", "wartortle", "blastoise", "charmander", "charmeleon", "charizard", "chikorita", "bayleef", "meganium", "totodile", "croconaw", "feraligatr", "cyndaquil", "quilava", "typhlosion", "treecko", "grovyle", "sceptile", "mudkip", "marshtomp", "swampert", "torchic", "combusken", "blaziken", "turtwig", "grotle", "torterra", "piplup", "prinplup", "empoleon", "chimchar", "monferno", "infernape", "snivy", "servine", "serperior", "tepig", "pignite", "emboar", "oshawott", "dewott", "samurott"],
+	"include": [{
+		"filterType": "dex",
+		"values": [1, 488]
+	}, {
+		"filterType": "id",
+		"values": ["blaziken", "charizard", "infernape", "empoleon", "monferno", "prinplup", "combusken", "snivy", "servine", "serperior", "tepig", "pignite", "emboar", "oshawott", "dewott", "samurott"],
+		"includeShadows": false
+	}],
+	"exclude": [{
+		"filterType": "tag",
+		"values": ["legendary", "mythical", "shadow", "mega"]
+	}, {
+		"filterType": "type",
+		"values": ["dragon", "fairy", "fighting", "flying", "normal", "psychic", "steel"]
+	}, {
+		"filterType": "id",
+		"values": ["umbreon", "sableye", "drapion", "nidoqueen", "walrein", "pachirisu"]
+	}]
+}

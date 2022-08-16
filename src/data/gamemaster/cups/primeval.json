@@ -1,0 +1,26 @@
+{
+    "name": "primeval",
+    "title": "Silph Factions (Primeval)",
+    "include": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["dark", "dragon", "electric", "ice", "rock"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["greedent", "snorlax", "munchlax", "lickilicky", "castform_normal", "tapu_fini", "milotic", "arbok", "sceptile"]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "name": "Tag",
+        "values": ["shadow", "mega"]
+    }, {
+        "filterType": "type",
+        "name": "Type",
+        "values": ["fighting", "ground", "steel"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["ninetales_alolan", "obstagoon", "raichu", "walrein", "umbreon", "dewgong", "regirock", "lycanroc_midnight", "crustle", "dragalge", "pachirisu", "abomasnow", "sableye", "drapion", "moltres_galarian"]
+    }]
+}

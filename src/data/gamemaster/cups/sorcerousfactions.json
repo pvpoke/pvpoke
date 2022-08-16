@@ -1,0 +1,21 @@
+{
+	"name": "sorcerousfactions",
+	"title": "Silph Factions (Sorcerous)",
+	"include": [{
+		"filterType": "type",
+		"values": ["ice", "poison", "fairy", "psychic", "normal"]
+	}],
+	"exclude": [{
+		"filterType": "tag",
+		"values": ["legendary", "mythical", "shadow", "mega"]
+	}, {
+		"filterType": "type",
+		"values": ["steel"]
+	}, {
+		"filterType": "cost",
+		"values": [100000, 75000]
+	}, {
+		"filterType": "id",
+		"values": ["dewgong", "obstagoon", "walrein", "diggersby", "lickitung", "nidoqueen", "qwilfish_hisuian", "overqwil", "wobbuffet", "medicham", "sneasler", "litleo", "pyroar", "articuno_galarian"]
+	}]
+}
