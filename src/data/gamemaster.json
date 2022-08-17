@@ -171,7 +171,7 @@
         }, {
             "filterType": "id",
             "name": "Species",
-            "values": ["greedent", "snorlax", "munchlax", "lickilicky", "castform_normal", "tapu_fini", "milotic", "arbok", "sceptile"]
+            "values": ["greedent", "snorlax", "munchlax", "lickilicky", "castform", "tapu_fini", "milotic", "arbok", "sceptile"]
         }],
         "exclude": [{
             "filterType": "tag",
@@ -207,7 +207,7 @@
         }],
         "exclude": [{
             "filterType": "tag",
-            "values": ["legendary", "mythical", "shadow", "mega"]
+            "values": ["legendary", "mythical", "mega"]
         }, {
             "filterType": "type",
             "values": ["steel"]
@@ -237,7 +237,7 @@
         "restrictedPokemon": ["bulbasaur", "ivysaur", "venusaur", "squirtle", "wartortle", "blastoise", "charmander", "charmeleon", "charizard", "chikorita", "bayleef", "meganium", "totodile", "croconaw", "feraligatr", "cyndaquil", "quilava", "typhlosion", "treecko", "grovyle", "sceptile", "mudkip", "marshtomp", "swampert", "torchic", "combusken", "blaziken", "turtwig", "grotle", "torterra", "piplup", "prinplup", "empoleon", "chimchar", "monferno", "infernape", "snivy", "servine", "serperior", "tepig", "pignite", "emboar", "oshawott", "dewott", "samurott"],
         "include": [{
             "filterType": "dex",
-            "values": [1, 488]
+            "values": [1, 649]
         }, {
             "filterType": "id",
             "values": ["blaziken", "charizard", "infernape", "empoleon", "monferno", "prinplup", "combusken", "snivy", "servine", "serperior", "tepig", "pignite", "emboar", "oshawott", "dewott", "samurott"],
@@ -25848,7 +25848,8 @@
         },
         "types": ["bug", "steel"],
         "fastMoves": ["METAL_CLAW", "FURY_CUTTER"],
-        "chargedMoves": ["X_SCISSOR", "MAGNET_BOMB", "HYPER_BEAM"],
+        "chargedMoves": ["X_SCISSOR", "MAGNET_BOMB", "HYPER_BEAM", "TECHNO_BLAST_NORMAL"],
+        "eliteMoves": ["TECHNO_BLAST_NORMAL"],
         "defaultIVs": {
             "cp500": [5.5, 12, 14, 13],
             "cp1500": [16, 12, 10, 15],

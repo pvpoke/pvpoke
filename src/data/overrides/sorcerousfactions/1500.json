@@ -37,6 +37,10 @@
 		"weight": 5
 	},
 	{
+		"speciesId": "hypno_shadow",
+		"chargedMoves": ["THUNDER_PUNCH","SHADOW_BALL"]
+	},
+	{
 		"speciesId": "raticate_alolan",
 		"chargedMoves": ["CRUNCH","HYPER_FANG"]
 	},
@@ -89,12 +93,20 @@
 		"chargedMoves": ["POISON_FANG","PSYCHIC"]
 	},
 	{
+		"speciesId": "venomoth_shadow",
+		"fastMove": "CONFUSION",
+		"chargedMoves": ["POISON_FANG","PSYCHIC"]
+	},
+	{
 		"speciesId": "grimer",
-		"fastMove": "MUD_SLAP",
 		"chargedMoves": ["MUD_BOMB","SLUDGE_BOMB"]
 	},
 	{
 		"speciesId": "piloswine",
+		"chargedMoves": ["AVALANCHE","BULLDOZE"]
+	},
+	{
+		"speciesId": "piloswine_shadow",
 		"chargedMoves": ["AVALANCHE","BULLDOZE"]
 	},
 	{
@@ -109,10 +121,6 @@
 	{
 		"speciesId": "qwilfish",
 		"chargedMoves": ["AQUA_TAIL","SLUDGE_WAVE"]
-	},
-	{
-		"speciesId": "victreebel",
-		"chargedMoves": ["LEAF_BLADE","SLUDGE_BOMB"]
 	},
 	{
 		"speciesId": "toxicroak",
@@ -133,6 +141,10 @@
 		"weight": 5
 	},
 	{
+		"speciesId": "skuntank_shadow",
+		"chargedMoves": ["CRUNCH","FLAMETHROWER"]
+	},
+	{
 		"speciesId": "bouffalant",
 		"chargedMoves": ["STOMP","EARTHQUAKE"]
 	},
@@ -146,6 +158,10 @@
 	},
 	{
 		"speciesId": "victreebel",
+		"chargedMoves": ["LEAF_BLADE","ACID_SPRAY"]
+	},
+	{
+		"speciesId": "victreebel_shadow",
 		"chargedMoves": ["LEAF_BLADE","ACID_SPRAY"]
 	},
 	{
@@ -168,6 +184,11 @@
 	},
 	{
 		"speciesId": "alakazam",
+		"fastMove": "COUNTER",
+		"chargedMoves": ["FIRE_PUNCH","SHADOW_BALL"]
+	},
+	{
+		"speciesId": "alakazam_shadow",
 		"fastMove": "COUNTER",
 		"chargedMoves": ["FIRE_PUNCH","SHADOW_BALL"]
 	},

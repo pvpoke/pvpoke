@@ -87,15 +87,32 @@
 },{
     "speciesId": "victreebel",
     "chargedMoves": ["LEAF_BLADE", "ACID_SPRAY"]
+}, {
+    "speciesId": "scolipede",
+    "chargedMoves": ["X_SCISSOR", "SLUDGE_BOMB"]
+}, {
+    "speciesId": "golurk",
+    "chargedMoves": ["SHADOW_PUNCH", "DYNAMIC_PUNCH"]
+}, {
+    "speciesId": "crustle",
+	"fastMove": "SMACK_DOWN"
 },
 {
 	"speciesId": "swampert",
 	"chargedMoves": ["HYDRO_CANNON", "SLUDGE_WAVE"],
     "weight": 8
+}, {
+    "speciesId": "cofagrigus",
+    "chargedMoves": ["SHADOW_BALL", "PSYCHIC"],
+	"weight": 5
+}, {
+    "speciesId": "jellicent",
+    "chargedMoves": ["BUBBLE_BEAM", "SHADOW_BALL"],
+	"weight": 3
 },
 {
 	"speciesId": "venusaur",
-    "weight": 3
+    "weight": 4
 },
 {
 	"speciesId": "meganium",

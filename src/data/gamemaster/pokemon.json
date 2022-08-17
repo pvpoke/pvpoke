@@ -25423,7 +25423,8 @@
     },
     "types": ["bug", "steel"],
     "fastMoves": ["METAL_CLAW", "FURY_CUTTER"],
-    "chargedMoves": ["X_SCISSOR", "MAGNET_BOMB", "HYPER_BEAM"],
+    "chargedMoves": ["X_SCISSOR", "MAGNET_BOMB", "HYPER_BEAM", "TECHNO_BLAST_NORMAL"],
+	"eliteMoves": ["TECHNO_BLAST_NORMAL"],
     "defaultIVs": {
         "cp500": [5.5, 12, 14, 13],
         "cp1500": [16, 12, 10, 15],
