@@ -4440,20 +4440,6 @@ a.pokebattler {
     min-width: 60px;
   }
 }
-/* Ad styling and display */
-#nitro-header-mobile,
-#nitro-body-mobile,
-#nitro-body-desktop,
-#nitro-body-mobile,
-#nitro-sidebar-right,
-#nitro-sidebar-left {
-  display: none;
-}
-
-#nitro-header-mobile {
-  overflow: hidden;
-}
-
 #dev-panel {
   width: 300px;
   position: fixed;
@@ -4494,6 +4480,22 @@ a.pokebattler {
   color: #ccc;
   border-bottom: 1px solid #bbb;
   margin-bottom: 0;
+}
+
+/* Ad styling and display */
+#nitro-header-mobile,
+#nitro-body-mobile,
+#nitro-body-desktop,
+#nitro-body-mobile,
+#nitro-sidebar-right,
+#nitro-sidebar-right-300,
+#nitro-sidebar-left,
+#nitro-sidebar-left-300 {
+  display: none;
+}
+
+#nitro-header-mobile {
+  overflow: hidden;
 }
 
 .mobile-ad-container,
@@ -4555,7 +4557,7 @@ a.pokebattler {
     margin: 0 auto;
   }
 }
-@media only screen and (min-width: 1190px) {
+@media only screen and (min-width: 1190px) and (max-width: 1449px) {
   #nitro-sidebar-left {
     display: block;
     position: fixed;
@@ -4564,6 +4566,21 @@ a.pokebattler {
   }
 
   #nitro-sidebar-right {
+    display: block;
+    position: fixed;
+    top: 95px;
+    right: 20px;
+  }
+}
+@media only screen and (min-width: 1450px) {
+  #nitro-sidebar-left-300 {
+    display: block;
+    position: fixed;
+    top: 95px;
+    left: 20px;
+  }
+
+  #nitro-sidebar-right-300 {
     display: block;
     position: fixed;
     top: 95px;
