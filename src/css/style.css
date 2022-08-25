@@ -1441,6 +1441,47 @@ select, input {
   overflow: scroll;
   max-height: 500px;
 }
+.battle-results.matrix .rating-table th.selected, .battle-results.matrix .rating-table td.selected {
+  background: #546fe8;
+}
+.battle-results.matrix .difference-table {
+  width: 100%;
+}
+.battle-results.matrix .difference-table th {
+  padding: 3px 6px;
+  width: 100px;
+}
+.battle-results.matrix .difference-table td {
+  text-align: left;
+}
+.battle-results.matrix .difference-table tr:first-of-type {
+  background: #444;
+  color: #eee;
+}
+.battle-results.matrix .difference-table .differences {
+  font-size: 12px;
+}
+.battle-results.matrix .difference-table a.difference {
+  color: #fff6d4;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 8px;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  padding: 3px 6px;
+  margin: 0 5px 5px 0;
+}
+.battle-results.matrix .difference-table a.difference span {
+  font-weight: normal;
+  font-size: 11px;
+}
+.battle-results.matrix .difference-table a.difference.win {
+  background: #1b79b4;
+}
+.battle-results.matrix .difference-table a.difference.lose {
+  background: #8f2099;
+}
 
 a.download-csv {
   display: none;

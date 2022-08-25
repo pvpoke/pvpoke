@@ -1746,6 +1746,60 @@ select, input{
 			overflow:scroll;
 			max-height: 500px;
 		}
+
+		.rating-table{
+			th.selected, td.selected{
+				background: #546fe8;
+			}
+		}
+
+		.difference-table{
+			width:100%;
+
+			th{
+				padding: 3px 6px;
+				width: 100px;
+			}
+
+			td{
+				text-align: left;
+			}
+
+			tr:first-of-type{
+				background: #444;
+				color: #eee;
+			}
+
+			.differences{
+				font-size: 12px;
+			}
+
+
+			a.difference{
+				color: #fff6d4;
+				font-size: 12px;
+				font-weight: bold;
+				border-radius: 8px;
+				display: inline-block;
+				text-decoration: none;
+				text-align: center;
+				padding: 3px 6px;
+				margin: 0 5px 5px 0;
+
+				span{
+					font-weight:normal;
+					font-size: 11px;
+				}
+
+				&.win{
+					background: rgb(27, 121, 180);
+				}
+
+				&.lose{
+					background: rgb(143, 32, 153);
+				}
+			}
+		}
 	}
 }
 
@@ -3522,6 +3576,7 @@ a.download-csv{
 		}
 
 		&.matrix-table{
+
 			a{
 				padding: 5px 5px 5px 36px;
 			}

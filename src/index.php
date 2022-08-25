@@ -34,27 +34,9 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.29.7 (August 14th, 2022)</h4>
+	<h4>v1.29.8 (August 25th, 2022)</h4>
 	<ul>
-		<li>Pokemon data now includes evolution data.</li>
-		<ul>
-			<li>A new "Evolution" filter for Custom Rankings allows you to filter by first stage, middle stage, final stage, or Pokemon that don't evolve at all.</li>
-			<li>A new search term for the rankings allows searching for Pokemon in an evolutionary family (e.g. "+poliwag").</li>
-		</ul>
-	</ul>
-
-	<h4>v1.29.6 (August 14th, 2022)</h4>
-	<ul>
-		<li>The below changes are now reverted.</li>
-	</ul>
-
-	<h4>v1.29.5 (August 13th, 2022)</h4>
-	<ul>
-		<li>Simulation mechanics updated:</li>
-		<ul>
-			<li>Pokemon can now fire a Charged Move on the same turn that a Fast Move would KO.</li>
-		</ul>
-		<li>Fixed a timeline spacing issue for simultaneous Charged Moves.</li>
+		<li>Matrix Battle now includes a "Differences" section which highlights matchups, breakpoints, bulkpoints, or CMP ties gained or lost compared to the first Pokemon in the matrix.</li>
 	</ul>
 
 	<h3>Latest Article</h3>

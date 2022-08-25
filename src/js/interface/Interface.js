@@ -95,6 +95,7 @@ var InterfaceMaster = (function () {
 				$(".poke.single").on("mousemove",".move-bar",moveBarHover);
 				$(".multi-battle-sort").on("click", sortMultiBattleResults);
 				$(".battle-results.matrix .ranking-categories a").on("click", selectMatrixMode);
+				$("body").on("click", ".battle-results.matrix a.difference", jumpToMatrixColumn);
 				$("body").on("mousemove",mainMouseMove);
 				$("body").on("mousedown",mainMouseMove);
 				$("body").on("click", ".check", checkBox);
@@ -1130,7 +1131,7 @@ var InterfaceMaster = (function () {
 				csv +='Average';
 				csv += '\n';
 
-				$(".matrix-table").append($row);
+				$(".matrix-table.rating-table").append($row);
 				$(".matrix-table").append("<tbody></tbody>");
 				$(".matrix-table").attr("mode", self.matrixMode);
 
@@ -1149,26 +1150,68 @@ var InterfaceMaster = (function () {
 
 					$row = $("<tr><th class=\"name\">"+pokemon.speciesName+" <span>"+pokemon.generateMovesetStr()+"<br>" + pokemon.ivs.atk + "/" + pokemon.ivs.def + "/" + pokemon.ivs.hp + "</span></th></tr>");
 
+					var $differenceRow = $row.clone();
+					$differenceRow.append($("<td class=\"differences\"><div class=\"wins\"></div><div class=\"losses\"></div></td>"));
+
 					csv += pokemon.speciesName + ' ' + pokemon.generateMovesetStr() + ' ' + + pokemon.ivs.atk + "/" + pokemon.ivs.def + "/" + pokemon.ivs.hp + ',';
 
+					var differenceMatchups = []; // Keep a separate array to sort matchup differences
+
 					for(var n = 0; n < r.matchups.length; n++){
+						r.matchups[n].difference = false; // Store whether or not this matchups is different or flipped from the base value
+						r.matchups[n].matchupIndex = n;
+
 						var $cell = $("<td><a class=\"rating star\" href=\"#\" target=\"blank\"><span></span></a></td>");
 						var rating = r.matchups[n].rating;
 						var displayStat = r.matchups[n].rating;
+						var baseValue = rankings[0].matchups[n].rating;
 						var color = battle.getRatingColor(rating);
 
+						// Determine values to display and any flipped matchups
 						switch(self.matrixMode){
+							case "battle":
+								if(baseValue <= 500 && displayStat > 500){
+									r.matchups[n].difference = "win";
+								} else if(baseValue >= 500 && displayStat < 500){
+									r.matchups[n].difference = "lose";
+								}
+								break;
+
 							case "breakpoint":
 								displayStat = r.matchups[n].breakpoint;
+								baseValue = rankings[0].matchups[n].breakpoint;
+
+								if(displayStat > baseValue){
+									r.matchups[n].difference = "win";
+								} else if(displayStat < baseValue){
+									r.matchups[n].difference = "lose";
+								}
 								break;
 
 							case "bulkpoint":
 								displayStat = r.matchups[n].bulkpoint;
+								baseValue = rankings[0].matchups[n].bulkpoint;
+
+								if(displayStat > baseValue){
+									r.matchups[n].difference = "lose";
+								} else if(displayStat < baseValue){
+									r.matchups[n].difference = "win";
+								}
 								break;
 
 							case "attack":
 								displayStat = r.matchups[n].atkDifferential;
+								baseValue = rankings[0].matchups[n].atkDifferential;
+
+								if(displayStat > 0 && baseValue <= 0){
+									r.matchups[n].difference = "win";
+								} else if(displayStat < 0 && baseValue >= 0){
+									r.matchups[n].difference = "lose";
+								}
+							break;
 						}
+
+						r.matchups[n].displayStat = displayStat;
 
 						csv += displayStat + ',';
 						average += displayStat;
@@ -1214,6 +1257,8 @@ var InterfaceMaster = (function () {
 						$cell.find("a").attr("href", battleLink);
 
 						$row.append($cell);
+
+						differenceMatchups.push(r.matchups[n]);
 					}
 
 					average = average / r.matchups.length
@@ -1248,7 +1293,34 @@ var InterfaceMaster = (function () {
 					csv += displayAverage;
 
 
-					$(".matrix-table tbody").append($row);
+					$(".matrix-table.rating-table tbody").append($row);
+
+					// Sort and display differences
+					differenceMatchups.sort((a,b) => (a.difference > b.difference) ? -1 : ((b.difference > a.difference) ? 1 : 0));
+
+					for(var n = 0; n < differenceMatchups.length; n++){
+						// Add differences
+
+						if(differenceMatchups[n].difference){
+							var $difference = $("<a href=\"#\" class=\"difference " + differenceMatchups[n].difference + "\" matchup-index=\""+differenceMatchups[n].matchupIndex+"\">"+differenceMatchups[n].opponent.speciesName+"<br><span>" + differenceMatchups[n].opponent.generateMovesetStr() + "</span></a>");
+
+							if(differenceMatchups[n].difference == "win"){
+								$difference.prepend("+ ");
+								$differenceRow.find(".differences .wins").append($difference);
+							} else{
+								$difference.prepend("- ");
+								$differenceRow.find(".differences .losses").append($difference);
+							}
+
+						}
+					}
+
+					// Show message for no differences
+					if(i > 0 && $differenceRow.find(".wins a").length == 0 && $differenceRow.find(".losses a").length == 0 ){
+						$differenceRow.find(".differences").append("No differences");
+					}
+
+					$(".matrix-table.difference-table tbody").append($differenceRow);
 
 					csv += '\n';
 				}
@@ -1258,8 +1330,8 @@ var InterfaceMaster = (function () {
 
 				$(".battle-results.matrix").show();
 
-				$(".battle-results.matrix p").hide();
-				$(".battle-results.matrix p."+self.matrixMode).show();
+				$(".battle-results.matrix").first().find("p").hide();
+				$(".battle-results.matrix").first().find("p."+self.matrixMode).show();
 
 				// Update download link with new data
 				var filename = multiSelectors[0].getSelectedGroup() + " vs " + multiSelectors[1].getSelectedGroup() + ".csv";
@@ -1285,6 +1357,33 @@ var InterfaceMaster = (function () {
 				$(e.target).addClass("selected");
 
 				self.displayMatrixResults(matrixResults);
+			}
+
+			// Jump to a specific column in the matrix results table to highlight a matchup
+
+			function jumpToMatrixColumn(e){
+				e.preventDefault();
+
+				// Open matchups toggle if closed
+
+				$(".battle-results.matrix .toggle").first().addClass("active");
+
+				var matchupIndex = parseInt($(e.target).closest("a").attr("matchup-index")) + 1;
+				var theadWidth = $(".matrix-table.rating-table thead th").first().width();
+				var tableGotoOffset = $(".matrix-table.rating-table").parent().scrollLeft() + $(".matrix-table.rating-table thead th").eq(matchupIndex).position().left - theadWidth - 20;
+
+				$(".matrix-table.rating-table").parent().scrollLeft(tableGotoOffset);
+
+				// Highlight cells in this column
+				$(".matrix-table.rating-table thead th").removeClass("selected");
+				$(".matrix-table.rating-table tbody td").removeClass("selected");
+				$(".matrix-table.rating-table thead th").eq(matchupIndex).addClass("selected");
+				$(".matrix-table.rating-table tbody tr").each(function(index, value){
+					$(this).find("td").eq(matchupIndex-1).addClass("selected");
+				});
+
+
+				$("html, body").animate({ scrollTop: $(".battle-results .matrix-table.rating-table").offset().top - 185 }, 500);
 			}
 
 			// For battles with buffs or debuffs, run bulk sims and return median match

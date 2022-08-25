@@ -367,6 +367,21 @@ require_once 'header.php';
 			<a href="#" class="button download-csv">Export to CSV</a>
 		</div>
 	</div>
+
+	<div class="section white battle-results matrix article">
+
+		<a class="toggle active" href="#">Differences <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+
+		<div class="toggle-content">
+
+			<p>The table below highlights differences in results compared to the first Pokemon.</p>
+
+			<div class="table-container">
+				<table class="matrix-table difference-table" cellspacing="0">
+				</table>
+			</div>
+		</div>
+	</div>
 </div>
 
 <!--Sandbox forms-->
