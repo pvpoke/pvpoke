@@ -4,7 +4,20 @@
 
 This started as a passion project that went from “I wonder what this would look like quick” to “uh oh, people are going to actually see this.” Just so you know what you’re getting into.
 
-## Installation
+## Running PvPoke
+### Using docker
+You can easily run PvPoke using docker by following these steps:
+
+1. [Install docker](https://docs.docker.com/engine/install/)
+2. [Install docker-compose](https://docs.docker.com/compose/install/)
+3. Run PvPoke using the following command from the directory where you extracted (or cloned) PvPoke files:
+```bash
+$ docker-compose -f docker/docker-compose.yml up --build
+```
+
+This also works with [podman](https://podman.io/getting-started/installation) and [podman-compose](https://github.com/containers/podman-compose)
+
+### Manual Installation
 
 To begin, you’ll need:
 
