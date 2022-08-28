@@ -27,31 +27,14 @@
 		"showMeta": true
 	},
 	{
-		"title": "Summer Cup",
-		"cup": "summer",
+		"title": "Silph Continentals",
+		"cup": "continentals",
 		"cp": 1500,
-		"meta": "summer",
-		"showCup": true,
+		"meta": "continentals",
+		"showCup": false,
 		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Fighting Cup",
-		"cup": "fighting",
-		"cp": 1500,
-		"meta": "fighting",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "2022 Championship Series",
-		"cup": "championship",
-		"cp": 1500,
-		"meta": "great",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
+		"showMeta": true,
+		"hideRankings": true
 	},
 	{
 		"title": "Gymbreakers Invitational 2022",

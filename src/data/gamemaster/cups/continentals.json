@@ -1,0 +1,13 @@
+{
+	"name": "continentals",
+	"title": "Silph Continentals",
+	"include": [],
+	"exclude": [{
+		"filterType": "tag",
+		"values": ["mega"]
+	}, {
+		"filterType": "id",
+		"values": ["registeel", "regirock", "pachirisu", "granbull", "zapdos_galarian", "articuno_galarian", "moltres_galarian", "buzzwole", "xurkitree", "pheromosa", "sneasler", "arcanine_hisuian"]
+	}],
+	"partySize": 8
+}

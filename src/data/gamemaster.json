@@ -44,7 +44,7 @@
         }, {
             "filterType": "id",
             "includeShadows": true,
-            "values": ["scizor", "durant", "muk_alolan", "skuntank", "drapion"]
+            "values": ["scizor", "durant", "muk_alolan", "skuntank", "drapion", "overqwil"]
         }],
         "exclude": [{
             "filterType": "type",
@@ -94,25 +94,22 @@
             }]
         }
     }, {
+        "name": "continentals",
+        "title": "Silph Continentals",
+        "include": [],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["registeel", "regirock", "pachirisu", "granbull", "zapdos_galarian", "articuno_galarian", "moltres_galarian", "buzzwole", "xurkitree", "pheromosa", "sneasler", "arcanine_hisuian"]
+        }],
+        "partySize": 8
+    }, {
         "name": "custom",
         "title": "Custom",
         "include": [],
         "exclude": []
-    }, {
-        "name": "fighting",
-        "title": "Fighting Cup",
-        "include": [{
-            "filterType": "type",
-            "values": ["fighting"]
-        }],
-        "exclude": [{
-            "filterType": "type",
-            "values": ["psychic"]
-        }, {
-            "filterType": "tag",
-            "values": ["mega"]
-        }],
-        "link": "https://bit.ly/3OHDut7"
     }, {
         "name": "gobattleleague",
         "title": "GO Battle League",
@@ -136,18 +133,6 @@
             "name": "Tag",
             "values": ["mega"]
         }]
-    }, {
-        "name": "kanto",
-        "title": "Kanto Cup",
-        "include": [{
-            "filterType": "dex",
-            "values": [1, 151]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "values": ["mega"]
-        }],
-        "partySize": 3
     }, {
         "name": "mega",
         "title": "All Pokemon",
@@ -219,18 +204,6 @@
             "values": ["dewgong", "obstagoon", "walrein", "diggersby", "lickitung", "nidoqueen", "qwilfish_hisuian", "overqwil", "wobbuffet", "medicham", "sneasler", "litleo", "pyroar", "articuno_galarian"]
         }]
     }, {
-        "name": "summer",
-        "title": "Summer Cup",
-        "include": [{
-            "filterType": "type",
-            "values": ["normal", "grass", "fire", "water", "electric", "bug"]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "values": ["mega"]
-        }],
-        "link": "https://bit.ly/3OHDut7"
-    }, {
         "name": "timelessfactions",
         "title": "Silph Factions (Timeless)",
         "restrictedPicks": 1,
@@ -279,29 +252,14 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Summer Cup",
-        "cup": "summer",
+        "title": "Silph Continentals",
+        "cup": "continentals",
         "cp": 1500,
-        "meta": "summer",
-        "showCup": true,
+        "meta": "continentals",
+        "showCup": false,
         "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Fighting Cup",
-        "cup": "fighting",
-        "cp": 1500,
-        "meta": "fighting",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "2022 Championship Series",
-        "cup": "championship",
-        "cp": 1500,
-        "meta": "great",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
+        "showMeta": true,
+        "hideRankings": true
     }, {
         "title": "Gymbreakers Invitational 2022",
         "cup": "gymbreakers",
