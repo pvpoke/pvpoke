@@ -149,12 +149,12 @@ if(! isset($OG_IMAGE)){
 	<?php if(isset($_COOKIE['settings'])) : ?>
 		var settings = {
 			defaultIVs: "<?php echo htmlspecialchars($_SETTINGS->defaultIVs); ?>",
-			animateTimeline: <?php echo htmlspecialchars($_SETTINGS->animateTimeline); ?>,
+			animateTimeline: <?php echo $_SETTINGS->animateTimeline ? 'true' : 'false'; ?>,
 			matrixDirection: "row",
 			gamemaster: "<?php echo htmlspecialchars($_SETTINGS->gamemaster); ?>",
 			pokeboxId: "<?php echo intval($_SETTINGS->pokeboxId); ?>",
 			pokeboxLastDateTime: "<?php echo intval($_SETTINGS->pokeboxLastDateTime); ?>",
-			xls: <?php echo $_SETTINGS->xls; ?>,
+			xls: <?php echo $_SETTINGS->xls ? 'true' : 'false'; ?>,
 			rankingDetails: "<?php echo htmlspecialchars($_SETTINGS->rankingDetails); ?>",
 			hardMovesetLinks: <?php echo intval($_SETTINGS->hardMovesetLinks); ?>
 		};
