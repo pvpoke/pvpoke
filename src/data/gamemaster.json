@@ -33505,6 +33505,15 @@
         "cooldown": 500,
         "archetype": "Spam/Bait"
     }, {
+        "moveId": "DOUBLE_KICK",
+        "name": "Double Kick",
+        "type": "fighting",
+        "power": 8,
+        "energy": 0,
+        "energyGain": 12,
+        "cooldown": 1500,
+        "archetype": "Multipurpose"
+    }, {
         "moveId": "DRACO_METEOR",
         "name": "Draco Meteor",
         "type": "dragon",
@@ -33716,6 +33725,15 @@
         "energyGain": 0,
         "cooldown": 500,
         "archetype": "Spam/Bait"
+    }, {
+        "moveId": "FAIRY_WIND",
+        "name": "Fairy Wind",
+        "type": "fairy",
+        "power": 3,
+        "energy": 0,
+        "energyGain": 9,
+        "cooldown": 1000,
+        "archetype": "Fast Charge"
     }, {
         "moveId": "FEATHER_DANCE",
         "name": "Feather Dance",
