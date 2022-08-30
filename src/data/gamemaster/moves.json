@@ -73,11 +73,11 @@
     "moveId": "ANCIENT_POWER",
     "name": "Ancient Power",
     "type": "rock",
-    "power": 45,
+    "power": 60,
     "energy": 45,
     "energyGain": 0,
     "cooldown": 500,
-    "buffs": [2, 2],
+    "buffs": [1, 1],
     "buffTarget": "self",
     "buffApplyChance": ".1",
     "archetype": "Boost"
@@ -1188,7 +1188,7 @@
     "name": "Icicle Spear",
     "type": "ice",
     "power": 60,
-    "energy": 35,
+    "energy": 40,
     "energyGain": 0,
     "cooldown": 500,
     "archetype": "Spam/Bait",
@@ -1556,7 +1556,7 @@
     "energy": 45,
     "energyGain": 0,
     "cooldown": 500,
-    "buffs": [2, 2],
+    "buffs": [1, 1],
     "buffTarget": "self",
     "buffApplyChance": ".1",
     "archetype": "Boost"
@@ -1821,7 +1821,7 @@
     "type": "normal",
     "power": 5,
     "energy": 0,
-    "energyGain": 7,
+    "energyGain": 8,
     "cooldown": 1000,
     "archetype": "Fast Charge"
 }, {
@@ -1931,7 +1931,7 @@
     "type": "rock",
     "power": 4,
     "energy": 0,
-    "energyGain": 14,
+    "energyGain": 13,
     "cooldown": 1500,
     "archetype": "Fast Charge"
 }, {
@@ -2090,11 +2090,11 @@
     "name": "Silver Wind",
     "abbreviation": "SvW",
     "type": "bug",
-    "power": 45,
+    "power": 60,
     "energy": 45,
     "energyGain": 0,
     "cooldown": 500,
-    "buffs": [2, 2],
+    "buffs": [1, 1],
     "buffTarget": "self",
     "buffApplyChance": ".1",
     "archetype": "Boost"
@@ -2314,9 +2314,9 @@
     "type": "normal",
     "power": 3,
     "energy": 0,
-    "energyGain": 2,
+    "energyGain": 3,
     "cooldown": 500,
-    "archetype": "Low Quality"
+    "archetype": "General"
 }, {
     "moveId": "TAKE_DOWN",
     "name": "Take Down",
@@ -2644,7 +2644,7 @@
     "cooldown": 500,
     "buffs": [-1, 0],
     "buffTarget": "opponent",
-    "buffApplyChance": "1",
+    "buffApplyChance": ".1",
     "archetype": "Debuff Nuke"
 }, {
     "moveId": "ZEN_HEADBUTT",

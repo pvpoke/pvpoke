@@ -1,0 +1,15 @@
+{
+    "name": "littlejungleremix",
+    "title": "Little Jungle Cup Remix",
+    "include": [{
+        "filterType": "type",
+        "values": ["bug", "dark", "electric", "flying", "grass", "ground", "normal", "poison"]
+    }, {
+        "filterType": "evolution",
+        "values": [1]
+    }],
+    "exclude": [{
+        "filterType": "id",
+        "values": ["skorupi", "cottonee", "ducklett", "salandit"]
+    }]
+}

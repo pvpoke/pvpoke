@@ -5,8 +5,9 @@
 		"cp": 10000,
 		"meta": "master",
 		"showCup": false,
-		"showFormat": true,
-		"showMeta": false
+		"showFormat": false,
+		"showMeta": false,
+		"showRankings": false
 	},
 	{
 		"title": "Master League (Megas)",
@@ -24,6 +25,15 @@
 		"meta": "overused",
 		"showCup": false,
 		"showFormat": false,
+		"showMeta": true
+	},
+	{
+		"title": "Little Jungle Cup Remix",
+		"cup": "littlejungleremix",
+		"cp": 1500,
+		"meta": "littlejungleremix",
+		"showCup": true,
+		"showFormat": true,
 		"showMeta": true
 	},
 	{
