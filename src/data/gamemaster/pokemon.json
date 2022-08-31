@@ -25045,7 +25045,7 @@
         "hp": 209
     },
     "types": ["steel", "fighting"],
-    "fastMoves": ["METAL_CLAW", "ZEN_HEADBUTT"],
+    "fastMoves": ["METAL_CLAW", "ZEN_HEADBUTT", "DOUBLE_KICK"],
     "chargedMoves": ["CLOSE_COMBAT", "IRON_HEAD", "STONE_EDGE", "SACRED_SWORD"],
     "defaultIVs": {
         "cp500": [6.5, 6, 6, 6],
@@ -25067,7 +25067,7 @@
         "hp": 209
     },
     "types": ["rock", "fighting"],
-    "fastMoves": ["SMACK_DOWN", "ZEN_HEADBUTT"],
+    "fastMoves": ["SMACK_DOWN", "ZEN_HEADBUTT", "DOUBLE_KICK"],
     "chargedMoves": ["CLOSE_COMBAT", "EARTHQUAKE", "ROCK_SLIDE", "SACRED_SWORD"],
     "eliteMoves": ["SACRED_SWORD"],
     "defaultIVs": {
@@ -25089,7 +25089,7 @@
         "hp": 209
     },
     "types": ["grass", "fighting"],
-    "fastMoves": ["QUICK_ATTACK", "ZEN_HEADBUTT"],
+    "fastMoves": ["QUICK_ATTACK", "ZEN_HEADBUTT", "DOUBLE_KICK"],
     "chargedMoves": ["CLOSE_COMBAT", "LEAF_BLADE", "STONE_EDGE", "SACRED_SWORD"],
     "eliteMoves": ["SACRED_SWORD"],
     "defaultIVs": {
