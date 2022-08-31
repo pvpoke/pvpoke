@@ -299,7 +299,7 @@
 	},
 	{
 		"speciesId": "tentacruel",
-		"chargedMoves": ["ACID_SPRAY", "HYDRO_PUMP"]
+		"chargedMoves": ["ACID_SPRAY", "SCALD"]
 	},
 	{
 		"speciesId": "scizor",
@@ -512,8 +512,17 @@
 		"chargedMoves": ["CLOSE_COMBAT", "ROCK_BLAST"]
 	},
 	{
+		"speciesId": "runerigus",
+		"chargedMoves": ["SAND_TOMB", "SHADOW_BALL"]
+	},
+	{
 		"speciesId": "zebstrika",
 		"chargedMoves": ["WILD_CHARGE", "FLAME_CHARGE"]
+	},
+	{
+		"speciesId": "miltank",
+		"fastMove": "ROLLOUT",
+		"chargedMoves": ["BODY_SLAM", "THUNDERBOLT"]
 	},
 	{
 		"speciesId": "castform",
@@ -539,7 +548,7 @@
 	},
 	{
 		"speciesId": "obstagoon",
-		"chargedMoves": ["NIGHT_SLASH", "OBSTRUCT"],
+		"chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"],
 		"weight": 3
 	},
 	{
@@ -600,7 +609,7 @@
 	},
 	{
 		"speciesId": "dragonair",
-		"chargedMoves": ["AQUA_TAIL", "RETURN"]
+		"chargedMoves": ["AQUA_TAIL", "BODY_SLAM"]
 	},
 	{
 		"speciesId": "shelgon",
@@ -910,6 +919,14 @@
 		"fastMove": "WATERFALL"
 	},
 	{
+		"speciesId": "jumpluff",
+		"fastMove": "FAIRY_WIND"
+	},
+	{
+		"speciesId": "jumpluff_shadow",
+		"fastMove": "FAIRY_WIND"
+	},
+	{
 		"speciesId": "seismitoad",
 		"fastMove": "MUD_SHOT",
 		"chargedMoves": ["EARTH_POWER","SLUDGE_BOMB"]
@@ -919,13 +936,18 @@
 		"chargedMoves": ["ROCK_SLIDE","BULLDOZE"]
 	},
 	{
+		"speciesId": "steelix",
+		"chargedMoves": ["PSYCHIC_FANGS","EARTHQUAKE"]
+	},
+	{
 		"speciesId": "dragonite_shadow",
-		"fastMove": "DRAGON_BREATH"
+		"fastMove": "DRAGON_BREATH",
+		"chargedMoves": ["DRAGON_CLAW","SUPER_POWER"]
 	},
 	{
 		"speciesId": "dragonite",
 		"fastMove": "DRAGON_BREATH",
-		"chargedMoves": ["DRAGON_CLAW","HURRICANE"]
+		"chargedMoves": ["DRAGON_CLAW","SUPER_POWER"]
 	},
 	{
 		"speciesId": "vigoroth",
