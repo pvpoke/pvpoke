@@ -30006,7 +30006,7 @@
             "hp": 125
         },
         "types": ["psychic", "none"],
-        "fastMoves": ["STRUGGLE"],
+        "fastMoves": ["SPLASH"],
         "chargedMoves": ["STRUGGLE"],
         "defaultIVs": {
             "cp500": [50, 15, 15, 15],
@@ -30030,7 +30030,7 @@
             "hp": 125
         },
         "types": ["psychic", "none"],
-        "fastMoves": ["STRUGGLE"],
+        "fastMoves": ["SPLASH"],
         "chargedMoves": ["STRUGGLE"],
         "defaultIVs": {
             "cp500": [26, 4, 4, 15],
@@ -30055,8 +30055,8 @@
             "hp": 264
         },
         "types": ["psychic", "steel"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["ZEN_HEADBUTT", "FIRE_SPIN"],
+        "chargedMoves": ["IRON_HEAD", "PSYCHIC_FANGS", "SOLAR_BEAM", "FLAMETHROWER"],
         "defaultIVs": {
             "cp500": [4.5, 15, 13, 15],
             "cp1500": [13.5, 6, 14, 12],
@@ -30079,8 +30079,8 @@
             "hp": 264
         },
         "types": ["psychic", "ghost"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["CONFUSION", "AIR_SLASH"],
+        "chargedMoves": ["SHADOW_BALL", "PSYCHIC", "MOONBLAST", "FUTURE_SIGHT"],
         "defaultIVs": {
             "cp500": [4.5, 15, 13, 15],
             "cp1500": [13.5, 6, 14, 12],
