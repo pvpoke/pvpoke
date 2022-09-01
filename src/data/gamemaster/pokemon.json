@@ -5952,7 +5952,7 @@
         "hp": 137
     },
     "types": ["fighting", "none"],
-    "fastMoves": ["LOW_KICK", "ROCK_SMASH"],
+    "fastMoves": ["LOW_KICK", "ROCK_SMASH", "DOUBLE_KICK"],
     "chargedMoves": ["BRICK_BREAK", "CLOSE_COMBAT", "LOW_SWEEP", "STOMP", "STONE_EDGE"],
     "defaultIVs": {
         "cp500": [7.5, 5, 7, 10],
