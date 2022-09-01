@@ -51,7 +51,7 @@
             "values": ["fairy", "fire", "fighting"]
         }, {
             "filterType": "id",
-            "values": ["swampert", "quagsire", "gastrodon", "whiscash", "seismitoad", "marshtomp", "giratina_altered", "obstagoon", "walrein", "trevenant", "mandibuzz", "deoxys_defense"]
+            "values": ["swampert", "quagsire", "gastrodon", "whiscash", "seismitoad", "marshtomp", "giratina_altered", "obstagoon", "walrein", "trevenant", "mandibuzz", "deoxys_defense", "dubwool"]
         }, {
             "filterType": "tag",
             "values": ["mega"]
@@ -251,9 +251,9 @@
         "cp": 10000,
         "meta": "master",
         "showCup": false,
-        "showFormat": false,
+        "showFormat": true,
         "showMeta": false,
-        "showRankings": false
+        "hideRankings": true
     }, {
         "title": "Master League (Megas)",
         "cup": "mega",

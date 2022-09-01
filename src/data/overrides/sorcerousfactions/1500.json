@@ -42,7 +42,7 @@
 	},
 	{
 		"speciesId": "raticate_alolan",
-		"chargedMoves": ["CRUNCH","HYPER_FANG"]
+		"chargedMoves": ["CRUNCH","RETURN"]
 	},
 	{
 		"speciesId": "golbat",
@@ -50,16 +50,32 @@
 		"weight": 3
 	},
 	{
+		"speciesId": "slurpuff",
+		"fastMove": "CHARM"
+	},
+	{
 		"speciesId": "scolipede",
 		"chargedMoves": ["X_SCISSOR","SLUDGE_BOMB"]
 	},
 	{
 		"speciesId": "tentacruel",
-		"chargedMoves": ["ACID_SPRAY","HYDRO_PUMP"]
+		"chargedMoves": ["ACID_SPRAY","SCALD"]
+	},
+	{
+		"speciesId": "florges",
+		"chargedMoves": ["DISARMING_VOICE","MOONBLAST"]
 	},
 	{
 		"speciesId": "kangaskhan",
 		"chargedMoves": ["POWER_UP_PUNCH","CRUNCH"]
+	},
+	{
+		"speciesId": "nidoking",
+		"chargedMoves": ["SAND_TOMB","EARTH_POWER"]
+	},
+	{
+		"speciesId": "nidoking_shadow",
+		"chargedMoves": ["SAND_TOMB","EARTH_POWER"]
 	},
 	{
 		"speciesId": "togekiss",
@@ -166,7 +182,15 @@
 	},
 	{
 		"speciesId": "nidorina",
-		"chargedMoves": ["POISON_FANG","RETURN"]
+		"chargedMoves": ["POISON_FANG","THUNDERBOLT"]
+	},
+	{
+		"speciesId": "nidorino",
+		"chargedMoves": ["HORN_ATTACK","ICE_BEAM"]
+	},
+	{
+		"speciesId": "nidorino_shadow",
+		"chargedMoves": ["HORN_ATTACK","ICE_BEAM"]
 	},
 	{
 		"speciesId": "beedrill",

@@ -30,6 +30,22 @@
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["BODY_SLAM", "WATER_PULSE"]
 }, {
+    "speciesId": "grovyle",
+    "fastMove": "QUICK_ATTACK"
+}, {
+    "speciesId": "leafeon",
+    "fastMove": "QUICK_ATTACK"
+}, {
+    "speciesId": "nidoking",
+    "fastMove": "DOUBLE_KICK",
+    "chargedMoves": ["EARTH_POWER", "SAND_TOMB"]
+}, {
+    "speciesId": "nidorino",
+    "chargedMoves": ["HORN_ATTACK", "ICE_BEAM"]
+}, {
+    "speciesId": "nidorina",
+    "chargedMoves": ["POISON_FANG", "THUNDERBOLT"]
+}, {
     "speciesId": "sealeo",
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["BODY_SLAM", "WATER_PULSE"]
@@ -48,9 +64,11 @@
     "fastMove": "FIRE_SPIN",
     "chargedMoves": ["SHADOW_BONE", "BONE_CLUB"]
 }, {
+    "speciesId": "haunter",
+    "chargedMoves": ["ICE_PUNCH", "SHADOW_BALL"]
+}, {
     "speciesId": "lanturn",
     "fastMove": "SPARK",
-    "chargedMoves": ["THUNDERBOLT", "HYDRO_PUMP"],
 	"weight": 3
 }, {
     "speciesId": "weepinbell",
@@ -59,7 +77,7 @@
 }, {
     "speciesId": "tentacruel",
     "fastMove": "POISON_JAB",
-    "chargedMoves": ["ACID_SPRAY", "HYDRO_PUMP"]
+    "chargedMoves": ["ACID_SPRAY", "SCALD"]
 }, {
     "speciesId": "omastar",
     "fastMove": "MUD_SHOT",

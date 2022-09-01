@@ -55,8 +55,8 @@ switch($cup){
 		$league = 'Fighting Cup';
 		break;
 
-	case "summer":
-		$league = 'Summer Cup';
+	case "littlejungleremix":
+		$league = 'Little Jungle Cup Remix';
 		break;
 
 	case "retro":

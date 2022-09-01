@@ -146,6 +146,9 @@
     "speciesId": "aggron",
     "chargedMoves": ["STONE_EDGE", "THUNDER"]
 }, {
+    "speciesId": "miltank",
+    "fastMove": "TACKLE"
+}, {
     "speciesId": "cresselia",
     "weight": 7
 }, {
@@ -162,6 +165,7 @@
     "weight": 5
 }, {
     "speciesId": "greedent",
+	"fastMove": "TACKLE",
     "weight": 6
 }, {
     "speciesId": "empoleon",
