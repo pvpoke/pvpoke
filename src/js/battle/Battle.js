@@ -2503,6 +2503,10 @@ function Battle(){
 				buffRoll += 1; // Force guaranteed buffs even when they're disabled
 			}
 
+			if((move.buffApplyChance > .5)&&(! sandbox)&&(buffChanceModifier == -1)){
+				buffRoll += 2;
+			}
+
 			if(buffRoll > 1 - move.buffApplyChance){
 
 				// Gather targets for move buffs or debuffs

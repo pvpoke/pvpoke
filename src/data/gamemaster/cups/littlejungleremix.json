@@ -5,11 +5,15 @@
         "filterType": "type",
         "values": ["bug", "dark", "electric", "flying", "grass", "ground", "normal", "poison"]
     }, {
-        "filterType": "evolution",
-        "values": [1]
+        "filterType": "id",
+        "values": ["zapdos_galarian", "moltres_galarian", "articuno_galarian", "suicune", "entei", "raikou"],
+		"includeShadows": false
     }],
     "exclude": [{
         "filterType": "id",
-        "values": ["skorupi", "cottonee", "ducklett", "salandit"]
+		"values": ["skorupi", "cottonee", "ducklett", "salandit", "shuckle", "shuckle_shadow", "smeargle", "aerodactyl_shadow", "scizor_shadow"]
+    }, {
+        "filterType": "tag",
+		"values": ["legendary", "mythical", "mega"]
     }]
 }

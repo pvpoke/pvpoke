@@ -1471,6 +1471,32 @@
         "parent": "pichu"
     }
 }, {
+    "dex": 25,
+    "speciesName": "Pikachu (Shaymin Scarf)",
+    "speciesId": "pikachu_shaymin",
+    "baseStats": {
+        "atk": 112,
+        "def": 96,
+        "hp": 111
+    },
+    "types": ["electric", "none"],
+    "fastMoves": ["PRESENT", "QUICK_ATTACK", "THUNDER_SHOCK"],
+    "chargedMoves": ["DISCHARGE", "SURF", "THUNDER", "THUNDERBOLT", "WILD_CHARGE", "GRASS_KNOT"],
+    "defaultIVs": {
+        "cp500": [20, 7, 15, 13],
+        "cp1500": [50, 15, 15, 15],
+        "cp2500": [50, 15, 15, 15]
+    },
+    "eliteMoves": ["PRESENT", "SURF", "THUNDER"],
+    "buddyDistance": 1,
+    "thirdMoveCost": 10000,
+    "released": true,
+    "family": {
+        "id": "FAMILY_PIKACHU",
+        "parent": "pichu",
+        "evolutions": ["raichu"]
+    }
+},  {
     "dex": 26,
     "speciesName": "Raichu",
     "speciesId": "raichu",
@@ -10018,8 +10044,8 @@
         "hp": 172
     },
     "types": ["normal", "psychic"],
-    "fastMoves": ["CONFUSION", "TACKLE"],
-    "chargedMoves": ["MIRROR_COAT", "PSYCHIC", "THUNDERBOLT"],
+    "fastMoves": ["CONFUSION", "TACKLE", "DOUBLE_KICK"],
+    "chargedMoves": ["MIRROR_COAT", "PSYCHIC", "THUNDERBOLT", "PSYCHIC_FANGS"],
     "defaultIVs": {
         "cp500": [9.5, 4, 11, 4],
         "cp1500": [27, 4, 15, 14],
