@@ -1970,6 +1970,16 @@ var InterfaceMaster = (function () {
 					multiSelectors[0].setPokemonList(multiSelectors[1].getPokemonList());
 					multiSelectors[1].setPokemonList([]);
 				}
+
+				// Reset all selectors to 1 shield
+
+				for(var i = 0; i < pokeSelectors.length; i++){
+					pokeSelectors[i].setShields(1);
+				}
+
+				for(var i = 0; i < multiSelectors.length; i++){
+					multiSelectors[i].setShields(1);
+				}
 			}
 
 			// Swap the selected Pokemon between the left and right Pokemon selectors

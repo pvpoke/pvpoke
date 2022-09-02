@@ -761,7 +761,9 @@ function PokeSelect(element, i){
 
 		var value = parseInt($(e.target).closest(".option").attr("value"));
 
-		selectedPokemon.setShields(value);
+		if(selectedPokemon){
+			selectedPokemon.setShields(value);
+		}
 
 		self.update();
 	});

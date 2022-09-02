@@ -34,9 +34,10 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.29.8 (August 25th, 2022)</h4>
+	<h4>v1.29.9 (September 2, 2022)</h4>
 	<ul>
-		<li>Matrix Battle now includes a "Differences" section which highlights matchups, breakpoints, bulkpoints, or CMP ties gained or lost compared to the first Pokemon in the matrix.</li>
+		<li>Move updates for Season 12 are now live!</li>
+		<li>Switching modes on the Battle page will default to the 1 shield scenario.</li>
 	</ul>
 
 	<h3>Latest Article</h3>

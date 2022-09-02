@@ -480,7 +480,7 @@ function PokeMultiSelect(element){
 	this.setCP = function(cp){
 		$el.find(".quick-fill-select option").hide();
 
-		switch(cp){
+		switch(parseInt(cp)){
 			case 1500:
 				// Show all except Ultra and Master
 				$el.find(".quick-fill-select option").show();
