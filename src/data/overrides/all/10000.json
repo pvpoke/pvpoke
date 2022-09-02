@@ -140,6 +140,10 @@
 		"chargedMoves": ["CLOSE_COMBAT", "ROCK_BLAST"]
 	},
 	{
+		"speciesId": "zamazenta",
+		"fastMove": "QUICK_ATTACK"
+	},
+	{
 		"speciesId": "zacian_hero",
 		"fastMove": "QUICK_ATTACK",
 		"chargedMoves": ["CLOSE_COMBAT", "PLAY_ROUGH"],

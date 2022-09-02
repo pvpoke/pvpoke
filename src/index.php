@@ -34,10 +34,19 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.29.9 (September 2, 2022)</h4>
+	<h4>v1.29.10 (September 2, 2022)</h4>
 	<ul>
 		<li>Move updates for Season 12 are now live!</li>
 		<li>Switching modes on the Battle page will default to the 1 shield scenario.</li>
+		<li>Moves with a chance to buff or debuff now apply in the default sims.</li>
+		<ul>
+			<li>Previously, the default sims never activated random stat changes.</li>
+			<li>In the default sims, these stat changes activate in a deterministic order:</li>
+			<ul>
+				<li>Zap Cannon applies the debuff on the 1st, 3rd, 4th, and 6th activations.</li>
+				<li>Other moves with a 1 in N chance apply their stat changes every N activations.</li>
+			</ul>
+		</ul>
 	</ul>
 
 	<h3>Latest Article</h3>

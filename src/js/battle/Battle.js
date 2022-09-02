@@ -2503,8 +2503,16 @@ function Battle(){
 				buffRoll += 1; // Force guaranteed buffs even when they're disabled
 			}
 
-			if((move.buffApplyChance > .5)&&(! sandbox)&&(buffChanceModifier == -1)){
-				buffRoll += 2;
+			// For moves that have a buff apply chance, apply the deterministically by incrementing a value each activation based on the chance
+			if((move.buffApplyChance < 1) && (move.buffApplyMeter !== undefined) &&(! sandbox)&&(buffChanceModifier == -1)){
+
+				var startApplyCount = Math.floor(move.buffApplyMeter);
+				move.buffApplyMeter += move.buffApplyChance;
+
+				// If the cumulative activations of this move pass a whole number, deterministically apply the buff
+				if(startApplyCount < Math.floor(move.buffApplyMeter)){
+					buffRoll += 2;
+				}
 			}
 
 			if(buffRoll > 1 - move.buffApplyChance){

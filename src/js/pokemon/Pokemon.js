@@ -601,6 +601,20 @@ function Pokemon(id, i, b){
 		if(this.chargedMoves.length > 0){
 
 			for(var i = 0; i < self.chargedMoves.length; i++){
+
+				/*	Each chance buff move has an incrementing buff apply meter that will deterministically apply chance buffs
+				*	once this value crosses each whole number.
+				*/
+
+				if(self.chargedMoves[i].buffs && self.chargedMoves[i].buffApplyChance < 1){
+					self.chargedMoves[i].buffApplyMeter = self.chargedMoves[i].buffApplyChance;
+
+					// For moves with a 50% chance, apply on the second activation
+					if(self.chargedMoves[i].buffApplyChance == .5){
+						self.chargedMoves[i].buffApplyMeter = 0;
+					}
+				}
+
 				self.activeChargedMoves.push(self.chargedMoves[i]);
 			}
 
@@ -2082,7 +2096,28 @@ function Pokemon(id, i, b){
 					}
 				}
 
-				consistencyScore *= factor;
+				// Add a factor for chance buff moves, especially high chance moves
+				var buffChanceFactor = 0;
+
+				for(var i = 0; i < chargedMoves.length; i++){
+
+					if(chargedMoves[i].buffs && chargedMoves[i].buffApplyChance < 1 && chargedMoves[i].buffApplyChance > .15){
+						var buffStages = Math.abs(chargedMoves[i].buffs[0]) + Math.abs(chargedMoves[i].buffs[1]);
+						var buffConsistency = 0.5 + Math.abs(0.5 - chargedMoves[i].buffApplyChance); // 50% is the most chaotic, 10% the least
+
+						// Roughly correlate buff strength to damage
+						var buffsAsDamage = chargedMoves[i].damage + (buffStages * 25 * (1 - buffConsistency));
+
+						buffChanceFactor += chargedMoves[i].damage / buffsAsDamage;
+					} else{
+						buffChanceFactor += 1;
+					}
+				}
+
+				buffChanceFactor /= chargedMoves.length;
+
+
+				consistencyScore *= factor * buffChanceFactor;
 			}
 
 			// Now do a square root mean
