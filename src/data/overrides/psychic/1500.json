@@ -1,0 +1,50 @@
+[
+	{
+	    "speciesId": "malamar",
+	    "chargedMoves": ["FOUL_PLAY", "HYPER_BEAM"]
+	},
+	{
+	    "speciesId": "victini",
+	    "chargedMoves": ["V_CREATE", "OVERHEAT"]
+	},
+	{
+	    "speciesId": "delphox",
+	    "chargedMoves": ["FLAME_CHARGE", "FIRE_BLAST"]
+	},
+	{
+	    "speciesId": "slowbro",
+	    "chargedMoves": ["ICE_BEAM", "WATER_PULSE"]
+	},
+	{
+	    "speciesId": "slowbro_shadow",
+	    "chargedMoves": ["ICE_BEAM", "WATER_PULSE"]
+	},
+	{
+		"speciesId": "bronzong",
+		"weight": 8
+	},
+	{
+		"speciesId": "malamar",
+		"weight": 10
+	},
+	{
+		"speciesId": "victini",
+		"weight": 5
+	},
+	{
+		"speciesId": "rapidash_galarian",
+		"weight": 3
+	},
+	{
+		"speciesId": "gardevoir_shadow",
+		"weight": 2
+	},
+	{
+		"speciesId": "raichu_alolan",
+		"weight": 3
+	},
+	{
+		"speciesId": "claydol",
+		"weight": 3
+	}
+]

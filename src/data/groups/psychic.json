@@ -1,0 +1,79 @@
+[{
+    "speciesId": "bronzong",
+    "fastMove": "FEINT_ATTACK",
+    "chargedMoves": ["PAYBACK", "HEAVY_SLAM"]
+}, {
+    "speciesId": "cresselia",
+    "fastMove": "PSYCHO_CUT",
+    "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
+}, {
+    "speciesId": "gardevoir_shadow",
+    "fastMove": "CHARM",
+    "chargedMoves": ["SHADOW_BALL", "DAZZLING_GLEAM"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "hypno",
+    "fastMove": "CONFUSION",
+    "chargedMoves": ["SHADOW_BALL", "ICE_PUNCH"]
+}, {
+    "speciesId": "latios_shadow",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["DRAGON_CLAW", "LUSTER_PURGE"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "lugia",
+    "fastMove": "DRAGON_TAIL",
+    "chargedMoves": ["SKY_ATTACK", "AEROBLAST"]
+}, {
+    "speciesId": "lunatone",
+    "fastMove": "ROCK_THROW",
+    "chargedMoves": ["ROCK_SLIDE", "MOONBLAST"]
+}, {
+    "speciesId": "malamar",
+    "fastMove": "PSYCHO_CUT",
+    "chargedMoves": ["FOUL_PLAY", "HYPER_BEAM"]
+}, {
+    "speciesId": "medicham",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["ICE_PUNCH", "DYNAMIC_PUNCH"]
+}, {
+    "speciesId": "metagross",
+    "fastMove": "BULLET_PUNCH",
+    "chargedMoves": ["METEOR_MASH", "EARTHQUAKE"]
+}, {
+    "speciesId": "raichu_alolan",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["WILD_CHARGE", "THUNDER_PUNCH"]
+}, {
+    "speciesId": "rapidash_galarian",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["MEGAHORN", "BODY_SLAM"]
+}, {
+    "speciesId": "slowking_galarian",
+    "fastMove": "HEX",
+    "chargedMoves": ["SHADOW_BALL", "SLUDGE_WAVE"]
+}, {
+    "speciesId": "victini",
+    "fastMove": "QUICK_ATTACK",
+    "chargedMoves": ["V_CREATE", "OVERHEAT"]
+}, {
+    "speciesId": "xatu",
+    "fastMove": "FEINT_ATTACK",
+    "chargedMoves": ["OMINOUS_WIND", "AERIAL_ACE"]
+}, {
+    "speciesId": "slowbro",
+    "fastMove": "WATER_GUN",
+    "chargedMoves": ["WATER_PULSE", "ICE_BEAM"]
+}, {
+    "speciesId": "claydol",
+    "fastMove": "MUD_SLAP",
+    "chargedMoves": ["EARTH_POWER", "SHADOW_BALL"]
+}, {
+    "speciesId": "wobbuffet",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["RETURN", "MIRROR_COAT"]
+}, {
+    "speciesId": "celebi",
+    "fastMove": "MAGICAL_LEAF",
+    "chargedMoves": ["SEED_BOMB", "LEAF_STORM"]
+}]

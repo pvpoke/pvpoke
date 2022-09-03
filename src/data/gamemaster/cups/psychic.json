@@ -1,0 +1,15 @@
+{
+    "name": "psychic",
+    "title": "Psychic Cup",
+    "include": [{
+        "filterType": "type",
+        "values": ["psychic"]
+    }],
+    "exclude": [ {
+        "filterType": "tag",
+        "values": ["mega"]
+    }, {
+        "filterType": "id",
+        "values": ["mew"]
+    }]
+}

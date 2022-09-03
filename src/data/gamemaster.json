@@ -190,6 +190,20 @@
             "values": ["ninetales_alolan", "obstagoon", "raichu", "walrein", "umbreon", "dewgong", "regirock", "lycanroc_midnight", "crustle", "dragalge", "pachirisu", "abomasnow", "sableye", "drapion", "moltres_galarian"]
         }]
     }, {
+        "name": "psychic",
+        "title": "Psychic Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["psychic"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["mew"]
+        }]
+    }, {
         "name": "retro",
         "title": "Retro Cup",
         "include": [],
@@ -275,6 +289,14 @@
         "cup": "littlejungleremix",
         "cp": 500,
         "meta": "littlejungleremix",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Psychic Cup",
+        "cup": "psychic",
+        "cp": 1500,
+        "meta": "psychic",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
