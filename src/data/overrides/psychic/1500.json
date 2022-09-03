@@ -20,6 +20,18 @@
 	    "chargedMoves": ["ICE_BEAM", "WATER_PULSE"]
 	},
 	{
+	    "speciesId": "gallade",
+	    "fastMove": "CHARM"
+	},
+	{
+	    "speciesId": "gardevoir",
+	    "fastMove": "CHARM"
+	},
+	{
+	    "speciesId": "gallade_shadow",
+	    "fastMove": "CHARM"
+	},
+	{
 		"speciesId": "bronzong",
 		"weight": 8
 	},
@@ -37,7 +49,8 @@
 	},
 	{
 		"speciesId": "gardevoir_shadow",
-		"weight": 2
+		"fastMove": "CHARM",
+		"weight": 3
 	},
 	{
 		"speciesId": "raichu_alolan",
