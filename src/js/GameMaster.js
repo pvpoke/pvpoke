@@ -558,6 +558,7 @@ var GameMaster = (function () {
 						selfDebuffing: false,
 						selfBuffing: false,
 						selfAttackDebuffing: false,
+						selfDefenseDebuffing: false,
 						legacy: false,
 						elite: false
 					};
@@ -583,6 +584,11 @@ var GameMaster = (function () {
 							// Mark if move debuffs attack
 							if(move.buffs[0] < 0){
 								move.selfAttackDebuffing = true;
+							}
+
+							// Mark if move debuffs defense
+							if(move.buffs[1] < 0){
+								move.selfDefenseDebuffing = true;
 							}
 						}
 

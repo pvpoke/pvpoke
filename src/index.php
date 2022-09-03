@@ -34,6 +34,12 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
+	<h4>v1.29.11 (September 3, 2022)</h4>
+	<ul>
+		<li>Pokemon with moves that lower their Defense (such as Wild Charge and Close Combat) will now prefer to take early Charged Moves and use their shields after they are debuffed.</li>
+	</ul>
+
+
 	<h4>v1.29.10 (September 2, 2022)</h4>
 	<ul>
 		<li>Move updates for Season 12 are now live!</li>

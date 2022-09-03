@@ -15703,6 +15703,7 @@
             "cp1500": [28.5, 4, 14, 15],
             "cp2500": [50, 15, 15, 15]
         },
+        "searchPriority": 2,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,

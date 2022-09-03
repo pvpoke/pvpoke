@@ -2310,6 +2310,29 @@ function Battle(){
 					}
 				}
 
+				// Don't shield early moves if the user has a defense debuffing move
+
+				if( (! sandbox) && defender.bestChargedMove.selfDefenseDebuffing){
+					if(attacker.shields > 0){
+						useShield = shieldDecision.value;
+					} else{
+						// If the attacker has no shields, shield this attack if the defender's next move will knock out the attacker
+						var fastToNextCharged = Math.ceil( (defender.bestChargedMove.energy - defender.energy) / defender.fastMove.energyGain);
+						var turnsToNextCharged = fastToNextCharged * (defender.fastMove.cooldown / 500);
+						var cycleDamage = (fastToNextCharged * defender.fastMove.damage) + defender.bestChargedMove.damage;
+
+						var attackerTurnsToNextCharged = Math.ceil((attacker.activeChargedMoves[0].energy - attacker .energy) / attacker.fastMove.energyGain) * (attacker.fastMove.cooldown / 500);
+
+						if(attacker.stats.atk > defender.stats.atk){
+							attackerTurnsToNextCharged--;
+						}
+
+						if((turnsToNextCharged >= attackerTurnsToNextCharged) && (attacker.hp <= cycleDamage)){
+							useShield = shieldDecision.value;
+						}
+					}
+				}
+
 				if(decisionMethod == "random"){
 					// For randomized battles, randomize shield usage
 					shieldWeight = shieldDecision.shieldWeight;
