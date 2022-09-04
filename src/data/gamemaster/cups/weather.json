@@ -1,0 +1,12 @@
+{
+    "name": "weather",
+    "title": "Weather Cup",
+    "include": [{
+        "filterType": "type",
+        "values": ["fire", "water", "ice", "rock"]
+    }],
+    "exclude": [ {
+        "filterType": "tag",
+        "values": ["mega"]
+    }]
+}
