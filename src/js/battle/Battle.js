@@ -2315,7 +2315,7 @@ function Battle(){
 				if( (! sandbox) && defender.bestChargedMove.selfDefenseDebuffing){
 					if(attacker.shields > 0){
 						useShield = shieldDecision.value;
-					} else{
+					} else if(defender.bestChargedMove && attacker.bestChargedMove){
 						// If the attacker has no shields, shield this attack if the defender's next move will knock out the attacker
 						var fastToNextCharged = Math.ceil( (defender.bestChargedMove.energy - defender.energy) / defender.fastMove.energyGain);
 						var turnsToNextCharged = fastToNextCharged * (defender.fastMove.cooldown / 500);
