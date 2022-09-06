@@ -1,23 +1,4 @@
 [{
-    "dex": 65,
-    "speciesName": "Alakazam (Mega)",
-    "speciesId": "alakazam_mega",
-    "baseStats": {
-        "atk": 367,
-        "def": 207,
-        "hp": 146
-    },
-    "types": ["psychic", "none"],
-    "fastMoves": ["CONFUSION", "PSYCHO_CUT", "COUNTER"],
-    "chargedMoves": ["DAZZLING_GLEAM", "FIRE_PUNCH", "FOCUS_BLAST", "FUTURE_SIGHT", "PSYCHIC", "SHADOW_BALL"],
-    "defaultIVs": {
-        "cp1500": [12.5, 9, 7, 14],
-        "cp2500": [21.5, 5, 5, 9]
-    },
-    "tags": ["shadoweligible", "mega"],
-    "level25CP": 2748,
-    "eliteMoves": ["COUNTER", "DAZZLING_GLEAM", "PSYCHIC"]
-}, {
     "dex": 127,
     "speciesName": "Pinsir (Mega)",
     "speciesId": "pinsir_mega",

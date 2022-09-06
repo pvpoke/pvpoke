@@ -3302,7 +3302,7 @@
         "speciesId": "dugtrio",
         "baseStats": {
             "atk": 167,
-            "def": 134,
+            "def": 136,
             "hp": 111
         },
         "types": ["ground", "none"],
@@ -3310,8 +3310,8 @@
         "chargedMoves": ["EARTHQUAKE", "MUD_BOMB", "STONE_EDGE"],
         "legacyMoves": ["MUD_SHOT"],
         "defaultIVs": {
-            "cp500": [12, 7, 9, 15],
-            "cp1500": [42, 4, 14, 15],
+            "cp500": [12, 7, 8, 14],
+            "cp1500": [42, 4, 13, 14],
             "cp2500": [50, 15, 15, 15],
             "cp1500l40": [39, 12, 13, 14]
         },
@@ -4189,6 +4189,26 @@
             "id": "FAMILY_ABRA",
             "parent": "kadabra_shadow"
         }
+    }, {
+        "dex": 65,
+        "speciesName": "Alakazam (Mega)",
+        "speciesId": "alakazam_mega",
+        "baseStats": {
+            "atk": 367,
+            "def": 207,
+            "hp": 146
+        },
+        "types": ["psychic", "none"],
+        "fastMoves": ["CONFUSION", "PSYCHO_CUT", "COUNTER"],
+        "chargedMoves": ["DAZZLING_GLEAM", "FIRE_PUNCH", "FOCUS_BLAST", "FUTURE_SIGHT", "PSYCHIC", "SHADOW_BALL"],
+        "defaultIVs": {
+            "cp500": [4.5, 2, 6, 6],
+            "cp1500": [12, 9, 7, 14],
+            "cp2500": [20, 5, 12, 14]
+        },
+        "tags": ["shadoweligible", "mega"],
+        "level25CP": 2748,
+        "eliteMoves": ["COUNTER", "DAZZLING_GLEAM", "PSYCHIC"]
     }, {
         "dex": 66,
         "speciesName": "Machop",
