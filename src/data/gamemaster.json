@@ -33130,8 +33130,8 @@
             "cp2500": [28.5, 6, 12, 12]
         },
         "searchPriority": 3,
-        "buddyDistance": 3,
-        "thirdMoveCost": 50000,
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
         "released": true,
         "family": {
             "id": "FAMILY_SNEASEL",
@@ -34566,6 +34566,18 @@
         "energyGain": 6,
         "cooldown": 1000,
         "archetype": "Low Quality"
+    }, {
+        "moveId": "METEOR_BEAM",
+        "name": "Meteor Beam",
+        "type": "rock",
+        "power": 120,
+        "energy": 60,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [1, 0],
+        "buffTarget": "self",
+        "buffApplyChance": "1",
+        "archetype": "Boost Nuke"
     }, {
         "moveId": "METEOR_MASH",
         "name": "Meteor Mash",

@@ -59,6 +59,7 @@ require_once 'header.php'; ?>
 		<div class="supporter">Lariioo</div>
 		<div class="supporter">Kotak1002</div>
 		<div class="supporter">DrLambda</div>
+		<div class="supporter">crossing2safety</div>
 	</div>
 
 	<h2 class="center">Master Supporters</h2>

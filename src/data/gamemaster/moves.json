@@ -1403,6 +1403,18 @@
     "cooldown": 1000,
     "archetype": "Low Quality"
 }, {
+    "moveId": "METEOR_BEAM",
+    "name": "Meteor Beam",
+    "type": "rock",
+    "power": 120,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+	"buffs": [1, 0],
+    "buffTarget": "self",
+    "buffApplyChance": "1",
+    "archetype": "Boost Nuke"
+}, {
     "moveId": "METEOR_MASH",
     "name": "Meteor Mash",
     "type": "steel",
