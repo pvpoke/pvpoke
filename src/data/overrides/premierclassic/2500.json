@@ -12,7 +12,7 @@
 	{
 		"speciesId": "swampert",
 		"chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"],
-		"weight": 11
+		"weight": 20
 	},
 	{
 		"speciesId": "swampert_shadow",
@@ -29,8 +29,16 @@
 		"fastMove": "CHARM"
 	},
 	{
+		"speciesId": "sneasler",
+		"chargedMoves": ["X_SCISSOR", "CLOSE_COMBAT"]
+	},
+	{
 		"speciesId": "incineroar",
 		"chargedMoves": ["DARK_PULSE", "FIRE_BLAST"]
+	},
+	{
+		"speciesId": "overqwil",
+		"chargedMoves": ["AQUA_TAIL", "SHADOW_BALL"]
 	},
 	{
 		"speciesId": "gardevoir",
@@ -173,7 +181,7 @@
 	{
 		"speciesId": "sirfetchd",
 		"chargedMoves": ["LEAF_BLADE", "BRAVE_BIRD"],
-		"weight": 3
+		"weight": 8
 	},
 	{
 		"speciesId": "gallade",
@@ -181,16 +189,16 @@
 	},
 	{
 		"speciesId": "walrein",
-		"weight": 35
+		"weight": 24
 	},
 	{
 		"speciesId": "walrein_shadow",
-		"weight": 5
+		"weight": 3
 	},
 	{
 		"speciesId": "lapras",
 		"chargedMoves": ["SURF", "SKULL_BASH"],
-		"weight": 4
+		"weight": 2
 	},
 	{
 		"speciesId": "lapras_shadow",
@@ -379,6 +387,11 @@
 		"chargedMoves": ["ICE_PUNCH", "WILD_CHARGE"]
 	},
 	{
+		"speciesId": "ninetales_alolan",
+		"fastMove": "CHARM",
+		"chargedMoves": ["WEATHER_BALL_ICE", "PSYSHOCK"]
+	},
+	{
 		"speciesId": "electivire_shadow",
 		"chargedMoves": ["ICE_PUNCH", "WILD_CHARGE"]
 	},
@@ -428,6 +441,7 @@
 	},
 	{
 		"speciesId": "sylveon",
+		"fastMove": "CHARM",
 		"weight": 13
 	},
 	{
@@ -444,11 +458,11 @@
 	},
 	{
 		"speciesId": "dragonite",
-		"weight": 4
+		"weight": 8
 	},
 	{
 		"speciesId": "dragonite_shadow",
-		"weight": 2
+		"weight": 6
 	},
 	{
 		"speciesId": "escavalier",
@@ -469,12 +483,24 @@
 	},
 	{
 		"speciesId": "charizard",
-		"fastMove": "FIRE_SPIN",
+		"fastMove": "WING_ATTACK",
 		"weight": 16
 	},
 	{
+		"speciesId": "weezing_galarian",
+		"chargedMoves": ["PLAY_ROUGH", "OVERHEAT"]
+	},
+	{
 		"speciesId": "charizard_shadow",
-		"fastMove": "FIRE_SPIN"
+		"fastMove": "WING_ATTACK"
+	},
+	{
+		"speciesId": "miltank",
+		"fastMove": "TACKLE"
+	},
+	{
+		"speciesId": "greedent",
+		"fastMove": "TACKLE"
 	},
 	{
 		"speciesId": "gyarados",
@@ -490,7 +516,7 @@
 	},
 	{
 		"speciesId": "nidoqueen",
-		"weight": 5
+		"weight": 20
 	},
 	{
 		"speciesId": "crustle",
