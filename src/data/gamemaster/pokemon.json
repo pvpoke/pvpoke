@@ -29854,9 +29854,10 @@
         "cp1500": [15, 4, 11, 13],
         "cp2500": [25, 4, 9, 14]
     },
+	"tags": ["legendary"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false
+    "released": true
 }, {
     "dex": 799,
     "speciesName": "Guzzlord",
