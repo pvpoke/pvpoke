@@ -29827,8 +29827,8 @@
         "hp": 219
     },
     "types": ["steel", "flying"],
-    "fastMoves": ["STRUGGLE"],
-    "chargedMoves": ["STRUGGLE"],
+    "fastMoves": ["AIR_SLASH", "SMACK_DOWN"],
+    "chargedMoves": ["IRON_HEAD", "BODY_SLAM", "HEAVY_SLAM", "BULLDOZE"],
     "defaultIVs": {
         "cp500": [6, 11, 14, 14],
         "cp1500": [18, 4, 11, 13],
@@ -29847,8 +29847,8 @@
         "hp": 139
     },
     "types": ["grass", "steel"],
-    "fastMoves": ["STRUGGLE"],
-    "chargedMoves": ["STRUGGLE"],
+    "fastMoves": ["AIR_SLASH", "RAZOR_LEAF"],
+    "chargedMoves": ["LEAF_BLADE", "X_SCISSOR", "NIGHT_SLASH", "AERIAL_ACE"],
     "defaultIVs": {
         "cp500": [5, 14, 14, 14],
         "cp1500": [15, 4, 11, 13],
