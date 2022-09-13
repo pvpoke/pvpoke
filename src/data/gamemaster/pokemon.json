@@ -29834,9 +29834,10 @@
         "cp1500": [18, 4, 11, 13],
         "cp2500": [30.5, 4, 15, 6]
     },
+	"tags": ["legendary"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false
+    "released": true
 }, {
     "dex": 798,
     "speciesName": "Kartana",
