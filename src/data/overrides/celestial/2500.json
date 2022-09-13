@@ -146,6 +146,10 @@
     "speciesId": "aggron",
     "chargedMoves": ["STONE_EDGE", "THUNDER"]
 }, {
+    "speciesId": "celesteela",
+	"fastMove": "AIR_SLASH",
+    "chargedMoves": ["BODY_SLAM", "BULLDOZE"]
+}, {
     "speciesId": "miltank",
     "fastMove": "TACKLE"
 }, {
