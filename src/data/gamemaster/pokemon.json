@@ -14047,6 +14047,25 @@
         "id": "FAMILY_ARON",
         "parent": "lairon_shadow"
     }
+},  {
+    "dex": 306,
+    "speciesName": "Aggron (Mega)",
+    "speciesId": "aggron_mega",
+    "baseStats": {
+        "atk": 247,
+        "def": 331,
+        "hp": 172
+    },
+    "types": ["steel", "none"],
+    "fastMoves": ["DRAGON_TAIL", "IRON_TAIL", "SMACK_DOWN"],
+    "chargedMoves": ["HEAVY_SLAM", "STONE_EDGE", "THUNDER"],
+    "tags": ["mega"],
+    "defaultIVs": {
+		"cp500": [4.5, 9, 15, 13],
+        "cp1500": [13, 10, 9, 13],
+        "cp2500": [22, 6, 7, 14]
+    },
+	"released": "true"
 }, {
     "dex": 307,
     "speciesName": "Meditite",
@@ -29392,7 +29411,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
-    "released": false
+    "released": true
 }, {
     "dex": 778,
     "speciesName": "Mimikyu",

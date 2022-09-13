@@ -202,23 +202,6 @@
     "level25CP": 1446,
     "tags": ["shadoweligible", "mega"]
 }, {
-    "dex": 306,
-    "speciesName": "Aggron (Mega)",
-    "speciesId": "aggron_mega",
-    "baseStats": {
-        "atk": 247,
-        "def": 331,
-        "hp": 172
-    },
-    "types": ["steel", "none"],
-    "fastMoves": ["DRAGON_TAIL", "IRON_TAIL", "SMACK_DOWN"],
-    "chargedMoves": ["HEAVY_SLAM", "STONE_EDGE", "THUNDER"],
-    "tags": ["mega"],
-    "defaultIVs": {
-        "cp1500": [13, 10, 9, 13],
-        "cp2500": [22, 6, 7, 14]
-    }
-}, {
     "dex": 308,
     "speciesName": "Medicham (Mega)",
     "speciesId": "medicham_mega",

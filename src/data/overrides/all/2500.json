@@ -26,6 +26,11 @@
 		"fastMove": "DRAGON_BREATH"
 	},
 	{
+		"speciesId": "togedemaru",
+		"fastMove": "THUNDER_SHOCK",
+		"chargedMoves": ["FELL_STINGER", "WILD_CHARGE"]
+	},
+	{
 		"speciesId": "miltank",
 		"fastMove": "TACKLE"
 	},
