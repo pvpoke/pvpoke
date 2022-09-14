@@ -2312,7 +2312,7 @@ function Battle(){
 
 				// Don't shield early moves if the user has a defense debuffing move
 
-				if( (! sandbox) && defender.bestChargedMove.selfDefenseDebuffing){
+				if( (! sandbox) && defender.bestChargedMove && defender.bestChargedMove.selfDefenseDebuffing){
 					if(attacker.shields > 0){
 						useShield = shieldDecision.value;
 					} else if(defender.bestChargedMove && attacker.bestChargedMove){
