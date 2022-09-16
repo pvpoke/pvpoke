@@ -75,6 +75,14 @@
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
 }, {
+    "speciesId": "charizard",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["DRAGON_CLAW", "BLAST_BURN"]
+}, {
+    "speciesId": "golem_alolan",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["WILD_CHARGE", "ROCK_BLAST"]
+}, {
     "speciesId": "terrakion",
     "fastMove": "DOUBLE_KICK",
     "chargedMoves": ["SACRED_SWORD", "ROCK_SLIDE"]
@@ -82,4 +90,8 @@
     "speciesId": "empoleon",
     "fastMove": "WATERFALL",
     "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
+}, {
+    "speciesId": "primarina",
+    "fastMove": "CHARM",
+    "chargedMoves": ["PSYCHIC", "MOONBLAST"]
 }]

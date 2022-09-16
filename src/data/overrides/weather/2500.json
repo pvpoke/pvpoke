@@ -28,6 +28,14 @@
     "speciesId": "lapras",
     "fastMove": "WATER_GUN",
     "chargedMoves": ["SURF", "SKULL_BASH"]
+},  {
+    "speciesId": "primarina",
+    "fastMove": "CHARM",
+    "chargedMoves": ["PSYCHIC", "MOONBLAST"]
+}, {
+    "speciesId": "golem_alolan",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["WILD_CHARGE", "ROCK_BLAST"]
 }, {
     "speciesId": "lapras_shadow",
     "fastMove": "WATER_GUN",
@@ -138,5 +146,5 @@
     "weight": 4
 }, {
     "speciesId": "kingdra",
-    "weight": 3
+    "weight": 7
 }]
