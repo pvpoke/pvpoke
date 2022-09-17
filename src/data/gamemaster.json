@@ -346,12 +346,12 @@
         "showFormat": true,
         "showMeta": true
     }, {
-        "title": "Master League (Premier Classic)",
+        "title": "Premier Classic (Master League)",
         "cup": "premierclassic",
         "cp": 10000,
         "meta": "masterpremierclassic",
-        "showCup": false,
-        "showFormat": false,
+        "showCup": true,
+        "showFormat": true,
         "showMeta": true
     }, {
         "title": "Silph Factions (Primeval)",
@@ -22587,7 +22587,8 @@
         },
         "types": ["rock", "none"],
         "fastMoves": ["MUD_SLAP", "SMACK_DOWN"],
-        "chargedMoves": ["ROCK_SLIDE", "SOLAR_BEAM", "SUPER_POWER", "HEAVY_SLAM"],
+        "chargedMoves": ["ROCK_SLIDE", "SOLAR_BEAM", "SUPER_POWER", "HEAVY_SLAM", "METEOR_BEAM"],
+        "eliteMoves": ["METEOR_BEAM"],
         "defaultIVs": {
             "cp500": [6, 5, 6, 15],
             "cp1500": [17, 5, 14, 13],
@@ -30285,6 +30286,7 @@
             "cp1500": [13.5, 8, 15, 15],
             "cp2500": [23, 7, 15, 10]
         },
+        "tags": ["legendary"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true

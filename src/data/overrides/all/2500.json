@@ -26,6 +26,10 @@
 		"fastMove": "DRAGON_BREATH"
 	},
 	{
+		"speciesId": "gigalith",
+		"chargedMoves": ["SUPER_POWER", "METEOR_BEAM"]
+	},
+	{
 		"speciesId": "togedemaru",
 		"fastMove": "THUNDER_SHOCK",
 		"chargedMoves": ["FELL_STINGER", "WILD_CHARGE"]

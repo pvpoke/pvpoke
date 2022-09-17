@@ -73,12 +73,12 @@
 		"showMeta": true
 	},
 	{
-		"title": "Master League (Premier Classic)",
+		"title": "Premier Classic (Master League)",
 		"cup": "premierclassic",
 		"cp": 10000,
 		"meta": "masterpremierclassic",
-		"showCup": false,
-		"showFormat": false,
+		"showCup": true,
+		"showFormat": true,
 		"showMeta": true
 	},
 	{

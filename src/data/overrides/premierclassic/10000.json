@@ -26,7 +26,12 @@
 	},
 	{
 		"speciesId": "florges",
-		"chargedMoves": ["DISARMING_VOICE", "MOONBLAST"]
+		"chargedMoves": ["DISARMING_VOICE", "MOONBLAST"],
+		"weight": 5
+	},
+	{
+		"speciesId": "gigalith",
+		"chargedMoves": ["SUPER_POWER", "METEOR_BEAM"]
 	},
 	{
 		"speciesId": "bewear",
@@ -35,6 +40,14 @@
 	{
 		"speciesId": "hydreigon",
 		"chargedMoves": ["BRUTAL_SWING", "FLASH_CANNON"]
+	},
+	{
+		"speciesId": "porygon_z",
+		"chargedMoves": ["TRI_ATTACK", "BLIZZARD"]
+	},
+	{
+		"speciesId": "porygon_z_shadow",
+		"chargedMoves": ["TRI_ATTACK", "BLIZZARD"]
 	},
 	{
 		"speciesId": "hariyama",
@@ -219,24 +232,38 @@
 		"fastMove": "FIRE_SPIN"
 	},
 	{
-		"speciesId": "charizard_xl",
+		"speciesId": "charizard",
 		"fastMove": "FIRE_SPIN",
 		"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
 	},
 	{
-		"speciesId": "charizard_shadow_xl",
+		"speciesId": "charizard_shadow",
 		"fastMove": "FIRE_SPIN",
 		"chargedMoves": ["BLAST_BURN","DRAGON_CLAW"]
+	},
+	{
+		"speciesId": "arcanine",
+		"fastMove": "FIRE_FANG",
+		"chargedMoves": ["PSYCHIC_FANGS","WILD_CHARGE"]
+	},
+	{
+		"speciesId": "roserade",
+		"chargedMoves": ["WEATHER_BALL_FIRE","LEAF_STORM"]
+	},
+	{
+		"speciesId": "arcanine_shadow",
+		"fastMove": "FIRE_FANG",
+		"chargedMoves": ["PSYCHIC_FANGS","WILD_CHARGE"]
 	},
 	{
 		"speciesId": "garchomp",
-		"chargedMoves": ["SAND_TOMB","OUTRAGE"],
+		"chargedMoves": ["EARTH_POWER","OUTRAGE"],
 		"weight": 19
 	},
 	{
 		"speciesId": "dragonite",
 		"fastMove": "DRAGON_BREATH",
-		"chargedMoves": ["DRAGON_CLAW","HURRICANE"],
+		"chargedMoves": ["DRAGON_CLAW","SUPER_POWER"],
 		"weight": 38
 	},
 	{
@@ -253,14 +280,6 @@
 		"fastMove": ["DRAGON_BREATH"]
 	},
 	{
-		"speciesId": "gyarados_xl",
-		"fastMove": ["DRAGON_BREATH"]
-	},
-	{
-		"speciesId": "gyarados_shadow_xl",
-		"fastMove": ["DRAGON_BREATH"]
-	},
-	{
 		"speciesId": "swampert",
 		"chargedMoves": ["HYDRO_CANNON","SLUDGE_WAVE"],
 		"weight": 13
@@ -273,10 +292,6 @@
 		"speciesId": "mamoswine",
 		"chargedMoves": ["AVALANCHE","BULLDOZE"],
 		"weight": 6
-	},
-	{
-		"speciesId": "mamoswine_xl",
-		"chargedMoves": ["AVALANCHE","BULLDOZE"]
 	},
 	{
 		"speciesId": "mamoswine_shadow",
