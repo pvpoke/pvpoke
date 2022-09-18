@@ -10,6 +10,7 @@
 				$format = $("<option>"+formats[i].title+"</option>");
 				$format.attr("value", formats[i].cup);
 				$format.attr("meta-group"+formats[i].cp, formats[i].meta);
+				$format.attr("cp", formats[i].cp);
 
 				$(".cup-select").append($format);
 			}

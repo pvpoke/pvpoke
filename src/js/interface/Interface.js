@@ -1716,12 +1716,12 @@ var InterfaceMaster = (function () {
 								break;
 
 							case "cup":
-								$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
+								$(".cup-select option[value=\""+val+"\"][cp=\""+battle.getCP()+"\"]").prop("selected","selected");
 
 								if($(".format-select option[cup=\""+val+"\"]").length > 0){
 									$(".format-select option[cup=\""+val+"\"]").prop("selected","selected");
 								} else{
-									$(".cup-select option[value=\""+val+"\"]").prop("selected","selected");
+									$(".cup-select option[value=\""+val+"\"][cp=\""+battle.getCP()+"\"]").prop("selected","selected");
 								}
 
 								$(".cup-select").trigger("change");
