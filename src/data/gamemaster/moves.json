@@ -1684,6 +1684,15 @@
     "cooldown": 1000,
     "archetype": "Fast Charge"
 }, {
+    "moveId": "POLTERGEIST",
+    "name": "Poltergeist (Speculative)",
+    "type": "ghost",
+    "power": 140,
+    "energy": 70,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
     "moveId": "POUND",
     "name": "Pound",
     "abbreviation": "Pd",

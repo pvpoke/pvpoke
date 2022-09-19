@@ -937,6 +937,10 @@
 		"chargedMoves": ["DISCHARGE","LUNGE"]
 	},
 	{
+		"speciesId": "dubwool",
+		"chargedMoves": ["BODY_SLAM","PAYBACK"]
+	},
+	{
 		"speciesId": "minun",
 		"chargedMoves": ["THUNDERBOLT","GRASS_KNOT"]
 	},
@@ -968,7 +972,8 @@
 	},
 	{
 		"speciesId": "jumpluff",
-		"fastMove": "FAIRY_WIND"
+		"fastMove": "FAIRY_WIND",
+		"weight": 4
 	},
 	{
 		"speciesId": "jumpluff_shadow",
@@ -1135,6 +1140,10 @@
 	{
 		"speciesId": "trevenant",
 		"weight": 30
+	},
+	{
+		"speciesId": "abomasnow",
+		"weight": 4
 	},
 	{
 		"speciesId": "araquanid",

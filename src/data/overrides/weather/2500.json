@@ -15,7 +15,8 @@
 }, {
     "speciesId": "tentacruel",
     "fastMove": "POISON_JAB",
-    "chargedMoves": ["ACID_SPRAY", "SCALD"]
+    "chargedMoves": ["SCALD", "SLUDGE_WAVE"],
+	"weight": 3
 }, {
     "speciesId": "terrakion",
     "fastMove": "DOUBLE_KICK",
