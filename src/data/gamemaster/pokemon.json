@@ -28338,7 +28338,7 @@
     },
     "types": ["poison", "water"],
     "fastMoves": ["POISON_STING", "BITE"],
-    "chargedMoves": ["MUDDY_WATER", "GUNK_SHOT", "SLUDGE_WAVE"],
+    "chargedMoves": ["BRINE", "GUNK_SHOT", "SLUDGE_WAVE"],
     "defaultIVs": {
         "cp500": [20.5, 4, 10, 13],
         "cp1500": [50, 15, 15, 15],
@@ -28362,7 +28362,7 @@
     },
     "types": ["poison", "water"],
     "fastMoves": ["POISON_JAB", "BITE"],
-    "chargedMoves": ["MUDDY_WATER", "GUNK_SHOT", "SLUDGE_WAVE"],
+    "chargedMoves": ["BRINE", "GUNK_SHOT", "SLUDGE_WAVE"],
     "defaultIVs": {
         "cp500": [11.5, 4, 12, 11],
         "cp1500": [38.5, 4, 11, 14],
