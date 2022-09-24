@@ -1,0 +1,131 @@
+[
+	{
+		"speciesId": "vigoroth",
+		"chargedMoves": ["BODY_SLAM", "BULLDOZE"],
+		"weight": 8
+	},
+	{
+		"speciesId": "metang",
+		"chargedMoves": ["PSYSHOCK", "RETURN"],
+		"weight": 3
+	},
+	{
+		"speciesId": "nidorino",
+		"chargedMoves": ["HORN_ATTACK", "ICE_BEAM"]
+	},
+	{
+		"speciesId": "nidorino_shadow",
+		"chargedMoves": ["HORN_ATTACK", "ICE_BEAM"]
+	},
+	{
+		"speciesId": "nidorina",
+		"chargedMoves": ["POISON_FANG", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "nidorina_shadow",
+		"chargedMoves": ["POISON_FANG", "THUNDERBOLT"]
+	},
+	{
+		"speciesId": "vibrava",
+		"chargedMoves": ["SAND_TOMB", "BUG_BUZZ"]
+	},
+	{
+		"speciesId": "vibrava_shadow",
+		"chargedMoves": ["SAND_TOMB", "BUG_BUZZ"]
+	},
+	{
+		"speciesId": "piloswine",
+		"chargedMoves": ["AVALANCHE", "BULLDOZE"]
+	},
+	{
+		"speciesId": "piloswine_shadow",
+		"chargedMoves": ["AVALANCHE", "BULLDOZE"]
+	},
+	{
+		"speciesId": "brionne",
+		"fastMove": "CHARM"
+	},
+	{
+		"speciesId": "graveler",
+		"fastMove": "MUD_SLAP"
+	},
+	{
+		"speciesId": "graveler_shadow",
+		"fastMove": "MUD_SLAP"
+	},
+	{
+		"speciesId": "weepinbell",
+		"fastMove": "RAZOR_LEAF"
+	},
+	{
+		"speciesId": "weepinbell_shadow",
+		"fastMove": "RAZOR_LEAF"
+	},
+	{
+		"speciesId": "bayleef",
+		"fastMove": "RAZOR_LEAF"
+	},
+	{
+		"speciesId": "bayleef_shadow",
+		"fastMove": "RAZOR_LEAF"
+	},
+	{
+		"speciesId": "ivysaur_shadow",
+		"fastMove": "RAZOR_LEAF"
+	},
+	{
+		"speciesId": "dartrix",
+		"fastMove": "RAZOR_LEAF"
+	},
+	{
+		"speciesId": "nuzleaf",
+		"fastMove": "RAZOR_LEAF"
+	},
+	{
+		"speciesId": "nuzleaf_shadow",
+		"fastMove": "RAZOR_LEAF"
+	},
+	{
+		"speciesId": "machoke",
+		"chargedMoves": ["CROSS_CHOP", "DYNAMIC_PUNCH"],
+		"weight": 2
+	},
+	{
+		"speciesId": "marshtomp",
+		"weight": 4
+	},
+	{
+		"speciesId": "zweilous",
+		"weight": 7
+	},
+	{
+		"speciesId": "dragonair",
+		"weight": 6
+	},
+	{
+		"speciesId": "golbat",
+		"weight": 5
+	},
+	{
+		"speciesId": "sealeo",
+		"weight": 4
+	},
+	{
+		"speciesId": "haunter",
+		"chargedMoves": ["ICE_PUNCH", "SHADOW_BALL"],
+		"weight": 3
+	},
+	{
+		"speciesId": "dusclops",
+		"weight": 2
+	},
+	{
+		"speciesId": "chansey",
+		"chargedMoves": ["PSYCHIC", "DAZZLING_GLEAM"],
+		"weight": 3
+	},
+	{
+		"speciesId": "lairon",
+		"weight": 3
+	}
+]

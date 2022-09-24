@@ -111,6 +111,17 @@
         "include": [],
         "exclude": []
     }, {
+        "name": "evolution",
+        "title": "Evolution Cup",
+        "include": [{
+            "filterType": "evolution",
+            "values": [2]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }]
+    }, {
         "name": "gobattleleague",
         "title": "GO Battle League",
         "include": [],
@@ -132,24 +143,6 @@
             "filterType": "tag",
             "name": "Tag",
             "values": ["mega"]
-        }]
-    }, {
-        "name": "littlejungleremix",
-        "title": "Little Jungle Cup Remix",
-        "include": [{
-            "filterType": "type",
-            "values": ["bug", "dark", "electric", "flying", "grass", "ground", "normal", "poison"]
-        }, {
-            "filterType": "id",
-            "values": ["zapdos_galarian", "moltres_galarian", "articuno_galarian", "suicune", "entei", "raikou"],
-            "includeShadows": false
-        }],
-        "exclude": [{
-            "filterType": "id",
-            "values": ["skorupi", "cottonee", "ducklett", "salandit", "shuckle", "shuckle_shadow", "smeargle", "aerodactyl_shadow", "scizor_shadow"]
-        }, {
-            "filterType": "tag",
-            "values": ["legendary", "mythical", "mega"]
         }]
     }, {
         "name": "mega",
@@ -198,20 +191,6 @@
             "filterType": "id",
             "name": "Species",
             "values": ["ninetales_alolan", "obstagoon", "raichu", "walrein", "umbreon", "dewgong", "regirock", "lycanroc_midnight", "crustle", "dragalge", "pachirisu", "abomasnow", "sableye", "drapion", "moltres_galarian", "lileep"]
-        }]
-    }, {
-        "name": "psychic",
-        "title": "Psychic Cup",
-        "include": [{
-            "filterType": "type",
-            "values": ["psychic"]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "values": ["mega"]
-        }, {
-            "filterType": "id",
-            "values": ["mew"]
         }]
     }, {
         "name": "retro",
@@ -268,17 +247,6 @@
             "filterType": "id",
             "values": ["umbreon", "sableye", "drapion", "nidoqueen", "walrein", "pachirisu", "lileep"]
         }]
-    }, {
-        "name": "weather",
-        "title": "Weather Cup",
-        "include": [{
-            "filterType": "type",
-            "values": ["fire", "water", "ice", "rock"]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "values": ["mega"]
-        }]
     }],
     "formats": [{
         "title": "Master League (Classic)",
@@ -326,6 +294,14 @@
         "cup": "premierclassic",
         "cp": 10000,
         "meta": "masterpremierclassic",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Evolution Cup",
+        "cup": "evolution",
+        "cp": 1500,
+        "meta": "evolution",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -4159,7 +4135,8 @@
         },
         "tags": ["shadoweligible", "mega"],
         "level25CP": 2748,
-        "eliteMoves": ["COUNTER", "DAZZLING_GLEAM", "PSYCHIC"]
+        "eliteMoves": ["COUNTER", "DAZZLING_GLEAM", "PSYCHIC"],
+        "released": true
     }, {
         "dex": 65,
         "speciesName": "Alakazam (Shadow)",

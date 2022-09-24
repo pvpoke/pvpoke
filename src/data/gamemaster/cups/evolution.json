@@ -1,0 +1,12 @@
+{
+    "name": "evolution",
+    "title": "Evolution Cup",
+    "include": [{
+        "filterType": "evolution",
+        "values": [2]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega"]
+    }]
+}
