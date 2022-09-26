@@ -28751,7 +28751,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_MAREANIE",
             "evolutions": ["toxapex"]
@@ -28775,7 +28775,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_MAREANIE",
             "parent": "mareanie"
