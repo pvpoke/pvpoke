@@ -3650,7 +3650,7 @@
         "cp2500": [50, 15, 15, 15]
     },
     "level25CP": 1226,
-    "tags": ["shadoweligible"],
+    "tags": ["shadoweligible", "include1500"],
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true,
@@ -3676,7 +3676,7 @@
         "cp1500": [26.5, 6, 14, 15],
         "cp2500": [50, 15, 15, 15]
     },
-    "tags": ["shadow"],
+    "tags": ["shadow", "include1500"],
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true,
@@ -10749,7 +10749,8 @@
     "released": true,
     "family": {
         "id": "FAMILY_TEDDIURSA",
-        "parent": "teddiursa"
+        "parent": "teddiursa",
+		"evolutions": ["ursaluna"]
     }
 }, {
     "dex": 217,
@@ -10774,7 +10775,8 @@
     "released": true,
     "family": {
         "id": "FAMILY_TEDDIURSA",
-        "parent": "teddiursa_shadow"
+        "parent": "teddiursa_shadow",
+		"evolutions": ["ursaluna"]
     }
 }, {
     "dex": 218,

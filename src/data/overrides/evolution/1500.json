@@ -26,6 +26,14 @@
 		"chargedMoves": ["POISON_FANG", "THUNDERBOLT"]
 	},
 	{
+		"speciesId": "ursaring",
+		"chargedMoves": ["CLOSE_COMBAT", "PLAY_ROUGH"]
+	},
+	{
+		"speciesId": "ursaring_shadow",
+		"chargedMoves": ["CLOSE_COMBAT", "PLAY_ROUGH"]
+	},
+	{
 		"speciesId": "vibrava",
 		"chargedMoves": ["SAND_TOMB", "BUG_BUZZ"]
 	},
@@ -84,6 +92,14 @@
 	{
 		"speciesId": "nuzleaf_shadow",
 		"fastMove": "RAZOR_LEAF"
+	},
+	{
+		"speciesId": "kadabra",
+		"fastMove": "CONFUSION"
+	},
+	{
+		"speciesId": "kadabra_shadow",
+		"fastMove": "CONFUSION"
 	},
 	{
 		"speciesId": "machoke",
