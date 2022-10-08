@@ -41,8 +41,8 @@
 		"cup": "premierclassic",
 		"cp": 2500,
 		"meta": "ultrapremierclassic",
-		"showCup": true,
-		"showFormat": true,
+		"showCup": false,
+		"showFormat": false,
 		"showMeta": true
 	},
 	{
@@ -50,8 +50,8 @@
 		"cup": "premierclassic",
 		"cp": 10000,
 		"meta": "masterpremierclassic",
-		"showCup": true,
-		"showFormat": true,
+		"showCup": false,
+		"showFormat": false,
 		"showMeta": true
 	},
 	{
@@ -59,6 +59,24 @@
 		"cup": "evolution",
 		"cp": 1500,
 		"meta": "evolution",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Halloween Cup (Great)",
+		"cup": "halloween",
+		"cp": 1500,
+		"meta": "halloween",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Halloween Cup (Ultra)",
+		"cup": "halloween",
+		"cp": 2500,
+		"meta": "halloweenultra",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
