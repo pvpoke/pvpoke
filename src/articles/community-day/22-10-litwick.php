@@ -11,10 +11,10 @@ require_once '../../header.php';
 
 ?>
 
-<div class="section article white zigzagoon">
+<div class="section article white litwick">
 	<h1>Litwick Community Day Guide for PvP</h1>
 	<div class="date">Last updated October 12, 2022</div>
-	<img src="<?php echo $WEB_ROOT;?>articles/article-assets/community-day/22-08-zigzagoon/banner.jpg" />
+	<img src="<?php echo $WEB_ROOT;?>articles/article-assets/community-day/22-10-litwick/banner.jpg" />
 	<p>Litwick's long-awaited Community Day is coming! The Litwick family doesn't have much relevance in PvP, but we'll walk through the details below in case you want to go the extra mile. You can find more info on Litwick Community Day at the <a href="https://pokemongolive.com/en/post/community-day-october-2022-litwick/" target="_blank">Pokemon GO blog</a>. Below are the leagues and IV spreads to look out for, and answers to frequently asked questions.</p>
 
 	<a name="overview"></a>
@@ -48,9 +48,9 @@ require_once '../../header.php';
 			<h4>Mega Evolve one of these Pokemon during Community Day to earn bonus catch candy!</h4>
 		</div>
 		<div class="mega-list">
-			<div class="mega-item" mega="charizard_x">
+			<div class="mega-item" mega="charizard-y">
 				<div class="mega-image"></div>
-				<div class="mega-label">Charizard</div>
+				<div class="mega-label">Charizard (Either)</div>
 			</div>
 			<div class="mega-item" mega="gengar">
 				<div class="mega-image"></div>

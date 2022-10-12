@@ -163,6 +163,10 @@ input.article-search{
 	background-image:url("../articles/article-assets/community-day/megas/kangaskhan.png");
 }
 
+[mega="gengar"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/gengar.png");
+}
+
 
 /* FAQ styling */
 
@@ -795,6 +799,30 @@ input.article-search{
     	background: #ffffff;
 	}
 }
+
+.section.litwick{
+
+	background: #e7e9f2;
+	border:4px solid #2f2f55;
+
+	.article-header, .mega-section{
+		color:#fff;
+		background:#2f2f55 !important;
+	}
+
+	.feature{
+		h4{
+			color:#2f2f55;
+			border-bottom:1px solid #2f2f55;
+		}
+	}
+
+	.faq-item{
+    	background: #ffffff;
+	}
+}
+
+
 
 
 /* Edit control toggle */
