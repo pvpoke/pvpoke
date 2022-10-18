@@ -24379,7 +24379,8 @@
     },
     "types": ["ghost", "fire"],
     "fastMoves": ["HEX", "FIRE_SPIN", "INCINERATE"],
-    "chargedMoves": ["ENERGY_BALL", "SHADOW_BALL", "OVERHEAT", "FLAME_CHARGE"],
+    "chargedMoves": ["ENERGY_BALL", "SHADOW_BALL", "OVERHEAT", "FLAME_CHARGE", "POLTERGEIST"],
+	"eliteMoves": ["POLTERGEIST"],
     "defaultIVs": {
         "cp500": [6, 4, 12, 5],
         "cp1500": [16.5, 8, 15, 14],
@@ -28535,7 +28536,7 @@
     },
     "types": ["grass", "fairy"],
     "fastMoves": ["ASTONISH"],
-    "chargedMoves": ["GIGA_DRAIN", "DAZZLING_GLEAM", "SEED_BOMB"],
+    "chargedMoves": ["DAZZLING_GLEAM", "SEED_BOMB"],
     "defaultIVs": {
         "cp500": [19.5, 4, 9, 9],
         "cp1500": [50, 15, 15, 15],
@@ -28543,7 +28544,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_MORELULL",
         "evolutions": ["shiinotic"]
@@ -28559,7 +28560,7 @@
     },
     "types": ["grass", "fairy"],
     "fastMoves": ["ASTONISH"],
-    "chargedMoves": ["GIGA_DRAIN", "MOONBLAST", "SEED_BOMB", "SLUDGE_BOMB"],
+    "chargedMoves": ["MOONBLAST", "SEED_BOMB", "SLUDGE_BOMB"],
     "defaultIVs": {
         "cp500": [10, 8, 15, 9],
         "cp1500": [30.5, 5, 12, 14],
@@ -28567,7 +28568,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_MORELULL",
         "parent": "morelull"
@@ -32687,6 +32688,57 @@
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": false
+}, {
+    "dex": 901,
+    "speciesName": "Ursaluna",
+    "speciesId": "ursaluna",
+    "baseStats": {
+		"atk": 243,
+        "def": 181,
+        "hp": 277
+    },
+    "types": ["ground", "normal"],
+    "fastMoves": ["STRUGGLE"],
+    "chargedMoves": ["STRUGGLE"],
+    "defaultIVs": {
+		"cp500": [5, 7, 15, 9],
+        "cp1500": [14.5, 5, 10, 9],
+        "cp2500": [23.5, 8, 13, 14]
+    },
+    "level25CP": 2469,
+    "tags": ["shadoweligible"],
+    "buddyDistance": 3,
+    "thirdMoveCost": 50000,
+    "released": false,
+    "family": {
+        "id": "FAMILY_TEDDIURSA",
+        "parent": "ursaring"
+    }
+}, {
+    "dex": 901,
+    "speciesName": "Ursaluna (Shadow)",
+    "speciesId": "ursaluna_shadow",
+    "baseStats": {
+		"atk": 243,
+        "def": 181,
+        "hp": 277
+    },
+    "types": ["ground", "normal"],
+    "fastMoves": ["STRUGGLE"],
+    "chargedMoves": ["STRUGGLE"],
+    "defaultIVs": {
+		"cp500": [5, 7, 15, 9],
+        "cp1500": [14.5, 5, 10, 9],
+        "cp2500": [23.5, 8, 13, 14]
+    },
+    "tags": ["shadow"],
+    "buddyDistance": 3,
+    "thirdMoveCost": 50000,
+    "released": false,
+    "family": {
+        "id": "FAMILY_TEDDIURSA",
+        "parent": "ursaring"
+    }
 }, {
     "dex": 903,
     "speciesName": "Sneasler",
