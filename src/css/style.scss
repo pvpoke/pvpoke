@@ -5011,6 +5011,12 @@ a.pokebattler{
 	margin: 10px auto 5px auto;
 }
 
+// Bad ad fix
+
+iframe#bh-div {
+    display: none !important;
+}
+
 @media only screen and (min-width: 420px) {
 	.rank .details .detail-tab-nav a{
 		font-size: 14px;
