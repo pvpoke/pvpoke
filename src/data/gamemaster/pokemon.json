@@ -20696,7 +20696,8 @@
     },
     "types": ["ghost", "dragon"],
     "fastMoves": ["DRAGON_BREATH", "SHADOW_CLAW"],
-    "chargedMoves": ["ANCIENT_POWER", "DRAGON_CLAW", "SHADOW_SNEAK"],
+    "chargedMoves": ["ANCIENT_POWER", "DRAGON_CLAW", "SHADOW_SNEAK", "SHADOW_FORCE"],
+	"eliteMoves": ["SHADOW_FORCE"],
     "tags": ["legendary"],
     "defaultIVs": {
         "cp500": [5.5, 13, 15, 12],
