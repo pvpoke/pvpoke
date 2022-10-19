@@ -1,8 +1,7 @@
 [
 	{
 		"speciesId": "giratina_altered",
-		"fastMove": "SHADOW_CLAW",
-		"chargedMoves": ["DRAGON_CLAW", "SHADOW_FORCE"],
+		"fastMove": ["SHADOW_CLAW"],
 		"weight": 2
 	},
 	{
@@ -158,7 +157,7 @@
 	},
 	{
 		"speciesId": "zacian_hero",
-		"fastMove": "SNARL",
+		"fastMove": "QUICK_ATTACK",
 		"chargedMoves": ["CLOSE_COMBAT", "PLAY_ROUGH"],
 		"weight": 20
 	},
