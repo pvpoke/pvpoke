@@ -1,7 +1,8 @@
 [
 	{
 		"speciesId": "giratina_altered",
-		"fastMove": ["SHADOW_CLAW"],
+		"fastMove": "SHADOW_CLAW",
+		"chargedMoves": ["DRAGON_CLAW", "SHADOW_FORCE"],
 		"weight": 2
 	},
 	{
