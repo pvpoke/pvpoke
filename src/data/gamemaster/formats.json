@@ -55,15 +55,6 @@
 		"showMeta": true
 	},
 	{
-		"title": "Evolution Cup",
-		"cup": "evolution",
-		"cp": 1500,
-		"meta": "evolution",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
 		"title": "Halloween Cup (Great)",
 		"cup": "halloween",
 		"cp": 1500,
@@ -77,6 +68,15 @@
 		"cup": "halloween",
 		"cp": 2500,
 		"meta": "halloweenultra",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Willpower Cup",
+		"cup": "willpower",
+		"cp": 1500,
+		"meta": "willpower",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true

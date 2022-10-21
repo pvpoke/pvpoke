@@ -1,0 +1,128 @@
+[{
+    "speciesId": "mandibuzz",
+    "fastMove": "AIR_SLASH",
+    "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+}, {
+    "speciesId": "umbreon",
+    "fastMove": "SNARL",
+    "chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
+}, {
+    "speciesId": "raichu_alolan",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["WILD_CHARGE", "THUNDER_PUNCH"]
+}, {
+    "speciesId": "qwilfish_hisuian",
+    "fastMove": "POISON_JAB",
+    "chargedMoves": ["AQUA_TAIL", "SHADOW_BALL"]
+}, {
+    "speciesId": "overqwil",
+    "fastMove": "POISON_JAB",
+    "chargedMoves": ["AQUA_TAIL", "SHADOW_BALL"]
+}, {
+    "speciesId": "sableye",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["FOUL_PLAY", "RETURN"]
+}, {
+    "speciesId": "sneasler",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["CLOSE_COMBAT", "X_SCISSOR"]
+}, {
+    "speciesId": "zweilous",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["BODY_SLAM", "DARK_PULSE"]
+}, {
+    "speciesId": "wobbuffet",
+    "fastMove": "CHARM",
+    "chargedMoves": ["RETURN", "MIRROR_COAT"]
+}, {
+    "speciesId": "rapidash_galarian",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["BODY_SLAM", "MEGAHORN"]
+}, {
+    "speciesId": "drapion",
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["CRUNCH", "AQUA_TAIL"]
+}, {
+    "speciesId": "drapion_shadow",
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["CRUNCH", "AQUA_TAIL"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "skuntank",
+    "fastMove": "POISON_JAB",
+    "chargedMoves": ["CRUNCH", "SLUDGE_BOMB"]
+}, {
+    "speciesId": "victini",
+    "fastMove": "QUICK_ATTACK",
+    "chargedMoves": ["V_CREATE", "OVERHEAT"]
+}, {
+    "speciesId": "liepard_shadow",
+    "fastMove": "CHARM",
+    "chargedMoves": ["DARK_PULSE", "PLAY_ROUGH"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "cresselia",
+    "fastMove": "PSYCHO_CUT",
+    "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
+}, {
+    "speciesId": "lucario",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["POWER_UP_PUNCH", "SHADOW_BALL"]
+}, {
+    "speciesId": "medicham",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["ICE_PUNCH", "DYNAMIC_PUNCH"]
+}, {
+    "speciesId": "mew",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["WILD_CHARGE", "SURF"]
+}, {
+    "speciesId": "scrafty",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["FOUL_PLAY", "POWER_UP_PUNCH"]
+}, {
+    "speciesId": "buzzwole",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["SUPER_POWER", "LUNGE"]
+}, {
+    "speciesId": "toxicroak",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
+}, {
+    "speciesId": "obstagoon",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
+}, {
+    "speciesId": "muk_alolan",
+    "fastMove": "POISON_JAB",
+    "chargedMoves": ["DARK_PULSE", "ACID_SPRAY"]
+}, {
+    "speciesId": "deoxys_defense",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["PSYCHO_BOOST", "ROCK_SLIDE"]
+}, {
+    "speciesId": "gallade",
+    "fastMove": "CHARM",
+    "chargedMoves": ["CLOSE_COMBAT", "LEAF_BLADE"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "lugia",
+    "fastMove": "DRAGON_TAIL",
+    "chargedMoves": ["SKY_ATTACK", "AEROBLAST"]
+}, {
+    "speciesId": "tyranitar",
+    "fastMove": "SMACK_DOWN",
+    "chargedMoves": ["CRUNCH", "STONE_EDGE"]
+}, {
+    "speciesId": "primeape",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["ICE_PUNCH", "NIGHT_SLASH"]
+}, {
+    "speciesId": "claydol",
+    "fastMove": "MUD_SLAP",
+    "chargedMoves": ["EARTH_POWER", "ROCK_TOMB"]
+}, {
+    "speciesId": "pawniard",
+    "fastMove": "FURY_CUTTER",
+    "chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
+}]

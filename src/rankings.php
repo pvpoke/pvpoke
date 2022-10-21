@@ -51,8 +51,8 @@ switch($cup){
 		$league = 'Master League Classic';
 		break;
 
-	case "evolution":
-		$league = 'Evolution Cup';
+	case "willpower":
+		$league = 'Willpower Cup';
 		break;
 
 	case "littlejungleremix":

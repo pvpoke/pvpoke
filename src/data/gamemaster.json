@@ -259,6 +259,21 @@
             "filterType": "id",
             "values": ["umbreon", "sableye", "drapion", "nidoqueen", "walrein", "pachirisu", "lileep"]
         }]
+    }, {
+        "name": "willpower",
+        "title": "Willpower Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["dark", "psychic", "fighting"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["gardevoir"]
+        }],
+        "partySize": 3
     }],
     "formats": [{
         "title": "Master League (Classic)",
@@ -310,14 +325,6 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Evolution Cup",
-        "cup": "evolution",
-        "cp": 1500,
-        "meta": "evolution",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Halloween Cup (Great)",
         "cup": "halloween",
         "cp": 1500,
@@ -330,6 +337,14 @@
         "cup": "halloween",
         "cp": 2500,
         "meta": "halloweenultra",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Willpower Cup",
+        "cup": "willpower",
+        "cp": 1500,
+        "meta": "willpower",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
