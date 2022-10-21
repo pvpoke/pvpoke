@@ -742,6 +742,15 @@
 		"chargedMoves": ["STONE_EDGE","FOCUS_BLAST"]
 	},
 	{
+		"speciesId": "ninetales",
+		"chargedMoves": ["WEATHER_BALL_FIRE","OVERHEAT"]
+	},
+	{
+		"speciesId": "ninetales_shadow",
+		"fastMove": "EMBER",
+		"chargedMoves": ["WEATHER_BALL_FIRE","OVERHEAT"]
+	},
+	{
 		"speciesId": "regice",
 		"chargedMoves": ["THUNDER","BLIZZARD"]
 	},
