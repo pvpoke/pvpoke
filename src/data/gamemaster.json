@@ -170,6 +170,15 @@
             "values": ["dialga", "palkia", "giratina_altered", "giratina_origin", "charizard_mega_x", "charizard_mega_y", "blastoise_mega", "gengar_mega", "melmetal", "kyogre", "groudon", "zekrom", "reshiram", "mewtwo", "lugia", "ho_oh", "dragonite", "gyarados_mega"]
         }]
     }, {
+        "name": "premier",
+        "title": "Premier Cup",
+        "include": [],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["legendary", "mythical", "mega"]
+        }],
+        "partySize": 3
+    }, {
         "name": "premierclassic",
         "title": "Premier Classic",
         "include": [],
@@ -301,14 +310,6 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Gymbreakers Invitational 2022",
-        "cup": "gymbreakers",
-        "cp": 1500,
-        "meta": "gymbreakers",
-        "showCup": false,
-        "showFormat": false,
-        "showMeta": true
-    }, {
         "title": "Premier Classic (Ultra League)",
         "cup": "premierclassic",
         "cp": 2500,
@@ -337,6 +338,14 @@
         "cup": "willpower",
         "cp": 1500,
         "meta": "willpower",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Ultra Premier Cup",
+        "cup": "premier",
+        "cp": 2500,
+        "meta": "premierultra",
         "showCup": true,
         "showFormat": true,
         "showMeta": true

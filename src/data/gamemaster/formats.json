@@ -28,15 +28,6 @@
 		"showMeta": true
 	},
 	{
-		"title": "Gymbreakers Invitational 2022",
-		"cup": "gymbreakers",
-		"cp": 1500,
-		"meta": "gymbreakers",
-		"showCup": false,
-		"showFormat": false,
-		"showMeta": true
-	},
-	{
 		"title": "Premier Classic (Ultra League)",
 		"cup": "premierclassic",
 		"cp": 2500,
@@ -68,6 +59,15 @@
 		"cup": "willpower",
 		"cp": 1500,
 		"meta": "willpower",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Ultra Premier Cup",
+		"cup": "premier",
+		"cp": 2500,
+		"meta": "premierultra",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true

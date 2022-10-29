@@ -1,0 +1,10 @@
+{
+	"name": "premier",
+	"title": "Premier Cup",
+	"include": [],
+	"exclude": [{
+		"filterType": "tag",
+		"values": ["legendary", "mythical", "mega"]
+	}],
+	"partySize": 3
+}

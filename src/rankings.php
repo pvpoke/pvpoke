@@ -40,7 +40,7 @@ switch($cp){
 switch($cup){
 
 	case "premier":
-		$league = 'Premier';
+		$league = $league . ' Premier';
 		break;
 
 	case "premierclassic":
