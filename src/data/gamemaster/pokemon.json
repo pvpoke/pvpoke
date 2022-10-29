@@ -15784,6 +15784,26 @@
         "parent": "shuppet_shadow"
     }
 }, {
+    "dex": 354,
+    "speciesName": "Banette (Mega)",
+    "speciesId": "banette_mega",
+    "baseStats": {
+        "atk": 312,
+        "def": 160,
+        "hp": 162
+    },
+    "types": ["ghost", "none"],
+    "fastMoves": ["HEX", "SHADOW_CLAW"],
+    "chargedMoves": ["DAZZLING_GLEAM", "SHADOW_BALL", "THUNDER"],
+    "defaultIVs": {
+		"cp500": [5, 12, 15, 15],
+        "cp1500": [15, 9, 13, 13],
+        "cp2500": [25, 5, 13, 15]
+    },
+    "level25CP": 2240,
+    "tags": ["shadoweligible", "mega"],
+	"released": true
+}, {
     "dex": 355,
     "speciesName": "Duskull",
     "speciesId": "duskull",
@@ -23335,7 +23355,7 @@
     },
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_ZORUA",
         "evolutions": ["zoroark"]
@@ -23360,7 +23380,7 @@
     },
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_ZORUA",
         "parent": "zorua"
