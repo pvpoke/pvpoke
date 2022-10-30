@@ -483,6 +483,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if((cup.name == "halloween")&&(battle.getCP() == 2500)){
+					iterations = 1;
+				}
+
 				if(cup.name == "holiday"){
 					iterations = 1;
 				}
