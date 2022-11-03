@@ -1172,7 +1172,11 @@ var InterfaceMaster = (function () {
 							case "battle":
 								if(baseValue <= 500 && displayStat > 500){
 									r.matchups[n].difference = "win";
+								} if(baseValue < 500 && displayStat == 500){
+									r.matchups[n].difference = "win";
 								} else if(baseValue >= 500 && displayStat < 500){
+									r.matchups[n].difference = "lose";
+								} else if(baseValue > 500 && displayStat == 500){
 									r.matchups[n].difference = "lose";
 								}
 								break;
@@ -1987,13 +1991,23 @@ var InterfaceMaster = (function () {
 			function swapSelectedPokemon(e){
 				e.preventDefault();
 
-				var pokemonA = pokeSelectors[0].getPokemon();
-				var pokemonB = pokeSelectors[1].getPokemon();
+				if(self.battleMode == "single"){
+					// Swap individual Pokemon
+					var pokemonA = pokeSelectors[0].getPokemon();
+					var pokemonB = pokeSelectors[1].getPokemon();
 
-				if(pokemonA && pokemonB){
-					pokeSelectors[0].setSelectedPokemon(pokemonB);
-					pokeSelectors[1].setSelectedPokemon(pokemonA);
+					if(pokemonA && pokemonB){
+						pokeSelectors[0].setSelectedPokemon(pokemonB);
+						pokeSelectors[1].setSelectedPokemon(pokemonA);
+					}
+				} else if(self.battleMode == "matrix"){
+					var matrixA = multiSelectors[0].getPokemonList();
+					var matrixB = multiSelectors[1].getPokemonList();
+
+					multiSelectors[0].setPokemonList(matrixB);
+					multiSelectors[1].setPokemonList(matrixA);
 				}
+
 			}
 
 			// Animate amount of damage from the selected Charged Move on the opposing Pokemon

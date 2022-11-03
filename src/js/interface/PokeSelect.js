@@ -38,6 +38,7 @@ function PokeSelect(element, i){
 			searchArr.push({
 				speciesId: poke.speciesId,
 				speciesName: poke.speciesName.toLowerCase(),
+				dex: poke.dex,
 				priority: priority
 			});
 
@@ -700,6 +701,11 @@ function PokeSelect(element, i){
 			var pokeName = searchArr[i].speciesName;
 
 			if(pokeName.startsWith(searchStr)){
+				$pokeSelect.find("option[value=\""+searchArr[i].speciesId+"\"]").prop("selected", "selected");
+				break;
+			}
+
+			if(searchArr[i].dex == searchStr){
 				$pokeSelect.find("option[value=\""+searchArr[i].speciesId+"\"]").prop("selected", "selected");
 				break;
 			}

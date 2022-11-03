@@ -118,9 +118,8 @@ function PokeMultiSelect(element){
 
 
 			if(interface.battleMode && interface.battleMode == "matrix"){
-				$(".modal-content").append("<div class=\"center\"><div class=\"compare-poke button\">Add & Compare</div></div>");
+				$(".modal-content").append("<div class=\"center\"><a href=\"#\" class=\"compare-poke\">Add & Compare</a></div>");
 			}
-
 
 
 			$(".modal .poke-search").focus();
@@ -131,6 +130,11 @@ function PokeMultiSelect(element){
 			pokeSelector.setSelectedPokemon(pokemonList[index]);
 
 			$(".modal-content").append("<div class=\"center\"><div class=\"save-poke button\">Save Changes</div></div>");
+
+			if(interface.battleMode && interface.battleMode == "matrix"){
+				$(".modal-content").append("<div class=\"center\"><a href=\"#\" class=\"duplicate-poke\">Duplicate</a></div>");
+			}
+
 		}
 
 		// Add or save a Pokemon in the Pokemon list
@@ -166,6 +170,7 @@ function PokeMultiSelect(element){
 		// Add this Pokemon and other IV spreads
 
 		$(".modal .compare-poke").on("click", function(e){
+			e.preventDefault();
 
 			// Make sure something's selected
 			if(! pokeSelector){
@@ -226,6 +231,54 @@ function PokeMultiSelect(element){
 			showIVs = true;
 
 			$el.find(".check.show-ivs").addClass("on");
+
+			self.updateListDisplay();
+
+		});
+
+		// Add a copy of this Pokemon to the multiselector
+
+		$(".modal .duplicate-poke").on("click", function(e){
+			e.preventDefault();
+
+			// Make sure something's selected
+			if(! pokeSelector){
+				return false;
+			}
+
+			var pokemon = pokeSelector.getPokemon();
+
+			if(! pokemon){
+				return false;
+			}
+
+			// Duplicate Pokemon
+
+			if((selectedIndex > -1) && (pokemonList.length < maxPokemonCount)){
+				var newPokemon = new Pokemon(pokemon.speciesId, 0, battle);
+
+				newPokemon.selectMove("fast", pokemon.fastMove.moveId);
+				newPokemon.autoLevel = false;
+
+				if(pokemon.chargedMoves.length > 0){
+					newPokemon.selectMove("charged", pokemon.chargedMoves[0].moveId, 0);
+				}
+
+				if(pokemon.chargedMoves.length > 1){
+					newPokemon.selectMove("charged", pokemon.chargedMoves[1].moveId, 1);
+				}
+
+				newPokemon.setShadowType(pokemon.shadowType);
+				newPokemon.levelCap = pokemon.levelCap;
+				newPokemon.setLevel(pokemon.level);
+				newPokemon.setIV("atk", pokemon.ivs.atk);
+				newPokemon.setIV("def", pokemon.ivs.def);
+				newPokemon.setIV("atk", pokemon.ivs.hp);
+
+				pokemonList.splice(selectedIndex, 0, newPokemon);
+			}
+
+			closeModalWindow();
 
 			self.updateListDisplay();
 

@@ -3518,9 +3518,11 @@ a.download-csv {
 .modal .pokebox-import[select-mode=single] .multi {
   display: none;
 }
-.modal .button.compare-poke {
+.modal a.compare-poke,
+.modal a.duplicate-poke {
+  display: block;
   font-size: 14px;
-  padding: 5px;
+  margin-top: 25px;
 }
 
 /* TEXTS & FONTS */
@@ -4217,6 +4219,10 @@ a.pokebattler {
 .custom-rankings-overrides h3,
 .custom-rankings-meta-group h3 {
   margin-top: 0;
+}
+.custom-rankings-overrides a.swap,
+.custom-rankings-meta-group a.swap {
+  display: none;
 }
 
 .custom-rankings-import h3 {

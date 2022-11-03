@@ -4067,9 +4067,11 @@ a.download-csv{
 		}
 	}
 
-	.button.compare-poke{
+	a.compare-poke,
+	a.duplicate-poke{
+		display: block;
 		font-size: 14px;
-		padding: 5px;
+		margin-top:25px;
 	}
 
 }
@@ -4617,6 +4619,11 @@ a.pokebattler{
 
 	h3{
 		margin-top:0;
+	}
+
+
+	a.swap{
+		display: none;
 	}
 }
 
