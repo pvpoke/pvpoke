@@ -43,6 +43,7 @@
 			<li>Added a "Duplicate" button when editing a Pokemon in a Matrix Battle list.</li>
 		</ul>
 
+		<li>"Show Move Counts" settings on the rankings page now persists</li>
 		<li>Pokemon can now be selected by dex number.</li>
 		<li>Ranking CSV export now contains a dex number column.</li>
 	</ul>
