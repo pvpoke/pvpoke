@@ -273,7 +273,7 @@ function PokeMultiSelect(element){
 				newPokemon.setLevel(pokemon.level);
 				newPokemon.setIV("atk", pokemon.ivs.atk);
 				newPokemon.setIV("def", pokemon.ivs.def);
-				newPokemon.setIV("atk", pokemon.ivs.hp);
+				newPokemon.setIV("hp", pokemon.ivs.hp);
 
 				pokemonList.splice(selectedIndex, 0, newPokemon);
 			}
