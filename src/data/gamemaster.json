@@ -30363,13 +30363,16 @@
             "hp": 440
         },
         "types": ["dark", "dragon"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["SNARL", "DRAGON_TAIL"],
+        "chargedMoves": ["BRUTAL_SWING", "DRAGON_CLAW", "CRUNCH", "SLUDGE_BOMB"],
         "defaultIVs": {
             "cp500": [6.5, 9, 13, 14],
-            "cp1500": [19.5, 4, 12, 11],
+            "cp1500": [20, 4, 8, 4],
             "cp2500": [35, 4, 14, 6]
         },
+        "tags": ["legendary"],
+        "searchPriority": 4,
+        "levelFloor": 20,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": false
