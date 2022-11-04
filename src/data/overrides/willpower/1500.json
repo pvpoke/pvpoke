@@ -1,12 +1,12 @@
 [{
     "speciesId": "qwilfish_hisuian",
     "fastMove": "POISON_JAB",
-    "chargedMoves": ["AQUA_TAIL", "SHADOW_BALL"],
+    "chargedMoves": ["AQUA_TAIL", "ICE_BEAM"],
 	"weight": 4
 }, {
     "speciesId": "overqwil",
     "fastMove": "POISON_JAB",
-    "chargedMoves": ["AQUA_TAIL", "SHADOW_BALL"]
+    "chargedMoves": ["AQUA_TAIL", "ICE_BEAM"]
 }, {
     "speciesId": "sableye",
     "fastMove": "SHADOW_CLAW",
@@ -136,7 +136,7 @@
 }, {
     "speciesId": "mandibuzz",
     "fastMove": "AIR_SLASH",
-	"weight": 10
+	"weight": 12
 }, {
     "speciesId": "rapidash_galarian",
 	"chargedMoves": ["BODY_SLAM", "PLAY_ROUGH"],
