@@ -1,0 +1,17 @@
+{
+	"name": "elementremix",
+	"title": "Element Cup Remix",
+	"include": [{
+        "filterType": "evolution",
+        "values": [1]
+    }, {
+        "filterType": "type",
+        "values": ["grass", "water", "fire"]
+    }],
+	"exclude": [{
+		"filterType": "id",
+		"values": ["chinchou", "ducklett", "cottonee", "salandit"]
+	}],
+	"partySize": 3,
+	"presetOnly": true
+}

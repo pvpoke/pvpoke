@@ -46,15 +46,6 @@
 		"showMeta": true
 	},
 	{
-		"title": "Halloween Cup (Ultra)",
-		"cup": "halloween",
-		"cp": 2500,
-		"meta": "halloweenultra",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
 		"title": "Willpower Cup",
 		"cup": "willpower",
 		"cp": 1500,
@@ -68,6 +59,15 @@
 		"cup": "premier",
 		"cp": 2500,
 		"meta": "premierultra",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Element Cup Remix",
+		"cup": "elementremix",
+		"cp": 500,
+		"meta": "elementremix",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
