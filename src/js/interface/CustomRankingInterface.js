@@ -295,7 +295,10 @@ function interfaceObject(){
 		// Import moveset overrides
 		overrideSelector.quickFillGroup(cup.overrides);
 
-		cup.useDefaultMovesets = data.useDefaultMovesets;
+		if(data.useDefaultMovesets !== undefined){
+			cup.useDefaultMovesets = data.useDefaultMovesets;
+		}
+
 
 		if(cup.useDefaultMovesets){
 			$(".check.use-default-movesets").addClass("on");
