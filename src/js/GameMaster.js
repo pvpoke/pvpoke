@@ -680,10 +680,14 @@ var GameMaster = (function () {
 					object.rankings[key] = data;
 					object.loadedData++;
 
-					caller.displayRankingData(data);
+					if(caller.displayRankingData){
+						caller.displayRankingData(data);
+					}
 				});
 			} else{
-				caller.displayRankingData(object.rankings[key]);
+				if(caller.displayRankingData){
+					caller.displayRankingData(object.rankings[key]);
+				}
 			}
 		}
 

@@ -137,6 +137,11 @@ function PokeMultiSelect(element){
 
 		}
 
+		// Show custom rankings options for moveset overrides
+		if(context == "customrankingsoverrides"){
+			$(".modal .poke .custom-ranking-options").show();
+		}
+
 		// Add or save a Pokemon in the Pokemon list
 
 		$(".modal .save-poke").on("click", function(e){
@@ -452,6 +457,10 @@ function PokeMultiSelect(element){
 
 			if(data[i].shadowType){
 				pokemon.setShadowType(data[i].shadowType);
+			}
+
+			if(data[i].weight !== undefined){
+				pokemon.rankingWeight = data[i].weight;
 			}
 
 			pokemonList.push(pokemon);

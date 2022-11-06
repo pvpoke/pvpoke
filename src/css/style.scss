@@ -743,6 +743,10 @@ header{
 		}
 	}
 
+	.custom-ranking-options{
+		display: none;
+	}
+
 	.form-group{
 		border: 1px solid #888;
 		border-radius: 8px;
@@ -4572,6 +4576,10 @@ a.pokebattler{
 			margin-bottom:5px;
 		}
 	}
+
+	.import-custom-group{
+		margin-top: 15px;
+	}
 }
 
 .custom-rankings-list{
@@ -4597,7 +4605,8 @@ a.pokebattler{
 }
 
 .custom-rankings-overrides,
-.custom-rankings-meta-group{
+.custom-rankings-meta-group,
+.custom-rankings{
 	.poke.multi{
 		display:block;
 		float:none;

@@ -272,6 +272,9 @@ function PokeSelect(element, i){
 				$el.find(".cp .identifier").hide();
 			}
 
+			// Show custom ranking settings
+			$el.find(".ranking-weight").val(selectedPokemon.rankingWeight);
+
 			// Hide Pokebox after selection
 			$el.find(".pokebox").hide();
 
@@ -1000,6 +1003,17 @@ function PokeSelect(element, i){
 
 		if(interface.resetSelectedPokemon){
 			interface.resetSelectedPokemon();
+		}
+	});
+
+	// Change ranking weight
+
+	$el.find("input.ranking-weight").on("keyup change", function(e){
+
+		var value = parseFloat($el.find("input.ranking-weight").val());
+
+		if(value >= 0){
+			selectedPokemon.rankingWeight = value;
 		}
 	});
 

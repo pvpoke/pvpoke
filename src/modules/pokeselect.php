@@ -150,6 +150,12 @@
 			</div>
 		</div>
 
+		<div class="custom-ranking-options">
+			<h3 class="section-title">Ranking Weight Multiplier</h3>
+			<input class="ranking-weight" type="number" placeholder="Weight" min="0" value="1" />
+			<div class="legacy">Matchup scores against this Pokemon will be multiplied by the value above. Default is 1. Use values of 2-10 depending on meta relevancy. Use 0 to remove all weighting.</div>
+		</div>
+
 		<a href="#" class="clear-selection">Clear Selection</a>
 
 		<div class="hp bar-back">

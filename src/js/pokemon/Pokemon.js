@@ -95,6 +95,10 @@ function Pokemon(id, i, b){
 	this.battleStats = {};
 	this.roundStats = {};
 
+	// Custom ranking properties
+
+	this.rankingWeight = 1;
+
 	// Set legacy moves
 
 	if(data.legacyMoves){

@@ -34,6 +34,20 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
+	<h4>v1.29.14 (November 5, 2022)</h4>
+	<ul>
+		<li>Custom Ranking updates:</li>
+		<ul>
+			<li>The "Species" filter can now import a Pokemon list from a custom group you have made and saved elsewhere on the site.</li>
+			<li>Custom Rankings now use the league default movesets instead of generating movesets from scratch. (You can still provide moveset overrides.)</li>
+			<ul>
+				<li>In general, this should save time checking custom ranking results for the correct movesets.</li>
+				<li>You can disable this feature per cup. Generated movesets may work better for small cups where off-meta movesets are more likely.</li>
+			</ul>
+			<li>You can now specify a Ranking Weight Multiplier per Pokemon in the Moveset Overrides section. Use this to increase the weighting applied to any meta defining Pokemon in your cup and generate more fine-tuned results.</li>
+		</ul>
+	</ul>
+
 	<h4>v1.29.13 (November 3, 2022)</h4>
 	<ul>
 		<li>Matrix Battle updates:</li>

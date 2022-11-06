@@ -147,6 +147,7 @@ require_once 'header.php'; ?>
 				</ul>
 				<div class="field-container">
 					<input class="ids" placeholder="Pokemon ID's" />
+					<button class="import-custom-group">Import from Custom Group</button>
 				</div>
 			</div>
 
@@ -280,7 +281,9 @@ require_once 'header.php'; ?>
 
 <div class="section white custom-rankings-overrides">
 	<h3>Moveset Overrides</h3>
-	<p>The rankings generate recommended movesets for each Pokemon. A different moveset may be more optimal, so you can add a Pokemon below to override its ranked moveset.</p>
+	<p>The rankings generate recommended movesets for each Pokemon. A different moveset may be more optimal, so you can add a Pokemon below to override its ranked moveset. Any overrides below will take priority over the league default movesets.</p>
+
+	<div class="use-default-movesets check on"><span></span> Use League Default Movesets</div>
 	<?php require 'modules/pokemultiselect.php'; ?>
 </div>
 
@@ -290,6 +293,16 @@ require_once 'header.php'; ?>
 	<div class="center flex">
 		<div class="button yes">Yes</div>
 		<div class="button no">No</div>
+	</div>
+</div>
+
+<div class="import-group-modal hide">
+	<p>Select a custom group to import below.</p>
+
+	<select class="custom-group-list"></select>
+
+	<div class="center flex">
+		<div class="button import">Import Group</div>
 	</div>
 </div>
 

@@ -552,6 +552,9 @@ header {
 .poke .options.multi-battle-options h3:first-of-type {
   margin-top: 0;
 }
+.poke .custom-ranking-options {
+  display: none;
+}
 .poke .form-group {
   border: 1px solid #888;
   border-radius: 8px;
@@ -4176,6 +4179,9 @@ a.pokebattler {
   font-size: 14px;
   margin-bottom: 5px;
 }
+.custom-rankings .import-custom-group {
+  margin-top: 15px;
+}
 
 .custom-rankings-list {
   display: none;
@@ -4197,31 +4203,38 @@ a.pokebattler {
 }
 
 .custom-rankings-overrides .poke.multi,
-.custom-rankings-meta-group .poke.multi {
+.custom-rankings-meta-group .poke.multi,
+.custom-rankings .poke.multi {
   display: block;
   float: none;
 }
 .custom-rankings-overrides .poke.multi .poke-stats,
-.custom-rankings-meta-group .poke.multi .poke-stats {
+.custom-rankings-meta-group .poke.multi .poke-stats,
+.custom-rankings .poke.multi .poke-stats {
   padding: 0;
   background: none;
 }
 .custom-rankings-overrides .poke.multi .cup-select,
 .custom-rankings-overrides .poke.multi .options,
 .custom-rankings-meta-group .poke.multi .cup-select,
-.custom-rankings-meta-group .poke.multi .options {
+.custom-rankings-meta-group .poke.multi .options,
+.custom-rankings .poke.multi .cup-select,
+.custom-rankings .poke.multi .options {
   display: none;
 }
 .custom-rankings-overrides .poke.multi .custom-options,
-.custom-rankings-meta-group .poke.multi .custom-options {
+.custom-rankings-meta-group .poke.multi .custom-options,
+.custom-rankings .poke.multi .custom-options {
   display: block;
 }
 .custom-rankings-overrides h3,
-.custom-rankings-meta-group h3 {
+.custom-rankings-meta-group h3,
+.custom-rankings h3 {
   margin-top: 0;
 }
 .custom-rankings-overrides a.swap,
-.custom-rankings-meta-group a.swap {
+.custom-rankings-meta-group a.swap,
+.custom-rankings a.swap {
   display: none;
 }
 
