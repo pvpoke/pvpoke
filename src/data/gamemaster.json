@@ -51,7 +51,7 @@
             "values": ["fairy", "fire", "fighting"]
         }, {
             "filterType": "id",
-            "values": ["swampert", "quagsire", "gastrodon", "whiscash", "seismitoad", "marshtomp", "giratina_altered", "obstagoon", "walrein", "trevenant", "mandibuzz", "deoxys_defense", "dubwool"]
+            "values": ["swampert", "quagsire", "gastrodon", "whiscash", "seismitoad", "marshtomp", "giratina_altered", "obstagoon", "walrein", "trevenant", "mandibuzz", "deoxys_defense", "dubwool", "guzzlord"]
         }, {
             "filterType": "tag",
             "values": ["mega"]
@@ -227,7 +227,7 @@
         }, {
             "filterType": "id",
             "name": "Species",
-            "values": ["ninetales_alolan", "obstagoon", "raichu", "walrein", "umbreon", "dewgong", "regirock", "lycanroc_midnight", "crustle", "dragalge", "pachirisu", "abomasnow", "sableye", "drapion", "moltres_galarian", "lileep"]
+            "values": ["ninetales_alolan", "obstagoon", "raichu", "walrein", "umbreon", "dewgong", "regirock", "lycanroc_midnight", "crustle", "dragalge", "pachirisu", "abomasnow", "sableye", "drapion", "moltres_galarian", "lileep", "guzzlord"]
         }]
     }, {
         "name": "retro",
@@ -30391,7 +30391,7 @@
         "levelFloor": 20,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": true
     }, {
         "dex": 800,
         "speciesName": "Necrozma",
