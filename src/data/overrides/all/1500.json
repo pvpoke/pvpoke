@@ -8,21 +8,25 @@
 	{
 		"speciesId": "umbreon",
 		"chargedMoves": ["FOUL_PLAY", "LAST_RESORT"],
-		"weight": 10
+		"weight": 8
 	},
 	{
 		"speciesId": "azumarill",
 		"chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"],
-		"weight": 25
+		"weight": 22
 	},
 	{
 		"speciesId": "medicham",
 		"chargedMoves": ["ICE_PUNCH", "PSYCHIC"],
-		"weight": 28
+		"weight": 38
 	},
 	{
 		"speciesId": "walrein",
-		"weight": 6
+		"weight": 9
+	},
+	{
+		"speciesId": "tapu_fini",
+		"weight": 5
 	},
 	{
 		"speciesId": "togedemaru",
@@ -642,7 +646,7 @@
 	{
 		"speciesId": "lanturn",
 		"fastMove": "SPARK",
-		"weight": 25
+		"weight": 12
 	},
 	{
 		"speciesId": "sealeo",
@@ -981,7 +985,7 @@
 	{
 		"speciesId": "jumpluff",
 		"fastMove": "FAIRY_WIND",
-		"weight": 4
+		"weight": 2
 	},
 	{
 		"speciesId": "jumpluff_shadow",
@@ -1046,7 +1050,7 @@
 	},
 	{
 		"speciesId": "stunfisk_galarian",
-		"weight": 38
+		"weight": 35
 	},
 	{
 		"speciesId": "altaria",
@@ -1054,7 +1058,7 @@
 	},
 	{
 		"speciesId": "skarmory",
-		"weight":20
+		"weight":16
 	},
 	{
 		"speciesId": "froslass",
@@ -1069,25 +1073,33 @@
 	{
 		"speciesId": "deoxys_defense",
 		"chargedMoves": ["PSYCHO_BOOST","THUNDERBOLT"],
-		"weight": 8
+		"weight": 4
 	},
 	{
 		"speciesId": "swampert",
 		"chargedMoves": ["HYDRO_CANNON","EARTHQUAKE"],
-		"weight": 26
+		"weight": 24
 	},
 	{
 		"speciesId": "swampert_shadow",
 		"chargedMoves": ["HYDRO_CANNON","EARTHQUAKE"],
-		"weight": 8
+		"weight": 6
 	},
 	{
 		"speciesId": "venusaur",
 		"weight":10
 	},
 	{
+		"speciesId": "toxapex",
+		"weight":8
+	},
+	{
 		"speciesId": "bastiodon",
 		"weight": 12
+	},
+	{
+		"speciesId": "noctowl",
+		"weight": 14
 	},
 	{
 		"speciesId": "bellossom_shadow",
@@ -1139,11 +1151,11 @@
 	},
 	{
 		"speciesId": "scrafty",
-		"weight": 13
+		"weight": 10
 	},
 	{
 		"speciesId": "talonflame",
-		"weight": 11
+		"weight": 7
 	},
 	{
 		"speciesId": "trevenant",
