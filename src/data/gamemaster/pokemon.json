@@ -32717,17 +32717,17 @@
     "speciesName": "Ursaluna",
     "speciesId": "ursaluna",
     "baseStats": {
-		"atk": 243,
-        "def": 181,
+		"atk": 269,
+        "def": 201,
         "hp": 277
     },
     "types": ["ground", "normal"],
-    "fastMoves": ["STRUGGLE"],
-    "chargedMoves": ["STRUGGLE"],
+    "fastMoves": ["TACKLE", "ROCK_SMASH"],
+    "chargedMoves": ["FIRE_PUNCH", "THUNDER_PUNCH", "AERIAL_ACE"],
     "defaultIVs": {
-		"cp500": [5, 7, 15, 9],
-        "cp1500": [14.5, 5, 10, 9],
-        "cp2500": [23.5, 8, 13, 14]
+		"cp500": [4.5, 5, 7, 9],
+        "cp1500": [12, 10, 14, 15],
+        "cp2500": [20.5, 6, 13, 11]
     },
     "level25CP": 2469,
     "tags": ["shadoweligible"],
