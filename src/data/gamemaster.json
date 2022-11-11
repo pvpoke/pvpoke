@@ -33187,7 +33187,8 @@
         },
         "types": ["ground", "normal"],
         "fastMoves": ["TACKLE", "ROCK_SMASH"],
-        "chargedMoves": ["FIRE_PUNCH", "THUNDER_PUNCH", "AERIAL_ACE"],
+        "chargedMoves": ["FIRE_PUNCH", "THUNDER_PUNCH", "AERIAL_ACE", "HIGH_HORSEPOWER"],
+        "eliteMoves": ["HIGH_HORSEPOWER"],
         "defaultIVs": {
             "cp500": [5, 7, 15, 9],
             "cp1500": [14.5, 5, 10, 9],
@@ -33197,7 +33198,7 @@
         "tags": ["shadoweligible"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_TEDDIURSA",
             "parent": "ursaring"
@@ -33212,8 +33213,9 @@
             "hp": 277
         },
         "types": ["ground", "normal"],
-        "fastMoves": ["STRUGGLE"],
-        "chargedMoves": ["STRUGGLE"],
+        "fastMoves": ["TACKLE", "ROCK_SMASH"],
+        "chargedMoves": ["FIRE_PUNCH", "THUNDER_PUNCH", "AERIAL_ACE", "HIGH_HORSEPOWER"],
+        "eliteMoves": ["HIGH_HORSEPOWER"],
         "defaultIVs": {
             "cp500": [5, 7, 15, 9],
             "cp1500": [14.5, 5, 10, 9],
@@ -33222,7 +33224,7 @@
         "tags": ["shadow"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_TEDDIURSA",
             "parent": "ursaring"
