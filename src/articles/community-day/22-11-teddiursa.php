@@ -13,7 +13,7 @@ require_once '../../header.php';
 
 <div class="section article white litwick">
 	<h1>Ursaluna Community Day Guide for PvP</h1>
-	<div class="date">Last updated October 12, 2022</div>
+	<div class="date">Last updated November 11, 2022</div>
 	<img src="<?php echo $WEB_ROOT;?>articles/article-assets/community-day/22-11-teddiursa/banner.jpg" />
 	<p>Teddiursa is moonlighting as a featured Pokemon this Community Day, alongside the debut of Ursaring's new evolution, Ursaluna. This Ground/Normal type can reach a high CP for Master League, but does it have the moves to pull it off? We'll cover Ursaluna's PvP value below as well as tips for evolving. You can find more info on Teddiursa Community Day at the <a href="https://pokemongolive.com/en/post/community-day-november-2022-teddiursa/" target="_blank">Pokemon GO blog</a>. Below are the leagues and IV spreads to look out for, and answers to frequently asked questions.</p>
 
