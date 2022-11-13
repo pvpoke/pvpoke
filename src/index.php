@@ -66,15 +66,15 @@
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/community-day/22-11-teddiursa/">
-				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/community-day/22-11-teddiursa/thumb.jpg">
+			<a href="<?php echo $WEB_ROOT; ?>articles/infographics/22-11-shadow-predictions/">
+				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/infographics/22-11-shadow-predictions/thumb.jpg">
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/community-day/22-11-teddiursa/">Teddiursa Community Day Guide for PvP</a></h4>
-			<div class="date">November 11, 2022</div>
-			<p>Ursulana will be making its debut in Pokemon GO! How does it stand up to the meta and is this bear a necessity for PvP?</p>
-			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Community Day"># Community Day</a><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a></div>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/infographics/22-11-shadow-predictions/">PvPoke's Shadow Crystal Ball</a></h4>
+			<div class="date">November 13, 2022</div>
+			<p>Which Shadow Pokemon could become more relevant for PvP in a future move update or Community Day? Check out this speculative list if you have TM's to spare!</p>
+			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a></div>
 		</div>
 	</div>
 
