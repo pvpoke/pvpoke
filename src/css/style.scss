@@ -2808,6 +2808,31 @@ a.download-csv{
 	}
 }
 
+.ranking-filters{
+
+	.ranking-filter{
+		margin-right: 20px;
+
+		h4{
+			margin: 0 0 5px 0;
+	    	font-size: 12px;
+		}
+
+		.format-select{
+			max-width: None;
+		}
+
+		.sort-button{
+			background: none !important;
+		    font-size: 14px;
+			text-align: left;
+		    margin: 0;
+		    padding: 5px 8px;
+			min-width: 100px;
+		}
+	}
+}
+
 /* Detail tabs */
 
 .detail-tab-nav{
@@ -4997,6 +5022,11 @@ a.pokebattler{
 		margin-bottom: 0;
 	}
 }
+
+@media only screen and (max-width: 480px) {
+	#dev-panel{ display: none; }
+}
+
 
 /* Ad styling and display */
 

@@ -114,7 +114,17 @@ require_once 'header.php';
 
 <h1>Rankings</h1>
 <div class="section league-select-container white">
-	<?php require 'modules/formatselect.php'; ?>
+	<div class="ranking-filters flex">
+		<div class="ranking-filter">
+			<h4>Format</h4>
+			<?php require 'modules/formatselect.php'; ?>
+		</div>
+		<div class="ranking-filter">
+			<h4>Sort By</h4>
+			<button class="button sort-button">Overall</button>
+		</div>
+	</div>
+
 
 	<div class="ranking-categories">
 		<a class="selected" href="#" data="overall" scenario="leads">Overall</a>

@@ -2414,6 +2414,25 @@ a.download-csv {
   margin: 0 0 5px 0;
 }
 
+.ranking-filters .ranking-filter {
+  margin-right: 20px;
+}
+.ranking-filters .ranking-filter h4 {
+  margin: 0 0 5px 0;
+  font-size: 12px;
+}
+.ranking-filters .ranking-filter .format-select {
+  max-width: None;
+}
+.ranking-filters .ranking-filter .sort-button {
+  background: none !important;
+  font-size: 14px;
+  text-align: left;
+  margin: 0;
+  padding: 5px 8px;
+  min-width: 100px;
+}
+
 /* Detail tabs */
 .detail-tab-nav {
   display: none;
@@ -4542,6 +4561,11 @@ a.pokebattler {
   margin-bottom: 0;
 }
 
+@media only screen and (max-width: 480px) {
+  #dev-panel {
+    display: none;
+  }
+}
 /* Ad styling and display */
 #nitro-header-mobile,
 #nitro-body-mobile,
