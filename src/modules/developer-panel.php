@@ -13,7 +13,7 @@
 		<h4>Quick Links</h4>
 		<a class="button" href="<?php echo $WEB_ROOT; ?>ranker.php">Ranker</a>
 		<a class="button" href="<?php echo $WEB_ROOT; ?>rankersandbox.php">Rankersandbox</a>
-		<a class="button" href="<?php echo $WEB_ROOT; ?>/data/overrideEditor.php">Override Editor</a>
+		<a class="button" href="<?php echo $WEB_ROOT; ?>data/overrideEditor.php">Override Editor</a>
 		<a class="button dev-production-link" href="#">Open page in production</a>
 	</div>
 </div>
