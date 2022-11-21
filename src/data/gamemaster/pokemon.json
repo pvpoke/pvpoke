@@ -24000,7 +24000,11 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
-    "released": true
+    "released": true,
+	"family": {
+        "id": "FAMILY_DEERLING",
+        "evolutions": ["sawsbuck"]
+    }
 }, {
     "dex": 586,
     "speciesId": "sawsbuck",
