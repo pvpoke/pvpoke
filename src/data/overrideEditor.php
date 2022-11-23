@@ -17,7 +17,8 @@ require_once '../header.php';
 		<button class="import-movesets" style="margin-left: 15px;">Import League Movesets</button>
 		<button class="clear-weights" style="margin-left: 15px;">Clear Weights</button>
 	</div>
-
+	<hr></hr>
+	<br>
 	<div class="poke-search-container">
 		<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />
 		<a href="#" class="search-info" title="Search Help">?</a>
@@ -33,7 +34,8 @@ require_once '../header.php';
 	<div class="rankings-container clear"></div>
 </div>
 
-<a href="#" class="button export-json">Export JSON</a>
+<textarea class="import" style="width:100%; height: 150px; padding: 10px;"></textarea>
+<div class="button copy export-json">Copy</div>
 
 <?php require_once '../modules/search-string-help.php'; ?>
 

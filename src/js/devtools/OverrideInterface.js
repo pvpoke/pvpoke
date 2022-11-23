@@ -133,9 +133,13 @@ var InterfaceMaster = (function () {
 
 				// If search string exists, process it
 
-				if($(".poke-search").val() != ''){
-					$(".poke-search").trigger("keyup");
+				if($(".poke-search").first().val() != ''){
+					$(".poke-search").first().trigger("keyup");
 				}
+
+				var json = JSON.stringify(data);
+
+				$("textarea.import").html(json);
 			}
 
 			// Sorty alphabetically or by weight
@@ -372,9 +376,10 @@ var InterfaceMaster = (function () {
 			$(".export-json").click(function(e){
 				e.preventDefault();
 
-				var json = JSON.stringify(data);
-
-				console.log(json);
+				var el = $(e.target).prev()[0];
+				el.focus();
+				el.setSelectionRange(0, el.value.length);
+				document.execCommand("copy");
 			});
 		};
 

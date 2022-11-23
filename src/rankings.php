@@ -72,9 +72,9 @@ switch($cup){
 		break;
 
 	case "factions":
-	case "primeval":
-	case "sorcerousfactions":
-	case "timelessfactions":
+	case "factionsgreat":
+	case "factionsultra":
+	case "factionsmaster":
 		$league = 'Silph Factions';
 		break;
 

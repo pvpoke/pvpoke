@@ -55,6 +55,35 @@
 		"showMeta": true
 	},
 	{
+		"title": "Silph Factions (Great League)",
+		"cup": "factionsgreat",
+		"cp": 1500,
+		"meta": "great",
+		"showCup": false,
+		"showFormat": true,
+		"showMeta": false,
+		"hideRankings": true
+	},
+	{
+		"title": "Silph Factions (Ultra League)",
+		"cup": "factionsultra",
+		"cp": 2500,
+		"meta": "ultra",
+		"showCup": false,
+		"showFormat": true,
+		"showMeta": false,
+		"hideRankings": true
+	},
+	{
+		"title": "Silph Factions (Master League)",
+		"cup": "factionsmaster",
+		"cp": 10000,
+		"meta": "masterfactions",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
 		"title": "GO Stadium Cliffhanger",
 		"cup": "cliffhanger",
 		"cp": 1500,
