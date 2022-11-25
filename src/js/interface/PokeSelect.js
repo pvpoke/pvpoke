@@ -1142,6 +1142,6 @@ function PokeSelect(element, i){
 	$el.find("a.search-info").click(function(e){
 		e.preventDefault();
 
-		modalWindow("Search Strings", $el.find(".pokeselector-search-help"));
+		modalWindow("Keyboard Commands", $el.find(".pokeselector-search-help"));
 	});
 }

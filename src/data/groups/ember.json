@@ -3,6 +3,10 @@
     "fastMove": "POISON_JAB",
     "chargedMoves": ["AQUA_TAIL", "ICE_BEAM"]
 }, {
+    "speciesId": "qwilfish_hisuian",
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["AQUA_TAIL", "ICE_BEAM"]
+}, {
     "speciesId": "marowak_alolan",
     "fastMove": "FIRE_SPIN",
     "chargedMoves": ["SHADOW_BONE", "BONE_CLUB"]
@@ -76,7 +80,7 @@
     "chargedMoves": ["ACROBATICS", "ENERGY_BALL"]
 }, {
     "speciesId": "hippowdon",
-    "fastMove": "FIRE_FANG",
+    "fastMove": "ICE_FANG",
     "chargedMoves": ["WEATHER_BALL_ROCK", "EARTH_POWER"]
 }, {
     "speciesId": "poliwrath",
