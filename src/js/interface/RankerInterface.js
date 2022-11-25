@@ -34,7 +34,22 @@ var InterfaceMaster = (function () {
 					}
 				});
 
+				self.loadGetData();
+
 			};
+
+			// Given JSON of get parameters, load these settings
+
+			this.loadGetData = function(){
+
+				if(! get){
+					return false;
+				}
+
+				$(".format-select option[cup='"+get["cup"]+"'][value="+get["cp"]+"]").prop("selected", "selected");
+
+				$(".format-select").trigger("change");
+			}
 
 			// Event handler for changing the league select
 

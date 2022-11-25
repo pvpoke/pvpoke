@@ -10,6 +10,8 @@ require_once '../header.php';
 <div class="section league-select-container white">
 	<?php require '../modules/formatselect.php'; ?>
 
+	<a class="ranker-link" style="margin-left: 20px;" href="#">Ranker &rarr;</a>
+
 	<p style="margin-top: 10px;">Select a format to edit the moveset and weighting overrides.</p>
 
 	<div class="override-controls flex" style="margin-bottom: 20px;">
