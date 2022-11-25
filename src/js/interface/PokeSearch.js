@@ -28,7 +28,10 @@ var pokeSearch = new function(){
 
 	$("a.search-info").click(function(e){
 		e.preventDefault();
-		modalWindow("Search Strings", $(".sandbox-search-strings"));
+
+		if($(this).attr("context") != "pokeselect"){
+			modalWindow("Search Strings", $(".sandbox-search-strings"));
+		}
 	});
 
 	// Open trait search

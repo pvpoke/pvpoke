@@ -288,6 +288,19 @@ function PokeMultiSelect(element){
 			self.updateListDisplay();
 
 		});
+
+
+		// Keyboard shortcuts for entering a Pokemon
+
+		$(".modal .poke-search").keypress(function(e){
+
+			if(e.which == 13){
+				// Open Pokeselect for first visible Pokemon
+				$(".modal .button.save-poke").trigger("click");
+
+				$el.find(".add-poke-btn").focus();
+			}
+		});
 	}
 
 

@@ -115,6 +115,31 @@
         "partySize": 3,
         "presetOnly": true
     }, {
+        "name": "ember",
+        "title": "Silph Factions (Ember)",
+        "include": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["electric", "fire", "grass", "ground"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["muk_alolan", "qwilfish_hisuian", "honchkrow", "machamp", "malamar", "poliwrath", "primeape", "sirfetchd"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "name": "Tag",
+            "values": ["shadow", "mega"]
+        }, {
+            "filterType": "type",
+            "name": "Type",
+            "values": ["dragon", "rock", "steel"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["swampert", "whiscash", "quagsire", "marshtomp", "gastrodon", "seismitoad", "palpitoad", "abomasnow", "diggersby", "dugtrio", "lanturn", "nidoqueen", "ninetales", "pachirisu", "salazzle", "stunfisk", "whimsicott"]
+        }]
+    }, {
         "name": "factionsgreat",
         "title": "Silph Factions (Great League)",
         "include": [],
@@ -149,6 +174,9 @@
         "exclude": [{
             "filterType": "tag",
             "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["solgaleo", "lunala"]
         }],
         "tierRules": {
             "max": 8,
@@ -312,6 +340,14 @@
         "cup": "factionsmaster",
         "cp": 10000,
         "meta": "masterfactions",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Silph Factions (Ember)",
+        "cup": "ember",
+        "cp": 1500,
+        "meta": "ember",
         "showCup": true,
         "showFormat": true,
         "showMeta": true

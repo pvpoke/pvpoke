@@ -34,32 +34,14 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.29.14 (November 5, 2022)</h4>
+	<h4>v1.29.15 (November 25, 2022)</h4>
 	<ul>
-		<li>Custom Ranking updates:</li>
+		<li>Added keyboard commands for Pokemon select search:</li>
 		<ul>
-			<li>The "Species" filter can now import a Pokemon list from a custom group you have made and saved elsewhere on the site.</li>
-			<li>Custom Rankings now use the league default movesets instead of generating movesets from scratch. (You can still provide moveset overrides.)</li>
-			<ul>
-				<li>In general, this should save time checking custom ranking results for the correct movesets.</li>
-				<li>You can disable this feature per cup. Generated movesets may work better for small cups where off-meta movesets are more likely.</li>
-			</ul>
-			<li>You can now specify a Ranking Weight Multiplier per Pokemon in the Moveset Overrides section. Use this to increase the weighting applied to any meta defining Pokemon in your cup and generate more fine-tuned results.</li>
+			<li>Up Arrow: Navigate up the Pokemon list alphabetically.</li>
+			<li>Down Arrow: Navigate down the Pokemon list alphabetically.</li>
+			<li>Enter: In Multi-Select screens, adds the currently selected Pokemon. You can press enter again to open a new Add Pokemon window.</li>
 		</ul>
-	</ul>
-
-	<h4>v1.29.13 (November 3, 2022)</h4>
-	<ul>
-		<li>Matrix Battle updates:</li>
-		<ul>
-			<li>Wins that change to ties and ties that change to losses are now shown as differences in Matrix Battle.</li>
-			<li>Added a "swap" button above Matrix Battle selections to quickly swap Pokemon groups between the left and right sides.</li>
-			<li>Added a "Duplicate" button when editing a Pokemon in a Matrix Battle list.</li>
-		</ul>
-
-		<li>"Show Move Counts" settings on the rankings page now persists</li>
-		<li>Pokemon can now be selected by dex number.</li>
-		<li>Ranking CSV export now contains a dex number column.</li>
 	</ul>
 
 	<h3>Latest Article</h3>

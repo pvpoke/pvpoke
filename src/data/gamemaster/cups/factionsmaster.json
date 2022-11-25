@@ -11,6 +11,9 @@
 	"exclude": [{
 		"filterType": "tag",
 		"values": ["mega"]
+	}, {
+		"filterType": "id",
+		"values": ["solgaleo", "lunala"]
 	}],
 	"tierRules": {
 		"max": 8,

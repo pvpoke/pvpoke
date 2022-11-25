@@ -62,6 +62,8 @@ var InterfaceMaster = (function () {
 
 				loadOverrides();
 
+				$("a.rankersandbox-link").attr("href", webRoot+"rankersandbox.php?cup="+cup+"&cp="+cp);
+				$("a.rankings-link").attr("href", webRoot+"rankings/"+cup+"/"+cp+"/overall/");
 			}
 
 			// Load overrides for the currently selected league and cup

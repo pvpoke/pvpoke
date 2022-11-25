@@ -273,6 +273,16 @@ header {
 .poke button.auto-select {
   font-size: 11px;
 }
+.poke .poke-search-container {
+  width: 100%;
+  align-items: center;
+}
+.poke .poke-search-container .poke-search {
+  margin: 0;
+}
+.poke .poke-search-container a.search-info {
+  line-height: 16px;
+}
 .poke .poke-stats {
   box-sizing: border-box;
   border-radius: 8px;
@@ -3981,6 +3991,9 @@ a.pokebattler {
   }
   .poke .poke-stats .stat-container .bar-back {
     width: 60px;
+  }
+  .poke a.search-info {
+    display: none;
   }
 
   .modal .poke {

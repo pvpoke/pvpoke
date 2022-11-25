@@ -333,7 +333,7 @@ var InterfaceMaster = (function () {
 				var rankings = [];
 				var cup = battle.getCup();
 
-				var key = cup.name + "overall" + battle.getCP();
+				var key = "all" + "overall" + battle.getCP();
 
 				if(gm.rankings[key]){
 					rankings = [gm.rankings[key]][0]; // Wrapped in an array for weird reasons
