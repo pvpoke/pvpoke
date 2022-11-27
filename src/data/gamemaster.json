@@ -267,6 +267,31 @@
             "values": ["mega"]
         }],
         "partySize": 3
+    }, {
+        "name": "vanguard",
+        "title": "Silph Factions (Vanguard)",
+        "include": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["dragon", "fighting", "flying", "ghost", "ground", "ice", "poison", "rock", "water"]
+        }],
+        "exclude": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["dark", "fairy", "steel"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["abomasnow", "trevenant", "altaria", "lanturn", "medicham"]
+        }, {
+            "filterType": "tag",
+            "name": "Tag",
+            "values": ["alolan", "galarian", "hisuian", "mega"]
+        }, {
+            "filterType": "dex",
+            "name": "Pokedex Number",
+            "values": [722, 898]
+        }]
     }],
     "formats": [{
         "title": "Master League (Classic)",
@@ -348,6 +373,14 @@
         "cup": "ember",
         "cp": 1500,
         "meta": "ember",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Silph Factions (Vanguard)",
+        "cup": "vanguard",
+        "cp": 1500,
+        "meta": "vanguard",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
