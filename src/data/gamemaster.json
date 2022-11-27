@@ -15114,7 +15114,7 @@
             "cp1500": [25.5, 4, 13, 12],
             "cp2500": [50, 15, 15, 15]
         },
-        "tags": ["shadoweligible", "shadow"],
+        "tags": ["shadoweligible", "shadow", "include1500"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -30632,7 +30632,8 @@
             "cp1500": [15, 4, 11, 13],
             "cp2500": [25, 4, 9, 14]
         },
-        "tags": ["legendary"],
+        "tags": ["legendary", "include1500"],
+        "levelFloor": 15,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
