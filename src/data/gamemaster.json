@@ -189,6 +189,23 @@
             }]
         }
     }, {
+        "name": "fightingremix",
+        "title": "Fighting Cup Remix",
+        "include": [{
+            "filterType": "type",
+            "values": ["fighting"]
+        }],
+        "exclude": [{
+            "filterType": "type",
+            "values": ["psychic"]
+        }, {
+            "filterType": "id",
+            "values": ["hakamo_o", "kommo_o", "buzzwole", "sneasler"]
+        }, {
+            "filterType": "tag",
+            "values": ["mega"]
+        }]
+    }, {
         "name": "gobattleleague",
         "title": "GO Battle League",
         "include": [],
@@ -226,6 +243,24 @@
         }],
         "partySize": 3,
         "levelCap": 40
+    }, {
+        "name": "remix",
+        "title": "Remix",
+        "include": [],
+        "exclude": [{
+            "filterType": "id",
+            "values": ["venusaur", "nidoqueen", "ninetales_alolan", "lickitung", "lanturn", "azumarill", "umbreon", "skarmory", "swampert", "sableye", "medicham", "altaria", "walrein", "registeel", "deoxys_defense", "bastiodon", "scrafty", "stunfisk_galarian", "talonflame", "trevenant"],
+            "leagues": [1500]
+        }, {
+            "filterType": "id",
+            "values": ["venusaur", "muk_alolan", "umbreon", "swampert", "empoleon", "togekiss", "giratina_altered", "cresselia", "talonflame", "obstagoon"],
+            "leagues": [2500]
+        }, {
+            "filterType": "tag",
+            "values": ["mega"]
+        }],
+        "partySize": 3,
+        "presetOnly": true
     }, {
         "name": "vanguard",
         "title": "Silph Factions (Vanguard)",
@@ -292,6 +327,22 @@
         "meta": "masterpremierclassic",
         "showCup": false,
         "showFormat": false,
+        "showMeta": true
+    }, {
+        "title": "Great League Remix",
+        "cup": "remix",
+        "cp": 1500,
+        "meta": "remix",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Fighting Cup Remix",
+        "cup": "fightingremix",
+        "cp": 1500,
+        "meta": "fightingremix",
+        "showCup": true,
+        "showFormat": true,
         "showMeta": true
     }, {
         "title": "Silph Factions (Great League)",
