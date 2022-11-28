@@ -19,10 +19,6 @@
     "fastMove": "ICE_SHARD",
     "chargedMoves": ["ICY_WIND", "WATER_PULSE"]
 }, {
-    "speciesId": "swoobat",
-    "fastMove": "CONFUSION",
-    "chargedMoves": ["PSYCHIC_FANGS", "AERIAL_ACE"]
-}, {
     "speciesId": "dragonite",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["DRAGON_CLAW", "SUPER_POWER"]
@@ -54,7 +50,7 @@
 }, {
     "speciesId": "aurorus",
     "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["WEATHER_BALL_ICE", "THUNDERBOLT"]
+    "chargedMoves": ["WEATHER_BALL_ICE", "METEOR_BEAM"]
 }, {
     "speciesId": "dragalge",
     "fastMove": "DRAGON_TAIL",
@@ -92,6 +88,10 @@
     "speciesId": "pelipper",
     "fastMove": "WING_ATTACK",
     "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
+}, {
+    "speciesId": "mantine",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["BUBBLE_BEAM", "ICE_BEAM"]
 }, {
     "speciesId": "machamp",
     "fastMove": "COUNTER",
