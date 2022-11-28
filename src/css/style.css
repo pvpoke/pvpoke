@@ -90,6 +90,7 @@ header .menu .parent-menu {
   justify-content: center;
   background: #4b8f56;
   padding: 3px;
+  width: 100%;
 }
 .header-ticker a {
   text-decoration: none;
@@ -3950,6 +3951,7 @@ a.pokebattler {
     position: fixed;
     width: 100%;
     z-index: 50;
+    top: 28px;
   }
   header .title {
     float: none;
@@ -3984,8 +3986,16 @@ a.pokebattler {
     background: #000;
   }
 
+  .header-ticker {
+    position: fixed;
+    z-index: 50;
+  }
+  .header-ticker a {
+    font-size: 11px;
+  }
+
   #main {
-    padding-top: 45px;
+    padding-top: 76px;
   }
   #main > h1 {
     font-size: 26px;
