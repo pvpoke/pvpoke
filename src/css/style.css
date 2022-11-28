@@ -85,6 +85,25 @@ header .menu .parent-menu {
   position: relative;
 }
 
+.header-ticker {
+  display: flex;
+  justify-content: center;
+  background: #4b8f56;
+  padding: 3px;
+}
+.header-ticker a {
+  text-decoration: none;
+  font-size: 13px;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin: 1px 0;
+}
+.header-ticker.old-version {
+  background: #554778;
+}
+
 footer {
   max-width: 800px;
   position: relative;

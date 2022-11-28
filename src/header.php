@@ -121,7 +121,7 @@ if(! isset($OG_IMAGE)){
 	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
 <?php endif; ?>
 
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=151">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=152">
 
 <?php if(strpos($META_TITLE, 'Train') !== false): ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=20">
@@ -195,6 +195,15 @@ if(! isset($OG_IMAGE)){
 </head>
 
 <body>
+	<?php if(strpos($_SERVER['REQUEST_URI'], 'season-13') == false): ?>
+		<div class="header-ticker">
+			<a href="https://pvpoke.com/season-13/rankings/">Preview Season 13 Updates</a>
+		</div>
+	<?php else: ?>
+		<div class="header-ticker old-version">
+			<a href="https://pvpoke.com/rankings/">Return to Season 12</a>
+		</div>
+	<?php endif; ?>
 	<header>
 		<div class="header-wrap">
 			<h1 class="title"><a href="/">PvPoke.com</a></h1>
