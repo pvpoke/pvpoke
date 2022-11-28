@@ -254,15 +254,13 @@
     "weight": 1
 }, {
     "speciesId": "mamoswine",
-    "chargedMoves": ["AVALANCHE", "BULLDOZE"],
-    "weight": 1
-}, {
-    "speciesId": "mamoswine",
-    "chargedMoves": ["AVALANCHE", "BULLDOZE"],
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["AVALANCHE", "HIGH_HORSEPOWER"],
     "weight": 5
 }, {
     "speciesId": "mamoswine_shadow",
-    "chargedMoves": ["AVALANCHE", "BULLDOZE"],
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["HIGH_HORSEPOWER", "AVALANCHE"],
     "weight": 1
 }, {
     "speciesId": "melmetal",
@@ -302,7 +300,7 @@
     "weight": 1
 }, {
     "speciesId": "moltres",
-    "fastMove": "FIRE_SPIN",
+    "fastMove": "WING_ATTACK",
     "chargedMoves": ["SKY_ATTACK", "OVERHEAT"],
     "weight": 1
 }, {
@@ -405,6 +403,7 @@
 }, {
     "speciesId": "sylveon",
     "fastMove": "CHARM",
+    "chargedMoves": ["MOONBLAST", "PSYSHOCK"],
     "weight": 5
 }, {
     "speciesId": "tapu_bulu",

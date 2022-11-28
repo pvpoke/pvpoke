@@ -313,7 +313,7 @@
     "name": "Charm",
     "abbreviation": "Ch",
     "type": "fairy",
-    "power": 16,
+    "power": 15,
     "energy": 0,
     "energyGain": 6,
     "cooldown": 1500,
@@ -1666,7 +1666,7 @@
     "name": "Poison Fang",
     "type": "poison",
     "power": 40,
-    "energy": 35,
+    "energy": 40,
     "energyGain": 0,
     "cooldown": 500,
     "buffs": [0, -1],
@@ -2624,7 +2624,7 @@
     "type": "flying",
     "power": 5,
     "energy": 0,
-    "energyGain": 7,
+    "energyGain": 8,
     "cooldown": 1000,
     "archetype": "Fast Charge"
 }, {
