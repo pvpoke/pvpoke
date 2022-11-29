@@ -12285,6 +12285,28 @@
         "parent": "grovyle"
     }
 }, {
+    "dex": 254,
+    "speciesName": "Sceptile (Mega)",
+    "speciesId": "sceptile_mega",
+    "baseStats": {
+        "atk": 320,
+        "def": 186,
+        "hp": 172
+    },
+    "types": ["grass", "dragon"],
+    "fastMoves": ["BULLET_SEED", "FURY_CUTTER"],
+    "chargedMoves": ["AERIAL_ACE", "EARTHQUAKE", "LEAF_BLADE", "FRENZY_PLANT", "DRAGON_CLAW"],
+    "tags": ["starter", "mega"],
+    "defaultIVs": {
+		"cp500": [5, 1, 1, 1],
+        "cp1500": [13, 15, 12, 15],
+        "cp2500": [22, 9, 12, 15]
+    },
+    "eliteMoves": ["FRENZY_PLANT"],
+	"buddyDistance": 3,
+    "thirdMoveCost": 10000,
+	"released": true
+}, {
     "dex": 255,
     "speciesName": "Torchic",
     "speciesId": "torchic",
@@ -12362,6 +12384,28 @@
         "id": "FAMILY_TORCHIC",
         "parent": "combusken"
     }
+}, {
+    "dex": 257,
+    "speciesName": "Blaziken (Mega)",
+    "speciesId": "blaziken_mega",
+    "baseStats": {
+        "atk": 329,
+        "def": 168,
+        "hp": 190
+    },
+    "types": ["fire", "fighting"],
+    "fastMoves": ["COUNTER", "FIRE_SPIN"],
+    "chargedMoves": ["BRAVE_BIRD", "FOCUS_BLAST", "OVERHEAT", "STONE_EDGE", "BLAST_BURN", "BLAZE_KICK"],
+    "tags": ["starter", "mega"],
+    "defaultIVs": {
+		"cp500": [5, 1, 1, 1],
+        "cp1500": [13, 12, 10, 12],
+        "cp2500": [22, 6, 10, 12]
+    },
+    "eliteMoves": ["BLAST_BURN", "STONE_EDGE"],
+	"buddyDistance": 3,
+	"thirdMoveCost": 10000,
+	"released": true
 }, {
     "dex": 258,
     "speciesName": "Mudkip",
@@ -12521,6 +12565,29 @@
         "id": "FAMILY_MUDKIP",
         "parent": "marshtomp_shadow"
     }
+}, {
+    "dex": 260,
+    "speciesName": "Swampert (Mega)",
+    "speciesId": "swampert_mega",
+    "baseStats": {
+        "atk": 283,
+        "def": 218,
+        "hp": 225
+    },
+    "types": ["water", "ground"],
+    "fastMoves": ["MUD_SHOT", "WATER_GUN"],
+    "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "SURF", "HYDRO_CANNON", "MUDDY_WATER"],
+    "tags": ["starter", "shadoweligible", "mega"],
+    "defaultIVs": {
+		"cp500": [4.5, 5, 6, 6],
+        "cp1500": [12.5, 7, 13, 7],
+        "cp2500": [21, 5, 5, 14]
+    },
+    "eliteMoves": ["HYDRO_CANNON"],
+    "level25CP": 2796,
+	"buddyDistance": 3,
+	"thirdMoveCost": 10000,
+	"released": true
 }, {
     "dex": 261,
     "speciesName": "Poochyena",
@@ -16087,7 +16154,7 @@
     },
     "types": ["ghost", "none"],
     "fastMoves": ["FEINT_ATTACK", "HEX"],
-    "chargedMoves": ["FIRE_PUNCH", "ICE_PUNCH", "SHADOW_PUNCH"],
+    "chargedMoves": ["FIRE_PUNCH", "ICE_PUNCH", "SHADOW_PUNCH", "POLTERGEIST"],
     "defaultIVs": {
         "cp500": [12, 5, 13, 12],
         "cp1500": [43, 4, 13, 12],
@@ -16115,7 +16182,7 @@
     },
     "types": ["ghost", "none"],
     "fastMoves": ["FEINT_ATTACK", "HEX"],
-    "chargedMoves": ["FIRE_PUNCH", "ICE_PUNCH", "SHADOW_PUNCH"],
+    "chargedMoves": ["FIRE_PUNCH", "ICE_PUNCH", "SHADOW_PUNCH", "POLTERGEIST"],
     "defaultIVs": {
         "cp500": [12, 5, 13, 12],
         "cp1500": [43, 4, 13, 12],
@@ -16318,6 +16385,27 @@
         "id": "FAMILY_SNORUNT",
         "parent": "snorunt"
     }
+}, {
+    "dex": 362,
+    "speciesName": "Glalie (Mega)",
+    "speciesId": "glalie_mega",
+    "baseStats": {
+        "atk": 252,
+        "def": 168,
+        "hp": 190
+    },
+    "types": ["ice", "none"],
+    "fastMoves": ["FROST_BREATH", "ICE_SHARD"],
+    "chargedMoves": ["AVALANCHE", "GYRO_BALL", "SHADOW_BALL"],
+    "defaultIVs": {
+		"cp500": [6, 6, 10, 8],
+        "cp1500": [16.5, 11, 15, 13],
+        "cp2500": [28, 5, 14, 14]
+    },
+    "tags": ["mega"],
+	"buddyDistance": 3,
+    "thirdMoveCost": 50000,
+    "released": true
 }, {
     "dex": 363,
     "speciesName": "Spheal",
@@ -20583,7 +20671,7 @@
     },
     "types": ["ghost", "none"],
     "fastMoves": ["ASTONISH", "HEX"],
-    "chargedMoves": ["DARK_PULSE", "OMINOUS_WIND", "PSYCHIC", "SHADOW_BALL", "POLTERGEIST"],
+    "chargedMoves": ["DARK_PULSE", "OMINOUS_WIND", "PSYCHIC", "SHADOW_BALL"],
     "eliteMoves": ["SHADOW_BALL"],
     "defaultIVs": {
         "cp500": [8, 6, 14, 8],
@@ -20611,7 +20699,7 @@
     },
     "types": ["ghost", "none"],
     "fastMoves": ["ASTONISH", "HEX"],
-    "chargedMoves": ["DARK_PULSE", "OMINOUS_WIND", "PSYCHIC", "SHADOW_BALL", "POLTERGEIST"],
+    "chargedMoves": ["DARK_PULSE", "OMINOUS_WIND", "PSYCHIC", "SHADOW_BALL"],
     "eliteMoves": ["SHADOW_BALL"],
     "defaultIVs": {
         "cp500": [8, 6, 14, 8],

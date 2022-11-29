@@ -141,7 +141,7 @@
 }, {
     "speciesId": "aggron_mega",
     "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["HEAVY_SLAM", "STONE_EDGE"]
+    "chargedMoves": ["HEAVY_SLAM", "METEOR_BEAM"]
 }, {
     "speciesId": "blastoise_mega",
     "fastMove": "WATER_GUN",
@@ -161,5 +161,13 @@
 }, {
     "speciesId": "ampharos_mega",
     "fastMove": "VOLT_SWITCH",
-    "chargedMoves": ["THUNDER_PUNCH", "DRAGON_PULSE"]
+    "chargedMoves": ["BRUTAL_SWING", "ZAP_CANNON"]
+}, {
+    "speciesId": "blaziken_mega",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["BLAZE_KICK", "BLAST_BURN"]
+}, {
+    "speciesId": "sceptile_mega",
+    "fastMove": "BULLET_SEED",
+    "chargedMoves": ["LEAF_BLADE", "EARTHQUAKE"]
 }]
