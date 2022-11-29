@@ -126,10 +126,10 @@
             "floor": 0,
             "tiers": [{
                 "points": 4,
-                "pokemon": ["stunfisk_galarian", "registeel", "bastiodon", "lickitung", "sableye", "trevenant", "altaria", "swampert", "medicham", "nidoqueen", "azumarill", "toxapex"]
+                "pokemon": ["stunfisk_galarian", "registeel", "bastiodon", "lickitung", "sableye", "trevenant", "altaria", "swampert", "medicham", "azumarill", "toxapex", "noctowl"]
             }, {
                 "points": 1,
-                "pokemon": ["ninetales_alolan", "wigglytuff", "venusaur", "umbreon", "mandibuzz", "walrein", "skarmory", "diggersby", "cresselia", "obstagoon", "scrafty", "tapu_fini", "deoxys_defense", "araquanid", "noctowl", "cofagrigus", "runerigus", "lanturn"]
+                "pokemon": ["ninetales_alolan", "wigglytuff", "venusaur", "umbreon", "mandibuzz", "walrein", "skarmory", "diggersby", "cresselia", "obstagoon", "scrafty", "tapu_fini", "deoxys_defense", "araquanid", "cofagrigus", "runerigus", "lanturn", "pelipper", "pidgeot", "aurorus", "nidoqueen"]
             }]
         }
     }, {
@@ -140,7 +140,7 @@
             "values": ["bug", "dark", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water"]
         }, {
             "filterType": "id",
-            "values": ["aggron_mega", "scizor_mega", "blastoise_mega", "steelix_mega", "charizard_mega_x", "altaria_mega", "abomasnow_mega", "venusaur_mega", "alakazam_mega", "beedrill_mega", "pidgeot_mega", "slowbro_mega", "kangaskhan_mega", "aerodactyl_mega", "ampharos_mega", "houndoom_mega", "manectric_mega", "absol_mega", "banette_mega", "lopunny_mega"]
+            "values": ["aggron_mega", "scizor_mega", "blastoise_mega", "steelix_mega", "charizard_mega_x", "altaria_mega", "abomasnow_mega", "venusaur_mega", "alakazam_mega", "beedrill_mega", "pidgeot_mega", "slowbro_mega", "kangaskhan_mega", "aerodactyl_mega", "ampharos_mega", "houndoom_mega", "manectric_mega", "absol_mega", "banette_mega", "lopunny_mega", "glalie_mega"]
         }],
         "exclude": [{
             "filterType": "tag",
@@ -163,7 +163,7 @@
                 "pokemon": ["zekrom", "xerneas", "yveltal", "melmetal", "mew", "charizard_mega_x", "altaria_mega", "abomasnow_mega"]
             }, {
                 "points": 1,
-                "pokemon": ["dragonite", "reshiram", "landorus_therian", "landorus_incarnate", "genesect", "genesect_shock", "genesect_chill", "genesect_burn", "genesect_douse", "venusaur_mega", "alakazam_mega"]
+                "pokemon": ["dragonite", "reshiram", "landorus_therian", "landorus_incarnate", "genesect", "genesect_shock", "genesect_chill", "genesect_burn", "genesect_douse", "venusaur_mega", "alakazam_mega", "blaziken_mega", "sceptile_mega", "pidgeot_mega"]
             }]
         }
     }, {
@@ -185,7 +185,7 @@
                 "pokemon": ["stunfisk_galarian", "registeel", "cobalion", "giratina_altered", "trevenant", "swampert", "cresselia", "talonflame"]
             }, {
                 "points": 1,
-                "pokemon": ["scrafty", "tapu_fini", "cofagrigus", "nidoqueen", "mandibuzz", "umbreon", "walrein", "deoxys_defense", "regirock", "steelix", "buzzwole", "dragonite", "virizion", "ninetales_alolan", "jellicent", "runerigus", "dubwool", "greedent", "kommo_o", "guzzlord", "miltank"]
+                "pokemon": ["scrafty", "tapu_fini", "cofagrigus", "nidoqueen", "mandibuzz", "umbreon", "walrein", "deoxys_defense", "regirock", "steelix", "buzzwole", "dragonite", "virizion", "ninetales_alolan", "jellicent", "runerigus", "dubwool", "greedent", "kommo_o", "guzzlord", "miltank", "pidgeot", "aurorus"]
             }]
         }
     }, {
@@ -276,7 +276,7 @@
         }, {
             "filterType": "id",
             "name": "Species",
-            "values": ["abomasnow", "trevenant", "altaria", "lanturn", "medicham", "sneasler"]
+            "values": ["abomasnow", "trevenant", "altaria", "lanturn", "medicham", "sneasler", "aurorus"]
         }, {
             "filterType": "tag",
             "name": "Tag",
