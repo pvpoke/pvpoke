@@ -9,6 +9,10 @@ RewriteCond %{SCRIPT_FILENAME} !-f
 # RewriteCond %{HTTP_HOST} ^www\.pvpoke\.com [NC]
 # RewriteRule ^(.*)$ https://pvpoke.com/$1 [L,R=301]
 
+# Redirect season-13 links to main site
+
+RewriteRule ^/?season-13/(.*)$ /$1 [R,L]
+
 Options -Indexes
 
 RewriteRule ^unite(.*)$ https://unite.pvpoke.com [R=301,L]
