@@ -28,47 +28,56 @@ var GameMaster = (function () {
 			gmVersion = "gamemaster.min";
 		}
 
-		$.getJSON( webRoot+"data/"+gmVersion+".json?v="+siteVersion, function( data ){
-			object.data = data;
+		$.ajax({
+			dataType: "json",
+			url: webRoot+"data/"+gmVersion+".json?v="+siteVersion,
+			mimeType: "application/json",
+			error: function(request, error) {
+				console.log("Request: " + JSON.stringify(request));
+				console.log(error);
+			},
+			success: function( data ) {
+				object.data = data;
 
-			// Insert cup and format values into cup and format select dropdowns
-			if(typeof updateFormatSelect === "function"){
-				updateFormatSelect(object.data.formats, InterfaceMaster.getInstance());
-			}
-
-			if(typeof updateCupSelect === "function"){
-				updateCupSelect(object.data.formats, InterfaceMaster.getInstance());
-			}
-
-			if(settings.gamemaster == "gamemaster"){
-				// Sort Pokemon alphabetically for searching
-				object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
-
-				InterfaceMaster.getInstance().init(object);
-
-				if(typeof customRankingInterface !== 'undefined'){
-					customRankingInterface.init(object);
+				// Insert cup and format values into cup and format select dropdowns
+				if(typeof updateFormatSelect === "function"){
+					updateFormatSelect(object.data.formats, InterfaceMaster.getInstance());
 				}
-			} else if(settings.gamemaster == "gamemaster-mega"){
-				// Load additional mega pokemon
-				$.getJSON( webRoot+"data/megas.json?v="+siteVersion, function( data ){
 
+				if(typeof updateCupSelect === "function"){
+					updateCupSelect(object.data.formats, InterfaceMaster.getInstance());
+				}
+
+				if(settings.gamemaster == "gamemaster"){
 					// Sort Pokemon alphabetically for searching
-					object.data.pokemon = object.data.pokemon.concat(data);
 					object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
 
 					InterfaceMaster.getInstance().init(object);
-				});
-			} else if(settings.gamemaster == "gamemaster-kalos"){
-				// Load additional mega pokemon
-				$.getJSON( webRoot+"data/kalos.json?v="+siteVersion, function( data ){
 
-					// Sort Pokemon alphabetically for searching
-					object.data.pokemon = object.data.pokemon.concat(data);
-					object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+					if(typeof customRankingInterface !== 'undefined'){
+						customRankingInterface.init(object);
+					}
+				} else if(settings.gamemaster == "gamemaster-mega"){
+					// Load additional mega pokemon
+					$.getJSON( webRoot+"data/megas.json?v="+siteVersion, function( data ){
 
-					InterfaceMaster.getInstance().init(object);
-				});
+						// Sort Pokemon alphabetically for searching
+						object.data.pokemon = object.data.pokemon.concat(data);
+						object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+
+						InterfaceMaster.getInstance().init(object);
+					});
+				} else if(settings.gamemaster == "gamemaster-kalos"){
+					// Load additional mega pokemon
+					$.getJSON( webRoot+"data/kalos.json?v="+siteVersion, function( data ){
+
+						// Sort Pokemon alphabetically for searching
+						object.data.pokemon = object.data.pokemon.concat(data);
+						object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+
+						InterfaceMaster.getInstance().init(object);
+					});
+				}
 			}
 		});
 
