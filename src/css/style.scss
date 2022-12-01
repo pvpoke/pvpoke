@@ -4274,7 +4274,7 @@ a.pokebattler{
 		position:fixed;
 		width:100%;
 		z-index:50;
-		top: 28px;
+		//top: 28px;
 
 		.title{
 			float:none;
@@ -4323,8 +4323,8 @@ a.pokebattler{
 	}
 
 	#main{
-		//padding-top:45px;
-		padding-top:76px;
+		padding-top:45px;
+		//padding-top:76px;
 
 		& > h1{
 		font-size:26px;
