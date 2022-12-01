@@ -26,11 +26,19 @@ var InterfaceMaster = (function () {
 				battle = new Battle();
 
 				// Load initial overrides
-
-				$.getJSON( webRoot+"data/overrides/all/1500.json?v="+siteVersion, function( data ){
-					if(ranker.setMoveOverrides){
-						ranker.setMoveOverrides(1500, "all", data);
-						console.log("Ranking overrides loaded [" + data.length + "]");
+				$.ajax({
+					dataType: "json",
+					url: webRoot + "data/overrides/all/1500.json?v=" + siteVersion,
+					mimeType: "application/json",
+					success: function(data) {
+						if (ranker.setMoveOverrides) {
+							ranker.setMoveOverrides(1500, "all", data);
+							console.log("Ranking overrides loaded [" + data.length + "]");
+						}
+					},
+					error: function(request, error) {
+						console.log("Request: " + JSON.stringify(request));
+						console.log(error);
 					}
 				});
 

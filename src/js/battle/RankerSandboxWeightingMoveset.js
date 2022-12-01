@@ -91,7 +91,7 @@ var RankerMaster = (function () {
 
 				}
 
-				console.log("List generated in: " + (Date.now() - startTime));
+				console.log("List generated in: " + (Date.now() - startTime) + "ms");
 
 			}
 

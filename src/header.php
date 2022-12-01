@@ -80,13 +80,13 @@ if(! isset($_COOKIE['migrate'])){
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php
 if(! isset($META_TITLE)){
-	$META_TITLE = 'PvPoke | Open-Source Battle Simulator, Rankings &amp; Team Building for Pokemon GO PvP';
+	$META_TITLE = 'PvPoke | Open-Source Battle Simulator, Rankings &amp; Team Building for Pokémon GO PvP';
 } else{
 	$META_TITLE = $META_TITLE . ' | PvPoke';
 }
 
 if(! isset($META_DESCRIPTION)){
-	$META_DESCRIPTION = 'Looking for an edge in Pokemon GO Trainer Battles? Become a master with our open-source Pokemon battle simulator, explore the top Pokemon rankings, and get your team rated for PvP battles.';
+	$META_DESCRIPTION = 'Looking for an edge in Pokémon GO Trainer Battles? Become a master with our open-source Pokémon battle simulator, explore the top Pokémon rankings, and get your team rated for PvP battles.';
 }
 
 if(! isset($OG_IMAGE)){
@@ -210,7 +210,7 @@ if(! isset($OG_IMAGE)){
 
 	<header>
 		<div class="header-wrap">
-			<h1 class="title"><a href="/">PvPoke.com</a></h1>
+			<h1 class="title"><a href="<?php echo $WEB_ROOT; ?>/">PvPoke.com</a></h1>
 			<div class="hamburger">
 				<!--Because I'm too lazy to make a graphic-->
 				<div class="meat"></div>
