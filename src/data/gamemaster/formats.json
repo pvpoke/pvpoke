@@ -28,15 +28,6 @@
 		"showMeta": true
 	},
 	{
-		"title": "Premier Classic (Ultra League)",
-		"cup": "premierclassic",
-		"cp": 2500,
-		"meta": "ultrapremierclassic",
-		"showCup": false,
-		"showFormat": false,
-		"showMeta": true
-	},
-	{
 		"title": "Premier Classic (Master League)",
 		"cup": "premierclassic",
 		"cp": 10000,
@@ -59,6 +50,15 @@
 		"cup": "fightingremix",
 		"cp": 1500,
 		"meta": "fightingremix",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Premier Classic (Ultra League)",
+		"cup": "premierclassic",
+		"cp": 2500,
+		"meta": "ultrapremierclassic",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true

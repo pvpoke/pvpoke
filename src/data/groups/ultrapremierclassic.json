@@ -8,12 +8,9 @@
     "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"]
 }, {
     "speciesId": "charizard",
-    "fastMove": "FIRE_SPIN",
-    "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"]
-}, {
-    "speciesId": "crobat",
-    "fastMove": "AIR_SLASH",
-    "chargedMoves": ["POISON_FANG", "SHADOW_BALL"]
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"],
+    "shadowType": "shadow"
 }, {
     "speciesId": "dragonite",
     "fastMove": "DRAGON_BREATH",
@@ -106,9 +103,14 @@
     "chargedMoves": ["BODY_SLAM", "SUPER_POWER"],
     "shadowType": "shadow"
 }, {
+    "speciesId": "steelix",
+    "fastMove": "DRAGON_TAIL",
+    "chargedMoves": ["CRUNCH", "PSYCHIC_FANGS"]
+}, {
     "speciesId": "swampert",
     "fastMove": "MUD_SHOT",
-    "chargedMoves": ["HYDRO_CANNON", "SLUDGE_WAVE"]
+    "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"],
+    "shadowType": "shadow"
 }, {
     "speciesId": "swampert",
     "fastMove": "MUD_SHOT",
@@ -142,7 +144,11 @@
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
 }, {
-    "speciesId": "steelix",
-    "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["CRUNCH", "PSYCHIC_FANGS"]
+    "speciesId": "sylveon",
+    "fastMove": "QUICK_ATTACK",
+    "chargedMoves": ["MOONBLAST", "PSYSHOCK"]
+}, {
+    "speciesId": "overqwil",
+    "fastMove": "POISON_JAB",
+    "chargedMoves": ["AQUA_TAIL", "SHADOW_BALL"]
 }]
