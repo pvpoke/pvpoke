@@ -1715,7 +1715,8 @@ select, input{
 
 		.breakpoints-section,
 		.matchup-detail-section,
-		.cmp-section{
+		.cmp-section,
+		.optimal-timing-section{
 			max-width:340px;
 			margin: 0 auto 35px auto;
 
@@ -1741,6 +1742,60 @@ select, input{
 				border: none;
 				background:$color-off-black !important;
 				color:$color-off-white;
+			}
+
+			.optimal-timing-timeline{
+				width: 100%;
+				margin: 1em auto 0 auto;
+				background: rgba(255, 255, 255, 0.5);
+				height: 80px;
+				border-radius:8px;
+				border:1px solid #000;
+				position:relative;
+				overflow:hidden;
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
+
+				.timeline{
+					display: flex;
+					border: none;
+					width: 100%;
+					margin: 0px !important;
+
+					&:first-of-type{
+						margin-top: 15px !important;
+					}
+
+					&:last-of-type{
+						margin-bottom: 15px !important;
+					}
+
+					.item{
+						display: flex;
+						height: 20px;
+						border: 1px solid #000;
+						box-sizing: border-box;
+
+						&.fade{
+							opacity: 0.4;
+
+							.chunk{
+								border: 1px dashed rgba(0,0,0,0.25);
+							}
+						}
+
+						.chunk{
+							flex: 1;
+							border: 1px dashed rgba(0,0,0,0.125);
+							box-sizing:border-box;
+						}
+					}
+				}
+			}
+
+			.optimal-1, .optimal-2, .optimal-3{
+				font-weight: bold;
 			}
 		}
 

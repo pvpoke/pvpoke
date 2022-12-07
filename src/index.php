@@ -34,14 +34,9 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.29.15 (November 25, 2022)</h4>
+	<h4>v1.29.18 (December 7, 2022)</h4>
 	<ul>
-		<li>Added keyboard commands for Pokemon select search:</li>
-		<ul>
-			<li>Up Arrow: Navigate up the Pokemon list alphabetically.</li>
-			<li>Down Arrow: Navigate down the Pokemon list alphabetically.</li>
-			<li>Enter: In Multi-Select screens, adds the currently selected Pokemon. You can press enter again to open a new Add Pokemon window.</li>
-		</ul>
+		<li>Individual battle results now have an "Optimal Move Timing" details section that illustrates when to perform the most optimal Charged Move timing against the opponent.</li>
 	</ul>
 
 	<h3>Latest Article</h3>

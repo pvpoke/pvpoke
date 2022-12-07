@@ -193,6 +193,19 @@ require_once 'header.php';
 					</table>
 				</div>
 
+				<h2 class="center">Optimal Move Timing</h2>
+
+				<div class="optimal-timing-section">
+					<div class="optimal-timing-timeline">
+						<div class="timeline"></div>
+						<div class="timeline"></div>
+					</div>
+
+					<p class="timing-none">Optimal Charged Move timing isn't applicable for <span class="name-attacker">Pokemon</span> in this matchup.</p>
+
+					<p class="timing-most-optimal">When Fast Moves align, <span class="name-attacker">Pokemon</span> should throw its Charged Moves after <span class="optimal-1"></span>, <span class="optimal-2"></span>, or <span class="optimal-3"></span> Fast Moves for the most optimal timing.</p>
+				</div>
+
 				<h2 class="center">Battle Stats</h2>
 
 				<table class="stats-table" cellspacing="0">

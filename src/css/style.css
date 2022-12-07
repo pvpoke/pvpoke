@@ -1405,24 +1405,30 @@ select, input {
 }
 .battle-results .battle-details .breakpoints-section,
 .battle-results .battle-details .matchup-detail-section,
-.battle-results .battle-details .cmp-section, .battle-results.matrix .breakpoints-section,
+.battle-results .battle-details .cmp-section,
+.battle-results .battle-details .optimal-timing-section, .battle-results.matrix .breakpoints-section,
 .battle-results.matrix .matchup-detail-section,
-.battle-results.matrix .cmp-section {
+.battle-results.matrix .cmp-section,
+.battle-results.matrix .optimal-timing-section {
   max-width: 340px;
   margin: 0 auto 35px auto;
 }
 .battle-results .battle-details .breakpoints-section .bold,
 .battle-results .battle-details .matchup-detail-section .bold,
-.battle-results .battle-details .cmp-section .bold, .battle-results.matrix .breakpoints-section .bold,
+.battle-results .battle-details .cmp-section .bold,
+.battle-results .battle-details .optimal-timing-section .bold, .battle-results.matrix .breakpoints-section .bold,
 .battle-results.matrix .matchup-detail-section .bold,
-.battle-results.matrix .cmp-section .bold {
+.battle-results.matrix .cmp-section .bold,
+.battle-results.matrix .optimal-timing-section .bold {
   font-weight: bold;
 }
 .battle-results .battle-details .breakpoints-section .ivs .button,
 .battle-results .battle-details .matchup-detail-section .ivs .button,
-.battle-results .battle-details .cmp-section .ivs .button, .battle-results.matrix .breakpoints-section .ivs .button,
+.battle-results .battle-details .cmp-section .ivs .button,
+.battle-results .battle-details .optimal-timing-section .ivs .button, .battle-results.matrix .breakpoints-section .ivs .button,
 .battle-results.matrix .matchup-detail-section .ivs .button,
-.battle-results.matrix .cmp-section .ivs .button {
+.battle-results.matrix .cmp-section .ivs .button,
+.battle-results.matrix .optimal-timing-section .ivs .button {
   font-size: 14px;
   margin: 0;
   padding: 5px;
@@ -1432,9 +1438,11 @@ select, input {
 }
 .battle-results .battle-details .breakpoints-section .golden-combination .button,
 .battle-results .battle-details .matchup-detail-section .golden-combination .button,
-.battle-results .battle-details .cmp-section .golden-combination .button, .battle-results.matrix .breakpoints-section .golden-combination .button,
+.battle-results .battle-details .cmp-section .golden-combination .button,
+.battle-results .battle-details .optimal-timing-section .golden-combination .button, .battle-results.matrix .breakpoints-section .golden-combination .button,
 .battle-results.matrix .matchup-detail-section .golden-combination .button,
-.battle-results.matrix .cmp-section .golden-combination .button {
+.battle-results.matrix .cmp-section .golden-combination .button,
+.battle-results.matrix .optimal-timing-section .golden-combination .button {
   display: inline-block;
   font-size: 14px;
   padding: 5px 15px;
@@ -1443,6 +1451,117 @@ select, input {
   border: none;
   background: #333 !important;
   color: #eee;
+}
+.battle-results .battle-details .breakpoints-section .optimal-timing-timeline,
+.battle-results .battle-details .matchup-detail-section .optimal-timing-timeline,
+.battle-results .battle-details .cmp-section .optimal-timing-timeline,
+.battle-results .battle-details .optimal-timing-section .optimal-timing-timeline, .battle-results.matrix .breakpoints-section .optimal-timing-timeline,
+.battle-results.matrix .matchup-detail-section .optimal-timing-timeline,
+.battle-results.matrix .cmp-section .optimal-timing-timeline,
+.battle-results.matrix .optimal-timing-section .optimal-timing-timeline {
+  width: 100%;
+  margin: 1em auto 0 auto;
+  background: rgba(255, 255, 255, 0.5);
+  height: 80px;
+  border-radius: 8px;
+  border: 1px solid #000;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.battle-results .battle-details .breakpoints-section .optimal-timing-timeline .timeline,
+.battle-results .battle-details .matchup-detail-section .optimal-timing-timeline .timeline,
+.battle-results .battle-details .cmp-section .optimal-timing-timeline .timeline,
+.battle-results .battle-details .optimal-timing-section .optimal-timing-timeline .timeline, .battle-results.matrix .breakpoints-section .optimal-timing-timeline .timeline,
+.battle-results.matrix .matchup-detail-section .optimal-timing-timeline .timeline,
+.battle-results.matrix .cmp-section .optimal-timing-timeline .timeline,
+.battle-results.matrix .optimal-timing-section .optimal-timing-timeline .timeline {
+  display: flex;
+  border: none;
+  width: 100%;
+  margin: 0px !important;
+}
+.battle-results .battle-details .breakpoints-section .optimal-timing-timeline .timeline:first-of-type,
+.battle-results .battle-details .matchup-detail-section .optimal-timing-timeline .timeline:first-of-type,
+.battle-results .battle-details .cmp-section .optimal-timing-timeline .timeline:first-of-type,
+.battle-results .battle-details .optimal-timing-section .optimal-timing-timeline .timeline:first-of-type, .battle-results.matrix .breakpoints-section .optimal-timing-timeline .timeline:first-of-type,
+.battle-results.matrix .matchup-detail-section .optimal-timing-timeline .timeline:first-of-type,
+.battle-results.matrix .cmp-section .optimal-timing-timeline .timeline:first-of-type,
+.battle-results.matrix .optimal-timing-section .optimal-timing-timeline .timeline:first-of-type {
+  margin-top: 15px !important;
+}
+.battle-results .battle-details .breakpoints-section .optimal-timing-timeline .timeline:last-of-type,
+.battle-results .battle-details .matchup-detail-section .optimal-timing-timeline .timeline:last-of-type,
+.battle-results .battle-details .cmp-section .optimal-timing-timeline .timeline:last-of-type,
+.battle-results .battle-details .optimal-timing-section .optimal-timing-timeline .timeline:last-of-type, .battle-results.matrix .breakpoints-section .optimal-timing-timeline .timeline:last-of-type,
+.battle-results.matrix .matchup-detail-section .optimal-timing-timeline .timeline:last-of-type,
+.battle-results.matrix .cmp-section .optimal-timing-timeline .timeline:last-of-type,
+.battle-results.matrix .optimal-timing-section .optimal-timing-timeline .timeline:last-of-type {
+  margin-bottom: 15px !important;
+}
+.battle-results .battle-details .breakpoints-section .optimal-timing-timeline .timeline .item,
+.battle-results .battle-details .matchup-detail-section .optimal-timing-timeline .timeline .item,
+.battle-results .battle-details .cmp-section .optimal-timing-timeline .timeline .item,
+.battle-results .battle-details .optimal-timing-section .optimal-timing-timeline .timeline .item, .battle-results.matrix .breakpoints-section .optimal-timing-timeline .timeline .item,
+.battle-results.matrix .matchup-detail-section .optimal-timing-timeline .timeline .item,
+.battle-results.matrix .cmp-section .optimal-timing-timeline .timeline .item,
+.battle-results.matrix .optimal-timing-section .optimal-timing-timeline .timeline .item {
+  display: flex;
+  height: 20px;
+  border: 1px solid #000;
+  box-sizing: border-box;
+}
+.battle-results .battle-details .breakpoints-section .optimal-timing-timeline .timeline .item.fade,
+.battle-results .battle-details .matchup-detail-section .optimal-timing-timeline .timeline .item.fade,
+.battle-results .battle-details .cmp-section .optimal-timing-timeline .timeline .item.fade,
+.battle-results .battle-details .optimal-timing-section .optimal-timing-timeline .timeline .item.fade, .battle-results.matrix .breakpoints-section .optimal-timing-timeline .timeline .item.fade,
+.battle-results.matrix .matchup-detail-section .optimal-timing-timeline .timeline .item.fade,
+.battle-results.matrix .cmp-section .optimal-timing-timeline .timeline .item.fade,
+.battle-results.matrix .optimal-timing-section .optimal-timing-timeline .timeline .item.fade {
+  opacity: 0.4;
+}
+.battle-results .battle-details .breakpoints-section .optimal-timing-timeline .timeline .item.fade .chunk,
+.battle-results .battle-details .matchup-detail-section .optimal-timing-timeline .timeline .item.fade .chunk,
+.battle-results .battle-details .cmp-section .optimal-timing-timeline .timeline .item.fade .chunk,
+.battle-results .battle-details .optimal-timing-section .optimal-timing-timeline .timeline .item.fade .chunk, .battle-results.matrix .breakpoints-section .optimal-timing-timeline .timeline .item.fade .chunk,
+.battle-results.matrix .matchup-detail-section .optimal-timing-timeline .timeline .item.fade .chunk,
+.battle-results.matrix .cmp-section .optimal-timing-timeline .timeline .item.fade .chunk,
+.battle-results.matrix .optimal-timing-section .optimal-timing-timeline .timeline .item.fade .chunk {
+  border: 1px dashed rgba(0, 0, 0, 0.25);
+}
+.battle-results .battle-details .breakpoints-section .optimal-timing-timeline .timeline .item .chunk,
+.battle-results .battle-details .matchup-detail-section .optimal-timing-timeline .timeline .item .chunk,
+.battle-results .battle-details .cmp-section .optimal-timing-timeline .timeline .item .chunk,
+.battle-results .battle-details .optimal-timing-section .optimal-timing-timeline .timeline .item .chunk, .battle-results.matrix .breakpoints-section .optimal-timing-timeline .timeline .item .chunk,
+.battle-results.matrix .matchup-detail-section .optimal-timing-timeline .timeline .item .chunk,
+.battle-results.matrix .cmp-section .optimal-timing-timeline .timeline .item .chunk,
+.battle-results.matrix .optimal-timing-section .optimal-timing-timeline .timeline .item .chunk {
+  flex: 1;
+  border: 1px dashed rgba(0, 0, 0, 0.125);
+  box-sizing: border-box;
+}
+.battle-results .battle-details .breakpoints-section .optimal-1, .battle-results .battle-details .breakpoints-section .optimal-2, .battle-results .battle-details .breakpoints-section .optimal-3,
+.battle-results .battle-details .matchup-detail-section .optimal-1,
+.battle-results .battle-details .matchup-detail-section .optimal-2,
+.battle-results .battle-details .matchup-detail-section .optimal-3,
+.battle-results .battle-details .cmp-section .optimal-1,
+.battle-results .battle-details .cmp-section .optimal-2,
+.battle-results .battle-details .cmp-section .optimal-3,
+.battle-results .battle-details .optimal-timing-section .optimal-1,
+.battle-results .battle-details .optimal-timing-section .optimal-2,
+.battle-results .battle-details .optimal-timing-section .optimal-3, .battle-results.matrix .breakpoints-section .optimal-1, .battle-results.matrix .breakpoints-section .optimal-2, .battle-results.matrix .breakpoints-section .optimal-3,
+.battle-results.matrix .matchup-detail-section .optimal-1,
+.battle-results.matrix .matchup-detail-section .optimal-2,
+.battle-results.matrix .matchup-detail-section .optimal-3,
+.battle-results.matrix .cmp-section .optimal-1,
+.battle-results.matrix .cmp-section .optimal-2,
+.battle-results.matrix .cmp-section .optimal-3,
+.battle-results.matrix .optimal-timing-section .optimal-1,
+.battle-results.matrix .optimal-timing-section .optimal-2,
+.battle-results.matrix .optimal-timing-section .optimal-3 {
+  font-weight: bold;
 }
 .battle-results .battle-details .ranking-categories, .battle-results.matrix .ranking-categories {
   float: none;
