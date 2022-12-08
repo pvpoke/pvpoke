@@ -534,10 +534,20 @@ function PokeMultiSelect(element){
 				if(poke.length > 4){
 					pokemon.isCustom = true;
 
-					pokemon.setLevel(parseFloat(poke[4]));
-					pokemon.setIV("atk", parseFloat(poke[5]));
-					pokemon.setIV("def", parseFloat(poke[6]));
-					pokemon.setIV("hp", parseFloat(poke[7]));
+					const level = parseFloat(poke[4]);
+					const atk = parseFloat(poke[5]);
+					const def = parseFloat(poke[6]);
+					const hp = parseFloat(poke[7]);
+
+					// Don't set stats to be NaN
+					if (Number.isNaN(level) || Number.isNaN(atk) || Number.isNaN(def) || Number.isNaN(hp)) {
+						alert("Line " + (i+1) + " has invalid stats: \"" + poke + "\".")
+					} else {
+						pokemon.setLevel(level);
+						pokemon.setIV("atk", atk);
+						pokemon.setIV("def", def);
+						pokemon.setIV("hp", hp);
+					}
 				}
 
 				pokemonList.push(pokemon);
