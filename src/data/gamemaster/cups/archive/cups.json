@@ -694,17 +694,6 @@
 		"values": ["mr_rime", "mr_mime_galarian", "lickitung", "chansey", "pidgeot"]
 	}]
 }, {
-	"name": "holiday",
-	"title": "Holiday Cup",
-	"include": [{
-		"filterType": "type",
-		"values": ["grass", "normal", "ice", "ghost", "flying", "electric"]
-	}],
-	"exclude": [{
-		"filterType": "tag",
-		"values": ["mega"]
-	}]
-}, {
 	"name": "cerberus",
 	"title": "Victory Road Cerberus Cup",
 	"link": "https://silph.gg/t/eh4b/the-three-heads-of-cerberus",

@@ -1,0 +1,12 @@
+{
+	"name": "holiday",
+	"title": "Holiday Cup",
+	"include": [{
+		"filterType": "type",
+		"values": ["grass", "normal", "ice", "ghost", "flying", "electric"]
+	}],
+	"exclude": [{
+		"filterType": "tag",
+		"values": ["mega"]
+	}]
+}

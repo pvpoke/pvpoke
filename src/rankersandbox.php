@@ -5,7 +5,7 @@
 	<?php require 'modules/formatselect.php'; ?>
 	<button class="simulate">Simulate</button>
 
-	<a style="margin-left: 30px;" class="rankings-link" href="#">Rankings &rarr;</a>
+	<a style="margin-left: 30px;" class="rankings-link" href="<?php echo $WEB_ROOT; ?>rankings/">Rankings &rarr;</a>
 
 	<div class="output"></div>
 </div>

@@ -212,6 +212,17 @@
         "exclude": [],
         "partySize": 3
     }, {
+        "name": "holiday",
+        "title": "Holiday Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["grass", "normal", "ice", "ghost", "flying", "electric"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }]
+    }, {
         "name": "mega",
         "title": "All Pokemon",
         "include": [],
@@ -321,14 +332,6 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Great League Remix",
-        "cup": "remix",
-        "cp": 1500,
-        "meta": "remix",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Fighting Cup Remix",
         "cup": "fightingremix",
         "cp": 1500,
@@ -341,6 +344,14 @@
         "cup": "premierclassic",
         "cp": 2500,
         "meta": "ultrapremierclassic",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Holiday Cup",
+        "cup": "holiday",
+        "cp": 1500,
+        "meta": "holiday",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -21124,7 +21135,7 @@
         },
         "types": ["ghost", "none"],
         "fastMoves": ["ASTONISH", "HEX"],
-        "chargedMoves": ["DARK_PULSE", "OMINOUS_WIND", "PSYCHIC", "SHADOW_BALL"],
+        "chargedMoves": ["DARK_PULSE", "OMINOUS_WIND", "PSYCHIC", "SHADOW_BALL", "POLTERGEIST"],
         "eliteMoves": ["SHADOW_BALL"],
         "defaultIVs": {
             "cp500": [8, 6, 14, 8],
@@ -21152,7 +21163,7 @@
         },
         "types": ["ghost", "none"],
         "fastMoves": ["ASTONISH", "HEX"],
-        "chargedMoves": ["DARK_PULSE", "OMINOUS_WIND", "PSYCHIC", "SHADOW_BALL"],
+        "chargedMoves": ["DARK_PULSE", "OMINOUS_WIND", "PSYCHIC", "SHADOW_BALL", "POLTERGEIST"],
         "eliteMoves": ["SHADOW_BALL"],
         "defaultIVs": {
             "cp500": [8, 6, 14, 8],
@@ -26909,7 +26920,7 @@
             "hp": 200
         },
         "types": ["fire", "normal"],
-        "fastMoves": ["FIRE_FANG", "TAKE_DOWN", "INCINERATE"],
+        "fastMoves": ["FIRE_FANG", "TAKE_DOWN", "INCINERATE", "EMBER"],
         "chargedMoves": ["FLAME_CHARGE", "SOLAR_BEAM", "DARK_PULSE", "OVERHEAT"],
         "defaultIVs": {
             "cp500": [7, 4, 13, 5],

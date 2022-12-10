@@ -37,15 +37,6 @@
 		"showMeta": true
 	},
 	{
-		"title": "Great League Remix",
-		"cup": "remix",
-		"cp": 1500,
-		"meta": "remix",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
 		"title": "Fighting Cup Remix",
 		"cup": "fightingremix",
 		"cp": 1500,
@@ -59,6 +50,15 @@
 		"cup": "premierclassic",
 		"cp": 2500,
 		"meta": "ultrapremierclassic",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Holiday Cup",
+		"cup": "holiday",
+		"cp": 1500,
+		"meta": "holiday",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
