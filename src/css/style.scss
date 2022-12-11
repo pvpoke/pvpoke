@@ -2415,6 +2415,11 @@ a.download-csv{
 			text-align: center;
 			font-size:11px;
 			padding-top: 1px;
+
+			&.fast{
+				border-radius: 0;
+				background:rgba(0,0,0,0.25);
+			}
 		}
 	}
 
@@ -2711,6 +2716,20 @@ a.download-csv{
 
 						&.stats-container{
 							display:flex;
+						}
+					}
+
+					&.fast{
+						.move-detail-template{
+							cursor: pointer;
+
+							&:hover{
+								border-left: 10px solid rgba(0, 0, 0, 0.2);
+
+								&.selected{
+									border-left: 10px solid #000;
+								}
+							}
 						}
 					}
 				}

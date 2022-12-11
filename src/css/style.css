@@ -2154,6 +2154,10 @@ a.download-csv {
   font-size: 11px;
   padding-top: 1px;
 }
+.rank .moves .count.fast {
+  border-radius: 0;
+  background: rgba(0, 0, 0, 0.25);
+}
 .rank .cliffhanger-points {
   border: 1px solid;
   border-radius: 8px;
@@ -2398,6 +2402,15 @@ a.download-csv {
 }
 .rank .details .detail-section .moveset.show-stats .name-container.stats-container {
   display: flex;
+}
+.rank .details .detail-section .moveset.show-stats.fast .move-detail-template {
+  cursor: pointer;
+}
+.rank .details .detail-section .moveset.show-stats.fast .move-detail-template:hover {
+  border-left: 10px solid rgba(0, 0, 0, 0.2);
+}
+.rank .details .detail-section .moveset.show-stats.fast .move-detail-template:hover.selected {
+  border-left: 10px solid #000;
 }
 .rank .details .detail-section .moveset .name-container {
   float: none;

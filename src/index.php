@@ -34,9 +34,15 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.29.18 (December 7, 2022)</h4>
+	<h4>v1.29.20 (December 11, 2022)</h4>
 	<ul>
-		<li>Individual battle results now have an "Optimal Move Timing" details section that illustrates when to perform the most optimal Charged Move timing against the opponent.</li>
+		<li>Fast Move count updates:</li>
+		<ul>
+			<li>Added Fast Move duration to the top-level move count info on the Rankings page.</li>
+			<li>Move counts in which the third Charged Move cycle has a lower count than the previous cycles are now marked by a period sign. Move counts in which the second Charged Move cycle has a lower count than the first is still marked by a minus sign.</li>
+			<li>When viewing move counts in a Pokemon's ranking details, you can now select a different Fast Move in the Fast Moves list to see move counts with alternate Fast Moves.</li>
+		</ul>
+		<li>Adding a new Pokemon to a Multi-Battle list will scroll the list to the bottom</li>
 	</ul>
 
 	<h3>Latest Article</h3>
