@@ -300,17 +300,21 @@ var GameMaster = (function () {
 					if(cp > leagues[i]){
 						var combo = object.generateDefaultIVCombo(pokemon, pokemon.levelCap, leagues[i], level45cp);
 
-						defaultIVs["cp"+leagues[i]] = [combo.level, combo.ivs.atk, combo.ivs.def, combo.ivs.hp]
+						if(combo){
+							defaultIVs["cp"+leagues[i]] = [combo.level, combo.ivs.atk, combo.ivs.def, combo.ivs.hp]
 
-						if(combo.level > 40){
-							if(level40cp > leagues[i]){
-								combo = object.generateDefaultIVCombo(pokemon, 40, leagues[i], level35cp);
+							if(combo.level > 40){
+								if(level40cp > leagues[i]){
+									combo = object.generateDefaultIVCombo(pokemon, 40, leagues[i], level35cp);
 
-								defaultIVs["cp"+leagues[i] + "l40"] = [combo.level, combo.ivs.atk, combo.ivs.def, combo.ivs.hp];
-							} else{
+									defaultIVs["cp"+leagues[i] + "l40"] = [combo.level, combo.ivs.atk, combo.ivs.def, combo.ivs.hp];
+								} else{
 
-								defaultIVs["cp"+leagues[i] + "l40"] = [40, 15, 15, 15];
+									defaultIVs["cp"+leagues[i] + "l40"] = [40, 15, 15, 15];
+								}
 							}
+						} else{
+							defaultIVs["cp"+leagues[i]] = [1, 0, 0, 0];
 						}
 					} else{
 						defaultIVs["cp"+leagues[i]] = [pokemon.levelCap, 15, 15, 15];
