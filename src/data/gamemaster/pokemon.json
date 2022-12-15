@@ -26366,7 +26366,7 @@
     },
     "buddyDistance": 1,
     "thirdMoveCost": 10000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_SCATTERBUG",
         "evolutions": ["spewpa"]
@@ -26416,7 +26416,7 @@
     },
     "buddyDistance": 1,
     "thirdMoveCost": 10000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_SCATTERBUG",
         "parent": "spewpa"

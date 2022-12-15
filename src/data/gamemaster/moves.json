@@ -868,6 +868,18 @@
     "cooldown": 500,
     "archetype": "Nuke"
 }, {
+    "moveId": "GLACIATE",
+    "name": "Glaciate",
+    "type": "ice",
+    "power": 60,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": "1",
+    "archetype": "Debuff"
+}, {
     "moveId": "GRASS_KNOT",
     "name": "Grass Knot",
     "type": "grass",

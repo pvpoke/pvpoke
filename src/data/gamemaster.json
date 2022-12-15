@@ -189,23 +189,6 @@
             }]
         }
     }, {
-        "name": "fightingremix",
-        "title": "Fighting Cup Remix",
-        "include": [{
-            "filterType": "type",
-            "values": ["fighting"]
-        }],
-        "exclude": [{
-            "filterType": "type",
-            "values": ["psychic"]
-        }, {
-            "filterType": "id",
-            "values": ["hakamo_o", "kommo_o", "buzzwole", "sneasler"]
-        }, {
-            "filterType": "tag",
-            "values": ["mega"]
-        }]
-    }, {
         "name": "gobattleleague",
         "title": "GO Battle League",
         "include": [],
@@ -330,14 +313,6 @@
         "meta": "masterpremierclassic",
         "showCup": false,
         "showFormat": false,
-        "showMeta": true
-    }, {
-        "title": "Fighting Cup Remix",
-        "cup": "fightingremix",
-        "cp": 1500,
-        "meta": "fightingremix",
-        "showCup": true,
-        "showFormat": true,
         "showMeta": true
     }, {
         "title": "Premier Classic (Ultra League)",
@@ -26830,7 +26805,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_SCATTERBUG",
             "evolutions": ["spewpa"]
@@ -26880,7 +26855,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_SCATTERBUG",
             "parent": "spewpa"
@@ -34523,6 +34498,18 @@
         "energyGain": 0,
         "cooldown": 500,
         "archetype": "Nuke"
+    }, {
+        "moveId": "GLACIATE",
+        "name": "Glaciate",
+        "type": "ice",
+        "power": 60,
+        "energy": 40,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [-1, 0],
+        "buffTarget": "opponent",
+        "buffApplyChance": "1",
+        "archetype": "Debuff"
     }, {
         "moveId": "GRASS_KNOT",
         "name": "Grass Knot",
