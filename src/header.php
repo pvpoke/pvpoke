@@ -80,13 +80,13 @@ if(! isset($_COOKIE['migrate'])){
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php
 if(! isset($META_TITLE)){
-	$META_TITLE = 'PvPoke | Open-Source Battle Simulator, Rankings &amp; Team Building for Pokémon GO PvP';
+	$META_TITLE = 'PvPoke | Open-Source Battle Simulator, Rankings &amp; Team Building for Pokemon GO PvP';
 } else{
 	$META_TITLE = $META_TITLE . ' | PvPoke';
 }
 
 if(! isset($META_DESCRIPTION)){
-	$META_DESCRIPTION = 'Looking for an edge in Pokémon GO Trainer Battles? Become a master with our open-source Pokémon battle simulator, explore the top Pokémon rankings, and get your team rated for PvP battles.';
+	$META_DESCRIPTION = 'Looking for an edge in Pokemon GO Trainer Battles? Become a master with our open-source Pokemon battle simulator, explore the top Pokemon rankings, and get your team rated for PvP battles.';
 }
 
 if(! isset($OG_IMAGE)){
