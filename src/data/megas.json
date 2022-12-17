@@ -92,61 +92,6 @@
     "level25CP": 3435,
     "eliteMoves": ["SMACK_DOWN"]
 }, {
-    "dex": 254,
-    "speciesName": "Sceptile (Mega)",
-    "speciesId": "sceptile_mega",
-    "baseStats": {
-        "atk": 320,
-        "def": 186,
-        "hp": 172
-    },
-    "types": ["grass", "dragon"],
-    "fastMoves": ["BULLET_SEED", "FURY_CUTTER"],
-    "chargedMoves": ["AERIAL_ACE", "EARTHQUAKE", "LEAF_BLADE", "FRENZY_PLANT", "DRAGON_CLAW"],
-    "tags": ["starter", "mega"],
-    "defaultIVs": {
-        "cp1500": [13, 15, 12, 15],
-        "cp2500": [22, 9, 12, 15]
-    },
-    "eliteMoves": ["FRENZY_PLANT"]
-}, {
-    "dex": 257,
-    "speciesName": "Blaziken (Mega)",
-    "speciesId": "blaziken_mega",
-    "baseStats": {
-        "atk": 329,
-        "def": 168,
-        "hp": 190
-    },
-    "types": ["fire", "fighting"],
-    "fastMoves": ["COUNTER", "FIRE_SPIN"],
-    "chargedMoves": ["BRAVE_BIRD", "FOCUS_BLAST", "OVERHEAT", "STONE_EDGE", "BLAST_BURN", "BLAZE_KICK"],
-    "tags": ["starter", "mega"],
-    "defaultIVs": {
-        "cp1500": [13, 12, 10, 12],
-        "cp2500": [22, 6, 10, 12]
-    },
-    "eliteMoves": ["BLAST_BURN", "STONE_EDGE"]
-}, {
-    "dex": 260,
-    "speciesName": "Swampert (Mega)",
-    "speciesId": "swampert_mega",
-    "baseStats": {
-        "atk": 283,
-        "def": 218,
-        "hp": 225
-    },
-    "types": ["water", "ground"],
-    "fastMoves": ["MUD_SHOT", "WATER_GUN"],
-    "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "SURF", "HYDRO_CANNON", "MUDDY_WATER"],
-    "tags": ["starter", "shadoweligible", "mega"],
-    "defaultIVs": {
-        "cp1500": [12.5, 7, 13, 7],
-        "cp2500": [21, 5, 5, 14]
-    },
-    "eliteMoves": ["HYDRO_CANNON"],
-    "level25CP": 2796
-}, {
     "dex": 282,
     "speciesName": "Gardevoir (Mega)",
     "speciesId": "gardevoir_mega",
@@ -285,23 +230,6 @@
     "defaultIVs": {
         "cp1500": [22, 8, 12, 11],
         "cp2500": [39.5, 14, 15, 14]
-    },
-    "tags": ["mega"]
-}, {
-    "dex": 362,
-    "speciesName": "Glalie (Mega)",
-    "speciesId": "glalie_mega",
-    "baseStats": {
-        "atk": 252,
-        "def": 168,
-        "hp": 190
-    },
-    "types": ["ice", "none"],
-    "fastMoves": ["FROST_BREATH", "ICE_SHARD"],
-    "chargedMoves": ["AVALANCHE", "GYRO_BALL", "SHADOW_BALL"],
-    "defaultIVs": {
-        "cp1500": [16.5, 11, 15, 13],
-        "cp2500": [28, 5, 14, 14]
     },
     "tags": ["mega"]
 }, {

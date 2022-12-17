@@ -34,7 +34,22 @@ var InterfaceMaster = (function () {
 					}
 				});
 
+				self.loadGetData();
+
 			};
+
+			// Given JSON of get parameters, load these settings
+
+			this.loadGetData = function(){
+
+				if(! get){
+					return false;
+				}
+
+				$(".format-select option[cup='"+get["cup"]+"'][value="+get["cp"]+"]").prop("selected", "selected");
+
+				$(".format-select").trigger("change");
+			}
 
 			// Event handler for changing the league select
 
@@ -47,6 +62,8 @@ var InterfaceMaster = (function () {
 
 				loadOverrides();
 
+				$("a.rankersandbox-link").attr("href", webRoot+"rankersandbox.php?cup="+cup+"&cp="+cp);
+				$("a.rankings-link").attr("href", webRoot+"rankings/"+cup+"/"+cp+"/overall/");
 			}
 
 			// Load overrides for the currently selected league and cup

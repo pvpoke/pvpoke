@@ -1,0 +1,26 @@
+{
+    "name": "vanguard",
+    "title": "Silph Factions (Vanguard)",
+    "include": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["dragon", "fighting", "flying", "ghost", "ground", "ice", "poison", "rock", "water"]
+    }],
+    "exclude": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["dark", "fairy", "steel"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["abomasnow", "trevenant", "altaria", "lanturn", "medicham", "sneasler", "aurorus"]
+    }, {
+        "filterType": "tag",
+        "name": "Tag",
+        "values": ["alolan", "galarian", "hisuian", "mega"]
+    }, {
+        "filterType": "dex",
+        "name": "Pokedex Number",
+        "values": [722, 898]
+    }]
+}

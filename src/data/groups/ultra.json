@@ -23,6 +23,22 @@
     "fastMove": "COUNTER",
     "chargedMoves": ["MEGAHORN", "DRILL_RUN"]
 }, {
+    "speciesId": "pidgeot",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["FEATHER_DANCE", "BRAVE_BIRD"]
+}, {
+    "speciesId": "aurorus",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["WEATHER_BALL_ICE", "METEOR_BEAM"]
+}, {
+    "speciesId": "gliscor",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"]
+}, {
+    "speciesId": "charizard",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["DRAGON_CLAW", "BLAST_BURN"]
+}, {
     "speciesId": "giratina_altered",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["DRAGON_CLAW", "SHADOW_SNEAK"]

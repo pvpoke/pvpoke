@@ -144,6 +144,19 @@ require_once 'header.php';
 					<p>The grid above shows <span class="name-1">Pokemon</span>'s matchups against <span class="name-2">Pokemon</span> depending on how many shields each side uses. Look horizontally for the number of shields used by <span class="name-1">Pokemon</span> and vertically for the number of shields used by <span class="name-2">Pokemon</span>. Above 500 is a win and under 500 is a loss.</p>
 				</div>
 
+				<h2 class="center">Optimal Move Timing</h2>
+
+				<div class="optimal-timing-section">
+					<div class="optimal-timing-timeline">
+						<div class="timeline"></div>
+						<div class="timeline"></div>
+					</div>
+
+					<p class="timing-none">Optimal Charged Move timing isn't applicable for <span class="name-attacker">Pokemon</span> in this matchup.</p>
+
+					<p class="timing-most-optimal">When Fast Moves align, <span class="name-attacker">Pokemon</span> should throw its Charged Moves after <span class="optimal-1"></span>, <span class="optimal-2"></span>, or <span class="optimal-3"></span> Fast Moves for the most optimal timing.</p>
+				</div>
+
 				<h2 class="center">Breakpoints &amp; Bulkpoints</h2>
 
 				<div class="breakpoints-section">

@@ -769,6 +769,15 @@ var InterfaceMaster = (function () {
 					}
 				}
 
+				// Exclude Mega evolutions if one is already on the team
+				var hasMega = false;
+
+				for(var n = 0; n < team.length; n++){
+					if(team[n].hasTag("mega")){
+						hasMega = true;
+					}
+				}
+
 				// For Continentals, exclude slots that are already filled
 				var usedSlots = [];
 
@@ -794,6 +803,12 @@ var InterfaceMaster = (function () {
 						}
 
 						if((r.pokemon.needsXLCandy())&&(! allowXL)){
+							i++;
+							continue;
+						}
+
+
+						if(r.pokemon.hasTag("mega") && hasMega){
 							i++;
 							continue;
 						}

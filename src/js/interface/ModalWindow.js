@@ -46,6 +46,6 @@ function setModalClosePrevention(time){
 
 function closeModalWindow(){
 	if(! closePrevention){
-		$(".modal").remove();
+		$(".modal").last().remove();
 	}
 }

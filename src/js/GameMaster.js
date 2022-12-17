@@ -300,17 +300,21 @@ var GameMaster = (function () {
 					if(cp > leagues[i]){
 						var combo = object.generateDefaultIVCombo(pokemon, pokemon.levelCap, leagues[i], level45cp);
 
-						defaultIVs["cp"+leagues[i]] = [combo.level, combo.ivs.atk, combo.ivs.def, combo.ivs.hp]
+						if(combo){
+							defaultIVs["cp"+leagues[i]] = [combo.level, combo.ivs.atk, combo.ivs.def, combo.ivs.hp]
 
-						if(combo.level > 40){
-							if(level40cp > leagues[i]){
-								combo = object.generateDefaultIVCombo(pokemon, 40, leagues[i], level35cp);
+							if(combo.level > 40){
+								if(level40cp > leagues[i]){
+									combo = object.generateDefaultIVCombo(pokemon, 40, leagues[i], level35cp);
 
-								defaultIVs["cp"+leagues[i] + "l40"] = [combo.level, combo.ivs.atk, combo.ivs.def, combo.ivs.hp];
-							} else{
+									defaultIVs["cp"+leagues[i] + "l40"] = [combo.level, combo.ivs.atk, combo.ivs.def, combo.ivs.hp];
+								} else{
 
-								defaultIVs["cp"+leagues[i] + "l40"] = [40, 15, 15, 15];
+									defaultIVs["cp"+leagues[i] + "l40"] = [40, 15, 15, 15];
+								}
 							}
+						} else{
+							defaultIVs["cp"+leagues[i]] = [1, 0, 0, 0];
 						}
 					} else{
 						defaultIVs["cp"+leagues[i]] = [pokemon.levelCap, 15, 15, 15];
@@ -822,7 +826,7 @@ var GameMaster = (function () {
 				minStats = 0;
 			}
 
-			var bannedList = ["mewtwo","mewtwo_armored","giratina_altered","groudon","kyogre","palkia","dialga","heatran","giratina_origin","darkrai","cobalion","terrakion","virizion","thundurus_incarnate","regigigas","tornadus_incarnate","tornadus_therian","tornadus_therian_xl","landorus_incarnate", "landorus_therian", "reshiram", "zekrom", "kyurem", "genesect_burn", "xerneas", "thundurus_therian", "yveltal", "meloetta_aria", "zacian", "zamazenta", "zacian_hero", "zamazenta_hero", "genesect_douse", "zarude", "hoopa_unbound", "genesect_shock", "tapu_koko", "tapu_lele", "tapu_bulu", "nihilego", "shaymin_sky", "genesect_chill", "braviary_hisuian", "kartana", "celesteela"];
+			var bannedList = ["mewtwo","mewtwo_armored","giratina_altered","groudon","kyogre","palkia","dialga","heatran","giratina_origin","darkrai","cobalion","terrakion","virizion","thundurus_incarnate","regigigas","tornadus_incarnate","tornadus_therian","tornadus_therian_xl","landorus_incarnate", "landorus_therian", "reshiram", "zekrom", "kyurem", "genesect_burn", "xerneas", "thundurus_therian", "yveltal", "meloetta_aria", "zacian", "zamazenta", "zacian_hero", "zamazenta_hero", "genesect_douse", "zarude", "hoopa_unbound", "genesect_shock", "tapu_koko", "tapu_lele", "tapu_bulu", "nihilego", "shaymin_sky", "genesect_chill", "braviary_hisuian", "solgaleo", "lunala", "keldeo_ordinary"];
 
 			// Aggregate filters
 

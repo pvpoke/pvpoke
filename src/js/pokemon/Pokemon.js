@@ -2178,4 +2178,21 @@ function Pokemon(id, i, b){
 
 		return stage;
 	}
+
+
+}
+
+/* STATIC METHODS */
+
+// Given Fast Move and Charged Move objects, calculate and return the move counts for 3 cycles
+
+Pokemon.calculateMoveCounts = function(fastMove, chargedMove){
+	var counts = [];
+
+	counts.push( Math.ceil( (chargedMove.energy * 1) / fastMove.energyGain) );
+	counts.push( Math.ceil( (chargedMove.energy * 2) / fastMove.energyGain) - counts[0] );
+	counts.push( Math.ceil( (chargedMove.energy * 3) / fastMove.energyGain) - counts[0] - counts[1] );
+
+	return counts;
+
 }

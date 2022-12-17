@@ -1,9 +1,0 @@
-{
-	"name": "all",
-	"title": "All Pokemon",
-	"include": [],
-	"exclude": [{
-		"filterType": "tag",
-		"values": ["mega"]
-	}]
-}

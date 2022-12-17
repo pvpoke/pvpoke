@@ -63,6 +63,7 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".detail-section a.show-move-stats", toggleMoveStats);
 				$("body").on("click", ".check.move-counts", toggleMoveCounts);
 				$("body").on("click", ".detail-section.similar-pokemon a", jumpToSimilarPokemon);
+				$("body").on("click", ".moveset.fast .move-detail-template", recalculateMoveCounts);
 
 				pokeSearch.setBattle(battle);
 
@@ -248,6 +249,8 @@ var InterfaceMaster = (function () {
 							for(var j = 0; j < pokemon.fastMovePool.length; j++){
 								if(r.moveset[n] == pokemon.fastMovePool[j].moveId){
 									moveNameStr += pokemon.fastMovePool[j].displayName;
+
+									moveNameStr += "<span class=\"count fast\">"+(pokemon.fastMovePool[j].cooldown / 500)+"</span>";
 									break;
 								}
 							}
@@ -256,13 +259,15 @@ var InterfaceMaster = (function () {
 								if(r.moveset[n] == pokemon.chargedMovePool[j].moveId){
 									moveNameStr += pokemon.chargedMovePool[j].displayName;
 
-									var cycle1Count = Math.ceil( (pokemon.chargedMovePool[j].energy * 1) / pokemon.fastMove.energyGain);
-									var cycle2Count = Math.ceil( (pokemon.chargedMovePool[j].energy * 2) / pokemon.fastMove.energyGain) - cycle1Count;
-									var cycle3Count = Math.ceil( (pokemon.chargedMovePool[j].energy * 3) / pokemon.fastMove.energyGain) - cycle1Count - cycle2Count;
-									var moveCount = cycle1Count;
+									var moveCounts = Pokemon.calculateMoveCounts(pokemon.fastMove, pokemon.chargedMovePool[j]);
+									var moveCount = moveCounts[0];
 
-									if((cycle1Count > cycle2Count)||(cycle1Count > cycle3Count)){
+									if(moveCounts[0] > moveCounts[1]){
 										moveCount+="-";
+									}
+
+									if(moveCounts[2] < moveCounts[1] && moveCounts[1] == moveCounts[0]){
+										moveCount+=".";
 									}
 
 									moveNameStr += "<span class=\"count\">"+moveCount+"</span>";
@@ -808,6 +813,7 @@ var InterfaceMaster = (function () {
 					$moveDetails.find(".dpt .value").html(Math.round( ((fastMoves[n].power * fastMoves[n].stab * pokemon.shadowAtkMult) / (fastMoves[n].cooldown / 500)) * 100) / 100);
 					$moveDetails.find(".ept .value").html(Math.round( (fastMoves[n].energyGain / (fastMoves[n].cooldown / 500)) * 100) / 100);
 					$moveDetails.find(".turns .value").html( fastMoves[n].cooldown / 500 );
+					$moveDetails.attr("data", fastMoves[n].moveId);
 
 					// Highlight this move if it's in the recommended moveset
 
@@ -897,17 +903,16 @@ var InterfaceMaster = (function () {
 					$moveDetails.find(".damage .value").html(Math.round((chargedMoves[n].power * chargedMoves[n].stab * pokemon.shadowAtkMult) * 100) / 100);
 					$moveDetails.find(".energy .value").html(chargedMoves[n].energy);
 					$moveDetails.find(".dpe .value").html( Math.round( ((chargedMoves[n].power * chargedMoves[n].stab * pokemon.shadowAtkMult) / chargedMoves[n].energy) * 100) / 100);
+					$moveDetails.attr("data", chargedMoves[n].moveId);
 
 					if(chargedMoves[n].buffs){
 						$moveDetails.find(".move-effect").html(gm.getStatusEffectString(chargedMoves[n]));
 					}
 
 					// Add move counts
-					var cycle1Count = Math.ceil( (chargedMoves[n].energy * 1) / pokemon.fastMove.energyGain);
-					var cycle2Count = Math.ceil( (chargedMoves[n].energy * 2) / pokemon.fastMove.energyGain) - cycle1Count;
-					var cycle3Count = Math.ceil( (chargedMoves[n].energy * 3) / pokemon.fastMove.energyGain) - cycle1Count - cycle2Count;
+					var moveCounts = Pokemon.calculateMoveCounts(pokemon.fastMove, chargedMoves[n]);
 
-					$moveDetails.find(".move-count span").html(cycle1Count + " - " + cycle2Count + " - " + cycle3Count);
+					$moveDetails.find(".move-count span").html(moveCounts[0] + " - " + moveCounts[1] + " - " + moveCounts[2]);
 
 					// Highlight this move if it's in the recommended moveset
 
@@ -1293,6 +1298,25 @@ var InterfaceMaster = (function () {
 				metaGroup.sort((a,b) => (a.partnerScore > b.partnerScore) ? -1 : ((b.partnerScore > a.partnerScore) ? 1 : 0));
 
 				return metaGroup;
+			}
+
+			// When clicking a Fast Move in a Pokemon's list, recalculate move counts based on that Fast Move
+
+			function recalculateMoveCounts(e){
+				var $template = $(e.target).closest(".move-detail-template")
+				var $movesTab = $(e.target).closest(".detail-tab");
+				var fastMove = gm.getMoveById($template.attr("data"));
+
+				// For each listed Charged Move, update the move counts
+				$movesTab.find(".moveset.charged .move-detail-template:not(.hide)").each(function(index, value){
+					var chargedMove = gm.getMoveById($(this).attr("data"));
+					var moveCounts = Pokemon.calculateMoveCounts(fastMove, chargedMove);
+					$(this).find(".move-count span").html(moveCounts[0] + " - " + moveCounts[1] + " - " + moveCounts[2]);
+				});
+
+				// Display this Fast Move as the selected move
+				$movesTab.find(".moveset.fast .move-detail-template").removeClass("selected");
+				$template.addClass("selected");
 			}
 
 			// Turn checkboxes on and off

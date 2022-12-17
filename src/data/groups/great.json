@@ -30,6 +30,11 @@
 		"chargedMoves":["BRINE","SLUDGE_WAVE"]
 	},
 	{
+		"speciesId":"pelipper",
+		"fastMove":"WING_ATTACK",
+		"chargedMoves":["WEATHER_BALL_WATER","HURRICANE"]
+	},
+	{
 		"speciesId":"froslass",
 		"fastMove":"POWDER_SNOW",
 		"chargedMoves":["AVALANCHE","SHADOW_BALL"]
@@ -53,6 +58,11 @@
 		"speciesId":"ninetales_alolan",
 		"fastMove":"CHARM",
 		"chargedMoves":["WEATHER_BALL_ICE","PSYSHOCK"]
+	},
+	{
+		"speciesId":"ninetales_alolan",
+		"fastMove":"POWDER_SNOW",
+		"chargedMoves":["WEATHER_BALL_ICE","DAZZLING_GLEAM"]
 	},
 	{
 		"speciesId":"lickitung",
@@ -165,11 +175,6 @@
 		"chargedMoves":["ZAP_CANNON","FOCUS_BLAST"]
 	},
 	{
-		"speciesId":"araquanid",
-		"fastMove":"BUG_BITE",
-		"chargedMoves":["BUBBLE_BEAM","BUG_BUZZ"]
-	},
-	{
 		"speciesId":"diggersby",
 		"fastMove":"MUD_SHOT",
 		"chargedMoves":["FIRE_PUNCH","EARTHQUAKE"]
@@ -193,10 +198,5 @@
 		"speciesId":"vigoroth",
 		"fastMove":"COUNTER",
 		"chargedMoves":["BODY_SLAM","BULLDOZE"]
-	},
-	{
-		"speciesId":"runerigus",
-		"fastMove":"SHADOW_CLAW",
-		"chargedMoves":["SAND_TOMB","SHADOW_BALL"]
 	}
 ]

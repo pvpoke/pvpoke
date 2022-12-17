@@ -28,15 +28,6 @@
 		"showMeta": true
 	},
 	{
-		"title": "Premier Classic (Ultra League)",
-		"cup": "premierclassic",
-		"cp": 2500,
-		"meta": "ultrapremierclassic",
-		"showCup": false,
-		"showFormat": false,
-		"showMeta": true
-	},
-	{
 		"title": "Premier Classic (Master League)",
 		"cup": "premierclassic",
 		"cp": 10000,
@@ -46,55 +37,66 @@
 		"showMeta": true
 	},
 	{
-		"title": "Ultra Premier Cup",
-		"cup": "premier",
+		"title": "Premier Classic (Ultra League)",
+		"cup": "premierclassic",
 		"cp": 2500,
-		"meta": "premierultra",
+		"meta": "ultrapremierclassic",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
 	},
 	{
-		"title": "Element Cup Remix",
-		"cup": "elementremix",
-		"cp": 500,
-		"meta": "elementremix",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Silph Factions (Primeval)",
-		"cup": "primeval",
+		"title": "Holiday Cup",
+		"cup": "holiday",
 		"cp": 1500,
-		"meta": "primeval",
+		"meta": "holiday",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
 	},
 	{
-		"title": "Silph Factions (Timeless)",
-		"cup": "timelessfactions",
+		"title": "Silph Factions (Great League)",
+		"cup": "factionsgreat",
 		"cp": 1500,
-		"meta": "timeless",
-		"showCup": true,
+		"meta": "great",
+		"showCup": false,
 		"showFormat": true,
-		"showMeta": true
+		"showMeta": false,
+		"hideRankings": true
 	},
 	{
-		"title": "Silph Factions (Sorcerous)",
-		"cup": "sorcerousfactions",
-		"cp": 1500,
-		"meta": "sorcerous",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Silph Factions (Celestial)",
-		"cup": "celestial",
+		"title": "Silph Factions (Ultra League)",
+		"cup": "factionsultra",
 		"cp": 2500,
-		"meta": "celestial",
+		"meta": "ultra",
+		"showCup": false,
+		"showFormat": true,
+		"showMeta": false,
+		"hideRankings": true
+	},
+	{
+		"title": "Silph Factions (Master League)",
+		"cup": "factionsmaster",
+		"cp": 10000,
+		"meta": "masterfactions",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Silph Factions (Ember)",
+		"cup": "ember",
+		"cp": 1500,
+		"meta": "ember",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Silph Factions (Vanguard)",
+		"cup": "vanguard",
+		"cp": 1500,
+		"meta": "vanguard",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true

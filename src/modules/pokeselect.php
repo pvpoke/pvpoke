@@ -1,7 +1,12 @@
 <div class="poke single">
 	<a class="random" href="#">Random</a>
 	<a class="swap" href="#">Swap</a>
-	<input class="poke-search" type="text" placeholder="Search name">
+
+	<div class="poke-search-container flex">
+		<input class="poke-search" type="text" placeholder="Search name">
+		<a href="#" class="search-info" title="Search Help" context="pokeselect">?</a>
+	</div>
+
 	<select class="poke-select">
 		<option disabled selected value="">Select a Pokemon</option>
 	</select>
@@ -210,5 +215,23 @@
 		<div class="center flex">
 			<div class="button add-move">Add move</div>
 		</div>
+	</div>
+
+	<div class="pokeselector-search-help article hide">
+		<p>You can use the following keyboard commands when selecting a Pokemon:</p>
+		<table cellspacing="0">
+			<tr>
+				<td><strong>&uarr;</strong></td>
+				<td>Navigate up alphabetically (to select a related form)</td>
+			</tr>
+			<tr>
+				<td><strong>&darr;</strong></td>
+				<td>Navigate down alphabetically (to select a related form)</td>
+			</tr>
+			<tr>
+				<td><strong>Enter</strong></td>
+				<td>Multi-Select: Add or save changes to the current Pokemon. You can press Enter again to bring up a new Add Pokemon window.</td>
+			</tr>
+		</table>
 	</div>
 </div>

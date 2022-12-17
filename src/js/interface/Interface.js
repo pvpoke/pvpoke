@@ -851,6 +851,107 @@ var InterfaceMaster = (function () {
 					$(".stats-table.cmp .output").append("<tr class=\"toggle\"><td>Can't win<br>CMP</td><td>Can't win<br>CMP</td><td>Can't win<br>CMP</td></tr>");
 				}
 
+				// Display optimal move timing chart
+
+				$(".optimal-timing-section .name-attacker").html(pokemon[0].speciesName);
+				$(".optimal-timing-section .name-defender").html(pokemon[1].speciesName);
+
+				var targetCooldown = 500;
+
+				// Optimal timing is N/A when duration is the same
+				if(pokemon[0].fastMove.cooldown == pokemon[1].fastMove.cooldown){
+					targetCooldown = 0;
+				}
+
+				// Optimal timing is N/A when the opponent has a shorter move that is divisible into your move
+				if(pokemon[0].fastMove.cooldown % pokemon[1].fastMove.cooldown == 0){
+					targetCooldown = 0;
+				}
+
+				// Pokemon with 2 turn moves can only throw on turn 2 of a 4 turn move
+				if(pokemon[0].fastMove.cooldown == 1000 && pokemon[1].fastMove.cooldown == 2000){
+					targetCooldown = 1000;
+				}
+
+				var displayCycles = 0;
+
+				var optimalTimes = []; // Array that stores integer counts of Fast Moves that provide optimal timing
+				var opponentFastCount = 0;
+
+				for(var i = 1; displayCycles < 3; i++){
+					var targetTurn = (pokemon[1].fastMove.cooldown * i) - targetCooldown; // Target the last turn of the move
+
+					if(targetCooldown > 0 && targetTurn > 0 && targetTurn % pokemon[0].fastMove.cooldown == 0){ // If this turn is divisible by your Fast Move duration
+						optimalTimes.push(targetTurn / pokemon[0].fastMove.cooldown); // Number of moves you need to use to reach this optimal turn
+						displayCycles++;
+					} else if(targetCooldown == 0){
+						displayCycles++;
+					}
+
+					opponentFastCount = i;
+				}
+
+				if(targetCooldown == 0){
+					opponentFastCount = (displayCycles * pokemon[0].fastMove.cooldown) / pokemon[1].fastMove.cooldown;
+				}
+
+
+				// Display fast moves on timeline
+				if(optimalTimes.length > 0){
+					displayCycles = optimalTimes[2];
+				}
+
+				for(i = 0; i < displayCycles; i++){
+					var $fastItem = $('<div class="item fast '+pokemon[0].fastMove.type+'"></div>');
+					$fastItem.css("flex", pokemon[0].fastMove.cooldown / 500 + "");
+
+					if(pokemon[0].fastMove.cooldown > 500){
+						for(var n = 0; n < pokemon[0].fastMove.cooldown / 500; n++){
+							$fastItem.append('<div class="chunk"></div>')
+						}
+					}
+
+					if(optimalTimes.indexOf(i) == -1){
+						$fastItem.addClass("fade");
+					} else{
+						$fastItem.addClass("throw");
+					}
+
+					$(".optimal-timing-section .timeline").eq(0).append($fastItem);
+				}
+
+				// Add an empty chunk at the end for a Charged Move space
+				$(".optimal-timing-section p").hide();
+
+				if(targetCooldown > 0){
+					$fastItem = $('<div class="item fast throw '+pokemon[0].fastMove.type+'"><div class="chunk"></div></div>');
+					$fastItem.css("flex", targetCooldown / 500 + "");
+					$(".optimal-timing-section .timeline").eq(0).append($fastItem);
+
+					$(".optimal-timing-section .optimal-1").html(optimalTimes[0]);
+					$(".optimal-timing-section .optimal-2").html(optimalTimes[1]);
+					$(".optimal-timing-section .optimal-3").html(optimalTimes[2]);
+
+					$(".optimal-timing-section p.timing-most-optimal").show();
+				} else{
+					$(".optimal-timing-section p.timing-none").show();
+				}
+
+				for(i = 0; i < opponentFastCount; i++){
+					$fastItem = $('<div class="item fast '+pokemon[1].fastMove.type+'"></div>');
+					$fastItem.css("flex", pokemon[1].fastMove.cooldown / 500 + "");
+
+					if(pokemon[1].fastMove.cooldown > 500){
+						for(var n = 0; n < pokemon[1].fastMove.cooldown / 500; n++){
+							$fastItem.append('<div class="chunk"></div>')
+						}
+					}
+
+					$(".optimal-timing-section .timeline").eq(1).append($fastItem);
+				}
+
+
+
 			}
 
 			// Process selected Pokemon through the team ranker

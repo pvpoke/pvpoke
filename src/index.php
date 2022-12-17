@@ -34,32 +34,15 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.29.14 (November 5, 2022)</h4>
+	<h4>v1.29.20 (December 11, 2022)</h4>
 	<ul>
-		<li>Custom Ranking updates:</li>
+		<li>Fast Move count updates:</li>
 		<ul>
-			<li>The "Species" filter can now import a Pokemon list from a custom group you have made and saved elsewhere on the site.</li>
-			<li>Custom Rankings now use the league default movesets instead of generating movesets from scratch. (You can still provide moveset overrides.)</li>
-			<ul>
-				<li>In general, this should save time checking custom ranking results for the correct movesets.</li>
-				<li>You can disable this feature per cup. Generated movesets may work better for small cups where off-meta movesets are more likely.</li>
-			</ul>
-			<li>You can now specify a Ranking Weight Multiplier per Pokemon in the Moveset Overrides section. Use this to increase the weighting applied to any meta defining Pokemon in your cup and generate more fine-tuned results.</li>
+			<li>Added Fast Move duration to the top-level move count info on the Rankings page.</li>
+			<li>Move counts in which the third Charged Move cycle has a lower count than the previous cycles are now marked by a period sign. Move counts in which the second Charged Move cycle has a lower count than the first is still marked by a minus sign.</li>
+			<li>When viewing move counts in a Pokemon's ranking details, you can now select a different Fast Move in the Fast Moves list to see move counts with alternate Fast Moves.</li>
 		</ul>
-	</ul>
-
-	<h4>v1.29.13 (November 3, 2022)</h4>
-	<ul>
-		<li>Matrix Battle updates:</li>
-		<ul>
-			<li>Wins that change to ties and ties that change to losses are now shown as differences in Matrix Battle.</li>
-			<li>Added a "swap" button above Matrix Battle selections to quickly swap Pokemon groups between the left and right sides.</li>
-			<li>Added a "Duplicate" button when editing a Pokemon in a Matrix Battle list.</li>
-		</ul>
-
-		<li>"Show Move Counts" settings on the rankings page now persists</li>
-		<li>Pokemon can now be selected by dex number.</li>
-		<li>Ranking CSV export now contains a dex number column.</li>
+		<li>Adding a new Pokemon to a Multi-Battle list will scroll the list to the bottom</li>
 	</ul>
 
 	<h3>Latest Article</h3>

@@ -1259,14 +1259,29 @@ function Battle(){
 			var targetCooldown = 500; // Look to throw moves when opponent is at this cooldown or lower
 
 			if(poke.fastMove.cooldown >= 2000){
-				targetCooldown = 1000
+				targetCooldown = 1000;
 			}
 
 			if((poke.fastMove.cooldown >= 1500)&&(opponent.fastMove.cooldown == 2500)){
-				targetCooldown = 1000
+				targetCooldown = 1000;
 			}
 
-			if ( (! (poke.fastMove.cooldown % opponent.fastMove.cooldown == 0 || opponent.fastMove.cooldown % poke.fastMove.cooldown == 0) || (poke.fastMove.cooldown == 500 && opponent.fastMove.cooldown > 500)) && ((opponent.cooldown == 0) || (opponent.cooldown > targetCooldown)) ) {
+			if((poke.fastMove.cooldown == 1000)&&(opponent.fastMove.cooldown == 2000)){
+				targetCooldown = 1000;
+			}
+
+			// Don't optimize timing for Pokemon with the same duration moves
+			if(poke.fastMove.cooldown == opponent.fastMove.cooldown){
+				targetCooldown = 0;
+			}
+
+			// Don't optimize timing for Pokemon with longer, even duration moves (ie 4 vs 2, 3 vs 1)
+			if(poke.fastMove.cooldown % opponent.fastMove.cooldown == 0 && poke.fastMove.cooldown > opponent.fastMove.cooldown){
+				targetCooldown = 0;
+			}
+
+			// Perform additional checks to execute optimal timing
+			if( (opponent.cooldown == 0 || opponent.cooldown > targetCooldown) && targetCooldown > 0) {
 				var optimizeTiming = true;
 
 				// Don't optimize if we're about to faint from a fast move
@@ -1339,6 +1354,8 @@ function Battle(){
 				if(poke.hp <= opponent.fastMove.damage * fastMovesInFastMove){
 					optimizeTiming = false;
 				}
+
+
 
 				if(optimizeTiming){
 					useChargedMove = false;

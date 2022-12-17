@@ -669,6 +669,10 @@ function PokeSelect(element, i){
     // Search select Pokemon
 
 	$el.find(".poke-search").on("keyup", function(e){
+		// Don't search on arrow key press
+		if(e.which == 38 || e.which == 40){
+			return;
+		}
 
 		// Reset the timeout when a new key is typed. This prevents queries from being submitted too quickly and bogging things down on mobile.
 		window.clearTimeout(searchTimeout);
@@ -1111,5 +1115,33 @@ function PokeSelect(element, i){
 
 		self.setPokemon($(list).eq(index).val());
 
+	});
+
+	// Keyboard shortcuts for selecting a Pokemon
+
+	$el.find(".poke-search").keydown(function(e){
+		if (e.which === 38 || e.which === 40) {
+			e.preventDefault();
+
+			if(e.which == 38){
+				if($el.find(".poke-select option:selected").prev() && ! $el.find(".poke-select option:selected").prev().prop('disabled')){
+					$el.find(".poke-select option:selected").prev().prop("selected", "selected");
+					$el.find(".poke-select").trigger("change");
+				}
+			} else if(e.which == 40){
+				if($el.find(".poke-select option:selected").next()){
+					$el.find(".poke-select option:selected").next().prop("selected", "selected");
+					$el.find(".poke-select").trigger("change");
+				}
+			}
+		}
+	});
+
+	// Show keyboard shortcuts
+
+	$el.find("a.search-info").click(function(e){
+		e.preventDefault();
+
+		modalWindow("Keyboard Commands", $el.find(".pokeselector-search-help"));
 	});
 }
