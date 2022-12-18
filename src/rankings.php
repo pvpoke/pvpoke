@@ -157,7 +157,7 @@ require_once 'header.php';
 
 	<p class="description small consistency hide"><b>These Pokemon perform the most dependably.</b> They provide consistent damage and rely less on baiting shields than other Pokemon. Shorter Fast Moves also help improve consistency.</p>
 
-	<p class="description small statproduct hide"><b>The Pokemon with the highest overall stats.</b> They have the staying power to outlast their opponents in battle and potential overcome type disadvantage.</p>
+	<p class="description small statproduct hide"><b>The Pokemon with the highest overall stats.</b> They have the staying power to outlast their opponents in battle and potentially overcome type disadvantage.</p>
 
 	<p class="description small attack hide"><b>The Pokemon with the highest Attack stat.</b> They deal more damage and win Charged Move priority (CMP) against Pokemon with lower Attack stats. Stats can vary ~0-3 points depending on IV's.</p>
 
