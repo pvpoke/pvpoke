@@ -1268,7 +1268,8 @@ select, input{
 .cup-select,
 .format-select,
 .slot-select,
-.mode-select{
+.mode-select,
+.category-select{
     font-size: 18px;
     width: auto;
     background: none;
@@ -2920,15 +2921,25 @@ a.download-csv{
 .ranking-filters{
 
 	.ranking-filter{
-		margin-right: 20px;
+		max-width: 50%;
+		padding-right: 20px;
+		box-sizing: border-box;
+
+		&:last-of-type{
+			padding-right: 0;
+		}
 
 		h4{
 			margin: 0 0 5px 0;
 	    	font-size: 12px;
 		}
 
-		.format-select{
-			max-width: None;
+		select{
+			max-width: 100%;
+
+			optgroup{
+				font-weight: normal;
+			}
 		}
 
 		.sort-button{

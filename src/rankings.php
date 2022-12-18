@@ -123,22 +123,25 @@ require_once 'header.php';
 		</div>
 		<div class="ranking-filter">
 			<h4>Sort By</h4>
-			<button class="button sort-button">Overall</button>
+			<select class="category-select">
+				<optgroup label="Categories">
+					<option value="overall" scenario="leads" sort="score">Overall</option>
+					<option value="leads" scenario="leads" sort="score">Leads</option>
+					<option value="closers" scenario="closers" sort="score">Closers</option>
+					<option value="switches" scenario="switches" sort="score">Switches</option>
+					<option value="chargers" scenario="chargers" sort="score">Chargers</option>
+					<option value="attackers" scenario="attackers" sort="score">Attackers</option>
+					<option value="consistency" scenario="leads" sort="score">Consistency</option>
+				</optgroup>
+				<optgroup label="Stats">
+					<option value="overall" scenario="leads" sort="statproduct">Stat Product</option>
+					<option value="overall" scenario="leads" sort="attack">Attack</option>
+					<option value="overall" scenario="leads" sort="defense">Defense</option>
+					<option value="overall" scenario="leads" sort="stamina">Stamina</option>
+				</optgroup>
+			</select>
 		</div>
 	</div>
-
-
-	<div class="ranking-categories">
-		<a class="selected" href="#" data="overall" scenario="leads">Overall</a>
-		<a href="#" data="leads" scenario="leads">Leads</a>
-		<a href="#" data="closers" scenario="closers">Closers</a>
-		<a href="#" data="switches" scenario="switches">Switches</a>
-		<a href="#" data="chargers" scenario="chargers">Chargers</a>
-		<a href="#" data="attackers" scenario="attackers">Attackers</a>
-		<a href="#" data="consistency" scenario="leads">Consistency</a>
-	</div>
-
-	<div class="clear"></div>
 
 	<p class="description overall"><b>The best Pokemon overall across multiple roles.</b> They have the typing, moves, and stats to succeed as top contenders.</p>
 

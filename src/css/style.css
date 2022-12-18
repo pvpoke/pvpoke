@@ -984,7 +984,8 @@ select, input {
 .cup-select,
 .format-select,
 .slot-select,
-.mode-select {
+.mode-select,
+.category-select {
   font-size: 18px;
   width: auto;
   background: none;
@@ -2577,14 +2578,22 @@ a.download-csv {
 }
 
 .ranking-filters .ranking-filter {
-  margin-right: 20px;
+  max-width: 50%;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+.ranking-filters .ranking-filter:last-of-type {
+  padding-right: 0;
 }
 .ranking-filters .ranking-filter h4 {
   margin: 0 0 5px 0;
   font-size: 12px;
 }
-.ranking-filters .ranking-filter .format-select {
-  max-width: None;
+.ranking-filters .ranking-filter select {
+  max-width: 100%;
+}
+.ranking-filters .ranking-filter select optgroup {
+  font-weight: normal;
 }
 .ranking-filters .ranking-filter .sort-button {
   background: none !important;

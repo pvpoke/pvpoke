@@ -53,7 +53,7 @@ var InterfaceMaster = (function () {
 
 				$(".format-select").on("change", selectFormat);
 				$(".league-select").on("change", selectLeague);
-				$(".ranking-categories a").on("click", selectCategory);
+				$(".category-select").on("change", selectCategory);
 				$("body").on("click", ".check", checkBox);
 				$("body").on("click", ".check.limited", toggleLimitedPokemon);
 				$("body").on("click", ".check.xl", toggleXLPokemon);
@@ -423,22 +423,11 @@ var InterfaceMaster = (function () {
 								break;
 
 							case "cat":
-								$(".ranking-categories a").removeClass("selected");
-								$(".ranking-categories a[data=\""+val+"\"]").addClass("selected");
+								$(".category-select option[value=\""+val+"\"]").prop("selected", "selected");
 
 								// Set the corresponding scenario
 
-								var scenarioStr = val;
-
-								if(val == "overall"){
-									scenarioStr = "leads";
-								}
-
-								for(var i = 0; i < scenarios.length; i++){
-									if(scenarios[i].slug == scenarioStr){
-										scenario = scenarios[i];
-									}
-								}
+								var scenarioStr = $(".category-select option:selected").attr("scenario");
 								break;
 
 							case "cup":
@@ -457,7 +446,7 @@ var InterfaceMaster = (function () {
 				// Load data via existing change function
 
 				var cp = battle.getCP();
-				var category = $(".ranking-categories a.selected").attr("data");
+				var category = $(".category-select option:selected").val();
 				var cup = battle.getCup().name;
 
 				$(".format-select option[value=\""+cp+"\"][cup=\""+cup+"\"]").prop("selected","selected");
@@ -553,7 +542,7 @@ var InterfaceMaster = (function () {
 				var levelCap = parseInt($(".league-select option:selected").attr("level-cap"));
 
 				if(context != "custom"){
-					var category = $(".ranking-categories a.selected").attr("data");
+					var category = $(".category-select option:selected").val();
 					var cup = battle.getCup().name;
 
 					if(cp == 500){
@@ -581,7 +570,7 @@ var InterfaceMaster = (function () {
 			function selectFormat(e){
 				var cp = $(".format-select option:selected").val();
 				var cup = $(".format-select option:selected").attr("cup");
-				var category = $(".ranking-categories a.selected").attr("data");
+				var category = $(".category-select option:selected").val();
 
 				if(! category){
 					category = "overall";
@@ -601,15 +590,9 @@ var InterfaceMaster = (function () {
 
 			function selectCategory(e){
 
-				e.preventDefault();
-
-				$(".ranking-categories a").removeClass("selected");
-
-				$(e.target).addClass("selected");
-
 				var cp = $(".format-select option:selected").val();
-				var category = $(".ranking-categories a.selected").attr("data");
-				var scenarioStr = $(".ranking-categories a.selected").attr("scenario");
+				var category = $(".category-select option:selected").val();
+				var scenarioStr = $(".category-select option:selected").attr("scenario");
 				var cup = $(".format-select option:selected").attr("cup");
 
 				$(".description").hide();
@@ -640,7 +623,7 @@ var InterfaceMaster = (function () {
 				}
 
 				var cup = $(".format-select option:selected").attr("cup");
-				var category = $(".ranking-categories a.selected").attr("data");
+				var category = $(".category-select option:selected").val();
 				var $rank = $(this).closest(".rank");
 
 				$rank.toggleClass("selected");
