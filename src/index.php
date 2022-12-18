@@ -34,15 +34,14 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.29.20 (December 11, 2022)</h4>
+	<h4>v1.29.21 (December 18, 2022)</h4>
 	<ul>
-		<li>Fast Move count updates:</li>
+		<li>Ranking category and sort updates:</li>
 		<ul>
-			<li>Added Fast Move duration to the top-level move count info on the Rankings page.</li>
-			<li>Move counts in which the third Charged Move cycle has a lower count than the previous cycles are now marked by a period sign. Move counts in which the second Charged Move cycle has a lower count than the first is still marked by a minus sign.</li>
-			<li>When viewing move counts in a Pokemon's ranking details, you can now select a different Fast Move in the Fast Moves list to see move counts with alternate Fast Moves.</li>
+			<li>Ranking categories are now organized under a sort dropdown.</li>
+			<li>Rankings can also now be sorted by stat product, Attack, Defense, and Stamina stats.</li>
+			<li>Added a "meta" search string that displays Pokemon in that format's limited meta group.</li>
 		</ul>
-		<li>Adding a new Pokemon to a Multi-Battle list will scroll the list to the bottom</li>
 	</ul>
 
 	<h3>Latest Article</h3>
