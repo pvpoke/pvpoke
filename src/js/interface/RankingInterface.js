@@ -165,6 +165,36 @@ var InterfaceMaster = (function () {
 					}
 				}
 
+				// Sort rankings by selected sort method
+				var sort = $(".category-select option:selected").attr("sort");
+
+				switch(sort){
+					case "score":
+						data.sort((a,b) => (a.score > b.score) ? -1 : ((b.score > a.score) ? 1 : 0));
+						$(".league-select-container > .ranking-header.right").html("Score");
+						break;
+
+					case "statproduct":
+						data.sort((a,b) => (a.stats.product > b.stats.product) ? -1 : ((b.stats.product > a.stats.product) ? 1 : 0));
+						$(".league-select-container > .ranking-header.right").html("Stat Product");
+						break;
+
+					case "attack":
+						data.sort((a,b) => (a.stats.atk > b.stats.atk) ? -1 : ((b.stats.atk > a.stats.atk) ? 1 : 0));
+						$(".league-select-container > .ranking-header.right").html("Attack");
+						break;
+
+					case "defense":
+						data.sort((a,b) => (a.stats.def > b.stats.def) ? -1 : ((b.stats.def > a.stats.def) ? 1 : 0));
+						$(".league-select-container > .ranking-header.right").html("Defense");
+						break;
+
+					case "stamina":
+						data.sort((a,b) => (a.stats.hp > b.stats.hp) ? -1 : ((b.stats.hp > a.stats.hp) ? 1 : 0));
+						$(".league-select-container > .ranking-header.right").html("Stamina");
+						break;
+				}
+
 				// Pass this along to the custom ranking interface to fill in movesets
 				if(context == "custom"){
 					customRankingInterface.importMovesetsFromRankings(data);
@@ -284,6 +314,24 @@ var InterfaceMaster = (function () {
 					// Is this the best way to add HTML content? I'm gonna go with no here. But does it work? Yes!
 
 					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"expand-label\"></div><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span><div class=\"moves\">"+moveNameStr+"</div></div><div class=\"rating-container\"><div class=\"rating\">"+r.score+"</span></div><div class=\"clear\"></div></div><div class=\"details\"></div>");
+
+					switch(sort){
+						case "statproduct":
+							$el.find(".rating").html(r.stats.product);
+							break;
+
+						case "attack":
+							$el.find(".rating").html(r.stats.atk);
+							break;
+
+						case "defense":
+							$el.find(".rating").html(r.stats.def);
+							break;
+
+						case "stamina":
+							$el.find(".rating").html(r.stats.hp);
+							break;
+					}
 
 					if(showMoveCounts){
 						$el.find(".count").removeClass("hide");
@@ -423,11 +471,12 @@ var InterfaceMaster = (function () {
 								break;
 
 							case "cat":
-								$(".category-select option[value=\""+val+"\"]").prop("selected", "selected");
-
-								// Set the corresponding scenario
-
-								var scenarioStr = $(".category-select option:selected").attr("scenario");
+								// Select by sort first if it exists
+								if($(".category-select option[sort=\""+val+"\"]").length > 0){
+									$(".category-select option[sort=\""+val+"\"]").first().prop("selected", "selected");
+								} else{
+									$(".category-select option[value=\""+val+"\"]").first().prop("selected", "selected");
+								}
 								break;
 
 							case "cup":
@@ -463,6 +512,13 @@ var InterfaceMaster = (function () {
 
 				if(cup == "little"){
 					cp = 500;
+				}
+
+				// Use the sort method for the non-score based categories
+				var sort = $(".category-select option:selected").attr("sort");
+
+				if(sort != "score"){
+					category = sort;
 				}
 
 				var url = webRoot+"rankings/"+cup+"/"+cp+"/"+category+"/";
@@ -571,6 +627,7 @@ var InterfaceMaster = (function () {
 				var cp = $(".format-select option:selected").val();
 				var cup = $(".format-select option:selected").attr("cup");
 				var category = $(".category-select option:selected").val();
+				var sort = $(".category-select option:selected").attr("sort");
 
 				if(! category){
 					category = "overall";
@@ -592,11 +649,17 @@ var InterfaceMaster = (function () {
 
 				var cp = $(".format-select option:selected").val();
 				var category = $(".category-select option:selected").val();
+				var sort = $(".category-select option:selected").attr("sort");
 				var scenarioStr = $(".category-select option:selected").attr("scenario");
 				var cup = $(".format-select option:selected").attr("cup");
 
 				$(".description").hide();
-				$(".description."+category).show();
+				if(sort == "score"){
+					$(".description."+category).show();
+				} else{
+					$(".description."+sort).show();
+				}
+
 
 				// Set the corresponding scenario
 

@@ -143,25 +143,31 @@ require_once 'header.php';
 		</div>
 	</div>
 
-	<p class="description overall"><b>The best Pokemon overall across multiple roles.</b> They have the typing, moves, and stats to succeed as top contenders.</p>
+	<p class="description small overall"><b>The best Pokemon overall across multiple roles.</b> They have the typing, moves, and stats to succeed as top contenders.</p>
 
-	<p class="description closers hide"><b>The best Pokemon with no shields in play.</b> Bulk or hard-hitting moves allow them to close out matchups.</p>
+	<p class="description small closers hide"><b>The best Pokemon with no shields in play.</b> Bulk or hard-hitting moves allow them to close out matchups.</p>
 
-	<p class="description leads hide"><b>The best Pokemon with shields in play.</b> Capable of applying pressure or winning extended fights, they're ideal leads in battle.</p>
+	<p class="description small leads hide"><b>The best Pokemon with shields in play.</b> Capable of applying pressure or winning extended fights, they're ideal leads in battle.</p>
 
-	<p class="description attackers hide"><b>The best Pokemon against shielded opponents, while unshielded.</b> Their natural bulk, resistances, and strong attacks allow them to power through a disadvantage.</p>
+	<p class="description small attackers hide"><b>The best Pokemon against shielded opponents, while unshielded.</b> Their natural bulk, resistances, and strong attacks allow them to power through a disadvantage.</p>
 
-	<p class="description switches hide"><b>The best Pokemon to switch to from an unfavorable lead.</b> These Pokemon have safe matchups and can pressure shields or deal heavy damage even in their losses.</p>
+	<p class="description small switches hide"><b>The best Pokemon to switch to from an unfavorable lead.</b> These Pokemon have safe matchups and can pressure shields or deal heavy damage even in their losses.</p>
 
-	<p class="description chargers hide"><b>The best Pokemon with an energy advantage.</b> Fast energy gain or powerful moves make them dangerous after building up energy.</p>
+	<p class="description small chargers hide"><b>The best Pokemon with an energy advantage.</b> Fast energy gain or powerful moves make them dangerous after building up energy.</p>
 
-	<p class="description consistency hide"><b>These Pokemon perform the most dependably.</b> They provide consistent damage and rely less on baiting shields than other Pokemon. Shorter Fast Moves also help improve consistency.</p>
+	<p class="description small consistency hide"><b>These Pokemon perform the most dependably.</b> They provide consistent damage and rely less on baiting shields than other Pokemon. Shorter Fast Moves also help improve consistency.</p>
 
-	<p class="description link hide"><b>Tournament Info:</b> <a href="#" target="_blank"></a></p>
+	<p class="description small statproduct hide"><b>The Pokemon with the highest overall stats.</b> They have the staying power to outlast their opponents in battle and potential overcome type disadvantage.</p>
 
-	<p>Help provide usage data for the rankings at <a href="https://gobattlelog.com/pvpoke" target="_blank">gobattlelog.com</a>.</p>
+	<p class="description small attack hide"><b>The Pokemon with the highest Attack stat.</b> They deal more damage and win Charged Move priority (CMP) against Pokemon with lower Attack stats.</p>
 
-	<p>Click or tap the rankings below for more details.</p>
+	<p class="description small defense hide"><b>The Pokemon with the highest Defense stat.</b> They take less damage from attacks.</p>
+
+	<p class="description small stamina hide"><b>The Pokemon with the highest Stamina stat.</b> They have more HP and can absorb more damage than other Pokemon. Stamina-based bulk is more resilient to Fast Move damage.</p>
+
+	<p class="description small link hide"><b>Tournament Info:</b> <a href="#" target="_blank"></a></p>
+
+	<p class="small">Help provide usage data for the rankings at <a href="https://gobattlelog.com/pvpoke" target="_blank">gobattlelog.com</a>.</p>
 
 	<div class="ranking-checks flex">
 		<div class="check <?php if($_SETTINGS->xls): echo "on"; endif; ?> xl" style="margin-bottom:15px;"><span></span>Show XL Pokemon</div>

@@ -145,7 +145,7 @@ var RankerMaster = (function () {
 
 					var r = rankings[i];
 					var pokemon = new Pokemon(r.speciesId, 0, battle);
-					pokemon.initialize();
+					pokemon.initialize(true);
 					pokemon.selectMove("fast", r.moveset[0]);
 					pokemon.selectMove("charged", r.moveset[1], 0);
 
@@ -185,6 +185,14 @@ var RankerMaster = (function () {
 					}
 
 					rankings[i].score = Math.floor(rankings[i].score*10) / 10;
+
+					// Add Pokemon stats
+					rankings[i].stats = {
+						product: Math.round(pokemon.stats.atk * pokemon.stats.def * pokemon.stats.hp * (1/1000)),
+						atk: Math.floor(pokemon.stats.atk * 10) / 10,
+						def: Math.floor(pokemon.stats.def * 10) / 10,
+						hp: pokemon.stats.hp
+					}
 				}
 
 				rankings.sort((a,b) => (a.score > b.score) ? -1 : ((b.score > a.score) ? 1 : 0));

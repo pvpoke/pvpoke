@@ -159,6 +159,9 @@ header {
 .section p.description {
   margin: 1em 0;
 }
+.section p.small {
+  font-size: 14px;
+}
 .section h2 {
   font-size: 18px;
 }
@@ -4234,9 +4237,11 @@ a.pokebattler {
 
   .league-select,
 .format-select,
-.cup-select {
+.cup-select,
+.category-select {
     max-width: 48%;
     margin-bottom: 5px;
+    font-size: 16px;
   }
 
   .ranking-categories a {
