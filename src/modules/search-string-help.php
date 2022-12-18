@@ -54,6 +54,10 @@
 			<td>1km, 3km, 5km, 20km</td>
 		</tr>
 		<tr>
+			<td><strong>Meta Pokemon</strong></td>
+			<td>meta</td>
+		</tr>
+		<tr>
 			<td><strong>4* Pokemon</strong></td>
 			<td>4*, Hundo</td>
 		</tr>

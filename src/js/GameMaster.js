@@ -1020,6 +1020,8 @@ var GameMaster = (function () {
 			var tags = object.data.pokemonTags;
 			var regions = object.data.pokemonRegions;
 
+			var metaKey = $(".format-select option:selected").first().attr("meta-group");
+
 			if(! battle){
 				battle = new Battle();
 			}
@@ -1190,6 +1192,25 @@ var GameMaster = (function () {
 									valid = true;
 								}
 							}
+
+							// Meta group search
+							if(param == "meta"){
+								if(object.groups[metaKey] !== undefined){
+
+									var group = object.groups[metaKey];
+
+									valid = false;
+
+									for(k = 0; k < group.length; k++){
+										if(pokemon.speciesId.replace("_shadow", "") == group[k].speciesId.replace("_shadow", "")){
+											valid = true;
+										}
+									}
+								} else{
+									valid = true;
+								}
+							}
+
 
 							// Trait search
 
