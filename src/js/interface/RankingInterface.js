@@ -115,12 +115,6 @@ var InterfaceMaster = (function () {
 					battle.setLevelCap(50);
 				}
 
-				if(cup == "beam"){
-					category = "beaminess";
-					$(".description").hide();
-					$(".description."+category).show();
-				}
-
 				if(battle.getCup().link){
 					$(".description.link").show();
 					$(".description.link a").attr("href", battle.getCup().link);
@@ -477,6 +471,18 @@ var InterfaceMaster = (function () {
 								} else{
 									$(".category-select option[value=\""+val+"\"]").first().prop("selected", "selected");
 								}
+
+								// Show relevant description
+
+								var category = $(".category-select option:selected").val();
+								var sort = $(".category-select option:selected").attr("sort");
+
+								$(".description").hide();
+								if(sort == "score"){
+									$(".description."+category).show();
+								} else{
+									$(".description."+sort).show();
+								}
 								break;
 
 							case "cup":
@@ -659,7 +665,6 @@ var InterfaceMaster = (function () {
 				} else{
 					$(".description."+sort).show();
 				}
-
 
 				// Set the corresponding scenario
 

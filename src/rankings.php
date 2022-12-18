@@ -159,7 +159,7 @@ require_once 'header.php';
 
 	<p class="description small statproduct hide"><b>The Pokemon with the highest overall stats.</b> They have the staying power to outlast their opponents in battle and potential overcome type disadvantage.</p>
 
-	<p class="description small attack hide"><b>The Pokemon with the highest Attack stat.</b> They deal more damage and win Charged Move priority (CMP) against Pokemon with lower Attack stats. Stats can vary depending on IV's (usually ~1-2 points).</p>
+	<p class="description small attack hide"><b>The Pokemon with the highest Attack stat.</b> They deal more damage and win Charged Move priority (CMP) against Pokemon with lower Attack stats. Stats can vary ~0-3 points depending on IV's.</p>
 
 	<p class="description small defense hide"><b>The Pokemon with the highest Defense stat.</b> They take less damage from attacks.</p>
 
