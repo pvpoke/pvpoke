@@ -15,7 +15,7 @@ a {
 }
 
 select, .league-select, .cup-select,
-option,
+option, .category-select optgroup,
 .poke input, .poke select,
 input,
 .poke-search,
@@ -24,7 +24,7 @@ textarea {
   color: #fff;
 }
 select::-webkit-input-placeholder, .league-select::-webkit-input-placeholder, .cup-select::-webkit-input-placeholder,
-option::-webkit-input-placeholder,
+option::-webkit-input-placeholder, .category-select optgroup::-webkit-input-placeholder,
 .poke input::-webkit-input-placeholder, .poke select::-webkit-input-placeholder,
 input::-webkit-input-placeholder,
 .poke-search::-webkit-input-placeholder,
@@ -32,7 +32,7 @@ textarea::-webkit-input-placeholder {
   color: #aaa;
 }
 select::-moz-placeholder, .league-select::-moz-placeholder, .cup-select::-moz-placeholder,
-option::-moz-placeholder,
+option::-moz-placeholder, .category-select optgroup::-moz-placeholder,
 .poke input::-moz-placeholder, .poke select::-moz-placeholder,
 input::-moz-placeholder,
 .poke-search::-moz-placeholder,
@@ -40,7 +40,7 @@ textarea::-moz-placeholder {
   color: #aaa;
 }
 select:-ms-input-placeholder, .league-select:-ms-input-placeholder, .cup-select:-ms-input-placeholder,
-option:-ms-input-placeholder,
+option:-ms-input-placeholder, .category-select optgroup:-ms-input-placeholder,
 .poke input:-ms-input-placeholder, .poke select:-ms-input-placeholder,
 input:-ms-input-placeholder,
 .poke-search:-ms-input-placeholder,
@@ -48,7 +48,7 @@ textarea:-ms-input-placeholder {
   color: #aaa;
 }
 select:-moz-placeholder, .league-select:-moz-placeholder, .cup-select:-moz-placeholder,
-option:-moz-placeholder,
+option:-moz-placeholder, .category-select optgroup:-moz-placeholder,
 .poke input:-moz-placeholder, .poke select:-moz-placeholder,
 input:-moz-placeholder,
 .poke-search:-moz-placeholder,
