@@ -25744,7 +25744,8 @@
     },
     "types": ["dragon", "ice"],
     "fastMoves": ["DRAGON_BREATH", "STEEL_WING"],
-    "chargedMoves": ["DRAGON_CLAW", "BLIZZARD", "DRACO_METEOR"],
+    "chargedMoves": ["DRAGON_CLAW", "BLIZZARD", "DRACO_METEOR", "GLACIATE"],
+	"eliteMoves": ["GLACIATE"],
     "defaultIVs": {
         "cp500": [5.5, 4, 10, 9],
         "cp1500": [15.5, 6, 13, 8],
@@ -26054,7 +26055,8 @@
     },
     "types": ["grass", "fighting"],
     "fastMoves": ["LOW_KICK", "SMACK_DOWN", "VINE_WHIP"],
-    "chargedMoves": ["GYRO_BALL", "ENERGY_BALL", "SUPER_POWER", "SOLAR_BEAM"],
+    "chargedMoves": ["GYRO_BALL", "ENERGY_BALL", "SUPER_POWER", "SOLAR_BEAM", "FRENZY_PLANT"],
+	"eliteMoves": ["FRENZY_PLANT"],
     "tags": ["starter"],
     "defaultIVs": {
         "cp500": [6.5, 5, 15, 9],
@@ -30122,6 +30124,7 @@
         "cp1500": [13.5, 6, 14, 12],
         "cp2500": [22.5, 7, 13, 13]
     },
+	"tags": ["legendary"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true,
@@ -30146,6 +30149,7 @@
         "cp1500": [13.5, 6, 14, 12],
         "cp2500": [22.5, 7, 13, 13]
     },
+	"tags": ["legendary"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true,
