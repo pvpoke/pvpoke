@@ -1892,6 +1892,11 @@ function Battle(){
 			finalState.moves[0] = poke.activeChargedMoves[0];
 		}
 
+		// Bandaid to force more efficient move of the similar energy if one move is self buffing
+		if (poke.activeChargedMoves.length > 1 && poke.activeChargedMoves[0].energy - finalState.moves[0].energy <= 5 && poke.activeChargedMoves[0].dpe > finalState.moves[0].dpe && poke.activeChargedMoves[0].selfBuffing) {
+			finalState.moves[0] = poke.activeChargedMoves[0];
+		}
+
 		// Don't bait with self debuffing moves
 		if (poke.baitShields && opponent.shields > 0 && poke.activeChargedMoves.length > 1) {
 			if ((poke.energy >= poke.activeChargedMoves[1].energy)&&(poke.activeChargedMoves[1].dpe > finalState.moves[0].dpe)) {

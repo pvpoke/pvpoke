@@ -34484,6 +34484,24 @@
         "cooldown": 500,
         "archetype": "Fast Charge"
     }, {
+        "moveId": "FUSION_BOLT",
+        "name": "Fusion Bolt",
+        "type": "electric",
+        "power": 90,
+        "energy": 45,
+        "energyGain": 0,
+        "cooldown": 500,
+        "archetype": "General"
+    }, {
+        "moveId": "FUSION_FLARE",
+        "name": "Fusion FLARE",
+        "type": "fire",
+        "power": 90,
+        "energy": 45,
+        "energyGain": 0,
+        "cooldown": 500,
+        "archetype": "General"
+    }, {
         "moveId": "FUTURE_SIGHT",
         "name": "Future Sight",
         "type": "psychic",
