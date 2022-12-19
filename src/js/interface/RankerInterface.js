@@ -60,6 +60,10 @@ var InterfaceMaster = (function () {
 				battle.setCP(cp);
 				battle.setCup(cup);
 
+				if(! battle.getCup().levelCap){
+					battle.setLevelCap(50);
+				}
+
 				loadOverrides();
 
 				$("a.rankersandbox-link").attr("href", webRoot+"rankersandbox.php?cup="+cup+"&cp="+cp);
