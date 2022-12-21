@@ -154,6 +154,10 @@ input.article-search {
   background-image: url("../articles/article-assets/community-day/megas/blaziken.png");
 }
 
+[mega=sceptile] .mega-image {
+  background-image: url("../articles/article-assets/community-day/megas/sceptile.png");
+}
+
 /* FAQ styling */
 .faq-item {
   border-radius: 8px;

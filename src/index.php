@@ -48,15 +48,15 @@
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/infographics/22-11-shadow-predictions/">
-				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/infographics/22-11-shadow-predictions/thumb.jpg">
+			<a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-01-chespin/">
+				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/community-day/23-01-chespin/thumb.jpg">
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/infographics/22-11-shadow-predictions/">PvPoke's Shadow Crystal Ball</a></h4>
-			<div class="date">November 13, 2022</div>
-			<p>Which Shadow Pokemon could become more relevant for PvP in a future move update or Community Day? Check out this speculative list if you have TM's to spare!</p>
-			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a></div>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-01-chespin/">Chespin Community Day Guide for PvP</a></h4>
+			<div class="date">December 21, 2022</div>
+			<p>Chesnaught is finally getting Frenzy Plant! Can it find a way to crack into the PvP meta? Check out its meta relevance and PvP IV's to look for.</p>
+			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Community Day"># Community Day</a><a href="/pvpoke/src/articles?tag=Infographic"># Infographic</a></div>
 		</div>
 	</div>
 
