@@ -150,6 +150,10 @@ input.article-search {
   background-image: url("../articles/article-assets/community-day/megas/gengar.png");
 }
 
+[mega=blaziken] .mega-image {
+  background-image: url("../articles/article-assets/community-day/megas/blaziken.png");
+}
+
 /* FAQ styling */
 .faq-item {
   border-radius: 8px;
@@ -676,6 +680,22 @@ input.article-search {
   border-bottom: 1px solid #2f2f55;
 }
 .section.litwick .faq-item {
+  background: #ffffff;
+}
+
+.section.chespin {
+  background: #deeac7;
+  border: 4px solid #513522;
+}
+.section.chespin .article-header, .section.chespin .mega-section {
+  color: #fff;
+  background: #513522 !important;
+}
+.section.chespin .feature h4 {
+  color: #513522;
+  border-bottom: 1px solid #513522;
+}
+.section.chespin .faq-item {
   background: #ffffff;
 }
 

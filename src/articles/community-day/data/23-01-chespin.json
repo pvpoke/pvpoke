@@ -1,0 +1,66 @@
+{
+	"species": [
+		{
+			"speciesId": "chespin",
+			"baseSpeciesId": "chespin"
+		},
+		{
+			"speciesId": "quilladin",
+			"baseSpeciesId": "chespin"
+		},
+		{
+			"speciesId": "chesnaught",
+			"baseSpeciesId": "chespin",
+			"default": true
+		}
+	],
+	"checklist": [
+		{
+			"title": "High Rank Chesnaught",
+			"speciesId": "chesnaught",
+			"baseSpeciesId": "chespin",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [19, 1, 15, 15],
+			"priority": 1
+		},
+		{
+			"title": "High Rank Chesnaught",
+			"speciesId": "chesnaught",
+			"baseSpeciesId": "chespin",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [33.5, 1, 15, 14],
+			"priority": 1
+		},
+		{
+			"title": "High IV Chesnaught",
+			"speciesId": "chesnaught",
+			"baseSpeciesId": "chespin",
+			"league": "master",
+			"cp": 10000,
+			"ivs": [50, 15, 15, 15],
+			"priority": 1,
+			"notes": "Minimum IV's of 13/15/x are recommended for Master Premier Classic and open Master League. These IV's reach breakpoints and bulkpoints against Garchomp and Dragon Breath Gyarados respectively, and secure the Dialga matchup shields down. If you plan to use Chesnaught in Master Premier Classic, avoid powering it up over level 40."
+		},
+		{
+			"title": "Little Cup Chesnaught",
+			"speciesId": "chesnaught",
+			"baseSpeciesId": "chespin",
+			"league": "special",
+			"cp": 500,
+			"ivs": [6.5, 3, 14, 14],
+			"priority": 2
+		},
+		{
+			"title": "CMP & Icebreaker Chesnaught",
+			"speciesId": "chesnaught",
+			"baseSpeciesId": "chespin",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [19, 9, 13, 0],
+			"priority": 3,
+			"notes": "A range of 120.6 Attack to 121.4 Attack allows Chesnaught to win CMP against very high rank Pelipper, Venusaur, Swampert, Froslass, and Sableye. Lower Attack investment in this range makes winning CMP against these Pokemon less likely in the order listed. \n\n This specific IV combination reaches a Vine Whip breakpoint, a Powder Snow bulkpoint, and wins CMP against very high rank Froslass. All of these together allow Chesnaught to beat Froslass head to head in the 1s and 2s scenario."
+		}
+	]
+}
