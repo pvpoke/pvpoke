@@ -173,23 +173,6 @@
             }]
         }
     }, {
-        "name": "justicar",
-        "title": "Upcoming Silph Factions (Justicar)",
-        "include": [{
-            "filterType": "type",
-            "values": ["bug", "electric", "fairy", "fighting", "fire", "ice", "poison"]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "values": ["mega"]
-        }, {
-            "filterType": "type",
-            "values": ["ground"]
-        }, {
-            "filterType": "id",
-            "values": ["toxicroak", "dragalge", "aurorus", "golem_alolan", "lanturn","tapu_fini"]
-        }]
-    }, {
         "name": "gobattleleague",
         "title": "GO Battle League",
         "include": [],
@@ -339,15 +322,6 @@
         "meta": "ultra",
         "showCup": false,
         "showFormat": true,
-        "showMeta": false,
-        "hideRankings": true
-    }, {
-        "title": "Upcoming Silph Factions (Justicar)",
-        "cup": "justicar",
-        "cp": 2500,
-        "meta": "justicar",
-        "showCup": false,
-        "showFormat": false,
         "showMeta": false,
         "hideRankings": true
     }, {

@@ -77,7 +77,6 @@ switch($cup){
 	case "factionsmaster":
 	case "ember":
 	case "vanguard":
-	case "justicar":
 		$league = 'Silph Factions';
 		break;
 
