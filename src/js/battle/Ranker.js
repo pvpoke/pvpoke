@@ -473,7 +473,7 @@ var RankerMaster = (function () {
 						'cup': cup.name
 					},
 					dataType:'json',
-					success : function(data) {              
+					success : function(data) {
 						console.log(data);
 					},
 					error : function(request,error)
