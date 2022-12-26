@@ -25656,7 +25656,8 @@
     },
     "types": ["dragon", "fire"],
     "fastMoves": ["DRAGON_BREATH", "FIRE_FANG"],
-    "chargedMoves": ["CRUNCH", "OVERHEAT", "DRACO_METEOR", "STONE_EDGE"],
+    "chargedMoves": ["CRUNCH", "OVERHEAT", "DRACO_METEOR", "STONE_EDGE", "FUSION_FLARE"],
+    "eliteMoves": ["FUSION_FLARE"],
     "defaultIVs": {
         "cp500": [4.5, 14, 13, 15],
         "cp1500": [13.5, 8, 11, 13],
