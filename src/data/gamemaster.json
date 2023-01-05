@@ -17288,6 +17288,27 @@
             "parent": "shelgon_shadow"
         }
     }, {
+        "dex": 373,
+        "speciesName": "Salamence (Mega)",
+        "speciesId": "salamence_mega",
+        "baseStats": {
+            "atk": 310,
+            "def": 251,
+            "hp": 216
+        },
+        "types": ["dragon", "flying"],
+        "fastMoves": ["BITE", "DRAGON_TAIL", "FIRE_FANG"],
+        "chargedMoves": ["DRACO_METEOR", "FIRE_BLAST", "HYDRO_PUMP", "OUTRAGE"],
+        "defaultIVs": {
+            "cp500": [4, 0, 13, 15],
+            "cp1500": [10.5, 9, 15, 15],
+            "cp2500": [18, 8, 8, 15]
+        },
+        "level25CP": 3220,
+        "tags": ["shadoweligible", "mega"],
+        "eliteMoves": ["OUTRAGE"],
+        "released": false
+    }, {
         "dex": 374,
         "speciesName": "Beldum",
         "speciesId": "beldum",
@@ -26126,7 +26147,8 @@
         },
         "types": ["dragon", "electric"],
         "fastMoves": ["DRAGON_BREATH", "CHARGE_BEAM"],
-        "chargedMoves": ["OUTRAGE", "WILD_CHARGE", "FLASH_CANNON", "CRUNCH"],
+        "chargedMoves": ["OUTRAGE", "WILD_CHARGE", "FLASH_CANNON", "CRUNCH", "FUSION_BOLT"],
+        "eliteMoves": ["FUSION_BOLT"],
         "defaultIVs": {
             "cp500": [4.5, 14, 13, 15],
             "cp1500": [13.5, 8, 11, 13],

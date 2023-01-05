@@ -233,25 +233,6 @@
     },
     "tags": ["mega"]
 }, {
-    "dex": 373,
-    "speciesName": "Salamence (Mega)",
-    "speciesId": "salamence_mega",
-    "baseStats": {
-        "atk": 310,
-        "def": 251,
-        "hp": 216
-    },
-    "types": ["dragon", "flying"],
-    "fastMoves": ["BITE", "DRAGON_TAIL", "FIRE_FANG"],
-    "chargedMoves": ["DRACO_METEOR", "FIRE_BLAST", "HYDRO_PUMP", "OUTRAGE"],
-    "defaultIVs": {
-        "cp1500": [10.5, 9, 15, 15],
-        "cp2500": [18, 8, 8, 15]
-    },
-    "level25CP": 3220,
-    "tags": ["shadoweligible", "mega"],
-    "eliteMoves": ["OUTRAGE"]
-}, {
     "dex": 376,
     "speciesName": "Metagross (Mega)",
     "speciesId": "metagross_mega",
