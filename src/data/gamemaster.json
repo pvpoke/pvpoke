@@ -70,22 +70,6 @@
         "include": [],
         "exclude": []
     }, {
-        "name": "elementremix",
-        "title": "Element Cup Remix",
-        "include": [{
-            "filterType": "evolution",
-            "values": [1]
-        }, {
-            "filterType": "type",
-            "values": ["grass", "water", "fire"]
-        }],
-        "exclude": [{
-            "filterType": "id",
-            "values": ["chinchou", "ducklett", "cottonee", "salandit"]
-        }],
-        "partySize": 3,
-        "presetOnly": true
-    }, {
         "name": "ember",
         "title": "Silph Factions (Ember)",
         "include": [{
@@ -195,17 +179,6 @@
         "exclude": [],
         "partySize": 3
     }, {
-        "name": "holiday",
-        "title": "Holiday Cup",
-        "include": [{
-            "filterType": "type",
-            "values": ["grass", "normal", "ice", "ghost", "flying", "electric"]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "values": ["mega"]
-        }]
-    }, {
         "name": "mega",
         "title": "All Pokemon",
         "include": [],
@@ -280,6 +253,17 @@
             "name": "Pokedex Number",
             "values": [722, 898]
         }]
+    }, {
+        "name": "weather",
+        "title": "Weather Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["fire", "water", "ice", "rock"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }]
     }],
     "formats": [{
         "title": "Master League (Classic)",
@@ -307,14 +291,6 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Premier Classic (Ultra League)",
-        "cup": "premierclassic",
-        "cp": 2500,
-        "meta": "ultrapremierclassic",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Premier Classic (Master League)",
         "cup": "premierclassic",
         "cp": 10000,
@@ -323,18 +299,10 @@
         "showFormat": true,
         "showMeta": true
     }, {
-        "title": "Holiday Cup (Great League)",
-        "cup": "holiday",
+        "title": "Weather Cup (Great League)",
+        "cup": "weather",
         "cp": 1500,
-        "meta": "holiday",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Holiday Cup (Ultra League)",
-        "cup": "holiday",
-        "cp": 2500,
-        "meta": "holidayultra",
+        "meta": "weathergreat",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -16414,7 +16382,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false
+        "released": true
     }, {
         "dex": 353,
         "speciesName": "Shuppet",

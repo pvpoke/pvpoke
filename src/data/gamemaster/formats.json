@@ -28,15 +28,6 @@
 		"showMeta": true
 	},
 	{
-		"title": "Premier Classic (Ultra League)",
-		"cup": "premierclassic",
-		"cp": 2500,
-		"meta": "ultrapremierclassic",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
 		"title": "Premier Classic (Master League)",
 		"cup": "premierclassic",
 		"cp": 10000,
@@ -46,19 +37,10 @@
 		"showMeta": true
 	},
 	{
-		"title": "Holiday Cup (Great League)",
-		"cup": "holiday",
+		"title": "Weather Cup (Great League)",
+		"cup": "weather",
 		"cp": 1500,
-		"meta": "holiday",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Holiday Cup (Ultra League)",
-		"cup": "holiday",
-		"cp": 2500,
-		"meta": "holidayultra",
+		"meta": "weathergreat",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
