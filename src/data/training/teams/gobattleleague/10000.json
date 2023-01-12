@@ -111,21 +111,21 @@
 					"weight":25
 				},
 				{
-					"speciesId": "zacian",
+					"speciesId": "zacian_hero",
 					"fastMove": "SNARL",
 					"chargedMoves": ["CLOSE_COMBAT","PLAY_ROUGH"],
 					"difficulty": 3,
 					"weight":15
 				},
 				{
-					"speciesId": "zacian",
+					"speciesId": "zacian_hero",
 					"fastMove": "QUICK_ATTACK",
 					"chargedMoves": ["CLOSE_COMBAT","PLAY_ROUGH"],
 					"difficulty": 3,
 					"weight":8
 				},
 				{
-					"speciesId": "zacian",
+					"speciesId": "zacian_hero",
 					"fastMove": "SNARL",
 					"chargedMoves": ["CLOSE_COMBAT","WILD_CHARGE"],
 					"difficulty": 3,
