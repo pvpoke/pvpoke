@@ -4,6 +4,8 @@ function TeraRanker(){
 
 	let self = this;
 
+	let gm = GameMaster.getInstance();
+
 	let allTypes = ["bug","dark","dragon","electric","fairy","fighting","fire","flying","ghost","grass","ground","ice","normal","poison","psychic","rock","steel","water"];
 
 
@@ -11,15 +13,15 @@ function TeraRanker(){
 	this.rankAttackers = function(raidTypes, raidTera){
 
 		// For each possible defensive and offensive type combination, calculate a defensive score
-		let ranks = self.compileTypeCombos();
+		let ranks = self.generateRankingList();
 
 		// For all type combos, evaluate defensive scores
 
 		for(var i = 0; i < ranks.length; i++){
 			let rank = ranks[i];
 
-			rank.defense = self.scoreDefense(rank.types, rank.tera, raidTypes);
-			rank.offense = self.scoreOffense(rank.types, rank.tera, raidTera);
+			rank.defense = self.scoreDefense(rank.pokemon.types, rank.tera, raidTypes);
+			rank.offense = self.scoreOffense(rank.pokemon.types, rank.tera, raidTera);
 
 			if(rank.defense > 0){
 				rank.overall = rank.offense / rank.defense; // Overall score = damage output / damage input
@@ -29,6 +31,8 @@ function TeraRanker(){
 		}
 
 		ranks.sort((a,b) => (a.overall > b.overall) ? -1 : ((b.overall > a.overall) ? 1 : 0));
+
+		console.log(ranks);
 
 		return ranks;
 	}
@@ -99,38 +103,27 @@ function TeraRanker(){
 		return score;
 	}
 
+	// Compile a ranking list of all Pokemon entries and all possible tera types
 
-	// Return an array of objects for each possible base type and tera type combo
+	this.generateRankingList = function(){
+		let ranks = [];
 
-	this.compileTypeCombos = function(){
+		for(var i = 0; i < gm.data.length; i++){
 
-		let typeCombos = [];
+			if(gm.data[i].exclude){
+				continue;
+			}
 
-		for(var i = 0; i < allTypes.length; i++){ // Base type 1
-			for(var n = 0; n < allTypes.length; n++){ // Base type 2
-
-				// Skip completed type combos, ie Grass/Flying is the same as Flying/Grass
-
-				if(i == n || n <= i){
-					continue;
-				}
-
-
-				for(var k = 0; k < allTypes.length; k++){ // Tera type
-
-					let combo = {
-						types: [allTypes[i]],
-						tera: allTypes[k]
-					};
-
-					combo.types.push(allTypes[n]); // Pokemon can only have each type once
-
-					typeCombos.push(combo);
-				}
+			for(var n = 0; n < allTypes.length; n++){
+				// Add an entry for each Pokemon with each tera type]
+				ranks.push({
+					pokemon: gm.data[i],
+					tera: allTypes[n]
+				});
 			}
 		}
 
-		return typeCombos;
+		return ranks;
 	}
 
 	// Given an array containing a defensive types, return an array of type effectiveness

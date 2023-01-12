@@ -30,16 +30,31 @@ var InterfaceMaster = (function () {
 
 				$("#results tbody").html("");
 
-				for(var i = 0; i < 50; i++){
-					let $row = $('<tr><td></td><td>-</td><td></td></tr>');
-					$row.find("td").eq(0).html(results[i].types[0]);
+				let displayedSpecies = [];
+				let displayCount = 0;
+				let displayMax = 50;
+				let i = 0;
 
-					if(results[i].types.length > 1){
-						$row.find("td").eq(1).html(results[i].types[1]);
+				while(displayCount < displayMax){
+					// Show only the best scored version of each species
+					if(displayedSpecies.indexOf(results[i].pokemon.id) > -1){
+						i++;
+						continue;
 					}
+
+					let $row = $('<tr><td></td><td>-</td><td></td></tr>');
+					$row.find("td").eq(0).html(results[i].pokemon.name);
+
+					$row.find("td").eq(1).html(results[i].pokemon.types.join(" / "));
 
 					$row.find("td").eq(2).html(results[i].tera);
 					$("#results tbody").append($row);
+
+					displayedSpecies.push(results[i].pokemon.id);
+
+					i++;
+					displayCount++;
+
 				}
 			});
 

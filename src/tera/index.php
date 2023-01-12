@@ -77,8 +77,8 @@
 	<table id="results" style="height: 500px; overflow-y: scroll; width: 100%" cellspacing="4">
 		<thead>
 			<tr>
-				<th>Type 1</th>
-				<th>Type 2</th>
+				<th>Pokemon</th>
+				<th>Typing</th>
 				<th>Tera Type</th>
 			</tr>
 		</thead>
@@ -88,7 +88,7 @@
 </div>
 
 
-	<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
+	<script src="<?php echo $WEB_ROOT; ?>tera/js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 
 	<script src="<?php echo $WEB_ROOT; ?>tera/js/TeraRanker.js?v=<?php echo $SITE_VERSION; ?>"></script>
 	<script src="<?php echo $WEB_ROOT; ?>tera/js/TeraInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
