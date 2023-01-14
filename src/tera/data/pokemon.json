@@ -1755,7 +1755,8 @@
     "dex": 316,
     "name": "Larvitar",
     "types": ["rock", "ground"],
-    "id": "larvitar"
+    "id": "larvitar",
+	"exclude": 1
 }, {
     "dex": 317,
     "name": "Pupitar",
