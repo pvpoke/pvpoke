@@ -210,7 +210,7 @@ if(! isset($OG_IMAGE)){
 
 	<header>
 		<div class="header-wrap">
-			<h1 class="title"><a href="/">PvPoke.com</a></h1>
+			<h1 class="title"><a href="<?php echo $WEB_ROOT; ?>/">PvPoke.com</a></h1>
 			<div class="hamburger">
 				<!--Because I'm too lazy to make a graphic-->
 				<div class="meat"></div>

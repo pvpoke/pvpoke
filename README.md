@@ -14,6 +14,7 @@ You can easily run PvPoke using docker by following these steps:
 ```bash
 $ docker-compose -f docker/docker-compose.yml up --build
 ```
+4. In your browser, navigate to `localhost/pvpoke/src` and the site should run.
 
 This also works with [podman](https://podman.io/getting-started/installation) and [podman-compose](https://github.com/containers/podman-compose)
 
