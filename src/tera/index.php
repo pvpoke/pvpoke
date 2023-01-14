@@ -1,6 +1,7 @@
-<?php require_once '../header.php'; ?>
+<?php require_once 'header.php'; ?>
 
 <div class="section home white">
+	<h1>Tera Raid Counter Calculator</h1>
 
 	<h4>Base Type 1</h4>
 
@@ -94,4 +95,4 @@
 	<script src="<?php echo $WEB_ROOT; ?>tera/js/TeraInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
 
 
-<?php require_once '../footer.php'; ?>
+<?php require_once 'footer.php'; ?>

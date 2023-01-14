@@ -1,0 +1,65 @@
+/* MIXINS */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  /*background: rgb(207,32,32);
+  background: -moz-linear-gradient(167deg, rgba(207,32,32,1) 2%, rgba(171,42,9,1) 14%, rgba(82,8,59,1) 48%, rgba(29,4,65,1) 72%);
+  background: -webkit-linear-gradient(167deg, rgba(207,32,32,1) 2%, rgba(171,42,9,1) 14%, rgba(82,8,59,1) 48%, rgba(29,4,65,1) 72%);
+  background: linear-gradient(167deg, rgba(207,32,32,1) 2%, rgba(171,42,9,1) 14%, rgba(82,8,59,1) 48%, rgba(29,4,65,1) 72%);*/
+  background: #52083b;
+  background: -moz-linear-gradient(167deg, #52083b 14%, #1d0441 72%);
+  background: -webkit-linear-gradient(167deg, #52083b 14%, #1d0441 72%);
+  background: linear-gradient(167deg, #52083b 14%, #1d0441 72%);
+}
+
+header {
+  background: #1e0441;
+}
+header .header-wrap {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+header .title {
+  font-size: 18px;
+  margin: 0;
+  display: inline-block;
+  font-weight: normal;
+}
+header .title a {
+  background-image: url(../../img/app_192.png);
+  background-size: contain;
+  text-decoration: none;
+  color: #f6ba48;
+  padding: 3px 0 3px 40px;
+  background-repeat: no-repeat;
+  display: block;
+}
+
+#main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 10px;
+  border-radius: 12px;
+}
+#main > h1 {
+  margin: 0;
+}
+
+footer {
+  max-width: 1000px;
+  text-align: center;
+  font-size: 12px;
+  margin: 0 auto;
+}
+footer p:first-of-type {
+  margin-top: 0;
+}
+
+/*# sourceMappingURL=tera-style.css.map */
