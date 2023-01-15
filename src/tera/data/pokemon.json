@@ -743,9 +743,9 @@
 	"exclude": 1
 }, {
     "dex": 131,
-    "name": "Garganaci",
+    "name": "Garganacl",
     "types": ["rock"],
-    "id": "garganaci"
+    "id": "garganacl"
 }, {
     "dex": 132,
     "name": "Wingull",
@@ -2206,4 +2206,34 @@
     "name": "Miraidon",
     "types": ["electric", "dragon"],
     "id": "miraidon"
+}, {
+    "dex": 401,
+    "name": "Charmander",
+    "types": ["fire"],
+    "id": "charmander"
+}, {
+    "dex": 402,
+    "name": "Charmeleon",
+    "types": ["fire"],
+    "id": "charmeleon"
+}, {
+    "dex": 403,
+    "name": "Charizard",
+    "types": ["fire", "flying"],
+    "id": "charizard"
+}, {
+    "dex": 404,
+    "name": "Scorbunny",
+    "types": ["fire"],
+    "id": "scorbunny"
+}, {
+    "dex": 405,
+    "name": "Raboot",
+    "types": ["fire"],
+    "id": "raboot"
+}, {
+    "dex": 406,
+    "name": "Cinderace",
+    "types": ["fire"],
+    "id": "cinderace"
 }]

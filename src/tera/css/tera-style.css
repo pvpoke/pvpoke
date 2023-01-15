@@ -1,8 +1,10 @@
+/* VARIABLES */
 /* MIXINS */
 html, body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
+  color: #ffb3b3;
 }
 
 body {
@@ -50,6 +52,39 @@ header .title a {
 }
 #main > h1 {
   margin: 0;
+}
+#main p {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.flex {
+  display: flex;
+}
+
+.bordered-section {
+  background: #1d0441;
+  border: 3px solid #0a0018;
+  padding: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.section-header {
+  margin: 10px 0;
+  align-items: center;
+}
+.section-header h3 {
+  font-size: 22px;
+  margin: 0 20px 0 0;
+}
+.section-header.boss-header {
+  margin-top: 40px;
+}
+
+.hr {
+  flex-grow: 1;
+  border-bottom: 1px solid #ffb3b3;
 }
 
 footer {

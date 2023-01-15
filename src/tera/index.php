@@ -1,77 +1,103 @@
 <?php require_once 'header.php'; ?>
 
 <div class="section home white">
-	<h1>Tera Raid Counter Calculator</h1>
+	<h1>Tera Raid Counters</h1>
 
-	<h4>Base Type 1</h4>
+	<p>Enter the Tera Raid boss details below. You can specify its offensive move types to help narrow results. This tool will calculate potential raid attackers and counters based on optimal offensive and defensive typing against the raid boss.</p>
 
-	<select id="type1">
-		<option value="bug">Bug</option>
-		<option value="dark">Dark</option>
-		<option value="dragon">Dragon</option>
-		<option value="electric">Electric</option>
-		<option value="fairy">Fairy</option>
-		<option value="fighting">Fighting</option>
-		<option value="fire">Fire</option>
-		<option value="flying">Flying</option>
-		<option value="ghost">Ghost</option>
-		<option value="grass">Grass</option>
-		<option value="ground">Ground</option>
-		<option value="ice">Ice</option>
-		<option value="normal">Normal</option>
-		<option value="poison">Poison</option>
-		<option value="psychic">Psychic</option>
-		<option value="rock">Rock</option>
-		<option value="steel">Steel</option>
-		<option value="water">Water</option>
-	</select>
+	<div class="flex section-header boss-header">
+		<h3>Tera Raid Boss</h3>
+		<div class="hr"></div>
+	</div>
 
-	<h4>Base Type 2</h4>
+	<div class="bordered-section boss-section">
 
-	<select id="type2">
-		<option value="none" selected>-</option>
-		<option value="bug">Bug</option>
-		<option value="dark">Dark</option>
-		<option value="dragon">Dragon</option>
-		<option value="electric">Electric</option>
-		<option value="fairy">Fairy</option>
-		<option value="fighting">Fighting</option>
-		<option value="fire">Fire</option>
-		<option value="flying">Flying</option>
-		<option value="ghost">Ghost</option>
-		<option value="grass">Grass</option>
-		<option value="ground">Ground</option>
-		<option value="ice">Ice</option>
-		<option value="normal">Normal</option>
-		<option value="poison">Poison</option>
-		<option value="psychic">Psychic</option>
-		<option value="rock">Rock</option>
-		<option value="steel">Steel</option>
-		<option value="water">Water</option>
-	</select>
+		<div class="flex">
+			<div>
+				<h4>Pokemon</h4>
+				<input id="poke-search" />
+				<select id="poke-select">
+					<option disabled selected value="">Select a Pokemon</option>
+				</select>
+			</div>
+			<div>
+				<h4>Tera Type</h4>
+				<div class="tera-type"></div>
+			</div>
+		</div>
 
-	<h4>Tera Type</h4>
+		<h4>Attack Types</h4>
+		<div class="boss-attack-types"></div>
 
-	<select id="tera">
-		<option value="bug">Bug</option>
-		<option value="dark">Dark</option>
-		<option value="dragon">Dragon</option>
-		<option value="electric">Electric</option>
-		<option value="fairy">Fairy</option>
-		<option value="fighting">Fighting</option>
-		<option value="fire">Fire</option>
-		<option value="flying">Flying</option>
-		<option value="ghost">Ghost</option>
-		<option value="grass">Grass</option>
-		<option value="ground">Ground</option>
-		<option value="ice">Ice</option>
-		<option value="normal">Normal</option>
-		<option value="poison">Poison</option>
-		<option value="psychic">Psychic</option>
-		<option value="rock">Rock</option>
-		<option value="steel">Steel</option>
-		<option value="water">Water</option>
-	</select>
+		<select id="type1">
+			<option value="bug">Bug</option>
+			<option value="dark">Dark</option>
+			<option value="dragon">Dragon</option>
+			<option value="electric">Electric</option>
+			<option value="fairy">Fairy</option>
+			<option value="fighting">Fighting</option>
+			<option value="fire">Fire</option>
+			<option value="flying">Flying</option>
+			<option value="ghost">Ghost</option>
+			<option value="grass">Grass</option>
+			<option value="ground">Ground</option>
+			<option value="ice">Ice</option>
+			<option value="normal">Normal</option>
+			<option value="poison">Poison</option>
+			<option value="psychic">Psychic</option>
+			<option value="rock">Rock</option>
+			<option value="steel">Steel</option>
+			<option value="water">Water</option>
+		</select>
+
+		<h4>Base Type 2</h4>
+
+		<select id="type2">
+			<option value="none" selected>-</option>
+			<option value="bug">Bug</option>
+			<option value="dark">Dark</option>
+			<option value="dragon">Dragon</option>
+			<option value="electric">Electric</option>
+			<option value="fairy">Fairy</option>
+			<option value="fighting">Fighting</option>
+			<option value="fire">Fire</option>
+			<option value="flying">Flying</option>
+			<option value="ghost">Ghost</option>
+			<option value="grass">Grass</option>
+			<option value="ground">Ground</option>
+			<option value="ice">Ice</option>
+			<option value="normal">Normal</option>
+			<option value="poison">Poison</option>
+			<option value="psychic">Psychic</option>
+			<option value="rock">Rock</option>
+			<option value="steel">Steel</option>
+			<option value="water">Water</option>
+		</select>
+
+		<h4>Tera Type</h4>
+
+		<select id="tera">
+			<option value="bug">Bug</option>
+			<option value="dark">Dark</option>
+			<option value="dragon">Dragon</option>
+			<option value="electric">Electric</option>
+			<option value="fairy">Fairy</option>
+			<option value="fighting">Fighting</option>
+			<option value="fire">Fire</option>
+			<option value="flying">Flying</option>
+			<option value="ghost">Ghost</option>
+			<option value="grass">Grass</option>
+			<option value="ground">Ground</option>
+			<option value="ice">Ice</option>
+			<option value="normal">Normal</option>
+			<option value="poison">Poison</option>
+			<option value="psychic">Psychic</option>
+			<option value="rock">Rock</option>
+			<option value="steel">Steel</option>
+			<option value="water">Water</option>
+		</select>
+	</div>
+
 
 	<button style="margin-top: 20px;" id="run">Check Attackers</button>
 

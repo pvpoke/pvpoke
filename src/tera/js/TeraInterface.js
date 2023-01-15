@@ -10,11 +10,17 @@ var InterfaceMaster = (function () {
 
 			let self = this;
 			let ranker = new TeraRanker();
+			let gm = GameMaster.getInstance();
 
 			this.init = function(){
-
+				// Populate Pokemon select list
+				for(var i = 0; i < gm.data.length; i++){
+					$("#poke-select").append("<option value='"+gm.data[i].id+"'>"+gm.data[i].name+"</option>");
+				}
 			}
 
+
+			// Run the tera counter calculator and display the results
 			$("button#run").click(function(e){
 				let types = [];
 
@@ -56,6 +62,21 @@ var InterfaceMaster = (function () {
 					displayCount++;
 
 				}
+			});
+
+			// Select a Pokemon from the raid boss select list on input search
+
+			$("#poke-search").keyup(function(e){
+				let searchStr = $(this).val().toLowerCase();
+
+				$("#poke-select option").each(function(index, value){
+					let name = $(this).html().toLowerCase();
+
+					if(name.startsWith(searchStr)){
+						$(this).prop("selected", "selected");
+						return false;
+					}
+				});
 			});
 
 		}

@@ -1,4 +1,12 @@
+/* VARIABLES */
 
+$borderRed: #780900;
+$borderDarkBlue: #0a0018;
+$backgroundBlue: #1d0441;
+$fontColor: #ffb3b3;
+
+// #ffb3b3
+// #ff8686
 
 /* MIXINS */
 
@@ -28,6 +36,7 @@ html, body{
 	margin: 0;
 	padding: 0;
 	font-family: Arial, sans-serif;
+	color: $fontColor;
 }
 
 body{
@@ -80,6 +89,42 @@ header{
 	& > h1{
 		margin:0;
 	}
+
+	p{
+		font-size: 16px;
+		line-height: 22px;
+	}
+}
+
+.flex{
+	display: flex;
+}
+
+.bordered-section{
+	background: $backgroundBlue;
+	border: 3px solid $borderDarkBlue;
+	padding: 10px;
+	border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.section-header{
+	margin: 10px 0;
+	align-items: center;
+
+	h3{
+		font-size: 22px;
+		margin: 0 20px 0 0;
+	}
+
+	&.boss-header{
+		margin-top: 40px;
+	}
+}
+
+.hr{
+	flex-grow: 1;
+	border-bottom: 1px solid $fontColor;
 }
 
 footer{
