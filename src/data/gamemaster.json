@@ -70,6 +70,23 @@
         "include": [],
         "exclude": []
     }, {
+        "name": "electric",
+        "title": "Electric Cup",
+        "include": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["electric"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "name": "Tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["stunfisk", "charjabug"]
+        }]
+    }, {
         "name": "ember",
         "title": "Silph Factions (Ember)",
         "include": [{
@@ -303,6 +320,14 @@
         "cup": "weather",
         "cp": 1500,
         "meta": "weathergreat",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Electric Cup",
+        "cup": "electric",
+        "cp": 1500,
+        "meta": "electric",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
