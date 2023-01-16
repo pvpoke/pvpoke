@@ -11,6 +11,8 @@ var InterfaceMaster = (function () {
 			let self = this;
 			let ranker = new TeraRanker();
 			let gm = GameMaster.getInstance();
+			let selectedTypes = [];
+			let selectedPokemon;
 
 			this.init = function(){
 				// Populate Pokemon select list
@@ -32,7 +34,7 @@ var InterfaceMaster = (function () {
 
 				let tera = $("#tera option:selected").val()
 
-				let results = ranker.rankAttackers(types, tera);
+				let results = ranker.rankAttackers(selectedTypes, tera);
 
 				$("#results tbody").html("");
 
@@ -74,10 +76,37 @@ var InterfaceMaster = (function () {
 
 					if(name.startsWith(searchStr)){
 						$(this).prop("selected", "selected");
+						selectNewPokemon($(this).val());
 						return false;
 					}
 				});
 			});
+
+			// Select a new Pokemon from the given id
+			function selectNewPokemon(id){
+				// Empty value
+				if(id == '' || id == null){
+					selectedPokemon = null;
+					selectedTypes = [];
+					updateRaidBossDisplay();
+					return;
+				}
+
+				selectedPokemon = gm.getPokemonById(id);
+
+				selectedTypes = [];
+
+				for(var i = 0; i < selectedPokemon.types.length; i++){
+					selectedTypes.push(selectedPokemon.types[i]);
+				}
+
+				updateRaidBossDisplay();
+			}
+
+			// Update the raid boss UI with the current values
+			function updateRaidBossDisplay(){
+				$(".boss-attack-types").html(selectedTypes.join(", "));
+			}
 
 		}
 
