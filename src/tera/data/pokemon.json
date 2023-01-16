@@ -2210,12 +2210,14 @@
     "dex": 401,
     "name": "Charmander",
     "types": ["fire"],
-    "id": "charmander"
+    "id": "charmander",
+	"exclude": 1
 }, {
     "dex": 402,
     "name": "Charmeleon",
     "types": ["fire"],
-    "id": "charmeleon"
+    "id": "charmeleon",
+	"exclude": 1
 }, {
     "dex": 403,
     "name": "Charizard",
@@ -2225,12 +2227,14 @@
     "dex": 404,
     "name": "Scorbunny",
     "types": ["fire"],
-    "id": "scorbunny"
+    "id": "scorbunny",
+	"exclude": 1
 }, {
     "dex": 405,
     "name": "Raboot",
     "types": ["fire"],
-    "id": "raboot"
+    "id": "raboot",
+	"exclude": 1
 }, {
     "dex": 406,
     "name": "Cinderace",
@@ -2240,12 +2244,14 @@
     "dex": 407,
     "name": "Froakie",
     "types": ["water"],
-    "id": "froakie"
+    "id": "froakie",
+	"exclude": 1
 }, {
     "dex": 408,
     "name": "Frogadier",
     "types": ["water"],
-    "id": "frogadier"
+    "id": "frogadier",
+	"exclude": 1
 }, {
     "dex": 409,
     "name": "Greninja",

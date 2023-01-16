@@ -13,6 +13,7 @@ var InterfaceMaster = (function () {
 			let gm = GameMaster.getInstance();
 			let selectedTypes = [];
 			let selectedPokemon;
+			let selectedTera;
 
 			this.init = function(){
 				// Populate Pokemon select list
@@ -24,17 +25,7 @@ var InterfaceMaster = (function () {
 
 			// Run the tera counter calculator and display the results
 			$("button#run").click(function(e){
-				let types = [];
-
-				types.push($("#type1 option:selected").val());
-
-				if($("#type2 option:selected").val() != "none"){
-					types.push($("#type2 option:selected").val());
-				}
-
-				let tera = $("#tera option:selected").val()
-
-				let results = ranker.rankAttackers(selectedTypes, tera);
+				let results = ranker.rankAttackers(selectedTypes, selectedTera);
 
 				$("#results tbody").html("");
 
@@ -93,6 +84,13 @@ var InterfaceMaster = (function () {
 				selectNewPokemon($(this).find("option:selected").val());
 			});
 
+			// Change the current tera type
+			$("#tera-select").change(function(e){
+				selectedTera = $(this).find("option:selected").val();
+
+				updateRaidBossDisplay();
+			});
+
 			// Select a new Pokemon from the given id
 			function selectNewPokemon(id){
 				// Empty value
@@ -116,6 +114,7 @@ var InterfaceMaster = (function () {
 
 			// Update the raid boss UI with the current values
 			function updateRaidBossDisplay(){
+				$(".boss-section").attr("tera-type", selectedTera);
 				$(".boss-attack-types").html(selectedTypes.join(", "));
 			}
 

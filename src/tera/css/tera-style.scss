@@ -3,7 +3,7 @@
 $borderRed: #780900;
 $borderDarkBlue: #0a0018;
 $backgroundBlue: #1d0441;
-$fontColor: #ffdbdb;
+$fontColor: #fff;
 
 // #ffb3b3
 // #ff8686
@@ -25,11 +25,18 @@ $fontColor: #ffdbdb;
 	transform: $property;
 }
 
-@mixin gradient($light, $dark){
-	background: $dark; /* Old browsers */
-	background: -moz-linear-gradient(top, $light 30%, $dark 99%) !important; /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, $light 30%,$dark 99%) !important; /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, $light 30%,$dark 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+@mixin typegradient($light, $dark){
+	background: -moz-linear-gradient(0deg, $dark 43%, $light 55%);
+	background: -webkit-linear-gradient(0deg, $dark 43%, $light 55%);
+	background: linear-gradient(0deg, $dark 43%, $light 55%);
+}
+
+
+@mixin teragradient($light, $dark){
+	background: $dark;
+	background: -moz-linear-gradient(117deg, $light 33%, $dark 100%);
+	background: -webkit-linear-gradient(117deg, $light 33%, $dark 100%);
+	background: linear-gradient(117deg, $light 33%, $dark 100%);
 }
 
 html, body{
@@ -99,10 +106,29 @@ header{
 input[type="text"]{
 	background: none;
     border: none;
-    border-bottom: 1px solid $fontColor;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
 	color: $fontColor;
     outline: none;
     padding-bottom: 5px;
+}
+
+::-webkit-input-placeholder {
+    color:   rgba(255,255,255,0.5);
+}
+:-moz-placeholder {
+   color: rgba(255,255,255,0.5);
+}
+::-moz-placeholder {
+   color: rgba(255,255,255,0.5);
+}
+:-ms-input-placeholder {
+   color: rgba(255,255,255,0.5);
+}
+::-ms-input-placeholder {
+   color: rgba(255,255,255,0.5);
+}
+::placeholder {
+   color: rgba(255,255,255,0.5);
 }
 
 .flex{
@@ -115,6 +141,20 @@ input[type="text"]{
 	padding: 10px;
 	border-bottom-left-radius: 10px;
 	border-top-right-radius: 10px;
+
+	select{
+		background: rgba(0,0,0,0.5);
+		border: 1px solid rgba(0,0,0,0.75);
+	    color: #fff;
+	    padding: 10px;
+	    box-sizing: border-box;
+		border-bottom-left-radius: 10px;
+		border-top-right-radius: 10px;
+
+		option{
+			background: rgba(29,4,65,1);
+		}
+	}
 }
 
 .section-header{
@@ -133,27 +173,24 @@ input[type="text"]{
 
 .hr{
 	flex-grow: 1;
-	border-bottom: 1px solid $fontColor;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 .poke-search-container{
 	input, select{
 		display: block;
-		width: 200px;
+		width: 225px;
 		box-sizing: border-box;
 	}
 
 	select{
-		margin-top: 10px;
+		margin: 10px 0 20px 0;
 		font-size: 20px;
 	}
 }
 
 .boss-section{
-	background: #8568ce;
-	background: -moz-linear-gradient(117deg, #a1417f 33%, #6d1744 100%);
-	background: -webkit-linear-gradient(117deg, #a1417f 33%, #6d1744 100%);
-	background: linear-gradient(117deg, #a1417f 33%, #6d1744 100%);
+	@include teragradient(#a1417f, #6d1744);
 	position: relative;
 	overflow: hidden;
 
@@ -180,7 +217,71 @@ input[type="text"]{
 		background-position: center center;
 		opacity: 0.1;
 	}
+
+	#tera-select{
+		font-size: 20px;
+		min-width:100px;
+
+		option{
+			background: rgba(29,4,65,1);
+		}
+	}
+
+	.tera-icon{
+		width:85px;
+		height:85px;
+		background-size:contain;
+		background-repeat: no-repeat;
+		margin-right: 15px;
+	}
+
+	&[tera-type="bug"]{ @include teragradient(#9ba141, #5b6c16); }
+	&[tera-type="dark"]{ @include teragradient(#a68aa6, #6f536f); }
+	&[tera-type="dragon"]{ @include teragradient(#808dff, #4654cd); }
+	&[tera-type="electric"]{ @include teragradient(#c59515, #805d01); }
+	&[tera-type="fairy"]{ @include teragradient(#d766de, #9f2ea6); }
+	&[tera-type="fighting"]{ @include teragradient(#f97b0d, #a14c01); }
+	&[tera-type="fire"]{ @include teragradient(#ff6a62, #d72a21); }
+	&[tera-type="flying"]{ @include teragradient(#8095cd, #485d95); }
+	&[tera-type="ghost"]{ @include teragradient(#b481b0, #7c4978); }
+	&[tera-type="grass"]{ @include teragradient(#6ab755, #377b25); }
+	&[tera-type="ground"]{ @include teragradient(#bf8967, #87512f); }
+	&[tera-type="ice"]{ @include teragradient(#29bee3, #0180a0); }
+	&[tera-type="normal"]{ @include teragradient(#959595, #5d5d5d); }
+	&[tera-type="poison"]{ @include teragradient(#b379db, #79469c); }
+	&[tera-type="psychic"]{ @include teragradient(#d67498, #964060); }
+	&[tera-type="rock"]{ @include teragradient(#9c986c, #656135); }
+	&[tera-type="steel"]{ @include teragradient(#70a69c, #386e64); }
+	&[tera-type="water"]{ @include teragradient(#5794df, #2b578d); }
 }
+
+[tera-type="bug"] .tera-icon{ background-image: url('../img/types/bug.png'); }
+[tera-type="dark"] .tera-icon{background-image: url('../img/types/dark.png'); }
+[tera-type="dragon"] .tera-icon{ background-image: url('../img/types/dragon.png'); }
+[tera-type="electric"] .tera-icon{ background-image: url('../img/types/electric.png'); }
+[tera-type="fairy"] .tera-icon{ background-image: url('../img/types/fairy.png'); }
+[tera-type="fighting"] .tera-icon{ background-image: url('../img/types/fighting.png'); }
+[tera-type="fire"] .tera-icon{ background-image: url('../img/types/fire.png'); }
+[tera-type="flying"] .tera-icon{ background-image: url('../img/types/flying.png'); }
+[tera-type="ghost"] .tera-icon{ background-image: url('../img/types/ghost.png'); }
+[tera-type="grass"] .tera-icon{ background-image: url('../img/types/grass.png'); }
+[tera-type="ground"] .tera-icon{ background-image: url('../img/types/ground.png'); }
+[tera-type="ice"] .tera-icon{ background-image: url('../img/types/ice.png'); }
+[tera-type="normal"] .tera-icon{ background-image: url('../img/types/normal.png'); }
+[tera-type="poison"] .tera-icon{ background-image: url('../img/types/poison.png'); }
+[tera-type="psychic"] .tera-icon{ background-image: url('../img/types/psychic.png'); }
+[tera-type="rock"] .tera-icon{ background-image: url('../img/types/rock.png'); }
+[tera-type="steel"] .tera-icon{ background-image: url('../img/types/steel.png'); }
+[tera-type="water"] .tera-icon{ background-image: url('../img/types/water.png'); }
+/* Typing colors and icons */
+
+.typed{
+
+}
+
+.bug, [type="bug"]{ @include typegradient(#bec720, #8b9f18) }
+.dark, [type="dark"]{ @include typegradient(#000, #fff) }
+.dragon, [type="dragon"]{ @include typegradient(#000, #fff) }
 
 footer{
 	max-width:1000px;

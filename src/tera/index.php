@@ -16,42 +16,46 @@
 
 		<div class="flex">
 			<div class="poke-search-container">
-				<h4>Pokemon</h4>
 				<input type="text" id="poke-search" placeholder="Search for a Pokemon" />
 				<select id="poke-select">
 					<option disabled selected value="">Select a Pokemon</option>
 				</select>
+
+				<h4>Attack Types</h4>
+				<div class="boss-attack-types"></div>
 			</div>
 			<div class="tera-type-container">
-				<h4>Tera Type</h4>
-				<div class="tera-type"></div>
+				<div class="flex">
+					<div class="tera-icon"></div>
+					<div>
+						<h4>Tera Type</h4>
 
-				<select id="tera">
-					<option value="bug">Bug</option>
-					<option value="dark">Dark</option>
-					<option value="dragon">Dragon</option>
-					<option value="electric">Electric</option>
-					<option value="fairy">Fairy</option>
-					<option value="fighting">Fighting</option>
-					<option value="fire">Fire</option>
-					<option value="flying">Flying</option>
-					<option value="ghost">Ghost</option>
-					<option value="grass">Grass</option>
-					<option value="ground">Ground</option>
-					<option value="ice">Ice</option>
-					<option value="normal">Normal</option>
-					<option value="poison">Poison</option>
-					<option value="psychic">Psychic</option>
-					<option value="rock">Rock</option>
-					<option value="steel">Steel</option>
-					<option value="water">Water</option>
-				</select>
+						<div class="tera-type"></div>
+
+						<select id="tera-select">
+							<option value="bug">Bug</option>
+							<option value="dark">Dark</option>
+							<option value="dragon">Dragon</option>
+							<option value="electric">Electric</option>
+							<option value="fairy">Fairy</option>
+							<option value="fighting">Fighting</option>
+							<option value="fire">Fire</option>
+							<option value="flying">Flying</option>
+							<option value="ghost">Ghost</option>
+							<option value="grass">Grass</option>
+							<option value="ground">Ground</option>
+							<option value="ice">Ice</option>
+							<option value="normal">Normal</option>
+							<option value="poison">Poison</option>
+							<option value="psychic">Psychic</option>
+							<option value="rock">Rock</option>
+							<option value="steel">Steel</option>
+							<option value="water">Water</option>
+						</select>
+					</div>
+				</div>
 			</div>
 		</div>
-
-		<h4>Attack Types</h4>
-		<div class="boss-attack-types"></div>
-
 	</div>
 
 
