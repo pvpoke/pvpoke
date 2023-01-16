@@ -4,7 +4,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  color: #ffb3b3;
+  color: #ffdbdb;
 }
 
 body {
@@ -58,6 +58,15 @@ header .title a {
   line-height: 22px;
 }
 
+input[type=text] {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #ffdbdb;
+  color: #ffdbdb;
+  outline: none;
+  padding-bottom: 5px;
+}
+
 .flex {
   display: flex;
 }
@@ -84,7 +93,46 @@ header .title a {
 
 .hr {
   flex-grow: 1;
-  border-bottom: 1px solid #ffb3b3;
+  border-bottom: 1px solid #ffdbdb;
+}
+
+.poke-search-container input, .poke-search-container select {
+  display: block;
+  width: 200px;
+  box-sizing: border-box;
+}
+.poke-search-container select {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.boss-section {
+  background: #8568ce;
+  background: -moz-linear-gradient(117deg, #a1417f 33%, #6d1744 100%);
+  background: -webkit-linear-gradient(117deg, #a1417f 33%, #6d1744 100%);
+  background: linear-gradient(117deg, #a1417f 33%, #6d1744 100%);
+  position: relative;
+  overflow: hidden;
+}
+.boss-section .flex {
+  position: relative;
+  z-index: 10;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.boss-section h4 {
+  margin-top: 0;
+}
+.boss-section .pattern {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  background: url("../img/pattern.png");
+  background-position: center center;
+  opacity: 0.1;
 }
 
 footer {

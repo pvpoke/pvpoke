@@ -82,6 +82,17 @@ var InterfaceMaster = (function () {
 				});
 			});
 
+			// Clear the search input on focus
+
+			$("#poke-search").focus(function(e){
+				$("#poke-search").val("");
+			});
+
+			// Select a Pokemon from the dropdown
+			$("#poke-select").change(function(e){
+				selectNewPokemon($(this).find("option:selected").val());
+			});
+
 			// Select a new Pokemon from the given id
 			function selectNewPokemon(id){
 				// Empty value

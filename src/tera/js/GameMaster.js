@@ -12,6 +12,8 @@ var GameMaster = (function () {
 		$.getJSON( webRoot+"tera/data/pokemon.json?v="+siteVersion, function( data ){
 			object.data = data;
 
+			data.sort((a,b) => (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0));
+
 			InterfaceMaster.getInstance().init(object);
 		});
 

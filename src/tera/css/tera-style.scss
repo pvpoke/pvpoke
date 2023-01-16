@@ -3,7 +3,7 @@
 $borderRed: #780900;
 $borderDarkBlue: #0a0018;
 $backgroundBlue: #1d0441;
-$fontColor: #ffb3b3;
+$fontColor: #ffdbdb;
 
 // #ffb3b3
 // #ff8686
@@ -96,6 +96,15 @@ header{
 	}
 }
 
+input[type="text"]{
+	background: none;
+    border: none;
+    border-bottom: 1px solid $fontColor;
+	color: $fontColor;
+    outline: none;
+    padding-bottom: 5px;
+}
+
 .flex{
 	display: flex;
 }
@@ -125,6 +134,52 @@ header{
 .hr{
 	flex-grow: 1;
 	border-bottom: 1px solid $fontColor;
+}
+
+.poke-search-container{
+	input, select{
+		display: block;
+		width: 200px;
+		box-sizing: border-box;
+	}
+
+	select{
+		margin-top: 10px;
+		font-size: 20px;
+	}
+}
+
+.boss-section{
+	background: #8568ce;
+	background: -moz-linear-gradient(117deg, #a1417f 33%, #6d1744 100%);
+	background: -webkit-linear-gradient(117deg, #a1417f 33%, #6d1744 100%);
+	background: linear-gradient(117deg, #a1417f 33%, #6d1744 100%);
+	position: relative;
+	overflow: hidden;
+
+
+	.flex{
+		position: relative;
+		z-index: 10;
+		justify-content: space-between;
+		margin-bottom: 15px;
+	}
+
+	h4{
+		margin-top: 0;
+	}
+
+	.pattern{
+		width:100%;
+		height:100%;
+		position:absolute;
+		z-index: 0;
+		left: 0;
+		top: 0;
+		background: url('../img/pattern.png');
+		background-position: center center;
+		opacity: 0.1;
+	}
 }
 
 footer{

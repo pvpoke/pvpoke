@@ -32,8 +32,6 @@ function TeraRanker(){
 
 		ranks.sort((a,b) => (a.overall > b.overall) ? -1 : ((b.overall > a.overall) ? 1 : 0));
 
-		console.log(ranks);
-
 		return ranks;
 	}
 
