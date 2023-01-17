@@ -44,6 +44,7 @@ html, body{
 	padding: 0;
 	font-family: Arial, sans-serif;
 	color: $fontColor;
+	height:100%;
 }
 
 body{
@@ -56,6 +57,7 @@ body{
 	background: -moz-linear-gradient(167deg, rgba(82,8,59,1) 14%, rgba(29,4,65,1) 72%);
 	background: -webkit-linear-gradient(167deg, rgba(82,8,59,1) 14%, rgba(29,4,65,1) 72%);
 	background: linear-gradient(167deg, rgba(82,8,59,1) 14%, rgba(29,4,65,1) 72%);
+	background-attachment: fixed;
 }
 
 header{
@@ -135,6 +137,10 @@ input[type="text"]{
 	display: flex;
 }
 
+.template{
+	display: none;
+}
+
 .bordered-section{
 	background: $backgroundBlue;
 	border: 3px solid $borderDarkBlue;
@@ -184,7 +190,7 @@ input[type="text"]{
 	}
 
 	select{
-		margin: 10px 0 20px 0;
+		margin: 10px 0 10px 0;
 		font-size: 20px;
 	}
 }
@@ -195,7 +201,7 @@ input[type="text"]{
 	overflow: hidden;
 
 
-	.flex{
+	& > .flex{
 		position: relative;
 		z-index: 10;
 		justify-content: space-between;
@@ -227,6 +233,43 @@ input[type="text"]{
 		}
 	}
 
+	#poke-select{
+		margin-bottom: 20px;
+	}
+
+	.boss-attack-types{
+		display: flex;
+		justify-content: flex-start;
+
+		#attack-type-select{
+			margin: 0;
+			font-size: 14px;
+		    padding: 5px;
+		    width: 105px;
+		}
+
+		.type-item{
+			box-sizing: border-box;
+			font-size: 14px;
+			padding: 5px;
+			width: 105px;
+			margin-right: 15px;
+			border-bottom-left-radius: 10px;
+			border-top-right-radius: 10px;
+
+			.type-name{
+				flex-grow: 1;
+			}
+
+			a{
+				text-decoration: none;
+				color: $fontColor;
+			}
+		}
+
+
+	}
+
 	.tera-icon{
 		width:85px;
 		height:85px;
@@ -240,8 +283,8 @@ input[type="text"]{
 	&[tera-type="dragon"]{ @include teragradient(#808dff, #4654cd); }
 	&[tera-type="electric"]{ @include teragradient(#c59515, #805d01); }
 	&[tera-type="fairy"]{ @include teragradient(#d766de, #9f2ea6); }
-	&[tera-type="fighting"]{ @include teragradient(#f97b0d, #a14c01); }
-	&[tera-type="fire"]{ @include teragradient(#ff6a62, #d72a21); }
+	&[tera-type="fighting"]{ @include teragradient(#d16f1a, #904503 ); }
+	&[tera-type="fire"]{ @include teragradient(#dc5750, #b22720 ); }
 	&[tera-type="flying"]{ @include teragradient(#8095cd, #485d95); }
 	&[tera-type="ghost"]{ @include teragradient(#b481b0, #7c4978); }
 	&[tera-type="grass"]{ @include teragradient(#6ab755, #377b25); }
@@ -273,11 +316,8 @@ input[type="text"]{
 [tera-type="rock"] .tera-icon{ background-image: url('../img/types/rock.png'); }
 [tera-type="steel"] .tera-icon{ background-image: url('../img/types/steel.png'); }
 [tera-type="water"] .tera-icon{ background-image: url('../img/types/water.png'); }
+
 /* Typing colors and icons */
-
-.typed{
-
-}
 
 .bug, [type="bug"]{ @include typegradient(#bec720, #8b9f18) }
 .dark, [type="dark"]{ @include typegradient(#000, #fff) }

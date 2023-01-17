@@ -91,6 +91,16 @@ var InterfaceMaster = (function () {
 				updateRaidBossDisplay();
 			});
 
+			// Add a new selected type to the list of attacks
+			$("#attack-type-select").change(function(e){
+				let type = $("#attack-type-select option:selected").val();
+				selectedTypes.push(type);
+
+				$("#attack-type-select option").first().prop("selected", "selected");
+
+				updateRaidBossDisplay();
+			});
+
 			// Select a new Pokemon from the given id
 			function selectNewPokemon(id){
 				// Empty value
@@ -115,7 +125,19 @@ var InterfaceMaster = (function () {
 			// Update the raid boss UI with the current values
 			function updateRaidBossDisplay(){
 				$(".boss-section").attr("tera-type", selectedTera);
-				$(".boss-attack-types").html(selectedTypes.join(", "));
+
+				$(".boss-attack-types .type-item").remove();
+
+				for(var i = 0; i < selectedTypes.length; i++){
+					let $type = $(".type-item.template").clone().removeClass("template");
+					let typeName = selectedTypes[i].charAt(0).toUpperCase() + selectedTypes[i].slice(1);
+
+					$type.addClass(selectedTypes[i]);
+					$type.find(".type-name").html(typeName);
+
+					$type.insertBefore($(".boss-attack-types select"));
+				}
+
 			}
 
 		}
