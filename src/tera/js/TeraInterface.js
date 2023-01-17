@@ -74,7 +74,7 @@ var InterfaceMaster = (function () {
 
 			// Run the tera counter calculator and display the results
 			$("button#run").click(function(e){
-				let r = ranker.rankAttackers(selectedTypes, selectedTera);
+				let r = ranker.rankAttackers(selectedPokemon, selectedTypes, selectedTera);
 
 				self.displayResults(r);
 			});

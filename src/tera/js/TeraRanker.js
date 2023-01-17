@@ -8,9 +8,7 @@ function TeraRanker(){
 
 	let allTypes = ["bug","dark","dragon","electric","fairy","fighting","fire","flying","ghost","grass","ground","ice","normal","poison","psychic","rock","steel","water"];
 
-
-
-	this.rankAttackers = function(raidTypes, raidTera){
+	this.rankAttackers = function(raidBoss, raidTypes, raidTera){
 
 		// For each possible defensive and offensive type combination, calculate a defensive score
 		let ranks = self.generateRankingList();
@@ -20,8 +18,8 @@ function TeraRanker(){
 		for(var i = 0; i < ranks.length; i++){
 			let rank = ranks[i];
 
-			rank.defense = self.scoreDefense(rank.pokemon.types, rank.tera, raidTypes);
-			rank.offense = self.scoreOffense(rank.pokemon.types, rank.tera, raidTera);
+			rank.defense = self.scoreDefense(raidBoss, rank.pokemon.types, rank.tera, raidTypes, raidTera);
+			rank.offense = self.scoreOffense(raidBoss, rank.pokemon.types, rank.tera, raidTera);
 
 			if(rank.defense > 0){
 				rank.overall = rank.offense / rank.defense; // Overall score = damage output / damage input
@@ -37,7 +35,7 @@ function TeraRanker(){
 
 	// Given a type combo, score offensively given the raid's tera type
 
-	this.scoreOffense = function(attackerTypes, attackerTera, raidTera){
+	this.scoreOffense = function(raidBoss, attackerTypes, attackerTera, raidTera){
 
 		// Score the Pokemon's base types offensively
 		let baseScore = 1;
@@ -70,13 +68,14 @@ function TeraRanker(){
 
 	// Given a type combo, score defensively given offensive types
 
-	this.scoreDefense = function(defenderTypes, defenderTera, raidTypes){
+	this.scoreDefense = function(raidBoss, defenderTypes, defenderTera, raidTypes, raidTera){
 
 		// Score the Pokemon's base types defensively
 		let baseScore = 0;
 
 		for(var i = 0; i < raidTypes.length; i++){
 			let effectiveness = self.getEffectiveness(raidTypes[i], defenderTypes);
+			effectiveness *= self.getStab(raidBoss, raidTypes[i], raidTera);
 
 			baseScore += effectiveness;
 		}
@@ -88,6 +87,7 @@ function TeraRanker(){
 
 		for(var i = 0; i < raidTypes.length; i++){
 			effectiveness = self.getEffectiveness(raidTypes[i], defenderTera);
+			effectiveness *= self.getStab(raidBoss, raidTypes[i], raidTera);
 
 			teraScore += effectiveness;
 		}
@@ -161,6 +161,21 @@ function TeraRanker(){
 		}
 
 		return effectiveness;
+	}
+
+	// Return a STAB multiplier given a Pokemon, a move type, and a Pokemon's tera type
+	this.getStab = function(pokemon, moveType, teraType){
+		let stab = 1;
+
+		if(pokemon.types.indexOf(moveType) > -1 || moveType == teraType){
+			stab = 1.5;
+		}
+
+		if(pokemon.types.indexOf(moveType) > -1 && moveType == teraType){
+			stab = 2;
+		}
+
+		return stab;
 	}
 
 	// Helper function that returns an array of weaknesses, resistances, and immunities given defensive type
