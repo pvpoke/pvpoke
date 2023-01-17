@@ -14,6 +14,7 @@ var InterfaceMaster = (function () {
 			let selectedTypes = [];
 			let selectedPokemon;
 			let selectedTera;
+			let results = [];
 
 			this.init = function(){
 				// Populate Pokemon select list
@@ -22,10 +23,8 @@ var InterfaceMaster = (function () {
 				}
 			}
 
-
-			// Run the tera counter calculator and display the results
-			$("button#run").click(function(e){
-				let results = ranker.rankAttackers(selectedTypes, selectedTera);
+			this.displayResults = function(r){
+				results = r;
 
 				$("#results tbody").html("");
 
@@ -41,12 +40,27 @@ var InterfaceMaster = (function () {
 						continue;
 					}
 
-					let $row = $('<tr><td></td><td>-</td><td></td></tr>');
+					let $row = $('<tr><td></td><td>-</td><td></td><td></td></tr>');
 					$row.find("td").eq(0).html(results[i].pokemon.name);
 
-					$row.find("td").eq(1).html(results[i].pokemon.types.join(" / "));
+					// Show Pokemon typings
+					let $types = $("<div class='flex'></div>");
 
-					$row.find("td").eq(2).html(results[i].tera);
+					for(var n = 0; n < results[i].pokemon.types.length; n++){
+						let $type = createTypeLabel(results[i].pokemon.types[n]);
+						$types.append($type);
+					}
+
+					$row.find("td").eq(1).html($types);
+
+					// Show Pokemon tera type
+					let $teraType = createTypeLabel(results[i].tera);
+					$teraType.addClass("tera");
+					$row.find("td").eq(2).html($teraType);
+
+					// Show Pokemon's score
+					$row.find("td").eq(3).html(Math.round(results[i].overall * 100) / 100);
+
 					$("#results tbody").append($row);
 
 					displayedSpecies.push(results[i].pokemon.id);
@@ -55,6 +69,14 @@ var InterfaceMaster = (function () {
 					displayCount++;
 
 				}
+			}
+
+
+			// Run the tera counter calculator and display the results
+			$("button#run").click(function(e){
+				let r = ranker.rankAttackers(selectedTypes, selectedTera);
+
+				self.displayResults(r);
 			});
 
 			// Select a Pokemon from the raid boss select list on input search
@@ -101,6 +123,18 @@ var InterfaceMaster = (function () {
 				updateRaidBossDisplay();
 			});
 
+			// Remove a selected type from the list of attacks
+			$("body").on("click", ".type-item a.close", function(e){
+				e.preventDefault();
+
+				let $item = $(this).closest(".type-item");
+				let index = $(".boss-attack-types .type-item").index($item);
+
+				selectedTypes.splice(index, 1);
+
+				updateRaidBossDisplay();
+			});
+
 			// Select a new Pokemon from the given id
 			function selectNewPokemon(id){
 				// Empty value
@@ -129,15 +163,22 @@ var InterfaceMaster = (function () {
 				$(".boss-attack-types .type-item").remove();
 
 				for(var i = 0; i < selectedTypes.length; i++){
-					let $type = $(".type-item.template").clone().removeClass("template");
-					let typeName = selectedTypes[i].charAt(0).toUpperCase() + selectedTypes[i].slice(1);
-
-					$type.addClass(selectedTypes[i]);
-					$type.find(".type-name").html(typeName);
+					let $type = createTypeLabel(selectedTypes[i]);
 
 					$type.insertBefore($(".boss-attack-types select"));
 				}
 
+			}
+
+			function createTypeLabel(type){
+				let $type = $(".type-item.template").clone().removeClass("template");
+				let typeName = type.charAt(0).toUpperCase() + type.slice(1);
+
+				$type.addClass(type);
+				$type.attr("tera-type", type);
+				$type.find(".type-name").html(typeName);
+
+				return $type;
 			}
 
 		}

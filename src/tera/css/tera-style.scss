@@ -210,6 +210,10 @@ input[type="text"]{
 
 	h4{
 		margin-top: 0;
+
+		&.attack-title{
+			margin-bottom: 10px;
+		}
 	}
 
 	.pattern{
@@ -240,42 +244,16 @@ input[type="text"]{
 	.boss-attack-types{
 		display: flex;
 		justify-content: flex-start;
+		max-width: 650px;
+		flex-wrap: wrap;
 
 		#attack-type-select{
-			margin: 0;
+			margin: 10px 0 0 0;
 			font-size: 14px;
 		    padding: 5px;
 		    width: 105px;
+
 		}
-
-		.type-item{
-			box-sizing: border-box;
-			font-size: 14px;
-			padding: 5px;
-			width: 105px;
-			margin-right: 15px;
-			border-bottom-left-radius: 10px;
-			border-top-right-radius: 10px;
-
-			.type-name{
-				flex-grow: 1;
-			}
-
-			a{
-				text-decoration: none;
-				color: $fontColor;
-			}
-		}
-
-
-	}
-
-	.tera-icon{
-		width:85px;
-		height:85px;
-		background-size:contain;
-		background-repeat: no-repeat;
-		margin-right: 15px;
 	}
 
 	&[tera-type="bug"]{ @include teragradient(#9ba141, #5b6c16); }
@@ -320,8 +298,122 @@ input[type="text"]{
 /* Typing colors and icons */
 
 .bug, [type="bug"]{ @include typegradient(#bec720, #8b9f18) }
-.dark, [type="dark"]{ @include typegradient(#000, #fff) }
-.dragon, [type="dragon"]{ @include typegradient(#000, #fff) }
+.dark, [type="dark"]{ @include typegradient(#715a5b, #4f3f3f) }
+.dragon, [type="dragon"]{ @include typegradient(#7387f0, #444dcb) }
+.electric, [type="electric"]{ @include typegradient(#ffcb03, #f6bc00) }
+.fairy, [type="fairy"]{ @include typegradient(#f89af3, #ed6ce5) }
+.fighting, [type="fighting"]{ @include typegradient(#fca606, #fc7c00) }
+.fire, [type="fire"]{ @include typegradient(#f94043, #dd2727) }
+.flying, [type="flying"]{ @include typegradient(#b3d4f4, #7fb4e9) }
+.ghost, [type="ghost"]{ @include typegradient(#9e5a9c, #6d3d69) }
+.grass, [type="grass"]{ @include typegradient(#5fca3d, #409f26) }
+.ground, [type="ground"]{ @include typegradient(#bd7033, #8f4d24) }
+.ice, [type="ice"]{ @include typegradient(#5bebff, #40d3f8) }
+.normal, [type="normal"]{ @include typegradient(#c7c7c7, #9d9d9f) }
+.poison, [type="poison"]{ @include typegradient(#bd5ce3, #8a3fc1) }
+.psychic, [type="psychic"]{ @include typegradient(#fe64b1, #eb4481) }
+.rock, [type="rock"]{ @include typegradient(#d0c9b0, #aba77b) }
+.steel, [type="steel"]{ @include typegradient(#86c8d4, #5d9cb0) }
+.water, [type="water"]{ @include typegradient(#35b5f7, #267ee7) }
+
+
+.type-item{
+	box-sizing: border-box;
+	font-size: 14px;
+	width: 105px;
+	margin: 10px 15px 0 0;
+	border: 1px solid rgba(0, 0, 0, 0.75);
+	border-radius: 10px;
+	overflow: hidden;
+
+	.type-name-container{
+		background: rgba(0,0,0,0.1);
+		align-items: center;
+		flex-grow: 1;
+
+		.type-name{
+			padding: 5px 10px 5px 0;
+			text-align: center;
+			flex-grow: 1;
+		}
+	}
+
+	.tera-icon{
+		width: 18px;
+	    height: 18px;
+	    margin: 0 2px 0 5px;
+	}
+
+	a{
+		background:rgba(0,0,0,0.5);
+		padding: 5px;
+		text-decoration: none;
+		color: $fontColor;
+
+		&:hover{
+			background:rgba(0,0,0,0.75);
+		}
+	}
+}
+
+.tera-icon{
+	width:85px;
+	height:85px;
+	background-size:contain;
+	background-repeat: no-repeat;
+	margin-right: 15px;
+}
+
+
+#results{
+	text-align: left;
+	width: 100%;
+
+	th{
+		top:0px;
+		position: sticky;
+		background: #1d0441;
+		border-bottom: 1px solid rgba(255,255,255,0.25)
+	}
+
+	th, td{
+		padding: 10px;
+	}
+
+	tbody tr:nth-of-type(odd){
+		background:rgba(255,255,255,0.1);
+	}
+
+	.type-item{
+		margin-top: 0;
+		margin-right: 3px;
+
+		a.close{
+			display: none;
+		}
+
+	}
+
+	.type-item.tera{
+		border-top-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
+
+	.type-item:not(.tera){
+		.type-name-container{
+			background: #1d0441;
+			margin: 2px;
+			border-radius: 10px;
+		}
+	}
+}
+
+.results-section{
+	.table-container{
+		max-height: 800px;
+		overflow-y: auto;
+	}
+}
 
 footer{
 	max-width:1000px;

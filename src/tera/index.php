@@ -21,7 +21,7 @@
 					<option disabled selected value="">Select a Pokemon</option>
 				</select>
 
-				<h4>Attack Types</h4>
+				<h4 class="attack-title">Attack Types</h4>
 				<div class="boss-attack-types">
 					<select id="attack-type-select">
 						<option disabled selected value="">Add a type</option>
@@ -47,7 +47,12 @@
 				</div>
 
 				<div class="type-item template flex">
-					<div class="type-name"></div>
+					<div class="type-name-container flex">
+						<div class="tera-icon"></div>
+						<div class="type-name">
+						</div>
+					</div>
+
 					<a href="#" class="close">×</a>
 				</div>
 			</div>
@@ -86,18 +91,29 @@
 	</div>
 
 
-	<button style="margin-top: 20px;" id="run">Check Attackers</button>
+	<button style="margin-top: 20px;" id="run">Check Counters</button>
 
-	<table id="results" style="height: 500px; overflow-y: scroll; width: 100%" cellspacing="4">
-		<thead>
-			<tr>
-				<th>Pokemon</th>
-				<th>Typing</th>
-				<th>Tera Type</th>
-			</tr>
-		</thead>
-		<tbody><tbody>
-	</table>
+	<div class="flex section-header boss-header">
+		<h3>Counters</h3>
+		<div class="hr"></div>
+	</div>
+
+	<div class="bordered-section results-section">
+		<div class="table-container">
+			<table id="results" cellspacing="0">
+				<thead>
+					<tr>
+						<th>Pokemon</th>
+						<th>Typing</th>
+						<th>Tera Type</th>
+						<th>Score</th>
+					</tr>
+				</thead>
+				<tbody><tbody>
+			</table>
+		</div>
+	</div>
+
 
 </div>
 

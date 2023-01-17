@@ -165,6 +165,9 @@ input[type=text] {
 .boss-section h4 {
   margin-top: 0;
 }
+.boss-section h4.attack-title {
+  margin-bottom: 10px;
+}
 .boss-section .pattern {
   width: 100%;
   height: 100%;
@@ -189,35 +192,14 @@ input[type=text] {
 .boss-section .boss-attack-types {
   display: flex;
   justify-content: flex-start;
+  max-width: 650px;
+  flex-wrap: wrap;
 }
 .boss-section .boss-attack-types #attack-type-select {
-  margin: 0;
+  margin: 10px 0 0 0;
   font-size: 14px;
   padding: 5px;
   width: 105px;
-}
-.boss-section .boss-attack-types .type-item {
-  box-sizing: border-box;
-  font-size: 14px;
-  padding: 5px;
-  width: 105px;
-  margin-right: 15px;
-  border-bottom-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-.boss-section .boss-attack-types .type-item .type-name {
-  flex-grow: 1;
-}
-.boss-section .boss-attack-types .type-item a {
-  text-decoration: none;
-  color: #fff;
-}
-.boss-section .tera-icon {
-  width: 85px;
-  height: 85px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  margin-right: 15px;
 }
 .boss-section[tera-type=bug] {
   background: #5b6c16;
@@ -408,15 +390,185 @@ input[type=text] {
 }
 
 .dark, [type=dark] {
-  background: -moz-linear-gradient(0deg, #fff 43%, #000 55%);
-  background: -webkit-linear-gradient(0deg, #fff 43%, #000 55%);
-  background: linear-gradient(0deg, #fff 43%, #000 55%);
+  background: -moz-linear-gradient(0deg, #4f3f3f 43%, #715a5b 55%);
+  background: -webkit-linear-gradient(0deg, #4f3f3f 43%, #715a5b 55%);
+  background: linear-gradient(0deg, #4f3f3f 43%, #715a5b 55%);
 }
 
 .dragon, [type=dragon] {
-  background: -moz-linear-gradient(0deg, #fff 43%, #000 55%);
-  background: -webkit-linear-gradient(0deg, #fff 43%, #000 55%);
-  background: linear-gradient(0deg, #fff 43%, #000 55%);
+  background: -moz-linear-gradient(0deg, #444dcb 43%, #7387f0 55%);
+  background: -webkit-linear-gradient(0deg, #444dcb 43%, #7387f0 55%);
+  background: linear-gradient(0deg, #444dcb 43%, #7387f0 55%);
+}
+
+.electric, [type=electric] {
+  background: -moz-linear-gradient(0deg, #f6bc00 43%, #ffcb03 55%);
+  background: -webkit-linear-gradient(0deg, #f6bc00 43%, #ffcb03 55%);
+  background: linear-gradient(0deg, #f6bc00 43%, #ffcb03 55%);
+}
+
+.fairy, [type=fairy] {
+  background: -moz-linear-gradient(0deg, #ed6ce5 43%, #f89af3 55%);
+  background: -webkit-linear-gradient(0deg, #ed6ce5 43%, #f89af3 55%);
+  background: linear-gradient(0deg, #ed6ce5 43%, #f89af3 55%);
+}
+
+.fighting, [type=fighting] {
+  background: -moz-linear-gradient(0deg, #fc7c00 43%, #fca606 55%);
+  background: -webkit-linear-gradient(0deg, #fc7c00 43%, #fca606 55%);
+  background: linear-gradient(0deg, #fc7c00 43%, #fca606 55%);
+}
+
+.fire, [type=fire] {
+  background: -moz-linear-gradient(0deg, #dd2727 43%, #f94043 55%);
+  background: -webkit-linear-gradient(0deg, #dd2727 43%, #f94043 55%);
+  background: linear-gradient(0deg, #dd2727 43%, #f94043 55%);
+}
+
+.flying, [type=flying] {
+  background: -moz-linear-gradient(0deg, #7fb4e9 43%, #b3d4f4 55%);
+  background: -webkit-linear-gradient(0deg, #7fb4e9 43%, #b3d4f4 55%);
+  background: linear-gradient(0deg, #7fb4e9 43%, #b3d4f4 55%);
+}
+
+.ghost, [type=ghost] {
+  background: -moz-linear-gradient(0deg, #6d3d69 43%, #9e5a9c 55%);
+  background: -webkit-linear-gradient(0deg, #6d3d69 43%, #9e5a9c 55%);
+  background: linear-gradient(0deg, #6d3d69 43%, #9e5a9c 55%);
+}
+
+.grass, [type=grass] {
+  background: -moz-linear-gradient(0deg, #409f26 43%, #5fca3d 55%);
+  background: -webkit-linear-gradient(0deg, #409f26 43%, #5fca3d 55%);
+  background: linear-gradient(0deg, #409f26 43%, #5fca3d 55%);
+}
+
+.ground, [type=ground] {
+  background: -moz-linear-gradient(0deg, #8f4d24 43%, #bd7033 55%);
+  background: -webkit-linear-gradient(0deg, #8f4d24 43%, #bd7033 55%);
+  background: linear-gradient(0deg, #8f4d24 43%, #bd7033 55%);
+}
+
+.ice, [type=ice] {
+  background: -moz-linear-gradient(0deg, #40d3f8 43%, #5bebff 55%);
+  background: -webkit-linear-gradient(0deg, #40d3f8 43%, #5bebff 55%);
+  background: linear-gradient(0deg, #40d3f8 43%, #5bebff 55%);
+}
+
+.normal, [type=normal] {
+  background: -moz-linear-gradient(0deg, #9d9d9f 43%, #c7c7c7 55%);
+  background: -webkit-linear-gradient(0deg, #9d9d9f 43%, #c7c7c7 55%);
+  background: linear-gradient(0deg, #9d9d9f 43%, #c7c7c7 55%);
+}
+
+.poison, [type=poison] {
+  background: -moz-linear-gradient(0deg, #8a3fc1 43%, #bd5ce3 55%);
+  background: -webkit-linear-gradient(0deg, #8a3fc1 43%, #bd5ce3 55%);
+  background: linear-gradient(0deg, #8a3fc1 43%, #bd5ce3 55%);
+}
+
+.psychic, [type=psychic] {
+  background: -moz-linear-gradient(0deg, #eb4481 43%, #fe64b1 55%);
+  background: -webkit-linear-gradient(0deg, #eb4481 43%, #fe64b1 55%);
+  background: linear-gradient(0deg, #eb4481 43%, #fe64b1 55%);
+}
+
+.rock, [type=rock] {
+  background: -moz-linear-gradient(0deg, #aba77b 43%, #d0c9b0 55%);
+  background: -webkit-linear-gradient(0deg, #aba77b 43%, #d0c9b0 55%);
+  background: linear-gradient(0deg, #aba77b 43%, #d0c9b0 55%);
+}
+
+.steel, [type=steel] {
+  background: -moz-linear-gradient(0deg, #5d9cb0 43%, #86c8d4 55%);
+  background: -webkit-linear-gradient(0deg, #5d9cb0 43%, #86c8d4 55%);
+  background: linear-gradient(0deg, #5d9cb0 43%, #86c8d4 55%);
+}
+
+.water, [type=water] {
+  background: -moz-linear-gradient(0deg, #267ee7 43%, #35b5f7 55%);
+  background: -webkit-linear-gradient(0deg, #267ee7 43%, #35b5f7 55%);
+  background: linear-gradient(0deg, #267ee7 43%, #35b5f7 55%);
+}
+
+.type-item {
+  box-sizing: border-box;
+  font-size: 14px;
+  width: 105px;
+  margin: 10px 15px 0 0;
+  border: 1px solid rgba(0, 0, 0, 0.75);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.type-item .type-name-container {
+  background: rgba(0, 0, 0, 0.1);
+  align-items: center;
+  flex-grow: 1;
+}
+.type-item .type-name-container .type-name {
+  padding: 5px 10px 5px 0;
+  text-align: center;
+  flex-grow: 1;
+}
+.type-item .tera-icon {
+  width: 18px;
+  height: 18px;
+  margin: 0 2px 0 5px;
+}
+.type-item a {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+  text-decoration: none;
+  color: #fff;
+}
+.type-item a:hover {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.tera-icon {
+  width: 85px;
+  height: 85px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-right: 15px;
+}
+
+#results {
+  text-align: left;
+  width: 100%;
+}
+#results th {
+  top: 0px;
+  position: sticky;
+  background: #1d0441;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+#results th, #results td {
+  padding: 10px;
+}
+#results tbody tr:nth-of-type(odd) {
+  background: rgba(255, 255, 255, 0.1);
+}
+#results .type-item {
+  margin-top: 0;
+  margin-right: 3px;
+}
+#results .type-item a.close {
+  display: none;
+}
+#results .type-item.tera {
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+#results .type-item:not(.tera) .type-name-container {
+  background: #1d0441;
+  margin: 2px;
+  border-radius: 10px;
+}
+
+.results-section .table-container {
+  max-height: 800px;
+  overflow-y: auto;
 }
 
 footer {
