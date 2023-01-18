@@ -395,7 +395,8 @@ input[type="text"]{
 		top:0px;
 		position: sticky;
 		background: #1d0441;
-		border-bottom: 1px solid rgba(255,255,255,0.25)
+		border-bottom: 1px solid rgba(255,255,255,0.25);
+		z-index: 5;
 	}
 
 	th, td{
