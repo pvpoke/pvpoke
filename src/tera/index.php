@@ -1,14 +1,17 @@
 <?php require_once 'header.php'; ?>
 
 <div class="section home white">
-	<h1>Tera Raid Counters</h1>
+	<h1>Tera Raid Counter Calculator</h1>
 
-	<p>Enter the Tera Raid boss details below. You can specify its offensive move types to help narrow results. This tool will calculate potential raid attackers and counters based on optimal offensive and defensive typing against the raid boss.</p>
+	<p>This tool is a raid counter calculator that measures potential attackers based on optimal offensive and defensive typing against the raid boss. Use this tool for quick ideas during your Tera Raid battles or to jump start theorycrafting for high level challenges.</p>
 
 	<div class="flex section-header margin-top">
 		<h3>Tera Raid Boss</h3>
 		<div class="hr"></div>
 	</div>
+
+	<p>Enter the Tera Raid boss details below. You can specify its offensive attack types to help narrow results.</p>
+
 
 	<div class="bordered-section boss-section">
 
@@ -100,6 +103,8 @@
 			<h3>Counters</h3>
 			<div class="hr"></div>
 		</div>
+
+		<p>The Pokemon below are the top scored based on their offensive and defensive typing against the raid boss.</p>
 
 		<div class="bordered-section results-section">
 			<input type="text" id="results-search" placeholder="Search counters" />
