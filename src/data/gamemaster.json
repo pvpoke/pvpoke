@@ -201,6 +201,31 @@
         "include": [],
         "exclude": []
     }, {
+        "name": "naiad",
+        "title": "Silph Naiad Cup",
+        "include": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["bug", "dragon", "psychic", "water"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["greedent", "miltank", "snorlax"]
+        }],
+        "exclude": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["dark", "fairy", "rock"]
+        }, {
+            "filterType": "tag",
+            "name": "Tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["araquanid", "articuno_galarian", "cresselia", "forretress", "lanturn", "medicham", "toxapex"]
+        }]
+    }, {
         "name": "ou",
         "title": "Overused Cup",
         "include": [],
@@ -370,6 +395,14 @@
         "cup": "vanguard",
         "cp": 1500,
         "meta": "vanguard",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Silph Naiad Cup",
+        "cup": "naiad",
+        "cp": 1500,
+        "meta": "naiad",
         "showCup": true,
         "showFormat": true,
         "showMeta": true

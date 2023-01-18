@@ -63,6 +63,10 @@ switch($cup){
 		$league = 'Retro Cup';
 		break;
 
+	case "naiad":
+		$league = 'Silph Naiad Cup';
+		break;
+
 	case "championship":
 		$league = '2022 Championship Series';
 		break;
