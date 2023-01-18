@@ -21,6 +21,15 @@ var InterfaceMaster = (function () {
 				for(var i = 0; i < gm.data.pokemon.length; i++){
 					$("#poke-select").append("<option value='"+gm.data.pokemon[i].id+"'>"+gm.data.pokemon[i].name+"</option>");
 				}
+
+				window.addEventListener('popstate', function(e) {
+					get = e.state;
+					self.loadGetData();
+				});
+
+				if(get){
+					self.loadGetData();
+				}
 			}
 
 			this.displayResults = function(r){
@@ -84,12 +93,71 @@ var InterfaceMaster = (function () {
 				$(".results-container").show();
 			}
 
+			// Fill in settings from get parameters
+
+			this.loadGetData = function(){
+
+				if(! get){
+					return false;
+				}
+
+				// Cycle through parameters and set them
+
+				for(var key in get){
+					if(get.hasOwnProperty(key)){
+
+						let val = get[key];
+
+						// Process each type of parameter
+
+						switch(key){
+							case "p":
+								// Set selected Pokemon
+								selectedPokemon = gm.getPokemonById(val);
+								$("#poke-select option[value='"+val+"']").prop("selected", "selected");
+								break;
+
+							case "t":
+								// Set tera type
+								selectedTera = val;
+								$("#tera-select option[value='"+val+"']").prop("selected", "selected");
+								break;
+
+							case "a":
+								// Set selected attack types
+								selectedTypes = val.split("-");
+								break;
+						}
+					}
+
+				}
+
+				updateRaidBossDisplay();
+
+				let r = ranker.rankAttackers(selectedPokemon, selectedTypes, selectedTera);
+
+				self.displayResults(r);
+			}
+
 
 			// Run the tera counter calculator and display the results
 			$("button#run").click(function(e){
 				let r = ranker.rankAttackers(selectedPokemon, selectedTypes, selectedTera);
 
 				self.displayResults(r);
+
+				// Update URL
+				let currentURL = window.location.pathname
+				let url = webRoot + 'tera/' + selectedPokemon.id + '/' + selectedTera + '/' + selectedTypes.join('-');
+
+				let data = {p: selectedPokemon.id, a: selectedTypes.join("-"), t: selectedTera };
+
+				window.history.pushState(data, "Tera Raid Counters", url);
+
+				// Send Google Analytics pageview
+				if(currentURL != url){
+					gtag('config', UA_ID, {page_location: (host+url), page_path: url});
+				}
 			});
 
 			// Select a Pokemon from the raid boss select list on input search
