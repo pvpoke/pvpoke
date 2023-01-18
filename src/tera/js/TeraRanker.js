@@ -106,16 +106,16 @@ function TeraRanker(){
 	this.generateRankingList = function(){
 		let ranks = [];
 
-		for(var i = 0; i < gm.data.length; i++){
+		for(var i = 0; i < gm.data.pokemon.length; i++){
 
-			if(gm.data[i].exclude){
+			if(gm.data.pokemon[i].exclude){
 				continue;
 			}
 
 			for(var n = 0; n < allTypes.length; n++){
 				// Add an entry for each Pokemon with each tera type]
 				ranks.push({
-					pokemon: gm.data[i],
+					pokemon: gm.data.pokemon[i],
 					tera: allTypes[n]
 				});
 			}

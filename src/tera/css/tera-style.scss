@@ -172,7 +172,7 @@ input[type="text"]{
 		margin: 0 20px 0 0;
 	}
 
-	&.boss-header{
+	&.margin-top{
 		margin-top: 40px;
 	}
 }
@@ -244,7 +244,7 @@ input[type="text"]{
 	.boss-attack-types{
 		display: flex;
 		justify-content: flex-start;
-		max-width: 650px;
+		max-width: 480px;
 		flex-wrap: wrap;
 
 		#attack-type-select{
@@ -252,7 +252,7 @@ input[type="text"]{
 			font-size: 14px;
 		    padding: 5px;
 		    width: 105px;
-
+			border-radius: 10px;
 		}
 	}
 
@@ -294,6 +294,25 @@ input[type="text"]{
 [tera-type="rock"] .tera-icon{ background-image: url('../img/types/rock.png'); }
 [tera-type="steel"] .tera-icon{ background-image: url('../img/types/steel.png'); }
 [tera-type="water"] .tera-icon{ background-image: url('../img/types/water.png'); }
+
+.type-item[tera-type="bug"] .tera-icon{ background-image: url('../img/types/bug.png'); }
+.type-item[tera-type="dark"] .tera-icon{background-image: url('../img/types/dark.png'); }
+.type-item[tera-type="dragon"] .tera-icon{ background-image: url('../img/types/dragon.png'); }
+.type-item[tera-type="electric"] .tera-icon{ background-image: url('../img/types/electric.png'); }
+.type-item[tera-type="fairy"] .tera-icon{ background-image: url('../img/types/fairy.png'); }
+.type-item[tera-type="fighting"] .tera-icon{ background-image: url('../img/types/fighting.png'); }
+.type-item[tera-type="fire"] .tera-icon{ background-image: url('../img/types/fire.png'); }
+.type-item[tera-type="flying"] .tera-icon{ background-image: url('../img/types/flying.png'); }
+.type-item[tera-type="ghost"] .tera-icon{ background-image: url('../img/types/ghost.png'); }
+.type-item[tera-type="grass"] .tera-icon{ background-image: url('../img/types/grass.png'); }
+.type-item[tera-type="ground"] .tera-icon{ background-image: url('../img/types/ground.png'); }
+.type-item[tera-type="ice"] .tera-icon{ background-image: url('../img/types/ice.png'); }
+.type-item[tera-type="normal"] .tera-icon{ background-image: url('../img/types/normal.png'); }
+.type-item[tera-type="poison"] .tera-icon{ background-image: url('../img/types/poison.png'); }
+.type-item[tera-type="psychic"] .tera-icon{ background-image: url('../img/types/psychic.png'); }
+.type-item[tera-type="rock"] .tera-icon{ background-image: url('../img/types/rock.png'); }
+.type-item[tera-type="steel"] .tera-icon{ background-image: url('../img/types/steel.png'); }
+.type-item[tera-type="water"] .tera-icon{ background-image: url('../img/types/water.png'); }
 
 /* Typing colors and icons */
 
@@ -364,6 +383,9 @@ input[type="text"]{
 	margin-right: 15px;
 }
 
+.results-container{
+	display: none;
+}
 
 #results{
 	text-align: left;
@@ -382,6 +404,18 @@ input[type="text"]{
 
 	tbody tr:nth-of-type(odd){
 		background:rgba(255,255,255,0.1);
+	}
+
+	tbody tr{
+		position: relative;
+		top: 0;
+		opacity: 1;
+		@include transition(all, 250ms, ease, 0ms);
+
+		&.animate{
+			top: 20px;
+			opacity: 0;
+		}
 	}
 
 	.type-item{
@@ -408,6 +442,27 @@ input[type="text"]{
 	}
 }
 
+button#run{
+	margin-top: 20px;
+    outline: none;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    display: block;
+    width: 230px;
+	cursor: pointer;
+	color: #fff;
+	border: 2px solid #0a0018;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
+	@include typegradient(#990f44, #46052c);
+
+	&:hover{
+
+	}
+}
+
 .results-section{
 	.table-container{
 		max-height: 800px;
@@ -419,7 +474,7 @@ footer{
 	max-width:1000px;
 	text-align: center;
 	font-size:12px;
-	margin:0 auto;
+	margin:80px auto 0 auto;
 
 	p:first-of-type{
 		margin-top:0;

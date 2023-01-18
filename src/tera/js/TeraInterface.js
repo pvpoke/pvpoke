@@ -18,8 +18,8 @@ var InterfaceMaster = (function () {
 
 			this.init = function(){
 				// Populate Pokemon select list
-				for(var i = 0; i < gm.data.length; i++){
-					$("#poke-select").append("<option value='"+gm.data[i].id+"'>"+gm.data[i].name+"</option>");
+				for(var i = 0; i < gm.data.pokemon.length; i++){
+					$("#poke-select").append("<option value='"+gm.data.pokemon[i].id+"'>"+gm.data.pokemon[i].name+"</option>");
 				}
 			}
 
@@ -61,6 +61,8 @@ var InterfaceMaster = (function () {
 					// Show Pokemon's score
 					$row.find("td").eq(3).html(Math.round(results[i].overall * 100) / 100);
 
+					$row.addClass("animate");
+
 					$("#results tbody").append($row);
 
 					displayedSpecies.push(results[i].pokemon.id);
@@ -69,6 +71,17 @@ var InterfaceMaster = (function () {
 					displayCount++;
 
 				}
+
+				// Animate displayed rows
+				$("#results tbody tr").each(function(index, value){
+
+					setTimeout(function(){
+						$(value).removeClass("animate");
+					}, 30 * index);
+
+				});
+
+				$(".results-container").show();
 			}
 
 

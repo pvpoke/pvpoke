@@ -129,7 +129,7 @@ input[type=text] {
   font-size: 22px;
   margin: 0 20px 0 0;
 }
-.section-header.boss-header {
+.section-header.margin-top {
   margin-top: 40px;
 }
 
@@ -192,7 +192,7 @@ input[type=text] {
 .boss-section .boss-attack-types {
   display: flex;
   justify-content: flex-start;
-  max-width: 650px;
+  max-width: 480px;
   flex-wrap: wrap;
 }
 .boss-section .boss-attack-types #attack-type-select {
@@ -200,6 +200,7 @@ input[type=text] {
   font-size: 14px;
   padding: 5px;
   width: 105px;
+  border-radius: 10px;
 }
 .boss-section[tera-type=bug] {
   background: #5b6c16;
@@ -382,6 +383,78 @@ input[type=text] {
   background-image: url("../img/types/water.png");
 }
 
+.type-item[tera-type=bug] .tera-icon {
+  background-image: url("../img/types/bug.png");
+}
+
+.type-item[tera-type=dark] .tera-icon {
+  background-image: url("../img/types/dark.png");
+}
+
+.type-item[tera-type=dragon] .tera-icon {
+  background-image: url("../img/types/dragon.png");
+}
+
+.type-item[tera-type=electric] .tera-icon {
+  background-image: url("../img/types/electric.png");
+}
+
+.type-item[tera-type=fairy] .tera-icon {
+  background-image: url("../img/types/fairy.png");
+}
+
+.type-item[tera-type=fighting] .tera-icon {
+  background-image: url("../img/types/fighting.png");
+}
+
+.type-item[tera-type=fire] .tera-icon {
+  background-image: url("../img/types/fire.png");
+}
+
+.type-item[tera-type=flying] .tera-icon {
+  background-image: url("../img/types/flying.png");
+}
+
+.type-item[tera-type=ghost] .tera-icon {
+  background-image: url("../img/types/ghost.png");
+}
+
+.type-item[tera-type=grass] .tera-icon {
+  background-image: url("../img/types/grass.png");
+}
+
+.type-item[tera-type=ground] .tera-icon {
+  background-image: url("../img/types/ground.png");
+}
+
+.type-item[tera-type=ice] .tera-icon {
+  background-image: url("../img/types/ice.png");
+}
+
+.type-item[tera-type=normal] .tera-icon {
+  background-image: url("../img/types/normal.png");
+}
+
+.type-item[tera-type=poison] .tera-icon {
+  background-image: url("../img/types/poison.png");
+}
+
+.type-item[tera-type=psychic] .tera-icon {
+  background-image: url("../img/types/psychic.png");
+}
+
+.type-item[tera-type=rock] .tera-icon {
+  background-image: url("../img/types/rock.png");
+}
+
+.type-item[tera-type=steel] .tera-icon {
+  background-image: url("../img/types/steel.png");
+}
+
+.type-item[tera-type=water] .tera-icon {
+  background-image: url("../img/types/water.png");
+}
+
 /* Typing colors and icons */
 .bug, [type=bug] {
   background: -moz-linear-gradient(0deg, #8b9f18 43%, #bec720 55%);
@@ -533,6 +606,10 @@ input[type=text] {
   margin-right: 15px;
 }
 
+.results-container {
+  display: none;
+}
+
 #results {
   text-align: left;
   width: 100%;
@@ -548,6 +625,19 @@ input[type=text] {
 }
 #results tbody tr:nth-of-type(odd) {
   background: rgba(255, 255, 255, 0.1);
+}
+#results tbody tr {
+  position: relative;
+  top: 0;
+  opacity: 1;
+  -webkit-transition: all 250ms ease 0ms;
+  -moz-transition: all 250ms ease 0ms;
+  -o-transition: all 250ms ease 0ms;
+  transition: all 250ms ease 0ms;
+}
+#results tbody tr.animate {
+  top: 20px;
+  opacity: 0;
 }
 #results .type-item {
   margin-top: 0;
@@ -566,6 +656,24 @@ input[type=text] {
   border-radius: 10px;
 }
 
+button#run {
+  margin-top: 20px;
+  outline: none;
+  border: none;
+  padding: 10px;
+  font-size: 20px;
+  display: block;
+  width: 230px;
+  cursor: pointer;
+  color: #fff;
+  border: 2px solid #0a0018;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
+  background: -moz-linear-gradient(0deg, #46052c 43%, #990f44 55%);
+  background: -webkit-linear-gradient(0deg, #46052c 43%, #990f44 55%);
+  background: linear-gradient(0deg, #46052c 43%, #990f44 55%);
+}
 .results-section .table-container {
   max-height: 800px;
   overflow-y: auto;
@@ -575,7 +683,7 @@ footer {
   max-width: 1000px;
   text-align: center;
   font-size: 12px;
-  margin: 0 auto;
+  margin: 80px auto 0 auto;
 }
 footer p:first-of-type {
   margin-top: 0;

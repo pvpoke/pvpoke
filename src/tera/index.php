@@ -5,7 +5,7 @@
 
 	<p>Enter the Tera Raid boss details below. You can specify its offensive move types to help narrow results. This tool will calculate potential raid attackers and counters based on optimal offensive and defensive typing against the raid boss.</p>
 
-	<div class="flex section-header boss-header">
+	<div class="flex section-header margin-top">
 		<h3>Tera Raid Boss</h3>
 		<div class="hr"></div>
 	</div>
@@ -65,6 +65,7 @@
 						<div class="tera-type"></div>
 
 						<select id="tera-select">
+							<option value="" selected disabled>Select a Tera Type</option>
 							<option value="bug">Bug</option>
 							<option value="dark">Dark</option>
 							<option value="dragon">Dragon</option>
@@ -91,29 +92,30 @@
 	</div>
 
 
-	<button style="margin-top: 20px;" id="run">Check Counters</button>
+	<button id="run">Check Counters</button>
 
-	<div class="flex section-header boss-header">
-		<h3>Counters</h3>
-		<div class="hr"></div>
-	</div>
+	<div class="results-container">
+		<div class="flex section-header margin-top">
+			<h3>Counters</h3>
+			<div class="hr"></div>
+		</div>
 
-	<div class="bordered-section results-section">
-		<div class="table-container">
-			<table id="results" cellspacing="0">
-				<thead>
-					<tr>
-						<th>Pokemon</th>
-						<th>Typing</th>
-						<th>Tera Type</th>
-						<th>Score</th>
-					</tr>
-				</thead>
-				<tbody></tbody>
-			</table>
+		<div class="bordered-section results-section">
+			<div class="table-container">
+				<table id="results" cellspacing="0">
+					<thead>
+						<tr>
+							<th>Pokemon</th>
+							<th>Typing</th>
+							<th>Tera Type</th>
+							<th>Score</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+				</table>
+			</div>
 		</div>
 	</div>
-
 
 </div>
 
