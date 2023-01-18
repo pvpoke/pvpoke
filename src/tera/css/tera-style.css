@@ -117,6 +117,9 @@ input[type=text] {
   border-bottom-left-radius: 10px;
   border-top-right-radius: 10px;
 }
+.bordered-section select:hover {
+  background: rgba(0, 0, 0, 0.75);
+}
 .bordered-section select option {
   background: #1d0441;
 }
@@ -178,6 +181,19 @@ input[type=text] {
   background: url("../img/pattern.png");
   background-position: center center;
   opacity: 0.1;
+}
+.boss-section .flash {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  left: -1000px;
+  top: 0;
+  background: white;
+  background: -moz-linear-gradient(123deg, rgba(255, 255, 255, 0) 16%, white 23%, white 25%, rgba(255, 255, 255, 0) 29%, white 30%, rgba(255, 255, 255, 0) 33%);
+  background: -webkit-linear-gradient(123deg, rgba(255, 255, 255, 0) 16%, white 23%, white 25%, rgba(255, 255, 255, 0) 29%, white 30%, rgba(255, 255, 255, 0) 33%);
+  background: linear-gradient(123deg, rgba(255, 255, 255, 0) 16%, white 23%, white 25%, rgba(255, 255, 255, 0) 29%, white 30%, rgba(255, 255, 255, 0) 33%);
+  opacity: 0.2;
 }
 .boss-section #tera-select {
   font-size: 20px;
@@ -675,9 +691,26 @@ button#run {
   background: -webkit-linear-gradient(0deg, #46052c 43%, #990f44 55%);
   background: linear-gradient(0deg, #46052c 43%, #990f44 55%);
 }
+button#run:hover {
+  background: -moz-linear-gradient(0deg, #4f0532 43%, #ad104c 55%);
+  background: -webkit-linear-gradient(0deg, #4f0532 43%, #ad104c 55%);
+  background: linear-gradient(0deg, #4f0532 43%, #ad104c 55%);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
+}
+button#run:active {
+  position: relative;
+  top: 2px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+}
+
 .results-section .table-container {
   max-height: 800px;
   overflow-y: auto;
+}
+.results-section .search-instructions {
+  font-size: 12px;
+  margin: 5px 0 10px 0;
+  opacity: 0.5;
 }
 
 footer {

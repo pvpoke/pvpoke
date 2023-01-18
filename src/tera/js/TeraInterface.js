@@ -32,8 +32,8 @@ var InterfaceMaster = (function () {
 				}
 			}
 
-			this.displayResults = function(r){
-				results = r;
+			this.displayResults = function(r, animate){
+				animate = typeof animate !== 'undefined' ? animate : true;
 
 				$("#results tbody").html("");
 
@@ -42,39 +42,42 @@ var InterfaceMaster = (function () {
 				let displayMax = 50;
 				let i = 0;
 
-				while(displayCount < displayMax){
+				while(displayCount < displayMax && i < r.length){
 					// Show only the best scored version of each species
-					if(displayedSpecies.indexOf(results[i].pokemon.id) > -1){
+					if(displayedSpecies.indexOf(r[i].pokemon.id) > -1){
 						i++;
 						continue;
 					}
 
 					let $row = $('<tr><td></td><td>-</td><td></td><td></td></tr>');
-					$row.find("td").eq(0).html(results[i].pokemon.name);
+					$row.find("td").eq(0).html(r[i].pokemon.name);
 
 					// Show Pokemon typings
 					let $types = $("<div class='flex'></div>");
 
-					for(var n = 0; n < results[i].pokemon.types.length; n++){
-						let $type = createTypeLabel(results[i].pokemon.types[n]);
+					for(var n = 0; n < r[i].pokemon.types.length; n++){
+						let $type = createTypeLabel(r[i].pokemon.types[n]);
 						$types.append($type);
 					}
 
 					$row.find("td").eq(1).html($types);
 
 					// Show Pokemon tera type
-					let $teraType = createTypeLabel(results[i].tera);
+					let $teraType = createTypeLabel(r[i].tera);
 					$teraType.addClass("tera");
 					$row.find("td").eq(2).html($teraType);
 
 					// Show Pokemon's score
-					$row.find("td").eq(3).html(Math.round(results[i].overall * 100) / 100);
+					$row.find("td").eq(3).html(Math.round(r[i].overall * 100) / 100);
 
-					$row.addClass("animate");
+					if(animate){
+						$row.addClass("animate");
+					}
+
 
 					$("#results tbody").append($row);
 
-					displayedSpecies.push(results[i].pokemon.id);
+					displayedSpecies.push(r[i].pokemon.id);
 
 					i++;
 					displayCount++;
@@ -82,13 +85,15 @@ var InterfaceMaster = (function () {
 				}
 
 				// Animate displayed rows
-				$("#results tbody tr").each(function(index, value){
+				if(animate){
+					$("#results tbody tr").each(function(index, value){
 
-					setTimeout(function(){
-						$(value).removeClass("animate");
-					}, 30 * index);
+						setTimeout(function(){
+							$(value).removeClass("animate");
+						}, 30 * index);
 
-				});
+					});
+				}
 
 				$(".results-container").show();
 			}
@@ -136,6 +141,8 @@ var InterfaceMaster = (function () {
 
 				let r = ranker.rankAttackers(selectedPokemon, selectedTypes, selectedTera);
 
+				results = r;
+
 				self.displayResults(r);
 			}
 
@@ -143,6 +150,8 @@ var InterfaceMaster = (function () {
 			// Run the tera counter calculator and display the results
 			$("button#run").click(function(e){
 				let r = ranker.rankAttackers(selectedPokemon, selectedTypes, selectedTera);
+
+				results = r;
 
 				self.displayResults(r);
 
@@ -176,6 +185,16 @@ var InterfaceMaster = (function () {
 				});
 			});
 
+			// Filter the counter results
+
+			$("#results-search").keyup(function(e){
+				let searchStr = $(this).val().toLowerCase();
+				let searchResults = filterResults(searchStr);
+
+				self.displayResults(searchResults, false);
+			});
+
+
 			// Clear the search input on focus
 
 			$("#poke-search").focus(function(e){
@@ -190,6 +209,15 @@ var InterfaceMaster = (function () {
 			// Change the current tera type
 			$("#tera-select").change(function(e){
 				selectedTera = $(this).find("option:selected").val();
+
+				// Animate tera flash
+				$(".boss-section .flash").css("left", "-300px");
+				$(".boss-section .flash").css("opacity", "0.2");
+
+			  $(".boss-section .flash").animate({
+			    opacity: 0,
+			    left: "800"
+			}, 400);
 
 				updateRaidBossDisplay();
 			});
@@ -260,6 +288,71 @@ var InterfaceMaster = (function () {
 				$type.find(".type-name").html(typeName);
 
 				return $type;
+			}
+
+			// Filter the results by a provided search str
+			function filterResults(searchStr){
+				searchStr = searchStr.replace(/, /g, '').toLowerCase();
+				let queries = searchStr.split(',');
+				let filteredResults = [];
+
+				for(var i = 0; i < queries.length; i++){
+					let query = queries[i];
+					let params = query.split('&');
+
+					for(var n = 0; n < results.length; n++){
+						let r = results[n];
+						let paramsMet = 0;
+
+						for(var j = 0; j < params.length; j++){
+							let param = params[j];
+							let isNot = false;
+							let valid = false;
+
+							if(param.length == 0){
+								if(params.length == 1){
+									paramsMet++;
+								}
+								continue;
+							}
+
+							if((param.charAt(0) == "!")&&(param.length > 1)){
+								isNot = true;
+								param = param.substr(1, param.length-1);
+							}
+
+							// Type search
+							if(r.pokemon.types.indexOf(param) > -1){
+								valid = true;
+							}
+
+							// Name search
+							if(r.pokemon.name.toLowerCase().startsWith(param)){
+								valid = true;
+							}
+
+							// Tera type search
+
+							if((param.charAt(0) == "@")&&(param.length > 1)){
+								param = param.substr(1, param.length-1);
+
+								if(r.tera == param){
+									valid = true;
+								}
+							}
+
+							if(((valid)&&(!isNot))||((!valid)&&(isNot))){
+								paramsMet++;
+							}
+						}
+
+						if(paramsMet >= params.length){
+							filteredResults.push(r);
+						}
+					}
+				}
+
+				return filteredResults;
 			}
 
 		}

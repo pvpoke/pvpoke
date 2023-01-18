@@ -13,6 +13,7 @@
 	<div class="bordered-section boss-section">
 
 		<div class="pattern"></div>
+		<div class="flash"></div>
 
 		<div class="flex">
 			<div class="poke-search-container">
@@ -101,6 +102,8 @@
 		</div>
 
 		<div class="bordered-section results-section">
+			<input type="text" id="results-search" placeholder="Search counters" />
+			<div class="search-instructions">Search by Pokemon, typing, or Tera type ("@water")</div>
 			<div class="table-container">
 				<table id="results" cellspacing="0">
 					<thead>
