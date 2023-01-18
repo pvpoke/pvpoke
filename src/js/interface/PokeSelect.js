@@ -287,6 +287,7 @@ function PokeSelect(element, i){
 				baseId = baseId.replace("_mega_x", "");
 				baseId = baseId.replace("_mega_y", "");
 				baseId = baseId.replace("_mega", "");
+				baseId = baseId.replace("_primal", "");
 
 				var basePokemon = new Pokemon(baseId, index, battle);
 				basePokemon.initialize(false);
