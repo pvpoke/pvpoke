@@ -269,6 +269,12 @@ var InterfaceMaster = (function () {
 			function updateRaidBossDisplay(){
 				$(".boss-section").attr("tera-type", selectedTera);
 
+				if(selectedTera){
+					$(".boss-section .tera-type-container .tera-icon").show();
+				} else{
+					$(".boss-section .tera-type-container .tera-icon").hide();
+				}
+
 				$(".boss-attack-types .type-item").remove();
 
 				for(var i = 0; i < selectedTypes.length; i++){

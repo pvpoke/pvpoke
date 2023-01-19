@@ -135,6 +135,7 @@ input[type="text"]{
 
 .flex{
 	display: flex;
+	flex-wrap: wrap;
 }
 
 .template{
@@ -214,6 +215,7 @@ input[type="text"]{
 
 	h4{
 		margin-top: 0;
+		margin-bottom: 15px;
 
 		&.attack-title{
 			margin-bottom: 10px;
@@ -274,6 +276,10 @@ input[type="text"]{
 		    width: 105px;
 			border-radius: 10px;
 		}
+	}
+
+	.tera-type-container .tera-icon{
+		display: none;
 	}
 
 	&[tera-type="bug"]{ @include teragradient(#9ba141, #5b6c16); }
@@ -512,5 +518,92 @@ footer{
 
 	p:first-of-type{
 		margin-top:0;
+	}
+}
+
+/* Responsive styling */
+
+@media only screen and (max-width: 820px) {
+	h1{ font-size: 26px; }
+
+	h3{ font-size: 20px; }
+
+	#main p{
+		font-size: 14px;
+    	line-height: 20px;
+	}
+
+	.tera-type-container{
+		margin-top: 30px;
+
+		.flex{
+			flex-direction: row-reverse;
+		}
+
+		.tera-icon{
+			width: 75px;
+			height: 75px;
+			margin-right: 0;
+			margin-left: 15px;
+		}
+	}
+
+	#poke-select, .boss-section #tera-select{
+		font-size: 18px;
+		padding: 5px;
+	}
+
+	#poke-search, #poke-select, .boss-section #tera-select, {
+		width: 175px;
+	}
+
+	.type-item{
+		font-size: 12px;
+		margin: 10px 10px 0 0;
+
+		.type-name-container .type-name{
+			padding: 3px 5px 3px 0;
+		}
+	}
+
+	.boss-section .boss-attack-types #attack-type-select{
+		padding: 3px;
+	}
+
+	#results{
+		.type-item{
+			width: 85px;
+		}
+
+		td, th{
+			font-size: 14px;
+			padding: 5px;
+		}
+	}
+}
+
+
+@media only screen and (max-width: 480px) {
+	#results{
+		td > .flex{
+			display: block;
+		}
+
+		.type-item:nth-of-type(2){
+			margin-top: 5px;
+		}
+
+		.tera-type{
+			width: 75px;
+
+			.tera-icon{
+				width: 12px;
+				height: 12px;
+			}
+		}
+
+		.results-section .table-container{
+			max-height: 550px;
+		}
 	}
 }
