@@ -1,4 +1,19 @@
-<?php require_once 'header.php'; ?>
+<?php
+
+if(isset($_GET['p']) && isset($_GET['t'])){
+	// Put Pokemon names in the meta title
+
+	$name = ucwords(str_replace('_',' ', explode('-', htmlspecialchars($_GET['p']))[0]));
+
+	$META_TITLE = $name . ' Tera Raid Counters';
+
+	$META_DESCRIPTION = 'Check ' . $name . ' Tera Raid counters and attackers with the best calculated type matchups.';
+
+	$CANONICAL = '/tera/' . $_GET['p'] . '/' . $_GET['t'] . '/';
+}
+
+
+require_once 'header.php'; ?>
 
 <div class="section home white">
 	<h1>Tera Raid Counter Calculator</h1>

@@ -120,12 +120,19 @@ var InterfaceMaster = (function () {
 								// Set selected Pokemon
 								selectedPokemon = gm.getPokemonById(val);
 								$("#poke-select option[value='"+val+"']").prop("selected", "selected");
+
+								// Default to stab types
+								for(var i = 0; i < selectedPokemon.types.length; i++){
+									selectedTypes.push(selectedPokemon.types[i]);
+								}
 								break;
 
 							case "t":
 								// Set tera type
 								selectedTera = val;
 								$("#tera-select option[value='"+val+"']").prop("selected", "selected");
+
+								selectedTypes.push(selectedTera)
 								break;
 
 							case "a":
@@ -167,6 +174,10 @@ var InterfaceMaster = (function () {
 				if(currentURL != url){
 					gtag('config', UA_ID, {page_location: (host+url), page_path: url});
 				}
+
+				// Scroll to results
+
+				$("html, body").animate({ scrollTop: $("table#results").offset().top - 185 }, 500);
 			});
 
 			// Select a Pokemon from the raid boss select list on input search
@@ -276,6 +287,12 @@ var InterfaceMaster = (function () {
 				}
 
 				$(".boss-attack-types .type-item").remove();
+
+				if(selectedTypes.length >= 12){
+					$("#attack-type-select").hide();
+				} else{
+					$("#attack-type-select").show();
+				}
 
 				for(var i = 0; i < selectedTypes.length; i++){
 					let $type = createTypeLabel(selectedTypes[i]);

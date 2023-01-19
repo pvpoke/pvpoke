@@ -290,10 +290,10 @@ input[type=text] {
   background: linear-gradient(117deg, #bf8967 33%, #87512f 100%);
 }
 .boss-section[tera-type=ice] {
-  background: #0180a0;
-  background: -moz-linear-gradient(117deg, #29bee3 33%, #0180a0 100%);
-  background: -webkit-linear-gradient(117deg, #29bee3 33%, #0180a0 100%);
-  background: linear-gradient(117deg, #29bee3 33%, #0180a0 100%);
+  background: #046d80;
+  background: -moz-linear-gradient(117deg, #32b3d3 33%, #046d80 100%);
+  background: -webkit-linear-gradient(117deg, #32b3d3 33%, #046d80 100%);
+  background: linear-gradient(117deg, #32b3d3 33%, #046d80 100%);
 }
 .boss-section[tera-type=normal] {
   background: #5d5d5d;
