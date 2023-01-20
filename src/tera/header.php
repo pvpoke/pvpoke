@@ -1,5 +1,12 @@
 <?php require_once '../modules/config.php';
-$SITE_VERSION = '1.29.21.8';
+$SITE_VERSION = '1.29.21.10';
+
+/*****************************************************************************
+
+=============================TERAAAAAAAAAAAAAAAA==============================
+
+
+******************************************************************************/
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -62,7 +69,7 @@ if(isset($_COOKIE['settings'])){
 
 <link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
 
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>tera/css/tera-style.css?v=1">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>tera/css/tera-style.css?v=2">
 
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>
 

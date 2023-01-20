@@ -747,3 +747,116 @@ footer{
 		}
 	}
 }
+
+
+/* Ad styling and display */
+
+#nitro-header-mobile,
+#nitro-body-mobile,
+#nitro-body-desktop,
+#nitro-body-mobile,
+#nitro-sidebar-right,
+#nitro-sidebar-right-300,
+#nitro-sidebar-left,
+#nitro-sidebar-left-300{
+	display:none;
+}
+
+#nitro-header-mobile{
+	overflow:hidden;
+}
+
+.mobile-ad-container,
+.desktop-ad-container{
+	overflow: hidden;
+	clip-path: inset(0 0 0 0);
+	margin: 0 auto 5px auto;
+	display:none;
+}
+
+.section.battle .mobile-ad-container{
+	margin: 10px auto 5px auto;
+}
+
+// Bad ad fix
+
+iframe#bh-div {
+    display: none !important;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+
+	.nitro-pin-container{
+		position: fixed;
+		bottom:0;
+		width:100%;
+		z-index:25;
+	}
+	#nitro-header-mobile{
+		display: block;
+		margin: 0 auto;
+	}
+
+	#nitro-body-mobile{
+		display: block;
+	}
+
+	.mobile-ad-container{
+		display:block;
+		width:320px;
+		height:70px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	#nitro-header-desktop{
+		display: block;
+	}
+
+	#nitro-body-desktop{
+		display: block;
+	}
+
+	.desktop-ad-container{
+		display:block;
+		width:728px;
+		height:110px;
+		margin:20px auto;
+
+		&.nitro-header{
+			margin:0 auto;
+		}
+	}
+}
+
+@media only screen and (min-width: 1190px) and (max-width:1449px) {
+	#nitro-sidebar-left{
+		display: block;
+		position: fixed;
+		top:95px;
+		left:20px;
+	}
+
+	#nitro-sidebar-right{
+		display: block;
+		position: fixed;
+		top:95px;
+		right:20px;
+	}
+}
+
+@media only screen and (min-width: 1450px) {
+	#nitro-sidebar-left-300{
+		display: block;
+		position: fixed;
+		top:95px;
+		left:20px;
+	}
+
+	#nitro-sidebar-right-300{
+		display: block;
+		position: fixed;
+		top:95px;
+		right:20px;
+	}
+}

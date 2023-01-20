@@ -31,7 +31,6 @@ function TeraRanker(){
 		}
 
 		ranks.sort((a,b) => (a.overall > b.overall) ? -1 : ((b.overall > a.overall) ? 1 : 0));
-		//ranks.sort((a,b) => (a.defense > b.defense) ? 1 : ((b.defense > a.defense) ? -1 : 0));
 
 		return ranks;
 	}
@@ -88,31 +87,47 @@ function TeraRanker(){
 
 		// Score the Pokemon's base types defensively
 		let baseScore = 0;
+		let arr = []; // Store effectiveness for each move in an array
 
 		for(var i = 0; i < raidTypes.length; i++){
 			let effectiveness = self.getEffectiveness(raidTypes[i], defender.types);
 			effectiveness *= self.getStab(raidBoss, raidTypes[i], raidTera);
 
-			baseScore += effectiveness;
+			arr.push(effectiveness);
 		}
 
-		baseScore = baseScore / raidTypes.length;
+		// Sort array to weigh the most dangerous move
+		arr.sort((a,b) => (a > b) ? -1 : ((b > a) ? 1 : 0));
+
+		baseScore += arr[0] * 4;
+
+		for(var i = 1; i < arr.length; i++){
+			baseScore += arr[i];
+		}
+
+		baseScore /= (arr.length - 1 + 4);
 
 		// Score the Pokemon's tera type defensively
 		let teraScore = 0;
+
+		arr = [];
 
 		for(var i = 0; i < raidTypes.length; i++){
 			effectiveness = self.getEffectiveness(raidTypes[i], defenderTera);
 			effectiveness *= self.getStab(raidBoss, raidTypes[i], raidTera);
 
-			teraScore += effectiveness;
+			arr.push(effectiveness);
 		}
 
-		teraScore = teraScore / raidTypes.length;
+		arr.sort((a,b) => (a > b) ? -1 : ((b > a) ? 1 : 0));
 
-		// Factor in HP
+		teraScore += arr[0] * 4;
 
-		//let hpScore =
+		for(var i = 1; i < arr.length; i++){
+			teraScore += arr[i];
+		}
+
+		teraScore /= (arr.length - 1 + 4);
 
 		// Weighted average of both scores
 
