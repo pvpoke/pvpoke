@@ -35,7 +35,6 @@ var InterfaceMaster = (function () {
 
 			this.displayResults = function(r, animate){
 				animate = typeof animate !== 'undefined' ? animate : true;
-				displayedResults = r;
 
 				$("#results tbody").html("");
 
@@ -43,6 +42,7 @@ var InterfaceMaster = (function () {
 				let displayCount = 0;
 				let displayMax = 50;
 				let i = 0;
+				displayedResults = [];
 
 				while(displayCount < displayMax && i < r.length){
 					// Show only the best scored version of each species
@@ -80,6 +80,7 @@ var InterfaceMaster = (function () {
 					$("#results tbody").append($row);
 
 					displayedSpecies.push(r[i].pokemon.id);
+					displayedResults.push(r[i]);
 
 					i++;
 					displayCount++;
