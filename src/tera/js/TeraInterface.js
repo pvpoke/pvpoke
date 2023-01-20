@@ -159,11 +159,32 @@ var InterfaceMaster = (function () {
 				results = r;
 
 				self.displayResults(r);
+
+
+				$(".share-link input").val(window.location.href);
 			}
 
 
 			// Run the tera counter calculator and display the results
 			$("button#run").click(function(e){
+				// Validation
+				let valid = true;
+
+				if(! selectedPokemon){
+					$("#poke-select").addClass("error");
+					valid = false;
+				}
+
+				if(! selectedTera){
+					$("#tera-select").addClass("error");
+					valid = false;
+				}
+
+				if(! valid){
+					return false;
+				}
+
+
 				let r = ranker.rankAttackers(selectedPokemon, selectedTypes, selectedTera);
 
 				results = r;
@@ -177,6 +198,9 @@ var InterfaceMaster = (function () {
 				let data = {p: selectedPokemon.id, a: selectedTypes.join("-"), t: selectedTera };
 
 				window.history.pushState(data, "Tera Raid Counters", url);
+
+				$(".share-link input").val(url);
+				document.title = selectedPokemon.name + ' Tera Raid Counters | PvPoke';
 
 				// Send Google Analytics pageview
 				if(currentURL != url){
@@ -237,6 +261,8 @@ var InterfaceMaster = (function () {
 			// Select a Pokemon from the dropdown
 			$("#poke-select").change(function(e){
 				selectNewPokemon($(this).find("option:selected").val());
+
+				$(this).removeClass("error");
 			});
 
 			// Change the current tera type
@@ -247,10 +273,12 @@ var InterfaceMaster = (function () {
 				$(".boss-section .flash").css("left", "-300px");
 				$(".boss-section .flash").css("opacity", "0.2");
 
-			  $(".boss-section .flash").animate({
-			    opacity: 0,
-			    left: "800"
-			}, 400);
+			  	$(".boss-section .flash").animate({
+				    opacity: 0,
+				    left: "800"
+				}, 400);
+
+				$(this).removeClass("error");
 
 				updateRaidBossDisplay();
 			});

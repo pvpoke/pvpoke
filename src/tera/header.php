@@ -1,5 +1,5 @@
 <?php require_once '../modules/config.php';
-$SITE_VERSION = '1.29.21.10';
+$SITE_VERSION = '1.0';
 
 /*****************************************************************************
 
@@ -98,7 +98,7 @@ if(isset($_COOKIE['settings'])){
 	?>
 </script>
 
-	<?php require_once '../modules/ads/base-code.php'; ?>
+	<?php require_once 'modules/ads/base-code.php'; ?>
 
 </head>
 

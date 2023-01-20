@@ -139,6 +139,14 @@ require_once 'header.php'; ?>
 			</div>
 		</div>
 
+		<div class="share-link-container">
+			<p>Share these Tera Raid counters:</p>
+			<div class="share-link">
+				<input type="text" value="" readonly>
+				<div class="copy">Copy</div>
+			</div>
+		</div>
+
 		<div class="score-details template flex">
 			<div class="typings flex full-row border-bottom"></div>
 			<div class="tera-type flex full-row border-bottom">

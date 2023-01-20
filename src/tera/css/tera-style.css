@@ -62,9 +62,6 @@ header .title a {
 header a {
   color: #f6ba48;
 }
-header a.home-link {
-  font-size: 12px;
-}
 
 #main {
   max-width: 1000px;
@@ -143,6 +140,13 @@ input[type=text] {
 }
 .bordered-section select option {
   background: #1d0441;
+}
+.bordered-section select.error {
+  border: 1px solid #ce2c09;
+  color: #ce2c09;
+}
+.bordered-section select.error option {
+  color: #fff;
 }
 
 .section-header {
@@ -857,6 +861,44 @@ footer p:first-of-type {
   text-align: left;
 }
 
+.share-link-container {
+  text-align: center;
+  margin-top: 20px;
+}
+.share-link-container p {
+  margin: 0;
+}
+
+.share-link {
+  display: inline-block;
+  background: #000;
+  background-image: url("../../img/link.png");
+  background-repeat: no-repeat;
+  background-position: 6px center;
+  background-size: 20px;
+  padding: 10px 10px 10px 35px;
+  border-radius: 8px;
+  margin: 5px auto;
+}
+.share-link input {
+  width: auto;
+  display: inline-block;
+  border: none;
+  background: #0a0018;
+  color: #990f44;
+  padding: 5px;
+  font-size: 18px;
+}
+.share-link .copy {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  color: #fff;
+  margin: 5px;
+  border-radius: 8px;
+}
+
 /* Responsive styling */
 @media only screen and (max-width: 820px) {
   h1 {
@@ -912,6 +954,10 @@ footer p:first-of-type {
   #results td, #results th {
     font-size: 14px;
     padding: 5px;
+  }
+
+  header a.home-link {
+    font-size: 12px;
   }
 }
 @media only screen and (max-width: 480px) {
@@ -1006,7 +1052,7 @@ iframe#bh-div {
     margin: 0 auto;
   }
 }
-@media only screen and (min-width: 1190px) and (max-width: 1449px) {
+@media only screen and (min-width: 1390px) and (max-width: 1649px) {
   #nitro-sidebar-left {
     display: block;
     position: fixed;
@@ -1021,7 +1067,7 @@ iframe#bh-div {
     right: 20px;
   }
 }
-@media only screen and (min-width: 1450px) {
+@media only screen and (min-width: 1650px) {
   #nitro-sidebar-left-300 {
     display: block;
     position: fixed;

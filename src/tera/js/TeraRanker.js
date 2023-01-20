@@ -58,7 +58,7 @@ function TeraRanker(){
 
 		// Apply STAB
 		if(attacker.types.indexOf(attackerTera) > -1){
-			teraScore *= 2;
+			teraScore *= 2.25;
 		} else{
 			teraScore *= 1.5;
 		}
@@ -99,10 +99,6 @@ function TeraRanker(){
 			let effectiveness = self.getEffectiveness(raidTypes[i], defender.types);
 			effectiveness *= self.getStab(raidBoss, raidTypes[i], raidTera);
 
-			if(defender.id == "clodsire" && raidTypes[i] == "water"){
-				effectiveness = 0;
-			}
-
 			arr.push(effectiveness);
 		}
 
@@ -125,10 +121,6 @@ function TeraRanker(){
 		for(var i = 0; i < raidTypes.length; i++){
 			effectiveness = self.getEffectiveness(raidTypes[i], defenderTera);
 			effectiveness *= self.getStab(raidBoss, raidTypes[i], raidTera);
-
-			if(defender.id == "clodsire" && raidTypes[i] == "water"){
-				effectiveness = 0;
-			}
 
 			arr.push(effectiveness);
 		}
@@ -161,7 +153,7 @@ function TeraRanker(){
 
 		score *= statScore;
 
-		score /= 3; // Scale Defense score to be on par with Offense
+		score /= 3.375; // Scale Defense score to be on par with Offense
 
 		return score;
 	}
