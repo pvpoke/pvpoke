@@ -25,6 +25,13 @@
 		<p>Check out the source code on Github or lend your support through Patreon.</p>
 	</a>
 
+	<h3>Pokemon Scarlet &amp; Violet</h3>
+
+	<a href="<?php echo $WEB_ROOT; ?>tera/" class="button tera-button">
+		<h2 class="icon-tera">Tera Raid Counter Calculator</h2>
+		<p>Take on Tera Raid bosses with this tool to look up Pokemon with the best type matchups.</p>
+	</a>
+
 	<?php require 'modules/ads/body-728.php'; ?>
 
 	<?php if($_SETTINGS->ads == 1) : ?>

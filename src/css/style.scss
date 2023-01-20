@@ -333,6 +333,24 @@ header{
 			margin:0;
 			font-size:14px;
 		}
+
+		&.tera-button{
+			background-image: url('../img/tera-button-bg.jpg') !important;
+			background-size: cover !important;
+			background-repeat: no-repeat;
+			color: #fff;
+
+			h2{
+				color: #fff !important;
+				background-image:url('../img/icon_tera.png');
+				font-size: 24px;
+			    padding-left: 80px;
+			    min-height: 46px;
+			    margin-bottom: 10px;
+			    background-size: 60px;
+			    background-position: 0 0;
+			}
+		}
 	}
 }
 
@@ -377,6 +395,13 @@ header{
 
 .icon-unite{
 	background-image:url('../img/favicon-unite.png');
+	min-height:18px;
+
+	span{ display:none; }
+}
+
+.icon-tera{
+	background-image:url('../img/favicon_tera.png');
 	min-height:18px;
 
 	span{ display:none; }
