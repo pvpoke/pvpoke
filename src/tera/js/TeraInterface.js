@@ -15,6 +15,7 @@ var InterfaceMaster = (function () {
 			let selectedPokemon;
 			let selectedTera;
 			let results = [];
+			let displayedResults = [];
 
 			this.init = function(){
 				// Populate Pokemon select list
@@ -34,6 +35,7 @@ var InterfaceMaster = (function () {
 
 			this.displayResults = function(r, animate){
 				animate = typeof animate !== 'undefined' ? animate : true;
+				displayedResults = r;
 
 				$("#results tbody").html("");
 
@@ -56,24 +58,24 @@ var InterfaceMaster = (function () {
 					let $types = $("<div class='flex'></div>");
 
 					for(var n = 0; n < r[i].pokemon.types.length; n++){
-						let $type = createTypeLabel(r[i].pokemon.types[n]);
+						let $type = createTypeLabel(r[i].pokemon.types[n], false, false);
 						$types.append($type);
 					}
 
 					$row.find("td").eq(1).html($types);
 
 					// Show Pokemon tera type
-					let $teraType = createTypeLabel(r[i].tera);
-					$teraType.addClass("tera");
+					let $teraType = createTypeLabel(r[i].tera, true, false);
 					$row.find("td").eq(2).html($teraType);
 
 					// Show Pokemon's score
-					$row.find("td").eq(3).html(Math.round(r[i].overall * 100) / 100);
+					let score = Math.round(r[i].overall * 100) / 100;
+
+					$row.find("td").eq(3).html("<a class='score' href='#'>"+score+"</a>");
 
 					if(animate){
 						$row.addClass("animate");
 					}
-
 
 					$("#results tbody").append($row);
 
@@ -255,6 +257,32 @@ var InterfaceMaster = (function () {
 				updateRaidBossDisplay();
 			});
 
+			// Display score details in a modal window
+			$("body").on("click", "#results a.score", function(e){
+				e.preventDefault();
+
+				// Get the data row for this cell
+				let index = $(e.target).closest("tr").index("#results tbody tr");
+				let r = displayedResults[index];
+				let overall = roundScore(r.overall);
+				let offense = roundScore(r.offense);
+				let defense = roundScore(1 / r.defense);
+
+				let $details = $(".results-container .score-details.template").first().clone().removeClass("template");
+				$details.find(".overall .score").html(overall);
+				$details.find(".offense .score").html(offense);
+				$details.find(".defense .score").html(defense);
+
+				// Display typings
+				for(var i = 0; i < r.pokemon.types.length; i++){
+					$details.find(".typings").append(createTypeLabel(r.pokemon.types[i], false, false));
+				}
+
+				$details.find(".tera-type .type-container").append(createTypeLabel(r.tera, true, false));
+
+				let modal = modalWindow(r.pokemon.name, $details);
+			});
+
 			// Select a new Pokemon from the given id
 			function selectNewPokemon(id){
 				// Empty value
@@ -295,20 +323,29 @@ var InterfaceMaster = (function () {
 				}
 
 				for(var i = 0; i < selectedTypes.length; i++){
-					let $type = createTypeLabel(selectedTypes[i]);
+					let $type = createTypeLabel(selectedTypes[i], false, true);
 
 					$type.insertBefore($(".boss-attack-types select"));
 				}
 
 			}
 
-			function createTypeLabel(type){
+			function createTypeLabel(type, isTera, removable){
+				removable = typeof removable !== 'undefined' ? removable : true;
 				let $type = $(".type-item.template").clone().removeClass("template");
 				let typeName = type.charAt(0).toUpperCase() + type.slice(1);
 
 				$type.addClass(type);
 				$type.attr("tera-type", type);
 				$type.find(".type-name").html(typeName);
+
+				if(isTera){
+					$type.addClass("tera");
+				}
+
+				if(! removable){
+					$type.find("a.close").remove();
+				}
 
 				return $type;
 			}
@@ -376,6 +413,11 @@ var InterfaceMaster = (function () {
 				}
 
 				return filteredResults;
+			}
+
+			// Round scores by 2 digits
+			function roundScore(score){
+				return Math.round(score * 100) / 100;;
 			}
 
 		}

@@ -138,6 +138,32 @@ require_once 'header.php'; ?>
 				</table>
 			</div>
 		</div>
+
+		<div class="score-details template flex">
+			<div class="typings flex full-row border-bottom"></div>
+			<div class="tera-type flex full-row border-bottom">
+				<div class="type-container"></div>
+				<div class="label">Tera Type</div>
+			</div>
+			<div class="overall full-row border-bottom">
+				<div class="score"></div>
+				<div class="label">Counter Score</div>
+			</div>
+			<div class="offense">
+				<div class="score"></div>
+				<div class="label">Offense</div>
+			</div>
+			<span class="multiply">×</span>
+			<div class="defense">
+				<div class="score"></div>
+				<div class="label">Defense</div>
+			</div>
+
+			<p><b>Counter Score</b> is the product of a Pokemon's offensive and defensive scores.</p>
+			<p><b>Offensive Score</b> is a Pokemon's attacking damage multipliers based on its most effective attacking type and the raid boss's Tera type. This includes base and Tera STAB.</p>
+			<p><b>Defensive Score</b> is the inverse of a Pokemon's average defensive damage multipliers based on all of the raid boss's attack types, the Pokemon's base typing, and its Tera typing. This includes Tera STAB.</p>
+		</div>
+
 	</div>
 
 </div>
@@ -147,6 +173,7 @@ require_once 'header.php'; ?>
 
 	<script src="<?php echo $WEB_ROOT; ?>tera/js/TeraRanker.js?v=<?php echo $SITE_VERSION; ?>"></script>
 	<script src="<?php echo $WEB_ROOT; ?>tera/js/TeraInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
+	<script src="<?php echo $WEB_ROOT; ?>tera/js/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
 	<script src="<?php echo $WEB_ROOT; ?>tera/js/Main.js?v=<?php echo $SITE_VERSION; ?>"></script>
 
 <?php require_once 'footer.php'; ?>

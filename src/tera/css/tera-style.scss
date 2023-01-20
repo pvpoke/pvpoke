@@ -4,6 +4,8 @@ $borderRed: #780900;
 $borderDarkBlue: #0a0018;
 $backgroundBlue: #1d0441;
 $fontColor: #fff;
+$linkColor: #990f44;
+$linkColorHighlight: #ad104c;
 
 // #ffb3b3
 // #ff8686
@@ -58,6 +60,14 @@ body{
 	background: -webkit-linear-gradient(167deg, rgba(82,8,59,1) 14%, rgba(29,4,65,1) 72%);
 	background: linear-gradient(167deg, rgba(82,8,59,1) 14%, rgba(29,4,65,1) 72%);
 	background-attachment: fixed;
+}
+
+a{
+	color: $linkColor;
+
+	&:hover{
+		color: $linkColorHighlight;
+	}
 }
 
 header{
@@ -371,6 +381,11 @@ input[type="text"]{
 	border-radius: 10px;
 	overflow: hidden;
 
+	&.tera{
+		border-top-left-radius: 0px;
+		border-bottom-right-radius: 0px;
+	}
+
 	.type-name-container{
 		background: rgba(0,0,0,0.1);
 		align-items: center;
@@ -448,16 +463,6 @@ input[type="text"]{
 	.type-item{
 		margin-top: 0;
 		margin-right: 3px;
-
-		a.close{
-			display: none;
-		}
-
-	}
-
-	.type-item.tera{
-		border-top-left-radius: 0px;
-		border-bottom-right-radius: 0px;
 	}
 
 	.type-item:not(.tera){
@@ -466,6 +471,12 @@ input[type="text"]{
 			margin: 2px;
 			border-radius: 10px;
 		}
+	}
+
+	a.score{
+		color: #fff;
+		text-decoration: none;
+		border-bottom: 1px solid rgba(255,255,255,0.5);
 	}
 }
 
@@ -483,10 +494,10 @@ button#run{
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
 	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.6);
-	@include typegradient(#990f44, #46052c);
+	@include typegradient($linkColor, #46052c);
 
 	&:hover{
-		@include typegradient(#ad104c , #4f0532);
+		@include typegradient($linkColorHighlight , #4f0532);
 		box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
 	}
 
@@ -510,6 +521,64 @@ button#run{
 	}
 }
 
+.score-details{
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+	.overall{
+		.score{
+			font-size: 44px;
+		}
+	}
+
+	.offense .score, .defense .score{
+		font-size: 26px;
+	}
+
+	.score{
+		font-weight: bold;
+	}
+
+	.label{
+		font-size: 12px;
+	}
+
+	span.multiply{
+		margin: 0 10px;
+	}
+
+	.type-item{
+		margin-top: 0;
+	}
+
+	.typings, .tera-type{
+		flex-basis: 100%;
+		justify-content: center;
+	}
+
+	.tera-type .type-item{
+		margin-bottom: 3px;
+		margin-right: 0;
+	}
+
+	.tera-type > .label{
+		flex-basis: 100%;
+	}
+
+	.full-row{
+		flex-basis: 100%;
+	}
+
+	.border-bottom{
+		border-bottom: 1px solid rgba(255,255,255,0.1);
+		margin-bottom: 10px;
+		padding-bottom: 10px;
+	}
+
+
+}
+
 footer{
 	max-width:1000px;
 	text-align: center;
@@ -518,6 +587,77 @@ footer{
 
 	p:first-of-type{
 		margin-top:0;
+	}
+}
+
+/* MODAL WINDOW */
+
+.modal{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,.5);
+	z-index:30;
+	padding:10px;
+	box-sizing:border-box;
+	overflow-y:scroll;
+	display: flex;
+    align-items: center;
+    justify-content: center;
+
+	.modal-container{
+		position:relative;
+		background: rgb(82,8,59);
+		background: -moz-linear-gradient(167deg, rgba(82,8,59,1) 14%, rgba(29,4,65,1) 72%);
+		background: -webkit-linear-gradient(167deg, rgba(82,8,59,1) 14%, rgba(29,4,65,1) 72%);
+		background: linear-gradient(167deg, rgba(82,8,59,1) 14%, rgba(29,4,65,1) 72%);
+		background-attachment: fixed;
+		margin: 0 auto;
+		max-width: 400px;
+		vertical-align: middle;
+		margin-top: 50px;
+		border-radius: 8px;
+		overflow:hidden;
+		margin-bottom: 75px;
+		flex-grow: 1;
+
+		.modal-header{
+			padding:10px;
+			background:$borderDarkBlue;
+			font-size:24px;
+			font-weight: bold;
+		}
+
+		.modal-close{
+
+			position: absolute;
+			top:0;
+			right:0;
+			padding:10px;
+			font-size: 30px;
+			cursor:pointer;
+
+			&:after{
+				content:"×";
+			}
+		}
+
+		.modal-content{
+			padding:10px;
+		}
+	}
+
+
+	.button{
+		margin:25px auto 0 auto;
+		display:inline-block;
+	}
+
+	p{
+		font-size: 14px;
+		text-align: left;
 	}
 }
 
