@@ -31,7 +31,7 @@ if(! isset($META_DESCRIPTION)){
 }
 
 if(! isset($OG_IMAGE)){
-	$OG_IMAGE = 'https://pvpoke.com/img/og.jpg';
+	$OG_IMAGE = 'https://pvpoke.com/tera/img/og.jpg';
 }
 
 // Initialize settings object
