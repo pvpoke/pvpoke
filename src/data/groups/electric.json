@@ -3,10 +3,6 @@
     "fastMove": "FURY_CUTTER",
     "chargedMoves": ["ENERGY_BALL", "LUNGE"]
 }, {
-    "speciesId": "vikavolt",
-    "fastMove": "MUD_SLAP",
-    "chargedMoves": ["X_SCISSOR", "CRUNCH"]
-}, {
     "speciesId": "lanturn",
     "fastMove": "WATER_GUN",
     "chargedMoves": ["SURF", "THUNDERBOLT"]
@@ -23,17 +19,9 @@
     "fastMove": "THUNDER_SHOCK",
     "chargedMoves": ["WILD_CHARGE", "ENERGY_BALL"]
 }, {
-    "speciesId": "heliolisk",
-    "fastMove": "MUD_SLAP",
-    "chargedMoves": ["BULLDOZE", "GRASS_KNOT"]
-}, {
     "speciesId": "dedenne",
     "fastMove": "TACKLE",
     "chargedMoves": ["DISCHARGE", "PLAY_ROUGH"]
-}, {
-    "speciesId": "zapdos",
-    "fastMove": "THUNDER_SHOCK",
-    "chargedMoves": ["DRILL_PECK", "ANCIENT_POWER"]
 }, {
     "speciesId": "graveler_alolan",
     "fastMove": "ROCK_THROW",
@@ -46,6 +34,18 @@
     "speciesId": "electivire",
     "fastMove": "THUNDER_SHOCK",
     "chargedMoves": ["ICE_PUNCH", "FLAMETHROWER"]
+}, {
+    "speciesId": "luxray",
+    "fastMove": "HIDDEN_POWER_GROUND",
+    "chargedMoves": ["PSYCHIC_FANGS", "WILD_CHARGE"]
+}, {
+    "speciesId": "manectric",
+    "fastMove": "SNARL",
+    "chargedMoves": ["PSYCHIC_FANGS", "OVERHEAT"]
+}, {
+    "speciesId": "ampharos",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["BRUTAL_SWING", "POWER_GEM"]
 }, {
     "speciesId": "emolga",
     "fastMove": "QUICK_ATTACK",
