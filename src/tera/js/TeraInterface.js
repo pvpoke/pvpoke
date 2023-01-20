@@ -16,6 +16,10 @@ var InterfaceMaster = (function () {
 			let selectedTera;
 			let results = [];
 			let displayedResults = [];
+			let displayOptions = {
+				sort: "overall",
+				showBest: true
+			};
 
 			this.init = function(){
 				// Populate Pokemon select list
@@ -33,8 +37,9 @@ var InterfaceMaster = (function () {
 				}
 			}
 
-			this.displayResults = function(r, animate){
+			this.displayResults = function(r, animate, showBest){
 				animate = typeof animate !== 'undefined' ? animate : true;
+				showBest = typeof showBest !== 'undefined' ? showBest : true;
 
 				$("#results tbody").html("");
 
@@ -46,7 +51,7 @@ var InterfaceMaster = (function () {
 
 				while(displayCount < displayMax && i < r.length){
 					// Show only the best scored version of each species
-					if(displayedSpecies.indexOf(r[i].pokemon.id) > -1){
+					if(showBest && displayedSpecies.indexOf(r[i].pokemon.id) > -1){
 						i++;
 						continue;
 					}
@@ -205,7 +210,21 @@ var InterfaceMaster = (function () {
 				let searchStr = $(this).val().toLowerCase();
 				let searchResults = filterResults(searchStr);
 
-				self.displayResults(searchResults, false);
+				// Show all results for a species if it's the only result
+				let showBest = displayOptions.showBest;
+				let filteredSpecies = [];
+
+				for(var i = 0; i < searchResults.length; i++){
+					if(filteredSpecies.indexOf(searchResults[i].pokemon.id) == -1){
+						filteredSpecies.push(searchResults[i].pokemon.id);
+					}
+				}
+
+				if(filteredSpecies.length == 1){
+					showBest = false;
+				}
+
+				self.displayResults(searchResults, false, showBest);
 			});
 
 

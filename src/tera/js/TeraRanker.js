@@ -5,7 +5,7 @@ function TeraRanker(){
 	let self = this;
 
 	let gm = GameMaster.getInstance();
-	let standardHP = 100;
+	let standardHP = 10; // Square root of 100
 	let statScorePower = 2/5;
 
 	let allTypes = ["bug","dark","dragon","electric","fairy","fighting","fire","flying","ghost","grass","ground","ice","normal","poison","psychic","rock","steel","water"];
@@ -31,6 +31,8 @@ function TeraRanker(){
 		}
 
 		ranks.sort((a,b) => (a.overall > b.overall) ? -1 : ((b.overall > a.overall) ? 1 : 0));
+		//ranks.sort((a,b) => (a.offense > b.offense) ? -1 : ((b.offense > a.offense) ? 1 : 0));
+		//ranks.sort((a,b) => (a.defense > b.defense) ? 1 : ((b.defense > a.defense) ? -1 : 0));
 
 		return ranks;
 	}
@@ -70,13 +72,17 @@ function TeraRanker(){
 		let statScore = 1;
 
 		if(physical){
-			statScore = (attacker.stats.atk * standardHP) / (raidBoss.stats.def * raidBoss.stats.hp);
+			statScore = (attacker.stats.atk * standardHP) / (raidBoss.stats.def * Math.sqrt(raidBoss.stats.hp));
 		} else{
-			statScore = (attacker.stats.spA * standardHP) / (raidBoss.stats.spD * raidBoss.stats.hp);
+			statScore = (attacker.stats.spA * standardHP) / (raidBoss.stats.spD * Math.sqrt(raidBoss.stats.hp));
 		}
 
 		statScore = Math.pow(statScore, statScorePower);
 		score *= statScore;
+
+		if(attacker.id == "slaking"){
+			score /= 2;
+		}
 
 		return score;
 	}
@@ -131,16 +137,16 @@ function TeraRanker(){
 
 		// Weighted average of both scores
 
-		let score = ( (baseScore * 4) + (teraScore * 2) ) / 8;
+		let score = ( (baseScore * 4) + (teraScore * 2) ) / 6;
 
 		// Factor base stats
 		let physical = (raidBoss.stats.atk > raidBoss.stats.spA);
 		let statScore = 1;
 
 		if(physical){
-			statScore = (raidBoss.stats.atk * standardHP) / (defender.stats.def * defender.stats.hp);
+			statScore = (raidBoss.stats.atk * standardHP) / (defender.stats.def * Math.sqrt(defender.stats.hp));
 		} else{
-			statScore = (raidBoss.stats.spA * standardHP) / (defender.stats.spD * defender.stats.hp);
+			statScore = (raidBoss.stats.spA * standardHP) / (defender.stats.spD * Math.sqrt(defender.stats.hp));
 		}
 
 		statScore = Math.pow(statScore, statScorePower);
