@@ -18,7 +18,7 @@ require_once 'header.php'; ?>
 <div class="section home white">
 	<h1>Tera Raid Counter Calculator</h1>
 
-	<p>This tool is a raid counter calculator that measures potential attackers based on optimal offensive and defensive typing against the raid boss. Use this tool for quick ideas during your Tera Raid battles or to jump start theorycrafting for high level challenges.</p>
+	<p>This tool is a raid counter calculator that measures potential attackers based on optimal offensive and defensive typing against the raid boss.</p>
 
 	<div class="flex section-header margin-top">
 		<h3>Tera Raid Boss</h3>
@@ -160,8 +160,8 @@ require_once 'header.php'; ?>
 			</div>
 
 			<p><b>Counter Score</b> is the product of a Pokemon's offensive and defensive scores.</p>
-			<p><b>Offensive Score</b> is a Pokemon's attacking damage multipliers based on its most effective attacking type and the raid boss's Tera type. This includes base and Tera STAB.</p>
-			<p><b>Defensive Score</b> is the inverse of a Pokemon's average defensive damage multipliers based on all of the raid boss's attack types, the Pokemon's base typing, and its Tera typing. This includes Tera STAB.</p>
+			<p><b>Offensive Score</b> is a Pokemon's offensive damage multipliers based on its most effective attacking type and the raid boss's Tera type. It factors in STAB and base stats.</p>
+			<p><b>Defensive Score</b> is the inverse of a Pokemon's defensive damage multipliers based on the raid boss's attack types, the Pokemon's base typing, and its Tera type. It factors in STAB and base stats.</p>
 		</div>
 
 	</div>

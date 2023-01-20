@@ -71,7 +71,12 @@ a{
 }
 
 header{
+	padding: 5px;
 	background: #1e0441;
+	position: fixed;
+	z-index: 15;
+	width:100%;
+	box-sizing: border-box;
 
 	.header-wrap{
 		max-width:1000px;
@@ -79,6 +84,7 @@ header{
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: space-between;
+		align-items: center;
 	}
 
 	.title{
@@ -97,12 +103,20 @@ header{
 			display: block;
 		}
 	}
+
+	a{
+		color: #f6ba48;
+
+		&.home-link{
+			font-size: 12px;
+		}
+	}
 }
 
 #main{
 	max-width:1000px;
 	margin: auto;
-	padding:10px;
+	padding:37px 10px 10px 10px;
     border-radius: 12px;
 
 	& > h1{
@@ -221,6 +235,10 @@ input[type="text"]{
 		z-index: 10;
 		justify-content: space-between;
 		margin-bottom: 15px;
+
+		&:last-of-type{
+			margin-bottom: 0;
+		}
 	}
 
 	h4{
@@ -733,7 +751,7 @@ footer{
 			margin-top: 5px;
 		}
 
-		.tera-type{
+		.type-item{
 			width: 75px;
 
 			.tera-icon{

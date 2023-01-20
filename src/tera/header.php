@@ -107,6 +107,7 @@ if(isset($_COOKIE['settings'])){
 	<header>
 		<div class="header-wrap">
 			<h1 class="title"><a href="<?php echo $WEB_ROOT; ?>tera">PvPoke.com</a></h1>
+			<a class="home-link" href="<?php echo $WEB_ROOT; ?>">Back to main site</a>
 		</div>
 	</header>
 	<div class="main-wrap">

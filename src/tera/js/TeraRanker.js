@@ -99,6 +99,10 @@ function TeraRanker(){
 			let effectiveness = self.getEffectiveness(raidTypes[i], defender.types);
 			effectiveness *= self.getStab(raidBoss, raidTypes[i], raidTera);
 
+			if(defender.id == "clodsire" && raidTypes[i] == "water"){
+				effectiveness = 0;
+			}
+
 			arr.push(effectiveness);
 		}
 
@@ -121,6 +125,10 @@ function TeraRanker(){
 		for(var i = 0; i < raidTypes.length; i++){
 			effectiveness = self.getEffectiveness(raidTypes[i], defenderTera);
 			effectiveness *= self.getStab(raidBoss, raidTypes[i], raidTera);
+
+			if(defender.id == "clodsire" && raidTypes[i] == "water"){
+				effectiveness = 0;
+			}
 
 			arr.push(effectiveness);
 		}

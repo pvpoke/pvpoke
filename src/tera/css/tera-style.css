@@ -29,7 +29,12 @@ a:hover {
 }
 
 header {
+  padding: 5px;
   background: #1e0441;
+  position: fixed;
+  z-index: 15;
+  width: 100%;
+  box-sizing: border-box;
 }
 header .header-wrap {
   max-width: 1000px;
@@ -37,6 +42,7 @@ header .header-wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 }
 header .title {
   font-size: 18px;
@@ -53,11 +59,17 @@ header .title a {
   background-repeat: no-repeat;
   display: block;
 }
+header a {
+  color: #f6ba48;
+}
+header a.home-link {
+  font-size: 12px;
+}
 
 #main {
   max-width: 1000px;
   margin: auto;
-  padding: 10px;
+  padding: 37px 10px 10px 10px;
   border-radius: 12px;
 }
 #main > h1 {
@@ -173,6 +185,9 @@ input[type=text] {
   z-index: 10;
   justify-content: space-between;
   margin-bottom: 15px;
+}
+.boss-section > .flex:last-of-type {
+  margin-bottom: 0;
 }
 .boss-section h4 {
   margin-top: 0;
@@ -906,10 +921,10 @@ footer p:first-of-type {
   #results .type-item:nth-of-type(2) {
     margin-top: 5px;
   }
-  #results .tera-type {
+  #results .type-item {
     width: 75px;
   }
-  #results .tera-type .tera-icon {
+  #results .type-item .tera-icon {
     width: 12px;
     height: 12px;
   }
