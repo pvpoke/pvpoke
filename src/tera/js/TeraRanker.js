@@ -30,10 +30,6 @@ function TeraRanker(){
 			}
 		}
 
-		ranks.sort((a,b) => (a.overall > b.overall) ? -1 : ((b.overall > a.overall) ? 1 : 0));
-		//ranks.sort((a,b) => (a.offense > b.offense) ? -1 : ((b.offense > a.offense) ? 1 : 0));
-		//ranks.sort((a,b) => (a.defense > b.defense) ? 1 : ((b.defense > a.defense) ? -1 : 0));
-
 		return ranks;
 	}
 

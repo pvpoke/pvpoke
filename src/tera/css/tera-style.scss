@@ -61,6 +61,12 @@ body{
 	background: -webkit-linear-gradient(167deg, rgba(82,8,59,1) 14%, rgba(29,4,65,1) 72%);
 	background: linear-gradient(167deg, rgba(82,8,59,1) 14%, rgba(29,4,65,1) 72%);
 	background-attachment: fixed;
+
+	background: url('../img/bg.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size:cover;
+	background-position: center bottom;
 }
 
 a{
@@ -169,31 +175,31 @@ input[type="text"]{
 	padding: 10px;
 	border-bottom-left-radius: 10px;
 	border-top-right-radius: 10px;
+}
 
-	select{
-		background: rgba(0,0,0,0.5);
-		border: 1px solid rgba(0,0,0,0.75);
-	    color: #fff;
-	    padding: 10px;
-	    box-sizing: border-box;
-		border-bottom-left-radius: 10px;
-		border-top-right-radius: 10px;
+.bordered-section select, .modal select{
+	background: rgba(0,0,0,0.5);
+	border: 1px solid rgba(0,0,0,0.75);
+    color: #fff;
+    padding: 10px;
+    box-sizing: border-box;
+	border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
 
-		&:hover{
-			background: rgba(0,0,0,0.75);
-		}
+	&:hover{
+		background: rgba(0,0,0,0.75);
+	}
+
+	option{
+		background: rgba(29,4,65,1);
+	}
+
+	&.error{
+		border: 1px solid $errorColor;
+		color: $errorColor;
 
 		option{
-			background: rgba(29,4,65,1);
-		}
-
-		&.error{
-			border: 1px solid $errorColor;
-			color: $errorColor;
-
-			option{
-				color: #fff;
-			}
+			color: #fff;
 		}
 	}
 }
@@ -504,7 +510,7 @@ input[type="text"]{
 	}
 }
 
-button#run{
+button#run, .modal button{
 	margin-top: 20px;
     outline: none;
     border: none;
@@ -542,6 +548,22 @@ button#run{
 		font-size: 12px;
 	    margin: 5px 0 10px 0;
 	    opacity: 0.5;
+	}
+
+	.results-controls{
+		justify-content: space-between;
+		flex-wrap: nowrap;
+
+		a.results-options{
+			display: block;
+			width:30px;
+			height:30px;
+			margin-left: 20px;
+			text-decoration: none;
+			background:url('../img/options.png');
+			background-repeat: no-repeat;
+			background-size:contain;
+		}
 	}
 }
 
@@ -673,10 +695,29 @@ footer{
 		}
 	}
 
+	h4{
+		margin: 20px 0 10px 0;
 
-	.button{
-		margin:25px auto 0 auto;
-		display:inline-block;
+		&:first-of-type{
+			margin-top: 0;
+		}
+	}
+
+	select{
+		font-size: 18px;
+		width: 200px;
+		margin-bottom: 10px;
+	}
+
+	button{
+		background: $linkColor !important;
+		margin: 30px auto 0 auto;
+		font-size: 18px;
+		padding: 10px;
+
+		&:hover{
+			background: #ad104c !important;
+		}
 	}
 
 	p{
@@ -724,6 +765,43 @@ footer{
 		color: #fff;
 		margin: 5px;
 		border-radius: 8px;
+	}
+}
+
+
+.check{
+	margin-top:10px;
+	cursor: pointer;
+
+	span{
+		display: block;
+		width: 17px;
+		height: 17px;
+		border-radius: 2px;
+		background: #222;
+		border: 2px solid #000;
+		box-sizing:border-box;
+		margin: 0px 10px 0 0;
+		float: left;
+	}
+
+	&.on{
+		span{
+			font-size: 11px;
+			padding-left: 3px;
+			line-height: 14px;
+			background: $linkColor;
+
+			&:after{
+				content: "✓";
+			}
+		}
+	}
+
+	&:hover:not(.on){
+		span{
+			background:#333;
+		}
 	}
 }
 

@@ -40,6 +40,13 @@ $("body").on("click", ".toggle", function(e){
 	$(e.target).closest(".toggle").toggleClass("active");
 });
 
+// Turn checkboxes on and off
+
+$("body").on("click", ".check", function checkBox(e){
+	$(this).toggleClass("on");
+	$(this).trigger("change");
+});
+
 
 </script>
 </body>

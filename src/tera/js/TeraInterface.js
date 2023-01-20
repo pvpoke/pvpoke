@@ -39,7 +39,23 @@ var InterfaceMaster = (function () {
 
 			this.displayResults = function(r, animate, showBest){
 				animate = typeof animate !== 'undefined' ? animate : true;
-				showBest = typeof showBest !== 'undefined' ? showBest : true;
+				showBest = typeof showBest !== 'undefined' ? showBest : displayOptions.showBest;
+
+				// Sort results by sorting option
+				switch(displayOptions.sort){
+					case "overall":
+					r.sort((a,b) => (a.overall > b.overall) ? -1 : ((b.overall > a.overall) ? 1 : 0));
+					break;
+
+					case "offense":
+					r.sort((a,b) => (a.offense > b.offense) ? -1 : ((b.offense > a.offense) ? 1 : 0));
+					break;
+
+					case "defense":
+					r.sort((a,b) => (a.defense > b.defense) ? 1 : ((b.defense > a.defense) ? -1 : 0));
+					break;
+				}
+
 
 				$("#results tbody").html("");
 
@@ -74,7 +90,13 @@ var InterfaceMaster = (function () {
 					$row.find("td").eq(2).html($teraType);
 
 					// Show Pokemon's score
-					let score = Math.round(r[i].overall * 100) / 100;
+					let score = roundScore(r[i].overall);
+
+					if(displayOptions.sort == "offense"){
+						score = roundScore(r[i].offense);
+					} else if(displayOptions.sort == "defense"){
+						score = roundScore(1 / r[i].defense);
+					}
 
 					$row.find("td").eq(3).html("<a class='score' href='#'>"+score+"</a>");
 
@@ -101,6 +123,9 @@ var InterfaceMaster = (function () {
 						}, 30 * index);
 
 					});
+
+					// Clear searchbar
+					$("#results-search").val('');
 				}
 
 				$(".results-container").show();
@@ -251,6 +276,11 @@ var InterfaceMaster = (function () {
 				self.displayResults(searchResults, false, showBest);
 			});
 
+			// Clear searchbar on focus
+			$("#results-search").focus(function(e){
+				$(this).val('');
+			});
+
 
 			// Clear the search input on focus
 
@@ -329,6 +359,29 @@ var InterfaceMaster = (function () {
 				$details.find(".tera-type .type-container").append(createTypeLabel(r.tera, true, false));
 
 				let modal = modalWindow(r.pokemon.name, $details);
+			});
+
+			// Open results options modal
+			$(".results-section a.results-options").click(function(e){
+				e.preventDefault();
+
+				let modal = modalWindow("Counter Options", $(".results-options.template").first().clone().removeClass("template"));
+
+				$(".modal .score-sort-select option[value='"+displayOptions.sort+"']").prop("selected", "selected");
+
+				if(displayOptions.showBest){
+					$(".modal .check.show-best").addClass("on");
+				}
+
+				// Save display options and refresh display
+
+				$(".modal button.save").click(function(e){
+					displayOptions.sort = $(".modal .score-sort-select option:selected").val();
+					displayOptions.showBest = $(".modal .check.show-best").hasClass("on");
+					closeModalWindow();
+
+					self.displayResults(results, false);
+				});
 			});
 
 			// Select a new Pokemon from the given id

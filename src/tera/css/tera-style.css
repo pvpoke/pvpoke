@@ -19,6 +19,11 @@ body {
   background: -webkit-linear-gradient(167deg, #52083b 14%, #1d0441 72%);
   background: linear-gradient(167deg, #52083b 14%, #1d0441 72%);
   background-attachment: fixed;
+  background: url("../img/bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center bottom;
 }
 
 a {
@@ -126,7 +131,8 @@ input[type=text] {
   border-bottom-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-.bordered-section select {
+
+.bordered-section select, .modal select {
   background: rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(0, 0, 0, 0.75);
   color: #fff;
@@ -135,17 +141,17 @@ input[type=text] {
   border-bottom-left-radius: 10px;
   border-top-right-radius: 10px;
 }
-.bordered-section select:hover {
+.bordered-section select:hover, .modal select:hover {
   background: rgba(0, 0, 0, 0.75);
 }
-.bordered-section select option {
+.bordered-section select option, .modal select option {
   background: #1d0441;
 }
-.bordered-section select.error {
+.bordered-section select.error, .modal select.error {
   border: 1px solid #ce2c09;
   color: #ce2c09;
 }
-.bordered-section select.error option {
+.bordered-section select.error option, .modal select.error option {
   color: #fff;
 }
 
@@ -707,7 +713,7 @@ input[type=text] {
   border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-button#run {
+button#run, .modal button {
   margin-top: 20px;
   outline: none;
   border: none;
@@ -725,13 +731,13 @@ button#run {
   background: -webkit-linear-gradient(0deg, #46052c 43%, #990f44 55%);
   background: linear-gradient(0deg, #46052c 43%, #990f44 55%);
 }
-button#run:hover {
+button#run:hover, .modal button:hover {
   background: -moz-linear-gradient(0deg, #4f0532 43%, #ad104c 55%);
   background: -webkit-linear-gradient(0deg, #4f0532 43%, #ad104c 55%);
   background: linear-gradient(0deg, #4f0532 43%, #ad104c 55%);
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
 }
-button#run:active {
+button#run:active, .modal button:active {
   position: relative;
   top: 2px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
@@ -745,6 +751,20 @@ button#run:active {
   font-size: 12px;
   margin: 5px 0 10px 0;
   opacity: 0.5;
+}
+.results-section .results-controls {
+  justify-content: space-between;
+  flex-wrap: nowrap;
+}
+.results-section .results-controls a.results-options {
+  display: block;
+  width: 30px;
+  height: 30px;
+  margin-left: 20px;
+  text-decoration: none;
+  background: url("../img/options.png");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
 .score-details {
@@ -852,9 +872,25 @@ footer p:first-of-type {
 .modal .modal-container .modal-content {
   padding: 10px;
 }
-.modal .button {
-  margin: 25px auto 0 auto;
-  display: inline-block;
+.modal h4 {
+  margin: 20px 0 10px 0;
+}
+.modal h4:first-of-type {
+  margin-top: 0;
+}
+.modal select {
+  font-size: 18px;
+  width: 200px;
+  margin-bottom: 10px;
+}
+.modal button {
+  background: #990f44 !important;
+  margin: 30px auto 0 auto;
+  font-size: 18px;
+  padding: 10px;
+}
+.modal button:hover {
+  background: #ad104c !important;
 }
 .modal p {
   font-size: 14px;
@@ -897,6 +933,34 @@ footer p:first-of-type {
   color: #fff;
   margin: 5px;
   border-radius: 8px;
+}
+
+.check {
+  margin-top: 10px;
+  cursor: pointer;
+}
+.check span {
+  display: block;
+  width: 17px;
+  height: 17px;
+  border-radius: 2px;
+  background: #222;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  margin: 0px 10px 0 0;
+  float: left;
+}
+.check.on span {
+  font-size: 11px;
+  padding-left: 3px;
+  line-height: 14px;
+  background: #990f44;
+}
+.check.on span:after {
+  content: "✓";
+}
+.check:hover:not(.on) span {
+  background: #333;
 }
 
 /* Responsive styling */

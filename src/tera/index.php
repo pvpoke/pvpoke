@@ -122,8 +122,14 @@ require_once 'header.php'; ?>
 		<p>The Pokemon below are the top scored based on their offensive and defensive typing against the raid boss.</p>
 
 		<div class="bordered-section results-section">
-			<input type="text" id="results-search" placeholder="Search counters" />
-			<div class="search-instructions">Search by Pokemon, typing, or Tera type ("@water")</div>
+			<div class="results-controls flex">
+				<div>
+					<input type="text" id="results-search" placeholder="Search counters" />
+					<div class="search-instructions">Search by Pokemon, typing, or Tera type ("@water")</div>
+				</div>
+				<a class="results-options" href="#"></a>
+			</div>
+
 			<div class="table-container">
 				<table id="results" cellspacing="0">
 					<thead>
@@ -170,6 +176,20 @@ require_once 'header.php'; ?>
 			<p><b>Counter Score</b> is the product of a Pokemon's offensive and defensive scores.</p>
 			<p><b>Offensive Score</b> is a Pokemon's offensive damage multipliers based on its most effective attacking type and the raid boss's Tera type. It factors in STAB and base stats.</p>
 			<p><b>Defensive Score</b> is the inverse of a Pokemon's defensive damage multipliers based on the raid boss's attack types, the Pokemon's base typing, and its Tera type. It factors in STAB and base stats.</p>
+		</div>
+
+		<div class="results-options template">
+
+			<h4>Sort scores by</h4>
+			<select class="score-sort-select">
+				<option value="overall">Overall</option>
+				<option value="offense">Offense</option>
+				<option value="defense">Defense</option>
+			</select>
+
+			<div class="check show-best"><span></span>Show Best for each Species</div>
+
+			<button class="save">Save Changes</button>
 		</div>
 
 	</div>
