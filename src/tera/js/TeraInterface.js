@@ -58,6 +58,7 @@ var InterfaceMaster = (function () {
 
 
 				$("#results tbody").html("");
+				$("table#results").scrollTop(0);
 
 				let displayedSpecies = [];
 				let displayCount = 0;
@@ -253,6 +254,12 @@ var InterfaceMaster = (function () {
 				});
 			});
 
+			// Scroll the name dropdown into view when the searchbox is selected
+
+			$("#poke-search").focus(function(e){
+				$("html, body").animate({ scrollTop: $("#poke-search").offset().top - 65 }, 500);
+			});
+
 			// Filter the counter results
 
 			$("#results-search").keyup(function(e){
@@ -280,6 +287,13 @@ var InterfaceMaster = (function () {
 			$("#results-search").focus(function(e){
 				$(this).val('');
 			});
+
+			// Scroll the results into view when the searchbox is selected
+
+			$("#results-search").focus(function(e){
+				$("html, body").animate({ scrollTop: $("#results-search").offset().top - 65 }, 500);
+			});
+
 
 
 			// Clear the search input on focus
