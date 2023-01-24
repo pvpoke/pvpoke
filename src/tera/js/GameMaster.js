@@ -17,7 +17,7 @@ var GameMaster = (function () {
 			InterfaceMaster.getInstance().init(object);
 		});
 
-		// Return a Pokemon object given species ID
+		// Return Pokemon object data given species ID
 
 		object.getPokemonById = function(id){
 			var pokemon;
@@ -31,6 +31,22 @@ var GameMaster = (function () {
 			});
 
 			return pokemon;
+		}
+
+		// Return Trait object given trait ID
+
+		object.getTraitById = function(id){
+			var trait;
+
+			$.each(object.data.traits, function(index, t){
+
+				if(t.id == id){
+					trait = t;
+					return;
+				}
+			});
+
+			return trait;
 		}
 
 

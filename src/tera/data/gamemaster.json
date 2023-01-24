@@ -658,7 +658,8 @@
 	        "spA": 45,
 	        "spD": 100,
 	        "spe": 20
-	    }
+	    },
+		"traits": ["water_absorb"]
 	}, {
 	    "name": "Psyduck",
 	    "types": ["water"],
@@ -5039,5 +5040,12 @@
 	        "spD": 65,
 	        "spe": 35
 	    }
-	}]
+	}],
+	"traits": [
+		{
+			"name": "Water Absorb",
+			"id": "water_absorb",
+			"type": "ability"
+		}
+	]
 }

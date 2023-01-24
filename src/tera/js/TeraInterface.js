@@ -152,7 +152,7 @@ var InterfaceMaster = (function () {
 						switch(key){
 							case "p":
 								// Set selected Pokemon
-								selectedPokemon = gm.getPokemonById(val);
+								selectedPokemon = new Pokemon(val);
 								$("#poke-select option[value='"+val+"']").prop("selected", "selected");
 
 								// Default to stab types
@@ -408,7 +408,7 @@ var InterfaceMaster = (function () {
 					return;
 				}
 
-				selectedPokemon = gm.getPokemonById(id);
+				selectedPokemon = new Pokemon(id);
 
 				selectedTypes = [];
 

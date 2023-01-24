@@ -95,6 +95,10 @@ function TeraRanker(){
 			let effectiveness = self.getEffectiveness(raidTypes[i], defender.types);
 			effectiveness *= self.getStab(raidBoss, raidTypes[i], raidTera);
 
+			if(defender.hasTrait("water_absorb", raidBoss, raidTypes[i]) > -1){
+				effectiveness = defender.hasTrait("water_absorb", raidBoss, raidTypes[i]);
+			}
+
 			arr.push(effectiveness);
 		}
 
@@ -160,7 +164,7 @@ function TeraRanker(){
 		let ranks = [];
 
 		for(var i = 0; i < gm.data.pokemon.length; i++){
-			let poke = gm.data.pokemon[i];
+			let poke = new Pokemon(gm.data.pokemon[i].id);
 
 			// Exclude Pokemon with low base stat total
 			let stats = poke.stats;
@@ -170,11 +174,27 @@ function TeraRanker(){
 			}
 
 			for(var n = 0; n < allTypes.length; n++){
-				// Add an entry for each Pokemon with each tera type]
+				// Add an entry for each Pokemon with each tera type
 				ranks.push({
 					pokemon: poke,
 					tera: allTypes[n]
 				});
+
+				// Add a new version of the Pokemon for each exclusive trait
+				for(var k = 0; k < poke.traits.length; k++){
+					let trait = poke.traits[k];
+
+					if(trait.type == "ability"){
+						let pokemon = new Pokemon(gm.data.pokemon[i].id, allTypes[n]);
+						poke.enableTrait(trait.id)
+
+						ranks.push({
+							pokemon: pokemon,
+							tera: allTypes[n]
+						});
+					}
+				}
+
 			}
 		}
 
