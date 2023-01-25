@@ -53,7 +53,7 @@ if(isset($_COOKIE['settings'])){
 <meta name="description" content="<?php echo $META_DESCRIPTION; ?>" />
 
 <?php if(isset($CANONICAL)): ?>
-	<link rel="canonical" href="<?php echo $CANONICAL; ?>" /><!--Prevents Google from indexing hundreds of different versions of the same page-->
+	<link rel="canonical" href="<?php echo htmlspecialchars($CANONICAL); ?>" /><!--Prevents Google from indexing hundreds of different versions of the same page-->
 <?php endif; ?>
 
 <!--OG tags for social-->
