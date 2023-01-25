@@ -91,4 +91,18 @@ function Pokemon(id, tera){
 
 		return false;
 	}
+
+	// Returns an array of currently active traits
+
+	this.getActiveTraits = function(){
+		let activeTraits = [];
+
+		for(var i = 0; i < self.traits.length; i++){
+			if(self.traits[i].active){
+				activeTraits.push(self.traits[i]);
+			}
+		}
+
+		return activeTraits;
+	}
 }

@@ -145,6 +145,11 @@ require_once 'header.php'; ?>
 			</div>
 		</div>
 
+		<div class="name-details template template">
+			<div class="pokemon-name"></div>
+			<div class="traits flex"></div>
+		</div>
+
 		<div class="share-link-container">
 			<p>Share these Tera Raid counters:</p>
 			<div class="share-link">
@@ -159,10 +164,15 @@ require_once 'header.php'; ?>
 				<div class="type-container"></div>
 				<div class="label">Tera Type</div>
 			</div>
+			<div class="traits-container full-row border-bottom">
+				<div class="traits flex"></div>
+				<div class="label">Traits</div>
+			</div>
 			<div class="overall full-row border-bottom">
 				<div class="score"></div>
 				<div class="label">Counter Score</div>
 			</div>
+
 			<div class="offense">
 				<div class="score"></div>
 				<div class="label">Offense</div>

@@ -794,9 +794,13 @@ button#run:active, .modal button:active {
   flex-basis: 100%;
   justify-content: center;
 }
-.score-details .tera-type .type-item {
+.score-details .tera-type .type-item,
+.score-details .traits {
   margin-bottom: 3px;
   margin-right: 0;
+}
+.score-details .traits {
+  justify-content: center;
 }
 .score-details .tera-type > .label {
   flex-basis: 100%;
@@ -961,6 +965,17 @@ footer p:first-of-type {
 }
 .check:hover:not(.on) span {
   background: #333;
+}
+
+.traits {
+  flex-wrap: wrap;
+}
+.traits .trait {
+  font-size: 12px;
+  background: #990f44;
+  padding: 2px 6px;
+  border-radius: 10px;
+  margin: 4px 4px 0 0;
 }
 
 /* Responsive styling */

@@ -646,7 +646,8 @@
 	        "spA": 25,
 	        "spD": 25,
 	        "spe": 15
-	    }
+	    },
+		"traits": ["water_absorb"]
 	}, {
 	    "name": "Clodsire",
 	    "types": ["poison", "ground"],
@@ -2231,7 +2232,8 @@
 	        "spA": 110,
 	        "spD": 95,
 	        "spe": 65
-	    }
+	    },
+		"traits": ["water_absorb"]
 	}, {
 	    "name": "Jolteon",
 	    "types": ["electric"],
@@ -3131,7 +3133,8 @@
 	        "spA": 85,
 	        "spD": 40,
 	        "spe": 35
-	    }
+	    },
+		"traits": ["water_absorb"]
 	}, {
 	    "name": "Cacturne",
 	    "types": ["grass", "dark"],
@@ -3143,7 +3146,8 @@
 	        "spA": 115,
 	        "spD": 60,
 	        "spe": 55
-	    }
+	    },
+		"traits": ["water_absorb"]
 	}, {
 	    "name": "Rellor",
 	    "types": ["bug"],
@@ -5027,7 +5031,8 @@
 	        "spA": 25,
 	        "spD": 25,
 	        "spe": 15
-	    }
+	    },
+		"traits": ["water_absorb"]
 	}, {
 	    "name": "Quagsire",
 	    "types": ["water", "ground"],
@@ -5039,7 +5044,8 @@
 	        "spA": 65,
 	        "spD": 65,
 	        "spe": 35
-	    }
+	    },
+		"traits": ["water_absorb"]
 	}],
 	"traits": [
 		{

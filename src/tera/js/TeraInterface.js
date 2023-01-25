@@ -74,7 +74,18 @@ var InterfaceMaster = (function () {
 					}
 
 					let $row = $('<tr><td></td><td>-</td><td></td><td></td></tr>');
-					$row.find("td").eq(0).html(r[i].pokemon.name);
+
+					// Display name and traits
+					let $name = $(".name-details.template").first().clone().removeClass("template");
+					let traits = r[i].pokemon.getActiveTraits();
+
+					$name.find(".pokemon-name").html(r[i].pokemon.name);
+
+					for(var n = 0; n < traits.length; n++){
+						$name.find(".traits").append("<div class=\"trait\">"+traits[n].name+"</div>");
+					}
+
+					$row.find("td").eq(0).html($name);
 
 					// Show Pokemon typings
 					let $types = $("<div class='flex'></div>");
@@ -368,6 +379,16 @@ var InterfaceMaster = (function () {
 				$details.find(".overall .score").html(overall);
 				$details.find(".offense .score").html(offense);
 				$details.find(".defense .score").html(defense);
+
+				let traits = r.pokemon.getActiveTraits();
+
+				for(var i = 0; i < traits.length; i++){
+					$details.find(".traits").append("<div class=\"trait\">"+traits[i].name+"</div>");
+				}
+
+				if(traits.length == 0){
+					$details.find(".traits-container").hide();
+				}
 
 				// Display typings
 				for(var i = 0; i < r.pokemon.types.length; i++){
