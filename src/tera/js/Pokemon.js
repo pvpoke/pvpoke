@@ -80,15 +80,15 @@ function Pokemon(id, tera){
 
 	// Returns whether a Pokemon has an active trait and its effect value
 
-	this.hasTrait = function(id, opponent, attackType){
+	this.hasTrait = function(id){
 		for(var i = 0; i < self.traits.length; i++){
 			let trait = self.traits[i];
 
 			if(trait.id == id && trait.active){
-				return trait.getEffect(self, opponent, attackType)
+				return true;
 			}
 		}
 
-		return -1;
+		return false;
 	}
 }

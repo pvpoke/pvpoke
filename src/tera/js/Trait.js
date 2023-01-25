@@ -31,3 +31,21 @@ function Trait(id){
 		return effect;
 	}
 }
+
+/* STATIC METHODS */
+
+// Evaluate all type related traits and return the relevant effectiveness
+
+Trait.evaluateType = function(moveType, targetTypes, attacker, defender){
+	let effect = 1;
+
+	if(! Array.isArray(targetTypes)){
+		targetTypes = [targetTypes];
+	}
+
+	if(defender.hasTrait("water_absorb") && moveType == "water"){
+		effect *= 0;
+	}
+
+	return effect;
+}
