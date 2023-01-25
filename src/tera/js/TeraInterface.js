@@ -87,7 +87,7 @@ var InterfaceMaster = (function () {
 					$row.find("td").eq(1).html($types);
 
 					// Show Pokemon tera type
-					let $teraType = createTypeLabel(r[i].tera, true, false);
+					let $teraType = createTypeLabel(r[i].pokemon.tera, true, false);
 					$row.find("td").eq(2).html($teraType);
 
 					// Show Pokemon's score
@@ -178,9 +178,11 @@ var InterfaceMaster = (function () {
 
 				}
 
+				selectedPokemon.tera = selectedTera;
+
 				updateRaidBossDisplay();
 
-				let r = ranker.rankAttackers(selectedPokemon, selectedTypes, selectedTera);
+				let r = ranker.rankAttackers(selectedPokemon, selectedTypes);
 
 				results = r;
 
@@ -210,8 +212,10 @@ var InterfaceMaster = (function () {
 					return false;
 				}
 
+				selectedPokemon.tera = selectedTera;
 
-				let r = ranker.rankAttackers(selectedPokemon, selectedTypes, selectedTera);
+
+				let r = ranker.rankAttackers(selectedPokemon, selectedTypes);
 
 				results = r;
 
@@ -370,7 +374,7 @@ var InterfaceMaster = (function () {
 					$details.find(".typings").append(createTypeLabel(r.pokemon.types[i], false, false));
 				}
 
-				$details.find(".tera-type .type-container").append(createTypeLabel(r.tera, true, false));
+				$details.find(".tera-type .type-container").append(createTypeLabel(r.pokemon.tera, true, false));
 
 				let modal = modalWindow(r.pokemon.name, $details);
 			});
@@ -408,7 +412,7 @@ var InterfaceMaster = (function () {
 					return;
 				}
 
-				selectedPokemon = new Pokemon(id);
+				selectedPokemon = new Pokemon(id, selectedTera);
 
 				selectedTypes = [];
 
