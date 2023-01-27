@@ -1,5 +1,5 @@
 <?php require_once '../modules/config.php';
-$SITE_VERSION = '1.1';
+$SITE_VERSION = '1.1.1';
 
 /*****************************************************************************
 
@@ -69,7 +69,7 @@ if(isset($_COOKIE['settings'])){
 
 <link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
 
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>tera/css/tera-style.css?v=3">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>tera/css/tera-style.css?v=4">
 
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>
 

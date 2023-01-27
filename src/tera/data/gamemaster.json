@@ -4035,7 +4035,8 @@
 	        "spA": 57,
 	        "spD": 62,
 	        "spe": 34
-	    }
+	    },
+		"traits": ["storm_drain"]
 	}, {
 	    "name": "Gastrodon",
 	    "types": ["water", "ground"],
@@ -4047,7 +4048,8 @@
 	        "spA": 92,
 	        "spD": 82,
 	        "spe": 39
-	    }
+	    },
+		"traits": ["storm_drain"]
 	}, {
 	    "name": "Shellder",
 	    "types": ["water"],
@@ -4107,7 +4109,8 @@
 	        "spA": 49,
 	        "spD": 61,
 	        "spe": 66
-	    }
+	    },
+		"traits": ["storm_drain"]
 	}, {
 	    "name": "Lumineon",
 	    "types": ["water"],
@@ -4119,7 +4122,8 @@
 	        "spA": 69,
 	        "spD": 86,
 	        "spe": 91
-	    }
+	    },
+		"traits": ["storm_drain"]
 	}, {
 	    "name": "Bruxish",
 	    "types": ["water", "psychic"],
@@ -4611,7 +4615,8 @@
 	        "spA": 120,
 	        "spD": 95,
 	        "spe": 82
-	    }
+	    },
+		"traits": ["storm_drain"]
 	}, {
 	    "name": "Great Tusk",
 	    "types": ["ground", "fighting"],
@@ -5051,6 +5056,11 @@
 		{
 			"name": "Water Absorb",
 			"id": "water_absorb",
+			"type": "ability"
+		},
+		{
+			"name": "Storm Drain",
+			"id": "storm_drain",
 			"type": "ability"
 		}
 	]

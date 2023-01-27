@@ -19,17 +19,6 @@ function Trait(id){
 	this.name = data.name;
 	this.active = false;
 	this.type = data.type; // ability or move
-
-	// Returns -1 for no effect, numerical value if an effect activates based on the provided conditions
-	this.getEffect = function(subject, opponent, attackType){
-		let effect = -1;
-
-		if(id == "water_absorb" && attackType == "water"){
-			return 0;
-		}
-
-		return effect;
-	}
 }
 
 /* STATIC METHODS */
@@ -43,7 +32,7 @@ Trait.evaluateType = function(moveType, targetTypes, attacker, defender){
 		targetTypes = [targetTypes];
 	}
 
-	if(defender.hasTrait("water_absorb") && moveType == "water"){
+	if( (defender.hasTrait("water_absorb") || defender.hasTrait("storm_drain")) && moveType == "water"){
 		effect *= 0;
 	}
 
