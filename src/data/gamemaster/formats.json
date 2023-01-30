@@ -37,15 +37,6 @@
 		"showMeta": true
 	},
 	{
-		"title": "Weather Cup (Great League)",
-		"cup": "weather",
-		"cp": 1500,
-		"meta": "weathergreat",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
 		"title": "Electric Cup",
 		"cup": "electric",
 		"cp": 1500,
@@ -59,6 +50,15 @@
 		"cup": "premier",
 		"cp": 2500,
 		"meta": "premierultra",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Love Cup",
+		"cup": "love",
+		"cp": 1500,
+		"meta": "love",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true

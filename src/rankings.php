@@ -52,7 +52,7 @@ switch($cup){
 		break;
 
 	case "weather":
-		$league = 'Weather Cup';
+		$league = 'Love Cup';
 		break;
 
 	case "electric":

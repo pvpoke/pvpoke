@@ -40,9 +40,9 @@
 		"chargedMoves":["AVALANCHE","SHADOW_BALL"]
 	},
 	{
-		"speciesId":"ninetales_shadow",
-		"fastMove":"EMBER",
-		"chargedMoves":["WEATHER_BALL_FIRE","OVERHEAT"]
+		"speciesId":"charizard_shadow",
+		"fastMove":"WING_ATTACK",
+		"chargedMoves":["DRAGON_CLAW","BLAST_BURN"]
 	},
 	{
 		"speciesId":"drapion",
@@ -55,7 +55,7 @@
 		"chargedMoves":["SKY_ATTACK","SHADOW_BALL"]
 	},
 	{
-		"speciesId":"ninetales_alolan",
+		"speciesId":"ninetales_alolan_shadow",
 		"fastMove":"CHARM",
 		"chargedMoves":["WEATHER_BALL_ICE","PSYSHOCK"]
 	},
@@ -180,9 +180,9 @@
 		"chargedMoves":["FIRE_PUNCH","EARTHQUAKE"]
 	},
 	{
-		"speciesId":"nidoqueen_shadow",
-		"fastMove":"POISON_JAB",
-		"chargedMoves":["POISON_FANG","EARTH_POWER"]
+		"speciesId":"dunsparce",
+		"fastMove":"ROLLOUT",
+		"chargedMoves":["DRILL_RUN","ROCK_SLIDE"]
 	},
 	{
 		"speciesId":"lanturn",

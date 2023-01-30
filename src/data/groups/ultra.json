@@ -84,9 +84,13 @@
     "fastMove": "POISON_JAB",
     "chargedMoves": ["POISON_FANG", "EARTH_POWER"]
 }, {
-    "speciesId": "ninetales_alolan",
+    "speciesId": "ninetales_alolan_shadow",
     "fastMove": "CHARM",
     "chargedMoves": ["WEATHER_BALL_ICE", "DAZZLING_GLEAM"]
+}, {
+    "speciesId": "ninetales_alolan",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["WEATHER_BALL_ICE", "PSYSHOCK"]
 }, {
     "speciesId": "obstagoon",
     "fastMove": "COUNTER",
