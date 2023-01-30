@@ -29,12 +29,26 @@ function Pokemon(id, tera){
 		spe: data.stats.spe
 	};
 
+	this.opponent = null;
+
 	this.traits = [];
 
 	if(data.traits){
 		for(var i = 0; i < data.traits.length; i++){
 			this.traits.push(new Trait(data.traits[i]));
 		}
+	}
+
+	// Return a Pokemon's effective stat value
+	this.stat = function(name){
+		let value = self.stats[name];
+
+		if(self.opponent){
+			value *= Trait.evaluateStat(name, self, self.opponent);
+		}
+
+
+		return value;
 	}
 
 	// Set tera type
@@ -55,7 +69,7 @@ function Pokemon(id, tera){
 				if(trait.type == "ability"){
 					for(var n = 0; n < self.traits.length; n++){
 						if(self.traits[n].id != id && self.traits[n].type == "ability"){
-							trait.active = false;
+							self.traits[n].active = false;
 						}
 					}
 				}

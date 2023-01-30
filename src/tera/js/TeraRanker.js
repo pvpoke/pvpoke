@@ -20,6 +20,9 @@ function TeraRanker(){
 		for(var i = 0; i < ranks.length; i++){
 			let rank = ranks[i];
 
+			rank.pokemon.opponent = raidBoss;
+			raidBoss.opponent = rank.pokemon;
+
 			rank.defense = self.scoreDefense(raidBoss, rank.pokemon, raidTypes);
 			rank.offense = self.scoreOffense(raidBoss, rank.pokemon);
 
@@ -64,13 +67,13 @@ function TeraRanker(){
 		let score = ( (teraScore * 4) + (baseScore * 2) ) / 6;
 
 		// Factor base stats
-		let physical = (attacker.stats.atk > attacker.stats.spA);
+		let physical = (attacker.stat("atk") > attacker.stat("spA"));
 		let statScore = 1;
 
 		if(physical){
-			statScore = (attacker.stats.atk * standardHP) / (raidBoss.stats.def * Math.sqrt(raidBoss.stats.hp));
+			statScore = (attacker.stat("atk") * standardHP) / (raidBoss.stat("def") * Math.sqrt(raidBoss.stat("hp")));
 		} else{
-			statScore = (attacker.stats.spA * standardHP) / (raidBoss.stats.spD * Math.sqrt(raidBoss.stats.hp));
+			statScore = (attacker.stat("spA") * standardHP) / (raidBoss.stat("spD") * Math.sqrt(raidBoss.stat("hp")));
 		}
 
 		statScore = Math.pow(statScore, statScorePower);
@@ -136,13 +139,13 @@ function TeraRanker(){
 		let score = ( (baseScore * 4) + (teraScore * 2) ) / 6;
 
 		// Factor base stats
-		let physical = (raidBoss.stats.atk > raidBoss.stats.spA);
+		let physical = (raidBoss.stat("atk") > raidBoss.stat("spA"));
 		let statScore = 1;
 
 		if(physical){
-			statScore = (raidBoss.stats.atk * standardHP) / (defender.stats.def * Math.sqrt(defender.stats.hp));
+			statScore = (raidBoss.stat("atk") * standardHP) / (defender.stat("def") * Math.sqrt(defender.stat("hp")));
 		} else{
-			statScore = (raidBoss.stats.spA * standardHP) / (defender.stats.spD * Math.sqrt(defender.stats.hp));
+			statScore = (raidBoss.stat("spA") * standardHP) / (defender.stat("spD") * Math.sqrt(defender.stat("hp")));
 		}
 
 		statScore = Math.pow(statScore, statScorePower);
@@ -166,6 +169,11 @@ function TeraRanker(){
 			// Exclude Pokemon with low base stat total
 			let stats = data.stats;
 			let total = stats.hp + stats.atk + stats.def + stats.spA + stats.spD + stats.spe;
+
+			if(data.traits && data.traits.indexOf("huge_power") > -1){
+				total += stats.atk;
+			}
+
 			if(total < 425){
 				continue;
 			}

@@ -36,5 +36,37 @@ Trait.evaluateType = function(moveType, targetTypes, attacker, defender){
 		effect *= 0;
 	}
 
+	if( (defender.hasTrait("flash_fire") || defender.hasTrait("well_baked_body")) && moveType == "fire"){
+		effect *= 0;
+	}
+
+	if(defender.hasTrait("heatproof") && moveType == "fire"){
+		effect *= 0.5;
+	}
+
+	if(defender.hasTrait("levitate") && moveType == "ground"){
+		effect *= 0;
+	}
+
+	if(defender.hasTrait("thick_fat") && (moveType == "ice" || moveType == "fire")){
+		effect *= 0.5;
+	}
+
+	if(defender.hasTrait("purifying_salt") && moveType == "ghost"){
+		effect *= 0.5;
+	}
+
+	return effect;
+}
+
+// Evaluate stat related traits and return the relevant multiplier
+
+Trait.evaluateStat = function(stat, subject, opponent){
+	let effect = 1;
+
+	if(stat == "atk" && subject.hasTrait("huge_power")){
+		effect *= 2;
+	}
+
 	return effect;
 }

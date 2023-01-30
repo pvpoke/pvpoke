@@ -118,7 +118,8 @@
 	        "spA": 35,
 	        "spD": 45,
 	        "spe": 35
-	    }
+	    },
+		"traits": ["thick_fat"]
 	}, {
 	    "name": "Oinkologne (Male)",
 	    "types": ["normal"],
@@ -130,7 +131,8 @@
 	        "spA": 59,
 	        "spD": 80,
 	        "spe": 65
-	    }
+	    },
+		"traits": ["thick_fat"]
 	}, {
 	    "name": "Oinkologne (Female)",
 	    "types": ["normal"],
@@ -142,7 +144,8 @@
 	        "spA": 59,
 	        "spD": 90,
 	        "spe": 65
-	    }
+	    },
+		"traits": ["thick_fat"]
 	}, {
 	    "name": "Tarountula",
 	    "types": ["bug"],
@@ -310,7 +313,8 @@
 	        "spA": 80,
 	        "spD": 50,
 	        "spe": 65
-	    }
+	    },
+		"traits": ["flash_fire"]
 	}, {
 	    "name": "Houndoom",
 	    "types": ["dark", "fire"],
@@ -322,7 +326,8 @@
 	        "spA": 110,
 	        "spD": 80,
 	        "spe": 95
-	    }
+	    },
+		"traits": ["flash_fire"]
 	}, {
 	    "name": "Yungoos",
 	    "types": ["normal"],
@@ -562,7 +567,8 @@
 	        "spA": 20,
 	        "spD": 40,
 	        "spe": 20
-	    }
+	    },
+		"traits": ["thick_fat", "huge_power"]
 	}, {
 	    "name": "Marill",
 	    "types": ["water", "fairy"],
@@ -574,19 +580,21 @@
 	        "spA": 20,
 	        "spD": 50,
 	        "spe": 40
-	    }
+	    },
+		"traits": ["thick_fat", "huge_power"]
 	}, {
 	    "name": "Azumarill",
 	    "types": ["water", "fairy"],
 	    "id": "azumarill",
 	    "stats": {
 	        "hp": 100,
-	        "atk": 100,
+	        "atk": 50,
 	        "def": 80,
 	        "spA": 60,
 	        "spD": 80,
 	        "spe": 50
-	    }
+	    },
+		"traits": ["thick_fat", "huge_power"]
 	}, {
 	    "name": "Surskit",
 	    "types": ["bug", "water"],
@@ -828,7 +836,8 @@
 	        "spA": 100,
 	        "spD": 35,
 	        "spe": 80
-	    }
+	    },
+		"traits": ["levitate"]
 	}, {
 	    "name": "Haunter",
 	    "types": ["ghost", "poison"],
@@ -840,7 +849,8 @@
 	        "spA": 115,
 	        "spD": 55,
 	        "spe": 95
-	    }
+	    },
+		"traits": ["levitate"]
 	}, {
 	    "name": "Gengar",
 	    "types": ["ghost", "poison"],
@@ -936,7 +946,8 @@
 	        "spA": 50,
 	        "spD": 80,
 	        "spe": 95
-	    }
+	    },
+		"traits": ["well_baked_body"]
 	}, {
 	    "name": "Slakoth",
 	    "types": ["normal"],
@@ -1128,7 +1139,8 @@
 	        "spA": 40,
 	        "spD": 50,
 	        "spe": 30
-	    }
+	    },
+		"traits": ["flash_fire", "heatproof"]
 	}, {
 	    "name": "Carkol",
 	    "types": ["rock"],
@@ -1140,7 +1152,8 @@
 	        "spA": 60,
 	        "spD": 70,
 	        "spe": 50
-	    }
+	    },
+		"traits": ["flash_fire"]
 	}, {
 	    "name": "Coalossal",
 	    "types": ["rock", "fire"],
@@ -1152,7 +1165,8 @@
 	        "spA": 80,
 	        "spD": 90,
 	        "spe": 30
-	    }
+	    },
+		"traits": ["flash_fire"]
 	}, {
 	    "name": "Shinx",
 	    "types": ["electric"],
@@ -1392,7 +1406,8 @@
 	        "spA": 100,
 	        "spD": 80,
 	        "spe": 30
-	    }
+	    },
+		"traits": ["thick_fat"]
 	}, {
 	    "name": "Spoink",
 	    "types": ["psychic"],
@@ -1404,7 +1419,8 @@
 	        "spA": 70,
 	        "spD": 80,
 	        "spe": 60
-	    }
+	    },
+		"traits": ["thick_fat"]
 	}, {
 	    "name": "Grumpig",
 	    "types": ["psychic"],
@@ -1416,7 +1432,8 @@
 	        "spA": 90,
 	        "spD": 110,
 	        "spe": 80
-	    }
+	    },
+		"traits": ["thick_fat"]
 	}, {
 	    "name": "Squawkabilly",
 	    "types": ["normal", "flying"],
@@ -1440,7 +1457,8 @@
 	        "spA": 85,
 	        "spD": 85,
 	        "spe": 85
-	    }
+	    },
+		"traits": ["levitate"]
 	}, {
 	    "name": "Mismagius",
 	    "types": ["ghost"],
@@ -1452,7 +1470,8 @@
 	        "spA": 105,
 	        "spD": 105,
 	        "spe": 105
-	    }
+	    },
+		"traits": ["levitate"]
 	}, {
 	    "name": "Makuhita",
 	    "types": ["fighting"],
@@ -1464,7 +1483,8 @@
 	        "spA": 20,
 	        "spD": 30,
 	        "spe": 25
-	    }
+	    },
+		"traits": ["thick_fat"]
 	}, {
 	    "name": "Hariyama",
 	    "types": ["fighting"],
@@ -1476,7 +1496,8 @@
 	        "spA": 40,
 	        "spD": 60,
 	        "spe": 50
-	    }
+	    },
+		"traits": ["thick_fat"]
 	}, {
 	    "name": "Crabrawler",
 	    "types": ["fighting"],
@@ -1620,7 +1641,8 @@
 	        "spA": 35,
 	        "spD": 35,
 	        "spe": 25
-	    }
+	    },
+		"traits": ["purifying_salt"]
 	}, {
 	    "name": "Naclstack",
 	    "types": ["rock"],
@@ -1632,7 +1654,8 @@
 	        "spA": 35,
 	        "spD": 65,
 	        "spe": 35
-	    }
+	    },
+		"traits": ["purifying_salt"]
 	}, {
 	    "name": "Garganacl",
 	    "types": ["rock"],
@@ -1644,7 +1667,8 @@
 	        "spA": 45,
 	        "spD": 90,
 	        "spe": 35
-	    }
+	    },
+		"traits": ["purifying_salt"]
 	}, {
 	    "name": "Wingull",
 	    "types": ["water", "flying"],
@@ -1908,7 +1932,8 @@
 	        "spA": 24,
 	        "spD": 86,
 	        "spe": 23
-	    }
+	    },
+		"traits": ["heatproof", "levitate"]
 	}, {
 	    "name": "Bronzong",
 	    "types": ["steel", "psychic"],
@@ -1920,7 +1945,8 @@
 	        "spA": 79,
 	        "spD": 116,
 	        "spe": 33
-	    }
+	    },
+		"traits": ["heatproof", "levitate"]
 	}, {
 	    "name": "Axew",
 	    "types": ["dragon"],
@@ -2052,7 +2078,8 @@
 	        "spA": 50,
 	        "spD": 40,
 	        "spe": 35
-	    }
+	    },
+		"traits": ["flash_fire"]
 	}, {
 	    "name": "Armarouge",
 	    "types": ["fire", "psychic"],
@@ -2064,7 +2091,8 @@
 	        "spA": 125,
 	        "spD": 80,
 	        "spe": 75
-	    }
+	    },
+		"traits": ["flash_fire"]
 	}, {
 	    "name": "Ceruledge",
 	    "types": ["fire", "ghost"],
@@ -2076,7 +2104,8 @@
 	        "spA": 60,
 	        "spD": 100,
 	        "spe": 85
-	    }
+	    },
+		"traits": ["flash_fire"]
 	}, {
 	    "name": "Barboach",
 	    "types": ["water", "ground"],
@@ -2257,7 +2286,8 @@
 	        "spA": 95,
 	        "spD": 110,
 	        "spe": 65
-	    }
+	    },
+		"traits": ["flash_fire"]
 	}, {
 	    "name": "Espeon",
 	    "types": ["psychic"],
@@ -2629,7 +2659,8 @@
 	        "spA": 70,
 	        "spD": 50,
 	        "spe": 60
-	    }
+	    },
+		"traits": ["flash_fire"]
 	}, {
 	    "name": "Arcanine",
 	    "types": ["fire"],
@@ -2641,7 +2672,8 @@
 	        "spA": 100,
 	        "spD": 80,
 	        "spe": 95
-	    }
+	    },
+		"traits": ["flash_fire"]
 	}, {
 	    "name": "Teddiursa",
 	    "types": ["normal"],
@@ -3826,12 +3858,78 @@
 	    "id": "rotom",
 	    "stats": {
 	        "hp": 50,
+	        "atk": 50,
+	        "def": 77,
+	        "spA": 95,
+	        "spD": 77,
+	        "spe": 91
+	    },
+		"traits": ["levitate"]
+	}, {
+	    "name": "Rotom (Heat)",
+	    "types": ["electric", "fire"],
+	    "id": "rotom_heat",
+	    "stats": {
+	        "hp": 50,
 	        "atk": 65,
 	        "def": 107,
 	        "spA": 105,
 	        "spD": 107,
 	        "spe": 86
-	    }
+	    },
+		"traits": ["levitate"]
+	}, {
+	    "name": "Rotom (Wash)",
+	    "types": ["electric", "water"],
+	    "id": "rotom_wash",
+	    "stats": {
+	        "hp": 50,
+	        "atk": 65,
+	        "def": 107,
+	        "spA": 105,
+	        "spD": 107,
+	        "spe": 86
+	    },
+		"traits": ["levitate"]
+	}, {
+	    "name": "Rotom (Frost)",
+	    "types": ["electric", "ice"],
+	    "id": "rotom_frost",
+	    "stats": {
+	        "hp": 50,
+	        "atk": 65,
+	        "def": 107,
+	        "spA": 105,
+	        "spD": 107,
+	        "spe": 86
+	    },
+		"traits": ["levitate"]
+	}, {
+	    "name": "Rotom (Flying)",
+	    "types": ["electric", "flying"],
+	    "id": "rotom_flying",
+	    "stats": {
+	        "hp": 50,
+	        "atk": 65,
+	        "def": 107,
+	        "spA": 105,
+	        "spD": 107,
+	        "spe": 86
+	    },
+		"traits": ["levitate"]
+	}, {
+	    "name": "Rotom (Mow)",
+	    "types": ["electric", "grass"],
+	    "id": "rotom_mow",
+	    "stats": {
+	        "hp": 50,
+	        "atk": 65,
+	        "def": 107,
+	        "spA": 105,
+	        "spD": 107,
+	        "spe": 86
+	    },
+		"traits": ["levitate"]
 	}, {
 	    "name": "Greavard",
 	    "types": ["ghost"],
@@ -4207,7 +4305,8 @@
 	        "spA": 45,
 	        "spD": 40,
 	        "spe": 60
-	    }
+	    },
+		"traits": ["levitate"]
 	}, {
 	    "name": "Eelektrik",
 	    "types": ["electric"],
@@ -4219,7 +4318,8 @@
 	        "spA": 75,
 	        "spD": 70,
 	        "spe": 40
-	    }
+	    },
+		"traits": ["levitate"]
 	}, {
 	    "name": "Eelektross",
 	    "types": ["electric"],
@@ -4231,7 +4331,8 @@
 	        "spA": 105,
 	        "spD": 80,
 	        "spe": 50
-	    }
+	    },
+		"traits": ["levitate"]
 	}, {
 	    "name": "Mareanie",
 	    "types": ["poison", "water"],
@@ -4435,7 +4536,8 @@
 	        "spA": 95,
 	        "spD": 135,
 	        "spe": 105
-	    }
+	    },
+		"traits": ["levitate"]
 	}, {
 	    "name": "Cetoddle",
 	    "types": ["ice"],
@@ -4447,7 +4549,8 @@
 	        "spA": 30,
 	        "spD": 40,
 	        "spe": 43
-	    }
+	    },
+		"traits": ["thick_fat"]
 	}, {
 	    "name": "Cetitan",
 	    "types": ["ice"],
@@ -4459,7 +4562,8 @@
 	        "spA": 45,
 	        "spD": 55,
 	        "spe": 73
-	    }
+	    },
+		"traits": ["thick_fat"]
 	}, {
 	    "name": "Bergmite",
 	    "types": ["ice"],
@@ -4579,7 +4683,8 @@
 	        "spA": 125,
 	        "spD": 90,
 	        "spe": 98
-	    }
+	    },
+		"traits": ["levitate"]
 	}, {
 	    "name": "Veluza",
 	    "types": ["water", "psychic"],
@@ -5054,13 +5159,48 @@
 	}],
 	"traits": [
 		{
-			"name": "Water Absorb",
-			"id": "water_absorb",
+			"name": "Flash Fire",
+			"id": "flash_fire",
+			"type": "ability"
+		},
+		{
+			"name": "Heatproof",
+			"id": "heatproof",
+			"type": "ability"
+		},
+		{
+			"name": "Huge Power",
+			"id": "huge_power",
+			"type": "ability"
+		},
+		{
+			"name": "Levitate",
+			"id": "levitate",
+			"type": "ability"
+		},
+		{
+			"name": "Purifying Salt",
+			"id": "purifying_salt",
 			"type": "ability"
 		},
 		{
 			"name": "Storm Drain",
 			"id": "storm_drain",
+			"type": "ability"
+		},
+		{
+			"name": "Thick Fat",
+			"id": "thick_fat",
+			"type": "ability"
+		},
+		{
+			"name": "Water Absorb",
+			"id": "water_absorb",
+			"type": "ability"
+		},
+		{
+			"name": "Well-Baked Body",
+			"id": "well_baked_body",
 			"type": "ability"
 		}
 	]
