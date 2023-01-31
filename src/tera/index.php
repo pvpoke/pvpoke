@@ -40,8 +40,8 @@ require_once 'header.php'; ?>
 					<option disabled selected value="">Select a Pokemon</option>
 				</select>
 
-				<h4 class="attack-title">Attack Types</h4>
-				<div class="boss-attack-types">
+				<h4 class="sub-title">Attack Types</h4>
+				<div class="item-list boss-attack-types">
 					<select id="attack-type-select">
 						<option disabled selected value="">Add a type</option>
 						<option value="bug">Bug</option>
@@ -74,6 +74,16 @@ require_once 'header.php'; ?>
 
 					<a href="#" class="close">×</a>
 				</div>
+
+				<div class="traits-container">
+					<h4 class="sub-title">Traits</h4>
+					<div class="item-list boss-traits traits"></div>
+
+					<div class="trait-item template flex check">
+						<span></span><div class="trait-name"></div>
+					</div>
+				</div>
+
 			</div>
 			<div class="tera-type-container">
 				<div class="flex">

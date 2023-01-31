@@ -51,6 +51,10 @@ RewriteRule train/editor.?$ train/editor.php [L,QSA]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule tera/([\da-zA-Z_-]+)/([\da-zA-Z_-]+)/([\da-zA-Z_-]+)/([\da-zA-Z_-]+).*$ tera/index.php?p=$1&t=$2&a=$3&tr=$4 [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule tera/([\da-zA-Z_-]+)/([\da-zA-Z_-]+)/([\da-zA-Z_-]+).*$ tera/index.php?p=$1&t=$2&a=$3 [L,QSA]
 
 RewriteCond %{REQUEST_FILENAME} !-f

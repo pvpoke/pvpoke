@@ -164,6 +164,7 @@ var InterfaceMaster = (function () {
 							case "p":
 								// Set selected Pokemon
 								selectedPokemon = new Pokemon(val);
+								selectedPokemon.isBoss = true;
 								$("#poke-select option[value='"+val+"']").prop("selected", "selected");
 
 								// Default to stab types
@@ -183,6 +184,17 @@ var InterfaceMaster = (function () {
 							case "a":
 								// Set selected attack types
 								selectedTypes = val.split("-");
+								break;
+
+							case "tr":
+								// Set raid boss traits
+								let traits = val.split("-");
+
+								selectedPokemon.disableAllTraits();
+
+								for(var i = 0; i < traits.length; i++){
+									selectedPokemon.enableTrait(traits[i]);
+								}
 								break;
 						}
 					}
@@ -236,7 +248,11 @@ var InterfaceMaster = (function () {
 				let currentURL = window.location.pathname
 				let url = webRoot + 'tera/' + selectedPokemon.id + '/' + selectedTera + '/' + selectedTypes.join('-');
 
-				let data = {p: selectedPokemon.id, a: selectedTypes.join("-"), t: selectedTera };
+				if(selectedPokemon.getTraitURLStr()){
+					url += '/' + selectedPokemon.getTraitURLStr();
+				}
+
+				let data = {p: selectedPokemon.id, a: selectedTypes.join("-"), t: selectedTera, tr: selectedPokemon.getTraitURLStr() };
 
 				window.history.pushState(data, "Tera Raid Counters", url);
 
@@ -309,8 +325,6 @@ var InterfaceMaster = (function () {
 				$("html, body").animate({ scrollTop: $("#results-search").offset().top - 65 }, 500);
 			});
 
-
-
 			// Clear the search input on focus
 
 			$("#poke-search").focus(function(e){
@@ -360,6 +374,17 @@ var InterfaceMaster = (function () {
 				let index = $(".boss-attack-types .type-item").index($item);
 
 				selectedTypes.splice(index, 1);
+
+				updateRaidBossDisplay();
+			});
+
+			// Enable or disable a boss trait
+			$("body").on("change", ".boss-section .trait-item", function(e){
+				if($(this).hasClass("on")){
+					selectedPokemon.enableTrait($(this).attr("id"));
+				} else{
+					selectedPokemon.disableTrait($(this).attr("id"));
+				}
 
 				updateRaidBossDisplay();
 			});
@@ -433,12 +458,17 @@ var InterfaceMaster = (function () {
 					return;
 				}
 
-				selectedPokemon = new Pokemon(id, selectedTera);
+				selectedPokemon = new Pokemon(id, selectedTera, true);
 
+				// Set selected types
 				selectedTypes = [];
 
 				for(var i = 0; i < selectedPokemon.types.length; i++){
 					selectedTypes.push(selectedPokemon.types[i]);
+				}
+
+				if(selectedPokemon.defaults && selectedPokemon.defaults.moveTypes){
+					selectedTypes = selectedPokemon.defaults.moveTypes;
 				}
 
 				updateRaidBossDisplay();
@@ -454,6 +484,7 @@ var InterfaceMaster = (function () {
 					$(".boss-section .tera-type-container .tera-icon").hide();
 				}
 
+				// Display attack types
 				$(".boss-attack-types .type-item").remove();
 
 				if(selectedTypes.length >= 12){
@@ -466,6 +497,29 @@ var InterfaceMaster = (function () {
 					let $type = createTypeLabel(selectedTypes[i], false, true);
 
 					$type.insertBefore($(".boss-attack-types select"));
+				}
+
+				// Display boss traits
+				$(".boss-traits .trait-item").remove();
+
+				if(selectedPokemon && selectedPokemon.traits.length > 0){
+					$(".boss-section .traits-container").show();
+
+					for(var i = 0; i < selectedPokemon.traits.length; i++){
+						let t = selectedPokemon.traits[i];
+						let $trait = $(".trait-item.template").clone().removeClass("template");
+
+						$trait.find(".trait-name").text(t.name);
+						$trait.attr("id", t.id);
+
+						if(t.active){
+							$trait.addClass("on");
+						}
+
+						$(".boss-traits").append($trait);
+					}
+				} else{
+					$(".boss-section .traits-container").hide();
 				}
 
 			}

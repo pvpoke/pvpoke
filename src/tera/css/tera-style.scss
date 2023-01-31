@@ -257,7 +257,7 @@ input[type="text"]{
 		margin-top: 0;
 		margin-bottom: 15px;
 
-		&.attack-title{
+		&.sub-title{
 			margin-bottom: 10px;
 		}
 	}
@@ -290,6 +290,21 @@ input[type="text"]{
 		opacity: 0.2;
 	}
 
+	.traits-container{
+		display: none;
+		margin-top: 20px;
+
+		.trait-item{
+			padding: 5px 10px;
+			width: auto;
+			background: rgba(0,0,0,0.5);
+
+			&.on{
+				background: $linkColor;
+			}
+		}
+	}
+
 	#tera-select{
 		font-size: 20px;
 		min-width:100px;
@@ -303,7 +318,7 @@ input[type="text"]{
 		margin-bottom: 20px;
 	}
 
-	.boss-attack-types{
+	.item-list{
 		display: flex;
 		justify-content: flex-start;
 		max-width: 480px;
@@ -402,7 +417,7 @@ input[type="text"]{
 .water, [type="water"]{ @include typegradient(#35b5f7, #267ee7) }
 
 
-.type-item{
+.type-item, .trait-item{
 	box-sizing: border-box;
 	font-size: 14px;
 	width: 105px;
@@ -792,9 +807,11 @@ footer{
 
 	&.on{
 		span{
-			font-size: 11px;
-			padding-left: 3px;
-			line-height: 14px;
+			font-size: 18px;
+		    padding-left: 1px;
+		    line-height: 10px;
+		    font-weight: bold;
+		    overflow: hidden;
 			background: $linkColor;
 
 			&:after{

@@ -2092,7 +2092,11 @@
 	        "spD": 80,
 	        "spe": 75
 	    },
-		"traits": ["flash_fire"]
+		"traits": ["flash_fire"],
+		"defaults": {
+			"moveTypes": ["fire", "psychic", "ghost"],
+			"traits": ["flash_fire"]
+		}
 	}, {
 	    "name": "Ceruledge",
 	    "types": ["fire", "ghost"],
@@ -2105,7 +2109,11 @@
 	        "spD": 100,
 	        "spe": 85
 	    },
-		"traits": ["flash_fire"]
+		"traits": ["flash_fire"],
+		"defaults": {
+			"moveTypes": ["fire", "ghost", "psychic"],
+			"traits": ["flash_fire"]
+		}
 	}, {
 	    "name": "Barboach",
 	    "types": ["water", "ground"],
@@ -4332,7 +4340,11 @@
 	        "spD": 80,
 	        "spe": 50
 	    },
-		"traits": ["levitate"]
+		"traits": ["levitate"],
+		"defaults": {
+			"moveTypes": ["electric", "fire", "normal"],
+			"traits": ["levitate"]
+		}
 	}, {
 	    "name": "Mareanie",
 	    "types": ["poison", "water"],

@@ -69,7 +69,7 @@ if(isset($_COOKIE['settings'])){
 
 <link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
 
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>tera/css/tera-style.css?v=4">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>tera/css/tera-style.css?v=5">
 
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>
 

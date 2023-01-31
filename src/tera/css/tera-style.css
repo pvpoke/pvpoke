@@ -203,7 +203,7 @@ input[type=text] {
   margin-top: 0;
   margin-bottom: 15px;
 }
-.boss-section h4.attack-title {
+.boss-section h4.sub-title {
   margin-bottom: 10px;
 }
 .boss-section .pattern {
@@ -230,6 +230,18 @@ input[type=text] {
   background: linear-gradient(123deg, rgba(255, 255, 255, 0) 16%, white 23%, white 25%, rgba(255, 255, 255, 0) 29%, white 30%, rgba(255, 255, 255, 0) 33%);
   opacity: 0.2;
 }
+.boss-section .traits-container {
+  display: none;
+  margin-top: 20px;
+}
+.boss-section .traits-container .trait-item {
+  padding: 5px 10px;
+  width: auto;
+  background: rgba(0, 0, 0, 0.5);
+}
+.boss-section .traits-container .trait-item.on {
+  background: #990f44;
+}
 .boss-section #tera-select {
   font-size: 20px;
   min-width: 100px;
@@ -240,13 +252,13 @@ input[type=text] {
 .boss-section #poke-select {
   margin-bottom: 20px;
 }
-.boss-section .boss-attack-types {
+.boss-section .item-list {
   display: flex;
   justify-content: flex-start;
   max-width: 480px;
   flex-wrap: wrap;
 }
-.boss-section .boss-attack-types #attack-type-select {
+.boss-section .item-list #attack-type-select {
   margin: 10px 0 0 0;
   font-size: 14px;
   padding: 5px;
@@ -618,7 +630,7 @@ input[type=text] {
   background: linear-gradient(0deg, #267ee7 43%, #35b5f7 55%);
 }
 
-.type-item {
+.type-item, .trait-item {
   box-sizing: border-box;
   font-size: 14px;
   width: 105px;
@@ -627,32 +639,32 @@ input[type=text] {
   border-radius: 10px;
   overflow: hidden;
 }
-.type-item.tera {
+.type-item.tera, .trait-item.tera {
   border-top-left-radius: 0px;
   border-bottom-right-radius: 0px;
 }
-.type-item .type-name-container {
+.type-item .type-name-container, .trait-item .type-name-container {
   background: rgba(0, 0, 0, 0.1);
   align-items: center;
   flex-grow: 1;
 }
-.type-item .type-name-container .type-name {
+.type-item .type-name-container .type-name, .trait-item .type-name-container .type-name {
   padding: 5px 10px 5px 0;
   text-align: center;
   flex-grow: 1;
 }
-.type-item .tera-icon {
+.type-item .tera-icon, .trait-item .tera-icon {
   width: 18px;
   height: 18px;
   margin: 0 2px 0 5px;
 }
-.type-item a {
+.type-item a, .trait-item a {
   background: rgba(0, 0, 0, 0.5);
   padding: 5px;
   text-decoration: none;
   color: #fff;
 }
-.type-item a:hover {
+.type-item a:hover, .trait-item a:hover {
   background: rgba(0, 0, 0, 0.75);
 }
 
@@ -955,9 +967,11 @@ footer p:first-of-type {
   float: left;
 }
 .check.on span {
-  font-size: 11px;
-  padding-left: 3px;
-  line-height: 14px;
+  font-size: 18px;
+  padding-left: 1px;
+  line-height: 10px;
+  font-weight: bold;
+  overflow: hidden;
   background: #990f44;
 }
 .check.on span:after {

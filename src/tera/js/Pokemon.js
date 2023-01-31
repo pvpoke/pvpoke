@@ -2,7 +2,8 @@
 * The main Pokemon class used to represent individual Pokemon in battle
 */
 
-function Pokemon(id, tera){
+function Pokemon(id, tera, isBoss){
+	isBoss = typeof isBoss !== 'undefined' ? isBoss : false;
 
 	let gm = GameMaster.getInstance();
 	let self = this;
@@ -30,12 +31,23 @@ function Pokemon(id, tera){
 	};
 
 	this.opponent = null;
+	this.isBoss = isBoss;
+	this.defaults = null;
 
 	this.traits = [];
 
 	if(data.traits){
 		for(var i = 0; i < data.traits.length; i++){
 			this.traits.push(new Trait(data.traits[i]));
+		}
+	}
+
+	// For bosses, sort traits by type and enable default traits
+	if(this.isBoss){
+		this.traits.sort((a,b) => (a.type > b.type) ? 1 : ((b.type > a.type) ? -1 : 0));
+
+		if(data.defaults){
+			this.defaults = data.defaults;
 		}
 	}
 
@@ -92,6 +104,16 @@ function Pokemon(id, tera){
 		}
 	}
 
+	// Turn off all traits
+
+	this.disableAllTraits = function(id){
+		for(var i = 0; i < self.traits.length; i++){
+			let trait = self.traits[i];
+
+			trait.active = false;
+		}
+	}
+
 	// Returns whether a Pokemon has an active trait and its effect value
 
 	this.hasTrait = function(id){
@@ -101,6 +123,26 @@ function Pokemon(id, tera){
 			if(trait.id == id && trait.active){
 				return true;
 			}
+		}
+
+		return false;
+	}
+
+	// Return a URL string of enabled traits
+
+	this.getTraitURLStr = function(){
+		let traitIds = [];
+
+		for(var i = 0; i < self.traits.length; i++){
+			let trait = self.traits[i];
+
+			if(trait.active){
+				traitIds.push(trait.id);
+			}
+		}
+
+		if(traitIds.length > 0){
+			return traitIds.join("-");
 		}
 
 		return false;
@@ -118,5 +160,14 @@ function Pokemon(id, tera){
 		}
 
 		return activeTraits;
+	}
+
+	// Initialize defaults
+
+
+	if(this.defaults && this.defaults.traits){
+		for(var i = 0; i < this.defaults.traits.length; i++){
+			this.enableTrait(this.defaults.traits[i]);
+		}
 	}
 }
