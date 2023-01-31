@@ -39,6 +39,14 @@
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["EARTHQUAKE", "FIRE_PUNCH"]
 }, {
+    "speciesId": "gardevoir_mega",
+    "fastMove": "CHARM",
+    "chargedMoves": ["SYNCHRONOISE", "SHADOW_BALL"]
+}, {
+    "speciesId": "salamence_mega",
+    "fastMove": "DRAGON_TAIL",
+    "chargedMoves": ["OUTRAGE", "FIRE_BLAST"]
+}, {
     "speciesId": "gyarados",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["AQUA_TAIL", "CRUNCH"]

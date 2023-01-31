@@ -92,25 +92,6 @@
     "level25CP": 3435,
     "eliteMoves": ["SMACK_DOWN"]
 }, {
-    "dex": 282,
-    "speciesName": "Gardevoir (Mega)",
-    "speciesId": "gardevoir_mega",
-    "baseStats": {
-        "atk": 326,
-        "def": 229,
-        "hp": 169
-    },
-    "types": ["psychic", "fairy"],
-    "fastMoves": ["CHARGE_BEAM", "CONFUSION", "CHARM"],
-    "chargedMoves": ["DAZZLING_GLEAM", "PSYCHIC", "SHADOW_BALL", "SYNCHRONOISE"],
-    "defaultIVs": {
-        "cp1500": [12, 11, 8, 13],
-        "cp2500": [19.5, 15, 15, 13]
-    },
-    "tags": ["shadoweligible", "mega"],
-    "eliteMoves": ["SYNCHRONOISE"],
-    "level25CP": 2861
-}, {
     "dex": 302,
     "speciesName": "Sableye (Mega)",
     "speciesId": "sableye_mega",
