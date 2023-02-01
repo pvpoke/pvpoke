@@ -66,7 +66,7 @@
     },
     "types": ["bug", "fighting"],
     "fastMoves": ["COUNTER", "STRUGGLE_BUG"],
-    "chargedMoves": ["CLOSE_COMBAT", "EARTHQUAKE", "MEGAHORN"],
+    "chargedMoves": ["CLOSE_COMBAT", "EARTHQUAKE", "MEGAHORN", "ROCK_BLAST"],
     "tags": ["regional", "mega"],
     "defaultIVs": {
         "cp1500": [11.5, 5, 13, 6],
@@ -119,7 +119,7 @@
         "hp": 137
     },
     "types": ["steel", "fairy"],
-    "fastMoves": ["ASTONISH", "BITE", "FIRE_FANG", "ICE_FANG"],
+    "fastMoves": ["ASTONISH", "BITE", "FIRE_FANG", "ICE_FANG", "FAIRY_WIND"],
     "chargedMoves": ["IRON_HEAD", "PLAY_ROUGH", "VICE_GRIP", "POWER_UP_PUNCH"],
     "defaultIVs": {
         "cp1500": [23.5, 6, 5, 15],
@@ -172,30 +172,12 @@
         "hp": 172
     },
     "types": ["fire", "ground"],
-    "fastMoves": ["EMBER", "ROCK_SMASH"],
+    "fastMoves": ["EMBER", "ROCK_SMASH", "INCINERATE"],
     "chargedMoves": ["EARTHQUAKE", "OVERHEAT", "SOLAR_BEAM", "EARTH_POWER"],
     "defaultIVs": {
         "cp1500": [16.5, 10, 15, 15],
         "cp2500": [28.5, 6, 11, 13]
     }
-}, {
-    "dex": 359,
-    "speciesName": "Absol (Mega)",
-    "speciesId": "absol_mega",
-    "baseStats": {
-        "atk": 314,
-        "def": 130,
-        "hp": 163
-    },
-    "types": ["dark", "none"],
-    "fastMoves": ["PSYCHO_CUT", "SNARL"],
-    "chargedMoves": ["DARK_PULSE", "MEGAHORN", "THUNDER"],
-    "defaultIVs": {
-        "cp1500": [17, 6, 8, 10],
-        "cp2500": [27, 10, 13, 15]
-    },
-    "level25CP": 1534,
-    "tags": ["mega"]
 }, {
     "dex": 531,
     "speciesId": "audino_mega",
@@ -243,7 +225,8 @@
     },
     "types": ["dragon", "flying"],
     "fastMoves": ["AIR_SLASH", "DRAGON_TAIL"],
-    "chargedMoves": ["AERIAL_ACE", "ANCIENT_POWER", "OUTRAGE"],
+    "chargedMoves": ["AERIAL_ACE", "ANCIENT_POWER", "OUTRAGE", "HURRICANE"],
+    "eliteMoves": ["HURRICANE"],
     "tags": ["legendary", "mega"],
     "defaultIVs": {
         "cp1500": [11, 6, 5, 11],
@@ -260,7 +243,8 @@
     },
     "types": ["dragon", "ground"],
     "fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
-    "chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "OUTRAGE", "SAND_TOMB"],
+    "chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "OUTRAGE", "SAND_TOMB", "EARTH_POWER"],
+    "eliteMoves": ["EARTH_POWER"],
     "defaultIVs": {
         "cp1500": [10, 5, 14, 11],
         "cp2500": [17, 5, 7, 10]
