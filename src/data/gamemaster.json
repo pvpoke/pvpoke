@@ -34197,11 +34197,11 @@
         "archetype": "Spam/Bait"
     }, {
         "moveId": "BOOMBURST",
-        "name": "Boomburst",
+        "name": "Boomburst (Speculative)",
         "abbreviation": "BmB",
         "type": "normal",
         "power": 150,
-        "energy": 100,
+        "energy": 75,
         "energyGain": 0,
         "cooldown": 500,
         "archetype": "Nuke"
