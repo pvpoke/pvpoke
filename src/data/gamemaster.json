@@ -34196,6 +34196,16 @@
         "cooldown": 500,
         "archetype": "Spam/Bait"
     }, {
+        "moveId": "BOOMBURST",
+        "name": "Boomburst",
+        "abbreviation": "BmB",
+        "type": "normal",
+        "power": 150,
+        "energy": 100,
+        "energyGain": 0,
+        "cooldown": 500,
+        "archetype": "Nuke"
+    }, {
         "moveId": "BONE_CLUB",
         "name": "Bone Club",
         "type": "ground",
@@ -34219,11 +34229,11 @@
         "archetype": "Self-Debuff Nuke"
     }, {
         "moveId": "BREAKING_SWIPE",
-        "name": "Breaking Swipe (Speculative)",
+        "name": "Breaking Swipe",
         "abbreviation": "BkS",
         "type": "dragon",
         "power": 50,
-        "energy": 40,
+        "energy": 35,
         "energyGain": 0,
         "cooldown": 500,
         "buffs": [-1, 0],
