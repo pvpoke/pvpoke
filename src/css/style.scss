@@ -478,19 +478,22 @@ header{
 		.form-select-border{
 			position: absolute;
 		    top: 0;
-		    left: 8%;
-		    width: 13%;
-		    height: 10px;
+		    left: 4%;
+		    width: 27px;
+		    height: 11px;
 		    border-left: 1px dashed;
 		    border-bottom: 1px dashed;
-			opacity: .75;
+		    opacity: 0.75;
+		    display: block;
+		    border-bottom-left-radius: 4px;
 
 			&:after{
 				content: "\25B6";
 				position: absolute;
-			    left: 80%;
-			    top: 40%;
+			    left: 19px;
+			    top: 4px;
 			    font-size: 11px;
+				line-height: 14px;
 			}
 		}
 	}
