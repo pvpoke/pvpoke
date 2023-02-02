@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.29.21.22';
+$SITE_VERSION = '1.29.22';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -121,7 +121,7 @@ if(! isset($OG_IMAGE)){
 	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
 <?php endif; ?>
 
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=158">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=159">
 
 <?php if(strpos($META_TITLE, 'Train') !== false): ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=20">
@@ -132,7 +132,7 @@ if(! isset($OG_IMAGE)){
 <?php endif; ?>
 
 <?php if((isset($_SETTINGS->theme))&&($_SETTINGS->theme != "default")): ?>
-	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/themes/<?php echo $_SETTINGS->theme; ?>.css?v=22">
+	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/themes/<?php echo $_SETTINGS->theme; ?>.css?v=23">
 <?php endif; ?>
 
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>

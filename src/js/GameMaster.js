@@ -99,6 +99,22 @@ var GameMaster = (function () {
 			return pokemon;
 		}
 
+		// Return all Pokemon entries that have the provided dex number
+
+		object.getPokemonForms = function(dex){
+			var list = [];
+
+			$.each(object.data.pokemon, function(index, poke){
+
+				if(poke.dex == dex){
+					list.push(poke);
+					return;
+				}
+			});
+
+			return list;
+		}
+
 		// Returns the point value of a Pokemon in a tiered meta
 
 		object.getPokemonTier = function(id, cup){

@@ -5,6 +5,7 @@
 function PokeSelect(element, i){
 	var $el = element;
 	var $pokeSelect = $el.find("select.poke-select");
+	var $formSelect = $el.find("select.form-select");
 	var $tooltip = $el.find(".tooltip");
 	var $input = $el.find("input");
 	var gm = GameMaster.getInstance();
@@ -22,6 +23,7 @@ function PokeSelect(element, i){
 
 	var currentHP; // The currently animated HP
 	var currentEnergy; // The currently animated energy
+	var previousId = '';
 
 	this.init = function(pokes, b){
 		pokemon = pokes;
@@ -302,6 +304,51 @@ function PokeSelect(element, i){
 			} else{
 				$el.find(".mega-cp-container").hide();
 			}
+
+			// List related forms
+			if(previousId != selectedPokemon.speciesId){
+				previousId = selectedPokemon.speciesId;
+
+				$formSelect.find("option:not(:first-child)").remove();
+
+				var forms = gm.getPokemonForms(selectedPokemon.dex);
+
+				// Remove the selectedPokemon from the list of alternative forms
+				for(var i = 0; i < forms.length; i++){
+					if(forms[i].speciesId == selectedPokemon.speciesId){
+						forms.splice(i, 1);
+					}
+				}
+
+				if(forms.length > 0){
+					$el.find(".form-select-container").css("visibility", "visible");
+
+					if(forms.length > 1){
+						// Show the form select dropdown
+						$el.find(".form-select").show();
+						$el.find(".form-link").hide();
+
+
+						for(var i = 0; i < forms.length; i++){
+							if(forms[i].speciesId != selectedPokemon.speciesId){
+								$formSelect.append("<option value='"+forms[i].speciesId+"'>"+forms[i].speciesName+"</option>");
+							}
+						}
+					} else{
+						// Show a link to the alternative form
+
+						$el.find(".form-select").hide();
+						$el.find(".form-link").show();
+						$el.find(".form-link").text(forms[0].speciesName);
+						$el.find(".form-link").attr("value", forms[0].speciesId);
+					}
+				} else{
+					$el.find(".form-select-container").css("visibility", "hidden");
+				}
+
+				$formSelect.find("option").eq(0).prop("selected", "selected");
+			}
+
 		}
 	}
 
@@ -580,6 +627,24 @@ function PokeSelect(element, i){
 		$el.find("input.iv[iv='atk']").val(selectedPokemon.ivs.atk);
 		$el.find("input.iv[iv='def']").val(selectedPokemon.ivs.def);
 		$el.find("input.iv[iv='hp']").val(selectedPokemon.ivs.hp);
+	});
+
+	// Select different Pokemon form
+
+	$formSelect.on("change", function(e){
+		var id = $formSelect.find("option:selected").val();
+		$pokeSelect.find("option[value='"+id+"']").prop("selected", "selected");
+		$pokeSelect.trigger("change");
+		$formSelect.blur();
+	});
+
+	$el.find("a.form-link").click(function(e){
+		e.preventDefault();
+
+		var id = $(this).attr("value");
+		$pokeSelect.find("option[value='"+id+"']").prop("selected", "selected");
+		$pokeSelect.trigger("change");
+		$(this).blur();
 	});
 
 	// Select different move

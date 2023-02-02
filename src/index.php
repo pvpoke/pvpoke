@@ -41,14 +41,9 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.29.21 (December 18, 2022)</h4>
+	<h4>v1.29.22 (February 2, 2022)</h4>
 	<ul>
-		<li>Ranking category and sort updates:</li>
-		<ul>
-			<li>Ranking categories are now organized under a sort dropdown.</li>
-			<li>Rankings can also now be sorted by stat product, Attack, Defense, and Stamina stats.</li>
-			<li>Added a "meta" search string that displays Pokemon in that format's limited meta group.</li>
-		</ul>
+		<li>Added a form select dropdown to quickly select different forms of a Pokemon.</li>
 	</ul>
 
 	<h3>Latest Article</h3>

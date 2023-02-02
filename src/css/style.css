@@ -308,6 +308,7 @@ header {
 .poke input.poke-select, .poke select.poke-select {
   font-size: 18px;
   font-weight: bold;
+  border: 2px solid #000;
 }
 .poke input.poke-select option:checked, .poke select.poke-select option:checked {
   font-weight: bold;
@@ -316,6 +317,47 @@ header {
 }
 .poke input.charged, .poke select.charged {
   font-weight: bold;
+}
+.poke input.poke-search, .poke select.poke-search {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #000;
+  border-radius: 0;
+}
+.poke .form-select-container {
+  visibility: hidden;
+  position: relative;
+}
+.poke .form-select-container .form-select, .poke .form-select-container a.form-link {
+  display: block;
+  width: 75%;
+  margin: 10px 0 10px 25%;
+  font-size: 11px;
+  padding: 2px;
+  box-sizing: border-box;
+}
+.poke .form-select-container a.form-link {
+  background: #eee;
+  border-radius: 4px;
+  padding: 3px;
+  border: 1px solid;
+}
+.poke .form-select-container .form-select-border {
+  position: absolute;
+  top: 0;
+  left: 8%;
+  width: 13%;
+  height: 10px;
+  border-left: 1px dashed;
+  border-bottom: 1px dashed;
+  opacity: 0.75;
+}
+.poke .form-select-container .form-select-border:after {
+  content: "▶";
+  position: absolute;
+  left: 80%;
+  top: 40%;
+  font-size: 11px;
 }
 .poke button.auto-select {
   font-size: 11px;

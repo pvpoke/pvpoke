@@ -11,9 +11,18 @@
 		<option disabled selected value="">Select a Pokemon</option>
 	</select>
 
+	<div class="form-select-container">
+		<div class="form-select-border"></div>
+		<select class="form-select">
+			<option value="" selected disabled>Select another form</option>
+		</select>
+		<a class="form-link" href="#"></a>
+	</div>
+
 	<?php include 'pokebox.php'; ?>
 
 	<div class="poke-stats">
+
 		<h3 class="cp"><span class="identifier" title="Shadow"></span> cp <span class="stat"></span></h3>
 		<div class="types"></div>
 		<div class="stat-container attack clear">
@@ -129,7 +138,7 @@
 				</div>
 			</div>
 			<div class="shadow-section">
-				<h3 class="section-title">Pokemon Form</h3>
+				<h3 class="section-title">Shadow Form</h3>
 				<div class="form-group shadow-picker">
 					<div class="option on" value="normal">Normal</div>
 					<div class="option" value="shadow">Shadow</div>

@@ -125,6 +125,12 @@ h1 {
 .poke .poke-stats .dark, .poke .poke-stats .dragon, .poke .poke-stats .ghost {
   color: #eee;
 }
+.poke .form-select-container a.form-link {
+  background: #222;
+}
+.poke input.poke-search {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+}
 
 .check span {
   border: 2px solid #888;
