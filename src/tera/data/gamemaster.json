@@ -2094,7 +2094,7 @@
 	    },
 		"traits": ["flash_fire"],
 		"defaults": {
-			"moveTypes": ["fire", "psychic", "ghost"],
+			"moveTypes": ["fire", "psychic", "grass"],
 			"traits": ["flash_fire"]
 		}
 	}, {
@@ -2111,7 +2111,7 @@
 	    },
 		"traits": ["flash_fire"],
 		"defaults": {
-			"moveTypes": ["fire", "ghost", "psychic"],
+			"moveTypes": ["fire", "ghost", "dark"],
 			"traits": ["flash_fire"]
 		}
 	}, {
