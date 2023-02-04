@@ -43,11 +43,11 @@ function TeraRanker(){
 		// Score the Pokemon's base types offensively
 		let baseScore = 1;
 		let neutralEffectiveness = 1;
-		let attackerType1Effectiveness = self.getEffectivenessTraits(attacker.types[0], raidBoss.tera, attacker, raidBoss) * 1.5;
+		let attackerType1Effectiveness = self.getEffectivenessTraits(attacker.types[0], raidBoss.tera, attacker, raidBoss) * self.getStab(attacker, attacker.types[0], false);
 
 		// The Pokemon will use its most effective offensive type, or at worst a neutral non-STAB move
 		if(attacker.types.length > 1){
-			let attackerType2Effectiveness = self.getEffectivenessTraits(attacker.types[1], raidBoss.tera, attacker, raidBoss) * 1.5;
+			let attackerType2Effectiveness = self.getEffectivenessTraits(attacker.types[1], raidBoss.tera, attacker, raidBoss) * self.getStab(attacker, attacker.types[1], false);;
 			baseScore = Math.max(neutralEffectiveness, attackerType1Effectiveness, attackerType2Effectiveness);
 		} else{
 			baseScore = Math.max(neutralEffectiveness, attackerType1Effectiveness);
@@ -266,6 +266,8 @@ function TeraRanker(){
 		if(pokemon.types.indexOf(moveType) > -1 && moveType == teraType){
 			stab = 2;
 		}
+
+		stab = Trait.evaluateStab(stab, pokemon, moveType, teraType);
 
 		return stab;
 	}

@@ -59,7 +59,6 @@ function Pokemon(id, tera, isBoss){
 			value *= Trait.evaluateStat(name, self, self.opponent);
 		}
 
-
 		return value;
 	}
 

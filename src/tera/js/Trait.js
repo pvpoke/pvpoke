@@ -40,11 +40,20 @@ Trait.evaluateType = function(moveType, targetTypes, attacker, defender){
 		effect *= 0;
 	}
 
+	if(defender.hasTrait("volt_absorb") && moveType == "electric"){
+		effect *= 0;
+	}
+
 	if(defender.hasTrait("heatproof") && moveType == "fire"){
 		effect *= 0.5;
 	}
 
-	if(defender.hasTrait("levitate") && moveType == "ground"){
+	if(defender.hasTrait("sap_sipper") && moveType == "grass"){
+		effect *= 0;
+	}
+
+
+	if( (defender.hasTrait("levitate") || defender.hasTrait("earth_eater") ) && moveType == "ground"){
 		effect *= 0;
 	}
 
@@ -68,5 +77,32 @@ Trait.evaluateStat = function(stat, subject, opponent){
 		effect *= 2;
 	}
 
+	if(stat == "atk" && opponent.hasTrait("intimidate")){
+		effect *= .8;
+	}
+
+	if(stat == "spA" && subject.hasTrait("competitive") && opponent.hasTrait("intimidate")){
+		effect *= 1.5;
+	}
+
+	if(stat == "atk" && subject.hasTrait("defiant") && opponent.hasTrait("intimidate")){
+		effect *= 1.25;
+	}
+
 	return effect;
+}
+
+// Evaluate stat related traits and return the relevant multiplier
+
+Trait.evaluateStab = function(stab, attacker, moveType, teraType){
+
+	if((attacker.types.indexOf(moveType) > -1 || moveType == teraType) && attacker.hasTrait("adaptability")) {
+		stab = 2;
+	}
+
+	if(attacker.types.indexOf(moveType) > -1 && moveType == teraType && attacker.hasTrait("adaptability")){
+		stab = 2.25;
+	}
+
+	return stab;
 }
