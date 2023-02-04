@@ -5,57 +5,8 @@
 This started as a passion project that went from “I wonder what this would look like quick” to “uh oh, people are going to actually see this.” Just so you know what you’re getting into.
 
 ## Running PvPoke
-### Using docker
-You can easily run PvPoke using docker by following these steps:
 
-1. [Install docker](https://docs.docker.com/engine/install/)
-2. [Install docker-compose](https://docs.docker.com/compose/install/)
-3. Run PvPoke using the following command from the directory where you extracted (or cloned) PvPoke files:
-```bash
-$ docker-compose -f docker/docker-compose.yml up --build
-```
-4. In your browser, navigate to `localhost/pvpoke/src` and the site should run.
-
-This also works with [podman](https://podman.io/getting-started/installation) and [podman-compose](https://github.com/containers/podman-compose)
-
-### Manual Installation
-
-To begin, you’ll need:
-
-1. Apache (the server, not the attack helicopter)
-2. PHP (let’s say 5.6.3 or higher, I’m really not doing anything fancy here so you can probably go lower but I’m not sure PHP is something you want to play limbo with)
-
-If you’re starting from scratch, recommend installing your flavor of [XAMPP](https://www.apachefriends.org/index.html) or [MAMP](https://www.mamp.info/en/). Make sure to install the Apache and PHP modules. Once installed:
-
-1. Place the files within PvPoke’s `src` directory somewhere in your `htdocs` folder, preferably in its own subdirectory
-2. Run XAMPP or MAMP (from the control panel or through the “start” executable)
-3. In your browser, navigate to `localhost/{subdirectory}` and the site should run
-
-If you are running the site in a subdirectory, you’ll need to edit the `modules/config.php` file and change the `$WEB_ROOT` variable declaration to:
-
-`$WEB_ROOT = '/{subdirectory}/';`
-
-Because we’re flexible like that.
-
-If you haven’t already, you may need to change your Apache settings to allow .htaccess to modify incoming requests. If you’re using XAMPP, find the `apache/conf/httpd.config` file and change:
-
-```
-<Directory />
-    AllowOverride None
-    Require all denied
-</Directory>
-```
-
-To the following:
-
-```
-<Directory />
-    AllowOverride All
-    Require all denied
-</Directory>
-```
-
-You can also set this specifically for the project directory. You may need to restart the server afterward.
+See the [Installation](https://github.com/pvpoke/pvpoke/wiki/Installation) section of the PvPoke Wiki.
 
 ## Site Structure
 
@@ -85,6 +36,10 @@ Feel free to copy the `Ranker.js` or `RankerOverall.js` files and experiment wit
 ## Contributing
 
 I’m excited to work and collaborate with everyone who wants to be a part of this project, big or small. After all, I’m just a Pokemon fan probably like many of you. In this section, I want to be clear about the vision and scope I have in mind for this project to properly set expectations about contributing code, what may or may not be accepted, etc.
+
+### Documentation
+
+The [PvPoke Wiki](https://github.com/pvpoke/pvpoke/wiki/) has resources to help run and modify your own local version of the website, or help contribute code.
 
 ### Time Commitment
 
