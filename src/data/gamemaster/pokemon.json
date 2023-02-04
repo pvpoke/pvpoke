@@ -14345,7 +14345,7 @@
     "types": ["steel", "none"],
     "fastMoves": ["DRAGON_TAIL", "IRON_TAIL", "SMACK_DOWN"],
     "chargedMoves": ["HEAVY_SLAM", "STONE_EDGE", "THUNDER", "ROCK_TOMB", "METEOR_BEAM"],
-    "tags": ["mega"],
+    "tags": ["shadoweligible", "mega"],
     "defaultIVs": {
         "cp500": [4.5, 11, 15, 15],
         "cp1500": [13, 7, 12, 15],
@@ -14517,7 +14517,7 @@
     "types": ["electric", "none"],
     "fastMoves": ["CHARGE_BEAM", "SNARL", "THUNDER_FANG"],
     "chargedMoves": ["FLAME_BURST", "THUNDER", "WILD_CHARGE", "OVERHEAT", "PSYCHIC_FANGS"],
-    "tags": ["mega"],
+    "tags": ["shadoweligible", "mega"],
     "defaultIVs": {
         "cp500": [5.5, 5, 4, 11],
         "cp1500": [15, 9, 14, 14],
@@ -16417,7 +16417,7 @@
         "cp2500": [27.5, 4, 13, 15]
     },
     "level25CP": 1534,
-    "tags": ["mega"],
+    "tags": ["shadoweligible", "mega"],
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
     "released": true
@@ -17280,7 +17280,7 @@
     "fastMoves": ["DRAGON_BREATH", "ZEN_HEADBUTT", "CHARM"],
     "chargedMoves": ["OUTRAGE", "PSYCHIC", "THUNDER", "MIST_BALL"],
     "eliteMoves": ["MIST_BALL"],
-    "tags": ["legendary", "mega"],
+    "tags": ["legendary", "shadoweligible", "mega"],
     "defaultIVs": {
         "cp500": [4, 15, 11, 15],
         "cp1500": [11.5, 4, 10, 11],
@@ -17347,7 +17347,7 @@
     "fastMoves": ["DRAGON_BREATH", "ZEN_HEADBUTT"],
     "chargedMoves": ["DRAGON_CLAW", "PSYCHIC", "SOLAR_BEAM", "LUSTER_PURGE"],
     "eliteMoves": ["LUSTER_PURGE"],
-    "tags": ["legendary", "mega"],
+    "tags": ["legendary", "shadoweligible", "mega"],
     "defaultIVs": {
         "cp500": [4, 5, 11, 11],
         "cp1500": [11, 6, 14, 7],
