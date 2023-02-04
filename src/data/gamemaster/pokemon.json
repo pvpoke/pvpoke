@@ -28129,7 +28129,8 @@
     },
     "types": ["flying", "dragon"],
     "fastMoves": ["AIR_SLASH", "BITE"],
-    "chargedMoves": ["DRACO_METEOR", "HURRICANE", "HEAT_WAVE", "PSYCHIC"],
+    "chargedMoves": ["DRACO_METEOR", "HURRICANE", "HEAT_WAVE", "PSYCHIC", "BOOMBURST"],
+	"eliteMoves": ["BOOMBURST"],
     "defaultIVs": {
         "cp500": [7, 4, 10, 9],
         "cp1500": [20.5, 4, 8, 12],

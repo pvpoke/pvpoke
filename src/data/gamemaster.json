@@ -343,26 +343,18 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Premier Classic (Master League)",
-        "cup": "premierclassic",
-        "cp": 10000,
-        "meta": "masterpremierclassic",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Electric Cup",
-        "cup": "electric",
-        "cp": 1500,
-        "meta": "electric",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Ultra Premier",
         "cup": "premier",
         "cp": 2500,
         "meta": "premierultra",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Master Premier",
+        "cup": "premier",
+        "cp": 10000,
+        "meta": "premiermaster",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -28620,7 +28612,8 @@
         },
         "types": ["flying", "dragon"],
         "fastMoves": ["AIR_SLASH", "BITE"],
-        "chargedMoves": ["DRACO_METEOR", "HURRICANE", "HEAT_WAVE", "PSYCHIC"],
+        "chargedMoves": ["DRACO_METEOR", "HURRICANE", "HEAT_WAVE", "PSYCHIC", "BOOMBURST"],
+        "eliteMoves": ["BOOMBURST"],
         "defaultIVs": {
             "cp500": [7, 4, 10, 9],
             "cp1500": [20.5, 4, 8, 12],
@@ -34197,7 +34190,7 @@
         "archetype": "Spam/Bait"
     }, {
         "moveId": "BOOMBURST",
-        "name": "Boomburst (Speculative)",
+        "name": "Boomburst",
         "abbreviation": "BmB",
         "type": "normal",
         "power": 150,
