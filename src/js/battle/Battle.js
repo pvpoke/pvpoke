@@ -1100,7 +1100,6 @@ function Battle(){
 			);
 		}
 
-
 		// Check if opponent can KO in your fast move cooldown
 		while (queue.length != 0) {
 
@@ -1174,7 +1173,7 @@ function Battle(){
 
 		// If you can't throw a fast move and live, throw whatever move you can with the most damage
 		if (turnsToLive != -1) {
-			if(poke.hp <= opponent.fastMove.damage && opponent.fastMove.cooldown == 500){
+			if(poke.hp <= opponent.fastMove.damage * 2 && opponent.fastMove.cooldown == 500){
 				turnsToLive--;
 			}
 
@@ -1192,17 +1191,26 @@ function Battle(){
 				var maxDamageMoveIndex = 0;
 				var prevMoveDamage = -1;
 
-				for(var n = 0; n < poke.activeChargedMoves.length; n++) {
+				for(var n = poke.activeChargedMoves.length; n >= 0; n--) {
 
 					// Find highest damage available move
 					if (chargedMoveReady[n] == 0) {
 						var moveDamage = self.calculateDamage(poke, opponent, poke.activeChargedMoves[n]);
+
+						// If this move deals more damage than the other move, use it
 						if ((moveDamage > prevMoveDamage) && (prevMoveDamage < opponent.hp)){
 							maxDamageMoveIndex = poke.chargedMoves.indexOf(poke.activeChargedMoves[n]);
 							prevMoveDamage = moveDamage;
 						}
+
+						// If the Pokemon can fire two of this move and deal more damage, use it
+						if(poke.energy >= poke.activeChargedMoves[n].energy * 2 && poke.stats.atk > opponent.stats.atk && moveDamage * 2 > prevMoveDamage){
+							maxDamageMoveIndex = poke.chargedMoves.indexOf(poke.activeChargedMoves[n]);
+							prevMoveDamage = moveDamage * 2;
+						}
 					}
 				}
+
 
 				// If no moves available, throw fast move
 				if (prevMoveDamage == -1) {
@@ -1229,7 +1237,7 @@ function Battle(){
 
 		// Throw a lethal Charged Move if it will faint the opponent
 
-		if(! poke.farmEnergy){
+		if(! poke.farmEnergy && opponent.shields == 0){
 			for(var n = 0; n < poke.activeChargedMoves.length; n++) {
 				var move = poke.activeChargedMoves[n];
 				var moveIndex = poke.chargedMoves.indexOf(poke.activeChargedMoves[n]);
