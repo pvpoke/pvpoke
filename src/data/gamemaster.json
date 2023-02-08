@@ -21754,7 +21754,8 @@
         },
         "types": ["ghost", "dragon"],
         "fastMoves": ["DRAGON_TAIL", "SHADOW_CLAW"],
-        "chargedMoves": ["OMINOUS_WIND", "DRAGON_PULSE", "SHADOW_BALL"],
+        "chargedMoves": ["OMINOUS_WIND", "DRAGON_PULSE", "SHADOW_BALL", "SHADOW_FORCE"],
+        "eliteMoves": ["SHADOW_FORCE"],
         "tags": ["legendary"],
         "defaultIVs": {
             "cp500": [5, 15, 13, 15],
