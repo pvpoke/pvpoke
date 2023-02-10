@@ -467,8 +467,15 @@ var InterfaceMaster = (function () {
 					selectedTypes.push(selectedPokemon.types[i]);
 				}
 
-				if(selectedPokemon.defaults && selectedPokemon.defaults.moveTypes){
-					selectedTypes = selectedPokemon.defaults.moveTypes;
+				// Set any default moves, types, or traits
+				if(selectedPokemon.defaults){
+					if(selectedPokemon.defaults.moveTypes){
+						selectedTypes = selectedPokemon.defaults.moveTypes;
+					}
+
+					if(selectedPokemon.defaults.teraType){
+						selectedTera = selectedPokemon.defaults.teraType;
+					}
 				}
 
 				updateRaidBossDisplay();

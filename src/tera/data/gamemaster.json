@@ -5196,7 +5196,11 @@
 	        "spA": 103,
 	        "spD": 71,
 	        "spe": 122
-	    }
+	    },
+		"defaults": {
+			"moveTypes": ["water", "dark", "poison", "ice"],
+			"teraType": "poison"
+		}
 	}, {
 	    "name": "Wooper",
 	    "types": ["water", "ground"],
