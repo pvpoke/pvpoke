@@ -196,6 +196,20 @@
         "exclude": [],
         "partySize": 3
     }, {
+        "name": "hoenn",
+        "title": "Hoenn Cup",
+        "include": [{
+            "filterType": "dex",
+            "name": "Pokedex Number",
+            "values": [252, 386]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "name": "Tag",
+            "values": ["mega"]
+        }],
+        "overrides": []
+    }, {
         "name": "love",
         "title": "Love Cup",
         "include": [{
@@ -327,14 +341,6 @@
         "showMeta": false,
         "hideRankings": true
     }, {
-        "title": "Master League (Megas)",
-        "cup": "mega",
-        "cp": 10000,
-        "meta": "mastermega",
-        "showCup": false,
-        "showFormat": false,
-        "showMeta": true
-    }, {
         "title": "ML Overused",
         "cup": "overused",
         "cp": 10000,
@@ -359,10 +365,26 @@
         "showFormat": true,
         "showMeta": true
     }, {
+        "title": "Master League (Megas)",
+        "cup": "mega",
+        "cp": 10000,
+        "meta": "mastermega",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
         "title": "Love Cup",
         "cup": "love",
         "cp": 1500,
         "meta": "love",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Hoenn Cup",
+        "cup": "hoenn",
+        "cp": 1500,
+        "meta": "hoenn",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -17872,7 +17894,8 @@
         },
         "types": ["water", "none"],
         "fastMoves": ["WATERFALL"],
-        "chargedMoves": ["BLIZZARD", "HYDRO_PUMP", "THUNDER", "SURF"],
+        "chargedMoves": ["BLIZZARD", "HYDRO_PUMP", "THUNDER", "SURF", "ORIGIN_PULSE"],
+        "eliteMoves": ["ORIGIN_PULSE"],
         "tags": ["legendary"],
         "defaultIVs": {
             "cp500": [4.5, 15, 15, 14],
@@ -17894,7 +17917,8 @@
         },
         "types": ["water", "none"],
         "fastMoves": ["WATERFALL"],
-        "chargedMoves": ["BLIZZARD", "HYDRO_PUMP", "THUNDER", "SURF"],
+        "chargedMoves": ["BLIZZARD", "HYDRO_PUMP", "THUNDER", "SURF", "ORIGIN_PULSE"],
+        "eliteMoves": ["ORIGIN_PULSE"],
         "tags": ["legendary", "mega"],
         "defaultIVs": {
             "cp500": [3.5, 15, 11, 15],
@@ -17904,7 +17928,7 @@
         "searchPriority": 10,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": true
     }, {
         "dex": 383,
         "speciesName": "Groudon",
@@ -17916,14 +17940,14 @@
         },
         "types": ["ground", "none"],
         "fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
-        "chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "SOLAR_BEAM", "FIRE_PUNCH"],
+        "chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "SOLAR_BEAM", "FIRE_PUNCH", "PRECIPICE_BLADES"],
+        "eliteMoves": ["PRECIPICE_BLADES", "FIRE_PUNCH"],
         "tags": ["legendary"],
         "defaultIVs": {
             "cp500": [4.5, 15, 15, 14],
             "cp1500": [13.5, 6, 10, 9],
             "cp2500": [22.5, 5, 14, 7]
         },
-        "eliteMoves": ["FIRE_PUNCH"],
         "searchPriority": 20,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
@@ -17939,18 +17963,18 @@
         },
         "types": ["fire", "ground"],
         "fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
-        "chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "SOLAR_BEAM", "FIRE_PUNCH"],
+        "chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "SOLAR_BEAM", "FIRE_PUNCH", "PRECIPICE_BLADES"],
+        "eliteMoves": ["PRECIPICE_BLADES", "FIRE_PUNCH"],
         "tags": ["legendary", "mega"],
         "defaultIVs": {
             "cp500": [3.5, 15, 11, 15],
             "cp1500": [10.5, 6, 8, 13],
             "cp2500": [17, 11, 15, 13]
         },
-        "eliteMoves": ["FIRE_PUNCH"],
         "searchPriority": 20,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": true
     }, {
         "dex": 384,
         "speciesName": "Rayquaza",

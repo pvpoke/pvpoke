@@ -17389,7 +17389,8 @@
     },
     "types": ["water", "none"],
     "fastMoves": ["WATERFALL"],
-    "chargedMoves": ["BLIZZARD", "HYDRO_PUMP", "THUNDER", "SURF"],
+	"chargedMoves": ["BLIZZARD", "HYDRO_PUMP", "THUNDER", "SURF", "ORIGIN_PULSE"],
+	"eliteMoves": ["ORIGIN_PULSE"],
     "tags": ["legendary"],
     "defaultIVs": {
         "cp500": [4.5, 15, 15, 14],
@@ -17411,7 +17412,8 @@
     },
     "types": ["water", "none"],
     "fastMoves": ["WATERFALL"],
-    "chargedMoves": ["BLIZZARD", "HYDRO_PUMP", "THUNDER", "SURF"],
+    "chargedMoves": ["BLIZZARD", "HYDRO_PUMP", "THUNDER", "SURF", "ORIGIN_PULSE"],
+	"eliteMoves": ["ORIGIN_PULSE"],
     "tags": ["legendary", "mega"],
     "defaultIVs": {
         "cp500": [3.5, 15, 11, 15],
@@ -17421,7 +17423,7 @@
     "searchPriority": 10,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false
+    "released": true
 }, {
     "dex": 383,
     "speciesName": "Groudon",
@@ -17433,14 +17435,14 @@
     },
     "types": ["ground", "none"],
     "fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
-    "chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "SOLAR_BEAM", "FIRE_PUNCH"],
+    "chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "SOLAR_BEAM", "FIRE_PUNCH", "PRECIPICE_BLADES"],
+	"eliteMoves": ["PRECIPICE_BLADES", "FIRE_PUNCH"],
     "tags": ["legendary"],
     "defaultIVs": {
         "cp500": [4.5, 15, 15, 14],
         "cp1500": [13.5, 6, 10, 9],
         "cp2500": [22.5, 5, 14, 7]
     },
-    "eliteMoves": ["FIRE_PUNCH"],
     "searchPriority": 20,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
@@ -17456,18 +17458,18 @@
     },
     "types": ["fire", "ground"],
     "fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
-    "chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "SOLAR_BEAM", "FIRE_PUNCH"],
+	"chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "SOLAR_BEAM", "FIRE_PUNCH", "PRECIPICE_BLADES"],
+	"eliteMoves": ["PRECIPICE_BLADES", "FIRE_PUNCH"],
     "tags": ["legendary", "mega"],
     "defaultIVs": {
         "cp500": [3.5, 15, 11, 15],
         "cp1500": [10.5, 6, 8, 13],
         "cp2500": [17, 11, 15, 13]
     },
-    "eliteMoves": ["FIRE_PUNCH"],
     "searchPriority": 20,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false
+    "released": true
 }, {
     "dex": 384,
     "speciesName": "Rayquaza",

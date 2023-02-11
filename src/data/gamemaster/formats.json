@@ -10,15 +10,6 @@
 		"hideRankings": true
 	},
 	{
-		"title": "Master League (Megas)",
-		"cup": "mega",
-		"cp": 10000,
-		"meta": "mastermega",
-		"showCup": false,
-		"showFormat": false,
-		"showMeta": true
-	},
-	{
 		"title": "ML Overused",
 		"cup": "overused",
 		"cp": 10000,
@@ -46,10 +37,28 @@
 		"showMeta": true
 	},
 	{
+		"title": "Master League (Megas)",
+		"cup": "mega",
+		"cp": 10000,
+		"meta": "mastermega",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
 		"title": "Love Cup",
 		"cup": "love",
 		"cp": 1500,
 		"meta": "love",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Hoenn Cup",
+		"cup": "hoenn",
+		"cp": 1500,
+		"meta": "hoenn",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true

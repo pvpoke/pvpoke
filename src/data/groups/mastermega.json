@@ -35,9 +35,9 @@
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["SHADOW_BALL", "OMINOUS_WIND"]
 }, {
-    "speciesId": "groudon",
+    "speciesId": "groudon_primal",
     "fastMove": "MUD_SHOT",
-    "chargedMoves": ["EARTHQUAKE", "FIRE_PUNCH"]
+    "chargedMoves": ["PRECIPICE_BLADES", "FIRE_PUNCH"]
 }, {
     "speciesId": "gardevoir_mega",
     "fastMove": "CHARM",
@@ -55,9 +55,9 @@
     "fastMove": "INCINERATE",
     "chargedMoves": ["EARTHQUAKE", "BRAVE_BIRD"]
 }, {
-    "speciesId": "kyogre",
+    "speciesId": "kyogre_primal",
     "fastMove": "WATERFALL",
-    "chargedMoves": ["SURF", "BLIZZARD"]
+    "chargedMoves": ["SURF", "THUNDER"]
 }, {
     "speciesId": "kyogre",
     "fastMove": "WATERFALL",
@@ -193,7 +193,7 @@
 }, {
     "speciesId": "aggron_mega",
     "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["HEAVY_SLAM", "METEOR_BEAM"]
+    "chargedMoves": ["THUNDER", "METEOR_BEAM"]
 }, {
     "speciesId": "blaziken_mega",
     "fastMove": "COUNTER",

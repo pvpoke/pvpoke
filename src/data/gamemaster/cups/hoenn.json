@@ -1,0 +1,15 @@
+{
+    "name": "hoenn",
+    "title": "Hoenn Cup",
+    "include": [{
+        "filterType": "dex",
+        "name": "Pokedex Number",
+        "values": [252, 386]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "name": "Tag",
+        "values": ["mega"]
+    }],
+    "overrides": []
+}
