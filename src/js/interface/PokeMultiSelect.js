@@ -557,35 +557,26 @@ function PokeMultiSelect(element){
 	// Update the custom group selections when changing league
 
 	this.setCP = function(cp){
-		$el.find(".quick-fill-select option").hide();
-
-		switch(parseInt(cp)){
-			case 1500:
-				// Show all except Ultra and Master
-				$el.find(".quick-fill-select option").show();
-				$el.find(".quick-fill-select option[value='ultra']").hide();
-				$el.find(".quick-fill-select option[value='master']").hide();
-				$el.find(".quick-fill-select option[value='premier']").hide();
-				$el.find(".quick-fill-select option[value='little']").hide();
-				break;
-
-			case 2500:
-				$el.find(".quick-fill-select option[value='ultra']").show();
-				$el.find(".quick-fill-select option[type='ultra']").show();
-				break;
-
-			case 10000:
-				$el.find(".quick-fill-select option[value='master']").show();
-				$el.find(".quick-fill-select option[type='master']").show();
-				break;
-
-			case 500:
-				$el.find(".quick-fill-select option[value='little']").show();
-				$el.find(".quick-fill-select option[type='little']").show();
-				break;
+		// only show quick fill metas with same cp as selected
+		const leagueMap = {"littlegeneral": 500, "great": 1500, "ultra": 2500, "master": 10000}
+		$el.find(".quick-fill-select option").each(function(index, element) {
+			element = $(element);
+			// always show custom groups (from cookies) and create new group
+			if (element.attr("type") === "custom" || element.attr("value") === "new") {
+				element.show();
+				return;
+			}
+			var optionCP = leagueMap[element.attr("type")]
+			if (optionCP === cp) {
+				element.show();
+			} else {
+				element.hide();
+			}
+		});
+		// Load default meta group when switching to Multi Battle
+		if((self.battleMode == "multi") && (! settingGetParams)){
+			cupSelect.trigger("change");
 		}
-
-		$el.find(".quick-fill-select option[type='custom']").show();
 
 		battle.setCP(cp);
 

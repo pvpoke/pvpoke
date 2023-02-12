@@ -1972,6 +1972,32 @@ var InterfaceMaster = (function () {
 				window.history.pushState(data, "Battle", url);
 			}
 
+			// Helper function for making sure Multi Battle displays valid metas
+
+			function updateMultiBattleMetas() {
+				var cp = parseInt($(".league-select option:selected").val());
+				var cupSelect = $(".cup-select");
+				// only show groups with same cp as selected. update whenever league changes
+				cupSelect.find("option").each(function(index, element) {
+					element = $(element);
+					// always show open league and custom
+					if (element.attr("value") === "all" || element.attr("value") === "custom") {
+						element.show();
+						return;
+					}
+					var optionCP = parseInt(element.attr("cp"))
+					if (optionCP === cp) {
+						element.show();
+					} else {
+						element.hide();
+					}
+				});
+				// Load default meta group when switching to Multi Battle
+				if((self.battleMode == "multi") && (! settingGetParams)){
+					cupSelect.trigger("change");
+				}
+			}
+
 			// Event handler for changing the league select
 
 			function selectLeague(e){
@@ -2003,10 +2029,7 @@ var InterfaceMaster = (function () {
 					battle.setCup("classic");
 				}
 
-				// Load default meta group when switching to Multi Battle
-				if((self.battleMode == "multi") && (! settingGetParams)){
-					$(".cup-select").trigger("change");
-				}
+				updateMultiBattleMetas()
 
 				gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), cupName);
 			}
@@ -2061,7 +2084,7 @@ var InterfaceMaster = (function () {
 
 				// Load default meta group when switching to Multi Battle
 				if((self.battleMode == "multi") && (! settingGetParams)){
-					$(".cup-select").trigger("change");
+					updateMultiBattleMetas()
 				}
 
 				// When moving between Multi and Matrix, move multi custom group to the right Matrix group
