@@ -55,13 +55,13 @@
             "floor": 0,
             "tiers": [{
                 "points": 9,
-                "pokemon": ["altaria", "araquanid", "azumarill", "bastiodon", "deoxys_defense", "lickitung", "skarmory", "medicham", "registeel", "stunfisk_galarian", "walrein"]
+                "pokemon": ["altaria", "azumarill", "bastiodon", "lanturn", "lickitung", "medicham", "noctowl", "registeel", "sableye", "stunfisk_galarian", "trevenant"]
             }, {
                 "points": 5,
-                "pokemon": ["abomasnow", "chansey", "cofagrigus", "cresselia", "dewgong", "diggersby", "dragalge", "drapion", "ferrothorn", "galvantula", "hypno", "jellicent", "kommo_o", "lapras", "marowak_alolan", "machamp", "mandibuzz", "meganium", "nidoqueen", "ninetales_alolan", "noctowl", "pidgeot", "politoed", "regirock", "sableye", "scrafty", "serperior", "swampert", "talonflame", "tapu_fini", "trevenant", "tropius", "umbreon", "venusaur", "whiscash", "wobbuffet", "zweilous"]
+                "pokemon": ["abomasnow", "araquanid", "aurorus", "charizard", "cofagrigus", "cresselia", "deoxys_defense", "diggersby", "drapion", "dubwool", "froslass", "gliscor", "jellicent", "jumpluff", "mandibuzz", "obstagoon", "pelipper", "pidgeot", "regirock", "runerigus", "scrafty", "skarmory", "swampert", "tapu_fini", "toxapex", "tropius", "umbreon", "venusaur", "vigoroth", "walrein"]
             }, {
                 "points": 1,
-                "pokemon": ["aromatisse", "beedrill", "bronzong", "castform_rainy", "castform_sunny", "chesnaught", "clefable", "drifblim", "empoleon", "froslass", "gardevoir", "granbull", "greedent", "gengar", "golbat", "gourgeist_super", "gourgeist_large", "gourgeist_average", "gourgeist_small", "grimer_alolan", "haunter", "jirachi", "jumpluff", "lanturn", "lugia", "lurantis", "magcargo", "mantine", "melmetal", "mew", "muk_alolan", "ninetales", "obstagoon", "oranguru", "pachirisu", "pelipper", "probopass", "raichu_alolan", "roserade", "shiftry", "sirfetchd", "skuntank", "slurpuff", "spritzee", "steelix", "stunfisk", "sylveon", "toxicroak", "victreebel", "vigoroth", "whimsicott", "wigglytuff", "zapdos"]
+                "pokemon": ["beedrill", "bronzong", "buzzwole", "chansey", "chesnaught", "dragalge", "dewgong", "dragonair", "dragonite", "dunsparce", "empoleon", "ferrothorn", "galvantula", "gligar", "granbull", "greedent", "guzzlord", "hakamo_o", "qwilfish_hisuian", "hypno", "jirachi", "lapras", "lugia", "lurantis", "machamp", "magcargo", "mantine", "meganium", "marowak_alolan", "miltank", "mew", "muk_alolan", "ninetales", "nidoqueen", "overqwil", "pachirisu", "politoed", "probopass", "roserade", "sandslash_alolan", "serperior", "sirfetchd", "skuntank", "sneasler", "steelix", "talonflame", "tentacruel", "stunfisk", "toxicroak", "victini", "victreebel", "whiscash", "wigglytuff", "wobbuffet", "zweilous"]
             }]
         }
     }, {
@@ -502,7 +502,7 @@
         "dexStart": 808,
         "dexEnd": 898
     }],
-    "shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "venusaur_mega", "charmander", "charmeleon", "charizard", "charizard_mega_x", "charizard_mega_y", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "beedrill_mega", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "alakazam_mega", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "gyarados_mega", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "ampharos_mega", "bellossom", "politoed", "scizor", "scizor_mega", "houndour", "houndoom", "houndoom_mega", "larvitar", "pupitar", "tyranitar", "tyranitar_mega", "mudkip", "marshtomp", "swampert", "swampert_mega", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "gardevoir_mega", "trapinch", "vibrava", "flygon", "shuppet", "banette", "banette_mega", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "gallade_mega", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "sableye", "sableye_mega", "zapdos", "moltres", "delibird", "stantler", "absol", "bagon", "shelgon", "salamence", "salamence_mega", "snover", "abomasnow", "abomasnow_mega", "raikou", "vulpix", "ninetales", "exeggcute", "exeggutor", "omanyte", "omastar", "misdreavus", "mismagius", "carvanha", "sharpedo", "sharpedo_mega", "pinsir", "pinsir_mega", "mawile", "mawile_mega", "beldum", "metang", "metagross", "metagross_mega", "entei", "ekans", "arbok", "koffing", "weezing", "nidoran_female", "nidorina", "nidoran_male", "nidorino", "nidoqueen", "nidoking", "machop", "machoke", "machamp", "gligar", "gliscor", "shuckle", "stunky", "skuntank", "suicune", "pineco", "forretress", "mewtwo", "mewtwo_mega_x", "mewtwo_mega_y", "diglett", "dugtrio", "shellder", "cloyster", "slowpoke", "slowbro", "slowking", "aerodactyl", "skarmory", "teddiursa", "ursaring", "hoppip", "skiploom", "jumpluff", "wooper", "quagsire", "swinub", "piloswine", "mamoswine", "nosepass", "probopass", "aron", "lairon", "aggron", "spheal", "sealeo", "walrein", "lileep", "cradily", "anorith", "armaldo", "aipom", "ambipom", "skorupi", "drapion", "poochyena", "mightyena", "murkrow", "honchkrow", "electrike", "manectric", "snubbull", "granbull", "makuhita", "hariyama", "starly", "staravia", "staraptor", "tangela", "tangrowth", "horsea", "seadra", "kingdra", "ho_oh", "bidoof", "bibarel", "cacnea", "cacturne", "lugia", "voltorb", "electrode", "chikorita", "bayleef", "meganium", "cyndaquil", "quilava", "typhlosion", "totodile", "croconaw", "feraligatr", "whismur", "loudred", "exploud", "hippopotas", "hippowdon", "rattata_alolan", "raticate_alolan", "sandshrew_alolan", "sandslash_alolan", "exeggutor_alolan", "sudowoodo", "girafarig", "numel", "camerupt", "latias", "exeggutor_alolan", "marowak_alolan", "geodude", "graveler", "golem", "shinx", "luxio", "luxray", "purrloin", "liepard", "latios", "foongus", "amoonguss", "patrat", "watchog", "ducklett", "swanna", "ursaluna", "diglett_alolan", "dugtrio_alolan", "onix", "steelix", "natu", "xatu", "wailmer", "wailord", "golett", "golurk", "vulpix_alolan", "ninetales_alolan", "spoink", "grumpig", "blitzle", "zebstrika", "joltik", "galvantula", "registeel"],
+    "shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "venusaur_mega", "charmander", "charmeleon", "charizard", "charizard_mega_x", "charizard_mega_y", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "beedrill_mega", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "alakazam_mega", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "gyarados_mega", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "ampharos_mega", "bellossom", "politoed", "scizor", "scizor_mega", "houndour", "houndoom", "houndoom_mega", "larvitar", "pupitar", "tyranitar", "tyranitar_mega", "mudkip", "marshtomp", "swampert", "swampert_mega", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "gardevoir_mega", "trapinch", "vibrava", "flygon", "shuppet", "banette", "banette_mega", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "gallade_mega", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "sableye", "sableye_mega", "zapdos", "moltres", "delibird", "stantler", "absol", "bagon", "shelgon", "salamence", "salamence_mega", "snover", "abomasnow", "abomasnow_mega", "raikou", "vulpix", "ninetales", "exeggcute", "exeggutor", "omanyte", "omastar", "misdreavus", "mismagius", "carvanha", "sharpedo", "sharpedo_mega", "pinsir", "pinsir_mega", "mawile", "mawile_mega", "beldum", "metang", "metagross", "metagross_mega", "entei", "ekans", "arbok", "koffing", "weezing", "nidoran_female", "nidorina", "nidoran_male", "nidorino", "nidoqueen", "nidoking", "machop", "machoke", "machamp", "gligar", "gliscor", "shuckle", "stunky", "skuntank", "suicune", "pineco", "forretress", "mewtwo", "mewtwo_mega_x", "mewtwo_mega_y", "diglett", "dugtrio", "shellder", "cloyster", "slowpoke", "slowbro", "slowking", "aerodactyl", "skarmory", "teddiursa", "ursaring", "hoppip", "skiploom", "jumpluff", "wooper", "quagsire", "swinub", "piloswine", "mamoswine", "nosepass", "probopass", "aron", "lairon", "aggron", "spheal", "sealeo", "walrein", "lileep", "cradily", "anorith", "armaldo", "aipom", "ambipom", "skorupi", "drapion", "poochyena", "mightyena", "murkrow", "honchkrow", "electrike", "manectric", "snubbull", "granbull", "makuhita", "hariyama", "starly", "staravia", "staraptor", "tangela", "tangrowth", "horsea", "seadra", "kingdra", "ho_oh", "bidoof", "bibarel", "cacnea", "cacturne", "lugia", "voltorb", "electrode", "chikorita", "bayleef", "meganium", "cyndaquil", "quilava", "typhlosion", "totodile", "croconaw", "feraligatr", "whismur", "loudred", "exploud", "hippopotas", "hippowdon", "rattata_alolan", "raticate_alolan", "sandshrew_alolan", "sandslash_alolan", "exeggutor_alolan", "sudowoodo", "girafarig", "numel", "camerupt", "latias", "exeggutor_alolan", "marowak_alolan", "geodude", "graveler", "golem", "shinx", "luxio", "luxray", "purrloin", "liepard", "latios", "foongus", "amoonguss", "patrat", "watchog", "ducklett", "swanna", "ursaluna", "diglett_alolan", "dugtrio_alolan", "onix", "steelix", "natu", "xatu", "wailmer", "wailord", "golett", "golurk", "vulpix_alolan", "ninetales_alolan", "spoink", "grumpig", "blitzle", "zebstrika", "joltik", "galvantula", "registeel", "salamence_mega", "aggron_mega", "manectric_mega", "gardevoir_mega", "latios_mega", "latias_mega"],
     "pokemon": [{
         "dex": 1,
         "speciesName": "Bulbasaur",
@@ -13947,6 +13947,29 @@
         }
     }, {
         "dex": 282,
+        "speciesName": "Gardevoir (Mega)",
+        "speciesId": "gardevoir_mega",
+        "baseStats": {
+            "atk": 326,
+            "def": 229,
+            "hp": 169
+        },
+        "types": ["psychic", "fairy"],
+        "fastMoves": ["CHARGE_BEAM", "CONFUSION", "CHARM"],
+        "chargedMoves": ["DAZZLING_GLEAM", "PSYCHIC", "SHADOW_BALL", "SYNCHRONOISE"],
+        "defaultIVs": {
+            "cp500": [4, 15, 15, 15],
+            "cp1500": [12, 11, 8, 13],
+            "cp2500": [19.5, 15, 15, 13]
+        },
+        "tags": ["shadoweligible", "mega"],
+        "eliteMoves": ["SYNCHRONOISE"],
+        "level25CP": 2861,
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true
+    }, {
+        "dex": 282,
         "speciesName": "Gardevoir (Shadow)",
         "speciesId": "gardevoir_shadow",
         "baseStats": {
@@ -13971,29 +13994,6 @@
             "id": "FAMILY_RALTS",
             "parent": "kirlia_shadow"
         }
-    }, {
-        "dex": 282,
-        "speciesName": "Gardevoir (Mega)",
-        "speciesId": "gardevoir_mega",
-        "baseStats": {
-            "atk": 326,
-            "def": 229,
-            "hp": 169
-        },
-        "types": ["psychic", "fairy"],
-        "fastMoves": ["CHARGE_BEAM", "CONFUSION", "CHARM"],
-        "chargedMoves": ["DAZZLING_GLEAM", "PSYCHIC", "SHADOW_BALL", "SYNCHRONOISE"],
-        "defaultIVs": {
-            "cp500": [4, 15, 15, 15],
-            "cp1500": [12, 11, 8, 13],
-            "cp2500": [19.5, 15, 15, 13]
-        },
-        "tags": ["shadoweligible", "mega"],
-        "eliteMoves": ["SYNCHRONOISE"],
-        "level25CP": 2861,
-        "buddyDistance": 5,
-        "thirdMoveCost": 75000,
-        "released": true
     }, {
         "dex": 283,
         "speciesName": "Surskit",
@@ -14856,7 +14856,7 @@
         "types": ["steel", "none"],
         "fastMoves": ["DRAGON_TAIL", "IRON_TAIL", "SMACK_DOWN"],
         "chargedMoves": ["HEAVY_SLAM", "STONE_EDGE", "THUNDER", "ROCK_TOMB", "METEOR_BEAM"],
-        "tags": ["mega"],
+        "tags": ["shadoweligible", "mega"],
         "defaultIVs": {
             "cp500": [4.5, 11, 15, 15],
             "cp1500": [13, 7, 12, 15],
@@ -14864,7 +14864,8 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
-        "released": "true"
+        "released": true,
+        "level25CP": 2629
     }, {
         "dex": 306,
         "speciesName": "Aggron (Shadow)",
@@ -15030,7 +15031,7 @@
         "types": ["electric", "none"],
         "fastMoves": ["CHARGE_BEAM", "SNARL", "THUNDER_FANG"],
         "chargedMoves": ["FLAME_BURST", "THUNDER", "WILD_CHARGE", "OVERHEAT", "PSYCHIC_FANGS"],
-        "tags": ["mega"],
+        "tags": ["shadoweligible", "mega"],
         "defaultIVs": {
             "cp500": [5.5, 5, 4, 11],
             "cp1500": [15, 9, 14, 14],
@@ -15042,7 +15043,8 @@
         "family": {
             "id": "FAMILY_ELECTRIKE",
             "parent": "electrike"
-        }
+        },
+        "level25CP": 2238
     }, {
         "dex": 310,
         "speciesName": "Manectric (Shadow)",
@@ -16932,7 +16934,7 @@
             "cp2500": [27.5, 4, 13, 15]
         },
         "level25CP": 1534,
-        "tags": ["mega"],
+        "tags": ["shadoweligible", "mega"],
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
@@ -17797,7 +17799,7 @@
         "fastMoves": ["DRAGON_BREATH", "ZEN_HEADBUTT", "CHARM"],
         "chargedMoves": ["OUTRAGE", "PSYCHIC", "THUNDER", "MIST_BALL"],
         "eliteMoves": ["MIST_BALL"],
-        "tags": ["legendary", "mega"],
+        "tags": ["legendary", "shadoweligible", "mega"],
         "defaultIVs": {
             "cp500": [4, 15, 11, 15],
             "cp1500": [11.5, 4, 10, 11],
@@ -17805,7 +17807,8 @@
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": true
+        "released": true,
+        "level25CP": 3062
     }, {
         "dex": 380,
         "speciesName": "Latias (Shadow)",
@@ -17864,7 +17867,7 @@
         "fastMoves": ["DRAGON_BREATH", "ZEN_HEADBUTT"],
         "chargedMoves": ["DRAGON_CLAW", "PSYCHIC", "SOLAR_BEAM", "LUSTER_PURGE"],
         "eliteMoves": ["LUSTER_PURGE"],
-        "tags": ["legendary", "mega"],
+        "tags": ["legendary", "shadoweligible", "mega"],
         "defaultIVs": {
             "cp500": [4, 5, 11, 11],
             "cp1500": [11, 6, 14, 7],
@@ -17872,7 +17875,8 @@
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": true
+        "released": true,
+        "level25CP": 3198
     }, {
         "dex": 381,
         "speciesName": "Latios (Shadow)",

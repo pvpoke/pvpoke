@@ -3839,7 +3839,7 @@
     "tags": ["shadoweligible", "mega"],
     "level25CP": 2846,
     "eliteMoves": ["COUNTER", "DAZZLING_GLEAM", "PSYCHIC"],
-	"buddyDistance": 3,
+    "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true
 }, {
@@ -10723,7 +10723,7 @@
     },
     "tags": ["shadoweligible", "mega"],
     "level25CP": 2581,
-	"buddyDistance": 5,
+    "buddyDistance": 5,
     "thirdMoveCost": 75000,
     "released": true,
     "family": {
@@ -13442,6 +13442,29 @@
     }
 }, {
     "dex": 282,
+    "speciesName": "Gardevoir (Mega)",
+    "speciesId": "gardevoir_mega",
+    "baseStats": {
+        "atk": 326,
+        "def": 229,
+        "hp": 169
+    },
+    "types": ["psychic", "fairy"],
+    "fastMoves": ["CHARGE_BEAM", "CONFUSION", "CHARM"],
+    "chargedMoves": ["DAZZLING_GLEAM", "PSYCHIC", "SHADOW_BALL", "SYNCHRONOISE"],
+    "defaultIVs": {
+        "cp500": [4, 15, 15, 15],
+        "cp1500": [12, 11, 8, 13],
+        "cp2500": [19.5, 15, 15, 13]
+    },
+    "tags": ["shadoweligible", "mega"],
+    "eliteMoves": ["SYNCHRONOISE"],
+    "level25CP": 2861,
+    "buddyDistance": 5,
+    "thirdMoveCost": 75000,
+    "released": true
+}, {
+    "dex": 282,
     "speciesName": "Gardevoir (Shadow)",
     "speciesId": "gardevoir_shadow",
     "baseStats": {
@@ -13466,29 +13489,6 @@
         "id": "FAMILY_RALTS",
         "parent": "kirlia_shadow"
     }
-}, {
-    "dex": 282,
-    "speciesName": "Gardevoir (Mega)",
-    "speciesId": "gardevoir_mega",
-    "baseStats": {
-        "atk": 326,
-        "def": 229,
-        "hp": 169
-    },
-    "types": ["psychic", "fairy"],
-    "fastMoves": ["CHARGE_BEAM", "CONFUSION", "CHARM"],
-    "chargedMoves": ["DAZZLING_GLEAM", "PSYCHIC", "SHADOW_BALL", "SYNCHRONOISE"],
-    "defaultIVs": {
-		"cp500": [4, 15, 15, 15],
-        "cp1500": [12, 11, 8, 13],
-        "cp2500": [19.5, 15, 15, 13]
-    },
-    "tags": ["shadoweligible", "mega"],
-    "eliteMoves": ["SYNCHRONOISE"],
-    "level25CP": 2861,
-	"buddyDistance": 5,
-    "thirdMoveCost": 75000,
-	"released": true
 }, {
     "dex": 283,
     "speciesName": "Surskit",
@@ -14357,9 +14357,10 @@
         "cp1500": [13, 7, 12, 15],
         "cp2500": [22, 5, 14, 13]
     },
-	"buddyDistance": 1,
+    "buddyDistance": 1,
     "thirdMoveCost": 10000,
-    "released": "true"
+    "released": true,
+    "level25CP": 2629
 }, {
     "dex": 306,
     "speciesName": "Aggron (Shadow)",
@@ -14537,7 +14538,8 @@
     "family": {
         "id": "FAMILY_ELECTRIKE",
         "parent": "electrike"
-    }
+    },
+    "level25CP": 2238
 }, {
     "dex": 310,
     "speciesName": "Manectric (Shadow)",
@@ -16203,7 +16205,7 @@
         "cp2500": [25, 9, 12, 15]
     },
     "level25CP": 2240,
-	"buddyDistance": 3,
+    "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "tags": ["shadoweligible", "mega"],
     "released": true
@@ -16975,8 +16977,8 @@
     "level25CP": 3220,
     "tags": ["shadoweligible", "mega"],
     "eliteMoves": ["OUTRAGE"],
-	"buddyDistance": 5,
-	"thirdMoveCost": 75000,
+    "buddyDistance": 5,
+    "thirdMoveCost": 75000,
     "released": true
 }, {
     "dex": 373,
@@ -17300,7 +17302,8 @@
     },
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": true
+    "released": true,
+    "level25CP": 3062
 }, {
     "dex": 380,
     "speciesName": "Latias (Shadow)",
@@ -17367,7 +17370,8 @@
     },
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": true
+    "released": true,
+    "level25CP": 3198
 }, {
     "dex": 381,
     "speciesName": "Latios (Shadow)",
@@ -17401,8 +17405,8 @@
     },
     "types": ["water", "none"],
     "fastMoves": ["WATERFALL"],
-	"chargedMoves": ["BLIZZARD", "HYDRO_PUMP", "THUNDER", "SURF", "ORIGIN_PULSE"],
-	"eliteMoves": ["ORIGIN_PULSE"],
+    "chargedMoves": ["BLIZZARD", "HYDRO_PUMP", "THUNDER", "SURF", "ORIGIN_PULSE"],
+    "eliteMoves": ["ORIGIN_PULSE"],
     "tags": ["legendary"],
     "defaultIVs": {
         "cp500": [4.5, 15, 15, 14],
@@ -17425,7 +17429,7 @@
     "types": ["water", "none"],
     "fastMoves": ["WATERFALL"],
     "chargedMoves": ["BLIZZARD", "HYDRO_PUMP", "THUNDER", "SURF", "ORIGIN_PULSE"],
-	"eliteMoves": ["ORIGIN_PULSE"],
+    "eliteMoves": ["ORIGIN_PULSE"],
     "tags": ["legendary", "mega"],
     "defaultIVs": {
         "cp500": [3.5, 15, 11, 15],
@@ -17448,7 +17452,7 @@
     "types": ["ground", "none"],
     "fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
     "chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "SOLAR_BEAM", "FIRE_PUNCH", "PRECIPICE_BLADES"],
-	"eliteMoves": ["PRECIPICE_BLADES", "FIRE_PUNCH"],
+    "eliteMoves": ["PRECIPICE_BLADES", "FIRE_PUNCH"],
     "tags": ["legendary"],
     "defaultIVs": {
         "cp500": [4.5, 15, 15, 14],
@@ -17470,8 +17474,8 @@
     },
     "types": ["fire", "ground"],
     "fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
-	"chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "SOLAR_BEAM", "FIRE_PUNCH", "PRECIPICE_BLADES"],
-	"eliteMoves": ["PRECIPICE_BLADES", "FIRE_PUNCH"],
+    "chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "SOLAR_BEAM", "FIRE_PUNCH", "PRECIPICE_BLADES"],
+    "eliteMoves": ["PRECIPICE_BLADES", "FIRE_PUNCH"],
     "tags": ["legendary", "mega"],
     "defaultIVs": {
         "cp500": [3.5, 15, 11, 15],
@@ -21286,7 +21290,7 @@
     "types": ["ghost", "dragon"],
     "fastMoves": ["DRAGON_TAIL", "SHADOW_CLAW"],
     "chargedMoves": ["OMINOUS_WIND", "DRAGON_PULSE", "SHADOW_BALL", "SHADOW_FORCE"],
-	"eliteMoves": ["SHADOW_FORCE"],
+    "eliteMoves": ["SHADOW_FORCE"],
     "tags": ["legendary"],
     "defaultIVs": {
         "cp500": [5, 15, 13, 15],
@@ -28145,7 +28149,7 @@
     "types": ["flying", "dragon"],
     "fastMoves": ["AIR_SLASH", "BITE"],
     "chargedMoves": ["DRACO_METEOR", "HURRICANE", "HEAT_WAVE", "PSYCHIC", "BOOMBURST"],
-	"eliteMoves": ["BOOMBURST"],
+    "eliteMoves": ["BOOMBURST"],
     "defaultIVs": {
         "cp500": [7, 4, 10, 9],
         "cp1500": [20.5, 4, 8, 12],
