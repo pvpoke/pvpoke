@@ -1972,8 +1972,19 @@ var InterfaceMaster = (function () {
 				window.history.pushState(data, "Battle", url);
 			}
 
-			// Helper function for making sure Multi Battle displays valid metas
+			// Safari doesn't let you hide select options
+			// https://stackoverflow.com/questions/36066953/css-hide-options-from-select-menu-on-iphone-safari
+			function showElement(element) {
+				element.show();
+				if( ($(element).parent().is('span')) ) $(element).unwrap();
+			}
 
+			function hideElement(element) {
+				element.hide();
+				if( !($(element).parent().is('span')) ) $(element).wrap('<span>');
+			}
+
+			// Helper function for making sure Multi Battle displays valid metas
 			function updateMultiBattleMetas() {
 				var cp = parseInt($(".league-select option:selected").val());
 				var cupSelect = $(".cup-select");
@@ -1982,14 +1993,14 @@ var InterfaceMaster = (function () {
 					element = $(element);
 					// always show open league and custom
 					if (element.attr("value") === "all" || element.attr("value") === "custom") {
-						element.show();
+						showElement(element);
 						return;
 					}
 					var optionCP = parseInt(element.attr("cp"))
 					if (optionCP === cp) {
-						element.show();
+						showElement(element);
 					} else {
-						element.hide();
+						hideElement(element);
 					}
 				});
 				// Load default meta group when switching to Multi Battle
@@ -2075,6 +2086,7 @@ var InterfaceMaster = (function () {
 					// Update document title and favicon
 					document.title = "Matrix | PvPoke";
 					$("#favicon").attr("href", webRoot+"img/favicon_matrix.png");
+					updateMultiBattleMetas();
 				}
 
 				if(self.battleMode == "multi"){
@@ -2084,7 +2096,7 @@ var InterfaceMaster = (function () {
 
 				// Load default meta group when switching to Multi Battle
 				if((self.battleMode == "multi") && (! settingGetParams)){
-					updateMultiBattleMetas()
+					updateMultiBattleMetas();
 				}
 
 				// When moving between Multi and Matrix, move multi custom group to the right Matrix group
