@@ -3839,6 +3839,8 @@
     "tags": ["shadoweligible", "mega"],
     "level25CP": 2846,
     "eliteMoves": ["COUNTER", "DAZZLING_GLEAM", "PSYCHIC"],
+	"buddyDistance": 3,
+    "thirdMoveCost": 50000,
     "released": true
 }, {
     "dex": 65,
@@ -10721,7 +10723,9 @@
     },
     "tags": ["shadoweligible", "mega"],
     "level25CP": 2581,
-    "released": "true",
+	"buddyDistance": 5,
+    "thirdMoveCost": 75000,
+    "released": true,
     "family": {
         "id": "FAMILY_SCYTHER",
         "parent": "scyther"
@@ -13482,6 +13486,8 @@
     "tags": ["shadoweligible", "mega"],
     "eliteMoves": ["SYNCHRONOISE"],
     "level25CP": 2861,
+	"buddyDistance": 5,
+    "thirdMoveCost": 75000,
 	"released": true
 }, {
     "dex": 283,
@@ -14351,6 +14357,8 @@
         "cp1500": [13, 7, 12, 15],
         "cp2500": [22, 5, 14, 13]
     },
+	"buddyDistance": 1,
+    "thirdMoveCost": 10000,
     "released": "true"
 }, {
     "dex": 306,
@@ -16195,6 +16203,8 @@
         "cp2500": [25, 9, 12, 15]
     },
     "level25CP": 2240,
+	"buddyDistance": 3,
+    "thirdMoveCost": 50000,
     "tags": ["shadoweligible", "mega"],
     "released": true
 }, {
@@ -16965,6 +16975,8 @@
     "level25CP": 3220,
     "tags": ["shadoweligible", "mega"],
     "eliteMoves": ["OUTRAGE"],
+	"buddyDistance": 5,
+	"thirdMoveCost": 75000,
     "released": true
 }, {
     "dex": 373,
