@@ -1344,6 +1344,11 @@ var InterfaceMaster = (function () {
 					}
 
 					partner.partnerScore = (0.75 * partnerScore) + (0.25 * partnerScore * (partner.score / 100)); // Multiply by overall ranking to show higher ranked Pokemon first
+
+					// Exclude Megas from the partners of other Megas
+					if(pokemon.hasTag("mega") && partner.hasTag("mega")){
+						partner.partnerScore = 0;
+					}
 				}
 
 				metaGroup.sort((a,b) => (a.partnerScore > b.partnerScore) ? -1 : ((b.partnerScore > a.partnerScore) ? 1 : 0));
