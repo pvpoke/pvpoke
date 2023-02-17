@@ -487,6 +487,7 @@ var InterfaceMaster = (function () {
 
 				if(selectedTera){
 					$(".boss-section .tera-type-container .tera-icon").show();
+					$(".boss-section #tera-select option[value='"+selectedTera+"']").prop("selected", "selected");
 				} else{
 					$(".boss-section .tera-type-container .tera-icon").hide();
 				}

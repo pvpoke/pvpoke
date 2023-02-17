@@ -1644,7 +1644,8 @@
 	        "spe": 102
 	    },
 		"defaults": {
-			"moveTypes": ["dragon", "ground", "rock", "steel"]
+			"moveTypes": ["dragon", "ground", "rock", "steel"],
+			"teraType": "ground"
 		}
 	}, {
 	    "name": "Nacli",
@@ -2377,7 +2378,8 @@
 	        "spe": 60
 	    },
 		"defaults": {
-			"moveTypes": ["fairy", "normal"]
+			"moveTypes": ["fairy", "normal"],
+			"teraType": "fairy"
 		}
 	}, {
 	    "name": "Dunsparce",
