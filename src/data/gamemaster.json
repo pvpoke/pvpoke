@@ -17927,9 +17927,9 @@
         "speciesName": "Kyogre (Primal)",
         "speciesId": "kyogre_primal",
         "baseStats": {
-            "atk": 331,
-            "def": 251,
-            "hp": 205
+            "atk": 353,
+            "def": 268,
+            "hp": 218
         },
         "types": ["water", "none"],
         "fastMoves": ["WATERFALL"],
@@ -17937,9 +17937,9 @@
         "eliteMoves": ["ORIGIN_PULSE"],
         "tags": ["legendary", "mega"],
         "defaultIVs": {
-            "cp500": [3.5, 15, 11, 15],
-            "cp1500": [10.5, 6, 8, 13],
-            "cp2500": [17, 11, 15, 13]
+            "cp500": [3.5, 4, 9, 7],
+            "cp1500": [9, 10, 15, 15],
+            "cp2500": [15.5, 4, 13, 9]
         },
         "searchPriority": 10,
         "buddyDistance": 20,
@@ -17973,9 +17973,9 @@
         "speciesName": "Groudon (Primal)",
         "speciesId": "groudon_primal",
         "baseStats": {
-            "atk": 331,
-            "def": 251,
-            "hp": 205
+            "atk": 353,
+            "def": 268,
+            "hp": 218
         },
         "types": ["fire", "ground"],
         "fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
@@ -17983,9 +17983,9 @@
         "eliteMoves": ["PRECIPICE_BLADES", "FIRE_PUNCH"],
         "tags": ["legendary", "mega"],
         "defaultIVs": {
-            "cp500": [3.5, 15, 11, 15],
-            "cp1500": [10.5, 6, 8, 13],
-            "cp2500": [17, 11, 15, 13]
+            "cp500": [3.5, 4, 9, 7],
+            "cp1500": [9, 10, 15, 15],
+            "cp2500": [15.5, 4, 13, 9]
         },
         "searchPriority": 20,
         "buddyDistance": 20,
