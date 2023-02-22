@@ -1,0 +1,12 @@
+{
+    "name": "ionic",
+    "title": "Silph Ionic Cup",
+    "include": [{
+        "filterType": "id",
+        "name": "Species",
+        "values": ["ampharos", "dedenne", "luxray", "electivire", "raikou", "minun", "armaldo", "bewear", "bibarel", "crawdaunt", "drapion", "garbodor", "golisopod", "kricketune", "lapras", "linoone", "malamar", "milotic", "muk", "munchlax", "nidorina", "castform", "pangoro", "parasect", "pinsir", "politoed", "porygon2", "qwilfish", "sableye", "samurott", "scolipede", "seaking", "seviper", "skuntank", "snorlax", "swalot", "umbreon", "weavile", "zoroark", "ariados", "barbaracle", "beedrill", "blastoise", "sneasel_hisuian", "kricketune", "linoone", "poliwrath", "sealeo", "sneasel", "raticate_alolan", "greedent"],
+		"includeShadows": 1
+    }],
+    "exclude": [],
+    "overrides": []
+}

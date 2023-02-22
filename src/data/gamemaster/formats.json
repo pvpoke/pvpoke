@@ -46,15 +46,6 @@
 		"showMeta": true
 	},
 	{
-		"title": "Love Cup",
-		"cup": "love",
-		"cp": 1500,
-		"meta": "love",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
 		"title": "Hoenn Cup",
 		"cup": "hoenn",
 		"cp": 1500,
@@ -84,7 +75,7 @@
 		"hideRankings": true
 	},
 	{
-		"title": "Upcoming Silph Factions (Justicar)",
+		"title": "Silph Factions (Justicar)",
 		"cup": "justicar",
 		"cp": 2500,
 		"meta": "justicar",
@@ -103,24 +94,6 @@
 		"showMeta": true
 	},
 	{
-		"title": "Silph Factions (Ember)",
-		"cup": "ember",
-		"cp": 1500,
-		"meta": "ember",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Silph Factions (Vanguard)",
-		"cup": "vanguard",
-		"cp": 1500,
-		"meta": "vanguard",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
 		"title": "Silph Naiad Cup",
 		"cup": "naiad",
 		"cp": 1500,
@@ -128,6 +101,16 @@
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
+	},
+	{
+		"title": "Silph Ionic Cup",
+		"cup": "ionic",
+		"cp": 1500,
+		"meta": "ionic",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"hideRankings": false
 	},
 	{
 		"title": "GO Stadium Cliffhanger",

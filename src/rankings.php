@@ -59,9 +59,6 @@ switch($cup){
 		$league = 'Hoenn Cup';
 		break;
 
-	case "weather":
-		$league = 'Love Cup';
-		break;
 
 	case "electric":
 		$league = 'Electric Cup';
@@ -73,6 +70,14 @@ switch($cup){
 
 	case "naiad":
 		$league = 'Silph Naiad Cup';
+		break;
+
+	case "ionic":
+		$league = 'Silph Ionic Cup';
+		break;
+
+	case "justicar":
+		$league = 'Silph Factions (Justicar)';
 		break;
 
 	case "championship":

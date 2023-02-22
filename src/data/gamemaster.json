@@ -58,10 +58,10 @@
                 "pokemon": ["altaria", "azumarill", "bastiodon", "lanturn", "lickitung", "medicham", "noctowl", "registeel", "sableye", "stunfisk_galarian", "trevenant"]
             }, {
                 "points": 5,
-                "pokemon": ["abomasnow", "araquanid", "aurorus", "charizard", "cofagrigus", "cresselia", "deoxys_defense", "diggersby", "drapion", "dubwool", "froslass", "gliscor", "jellicent", "jumpluff", "mandibuzz", "obstagoon", "pelipper", "pidgeot", "regirock", "runerigus", "scrafty", "skarmory", "swampert", "tapu_fini", "toxapex", "tropius", "umbreon", "venusaur", "vigoroth", "walrein"]
+                "pokemon": ["abomasnow", "araquanid", "aurorus", "charizard", "cofagrigus", "cresselia", "deoxys_defense", "diggersby", "drapion", "dubwool", "froslass", "gliscor", "jellicent", "jumpluff", "mandibuzz", "ninetales_alolan", "obstagoon", "pelipper", "pidgeot", "regirock", "runerigus", "scrafty", "skarmory", "swampert", "tapu_fini", "toxapex", "tropius", "umbreon", "venusaur", "vigoroth", "walrein"]
             }, {
                 "points": 1,
-                "pokemon": ["beedrill", "bronzong", "buzzwole", "chansey", "chesnaught", "dragalge", "dewgong", "dragonair", "dragonite", "dunsparce", "empoleon", "ferrothorn", "galvantula", "gligar", "granbull", "greedent", "guzzlord", "hakamo_o", "qwilfish_hisuian", "hypno", "jirachi", "lapras", "lugia", "lurantis", "machamp", "magcargo", "mantine", "meganium", "marowak_alolan", "miltank", "mew", "muk_alolan", "ninetales", "nidoqueen", "overqwil", "pachirisu", "politoed", "probopass", "roserade", "sandslash_alolan", "serperior", "sirfetchd", "skuntank", "sneasler", "steelix", "talonflame", "tentacruel", "stunfisk", "toxicroak", "victini", "victreebel", "whiscash", "wigglytuff", "wobbuffet", "zweilous"]
+                "pokemon": ["beedrill", "bronzong", "buzzwole", "chansey", "chesnaught", "dragalge", "dewgong", "dragonair", "dragonite", "dunsparce", "empoleon", "ferrothorn", "galvantula", "gligar", "golbat", "granbull", "greedent", "guzzlord", "hakamo_o", "qwilfish_hisuian", "hypno", "jirachi", "lapras", "lugia", "lurantis", "machamp", "magcargo", "mantine", "meganium", "marowak_alolan", "miltank", "mew", "muk_alolan", "ninetales", "nidoqueen", "overqwil", "pachirisu", "politoed", "probopass", "roserade", "sandslash_alolan", "serperior", "sirfetchd", "skuntank", "sneasler", "steelix", "talonflame", "tentacruel", "stunfisk", "toxicroak", "victini", "victreebel", "whiscash", "wigglytuff", "wobbuffet", "zweilous"]
             }]
         }
     }, {
@@ -209,6 +209,34 @@
             "values": ["mega"]
         }],
         "overrides": []
+    }, {
+        "name": "ionic",
+        "title": "Silph Ionic Cup",
+        "include": [{
+            "filterType": "id",
+            "name": "Species",
+            "values": ["ampharos", "dedenne", "luxray", "electivire", "raikou", "minun", "armaldo", "bewear", "bibarel", "crawdaunt", "drapion", "garbodor", "golisopod", "kricketune", "lapras", "linoone", "malamar", "milotic", "muk", "munchlax", "nidorina", "castform", "pangoro", "parasect", "pinsir", "politoed", "porygon2", "qwilfish", "sableye", "samurott", "scolipede", "seaking", "seviper", "skuntank", "snorlax", "swalot", "umbreon", "weavile", "zoroark", "ariados", "barbaracle", "beedrill", "blastoise", "sneasel_hisuian", "kricketune", "linoone", "poliwrath", "sealeo", "sneasel", "raticate_alolan", "greedent"],
+            "includeShadows": 1
+        }],
+        "exclude": [],
+        "overrides": []
+    }, {
+        "name": "justicar",
+        "title": "Upcoming Silph Factions (Justicar)",
+        "include": [{
+            "filterType": "type",
+            "values": ["bug", "electric", "fairy", "fighting", "fire", "ice", "poison"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "type",
+            "values": ["ground"]
+        }, {
+            "filterType": "id",
+            "values": ["toxicroak", "dragalge", "aurorus", "golem_alolan", "lanturn", "tapu_fini"]
+        }]
     }, {
         "name": "love",
         "title": "Love Cup",
@@ -373,14 +401,6 @@
         "showFormat": true,
         "showMeta": true
     }, {
-        "title": "Love Cup",
-        "cup": "love",
-        "cp": 1500,
-        "meta": "love",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Hoenn Cup",
         "cup": "hoenn",
         "cp": 1500,
@@ -407,26 +427,19 @@
         "showMeta": false,
         "hideRankings": true
     }, {
+        "title": "Silph Factions (Justicar)",
+        "cup": "justicar",
+        "cp": 2500,
+        "meta": "justicar",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true,
+        "hideRankings": false
+    }, {
         "title": "Silph Factions (Master League)",
         "cup": "factionsmaster",
         "cp": 10000,
         "meta": "masterfactions",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Silph Factions (Ember)",
-        "cup": "ember",
-        "cp": 1500,
-        "meta": "ember",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Silph Factions (Vanguard)",
-        "cup": "vanguard",
-        "cp": 1500,
-        "meta": "vanguard",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -438,6 +451,15 @@
         "showCup": true,
         "showFormat": true,
         "showMeta": true
+    }, {
+        "title": "Silph Ionic Cup",
+        "cup": "ionic",
+        "cp": 1500,
+        "meta": "ionic",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true,
+        "hideRankings": false
     }, {
         "title": "GO Stadium Cliffhanger",
         "cup": "cliffhanger",
