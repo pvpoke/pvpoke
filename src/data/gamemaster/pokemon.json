@@ -13377,7 +13377,7 @@
     },
     "level25CP": 533,
     "tags": ["shadoweligible"],
-    "eliteMoves": ["DRAINING_KISS"],
+    "legacyMoves": ["DRAINING_KISS"],
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
     "released": true,
@@ -23584,7 +23584,7 @@
         "hp": 233
     },
     "types": ["fire", "psychic"],
-    "fastMoves": ["TACKLE", "FIRE_FANG"],
+    "fastMoves": ["TACKLE", "FIRE_FANG", "INCINERATE"],
     "chargedMoves": ["OVERHEAT", "FOCUS_BLAST", "PSYCHIC", "ROCK_SLIDE"],
     "defaultIVs": {
         "cp500": [5, 12, 15, 13],
@@ -23925,7 +23925,7 @@
     },
     "types": ["poison", "none"],
     "fastMoves": ["POUND", "TAKE_DOWN"],
-    "chargedMoves": ["GUNK_SHOT", "SEED_BOMB", "GUNK_SHOT"],
+    "chargedMoves": ["GUNK_SHOT", "SEED_BOMB"],
     "defaultIVs": {
         "cp500": [19, 7, 15, 13],
         "cp1500": [50, 15, 15, 15],
@@ -26757,7 +26757,7 @@
         "hp": 128
     },
     "types": ["bug", "none"],
-    "fastMoves": ["BUG_BITE", "TACKLE"],
+    "fastMoves": ["STRUGGLE_BUG"],
     "chargedMoves": ["STRUGGLE"],
     "defaultIVs": {
         "cp500": [50, 11, 14, 12],
@@ -26783,7 +26783,7 @@
         "hp": 190
     },
     "types": ["bug", "flying"],
-    "fastMoves": ["BUG_BITE", "GUST", "STRUGGLE_BUG"],
+    "fastMoves": ["GUST", "STRUGGLE_BUG"],
     "chargedMoves": ["BUG_BUZZ", "AERIAL_ACE", "ENERGY_BALL", "HURRICANE"],
     "defaultIVs": {
         "cp500": [10, 5, 13, 14],
@@ -28072,7 +28072,7 @@
     },
     "types": ["ice", "none"],
     "fastMoves": ["BITE", "TACKLE"],
-    "chargedMoves": ["CRUNCH", "ICY_WIND"],
+    "chargedMoves": ["CRUNCH", "ICY_WIND", "MIRROR_COAT"],
     "defaultIVs": {
         "cp500": [15.5, 5, 15, 14],
         "cp1500": [50, 15, 15, 15],
@@ -29085,7 +29085,7 @@
     "released": false
 }, {
     "dex": 746,
-    "speciesName": "Wishiwashi_solo",
+    "speciesName": "Wishiwashi (Solo)",
     "speciesId": "wishiwashi_solo",
     "baseStats": {
         "atk": 46,
@@ -31886,7 +31886,7 @@
     "released": false,
     "family": {
         "id": "FAMILY_TOXEL",
-        "evolutions": ["toxtricity", "toxtricity"]
+        "evolutions": ["toxtricity_amped", "toxtricity_low_key"]
     }
 }, {
     "dex": 849,
@@ -31914,7 +31914,7 @@
     }
 }, {
     "dex": 849,
-    "speciesName": "Toxtricity_amped",
+    "speciesName": "Toxtricity (Amped)",
     "speciesId": "toxtricity_amped",
     "baseStats": {
         "atk": 224,
@@ -31938,7 +31938,7 @@
     }
 }, {
     "dex": 849,
-    "speciesName": "Toxtricity_low_key",
+    "speciesName": "Toxtricity (Low Key)",
     "speciesId": "toxtricity_low_key",
     "baseStats": {
         "atk": 224,
@@ -32082,7 +32082,7 @@
     }
 }, {
     "dex": 854,
-    "speciesName": "Sinistea_antique",
+    "speciesName": "Sinistea (Antique)",
     "speciesId": "sinistea_antique",
     "baseStats": {
         "atk": 134,
@@ -32106,7 +32106,7 @@
     }
 }, {
     "dex": 854,
-    "speciesName": "Sinistea_phony",
+    "speciesName": "Sinistea (Phony)",
     "speciesId": "sinistea_phony",
     "baseStats": {
         "atk": 134,
@@ -32154,7 +32154,7 @@
     }
 }, {
     "dex": 855,
-    "speciesName": "Polteageist_antique",
+    "speciesName": "Polteageist (Antique)",
     "speciesId": "polteageist_antique",
     "baseStats": {
         "atk": 248,
@@ -32178,7 +32178,7 @@
     }
 }, {
     "dex": 855,
-    "speciesName": "Polteageist_phony",
+    "speciesName": "Polteageist (Phony)",
     "speciesId": "polteageist_phony",
     "baseStats": {
         "atk": 248,
@@ -32678,7 +32678,7 @@
     "released": false
 }, {
     "dex": 875,
-    "speciesName": "Eiscue_ice",
+    "speciesName": "Eiscue (Ice)",
     "speciesId": "eiscue_ice",
     "baseStats": {
         "atk": 148,
@@ -32698,7 +32698,7 @@
     "released": false
 }, {
     "dex": 875,
-    "speciesName": "Eiscue_noice",
+    "speciesName": "Eiscue (Noice)",
     "speciesId": "eiscue_noice",
     "baseStats": {
         "atk": 173,
@@ -32739,7 +32739,7 @@
     "released": false
 }, {
     "dex": 876,
-    "speciesName": "Indeedee_female",
+    "speciesName": "Indeedee (Female)",
     "speciesId": "indeedee_female",
     "baseStats": {
         "atk": 184,
@@ -32760,7 +32760,7 @@
     "released": false
 }, {
     "dex": 876,
-    "speciesName": "Indeedee_male",
+    "speciesName": "Indeedee (Male)",
     "speciesId": "indeedee_male",
     "baseStats": {
         "atk": 208,
@@ -32801,7 +32801,7 @@
     "released": false
 }, {
     "dex": 877,
-    "speciesName": "Morpeko_full_belly",
+    "speciesName": "Morpeko (Full Belly)",
     "speciesId": "morpeko_full_belly",
     "baseStats": {
         "atk": 192,
@@ -32821,7 +32821,7 @@
     "released": false
 }, {
     "dex": 877,
-    "speciesName": "Morpeko_hangry",
+    "speciesName": "Morpeko (Hangry)",
     "speciesId": "morpeko_hangry",
     "baseStats": {
         "atk": 192,
@@ -33109,7 +33109,7 @@
     "searchPriority": 5
 }, {
     "dex": 888,
-    "speciesName": "Zacian_crowned_sword",
+    "speciesName": "Zacian (Crowned Sword)",
     "speciesId": "zacian_crowned_sword",
     "baseStats": {
         "atk": 332,
@@ -33171,7 +33171,7 @@
     "searchPriority": 5
 }, {
     "dex": 889,
-    "speciesName": "Zamazenta_crowned_shield",
+    "speciesName": "Zamazenta (Crowned Shield)",
     "speciesId": "zamazenta_crowned_shield",
     "baseStats": {
         "atk": 250,
@@ -33211,7 +33211,7 @@
     "released": false
 }, {
     "dex": 890,
-    "speciesName": "Eternatus_eternamax",
+    "speciesName": "Eternatus (Eternamax)",
     "speciesId": "eternatus_eternamax",
     "baseStats": {
         "atk": 251,
@@ -33279,7 +33279,7 @@
     }
 }, {
     "dex": 892,
-    "speciesName": "Urshifu_rapid_strike",
+    "speciesName": "Urshifu (Rapid Strike)",
     "speciesId": "urshifu_rapid_strike",
     "baseStats": {
         "atk": 254,
@@ -33303,7 +33303,7 @@
     }
 }, {
     "dex": 892,
-    "speciesName": "Urshifu_single_strike",
+    "speciesName": "Urshifu (Single Strike)",
     "speciesId": "urshifu_single_strike",
     "baseStats": {
         "atk": 254,
@@ -33449,7 +33449,7 @@
     "released": false
 }, {
     "dex": 898,
-    "speciesName": "Calyrex_ice_rider",
+    "speciesName": "Calyrex (Ice Rider)",
     "speciesId": "calyrex_ice_rider",
     "baseStats": {
         "atk": 268,
@@ -33562,8 +33562,8 @@
         "cp1500": [19, 4, 12, 11],
         "cp2500": [33.5, 4, 15, 7]
     },
-    "buddyDistance": 3,
-    "thirdMoveCost": 50000,
+    "buddyDistance": 5,
+    "thirdMoveCost": 75000,
     "released": true,
     "family": {
         "id": "FAMILY_QWILFISH",
