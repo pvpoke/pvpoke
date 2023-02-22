@@ -905,7 +905,8 @@
 	        "spA": 35,
 	        "spD": 35,
 	        "spe": 60
-	    }
+	    },
+		"traits": ["lightning_rod"]
 	}, {
 	    "name": "Pikachu",
 	    "types": ["electric"],
@@ -917,7 +918,13 @@
 	        "spA": 50,
 	        "spD": 50,
 	        "spe": 90
-	    }
+	    },
+		"traits": ["lightning_rod"],
+		"defaults": {
+			"teraType": "water",
+			"moveTypes": ["electric", "water"],
+			"traits": ["lightning_rod"]
+		}
 	}, {
 	    "name": "Raichu",
 	    "types": ["electric"],
@@ -929,7 +936,8 @@
 	        "spA": 90,
 	        "spD": 80,
 	        "spe": 110
-	    }
+	    },
+		"traits": ["lightning_rod"]
 	}, {
 	    "name": "Fidough",
 	    "types": ["fairy"],
@@ -4117,7 +4125,8 @@
 	        "spA": 91,
 	        "spD": 85,
 	        "spe": 15
-	    }
+	    },
+		"traits": ["lightning_rod"]
 	}, {
 	    "name": "Sandygast",
 	    "types": ["ghost", "ground"],
@@ -5272,6 +5281,11 @@
 		{
 			"name": "Levitate",
 			"id": "levitate",
+			"type": "ability"
+		},
+		{
+			"name": "Lightning Rod",
+			"id": "lightning_rod",
 			"type": "ability"
 		},
 		{

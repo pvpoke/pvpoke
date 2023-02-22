@@ -40,7 +40,7 @@ Trait.evaluateType = function(moveType, targetTypes, attacker, defender){
 		effect *= 0;
 	}
 
-	if(defender.hasTrait("volt_absorb") && moveType == "electric"){
+	if( (defender.hasTrait("volt_absorb") || defender.hasTrait("lightning_rod")) && moveType == "electric"){
 		effect *= 0;
 	}
 
