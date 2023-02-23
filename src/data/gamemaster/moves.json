@@ -487,6 +487,16 @@
     "cooldown": 500,
     "archetype": "Spam/Bait"
 }, {
+    "moveId": "DOUBLE_IRON_BASH",
+    "name": "Double Iron Bash",
+	"abbreviation": "DbI",
+    "type": "steel",
+    "power": 50,
+    "energy": 35,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Spam/Bait"
+}, {
     "moveId": "DOUBLE_KICK",
     "name": "Double Kick",
     "type": "fighting",

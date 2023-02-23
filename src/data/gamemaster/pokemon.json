@@ -14437,6 +14437,27 @@
         "parent": "meditite"
     }
 }, {
+    "dex": 308,
+    "speciesName": "Medicham (Mega)",
+    "speciesId": "medicham_mega",
+    "baseStats": {
+        "atk": 205,
+        "def": 179,
+        "hp": 155
+    },
+    "types": ["fighting", "psychic"],
+    "fastMoves": ["COUNTER", "PSYCHO_CUT"],
+    "chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH", "PSYCHIC", "POWER_UP_PUNCH"],
+    "tags": ["mega"],
+    "defaultIVs": {
+		"cp500": [7.5, 6, 13, 14],
+        "cp1500": [22, 6, 13, 14],
+        "cp2500": [40, 15, 15, 15]
+    },
+	"buddyDistance": 3,
+	"thirdMoveCost": 50000,
+	"released": false
+}, {
     "dex": 309,
     "speciesName": "Electrike",
     "speciesId": "electrike",
