@@ -77,6 +77,10 @@ Trait.evaluateStat = function(stat, subject, opponent){
 		effect *= 2;
 	}
 
+	if( (stat == "atk" || stat == "spA") && subject.hasTrait("light_ball")){
+		effect *= 2;
+	}
+
 	if(stat == "atk" && opponent.hasTrait("intimidate")){
 		effect *= .8;
 	}

@@ -919,11 +919,11 @@
 	        "spD": 50,
 	        "spe": 90
 	    },
-		"traits": ["lightning_rod"],
+		"traits": ["lightning_rod", "light_ball"],
 		"defaults": {
 			"teraType": "water",
-			"moveTypes": ["electric", "water"],
-			"traits": ["lightning_rod"]
+			"moveTypes": ["electric", "water", "fairy", "steel"],
+			"traits": ["lightning_rod", "light_ball"]
 		}
 	}, {
 	    "name": "Raichu",
@@ -5282,6 +5282,11 @@
 			"name": "Levitate",
 			"id": "levitate",
 			"type": "ability"
+		},
+		{
+			"name": "Light Ball",
+			"id": "light_ball",
+			"type": "item"
 		},
 		{
 			"name": "Lightning Rod",
