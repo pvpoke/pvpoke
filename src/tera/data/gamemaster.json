@@ -5241,30 +5241,32 @@
 	    "types": ["water", "dragon"],
 	    "id": "walking_wake",
 	    "stats": {
-	        "hp": 95,
-	        "atk": 85,
-	        "def": 85,
-	        "spA": 65,
-	        "spD": 65,
-	        "spe": 35
+	        "hp": 99,
+	        "atk": 83,
+	        "def": 91,
+	        "spA": 109,
+	        "spD": 50,
+	        "spe": 83
 	    },
 		"defaults": {
-			"teraType": "water"
+			"teraType": "water",
+			"moveTypes": ["water", "dragon", "fire"]
 		}
 	}, {
 	    "name": "Iron Leaves",
 	    "types": ["grass", "psychic"],
 	    "id": "iron_leaves",
 	    "stats": {
-	        "hp": 95,
-	        "atk": 85,
-	        "def": 85,
-	        "spA": 65,
-	        "spD": 65,
-	        "spe": 35
+	        "hp": 90,
+	        "atk": 130,
+	        "def": 88,
+	        "spA": 70,
+	        "spD": 108,
+	        "spe": 104
 	    },
 		"defaults": {
-			"teraType": "psychic"
+			"teraType": "psychic",
+			"moveTypes": ["psychic", "grass", "bug"]
 		}
 	}],
 	"traits": [
