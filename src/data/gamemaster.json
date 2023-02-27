@@ -34095,6 +34095,54 @@
             "id": "FAMILY_QWILFISH",
             "parent": "qwilfish_hisuian"
         }
+    }, {
+        "dex": 999,
+        "speciesName": "Gimmighoul",
+        "speciesId": "gimmighoul",
+        "baseStats": {
+            "atk": 140,
+            "def": 76,
+            "hp": 128
+        },
+        "types": ["ghost", "none"],
+        "fastMoves": ["ASTONISH"],
+        "chargedMoves": ["SHADOW_BALL"],
+        "defaultIVs": {
+            "cp500": [17, 5, 15, 12],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_GIMMIGHOUL",
+            "evolutions": ["gholdengo"]
+        }
+    }, {
+        "dex": 1000,
+        "speciesName": "Gholdengo",
+        "speciesId": "gholdengo",
+        "baseStats": {
+            "atk": 252,
+            "def": 190,
+            "hp": 202
+        },
+        "types": ["steel", "ghost"],
+        "fastMoves": ["ASTONISH", "HEX"],
+        "chargedMoves": ["SHADOW_BALL", "DAZZLING_GLEAM", "FOCUS_BLAST"],
+        "defaultIVs": {
+            "cp500": [5.5, 5, 15, 9],
+            "cp1500": [15.5, 6, 12, 15],
+            "cp2500": [25.5, 8, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_GIMMIGHOUL",
+            "parent": "gimmighoul"
+        }
     }],
     "moves": [{
         "moveId": "ACID",

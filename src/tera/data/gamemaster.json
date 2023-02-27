@@ -5236,6 +5236,36 @@
 	        "spe": 35
 	    },
 		"traits": ["water_absorb"]
+	}, {
+	    "name": "Walking Wake",
+	    "types": ["water", "dragon"],
+	    "id": "walking_wake",
+	    "stats": {
+	        "hp": 95,
+	        "atk": 85,
+	        "def": 85,
+	        "spA": 65,
+	        "spD": 65,
+	        "spe": 35
+	    },
+		"defaults": {
+			"teraType": "water"
+		}
+	}, {
+	    "name": "Iron Leaves",
+	    "types": ["grass", "psychic"],
+	    "id": "iron_leaves",
+	    "stats": {
+	        "hp": 95,
+	        "atk": 85,
+	        "def": 85,
+	        "spA": 65,
+	        "spD": 65,
+	        "spe": 35
+	    },
+		"defaults": {
+			"teraType": "psychic"
+		}
 	}],
 	"traits": [
 		{
