@@ -55,13 +55,13 @@ switch($cup){
 		$league = 'Mega Master League';
 		break;
 
-	case "hoenn":
-		$league = 'Hoenn Cup';
+	case "fantasy":
+		$league = 'Fantasy Cup';
 		break;
 
 
-	case "electric":
-		$league = 'Electric Cup';
+	case "color":
+		$league = 'Color Cup';
 		break;
 
 	case "retro":

@@ -1,0 +1,12 @@
+{
+    "name": "color",
+    "title": "Color Cup",
+    "include": [{
+        "filterType": "type",
+        "values": ["fire", "water", "grass", "electric"]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega"]
+    }]
+}

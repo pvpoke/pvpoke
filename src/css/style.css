@@ -337,6 +337,7 @@ header {
   box-sizing: border-box;
 }
 .poke .form-select-container a.form-link {
+  display: none;
   background: #eee;
   border-radius: 4px;
   padding: 3px;

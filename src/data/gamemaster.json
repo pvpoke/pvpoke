@@ -65,52 +65,21 @@
             }]
         }
     }, {
+        "name": "color",
+        "title": "Color Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["fire", "water", "grass", "electric"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }]
+    }, {
         "name": "custom",
         "title": "Custom",
         "include": [],
         "exclude": []
-    }, {
-        "name": "electric",
-        "title": "Electric Cup",
-        "include": [{
-            "filterType": "type",
-            "name": "Type",
-            "values": ["electric"]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "name": "Tag",
-            "values": ["mega"]
-        }, {
-            "filterType": "id",
-            "name": "Species",
-            "values": ["stunfisk", "charjabug", "vikavolt", "heliolisk"]
-        }]
-    }, {
-        "name": "ember",
-        "title": "Silph Factions (Ember)",
-        "include": [{
-            "filterType": "type",
-            "name": "Type",
-            "values": ["electric", "fire", "grass", "ground"]
-        }, {
-            "filterType": "id",
-            "name": "Species",
-            "values": ["muk_alolan", "qwilfish_hisuian", "honchkrow", "machamp", "malamar", "poliwrath", "primeape", "sirfetchd"]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "name": "Tag",
-            "values": ["shadow", "mega"]
-        }, {
-            "filterType": "type",
-            "name": "Type",
-            "values": ["dragon", "rock", "steel"]
-        }, {
-            "filterType": "id",
-            "name": "Species",
-            "values": ["swampert", "whiscash", "quagsire", "marshtomp", "gastrodon", "seismitoad", "palpitoad", "abomasnow", "diggersby", "dugtrio", "lanturn", "nidoqueen", "ninetales", "pachirisu", "salazzle", "stunfisk", "whimsicott"]
-        }]
     }, {
         "name": "factionsgreat",
         "title": "Silph Factions (Great League)",
@@ -190,25 +159,25 @@
             }]
         }
     }, {
+        "name": "fantasy",
+        "title": "Fantasy Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["steel", "dragon", "fairy"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["stunfisk_galarian", "cobalion"]
+        }]
+    }, {
         "name": "gobattleleague",
         "title": "GO Battle League",
         "include": [],
         "exclude": [],
         "partySize": 3
-    }, {
-        "name": "hoenn",
-        "title": "Hoenn Cup",
-        "include": [{
-            "filterType": "dex",
-            "name": "Pokedex Number",
-            "values": [252, 386]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "name": "Tag",
-            "values": ["mega"]
-        }],
-        "overrides": []
     }, {
         "name": "ionic",
         "title": "Silph Ionic Cup",
@@ -222,7 +191,7 @@
         "overrides": []
     }, {
         "name": "justicar",
-        "title": "Upcoming Silph Factions (Justicar)",
+        "title": "Silph Factions (Justicar)",
         "include": [{
             "filterType": "type",
             "values": ["bug", "electric", "fairy", "fighting", "fire", "ice", "poison"]
@@ -238,45 +207,10 @@
             "values": ["toxicroak", "dragalge", "aurorus", "golem_alolan", "lanturn", "tapu_fini"]
         }]
     }, {
-        "name": "love",
-        "title": "Love Cup",
-        "include": [{
-            "filterType": "id",
-            "includeShadows": 1,
-            "values": ["charmander", "charmander_shadow", "charmeleon", "charmeleon_shadow", "charizard", "charizard_shadow", "vileplume", "vileplume_shadow", "paras", "parasect", "krabby", "kingler", "voltorb", "electrode", "goldeen", "seaking", "jynx", "magmar", "magmar_shadow", "magikarp", "magikarp_shadow", "flareon", "ledyba", "ledian", "ariados", "yanma", "scizor", "scizor_shadow", "slugma", "magcargo", "octillery", "delibird", "porygon2", "porygon2_shadow", "magby", "torchic", "combusken", "blaziken", "wurmple", "medicham", "medicham_xl", "carvanha", "carvanha_shadow", "camerupt", "solrock", "corphish", "crawdaunt", "kricketot", "kricketune", "burmy_trash", "wormadam_trash", "magmortar", "magmortar_shadow", "porygon_z", "porygon_z_shadow", "rotom_wash", "tepig", "pignite", "emboar", "pansear", "simisear", "throh", "venipede", "scolipede", "krookodile", "darumaka", "darmanitan_standard", "dwebble", "crustle", "deerling", "accelgor", "pawniard", "bisharp", "braviary", "heatmor", "fennekin", "braixen", "delphox", "fletchling", "fletchinder", "talonflame", "clefairy", "clefable", "jigglypuff", "wigglytuff", "slowpoke", "slowpoke_shadow", "slowbro", "slowbro_shadow", "exeggcute", "exeggcute_shadow", "lickitung", "lickitung_xl", "happiny", "chansey", "mr.mime", "mimejr.", "porygon", "porygon_shadow", "cleffa", "igglybuff", "flaaffy", "flaaffy_shadow", "hoppip", "hoppip_shadow", "slowking", "slowking_shadow", "snubbull", "corsola", "smoochum", "miltank", "blissey", "whismur", "skitty", "milotic", "gorebyss", "luvdisc", "cherubi", "cherrim_sunny", "lickilicky", "audino", "alomomola", "scrafty", "castform_sunny", "mr_mime", "druddigon", "sylveon", "spritzee", "aromatisse", "musharna", "slowbro_galarian", "slowking_galarian", "slowpoke_galarian", "electrode_hisuian", "litten", "torracat", "incineroar", "lycanroc_midnight", "oricorio_baile", "oricorio_pau", "fomantis", "lurantis", "bewear", "stufful", "tyrantrum", "buzzwole"]
-        }],
-        "exclude": [],
-        "partySize": 3
-    }, {
         "name": "mega",
         "title": "All Pokemon",
         "include": [],
         "exclude": []
-    }, {
-        "name": "naiad",
-        "title": "Silph Naiad Cup",
-        "include": [{
-            "filterType": "type",
-            "name": "Type",
-            "values": ["bug", "dragon", "psychic", "water"]
-        }, {
-            "filterType": "id",
-            "name": "Species",
-            "values": ["greedent", "miltank", "snorlax", "snorlax_shadow"]
-        }],
-        "exclude": [{
-            "filterType": "type",
-            "name": "Type",
-            "values": ["dark", "fairy", "rock"]
-        }, {
-            "filterType": "tag",
-            "name": "Tag",
-            "values": ["mega"]
-        }, {
-            "filterType": "id",
-            "name": "Species",
-            "values": ["araquanid", "articuno_galarian", "cresselia", "forretress", "lanturn", "medicham", "toxapex"]
-        }]
     }, {
         "name": "ou",
         "title": "Overused Cup",
@@ -322,42 +256,6 @@
         }],
         "partySize": 3,
         "presetOnly": true
-    }, {
-        "name": "vanguard",
-        "title": "Silph Factions (Vanguard)",
-        "include": [{
-            "filterType": "type",
-            "name": "Type",
-            "values": ["dragon", "fighting", "flying", "ghost", "ground", "ice", "poison", "rock", "water"]
-        }],
-        "exclude": [{
-            "filterType": "type",
-            "name": "Type",
-            "values": ["dark", "fairy", "steel"]
-        }, {
-            "filterType": "id",
-            "name": "Species",
-            "values": ["abomasnow", "trevenant", "altaria", "lanturn", "medicham", "sneasler", "aurorus"]
-        }, {
-            "filterType": "tag",
-            "name": "Tag",
-            "values": ["alolan", "galarian", "hisuian", "mega"]
-        }, {
-            "filterType": "dex",
-            "name": "Pokedex Number",
-            "values": [722, 898]
-        }]
-    }, {
-        "name": "weather",
-        "title": "Weather Cup",
-        "include": [{
-            "filterType": "type",
-            "values": ["fire", "water", "ice", "rock"]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "values": ["mega"]
-        }]
     }],
     "formats": [{
         "title": "Master League (Classic)",
@@ -381,49 +279,56 @@
         "cup": "premier",
         "cp": 2500,
         "meta": "premierultra",
-        "showCup": true,
-        "showFormat": true,
+        "showCup": false,
+        "showFormat": false,
         "showMeta": true
     }, {
         "title": "Master Premier",
         "cup": "premier",
         "cp": 10000,
         "meta": "premiermaster",
-        "showCup": true,
-        "showFormat": true,
+        "showCup": false,
+        "showFormat": false,
         "showMeta": true
     }, {
         "title": "Master League (Megas)",
         "cup": "mega",
         "cp": 10000,
         "meta": "mastermega",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Hoenn Cup",
-        "cup": "hoenn",
-        "cp": 1500,
-        "meta": "hoenn",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Silph Factions (Great League)",
-        "cup": "factionsgreat",
-        "cp": 1500,
-        "meta": "great",
         "showCup": false,
+        "showFormat": false,
+        "showMeta": true
+    }, {
+        "title": "Master League (Megas)",
+        "cup": "mega",
+        "cp": 10000,
+        "meta": "mastermega",
+        "showCup": false,
+        "showFormat": false,
+        "showMeta": true
+    }, {
+        "title": "Fantasy Cup (Ultra)",
+        "cup": "fantasy",
+        "cp": 2500,
+        "meta": "fantasyultra",
+        "showCup": true,
         "showFormat": true,
-        "showMeta": false,
-        "hideRankings": true
+        "showMeta": true
+    }, {
+        "title": "Color Cup",
+        "cup": "color",
+        "cp": 1500,
+        "meta": "color",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
     }, {
         "title": "Silph Factions (Ultra League)",
         "cup": "factionsultra",
         "cp": 2500,
         "meta": "ultra",
         "showCup": false,
-        "showFormat": true,
+        "showFormat": false,
         "showMeta": false,
         "hideRankings": true
     }, {
@@ -440,17 +345,9 @@
         "cup": "factionsmaster",
         "cp": 10000,
         "meta": "masterfactions",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Silph Naiad Cup",
-        "cup": "naiad",
-        "cp": 1500,
-        "meta": "naiad",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
+        "showCup": false,
+        "showFormat": false,
+        "showMeta": false
     }, {
         "title": "Silph Ionic Cup",
         "cup": "ionic",
@@ -14378,7 +14275,7 @@
         },
         "types": ["normal", "none"],
         "fastMoves": ["ASTONISH", "BITE"],
-        "chargedMoves": ["CRUNCH", "DISARMING_VOICE", "FIRE_BLAST"],
+        "chargedMoves": ["CRUNCH", "DISARMING_VOICE", "FIRE_BLAST", "BOOMBURST"],
         "defaultIVs": {
             "cp500": [8, 5, 13, 15],
             "cp1500": [23.5, 6, 15, 12],
@@ -14405,7 +14302,7 @@
         },
         "types": ["normal", "none"],
         "fastMoves": ["ASTONISH", "BITE"],
-        "chargedMoves": ["CRUNCH", "DISARMING_VOICE", "FIRE_BLAST"],
+        "chargedMoves": ["CRUNCH", "DISARMING_VOICE", "FIRE_BLAST", "BOOMBURST"],
         "defaultIVs": {
             "cp500": [8, 5, 13, 15],
             "cp1500": [23.5, 6, 15, 12],
@@ -15841,7 +15738,7 @@
         },
         "types": ["ground", "dragon"],
         "fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
-        "chargedMoves": ["DRAGON_CLAW", "EARTHQUAKE", "STONE_EDGE", "EARTH_POWER"],
+        "chargedMoves": ["DRAGON_CLAW", "EARTHQUAKE", "STONE_EDGE", "EARTH_POWER", "BOOMBURST"],
         "defaultIVs": {
             "cp500": [7, 8, 15, 11],
             "cp1500": [21, 6, 11, 11],
@@ -15869,7 +15766,7 @@
         },
         "types": ["ground", "dragon"],
         "fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
-        "chargedMoves": ["DRAGON_CLAW", "EARTHQUAKE", "STONE_EDGE", "EARTH_POWER"],
+        "chargedMoves": ["DRAGON_CLAW", "EARTHQUAKE", "STONE_EDGE", "EARTH_POWER", "BOOMBURST"],
         "defaultIVs": {
             "cp500": [7, 8, 15, 11],
             "cp1500": [21, 6, 11, 11],
@@ -23817,7 +23714,7 @@
             "hp": 155
         },
         "types": ["grass", "fairy"],
-        "fastMoves": ["CHARM", "RAZOR_LEAF"],
+        "fastMoves": ["CHARM", "RAZOR_LEAF", "FAIRY_WIND"],
         "chargedMoves": ["GRASS_KNOT", "HURRICANE", "MOONBLAST"],
         "defaultIVs": {
             "cp500": [9.5, 6, 10, 8],
@@ -25168,7 +25065,7 @@
         },
         "types": ["water", "ghost"],
         "fastMoves": ["BUBBLE", "HEX"],
-        "chargedMoves": ["SHADOW_BALL", "ICE_BEAM", "BUBBLE_BEAM"],
+        "chargedMoves": ["SHADOW_BALL", "ICE_BEAM", "BUBBLE_BEAM", "SURF"],
         "defaultIVs": {
             "cp500": [8, 8, 10, 15],
             "cp1500": [24, 4, 12, 15],
@@ -28187,8 +28084,8 @@
             "hp": 186
         },
         "types": ["fighting", "flying"],
-        "fastMoves": ["WING_ATTACK", "LOW_KICK", "POISON_JAB"],
-        "chargedMoves": ["FLYING_PRESS", "SKY_ATTACK", "X_SCISSOR", "POWER_UP_PUNCH"],
+        "fastMoves": ["LOW_KICK", "POISON_JAB"],
+        "chargedMoves": ["FLYING_PRESS", "AERIAL_ACE", "X_SCISSOR", "POWER_UP_PUNCH"],
         "defaultIVs": {
             "cp500": [8, 4, 5, 15],
             "cp1500": [23.5, 4, 15, 6],
@@ -28197,7 +28094,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false
+        "released": true
     }, {
         "dex": 702,
         "speciesName": "Dedenne",
@@ -30858,7 +30755,7 @@
         },
         "types": ["dragon", "fighting"],
         "fastMoves": ["POISON_JAB", "DRAGON_TAIL"],
-        "chargedMoves": ["DRAGON_CLAW", "CLOSE_COMBAT", "FLAMETHROWER"],
+        "chargedMoves": ["DRAGON_CLAW", "CLOSE_COMBAT", "FLAMETHROWER", "BOOMBURST"],
         "defaultIVs": {
             "cp500": [6, 5, 6, 4],
             "cp1500": [16.5, 6, 15, 14],
@@ -31453,7 +31350,8 @@
         },
         "types": ["steel", "none"],
         "fastMoves": ["THUNDER_SHOCK"],
-        "chargedMoves": ["FLASH_CANNON", "HYPER_BEAM", "ROCK_SLIDE", "THUNDERBOLT", "SUPER_POWER"],
+        "chargedMoves": ["FLASH_CANNON", "HYPER_BEAM", "ROCK_SLIDE", "THUNDERBOLT", "SUPER_POWER", "DOUBLE_IRON_BASH"],
+        "eliteMoves": ["DOUBLE_IRON_BASH"],
         "defaultIVs": {
             "cp500": [5.5, 4, 5, 11],
             "cp1500": [15.5, 5, 15, 5],

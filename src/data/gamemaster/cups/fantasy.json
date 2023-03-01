@@ -1,0 +1,15 @@
+{
+    "name": "fantasy",
+    "title": "Fantasy Cup",
+    "include": [{
+        "filterType": "type",
+        "values": ["steel", "dragon", "fairy"]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega"]
+    }, {
+        "filterType": "id",
+        "values": ["stunfisk_galarian", "cobalion"]
+    }]
+}
