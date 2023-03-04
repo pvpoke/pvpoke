@@ -397,6 +397,10 @@ function Pokemon(id, i, b){
 			floor = 10;
 		}
 
+		if(self.hasTag("shadow") && self.hasTag("legendary")){
+			floor = 6;
+		}
+
 		if(self.hasMove("RETURN")){
 			floor = 2;
 		}
