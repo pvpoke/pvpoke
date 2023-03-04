@@ -1,6 +1,6 @@
 <?php require_once 'header.php'; ?>
 
-<h1>Ranker</h1>
+<h1>Ranker Sandbox</h1>
 <div class="section league-select-container">
 	<?php require 'modules/formatselect.php'; ?>
 	<button class="simulate">Simulate</button>
