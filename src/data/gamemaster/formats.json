@@ -84,6 +84,15 @@
 		"hideRankings": true
 	},
 	{
+		"title": "Silph Factions (Master League)",
+		"cup": "factionsmaster",
+		"cp": 10000,
+		"meta": "masterfactions",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
 		"title": "Silph Factions (Justicar)",
 		"cup": "justicar",
 		"cp": 2500,
@@ -92,15 +101,6 @@
 		"showFormat": true,
 		"showMeta": true,
 		"hideRankings": false
-	},
-	{
-		"title": "Silph Factions (Master League)",
-		"cup": "factionsmaster",
-		"cp": 10000,
-		"meta": "masterfactions",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
 	},
 	{
 		"title": "Silph Factions (Arcana)",

@@ -1132,10 +1132,8 @@ function PokeSelect(element, i){
 
 	// Hide tooltip when mousing over other elements
 
-	$("body").on("mousemove", function(e){
-		if($el.find(".move-bar:hover").length == 0){
-			$tooltip.hide();
-		}
+	$el.find(".move-bar").mouseout(function(e){
+		$tooltip.hide();
 	});
 
 	// Open the clear confirmation window
