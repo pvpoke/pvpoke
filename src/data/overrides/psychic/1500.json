@@ -1,0 +1,86 @@
+[{
+    "speciesId": "malamar",
+    "weight": 10
+}, {
+    "speciesId": "bronzong",
+    "weight": 8
+}, {
+    "speciesId": "slowking_galarian",
+    "fastMove": "HEX",
+    "chargedMoves": ["SLUDGE_WAVE", "SHADOW_BALL"]
+}, {
+    "speciesId": "victini",
+    "weight": 5
+}, {
+    "speciesId": "claydol",
+    "weight": 3
+}, {
+    "speciesId": "gardevoir_shadow",
+    "fastMove": "CHARM",
+    "weight": 3
+}, {
+    "speciesId": "raichu_alolan",
+    "weight": 3
+}, {
+    "speciesId": "rapidash_galarian",
+    "weight": 3
+}, {
+    "speciesId": "girafarig",
+    "fastMove": "TACKLE",
+    "chargedMoves": ["PSYCHIC_FANGS", "THUNDERBOLT"],
+    "weight": 3
+}, {
+    "speciesId": "delphox",
+    "chargedMoves": ["FLAME_CHARGE", "FIRE_BLAST"],
+    "weight": 1
+}, {
+    "speciesId": "gallade",
+    "fastMove": "CHARM",
+    "weight": 1
+}, {
+    "speciesId": "gallade_shadow",
+    "fastMove": "CHARM",
+    "weight": 1
+}, {
+    "speciesId": "gardevoir",
+    "fastMove": "CHARM",
+    "weight": 1
+}, {
+    "speciesId": "malamar",
+    "chargedMoves": ["FOUL_PLAY", "HYPER_BEAM"],
+    "weight": 1
+}, {
+    "speciesId": "slowbro",
+    "fastMove": "WATER_GUN",
+    "chargedMoves": ["ICE_BEAM", "WATER_PULSE"],
+    "weight": 1
+}, {
+    "speciesId": "slowbro_galarian",
+    "fastMove": "POISON_JAB",
+    "chargedMoves": ["SLUDGE_BOMB", "FOCUS_BLAST"],
+    "weight": 1
+}, {
+    "speciesId": "slowbro_shadow",
+    "fastMove": "WATER_GUN",
+    "chargedMoves": ["ICE_BEAM", "WATER_PULSE"],
+    "weight": 1
+}, {
+    "speciesId": "slowking",
+    "fastMove": "WATER_GUN",
+    "chargedMoves": ["BLIZZARD", "PSYCHIC"],
+    "weight": 1
+}, {
+    "speciesId": "slowking_shadow",
+    "fastMove": "WATER_GUN",
+    "chargedMoves": ["BLIZZARD", "PSYCHIC"],
+    "weight": 1
+}, {
+    "speciesId": "victini",
+    "chargedMoves": ["V_CREATE", "OVERHEAT"],
+    "weight": 1
+}, {
+    "speciesId": "girafarig_shadow",
+    "fastMove": "TACKLE",
+    "chargedMoves": ["PSYCHIC_FANGS", "THUNDERBOLT"],
+    "weight": 1
+}]

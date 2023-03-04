@@ -64,6 +64,10 @@ switch($cup){
 		$league = 'Color Cup';
 		break;
 
+	case "psychic":
+		$league = 'Psychic Cup';
+		break;
+
 	case "retro":
 		$league = 'Retro Cup';
 		break;
@@ -92,8 +96,9 @@ switch($cup){
 	case "factionsgreat":
 	case "factionsultra":
 	case "factionsmaster":
-	case "ember":
-	case "vanguard":
+	case "justicar":
+	case "catacomb":
+	case "arcana":
 		$league = 'Silph Factions';
 		break;
 
