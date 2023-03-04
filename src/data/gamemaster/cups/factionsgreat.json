@@ -7,17 +7,20 @@
         "values": ["mega"]
     }, {
         "filterType": "id",
-        "values": ["sneasler", "zapdos_galarian", "articuno_galarian", "moltres_galarian"]
+        "values": ["hawlucha"]
     }],
     "tierRules": {
-        "max": 6,
-        "floor": 0,
+        "max": 17,
+        "floor": 1,
         "tiers": [{
-            "points": 4,
-            "pokemon": ["stunfisk_galarian", "registeel", "bastiodon", "lickitung", "sableye", "trevenant", "altaria", "swampert", "medicham", "azumarill", "toxapex", "noctowl"]
+            "points": 7,
+            "pokemon": ["altaria", "medicham", "stunfisk_galarian", "lanturn", "noctowl", "registeel"]
         }, {
-            "points": 1,
-            "pokemon": ["ninetales_alolan", "wigglytuff", "venusaur", "umbreon", "mandibuzz", "walrein", "skarmory", "diggersby", "cresselia", "obstagoon", "scrafty", "tapu_fini", "deoxys_defense", "araquanid", "cofagrigus", "runerigus", "lanturn", "pelipper", "pidgeot", "aurorus", "nidoqueen"]
+            "points": 5,
+            "pokemon": ["azumarill", "lickitung", "toxapex", "bastiodon", "sableye", "trevenant", "deoxys_defense", "swampert", "umbreon"]
+        }, {
+            "points": 2,
+            "pokemon": ["abomasnow", "froslass", "pidgeot", "aurorus", "machamp", "scrafty", "charizard", "mandibuzz", "skarmory", "cofagrigus", "mantine", "tapu_fini", "cresselia", "ninetales_alolan", "venusaur", "diggersby", "obstagoon", "walrein", "drapion", "pelipper"]
         }]
     }
 }

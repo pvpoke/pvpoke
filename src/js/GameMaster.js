@@ -845,6 +845,9 @@ var GameMaster = (function () {
 				minStats = 1370;
 			} else if(battle.getCP() == 2500){
 				minStats = 2800;
+			} else if (battle.getCup().name === "factionsmaster") {
+				// big boy megas need taller height limit
+				minStats = 5000;
 			}
 
 			if(! excludeByStatProduct){

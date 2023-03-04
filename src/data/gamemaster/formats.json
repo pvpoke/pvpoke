@@ -46,15 +46,6 @@
 		"showMeta": true
 	},
 	{
-		"title": "Master League (Megas)",
-		"cup": "mega",
-		"cp": 10000,
-		"meta": "mastermega",
-		"showCup": false,
-		"showFormat": false,
-		"showMeta": true
-	},
-	{
 		"title": "Fantasy Cup (Ultra)",
 		"cup": "fantasy",
 		"cp": 2500,
@@ -71,6 +62,16 @@
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
+	},
+	{
+		"title": "Silph Factions (Great League)",
+		"cup": "factionsgreat",
+		"cp": 1500,
+		"meta": "great",
+		"showCup": false,
+		"showFormat": true,
+		"showMeta": false,
+		"hideRankings": true
 	},
 	{
 		"title": "Silph Factions (Ultra League)",
@@ -97,9 +98,27 @@
 		"cup": "factionsmaster",
 		"cp": 10000,
 		"meta": "masterfactions",
-		"showCup": false,
-		"showFormat": false,
-		"showMeta": false
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Silph Factions (Arcana)",
+		"cup": "arcana",
+		"cp": 1500,
+		"meta": "arcana",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Silph Factions (Catacomb)",
+		"cup": "catacomb",
+		"cp": 1500,
+		"meta": "catacomb",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
 	},
 	{
 		"title": "Silph Ionic Cup",
