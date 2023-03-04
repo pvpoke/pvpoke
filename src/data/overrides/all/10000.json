@@ -42,11 +42,6 @@
     "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"],
     "weight": 1
 }, {
-    "speciesId": "charizard",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"],
-    "weight": 1
-}, {
     "speciesId": "charizard_shadow",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"],
@@ -61,7 +56,7 @@
     "weight": 1
 }, {
     "speciesId": "dialga",
-    "chargedMoves": ["IRON_HEAD", "DRACO_METEOR"],
+    "chargedMoves": ["IRON_HEAD"],
     "weight": 50
 }, {
     "speciesId": "dragonite",
@@ -93,7 +88,6 @@
     "weight": 1
 }, {
     "speciesId": "garchomp",
-    "chargedMoves": ["OUTRAGE", "EARTH_POWER"],
     "weight": 30
 }, {
     "speciesId": "gardevoir",
@@ -214,7 +208,7 @@
 }, {
     "speciesId": "kyogre",
     "fastMove": "WATERFALL",
-    "chargedMoves": ["SURF", "ORIGIN_PULSE"],
+    "chargedMoves": ["SURF"],
     "weight": 4
 }, {
     "speciesId": "landorus_therian",
@@ -242,15 +236,7 @@
 }, {
     "speciesId": "machamp",
     "chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
-    "weight": 1
-}, {
-    "speciesId": "machamp",
-    "chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
     "weight": 2
-}, {
-    "speciesId": "machamp_shadow",
-    "chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
-    "weight": 1
 }, {
     "speciesId": "machamp_shadow",
     "chargedMoves": ["CROSS_CHOP", "ROCK_SLIDE"],
