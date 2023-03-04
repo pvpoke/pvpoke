@@ -1034,10 +1034,32 @@ function PokeSelect(element, i){
 
 		if((value >= 0) && (value <=15) && (value % 1 == 0)){
 			// Valid level
+			var iv = $(this).attr("iv");
 
-			selectedPokemon.setIV($(this).attr("iv"), value);
+			selectedPokemon.setIV(iv, value);
 
 			$el.find("input.level").val(selectedPokemon.level);
+
+			// Auto select the next input when finished
+			if(value != 1){
+				switch(iv){
+					case "atk":
+						$el.find("input.iv[iv='def']").focus();
+						break;
+
+					case "def":
+						$el.find("input.iv[iv='hp']").focus();
+						break;
+
+					case "hp":
+						$(this).blur();
+						break;
+				}
+			}
+
+			if(iv == "atk" || iv == "def"){
+
+			}
 		}
 
 		isCustom = true;
@@ -1047,6 +1069,12 @@ function PokeSelect(element, i){
 		if(interface.resetSelectedPokemon){
 			interface.resetSelectedPokemon();
 		}
+	});
+
+	// Clear level inputs on focus
+
+	$el.find("input.iv, input.level").on("focus", function(e){
+		$(this).val("");
 	});
 
 	// Change stat modifier input
