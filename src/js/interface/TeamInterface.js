@@ -581,7 +581,9 @@ var InterfaceMaster = (function () {
 
 						for(var n = 0; n < metaGroup.length; n++){
 							var searchId = metaGroup[n].speciesId;
-							searchId = searchId.replace("_shadow","");
+							if (!allowShadows) {
+								searchId = searchId.replace("_shadow","");
+							}
 							searchId = searchId.replace("_xs","");
 							searchId = searchId.replace("_xl","");
 
