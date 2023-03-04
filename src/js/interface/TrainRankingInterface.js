@@ -402,7 +402,7 @@ var InterfaceMaster = (function () {
 			var $target = null;
 
 			$("body").on("keyup", ".poke-search", function(e){
-				searchStr = $(this).val().toLowerCase();
+				searchStr = $(this).val().toLowerCase().trim();
 
 				$target = $(".train-table."+$(e.target).attr("target"));
 

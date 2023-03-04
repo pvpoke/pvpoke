@@ -768,7 +768,7 @@ function PokeSelect(element, i){
 
 	function submitSearchQuery(){
 
-		var searchStr = $el.find(".poke-search").val().toLowerCase();
+		var searchStr = $el.find(".poke-search").val().toLowerCase().trim();
 
 		if(searchStr == 'spooder'){
 			searchStr = 'galvantula';

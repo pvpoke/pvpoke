@@ -55,7 +55,7 @@ var InterfaceMaster = (function () {
 			// Search for an article or tag
 
 			$("input.article-search").on("keyup change", function(e){
-				var searchStr = $(this).val().toLowerCase();
+				var searchStr = $(this).val().toLowerCase().trim();
 
 				// Remove hashtag from searches if present
 				searchStr = searchStr.replace(/\#/g, "");

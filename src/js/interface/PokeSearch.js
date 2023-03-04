@@ -11,7 +11,7 @@ var pokeSearch = new function(){
 	}
 
 	$("body").on("keyup", ".poke-search[context='ranking-search']", function(e){
-		searchStr = $(this).val().toLowerCase();
+		searchStr = $(this).val().toLowerCase().trim();
 
 		$target = $(e.target).closest(".poke-search-container");
 

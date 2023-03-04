@@ -272,7 +272,7 @@ var InterfaceMaster = (function () {
 			// Select a Pokemon from the raid boss select list on input search
 
 			$("#poke-search").keyup(function(e){
-				let searchStr = $(this).val().toLowerCase();
+				let searchStr = $(this).val().toLowerCase().trim();
 
 				$("#poke-select option").each(function(index, value){
 					let name = $(this).html().toLowerCase();
