@@ -756,6 +756,11 @@ function PokeSelect(element, i){
 
 	$el.find(".poke-search").on("focus", function(e){
 		$(this).val("");
+
+		// On mobile, Scroll the searchbar into view
+		if($(window).width() <= 768 && context.indexOf("modal") == -1){
+			$("html, body").animate({ scrollTop: $(this).offset().top - 65 }, 500);
+		}
 	});
 
 	// Submit search query after specified input delay

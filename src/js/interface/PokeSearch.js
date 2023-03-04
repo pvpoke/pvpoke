@@ -26,6 +26,14 @@ var pokeSearch = new function(){
 
 	});
 
+	// Scroll searchbar into view on focus
+	$("body").on("focus", ".poke-search[context='ranking-search']", function(e){
+		$target = $(e.target).closest(".poke-search-container");
+
+		$("html, body").animate({ scrollTop: $target.offset().top - 65 }, 500);
+
+	});
+
 	$("a.search-info").click(function(e){
 		e.preventDefault();
 
