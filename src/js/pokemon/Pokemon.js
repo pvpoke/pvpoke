@@ -117,6 +117,14 @@ function Pokemon(id, i, b){
 		this.tags = data.tags.slice();
 	}
 
+	// Set nicknames
+
+	this.nicknames = [];
+
+	if(data.nicknames){
+		this.nicknames = data.nicknames.slice();
+	}
+
 	// Set level cap
 	this.levelCap = b.getLevelCap();
 

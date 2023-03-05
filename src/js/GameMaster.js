@@ -1158,6 +1158,11 @@ var GameMaster = (function () {
 								valid = true;
 							}
 
+							// Nickname search
+							if (pokemon.nicknames.indexOf(param) > -1) {
+								valid = true;
+							}
+
 							// Dex number search
 
 							if(pokemon.dex == param){
