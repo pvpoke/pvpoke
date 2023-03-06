@@ -8,7 +8,8 @@
     }, {
         "filterType": "id",
         "name": "Species",
-        "values": ["pelipper", "gyarados", "scyther", "vespiquen", "honchkrow"]
+        "values": ["pelipper", "gyarados", "scyther", "vespiquen", "honchkrow"],
+		"includeShadows": true
     }],
     "exclude": [{
         "filterType": "type",
