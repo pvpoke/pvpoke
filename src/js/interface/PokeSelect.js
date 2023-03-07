@@ -1039,27 +1039,6 @@ function PokeSelect(element, i){
 			selectedPokemon.setIV(iv, value);
 
 			$el.find("input.level").val(selectedPokemon.level);
-
-			// Auto select the next input when finished
-			if(value != 1){
-				switch(iv){
-					case "atk":
-						$el.find("input.iv[iv='def']").focus();
-						break;
-
-					case "def":
-						$el.find("input.iv[iv='hp']").focus();
-						break;
-
-					case "hp":
-						$(this).blur();
-						break;
-				}
-			}
-
-			if(iv == "atk" || iv == "def"){
-
-			}
 		}
 
 		isCustom = true;
