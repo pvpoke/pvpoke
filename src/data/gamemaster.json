@@ -379,14 +379,6 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Fantasy Cup (Ultra)",
-        "cup": "fantasy",
-        "cp": 2500,
-        "meta": "fantasyultra",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Color Cup",
         "cup": "color",
         "cp": 1500,
@@ -33914,7 +33906,7 @@
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": true
     }, {
         "dex": 896,
         "speciesName": "Glastrier",
