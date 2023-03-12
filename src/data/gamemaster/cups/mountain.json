@@ -1,0 +1,15 @@
+{
+    "name": "mountain",
+    "title": "Mountain Cup",
+    "include": [{
+        "filterType": "type",
+        "values": ["ground", "ice", "rock", "steel"]
+    }],
+    "exclude": [{
+        "filterType": "id",
+        "values": ["swampert"]
+    }, {
+        "filterType": "tag",
+        "values": ["mega"]
+    }]
+}

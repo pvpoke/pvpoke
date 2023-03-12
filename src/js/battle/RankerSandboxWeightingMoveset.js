@@ -519,7 +519,7 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
-				if(cup.name == "river"){
+				if(cup.name == "mountain"){
 					iterations = 1;
 				}
 
