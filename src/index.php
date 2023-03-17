@@ -56,7 +56,7 @@
 	<div class="article-item flex">
 		<div class="col-3">
 			<a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-03-slowpoke/">
-				<img src="<?php echo $WEB_ROOT; ?>article-assets/community-day/23-03-slowpoke/thumb.jpg">
+				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/community-day/23-03-slowpoke/thumb.jpg">
 			</a>
 		</div>
 		<div class="col-9">

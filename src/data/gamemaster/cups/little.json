@@ -1,0 +1,13 @@
+{
+    "name": "little",
+    "title": "Little Cup",
+    "include": [{
+        "filterType": "evolution",
+        "values": [1]
+    }],
+    "exclude": [{
+        "filterType": "id",
+        "values": ["shuckle", "smeargle"]
+    }],
+    "levelCap": 50
+}

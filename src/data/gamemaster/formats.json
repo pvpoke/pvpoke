@@ -46,15 +46,6 @@
 		"showMeta": true
 	},
 	{
-		"title": "Color Cup",
-		"cup": "color",
-		"cp": 1500,
-		"meta": "color",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
 		"title": "Psychic Cup",
 		"cup": "psychic",
 		"cp": 1500,
@@ -68,6 +59,15 @@
 		"cup": "mountain",
 		"cp": 1500,
 		"meta": "mountain",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Little Cup",
+		"cup": "little",
+		"cp": 500,
+		"meta": "little",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true

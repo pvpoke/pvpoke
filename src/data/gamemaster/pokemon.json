@@ -4669,8 +4669,9 @@
         "hp": 216
     },
     "types": ["water", "psychic"],
-    "fastMoves": ["CONFUSION", "WATER_GUN"],
-    "chargedMoves": ["ICE_BEAM", "PSYCHIC", "WATER_PULSE"],
+	"fastMoves": ["CONFUSION", "WATER_GUN"],
+    "chargedMoves": ["ICE_BEAM", "PSYCHIC", "WATER_PULSE", "SURF"],
+	"eliteMoves": ["SURF"],
     "defaultIVs": {
         "cp500": [7.5, 5, 10, 13],
         "cp1500": [22, 4, 13, 13],
@@ -4685,7 +4686,8 @@
     "family": {
         "id": "FAMILY_SLOWPOKE",
         "parent": "slowpoke"
-    }
+    },
+	"searchPriority": 3
 }, {
     "dex": 80,
     "speciesName": "Slowbro (Galarian)",
@@ -4697,7 +4699,8 @@
     },
     "types": ["poison", "psychic"],
     "fastMoves": ["CONFUSION", "POISON_JAB"],
-    "chargedMoves": ["FOCUS_BLAST", "PSYCHIC", "SLUDGE_BOMB"],
+    "chargedMoves": ["FOCUS_BLAST", "PSYCHIC", "SLUDGE_BOMB", "SURF"],
+	"eliteMoves": ["SURF"],
     "defaultIVs": {
         "cp500": [7.5, 9, 15, 13],
         "cp1500": [22.5, 6, 15, 13],
@@ -4723,7 +4726,8 @@
     },
     "types": ["water", "psychic"],
     "fastMoves": ["CONFUSION", "WATER_GUN"],
-    "chargedMoves": ["ICE_BEAM", "PSYCHIC", "WATER_PULSE"],
+    "chargedMoves": ["ICE_BEAM", "PSYCHIC", "WATER_PULSE", "SURF"],
+	"eliteMoves": ["SURF"],
     "defaultIVs": {
         "cp500": [5, 12, 12, 15],
         "cp1500": [15, 4, 14, 5],
@@ -4748,7 +4752,8 @@
     },
     "types": ["water", "psychic"],
     "fastMoves": ["CONFUSION", "WATER_GUN"],
-    "chargedMoves": ["ICE_BEAM", "PSYCHIC", "WATER_PULSE"],
+    "chargedMoves": ["ICE_BEAM", "PSYCHIC", "WATER_PULSE", "SURF"],
+	"eliteMoves": ["SURF"],
     "defaultIVs": {
         "cp500": [7.5, 5, 10, 13],
         "cp1500": [22, 4, 13, 13],
@@ -10038,7 +10043,8 @@
     },
     "types": ["water", "psychic"],
     "fastMoves": ["CONFUSION", "WATER_GUN"],
-    "chargedMoves": ["BLIZZARD", "FIRE_BLAST", "PSYCHIC"],
+    "chargedMoves": ["BLIZZARD", "FIRE_BLAST", "PSYCHIC", "SURF"],
+	"eliteMoves": ["SURF"],
     "defaultIVs": {
         "cp500": [7.5, 5, 10, 13],
         "cp1500": [22, 4, 13, 13],
@@ -10065,7 +10071,8 @@
     },
     "types": ["poison", "psychic"],
     "fastMoves": ["HEX", "CONFUSION", "ACID"],
-    "chargedMoves": ["FUTURE_SIGHT", "SHADOW_BALL", "SLUDGE_WAVE"],
+    "chargedMoves": ["FUTURE_SIGHT", "SHADOW_BALL", "SLUDGE_WAVE", "SURF"],
+	"eliteMoves": ["SURF"],
     "defaultIVs": {
         "cp500": [7, 6, 15, 8],
         "cp1500": [20.5, 5, 11, 15],
@@ -10078,7 +10085,8 @@
     "family": {
         "id": "FAMILY_SLOWPOKE",
         "parent": "slowpoke_galarian"
-    }
+    },
+	"searchPriority": 2
 }, {
     "dex": 199,
     "speciesName": "Slowking (Shadow)",
@@ -10090,7 +10098,8 @@
     },
     "types": ["water", "psychic"],
     "fastMoves": ["CONFUSION", "WATER_GUN"],
-    "chargedMoves": ["BLIZZARD", "FIRE_BLAST", "PSYCHIC"],
+    "chargedMoves": ["BLIZZARD", "FIRE_BLAST", "PSYCHIC", "SURF"],
+	"eliteMoves": ["SURF"],
     "defaultIVs": {
         "cp500": [7.5, 5, 10, 13],
         "cp1500": [22, 4, 13, 13],

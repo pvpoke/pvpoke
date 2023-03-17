@@ -80,6 +80,10 @@ switch($cup){
 		$league = 'Silph Ionic Cup';
 		break;
 
+	case "little":
+		$league = 'Little Cup';
+		break;
+
 	case "justicar":
 		$league = 'Silph Factions (Justicar)';
 		break;
