@@ -175,6 +175,22 @@ input.article-search{
 	background-image:url("../articles/article-assets/community-day/megas/sceptile.png");
 }
 
+[mega="alakazam"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/alakazam.png");
+}
+
+[mega="slowbro"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/slowbro.png");
+}
+
+[mega="gardevoir"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/gardevoir.png");
+}
+
+[mega="medicham"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/medicham.png");
+}
+
 
 
 /* FAQ styling */
@@ -845,6 +861,28 @@ input.article-search{
 		h4{
 			color:#513522;
 			border-bottom:1px solid #513522;
+		}
+	}
+
+	.faq-item{
+    	background: #ffffff;
+	}
+}
+
+.section.slowpoke{
+
+	background: #ece8e6;
+	border:4px solid #9281c5;
+
+	.article-header, .mega-section{
+		color:#fff;
+		background:#634f85 !important;
+	}
+
+	.feature{
+		h4{
+			color:#634f85;
+			border-bottom:1px solid #634f85;
 		}
 	}
 

@@ -55,15 +55,15 @@
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/infographics/23-01-season-of-mythical-wishes-starter-packs/">
-				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/infographics/23-01-season-of-mythical-wishes-starter-packs/thumb.jpg">
+			<a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-03-slowpoke/">
+				<img src="<?php echo $WEB_ROOT; ?>article-assets/community-day/23-03-slowpoke/thumb.jpg">
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/infographics/23-01-season-of-mythical-wishes-starter-packs/">PvP Starter Packs for Season of Mythical Wishes</a></h4>
-			<div class="date">January 14, 2023</div>
-			<p>Check out the premiere and budget picks to get started in Great League, Ultra League, and Master League for GO Battle League in the Season of Mythical Wishes!</p>
-			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a><a href="<?php echo $WEB_ROOT; ?>articles?tag=Starter Pack"># Starter Pack</a></div>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-03-slowpoke/">Slowpoke Community Day Guide for PvP</a></h4>
+			<div class="date">March 16, 2023</div>
+			<p>Not so fast! Slowpoke Community Day is around the corner. Find out how Surf will impact the whole Slow family in PvP and IV's to look for.</p>
+			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Community Day"># Community Day</a><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a></div>
 		</div>
 	</div>
 
