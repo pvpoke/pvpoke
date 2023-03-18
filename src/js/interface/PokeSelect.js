@@ -340,7 +340,7 @@ function PokeSelect(element, i){
 						// Show a link to the alternative form
 
 						$el.find(".form-select").hide();
-						$el.find(".form-link").show();
+						$el.find(".form-link").css("display", "block");
 						$el.find(".form-link").text(forms[0].speciesName);
 						$el.find(".form-link").attr("value", forms[0].speciesId);
 					}

@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.29.26.8';
+$SITE_VERSION = '1.29.26.9';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -45,7 +45,7 @@ if(isset($_COOKIE['settings'])){
 	}
 
 	// Validate the gamemaster setting, only allow these options
-	$gamemasters = ["gamemaster", "gamemaster-mega"];
+	$gamemasters = ["gamemaster", "gamemaster-mega", "gamemaster-paldea"];
 
 	if(! in_array($_SETTINGS->gamemaster, $gamemasters)){
 		$_SETTINGS->gamemaster = "gamemaster";
@@ -121,7 +121,7 @@ if(! isset($OG_IMAGE)){
 	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
 <?php endif; ?>
 
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=162">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=163">
 
 <?php if(strpos($META_TITLE, 'Train') !== false): ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=20">
@@ -132,7 +132,7 @@ if(! isset($OG_IMAGE)){
 <?php endif; ?>
 
 <?php if((isset($_SETTINGS->theme))&&($_SETTINGS->theme != "default")): ?>
-	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/themes/<?php echo $_SETTINGS->theme; ?>.css?v=23">
+	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/themes/<?php echo $_SETTINGS->theme; ?>.css?v=24">
 <?php endif; ?>
 
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>

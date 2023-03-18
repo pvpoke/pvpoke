@@ -19,7 +19,7 @@ var GameMaster = (function () {
 
 		var gmVersion = settings.gamemaster;
 
-		if((gmVersion == "gamemaster-mega")||(gmVersion == "gamemaster-kalos")){
+		if((gmVersion == "gamemaster-mega")||(gmVersion == "gamemaster-paldea")){
 			gmVersion = "gamemaster";
 		}
 
@@ -67,9 +67,9 @@ var GameMaster = (function () {
 
 						InterfaceMaster.getInstance().init(object);
 					});
-				} else if(settings.gamemaster == "gamemaster-kalos"){
+				} else if(settings.gamemaster == "gamemaster-paldea"){
 					// Load additional mega pokemon
-					$.getJSON( webRoot+"data/kalos.json?v="+siteVersion, function( data ){
+					$.getJSON( webRoot+"data/paldea.json?v="+siteVersion, function( data ){
 
 						// Sort Pokemon alphabetically for searching
 						object.data.pokemon = object.data.pokemon.concat(data);
