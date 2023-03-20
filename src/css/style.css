@@ -3673,6 +3673,7 @@ a.download-csv {
   display: none !important;
 }
 .modal .modal-container .poke-search {
+  background: none !important;
   margin-bottom: 5px;
 }
 .modal .modal-container .move-select {
