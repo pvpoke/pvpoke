@@ -17502,7 +17502,30 @@
     "fastMoves": ["FROST_BREATH", "ROCK_SMASH", "LOCK_ON"],
     "chargedMoves": ["BLIZZARD", "EARTHQUAKE", "FOCUS_BLAST", "THUNDER"],
     "eliteMoves": ["THUNDER"],
-    "tags": ["legendary"],
+    "tags": ["legendary", "shadoweligible"],
+    "defaultIVs": {
+        "cp500": [6, 12, 9, 13],
+        "cp1500": [18, 4, 9, 14],
+        "cp2500": [30, 4, 15, 10]
+    },
+    "buddyDistance": 20,
+    "thirdMoveCost": 100000,
+    "released": true,
+    "level25CP": 1934
+}, {
+    "dex": 378,
+    "speciesName": "Regice (Shadow)",
+    "speciesId": "regice_shadow",
+    "baseStats": {
+        "atk": 179,
+        "def": 309,
+        "hp": 190
+    },
+    "types": ["ice", "none"],
+    "fastMoves": ["FROST_BREATH", "ROCK_SMASH", "LOCK_ON"],
+    "chargedMoves": ["BLIZZARD", "EARTHQUAKE", "FOCUS_BLAST", "THUNDER"],
+    "eliteMoves": ["THUNDER"],
+    "tags": ["legendary", "shadow"],
     "defaultIVs": {
         "cp500": [6, 12, 9, 13],
         "cp1500": [18, 4, 9, 14],
