@@ -5284,6 +5284,22 @@
 			"teraType": "flying",
 			"moveTypes": ["grass", "ghost", "flying", "fighting"]
 		}
+	}, {
+	    "name": "Samurott",
+	    "types": ["water"],
+	    "id": "samurott",
+	    "stats": {
+	        "hp": 90,
+	        "atk": 108,
+	        "def": 80,
+	        "spA": 100,
+	        "spD": 65,
+	        "spe": 85
+	    },
+		"defaults": {
+			"teraType": "bug",
+			"moveTypes": ["water", "bug"]
+		}
 	}],
 	"traits": [
 		{
