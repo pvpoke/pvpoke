@@ -3285,6 +3285,9 @@ a.download-csv {
 .article table tr:nth-of-type(2n) {
   background: rgba(0, 0, 0, 0.1);
 }
+.article table.alternatives-table {
+  min-width: 600px;
+}
 .article .rating-table td {
   padding: 3px;
 }

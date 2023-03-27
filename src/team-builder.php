@@ -213,6 +213,13 @@ require_once 'header.php';
 	<a href="#" class="toggle active">Potential Alternatives <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content article">
 		<p>The Pokemon below have the best overall matchups against this team's potential threats. Results are taken from 0 and 1 shield simulations. Scores also factor in a Pokemon's overall strength and consistency. See the team's Coverage grade for more on its potential threats.</p>
+
+		<div class="poke-search-container">
+			<input class="poke-search" context="alternative-search" type="text" placeholder="Search Pokemon" />
+			<a href="#" class="search-info">i</a>
+			<a href="#" class="search-traits" title="Search Traits">+</a>
+		</div>
+
 		<div class="table-container">
 			<table class="alternatives-table rating-table" cellspacing="0">
 			</table>
@@ -253,6 +260,9 @@ require_once 'header.php';
 	</div>
 </div>
 
+<?php require_once 'modules/search-string-help.php'; ?>
+<?php require_once 'modules/search-traits.php'; ?>
+
 <!--test 4-->
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>
@@ -262,6 +272,7 @@ require_once 'header.php';
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BattleHistogram.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineAction.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=<?php echo $SITE_VERSION; ?>"></script>

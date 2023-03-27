@@ -41,14 +41,9 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.29.23 (February 7, 2022)</h4>
+	<h4>v1.29.27 (March 27, 2023)</h4>
 	<ul>
-		<li>Battle logic updates:</li>
-		<ul>
-			<li>Improved optimal timing. (Previously, Pokemon would ignore optimal timing if they had a lethal Charged Move, but this ignored whether the opponent still had shields.)</li>
-			<li>Improved some niche near-faint Charged Move usage. (Pokemon would previously throw their highest damage Charged Move available. Pokemon will now throw 2 of a lower damage move if they win CMP and would deal more damage than the one Charged Move. See: Talonflame vs Cobalion.)</li>
-			<li>Improved near-faint Charged Move usage vs 1 turn moves. (Pokemon would sometimes faint with energy vs 1 turn moves. They now anticipate their faint 1 turn earlier.)</li>
-		</ul>
+		<li>Pokemon in the Potential Alternatives section of the Team Builder are now searchable.</li>
 	</ul>
 
 	<h3>Latest Article</h3>

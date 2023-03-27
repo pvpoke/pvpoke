@@ -3698,6 +3698,10 @@ a.download-csv{
 		tr:nth-of-type(2n){
 			background:rgba(0,0,0,.1);
 		}
+
+		&.alternatives-table{
+			min-width: 600px;
+		}
 	}
 
 	.rating-table{
