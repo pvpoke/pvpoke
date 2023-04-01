@@ -29276,7 +29276,7 @@
     },
     "buddyDistance": 1,
     "thirdMoveCost": 10000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_CUTIEFLY",
         "evolutions": ["ribombee"]
@@ -29300,7 +29300,7 @@
     },
     "buddyDistance": 1,
     "thirdMoveCost": 10000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_CUTIEFLY",
         "parent": "cutiefly"

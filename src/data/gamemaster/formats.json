@@ -46,19 +46,28 @@
 		"showMeta": true
 	},
 	{
-		"title": "Mountain Cup",
-		"cup": "mountain",
-		"cp": 1500,
-		"meta": "mountain",
+		"title": "Little Cup",
+		"cup": "little",
+		"cp": 500,
+		"meta": "little",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
 	},
 	{
-		"title": "Little Cup",
-		"cup": "little",
-		"cp": 500,
-		"meta": "little",
+		"title": "Spring Cup",
+		"cup": "spring",
+		"cp": 1500,
+		"meta": "spring",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Evolution Cup",
+		"cup": "evolution",
+		"cp": 1500,
+		"meta": "evolution",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
