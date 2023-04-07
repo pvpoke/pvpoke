@@ -21,6 +21,8 @@ var InterfaceMaster = (function () {
 				new PokeMultiSelect($(".exclude-threats .poke.multi"))
 			];
 			var results; // Store team matchup results for later reference
+			var altRankings; // Store alternatives for searching
+			var counterTeam;
 			var self = this;
 			var runningResults = false;
 
@@ -365,7 +367,7 @@ var InterfaceMaster = (function () {
 				var data = ranker.rank(team, battle.getCP(), battle.getCup(), [], "team-counters");
 				var counterRankings = data.rankings;
 				var teamRatings = data.teamRatings;
-				var counterTeam = [];
+				counterTeam = [];
 
 				// Clear targets so it will default to the normal format if the user changes settings
 				ranker.setTargets([]);
@@ -734,192 +736,16 @@ var InterfaceMaster = (function () {
 					ranker.setTargets(multiSelectors[2].getPokemonList());
 				}
 
-				var altRankings = ranker.rank(counterTeam, battle.getCP(), battle.getCup(), exclusionList).rankings;
+				$(".poke-search[context='alternative-search']").val('');
 
+				altRankings = ranker.rank(counterTeam, battle.getCP(), battle.getCup(), exclusionList).rankings;
 				altRankings.sort((a,b) => (a.matchupAltScore > b.matchupAltScore) ? -1 : ((b.matchupAltScore > a.matchupAltScore) ? 1 : 0));
+				self.displayAlternatives();
 
 				// Clear targets so it will default to the normal format if the user changes settings
 				ranker.setTargets([]);
 
-				$(".alternatives-table").html("");
 
-				var $row = $("<thead><tr><td></td></tr></thead>");
-
-				for(var n = 0; n < counterTeam.length; n++){
-					$row.find("tr").append("<td class=\"name-small\">"+counterTeam[n].speciesName+"</td>");
-				}
-
-				$(".alternatives-table").append($row);
-				$(".alternatives-table").append("<tbody></tbody>");
-
-				count = 0;
-				total = scorecardCount;
-				i = 0;
-
-				// For labyrinth cup, exclude types already on team
-				var excludedTypes = [];
-
-				if(battle.getCup().name == "labyrinth"){
-					for(var n = 0; n < team.length; n++){
-						excludedTypes.push(team[n].types[0]);
-
-						if(team[n].types[1] != "none"){
-							excludedTypes.push(team[n].types[1]);
-						}
-					}
-				}
-
-				// Exclude Mega evolutions if one is already on the team
-				var hasMega = false;
-
-				for(var n = 0; n < team.length; n++){
-					if(team[n].hasTag("mega")){
-						hasMega = true;
-					}
-				}
-
-				// For Continentals, exclude slots that are already filled
-				var usedSlots = [];
-
-				if(battle.getCup().slots){
-					for(var n = 0; n < team.length; n++){
-						usedSlots.push(team[n].getSlot(battle.getCup()));
-					}
-				}
-
-				while((count < total)&&(i < altRankings.length)){
-					var r = altRankings[i];
-
-					// Don't exclude alternatives from a custom alternatives list
-					if(multiSelectors[2].getPokemonList().length == 0){
-						if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
-							i++
-							continue;
-						}
-
-						if((r.speciesId.indexOf("_xs") > -1)&&(allowXL)){
-							i++;
-							continue;
-						}
-
-						if((r.pokemon.needsXLCandy())&&(! allowXL)){
-							i++;
-							continue;
-						}
-
-
-						if(r.pokemon.hasTag("mega") && hasMega){
-							i++;
-							continue;
-						}
-					}
-
-					var pokemon = r.pokemon;
-
-					// For Labyrinth Cup, exclude Pokemon of existing types
-					if(battle.getCup().name == "labyrinth"){
-						if(excludedTypes.indexOf(pokemon.types[0]) > -1 || excludedTypes.indexOf(pokemon.types[1]) > -1){
-							i++;
-							continue;
-						}
-					}
-
-					// For Continentals, exclude Pokemon of existing slots
-					if((battle.getCup().slots)&&(team.length < 6)){
-						if(usedSlots.indexOf(pokemon.getSlot(battle.getCup())) > -1){
-							i++;
-							continue;
-						}
-					}
-
-					// Add results to alternatives table
-
-					$row = $("<tr><th class=\"name\"><b>"+(count+1)+". "+pokemon.speciesName+"<div class=\"button add\" pokemon=\""+pokemon.speciesId+"\">+</div></b></th></tr>");
-
-					for(var n = 0; n < r.matchups.length; n++){
-						var $cell = $("<td><a class=\"rating\" href=\"#\" target=\"blank\"><span></span></a></td>");
-						var rating = r.matchups[n].rating;
-
-						if(rating == 500){
-							$cell.find("a").addClass("tie");
-						} else if( (rating < 500) && (rating > 250)){
-							$cell.find("a").addClass("close-loss");
-						} else if( rating <= 250){
-							$cell.find("a").addClass("loss");
-						} else if( (rating > 500) && (rating < 750)){
-							$cell.find("a").addClass("close-win");
-						} else if( rating >= 750){
-							$cell.find("a").addClass("win");
-						}
-
-						if(! baitShields){
-							pokemon.isCustom = true;
-							pokemon.baitShields = 0;
-							r.matchups[n].opponent.isCustom = true;
-							r.matchups[n].opponent.baitShields = 0;
-						}
-
-						var pokeStr = pokemon.generateURLPokeStr();
-						var moveStr = pokemon.generateURLMoveStr();
-						var opPokeStr = r.matchups[n].opponent.generateURLPokeStr();
-						var opMoveStr = r.matchups[n].opponent.generateURLMoveStr();
-						var shieldStr = shieldCount + "" + shieldCount;
-						var battleLink = host+"battle/"+battle.getCP(true)+"/"+pokeStr+"/"+opPokeStr+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
-						$cell.find("a").attr("href", battleLink);
-
-						$row.append($cell);
-					}
-
-					// Add region for alternative Pokemon for Continentals
-					if(battle.getCup().name == "continentals-3"){
-						var slotNumber = pokemon.getContinentalSlot();
-						var regions = gm.data.pokemonRegions;
-						var regionName = regions[slotNumber-1].name;
-
-						$row.find("th.name").append("<div class=\"region-label "+regionName.toLowerCase()+"\">Slot "+ slotNumber + "</div>");
-					}
-
-					// Add points for alternative Pokemon for Cliffhanger
-					if(battle.getCup().tierRules){
-						var tierName = "";
-						var pointsName = "points";
-						var points = gm.getPokemonTier(pokemon.speciesId, battle.getCup());
-
-						if(points == 1){
-							pointsName = "point";
-						}
-
-						$row.find("th.name").append("<div class=\"region-label "+tierName.toLowerCase()+"\">"+points+" "+pointsName+"</div>");
-					}
-
-					// Add slot label for Continentals
-					if(battle.getCup().slots){
-						var tierName = "";
-						var slot = 0;
-
-						var slots = battle.getCup().slots;
-
-						for(var j = 0; j < slots.length; j++){
-							if((slots[j].pokemon.indexOf(pokemon.speciesId) > -1)||(slots[j].pokemon.indexOf(pokemon.speciesId.replace("_shadow","")) > -1)){
-								slot = j+1;
-								break;
-							}
-						}
-
-						$row.find("th.name").append("<div class=\"region-label\">Slot "+slot+"</div>");
-					}
-
-					$(".alternatives-table tbody").append($row);
-
-					i++;
-					count++;
-				}
-
-
-
-				if(multiSelectors[0].getAvailableSpots() <= 0){
-					$(".alternatives-table .button.add").hide();
-				}
 
 				// Update the overall team grades
 				$(".overview-section .notes div").hide();
@@ -1031,6 +857,212 @@ var InterfaceMaster = (function () {
 
 
 				runningResults = false;
+			}
+
+			// Display the list of alternative Pokemon given a list of searched Pokemon
+			this.displayAlternatives = function(list){
+				// Gather advanced settings
+				var team = multiSelectors[0].getPokemonList();
+				var scorecardCount = parseInt($(".scorecard-length-select option:selected").val());
+				var allowShadows = $(".team-option .check.allow-shadows").hasClass("on");
+				var allowXL = $(".team-option .check.allow-xl").hasClass("on");
+				var baitShields = $(".team-option .check.shield-baiting").hasClass("on");
+				// Generate counters and histograms, and display that, too
+				var shieldMode = $(".team-advanced .flex.poke .shield-select option:selected").val();
+				var shieldCount = 1;
+
+				if(shieldMode != "average"){
+					shieldCount = parseInt(shieldMode);
+					shieldMode = "single";
+				}
+
+				$(".alternatives-table").html("");
+
+				var $row = $("<thead><tr><td></td></tr></thead>");
+
+				for(var n = 0; n < counterTeam.length; n++){
+					$row.find("tr").append("<td class=\"name-small\">"+counterTeam[n].speciesName+"</td>");
+				}
+
+				$(".alternatives-table").append($row);
+				$(".alternatives-table").append("<tbody></tbody>");
+
+				count = 0;
+				total = scorecardCount;
+				i = 0;
+
+				// For labyrinth cup, exclude types already on team
+				var excludedTypes = [];
+
+				if(battle.getCup().name == "labyrinth"){
+					for(var n = 0; n < team.length; n++){
+						excludedTypes.push(team[n].types[0]);
+
+						if(team[n].types[1] != "none"){
+							excludedTypes.push(team[n].types[1]);
+						}
+					}
+				}
+
+				// Exclude Mega evolutions if one is already on the team
+				var hasMega = false;
+
+				for(var n = 0; n < team.length; n++){
+					if(team[n].hasTag("mega")){
+						hasMega = true;
+					}
+				}
+
+				// For Continentals, exclude slots that are already filled
+				var usedSlots = [];
+
+				if(battle.getCup().slots){
+					for(var n = 0; n < team.length; n++){
+						usedSlots.push(team[n].getSlot(battle.getCup()));
+					}
+				}
+
+				while((count < total)&&(i < altRankings.length)){
+					var r = altRankings[i];
+
+					// Don't exclude alternatives from a custom alternatives list
+					if(multiSelectors[2].getPokemonList().length == 0){
+						if((r.speciesId.indexOf("_shadow") > -1)&&(! allowShadows)){
+							i++
+							continue;
+						}
+
+						if((r.speciesId.indexOf("_xs") > -1)&&(allowXL)){
+							i++;
+							continue;
+						}
+
+						if((r.pokemon.needsXLCandy())&&(! allowXL)){
+							i++;
+							continue;
+						}
+
+
+						if(r.pokemon.hasTag("mega") && hasMega){
+							i++;
+							continue;
+						}
+					}
+
+					var pokemon = r.pokemon;
+
+					// Filter out Pokemon from search
+					if(list && list.indexOf(pokemon.speciesId) == -1){
+						i++;
+						continue;
+					}
+
+					// For Labyrinth Cup, exclude Pokemon of existing types
+					if(battle.getCup().name == "labyrinth"){
+						if(excludedTypes.indexOf(pokemon.types[0]) > -1 || excludedTypes.indexOf(pokemon.types[1]) > -1){
+							i++;
+							continue;
+						}
+					}
+
+					// For Continentals, exclude Pokemon of existing slots
+					if((battle.getCup().slots)&&(team.length < 6)){
+						if(usedSlots.indexOf(pokemon.getSlot(battle.getCup())) > -1){
+							i++;
+							continue;
+						}
+					}
+
+					// Add results to alternatives table
+
+					$row = $("<tr><th class=\"name\"><b>"+(count+1)+". "+pokemon.speciesName+"<div class=\"button add\" pokemon=\""+pokemon.speciesId+"\">+</div></b></th></tr>");
+
+					for(var n = 0; n < r.matchups.length; n++){
+						var $cell = $("<td><a class=\"rating\" href=\"#\" target=\"blank\"><span></span></a></td>");
+						var rating = r.matchups[n].rating;
+
+						if(rating == 500){
+							$cell.find("a").addClass("tie");
+						} else if( (rating < 500) && (rating > 250)){
+							$cell.find("a").addClass("close-loss");
+						} else if( rating <= 250){
+							$cell.find("a").addClass("loss");
+						} else if( (rating > 500) && (rating < 750)){
+							$cell.find("a").addClass("close-win");
+						} else if( rating >= 750){
+							$cell.find("a").addClass("win");
+						}
+
+						if(! baitShields){
+							pokemon.isCustom = true;
+							pokemon.baitShields = 0;
+							r.matchups[n].opponent.isCustom = true;
+							r.matchups[n].opponent.baitShields = 0;
+						}
+
+						var pokeStr = pokemon.generateURLPokeStr();
+						var moveStr = pokemon.generateURLMoveStr();
+						var opPokeStr = r.matchups[n].opponent.generateURLPokeStr();
+						var opMoveStr = r.matchups[n].opponent.generateURLMoveStr();
+						var shieldStr = shieldCount + "" + shieldCount;
+						var battleLink = host+"battle/"+battle.getCP(true)+"/"+pokeStr+"/"+opPokeStr+"/"+shieldStr+"/"+moveStr+"/"+opMoveStr+"/";
+						$cell.find("a").attr("href", battleLink);
+
+						$row.append($cell);
+					}
+
+					// Add region for alternative Pokemon for Continentals
+					if(battle.getCup().name == "continentals-3"){
+						var slotNumber = pokemon.getContinentalSlot();
+						var regions = gm.data.pokemonRegions;
+						var regionName = regions[slotNumber-1].name;
+
+						$row.find("th.name").append("<div class=\"region-label "+regionName.toLowerCase()+"\">Slot "+ slotNumber + "</div>");
+					}
+
+					// Add points for alternative Pokemon for Cliffhanger
+					if(battle.getCup().tierRules){
+						var tierName = "";
+						var pointsName = "points";
+						var points = gm.getPokemonTier(pokemon.speciesId, battle.getCup());
+
+						if(points == 1){
+							pointsName = "point";
+						}
+
+						$row.find("th.name").append("<div class=\"region-label "+tierName.toLowerCase()+"\">"+points+" "+pointsName+"</div>");
+					}
+
+					// Add slot label for Continentals
+					if(battle.getCup().slots){
+						var tierName = "";
+						var slot = 0;
+
+						var slots = battle.getCup().slots;
+
+						for(var j = 0; j < slots.length; j++){
+							if((slots[j].pokemon.indexOf(pokemon.speciesId) > -1)||(slots[j].pokemon.indexOf(pokemon.speciesId.replace("_shadow","")) > -1)){
+								slot = j+1;
+								break;
+							}
+						}
+
+						$row.find("th.name").append("<div class=\"region-label\">Slot "+slot+"</div>");
+					}
+
+					$(".alternatives-table tbody").append($row);
+
+					i++;
+					count++;
+				}
+
+				// Center search with the table
+				$(".poke-search[context='alternative-search']").parent().css("max-width", $(".alternatives-table").width());
+				$(".poke-search[context='alternative-search']").parent().css("margin", "0 auto");
+
+				if(multiSelectors[0].getAvailableSpots() <= 0){
+					$(".alternatives-table .button.add").hide();
+				}
 			}
 
 			// Given a goal value, convert a score into a letter grade

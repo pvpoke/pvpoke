@@ -68,6 +68,10 @@ textarea:-moz-placeholder {
   border: 1px solid #aaa;
 }
 
+.poke input.poke-search {
+  background: rgba(24, 28, 40, 0.75);
+}
+
 header {
   background: #444;
 }

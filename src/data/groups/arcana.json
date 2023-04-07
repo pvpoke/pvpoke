@@ -83,6 +83,10 @@
     "fastMove": "COUNTER",
     "chargedMoves": ["ICE_PUNCH", "PSYCHIC"]
 }, {
+    "speciesId": "meganium",
+    "fastMove": "VINE_WHIP",
+    "chargedMoves": ["FRENZY_PLANT", "EARTHQUAKE"]
+}, {
     "speciesId": "mew",
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["WILD_CHARGE", "SURF"]
@@ -119,7 +123,7 @@
     "fastMove": "QUICK_ATTACK",
     "chargedMoves": ["V_CREATE", "OVERHEAT"]
 }, {
-    "speciesId": "meganium",
-    "fastMove": "VINE_WHIP",
-    "chargedMoves": ["FRENZY_PLANT", "EARTHQUAKE"]
+    "speciesId": "gyarados",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["AQUA_TAIL", "CRUNCH"]
 }]

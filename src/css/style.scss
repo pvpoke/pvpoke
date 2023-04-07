@@ -448,7 +448,7 @@ header{
 		}
 
 		&.poke-search{
-			background: none;
+			background: rgba(216, 242, 249, 0.75);
 		    border: none;
 		    border-bottom: 1px solid #000;
 		    border-radius: 0;
@@ -3698,6 +3698,10 @@ a.download-csv{
 		tr:nth-of-type(2n){
 			background:rgba(0,0,0,.1);
 		}
+
+		&.alternatives-table{
+			min-width: 600px;
+		}
 	}
 
 	.rating-table{
@@ -4151,6 +4155,7 @@ a.download-csv{
 		}
 
 		.poke-search{
+			background: none !important;
 			margin-bottom:5px;
 		}
 

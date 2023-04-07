@@ -46,28 +46,28 @@
 		"showMeta": true
 	},
 	{
-		"title": "Fantasy Cup (Ultra)",
-		"cup": "fantasy",
-		"cp": 2500,
-		"meta": "fantasyultra",
+		"title": "Little Cup",
+		"cup": "little",
+		"cp": 500,
+		"meta": "little",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
 	},
 	{
-		"title": "Color Cup",
-		"cup": "color",
+		"title": "Spring Cup",
+		"cup": "spring",
 		"cp": 1500,
-		"meta": "color",
+		"meta": "spring",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
 	},
 	{
-		"title": "Psychic Cup",
-		"cup": "psychic",
+		"title": "Evolution Cup",
+		"cup": "evolution",
 		"cp": 1500,
-		"meta": "psychic",
+		"meta": "evolution",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
@@ -130,10 +130,10 @@
 		"showMeta": true
 	},
 	{
-		"title": "Silph Ionic Cup",
-		"cup": "ionic",
+		"title": "Silph Polkadot Cup",
+		"cup": "polkadot",
 		"cp": 1500,
-		"meta": "ionic",
+		"meta": "polkadot",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true,

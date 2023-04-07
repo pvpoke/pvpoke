@@ -19,7 +19,7 @@ var GameMaster = (function () {
 
 		var gmVersion = settings.gamemaster;
 
-		if((gmVersion == "gamemaster-mega")||(gmVersion == "gamemaster-kalos")){
+		if((gmVersion == "gamemaster-mega")||(gmVersion == "gamemaster-paldea")){
 			gmVersion = "gamemaster";
 		}
 
@@ -67,9 +67,9 @@ var GameMaster = (function () {
 
 						InterfaceMaster.getInstance().init(object);
 					});
-				} else if(settings.gamemaster == "gamemaster-kalos"){
+				} else if(settings.gamemaster == "gamemaster-paldea"){
 					// Load additional mega pokemon
-					$.getJSON( webRoot+"data/kalos.json?v="+siteVersion, function( data ){
+					$.getJSON( webRoot+"data/paldea.json?v="+siteVersion, function( data ){
 
 						// Sort Pokemon alphabetically for searching
 						object.data.pokemon = object.data.pokemon.concat(data);
@@ -854,7 +854,7 @@ var GameMaster = (function () {
 				minStats = 0;
 			}
 
-			var bannedList = ["mewtwo","mewtwo_armored","giratina_altered","groudon","kyogre","palkia","dialga","heatran","giratina_origin","darkrai","cobalion","terrakion","virizion","thundurus_incarnate","regigigas","tornadus_incarnate","tornadus_therian","tornadus_therian_xl","landorus_incarnate", "landorus_therian", "reshiram", "zekrom", "kyurem", "genesect_burn", "xerneas", "thundurus_therian", "yveltal", "meloetta_aria", "zacian", "zamazenta", "zacian_hero", "zamazenta_hero", "genesect_douse", "zarude", "hoopa_unbound", "genesect_shock", "tapu_koko", "tapu_lele", "tapu_bulu", "nihilego", "shaymin_sky", "genesect_chill", "braviary_hisuian", "solgaleo", "lunala", "keldeo_ordinary", "avalugg_hisuian"];
+			var bannedList = ["mewtwo","mewtwo_armored","giratina_altered","groudon","kyogre","palkia","dialga","heatran","giratina_origin","darkrai","cobalion","terrakion","virizion","thundurus_incarnate","regigigas","tornadus_incarnate","tornadus_therian","tornadus_therian_xl","landorus_incarnate", "landorus_therian", "reshiram", "zekrom", "kyurem", "genesect_burn", "xerneas", "thundurus_therian", "yveltal", "meloetta_aria", "zacian", "zamazenta", "zacian_hero", "zamazenta_hero", "genesect_douse", "zarude", "hoopa_unbound", "genesect_shock", "tapu_koko", "tapu_lele", "tapu_bulu", "nihilego", "genesect_chill", "braviary_hisuian", "solgaleo", "lunala", "keldeo_ordinary", "avalugg_hisuian", "kyogre_primal", "groudon_primal"];
 
 			// Aggregate filters
 

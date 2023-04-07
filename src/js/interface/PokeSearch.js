@@ -5,13 +5,16 @@ var pokeSearch = new function(){
 	var searchStr = '';
 	var $target = null;
 	var battle;
+	var context;
 
 	this.setBattle = function(b){
 		battle = b;
 	}
 
-	$("body").on("keyup", ".poke-search[context='ranking-search']", function(e){
+	$("body").on("keyup", ".poke-search[context='ranking-search'], .poke-search[context='alternative-search']", function(e){
 		searchStr = $(this).val().toLowerCase().trim();
+		context = $(this).attr("context");
+
 
 		$target = $(e.target).closest(".poke-search-container");
 
@@ -28,7 +31,7 @@ var pokeSearch = new function(){
 
 	// Scroll searchbar into view on focus
 	if(screen.width <= 768){
-		$("body").on("focus", ".poke-search[context='ranking-search']", function(e){
+		$("body").on("focus", ".poke-search[context='ranking-search'], .poke-search[context='alternative-search']", function(e){
 			$target = $(e.target).closest(".poke-search-container");
 
 			$("html, body").animate({ scrollTop: $target.offset().top - 65 }, 500);
@@ -95,7 +98,12 @@ var pokeSearch = new function(){
 	function submitSearchQuery(){
 		var list = GameMaster.getInstance().generatePokemonListFromSearchString(searchStr, battle);
 
-		$target.siblings(".rankings-container").find(".rank").each(function(index, value){
+		if(context == "alternative-search"){
+			InterfaceMaster.getInstance().displayAlternatives(list);
+			return;
+		}
+
+		$target.siblings(".rankings-container").find("> .rank").each(function(index, value){
 			var id = $(this).attr("data");
 
 			if((list.indexOf(id) > -1)||(! id)){

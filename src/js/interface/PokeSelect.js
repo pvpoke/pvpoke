@@ -340,7 +340,7 @@ function PokeSelect(element, i){
 						// Show a link to the alternative form
 
 						$el.find(".form-select").hide();
-						$el.find(".form-link").show();
+						$el.find(".form-link").css("display", "block");
 						$el.find(".form-link").text(forms[0].speciesName);
 						$el.find(".form-link").attr("value", forms[0].speciesId);
 					}
@@ -671,7 +671,7 @@ function PokeSelect(element, i){
 
 			modalWindow("Add Custom Move", $el.find(".custom-move"));
 
-			$(".modal .name").html(selectedPokemon.speciesName);
+			$(".modal .custom-move .name").html(selectedPokemon.speciesName);
 
 			var isFastMove = $(e.target).hasClass("fast");
 
@@ -1039,27 +1039,6 @@ function PokeSelect(element, i){
 			selectedPokemon.setIV(iv, value);
 
 			$el.find("input.level").val(selectedPokemon.level);
-
-			// Auto select the next input when finished
-			if(value != 1){
-				switch(iv){
-					case "atk":
-						$el.find("input.iv[iv='def']").focus();
-						break;
-
-					case "def":
-						$el.find("input.iv[iv='hp']").focus();
-						break;
-
-					case "hp":
-						$(this).blur();
-						break;
-				}
-			}
-
-			if(iv == "atk" || iv == "def"){
-
-			}
 		}
 
 		isCustom = true;

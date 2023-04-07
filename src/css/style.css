@@ -319,7 +319,7 @@ header {
   font-weight: bold;
 }
 .poke input.poke-search, .poke select.poke-search {
-  background: none;
+  background: rgba(216, 242, 249, 0.75);
   border: none;
   border-bottom: 1px solid #000;
   border-radius: 0;
@@ -3285,6 +3285,9 @@ a.download-csv {
 .article table tr:nth-of-type(2n) {
   background: rgba(0, 0, 0, 0.1);
 }
+.article table.alternatives-table {
+  min-width: 600px;
+}
 .article .rating-table td {
   padding: 3px;
 }
@@ -3673,6 +3676,7 @@ a.download-csv {
   display: none !important;
 }
 .modal .modal-container .poke-search {
+  background: none !important;
   margin-bottom: 5px;
 }
 .modal .modal-container .move-select {

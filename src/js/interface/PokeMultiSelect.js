@@ -568,7 +568,7 @@ function PokeMultiSelect(element){
 
 	this.setCP = function(cp){
 		// only show quick fill metas with same cp as selected
-		const leagueMap = {"littlegeneral": 500, "great": 1500, "ultra": 2500, "master": 10000}
+		const leagueMap = {"little": 500, "great": 1500, "ultra": 2500, "master": 10000}
 		$el.find(".quick-fill-select option").each(function(index, element) {
 			element = $(element);
 			// always show custom groups (from cookies) and create new group

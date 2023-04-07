@@ -41,29 +41,24 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.29.23 (February 7, 2022)</h4>
+	<h4>v1.29.28 (April 7, 2023)</h4>
 	<ul>
-		<li>Battle logic updates:</li>
-		<ul>
-			<li>Improved optimal timing. (Previously, Pokemon would ignore optimal timing if they had a lethal Charged Move, but this ignored whether the opponent still had shields.)</li>
-			<li>Improved some niche near-faint Charged Move usage. (Pokemon would previously throw their highest damage Charged Move available. Pokemon will now throw 2 of a lower damage move if they win CMP and would deal more damage than the one Charged Move. See: Talonflame vs Cobalion.)</li>
-			<li>Improved near-faint Charged Move usage vs 1 turn moves. (Pokemon would sometimes faint with energy vs 1 turn moves. They now anticipate their faint 1 turn earlier.)</li>
-		</ul>
+
 	</ul>
 
 	<h3>Latest Article</h3>
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/infographics/23-01-season-of-mythical-wishes-starter-packs/">
-				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/infographics/23-01-season-of-mythical-wishes-starter-packs/thumb.jpg">
+			<a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-03-slowpoke/">
+				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/community-day/23-03-slowpoke/thumb.jpg">
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/infographics/23-01-season-of-mythical-wishes-starter-packs/">PvP Starter Packs for Season of Mythical Wishes</a></h4>
-			<div class="date">January 14, 2023</div>
-			<p>Check out the premiere and budget picks to get started in Great League, Ultra League, and Master League for GO Battle League in the Season of Mythical Wishes!</p>
-			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a><a href="<?php echo $WEB_ROOT; ?>articles?tag=Starter Pack"># Starter Pack</a></div>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-03-slowpoke/">Slowpoke Community Day Guide for PvP</a></h4>
+			<div class="date">March 16, 2023</div>
+			<p>Not so fast! Slowpoke Community Day is around the corner. Find out how Surf will impact the whole Slow family in PvP and IV's to look for.</p>
+			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Community Day"># Community Day</a><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a></div>
 		</div>
 	</div>
 

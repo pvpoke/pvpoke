@@ -1,0 +1,186 @@
+{
+	"species": [
+		{
+			"speciesId": "slowpoke",
+			"baseSpeciesId": "slowpoke"
+		},
+		{
+			"speciesId": "slowbro",
+			"baseSpeciesId": "slowpoke",
+			"default": true
+		},
+		{
+			"speciesId": "slowking",
+			"baseSpeciesId": "slowpoke"
+		},
+		{
+			"speciesId": "slowpoke_galarian",
+			"baseSpeciesId": "slowpoke_galarian"
+		},
+		{
+			"speciesId": "slowbro_galarian",
+			"baseSpeciesId": "slowpoke_galarian"
+		},
+		{
+			"speciesId": "slowking_galarian",
+			"baseSpeciesId": "slowpoke_galarian"
+		}
+	],
+	"checklist": [
+		{
+			"title": "High Rank Galarian Slowbro",
+			"speciesId": "slowbro_galarian",
+			"baseSpeciesId": "slowpoke_galarian",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [23.5, 0, 14, 11],
+			"priority": 1
+		},
+		{
+			"title": "High Rank Galarian Slowking",
+			"speciesId": "slowking_galarian",
+			"baseSpeciesId": "slowpoke_galarian",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [21, 0, 14, 13],
+			"priority": 1,
+			"notes": "Slight Attack IV's may be worth considering since the Galarian Slowbro mirror match depends on winning CMP ties. \n\n Galarian Slowking lies just on the edge of an Attack bracket that encompasses Swampert, Froslass, Pelipper, Sableye, and Venusaur. It can win CMP ties against high rank versions of these Pokemon with significant Attack investment of its own, but this is unlikely to be worth the sacrifice in stat product."
+		},
+		{
+			"title": "High Rank Slowbro",
+			"speciesId": "slowbro",
+			"baseSpeciesId": "slowpoke",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [22.5, 0, 13, 15],
+			"priority": 1
+		},
+		{
+			"title": "High Rank Galarian Slowbro",
+			"speciesId": "slowbro_galarian",
+			"baseSpeciesId": "slowpoke_galarian",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [48.5, 1, 15, 11],
+			"priority": 1
+		},
+		{
+			"title": "High Rank Galarian Slowking",
+			"speciesId": "slowking_galarian",
+			"baseSpeciesId": "slowpoke_galarian",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [39.5, 0, 15, 15],
+			"priority": 1,
+			"notes": "Slight Attack IV's may be worth considering since the Galarian Slowbro mirror match depends on winning CMP ties."
+		},
+		{
+			"title": "High Rank Slowbro",
+			"speciesId": "slowbro",
+			"baseSpeciesId": "slowpoke",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [45.5, 0, 14, 14],
+			"priority": 1
+		},
+		{
+			"title": "Mega Slowbro",
+			"speciesId": "slowbro",
+			"baseSpeciesId": "slowpoke",
+			"league": "master",
+			"cp": 10000,
+			"ivs": [50, 15, 15, 15],
+			"priority": 1
+		},
+		{
+			"title": "Shadow Slowbro",
+			"speciesId": "slowbro",
+			"baseSpeciesId": "slowpoke",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [22.5, 0, 13, 15],
+			"priority": 2
+		},
+		{
+			"title": "Shadow Slowbro",
+			"speciesId": "slowbro",
+			"baseSpeciesId": "slowpoke",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [45.5, 0, 14, 14],
+			"priority": 2
+		},
+		{
+			"title": "High Rank Slowking",
+			"speciesId": "slowking",
+			"baseSpeciesId": "slowpoke",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [22.5, 0, 13, 15],
+			"priority": 2
+		},
+		{
+			"title": "High Rank Slowking",
+			"speciesId": "slowking",
+			"baseSpeciesId": "slowpoke",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [45.5, 0, 14, 14],
+			"priority": 2
+		},
+		{
+			"title": "Little Cup Slowpoke",
+			"speciesId": "slowpoke",
+			"baseSpeciesId": "slowpoke",
+			"league": "special",
+			"cp": 500,
+			"ivs": [16, 2, 15, 14],
+			"priority": 2
+		},
+		{
+			"title": "Little Cup Galarian Slowpoke",
+			"speciesId": "slowpoke_galarian",
+			"baseSpeciesId": "slowpoke_galarian",
+			"league": "special",
+			"cp": 500,
+			"ivs": [16, 2, 15, 14],
+			"priority": 2
+		},
+		{
+			"title": "Shadow Slowking",
+			"speciesId": "slowking",
+			"baseSpeciesId": "slowpoke",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [22.5, 0, 13, 15],
+			"priority": 3
+		},
+		{
+			"title": "Shadow Slowking",
+			"speciesId": "slowking",
+			"baseSpeciesId": "slowpoke",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [45.5, 0, 14, 14],
+			"priority": 3
+		},
+		{
+			"title": "High IV Galarian Slowpoke",
+			"speciesId": "slowpoke_galarian",
+			"baseSpeciesId": "slowpoke_galarian",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [50, 15, 15, 15],
+			"priority": 3
+		},
+		{
+			"title": "High IV Slowpoke",
+			"speciesId": "slowpoke",
+			"baseSpeciesId": "slowpoke",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [50, 15, 15, 15],
+			"priority": 3
+		}
+	]
+}

@@ -4467,7 +4467,7 @@
 	    }
 	}, {
 	    "name": "Dragonite",
-	    "types": ["dragon"],
+	    "types": ["dragon", "flying"],
 	    "id": "dragonite",
 	    "stats": {
 	        "hp": 91,
@@ -5267,6 +5267,38 @@
 		"defaults": {
 			"teraType": "psychic",
 			"moveTypes": ["psychic", "grass", "bug"]
+		}
+	}, {
+	    "name": "Decidueye",
+	    "types": ["grass", "ghost"],
+	    "id": "decidueye",
+	    "stats": {
+	        "hp": 78,
+	        "atk": 107,
+	        "def": 75,
+	        "spA": 100,
+	        "spD": 100,
+	        "spe": 70
+	    },
+		"defaults": {
+			"teraType": "flying",
+			"moveTypes": ["grass", "ghost", "flying", "fighting"]
+		}
+	}, {
+	    "name": "Samurott",
+	    "types": ["water"],
+	    "id": "samurott",
+	    "stats": {
+	        "hp": 90,
+	        "atk": 108,
+	        "def": 80,
+	        "spA": 100,
+	        "spD": 65,
+	        "spe": 85
+	    },
+		"defaults": {
+			"teraType": "bug",
+			"moveTypes": ["water", "bug", "dark", "ground"]
 		}
 	}],
 	"traits": [

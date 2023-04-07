@@ -80,6 +80,22 @@ switch($cup){
 		$league = 'Silph Ionic Cup';
 		break;
 
+	case "polkadot":
+		$league = 'Silph Polkadot Cup';
+		break;
+
+	case "little":
+		$league = 'Little Cup';
+		break;
+
+	case "spring":
+		$league = 'Spring Cup';
+		break;
+
+	case "evolution":
+		$league = 'Evolution Cup';
+		break;
+
 	case "justicar":
 		$league = 'Silph Factions (Justicar)';
 		break;
@@ -106,8 +122,8 @@ switch($cup){
 		$league = 'Element Cup';
 		break;
 
-	case "halloween":
-		$league = 'Halloween Cup';
+	case "mountain":
+		$league = 'Mountain Cup';
 		break;
 
 	case "remix":
@@ -282,16 +298,8 @@ require_once 'header.php';
 </div>
 
 <?php require_once 'modules/search-string-help.php'; ?>
+<?php require_once 'modules/search-traits.php'; ?>
 
-<div class="search-traits-selector hide">
-	<p>Select the options below to search for Pokemon traits and playstyles.</p>
-
-	<div class="traits"></div>
-
-	<div class="center flex">
-		<div class="button search">Search</div>
-	</div>
-</div>
 
 
 <?php require_once 'modules/rankingdetails.php'; ?>
