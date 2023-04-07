@@ -8074,7 +8074,8 @@
         "id": "FAMILY_DRATINI",
         "parent": "dratini_shadow",
         "evolutions": ["dragonite_shadow"]
-    }
+    },
+	"nicknames": ["dnair"]
 }, {
     "dex": 149,
     "speciesName": "Dragonite",
@@ -8178,7 +8179,7 @@
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true,
-    "nicknames": ["m2"]
+    "nicknames": ["am2"]
 }, {
     "dex": 150,
     "speciesName": "Mewtwo (Shadow)",
