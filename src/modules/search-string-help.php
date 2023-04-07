@@ -81,7 +81,7 @@
 </div>
 
 <div class="search-nicknames article hide">
-	<p>You can use the following search formats to filter Pokemon:</p>
+	<p>You can select or search for Pokemon using the common nicknames below:</p>
 	<table cellspacing="0">
 		<thead>
 			<th>Pokemon</th>
