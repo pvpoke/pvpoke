@@ -6,6 +6,10 @@
 			<td>azumarill</td>
 		</tr>
 		<tr>
+			<td><strong>Pokemon Nickname</strong></td>
+			<td>gfisk (<a class="nickname-list" href="#">List of nicknames<a>)</td>
+		</tr>
+		<tr>
 			<td><strong>Pokemon Type</strong></td>
 			<td>water</td>
 		</tr>
@@ -73,5 +77,18 @@
 			<td><strong>Not</strong></td>
 			<td>!water</td>
 		</tr>
+	</table>
+</div>
+
+<div class="search-nicknames article hide">
+	<p>You can use the following search formats to filter Pokemon:</p>
+	<table cellspacing="0">
+		<thead>
+			<th>Pokemon</th>
+			<th>Nicknames</th>
+		</thead>
+
+		<tbody>
+		</tbody>
 	</table>
 </div>

@@ -12,8 +12,9 @@ var pokeSearch = new function(){
 	}
 
 	$("body").on("keyup", ".poke-search[context='ranking-search'], .poke-search[context='alternative-search']", function(e){
-		searchStr = $(this).val().toLowerCase();
+		searchStr = $(this).val().toLowerCase().trim();
 		context = $(this).attr("context");
+
 
 		$target = $(e.target).closest(".poke-search-container");
 
@@ -44,6 +45,22 @@ var pokeSearch = new function(){
 
 		if($(this).attr("context") != "pokeselect"){
 			modalWindow("Search Strings", $(".sandbox-search-strings"));
+
+			$(".modal a.nickname-list").click(function(e){
+				e.preventDefault();
+
+				modalWindow("Pokemon Nicknames", $(".search-nicknames"));
+
+				var gm = GameMaster.getInstance();
+
+				for(var i = 0; i < gm.data.pokemon.length; i++){
+					var pokemon = gm.data.pokemon[i];
+
+					if(pokemon.nicknames && ! pokemon.speciesId.includes("shadow") && ! pokemon.speciesId.includes("mega")){
+						$(".modal .search-nicknames tbody").append("<tr><td>"+pokemon.speciesName+"</td><td>"+pokemon.nicknames.join(", ")+"</td></tr>");
+					}
+				}
+			});
 		}
 	});
 

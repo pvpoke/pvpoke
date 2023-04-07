@@ -37,12 +37,19 @@ function PokeSelect(element, i){
 				priority = poke.searchPriority;
 			}
 
-			searchArr.push({
+			var obj = {
 				speciesId: poke.speciesId,
 				speciesName: poke.speciesName.toLowerCase(),
 				dex: poke.dex,
 				priority: priority
-			});
+			};
+
+			if(poke.nicknames){
+				obj.nicknames = poke.nicknames;
+			}
+
+			// This array is searched for matching Pokemon
+			searchArr.push(obj);
 
 			var displayName = poke.speciesName;
 
@@ -50,7 +57,9 @@ function PokeSelect(element, i){
 				displayName += " (Non XL)";
 			}
 
-			$pokeSelect.append("<option value=\""+poke.speciesId+"\" type-1=\""+poke.types[0]+"\" type-2=\""+poke.types[1]+"\">"+displayName+"</option");
+			var $option = $("<option value=\""+poke.speciesId+"\">"+displayName+"</option>");
+
+			$pokeSelect.append($option);
 		});
 
 		$el.find(".check.auto-level").addClass("on");
@@ -558,23 +567,6 @@ function PokeSelect(element, i){
 		return isCustom;
 	}
 
-	// Show or hide Pokemon select options given array of types
-
-	this.filterByTypes = function(types){
-
-		$pokeSelect.find("option").removeClass("hide");
-
-		if(types.length > 0){
-			$pokeSelect.find("option").each(function(index, value){
-				if((types.indexOf($(this).attr("type-1")) > -1) || (types.indexOf($(this).attr("type-2")) > -1)){
-					$(this).removeClass("hide");
-				} else{
-					$(this).addClass("hide");
-				}
-			});
-		}
-	}
-
 	// Externally select the number of shields
 
 	this.setShields = function(value){
@@ -768,11 +760,7 @@ function PokeSelect(element, i){
 
 	function submitSearchQuery(){
 
-		var searchStr = $el.find(".poke-search").val().toLowerCase();
-
-		if(searchStr == 'spooder'){
-			searchStr = 'galvantula';
-		}
+		var searchStr = $el.find(".poke-search").val().toLowerCase().trim();
 
 		if(searchStr == '')
 			return;
@@ -780,15 +768,24 @@ function PokeSelect(element, i){
 		for(var i = 0; i < searchArr.length; i++){
 			var pokeName = searchArr[i].speciesName;
 
+			// Name search
 			if(pokeName.startsWith(searchStr)){
 				$pokeSelect.find("option[value=\""+searchArr[i].speciesId+"\"]").prop("selected", "selected");
 				break;
 			}
 
+			// Dex search
 			if(searchArr[i].dex == searchStr){
 				$pokeSelect.find("option[value=\""+searchArr[i].speciesId+"\"]").prop("selected", "selected");
 				break;
 			}
+
+			// Nickname search
+			if(searchArr[i].nicknames && searchArr[i].nicknames.indexOf(searchStr) > -1){
+				$pokeSelect.find("option[value=\""+searchArr[i].speciesId+"\"]").prop("selected", "selected");
+				break;
+			}
+
 		}
 
 		var id = $pokeSelect.find("option:selected").val();

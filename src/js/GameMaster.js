@@ -1040,7 +1040,7 @@ var GameMaster = (function () {
 
 		object.generatePokemonListFromSearchString = function(str, battle){
 			// Break the search string up into queries
-			var str = str.replace(/, /g, '').toLowerCase();
+			var str = str.replace(/\s+,\s+/g, ',').toLowerCase();
 			var queries = str.split(',');
 			var results = []; // Store an array of qualifying Pokemon ID's
 
@@ -1155,6 +1155,11 @@ var GameMaster = (function () {
 
 							// Tag search
 							if((tags.indexOf(param) > -1)&&(pokemon.hasTag(param))){
+								valid = true;
+							}
+
+							// Nickname search
+							if (pokemon.nicknames.indexOf(param) > -1) {
 								valid = true;
 							}
 

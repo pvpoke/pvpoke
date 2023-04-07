@@ -317,7 +317,8 @@
     "family": {
         "id": "FAMILY_CHARMANDER",
         "parent": "charmeleon"
-    }
+    },
+    "nicknames": ["zard"]
 }, {
     "dex": 6,
     "speciesName": "Charizard (Mega X)",
@@ -344,7 +345,8 @@
     "family": {
         "id": "FAMILY_CHARMANDER",
         "parent": "charmeleon"
-    }
+    },
+    "nicknames": ["zardx"]
 }, {
     "dex": 6,
     "speciesName": "Charizard (Mega Y)",
@@ -371,7 +373,8 @@
     "family": {
         "id": "FAMILY_CHARMANDER",
         "parent": "charmeleon"
-    }
+    },
+    "nicknames": ["zardy"]
 }, {
     "dex": 6,
     "speciesName": "Charizard (Shadow)",
@@ -398,7 +401,8 @@
     "family": {
         "id": "FAMILY_CHARMANDER",
         "parent": "charmeleon_shadow"
-    }
+    },
+    "nicknames": ["zard"]
 }, {
     "dex": 7,
     "speciesName": "Squirtle",
@@ -1520,7 +1524,8 @@
     "family": {
         "id": "FAMILY_PIKACHU",
         "parent": "pikachu"
-    }
+    },
+    "nicknames": ["kchu"]
 }, {
     "dex": 26,
     "speciesName": "Raichu (Alolan)",
@@ -1547,7 +1552,8 @@
     "family": {
         "id": "FAMILY_PIKACHU",
         "parent": "pikachu"
-    }
+    },
+    "nicknames": ["achu"]
 }, {
     "dex": 27,
     "speciesName": "Sandshrew",
@@ -1574,7 +1580,8 @@
     "family": {
         "id": "FAMILY_SANDSHREW",
         "evolutions": ["sandslash"]
-    }
+    },
+    "nicknames": ["kshrew"]
 }, {
     "dex": 27,
     "speciesName": "Sandshrew (Alolan)",
@@ -1600,7 +1607,8 @@
     "family": {
         "id": "FAMILY_SANDSHREW",
         "evolutions": ["sandslash_alolan"]
-    }
+    },
+    "nicknames": ["ashrew"]
 }, {
     "dex": 27,
     "speciesName": "Sandshrew (Shadow)",
@@ -1626,7 +1634,8 @@
     "family": {
         "id": "FAMILY_SANDSHREW",
         "evolutions": ["sandslash_shadow"]
-    }
+    },
+    "nicknames": ["kshrew"]
 }, {
     "dex": 27,
     "speciesName": "Sandshrew (Alolan) (Shadow)",
@@ -1651,7 +1660,8 @@
     "family": {
         "id": "FAMILY_SANDSHREW",
         "evolutions": ["sandslash_alolan_shadow"]
-    }
+    },
+    "nicknames": ["ashrew"]
 }, {
     "dex": 28,
     "speciesName": "Sandslash",
@@ -1679,7 +1689,8 @@
     "family": {
         "id": "FAMILY_SANDSHREW",
         "parent": "sandshrew"
-    }
+    },
+    "nicknames": ["kslash"]
 }, {
     "dex": 28,
     "speciesName": "Sandslash (Alolan)",
@@ -1708,7 +1719,8 @@
     "family": {
         "id": "FAMILY_SANDSHREW",
         "parent": "sandshrew_alolan"
-    }
+    },
+    "nicknames": ["aslash"]
 }, {
     "dex": 28,
     "speciesName": "Sandslash (Shadow)",
@@ -1735,7 +1747,8 @@
     "family": {
         "id": "FAMILY_SANDSHREW",
         "parent": "sandshrew_shadow"
-    }
+    },
+    "nicknames": ["kslash"]
 }, {
     "dex": 28,
     "speciesName": "Sandslash (Alolan) (Shadow)",
@@ -1763,7 +1776,8 @@
     "family": {
         "id": "FAMILY_SANDSHREW",
         "parent": "sandshrew_alolan_shadow"
-    }
+    },
+    "nicknames": ["aslash"]
 }, {
     "dex": 29,
     "speciesName": "Nidoran Female",
@@ -1897,7 +1911,8 @@
     "family": {
         "id": "FAMILY_NIDORAN_FEMALE",
         "parent": "nidorina"
-    }
+    },
+	"nicknames": ["queen"]
 }, {
     "dex": 31,
     "speciesName": "Nidoqueen (Shadow)",
@@ -2268,7 +2283,8 @@
     "family": {
         "id": "FAMILY_VULPIX",
         "parent": "vulpix"
-    }
+    },
+    "nicknames": ["k9"]
 }, {
     "dex": 38,
     "speciesName": "Ninetales (Alolan)",
@@ -2296,7 +2312,8 @@
         "id": "FAMILY_VULPIX",
         "parent": "vulpix_alolan"
     },
-    "level25CP": 1401
+    "level25CP": 1401,
+    "nicknames": ["a9"]
 }, {
     "dex": 38,
     "speciesName": "Ninetales (Shadow)",
@@ -2324,7 +2341,8 @@
     "family": {
         "id": "FAMILY_VULPIX",
         "parent": "vulpix_shadow"
-    }
+    },
+    "nicknames": ["k9"]
 }, {
     "dex": 38,
     "speciesName": "Ninetales (Alolan) (Shadow)",
@@ -2351,7 +2369,8 @@
     "family": {
         "id": "FAMILY_VULPIX",
         "parent": "vulpix_alolan_shadow"
-    }
+    },
+    "nicknames": ["a9"]
 }, {
     "dex": 39,
     "speciesName": "Jigglypuff",
@@ -3657,7 +3676,8 @@
     "family": {
         "id": "FAMILY_POLIWAG",
         "parent": "poliwhirl"
-    }
+    },
+    "nicknames": ["wrath"]
 }, {
     "dex": 62,
     "speciesName": "Poliwrath (Shadow)",
@@ -3685,7 +3705,8 @@
     "family": {
         "id": "FAMILY_POLIWAG",
         "parent": "poliwhirl_shadow"
-    }
+    },
+    "nicknames": ["wrath"]
 }, {
     "dex": 63,
     "speciesName": "Abra",
@@ -4241,7 +4262,8 @@
     "family": {
         "id": "FAMILY_TENTACOOL",
         "parent": "tentacool"
-    }
+    },
+	"nicknames": ["cruel"]
 }, {
     "dex": 74,
     "speciesName": "Geodude",
@@ -4374,7 +4396,8 @@
         "id": "FAMILY_GEODUDE",
         "parent": "geodude_alolan",
         "evolutions": ["golem_alolan"]
-    }
+    },
+    "nicknames": ["agrav"]
 }, {
     "dex": 75,
     "speciesName": "Graveler (Shadow)",
@@ -4582,7 +4605,8 @@
     "family": {
         "id": "FAMILY_PONYTA",
         "parent": "ponyta_galarian"
-    }
+    },
+	"nicknames": ["gdash"]
 }, {
     "dex": 79,
     "speciesName": "Slowpoke",
@@ -5187,6 +5211,7 @@
         "id": "FAMILY_GRIMER",
         "parent": "grimer_alolan"
     },
+    "nicknames": ["amuk"],
     "level25CP": 1696
 }, {
     "dex": 89,
@@ -6082,7 +6107,8 @@
     "family": {
         "id": "FAMILY_CUBONE",
         "parent": "cubone"
-    }
+    },
+    "nicknames": ["awak"]
 }, {
     "dex": 105,
     "speciesName": "Marowak (Shadow)",
@@ -6134,7 +6160,8 @@
     "family": {
         "id": "FAMILY_CUBONE",
         "parent": "cubone_shadow"
-    }
+    },
+    "nicknames": ["awak"]
 }, {
     "dex": 106,
     "speciesName": "Hitmonlee",
@@ -6378,7 +6405,8 @@
     "family": {
         "id": "FAMILY_KOFFING",
         "parent": "koffing"
-    }
+    },
+    "nicknames": ["gweez"]
 }, {
     "dex": 110,
     "speciesName": "Weezing (Shadow)",
@@ -6818,7 +6846,8 @@
     "family": {
         "id": "FAMILY_MR_MIME",
         "parent": "mime_jr"
-    }
+    },
+    "nicknames": ["mime", "mr mime"]
 }, {
     "dex": 122,
     "speciesName": "Mr. Mime (Galarian)",
@@ -6844,7 +6873,8 @@
         "id": "FAMILY_MR_MIME",
         "parent": "mime_jr",
         "evolutions": ["mr_rime"]
-    }
+    },
+    "nicknames": ["mime", "mr mime"]
 }, {
     "dex": 123,
     "speciesName": "Scyther",
@@ -7181,7 +7211,8 @@
     "family": {
         "id": "FAMILY_MAGIKARP",
         "parent": "magikarp"
-    }
+    },
+    "nicknames": ["gary"]
 }, {
     "dex": 130,
     "speciesName": "Gyarados (Mega)",
@@ -7208,7 +7239,8 @@
     "family": {
         "id": "FAMILY_MAGIKARP",
         "parent": "magikarp"
-    }
+    },
+    "nicknames": ["gary"]
 }, {
     "dex": 130,
     "speciesName": "Gyarados (Shadow)",
@@ -7235,7 +7267,8 @@
     "family": {
         "id": "FAMILY_MAGIKARP",
         "parent": "magikarp_shadow"
-    }
+    },
+    "nicknames": ["gary"]
 }, {
     "dex": 131,
     "speciesName": "Lapras",
@@ -7708,7 +7741,8 @@
     "family": {
         "id": "FAMILY_SNORLAX",
         "parent": "munchlax"
-    }
+    },
+	"nicknames": ["lax"]
 }, {
     "dex": 143,
     "speciesName": "Snorlax (Shadow)",
@@ -8013,7 +8047,8 @@
         "id": "FAMILY_DRATINI",
         "parent": "dratini",
         "evolutions": ["dragonite"]
-    }
+    },
+	"nicknames": ["dnair"]
 }, {
     "dex": 148,
     "speciesName": "Dragonair (Shadow)",
@@ -8039,7 +8074,8 @@
         "id": "FAMILY_DRATINI",
         "parent": "dratini_shadow",
         "evolutions": ["dragonite_shadow"]
-    }
+    },
+	"nicknames": ["dnair"]
 }, {
     "dex": 149,
     "speciesName": "Dragonite",
@@ -8067,7 +8103,8 @@
     "family": {
         "id": "FAMILY_DRATINI",
         "parent": "dragonair"
-    }
+    },
+    "nicknames": ["dnite"]
 }, {
     "dex": 149,
     "speciesName": "Dragonite (Shadow)",
@@ -8094,7 +8131,8 @@
     "family": {
         "id": "FAMILY_DRATINI",
         "parent": "dragonair_shadow"
-    }
+    },
+    "nicknames": ["dnite"]
 }, {
     "dex": 150,
     "speciesName": "Mewtwo",
@@ -8117,7 +8155,8 @@
     "eliteMoves": ["PSYSTRIKE", "SHADOW_BALL", "HYPER_BEAM"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": true
+    "released": true,
+    "nicknames": ["m2"]
 }, {
     "dex": 150,
     "speciesName": "Mewtwo (Armored)",
@@ -8139,7 +8178,8 @@
     },
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": true
+    "released": true,
+    "nicknames": ["am2"]
 }, {
     "dex": 150,
     "speciesName": "Mewtwo (Shadow)",
@@ -8161,7 +8201,8 @@
     "eliteMoves": ["PSYSTRIKE", "SHADOW_BALL", "HYPER_BEAM"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": true
+    "released": true,
+    "nicknames": ["m2"]
 }, {
     "dex": 151,
     "speciesName": "Mew",
@@ -8758,7 +8799,8 @@
     "family": {
         "id": "FAMILY_HOOTHOOT",
         "parent": "hoothoot"
-    }
+    },
+    "nicknames": ["owl"]
 }, {
     "dex": 165,
     "speciesName": "Ledyba",
@@ -9565,7 +9607,8 @@
     "family": {
         "id": "FAMILY_POLIWAG",
         "parent": "poliwhirl"
-    }
+    },
+    "nicknames": ["toed"]
 }, {
     "dex": 186,
     "speciesName": "Politoed (Shadow)",
@@ -9593,7 +9636,8 @@
     "family": {
         "id": "FAMILY_POLIWAG",
         "parent": "poliwhirl_shadow"
-    }
+    },
+    "nicknames": ["toed"]
 }, {
     "dex": 187,
     "speciesName": "Hoppip",
@@ -10740,7 +10784,8 @@
     "family": {
         "id": "FAMILY_QWILFISH",
         "evolutions": ["overqwil"]
-    }
+    },
+    "nicknames": ["hqwil"]
 }, {
     "dex": 212,
     "speciesName": "Scizor",
@@ -12240,7 +12285,8 @@
     "family": {
         "id": "FAMILY_LARVITAR",
         "parent": "pupitar"
-    }
+    },
+    "nicknames": ["ttar"]
 }, {
     "dex": 248,
     "speciesName": "Tyranitar (Shadow)",
@@ -12267,7 +12313,8 @@
     "family": {
         "id": "FAMILY_LARVITAR",
         "parent": "pupitar_shadow"
-    }
+    },
+    "nicknames": ["ttar"]
 }, {
     "dex": 249,
     "speciesName": "Lugia",
@@ -12336,7 +12383,8 @@
     "searchPriority": 4,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": true
+    "released": true,
+    "nicknames": ["hooh", "ho oh"]
 }, {
     "dex": 250,
     "speciesName": "Ho-Oh (Shadow)",
@@ -12359,7 +12407,8 @@
     "searchPriority": 4,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": true
+    "released": true,
+    "nicknames": ["hooh", "ho oh"]
 }, {
     "dex": 251,
     "speciesName": "Celebi",
@@ -16131,7 +16180,8 @@
     "family": {
         "id": "FAMILY_LILEEP",
         "parent": "lileep"
-    }
+    },
+    "nicknames": ["dily"]
 }, {
     "dex": 346,
     "speciesName": "Cradily (Shadow)",
@@ -16157,7 +16207,8 @@
     "family": {
         "id": "FAMILY_LILEEP",
         "parent": "lileep_shadow"
-    }
+    },
+    "nicknames": ["dily"]
 }, {
     "dex": 347,
     "speciesName": "Anorith",
@@ -17918,7 +17969,8 @@
     "searchPriority": 15,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": true
+    "released": true,
+    "nicknames": ["dd"]
 }, {
     "dex": 386,
     "speciesName": "Deoxys (Speed)",
@@ -19023,7 +19075,8 @@
     "family": {
         "id": "FAMILY_BURMY",
         "parent": "burmy_trash"
-    }
+    },
+    "nicknames": ["trash"]
 }, {
     "dex": 414,
     "speciesName": "Mothim",
@@ -20039,7 +20092,8 @@
     "family": {
         "id": "FAMILY_GIBLE",
         "parent": "gabite"
-    }
+    },
+    "nicknames": ["chomp"]
 }, {
     "dex": 446,
     "speciesName": "Munchlax",
@@ -20374,7 +20428,8 @@
     "family": {
         "id": "FAMILY_CROAGUNK",
         "parent": "croagunk"
-    }
+    },
+	"nicknames": ["croak"]
 }, {
     "dex": 455,
     "speciesName": "Carnivine",
@@ -20940,7 +20995,8 @@
     "family": {
         "id": "FAMILY_TOGEPI",
         "parent": "togetic"
-    }
+    },
+    "nicknames": ["kiss"]
 }, {
     "dex": 469,
     "speciesName": "Yanmega",
@@ -21359,7 +21415,8 @@
     "family": {
         "id": "FAMILY_SNORUNT",
         "parent": "snorunt"
-    }
+    },
+    "nicknames": ["lass"]
 }, {
     "dex": 479,
     "speciesName": "Rotom",
@@ -21657,7 +21714,8 @@
     "searchPriority": 32,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": true
+    "released": true,
+    "nicknames": ["tina", "gira a", "tinaa", "tina a"]
 }, {
     "dex": 487,
     "speciesName": "Giratina (Origin)",
@@ -21679,7 +21737,8 @@
     },
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": true
+    "released": true,
+    "nicknames": ["tina", "gira o", "tinao", "tina o"]
 }, {
     "dex": 488,
     "speciesName": "Cresselia",
@@ -25112,7 +25171,8 @@
         "parent": "joltik"
     },
     "level25CP": 1330,
-    "tags": ["shadoweligible"]
+    "tags": ["shadoweligible"],
+    "nicknames": ["spooder"]
 }, {
     "dex": 596,
     "speciesId": "galvantula_shadow",
@@ -25138,7 +25198,8 @@
         "id": "FAMILY_JOLTIK",
         "parent": "joltik_shadow"
     },
-    "tags": ["shadow"]
+    "tags": ["shadow"],
+    "nicknames": ["spooder"]
 }, {
     "dex": 597,
     "speciesId": "ferroseed",
@@ -25671,7 +25732,8 @@
     "searchPriority": 10,
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
-    "released": true
+    "released": true,
+    "nicknames": ["ufisk"]
 }, {
     "dex": 618,
     "speciesName": "Stunfisk (Galarian)",
@@ -25693,7 +25755,8 @@
     "searchPriority": 20,
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
-    "released": true
+    "released": true,
+    "nicknames": ["gfisk"]
 }, {
     "dex": 619,
     "speciesId": "mienfoo",
@@ -32732,7 +32795,8 @@
     "family": {
         "id": "FAMILY_ZIGZAGOON",
         "parent": "linoone_galarian"
-    }
+    },
+	"nicknames": ["goon"]
 }, {
     "dex": 863,
     "speciesName": "Perrserker",
