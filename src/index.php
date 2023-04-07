@@ -43,7 +43,8 @@
 
 	<h4>v1.29.28 (April 7, 2023)</h4>
 	<ul>
-
+		<li>Added the ability to select and search for Pokemon by common nicknames ("gfisK", "a9", etc.). You can see a full list of nicknames by clicking the help icon next to the rankings searchbar.</li>
+		<li>Minor UI fixes</li>
 	</ul>
 
 	<h3>Latest Article</h3>
