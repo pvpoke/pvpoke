@@ -514,15 +514,6 @@
         "showFormat": true,
         "showMeta": true
     }, {
-        "title": "Silph Ionic Cup",
-        "cup": "ionic",
-        "cp": 1500,
-        "meta": "ionic",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true,
-        "hideRankings": false
-    }, {
         "title": "Silph Polkadot Cup",
         "cup": "polkadot",
         "cp": 1500,
@@ -34324,7 +34315,7 @@
         "levelFloor": 20,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": true
     }, {
         "dex": 895,
         "speciesName": "Regidrago",
