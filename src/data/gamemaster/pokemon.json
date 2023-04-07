@@ -33716,7 +33716,7 @@
     },
     "types": ["electric", "none"],
     "fastMoves": ["THUNDER_SHOCK", "LOCK_ON"],
-    "chargedMoves": ["THUNDERBOLT", "THUNDER", "HYPER_BEAM"],
+    "chargedMoves": ["ZAP_CANNON", "THUNDER", "HYPER_BEAM"],
     "defaultIVs": {
         "cp500": [7, 6, 7, 5],
         "cp1500": [20, 4, 13, 8],
