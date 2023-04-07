@@ -102,7 +102,7 @@ var pokeSearch = new function(){
 			return;
 		}
 
-		$target.siblings(".rankings-container").find(".rank").each(function(index, value){
+		$target.siblings(".rankings-container").find("> .rank").each(function(index, value){
 			var id = $(this).attr("data");
 
 			if((list.indexOf(id) > -1)||(! id)){

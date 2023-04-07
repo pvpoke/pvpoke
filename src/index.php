@@ -41,9 +41,9 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.29.27 (March 27, 2023)</h4>
+	<h4>v1.29.28 (April 7, 2023)</h4>
 	<ul>
-		<li>Pokemon in the Potential Alternatives section of the Team Builder are now searchable.</li>
+
 	</ul>
 
 	<h3>Latest Article</h3>

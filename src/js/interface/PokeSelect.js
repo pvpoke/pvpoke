@@ -671,7 +671,7 @@ function PokeSelect(element, i){
 
 			modalWindow("Add Custom Move", $el.find(".custom-move"));
 
-			$(".modal .name").html(selectedPokemon.speciesName);
+			$(".modal .custom-move .name").html(selectedPokemon.speciesName);
 
 			var isFastMove = $(e.target).hasClass("fast");
 
