@@ -4757,7 +4757,7 @@
         "cp1500": [15, 4, 14, 5],
         "cp2500": [24.5, 5, 14, 11]
     },
-    "tags": ["mega"],
+    "tags": ["mega", "shadoweligible"],
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true,
@@ -7684,7 +7684,7 @@
     "types": ["rock", "flying"],
     "fastMoves": ["BITE", "STEEL_WING", "ROCK_THROW"],
     "chargedMoves": ["ANCIENT_POWER", "HYPER_BEAM", "IRON_HEAD", "ROCK_SLIDE", "EARTH_POWER"],
-    "tags": ["mega"],
+    "tags": ["mega", "shadoweligible"],
     "defaultIVs": {
         "cp500": [4.5, 11, 14, 15],
         "cp1500": [13.5, 4, 10, 11],
