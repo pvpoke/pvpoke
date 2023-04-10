@@ -12,6 +12,8 @@ var GameMaster = (function () {
 		object.groups = [];
 		object.teamPools = [];
 		object.loadedData = 0;
+		// maps battle cp to list all pokemon objects for that cp
+		object.allPokemon = {}
 
 		if(settings.gamemaster == "gamemaster-mega"){
 			$(".mega-warning").show();
@@ -80,6 +82,20 @@ var GameMaster = (function () {
 				}
 			}
 		});
+
+		// function to help speed up searching by resuing Pokemon objects
+		// could likely be used in other instances where `new Pokemon` is called
+		object.getAllPokemon = function(battle) {
+			const key = battle.getCP()
+
+			if (!object.allPokemon.hasOwnProperty(key)) {
+				object.allPokemon[key] = object.data.pokemon.map(p => {
+					return new Pokemon(p.speciesId, 0, battle);
+				})
+			}
+			return object.allPokemon[key]
+		}
+		
 
 		// Return a Pokemon object given species ID
 
@@ -1036,11 +1052,28 @@ var GameMaster = (function () {
 			return pokemonList;
 		}
 
-		// Generate a list of Pokemon given a search string
+		// maps a search query to list of pokemon ids to avoid searching again
+		object.searchStringCache = {}
 
+		// Generate a list of Pokemon given a search string
 		object.generatePokemonListFromSearchString = function(str, battle){
+
+
 			// Break the search string up into queries
 			var queries = str.toLowerCase().split(/\s*,\s*/);
+			var searchKey = queries.join()
+
+			// don't bother searching if any of the terms are empty
+			// as all pokemon will be valid
+			if (queries.indexOf("") > -1) {
+				return object.data.pokemon.map(p => p.speciesId)
+			}
+
+			// if you already searched, use cached list instead of regenerating
+			if (object.searchStringCache.hasOwnProperty(searchKey)) {
+				return object.searchStringCache[searchKey]
+			}
+
 			var results = []; // Store an array of qualifying Pokemon ID's
 
 			var types = ["bug","dark","dragon","electric","fairy","fighting","fire","flying","ghost","grass","ground","ice","normal","poison","psychic","rock","steel","water"];
@@ -1057,8 +1090,8 @@ var GameMaster = (function () {
 				var query = queries[i];
 				var params = query.split('&');
 
-				for(var n = 0; n < object.data.pokemon.length; n++){
-					var pokemon = new Pokemon(object.data.pokemon[n].speciesId, 0, battle);
+				// iterate over existing pokemon instead of creating new objects
+				for(const pokemon of object.getAllPokemon(battle)){
 
 					var paramsMet = 0;
 
@@ -1294,6 +1327,7 @@ var GameMaster = (function () {
 				}
 			}
 
+			object.searchStringCache[searchKey] = results
 			return results;
 		}
 
