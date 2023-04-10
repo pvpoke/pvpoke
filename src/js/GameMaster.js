@@ -1040,8 +1040,7 @@ var GameMaster = (function () {
 
 		object.generatePokemonListFromSearchString = function(str, battle){
 			// Break the search string up into queries
-			var str = str.replace(/\s+,\s+/g, ',').toLowerCase();
-			var queries = str.split(',');
+			var queries = str.toLowerCase().split(/\s*,\s*/);
 			var results = []; // Store an array of qualifying Pokemon ID's
 
 			var types = ["bug","dark","dragon","electric","fairy","fighting","fire","flying","ghost","grass","ground","ice","normal","poison","psychic","rock","steel","water"];
