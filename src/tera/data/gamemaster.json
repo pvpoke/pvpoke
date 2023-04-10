@@ -5300,6 +5300,24 @@
 			"teraType": "bug",
 			"moveTypes": ["water", "bug", "dark", "ground"]
 		}
+	}, {
+	    "name": "Typhlosion",
+	    "types": ["fire"],
+	    "id": "typhlosion",
+	    "stats": {
+	        "hp": 78,
+	        "atk": 84,
+	        "def": 78,
+	        "spA": 109,
+	        "spD": 85,
+	        "spe": 100
+	    },
+		"traits": ["flash_fire"],
+		"defaults": {
+			"teraType": "ghost",
+			"moveTypes": ["fire", "ghost"],
+			"traits": ["flash_fire"]
+		}
 	}],
 	"traits": [
 		{
