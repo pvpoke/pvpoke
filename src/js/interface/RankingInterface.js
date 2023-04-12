@@ -403,17 +403,27 @@ var InterfaceMaster = (function () {
 				$(".rank").on("click", selectPokemon);
 
 				// Update download link with new data
-				var filename = battle.getCup().name + " Rankings.csv";
+				const cupName = battle.getCup().name;
+				const category = $(".category-select option:selected").val() || scenario.slug;
+				const cpString = `cp${battle.getCP()}`
+
+				const fileNameParts = [cpString,  cupName,  category];
+
+				// var filename = battle.getCup().name + " Rankings.csv";
 				var filedata = '';
 
 				if(context == "custom"){
-					filename = "Custom Rankings.csv";
+					fileNameParts.unshift('custom');
 				}
+
+				const filename = 		fileNameParts.concat( 'rankings.csv').filter(Boolean).join('_');
 
 				if (!csv.match(/^data:text\/csv/i)) {
 					filedata = [csv];
 					filedata = new Blob(filedata, { type: 'text/csv'});
 				}
+
+				debugger;
 
 				$(".button.download-csv").attr("href", window.URL.createObjectURL(filedata));
 				$(".button.download-csv").attr("download", filename);
