@@ -51,18 +51,17 @@
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-03-slowpoke/">
-				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/community-day/23-03-slowpoke/thumb.jpg">
+			<a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-04-togetic/">
+				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/community-day/23-04-togetic/thumb.jpg">
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-03-slowpoke/">Slowpoke Community Day Guide for PvP</a></h4>
-			<div class="date">March 16, 2023</div>
-			<p>Not so fast! Slowpoke Community Day is around the corner. Find out how Surf will impact the whole Slow family in PvP and IV's to look for.</p>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-04-togetic/">Togetic Community Day Guide for PvP</a></h4>
+			<div class="date">April 14, 2023</div>
+			<p>Togetic is a charming addition to the Community Day roster, and its evolution, Togekiss, has play in all three leagues. Find out what to look out for in PvP!</p>
 			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Community Day"># Community Day</a><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a></div>
 		</div>
 	</div>
-
 </div>
 
 <?php
