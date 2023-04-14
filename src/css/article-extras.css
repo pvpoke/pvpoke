@@ -174,6 +174,10 @@ input.article-search {
   background-image: url("../articles/article-assets/community-day/megas/medicham.png");
 }
 
+[mega=salamence] .mega-image {
+  background-image: url("../articles/article-assets/community-day/megas/salamence.png");
+}
+
 /* FAQ styling */
 .faq-item {
   border-radius: 8px;
@@ -732,6 +736,22 @@ input.article-search {
   border-bottom: 1px solid #634f85;
 }
 .section.slowpoke .faq-item {
+  background: #ffffff;
+}
+
+.section.togetic {
+  background: #f9fefe;
+  border: 4px solid #f0aca4;
+}
+.section.togetic .article-header, .section.togetic .mega-section {
+  color: #000;
+  background: #aad7ef !important;
+}
+.section.togetic .feature h4 {
+  color: #83bad7;
+  border-bottom: 1px solid #83bad7;
+}
+.section.togetic .faq-item {
   background: #ffffff;
 }
 

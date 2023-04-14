@@ -11,11 +11,11 @@ require_once '../../header.php';
 
 ?>
 
-<div class="section article white slowpoke">
+<div class="section article white togetic">
 	<h1>Togetic Community Day Guide for PvP</h1>
-	<div class="date">Last updated March 16, 2023</div>
+	<div class="date">Last updated April 14, 2023</div>
 	<img src="<?php echo $WEB_ROOT;?>articles/article-assets/community-day/23-04-togetic/banner.jpg" />
-	<p>Togetic is making a wild appearance in the upcoming April Community Day. Its evolution, Togekiss, is a longtime staple in Master League PvP, and also has a role in themed cups. How will Aura Sphere round out its viability? Below are the leagues and IV spreads to look out for, and answers to frequently asked questions. You can find more info on Togetic Community Day at the <a href="https://pokemongolive.com/en/post/communityday-april-2023-togetic" target="_blank">Pokemon GO blog</a>. </p>
+	<p>Togetic is making a wild appearance in the upcoming April Community Day! Its evolution, Togekiss, is a longtime staple in Master League PvP, and also has a role in themed cups. How will Aura Sphere round out its viability? Below are the leagues and IV spreads to look out for, and answers to frequently asked questions. You can find more info on Togetic Community Day at the <a href="https://pokemongolive.com/en/post/communityday-april-2023-togetic" target="_blank">Pokemon GO blog</a>. </p>
 
 	<a name="overview"></a>
 	<h3 class="article-header"><strong>Overview</strong></h3>
@@ -56,6 +56,10 @@ require_once '../../header.php';
 				<div class="mega-image"></div>
 				<div class="mega-label">Pidgeot</div>
 			</div>
+			<div class="mega-item" mega="aerodactyl">
+				<div class="mega-image"></div>
+				<div class="mega-label">Aerodactyl</div>
+			</div>
 			<div class="mega-item" mega="altaria">
 				<div class="mega-image"></div>
 				<div class="mega-label">Altaria</div>
@@ -75,15 +79,15 @@ require_once '../../header.php';
 	<div class="faq-item">
 		<h3 class="article-header"><strong>How good is Togekiss with Aura Sphere?</strong></h3>
 		<div class="faq-answer">
-			<p><b>Aura Sphere is a minor upgrade over Flamethrower in most situations.</b> Both are 55 energy moves that provide coverage against Steel types, but Aura Sphere has 100 base power compared to Flamethrower's 90 base power. Fighting offensive coverage is also generally better than Fire, hitting Steel, Rock, Ice, Dark, and Normal for super effective damage. There are some matchups like Metagross where Togekiss will still prefer Flamethrower. Overall, Aura Sphere will be a small improvement in Togekiss's coverage and neutral play.</p>
-			<p>In the big picture, Togekiss has been a longtime staple of Master League although its play has declined since the Charm nerf and the rise of Charged Move-based Fairies like Zacian and Florges. It still has a strong place to play in Master League, Ultra League, and Great League themed cups such as Sinnoh Cup.</p>
+			<p><b>Aura Sphere is a minor upgrade over Flamethrower in most situations.</b> Both are 55 energy moves that provide coverage against Steel types, but Aura Sphere has 100 base power compared to Flamethrower's 90. Fighting offensive coverage is also generally better than Fire, hitting Steel, Rock, Ice, Dark, and Normal for super effective damage. There are some matchups like Metagross where Togekiss will still prefer Flamethrower. Overall, Aura Sphere will be a small improvement in Togekiss's coverage and neutral play.</p>
+			<p>In the big picture, Togekiss has been a longtime staple of Master League although its play has declined since the Charm nerf and the rise of Charged Move-based Fairies like Zacian and Florges. It still has a strong place in Master League, open Ultra League, and Great League themed cups such as Sinnoh Cup.</p>
 		</div>
 	</div>
 
 	<div class="faq-item">
 		<h3 class="article-header"><strong>What if Togekiss gets Fairy Wind in the future?</strong></h3>
 		<div class="faq-answer">
-			<p>If Fairy Wind is added to Togekiss's movepool, it will open the door for an energy oriented playstyle. Togekiss's Charged Move selection is poor compared to top Fairies, so Fairy Wind wouldn't be an immediate upgrade without other attack updates. The addition of Aura Sphere helps a little and allows Togekiss to pack interesting coverage combos like Flying/Fighting. Togekiss with Fairy Wind would likely want high rank IV's, so this Community Day is a good opportunity to hunt traditional PvP IV's that aren't obtainable from eggs or raids.</p>
+			<p>If Fairy Wind is added to Togekiss's movepool, it will open the door for an energy oriented playstyle. Togekiss' Charged Move selection is poor compared to top Fairies, so Fairy Wind wouldn't be an immediate upgrade without other attack updates. The addition of Aura Sphere helps a little and allows Togekiss to pack interesting coverage combos like Flying/Fighting. Togekiss with Fairy Wind would likely want high rank IV's, so this Community Day is a good opportunity to hunt traditional PvP IV's that aren't obtainable from eggs or raids.</p>
 		</div>
 	</div>
 
