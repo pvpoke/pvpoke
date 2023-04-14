@@ -5315,7 +5315,7 @@
 		"traits": ["flash_fire"],
 		"defaults": {
 			"teraType": "ghost",
-			"moveTypes": ["fire", "ghost"],
+			"moveTypes": ["fire", "ghost", "fairy", "ground"],
 			"traits": ["flash_fire"]
 		}
 	}],
