@@ -781,9 +781,21 @@ function PokeSelect(element, i){
 			}
 
 			// Nickname search
-			if(searchArr[i].nicknames && searchArr[i].nicknames.indexOf(searchStr) > -1){
-				$pokeSelect.find("option[value=\""+searchArr[i].speciesId+"\"]").prop("selected", "selected");
-				break;
+			if(searchArr[i].nicknames){
+				let nicknameMatched = false;
+
+				for(var n = 0; n < searchArr[i].nicknames.length; n++){
+					if(searchArr[i].nicknames[n].startsWith(searchStr)){
+						$pokeSelect.find("option[value=\""+searchArr[i].speciesId+"\"]").prop("selected", "selected");
+						nicknameMatched = true;
+						break;
+					}
+				}
+
+				if(nicknameMatched){
+					break;
+				}
+
 			}
 
 		}

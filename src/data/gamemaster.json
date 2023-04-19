@@ -442,22 +442,6 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Little Cup",
-        "cup": "little",
-        "cp": 500,
-        "meta": "little",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Evolution Cup",
-        "cup": "evolution",
-        "cp": 1500,
-        "meta": "evolution",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Weather Cup (Ultra League)",
         "cup": "weather",
         "cp": 2500,
@@ -6014,7 +5998,7 @@
             "cp2500": [50, 15, 15, 15]
         },
         "eliteMoves": ["LICK"],
-        "searchPriority": 7,
+        "searchPriority": 4,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -6199,7 +6183,7 @@
         "level25CP": 1255,
         "tags": ["shadoweligible"],
         "eliteMoves": ["PSYSHOCK"],
-        "searchPriority": 14,
+        "searchPriority": 3,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -6226,7 +6210,7 @@
         },
         "tags": ["shadow"],
         "eliteMoves": ["PSYSHOCK"],
-        "searchPriority": 14,
+        "searchPriority": 2,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -7447,7 +7431,8 @@
             "id": "FAMILY_MR_MIME",
             "parent": "mime_jr"
         },
-        "nicknames": ["mime", "mr mime"]
+        "nicknames": ["mime", "mr mime"],
+        "searchPriority": 2
     }, {
         "dex": 122,
         "speciesName": "Mr. Mime (Galarian)",
@@ -12980,7 +12965,7 @@
         },
         "eliteMoves": ["EARTHQUAKE", "SACRED_FIRE"],
         "level25CP": 2436,
-        "searchPriority": 4,
+        "searchPriority": 7,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true,
@@ -15358,7 +15343,7 @@
             "cp2500": [50, 15, 15, 15],
             "cp1500l40": [40, 15, 15, 15]
         },
-        "searchPriority": 5,
+        "searchPriority": 25,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -30489,7 +30474,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_BOUNSWEET",
             "evolutions": ["steenee"]
@@ -30513,7 +30498,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_BOUNSWEET",
             "parent": "bounsweet",
@@ -30538,7 +30523,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_BOUNSWEET",
             "parent": "steenee"
@@ -31387,6 +31372,7 @@
             "cp2500": [28.5, 8, 13, 15]
         },
         "tags": ["legendary"],
+        "nicknames": ["koko"],
         "searchPriority": 2,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
@@ -31409,6 +31395,7 @@
             "cp2500": [26, 5, 13, 15]
         },
         "tags": ["legendary"],
+        "nicknames": ["lele"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -31430,6 +31417,7 @@
             "cp2500": [27, 4, 13, 12]
         },
         "tags": ["legendary"],
+        "nicknames": ["bulu"],
         "searchPriority": 3,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
@@ -31452,6 +31440,7 @@
             "cp2500": [36, 4, 9, 12]
         },
         "tags": ["legendary"],
+        "nicknames": ["fini"],
         "levelFloor": 20,
         "searchPriority": 5,
         "buddyDistance": 20,
@@ -33397,7 +33386,8 @@
             "id": "FAMILY_ZIGZAGOON",
             "parent": "linoone_galarian"
         },
-        "nicknames": ["goon"]
+        "nicknames": ["goon"],
+        "searchPriority": 15
     }, {
         "dex": 863,
         "speciesName": "Perrserker",
