@@ -360,7 +360,8 @@ var InterfaceMaster = (function () {
 						attr = "medium";
 					}
 
-					$(".battle-results .summary").append("<div class=\"turn-margin-description\"><span class=\"turn-margin\" value=\""+attr+"\">"+turnMargin + " turn(s)</span> of difference can flip this scenario. " + marginSummary + "</div>");
+					const turnMarginDisplay = `${turnMargin} turn` + ((turnMargin === 1) ? "" : "s")
+					$(".battle-results .summary").append("<div class=\"turn-margin-description\"><span class=\"turn-margin\" value=\""+attr+"\">" + turnMarginDisplay + "</span> of difference can flip this scenario. " + marginSummary + "</div>");
 
 					var color = battle.getRatingColor(rating);
 					$(".battle-results .summary .rating").first().css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
