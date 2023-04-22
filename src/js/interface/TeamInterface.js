@@ -213,6 +213,10 @@ var InterfaceMaster = (function () {
 									$(".team-size-select option[value=8]").prop("selected", "selected");
 									$(".team-size-select").trigger("change");
 								}
+
+								if(battle.getCup().allowSameSpecies){
+									$(".check.same-species").addClass("on");
+								}
 								break;
 						}
 					}
@@ -867,6 +871,8 @@ var InterfaceMaster = (function () {
 				var allowShadows = $(".team-option .check.allow-shadows").hasClass("on");
 				var allowXL = $(".team-option .check.allow-xl").hasClass("on");
 				var baitShields = $(".team-option .check.shield-baiting").hasClass("on");
+				var allowSameSpecies = $(".team-option .check.same-species").hasClass("on");
+
 				// Generate counters and histograms, and display that, too
 				var shieldMode = $(".team-advanced .flex.poke .shield-select option:selected").val();
 				var shieldCount = 1;
@@ -944,6 +950,11 @@ var InterfaceMaster = (function () {
 
 
 						if(r.pokemon.hasTag("mega") && hasMega){
+							i++;
+							continue;
+						}
+
+						if((! allowSameSpecies) && team.filter(poke => poke.dex == r.pokemon.dex).length > 0){
 							i++;
 							continue;
 						}
@@ -1398,6 +1409,10 @@ var InterfaceMaster = (function () {
 				if(battle.getCup().partySize == 8){
 					$(".team-size-select option[value=8]").prop("selected", "selected");
 					$(".team-size-select").trigger("change");
+				}
+
+				if(battle.getCup().allowSameSpecies){
+					$(".check.same-species").addClass("on");
 				}
 
 				// Load ranking data for movesets

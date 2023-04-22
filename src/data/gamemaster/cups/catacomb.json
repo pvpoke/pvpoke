@@ -30,5 +30,6 @@
         "filterType": "id",
         "name": "Species",
         "values": ["scrafty", "obstagoon", "dewgong", "ninetales_alolan", "crustle", "aurorus", "amaura", "walrein", "qwilfish_hisuian", "overqwil", "araquanid", "trevenant", "magcargo", "dwebble"]
-    }]
+    }],
+	"allowSameSpecies": true
 }

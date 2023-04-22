@@ -46,6 +46,10 @@ require_once 'header.php';
 				<h3>Recommend XL Pokemon</h3>
 				<div class="check allow-xl <?php if($_SETTINGS->xls): echo "on"; endif; ?>"><span></span>Show Pokemon above level 40 in threats and alternatives</div>
 			</div>
+			<div class="team-option">
+				<h3>Allow Same Species</h3>
+				<div class="check same-species"><span></span>Allow team to use multiple of the same species</div>
+			</div>
 			<div class="flex-break"></div>
 			<div class="team-option">
 				<h3>Shields</h3>

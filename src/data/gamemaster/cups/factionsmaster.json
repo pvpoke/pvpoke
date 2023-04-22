@@ -31,5 +31,6 @@
             "points": 1,
             "pokemon": ["landorus_therian", "landorus_incarnate", "genesect", "genesect_shock", "genesect_chill", "genesect_burn", "genesect_douse", "mew", "buzzwole", "florges", "venusaur_mega", "abomasnow_mega", "blaziken_mega", "sceptile_mega", "altaria_mega", "alakazam_mega"]
         }]
-    }
+    },
+	"allowSameSpecies": true
 }
