@@ -2523,5 +2523,90 @@
 	    "chargedMoves": ["NIGHT_SLASH", "SACRED_SWORD", "LEAF_BLADE", "CLOSE_COMBAT", "MEGAHORN", "AERIAL_ACE", "GRASS_KNOT", "X_SCISSOR", "ENERGY_BALL", "WILD_CHARGE", "LEAF_STORM", "SOLAR_BEAM", "HYPER_BEAM"],
 	    "released": true,
 	    "tags": []
+	}, {
+	    "dex": 705,
+	    "speciesId": "sliggoo_hisuian",
+	    "speciesName": "Sliggoo (Hisuian)",
+	    "baseStats": {
+	        "atk": 153,
+	        "def": 190,
+	        "hp": 151
+	    },
+	    "defaultIVs": {
+			"cp500": [10, 5, 5, 10],
+	        "cp1500": [28.5, 7, 14, 15],
+	        "cp2500": [50, 15, 15, 15]
+	    },
+	    "types": ["dragon", "steel"],
+	    "fastMoves": ["DRAGON_BREATH", "WATER_GUN", "TACKLE", "TAKE_DOWN", "CHARM", "COUNTER", "MUD_SHOT"],
+	    "chargedMoves": ["WATER_PULSE", "DRAGON_PULSE", "IRON_HEAD", "MUDDY_WATER", "ROCK_TOMB", "ROCK_SLIDE", "BODY_SLAM", "FLASH_CANNON", "HEAVY_SLAM", "THUNDERBOLT", "ICE_BEAM", "BLIZZARD", "THUNDER", "OUTRAGE", "DRACO_METEOR", "SLUDGE_BOMB"],
+	    "released": true,
+	    "tags": [],
+		"family": {
+	        "id": "FAMILY_GOOMY",
+	        "evolutions": ["goodra_hisuian"],
+	        "parent": "goomy"
+		}
+	}, {
+	    "dex": 706,
+	    "speciesId": "goodra_hisuian",
+	    "speciesName": "Goodra (Hisuian)",
+	    "baseStats": {
+	        "atk": 211,
+	        "def": 255,
+	        "hp": 190
+	    },
+	    "defaultIVs": {
+			"cp500": [5.5, 15, 15, 14],
+	        "cp1500": [17, 4, 4, 14],
+	        "cp2500": [27.5, 6, 13, 15]
+	    },
+	    "types": ["dragon", "steel"],
+	    "fastMoves": ["DRAGON_BREATH", "WATER_GUN", "TACKLE", "TAKE_DOWN", "CHARM", "COUNTER", "MUD_SHOT", "DRAGON_TAIL"],
+	    "chargedMoves": ["WATER_PULSE", "DRAGON_PULSE", "IRON_HEAD", "MUDDY_WATER", "ROCK_TOMB", "ROCK_SLIDE", "BODY_SLAM", "FLASH_CANNON", "HEAVY_SLAM", "THUNDERBOLT", "ICE_BEAM", "BLIZZARD", "THUNDER", "OUTRAGE", "DRACO_METEOR", "SLUDGE_BOMB", "DRAGON_CLAW", "FIRE_PUNCH", "THUNDER_PUNCH", "SURF", "FLAMETHROWER", "FIRE_BLAST", "EARTHQUAKE", "HYPER_BEAM"],
+	    "released": true,
+	    "tags": [],
+		"family": {
+	        "id": "FAMILY_GOOMY",
+	        "parent": "sliggoo_hisuian"
+	    }
+	}, {
+	    "dex": 483,
+	    "speciesId": "dialga_origin",
+	    "speciesName": "Dialga (Origin)",
+	    "baseStats": {
+	        "atk": 270,
+	        "def": 225,
+	        "hp": 205
+	    },
+	    "defaultIVs": {
+			"cp500": [4.5, 15, 15, 13],
+	        "cp1500": [13.5, 5, 9, 14],
+	        "cp2500": [22.5, 5, 11, 12]
+	    },
+	    "types": ["steel", "dragon"],
+	    "fastMoves": ["DRAGON_BREATH", "METAL_CLAW", "TAKE_DOWN", "DRAGON_TAIL", "SHADOW_CLAW"],
+	    "chargedMoves": ["DRAGON_CLAW", "AURA_SPHERE", "EARTH_POWER", "POWER_GEM", "ANCIENT_POWER", "ROCK_TOMB", "BULLDOZE", "BRICK_BREAK", "BODY_SLAM", "IRON_HEAD", "DRAGON_PULSE", "FLAMETHROWER", "THUNDERBOLT", "EARTHQUAKE", "FIRE_BLAST", "BLIZZARD", "STONE_EDGE", "OUTRAGE", "OVERHEAT", "FOCUS_BLAST", "THUNDER", "DRACO_METEOR", "HYPER_BEAM"],
+	    "released": true,
+	    "tags": []
+	}, {
+	    "dex": 484,
+	    "speciesId": "palkia_origin",
+	    "speciesName": "Palkia (Origin)",
+	    "baseStats": {
+	        "atk": 286,
+	        "def": 223,
+	        "hp": 189
+	    },
+	    "defaultIVs": {
+			"cp500": [4.5, 15, 13, 15],
+	        "cp1500": [13, 6, 14, 15],
+	        "cp2500": [22, 5, 11, 15]
+	    },
+	    "types": ["water", "dragon"],
+	    "fastMoves": ["DRAGON_BREATH", "TAKE_DOWN", "DRAGON_TAIL", "WATERFALL", "SHADOW_CLAW"],
+	    "chargedMoves": ["POWER_GEM", "AURA_SPHERE", "AQUA_TAIL", "HYDRO_PUMP", "ANCIENT_POWER", "WATER_PULSE", "BULLDOZE", "SWIFT", "AERIAL_ACE", "AVALANCHE", "DRAGON_CLAW", "BODY_SLAM", "BRICK_BREAK", "ROCK_SLIDE", "DRAGON_PULSE", "FLAMETHROWER", "THUNDERBOLT","FIRE_BLAST", "ICE_BEAM", "EARTH_POWER", "BLIZZARD", "FOCUS_BLAST", "THUNDER", "DRACO_METEOR", "HYPER_BEAM"],
+	    "released": true,
+	    "tags": []
 	}
 ]
