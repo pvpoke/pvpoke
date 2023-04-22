@@ -95,7 +95,7 @@ var GameMaster = (function () {
 			}
 			return object.allPokemon[key]
 		}
-		
+
 
 		// Return a Pokemon object given species ID
 
@@ -1065,7 +1065,7 @@ var GameMaster = (function () {
 
 			// don't bother searching if any of the terms are empty
 			// as all pokemon will be valid
-			if (queries.indexOf("") > -1) {
+			if (str == "") {
 				return object.data.pokemon.map(p => p.speciesId)
 			}
 
@@ -1088,6 +1088,11 @@ var GameMaster = (function () {
 
 			for(var i = 0; i < queries.length; i++){
 				var query = queries[i];
+
+				if(query == ""){
+					continue;
+				}
+
 				var params = query.split('&');
 
 				// iterate over existing pokemon instead of creating new objects
