@@ -5318,6 +5318,22 @@
 			"moveTypes": ["fire", "ghost", "fairy", "ground"],
 			"traits": ["flash_fire"]
 		}
+	}, {
+	    "name": "Inteleon",
+	    "types": ["water"],
+	    "id": "inteleon",
+	    "stats": {
+	        "hp": 70,
+	        "atk": 85,
+	        "def": 65,
+	        "spA": 125,
+	        "spD": 65,
+	        "spe": 120
+	    },
+		"defaults": {
+			"teraType": "ice",
+			"moveTypes": ["water", "ice"]
+		}
 	}],
 	"traits": [
 		{
