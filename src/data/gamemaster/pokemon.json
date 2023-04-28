@@ -6901,7 +6901,7 @@
     "released": true,
     "family": {
         "id": "FAMILY_SCYTHER",
-        "evolutions": ["scizor"]
+        "evolutions": ["scizor", "kleavor"]
     }
 }, {
     "dex": 123,
@@ -33923,8 +33923,7 @@
 	"family": {
 		"id": "FAMILY_SCYTHER",
 		"parent": "scyther"
-	},
-	"tags": ["shadoweligible"]
+	}
 }, {
     "dex": 901,
     "speciesName": "Ursaluna",
