@@ -88,8 +88,8 @@ switch($cup){
 		$league = 'Little Cup';
 		break;
 
-	case "spring":
-		$league = 'Spring Cup';
+	case "sunshine":
+		$league = 'Sunshine Cup';
 		break;
 
 	case "evolution":

@@ -1,0 +1,15 @@
+{
+    "name": "sunshine",
+    "title": "Sunshine Cup",
+    "include": [{
+        "filterType": "type",
+        "values": ["normal", "fire", "ground", "grass"]
+    }],
+    "exclude": [ {
+        "filterType": "tag",
+        "values": ["mega"]
+    }, {
+        "filterType": "id",
+        "values": ["charizard"]
+    }]
+}
