@@ -26874,7 +26874,8 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false,
+        "released": true,
+        "levelFloor": 20,
         "family": {
             "id": "FAMILY_LARVESTA",
             "evolutions": ["volcarona"]
@@ -26898,7 +26899,8 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false,
+        "released": true,
+        "levelFloor": 20,
         "family": {
             "id": "FAMILY_LARVESTA",
             "parent": "larvesta"
@@ -36279,6 +36281,18 @@
         "energyGain": 8,
         "cooldown": 1500,
         "archetype": "Heavy Damage"
+    }, {
+        "moveId": "MYSTICAL_FIRE",
+        "name": "Mystical Fire (Speculative)",
+        "type": "fire",
+        "power": 60,
+        "energy": 45,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [-1, 0],
+        "buffTarget": "opponent",
+        "buffApplyChance": "1",
+        "archetype": "Debuff"
     }, {
         "moveId": "NIGHT_SHADE",
         "name": "Night Shade",
