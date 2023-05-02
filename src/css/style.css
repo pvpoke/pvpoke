@@ -3304,16 +3304,18 @@ a.download-csv {
   margin: 0 auto;
   width: 18px;
   height: 18px;
+  background-size: 100%;
+  background-repeat: no-repeat;
 }
 .article .rating-table a.win {
-  background-color: #018dba;
+  background-color: #2a6eb7;
 }
 .article .rating-table a.win span {
   border-radius: 20px;
   background: #fff6d4;
 }
 .article .rating-table a.close-win {
-  background-color: #1b79b4;
+  background-color: #3860ac;
 }
 .article .rating-table a.close-win span {
   border-radius: 20px;
@@ -3321,34 +3323,24 @@ a.download-csv {
   box-sizing: border-box;
 }
 .article .rating-table a.close-loss {
-  background-color: #96359e;
+  background-color: #a91c7e;
 }
 .article .rating-table a.close-loss span {
-  color: #fd91e0;
-}
-.article .rating-table a.close-loss span:after {
-  content: "x";
+  background-image: url("../img/sunflower/rating-close-loss.png");
+  opacity: 0.8;
 }
 .article .rating-table a.loss {
-  background-color: #b9008f;
+  background-color: #c71b71;
 }
 .article .rating-table a.loss span {
-  color: #ff92e2;
-  font-size: 22px;
-  font-weight: 900;
-  line-height: 18px;
-}
-.article .rating-table a.loss span:after {
-  content: "X";
+  background-image: url("../img/sunflower/rating-loss.png");
 }
 .article .rating-table a.tie {
   background-color: #968cb6;
 }
 .article .rating-table a.tie span {
-  color: #fff6d4;
-}
-.article .rating-table a.tie span:after {
-  content: "-";
+  background-image: url("../img/sunflower/rating-tie.png");
+  opacity: 0.75;
 }
 .article .rating-table td.name {
   vertical-align: middle;

@@ -3723,12 +3723,10 @@ a.download-csv{
 				margin:0 auto;
 				width:18px;
 				height:18px;
-				background-size:100%;
-				background-repeat: no-repeat;
 			}
 
 			&.win{
-				background-color: #2a6eb7;
+				background-color: rgb(1, 141, 186);
 
 				span{
 					border-radius:20px;
@@ -3737,7 +3735,7 @@ a.download-csv{
 			}
 
 			&.close-win{
-				background-color: #3860ac;
+				background-color: #1b79b4;
 
 				span{
 					border-radius:20px;
@@ -3747,19 +3745,29 @@ a.download-csv{
 			}
 
 			&.close-loss{
-				background-color: #a91c7e;
+				background-color: #96359e;
 
 				span{
-					background-image: url('../img/sunflower/rating-close-loss.png');
-					opacity: 0.8;
+					color:#fd91e0;
+
+					&:after{
+						content: "x";
+					}
 				}
 			}
 
 			&.loss{
-				background-color: #c71b71;
+				background-color: rgb(185, 0, 143);
 
 				span{
-					background-image: url('../img/sunflower/rating-loss.png');
+					color:#ff92e2;
+					font-size:22px;
+					font-weight:900;
+					line-height: 18px;
+
+					&:after{
+						content: "X";
+					}
 				}
 			}
 
@@ -3767,8 +3775,11 @@ a.download-csv{
 				background-color: rgb(150, 140, 182);
 
 				span{
-					background-image: url('../img/sunflower/rating-tie.png');
-					opacity: 0.75;
+					color:#fff6d4;
+
+					&:after{
+						content:"-";
+					}
 				}
 			}
 		}
