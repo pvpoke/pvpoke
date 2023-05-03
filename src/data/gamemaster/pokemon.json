@@ -33909,23 +33909,26 @@
 	"speciesId": "kleavor",
 	"speciesName": "Kleavor",
 	"baseStats": {
-		"atk": 244,
-		"def": 179,
+		"atk": 260,
+		"def": 180,
 		"hp": 172
 	},
 	"defaultIVs": {
-		"cp500": [6, 13, 14, 13],
-		"cp1500": [18, 4, 12, 12],
-		"cp2500": [30, 5, 15, 9]
-	},
+        "cp500": [6, 4, 5, 9],
+        "cp1500": [17, 3, 12, 12],
+        "cp2500": [27.5, 6, 14, 15]
+    },
 	"types": ["bug", "rock"],
-	"fastMoves": ["STRUGGLE"],
-	"chargedMoves": ["STRUGGLE"],
+	"fastMoves": ["QUICK_ATTACK", "AIR_SLASH"],
+	"chargedMoves": ["X_SCISSOR", "ROCK_SLIDE", "STONE_EDGE"],
+	"buddyDistance": 5,
+    "thirdMoveCost": 75000,
 	"levelFloor": 20,
 	"family": {
 		"id": "FAMILY_SCYTHER",
 		"parent": "scyther"
-	}
+	},
+	"released": true
 }, {
     "dex": 901,
     "speciesName": "Ursaluna",
