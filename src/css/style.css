@@ -42,8 +42,13 @@ body {
 }
 
 header {
-  padding: 5px;
+  padding: 3px;
   box-sizing: border-box;
+  background: #f9fdff;
+  position: fixed;
+  z-index: 25;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 6px;
 }
 header .header-wrap {
   max-width: 800px;
@@ -52,19 +57,7 @@ header .header-wrap {
   flex-wrap: wrap;
   justify-content: space-between;
 }
-header .title {
-  font-size: 18px;
-  margin: 0;
-  display: inline-block;
-  font-weight: normal;
-}
-header .title a {
-  background-image: url(../img/app_192.png);
-  background-size: contain;
-  text-decoration: none;
-  color: #000;
-  padding: 3px 0 3px 40px;
-  background-repeat: no-repeat;
+header a img {
   display: block;
 }
 header .menu {
@@ -74,7 +67,7 @@ header .menu {
 header .menu a {
   display: block;
   margin-left: 20px;
-  color: #003748;
+  color: #003462;
   text-decoration: none;
   background-repeat: no-repeat;
   padding-left: 22px;
@@ -120,7 +113,7 @@ footer p:first-of-type {
 #main {
   max-width: 800px;
   margin: auto;
-  padding: 10px;
+  padding: 60px 10px 10px 10px;
   border-radius: 12px;
 }
 #main > h1 {
@@ -130,11 +123,6 @@ footer p:first-of-type {
 #main {
   position: relative;
   z-index: 10;
-}
-
-header {
-  position: relative;
-  z-index: 25;
 }
 
 .section {
@@ -204,7 +192,7 @@ header {
   padding-left: 33px;
   background-repeat: no-repeat;
   background-position: 0 center;
-  color: #003748;
+  color: #003462;
 }
 .home a.button h2.no-logo {
   padding-left: 0;
@@ -302,7 +290,7 @@ header {
   display: block;
   margin: 10px 0;
   max-width: 200px;
-  background: #eee;
+  background: #f9fdff;
   border: 1px solid #333;
 }
 .poke input.poke-select, .poke select.poke-select {
@@ -338,7 +326,7 @@ header {
 }
 .poke .form-select-container a.form-link {
   display: none;
-  background: #eee;
+  background: #f9fdff;
   border-radius: 4px;
   padding: 3px;
   border: 1px solid;
@@ -381,7 +369,7 @@ header {
   border-radius: 8px;
   padding: 5px;
   max-width: 200px;
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.85);
   display: none;
 }
 .poke .poke-stats .stat-container {
@@ -486,7 +474,7 @@ header {
 .poke .poke-stats a {
   font-size: 14px;
   text-decoration: none;
-  color: #003748;
+  color: #003462;
   display: block;
   margin: 5px 0;
 }
@@ -531,7 +519,7 @@ header {
 }
 .poke .poke-stats .advanced-section .fields .ivs input:focus {
   outline: none;
-  border-bottom: 3px solid #eabd49;
+  border-bottom: 3px solid #ffcf01;
 }
 .poke .poke-stats .advanced-section .fields input.level {
   width: 25%;
@@ -754,7 +742,7 @@ header {
   border-radius: 15px;
   text-align: center;
   padding-top: 1px;
-  color: #eee;
+  color: #f9fdff;
   font-weight: bold;
   background: #333;
 }
@@ -841,7 +829,7 @@ header {
   right: 5px;
   font-weight: bold;
   background: #333;
-  color: #eee;
+  color: #f9fdff;
   border-radius: 4px;
   padding: 0 4px;
   font-size: 12px;
@@ -891,7 +879,7 @@ header {
   height: 30px;
   box-sizing: border-box;
   margin-top: 20px;
-  background: #00171c;
+  background: #003462;
 }
 .hp.bar-back .bar {
   width: 100%;
@@ -938,7 +926,7 @@ header {
   overflow: hidden;
   border: 2px solid rgba(0, 0, 0, 0);
   box-sizing: border-box;
-  color: #eee;
+  color: #f9fdff;
   margin-top: 5px;
   display: none;
   cursor: pointer;
@@ -1046,7 +1034,7 @@ header {
 
 /* GENERAL FORM STYLING */
 select, input {
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 3px 8px;
   box-sizing: border-box;
   width: 100%;
@@ -1071,18 +1059,18 @@ select, input {
   font-size: 18px;
   margin: 10px auto;
   border-radius: 8px;
-  border: 2px solid #000;
+  border: 2px solid #003462;
   padding: 10px;
   cursor: pointer;
   text-decoration: none;
-  color: #000;
-  background: #b99027;
+  color: #003462;
+  background: #f9a01b;
   /* Old browsers */
-  background: -moz-linear-gradient(top, #eabd49 30%, #b99027 99%) !important;
+  background: -moz-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #eabd49 30%, #b99027 99%) !important;
+  background: -webkit-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #eabd49 30%, #b99027 99%) !important;
+  background: linear-gradient(to bottom, #ffcf01 30%, #f9a01b 99%) !important;
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 .button.update-btn {
@@ -1098,7 +1086,7 @@ select, input {
   color: #000;
   margin: 10px auto;
   border-radius: 8px;
-  background: url("../img/pokebattler.png") #eee;
+  background: url("../img/pokebattler.png") #f9fdff;
   background-size: 40px;
   background-position: 5px center;
   background-repeat: no-repeat;
@@ -1125,7 +1113,7 @@ select, input {
 .share-link,
 .rank .details .share-link.detail-section {
   display: inline-block;
-  background: #004c66;
+  background: #6296be;
   background-image: url("../img/link.png");
   background-repeat: no-repeat;
   background-position: 6px center;
@@ -1139,8 +1127,8 @@ select, input {
   width: auto;
   display: inline-block;
   border: none;
-  background: #00171c;
-  color: #eee;
+  background: #003462;
+  color: #f9fdff;
   padding: 5px;
 }
 .share-link .copy,
@@ -1149,7 +1137,7 @@ select, input {
   font-weight: bold;
   font-size: 13px;
   cursor: pointer;
-  color: #eee;
+  color: #f9fdff;
   margin: 5px;
   border-radius: 8px;
 }
@@ -1184,13 +1172,13 @@ select, input {
   float: left;
 }
 .check.on span {
-  background: #b99027;
+  background: #f9a01b;
   /* Old browsers */
-  background: -moz-linear-gradient(top, #eabd49 30%, #b99027 99%) !important;
+  background: -moz-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #eabd49 30%, #b99027 99%) !important;
+  background: -webkit-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #eabd49 30%, #b99027 99%) !important;
+  background: linear-gradient(to bottom, #ffcf01 30%, #f9a01b 99%) !important;
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 .check:hover:not(.on) span {
@@ -1221,20 +1209,20 @@ select, input {
 }
 .battle-results .timeline-container.sandbox-mode {
   background-color: rgba(255, 240, 200, 0.75);
-  border: 1px solid #eabd49;
+  border: 1px solid #ffcf01;
 }
 .battle-results .timeline-container.sandbox-mode .item.charged:hover,
 .battle-results .timeline-container.sandbox-mode .item.interaction:hover,
 .battle-results .timeline-container.sandbox-mode .item.fast:not(.disabled):hover {
-  background: #b99027;
+  background: #f9a01b;
   /* Old browsers */
-  background: -moz-linear-gradient(top, #eabd49 30%, #b99027 99%) !important;
+  background: -moz-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #eabd49 30%, #b99027 99%) !important;
+  background: -webkit-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #eabd49 30%, #b99027 99%) !important;
+  background: linear-gradient(to bottom, #ffcf01 30%, #f9a01b 99%) !important;
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  border-color: #b99027;
+  border-color: #f9a01b;
 }
 .battle-results .timeline-container.sandbox-mode .item.disabled {
   opacity: 0.5;
@@ -1272,7 +1260,7 @@ select, input {
   transition: background 0.25s 0s ease-out;
   position: relative;
   background: #888;
-  color: #eee;
+  color: #f9fdff;
   border-radius: 12px;
   font-size: 17px;
   line-height: 16px;
@@ -1302,7 +1290,7 @@ select, input {
 }
 .battle-results .sandbox-btn-container .sandbox-btn.active {
   color: #333;
-  background: #eabd49;
+  background: #ffcf01;
 }
 .battle-results .sandbox-btn-container .sandbox-btn.active .btn-background {
   left: 0;
@@ -1311,7 +1299,7 @@ select, input {
   width: 19px;
   height: 19px;
   border-radius: 12px;
-  background: #eabd49;
+  background: #ffcf01;
   float: right;
   margin: 0 10px;
   cursor: pointer;
@@ -1374,7 +1362,7 @@ select, input {
 .battle-results .bulk-btn {
   font-size: 14px;
   margin-top: 30px;
-  color: #eee;
+  color: #f9fdff;
   background: url("../img/histogram-icon.png") no-repeat 8px center, #3e5eac !important;
   padding-left: 30px;
 }
@@ -1508,7 +1496,7 @@ select, input {
   padding: 5px;
   border: none;
   background: #333 !important;
-  color: #eee;
+  color: #f9fdff;
 }
 .battle-results .battle-details .breakpoints-section .golden-combination .button,
 .battle-results .battle-details .matchup-detail-section .golden-combination .button,
@@ -1524,7 +1512,7 @@ select, input {
   font-weight: bold;
   border: none;
   background: #333 !important;
-  color: #eee;
+  color: #f9fdff;
 }
 .battle-results .battle-details .breakpoints-section .optimal-timing-timeline,
 .battle-results .battle-details .matchup-detail-section .optimal-timing-timeline,
@@ -1919,7 +1907,7 @@ a.download-csv {
   text-align: center;
 }
 .stats-table span.type.dark, .stats-table span.type.dragon, .stats-table span.type.ghost {
-  color: #eee;
+  color: #f9fdff;
 }
 .stats-table.sortable-table .label {
   cursor: pointer;
@@ -2740,7 +2728,7 @@ a.download-csv {
 }
 .detail-tabs-on .detail-tab-nav a.active {
   background-color: #333;
-  color: #eee;
+  color: #f9fdff;
 }
 .detail-tabs-on .detail-tab-nav a.active .icon {
   background-position: 100% center;
@@ -2898,7 +2886,7 @@ a.download-csv {
 }
 .ranking-categories a.selected {
   background: #333;
-  color: #eee;
+  color: #f9fdff;
   font-weight: bold;
 }
 
@@ -2934,19 +2922,19 @@ a.download-csv {
 }
 
 .limited-title {
-  color: #eabd49;
+  color: #ffcf01;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
   font-weight: bold;
 }
 
 .rankings-container .limited-rank {
-  background: #b99027;
+  background: #f9a01b;
   /* Old browsers */
-  background: -moz-linear-gradient(top, #eabd49 30%, #b99027 99%) !important;
+  background: -moz-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
   /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #eabd49 30%, #b99027 99%) !important;
+  background: -webkit-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
   /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #eabd49 30%, #b99027 99%) !important;
+  background: linear-gradient(to bottom, #ffcf01 30%, #f9a01b 99%) !important;
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 .rankings-container .limited-rank .name-container {
@@ -3175,7 +3163,7 @@ a.download-csv {
 }
 .histograms .histogram .chart {
   height: 200px;
-  border: 1px solid #00171c;
+  border: 1px solid #003462;
   background: rgba(255, 255, 255, 0.6);
   overflow: hidden;
 }
@@ -3268,7 +3256,7 @@ a.download-csv {
   background: #62728b;
   padding: 10px;
   border-radius: 8px;
-  color: #eee;
+  color: #f9fdff;
   line-height: 24px;
 }
 .article table {
@@ -3483,8 +3471,8 @@ a.download-csv {
 .article-item .tags a {
   display: block;
   text-decoration: none;
-  background: #003748;
-  color: #eee;
+  background: #003462;
+  color: #f9fdff;
   border-radius: 8px;
   font-size: 12px;
   padding: 4px 8px;
@@ -3628,7 +3616,7 @@ a.download-csv {
 }
 .modal .modal-container .modal-header {
   padding: 10px;
-  background: #eabd49;
+  background: #ffcf01;
   font-size: 24px;
   font-weight: bold;
 }
@@ -3706,8 +3694,8 @@ a.download-csv {
   display: inline-block;
   cursor: pointer;
   font-weight: bold;
-  background: #004c66;
-  color: #eee;
+  background: #6296be;
+  color: #f9fdff;
   padding: 5px;
   border-radius: 8px;
   margin: 5px 0;
@@ -3741,14 +3729,14 @@ a.download-csv {
   text-decoration: none;
   font-size: 14px;
   color: #fff;
-  background: #003748;
+  background: #003462;
   margin-right: 10px;
   margin-bottom: 10px;
 }
 .modal .pokebox-options a.pokebox-edit {
   border: 1px solid #000;
   color: #000;
-  background: url("../img/pokebattler_logo.png") #eee;
+  background: url("../img/pokebattler_logo.png") #f9fdff;
   background-repeat: no-repeat;
   background-position: 5px center;
   background-size: 20px;
@@ -3757,7 +3745,7 @@ a.download-csv {
 .modal .pokebox-options a.pvpoke-sponsor {
   border: 1px solid #000;
   color: #000;
-  background: url("../img/app_192.png") #eee;
+  background: url("../img/app_192.png") #f9fdff;
   background-repeat: no-repeat;
   background-position: 5px center;
   background-size: 20px;
@@ -3799,7 +3787,7 @@ h2 {
 }
 
 a.toggle {
-  color: #00171c;
+  color: #003462;
   text-decoration: none;
   font-weight: bold;
   display: block;
@@ -4016,10 +4004,10 @@ a.pokebattler {
 }
 
 .dark, .dragon, .ghost {
-  color: #eee;
+  color: #f9fdff;
 }
 .dark > .name-container, .dragon > .name-container, .ghost > .name-container {
-  color: #eee;
+  color: #f9fdff;
 }
 .dark option, .dragon option, .ghost option {
   color: #000;
@@ -4176,9 +4164,6 @@ a.pokebattler {
   }
 
   header {
-    background: #eabd49;
-    position: fixed;
-    width: 100%;
     z-index: 50;
   }
   header .title {
@@ -4227,9 +4212,6 @@ a.pokebattler {
     background-position: center top;
   }
 
-  #main {
-    padding-top: 45px;
-  }
   #main > h1 {
     font-size: 26px;
   }
@@ -4526,8 +4508,8 @@ a.pokebattler {
   display: inline-block;
   cursor: pointer;
   font-weight: bold;
-  background: #004c66;
-  color: #eee;
+  background: #6296be;
+  color: #f9fdff;
   padding: 5px;
   border-radius: 8px;
   margin: 5px 0;
@@ -4553,7 +4535,7 @@ a.pokebattler {
 }
 .analysis-container .sort-category a {
   display: block;
-  background: #003748;
+  background: #003462;
   padding: 4px 8px;
   text-decoration: none;
   border-radius: 12px;
@@ -4707,7 +4689,7 @@ a.pokebattler {
   }
   .menu .submenu .submenu-wrap {
     padding: 2px 5px;
-    background: #eabd49;
+    background: #ffcf01;
   }
   .menu .submenu a {
     float: none;

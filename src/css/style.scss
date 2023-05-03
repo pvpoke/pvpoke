@@ -54,16 +54,16 @@ $color-water-light:#6ac7e9;
 $color-ranking:#fff6d4;
 $color-highlight:#222;
 
-$color-links:#003748;
-$color-blue-light:#004c66;
-$color-blue-dark:#00171c;
+$color-links:#003462;
+$color-blue-light:#6296be;
+$color-blue-dark:#003462;
 
-$color-gold:#eabd49;
-$color-gold-dark:#b99027;
+$color-gold:#ffcf01;
+$color-gold-dark:#f9a01b;
 $color-purple:#7f4da8;
 $color-purple-dark:#3b1f52;
 
-$color-off-white:#eee;
+$color-off-white:#f9fdff;
 $color-off-black:#333;
 
 $color-stat-buff:#f1841c;
@@ -137,8 +137,13 @@ body{
 }
 
 header{
-	padding:5px;
+	padding:3px;
 	box-sizing:border-box;
+	background: $color-off-white;
+	position: fixed;
+    z-index: 25;
+    width: 100%;
+    box-shadow: rgba(0,0,0,0.2) 0px 0px 6px;
 
 	.header-wrap{
 		max-width:800px;
@@ -148,21 +153,8 @@ header{
 		justify-content: space-between;
 	}
 
-	.title{
-		font-size: 18px;
-		margin: 0;
-		display: inline-block;
-		font-weight: normal;
-
-		a{
-			background-image: url(../img/app_192.png);
-			background-size: contain;
-			text-decoration: none;
-			color: #000;
-			padding: 3px 0 3px 40px;
-			background-repeat: no-repeat;
-			display: block;
-		}
+	a img{
+		display: block;
 	}
 
 	.menu{
@@ -224,7 +216,7 @@ footer{
 #main{
 	max-width:800px;
 	margin: auto;
-	padding:10px;
+	padding:60px 10px 10px 10px;
     border-radius: 12px;
 
 	& > h1{
@@ -235,11 +227,6 @@ footer{
 #main{
 	position:relative;
 	z-index: 10;
-}
-
-header{
-	position:relative;
-	z-index:25;
 }
 
 .section{
@@ -521,7 +508,7 @@ header{
 		border-radius: 8px;
 		padding: 5px;
 		max-width:200px;
-		background:rgba(255, 255, 255, 0.75);
+		background:rgba(255, 255, 255, 0.85);
 		display:none;
 
 		.stat-container {
@@ -1338,7 +1325,7 @@ header{
 /* GENERAL FORM STYLING */
 
 select, input{
-	border-radius:4px;
+	border-radius:8px;
 	padding:3px 8px;
 	box-sizing:border-box;
 	width:100%;
@@ -1363,11 +1350,11 @@ select, input{
 	font-size:18px;
 	margin:10px auto;
     border-radius: 8px;
-    border: 2px solid #000;
+    border: 2px solid $color-blue-dark;
     padding: 10px;
     cursor: pointer;
 	text-decoration: none;
-	color:#000;
+	color:$color-blue-dark;
 
 	@include gradient($color-gold, $color-gold-dark);
 
@@ -4455,11 +4442,7 @@ a.pokebattler{
 	}
 
 	header{
-		background:$color-gold;
-		position:fixed;
-		width:100%;
 		z-index:50;
-		//top: 28px;
 
 		.title{
 			float:none;
@@ -4513,9 +4496,6 @@ a.pokebattler{
 	}
 
 	#main{
-		padding-top:45px;
-		//padding-top:76px;
-
 		& > h1{
 		font-size:26px;
 		}
