@@ -4762,7 +4762,7 @@ a.pokebattler {
     padding-top: 10px;
     max-width: 200px;
     position: absolute;
-    left: 20px;
+    padding-left: 20px;
     top: 23px;
     height: 0;
     overflow: hidden;
