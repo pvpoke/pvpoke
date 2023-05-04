@@ -103,7 +103,13 @@ require_once 'header.php';
 	<?php require 'modules/pokemultiselect.php'; ?>
 </div>
 
-<button class="rate-btn button">Rate Team</button>
+<button class="rate-btn button">
+	<span class="btn-content-wrap">
+		<span class="btn-icon btn-icon-team"></span>
+		<span class="btn-label">Rate Team</span>
+	</span>
+</button>
+
 <div class="section white error">Please select one or more Pokemon.</div>
 
 <?php require 'modules/ads/body-728.php'; ?>

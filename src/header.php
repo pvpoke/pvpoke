@@ -121,7 +121,7 @@ if(! isset($OG_IMAGE)){
 	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
 <?php endif; ?>
 
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=165">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=166">
 
 <?php if(strpos($META_TITLE, 'Train') !== false): ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=20">
@@ -211,7 +211,7 @@ if(! isset($OG_IMAGE)){
 	<header>
 		<div class="header-wrap">
 			<a href="<?php echo $WEB_ROOT; ?>"><img src="<?php echo $WEB_ROOT; ?>/img/sunflower/header.png" title="PvPoke.com" /></a>
-			<div class="hamburger">
+			<div class="hamburger mobile">
 				<!--Because I'm too lazy to make a graphic-->
 				<div class="meat"></div>
 				<div class="meat"></div>
@@ -236,16 +236,23 @@ if(! isset($OG_IMAGE)){
 						</div>
 					</div>
 				</div>
-				<div class="parent-menu">
-					<a class="more desktop" href="#"></a>
+				<div class="parent-menu more-parent-menu">
+					<a class="more desktop" href="#">
+						<div class="hamburger desktop">
+							<!--Because I'm too lazy to make a graphic-->
+							<div class="meat"></div>
+							<div class="meat"></div>
+							<div class="meat"></div>
+						</div>
+					</a>
 					<div class="submenu">
 						<div class="submenu-wrap">
 							<a href="<?php echo $WEB_ROOT; ?>moves/">Moves</a>
 							<a href="<?php echo $WEB_ROOT; ?>articles/">Articles</a>
 							<a href="<?php echo $WEB_ROOT; ?>contribute/">Contribute</a>
 							<a href="<?php echo $WEB_ROOT; ?>settings/">Settings</a>
-							<a class="icon-twitter" href="https://twitter.com/pvpoke" target="_blank">Twitter</a>
-							<a class="icon-tera" href="<?php echo $WEB_ROOT; ?>tera/">Tera Raid Counters</a>
+							<a class="twitter" href="https://twitter.com/pvpoke" target="_blank">Twitter</a>
+							<a class="tera" href="<?php echo $WEB_ROOT; ?>tera/">Tera Raid Counters</a>
 						</div>
 					</div>
 				</div>

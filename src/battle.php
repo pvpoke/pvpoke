@@ -42,8 +42,18 @@ require_once 'header.php';
 </div>
 
 <div class="section battle">
-	<button class="battle-btn button">Battle</button>
-	<button class="update-btn button">Update</button>
+	<button class="battle-btn button">
+		<span class="btn-content-wrap">
+			<span class="btn-icon btn-icon-battle"></span>
+			<span class="btn-label">Battle</span>
+		</span>
+	</button>
+	<button class="update-btn button">
+		<span class="btn-content-wrap">
+			<span class="btn-icon btn-icon-battle"></span>
+			<span class="btn-label">Update</span>
+		</span>
+	</button>
 	<div class="tooltip"><h3 class="name"></h3><div class="details"></div></div>
 
 	<div class="battle-results single">
@@ -439,7 +449,6 @@ require_once 'header.php';
 
 <?php require_once 'modules/search-string-help.php'; ?>
 
-<!--test 2-->
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/Interface.js?v=<?php echo $SITE_VERSION; ?>"></script>

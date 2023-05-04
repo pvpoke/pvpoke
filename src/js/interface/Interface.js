@@ -2161,7 +2161,7 @@ var InterfaceMaster = (function () {
 
 				$(".advanced-section").removeClass("active");
 				$(".battle-results").hide();
-				$(".battle-btn").html("Generating...");
+				$(".battle-btn .btn-label").html("Generating...");
 
 				// This is stupid but the visual updates won't execute until Javascript has completed the entire thread
 
@@ -2229,7 +2229,7 @@ var InterfaceMaster = (function () {
 
 					$("html, body").animate({ scrollTop: $(".battle-results."+self.battleMode).offset().top - 185 }, 500);
 
-					$(".battle-btn").html("Battle");
+					$(".battle-btn .btn-label").html("Battle");
 
 				}, 17);
 			}

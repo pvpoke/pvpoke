@@ -21,7 +21,7 @@
 
 	<!--Global script-->
 	<script>
-		$(".hamburger").click(function(e){
+		$(".hamburger.mobile").click(function(e){
 			$("header .menu").slideToggle(125);
 		});
 

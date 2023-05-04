@@ -245,7 +245,7 @@ var InterfaceMaster = (function () {
 					$("html, body").animate({ scrollTop: $(".section.typings a").first().offset().top }, 500);
 
 
-					$(".rate-btn").html("Rate Team");
+					$(".rate-btn .btn-label").html("Rate Team");
 				} else{
 					// Update MultiSelect to display Pokemon eligibility
 
@@ -1426,7 +1426,7 @@ var InterfaceMaster = (function () {
 			// Event handler for clicking the rate button
 
 			function rateClick(e){
-				$(".rate-btn").html("Generating...");
+				$(".rate-btn .btn-label").html("Generating...");
 				$(".section.error").hide();
 
 				// This is stupid but the visual updates won't execute until Javascript has completed the entire thread
@@ -1503,7 +1503,7 @@ var InterfaceMaster = (function () {
 						return;
 					}
 
-					$(".rate-btn").html("Rate Team");
+					$(".rate-btn .btn-label").html("Rate Team");
 
 					// Scroll down to results
 

@@ -91,6 +91,13 @@ header .menu > a:hover, header .menu > a.selected, header .menu > .parent-menu:h
 header .menu .parent-menu {
   position: relative;
 }
+header .hamburger .meat {
+  width: 30px;
+  height: 5px;
+  margin: 3px 0;
+  border-radius: 8px;
+  background: #000;
+}
 
 .header-ticker {
   display: flex;
@@ -206,6 +213,7 @@ footer p:first-of-type {
   padding-left: 33px;
   background-repeat: no-repeat;
   background-position: 0 center;
+  background-size: 25px;
   color: #003462;
 }
 .home a.button h2.no-logo {
@@ -460,8 +468,8 @@ footer p:first-of-type {
 }
 .poke .poke-stats .types .type {
   display: inline-block;
-  border-radius: 8px;
-  padding: 2px 5px;
+  border-radius: 4px;
+  padding: 2px 8px;
   margin: 0 2px;
   font-size: 12px;
 }
@@ -662,7 +670,7 @@ footer p:first-of-type {
 }
 .poke .form-group {
   border: 1px solid #888;
-  border-radius: 8px;
+  border-radius: 30px;
   margin-bottom: 15px;
   clear: both;
   display: flex;
@@ -1048,7 +1056,7 @@ footer p:first-of-type {
 
 /* GENERAL FORM STYLING */
 select, input {
-  border-radius: 8px;
+  border-radius: 30px;
   padding: 3px 8px;
   box-sizing: border-box;
   width: 100%;
@@ -1089,6 +1097,27 @@ select, input {
 }
 .button.update-btn {
   display: none;
+}
+.button span.btn-content-wrap {
+  display: flex;
+  align-items: center;
+}
+.button span.btn-icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-right: 8px;
+}
+.button span.btn-icon.btn-icon-battle {
+  background-image: url("../img/sunflower/nav-battle-blue.png");
+}
+.button span.btn-icon.btn-icon-team {
+  background-image: url("../img/sunflower/nav-team-blue.png");
+}
+.button span.btn-icon.btn-icon-train {
+  background-image: url("../img/sunflower/nav-train-blue.png");
 }
 
 .pokebox a.open-pokebox {
@@ -1508,6 +1537,7 @@ select, input {
   font-size: 14px;
   margin: 0;
   padding: 5px;
+  border-radius: 8px;
   border: none;
   background: #333 !important;
   color: #f9fdff;
@@ -2892,16 +2922,24 @@ a.download-csv {
 }
 .ranking-categories a {
   text-decoration: none;
-  color: #333;
+  color: #003462;
   font-size: 14px;
-  padding: 8px;
-  border-radius: 8px;
+  padding: 8px 10px;
+  margin: 0 2px;
+  border-radius: 30px;
   display: inline-block;
+  -webkit-transition: background-color 0.2s ease-out 0s;
+  -moz-transition: background-color 0.2s ease-out 0s;
+  -o-transition: background-color 0.2s ease-out 0s;
+  transition: background-color 0.2s ease-out 0s;
 }
-.ranking-categories a.selected {
-  background: #333;
-  color: #f9fdff;
+.ranking-categories a.selected, .ranking-categories a:hover {
+  background: #c4def5;
   font-weight: bold;
+  -webkit-transition: background-color 0s ease-out 0s;
+  -moz-transition: background-color 0s ease-out 0s;
+  -o-transition: background-color 0s ease-out 0s;
+  transition: background-color 0s ease-out 0s;
 }
 
 .poke-search-container {
@@ -4179,6 +4217,10 @@ a.pokebattler {
     display: block;
   }
 
+  .desktop {
+    display: none;
+  }
+
   header {
     z-index: 50;
   }
@@ -4201,18 +4243,11 @@ a.pokebattler {
     font-size: 22px;
     background-size: 24px 24px;
   }
-  header .menu .icon-twitter span {
-    display: inline-block;
+  header .menu .twitter {
+    color: #01bbff;
   }
-  header .hamburger {
-    display: block;
-  }
-  header .hamburger .meat {
-    width: 30px;
-    height: 5px;
-    margin: 3px 0;
-    border-radius: 8px;
-    background: #000;
+  header .menu .tera {
+    color: #d250a3;
   }
 
   .header-ticker {
@@ -4680,6 +4715,12 @@ a.pokebattler {
   .menu .parent-menu {
     position: relative;
   }
+  .menu .parent-menu.more-parent-menu > a {
+    background: none !important;
+  }
+  .menu .parent-menu.more-parent-menu > a:after {
+    display: none;
+  }
   .menu .parent-menu .submenu .icon-rankings {
     font-size: 14px;
   }
@@ -4711,7 +4752,7 @@ a.pokebattler {
   }
   .menu .submenu.active {
     display: block;
-    height: 150px;
+    height: 190px;
     pointer-events: auto;
   }
   .menu .submenu .submenu-wrap {
