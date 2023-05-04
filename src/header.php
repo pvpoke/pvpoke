@@ -255,6 +255,7 @@ if(! isset($OG_IMAGE)){
 							<a class="tera" href="<?php echo $WEB_ROOT; ?>tera/">Tera Raid Counters</a>
 						</div>
 					</div>
+					<div class="safe-mouse-space"></div>
 				</div>
 			</div>
 		</div>

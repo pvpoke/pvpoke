@@ -176,6 +176,10 @@ header{
 			border-radius: 20px;
 
 			@include transition(background-color, 0.2s, ease-out, 0s);
+
+
+			&.twitter{ color: #01bbff; }
+			&.tera{ color: #d250a3; }
 		}
 
 		& > a:hover, & > a.selected, & > .parent-menu:hover > a, .parent-menu > a.selected{
@@ -4498,7 +4502,7 @@ a.pokebattler{
 	}
 
 	.desktop{
-		display: none;
+		display: none !important;
 	}
 
 	header{
@@ -4513,20 +4517,33 @@ a.pokebattler{
 			display:none;
 			float:none;
 			clear:both;
-			margin-top:15px;
+			margin-top:5px;
 			padding:0;
 			flex: 0 0 100%;
 
 			a{
-				float:none;
 				margin: 10px 0;
-				padding-left: 34px;
-				font-size: 22px;
-				background-size: 24px 24px;
+			    padding-left: 34px;
+			    font-size: 18px;
+			    background-size: 18px 18px;
+			    background-position: 6px center;
 			}
+		}
 
-			.twitter{ color: #01bbff; }
-			.tera{ color: #d250a3; }
+		.submenu{
+			padding-left: 18px;
+
+			a{
+				font-size: 16px;
+			}
+		}
+
+		.more-parent-menu .submenu{
+			padding-left: 0;
+
+			a{
+				font-size: 18px;
+			}
 		}
 	}
 
@@ -5118,6 +5135,14 @@ a.pokebattler{
 					&:after{
 						display: none;
 					}
+				}
+
+				.safe-mouse-space{
+					position: absolute;
+					width:150%;
+					height:100%;
+					left: 95%;
+					top:0;
 				}
 			}
 

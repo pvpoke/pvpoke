@@ -81,6 +81,12 @@ header .menu a {
   -o-transition: background-color 0.2s ease-out 0s;
   transition: background-color 0.2s ease-out 0s;
 }
+header .menu a.twitter {
+  color: #01bbff;
+}
+header .menu a.tera {
+  color: #d250a3;
+}
 header .menu > a:hover, header .menu > a.selected, header .menu > .parent-menu:hover > a, header .menu .parent-menu > a.selected {
   background-color: #c4def5;
   -webkit-transition: background-color 0s ease-out 0s;
@@ -4218,7 +4224,7 @@ a.pokebattler {
   }
 
   .desktop {
-    display: none;
+    display: none !important;
   }
 
   header {
@@ -4232,22 +4238,28 @@ a.pokebattler {
     display: none;
     float: none;
     clear: both;
-    margin-top: 15px;
+    margin-top: 5px;
     padding: 0;
     flex: 0 0 100%;
   }
   header .menu a {
-    float: none;
     margin: 10px 0;
     padding-left: 34px;
-    font-size: 22px;
-    background-size: 24px 24px;
+    font-size: 18px;
+    background-size: 18px 18px;
+    background-position: 6px center;
   }
-  header .menu .twitter {
-    color: #01bbff;
+  header .submenu {
+    padding-left: 18px;
   }
-  header .menu .tera {
-    color: #d250a3;
+  header .submenu a {
+    font-size: 16px;
+  }
+  header .more-parent-menu .submenu {
+    padding-left: 0;
+  }
+  header .more-parent-menu .submenu a {
+    font-size: 18px;
   }
 
   .header-ticker {
@@ -4720,6 +4732,13 @@ a.pokebattler {
   }
   .menu .parent-menu.more-parent-menu > a:after {
     display: none;
+  }
+  .menu .parent-menu.more-parent-menu .safe-mouse-space {
+    position: absolute;
+    width: 150%;
+    height: 100%;
+    left: 95%;
+    top: 0;
   }
   .menu .parent-menu .submenu .icon-rankings {
     font-size: 14px;
