@@ -63,6 +63,7 @@ header a img {
 header .menu {
   padding: 3px 0;
   display: flex;
+  align-items: center;
 }
 header .menu a {
   display: block;
@@ -70,9 +71,22 @@ header .menu a {
   color: #003462;
   text-decoration: none;
   background-repeat: no-repeat;
-  padding-left: 22px;
+  background-position: 8px center;
+  padding: 4px 8px 4px 30px;
   background-size: 16px 16px;
   font-weight: bold;
+  border-radius: 20px;
+  -webkit-transition: background-color 0.2s ease-out 0s;
+  -moz-transition: background-color 0.2s ease-out 0s;
+  -o-transition: background-color 0.2s ease-out 0s;
+  transition: background-color 0.2s ease-out 0s;
+}
+header .menu > a:hover, header .menu > a.selected, header .menu > .parent-menu:hover > a, header .menu .parent-menu > a.selected {
+  background-color: #c4def5;
+  -webkit-transition: background-color 0s ease-out 0s;
+  -moz-transition: background-color 0s ease-out 0s;
+  -o-transition: background-color 0s ease-out 0s;
+  transition: background-color 0s ease-out 0s;
 }
 header .menu .parent-menu {
   position: relative;
@@ -219,19 +233,19 @@ footer p:first-of-type {
 }
 
 .icon-battle {
-  background-image: url("../img/icon_battle.png");
+  background-image: url("../img/sunflower/nav-battle-blue.png");
 }
 
 .icon-train {
-  background-image: url("../img/icon_train.png");
+  background-image: url("../img/sunflower/nav-train-blue.png");
 }
 
 .icon-rankings {
-  background-image: url("../img/icon_rankings.png");
+  background-image: url("../img/sunflower/nav-rankings-blue.png");
 }
 
 .icon-team {
-  background-image: url("../img/icon_team.png?v=2");
+  background-image: url("../img/sunflower/nav-team-blue.png");
 }
 
 .icon-contribute {
@@ -1059,11 +1073,11 @@ select, input {
   font-size: 18px;
   margin: 10px auto;
   border-radius: 8px;
-  border: 2px solid #003462;
+  border: 2px solid #000;
   padding: 10px;
   cursor: pointer;
   text-decoration: none;
-  color: #003462;
+  color: #000;
   background: #f9a01b;
   /* Old browsers */
   background: -moz-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
@@ -4661,9 +4675,6 @@ a.pokebattler {
   .menu .more:after {
     content: "...";
   }
-  .menu .parent-menu {
-    float: left;
-  }
   .menu .parent-menu .submenu .icon-rankings {
     font-size: 14px;
   }
@@ -4672,15 +4683,11 @@ a.pokebattler {
     max-width: 200px;
     position: absolute;
     right: 0;
-    top: 12px;
+    top: 24px;
     height: 0;
     overflow: hidden;
     pointer-events: none;
     white-space: nowrap;
-    -webkit-transition: all 0.125s linear 0s;
-    -moz-transition: all 0.125s linear 0s;
-    -o-transition: all 0.125s linear 0s;
-    transition: all 0.125s linear 0s;
   }
   .menu .submenu.active {
     display: block;
@@ -4689,12 +4696,14 @@ a.pokebattler {
   }
   .menu .submenu .submenu-wrap {
     padding: 2px 5px;
-    background: #ffcf01;
+    background: #003462;
   }
   .menu .submenu a {
     float: none;
     margin: 6px 0;
     max-width: 150px;
+    color: #f9fdff;
+    font-size: 14px;
   }
 
   .rank .details .detail-section.overall .rating-container .ranking-header {

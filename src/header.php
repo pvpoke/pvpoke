@@ -218,32 +218,32 @@ if(! isset($OG_IMAGE)){
 				<div class="meat"></div>
 			</div>
 			<div class="menu">
-				<a class="icon-battle" href="<?php echo $WEB_ROOT; ?>battle/">Battle</a>
+				<a class="icon-battle <?php if(strpos($_SERVER['REQUEST_URI'], '/battle/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>battle/">Battle</a>
 				<div class="parent-menu">
-					<a class="icon-train" href="<?php echo $WEB_ROOT; ?>train/">Train</a>
+					<a class="icon-rankings <?php if(strpos($_SERVER['REQUEST_URI'], '/rankings/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>rankings/">Rankings</a>
 					<div class="submenu">
 						<div class="submenu-wrap">
-							<a class="icon-rankings" href="<?php echo $WEB_ROOT; ?>train/analysis/">Top Performers</a>
+							<a href="<?php echo $WEB_ROOT; ?>custom-rankings/">Custom Rankings</a>
 						</div>
 					</div>
 				</div>
+				<a class="icon-team <?php if(strpos($_SERVER['REQUEST_URI'], '/team-builder/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>team-builder/">Team Builder</a>
 				<div class="parent-menu">
-					<a class="icon-rankings" href="<?php echo $WEB_ROOT; ?>rankings/">Rankings</a>
+					<a class="icon-train <?php if(strpos($_SERVER['REQUEST_URI'], '/train/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>train/">Train</a>
 					<div class="submenu">
 						<div class="submenu-wrap">
-							<a class="icon-rankings" href="<?php echo $WEB_ROOT; ?>custom-rankings/">Custom Rankings</a>
+							<a href="<?php echo $WEB_ROOT; ?>train/analysis/">Top Performers</a>
 						</div>
 					</div>
 				</div>
-				<a class="icon-team" href="<?php echo $WEB_ROOT; ?>team-builder/">Team Builder</a>
 				<div class="parent-menu">
 					<a class="more desktop" href="#"></a>
 					<div class="submenu">
 						<div class="submenu-wrap">
-							<a class="icon-moves" href="<?php echo $WEB_ROOT; ?>moves/">Moves</a>
-							<a class="icon-articles" href="<?php echo $WEB_ROOT; ?>articles/">Articles</a>
-							<a class="icon-contribute" href="<?php echo $WEB_ROOT; ?>contribute/">Contribute</a>
-							<a class="icon-settings" href="<?php echo $WEB_ROOT; ?>settings/">Settings</a>
+							<a href="<?php echo $WEB_ROOT; ?>moves/">Moves</a>
+							<a href="<?php echo $WEB_ROOT; ?>articles/">Articles</a>
+							<a href="<?php echo $WEB_ROOT; ?>contribute/">Contribute</a>
+							<a href="<?php echo $WEB_ROOT; ?>settings/">Settings</a>
 							<a class="icon-twitter" href="https://twitter.com/pvpoke" target="_blank">Twitter</a>
 							<a class="icon-tera" href="<?php echo $WEB_ROOT; ?>tera/">Tera Raid Counters</a>
 						</div>

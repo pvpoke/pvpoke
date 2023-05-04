@@ -57,6 +57,7 @@ $color-highlight:#222;
 $color-links:#003462;
 $color-blue-light:#6296be;
 $color-blue-dark:#003462;
+$color-sky-blue:#c4def5;
 
 $color-gold:#ffcf01;
 $color-gold-dark:#f9a01b;
@@ -160,6 +161,7 @@ header{
 	.menu{
 		padding:3px 0;
 		display:flex;
+		align-items: center;
 
 		a{
 			display:block;
@@ -167,9 +169,19 @@ header{
 			color:$color-links;
 			text-decoration: none;
 			background-repeat: no-repeat;
-			padding-left: 22px;
+			background-position: 8px center;
+			padding: 4px 8px 4px 30px;
 			background-size: 16px 16px;
 			font-weight:bold;
+			border-radius: 20px;
+
+			@include transition(background-color, 0.2s, ease-out, 0s);
+		}
+
+		& > a:hover, & > a.selected, & > .parent-menu:hover > a, .parent-menu > a.selected{
+			background-color: $color-sky-blue;
+
+			@include transition(background-color, 0s, ease-out, 0s);
 		}
 
 		.parent-menu{
@@ -342,19 +354,19 @@ footer{
 }
 
 .icon-battle{
-	background-image:url('../img/icon_battle.png');
+	background-image:url('../img/sunflower/nav-battle-blue.png');
 }
 
 .icon-train{
-	background-image:url('../img/icon_train.png');
+	background-image:url('../img/sunflower/nav-train-blue.png');
 }
 
 .icon-rankings{
-	background-image:url('../img/icon_rankings.png');
+	background-image:url('../img/sunflower/nav-rankings-blue.png');
 }
 
 .icon-team{
-	background-image:url('../img/icon_team.png?v=2');
+	background-image:url('../img/sunflower/nav-team-blue.png');
 }
 
 .icon-contribute{
@@ -1350,11 +1362,11 @@ select, input{
 	font-size:18px;
 	margin:10px auto;
     border-radius: 8px;
-    border: 2px solid $color-blue-dark;
+    border: 2px solid #000;
     padding: 10px;
     cursor: pointer;
 	text-decoration: none;
-	color:$color-blue-dark;
+	color:#000;
 
 	@include gradient($color-gold, $color-gold-dark);
 
@@ -5060,8 +5072,6 @@ a.pokebattler{
 		}
 
 		.parent-menu{
-			float:left;
-
 
 			.submenu .icon-rankings{
 				font-size:14px;
@@ -5073,13 +5083,11 @@ a.pokebattler{
 			max-width:200px;
 			position: absolute;
 			right: 0;
-			top: 12px;
+			top: 24px;
 			height:0;
 			overflow: hidden;
 			pointer-events: none;
 			white-space: nowrap;
-
-			@include transition(all, .125s, linear, 0s);
 
 			&.active{
 				display:block;
@@ -5089,13 +5097,15 @@ a.pokebattler{
 
 			.submenu-wrap{
 				padding:2px 5px;
-				background:$color-gold;
+				background:$color-blue-dark;
 			}
 
 			a{
 				float:none;
 				margin: 6px 0;
 				max-width: 150px;
+				color: $color-off-white;
+				font-size: 14px;
 			}
 		}
 	}
