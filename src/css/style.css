@@ -4777,6 +4777,7 @@ a.pokebattler {
   .menu .submenu .submenu-wrap {
     padding: 2px 5px;
     background: #003462;
+    border-radius: 0 0 8px 8px;
   }
   .menu .submenu a {
     float: none;
