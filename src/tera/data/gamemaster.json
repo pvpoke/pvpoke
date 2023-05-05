@@ -4488,7 +4488,8 @@
 	        "spA": 45,
 	        "spD": 30,
 	        "spe": 20
-	    }
+	    },
+		"traits": ["ice_scales"]
 	}, {
 	    "name": "Frosmoth",
 	    "types": ["ice", "bug"],
@@ -4500,7 +4501,8 @@
 	        "spA": 125,
 	        "spD": 90,
 	        "spe": 65
-	    }
+	    },
+		"traits": ["ice_scales"]
 	}, {
 	    "name": "Snover",
 	    "types": ["grass", "ice"],
@@ -5369,6 +5371,11 @@
 		{
 			"name": "Huge Power",
 			"id": "huge_power",
+			"type": "ability"
+		},
+		{
+			"name": "Ice Scales",
+			"id": "ice_scales",
 			"type": "ability"
 		},
 		{
