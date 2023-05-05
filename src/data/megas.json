@@ -1,23 +1,4 @@
 [{
-    "dex": 127,
-    "speciesName": "Pinsir (Mega)",
-    "speciesId": "pinsir_mega",
-    "baseStats": {
-        "atk": 305,
-        "def": 231,
-        "hp": 163
-    },
-    "types": ["bug", "flying"],
-    "fastMoves": ["BUG_BITE", "FURY_CUTTER", "ROCK_SMASH"],
-    "chargedMoves": ["CLOSE_COMBAT", "SUBMISSION", "VICE_GRIP", "X_SCISSOR", "SUPER_POWER"],
-    "defaultIVs": {
-        "cp1500": [13, 5, 10, 15],
-        "cp2500": [21.5, 10, 13, 12]
-    },
-    "tags": ["shadoweligible", "mega"],
-    "level25CP": 2640,
-    "eliteMoves": ["SUBMISSION"]
-}, {
     "dex": 150,
     "speciesName": "Mewtwo (Mega X)",
     "speciesId": "mewtwo_mega_x",
