@@ -206,21 +206,42 @@ footer p:first-of-type {
 .home a.button {
   display: block;
   text-decoration: none;
-  color: #000;
-  border-radius: 8px;
+  color: #f9fdff;
+  border-radius: 50px;
   margin: 20px auto;
   padding: 10px;
   box-sizing: border-box;
   max-width: 400px;
+  background: #003462;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #285e85 30%, #003462 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #285e85 30%, #003462 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #285e85 30%, #003462 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.home a.button .btn-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+}
+.home a.button .btn-icon.btn-icon-battle {
+  background-image: url("../img/sunflower/nav-battle-white.png");
+}
+.home a.button .btn-icon.btn-icon-rankings {
+  background-image: url("../img/sunflower/nav-rankings-white.png");
+}
+.home a.button .btn-icon.btn-icon-team {
+  background-image: url("../img/sunflower/nav-team-white.png");
+}
+.home a.button .btn-icon.btn-icon-train {
+  background-image: url("../img/sunflower/nav-train-white.png");
 }
 .home a.button h2 {
   margin: 0;
   font-size: 32px;
-  padding-left: 33px;
-  background-repeat: no-repeat;
-  background-position: 0 center;
-  background-size: 25px;
-  color: #003462;
+  color: #f9fdff;
 }
 .home a.button h2.no-logo {
   padding-left: 0;
@@ -1124,6 +1145,9 @@ select, input {
 }
 .button span.btn-icon.btn-icon-train {
   background-image: url("../img/sunflower/nav-train-blue.png");
+}
+.button span.btn-label {
+  flex: 1;
 }
 
 .pokebox a.open-pokebox {

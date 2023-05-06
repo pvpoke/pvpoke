@@ -57,6 +57,7 @@ $color-highlight:#222;
 $color-links:#003462;
 $color-blue-light:#6296be;
 $color-blue-dark:#003462;
+$color-blue-medium:#285e85;
 $color-sky-blue:#c4def5;
 
 $color-gold:#ffcf01;
@@ -322,21 +323,41 @@ footer{
 	a.button{
 		display:block;
 		text-decoration: none;
-		color:#000;
-		border-radius:8px;
+		color:$color-off-white;
+		border-radius:50px;
 		margin:20px auto;
 		padding:10px;
 		box-sizing:border-box;
 		max-width:400px;
 
+		@include gradient($color-blue-medium, $color-blue-dark);
+
+		.btn-icon{
+			width: 30px;
+			height: 30px;
+			margin-right: 20px;
+
+			&.btn-icon-battle{
+				background-image: url('../img/sunflower/nav-battle-white.png');
+			}
+
+			&.btn-icon-rankings{
+				background-image: url('../img/sunflower/nav-rankings-white.png');
+			}
+
+			&.btn-icon-team{
+				background-image: url('../img/sunflower/nav-team-white.png');
+			}
+
+			&.btn-icon-train{
+				background-image: url('../img/sunflower/nav-train-white.png');
+			}
+		}
+
 		h2{
 			margin:0;
 			font-size:32px;
-			padding-left:33px;
-			background-repeat: no-repeat;
-			background-position:0 center;
-			background-size: 25px;
-			color:$color-links;
+			color:$color-off-white;
 
 			&.no-logo{
 				padding-left:0;
@@ -1413,6 +1434,10 @@ select, input{
 		&.btn-icon-train{
 			background-image: url('../img/sunflower/nav-train-blue.png');
 		}
+	}
+
+	span.btn-label{
+		flex: 1;
 	}
 }
 
