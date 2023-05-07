@@ -5336,6 +5336,22 @@
 			"teraType": "ice",
 			"moveTypes": ["water", "ice", "dark"]
 		}
+	}, {
+	    "name": "Chesnaught",
+	    "types": ["grass", "fighting"],
+	    "id": "chesnaught",
+	    "stats": {
+	        "hp": 88,
+	        "atk": 107,
+	        "def": 122,
+	        "spA": 74,
+	        "spD": 75,
+	        "spe": 64
+	    },
+		"defaults": {
+			"teraType": "rock",
+			"moveTypes": ["grass", "fighting", "rock"]
+		}
 	}],
 	"traits": [
 		{
