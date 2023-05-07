@@ -1,0 +1,14 @@
+{
+	"name": "element",
+	"title": "Element Cup",
+	"include": [{
+        "filterType": "evolution",
+        "values": [1]
+    }, {
+        "filterType": "type",
+        "values": ["fire", "water", "grass"]
+    }],
+	"exclude": [],
+	"partySize": 3,
+	"presetOnly": true
+}

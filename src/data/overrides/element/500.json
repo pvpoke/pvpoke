@@ -1,0 +1,94 @@
+[{
+    "speciesId": "binacle",
+    "fastMove": "SCRATCH",
+    "weight": 1
+}, {
+    "speciesId": "bulbasaur",
+    "chargedMoves": ["SEED_BOMB", "SLUDGE_BOMB"],
+    "weight": 1
+}, {
+    "speciesId": "bulbasaur",
+    "weight": 8
+}, {
+    "speciesId": "bulbasaur_shadow",
+    "chargedMoves": ["SEED_BOMB", "SLUDGE_BOMB"],
+    "weight": 1
+}, {
+    "speciesId": "chikorita",
+    "weight": 15
+}, {
+    "speciesId": "chinchou",
+    "weight": 14
+}, {
+    "speciesId": "cottonee",
+    "fastMove": "CHARM",
+    "weight": 17
+}, {
+    "speciesId": "ducklett",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["BUBBLE_BEAM", "BRAVE_BIRD"],
+    "weight": 30
+}, {
+    "speciesId": "ducklett_shadow",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["BUBBLE_BEAM", "BRAVE_BIRD"],
+    "weight": 5
+}, {
+    "speciesId": "exeggcute",
+    "chargedMoves": ["SEED_BOMB", "ANCIENT_POWER"],
+    "weight": 1
+}, {
+    "speciesId": "exeggcute_shadow",
+    "chargedMoves": ["SEED_BOMB", "ANCIENT_POWER"],
+    "weight": 1
+}, {
+    "speciesId": "growlithe",
+    "weight": 5
+}, {
+    "speciesId": "hoppip",
+    "chargedMoves": ["SEED_BOMB", "RETURN"],
+    "weight": 1
+}, {
+    "speciesId": "omanyte",
+    "chargedMoves": ["ROCK_BLAST", "BRINE"],
+    "weight": 1
+}, {
+    "speciesId": "omanyte_shadow",
+    "chargedMoves": ["ROCK_BLAST", "BRINE"],
+    "weight": 1
+}, {
+    "speciesId": "salandit",
+    "weight": 14
+}, {
+    "speciesId": "seel",
+    "fastMove": "ICE_SHARD",
+    "weight": 8
+}, {
+    "speciesId": "shellder",
+    "chargedMoves": ["ICY_WIND", "WATER_PULSE"],
+    "weight": 1
+}, {
+    "speciesId": "skrelp",
+    "weight": 8
+}, {
+    "speciesId": "slowpoke",
+    "chargedMoves": ["PSYSHOCK", "PSYCHIC"],
+    "weight": 8
+}, {
+    "speciesId": "slugma",
+    "fastMove": "ROCK_THROW",
+    "weight": 1
+}, {
+    "speciesId": "staryu",
+    "fastMove": "QUICK_ATTACK",
+    "chargedMoves": ["BUBBLE_BEAM", "POWER_GEM"],
+    "weight": 1
+}, {
+    "speciesId": "vulpix",
+    "fastMove": "QUICK_ATTACK",
+    "weight": 20
+}, {
+    "speciesId": "vulpix_shadow",
+    "fastMove": "QUICK_ATTACK",
+    "weight": 1
+}]
