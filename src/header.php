@@ -112,13 +112,15 @@ if(! isset($OG_IMAGE)){
 <link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json?v=2">
 
 <?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
-	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon_team_builder.png">
+	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/sunflower/favicon_team_builder.png">
 <?php elseif(strpos($_SERVER['REQUEST_URI'], 'rankings') !== false): ?>
-	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon_rankings.png">
-<?php elseif(strpos($_SERVER['REQUEST_URI'], 'matrix') !== false): ?>
-	<link id="favicon"  rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon_matrix.png">
+	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/sunflower/favicon_rankings.png">
+<?php elseif(strpos($_SERVER['REQUEST_URI'], 'battle') !== false): ?>
+	<link id="favicon"  rel="icon" href="<?php echo $WEB_ROOT; ?>img/sunflower/favicon_battle.png">
+<?php elseif(strpos($_SERVER['REQUEST_URI'], 'train') !== false): ?>
+	<link id="favicon"  rel="icon" href="<?php echo $WEB_ROOT; ?>img/sunflower/favicon_train.png">
 <?php else: ?>
-	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
+	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/sunflower/favicon.png">
 <?php endif; ?>
 
 <link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=166">
@@ -223,6 +225,9 @@ if(! isset($OG_IMAGE)){
 					<a class="icon-rankings <?php if(strpos($_SERVER['REQUEST_URI'], '/rankings/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>rankings/">Rankings</a>
 					<div class="submenu">
 						<div class="submenu-wrap">
+							<a href="<?php echo $WEB_ROOT; ?>rankings/all/1500/overall/">Great League</a>
+							<a href="<?php echo $WEB_ROOT; ?>rankings/all/2500/overall/">Ultra League</a>
+							<a href="<?php echo $WEB_ROOT; ?>rankings/all/10000/overall/">Master League</a>
 							<a href="<?php echo $WEB_ROOT; ?>custom-rankings/">Custom Rankings</a>
 						</div>
 					</div>
@@ -249,7 +254,7 @@ if(! isset($OG_IMAGE)){
 						<div class="submenu-wrap">
 							<a href="<?php echo $WEB_ROOT; ?>moves/">Moves</a>
 							<a href="<?php echo $WEB_ROOT; ?>articles/">Articles</a>
-							<a href="<?php echo $WEB_ROOT; ?>contribute/">Contribute</a>
+							<a class="icon-heart" href="<?php echo $WEB_ROOT; ?>contribute/">Contribute</a>
 							<a href="<?php echo $WEB_ROOT; ?>settings/">Settings</a>
 							<a class="twitter" href="https://twitter.com/pvpoke" target="_blank">Twitter</a>
 							<a class="tera" href="<?php echo $WEB_ROOT; ?>tera/">Tera Raid Counters</a>

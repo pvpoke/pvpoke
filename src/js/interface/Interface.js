@@ -2065,7 +2065,7 @@ var InterfaceMaster = (function () {
 					}
 
 					document.title = "Battle | PvPoke";
-					$("#favicon").attr("href", webRoot+"img/favicon.png");
+					//$("#favicon").attr("href", webRoot+"img/favicon.png");
 				}
 
 				if(self.battleMode == "matrix"){
@@ -2075,12 +2075,12 @@ var InterfaceMaster = (function () {
 
 					// Update document title and favicon
 					document.title = "Matrix | PvPoke";
-					$("#favicon").attr("href", webRoot+"img/favicon_matrix.png");
+					//$("#favicon").attr("href", webRoot+"img/favicon_matrix.png");
 				}
 
 				if(self.battleMode == "multi"){
 					document.title = "Multi-Battle | PvPoke";
-					$("#favicon").attr("href", webRoot+"img/favicon_multi_battle.png");
+					//$("#favicon").attr("href", webRoot+"img/favicon_multi_battle.png");
 				}
 
 				// Load default meta group when switching to Multi Battle

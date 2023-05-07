@@ -238,6 +238,16 @@ footer{
 	p:first-of-type{
 		margin-top:0;
 	}
+
+	a.domz-link{
+		color: #c7007d;
+		font-weight: 900;
+		background-image: url('../img/sunflower/domz.png');
+		background-repeat: no-repeat;
+		background-size: contain;
+		padding-left: 26px;
+		text-decoration: none;
+	}
 }
 
 #main{
@@ -254,6 +264,10 @@ footer{
 #main{
 	position:relative;
 	z-index: 10;
+}
+
+.main-wrap{
+	margin-bottom: 100px;
 }
 
 .section{
@@ -352,6 +366,10 @@ footer{
 			&.btn-icon-train{
 				background-image: url('../img/sunflower/nav-train-white.png');
 			}
+
+			&.btn-icon-heart{
+				background-image: url('../img/sunflower/nav-heart-white.png');
+			}
 		}
 
 		h2{
@@ -405,8 +423,8 @@ footer{
 	background-image:url('../img/sunflower/nav-team-blue.png');
 }
 
-.icon-contribute{
-	background-image:url('../img/icon_contribute.png');
+.icon-heart{
+	background-image:url('../img/sunflower/nav-heart-blue.png');
 }
 
 .icon-articles{
@@ -1450,24 +1468,21 @@ select, input{
 		text-decoration: none;
 		color:#000;
 		margin:10px auto;
-	    border-radius: 8px;
-		background:url('../img/pokebattler.png') $color-off-white;
-		background-size: 40px;
+	    border-radius: 30px;
+		background:url('../img/pokebattler_logo.png') $color-off-white;
+		background-size: 30px;
 	    background-position: 5px center;
 	    background-repeat: no-repeat;
-		padding: 5px 5px 5px 50px;
+		padding: 8px 5px 8px 10px;
 		text-align: center;
+		font-size: 12px;
+
 
 		span:first-of-type{
-			display:block;
-			font-size:10px;
-		}
-
-		span:nth-of-type(2){
-			display:block;
-			font-weight: bold;
+			margin-right: 3px;
 		}
 	}
+
 }
 
 .share-link-container{
@@ -4538,6 +4553,10 @@ a.pokebattler{
 			text-align: center;
 		}
 
+		.hamburger{
+			margin-top: 4px;
+		}
+
 		.menu{
 			display:none;
 			float:none;
@@ -4545,6 +4564,11 @@ a.pokebattler{
 			margin-top:5px;
 			padding:0;
 			flex: 0 0 100%;
+			background: $color-blue-dark;
+			position: fixed;
+		    width: 100%;
+		    margin: 0 -3px;
+		    top: 40px;
 
 			a{
 				margin: 10px 0;
@@ -4552,6 +4576,33 @@ a.pokebattler{
 			    font-size: 18px;
 			    background-size: 18px 18px;
 			    background-position: 6px center;
+				color: $color-off-white;
+			}
+
+			& > a:hover, & > a.selected, & > .parent-menu:hover > a, .parent-menu > a.selected{
+				background-color: $color-blue-medium;
+
+				@include transition(background-color, 0s, ease-out, 0s);
+			}
+
+			.icon-battle{
+				background-image:url('../img/sunflower/nav-battle-white.png');
+			}
+
+			.icon-train{
+				background-image:url('../img/sunflower/nav-train-white.png');
+			}
+
+			.icon-rankings{
+				background-image:url('../img/sunflower/nav-rankings-white.png');
+			}
+
+			.icon-team{
+				background-image:url('../img/sunflower/nav-team-white.png');
+			}
+
+			.icon-heart{
+				background-image:url('../img/sunflower/nav-heart-white.png');
 			}
 		}
 

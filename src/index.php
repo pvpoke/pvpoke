@@ -46,8 +46,13 @@
 
 
 	<a href="<?php echo $WEB_ROOT; ?>contribute/" class="button">
-		<h2 class="icon-contribute">Contribute</h2>
-		<p>Check out the source code on Github or lend your support through Patreon.</p>
+		<span class="btn-content-wrap">
+			<span class="btn-icon btn-icon-heart"></span>
+			<span class="btn-label">
+				<h2>Contribute</h2>
+				<p>Check out the source code on Github or lend your support through Patreon.</p>
+			</span>
+		</span>
 	</a>
 
 	<h3>Pokemon Scarlet &amp; Violet</h3>
