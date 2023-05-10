@@ -157,6 +157,7 @@ header{
 
 	a img{
 		display: block;
+		height: 30px;
 	}
 
 	.menu{
@@ -487,7 +488,7 @@ footer{
 		&.poke-select{
 			font-size:18px;
 			font-weight:bold;
-			border: 2px solid #000;
+			border: 2px solid $color-blue-dark;
 
 			option:checked{
 				font-weight:bold;
@@ -501,10 +502,14 @@ footer{
 		}
 
 		&.poke-search{
-			background: rgba(216, 242, 249, 0.75);
-		    border: none;
-		    border-bottom: 1px solid #000;
-		    border-radius: 0;
+			background: $color-sky-blue;
+		    border: 1px solid $color-blue-medium;
+		    border-radius: 30px;
+			padding: 3px 13px;
+
+			&::placeholder{
+				color:rgba(0, 52, 98, 0.75);
+			}
 		}
 	}
 
@@ -1396,6 +1401,7 @@ select, input{
 	box-sizing:border-box;
 	width:100%;
 	color:$color-off-black;
+	border: 2px solid $color-blue-medium;
 }
 
 .league-select,
@@ -1473,7 +1479,7 @@ select, input{
 		background-size: 30px;
 	    background-position: 5px center;
 	    background-repeat: no-repeat;
-		padding: 8px 5px 8px 10px;
+		padding: 8px 5px 8px 25px;
 		text-align: center;
 		font-size: 12px;
 
@@ -3354,8 +3360,8 @@ a.download-csv{
 	a.search-info,
 	a.search-traits{
 		text-decoration: none;
-		color:#00171c;
-		border:1px solid #00171c;
+		color:$color-blue-dark;
+		border:1px solid $color-blue-dark;
 		border-radius:20px;
 		text-align: center;
 		width:15px;
@@ -4547,6 +4553,7 @@ a.pokebattler{
 
 	header{
 		z-index:50;
+		padding: 3px 10px;
 
 		.title{
 			float:none;
@@ -4567,8 +4574,10 @@ a.pokebattler{
 			background: $color-blue-dark;
 			position: fixed;
 		    width: 100%;
-		    margin: 0 -3px;
-		    top: 40px;
+		    margin: 0 -10px;
+		    top: 37px;
+			padding: 0px 8px;
+    		box-sizing: border-box;
 
 			a{
 				margin: 10px 0;

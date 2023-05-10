@@ -59,6 +59,7 @@ header .header-wrap {
 }
 header a img {
   display: block;
+  height: 30px;
 }
 header .menu {
   padding: 3px 0;
@@ -361,7 +362,7 @@ footer a.domz-link {
 .poke input.poke-select, .poke select.poke-select {
   font-size: 18px;
   font-weight: bold;
-  border: 2px solid #000;
+  border: 2px solid #003462;
 }
 .poke input.poke-select option:checked, .poke select.poke-select option:checked {
   font-weight: bold;
@@ -372,10 +373,13 @@ footer a.domz-link {
   font-weight: bold;
 }
 .poke input.poke-search, .poke select.poke-search {
-  background: rgba(216, 242, 249, 0.75);
-  border: none;
-  border-bottom: 1px solid #000;
-  border-radius: 0;
+  background: #c4def5;
+  border: 1px solid #285e85;
+  border-radius: 30px;
+  padding: 3px 13px;
+}
+.poke input.poke-search::placeholder, .poke select.poke-search::placeholder {
+  color: rgba(0, 52, 98, 0.75);
 }
 .poke .form-select-container {
   visibility: hidden;
@@ -1104,6 +1108,7 @@ select, input {
   box-sizing: border-box;
   width: 100%;
   color: #333;
+  border: 2px solid #285e85;
 }
 
 .league-select,
@@ -1179,7 +1184,7 @@ select, input {
   background-size: 30px;
   background-position: 5px center;
   background-repeat: no-repeat;
-  padding: 8px 5px 8px 10px;
+  padding: 8px 5px 8px 25px;
   text-align: center;
   font-size: 12px;
 }
@@ -2994,8 +2999,8 @@ a.download-csv {
 .poke-search-container a.search-info,
 .poke-search-container a.search-traits {
   text-decoration: none;
-  color: #00171c;
-  border: 1px solid #00171c;
+  color: #003462;
+  border: 1px solid #003462;
   border-radius: 20px;
   text-align: center;
   width: 15px;
@@ -4265,6 +4270,7 @@ a.pokebattler {
 
   header {
     z-index: 50;
+    padding: 3px 10px;
   }
   header .title {
     float: none;
@@ -4283,8 +4289,10 @@ a.pokebattler {
     background: #003462;
     position: fixed;
     width: 100%;
-    margin: 0 -3px;
-    top: 40px;
+    margin: 0 -10px;
+    top: 37px;
+    padding: 0px 8px;
+    box-sizing: border-box;
   }
   header .menu a {
     margin: 10px 0;
