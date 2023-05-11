@@ -1,13 +1,16 @@
 /* CSS Document */
 
-$dark: #444;
-$font-color: #eee;
-$color-gold:#eabd49;
-$link-color:#30b5ab;
+$color-blue-dark:#003462;
+$dark: #080c10;
+$font-color: #f9fdff;
+$color-gold:#ffcf01;
+$link-color:#64b939;
+$green-medium: #2e4920;
+$green-faded: #0e282a;
 
 body{
 	background-color:#030509;
-	background-image:url('../../img/themes/night/bg.jpg');
+	background-image:url('../../img/themes/sunflower/sunflower-bg-night.jpg');
 	color:$font-color;
 }
 
@@ -62,47 +65,35 @@ textarea{
 
 
 header{
-	background:#444;
+	background:$dark;
 
 	.menu a,
 	.title a{
-		color:$color-gold;
+		color:$font-color;
 	}
 
 	.hamburger .meat{
-		background:$color-gold;
+		background:$font-color;
 	}
 
 	.icon-battle{
-		background-image:url('../../img/themes/night/icon_battle.png');
+		background-image:url('../../img/themes/sunflower/nav-battle-white.png');
 	}
 
 	.icon-train{
-		background-image:url('../../img/themes/night/icon_train.png');
+		background-image:url('../../img/themes/sunflower/nav-train-white.png');
 	}
 
 	.icon-rankings{
-		background-image:url('../../img/themes/night/icon_rankings.png');
+		background-image:url('../../img/themes/sunflower/nav-rankings-white.png');
 	}
 
 	.icon-team{
-		background-image:url('../../img/themes/night/icon_team.png');
+		background-image:url('../../img/themes/sunflower/nav-team-white.png');
 	}
 
 	.icon-contribute{
-		background-image:url('../../img/themes/night/icon_contribute.png');
-	}
-
-	.icon-articles{
-		background-image:url('../../img/themes/night/icon_articles.png');
-	}
-
-	.icon-moves{
-		background-image:url('../../img/themes/night/icon_moves.png');
-	}
-
-	.icon-settings{
-		background-image:url('../../img/themes/night/icon_settings.png');
+		background-image:url('../../img/themes/sunflower/nav-heart-white.png');
 	}
 }
 
@@ -204,8 +195,8 @@ a.toggle{
 		color:$link-color;
 
 		&.selected{
-			background:#30b5ab;
-			color:$font-color;
+			background:#2e4920;
+			color:$link-color;
 		}
 	}
 }

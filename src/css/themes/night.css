@@ -1,17 +1,17 @@
 /* CSS Document */
 body {
   background-color: #030509;
-  background-image: url("../../img/themes/night/bg.jpg");
-  color: #eee;
+  background-image: url("../../img/themes/sunflower/sunflower-bg-night.jpg");
+  color: #f9fdff;
 }
 
 a {
-  color: #30b5ab;
+  color: #64b939;
 }
 
 .section.white,
 .poke .poke-stats {
-  background: #444;
+  background: #080c10;
 }
 
 select, .league-select, .cup-select,
@@ -73,38 +73,29 @@ textarea:-moz-placeholder {
 }
 
 header {
-  background: #444;
+  background: #080c10;
 }
 header .menu a,
 header .title a {
-  color: #eabd49;
+  color: #f9fdff;
 }
 header .hamburger .meat {
-  background: #eabd49;
+  background: #f9fdff;
 }
 header .icon-battle {
-  background-image: url("../../img/themes/night/icon_battle.png");
+  background-image: url("../../img/themes/sunflower/nav-battle-white.png");
 }
 header .icon-train {
-  background-image: url("../../img/themes/night/icon_train.png");
+  background-image: url("../../img/themes/sunflower/nav-train-white.png");
 }
 header .icon-rankings {
-  background-image: url("../../img/themes/night/icon_rankings.png");
+  background-image: url("../../img/themes/sunflower/nav-rankings-white.png");
 }
 header .icon-team {
-  background-image: url("../../img/themes/night/icon_team.png");
+  background-image: url("../../img/themes/sunflower/nav-team-white.png");
 }
 header .icon-contribute {
-  background-image: url("../../img/themes/night/icon_contribute.png");
-}
-header .icon-articles {
-  background-image: url("../../img/themes/night/icon_articles.png");
-}
-header .icon-moves {
-  background-image: url("../../img/themes/night/icon_moves.png");
-}
-header .icon-settings {
-  background-image: url("../../img/themes/night/icon_settings.png");
+  background-image: url("../../img/themes/sunflower/nav-heart-white.png");
 }
 
 h1 {
@@ -112,16 +103,16 @@ h1 {
 }
 
 .poke .poke-stats .stat-container {
-  color: #eee;
+  color: #f9fdff;
 }
 .poke .poke-stats .stat-container .bar-back .bar {
   background: rgba(255, 255, 255, 0.6);
 }
 .poke .poke-stats a {
-  color: #30b5ab;
+  color: #64b939;
 }
 .poke .poke-stats h3.section-title {
-  color: #eee;
+  color: #f9fdff;
 }
 .poke .poke-stats .move-select, .poke .poke-stats .type {
   color: #000;
@@ -141,7 +132,7 @@ h1 {
 }
 
 a.toggle {
-  color: #30b5ab;
+  color: #64b939;
 }
 
 .move-bars .move-bar.active {
@@ -183,11 +174,11 @@ a.toggle {
 }
 
 .ranking-categories a {
-  color: #30b5ab;
+  color: #64b939;
 }
 .ranking-categories a.selected {
-  background: #30b5ab;
-  color: #eee;
+  background: #2e4920;
+  color: #64b939;
 }
 
 .modal .modal-header {
@@ -252,12 +243,12 @@ a.toggle {
 .custom-rankings-import textarea.import,
 .custom-rankings-list .pokemon-list {
   background: #222;
-  color: #eee;
+  color: #f9fdff;
 }
 
 .poke-search-container a.search-info {
-  color: #30b5ab;
-  border: 1px solid #30b5ab;
+  color: #64b939;
+  border: 1px solid #64b939;
 }
 
 .battle-results.matrix .table-container tbody th,

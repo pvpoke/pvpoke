@@ -112,15 +112,15 @@ if(! isset($OG_IMAGE)){
 <link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json?v=2">
 
 <?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
-	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/sunflower/favicon_team_builder.png">
+	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/themes/sunflower/favicon_team_builder.png">
 <?php elseif(strpos($_SERVER['REQUEST_URI'], 'rankings') !== false): ?>
-	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/sunflower/favicon_rankings.png">
+	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/themes/sunflower/favicon_rankings.png">
 <?php elseif(strpos($_SERVER['REQUEST_URI'], 'battle') !== false): ?>
-	<link id="favicon"  rel="icon" href="<?php echo $WEB_ROOT; ?>img/sunflower/favicon_battle.png">
+	<link id="favicon"  rel="icon" href="<?php echo $WEB_ROOT; ?>img/themes/sunflower/favicon_battle.png">
 <?php elseif(strpos($_SERVER['REQUEST_URI'], 'train') !== false): ?>
-	<link id="favicon"  rel="icon" href="<?php echo $WEB_ROOT; ?>img/sunflower/favicon_train.png">
+	<link id="favicon"  rel="icon" href="<?php echo $WEB_ROOT; ?>img/themes/sunflower/favicon_train.png">
 <?php else: ?>
-	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/sunflower/favicon.png">
+	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/themes/sunflower/favicon.png">
 <?php endif; ?>
 
 <link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=166">
@@ -212,7 +212,7 @@ if(! isset($OG_IMAGE)){
 
 	<header>
 		<div class="header-wrap">
-			<a href="<?php echo $WEB_ROOT; ?>"><img src="<?php echo $WEB_ROOT; ?>/img/sunflower/header.png" title="PvPoke.com" /></a>
+			<a href="<?php echo $WEB_ROOT; ?>"><img src="<?php echo $WEB_ROOT; ?>/img/themes/sunflower/header.png" title="PvPoke.com" /></a>
 			<div class="hamburger mobile">
 				<!--Because I'm too lazy to make a graphic-->
 				<div class="meat"></div>

@@ -14,7 +14,7 @@ body, html {
 
 body {
   background-color: #f3fbfe;
-  background: url("../img/sunflower/sunflower-bg.jpg");
+  background: url("../img/themes/sunflower/sunflower-bg.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -140,7 +140,7 @@ footer p:first-of-type {
 footer a.domz-link {
   color: #c7007d;
   font-weight: 900;
-  background-image: url("../img/sunflower/domz.png");
+  background-image: url("../img/themes/sunflower/domz.png");
   background-repeat: no-repeat;
   background-size: contain;
   padding-left: 26px;
@@ -241,19 +241,19 @@ footer a.domz-link {
   margin-right: 20px;
 }
 .home a.button .btn-icon.btn-icon-battle {
-  background-image: url("../img/sunflower/nav-battle-white.png");
+  background-image: url("../img/themes/sunflower/nav-battle-white.png");
 }
 .home a.button .btn-icon.btn-icon-rankings {
-  background-image: url("../img/sunflower/nav-rankings-white.png");
+  background-image: url("../img/themes/sunflower/nav-rankings-white.png");
 }
 .home a.button .btn-icon.btn-icon-team {
-  background-image: url("../img/sunflower/nav-team-white.png");
+  background-image: url("../img/themes/sunflower/nav-team-white.png");
 }
 .home a.button .btn-icon.btn-icon-train {
-  background-image: url("../img/sunflower/nav-train-white.png");
+  background-image: url("../img/themes/sunflower/nav-train-white.png");
 }
 .home a.button .btn-icon.btn-icon-heart {
-  background-image: url("../img/sunflower/nav-heart-white.png");
+  background-image: url("../img/themes/sunflower/nav-heart-white.png");
 }
 .home a.button h2 {
   margin: 0;
@@ -285,23 +285,23 @@ footer a.domz-link {
 }
 
 .icon-battle {
-  background-image: url("../img/sunflower/nav-battle-blue.png");
+  background-image: url("../img/themes/sunflower/nav-battle-blue.png");
 }
 
 .icon-train {
-  background-image: url("../img/sunflower/nav-train-blue.png");
+  background-image: url("../img/themes/sunflower/nav-train-blue.png");
 }
 
 .icon-rankings {
-  background-image: url("../img/sunflower/nav-rankings-blue.png");
+  background-image: url("../img/themes/sunflower/nav-rankings-blue.png");
 }
 
 .icon-team {
-  background-image: url("../img/sunflower/nav-team-blue.png");
+  background-image: url("../img/themes/sunflower/nav-team-blue.png");
 }
 
 .icon-heart {
-  background-image: url("../img/sunflower/nav-heart-blue.png");
+  background-image: url("../img/themes/sunflower/nav-heart-blue.png");
 }
 
 .icon-articles {
@@ -1159,13 +1159,13 @@ select, input {
   margin-right: 8px;
 }
 .button span.btn-icon.btn-icon-battle {
-  background-image: url("../img/sunflower/nav-battle-blue.png");
+  background-image: url("../img/themes/sunflower/nav-battle-blue.png");
 }
 .button span.btn-icon.btn-icon-team {
-  background-image: url("../img/sunflower/nav-team-blue.png");
+  background-image: url("../img/themes/sunflower/nav-team-blue.png");
 }
 .button span.btn-icon.btn-icon-train {
-  background-image: url("../img/sunflower/nav-train-blue.png");
+  background-image: url("../img/themes/sunflower/nav-train-blue.png");
 }
 .button span.btn-label {
   flex: 1;
@@ -3413,20 +3413,20 @@ a.download-csv {
   background-color: #a91c7e;
 }
 .article .rating-table a.close-loss span {
-  background-image: url("../img/sunflower/rating-close-loss.png");
+  background-image: url("../img/themes/sunflower/rating-close-loss.png");
   opacity: 0.8;
 }
 .article .rating-table a.loss {
   background-color: #c71b71;
 }
 .article .rating-table a.loss span {
-  background-image: url("../img/sunflower/rating-loss.png");
+  background-image: url("../img/themes/sunflower/rating-loss.png");
 }
 .article .rating-table a.tie {
   background-color: #968cb6;
 }
 .article .rating-table a.tie span {
-  background-image: url("../img/sunflower/rating-tie.png");
+  background-image: url("../img/themes/sunflower/rating-tie.png");
   opacity: 0.75;
 }
 .article .rating-table td.name {
@@ -4310,19 +4310,19 @@ a.pokebattler {
     transition: background-color 0s ease-out 0s;
   }
   header .menu .icon-battle {
-    background-image: url("../img/sunflower/nav-battle-white.png");
+    background-image: url("../img/themes/sunflower/nav-battle-white.png");
   }
   header .menu .icon-train {
-    background-image: url("../img/sunflower/nav-train-white.png");
+    background-image: url("../img/themes/sunflower/nav-train-white.png");
   }
   header .menu .icon-rankings {
-    background-image: url("../img/sunflower/nav-rankings-white.png");
+    background-image: url("../img/themes/sunflower/nav-rankings-white.png");
   }
   header .menu .icon-team {
-    background-image: url("../img/sunflower/nav-team-white.png");
+    background-image: url("../img/themes/sunflower/nav-team-white.png");
   }
   header .menu .icon-heart {
-    background-image: url("../img/sunflower/nav-heart-white.png");
+    background-image: url("../img/themes/sunflower/nav-heart-white.png");
   }
   header .submenu {
     padding-left: 18px;
@@ -4830,7 +4830,7 @@ a.pokebattler {
     font-size: 0;
     width: 12px;
     height: 4px;
-    background: url("../img/sunflower/dropdown-triangle.png");
+    background: url("../img/themes/sunflower/dropdown-triangle.png");
     background-repeat: no-repeat;
   }
   .menu .submenu {
