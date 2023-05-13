@@ -4,9 +4,10 @@ $color-blue-dark:#003462;
 $dark: #080c10;
 $font-color: #f9fdff;
 $color-gold:#ffcf01;
-$link-color:#64b939;
-$green-medium: #2e4920;
-$green-faded: #0e282a;
+$link-color:#3eca9f;
+$green-medium: #203c49;
+$green-faded: #183737;
+$green-light: #0f6647;
 
 body{
 	background-color:#030509;
@@ -30,20 +31,21 @@ option, .category-select optgroup,
 input,
 .poke-search,
 textarea{
-    background: #222;
-    color: #fff;
+    background: $color-blue-dark;
+	border: 1px solid $green-faded;
+    color: $font-color;
 
 	&::-webkit-input-placeholder {
-	  color: #aaa;
+	  color: $green-light;
 	}
 	&::-moz-placeholder {
-	  color: #aaa;
+	  color: $green-light;
 	}
 	&:-ms-input-placeholder {
-	  color: #aaa;
+	  color: $green-light;
 	}
 	&:-moz-placeholder {
-	  color: #aaa;
+	  color: $green-light;
 	}
 }
 
@@ -52,17 +54,35 @@ textarea{
 }
 
 .poke input, .poke select{
-	border:1px solid #666;
+	border:1px solid $green-light;
+
+	&::-webkit-input-placeholder {
+	  color: $green-light;
+	}
+	&::-moz-placeholder {
+	  color: $green-light;
+	}
+	&:-ms-input-placeholder {
+	  color: $green-light;
+	}
+	&:-moz-placeholder {
+	  color: $green-light;
+	}
 }
 
 .poke-search{
-	border: 1px solid #aaa;
+	border: 1px solid $green-light;
 }
 
 .poke input.poke-search{
 	background: rgba(24, 28, 40, 0.75);
 }
 
+header .menu > a:hover, header .menu > a.selected,
+header .menu > .parent-menu:hover > a, header .menu .parent-menu > a.selected,
+.ranking-categories a.selected, .ranking-categories a:hover{
+	background-color: $color-blue-dark;
+}
 
 header{
 	background:$dark;
@@ -98,7 +118,7 @@ header{
 }
 
 h1{
-	color:#fff;
+	color:$font-color;
 }
 
 .poke{
@@ -138,9 +158,20 @@ h1{
 	}
 }
 
-.check span{
-	border:2px solid #888;
+.check.on span{
+	background: $link-color !important;
+	border: 2px solid $color-blue-dark;
 }
+
+.check span{
+	border: 2px solid $green-medium;
+	background: $color-blue-dark;
+}
+
+.check:hover:not(.on) span{
+	background: $green-faded;
+}
+
 
 a.toggle{
 	color:$link-color;
@@ -195,7 +226,7 @@ a.toggle{
 		color:$link-color;
 
 		&.selected{
-			background:#2e4920;
+			background: $color-blue-dark;
 			color:$link-color;
 		}
 	}
@@ -312,13 +343,13 @@ a.toggle{
 
 .pokebox a.open-pokebox{
 	background-color:#222;
-	color:#fff;
+	color:$font-color;
 }
 
 .modal .pokebox-options a.pokebox-edit,
 .modal .pokebox-options a.pvpoke-sponsor{
-	color:#fff;
-	background-color:#222;
+	color:$font-color;
+	background-color:$dark;
 }
 
 .matrix-table, .meta-table, .threats-table, .alternatives-table{
@@ -340,7 +371,7 @@ a.toggle{
 
 @media only screen and (min-width: 721px){
 	.menu .submenu .submenu-wrap{
-		background:#444;
+		background:$color-blue-dark;
 	}
 
 }

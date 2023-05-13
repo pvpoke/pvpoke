@@ -6,7 +6,7 @@ body {
 }
 
 a {
-  color: #64b939;
+  color: #3eca9f;
 }
 
 .section.white,
@@ -20,8 +20,9 @@ option, .category-select optgroup,
 input,
 .poke-search,
 textarea {
-  background: #222;
-  color: #fff;
+  background: #003462;
+  border: 1px solid #183737;
+  color: #f9fdff;
 }
 select::-webkit-input-placeholder, .league-select::-webkit-input-placeholder, .cup-select::-webkit-input-placeholder,
 option::-webkit-input-placeholder, .category-select optgroup::-webkit-input-placeholder,
@@ -29,7 +30,7 @@ option::-webkit-input-placeholder, .category-select optgroup::-webkit-input-plac
 input::-webkit-input-placeholder,
 .poke-search::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #aaa;
+  color: #0f6647;
 }
 select::-moz-placeholder, .league-select::-moz-placeholder, .cup-select::-moz-placeholder,
 option::-moz-placeholder, .category-select optgroup::-moz-placeholder,
@@ -37,7 +38,7 @@ option::-moz-placeholder, .category-select optgroup::-moz-placeholder,
 input::-moz-placeholder,
 .poke-search::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: #aaa;
+  color: #0f6647;
 }
 select:-ms-input-placeholder, .league-select:-ms-input-placeholder, .cup-select:-ms-input-placeholder,
 option:-ms-input-placeholder, .category-select optgroup:-ms-input-placeholder,
@@ -45,7 +46,7 @@ option:-ms-input-placeholder, .category-select optgroup:-ms-input-placeholder,
 input:-ms-input-placeholder,
 .poke-search:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: #aaa;
+  color: #0f6647;
 }
 select:-moz-placeholder, .league-select:-moz-placeholder, .cup-select:-moz-placeholder,
 option:-moz-placeholder, .category-select optgroup:-moz-placeholder,
@@ -53,7 +54,7 @@ option:-moz-placeholder, .category-select optgroup:-moz-placeholder,
 input:-moz-placeholder,
 .poke-search:-moz-placeholder,
 textarea:-moz-placeholder {
-  color: #aaa;
+  color: #0f6647;
 }
 
 .modal .sandbox-move-select .move-select option {
@@ -61,15 +62,33 @@ textarea:-moz-placeholder {
 }
 
 .poke input, .poke select {
-  border: 1px solid #666;
+  border: 1px solid #0f6647;
+}
+.poke input::-webkit-input-placeholder, .poke select::-webkit-input-placeholder {
+  color: #0f6647;
+}
+.poke input::-moz-placeholder, .poke select::-moz-placeholder {
+  color: #0f6647;
+}
+.poke input:-ms-input-placeholder, .poke select:-ms-input-placeholder {
+  color: #0f6647;
+}
+.poke input:-moz-placeholder, .poke select:-moz-placeholder {
+  color: #0f6647;
 }
 
 .poke-search {
-  border: 1px solid #aaa;
+  border: 1px solid #0f6647;
 }
 
 .poke input.poke-search {
   background: rgba(24, 28, 40, 0.75);
+}
+
+header .menu > a:hover, header .menu > a.selected,
+header .menu > .parent-menu:hover > a, header .menu .parent-menu > a.selected,
+.ranking-categories a.selected, .ranking-categories a:hover {
+  background-color: #003462;
 }
 
 header {
@@ -99,7 +118,7 @@ header .icon-contribute {
 }
 
 h1 {
-  color: #fff;
+  color: #f9fdff;
 }
 
 .poke .poke-stats .stat-container {
@@ -109,7 +128,7 @@ h1 {
   background: rgba(255, 255, 255, 0.6);
 }
 .poke .poke-stats a {
-  color: #64b939;
+  color: #3eca9f;
 }
 .poke .poke-stats h3.section-title {
   color: #f9fdff;
@@ -127,12 +146,22 @@ h1 {
   border-bottom: 1px solid rgba(255, 255, 255, 0.75);
 }
 
+.check.on span {
+  background: #3eca9f !important;
+  border: 2px solid #003462;
+}
+
 .check span {
-  border: 2px solid #888;
+  border: 2px solid #203c49;
+  background: #003462;
+}
+
+.check:hover:not(.on) span {
+  background: #183737;
 }
 
 a.toggle {
-  color: #64b939;
+  color: #3eca9f;
 }
 
 .move-bars .move-bar.active {
@@ -174,11 +203,11 @@ a.toggle {
 }
 
 .ranking-categories a {
-  color: #64b939;
+  color: #3eca9f;
 }
 .ranking-categories a.selected {
-  background: #2e4920;
-  color: #64b939;
+  background: #003462;
+  color: #3eca9f;
 }
 
 .modal .modal-header {
@@ -247,8 +276,8 @@ a.toggle {
 }
 
 .poke-search-container a.search-info {
-  color: #64b939;
-  border: 1px solid #64b939;
+  color: #3eca9f;
+  border: 1px solid #3eca9f;
 }
 
 .battle-results.matrix .table-container tbody th,
@@ -273,13 +302,13 @@ a.toggle {
 
 .pokebox a.open-pokebox {
   background-color: #222;
-  color: #fff;
+  color: #f9fdff;
 }
 
 .modal .pokebox-options a.pokebox-edit,
 .modal .pokebox-options a.pvpoke-sponsor {
-  color: #fff;
-  background-color: #222;
+  color: #f9fdff;
+  background-color: #080c10;
 }
 
 .matrix-table thead td:first-of-type, .meta-table thead td:first-of-type, .threats-table thead td:first-of-type, .alternatives-table thead td:first-of-type {
@@ -298,7 +327,7 @@ a.toggle {
 
 @media only screen and (min-width: 721px) {
   .menu .submenu .submenu-wrap {
-    background: #444;
+    background: #003462;
   }
 }
 
