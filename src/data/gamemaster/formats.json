@@ -41,26 +41,8 @@
 		"cup": "premier",
 		"cp": 10000,
 		"meta": "premiermaster",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Little Cup",
-		"cup": "little",
-		"cp": 500,
-		"meta": "little",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Sunshine Cup",
-		"cup": "sunshine",
-		"cp": 1500,
-		"meta": "sunshine",
-		"showCup": true,
-		"showFormat": true,
+		"showCup": false,
+		"showFormat": false,
 		"showMeta": true
 	},
 	{

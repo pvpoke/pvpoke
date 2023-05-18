@@ -479,24 +479,8 @@
         "cup": "premier",
         "cp": 10000,
         "meta": "premiermaster",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Little Cup",
-        "cup": "little",
-        "cp": 500,
-        "meta": "little",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Sunshine Cup",
-        "cup": "sunshine",
-        "cp": 1500,
-        "meta": "sunshine",
-        "showCup": true,
-        "showFormat": true,
+        "showCup": false,
+        "showFormat": false,
         "showMeta": true
     }, {
         "title": "Element Cup",
@@ -27588,7 +27572,8 @@
         },
         "types": ["fire", "psychic"],
         "fastMoves": ["SCRATCH", "FIRE_SPIN", "ZEN_HEADBUTT"],
-        "chargedMoves": ["PSYCHIC", "FLAMETHROWER", "FLAME_CHARGE", "FIRE_BLAST"],
+        "chargedMoves": ["PSYCHIC", "FLAMETHROWER", "FLAME_CHARGE", "FIRE_BLAST", "BLAST_BURN", "MYSTICAL_FIRE"],
+        "eliteMoves": ["BLAST_BURN"],
         "tags": ["starter"],
         "defaultIVs": {
             "cp500": [6, 13, 14, 15],

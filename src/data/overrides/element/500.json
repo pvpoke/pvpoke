@@ -49,6 +49,16 @@
     "chargedMoves": ["SEED_BOMB", "RETURN"],
     "weight": 1
 }, {
+    "speciesId": "oddish",
+    "fastMove": "RAZOR_LEAF",
+    "chargedMoves": ["SLUDGE_BOMB", "SEED_BOMB"],
+    "weight": 1
+}, {
+    "speciesId": "oddish_shadow",
+    "fastMove": "RAZOR_LEAF",
+    "chargedMoves": ["SLUDGE_BOMB", "SEED_BOMB"],
+    "weight": 1
+}, {
     "speciesId": "omanyte",
     "chargedMoves": ["ROCK_BLAST", "BRINE"],
     "weight": 1
