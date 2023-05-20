@@ -47,6 +47,23 @@ textarea{
 	&:-moz-placeholder {
 	  color: $green-light;
 	}
+
+	&:focus, &:focus-visible{
+		outline: 1px solid $link-color;
+	}
+}
+
+.league-select, .cup-select, .format-select, .slot-select, .category-select{
+	background: $color-blue-dark;
+}
+
+.poke .poke-select{
+	border: 2px solid $color-blue-dark;
+	background: $dark;
+}
+
+.modal .modal-container .poke-search{
+	background: $color-blue-dark !important;
 }
 
 .modal .sandbox-move-select .move-select option{
@@ -71,11 +88,25 @@ textarea{
 }
 
 .poke-search{
-	border: 1px solid $green-light;
+	border: 1px solid rgba(0,0,0,0);
 }
 
 .poke input.poke-search{
-	background: rgba(24, 28, 40, 0.75);
+	background: $color-blue-dark;
+	border: 1px solid $dark;
+
+	&::-webkit-input-placeholder {
+	  color: $green-light;
+	}
+	&::-moz-placeholder {
+	  color: $green-light;
+	}
+	&:-ms-input-placeholder {
+	  color: $green-light;
+	}
+	&:-moz-placeholder {
+	  color: $green-light;
+	}
 }
 
 header .menu > a:hover, header .menu > a.selected,
@@ -151,10 +182,6 @@ h1{
 
 	.form-select-container a.form-link{
 		background: #222;
-	}
-
-	input.poke-search{
-		border-bottom: 1px solid rgba(255,255,255,0.75);
 	}
 }
 
@@ -238,11 +265,11 @@ a.toggle{
 	}
 
 	.modal-container{
-		border:2px solid #888;
+		border:2px solid $green-faded;
 	}
 
 	.modal-content{
-		background:#444;
+		background: $dark;
 	}
 }
 

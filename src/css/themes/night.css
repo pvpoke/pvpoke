@@ -56,6 +56,36 @@ input:-moz-placeholder,
 textarea:-moz-placeholder {
   color: #0f6647;
 }
+select:focus, select:focus-visible, .league-select:focus, .league-select:focus-visible, .cup-select:focus, .cup-select:focus-visible,
+option:focus,
+option:focus-visible, .category-select optgroup:focus, .category-select optgroup:focus-visible,
+.poke input:focus,
+.poke input:focus-visible, .poke select:focus, .poke select:focus-visible,
+input:focus,
+input:focus-visible,
+.poke-search:focus,
+.poke-search:focus-visible,
+textarea:focus,
+textarea:focus-visible {
+  outline: 1px solid #3eca9f;
+}
+
+.poke .poke-search-container .poke-search::placeholder {
+  color: #0f6647 !important;
+}
+
+.league-select, .cup-select, .format-select, .slot-select, .category-select {
+  background: #003462;
+}
+
+.poke .poke-select {
+  border: 2px solid #003462;
+  background: #080c10;
+}
+
+.modal .modal-container .poke-search {
+  background: #003462 !important;
+}
 
 .modal .sandbox-move-select .move-select option {
   background: #222 !important;
@@ -78,11 +108,24 @@ textarea:-moz-placeholder {
 }
 
 .poke-search {
-  border: 1px solid #0f6647;
+  border: 1px solid rgba(0, 0, 0, 0);
 }
 
 .poke input.poke-search {
-  background: rgba(24, 28, 40, 0.75);
+  background: #003462;
+  border: 1px solid #080c10;
+}
+.poke input.poke-search::-webkit-input-placeholder {
+  color: #0f6647;
+}
+.poke input.poke-search::-moz-placeholder {
+  color: #0f6647;
+}
+.poke input.poke-search:-ms-input-placeholder {
+  color: #0f6647;
+}
+.poke input.poke-search:-moz-placeholder {
+  color: #0f6647;
 }
 
 header .menu > a:hover, header .menu > a.selected,
@@ -141,9 +184,6 @@ h1 {
 }
 .poke .form-select-container a.form-link {
   background: #222;
-}
-.poke input.poke-search {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.75);
 }
 
 .check.on span {
@@ -214,10 +254,10 @@ a.toggle {
   color: #000;
 }
 .modal .modal-container {
-  border: 2px solid #888;
+  border: 2px solid #183737;
 }
 .modal .modal-content {
-  background: #444;
+  background: #080c10;
 }
 
 .section.typings li span {
