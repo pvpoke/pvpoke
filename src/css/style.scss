@@ -184,7 +184,7 @@ header{
 			&.tera{ color: #d250a3 !important; }
 		}
 
-		& > a:hover, & > a.selected, & > .parent-menu:hover > a, .parent-menu > a.selected{
+		& > a.selected, .parent-menu > a.selected{
 			background-color: $color-sky-blue;
 
 			@include transition(background-color, 0s, ease-out, 0s);
@@ -216,12 +216,12 @@ header{
 					font-size: 0;
 					width:12px;
 					height:4px;
-					background:url('../img/themes/sunflower/dropdown-triangle.png');
+					background:url('../img/themes/sunflower/dropdown-triangle-white.png');
 					background-repeat: no-repeat;
 
 					right: 0px !important;
 				    left: auto;
-				    top: 0;
+				    top: 4px;
 				    padding: 13px 12px;
 				    background-position: center;
 				}
@@ -4610,8 +4610,9 @@ a.pokebattler{
 		    width: 100%;
 		    margin: 0 -10px;
 		    top: 37px;
-			padding: 0px 8px;
+			padding: 8px 8px;
     		box-sizing: border-box;
+			box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
 
 			a{
 				padding: 9px 8px 9px 34px;
@@ -4622,7 +4623,7 @@ a.pokebattler{
 				color: $color-off-white;
 			}
 
-			& > a:hover, & > a.selected, & > .parent-menu:hover > a, .parent-menu > a.selected{
+			& > a.selected, .parent-menu > a.selected{
 				background-color: $color-blue-medium;
 
 				@include transition(background-color, 0s, ease-out, 0s);
@@ -5288,6 +5289,12 @@ a.pokebattler{
 			}
 		}
 
+		& > a:hover, & > .parent-menu:hover > a{
+			background-color: $color-sky-blue;
+
+			@include transition(background-color, 0s, ease-out, 0s);
+		}
+
 		.submenu{
 			padding-top:10px;
 			max-width:200px;
@@ -5306,6 +5313,7 @@ a.pokebattler{
 				padding:2px 5px;
 				background:$color-blue-dark;
 				border-radius: 0 0 8px 8px;
+				box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
 			}
 
 			a{

@@ -30,7 +30,7 @@ option::-webkit-input-placeholder, .category-select optgroup::-webkit-input-plac
 input::-webkit-input-placeholder,
 .poke-search::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #0f6647;
+  color: #3eca9f;
 }
 select::-moz-placeholder, .league-select::-moz-placeholder, .cup-select::-moz-placeholder,
 option::-moz-placeholder, .category-select optgroup::-moz-placeholder,
@@ -38,7 +38,7 @@ option::-moz-placeholder, .category-select optgroup::-moz-placeholder,
 input::-moz-placeholder,
 .poke-search::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: #0f6647;
+  color: #3eca9f;
 }
 select:-ms-input-placeholder, .league-select:-ms-input-placeholder, .cup-select:-ms-input-placeholder,
 option:-ms-input-placeholder, .category-select optgroup:-ms-input-placeholder,
@@ -46,7 +46,7 @@ option:-ms-input-placeholder, .category-select optgroup:-ms-input-placeholder,
 input:-ms-input-placeholder,
 .poke-search:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: #0f6647;
+  color: #3eca9f;
 }
 select:-moz-placeholder, .league-select:-moz-placeholder, .cup-select:-moz-placeholder,
 option:-moz-placeholder, .category-select optgroup:-moz-placeholder,
@@ -54,7 +54,7 @@ option:-moz-placeholder, .category-select optgroup:-moz-placeholder,
 input:-moz-placeholder,
 .poke-search:-moz-placeholder,
 textarea:-moz-placeholder {
-  color: #0f6647;
+  color: #3eca9f;
 }
 select:focus, select:focus-visible, .league-select:focus, .league-select:focus-visible, .cup-select:focus, .cup-select:focus-visible,
 option:focus,
@@ -91,16 +91,20 @@ textarea:focus-visible {
   border: 1px solid #0f6647;
 }
 .poke input::-webkit-input-placeholder, .poke select::-webkit-input-placeholder {
-  color: #0f6647;
+  color: #3eca9f !important;
 }
 .poke input::-moz-placeholder, .poke select::-moz-placeholder {
-  color: #0f6647;
+  color: #3eca9f !important;
 }
 .poke input:-ms-input-placeholder, .poke select:-ms-input-placeholder {
-  color: #0f6647;
+  color: #3eca9f !important;
 }
 .poke input:-moz-placeholder, .poke select:-moz-placeholder {
-  color: #0f6647;
+  color: #3eca9f !important;
+}
+
+.poke .form-select-container .form-select, .poke .form-select-container a.form-link {
+  color: #3eca9f;
 }
 
 .poke-search {
@@ -122,12 +126,6 @@ textarea:focus-visible {
 }
 .poke input.poke-search:-moz-placeholder {
   color: #0f6647;
-}
-
-header .menu > a:hover, header .menu > a.selected,
-header .menu > .parent-menu:hover > a, header .menu .parent-menu > a.selected,
-.ranking-categories a.selected, .ranking-categories a:hover {
-  background-color: #003462;
 }
 
 header {
@@ -337,7 +335,7 @@ a.toggle {
 }
 
 .pokebox a.open-pokebox {
-  background-color: #222;
+  background-color: #003462;
   color: #f9fdff;
 }
 
@@ -351,23 +349,30 @@ a.toggle {
   background-image: url("../../img/matrix-arrow-header-dark.png") !important;
 }
 
-.poke .form-group .option {
-  background: #555;
-}
-.poke .form-group .option.on {
-  background: #222;
-  -moz-box-shadow: inset 0 0 10px #000;
-  -webkit-box-shadow: inset 0 0 10px #000;
-  box-shadow: inset 0 0 10px #000;
+.poke .form-group {
+  border-color: #3eca9f;
 }
 
-header .menu .parent-menu > a span {
-  background-image: url("../../img/themes/sunflower/dropdown-triangle-white.png");
+.poke .form-group .option {
+  background: #003462;
+  border-color: #3eca9f;
+}
+.poke .form-group .option.on {
+  background: #0f6647;
+  -moz-box-shadow: inset 0 0 10px #3eca9f;
+  -webkit-box-shadow: inset 0 0 10px #3eca9f;
+  box-shadow: inset 0 0 10px #3eca9f;
 }
 
 @media only screen and (min-width: 721px) {
   .menu .submenu .submenu-wrap {
     background: #003462;
+  }
+
+  header .menu > a:hover, header .menu > a.selected,
+header .menu > .parent-menu:hover > a, header .menu .parent-menu > a.selected,
+.ranking-categories a.selected, .ranking-categories a:hover {
+    background-color: #003462;
   }
 }
 

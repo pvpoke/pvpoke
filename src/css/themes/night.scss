@@ -36,16 +36,16 @@ textarea{
     color: $font-color;
 
 	&::-webkit-input-placeholder {
-	  color: $green-light;
+	  color: $link-color;
 	}
 	&::-moz-placeholder {
-	  color: $green-light;
+	  color: $link-color;
 	}
 	&:-ms-input-placeholder {
-	  color: $green-light;
+	  color: $link-color;
 	}
 	&:-moz-placeholder {
-	  color: $green-light;
+	  color: $link-color;
 	}
 
 	&:focus, &:focus-visible{
@@ -74,17 +74,21 @@ textarea{
 	border:1px solid $green-light;
 
 	&::-webkit-input-placeholder {
-	  color: $green-light;
+	  color: $link-color !important;
 	}
 	&::-moz-placeholder {
-	  color: $green-light;
+	  color: $link-color !important;
 	}
 	&:-ms-input-placeholder {
-	  color: $green-light;
+	  color: $link-color !important;
 	}
 	&:-moz-placeholder {
-	  color: $green-light;
+	  color: $link-color !important;
 	}
+}
+
+.poke .form-select-container .form-select, .poke .form-select-container a.form-link{
+	color: $link-color;
 }
 
 .poke-search{
@@ -107,12 +111,6 @@ textarea{
 	&:-moz-placeholder {
 	  color: $green-light;
 	}
-}
-
-header .menu > a:hover, header .menu > a.selected,
-header .menu > .parent-menu:hover > a, header .menu .parent-menu > a.selected,
-.ranking-categories a.selected, .ranking-categories a:hover{
-	background-color: $color-blue-dark;
 }
 
 header{
@@ -369,7 +367,7 @@ a.toggle{
 }
 
 .pokebox a.open-pokebox{
-	background-color:#222;
+	background-color:$color-blue-dark;
 	color:$font-color;
 }
 
@@ -385,19 +383,21 @@ a.toggle{
 	}
 }
 
-.poke .form-group .option{
-	background: #555;
-
-	&.on{
-		background:#222;
-		-moz-box-shadow: inset 0 0 10px #000;
-	    -webkit-box-shadow: inset 0 0 10px #000;
-	    box-shadow: inset 0 0 10px #000;
-	}
+.poke .form-group{
+	border-color: $link-color;
 }
 
-header .menu .parent-menu > a span{
-	background-image:url('../../img/themes/sunflower/dropdown-triangle-white.png');
+.poke .form-group .option{
+	background: $color-blue-dark;
+
+	border-color: $link-color;
+
+	&.on{
+		background:$green-light;
+		-moz-box-shadow: inset 0 0 10px $link-color;
+	    -webkit-box-shadow: inset 0 0 10px $link-color;
+	    box-shadow: inset 0 0 10px $link-color;
+	}
 }
 
 @media only screen and (min-width: 721px){
@@ -405,4 +405,9 @@ header .menu .parent-menu > a span{
 		background:$color-blue-dark;
 	}
 
+	header .menu > a:hover, header .menu > a.selected,
+	header .menu > .parent-menu:hover > a, header .menu .parent-menu > a.selected,
+	.ranking-categories a.selected, .ranking-categories a:hover{
+		background-color: $color-blue-dark;
+	}
 }

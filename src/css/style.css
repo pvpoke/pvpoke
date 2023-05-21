@@ -88,7 +88,7 @@ header .menu a.twitter {
 header .menu a.tera {
   color: #d250a3 !important;
 }
-header .menu > a:hover, header .menu > a.selected, header .menu > .parent-menu:hover > a, header .menu .parent-menu > a.selected {
+header .menu > a.selected, header .menu .parent-menu > a.selected {
   background-color: #c4def5;
   -webkit-transition: background-color 0s ease-out 0s;
   -moz-transition: background-color 0s ease-out 0s;
@@ -121,11 +121,11 @@ header .menu .parent-menu > a span {
   font-size: 0;
   width: 12px;
   height: 4px;
-  background: url("../img/themes/sunflower/dropdown-triangle.png");
+  background: url("../img/themes/sunflower/dropdown-triangle-white.png");
   background-repeat: no-repeat;
   right: 0px !important;
   left: auto;
-  top: 0;
+  top: 4px;
   padding: 13px 12px;
   background-position: center;
 }
@@ -4322,8 +4322,9 @@ a.pokebattler {
     width: 100%;
     margin: 0 -10px;
     top: 37px;
-    padding: 0px 8px;
+    padding: 8px 8px;
     box-sizing: border-box;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
   }
   header .menu a {
     padding: 9px 8px 9px 34px;
@@ -4333,7 +4334,7 @@ a.pokebattler {
     background-position: 6px center;
     color: #f9fdff;
   }
-  header .menu > a:hover, header .menu > a.selected, header .menu > .parent-menu:hover > a, header .menu .parent-menu > a.selected {
+  header .menu > a.selected, header .menu .parent-menu > a.selected {
     background-color: #285e85;
     -webkit-transition: background-color 0s ease-out 0s;
     -moz-transition: background-color 0s ease-out 0s;
@@ -4864,6 +4865,13 @@ a.pokebattler {
     top: auto !important;
     padding: 0 !important;
   }
+  header .menu > a:hover, header .menu > .parent-menu:hover > a {
+    background-color: #c4def5;
+    -webkit-transition: background-color 0s ease-out 0s;
+    -moz-transition: background-color 0s ease-out 0s;
+    -o-transition: background-color 0s ease-out 0s;
+    transition: background-color 0s ease-out 0s;
+  }
   header .menu .submenu {
     padding-top: 10px;
     max-width: 200px;
@@ -4880,6 +4888,7 @@ a.pokebattler {
     padding: 2px 5px;
     background: #003462;
     border-radius: 0 0 8px 8px;
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
   }
   header .menu .submenu a {
     float: none;
