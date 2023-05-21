@@ -77,6 +77,8 @@ function PokeMultiSelect(element){
 				$el.find(".quick-fill-select").append($meta);
 			}
 		}
+		// filter quick fill to metas for current CP
+		this.setCP(battle.getCP())
 
 		// Load groups from local storage
 		var i = 0;
@@ -564,6 +566,18 @@ function PokeMultiSelect(element){
 		self.updateListDisplay();
 	}
 
+	// Safari doesn't let you hide select options
+	// https://stackoverflow.com/questions/36066953/css-hide-options-from-select-menu-on-iphone-safari
+	function showElement(element) {
+		element.show();
+		if( ($(element).parent().is('span')) ) $(element).unwrap();
+	}
+
+	function hideElement(element) {
+		element.hide();
+		if( !($(element).parent().is('span')) ) $(element).wrap('<span>');
+	}
+
 	// Update the custom group selections when changing league
 
 	this.setCP = function(cp){
@@ -573,14 +587,14 @@ function PokeMultiSelect(element){
 			element = $(element);
 			// always show custom groups (from cookies) and create new group
 			if (element.attr("type") === "custom" || element.attr("value") === "new") {
-				element.show();
+				showElement(element);
 				return;
 			}
 			var optionCP = leagueMap[element.attr("type")]
 			if (optionCP === cp) {
-				element.show();
+				showElement(element);
 			} else {
-				element.hide();
+				hideElement(element);
 			}
 		});
 		// Load default meta group when switching to Multi Battle
