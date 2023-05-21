@@ -396,6 +396,10 @@ a.toggle{
 	}
 }
 
+header .menu .parent-menu > a span{
+	background-image:url('../../img/themes/sunflower/dropdown-triangle-white.png');
+}
+
 @media only screen and (min-width: 721px){
 	.menu .submenu .submenu-wrap{
 		background:$color-blue-dark;

@@ -83,10 +83,10 @@ header .menu a {
   transition: background-color 0.2s ease-out 0s;
 }
 header .menu a.twitter {
-  color: #01bbff;
+  color: #01bbff !important;
 }
 header .menu a.tera {
-  color: #d250a3;
+  color: #d250a3 !important;
 }
 header .menu > a:hover, header .menu > a.selected, header .menu > .parent-menu:hover > a, header .menu .parent-menu > a.selected {
   background-color: #c4def5;
@@ -97,6 +97,37 @@ header .menu > a:hover, header .menu > a.selected, header .menu > .parent-menu:h
 }
 header .menu .parent-menu {
   position: relative;
+}
+header .menu .parent-menu .submenu {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.125s ease-out 0s;
+  -moz-transition: max-height 0.125s ease-out 0s;
+  -o-transition: max-height 0.125s ease-out 0s;
+  transition: max-height 0.125s ease-out 0s;
+}
+header .menu .parent-menu .submenu.active {
+  display: block;
+  max-height: 300px;
+  pointer-events: auto;
+}
+header .menu .parent-menu > a {
+  position: relative;
+}
+header .menu .parent-menu > a span {
+  position: absolute;
+  display: block;
+  content: ".";
+  font-size: 0;
+  width: 12px;
+  height: 4px;
+  background: url("../img/themes/sunflower/dropdown-triangle.png");
+  background-repeat: no-repeat;
+  right: 0px !important;
+  left: auto;
+  top: 0;
+  padding: 13px 12px;
+  background-position: center;
 }
 header .hamburger .meat {
   width: 30px;
@@ -4295,8 +4326,8 @@ a.pokebattler {
     box-sizing: border-box;
   }
   header .menu a {
-    margin: 10px 0;
-    padding-left: 34px;
+    padding: 9px 8px 9px 34px;
+    margin: 0;
     font-size: 18px;
     background-size: 18px 18px;
     background-position: 6px center;
@@ -4324,16 +4355,21 @@ a.pokebattler {
   header .menu .icon-heart {
     background-image: url("../img/themes/sunflower/nav-heart-white.png");
   }
-  header .submenu {
+  header .menu .submenu {
     padding-left: 18px;
   }
-  header .submenu a {
+  header .menu .submenu a {
     font-size: 16px;
   }
-  header .more-parent-menu .submenu {
-    padding-left: 0;
+  header .menu .submenu a:first-of-type {
+    margin-top: 0;
   }
-  header .more-parent-menu .submenu a {
+  header .menu .more-parent-menu .submenu {
+    padding-left: 0;
+    display: block;
+    max-height: 300px;
+  }
+  header .menu .more-parent-menu .submenu a {
     font-size: 18px;
   }
 
@@ -4787,86 +4823,77 @@ a.pokebattler {
 }
 
 @media only screen and (min-width: 721px) {
-  .menu {
+  header .menu {
     position: relative;
   }
-  .menu .more {
+  header .menu .more {
     font-size: 40px;
     font-family: serif;
     line-height: 0;
     padding: 0;
   }
-  .menu .more:after {
+  header .menu .more:after {
     content: "...";
   }
-  .menu .parent-menu {
+  header .menu .parent-menu {
     position: relative;
   }
-  .menu .parent-menu.more-parent-menu > a {
+  header .menu .parent-menu.more-parent-menu > a {
     background: none !important;
   }
-  .menu .parent-menu.more-parent-menu > a:after {
+  header .menu .parent-menu.more-parent-menu > a:after {
     display: none;
   }
-  .menu .parent-menu.more-parent-menu .safe-mouse-space {
+  header .menu .parent-menu.more-parent-menu .safe-mouse-space {
     position: absolute;
     width: 150%;
     height: 100%;
     left: 95%;
     top: 0;
   }
-  .menu .parent-menu .submenu .icon-rankings {
+  header .menu .parent-menu .submenu .icon-rankings {
     font-size: 14px;
   }
-  .menu .parent-menu > a {
-    position: relative;
+  header .menu .parent-menu .submenu.active {
+    height: 230px !important;
   }
-  .menu .parent-menu > a:after {
-    position: absolute;
-    left: 50%;
-    bottom: -4px;
-    display: block;
-    content: ".";
-    font-size: 0;
-    width: 12px;
-    height: 4px;
-    background: url("../img/themes/sunflower/dropdown-triangle.png");
-    background-repeat: no-repeat;
+  header .menu .parent-menu > a span {
+    right: auto !important;
+    left: 50% !important;
+    bottom: -4px !important;
+    top: auto !important;
+    padding: 0 !important;
   }
-  .menu .submenu {
+  header .menu .submenu {
     padding-top: 10px;
     max-width: 200px;
     position: absolute;
     padding-left: 20px;
     top: 23px;
-    height: 0;
-    overflow: hidden;
     pointer-events: none;
     white-space: nowrap;
   }
-  .menu .submenu.active {
-    display: block;
-    height: 190px;
-    pointer-events: auto;
+  header .menu .submenu.active {
+    height: 190px !important;
   }
-  .menu .submenu .submenu-wrap {
+  header .menu .submenu .submenu-wrap {
     padding: 2px 5px;
     background: #003462;
     border-radius: 0 0 8px 8px;
   }
-  .menu .submenu a {
+  header .menu .submenu a {
     float: none;
-    margin: 6px 0;
+    margin: 0;
     max-width: 150px;
     color: #f9fdff;
     font-size: 14px;
-    padding: 4px 8px;
+    padding: 10px 8px;
     -webkit-transition: color 0.2s ease-out 0s;
     -moz-transition: color 0.2s ease-out 0s;
     -o-transition: color 0.2s ease-out 0s;
     transition: color 0.2s ease-out 0s;
   }
-  .menu .submenu a:hover {
+  header .menu .submenu a:hover {
     color: #c4def5;
     -webkit-transition: background-color 0s ease-out 0s;
     -moz-transition: background-color 0s ease-out 0s;

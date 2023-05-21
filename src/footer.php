@@ -26,11 +26,20 @@
 			$("header .menu").slideToggle(125);
 		});
 
-		// Submenu interaction on desktop
+		// Submenu interaction on desktop and mobile
 
 		$(".menu .parent-menu").on("mouseover click", function(e){
-			$(".submenu").removeClass("active");
-			$(this).find(".submenu").addClass("active");
+			if(screen.width >= 721){
+				$(".submenu").removeClass("active");
+				$(this).find(".submenu").addClass("active");
+			}
+		});
+
+		$(".menu .parent-menu > a").on("click", function(e){
+			if($(e.target).is("span") && screen.width < 721){
+				e.preventDefault();
+				$(this).next(".submenu").toggleClass("active");
+			}
 		});
 
 		$("body").on("mousemove click", function(e){

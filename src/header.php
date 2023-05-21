@@ -222,7 +222,9 @@ if(! isset($OG_IMAGE)){
 			<div class="menu">
 				<a class="icon-battle <?php if(strpos($_SERVER['REQUEST_URI'], '/battle/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>battle/">Battle</a>
 				<div class="parent-menu">
-					<a class="icon-rankings <?php if(strpos($_SERVER['REQUEST_URI'], '/rankings/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>rankings/">Rankings</a>
+					<a class="icon-rankings <?php if(strpos($_SERVER['REQUEST_URI'], '/rankings/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>rankings/">
+						Rankings <span></span>
+					</a>
 					<div class="submenu">
 						<div class="submenu-wrap">
 							<a href="<?php echo $WEB_ROOT; ?>rankings/all/1500/overall/">Great League</a>
@@ -234,7 +236,9 @@ if(! isset($OG_IMAGE)){
 				</div>
 				<a class="icon-team <?php if(strpos($_SERVER['REQUEST_URI'], '/team-builder/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>team-builder/">Team Builder</a>
 				<div class="parent-menu">
-					<a class="icon-train <?php if(strpos($_SERVER['REQUEST_URI'], '/train/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>train/">Train</a>
+					<a class="icon-train <?php if(strpos($_SERVER['REQUEST_URI'], '/train/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>train/">
+						Train <span></span>
+					</a>
 					<div class="submenu">
 						<div class="submenu-wrap">
 							<a href="<?php echo $WEB_ROOT; ?>train/analysis/">Top Performers</a>

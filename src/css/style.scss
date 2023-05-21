@@ -180,8 +180,8 @@ header{
 			@include transition(background-color, 0.2s, ease-out, 0s);
 
 
-			&.twitter{ color: #01bbff; }
-			&.tera{ color: #d250a3; }
+			&.twitter{ color: #01bbff !important; }
+			&.tera{ color: #d250a3 !important; }
 		}
 
 		& > a:hover, & > a.selected, & > .parent-menu:hover > a, .parent-menu > a.selected{
@@ -192,6 +192,40 @@ header{
 
 		.parent-menu{
 			position:relative;
+
+			.submenu{
+				max-height: 0;
+				overflow: hidden;
+
+				@include transition(max-height, .125s, ease-out, 0s);
+
+				&.active{
+					display:block;
+					max-height: 300px;
+					pointer-events: auto;
+				}
+			}
+
+			& > a{
+				position:relative;
+
+				span{
+					position: absolute;
+					display: block;
+					content:".";
+					font-size: 0;
+					width:12px;
+					height:4px;
+					background:url('../img/themes/sunflower/dropdown-triangle.png');
+					background-repeat: no-repeat;
+
+					right: 0px !important;
+				    left: auto;
+				    top: 0;
+				    padding: 13px 12px;
+				    background-position: center;
+				}
+			}
 		}
 	}
 
@@ -4580,8 +4614,8 @@ a.pokebattler{
     		box-sizing: border-box;
 
 			a{
-				margin: 10px 0;
-			    padding-left: 34px;
+				padding: 9px 8px 9px 34px;
+				margin: 0;
 			    font-size: 18px;
 			    background-size: 18px 18px;
 			    background-position: 6px center;
@@ -4613,21 +4647,27 @@ a.pokebattler{
 			.icon-heart{
 				background-image:url('../img/themes/sunflower/nav-heart-white.png');
 			}
-		}
 
-		.submenu{
-			padding-left: 18px;
+			.submenu{
+				padding-left: 18px;
 
-			a{
-				font-size: 16px;
+				a{
+					font-size: 16px;
+
+					&:first-of-type{
+						margin-top: 0;
+					}
+				}
 			}
-		}
 
-		.more-parent-menu .submenu{
-			padding-left: 0;
+			.more-parent-menu .submenu{
+				padding-left: 0;
+				display: block;
+				max-height: 300px;
 
-			a{
-				font-size: 18px;
+				a{
+					font-size: 18px;
+				}
 			}
 		}
 	}
@@ -5196,7 +5236,7 @@ a.pokebattler{
 }
 
 @media only screen and (min-width: 721px) {
-	.menu{
+	header .menu{
 		position:relative;
 
 		.more{
@@ -5235,21 +5275,16 @@ a.pokebattler{
 				font-size:14px;
 			}
 
-			& > a{
-				position:relative;
+			.submenu.active{
+				height: 230px !important;
+			}
 
-				&:after{
-					position: absolute;
-					left: 50%;
-					bottom:-4px;
-					display: block;
-					content:".";
-					font-size: 0;
-					width:12px;
-					height:4px;
-					background:url('../img/themes/sunflower/dropdown-triangle.png');
-					background-repeat: no-repeat;
-				}
+			& > a span{
+				right: auto !important;
+				left: 50% !important;
+				bottom:-4px !important;
+				top: auto !important;
+				padding: 0 !important;
 			}
 		}
 
@@ -5259,15 +5294,12 @@ a.pokebattler{
 			position: absolute;
 			padding-left: 20px;
 			top: 23px;
-			height:0;
-			overflow: hidden;
 			pointer-events: none;
 			white-space: nowrap;
 
+
 			&.active{
-				display:block;
-				height:190px;
-				pointer-events: auto;
+				height:190px !important;
 			}
 
 			.submenu-wrap{
@@ -5278,11 +5310,11 @@ a.pokebattler{
 
 			a{
 				float:none;
-				margin: 6px 0;
+				margin: 0;
 				max-width: 150px;
 				color: $color-off-white;
 				font-size: 14px;
-				padding: 4px 8px;
+				padding: 10px 8px;
 
 				@include transition(color, 0.2s, ease-out, 0s);
 

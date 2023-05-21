@@ -70,10 +70,6 @@ textarea:focus-visible {
   outline: 1px solid #3eca9f;
 }
 
-.poke .poke-search-container .poke-search::placeholder {
-  color: #0f6647 !important;
-}
-
 .league-select, .cup-select, .format-select, .slot-select, .category-select {
   background: #003462;
 }
@@ -363,6 +359,10 @@ a.toggle {
   -moz-box-shadow: inset 0 0 10px #000;
   -webkit-box-shadow: inset 0 0 10px #000;
   box-shadow: inset 0 0 10px #000;
+}
+
+header .menu .parent-menu > a span {
+  background-image: url("../../img/themes/sunflower/dropdown-triangle-white.png");
 }
 
 @media only screen and (min-width: 721px) {
