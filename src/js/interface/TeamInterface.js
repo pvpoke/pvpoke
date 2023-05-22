@@ -484,17 +484,7 @@ var InterfaceMaster = (function () {
 						var $cell = $("<td><a class=\"rating\" href=\"#\" target=\"blank\"><span></span></a></td>");
 						var rating = r.matchups[n].rating;
 
-						if(rating == 500){
-							$cell.find("a").addClass("tie");
-						} else if( (rating < 500) && (rating > 250)){
-							$cell.find("a").addClass("close-loss");
-						} else if( rating <= 250){
-							$cell.find("a").addClass("loss");
-						} else if( (rating > 500) && (rating < 750)){
-							$cell.find("a").addClass("close-win");
-						} else if( rating >= 750){
-							$cell.find("a").addClass("win");
-						}
+						$cell.find("a").addClass(battle.getRatingClass(rating));
 
 						if(! baitShields){
 							pokemon.isCustom = true;
@@ -612,17 +602,7 @@ var InterfaceMaster = (function () {
 						var $cell = $("<td><a class=\"rating\" href=\"#\" target=\"blank\"><span></span></a></td>");
 						var rating = r.matchups[n].rating;
 
-						if(rating == 500){
-							$cell.find("a").addClass("tie");
-						} else if( (rating < 500) && (rating > 250)){
-							$cell.find("a").addClass("close-loss");
-						} else if( rating <= 250){
-							$cell.find("a").addClass("loss");
-						} else if( (rating > 500) && (rating < 750)){
-							$cell.find("a").addClass("close-win");
-						} else if( rating >= 750){
-							$cell.find("a").addClass("win");
-						}
+						$cell.find("a").addClass(battle.getRatingClass(rating));
 
 						if(! baitShields){
 							pokemon.isCustom = true;
@@ -992,17 +972,7 @@ var InterfaceMaster = (function () {
 						var $cell = $("<td><a class=\"rating\" href=\"#\" target=\"blank\"><span></span></a></td>");
 						var rating = r.matchups[n].rating;
 
-						if(rating == 500){
-							$cell.find("a").addClass("tie");
-						} else if( (rating < 500) && (rating > 250)){
-							$cell.find("a").addClass("close-loss");
-						} else if( rating <= 250){
-							$cell.find("a").addClass("loss");
-						} else if( (rating > 500) && (rating < 750)){
-							$cell.find("a").addClass("close-win");
-						} else if( rating >= 750){
-							$cell.find("a").addClass("win");
-						}
+						$cell.find("a").addClass(battle.getRatingClass(rating));
 
 						if(! baitShields){
 							pokemon.isCustom = true;

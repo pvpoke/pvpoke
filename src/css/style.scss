@@ -66,7 +66,7 @@ $color-purple:#7f4da8;
 $color-purple-dark:#3b1f52;
 
 $color-off-white:#f9fdff;
-$color-off-black:#333;
+$color-off-black:#111;
 
 $color-stat-buff:#f1841c;
 $color-stat-debuff:#0158d0;
@@ -3096,7 +3096,7 @@ a.download-csv{
 			}
 
 			.rating-container .rating{
-				background-color: rgba(0,0,0,.35);
+				border: 2px solid rgba(0,0,0,0.25);
 			}
 		}
 
@@ -3835,69 +3835,6 @@ a.download-csv{
 			padding: 3px;
 		}
 
-		a{
-			display:block;
-			padding:5px 12px;
-			border-radius:8px;
-			text-decoration: none;
-			width:30px;
-			margin: 0 auto;
-
-			span{
-				display:block;
-				margin:0 auto;
-				width:18px;
-				height:18px;
-				background-size:100%;
-				background-repeat: no-repeat;
-			}
-
-			&.win{
-				background-color: #2a6eb7;
-
-				span{
-					border-radius:20px;
-					background:#fff6d4;
-				}
-			}
-
-			&.close-win{
-				background-color: #3860ac;
-
-				span{
-					border-radius:20px;
-					border:2px solid #a5d6fb;
-					box-sizing:border-box;
-				}
-			}
-
-			&.close-loss{
-				background-color: #a91c7e;
-
-				span{
-					background-image: url('../img/themes/sunflower/rating-close-loss.png');
-					opacity: 0.8;
-				}
-			}
-
-			&.loss{
-				background-color: #c71b71;
-
-				span{
-					background-image: url('../img/themes/sunflower/rating-loss.png');
-				}
-			}
-
-			&.tie{
-				background-color: rgb(150, 140, 182);
-
-				span{
-					background-image: url('../img/themes/sunflower/rating-tie.png');
-					opacity: 0.75;
-				}
-			}
-		}
-
 		td.name{
 			vertical-align: middle;
 			text-align: left;
@@ -3921,6 +3858,10 @@ a.download-csv{
 			a.rating{
 				text-align: center;
 			}
+		}
+
+		a.rating{
+			width: 30px;
 		}
 
 		&.matrix-table{
@@ -4009,6 +3950,80 @@ a.download-csv{
 			&.alola{ color:#fb900b; }
 			&.galar{ color:#946000; }
 		}
+	}
+}
+
+a.rating, .rating-container .rating{
+	display:flex;
+	padding:5px 12px;
+	border-radius:8px;
+	text-decoration: none;
+	font-weight: bold;
+	margin: 0 auto;
+	justify-content: center;
+
+	span{
+		display:block;
+		margin:0 auto;
+		width:18px;
+		height:18px;
+		background-size:100%;
+		background-repeat: no-repeat;
+		margin: 0 4px;
+	}
+
+	&.win{
+		background-color: #1280b6;
+
+		span{
+			border-radius:20px;
+			background:#fff6d4;
+		}
+	}
+
+	&.close-win{
+		background-color: #2e6bb0;
+
+		span{
+			border-radius:20px;
+			border:2px solid #a5d6fb;
+			box-sizing:border-box;
+		}
+	}
+
+	&.close-loss{
+		background-color: #a91c7e;
+		color: #ffd3f4;
+
+		span{
+			background-image: url('../img/themes/sunflower/rating-close-loss.png');
+			opacity: 0.9;
+		}
+	}
+
+	&.loss{
+		background-color: #c71b71;
+		color: #ffc9f1;
+
+		span{
+			background-image: url('../img/themes/sunflower/rating-loss.png');
+		}
+	}
+
+	&.tie{
+		background-color: rgb(150, 140, 182);
+
+		span{
+			background-image: url('../img/themes/sunflower/rating-tie.png');
+			opacity: 0.75;
+		}
+	}
+}
+
+a.rating{
+
+	&:hover{
+		opacity: .8;
 	}
 }
 

@@ -388,7 +388,7 @@ footer a.domz-link {
   margin: 10px 0;
   max-width: 200px;
   background: #f9fdff;
-  border: 1px solid #333;
+  border: 1px solid #111;
 }
 .poke input.poke-select, .poke select.poke-select {
   font-size: 18px;
@@ -474,7 +474,7 @@ footer a.domz-link {
 }
 .poke .poke-stats .stat-container {
   font-size: 10px;
-  color: #333;
+  color: #111;
 }
 .poke .poke-stats .stat-container .stat-label {
   width: 80px;
@@ -568,7 +568,7 @@ footer a.domz-link {
 .poke .poke-stats h3.section-title {
   font-size: 14px;
   font-weight: bold;
-  color: #333;
+  color: #111;
   margin-top: 20px;
 }
 .poke .poke-stats a {
@@ -832,7 +832,7 @@ footer a.domz-link {
   text-align: left;
 }
 .poke .move-details .move-stat {
-  color: #333;
+  color: #111;
 }
 .poke .move-details .move-stat .stat {
   width: 15px;
@@ -844,7 +844,7 @@ footer a.domz-link {
   padding-top: 1px;
   color: #f9fdff;
   font-weight: bold;
-  background: #333;
+  background: #111;
 }
 .poke.multi {
   display: none;
@@ -928,7 +928,7 @@ footer a.domz-link {
   top: 2px;
   right: 5px;
   font-weight: bold;
-  background: #333;
+  background: #111;
   color: #f9fdff;
   border-radius: 4px;
   padding: 0 4px;
@@ -1138,7 +1138,7 @@ select, input {
   padding: 3px 8px;
   box-sizing: border-box;
   width: 100%;
-  color: #333;
+  color: #111;
   border: 2px solid #285e85;
 }
 
@@ -1286,8 +1286,8 @@ select, input {
   width: 17px;
   height: 17px;
   border-radius: 8px;
-  background: #333;
-  border: 2px solid #333;
+  background: #111;
+  border: 2px solid #111;
   box-sizing: border-box;
   margin: 0px 5px 0 0;
   float: left;
@@ -1410,7 +1410,7 @@ select, input {
   z-index: 5;
 }
 .battle-results .sandbox-btn-container .sandbox-btn.active {
-  color: #333;
+  color: #111;
   background: #ffcf01;
 }
 .battle-results .sandbox-btn-container .sandbox-btn.active .btn-background {
@@ -1617,7 +1617,7 @@ select, input {
   padding: 5px;
   border-radius: 8px;
   border: none;
-  background: #333 !important;
+  background: #111 !important;
   color: #f9fdff;
 }
 .battle-results .battle-details .breakpoints-section .golden-combination .button,
@@ -1633,7 +1633,7 @@ select, input {
   margin: 0;
   font-weight: bold;
   border: none;
-  background: #333 !important;
+  background: #111 !important;
   color: #f9fdff;
 }
 .battle-results .battle-details .breakpoints-section .optimal-timing-timeline,
@@ -2741,7 +2741,7 @@ a.download-csv {
   line-height: 18px;
 }
 .rank .details .detail-section .rating-container .rating {
-  background-color: rgba(0, 0, 0, 0.35);
+  border: 2px solid rgba(0, 0, 0, 0.25);
 }
 .rank .details .multi-battle-link {
   width: 100%;
@@ -2808,7 +2808,7 @@ a.download-csv {
   flex-wrap: wrap;
 }
 .detail-tabs-on .detail-tab-nav a {
-  color: #333;
+  color: #111;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -2849,7 +2849,7 @@ a.download-csv {
   background-color: rgba(0, 0, 0, 0.15);
 }
 .detail-tabs-on .detail-tab-nav a.active {
-  background-color: #333;
+  background-color: #111;
   color: #f9fdff;
 }
 .detail-tabs-on .detail-tab-nav a.active .icon {
@@ -3409,57 +3409,6 @@ a.download-csv {
 .article .rating-table td {
   padding: 3px;
 }
-.article .rating-table a {
-  display: block;
-  padding: 5px 12px;
-  border-radius: 8px;
-  text-decoration: none;
-  width: 30px;
-  margin: 0 auto;
-}
-.article .rating-table a span {
-  display: block;
-  margin: 0 auto;
-  width: 18px;
-  height: 18px;
-  background-size: 100%;
-  background-repeat: no-repeat;
-}
-.article .rating-table a.win {
-  background-color: #2a6eb7;
-}
-.article .rating-table a.win span {
-  border-radius: 20px;
-  background: #fff6d4;
-}
-.article .rating-table a.close-win {
-  background-color: #3860ac;
-}
-.article .rating-table a.close-win span {
-  border-radius: 20px;
-  border: 2px solid #a5d6fb;
-  box-sizing: border-box;
-}
-.article .rating-table a.close-loss {
-  background-color: #a91c7e;
-}
-.article .rating-table a.close-loss span {
-  background-image: url("../img/themes/sunflower/rating-close-loss.png");
-  opacity: 0.8;
-}
-.article .rating-table a.loss {
-  background-color: #c71b71;
-}
-.article .rating-table a.loss span {
-  background-image: url("../img/themes/sunflower/rating-loss.png");
-}
-.article .rating-table a.tie {
-  background-color: #968cb6;
-}
-.article .rating-table a.tie span {
-  background-image: url("../img/themes/sunflower/rating-tie.png");
-  opacity: 0.75;
-}
 .article .rating-table td.name {
   vertical-align: middle;
   text-align: left;
@@ -3479,6 +3428,9 @@ a.download-csv {
 }
 .article .rating-table.legend a.rating {
   text-align: center;
+}
+.article .rating-table a.rating {
+  width: 30px;
 }
 .article .rating-table.matrix-table a {
   padding: 5px 5px 5px 36px;
@@ -3579,6 +3531,66 @@ a.download-csv {
 .article .alternatives-table .region-label.galar,
 .article .meta-table .region-label.galar {
   color: #946000;
+}
+
+a.rating, .rating-container .rating {
+  display: flex;
+  padding: 5px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 auto;
+  justify-content: center;
+}
+a.rating span, .rating-container .rating span {
+  display: block;
+  margin: 0 auto;
+  width: 18px;
+  height: 18px;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  margin: 0 4px;
+}
+a.rating.win, .rating-container .rating.win {
+  background-color: #1280b6;
+}
+a.rating.win span, .rating-container .rating.win span {
+  border-radius: 20px;
+  background: #fff6d4;
+}
+a.rating.close-win, .rating-container .rating.close-win {
+  background-color: #2e6bb0;
+}
+a.rating.close-win span, .rating-container .rating.close-win span {
+  border-radius: 20px;
+  border: 2px solid #a5d6fb;
+  box-sizing: border-box;
+}
+a.rating.close-loss, .rating-container .rating.close-loss {
+  background-color: #a91c7e;
+  color: #ffd3f4;
+}
+a.rating.close-loss span, .rating-container .rating.close-loss span {
+  background-image: url("../img/themes/sunflower/rating-close-loss.png");
+  opacity: 0.9;
+}
+a.rating.loss, .rating-container .rating.loss {
+  background-color: #c71b71;
+  color: #ffc9f1;
+}
+a.rating.loss span, .rating-container .rating.loss span {
+  background-image: url("../img/themes/sunflower/rating-loss.png");
+}
+a.rating.tie, .rating-container .rating.tie {
+  background-color: #968cb6;
+}
+a.rating.tie span, .rating-container .rating.tie span {
+  background-image: url("../img/themes/sunflower/rating-tie.png");
+  opacity: 0.75;
+}
+
+a.rating:hover {
+  opacity: 0.8;
 }
 
 .article-item {
