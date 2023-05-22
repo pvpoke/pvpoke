@@ -1,0 +1,26 @@
+{
+    "name": "innocent",
+    "title": "Silph Innocent Cup",
+    "include": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["dragon", "fairy", "flying", "psychic", "water"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["arbok", "dragalge", "garbodor", "swalot"]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "name": "Tag",
+        "values": ["shadow", "mega"]
+    }, {
+        "filterType": "type",
+        "name": "Type",
+        "values": ["fire", "ice", "poison", "steel"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["altaria", "articuno_galarian", "cresselia", "hawlucha", "lanturn", "mandibuzz", "mantine", "mew", "moltres_galarian", "noctowl", "pelipper", "pidgeot", "zapdos_galarian"]
+    }]
+}

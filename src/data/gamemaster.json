@@ -273,6 +273,31 @@
         "exclude": [],
         "partySize": 3
     }, {
+        "name": "innocent",
+        "title": "Silph Innocent Cup",
+        "include": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["dragon", "fairy", "flying", "psychic", "water"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["arbok", "dragalge", "garbodor", "swalot"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "name": "Tag",
+            "values": ["shadow", "mega"]
+        }, {
+            "filterType": "type",
+            "name": "Type",
+            "values": ["fire", "ice", "poison", "steel"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["altaria", "articuno_galarian", "cresselia", "hawlucha", "lanturn", "mandibuzz", "mantine", "mew", "moltres_galarian", "noctowl", "pelipper", "pidgeot", "zapdos_galarian"]
+        }]
+    }, {
         "name": "ionic",
         "title": "Silph Ionic Cup",
         "include": [{
@@ -546,6 +571,15 @@
         "cup": "polkadot",
         "cp": 1500,
         "meta": "polkadot",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true,
+        "hideRankings": false
+    }, {
+        "title": "Silph Innocent Cup",
+        "cup": "innocent",
+        "cp": 1500,
+        "meta": "innocent",
         "showCup": true,
         "showFormat": true,
         "showMeta": true,
