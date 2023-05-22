@@ -111,6 +111,7 @@ if(! isset($OG_IMAGE)){
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json?v=2">
 
+<!--
 <?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
 	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/themes/sunflower/favicon_team_builder.png">
 <?php elseif(strpos($_SERVER['REQUEST_URI'], 'rankings') !== false): ?>
@@ -122,6 +123,9 @@ if(! isset($OG_IMAGE)){
 <?php else: ?>
 	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/themes/sunflower/favicon.png">
 <?php endif; ?>
+-->
+
+<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/themes/sunflower/favicon.png">
 
 <link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=166">
 
@@ -212,7 +216,12 @@ if(! isset($OG_IMAGE)){
 
 	<header>
 		<div class="header-wrap">
-			<a href="<?php echo $WEB_ROOT; ?>"><img src="<?php echo $WEB_ROOT; ?>/img/themes/sunflower/header.png" title="PvPoke.com" /></a>
+			<?php if($_SETTINGS->theme == 'night'): ?>
+				<a href="<?php echo $WEB_ROOT; ?>"><img src="<?php echo $WEB_ROOT; ?>/img/themes/sunflower/header-white.png" title="PvPoke.com" /></a>
+			<?php else: ?>
+				<a href="<?php echo $WEB_ROOT; ?>"><img src="<?php echo $WEB_ROOT; ?>/img/themes/sunflower/header.png" title="PvPoke.com" /></a>
+			<?php endif; ?>
+
 			<div class="hamburger mobile">
 				<!--Because I'm too lazy to make a graphic-->
 				<div class="meat"></div>

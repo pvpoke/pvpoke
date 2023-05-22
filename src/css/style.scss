@@ -375,7 +375,7 @@ footer{
 		color:$color-off-white;
 		border-radius:50px;
 		margin:20px auto;
-		padding:10px;
+		padding:10px 20px;
 		box-sizing:border-box;
 		max-width:400px;
 
@@ -4202,7 +4202,7 @@ a.download-csv{
 	width:100%;
 	height:100%;
 	background:rgba(0,0,0,.5);
-	z-index:30;
+	z-index:50;
 	padding:10px;
 	box-sizing:border-box;
 	overflow-y:scroll;
@@ -4619,7 +4619,7 @@ a.pokebattler{
 				margin: 0;
 			    font-size: 18px;
 			    background-size: 18px 18px;
-			    background-position: 6px center;
+			    background-position: 4px center;
 				color: $color-off-white;
 			}
 
@@ -5286,6 +5286,8 @@ a.pokebattler{
 				bottom:-4px !important;
 				top: auto !important;
 				padding: 0 !important;
+
+				background:url('../img/themes/sunflower/dropdown-triangle.png');
 			}
 		}
 

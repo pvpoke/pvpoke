@@ -254,7 +254,7 @@ footer a.domz-link {
   color: #f9fdff;
   border-radius: 50px;
   margin: 20px auto;
-  padding: 10px;
+  padding: 10px 20px;
   box-sizing: border-box;
   max-width: 400px;
   background: #003462;
@@ -3728,7 +3728,7 @@ a.download-csv {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  z-index: 30;
+  z-index: 50;
   padding: 10px;
   box-sizing: border-box;
   overflow-y: scroll;
@@ -4331,7 +4331,7 @@ a.pokebattler {
     margin: 0;
     font-size: 18px;
     background-size: 18px 18px;
-    background-position: 6px center;
+    background-position: 4px center;
     color: #f9fdff;
   }
   header .menu > a.selected, header .menu .parent-menu > a.selected {
@@ -4864,6 +4864,7 @@ a.pokebattler {
     bottom: -4px !important;
     top: auto !important;
     padding: 0 !important;
+    background: url("../img/themes/sunflower/dropdown-triangle.png");
   }
   header .menu > a:hover, header .menu > .parent-menu:hover > a {
     background-color: #c4def5;

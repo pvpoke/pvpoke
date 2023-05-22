@@ -32,7 +32,7 @@ input,
 .poke-search,
 textarea{
     background: $color-blue-dark;
-	border: 1px solid $green-faded;
+	border: 1px solid $green-light;
     color: $font-color;
 
 	&::-webkit-input-placeholder {
@@ -92,12 +92,12 @@ textarea{
 }
 
 .poke-search{
-	border: 1px solid rgba(0,0,0,0);
+	border: 1px solid $green-light;
 }
 
 .poke input.poke-search{
 	background: $color-blue-dark;
-	border: 1px solid $dark;
+	border: 1px solid $green-light;
 
 	&::-webkit-input-placeholder {
 	  color: $green-light;
@@ -144,8 +144,11 @@ header{
 	.icon-contribute{
 		background-image:url('../../img/themes/sunflower/nav-heart-white.png');
 	}
-}
 
+	.menu .parent-menu > a span{
+		background-image: url('../../img/themes/sunflower/dropdown-triangle-white.png');
+	}
+}
 h1{
 	color:$font-color;
 }

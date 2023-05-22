@@ -21,7 +21,7 @@ input,
 .poke-search,
 textarea {
   background: #003462;
-  border: 1px solid #183737;
+  border: 1px solid #0f6647;
   color: #f9fdff;
 }
 select::-webkit-input-placeholder, .league-select::-webkit-input-placeholder, .cup-select::-webkit-input-placeholder,
@@ -108,12 +108,12 @@ textarea:focus-visible {
 }
 
 .poke-search {
-  border: 1px solid rgba(0, 0, 0, 0);
+  border: 1px solid #0f6647;
 }
 
 .poke input.poke-search {
   background: #003462;
-  border: 1px solid #080c10;
+  border: 1px solid #0f6647;
 }
 .poke input.poke-search::-webkit-input-placeholder {
   color: #0f6647;
@@ -152,6 +152,9 @@ header .icon-team {
 }
 header .icon-contribute {
   background-image: url("../../img/themes/sunflower/nav-heart-white.png");
+}
+header .menu .parent-menu > a span {
+  background-image: url("../../img/themes/sunflower/dropdown-triangle-white.png");
 }
 
 h1 {
