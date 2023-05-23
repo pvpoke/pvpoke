@@ -109,8 +109,8 @@ var InterfaceMaster = (function () {
 
 				// Details battle viewing
 
-				$("body").on("click", ".battle-details .rating-table a.rating.star", viewShieldBattle);
-				$("body").on("click", ".section.summary a.rating.star", viewBulkBattle);
+				$("body").on("click", ".battle-details .rating-table a.rating", viewShieldBattle);
+				$("body").on("click", ".section.summary a.rating", viewBulkBattle);
 				$("body").on("click", ".breakpoints-section .button, .cmp-section .button", selectBreakpointIVs);
 
 				// Sandbox mode
@@ -340,7 +340,7 @@ var InterfaceMaster = (function () {
 						description = "loses";
 					}
 
-					$(".battle-results .summary").html("<div><span class=\"name\">"+pokemon[0].speciesName+"</span> "+description+" in <span class=\"time\">"+durationSeconds+"s</span> with a battle rating of <span class=\"rating star\">"+rating+"</span></div>");
+					$(".battle-results .summary").html("<div class=\"battle-summary-line\"><span class=\"name\">"+pokemon[0].speciesName+"</span> "+description+" in <span class=\"time\">"+durationSeconds+"s</span> with a battle rating of <span class=\"rating\"><span></span>"+rating+"</span></div>");
 
 					if(turnMargin >= 20){
 						turnMargin = "20+";
@@ -364,11 +364,9 @@ var InterfaceMaster = (function () {
 					$(".battle-results .summary").append("<div class=\"turn-margin-description\"><span class=\"turn-margin\" value=\""+attr+"\">" + turnMarginDisplay + "</span> of difference can flip this scenario. " + marginSummary + "</div>");
 
 					var color = battle.getRatingColor(rating);
-					$(".battle-results .summary .rating").first().css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
 
-					if(rating < 500){
-						$(".battle-results .summary .rating").addClass("loss");
-					}
+					$(".battle-results .summary .rating").first().css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
+					$(".battle-results .summary .rating").addClass(battle.getRatingClass(rating));
 
 					$(".continue-container").show();
 					$(".continue-container .name").html(winner.pokemon.speciesName + " (" + winner.hp + " HP, " + winner.energy + " energy)");
@@ -621,6 +619,8 @@ var InterfaceMaster = (function () {
 				$(".rating-table .name-1.name").html(pokemon[0].speciesName.charAt(0)+".");
 				$(".battle-details .name-2").html(pokemon[1].speciesName);
 
+				$(".rating-table .rating, .stats-table .rating").removeClass("win close-win tie close-loss loss");
+
 				if(! sandbox){
 
 					for(var i = 0; i < 3; i++){
@@ -652,14 +652,9 @@ var InterfaceMaster = (function () {
 							rating = b.getBattleRatings()[0];
 							color = b.getRatingColor(rating);
 
-							$(".rating-table .battle-"+i+"-"+n).html(rating);
+							$(".rating-table .battle-"+i+"-"+n).html("<span></span>" + rating);
+							$(".rating-table .battle-"+i+"-"+n).addClass(battle.getRatingClass(rating));
 							$(".rating-table .battle-"+i+"-"+n).css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
-
-							if(rating > 500){
-								$(".rating-table .battle-"+i+"-"+n).addClass("win");
-							} else{
-								$(".rating-table .battle-"+i+"-"+n).removeClass("win");
-							}
 						}
 					}
 
@@ -679,14 +674,9 @@ var InterfaceMaster = (function () {
 					color = battle.getRatingColor(rating);
 
 
-					$(".stats-table .rating.star").eq(i).html(rating);
-					$(".stats-table .rating.star").eq(i).css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
-
-					if(rating > 500){
-						$(".stats-table .rating.star").eq(i).addClass("win");
-					} else{
-						$(".stats-table .rating.star").eq(i).removeClass("win");
-					}
+					$(".stats-table .rating").eq(i).html("<span></span>"+rating);
+					$(".stats-table .rating").eq(i).addClass(battle.getRatingClass(rating));
+					$(".stats-table .rating").eq(i).css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
 				}
 
 				// Gather battle stats from timeline
@@ -2425,13 +2415,15 @@ var InterfaceMaster = (function () {
 			function viewShieldBattle(e){
 				e.preventDefault();
 
+				var $target = $(e.target).closest(".rating");
+
 				if(animating){
 					clearInterval(timelineInterval);
 
 					animating = false;
 				}
 
-				var shields = $(e.target).attr("shields").split(",");
+				var shields = $target.attr("shields").split(",");
 
 
 				pokeSelectors[0].setShields(shields[1]);
@@ -2445,15 +2437,17 @@ var InterfaceMaster = (function () {
 			function viewBulkBattle(e){
 				e.preventDefault();
 
-				if($(e.target).hasClass("best")){
+				var $target = $(e.target).closest(".rating");
+
+				if($target.hasClass("best")){
 					battle = bulkResults.best;
-				} else if($(e.target).hasClass("worst")){
+				} else if($target.hasClass("worst")){
 					battle = bulkResults.worst;
-				} else if($(e.target).hasClass("median")){
+				} else if($target.hasClass("median")){
 					battle = bulkResults.median;
-				} else if($(e.target).hasClass("median-win")){
+				} else if($target.hasClass("median-win")){
 					battle = bulkResults.medianWin;
-				} else if($(e.target).hasClass("median-loss")){
+				} else if($target.hasClass("median-loss")){
 					battle = bulkResults.medianLoss;
 				}
 

@@ -88,10 +88,10 @@ require_once 'header.php';
 			</div>
 			<div class="disclaimer">* Results may differ from actual gameplay depending on connectivity, device, player decisions, or other factors.</div>
 		</div>
-		<button class="bulk-btn button">Explore Win Conditions</button>
-		<div class="summary section white"></div>
 		<div class="tip automated">Hover over or tap the timeline for details. <a href="<?php echo $WEB_ROOT; ?>articles/guide-to-fast-move-registration/">Read more</a> about the timeline.</div>
 		<div class="tip sandbox">Click the circles to edit actions.</div>
+		<div class="summary section white"></div>
+		<button class="bulk-btn button">Explore Win Conditions</button>
 	</div>
 
 	<?php require 'modules/ads/body-728.php'; ?>
@@ -133,21 +133,21 @@ require_once 'header.php';
 						<tr>
 							<td rowspan="4"><span class="name name-1">Pokemon</span></td>
 							<td>0 <span class="shield shield-none"></span></td>
-							<td><a href="#" class="rating star battle-0-0" shields="0,0">100</a></td>
-							<td><a href="#" class="rating star battle-1-0" shields="1,0">100</a></td>
-							<td><a href="#" class="rating star battle-2-0" shields="2,0">100</a></td>
+							<td><a href="#" class="rating margin-6 battle-0-0" shields="0,0">100</a></td>
+							<td><a href="#" class="rating margin-6 battle-1-0" shields="1,0">100</a></td>
+							<td><a href="#" class="rating margin-6 battle-2-0" shields="2,0">100</a></td>
 						</tr>
 						<tr>
 							<td>1 <span class="shield"></span></td>
-							<td><a href="#" class="rating star battle-0-1" shields="0,1">100</a></td>
-							<td><a href="#" class="rating star battle-1-1" shields="1,1">100</a></td>
-							<td><a href="#" class="rating star battle-2-1" shields="2,1">100</a></td>
+							<td><a href="#" class="rating margin-6 battle-0-1" shields="0,1">100</a></td>
+							<td><a href="#" class="rating margin-6 battle-1-1" shields="1,1">100</a></td>
+							<td><a href="#" class="rating margin-6 battle-2-1" shields="2,1">100</a></td>
 						</tr>
 						<tr>
 							<td>2 <span class="shield"></span></td>
-							<td><a href="#" class="rating star battle-0-2" shields="0,2">100</a></td>
-							<td><a href="#" class="rating star battle-1-2" shields="1,2">100</a></td>
-							<td><a href="#" class="rating star battle-2-2" shields="2,2">100</a></td>
+							<td><a href="#" class="rating margin-6 battle-0-2" shields="0,2">100</a></td>
+							<td><a href="#" class="rating margin-6 battle-1-2" shields="1,2">100</a></td>
+							<td><a href="#" class="rating margin-6 battle-2-2" shields="2,2">100</a></td>
 						</tr>
 					</table>
 					<p class="center">Click or tap to view battles.</p>
@@ -226,8 +226,8 @@ require_once 'header.php';
 					</tr>
 					<tr>
 						<td class="label">Battle Rating</td>
-						<td class="stat-battle-rating"><span class="rating star">100</span></td>
-						<td class="stat-battle-rating"><span class="rating star">100</span></td>
+						<td class="stat-battle-rating"><span class="rating">100</span></td>
+						<td class="stat-battle-rating"><span class="rating">100</span></td>
 					</tr>
 					<tr>
 						<td class="label">Total Damage</td>

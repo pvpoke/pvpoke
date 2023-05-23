@@ -1797,7 +1797,8 @@ select, input{
 
 	.bulk-btn{
 		font-size: 14px;
-		margin-top: 30px;
+		margin-top: 10px;
+		margin-bottom: 40px;
 		color:$color-off-white;
 		background:url('../img/histogram-icon.png') no-repeat 8px center, rgb(62, 94, 172) !important;
 		padding-left:30px;
@@ -1808,6 +1809,30 @@ select, input{
 		margin:15px auto;
 		font-size:18px;
 		line-height: 26px;
+
+		.battle-summary-line{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-wrap: wrap;
+
+			span{
+				margin-right:6px;
+			}
+
+			span.time{
+				margin-left: 6px;
+			}
+
+			span.rating{
+				margin: 0 0 0 6px;
+				padding: 2px 4px;
+
+				span{
+					padding: 0;
+				}
+			}
+		}
 
 		span.time,
 		span.name{
@@ -2150,6 +2175,16 @@ a.download-csv{
 			width:36px;
 		}
 	}
+
+	a.rating{
+		padding: 5px 8px;
+
+		&.margin-6{
+			span{
+				margin: 0 6px 0 0;
+			}
+		}
+	}
 }
 
 .timeline{
@@ -2347,6 +2382,10 @@ a.download-csv{
 
 	.status-effect-description{
 		font-size:12px;
+	}
+
+	.rating span{
+		margin: 0 6px 0 0 !important;
 	}
 }
 
@@ -3958,7 +3997,7 @@ a.download-csv{
 	}
 }
 
-a.rating, .rating-container .rating{
+a.rating, .rating-container .rating, .summary .rating, .stats-table .rating{
 	display:flex;
 	padding:5px 12px;
 	border-radius:8px;
@@ -3966,6 +4005,7 @@ a.rating, .rating-container .rating{
 	font-weight: bold;
 	margin: 0 auto;
 	justify-content: center;
+	align-items: center;
 
 	span{
 		display:block;
@@ -3978,6 +4018,7 @@ a.rating, .rating-container .rating{
 
 	&.win{
 		background-color: #1280b6;
+		color: #fff6d4;
 
 		span{
 			border-radius:20px;
@@ -3987,6 +4028,7 @@ a.rating, .rating-container .rating{
 
 	&.close-win{
 		background-color: #2e6bb0;
+		color: #fff6d4;
 
 		span{
 			border-radius:20px;
@@ -4016,6 +4058,7 @@ a.rating, .rating-container .rating{
 
 	&.tie{
 		background-color: rgb(150, 140, 182);
+		color: #f2f2f2;
 
 		span{
 			background-image: url('../img/themes/sunflower/rating-tie.png');
