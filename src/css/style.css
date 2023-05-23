@@ -2291,23 +2291,29 @@ a.download-csv {
   position: relative;
   top: -1px;
 }
+.rank .rating-container {
+  /*a{
+  	display:inline-block;
+  	width:32px;
+  	height:28px;
+  	background-image:url('../img/eye.png');
+  	background-repeat: no-repeat;
+  	background-position: 0 center;
+  	margin-right:10px;
+  	float:right;
+  	opacity: .5;
+  }*/
+}
 .rank .rating-container .rating {
   float: right;
   color: #fff6d4;
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 8px;
   text-align: right;
+  padding: 5px 8px;
 }
-.rank .rating-container a {
-  display: inline-block;
-  width: 32px;
-  height: 28px;
-  background-image: url("../img/eye.png");
-  background-repeat: no-repeat;
-  background-position: 0 center;
-  margin-right: 10px;
-  float: right;
-  opacity: 0.5;
+.rank .rating-container .rating span {
+  margin-right: 6px;
 }
 .rank .moves {
   display: flex;
@@ -2741,7 +2747,7 @@ a.download-csv {
   line-height: 18px;
 }
 .rank .details .detail-section .rating-container .rating {
-  border: 2px solid rgba(0, 0, 0, 0.25);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 .rank .details .multi-battle-link {
   width: 100%;
@@ -3549,7 +3555,6 @@ a.rating span, .rating-container .rating span {
   height: 18px;
   background-size: 100%;
   background-repeat: no-repeat;
-  margin: 0 4px;
 }
 a.rating.win, .rating-container .rating.win {
   background-color: #1280b6;
@@ -3589,8 +3594,19 @@ a.rating.tie span, .rating-container .rating.tie span {
   opacity: 0.75;
 }
 
-a.rating:hover {
-  opacity: 0.8;
+a.rating {
+  position: relative;
+}
+a.rating:hover:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  pointer-events: none;
+  border-radius: 8px;
 }
 
 .article-item {

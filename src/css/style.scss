@@ -2572,9 +2572,14 @@ a.download-csv{
 			background-color: rgba(0,0,0,.6);
 			border-radius: 8px;
 			text-align: right;
+			padding: 5px 8px;
+
+			span{
+				margin-right: 6px;
+			}
 		}
 
-		a{
+		/*a{
 			display:inline-block;
 			width:32px;
 			height:28px;
@@ -2584,7 +2589,7 @@ a.download-csv{
 			margin-right:10px;
 			float:right;
 			opacity: .5;
-		}
+		}*/
 	}
 
 
@@ -3096,7 +3101,7 @@ a.download-csv{
 			}
 
 			.rating-container .rating{
-				border: 2px solid rgba(0,0,0,0.25);
+				box-shadow: 2px 2px 2px rgba(0,0,0,0.2)
 			}
 		}
 
@@ -3969,7 +3974,6 @@ a.rating, .rating-container .rating{
 		height:18px;
 		background-size:100%;
 		background-repeat: no-repeat;
-		margin: 0 4px;
 	}
 
 	&.win{
@@ -4021,9 +4025,18 @@ a.rating, .rating-container .rating{
 }
 
 a.rating{
+	position: relative;
 
-	&:hover{
-		opacity: .8;
+	&:hover:after{
+		content: " ";
+		position:absolute;
+		top: 0;
+		left: 0;
+		width:100%;
+		height: 100%;
+		background:rgba(255,255,255,0.3);
+		pointer-events: none;
+		border-radius: 8px;
 	}
 }
 
