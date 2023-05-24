@@ -1483,7 +1483,7 @@ select, input {
 .battle-results .bulk-btn {
   font-size: 14px;
   margin-top: 10px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   color: #f9fdff;
   background: url("../img/histogram-icon.png") no-repeat 8px center, #3e5eac !important;
   padding-left: 30px;
@@ -1553,13 +1553,9 @@ select, input {
 .battle-results .summary .bulk-outcomes .outcome {
   padding: 0 2px;
 }
-.battle-results .summary .bulk-outcomes a.rating.star {
-  font-size: 12px;
-  padding-left: 30px;
-  background-image: url("../img/starburst_red.png");
-}
-.battle-results .summary .bulk-outcomes a.rating.star.win {
-  background-image: url("../img/starburst.png");
+.battle-results .summary .bulk-outcomes a.rating span {
+  padding: 0;
+  margin-right: 0 6px 0 0;
 }
 .battle-results .summary .bulk-outcomes .outcome-label {
   font-size: 14px;
@@ -1576,6 +1572,7 @@ select, input {
 .battle-results .tip {
   margin: 15px;
   text-align: center;
+  font-size: 12px;
 }
 .battle-results .battle-details, .battle-results.matrix {
   text-align: left;
@@ -3387,6 +3384,14 @@ a.download-csv {
   -o-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
   transform: rotate(270deg);
+}
+.histograms .histogram .label-y-axis {
+  color: #f9fdff;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  padding: 5px 5px 5px 5px;
+  font-weight: bold;
+  font-size: 16px;
 }
 .histograms .histogram .stats {
   text-align: left;

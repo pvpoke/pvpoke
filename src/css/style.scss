@@ -1798,7 +1798,7 @@ select, input{
 	.bulk-btn{
 		font-size: 14px;
 		margin-top: 10px;
-		margin-bottom: 40px;
+		margin-bottom: 10px;
 		color:$color-off-white;
 		background:url('../img/histogram-icon.png') no-repeat 8px center, rgb(62, 94, 172) !important;
 		padding-left:30px;
@@ -1873,13 +1873,10 @@ select, input{
 				padding: 0 2px;
 			}
 
-			a.rating.star{
-				font-size:12px;
-				padding-left:30px;
-				background-image:url("../img/starburst_red.png");
-
-				&.win{
-					background-image:url("../img/starburst.png");
+			a.rating{
+				span{
+					padding: 0;
+					margin-right: 0 6px 0 0;
 				}
 			}
 
@@ -1902,6 +1899,7 @@ select, input{
 	.tip{
 		margin:15px;
 		text-align:center;
+		font-size: 12px;
 	}
 
 	.battle-details,
@@ -3799,6 +3797,15 @@ a.download-csv{
 			top:40%;
 
 			@include transform(rotate(270deg));
+		}
+
+		.label-y-axis{
+			color: $color-off-white;
+		    background-color: rgba(0,0,0,.6);
+		    border-radius: 8px;
+		    padding: 5px 5px 5px 5px;
+		    font-weight: bold;
+			font-size: 16px;
 		}
 
 		.stats{

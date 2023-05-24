@@ -86,7 +86,7 @@ var InterfaceMaster = (function () {
 				$(".battle-btn").on("click", function(e){
 					startBattle();
 				});
-				$(".bulk-btn").on("click", function(e){
+				$(".summary").on("click", ".bulk-btn", function(e){
 					startBattle(true);
 				});
 				$(".continue-container .button").on("click", continueBattle);
@@ -375,6 +375,8 @@ var InterfaceMaster = (function () {
 					$(".continue-container").hide();
 				}
 
+				$(".battle-results .summary").append('<button class="bulk-btn button">Explore Win Conditions</button>');
+
 				// Display bulk sim data
 
 				if(bulkRatings){
@@ -387,50 +389,49 @@ var InterfaceMaster = (function () {
 
 					var bestRating = bulkResults.best.getBattleRatings()[0];
 					var bestColor = battle.getRatingColor(bestRating);
+					var bestClass = battle.getRatingClass(bestRating);
 
 					var medianRating = bulkResults.median.getBattleRatings()[0];
 					var medianColor = battle.getRatingColor(medianRating);
+					var medianClass = battle.getRatingClass(medianRating);
 
 					var worstRating = bulkResults.worst.getBattleRatings()[0];
 					var worstColor = battle.getRatingColor(worstRating);
+					var worstClass = battle.getRatingClass(worstRating);
 
-					$outcomes.append("<div class=\"outcome\"><div class=\"outcome-label\">Worst</div><a href=\"#\" class=\"rating star worst\">"+worstRating+"</a></div>");
-
-					if(worstRating >= 500){
-						$outcomes.find("a.worst").addClass("win");
-					}
+					$outcomes.append("<div class=\"outcome\"><div class=\"outcome-label\">Worst</div><a href=\"#\" class=\"rating worst\"><span></span>"+worstRating+"</a></div>");
 
 					if((bulkResults.medianLoss)&&(bulkResults.medianWin)){
 						var medianLossRating = bulkResults.medianLoss.getBattleRatings()[0];
 						var medianLossColor = battle.getRatingColor(medianLossRating);
+						var medianLossClass = battle.getRatingClass(medianLossRating);
 
-						$outcomes.append("<div class=\"outcome\"><div class=\"outcome-label\">Median<br>Loss</div><a href=\"#\" class=\"rating star median-loss\">"+medianLossRating+"</a></div>");
+						$outcomes.append("<div class=\"outcome\"><div class=\"outcome-label\">Median<br>Loss</div><a href=\"#\" class=\"rating median-loss\"><span></span>"+medianLossRating+"</a></div>");
 						$outcomes.find(".rating.median-loss").css("background-color", "rgb("+medianLossColor[0]+","+medianLossColor[1]+","+medianLossColor[2]+")");
+						$outcomes.find(".rating.median-loss").addClass(medianLossClass);
 					}
 
-					$outcomes.append("<div class=\"outcome\"><div class=\"outcome-label\">Median</div><a href=\"#\" class=\"rating star median\">"+medianRating+"</a></div>");
-
-					if(medianRating >= 500){
-						$outcomes.find("a.median").addClass("win");
-					}
+					$outcomes.append("<div class=\"outcome\"><div class=\"outcome-label\">Median</div><a href=\"#\" class=\"rating median\"><span></span>"+medianRating+"</a></div>");
 
 					if((bulkResults.medianLoss)&&(bulkResults.medianWin)){
 						var medianWinRating = bulkResults.medianWin.getBattleRatings()[0];
 						var medianWinColor = battle.getRatingColor(medianWinRating);
+						var medianWinClass = battle.getRatingClass(medianWinClass);
 
-						$outcomes.append("<div class=\"outcome\"><div class=\"outcome-label\">Median<br>Win</div><a href=\"#\" class=\"rating star median-win win\">"+medianWinRating+"</a></div>");
+						$outcomes.append("<div class=\"outcome\"><div class=\"outcome-label\">Median<br>Win</div><a href=\"#\" class=\"rating median-win win\"><span></span>"+medianWinRating+"</a></div>");
 						$outcomes.find(".rating.median-win").css("background-color", "rgb("+medianWinColor[0]+","+medianWinColor[1]+","+medianWinColor[2]+")");
+						$outcomes.find(".rating.median-win").addClass(medianWinClass);
 					}
 
-					$outcomes.append("<div class=\"outcome\"><div class=\"outcome-label\">Best</div><a href=\"#\" class=\"rating star best\">"+bestRating+"</a></div>");
-
-					if(bestRating >= 500){
-						$outcomes.find("a.best").addClass("win");
-					}
+					$outcomes.append("<div class=\"outcome\"><div class=\"outcome-label\">Best</div><a href=\"#\" class=\"rating best\"><span></span>"+bestRating+"</a></div>");
 
 					$outcomes.find(".rating.best").css("background-color", "rgb("+bestColor[0]+","+bestColor[1]+","+bestColor[2]+")");
 					$outcomes.find(".rating.median").css("background-color", "rgb("+medianColor[0]+","+medianColor[1]+","+medianColor[2]+")");
 					$outcomes.find(".rating.worst").css("background-color", "rgb("+worstColor[0]+","+worstColor[1]+","+worstColor[2]+")");
+
+					$outcomes.find(".rating.best").addClass(bestClass);
+					$outcomes.find(".rating.median").addClass(medianClass);
+					$outcomes.find(".rating.worst").addClass(worstClass);
 
 					$(".battle-results .bulk-summary").append($outcomes);
 

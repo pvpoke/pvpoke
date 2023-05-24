@@ -88,10 +88,9 @@ require_once 'header.php';
 			</div>
 			<div class="disclaimer">* Results may differ from actual gameplay depending on connectivity, device, player decisions, or other factors.</div>
 		</div>
+		<div class="summary section white"></div>
 		<div class="tip automated">Hover over or tap the timeline for details. <a href="<?php echo $WEB_ROOT; ?>articles/guide-to-fast-move-registration/">Read more</a> about the timeline.</div>
 		<div class="tip sandbox">Click the circles to edit actions.</div>
-		<div class="summary section white"></div>
-		<button class="bulk-btn button">Explore Win Conditions</button>
 	</div>
 
 	<?php require 'modules/ads/body-728.php'; ?>

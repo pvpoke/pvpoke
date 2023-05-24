@@ -91,7 +91,7 @@ function BattleHistogram($element){
 			moveStr += ", " + pokemon.chargedMoves[i].name;
 		}
 
-		var $histogram = $("<div><h2>"+pokemon.speciesName+"</h2><div class=\"move-label\">"+moveStr+"</div><div class=\"chart\"></div><div class=\"x-axis\"><div>0</div><div>500</div><div>1000</div></div><div class=\"label rating star\">Battle Rating (Avg: <span class=\"br-avg\">500</span>)</div><div class=\"label-x-axis\">Matches</div><div class=\"button previous\">See Previous</div><div class=\"stats\"></div></div>");
+		var $histogram = $("<div><h2>"+pokemon.speciesName+"</h2><div class=\"move-label\">"+moveStr+"</div><div class=\"chart\"></div><div class=\"x-axis\"><div>0</div><div>500</div><div>1000</div></div><div class=\"label label-y-axis\">Battle Rating (Avg: <span class=\"br-avg\">500</span>)</div><div class=\"label-x-axis\">Matches</div><div class=\"button previous\">See Previous</div><div class=\"stats\"></div></div>");
 
 		var scale = Math.floor(ratings.length / 4);
 
