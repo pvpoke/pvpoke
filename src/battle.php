@@ -125,25 +125,25 @@ require_once 'header.php';
 						<tr>
 							<td></td>
 							<td></td>
-							<td>0 <span class="shield shield-none"></span></td>
-							<td>1 <span class="shield"></span></td>
-							<td>2 <span class="shield"></span></td>
+							<td><div class="x-axis">0 <span class="shield shield-none"></span></div></td>
+							<td><div class="x-axis">1 <span class="shield"></span></div></td>
+							<td><div class="x-axis">2 <span class="shield"></span></div></td>
 						</tr>
 						<tr>
 							<td rowspan="4"><span class="name name-1">Pokemon</span></td>
-							<td>0 <span class="shield shield-none"></span></td>
+							<td class="y-axis">0 <span class="shield shield-none"></span></td>
 							<td><a href="#" class="rating margin-6 battle-0-0" shields="0,0">100</a></td>
 							<td><a href="#" class="rating margin-6 battle-1-0" shields="1,0">100</a></td>
 							<td><a href="#" class="rating margin-6 battle-2-0" shields="2,0">100</a></td>
 						</tr>
 						<tr>
-							<td>1 <span class="shield"></span></td>
+							<td class="y-axis">1 <span class="shield"></span></td>
 							<td><a href="#" class="rating margin-6 battle-0-1" shields="0,1">100</a></td>
 							<td><a href="#" class="rating margin-6 battle-1-1" shields="1,1">100</a></td>
 							<td><a href="#" class="rating margin-6 battle-2-1" shields="2,1">100</a></td>
 						</tr>
 						<tr>
-							<td>2 <span class="shield"></span></td>
+							<td class="y-axis">2 <span class="shield"></span></td>
 							<td><a href="#" class="rating margin-6 battle-0-2" shields="0,2">100</a></td>
 							<td><a href="#" class="rating margin-6 battle-1-2" shields="1,2">100</a></td>
 							<td><a href="#" class="rating margin-6 battle-2-2" shields="2,2">100</a></td>

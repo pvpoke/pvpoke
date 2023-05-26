@@ -409,7 +409,7 @@ footer{
 
 		h2{
 			margin:0;
-			font-size:32px;
+			font-size:24px;
 			color:$color-off-white;
 
 			&.no-logo{
@@ -1876,7 +1876,7 @@ select, input{
 			a.rating{
 				span{
 					padding: 0;
-					margin-right: 0 6px 0 0;
+					margin: 0 6px 0 0;
 				}
 			}
 
@@ -2112,11 +2112,11 @@ select, input{
 				}
 
 				&.win{
-					background: rgb(27, 121, 180);
+					background: #1b66b4;
 				}
 
 				&.lose{
-					background: rgb(143, 32, 153);
+					background: rgb(142, 41, 138);
 				}
 			}
 		}
@@ -2143,6 +2143,7 @@ a.download-csv{
 	  color: #eee;
 	  font-size:14px;
 	  font-weight:normal;
+	  z-index: 11;
 	}
 
 	tbody th {
@@ -2152,6 +2153,7 @@ a.download-csv{
 	  background: #fcfcfc;
   	  text-align:center;
 	  padding:2px 5px;
+	  z-index: 10;
 	}
 
 	tr:nth-of-type(2n) th{
@@ -2181,6 +2183,33 @@ a.download-csv{
 			span{
 				margin: 0 6px 0 0;
 			}
+		}
+	}
+}
+
+.matchup-detail-section .rating-table{
+	td.y-axis{
+		display: flex;
+	    align-items: center;
+	    justify-content: space-between;
+	    height: 30px;
+		width: 30px;
+
+
+		.shield{
+			height:30px;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+
+	.x-axis{
+		display: flex;
+	    justify-content: center;
+	    align-items: center;
+
+		.shield{
+			margin-left: 4px;
 		}
 	}
 }
@@ -3395,9 +3424,10 @@ a.download-csv{
 .rankings-container > .rank > .rating-container > .rating{
 	background-image:none;
 	padding:5px;
-	width:42px;
+	width:61px;
 	text-align: center;
 	font-weight: bold;
+	box-sizing: border-box;
 }
 
 .ranking-categories{
@@ -3912,13 +3942,17 @@ a.download-csv{
 		}
 
 		a.rating{
-			width: 30px;
+			width: 70px;
+			box-sizing: border-box;
 		}
 
 		&.matrix-table{
 
 			a{
-				padding: 5px 5px 5px 36px;
+				padding: 5px;
+				span{
+					margin: 0 6px 0 0;
+				}
 			}
 
 			.matrix-record,
@@ -3929,12 +3963,13 @@ a.download-csv{
 			}
 
 			.rating.average{
-				padding: 5px 5px 5px 27px;
-				width: 60px;
+				padding: 5px;
+				width: 85px;
+				box-sizing: border-box;
+				pointer-events: none;
 
 				span{
-					width:auto;
-					background:none !important;
+					margin: 0 6px 0 0;
 				}
 			}
 		}
@@ -4088,6 +4123,10 @@ a.rating{
 		pointer-events: none;
 		border-radius: 8px;
 	}
+}
+
+.rank a.rating{
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .article-item{
@@ -5313,6 +5352,13 @@ a.pokebattler{
 	    background: rgba(0, 0, 0, 0.15);
 	}
 }
+
+@media only screen and (min-width: 481px) {
+	.home a.button h2{
+		font-size: 32px;
+	}
+}
+
 
 @media only screen and (min-width: 721px) {
 	header .menu{

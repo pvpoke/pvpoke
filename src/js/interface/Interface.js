@@ -416,9 +416,9 @@ var InterfaceMaster = (function () {
 					if((bulkResults.medianLoss)&&(bulkResults.medianWin)){
 						var medianWinRating = bulkResults.medianWin.getBattleRatings()[0];
 						var medianWinColor = battle.getRatingColor(medianWinRating);
-						var medianWinClass = battle.getRatingClass(medianWinClass);
+						var medianWinClass = battle.getRatingClass(medianWinRating);
 
-						$outcomes.append("<div class=\"outcome\"><div class=\"outcome-label\">Median<br>Win</div><a href=\"#\" class=\"rating median-win win\"><span></span>"+medianWinRating+"</a></div>");
+						$outcomes.append("<div class=\"outcome\"><div class=\"outcome-label\">Median<br>Win</div><a href=\"#\" class=\"rating median-win\"><span></span>"+medianWinRating+"</a></div>");
 						$outcomes.find(".rating.median-win").css("background-color", "rgb("+medianWinColor[0]+","+medianWinColor[1]+","+medianWinColor[2]+")");
 						$outcomes.find(".rating.median-win").addClass(medianWinClass);
 					}
@@ -1061,7 +1061,12 @@ var InterfaceMaster = (function () {
 						battleLink += poke.startHp +  "/" + poke.startEnergy + "/";
 					}
 
-					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star\">"+r.opRating+"</span></div><a target=\"_blank\" href=\""+battleLink+"\"></a><div class=\"clear\"></div></div><div class=\"details\"></div>");
+					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span></div><div class=\"rating-container\"><a class=\"rating\" target=\"_blank\" href=\""+battleLink+"\"><span></span>"+r.opRating+"</span></a><div class=\"clear\"></div></div><div class=\"details\"></div>");
+
+					var ratingColor = battle.getRatingColor(r.opRating);
+					var ratingClass = battle.getRatingClass(r.opRating);
+					$el.find(".rating").addClass(ratingClass);
+					$el.find(".rating").css("background", "rgb("+ratingColor[0]+","+ratingColor[1]+","+ratingColor[2]+")");
 
 					// Add moveset details if set
 
@@ -1254,11 +1259,12 @@ var InterfaceMaster = (function () {
 						r.matchups[n].difference = false; // Store whether or not this matchups is different or flipped from the base value
 						r.matchups[n].matchupIndex = n;
 
-						var $cell = $("<td><a class=\"rating star\" href=\"#\" target=\"blank\"><span></span></a></td>");
+						var $cell = $("<td><a class=\"rating\" href=\"#\" target=\"blank\"><span></span></a></td>");
 						var rating = r.matchups[n].rating;
 						var displayStat = r.matchups[n].rating;
 						var baseValue = rankings[0].matchups[n].rating;
 						var color = battle.getRatingColor(rating);
+						var ratingClass = battle.getRatingClass(rating);
 
 						// Determine values to display and any flipped matchups
 						switch(self.matrixMode){
@@ -1339,12 +1345,9 @@ var InterfaceMaster = (function () {
 							}
 						}
 
-						$cell.find("a").html(displayStat);
+						$cell.find("a").html("<span></span>"+displayStat);
 						$cell.find("a").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
-
-						if(rating > 500){
-							$cell.find("a").addClass("win");
-						}
+						$cell.find("a").addClass(ratingClass);
 
 						var pokeStr = pokemon.generateURLPokeStr();
 						var moveStr = pokemon.generateURLMoveStr();
@@ -1373,14 +1376,11 @@ var InterfaceMaster = (function () {
 
 					if(self.matrixMode == "battle"){
 						var color = battle.getRatingColor(displayAverage);
-						var $cell = $("<td><a class=\"rating average star\" target=\"blank\"><span>"+displayAverage+"</span></a></td>");
+						var ratingClass = battle.getRatingClass(displayAverage);
+						var $cell = $("<td><a class=\"rating "+ratingClass + " average\" target=\"blank\"><span></span>"+displayAverage+"</a></td>");
 
 						$cell.find("a").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
 						$row.append($cell);
-
-						if(displayAverage > 500){
-							$cell.find("a").addClass("win");
-						}
 					} else{
 						var $cell = $("<td class=\"matrix-average\">"+displayAverage+"</td>");
 						$row.append($cell);
