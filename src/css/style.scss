@@ -3942,13 +3942,14 @@ a.download-csv{
 		}
 
 		a.rating{
-			width: 70px;
+			width: 55px;
 			box-sizing: border-box;
 		}
 
 		&.matrix-table{
 
-			a{
+			a.rating{
+				width:70px;
 				padding: 5px;
 				span{
 					margin: 0 6px 0 0;
@@ -4084,7 +4085,7 @@ a.rating, .rating-container .rating, .summary .rating, .stats-table .rating{
 		color: #ffd3f4;
 
 		span{
-			background-image: url('../img/themes/sunflower/rating-close-loss.png');
+			background-image: url('../img/themes/sunflower/rating-close-loss.png?v=7');
 			opacity: 0.9;
 		}
 	}
@@ -4094,12 +4095,12 @@ a.rating, .rating-container .rating, .summary .rating, .stats-table .rating{
 		color: #ffc9f1;
 
 		span{
-			background-image: url('../img/themes/sunflower/rating-loss.png');
+			background-image: url('../img/themes/sunflower/rating-loss.png?v=7');
 		}
 	}
 
 	&.tie{
-		background-color: rgb(150, 140, 182);
+		background-color: rgb(150, 140, 182) !important;
 		color: #f2f2f2;
 
 		span{

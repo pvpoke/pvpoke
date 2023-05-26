@@ -3494,13 +3494,14 @@ a.download-csv {
   text-align: center;
 }
 .article .rating-table a.rating {
-  width: 70px;
+  width: 55px;
   box-sizing: border-box;
 }
-.article .rating-table.matrix-table a {
+.article .rating-table.matrix-table a.rating {
+  width: 70px;
   padding: 5px;
 }
-.article .rating-table.matrix-table a span {
+.article .rating-table.matrix-table a.rating span {
   margin: 0 6px 0 0;
 }
 .article .rating-table.matrix-table .matrix-record,
@@ -3642,7 +3643,7 @@ a.rating.close-loss, .rating-container .rating.close-loss, .summary .rating.clos
   color: #ffd3f4;
 }
 a.rating.close-loss span, .rating-container .rating.close-loss span, .summary .rating.close-loss span, .stats-table .rating.close-loss span {
-  background-image: url("../img/themes/sunflower/rating-close-loss.png");
+  background-image: url("../img/themes/sunflower/rating-close-loss.png?v=7");
   opacity: 0.9;
 }
 a.rating.loss, .rating-container .rating.loss, .summary .rating.loss, .stats-table .rating.loss {
@@ -3650,10 +3651,10 @@ a.rating.loss, .rating-container .rating.loss, .summary .rating.loss, .stats-tab
   color: #ffc9f1;
 }
 a.rating.loss span, .rating-container .rating.loss span, .summary .rating.loss span, .stats-table .rating.loss span {
-  background-image: url("../img/themes/sunflower/rating-loss.png");
+  background-image: url("../img/themes/sunflower/rating-loss.png?v=7");
 }
 a.rating.tie, .rating-container .rating.tie, .summary .rating.tie, .stats-table .rating.tie {
-  background-color: #968cb6;
+  background-color: #968cb6 !important;
   color: #f2f2f2;
 }
 a.rating.tie span, .rating-container .rating.tie span, .summary .rating.tie span, .stats-table .rating.tie span {

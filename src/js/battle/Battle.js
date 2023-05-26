@@ -2917,12 +2917,12 @@ function Battle(){
 
 	this.getRatingColor = function(rating){
 		var winColors = [
-			[85,72,166],
-			[12,111,200]
+			[74,85,169],
+			[11,118,215]
 		]; // rgb
 		var lossColors = [
 			[199,12,112],
-			[91,68,162]
+			[111,56,160]
 		]; // rgb
 
 		// Apply a gradient to bar color
