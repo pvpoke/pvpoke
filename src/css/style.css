@@ -3603,7 +3603,8 @@ a.download-csv {
   color: #946000;
 }
 
-a.rating, .rating-container .rating, .summary .rating, .stats-table .rating {
+a.rating, .rating-container .rating, .summary .rating,
+.stats-table .rating, .train-table .rating {
   display: flex;
   padding: 5px 12px;
   border-radius: 8px;
@@ -3613,7 +3614,8 @@ a.rating, .rating-container .rating, .summary .rating, .stats-table .rating {
   justify-content: center;
   align-items: center;
 }
-a.rating span, .rating-container .rating span, .summary .rating span, .stats-table .rating span {
+a.rating span, .rating-container .rating span, .summary .rating span,
+.stats-table .rating span, .train-table .rating span {
   display: block;
   margin: 0 auto;
   width: 18px;
@@ -3621,43 +3623,53 @@ a.rating span, .rating-container .rating span, .summary .rating span, .stats-tab
   background-size: 100%;
   background-repeat: no-repeat;
 }
-a.rating.win, .rating-container .rating.win, .summary .rating.win, .stats-table .rating.win {
+a.rating.win, .rating-container .rating.win, .summary .rating.win,
+.stats-table .rating.win, .train-table .rating.win {
   background-color: #1280b6;
   color: #fff6d4;
 }
-a.rating.win span, .rating-container .rating.win span, .summary .rating.win span, .stats-table .rating.win span {
+a.rating.win span, .rating-container .rating.win span, .summary .rating.win span,
+.stats-table .rating.win span, .train-table .rating.win span {
   border-radius: 20px;
   background: #fff6d4;
 }
-a.rating.close-win, .rating-container .rating.close-win, .summary .rating.close-win, .stats-table .rating.close-win {
+a.rating.close-win, .rating-container .rating.close-win, .summary .rating.close-win,
+.stats-table .rating.close-win, .train-table .rating.close-win {
   background-color: #2e6bb0;
   color: #fff6d4;
 }
-a.rating.close-win span, .rating-container .rating.close-win span, .summary .rating.close-win span, .stats-table .rating.close-win span {
+a.rating.close-win span, .rating-container .rating.close-win span, .summary .rating.close-win span,
+.stats-table .rating.close-win span, .train-table .rating.close-win span {
   border-radius: 20px;
   border: 2px solid #a5d6fb;
   box-sizing: border-box;
 }
-a.rating.close-loss, .rating-container .rating.close-loss, .summary .rating.close-loss, .stats-table .rating.close-loss {
+a.rating.close-loss, .rating-container .rating.close-loss, .summary .rating.close-loss,
+.stats-table .rating.close-loss, .train-table .rating.close-loss {
   background-color: #a91c7e;
   color: #ffd3f4;
 }
-a.rating.close-loss span, .rating-container .rating.close-loss span, .summary .rating.close-loss span, .stats-table .rating.close-loss span {
+a.rating.close-loss span, .rating-container .rating.close-loss span, .summary .rating.close-loss span,
+.stats-table .rating.close-loss span, .train-table .rating.close-loss span {
   background-image: url("../img/themes/sunflower/rating-close-loss.png?v=7");
   opacity: 0.9;
 }
-a.rating.loss, .rating-container .rating.loss, .summary .rating.loss, .stats-table .rating.loss {
+a.rating.loss, .rating-container .rating.loss, .summary .rating.loss,
+.stats-table .rating.loss, .train-table .rating.loss {
   background-color: #c71b71;
   color: #ffc9f1;
 }
-a.rating.loss span, .rating-container .rating.loss span, .summary .rating.loss span, .stats-table .rating.loss span {
+a.rating.loss span, .rating-container .rating.loss span, .summary .rating.loss span,
+.stats-table .rating.loss span, .train-table .rating.loss span {
   background-image: url("../img/themes/sunflower/rating-loss.png?v=7");
 }
-a.rating.tie, .rating-container .rating.tie, .summary .rating.tie, .stats-table .rating.tie {
+a.rating.tie, .rating-container .rating.tie, .summary .rating.tie,
+.stats-table .rating.tie, .train-table .rating.tie {
   background-color: #968cb6 !important;
   color: #f2f2f2;
 }
-a.rating.tie span, .rating-container .rating.tie span, .summary .rating.tie span, .stats-table .rating.tie span {
+a.rating.tie span, .rating-container .rating.tie span, .summary .rating.tie span,
+.stats-table .rating.tie span, .train-table .rating.tie span {
   background-image: url("../img/themes/sunflower/rating-tie.png");
   opacity: 0.75;
 }
@@ -3678,7 +3690,7 @@ a.rating:hover:after {
 }
 
 .rank a.rating {
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
 .article-item {
@@ -4922,6 +4934,15 @@ a.pokebattler {
 .train-table tr:nth-child(2n) {
   background: rgba(0, 0, 0, 0.15);
 }
+.train-table .rating {
+  width: 80px;
+  padding: 5px;
+  margin: 0;
+  box-sizing: border-box;
+}
+.train-table .rating span {
+  margin: 0 6px 0 0;
+}
 
 @media only screen and (min-width: 481px) {
   .home a.button h2 {
@@ -5072,10 +5093,10 @@ a.pokebattler {
     font-size: 20px;
     padding: 4px 20px 4px 0;
   }
-  .train-table td.individual-score .score,
-.train-table td.team-score .score,
-.train-table td.usage .score {
-    min-width: 60px;
+  .train-table td.individual-score .rating,
+.train-table td.team-score .rating,
+.train-table td.usage .rating {
+    min-width: 90px;
   }
 }
 #dev-panel {

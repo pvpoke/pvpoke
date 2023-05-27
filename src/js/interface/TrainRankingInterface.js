@@ -104,11 +104,8 @@ var InterfaceMaster = (function () {
 					$row.find(".name").html(pokemon.speciesName);
 					$row.find(".moves").html(r.pokemon.split(" ")[1]);
 					$row.find(".individual-score").html(r.individualScore.toFixed(1) + '%');
-					$row.find(".team-score .score").html(r.teamScore.toFixed(1));
-
-					if(r.teamScore >= 500){
-						$row.find(".team-score .score").addClass("win");
-					}
+					$row.find(".team-score .rating").html('<span></span>'+r.teamScore.toFixed(1));
+					$row.find(".team-score .rating").addClass(battle.getRatingClass(r.teamScore));
 
 					// Normalize rating so it has more visual effect
 					var colorRating = 500 + ((r.teamScore - 500) * 8);
@@ -120,7 +117,7 @@ var InterfaceMaster = (function () {
 					}
 
 					var color = battle.getRatingColor(colorRating);
-					$row.find(".team-score .score").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
+					$row.find(".team-score .rating").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
 
 					var usage = (r.games / (data.properties.totalPerformers / 3) * 100).toFixed(1)+"%"
 					$row.find(".usage").html(usage);
@@ -214,11 +211,9 @@ var InterfaceMaster = (function () {
 					}
 
 					$row.find(".link a").attr("href", teamURL);
-					$row.find(".team-score .score").html(r.teamScore.toFixed(1));
+					$row.find(".team-score .rating").html('<span></span>'+r.teamScore.toFixed(1));
+					$row.find(".team-score .rating").addClass(battle.getRatingClass(r.teamScore));
 
-					if(r.teamScore >= 500){
-						$row.find(".team-score .score").addClass("win");
-					}
 
 					// Normalize rating so it has more visual effect
 					var colorRating = 500 + ((r.teamScore - 500) * 8);
@@ -232,7 +227,7 @@ var InterfaceMaster = (function () {
 					var color = battle.getRatingColor(colorRating);
 					var usage = ((r.games / data.properties.totalTeams)*100).toFixed(1)+"%";
 
-					$row.find(".team-score .score").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
+					$row.find(".team-score .rating").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
 					$row.find(".usage").html(usage);
 
 					if(r.games < 30){

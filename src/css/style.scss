@@ -4040,7 +4040,8 @@ a.download-csv{
 	}
 }
 
-a.rating, .rating-container .rating, .summary .rating, .stats-table .rating{
+a.rating, .rating-container .rating, .summary .rating,
+.stats-table .rating, .train-table .rating{
 	display:flex;
 	padding:5px 12px;
 	border-radius:8px;
@@ -4127,7 +4128,7 @@ a.rating{
 }
 
 .rank a.rating{
-	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.25);
 }
 
 .article-item{
@@ -5352,6 +5353,17 @@ a.pokebattler{
 	tr:nth-child(2n) {
 	    background: rgba(0, 0, 0, 0.15);
 	}
+
+	.rating{
+		width: 80px;
+		padding: 5px;
+		margin: 0;
+		box-sizing: border-box;
+
+		span{
+			margin: 0 6px 0 0;
+		}
+	}
 }
 
 @media only screen and (min-width: 481px) {
@@ -5528,8 +5540,8 @@ a.pokebattler{
 		    font-size: 20px;
 			padding: 4px 20px 4px 0;
 
-			.score{
-				min-width: 60px;
+			.rating{
+				min-width: 90px;
 			}
 		}
 	}
