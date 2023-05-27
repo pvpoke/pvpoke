@@ -1,5 +1,5 @@
 <div class="pokebox">
-	<a href="#" class="open-pokebox"><span>Import from</span><span>Pokebox<span></a>
+	<a href="#" class="open-pokebox button-highlight"><span>Import from</span><span>Pokebox<span></a>
 
 	<div class="pokebox-import hide">
 		<div class="pokebox-on hide">
