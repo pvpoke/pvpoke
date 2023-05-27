@@ -236,9 +236,9 @@ if(! isset($OG_IMAGE)){
 					</a>
 					<div class="submenu">
 						<div class="submenu-wrap">
-							<a href="<?php echo $WEB_ROOT; ?>rankings/all/1500/overall/">Great League</a>
-							<a href="<?php echo $WEB_ROOT; ?>rankings/all/2500/overall/">Ultra League</a>
-							<a href="<?php echo $WEB_ROOT; ?>rankings/all/10000/overall/">Master League</a>
+							<a class="nav-great" href="<?php echo $WEB_ROOT; ?>rankings/all/1500/overall/">Great League</a>
+							<a class="nav-ultra" href="<?php echo $WEB_ROOT; ?>rankings/all/2500/overall/">Ultra League</a>
+							<a class="nav-master" href="<?php echo $WEB_ROOT; ?>rankings/all/10000/overall/">Master League</a>
 							<a href="<?php echo $WEB_ROOT; ?>custom-rankings/">Custom Rankings</a>
 						</div>
 					</div>

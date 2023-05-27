@@ -201,7 +201,7 @@ header{
 
 				&.active{
 					display:block;
-					max-height: 300px;
+					max-height: 600px;
 					pointer-events: auto;
 				}
 			}
@@ -224,6 +224,24 @@ header{
 				    top: 4px;
 				    padding: 13px 12px;
 				    background-position: center;
+				}
+			}
+
+			.icon-rankings + .submenu a{
+				padding-left: 24px;
+				background-repeat: no-repeat;
+				background-position: 0 center;
+
+				&.nav-great{
+					background-image: url('../img/themes/sunflower/nav-league-great.png');
+				}
+
+				&.nav-ultra{
+					background-image: url('../img/themes/sunflower/nav-league-ultra.png');
+				}
+
+				&.nav-master{
+					background-image: url('../img/themes/sunflower/nav-league-master.png');
 				}
 			}
 		}
@@ -5460,10 +5478,6 @@ a.pokebattler{
 				font-size:14px;
 			}
 
-			.submenu.active{
-				height: 230px !important;
-			}
-
 			& > a span{
 				right: auto !important;
 				left: 50% !important;
@@ -5482,17 +5496,16 @@ a.pokebattler{
 		}
 
 		.submenu{
-			padding-top:10px;
-			max-width:200px;
+			padding-top:15px;
 			position: absolute;
 			padding-left: 20px;
-			top: 23px;
+			top: 18px;
 			pointer-events: none;
 			white-space: nowrap;
 
-
 			&.active{
-				height:190px !important;
+				padding-bottom: 100px;
+				padding-right: 50px;
 			}
 
 			.submenu-wrap{
@@ -5505,7 +5518,6 @@ a.pokebattler{
 			a{
 				float:none;
 				margin: 0;
-				max-width: 150px;
 				color: $color-off-white;
 				font-size: 14px;
 				padding: 10px 8px;

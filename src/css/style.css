@@ -108,7 +108,7 @@ header .menu .parent-menu .submenu {
 }
 header .menu .parent-menu .submenu.active {
   display: block;
-  max-height: 300px;
+  max-height: 600px;
   pointer-events: auto;
 }
 header .menu .parent-menu > a {
@@ -128,6 +128,20 @@ header .menu .parent-menu > a span {
   top: 4px;
   padding: 13px 12px;
   background-position: center;
+}
+header .menu .parent-menu .icon-rankings + .submenu a {
+  padding-left: 24px;
+  background-repeat: no-repeat;
+  background-position: 0 center;
+}
+header .menu .parent-menu .icon-rankings + .submenu a.nav-great {
+  background-image: url("../img/themes/sunflower/nav-league-great.png");
+}
+header .menu .parent-menu .icon-rankings + .submenu a.nav-ultra {
+  background-image: url("../img/themes/sunflower/nav-league-ultra.png");
+}
+header .menu .parent-menu .icon-rankings + .submenu a.nav-master {
+  background-image: url("../img/themes/sunflower/nav-league-master.png");
 }
 header .hamburger .meat {
   width: 30px;
@@ -5037,9 +5051,6 @@ a.pokebattler {
   header .menu .parent-menu .submenu .icon-rankings {
     font-size: 14px;
   }
-  header .menu .parent-menu .submenu.active {
-    height: 230px !important;
-  }
   header .menu .parent-menu > a span {
     right: auto !important;
     left: 50% !important;
@@ -5056,16 +5067,16 @@ a.pokebattler {
     transition: background-color 0s ease-out 0s;
   }
   header .menu .submenu {
-    padding-top: 10px;
-    max-width: 200px;
+    padding-top: 15px;
     position: absolute;
     padding-left: 20px;
-    top: 23px;
+    top: 18px;
     pointer-events: none;
     white-space: nowrap;
   }
   header .menu .submenu.active {
-    height: 190px !important;
+    padding-bottom: 100px;
+    padding-right: 50px;
   }
   header .menu .submenu .submenu-wrap {
     padding: 2px 5px;
@@ -5076,7 +5087,6 @@ a.pokebattler {
   header .menu .submenu a {
     float: none;
     margin: 0;
-    max-width: 150px;
     color: #f9fdff;
     font-size: 14px;
     padding: 10px 8px;
