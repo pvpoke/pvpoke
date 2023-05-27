@@ -405,6 +405,10 @@ footer{
 			&.btn-icon-heart{
 				background-image: url('../img/themes/sunflower/nav-heart-white.png');
 			}
+
+			&.btn-icon-tera{
+				background-image: url('../img/themes/sunflower/nav-tera-white.png');
+			}
 		}
 
 		h2{
@@ -426,17 +430,10 @@ footer{
 			background-image: url('../img/tera-button-bg.jpg') !important;
 			background-size: cover !important;
 			background-repeat: no-repeat;
-			color: #fff;
+			color: $color-off-white;
 
 			h2{
-				color: #fff !important;
-				background-image:url('../img/icon_tera.png');
 				font-size: 24px;
-			    padding-left: 80px;
-			    min-height: 46px;
-			    margin-bottom: 10px;
-			    background-size: 60px;
-			    background-position: 0 0;
 			}
 		}
 	}
@@ -1452,6 +1449,7 @@ select, input{
 }
 
 .button{
+	position: relative;
 	display:block;
 	font-size:18px;
 	margin:10px auto;
@@ -1461,6 +1459,35 @@ select, input{
     cursor: pointer;
 	text-decoration: none;
 	color:#000;
+	box-shadow: 2px 2px 2px rgba(0, 0, 0, .1);
+
+	@include transition(box-shadow, .25s, ease-out, 0s);
+
+	&:after{
+		content: " ";
+		position:absolute;
+		top: 0;
+		left: 0;
+		width:100%;
+		height: 100%;
+		background:rgba(255,255,255,0);
+		pointer-events: none;
+		border-radius: 50px;
+
+		@include transition(background-color, .25s, ease-out, 0s);
+	}
+
+	&:hover{
+		box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+
+		@include transition(box-shadow, 0s, ease-out, 0s);
+
+		&:after{
+			background-color:rgba(255,255,255,0.1);
+
+			@include transition(background-color, 0s, ease-out, 0s);
+		}
+	}
 
 	@include gradient($color-gold, $color-gold-dark);
 
@@ -4114,16 +4141,33 @@ a.rating, .rating-container .rating, .summary .rating,
 a.rating{
 	position: relative;
 
-	&:hover:after{
+	@include transition(box-shadow, .25s, ease-out, 0s);
+
+	&:after{
 		content: " ";
 		position:absolute;
 		top: 0;
 		left: 0;
 		width:100%;
 		height: 100%;
-		background:rgba(255,255,255,0.3);
+		background:rgba(255,255,255,0);
 		pointer-events: none;
 		border-radius: 8px;
+
+		@include transition(background-color, .25s, ease-out, 0s);
+	}
+
+	&:hover{
+		box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.55) !important;
+
+		@include transition(box-shadow, 0s, ease-out, 0s);
+
+		&:after{
+			background:rgba(255,255,255,0.1);
+
+			@include transition(background-color, 0s, ease-out, 0s);
+		}
+
 	}
 }
 

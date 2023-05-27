@@ -58,8 +58,13 @@
 	<h3>Pokemon Scarlet &amp; Violet</h3>
 
 	<a href="<?php echo $WEB_ROOT; ?>tera/" class="button tera-button">
-		<h2 class="icon-tera">Tera Raid Counter Calculator</h2>
-		<p>Take on Tera Raid bosses with this tool to look up Pokemon with the best type matchups.</p>
+		<span class="btn-content-wrap">
+			<span class="btn-icon btn-icon-tera"></span>
+			<span class="btn-label">
+				<h2>Tera Raid Counter Calculator</h2>
+				<p>Take on Tera Raid bosses with this tool to look up Pokemon with the best type matchups.</p>
+			</span>
+		</span>
 	</a>
 
 	<?php require 'modules/ads/body-728.php'; ?>

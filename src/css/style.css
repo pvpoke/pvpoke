@@ -286,6 +286,9 @@ footer a.domz-link {
 .home a.button .btn-icon.btn-icon-heart {
   background-image: url("../img/themes/sunflower/nav-heart-white.png");
 }
+.home a.button .btn-icon.btn-icon-tera {
+  background-image: url("../img/themes/sunflower/nav-tera-white.png");
+}
 .home a.button h2 {
   margin: 0;
   font-size: 24px;
@@ -302,17 +305,10 @@ footer a.domz-link {
   background-image: url("../img/tera-button-bg.jpg") !important;
   background-size: cover !important;
   background-repeat: no-repeat;
-  color: #fff;
+  color: #f9fdff;
 }
 .home a.button.tera-button h2 {
-  color: #fff !important;
-  background-image: url("../img/icon_tera.png");
   font-size: 24px;
-  padding-left: 80px;
-  min-height: 46px;
-  margin-bottom: 10px;
-  background-size: 60px;
-  background-position: 0 0;
 }
 
 .icon-battle {
@@ -1156,6 +1152,7 @@ select, input {
 }
 
 .button {
+  position: relative;
   display: block;
   font-size: 18px;
   margin: 10px auto;
@@ -1165,6 +1162,11 @@ select, input {
   cursor: pointer;
   text-decoration: none;
   color: #000;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  -webkit-transition: box-shadow 0.25s ease-out 0s;
+  -moz-transition: box-shadow 0.25s ease-out 0s;
+  -o-transition: box-shadow 0.25s ease-out 0s;
+  transition: box-shadow 0.25s ease-out 0s;
   background: #f9a01b;
   /* Old browsers */
   background: -moz-linear-gradient(top, #ffcf01 30%, #f9a01b 99%) !important;
@@ -1173,6 +1175,35 @@ select, input {
   /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #ffcf01 30%, #f9a01b 99%) !important;
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.button:after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0);
+  pointer-events: none;
+  border-radius: 50px;
+  -webkit-transition: background-color 0.25s ease-out 0s;
+  -moz-transition: background-color 0.25s ease-out 0s;
+  -o-transition: background-color 0.25s ease-out 0s;
+  transition: background-color 0.25s ease-out 0s;
+}
+.button:hover {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  -webkit-transition: box-shadow 0s ease-out 0s;
+  -moz-transition: box-shadow 0s ease-out 0s;
+  -o-transition: box-shadow 0s ease-out 0s;
+  transition: box-shadow 0s ease-out 0s;
+}
+.button:hover:after {
+  background-color: rgba(255, 255, 255, 0.1);
+  -webkit-transition: background-color 0s ease-out 0s;
+  -moz-transition: background-color 0s ease-out 0s;
+  -o-transition: background-color 0s ease-out 0s;
+  transition: background-color 0s ease-out 0s;
 }
 .button.update-btn {
   display: none;
@@ -3676,17 +3707,39 @@ a.rating.tie span, .rating-container .rating.tie span, .summary .rating.tie span
 
 a.rating {
   position: relative;
+  -webkit-transition: box-shadow 0.25s ease-out 0s;
+  -moz-transition: box-shadow 0.25s ease-out 0s;
+  -o-transition: box-shadow 0.25s ease-out 0s;
+  transition: box-shadow 0.25s ease-out 0s;
 }
-a.rating:hover:after {
+a.rating:after {
   content: " ";
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0);
   pointer-events: none;
   border-radius: 8px;
+  -webkit-transition: background-color 0.25s ease-out 0s;
+  -moz-transition: background-color 0.25s ease-out 0s;
+  -o-transition: background-color 0.25s ease-out 0s;
+  transition: background-color 0.25s ease-out 0s;
+}
+a.rating:hover {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.55) !important;
+  -webkit-transition: box-shadow 0s ease-out 0s;
+  -moz-transition: box-shadow 0s ease-out 0s;
+  -o-transition: box-shadow 0s ease-out 0s;
+  transition: box-shadow 0s ease-out 0s;
+}
+a.rating:hover:after {
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-transition: background-color 0s ease-out 0s;
+  -moz-transition: background-color 0s ease-out 0s;
+  -o-transition: background-color 0s ease-out 0s;
+  transition: background-color 0s ease-out 0s;
 }
 
 .rank a.rating {
