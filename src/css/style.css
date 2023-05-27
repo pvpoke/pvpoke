@@ -48,7 +48,7 @@ header {
   position: fixed;
   z-index: 25;
   width: 100%;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 6px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 6px;
 }
 header .header-wrap {
   max-width: 800px;
@@ -1290,6 +1290,7 @@ select, input {
   padding: 5px 5px 5px 35px;
   border-radius: 8px;
   margin: 5px auto;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
 .share-link input,
 .rank .details .share-link.detail-section input {
