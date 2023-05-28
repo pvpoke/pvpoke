@@ -94,25 +94,12 @@ header{
 		align-items: center;
 	}
 
-	.title{
-		font-size: 18px;
-		margin: 0;
-		display: inline-block;
-		font-weight: normal;
-
-		a{
-			background-image: url(../../img/app_192.png);
-			background-size: contain;
-			text-decoration: none;
-			color: #f6ba48;
-			padding: 3px 0 3px 40px;
-			background-repeat: no-repeat;
-			display: block;
-		}
-	}
-
 	a{
-		color: #f6ba48;
+		color: #ffcf01;
+
+		img{
+			height:30px;
+		}
 	}
 }
 
