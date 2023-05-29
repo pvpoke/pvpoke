@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.29.29.12';
+$SITE_VERSION = '1.30.0';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -202,14 +202,14 @@ if(! isset($OG_IMAGE)){
 
 <body>
 
-	<?php if(false): // Removing this but saving code for future use ?>
-		<?php if(strpos($_SERVER['REQUEST_URI'], 'season-13') == false): ?>
+	<?php if(true): // Removing this but saving code for future use ?>
+		<?php if(strpos($_SERVER['REQUEST_URI'], 'season-15') == false): ?>
 			<div class="header-ticker">
-				<a href="https://pvpoke.com/season-13/rankings/">Preview Season 13 Updates</a>
+				<a href="https://pvpoke.com/season-15/rankings/">Preview next season</a>
 			</div>
 		<?php else: ?>
 			<div class="header-ticker old-version">
-				<a href="https://pvpoke.com/rankings/">Return to Season 12</a>
+				<a href="https://pvpoke.com/rankings/">Return to current season</a>
 			</div>
 		<?php endif; ?>
 	<?php endif; ?>
@@ -229,7 +229,18 @@ if(! isset($OG_IMAGE)){
 				<div class="meat"></div>
 			</div>
 			<div class="menu">
-				<a class="icon-battle <?php if(strpos($_SERVER['REQUEST_URI'], '/battle/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>battle/">Battle</a>
+				<div class="parent-menu">
+					<a class="icon-battle <?php if(strpos($_SERVER['REQUEST_URI'], '/battle/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>battle/">
+						Battle<span></span>
+					</a>
+					<div class="submenu">
+						<div class="submenu-wrap">
+							<a class="nav-great" href="<?php echo $WEB_ROOT; ?>battle/">Single Battle</a>
+							<a class="nav-ultra" href="<?php echo $WEB_ROOT; ?>battle/multi/">Multi Battle</a>
+							<a class="nav-master" href="<?php echo $WEB_ROOT; ?>battle/matrix/">Matrix Battle</a>
+						</div>
+					</div>
+				</div>
 				<div class="parent-menu">
 					<a class="icon-rankings <?php if(strpos($_SERVER['REQUEST_URI'], '/rankings/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>rankings/">
 						Rankings <span></span>
