@@ -131,7 +131,7 @@ require_once '../header.php';
 						</div>
 					</td>
 					<td class="link"><a href="#" target="_blank"></a></td>
-					<td class="team-score"><div class="score">509.3</div></td>
+					<td class="team-score"><div class="rating"></div></td>
 					<td class="individual-score">129.3%</td>
 					<td class="usage">1,024</td>
 				</tr>
@@ -210,7 +210,7 @@ require_once '../header.php';
 						</div>
 					</td>
 					<td class="link"><a href="#" target="_blank"></a></td>
-					<td class="team-score"><div class="score">509.3</div></td>
+					<td class="team-score"><div class="rating"></div></td>
 					<td class="usage">1,024</td>
 				</tr>
 			</thead>

@@ -95,7 +95,12 @@ require_once '../header.php';
 </div>
 
 <div class="section">
-	<button class="battle-btn button">Battle</button>
+	<button class="battle-btn button">
+		<span class="btn-content-wrap">
+			<span class="btn-icon btn-icon-train"></span>
+			<span class="btn-label">Train</span>
+		</span>
+	</button>
 </div>
 
 <div class="section team-select">

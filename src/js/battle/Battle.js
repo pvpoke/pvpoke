@@ -2917,12 +2917,12 @@ function Battle(){
 
 	this.getRatingColor = function(rating){
 		var winColors = [
-			[93,71,165],
-			[0,143,187]
+			[74,85,169],
+			[11,118,215]
 		]; // rgb
 		var lossColors = [
-			[186,0,143],
-			[93,71,165]
+			[199,12,112],
+			[111,56,160]
 		]; // rgb
 
 		// Apply a gradient to bar color
@@ -2942,6 +2942,22 @@ function Battle(){
 		}
 
 		return color;
+	}
+
+	// Returns whether a battle rating was a win, close win, tie, close loss, or loss
+
+	this.getRatingClass = function(rating){
+		if(rating == 500){
+			return "tie";
+		} else if( (rating < 500) && (rating > 250)){
+			return "close-loss";
+		} else if( rating <= 250){
+			return "loss";
+		} else if( (rating > 500) && (rating < 750)){
+			return "close-win";
+		} else if( rating >= 750){
+			return "win";
+		}
 	}
 
 	// Convert timeine to user-editable actions

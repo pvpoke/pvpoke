@@ -1021,10 +1021,11 @@ var InterfaceMaster = (function () {
 
 					battleLink += "/";
 
-					var $item = $("<div class=\"rank " + opponent.types[0] + "\"><div class=\"name-container\"><span class=\"number\">#"+(n+1)+"</span><span class=\"name\">"+opponent.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star\">"+m.rating+"</span></div><a target=\"_blank\" href=\""+battleLink+"\"></a><div class=\"clear\"></div></div>");
-
+					var $item = $("<div class=\"rank " + opponent.types[0] + "\"><div class=\"name-container\"><span class=\"number\">#"+(n+1)+"</span><span class=\"name\">"+opponent.speciesName+"</span></div><div class=\"rating-container\"><a target=\"_blank\" href=\""+battleLink+"\" class=\"rating\"><span></span>"+m.rating+"</a><div class=\"clear\"></div></div>");
 					var color = battle.getRatingColor(m.rating);
-					$item.find(".rating").css("background-color", "rgba("+color[0]+","+color[1]+","+color[2]+",0.5)");
+
+					$item.find(".rating").addClass(battle.getRatingClass(m.rating));
+					$item.find(".rating").css("background", "rgb("+color[0]+","+color[1]+","+color[2]+")");
 
 					$details.find(".matchups").append($item);
 				}
@@ -1055,9 +1056,11 @@ var InterfaceMaster = (function () {
 						battleLink += Math.min(opponent.fastMove.energyGain * (Math.floor((scenario.energy[1] * 500) / opponent.fastMove.cooldown)), 100);
 					}
 
-					var $item = $("<div class=\"rank " + opponent.types[0] + "\"><div class=\"name-container\"><span class=\"number\">#"+(n+1)+"</span><span class=\"name\">"+opponent.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star loss\">"+c.rating+"</span></div><a target=\"_blank\" href=\""+battleLink+"\"></a><div class=\"clear\"></div></div>");
+					var $item = $("<div class=\"rank " + opponent.types[0] + "\"><div class=\"name-container\"><span class=\"number\">#"+(n+1)+"</span><span class=\"name\">"+opponent.speciesName+"</span></div><div class=\"rating-container\"><a target=\"_blank\" href=\""+battleLink+"\" class=\"rating\"><span></span>"+c.rating+"</span></a><div class=\"clear\"></div></div>");
 					var color = battle.getRatingColor(c.rating);
-					$item.find(".rating").css("background-color", "rgba("+color[0]+","+color[1]+","+color[2]+",0.5)");
+
+					$item.find(".rating").addClass(battle.getRatingClass(c.rating));
+					$item.find(".rating").css("background", "rgb("+color[0]+","+color[1]+","+color[2]+")");
 
 					$details.find(".counters").append($item);
 				}

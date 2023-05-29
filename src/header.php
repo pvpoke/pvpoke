@@ -111,17 +111,23 @@ if(! isset($OG_IMAGE)){
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json?v=2">
 
+<!--
 <?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
-	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon_team_builder.png">
+	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/themes/sunflower/favicon_team_builder.png">
 <?php elseif(strpos($_SERVER['REQUEST_URI'], 'rankings') !== false): ?>
-	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon_rankings.png">
-<?php elseif(strpos($_SERVER['REQUEST_URI'], 'matrix') !== false): ?>
-	<link id="favicon"  rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon_matrix.png">
+	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/themes/sunflower/favicon_rankings.png">
+<?php elseif(strpos($_SERVER['REQUEST_URI'], 'battle') !== false): ?>
+	<link id="favicon"  rel="icon" href="<?php echo $WEB_ROOT; ?>img/themes/sunflower/favicon_battle.png">
+<?php elseif(strpos($_SERVER['REQUEST_URI'], 'train') !== false): ?>
+	<link id="favicon"  rel="icon" href="<?php echo $WEB_ROOT; ?>img/themes/sunflower/favicon_train.png">
 <?php else: ?>
-	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
+	<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/themes/sunflower/favicon.png">
 <?php endif; ?>
+-->
 
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=165">
+<link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/themes/sunflower/favicon.png">
+
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=166">
 
 <?php if(strpos($META_TITLE, 'Train') !== false): ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=20">
@@ -210,44 +216,64 @@ if(! isset($OG_IMAGE)){
 
 	<header>
 		<div class="header-wrap">
-			<h1 class="title"><a href="<?php echo $WEB_ROOT; ?>">PvPoke.com</a></h1>
-			<div class="hamburger">
+			<?php if($_SETTINGS->theme == 'night'): ?>
+				<a href="<?php echo $WEB_ROOT; ?>"><img src="<?php echo $WEB_ROOT; ?>/img/themes/sunflower/header-white.png" title="PvPoke.com" /></a>
+			<?php else: ?>
+				<a href="<?php echo $WEB_ROOT; ?>"><img src="<?php echo $WEB_ROOT; ?>/img/themes/sunflower/header.png" title="PvPoke.com" /></a>
+			<?php endif; ?>
+
+			<div class="hamburger mobile">
 				<!--Because I'm too lazy to make a graphic-->
 				<div class="meat"></div>
 				<div class="meat"></div>
 				<div class="meat"></div>
 			</div>
 			<div class="menu">
-				<a class="icon-battle" href="<?php echo $WEB_ROOT; ?>battle/">Battle</a>
+				<a class="icon-battle <?php if(strpos($_SERVER['REQUEST_URI'], '/battle/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>battle/">Battle</a>
 				<div class="parent-menu">
-					<a class="icon-train" href="<?php echo $WEB_ROOT; ?>train/">Train</a>
+					<a class="icon-rankings <?php if(strpos($_SERVER['REQUEST_URI'], '/rankings/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>rankings/">
+						Rankings <span></span>
+					</a>
 					<div class="submenu">
 						<div class="submenu-wrap">
-							<a class="icon-rankings" href="<?php echo $WEB_ROOT; ?>train/analysis/">Top Performers</a>
+							<a class="nav-great" href="<?php echo $WEB_ROOT; ?>rankings/all/1500/overall/">Great League</a>
+							<a class="nav-ultra" href="<?php echo $WEB_ROOT; ?>rankings/all/2500/overall/">Ultra League</a>
+							<a class="nav-master" href="<?php echo $WEB_ROOT; ?>rankings/all/10000/overall/">Master League</a>
+							<a href="<?php echo $WEB_ROOT; ?>custom-rankings/">Custom Rankings</a>
 						</div>
 					</div>
 				</div>
+				<a class="icon-team <?php if(strpos($_SERVER['REQUEST_URI'], '/team-builder/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>team-builder/">Team Builder</a>
 				<div class="parent-menu">
-					<a class="icon-rankings" href="<?php echo $WEB_ROOT; ?>rankings/">Rankings</a>
+					<a class="icon-train <?php if(strpos($_SERVER['REQUEST_URI'], '/train/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>train/">
+						Train <span></span>
+					</a>
 					<div class="submenu">
 						<div class="submenu-wrap">
-							<a class="icon-rankings" href="<?php echo $WEB_ROOT; ?>custom-rankings/">Custom Rankings</a>
+							<a href="<?php echo $WEB_ROOT; ?>train/analysis/">Top Performers</a>
 						</div>
 					</div>
 				</div>
-				<a class="icon-team" href="<?php echo $WEB_ROOT; ?>team-builder/">Team Builder</a>
-				<div class="parent-menu">
-					<a class="more desktop" href="#"></a>
+				<div class="parent-menu more-parent-menu">
+					<a class="more desktop" href="#">
+						<div class="hamburger desktop">
+							<!--Because I'm too lazy to make a graphic-->
+							<div class="meat"></div>
+							<div class="meat"></div>
+							<div class="meat"></div>
+						</div>
+					</a>
 					<div class="submenu">
 						<div class="submenu-wrap">
-							<a class="icon-moves" href="<?php echo $WEB_ROOT; ?>moves/">Moves</a>
-							<a class="icon-articles" href="<?php echo $WEB_ROOT; ?>articles/">Articles</a>
-							<a class="icon-contribute" href="<?php echo $WEB_ROOT; ?>contribute/">Contribute</a>
-							<a class="icon-settings" href="<?php echo $WEB_ROOT; ?>settings/">Settings</a>
-							<a class="icon-twitter" href="https://twitter.com/pvpoke" target="_blank">Twitter</a>
-							<a class="icon-tera" href="<?php echo $WEB_ROOT; ?>tera/">Tera Raid Counters</a>
+							<a href="<?php echo $WEB_ROOT; ?>moves/">Moves</a>
+							<a href="<?php echo $WEB_ROOT; ?>articles/">Articles</a>
+							<a class="icon-heart" href="<?php echo $WEB_ROOT; ?>contribute/">Contribute</a>
+							<a href="<?php echo $WEB_ROOT; ?>settings/">Settings</a>
+							<a class="twitter" href="https://twitter.com/pvpoke" target="_blank">Twitter</a>
+							<a class="tera" href="<?php echo $WEB_ROOT; ?>tera/">Tera Raid Counters</a>
 						</div>
 					</div>
+					<div class="safe-mouse-space"></div>
 				</div>
 			</div>
 		</div>

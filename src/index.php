@@ -5,31 +5,66 @@
 	<p>Welcome to PvPoke.com! We're an open-source tool for simulating, ranking, and building teams for Pokemon GO PvP (player versus player) battles. Check out the links below to get started.</p>
 
 	<a href="<?php echo $WEB_ROOT; ?>battle/" class="button">
-		<h2 class="icon-battle">Battle</h2>
-		<p>Simulate a battle between two custom Pokemon.</p>
+		<span class="btn-content-wrap">
+			<span class="btn-icon btn-icon-battle"></span>
+			<span class="btn-label">
+				<h2>Battle</h2>
+				<p>Simulate a battle between two custom Pokemon.</p>
+			</span>
+		</span>
 	</a>
-	<a href="<?php echo $WEB_ROOT; ?>train/" class="button">
-		<h2 class="icon-train">Train</h2>
-		<p>Play real-time battle simulations against a CPU opponent.</p>
-	</a>
+
 	<a href="<?php echo $WEB_ROOT; ?>rankings/" class="button">
-		<h2 class="icon-rankings">Rankings</h2>
-		<p>Explore the rankings, movesets, and counters for the top Pokemon in each league.</p>
+		<span class="btn-content-wrap">
+			<span class="btn-icon btn-icon-rankings"></span>
+			<span class="btn-label">
+				<h2>Rankings</h2>
+				<p>Explore the rankings, movesets, and counters for the top Pokemon in each league.</p>
+			</span>
+		</span>
 	</a>
+
 	<a href="<?php echo $WEB_ROOT; ?>team-builder/" class="button">
-		<h2 class="icon-team">Team Builder</h2>
-		<p>Build your own team and see their type matchups and potential counters.</p>
+		<span class="btn-content-wrap">
+			<span class="btn-icon btn-icon-team"></span>
+			<span class="btn-label">
+				<h2>Team Builder</h2>
+				<p>Build your own team and see their type matchups and potential counters.</p>
+			</span>
+		</span>
 	</a>
+
+	<a href="<?php echo $WEB_ROOT; ?>train/" class="button">
+		<span class="btn-content-wrap">
+			<span class="btn-icon btn-icon-train"></span>
+			<span class="btn-label">
+				<h2>Train</h2>
+				<p>Play real-time battle simulations against a CPU opponent.</p>
+			</span>
+		</span>
+	</a>
+
+
 	<a href="<?php echo $WEB_ROOT; ?>contribute/" class="button">
-		<h2 class="icon-contribute">Contribute</h2>
-		<p>Check out the source code on Github or lend your support through Patreon.</p>
+		<span class="btn-content-wrap">
+			<span class="btn-icon btn-icon-heart"></span>
+			<span class="btn-label">
+				<h2>Contribute</h2>
+				<p>Check out the source code on Github or lend your support through Patreon.</p>
+			</span>
+		</span>
 	</a>
 
 	<h3>Pokemon Scarlet &amp; Violet</h3>
 
 	<a href="<?php echo $WEB_ROOT; ?>tera/" class="button tera-button">
-		<h2 class="icon-tera">Tera Raid Counter Calculator</h2>
-		<p>Take on Tera Raid bosses with this tool to look up Pokemon with the best type matchups.</p>
+		<span class="btn-content-wrap">
+			<span class="btn-icon btn-icon-tera"></span>
+			<span class="btn-label">
+				<h2>Tera Raid Counter Calculator</h2>
+				<p>Take on Tera Raid bosses with this tool to look up Pokemon with the best type matchups.</p>
+			</span>
+		</span>
 	</a>
 
 	<?php require 'modules/ads/body-728.php'; ?>
