@@ -54,7 +54,6 @@ var GameMaster = (function () {
 				var formats = object.data.formats;
 
 				for(var i = formats.length - 1; i >= 0; i--){
-					console.log(! formats[i].hideRankings);
 					if(formats[i].showFormat && ! formats[i].hideRankings && formats[i].title != "Custom"){
 						var $link = $("<a href=\""+(host + "rankings/" + formats[i].cup + "/" + formats[i].cp + "/overall/"+"\">"+formats[i].title+"</a>"));
 						$link.insertAfter($(".icon-rankings + .submenu a").eq(2));

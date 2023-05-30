@@ -1560,7 +1560,8 @@ select, input {
 }
 .battle-results .summary .battle-summary-line span.rating {
   margin: 0 0 0 6px;
-  padding: 2px 4px;
+  padding: 2px 8px;
+  border-radius: 30px;
 }
 .battle-results .summary .battle-summary-line span.rating span {
   padding: 0;
@@ -1824,6 +1825,9 @@ select, input {
   font-size: 14px;
   margin-bottom: 0 !important;
 }
+.battle-results .battle-details .rating {
+  border-radius: 30px;
+}
 .battle-results.multi {
   text-align: left;
 }
@@ -1882,10 +1886,10 @@ select, input {
   font-size: 11px;
 }
 .battle-results.matrix .difference-table a.difference.win {
-  background: #1b66b4;
+  background: #1073d3;
 }
 .battle-results.matrix .difference-table a.difference.lose {
-  background: #8e298a;
+  background: #9e2085;
 }
 
 a.download-csv {
@@ -2413,7 +2417,11 @@ a.download-csv {
   text-align: right;
   padding: 5px 8px;
 }
+.rank .rating-container .rating.score-rating {
+  width: 60px !important;
+}
 .rank .rating-container .rating span {
+  margin-left: 0;
   margin-right: 6px;
 }
 .rank .moves {
@@ -2848,7 +2856,7 @@ a.download-csv {
   line-height: 18px;
 }
 .rank .details .detail-section .rating-container .rating {
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
 .rank .details .multi-battle-link {
   width: 100%;
@@ -3094,8 +3102,7 @@ a.download-csv {
 
 .rankings-container > .rank > .rating-container > .rating {
   background-image: none;
-  padding: 5px;
-  width: 61px;
+  width: 80px;
   text-align: center;
   font-weight: bold;
   box-sizing: border-box;
@@ -3552,9 +3559,13 @@ a.download-csv {
 .article .rating-table.matrix-table a.rating {
   width: 70px;
   padding: 5px;
+  border-radius: 8px !important;
 }
 .article .rating-table.matrix-table a.rating span {
   margin: 0 6px 0 0;
+}
+.article .rating-table.matrix-table a.rating:after {
+  border-radius: 8px !important;
 }
 .article .rating-table.matrix-table .matrix-record,
 .article .rating-table.matrix-table .matrix-average {
@@ -3659,7 +3670,6 @@ a.rating, .rating-container .rating, .summary .rating,
 .stats-table .rating, .train-table .rating {
   display: flex;
   padding: 5px 12px;
-  border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
   margin: 0 auto;
@@ -3675,6 +3685,23 @@ a.rating span, .rating-container .rating span, .summary .rating span,
   background-size: 100%;
   background-repeat: no-repeat;
 }
+a.rating i, .rating-container .rating i, .summary .rating i,
+.stats-table .rating i, .train-table .rating i {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 13px;
+}
+a.rating i:after, .rating-container .rating i:after, .summary .rating i:after,
+.stats-table .rating i:after, .train-table .rating i:after {
+  content: "→";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 0;
+  position: absolute;
+  right: 8px;
+}
 a.rating.win, .rating-container .rating.win, .summary .rating.win,
 .stats-table .rating.win, .train-table .rating.win {
   background-color: #1280b6;
@@ -3684,6 +3711,10 @@ a.rating.win span, .rating-container .rating.win span, .summary .rating.win span
 .stats-table .rating.win span, .train-table .rating.win span {
   border-radius: 20px;
   background: #fff6d4;
+}
+a.rating.win i, .rating-container .rating.win i, .summary .rating.win i,
+.stats-table .rating.win i, .train-table .rating.win i {
+  color: #fff6d4;
 }
 a.rating.close-win, .rating-container .rating.close-win, .summary .rating.close-win,
 .stats-table .rating.close-win, .train-table .rating.close-win {
@@ -3696,6 +3727,10 @@ a.rating.close-win span, .rating-container .rating.close-win span, .summary .rat
   border: 2px solid #a5d6fb;
   box-sizing: border-box;
 }
+a.rating.close-win i, .rating-container .rating.close-win i, .summary .rating.close-win i,
+.stats-table .rating.close-win i, .train-table .rating.close-win i {
+  color: #fff6d4;
+}
 a.rating.close-loss, .rating-container .rating.close-loss, .summary .rating.close-loss,
 .stats-table .rating.close-loss, .train-table .rating.close-loss {
   background-color: #a91c7e;
@@ -3706,6 +3741,10 @@ a.rating.close-loss span, .rating-container .rating.close-loss span, .summary .r
   background-image: url("../img/themes/sunflower/rating-close-loss.png?v=7");
   opacity: 0.9;
 }
+a.rating.close-loss i, .rating-container .rating.close-loss i, .summary .rating.close-loss i,
+.stats-table .rating.close-loss i, .train-table .rating.close-loss i {
+  color: #ffd3f4;
+}
 a.rating.loss, .rating-container .rating.loss, .summary .rating.loss,
 .stats-table .rating.loss, .train-table .rating.loss {
   background-color: #c71b71;
@@ -3714,6 +3753,10 @@ a.rating.loss, .rating-container .rating.loss, .summary .rating.loss,
 a.rating.loss span, .rating-container .rating.loss span, .summary .rating.loss span,
 .stats-table .rating.loss span, .train-table .rating.loss span {
   background-image: url("../img/themes/sunflower/rating-loss.png?v=7");
+}
+a.rating.loss i, .rating-container .rating.loss i, .summary .rating.loss i,
+.stats-table .rating.loss i, .train-table .rating.loss i {
+  color: #ffd3f4;
 }
 a.rating.tie, .rating-container .rating.tie, .summary .rating.tie,
 .stats-table .rating.tie, .train-table .rating.tie {
@@ -3725,8 +3768,13 @@ a.rating.tie span, .rating-container .rating.tie span, .summary .rating.tie span
   background-image: url("../img/themes/sunflower/rating-tie.png");
   opacity: 0.75;
 }
+a.rating.tie i, .rating-container .rating.tie i, .summary .rating.tie i,
+.stats-table .rating.tie i, .train-table .rating.tie i {
+  color: #f2f2f2;
+}
 
 a.rating {
+  border-radius: 30px !important;
   position: relative;
   -webkit-transition: box-shadow 0.25s ease-out 0s;
   -moz-transition: box-shadow 0.25s ease-out 0s;
@@ -3742,7 +3790,7 @@ a.rating:after {
   height: 100%;
   background: rgba(255, 255, 255, 0);
   pointer-events: none;
-  border-radius: 8px;
+  border-radius: 30px !important;
   -webkit-transition: background-color 0.25s ease-out 0s;
   -moz-transition: background-color 0.25s ease-out 0s;
   -o-transition: background-color 0.25s ease-out 0s;
@@ -4517,11 +4565,11 @@ a.pokebattler {
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
   }
   header .menu a {
-    padding: 9px 8px 9px 34px;
+    padding: 9px 8px 9px 38px;
     margin: 0;
     font-size: 18px;
     background-size: 18px 18px;
-    background-position: 4px center;
+    background-position: 8px center;
     color: #f9fdff;
   }
   header .menu > a.selected, header .menu .parent-menu > a.selected {
@@ -4547,7 +4595,7 @@ a.pokebattler {
     background-image: url("../img/themes/sunflower/nav-heart-white.png");
   }
   header .menu .submenu {
-    padding-left: 18px;
+    padding-left: 38px;
   }
   header .menu .submenu a {
     font-size: 16px;
@@ -4565,6 +4613,7 @@ a.pokebattler {
   }
   header .menu .more-parent-menu .submenu a {
     font-size: 18px;
+    padding-left: 38px;
   }
 
   .header-ticker {

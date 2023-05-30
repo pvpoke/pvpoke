@@ -1878,7 +1878,8 @@ select, input{
 
 			span.rating{
 				margin: 0 0 0 6px;
-				padding: 2px 4px;
+				padding: 2px 8px;
+				border-radius: 30px;
 
 				span{
 					padding: 0;
@@ -2088,6 +2089,10 @@ select, input{
 		}
 	}
 
+	.battle-details .rating{
+		border-radius: 30px;
+	}
+
 	&.multi{
 		text-align: left;
 
@@ -2164,11 +2169,11 @@ select, input{
 				}
 
 				&.win{
-					background: #1b66b4;
+					background: #1073d3;
 				}
 
 				&.lose{
-					background: rgb(142, 41, 138);
+					background: #9e2085;
 				}
 			}
 		}
@@ -2692,7 +2697,12 @@ a.download-csv{
 			text-align: right;
 			padding: 5px 8px;
 
+			&.score-rating{
+				width:60px !important;
+			}
+
 			span{
+				margin-left: 0;
 				margin-right: 6px;
 			}
 		}
@@ -3219,7 +3229,7 @@ a.download-csv{
 			}
 
 			.rating-container .rating{
-				box-shadow: 2px 2px 2px rgba(0,0,0,0.2)
+				box-shadow: 2px 2px 2px rgba(0,0,0,0.4)
 			}
 		}
 
@@ -3475,8 +3485,7 @@ a.download-csv{
 
 .rankings-container > .rank > .rating-container > .rating{
 	background-image:none;
-	padding:5px;
-	width:61px;
+	width:80px;
 	text-align: center;
 	font-weight: bold;
 	box-sizing: border-box;
@@ -4003,8 +4012,14 @@ a.download-csv{
 			a.rating{
 				width:70px;
 				padding: 5px;
+				border-radius: 8px !important;
+
 				span{
 					margin: 0 6px 0 0;
+				}
+
+				&:after{
+					border-radius: 8px !important;
 				}
 			}
 
@@ -4096,7 +4111,6 @@ a.rating, .rating-container .rating, .summary .rating,
 .stats-table .rating, .train-table .rating{
 	display:flex;
 	padding:5px 12px;
-	border-radius:8px;
 	text-decoration: none;
 	font-weight: bold;
 	margin: 0 auto;
@@ -4112,6 +4126,23 @@ a.rating, .rating-container .rating, .summary .rating,
 		background-repeat: no-repeat;
 	}
 
+	i{
+		display: flex;
+		align-items: center;
+		flex: 1;
+		min-width:13px;
+
+		&:after{
+			content: "→";
+			font-style: normal;
+			font-weight: normal;
+			font-size: 10px;
+			line-height: 0;
+			position: absolute;
+			right: 8px;
+		}
+	}
+
 	&.win{
 		background-color: #1280b6;
 		color: #fff6d4;
@@ -4119,6 +4150,10 @@ a.rating, .rating-container .rating, .summary .rating,
 		span{
 			border-radius:20px;
 			background:#fff6d4;
+		}
+
+		i{
+			color: #fff6d4;
 		}
 	}
 
@@ -4131,6 +4166,10 @@ a.rating, .rating-container .rating, .summary .rating,
 			border:2px solid #a5d6fb;
 			box-sizing:border-box;
 		}
+
+		i{
+			color: #fff6d4;
+		}
 	}
 
 	&.close-loss{
@@ -4141,6 +4180,10 @@ a.rating, .rating-container .rating, .summary .rating,
 			background-image: url('../img/themes/sunflower/rating-close-loss.png?v=7');
 			opacity: 0.9;
 		}
+
+		i{
+			color: #ffd3f4;
+		}
 	}
 
 	&.loss{
@@ -4149,6 +4192,10 @@ a.rating, .rating-container .rating, .summary .rating,
 
 		span{
 			background-image: url('../img/themes/sunflower/rating-loss.png?v=7');
+		}
+
+		i{
+			color: #ffd3f4;
 		}
 	}
 
@@ -4160,10 +4207,15 @@ a.rating, .rating-container .rating, .summary .rating,
 			background-image: url('../img/themes/sunflower/rating-tie.png');
 			opacity: 0.75;
 		}
+
+		i{
+			color: #f2f2f2;
+		}
 	}
 }
 
 a.rating{
+	border-radius: 30px !important;
 	position: relative;
 
 	@include transition(box-shadow, .25s, ease-out, 0s);
@@ -4177,7 +4229,7 @@ a.rating{
 		height: 100%;
 		background:rgba(255,255,255,0);
 		pointer-events: none;
-		border-radius: 8px;
+		border-radius: 30px !important;
 
 		@include transition(background-color, .25s, ease-out, 0s);
 	}
@@ -4807,11 +4859,11 @@ a.pokebattler{
 			box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
 
 			a{
-				padding: 9px 8px 9px 34px;
+				padding: 9px 8px 9px 38px;
 				margin: 0;
 			    font-size: 18px;
 			    background-size: 18px 18px;
-			    background-position: 4px center;
+			    background-position: 8px center;
 				color: $color-off-white;
 			}
 
@@ -4842,7 +4894,7 @@ a.pokebattler{
 			}
 
 			.submenu{
-				padding-left: 18px;
+				padding-left: 38px;
 
 				a{
 					font-size: 16px;
@@ -4864,6 +4916,7 @@ a.pokebattler{
 
 				a{
 					font-size: 18px;
+					padding-left: 38px;
 				}
 			}
 		}

@@ -22,16 +22,33 @@
 
 	<!--Global script-->
 	<script>
+		var menuSlideProtection = false;
+
 		$(".hamburger.mobile").click(function(e){
 			$("header .menu").slideToggle(125);
+
+			menuSlideProtection = true;
+			setTimeout(function(){
+				menuSlideProtection = false;
+			}, 125);
 		});
 
 		// Submenu interaction on desktop and mobile
+		$(".menu .parent-menu").on("mouseenter click", function(e){
 
-		$(".menu .parent-menu").on("mouseover click", function(e){
 			if(screen.width >= 721){
 				$(".submenu").removeClass("active");
 				$(this).find(".submenu").addClass("active");
+
+				/*// Open the submenu on a slight delay so menus don't pop open on collateral mouseovers
+				var $targetParentMenu = $(this).get(0);''
+
+				setTimeout(function(){
+					if($(".parent-menu:hover").get(0) == $targetParentMenu){
+						$(".submenu").removeClass("active");
+						$(".parent-menu:hover").find(".submenu").addClass("active");
+					}
+				}, 125);*/
 			}
 		});
 
@@ -45,6 +62,17 @@
 		$("body").on("mousemove click", function(e){
 			if($(".submenu:hover, .parent-menu:hover").length == 0){
 				$(".submenu").removeClass("active");
+			}
+
+			if(screen.width <= 720 && ! menuSlideProtection){
+				if($("header .menu:hover, .hamburger.mobile:hover").length == 0 && $("header .menu").css("display") == "block"){
+					$("header .menu").slideToggle(125);
+
+					menuSlideProtection = true;
+					setTimeout(function(){
+						menuSlideProtection = false;
+					}, 125);
+				}
 			}
 		});
 

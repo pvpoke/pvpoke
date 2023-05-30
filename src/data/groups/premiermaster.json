@@ -1,4 +1,8 @@
 [{
+    "speciesId": "chesnaught",
+    "fastMove": "VINE_WHIP",
+    "chargedMoves": ["FRENZY_PLANT", "SUPER_POWER"]
+}, {
     "speciesId": "dragonite",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["DRAGON_CLAW", "SUPER_POWER"]
@@ -20,21 +24,13 @@
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["OUTRAGE", "EARTH_POWER"]
 }, {
-    "speciesId": "ursaluna",
-    "fastMove": "TACKLE",
-    "chargedMoves": ["THUNDER_PUNCH", "EARTH_POWER"]
-}, {
-    "speciesId": "chesnaught",
-    "fastMove": "VINE_WHIP",
-    "chargedMoves": ["FRENZY_PLANT", "SUPER_POWER"]
+    "speciesId": "garchomp",
+    "fastMove": "DRAGON_TAIL",
+    "chargedMoves": ["OUTRAGE", "SAND_TOMB"]
 }, {
     "speciesId": "gholdengo",
     "fastMove": "HEX",
     "chargedMoves": ["SHADOW_BALL", "FOCUS_BLAST"]
-}, {
-    "speciesId": "garchomp",
-    "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["OUTRAGE", "SAND_TOMB"]
 }, {
     "speciesId": "gyarados",
     "fastMove": "DRAGON_BREATH",
@@ -63,6 +59,14 @@
     "speciesId": "metagross",
     "fastMove": "BULLET_PUNCH",
     "chargedMoves": ["METEOR_MASH", "EARTHQUAKE"]
+}, {
+    "speciesId": "primarina",
+    "fastMove": "CHARM",
+    "chargedMoves": ["DISARMING_VOICE", "PSYCHIC"]
+}, {
+    "speciesId": "primarina",
+    "fastMove": "WATERFALL",
+    "chargedMoves": ["DISARMING_VOICE", "PSYCHIC"]
 }, {
     "speciesId": "rhyperior",
     "fastMove": "MUD_SLAP",
@@ -93,15 +97,15 @@
     "fastMove": "CHARM",
     "chargedMoves": ["ANCIENT_POWER", "FLAMETHROWER"]
 }, {
+    "speciesId": "ursaluna",
+    "fastMove": "TACKLE",
+    "chargedMoves": ["THUNDER_PUNCH", "EARTH_POWER"]
+}, {
     "speciesId": "walrein",
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
 }, {
-    "speciesId": "primarina",
-    "fastMove": "CHARM",
-    "chargedMoves": ["MOONBLAST", "PSYCHIC"]
-}, {
-    "speciesId": "primarina",
-    "fastMove": "WATERFALL",
-    "chargedMoves": ["MOONBLAST", "PSYCHIC"]
+    "speciesId": "ursaluna",
+    "fastMove": "TACKLE",
+    "chargedMoves": ["ICE_PUNCH", "HIGH_HORSEPOWER"]
 }]

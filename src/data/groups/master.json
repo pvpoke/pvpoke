@@ -19,6 +19,10 @@
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["OUTRAGE", "EARTH_POWER"]
 }, {
+    "speciesId": "garchomp",
+    "fastMove": "DRAGON_TAIL",
+    "chargedMoves": ["OUTRAGE", "SAND_TOMB"]
+}, {
     "speciesId": "giratina_altered",
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["ANCIENT_POWER", "DRAGON_CLAW"]
@@ -26,10 +30,6 @@
     "speciesId": "giratina_origin",
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["SHADOW_BALL", "OMINOUS_WIND"]
-}, {
-    "speciesId": "reshiram",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["FUSION_FLARE", "DRACO_METEOR"]
 }, {
     "speciesId": "groudon",
     "fastMove": "MUD_SHOT",
@@ -87,6 +87,10 @@
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["AQUA_TAIL", "DRACO_METEOR"]
 }, {
+    "speciesId": "reshiram",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["FUSION_FLARE", "DRACO_METEOR"]
+}, {
     "speciesId": "snorlax",
     "fastMove": "LICK",
     "chargedMoves": ["BODY_SLAM", "EARTHQUAKE"]
@@ -102,6 +106,10 @@
     "speciesId": "togekiss",
     "fastMove": "CHARM",
     "chargedMoves": ["ANCIENT_POWER", "AURA_SPHERE"]
+}, {
+    "speciesId": "xerneas",
+    "fastMove": "TACKLE",
+    "chargedMoves": ["CLOSE_COMBAT", "MOONBLAST"]
 }, {
     "speciesId": "yveltal",
     "fastMove": "SNARL",
@@ -123,11 +131,7 @@
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["CRUNCH", "WILD_CHARGE"]
 }, {
-    "speciesId": "xerneas",
+    "speciesId": "ursaluna",
     "fastMove": "TACKLE",
-    "chargedMoves": ["CLOSE_COMBAT", "MOONBLAST"]
-}, {
-    "speciesId": "garchomp",
-    "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["OUTRAGE", "SAND_TOMB"]
+    "chargedMoves": ["ICE_PUNCH", "HIGH_HORSEPOWER"]
 }]

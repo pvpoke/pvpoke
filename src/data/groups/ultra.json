@@ -1,4 +1,20 @@
 [{
+    "speciesId": "aurorus",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["WEATHER_BALL_ICE", "METEOR_BEAM"]
+}, {
+    "speciesId": "buzzwole",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["SUPER_POWER", "LUNGE"]
+}, {
+    "speciesId": "charizard",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["DRAGON_CLAW", "BLAST_BURN"]
+}, {
+    "speciesId": "cobalion",
+    "fastMove": "DOUBLE_KICK",
+    "chargedMoves": ["SACRED_SWORD", "STONE_EDGE"]
+}, {
     "speciesId": "cofagrigus",
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["SHADOW_BALL", "DARK_PULSE"]
@@ -15,6 +31,10 @@
     "fastMove": "POISON_STING",
     "chargedMoves": ["AQUA_TAIL", "CRUNCH"]
 }, {
+    "speciesId": "dubwool",
+    "fastMove": "DOUBLE_KICK",
+    "chargedMoves": ["BODY_SLAM", "PAYBACK"]
+}, {
     "speciesId": "empoleon",
     "fastMove": "WATERFALL",
     "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
@@ -22,22 +42,6 @@
     "speciesId": "escavalier",
     "fastMove": "COUNTER",
     "chargedMoves": ["MEGAHORN", "DRILL_RUN"]
-}, {
-    "speciesId": "pidgeot",
-    "fastMove": "WING_ATTACK",
-    "chargedMoves": ["FEATHER_DANCE", "BRAVE_BIRD"]
-}, {
-    "speciesId": "aurorus",
-    "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["WEATHER_BALL_ICE", "METEOR_BEAM"]
-}, {
-    "speciesId": "gliscor",
-    "fastMove": "WING_ATTACK",
-    "chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"]
-}, {
-    "speciesId": "charizard",
-    "fastMove": "WING_ATTACK",
-    "chargedMoves": ["DRAGON_CLAW", "BLAST_BURN"]
 }, {
     "speciesId": "giratina_altered",
     "fastMove": "DRAGON_BREATH",
@@ -47,9 +51,9 @@
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["DRAGON_CLAW", "SHADOW_SNEAK"]
 }, {
-    "speciesId": "guzzlord",
-    "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["DRAGON_CLAW", "CRUNCH"]
+    "speciesId": "gliscor",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"]
 }, {
     "speciesId": "granbull",
     "fastMove": "CHARM",
@@ -58,6 +62,10 @@
     "speciesId": "greedent",
     "fastMove": "BULLET_SEED",
     "chargedMoves": ["BODY_SLAM", "CRUNCH"]
+}, {
+    "speciesId": "guzzlord",
+    "fastMove": "DRAGON_TAIL",
+    "chargedMoves": ["DRAGON_CLAW", "CRUNCH"]
 }, {
     "speciesId": "gyarados",
     "fastMove": "DRAGON_BREATH",
@@ -84,17 +92,22 @@
     "fastMove": "POISON_JAB",
     "chargedMoves": ["POISON_FANG", "EARTH_POWER"]
 }, {
-    "speciesId": "ninetales_alolan_shadow",
-    "fastMove": "CHARM",
-    "chargedMoves": ["WEATHER_BALL_ICE", "DAZZLING_GLEAM"]
-}, {
     "speciesId": "ninetales_alolan",
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["WEATHER_BALL_ICE", "PSYSHOCK"]
 }, {
+    "speciesId": "ninetales_alolan_shadow",
+    "fastMove": "CHARM",
+    "chargedMoves": ["WEATHER_BALL_ICE", "DAZZLING_GLEAM"],
+    "shadowType": "shadow"
+}, {
     "speciesId": "obstagoon",
     "fastMove": "COUNTER",
     "chargedMoves": ["NIGHT_SLASH", "OBSTRUCT"]
+}, {
+    "speciesId": "pidgeot",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["FEATHER_DANCE", "BRAVE_BIRD"]
 }, {
     "speciesId": "poliwrath",
     "fastMove": "MUD_SHOT",
@@ -162,23 +175,19 @@
     "fastMove": "VINE_WHIP",
     "chargedMoves": ["FRENZY_PLANT", "SLUDGE_BOMB"]
 }, {
-    "speciesId": "walrein",
-    "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
-}, {
     "speciesId": "virizion",
     "fastMove": "DOUBLE_KICK",
     "chargedMoves": ["LEAF_BLADE", "SACRED_SWORD"]
 }, {
-    "speciesId": "cobalion",
-    "fastMove": "DOUBLE_KICK",
-    "chargedMoves": ["SACRED_SWORD", "STONE_EDGE"]
+    "speciesId": "walrein",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
 }, {
-    "speciesId": "buzzwole",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["SUPER_POWER", "LUNGE"]
+    "speciesId": "golisopod",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["X_SCISSOR", "LIQUIDATION"]
 }, {
-    "speciesId": "dubwool",
-    "fastMove": "DOUBLE_KICK",
-    "chargedMoves": ["BODY_SLAM", "PAYBACK"]
+    "speciesId": "sandslash_alolan",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"]
 }]

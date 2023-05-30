@@ -1264,7 +1264,7 @@
     "moveId": "ICICLE_SPEAR",
     "name": "Icicle Spear",
     "type": "ice",
-    "power": 60,
+    "power": 65,
     "energy": 40,
     "energyGain": 0,
     "cooldown": 500,
@@ -1372,6 +1372,15 @@
     "buffApplyChance": "1",
     "archetype": "Self-Debuff Nuke"
 }, {
+    "moveId": "LEAFAGE",
+    "name": "Leafage",
+    "type": "grass",
+    "power": 6,
+    "energy": 0,
+    "energyGain": 7,
+    "cooldown": 1000,
+    "archetype": "General"
+}, {
     "moveId": "LICK",
     "name": "Lick",
     "type": "ghost",
@@ -1381,6 +1390,19 @@
     "cooldown": 500,
     "archetype": "General"
 }, {
+    "moveId": "LIQUIDATION",
+    "name": "Liquidation",
+    "abbreviation": "Li",
+    "type": "water",
+    "power": 70,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": "0.3",
+    "archetype": "Debuff"
+},{
     "moveId": "LOCK_ON",
     "name": "Lock On",
     "type": "normal",
@@ -1554,7 +1576,7 @@
     "moveId": "MUD_BOMB",
     "name": "Mud Bomb",
     "type": "ground",
-    "power": 55,
+    "power": 60,
     "energy": 40,
     "energyGain": 0,
     "cooldown": 500,
@@ -1748,7 +1770,7 @@
     "moveId": "POISON_FANG",
     "name": "Poison Fang",
     "type": "poison",
-    "power": 40,
+    "power": 45,
     "energy": 40,
     "energyGain": 0,
     "cooldown": 500,
@@ -2044,7 +2066,7 @@
     "name": "Rollout",
     "abbreviation": "RO",
     "type": "rock",
-    "power": 4,
+    "power": 5,
     "energy": 0,
     "energyGain": 13,
     "cooldown": 1500,
@@ -2120,11 +2142,11 @@
     "name": "Seed Bomb",
     "abbreviation": "SeB",
     "type": "grass",
-    "power": 55,
-    "energy": 40,
+    "power": 60,
+    "energy": 45,
     "energyGain": 0,
     "cooldown": 500,
-    "archetype": "Spam/Bait"
+    "archetype": "General"
 }, {
     "moveId": "SEED_FLARE",
     "name": "Seed Flare",

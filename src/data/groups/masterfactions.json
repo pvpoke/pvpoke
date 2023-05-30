@@ -23,10 +23,6 @@
     "fastMove": "COUNTER",
     "chargedMoves": ["BLAZE_KICK", "BLAST_BURN"]
 }, {
-    "speciesId": "slowbro_mega",
-    "fastMove": "CONFUSION",
-    "chargedMoves": ["SURF", "ICE_BEAM"]
-}, {
     "speciesId": "charizard_mega_x",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"]
@@ -54,6 +50,10 @@
     "speciesId": "garchomp",
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["OUTRAGE", "SAND_TOMB"]
+}, {
+    "speciesId": "gengar_mega",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["SHADOW_BALL", "SHADOW_PUNCH"]
 }, {
     "speciesId": "giratina_altered",
     "fastMove": "SHADOW_CLAW",
@@ -103,6 +103,10 @@
     "fastMove": "THUNDER_SHOCK",
     "chargedMoves": ["ROCK_SLIDE", "SUPER_POWER"]
 }, {
+    "speciesId": "melmetal",
+    "fastMove": "THUNDER_SHOCK",
+    "chargedMoves": ["SUPER_POWER", "DOUBLE_IRON_BASH"]
+}, {
     "speciesId": "metagross",
     "fastMove": "BULLET_PUNCH",
     "chargedMoves": ["METEOR_MASH", "EARTHQUAKE"]
@@ -118,6 +122,10 @@
     "speciesId": "palkia",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["AQUA_TAIL", "DRACO_METEOR"]
+}, {
+    "speciesId": "rayquaza",
+    "fastMove": "DRAGON_TAIL",
+    "chargedMoves": ["BREAKING_SWIPE", "HURRICANE"]
 }, {
     "speciesId": "reshiram",
     "fastMove": "DRAGON_BREATH",
@@ -139,9 +147,17 @@
     "fastMove": "BULLET_PUNCH",
     "chargedMoves": ["IRON_HEAD", "NIGHT_SLASH"]
 }, {
+    "speciesId": "slowbro_mega",
+    "fastMove": "CONFUSION",
+    "chargedMoves": ["SURF", "ICE_BEAM"]
+}, {
     "speciesId": "snorlax",
     "fastMove": "LICK",
     "chargedMoves": ["BODY_SLAM", "EARTHQUAKE"]
+}, {
+    "speciesId": "solgaleo",
+    "fastMove": "FIRE_SPIN",
+    "chargedMoves": ["PSYCHIC_FANGS", "IRON_HEAD"]
 }, {
     "speciesId": "steelix_mega",
     "fastMove": "DRAGON_TAIL",
@@ -187,19 +203,7 @@
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["CRUNCH", "WILD_CHARGE"]
 }, {
-    "speciesId": "melmetal",
-    "fastMove": "THUNDER_SHOCK",
-    "chargedMoves": ["SUPER_POWER", "DOUBLE_IRON_BASH"]
-}, {
-    "speciesId": "rayquaza",
-    "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["BREAKING_SWIPE", "HURRICANE"]
-}, {
-    "speciesId": "gengar_mega",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["SHADOW_BALL", "SHADOW_PUNCH"]
-}, {
-    "speciesId": "solgaleo",
-    "fastMove": "FIRE_SPIN",
-    "chargedMoves": ["PSYCHIC_FANGS", "IRON_HEAD"]
+    "speciesId": "ursaluna",
+    "fastMove": "TACKLE",
+    "chargedMoves": ["ICE_PUNCH", "HIGH_HORSEPOWER"]
 }]
