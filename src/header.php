@@ -109,7 +109,7 @@ if(! isset($OG_IMAGE)){
 <meta name="apple-mobile-web-app-capable">
 <meta name="mobile-web-app-capable">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json?v=2">
+<link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json?v=3">
 
 <!--
 <?php if(strpos($_SERVER['REQUEST_URI'], 'team-builder') !== false): ?>
