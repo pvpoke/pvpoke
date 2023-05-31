@@ -532,8 +532,7 @@
         "meta": "masterfactions",
         "showCup": true,
         "showFormat": true,
-        "showMeta": true,
-        "hideRankings": true
+        "showMeta": true
     }, {
         "title": "Silph Factions (Justicar)",
         "cup": "justicar",
@@ -541,8 +540,7 @@
         "meta": "justicar",
         "showCup": true,
         "showFormat": true,
-        "showMeta": true,
-        "hideRankings": true
+        "showMeta": true
     }, {
         "title": "Silph Factions (Arcana)",
         "cup": "arcana",
@@ -550,8 +548,7 @@
         "meta": "arcana",
         "showCup": true,
         "showFormat": true,
-        "showMeta": true,
-        "hideRankings": true
+        "showMeta": true
     }, {
         "title": "Silph Factions (Catacomb)",
         "cup": "catacomb",
@@ -559,17 +556,7 @@
         "meta": "catacomb",
         "showCup": true,
         "showFormat": true,
-        "showMeta": true,
-        "hideRankings": true
-    }, {
-        "title": "Silph Polkadot Cup",
-        "cup": "polkadot",
-        "cp": 1500,
-        "meta": "polkadot",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true,
-        "hideRankings": true
+        "showMeta": true
     }, {
         "title": "Silph Innocent Cup",
         "cup": "innocent",
@@ -577,8 +564,7 @@
         "meta": "innocent",
         "showCup": true,
         "showFormat": true,
-        "showMeta": true,
-        "hideRankings": true
+        "showMeta": true
     }, {
         "title": "GO Stadium Cliffhanger",
         "cup": "cliffhanger",
