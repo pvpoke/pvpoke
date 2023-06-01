@@ -10,6 +10,7 @@ RewriteCond %{SCRIPT_FILENAME} !-f
 # RewriteRule ^(.*)$ https://pvpoke.com/$1 [L,R=301]
 
 RewriteRule ^season-13/(.*)$ /$1 [R,L]
+RewriteRule ^season-15/(.*)$ /$1 [R,L]
 
 Options -Indexes
 
