@@ -60,28 +60,13 @@ switch($cup){
 		break;
 
 
-	case "color":
-		$league = 'Color Cup';
+	case "summer":
+		$league = 'Summer Cup';
 		break;
 
-	case "psychic":
-		$league = 'Psychic Cup';
-		break;
 
 	case "retro":
 		$league = 'Retro Cup';
-		break;
-
-	case "naiad":
-		$league = 'Silph Naiad Cup';
-		break;
-
-	case "ionic":
-		$league = 'Silph Ionic Cup';
-		break;
-
-	case "polkadot":
-		$league = 'Silph Polkadot Cup';
 		break;
 
 	case "innocent":
@@ -92,24 +77,12 @@ switch($cup){
 		$league = 'Little Cup';
 		break;
 
-	case "sunshine":
-		$league = 'Sunshine Cup';
-		break;
-
-	case "evolution":
-		$league = 'Evolution Cup';
-		break;
-
-	case "weather":
-		$league = 'Weather Cup';
-		break;
-
 	case "justicar":
 		$league = 'Silph Factions (Justicar)';
 		break;
 
 	case "championship":
-		$league = '2022 Championship Series';
+		$league = '2023 Championship Series';
 		break;
 
 	case "mega":
@@ -128,10 +101,6 @@ switch($cup){
 
 	case "element":
 		$league = 'Element Cup';
-		break;
-
-	case "mountain":
-		$league = 'Mountain Cup';
 		break;
 
 	case "remix":

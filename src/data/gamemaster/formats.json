@@ -46,6 +46,33 @@
 		"showMeta": true
 	},
 	{
+		"title": "Summer Cup (Great League)",
+		"cup": "summer",
+		"cp": 1500,
+		"meta": "summer",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Summer Cup (Ultra League)",
+		"cup": "summer",
+		"cp": 2500,
+		"meta": "summerultra",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Element Cup",
+		"cup": "element",
+		"cp": 500,
+		"meta": "element",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
 		"title": "Silph Factions (Great League)",
 		"cup": "factionsgreat",
 		"cp": 1500,

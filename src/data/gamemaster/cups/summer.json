@@ -1,0 +1,12 @@
+{
+	"name": "summer",
+	"title": "Summer Cup",
+	"include": [{
+		"filterType": "type",
+		"values":  ["normal", "grass", "fire", "water", "electric", "bug"]
+	}],
+	"exclude": [{
+		"filterType": "tag",
+		"values":  ["mega"]
+	}]
+}
