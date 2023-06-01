@@ -1494,7 +1494,7 @@ var InterfaceMaster = (function () {
 
 			function addAlternativePokemon(e){
 				var id = $(e.target).attr("pokemon");
-				$(".poke-select-container .poke.multi .add-poke-btn").trigger("click");
+				$(".poke-select-container .poke.multi .add-poke-btn").trigger("click", false);
 				$(".modal .poke-select option[value=\""+id+"\"]").prop("selected", "selected");
 				$(".modal .poke-select").trigger("change");
 				$("html, body").animate({ scrollTop: $(".poke.multi").offset().top }, 500);
