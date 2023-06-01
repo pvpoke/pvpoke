@@ -128,56 +128,62 @@ var InterfaceMaster = (function () {
 
 									// Split out the move string and select moves
 
-									var moveStr = list[i].split("-m-")[1];
+									if(list[i].split("-m-").length > 1){
+										var moveStr = list[i].split("-m-")[1];
 
-									arr = moveStr.split("-");
+										arr = moveStr.split("-");
 
-									// Search string for any custom moves to add
-									var customFastMove = false;
+										// Search string for any custom moves to add
+										var customFastMove = false;
 
-									for(var n = 0; n < arr.length; n++){
-										if(arr[n].match('([A-Z_]+)')){
-											var move = gm.getMoveById(arr[n]);
-											var movePool = (move.energyGain > 0) ? pokemon.fastMovePool : pokemon.chargedMovePool;
-											var moveType = (move.energyGain > 0) ? "fast" : "charged";
-											var moveIndex = n-1;
+										for(var n = 0; n < arr.length; n++){
+											if(arr[n].match('([A-Z_]+)')){
+												var move = gm.getMoveById(arr[n]);
+												var movePool = (move.energyGain > 0) ? pokemon.fastMovePool : pokemon.chargedMovePool;
+												var moveType = (move.energyGain > 0) ? "fast" : "charged";
+												var moveIndex = n-1;
 
-											if(moveType == "fast"){
-												customFastMove = true;
+												if(moveType == "fast"){
+													customFastMove = true;
+												}
+
+												pokemon.addNewMove(arr[n], movePool, true, moveType, moveIndex);
+											}
+										}
+
+										if(! customFastMove){
+											pokemon.selectMove("fast", pokemon.fastMovePool[arr[0]].moveId, 0);
+										}
+
+										for(var n = 1; n < arr.length; n++){
+											// Don't set this move if already set as a custom move
+
+											if(arr[n].match('([A-Z_]+)')){
+												continue;
 											}
 
-											pokemon.addNewMove(arr[n], movePool, true, moveType, moveIndex);
-										}
-									}
+											var moveId = "none";
 
-									if(! customFastMove){
-										pokemon.selectMove("fast", pokemon.fastMovePool[arr[0]].moveId, 0);
-									}
+											if(arr[n] > 0){
+												moveId = pokemon.chargedMovePool[arr[n]-1].moveId;
+											}
 
-									for(var n = 1; n < arr.length; n++){
-										// Don't set this move if already set as a custom move
-
-										if(arr[n].match('([A-Z_]+)')){
-											continue;
-										}
-
-										var moveId = "none";
-
-										if(arr[n] > 0){
-											moveId = pokemon.chargedMovePool[arr[n]-1].moveId;
-										}
-
-										if(moveId != "none"){
-											pokemon.selectMove("charged", moveId, n-1);
-										} else{
-											if((arr[1] == "0")&&(arr[2] == "0")){
-												pokemon.selectMove("charged", moveId, 0); // Always deselect the first move because removing it pops the 2nd move up
-											} else{
+											if(moveId != "none"){
 												pokemon.selectMove("charged", moveId, n-1);
+											} else{
+												if((arr[1] == "0")&&(arr[2] == "0")){
+													pokemon.selectMove("charged", moveId, 0); // Always deselect the first move because removing it pops the 2nd move up
+												} else{
+													pokemon.selectMove("charged", moveId, n-1);
+												}
 											}
-										}
 
+										}
+									} else{
+										// Auto select moves if none are specified
+										pokemon.autoSelectMoves();
 									}
+
 
 									pokeList.push(pokemon);
 								}

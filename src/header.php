@@ -202,7 +202,7 @@ if(! isset($OG_IMAGE)){
 
 <body>
 
-	<?php if(true): // Removing this but saving code for future use ?>
+	<?php if(false): // Removing this but saving code for future use ?>
 		<?php if(strpos($_SERVER['REQUEST_URI'], 'season-15') == false): ?>
 			<div class="header-ticker">
 				<a href="https://pvpoke.com/season-15/rankings/">Preview next season</a>
