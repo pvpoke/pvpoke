@@ -76,10 +76,10 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.29.29 (April 22, 2023)</h4>
+	<h4>v1.30.0 (July 1, 2023)</h4>
 	<ul>
-		<li>Improved ranking search speed</li>
-		<li>Team Builder has a setting to include Pokemon of the same species in team suggestions. This setting is off by default and enabled for Silph formats.</li>
+		<li>Move and ranking updates for Season of Hidden Gems are live!</li>
+		<li>New logo and UI updates</li>
 	</ul>
 
 	<h3>Latest Article</h3>

@@ -1,5 +1,5 @@
 <?php require_once '../modules/config.php';
-$SITE_VERSION = '1.3.9';
+$SITE_VERSION = '1.3.10';
 
 /*****************************************************************************
 
@@ -64,12 +64,12 @@ if(isset($_COOKIE['settings'])){
 <meta name="apple-mobile-web-app-capable">
 <meta name="mobile-web-app-capable">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json?v=2">
+<link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json?v=3">
 
 
 <link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
 
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>tera/css/tera-style.css?v=6">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>tera/css/tera-style.css?v=7">
 
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>
 
@@ -106,7 +106,7 @@ if(isset($_COOKIE['settings'])){
 
 	<header>
 		<div class="header-wrap">
-			<a href="<?php echo $WEB_ROOT; ?>tera"><img src="<?php echo $WEB_ROOT; ?>/img/themes/sunflower/header-white.png" title="PvPoke.com" /></a>
+			<a href="<?php echo $WEB_ROOT; ?>tera"><img src="<?php echo $WEB_ROOT; ?>img/themes/sunflower/header-white.png" title="PvPoke.com" /></a>
 			<a class="home-link" href="<?php echo $WEB_ROOT; ?>">Back to main site</a>
 		</div>
 	</header>
