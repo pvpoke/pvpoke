@@ -106,24 +106,45 @@
 		"cup": "justicar",
 		"cp": 2500,
 		"meta": "justicar",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
+		"showCup": false,
+		"showFormat": false,
+		"showMeta": false,
+		"hideRankings": true
 	},
 	{
 		"title": "Silph Factions (Arcana)",
 		"cup": "arcana",
 		"cp": 1500,
 		"meta": "arcana",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
+		"showCup": false,
+		"showFormat": false,
+		"showMeta": false,
+		"hideRankings": true
 	},
 	{
 		"title": "Silph Factions (Catacomb)",
 		"cup": "catacomb",
 		"cp": 1500,
 		"meta": "catacomb",
+		"showCup": false,
+		"showFormat": false,
+		"showMeta": false,
+		"hideRankings": true
+	},
+	{
+		"title": "Silph Factions (Ragnar)",
+		"cup": "ragnar",
+		"cp": 1500,
+		"meta": "ragnar",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Silph Factions (Echo)",
+		"cup": "echo",
+		"cp": 1500,
+		"meta": "echo",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
