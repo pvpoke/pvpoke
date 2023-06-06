@@ -78,7 +78,7 @@
 		"cp": 1500,
 		"meta": "great",
 		"showCup": false,
-		"showFormat": true,
+		"showFormat": false,
 		"showMeta": false,
 		"hideRankings": true
 	},
@@ -98,34 +98,7 @@
 		"cp": 10000,
 		"meta": "masterfactions",
 		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Silph Factions (Justicar)",
-		"cup": "justicar",
-		"cp": 2500,
-		"meta": "justicar",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Silph Factions (Arcana)",
-		"cup": "arcana",
-		"cp": 1500,
-		"meta": "arcana",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Silph Factions (Catacomb)",
-		"cup": "catacomb",
-		"cp": 1500,
-		"meta": "catacomb",
-		"showCup": true,
-		"showFormat": true,
+		"showFormat": false,
 		"showMeta": true
 	},
 	{

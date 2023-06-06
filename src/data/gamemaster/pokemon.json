@@ -25610,7 +25610,8 @@
     },
     "types": ["dragon", "none"],
     "fastMoves": ["DRAGON_TAIL", "COUNTER"],
-    "chargedMoves": ["DRAGON_CLAW", "SURF", "NIGHT_SLASH", "EARTHQUAKE"],
+    "chargedMoves": ["DRAGON_CLAW", "SURF", "NIGHT_SLASH", "EARTHQUAKE", "BREAKING_SWIPE"],
+	"eliteMoves": ["BREAKING_SWIPE"],
     "defaultIVs": {
         "cp500": [5.5, 5, 4, 10],
         "cp1500": [15, 8, 13, 15],
@@ -30103,7 +30104,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_SANDYGAST",
         "evolutions": ["palossand"]
@@ -30128,7 +30129,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_SANDYGAST",
         "parent": "sandygast"
