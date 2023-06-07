@@ -19,6 +19,14 @@
     "fastMove": "WATER_GUN",
     "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"]
 }, {
+    "speciesId": "slowbro_mega",
+    "fastMove": "CONFUSION",
+    "chargedMoves": ["SURF", "ICE_BEAM"]
+}, {
+    "speciesId": "pinsir_mega",
+    "fastMove": "FURY_CUTTER",
+    "chargedMoves": ["X_SCISSOR", "CLOSE_COMBAT"]
+}, {
     "speciesId": "blaziken_mega",
     "fastMove": "COUNTER",
     "chargedMoves": ["BLAZE_KICK", "BLAST_BURN"]
@@ -50,10 +58,6 @@
     "speciesId": "garchomp",
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["OUTRAGE", "SAND_TOMB"]
-}, {
-    "speciesId": "gengar_mega",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["SHADOW_BALL", "SHADOW_PUNCH"]
 }, {
     "speciesId": "giratina_altered",
     "fastMove": "SHADOW_CLAW",
