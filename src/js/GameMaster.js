@@ -30,6 +30,8 @@ var GameMaster = (function () {
 			gmVersion = "gamemaster.min";
 		}
 
+		console.log("loading gamemaster");
+
 		$.ajax({
 			dataType: "json",
 			url: webRoot+"data/"+gmVersion+".json?v="+siteVersion,
@@ -40,6 +42,8 @@ var GameMaster = (function () {
 			},
 			success: function( data ) {
 				object.data = data;
+
+				console.log("gamemaster loaded");
 
 				// Insert cup and format values into cup and format select dropdowns
 				if(typeof updateFormatSelect === "function"){
@@ -64,7 +68,9 @@ var GameMaster = (function () {
 					// Sort Pokemon alphabetically for searching
 					object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
 
-					InterfaceMaster.getInstance().init(object);
+					if(typeof InterfaceMaster !== 'undefined'){
+						InterfaceMaster.getInstance().init(object);
+					}
 
 					if(typeof customRankingInterface !== 'undefined'){
 						customRankingInterface.init(object);

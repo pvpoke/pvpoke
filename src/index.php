@@ -114,6 +114,15 @@ if (strpos($WEB_ROOT, 'src') !== false) : ?>
 	<script src="<?php echo $WEB_ROOT; ?>js/battle/TeamRanker.js?v=<?php echo $SITE_VERSION; ?>"></script>
 	<script src="<?php echo $WEB_ROOT; ?>js/RankingMain.js?v=<?php echo $SITE_VERSION; ?>"></script>
 
+<?php else: ?>
+
+	<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
+	<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>
+
+	<script>
+	var gm = GameMaster.getInstance();
+	</script>
+
 <?php endif; ?>
 
 <?php require_once 'footer.php'; ?>
