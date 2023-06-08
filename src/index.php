@@ -86,15 +86,14 @@
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-04-togetic/">
-				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/community-day/23-04-togetic/thumb.jpg">
+			<a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-07-axew/">
+				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/community-day/23-07-axew/thumb.jpg">
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-04-togetic/">Togetic Community Day Guide for PvP</a></h4>
-			<div class="date">April 14, 2023</div>
-			<p>Togetic is a charming addition to the Community Day roster, and its evolution, Togekiss, has play in all three leagues. Find out what to look out for in PvP!</p>
-			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Community Day"># Community Day</a><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a></div>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-07-axew/">Axew Community Day Guide for PvP</a></h4>
+			<div class="date">June 8, 2023</div>
+			<p>Axew is hacking its way onto the Community Day roster. Can it cut a place in PvP? Read up on the meta impact for Haxorus and Breaking Swipe!</p>
 		</div>
 	</div>
 </div>
