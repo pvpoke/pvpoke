@@ -74,9 +74,11 @@ input.article-search {
 .mega-section .mega-list .mega-item .mega-image {
   width: 75px;
   height: 75px;
+  border-radius: 75px;
   background-size: 100%;
   background-repeat: no-repeat;
-  margin: 0 auto;
+  margin: 0 auto 10px auto;
+  border: 1px solid;
 }
 .mega-section .mega-list .mega-item .mega-label {
   text-align: center;
@@ -752,6 +754,21 @@ input.article-search {
   border-bottom: 1px solid #83bad7;
 }
 .section.togetic .faq-item {
+  background: #ffffff;
+}
+
+.section.axew {
+  background: #f4f7f0;
+  border: 4px solid #979359;
+}
+.section.axew .article-header, .section.axew .mega-section {
+  background: #74886b !important;
+}
+.section.axew .feature h4 {
+  color: #74886b;
+  border-bottom: 1px solid #8fa883;
+}
+.section.axew .faq-item {
   background: #ffffff;
 }
 

@@ -87,9 +87,11 @@ input.article-search{
 			.mega-image{
 				width:75px;
 				height:75px;
+				border-radius: 75px;
 				background-size:100%;
 				background-repeat: no-repeat;
-				margin:0 auto;
+				margin: 0 auto 10px auto;
+				border: 1px solid;
 			}
 
 			.mega-label{
@@ -917,6 +919,26 @@ input.article-search{
 	}
 }
 
+.section.axew{
+
+	background: #f4f7f0;
+	border:4px solid #979359;
+
+	.article-header, .mega-section{
+		background:#74886b !important;
+	}
+
+	.feature{
+		h4{
+			color:#74886b;
+			border-bottom:1px solid #8fa883;
+		}
+	}
+
+	.faq-item{
+    	background: #ffffff;
+	}
+}
 
 
 

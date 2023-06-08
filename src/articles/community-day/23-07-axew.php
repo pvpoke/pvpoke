@@ -52,6 +52,14 @@ require_once '../../header.php';
 				<div class="mega-image"></div>
 				<div class="mega-label">Charizard X</div>
 			</div>
+			<div class="mega-item" mega="ampharos">
+				<div class="mega-image"></div>
+				<div class="mega-label">Ampharos</div>
+			</div>
+			<div class="mega-item" mega="sceptile">
+				<div class="mega-image"></div>
+				<div class="mega-label">Sceptile</div>
+			</div>
 			<div class="mega-item" mega="altaria">
 				<div class="mega-image"></div>
 				<div class="mega-label">Altaria</div>
