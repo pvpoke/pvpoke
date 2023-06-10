@@ -73,12 +73,21 @@
 		"showMeta": true
 	},
 	{
+		"title": "Single-Type Cup",
+		"cup": "single",
+		"cp": 1500,
+		"meta": "single",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
 		"title": "Silph Factions (Great League)",
 		"cup": "factionsgreat",
 		"cp": 1500,
 		"meta": "great",
 		"showCup": false,
-		"showFormat": false,
+		"showFormat": true,
 		"showMeta": false,
 		"hideRankings": true
 	},
@@ -100,36 +109,6 @@
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
-	},
-	{
-		"title": "Silph Factions (Justicar)",
-		"cup": "justicar",
-		"cp": 2500,
-		"meta": "justicar",
-		"showCup": false,
-		"showFormat": false,
-		"showMeta": false,
-		"hideRankings": true
-	},
-	{
-		"title": "Silph Factions (Arcana)",
-		"cup": "arcana",
-		"cp": 1500,
-		"meta": "arcana",
-		"showCup": false,
-		"showFormat": false,
-		"showMeta": false,
-		"hideRankings": true
-	},
-	{
-		"title": "Silph Factions (Catacomb)",
-		"cup": "catacomb",
-		"cp": 1500,
-		"meta": "catacomb",
-		"showCup": false,
-		"showFormat": false,
-		"showMeta": false,
-		"hideRankings": true
 	},
 	{
 		"title": "Silph Factions (Ragnar)",

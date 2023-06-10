@@ -77,8 +77,8 @@ switch($cup){
 		$league = 'Little Cup';
 		break;
 
-	case "justicar":
-		$league = 'Silph Factions (Justicar)';
+	case "single":
+		$league = 'Single-Type Cup';
 		break;
 
 	case "championship":
@@ -93,9 +93,8 @@ switch($cup){
 	case "factionsgreat":
 	case "factionsultra":
 	case "factionsmaster":
-	case "justicar":
-	case "catacomb":
-	case "arcana":
+	case "echo":
+	case "ragnar":
 		$league = 'Silph Factions';
 		break;
 

@@ -459,6 +459,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if(cup.name == "single"){
+					iterations = 1;
+				}
+
 				if(cup.name == "halloween"){
 					iterations = 1;
 				}

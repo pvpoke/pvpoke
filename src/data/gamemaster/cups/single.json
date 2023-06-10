@@ -1,0 +1,13 @@
+{
+    "name": "single",
+    "title": "Single-Type Cup",
+    "include": [{
+        "filterType": "type",
+        "values": ["none"]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega"]
+    }],
+    "partySize": 3
+}

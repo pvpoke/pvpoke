@@ -70,6 +70,37 @@
         "include": [],
         "exclude": []
     }, {
+        "name": "echo",
+        "title": "Silph Factions (Echo)",
+        "include": [{
+            "filterType": "id",
+            "name": "Species",
+            "values": ["articuno", "stunfisk", "swampert", "ferrothorn", "vigoroth", "wigglytuff", "drifblim", "talonflame", "zapdos", "obstagoon", "quagsire", "mandibuzz", "empoleon", "magnezone", "probopass", "wormadam_trash", "ninetales_alolan", "whimsicott", "nidoqueen", "scrafty", "whiscash", "pelipper", "mantine", "jellicent", "politoed", "galvantula", "venusaur", "golbat", "mawile"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["steelix", "escavalier", "jellicent", "dragonite", "zweilous", "flygon", "kommo-o", "dragalge", "haxorus", "roserade", "toxicroak", "heracross", "gyarados", "galvantula", "mawile", "vigoroth", "mandibuzz", "cresselia", "mew", "raichu_alolan", "obstagoon", "diggersby", "skarmory", "ninetales", "magcargo", "marowak_alolan", "talonflame", "lapras", "malamar", "vespiquen", "articuno", "umbreon", "sableye", "drapion", "graveler_alolan", "golem_alolan", "crustle", "barbaracle", "sudowoodo", "relicanth", "togetic", "scizor", "forretress"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["stunfisk", "cofagrigus", "ninetales", "sandslash_alolan", "dragonite", "gliscor", "gligar", "deoxys_defense", "sandslash", "froslass", "marowak_alolan", "magcargo", "flygon", "trevenant", "perrserker", "oranguru", "samurott", "galvantula", "politoed", "cresselia", "excadrill", "quagsire", "castform_rainy", "mew", "donphan", "leavanny", "torterra", "gastrodon", "regice", "pinsir", "hypno", "dragonair", "goodra", "cradily", "tapu_fini", "greedent", "munchlax", "snorlax", "sceptile", "aurorus", "lapras", "sealeo", "skuntank", "muk_alolan", "grimer_alolan", "qwilfish_hisuian", "dedenne", "sudowoodo", "barbaracle", "druddigon"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["charizard", "poliwrath", "piloswine", "qwilfish_hisuian", "gligar", "gliscor", "sirfetchd", "primeape", "machamp", "moltres", "electivire", "zapdos", "ampharos", "minun", "galvantula", "victini", "pidgeot", "cofagrigus", "walrein", "sealeo", "dragonair", "regirock", "gallade", "milotic", "muk", "relicanth", "pelipper", "jumpluff", "crustle", "shiftry", "tyrunt", "malamar", "deoxys_defense", "aggron", "gengar", "haunter", "dusclops", "runerigus", "serperior", "ferrothorn"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "name": "Tag",
+            "values": ["mega", "shadow"]
+        }, {
+            "filterType": "type",
+            "name": "Type",
+            "values": ["bug", "dark", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water", "none"]
+        }],
+        "allowSameSpecies": true,
+        "partySize": 8
+    }, {
         "name": "element",
         "title": "Element Cup",
         "include": [{
@@ -94,17 +125,17 @@
             "values": ["hawlucha"]
         }],
         "tierRules": {
-            "max": 17,
+            "max": 19,
             "floor": 1,
             "tiers": [{
                 "points": 7,
                 "pokemon": ["altaria", "medicham", "stunfisk_galarian", "lanturn", "noctowl", "registeel"]
             }, {
                 "points": 5,
-                "pokemon": ["azumarill", "lickitung", "toxapex", "bastiodon", "sableye", "trevenant", "deoxys_defense", "swampert", "umbreon"]
+                "pokemon": ["azumarill", "ninetales_alolan", "bastiodon", "deoxys_defense", "dewgong", "lickitung", "sableye", "swampert", "toxapex", "umbreon"]
             }, {
                 "points": 2,
-                "pokemon": ["abomasnow", "froslass", "pidgeot", "aurorus", "machamp", "scrafty", "charizard", "mandibuzz", "skarmory", "cofagrigus", "mantine", "tapu_fini", "cresselia", "ninetales_alolan", "venusaur", "diggersby", "obstagoon", "walrein", "drapion", "pelipper"]
+                "pokemon": ["abomasnow", "araquanid", "aurorus", "charizard", "cresselia", "cofagrigus", "diggersby", "drapion", "dunsparce", "froslass", "machamp", "mantine", "mandibuzz", "obstagoon", "pelipper", "pidgeot", "quagsire", "sandslash_alolan", "scrafty", "skarmory", "tapu_fini", "toxicroak", "trevenant", "venusaur", "walrein", "whiscash"]
             }]
         },
         "allowSameSpecies": true
@@ -116,7 +147,7 @@
             "values": ["bug", "dark", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water"]
         }, {
             "filterType": "id",
-            "values": ["aggron_mega", "scizor_mega", "salamence_mega", "blastoise_mega", "steelix_mega", "charizard_mega_x", "venusaur_mega", "abomasnow_mega", "blaziken_mega", "sceptile_mega", "altaria_mega", "alakazam_mega", "beedrill_mega", "aerodactyl_mega", "manectric_mega", "lopunny_mega", "kangaskhan_mega", "slowbro_mega", "ampharos_mega", "absol_mega", "glalie_mega", "houndoom_mega", "banette_mega", "pidgeot_mega", "pinsir_mega"]
+            "values": ["aggron_mega", "scizor_mega", "salamence_mega", "steelix_mega", "charizard_mega_x", "blastoise_mega", "slowbro_mega", "venusaur_mega", "alakazam_mega", "sceptile_mega", "blaziken_mega", "altaria_mega", "abomasnow_mega", "beedrill_mega", "pidgeot_mega", "kangaskhan_mega", "aerodactyl_mega", "ampharos_mega", "houndoom_mega", "manectric_mega", "absol_mega", "banette_mega", "lopunny_mega", "glalie_mega", "pinsir_mega"]
         }],
         "exclude": [{
             "filterType": "tag",
@@ -136,10 +167,10 @@
                 "pokemon": ["lugia", "ho_oh", "kyogre", "giratina_origin", "giratina_altered", "meloetta_aria", "zarude", "steelix_mega"]
             }, {
                 "points": 2,
-                "pokemon": ["zekrom", "xerneas", "rayquaza", "melmetal", "dragonite", "yveltal", "reshiram", "palkia", "blastoise_mega", "charizard_mega_x", "slowbro_mega"]
+                "pokemon": ["zekrom", "xerneas", "yveltal", "melmetal", "palkia", "dragonite", "reshiram", "rayquaza", "charizard_mega_x", "blastoise_mega", "slowbro_mega"]
             }, {
                 "points": 1,
-                "pokemon": ["landorus_therian", "landorus_incarnate", "genesect", "genesect_shock", "genesect_chill", "genesect_burn", "genesect_douse", "kyurem", "mew", "buzzwole", "florges", "venusaur_mega", "abomasnow_mega", "blaziken_mega", "sceptile_mega", "altaria_mega", "alakazam_mega"]
+                "pokemon": ["landorus_therian", "landorus_incarnate", "genesect", "genesect_shock", "genesect_chill", "genesect_burn", "genesect_douse", "mew", "buzzwole", "florges", "kyurem", "venusaur_mega", "abomasnow_mega", "blaziken_mega", "altaria_mega", "alakazam_mega"]
             }]
         },
         "allowSameSpecies": true
@@ -152,19 +183,23 @@
             "values": ["mega"]
         }, {
             "filterType": "id",
-            "values": ["zapdos_galarian", "articuno_galarian", "moltres_galarian"]
+            "values": ["hawlucha"]
         }],
         "tierRules": {
-            "max": 6,
-            "floor": 0,
+            "max": 17,
+            "floor": 1,
             "tiers": [{
-                "points": 4,
-                "pokemon": ["stunfisk_galarian", "registeel", "cobalion", "giratina_altered", "trevenant", "swampert", "cresselia", "talonflame"]
+                "points": 7,
+                "pokemon": ["cobalion", "swampert", "giratina_altered", "registeel", "stunfisk_galarian", "cresselia"]
             }, {
-                "points": 1,
-                "pokemon": ["scrafty", "tapu_fini", "cofagrigus", "nidoqueen", "mandibuzz", "umbreon", "walrein", "deoxys_defense", "regirock", "steelix", "buzzwole", "dragonite", "virizion", "ninetales_alolan", "jellicent", "runerigus", "dubwool", "greedent", "kommo_o", "guzzlord", "miltank", "pidgeot", "aurorus"]
+                "points": 5,
+                "pokemon": ["trevenant", "charizard", "steelix", "virizion", "ninetales_alolan", "jellicent", "walrein", "clefable", "tapu_fini"]
+            }, {
+                "points": 2,
+                "pokemon": ["talonflame", "deoxys_defense", "umbreon", "mandibuzz", "scrafty", "regirock", "dragonite", "kommo-o", "guzzlord", "nidoqueen", "dubwool", "sandslash_alolan", "pidgeot"]
             }]
-        }
+        },
+        "allowSameSpecies": true
     }, {
         "name": "fantasy",
         "title": "Fantasy Cup",
@@ -245,6 +280,33 @@
         }],
         "partySize": 3
     }, {
+        "name": "ragnar",
+        "title": "Silph Factions (Ragnar)",
+        "include": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["bug", "dragon", "ice", "poison", "psychic", "water"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["greedent", "snorlax", "miltank"]
+        }],
+        "exclude": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["dark", "electric", "rock"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["altaria", "ninetales_alolan", "sandshrew_alolan", "lanturn", "gardevoir", "toxicroak", "araquanid", "articuno_galarian", "toxapex", "pelipper", "sandslash_alolan", "medicham", "jellicent", "golbat", "crobat", "forretress", "sneasler"]
+        }, {
+            "filterType": "tag",
+            "name": "Tag",
+            "values": ["mega", "shadow"]
+        }],
+        "allowSameSpecies": true,
+        "partySize": 8
+    }, {
         "name": "remix",
         "title": "Remix",
         "include": [],
@@ -262,6 +324,18 @@
         }],
         "partySize": 3,
         "presetOnly": true
+    }, {
+        "name": "single",
+        "title": "Single-Type Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["none"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }],
+        "partySize": 3
     }, {
         "name": "summer",
         "title": "Summer Cup",
@@ -340,12 +414,20 @@
         "showFormat": true,
         "showMeta": true
     }, {
+        "title": "Single-Type Cup",
+        "cup": "single",
+        "cp": 1500,
+        "meta": "single",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
         "title": "Silph Factions (Great League)",
         "cup": "factionsgreat",
         "cp": 1500,
         "meta": "great",
         "showCup": false,
-        "showFormat": false,
+        "showFormat": true,
         "showMeta": false,
         "hideRankings": true
     }, {
@@ -354,7 +436,7 @@
         "cp": 2500,
         "meta": "ultra",
         "showCup": false,
-        "showFormat": false,
+        "showFormat": true,
         "showMeta": false,
         "hideRankings": true
     }, {
@@ -362,6 +444,22 @@
         "cup": "factionsmaster",
         "cp": 10000,
         "meta": "masterfactions",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Silph Factions (Ragnar)",
+        "cup": "ragnar",
+        "cp": 1500,
+        "meta": "ragnar",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Silph Factions (Echo)",
+        "cup": "echo",
+        "cp": 1500,
+        "meta": "echo",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -5856,7 +5954,7 @@
             "cp2500": [50, 15, 15, 15]
         },
         "eliteMoves": ["LICK"],
-        "searchPriority": 4,
+        "searchPriority": 3,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -26057,6 +26155,7 @@
             "cp1500": [15, 8, 13, 15],
             "cp2500": [25.5, 6, 15, 9]
         },
+        "searchPriority": 4,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true,
