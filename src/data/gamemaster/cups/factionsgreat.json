@@ -10,18 +10,18 @@
         "values": ["hawlucha"]
     }],
     "tierRules": {
-        "max": 17,
+        "max": 19,
         "floor": 1,
         "tiers": [{
             "points": 7,
             "pokemon": ["altaria", "medicham", "stunfisk_galarian", "lanturn", "noctowl", "registeel"]
         }, {
             "points": 5,
-            "pokemon": ["azumarill", "lickitung", "toxapex", "bastiodon", "sableye", "trevenant", "deoxys_defense", "swampert", "umbreon"]
+            "pokemon": ["azumarill", "ninetales_alolan", "bastiodon", "deoxys_defense", "dewgong", "lickitung", "sableye", "swampert", "toxapex", "umbreon"]
         }, {
             "points": 2,
-            "pokemon": ["abomasnow", "froslass", "pidgeot", "aurorus", "machamp", "scrafty", "charizard", "mandibuzz", "skarmory", "cofagrigus", "mantine", "tapu_fini", "cresselia", "ninetales_alolan", "venusaur", "diggersby", "obstagoon", "walrein", "drapion", "pelipper"]
+            "pokemon": ["abomasnow", "araquanid", "aurorus", "charizard", "cresselia", "cofagrigus", "diggersby", "drapion", "dunsparce", "froslass", "machamp", "mantine", "mandibuzz", "obstagoon", "pelipper", "pidgeot", "quagsire", "sandslash_alolan", "scrafty", "skarmory", "tapu_fini", "toxicroak", "trevenant", "venusaur", "walrein", "whiscash"]
         }]
     },
-	"allowSameSpecies": true
+    "allowSameSpecies": true
 }

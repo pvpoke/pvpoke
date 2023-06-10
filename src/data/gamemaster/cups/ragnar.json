@@ -1,0 +1,28 @@
+{
+    "name": "ragnar",
+    "title": "Silph Factions (Ragnar)",
+    "include": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["bug", "dragon", "ice", "poison", "psychic", "water"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["greedent", "snorlax", "miltank"]
+    }],
+    "exclude": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["dark", "electric", "rock"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["altaria", "ninetales_alolan", "sandshrew_alolan", "lanturn", "gardevoir", "toxicroak", "araquanid", "articuno_galarian", "toxapex", "pelipper", "sandslash_alolan", "medicham", "jellicent", "golbat", "crobat", "forretress", "sneasler"]
+    }, {
+        "filterType": "tag",
+        "name": "Tag",
+        "values": ["mega", "shadow"]
+    }],
+    "allowSameSpecies": true,
+    "partySize": 8
+}

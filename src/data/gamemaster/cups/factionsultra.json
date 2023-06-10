@@ -7,17 +7,21 @@
         "values": ["mega"]
     }, {
         "filterType": "id",
-        "values": ["zapdos_galarian", "articuno_galarian", "moltres_galarian"]
+        "values": ["hawlucha"]
     }],
     "tierRules": {
-        "max": 6,
-        "floor": 0,
+        "max": 17,
+        "floor": 1,
         "tiers": [{
-            "points": 4,
-            "pokemon": ["stunfisk_galarian", "registeel", "cobalion", "giratina_altered", "trevenant", "swampert", "cresselia", "talonflame"]
+            "points": 7,
+            "pokemon": ["cobalion", "swampert", "giratina_altered", "registeel", "stunfisk_galarian", "cresselia"]
         }, {
-            "points": 1,
-            "pokemon": ["scrafty", "tapu_fini", "cofagrigus", "nidoqueen", "mandibuzz", "umbreon", "walrein", "deoxys_defense", "regirock", "steelix", "buzzwole", "dragonite", "virizion", "ninetales_alolan", "jellicent", "runerigus", "dubwool", "greedent", "kommo_o", "guzzlord", "miltank", "pidgeot", "aurorus"]
+            "points": 5,
+            "pokemon": ["trevenant", "charizard", "steelix", "virizion", "ninetales_alolan", "jellicent", "walrein", "clefable", "tapu_fini"]
+        }, {
+            "points": 2,
+            "pokemon": ["talonflame", "deoxys_defense", "umbreon", "mandibuzz", "scrafty", "regirock", "dragonite", "kommo-o", "guzzlord", "nidoqueen", "dubwool", "sandslash_alolan", "pidgeot"]
         }]
-    }
+    },
+    "allowSameSpecies": true
 }
