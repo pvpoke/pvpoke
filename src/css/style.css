@@ -5226,6 +5226,34 @@ a.pokebattler {
     min-width: 90px;
   }
 }
+.colorblind a.rating.win, .colorblind .rating-container .rating.win, .colorblind .summary .rating.win, .colorblind .stats-table .rating.win, .colorblind .train-table .rating.win,
+.colorblind .battle-results.matrix .difference-table a.difference.win {
+  background: #1A85FF;
+}
+.colorblind a.rating.close-win, .colorblind .rating-container .rating.close-win, .colorblind .summary .rating.close-win, .colorblind .stats-table .rating.close-win, .colorblind .train-table .rating.close-win {
+  background: #3176e9;
+}
+.colorblind a.rating.close-loss, .colorblind .rating-container .rating.close-loss, .colorblind .summary .rating.close-loss, .colorblind .stats-table .rating.close-loss, .colorblind .train-table .rating.close-loss {
+  background: #c71965;
+  color: #ffe4f8;
+}
+.colorblind a.rating.close-loss span, .colorblind .rating-container .rating.close-loss span, .colorblind .summary .rating.close-loss span, .colorblind .stats-table .rating.close-loss span, .colorblind .train-table .rating.close-loss span {
+  background-image: url("../img/themes/sunflower/rating-close-loss-dark.png?v=7");
+  opacity: 0.7;
+}
+.colorblind a.rating.loss, .colorblind .rating-container .rating.loss, .colorblind .summary .rating.loss, .colorblind .stats-table .rating.loss, .colorblind .train-table .rating.loss {
+  background: #D41159;
+  color: #ffe4f8;
+}
+.colorblind a.rating.loss span, .colorblind .rating-container .rating.loss span, .colorblind .summary .rating.loss span, .colorblind .stats-table .rating.loss span, .colorblind .train-table .rating.loss span {
+  background-image: url("../img/themes/sunflower/rating-loss-dark.png?v=7");
+  opacity: 1;
+}
+.colorblind .battle-results.matrix .difference-table a.difference.lose {
+  background: #D41159;
+  color: #ffe4f8;
+}
+
 #dev-panel {
   width: 300px;
   position: fixed;

@@ -5674,6 +5674,44 @@ a.pokebattler{
 	}
 }
 
+// Colorblind styling
+
+.colorblind{
+	a.rating.win, .rating-container .rating.win, .summary .rating.win, .stats-table .rating.win, .train-table .rating.win,
+	.battle-results.matrix .difference-table a.difference.win{
+		background: #1A85FF;
+	}
+
+	a.rating.close-win, .rating-container .rating.close-win, .summary .rating.close-win, .stats-table .rating.close-win, .train-table .rating.close-win{
+		background: #3176e9;
+	}
+
+	a.rating.close-loss, .rating-container .rating.close-loss, .summary .rating.close-loss, .stats-table .rating.close-loss, .train-table .rating.close-loss{
+		background: #c71965;
+		color: #ffe4f8;
+
+		span{
+			background-image: url('../img/themes/sunflower/rating-close-loss-dark.png?v=7');
+    		opacity: 0.7;
+		}
+	}
+
+	a.rating.loss, .rating-container .rating.loss, .summary .rating.loss, .stats-table .rating.loss, .train-table .rating.loss{
+		background: #D41159;
+		color: #ffe4f8;
+
+		span{
+			background-image: url('../img/themes/sunflower/rating-loss-dark.png?v=7');
+    		opacity: 1;
+		}
+	}
+
+	.battle-results.matrix .difference-table a.difference.lose{
+		background: #D41159;
+		color: #ffe4f8;
+	}
+}
+
 // Developer panel styling and display
 
 #dev-panel{

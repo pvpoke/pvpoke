@@ -108,6 +108,18 @@ function BattleHistogram($element){
 			[93,71,165]
 		]; // rgb
 
+		if(settings.colorblindMode){
+			winColors = [
+				[59,113,227],
+				[26,133,255]
+			]; // rgb
+
+			lossColors = [
+				[212,17,89],
+				[178,39,120]
+			]; // rgb
+		}
+
 		var barHeights = [];
 
 		for(var n = 0; n < histogramCounts.length; n++){

@@ -2925,6 +2925,18 @@ function Battle(){
 			[111,56,160]
 		]; // rgb
 
+		if(settings.colorblindMode){
+			winColors = [
+				[59,113,227],
+				[26,133,255]
+			]; // rgb
+
+			lossColors = [
+				[212,17,89],
+				[178,39,120]
+			]; // rgb
+		}
+
 		// Apply a gradient to bar color
 		var colors = (rating <= 500) ? lossColors : winColors;
 		var color = [ colors[0][0], colors[0][1], colors[0][2] ];

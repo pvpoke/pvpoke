@@ -28,6 +28,7 @@ var InterfaceMaster = (function () {
 				var xls = $(".check.xls").hasClass("on") ? 1 : 0;
 				var rankingDetails = $("#ranking-details option:selected").val();
 				var hardMovesetLinks = $(".check.hard-moveset-links").hasClass("on") ? 1 : 0;
+				var colorblindMode = $(".check.colorblindMode").hasClass("on") ? 1 : 0;
 
 				$.ajax({
 
@@ -44,7 +45,8 @@ var InterfaceMaster = (function () {
 						'ads': ads,
 						'xls': xls,
 						'rankingDetails': rankingDetails,
-						'hardMovesetLinks': hardMovesetLinks
+						'hardMovesetLinks': hardMovesetLinks,
+						'colorblindMode': colorblindMode
 					},
 					dataType:'json',
 					success : function(data) {
@@ -62,6 +64,14 @@ var InterfaceMaster = (function () {
 
 			function checkBox(e){
 				$(this).toggleClass("on");
+
+				if($(this).hasClass("colorblindMode")){
+					if($(this).hasClass("on")){
+						$("body").addClass("colorblind");
+					} else{
+						$("body").removeClass("colorblind");
+					}
+				}
 			}
 
 		};
