@@ -24,9 +24,13 @@
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["OUTRAGE", "EARTH_POWER"]
 }, {
-    "speciesId": "garchomp",
+    "speciesId": "garchomp_shadow",
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["OUTRAGE", "SAND_TOMB"]
+}, {
+    "speciesId": "haxorus",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["BREAKING_SWIPE", "NIGHT_SLASH"]
 }, {
     "speciesId": "gholdengo",
     "fastMove": "HEX",
