@@ -347,6 +347,18 @@
         "partySize": 3,
         "presetOnly": true
     }, {
+        "name": "retro",
+        "title": "Retro Cup",
+        "include": [],
+        "exclude": [{
+            "filterType": "type",
+            "values": ["dark", "fairy", "steel"]
+        }, {
+            "filterType": "tag",
+            "values": ["mega"]
+        }],
+        "partySize": 3
+    }, {
         "name": "single",
         "title": "Single-Type Cup",
         "include": [{
@@ -415,14 +427,6 @@
         "showFormat": true,
         "showMeta": true
     }, {
-        "title": "Summer Cup (Ultra League)",
-        "cup": "summer",
-        "cp": 2500,
-        "meta": "summerultra",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Element Cup",
         "cup": "element",
         "cp": 500,
@@ -435,6 +439,14 @@
         "cup": "single",
         "cp": 1500,
         "meta": "single",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Retro Cup",
+        "cup": "retro",
+        "cp": 1500,
+        "meta": "retro",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
