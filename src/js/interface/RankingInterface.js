@@ -349,7 +349,7 @@ var InterfaceMaster = (function () {
 						$el.find(".moves").prepend("<span class=\"cliffhanger-points\">"+points+ptStr+"</span>");
 					}
 
-					if(battle.getCup().name == "unity"){
+					if(battle.getCup().slots){
 						let slotNumber = 0;
 
 						for(var n = 0; n < battle.getCup().slots.length; n++){
