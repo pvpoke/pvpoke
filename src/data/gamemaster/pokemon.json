@@ -28541,9 +28541,10 @@
         "cp2500": [50, 15, 15, 15],
         "cp1500l40": [40, 15, 15, 15]
     },
+	"searchPriority": 3,
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
-    "released": false
+    "released": true
 }, {
     "dex": 704,
     "speciesName": "Goomy",
