@@ -31566,8 +31566,8 @@
             "hp": 155
         },
         "types": ["fire", "dragon"],
-        "fastMoves": ["EMBER", "FIRE_SPIN"],
-        "chargedMoves": ["OVERHEAT", "FLAMETHROWER", "DRAGON_PULSE"],
+        "fastMoves": ["EMBER", "FIRE_SPIN", "INCINERATE"],
+        "chargedMoves": ["OVERHEAT", "FLAMETHROWER", "DRAGON_PULSE", "FLASH_CANNON"],
         "defaultIVs": {
             "cp500": [8.5, 5, 15, 11],
             "cp1500": [25, 6, 14, 13],
