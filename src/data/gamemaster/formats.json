@@ -46,15 +46,6 @@
 		"showMeta": true
 	},
 	{
-		"title": "Element Cup",
-		"cup": "element",
-		"cp": 500,
-		"meta": "element",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
 		"title": "Single-Type Cup",
 		"cup": "single",
 		"cp": 1500,
@@ -72,6 +63,16 @@
 		"showFormat": true,
 		"showMeta": true
 	},
+	{
+		"title": "Great League Remix",
+		"cup": "remix",
+		"cp": 1500,
+		"meta": "remix",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+
 	{
 		"title": "Silph Factions (Great League)",
 		"cup": "factionsgreat",
