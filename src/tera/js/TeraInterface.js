@@ -261,7 +261,8 @@ var InterfaceMaster = (function () {
 
 				// Send Google Analytics pageview
 				if(currentURL != url){
-					gtag('config', UA_ID, {page_location: (host+url), page_path: url});
+					gtag('config', gaId, {page_location: (host+url), page_title: document.title,
+					pageview_type: 'virtual'});
 				}
 
 				// Scroll to results

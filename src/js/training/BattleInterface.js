@@ -735,15 +735,15 @@ var BattlerMaster = (function () {
 				// Report the overall battle result
 
 				if(properties.featuredTeam !== null){
-					gtag('event', battleSummaryStr, {
-					  'event_category' : 'Training Battle',
-					  'event_label' : battleResult,
+					gtag('event', 'Training Battle', {
+					  'summary' : battleSummaryStr,
+					  'result' : battleResult,
 					  'featured_team': properties.featuredTeam.slug
 					});
 				} else{
-					gtag('event', battleSummaryStr, {
-					  'event_category' : 'Training Battle',
-					  'event_label' : battleResult
+					gtag('event', 'Training Battle', {
+					  'summary' : battleSummaryStr,
+  					  'result' : battleResult
 					});
 				}
 
@@ -824,10 +824,10 @@ var BattlerMaster = (function () {
 
 					// Report team stats
 
-					gtag('event', battleSummaryStr, {
-					  'event_category' : 'Training Team',
-					  'event_label' : teamStrs[i],
-					  'value' : battleRating+'',
+					gtag('event', 'Training Team', {
+					  'summary' : battleSummaryStr,
+					  'team' : teamStrs[i],
+					  'value' : battleRating,
 					  'player_type': playerType,
 					});
 
@@ -859,12 +859,15 @@ var BattlerMaster = (function () {
 						}
 
 						if(properties.mode == "tournament"){
-							gtag('event', battleSummaryStr, {
-								  'event_category' : 'Training Roster Pokemon',
-								  'event_label' : pokemon.canonicalId,
-								  'value' : battleRating+'',
+							gtag('event', 'Training Roster Pokemon', {
+								  'summary' : battleSummaryStr,
+								  'speciesId' : pokemon.canonicalId,
+								  'value' : battleRating,
 								  'player_type': playerType
 								});
+
+
+							battleSummaryStr
 						}
 
 						pokeStrArr.push(pokeStr);
@@ -877,10 +880,10 @@ var BattlerMaster = (function () {
 
 					// Report roster stats
 
-					gtag('event', battleSummaryStr, {
-					  'event_category' : 'Training Roster',
-					  'event_label' : rosterStr,
-					  'value' : battleRating+'',
+					gtag('event', 'Training Roster', {
+					  'summary' : battleSummaryStr,
+					  'roster' : rosterStr,
+					  'value' : battleRating,
 					  'player_type': playerType,
 					});
 
@@ -906,9 +909,9 @@ var BattlerMaster = (function () {
 							}
 						}
 
-						gtag('event', battleSummaryStr, {
-						  'event_category' : 'Training Pokemon',
-						  'event_label' : pokeStr,
+						gtag('event', 'Training Pokemon', {
+						  'summary' : battleSummaryStr,
+						  'pokemon' : pokeStr,
 						  'value' : pokemon.battleStats.score+'',
 						  'player_type': playerType,
 						  'team_position': n+1,

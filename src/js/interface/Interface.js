@@ -481,14 +481,20 @@ var InterfaceMaster = (function () {
 					document.title = pokes[0].speciesName + " vs. " + pokes[1].speciesName + " - Battle | PvPoke";
 
 					// Push state to browser history so it can be navigated, only if not from URL parameters
+					gtag('event', 'Lookup', {
+					  'category': 'Simulation',
+					  'speciesId' : pokes[0].speciesId
+					});
 
 					gtag('event', 'Lookup', {
-					  'event_category' : 'Simulation',
-					  'event_label' : pokes[0].speciesId
+					  'category': 'Simulation',
+					  'speciesId' : pokes[1].speciesId
 					});
-					gtag('event', 'Lookup', {
-					  'event_category' : 'Simulation',
-					  'event_label' : pokes[1].speciesId
+
+					gtag('config', gaId, {
+					  page_title: document.title,
+					  page_location: (host+url),
+					  pageview_type: 'virtual'
 					});
 
 					if(get){
@@ -502,10 +508,6 @@ var InterfaceMaster = (function () {
 					var data = {cp: cp, p1: pokes[0].speciesId, p2: pokes[1].speciesId, s: pokes[0].startingShields+""+pokes[1].startingShields, m1: moveStrs[0], m2: moveStrs[1], h1: pokes[0].startHp, h2: pokes[1].startHp, e1: pokes[0].startEnergy, e2: pokes[1].startEnergy };
 
 					window.history.pushState(data, "Battle", url);
-
-					// Send Google Analytics pageview
-
-					gtag('config', UA_ID, {page_location: (host+url), page_path: url});
 				}
 			}
 
@@ -1139,8 +1141,8 @@ var InterfaceMaster = (function () {
 				// Push state to browser history so it can be navigated, only if not from URL parameters
 
 				gtag('event', 'Lookup', {
-				  'event_category' : 'Simulation',
-				  'event_label' : pokemon.speciesId
+				  'category' : 'Simulation',
+				  'speciesId' : pokemon.speciesId
 				});
 
 				document.title = poke.speciesName + " Multi-Battle | PvPoke";
@@ -1158,8 +1160,11 @@ var InterfaceMaster = (function () {
 				window.history.pushState(data, "Battle", url);
 
 				// Send Google Analytics pageview
-
-				gtag('config', UA_ID, {page_location: (host+url), page_path: url});
+				gtag('config', gaId, {
+				  page_title: document.title,
+				  page_location: (host+url),
+				  pageview_type: 'virtual'
+				});
 			}
 
 			// Process both groups of Pokemon through the team ranker
@@ -1192,8 +1197,7 @@ var InterfaceMaster = (function () {
 				// Push state to browser history so it can be navigated, only if not from URL parameters
 
 				gtag('event', 'Lookup', {
-				  'event_category' : 'Simulation',
-				  'event_label' : 'Matrix'
+				  'category' : 'Matrix'
 				});
 			}
 

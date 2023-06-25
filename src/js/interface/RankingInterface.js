@@ -546,11 +546,15 @@ var InterfaceMaster = (function () {
 				window.history.pushState(data, "Rankings", url);
 
 				// Send Google Analytics pageview
-
-				gtag('config', UA_ID, {page_location: (host+url), page_path: url});
 				gtag('event', 'Lookup', {
-				  'event_category' : 'Rankings',
-				  'event_label' : speciesId
+				  'category': 'Rankings',
+				  'speciesId' : speciesId
+				});
+
+				gtag('config', gaId, {
+				  page_title: speciesId + ' ' + document.title,
+				  page_location: (host+url),
+				  pageview_type: 'virtual'
 				});
 			}
 
