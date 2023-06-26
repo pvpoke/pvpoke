@@ -246,7 +246,7 @@ var InterfaceMaster = (function () {
 
 				// Update URL
 				let currentURL = window.location.pathname
-				let url = webRoot + 'tera/' + selectedPokemon.id + '/' + selectedTera + '/' + selectedTypes.join('-');
+				let url = host + 'tera/' + selectedPokemon.id + '/' + selectedTera + '/' + selectedTypes.join('-');
 
 				if(selectedPokemon.getTraitURLStr()){
 					url += '/' + selectedPokemon.getTraitURLStr();
@@ -261,7 +261,7 @@ var InterfaceMaster = (function () {
 
 				// Send Google Analytics pageview
 				if(currentURL != url){
-					gtag('config', gaId, {page_location: (host+url), page_title: document.title,
+					gtag('event', 'page_view', { page_location: url, page_title: document.title,
 					pageview_type: 'virtual'});
 				}
 

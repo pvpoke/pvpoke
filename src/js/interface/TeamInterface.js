@@ -1472,10 +1472,20 @@ var InterfaceMaster = (function () {
 					window.history.pushState(data, "Team Builder", url);
 
 					// Send Google Analytics pageview
+					var teamNameStr = pokes[0].speciesName;
+					var i = 1;
 
-					gtag('config', gaId, {
-					  page_title: document.title,
-					  page_location: (host+url),
+					for(i = 1; i < Math.min(pokes.length, 3); i++){
+						teamNameStr += ", " + pokes[i].speciesName;
+					}
+
+					if(i < pokes.length){
+						teamNameStr += "+" + (pokes.length - i);
+					}
+
+					gtag('event', 'page_view', {
+					  page_title: teamNameStr + " - Team Builder | PvPoke",
+					  page_location: link,
 					  pageview_type: 'virtual'
 					});
 

@@ -491,9 +491,9 @@ var InterfaceMaster = (function () {
 					  'speciesId' : pokes[1].speciesId
 					});
 
-					gtag('config', gaId, {
+					gtag('event', 'page_view', {
 					  page_title: document.title,
-					  page_location: (host+url),
+					  page_location: link,
 					  pageview_type: 'virtual'
 					});
 
@@ -1160,9 +1160,9 @@ var InterfaceMaster = (function () {
 				window.history.pushState(data, "Battle", url);
 
 				// Send Google Analytics pageview
-				gtag('config', gaId, {
+				gtag('event', 'page_view', {
 				  page_title: document.title,
-				  page_location: (host+url),
+				  page_location: link,
 				  pageview_type: 'virtual'
 				});
 			}

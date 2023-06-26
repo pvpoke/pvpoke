@@ -535,11 +535,13 @@ var InterfaceMaster = (function () {
 					category = sort;
 				}
 
-				var url = webRoot+"rankings/"+cup+"/"+cp+"/"+category+"/";
+				var rankStr = "rankings/"+cup+"/"+cp+"/"+category+"/"
 
 				if(speciesId){
-					url += speciesId+"/";
+					rankStr += speciesId+"/";
 				}
+
+				var url = webRoot+rankStr;
 
 				var data = {cup: cup, cp: cp, cat: category, p: speciesId };
 
@@ -551,9 +553,9 @@ var InterfaceMaster = (function () {
 				  'speciesId' : speciesId
 				});
 
-				gtag('config', gaId, {
+				gtag('event', 'page_view', {
 				  page_title: speciesId + ' ' + document.title,
-				  page_location: (host+url),
+				  page_location: (host+rankStr),
 				  pageview_type: 'virtual'
 				});
 			}

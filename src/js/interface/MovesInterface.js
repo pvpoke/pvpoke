@@ -167,9 +167,9 @@ var InterfaceMaster = (function () {
 
 				// Send Google Analytics pageview
 
-				gtag('config', gaId, {
+				gtag('event', 'page_view', {
 				  page_title: document.title,
-				  page_location: (host+url),
+				  page_location: (host+"moves/"+moveMode+"/"),
 				  pageview_type: 'virtual'
 				});
 			}
