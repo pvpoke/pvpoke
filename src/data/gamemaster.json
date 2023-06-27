@@ -35606,6 +35606,16 @@
         "buffApplyChance": "1",
         "archetype": "Self-Debuff Nuke"
     }, {
+        "moveId": "DRAGON_ASCENT",
+        "name": "Dragon Ascent",
+        "abbreviation": "DrA",
+        "type": "flying",
+        "power": 150,
+        "energy": 70,
+        "energyGain": 0,
+        "cooldown": 500,
+        "archetype": "Nuke"
+    }, {
         "moveId": "DRAGON_BREATH",
         "name": "Dragon Breath",
         "type": "dragon",
