@@ -35614,7 +35614,10 @@
         "energy": 70,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "Nuke"
+        "buffs": [0, -1],
+        "buffTarget": "self",
+        "buffApplyChance": "1",
+        "archetype": "Self-Debuff Nuke"
     }, {
         "moveId": "DRAGON_BREATH",
         "name": "Dragon Breath",
