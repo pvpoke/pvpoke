@@ -72,7 +72,15 @@
 		"showFormat": true,
 		"showMeta": true
 	},
-
+	{
+		"title": "Fossil Cup",
+		"cup": "fossil",
+		"cp": 1500,
+		"meta": "fossil",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
 	{
 		"title": "Silph Factions (Great League)",
 		"cup": "factionsgreat",
@@ -116,15 +124,6 @@
 		"cup": "echo",
 		"cp": 1500,
 		"meta": "echo",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Silph Innocent Cup",
-		"cup": "innocent",
-		"cp": 1500,
-		"meta": "innocent",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
