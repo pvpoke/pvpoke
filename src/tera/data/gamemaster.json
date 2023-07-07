@@ -5364,11 +5364,9 @@
 	        "spD": 100,
 	        "spe": 104
 	    },
-		"traits": ["flash_fire"],
 		"defaults": {
 			"teraType": "fairy",
-			"moveTypes": ["fire", "psychic", "fairy"],
-			"traits": ["flash_fire"]
+			"moveTypes": ["fire", "psychic", "fairy"]
 		}
 	}],
 	"traits": [
