@@ -42,16 +42,7 @@
 		"cp": 10000,
 		"meta": "premiermaster",
 		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Single-Type Cup",
-		"cup": "single",
-		"cp": 1500,
-		"meta": "single",
-		"showCup": true,
-		"showFormat": true,
+		"showFormat": false,
 		"showMeta": true
 	},
 	{
@@ -133,6 +124,24 @@
 		"cup": "continentals",
 		"cp": 1500,
 		"meta": "continentals",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Gymbreakers (Ragnar)",
+		"cup": "ragnargymbreakers",
+		"cp": 1500,
+		"meta": "ragnargymbreakers",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Gymbreakers (Vanguard)",
+		"cup": "vanguardgymbreakers",
+		"cp": 1500,
+		"meta": "vanguardgymbreakers",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true

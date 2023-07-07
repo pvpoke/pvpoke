@@ -342,6 +342,33 @@
         "allowSameSpecies": true,
         "partySize": 8
     }, {
+        "name": "ragnargymbreakers",
+        "title": "Gymbreakers (Ragnar)",
+        "include": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["bug", "dragon", "ice", "poison", "psychic", "water"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["miltank", "snorlax", "snorlax_shadow"]
+        }],
+        "exclude": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["dark", "electric", "rock"]
+        }, {
+            "filterType": "tag",
+            "name": "Tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["altaria", "sandslash_alolan", "sandshrew_alolan", "ninetales_alolan", "lanturn", "toxicroak", "buzzwole", "sneasler", "medicham", "araquanid", "articuno_galarian", "toxapex", "jellicent", "pelipper", "golbat", "crobat", "forretress", "genesect"]
+        }],
+        "allowSameSpecies": true,
+        "levelCap": 50
+    }, {
         "name": "remix",
         "title": "Remix",
         "include": [],
@@ -397,6 +424,33 @@
             "filterType": "tag",
             "values": ["mega"]
         }]
+    }, {
+        "name": "vanguardgymbreakers",
+        "title": "Gymbreakers (Vanguard)",
+        "include": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["dragon", "fighting", "flying", "ghost", "ground", "ice", "poison", "rock", "water"]
+        }, {
+            "filterType": "dex",
+            "name": "Pokedex Number",
+            "values": [1, 721]
+        }],
+        "exclude": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["dark", "fairy", "steel"]
+        }, {
+            "filterType": "tag",
+            "name": "Tag",
+            "values": ["galarian", "hisuian", "mega"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["abomasnow", "medicham", "lanturn", "altaria", "cofagrigus", "noctowl", "pidgeot", "aurorus", "jellicent", "pelipper"]
+        }],
+        "allowSameSpecies": true,
+        "levelCap": 50
     }],
     "formats": [{
         "title": "Master League (Classic)",
@@ -437,15 +491,7 @@
         "cp": 10000,
         "meta": "premiermaster",
         "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Single-Type Cup",
-        "cup": "single",
-        "cp": 1500,
-        "meta": "single",
-        "showCup": true,
-        "showFormat": true,
+        "showFormat": false,
         "showMeta": true
     }, {
         "title": "Retro Cup",
@@ -518,6 +564,22 @@
         "cup": "continentals",
         "cp": 1500,
         "meta": "continentals",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Gymbreakers (Ragnar)",
+        "cup": "ragnargymbreakers",
+        "cp": 1500,
+        "meta": "ragnargymbreakers",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Gymbreakers (Vanguard)",
+        "cup": "vanguardgymbreakers",
+        "cp": 1500,
+        "meta": "vanguardgymbreakers",
         "showCup": true,
         "showFormat": true,
         "showMeta": true

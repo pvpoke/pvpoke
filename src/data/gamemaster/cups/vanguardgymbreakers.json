@@ -1,0 +1,28 @@
+{
+    "name": "vanguardgymbreakers",
+    "title": "Gymbreakers (Vanguard)",
+    "include": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["dragon", "fighting", "flying", "ghost", "ground", "ice", "poison", "rock", "water"]
+    }, {
+        "filterType": "dex",
+        "name": "Pokedex Number",
+        "values": [1, 721]
+    }],
+    "exclude": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["dark", "fairy", "steel"]
+    }, {
+        "filterType": "tag",
+        "name": "Tag",
+        "values": ["galarian", "hisuian", "mega"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["abomasnow", "medicham", "lanturn", "altaria", "cofagrigus", "noctowl", "pidgeot", "aurorus", "jellicent", "pelipper"]
+    }],
+	"allowSameSpecies": true,
+    "levelCap": 50
+}
