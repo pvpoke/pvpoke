@@ -232,7 +232,7 @@ var InterfaceMaster = (function () {
 					movesetStats.push({ title: "Fast Damage", value: fastDamage});
 					movesetStats.push({ title: "Charged Damage", value: chargedDamage});
 					movesetStats.push({ title: "Total Damage", value: cycleDamage});
-					movesetStats.push({ title: "Fast Moves", value: moveCounts[0] + " - " + moveCounts[1] + " - " + moveCounts[2]});
+					movesetStats.push({ title: "Fast Moves", value: moveCounts[0] + " - " + moveCounts[1] + " - " + moveCounts[2] + " - " + moveCounts[3]});
 					movesetStats.push({ title: "Cycle Duration", value: cycleDurationStr});
 					movesetStats.push({ title: "Damage Per Turn", value: cycleDPT});
 				}

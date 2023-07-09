@@ -977,7 +977,7 @@ var InterfaceMaster = (function () {
 					// Add move counts
 					var moveCounts = Pokemon.calculateMoveCounts(pokemon.fastMove, chargedMoves[n]);
 
-					$moveDetails.find(".move-count span").html(moveCounts[0] + " - " + moveCounts[1] + " - " + moveCounts[2]);
+					$moveDetails.find(".move-count span").html(moveCounts[0] + " - " + moveCounts[1] + " - " + moveCounts[2] + " - " + moveCounts[3]);
 
 					// Highlight this move if it's in the recommended moveset
 

@@ -23,6 +23,8 @@
         "name": "Species",
         "values": ["altaria", "sandslash_alolan", "sandshrew_alolan", "ninetales_alolan", "lanturn", "toxicroak", "buzzwole", "sneasler", "medicham", "araquanid", "articuno_galarian", "toxapex", "jellicent", "pelipper", "golbat", "crobat", "forretress", "genesect"]
     }],
+	"restrictedPicks": 2,
+	"restrictedPokemon": ["quagsire", "cresselia", "miltank", "escavalier", "mantine", "azumarill", "mew", "weezing_galarian"],
     "allowSameSpecies": true,
     "levelCap": 50
 }
