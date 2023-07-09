@@ -76,10 +76,12 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.30.0 (July 1, 2023)</h4>
+	<h4>v1.30.6 (July 9, 2023)</h4>
 	<ul>
-		<li>Move and ranking updates for Season of Hidden Gems are live!</li>
-		<li>New logo and UI updates</li>
+		<li>Move counts now show counts for 4 cycles instead of 3.</li>
+		<li>Charged Move breakpoints can now be explored in Single Battle and Matrix Battle.</li>
+		<li>Fixed an issue where the mouse pointer covered part of the Charged Move damage tooltip.</li>
+		<li>Fixed an issue that caused faulty ranking search results after searching and then switching leagues.</li>
 	</ul>
 
 	<h3>Latest Article</h3>
