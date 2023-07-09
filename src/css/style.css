@@ -1819,6 +1819,13 @@ select, input {
 .battle-results.matrix .optimal-timing-section .optimal-3 {
   font-weight: bold;
 }
+.battle-results .battle-details select.breakpoint-move,
+.battle-results .battle-details select.bulkpoint-move, .battle-results.matrix select.breakpoint-move,
+.battle-results.matrix select.bulkpoint-move {
+  margin-top: 15px;
+  font-size: 16px;
+  font-weight: bold;
+}
 .battle-results .battle-details .ranking-categories, .battle-results.matrix .ranking-categories {
   float: none;
   margin-top: 10px;

@@ -526,20 +526,20 @@ function Pokemon(id, i, b){
 
 	// Given a defender, generate a list of Attack values that reach certain breakpoints
 
-	this.calculateBreakpoints = function(defender){
-		var effectiveness = defender.typeEffectiveness[self.fastMove.type];
+	this.calculateBreakpoints = function(defender, move){
+		var effectiveness = defender.typeEffectiveness[move.type];
 		var minAttack = self.generateIVCombinations("atk", -1, 1)[0].atk * self.shadowAtkMult;
 		var maxAttack = self.generateIVCombinations("atk", 1, 1)[0].atk * self.shadowAtkMult;
 		var maxDefense = defender.generateIVCombinations("def", 1, 1)[0].def;
 
-		var minDamage = battle.calculateDamageByStats(self, defender, minAttack, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
-		var maxDamage = battle.calculateDamageByStats(self, defender, maxAttack, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
+		var minDamage = battle.calculateDamageByStats(self, defender, minAttack, defender.stats.def * defender.shadowDefMult, effectiveness, move);
+		var maxDamage = battle.calculateDamageByStats(self, defender, maxAttack, defender.stats.def * defender.shadowDefMult, effectiveness, move);
 
 		var breakpoints = [];
 
 		for(var i = minDamage; i <= maxDamage; i++){
-			var breakpoint = battle.calculateBreakpoint(self, defender, i, defender.stats.def * defender.shadowDefMult, effectiveness, self.fastMove);
-			var maxDefenseBreakpoint = battle.calculateBreakpoint(self, defender, i, maxDefense, effectiveness, self.fastMove);
+			var breakpoint = battle.calculateBreakpoint(self, defender, i, defender.stats.def * defender.shadowDefMult, effectiveness, move);
+			var maxDefenseBreakpoint = battle.calculateBreakpoint(self, defender, i, maxDefense, effectiveness, move);
 
 			if(maxDefenseBreakpoint > maxAttack){
 				maxDefenseBreakpoint = -1;
@@ -557,18 +557,18 @@ function Pokemon(id, i, b){
 
 	// Given an attacker, generate a list of Defense values that reach certain bulkpoints
 
-	this.calculateBulkpoints = function(attacker){
-		var effectiveness = self.typeEffectiveness[attacker.fastMove.type];
+	this.calculateBulkpoints = function(attacker, move){
+		var effectiveness = self.typeEffectiveness[move.type];
 		var minDefense = self.generateIVCombinations("def", -1, 1)[0].def * self.shadowDefMult;
 		var maxDefense = self.generateIVCombinations("def", 1, 1)[0].def * self.shadowDefMult;
 		var maxAttack = attacker.generateIVCombinations("atk", 1, 1)[0].atk * attacker.shadowAtkMult;
-		var minDamage = battle.calculateDamageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult, maxDefense, effectiveness, attacker.fastMove);
-		var maxDamage = battle.calculateDamageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult, minDefense, effectiveness, attacker.fastMove);
+		var minDamage = battle.calculateDamageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult, maxDefense, effectiveness, move);
+		var maxDamage = battle.calculateDamageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult, minDefense, effectiveness, move);
 		var breakpoints = [];
 
 		for(var i = minDamage; i <= maxDamage; i++){
-			var bulkpoint = battle.calculateBulkpoint(attacker, self, i, attacker.stats.atk * attacker.shadowAtkMult, effectiveness, attacker.fastMove);
-			var maxAttackBulkpoint = battle.calculateBulkpoint(attacker, self, i, maxAttack, effectiveness, attacker.fastMove);
+			var bulkpoint = battle.calculateBulkpoint(attacker, self, i, attacker.stats.atk * attacker.shadowAtkMult, effectiveness, move);
+			var maxAttackBulkpoint = battle.calculateBulkpoint(attacker, self, i, maxAttack, effectiveness, move);
 
 			if(maxAttackBulkpoint > maxDefense){
 				maxAttackBulkpoint = -1;
@@ -1653,6 +1653,23 @@ function Pokemon(id, i, b){
 		for(var i = 0; i < self.chargedMovePool.length; i++){
 			if(self.chargedMovePool[i].type == type){
 				return true;
+			}
+		}
+
+		return false;
+	}
+
+	// Returns a Pokemon's specific move by ID
+
+	this.getMoveById = function(moveId){
+
+		if((self.fastMove)&&(self.fastMove.moveId == moveId)){
+			return self.fastMove;
+		}
+
+		for(var i = 0; i < self.chargedMoves.length; i++){
+			if(self.chargedMoves[i].moveId == moveId){
+				return self.chargedMoves[i];
 			}
 		}
 

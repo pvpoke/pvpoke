@@ -1136,7 +1136,7 @@ function PokeSelect(element, i){
 		$tooltip.find(".details").html(displayDamage + ' (' + percent + '%) <span class="label">dmg</span><br>' + move.energy + ' <span class="label">energy</span><br>' + dpe + ' <span class="label">dpe</span>');
 
 		var width = $tooltip.width();
-		var left = (e.pageX - $(".section").first().offset().left) + 10;
+		var left = (e.pageX - $(".section").first().offset().left) + 25;
 		var top = e.pageY - 20;
 
 		if( left > ($(".timeline-container").width() - width - 10) ){

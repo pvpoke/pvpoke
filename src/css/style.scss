@@ -2081,6 +2081,13 @@ select, input{
 			}
 		}
 
+		select.breakpoint-move,
+		select.bulkpoint-move{
+			margin-top: 15px;
+		    font-size: 16px;
+		    font-weight: bold;
+		}
+
 		.ranking-categories{
 			float: none;
 			margin-top:10px;

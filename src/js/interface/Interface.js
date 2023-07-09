@@ -112,6 +112,8 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".battle-details .rating-table a.rating", viewShieldBattle);
 				$("body").on("click", ".section.summary a.rating", viewBulkBattle);
 				$("body").on("click", ".breakpoints-section .button, .cmp-section .button", selectBreakpointIVs);
+				$("body").on("change", "select.breakpoint-move", selectBreakpointMove);
+				$("body").on("change", "select.bulkpoint-move", selectBulkpointMove);
 
 				// Sandbox mode
 
@@ -750,58 +752,28 @@ var InterfaceMaster = (function () {
 				}
 
 				// Calculate breakpoints and bulkpoints
-				var breakpoints = pokemon[0].calculateBreakpoints(pokemon[1]);
-
-				// Output to table
-
 				$(".breakpoints-section .name-attacker").html(pokemon[0].speciesName);
 				$(".breakpoints-section .name-defender").html(pokemon[1].speciesName);
-				$(".stats-table.breakpoints .name-fast").html(pokemon[0].fastMove.name + " Damage");
-				$(".stats-table.breakpoints .output").html('<tr></tr>');
 
-				for(var i = breakpoints.length-1; i >= 0; i--){
-					var attack = Math.round(breakpoints[i].attack * 100) / 100;
-					var guaranteedAttack = Math.round(breakpoints[i].guaranteedAttack * 100) / 100;
+				$("select.breakpoint-move option, select.bulkpoint-move option").remove();
 
-					if(guaranteedAttack == -1){
-						guaranteedAttack = "-";
-					}
+				$("select.breakpoint-move").append("<option value=\""+pokemon[0].fastMove.moveId+"\">"+pokemon[0].fastMove.name+"</option>");
 
-					// Find the best combinations that reaches this value
-					var combinations = pokemon[0].generateIVCombinations("overall", 1, 2, [{stat: "atk", value: breakpoints[i].attack}]);
-
-					$(".stats-table.breakpoints .output").append("<tr class=\"toggle\"><td>"+breakpoints[i].damage+"</td><td>"+attack+"</td><td>"+guaranteedAttack+"</td><td class=\"ivs\"><div class=\"button\" level=\""+combinations[0].level+"\" atk=\""+combinations[0].ivs.atk+"\" def=\""+combinations[0].ivs.def+"\" hp=\""+combinations[0].ivs.hp+"\">"+combinations[0].level+ " "+combinations[0].ivs.atk+"/"+combinations[0].ivs.def+"/"+combinations[0].ivs.hp+"</div></td></tr>");
-
-					if(breakpoints[i].damage == pokemon[0].fastMove.damage){
-						$(".stats-table.breakpoints .output tr").last().addClass("bold");
-					}
-
+				for(var i = 0; i < pokemon[0].chargedMoves.length; i++){
+					$("select.breakpoint-move").append("<option value=\""+pokemon[0].chargedMoves[i].moveId+"\">"+pokemon[0].chargedMoves[i].name+"</option>");
 				}
 
-				var bulkpoints = pokemon[0].calculateBulkpoints(pokemon[1]);
+				$("select.bulkpoint-move").append("<option value=\""+pokemon[1].fastMove.moveId+"\">"+pokemon[1].fastMove.name+"</option>");
 
-				$(".stats-table.bulkpoints .name-fast").html(pokemon[1].fastMove.name + " Damage");
-				$(".stats-table.bulkpoints .output").html('<tr></tr>');
-
-				for(var i = 0; i < bulkpoints.length; i++){
-					var defense = Math.round(bulkpoints[i].defense * 100) / 100;
-					var guaranteedDefense = Math.round(bulkpoints[i].guaranteedDefense * 100) / 100;
-
-					if(guaranteedDefense == -1){
-						guaranteedDefense = "-";
-					}
-
-
-					// Find the best combinations that reaches this value
-					var combinations = pokemon[0].generateIVCombinations("overall", 1, 2, [{stat: "def", value: bulkpoints[i].defense}]);
-
-					$(".stats-table.bulkpoints .output").append("<tr class=\"toggle\"><td>"+bulkpoints[i].damage+"</td><td>"+defense+"</td><td>"+guaranteedDefense+"</td><td class=\"ivs\"><div class=\"button\" level=\""+combinations[0].level+"\" atk=\""+combinations[0].ivs.atk+"\" def=\""+combinations[0].ivs.def+"\" hp=\""+combinations[0].ivs.hp+"\">"+combinations[0].level+ " "+combinations[0].ivs.atk+"/"+combinations[0].ivs.def+"/"+combinations[0].ivs.hp+"</div></td></tr>");
-
-					if(bulkpoints[i].damage == pokemon[1].fastMove.damage){
-						$(".stats-table.bulkpoints .output tr").last().addClass("bold");
-					}
-
+				for(var i = 0; i < pokemon[1].chargedMoves.length; i++){
+					$("select.bulkpoint-move").append("<option value=\""+pokemon[1].chargedMoves[i].moveId+"\">"+pokemon[1].chargedMoves[i].name+"</option>");
 				}
+
+
+				// List each Pokemon's moves for breakpoint and bulkpoint analysis
+
+				var breakpoints = self.displayBreakpoints(pokemon[0].fastMove);
+				var bulkpoints = self.displayBulkpoints(pokemon[1].fastMove);
 
 				// Find a golden combination that reaches the best breakpoint and bulkpoint if one exists
 
@@ -943,9 +915,68 @@ var InterfaceMaster = (function () {
 
 					$(".optimal-timing-section .timeline").eq(1).append($fastItem);
 				}
+			}
+
+			// Display breakpoint values in the breakpoint table
+			this.displayBreakpoints = function(move){
+				// Output to table
+				var attacker = pokeSelectors[0].getPokemon();
+				var defender = pokeSelectors[1].getPokemon();
+				var breakpoints = attacker.calculateBreakpoints(defender, move);
+
+				$(".stats-table.breakpoints .output").html('<tr></tr>');
+
+				for(var i = breakpoints.length-1; i >= 0; i--){
+					var attack = Math.round(breakpoints[i].attack * 100) / 100;
+					var guaranteedAttack = Math.round(breakpoints[i].guaranteedAttack * 100) / 100;
+
+					if(guaranteedAttack == -1){
+						guaranteedAttack = "-";
+					}
+
+					// Find the best combinations that reaches this value
+					var combinations = attacker.generateIVCombinations("overall", 1, 2, [{stat: "atk", value: breakpoints[i].attack}]);
+
+					$(".stats-table.breakpoints .output").append("<tr class=\"toggle\"><td>"+breakpoints[i].damage+"</td><td>"+attack+"</td><td>"+guaranteedAttack+"</td><td class=\"ivs\"><div class=\"button\" level=\""+combinations[0].level+"\" atk=\""+combinations[0].ivs.atk+"\" def=\""+combinations[0].ivs.def+"\" hp=\""+combinations[0].ivs.hp+"\">"+combinations[0].level+ " "+combinations[0].ivs.atk+"/"+combinations[0].ivs.def+"/"+combinations[0].ivs.hp+"</div></td></tr>");
+
+					if(breakpoints[i].damage == move.damage){
+						$(".stats-table.breakpoints .output tr").last().addClass("bold");
+					}
+
+				}
+
+				return breakpoints;
+			}
+
+			this.displayBulkpoints = function(move){
+				// Output to table
+				var attacker = pokeSelectors[1].getPokemon();
+				var defender = pokeSelectors[0].getPokemon();
+				var bulkpoints = defender.calculateBulkpoints(attacker, move);
+
+				$(".stats-table.bulkpoints .output").html('<tr></tr>');
+
+				for(var i = 0; i < bulkpoints.length; i++){
+					var defense = Math.round(bulkpoints[i].defense * 100) / 100;
+					var guaranteedDefense = Math.round(bulkpoints[i].guaranteedDefense * 100) / 100;
+
+					if(guaranteedDefense == -1){
+						guaranteedDefense = "-";
+					}
 
 
+					// Find the best combinations that reaches this value
+					var combinations = defender.generateIVCombinations("overall", 1, 2, [{stat: "def", value: bulkpoints[i].defense}]);
 
+					$(".stats-table.bulkpoints .output").append("<tr class=\"toggle\"><td>"+bulkpoints[i].damage+"</td><td>"+defense+"</td><td>"+guaranteedDefense+"</td><td class=\"ivs\"><div class=\"button\" level=\""+combinations[0].level+"\" atk=\""+combinations[0].ivs.atk+"\" def=\""+combinations[0].ivs.def+"\" hp=\""+combinations[0].ivs.hp+"\">"+combinations[0].level+ " "+combinations[0].ivs.atk+"/"+combinations[0].ivs.def+"/"+combinations[0].ivs.hp+"</div></td></tr>");
+
+					if(bulkpoints[i].damage == attacker.fastMove.damage){
+						$(".stats-table.bulkpoints .output tr").last().addClass("bold");
+					}
+
+				}
+
+				return bulkpoints;
 			}
 
 			// Process selected Pokemon through the team ranker
@@ -2498,6 +2529,24 @@ var InterfaceMaster = (function () {
 
 				$("html, body").animate({ scrollTop: $(".poke").offset().top - 30 }, 500);
 
+			}
+
+			// Select a move in the breakpoint or bulkpoint dropdown
+			function selectBreakpointMove(e){
+				var moveId = $(e.target).find("option:selected").val();
+				var attacker = pokeSelectors[0].getPokemon();
+				var move = attacker.getMoveById(moveId);
+
+				self.displayBreakpoints(move);
+			}
+
+			// Select a move in the breakpoint or bulkpoint dropdown
+			function selectBulkpointMove(e){
+				var moveId = $(e.target).find("option:selected").val();
+				var attacker = pokeSelectors[1].getPokemon();
+				var move = attacker.getMoveById(moveId);
+
+				self.displayBulkpoints(move);
 			}
 
 			// Toggle multi-battle result sort
