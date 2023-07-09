@@ -15,7 +15,7 @@
 		</tr>
 		<tr>
 			<td><strong>Pokemon Tag</strong></td>
-			<td>legendary, mythical, regional, alolan, galarian, starter, shadow, shadoweligible, xl</td>
+			<td>legendary, mythical, ultrabeast, regional, alolan, galarian, starter, shadow, shadoweligible, xl</td>
 		</tr>
 		<tr>
 			<td><strong>Generation/Region</strong></td>

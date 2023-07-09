@@ -601,7 +601,7 @@
         "showFormat": true,
         "showMeta": false
     }],
-    "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xs", "hisuian"],
+    "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xs", "hisuian", "ultrabeast"],
     "pokemonTraits": {
         "pros": ["bulky", "extremely bulky", "spammy", "agile", "flexible", "dynamic", "fast move pressure", "shield pressure", "defensive", "momentum"],
         "cons": ["less bulky", "glass cannon", "slow", "clumsy", "inflexible", "low fast move pressure", "low shield pressure", "vulnerable", "volatile", "chaotic", "technical", "inconsistent"]
@@ -32060,7 +32060,7 @@
             "cp1500": [14, 6, 11, 11],
             "cp2500": [23.5, 5, 6, 15]
         },
-        "tags": ["legendary"],
+        "tags": ["legendary", "ultrabeast"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -32081,7 +32081,7 @@
             "cp1500": [16, 6, 15, 7],
             "cp2500": [26.5, 6, 11, 14]
         },
-        "tags": ["legendary"],
+        "tags": ["legendary", "ultrabeast"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -32102,7 +32102,7 @@
             "cp1500": [19, 8, 13, 15],
             "cp2500": [34.5, 4, 15, 10]
         },
-        "tags": ["legendary"],
+        "tags": ["legendary", "ultrabeast"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -32123,7 +32123,7 @@
             "cp1500": [13.5, 8, 15, 15],
             "cp2500": [23, 7, 15, 10]
         },
-        "tags": ["legendary"],
+        "tags": ["legendary", "ultrabeast"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -32144,7 +32144,7 @@
             "cp1500": [18, 4, 11, 13],
             "cp2500": [30.5, 4, 15, 6]
         },
-        "tags": ["legendary"],
+        "tags": ["legendary", "ultrabeast"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -32165,7 +32165,7 @@
             "cp1500": [15, 7, 9, 12],
             "cp2500": [25, 4, 9, 14]
         },
-        "tags": ["legendary", "include1500"],
+        "tags": ["legendary", "ultrabeast", "include1500"],
         "levelFloor": 15,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
@@ -32187,7 +32187,7 @@
             "cp1500": [20, 4, 8, 4],
             "cp2500": [35, 4, 14, 6]
         },
-        "tags": ["legendary"],
+        "tags": ["legendary", "ultrabeast"],
         "searchPriority": 4,
         "levelFloor": 20,
         "buddyDistance": 20,
@@ -32210,6 +32210,7 @@
             "cp1500": [15, 6, 8, 15],
             "cp2500": [25, 5, 13, 11]
         },
+        "tags": ["legendary", "ultrabeast"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": false
@@ -32230,6 +32231,7 @@
             "cp1500": [13.5, 6, 15, 6],
             "cp2500": [22.5, 5, 15, 7]
         },
+        "tags": ["legendary", "ultrabeast"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": false
@@ -32250,6 +32252,7 @@
             "cp1500": [13.5, 6, 15, 6],
             "cp2500": [22.5, 5, 15, 7]
         },
+        "tags": ["legendary", "ultrabeast"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": false
@@ -32270,6 +32273,7 @@
             "cp1500": [11.5, 8, 14, 13],
             "cp2500": [19.5, 4, 10, 15]
         },
+        "tags": ["legendary", "ultrabeast"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": false
@@ -32310,6 +32314,7 @@
             "cp1500": [39.5, 4, 13, 13],
             "cp2500": [50, 15, 15, 15]
         },
+        "tags": ["legendary", "ultrabeast"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": false,
@@ -32334,6 +32339,7 @@
             "cp1500": [17.5, 4, 15, 9],
             "cp2500": [28.5, 5, 15, 14]
         },
+        "tags": ["legendary", "ultrabeast"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": false,
@@ -32358,6 +32364,7 @@
             "cp1500": [16.5, 7, 15, 15],
             "cp2500": [28, 5, 10, 14]
         },
+        "tags": ["legendary", "ultrabeast"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": false
@@ -32378,6 +32385,7 @@
             "cp1500": [16.5, 6, 15, 12],
             "cp2500": [28, 6, 14, 8]
         },
+        "tags": ["legendary", "ultrabeast"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": false

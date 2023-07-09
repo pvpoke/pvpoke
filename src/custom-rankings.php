@@ -115,6 +115,7 @@ require_once 'header.php'; ?>
 				<div class="field-container">
 					<div class="check" value="legendary"><span></span> Legendary</div>
 					<div class="check" value="mythical"><span></span> Mythical</div>
+					<div class="check" value="ultrabeast"><span></span> Ultra Beast</div>
 					<div class="check" value="alolan"><span></span> Alolan</div>
 					<div class="check" value="galarian"><span></span> Galarian</div>
 					<div class="check" value="hisuian"><span></span> Hisuian</div>
