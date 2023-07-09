@@ -2135,9 +2135,16 @@ select, input{
 		}
 
 		.rating-table{
+			margin-top: 0;
+
 			th.selected, td.selected{
 				background: #546fe8;
 			}
+		}
+
+		.breakpoint-mode{
+			max-width: 150px;
+			margin: 10px 0;
 		}
 
 		.difference-table{

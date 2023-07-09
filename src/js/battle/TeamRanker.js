@@ -313,8 +313,34 @@ var RankerMaster = (function () {
 
 							var bulkpoint = battle.calculateDamageByStats(opponent, pokemon, opponent.stats.atk * opponent.shadowAtkMult, pokemon.stats.def * pokemon.shadowDefMult, pokemon.typeEffectiveness[opponent.fastMove.type], opponent.fastMove);
 
-							matchup.breakpoint = breakpoint;
-							matchup.bulkpoint = bulkpoint;
+							matchup.breakpoint = breakpoint; // Fast move breakpoint
+							matchup.bulkpoint = bulkpoint; // Fast move bulkpoint
+							matchup.breakpointCM1 = 0;
+							matchup.breakpointCM2 = 0;
+							matchup.bulkpointCM1 = 0;
+							matchup.bulkpointCM2 = 0;
+
+							if(pokemon.chargedMoves.length > 0){
+								var breakpointCM1 = battle.calculateDamageByStats(pokemon, opponent, pokemon.stats.atk * pokemon.shadowAtkMult, opponent.stats.def * opponent.shadowDefMult, opponent.typeEffectiveness[pokemon.chargedMoves[0].type], pokemon.chargedMoves[0]);
+								matchup.breakpointCM1 = breakpointCM1;
+							}
+
+							if(pokemon.chargedMoves.length > 1){
+								var breakpointCM2 = battle.calculateDamageByStats(pokemon, opponent, pokemon.stats.atk * pokemon.shadowAtkMult, opponent.stats.def * opponent.shadowDefMult, opponent.typeEffectiveness[pokemon.chargedMoves[1].type], pokemon.chargedMoves[1]);
+								matchup.breakpointCM2 = breakpointCM2;
+							}
+
+							if(opponent.chargedMoves.length > 0){
+								var bulkpointCM1 = battle.calculateDamageByStats(opponent, pokemon, opponent.stats.atk * opponent.shadowAtkMult, pokemon.stats.def * pokemon.shadowDefMult, pokemon.typeEffectiveness[opponent.chargedMoves[0].type], opponent.chargedMoves[0]);
+								matchup.bulkpointCM1 = bulkpointCM1;
+							}
+
+							if(opponent.chargedMoves.length > 1){
+								var bulkpointCM2 = battle.calculateDamageByStats(opponent, pokemon, opponent.stats.atk * opponent.shadowAtkMult, pokemon.stats.def * pokemon.shadowDefMult, pokemon.typeEffectiveness[opponent.chargedMoves[1].type], opponent.chargedMoves[1]);
+								matchup.bulkpointCM2 = bulkpointCM2;
+							}
+
+
 							matchup.atkDifferential = pokemon.stats.atk - opponent.stats.atk;
 						}
 

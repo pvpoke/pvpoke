@@ -95,6 +95,7 @@ var InterfaceMaster = (function () {
 				$(".poke.single").on("mousemove",".move-bar",moveBarHover);
 				$(".multi-battle-sort").on("click", sortMultiBattleResults);
 				$(".battle-results.matrix .ranking-categories a").on("click", selectMatrixMode);
+				$(".battle-results.matrix select.breakpoint-mode").on("change", selectMatrixBreakpointMode);
 				$("body").on("click", ".battle-results.matrix a.difference", jumpToMatrixColumn);
 				$("body").on("mousemove",mainMouseMove);
 				$("body").on("mousedown",mainMouseMove);
@@ -1316,8 +1317,22 @@ var InterfaceMaster = (function () {
 								break;
 
 							case "breakpoint":
-								displayStat = r.matchups[n].breakpoint;
-								baseValue = rankings[0].matchups[n].breakpoint;
+								var breakpointMode = $(".battle-results.matrix .breakpoint-mode option:selected").val();
+
+								if(breakpointMode == "fast"){
+									displayStat = r.matchups[n].breakpoint;
+									baseValue = rankings[0].matchups[n].breakpoint;
+								} else if(breakpointMode == "cm1"){
+									displayStat = r.matchups[n].breakpointCM1;
+									baseValue = rankings[0].matchups[n].breakpointCM1;
+								} else if(breakpointMode == "cm2"){
+									displayStat = r.matchups[n].breakpointCM2;
+									baseValue = rankings[0].matchups[n].breakpointCM2;
+								}
+
+								if(displayStat == 0){
+									displayStat = "-";
+								}
 
 								if(displayStat > baseValue){
 									r.matchups[n].difference = "win";
@@ -1327,8 +1342,22 @@ var InterfaceMaster = (function () {
 								break;
 
 							case "bulkpoint":
-								displayStat = r.matchups[n].bulkpoint;
-								baseValue = rankings[0].matchups[n].bulkpoint;
+								breakpointMode = $(".battle-results.matrix .breakpoint-mode option:selected").val();
+
+								if(breakpointMode == "fast"){
+									displayStat = r.matchups[n].bulkpoint;
+									baseValue = rankings[0].matchups[n].bulkpoint;
+								} else if(breakpointMode == "cm1"){
+									displayStat = r.matchups[n].bulkpointCM1;
+									baseValue = rankings[0].matchups[n].bulkpointCM2;
+								} else if(breakpointMode == "cm2"){
+									displayStat = r.matchups[n].bulkpointCM2;
+									baseValue = rankings[0].matchups[n].bulkpointCM2;
+								}
+
+								if(displayStat == 0){
+									displayStat = "-";
+								}
 
 								if(displayStat > baseValue){
 									r.matchups[n].difference = "lose";
@@ -1465,6 +1494,12 @@ var InterfaceMaster = (function () {
 				$(".battle-results.matrix").first().find("p").hide();
 				$(".battle-results.matrix").first().find("p."+self.matrixMode).show();
 
+				if(self.matrixMode == "breakpoint" || self.matrixMode == "bulkpoint"){
+					$(".battle-results.matrix select.breakpoint-mode").show();
+				} else{
+					$(".battle-results.matrix select.breakpoint-mode").hide();
+				}
+
 				// Update download link with new data
 				var filename = multiSelectors[0].getSelectedGroup() + " vs " + multiSelectors[1].getSelectedGroup() + ".csv";
 				var filedata = '';
@@ -1490,6 +1525,15 @@ var InterfaceMaster = (function () {
 
 				self.displayMatrixResults(matrixResults);
 			}
+
+			// Event handler for changing the battle mode
+
+			function selectMatrixBreakpointMode(e){
+				e.preventDefault();
+
+				self.displayMatrixResults(matrixResults);
+			}
+
 
 			// Jump to a specific column in the matrix results table to highlight a matchup
 

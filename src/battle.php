@@ -384,9 +384,15 @@ require_once 'header.php';
 			</div>
 
 			<p class="battle">Explore battle results against this group of Pokemon.</p>
-			<p class="breakpoint">Explore Fast Move damage dealt to this group of Pokemon.</p>
-			<p class="bulkpoint">Explore Fast Move damage received from this group.</p>
+			<p class="breakpoint">Explore move damage dealt to this group of Pokemon.</p>
+			<p class="bulkpoint">Explore move damage received from this group.</p>
 			<p class="attack">Explore Attack stat differential against this group of Pokemon to analyze Charged Move ties.</p>
+
+			<select class="breakpoint-mode">
+				<option value="fast">Fast Move</option>
+				<option value="cm1">Charged Move 1</option>
+				<option value="cm2">Charged Move 2</option>
+			</select>
 
 			<div class="table-container">
 				<table class="matrix-table rating-table" cellspacing="0">

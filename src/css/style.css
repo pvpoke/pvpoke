@@ -1859,8 +1859,15 @@ select, input {
   overflow: scroll;
   max-height: 500px;
 }
+.battle-results.matrix .rating-table {
+  margin-top: 0;
+}
 .battle-results.matrix .rating-table th.selected, .battle-results.matrix .rating-table td.selected {
   background: #546fe8;
+}
+.battle-results.matrix .breakpoint-mode {
+  max-width: 150px;
+  margin: 10px 0;
 }
 .battle-results.matrix .difference-table {
   width: 100%;
