@@ -1015,7 +1015,8 @@ footer a.domz-link {
   background: #ff5115;
   position: relative;
   max-width: 100%;
-  top: -20px;
+  top: -22px;
+  height: 21px;
 }
 .hp.bar-back .stat {
   position: absolute;

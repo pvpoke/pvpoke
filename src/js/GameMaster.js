@@ -102,7 +102,7 @@ var GameMaster = (function () {
 		// function to help speed up searching by resuing Pokemon objects
 		// could likely be used in other instances where `new Pokemon` is called
 		object.getAllPokemon = function(battle) {
-			const key = battle.getCP()
+			const key = battle.getCP();
 
 			if (!object.allPokemon.hasOwnProperty(key)) {
 				object.allPokemon[key] = object.data.pokemon.map(p => {
@@ -1077,7 +1077,7 @@ var GameMaster = (function () {
 
 			// Break the search string up into queries
 			var queries = str.toLowerCase().split(/\s*,\s*/);
-			var searchKey = queries.join()
+			var searchKey = queries.join() + battle.getCP() + battle.getCup().name;
 
 			// don't bother searching if any of the terms are empty
 			// as all pokemon will be valid
