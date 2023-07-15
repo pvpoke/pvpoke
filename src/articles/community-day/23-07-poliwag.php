@@ -53,29 +53,25 @@ require_once '../../header.php';
 			<h4>Mega Evolve one of these Pokemon during Community Day to earn bonus catch candy!</h4>
 		</div>
 		<div class="mega-list">
-			<div class="mega-item" mega="charizard-x">
+			<div class="mega-item" mega="blastoise">
 				<div class="mega-image"></div>
-				<div class="mega-label">Charizard X</div>
+				<div class="mega-label">Blastoise</div>
 			</div>
-			<div class="mega-item" mega="ampharos">
+			<div class="mega-item" mega="slowbro">
 				<div class="mega-image"></div>
-				<div class="mega-label">Ampharos</div>
+				<div class="mega-label">Slowbro</div>
 			</div>
-			<div class="mega-item" mega="sceptile">
+			<div class="mega-item" mega="gyarados">
 				<div class="mega-image"></div>
-				<div class="mega-label">Sceptile</div>
+				<div class="mega-label">Gyarados</div>
 			</div>
-			<div class="mega-item" mega="altaria">
+			<div class="mega-item" mega="swampert">
 				<div class="mega-image"></div>
-				<div class="mega-label">Altaria</div>
+				<div class="mega-label">Swampert</div>
 			</div>
-			<div class="mega-item" mega="latios">
+			<div class="mega-item" mega="kyogre">
 				<div class="mega-image"></div>
-				<div class="mega-label">Latias/Latios</div>
-			</div>
-			<div class="mega-item" mega="salamence">
-				<div class="mega-image"></div>
-				<div class="mega-label">Salamence</div>
+				<div class="mega-label">Primal Kyogre</div>
 			</div>
 		</div>
 	</div>
