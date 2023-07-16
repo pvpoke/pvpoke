@@ -88,14 +88,15 @@
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-07-axew/">
-				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/community-day/23-07-axew/thumb.jpg">
+			<a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-07-poliwag/">
+				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/community-day/23-07-poliwag/thumb.jpg">
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-07-axew/">Axew Community Day Guide for PvP</a></h4>
-			<div class="date">June 8, 2023</div>
-			<p>Axew is hacking its way onto the Community Day roster. Can it cut a place in PvP? Read up on the meta impact for Haxorus and Breaking Swipe!</p>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-07-poliwag/">Poliwag Community Day Guide for PvP</a></h4>
+			<div class="date">July 16, 2023</div>
+			<p>Poliwag is waddling into Community Day! Both Poliwrath and Politoed are viable in PvP, so let's dive into the impact of their exclusive moves.</p>
+			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Community Day"># Community Day</a><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a></div>
 		</div>
 	</div>
 </div>

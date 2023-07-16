@@ -23,7 +23,7 @@ require_once '../../header.php';
 	<div class="cd-features">
 		<div class="feature">
 			<h4>Date &amp; Time</h4>
-			<div class="value">Saturday, July 30th<br></div>
+			<div class="value">Sunday, July 30th<br></div>
 			<div class="detail">2pm - 5pm local time</div>
 		</div>
 		<div class="feature">
@@ -80,9 +80,9 @@ require_once '../../header.php';
 	<div class="faq-item">
 		<h3 class="article-header"><strong>How good is Poliwrath with Counter?</strong></h3>
 		<div class="faq-answer">
-			<p><b>Poliwrath improves significantly with Counter and will be a strong contender for Great League, Ultra League, and themed cups.</b> It's unlikely to be favored over Medicham in Great League, but will be among the strongest Counter users and the first such Water type. This will open up new potential cores and team building options in the Fighting slot. Poliwrath is likely to prefer Counter in most formats, but it may prefer Mud Shot in themed cups where it wants faster access to Ice Punch or Scald.</p>
+			<p><b>Poliwrath improves significantly with Counter and will be a strong contender for Great League, Ultra League, and themed cups.</b> It's unlikely to be favored over Medicham in Great League, but will be among the strongest Counter users and the first such Water type. This will open up new potential cores and team building options for the Fighting slot. Poliwrath is likely to prefer Counter in most formats, but it may prefer Mud Shot in themed cups where it wants faster access to Ice Punch or Scald.</p>
 			<p>Counter will highlight one of Poliwrath's key strengths: its wide Charged Move selection. Poliwrath will likely prioritize Ice Punch for coverage against Flying and Grass types. After that, it has access to a variety of STAB moves including Power-Up Punch, Scald, and Dynamic Punch. This variety will make Poliwrath more challenging to play against and predict. Which moves you choose may depend on the meta, your team, or your playstyle preferences.</p>
-			<p>Shadow Poliwrath has typically been favored over regular Poliwrath, and it should stand out more with Counter. Shadow Poliwrath will likely favor Power-Up Punch to ramp up its Fast Move pressure further and further. On the flip side, Poliwrath is unlikely to want Return, which would target Water/Fairy types like Azumarill or Tapu Fini.</p>
+			<p>Shadow Poliwrath has typically been favored over regular Poliwrath, and it should stand out more with Counter. Shadow Poliwrath will likely favor Power-Up Punch to ramp up its Fast Move pressure further and further. On the flip side, Poliwrath is unlikely to want Return which would largely target Water/Fairy types like Azumarill or Tapu Fini, but you should obtain one during this event if you're a PvP completionist.</p>
 		</div>
 	</div>
 
@@ -90,7 +90,7 @@ require_once '../../header.php';
 		<h3 class="article-header"><strong>How good is Politoed with Ice Beam?</strong></h3>
 		<div class="faq-answer">
 			<p><b>Ice Beam Politoed is a sidegrade to Blizzard Politoed and is a lower priority for Poliwag Community Day.</b> Politoed used to have a stronger presence in the open league metas, but is still a solid PvP Pokemon. It's a bulky Water type with access to Mud Shot and Weather Ball for spammy play. However, it usually runs another exclusive move, Earthquake, instead of its current Ice coverage, Blizzard.</p>
-			<p>Ice Beam gives Politoed faster access to this Ice coverage, but at the cost of closing power. This means that Ice Beam may not sufficiently threaten Pokemon like Altaria or Jumpluff where Blizzard OHKO's. Since the Ice move is atypical on Politoed, it may be better to deal massive unshielded damage with Blizzard than allow your opponent a chance to recover. Shadow Politoed can make up the difference and should prefer Ice Beam over Blizzard if you opt for an Ice move.</p>
+			<p>Ice Beam gives Politoed faster access to this Ice coverage, but at the cost of closing power. This means that Ice Beam may not sufficiently threaten Pokemon like Altaria or Jumpluff where Blizzard OHKO's. Since the Ice move is atypical on Politoed, it may be better to deal massive unshielded damage with Blizzard than allow your opponent a chance to recover from an Ice Beam. Shadow Politoed can make up the difference and should prefer Ice Beam over Blizzard if you opt for an Ice move.</p>
 		</div>
 	</div>
 
@@ -98,7 +98,7 @@ require_once '../../header.php';
 		<h3 class="article-header"><strong>My Shadow Poliwag still has Frustration. Can it learn a Community Day move if I evolve it during the event?</strong></h3>
 		<div class="faq-answer">
 			<p><b>A Shadow Pokemon with Frustration cannot learn an exclusive Charged Move when it evolves, </b> even if it has a 2nd Charged Move unlocked. You must have removed Frustration during a previous Team Rocket event.</p>
-			<p>However, a Shadow Pokemon with Frustration can learn an exclusive Fast Move when it evolves. </b> Look to obtain Counter on Shadow Poliwrath during Community Day, even if it still has Frustration. You can remove Frustration during a future Team Rocket event.</p></p>
+			<p>However, a Shadow Pokemon with Frustration can learn an exclusive Fast Move when it evolves. <b> Look to obtain Counter on Shadow Poliwrath during Community Day, even if it still has Frustration.</b> You can remove Frustration during a future Team Rocket event.</p>
 		</div>
 	</div>
 

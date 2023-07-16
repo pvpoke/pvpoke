@@ -180,6 +180,18 @@ input.article-search {
   background-image: url("../articles/article-assets/community-day/megas/salamence.png");
 }
 
+[mega=blastoise] .mega-image {
+  background-image: url("../articles/article-assets/community-day/megas/blastoise.png");
+}
+
+[mega=swampert] .mega-image {
+  background-image: url("../articles/article-assets/community-day/megas/swampert.png");
+}
+
+[mega=kyogre] .mega-image {
+  background-image: url("../articles/article-assets/community-day/megas/kyogre.png");
+}
+
 /* FAQ styling */
 .faq-item {
   border-radius: 8px;
@@ -769,6 +781,21 @@ input.article-search {
   border-bottom: 1px solid #8fa883;
 }
 .section.axew .faq-item {
+  background: #ffffff;
+}
+
+.section.poliwag {
+  background: #f7fcfd;
+  border: 4px solid #37548c;
+}
+.section.poliwag .article-header, .section.poliwag .mega-section {
+  background: #37548c !important;
+}
+.section.poliwag .feature h4 {
+  color: #37548c;
+  border-bottom: 1px solid #37548c;
+}
+.section.poliwag .faq-item {
   background: #ffffff;
 }
 

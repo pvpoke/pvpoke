@@ -197,6 +197,18 @@ input.article-search{
 	background-image:url("../articles/article-assets/community-day/megas/salamence.png");
 }
 
+[mega="blastoise"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/blastoise.png");
+}
+
+[mega="swampert"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/swampert.png");
+}
+
+[mega="kyogre"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/kyogre.png");
+}
+
 
 
 /* FAQ styling */
@@ -939,6 +951,28 @@ input.article-search{
     	background: #ffffff;
 	}
 }
+
+.section.poliwag{
+
+	background: #f7fcfd;
+	border:4px solid #37548c;
+
+	.article-header, .mega-section{
+		background:#37548c !important;
+	}
+
+	.feature{
+		h4{
+			color:#37548c;
+			border-bottom:1px solid #37548c;
+		}
+	}
+
+	.faq-item{
+    	background: #ffffff;
+	}
+}
+
 
 
 
