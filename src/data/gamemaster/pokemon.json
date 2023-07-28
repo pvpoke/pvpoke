@@ -18124,6 +18124,43 @@
     "thirdMoveCost": 100000,
     "released": true
 }, {
+    "dex": 384,
+    "speciesName": "Rayquaza (Mega)",
+    "speciesId": "rayquaza_mega",
+    "baseStats": {
+        "atk": 377,
+        "def": 210,
+        "hp": 227
+    },
+    "types": ["dragon", "flying"],
+    "fastMoves": ["AIR_SLASH", "DRAGON_TAIL"],
+    "chargedMoves": ["AERIAL_ACE", "ANCIENT_POWER", "OUTRAGE", "HURRICANE", "BREAKING_SWIPE", "DRAGON_ASCENT"],
+    "eliteMoves": ["HURRICANE", "BREAKING_SWIPE", "DRAGON_ASCENT"],
+    "tags": ["legendary", "mega"],
+    "defaultIVs": {
+        "cp500": [
+            3.5,
+            4,
+            15,
+            14
+          ],
+          "cp1500": [
+            9.5,
+            4,
+            15,
+            13
+          ],
+          "cp2500": [
+            15.5,
+            12,
+            15,
+            13
+          ]
+    },
+    "buddyDistance": 20,
+    "thirdMoveCost": 100000,
+    "released": false
+}, {
     "dex": 385,
     "speciesName": "Jirachi",
     "speciesId": "jirachi",
@@ -29085,7 +29122,30 @@
     "released": true
 }, {
     "dex": 718,
-    "speciesName": "Zygarde",
+    "speciesName": "Zygarde (10% Forme)",
+    "speciesId": "zygarde_10",
+    "baseStats": {
+        "atk": 205,
+        "def": 173,
+        "hp": 144
+    },
+    "types": ["dragon", "ground"],
+    "fastMoves": ["DRAGON_TAIL", "BITE", "ZEN_HEADBUTT"],
+    "chargedMoves": ["OUTRAGE", "EARTHQUAKE", "CRUNCH", "HYPER_BEAM", "BULLDOZE"],
+    "defaultIVs": {
+        "cp500": [8,6, 10,11],
+        "cp1500": [23,6,15,15],
+        "cp2500": [48,6,15,13],
+        "cp2500l40": [40,15,15,15]
+    },
+    "levelFloor": 15,
+    "tags": ["legendary"],
+    "buddyDistance": 20,
+    "thirdMoveCost": 100000,
+    "released": true
+}, {
+    "dex": 718,
+    "speciesName": "Zygarde (50% Forme)",
     "speciesId": "zygarde",
     "baseStats": {
         "atk": 203,
@@ -29100,10 +29160,33 @@
         "cp1500": [16.5, 4, 10, 10],
         "cp2500": [27, 4, 14, 14]
     },
+    "levelFloor": 15,
     "tags": ["legendary"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false
+    "released": true
+}, {
+    "dex": 718,
+    "speciesName": "Zygarde (Complete Forme)",
+    "speciesId": "zygarde_complete",
+    "baseStats": {
+        "atk": 184,
+        "def": 207,
+        "hp": 389
+    },
+    "types": ["dragon", "ground"],
+    "fastMoves": ["DRAGON_TAIL", "BITE", "ZEN_HEADBUTT"],
+    "chargedMoves": ["OUTRAGE", "EARTHQUAKE", "CRUNCH", "HYPER_BEAM", "BULLDOZE"],
+    "defaultIVs": {
+        "cp500": [5,14,15,12],
+        "cp1500": [15,5,14,8],
+        "cp2500": [25,5,13,10]
+    },
+    "levelFloor": 15,
+    "tags": ["legendary"],
+    "buddyDistance": 20,
+    "thirdMoveCost": 100000,
+    "released": true
 }, {
     "dex": 719,
     "speciesName": "Diancie",

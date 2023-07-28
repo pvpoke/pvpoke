@@ -161,24 +161,6 @@
     "tags": ["shadoweligible", "mega"],
     "eliteMoves": ["METEOR_MASH"]
 }, {
-    "dex": 384,
-    "speciesName": "Rayquaza (Mega)",
-    "speciesId": "rayquaza_mega",
-    "baseStats": {
-        "atk": 354,
-        "def": 197,
-        "hp": 212
-    },
-    "types": ["dragon", "flying"],
-    "fastMoves": ["AIR_SLASH", "DRAGON_TAIL"],
-    "chargedMoves": ["AERIAL_ACE", "ANCIENT_POWER", "OUTRAGE", "HURRICANE"],
-    "eliteMoves": ["HURRICANE"],
-    "tags": ["legendary", "mega"],
-    "defaultIVs": {
-        "cp1500": [11, 6, 5, 11],
-        "cp2500": [18, 7, 7, 15]
-    }
-}, {
     "dex": 445,
     "speciesName": "Garchomp (Mega)",
     "speciesId": "garchomp_mega",
