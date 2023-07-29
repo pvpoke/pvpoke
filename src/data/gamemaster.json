@@ -4318,7 +4318,7 @@
             "hp": 207
         },
         "types": ["water", "fighting"],
-        "fastMoves": ["BUBBLE", "MUD_SHOT", "ROCK_SMASH"],
+        "fastMoves": ["BUBBLE", "MUD_SHOT", "ROCK_SMASH", "COUNTER"],
         "chargedMoves": ["DYNAMIC_PUNCH", "HYDRO_PUMP", "ICE_PUNCH", "SUBMISSION", "POWER_UP_PUNCH", "SCALD"],
         "defaultIVs": {
             "cp500": [7.5, 5, 8, 9],
@@ -4328,7 +4328,7 @@
         },
         "level25CP": 1584,
         "tags": ["shadoweligible"],
-        "eliteMoves": ["SUBMISSION"],
+        "eliteMoves": ["SUBMISSION", "COUNTER"],
         "searchPriority": 6,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
@@ -4348,7 +4348,7 @@
             "hp": 207
         },
         "types": ["water", "fighting"],
-        "fastMoves": ["BUBBLE", "MUD_SHOT", "ROCK_SMASH"],
+        "fastMoves": ["BUBBLE", "MUD_SHOT", "ROCK_SMASH", "COUNTER"],
         "chargedMoves": ["DYNAMIC_PUNCH", "HYDRO_PUMP", "ICE_PUNCH", "SUBMISSION", "POWER_UP_PUNCH", "SCALD"],
         "defaultIVs": {
             "cp500": [7.5, 5, 8, 9],
@@ -4357,7 +4357,7 @@
             "cp2500l40": [38.5, 14, 15, 12]
         },
         "tags": ["shadow"],
-        "eliteMoves": ["SUBMISSION"],
+        "eliteMoves": ["SUBMISSION", "COUNTER"],
         "searchPriority": 6,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
@@ -10415,7 +10415,7 @@
         },
         "types": ["water", "none"],
         "fastMoves": ["BUBBLE", "MUD_SHOT"],
-        "chargedMoves": ["BLIZZARD", "EARTHQUAKE", "HYDRO_PUMP", "SURF", "WEATHER_BALL_WATER"],
+        "chargedMoves": ["BLIZZARD", "EARTHQUAKE", "HYDRO_PUMP", "SURF", "WEATHER_BALL_WATER", "ICE_BEAM"],
         "defaultIVs": {
             "cp500": [8, 4, 4, 11],
             "cp1500": [23, 5, 11, 12],
@@ -10425,7 +10425,7 @@
         "searchPriority": 10,
         "level25CP": 1494,
         "tags": ["shadoweligible"],
-        "eliteMoves": ["EARTHQUAKE"],
+        "eliteMoves": ["EARTHQUAKE", "ICE_BEAM"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -10445,7 +10445,7 @@
         },
         "types": ["water", "none"],
         "fastMoves": ["BUBBLE", "MUD_SHOT"],
-        "chargedMoves": ["BLIZZARD", "EARTHQUAKE", "HYDRO_PUMP", "SURF", "WEATHER_BALL_WATER"],
+        "chargedMoves": ["BLIZZARD", "EARTHQUAKE", "HYDRO_PUMP", "SURF", "WEATHER_BALL_WATER", "ICE_BEAM"],
         "defaultIVs": {
             "cp500": [8, 4, 4, 11],
             "cp1500": [23, 5, 11, 12],
@@ -10454,7 +10454,7 @@
         },
         "searchPriority": 10,
         "tags": ["shadow"],
-        "eliteMoves": ["EARTHQUAKE"],
+        "eliteMoves": ["EARTHQUAKE", "ICE_BEAM"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,

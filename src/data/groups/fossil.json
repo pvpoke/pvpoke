@@ -95,9 +95,13 @@
     "chargedMoves": ["SURF", "THUNDERBOLT"]
 }, {
     "speciesId": "poliwrath",
-    "fastMove": "MUD_SHOT",
-    "chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"],
+    "fastMove": "COUNTER",
+    "chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"],
     "shadowType": "shadow"
+}, {
+    "speciesId": "poliwrath",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
 }, {
     "speciesId": "quagsire_shadow",
     "fastMove": "MUD_SHOT",
