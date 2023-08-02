@@ -301,7 +301,7 @@
         }],
         "exclude": [{
             "filterType": "id",
-            "values": ["shuckle", "shuckle_shadow", "smeargle", "genesect", "celebi", "hoopa", "hoopa_unbound", "aerodactyl_shadow", "obstagoon", "zarude", "genesect_douse", "genesect_burn", "xerneas", "thundurus_therian", "yveltal", "meloetta_aria", "zacian", "zamazenta", "zacian_hero", "zamazenta_hero", "genesect_douse", "zarude", "hoopa_unbound", "genesect_shock", "tapu_koko", "tapu_lele", "tapu_bulu", "nihilego", "genesect_chill", "braviary_hisuian", "solgaleo", "lunala", "keldeo_ordinary", "avalugg_hisuian", "kyogre_primal", "groudon_primal", "kleavor"]
+            "values": ["shuckle", "shuckle_shadow", "smeargle", "genesect", "celebi", "hoopa", "hoopa_unbound", "aerodactyl_shadow", "zarude", "genesect_douse", "genesect_burn", "xerneas", "thundurus_therian", "yveltal", "meloetta_aria", "zacian", "zamazenta", "zacian_hero", "zamazenta_hero", "genesect_douse", "zarude", "hoopa_unbound", "genesect_shock", "tapu_koko", "tapu_lele", "tapu_bulu", "nihilego", "genesect_chill", "braviary_hisuian", "solgaleo", "lunala", "keldeo_ordinary", "avalugg_hisuian", "kyogre_primal", "groudon_primal", "kleavor"]
         }, {
             "filterType": "tag",
             "values": ["legendary", "mega"]
@@ -523,56 +523,6 @@
         "cup": "littlejungle",
         "cp": 500,
         "meta": "littlejungle",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Silph Factions (Great League)",
-        "cup": "factionsgreat",
-        "cp": 1500,
-        "meta": "great",
-        "showCup": false,
-        "showFormat": true,
-        "showMeta": false,
-        "hideRankings": true
-    }, {
-        "title": "Silph Factions (Ultra League)",
-        "cup": "factionsultra",
-        "cp": 2500,
-        "meta": "ultra",
-        "showCup": false,
-        "showFormat": true,
-        "showMeta": false,
-        "hideRankings": true
-    }, {
-        "title": "Silph Factions (Master League)",
-        "cup": "factionsmaster",
-        "cp": 10000,
-        "meta": "masterfactions",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Silph Factions (Ragnar)",
-        "cup": "ragnar",
-        "cp": 1500,
-        "meta": "ragnar",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Silph Factions (Echo)",
-        "cup": "echo",
-        "cp": 1500,
-        "meta": "echo",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Silph Continentals",
-        "cup": "continentals",
-        "cp": 1500,
-        "meta": "continentals",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -13168,6 +13118,29 @@
             "parent": "pupitar_shadow"
         },
         "nicknames": ["ttar"]
+    }, {
+        "dex": 248,
+        "speciesName": "Tyranitar (Mega)",
+        "speciesId": "tyranitar_mega",
+        "baseStats": {
+            "atk": 309,
+            "def": 276,
+            "hp": 225
+        },
+        "types": ["rock", "dark"],
+        "fastMoves": ["BITE", "IRON_TAIL", "SMACK_DOWN"],
+        "chargedMoves": ["CRUNCH", "FIRE_BLAST", "STONE_EDGE", "BRUTAL_SWING"],
+        "defaultIVs": {
+            "cp500": [3.5, 15, 15, 15],
+            "cp1500": [10, 14, 15, 7],
+            "cp2500": [17, 5, 7, 15]
+        },
+        "tags": ["shadoweligible", "mega"],
+        "level25CP": 3435,
+        "eliteMoves": ["SMACK_DOWN"],
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true
     }, {
         "dex": 249,
         "speciesName": "Lugia",

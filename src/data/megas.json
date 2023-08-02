@@ -54,25 +54,6 @@
         "cp2500": [19, 6, 15, 6]
     }
 }, {
-    "dex": 248,
-    "speciesName": "Tyranitar (Mega)",
-    "speciesId": "tyranitar_mega",
-    "baseStats": {
-        "atk": 309,
-        "def": 276,
-        "hp": 225
-    },
-    "types": ["rock", "dark"],
-    "fastMoves": ["BITE", "IRON_TAIL", "SMACK_DOWN"],
-    "chargedMoves": ["CRUNCH", "FIRE_BLAST", "STONE_EDGE"],
-    "defaultIVs": {
-        "cp1500": [10, 14, 15, 7],
-        "cp2500": [17, 5, 7, 15]
-    },
-    "tags": ["shadoweligible", "mega"],
-    "level25CP": 3435,
-    "eliteMoves": ["SMACK_DOWN"]
-}, {
     "dex": 303,
     "speciesName": "Mawile (Mega)",
     "speciesId": "mawile_mega",

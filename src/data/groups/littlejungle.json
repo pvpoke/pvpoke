@@ -31,6 +31,10 @@
     "fastMove": "SNARL",
     "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
 }, {
+    "speciesId": "obstagoon",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
+}, {
     "speciesId": "nidoqueen",
     "fastMove": "POISON_JAB",
     "chargedMoves": ["EARTH_POWER", "POISON_FANG"]
