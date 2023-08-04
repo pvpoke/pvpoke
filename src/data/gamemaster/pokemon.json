@@ -29223,13 +29223,14 @@
     "fastMoves": ["TACKLE", "ROCK_THROW"],
     "chargedMoves": ["ROCK_SLIDE", "MOONBLAST", "POWER_GEM"],
     "defaultIVs": {
-        "cp500": [7, 4, 12, 13],
-        "cp1500": [20.5, 4, 12, 12],
-        "cp2500": [38.5, 4, 13, 12]
+		"cp500": [6.5, 12, 15, 14],
+        "cp1500": [19.5, 12, 12, 14],
+        "cp2500": [35, 13, 15, 13]
     },
+	"tags": ["mythical", "untradeable"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false
+    "released": true
 }, {
     "dex": 720,
     "speciesName": "Hoopa",
