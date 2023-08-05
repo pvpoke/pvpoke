@@ -29712,8 +29712,9 @@
             "hp": 246
         },
         "types": ["fairy", "none"],
-        "fastMoves": ["TACKLE", "ZEN_HEADBUTT"],
+        "fastMoves": ["TACKLE", "ZEN_HEADBUTT", "GEOMANCY"],
         "chargedMoves": ["MOONBLAST", "MEGAHORN", "CLOSE_COMBAT", "GIGA_IMPACT", "THUNDER"],
+        "eliteMoves": ["GEOMANCY"],
         "defaultIVs": {
             "cp500": [5, 10, 14, 13],
             "cp1500": [14.5, 4, 13, 15],
@@ -29734,7 +29735,8 @@
         },
         "types": ["dark", "flying"],
         "fastMoves": ["SUCKER_PUNCH", "SNARL", "GUST"],
-        "chargedMoves": ["DARK_PULSE", "HURRICANE", "FOCUS_BLAST", "HYPER_BEAM", "PSYCHIC"],
+        "chargedMoves": ["DARK_PULSE", "HURRICANE", "FOCUS_BLAST", "HYPER_BEAM", "PSYCHIC", "OBLIVION_WING"],
+        "eliteMoves": ["OBLIVION_WING"],
         "defaultIVs": {
             "cp500": [5, 10, 14, 13],
             "cp1500": [14.5, 4, 13, 15],
