@@ -644,7 +644,7 @@ var GameMaster = (function () {
 							move.buffsOpponent = m.buffsOpponent;
 						}
 
-						if((move.buffTarget == "self")&&((move.buffs[0] < 0)||(move.buffs[1] < 0))){
+						if( move.buffTarget == "self" && move.moveId != "DRAGON_ASCENT" && (move.buffs[0] < 0 || move.buffs[1] < 0 )){
 							move.selfDebuffing = true;
 
 							// Mark if move debuffs attack

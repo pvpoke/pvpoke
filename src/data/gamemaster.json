@@ -511,14 +511,6 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Fossil Cup",
-        "cup": "fossil",
-        "cp": 1500,
-        "meta": "fossil",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Little Jungle Cup",
         "cup": "littlejungle",
         "cp": 500,
@@ -18752,8 +18744,8 @@
         },
         "types": ["dragon", "flying"],
         "fastMoves": ["AIR_SLASH", "DRAGON_TAIL"],
-        "chargedMoves": ["AERIAL_ACE", "ANCIENT_POWER", "OUTRAGE", "HURRICANE", "BREAKING_SWIPE"],
-        "eliteMoves": ["HURRICANE", "BREAKING_SWIPE"],
+        "chargedMoves": ["AERIAL_ACE", "ANCIENT_POWER", "OUTRAGE", "HURRICANE", "BREAKING_SWIPE", "DRAGON_ASCENT"],
+        "eliteMoves": ["HURRICANE", "BREAKING_SWIPE", "DRAGON_ASCENT"],
         "tags": ["legendary"],
         "defaultIVs": {
             "cp500": [5, 6, 15, 14],
@@ -22519,7 +22511,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false
+        "released": true
     }, {
         "dex": 479,
         "speciesName": "Rotom (Heat)",

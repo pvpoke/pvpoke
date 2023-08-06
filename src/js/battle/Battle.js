@@ -2767,7 +2767,7 @@ function Battle(){
 			if(attacker.energy + chargedMove.energy >= chargedMove.energy){
 				var chargedDamage = self.calculateDamage(attacker, defender, chargedMove);
 
-				if((chargedDamage >= defender.hp / 1.5)&&(fastDPT > 1.5)){
+				if((chargedDamage >= defender.hp / 1.4)&&(fastDPT > 1.5)){
 					useShield = true;
 					shieldWeight = 4
 				}
@@ -2777,7 +2777,7 @@ function Battle(){
 					shieldWeight = 4
 				}
 
-				if((chargedDamage >= defender.hp / 2)&&(fastDPT > 1.5)){
+				if((chargedDamage >= defender.hp / 2)&&(fastDPT > 2)){
 					shieldWeight = 12
 				}
 			}
