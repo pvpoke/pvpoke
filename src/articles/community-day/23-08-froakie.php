@@ -13,8 +13,8 @@ require_once '../../header.php';
 
 <div class="section article white poliwag">
 	<h1>Froakie Community Day Guide for PvP</h1>
-	<div class="date">Last updated August 12th, 2023</div>
-	<img src="<?php echo $WEB_ROOT;?>articles/article-assets/community-day/23-07-froakie/banner.jpg" />
+	<div class="date">Last updated August 9th, 2023</div>
+	<img src="<?php echo $WEB_ROOT;?>articles/article-assets/community-day/23-08-froakie/banner.jpg" />
 	<p>The fan favorite Greninja is finally getting the level-up it needs! Will it be enough to become viable in PvP? Let's find out more about Greninja and IV's to look for during the upcoming Community Day! You can also see more info on Froakie Community Day at the <a href="https://pokemongolive.com/en/post/communityday-august-2023-froakie/" target="_blank">Pokemon GO blog</a>. </p>
 
 	<a name="overview"></a>
@@ -37,7 +37,7 @@ require_once '../../header.php';
 		<div class="feature">
 			<h4>New Fast Move</h4>
 			<div class="value">Water Shuriken</div>
-			<div class="detail">Not exclusive and available<br> after the event</div>
+			<div class="detail">Available via regular TM and<br> after the event</div>
 		</div>
 	</div>
 
@@ -79,9 +79,9 @@ require_once '../../header.php';
 	<div class="faq-item">
 		<h3 class="article-header"><strong>How good is Greninja with Hydro Cannon and Water Shuriken?</strong></h3>
 		<div class="faq-answer">
-			<p><b>Hydro Cannon and Water Shuriken dramatically improve Greninja as a viable glass cannon for Great and Ultra League, especially themed cups.</b> Water Shuriken is currently the highest energy-generating Fast Move and allows Greninja to reach Hydro Cannon at incredible speed, <i>even faster than Swampert</i>. Combined with the 35-energy move Night Slash, Grenjinja has one of fastest movesets in the game.</p>
-			<p>Greninja's playstyle will be comparable to Shiftry's, another Dark type with similar energy generation and spammy Charged Moves. Like Shiftry, Greninja has low stat product. It needs shields to stay in the fight and is vulnerable to any kind of Fast Move pressure. Greninja thrives best with energy advantage and in Charged Move-oriented matchups where it can command the pace.</p>
-			<p>Greninja is more likely to see action in themed cups than the open leagues, but stands out most in Ultra League where it has more bulk to work with and common targets like Charizard, Giratina, Jellicent, and Cresselia. It's susceptible to being walled by several Pokemon, including Water/Fairies like Azumarill or Tapu Fini, Fighting types like Poliwrath or Virizion, and Dark/Dragons like Zweilous or Guzzlord in themed cups that include Dark types.</p>
+			<p><b>Hydro Cannon and Water Shuriken dramatically improve Greninja as a viable glass cannon for Great and Ultra League, especially themed cups.</b> Water Shuriken is currently the highest energy-generating Fast Move and allows Greninja to reach Hydro Cannon at incredible speed, <i>even faster than Swampert</i>. Combined with the 35-energy move Night Slash, Greninja has one of fastest movesets in the game. That said, Greninja is unlikely to unseat Swampert in the open leagues because of its worse weakness profile, so it may see more action in themed cups.</p>
+			<p>Greninja's playstyle is comparable to Shiftry's, another Dark type with similar energy generation and spammy Charged Moves. Like Shiftry, Greninja has low stat product. It needs shields to stay in the fight and is vulnerable to any kind of Fast Move pressure. Greninja thrives best with energy advantage and in Charged Move-oriented matchups where it can command the pace.</p>
+			<p>Greninja stands out most in Ultra League where it has more bulk to work with and common targets like Charizard, Giratina, Jellicent, and Cresselia. It's susceptible to being walled by several Pokemon, including Water/Fairies like Azumarill or Tapu Fini, Fighting types like Poliwrath or Virizion, and Dark/Dragons like Zweilous or Guzzlord in themed cups that include Dark types.</p>
 		</div>
 	</div>
 
