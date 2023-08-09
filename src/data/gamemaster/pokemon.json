@@ -9763,7 +9763,7 @@
         "cp2500": [45.5, 6, 15, 15],
         "cp2500l40": [40, 15, 15, 15]
     },
-    "searchPriority": 10,
+    "searchPriority": 4,
     "level25CP": 1494,
     "tags": ["shadoweligible"],
     "eliteMoves": ["EARTHQUAKE", "ICE_BEAM"],
@@ -9793,7 +9793,6 @@
         "cp2500": [45.5, 6, 15, 15],
         "cp2500l40": [40, 15, 15, 15]
     },
-    "searchPriority": 10,
     "tags": ["shadow"],
     "eliteMoves": ["EARTHQUAKE", "ICE_BEAM"],
     "buddyDistance": 3,
@@ -27496,14 +27495,16 @@
         "hp": 176
     },
     "types": ["water", "dark"],
-    "fastMoves": ["FEINT_ATTACK", "BUBBLE"],
+    "fastMoves": ["FEINT_ATTACK", "BUBBLE", "WATER_SHURIKEN"],
     "tags": ["starter"],
-    "chargedMoves": ["NIGHT_SLASH", "AERIAL_ACE", "SURF", "HYDRO_PUMP"],
+    "chargedMoves": ["NIGHT_SLASH", "AERIAL_ACE", "SURF", "HYDRO_PUMP", "HYDRO_CANNON"],
+	"eliteMoves": ["HYDRO_CANNON"],
     "defaultIVs": {
         "cp500": [7, 9, 15, 11],
         "cp1500": [21, 5, 14, 9],
         "cp2500": [39, 6, 13, 14]
     },
+	"searchPriority": 4,
     "buddyDistance": 3,
     "thirdMoveCost": 10000,
     "released": true,
@@ -29119,6 +29120,7 @@
         "cp2500": [23.5, 11, 15, 15]
     },
     "tags": ["legendary"],
+	"searchPriority": 4,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true
@@ -30546,7 +30548,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 75000,
-    "released": false
+    "released": true
 }, {
     "dex": 767,
     "speciesName": "Wimpod",
