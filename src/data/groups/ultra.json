@@ -11,6 +11,10 @@
     "fastMove": "WING_ATTACK",
     "chargedMoves": ["DRAGON_CLAW", "BLAST_BURN"]
 }, {
+    "speciesId": "charizard_shadow",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["DRAGON_CLAW", "BLAST_BURN"]
+}, {
     "speciesId": "cobalion",
     "fastMove": "DOUBLE_KICK",
     "chargedMoves": ["SACRED_SWORD", "STONE_EDGE"]
@@ -110,8 +114,12 @@
     "chargedMoves": ["FEATHER_DANCE", "BRAVE_BIRD"]
 }, {
     "speciesId": "poliwrath",
-    "fastMove": "MUD_SHOT",
-    "chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
+    "fastMove": "COUNTER",
+    "chargedMoves": ["SCALD", "ICE_PUNCH"]
+}, {
+    "speciesId": "greninja",
+    "fastMove": "WATER_SHURIKEN",
+    "chargedMoves": ["HYDRO_CANNON", "NIGHT_SLASH"]
 }, {
     "speciesId": "registeel",
     "fastMove": "LOCK_ON",
