@@ -36,6 +36,28 @@
             "values": ["mega"]
         }]
     }, {
+        "name": "aurora",
+        "title": "Battle Frontier (Aurora)",
+        "include": [],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "type",
+            "name": "Type",
+            "values": ["poison", "steel", "fire"]
+        }, {
+            "filterType": "moveType",
+            "name": "Move Type",
+            "values": ["poison", "steel", "fire"]
+        }, {
+            "filterType": "move",
+            "values": ["hidden_power_water"]
+        }, {
+            "filterType": "id",
+            "values": ["carbink", "chansey", "articuno_galarian", "zapdos_galarian", "moltres_galarian", "pachirisu"]
+        }]
+    }, {
         "name": "classic",
         "title": "Classic",
         "include": [],
@@ -416,6 +438,23 @@
         }],
         "partySize": 3
     }, {
+        "name": "savannah",
+        "title": "Battle Frontier (Savannah)",
+        "include": [{
+            "filterType": "id",
+            "values": ["blaziken", "poliwrath", "tyrunt", "regirock", "qwilfish", "togetic"]
+        }, {
+            "filterType": "type",
+            "values": ["electric", "normal", "grass", "bug"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega", "shadow"]
+        }, {
+            "filterType": "id",
+            "values": ["diggersby", "pidgeot", "vigoroth", "dubwool", "lanturn", "stunfisk", "noctowl"]
+        }]
+    }, {
         "name": "single",
         "title": "Single-Type Cup",
         "include": [{
@@ -511,14 +550,6 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Little Jungle Cup",
-        "cup": "littlejungle",
-        "cp": 500,
-        "meta": "littlejungle",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Fantasy Cup (Ultra League)",
         "cup": "fantasy",
         "cp": 2500,
@@ -539,6 +570,22 @@
         "cup": "vanguardgymbreakers",
         "cp": 1500,
         "meta": "vanguardgymbreakers",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Battle Frontier (Aurora)",
+        "cup": "aurora",
+        "cp": 1500,
+        "meta": "aurora",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Battle Frontier (Savannah)",
+        "cup": "savannah",
+        "cp": 1500,
+        "meta": "savannah",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
