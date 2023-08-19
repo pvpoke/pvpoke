@@ -51,6 +51,10 @@
     "fastMove": "LOCK_ON",
     "chargedMoves": ["FOCUS_BLAST", "FLASH_CANNON"]
 }, {
+    "speciesId": "haxorus",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["BREAKING_SWIPE", "EARTHQUAKE"]
+}, {
     "speciesId": "sandslash_alolan",
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"]

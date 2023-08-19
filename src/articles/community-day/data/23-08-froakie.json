@@ -1,0 +1,68 @@
+{
+	"species": [
+		{
+			"speciesId": "froakie",
+			"baseSpeciesId": "froakie"
+		},
+		{
+			"speciesId": "frogadier",
+			"baseSpeciesId": "frogadier"
+		},
+		{
+			"speciesId": "greninja",
+			"baseSpeciesId": "greninja",
+			"default": true
+		}
+	],
+	"checklist": [
+		{
+			"title": "High Rank Greninja",
+			"speciesId": "greninja",
+			"baseSpeciesId": "froakie",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [21, 3, 15, 12],
+			"priority": 1,
+			"notes": "Great League Greninja may benefit from some slight Attack investment to reach a wide array of breakpoints, secure knockouts more reliably with its Charged Moves, and win Charged Move ties in the mirror match."
+		},
+		{
+			"title": "High Rank Greninja",
+			"speciesId": "greninja",
+			"baseSpeciesId": "froakie",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [41, 0, 13, 14],
+			"priority": 1,
+			"notes": "Ultra League Greninja generally wants the highest stat product possible, where it has more bulk to work with than Great League Greninja."
+		},
+		{
+			"title": "High IV Greninja",
+			"speciesId": "greninja",
+			"baseSpeciesId": "froakie",
+			"league": "master",
+			"cp": 10000,
+			"ivs": [50, 15, 15, 15],
+			"priority": 2,
+			"notes": "Greninja has little play in Master League, so consider holding onto a perfect IV Froakie until a potential release for Ash's Greninja, which has higher base stats than regular Greninja."
+		},
+		{
+			"title": "High HP Greninja",
+			"speciesId": "greninja",
+			"baseSpeciesId": "froakie",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [22, 0, 2, 14],
+			"priority": 2,
+			"notes": "An HP oriented spread increases Great League Greninja's longevity in extended, low Fast Move pressure fights (such as against Swampert)."
+		},
+		{
+			"title": "Little League Greninja",
+			"speciesId": "greninja",
+			"baseSpeciesId": "froakie",
+			"league": "special",
+			"cp": 500,
+			"ivs": [7, 8, 15, 13],
+			"priority": 3
+		}
+	]
+}

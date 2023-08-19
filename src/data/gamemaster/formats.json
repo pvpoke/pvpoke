@@ -46,15 +46,6 @@
 		"showMeta": true
 	},
 	{
-		"title": "Little Jungle Cup",
-		"cup": "littlejungle",
-		"cp": 500,
-		"meta": "littlejungle",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
 		"title": "Fantasy Cup (Ultra League)",
 		"cup": "fantasy",
 		"cp": 2500,
@@ -77,6 +68,24 @@
 		"cup": "vanguardgymbreakers",
 		"cp": 1500,
 		"meta": "vanguardgymbreakers",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Battle Frontier (Aurora)",
+		"cup": "aurora",
+		"cp": 1500,
+		"meta": "aurora",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Battle Frontier (Savannah)",
+		"cup": "savannah",
+		"cp": 1500,
+		"meta": "savannah",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true

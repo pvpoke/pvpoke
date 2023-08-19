@@ -85,20 +85,20 @@
 	</ul>
 
 	<h3>Latest Article</h3>
-
+	
 	<div class="article-item flex">
-		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-07-poliwag/">
-				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/community-day/23-07-poliwag/thumb.jpg">
-			</a>
-		</div>
-		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-07-poliwag/">Poliwag Community Day Guide for PvP</a></h4>
-			<div class="date">July 16, 2023</div>
-			<p>Poliwag is waddling into Community Day! Both Poliwrath and Politoed are viable in PvP, so let's dive into the impact of their exclusive moves.</p>
-			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Community Day"># Community Day</a><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a></div>
-		</div>
+	<div class="col-3">
+		<a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-08-froakie/">
+			<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/community-day/23-08-froakie/thumb.jpg">
+		</a>
 	</div>
+	<div class="col-9">
+		<h4><a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-08-froakie/">Froakie Community Day Guide for PvP</a></h4>
+		<div class="date">August 9, 2023</div>
+		<p>Fan favorite Greninja is finally getting the level-up it needs! Will it be enough to become viable in PvP? Find out more about Greninja and IV's to look for during the upcoming Community Day!</p>
+		<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Community Day"># Community Day</a><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a></div>
+	</div>
+</div>
 </div>
 
 <?php

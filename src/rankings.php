@@ -89,13 +89,12 @@ switch($cup){
 		$league = 'Mega Master League';
 		break;
 
-	case "factions":
-	case "factionsgreat":
-	case "factionsultra":
-	case "factionsmaster":
-	case "echo":
-	case "ragnar":
-		$league = 'Silph Factions';
+	case "aurora":
+		$league = 'Battle Frontier (Aurora Cup)';
+		break;
+
+	case "savannah":
+		$league = 'Battle Frontier (Savannah Cup)';
 		break;
 
 	case "ragnargymbreakers":
