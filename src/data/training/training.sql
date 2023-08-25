@@ -6,6 +6,7 @@ CREATE TABLE `training_pokemon` (
   `playerType` tinyint(4) NOT NULL,
   `teamScore` smallint(6) NOT NULL,
   `individualScore` float NOT NULL,
+  `shields` tinyint(4) NOT NULL,
   `postDatetime` date NOT NULL DEFAULT CURRENT_TIMESTAMP,
    PRIMARY KEY(trainingPokemonId)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;

@@ -945,7 +945,8 @@ var BattlerMaster = (function () {
 							teamPosition: n+1,
 							playerType: playerType,
 							teamScore: battleRating,
-							individualScore: pokemon.battleStats.score
+							individualScore: pokemon.battleStats.score,
+							shields: pokemon.battleStats.shieldsBurned
 						});
 
 						gtag('event', 'Training Pokemon', {
@@ -962,7 +963,7 @@ var BattlerMaster = (function () {
 
 				// Report final individual and team data to db
 
-				if(teamsValid){
+				if(teamsValid && players[1].getAI().getLevel()+1 >= 3){
 					$.ajax({
 				        url: "../data/training/postTraining.php",
 				        method: "POST",
@@ -971,7 +972,9 @@ var BattlerMaster = (function () {
 							teams: teamObjs
 				        },
 				        success: function(response) {
-				            console.log(response);
+							if(! response.result && response.error){
+								console.error(response.error);
+							}
 				        },
 				        error: function(error) {
 				            console.log(error);
