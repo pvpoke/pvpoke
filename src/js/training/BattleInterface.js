@@ -946,7 +946,7 @@ var BattlerMaster = (function () {
 							playerType: playerType,
 							teamScore: battleRating,
 							individualScore: pokemon.battleStats.score,
-							shields: pokemon.battleStats.shieldsBurned
+							shields: pokemon.battleStats.shieldsUsed
 						});
 
 						gtag('event', 'Training Pokemon', {
