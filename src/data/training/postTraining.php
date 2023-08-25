@@ -5,7 +5,23 @@ $response = new stdClass();
 $response -> result = 1;
 $response -> error = '';
 
+session_start();
+
+if(! isset($_SESSION['last_training_timestamp'])){
+	$_SESSION['last_training_timestamp'] = 0;
+}
+
+if(time() - $_SESSION['last_training_timestamp'] < 120){
+	$response -> result = 0;
+	$response -> error = 'Rate limited';
+	echo json_encode($response);
+	exit();
+} else{
+	$_SESSION['last_training_timestamp'] = time();
+}
+
 if(! isset($_POST['pokemon']) || ! isset($_POST['teams'])){
+	$response -> result = 0;
 	$response -> error = 'Insufficient data posted';
 	echo json_encode($response);
 	exit();
