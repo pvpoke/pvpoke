@@ -29877,6 +29877,27 @@
         "thirdMoveCost": 100000,
         "released": true
     }, {
+        "dex": 719,
+        "speciesName": "Diancie (Mega)",
+        "speciesId": "diancie_mega",
+        "baseStats": {
+            "atk": 342,
+            "def": 235,
+            "hp": 137
+        },
+        "types": ["rock", "fairy"],
+        "fastMoves": ["TACKLE", "ROCK_THROW"],
+        "chargedMoves": ["ROCK_SLIDE", "MOONBLAST", "POWER_GEM"],
+        "defaultIVs": {
+            "cp500": [4, 13, 14, 14],
+            "cp1500": [12, 12, 13, 15],
+            "cp2500": [20.5, 10, 14, 13]
+        },
+        "tags": ["mythical", "untradeable", "mega"],
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": true
+    }, {
         "dex": 720,
         "speciesName": "Hoopa",
         "speciesId": "hoopa",
