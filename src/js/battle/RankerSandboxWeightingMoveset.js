@@ -638,6 +638,15 @@ var RankerMaster = (function () {
 
 					rankings[i].score = rankings[i].scores[rankings[i].scores.length-1];
 
+					// For chargers, factor in Fast Move pressure for ability to farm down, and maximum carryover energy after firing a Charged Move
+
+					if(scenario.slug == "chargers"){
+						var fastMoveDPT = ((pokemon.fastMove.power * pokemon.fastMove.stab * pokemon.shadowAtkMult) * (pokemon.stats.atk / 100)) / (pokemon.fastMove.cooldown / 500);
+						var maximumEnergyRemaining = 100 - Math.min.apply(Math, pokemon.activeChargedMoves.map(function(m) { return m.energy; }))
+
+						rankings[i].score *= Math.pow( Math.pow((maximumEnergyRemaining / 100), 1/2) * Math.pow((fastMoveDPT / 5), 1/6), 1/6);
+					}
+
 					delete rankings[i].scores;
 
 					// Set top matchups and counters
