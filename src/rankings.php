@@ -175,7 +175,7 @@ require_once 'header.php';
 
 	<p class="description small switches hide"><b>The best Pokemon to switch to from an unfavorable lead.</b> These Pokemon have safe matchups and can pressure shields or deal heavy damage even in their losses.</p>
 
-	<p class="description small chargers hide"><b>The best Pokemon with an energy advantage.</b> Fast energy gain or powerful moves make them dangerous after building up energy.</p>
+	<p class="description small chargers hide"><b>The best Pokemon with an energy advantage.</b> Fast energy gain or powerful moves make them dangerous after building up energy. This category also factors in a Pokemon's ability to farm down weakened opponent or overfarm in advantageous matchups.</p>
 
 	<p class="description small consistency hide"><b>These Pokemon perform the most dependably.</b> They provide consistent damage and rely less on baiting shields than other Pokemon. Shorter Fast Moves also help improve consistency.</p>
 
