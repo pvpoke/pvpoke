@@ -2158,6 +2158,23 @@ function Pokemon(id, i, b){
 
 		consistencyScore = ((consistencyScore * 6) + (fastMoveConsistency * 1)) / 7;*/
 
+		// Penalize specific moves
+		if(self.hasMove("POWER_UP_PUNCH")){
+			consistencyScore *= .85;
+		}
+
+		if(self.hasMove("LUNGE")){
+			consistencyScore *= .85;
+		}
+
+		if(self.hasMove("FEATHER_DANCE")){
+			consistencyScore *= .75;
+		}
+
+		if(self.hasMove("BUBBLE_BEAM")){
+			consistencyScore *= .75;
+		}
+
 		consistencyScore = Math.round(consistencyScore * 1000) / 10;
 
 		return consistencyScore;
