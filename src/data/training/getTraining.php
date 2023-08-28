@@ -53,8 +53,8 @@ $query->bind_result($pokemonId, $individualScore, $teamScore, $games);
 while($query->fetch()){
 	$pokemon = new stdClass();
 	$pokemon->pokemon = $pokemonId;
-	$pokemon->individualScore = floatval($individualScore);
-	$pokemon->teamScore = floatval($teamScore);
+	$pokemon->individualScore = floatval(number_format($individualScore, 2));
+	$pokemon->teamScore = floatval(number_format($teamScore, 2));
 	$pokemon->games = $games;
 
 	array_push($data -> performers, $pokemon);
@@ -70,7 +70,7 @@ $query->bind_result($teamStr, $teamScore, $games);
 while($query->fetch()){
 	$team = new stdClass();
 	$team->team = $teamStr;
-	$team->teamScore = floatval($teamScore);
+	$team->teamScore = floatval(number_format($teamScore, 2));
 	$team->games = $games;
 
 	array_push($data -> teams, $team);
