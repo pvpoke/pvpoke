@@ -37447,14 +37447,18 @@
         "buffApplyChance": "0.3",
         "archetype": "High Energy Debuff"
     }, {
-        "moveId": "SCALD_BLASTOISE",
-        "name": "Scald Blastoise",
-        "type": "water",
-        "power": 50,
-        "energy": 80,
+        "moveId": "SCORCHING_SANDS",
+        "name": "Scorching Sands",
+        "abbreviation": "ScS",
+        "type": "ground",
+        "power": 80,
+        "energy": 50,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "High Energy"
+        "buffs": [-1, 0],
+        "buffTarget": "opponent",
+        "buffApplyChance": "0.3",
+        "archetype": "High Energy Debuff"
     }, {
         "moveId": "SCRATCH",
         "name": "Scratch",
@@ -37895,6 +37899,19 @@
         "cooldown": 500,
         "archetype": "High Energy"
     }, {
+        "moveId": "TRAILBLAZE",
+        "name": "Trailblaze",
+        "abbreviation": "TBl",
+        "type": "grass",
+        "power": 65,
+        "energy": 50,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [1, 0],
+        "buffTarget": "self",
+        "buffApplyChance": "1",
+        "archetype": "Boost"
+    }, {
         "moveId": "TRANSFORM",
         "name": "Transform",
         "type": "normal",
@@ -37914,6 +37931,19 @@
         "buffTarget": "opponent",
         "buffApplyChance": ".5",
         "archetype": "Debuff"
+    }, {
+        "moveId": "TRIPLE_AXEL",
+        "name": "Triple Axel",
+        "abbreviation": "TAx",
+        "type": "ice",
+        "power": 60,
+        "energy": 45,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [1, 0],
+        "buffTarget": "self",
+        "buffApplyChance": "1",
+        "archetype": "Boost"
     }, {
         "moveId": "TWISTER",
         "name": "Twister",
