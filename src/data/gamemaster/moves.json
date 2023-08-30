@@ -35,7 +35,7 @@
     "name": "Aerial Ace",
     "type": "flying",
     "power": 55,
-    "energy": 45,
+    "energy": 40,
     "energyGain": 0,
     "cooldown": 500,
     "archetype": "General"
@@ -105,9 +105,9 @@
     "type": "ghost",
     "power": 5,
     "energy": 0,
-    "energyGain": 9,
+    "energyGain": 13,
     "cooldown": 1500,
-    "archetype": "Low Quality"
+    "archetype": "Fast Charge"
 }, {
     "moveId": "AURA_SPHERE",
     "name": "Aura Sphere",
@@ -181,7 +181,7 @@
     "abbreviation": "BmB",
     "type": "normal",
     "power": 150,
-    "energy": 75,
+    "energy": 70,
     "energyGain": 0,
     "cooldown": 500,
     "archetype": "Nuke"
@@ -313,7 +313,7 @@
     "energy": 0,
     "energyGain": 7,
     "cooldown": 1000,
-    "archetype": "Fast Charge"
+    "archetype": "General"
 }, {
     "moveId": "BULLET_SEED",
     "name": "Bullet Seed",
@@ -455,8 +455,8 @@
     "name": "Dig",
     "abbreviation": "Dg",
     "type": "ground",
-    "power": 100,
-    "energy": 80,
+    "power": 80,
+    "energy": 55,
     "energyGain": 0,
     "cooldown": 500,
     "archetype": "High Energy"
@@ -1845,7 +1845,7 @@
     "name": "Poltergeist",
     "abbreviation": "Po",
     "type": "ghost",
-    "power": 140,
+    "power": 150,
     "energy": 75,
     "energyGain": 0,
     "cooldown": 500,
@@ -1933,7 +1933,7 @@
     "moveId": "PSYCHIC",
     "name": "Psychic",
     "type": "psychic",
-    "power": 90,
+    "power": 85,
     "energy": 55,
     "energyGain": 0,
     "cooldown": 500,
@@ -2311,7 +2311,7 @@
     "name": "Sky Attack",
     "type": "flying",
     "power": 75,
-    "energy": 45,
+    "energy": 50,
     "energyGain": 0,
     "cooldown": 500,
     "archetype": "General"
@@ -2378,11 +2378,11 @@
     "name": "Spark",
     "abbreviation": "Sp",
     "type": "electric",
-    "power": 4,
+    "power": 6,
     "energy": 0,
-    "energyGain": 8,
+    "energyGain": 7,
     "cooldown": 1000,
-    "archetype": "Fast Charge"
+    "archetype": "General"
 }, {
     "moveId": "SPLASH",
     "name": "Splash",
@@ -2854,8 +2854,8 @@
     "moveId": "X_SCISSOR",
     "name": "X-Scissor",
     "type": "bug",
-    "power": 45,
-    "energy": 35,
+    "power": 65,
+    "energy": 40,
     "energyGain": 0,
     "cooldown": 500,
     "archetype": "Spam/Bait"
