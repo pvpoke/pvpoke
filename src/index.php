@@ -76,10 +76,10 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.30.8 (August 27, 2023)</h4>
+	<h4>v1.30.9 (August 30, 2023)</h4>
 	<ul>
-		<li>Tweaked ranking formula for Chargers category to factor in a Pokemon's fast move pressure (ability to farm down) and the amount of energy a Pokemon can take out of a matchup if it's forced to throw a Charged Move (ability to overfarm).</li>
-		<li>Tweaked ranking formula for Consistency category to further penalize Pokemon that use the moves Power-Up Punch, Feather Dance, Bubble Beam, and Lunge.</li>
+		<li>Generation 9 Pokemon added!</li>
+		<li>Updates for Season of Adventures Abound will be available sometime after the season begins on September 1st.</li>
 	</ul>
 
 	<h3>Latest Article</h3>
