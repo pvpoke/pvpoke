@@ -22,7 +22,7 @@
 		// Load app game master file to parse
 
 		function loadAppGM(){
-			$.getJSON( "../data/gamemaster-app.json", function( data ){
+			$.getJSON( "../data/gamemaster/gamemaster-app.json", function( data ){
 				var templates = data;
 
 				console.log(templates);
@@ -44,7 +44,7 @@
 					var speciesId = settings.pokemonId.replace("_NORMAL","").toLowerCase();
 
 					if(settings.form){
-						speciesId = settings.form.replace("_NORMAL","").toLowerCase();
+						speciesId = String(settings.form).replace("_NORMAL","").toLowerCase();
 					}
 
 					// Search for this pokemon in the existing data
