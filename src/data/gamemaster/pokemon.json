@@ -37076,17 +37076,17 @@
     "speciesName": "Baxcalibur",
     "speciesId": "baxcalibur",
     "baseStats": {
-        "atk": 280,
-        "def": 184,
-        "hp": 251
+        "atk": 254,
+        "def": 168,
+        "hp": 229
     },
     "types": ["dragon", "ice"],
     "fastMoves": ["DRAGON_BREATH", "ICE_FANG"],
     "chargedMoves": ["DRAGON_CLAW", "AVALANCHE", "OUTRAGE", "BLIZZARD"],
     "defaultIVs": {
-        "cp500": [4.5, 11, 14, 13],
-        "cp1500": [13, 4, 14, 9],
-        "cp2500": [21.5, 4, 15, 12]
+		"cp500": [5.5, 5, 7, 13],
+        "cp1500": [15.5, 5, 15, 9],
+        "cp2500": [25.5, 6, 15, 14]
     },
     "buddyDistance": 5,
     "thirdMoveCost": 75000,

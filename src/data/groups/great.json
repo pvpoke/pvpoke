@@ -25,15 +25,15 @@
     "chargedMoves": ["THUNDERBOLT", "ROCK_SLIDE"]
 }, {
     "speciesId": "diggersby",
-    "fastMove": "QUICK_ATTACK",
-    "chargedMoves": ["FIRE_PUNCH", "SCORCHING_SANDS"]
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["SCORCHING_SANDS", "HYPER_BEAM"]
 }, {
     "speciesId": "drapion",
     "fastMove": "POISON_STING",
     "chargedMoves": ["CRUNCH", "SLUDGE_BOMB"]
 }, {
     "speciesId": "dunsparce",
-    "fastMove": "ASTONISH",
+    "fastMove": "ROLLOUT",
     "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
 }, {
     "speciesId": "froslass",
@@ -97,10 +97,6 @@
     "speciesId": "scrafty",
     "fastMove": "COUNTER",
     "chargedMoves": ["POWER_UP_PUNCH", "FOUL_PLAY"]
-}, {
-    "speciesId": "skarmory",
-    "fastMove": "AIR_SLASH",
-    "chargedMoves": ["SKY_ATTACK", "BRAVE_BIRD"]
 }, {
     "speciesId": "stunfisk_galarian",
     "fastMove": "MUD_SHOT",
