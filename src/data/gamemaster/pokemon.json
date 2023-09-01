@@ -34840,7 +34840,7 @@
     },
     "types": ["normal", "none"],
     "fastMoves": ["TACKLE", "TAKE_DOWN"],
-    "chargedMoves": ["DIG", 392, "BODY_SLAM"],
+    "chargedMoves": ["DIG", "BODY_SLAM"],
     "defaultIVs": {
         "cp500": [27, 4, 15, 12],
         "cp1500": [50, 15, 15, 15],
@@ -34963,7 +34963,7 @@
     },
     "types": ["bug", "none"],
     "fastMoves": ["BUG_BITE", "STRUGGLE_BUG"],
-    "chargedMoves": ["X_SCISSOR", 392, "BUG_BUZZ"],
+    "chargedMoves": ["X_SCISSOR", "BUG_BUZZ"],
     "defaultIVs": {
         "cp500": [36.5, 5, 14, 14],
         "cp1500": [50, 15, 15, 15],
@@ -34987,7 +34987,7 @@
     },
     "types": ["bug", "dark"],
     "fastMoves": ["BUG_BITE", "SUCKER_PUNCH"],
-    "chargedMoves": ["X_SCISSOR", 392, "BUG_BUZZ", "DARK_PULSE"],
+    "chargedMoves": ["X_SCISSOR", "BUG_BUZZ", "DARK_PULSE"],
     "defaultIVs": {
         "cp500": [8, 5, 15, 13],
         "cp1500": [24, 4, 15, 11],
@@ -36296,7 +36296,7 @@
     },
     "types": ["dragon", "normal"],
     "fastMoves": ["DRAGON_TAIL", "TAKE_DOWN"],
-    "chargedMoves": ["DRAGON_CLAW", "BODY_SLAM", 392],
+    "chargedMoves": ["DRAGON_CLAW", "BODY_SLAM"],
     "defaultIVs": {
         "cp500": [8, 4, 13, 13],
         "cp1500": [24, 4, 8, 15],
