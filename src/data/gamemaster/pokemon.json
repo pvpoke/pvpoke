@@ -34620,7 +34620,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 10000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_SPRIGATITO",
         "evolutions": ["floragato"]
@@ -34644,7 +34644,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 10000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_SPRIGATITO",
         "parent": "sprigatito",
@@ -34669,7 +34669,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 10000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_SPRIGATITO",
         "parent": "floragato"
@@ -34693,7 +34693,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 10000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_FUECOCO",
         "evolutions": ["crocalor"]
@@ -34717,7 +34717,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 10000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_FUECOCO",
         "parent": "fuecoco",
@@ -34742,7 +34742,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 10000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_FUECOCO",
         "parent": "crocalor"
@@ -34766,7 +34766,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 10000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_QUAXLY",
         "evolutions": ["quaxwell"]
@@ -34790,7 +34790,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 10000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_QUAXLY",
         "parent": "quaxly",
@@ -34815,7 +34815,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 10000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_QUAXLY",
         "parent": "quaxwell"
@@ -34855,7 +34855,7 @@
     },
     "types": ["normal", "none"],
     "fastMoves": ["TACKLE", "TAKE_DOWN"],
-    "chargedMoves": ["DIG", 392, "BODY_SLAM"],
+    "chargedMoves": ["DIG", "BODY_SLAM"],
     "defaultIVs": {
         "cp500": [7.5, 4, 4, 12],
         "cp1500": [21, 7, 15, 14],
@@ -34880,7 +34880,7 @@
     },
     "types": ["normal", "none"],
     "fastMoves": ["TACKLE", "TAKE_DOWN"],
-    "chargedMoves": ["DIG", 392, "BODY_SLAM"],
+    "chargedMoves": ["DIG", "BODY_SLAM"],
     "defaultIVs": {
         "cp500": [7.5, 5, 15, 14],
         "cp1500": [22.5, 6, 12, 11],
