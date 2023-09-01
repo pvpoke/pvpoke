@@ -13,7 +13,8 @@
 }, {
     "speciesId": "charizard_shadow",
     "fastMove": "WING_ATTACK",
-    "chargedMoves": ["DRAGON_CLAW", "BLAST_BURN"]
+    "chargedMoves": ["DRAGON_CLAW", "BLAST_BURN"],
+    "shadowType": "shadow"
 }, {
     "speciesId": "cobalion",
     "fastMove": "DOUBLE_KICK",
@@ -59,13 +60,21 @@
     "fastMove": "WING_ATTACK",
     "chargedMoves": ["NIGHT_SLASH", "EARTHQUAKE"]
 }, {
+    "speciesId": "golisopod",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["X_SCISSOR", "LIQUIDATION"]
+}, {
     "speciesId": "granbull",
     "fastMove": "CHARM",
     "chargedMoves": ["CLOSE_COMBAT", "CRUNCH"]
 }, {
     "speciesId": "greedent",
-    "fastMove": "BULLET_SEED",
+    "fastMove": "MUD_SHOT",
     "chargedMoves": ["BODY_SLAM", "CRUNCH"]
+}, {
+    "speciesId": "greninja",
+    "fastMove": "WATER_SHURIKEN",
+    "chargedMoves": ["HYDRO_CANNON", "NIGHT_SLASH"]
 }, {
     "speciesId": "guzzlord",
     "fastMove": "DRAGON_TAIL",
@@ -117,17 +126,17 @@
     "fastMove": "COUNTER",
     "chargedMoves": ["SCALD", "ICE_PUNCH"]
 }, {
-    "speciesId": "greninja",
-    "fastMove": "WATER_SHURIKEN",
-    "chargedMoves": ["HYDRO_CANNON", "NIGHT_SLASH"]
-}, {
     "speciesId": "registeel",
     "fastMove": "LOCK_ON",
     "chargedMoves": ["ZAP_CANNON", "FOCUS_BLAST"]
 }, {
+    "speciesId": "sandslash_alolan",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"]
+}, {
     "speciesId": "scizor",
     "fastMove": "BULLET_PUNCH",
-    "chargedMoves": ["NIGHT_SLASH", "IRON_HEAD"]
+    "chargedMoves": ["NIGHT_SLASH", "X_SCISSOR"]
 }, {
     "speciesId": "scrafty",
     "fastMove": "COUNTER",
@@ -159,10 +168,6 @@
     "fastMove": "CHARM",
     "chargedMoves": ["MOONBLAST", "PSYSHOCK"]
 }, {
-    "speciesId": "talonflame",
-    "fastMove": "INCINERATE",
-    "chargedMoves": ["BRAVE_BIRD", "FLAME_CHARGE"]
-}, {
     "speciesId": "tapu_fini",
     "fastMove": "WATER_GUN",
     "chargedMoves": ["SURF", "MOONBLAST"]
@@ -191,11 +196,7 @@
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
 }, {
-    "speciesId": "golisopod",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["X_SCISSOR", "LIQUIDATION"]
-}, {
-    "speciesId": "sandslash_alolan",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"]
+    "speciesId": "steelix",
+    "fastMove": "DRAGON_TAIL",
+    "chargedMoves": ["BREAKING_SWIPE", "EARTHQUAKE"]
 }]

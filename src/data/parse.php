@@ -40,7 +40,7 @@
 				var speciesId = settings.pokemonId.toLowerCase();
 
 				if(settings.form){
-					speciesId = settings.form.toLowerCase();
+					speciesId = String(settings.form).toLowerCase();
 				}
 
 				var speciesName = speciesId[0].toUpperCase() + speciesId.substring(1);
