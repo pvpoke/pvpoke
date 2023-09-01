@@ -1,7 +1,8 @@
 [{
     "speciesId": "abomasnow_shadow",
     "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"]
+    "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"],
+    "shadowType": "shadow"
 }, {
     "speciesId": "aurorus",
     "fastMove": "POWDER_SNOW",
@@ -11,13 +12,13 @@
     "fastMove": "PSYCHO_CUT",
     "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
 }, {
-    "speciesId": "whimsicott",
-    "fastMove": "FAIRY_WIND",
-    "chargedMoves": ["SEED_BOMB", "MOONBLAST"]
+    "speciesId": "deoxys_defense",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["PSYCHO_BOOST", "ROCK_SLIDE"]
 }, {
-    "speciesId": "wigglytuff",
-    "fastMove": "CHARM",
-    "chargedMoves": ["DISARMING_VOICE", "ICE_BEAM"]
+    "speciesId": "dunsparce",
+    "fastMove": "ROLLOUT",
+    "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
 }, {
     "speciesId": "froslass",
     "fastMove": "POWDER_SNOW",
@@ -47,10 +48,6 @@
     "fastMove": "AIR_SLASH",
     "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
 }, {
-    "speciesId": "regirock",
-    "fastMove": "LOCK_ON",
-    "chargedMoves": ["STONE_EDGE", "FOCUS_BLAST"]
-}, {
     "speciesId": "ninetales_alolan",
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["WEATHER_BALL_ICE", "DAZZLING_GLEAM"]
@@ -68,13 +65,13 @@
     "fastMove": "WING_ATTACK",
     "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
 }, {
+    "speciesId": "regirock",
+    "fastMove": "LOCK_ON",
+    "chargedMoves": ["STONE_EDGE", "FOCUS_BLAST"]
+}, {
     "speciesId": "sableye",
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["FOUL_PLAY", "RETURN"]
-}, {
-    "speciesId": "dunsparce",
-    "fastMove": "ROLLOUT",
-    "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
 }, {
     "speciesId": "umbreon",
     "fastMove": "SNARL",
@@ -84,7 +81,19 @@
     "fastMove": "COUNTER",
     "chargedMoves": ["BODY_SLAM", "BULLDOZE"]
 }, {
-    "speciesId": "deoxys_defense",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["PSYCHO_BOOST", "ROCK_SLIDE"]
+    "speciesId": "whimsicott",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["SEED_BOMB", "MOONBLAST"]
+}, {
+    "speciesId": "wigglytuff",
+    "fastMove": "CHARM",
+    "chargedMoves": ["DISARMING_VOICE", "ICE_BEAM"]
+}, {
+    "speciesId": "mantine",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["AERIAL_ACE", "ICE_BEAM"]
+}, {
+    "speciesId": "gligar",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["AERIAL_ACE", "DIG"]
 }]

@@ -1,4 +1,8 @@
 [{
+    "speciesId": "ariados",
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["LUNGE", "MEGAHORN"]
+}, {
     "speciesId": "beedrill",
     "fastMove": "POISON_JAB",
     "chargedMoves": ["X_SCISSOR", "DRILL_RUN"]
@@ -47,6 +51,10 @@
     "fastMove": "HEX",
     "chargedMoves": ["SEED_BOMB", "SHADOW_BALL"]
 }, {
+    "speciesId": "gyarados",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["AQUA_TAIL", "CRUNCH"]
+}, {
     "speciesId": "kingdra",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["OUTRAGE", "OCTAZOOKA"]
@@ -75,6 +83,10 @@
     "speciesId": "primeape",
     "fastMove": "COUNTER",
     "chargedMoves": ["NIGHT_SLASH", "ICE_PUNCH"]
+}, {
+    "speciesId": "quagsire",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["MUD_BOMB", "STONE_EDGE"]
 }, {
     "speciesId": "regice",
     "fastMove": "LOCK_ON",
@@ -113,6 +125,10 @@
     "fastMove": "COUNTER",
     "chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
 }, {
+    "speciesId": "trevenant",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["SEED_BOMB", "SHADOW_BALL"]
+}, {
     "speciesId": "tropius",
     "fastMove": "AIR_SLASH",
     "chargedMoves": ["LEAF_BLADE", "AERIAL_ACE"]
@@ -138,19 +154,11 @@
     "fastMove": "THUNDER_SHOCK",
     "chargedMoves": ["DRILL_PECK", "THUNDERBOLT"]
 }, {
-    "speciesId": "ariados",
-    "fastMove": "POISON_STING",
-    "chargedMoves": ["LUNGE", "MEGAHORN"]
+    "speciesId": "gligar",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["AERIAL_ACE", "DIG"]
 }, {
-    "speciesId": "trevenant",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["SEED_BOMB", "SHADOW_BALL"]
-}, {
-    "speciesId": "gyarados",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["AQUA_TAIL", "CRUNCH"]
-}, {
-    "speciesId": "quagsire",
-    "fastMove": "MUD_SHOT",
-    "chargedMoves": ["MUD_BOMB", "STONE_EDGE"]
+    "speciesId": "mantine",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["AERIAL_ACE", "ICE_BEAM"]
 }]
