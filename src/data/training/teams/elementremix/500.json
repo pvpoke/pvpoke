@@ -1,0 +1,498 @@
+{
+    "presets": [{
+        "pokemon": [{
+            "speciesId": "dewpider",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["MIRROR_COAT", "BUBBLE_BEAM"]
+        }, {
+            "speciesId": "vulpix",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["BODY_SLAM", "WEATHER_BALL_FIRE"]
+        }, {
+            "speciesId": "wooper",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["BODY_SLAM", "MUD_BOMB"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "dewpider",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["MIRROR_COAT", "BUBBLE_BEAM"]
+        }, {
+            "speciesId": "vulpix",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["BODY_SLAM", "WEATHER_BALL_FIRE"]
+        }, {
+            "speciesId": "seel",
+            "fastMove": "LICK",
+            "chargedMoves": ["AQUA_TAIL", "ICY_WIND"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "vulpix",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["BODY_SLAM", "WEATHER_BALL_FIRE"]
+        }, {
+            "speciesId": "dewpider",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["MIRROR_COAT", "BUBBLE_BEAM"]
+        }, {
+            "speciesId": "oddish_shadow",
+            "fastMove": "RAZOR_LEAF",
+            "chargedMoves": ["SLUDGE_BOMB", "SEED_BOMB"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "vulpix",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["BODY_SLAM", "WEATHER_BALL_FIRE"]
+        }, {
+            "speciesId": "seel",
+            "fastMove": "LICK",
+            "chargedMoves": ["AQUA_TAIL", "ICY_WIND"]
+        }, {
+            "speciesId": "chikorita",
+            "fastMove": "VINE_WHIP",
+            "chargedMoves": ["BODY_SLAM", "GRASS_KNOT"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "dewpider",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["MIRROR_COAT", "BUBBLE_BEAM"]
+        }, {
+            "speciesId": "vulpix",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["BODY_SLAM", "WEATHER_BALL_FIRE"]
+        }, {
+            "speciesId": "exeggcute",
+            "fastMove": "CONFUSION",
+            "chargedMoves": ["SEED_BOMB", "ANCIENT_POWER"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "dewpider",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["MIRROR_COAT", "BUBBLE_BEAM"]
+        }, {
+            "speciesId": "vulpix_shadow",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["BODY_SLAM", "WEATHER_BALL_FIRE"]
+        }, {
+            "speciesId": "bulbasaur",
+            "fastMove": "VINE_WHIP",
+            "chargedMoves": ["SEED_BOMB", "SLUDGE_BOMB"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "wooper",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["BODY_SLAM", "MUD_BOMB"]
+        }, {
+            "speciesId": "dewpider",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["MIRROR_COAT", "BUBBLE_BEAM"]
+        }, {
+            "speciesId": "ferroseed",
+            "fastMove": "TACKLE",
+            "chargedMoves": ["IRON_HEAD", "FLASH_CANNON"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "dewpider",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["MIRROR_COAT", "BUBBLE_BEAM"]
+        }, {
+            "speciesId": "seel",
+            "fastMove": "LICK",
+            "chargedMoves": ["AQUA_TAIL", "ICY_WIND"]
+        }, {
+            "speciesId": "chikorita",
+            "fastMove": "VINE_WHIP",
+            "chargedMoves": ["BODY_SLAM", "GRASS_KNOT"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "seel",
+            "fastMove": "LICK",
+            "chargedMoves": ["AQUA_TAIL", "ICY_WIND"]
+        }, {
+            "speciesId": "vulpix_shadow",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["BODY_SLAM", "WEATHER_BALL_FIRE"]
+        }, {
+            "speciesId": "slowpoke_shadow",
+            "fastMove": "CONFUSION",
+            "chargedMoves": ["PSYSHOCK", "PSYCHIC"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "dewpider",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["MIRROR_COAT", "BUBBLE_BEAM"]
+        }, {
+            "speciesId": "vulpix",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["BODY_SLAM", "WEATHER_BALL_FIRE"]
+        }, {
+            "speciesId": "seel",
+            "fastMove": "LICK",
+            "chargedMoves": ["AQUA_TAIL", "ICY_WIND"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "dewpider",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["MIRROR_COAT", "BUBBLE_BEAM"]
+        }, {
+            "speciesId": "vulpix_shadow",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["BODY_SLAM", "WEATHER_BALL_FIRE"]
+        }, {
+            "speciesId": "wooper",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["BODY_SLAM", "MUD_BOMB"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "chikorita_shadow",
+            "fastMove": "VINE_WHIP",
+            "chargedMoves": ["BODY_SLAM", "GRASS_KNOT"]
+        }, {
+            "speciesId": "dewpider",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["MIRROR_COAT", "BUBBLE_BEAM"]
+        }, {
+            "speciesId": "seel",
+            "fastMove": "LICK",
+            "chargedMoves": ["AQUA_TAIL", "ICY_WIND"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "seel",
+            "fastMove": "LICK",
+            "chargedMoves": ["AQUA_TAIL", "ICY_WIND"]
+        }, {
+            "speciesId": "vulpix",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["BODY_SLAM", "WEATHER_BALL_FIRE"]
+        }, {
+            "speciesId": "bulbasaur",
+            "fastMove": "VINE_WHIP",
+            "chargedMoves": ["SEED_BOMB", "SLUDGE_BOMB"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "vulpix",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["BODY_SLAM", "WEATHER_BALL_FIRE"]
+        }, {
+            "speciesId": "dewpider",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["MIRROR_COAT", "BUBBLE_BEAM"]
+        }, {
+            "speciesId": "wooper",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["BODY_SLAM", "MUD_BOMB"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "dewpider",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["MIRROR_COAT", "BUBBLE_BEAM"]
+        }, {
+            "speciesId": "seel",
+            "fastMove": "LICK",
+            "chargedMoves": ["AQUA_TAIL", "ICY_WIND"]
+        }, {
+            "speciesId": "chikorita",
+            "fastMove": "VINE_WHIP",
+            "chargedMoves": ["BODY_SLAM", "GRASS_KNOT"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "seel",
+            "fastMove": "LICK",
+            "chargedMoves": ["AQUA_TAIL", "ICY_WIND"]
+        }, {
+            "speciesId": "vulpix",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["BODY_SLAM", "WEATHER_BALL_FIRE"]
+        }, {
+            "speciesId": "slowpoke",
+            "fastMove": "CONFUSION",
+            "chargedMoves": ["PSYSHOCK", "PSYCHIC"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "wooper",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["BODY_SLAM", "MUD_BOMB"]
+        }, {
+            "speciesId": "vulpix",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["BODY_SLAM", "WEATHER_BALL_FIRE"]
+        }, {
+            "speciesId": "dewpider",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["MIRROR_COAT", "BUBBLE_BEAM"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "seel",
+            "fastMove": "LICK",
+            "chargedMoves": ["AQUA_TAIL", "ICY_WIND"]
+        }, {
+            "speciesId": "vulpix_shadow",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["BODY_SLAM", "WEATHER_BALL_FIRE"]
+        }, {
+            "speciesId": "dewpider",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["MIRROR_COAT", "BUBBLE_BEAM"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "slugma",
+            "fastMove": "ROCK_THROW",
+            "chargedMoves": ["ROCK_SLIDE", "FLAME_CHARGE"]
+        }, {
+            "speciesId": "vulpix",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["BODY_SLAM", "WEATHER_BALL_FIRE"]
+        }, {
+            "speciesId": "dewpider",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["MIRROR_COAT", "BUBBLE_BEAM"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "dewpider",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["MIRROR_COAT", "BUBBLE_BEAM"]
+        }, {
+            "speciesId": "vulpix",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["BODY_SLAM", "WEATHER_BALL_FIRE"]
+        }, {
+            "speciesId": "bulbasaur",
+            "fastMove": "VINE_WHIP",
+            "chargedMoves": ["SEED_BOMB", "SLUDGE_BOMB"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "litwick",
+            "fastMove": "EMBER",
+            "chargedMoves": ["MYSTICAL_FIRE", "FLAME_CHARGE"]
+        }, {
+            "speciesId": "chikorita",
+            "fastMove": "VINE_WHIP",
+            "chargedMoves": ["BODY_SLAM", "GRASS_KNOT"]
+        }, {
+            "speciesId": "lileep",
+            "fastMove": "INFESTATION",
+            "chargedMoves": ["ANCIENT_POWER", "GRASS_KNOT"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "bulbasaur",
+            "fastMove": "VINE_WHIP",
+            "chargedMoves": ["SEED_BOMB", "SLUDGE_BOMB"]
+        }, {
+            "speciesId": "vulpix",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["BODY_SLAM", "WEATHER_BALL_FIRE"]
+        }, {
+            "speciesId": "wooper",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["BODY_SLAM", "MUD_BOMB"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "wooper",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["BODY_SLAM", "MUD_BOMB"]
+        }, {
+            "speciesId": "oddish",
+            "fastMove": "RAZOR_LEAF",
+            "chargedMoves": ["SLUDGE_BOMB", "SEED_BOMB"]
+        }, {
+            "speciesId": "ferroseed",
+            "fastMove": "TACKLE",
+            "chargedMoves": ["IRON_HEAD", "FLASH_CANNON"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "slugma",
+            "fastMove": "ROCK_THROW",
+            "chargedMoves": ["ROCK_SLIDE", "FLAME_CHARGE"]
+        }, {
+            "speciesId": "litwick",
+            "fastMove": "EMBER",
+            "chargedMoves": ["MYSTICAL_FIRE", "FLAME_CHARGE"]
+        }, {
+            "speciesId": "lotad",
+            "fastMove": "WATER_GUN",
+            "chargedMoves": ["ENERGY_BALL", "BUBBLE_BEAM"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "slugma",
+            "fastMove": "ROCK_THROW",
+            "chargedMoves": ["ROCK_SLIDE", "FLAME_CHARGE"]
+        }, {
+            "speciesId": "dewpider",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["MIRROR_COAT", "BUBBLE_BEAM"]
+        }, {
+            "speciesId": "seel",
+            "fastMove": "LICK",
+            "chargedMoves": ["AQUA_TAIL", "ICY_WIND"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "dewpider",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["MIRROR_COAT", "BUBBLE_BEAM"]
+        }, {
+            "speciesId": "seel",
+            "fastMove": "LICK",
+            "chargedMoves": ["AQUA_TAIL", "ICY_WIND"]
+        }, {
+            "speciesId": "wooper",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["BODY_SLAM", "MUD_BOMB"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "wooper",
+            "fastMove": "MUD_SHOT",
+            "chargedMoves": ["BODY_SLAM", "MUD_BOMB"]
+        }, {
+            "speciesId": "vulpix",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["BODY_SLAM", "WEATHER_BALL_FIRE"]
+        }, {
+            "speciesId": "mareanie",
+            "fastMove": "POISON_STING",
+            "chargedMoves": ["SLUDGE_WAVE", "BRINE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "seel",
+            "fastMove": "LICK",
+            "chargedMoves": ["AQUA_TAIL", "ICY_WIND"]
+        }, {
+            "speciesId": "dewpider",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["MIRROR_COAT", "BUBBLE_BEAM"]
+        }, {
+            "speciesId": "ferroseed",
+            "fastMove": "TACKLE",
+            "chargedMoves": ["IRON_HEAD", "FLASH_CANNON"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "chikorita",
+            "fastMove": "VINE_WHIP",
+            "chargedMoves": ["BODY_SLAM", "GRASS_KNOT"]
+        }, {
+            "speciesId": "dewpider",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["MIRROR_COAT", "BUBBLE_BEAM"]
+        }, {
+            "speciesId": "hoppip",
+            "fastMove": "TACKLE",
+            "chargedMoves": ["GRASS_KNOT", "SEED_BOMB"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "rowlet",
+            "fastMove": "LEAFAGE",
+            "chargedMoves": ["SEED_BOMB", "ENERGY_BALL"]
+        }, {
+            "speciesId": "vulpix",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["BODY_SLAM", "WEATHER_BALL_FIRE"]
+        }, {
+            "speciesId": "slugma",
+            "fastMove": "ROCK_THROW",
+            "chargedMoves": ["ROCK_SLIDE", "FLAME_CHARGE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "clauncher",
+            "fastMove": "SMACK_DOWN",
+            "chargedMoves": ["CRABHAMMER", "AQUA_JET"]
+        }, {
+            "speciesId": "oddish",
+            "fastMove": "RAZOR_LEAF",
+            "chargedMoves": ["SLUDGE_BOMB", "SEED_BOMB"]
+        }, {
+            "speciesId": "ferroseed",
+            "fastMove": "TACKLE",
+            "chargedMoves": ["IRON_HEAD", "FLASH_CANNON"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "vulpix",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["BODY_SLAM", "WEATHER_BALL_FIRE"]
+        }, {
+            "speciesId": "dewpider",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["MIRROR_COAT", "BUBBLE_BEAM"]
+        }, {
+            "speciesId": "seel",
+            "fastMove": "LICK",
+            "chargedMoves": ["AQUA_TAIL", "ICY_WIND"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "dewpider",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["MIRROR_COAT", "BUBBLE_BEAM"]
+        }, {
+            "speciesId": "seel",
+            "fastMove": "LICK",
+            "chargedMoves": ["AQUA_TAIL", "ICY_WIND"]
+        }, {
+            "speciesId": "lileep",
+            "fastMove": "INFESTATION",
+            "chargedMoves": ["ANCIENT_POWER", "GRASS_KNOT"]
+        }],
+        "weight": 1
+    }]
+}
