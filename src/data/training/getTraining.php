@@ -98,17 +98,6 @@ for($i = 0; $i < $lookbackDays; $i++){
 	}
 }
 
-// Total Pokemon count in timespan by players
-$query = $mysqli->prepare("SELECT COUNT(*) FROM training_pokemon WHERE postDatetime > ? AND format = ? AND playerType = 0");
-$query->bind_param("ss", $lookbackTimestamp, $_GET['format']);
-$query->execute();
-$query->bind_result($totalPokemon);
-$query->fetch();
-$query->close();
-
-$data->properties->totalPerformers = $totalPokemon;
-
-
 // Get top teams within the timespan
 $query = $mysqli->prepare("SELECT teamStr, AVG(teamScore) as teamAvg, COUNT(*) FROM training_team WHERE postDatetime > ? AND format = ? GROUP BY teamStr HAVING COUNT(*) > ? ORDER BY teamAvg DESC");
 $query->bind_param("ssi", $lookbackTimestamp, $_GET['format'], $teamMinimum);

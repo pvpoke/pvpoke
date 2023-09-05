@@ -412,7 +412,7 @@ var InterfaceMaster = (function () {
 			});
 
 			function submitSearchQuery(){
-				var list = GameMaster.getInstance().generatePokemonListFromSearchString(searchStr);
+				var list = GameMaster.getInstance().generatePokemonListFromSearchString(searchStr, battle);
 
 				if($target.hasClass("performers")){
 
