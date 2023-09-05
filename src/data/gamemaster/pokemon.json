@@ -28022,7 +28022,7 @@
         "hp": 179
     },
     "types": ["psychic", "none"],
-    "fastMoves": ["CONFUSION", "SUCKER_PUNCH", "MAGICAL_LEAF"],
+    "fastMoves": ["CONFUSION", "SUCKER_PUNCH"],
     "chargedMoves": ["PSYCHIC", "ENERGY_BALL", "THUNDERBOLT"],
     "defaultIVs": {
         "cp500": [9, 6, 10, 9],
@@ -34840,7 +34840,7 @@
     },
     "types": ["normal", "none"],
     "fastMoves": ["TACKLE", "TAKE_DOWN"],
-    "chargedMoves": ["DIG", "BODY_SLAM"],
+    "chargedMoves": ["DIG", "BODY_SLAM", "TRAILBLAZE"],
     "defaultIVs": {
         "cp500": [27, 4, 15, 12],
         "cp1500": [50, 15, 15, 15],
@@ -34864,7 +34864,7 @@
     },
     "types": ["normal", "none"],
     "fastMoves": ["TACKLE", "TAKE_DOWN"],
-    "chargedMoves": ["DIG", "BODY_SLAM"],
+    "chargedMoves": ["DIG", "BODY_SLAM", "TRAILBLAZE"],
     "defaultIVs": {
         "cp500": [7.5, 4, 4, 12],
         "cp1500": [21, 7, 15, 14],
@@ -34889,7 +34889,7 @@
     },
     "types": ["normal", "none"],
     "fastMoves": ["TACKLE", "TAKE_DOWN"],
-    "chargedMoves": ["DIG", "BODY_SLAM"],
+    "chargedMoves": ["DIG", "BODY_SLAM", "TRAILBLAZE"],
     "defaultIVs": {
         "cp500": [7.5, 5, 15, 14],
         "cp1500": [22.5, 6, 12, 11],
