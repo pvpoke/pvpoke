@@ -35367,7 +35367,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_NYMBLE",
             "evolutions": ["lokix"]
@@ -35392,7 +35392,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_NYMBLE",
             "parent": "nymble"
@@ -35416,7 +35416,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 75000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_PAWMI",
             "evolutions": ["pawmo"]
@@ -35424,7 +35424,7 @@
     }, {
         "dex": 922,
         "speciesName": "Pawmo",
-        "speciesId": "pawmo",
+        "speciesId": "true",
         "baseStats": {
             "atk": 147,
             "def": 82,
@@ -35465,7 +35465,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 75000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_PAWMI",
             "parent": "pawmo"
@@ -36536,7 +36536,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false
+        "released": true
     }, {
         "dex": 963,
         "speciesName": "Finizen",
@@ -37437,7 +37437,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_FRIGIBAX",
             "evolutions": ["arctibax"]
@@ -37461,7 +37461,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_FRIGIBAX",
             "parent": "frigibax",
@@ -37486,7 +37486,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_FRIGIBAX",
             "parent": "arctibax"
