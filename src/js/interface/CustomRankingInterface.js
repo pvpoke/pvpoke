@@ -24,6 +24,8 @@ function interfaceObject(){
 
 	var archivedCups = []; // Array of archived cup formats
 
+	var pokemonListMode = "name";
+
 	var cup = {
 		name: "custom",
 		title: "Custom",
@@ -59,6 +61,7 @@ function interfaceObject(){
 		$(".cup-select").on("change", selectCup);
 		$(".subject-shield-select, .target-shield-select").on("change", changeScenarioShields);
 		$(".subject-turns, .target-turns").on("keyup, change", changeScenarioEnergy);
+		$("a.toggle-pokemon-list").click(togglePokemonList);
 		$("body").on("change", ".filter-type", changeFilterType);
 		$("body").on("stateChange", ".field-section .check", filterCheckBox);
 		$("body").on("keyup", ".field-section input", filterInput);
@@ -667,6 +670,37 @@ function interfaceObject(){
 		}
 
 		self.updateFilterValues($el);
+	}
+
+	// Show Pokemon list as names or ID's
+
+	function togglePokemonList(e){
+		e.preventDefault();
+
+		var list = gm.generateFilteredPokemonList(battle, cup.include, cup.exclude);
+		var listStr = "";
+
+		if(pokemonListMode == "name"){
+			pokemonListMode = "id";
+			$("a.toggle-pokemon-list").html("Show Pokemon names")
+		} else if(pokemonListMode == "id"){
+			pokemonListMode = "name";
+			$("a.toggle-pokemon-list").html("Show Pokemon ID's");
+		}
+
+		for(var i = 0; i < list.length; i++){
+			if(i > 0){
+				listStr += ", ";
+			}
+
+			if(pokemonListMode == "name"){
+				listStr += list[i].speciesName;
+			} else if(pokemonListMode == "id"){
+				listStr += list[i].speciesId;
+			}
+		}
+
+		$(".pokemon-list").html(listStr);
 	}
 
 	// Select or deselect all types

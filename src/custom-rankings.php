@@ -271,6 +271,7 @@ require_once 'header.php'; ?>
 	<h3>Pokemon List (<span class="pokemon-count">0</span>)</h3>
 	<p>This list below contains eligible Pokemon for this cup. Pokemon that don't meet certain stat requirements, such as low CP Pokemon, aren't included for ranking purposes.</p>
 	<textarea class="pokemon-list"></textarea>
+	<a href="#" class="toggle-pokemon-list">Show Pokemon ID's</a>
 </div>
 
 <div class="section white custom-rankings-meta-group">
