@@ -149,6 +149,20 @@
         }],
         "partySize": 3
     }, {
+        "name": "psychic",
+        "title": "Psychic Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["psychic"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["mew"]
+        }]
+    }, {
         "name": "ragnargymbreakers",
         "title": "Gymbreakers (Ragnar)",
         "include": [{
@@ -298,6 +312,14 @@
         "cup": "elementremix",
         "cp": 500,
         "meta": "elementremix",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Psychic Cup",
+        "cup": "psychic",
+        "cp": 1500,
+        "meta": "psychic",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
