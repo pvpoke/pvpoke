@@ -100,6 +100,16 @@
 		"showMeta": true
 	},
 	{
+		"title": "Battle Frontier (Master)",
+		"cup": "battlefrontiermaster",
+		"cp": 10000,
+		"meta": "battlefrontiermaster",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"hideRankings": true
+	},
+	{
 		"title": "GO Stadium Cliffhanger",
 		"cup": "cliffhanger",
 		"cp": 1500,

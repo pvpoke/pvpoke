@@ -1,0 +1,32 @@
+{
+    "name": "battlefrontiermaster",
+    "title": "Battle Frontier (Master League)",
+    "include": [],
+    "exclude": [{
+        "filterType": "id",
+        "values": ["baxcalibur", "gengar_mega", "swampert_mega", "gardevoir_mega", "latios_mega", "latias_mega", "charizard_mega_y", "gyarados_mega", "groudon_primal", "kyogre_primal", "zygarde_complete", "tyranitar_mega", "salamence_mega", "diancie_mega", "rayquaza_mega"]
+    }, {
+        "filterType": "tag",
+        "values": ["mega"]
+    }],
+    "tierRules": {
+        "max": 8,
+        "floor": 0,
+        "tiers": [{
+            "points": 5,
+            "pokemon": ["scizor_mega"]
+        }, {
+            "points": 4,
+            "pokemon": ["mewtwo", "dialga", "zacian_hero", "solgaleo", "groudon", "xerneas", "steelix_mega"]
+        }, {
+            "points": 3,
+            "pokemon": ["lugia", "ho_oh", "kyogre", "giratina_origin", "giratina_altered", "meloetta_aria", "zarude", "aggron_mega"]
+        }, {
+            "points": 2,
+            "pokemon": ["zekrom", "yveltal", "melmetal", "palkia", "dragonite", "reshiram", "rayquaza", "kyurem", "charizard_mega_x", "blastoise_mega", "slowbro_mega"]
+        }, {
+            "points": 1,
+            "pokemon": ["landorus_therian", "landorus_incarnate", "genesect", "genesect_burn", "genesect_douse", "genesect_chill", "genesect_shock", "mew", "florges", "buzzwole", "haxorus", "venusaur_mega", "alakazam_mega", "blaziken_mega", "abomasnow_mega", "sceptile_mega"]
+        }]
+    }
+}

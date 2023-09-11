@@ -58,6 +58,62 @@
             "values": ["carbink", "chansey", "articuno_galarian", "zapdos_galarian", "moltres_galarian", "pachirisu"]
         }]
     }, {
+        "name": "battlefrontiermaster",
+        "title": "Battle Frontier (Master League)",
+        "include": [],
+        "exclude": [{
+            "filterType": "id",
+            "values": ["baxcalibur", "gengar_mega", "swampert_mega", "gardevoir_mega", "latios_mega", "latias_mega", "charizard_mega_y", "gyarados_mega", "groudon_primal", "kyogre_primal", "zygarde_complete", "tyranitar_mega", "salamence_mega", "diancie_mega", "rayquaza_mega"]
+        }, {
+            "filterType": "tag",
+            "values": ["mega"]
+        }],
+        "tierRules": {
+            "max": 8,
+            "floor": 0,
+            "tiers": [{
+                "points": 5,
+                "pokemon": ["scizor_mega"]
+            }, {
+                "points": 4,
+                "pokemon": ["mewtwo", "dialga", "zacian_hero", "solgaleo", "groudon", "xerneas", "steelix_mega"]
+            }, {
+                "points": 3,
+                "pokemon": ["lugia", "ho_oh", "kyogre", "giratina_origin", "giratina_altered", "meloetta_aria", "zarude", "aggron_mega"]
+            }, {
+                "points": 2,
+                "pokemon": ["zekrom", "yveltal", "melmetal", "palkia", "dragonite", "reshiram", "rayquaza", "kyurem", "charizard_mega_x", "blastoise_mega", "slowbro_mega"]
+            }, {
+                "points": 1,
+                "pokemon": ["landorus_therian", "landorus_incarnate", "genesect", "genesect_burn", "genesect_douse", "genesect_chill", "genesect_shock", "mew", "florges", "buzzwole", "haxorus", "venusaur_mega", "alakazam_mega", "blaziken_mega", "abomasnow_mega", "sceptile_mega"]
+            }]
+        }
+    }, {
+        "name": "battlefrontierultra",
+        "title": "Battle Frontier (Ultra League)",
+        "include": [],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["hawlucha"]
+        }],
+        "tierRules": {
+            "max": 17,
+            "floor": 1,
+            "tiers": [{
+                "points": 7,
+                "pokemon": ["cobalion", "swampert", "giratina_altered", "registeel", "stunfisk_galarian", "cresselia"]
+            }, {
+                "points": 5,
+                "pokemon": ["trevenant", "charizard", "steelix", "virizion", "ninetales_alolan", "jellicent", "walrein", "clefable", "tapu_fini"]
+            }, {
+                "points": 2,
+                "pokemon": ["talonflame", "deoxys_defense", "umbreon", "mandibuzz", "scrafty", "regirock", "dragonite", "kommo-o", "guzzlord", "nidoqueen", "dubwool", "sandslash_alolan", "pidgeot"]
+            }]
+        }
+    }, {
         "name": "classic",
         "title": "Classic",
         "include": [],
@@ -111,7 +167,10 @@
         "name": "gobattleleague",
         "title": "GO Battle League",
         "include": [],
-        "exclude": [],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }],
         "partySize": 3,
         "presetOnly": true
     }, {
@@ -355,6 +414,15 @@
         "showCup": true,
         "showFormat": true,
         "showMeta": true
+    }, {
+        "title": "Battle Frontier (Master)",
+        "cup": "battlefrontiermaster",
+        "cp": 10000,
+        "meta": "battlefrontiermaster",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true,
+        "hideRankings": true
     }, {
         "title": "GO Stadium Cliffhanger",
         "cup": "cliffhanger",
@@ -35405,7 +35473,7 @@
         },
         "types": ["bug", "dark"],
         "fastMoves": ["BUG_BITE", "SUCKER_PUNCH"],
-        "chargedMoves": ["X_SCISSOR", "BUG_BUZZ", "DARK_PULSE"],
+        "chargedMoves": ["X_SCISSOR", "BUG_BUZZ", "DARK_PULSE", "TRAILBLAZE"],
         "defaultIVs": {
             "cp500": [8, 5, 15, 13],
             "cp1500": [24, 4, 15, 11],

@@ -7,10 +7,6 @@
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["HEAVY_SLAM", "METEOR_BEAM"]
 }, {
-    "speciesId": "altaria_mega",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["MOONBLAST", "SKY_ATTACK"]
-}, {
     "speciesId": "ampharos_mega",
     "fastMove": "VOLT_SWITCH",
     "chargedMoves": ["BRUTAL_SWING", "ZAP_CANNON"]
@@ -18,10 +14,6 @@
     "speciesId": "blastoise_mega",
     "fastMove": "WATER_GUN",
     "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"]
-}, {
-    "speciesId": "slowbro_mega",
-    "fastMove": "CONFUSION",
-    "chargedMoves": ["SURF", "ICE_BEAM"]
 }, {
     "speciesId": "pinsir_mega",
     "fastMove": "FURY_CUTTER",
@@ -165,7 +157,7 @@
 }, {
     "speciesId": "steelix_mega",
     "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["PSYCHIC_FANGS", "EARTHQUAKE"]
+    "chargedMoves": ["BREAKING_SWIPE", "EARTHQUAKE"]
 }, {
     "speciesId": "swampert",
     "fastMove": "MUD_SHOT",
