@@ -5,9 +5,6 @@
     "exclude": [{
         "filterType": "id",
         "values": ["baxcalibur", "gengar_mega", "swampert_mega", "gardevoir_mega", "latios_mega", "latias_mega", "charizard_mega_y", "gyarados_mega", "groudon_primal", "kyogre_primal", "zygarde_complete", "tyranitar_mega", "salamence_mega", "diancie_mega", "rayquaza_mega"]
-    }, {
-        "filterType": "tag",
-        "values": ["mega"]
     }],
     "tierRules": {
         "max": 8,
@@ -26,7 +23,7 @@
             "pokemon": ["zekrom", "yveltal", "melmetal", "palkia", "dragonite", "reshiram", "rayquaza", "kyurem", "charizard_mega_x", "blastoise_mega", "slowbro_mega"]
         }, {
             "points": 1,
-            "pokemon": ["landorus_therian", "landorus_incarnate", "genesect", "genesect_burn", "genesect_douse", "genesect_chill", "genesect_shock", "mew", "florges", "buzzwole", "haxorus", "venusaur_mega", "alakazam_mega", "blaziken_mega", "abomasnow_mega", "sceptile_mega"]
+            "pokemon": ["landorus_therian", "genesect", "genesect_burn", "genesect_douse", "genesect_chill", "genesect_shock", "mew", "florges", "buzzwole", "haxorus", "venusaur_mega", "alakazam_mega", "blaziken_mega", "abomasnow_mega", "sceptile_mega"]
         }]
     }
 }
