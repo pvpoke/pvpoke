@@ -97,20 +97,19 @@
             "values": ["mega"]
         }, {
             "filterType": "id",
-            "values": ["hawlucha"]
+            "values": ["zygarde_complete"]
         }],
+        "restrictedPicks": 1,
+        "restrictedPokemon": ["cobalion", "cresselia", "giratina_altered", "registeel", "steelix", "swampert"],
         "tierRules": {
-            "max": 17,
-            "floor": 1,
+            "max": 16,
+            "floor": 0,
             "tiers": [{
-                "points": 7,
-                "pokemon": ["cobalion", "swampert", "giratina_altered", "registeel", "stunfisk_galarian", "cresselia"]
+                "points": 6,
+                "pokemon": ["cobalion", "cresselia", "giratina_altered", "registeel", "steelix", "swampert"]
             }, {
                 "points": 5,
-                "pokemon": ["trevenant", "charizard", "steelix", "virizion", "ninetales_alolan", "jellicent", "walrein", "clefable", "tapu_fini"]
-            }, {
-                "points": 2,
-                "pokemon": ["talonflame", "deoxys_defense", "umbreon", "mandibuzz", "scrafty", "regirock", "dragonite", "kommo-o", "guzzlord", "nidoqueen", "dubwool", "sandslash_alolan", "pidgeot"]
+                "pokemon": ["charizard", "clefable", "deoxys_defense", "greedent", "jellicent", "mandibuzz", "ninetales_alolan", "pidgeot", "sandslash_alolan", "stunfisk_galarian", "tapu_fini", "trevenant", "virizion", "walrein"]
             }]
         }
     }, {
@@ -414,6 +413,15 @@
         "showCup": true,
         "showFormat": true,
         "showMeta": true
+    }, {
+        "title": "Battle Frontier (Ultra)",
+        "cup": "battlefrontierultra",
+        "cp": 2500,
+        "meta": "ultra",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true,
+        "hideRankings": true
     }, {
         "title": "Battle Frontier (Master)",
         "cup": "battlefrontiermaster",
