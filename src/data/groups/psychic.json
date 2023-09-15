@@ -3,6 +3,18 @@
     "fastMove": "FEINT_ATTACK",
     "chargedMoves": ["PAYBACK", "HEAVY_SLAM"]
 }, {
+    "speciesId": "bruxish",
+    "fastMove": "BITE",
+    "chargedMoves": ["PSYCHIC_FANGS", "AQUA_TAIL"]
+}, {
+    "speciesId": "celebi",
+    "fastMove": "MAGICAL_LEAF",
+    "chargedMoves": ["SEED_BOMB", "LEAF_STORM"]
+}, {
+    "speciesId": "claydol",
+    "fastMove": "MUD_SLAP",
+    "chargedMoves": ["SCORCHING_SANDS", "SHADOW_BALL"]
+}, {
     "speciesId": "cresselia",
     "fastMove": "PSYCHO_CUT",
     "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
@@ -12,22 +24,13 @@
     "chargedMoves": ["SHADOW_BALL", "TRIPLE_AXEL"],
     "shadowType": "shadow"
 }, {
+    "speciesId": "girafarig",
+    "fastMove": "TACKLE",
+    "chargedMoves": ["PSYCHIC_FANGS", "THUNDERBOLT"]
+}, {
     "speciesId": "hypno",
     "fastMove": "CONFUSION",
     "chargedMoves": ["SHADOW_BALL", "ICE_PUNCH"]
-}, {
-    "speciesId": "latios_shadow",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["DRAGON_CLAW", "LUSTER_PURGE"],
-    "shadowType": "shadow"
-}, {
-    "speciesId": "lugia",
-    "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["SKY_ATTACK", "AEROBLAST"]
-}, {
-    "speciesId": "lunatone",
-    "fastMove": "ROCK_THROW",
-    "chargedMoves": ["ROCK_SLIDE", "MOONBLAST"]
 }, {
     "speciesId": "malamar",
     "fastMove": "PSYCHO_CUT",
@@ -49,39 +52,27 @@
     "fastMove": "FAIRY_WIND",
     "chargedMoves": ["MEGAHORN", "BODY_SLAM"]
 }, {
+    "speciesId": "rapidash_galarian",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["HIGH_HORSEPOWER", "BODY_SLAM"]
+}, {
+    "speciesId": "slowbro",
+    "fastMove": "WATER_GUN",
+    "chargedMoves": ["SURF", "ICE_BEAM"]
+}, {
     "speciesId": "slowking_galarian",
     "fastMove": "HEX",
-    "chargedMoves": ["SHADOW_BALL", "SLUDGE_WAVE"]
+    "chargedMoves": ["SHADOW_BALL", "SURF"]
+}, {
+    "speciesId": "slowbro_galarian",
+    "fastMove": "POISON_JAB",
+    "chargedMoves": ["SURF", "SLUDGE_BOMB"]
 }, {
     "speciesId": "victini",
     "fastMove": "QUICK_ATTACK",
     "chargedMoves": ["V_CREATE", "OVERHEAT"]
 }, {
-    "speciesId": "xatu",
-    "fastMove": "FEINT_ATTACK",
-    "chargedMoves": ["OMINOUS_WIND", "AERIAL_ACE"]
-}, {
-    "speciesId": "slowbro",
-    "fastMove": "WATER_GUN",
-    "chargedMoves": ["WATER_PULSE", "ICE_BEAM"]
-},{
-    "speciesId": "slowking_galarian",
-    "fastMove": "HEX",
-    "chargedMoves": ["SHADOW_BALL", "SLUDGE_WAVE"]
-}, {
-    "speciesId": "girafarig",
-    "fastMove": "TACKLE",
-    "chargedMoves": ["PSYCHIC_FANGS", "THUNDERBOLT"]
-}, {
-    "speciesId": "claydol",
-    "fastMove": "MUD_SLAP",
-    "chargedMoves": ["SCORCHING_SANDS", "SHADOW_BALL"]
-}, {
     "speciesId": "wobbuffet",
     "fastMove": "COUNTER",
     "chargedMoves": ["RETURN", "MIRROR_COAT"]
-}, {
-    "speciesId": "celebi",
-    "fastMove": "MAGICAL_LEAF",
-    "chargedMoves": ["SEED_BOMB", "LEAF_STORM"]
 }]

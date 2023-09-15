@@ -294,6 +294,20 @@
             "values": ["diggersby", "pidgeot", "vigoroth", "dubwool", "lanturn", "stunfisk", "noctowl"]
         }]
     }, {
+        "name": "sunshine",
+        "title": "Sunshine Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["normal", "fire", "ground", "grass"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["charizard"]
+        }]
+    }, {
         "name": "vanguardgymbreakers",
         "title": "Gymbreakers (Vanguard)",
         "include": [{
@@ -375,6 +389,14 @@
         "cup": "psychic",
         "cp": 1500,
         "meta": "psychic",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Sunshine Cup",
+        "cup": "sunshine",
+        "cp": 1500,
+        "meta": "sunshine",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
