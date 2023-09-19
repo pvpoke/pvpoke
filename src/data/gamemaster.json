@@ -30222,8 +30222,9 @@
             "hp": 149
         },
         "types": ["bug", "electric"],
-        "fastMoves": ["BUG_BITE", "SPARK"],
+        "fastMoves": ["BUG_BITE", "SPARK", "VOLT_SWITCH"],
         "chargedMoves": ["X_SCISSOR", "DISCHARGE", "CRUNCH"],
+        "eliteMoves": ["VOLT_SWITCH"],
         "defaultIVs": {
             "cp500": [11, 7, 11, 14],
             "cp1500": [38, 4, 9, 13],
@@ -30247,8 +30248,9 @@
             "hp": 184
         },
         "types": ["bug", "electric"],
-        "fastMoves": ["BUG_BITE", "SPARK", "MUD_SLAP"],
+        "fastMoves": ["BUG_BITE", "SPARK", "MUD_SLAP", "VOLT_SWITCH"],
         "chargedMoves": ["X_SCISSOR", "DISCHARGE", "CRUNCH"],
+        "eliteMoves": ["VOLT_SWITCH"],
         "defaultIVs": {
             "cp500": [6, 12, 14, 10],
             "cp1500": [17.5, 8, 11, 15],
