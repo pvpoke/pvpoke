@@ -216,7 +216,9 @@
         }, {
             "filterType": "id",
             "values": ["mew"]
-        }]
+        }],
+        "partySize": 3,
+        "presetOnly": true
     }, {
         "name": "ragnargymbreakers",
         "title": "Gymbreakers (Ragnar)",
@@ -397,22 +399,6 @@
         "cup": "sunshine",
         "cp": 1500,
         "meta": "sunshine",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Gymbreakers (Ragnar)",
-        "cup": "ragnargymbreakers",
-        "cp": 1500,
-        "meta": "ragnargymbreakers",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Gymbreakers (Vanguard)",
-        "cup": "vanguardgymbreakers",
-        "cp": 1500,
-        "meta": "vanguardgymbreakers",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
