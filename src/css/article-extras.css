@@ -192,6 +192,14 @@ input.article-search {
   background-image: url("../articles/article-assets/community-day/megas/kyogre.png");
 }
 
+[mega=beedrill] .mega-image {
+  background-image: url("../articles/article-assets/community-day/megas/beedrill.png");
+}
+
+[mega=scizor] .mega-image {
+  background-image: url("../articles/article-assets/community-day/megas/scizor.png");
+}
+
 /* FAQ styling */
 .faq-item {
   border-radius: 8px;
@@ -796,6 +804,36 @@ input.article-search {
   border-bottom: 1px solid #37548c;
 }
 .section.poliwag .faq-item {
+  background: #ffffff;
+}
+
+.section.froakie {
+  background: #f7fcfd;
+  border: 4px solid #024985;
+}
+.section.froakie .article-header, .section.froakie .mega-section {
+  background: #024985 !important;
+}
+.section.froakie .feature h4 {
+  color: #e4a8a9;
+  border-bottom: 1px solid #e4a8a9;
+}
+.section.froakie .faq-item {
+  background: #ffffff;
+}
+
+.section.grubbin {
+  background: #fbfdf7;
+  border: 4px solid #4a5a25;
+}
+.section.grubbin .article-header, .section.grubbin .mega-section {
+  background: #4a5a25 !important;
+}
+.section.grubbin .feature h4 {
+  color: #4a5a25;
+  border-bottom: 1px solid #4a5a25;
+}
+.section.grubbin .faq-item {
   background: #ffffff;
 }
 

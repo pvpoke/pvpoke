@@ -209,6 +209,13 @@ input.article-search{
 	background-image:url("../articles/article-assets/community-day/megas/kyogre.png");
 }
 
+[mega="beedrill"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/beedrill.png");
+}
+
+[mega="scizor"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/scizor.png");
+}
 
 
 /* FAQ styling */
@@ -987,6 +994,27 @@ input.article-search{
 		h4{
 			color:#e4a8a9;
 			border-bottom:1px solid #e4a8a9;
+		}
+	}
+
+	.faq-item{
+    	background: #ffffff;
+	}
+}
+
+.section.grubbin{
+
+	background: #fbfdf7;
+	border:4px solid #4a5a25;
+
+	.article-header, .mega-section{
+		background: #4a5a25 !important;
+	}
+
+	.feature{
+		h4{
+			color:#4a5a25;
+			border-bottom:1px solid #4a5a25;
 		}
 	}
 

@@ -1,67 +1,73 @@
 {
 	"species": [
 		{
-			"speciesId": "froakie",
-			"baseSpeciesId": "froakie"
+			"speciesId": "grubbin",
+			"baseSpeciesId": "grubbin"
 		},
 		{
-			"speciesId": "frogadier",
-			"baseSpeciesId": "frogadier"
-		},
-		{
-			"speciesId": "greninja",
-			"baseSpeciesId": "greninja",
+			"speciesId": "charjabug",
+			"baseSpeciesId": "grubbin",
 			"default": true
+		},
+		{
+			"speciesId": "vikavolt",
+			"baseSpeciesId": "grubbin"
 		}
 	],
 	"checklist": [
 		{
-			"title": "High Rank Greninja",
-			"speciesId": "greninja",
-			"baseSpeciesId": "froakie",
+			"title": "High Rank Charjabug",
+			"speciesId": "charjabug",
+			"baseSpeciesId": "grubbin",
 			"league": "great",
 			"cp": 1500,
-			"ivs": [21, 3, 15, 12],
-			"priority": 1,
-			"notes": "Great League Greninja may benefit from some slight Attack investment to reach a wide array of breakpoints, secure knockouts more reliably with its Charged Moves, and win Charged Move ties in the mirror match."
+			"ivs": [38.5, 0, 13, 15],
+			"priority": 1
 		},
 		{
-			"title": "High Rank Greninja",
-			"speciesId": "greninja",
-			"baseSpeciesId": "froakie",
+			"title": "High Defense Charjabug",
+			"speciesId": "charjabug",
+			"baseSpeciesId": "grubbin",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [42, 0, 14, 0],
+			"priority": 2,
+			"notes": "Charjabug with 139 Defense or higher takes less Fast Move damage from Azumarill, Medicham, and Sableye."
+		},
+		{
+			"title": "High Rank Vikavolt",
+			"speciesId": "vikavolt",
+			"baseSpeciesId": "grubbin",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [18, 0, 14, 12],
+			"priority": 2
+		},
+		{
+			"title": "High Rank Vikavolt",
+			"speciesId": "vikavolt",
+			"baseSpeciesId": "grubbin",
 			"league": "ultra",
 			"cp": 2500,
-			"ivs": [41, 0, 13, 14],
-			"priority": 1,
-			"notes": "Ultra League Greninja generally wants the highest stat product possible, where it has more bulk to work with than Great League Greninja."
+			"ivs": [29.5, 2, 15, 15],
+			"priority": 2
 		},
 		{
-			"title": "High IV Greninja",
-			"speciesId": "greninja",
-			"baseSpeciesId": "froakie",
+			"title": "High IV Vikavolt",
+			"speciesId": "vikavolt",
+			"baseSpeciesId": "grubbin",
 			"league": "master",
 			"cp": 10000,
 			"ivs": [50, 15, 15, 15],
-			"priority": 2,
-			"notes": "Greninja has little play in Master League, so consider holding onto a perfect IV Froakie until a potential release for Ash's Greninja, which has higher base stats than regular Greninja."
+			"priority": 2
 		},
 		{
-			"title": "High HP Greninja",
-			"speciesId": "greninja",
-			"baseSpeciesId": "froakie",
-			"league": "great",
-			"cp": 1500,
-			"ivs": [22, 0, 2, 14],
-			"priority": 2,
-			"notes": "An HP oriented spread increases Great League Greninja's longevity in extended, low Fast Move pressure fights (such as against Swampert)."
-		},
-		{
-			"title": "Little League Greninja",
-			"speciesId": "greninja",
-			"baseSpeciesId": "froakie",
+			"title": "Little Cup Charjabug",
+			"speciesId": "charjabug",
+			"baseSpeciesId": "grubbin",
 			"league": "special",
 			"cp": 500,
-			"ivs": [7, 8, 15, 13],
+			"ivs": [11.5, 0, 11, 15],
 			"priority": 3
 		}
 	]
