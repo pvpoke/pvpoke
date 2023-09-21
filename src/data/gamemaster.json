@@ -30240,6 +30240,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
+        "searchPriority": 11,
         "released": true,
         "family": {
             "id": "FAMILY_GRUBBIN",
