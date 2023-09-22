@@ -196,6 +196,10 @@ input.article-search {
   background-image: url("../articles/article-assets/community-day/megas/beedrill.png");
 }
 
+[mega=pinsir] .mega-image {
+  background-image: url("../articles/article-assets/community-day/megas/pinsir.png");
+}
+
 [mega=scizor] .mega-image {
   background-image: url("../articles/article-assets/community-day/megas/scizor.png");
 }
