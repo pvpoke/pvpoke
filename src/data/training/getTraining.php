@@ -64,38 +64,49 @@ while($query->fetch()){
 $query->close();
 
 // Get usage for individual performers over time by players for each day
+$usagePeriod = 4;
+$seasonStartDate = strtotime('2023-09-01');
+$i = 1;
+$lookbackDayStart = strtotime(date('Y-m-d') . ' - ' . ($usagePeriod * $i) . ' days');
+$lookbackDayEnd = strtotime(date('Y-m-d') . ' - ' . ($usagePeriod * ($i-1)) . ' days');
 
-for($i = 0; $i < $lookbackDays; $i++){
-	$lookbackDayStart = date('Y-m-d 00:00:00', strtotime(date('Y-m-d') . ' - ' . $i . ' days'));
-	$lookbackDayEnd = date('Y-m-d 23:59:59', strtotime(date('Y-m-d') . ' - ' . $i . ' days'));
+while( $lookbackDayStart >= $seasonStartDate ){
+	$lookbackStartStr = date('Y-m-d 00:00:00', $lookbackDayStart);
+	$lookbackEndStr = date('Y-m-d 23:59:59', $lookbackDayEnd);
 
 	// Total Pokemon count in the current day
-	$query = $mysqli->prepare("SELECT COUNT(*) FROM training_pokemon WHERE postDatetime > ? AND postDatetime < ? AND format = ? AND playerType = 0");
-	$query->bind_param("sss", $lookbackDayStart, $lookbackDayEnd, $_GET['format']);
+	$query = $mysqli->prepare("SELECT COUNT(*) FROM training_pokemon WHERE postDatetime > ? AND postDatetime < ? AND format = ?");
+	$query->bind_param("sss", $lookbackStartStr, $lookbackEndStr, $_GET['format']);
 	$query->execute();
-	$query->bind_result($totalPokemonByDay);
+	$query->bind_result($totalPokemonByPeriod);
 	$query->fetch();
 	$query->close();
+
+	$totalTeamsByPeriod = $totalPokemonByPeriod / 3;
 
 	foreach($data -> performers as $poke){
 		if($poke -> games / $totalPokemon >= $usageBreakdownMinimum){
 			// Record usage breakdown for this Pokemon
-			if($i == 0){
+			if($i == 1){
 				$poke -> usageTrend = array();
 			}
 
 			// Total Pokemon count in the current day
-			$query = $mysqli->prepare("SELECT COUNT(*) FROM training_pokemon WHERE trainingpokemonId = ? AND postDatetime > ? AND postDatetime < ? AND format = ? AND playerType = 0");
-			$query->bind_param("ssss", $poke->pokemon, $lookbackDayStart, $lookbackDayEnd, $_GET['format']);
+			$query = $mysqli->prepare("SELECT COUNT(*) FROM training_pokemon WHERE pokemonId = ? AND postDatetime > ? AND postDatetime < ? AND format = ?");
+			$query->bind_param("ssss", $poke->pokemon, $lookbackStartStr, $lookbackEndStr, $_GET['format']);
 			$query->execute();
-			$query->bind_result($pokemonUsageByDay);
+			$query->bind_result($pokemonUsageByPeriod);
 			$query->fetch();
 			$query->close();
 
-			$usage = floatval(number_format( ($pokemonUsageByDay / $totalPokemonByDay) * 100, 2));
+			$usage = floatval(number_format( ($pokemonUsageByPeriod / $totalTeamsByPeriod) * 100, 2));
 			array_unshift($poke->usageTrend, $usage);
 		}
 	}
+
+	$i++;
+	$lookbackDayStart = strtotime(date('Y-m-d') . ' - ' . ($usagePeriod * $i) . ' days');
+	$lookbackDayEnd = strtotime(date('Y-m-d') . ' - ' . ($usagePeriod * ($i-1)) . ' days');
 }
 
 // Get top teams within the timespan
