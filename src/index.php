@@ -76,10 +76,9 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.31.9 (September 1, 2023)</h4>
+	<h4>v1.30.14 (September 26, 2023)</h4>
 	<ul>
-		<li>Site updates are live for Season of Adventures Abound!</li>
-		<li>Generation 9 Pokemon have been added to the site for simulations. New Pokemon will be added to the rankings as they release.</li>
+		<li>Training Analysis now features usage trends for the most used Pokemon. These will be updated by league as the season continues.</li>
 	</ul>
 
 	<h3>Latest Article</h3>
