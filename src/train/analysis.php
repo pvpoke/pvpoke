@@ -241,12 +241,12 @@ require_once '../header.php';
 </div>
 
 <div class="usage-modal hide">
-	<p><b class="pokemon-label"></b> usage on player and bot teams over 30 days.</p>
-	<p>Compare with:
+	<p><div class="usage-legend"></div><b class="pokemon-label"></b> usage on player and bot teams over 30 days.</p>
+	<div>Compare with:
 		<select class="usage-compare-select">
 			<option selected disabled>Select a Pokemon</option>
 		</select>
-	</p>
+	</div>
 	<div class="usage-container">
 		<div class="y-axis-container">
 			<div class="value">20%</div>
@@ -260,7 +260,11 @@ require_once '../header.php';
 		</div>
 
 	</div>
-	<div class="x-axis-container">Time</div>
+	<div class="x-axis-container">
+		<div class="value">Jan 1</div>
+		<div class="label">Time</div>
+		<div class="value">Jan 30</div>
+	</div>
 
 </div>
 

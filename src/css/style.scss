@@ -5558,6 +5558,13 @@ a.pokebattler{
 		margin-left: 7%;
 		margin-top: 5px;
 		text-align: center;
+		display: flex;
+	    justify-content: space-between;
+	    flex-wrap: wrap;
+
+		.value{
+			font-size: 11px;
+		}
 	}
 
 	.canvas-container{
@@ -5586,6 +5593,22 @@ a.pokebattler{
 
 	.usage-compare-select{
 		max-width: 175px;
+		margin-bottom: 10px;
+	}
+
+	.usage-legend{
+		display: inline-block;
+		border-top: 4px solid #000;
+		width: 25px;
+		height: 4px;
+		margin-right: 3px;
+
+		&.dashed{
+			border-style: dashed;
+			border-bottom-color: rgba(0,0,0,0);
+			border-left-color: rgba(0,0,0,0);
+			border-right-color: rgba(0,0,0,0);
+		}
 	}
 }
 

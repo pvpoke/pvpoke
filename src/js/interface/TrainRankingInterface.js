@@ -503,13 +503,13 @@ var InterfaceMaster = (function () {
 				var cnvHeight = parseInt($(canvas).attr("height"));
 				var ctx = canvas.getContext("2d");
 				var numberOfAxis = 3;
-				var numberofSubAxis = 8;
+				var numberofSubAxis = 7;
 
 				animateFirst = typeof animateFirst !== 'undefined' ? animateFirst : true;
 
 				ctx.clearRect(0, 0, cnvWidth, cnvHeight);
 
-				ctx.strokeStyle = "rgba(0, 52, 98, 0.2)";
+				ctx.strokeStyle = "rgba(0, 52, 98, 0.3)";
 				ctx.lineWidth = 1;
 
 				// Draw vertical axis
@@ -552,12 +552,25 @@ var InterfaceMaster = (function () {
 
 				// Determine vertical scale
 				var yAxisMax = 20;
+				var maxValueInData = 0;
 
-				if(Math.max(...rows[0].usageTrend) > 20){
+				for(var i = 0; i < rows.length; i++){
+					maxValueInData = Math.max(maxValueInData, Math.max(...rows[i].usageTrend));
+				}
+
+				if(maxValueInData > 20){
 					yAxisMax = 50;
 				}
 
 				$(".modal .y-axis-container .value").first().html(yAxisMax+"%");
+
+				// Display dates on X axis
+
+				var currentDate = new Date(Date.parse(data.properties.lastUpdated));
+				var earliestDate = new Date(new Date().setDate(currentDate.getDate()-30));
+
+				$(".modal .x-axis-container .value").eq(0).html(earliestDate.toLocaleDateString("en-US", { month: "short", day: "numeric" }));
+				$(".modal .x-axis-container .value").eq(1).html(currentDate.toLocaleDateString("en-US", { month: "short", day: "numeric" }));
 
 				for(var i = 0; i < rows.length; i++){
 					var r = rows[i];
@@ -576,6 +589,7 @@ var InterfaceMaster = (function () {
 				var cnvWidth = parseInt($(canvas).attr("width"));
 				var cnvHeight = parseInt($(canvas).attr("height"));
 				var ctx = canvas.getContext("2d");
+				var canvasId = parseInt($(canvas).attr("canvas-id"));
 
 				var speciesId = r.pokemon.split(" ")[0];
 				var pokemon = new Pokemon(speciesId, 0, battle);
@@ -586,7 +600,9 @@ var InterfaceMaster = (function () {
 				var lineColor = $typed.css("background-color")
 				$typed.remove();
 
-				if($(canvas).attr("canvas-id") != "0"){
+				$(".modal .usage-legend").eq(canvasId).css("border-top-color", lineColor);
+
+				if(canvasId != 0){
 					ctx.clearRect(0, 0, cnvWidth, cnvHeight);
 					ctx.setLineDash([5, 5]);
 				}
@@ -639,6 +655,11 @@ var InterfaceMaster = (function () {
 					data.performers.filter( ranking => ranking.pokemon == baseTrainingId)[0],
 					data.performers.filter( ranking => ranking.pokemon == compareTrainingId)[0],
 				];
+
+				var compareSpeciesId = compareTrainingId.split(" ")[0];
+				var pokemon = new Pokemon(compareSpeciesId, 0, battle);
+
+				$(".modal .usage-compare-select").attr("class", "usage-compare-select " + pokemon.types[0]);
 
 				drawUsageChart(rows, false);
 			}

@@ -5127,6 +5127,12 @@ a.pokebattler {
   margin-left: 7%;
   margin-top: 5px;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.usage-modal .x-axis-container .value {
+  font-size: 11px;
 }
 .usage-modal .canvas-container {
   position: relative;
@@ -5149,6 +5155,20 @@ a.pokebattler {
 }
 .usage-modal .usage-compare-select {
   max-width: 175px;
+  margin-bottom: 10px;
+}
+.usage-modal .usage-legend {
+  display: inline-block;
+  border-top: 4px solid #000;
+  width: 25px;
+  height: 4px;
+  margin-right: 3px;
+}
+.usage-modal .usage-legend.dashed {
+  border-style: dashed;
+  border-bottom-color: rgba(0, 0, 0, 0);
+  border-left-color: rgba(0, 0, 0, 0);
+  border-right-color: rgba(0, 0, 0, 0);
 }
 
 @media only screen and (min-width: 481px) {
