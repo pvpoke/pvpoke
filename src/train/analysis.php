@@ -240,6 +240,21 @@ require_once '../header.php';
 	</div>
 </div>
 
+<div class="usage-modal hide">
+	<p><b class="pokemon-label"></b> usage on player and bot teams over 30 days.</p>
+	<div class="usage-container">
+		<div class="y-axis-container">
+			<div class="value">20%</div>
+			<div class="label">Usage on teams</div>
+			<div class="value">0%</div>
+		</div>
+
+		<canvas class="usage-chart" width="400" height="300"></canvas>
+	</div>
+	<div class="x-axis-container">Time</div>
+
+</div>
+
 <?php require_once '../modules/search-string-help.php'; ?>
 
 <!--test 2-->

@@ -5089,6 +5089,37 @@ a.pokebattler {
   margin: 0 6px 0 0;
 }
 
+.usage-modal .usage-container {
+  display: flex;
+}
+.usage-modal .usage-container .y-axis-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 5px;
+  box-sizing: border-box;
+  width: 7%;
+}
+.usage-modal .usage-container .y-axis-container .label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+.usage-modal .usage-container .y-axis-container .value {
+  font-size: 11px;
+}
+.usage-modal .x-axis-container {
+  margin-left: 7%;
+  margin-top: 5px;
+  text-align: center;
+}
+.usage-modal .usage-chart {
+  display: block;
+  max-width: 100%;
+  background: rgba(0, 52, 98, 0.05);
+  border: 2px dashed #003462;
+  width: 92%;
+}
+
 @media only screen and (min-width: 481px) {
   .home a.button h2 {
     font-size: 32px;

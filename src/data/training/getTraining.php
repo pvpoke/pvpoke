@@ -63,14 +63,13 @@ while($query->fetch()){
 
 $query->close();
 
-// Get usage for individual performers over time by players for each day
-$usagePeriod = 4;
-$seasonStartDate = strtotime('2023-09-01');
-$i = 1;
-$lookbackDayStart = strtotime(date('Y-m-d') . ' - ' . ($usagePeriod * $i) . ' days');
-$lookbackDayEnd = strtotime(date('Y-m-d') . ' - ' . ($usagePeriod * ($i-1)) . ' days');
+// Get usage for individual performers over time, in a specified window of days
+$usagePeriod = 3; // Number of days per lookbackperiod
+$usagePeriodCount = 10; // Number of periods to look back
 
-while( $lookbackDayStart >= $seasonStartDate ){
+for($i = 1; $i <= $usagePeriodCount; $i++){
+	$lookbackDayStart = strtotime(date('Y-m-d') . ' - ' . ($usagePeriod * $i) . ' days');
+	$lookbackDayEnd = strtotime(date('Y-m-d') . ' - ' . ($usagePeriod * ($i-1)) . ' days');
 	$lookbackStartStr = date('Y-m-d 00:00:00', $lookbackDayStart);
 	$lookbackEndStr = date('Y-m-d 23:59:59', $lookbackDayEnd);
 
@@ -103,10 +102,6 @@ while( $lookbackDayStart >= $seasonStartDate ){
 			array_unshift($poke->usageTrend, $usage);
 		}
 	}
-
-	$i++;
-	$lookbackDayStart = strtotime(date('Y-m-d') . ' - ' . ($usagePeriod * $i) . ' days');
-	$lookbackDayEnd = strtotime(date('Y-m-d') . ' - ' . ($usagePeriod * ($i-1)) . ' days');
 }
 
 // Get top teams within the timespan

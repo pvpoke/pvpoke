@@ -31,6 +31,7 @@ var InterfaceMaster = (function () {
 				$(".format-select").on("change", selectFormat);
 				$("thead a").on("click", sortTable);
 				$("body").on("click", ".check", checkBox);
+				$("body").on("click", "a.usage-link", displayUsage);
 
 				window.addEventListener('popstate', function(e) {
 					get = e.state;
@@ -120,7 +121,13 @@ var InterfaceMaster = (function () {
 					$row.find(".team-score .rating").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
 
 					var usage = (r.games / (data.properties.totalPerformers / 3) * 100).toFixed(1)+"%"
-					$row.find(".usage").html(usage);
+
+					if(r.usageTrend){
+						$row.find(".usage").html("<a class=\"usage-link\" pokemon=\""+r.pokemon+"\" species-id=\""+speciesId+"\" label=\""+pokemon.speciesName+" "+movesetStr+"\" href=\"#\">"+usage+"</a>");
+					} else{
+						$row.find(".usage").html(usage);
+					}
+
 					$row.find(".link a").attr("href", host+"rankings/" + battle.getCup().name + "/" + battle.getCP() + "/overall/" + pokemon.speciesId + "/");
 
 					if(r.games < 250){
@@ -450,6 +457,107 @@ var InterfaceMaster = (function () {
 
 					});
 				}
+			}
+
+			// Display usage trend stats in modal window
+			function displayUsage(e){
+				e.preventDefault();
+
+				var trainingId = $(e.target).attr("pokemon");
+				var speciesId = $(e.target).attr("species-id");
+				var label = $(e.target).attr("label");
+				var r = data.performers.filter( ranking => ranking.pokemon == trainingId)[0];
+
+				var pokemon = new Pokemon(speciesId, 0, battle);
+
+				modalWindow(pokemon.speciesName + " Usage", $(".usage-modal"));
+
+				$(".modal .pokemon-label").html(label);
+
+				drawUsageChart(r, pokemon);
+			}
+
+			// Draw usage chart given primary usage data
+			function drawUsageChart(r, pokemon){
+				var canvas = $(".modal .usage-chart")[0];
+				var cnvWidth = parseInt($(canvas).attr("width"));
+				var cnvHeight = parseInt($(canvas).attr("height"));
+				var ctx = canvas.getContext("2d");
+				var numberOfAxis = 3;
+				var numberofSubAxis = 8;
+
+				ctx.strokeStyle = "rgba(0, 52, 98, 0.2)";
+
+				// Draw vertical axis
+				/*for(var i = 0; i < numberOfAxis; i++){
+					var x = (cnvWidth / (numberOfAxis + 1)) * (i + 1);
+					ctx.beginPath();
+					ctx.moveTo(x, 0);
+					ctx.lineTo(x, cnvHeight);
+					ctx.stroke();
+				}*/
+
+				// Draw horizontal axis
+				for(var i = 0; i < numberOfAxis; i++){
+					var y = (cnvHeight / (numberOfAxis + 1)) * (i + 1);
+					ctx.beginPath();
+					ctx.moveTo(0, y);
+					ctx.lineTo(cnvWidth, y);
+					ctx.stroke();
+				}
+
+				ctx.strokeStyle = "rgba(0, 52, 98, 0.05)";
+
+				// Draw vertical subaxis
+				for(var i = 0; i < numberofSubAxis; i++){
+					var x = (cnvWidth / (numberofSubAxis + 1)) * (i + 1);
+					ctx.beginPath();
+					ctx.moveTo(x, 0);
+					ctx.lineTo(x, cnvHeight);
+					ctx.stroke();
+				}
+
+				// Draw horizontal subaxis
+				for(var i = 0; i < numberofSubAxis; i++){
+					var y = (cnvHeight / (numberofSubAxis + 1)) * (i + 1);
+					ctx.beginPath();
+					ctx.moveTo(0, y);
+					ctx.lineTo(cnvWidth, y);
+					ctx.stroke();
+				}
+
+				// Determine vertical scale
+				var yAxisMax = 20;
+
+				if(Math.max(...r.usageTrend) > 20){
+					yAxisMax = 50;
+				}
+
+				$(".modal .y-axis-container .value").first().html(yAxisMax+"%");
+
+				// Grab primary typing color
+				var $typed = $("<div></div>").addClass("color-reader buff " + pokemon.types[0]);
+				$("body").append($typed);
+				var lineColor = $typed.css("background-color")
+				$typed.remove();
+
+				// Draw main trend data
+				var startY = cnvHeight - ((r.usageTrend[0] / yAxisMax) * cnvHeight);
+				ctx.strokeStyle = lineColor;
+				ctx.lineWidth = 4;
+
+				ctx.beginPath();
+				ctx.moveTo(0, r.startY);
+
+				for(var i = 0; i < r.usageTrend.length; i++){
+					var x = (i / (r.usageTrend.length-1)) * cnvWidth;
+					var y = cnvHeight - ((r.usageTrend[i] / yAxisMax) * cnvHeight);
+
+					ctx.lineTo(x, y);
+				}
+
+				ctx.stroke();
+
 			}
 
 			// Turn checkboxes on and off
