@@ -5500,6 +5500,25 @@ a.pokebattler{
 	    background: rgba(0, 0, 0, 0.15);
 	}
 
+	a.usage-link{
+		display: inline-block;
+	    width: 20px;
+	    height: 18px;
+	    background-image: url(../img/usage-link.png);
+	    background-repeat: no-repeat;
+	    background-position: 0 center;
+		margin-left: 10px;
+	}
+
+	span.usage-value{
+		display: block;
+		width: 35px;
+	}
+
+	.usage .flex{
+		align-items: center;
+	}
+
 	.rating{
 		width: 80px;
 		padding: 5px;
@@ -5541,12 +5560,32 @@ a.pokebattler{
 		text-align: center;
 	}
 
+	.canvas-container{
+		position: relative;
+		width: 92%;
+	}
+
 	.usage-chart{
 		display: block;
 		max-width: 100%;
-		background: rgba(0,52,98,0.05);
-		border: 2px dashed $color-blue-dark;
-		width: 92%;
+		border: 1px dashed $color-blue-dark;
+    	border-radius: 8px;
+
+		&[canvas-id="0"]{
+			background: rgba(0,52,98,0.025);
+		}
+
+		&[canvas-id="1"]{
+			position: absolute;
+		    top: 0;
+		    left: 0;
+			opacity: 0.8;
+		}
+
+	}
+
+	.usage-compare-select{
+		max-width: 175px;
 	}
 }
 
@@ -5723,6 +5762,10 @@ a.pokebattler{
 			.rating{
 				min-width: 90px;
 			}
+		}
+
+		span.usage-value{
+			width: 55px;
 		}
 	}
 }

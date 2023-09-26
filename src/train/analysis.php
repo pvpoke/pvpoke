@@ -242,6 +242,11 @@ require_once '../header.php';
 
 <div class="usage-modal hide">
 	<p><b class="pokemon-label"></b> usage on player and bot teams over 30 days.</p>
+	<p>Compare with:
+		<select class="usage-compare-select">
+			<option selected disabled>Select a Pokemon</option>
+		</select>
+	</p>
 	<div class="usage-container">
 		<div class="y-axis-container">
 			<div class="value">20%</div>
@@ -249,7 +254,11 @@ require_once '../header.php';
 			<div class="value">0%</div>
 		</div>
 
-		<canvas class="usage-chart" width="400" height="300"></canvas>
+		<div class="canvas-container">
+			<canvas canvas-id="0" class="usage-chart" width="400" height="300"></canvas>
+			<canvas canvas-id="1" class="usage-chart" width="400" height="300"></canvas>
+		</div>
+
 	</div>
 	<div class="x-axis-container">Time</div>
 

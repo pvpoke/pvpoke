@@ -5079,6 +5079,22 @@ a.pokebattler {
 .train-table tr:nth-child(2n) {
   background: rgba(0, 0, 0, 0.15);
 }
+.train-table a.usage-link {
+  display: inline-block;
+  width: 20px;
+  height: 18px;
+  background-image: url(../img/usage-link.png);
+  background-repeat: no-repeat;
+  background-position: 0 center;
+  margin-left: 10px;
+}
+.train-table span.usage-value {
+  display: block;
+  width: 35px;
+}
+.train-table .usage .flex {
+  align-items: center;
+}
 .train-table .rating {
   width: 80px;
   padding: 5px;
@@ -5112,12 +5128,27 @@ a.pokebattler {
   margin-top: 5px;
   text-align: center;
 }
+.usage-modal .canvas-container {
+  position: relative;
+  width: 92%;
+}
 .usage-modal .usage-chart {
   display: block;
   max-width: 100%;
-  background: rgba(0, 52, 98, 0.05);
-  border: 2px dashed #003462;
-  width: 92%;
+  border: 1px dashed #003462;
+  border-radius: 8px;
+}
+.usage-modal .usage-chart[canvas-id="0"] {
+  background: rgba(0, 52, 98, 0.025);
+}
+.usage-modal .usage-chart[canvas-id="1"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
+.usage-modal .usage-compare-select {
+  max-width: 175px;
 }
 
 @media only screen and (min-width: 481px) {
@@ -5269,6 +5300,9 @@ a.pokebattler {
 .train-table td.team-score .rating,
 .train-table td.usage .rating {
     min-width: 90px;
+  }
+  .train-table span.usage-value {
+    width: 55px;
   }
 }
 .colorblind a.rating.win, .colorblind .rating-container .rating.win, .colorblind .summary .rating.win, .colorblind .stats-table .rating.win, .colorblind .train-table .rating.win,
