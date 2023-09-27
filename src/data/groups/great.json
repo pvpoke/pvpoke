@@ -1,8 +1,4 @@
 [{
-    "speciesId": "altaria",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["SKY_ATTACK", "MOONBLAST"]
-}, {
     "speciesId": "azumarill",
     "fastMove": "BUBBLE",
     "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
@@ -32,17 +28,13 @@
     "fastMove": "COUNTER",
     "chargedMoves": ["THUNDERBOLT", "PSYCHO_BOOST"]
 }, {
+    "speciesId": "dewgong",
+    "fastMove": "ICE_SHARD",
+    "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
+}, {
     "speciesId": "diggersby",
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["SCORCHING_SANDS", "HYPER_BEAM"]
-}, {
-    "speciesId": "drapion",
-    "fastMove": "POISON_STING",
-    "chargedMoves": ["CRUNCH", "SLUDGE_BOMB"]
-}, {
-    "speciesId": "dunsparce",
-    "fastMove": "ROLLOUT",
-    "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
 }, {
     "speciesId": "froslass",
     "fastMove": "POWDER_SNOW",
@@ -97,10 +89,6 @@
     "fastMove": "WING_ATTACK",
     "chargedMoves": ["SKY_ATTACK", "SHADOW_BALL"]
 }, {
-    "speciesId": "obstagoon",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
-}, {
     "speciesId": "pelipper",
     "fastMove": "WING_ATTACK",
     "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
@@ -126,6 +114,10 @@
     "speciesId": "scrafty",
     "fastMove": "COUNTER",
     "chargedMoves": ["POWER_UP_PUNCH", "FOUL_PLAY"]
+}, {
+    "speciesId": "steelix",
+    "fastMove": "DRAGON_TAIL",
+    "chargedMoves": ["BREAKING_SWIPE", "EARTHQUAKE"]
 }, {
     "speciesId": "stunfisk_galarian",
     "fastMove": "MUD_SHOT",
@@ -165,20 +157,16 @@
     "fastMove": "COUNTER",
     "chargedMoves": ["BODY_SLAM", "BULLDOZE"]
 }, {
-    "speciesId": "walrein",
-    "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
+    "speciesId": "serperior",
+    "fastMove": "VINE_WHIP",
+    "chargedMoves": ["FRENZY_PLANT", "AERIAL_ACE"]
 }, {
-    "speciesId": "walrein_shadow",
-    "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"],
+    "speciesId": "gligar",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["AERIAL_ACE", "DIG"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "dewgong",
-    "fastMove": "ICE_SHARD",
-    "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
-}, {
-    "speciesId": "steelix",
-    "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["BREAKING_SWIPE", "EARTHQUAKE"]
+    "speciesId": "sandslash_alolan",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"]
 }]
