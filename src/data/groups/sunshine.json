@@ -103,6 +103,10 @@
     "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"],
     "shadowType": "shadow"
 }, {
+    "speciesId": "swampert",
+    "fastMove": "WATER_GUN",
+    "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
+}, {
     "speciesId": "talonflame",
     "fastMove": "INCINERATE",
     "chargedMoves": ["BRAVE_BIRD", "FLAME_CHARGE"]
@@ -126,6 +130,10 @@
     "speciesId": "vigoroth",
     "fastMove": "COUNTER",
     "chargedMoves": ["BODY_SLAM", "BULLDOZE"]
+}, {
+    "speciesId": "whiscash",
+    "fastMove": "WATER_GUN",
+    "chargedMoves": ["MUD_BOMB", "BLIZZARD"]
 }, {
     "speciesId": "whiscash",
     "fastMove": "MUD_SHOT",
