@@ -402,22 +402,6 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Element Cup Remix",
-        "cup": "elementremix",
-        "cp": 500,
-        "meta": "elementremix",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Psychic Cup",
-        "cup": "psychic",
-        "cp": 1500,
-        "meta": "psychic",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Sunshine Cup",
         "cup": "sunshine",
         "cp": 1500,
@@ -475,15 +459,6 @@
         "showCup": true,
         "showFormat": true,
         "showMeta": true
-    }, {
-        "title": "GO Stadium Cliffhanger",
-        "cup": "cliffhanger",
-        "cp": 1500,
-        "meta": "great",
-        "showCup": false,
-        "showFormat": true,
-        "showMeta": false,
-        "hideRankings": true
     }, {
         "title": "Custom",
         "cup": "custom",
@@ -862,7 +837,7 @@
         },
         "level25CP": 1784,
         "eliteMoves": ["EMBER", "WING_ATTACK", "BLAST_BURN", "FLAMETHROWER", "DRAGON_BREATH"],
-        "searchPriority": 10,
+        "searchPriority": 12,
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
         "released": true,
@@ -28402,7 +28377,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_SKIDDO",
             "evolutions": ["gogoat"]
@@ -28426,7 +28401,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_SKIDDO",
             "parent": "skiddo"
