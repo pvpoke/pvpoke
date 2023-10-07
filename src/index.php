@@ -85,15 +85,15 @@
 
 	<div class="article-item flex">
 		<div class="col-3">
-			<a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-09-grubbin/">
-				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/community-day/23-09-grubbin/thumb.jpg">
+			<a href="<?php echo $WEB_ROOT; ?>articles/infographics/23-10-adventures-abound-great-league-starter-pack/">
+				<img src="<?php echo $WEB_ROOT; ?>articles/article-assets/infographics/23-10-adventures-abound-great-league-starter-pack/thumb.jpg">
 			</a>
 		</div>
 		<div class="col-9">
-			<h4><a href="<?php echo $WEB_ROOT; ?>articles/community-day/23-09-grubbin/">Grubbin Community Day Guide for PvP</a></h4>
-			<div class="date">September 21, 2023</div>
-			<p>Both Charjabug and Vikavolt are getting the exlusive treatment this Community Day! How will they fare in PvP with Volt Switch? Time to dig into the details and check the ins and outs of these Bug-type Pokemon!</p>
-			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Community Day"># Community Day</a><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a></div>
+			<h4><a href="<?php echo $WEB_ROOT; ?>articles/infographics/23-10-adventures-abound-great-league-starter-pack/">Great League Starter Pack for Season of Adventures Abound</a></h4>
+			<div class="date">October 7, 2023</div>
+			<p>Check out the premiere and budget picks to get started in Great League and GO Battle League for Season of Adventures Abound!</p>
+			<div class="tags"><a href="<?php echo $WEB_ROOT; ?>articles?tag=Infographic"># Infographic</a><a href="<?php echo $WEB_ROOT; ?>articles?tag=Starter Pack"># Starter Pack</a></div>
 		</div>
 	</div>
 
