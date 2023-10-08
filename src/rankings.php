@@ -63,8 +63,8 @@ switch($cup){
 		$league = 'Element Cup Remix';
 		break;
 
-	case "psychic":
-		$league = 'Psychic Cup';
+	case "halloween":
+		$league = 'Halloween Cup';
 		break;
 
 	case "sunshine":
