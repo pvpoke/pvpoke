@@ -397,6 +397,10 @@ function Pokemon(id, i, b){
 			floor = 1;
 		}
 
+		if(self.hasTag("legendary") && self.shadowType == "shadow"){
+			floor = 6;
+		}
+
 		if(ivFloor){
 			floor = ivFloor;
 		}
@@ -522,6 +526,16 @@ function Pokemon(id, i, b){
 		results = combinations.splice(0, resultCount);
 
 		return results;
+	}
+
+	// Return the rank number of this Pokemon's IV combination for a given stat
+
+	this.getIVRank = function(sortStat){
+		var combinations = this.generateIVCombinations(sortStat, 1, 4096);
+		var rank = combinations.findIndex((combo) => combo.ivs.atk == this.ivs.atk && combo.ivs.def == this.ivs.def && combo.ivs.hp == this.ivs.hp);
+		rank++;
+
+		return { rank: rank, count: combinations.length };
 	}
 
 	// Given a defender, generate a list of Attack values that reach certain breakpoints

@@ -554,6 +554,7 @@ footer a.domz-link {
   color: #0158d0;
 }
 .poke .poke-stats .types {
+  margin-bottom: 3px;
   text-align: center;
 }
 .poke .poke-stats .types .type {
@@ -608,11 +609,14 @@ footer a.domz-link {
 .poke .poke-stats .mega-cp-container .mega-cp {
   font-size: 14px;
 }
+.poke .poke-stats .advanced-section {
+  margin-top: 15px;
+}
 .poke .poke-stats .advanced-section .fields {
   display: none;
 }
 .poke .poke-stats .advanced-section .fields .ivs input {
-  display: inline;
+  display: block;
   width: 27%;
   max-width: 66px;
   background: none;
@@ -620,6 +624,7 @@ footer a.domz-link {
   border-bottom: 1px solid #888;
   border-radius: 0px;
   height: 22px;
+  margin-bottom: 0;
   -moz-appearance: textfield;
   /* Firefox */
 }
@@ -633,24 +638,46 @@ footer a.domz-link {
   outline: none;
   border-bottom: 3px solid #ffcf01;
 }
-.poke .poke-stats .advanced-section .fields input.level {
+.poke .poke-stats .advanced-section .fields .ivs input + span {
+  margin-top: 10px;
+}
+.poke .poke-stats .advanced-section .fields input.level,
+.poke .poke-stats .advanced-section .fields label.level {
   width: 25%;
+}
+.poke .poke-stats .advanced-section .fields label.iv {
+  width: 27%;
+  max-width: 66px;
+}
+.poke .poke-stats .advanced-section .fields label {
+  margin-top: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  display: block;
 }
 .poke .poke-stats .advanced-section .fields .ivs-group {
   width: 75%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.poke .poke-stats .advanced-section .fields .ivs-group.labels {
+  align-items: start;
+}
+.poke .poke-stats .advanced-section .iv-rank {
+  border: 1px solid #111;
+  cursor: pointer;
+}
+.poke .poke-stats .advanced-section .iv-rank .info-icon {
+  color: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  width: 14px;
+  height: 14px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   float: right;
-  text-align: right;
-  height: 42px;
-}
-.poke .poke-stats .advanced-section .fields .stat-modifiers input {
-  float: left;
-  width: 50%;
-}
-.poke .poke-stats .advanced-section .fields .ivs h3,
-.poke .poke-stats .advanced-section .fields .stat-modifiers h3 {
-  font-size: 14px;
-  text-align: center;
-  font-weight: bold;
 }
 .poke .poke-stats .advanced-section .maximize-section {
   border: 1px solid #888;
@@ -754,6 +781,10 @@ footer a.domz-link {
 }
 .poke .options.multi-battle-options h3:first-of-type {
   margin-top: 0;
+}
+.poke .options .stat-modifiers input {
+  float: left;
+  width: 50%;
 }
 .poke .custom-ranking-options {
   display: none;
@@ -1145,6 +1176,45 @@ footer a.domz-link {
   display: none;
 }
 
+.iv-rank {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 13px;
+  font-weight: bold;
+  margin: 10px 0;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 6px;
+  border-radius: 8px;
+}
+.iv-rank .count {
+  font-weight: normal;
+  font-size: 12px;
+}
+
+.modal .iv-rank-details h3 {
+  border-bottom: 1px solid #111;
+  margin-bottom: 6px;
+  margin-top: 0;
+  padding-bottom: 3px;
+}
+.modal .iv-rank-details .stats-table {
+  width: 100%;
+}
+.modal .iv-rank-details .stats-table thead {
+  font-weight: bold;
+}
+.modal .iv-rank-details .iv-rank {
+  margin: 2px 0;
+}
+.modal .iv-rank-details .iv-rank-result {
+  margin-top: 30px;
+}
+.modal .iv-rank-details .iv-rank-result.primary {
+  border: 1px solid #111;
+  padding: 6px;
+  border-radius: 8px;
+  margin-top: 0;
+}
+
 /* GENERAL FORM STYLING */
 select, input {
   border-radius: 30px;
@@ -1216,7 +1286,7 @@ select, input {
   flex: 1;
 }
 
-.button, .button-highlight, select {
+.button, .button-highlight, select, .advanced-section .iv-rank {
   position: relative;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
   -webkit-transition: box-shadow 0.25s ease-out 0s;
@@ -1224,7 +1294,7 @@ select, input {
   -o-transition: box-shadow 0.25s ease-out 0s;
   transition: box-shadow 0.25s ease-out 0s;
 }
-.button:after, .button-highlight:after, select:after {
+.button:after, .button-highlight:after, select:after, .advanced-section .iv-rank:after {
   content: " ";
   position: absolute;
   top: 0;
@@ -1239,14 +1309,14 @@ select, input {
   -o-transition: background-color 0.25s ease-out 0s;
   transition: background-color 0.25s ease-out 0s;
 }
-.button:hover, .button-highlight:hover, select:hover {
+.button:hover, .button-highlight:hover, select:hover, .advanced-section .iv-rank:hover {
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
   -webkit-transition: box-shadow 0s ease-out 0s;
   -moz-transition: box-shadow 0s ease-out 0s;
   -o-transition: box-shadow 0s ease-out 0s;
   transition: box-shadow 0s ease-out 0s;
 }
-.button:hover:after, .button-highlight:hover:after, select:hover:after {
+.button:hover:after, .button-highlight:hover:after, select:hover:after, .advanced-section .iv-rank:hover:after {
   background-color: rgba(255, 255, 255, 0.1);
   -webkit-transition: background-color 0s ease-out 0s;
   -moz-transition: background-color 0s ease-out 0s;

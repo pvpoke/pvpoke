@@ -76,9 +76,10 @@
 	<!--Update section for updates-->
 	<h3>What's New</h3>
 
-	<h4>v1.30.14 (September 26, 2023)</h4>
+	<h4>v1.30.15 (October 11, 2023)</h4>
 	<ul>
-		<li>Training Analysis now features usage trends for the most used Pokemon. These will be updated by league as the season continues.</li>
+		<li>Pokemon selection now includes basic IV ranking and checking functionality under the "Edit/Check IVs" section.</li>
+		<li>Stat modifiers for assigning a Pokemon stat buffs or debuffs have been moved to the "Options" section.</li>
 	</ul>
 
 	<h3>Latest Article</h3>

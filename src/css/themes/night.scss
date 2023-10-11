@@ -380,6 +380,14 @@ a.toggle{
 	background-color:$dark;
 }
 
+.modal .iv-rank-details .iv-rank-result.primary{
+	border: 1px solid $font-color;
+}
+
+.modal .iv-rank-details h3{
+	border-bottom: 1px solid $font-color;
+}
+
 .matrix-table, .meta-table, .threats-table, .alternatives-table{
 	thead td:first-of-type{
 		background-image:url('../../img/matrix-arrow-header-dark.png') !important;

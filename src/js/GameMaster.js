@@ -131,6 +131,22 @@ var GameMaster = (function () {
 			return pokemon;
 		}
 
+		// Return a list of Pokemon belong to a give familyId
+
+		object.getPokemonByFamily = function(familyId){
+			var list = [];
+
+			$.each(object.data.pokemon, function(index, poke){
+
+				if(poke.family && poke.family.id == familyId && poke.speciesId.indexOf("_shadow") == -1){
+					list.push(poke);
+					return;
+				}
+			});
+
+			return list;
+		}
+
 		// Return all Pokemon entries that have the provided dex number
 
 		object.getPokemonForms = function(dex){

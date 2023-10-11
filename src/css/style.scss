@@ -717,6 +717,7 @@ footer{
 		}
 
 		.types {
+			margin-bottom: 3px;
 			text-align: center;
 
 			.type{
@@ -784,12 +785,13 @@ footer{
 		}
 
 		.advanced-section{
+			margin-top: 15px;
 
 			.fields{
 				display:none;
 
 				.ivs input{
-					display:inline;
+					display:block;
 					width:27%;
 					max-width:66px;
 					background:none;
@@ -797,6 +799,7 @@ footer{
 					border-bottom:1px solid #888;
 					border-radius:0px;
 					height: 22px;
+					margin-bottom: 0;
 					-moz-appearance:textfield; /* Firefox */
 
 					&::-webkit-outer-spin-button,
@@ -810,29 +813,55 @@ footer{
 						outline: none;
 						border-bottom: 3px solid $color-gold;
 					}
+
+					&+ span{
+						margin-top: 10px;
+					}
 				}
 
-				input.level{
+				input.level,
+				label.level{
 					width:25%;
+				}
+
+				label.iv{
+					width: 27%;
+					max-width:66px;
+				}
+
+				label{
+					margin-top:3px;
+					font-size: 12px;
+					font-weight: bold;
+					display: block;
 				}
 
 				.ivs-group{
 					width:75%;
-					float:right;
-					text-align:right;
-					height:42px;
-				}
+					display: flex;
+					justify-content: end;
+					align-items: center;
 
-				.stat-modifiers input{
-					float:left;
-					width:50%;
+					&.labels{
+						align-items: start;
+					}
 				}
+			}
 
-				.ivs h3,
-				.stat-modifiers h3{
-					font-size: 14px;
-					text-align: center;
-					font-weight: bold;
+			.iv-rank{
+				border:1px solid $color-off-black;
+				cursor:pointer;
+
+				.info-icon{
+					color: rgba(255,255,255,.95);
+					border: 1px solid rgba(255,255,255,.95);
+					width: 14px;
+					height: 14px;
+					border-radius: 14px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					float: right;
 				}
 			}
 
@@ -966,6 +995,11 @@ footer{
 			h3:first-of-type{
 				margin-top: 0;
 			}
+		}
+
+		.stat-modifiers input{
+			float:left;
+			width:50%;
 		}
 	}
 
@@ -1446,6 +1480,54 @@ footer{
 	}
 }
 
+
+.iv-rank{
+	color: rgba(255,255,255, 0.95);
+	font-size:13px;
+	font-weight: bold;
+	margin: 10px 0;
+	background: rgba(0,0,0,0.25);
+    padding: 6px;
+    border-radius: 8px;
+
+	.count{
+		font-weight: normal;
+		font-size: 12px;
+	}
+}
+
+.modal .iv-rank-details{
+
+	h3{
+		border-bottom: 1px solid $color-off-black;
+		margin-bottom: 6px;
+		margin-top: 0;
+		padding-bottom: 3px;
+	}
+
+	.stats-table{
+		width:100%;
+
+		thead{
+			font-weight: bold;
+		}
+	}
+
+	.iv-rank{
+		margin: 2px 0;
+	}
+
+	.iv-rank-result{
+		margin-top: 30px;
+
+		&.primary{
+			border: 1px solid #111;
+		    padding: 6px;
+		    border-radius: 8px;
+			margin-top: 0;
+		}
+	}
+}
 /* GENERAL FORM STYLING */
 
 select, input{
@@ -1519,7 +1601,7 @@ select, input{
 	}
 }
 
-.button, .button-highlight, select{
+.button, .button-highlight, select, .advanced-section .iv-rank{
 	position: relative;
 	box-shadow: 2px 2px 2px rgba(0, 0, 0, .1);
 

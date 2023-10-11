@@ -348,6 +348,14 @@ a.toggle {
   background-color: #080c10;
 }
 
+.modal .iv-rank-details .iv-rank-result.primary {
+  border: 1px solid #f9fdff;
+}
+
+.modal .iv-rank-details h3 {
+  border-bottom: 1px solid #f9fdff;
+}
+
 .matrix-table thead td:first-of-type, .meta-table thead td:first-of-type, .threats-table thead td:first-of-type, .alternatives-table thead td:first-of-type {
   background-image: url("../../img/matrix-arrow-header-dark.png") !important;
 }
