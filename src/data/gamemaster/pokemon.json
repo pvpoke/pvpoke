@@ -23845,7 +23845,8 @@
     },
     "types": ["fighting", "none"],
     "fastMoves": ["COUNTER", "POISON_JAB"],
-    "chargedMoves": ["DYNAMIC_PUNCH", "FOCUS_BLAST", "STONE_EDGE"],
+    "chargedMoves": ["DYNAMIC_PUNCH", "FOCUS_BLAST", "STONE_EDGE", "BRUTAL_SWING"],
+	"eliteMoves": ["BRUTAL_SWING"],
     "defaultIVs": {
         "cp500": [5.5, 13, 15, 13],
         "cp1500": [16.5, 5, 14, 11],
@@ -35241,7 +35242,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_SMOLIV",
         "evolutions": ["dolliv"]
@@ -35266,7 +35267,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_SMOLIV",
         "parent": "smoliv",
@@ -35291,7 +35292,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_SMOLIV",
         "parent": "dolliv"
