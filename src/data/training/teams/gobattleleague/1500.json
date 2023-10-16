@@ -110,21 +110,6 @@
         "weight": 1
     }, {
         "pokemon": [{
-            "speciesId": "gligar",
-            "fastMove": "WING_ATTACK",
-            "chargedMoves": ["AERIAL_ACE", "DIG"]
-        }, {
-            "speciesId": "sableye",
-            "fastMove": "SHADOW_CLAW",
-            "chargedMoves": ["FOUL_PLAY", "RETURN"]
-        }, {
-            "speciesId": "registeel",
-            "fastMove": "LOCK_ON",
-            "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
             "speciesId": "bastiodon",
             "fastMove": "SMACK_DOWN",
             "chargedMoves": ["STONE_EDGE", "FLAMETHROWER"]
@@ -204,21 +189,6 @@
         "weight": 1
     }, {
         "pokemon": [{
-            "speciesId": "sableye",
-            "fastMove": "SHADOW_CLAW",
-            "chargedMoves": ["FOUL_PLAY", "RETURN"]
-        }, {
-            "speciesId": "diggersby",
-            "fastMove": "MUD_SHOT",
-            "chargedMoves": ["SCORCHING_SANDS", "HYPER_BEAM"]
-        }, {
-            "speciesId": "cresselia",
-            "fastMove": "PSYCHO_CUT",
-            "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
             "speciesId": "lanturn",
             "fastMove": "SPARK",
             "chargedMoves": ["SURF", "THUNDERBOLT"]
@@ -285,21 +255,6 @@
             "fastMove": "COUNTER",
             "chargedMoves": ["ICE_PUNCH", "PSYCHIC"]
         }, {
-            "speciesId": "lanturn",
-            "fastMove": "SPARK",
-            "chargedMoves": ["SURF", "THUNDERBOLT"]
-        }, {
-            "speciesId": "greedent",
-            "fastMove": "MUD_SHOT",
-            "chargedMoves": ["BODY_SLAM", "CRUNCH"]
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
-            "speciesId": "medicham",
-            "fastMove": "COUNTER",
-            "chargedMoves": ["ICE_PUNCH", "PSYCHIC"]
-        }, {
             "speciesId": "registeel",
             "fastMove": "LOCK_ON",
             "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
@@ -307,21 +262,6 @@
             "speciesId": "lickitung",
             "fastMove": "LICK",
             "chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
-            "speciesId": "pelipper",
-            "fastMove": "WING_ATTACK",
-            "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
-        }, {
-            "speciesId": "registeel",
-            "fastMove": "LOCK_ON",
-            "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
-        }, {
-            "speciesId": "steelix",
-            "fastMove": "DRAGON_TAIL",
-            "chargedMoves": ["BREAKING_SWIPE", "EARTHQUAKE"]
         }],
         "weight": 1
     }, {
@@ -721,6 +661,52 @@
             "speciesId": "lickitung",
             "fastMove": "LICK",
             "chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "medicham",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["ICE_PUNCH", "PSYCHIC"]
+        }, {
+            "speciesId": "gligar",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["AERIAL_ACE", "DIG"]
+        }, {
+            "speciesId": "dewgong",
+            "fastMove": "ICE_SHARD",
+            "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "umbreon",
+            "fastMove": "SNARL",
+            "chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
+        }, {
+            "speciesId": "serperior",
+            "fastMove": "VINE_WHIP",
+            "chargedMoves": ["FRENZY_PLANT", "AERIAL_ACE"]
+        }, {
+            "speciesId": "cresselia",
+            "fastMove": "PSYCHO_CUT",
+            "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "sandslash_alolan",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "medicham",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["ICE_PUNCH", "PSYCHIC"]
+        }, {
+            "speciesId": "sableye",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["FOUL_PLAY", "RETURN"]
         }],
         "weight": 1
     }]
