@@ -36399,7 +36399,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_GREAVARD",
         "evolutions": ["houndstone"]
@@ -36422,9 +36422,10 @@
         "cp2500": [45, 4, 14, 11],
         "cp2500l40": [40, 15, 14, 13]
     },
+	"searchPriority": 2,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_GREAVARD",
         "parent": "greavard"
