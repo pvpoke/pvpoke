@@ -27882,7 +27882,7 @@
     },
     "types": ["grass", "none"],
     "fastMoves": ["ZEN_HEADBUTT", "ROCK_SMASH", "VINE_WHIP"],
-    "chargedMoves": ["BRICK_BREAK", "LEAF_BLADE"],
+    "chargedMoves": ["BRICK_BREAK", "LEAF_BLADE", "SEED_BOMB"],
     "defaultIVs": {
         "cp500": [7, 4, 4, 15],
         "cp1500": [19.5, 6, 15, 15],

@@ -241,6 +241,11 @@ require_once 'header.php'; ?>
 			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/evan.jpg" width="85" height="85" />
 			<div class="supporter"><a href="https://twitter.com/Evan71320" target="_blank">Evan777713</a></div>
 		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/flash.png" width="85" height="85" />
+			<div class="supporter"><a href="https://discord.flashforeveryone.gg/" target="_blank">Flash for Everyone</a></div>
+		</div>
+
 	</div>
 </div>
 

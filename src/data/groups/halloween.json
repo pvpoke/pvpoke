@@ -56,6 +56,11 @@
     "chargedMoves": ["SHADOW_BONE", "BONE_CLUB"],
     "shadowType": "shadow"
 }, {
+    "speciesId": "skeledirge",
+    "fastMove": "INCINERATE",
+    "chargedMoves": ["DISARMING_VOICE", "SHADOW_BALL"],
+    "shadowType": "shadow"
+}, {
     "speciesId": "mawile",
     "fastMove": "FAIRY_WIND",
     "chargedMoves": ["IRON_HEAD", "PLAY_ROUGH"]
