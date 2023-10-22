@@ -1526,6 +1526,17 @@ footer{
 		    border-radius: 8px;
 			margin-top: 0;
 		}
+
+		td.league-1500,
+		td.league-2500{
+			padding-left: 28px;
+		    background-repeat: no-repeat;
+		    background-size: 20px;
+		    background-position: 4px center;
+
+			&.league-1500{ background-image: url('../img/themes/sunflower/nav-league-great.png'); }
+			&.league-2500{ background-image: url('../img/themes/sunflower/nav-league-ultra.png'); }
+		}
 	}
 }
 /* GENERAL FORM STYLING */

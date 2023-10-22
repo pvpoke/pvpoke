@@ -497,7 +497,8 @@ function PokeSelect(element, i){
 						cp: pokemon.cp,
 						level: pokemon.level,
 						rank: rankObj.rank,
-						count: rankObj.count
+						count: rankObj.count,
+						league: leagues[i]
 					});
 				} else{
 					leagueDisqualified = true;
@@ -518,7 +519,7 @@ function PokeSelect(element, i){
 		$result.find("h3").html(poke.speciesName);
 
 		for(var i = 0; i < rows.length; i++){
-			var $row = $("<tr><td>"+rows[i].cp+"</td><td>"+rows[i].level+"</td><td><div class=\"iv-rank\">#"+rows[i].rank+"</div></td></tr>");
+			var $row = $("<tr><td class=\"league-"+rows[i].league+"\">"+rows[i].cp+"</td><td>"+rows[i].level+"</td><td><div class=\"iv-rank\">#"+rows[i].rank+"</div></td></tr>");
 			var rankColor = this.getIVRankColor(rows[i].rank, rows[i].count);
 			$row.find(".iv-rank").css("background", "rgba("+rankColor[0]+","+rankColor[1]+","+rankColor[2]+", 1)");
 			$result.find("tbody").append($row);
