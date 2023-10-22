@@ -132,10 +132,6 @@
     "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "tapu_fini",
-    "fastMove": "WATER_GUN",
-    "chargedMoves": ["SURF", "MOONBLAST"]
-}, {
     "speciesId": "trevenant",
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["SEED_BOMB", "SHADOW_BALL"]
@@ -149,8 +145,7 @@
     "chargedMoves": ["FRENZY_PLANT", "SLUDGE_BOMB"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "marowak_alolan",
-    "fastMove": "FIRE_SPIN",
-    "chargedMoves": ["SHADOW_BONE", "BONE_CLUB"],
-    "shadowType": "shadow"
+    "speciesId": "guzzlord",
+    "fastMove": "DRAGON_TAIL",
+    "chargedMoves": ["DRAGON_CLAW", "CRUNCH"]
 }]
