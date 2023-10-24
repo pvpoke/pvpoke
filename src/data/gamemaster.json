@@ -218,7 +218,8 @@
             "filterType": "tag",
             "values": ["mega"]
         }],
-        "partySize": 3
+        "partySize": 3,
+        "presetOnly": true
     }, {
         "name": "little",
         "title": "Little Cup",
