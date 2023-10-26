@@ -11286,14 +11286,15 @@
         "cp1500": [26.5, 8, 15, 15],
         "cp2500": [50, 15, 15, 15]
     },
-    "tags": ["hisuian"],
+    "tags": ["hisuian", "shadoweligible"],
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true,
     "family": {
         "id": "FAMILY_SNEASEL",
         "evolutions": ["sneasler"]
-    }
+    },
+    "level25CP": 1231
 }, {
     "dex": 215,
     "speciesName": "Sneasel (Shadow)",
@@ -11318,6 +11319,31 @@
     "family": {
         "id": "FAMILY_SNEASEL",
         "evolutions": ["weavile_shadow"]
+    }
+}, {
+    "dex": 215,
+    "speciesName": "Sneasel (Hisuian) (Shadow)",
+    "speciesId": "sneasel_hisuian_shadow",
+    "baseStats": {
+        "atk": 189,
+        "def": 146,
+        "hp": 146
+    },
+    "types": ["fighting", "poison"],
+    "fastMoves": ["ROCK_SMASH", "POISON_JAB"],
+    "chargedMoves": ["AERIAL_ACE", "CLOSE_COMBAT", "X_SCISSOR"],
+    "defaultIVs": {
+        "cp500": [9, 9, 10, 15],
+        "cp1500": [26.5, 8, 15, 15],
+        "cp2500": [50, 15, 15, 15]
+    },
+    "tags": ["hisuian", "shadow"],
+    "buddyDistance": 3,
+    "thirdMoveCost": 50000,
+    "released": true,
+    "family": {
+        "id": "FAMILY_SNEASEL",
+        "evolutions": ["sneasler_shadow"]
     }
 }, {
     "dex": 216,
@@ -35067,7 +35093,35 @@
     "family": {
         "id": "FAMILY_SNEASEL",
         "parent": "sneasel_hisuian"
-    }
+    },
+    "level25CP": 2002,
+    "tags": ["shadoweligible"]
+}, {
+    "dex": 903,
+    "speciesName": "Sneasler (Shadow)",
+    "speciesId": "sneasler_shadow",
+    "baseStats": {
+        "atk": 259,
+        "def": 158,
+        "hp": 190
+    },
+    "types": ["fighting", "poison"],
+    "fastMoves": ["ROCK_SMASH", "POISON_JAB", "SHADOW_CLAW"],
+    "chargedMoves": ["AERIAL_ACE", "CLOSE_COMBAT", "X_SCISSOR"],
+    "defaultIVs": {
+        "cp500": [6, 5, 13, 7],
+        "cp1500": [17, 6, 15, 10],
+        "cp2500": [28.5, 6, 12, 12]
+    },
+    "searchPriority": 3,
+    "buddyDistance": 5,
+    "thirdMoveCost": 75000,
+    "released": true,
+    "family": {
+        "id": "FAMILY_SNEASEL",
+        "parent": "sneasel_hisuian_shadow"
+    },
+    "tags": ["shadow"]
 }, {
     "dex": 904,
     "speciesName": "Overqwil",
