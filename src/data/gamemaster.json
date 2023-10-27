@@ -37750,8 +37750,8 @@
             "hp": 277
         },
         "types": ["poison", "ground"],
-        "fastMoves": ["POISON_JAB", "MUD_SHOT"],
-        "chargedMoves": ["SLUDGE_BOMB", "EARTHQUAKE", "STONE_EDGE", "ACID_SPRAY", "SURF"],
+        "fastMoves": ["POISON_STING", "MUD_SHOT"],
+        "chargedMoves": ["SLUDGE_BOMB", "EARTHQUAKE", "STONE_EDGE", "ACID_SPRAY", "WATER_PULSE"],
         "defaultIVs": {
             "cp500": [10, 5, 9, 5],
             "cp1500": [29, 4, 15, 14],
