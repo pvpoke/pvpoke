@@ -10824,6 +10824,32 @@
         }
     }, {
         "dex": 194,
+        "speciesName": "Wooper (Paldean)",
+        "speciesId": "wooper_paldean",
+        "baseStats": {
+            "atk": 75,
+            "def": 66,
+            "hp": 146
+        },
+        "types": ["poison", "ground"],
+        "fastMoves": ["MUD_SHOT", "POISON_JAB"],
+        "chargedMoves": ["BODY_SLAM", "DIG", "SLUDGE_WAVE"],
+        "defaultIVs": {
+            "cp500": [34, 4, 14, 8],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "level25CP": 328,
+        "tags": ["paldean"],
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_WOOPER_PALDEAN",
+            "evolutions": ["clodsire"]
+        }
+    }, {
+        "dex": 194,
         "speciesName": "Wooper (Shadow)",
         "speciesId": "wooper_shadow",
         "baseStats": {
@@ -37761,8 +37787,8 @@
         "thirdMoveCost": 50000,
         "released": false,
         "family": {
-            "id": "FAMILY_WOOPER",
-            "parent": "wooper"
+            "id": "FAMILY_WOOPER_PALDEAN",
+            "parent": "wooper_paldean"
         }
     }, {
         "dex": 981,
