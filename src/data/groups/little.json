@@ -81,6 +81,10 @@
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["BODY_SLAM", "MUD_BOMB"]
 }, {
+    "speciesId": "wooper_paldean",
+    "fastMove": "POISON_JAB",
+    "chargedMoves": ["BODY_SLAM", "DIG"]
+}, {
     "speciesId": "wynaut",
     "fastMove": "COUNTER",
     "chargedMoves": ["MIRROR_COAT", "NONE"]

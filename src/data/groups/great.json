@@ -44,6 +44,11 @@
     "fastMove": "WING_ATTACK",
     "chargedMoves": ["AERIAL_ACE", "DIG"]
 }, {
+    "speciesId": "gligar",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["AERIAL_ACE", "DIG"],
+    "shadowType": "shadow"
+}, {
     "speciesId": "jellicent",
     "fastMove": "HEX",
     "chargedMoves": ["SURF", "SHADOW_BALL"]
@@ -106,6 +111,10 @@
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["FOUL_PLAY", "RETURN"]
 }, {
+    "speciesId": "sandslash_alolan",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"]
+}, {
     "speciesId": "sandslash_alolan_shadow",
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"],
@@ -114,6 +123,10 @@
     "speciesId": "scrafty",
     "fastMove": "COUNTER",
     "chargedMoves": ["POWER_UP_PUNCH", "FOUL_PLAY"]
+}, {
+    "speciesId": "serperior",
+    "fastMove": "VINE_WHIP",
+    "chargedMoves": ["FRENZY_PLANT", "AERIAL_ACE"]
 }, {
     "speciesId": "steelix",
     "fastMove": "DRAGON_TAIL",
@@ -157,16 +170,7 @@
     "fastMove": "COUNTER",
     "chargedMoves": ["BODY_SLAM", "BULLDOZE"]
 }, {
-    "speciesId": "serperior",
-    "fastMove": "VINE_WHIP",
-    "chargedMoves": ["FRENZY_PLANT", "AERIAL_ACE"]
-}, {
-    "speciesId": "gligar",
-    "fastMove": "WING_ATTACK",
-    "chargedMoves": ["AERIAL_ACE", "DIG"],
-    "shadowType": "shadow"
-}, {
-    "speciesId": "sandslash_alolan",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"]
+    "speciesId": "clodsire",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["EARTHQUAKE", "STONE_EDGE"]
 }]

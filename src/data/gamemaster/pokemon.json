@@ -10319,7 +10319,8 @@
     },
     "types": ["water", "ground"],
     "fastMoves": ["MUD_SHOT", "WATER_GUN"],
-    "chargedMoves": ["EARTHQUAKE", "SLUDGE_BOMB", "STONE_EDGE", "ACID_SPRAY", "MUD_BOMB"],
+    "chargedMoves": ["EARTHQUAKE", "SLUDGE_BOMB", "STONE_EDGE", "ACID_SPRAY", "MUD_BOMB", "AQUA_TAIL"],
+	"eliteMoves": ["AQUA_TAIL"],
     "defaultIVs": {
         "cp500": [9.5, 4, 12, 14],
         "cp1500": [28.5, 4, 14, 10],
@@ -10345,7 +10346,8 @@
     },
     "types": ["water", "ground"],
     "fastMoves": ["MUD_SHOT", "WATER_GUN"],
-    "chargedMoves": ["EARTHQUAKE", "SLUDGE_BOMB", "STONE_EDGE", "ACID_SPRAY", "MUD_BOMB"],
+	"chargedMoves": ["EARTHQUAKE", "SLUDGE_BOMB", "STONE_EDGE", "ACID_SPRAY", "MUD_BOMB", "AQUA_TAIL"],
+	"eliteMoves": ["AQUA_TAIL"],
     "defaultIVs": {
         "cp500": [9.5, 4, 12, 14],
         "cp1500": [28.5, 4, 14, 10],
@@ -37212,7 +37214,8 @@
     },
     "types": ["poison", "ground"],
     "fastMoves": ["POISON_STING", "MUD_SHOT"],
-    "chargedMoves": ["SLUDGE_BOMB", "EARTHQUAKE", "STONE_EDGE", "ACID_SPRAY", "WATER_PULSE"],
+    "chargedMoves": ["SLUDGE_BOMB", "EARTHQUAKE", "STONE_EDGE", "ACID_SPRAY", "WATER_PULSE", "MEGAHORN"],
+	"eliteMoves": ["MEGAHORN"],
     "defaultIVs": {
         "cp500": [10, 5, 9, 5],
         "cp1500": [29, 4, 15, 14],
@@ -37220,7 +37223,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_WOOPER_PALDEAN",
         "parent": "wooper_paldean"
