@@ -11,10 +11,10 @@ require_once '../../header.php';
 
 ?>
 
-<div class="section article white grubbin">
-	<h1>Woopoer  Community Day Guide for PvP</h1>
-	<div class="date">Last updated November 1st, 2023</div>
-	<img src="<?php echo $WEB_ROOT;?>articles/article-assets/community-day/23-09-grubbin/banner.jpg" />
+<div class="section article white wooper">
+	<h1>Wooper Community Day Guide for PvP</h1>
+	<div class="date">Last updated November 2nd, 2023</div>
+	<img src="<?php echo $WEB_ROOT;?>articles/article-assets/community-day/23-11-wooper/banner.jpg" />
 	<p>Are you prepared to acquire the Sire? Wooper will be making a splash this Community Day alongside the debut of its Poison-type relatives, Paldean Wooper and Clodsire. How noteworthy are they for PvP and how good are their exclusive moves? Let's find out! You can also see more info on Wooper Community Day at the <a href="https://pokemongolive.com/en/post/communityday-november-2023-wooper/" target="_blank">Pokemon GO blog</a>. </p>
 
 	<a name="overview"></a>
@@ -72,15 +72,15 @@ require_once '../../header.php';
 	<div class="faq-item">
 		<h3 class="article-header"><strong>How good is Clodsire for PvP?</strong></h3>
 		<div class="faq-answer">
-			<p><b>Clodsire has very strong potential in Great League with amazing stats, solid typing, and a wide movepool.</b> Its bulk is comparable to the likes of Registeel and Azumarill, and its Poison/Ground typing gives it a chance to fill a void that Nidoqueen left vacant.</p>
-			<p>Clodsire is comparable to related Pokemon like Galarian Stunfisk and Quagsire in terms of playstyle and capability. Clodsire poses a strong threat to Pokemon like Registeel, Bastiodon, and Carbink who have no recourse against it, and handles Spark Lanturn in most scenarios. Its biggest counters include Gligar, Swampert, and opposing Ground types which can take advantage of its weaknesses. Most notably, Clodsire falls short in key meta matchups like Medicham and Lickitung. While this may limit its presence in tournament play, it should still see plenty of action in GO Battle League and themed cups.</p>
+			<p><b>Clodsire has very strong potential in Great League with amazing stats, solid typing, and a wide movepool.</b> Its bulk is comparable to the likes of Registeel and Azumarill, and its Poison/Ground typing gives it potential to fill the void left by Nidoqueen.</p>
+			<p>Clodsire is comparable to Galarian Stunfisk and Quagsire in terms of playstyle, moves, and capabilities. Clodsire poses a strong threat to Registeel, Bastiodon, and Carbink who have no recourse against it, and handles Spark Lanturn in most scenarios. Its biggest counters include Gligar, Swampert, and opposing Ground types against which its Poison typing is vulnerable. Notably, Clodsire falls short in key meta matchups like Medicham and Lickitung. While this may limit its presence in tournament play, it should still see plenty of action in GO Battle League and themed cups.</p>
 		</div>
 	</div>
 
 	<div class="faq-item">
-		<h3 class="article-header"><strong>How good is Clodsire with Megahorn? What moveset should I run?</strong></h3>
+		<h3 class="article-header"><strong>How good is Clodsire with Megahorn? What moveset should I use?</strong></h3>
 		<div class="faq-answer">
-			<p><b>Megahorn is a solid move that may have use in themed cups, but is unlikely to be preferred over Clodsire's other attacks.</b> Its Fast Moves include Mud Shot and Poison Sting for energy generation, while its Charged Moves include hard hitting attacks like Earthquake, Sludge Bomb, and Stone Edge. Megahorn is comparable in power to all of these and can provide coverage against Psychic, Dark, and Grass in cups where those are major threats.</p>
+			<p><b>Megahorn is a solid move that may have use in themed cups, but is unlikely to be preferred over Clodsire's other attacks. Consider keeping multiple Clodsire for different move variations.</b> Its Fast Moves include Mud Shot and Poison Sting for energy generation, while its Charged Moves include hard hitting attacks like Earthquake, Sludge Bomb, and Stone Edge. Megahorn is comparable in power to all of these and can provide coverage against Psychic, Dark, and Grass in cups where those are major threats.</p>
 			<p>For general play, Clodsire will typically want Earthquake plus your choice of Sludge Bomb or Stone Edge. Sludge Bomb is Clodsire's most accessible attack (no, Acid Spray, you don't count), and targets Grass and Fairy types. Stone Edge gives Clodsire the coveted Edge+Quake coverage combo with few true walls, and provides coverage against Ice types like Froslass and Dewgong. When it comes to choosing a Fast Move, Mud Shot and Poison Sting are identical attacks. Mud Shot will likely be preferred for general play as it's less widely resisted, including in the mirror matchup. Poison Sting can further strengthen Clodsire's matchups against Grass or Fairy types, and pairs best with Sludge Bomb in this regard.</p>
 		</div>
 	</div>
@@ -89,8 +89,8 @@ require_once '../../header.php';
 	<div class="faq-item">
 		<h3 class="article-header"><strong>How good is Quagsire with Aqua Tail?</strong></h3>
 		<div class="faq-answer">
-			<p><b>Quagsire will remain a secondary choice in competitive play, but Aqua Tail is a solid sidegrade that opens up new moveset options.</b> Quagsire sits alongside Whiscash as a capable backup to the perennial PvP favorite, Swampert. Still, Quagsire has seen its fair share of PvP play over the years. It's lacked meaningful Water-type offense until now, and Aqua Tail slots into Quagsire's growing Charged Move pool as an equally favorable option.</p>
-			<p>Aqua Tail deals 50 damage for 35 energy (1.42 DPE), not the strongest Water attack but a clear upgrade over Water Pulse (1.16 DPE) and comparable to Quagsire's recent addition of Mud Bomb (1.5 DPE). Aqua Tail improves Quagsire specifically against Gligar, who otherwise takes neutral damage from Stone Edge. Shadow Quagsire also stands to benefit the most from Aqua Tail, as the attack is Quagsire's fastest. Aqua Tail can be paired with any of Mud Bomb, Stone Edge, or even Earthquake—though with the latter, Quagsire may be simply better handing things off to Swampert. In any case, Aqua Tail Quagsire can still succeed on its own or in metas where Swampert is absent.</p>
+			<p><b>Quagsire will remain a secondary choice in competitive play, but Aqua Tail is a solid sidegrade that opens up new moveset options.</b> Quagsire sits alongside Whiscash as a capable backup to the perennial PvP favorite, Swampert. Still, Quagsire has seen its share of play over the years, especially in themed cups. It's lacked meaningful Water-type offense until now, and Aqua Tail slots into Quagsire's growing Charged Move pool as an equally favorable option.</p>
+			<p>Aqua Tail deals 50 damage for 35 energy (1.42 DPE), not the strongest Water attack but a clear upgrade over Water Pulse (1.16 DPE) and comparable to Quagsire's recent addition of Mud Bomb (1.5 DPE). Aqua Tail improves Quagsire specifically against Gligar, who otherwise takes neutral damage from Stone Edge. Shadow Quagsire stands to benefit the most from Aqua Tail, as Aqua Tail is Quagsire's fastest attack. Aqua Tail can be paired with any of Mud Bomb, Stone Edge, or even Earthquake—though with the latter, Quagsire may be better handing things off to Swampert. In any case, Aqua Tail Quagsire can still succeed on its own or in metas where Swampert is absent.</p>
 		</div>
 	</div>
 

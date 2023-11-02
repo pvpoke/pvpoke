@@ -204,6 +204,10 @@ input.article-search {
   background-image: url("../articles/article-assets/community-day/megas/scizor.png");
 }
 
+[mega=groudon] .mega-image {
+  background-image: url("../articles/article-assets/community-day/megas/groudon.png");
+}
+
 /* FAQ styling */
 .faq-item {
   border-radius: 8px;
@@ -838,6 +842,21 @@ input.article-search {
   border-bottom: 1px solid #4a5a25;
 }
 .section.grubbin .faq-item {
+  background: #ffffff;
+}
+
+.section.wooper {
+  background: #f0f4f7;
+  border: 4px solid #504545;
+}
+.section.wooper .article-header, .section.wooper .mega-section {
+  background: #504545 !important;
+}
+.section.wooper .feature h4 {
+  color: #504545;
+  border-bottom: 1px solid #504545;
+}
+.section.wooper .faq-item {
   background: #ffffff;
 }
 
