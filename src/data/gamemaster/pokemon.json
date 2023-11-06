@@ -36121,7 +36121,7 @@
     },
     "buddyDistance": 1,
     "thirdMoveCost": 50000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_TADBULB",
         "evolutions": ["bellibolt"]
@@ -36145,7 +36145,7 @@
     },
     "buddyDistance": 1,
     "thirdMoveCost": 50000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_TADBULB",
         "parent": "tadbulb"
