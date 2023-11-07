@@ -159,7 +159,9 @@
             "filterType": "id",
             "name": "Species",
             "values": ["stunfisk", "charjabug", "vikavolt", "heliolisk"]
-        }]
+        }],
+        "partySize": 3,
+        "presetOnly": true
     }, {
         "name": "elementremix",
         "title": "Element Cup Remix",
@@ -430,14 +432,6 @@
         "meta": "premiermaster",
         "showCup": true,
         "showFormat": false,
-        "showMeta": true
-    }, {
-        "title": "Halloween Cup",
-        "cup": "halloween",
-        "cp": 1500,
-        "meta": "halloween",
-        "showCup": true,
-        "showFormat": true,
         "showMeta": true
     }, {
         "title": "Electric Cup",

@@ -14,5 +14,7 @@
         "filterType": "id",
         "name": "Species",
         "values": ["stunfisk", "charjabug", "vikavolt", "heliolisk"]
-    }]
+    }],
+	"partySize": 3,
+	"presetOnly": true
 }
