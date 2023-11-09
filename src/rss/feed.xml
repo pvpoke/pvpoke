@@ -7,11 +7,16 @@
 		<description>Website updates for PvPoke.com and other news for Pokemon GO PvP.</description>
 
 		<item>
-			<description>Simple Simple Simple</description>
+			<title>Test Post 1</title>
+			<description>blah blah blah</description>
+			<link>https://pvpoke.com/</link>
+			<pubDate>Thu, 09 Nov 2023 16:09:48 GMT</pubDate>
 		</item>
 		<item>
-			<title>Test Update</title>
-			<description>Hello! This is a test update of the PvPoke RSS Feed.</description>
+			<title>Test Post 2</title>
+			<description>Rankings link goes here</description>
+			<link>http://localhost/pvpoke/src/rankings/all/1500/overall/</link>
+			<pubDate>Thu, 09 Nov 2023 16:10:30 GMT</pubDate>
 		</item>
 	</channel>
 </rss>
