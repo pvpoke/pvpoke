@@ -30,6 +30,7 @@ require_once '../header.php';
 
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/RSSReader.js?v=<?php echo $SITE_VERSION; ?>"></script>
 
 <script>
 
@@ -37,16 +38,12 @@ $(function() {
 
 	var xml;
 
-	$.ajax({
-		type: "GET" ,
-		url: "feed.xml?v="+siteVersion,
-		dataType: "xml" ,
-		success: function(data) {
-			xml = data;
+	function getXMLData(data){
+		xml = data;
+		updateXMLDisplay();
+	}
 
-			updateXMLDisplay();
-		}
-	});
+	var rss = RSS.getInstance(getXMLData)
 
 
 	$("#add-post").click(function(e){
@@ -61,17 +58,7 @@ $(function() {
 	function updateXMLDisplay(){
 		$("textarea.export").val((new XMLSerializer()).serializeToString(xml));
 
-		// Display RSS feed
-		var items = [];
-
-		$(xml).find("channel item").each(function(index, item){
-			items.push({
-				title: $(item).find("title")[0].textContent,
-				description: $(item).find("description")[0].textContent,
-				link: $(item).find("link")[0].textContent,
-				pubDate: new Date(Date.parse($(item).find("pubDate")[0].textContent))
-			});
-		});
+		var items = rss.feedToObjects(xml);
 
 		console.log(items);
 	}
