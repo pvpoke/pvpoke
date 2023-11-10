@@ -10,7 +10,7 @@
 		<div class="feed">
 			<div class="news-item">
 				<h4>Update Title</h4>
-				<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo lacus nec est laoreet ultrices. Etiam sed neque sit amet metus vestibulum molestie quis a justo. Vestibulum sed ligula tincidunt, pulvinar ex a, sagittis erat. Sed sit amet purus lectus. Sed viverra risus justo, in volutpat nunc pretium eleifend.</div>
+				<div>Coming at you with a mid-week top performer update featuring Clodsire! Mud Shot has an early lead over Poison Sting, but overall, multiple movesets look viable.  Dewgong and Jellicent stand to gain if Clodsire hangs around (and Regi doesn't).</div>
 			</div>
 		</div>
 		<div class="news-item template hide">

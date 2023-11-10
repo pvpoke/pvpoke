@@ -5306,9 +5306,9 @@ a.pokebattler {
 }
 .feed-container .feed-expand {
   cursor: pointer;
-  background: #fff;
+  background: #f8fbfe;
   color: #003462;
-  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
   width: 50px;
   height: 50px;
   border-radius: 50px;
@@ -5316,7 +5316,8 @@ a.pokebattler {
   bottom: 0;
   left: calc(50% - 25px);
   font-size: 18px;
-  border: 1px solid #003462;
+  font-weight: bold;
+  border: 2px solid #003462;
 }
 .feed-container .feed-expand:after {
   content: "∨";
