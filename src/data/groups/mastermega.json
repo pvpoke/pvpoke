@@ -23,6 +23,14 @@
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["OUTRAGE", "SAND_TOMB"]
 }, {
+    "speciesId": "garchomp_mega",
+    "fastMove": "DRAGON_TAIL",
+    "chargedMoves": ["EARTH_POWER", "SAND_TOMB"]
+}, {
+    "speciesId": "garchomp_mega",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["EARTH_POWER", "OUTRAGE"]
+}, {
     "speciesId": "scizor_mega",
     "fastMove": "FURY_CUTTER",
     "chargedMoves": ["X_SCISSOR", "IRON_HEAD"]
