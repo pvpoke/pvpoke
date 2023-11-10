@@ -10,12 +10,14 @@ var RSS = (function () {
 
 		$.ajax({
 			type: "GET" ,
-			url: "../rss/feed.xml?v="+siteVersion,
+			url: webRoot+"/rss/feed.xml?v="+siteVersion,
 			dataType: "xml" ,
 			success: function(data) {
 				xml = data;
-
-				callback(xml);
+				
+				if(typeof callback === 'function'){
+					callback(xml);
+				}
 			}
 		});
 

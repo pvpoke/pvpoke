@@ -3,15 +3,17 @@
 function Main(){
 	var interface;
 	var gm;
-	
+
 	init();
-	
+
 	function init(){
-		var interface = InterfaceMaster.getInstance();
-		var gm = GameMaster.getInstance();
-		
+		if(typeof InterfaceMaster !== 'undefined'){
+			interface = InterfaceMaster.getInstance();
+		}
+		gm = GameMaster.getInstance();
+
 	}
-	
+
 	this.getGM = function(){
 		return gm;
 	}
