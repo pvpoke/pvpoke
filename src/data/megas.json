@@ -142,24 +142,6 @@
     "tags": ["shadoweligible", "mega"],
     "eliteMoves": ["METEOR_MASH"]
 }, {
-    "dex": 445,
-    "speciesName": "Garchomp (Mega)",
-    "speciesId": "garchomp_mega",
-    "baseStats": {
-        "atk": 339,
-        "def": 222,
-        "hp": 239
-    },
-    "types": ["dragon", "ground"],
-    "fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
-    "chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "OUTRAGE", "SAND_TOMB", "EARTH_POWER"],
-    "eliteMoves": ["EARTH_POWER"],
-    "defaultIVs": {
-        "cp1500": [10, 5, 14, 11],
-        "cp2500": [17, 5, 7, 10]
-    },
-    "tags": ["mega"]
-}, {
     "dex": 448,
     "speciesName": "Lucario (Mega)",
     "speciesId": "lucario_mega",

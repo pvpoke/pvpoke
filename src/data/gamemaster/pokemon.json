@@ -20857,6 +20857,28 @@
     "tags": ["shadoweligible"]
 }, {
     "dex": 445,
+    "speciesName": "Garchomp (Mega)",
+    "speciesId": "garchomp_mega",
+    "baseStats": {
+        "atk": 339,
+        "def": 222,
+        "hp": 239
+    },
+    "types": ["dragon", "ground"],
+    "fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
+    "chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "OUTRAGE", "SAND_TOMB", "EARTH_POWER"],
+    "eliteMoves": ["EARTH_POWER"],
+    "defaultIVs": {
+		"cp500": [3.5, 12, 15, 14],
+        "cp1500": [10, 5, 14, 11],
+        "cp2500": [17, 5, 7, 10]
+    },
+    "tags": ["mega"],
+	"buddyDistance": 5,
+    "thirdMoveCost": 75000,
+    "released": true
+}, {
+    "dex": 445,
     "speciesName": "Garchomp (Shadow)",
     "speciesId": "garchomp_shadow",
     "baseStats": {
