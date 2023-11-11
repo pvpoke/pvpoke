@@ -23,11 +23,16 @@ var InterfaceMaster = (function () {
 
 			function displayFeed(xml){
 				feed = rss.feedToObjects(xml);
-				console.log(feed);
+
+				for(var i = 0; i < feed.length; i++){
+					var $html = rss.generateItemHTML(feed[i]);
+					$(".feed").append($html);
+				}
 			}
 
 			$("button.feed-expand").click(function(e){
 				$(".feed-container").toggleClass("expanded");
+				$(".feed").scrollTop(0);
 			});
 
 		}

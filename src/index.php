@@ -5,19 +5,19 @@
 	<p class="small">Welcome to PvPoke.com, an open-source tool for Pokemon GO PvP and GO Battle League!</p>
 
 	<!--Update section for updates-->
-
+	<h3>What's New</h3>
 	<div class="feed-container">
-		<div class="feed">
-			<div class="news-item">
-				<h4>Update Title</h4>
-				<div>Coming at you with a mid-week top performer update featuring Clodsire! Mud Shot has an early lead over Poison Sting, but overall, multiple movesets look viable.  Dewgong and Jellicent stand to gain if Clodsire hangs around (and Regi doesn't).</div>
+		<div class="feed"></div>
+
+		<div class="news-item template hide">
+			<h4></h4>
+			<div class="news-content"></div>
+			<div class="news-info">
+				<div class="news-date"></div>
+				<a href="#"><div class="link-text">pvpoke.com</div><div>&rarr;</div></a>
 			</div>
 		</div>
-		<div class="news-item template hide">
-			<h3>Update Title</h3>
-			<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo lacus nec est laoreet ultrices. Etiam sed neque sit amet metus vestibulum molestie quis a justo. Vestibulum sed ligula tincidunt, pulvinar ex a, sagittis erat. Sed sit amet purus lectus. Sed viverra risus justo, in volutpat nunc pretium eleifend.</div>
-		</div>
-		<div class="fade-bottom"></div>
+
 		<button class="feed-expand"></button>
 		<a href="#" class="feed-subscribe">Subscribe via RSS</a>
 	</div>

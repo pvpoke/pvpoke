@@ -20,13 +20,21 @@ require_once '../header.php';
 	<hr></hr>
 	<br>
 
-	<div class="feed">
+	<div class="feed"></div>
+
+	<div class="news-item template hide">
+		<h4></h4>
+		<div class="news-content"></div>
+		<div class="news-info">
+			<div class="news-date"></div>
+			<a href="#"><div class="link-text">pvpoke.com</div><div>&rarr;</div></a>
+		</div>
 	</div>
 
 </div>
 
 <textarea class="export" style="width:100%; height: 150px; padding: 10px;"></textarea>
-<div class="button copy export-json">Copy</div>
+<div class="button copy export-xml">Copy</div>
 
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>
@@ -60,8 +68,22 @@ $(function() {
 
 		var items = rss.feedToObjects(xml);
 
-		console.log(items);
+		$(".feed").html("");
+
+		for(var i = 0; i < items.length; i++){
+			var $html = rss.generateItemHTML(items[i]);
+			$(".feed").append($html);
+		}
 	}
+
+	$(".export-xml").click(function(e){
+		e.preventDefault();
+
+		var el = $(e.target).prev()[0];
+		el.focus();
+		el.setSelectionRange(0, el.value.length);
+		document.execCommand("copy");
+	});
 
 });
 
