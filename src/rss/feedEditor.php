@@ -13,7 +13,6 @@ require_once '../header.php';
 	<input type="text" id="post-title" placeholder="Post title" style="margin-bottom: 10px; font-weight: bold;" />
 	<input type="text" id="post-link" placeholder="URL" value="https://pvpoke.com/" />
 	<textarea id="post-content" style="margin-top: 10px; width: 100%; height: 200px; font-family: sans-serif; font-size: 16px;" ></textarea>
-	<input type="file" id="upload" accept="image/png, image/jpeg" />
 
 	<div id="add-post" class="button" style="max-width: 200px; margin: 20px 0 0 0;">Add Post</div>
 

@@ -79,13 +79,13 @@ var RSS = (function () {
 			var feed = object.feedToObjects();
 			var item = feed[0];
 
-			$(".latest-section a").html(item.title);
+			$(".latest-section a.latest-link").html(item.title);
 			$(".latest-section .date").html(item.pubDate.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" }));
 
 			if(item.link == "https://pvpoke.com/" || item.link.indexOf("pvpoke.com") == -1){
-				$(".latest-section a").attr("href", "https://pvpoke.com/#news");
+				$(".latest-section a.latest-link").attr("href", "https://pvpoke.com/#news");
 			} else{
-				$(".latest-section a").attr("href", item.link);
+				$(".latest-section a.latest-link").attr("href", item.link);
 			}
 		}
 

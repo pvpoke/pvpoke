@@ -460,6 +460,24 @@ footer{
 			}
 		}
 	}
+
+	h3{
+		margin-bottom: 10px;
+	}
+
+	.flex.new-header{
+		justify-content: space-between;
+		align-items: flex-end;
+
+		a{
+			font-size:14px;
+			font-weight: bold;
+			margin-bottom: 10px;
+			padding-left: 20px;
+			background-image: url('../img/themes/sunflower/rss-blue.png');
+			background-repeat: no-repeat;
+		}
+	}
 }
 
 .icon-battle{
@@ -5716,6 +5734,7 @@ a.pokebattler{
 	overflow:hidden;
 	border: 1px solid rgba(0,0,0,0.3);
 	border-radius: 12px;
+	background: rgba(0,0,0,0.05);
 
 	@include transition(all, 0.25s, ease-out, 0s);
 
@@ -5841,9 +5860,24 @@ a.feed-subscribe{
 	font-size: 14px;
 
 	h4{
+		display: flex;
+		justify-content: space-between;
 		margin: 0;
 	    border-bottom: 1px solid #5896ce;
 	    color: #558ec2;
+
+		a{
+			display: block;
+			width:14px;
+			height:14px;
+			background-image: url('../img/themes/sunflower/rss-white.png');
+			background-repeat: no-repeat;
+			background-position: 0 0;
+			background-size: 14px 14px;
+			border-radius: 0;
+			padding: 0 !important;
+		}
+
 	}
 
 	.date{

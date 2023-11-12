@@ -76,6 +76,10 @@
 			}
 		});
 
+		$("header .latest-section h4 a").click(function(e){
+			$("header .menu").slideToggle(125);
+		});
+
 		// Auto select link
 
 		$(".share-link input").click(function(e){

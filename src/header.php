@@ -144,7 +144,7 @@ if(! isset($OG_IMAGE)){
 <?php endif; ?>
 
 <?php if((isset($_SETTINGS->theme))&&($_SETTINGS->theme != "default")): ?>
-	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/themes/<?php echo $_SETTINGS->theme; ?>.css?v=26">
+	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/themes/<?php echo $_SETTINGS->theme; ?>.css?v=27">
 <?php endif; ?>
 
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>
@@ -292,8 +292,8 @@ if(! isset($OG_IMAGE)){
 							<a class="twitter" href="https://twitter.com/pvpoke" target="_blank">Twitter</a>
 							<a class="tera" href="<?php echo $WEB_ROOT; ?>tera/">Tera Raid Counters</a>
 							<div class="latest-section mobile">
-								<h4>Latest</h4>
-								<a href="#"></a>
+								<h4>Latest <a href="<?php echo $WEB_ROOT; ?>#news"></a></h4>
+								<a class="latest-link" href="#"></a>
 								<div class="date"></div>
 							</div>
 						</div>

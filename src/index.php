@@ -72,7 +72,11 @@
 	<?php require 'modules/ads/body-728.php'; ?>
 
 	<!--Update section for updates-->
-	<h3>What's New</h3>
+	<div class="flex new-header">
+		<h3>What's New</h3>
+		<a href="<?php echo $WEB_ROOT; ?>rss/" target="_blank" class="feed-subscribe">RSS Feed</a>
+	</div>
+
 	<div class="feed-container expanded">
 		<div class="feed"></div>
 
@@ -87,8 +91,6 @@
 
 		<button class="feed-expand"></button>
 	</div>
-
-	<a href="#" class="feed-subscribe">Subscribe via RSS</a>
 
 	<?php if($_SETTINGS->ads == 1) : ?>
 		<span data-ccpa-link="1"></span>

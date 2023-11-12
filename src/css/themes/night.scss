@@ -411,6 +411,20 @@ a.toggle{
 	}
 }
 
+.home .flex.new-header a{
+	color: $link-color;
+	background-image: url('../../img/themes/sunflower/rss-green.png');
+}
+
+.feed-container{
+	background: rgba(255,255,255,0.1);
+	border: 1px solid rgba(255,255,255,0.3);
+}
+
+.feed .news-item{
+	border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
 @media only screen and (min-width: 721px){
 	.menu .submenu .submenu-wrap{
 		background:$color-blue-dark;

@@ -25,8 +25,9 @@ var InterfaceMaster = (function () {
 			$("#add-post").click(function(e){
 
 				var pubDate = new Date().toUTCString();
+				var content = $("#post-content").val().replace(/(?:\r\n|\r|\n)/g, '<br>');
 
-				$(xml).find("channel").prepend("<item><title>"+$("#post-title").val()+"</title><description>"+$("#post-content").val()+"</description><link>"+$("#post-link").val()+"</link><pubDate>"+pubDate+"</pubDate></item>");
+				$(xml).find("channel").prepend("<item><title>"+$("#post-title").val()+"</title><description><![CDATA["+content+"]]></description><link>"+$("#post-link").val()+"</link><pubDate>"+pubDate+"</pubDate></item>");
 
 				updateXMLDisplay();
 			});
