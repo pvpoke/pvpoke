@@ -390,6 +390,8 @@ footer{
 /* HOME PAGE STYLING */
 
 .home{
+	margin-top: 0;
+
 	a.button{
 		display:block;
 		text-decoration: none;
@@ -456,6 +458,24 @@ footer{
 			h2{
 				font-size: 24px;
 			}
+		}
+	}
+
+	h3{
+		margin-bottom: 10px;
+	}
+
+	.flex.new-header{
+		justify-content: space-between;
+		align-items: flex-end;
+
+		a{
+			font-size:14px;
+			font-weight: bold;
+			margin-bottom: 10px;
+			padding-left: 20px;
+			background-image: url('../img/themes/sunflower/rss-blue.png');
+			background-repeat: no-repeat;
 		}
 	}
 }
@@ -4966,7 +4986,7 @@ a.pokebattler{
 		    top: 37px;
 			padding: 8px 8px;
     		box-sizing: border-box;
-			box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
+			box-shadow: 0px 5px 5px rgba(0,0,0,0.4);
 
 			a{
 				padding: 9px 8px 9px 38px;
@@ -5022,7 +5042,7 @@ a.pokebattler{
 			.more-parent-menu .submenu{
 				padding-left: 0;
 				display: block;
-				max-height: 300px;
+				max-height: 350px;
 
 				a{
 					font-size: 18px;
@@ -5705,6 +5725,174 @@ a.pokebattler{
 	}
 }
 
+/* RSS Feed */
+
+.feed-container{
+	position: relative;
+    margin: 0 auto 10px auto;
+	height: 150px;
+	overflow:hidden;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 12px;
+	background: rgba(0,0,0,0.05);
+
+	@include transition(all, 0.25s, ease-out, 0s);
+
+	&:after{
+		content: " ";
+	    width: 140%;
+	    height: 100px;
+	    display: block;
+	    position: absolute;
+	    bottom: 0;
+	    box-shadow: inset 0 -14px 10px;
+	    pointer-events: none;
+	    left: -25%;
+	    opacity: 0.15;
+		display: none;
+	}
+
+	&.expanded{
+		height: 400px;
+
+		.feed{
+			height: 100%;
+			overflow-y: auto;
+		}
+
+		.feed-expand:after{
+			content: "∧";
+		}
+	}
+
+	.feed{
+		padding: 8px;
+		position: relative;
+		height: 150px;
+    	overflow: hidden;
+
+		@include transition(all, 0.25s, ease-out, 0s);
+	}
+
+	.feed-expand{
+		cursor: pointer;
+		background: #f8fbfe;
+		color: $color-links;
+		box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+		width: 50px;
+		height: 50px;
+		border-radius: 50px;
+		position: absolute;
+		bottom: -24px;
+		left: calc(50% - 25px);
+		font-size: 18px;
+		font-weight: bold;
+		border: 2px solid $color-links;
+		display: none;
+
+		&:after{
+			content: "∨";
+		}
+	}
+}
+
+a.feed-subscribe{
+	display: block;
+	color: $color-links;
+	font-size: 12px;
+	text-align: right;
+}
+
+.feed{
+	.news-item{
+		font-size: 14px;
+		line-height: 18px;
+		padding: 15px 0;
+	    border-radius: 0;
+	    border-bottom: 1px solid rgba(0,0,0,0.15);
+
+		&:first-of-type{
+			padding-top: 0;
+		}
+
+		&:last-of-type{
+			border-bottom: none;
+		}
+
+		h4{
+			margin-top: 0;
+			font-size: 14px;
+		}
+
+		.news-info{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			font-size:12px;
+			color: rgba(0,0,0,0.75);
+			margin-top: 10px;
+
+			a{
+				display: flex;
+				color: $color-off-white;
+				padding: 2px 10px;
+				text-decoration: none;
+				justify-content: space-between;
+				border-radius: 12px;
+				border: 1px solid #000;
+
+				.link-text{
+					text-decoration: underline;
+					white-space: nowrap;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					width: 145px;
+				}
+
+				@include gradient($color-blue-medium, $color-blue-dark);
+			}
+		}
+	}
+}
+
+.latest-section{
+	padding: 9px 8px 9px 8px;
+	font-size: 14px;
+
+	h4{
+		display: flex;
+		justify-content: space-between;
+		margin: 0;
+	    border-bottom: 1px solid #5896ce;
+	    color: #558ec2;
+
+		a{
+			display: block;
+			width:14px;
+			height:14px;
+			background-image: url('../img/themes/sunflower/rss-white.png');
+			background-repeat: no-repeat;
+			background-position: 0 0;
+			background-size: 14px 14px;
+			border-radius: 0;
+			padding: 0 !important;
+		}
+
+	}
+
+	.date{
+		font-size: 12px;
+		color: #558ec2;
+		padding-left: 38px;
+	}
+
+	a{
+		font-size: 14px !important;
+		padding-bottom: 5px !important;
+		line-height: 20px;
+	}
+}
+
 
 @media only screen and (min-width: 481px) {
 	.home a.button h2{
@@ -6032,6 +6220,7 @@ iframe#bh-div {
 
 	#nitro-body-mobile{
 		display: block;
+		margin-top: 30px;
 	}
 
 	.mobile-ad-container{
@@ -6048,6 +6237,7 @@ iframe#bh-div {
 
 	#nitro-body-desktop{
 		display: block;
+		margin-top: 30px;
 	}
 
 	.desktop-ad-container{

@@ -81,6 +81,9 @@ RewriteRule custom-rankings.?$ custom-rankings.php [L,QSA]
 
 RewriteRule articles/(.*)/$ articles/$1.php [L,QSA]
 
+RewriteRule rss/$ rss/feed.xml [L,QSA]
+
+
 # Redirect index.php to /
 
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.*)index\.php($|\ |\?)

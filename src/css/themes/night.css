@@ -375,6 +375,19 @@ a.toggle {
   box-shadow: inset 0 0 10px #3eca9f;
 }
 
+.home .flex.new-header a {
+  color: #3eca9f;
+  background-image: url("../../img/themes/sunflower/rss-green.png");
+}
+
+.feed-container {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.feed .news-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
 @media only screen and (min-width: 721px) {
   .menu .submenu .submenu-wrap {
     background: #003462;
