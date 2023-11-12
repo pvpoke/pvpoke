@@ -10,7 +10,7 @@ var RSS = (function () {
 
 		$.ajax({
 			type: "GET" ,
-			url: webRoot+"/rss/feed.xml?v="+siteVersion,
+			url: webRoot+"rss/feed.xml?v="+siteVersion,
 			dataType: "xml" ,
 			success: function(data) {
 				object.xml = data;
@@ -58,7 +58,7 @@ var RSS = (function () {
 			$html.find(".news-content").html(item.description);
 			$html.find(".news-date").html(item.pubDate.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" }));
 
-			if(item.link == "https://pvpoke.com/"){
+			if(item.link == "https://pvpoke.com/" || item.link == "https://pvpoke.com/#news"){
 				$html.find(".news-info a").remove();
 			} else{
 				var linkText = item.link.replace("https://", "");

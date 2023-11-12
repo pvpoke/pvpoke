@@ -76,7 +76,7 @@
 			}
 		});
 
-		$("header .latest-section h4 a").click(function(e){
+		$("header .latest-section a").click(function(e){
 			$("header .menu").slideToggle(125);
 		});
 
