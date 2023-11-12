@@ -391,7 +391,7 @@ footer{
 
 .home{
 	margin-top: 0;
-	
+
 	a.button{
 		display:block;
 		text-decoration: none;
@@ -4968,7 +4968,7 @@ a.pokebattler{
 		    top: 37px;
 			padding: 8px 8px;
     		box-sizing: border-box;
-			box-shadow: 0px 5px 5px rgba(0,0,0,0.2);
+			box-shadow: 0px 5px 5px rgba(0,0,0,0.4);
 
 			a{
 				padding: 9px 8px 9px 38px;
@@ -5024,7 +5024,7 @@ a.pokebattler{
 			.more-parent-menu .submenu{
 				padding-left: 0;
 				display: block;
-				max-height: 300px;
+				max-height: 350px;
 
 				a{
 					font-size: 18px;
@@ -5711,22 +5711,34 @@ a.pokebattler{
 
 .feed-container{
 	position: relative;
-    margin: 0 auto 50px auto;
+    margin: 0 auto 10px auto;
 	height: 150px;
-	border-bottom: 2px solid $color-links;
+	overflow:hidden;
+	border: 1px solid rgba(0,0,0,0.3);
+	border-radius: 12px;
 
 	@include transition(all, 0.25s, ease-out, 0s);
 
+	&:after{
+		content: " ";
+	    width: 140%;
+	    height: 100px;
+	    display: block;
+	    position: absolute;
+	    bottom: 0;
+	    box-shadow: inset 0 -14px 10px;
+	    pointer-events: none;
+	    left: -25%;
+	    opacity: 0.15;
+		display: none;
+	}
+
 	&.expanded{
-		height: 800px;
+		height: 400px;
 
 		.feed{
 			height: 100%;
 			overflow-y: auto;
-
-			&:after{
-				display: none;
-			}
 		}
 
 		.feed-expand:after{
@@ -5735,24 +5747,12 @@ a.pokebattler{
 	}
 
 	.feed{
+		padding: 8px;
 		position: relative;
 		height: 150px;
     	overflow: hidden;
 
 		@include transition(all, 0.25s, ease-out, 0s);
-
-		&:after{
-			content: " ";
-		    width: 140%;
-		    height: 100px;
-		    display: block;
-		    position: absolute;
-		    bottom: 0;
-		    box-shadow: inset 0 -34px 30px;
-		    pointer-events: none;
-		    left: -25%;
-		    opacity: 0.15;
-		}
 	}
 
 	.feed-expand{
@@ -5769,19 +5769,19 @@ a.pokebattler{
 		font-size: 18px;
 		font-weight: bold;
 		border: 2px solid $color-links;
+		display: none;
 
 		&:after{
 			content: "∨";
 		}
 	}
+}
 
-	a.feed-subscribe{
-		color: $color-links;
-		font-size: 12px;
-		position: absolute;
-		bottom: -25px;
-		right: 0;
-	}
+a.feed-subscribe{
+	display: block;
+	color: $color-links;
+	font-size: 12px;
+	text-align: right;
 }
 
 .feed{
@@ -5803,7 +5803,6 @@ a.pokebattler{
 		h4{
 			margin-top: 0;
 			font-size: 14px;
-			display:none;
 		}
 
 		.news-info{
@@ -5834,6 +5833,29 @@ a.pokebattler{
 				@include gradient($color-blue-medium, $color-blue-dark);
 			}
 		}
+	}
+}
+
+.latest-section{
+	padding: 9px 8px 9px 8px;
+	font-size: 14px;
+
+	h4{
+		margin: 0;
+	    border-bottom: 1px solid #5896ce;
+	    color: #558ec2;
+	}
+
+	.date{
+		font-size: 12px;
+		color: #558ec2;
+		padding-left: 38px;
+	}
+
+	a{
+		font-size: 14px !important;
+		padding-bottom: 5px !important;
+		line-height: 20px;
 	}
 }
 

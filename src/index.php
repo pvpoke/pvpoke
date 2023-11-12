@@ -4,24 +4,6 @@
 
 	<p class="small">Welcome to PvPoke.com, an open-source tool for Pokemon GO PvP and GO Battle League!</p>
 
-	<!--Update section for updates-->
-	<h3>What's New</h3>
-	<div class="feed-container">
-		<div class="feed"></div>
-
-		<div class="news-item template hide">
-			<h4></h4>
-			<div class="news-content"></div>
-			<div class="news-info">
-				<div class="news-date"></div>
-				<a href="#"><div class="link-text">pvpoke.com</div><div>&rarr;</div></a>
-			</div>
-		</div>
-
-		<button class="feed-expand"></button>
-		<a href="#" class="feed-subscribe">Subscribe via RSS</a>
-	</div>
-
 	<a href="<?php echo $WEB_ROOT; ?>battle/" class="button">
 		<span class="btn-content-wrap">
 			<span class="btn-icon btn-icon-battle"></span>
@@ -75,6 +57,8 @@
 
 	<h3>Pokemon Scarlet &amp; Violet</h3>
 
+	<a name="news"></a>
+
 	<a href="<?php echo $WEB_ROOT; ?>tera/" class="button tera-button">
 		<span class="btn-content-wrap">
 			<span class="btn-icon btn-icon-tera"></span>
@@ -86,6 +70,25 @@
 	</a>
 
 	<?php require 'modules/ads/body-728.php'; ?>
+
+	<!--Update section for updates-->
+	<h3>What's New</h3>
+	<div class="feed-container expanded">
+		<div class="feed"></div>
+
+		<div class="news-item template hide">
+			<h4></h4>
+			<div class="news-content"></div>
+			<div class="news-info">
+				<div class="news-date"></div>
+				<a href="#"><div class="link-text">pvpoke.com</div><div>&rarr;</div></a>
+			</div>
+		</div>
+
+		<button class="feed-expand"></button>
+	</div>
+
+	<a href="#" class="feed-subscribe">Subscribe via RSS</a>
 
 	<?php if($_SETTINGS->ads == 1) : ?>
 		<span data-ccpa-link="1"></span>
@@ -99,7 +102,6 @@ if (strpos($WEB_ROOT, 'src') !== false) : ?>
 
 	<script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 	<script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>
-	<script src="<?php echo $WEB_ROOT; ?>js/interface/RSSReader.js?v=<?php echo $SITE_VERSION; ?>"></script>
 	<script src="<?php echo $WEB_ROOT; ?>js/interface/HomeInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
 	<script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
 	<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js?v=<?php echo $SITE_VERSION; ?>"></script>

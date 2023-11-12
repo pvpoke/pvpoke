@@ -1,17 +1,19 @@
 // JavaScript Document
 
 function Main(){
-	
+
 	var interface;
 	var gm;
-	
+	var rss;
+
 	init();
-	
+
 	function init(){
-		var interface = InterfaceMaster.getInstance();
-		var gm = GameMaster.getInstance();
+		interface = InterfaceMaster.getInstance();
+		gm = GameMaster.getInstance();
+		rss = RSS.getInstance();
 	}
-	
+
 	this.getGM = function(){
 		return gm;
 	}

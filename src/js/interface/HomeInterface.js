@@ -14,14 +14,13 @@ var InterfaceMaster = (function () {
 
 			var self = this;
 			var gm = GameMaster.getInstance();
-			var rss = RSS.getInstance(displayFeed);
+			var rss = RSS.getInstance();
 			var feed;
 
 			this.init = function(){
-
 			};
 
-			function displayFeed(xml){
+			this.displayRSSFeed = function(xml){
 				feed = rss.feedToObjects(xml);
 
 				for(var i = 0; i < feed.length; i++){

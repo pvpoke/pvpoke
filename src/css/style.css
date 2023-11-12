@@ -4666,7 +4666,7 @@ a.pokebattler {
     top: 37px;
     padding: 8px 8px;
     box-sizing: border-box;
-    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.4);
   }
   header .menu a {
     padding: 9px 8px 9px 38px;
@@ -4713,7 +4713,7 @@ a.pokebattler {
   header .menu .more-parent-menu .submenu {
     padding-left: 0;
     display: block;
-    max-height: 300px;
+    max-height: 350px;
   }
   header .menu .more-parent-menu .submenu a {
     font-size: 18px;
@@ -5262,28 +5262,41 @@ a.pokebattler {
 /* RSS Feed */
 .feed-container {
   position: relative;
-  margin: 0 auto 50px auto;
+  margin: 0 auto 10px auto;
   height: 150px;
-  border-bottom: 2px solid #003462;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
   -webkit-transition: all 0.25s ease-out 0s;
   -moz-transition: all 0.25s ease-out 0s;
   -o-transition: all 0.25s ease-out 0s;
   transition: all 0.25s ease-out 0s;
 }
+.feed-container:after {
+  content: " ";
+  width: 140%;
+  height: 100px;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  box-shadow: inset 0 -14px 10px;
+  pointer-events: none;
+  left: -25%;
+  opacity: 0.15;
+  display: none;
+}
 .feed-container.expanded {
-  height: 800px;
+  height: 400px;
 }
 .feed-container.expanded .feed {
   height: 100%;
   overflow-y: auto;
 }
-.feed-container.expanded .feed:after {
-  display: none;
-}
 .feed-container.expanded .feed-expand:after {
   content: "∧";
 }
 .feed-container .feed {
+  padding: 8px;
   position: relative;
   height: 150px;
   overflow: hidden;
@@ -5291,18 +5304,6 @@ a.pokebattler {
   -moz-transition: all 0.25s ease-out 0s;
   -o-transition: all 0.25s ease-out 0s;
   transition: all 0.25s ease-out 0s;
-}
-.feed-container .feed:after {
-  content: " ";
-  width: 140%;
-  height: 100px;
-  display: block;
-  position: absolute;
-  bottom: 0;
-  box-shadow: inset 0 -34px 30px;
-  pointer-events: none;
-  left: -25%;
-  opacity: 0.15;
 }
 .feed-container .feed-expand {
   cursor: pointer;
@@ -5318,16 +5319,17 @@ a.pokebattler {
   font-size: 18px;
   font-weight: bold;
   border: 2px solid #003462;
+  display: none;
 }
 .feed-container .feed-expand:after {
   content: "∨";
 }
-.feed-container a.feed-subscribe {
+
+a.feed-subscribe {
+  display: block;
   color: #003462;
   font-size: 12px;
-  position: absolute;
-  bottom: -25px;
-  right: 0;
+  text-align: right;
 }
 
 .feed .news-item {
@@ -5346,7 +5348,6 @@ a.pokebattler {
 .feed .news-item h4 {
   margin-top: 0;
   font-size: 14px;
-  display: none;
 }
 .feed .news-item .news-info {
   display: flex;
@@ -5379,6 +5380,26 @@ a.pokebattler {
   overflow: hidden;
   text-overflow: ellipsis;
   width: 145px;
+}
+
+.latest-section {
+  padding: 9px 8px 9px 8px;
+  font-size: 14px;
+}
+.latest-section h4 {
+  margin: 0;
+  border-bottom: 1px solid #5896ce;
+  color: #558ec2;
+}
+.latest-section .date {
+  font-size: 12px;
+  color: #558ec2;
+  padding-left: 38px;
+}
+.latest-section a {
+  font-size: 14px !important;
+  padding-bottom: 5px !important;
+  line-height: 20px;
 }
 
 @media only screen and (min-width: 481px) {

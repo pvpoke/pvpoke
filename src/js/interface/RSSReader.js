@@ -3,20 +3,27 @@
 var RSS = (function () {
     var instance;
 
-    function createInstance(callback) {
+    function createInstance() {
         var object = new Object();
 
-		object.xml = {};
+		object.xml = null;
 
 		$.ajax({
 			type: "GET" ,
 			url: webRoot+"/rss/feed.xml?v="+siteVersion,
 			dataType: "xml" ,
 			success: function(data) {
-				xml = data;
+				object.xml = data;
 
-				if(typeof callback === 'function'){
-					callback(xml);
+				// Show latest entry in mobile navigation
+				if(screen.width < 721){
+					object.displayHeader();
+				}
+
+				var interface = InterfaceMaster.getInstance();
+
+				if(typeof interface.displayRSSFeed === 'function'){
+					interface.displayRSSFeed(object.xml);
 				}
 			}
 		});
@@ -67,13 +74,28 @@ var RSS = (function () {
 			return $html;
 		}
 
+		// Show latest entry in mobile navigation
+		object.displayHeader = function(){
+			var feed = object.feedToObjects();
+			var item = feed[0];
+
+			$(".latest-section a").html(item.title);
+			$(".latest-section .date").html(item.pubDate.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric" }));
+
+			if(item.link == "https://pvpoke.com/" || item.link.indexOf("pvpoke.com") == -1){
+				$(".latest-section a").attr("href", "https://pvpoke.com/#news");
+			} else{
+				$(".latest-section a").attr("href", item.link);
+			}
+		}
+
         return object;
     }
 
     return {
-        getInstance: function (interface) {
+        getInstance: function () {
             if (!instance) {
-                instance = createInstance(interface);
+                instance = createInstance();
             }
             return instance;
         }

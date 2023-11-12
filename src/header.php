@@ -148,6 +148,7 @@ if(! isset($OG_IMAGE)){
 <?php endif; ?>
 
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/RSSReader.js?v=<?php echo $SITE_VERSION; ?>"></script>
 
 <?php require_once('modules/analytics.php'); ?>
 
@@ -290,6 +291,11 @@ if(! isset($OG_IMAGE)){
 							<a href="<?php echo $WEB_ROOT; ?>settings/">Settings</a>
 							<a class="twitter" href="https://twitter.com/pvpoke" target="_blank">Twitter</a>
 							<a class="tera" href="<?php echo $WEB_ROOT; ?>tera/">Tera Raid Counters</a>
+							<div class="latest-section mobile">
+								<h4>Latest</h4>
+								<a href="#"></a>
+								<div class="date"></div>
+							</div>
 						</div>
 					</div>
 					<div class="safe-mouse-space"></div>
