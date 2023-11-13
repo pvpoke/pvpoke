@@ -29,21 +29,6 @@
 	        "chargedMoves": ["SACRED_SWORD", "STONE_EDGE"]
 	    }],
 	    "weight": 1
-	},  {
-	    "pokemon": [{
-	        "speciesId": "golisopod",
-	        "fastMove": "SHADOW_CLAW",
-	        "chargedMoves": ["X_SCISSOR", "LIQUIDATION"]
-	    }, {
-	        "speciesId": "walrein",
-	        "fastMove": "POWDER_SNOW",
-	        "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
-	    }, {
-	        "speciesId": "stunfisk_galarian",
-	        "fastMove": "MUD_SHOT",
-	        "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
-	    }],
-	    "weight": 1
 	}, {
 	    "pokemon": [{
 	        "speciesId": "sandslash_alolan",
@@ -207,51 +192,6 @@
 	        "speciesId": "cresselia",
 	        "fastMove": "PSYCHO_CUT",
 	        "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
-	    }],
-	    "weight": 2
-	}, {
-	    "pokemon": [{
-	        "speciesId": "walrein",
-	        "fastMove": "POWDER_SNOW",
-	        "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
-	    }, {
-	        "speciesId": "swampert",
-	        "fastMove": "MUD_SHOT",
-	        "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
-	    }, {
-	        "speciesId": "venusaur",
-	        "fastMove": "VINE_WHIP",
-	        "chargedMoves": ["FRENZY_PLANT", "SLUDGE_BOMB"]
-	    }],
-	    "weight": 1
-	}, {
-	    "pokemon": [{
-	        "speciesId": "obstagoon",
-	        "fastMove": "COUNTER",
-	        "chargedMoves": ["NIGHT_SLASH", "CROSS_CHOP"]
-	    }, {
-	        "speciesId": "swampert",
-	        "fastMove": "MUD_SHOT",
-	        "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
-	    }, {
-	        "speciesId": "cresselia",
-	        "fastMove": "PSYCHO_CUT",
-	        "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
-	    }],
-	    "weight": 2
-	}, {
-	    "pokemon": [{
-	        "speciesId": "giratina_altered",
-	        "fastMove": "SHADOW_CLAW",
-	        "chargedMoves": ["DRAGON_CLAW", "SHADOW_SNEAK"]
-	    }, {
-	        "speciesId": "swampert",
-	        "fastMove": "MUD_SHOT",
-	        "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
-	    }, {
-	        "speciesId": "walrein",
-	        "fastMove": "POWDER_SNOW",
-	        "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
 	    }],
 	    "weight": 2
 	}, {
@@ -467,21 +407,6 @@
         "weight": 1
     }, {
         "pokemon": [{
-            "speciesId": "venusaur",
-            "fastMove": "VINE_WHIP",
-            "chargedMoves": ["FRENZY_PLANT", "SLUDGE_BOMB"]
-        }, {
-            "speciesId": "greninja",
-            "fastMove": "WATER_SHURIKEN",
-            "chargedMoves": ["HYDRO_CANNON", "NIGHT_SLASH"]
-        }, {
-            "speciesId": "empoleon",
-            "fastMove": "WATERFALL",
-            "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
             "speciesId": "cobalion",
             "fastMove": "DOUBLE_KICK",
             "chargedMoves": ["STONE_EDGE", "SACRED_SWORD"]
@@ -632,22 +557,6 @@
         "weight": 1
     }, {
         "pokemon": [{
-            "speciesId": "poliwrath",
-            "fastMove": "COUNTER",
-            "chargedMoves": ["SCALD", "ICE_PUNCH"]
-        }, {
-            "speciesId": "cresselia",
-            "fastMove": "PSYCHO_CUT",
-            "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
-        }, {
-            "speciesId": "gliscor",
-            "fastMove": "WING_ATTACK",
-            "chargedMoves": ["EARTHQUAKE", "NIGHT_SLASH"],
-            "shadowType": "shadow"
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
             "speciesId": "registeel",
             "fastMove": "LOCK_ON",
             "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
@@ -659,21 +568,6 @@
             "speciesId": "swampert",
             "fastMove": "MUD_SHOT",
             "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
-            "speciesId": "swampert",
-            "fastMove": "MUD_SHOT",
-            "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
-        }, {
-            "speciesId": "charizard",
-            "fastMove": "WING_ATTACK",
-            "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"]
-        }, {
-            "speciesId": "walrein",
-            "fastMove": "POWDER_SNOW",
-            "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
         }],
         "weight": 1
     }, {
@@ -854,6 +748,126 @@
 	        "speciesId": "registeel",
 	        "fastMove": "LOCK_ON",
 	        "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
+	    }],
+	    "weight": 1
+	}, {
+	    "pokemon": [{
+	        "speciesId": "dragonite",
+	        "fastMove": "DRAGON_BREATH",
+	        "chargedMoves": ["DRAGON_CLAW", "SUPER_POWER"]
+	    }, {
+	        "speciesId": "tapu_fini",
+	        "fastMove": "WATER_GUN",
+	        "chargedMoves": ["SURF", "MOONBLAST"]
+	    }, {
+	        "speciesId": "golisopod",
+	        "fastMove": "SHADOW_CLAW",
+	        "chargedMoves": ["X_SCISSOR", "LIQUIDATION"]
+	    }],
+	    "weight": 1
+	}, {
+	    "pokemon": [{
+	        "speciesId": "steelix",
+	        "fastMove": "DRAGON_TAIL",
+	        "chargedMoves": ["BREAKING_SWIPE", "EARTHQUAKE"]
+	    }, {
+	        "speciesId": "virizion",
+	        "fastMove": "DOUBLE_KICK",
+	        "chargedMoves": ["LEAF_BLADE", "SACRED_SWORD"]
+	    }, {
+	        "speciesId": "golisopod",
+	        "fastMove": "SHADOW_CLAW",
+	        "chargedMoves": ["X_SCISSOR", "LIQUIDATION"]
+	    }],
+	    "weight": 1
+	}, {
+	    "pokemon": [{
+	        "speciesId": "virizion",
+	        "fastMove": "DOUBLE_KICK",
+	        "chargedMoves": ["LEAF_BLADE", "SACRED_SWORD"]
+	    }, {
+	        "speciesId": "steelix",
+	        "fastMove": "DRAGON_TAIL",
+	        "chargedMoves": ["BREAKING_SWIPE", "EARTHQUAKE"]
+	    }, {
+	        "speciesId": "greedent",
+	        "fastMove": "MUD_SHOT",
+	        "chargedMoves": ["BODY_SLAM", "CRUNCH"]
+	    }],
+	    "weight": 1
+	}, {
+	    "pokemon": [{
+	        "speciesId": "poliwrath",
+	        "fastMove": "COUNTER",
+	        "chargedMoves": ["ICE_PUNCH", "SCALD"]
+	    }, {
+	        "speciesId": "muk_alolan",
+	        "fastMove": "POISON_JAB",
+	        "chargedMoves": ["DARK_PULSE", "ACID_SPRAY"]
+	    }, {
+	        "speciesId": "drapion_shadow",
+	        "fastMove": "POISON_STING",
+	        "chargedMoves": ["CRUNCH", "AQUA_TAIL"]
+	    }],
+	    "weight": 1
+	}, {
+	    "pokemon": [{
+	        "speciesId": "charizard_shadow",
+	        "fastMove": "WING_ATTACK",
+	        "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"]
+	    }, {
+	        "speciesId": "virizion",
+	        "fastMove": "DOUBLE_KICK",
+	        "chargedMoves": ["LEAF_BLADE", "SACRED_SWORD"]
+	    }, {
+	        "speciesId": "giratina_altered",
+	        "fastMove": "SHADOW_CLAW",
+	        "chargedMoves": ["DRAGON_CLAW", "SHADOW_SNEAK"]
+	    }],
+	    "weight": 1
+	}, {
+	    "pokemon": [{
+	        "speciesId": "deoxys_defense",
+	        "fastMove": "COUNTER",
+	        "chargedMoves": ["PSYCHO_BOOST", "ROCK_SLIDE"]
+	    }, {
+	        "speciesId": "greninja",
+	        "fastMove": "WATER_SHURIKEN",
+	        "chargedMoves": ["HYDRO_CANNON", "NIGHT_SLASH"]
+	    }, {
+	        "speciesId": "greedent",
+	        "fastMove": "MUD_SHOT",
+	        "chargedMoves": ["BODY_SLAM", "CRUNCH"]
+	    }],
+	    "weight": 1
+	}, {
+	    "pokemon": [{
+	        "speciesId": "giratina_altered",
+	        "fastMove": "SHADOW_CLAW",
+	        "chargedMoves": ["DRAGON_CLAW", "SHADOW_SNEAK"]
+	    }, {
+	        "speciesId": "tapu_fini",
+	        "fastMove": "WATER_GUN",
+	        "chargedMoves": ["SURF", "MOONBLAST"]
+	    }, {
+	        "speciesId": "cobalion",
+	        "fastMove": "DOUBLE_KICK",
+	        "chargedMoves": ["SACRED_SWORD", "STONE_EDGE"]
+	    }],
+	    "weight": 1
+	}, {
+	    "pokemon": [{
+	        "speciesId": "swampert",
+	        "fastMove": "MUD_SHOT",
+	        "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
+	    }, {
+	        "speciesId": "charizard",
+	        "fastMove": "WING_ATTACK",
+	        "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"]
+	    }, {
+	        "speciesId": "giratina_altered",
+	        "fastMove": "SHADOW_CLAW",
+	        "chargedMoves": ["DRAGON_CLAW", "SHADOW_SNEAK"]
 	    }],
 	    "weight": 1
 	}]

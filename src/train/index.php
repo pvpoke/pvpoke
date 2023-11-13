@@ -147,17 +147,6 @@ require_once '../header.php';
 
 <?php require '../modules/ads/body-728.php'; ?>
 
-<div class="section white updates">
-	<h3>What's New</h3>
-
-	<h4>v1.22.9 (June 10, 2021)</h4>
-	<ul>
-		<li>Charged Move minigame now charges on hold instead of rapid clicks/taps. Also displays damage percent.</li>
-		<li>The Training bot now avoids baiting if its best Charged Move doesn't threaten a shield. (e.g. Galarian Stunfisk players typically throw Earthquake against Azumarill rather than Rock Slide.)</li>
-	</ul>
-
-</div>
-
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Player.js?v=<?php echo $SITE_VERSION; ?>"></script>
