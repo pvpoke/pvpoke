@@ -393,11 +393,11 @@ function Pokemon(id, i, b){
 
 		var floor = 0;
 
-		if(self.hasTag("legendary")){
+		if(self.hasTag("legendary") || self.hasTag("ultrabeast")){
 			floor = 1;
 		}
 
-		if(self.hasTag("legendary") && self.shadowType == "shadow"){
+		if((self.hasTag("legendary") || self.hasTag("ultrabeast")) && self.shadowType == "shadow"){
 			floor = 6;
 		}
 
