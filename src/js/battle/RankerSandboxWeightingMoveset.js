@@ -25,7 +25,7 @@ var RankerMaster = (function () {
 
 
 			// Ranking scenarios, energy is turns of advantage
-			var scenarios = GameMaster.getInstance().data.rankingScenarios;
+			var scenarios;
 
 			var currentLeagueIndex = 0;
 			var currentScenarioIndex = 0;
@@ -47,6 +47,8 @@ var RankerMaster = (function () {
 				self.initPokemonList(battle.getCP());
 
 				currentScenarioIndex = 0;
+
+				scenarios = GameMaster.getInstance().data.rankingScenarios;
 
 				for(currentScenarioIndex = 0; currentScenarioIndex < scenarios.length; currentScenarioIndex++){
 					var r = self.rank(leagues[currentLeagueIndex], scenarios[currentScenarioIndex]);
