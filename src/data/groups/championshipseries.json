@@ -12,6 +12,14 @@
     "chargedMoves": ["DRAGON_CLAW", "BLAST_BURN"],
     "shadowType": "shadow"
 }, {
+    "speciesId": "charjabug",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
+}, {
+    "speciesId": "clodsire",
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["EARTHQUAKE", "SLUDGE_BOMB"]
+}, {
     "speciesId": "cresselia",
     "fastMove": "PSYCHO_CUT",
     "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
@@ -92,11 +100,6 @@
     "fastMove": "WING_ATTACK",
     "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
 }, {
-    "speciesId": "quagsire_shadow",
-    "fastMove": "MUD_SHOT",
-    "chargedMoves": ["MUD_BOMB", "STONE_EDGE"],
-    "shadowType": "shadow"
-}, {
     "speciesId": "registeel",
     "fastMove": "LOCK_ON",
     "chargedMoves": ["ZAP_CANNON", "FOCUS_BLAST"]
@@ -145,15 +148,17 @@
     "chargedMoves": ["FRENZY_PLANT", "SLUDGE_BOMB"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "guzzlord",
+    "speciesId": "dragonair_shadow",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["BODY_SLAM", "AQUA_TAIL"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "steelix",
     "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["DRAGON_CLAW", "CRUNCH"]
+    "chargedMoves": ["BREAKING_SWIPE", "EARTHQUAKE"],
+    "shadowType": "shadow"
 }, {
-    "speciesId": "clodsire",
-    "fastMove": "POISON_STING",
-    "chargedMoves": ["EARTHQUAKE", "SLUDGE_BOMB"]
-}, {
-    "speciesId": "charjabug",
-    "fastMove": "VOLT_SWITCH",
-    "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
+    "speciesId": "clefable",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["METEOR_MASH", "MOONBLAST"]
 }]
