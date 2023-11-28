@@ -1,110 +1,173 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
+< ? xml version = "1.0"
+encoding = "utf-8" ? > < rss version = "2.0" >
 
-	<channel>
-		<item>
-			<title>Season of Timeless Travels Announced</title>
-			<description>
-				<![CDATA[The latest season and move updates have been announced! There is a lot to explore with nerfs to Psychic, buffs for Fire types, and wide move distributions for Trailblaze, Scald, Fly, and more. Not all of the move update numbers are known, so PvPoke will be updated for the new season after it begins on Friday, December 1st. See you then!]]>
-			</description>
-			<link>https://pokemongolive.com/post/go-battle-league-timeless-travels?hl=en</link>
-			<pubDate>Tue, 28 Nov 2023 14:19:54 GMT</pubDate>
-		</item>
-		<item>
-			<title>Top Performers Updated for All Leagues</title>
-			<description>
-				<![CDATA[With just over a week in the season to go, I've updated the top performers lists for all three leagues. Check them out if you need some Pokemon or team ideas to cross the finish line! This will likely be my last update for the season, so catch you on December 1st for the new season updates. Good luck!]]>
-			</description>
-			<link>https://pvpoke.com/train/analysis/</link>
-			<pubDate>Wed, 22 Nov 2023 17:31:40 GMT</pubDate>
-		</item>
-		<item>
-			<title>Catch Cup Rankings</title>
-			<description>
-				<![CDATA[Catch Cup rankings are now available! These rankings include most Great League Pokemon and are scored against the most used Pokemon in Catch Cup so far, including Clodsire, Quagsire, and Gligar. Special thanks to GOBattleLog for the usage data!]]>
-			</description>
-			<link>https://pvpoke.com/rankings/catch/1500/overall/</link>
-			<pubDate>Sat, 18 Nov 2023 14:22:28 GMT</pubDate>
-		</item>
-		<item>
-			<title>Ultra League Top Performers Updated</title>
-			<description>
-				<![CDATA[Ultra League top performers have been updated with the past month of training data. Golisopod has continued to prove its part in the meta, and top teams are showing variety with Cresselia and Steelix as common anchors in the back. Take a look!]]>
-			</description>
-			<link>https://pvpoke.com/train/analysis/all/2500/</link>
-			<pubDate>Mon, 13 Nov 2023 18:56:10 GMT</pubDate>
-		</item>
-		<item>
-			<title>Site Update 1.31.0 - RSS News Feed</title>
-			<description>
-				<![CDATA[Site updates will now appear in a news feed on the homepage! I've previously posted these updates to Twitter, but as Twitter has become less accessible, I've been looking to make them available on the website itself. Subscribe with any RSS reader to stay updated on new rankings, top performer teams, and other site updates!]]>
-			</description>
-			<link>https://pvpoke.com/#news</link>
-			<pubDate>Sun, 12 Nov 2023 15:33:09 GMT</pubDate>
-		</item>
-		<title>PvPoke</title>
-		<link>https://pvpoke.com/</link>
-		<description>
-			<![CDATA[Website updates for PvPoke.com and other news for Pokemon GO PvP.]]>
-		</description>
+    <
+    channel > < item > < title > Custom Moves to Preview New Season Updates < /title><description><![CDATA[If you're looking to get a peek at next season's updates, I've added duplicates of the moves which are receiving changes so you can use them in the simulations. Some of these values are speculative since energy values won't be known until the season begins on Friday. A full site update will come then!]]></description > < link > https : //pvpoke.com/</link><pubDate>Tue, 28 Nov 2023 18:36:40 GMT</pubDate></item>
+    <
+    item >
+    <
+    title > Season of Timeless Travels Announced < /title> <
+    description >
+    <
+    ![CDATA[The latest season and move updates have been announced!There is a lot to explore with nerfs to Psychic, buffs
+        for Fire types, and wide move distributions
+        for Trailblaze, Scald, Fly, and more.Not all of the move update numbers are known, so PvPoke will be updated
+        for the new season after it begins on Friday, December 1 st.See you then!]] >
+    <
+    /description> <
+    link > https: //pokemongolive.com/post/go-battle-league-timeless-travels?hl=en</link>
+    <
+    pubDate > Tue, 28 Nov 2023 14: 19: 54 GMT < /pubDate> <
+    /item> <
+    item >
+    <
+    title > Top Performers Updated
+for All Leagues < /title> <
+    description >
+    <
+    ![CDATA[With just over a week in the season to go, I 've updated the top performers lists for all three leagues. Check them out if you need some Pokemon or team ideas to cross the finish line! This will likely be my last update for the season, so catch you on December 1st for the new season updates. Good luck!]]> <
+            /description> <
+            link > https: //pvpoke.com/train/analysis/</link>
+            <
+            pubDate > Wed, 22 Nov 2023 17: 31: 40 GMT < /pubDate> <
+            /item> <
+            item >
+            <
+            title > Catch Cup Rankings < /title> <
+            description >
+            <
+            ![CDATA[Catch Cup rankings are now available!These rankings include most Great League Pokemon and are scored against the most used Pokemon in Catch Cup so far, including Clodsire, Quagsire, and Gligar.Special thanks to GOBattleLog
+                for the usage data!]] >
+            <
+            /description> <
+            link > https: //pvpoke.com/rankings/catch/1500/overall/</link>
+            <
+            pubDate > Sat, 18 Nov 2023 14: 22: 28 GMT < /pubDate> <
+            /item> <
+            item >
+            <
+            title > Ultra League Top Performers Updated < /title> <
+            description >
+            <
+            ![CDATA[Ultra League top performers have been updated with the past month of training data.Golisopod has continued to prove its part in the meta, and top teams are showing variety with Cresselia and Steelix as common anchors in the back.Take a look!]] >
+            <
+            /description> <
+            link > https: //pvpoke.com/train/analysis/all/2500/</link>
+            <
+            pubDate > Mon, 13 Nov 2023 18: 56: 10 GMT < /pubDate> <
+            /item> <
+            item >
+            <
+            title > Site Update 1.31 .0 - RSS News Feed < /title> <
+            description >
+            <
+            ![CDATA[Site updates will now appear in a news feed on the homepage!I 've previously posted these updates to Twitter, but as Twitter has become less accessible, I'
+                ve been looking to make them available on the website itself.Subscribe with any RSS reader to stay updated on new rankings, top performer teams, and other site updates!]] >
+            <
+            /description> <
+            link > https: //pvpoke.com/#news</link>
+            <
+            pubDate > Sun, 12 Nov 2023 15: 33: 09 GMT < /pubDate> <
+            /item> <
+            title > PvPoke < /title> <
+            link > https: //pvpoke.com/</link>
+            <
+            description >
+            <
+            ![CDATA[Website updates
+                for PvPoke.com and other news
+                for Pokemon GO PvP.]] >
+            <
+            /description>
 
-		<item>
-			<title>Mega Garchomp Added</title>
-			<description>
-				<![CDATA[Mega Garchomp has been added to the main site! It boasts incredible stats, but lives in Rayquaza's shadow, and has tough moveset choices to make. Happy raiding!]]>
-			</description>
-			<link>https://pvpoke.com/battle/multi/10000/custom/garchomp_mega/11/0-2-5/2-1/mastermega/</link>
-			<pubDate>Thu, 9 Nov 2023 14:48:47 GMT</pubDate>
-		</item>
-		<item>
-			<title>Great League Top Performers Update</title>
-			<description>
-				<![CDATA[Coming at you with a mid-week top performer update featuring Clodsire! Mud Shot has an early lead over Poison Sting, but overall, multiple movesets look viable. Dewgong and Jellicent stand to gain if Clodsire hangs around (and Regi doesn't).]]>
-			</description>
-			<link>https://pvpoke.com/train/analysis/</link>
-			<pubDate>Wed, 8 Nov 2023 14:53:57 GMT</pubDate>
-		</item>
-		<item>
-			<title>Bellibolt Rankings</title>
-			<description>
-				<![CDATA[Bellibolt has been added to the rankings. It's bulkier than most Electric types with play in both Great and Ultra League. Unfortunately it lacks any coverage, so it will be hindered until a future update. Few can say that Bellibolt doesn't spark joy, though!]]>
-			</description>
-			<link>https://pvpoke.com/rankings/all/2500/overall/bellibolt/</link>
-			<pubDate>Mon, 6 Nov 2023 14:56:13 GMT</pubDate>
-		</item>
-		<item>
-			<title>Great League Top Performers Update</title>
-			<description>
-				<![CDATA[I've updated top performers with data from the past few weeks of Great League training. With Medicham, Sableye, Lickitung, and Serperior all solidifying their places in the meta, Noctowl showed strong anti-meta potential. Good luck in your battles!]]>
-			</description>
-			<link>https://pvpoke.com/train/analysis/</link>
-			<pubDate>Fri, 3 Nov 2023 14:57:29 GMT</pubDate>
-		</item>
-		<item>
-			<title>Wooper Community Day PvP Guide</title>
-			<description>
-				<![CDATA[A PvP guide for Wooper Community Day is now available! Both evolutions are excellent additions for your roster. I've included some specialized IV spreads for the Clodsire mirror matchup, and a Quagsire spread that's more consistent
-				against Gligar. Have fun!]]>
-			</description>
-			<link>https://pvpoke.com/articles/community-day/23-11-wooper/</link>
-			<pubDate>Thu, 2 Nov 2023 14:58:56 GMT</pubDate>
-		</item>
-		<item>
-			<title>Clodsire Rankings</title>
-			<description>
-				<![CDATA[Clodsire rankings are now available. With its current moveset, it will still be a powerful Pokemon in Great League but its challenges against Medicham, Gligar, and Grass may limit its meta impact. Check it out!]]>
-			</description>
-			<link>https://pvpoke.com/rankings/all/1500/overall/clodsire/</link>
-			<pubDate>Sun, 29 Oct 2023 15:01:23 GMT</pubDate>
-		</item>
-		<item>
-			<title>New Shadow Pokemon Rankings</title>
-			<description>
-				<![CDATA[Rankings are updated with the newest Shadow Pokemon! Whiscash is the most PvP ready, while Gengar, Haunter, and Excadrill are all offensive powerhouses alongside the surprise debuts of Hisuian Sneasel and Sneasler. Most of these Shadow
-				forms improve upon the originals, so be sure to catch them this rotation!]]>
-			</description>
-			<link>https://pvpoke.com/rankings/all/1500/overall/whiscash_shadow/</link>
-			<pubDate>Wed, 25 Oct 2023 15:04:43 GMT</pubDate>
-		</item>
-	</channel>
-</rss>
+            <
+            item >
+            <
+            title > Mega Garchomp Added < /title> <
+            description >
+            <
+            ![CDATA[Mega Garchomp has been added to the main site!It boasts incredible stats, but lives in Rayquaza 's shadow, and has tough moveset choices to make. Happy raiding!]]> <
+                    /description> <
+                    link > https: //pvpoke.com/battle/multi/10000/custom/garchomp_mega/11/0-2-5/2-1/mastermega/</link>
+                    <
+                    pubDate > Thu, 9 Nov 2023 14: 48: 47 GMT < /pubDate> <
+                    /item> <
+                    item >
+                    <
+                    title > Great League Top Performers Update < /title> <
+                    description >
+                    <
+                    ![CDATA[Coming at you with a mid - week top performer update featuring Clodsire!Mud Shot has an early lead over Poison Sting, but overall, multiple movesets look viable.Dewgong and Jellicent stand to gain
+                            if Clodsire hangs around(and Regi doesn 't).]]> <
+                                /description> <
+                                link > https: //pvpoke.com/train/analysis/</link>
+                                <
+                                pubDate > Wed, 8 Nov 2023 14: 53: 57 GMT < /pubDate> <
+                                /item> <
+                                item >
+                                <
+                                title > Bellibolt Rankings < /title> <
+                                description >
+                                <
+                                ![CDATA[Bellibolt has been added to the rankings.It 's bulkier than most Electric types with play in both Great and Ultra League. Unfortunately it lacks any coverage, so it will be hindered until a future update. Few can say that Bellibolt doesn'
+                                    t spark joy, though!]] >
+                                <
+                                /description> <
+                                link > https: //pvpoke.com/rankings/all/2500/overall/bellibolt/</link>
+                                <
+                                pubDate > Mon, 6 Nov 2023 14: 56: 13 GMT < /pubDate> <
+                                /item> <
+                                item >
+                                <
+                                title > Great League Top Performers Update < /title> <
+                                description >
+                                <
+                                ![CDATA[I 've updated top performers with data from the past few weeks of Great League training. With Medicham, Sableye, Lickitung, and Serperior all solidifying their places in the meta, Noctowl showed strong anti-meta potential. Good luck in your battles!]]> <
+                                        /description> <
+                                        link > https: //pvpoke.com/train/analysis/</link>
+                                        <
+                                        pubDate > Fri, 3 Nov 2023 14: 57: 29 GMT < /pubDate> <
+                                        /item> <
+                                        item >
+                                        <
+                                        title > Wooper Community Day PvP Guide < /title> <
+                                        description >
+                                        <
+                                        ![CDATA[A PvP guide
+                                            for Wooper Community Day is now available!Both evolutions are excellent additions
+                                            for your roster.I 've included some specialized IV spreads for the Clodsire mirror matchup, and a Quagsire spread that'
+                                            s more consistent against Gligar.Have fun!]] >
+                                        <
+                                        /description> <
+                                        link > https: //pvpoke.com/articles/community-day/23-11-wooper/</link>
+                                        <
+                                        pubDate > Thu, 2 Nov 2023 14: 58: 56 GMT < /pubDate> <
+                                        /item> <
+                                        item >
+                                        <
+                                        title > Clodsire Rankings < /title> <
+                                        description >
+                                        <
+                                        ![CDATA[Clodsire rankings are now available.With its current moveset, it will still be a powerful Pokemon in Great League but its challenges against Medicham, Gligar, and Grass may limit its meta impact.Check it out!]] >
+                                        <
+                                        /description> <
+                                        link > https: //pvpoke.com/rankings/all/1500/overall/clodsire/</link>
+                                        <
+                                        pubDate > Sun, 29 Oct 2023 15: 01: 23 GMT < /pubDate> <
+                                        /item> <
+                                        item >
+                                        <
+                                        title > New Shadow Pokemon Rankings < /title> <
+                                        description >
+                                        <
+                                        ![CDATA[Rankings are updated with the newest Shadow Pokemon!Whiscash is the most PvP ready,
+                                            while Gengar, Haunter, and Excadrill are all offensive powerhouses alongside the surprise debuts of Hisuian Sneasel and Sneasler.Most of these Shadow forms improve upon the originals, so be sure to
+                                            catch them this rotation!]] >
+                                        <
+                                        /description> <
+                                        link > https: //pvpoke.com/rankings/all/1500/overall/whiscash_shadow/</link>
+                                        <
+                                        pubDate > Wed, 25 Oct 2023 15: 04: 43 GMT < /pubDate> <
+                                        /item> <
+                                        /channel> <
+                                        /rss>
