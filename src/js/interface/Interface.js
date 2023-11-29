@@ -1964,6 +1964,7 @@ var InterfaceMaster = (function () {
 
 				if(self.battleMode == "multi"){
 					isLoadingPreset = true;
+					updateMultiBattleMetas();
 				}
 
 
@@ -2100,7 +2101,7 @@ var InterfaceMaster = (function () {
 					battle.setCup("classic");
 				}
 
-				updateMultiBattleMetas()
+				updateMultiBattleMetas();
 
 				gm.loadRankingData(self, "overall", parseInt($(".league-select option:selected").val()), cupName);
 			}
@@ -2155,7 +2156,7 @@ var InterfaceMaster = (function () {
 
 				// Load default meta group when switching to Multi Battle
 				if((self.battleMode == "multi") && (! settingGetParams)){
-					updateMultiBattleMetas()
+					updateMultiBattleMetas();
 				}
 
 				// When moving between Multi and Matrix, move multi custom group to the right Matrix group

@@ -404,6 +404,10 @@ var GameMaster = (function () {
 					defaultIVs["cp1500"] = [49, 7, 15, 14];
 				}
 
+				if(pokemon.speciesId == "typhlosion_hisuian"){
+					defaultIVs["cp1500"] = [20, 1, 1, 2];
+				}
+
 				entry.defaultIVs = defaultIVs;
 			});
 
