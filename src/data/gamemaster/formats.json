@@ -41,17 +41,8 @@
 		"cup": "premier",
 		"cp": 10000,
 		"meta": "premiermaster",
-		"showCup": true,
+		"showCup": false,
 		"showFormat": false,
-		"showMeta": true
-	},
-	{
-		"title": "Catch Cup",
-		"cup": "catch",
-		"cp": 1500,
-		"meta": "catch",
-		"showCup": true,
-		"showFormat": true,
 		"showMeta": true
 	},
 	{
@@ -61,24 +52,6 @@
 		"meta": "championshipseries",
 		"showCup": false,
 		"showFormat": false,
-		"showMeta": true
-	},
-	{
-		"title": "Battle Frontier (Aurora)",
-		"cup": "aurora",
-		"cp": 1500,
-		"meta": "aurora",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Battle Frontier (Savannah)",
-		"cup": "savannah",
-		"cp": 1500,
-		"meta": "savannah",
-		"showCup": true,
-		"showFormat": true,
 		"showMeta": true
 	},
 	{
@@ -100,15 +73,6 @@
 		"showFormat": true,
 		"showMeta": true,
 		"hideRankings": true
-	},
-	{
-		"title": "Gymbreakers Invitational",
-		"cup": "gbinvitational",
-		"cp": 1500,
-		"meta": "gbinvitational",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
 	},
 	{
 		"title": "Custom",

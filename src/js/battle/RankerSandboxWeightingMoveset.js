@@ -126,6 +126,8 @@ var RankerMaster = (function () {
 				leagues = [cp];
 				allResults = [];
 
+				scenarios = GameMaster.getInstance().data.rankingScenarios;
+
 				for(var currentLeagueIndex = 0; currentLeagueIndex < leagues.length; currentLeagueIndex++){
 
 					if(moveSelectMode == "auto"){
