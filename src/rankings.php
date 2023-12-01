@@ -106,6 +106,10 @@ if(isset($_GET['p'])){
 
 	$name = ucwords(str_replace('_',' ', explode('-', htmlspecialchars($_GET['p']))[0]));
 
+	if($name == 'Lanturnw'){
+		$name = 'Lanturn';
+	}
+
 	$META_TITLE = $name . ' ' . $league . ' PvP Rankings';
 
 	$META_DESCRIPTION = 'Explore key matchups, moves, and counters for ' . $name . ' in ' . $league . '.';
