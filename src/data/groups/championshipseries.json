@@ -16,6 +16,10 @@
     "fastMove": "VOLT_SWITCH",
     "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
 }, {
+    "speciesId": "clefable",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["METEOR_MASH", "MOONBLAST"]
+}, {
     "speciesId": "clodsire",
     "fastMove": "POISON_STING",
     "chargedMoves": ["EARTHQUAKE", "SLUDGE_BOMB"]
@@ -35,6 +39,11 @@
     "speciesId": "diggersby",
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["SCORCHING_SANDS", "HYPER_BEAM"]
+}, {
+    "speciesId": "dragonair_shadow",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["BODY_SLAM", "AQUA_TAIL"],
+    "shadowType": "shadow"
 }, {
     "speciesId": "dragonite_shadow",
     "fastMove": "DRAGON_BREATH",
@@ -80,10 +89,6 @@
 }, {
     "speciesId": "medicham",
     "fastMove": "COUNTER",
-    "chargedMoves": ["POWER_UP_PUNCH", "ICE_PUNCH"]
-}, {
-    "speciesId": "medicham",
-    "fastMove": "COUNTER",
     "chargedMoves": ["ICE_PUNCH", "DYNAMIC_PUNCH"]
 }, {
     "speciesId": "ninetales_alolan_shadow",
@@ -122,6 +127,11 @@
     "fastMove": "VINE_WHIP",
     "chargedMoves": ["FRENZY_PLANT", "AERIAL_ACE"]
 }, {
+    "speciesId": "steelix",
+    "fastMove": "DRAGON_TAIL",
+    "chargedMoves": ["BREAKING_SWIPE", "EARTHQUAKE"],
+    "shadowType": "shadow"
+}, {
     "speciesId": "stunfisk_galarian",
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
@@ -135,10 +145,6 @@
     "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "trevenant",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["SEED_BOMB", "SHADOW_BALL"]
-}, {
     "speciesId": "umbreon",
     "fastMove": "SNARL",
     "chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
@@ -148,17 +154,7 @@
     "chargedMoves": ["FRENZY_PLANT", "SLUDGE_BOMB"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "dragonair_shadow",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["BODY_SLAM", "AQUA_TAIL"],
-    "shadowType": "shadow"
-}, {
-    "speciesId": "steelix",
-    "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["BREAKING_SWIPE", "EARTHQUAKE"],
-    "shadowType": "shadow"
-}, {
-    "speciesId": "clefable",
-    "fastMove": "FAIRY_WIND",
-    "chargedMoves": ["METEOR_MASH", "MOONBLAST"]
+    "speciesId": "talonflame",
+    "fastMove": "INCINERATE",
+    "chargedMoves": ["FLY", "FLAME_CHARGE"]
 }]

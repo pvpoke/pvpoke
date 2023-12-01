@@ -16,9 +16,9 @@
     "chargedMoves": ["DRAGON_CLAW", "BLAST_BURN"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "cofagrigus",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["SHADOW_BALL", "DARK_PULSE"]
+    "speciesId": "clodsire",
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["EARTHQUAKE", "SLUDGE_BOMB"]
 }, {
     "speciesId": "cresselia",
     "fastMove": "PSYCHO_CUT",
@@ -79,7 +79,7 @@
 }, {
     "speciesId": "medicham",
     "fastMove": "COUNTER",
-    "chargedMoves": ["ICE_PUNCH", "POWER_UP_PUNCH"]
+    "chargedMoves": ["ICE_PUNCH", "DYNAMIC_PUNCH"]
 }, {
     "speciesId": "ninetales_alolan",
     "fastMove": "POWDER_SNOW",
@@ -89,10 +89,6 @@
     "fastMove": "CHARM",
     "chargedMoves": ["WEATHER_BALL_ICE", "PSYSHOCK"],
     "shadowType": "shadow"
-}, {
-    "speciesId": "noctowl",
-    "fastMove": "WING_ATTACK",
-    "chargedMoves": ["SKY_ATTACK", "SHADOW_BALL"]
 }, {
     "speciesId": "pelipper",
     "fastMove": "WING_ATTACK",
@@ -120,10 +116,6 @@
     "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "scrafty",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["POWER_UP_PUNCH", "FOUL_PLAY"]
-}, {
     "speciesId": "serperior",
     "fastMove": "VINE_WHIP",
     "chargedMoves": ["FRENZY_PLANT", "AERIAL_ACE"]
@@ -147,7 +139,7 @@
 }, {
     "speciesId": "toxicroak",
     "fastMove": "COUNTER",
-    "chargedMoves": ["MUD_BOMB", "SLUDGE_BOMB"]
+    "chargedMoves": ["MUD_BOMB", "SHADOW_BALL"]
 }, {
     "speciesId": "trevenant",
     "fastMove": "SHADOW_CLAW",
@@ -168,9 +160,9 @@
 }, {
     "speciesId": "vigoroth",
     "fastMove": "COUNTER",
-    "chargedMoves": ["BODY_SLAM", "BULLDOZE"]
+    "chargedMoves": ["BODY_SLAM", "ROCK_SLIDE"]
 }, {
-    "speciesId": "clodsire",
-    "fastMove": "POISON_STING",
-    "chargedMoves": ["EARTHQUAKE", "SLUDGE_BOMB"]
+    "speciesId": "talonflame",
+    "fastMove": "INCINERATE",
+    "chargedMoves": ["FLY", "FLAME_CHARGE"]
 }]
