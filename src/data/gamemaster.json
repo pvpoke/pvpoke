@@ -38105,7 +38105,7 @@
         },
         "types": ["dragon", "ice"],
         "fastMoves": ["DRAGON_BREATH", "ICE_FANG"],
-        "chargedMoves": ["DRAGON_CLAW", "AVALANCHE", "OUTRAGE", "BLIZZARD"],
+        "chargedMoves": ["DRAGON_CLAW", "AVALANCHE", "OUTRAGE", "BLIZZARD", "ICY_WIND"],
         "defaultIVs": {
             "cp500": [5.5, 5, 7, 13],
             "cp1500": [15.5, 5, 15, 9],
