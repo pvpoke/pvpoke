@@ -38,6 +38,8 @@ var InterfaceMaster = (function () {
 
 				battle = new Battle();
 
+				pokeSearch.setBattle(battle);
+
 				for(var i = 0; i < multiSelectors.length; i++){
 					multiSelectors[i].init(data.pokemon, battle);
 				}
