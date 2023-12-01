@@ -33,6 +33,10 @@ function PokeSelect(element, i){
 
 		$.each(pokemon, function(n, poke){
 
+			if(poke.tags && poke.tags.indexOf("duplicate") > -1 && context != "modaloverrides"){
+				return;
+			}
+
 			var priority = 1;
 
 			if(poke.searchPriority){
@@ -54,10 +58,6 @@ function PokeSelect(element, i){
 			searchArr.push(obj);
 
 			var displayName = poke.speciesName;
-
-			if(poke.speciesId.indexOf("_xs") > -1){
-				displayName += " (Non XL)";
-			}
 
 			var $option = $("<option value=\""+poke.speciesId+"\">"+displayName+"</option>");
 

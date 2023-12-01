@@ -13,7 +13,7 @@ var InterfaceMaster = (function () {
 			var self = this;
 			var data;
 			var gm = GameMaster.getInstance();
-			var context = "rankings"; // Used for internal reference
+			var context = "overrides"; // Used for internal reference
 			var battle = new Battle();
 
 			var selectedPokemonIndex = -1;

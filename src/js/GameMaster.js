@@ -154,6 +154,10 @@ var GameMaster = (function () {
 
 			$.each(object.data.pokemon, function(index, poke){
 
+				if(poke.tags && poke.tags.indexOf("duplicate") > -1){
+					return;
+				}
+
 				if(poke.dex == dex){
 					list.push(poke);
 					return;
@@ -937,6 +941,10 @@ var GameMaster = (function () {
 					}
 
 					if((battle.getCP() < 2500)&&(bannedList.indexOf(pokemon.speciesId) > -1)){
+						continue;
+					}
+
+					if(pokemon.hasTag("duplicate1500") && battle.getCP() != 1500 & battle.getCup().name != "all"){
 						continue;
 					}
 

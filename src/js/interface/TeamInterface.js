@@ -972,7 +972,7 @@ var InterfaceMaster = (function () {
 
 					// Add results to alternatives table
 
-					$row = $("<tr><th class=\"name\"><b>"+(count+1)+". "+pokemon.speciesName+"<div class=\"button add\" pokemon=\""+pokemon.speciesId+"\">+</div></b></th></tr>");
+					$row = $("<tr><th class=\"name\"><b>"+(count+1)+". "+pokemon.speciesName+"<div class=\"button add\" pokemon=\""+pokemon.speciesId+"\" alias=\""+pokemon.aliasId+"\">+</div></b></th></tr>");
 
 					for(var n = 0; n < r.matchups.length; n++){
 						var $cell = $("<td><a class=\"rating\" href=\"#\" target=\"blank\"><span></span></a></td>");
@@ -1508,10 +1508,32 @@ var InterfaceMaster = (function () {
 
 			function addAlternativePokemon(e){
 				var id = $(e.target).attr("pokemon");
+
+				// Use an alias ID if it exists
+				if($(e.target).attr("alias") != $(e.target).attr("pokemon")){
+					id = $(e.target).attr("alias");
+				}
+
 				$(".poke-select-container .poke.multi .add-poke-btn").trigger("click", false);
 				$(".modal .poke-select option[value=\""+id+"\"]").prop("selected", "selected");
 				$(".modal .poke-select").trigger("change");
 				$("html, body").animate({ scrollTop: $(".poke.multi").offset().top }, 500);
+
+				// Use alias default moveset if it exists
+				if($(e.target).attr("alias") != $(e.target).attr("pokemon")){
+					var pokemon = new Pokemon($(e.target).attr("pokemon"), 0, battle);
+					pokemon.initialize(true);
+					pokemon.selectRecommendedMoveset();
+
+					$(".modal .move-select.fast option[value=\""+pokemon.fastMove.moveId+"\"]").prop("selected", "selected");
+					$(".modal .move-select.fast").trigger("change");
+
+					$(".modal .move-select.charged").eq(0).find("option[value=\""+pokemon.chargedMoves[0].moveId+"\"]").prop("selected", "selected");
+					$(".modal .move-select.charged").eq(0).trigger("change");
+
+					$(".modal .move-select.charged").eq(1).find("option[value=\""+pokemon.chargedMoves[1].moveId+"\"]").prop("selected", "selected");
+					$(".modal .move-select.charged").eq(1).trigger("change");
+				}
 			}
 
 			// Open the print dialogue

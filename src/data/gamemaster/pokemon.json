@@ -9336,6 +9336,32 @@
         "parent": "chinchou"
     }
 }, {
+    "dex": 171,
+    "speciesName": "Lanturn",
+    "speciesId": "lanturnw",
+	"aliasId": "lanturn",
+    "baseStats": {
+        "atk": 146,
+        "def": 137,
+        "hp": 268
+    },
+    "types": ["water", "electric"],
+    "fastMoves": ["CHARGE_BEAM", "WATER_GUN", "SPARK"],
+    "chargedMoves": ["HYDRO_PUMP", "THUNDER", "THUNDERBOLT", "SURF"],
+    "defaultIVs": {
+        "cp500": [9, 7, 11, 15],
+        "cp1500": [27, 5, 14, 12],
+        "cp2500": [50, 15, 15, 15]
+    },
+	"tags": ["duplicate", "duplicate1500"],
+    "buddyDistance": 3,
+    "thirdMoveCost": 50000,
+    "released": true,
+    "family": {
+        "id": "FAMILY_CHINCHOU",
+        "parent": "chinchou"
+    }
+}, {
     "dex": 172,
     "speciesName": "Pichu",
     "speciesId": "pichu",
