@@ -38600,7 +38600,7 @@
         "cooldown": 500,
         "buffs": [-1, 0],
         "buffTarget": "opponent",
-        "buffApplyChance": ".66",
+        "buffApplyChance": ".5",
         "archetype": "Debuff Spam/Bait"
     }, {
         "moveId": "BRICK_BREAK",
@@ -40562,7 +40562,7 @@
         "cooldown": 500,
         "buffs": [-1, 0],
         "buffTarget": "opponent",
-        "buffApplyChance": "0.4",
+        "buffApplyChance": "0.5",
         "archetype": "High Energy Debuff"
     }, {
         "moveId": "SCORCHING_SANDS",
@@ -40826,7 +40826,7 @@
         "type": "steel",
         "power": 7,
         "energy": 0,
-        "energyGain": 6,
+        "energyGain": 7,
         "cooldown": 1000,
         "archetype": "General"
     }, {
