@@ -36,28 +36,6 @@
             "values": ["mega"]
         }]
     }, {
-        "name": "aurora",
-        "title": "Battle Frontier (Aurora)",
-        "include": [],
-        "exclude": [{
-            "filterType": "tag",
-            "values": ["mega"]
-        }, {
-            "filterType": "type",
-            "name": "Type",
-            "values": ["poison", "steel", "fire"]
-        }, {
-            "filterType": "moveType",
-            "name": "Move Type",
-            "values": ["poison", "steel", "fire"]
-        }, {
-            "filterType": "move",
-            "values": ["hidden_power_water"]
-        }, {
-            "filterType": "id",
-            "values": ["carbink", "chansey", "articuno_galarian", "zapdos_galarian", "moltres_galarian", "pachirisu"]
-        }]
-    }, {
         "name": "battlefrontiermaster",
         "title": "Battle Frontier (Master League)",
         "include": [],
@@ -110,17 +88,6 @@
             }]
         }
     }, {
-        "name": "catch",
-        "title": "Catch Cup",
-        "include": [],
-        "exclude": [{
-            "filterType": "id",
-            "values": ["deoxys_defense", "registeel", "regirock", "regice", "mew", "victini", "tapu_fini", "genesect", "rayquaza", "zygarde", "latios", "latias", "raikou", "suicune", "entei", "celebi", "diancie", "regidrago", "regieleki", "ho_oh", "passimian", "flygon_shadow", "buzzwole", "drapion_shadow", "marowak_alolan_shadow", "lapras_shadow", "hitmontop_shadow", "meganium_shadow", "jumpluff_shadow", "steelix_shadow", "abomasnow_shadow", "walrein_shadow", "poliwrath_shadow", "politoed_shadow", "sealeo_shadow"]
-        }, {
-            "filterType": "tag",
-            "values": ["mega"]
-        }]
-    }, {
         "name": "classic",
         "title": "Classic",
         "include": [],
@@ -131,102 +98,14 @@
         "partySize": 3,
         "levelCap": 40
     }, {
-        "name": "cliffhanger",
-        "title": "Cliffhanger",
-        "include": [],
-        "exclude": [],
-        "tierRules": {
-            "max": 17,
-            "floor": 0,
-            "tiers": [{
-                "points": 9,
-                "pokemon": ["altaria", "azumarill", "bastiodon", "lanturn", "lickitung", "medicham", "noctowl", "registeel", "sableye", "stunfisk_galarian", "trevenant"]
-            }, {
-                "points": 5,
-                "pokemon": ["abomasnow", "araquanid", "aurorus", "charizard", "cofagrigus", "cresselia", "deoxys_defense", "diggersby", "drapion", "dubwool", "froslass", "gliscor", "jellicent", "jumpluff", "mandibuzz", "ninetales_alolan", "obstagoon", "pelipper", "pidgeot", "regirock", "runerigus", "scrafty", "skarmory", "swampert", "tapu_fini", "toxapex", "tropius", "umbreon", "venusaur", "vigoroth", "walrein"]
-            }, {
-                "points": 1,
-                "pokemon": ["beedrill", "bronzong", "buzzwole", "chansey", "chesnaught", "dragalge", "dewgong", "dragonair", "dragonite", "dunsparce", "empoleon", "ferrothorn", "galvantula", "gligar", "golbat", "granbull", "greedent", "grimer_alolan", "guzzlord", "hakamo_o", "qwilfish_hisuian", "hypno", "jirachi", "kommo_o", "lapras", "lugia", "lurantis", "machamp", "magcargo", "mantine", "meganium", "marowak_alolan", "miltank", "mew", "muk_alolan", "ninetales", "nidoqueen", "overqwil", "pachirisu", "politoed", "probopass", "roserade", "sandslash_alolan", "serperior", "sirfetchd", "skuntank", "sneasler", "steelix", "talonflame", "tentacruel", "stunfisk", "toxicroak", "victini", "victreebel", "whiscash", "wigglytuff", "wobbuffet", "zweilous"]
-            }]
-        }
-    }, {
         "name": "custom",
         "title": "Custom",
         "include": [],
         "exclude": []
     }, {
-        "name": "electric",
-        "title": "Electric Cup",
-        "include": [{
-            "filterType": "type",
-            "name": "Type",
-            "values": ["electric"]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "name": "Tag",
-            "values": ["mega"]
-        }, {
-            "filterType": "id",
-            "name": "Species",
-            "values": ["stunfisk", "charjabug", "vikavolt", "heliolisk"]
-        }],
-        "partySize": 3,
-        "presetOnly": true
-    }, {
-        "name": "elementremix",
-        "title": "Element Cup Remix",
-        "include": [{
-            "filterType": "evolution",
-            "values": [1]
-        }, {
-            "filterType": "type",
-            "values": ["grass", "water", "fire"]
-        }],
-        "exclude": [{
-            "filterType": "id",
-            "values": ["chinchou", "ducklett", "cottonee", "salandit"]
-        }],
-        "partySize": 3,
-        "presetOnly": true
-    }, {
-        "name": "gbinvitational",
-        "title": "Gymbreakers Invitational",
-        "include": [{
-            "filterType": "type",
-            "name": "Type",
-            "values": ["bug", "dragon", "grass", "normal", "water"]
-        }, {
-            "filterType": "id",
-            "name": "Species",
-            "values": ["froslass", "ninetales_alolan_shadow", "ninetales_alolan", "charizard", "charizard_shadow", "regice", "sudowoodo", "donphan", "ampharos", "magnezone", "hypno", "deoxys_defense", "regirock", "magnezone_shadow", "hypno_shadow", "regirock_shadow", "ampharos_shadow", "donphan_shadow", "sudowoodo_shadow", "regice_shadow"]
-        }],
-        "exclude": [{
-            "filterType": "id",
-            "name": "Species",
-            "values": ["abomasnow", "mantine", "lanturn", "toxapex", "obstagoon", "arctibax", "baxcalibur"]
-        }, {
-            "filterType": "tag",
-            "name": "Tag",
-            "values": ["mega"]
-        }]
-    }, {
         "name": "gobattleleague",
         "title": "GO Battle League",
         "include": [],
-        "exclude": [{
-            "filterType": "tag",
-            "values": ["mega"]
-        }],
-        "partySize": 3,
-        "presetOnly": true
-    }, {
-        "name": "halloween",
-        "title": "Halloween Cup",
-        "include": [{
-            "filterType": "type",
-            "values": ["poison", "ghost", "bug", "dark", "fairy"]
-        }],
         "exclude": [{
             "filterType": "tag",
             "values": ["mega"]
@@ -268,51 +147,6 @@
         }],
         "partySize": 3
     }, {
-        "name": "psychic",
-        "title": "Psychic Cup",
-        "include": [{
-            "filterType": "type",
-            "values": ["psychic"]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "values": ["mega"]
-        }, {
-            "filterType": "id",
-            "values": ["mew"]
-        }],
-        "partySize": 3,
-        "presetOnly": true
-    }, {
-        "name": "ragnargymbreakers",
-        "title": "Gymbreakers (Ragnar)",
-        "include": [{
-            "filterType": "type",
-            "name": "Type",
-            "values": ["bug", "dragon", "ice", "poison", "psychic", "water"]
-        }, {
-            "filterType": "id",
-            "name": "Species",
-            "values": ["miltank", "snorlax", "snorlax_shadow"]
-        }],
-        "exclude": [{
-            "filterType": "type",
-            "name": "Type",
-            "values": ["dark", "electric", "rock"]
-        }, {
-            "filterType": "tag",
-            "name": "Tag",
-            "values": ["mega"]
-        }, {
-            "filterType": "id",
-            "name": "Species",
-            "values": ["altaria", "sandslash_alolan", "sandshrew_alolan", "ninetales_alolan", "lanturn", "toxicroak", "buzzwole", "sneasler", "medicham", "araquanid", "articuno_galarian", "toxapex", "jellicent", "pelipper", "golbat", "crobat", "forretress", "genesect"]
-        }],
-        "restrictedPicks": 2,
-        "restrictedPokemon": ["quagsire", "cresselia", "miltank", "escavalier", "mantine", "azumarill", "mew", "weezing_galarian"],
-        "allowSameSpecies": true,
-        "levelCap": 50
-    }, {
         "name": "remix",
         "title": "Remix",
         "include": [],
@@ -342,66 +176,6 @@
             "values": ["mega"]
         }],
         "partySize": 3
-    }, {
-        "name": "savannah",
-        "title": "Battle Frontier (Savannah)",
-        "include": [{
-            "filterType": "id",
-            "values": ["blaziken", "poliwrath", "tyrunt", "regirock", "qwilfish", "togetic"]
-        }, {
-            "filterType": "type",
-            "values": ["electric", "normal", "grass", "bug"]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "values": ["mega", "shadow"]
-        }, {
-            "filterType": "id",
-            "values": ["diggersby", "pidgeot", "vigoroth", "dubwool", "lanturn", "stunfisk", "noctowl"]
-        }]
-    }, {
-        "name": "sunshine",
-        "title": "Sunshine Cup",
-        "include": [{
-            "filterType": "type",
-            "values": ["normal", "fire", "ground", "grass"]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "values": ["mega"]
-        }, {
-            "filterType": "id",
-            "values": ["charizard"]
-        }],
-        "partySize": 3,
-        "presetOnly": true
-    }, {
-        "name": "vanguardgymbreakers",
-        "title": "Gymbreakers (Vanguard)",
-        "include": [{
-            "filterType": "type",
-            "name": "Type",
-            "values": ["dragon", "fighting", "flying", "ghost", "ground", "ice", "poison", "rock", "water"]
-        }, {
-            "filterType": "dex",
-            "name": "Pokedex Number",
-            "values": [1, 721]
-        }],
-        "exclude": [{
-            "filterType": "type",
-            "name": "Type",
-            "values": ["dark", "fairy", "steel"]
-        }, {
-            "filterType": "tag",
-            "name": "Tag",
-            "values": ["galarian", "hisuian", "mega"]
-        }, {
-            "filterType": "id",
-            "name": "Species",
-            "values": ["abomasnow", "medicham", "lanturn", "altaria", "cofagrigus", "noctowl", "pidgeot", "aurorus", "jellicent", "pelipper"]
-        }],
-        "allowSameSpecies": true,
-        "levelCap": 50
     }],
     "formats": [{
         "title": "Master League (Classic)",
@@ -443,6 +217,14 @@
         "meta": "premiermaster",
         "showCup": false,
         "showFormat": false,
+        "showMeta": true
+    }, {
+        "title": "Retro Cup",
+        "cup": "retro",
+        "cp": 1500,
+        "meta": "retro",
+        "showCup": true,
+        "showFormat": true,
         "showMeta": true
     }, {
         "title": "P!P Championship Series",
