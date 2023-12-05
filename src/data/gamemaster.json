@@ -113,6 +113,19 @@
         "partySize": 3,
         "presetOnly": true
     }, {
+        "name": "holiday",
+        "title": "Holiday Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["grass", "normal", "ice", "ghost", "flying", "electric"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }],
+        "partySize": 3,
+        "presetOnly": true
+    }, {
         "name": "little",
         "title": "Little Cup",
         "include": [{
@@ -224,6 +237,14 @@
         "cup": "retro",
         "cp": 1500,
         "meta": "retro",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Holiday Cup",
+        "cup": "holiday",
+        "cp": 1500,
+        "meta": "holiday",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
