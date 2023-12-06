@@ -29,6 +29,7 @@ var InterfaceMaster = (function () {
 
 				$(xml).find("channel").prepend("<item><title>"+$("#post-title").val()+"</title><description><![CDATA["+content+"]]></description><link>"+$("#post-link").val()+"</link><pubDate>"+pubDate+"</pubDate></item>");
 
+				$(xml).find("channel item").last().remove();
 				updateXMLDisplay();
 			});
 
