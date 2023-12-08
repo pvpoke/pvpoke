@@ -122,6 +122,10 @@
         "exclude": [{
             "filterType": "tag",
             "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["articuno", "celebi", "ho_oh", "hoopa", "lugia", "moltres", "rayquaza", "regice", "regieleki", "regigigas", "shaymin", "shaymin_sky", "zapdos"],
+            "leagues": [500]
         }],
         "partySize": 3,
         "presetOnly": true
@@ -245,6 +249,14 @@
         "cup": "holiday",
         "cp": 1500,
         "meta": "holiday",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Little Holiday Cup",
+        "cup": "holiday",
+        "cp": 500,
+        "meta": "littleholiday",
         "showCup": true,
         "showFormat": true,
         "showMeta": true

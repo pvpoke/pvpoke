@@ -925,6 +925,8 @@ function Pokemon(id, i, b){
 
 				if(r.moveset.length > 2){
 					self.selectMove("charged", r.moveset[2], 1);
+				} else{
+					self.selectMove("charged", "none", 1);
 				}
 
 				self.resetMoves();

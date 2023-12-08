@@ -1413,6 +1413,9 @@ var GameMaster = (function () {
 									pokemon.selectMove("charged", pokemonList[n].chargedMoves[j], j);
 								}
 
+								if(pokemonList[n].chargedMoves.length < 2){
+									pokemon.selectMove("charged", "none", 1);
+								}
 							}
 
 							// Set weight modifier
