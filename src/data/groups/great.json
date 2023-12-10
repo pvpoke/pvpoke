@@ -94,6 +94,15 @@
     "fastMove": "WING_ATTACK",
     "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
 }, {
+    "speciesId": "poliwrath",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["SCALD", "ICY_WIND"]
+}, {
+    "speciesId": "poliwrath_shadow",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["SCALD", "ICY_WIND"],
+    "shadowType": "shadow"
+}, {
     "speciesId": "quagsire_shadow",
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["MUD_BOMB", "STONE_EDGE"],
@@ -175,12 +184,7 @@
     "chargedMoves": ["MUD_BOMB", "SCALD"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "poliwrath",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["SCALD", "ICY_WIND"]
-}, {
-    "speciesId": "poliwrath_shadow",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["SCALD", "ICY_WIND"],
-    "shadowType": "shadow"
+    "speciesId": "altaria",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["SKY_ATTACK", "MOONBLAST"]
 }]
