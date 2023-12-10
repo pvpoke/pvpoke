@@ -597,10 +597,16 @@ var RankerMaster = (function () {
 							}
 
 							var sc = matches[j].adjRating * weight;
-							var opScore = 1000 - matches[j].adjRating * weight;
+							var opScore = matches[j].adjOpRating * Math.pow(4, weight);
 
 							if(rankings[j].scores[n] / bestScore < .1 + (rankCutoffIncrease * n)){
 								weight = 0;
+							}
+
+							if(weight >= 2){
+								//opScore = opScore * Math.pow(2, weight)
+							} else{
+								//opScore = 0;
 							}
 
 							weights += weight;
@@ -657,7 +663,7 @@ var RankerMaster = (function () {
 
 					var matches = rankings[i].matches;
 
-					rankings[i].matches.sort((a,b) => (a.opScore > b.opScore) ? 1 : ((b.opScore > a.opScore) ? -1 : 0));
+					rankings[i].matches.sort((a,b) => (a.opScore > b.opScore) ? -1 : ((b.opScore > a.opScore) ? 1 : 0));
 
 					var matchupCount = Math.min(5, rankings[i].matches.length);
 					var keyMatchupsCount = 0;
