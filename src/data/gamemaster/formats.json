@@ -91,6 +91,33 @@
 		"showMeta": true
 	},
 	{
+		"title": "Battle Frontier (Enchanted)",
+		"cup": "enchanted",
+		"cp": 2500,
+		"meta": "enchanted",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+        "title": "Battle Frontier (Primordial)",
+        "cup": "primordial",
+        "cp": 1500,
+        "meta": "primordial",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    },
+	{
+        "title": "Battle Frontier (Serene)",
+        "cup": "serene",
+        "cp": 1500,
+        "meta": "serene",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    },
+	{
 		"title": "Battle Frontier (Ultra)",
 		"cup": "battlefrontierultra",
 		"cp": 2500,

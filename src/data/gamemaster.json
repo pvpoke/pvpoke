@@ -103,6 +103,23 @@
         "include": [],
         "exclude": []
     }, {
+        "name": "enchanted",
+        "title": "Battle Frontier (Enchanted)",
+        "include": [{
+            "filterType": "type",
+            "values": ["steel", "dragon", "fairy", "dark", "normal", "ghost", "psychic"]
+        }, {
+            "filterType": "id",
+            "values": ["ampharos", "ampharos_shadow", "golisopod", "articuno", "articuno_shadow", "muk", "muk_shadow", "zapdos", "zapdos_shadow", "regice", "regice_shadow", "sneasler", "sneasler_shadow"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["stunfisk_galarian", "cobalion", "registeel", "zygarde_complete", "giratina_altered", "steelix", "pidgeot", "greedent", "skarmory"]
+        }]
+    }, {
         "name": "gbinvitational",
         "title": "Gymbreakers Invitational",
         "include": [{
@@ -185,6 +202,26 @@
         }],
         "partySize": 3
     }, {
+        "name": "primordial",
+        "title": "Battle Frontier (Primordial)",
+        "include": [{
+            "filterType": "type",
+            "values": ["dark", "dragon", "electric", "ice", "rock"]
+        }, {
+            "filterType": "id",
+            "values": ["snorlax", "munchlax", "lickilicky", "castform", "milotic", "arbok", "sceptile", "golisopod", "togetic"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega", "shadow"]
+        }, {
+            "filterType": "id",
+            "values": ["ninetales_alolan", "raichu", "obstagoon", "walrein", "umbreon", "dewgong", "regirock", "lycanroc_midnight", "crustle", "dragalge", "abomasnow", "pachirisu", "chansey", "carbink", "haxorus", "meowscarada", "beartic", "lanturn", "diancie", "stunfisk", "guzzlord"]
+        }, {
+            "filterType": "type",
+            "values": ["steel", "fighting"]
+        }]
+    }, {
         "name": "remix",
         "title": "Remix",
         "include": [],
@@ -215,6 +252,26 @@
         }],
         "partySize": 3,
         "presetOnly": true
+    }, {
+        "name": "serene",
+        "title": "Battle Frontier (Serene)",
+        "include": [{
+            "filterType": "type",
+            "values": ["water", "normal", "psychic"]
+        }, {
+            "filterType": "id",
+            "values": ["hitmontop", "hitmontop_shadow", "haunter", "haunter_shadow", "conkeldurr", "gengar", "gengar_shadow"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["araquanid", "lanturn", "pidgeot", "cresselia", "medicham", "poliwrath", "obstagoon", "wobbuffet", "dubwool", "vigoroth", "heliolisk", "toxapex", "chansey", "greedent", "chinchou", "lickitung", "mantine", "miltank", "gardevoir", "wigglytuff", "primarina", "rotom_wash"]
+        }, {
+            "filterType": "type",
+            "values": ["grass"]
+        }]
     }],
     "formats": [{
         "title": "Master League (Classic)",
@@ -296,6 +353,30 @@
         "meta": "championshipseries",
         "showCup": false,
         "showFormat": false,
+        "showMeta": true
+    }, {
+        "title": "Battle Frontier (Enchanted)",
+        "cup": "enchanted",
+        "cp": 2500,
+        "meta": "enchanted",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Battle Frontier (Primordial)",
+        "cup": "primordial",
+        "cp": 1500,
+        "meta": "primordial",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Battle Frontier (Serene)",
+        "cup": "serene",
+        "cp": 1500,
+        "meta": "serene",
+        "showCup": true,
+        "showFormat": true,
         "showMeta": true
     }, {
         "title": "Battle Frontier (Ultra)",
@@ -40303,7 +40384,7 @@
         "power": 4,
         "energy": 0,
         "energyGain": 4,
-        "cooldown": 1500,
+        "cooldown": 1000,
         "archetype": "Low Quality"
     }, {
         "moveId": "POWDER_SNOW",
