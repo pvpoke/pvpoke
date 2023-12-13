@@ -1140,6 +1140,11 @@ function Battle(){
 
 						if (moveDamage >= currState.hp) {
 							turnsToLive = Math.min(currState.turn, turnsToLive);
+
+							if(poke.stats.atk > opponent.stats.atk && opponent.fastMove.cooldown % poke.fastMove.cooldown == 0){
+								turnsToLive++;
+							}
+
 							self.logDecision(turns, poke, " opponent has energy to use " + opponent.activeChargedMoves[n].name + " and it would do " + moveDamage + " damage. I have " + turnsToLive + " turn(s) to live, opponent has " + currState.opEnergy);
 							break;
 						}
@@ -1181,6 +1186,13 @@ function Battle(){
 			if((poke.hp <= opponent.fastMove.damage)&&(opponent.cooldown > 0)&&(opponent.fastMove.cooldown > 500)){
 				turnsToLive = opponent.cooldown / 500;
 
+				if(opponent.hp > poke.fastMove.damage){
+					turnsToLive--;
+				}
+			}
+
+			// Anticipate a Fast Move landing if you use your Fast Move
+			if(poke.hp <= opponent.fastMove.damage && opponent.cooldown == 0 && opponent.fastMove.cooldown <= poke.fastMove.cooldown + 500){
 				if(opponent.hp > poke.fastMove.damage){
 					turnsToLive--;
 				}
@@ -1379,6 +1391,11 @@ function Battle(){
 		var bestCycleDamage = bestChargedDamage + (fastDamage * Math.ceil(poke.bestChargedMove.energy / poke.fastMove.energyGain));
 		var minimumCycleThreshold = 2;
 
+		// Prefer non-debuffing moves when it will take multiple to KO
+		if(poke.bestChargedMove.selfDebuffing && poke.bestChargedMove.energy > poke.fastestChargedMove.energy && poke.bestChargedMove.dpe / poke.fastestChargedMove.dpe < 2){
+			minimumCycleThreshold = 1.1;
+		}
+
 		if(opponent.hp / bestCycleDamage > minimumCycleThreshold){
 			// It's going to take a lot of cycles to KO, so just throw the best move
 
@@ -1403,6 +1420,15 @@ function Battle(){
 				useChargedMove = false;
 				return;
 			} else{
+				// Stack self debuffing moves
+				if(selectedMove.selfDebuffing){
+					var energyToReach = poke.energy + (Math.floor((100 - poke.energy) / poke.fastMove.energyGain) * poke.fastMove.energyGain);
+					if(poke.energy < energyToReach){
+						useChargedMove = false;
+						return;
+					}
+				}
+
 				action = new TimelineAction(
 					"charged",
 					poke.index,
