@@ -118,13 +118,13 @@
         "showMeta": true
     },
 	{
-		"title": "Battle Frontier (Ultra)",
-		"cup": "battlefrontierultra",
-		"cp": 2500,
-		"meta": "ultra",
+		"title": "Battle Frontier (Great)",
+		"cup": "battlefrontiergreat",
+		"cp": 1500,
+		"meta": "great",
 		"showCup": true,
 		"showFormat": true,
-		"showMeta": true,
+		"showMeta": false,
 		"hideRankings": true
 	},
 	{
