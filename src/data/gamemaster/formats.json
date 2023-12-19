@@ -46,15 +46,6 @@
 		"showMeta": true
 	},
 	{
-		"title": "Retro Cup",
-		"cup": "retro",
-		"cp": 1500,
-		"meta": "retro",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
 		"title": "Holiday Cup",
 		"cup": "holiday",
 		"cp": 1500,
@@ -68,6 +59,15 @@
 		"cup": "holiday",
 		"cp": 500,
 		"meta": "littleholiday",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Great League Remix",
+		"cup": "remix",
+		"cp": 1500,
+		"meta": "remix",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
@@ -137,6 +137,15 @@
 		"showMeta": true,
 		"hideRankings": true
 	},
+	{
+        "title": "Devon Knockout Cup",
+        "cup": "knockout",
+        "cp": 1500,
+        "meta": "knockout",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    },
 	{
 		"title": "Custom",
 		"cup": "custom",

@@ -1,0 +1,17 @@
+{
+    "name": "knockout",
+    "title": "Devon Knockout Cup",
+	"restrictedPicks": 2,
+	"restrictedPokemon": ["gastrodon", "whiscash", "diggersby", "runerigus", "golisopod", "araquanid", "tentacruel", "ariados", "charjabug", "vikavolt", "galvantula"],
+    "include": [{
+        "filterType": "id",
+        "name": "Species",
+        "values": ["sandslash", "machamp", "sirfetchd", "hitmontop", "primeape", "poliwrath", "gastrodon", "whiscash", "diggersby", "runerigus", "golisopod", "araquanid", "tentacruel", "ariados", "charjabug", "vikavolt", "galvantula", "donphan", "escavalier", "politoed", "dewgong", "walrein", "sealeo", "lapras", "samurott", "blastoise", "milotic", "greninja", "castform_rainy", "wailmer", "seaking", "suicune", "qwilfish", "gengar", "haunter", "beedrill", "swalot", "weezing_galarian", "grimer", "muk", "grimer_alolan", "muk_alolan", "drapion", "skuntank", "qwilfish_hisuian", "overqwil", "seviper", "scolipede", "marshtomp", "seismitoad", "stunfisk", "sanslash", "golurk", "palossand", "piloswine", "marowak", "hippowdon", "rhyperior", "rhydon", "ampharos", "heliolisk", "dedenne", "raichu_alolan", "minun", "graveler_alolan", "golem_alolan", "raichu", "minun", "luxray"]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "name": "Tag",
+        "values": ["shadow", "mega"]
+    }],
+	"link": "https://discord.com/invite/MtGA34QM5N"
+}

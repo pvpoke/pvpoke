@@ -191,6 +191,22 @@
         "partySize": 3,
         "presetOnly": true
     }, {
+        "name": "knockout",
+        "title": "Devon Knockout Cup",
+        "restrictedPicks": 2,
+        "restrictedPokemon": ["gastrodon", "whiscash", "diggersby", "runerigus", "golisopod", "araquanid", "tentacruel", "ariados", "charjabug", "vikavolt", "galvantula"],
+        "include": [{
+            "filterType": "id",
+            "name": "Species",
+            "values": ["sandslash", "machamp", "sirfetchd", "hitmontop", "primeape", "poliwrath", "gastrodon", "whiscash", "diggersby", "runerigus", "golisopod", "araquanid", "tentacruel", "ariados", "charjabug", "vikavolt", "galvantula", "donphan", "escavalier", "politoed", "dewgong", "walrein", "sealeo", "lapras", "samurott", "blastoise", "milotic", "greninja", "castform_rainy", "wailmer", "seaking", "suicune", "qwilfish", "gengar", "haunter", "beedrill", "swalot", "weezing_galarian", "grimer", "muk", "grimer_alolan", "muk_alolan", "drapion", "skuntank", "qwilfish_hisuian", "overqwil", "seviper", "scolipede", "marshtomp", "seismitoad", "stunfisk", "sanslash", "golurk", "palossand", "piloswine", "marowak", "hippowdon", "rhyperior", "rhydon", "ampharos", "heliolisk", "dedenne", "raichu_alolan", "minun", "graveler_alolan", "golem_alolan", "raichu", "minun", "luxray"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "name": "Tag",
+            "values": ["shadow", "mega"]
+        }],
+        "link": "https://discord.com/invite/MtGA34QM5N"
+    }, {
         "name": "little",
         "title": "Little Cup",
         "include": [{
@@ -250,7 +266,7 @@
         "include": [],
         "exclude": [{
             "filterType": "id",
-            "values": ["venusaur", "ninetales_alolan", "noctowl", "lanturn", "azumarill", "umbreon", "skarmory", "swampert", "pelipper", "sableye", "medicham", "altaria", "walrein", "registeel", "deoxys_defense", "bastiodon", "froslass", "stunfisk_galarian", "trevenant", "obstagoon"],
+            "values": ["ninetales_alolan", "noctowl", "lanturn", "azumarill", "umbreon", "pelipper", "sableye", "medicham", "registeel", "deoxys_defense", "bastiodon", "stunfisk_galarian", "trevenant", "toxicroak", "scrafty", "greninja", "talonflame", "sandslash_alolan", "wigglytuff", "altaria"],
             "leagues": [1500]
         }, {
             "filterType": "id",
@@ -338,14 +354,6 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Retro Cup",
-        "cup": "retro",
-        "cp": 1500,
-        "meta": "retro",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Holiday Cup",
         "cup": "holiday",
         "cp": 1500,
@@ -358,6 +366,14 @@
         "cup": "holiday",
         "cp": 500,
         "meta": "littleholiday",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Great League Remix",
+        "cup": "remix",
+        "cp": 1500,
+        "meta": "remix",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -419,6 +435,14 @@
         "showFormat": true,
         "showMeta": true,
         "hideRankings": true
+    }, {
+        "title": "Devon Knockout Cup",
+        "cup": "knockout",
+        "cp": 1500,
+        "meta": "knockout",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
     }, {
         "title": "Custom",
         "cup": "custom",
