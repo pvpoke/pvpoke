@@ -23,9 +23,9 @@
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["WEATHER_BALL_ICE", "METEOR_BEAM"]
 }, {
-    "speciesId": "guzzlord",
-    "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["DRAGON_CLAW", "CRUNCH"]
+    "speciesId": "arctibax",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["DRAGON_CLAW", "AVALANCHE"]
 }, {
     "speciesId": "cradily",
     "fastMove": "BULLET_SEED",
@@ -111,13 +111,9 @@
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["FOUL_PLAY", "RETURN"]
 }, {
-    "speciesId": "empoleon",
-    "fastMove": "WATERFALL",
-    "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
-}, {
-    "speciesId": "rapidash_galarian",
-    "fastMove": "FAIRY_WIND",
-    "chargedMoves": ["BODY_SLAM", "HIGH_HORSEPOWER"]
+    "speciesId": "togetic",
+    "fastMove": "STEEL_WING",
+    "chargedMoves": ["AERIAL_ACE", "DAZZLING_GLEAM"]
 }, {
     "speciesId": "golisopod",
     "fastMove": "FURY_CUTTER",
@@ -142,4 +138,8 @@
     "speciesId": "incineroar",
     "fastMove": "DOUBLE_KICK",
     "chargedMoves": ["DARK_PULSE", "BLAZE_KICK"]
+}, {
+    "speciesId": "flygon",
+    "fastMove": "DRAGON_TAIL",
+    "chargedMoves": ["DRAGON_CLAW","SCORCHING_SANDS"]
 }]
