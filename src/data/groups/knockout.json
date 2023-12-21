@@ -17,7 +17,7 @@
 }, {
     "speciesId": "primeape",
     "fastMove": "COUNTER",
-    "chargedMoves": ["CROSS_CHOP", "CLOSE_COMBAT"]
+    "chargedMoves": ["CROSS_CHOP", "NIGHT_SLASH"]
 }, {
     "speciesId": "whiscash",
     "fastMove": "MUD_SHOT",
@@ -57,7 +57,7 @@
 }, {
     "speciesId": "vikavolt",
     "fastMove": "VOLT_SWITCH",
-    "chargedMoves": ["CRUNCH", "FLY"]
+    "chargedMoves": ["X_SCISSOR", "FLY"]
 }, {
     "speciesId": "galvantula",
     "fastMove": "VOLT_SWITCH",
@@ -101,7 +101,7 @@
 }, {
     "speciesId": "weezing_galarian",
     "fastMove": "FAIRY_WIND",
-    "chargedMoves": ["BRUTAL_SWING", "HYPER_BEAM"]
+    "chargedMoves": ["BRUTAL_SWING", "PLAY_ROUGH"]
 }, {
     "speciesId": "stunfisk",
     "fastMove": "THUNDER_SHOCK",
@@ -121,7 +121,7 @@
 }, {
     "speciesId": "dedenne",
     "fastMove": "THUNDER_SHOCK",
-    "chargedMoves": ["DISCHARGE", "PARABOLIC_CHARGE"]
+    "chargedMoves": ["DISCHARGE", "PLAY_ROUGH"]
 }, {
     "speciesId": "raichu_alolan",
     "fastMove": "VOLT_SWITCH",
