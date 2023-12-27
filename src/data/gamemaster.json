@@ -30564,7 +30564,8 @@
         },
         "types": ["grass", "ghost"],
         "fastMoves": ["ASTONISH", "RAZOR_LEAF", "LEAFAGE", "MAGICAL_LEAF"],
-        "chargedMoves": ["SHADOW_SNEAK", "ENERGY_BALL", "BRAVE_BIRD"],
+        "chargedMoves": ["SHADOW_SNEAK", "ENERGY_BALL", "BRAVE_BIRD", "FRENZY_PLANT", "SPIRIT_SHACKLE"],
+        "eliteMoves": ["FRENZY_PLANT"],
         "defaultIVs": {
             "cp500": [7, 5, 10, 6],
             "cp1500": [20, 4, 14, 12],
