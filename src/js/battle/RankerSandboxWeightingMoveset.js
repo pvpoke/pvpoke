@@ -531,6 +531,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if(cup.name == "fantasy" && battle.getCP() == 1500){
+					iterations = 1;
+				}
+
 				if(cup.name == "custom"){
 					iterations = 7;
 				}

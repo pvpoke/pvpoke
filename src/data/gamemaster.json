@@ -143,6 +143,17 @@
             "values": ["stunfisk_galarian", "cobalion", "registeel", "zygarde_complete", "giratina_altered", "steelix", "pidgeot", "greedent", "skarmory"]
         }]
     }, {
+        "name": "fantasy",
+        "title": "Fantasy Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["steel", "dragon", "fairy"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }]
+    }, {
         "name": "gbinvitational",
         "title": "Gymbreakers Invitational",
         "include": [{
@@ -354,14 +365,6 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Holiday Cup",
-        "cup": "holiday",
-        "cp": 1500,
-        "meta": "holiday",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Little Holiday Cup",
         "cup": "holiday",
         "cp": 500,
@@ -374,6 +377,14 @@
         "cup": "remix",
         "cp": 1500,
         "meta": "remix",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Fantasy Cup",
+        "cup": "fantasy",
+        "cp": 1500,
+        "meta": "fantasy",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
