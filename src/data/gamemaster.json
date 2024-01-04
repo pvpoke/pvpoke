@@ -8109,7 +8109,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": true
+        "released": false
     }, {
         "dex": 133,
         "speciesName": "Eevee",
@@ -15062,7 +15062,7 @@
         "eliteMoves": ["STRUGGLE_BUG"],
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": true,
+        "released": false,
         "family": {
             "id": "FAMILY_NINCADA",
             "parent": "nincada"
@@ -31169,7 +31169,7 @@
         "released": true,
         "family": {
             "id": "FAMILY_ROCKRUFF",
-            "evolutions": ["lycanroc_midnight", "lycanroc_midday"]
+            "evolutions": ["lycanroc_midnight", "lycanroc_midday", "lycranroc_dusk"]
         }
     }, {
         "dex": 745,
@@ -31190,7 +31190,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_ROCKRUFF",
             "parent": "rockruff"
@@ -40665,7 +40665,7 @@
         "archetype": "Nuke"
     }, {
         "moveId": "ROAR_OF_TIME",
-        "name": "Draco Meteor",
+        "name": "Roar of Time",
         "type": "dragon",
         "power": 150,
         "energy": 65,
