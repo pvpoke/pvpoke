@@ -4,14 +4,14 @@
     "include": [],
     "exclude": [{
         "filterType": "id",
-        "values": ["gengar_mega", "swampert_mega", "gardevoir_mega", "latios_mega", "latias_mega", "charizard_mega_y", "gyarados_mega", "groudon_primal", "kyogre_primal", "zygarde_complete", "rayquaza_mega","garchomp_mega"]
+        "values": ["gengar_mega", "swampert_mega", "gardevoir_mega", "latios_mega", "latias_mega", "charizard_mega_y", "gyarados_mega", "groudon_primal", "kyogre_primal", "zygarde_complete", "rayquaza_mega","garchomp_mega", "tyranitar_mega"]
     }],
     "tierRules": {
         "max": 8,
         "floor": 0,
         "tiers": [{
             "points": 6,
-            "pokemon": ["salamence_mega", "tyranitar_mega", "scizor_mega"]
+            "pokemon": ["salamence_mega", "scizor_mega"]
         }, {
             "points": 4,
             "pokemon": ["mewtwo", "dialga", "zacian_hero", "solgaleo", "groudon", "xerneas", "ho_oh", "kyogre", "meloetta_aria", "steelix_mega"]
