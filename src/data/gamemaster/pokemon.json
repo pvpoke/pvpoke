@@ -8791,7 +8791,7 @@
     "levelFloor": 20,
     "buddyDistance": 3,
     "thirdMoveCost": 10000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_CYNDAQUIL",
         "parent": "quilava"
@@ -27529,7 +27529,8 @@
     },
     "types": ["flying", "none"],
     "fastMoves": ["ASTONISH", "GUST"],
-    "chargedMoves": ["HEAT_WAVE", "PSYCHIC", "FOCUS_BLAST", "HURRICANE"],
+    "chargedMoves": ["HEAT_WAVE", "PSYCHIC", "FOCUS_BLAST", "HURRICANE", "BLEAKWIND_STORM"],
+	"eliteMoves": ["BLEAKWIND_STORM"],
     "defaultIVs": {
         "cp500": [6, 6, 12, 9],
         "cp1500": [17.5, 4, 7, 13],
