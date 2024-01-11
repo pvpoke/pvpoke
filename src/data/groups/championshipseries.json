@@ -20,7 +20,7 @@
     "chargedMoves": ["EARTHQUAKE", "SLUDGE_BOMB"]
 }, {
     "speciesId": "clodsire",
-    "fastMove": "MUD_SHOT",
+    "fastMove": "POISON_STING",
     "chargedMoves": ["EARTHQUAKE", "STONE_EDGE"]
 }, {
     "speciesId": "cresselia",
@@ -30,10 +30,6 @@
     "speciesId": "deoxys_defense",
     "fastMove": "COUNTER",
     "chargedMoves": ["THUNDERBOLT", "PSYCHO_BOOST"]
-}, {
-    "speciesId": "deoxys_defense",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["ROCK_SLIDE", "PSYCHO_BOOST"]
 }, {
     "speciesId": "dragonair_shadow",
     "fastMove": "DRAGON_BREATH",
@@ -80,11 +76,7 @@
 }, {
     "speciesId": "mantine",
     "fastMove": "WING_ATTACK",
-    "chargedMoves": ["BUBBLE_BEAM", "ICE_BEAM"]
-}, {
-    "speciesId": "medicham",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["PSYCHIC", "ICE_PUNCH"]
+    "chargedMoves": ["AERIAL_ACE", "ICE_BEAM"]
 }, {
     "speciesId": "medicham",
     "fastMove": "COUNTER",
@@ -133,11 +125,15 @@
 }, {
     "speciesId": "serperior",
     "fastMove": "VINE_WHIP",
-    "chargedMoves": ["FRENZY_PLANT", "LEAF_TORNADO"]
+    "chargedMoves": ["FRENZY_PLANT", "AERIAL_ACE"]
 }, {
     "speciesId": "skarmory",
     "fastMove": "STEEL_WING",
     "chargedMoves": ["BRAVE_BIRD", "SKY_ATTACK"]
+}, {
+    "speciesId": "skeledirge",
+    "fastMove": "INCINERATE",
+    "chargedMoves": ["SHADOW_BALL", "DISARMING_VOICE"]
 }, {
     "speciesId": "stunfisk_galarian",
     "fastMove": "MUD_SHOT",
@@ -173,11 +169,11 @@
     "chargedMoves": ["MUD_BOMB", "SCALD"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "skeledirge",
-    "fastMove": "INCINERATE",
-    "chargedMoves": ["SHADOW_BALL", "DISARMING_VOICE"]
-}, {
     "speciesId": "wigglytuff",
     "fastMove": "CHARM",
     "chargedMoves": ["ICY_WIND", "DISARMING_VOICE"]
+}, {
+    "speciesId": "bastiodon",
+    "fastMove": "SMACK_DOWN",
+    "chargedMoves": ["STONE_EDGE", "FLAMETHROWER"]
 }]

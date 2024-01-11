@@ -1,4 +1,8 @@
 [{
+    "speciesId": "altaria",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["SKY_ATTACK", "MOONBLAST"]
+}, {
     "speciesId": "azumarill",
     "fastMove": "BUBBLE",
     "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
@@ -10,11 +14,6 @@
     "speciesId": "carbink",
     "fastMove": "ROCK_THROW",
     "chargedMoves": ["ROCK_SLIDE", "MOONBLAST"]
-}, {
-    "speciesId": "charizard_shadow",
-    "fastMove": "WING_ATTACK",
-    "chargedMoves": ["DRAGON_CLAW", "BLAST_BURN"],
-    "shadowType": "shadow"
 }, {
     "speciesId": "clodsire",
     "fastMove": "POISON_STING",
@@ -31,10 +30,6 @@
     "speciesId": "dewgong",
     "fastMove": "ICE_SHARD",
     "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
-}, {
-    "speciesId": "diggersby",
-    "fastMove": "MUD_SHOT",
-    "chargedMoves": ["SCORCHING_SANDS", "HYPER_BEAM"]
 }, {
     "speciesId": "froslass",
     "fastMove": "POWDER_SNOW",
@@ -75,10 +70,6 @@
 }, {
     "speciesId": "medicham",
     "fastMove": "COUNTER",
-    "chargedMoves": ["PSYCHIC", "ICE_PUNCH"]
-}, {
-    "speciesId": "medicham",
-    "fastMove": "COUNTER",
     "chargedMoves": ["ICE_PUNCH", "DYNAMIC_PUNCH"]
 }, {
     "speciesId": "ninetales_alolan",
@@ -103,11 +94,6 @@
     "chargedMoves": ["SCALD", "ICY_WIND"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "quagsire_shadow",
-    "fastMove": "MUD_SHOT",
-    "chargedMoves": ["MUD_BOMB", "STONE_EDGE"],
-    "shadowType": "shadow"
-}, {
     "speciesId": "registeel",
     "fastMove": "LOCK_ON",
     "chargedMoves": ["ZAP_CANNON", "FOCUS_BLAST"]
@@ -115,10 +101,6 @@
     "speciesId": "sableye",
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["FOUL_PLAY", "RETURN"]
-}, {
-    "speciesId": "sandslash_alolan",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"]
 }, {
     "speciesId": "sandslash_alolan_shadow",
     "fastMove": "SHADOW_CLAW",
@@ -150,10 +132,6 @@
     "fastMove": "INCINERATE",
     "chargedMoves": ["FLY", "FLAME_CHARGE"]
 }, {
-    "speciesId": "toxicroak",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["MUD_BOMB", "SHADOW_BALL"]
-}, {
     "speciesId": "trevenant",
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["SEED_BOMB", "SHADOW_BALL"]
@@ -184,7 +162,11 @@
     "chargedMoves": ["MUD_BOMB", "SCALD"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "altaria",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["SKY_ATTACK", "MOONBLAST"]
+    "speciesId": "clodsire",
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["EARTHQUAKE", "STONE_EDGE"]
+}, {
+    "speciesId": "charjabug",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
 }]
