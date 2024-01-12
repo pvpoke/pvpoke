@@ -95,8 +95,8 @@ switch($cup){
 		$league = 'Battle Frontier (Serene)';
 		break;
 
-	case "gbinvitational":
-		$league = 'Gymbreakers';
+	case "hisui":
+		$league = 'Hisui';
 		break;
 
 	case "remix":
