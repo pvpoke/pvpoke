@@ -1,35 +1,37 @@
 [{
-    "speciesId": "registeel",
-    "fastMove": "LOCK_ON",
-    "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
-}, {
     "speciesId": "azumarill",
     "fastMove": "BUBBLE",
     "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
 }, {
-    "speciesId": "stunfisk_galarian",
-    "fastMove": "MUD_SHOT",
-    "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+    "speciesId": "bastiodon",
+    "fastMove": "SMACK_DOWN",
+    "chargedMoves": ["STONE_EDGE", "FLAMETHROWER"]
 }, {
-    "speciesId": "lucario",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["BLAZE_KICK", "SHADOW_BALL"]
+    "speciesId": "dragonair_shadow",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["BODY_SLAM", "AQUA_TAIL"],
+    "shadowType": "shadow"
 }, {
-    "speciesId": "tapu_fini",
-    "fastMove": "WATER_GUN",
-    "chargedMoves": ["SURF", "MOONBLAST"]
+    "speciesId": "dragonite_shadow",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["DRAGON_CLAW", "SUPER_POWER"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "empoleon",
+    "fastMove": "WATERFALL",
+    "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
 }, {
     "speciesId": "escavalier",
     "fastMove": "COUNTER",
-    "chargedMoves": ["DRILL_RUN", "MEGAHORN"]
-}, {
-    "speciesId": "turtonator",
-    "fastMove": "INCINERATE",
-    "chargedMoves": ["DRAGON_PULSE", "OVERHEAT"]
+    "chargedMoves": ["DRILL_RUN", "ACID_SPRAY"]
 }, {
     "speciesId": "excadrill",
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
+}, {
+    "speciesId": "ferrothorn",
+    "fastMove": "BULLET_SEED",
+    "chargedMoves": ["POWER_WHIP", "THUNDER"]
 }, {
     "speciesId": "flygon",
     "fastMove": "MUD_SHOT",
@@ -40,48 +42,50 @@
     "chargedMoves": ["DRAGON_CLAW", "SCORCHING_SANDS"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "skarmory",
-    "fastMove": "STEEL_WING",
-    "chargedMoves": ["BRAVE_BIRD", "SKY_ATTACK"]
+    "speciesId": "haxorus",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["BREAKING_SWIPE", "SURF"]
+}, {
+    "speciesId": "lucario",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["BLAZE_KICK", "SHADOW_BALL"]
+}, {
+    "speciesId": "magnezone_shadow",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["WILD_CHARGE", "MIRROR_SHOT"],
+    "shadowType": "shadow"
 }, {
     "speciesId": "mawile_shadow",
     "fastMove": "FIRE_FANG",
     "chargedMoves": ["POWER_UP_PUNCH", "PLAY_ROUGH"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "haxorus",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["BREAKING_SWIPE", "SURF"]
-}, {
-    "speciesId": "ferrothorn",
-    "fastMove": "BULLET_SEED",
-    "chargedMoves": ["POWER_WHIP", "THUNDER"]
+    "speciesId": "registeel",
+    "fastMove": "LOCK_ON",
+    "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
 }, {
     "speciesId": "sandslash_alolan",
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "bastiodon",
-    "fastMove": "SMACK_DOWN",
-    "chargedMoves": ["STONE_EDGE", "FLAMETHROWER"]
+    "speciesId": "skarmory",
+    "fastMove": "STEEL_WING",
+    "chargedMoves": ["BRAVE_BIRD", "SKY_ATTACK"]
 }, {
-    "speciesId": "dragonite_shadow",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["DRAGON_CLAW", "SUPER_POWER"],
-    "shadowType": "shadow"
+    "speciesId": "stunfisk_galarian",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
 }, {
-    "speciesId": "dragonair_shadow",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["BODY_SLAM", "AQUA_TAIL"],
-    "shadowType": "shadow"
+    "speciesId": "tapu_fini",
+    "fastMove": "WATER_GUN",
+    "chargedMoves": ["SURF", "MOONBLAST"]
 }, {
-    "speciesId": "empoleon",
-    "fastMove": "WATERFALL",
-    "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
+    "speciesId": "turtonator",
+    "fastMove": "INCINERATE",
+    "chargedMoves": ["DRAGON_PULSE", "OVERHEAT"]
 }, {
-    "speciesId": "magnezone_shadow",
-    "fastMove": "VOLT_SWITCH",
-    "chargedMoves": ["WILD_CHARGE", "MIRROR_SHOT"],
-    "shadowType": "shadow"
+    "speciesId": "weezing_galarian",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["SLUDGE", "OVERHEAT"]
 }]
