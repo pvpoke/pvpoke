@@ -27572,7 +27572,8 @@
     },
     "types": ["electric", "flying"],
     "fastMoves": ["BITE", "VOLT_SWITCH"],
-    "chargedMoves": ["SLUDGE_WAVE", "THUNDER", "FOCUS_BLAST", "THUNDERBOLT"],
+    "chargedMoves": ["SLUDGE_WAVE", "THUNDER", "FOCUS_BLAST", "THUNDERBOLT", "WILDBOLT_STORM"],
+	"eliteMoves": ["WILDBOLT_STORM"],
     "defaultIVs": {
         "cp500": [5, 15, 14, 12],
         "cp1500": [15, 6, 12, 12],
