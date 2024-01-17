@@ -1,6 +1,10 @@
 [{
     "speciesId": "azumarill",
     "fastMove": "BUBBLE",
+    "chargedMoves": ["HYDRO_PUMP", "PLAY_ROUGH"]
+}, {
+    "speciesId": "azumarill",
+    "fastMove": "BUBBLE",
     "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
 }, {
     "speciesId": "bastiodon",
