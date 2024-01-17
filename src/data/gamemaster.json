@@ -37877,7 +37877,7 @@
         },
         "types": ["fighting", "ghost"],
         "fastMoves": ["LOW_KICK", "COUNTER"],
-        "chargedMoves": ["CLOSE_COMBAT", "LOW_SWEEP", "NIGHT_SLASH", "ICE_PUNCH"],
+        "chargedMoves": ["CLOSE_COMBAT", "LOW_SWEEP", "NIGHT_SLASH", "ICE_PUNCH", "SHADOW_BALL"],
         "defaultIVs": {
             "cp500": [6, 4, 4, 15],
             "cp1500": [17, 5, 15, 8],
@@ -37885,7 +37885,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_MANKEY",
             "parent": "primeape"
