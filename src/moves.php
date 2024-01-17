@@ -60,6 +60,8 @@ require_once 'header.php';
 		<div class="table-container">
 			<table class="sortable-table stats-table moves" cellpadding="0" cellspacing="0"></table>
 		</div>
+
+		<a href="#" class="button download-csv">Export to CSV</a>
 	</div>
 
 	<div class="move-explore-container explore hide">

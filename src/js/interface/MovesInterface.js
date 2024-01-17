@@ -50,6 +50,48 @@ var InterfaceMaster = (function () {
 					get = e.state;
 					self.loadGetData();
 				});
+
+				// CSV file download
+				var csv = 'Move,Type,Category,Damage,Energy,Turns,DPT,EPT,DPE\n';
+
+				for(var i = 0; i < gm.data.moves.length; i++){
+					var move = gm.data.moves[i];
+
+					var category = "";
+					var type = move.type.charAt(0).toUpperCase() + move.type.slice(1);
+					var damage = move.power;
+					var energy = 0;
+					var dpt = "";
+					var ept = "";
+					var dpe = "";
+					var turns = "";
+
+					if(move.energyGain > 0){
+						category = "Fast Attack"
+						energy = move.energyGain;
+						turns = move.cooldown / 500;
+						dpt = Math.floor( (move.power / turns) * 100) / 100;
+						ept = Math.floor( (energy / turns) * 100) / 100;
+					} else if(move.energy > 0){
+						category = "Charged Attack";
+						energy = move.energy;
+						dpe = Math.floor( (damage / energy) * 100) / 100;
+					}
+
+					csv += move.name + ',' + type + ',' + category + ',' + damage + ',' + energy + ',' + turns + ',' + dpt + ',' + ept + ',' + dpe;
+					csv += '\n';
+				}
+
+				const filename = 'moves.csv';
+
+				if (!csv.match(/^data:text\/csv/i)) {
+					filedata = [csv];
+					filedata = new Blob(filedata, { type: 'text/csv'});
+				}
+
+				$(".button.download-csv").attr("href", window.URL.createObjectURL(filedata));
+				$(".button.download-csv").attr("download", filename);
+
 			};
 
 			// Grabs ranking data from the Game Master
