@@ -15,9 +15,17 @@
     "fastMove": "ROCK_THROW",
     "chargedMoves": ["ROCK_SLIDE", "MOONBLAST"]
 }, {
+    "speciesId": "charjabug",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
+}, {
     "speciesId": "clodsire",
     "fastMove": "POISON_STING",
     "chargedMoves": ["EARTHQUAKE", "SLUDGE_BOMB"]
+}, {
+    "speciesId": "clodsire",
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["EARTHQUAKE", "STONE_EDGE"]
 }, {
     "speciesId": "cresselia",
     "fastMove": "PSYCHO_CUT",
@@ -162,11 +170,7 @@
     "chargedMoves": ["MUD_BOMB", "SCALD"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "clodsire",
-    "fastMove": "POISON_STING",
-    "chargedMoves": ["EARTHQUAKE", "STONE_EDGE"]
-}, {
-    "speciesId": "charjabug",
-    "fastMove": "VOLT_SWITCH",
-    "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
+    "speciesId": "annihilape",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["ICE_PUNCH", "SHADOW_BALL"]
 }]

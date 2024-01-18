@@ -32481,8 +32481,8 @@
         "hp": 167
     },
     "types": ["poison", "none"],
-    "fastMoves": ["STRUGGLE"],
-    "chargedMoves": ["STRUGGLE"],
+    "fastMoves": ["POISON_JAB", "PECK"],
+    "chargedMoves": ["SLUDGE_BOMB", "SLUDGE_WAVE", "FELL_STINGER"],
     "defaultIVs": {
         "cp500": [11.5, 6, 14, 10],
         "cp1500": [39.5, 4, 13, 13],
@@ -32506,8 +32506,8 @@
         "hp": 177
     },
     "types": ["poison", "dragon"],
-    "fastMoves": ["STRUGGLE"],
-    "chargedMoves": ["STRUGGLE"],
+    "fastMoves": ["POISON_JAB", "AIR_SLASH"],
+    "chargedMoves": ["SLUDGE_BOMB", "ACROBATICS", "FELL_STINGER", "DRAGON_PULSE"],
     "defaultIVs": {
         "cp500": [6, 5, 12, 15],
         "cp1500": [17.5, 4, 15, 9],
@@ -32531,8 +32531,8 @@
         "hp": 156
     },
     "types": ["rock", "steel"],
-    "fastMoves": ["STRUGGLE"],
-    "chargedMoves": ["STRUGGLE"],
+    "fastMoves": ["ROCK_THROW", "TAKE_DOWN"],
+    "chargedMoves": ["FLASH_CANNON", "STONE_EDGE", "BULLDOZE"],
     "defaultIVs": {
         "cp500": [6, 4, 13, 5],
         "cp1500": [16.5, 7, 15, 15],
@@ -32552,8 +32552,8 @@
         "hp": 142
     },
     "types": ["fire", "ghost"],
-    "fastMoves": ["STRUGGLE"],
-    "chargedMoves": ["STRUGGLE"],
+    "fastMoves": ["INCINERATE", "ASTONISH"],
+    "chargedMoves": ["MYSTICAL_FIRE", "SHADOW_BALL", "OVERHEAT"],
     "defaultIVs": {
         "cp500": [5.5, 15, 14, 15],
         "cp1500": [16.5, 6, 15, 12],
@@ -32573,8 +32573,8 @@
         "hp": 204
     },
     "types": ["electric", "none"],
-    "fastMoves": ["STRUGGLE"],
-    "chargedMoves": ["STRUGGLE"],
+    "fastMoves": ["SPARK", "VOLT_SWITCH"],
+    "chargedMoves": ["THUNDER_PUNCH", "DISCHARGE", "WILD_CHARGE"],
     "defaultIVs": {
         "cp500": [5.5, 12, 10, 15],
         "cp1500": [16, 5, 15, 12],
@@ -37362,7 +37362,7 @@
     },
     "types": ["fighting", "ghost"],
     "fastMoves": ["LOW_KICK", "COUNTER"],
-    "chargedMoves": ["CLOSE_COMBAT", "LOW_SWEEP", "NIGHT_SLASH", "ICE_PUNCH"],
+    "chargedMoves": ["CLOSE_COMBAT", "LOW_SWEEP", "NIGHT_SLASH", "ICE_PUNCH", "SHADOW_BALL"],
     "defaultIVs": {
         "cp500": [6, 4, 4, 15],
         "cp1500": [17, 5, 15, 8],
@@ -37370,7 +37370,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_MANKEY",
         "parent": "primeape"
@@ -37884,16 +37884,16 @@
     }
 }, {
     "dex": 1001,
-    "speciesName": "Wochien",
-    "speciesId": "wochien",
+    "speciesName": "Wo-Chien",
+    "speciesId": "wo_chien",
     "baseStats": {
         "atk": 186,
         "def": 242,
         "hp": 198
     },
     "types": ["dark", "grass"],
-    "fastMoves": ["SPLASH"],
-    "chargedMoves": ["STRUGGLE"],
+    "fastMoves": ["MAGICAL_LEAF", "SNARL"],
+    "chargedMoves": ["DARK_PULSE", "GRASS_KNOT", "LEAF_STORM"],
     "defaultIVs": {
         "cp500": [6.5, 7, 9, 14],
         "cp1500": [19, 4, 14, 12],
@@ -37904,16 +37904,16 @@
     "released": false
 }, {
     "dex": 1002,
-    "speciesName": "Chienpao",
-    "speciesId": "chienpao",
+    "speciesName": "Chien-Pao",
+    "speciesId": "chien_pao",
     "baseStats": {
         "atk": 261,
         "def": 167,
         "hp": 190
     },
     "types": ["dark", "ice"],
-    "fastMoves": ["SPLASH"],
-    "chargedMoves": ["STRUGGLE"],
+    "fastMoves": ["POWDER_SNOW", "SNARL"],
+    "chargedMoves": ["DARK_PULSE", "AVALANCHE", "BLIZZARD"],
     "defaultIVs": {
         "cp500": [6, 4, 4, 6],
         "cp1500": [16.5, 5, 14, 12],
@@ -37924,16 +37924,16 @@
     "released": false
 }, {
     "dex": 1003,
-    "speciesName": "Tinglu",
-    "speciesId": "tinglu",
+    "speciesName": "Ting-Lu",
+    "speciesId": "ting_lu",
     "baseStats": {
         "atk": 194,
         "def": 203,
         "hp": 321
     },
     "types": ["dark", "ground"],
-    "fastMoves": ["SPLASH"],
-    "chargedMoves": ["STRUGGLE"],
+    "fastMoves": ["MUD_SHOT", "SNARL"],
+    "chargedMoves": ["DARK_PULSE", "BULLDOZE", "EARTHQUAKE"],
     "defaultIVs": {
         "cp500": [5.5, 6, 15, 7],
         "cp1500": [16, 4, 6, 15],
@@ -37944,16 +37944,16 @@
     "released": false
 }, {
     "dex": 1004,
-    "speciesName": "Chiyu",
-    "speciesId": "chiyu",
+    "speciesName": "Chi-Yu",
+    "speciesId": "chi_yu",
     "baseStats": {
         "atk": 269,
         "def": 221,
         "hp": 146
     },
     "types": ["dark", "fire"],
-    "fastMoves": ["SPLASH"],
-    "chargedMoves": ["STRUGGLE"],
+    "fastMoves": ["INCINERATE", "SNARL"],
+    "chargedMoves": ["FLAME_CHARGE", "DARK_PULSE", "FLAME_WHEEL"],
     "defaultIVs": {
         "cp500": [5.5, 7, 15, 13],
         "cp1500": [16, 6, 13, 10],
@@ -38012,8 +38012,8 @@
         "hp": 205
     },
     "types": ["fighting", "dragon"],
-    "fastMoves": ["SPLASH"],
-    "chargedMoves": ["STRUGGLE"],
+    "fastMoves": ["ROCK_SMASH", "DRAGON_TAIL"],
+    "chargedMoves": ["GIGA_IMPACT", "DRAGON_CLAW", "CLOSE_COMBAT", "OUTRAGE"],
     "defaultIVs": {
         "cp500": [5, 5, 9, 7],
         "cp1500": [14, 5, 10, 10],
@@ -38032,8 +38032,8 @@
         "hp": 205
     },
     "types": ["fighting", "dragon"],
-    "fastMoves": ["SPLASH"],
-    "chargedMoves": ["STRUGGLE"],
+	"fastMoves": ["ROCK_SMASH", "DRAGON_TAIL"],
+    "chargedMoves": ["GIGA_IMPACT", "DRAGON_CLAW", "CLOSE_COMBAT", "OUTRAGE"],
     "defaultIVs": {
         "cp500": [5, 5, 9, 7],
         "cp1500": [14, 5, 10, 10],
@@ -38052,8 +38052,8 @@
         "hp": 205
     },
     "types": ["electric", "dragon"],
-    "fastMoves": ["SPLASH"],
-    "chargedMoves": ["STRUGGLE"],
+    "fastMoves": ["THUNDER_SHOCK", "DRAGON_TAIL"],
+    "chargedMoves": ["HYPER_BEAM", "DRAGON_PULSE", "THUNDER", "OUTRAGE"],
     "defaultIVs": {
         "cp500": [5, 5, 9, 7],
         "cp1500": [14, 5, 10, 10],
@@ -38072,8 +38072,8 @@
         "hp": 205
     },
     "types": ["electric", "dragon"],
-    "fastMoves": ["SPLASH"],
-    "chargedMoves": ["STRUGGLE"],
+	"fastMoves": ["THUNDER_SHOCK", "DRAGON_TAIL"],
+    "chargedMoves": ["HYPER_BEAM", "DRAGON_PULSE", "THUNDER", "OUTRAGE"],
     "defaultIVs": {
         "cp500": [5, 5, 9, 7],
         "cp1500": [14, 5, 10, 10],

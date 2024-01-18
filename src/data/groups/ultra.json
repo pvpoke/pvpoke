@@ -1,4 +1,8 @@
 [{
+    "speciesId": "ampharos",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["BRUTAL_SWING", "TRAILBLAZE"]
+}, {
     "speciesId": "charizard",
     "fastMove": "WING_ATTACK",
     "chargedMoves": ["DRAGON_CLAW", "BLAST_BURN"]
@@ -14,6 +18,11 @@
     "speciesId": "deoxys_defense",
     "fastMove": "COUNTER",
     "chargedMoves": ["PSYCHO_BOOST", "ROCK_SLIDE"]
+}, {
+    "speciesId": "dragonite_shadow",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["DRAGON_CLAW", "SUPER_POWER"],
+    "shadowType": "shadow"
 }, {
     "speciesId": "giratina_altered",
     "fastMove": "DRAGON_BREATH",
@@ -92,6 +101,10 @@
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"]
 }, {
+    "speciesId": "skeledirge",
+    "fastMove": "INCINERATE",
+    "chargedMoves": ["SHADOW_BALL", "DISARMING_VOICE"]
+}, {
     "speciesId": "steelix",
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["BREAKING_SWIPE", "EARTHQUAKE"]
@@ -105,13 +118,17 @@
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
 }, {
-    "speciesId": "skeledirge",
+    "speciesId": "talonflame",
     "fastMove": "INCINERATE",
-    "chargedMoves": ["SHADOW_BALL", "DISARMING_VOICE"]
+    "chargedMoves": ["FLY", "FLAME_CHARGE"]
 }, {
     "speciesId": "tapu_fini",
     "fastMove": "WATER_GUN",
     "chargedMoves": ["SURF", "MOONBLAST"]
+}, {
+    "speciesId": "tentacruel",
+    "fastMove": "POISON_JAB",
+    "chargedMoves": ["SCALD", "BLIZZARD"]
 }, {
     "speciesId": "toxicroak",
     "fastMove": "COUNTER",
@@ -137,20 +154,7 @@
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
 }, {
-    "speciesId": "talonflame",
-    "fastMove": "INCINERATE",
-    "chargedMoves": ["FLY", "FLAME_CHARGE"]
-}, {
-    "speciesId": "ampharos",
-    "fastMove": "VOLT_SWITCH",
-    "chargedMoves": ["BRUTAL_SWING", "TRAILBLAZE"]
-}, {
-    "speciesId": "dragonite_shadow",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["DRAGON_CLAW", "SUPER_POWER"],
-    "shadowType": "shadow"
-}, {
-    "speciesId": "tentacruel",
-    "fastMove": "POISON_JAB",
-    "chargedMoves": ["SCALD", "BLIZZARD"]
+    "speciesId": "annihilape",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["ICE_PUNCH", "SHADOW_BALL"]
 }]

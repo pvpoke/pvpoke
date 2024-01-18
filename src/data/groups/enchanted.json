@@ -109,7 +109,7 @@
 }, {
     "speciesId": "regice",
     "fastMove": "LOCK_ON",
-    "chargedMoves": ["THUNDER","FOCUS_BLAST"]
+    "chargedMoves": ["THUNDER", "FOCUS_BLAST"]
 }, {
     "speciesId": "sandslash_alolan_shadow",
     "fastMove": "SHADOW_CLAW",
@@ -140,7 +140,7 @@
 }, {
     "speciesId": "staraptor_shadow",
     "fastMove": "WING_ATTACK",
-    "chargedMoves": ["FLY","CLOSE_COMBAT"],
+    "chargedMoves": ["FLY", "CLOSE_COMBAT"],
     "shadowType": "shadow"
 }, {
     "speciesId": "tapu_fini",
@@ -154,4 +154,8 @@
     "speciesId": "weezing_galarian",
     "fastMove": "FAIRY_WIND",
     "chargedMoves": ["BRUTAL_SWING", "PLAY_ROUGH"]
+}, {
+    "speciesId": "annihilape",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["ICE_PUNCH", "SHADOW_BALL"]
 }]
