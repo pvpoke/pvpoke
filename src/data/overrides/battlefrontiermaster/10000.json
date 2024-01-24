@@ -1,8 +1,4 @@
 [{
-    "speciesId": "garchomp_mega",
-    "chargedMoves": ["OUTRAGE", "EARTH_POWER"],
-    "weight": 30
-}, {
     "speciesId": "groudon",
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["PRECIPICE_BLADES", "FIRE_PUNCH"],
@@ -17,11 +13,6 @@
     "chargedMoves": ["OUTRAGE", "FIRE_BLAST"],
     "weight": 30
 }, {
-    "speciesId": "tyranitar_mega",
-    "fastMove": "SMACK_DOWN",
-    "chargedMoves": ["BRUTAL_SWING", "STONE_EDGE"],
-    "weight": 30
-}, {
     "speciesId": "melmetal",
     "fastMove": "THUNDER_SHOCK",
     "chargedMoves": ["SUPER_POWER", "ROCK_SLIDE"],
@@ -29,10 +20,6 @@
 }, {
     "speciesId": "dialga",
     "chargedMoves": ["IRON_HEAD", "DRACO_METEOR"],
-    "weight": 25
-}, {
-    "speciesId": "gardevoir_mega",
-    "fastMove": "CHARM",
     "weight": 25
 }, {
     "speciesId": "gengar_mega",
@@ -44,6 +31,11 @@
     "fastMove": "WATERFALL",
     "chargedMoves": ["SURF", "ORIGIN_PULSE"],
     "weight": 25
+}, {
+    "speciesId": "kyogre_shadow",
+    "fastMove": "WATERFALL",
+    "chargedMoves": ["SURF", "ORIGIN_PULSE"],
+    "weight": 1
 }, {
     "speciesId": "steelix_mega",
     "fastMove": "DRAGON_TAIL",
@@ -93,6 +85,10 @@
     "speciesId": "garchomp",
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["OUTRAGE", "EARTH_POWER"],
+    "weight": 10
+}, {
+    "speciesId": "landorus_therian",
+    "chargedMoves": ["SANDSEAR_STORM", "STONE_EDGE"],
     "weight": 10
 }, {
     "speciesId": "togekiss",
@@ -198,6 +194,10 @@
 }, {
     "speciesId": "alakazam_shadow",
     "chargedMoves": ["FIRE_PUNCH", "SHADOW_BALL"],
+    "weight": 1
+}, {
+    "speciesId": "annihilape",
+    "chargedMoves": ["CLOSE_COMBAT","SHADOW_BALL"],
     "weight": 1
 }, {
     "speciesId": "articuno_galarian",
@@ -374,10 +374,6 @@
 }, {
     "speciesId": "landorus_incarnate",
     "chargedMoves": ["EARTH_POWER", "ROCK_SLIDE"],
-    "weight": 1
-}, {
-    "speciesId": "landorus_therian",
-    "chargedMoves": ["SUPER_POWER", "STONE_EDGE"],
     "weight": 1
 }, {
     "speciesId": "lapras",

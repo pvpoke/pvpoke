@@ -28151,7 +28151,8 @@
     },
     "types": ["ground", "flying"],
     "fastMoves": ["MUD_SHOT", "EXTRASENSORY"],
-    "chargedMoves": ["EARTHQUAKE", "STONE_EDGE", "SUPER_POWER", "BULLDOZE"],
+    "chargedMoves": ["EARTHQUAKE", "STONE_EDGE", "SUPER_POWER", "BULLDOZE", "SANDSEAR_STORM"],
+	"eliteMoves": ["SANDSEAR_STORM"],
     "defaultIVs": {
         "cp500": [5, 6, 13, 6],
         "cp1500": [14, 4, 11, 14],

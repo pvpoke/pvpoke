@@ -1,6 +1,6 @@
 {
     "name": "battlefrontiergreat",
-    "title": "Battle Frontier (Great League)",
+    "title": "Battle Frontier (Great)",
     "include": [],
     "exclude": [{
         "filterType": "tag",
@@ -11,7 +11,7 @@
         "floor": 1,
         "tiers": [{
             "points": 7,
-            "pokemon": ["azumarill", "carbink", "gligar", "lanturn", "lickitung","medicham", "registeel", "skarmory"]
+            "pokemon": ["azumarill", "carbink", "gligar", "lanturn", "lickitung","medicham", "registeel", "skarmory","annihilape"]
         }, {
             "points": 5,
             "pokemon": ["bastiodon", "deoxys_defense", "dewgong", "mandibuzz", "ninetales_alolan", "poliwrath", "sableye", "sandslash_alolan", "serperior", "swampert", "talonflame", "toxapex", "umbreon", "vigoroth", "whiscash"]

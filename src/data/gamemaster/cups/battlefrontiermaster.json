@@ -4,7 +4,7 @@
     "include": [],
     "exclude": [{
         "filterType": "id",
-        "values": ["gengar_mega", "swampert_mega", "gardevoir_mega", "latios_mega", "latias_mega", "charizard_mega_y", "gyarados_mega", "groudon_primal", "kyogre_primal", "zygarde_complete", "rayquaza_mega","garchomp_mega", "tyranitar_mega", "palkia_origin", "dialga_origin"]
+        "values": ["tyranitar_mega", "gengar_mega", "swampert_mega", "gardevoir_mega", "latios_mega", "latias_mega", "charizard_mega_y", "gyarados_mega", "groudon_primal", "kyogre_primal", "zygarde_complete", "rayquaza_mega","garchomp_mega","palkia_origin","dialga_origin"]
     }],
     "tierRules": {
         "max": 8,
@@ -20,7 +20,7 @@
             "pokemon": ["giratina_origin", "giratina_altered", "aggron_mega", "blastoise_mega"]
         }, {
             "points": 2,
-            "pokemon": ["zekrom", "yveltal", "melmetal", "palkia", "dragonite", "reshiram", "charizard_mega_x", "slowbro_mega","lugia", "zarude"]
+            "pokemon": ["zekrom", "yveltal", "melmetal", "palkia", "dragonite", "reshiram", "charizard_mega_x", "slowbro_mega","lugia", "zarude","landorus_therian"]
         }, {
             "points": 1,
             "pokemon": ["genesect", "genesect_burn", "genesect_douse", "genesect_chill", "genesect_shock", "mew", "florges", "blaziken_mega", "abomasnow_mega", "rayquaza", "kyurem","heatran"]

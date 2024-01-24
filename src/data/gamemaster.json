@@ -37,7 +37,7 @@
         }]
     }, {
         "name": "battlefrontiergreat",
-        "title": "Battle Frontier (Great League)",
+        "title": "Battle Frontier (Great)",
         "include": [],
         "exclude": [{
             "filterType": "tag",
@@ -48,7 +48,7 @@
             "floor": 1,
             "tiers": [{
                 "points": 7,
-                "pokemon": ["azumarill", "carbink", "gligar", "lanturn", "lickitung", "medicham", "registeel", "skarmory"]
+                "pokemon": ["azumarill", "carbink", "gligar", "lanturn", "lickitung", "medicham", "registeel", "skarmory", "annihilape"]
             }, {
                 "points": 5,
                 "pokemon": ["bastiodon", "deoxys_defense", "dewgong", "mandibuzz", "ninetales_alolan", "poliwrath", "sableye", "sandslash_alolan", "serperior", "swampert", "talonflame", "toxapex", "umbreon", "vigoroth", "whiscash"]
@@ -64,7 +64,7 @@
         "include": [],
         "exclude": [{
             "filterType": "id",
-            "values": ["gengar_mega", "swampert_mega", "gardevoir_mega", "latios_mega", "latias_mega", "charizard_mega_y", "gyarados_mega", "groudon_primal", "kyogre_primal", "zygarde_complete", "rayquaza_mega", "garchomp_mega", "tyranitar_mega", "palkia_origin", "dialga_origin"]
+            "values": ["tyranitar_mega", "gengar_mega", "swampert_mega", "gardevoir_mega", "latios_mega", "latias_mega", "charizard_mega_y", "gyarados_mega", "groudon_primal", "kyogre_primal", "zygarde_complete", "rayquaza_mega", "garchomp_mega", "palkia_origin", "dialga_origin"]
         }],
         "tierRules": {
             "max": 8,
@@ -80,7 +80,7 @@
                 "pokemon": ["giratina_origin", "giratina_altered", "aggron_mega", "blastoise_mega"]
             }, {
                 "points": 2,
-                "pokemon": ["zekrom", "yveltal", "melmetal", "palkia", "dragonite", "reshiram", "charizard_mega_x", "slowbro_mega", "lugia", "zarude"]
+                "pokemon": ["zekrom", "yveltal", "melmetal", "palkia", "dragonite", "reshiram", "charizard_mega_x", "slowbro_mega", "lugia", "zarude", "landorus_therian"]
             }, {
                 "points": 1,
                 "pokemon": ["genesect", "genesect_burn", "genesect_douse", "genesect_chill", "genesect_shock", "mew", "florges", "blaziken_mega", "abomasnow_mega", "rayquaza", "kyurem", "heatran"]
@@ -332,6 +332,27 @@
             "filterType": "type",
             "values": ["grass"]
         }]
+    }, {
+        "name": "sovereign",
+        "title": "Devon Sovereign Cup",
+        "include": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["electric", "fairy", "ice", "normal", "psychic"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "name": "Tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["azumarill", "litleo", "pachirisu", "greedent", "lickitung", "lanturn", "cresselia", "miltank", "froslass", "hoopa", "munchlax", "abomasnow", "arctibax", "baxcalibur", "frigibax", "bellibolt", "charjabug", "zangoose"]
+        }, {
+            "filterType": "type",
+            "name": "Type",
+            "values": ["ground", "rock", "steel"]
+        }]
     }],
     "formats": [{
         "title": "Master League (Classic)",
@@ -436,6 +457,14 @@
         "cup": "knockout",
         "cp": 1500,
         "meta": "knockout",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Devon Sovereign Cup",
+        "cup": "sovereign",
+        "cp": 1500,
+        "meta": "sovereign",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -28658,7 +28687,8 @@
         },
         "types": ["ground", "flying"],
         "fastMoves": ["MUD_SHOT", "EXTRASENSORY"],
-        "chargedMoves": ["EARTHQUAKE", "STONE_EDGE", "SUPER_POWER", "BULLDOZE"],
+        "chargedMoves": ["EARTHQUAKE", "STONE_EDGE", "SUPER_POWER", "BULLDOZE", "SANDSEAR_STORM"],
+        "eliteMoves": ["SANDSEAR_STORM"],
         "defaultIVs": {
             "cp500": [5, 6, 13, 6],
             "cp1500": [14, 4, 11, 14],
