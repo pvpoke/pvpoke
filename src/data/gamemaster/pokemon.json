@@ -30356,7 +30356,8 @@
     "tags": ["legendary"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": true
+    "released": true,
+	"searchPriority": 3
 }, {
     "dex": 719,
     "speciesName": "Diancie",
@@ -32681,7 +32682,8 @@
     "family": {
         "id": "FAMILY_COSMOG",
         "parent": "cosmoem"
-    }
+    },
+	"searchPriority": 3
 }, {
     "dex": 792,
     "speciesName": "Lunala",
