@@ -495,6 +495,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if(cup.name == "hisui"){
+					iterations = 1;
+				}
+
 				if((cup.name == "remix")&&(battle.getCP() == 1500)){
 					iterations = 1;
 				}

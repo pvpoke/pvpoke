@@ -188,12 +188,18 @@
         "name": "hisui",
         "title": "Hisui Cup",
         "include": [{
+            "filterType": "dex",
+            "values": [387, 493]
+        }, {
             "filterType": "id",
-            "values": ["rowlet", "dartrix", "decidueye_hisuian", "cyndaquil", "quilava", "typhlosion_hisuian", "oshawott", "dewott", "samurott_hisuian", "bidoof", "bibarel", "starly", "staravia", "staraptor", "shinx", "luxio", "luxray", "wurmple", "silcoon", "beautifly", "cascoon", "dustox", "ponyta", "rapidash", "eevee", "vaporeon", "jolteon", "flareon", "espeon", "umbreon", "leafeon", "glaceon", "sylveon", "zubat", "golbat", "crobat", "drifloon", "drifblim", "kricketot", "kricketune", "buizel", "floatzel", "burmy_plant", "burmy_sandy", "burmy_trash", "wormadam_plant", "wormadam_sandy", "wormadam_trash", "mothim", "geodude", "graveler", "golem", "stantler", "wyrdeer", "munchlax", "snorlax", "paras", "parasect", "pichu", "pikachu", "raichu", "abra", "kadabra", "alakazam", "chimchar", "monferno", "infernape", "buneary", "lopunny", "cherubi", "cherrim_sunny", "cherrim_overcast", "psyduck", "golduck", "combee", "vespiquen", "scyther", "kleavor", "scizor", "heracross", "mime_jr", "mr_mime", "aipom", "ambipom", "magikarp", "gyarados", "shellos", "gastrodon", "qwilfish", "overqwil", "happiny", "chansey", "blissey", "budew", "roselia", "roserade", "carnivine", "petilil", "lilligant", "tangela", "tangrowth", "barboach", "whiscash", "croagunk", "toxicroak", "ralts", "kirlia", "gardevoir", "gallade", "yanma", "yanmega", "hippopotas", "hippowdon", "pachirisu", "stunky", "skuntank", "teddiursa", "ursaring", "ursaluna", "goomy", "sliggoo_hisuian", "goodra_hisuian", "basculegion", "onix", "steelix", "rhyhorn", "rhydon", "rhyperior", "bonsly", "sudowoodo", "lickitung", "lickilicky", "togepi", "togetic", "togekiss", "turtwig", "grotle", "torterra", "porygon", "porygon2", "porygon_z", "gastly", "haunter", "gengar", "spiritomb", "murkrow", "honchkrow", "unown", "spheal", "sealeo", "walrein", "remoraid", "octillery", "skorupi", "drapion", "growlithe_hisuian", "arcanine_hisuian", "glameow", "purugly", "machop", "machoke", "machamp", "chatot", "duskull", "dusknoir", "dusclops", "piplup", "empoleon", "prinplup", "mantyke", "mantine", "basculin", "vulpix", "ninetales", "tentacool", "tentacruel", "finneon", "lumineon", "magby", "magmar", "magmortar", "magnemite", "magneton", "magnezone", "bronzor", "bronzong", "elekid", "electabuzz", "electivire", "gligar", "gliscor", "gible", "gabite", "garchomp", "nosepass", "probopass", "voltorb_hisuian", "electrode_hisuian", "rotom", "rotom_fan", "rotom_frost", "rotom_mow", "rotom_heat", "rotom_wash", "chingling", "chimecho", "misdreavus", "mismagius", "cleffa", "clefairy", "clefable", "sneasel_hisuian", "sneasler", "weavile", "snorunt", "glalie", "froslass", "cranidos", "rampardos", "shieldon", "bastiodon", "swinub", "piloswine", "mamoswine", "bergmite", "avalugg", "snover", "abomasnow", "zorua_hisuian", "zoroark_hisuian", "rufflet", "braviary_hisuian", "riolu", "lucario", "uxie", "mesprit", "azelf", "heatran", "regigigas", "cresselia", "tornadus_incarnate", "tornadus_therian", "thundurus_incarnate", "thundurus_therian", "landorus_incarnate", "landorus_therian", "enamorus_therian", "enamorus_incarnate", "dialga", "dialga_origin", "palkia", "palkia_origin", "giratina_altered", "giratina_origin", "arceus", "phione", "manaphy", "shaymin_land", "shaymin_sky", "darkrai"],
-            "includeShadows": true
+            "values": ["sneasel_hisuian", "sneasel_hisuian_shadow", "sneasler", "sneasler_shadow", "qwilfish_hisuian", "overqwil", "growlithe_hisuian", "arcanine_hisuian", "braviary_hisuian", "voltorb_hisuian", "electrode_hisuian"]
         }],
-        "exclude": [],
-        "overrides": []
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }],
+        "partySize": 3,
+        "presetOnly": true
     }, {
         "name": "holiday",
         "title": "Holiday Cup",
