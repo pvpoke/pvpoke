@@ -38358,7 +38358,8 @@
         "id": "FAMILY_FRIGIBAX",
         "parent": "frigibax",
         "evolutions": ["baxcalibur"]
-    }
+    },
+	"searchPriority": 3
 }, {
     "dex": 998,
     "speciesName": "Baxcalibur",

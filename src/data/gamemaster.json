@@ -143,6 +143,17 @@
             "values": ["stunfisk_galarian", "cobalion", "registeel", "zygarde_complete", "giratina_altered", "steelix", "pidgeot", "greedent", "skarmory"]
         }]
     }, {
+        "name": "evolution",
+        "title": "Evolution Cup",
+        "include": [{
+            "filterType": "evolution",
+            "values": [2]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }]
+    }, {
         "name": "fantasy",
         "title": "Fantasy Cup",
         "include": [{
@@ -192,7 +203,7 @@
             "values": [387, 493]
         }, {
             "filterType": "id",
-            "values": ["sneasel_hisuian", "sneasel_hisuian_shadow", "sneasler", "sneasler_shadow", "qwilfish_hisuian", "overqwil", "growlithe_hisuian", "arcanine_hisuian", "braviary_hisuian", "voltorb_hisuian", "electrode_hisuian"]
+            "values": ["sneasel_hisuian", "sneasel_hisuian_shadow", "sneasler", "sneasler_shadow", "qwilfish_hisuian", "overqwil", "growlithe_hisuian", "arcanine_hisuian", "braviary_hisuian", "voltorb_hisuian", "electrode_hisuian", "typhlosion_hisuian", "samurott_hisuian", "decidueye_hisuian"]
         }],
         "exclude": [{
             "filterType": "tag",
@@ -406,6 +417,14 @@
         "cup": "hisui",
         "cp": 1500,
         "meta": "hisui",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Evolution Cup",
+        "cup": "evolution",
+        "cp": 1500,
+        "meta": "evolution",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -38900,7 +38919,8 @@
             "id": "FAMILY_FRIGIBAX",
             "parent": "frigibax",
             "evolutions": ["baxcalibur"]
-        }
+        },
+        "searchPriority": 3
     }, {
         "dex": 998,
         "speciesName": "Baxcalibur",
