@@ -12523,7 +12523,8 @@
     },
     "types": ["normal", "none"],
     "fastMoves": ["POUND", "ZEN_HEADBUTT"],
-    "chargedMoves": ["DAZZLING_GLEAM", "HYPER_BEAM", "PSYCHIC"],
+    "chargedMoves": ["DAZZLING_GLEAM", "HYPER_BEAM", "PSYCHIC", "WILD_CHARGE"],
+	"eliteMoves": ["WILD_CHARGE"],
     "defaultIVs": {
         "cp500": [7, 6, 15, 7],
         "cp1500": [21, 4, 11, 6],
@@ -32479,7 +32480,7 @@
     },
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
-    "released": false
+    "released": true
 }, {
     "dex": 781,
     "speciesName": "Dhelmise",
