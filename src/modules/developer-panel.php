@@ -8,6 +8,7 @@
 		<a class="button" href="<?php echo $WEB_ROOT; ?>data/compile.php" target="_blank">Compile gamemaster</a>
 		<a class="button dev-default-ivs" href="#">Generate default IV's</a>
 		<a class="button dev-shadow-stats" href="#">Update Shadow stats</a>
+		<a class="button dev-moveset-csv" href="#">Generate Moveset CSV</a>
 		<!--<a class="button dev-validate-family" href="#">Validate Family IDs</a>-->
 
 		<h4>Quick Links</h4>
@@ -48,6 +49,12 @@
 		$devPanel.find("a.dev-validate-family").click(function(e){
 			e.preventDefault();
 			gm.validateFamilyData();
+		});
+
+		// Generate default IV's for Pokemon
+		$devPanel.find("a.dev-moveset-csv").click(function(e){
+			e.preventDefault();
+			gm.generatePokemonMovesetCSV();
 		});
 
 		// Open the current page link on production

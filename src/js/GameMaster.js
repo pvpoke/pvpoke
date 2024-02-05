@@ -510,6 +510,31 @@ var GameMaster = (function () {
 			console.log("Family validation complete");
 		}
 
+		// Check parent and evolution IDs to validate Pokemon family data
+
+		object.generatePokemonMovesetCSV = function(){
+
+			var csv = 'Pokemon,Fast Moves,Charged Moves'
+
+			$.each(object.data.pokemon, function(index, poke){
+				var pokemon = new Pokemon(poke.speciesId, 0, new Battle());
+				var fastNames = [];
+				var chargedNames = [];
+
+				$.each(pokemon.fastMovePool, function(i, move){
+					fastNames.push(move.name);
+				});
+
+				$.each(pokemon.chargedMovePool, function(i, move){
+					chargedNames.push(move.name);
+				});
+
+				csv += '\n'+pokemon.speciesName+','+fastNames.join("|")+','+chargedNames.join("|");
+			});
+
+			console.log(csv);
+		}
+
 		// Analyze Charged Moves and bucket them into archetypes
 
 		object.generateMoveArchetypes = function(){
