@@ -103,8 +103,8 @@ switch($cup){
 		$league = 'Battle Frontier (Master)';
 		break;
 
-	case "hisui":
-		$league = 'Hisui Cup';
+	case "littlecatch":
+		$league = 'Little Catch Cup';
 		break;
 
 	case "evolution":

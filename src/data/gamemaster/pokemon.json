@@ -35733,7 +35733,6 @@
         "cp1500": [20.5, 4, 15, 7],
         "cp2500": [37.5, 4, 13, 15]
     },
-    "levelFloor": 20,
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
     "released": true,
@@ -35752,7 +35751,7 @@
     },
     "defaultIVs": {
         "cp500": [6, 7, 11, 15],
-        "cp1500": [1, 0, 0, 0],
+        "cp1500": [17.5, 5, 14, 12],
         "cp2500": [29, 6, 13, 14]
     },
     "types": ["bug", "rock"],
@@ -35760,7 +35759,6 @@
     "chargedMoves": ["X_SCISSOR", "ROCK_SLIDE", "STONE_EDGE", "TRAILBLAZE"],
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
-    "levelFloor": 20,
     "family": {
         "id": "FAMILY_SCYTHER",
         "parent": "scyther"
