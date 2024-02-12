@@ -36468,6 +36468,49 @@
             "parent": "qwilfish_hisuian"
         }
     }, {
+        "dex": 905,
+        "speciesId": "enamorus_incarnate",
+        "speciesName": "Enamorus (Incarnate)",
+        "baseStats": {
+            "atk": 281,
+            "def": 162,
+            "hp": 179
+        },
+        "types": ["fairy", "flying"],
+        "fastMoves": ["ASTONISH", "ZEN_HEADBUTT", "FAIRY_WIND"],
+        "chargedMoves": ["DAZZLING_GLEAM", "FLY", "GRASS_KNOT"],
+        "defaultIVs": {
+            "cp500": [5.5, 10, 12, 14],
+            "cp1500": [16, 4, 12, 15],
+            "cp2500": [26.5, 5, 14, 14]
+        },
+        "tags": ["legendary"],
+        "searchPriority": 2,
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": true
+    }, {
+        "dex": 905,
+        "speciesId": "enamorus_therian",
+        "speciesName": "Enamorus (Therian)",
+        "baseStats": {
+            "atk": 211,
+            "def": 244,
+            "hp": 197
+        },
+        "types": ["fairy", "flying"],
+        "fastMoves": ["ASTONISH", "ZEN_HEADBUTT", "FAIRY_WIND"],
+        "chargedMoves": ["DAZZLING_GLEAM", "FLY", "GRASS_KNOT"],
+        "defaultIVs": {
+            "cp500": [6, 4, 4, 7],
+            "cp1500": [16.5, 7, 12, 15],
+            "cp2500": [28.5, 4, 6, 12]
+        },
+        "tags": ["legendary"],
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
         "dex": 906,
         "speciesName": "Sprigatito",
         "speciesId": "sprigatito",
