@@ -36494,17 +36494,17 @@
         "speciesId": "enamorus_therian",
         "speciesName": "Enamorus (Therian)",
         "baseStats": {
-            "atk": 211,
-            "def": 244,
-            "hp": 197
+            "atk": 250,
+            "def": 201,
+            "hp": 179
         },
         "types": ["fairy", "flying"],
         "fastMoves": ["ASTONISH", "ZEN_HEADBUTT", "FAIRY_WIND"],
         "chargedMoves": ["DAZZLING_GLEAM", "FLY", "GRASS_KNOT"],
         "defaultIVs": {
-            "cp500": [6, 4, 4, 7],
-            "cp1500": [16.5, 7, 12, 15],
-            "cp2500": [28.5, 4, 6, 12]
+            "cp500": [5.5, 9, 15, 14],
+            "cp1500": [16, 8, 13, 14],
+            "cp2500": [27.5, 4, 10, 11]
         },
         "tags": ["legendary"],
         "buddyDistance": 20,
@@ -41700,6 +41700,19 @@
         "energyGain": 12,
         "cooldown": 2000,
         "archetype": "Low Quality"
+    }, {
+        "moveId": "SPRINGTIDE_STORM",
+        "name": "Springtide Storm (Speculative)",
+        "abbreviation": "StS",
+        "type": "fairy",
+        "power": 60,
+        "energy": 45,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [-1, 0],
+        "buffTarget": "opponent",
+        "buffApplyChance": "1",
+        "archetype": "Debuff"
     }, {
         "moveId": "STEEL_WING",
         "name": "Steel Wing",
