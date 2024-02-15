@@ -22967,6 +22967,28 @@
     "thirdMoveCost": 100000,
     "released": true
 }, {
+    "dex": 483,
+    "speciesName": "Dialga (Origin)",
+    "speciesId": "dialga_origin",
+    "baseStats": {
+        "atk": 270,
+        "def": 225,
+        "hp": 205
+    },
+    "types": ["steel", "dragon"],
+    "fastMoves": ["DRAGON_BREATH", "METAL_CLAW"],
+    "chargedMoves": ["DRACO_METEOR", "IRON_HEAD", "THUNDER", "ROAR_OF_TIME"],
+	"eliteMoves": ["ROAR_OF_TIME"],
+    "tags": ["legendary"],
+    "defaultIVs": {
+		"cp500": [4.5, 15, 15, 13],
+        "cp1500": [13.5, 5, 9, 14],
+        "cp2500": [22.5, 5, 11, 12]
+    },
+    "buddyDistance": 20,
+    "thirdMoveCost": 100000,
+    "released": true
+}, {
     "dex": 484,
     "speciesName": "Palkia",
     "speciesId": "palkia",
@@ -22983,6 +23005,29 @@
         "cp500": [5, 6, 8, 4],
         "cp1500": [14, 4, 5, 14],
         "cp2500": [23, 4, 15, 10]
+    },
+	"searchPriority": 5,
+    "buddyDistance": 20,
+    "thirdMoveCost": 100000,
+    "released": true
+}, {
+    "dex": 484,
+    "speciesName": "Palkia (Origin)",
+    "speciesId": "palkia_origin",
+    "baseStats": {
+        "atk": 286,
+        "def": 223,
+        "hp": 189
+    },
+    "types": ["water", "dragon"],
+    "fastMoves": ["DRAGON_BREATH", "DRAGON_TAIL"],
+    "chargedMoves": ["DRACO_METEOR", "FIRE_BLAST", "HYDRO_PUMP", "AQUA_TAIL", "SPACIAL_REND"],
+	"eliteMoves": ["SPACIAL_REND"],
+    "tags": ["legendary"],
+    "defaultIVs": {
+		"cp500": [4.5, 15, 13, 15],
+        "cp1500": [13, 6, 14, 15],
+        "cp2500": [22, 5, 11, 15]
     },
     "buddyDistance": 20,
     "thirdMoveCost": 100000,

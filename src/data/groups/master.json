@@ -3,10 +3,6 @@
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["IRON_HEAD", "DRACO_METEOR"]
 }, {
-    "speciesId": "dialga",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["IRON_HEAD", "THUNDER"]
-}, {
     "speciesId": "dragonite",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["DRAGON_CLAW", "SUPER_POWER"]
@@ -99,6 +95,10 @@
     "fastMove": "LICK",
     "chargedMoves": ["BODY_SLAM", "EARTHQUAKE"]
 }, {
+    "speciesId": "solgaleo",
+    "fastMove": "FIRE_SPIN",
+    "chargedMoves": ["PSYCHIC_FANGS", "IRON_HEAD"]
+}, {
     "speciesId": "swampert",
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
@@ -143,7 +143,11 @@
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["CRUNCH", "EARTHQUAKE"]
 }, {
-    "speciesId": "solgaleo",
-    "fastMove": "FIRE_SPIN",
-    "chargedMoves": ["PSYCHIC_FANGS", "IRON_HEAD"]
+    "speciesId": "dialga_origin",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["ROAR_OF_TIME", "IRON_HEAD"]
+}, {
+    "speciesId": "palkia_origin",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["AQUA_TAIL", "SPACIAL_REND"]
 }]
