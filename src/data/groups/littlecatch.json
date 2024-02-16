@@ -15,6 +15,10 @@
     "fastMove": "CHARM",
     "chargedMoves": ["ENERGY_BALL", "SEED_BOMB"]
 }, {
+    "speciesId": "cubone",
+    "fastMove": "MUD_SLAP",
+    "chargedMoves": ["BONE_CLUB", "DIG"]
+}, {
     "speciesId": "deino",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["BODY_SLAM", "CRUNCH"]
@@ -30,6 +34,14 @@
     "speciesId": "ducklett",
     "fastMove": "WING_ATTACK",
     "chargedMoves": ["BUBBLE_BEAM", "BRAVE_BIRD"]
+}, {
+    "speciesId": "gligar",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["AERIAL_ACE", "DIG"]
+}, {
+    "speciesId": "greavard",
+    "fastMove": "LICK",
+    "chargedMoves": ["PSYCHIC_FANGS", "SHADOW_BALL"]
 }, {
     "speciesId": "growlithe",
     "fastMove": "EMBER",
@@ -85,6 +97,10 @@
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["WEATHER_BALL_ICE", "DARK_PULSE"]
 }, {
+    "speciesId": "wailmer",
+    "fastMove": "WATER_GUN",
+    "chargedMoves": ["BODY_SLAM", "SCALD"]
+}, {
     "speciesId": "wooper",
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["BODY_SLAM", "MUD_BOMB"]
@@ -95,25 +111,53 @@
 }, {
     "speciesId": "wynaut",
     "fastMove": "COUNTER",
-    "chargedMoves": ["MIRROR_COAT"]
+    "chargedMoves": []
 }, {
     "speciesId": "zigzagoon_galarian",
     "fastMove": "TACKLE",
     "chargedMoves": ["BODY_SLAM", "DIG"]
 }, {
+    "speciesId": "smeargle",
+    "fastMove": "LOCK_ON",
+    "chargedMoves": ["FLYING_PRESS"]
+}, {
+    "speciesId": "marill",
+    "fastMove": "BUBBLE",
+    "chargedMoves": ["AQUA_TAIL", "BODY_SLAM"]
+}, {
+    "speciesId": "shuckle",
+    "fastMove": "ROCK_THROW",
+    "chargedMoves": ["STONE_EDGE", "ROCK_BLAST"]
+}, {
+    "speciesId": "stunfisk_galarian",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+}, {
+    "speciesId": "wobbuffet",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["MIRROR_COAT"]
+}, {
     "speciesId": "gligar",
     "fastMove": "WING_ATTACK",
     "chargedMoves": ["AERIAL_ACE", "DIG"]
 }, {
-    "speciesId": "cubone",
-    "fastMove": "MUD_SLAP",
-    "chargedMoves": ["BONE_CLUB", "DIG"]
-}, {
-    "speciesId": "wailmer",
-    "fastMove": "WATER_GUN",
-    "chargedMoves": ["BODY_SLAM", "SCALD"]
-}, {
-    "speciesId": "greavard",
+    "speciesId": "lickitung",
     "fastMove": "LICK",
-    "chargedMoves": ["PSYCHIC_FANGS", "SHADOW_BALL"]
+    "chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
+}, {
+    "speciesId": "pachirisu",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["THUNDER_PUNCH", "THUNDERBOLT"]
+}, {
+    "speciesId": "annihilape",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["ICE_PUNCH", "NIGHT_SLASH"]
+}, {
+    "speciesId": "lanturn",
+    "fastMove": "SPARK",
+    "chargedMoves": ["SURF", "THUNDERBOLT"]
+}, {
+    "speciesId": "wigglytuff",
+    "fastMove": "CHARM",
+    "chargedMoves": ["DISARMING_VOICE", "ICY_WIND"]
 }]
