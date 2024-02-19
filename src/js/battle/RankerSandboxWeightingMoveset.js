@@ -495,6 +495,14 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if(cup.name == "littlecatch"){
+					iterations = 1;
+				}
+
+				if(cup.name == "catch"){
+					iterations = 1;
+				}
+
 				if(cup.name == "hisui"){
 					iterations = 1;
 				}

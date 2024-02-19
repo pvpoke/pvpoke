@@ -310,7 +310,7 @@
     },
     "level25CP": 1784,
     "eliteMoves": ["EMBER", "WING_ATTACK", "BLAST_BURN", "FLAMETHROWER", "DRAGON_BREATH"],
-    "searchPriority": 12,
+    "searchPriority": 10,
     "buddyDistance": 3,
     "thirdMoveCost": 10000,
     "released": true,
@@ -23048,9 +23048,10 @@
     "tags": ["legendary"],
     "defaultIVs": {
         "cp500": [5, 11, 13, 15],
-        "cp1500": [14.5, 7, 12, 15],
+        "cp1500": [15, 2, 9, 12],
         "cp2500": [24.5, 4, 14, 11]
     },
+	"levelFloor": 15,
     "searchPriority": 3,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
@@ -23141,6 +23142,7 @@
         "cp1500": [15, 6, 13, 10],
         "cp2500": [25, 4, 14, 11]
     },
+	"levelFloor": 15,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true,
@@ -23227,9 +23229,10 @@
     "eliteMoves": ["SLUDGE_BOMB"],
     "defaultIVs": {
         "cp500": [5, 10, 13, 15],
-        "cp1500": [14, 14, 13, 15],
+        "cp1500": [15, 3, 8, 12],
         "cp2500": [24, 10, 11, 13]
     },
+	"levelFloor": 15,
     "tags": ["mythical", "untradeable"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
