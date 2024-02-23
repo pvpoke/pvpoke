@@ -1,0 +1,10 @@
+{
+    "name": "zodiac",
+    "title": "Zodiac",
+    "include": [{
+        "filterType": "id",
+        "name": "Species",
+        "values": ["starmie", "dragonite", "dragonite_shadow", "seaking", "muk_alolan", "muk_alolan_shadow", "mew", "cradily", "cradily_shadow", "kingdra", "kingdra_shadow", "bewear", "skuntank", "skuntank_shadow", "munchlax", "electivire", "electivire_shadow", "linoone_galarian", "sandslash", "sandslash_shadow", "cresselia", "alakazam", "alakazam_shadow", "armaldo", "armaldo_shadow", "zweilous", "ursaluna", "ursaluna_shadow", "castform", "gallade", "gallade_shadow", "malamar", "pangoro", "qwilfish_hisuian", "froslass", "froslass_shadow", "regice", "regice_shadow", "slowbro_galarian", "barbaracle", "donphan", "donphan_shadow", "girafarig", "girafarig_shadow", "perrserker", "staraptor", "staraptor_shadow", "sneasler", "sneasler_shadow", "snorlax", "snorlax_shadow", "farfetchd_galarian", "furret", "golduck", "golduck_shadow", "suicune", "suicune_shadow", "greedent", "excadrill", "excadrill_shadow", "jumpluff", "jumpluff_shadow", "roserade", "sceptile", "sceptile_shadow", "sealeo", "sealeo_shadow", "lapras", "lapras_shadow", "walrein", "walrein_shadow", "tentacruel", "tentacruel_shadow", "pinsir", "pinsir_shadow", "ariados", "electrode_hisuian", "rapidash", "cetitan"]
+    }],
+    "exclude": []
+}
