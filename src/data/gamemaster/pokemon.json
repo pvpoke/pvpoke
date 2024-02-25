@@ -25328,6 +25328,10 @@
         "cp1500": [27, 4, 10, 14],
         "cp2500": [50, 15, 15, 15]
     },
+	"family": {
+        "id": "FAMILY_BASCULIN",
+        "evolutions": ["basculegion_female", "basculegion_male"]
+    },
     "buddyDistance": 1,
     "thirdMoveCost": 10000,
     "released": true
