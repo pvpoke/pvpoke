@@ -35866,6 +35866,52 @@
         "parent": "ursaring_shadow"
     }
 }, {
+	"dex": 902,
+	"speciesId": "basculegion_female",
+	"speciesName": "Basculegion (Female)",
+	"baseStats": {
+		"atk": 199,
+		"def": 144,
+		"hp": 260
+	},
+	"defaultIVs": {
+		"cp500": [7, 4, 8, 7],
+		"cp1500": [20, 5, 13, 10],
+		"cp2500": [36, 4, 15, 13]
+	},
+	"types": ["water", "ghost"],
+	"fastMoves": ["SPLASH"],
+	"chargedMoves": ["STRUGGLE"],
+	"released": false,
+	"family": {
+		"id": "FAMILY_BASCULIN",
+		"parent": "basculin"
+	},
+	"tags": []
+}, {
+	"dex": 902,
+	"speciesId": "basculegion_male",
+	"speciesName": "Basculegion (Male)",
+	"baseStats": {
+		"atk": 217,
+		"def": 144,
+		"hp": 260
+	},
+	"defaultIVs": {
+		"cp500": [6.5, 4, 7, 7],
+		"cp1500": [18, 7, 15, 12],
+		"cp2500": [31, 4, 15, 10]
+	},
+	"types": ["water", "ghost"],
+	"fastMoves": ["SPLASH"],
+	"chargedMoves": ["STRUGGLE"],
+	"released": false,
+	"family": {
+		"id": "FAMILY_BASCULIN",
+		"parent": "basculin"
+	},
+	"tags": []
+}, {
     "dex": 903,
     "speciesName": "Sneasler",
     "speciesId": "sneasler",
