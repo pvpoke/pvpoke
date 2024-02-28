@@ -1684,6 +1684,18 @@
     "buffApplyChance": "1",
     "archetype": "Debuff"
 }, {
+    "moveId": "NATURES_MADNESS",
+    "name": "Nature's Madness (Speculative)",
+    "type": "fairy",
+    "power": 80,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": "1",
+    "archetype": "Debuff"
+}, {
     "moveId": "NIGHT_SHADE",
     "name": "Night Shade",
     "abbreviation": "NSh",
