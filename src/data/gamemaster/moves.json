@@ -1553,14 +1553,14 @@
     "archetype": "Low Quality"
 }, {
     "moveId": "METAL_SOUND",
-    "name": "Metal Sound (Speculative)",
+    "name": "Metal Sound",
 	"abbreviation": "MSo",
     "type": "steel",
     "power": 3,
     "energy": 0,
-    "energyGain": 3,
-    "cooldown": 500,
-    "archetype": "General"
+    "energyGain": 8,
+    "cooldown": 1000,
+    "archetype": "Fast Charge"
 }, {
     "moveId": "METEOR_BEAM",
     "abbreviation": "MeB",
@@ -2023,14 +2023,14 @@
     "archetype": "General"
 }, {
     "moveId": "PSYWAVE",
-    "name": "Psywave (Speculative)",
+    "name": "Psywave",
     "abbreviation": "Psy",
     "type": "psychic",
     "power": 3,
     "energy": 0,
-    "energyGain": 3,
+    "energyGain": 2,
     "cooldown": 500,
-    "archetype": "Multipurpose"
+    "archetype": "Low Quality"
 }, {
     "moveId": "QUICK_ATTACK",
     "name": "Quick Attack",
@@ -2183,7 +2183,7 @@
     "archetype": "Spam/Bait"
 }, {
     "moveId": "SAND_ATTACK",
-    "name": "Sand Attack (Speculative)",
+    "name": "Sand Attack",
 	"abbreviation": "SdA",
     "type": "ground",
     "power": 2,
