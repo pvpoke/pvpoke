@@ -94,7 +94,7 @@
     "moveId": "AQUA_TAIL",
     "name": "Aqua Tail",
     "type": "water",
-    "power": 50,
+    "power": 55,
     "energy": 35,
     "energyGain": 0,
     "cooldown": 500,
@@ -239,10 +239,13 @@
     "abbreviation": "BkB",
     "type": "fighting",
     "power": 40,
-    "energy": 35,
+    "energy": 40,
     "energyGain": 0,
     "cooldown": 500,
-    "archetype": "Spam/Bait"
+	"buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": "1",
+    "archetype": "Debuff Spam/Bait"
 }, {
     "moveId": "BRUTAL_SWING",
     "name": "Brutal Swing",
@@ -405,7 +408,7 @@
     "name": "Cross Chop",
     "abbreviation": "CrC",
     "type": "fighting",
-    "power": 50,
+    "power": 55,
     "energy": 35,
     "energyGain": 0,
     "cooldown": 500,
@@ -1549,6 +1552,16 @@
     "cooldown": 1000,
     "archetype": "Low Quality"
 }, {
+    "moveId": "METAL_SOUND",
+    "name": "Metal Sound (Speculative)",
+	"abbreviation": "MSo"
+    "type": "steel",
+    "power": 3,
+    "energy": 0,
+    "energyGain": 3,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
     "moveId": "METEOR_BEAM",
     "abbreviation": "MeB",
     "name": "Meteor Beam",
@@ -2009,6 +2022,16 @@
     "cooldown": 500,
     "archetype": "General"
 }, {
+    "moveId": "PSYWAVE",
+    "name": "Psywave (Speculative)",
+    "abbreviation": "Psy",
+    "type": "psychic",
+    "power": 3,
+    "energy": 0,
+    "energyGain": 3,
+    "cooldown": 500,
+    "archetype": "Multipurpose"
+}, {
     "moveId": "QUICK_ATTACK",
     "name": "Quick Attack",
     "type": "normal",
@@ -2159,6 +2182,16 @@
     "cooldown": 500,
     "archetype": "Spam/Bait"
 }, {
+    "moveId": "SAND_ATTACK",
+    "name": "Sand Attack (Speculative)",
+	"abbreviation": "SdA",
+    "type": "ground",
+    "power": 2,
+    "energy": 0,
+    "energyGain": 4,
+    "cooldown": 500,
+    "archetype": "Fast Charge"
+}, {
     "moveId": "SAND_TOMB",
     "name": "Sand Tomb",
     "type": "ground",
@@ -2255,7 +2288,7 @@
     "name": "Shadow Bone",
     "abbreviation": "SBo",
     "type": "ghost",
-    "power": 75,
+    "power": 80,
     "energy": 45,
     "energyGain": 0,
     "cooldown": 500,
@@ -2800,11 +2833,11 @@
     "moveId": "WATER_PULSE",
     "name": "Water Pulse",
     "type": "water",
-    "power": 70,
-    "energy": 60,
+    "power": 80,
+    "energy": 55,
     "energyGain": 0,
     "cooldown": 500,
-    "archetype": "High Energy"
+    "archetype": "General"
 }, {
     "moveId": "WATERFALL",
     "name": "Waterfall",
