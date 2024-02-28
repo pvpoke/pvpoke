@@ -3,6 +3,10 @@
     "fastMove": "VOLT_SWITCH",
     "chargedMoves": ["BRUTAL_SWING", "TRAILBLAZE"]
 }, {
+    "speciesId": "annihilape",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["ICE_PUNCH", "SHADOW_BALL"]
+}, {
     "speciesId": "charizard",
     "fastMove": "WING_ATTACK",
     "chargedMoves": ["DRAGON_CLAW", "BLAST_BURN"]
@@ -154,7 +158,7 @@
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
 }, {
-    "speciesId": "annihilape",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["ICE_PUNCH", "SHADOW_BALL"]
+    "speciesId": "feraligatr",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"]
 }]

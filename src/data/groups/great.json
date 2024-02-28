@@ -3,6 +3,14 @@
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["SKY_ATTACK", "MOONBLAST"]
 }, {
+    "speciesId": "annihilape",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["ICE_PUNCH", "SHADOW_BALL"]
+}, {
+    "speciesId": "annihilape",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["NIGHT_SLASH", "SHADOW_BALL"]
+}, {
     "speciesId": "azumarill",
     "fastMove": "BUBBLE",
     "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
@@ -170,11 +178,11 @@
     "chargedMoves": ["MUD_BOMB", "SCALD"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "annihilape",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["ICE_PUNCH", "SHADOW_BALL"]
+    "speciesId": "feraligatr",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"]
 }, {
-    "speciesId": "annihilape",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["NIGHT_SLASH", "SHADOW_BALL"]
+    "speciesId": "goodra",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["AQUA_TAIL", "POWER_WHIP"]
 }]
