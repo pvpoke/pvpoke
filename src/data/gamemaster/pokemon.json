@@ -4942,7 +4942,7 @@
         "hp": 93
     },
     "types": ["electric", "steel"],
-    "fastMoves": ["SPARK", "THUNDER_SHOCK", "VOLT_SWITCH", "METAL SOUND"],
+    "fastMoves": ["SPARK", "THUNDER_SHOCK", "VOLT_SWITCH", "METAL_SOUND"],
     "chargedMoves": ["DISCHARGE", "MAGNET_BOMB", "THUNDERBOLT"],
     "defaultIVs": {
         "cp500": [14, 5, 9, 14],
@@ -4969,7 +4969,7 @@
         "hp": 93
     },
     "types": ["electric", "steel"],
-    "fastMoves": ["SPARK", "THUNDER_SHOCK", "VOLT_SWITCH", "METAL SOUND"],
+    "fastMoves": ["SPARK", "THUNDER_SHOCK", "VOLT_SWITCH", "METAL_SOUND"],
     "chargedMoves": ["DISCHARGE", "MAGNET_BOMB", "THUNDERBOLT"],
     "defaultIVs": {
         "cp500": [14, 5, 9, 14],
@@ -4995,7 +4995,7 @@
         "hp": 137
     },
     "types": ["electric", "steel"],
-    "fastMoves": ["CHARGE_BEAM", "SPARK", "THUNDER_SHOCK", "VOLT_SWITCH", "METAL SOUND"],
+    "fastMoves": ["CHARGE_BEAM", "SPARK", "THUNDER_SHOCK", "VOLT_SWITCH", "METAL_SOUND"],
     "chargedMoves": ["DISCHARGE", "FLASH_CANNON", "MAGNET_BOMB", "ZAP_CANNON"],
     "defaultIVs": {
         "cp500": [7.5, 8, 13, 12],
@@ -5023,7 +5023,7 @@
         "hp": 137
     },
     "types": ["electric", "steel"],
-    "fastMoves": ["CHARGE_BEAM", "SPARK", "THUNDER_SHOCK", "VOLT_SWITCH", "METAL SOUND"],
+    "fastMoves": ["CHARGE_BEAM", "SPARK", "THUNDER_SHOCK", "VOLT_SWITCH", "METAL_SOUND"],
     "chargedMoves": ["DISCHARGE", "FLASH_CANNON", "MAGNET_BOMB", "ZAP_CANNON"],
     "defaultIVs": {
         "cp500": [7.5, 8, 13, 12],
@@ -20116,7 +20116,7 @@
         "hp": 155
     },
     "types": ["bug", "steel"],
-    "fastMoves": ["BUG_BITE", "CONFUSION", "METAL SOUND"],
+    "fastMoves": ["BUG_BITE", "CONFUSION", "METAL_SOUND"],
     "chargedMoves": ["BUG_BUZZ", "IRON_HEAD", "PSYBEAM"],
     "defaultIVs": {
         "cp500": [12, 4, 13, 12],
@@ -20998,7 +20998,7 @@
         "hp": 167
     },
     "types": ["steel", "psychic"],
-    "fastMoves": ["CONFUSION", "FEINT_ATTACK", "METAL SOUND"],
+    "fastMoves": ["CONFUSION", "FEINT_ATTACK", "METAL_SOUND"],
     "chargedMoves": ["FLASH_CANNON", "HEAVY_SLAM", "PSYCHIC", "BULLDOZE", "PSYSHOCK", "PAYBACK"],
     "defaultIVs": {
         "cp500": [8.5, 5, 8, 14],
@@ -21989,7 +21989,7 @@
         "hp": 172
     },
     "types": ["electric", "steel"],
-    "fastMoves": ["CHARGE_BEAM", "SPARK", "VOLT_SWITCH", "METAL SOUND"],
+    "fastMoves": ["CHARGE_BEAM", "SPARK", "VOLT_SWITCH", "METAL_SOUND"],
     "chargedMoves": ["FLASH_CANNON", "WILD_CHARGE", "ZAP_CANNON", "MIRROR_SHOT"],
     "defaultIVs": {
         "cp500": [6, 5, 7, 15],
@@ -22016,7 +22016,7 @@
         "hp": 172
     },
     "types": ["electric", "steel"],
-    "fastMoves": ["CHARGE_BEAM", "SPARK", "VOLT_SWITCH", "METAL SOUND"],
+    "fastMoves": ["CHARGE_BEAM", "SPARK", "VOLT_SWITCH", "METAL_SOUND"],
     "chargedMoves": ["FLASH_CANNON", "WILD_CHARGE", "ZAP_CANNON", "MIRROR_SHOT"],
     "defaultIVs": {
         "cp500": [6, 5, 7, 15],
@@ -26908,7 +26908,7 @@
         "hp": 120
     },
     "types": ["steel", "none"],
-    "fastMoves": ["VOLT_SWITCH", "CHARGE_BEAM", "METAL SOUND"],
+    "fastMoves": ["VOLT_SWITCH", "CHARGE_BEAM", "METAL_SOUND"],
     "chargedMoves": ["VICE_GRIP", "DISCHARGE", "ZAP_CANNON"],
     "defaultIVs": {
         "cp500": [20.5, 5, 15, 9],
@@ -26932,7 +26932,7 @@
         "hp": 155
     },
     "types": ["steel", "none"],
-    "fastMoves": ["THUNDER_SHOCK", "CHARGE_BEAM", "METAL SOUND"],
+    "fastMoves": ["THUNDER_SHOCK", "CHARGE_BEAM", "METAL_SOUND"],
     "chargedMoves": ["VICE_GRIP", "THUNDERBOLT", "ZAP_CANNON"],
     "defaultIVs": {
         "cp500": [10, 7, 13, 15],
@@ -26957,7 +26957,7 @@
         "hp": 155
     },
     "types": ["steel", "none"],
-    "fastMoves": ["THUNDER_SHOCK", "CHARGE_BEAM", "METAL SOUND"],
+    "fastMoves": ["THUNDER_SHOCK", "CHARGE_BEAM", "METAL_SOUND"],
     "chargedMoves": ["HYPER_BEAM", "FLASH_CANNON", "ZAP_CANNON", "MIRROR_SHOT"],
     "defaultIVs": {
         "cp500": [7, 10, 12, 14],
