@@ -25030,7 +25030,7 @@
     },
     "types": ["fighting", "none"],
     "fastMoves": ["LOW_KICK", "POISON_JAB"],
-    "chargedMoves": ["FOCUS_BLAST", "LOW_SWEEP", "BODY_SLAM"],
+    "chargedMoves": ["FOCUS_BLAST", "LOW_SWEEP", "BODY_SLAM", "BRICK_BREAK"],
     "defaultIVs": {
         "cp500": [7, 5, 6, 8],
         "cp1500": [20, 5, 14, 9],
