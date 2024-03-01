@@ -146,7 +146,6 @@ header{
     z-index: 25;
     width: 100%;
     box-shadow: rgba(0,0,0,0.3) 0px 0px 6px;
-	top: 28px;
 
 	.header-wrap{
 		max-width:800px;
@@ -309,7 +308,7 @@ footer{
 #main{
 	max-width:800px;
 	margin: auto;
-	padding:88px 10px 10px 10px;
+	padding:60px 10px 10px 10px;
     border-radius: 12px;
 
 	& > h1{
@@ -4988,7 +4987,7 @@ a.pokebattler{
 			padding: 8px 8px;
     		box-sizing: border-box;
 			box-shadow: 0px 5px 5px rgba(0,0,0,0.4);
-			top: 65px;
+			top: 37px;
 
 			a{
 				padding: 9px 8px 9px 38px;

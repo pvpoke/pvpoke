@@ -449,6 +449,16 @@
     "cooldown": 500,
     "archetype": "Low Quality"
 }, {
+    "moveId": "DARKEST_LARIAT",
+    "name": "Darkest Lariat",
+    "abbreviation": "DkL",
+	"type": "dark",
+    "power": 120,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Nuke"
+}, {
     "moveId": "DARK_PULSE",
     "name": "Dark Pulse",
     "type": "dark",
@@ -1685,7 +1695,7 @@
     "archetype": "Debuff"
 }, {
     "moveId": "NATURES_MADNESS",
-    "name": "Nature's Madness (Speculative)",
+    "name": "Nature's Madness",
     "type": "fairy",
     "power": 80,
     "energy": 50,

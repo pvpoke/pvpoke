@@ -55,6 +55,88 @@
 		"showMeta": true
 	},
 	{
+		"title": "Electric Cup",
+		"cup": "electric",
+		"cp": 1500,
+		"meta": "electric",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Spring Cup",
+		"cup": "spring",
+		"cp": 1500,
+		"meta": "spring",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Battle Frontier (Enchanted)",
+		"cup": "enchanted",
+		"cp": 2500,
+		"meta": "enchanted",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+        "title": "Battle Frontier (Primordial)",
+        "cup": "primordial",
+        "cp": 1500,
+        "meta": "primordial",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    },
+	{
+        "title": "Battle Frontier (Serene)",
+        "cup": "serene",
+        "cp": 1500,
+        "meta": "serene",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    },
+	{
+		"title": "Battle Frontier (Great)",
+		"cup": "battlefrontiergreat",
+		"cp": 1500,
+		"meta": "great",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": false,
+		"hideRankings": true
+	},
+	{
+		"title": "Battle Frontier (Master)",
+		"cup": "battlefrontiermaster",
+		"cp": 10000,
+		"meta": "battlefrontiermaster",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+        "title": "Devon Sovereign Cup",
+        "cup": "sovereign",
+        "cp": 1500,
+        "meta": "sovereign",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    },
+	{
+        "title": "Devon Zodiac Cup",
+        "cup": "zodiac",
+        "cp": 1500,
+        "meta": "zodiac",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    },
+	{
 		"title": "Custom",
 		"cup": "custom",
 		"cp": 1500,

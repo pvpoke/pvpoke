@@ -8379,7 +8379,8 @@
         "parent": "dratini_shadow",
         "evolutions": ["dragonite_shadow"]
     },
-    "nicknames": ["dnair", "nair"]
+    "nicknames": ["dnair", "nair"],
+	"searchPriority": 6
 }, {
     "dex": 149,
     "speciesName": "Dragonite",
@@ -9006,7 +9007,8 @@
     "family": {
         "id": "FAMILY_TOTODILE",
         "parent": "croconaw"
-    }
+    },
+	"searchPriority": 8
 }, {
     "dex": 160,
     "speciesName": "Feraligatr (Shadow)",
@@ -10977,7 +10979,8 @@
     "family": {
         "id": "FAMILY_GLIGAR",
         "evolutions": ["gliscor"]
-    }
+    },
+	"searchPriority": 6
 }, {
     "dex": 207,
     "speciesName": "Gligar (Shadow)",
@@ -16579,7 +16582,7 @@
         "cp1500": [27, 4, 14, 15],
         "cp2500": [50, 15, 15, 15]
     },
-    "searchPriority": 8,
+    "searchPriority": 10,
     "buddyDistance": 1,
     "thirdMoveCost": 10000,
     "released": true,
@@ -17747,7 +17750,7 @@
     },
     "level25CP": 1675,
     "tags": ["shadoweligible"],
-    "searchPriority": 10,
+    "searchPriority": 5,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true,
@@ -17774,7 +17777,7 @@
         "cp2500": [38, 6, 14, 11]
     },
     "tags": ["shadow"],
-    "searchPriority": 10,
+    "searchPriority": 5,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true,
@@ -22582,6 +22585,7 @@
     "eliteMoves": ["SYNCHRONOISE"],
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
+	"searchPriority": 4,
     "released": true,
     "family": {
         "id": "FAMILY_RALTS",
@@ -22972,7 +22976,7 @@
     "types": ["steel", "dragon"],
     "fastMoves": ["DRAGON_BREATH", "METAL_CLAW"],
     "chargedMoves": ["DRACO_METEOR", "IRON_HEAD", "THUNDER", "ROAR_OF_TIME"],
-	"eliteMoves": ["ROAR_OF_TIME"],
+	"legacyMoves": ["ROAR_OF_TIME"],
     "tags": ["legendary"],
     "defaultIVs": {
 		"cp500": [4.5, 15, 15, 13],
@@ -23016,7 +23020,7 @@
     "types": ["water", "dragon"],
     "fastMoves": ["DRAGON_BREATH", "DRAGON_TAIL"],
     "chargedMoves": ["DRACO_METEOR", "FIRE_BLAST", "HYDRO_PUMP", "AQUA_TAIL", "SPACIAL_REND"],
-	"eliteMoves": ["SPACIAL_REND"],
+	"legacyMoves": ["SPACIAL_REND"],
     "tags": ["legendary"],
     "defaultIVs": {
 		"cp500": [4.5, 15, 13, 15],
@@ -26861,7 +26865,7 @@
         "cp2500": [48, 12, 12, 14],
         "cp2500l40": [40, 15, 15, 15]
     },
-    "searchPriority": 13,
+    "searchPriority": 4,
     "buddyDistance": 3,
     "thirdMoveCost": 75000,
     "released": true,
@@ -26889,7 +26893,6 @@
         "cp2500": [48, 12, 12, 14],
         "cp2500l40": [40, 15, 15, 15]
     },
-    "searchPriority": 13,
     "buddyDistance": 3,
     "thirdMoveCost": 75000,
     "released": true,
@@ -32595,7 +32598,8 @@
         "id": "FAMILY_JANGMO_O",
         "parent": "jangmo_o",
         "evolutions": ["kommo_o"]
-    }
+    },
+	"searchPriority": 3
 }, {
     "dex": 784,
     "speciesName": "Kommo-o",
@@ -32632,7 +32636,8 @@
     },
     "types": ["electric", "fairy"],
     "fastMoves": ["VOLT_SWITCH", "QUICK_ATTACK"],
-    "chargedMoves": ["THUNDERBOLT", "DAZZLING_GLEAM", "BRAVE_BIRD", "THUNDER"],
+    "chargedMoves": ["THUNDERBOLT", "DAZZLING_GLEAM", "BRAVE_BIRD", "THUNDER", "NATURES_MADNESS"],
+	"eliteMoves": ["NATURES_MADNESS"],
     "defaultIVs": {
         "cp500": [6, 5, 14, 14],
         "cp1500": [17.5, 5, 12, 12],
@@ -33084,10 +33089,10 @@
         "cp1500": [39.5, 4, 13, 13],
         "cp2500": [50, 15, 15, 15]
     },
-    "tags": ["ultrabeast"],
+    "tags": ["ultrabeast", "untradeable"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_POIPOLE",
         "evolutions": ["naganadel"]
