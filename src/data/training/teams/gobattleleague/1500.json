@@ -138,21 +138,6 @@
         "weight": 1
     }, {
         "pokemon": [{
-            "speciesId": "bastiodon",
-            "fastMove": "SMACK_DOWN",
-            "chargedMoves": ["STONE_EDGE", "FLAMETHROWER"]
-        }, {
-            "speciesId": "annihilape",
-            "fastMove": "COUNTER",
-            "chargedMoves": ["ICE_PUNCH", "SHADOW_BALL"]
-        }, {
-            "speciesId": "trevenant",
-            "fastMove": "SHADOW_CLAW",
-            "chargedMoves": ["SEED_BOMB", "SHADOW_BALL"]
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
             "speciesId": "whiscash",
             "fastMove": "MUD_SHOT",
             "chargedMoves": ["MUD_BOMB", "SCALD"]
@@ -284,39 +269,9 @@
             "fastMove": "BUBBLE",
             "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
         }, {
-            "speciesId": "medicham",
-            "fastMove": "COUNTER",
-            "chargedMoves": ["ICE_PUNCH", "DYNAMIC_PUNCH"]
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
-            "speciesId": "skarmory",
-            "fastMove": "STEEL_WING",
-            "chargedMoves": ["BRAVE_BIRD", "SKY_ATTACK"]
-        }, {
-            "speciesId": "azumarill",
-            "fastMove": "BUBBLE",
-            "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
-        }, {
             "speciesId": "lanturn",
             "fastMove": "SPARK",
             "chargedMoves": ["SURF", "THUNDERBOLT"]
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
-            "speciesId": "ninetales_alolan",
-            "fastMove": "CHARM",
-            "chargedMoves": ["WEATHER_BALL_ICE", "PSYSHOCK"]
-        }, {
-            "speciesId": "lanturn",
-            "fastMove": "SPARK",
-            "chargedMoves": ["SURF", "THUNDERBOLT"]
-        }, {
-            "speciesId": "lickitung",
-            "fastMove": "LICK",
-            "chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
         }],
         "weight": 1
     }, {
@@ -337,17 +292,242 @@
         "weight": 1
     }, {
         "pokemon": [{
-            "speciesId": "skarmory",
-            "fastMove": "STEEL_WING",
-            "chargedMoves": ["BRAVE_BIRD", "SKY_ATTACK"]
+            "speciesId": "gallade_shadow",
+            "fastMove": "PSYCHO_CUT",
+            "chargedMoves": ["CLOSE_COMBAT", "LEAF_BLADE"],
+            "shadowType": "shadow"
         }, {
+            "speciesId": "lanturn",
+            "fastMove": "SPARK",
+            "chargedMoves": ["SURF", "THUNDERBOLT"]
+        }, {
+            "speciesId": "lickitung",
+            "fastMove": "LICK",
+            "chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "guzzlord",
+            "fastMove": "DRAGON_TAIL",
+            "chargedMoves": ["DRAGON_CLAW", "CRUNCH"]
+        }, {
+            "speciesId": "lanturn",
+            "fastMove": "SPARK",
+            "chargedMoves": ["SURF", "THUNDERBOLT"]
+        }, {
+            "speciesId": "feraligatr_shadow",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"],
+            "shadowType": "shadow"
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "dragonair_shadow",
+            "fastMove": "DRAGON_BREATH",
+            "chargedMoves": ["BODY_SLAM", "AQUA_TAIL"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "lanturn",
+            "fastMove": "SPARK",
+            "chargedMoves": ["SURF", "THUNDERBOLT"]
+        }, {
+            "speciesId": "vigoroth",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["BODY_SLAM", "ROCK_SLIDE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "dragonair_shadow",
+            "fastMove": "DRAGON_BREATH",
+            "chargedMoves": ["BODY_SLAM", "AQUA_TAIL"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "lanturn",
+            "fastMove": "SPARK",
+            "chargedMoves": ["SURF", "THUNDERBOLT"]
+        }, {
+            "speciesId": "lickitung",
+            "fastMove": "LICK",
+            "chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "lickitung",
+            "fastMove": "LICK",
+            "chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
+        }, {
+            "speciesId": "feraligatr_shadow",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "gallade_shadow",
+            "fastMove": "PSYCHO_CUT",
+            "chargedMoves": ["CLOSE_COMBAT", "LEAF_BLADE"],
+            "shadowType": "shadow"
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "feraligatr_shadow",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "lickitung",
+            "fastMove": "LICK",
+            "chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
+        }, {
+            "speciesId": "gligar",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["AERIAL_ACE", "DIG"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "dragonair_shadow",
+            "fastMove": "DRAGON_BREATH",
+            "chargedMoves": ["BODY_SLAM", "AQUA_TAIL"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "lanturn",
+            "fastMove": "SPARK",
+            "chargedMoves": ["SURF", "THUNDERBOLT"]
+        }, {
+            "speciesId": "feraligatr",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "registeel",
+            "fastMove": "LOCK_ON",
+            "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
+        }, {
+            "speciesId": "dragonair_shadow",
+            "fastMove": "DRAGON_BREATH",
+            "chargedMoves": ["BODY_SLAM", "AQUA_TAIL"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "feraligatr_shadow",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"],
+            "shadowType": "shadow"
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "charjabug",
+            "fastMove": "VOLT_SWITCH",
+            "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
+        }, {
+            "speciesId": "feraligatr_shadow",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "gallade_shadow",
+            "fastMove": "PSYCHO_CUT",
+            "chargedMoves": ["CLOSE_COMBAT", "LEAF_BLADE"],
+            "shadowType": "shadow"
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
             "speciesId": "annihilape",
             "fastMove": "COUNTER",
             "chargedMoves": ["ICE_PUNCH", "SHADOW_BALL"]
         }, {
-            "speciesId": "clodsire",
+            "speciesId": "charjabug",
+            "fastMove": "VOLT_SWITCH",
+            "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
+        }, {
+            "speciesId": "mandibuzz",
+            "fastMove": "SNARL",
+            "chargedMoves": ["DARK_PULSE", "AERIAL_ACE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "guzzlord",
+            "fastMove": "DRAGON_TAIL",
+            "chargedMoves": ["DRAGON_CLAW", "CRUNCH"]
+        }, {
+            "speciesId": "lanturn",
+            "fastMove": "SPARK",
+            "chargedMoves": ["SURF", "THUNDERBOLT"]
+        }, {
+            "speciesId": "feraligatr",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "sandslash_alolan",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "azumarill",
+            "fastMove": "BUBBLE",
+            "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
+        }, {
+            "speciesId": "annihilape",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["NIGHT_SLASH", "SHADOW_BALL"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "gallade_shadow",
+            "fastMove": "PSYCHO_CUT",
+            "chargedMoves": ["CLOSE_COMBAT", "LEAF_BLADE"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "feraligatr",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"]
+        }, {
+            "speciesId": "empoleon",
+            "fastMove": "STEEL_WING",
+            "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "mantine",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["AERIAL_ACE", "ICE_BEAM"]
+        }, {
+            "speciesId": "lickitung",
+            "fastMove": "LICK",
+            "chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
+        }, {
+            "speciesId": "whiscash",
             "fastMove": "MUD_SHOT",
-            "chargedMoves": ["EARTHQUAKE", "STONE_EDGE"]
+            "chargedMoves": ["MUD_BOMB", "SCALD"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "feraligatr",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"]
+        }, {
+            "speciesId": "lickitung",
+            "fastMove": "LICK",
+            "chargedMoves": ["BODY_SLAM", "POWER_WHIP"]
+        }, {
+            "speciesId": "gligar_shadow",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["AERIAL_ACE", "DIG"],
+            "shadowType": "shadow"
         }],
         "weight": 1
     }]
