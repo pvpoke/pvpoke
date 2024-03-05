@@ -20,7 +20,7 @@
     "speciesId": "arctibax",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["DRAGON_CLAW","AVALANCHE"],
-    "weight": 8
+    "weight": 4
   },
   {
     "speciesId": "armaldo",
@@ -32,12 +32,12 @@
     "speciesId": "aurorus",
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["WEATHER_BALL_ICE","METEOR_BEAM"],
-    "weight": 17
+    "weight": 12
   },
   {
     "speciesId": "barbaracle",
     "fastMove": "FURY_CUTTER",
-    "weight": 6
+    "weight": 3
   },
   {
     "speciesId": "baxcalibur",
@@ -69,8 +69,18 @@
     "weight": 1
   },
   {
+    "speciesId": "cetitan",
+    "fastMove": "ICE_SHARD",
+    "weight": 1
+  },
+  {
+    "speciesId": "cetoddle",
+    "fastMove": "ICE_SHARD",
+    "weight": 1
+  },
+  {
     "speciesId": "charjabug",
-    "weight": 5
+    "weight": 10
   },
   {
     "speciesId": "cloyster",
@@ -82,22 +92,22 @@
     "speciesId": "cradily",
     "fastMove": "BULLET_SEED",
     "chargedMoves": ["ROCK_SLIDE","GRASS_KNOT"],
-    "weight": 14
+    "weight": 26
   },
   {
     "speciesId": "dedenne",
-    "weight": 6
+    "weight": 9
   },
   {
     "speciesId": "dragonair",
     "chargedMoves": ["AQUA_TAIL","BODY_SLAM"],
-    "weight":  5
+    "weight":  7
   },
   {
     "speciesId": "dragonite",
     "fastMove": "STEEL_WING",
     "chargedMoves": ["DRAGON_CLAW","SUPER_POWER"],
-    "weight": 8
+    "weight": 3
   },
   {
     "speciesId": "drapion",
@@ -140,7 +150,7 @@
     "speciesId": "froslass",
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["AVALANCHE","SHADOW_BALL"],
-    "weight": 7
+    "weight": 15
   },
   {
     "speciesId": "galvantula",
@@ -168,20 +178,16 @@
     "speciesId": "golisopod",
     "fastMove": "FURY_CUTTER",
     "chargedMoves": ["LIQUIDATION","X_SCISSOR"],
-    "weight": 5
+    "weight": 7
   },
   {
     "speciesId": "goodra",
-    "weight": 1
+    "chargedMoves": ["AQUA_TAIL","POWER_WHIP"],
+    "weight": 5
   },
   {
     "speciesId": "greninja",
-    "weight": 8
-  },
-  {
-    "speciesId": "guzzlord",
-    "chargedMoves": ["DRAGON_CLAW","CRUNCH"],
-    "weight": 12
+    "weight": 6
   },
   {
     "speciesId": "heliolisk",
@@ -203,7 +209,7 @@
     "speciesId": "lapras",
     "fastMove": "ICE_SHARD",
     "chargedMoves": ["SURF","ICE_BEAM"],
-    "weight": 4
+    "weight": 3
   },
   {
     "speciesId": "latias",
@@ -250,12 +256,12 @@
     "speciesId": "mandibuzz",
     "fastMove": "SNARL",
     "chargedMoves": ["FOUL_PLAY","AERIAL_ACE"],
-    "weight": 8
+    "weight": 3
   },
   {
     "speciesId": "milotic",
     "chargedMoves": ["SURF","BLIZZARD"],
-    "weight": 8
+    "weight": 23
   },
   {
     "speciesId": "minun",
@@ -282,7 +288,7 @@
   },
   {
     "speciesId": "munchlax",
-    "weight": 4
+    "weight": 7
   },
   {
     "speciesId": "omastar",
@@ -313,7 +319,7 @@
   {
     "speciesId": "qwilfish_hisuian",
     "chargedMoves": ["AQUA_TAIL","SHADOW_BALL"],
-    "weight": 2
+    "weight": 10
   },
   {
     "speciesId": "raichu_alolan",
@@ -325,12 +331,6 @@
     "speciesId": "raikou",
     "fastMove": "THUNDER_SHOCK",
     "weight": 1
-  },
-  {
-    "speciesId": "rapidash_galarian",
-    "fastMove": "FAIRY_WIND",
-    "chargedMoves": ["BODY_SLAM","HIGH_HORSEPOWER"],
-    "weight": 8
   },
   {
     "speciesId": "raticate_alolan",
@@ -347,7 +347,7 @@
     "speciesId": "regice",
     "fastMove": "LOCK_ON",
     "chargedMoves": ["BLIZZARD","EARTHQUAKE"],
-    "weight": 2
+    "weight": 1
   },
   {
     "speciesId": "regieleki",
@@ -375,13 +375,13 @@
     "speciesId": "sableye",
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["FOUL_PLAY","RETURN"],
-    "weight": 3
+    "weight": 4
   },
   {
     "speciesId": "sceptile",
     "fastMove": "FURY_CUTTER",
     "chargedMoves": ["LEAF_BLADE","BREAKING_SWIPE"],
-    "weight": 5
+    "weight": 9
   },
   {
     "speciesId": "sealeo",
@@ -401,24 +401,24 @@
   {
     "speciesId": "skuntank",
     "chargedMoves": ["CRUNCH","TRAILBLAZE"],
-    "weight": 2
+    "weight": 3
   },
   {
     "speciesId": "snorlax",
     "chargedMoves": ["BODY_SLAM","SUPER_POWER"],
-    "weight": 14
+    "weight": 9
   },
   {
     "speciesId": "sudowoodo",
     "fastMove": "COUNTER",
     "chargedMoves": ["METEOR_BEAM","ROCK_SLIDE"],
-    "weight": 15
+    "weight": 30
   },
   {
     "speciesId": "togetic",
     "fastMove": "STEEL_WING",
     "chargedMoves": ["AERIAL_ACE","DAZZLING_GLEAM"],
-    "weight": 5
+    "weight": 19
   },
   {
     "speciesId": "turtonator",
@@ -455,6 +455,6 @@
   },
   {
     "speciesId": "zweilous",
-    "weight": 8
+    "weight": 2
   }
 ]

@@ -61,11 +61,6 @@
     "fastMove": "ICE_SHARD",
     "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
 }, {
-    "speciesId": "sealeo_shadow",
-    "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["BODY_SLAM", "AURORA_BEAM"],
-    "shadowType": "shadow"
-}, {
     "speciesId": "rufflet",
     "fastMove": "WING_ATTACK",
     "chargedMoves": ["FLY", "BRAVE_BIRD"]
@@ -73,14 +68,6 @@
     "speciesId": "raticate_alolan",
     "fastMove": "QUICK_ATTACK",
     "chargedMoves": ["CRUNCH", "RETURN"]
-}, {
-    "speciesId": "walrein",
-    "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
-}, {
-    "speciesId": "zangoose",
-    "fastMove": "FURY_CUTTER",
-    "chargedMoves": ["NIGHT_SLASH","CLOSE_COMBAT"]
 }, {
     "speciesId": "mew",
     "fastMove": "SHADOW_CLAW",
@@ -104,9 +91,9 @@
     "chargedMoves": ["ICICLE_SPEAR","EARTHQUAKE"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "conkeldurr",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["BRUTAL_SWING","STONE_EDGE"]
+    "speciesId": "farfetchd",
+    "fastMove": "FURY_CUTTER",
+    "chargedMoves": ["LEAF_BLADE","AERIAL_ACE"]
 }, {
     "speciesId": "samurott",
     "fastMove": "FURY_CUTTER",
@@ -129,15 +116,10 @@
     "fastMove": "MUD_SLAP",
     "chargedMoves": ["BODY_SLAM","EARTH_POWER"]
 }, {
-    "speciesId": "castform_rainy",
-    "fastMove": "WATER_GUN",
-    "chargedMoves": ["WEATHER_BALL_WATER","THUNDER"]
-}, {
-    "speciesId": "gyarados_shadow",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["AQUA_TAIL","CRUNCH"],
-    "shadowType": "shadow"
-}, {
+    "speciesId": "dunsparce",
+    "fastMove": "ROLLOUT",
+    "chargedMoves": ["ROCK_SLIDE","DRILL_RUN"]
+},  {
     "speciesId": "castform",
     "fastMove": "TACKLE",
     "chargedMoves": ["WEATHER_BALL_ROCK","ENERGY_BALL"]
@@ -146,8 +128,19 @@
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["MUD_BOMB","SCALD"]
 }, {
-    "speciesId": "staraptor_shadow",
-    "fastMove": "WING_ATTACK",
-    "chargedMoves": ["FLY","CLOSE_COMBAT"],
-    "shadowType": "shadow"
+    "speciesId": "empoleon",
+    "fastMove": "STEEL_WING",
+    "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
+}, {
+    "speciesId": "empoleon_shadow",
+    "fastMove": "STEEL_WING",
+    "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
+}, {
+    "speciesId": "gallade",
+    "fastMove": "PSYCHO_CUT",
+    "chargedMoves": ["LEAF_BLADE", "CLOSE_COMBAT"]
+}, {
+    "speciesId": "gallade_shadow",
+    "fastMove": "PSYCHO_CUT",
+    "chargedMoves": ["LEAF_BLADE", "CLOSE_COMBAT"]
 }]

@@ -1,10 +1,10 @@
 {
     "name": "battlefrontiermaster",
     "title": "Battle Frontier (Master League)",
-    "include": [],
+	"include": [],
     "exclude": [{
         "filterType": "id",
-        "values": ["tyranitar_mega", "gengar_mega", "swampert_mega", "gardevoir_mega", "latios_mega", "latias_mega", "charizard_mega_y", "gyarados_mega", "groudon_primal", "kyogre_primal", "zygarde_complete", "rayquaza_mega","garchomp_mega","palkia_origin","dialga_origin"]
+        "values": ["tyranitar_mega", "gengar_mega", "swampert_mega", "gardevoir_mega", "latios_mega", "latias_mega", "charizard_mega_y", "gyarados_mega", "groudon_primal", "kyogre_primal", "zygarde_complete", "rayquaza_mega","garchomp_mega"]
     }],
     "tierRules": {
         "max": 8,
@@ -14,13 +14,13 @@
             "pokemon": ["salamence_mega", "scizor_mega"]
         }, {
             "points": 4,
-            "pokemon": ["mewtwo", "dialga", "zacian_hero", "solgaleo", "groudon", "xerneas", "ho_oh", "kyogre", "meloetta_aria", "steelix_mega"]
+            "pokemon": ["mewtwo", "dialga", "zacian_hero", "solgaleo", "groudon", "xerneas", "ho_oh", "kyogre", "meloetta_aria", "steelix_mega", "dialga_origin", "palkia_origin"]
         }, {
             "points": 3,
-            "pokemon": ["giratina_origin", "giratina_altered", "aggron_mega", "blastoise_mega"]
+            "pokemon": ["giratina_origin", "giratina_altered", "aggron_mega", "blastoise_mega","landorus_therian", "slowbro_mega"]
         }, {
             "points": 2,
-            "pokemon": ["zekrom", "yveltal", "melmetal", "palkia", "dragonite", "reshiram", "charizard_mega_x", "slowbro_mega","lugia", "zarude","landorus_therian"]
+            "pokemon": ["zekrom", "yveltal", "melmetal", "palkia", "dragonite", "reshiram", "charizard_mega_x","lugia", "zarude"]
         }, {
             "points": 1,
             "pokemon": ["genesect", "genesect_burn", "genesect_douse", "genesect_chill", "genesect_shock", "mew", "florges", "blaziken_mega", "abomasnow_mega", "rayquaza", "kyurem","heatran"]

@@ -42,19 +42,22 @@
         "exclude": [{
             "filterType": "tag",
             "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["giratina_origin", "heatran"]
         }],
         "tierRules": {
             "max": 17,
             "floor": 1,
             "tiers": [{
                 "points": 7,
-                "pokemon": ["azumarill", "carbink", "gligar", "lanturn", "lickitung", "medicham", "registeel", "skarmory", "annihilape"]
+                "pokemon": ["azumarill", "carbink", "gligar", "lanturn", "lickitung", "medicham", "registeel", "skarmory", "annihilape", "whiscash"]
             }, {
                 "points": 5,
-                "pokemon": ["bastiodon", "deoxys_defense", "dewgong", "mandibuzz", "ninetales_alolan", "poliwrath", "sableye", "sandslash_alolan", "serperior", "swampert", "talonflame", "toxapex", "umbreon", "vigoroth", "whiscash"]
+                "pokemon": ["bastiodon", "deoxys_defense", "dewgong", "mandibuzz", "ninetales_alolan", "poliwrath", "sableye", "sandslash_alolan", "serperior", "swampert", "talonflame", "toxapex", "umbreon", "vigoroth", "cresselia", "charjabug", "empoleon", "feraligatr", "mantine"]
             }, {
                 "points": 2,
-                "pokemon": ["altaria", "charizard", "charjabug", "clefable", "clodsire", "cresselia", "diggersby", "dragonite", "dubwool", "froslass", "greedent", "jellicent", "mantine", "pelipper", "pidgeot", "quagsire", "steelix", "stunfisk_galarian", "tapu_fini", "toxicroak", "venusaur", "wigglytuff"]
+                "pokemon": ["altaria", "charizard", "clefable", "clodsire", "diggersby", "dragonite", "dubwool", "froslass", "greedent", "jellicent", "pelipper", "pidgeot", "quagsire", "steelix", "stunfisk_galarian", "tapu_fini", "toxicroak", "venusaur", "wigglytuff", "gallade", "machamp"]
             }]
         },
         "allowSameSpecies": true
@@ -64,7 +67,7 @@
         "include": [],
         "exclude": [{
             "filterType": "id",
-            "values": ["tyranitar_mega", "gengar_mega", "swampert_mega", "gardevoir_mega", "latios_mega", "latias_mega", "charizard_mega_y", "gyarados_mega", "groudon_primal", "kyogre_primal", "zygarde_complete", "rayquaza_mega", "garchomp_mega", "palkia_origin", "dialga_origin"]
+            "values": ["tyranitar_mega", "gengar_mega", "swampert_mega", "gardevoir_mega", "latios_mega", "latias_mega", "charizard_mega_y", "gyarados_mega", "groudon_primal", "kyogre_primal", "zygarde_complete", "rayquaza_mega", "garchomp_mega"]
         }],
         "tierRules": {
             "max": 8,
@@ -74,13 +77,13 @@
                 "pokemon": ["salamence_mega", "scizor_mega"]
             }, {
                 "points": 4,
-                "pokemon": ["mewtwo", "dialga", "zacian_hero", "solgaleo", "groudon", "xerneas", "ho_oh", "kyogre", "meloetta_aria", "steelix_mega"]
+                "pokemon": ["mewtwo", "dialga", "zacian_hero", "solgaleo", "groudon", "xerneas", "ho_oh", "kyogre", "meloetta_aria", "steelix_mega", "dialga_origin", "palkia_origin"]
             }, {
                 "points": 3,
-                "pokemon": ["giratina_origin", "giratina_altered", "aggron_mega", "blastoise_mega"]
+                "pokemon": ["giratina_origin", "giratina_altered", "aggron_mega", "blastoise_mega", "landorus_therian", "slowbro_mega"]
             }, {
                 "points": 2,
-                "pokemon": ["zekrom", "yveltal", "melmetal", "palkia", "dragonite", "reshiram", "charizard_mega_x", "slowbro_mega", "lugia", "zarude", "landorus_therian"]
+                "pokemon": ["zekrom", "yveltal", "melmetal", "palkia", "dragonite", "reshiram", "charizard_mega_x", "lugia", "zarude"]
             }, {
                 "points": 1,
                 "pokemon": ["genesect", "genesect_burn", "genesect_douse", "genesect_chill", "genesect_shock", "mew", "florges", "blaziken_mega", "abomasnow_mega", "rayquaza", "kyurem", "heatran"]
@@ -243,7 +246,7 @@
             "values": ["mega", "shadow"]
         }, {
             "filterType": "id",
-            "values": ["ninetales_alolan", "raichu", "obstagoon", "walrein", "umbreon", "dewgong", "regirock", "lycanroc_midnight", "crustle", "dragalge", "abomasnow", "pachirisu", "chansey", "carbink", "haxorus", "meowscarada", "beartic", "lanturn", "diancie", "stunfisk", "guzzlord", "avalugg_hisuian", "lanturnw", "giratina_origin"]
+            "values": ["ninetales_alolan", "raichu", "obstagoon", "walrein", "umbreon", "dewgong", "regirock", "lycanroc_midnight", "crustle", "dragalge", "abomasnow", "pachirisu", "chansey", "carbink", "haxorus", "meowscarada", "beartic", "lanturn", "diancie", "stunfisk", "guzzlord", "avalugg_hisuian", "lanturnw", "giratina_origin", "lileep"]
         }, {
             "filterType": "type",
             "values": ["steel", "fighting"]
@@ -263,7 +266,7 @@
             "values": ["mega"]
         }, {
             "filterType": "id",
-            "values": ["araquanid", "lanturn", "pidgeot", "cresselia", "medicham", "poliwrath", "obstagoon", "wobbuffet", "dubwool", "vigoroth", "heliolisk", "toxapex", "chansey", "greedent", "chinchou", "lickitung", "mantine", "miltank", "gardevoir", "wigglytuff", "primarina", "rotom_wash"]
+            "values": ["araquanid", "lanturn", "pidgeot", "cresselia", "medicham", "poliwrath", "obstagoon", "wobbuffet", "dubwool", "vigoroth", "heliolisk", "toxapex", "chansey", "greedent", "chinchou", "lickitung", "mantine", "miltank", "gardevoir", "wigglytuff", "primarina", "rotom_wash", "lanturnw", "empoleon", "feraligatr", "gallade"]
         }, {
             "filterType": "type",
             "values": ["grass"]
@@ -414,7 +417,7 @@
         "title": "Battle Frontier (Great)",
         "cup": "battlefrontiergreat",
         "cp": 1500,
-        "meta": "great",
+        "meta": "battlefrontiergreat",
         "showCup": true,
         "showFormat": true,
         "showMeta": false,

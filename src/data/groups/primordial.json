@@ -39,13 +39,13 @@
     "fastMove": "COUNTER",
     "chargedMoves": ["ROCK_SLIDE", "METEOR_BEAM"]
 }, {
+    "speciesId": "sudowoodo",
+    "fastMove": "ROCK_THROW",
+    "chargedMoves": ["ROCK_SLIDE", "METEOR_BEAM"]
+}, {
     "speciesId": "snorlax",
     "fastMove": "LICK",
     "chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
-}, {
-    "speciesId": "baxcalibur",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["DRAGON_CLAW", "AVALANCHE"]
 }, {
     "speciesId": "froslass",
     "fastMove": "POWDER_SNOW",
@@ -58,10 +58,6 @@
     "speciesId": "barbaracle",
     "fastMove": "FURY_CUTTER",
     "chargedMoves": ["CROSS_CHOP", "STONE_EDGE"]
-}, {
-    "speciesId": "regice",
-    "fastMove": "LOCK_ON",
-    "chargedMoves": ["BLIZZARD", "EARTHQUAKE"]
 }, {
     "speciesId": "skuntank",
     "fastMove": "POISON_JAB",
@@ -87,10 +83,6 @@
     "fastMove": "VOLT_SWITCH",
     "chargedMoves": ["DISCHARGE", "X_SCISSOR"]
 }, {
-    "speciesId": "druddigon",
-    "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["DRAGON_CLAW", "NIGHT_SLASH"]
-}, {
     "speciesId": "qwilfish_hisuian",
     "fastMove": "POISON_JAB",
     "chargedMoves": ["AQUA_TAIL", "SHADOW_BALL"]
@@ -99,13 +91,9 @@
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["SURF", "BLIZZARD"]
 }, {
-    "speciesId": "sealeo",
-    "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["BODY_SLAM", "AURORA_BEAM"]
-}, {
-    "speciesId": "graveler_alolan",
-    "fastMove": "VOLT_SWITCH",
-    "chargedMoves": ["ROCK_BLAST", "STONE_EDGE"]
+    "speciesId": "milotic",
+    "fastMove": "WATERFALL",
+    "chargedMoves": ["SURF", "BLIZZARD"]
 }, {
     "speciesId": "sableye",
     "fastMove": "SHADOW_CLAW",
@@ -113,6 +101,10 @@
 }, {
     "speciesId": "togetic",
     "fastMove": "STEEL_WING",
+    "chargedMoves": ["AERIAL_ACE", "DAZZLING_GLEAM"]
+}, {
+    "speciesId": "togetic",
+    "fastMove": "FAIRY_WIND",
     "chargedMoves": ["AERIAL_ACE", "DAZZLING_GLEAM"]
 }, {
     "speciesId": "golisopod",
@@ -123,21 +115,13 @@
     "fastMove": "WATER_GUN",
     "chargedMoves": ["AQUA_TAIL", "ANCIENT_POWER"]
 }, {
-    "speciesId": "piloswine",
-    "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["AVALANCHE", "HIGH_HORSEPOWER"]
-}, {
     "speciesId": "goodra",
     "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["MUDDY_WATER", "POWER_WHIP"]
+    "chargedMoves": ["AQUA_TAIL", "POWER_WHIP"]
 }, {
     "speciesId": "altaria",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["SKY_ATTACK", "MOONBLAST"]
-}, {
-    "speciesId": "incineroar",
-    "fastMove": "DOUBLE_KICK",
-    "chargedMoves": ["DARK_PULSE", "BLAZE_KICK"]
 }, {
     "speciesId": "flygon",
     "fastMove": "DRAGON_TAIL",
