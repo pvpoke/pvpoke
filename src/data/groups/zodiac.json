@@ -71,6 +71,24 @@
         ],
         "weight": 1
     },
+	{
+        "speciesId": "gallade",
+        "fastMove": "PSYCHO_CUT",
+        "chargedMoves": [
+            "CLOSE_COMBAT",
+            "LEAF_BLADE"
+        ],
+        "weight": 1
+    },
+	{
+        "speciesId": "gallade_shadow",
+        "fastMove": "PSYCHO_CUT",
+        "chargedMoves": [
+            "CLOSE_COMBAT",
+            "LEAF_BLADE"
+        ],
+        "weight": 1
+    },
     {
         "speciesId": "zweilous",
         "fastMove": "DRAGON_BREATH",

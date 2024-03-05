@@ -183,6 +183,30 @@
         "partySize": 3,
         "presetOnly": true
     }, {
+        "name": "little",
+        "title": "Little Cup",
+        "include": [{
+            "filterType": "evolution",
+            "values": [1]
+        }],
+        "exclude": [{
+            "filterType": "id",
+            "values": ["shuckle", "smeargle"]
+        }],
+        "levelCap": 50
+    }, {
+        "name": "littlecatch",
+        "title": "Little Catch Cup",
+        "include": [],
+        "exclude": [{
+            "filterType": "id",
+            "values": ["articuno", "celebi", "ho_oh", "hoopa", "lugia", "moltres", "rayquaza", "regice", "regieleki", "regigigas", "shaymin", "shaymin_sky", "zapdos", "registeel", "cresselia", "guzzlord", "deoxys_defense", "mew", "tapu_fini", "regirock", "regice", "zygarde_complete", "zygarde", "victini", "raikou_shadow", "suicune_shadow", "entei_shadow", "gengar_shadow"]
+        }, {
+            "filterType": "tag",
+            "values": ["mega"]
+        }],
+        "levelCap": 50
+    }, {
         "name": "mega",
         "title": "All Pokemon",
         "include": [],
@@ -355,6 +379,14 @@
         "showFormat": true,
         "showMeta": true
     }, {
+        "title": "Little Catch Cup",
+        "cup": "littlecatch",
+        "cp": 500,
+        "meta": "littlecatch",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
         "title": "Battle Frontier (Enchanted)",
         "cup": "enchanted",
         "cp": 2500,
@@ -411,6 +443,14 @@
         "showCup": true,
         "showFormat": true,
         "showMeta": true
+    }, {
+        "title": "Little",
+        "cup": "little",
+        "cp": 500,
+        "meta": "little",
+        "showCup": false,
+        "showFormat": false,
+        "showMeta": false
     }, {
         "title": "Custom",
         "cup": "custom",
@@ -1978,6 +2018,31 @@
             "id": "FAMILY_PIKACHU",
             "parent": "pichu",
             "evolutions": ["raichu"]
+        }
+    }, {
+        "dex": 25,
+        "speciesName": "Pikachu (Horizons)",
+        "speciesId": "pikachu_horizons",
+        "baseStats": {
+            "atk": 112,
+            "def": 96,
+            "hp": 111
+        },
+        "types": ["electric", "none"],
+        "fastMoves": ["THUNDER_SHOCK", "QUICK_ATTACK"],
+        "chargedMoves": ["DISCHARGE", "THUNDERBOLT", "WILD_CHARGE", "VOLT_TACKLE"],
+        "eliteMoves": ["VOLT_TACKLE"],
+        "defaultIVs": {
+            "cp500": [20, 7, 15, 13],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_PIKACHU",
+            "parent": "pichu"
         }
     }, {
         "dex": 26,
@@ -23250,7 +23315,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false
+        "released": true
     }, {
         "dex": 479,
         "speciesName": "Rotom (Fan)",
@@ -41481,6 +41546,7 @@
     }, {
         "moveId": "SANDSEAR_STORM",
         "name": "Sandsear Storm",
+        "abbreviation": "SSt",
         "type": "ground",
         "power": 60,
         "energy": 45,
@@ -42086,6 +42152,18 @@
         "energyGain": 16,
         "cooldown": 2000,
         "archetype": "Multipurpose"
+    }, {
+        "moveId": "VOLT_TACKLE",
+        "name": "Volt Tackle",
+        "type": "electric",
+        "power": 90,
+        "energy": 50,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [0, -1],
+        "buffTarget": "self",
+        "buffApplyChance": "1",
+        "archetype": "Self-Debuff"
     }, {
         "moveId": "WATER_GUN",
         "name": "Water Gun",

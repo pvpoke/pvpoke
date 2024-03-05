@@ -73,6 +73,15 @@
 		"showMeta": true
 	},
 	{
+		"title": "Little Catch Cup",
+		"cup": "littlecatch",
+		"cp": 500,
+		"meta": "littlecatch",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
 		"title": "Battle Frontier (Enchanted)",
 		"cup": "enchanted",
 		"cp": 2500,
@@ -136,6 +145,15 @@
         "showFormat": true,
         "showMeta": true
     },
+	{
+		"title": "Little",
+		"cup": "little",
+		"cp": 500,
+		"meta": "little",
+		"showCup": false,
+		"showFormat": false,
+		"showMeta": false
+	},
 	{
 		"title": "Custom",
 		"cup": "custom",

@@ -2228,6 +2228,7 @@
 }, {
     "moveId": "SANDSEAR_STORM",
     "name": "Sandsear Storm",
+	"abbreviation": "SSt",
     "type": "ground",
     "power": 60,
     "energy": 45,
@@ -2833,6 +2834,18 @@
     "energyGain": 16,
     "cooldown": 2000,
     "archetype": "Multipurpose"
+},  {
+    "moveId": "VOLT_TACKLE",
+    "name": "Volt Tackle",
+    "type": "electric",
+    "power": 90,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, -1],
+    "buffTarget": "self",
+    "buffApplyChance": "1",
+    "archetype": "Self-Debuff"
 }, {
     "moveId": "WATER_GUN",
     "name": "Water Gun",
