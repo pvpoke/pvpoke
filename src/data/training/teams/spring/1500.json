@@ -1,0 +1,274 @@
+{
+    "presets": [{
+        "pokemon": [{
+            "speciesId": "trevenant",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["SEED_BOMB", "SHADOW_BALL"]
+        }, {
+            "speciesId": "empoleon",
+            "fastMove": "STEEL_WING",
+            "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
+        }, {
+            "speciesId": "dewgong",
+            "fastMove": "ICE_SHARD",
+            "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "abomasnow",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"]
+        }, {
+            "speciesId": "lanturn",
+            "fastMove": "SPARK",
+            "chargedMoves": ["SURF", "THUNDERBOLT"]
+        }, {
+            "speciesId": "poliwrath",
+            "fastMove": "COUNTER",
+            "chargedMoves": ["DYNAMIC_PUNCH", "ICY_WIND"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "weezing_galarian",
+            "fastMove": "FAIRY_WIND",
+            "chargedMoves": ["OVERHEAT", "BRUTAL_SWING"]
+        }, {
+            "speciesId": "ferrothorn",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["POWER_WHIP", "FLASH_CANNON"]
+        }, {
+            "speciesId": "pelipper",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "pelipper",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
+        }, {
+            "speciesId": "ferrothorn",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["POWER_WHIP", "FLASH_CANNON"]
+        }, {
+            "speciesId": "weezing_galarian",
+            "fastMove": "FAIRY_WIND",
+            "chargedMoves": ["OVERHEAT", "BRUTAL_SWING"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "tentacruel",
+            "fastMove": "POISON_JAB",
+            "chargedMoves": ["ACID_SPRAY", "SCALD"]
+        }, {
+            "speciesId": "ferrothorn",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["POWER_WHIP", "FLASH_CANNON"]
+        }, {
+            "speciesId": "trevenant",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["SEED_BOMB", "SHADOW_BALL"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "ferrothorn",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["POWER_WHIP", "FLASH_CANNON"]
+        }, {
+            "speciesId": "tentacruel",
+            "fastMove": "POISON_JAB",
+            "chargedMoves": ["ACID_SPRAY", "SCALD"]
+        }, {
+            "speciesId": "pelipper",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "weezing_galarian",
+            "fastMove": "FAIRY_WIND",
+            "chargedMoves": ["OVERHEAT", "BRUTAL_SWING"]
+        }, {
+            "speciesId": "ferrothorn",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["POWER_WHIP", "FLASH_CANNON"]
+        }, {
+            "speciesId": "lanturn",
+            "fastMove": "SPARK",
+            "chargedMoves": ["SURF", "THUNDERBOLT"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "empoleon",
+            "fastMove": "STEEL_WING",
+            "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
+        }, {
+            "speciesId": "trevenant",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["SEED_BOMB", "SHADOW_BALL"]
+        }, {
+            "speciesId": "roserade",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["WEATHER_BALL_FIRE", "LEAF_STORM"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "roserade",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["WEATHER_BALL_FIRE", "LEAF_STORM"]
+        }, {
+            "speciesId": "empoleon",
+            "fastMove": "STEEL_WING",
+            "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
+        }, {
+            "speciesId": "dewgong",
+            "fastMove": "ICE_SHARD",
+            "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "ferrothorn",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["POWER_WHIP", "THUNDER"]
+        }, {
+            "speciesId": "tentacruel",
+            "fastMove": "POISON_JAB",
+            "chargedMoves": ["ACID_SPRAY", "SCALD"]
+        }, {
+            "speciesId": "jellicent",
+            "fastMove": "HEX",
+            "chargedMoves": ["SURF", "SHADOW_BALL"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "empoleon",
+            "fastMove": "STEEL_WING",
+            "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
+        }, {
+            "speciesId": "trevenant",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["SEED_BOMB", "SHADOW_BALL"]
+        }, {
+            "speciesId": "roserade",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["WEATHER_BALL_FIRE", "LEAF_STORM"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "empoleon",
+            "fastMove": "STEEL_WING",
+            "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
+        }, {
+            "speciesId": "lanturn",
+            "fastMove": "SPARK",
+            "chargedMoves": ["SURF", "THUNDERBOLT"]
+        }, {
+            "speciesId": "roserade",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["WEATHER_BALL_FIRE", "LEAF_STORM"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "trevenant",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["SEED_BOMB", "SHADOW_BALL"]
+        }, {
+            "speciesId": "empoleon",
+            "fastMove": "STEEL_WING",
+            "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
+        }, {
+            "speciesId": "dewgong",
+            "fastMove": "ICE_SHARD",
+            "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "roserade",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["WEATHER_BALL_FIRE", "LEAF_STORM"]
+        }, {
+            "speciesId": "empoleon",
+            "fastMove": "STEEL_WING",
+            "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
+        }, {
+            "speciesId": "dewgong",
+            "fastMove": "ICE_SHARD",
+            "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "abomasnow",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "lanturn",
+            "fastMove": "SPARK",
+            "chargedMoves": ["SURF", "THUNDERBOLT"]
+        }, {
+            "speciesId": "dewgong",
+            "fastMove": "ICE_SHARD",
+            "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "pelipper",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
+        }, {
+            "speciesId": "ferrothorn",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["POWER_WHIP", "FLASH_CANNON"]
+        }, {
+            "speciesId": "roserade",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["WEATHER_BALL_FIRE", "LEAF_STORM"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "pelipper",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
+        }, {
+            "speciesId": "roserade",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["WEATHER_BALL_FIRE", "LEAF_STORM"]
+        }, {
+            "speciesId": "tentacruel",
+            "fastMove": "POISON_JAB",
+            "chargedMoves": ["ACID_SPRAY", "SCALD"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "ferrothorn",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["POWER_WHIP", "FLASH_CANNON"]
+        }, {
+            "speciesId": "pelipper",
+            "fastMove": "WING_ATTACK",
+            "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
+        }, {
+            "speciesId": "weezing_galarian",
+            "fastMove": "FAIRY_WIND",
+            "chargedMoves": ["BRUTAL_SWING", "OVERHEAT"]
+        }],
+        "weight": 1
+    }]
+}

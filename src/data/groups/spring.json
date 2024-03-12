@@ -1,23 +1,11 @@
 [{
     "speciesId": "abomasnow",
     "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"]
-}, {
-    "speciesId": "araquanid",
-    "fastMove": "BUG_BITE",
-    "chargedMoves": ["BUG_BUZZ", "BUBBLE_BEAM"]
-}, {
-    "speciesId": "cradily",
-    "fastMove": "BULLET_SEED",
-    "chargedMoves": ["STONE_EDGE", "GRASS_KNOT"]
+    "chargedMoves": ["ICY_WIND", "ENERGY_BALL"]
 }, {
     "speciesId": "dewgong",
     "fastMove": "ICE_SHARD",
     "chargedMoves": ["ICY_WIND", "WATER_PULSE"]
-}, {
-    "speciesId": "electrode_hisuian",
-    "fastMove": "THUNDER_SHOCK",
-    "chargedMoves": ["WILD_CHARGE", "ENERGY_BALL"]
 }, {
     "speciesId": "ferrothorn",
     "fastMove": "BULLET_SEED",
@@ -35,9 +23,10 @@
     "fastMove": "SPARK",
     "chargedMoves": ["SURF", "THUNDERBOLT"]
 }, {
-    "speciesId": "mantine",
-    "fastMove": "WING_ATTACK",
-    "chargedMoves": ["BUBBLE_BEAM", "ICE_BEAM"]
+    "speciesId": "mawile_shadow",
+    "fastMove": "FIRE_FANG",
+    "chargedMoves": ["POWER_UP_PUNCH", "PLAY_ROUGH"],
+    "shadowType": "shadow"
 }, {
     "speciesId": "ninetales_alolan",
     "fastMove": "POWDER_SNOW",
@@ -52,16 +41,8 @@
     "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
 }, {
     "speciesId": "poliwrath",
-    "fastMove": "MUD_SHOT",
-    "chargedMoves": ["DYNAMIC_PUNCH", "ICE_PUNCH"]
-}, {
-    "speciesId": "qwilfish",
-    "fastMove": "POISON_STING",
-    "chargedMoves": ["AQUA_TAIL", "SLUDGE_WAVE"]
-}, {
-    "speciesId": "sealeo",
-    "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["BODY_SLAM", "AURORA_BEAM"]
+    "fastMove": "COUNTER",
+    "chargedMoves": ["SCALD", "ICY_WIND"]
 }, {
     "speciesId": "tentacruel",
     "fastMove": "POISON_JAB",
@@ -74,10 +55,6 @@
     "speciesId": "tropius",
     "fastMove": "AIR_SLASH",
     "chargedMoves": ["LEAF_BLADE", "AERIAL_ACE"]
-}, {
-    "speciesId": "venusaur",
-    "fastMove": "VINE_WHIP",
-    "chargedMoves": ["FRENZY_PLANT", "SLUDGE_BOMB"]
 }, {
     "speciesId": "victreebel_shadow",
     "fastMove": "RAZOR_LEAF",
@@ -92,8 +69,12 @@
     "fastMove": "FAIRY_WIND",
     "chargedMoves": ["OVERHEAT", "BRUTAL_SWING"]
 }, {
-    "speciesId": "mawile_shadow",
-    "fastMove": "FIRE_FANG",
-    "chargedMoves": ["POWER_UP_PUNCH", "PLAY_ROUGH"],
+    "speciesId": "ferrothorn",
+    "fastMove": "BULLET_SEED",
+    "chargedMoves": ["POWER_WHIP", "THUNDER"]
+}, {
+    "speciesId": "abomasnow",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"],
     "shadowType": "shadow"
 }]
