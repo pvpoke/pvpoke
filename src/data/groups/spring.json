@@ -3,6 +3,11 @@
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["ICY_WIND", "ENERGY_BALL"]
 }, {
+    "speciesId": "abomasnow",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"],
+    "shadowType": "shadow"
+}, {
     "speciesId": "dewgong",
     "fastMove": "ICE_SHARD",
     "chargedMoves": ["ICY_WIND", "WATER_PULSE"]
@@ -10,6 +15,10 @@
     "speciesId": "ferrothorn",
     "fastMove": "BULLET_SEED",
     "chargedMoves": ["POWER_WHIP", "FLASH_CANNON"]
+}, {
+    "speciesId": "ferrothorn",
+    "fastMove": "BULLET_SEED",
+    "chargedMoves": ["POWER_WHIP", "THUNDER"]
 }, {
     "speciesId": "jellicent",
     "fastMove": "HEX",
@@ -69,12 +78,11 @@
     "fastMove": "FAIRY_WIND",
     "chargedMoves": ["OVERHEAT", "BRUTAL_SWING"]
 }, {
-    "speciesId": "ferrothorn",
-    "fastMove": "BULLET_SEED",
-    "chargedMoves": ["POWER_WHIP", "THUNDER"]
+    "speciesId": "serperior",
+    "fastMove": "VINE_WHIP",
+    "chargedMoves": ["FRENZY_PLANT", "AERIAL_ACE"]
 }, {
-    "speciesId": "abomasnow",
-    "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"],
-    "shadowType": "shadow"
+    "speciesId": "golisopod",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["X_SCISSOR", "AERIAL_ACE"]
 }]
