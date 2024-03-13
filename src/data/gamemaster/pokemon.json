@@ -30781,7 +30781,8 @@
     },
     "types": ["fire", "dark"],
     "fastMoves": ["SNARL", "FIRE_FANG", "DOUBLE_KICK"],
-    "chargedMoves": ["FIRE_BLAST", "FLAME_CHARGE", "DARK_PULSE", "BLAZE_KICK"],
+    "chargedMoves": ["FIRE_BLAST", "FLAME_CHARGE", "DARK_PULSE", "BLAZE_KICK", "BLAST_BURN", "DARKEST_LARIAT"],
+	"eliteMoves": ["BLAST_BURN"],
     "defaultIVs": {
         "cp500": [6.5, 4, 7, 13],
         "cp1500": [18.5, 5, 11, 15],
@@ -30794,7 +30795,8 @@
     "family": {
         "id": "FAMILY_LITTEN",
         "parent": "torracat"
-    }
+    },
+	"searchPriority": 2
 }, {
     "dex": 728,
     "speciesName": "Popplio",
