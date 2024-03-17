@@ -336,14 +336,6 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Ultra Premier",
-        "cup": "premier",
-        "cp": 2500,
-        "meta": "premierultra",
-        "showCup": false,
-        "showFormat": false,
-        "showMeta": true
-    }, {
         "title": "Master League (Megas)",
         "cup": "mega",
         "cp": 10000,
@@ -380,6 +372,14 @@
         "cup": "spring",
         "cp": 1500,
         "meta": "spring",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Ultra Premier Cup",
+        "cup": "premier",
+        "cp": 2500,
+        "meta": "premierultra",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
