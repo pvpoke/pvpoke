@@ -252,8 +252,8 @@
             "values": ["steel", "fighting"]
         }]
     }, {
-        "name": "rainfall",
-        "title": "Devon Rainfall Cu",
+        "name": "rainstorm",
+        "title": "Devon Rainstorm Cup",
         "include": [{
             "filterType": "type",
             "name": "Type",
@@ -467,10 +467,10 @@
         "showFormat": true,
         "showMeta": true
     }, {
-        "title": "Devon Rainfall Cup",
-        "cup": "rainfall",
+        "title": "Devon Rainstorm Cup",
+        "cup": "rainstorm",
         "cp": 1500,
-        "meta": "rainfall",
+        "meta": "rainstorm",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
