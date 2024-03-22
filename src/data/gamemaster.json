@@ -252,6 +252,32 @@
             "values": ["steel", "fighting"]
         }]
     }, {
+        "name": "rainfall",
+        "title": "Devon Rainfall Cu",
+        "include": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["dark", "flying", "water"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["ho_oh_shadow", "lugia_shadow"]
+        }],
+        "exclude": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["electric", "fairy", "fighting"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["obstagoon", "mantine", "toxapex", "whiscash", "skarmory", "ho_oh", "lugia", "celesteela", "pidgeot"]
+        }, {
+            "filterType": "tag",
+            "name": "Tag",
+            "values": ["mega"]
+        }],
+        "levelCap": 50
+    }, {
         "name": "serene",
         "title": "Battle Frontier (Serene)",
         "include": [{
@@ -437,6 +463,14 @@
         "cup": "zodiac",
         "cp": 1500,
         "meta": "zodiac",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Devon Rainfall Cup",
+        "cup": "rainfall",
+        "cp": 1500,
+        "meta": "rainfall",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
