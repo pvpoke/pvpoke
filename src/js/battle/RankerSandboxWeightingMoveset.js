@@ -93,7 +93,7 @@ var RankerMaster = (function () {
 
 				}
 
-				console.log("List generated in: " + (Date.now() - startTime) + "ms");
+				console.log("pokemonList [" + pokemonList.length + "] generated in: " + (Date.now() - startTime) + "ms");
 
 			}
 
