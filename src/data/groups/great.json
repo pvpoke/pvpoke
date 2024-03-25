@@ -27,29 +27,17 @@
     "fastMove": "VOLT_SWITCH",
     "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
 }, {
-    "speciesId": "clodsire",
-    "fastMove": "POISON_STING",
-    "chargedMoves": ["EARTHQUAKE", "SLUDGE_BOMB"]
-}, {
-    "speciesId": "clodsire",
-    "fastMove": "POISON_STING",
-    "chargedMoves": ["EARTHQUAKE", "STONE_EDGE"]
-}, {
     "speciesId": "cresselia",
     "fastMove": "PSYCHO_CUT",
     "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
-}, {
-    "speciesId": "deoxys_defense",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["THUNDERBOLT", "PSYCHO_BOOST"]
 }, {
     "speciesId": "dewgong",
     "fastMove": "ICE_SHARD",
     "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
 }, {
-    "speciesId": "froslass",
-    "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
+    "speciesId": "feraligatr",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"]
 }, {
     "speciesId": "gligar",
     "fastMove": "WING_ATTACK",
@@ -60,16 +48,8 @@
     "chargedMoves": ["AERIAL_ACE", "DIG"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "jellicent",
-    "fastMove": "HEX",
-    "chargedMoves": ["SURF", "SHADOW_BALL"]
-}, {
     "speciesId": "lanturn",
     "fastMove": "SPARK",
-    "chargedMoves": ["SURF", "THUNDERBOLT"]
-}, {
-    "speciesId": "lanturn",
-    "fastMove": "WATER_GUN",
     "chargedMoves": ["SURF", "THUNDERBOLT"]
 }, {
     "speciesId": "lickitung",
@@ -123,10 +103,6 @@
     "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "serperior",
-    "fastMove": "VINE_WHIP",
-    "chargedMoves": ["FRENZY_PLANT", "AERIAL_ACE"]
-}, {
     "speciesId": "skarmory",
     "fastMove": "STEEL_WING",
     "chargedMoves": ["SKY_ATTACK", "BRAVE_BIRD"]
@@ -178,11 +154,15 @@
     "chargedMoves": ["MUD_BOMB", "SCALD"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "feraligatr",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"]
+    "speciesId": "cresselia",
+    "fastMove": "PSYCHO_CUT",
+    "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
 }, {
-    "speciesId": "goodra",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["AQUA_TAIL", "POWER_WHIP"]
+    "speciesId": "guzzlord",
+    "fastMove": "DRAGON_TAIL",
+    "chargedMoves": ["DRAGON_CLAW", "CRUNCH"]
+}, {
+    "speciesId": "empoleon",
+    "fastMove": "STEEL_WING",
+    "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
 }]
