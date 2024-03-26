@@ -93,6 +93,7 @@
 				<div class="maximize-section">
 					<div class="check-group">
 						<div class="check on" value="overall"><span></span>Overall</div>
+						<br>
 						<div class="check" value="atk"><span></span>Atk</div>
 						<div class="check" value="def"><span></span>Def</div>
 						<div class="check" value="hp"><span></span>HP</div>
