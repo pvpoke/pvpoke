@@ -232,6 +232,10 @@ function PokeMultiSelect(element){
 					case "atk":
 						newPokemon.maximizeStat("atk");
 						break;
+						
+					case "hp":
+						newPokemon.maximizeStat("hp");
+						break;
 				}
 
 				pokemonList.push(newPokemon);

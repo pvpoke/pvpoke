@@ -95,6 +95,7 @@
 						<div class="check on" value="overall"><span></span>Overall</div>
 						<div class="check" value="atk"><span></span>Atk</div>
 						<div class="check" value="def"><span></span>Def</div>
+						<div class="check" value="hp"><span></span>HP</div>
 					</div>
 					<div class="level-cap-group">
 						<div>Level Cap:</div>
