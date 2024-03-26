@@ -200,7 +200,7 @@ function PokeMultiSelect(element){
 			var spreads = ["max"];
 
 			if(battle.getCP() < 10000){
-				spreads.push("def", "atk");
+				spreads.push("def", "atk", "hp");
 			}
 
 			for(var i = 0; i < spreads.length; i++){
@@ -231,6 +231,10 @@ function PokeMultiSelect(element){
 
 					case "atk":
 						newPokemon.maximizeStat("atk");
+						break;
+						
+					case "hp":
+						newPokemon.maximizeStat("hp");
 						break;
 				}
 

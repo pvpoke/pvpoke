@@ -67,6 +67,7 @@
 				<option value="overall">Maximum stat product (Rank 1)</option>
 				<option value="atk">Maximum Attack</option>
 				<option value="def">Maximum Defense</option>
+				<option value="hp">Maximum HP</option>
 			</select>
 			<select class="pokemon-level-cap-select" style="display:none;">
 				<option value="40">Default Level Cap (40)</option>
