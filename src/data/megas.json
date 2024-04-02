@@ -37,23 +37,6 @@
     },
     "eliteMoves": ["PSYSTRIKE", "SHADOW_BALL", "HYPER_BEAM"]
 }, {
-    "dex": 214,
-    "speciesName": "Heracross (Mega)",
-    "speciesId": "heracross_mega",
-    "baseStats": {
-        "atk": 334,
-        "def": 223,
-        "hp": 190
-    },
-    "types": ["bug", "fighting"],
-    "fastMoves": ["COUNTER", "STRUGGLE_BUG"],
-    "chargedMoves": ["CLOSE_COMBAT", "EARTHQUAKE", "MEGAHORN", "ROCK_BLAST"],
-    "tags": ["regional", "mega"],
-    "defaultIVs": {
-        "cp1500": [11.5, 5, 13, 6],
-        "cp2500": [19, 6, 15, 6]
-    }
-}, {
     "dex": 303,
     "speciesName": "Mawile (Mega)",
     "speciesId": "mawile_mega",

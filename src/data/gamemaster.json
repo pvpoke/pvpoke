@@ -12055,6 +12055,27 @@
         "thirdMoveCost": 50000,
         "released": true
     }, {
+        "dex": 214,
+        "speciesName": "Heracross (Mega)",
+        "speciesId": "heracross_mega",
+        "baseStats": {
+            "atk": 334,
+            "def": 223,
+            "hp": 190
+        },
+        "types": ["bug", "fighting"],
+        "fastMoves": ["COUNTER", "STRUGGLE_BUG"],
+        "chargedMoves": ["CLOSE_COMBAT", "EARTHQUAKE", "MEGAHORN", "ROCK_BLAST"],
+        "tags": ["regional", "mega"],
+        "defaultIVs": {
+            "cp500": [4, 12, 12, 13],
+            "cp1500": [11.5, 5, 13, 6],
+            "cp2500": [19, 6, 15, 6]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true
+    }, {
         "dex": 215,
         "speciesName": "Sneasel",
         "speciesId": "sneasel",
