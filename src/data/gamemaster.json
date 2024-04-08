@@ -199,7 +199,8 @@
             "filterType": "tag",
             "values": ["mega"]
         }],
-        "partySize": 3
+        "partySize": 3,
+        "presetOnly": true
     }, {
         "name": "little",
         "title": "Little Cup",
@@ -470,14 +471,6 @@
         "cup": "sovereign",
         "cp": 1500,
         "meta": "sovereign",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Devon Zodiac Cup",
-        "cup": "zodiac",
-        "cp": 1500,
-        "meta": "zodiac",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -29344,7 +29337,6 @@
         "types": ["water", "fighting"],
         "fastMoves": ["POISON_JAB", "LOW_KICK"],
         "chargedMoves": ["AQUA_JET", "CLOSE_COMBAT", "HYDRO_PUMP", "X_SCISSOR", "SACRED_SWORD"],
-        "eliteMoves": ["SACRED_SWORD"],
         "defaultIVs": {
             "cp500": [5, 14, 11, 15],
             "cp1500": [1, 0, 0, 0],
