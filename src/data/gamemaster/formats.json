@@ -28,15 +28,6 @@
 		"showMeta": true
 	},
 	{
-		"title": "Master Premier",
-		"cup": "premier",
-		"cp": 10000,
-		"meta": "premiermaster",
-		"showCup": true,
-		"showFormat": false,
-		"showMeta": true
-	},
-	{
 		"title": "P!P Championship Series",
 		"cup": "great",
 		"cp": 1500,
@@ -55,10 +46,10 @@
 		"showMeta": true
 	},
 	{
-		"title": "Ultra Premier Cup",
+		"title": "Master Premier Cup",
 		"cup": "premier",
-		"cp": 2500,
-		"meta": "premierultra",
+		"cp": 10000,
+		"meta": "premiermaster",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true

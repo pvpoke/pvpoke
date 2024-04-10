@@ -33117,7 +33117,8 @@
     },
     "types": ["grass", "fairy"],
     "fastMoves": ["BULLET_SEED", "ROCK_SMASH"],
-    "chargedMoves": ["GRASS_KNOT", "DAZZLING_GLEAM", "MEGAHORN", "SOLAR_BEAM"],
+    "chargedMoves": ["GRASS_KNOT", "DAZZLING_GLEAM", "MEGAHORN", "SOLAR_BEAM", "NATURES_MADNESS"],
+	"eliteMoves": ["NATURES_MADNESS"],
     "defaultIVs": {
         "cp500": [5.5, 10, 15, 13],
         "cp1500": [16, 7, 11, 14],

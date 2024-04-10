@@ -25,6 +25,10 @@
 }, {
     "speciesId": "cresselia",
     "fastMove": "PSYCHO_CUT",
+    "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
+}, {
+    "speciesId": "cresselia",
+    "fastMove": "PSYCHO_CUT",
     "chargedMoves": ["GRASS_KNOT", "FUTURE_SIGHT"]
 }, {
     "speciesId": "dragonair_shadow",
@@ -55,6 +59,10 @@
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["DRAGON_CLAW", "CRUNCH"]
 }, {
+    "speciesId": "guzzlord",
+    "fastMove": "DRAGON_TAIL",
+    "chargedMoves": ["DRAGON_CLAW", "BRUTAL_SWING"]
+}, {
     "speciesId": "lanturn",
     "fastMove": "SPARK",
     "chargedMoves": ["SURF", "THUNDERBOLT"]
@@ -71,18 +79,9 @@
     "fastMove": "WING_ATTACK",
     "chargedMoves": ["AERIAL_ACE", "ICE_BEAM"]
 }, {
-    "speciesId": "mantine",
-    "fastMove": "WING_ATTACK",
-    "chargedMoves": ["AERIAL_ACE", "BUBBLE_BEAM"]
-}, {
     "speciesId": "medicham",
     "fastMove": "COUNTER",
     "chargedMoves": ["ICE_PUNCH", "DYNAMIC_PUNCH"]
-}, {
-    "speciesId": "ninetales_alolan_shadow",
-    "fastMove": "CHARM",
-    "chargedMoves": ["WEATHER_BALL_ICE", "PSYSHOCK"],
-    "shadowType": "shadow"
 }, {
     "speciesId": "pelipper",
     "fastMove": "WING_ATTACK",
@@ -139,15 +138,7 @@
     "fastMove": "CHARM",
     "chargedMoves": ["ICY_WIND", "DISARMING_VOICE"]
 }, {
-    "speciesId": "cresselia",
-    "fastMove": "PSYCHO_CUT",
-    "chargedMoves": ["GRASS_KNOT", "FUTURE_SIGHT"]
-}, {
-    "speciesId": "talonflame",
-    "fastMove": "INCINERATE",
-    "chargedMoves": ["FLY", "BRAVE_BIRD"]
-}, {
-    "speciesId": "guzzlord",
-    "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["DRAGON_CLAW", "BRUTAL_SWING"]
+    "speciesId": "clodsire",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["EARTHQUAKE", "STONE_EDGE"]
 }]
