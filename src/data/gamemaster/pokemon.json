@@ -33414,8 +33414,8 @@
         "hp": 219
     },
     "types": ["psychic", "none"],
-    "fastMoves": ["STRUGGLE"],
-    "chargedMoves": ["STRUGGLE"],
+    "fastMoves": ["CONFUSION", "PSYCHO_CUT"],
+    "chargedMoves": ["ROCK_BLAST", "NIGHT_SLASH", "POWER_GEM"],
     "defaultIVs": {
         "cp500": [5, 13, 15, 12],
         "cp1500": [15, 6, 8, 15],
@@ -33435,8 +33435,8 @@
         "hp": 200
     },
     "types": ["psychic", "ghost"],
-    "fastMoves": ["STRUGGLE"],
-    "chargedMoves": ["STRUGGLE"],
+	"fastMoves": ["CONFUSION", "PSYCHO_CUT"],
+    "chargedMoves": ["ROCK_BLAST", "NIGHT_SLASH", "POWER_GEM"],
     "defaultIVs": {
         "cp500": [4.5, 15, 13, 15],
         "cp1500": [13.5, 6, 15, 6],
@@ -33456,8 +33456,8 @@
         "hp": 200
     },
     "types": ["psychic", "steel"],
-    "fastMoves": ["STRUGGLE"],
-    "chargedMoves": ["STRUGGLE"],
+	"fastMoves": ["CONFUSION", "PSYCHO_CUT"],
+    "chargedMoves": ["ROCK_BLAST", "NIGHT_SLASH", "POWER_GEM"],
     "defaultIVs": {
         "cp500": [4.5, 15, 13, 15],
         "cp1500": [13.5, 6, 15, 6],
@@ -33477,8 +33477,8 @@
         "hp": 200
     },
     "types": ["psychic", "dragon"],
-    "fastMoves": ["STRUGGLE"],
-    "chargedMoves": ["STRUGGLE"],
+	"fastMoves": ["CONFUSION", "PSYCHO_CUT"],
+    "chargedMoves": ["ROCK_BLAST", "NIGHT_SLASH", "POWER_GEM"],
     "defaultIVs": {
         "cp500": [4, 13, 15, 12],
         "cp1500": [11.5, 8, 14, 13],
