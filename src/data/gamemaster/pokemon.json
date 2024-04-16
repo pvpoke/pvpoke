@@ -4277,8 +4277,9 @@
         "hp": 190
     },
     "types": ["grass", "poison"],
-    "fastMoves": ["ACID", "RAZOR_LEAF"],
+    "fastMoves": ["ACID", "RAZOR_LEAF", "MAGICAL_LEAF"],
     "chargedMoves": ["LEAF_BLADE", "SLUDGE_BOMB", "SOLAR_BEAM", "ACID_SPRAY", "LEAF_TORNADO"],
+	"eliteMoves": ["MAGICAL_LEAF"],
     "defaultIVs": {
         "cp500": [7.5, 11, 13, 15],
         "cp1500": [23, 5, 13, 11],
@@ -4305,8 +4306,9 @@
         "hp": 190
     },
     "types": ["grass", "poison"],
-    "fastMoves": ["ACID", "RAZOR_LEAF"],
+	"fastMoves": ["ACID", "RAZOR_LEAF", "MAGICAL_LEAF"],
     "chargedMoves": ["LEAF_BLADE", "SLUDGE_BOMB", "SOLAR_BEAM", "ACID_SPRAY", "LEAF_TORNADO"],
+	"eliteMoves": ["MAGICAL_LEAF"],
     "defaultIVs": {
         "cp500": [7.5, 11, 13, 15],
         "cp1500": [23, 5, 13, 11],
