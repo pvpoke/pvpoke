@@ -1,0 +1,56 @@
+{
+	"species": [
+		{
+			"speciesId": "bellsprout",
+			"baseSpeciesId": "bellsprout"
+		},
+		{
+			"speciesId": "weepinbell",
+			"baseSpeciesId": "bellsprout"
+		},
+		{
+			"speciesId": "victreebel",
+			"baseSpeciesId": "bellsprout",
+			"default": true
+		}
+	],
+	"checklist": [
+		{
+			"title": "High Rank Victreebel",
+			"speciesId": "victreebel",
+			"baseSpeciesId": "bellsprout",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [23, 1, 15, 15],
+			"priority": 1,
+			"notes": "Victreebel with at least 97.1 Defense will reach a Lick bulkpoint against most Lickitung. Look to lean slightly towards Defense."
+		},
+		{
+			"title": "Shadow Victreebel",
+			"speciesId": "victreebel",
+			"baseSpeciesId": "bellsprout",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [23, 1, 15, 15],
+			"priority": 1
+		},
+		{
+			"title": "High Rank Victreebel",
+			"speciesId": "victreebel",
+			"baseSpeciesId": "bellsprout",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [48.5, 0, 15, 12],
+			"priority": 1
+		},
+		{
+			"title": "Shadow Victreebel",
+			"speciesId": "victreebel",
+			"baseSpeciesId": "bellsprout",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [48.5, 0, 15, 12],
+			"priority": 1
+		}
+	]
+}
