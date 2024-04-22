@@ -294,6 +294,24 @@
         }],
         "levelCap": 50
     }, {
+        "name": "remix",
+        "title": "Remix",
+        "include": [],
+        "exclude": [{
+            "filterType": "id",
+            "values": ["sandslash_alolan", "wigglytuff", "lickitung", "lanturn", "azumarill", "umbreon", "skarmory", "vigoroth", "medicham", "whiscash", "altaria", "registeel", "deoxys_defense", "bastiodon", "stunfisk_galarian", "talonflame", "trevenant", "charjabug", "skeledirge", "clodsire"],
+            "leagues": [1500]
+        }, {
+            "filterType": "id",
+            "values": ["venusaur", "muk_alolan", "umbreon", "swampert", "empoleon", "togekiss", "giratina_altered", "cresselia", "talonflame", "obstagoon"],
+            "leagues": [2500]
+        }, {
+            "filterType": "tag",
+            "values": ["mega"]
+        }],
+        "partySize": 3,
+        "presetOnly": true
+    }, {
         "name": "serene",
         "title": "Battle Frontier (Serene)",
         "include": [{
@@ -394,18 +412,18 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Jungle Cup",
-        "cup": "jungle",
-        "cp": 1500,
-        "meta": "jungle",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Master Premier Cup",
         "cup": "premier",
         "cp": 10000,
         "meta": "premiermaster",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Great League Remix",
+        "cup": "remix",
+        "cp": 1500,
+        "meta": "remix",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
