@@ -2967,6 +2967,12 @@ function Battle(){
 		var colors = (rating <= 500) ? lossColors : winColors;
 		var color = [ colors[0][0], colors[0][1], colors[0][2] ];
 
+		if(rating > 1000){
+			rating = 1000;
+		} else if(rating < 0){
+			rating = 0;
+		}
+
 		for(var j = 0; j < color.length; j++){
 			var range = colors[1][j] - color[j];
 			var base = color[j];

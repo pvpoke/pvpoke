@@ -27,7 +27,7 @@ function PokeSelect(element, i){
 
 	var ivCombinationCount = 4096;
 
-	this.init = function(pokes, b){
+	this.init = function(pokes, b, filterData){
 		pokemon = pokes;
 		battle = b;
 
@@ -35,6 +35,12 @@ function PokeSelect(element, i){
 
 			if(poke.tags && poke.tags.indexOf("duplicate") > -1 && context != "modaloverrides"){
 				return;
+			}
+
+			if(filterData){
+				if(filterData.filter(p => p.speciesId == poke.speciesId).length == 0){
+					return;
+				}
 			}
 
 			var priority = 1;
@@ -66,11 +72,15 @@ function PokeSelect(element, i){
 
 		$el.find(".check.auto-level").addClass("on");
 		$el.find(".poke-search").val("");
+		$el.attr("context", context);
 
 		searchArr.sort((a,b) => (a.priority > b.priority) ? -1 : ((b.priority > a.priority) ? 1 : 0));
 
 		interface = InterfaceMaster.getInstance();
-		pokebox = new Pokebox($el.find(".pokebox"), self, "single", b);
+
+		if(typeof Pokebox === 'function'){
+			pokebox = new Pokebox($el.find(".pokebox"), self, "single", b);
+		}
 
 		self.clear();
 	}
@@ -750,6 +760,14 @@ function PokeSelect(element, i){
 
 	this.resetShields = function(){
 		$el.find(".shield-picker .option.on").trigger("click");
+	}
+
+	// Remove specific Pokemon from the selectable list
+	this.removePokemonFromOptions = function(pokemonList){
+		for(var i = 0; i < pokemonList.length; i++){
+			$el.find(".poke-select option[value='"+pokemonList[i].speciesId+"']").remove();
+			searchArr.splice(searchArr.findIndex(p => p.speciesId == pokemonList[i].speciesId), 1);
+		}
 	}
 
 	// Select different Pokemon

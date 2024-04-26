@@ -64,6 +64,7 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".check.move-counts", toggleMoveCounts);
 				$("body").on("click", ".detail-section.similar-pokemon a", jumpToSimilarPokemon);
 				$("body").on("click", ".moveset.fast .move-detail-template", recalculateMoveCounts);
+				$("body").on("click", "button.ranking-compare", addPokemonToCompare);
 
 				pokeSearch.setBattle(battle);
 
@@ -1182,30 +1183,7 @@ var InterfaceMaster = (function () {
 
 				if((scores)&&(context != "custom")){
 					// Display rating hexagon
-
-					// This is really dumb but we're pulling the type color out of the background gradient
-					var bgArr = $rank.css("background").split("linear-gradient(");
-
-					if(bgArr.length < 2){
-						bgArr = $rank.css("background-image").split("linear-gradient(");
-					}
-
-					bgArr = bgArr[1].split(" 30%");
-					var bgStr = bgArr[0]
-
-					hexagon.init($details.find(".hexagon"), 80);
-	                hexagon.draw([
-						Math.max( (scores[0] - 30) / 70 , .05 ),
-						Math.max( (scores[2] - 30) / 70 , .05 ),
-						Math.max( (scores[3] - 30) / 70 , .05 ),
-						Math.max( (scores[1] - 30) / 70 , .05 ),
-						Math.max( (scores[5] - 30) / 70 , .05 ),
-						Math.max( (scores[4] - 30) / 70 , .05 ),
-					], bgStr);
-
-					for(var i = 0; i < scores.length; i++){
-						$details.find(".hexagon-container .value").eq(i).html(scores[i]);
-					}
+					drawRatingHexagon($rank, r);
 				} else{
 					$details.find(".detail-section.performance").remove();
 					$details.find(".detail-section.poke-stats").css("width", "100%");
@@ -1324,6 +1302,49 @@ var InterfaceMaster = (function () {
 					}, 50);
 				} else{
 					$details.find(".similar-pokemon").remove();
+				}
+			}
+
+			function drawRatingHexagon($rank, source, compare){
+				// This is really dumb but we're pulling the type color out of the background gradient
+				var bgArr = $rank.css("background").split("linear-gradient(");
+
+				if(bgArr.length < 2){
+					bgArr = $rank.css("background-image").split("linear-gradient(");
+				}
+
+				bgArr = bgArr[1].split(" 30%");
+				var bgStr = bgArr[0]
+
+				var $details = $rank.find(".details");
+				var scores = source.scores;
+
+				hexagon.init($details.find(".hexagon"), 80);
+                hexagon.draw([
+					Math.max( (scores[0] - 30) / 70 , .05 ),
+					Math.max( (scores[2] - 30) / 70 , .05 ),
+					Math.max( (scores[3] - 30) / 70 , .05 ),
+					Math.max( (scores[1] - 30) / 70 , .05 ),
+					Math.max( (scores[5] - 30) / 70 , .05 ),
+					Math.max( (scores[4] - 30) / 70 , .05 ),
+				], bgStr, false);
+
+				// Draw comparison scores
+				if(compare){
+					var compareStr = "rgba(0,0,0,.6)";
+
+					hexagon.draw([
+						Math.max( (compare.scores[0] - 30) / 70 , .05 ),
+						Math.max( (compare.scores[2] - 30) / 70 , .05 ),
+						Math.max( (compare.scores[3] - 30) / 70 , .05 ),
+						Math.max( (compare.scores[1] - 30) / 70 , .05 ),
+						Math.max( (compare.scores[5] - 30) / 70 , .05 ),
+						Math.max( (compare.scores[4] - 30) / 70 , .05 ),
+					], compareStr, true);
+				}
+
+				for(var i = 0; i < scores.length; i++){
+					$details.find(".hexagon-container .value").eq(i).html(scores[i]);
 				}
 			}
 
@@ -1503,6 +1524,64 @@ var InterfaceMaster = (function () {
 				// Display selected tab items
 				$rank.find(".detail-tab").hide();
 				$rank.find(".detail-tab[tab=\""+tab+"\"]").css("display", "flex");
+			}
+
+			// Select a Pokemon to compare an existing Pokemon's ranking data in the radar chart
+
+			function addPokemonToCompare(e){
+				var $rank = $(e.target).closest(".rank");
+
+				modalWindow("Select Pokemon", $(".poke.single").first());
+
+				pokeSelector = new PokeSelect($(".modal .poke"), 1);
+				pokeSelector.setContext("modalrankcompare");
+				pokeSelector.init(gm.data.pokemon, battle, data);
+				pokeSelector.removePokemonFromOptions([{speciesId: $rank.attr("data")}]);
+
+				$(".modal-content").append("<div class=\"center\"><div class=\"save-poke button\">Compare Pokemon</div></div>");
+				$(".modal .poke-search").focus();
+
+				// Add or save a Pokemon in the Pokemon list
+
+				$(".modal .save-poke").on("click", function(e){
+
+					// Make sure something's selected
+					if(! pokeSelector){
+						return false;
+					}
+
+					var pokemon = pokeSelector.getPokemon();
+
+					if(! pokemon){
+						return false;
+					}
+
+					var originalData = data.filter(r => r.speciesId == $rank.attr("data"))[0];
+					var compareData = data.filter(r => r.speciesId == pokemon.speciesId)[0];
+
+					drawRatingHexagon($rank, originalData, compareData);
+
+					$rank.find(".details .ranking-compare").html("Compare: " + pokemon.speciesName);
+					$rank.find(".details .ranking-compare").attr("class", "ranking-compare " + pokemon.types[0]);
+
+					// Add comparison numbers
+					for(var i = 0; i < 6; i++){
+						var diff = Math.round( (originalData.scores[i] - compareData.scores[i]) * 10 ) / 10;
+
+						if(diff >= 0){
+							diff = "+" + diff;
+						}
+
+						var color = battle.getRatingColor( 500 + (25 * diff));
+
+						$rank.find(".chart-label .comparison").eq(i).css("background", "rgb("+color[0]+","+color[1]+","+color[2]+")");
+						$rank.find(".chart-label .comparison").eq(i).html(diff);
+					}
+
+					$rank.find(".chart-label .comparison").show();
+
+					closeModalWindow();
+				});
 			}
 		};
 

@@ -2400,6 +2400,32 @@ a.download-csv{
 	}
 }
 
+.detail-section.performance{
+	position: relative;
+
+	button.ranking-compare{
+		position: absolute;
+	    top: 12px;
+	    right: 5px;
+	    border-radius: 8px;
+		border: 1px solid #000;
+	    font-size: 12px;
+		background: none;
+		cursor: pointer;
+		z-index: 5;
+		max-width: 120px;
+
+		&.dark, &.dragon{
+			color:#fff;
+		}
+	}
+
+	.pokemon-compare-label{
+		font-size: 12px;
+		font-weight: bold;
+	}
+}
+
 .timeline{
 	border-top:1px dashed #000;
 	position:relative;
@@ -3139,9 +3165,26 @@ a.download-csv{
 							font-weight:bold;
 						}
 
+						.comparison{
+							color: rgba(255,255,255,0.9);
+							position: absolute;
+						    top: -3px;
+						    left: 34px;
+						    padding: 3px 5px;
+						    border-radius: 15px;
+							display: none;
+							width:40px;
+							box-sizing: border-box;
+							text-align: center;
+						}
+
 						&:nth-of-type(1){
 							top: 0%;
 							left: 47%;
+
+							.comparison{
+								left: -44px;
+							}
 						}
 
 						&:nth-of-type(2){
@@ -3162,11 +3205,19 @@ a.download-csv{
 						&:nth-of-type(5){
 							top: 25%;
 							left: 18%;
+
+							.comparison{
+								left: -38px;
+							}
 						}
 
 						&:nth-of-type(6){
 							top: 72%;
 							left: 15%;
+
+							.comparison{
+								left: -38px;
+							}
 						}
 					}
 				}
@@ -4637,6 +4688,12 @@ a.rating{
 
 			.pokebox{
 				display:none !important;
+			}
+
+			&[context="modalrankcompare"]{
+				.advanced-section, .move-select-container, .options{
+					display: none;
+				}
 			}
 		}
 

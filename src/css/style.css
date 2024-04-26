@@ -2086,6 +2086,29 @@ a.download-csv {
   margin-left: 4px;
 }
 
+.detail-section.performance {
+  position: relative;
+}
+.detail-section.performance button.ranking-compare {
+  position: absolute;
+  top: 12px;
+  right: 5px;
+  border-radius: 8px;
+  border: 1px solid #000;
+  font-size: 12px;
+  background: none;
+  cursor: pointer;
+  z-index: 5;
+  max-width: 120px;
+}
+.detail-section.performance button.ranking-compare.dark, .detail-section.performance button.ranking-compare.dragon {
+  color: #fff;
+}
+.detail-section.performance .pokemon-compare-label {
+  font-size: 12px;
+  font-weight: bold;
+}
+
 .timeline {
   border-top: 1px dashed #000;
   position: relative;
@@ -2791,9 +2814,24 @@ a.download-csv {
 .rank .details .detail-section.performance .hexagon-container .chart-label .value {
   font-weight: bold;
 }
+.rank .details .detail-section.performance .hexagon-container .chart-label .comparison {
+  color: rgba(255, 255, 255, 0.9);
+  position: absolute;
+  top: -3px;
+  left: 34px;
+  padding: 3px 5px;
+  border-radius: 15px;
+  display: none;
+  width: 40px;
+  box-sizing: border-box;
+  text-align: center;
+}
 .rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(1) {
   top: 0%;
   left: 47%;
+}
+.rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(1) .comparison {
+  left: -44px;
 }
 .rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(2) {
   top: 87%;
@@ -2811,9 +2849,15 @@ a.download-csv {
   top: 25%;
   left: 18%;
 }
+.rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(5) .comparison {
+  left: -38px;
+}
 .rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(6) {
   top: 72%;
   left: 15%;
+}
+.rank .details .detail-section.performance .hexagon-container .chart-label:nth-of-type(6) .comparison {
+  left: -38px;
 }
 .rank .details .detail-section .moveset.show-stats .name-container {
   border-bottom: 1px solid;
@@ -4140,6 +4184,9 @@ a.rating:hover:after {
 }
 .modal .modal-container .poke.single .pokebox {
   display: none !important;
+}
+.modal .modal-container .poke.single[context=modalrankcompare] .advanced-section, .modal .modal-container .poke.single[context=modalrankcompare] .move-select-container, .modal .modal-container .poke.single[context=modalrankcompare] .options {
+  display: none;
 }
 .modal .modal-container .poke-search {
   background: none !important;
