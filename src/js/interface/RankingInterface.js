@@ -430,8 +430,8 @@ var InterfaceMaster = (function () {
 
 				// If search string exists, process it
 
-				if($(".poke-search").val() != ''){
-					$(".poke-search").trigger("keyup");
+				if($(".poke-search[context='ranking-search']").first().val() != ''){
+					$(".poke-search[context='ranking-search']").first().trigger("keyup");
 				}
 
 				if((! $(".check.xl").hasClass("on"))&&(context != "custom")){
