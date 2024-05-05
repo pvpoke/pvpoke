@@ -38,6 +38,14 @@
 			<td>@fighting</td>
 		</tr>
 		<tr>
+			<td><strong>Fast Move only</strong></td>
+			<td>@1fighting</td>
+		</tr>
+		<tr>
+			<td><strong>Charged Move only</strong></td>
+			<td>@2mud</td>
+		</tr>
+		<tr>
 			<td><strong>Legacy Moves (excl. Return)</strong></td>
 			<td>@legacy</td>
 		</tr>
