@@ -1240,15 +1240,26 @@ var GameMaster = (function () {
 
 							// move name/type serach
 							else {
-								for(var k = 0; k < pokemon.fastMovePool.length; k++){
-									if((pokemon.fastMovePool[k].name.toLocaleLowerCase().startsWith(param))||(pokemon.fastMovePool[k].type == param)){
-										valid = true;
+								const fastOnly = (param.charAt(0) === "1")
+								const chargedOnly = (param.charAt(0) === "2")
+								if (fastOnly || chargedOnly) {
+									param = param.substr(1, param.length-1)
+								}
+								// skip fast moves if @2
+								if (!chargedOnly) {
+									for(var k = 0; k < pokemon.fastMovePool.length; k++){
+										if((pokemon.fastMovePool[k].name.toLocaleLowerCase().startsWith(param))||(pokemon.fastMovePool[k].type == param)){
+											valid = true;
+										}
 									}
 								}
 
-								for(var k = 0; k < pokemon.chargedMovePool.length; k++){
-									if((pokemon.chargedMovePool[k].name.toLocaleLowerCase().startsWith(param))||(pokemon.chargedMovePool[k].type == param)){
-										valid = true;
+								// skip charged moves if @1
+								if (!fastOnly) {
+									for(var k = 0; k < pokemon.chargedMovePool.length; k++){
+										if((pokemon.chargedMovePool[k].name.toLocaleLowerCase().startsWith(param))||(pokemon.chargedMovePool[k].type == param)){
+											valid = true;
+										}
 									}
 								}
 							}
