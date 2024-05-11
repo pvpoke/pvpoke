@@ -34005,8 +34005,8 @@
             "hp": 219
         },
         "types": ["psychic", "none"],
-        "fastMoves": ["CONFUSION", "PSYCHO_CUT"],
-        "chargedMoves": ["ROCK_BLAST", "NIGHT_SLASH", "POWER_GEM"],
+        "fastMoves": ["METAL_CLAW", "PSYCHO_CUT", "SHADOW_CLAW"],
+        "chargedMoves": ["DARK_PULSE", "FUTURE_SIGHT", "IRON_HEAD", "OUTRAGE"],
         "defaultIVs": {
             "cp500": [5, 13, 15, 12],
             "cp1500": [15, 6, 8, 15],
@@ -34026,8 +34026,8 @@
             "hp": 200
         },
         "types": ["psychic", "ghost"],
-        "fastMoves": ["CONFUSION", "PSYCHO_CUT"],
-        "chargedMoves": ["ROCK_BLAST", "NIGHT_SLASH", "POWER_GEM"],
+        "fastMoves": ["METAL_CLAW", "PSYCHO_CUT", "SHADOW_CLAW"],
+        "chargedMoves": ["DARK_PULSE", "FUTURE_SIGHT", "IRON_HEAD", "OUTRAGE"],
         "defaultIVs": {
             "cp500": [4.5, 15, 13, 15],
             "cp1500": [13.5, 6, 15, 6],
@@ -34047,8 +34047,8 @@
             "hp": 200
         },
         "types": ["psychic", "steel"],
-        "fastMoves": ["CONFUSION", "PSYCHO_CUT"],
-        "chargedMoves": ["ROCK_BLAST", "NIGHT_SLASH", "POWER_GEM"],
+        "fastMoves": ["METAL_CLAW", "PSYCHO_CUT", "SHADOW_CLAW"],
+        "chargedMoves": ["DARK_PULSE", "FUTURE_SIGHT", "IRON_HEAD", "OUTRAGE"],
         "defaultIVs": {
             "cp500": [4.5, 15, 13, 15],
             "cp1500": [13.5, 6, 15, 6],
@@ -34068,8 +34068,8 @@
             "hp": 200
         },
         "types": ["psychic", "dragon"],
-        "fastMoves": ["CONFUSION", "PSYCHO_CUT"],
-        "chargedMoves": ["ROCK_BLAST", "NIGHT_SLASH", "POWER_GEM"],
+        "fastMoves": ["METAL_CLAW", "PSYCHO_CUT", "SHADOW_CLAW"],
+        "chargedMoves": ["DARK_PULSE", "FUTURE_SIGHT", "IRON_HEAD", "OUTRAGE"],
         "defaultIVs": {
             "cp500": [4, 13, 15, 12],
             "cp1500": [11.5, 8, 14, 13],

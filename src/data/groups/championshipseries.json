@@ -5,10 +5,6 @@
 }, {
     "speciesId": "annihilape",
     "fastMove": "COUNTER",
-    "chargedMoves": ["ICE_PUNCH", "SHADOW_BALL"]
-}, {
-    "speciesId": "annihilape",
-    "fastMove": "COUNTER",
     "chargedMoves": ["NIGHT_SLASH", "SHADOW_BALL"]
 }, {
     "speciesId": "azumarill",
@@ -27,10 +23,6 @@
     "fastMove": "PSYCHO_CUT",
     "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
 }, {
-    "speciesId": "cresselia",
-    "fastMove": "PSYCHO_CUT",
-    "chargedMoves": ["GRASS_KNOT", "FUTURE_SIGHT"]
-}, {
     "speciesId": "magnezone_shadow",
     "fastMove": "VOLT_SWITCH",
     "chargedMoves": ["MIRROR_SHOT", "WILD_CHARGE"]
@@ -38,11 +30,6 @@
     "speciesId": "dragonair_shadow",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["BODY_SLAM", "AQUA_TAIL"],
-    "shadowType": "shadow"
-}, {
-    "speciesId": "dragonite_shadow",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["DRAGON_CLAW", "SUPER_POWER"],
     "shadowType": "shadow"
 }, {
     "speciesId": "feraligatr_shadow",
@@ -109,6 +96,11 @@
     "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"],
     "shadowType": "shadow"
 }, {
+    "speciesId": "sandslash_alolan_shadow",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"],
+    "shadowType": "shadow"
+}, {
     "speciesId": "skarmory",
     "fastMove": "STEEL_WING",
     "chargedMoves": ["BRAVE_BIRD", "SKY_ATTACK"]
@@ -119,8 +111,12 @@
 }, {
     "speciesId": "talonflame",
     "fastMove": "INCINERATE",
-    "chargedMoves": ["FLY", "FLAME_CHARGE"]
+    "chargedMoves": ["FLY", "BRAVE_BIRD"]
 }, {
+    "speciesId": "trevenant",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["SEED_BOMB", "SHADOW_BALL"]
+},  {
     "speciesId": "umbreon",
     "fastMove": "SNARL",
     "chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
