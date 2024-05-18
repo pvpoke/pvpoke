@@ -32809,7 +32809,8 @@
         },
         "types": ["grass", "none"],
         "fastMoves": ["RAZOR_LEAF", "CHARM", "MAGICAL_LEAF"],
-        "chargedMoves": ["ENERGY_BALL", "DRAINING_KISS", "GRASS_KNOT", "STOMP", "TRIPLE_AXEL"],
+        "chargedMoves": ["ENERGY_BALL", "DRAINING_KISS", "GRASS_KNOT", "STOMP", "TRIPLE_AXEL", "HIGH_JUMP_KICK"],
+        "eliteMoves": ["HIGH_JUMP_KICK"],
         "defaultIVs": {
             "cp500": [6.5, 6, 14, 6],
             "cp1500": [19, 4, 11, 10],
@@ -34096,6 +34097,28 @@
             "cp1500": [15.5, 5, 11, 8],
             "cp2500": [25.5, 5, 13, 11]
         },
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": false
+    }, {
+        "dex": 802,
+        "speciesName": "Marshadow",
+        "speciesId": "marshadow",
+        "baseStats": {
+            "atk": 265,
+            "def": 190,
+            "hp": 207
+        },
+        "types": ["fighting", "ghost"],
+        "fastMoves": ["SUCKER_PUNCH", "COUNTER", "POISON_JAB"],
+        "chargedMoves": ["CLOSE_COMBAT", "FIRE_PUNCH", "THUNDER_PUNCH", "ICE_PUNCH", "ROCK_SLIDE"],
+        "defaultIVs": {
+            "cp500": [5, 14, 15, 13],
+            "cp1500": [14, 15, 15, 14],
+            "cp2500": [24, 11, 14, 10]
+        },
+        "tags": ["mythical", "untradeable"],
+        "searchPriority": 2,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": false
@@ -41011,6 +41034,19 @@
         "cooldown": 500,
         "archetype": "Nuke"
     }, {
+        "moveId": "HIGH_JUMP_KICK",
+        "name": "High Jump Kick",
+        "abbreviation": "HJK",
+        "type": "fighting",
+        "power": 110,
+        "energy": 55,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [0, -4],
+        "buffTarget": "self",
+        "buffApplyChance": ".1",
+        "archetype": "Self-Debuff Nuke"
+    }, {
         "moveId": "HORN_ATTACK",
         "name": "Horn Attack",
         "type": "normal",
@@ -41442,6 +41478,16 @@
         "buffTarget": "opponent",
         "buffApplyChance": ".1",
         "archetype": "Debuff Nuke"
+    }, {
+        "moveId": "MOONGEIST_BEAM",
+        "name": "Moongeist Beam",
+        "abbreviation": "MoG",
+        "type": "ghost",
+        "power": 135,
+        "energy": 65,
+        "energyGain": 0,
+        "cooldown": 500,
+        "archetype": "Nuke"
     }, {
         "moveId": "MUD_BOMB",
         "name": "Mud Bomb",
@@ -42389,6 +42435,16 @@
         "energyGain": 7,
         "cooldown": 1000,
         "archetype": "Fast Charge"
+    }, {
+        "moveId": "SUNSTEEL_STRIKE",
+        "name": "Sunsteel Strike",
+        "abbreviation": "Stl",
+        "type": "steel",
+        "power": 135,
+        "energy": 65,
+        "energyGain": 0,
+        "cooldown": 500,
+        "archetype": "Nuke"
     }, {
         "moveId": "SUPER_POWER",
         "name": "Superpower",
