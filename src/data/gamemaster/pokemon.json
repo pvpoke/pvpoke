@@ -33579,7 +33579,7 @@
     "tags": ["ultrabeast"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_POIPOLE",
         "parent": "poipole"
@@ -33604,7 +33604,7 @@
     "tags": ["ultrabeast"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false
+    "released": true
 }, {
     "dex": 806,
     "speciesName": "Blacephalon",
@@ -33625,7 +33625,7 @@
     "tags": ["ultrabeast"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false
+    "released": true
 }, {
     "dex": 807,
     "speciesName": "Zeraora",
