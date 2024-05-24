@@ -163,6 +163,12 @@ function PokeSelect(element, i){
 				$el.find(".check.optimize-timing").removeClass("on");
 			}
 
+			if(selectedPokemon.startCooldown == 1000){
+				$el.find(".check.switch-delay").addClass("on");
+			} else{
+				$el.find(".check.switch-delay").removeClass("on");
+			}
+
 			if($el.find("input.level:focus, input.iv:focus").length == 0){
 				$el.find("input.level").val(selectedPokemon.level);
 				$el.find("input.iv").eq(0).val(selectedPokemon.ivs.atk);
@@ -621,6 +627,7 @@ function PokeSelect(element, i){
 		$el.find(".move-select").html('');
 		$el.find(".starting-health").val(selectedPokemon.stats.hp);
 		$el.find(".check.optimize-timing").removeClass("on");
+		$el.find(".check.switch-delay").removeClass("on");
 		$el.find(".check.priority").removeClass("on");
 		$el.find(".check.negate-fast-moves").addClass("on");
 		$el.find(".hp .bar.damage").hide();
@@ -1079,6 +1086,15 @@ function PokeSelect(element, i){
 	$el.find(".form-group.bait-picker .option").on("click", function(e){
 		selectedPokemon.baitShields = parseInt($(e.target).attr("value"));
 
+		selectedPokemon.isCustom = true;
+		isCustom = true;
+	});
+
+	// Turn switch delay on or off
+
+	$el.find(".check.switch-delay").on("click", function(e){
+		// Cooldown decreases at the start of the battle step, so a start value of 1000 will result in a 500 ms delay
+		selectedPokemon.startCooldown = selectedPokemon.startCooldown == 0 ? selectedPokemon.startCooldown = 1000 : selectedPokemon.startCooldown = 0;
 		selectedPokemon.isCustom = true;
 		isCustom = true;
 	});

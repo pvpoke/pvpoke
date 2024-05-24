@@ -3,6 +3,14 @@
 
 	<channel>
 		<item>
+			<title>Site Update 1.31.9</title>
+			<description>
+				<![CDATA[The site has been updated with a few new features and fixes:<br><br>- In single battles, you can select "1 turn switch" under a Pokemon's options to simulate the battle with 1 turn of delay for that Pokemon. The optimal move timing guide also reflects the 1 turn delay.<br>- Matchup differences in Matrix Battle are now color coded with the gradient to reflect which differences are hard wins, soft wins, etc.<br>- Fixed an issue where battle time was being calculated incorrectly for mirror matchups.]]>
+			</description>
+			<link>https://pvpoke.com/#news</link>
+			<pubDate>Fri, 24 May 2024 16:14:31 GMT</pubDate>
+		</item>
+		<item>
 			<title>New Ultra Beast Rankings</title>
 			<description>
 				<![CDATA[Three new Ultra Beasts are coming, including Stakataka, Blacephalon, and Naganadel, which can evolve from Poipole. Unfortunately, none of them are noteworthy for PvP at this time. Blacephalon and Naganadel suffer from incredibly low stat product while Stakataka doesn't have the moves to stand out. Keep a lookout for more Ultra Beasts in the future!]]>
@@ -121,14 +129,6 @@
 			</description>
 			<link>https://pvpoke.com/rankings/all/2500/overall/incineroar/</link>
 			<pubDate>Wed, 13 Mar 2024 01:16:08 GMT</pubDate>
-		</item>
-		<item>
-			<title>Spring Cup Training Added</title>
-			<description>
-				<![CDATA[Spring Cup is now available in the Train feature. Use it to practice your lineups or test new Pokemon! Pending sufficient training data, keep an eye out for Spring Cup training analysis next week.]]>
-			</description>
-			<link>https://pvpoke.com/train/</link>
-			<pubDate>Tue, 12 Mar 2024 01:24:54 GMT</pubDate>
 		</item>
 
 		<title>PvPoke</title>

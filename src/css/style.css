@@ -773,6 +773,9 @@ footer a.domz-link {
 .poke .options .flex {
   justify-content: space-between;
 }
+.poke .options .check.switch-delay {
+  margin-top: 20px;
+}
 .poke .options .shield-baiting,
 .poke .options .show-ivs,
 .poke .options .optimize-timing,

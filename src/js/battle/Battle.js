@@ -31,6 +31,7 @@ function Battle(){
 
 	var timeline = [];
 	var time;
+	var matchupDisplayTime;
 	var turns;
 	var lastProcessedTurn = 0; // Preserve the turn number so Pokemon don't act twice during Charged Move sequence
 	var deltaTime = 500;
@@ -445,6 +446,7 @@ function Battle(){
 		}
 
 		time = 0;
+		matchupDisplayTime = 0;
 		turns = 1;
 		lastProcessedTurn = 0;
 		turnsToWin = [0, 0];
@@ -709,15 +711,14 @@ function Battle(){
 
 		if(roundChargedMoveUsed == 0){
 			time += deltaTime;
+			matchupDisplayTime += deltaTime;
 		} else{
 			// This is for display purposes only
-
 			if(roundShieldUsed){
 				time += chargedMinigameTime * (roundChargedMoveUsed-1);
 			} else{
 				time += chargedMinigameTime;
 			}
-
 		}
 
 		duration = time;
@@ -726,12 +727,12 @@ function Battle(){
 
 		// Display sixty second marker after 60 seconds have passed
 
-		if((mode == "simulate")&&(time >= 60000)&&(! sixtySecondMarked)){
+		if((mode == "simulate")&&(matchupDisplayTime >= 60000)&&(! sixtySecondMarked)){
 			timeline.push(new TimelineEvent("switchAvailable", "Switch Available (60 seconds)", 0, time, turns));
 			sixtySecondMarked = true;
 		}
 
-		if((mode == "simulate")&&(time >= 30000)&&(! thirtySecondMarked)){
+		if((mode == "simulate")&&(matchupDisplayTime >= 30000)&&(! thirtySecondMarked)){
 			//timeline.push(new TimelineEvent("switchAvailable", "Switch Available (30 seconds)", 0, time, turns));
 			thirtySecondMarked = true;
 		}
@@ -2338,6 +2339,8 @@ function Battle(){
 				time+=chargedMinigameTime;
 			}
 
+			matchupDisplayTime += chargedMinigameTime;
+
 			// Add tap events for display
 
 			for(var i = 0; i < 8; i++){
@@ -3204,6 +3207,10 @@ function Battle(){
 
 	this.getDuration = function(){
 		return duration;
+	}
+
+	this.getDisplayTime = function(){
+		return matchupDisplayTime;
 	}
 
 	this.getTimeline = function(){

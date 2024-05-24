@@ -1990,6 +1990,10 @@ function Pokemon(id, i, b){
 			pokeStr += "-p";
 		}
 
+		if(self.startCooldown == 1000){
+			pokeStr += "-d-1000";
+		}
+
 		if((self.shadowType != "normal")&&(self.speciesId.indexOf("_shadow") == -1)){
 			pokeStr += "-"+self.shadowType;
 		}
