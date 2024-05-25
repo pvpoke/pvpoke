@@ -42346,11 +42346,11 @@
         "archetype": "Spam/Bait"
     }, {
         "moveId": "SWIFT",
-        "name": "Swift",
+        "name": "Swift (Speculative)",
         "abbreviation": "Sw",
         "type": "normal",
-        "power": 60,
-        "energy": 55,
+        "power": 55,
+        "energy": 40,
         "energyGain": 0,
         "cooldown": 500,
         "archetype": "High Energy"
