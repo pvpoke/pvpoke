@@ -2272,7 +2272,7 @@
     "cooldown": 500,
     "buffs": [-1, 0],
     "buffTarget": "opponent",
-    "buffApplyChance": "0.5",
+    "buffApplyChance": "0.3",
     "archetype": "High Energy Debuff"
 }, {
     "moveId": "SCORCHING_SANDS",
@@ -2302,7 +2302,7 @@
     "name": "Seed Bomb",
     "abbreviation": "SeB",
     "type": "grass",
-    "power": 60,
+    "power": 65,
     "energy": 45,
     "energyGain": 0,
     "cooldown": 500,
@@ -2501,7 +2501,7 @@
     "name": "Spark",
     "abbreviation": "Sp",
     "type": "electric",
-    "power": 6,
+    "power": 5,
     "energy": 0,
     "energyGain": 7,
     "cooldown": 1000,
