@@ -1747,7 +1747,7 @@
         },
         "types": ["normal", "flying"],
         "fastMoves": ["PECK", "STEEL_WING"],
-        "chargedMoves": ["AERIAL_ACE", "DRILL_RUN", "SKY_ATTACK", "TWISTER"],
+        "chargedMoves": ["AERIAL_ACE", "DRILL_RUN", "SKY_ATTACK", "TWISTER", "FLY"],
         "defaultIVs": {
             "cp500": [9.5, 5, 9, 13],
             "cp1500": [28.5, 4, 11, 11],
@@ -18615,7 +18615,7 @@
         },
         "types": ["dragon", "flying"],
         "fastMoves": ["BITE", "DRAGON_TAIL", "FIRE_FANG"],
-        "chargedMoves": ["DRACO_METEOR", "FIRE_BLAST", "HYDRO_PUMP", "OUTRAGE"],
+        "chargedMoves": ["DRACO_METEOR", "FIRE_BLAST", "HYDRO_PUMP", "OUTRAGE", "FLY"],
         "defaultIVs": {
             "cp500": [5, 13, 12, 15],
             "cp1500": [14.5, 4, 14, 15],
@@ -18642,7 +18642,7 @@
         },
         "types": ["dragon", "flying"],
         "fastMoves": ["BITE", "DRAGON_TAIL", "FIRE_FANG"],
-        "chargedMoves": ["DRACO_METEOR", "FIRE_BLAST", "HYDRO_PUMP", "OUTRAGE"],
+        "chargedMoves": ["DRACO_METEOR", "FIRE_BLAST", "HYDRO_PUMP", "OUTRAGE", "FLY"],
         "defaultIVs": {
             "cp500": [4, 4, 9, 12],
             "cp1500": [10.5, 12, 15, 15],
@@ -18665,7 +18665,7 @@
         },
         "types": ["dragon", "flying"],
         "fastMoves": ["BITE", "DRAGON_TAIL", "FIRE_FANG"],
-        "chargedMoves": ["DRACO_METEOR", "FIRE_BLAST", "HYDRO_PUMP", "OUTRAGE"],
+        "chargedMoves": ["DRACO_METEOR", "FIRE_BLAST", "HYDRO_PUMP", "OUTRAGE", "FLY"],
         "defaultIVs": {
             "cp500": [5, 13, 12, 15],
             "cp1500": [14.5, 4, 14, 15],
@@ -25391,7 +25391,7 @@
         },
         "types": ["psychic", "flying"],
         "fastMoves": ["CONFUSION", "AIR_SLASH"],
-        "chargedMoves": ["PSYCHIC", "AERIAL_ACE", "FUTURE_SIGHT", "PSYCHIC_FANGS"],
+        "chargedMoves": ["PSYCHIC", "AERIAL_ACE", "FUTURE_SIGHT", "PSYCHIC_FANGS", "FLY"],
         "defaultIVs": {
             "cp500": [11, 6, 11, 12],
             "cp1500": [35.5, 5, 13, 14],
@@ -27186,7 +27186,7 @@
         },
         "types": ["water", "flying"],
         "fastMoves": ["WATER_GUN", "AIR_SLASH"],
-        "chargedMoves": ["ICE_BEAM", "BUBBLE_BEAM", "HURRICANE"],
+        "chargedMoves": ["ICE_BEAM", "BUBBLE_BEAM", "HURRICANE", "FLY"],
         "defaultIVs": {
             "cp500": [9, 4, 13, 12],
             "cp1500": [26.5, 6, 13, 15],
@@ -27212,7 +27212,7 @@
         },
         "types": ["water", "flying"],
         "fastMoves": ["WATER_GUN", "AIR_SLASH"],
-        "chargedMoves": ["ICE_BEAM", "BUBBLE_BEAM", "HURRICANE"],
+        "chargedMoves": ["ICE_BEAM", "BUBBLE_BEAM", "HURRICANE", "FLY"],
         "defaultIVs": {
             "cp500": [9, 4, 13, 12],
             "cp1500": [26.5, 6, 13, 15],
