@@ -1,0 +1,19 @@
+{
+    "name": "justicar",
+    "title": "Silph Factions (Justicar)",
+    "include": [{
+        "filterType": "type",
+        "values": ["bug", "electric", "fairy", "fighting", "fire", "ice", "poison"]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega"]
+    }, {
+        "filterType": "type",
+        "values": ["ground"]
+    }, {
+        "filterType": "id",
+        "values": ["toxicroak", "dragalge", "aurorus", "golem_alolan", "lanturn", "tapu_fini", "hawlucha"]
+    }],
+	"allowSameSpecies": true
+}

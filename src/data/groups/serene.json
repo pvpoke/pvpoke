@@ -1,0 +1,146 @@
+[{
+    "speciesId": "azumarill",
+    "fastMove": "BUBBLE",
+    "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
+}, {
+    "speciesId": "deoxys_defense",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["THUNDERBOLT", "PSYCHO_BOOST"]
+}, {
+    "speciesId": "diggersby",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["SCORCHING_SANDS", "HYPER_BEAM"]
+}, {
+    "speciesId": "greninja",
+    "fastMove": "WATER_SHURIKEN",
+    "chargedMoves": ["HYDRO_CANNON", "NIGHT_SLASH"]
+}, {
+    "speciesId": "hitmontop",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["TRIPLE_AXEL","STONE_EDGE"]
+}, {
+    "speciesId": "jellicent",
+    "fastMove": "HEX",
+    "chargedMoves": ["SURF", "SHADOW_BALL"]
+}, {
+    "speciesId": "malamar",
+    "fastMove": "PSYCHO_CUT",
+    "chargedMoves": ["FOUL_PLAY","SUPER_POWER"]
+}, {
+    "speciesId": "munchlax",
+    "fastMove": "TACKLE",
+    "chargedMoves": ["BODY_SLAM", "BULLDOZE"]
+}, {
+    "speciesId": "noctowl",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["SKY_ATTACK", "SHADOW_BALL"]
+}, {
+    "speciesId": "pelipper",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
+}, {
+    "speciesId": "quagsire_shadow",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["MUD_BOMB", "AQUA_TAIL"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "raichu_alolan",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["WILD_CHARGE","TRAILBLAZE"]
+}, {
+    "speciesId": "swampert",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
+}, {
+    "speciesId": "swampert_shadow",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "dewgong",
+    "fastMove": "ICE_SHARD",
+    "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
+}, {
+    "speciesId": "rufflet",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["FLY", "BRAVE_BIRD"]
+}, {
+    "speciesId": "raticate_alolan",
+    "fastMove": "QUICK_ATTACK",
+    "chargedMoves": ["CRUNCH", "RETURN"]
+}, {
+    "speciesId": "mew",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["SURF","WILD_CHARGE"]
+}, {
+    "speciesId": "barbaracle",
+    "fastMove": "FURY_CUTTER",
+    "chargedMoves": ["CROSS_CHOP","STONE_EDGE"]
+}, {
+    "speciesId": "golisopod",
+    "fastMove": "FURY_CUTTER",
+    "chargedMoves": ["X_SCISSOR","LIQUIDATION"]
+}, {
+    "speciesId": "snorlax_shadow",
+    "fastMove": "LICK",
+    "chargedMoves": ["BODY_SLAM","SUPER_POWER"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "walrein_shadow",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["ICICLE_SPEAR","EARTHQUAKE"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "farfetchd",
+    "fastMove": "FURY_CUTTER",
+    "chargedMoves": ["LEAF_BLADE","AERIAL_ACE"]
+}, {
+    "speciesId": "samurott",
+    "fastMove": "FURY_CUTTER",
+    "chargedMoves": ["HYDRO_CANNON","MEGAHORN"]
+}, {
+    "speciesId": "snorlax",
+    "fastMove": "LICK",
+    "chargedMoves": ["BODY_SLAM","SUPER_POWER"]
+}, {
+    "speciesId": "oinkologne_female",
+    "fastMove": "TACKLE",
+    "chargedMoves": ["BODY_SLAM","TRAILBLAZE"]
+}, {
+    "speciesId": "whiscash_shadow",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["MUD_BOMB","SCALD"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "gastrodon",
+    "fastMove": "MUD_SLAP",
+    "chargedMoves": ["BODY_SLAM","EARTH_POWER"]
+}, {
+    "speciesId": "dunsparce",
+    "fastMove": "ROLLOUT",
+    "chargedMoves": ["ROCK_SLIDE","DRILL_RUN"]
+},  {
+    "speciesId": "castform",
+    "fastMove": "TACKLE",
+    "chargedMoves": ["WEATHER_BALL_ROCK","ENERGY_BALL"]
+}, {
+    "speciesId": "whiscash",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["MUD_BOMB","SCALD"]
+}, {
+    "speciesId": "empoleon",
+    "fastMove": "STEEL_WING",
+    "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
+}, {
+    "speciesId": "empoleon_shadow",
+    "fastMove": "STEEL_WING",
+    "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
+}, {
+    "speciesId": "gallade",
+    "fastMove": "PSYCHO_CUT",
+    "chargedMoves": ["LEAF_BLADE", "CLOSE_COMBAT"]
+}, {
+    "speciesId": "gallade_shadow",
+    "fastMove": "PSYCHO_CUT",
+    "chargedMoves": ["LEAF_BLADE", "CLOSE_COMBAT"]
+}]

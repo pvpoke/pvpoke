@@ -1,0 +1,74 @@
+{
+	"species": [
+		{
+			"speciesId": "grubbin",
+			"baseSpeciesId": "grubbin"
+		},
+		{
+			"speciesId": "charjabug",
+			"baseSpeciesId": "grubbin",
+			"default": true
+		},
+		{
+			"speciesId": "vikavolt",
+			"baseSpeciesId": "grubbin"
+		}
+	],
+	"checklist": [
+		{
+			"title": "High Rank Charjabug",
+			"speciesId": "charjabug",
+			"baseSpeciesId": "grubbin",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [38.5, 0, 13, 15],
+			"priority": 1
+		},
+		{
+			"title": "High Defense Charjabug",
+			"speciesId": "charjabug",
+			"baseSpeciesId": "grubbin",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [42, 0, 14, 0],
+			"priority": 2,
+			"notes": "Charjabug with 139 Defense or higher takes less Fast Move damage from Azumarill, Medicham, and Sableye."
+		},
+		{
+			"title": "High Rank Vikavolt",
+			"speciesId": "vikavolt",
+			"baseSpeciesId": "grubbin",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [18, 0, 14, 12],
+			"priority": 2
+		},
+		{
+			"title": "High Rank Vikavolt",
+			"speciesId": "vikavolt",
+			"baseSpeciesId": "grubbin",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [29.5, 2, 15, 15],
+			"priority": 2
+		},
+		{
+			"title": "High IV Vikavolt",
+			"speciesId": "vikavolt",
+			"baseSpeciesId": "grubbin",
+			"league": "master",
+			"cp": 10000,
+			"ivs": [50, 15, 15, 15],
+			"priority": 2
+		},
+		{
+			"title": "Little Cup Charjabug",
+			"speciesId": "charjabug",
+			"baseSpeciesId": "grubbin",
+			"league": "special",
+			"cp": 500,
+			"ivs": [11.5, 0, 11, 15],
+			"priority": 3
+		}
+	]
+}

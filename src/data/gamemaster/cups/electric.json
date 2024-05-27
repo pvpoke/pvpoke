@@ -1,0 +1,20 @@
+{
+    "name": "electric",
+    "title": "Electric Cup",
+    "include": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["electric"]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "name": "Tag",
+        "values": ["mega"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["stunfisk", "charjabug", "vikavolt", "heliolisk"]
+    }],
+	"partySize": 3,
+	"presetOnly": true
+}

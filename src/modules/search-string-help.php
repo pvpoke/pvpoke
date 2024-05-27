@@ -6,12 +6,16 @@
 			<td>azumarill</td>
 		</tr>
 		<tr>
+			<td><strong>Pokemon Nickname</strong></td>
+			<td>gfisk (<a class="nickname-list" href="#">List of nicknames<a>)</td>
+		</tr>
+		<tr>
 			<td><strong>Pokemon Type</strong></td>
 			<td>water</td>
 		</tr>
 		<tr>
 			<td><strong>Pokemon Tag</strong></td>
-			<td>legendary, mythical, regional, alolan, galarian, starter, shadow, shadoweligible, xl</td>
+			<td>legendary, mythical, ultrabeast, regional, alolan, galarian, starter, shadow, shadoweligible, xl</td>
 		</tr>
 		<tr>
 			<td><strong>Generation/Region</strong></td>
@@ -32,6 +36,14 @@
 		<tr>
 			<td><strong>Move Type</strong></td>
 			<td>@fighting</td>
+		</tr>
+		<tr>
+			<td><strong>Fast Move only</strong></td>
+			<td>@1fighting</td>
+		</tr>
+		<tr>
+			<td><strong>Charged Move only</strong></td>
+			<td>@2mud</td>
 		</tr>
 		<tr>
 			<td><strong>Legacy Moves (excl. Return)</strong></td>
@@ -73,5 +85,18 @@
 			<td><strong>Not</strong></td>
 			<td>!water</td>
 		</tr>
+	</table>
+</div>
+
+<div class="search-nicknames article hide">
+	<p>You can select or search for Pokemon using the common nicknames below:</p>
+	<table cellspacing="0">
+		<thead>
+			<th>Pokemon</th>
+			<th>Nicknames</th>
+		</thead>
+
+		<tbody>
+		</tbody>
 	</table>
 </div>

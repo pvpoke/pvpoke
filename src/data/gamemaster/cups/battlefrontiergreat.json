@@ -1,0 +1,27 @@
+{
+    "name": "battlefrontiergreat",
+    "title": "Battle Frontier (Great)",
+	"include": [],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega"]
+    },{
+        "filterType": "id",
+        "values": ["giratina_origin","heatran"]
+    }],
+    "tierRules": {
+        "max": 17,
+        "floor": 1,
+        "tiers": [{
+            "points": 7,
+            "pokemon": ["azumarill", "carbink", "gligar", "lanturn", "lickitung","medicham", "registeel", "skarmory","annihilape", "whiscash"]
+        }, {
+            "points": 5,
+            "pokemon": ["bastiodon", "deoxys_defense", "dewgong", "mandibuzz", "ninetales_alolan", "poliwrath", "sableye", "sandslash_alolan", "serperior", "swampert", "talonflame", "toxapex", "umbreon", "vigoroth", "cresselia", "charjabug", "empoleon", "feraligatr", "mantine"]
+        }, {
+            "points": 2,
+            "pokemon": ["altaria", "charizard", "clefable", "clodsire", "diggersby", "dragonite", "dubwool", "froslass", "greedent", "jellicent", "pelipper", "pidgeot", "quagsire", "steelix", "stunfisk_galarian", "tapu_fini", "toxicroak", "venusaur", "wigglytuff", "gallade", "machamp"]
+        }]
+    },
+    "allowSameSpecies": true
+}

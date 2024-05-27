@@ -1,0 +1,30 @@
+{
+    "name": "ragnargymbreakers",
+    "title": "Gymbreakers (Ragnar)",
+    "include": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["bug", "dragon", "ice", "poison", "psychic", "water"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["miltank", "snorlax", "snorlax_shadow"]
+    }],
+    "exclude": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["dark", "electric", "rock"]
+    }, {
+        "filterType": "tag",
+        "name": "Tag",
+        "values": ["mega"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["altaria", "sandslash_alolan", "sandshrew_alolan", "ninetales_alolan", "lanturn", "toxicroak", "buzzwole", "sneasler", "medicham", "araquanid", "articuno_galarian", "toxapex", "jellicent", "pelipper", "golbat", "crobat", "forretress", "genesect"]
+    }],
+	"restrictedPicks": 2,
+	"restrictedPokemon": ["quagsire", "cresselia", "miltank", "escavalier", "mantine", "azumarill", "mew", "weezing_galarian"],
+    "allowSameSpecies": true,
+    "levelCap": 50
+}

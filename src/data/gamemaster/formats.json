@@ -19,24 +19,6 @@
 		"showMeta": true
 	},
 	{
-		"title": "Ultra Premier",
-		"cup": "premier",
-		"cp": 2500,
-		"meta": "premierultra",
-		"showCup": false,
-		"showFormat": false,
-		"showMeta": true
-	},
-	{
-		"title": "Master Premier",
-		"cup": "premier",
-		"cp": 10000,
-		"meta": "premiermaster",
-		"showCup": false,
-		"showFormat": false,
-		"showMeta": true
-	},
-	{
 		"title": "Master League (Megas)",
 		"cup": "mega",
 		"cp": 10000,
@@ -46,108 +28,122 @@
 		"showMeta": true
 	},
 	{
-		"title": "Fantasy Cup (Ultra)",
-		"cup": "fantasy",
-		"cp": 2500,
-		"meta": "fantasyultra",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Color Cup",
-		"cup": "color",
+		"title": "P!P Championship Series",
+		"cup": "great",
 		"cp": 1500,
-		"meta": "color",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Psychic Cup",
-		"cup": "psychic",
-		"cp": 1500,
-		"meta": "psychic",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Silph Factions (Great League)",
-		"cup": "factionsgreat",
-		"cp": 1500,
-		"meta": "great",
-		"showCup": false,
-		"showFormat": true,
-		"showMeta": false,
-		"hideRankings": true
-	},
-	{
-		"title": "Silph Factions (Ultra League)",
-		"cup": "factionsultra",
-		"cp": 2500,
-		"meta": "ultra",
+		"meta": "championshipseries",
 		"showCup": false,
 		"showFormat": false,
-		"showMeta": false,
-		"hideRankings": true
+		"showMeta": true
 	},
 	{
-		"title": "Silph Factions (Master League)",
-		"cup": "factionsmaster",
+		"title": "Master Premier Cup",
+		"cup": "premier",
 		"cp": 10000,
-		"meta": "masterfactions",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Silph Factions (Justicar)",
-		"cup": "justicar",
-		"cp": 2500,
-		"meta": "justicar",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"hideRankings": false
-	},
-	{
-		"title": "Silph Factions (Arcana)",
-		"cup": "arcana",
-		"cp": 1500,
-		"meta": "arcana",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Silph Factions (Catacomb)",
-		"cup": "catacomb",
-		"cp": 1500,
-		"meta": "catacomb",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Silph Ionic Cup",
-		"cup": "ionic",
-		"cp": 1500,
-		"meta": "ionic",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"hideRankings": false
-	},
-	{
-		"title": "GO Stadium Cliffhanger",
-		"cup": "cliffhanger",
-		"cp": 1500,
-		"meta": "great",
+		"meta": "premiermaster",
 		"showCup": false,
+		"showFormat": false,
+		"showMeta": true
+	},
+	{
+		"title": "Catch Cup",
+		"cup": "catch",
+		"cp": 1500,
+		"meta": "catch",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Little Catch Cup",
+		"cup": "littlecatch",
+		"cp": 500,
+		"meta": "littlecatch",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Battle Frontier (Enchanted)",
+		"cup": "enchanted",
+		"cp": 2500,
+		"meta": "enchanted",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+        "title": "Battle Frontier (Primordial)",
+        "cup": "primordial",
+        "cp": 1500,
+        "meta": "primordial",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    },
+	{
+        "title": "Battle Frontier (Serene)",
+        "cup": "serene",
+        "cp": 1500,
+        "meta": "serene",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    },
+	{
+		"title": "Battle Frontier (Great)",
+		"cup": "battlefrontiergreat",
+		"cp": 1500,
+		"meta": "battlefrontiergreat",
+		"showCup": true,
 		"showFormat": true,
 		"showMeta": false,
 		"hideRankings": true
+	},
+	{
+		"title": "Battle Frontier (Master)",
+		"cup": "battlefrontiermaster",
+		"cp": 10000,
+		"meta": "battlefrontiermaster",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+        "title": "Devon Sovereign Cup",
+        "cup": "sovereign",
+        "cp": 1500,
+        "meta": "sovereign",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    },
+	{
+        "title": "Devon Rainstorm Cup",
+        "cup": "rainstorm",
+        "cp": 1500,
+        "meta": "rainstorm",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    },
+	{
+        "title": "Devon Genetic Cup",
+        "cup": "genetic",
+        "cp": 1500,
+        "meta": "genetic",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    },
+	{
+		"title": "Little",
+		"cup": "little",
+		"cp": 500,
+		"meta": "little",
+		"showCup": false,
+		"showFormat": false,
+		"showMeta": false
 	},
 	{
 		"title": "Custom",

@@ -1,0 +1,281 @@
+[
+    {
+        "speciesId": "bewear",
+        "fastMove": "SHADOW_CLAW",
+        "chargedMoves": [
+            "SUPER_POWER",
+            "STOMP"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "cresselia",
+        "fastMove": "PSYCHO_CUT",
+        "chargedMoves": [
+            "GRASS_KNOT",
+            "FUTURE_SIGHT"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "munchlax",
+        "fastMove": "TACKLE",
+        "chargedMoves": [
+            "BODY_SLAM",
+            "BULLDOZE"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "excadrill",
+        "fastMove": "MUD_SHOT",
+        "chargedMoves": [
+            "DRILL_RUN",
+            "ROCK_SLIDE"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "excadrill_shadow",
+        "fastMove": "MUD_SHOT",
+        "chargedMoves": [
+            "DRILL_RUN",
+            "ROCK_SLIDE"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "electivire",
+        "fastMove": "THUNDER_SHOCK",
+        "chargedMoves": [
+            "ICE_PUNCH",
+            "WILD_CHARGE"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "electivire_shadow",
+        "fastMove": "THUNDER_SHOCK",
+        "chargedMoves": [
+            "ICE_PUNCH",
+            "WILD_CHARGE"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "pangoro",
+        "fastMove": "SNARL",
+        "chargedMoves": [
+            "CLOSE_COMBAT",
+            "NIGHT_SLASH"
+        ],
+        "weight": 1
+    },
+	{
+        "speciesId": "gallade",
+        "fastMove": "PSYCHO_CUT",
+        "chargedMoves": [
+            "CLOSE_COMBAT",
+            "LEAF_BLADE"
+        ],
+        "weight": 1
+    },
+	{
+        "speciesId": "gallade_shadow",
+        "fastMove": "PSYCHO_CUT",
+        "chargedMoves": [
+            "CLOSE_COMBAT",
+            "LEAF_BLADE"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "zweilous",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": [
+            "BODY_SLAM",
+            "DARK_PULSE"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "tentacruel",
+        "fastMove": "POISON_JAB",
+        "chargedMoves": [
+            "ACID_SPRAY",
+            "SCALD"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "tentacruel_shadow",
+        "fastMove": "POISON_JAB",
+        "chargedMoves": [
+            "ACID_SPRAY",
+            "SCALD"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "greedent",
+        "fastMove": "MUD_SHOT",
+        "chargedMoves": [
+            "BODY_SLAM",
+            "CRUNCH"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "ariados",
+        "fastMove": "POISON_STING",
+        "chargedMoves": [
+            "LUNGE",
+            "TRAILBLAZE"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "qwilfish_hisuian",
+        "fastMove": "POISON_JAB",
+        "chargedMoves": [
+            "AQUA_TAIL",
+            "DARK_PULSE"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "malamar",
+        "fastMove": "PSYCHO_CUT",
+        "chargedMoves": [
+            "SUPER_POWER",
+            "FOUL_PLAY"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "mew",
+        "fastMove": "SHADOW_CLAW",
+        "chargedMoves": [
+            "WILD_CHARGE",
+            "DRAGON_CLAW"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "rapidash",
+        "fastMove": "INCINERATE",
+        "chargedMoves": [
+            "DRILL_RUN",
+            "FLAME_CHARGE"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "dragonite",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": [
+            "DRAGON_CLAW",
+            "SUPER_POWER"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "dragonite_shadow",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": [
+            "DRAGON_CLAW",
+            "SUPER_POWER"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "froslass",
+        "fastMove": "POWDER_SNOW",
+        "chargedMoves": [
+            "AVALANCHE",
+            "SHADOW_BALL"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "froslass_shadow",
+        "fastMove": "POWDER_SNOW",
+        "chargedMoves": [
+            "AVALANCHE",
+            "SHADOW_BALL"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "walrein",
+        "fastMove": "POWDER_SNOW",
+        "chargedMoves": [
+            "ICICLE_SPEAR",
+            "EARTHQUAKE"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "walrein_shadow",
+        "fastMove": "POWDER_SNOW",
+        "chargedMoves": [
+            "ICICLE_SPEAR",
+            "EARTHQUAKE"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "sealeo",
+        "fastMove": "POWDER_SNOW",
+        "chargedMoves": [
+            "BODY_SLAM",
+            "WATER_PULSE"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "sealeo_shadow",
+        "fastMove": "POWDER_SNOW",
+        "chargedMoves": [
+            "BODY_SLAM",
+            "WATER_PULSE"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "sandslash",
+        "fastMove": "MUD_SHOT",
+        "chargedMoves": [
+            "NIGHT_SLASH",
+            "SCORCHING_SANDS"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "sandslash_shadow",
+        "fastMove": "MUD_SHOT",
+        "chargedMoves": [
+            "NIGHT_SLASH",
+            "SCORCHING_SANDS"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "cradily",
+        "fastMove": "BULLET_SEED",
+        "chargedMoves": [
+            "ROCK_SLIDE",
+            "GRASS_KNOT"
+        ],
+        "weight": 1
+    },
+    {
+        "speciesId": "cradily_shadow",
+        "fastMove": "BULLET_SEED",
+        "chargedMoves": [
+            "ROCK_SLIDE",
+            "GRASS_KNOT"
+        ],
+        "weight": 1
+    }
+]

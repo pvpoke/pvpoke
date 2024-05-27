@@ -1,0 +1,22 @@
+{
+    "name": "gbinvitational",
+    "title": "Gymbreakers Invitational",
+    "include": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["bug", "dragon", "grass", "normal", "water"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["froslass", "ninetales_alolan_shadow", "ninetales_alolan", "charizard", "charizard_shadow", "regice", "sudowoodo", "donphan", "ampharos", "magnezone", "hypno", "deoxys_defense", "regirock", "magnezone_shadow", "hypno_shadow", "regirock_shadow", "ampharos_shadow", "donphan_shadow", "sudowoodo_shadow", "regice_shadow"]
+    }],
+    "exclude": [{
+        "filterType": "id",
+        "name": "Species",
+        "values": ["abomasnow", "mantine", "lanturn", "toxapex", "obstagoon", "arctibax", "baxcalibur"]
+    }, {
+        "filterType": "tag",
+        "name": "Tag",
+        "values": ["mega"]
+    }]
+}

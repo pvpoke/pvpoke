@@ -31,6 +31,7 @@ function Battle(){
 
 	var timeline = [];
 	var time;
+	var matchupDisplayTime;
 	var turns;
 	var lastProcessedTurn = 0; // Preserve the turn number so Pokemon don't act twice during Charged Move sequence
 	var deltaTime = 500;
@@ -445,6 +446,7 @@ function Battle(){
 		}
 
 		time = 0;
+		matchupDisplayTime = 0;
 		turns = 1;
 		lastProcessedTurn = 0;
 		turnsToWin = [0, 0];
@@ -709,15 +711,14 @@ function Battle(){
 
 		if(roundChargedMoveUsed == 0){
 			time += deltaTime;
+			matchupDisplayTime += deltaTime;
 		} else{
 			// This is for display purposes only
-
 			if(roundShieldUsed){
 				time += chargedMinigameTime * (roundChargedMoveUsed-1);
 			} else{
 				time += chargedMinigameTime;
 			}
-
 		}
 
 		duration = time;
@@ -726,12 +727,12 @@ function Battle(){
 
 		// Display sixty second marker after 60 seconds have passed
 
-		if((mode == "simulate")&&(time >= 60000)&&(! sixtySecondMarked)){
+		if((mode == "simulate")&&(matchupDisplayTime >= 60000)&&(! sixtySecondMarked)){
 			timeline.push(new TimelineEvent("switchAvailable", "Switch Available (60 seconds)", 0, time, turns));
 			sixtySecondMarked = true;
 		}
 
-		if((mode == "simulate")&&(time >= 30000)&&(! thirtySecondMarked)){
+		if((mode == "simulate")&&(matchupDisplayTime >= 30000)&&(! thirtySecondMarked)){
 			//timeline.push(new TimelineEvent("switchAvailable", "Switch Available (30 seconds)", 0, time, turns));
 			thirtySecondMarked = true;
 		}
@@ -1140,6 +1141,11 @@ function Battle(){
 
 						if (moveDamage >= currState.hp) {
 							turnsToLive = Math.min(currState.turn, turnsToLive);
+
+							if(poke.stats.atk > opponent.stats.atk && opponent.fastMove.cooldown % poke.fastMove.cooldown == 0){
+								turnsToLive++;
+							}
+
 							self.logDecision(turns, poke, " opponent has energy to use " + opponent.activeChargedMoves[n].name + " and it would do " + moveDamage + " damage. I have " + turnsToLive + " turn(s) to live, opponent has " + currState.opEnergy);
 							break;
 						}
@@ -1181,6 +1187,13 @@ function Battle(){
 			if((poke.hp <= opponent.fastMove.damage)&&(opponent.cooldown > 0)&&(opponent.fastMove.cooldown > 500)){
 				turnsToLive = opponent.cooldown / 500;
 
+				if(opponent.hp > poke.fastMove.damage){
+					turnsToLive--;
+				}
+			}
+
+			// Anticipate a Fast Move landing if you use your Fast Move
+			if(poke.hp <= opponent.fastMove.damage && opponent.cooldown == 0 && opponent.fastMove.cooldown <= poke.fastMove.cooldown + 500){
 				if(opponent.hp > poke.fastMove.damage){
 					turnsToLive--;
 				}
@@ -1379,6 +1392,11 @@ function Battle(){
 		var bestCycleDamage = bestChargedDamage + (fastDamage * Math.ceil(poke.bestChargedMove.energy / poke.fastMove.energyGain));
 		var minimumCycleThreshold = 2;
 
+		// Prefer non-debuffing moves when it will take multiple to KO
+		if(poke.bestChargedMove.selfDebuffing && poke.bestChargedMove.energy > poke.fastestChargedMove.energy && poke.bestChargedMove.dpe / poke.fastestChargedMove.dpe < 2){
+			minimumCycleThreshold = 1.1;
+		}
+
 		if(opponent.hp / bestCycleDamage > minimumCycleThreshold){
 			// It's going to take a lot of cycles to KO, so just throw the best move
 
@@ -1403,6 +1421,15 @@ function Battle(){
 				useChargedMove = false;
 				return;
 			} else{
+				// Stack self debuffing moves
+				if(selectedMove.selfDebuffing){
+					var energyToReach = poke.energy + (Math.floor((100 - poke.energy) / poke.fastMove.energyGain) * poke.fastMove.energyGain);
+					if(poke.energy < energyToReach){
+						useChargedMove = false;
+						return;
+					}
+				}
+
 				action = new TimelineAction(
 					"charged",
 					poke.index,
@@ -2312,6 +2339,8 @@ function Battle(){
 				time+=chargedMinigameTime;
 			}
 
+			matchupDisplayTime += chargedMinigameTime;
+
 			// Add tap events for display
 
 			for(var i = 0; i < 8; i++){
@@ -2767,7 +2796,7 @@ function Battle(){
 			if(attacker.energy + chargedMove.energy >= chargedMove.energy){
 				var chargedDamage = self.calculateDamage(attacker, defender, chargedMove);
 
-				if((chargedDamage >= defender.hp / 1.5)&&(fastDPT > 1.5)){
+				if((chargedDamage >= defender.hp / 1.4)&&(fastDPT > 1.5)){
 					useShield = true;
 					shieldWeight = 4
 				}
@@ -2777,7 +2806,7 @@ function Battle(){
 					shieldWeight = 4
 				}
 
-				if((chargedDamage >= defender.hp / 2)&&(fastDPT > 1.5)){
+				if((chargedDamage >= defender.hp / 2)&&(fastDPT > 2)){
 					shieldWeight = 12
 				}
 			}
@@ -2917,17 +2946,35 @@ function Battle(){
 
 	this.getRatingColor = function(rating){
 		var winColors = [
-			[93,71,165],
-			[0,143,187]
+			[74,85,169],
+			[11,118,215]
 		]; // rgb
 		var lossColors = [
-			[186,0,143],
-			[93,71,165]
+			[199,12,112],
+			[111,56,160]
 		]; // rgb
+
+		if(settings.colorblindMode){
+			winColors = [
+				[59,113,227],
+				[26,133,255]
+			]; // rgb
+
+			lossColors = [
+				[212,17,89],
+				[178,39,120]
+			]; // rgb
+		}
 
 		// Apply a gradient to bar color
 		var colors = (rating <= 500) ? lossColors : winColors;
 		var color = [ colors[0][0], colors[0][1], colors[0][2] ];
+
+		if(rating > 1000){
+			rating = 1000;
+		} else if(rating < 0){
+			rating = 0;
+		}
 
 		for(var j = 0; j < color.length; j++){
 			var range = colors[1][j] - color[j];
@@ -2942,6 +2989,22 @@ function Battle(){
 		}
 
 		return color;
+	}
+
+	// Returns whether a battle rating was a win, close win, tie, close loss, or loss
+
+	this.getRatingClass = function(rating){
+		if(rating == 500){
+			return "tie";
+		} else if( (rating < 500) && (rating > 250)){
+			return "close-loss";
+		} else if( rating <= 250){
+			return "loss";
+		} else if( (rating > 500) && (rating < 750)){
+			return "close-win";
+		} else if( rating >= 750){
+			return "win";
+		}
 	}
 
 	// Convert timeine to user-editable actions
@@ -3144,6 +3207,10 @@ function Battle(){
 
 	this.getDuration = function(){
 		return duration;
+	}
+
+	this.getDisplayTime = function(){
+		return matchupDisplayTime;
 	}
 
 	this.getTimeline = function(){

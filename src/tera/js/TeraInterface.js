@@ -246,7 +246,7 @@ var InterfaceMaster = (function () {
 
 				// Update URL
 				let currentURL = window.location.pathname
-				let url = webRoot + 'tera/' + selectedPokemon.id + '/' + selectedTera + '/' + selectedTypes.join('-');
+				let url = host + 'tera/' + selectedPokemon.id + '/' + selectedTera + '/' + selectedTypes.join('-');
 
 				if(selectedPokemon.getTraitURLStr()){
 					url += '/' + selectedPokemon.getTraitURLStr();
@@ -261,7 +261,8 @@ var InterfaceMaster = (function () {
 
 				// Send Google Analytics pageview
 				if(currentURL != url){
-					gtag('config', UA_ID, {page_location: (host+url), page_path: url});
+					gtag('event', 'page_view', { page_location: url, page_title: document.title,
+					pageview_type: 'virtual'});
 				}
 
 				// Scroll to results
@@ -272,7 +273,7 @@ var InterfaceMaster = (function () {
 			// Select a Pokemon from the raid boss select list on input search
 
 			$("#poke-search").keyup(function(e){
-				let searchStr = $(this).val().toLowerCase();
+				let searchStr = $(this).val().toLowerCase().trim();
 
 				$("#poke-select option").each(function(index, value){
 					let name = $(this).html().toLowerCase();

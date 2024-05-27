@@ -8,5 +8,11 @@
 	"exclude": [{
 		"filterType": "tag",
 		"values": ["mega"]
-	}]
+	}, {
+		"filterType": "id",
+		"values": ["articuno", "celebi", "ho_oh", "hoopa", "lugia", "moltres", "rayquaza", "regice", "regieleki", "regigigas", "shaymin", "shaymin_sky", "zapdos", "smeargle"],
+		"leagues": [500]
+	}],
+	"partySize": 3,
+	"presetOnly": true
 }

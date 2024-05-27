@@ -31,6 +31,8 @@ var InterfaceMaster = (function () {
 				$(".format-select").on("change", selectFormat);
 				$("thead a").on("click", sortTable);
 				$("body").on("click", ".check", checkBox);
+				$("body").on("click", "a.usage-link", displayUsage);
+				$("body").on("change", ".modal .usage-compare-select", compareUsage);
 
 				window.addEventListener('popstate', function(e) {
 					get = e.state;
@@ -104,11 +106,8 @@ var InterfaceMaster = (function () {
 					$row.find(".name").html(pokemon.speciesName);
 					$row.find(".moves").html(r.pokemon.split(" ")[1]);
 					$row.find(".individual-score").html(r.individualScore.toFixed(1) + '%');
-					$row.find(".team-score .score").html(r.teamScore.toFixed(1));
-
-					if(r.teamScore >= 500){
-						$row.find(".team-score .score").addClass("win");
-					}
+					$row.find(".team-score .rating").html('<span></span>'+r.teamScore.toFixed(1));
+					$row.find(".team-score .rating").addClass(battle.getRatingClass(r.teamScore));
 
 					// Normalize rating so it has more visual effect
 					var colorRating = 500 + ((r.teamScore - 500) * 8);
@@ -120,10 +119,16 @@ var InterfaceMaster = (function () {
 					}
 
 					var color = battle.getRatingColor(colorRating);
-					$row.find(".team-score .score").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
+					$row.find(".team-score .rating").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
 
 					var usage = (r.games / (data.properties.totalPerformers / 3) * 100).toFixed(1)+"%"
-					$row.find(".usage").html(usage);
+
+					if(r.usageTrend){
+						$row.find(".usage").html("<div class=\"flex\"><span class=\"usage-value\">"+usage + "</span><a class=\"usage-link\" pokemon=\""+r.pokemon+"\" species-id=\""+speciesId+"\" label=\""+pokemon.speciesName+" "+movesetStr+"\" href=\"#\"></a></div>");
+					} else{
+						$row.find(".usage").html(usage);
+					}
+
 					$row.find(".link a").attr("href", host+"rankings/" + battle.getCup().name + "/" + battle.getCP() + "/overall/" + pokemon.speciesId + "/");
 
 					if(r.games < 250){
@@ -214,11 +219,9 @@ var InterfaceMaster = (function () {
 					}
 
 					$row.find(".link a").attr("href", teamURL);
-					$row.find(".team-score .score").html(r.teamScore.toFixed(1));
+					$row.find(".team-score .rating").html('<span></span>'+r.teamScore.toFixed(1));
+					$row.find(".team-score .rating").addClass(battle.getRatingClass(r.teamScore));
 
-					if(r.teamScore >= 500){
-						$row.find(".team-score .score").addClass("win");
-					}
 
 					// Normalize rating so it has more visual effect
 					var colorRating = 500 + ((r.teamScore - 500) * 8);
@@ -232,7 +235,7 @@ var InterfaceMaster = (function () {
 					var color = battle.getRatingColor(colorRating);
 					var usage = ((r.games / data.properties.totalTeams)*100).toFixed(1)+"%";
 
-					$row.find(".team-score .score").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
+					$row.find(".team-score .rating").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
 					$row.find(".usage").html(usage);
 
 					if(r.games < 30){
@@ -402,7 +405,7 @@ var InterfaceMaster = (function () {
 			var $target = null;
 
 			$("body").on("keyup", ".poke-search", function(e){
-				searchStr = $(this).val().toLowerCase();
+				searchStr = $(this).val().toLowerCase().trim();
 
 				$target = $(".train-table."+$(e.target).attr("target"));
 
@@ -417,7 +420,7 @@ var InterfaceMaster = (function () {
 			});
 
 			function submitSearchQuery(){
-				var list = GameMaster.getInstance().generatePokemonListFromSearchString(searchStr);
+				var list = GameMaster.getInstance().generatePokemonListFromSearchString(searchStr, battle);
 
 				if($target.hasClass("performers")){
 
@@ -455,6 +458,210 @@ var InterfaceMaster = (function () {
 
 					});
 				}
+			}
+
+			// Display usage trend stats in modal window
+			function displayUsage(e){
+				e.preventDefault();
+
+				var trainingId = $(e.target).attr("pokemon");
+				var speciesId = $(e.target).attr("species-id");
+				var label = $(e.target).attr("label");
+				var r = data.performers.filter( ranking => ranking.pokemon == trainingId)[0];
+
+				var pokemon = new Pokemon(speciesId, 0, battle);
+
+				modalWindow(pokemon.speciesName + " Usage", $(".usage-modal"));
+
+				$(".modal .pokemon-label").html(label);
+
+				$(".modal").attr("training-id", trainingId);
+
+				drawUsageChart([r]);
+
+				// Populate comparison select
+				var performers = JSON.parse(JSON.stringify(data.performers)); // Clone performers data before we modify it
+				performers.sort((a,b) => (a.pokemon > b.pokemon) ? 1 : ((b.pokemon > a.pokemon) ? -1 : 0));
+
+				for(var i = 0; i < performers.length; i++){
+					var r = performers[i];
+
+					if(r.usageTrend && r.pokemon != trainingId){
+						var speciesId = r.pokemon.split(" ")[0];
+						var movesetStr = r.pokemon.split(" ")[1];
+						pokemon = new Pokemon(speciesId, 0, battle);
+
+						$(".modal .usage-compare-select").append("<option value=\""+r.pokemon+"\">"+pokemon.speciesName + " " + movesetStr + "</option>");
+					}
+				}
+			}
+
+			// Draw usage chart given primary usage data
+			function drawUsageChart(rows, animateFirst){
+				var canvas = $(".modal .usage-chart")[0];
+				var cnvWidth = parseInt($(canvas).attr("width"));
+				var cnvHeight = parseInt($(canvas).attr("height"));
+				var ctx = canvas.getContext("2d");
+				var numberOfAxis = 3;
+				var numberofSubAxis = 7;
+
+				animateFirst = typeof animateFirst !== 'undefined' ? animateFirst : true;
+
+				ctx.clearRect(0, 0, cnvWidth, cnvHeight);
+
+				ctx.strokeStyle = "rgba(0, 52, 98, 0.3)";
+				ctx.lineWidth = 1;
+
+				// Draw vertical axis
+				/*for(var i = 0; i < numberOfAxis; i++){
+					var x = (cnvWidth / (numberOfAxis + 1)) * (i + 1);
+					ctx.beginPath();
+					ctx.moveTo(x, 0);
+					ctx.lineTo(x, cnvHeight);
+					ctx.stroke();
+				}*/
+
+				// Draw horizontal axis
+				for(var i = 0; i < numberOfAxis; i++){
+					var y = (cnvHeight / (numberOfAxis + 1)) * (i + 1);
+					ctx.beginPath();
+					ctx.moveTo(0, y);
+					ctx.lineTo(cnvWidth, y);
+					ctx.stroke();
+				}
+
+				ctx.strokeStyle = "rgba(0, 52, 98, 0.05)";
+
+				// Draw vertical subaxis
+				for(var i = 0; i < numberofSubAxis; i++){
+					var x = (cnvWidth / (numberofSubAxis + 1)) * (i + 1);
+					ctx.beginPath();
+					ctx.moveTo(x, 0);
+					ctx.lineTo(x, cnvHeight);
+					ctx.stroke();
+				}
+
+				// Draw horizontal subaxis
+				for(var i = 0; i < numberofSubAxis; i++){
+					var y = (cnvHeight / (numberofSubAxis + 1)) * (i + 1);
+					ctx.beginPath();
+					ctx.moveTo(0, y);
+					ctx.lineTo(cnvWidth, y);
+					ctx.stroke();
+				}
+
+				// Determine vertical scale
+				var yAxisMax = 20;
+				var maxValueInData = 0;
+
+				for(var i = 0; i < rows.length; i++){
+					maxValueInData = Math.max(maxValueInData, Math.max(...rows[i].usageTrend));
+				}
+
+				if(maxValueInData > 20){
+					yAxisMax = 50;
+				}
+
+				$(".modal .y-axis-container .value").first().html(yAxisMax+"%");
+
+				// Display dates on X axis
+
+				var currentDate = new Date(Date.parse(data.properties.lastUpdated));
+				var earliestDate = new Date(new Date().setDate(currentDate.getDate()-30));
+
+				$(".modal .x-axis-container .value").eq(0).html(earliestDate.toLocaleDateString("en-US", { month: "short", day: "numeric" }));
+				$(".modal .x-axis-container .value").eq(1).html(currentDate.toLocaleDateString("en-US", { month: "short", day: "numeric" }));
+
+				for(var i = 0; i < rows.length; i++){
+					var r = rows[i];
+					var animate = true;
+
+					if(i == 0){
+						animate = animateFirst;
+					}
+					drawTrendLine(r, $(".modal canvas[canvas-id=\""+i+"\"]")[0], yAxisMax, animate);
+				}
+			}
+
+			// Draw usage trend line
+
+			function drawTrendLine(r, canvas, yAxisMax, animate){
+				var cnvWidth = parseInt($(canvas).attr("width"));
+				var cnvHeight = parseInt($(canvas).attr("height"));
+				var ctx = canvas.getContext("2d");
+				var canvasId = parseInt($(canvas).attr("canvas-id"));
+
+				var speciesId = r.pokemon.split(" ")[0];
+				var pokemon = new Pokemon(speciesId, 0, battle);
+
+				// Grab primary typing color
+				var $typed = $("<div></div>").addClass("color-reader buff " + pokemon.types[0]);
+				$("body").append($typed);
+				var lineColor = $typed.css("background-color")
+				$typed.remove();
+
+				$(".modal .usage-legend").eq(canvasId).css("border-top-color", lineColor);
+
+				if(canvasId != 0){
+					ctx.clearRect(0, 0, cnvWidth, cnvHeight);
+					ctx.setLineDash([5, 5]);
+				}
+
+				// Draw main trend data
+				var startY = cnvHeight - ((r.usageTrend[0] / yAxisMax) * cnvHeight);
+				ctx.strokeStyle = lineColor;
+				ctx.lineWidth = 4;
+
+				ctx.beginPath();
+				ctx.moveTo(0, r.startY);
+
+				if(animate){
+					// Animate trend line
+					var n = 0;
+
+					var drawInterval = setInterval(function(){
+						var x = (n / (r.usageTrend.length-1)) * cnvWidth;
+						var y = cnvHeight - ((r.usageTrend[n] / yAxisMax) * cnvHeight);
+
+						ctx.lineTo(x, y);
+						ctx.stroke();
+						n++;
+
+						if(n >= r.usageTrend.length){
+							clearInterval(drawInterval);
+						}
+					}, 25);
+				} else{
+					// Draw trend line without animation
+					for(var n = 0; n < r.usageTrend.length; n++){
+						var x = (n / (r.usageTrend.length-1)) * cnvWidth;
+						var y = cnvHeight - ((r.usageTrend[n] / yAxisMax) * cnvHeight);
+
+						ctx.lineTo(x, y);
+						ctx.stroke();
+					}
+				}
+
+
+			}
+
+			// Select a Pokemon to compare usage
+
+			function compareUsage(e){
+				var baseTrainingId = $(".modal").attr("training-id");
+				var compareTrainingId = $(".modal .usage-compare-select option:selected").val();
+
+				var rows = [
+					data.performers.filter( ranking => ranking.pokemon == baseTrainingId)[0],
+					data.performers.filter( ranking => ranking.pokemon == compareTrainingId)[0],
+				];
+
+				var compareSpeciesId = compareTrainingId.split(" ")[0];
+				var pokemon = new Pokemon(compareSpeciesId, 0, battle);
+
+				$(".modal .usage-compare-select").attr("class", "usage-compare-select " + pokemon.types[0]);
+
+				drawUsageChart(rows, false);
 			}
 
 			// Turn checkboxes on and off

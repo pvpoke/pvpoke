@@ -1,0 +1,35 @@
+{
+    "name": "catacomb",
+    "title": "Silph Factions (Catacomb)",
+    "include": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["bug", "ice", "dark", "rock", "grass"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["samurott", "seaking", "milotic", "qwilfish"]
+    }],
+    "exclude": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["steel"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["hawlucha"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["bulbasaur", "ivysaur", "venusaur", "oddish", "gloom", "vileplume", "bellsprout", "weepinbell", "victreebel", "roselia", "budew", "roserade", "foongus", "amoonguss"]
+    }, {
+        "filterType": "tag",
+        "name": "Tag",
+        "values": ["legendary", "mythical", "shadow", "mega", "regional"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["scrafty", "obstagoon", "dewgong", "ninetales_alolan", "crustle", "aurorus", "amaura", "walrein", "qwilfish_hisuian", "overqwil", "araquanid", "trevenant", "magcargo", "dwebble"]
+    }],
+	"allowSameSpecies": true
+}

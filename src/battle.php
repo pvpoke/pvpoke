@@ -31,7 +31,6 @@ require_once 'header.php';
 	<p class="description single">Select two Pokemon from any league to fight a simulated battle. Customize movesets, levels, IV's, and shields.</p>
 	<p class="description multi hide">Battle one Pokemon against an entire league or cup. Explore overall performance or individual matchups against a group of Pokemon.</p>
 	<p class="description matrix hide">Battle two groups of Pokemon against each other and see a matrix of the results. Use this to explore mass matchups or compare different Pokemon, movesets, or IV's. You can change how the matrix results display on the <a href="<?php echo $WEB_ROOT; ?>settings/">Settings page</a>.</p>
-	<p class="description matrix hide"><i>Reminder: Simulating your opponent's specific Pokemon isn't allowed during Silph League Arena tournaments. Remember to prepare beforehand and follow timely play.</i></p>
 </div>
 
 <div class="section poke-select-container single">
@@ -42,8 +41,18 @@ require_once 'header.php';
 </div>
 
 <div class="section battle">
-	<button class="battle-btn button">Battle</button>
-	<button class="update-btn button">Update</button>
+	<button class="battle-btn button">
+		<span class="btn-content-wrap">
+			<span class="btn-icon btn-icon-battle"></span>
+			<span class="btn-label">Battle</span>
+		</span>
+	</button>
+	<button class="update-btn button">
+		<span class="btn-content-wrap">
+			<span class="btn-icon btn-icon-battle"></span>
+			<span class="btn-label">Update</span>
+		</span>
+	</button>
 	<div class="tooltip"><h3 class="name"></h3><div class="details"></div></div>
 
 	<div class="battle-results single">
@@ -78,7 +87,6 @@ require_once 'header.php';
 			</div>
 			<div class="disclaimer">* Results may differ from actual gameplay depending on connectivity, device, player decisions, or other factors.</div>
 		</div>
-		<button class="bulk-btn button">Explore Win Conditions</button>
 		<div class="summary section white"></div>
 		<div class="tip automated">Hover over or tap the timeline for details. <a href="<?php echo $WEB_ROOT; ?>articles/guide-to-fast-move-registration/">Read more</a> about the timeline.</div>
 		<div class="tip sandbox">Click the circles to edit actions.</div>
@@ -116,28 +124,28 @@ require_once 'header.php';
 						<tr>
 							<td></td>
 							<td></td>
-							<td>0 <span class="shield shield-none"></span></td>
-							<td>1 <span class="shield"></span></td>
-							<td>2 <span class="shield"></span></td>
+							<td><div class="x-axis">0 <span class="shield shield-none"></span></div></td>
+							<td><div class="x-axis">1 <span class="shield"></span></div></td>
+							<td><div class="x-axis">2 <span class="shield"></span></div></td>
 						</tr>
 						<tr>
 							<td rowspan="4"><span class="name name-1">Pokemon</span></td>
-							<td>0 <span class="shield shield-none"></span></td>
-							<td><a href="#" class="rating star battle-0-0" shields="0,0">100</a></td>
-							<td><a href="#" class="rating star battle-1-0" shields="1,0">100</a></td>
-							<td><a href="#" class="rating star battle-2-0" shields="2,0">100</a></td>
+							<td class="y-axis">0 <span class="shield shield-none"></span></td>
+							<td><a href="#" class="rating margin-6 battle-0-0" shields="0,0">100</a></td>
+							<td><a href="#" class="rating margin-6 battle-1-0" shields="1,0">100</a></td>
+							<td><a href="#" class="rating margin-6 battle-2-0" shields="2,0">100</a></td>
 						</tr>
 						<tr>
-							<td>1 <span class="shield"></span></td>
-							<td><a href="#" class="rating star battle-0-1" shields="0,1">100</a></td>
-							<td><a href="#" class="rating star battle-1-1" shields="1,1">100</a></td>
-							<td><a href="#" class="rating star battle-2-1" shields="2,1">100</a></td>
+							<td class="y-axis">1 <span class="shield"></span></td>
+							<td><a href="#" class="rating margin-6 battle-0-1" shields="0,1">100</a></td>
+							<td><a href="#" class="rating margin-6 battle-1-1" shields="1,1">100</a></td>
+							<td><a href="#" class="rating margin-6 battle-2-1" shields="2,1">100</a></td>
 						</tr>
 						<tr>
-							<td>2 <span class="shield"></span></td>
-							<td><a href="#" class="rating star battle-0-2" shields="0,2">100</a></td>
-							<td><a href="#" class="rating star battle-1-2" shields="1,2">100</a></td>
-							<td><a href="#" class="rating star battle-2-2" shields="2,2">100</a></td>
+							<td class="y-axis">2 <span class="shield"></span></td>
+							<td><a href="#" class="rating margin-6 battle-0-2" shields="0,2">100</a></td>
+							<td><a href="#" class="rating margin-6 battle-1-2" shields="1,2">100</a></td>
+							<td><a href="#" class="rating margin-6 battle-2-2" shields="2,2">100</a></td>
 						</tr>
 					</table>
 					<p class="center">Click or tap to view battles.</p>
@@ -154,18 +162,24 @@ require_once 'header.php';
 
 					<p class="timing-none">Optimal Charged Move timing isn't applicable for <span class="name-attacker">Pokemon</span> in this matchup.</p>
 
-					<p class="timing-most-optimal">When Fast Moves align, <span class="name-attacker">Pokemon</span> should throw its Charged Moves after <span class="optimal-1"></span>, <span class="optimal-2"></span>, or <span class="optimal-3"></span> Fast Moves for the most optimal timing.</p>
+					<p class="timing-offset"><span class="name-attacker">Pokemon</span> is offset and should throw first to realign and prevent their opponent benefiting from optimal timing.</p>
+
+					<p class="timing-most-optimal"><span class="name-attacker">Pokemon</span> should throw its Charged Moves after <span class="optimal-1"></span>, <span class="optimal-2"></span>, or <span class="optimal-3"></span> Fast Moves for the most optimal timing.</p>
 				</div>
 
 				<h2 class="center">Breakpoints &amp; Bulkpoints</h2>
 
 				<div class="breakpoints-section">
 					<p>In Pokemon GO, damage is dealt in whole numbers. A breakpoint is when a Pokemon has high enough Attack to deal 1 more damage with their Fast Move. A bulkpoint is when a Pokemon has high enough Defense to take 1 less damage from their opponent's Fast Move.</p>
-					<p><span class="name-attacker">Pokemon</span> can reach the following breakpoints against this <span class="name-defender">Pokemon</span>:</p>
+					<p><span class="name-attacker">Pokemon</span> can reach the breakpoints below against this <span class="name-defender">Pokemon</span>.</p>
+
+					<select class="breakpoint-move"></select>
+
+
 
 					<table class="stats-table breakpoints" cellspacing="0">
 						<tr>
-							<td><span class="name name-fast">Move</span></td>
+							<td><span class="name">Damage</span></td>
 							<td><span class="name">Minimum Attack</span></td>
 							<td><span class="name">Attack to Guarantee</span></td>
 							<td><span class="name">Top Level &amp; IV's</span></td>
@@ -176,9 +190,11 @@ require_once 'header.php';
 
 					<p><span class="name-attacker">Pokemon</span> can reach the following bulkpoints against this <span class="name-defender">Pokemon</span>:</p>
 
+					<select class="bulkpoint-move"></select>
+
 					<table class="stats-table bulkpoints" cellspacing="0">
 						<tr>
-							<td><span class="name name-fast">Move</span></td>
+							<td><span class="name">Damage</span></td>
 							<td><span class="name">Minimum Defense</span></td>
 							<td><span class="name">Defense to Guarantee</span></td>
 							<td><span class="name">Top Level &amp; IV's</span></td>
@@ -216,8 +232,8 @@ require_once 'header.php';
 					</tr>
 					<tr>
 						<td class="label">Battle Rating</td>
-						<td class="stat-battle-rating"><span class="rating star">100</span></td>
-						<td class="stat-battle-rating"><span class="rating star">100</span></td>
+						<td class="stat-battle-rating"><span class="rating">100</span></td>
+						<td class="stat-battle-rating"><span class="rating">100</span></td>
 					</tr>
 					<tr>
 						<td class="label">Total Damage</td>
@@ -369,9 +385,15 @@ require_once 'header.php';
 			</div>
 
 			<p class="battle">Explore battle results against this group of Pokemon.</p>
-			<p class="breakpoint">Explore Fast Move damage dealt to this group of Pokemon.</p>
-			<p class="bulkpoint">Explore Fast Move damage received from this group.</p>
+			<p class="breakpoint">Explore move damage dealt to this group of Pokemon.</p>
+			<p class="bulkpoint">Explore move damage received from this group.</p>
 			<p class="attack">Explore Attack stat differential against this group of Pokemon to analyze Charged Move ties.</p>
+
+			<select class="breakpoint-mode">
+				<option value="fast">Fast Move</option>
+				<option value="cm1">Charged Move 1</option>
+				<option value="cm2">Charged Move 2</option>
+			</select>
 
 			<div class="table-container">
 				<table class="matrix-table rating-table" cellspacing="0">
@@ -439,7 +461,6 @@ require_once 'header.php';
 
 <?php require_once 'modules/search-string-help.php'; ?>
 
-<!--test 2-->
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/Interface.js?v=<?php echo $SITE_VERSION; ?>"></script>

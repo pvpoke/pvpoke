@@ -93,6 +93,10 @@ Trait.evaluateStat = function(stat, subject, opponent){
 		effect *= 1.25;
 	}
 
+	if(stat == "spD" && subject.hasTrait("ice_scales")){
+		effect *= 2;
+	}
+
 	return effect;
 }
 

@@ -1,0 +1,13 @@
+{
+    "name": "littlecatch",
+    "title": "Little Catch Cup",
+    "include": [],
+    "exclude": [{
+        "filterType": "id",
+        "values": ["articuno", "celebi", "ho_oh", "hoopa", "lugia", "moltres", "rayquaza", "regice", "regieleki", "regigigas", "shaymin", "shaymin_sky", "zapdos", "registeel", "cresselia", "guzzlord", "deoxys_defense", "mew", "tapu_fini", "regirock", "regice", "zygarde_complete", "zygarde", "victini", "raikou_shadow", "suicune_shadow", "entei_shadow", "gengar_shadow"]
+    }, {
+		"filterType": "tag",
+		"values": ["mega"]
+	}],
+    "levelCap": 50
+}

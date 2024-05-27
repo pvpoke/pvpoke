@@ -1,0 +1,12 @@
+{
+	"name": "catch",
+	"title": "Catch Cup",
+	"include": [],
+	"exclude": [{
+		"filterType": "id",
+		"values": ["deoxys_defense", "regirock", "regice", "mew", "victini", "genesect", "rayquaza", "zygarde", "latios", "latias", "raikou", "suicune", "entei", "celebi", "diancie", "regidrago", "regieleki", "ho_oh", "buzzwole", "drapion_shadow", "marowak_alolan_shadow", "lapras_shadow", "hitmontop_shadow", "meganium_shadow", "jumpluff_shadow", "steelix_shadow", "walrein_shadow", "poliwrath_shadow", "politoed_shadow", "sealeo_shadow", "guzzlord", "zapdos_shadow"]
+	}, {
+		"filterType": "tag",
+		"values": ["mega"]
+	}]
+}

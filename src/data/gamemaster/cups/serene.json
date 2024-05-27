@@ -1,0 +1,21 @@
+{
+    "name": "serene",
+    "title": "Battle Frontier (Serene)",
+	"include": [{
+        "filterType": "type",
+        "values": ["water","normal","psychic"]
+    },{
+        "filterType": "id",
+        "values": ["hitmontop","hitmontop_shadow","haunter", "haunter_shadow","conkeldurr","gengar", "gengar_shadow"]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega"]
+    }, {
+        "filterType": "id",
+        "values": ["araquanid", "lanturn","pidgeot","cresselia","medicham","poliwrath","obstagoon","wobbuffet","dubwool","vigoroth","heliolisk","toxapex","chansey","greedent","chinchou","lickitung","mantine","miltank","gardevoir","wigglytuff","primarina","rotom_wash","lanturnw","empoleon","feraligatr","gallade"]
+    },{
+        "filterType": "type",
+        "values": ["grass"]
+    }]
+}

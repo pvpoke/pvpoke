@@ -1,0 +1,20 @@
+{
+	"name": "cliffhanger",
+	"title": "Cliffhanger",
+	"include": [],
+	"exclude": [],
+	"tierRules": {
+		"max": 17,
+		"floor": 0,
+		"tiers": [{
+			"points": 9,
+			"pokemon": ["altaria", "azumarill", "bastiodon", "lanturn", "lickitung", "medicham", "noctowl", "registeel", "sableye", "stunfisk_galarian", "trevenant"]
+		}, {
+			"points": 5,
+			"pokemon": ["abomasnow", "araquanid", "aurorus", "charizard", "cofagrigus", "cresselia", "deoxys_defense", "diggersby", "drapion", "dubwool", "froslass", "gliscor", "jellicent", "jumpluff",  "mandibuzz", "ninetales_alolan", "obstagoon", "pelipper", "pidgeot", "regirock", "runerigus", "scrafty", "skarmory", "swampert", "tapu_fini", "toxapex", "tropius", "umbreon", "venusaur", "vigoroth", "walrein"]
+		}, {
+			"points": 1,
+			"pokemon": ["beedrill", "bronzong", "buzzwole", "chansey", "chesnaught", "dragalge", "dewgong", "dragonair", "dragonite", "dunsparce", "empoleon", "ferrothorn", "galvantula", "gligar", "golbat", "granbull", "greedent", "grimer_alolan", "guzzlord", "hakamo_o", "qwilfish_hisuian", "hypno", "jirachi", "kommo_o", "lapras", "lugia", "lurantis", "machamp", "magcargo", "mantine", "meganium", "marowak_alolan", "miltank", "mew", "muk_alolan", "ninetales", "nidoqueen", "overqwil", "pachirisu", "politoed", "probopass", "roserade", "sandslash_alolan", "serperior", "sirfetchd", "skuntank", "sneasler", "steelix", "talonflame", "tentacruel", "stunfisk", "toxicroak", "victini", "victreebel", "whiscash", "wigglytuff", "wobbuffet", "zweilous"]
+		}]
+	}
+}

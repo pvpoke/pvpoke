@@ -1,0 +1,27 @@
+{
+    "name": "rainstorm",
+    "title": "Devon Rainstorm Cup",
+    "include": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["dark", "flying", "water"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["ho_oh_shadow", "lugia_shadow"]
+    }],
+    "exclude": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["electric", "fairy", "fighting"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["obstagoon", "mantine", "toxapex", "whiscash", "skarmory", "ho_oh", "lugia", "celesteela", "pidgeot"]
+    }, {
+        "filterType": "tag",
+        "name": "Tag",
+        "values": ["mega"]
+    }],
+    "levelCap": 50
+}

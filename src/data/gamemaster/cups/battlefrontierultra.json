@@ -1,0 +1,25 @@
+{
+    "name": "battlefrontierultra",
+    "title": "Battle Frontier (Ultra League)",
+    "include": [],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega"]
+    }, {
+        "filterType": "id",
+        "values": ["zygarde_complete"]
+    }],
+	"restrictedPicks": 1,
+	"restrictedPokemon": ["cobalion", "cresselia", "giratina_altered", "registeel", "steelix", "swampert"],
+    "tierRules": {
+        "max": 16,
+        "floor": 0,
+        "tiers": [{
+            "points": 6,
+            "pokemon": ["cobalion", "cresselia", "giratina_altered", "registeel", "steelix", "swampert"]
+        }, {
+            "points": 5,
+            "pokemon": ["charizard", "clefable", "deoxys_defense", "greedent", "jellicent", "mandibuzz", "ninetales_alolan", "pidgeot", "sandslash_alolan", "stunfisk_galarian", "tapu_fini", "trevenant", "virizion", "walrein"]
+        }]
+    }
+}

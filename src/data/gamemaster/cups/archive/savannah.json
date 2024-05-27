@@ -1,0 +1,18 @@
+{
+    "name": "savannah",
+    "title": "Battle Frontier (Savannah)",
+    "include": [{
+        "filterType": "id",
+        "values": ["blaziken","poliwrath","tyrunt","regirock","qwilfish","togetic"]
+    }, {
+        "filterType": "type",
+        "values": ["electric", "normal", "grass","bug"]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega","shadow"]
+    }, {
+        "filterType": "id",
+        "values": ["diggersby","pidgeot","vigoroth","dubwool","lanturn","stunfisk","noctowl"]
+    }]
+}

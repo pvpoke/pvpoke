@@ -39,7 +39,7 @@ var hexagon = {
         hexagoncontext.stroke();
         hexagoncontext.fill();
     },
-    draw: function(values, color) {
+    draw: function(values, color, compare) {
         if (values.length < 6) {
             return false;
         }
@@ -64,6 +64,14 @@ var hexagon = {
         hexagoncontext = this.hexagon.getContext('2d');
         hexagoncontext.fillStyle = color;
         hexagoncontext.strokeStyle = color;
+
+		if(compare){
+			hexagoncontext.lineWidth = 2;
+			hexagoncontext.setLineDash([5, 3]);
+		} else{
+			hexagoncontext.lineWidth = 1;
+		}
+
         hexagoncontext.beginPath();
         hexagoncontext.moveTo(width / 2, L * (1 - V[0]));
         hexagoncontext.lineTo(this.ssin(60) * L * (1 + V[1]) + S, (1 - V[1] / 2) * L);
@@ -73,7 +81,10 @@ var hexagon = {
         hexagoncontext.lineTo(this.ssin(60) * L * (1 - V[5]) + S, (1 - V[5] / 2) * L);
         hexagoncontext.lineTo(width / 2, L * (1 - V[0]));
         hexagoncontext.stroke();
-        hexagoncontext.fill();
+
+		if(! compare){
+			hexagoncontext.fill();
+		}
 
 		var width = this.hexagon.width;
 		var height = this.hexagon.height;

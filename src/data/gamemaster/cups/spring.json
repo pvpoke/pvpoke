@@ -1,0 +1,17 @@
+{
+    "name": "spring",
+    "title": "Spring Cup",
+    "include": [{
+        "filterType": "type",
+        "values": ["water", "grass", "fairy"]
+    }],
+    "exclude": [ {
+        "filterType": "tag",
+        "values": ["mega"]
+    }, {
+        "filterType": "id",
+        "values": ["toxapex", "mantine"]
+    }],
+	"partySize": 3,
+	"presetOnly": true
+}

@@ -50,6 +50,48 @@ var InterfaceMaster = (function () {
 					get = e.state;
 					self.loadGetData();
 				});
+
+				// CSV file download
+				var csv = 'Move,Type,Category,Damage,Energy,Turns,DPT,EPT,DPE\n';
+
+				for(var i = 0; i < gm.data.moves.length; i++){
+					var move = gm.data.moves[i];
+
+					var category = "";
+					var type = move.type.charAt(0).toUpperCase() + move.type.slice(1);
+					var damage = move.power;
+					var energy = 0;
+					var dpt = "";
+					var ept = "";
+					var dpe = "";
+					var turns = "";
+
+					if(move.energyGain > 0){
+						category = "Fast Attack"
+						energy = move.energyGain;
+						turns = move.cooldown / 500;
+						dpt = Math.floor( (move.power / turns) * 100) / 100;
+						ept = Math.floor( (energy / turns) * 100) / 100;
+					} else if(move.energy > 0){
+						category = "Charged Attack";
+						energy = move.energy;
+						dpe = Math.floor( (damage / energy) * 100) / 100;
+					}
+
+					csv += move.name + ',' + type + ',' + category + ',' + damage + ',' + energy + ',' + turns + ',' + dpt + ',' + ept + ',' + dpe;
+					csv += '\n';
+				}
+
+				const filename = 'moves.csv';
+
+				if (!csv.match(/^data:text\/csv/i)) {
+					filedata = [csv];
+					filedata = new Blob(filedata, { type: 'text/csv'});
+				}
+
+				$(".button.download-csv").attr("href", window.URL.createObjectURL(filedata));
+				$(".button.download-csv").attr("download", filename);
+
 			};
 
 			// Grabs ranking data from the Game Master
@@ -167,7 +209,11 @@ var InterfaceMaster = (function () {
 
 				// Send Google Analytics pageview
 
-				gtag('config', UA_ID, {page_location: (host+url), page_path: url});
+				gtag('event', 'page_view', {
+				  page_title: document.title,
+				  page_location: (host+"moves/"+moveMode+"/"),
+				  pageview_type: 'virtual'
+				});
 			}
 
 			// Refilter moves after being sorted
@@ -228,7 +274,7 @@ var InterfaceMaster = (function () {
 					movesetStats.push({ title: "Fast Damage", value: fastDamage});
 					movesetStats.push({ title: "Charged Damage", value: chargedDamage});
 					movesetStats.push({ title: "Total Damage", value: cycleDamage});
-					movesetStats.push({ title: "Fast Moves", value: moveCounts[0] + " - " + moveCounts[1] + " - " + moveCounts[2]});
+					movesetStats.push({ title: "Fast Moves", value: moveCounts[0] + " - " + moveCounts[1] + " - " + moveCounts[2] + " - " + moveCounts[3]});
 					movesetStats.push({ title: "Cycle Duration", value: cycleDurationStr});
 					movesetStats.push({ title: "Damage Per Turn", value: cycleDPT});
 				}

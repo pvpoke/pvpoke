@@ -1,17 +1,17 @@
 /* CSS Document */
 body {
   background-color: #030509;
-  background-image: url("../../img/themes/night/bg.jpg");
-  color: #eee;
+  background-image: url("../../img/themes/sunflower/sunflower-bg-night.jpg");
+  color: #f9fdff;
 }
 
 a {
-  color: #30b5ab;
+  color: #3eca9f;
 }
 
 .section.white,
 .poke .poke-stats {
-  background: #444;
+  background: #080c10;
 }
 
 select, .league-select, .cup-select,
@@ -20,8 +20,9 @@ option, .category-select optgroup,
 input,
 .poke-search,
 textarea {
-  background: #222;
-  color: #fff;
+  background: #003462;
+  border: 1px solid #0f6647;
+  color: #f9fdff;
 }
 select::-webkit-input-placeholder, .league-select::-webkit-input-placeholder, .cup-select::-webkit-input-placeholder,
 option::-webkit-input-placeholder, .category-select optgroup::-webkit-input-placeholder,
@@ -29,7 +30,7 @@ option::-webkit-input-placeholder, .category-select optgroup::-webkit-input-plac
 input::-webkit-input-placeholder,
 .poke-search::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: #aaa;
+  color: #3eca9f;
 }
 select::-moz-placeholder, .league-select::-moz-placeholder, .cup-select::-moz-placeholder,
 option::-moz-placeholder, .category-select optgroup::-moz-placeholder,
@@ -37,7 +38,7 @@ option::-moz-placeholder, .category-select optgroup::-moz-placeholder,
 input::-moz-placeholder,
 .poke-search::-moz-placeholder,
 textarea::-moz-placeholder {
-  color: #aaa;
+  color: #3eca9f;
 }
 select:-ms-input-placeholder, .league-select:-ms-input-placeholder, .cup-select:-ms-input-placeholder,
 option:-ms-input-placeholder, .category-select optgroup:-ms-input-placeholder,
@@ -45,7 +46,7 @@ option:-ms-input-placeholder, .category-select optgroup:-ms-input-placeholder,
 input:-ms-input-placeholder,
 .poke-search:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
-  color: #aaa;
+  color: #3eca9f;
 }
 select:-moz-placeholder, .league-select:-moz-placeholder, .cup-select:-moz-placeholder,
 option:-moz-placeholder, .category-select optgroup:-moz-placeholder,
@@ -53,7 +54,33 @@ option:-moz-placeholder, .category-select optgroup:-moz-placeholder,
 input:-moz-placeholder,
 .poke-search:-moz-placeholder,
 textarea:-moz-placeholder {
-  color: #aaa;
+  color: #3eca9f;
+}
+select:focus, select:focus-visible, .league-select:focus, .league-select:focus-visible, .cup-select:focus, .cup-select:focus-visible,
+option:focus,
+option:focus-visible, .category-select optgroup:focus, .category-select optgroup:focus-visible,
+.poke input:focus,
+.poke input:focus-visible, .poke select:focus, .poke select:focus-visible,
+input:focus,
+input:focus-visible,
+.poke-search:focus,
+.poke-search:focus-visible,
+textarea:focus,
+textarea:focus-visible {
+  outline: 1px solid #3eca9f;
+}
+
+.league-select, .cup-select, .format-select, .slot-select, .category-select {
+  background: #003462;
+}
+
+.poke .poke-select {
+  border: 2px solid #003462;
+  background: #080c10;
+}
+
+.modal .modal-container .poke-search {
+  background: #003462 !important;
 }
 
 .modal .sandbox-move-select .move-select option {
@@ -61,63 +88,90 @@ textarea:-moz-placeholder {
 }
 
 .poke input, .poke select {
-  border: 1px solid #666;
+  border: 1px solid #0f6647;
+}
+.poke input::-webkit-input-placeholder, .poke select::-webkit-input-placeholder {
+  color: #3eca9f !important;
+}
+.poke input::-moz-placeholder, .poke select::-moz-placeholder {
+  color: #3eca9f !important;
+}
+.poke input:-ms-input-placeholder, .poke select:-ms-input-placeholder {
+  color: #3eca9f !important;
+}
+.poke input:-moz-placeholder, .poke select:-moz-placeholder {
+  color: #3eca9f !important;
+}
+
+.poke .form-select-container .form-select, .poke .form-select-container a.form-link {
+  color: #3eca9f;
 }
 
 .poke-search {
-  border: 1px solid #aaa;
+  border: 1px solid #0f6647;
+}
+
+.poke input.poke-search {
+  background: #003462;
+  border: 1px solid #0f6647;
+}
+.poke input.poke-search::-webkit-input-placeholder {
+  color: #0f6647;
+}
+.poke input.poke-search::-moz-placeholder {
+  color: #0f6647;
+}
+.poke input.poke-search:-ms-input-placeholder {
+  color: #0f6647;
+}
+.poke input.poke-search:-moz-placeholder {
+  color: #0f6647;
 }
 
 header {
-  background: #444;
+  background: #080c10;
 }
 header .menu a,
 header .title a {
-  color: #eabd49;
+  color: #f9fdff;
 }
 header .hamburger .meat {
-  background: #eabd49;
+  background: #f9fdff;
 }
 header .icon-battle {
-  background-image: url("../../img/themes/night/icon_battle.png");
+  background-image: url("../../img/themes/sunflower/nav-battle-white.png");
 }
 header .icon-train {
-  background-image: url("../../img/themes/night/icon_train.png");
+  background-image: url("../../img/themes/sunflower/nav-train-white.png");
 }
 header .icon-rankings {
-  background-image: url("../../img/themes/night/icon_rankings.png");
+  background-image: url("../../img/themes/sunflower/nav-rankings-white.png");
 }
 header .icon-team {
-  background-image: url("../../img/themes/night/icon_team.png");
+  background-image: url("../../img/themes/sunflower/nav-team-white.png");
 }
 header .icon-contribute {
-  background-image: url("../../img/themes/night/icon_contribute.png");
+  background-image: url("../../img/themes/sunflower/nav-heart-white.png");
 }
-header .icon-articles {
-  background-image: url("../../img/themes/night/icon_articles.png");
-}
-header .icon-moves {
-  background-image: url("../../img/themes/night/icon_moves.png");
-}
-header .icon-settings {
-  background-image: url("../../img/themes/night/icon_settings.png");
+header .menu .parent-menu > a span {
+  background-image: url("../../img/themes/sunflower/dropdown-triangle-white.png");
 }
 
 h1 {
-  color: #fff;
+  color: #f9fdff;
 }
 
 .poke .poke-stats .stat-container {
-  color: #eee;
+  color: #f9fdff;
 }
 .poke .poke-stats .stat-container .bar-back .bar {
   background: rgba(255, 255, 255, 0.6);
 }
 .poke .poke-stats a {
-  color: #30b5ab;
+  color: #3eca9f;
 }
 .poke .poke-stats h3.section-title {
-  color: #eee;
+  color: #f9fdff;
 }
 .poke .poke-stats .move-select, .poke .poke-stats .type {
   color: #000;
@@ -128,16 +182,23 @@ h1 {
 .poke .form-select-container a.form-link {
   background: #222;
 }
-.poke input.poke-search {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.75);
+
+.check.on span {
+  background: #3eca9f !important;
+  border: 2px solid #003462;
 }
 
 .check span {
-  border: 2px solid #888;
+  border: 2px solid #203c49;
+  background: #003462;
+}
+
+.check:hover:not(.on) span {
+  background: #183737;
 }
 
 a.toggle {
-  color: #30b5ab;
+  color: #3eca9f;
 }
 
 .move-bars .move-bar.active {
@@ -179,21 +240,21 @@ a.toggle {
 }
 
 .ranking-categories a {
-  color: #30b5ab;
+  color: #3eca9f;
 }
 .ranking-categories a.selected {
-  background: #30b5ab;
-  color: #eee;
+  background: #003462;
+  color: #3eca9f;
 }
 
 .modal .modal-header {
   color: #000;
 }
 .modal .modal-container {
-  border: 2px solid #888;
+  border: 2px solid #183737;
 }
 .modal .modal-content {
-  background: #444;
+  background: #080c10;
 }
 
 .section.typings li span {
@@ -248,12 +309,12 @@ a.toggle {
 .custom-rankings-import textarea.import,
 .custom-rankings-list .pokemon-list {
   background: #222;
-  color: #eee;
+  color: #f9fdff;
 }
 
 .poke-search-container a.search-info {
-  color: #30b5ab;
-  border: 1px solid #30b5ab;
+  color: #3eca9f;
+  border: 1px solid #3eca9f;
 }
 
 .battle-results.matrix .table-container tbody th,
@@ -277,33 +338,65 @@ a.toggle {
 }
 
 .pokebox a.open-pokebox {
-  background-color: #222;
-  color: #fff;
+  background-color: #003462;
+  color: #f9fdff;
 }
 
 .modal .pokebox-options a.pokebox-edit,
 .modal .pokebox-options a.pvpoke-sponsor {
-  color: #fff;
-  background-color: #222;
+  color: #f9fdff;
+  background-color: #080c10;
+}
+
+.modal .iv-rank-details .iv-rank-result.primary {
+  border: 1px solid #f9fdff;
+}
+
+.modal .iv-rank-details h3 {
+  border-bottom: 1px solid #f9fdff;
 }
 
 .matrix-table thead td:first-of-type, .meta-table thead td:first-of-type, .threats-table thead td:first-of-type, .alternatives-table thead td:first-of-type {
   background-image: url("../../img/matrix-arrow-header-dark.png") !important;
 }
 
+.poke .form-group {
+  border-color: #3eca9f;
+}
+
 .poke .form-group .option {
-  background: #555;
+  background: #003462;
+  border-color: #3eca9f;
 }
 .poke .form-group .option.on {
-  background: #222;
-  -moz-box-shadow: inset 0 0 10px #000;
-  -webkit-box-shadow: inset 0 0 10px #000;
-  box-shadow: inset 0 0 10px #000;
+  background: #0f6647;
+  -moz-box-shadow: inset 0 0 10px #3eca9f;
+  -webkit-box-shadow: inset 0 0 10px #3eca9f;
+  box-shadow: inset 0 0 10px #3eca9f;
+}
+
+.home .flex.new-header a {
+  color: #3eca9f;
+  background-image: url("../../img/themes/sunflower/rss-green.png");
+}
+
+.feed-container {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.feed .news-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 @media only screen and (min-width: 721px) {
   .menu .submenu .submenu-wrap {
-    background: #444;
+    background: #003462;
+  }
+
+  header .menu > a:hover, header .menu > a.selected,
+header .menu > .parent-menu:hover > a, header .menu .parent-menu > a.selected,
+.ranking-categories a.selected, .ranking-categories a:hover {
+    background-color: #003462;
   }
 }
 

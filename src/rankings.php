@@ -55,59 +55,68 @@ switch($cup){
 		$league = 'Mega Master League';
 		break;
 
-	case "fantasy":
-		$league = 'Fantasy Cup';
-		break;
-
-
-	case "color":
-		$league = 'Color Cup';
-		break;
-
-	case "psychic":
-		$league = 'Psychic Cup';
-		break;
-
 	case "retro":
 		$league = 'Retro Cup';
 		break;
 
-	case "naiad":
-		$league = 'Silph Naiad Cup';
+	case "electric":
+		$league = 'Electric Cup';
 		break;
 
-	case "ionic":
-		$league = 'Silph Ionic Cup';
+	case "jungle":
+		$league = 'Jungle Cup';
 		break;
 
-	case "justicar":
-		$league = 'Silph Factions (Justicar)';
+	case "zodiac":
+		$league = 'Devon Zodiac Cup';
 		break;
 
-	case "championship":
-		$league = '2022 Championship Series';
+	case "sovereign":
+		$league = 'Devon Sovereign Cup';
+		break;
+
+	case "rainstorm":
+		$league = 'Devon Rainstorm Cup';
+		break;
+
+	case "genetic":
+		$league = 'Devon Genetic Cup';
+		break;
+
+	case "catch":
+		$league = 'Catch Cup';
+		break;
+
+	case "little":
+		$league = 'Little Cup';
 		break;
 
 	case "mega":
 		$league = 'Mega Master League';
 		break;
 
-	case "factions":
-	case "factionsgreat":
-	case "factionsultra":
-	case "factionsmaster":
-	case "justicar":
-	case "catacomb":
-	case "arcana":
-		$league = 'Silph Factions';
+	case "enchanted":
+		$league = 'Battle Frontier (Enchanted)';
 		break;
 
-	case "element":
-		$league = 'Element Cup';
+	case "primordial":
+		$league = 'Battle Frontier (Primordial)';
 		break;
 
-	case "halloween":
-		$league = 'Halloween Cup';
+	case "serene":
+		$league = 'Battle Frontier (Serene)';
+		break;
+
+	case "battlefrontiermaster":
+		$league = 'Battle Frontier (Master)';
+		break;
+
+	case "littlecatch":
+		$league = 'Little Catch Cup';
+		break;
+
+	case "evolution":
+		$league = 'Evolution Cup';
 		break;
 
 	case "remix":
@@ -124,6 +133,10 @@ if(isset($_GET['p'])){
 	// Put Pokemon names in the meta title
 
 	$name = ucwords(str_replace('_',' ', explode('-', htmlspecialchars($_GET['p']))[0]));
+
+	if($name == 'Lanturnw'){
+		$name = 'Lanturn';
+	}
 
 	$META_TITLE = $name . ' ' . $league . ' PvP Rankings';
 
@@ -175,7 +188,7 @@ require_once 'header.php';
 
 	<p class="description small switches hide"><b>The best Pokemon to switch to from an unfavorable lead.</b> These Pokemon have safe matchups and can pressure shields or deal heavy damage even in their losses.</p>
 
-	<p class="description small chargers hide"><b>The best Pokemon with an energy advantage.</b> Fast energy gain or powerful moves make them dangerous after building up energy.</p>
+	<p class="description small chargers hide"><b>The best Pokemon with an energy advantage.</b> Fast energy gain or powerful moves make them dangerous after building up energy. This category also factors in a Pokemon's ability to farm down weakened opponent or overfarm in advantageous matchups.</p>
 
 	<p class="description small consistency hide"><b>These Pokemon perform the most dependably.</b> They provide consistent damage and rely less on baiting shields than other Pokemon. Shorter Fast Moves also help improve consistency.</p>
 
@@ -212,7 +225,7 @@ require_once 'header.php';
 	</div>
 
 	<div class="poke-search-container">
-		<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />
+		<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" autocomplete="off" />
 		<a href="#" class="search-info" title="Search Help">?</a>
 		<a href="#" class="search-traits" title="Search Traits">+</a>
 	</div>
@@ -282,19 +295,13 @@ require_once 'header.php';
 </div>
 
 <?php require_once 'modules/search-string-help.php'; ?>
-
-<div class="search-traits-selector hide">
-	<p>Select the options below to search for Pokemon traits and playstyles.</p>
-
-	<div class="traits"></div>
-
-	<div class="center flex">
-		<div class="button search">Search</div>
-	</div>
-</div>
-
+<?php require_once 'modules/search-traits.php'; ?>
 
 <?php require_once 'modules/rankingdetails.php'; ?>
+
+<div class="hide">
+	<?php require 'modules/pokeselect.php'; ?>
+</div>
 
 <!--test 2-->
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
@@ -302,6 +309,7 @@ require_once 'header.php';
 <script src="<?php echo $WEB_ROOT; ?>js/interface/RankingInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineEvent.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/TimelineAction.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/battle/Battle.js?v=<?php echo $SITE_VERSION; ?>"></script>

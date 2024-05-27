@@ -25,11 +25,23 @@ function PokeSelect(element, i){
 	var currentEnergy; // The currently animated energy
 	var previousId = '';
 
-	this.init = function(pokes, b){
+	var ivCombinationCount = 4096;
+
+	this.init = function(pokes, b, filterData){
 		pokemon = pokes;
 		battle = b;
 
 		$.each(pokemon, function(n, poke){
+
+			if(poke.tags && poke.tags.indexOf("duplicate") > -1 && context != "modaloverrides"){
+				return;
+			}
+
+			if(filterData){
+				if(filterData.filter(p => p.speciesId == poke.speciesId).length == 0){
+					return;
+				}
+			}
 
 			var priority = 1;
 
@@ -37,29 +49,38 @@ function PokeSelect(element, i){
 				priority = poke.searchPriority;
 			}
 
-			searchArr.push({
+			var obj = {
 				speciesId: poke.speciesId,
 				speciesName: poke.speciesName.toLowerCase(),
 				dex: poke.dex,
 				priority: priority
-			});
+			};
+
+			if(poke.nicknames){
+				obj.nicknames = poke.nicknames;
+			}
+
+			// This array is searched for matching Pokemon
+			searchArr.push(obj);
 
 			var displayName = poke.speciesName;
 
-			if(poke.speciesId.indexOf("_xs") > -1){
-				displayName += " (Non XL)";
-			}
+			var $option = $("<option value=\""+poke.speciesId+"\">"+displayName+"</option>");
 
-			$pokeSelect.append("<option value=\""+poke.speciesId+"\" type-1=\""+poke.types[0]+"\" type-2=\""+poke.types[1]+"\">"+displayName+"</option");
+			$pokeSelect.append($option);
 		});
 
 		$el.find(".check.auto-level").addClass("on");
 		$el.find(".poke-search").val("");
+		$el.attr("context", context);
 
 		searchArr.sort((a,b) => (a.priority > b.priority) ? -1 : ((b.priority > a.priority) ? 1 : 0));
 
 		interface = InterfaceMaster.getInstance();
-		pokebox = new Pokebox($el.find(".pokebox"), self, "single", b);
+
+		if(typeof Pokebox === 'function'){
+			pokebox = new Pokebox($el.find(".pokebox"), self, "single", b);
+		}
 
 		self.clear();
 	}
@@ -140,6 +161,12 @@ function PokeSelect(element, i){
 				$el.find(".check.optimize-timing").addClass("on");
 			} else{
 				$el.find(".check.optimize-timing").removeClass("on");
+			}
+
+			if(selectedPokemon.startCooldown == 1000){
+				$el.find(".check.switch-delay").addClass("on");
+			} else{
+				$el.find(".check.switch-delay").removeClass("on");
 			}
 
 			if($el.find("input.level:focus, input.iv:focus").length == 0){
@@ -340,7 +367,7 @@ function PokeSelect(element, i){
 						// Show a link to the alternative form
 
 						$el.find(".form-select").hide();
-						$el.find(".form-link").show();
+						$el.find(".form-link").css("display", "block");
 						$el.find(".form-link").text(forms[0].speciesName);
 						$el.find(".form-link").attr("value", forms[0].speciesId);
 					}
@@ -352,6 +379,169 @@ function PokeSelect(element, i){
 			}
 
 		}
+	}
+
+	// Display the Pokemon's IV rank in the advanced stats section
+	this.updateIVRank = function(){
+		// Get rank value
+		var rankObj = selectedPokemon.getIVRank("overall");
+		var rank = rankObj.rank;
+		var count = ivCombinationCount = rankObj.count;
+
+
+		if(rank != 0){
+			$el.find(".iv-rank .value").html("#" + rank);
+
+			var rankColor = this.getIVRankColor(rank, count);
+			$el.find(".iv-rank").css("background", "rgba("+rankColor[0]+","+rankColor[1]+","+rankColor[2]+", 1)");
+		} else{
+			$el.find(".iv-rank .value").html("??");
+			$el.find(".iv-rank").css("background", "");
+		}
+
+		$el.find(".iv-rank .count").html(" / " + count);
+
+	}
+
+	this.getIVRankColor = function(rank, combinationCount){
+		// Display rank color
+		var highColor = [14, 176, 132];
+		var mediumColor = [220, 165, 23];
+		var lowColor = [198, 11, 11];
+
+		var ratio = rank / combinationCount;
+		var colorRatio = ratio / .25;
+
+		var startColor = highColor;
+		var endColor = mediumColor;
+
+		if(ratio > .25){
+			startColor = mediumColor;
+			endColor = lowColor;
+			ratio = (ratio - .25) / .75;
+		}
+
+		var rankColor = [0, 0, 0]; // Final color to be used
+
+		for(var i = 0; i < rankColor.length; i++){
+			var range = endColor[i] - startColor[i];
+			var base = startColor[i];
+
+			rankColor[i] = Math.floor(base + (range * colorRatio));
+		}
+
+		return rankColor;
+	}
+
+
+	// Generate and update the IV ranking table for the selected Pokemon's evolutionary family
+	this.updateIVTableResults = function(){
+		// Display results for this species first
+		var list = [];
+
+		if(selectedPokemon.family){
+			list = GameMaster.getInstance().getPokemonByFamily(selectedPokemon.family.id)
+		} else{
+			list = [GameMaster.getInstance().getPokemonById(selectedPokemon.speciesId)];
+		}
+
+		list.sort((a,b) => (a.dex > b.dex) ? 1 : ((b.dex > a.dex) ? -1 : 0));
+
+		// Move current Pokemon to front
+		for(var i = 0; i < list.length; i++){
+			if(list[i].speciesId == selectedPokemon.speciesId.replace("_shadow", "")){
+				list.unshift(list.splice(i, 1)[0]);
+			}
+		}
+
+		$(".modal .iv-rank-results").html("");
+
+		for(var i = 0; i < list.length; i++){
+			var $result = this.generateIVTableResult(list[i]);
+
+			if(i == 0){
+				$result.addClass("primary");
+			}
+
+			if($result.find("tbody tr").length > 0){
+
+				$(".modal .iv-rank-results").append($result);
+			}
+		}
+
+		$(".modal .count").html(ivCombinationCount);
+	}
+
+	// Generate the IV rankings values and HTML for a specific Pokemon in the modal view
+	this.generateIVTableResult = function(poke){
+		var leagues = [1500, 2500];
+		var levelCaps = [50, 51];
+		var statProductMin = [1500, 3500];
+
+		var $result = $(".modal .iv-rank-result.template").first().clone().removeClass("template hide");
+		var b = new Battle();
+		var rows = [];
+
+		for(var i = 0; i < leagues.length; i++){
+			var leagueDisqualified = false;
+
+			for(var n = 0; n < levelCaps.length; n++){
+				if(leagueDisqualified){
+					break;
+				}
+
+				b.setCP(leagues[i]);
+
+				var pokemon = new Pokemon(poke.speciesId, 0, b);
+				pokemon.initialize(true);
+				pokemon.levelCap = levelCaps[n];
+				pokemon.autoLevel = true;
+				pokemon.setIV("atk", selectedPokemon.ivs.atk);
+				pokemon.setIV("def", selectedPokemon.ivs.def);
+				pokemon.setIV("hp", selectedPokemon.ivs.hp);
+
+				// Select same Charged Moves so Return is applied for IV Floors
+				if(selectedPokemon.hasMove("RETURN")){
+					pokemon.selectMove("charged", "RETURN", 0);
+				}
+
+				var rankObj = pokemon.getIVRank("overall");
+
+				// Exclude leagues that aren't relevant for the league
+				if(leagues[i] - pokemon.cp < 300 || ((pokemon.stats.atk * pokemon.stats.def * pokemon.stats.hp) / 100) > statProductMin){
+					rows.push({
+						cp: pokemon.cp,
+						level: pokemon.level,
+						rank: rankObj.rank,
+						count: rankObj.count,
+						league: leagues[i]
+					});
+				} else{
+					leagueDisqualified = true;
+				}
+
+			}
+		}
+
+		// Remove duplicate/obsolete best buddy rows
+		for(var i = 0; i < rows.length; i++){
+			if(i > 0 && rows[i-1].level == rows[i].level){
+				rows.splice(i, 1);
+				i--;
+			}
+		}
+
+		// Update HTML with row results
+		$result.find("h3").html(poke.speciesName);
+
+		for(var i = 0; i < rows.length; i++){
+			var $row = $("<tr><td class=\"league-"+rows[i].league+"\">"+rows[i].cp+"</td><td>"+rows[i].level+"</td><td><div class=\"iv-rank\">#"+rows[i].rank+"</div></td></tr>");
+			var rankColor = this.getIVRankColor(rows[i].rank, rows[i].count);
+			$row.find(".iv-rank").css("background", "rgba("+rankColor[0]+","+rankColor[1]+","+rankColor[2]+", 1)");
+			$result.find("tbody").append($row);
+		}
+
+		return $result;
 	}
 
 	// During timeline playback, animate the health bar
@@ -437,6 +627,7 @@ function PokeSelect(element, i){
 		$el.find(".move-select").html('');
 		$el.find(".starting-health").val(selectedPokemon.stats.hp);
 		$el.find(".check.optimize-timing").removeClass("on");
+		$el.find(".check.switch-delay").removeClass("on");
 		$el.find(".check.priority").removeClass("on");
 		$el.find(".check.negate-fast-moves").addClass("on");
 		$el.find(".hp .bar.damage").hide();
@@ -505,6 +696,8 @@ function PokeSelect(element, i){
 		$el.find("input.iv[iv='def']").val(selectedPokemon.ivs.def);
 		$el.find("input.iv[iv='hp']").val(selectedPokemon.ivs.hp);
 
+		self.updateIVRank();
+
 		self.update();
 	}
 
@@ -558,23 +751,6 @@ function PokeSelect(element, i){
 		return isCustom;
 	}
 
-	// Show or hide Pokemon select options given array of types
-
-	this.filterByTypes = function(types){
-
-		$pokeSelect.find("option").removeClass("hide");
-
-		if(types.length > 0){
-			$pokeSelect.find("option").each(function(index, value){
-				if((types.indexOf($(this).attr("type-1")) > -1) || (types.indexOf($(this).attr("type-2")) > -1)){
-					$(this).removeClass("hide");
-				} else{
-					$(this).addClass("hide");
-				}
-			});
-		}
-	}
-
 	// Externally select the number of shields
 
 	this.setShields = function(value){
@@ -591,6 +767,14 @@ function PokeSelect(element, i){
 
 	this.resetShields = function(){
 		$el.find(".shield-picker .option.on").trigger("click");
+	}
+
+	// Remove specific Pokemon from the selectable list
+	this.removePokemonFromOptions = function(pokemonList){
+		for(var i = 0; i < pokemonList.length; i++){
+			$el.find(".poke-select option[value='"+pokemonList[i].speciesId+"']").remove();
+			searchArr.splice(searchArr.findIndex(p => p.speciesId == pokemonList[i].speciesId), 1);
+		}
 	}
 
 	// Select different Pokemon
@@ -617,6 +801,8 @@ function PokeSelect(element, i){
 		selectedPokemon.autoLevel = true;
 
 		self.reset();
+
+		self.updateIVRank();
 
 		self.update();
 
@@ -671,7 +857,7 @@ function PokeSelect(element, i){
 
 			modalWindow("Add Custom Move", $el.find(".custom-move"));
 
-			$(".modal .name").html(selectedPokemon.speciesName);
+			$(".modal .custom-move .name").html(selectedPokemon.speciesName);
 
 			var isFastMove = $(e.target).hasClass("fast");
 
@@ -768,11 +954,7 @@ function PokeSelect(element, i){
 
 	function submitSearchQuery(){
 
-		var searchStr = $el.find(".poke-search").val().toLowerCase();
-
-		if(searchStr == 'spooder'){
-			searchStr = 'galvantula';
-		}
+		var searchStr = $el.find(".poke-search").val().toLowerCase().trim();
 
 		if(searchStr == '')
 			return;
@@ -780,15 +962,36 @@ function PokeSelect(element, i){
 		for(var i = 0; i < searchArr.length; i++){
 			var pokeName = searchArr[i].speciesName;
 
+			// Name search
 			if(pokeName.startsWith(searchStr)){
 				$pokeSelect.find("option[value=\""+searchArr[i].speciesId+"\"]").prop("selected", "selected");
 				break;
 			}
 
+			// Dex search
 			if(searchArr[i].dex == searchStr){
 				$pokeSelect.find("option[value=\""+searchArr[i].speciesId+"\"]").prop("selected", "selected");
 				break;
 			}
+
+			// Nickname search
+			if(searchArr[i].nicknames){
+				let nicknameMatched = false;
+
+				for(var n = 0; n < searchArr[i].nicknames.length; n++){
+					if(searchArr[i].nicknames[n].startsWith(searchStr)){
+						$pokeSelect.find("option[value=\""+searchArr[i].speciesId+"\"]").prop("selected", "selected");
+						nicknameMatched = true;
+						break;
+					}
+				}
+
+				if(nicknameMatched){
+					break;
+				}
+
+			}
+
 		}
 
 		var id = $pokeSelect.find("option:selected").val();
@@ -815,6 +1018,8 @@ function PokeSelect(element, i){
 			selectedPokemon.autoLevel = true;
 
 			self.reset();
+
+			self.updateIVRank();
 
 			self.update();
 
@@ -885,6 +1090,15 @@ function PokeSelect(element, i){
 		isCustom = true;
 	});
 
+	// Turn switch delay on or off
+
+	$el.find(".check.switch-delay").on("click", function(e){
+		// Cooldown decreases at the start of the battle step, so a start value of 1000 will result in a 500 ms delay
+		selectedPokemon.startCooldown = selectedPokemon.startCooldown == 0 ? selectedPokemon.startCooldown = 1000 : selectedPokemon.startCooldown = 0;
+		selectedPokemon.isCustom = true;
+		isCustom = true;
+	});
+
 	// Turn move optimization on or off
 
 	$el.find(".check.optimize-timing").on("click", function(e){
@@ -929,6 +1143,8 @@ function PokeSelect(element, i){
 
         selectedPokemon.isCustom = true;
         isCustom = true;
+
+		self.updateIVRank();
 
         self.update();
 
@@ -992,6 +1208,8 @@ function PokeSelect(element, i){
         isCustom = false;
         selectedPokemon.initialize(battle.getCP());
 
+		self.updateIVRank();
+
         self.update();
 
 		$el.find("input.level").val(selectedPokemon.level);
@@ -1019,6 +1237,8 @@ function PokeSelect(element, i){
 		isCustom = true;
 		selectedPokemon.isCustom = true;
 
+		self.updateIVRank();
+
 		self.update();
 
 		if(interface.resetSelectedPokemon){
@@ -1039,30 +1259,11 @@ function PokeSelect(element, i){
 			selectedPokemon.setIV(iv, value);
 
 			$el.find("input.level").val(selectedPokemon.level);
-
-			// Auto select the next input when finished
-			if(value != 1){
-				switch(iv){
-					case "atk":
-						$el.find("input.iv[iv='def']").focus();
-						break;
-
-					case "def":
-						$el.find("input.iv[iv='hp']").focus();
-						break;
-
-					case "hp":
-						$(this).blur();
-						break;
-				}
-			}
-
-			if(iv == "atk" || iv == "def"){
-
-			}
 		}
 
 		isCustom = true;
+
+		self.updateIVRank();
 
 		self.update();
 
@@ -1148,7 +1349,7 @@ function PokeSelect(element, i){
 		$tooltip.find(".details").html(displayDamage + ' (' + percent + '%) <span class="label">dmg</span><br>' + move.energy + ' <span class="label">energy</span><br>' + dpe + ' <span class="label">dpe</span>');
 
 		var width = $tooltip.width();
-		var left = (e.pageX - $(".section").first().offset().left) + 10;
+		var left = (e.pageX - $(".section").first().offset().left) + 25;
 		var top = e.pageY - 20;
 
 		if( left > ($(".timeline-container").width() - width - 10) ){
@@ -1242,5 +1443,12 @@ function PokeSelect(element, i){
 		e.preventDefault();
 
 		modalWindow("Keyboard Commands", $el.find(".pokeselector-search-help"));
+	});
+
+	// Open the iv checker modal window
+	$el.find(".advanced-section .iv-rank").click(function(e){
+		modalWindow("PvP IV Rankings", $el.find(".iv-rank-details"));
+
+		self.updateIVTableResults();
 	});
 }

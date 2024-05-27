@@ -1,0 +1,16 @@
+{
+    "name": "single",
+    "title": "Single-Type Cup",
+    "include": [{
+        "filterType": "type",
+        "values": ["none"]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega"]
+    }, {
+        "filterType": "id",
+        "values": ["deoxys_defense", "deoxys", "deoxys_speed", "deoxys_attack", "cresselia"]
+    }],
+    "partySize": 3
+}

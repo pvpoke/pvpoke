@@ -1,0 +1,22 @@
+{
+    "name": "sovereign",
+    "title": "Devon Sovereign Cup",
+    "include": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["electric", "fairy", "ice", "normal", "psychic"]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "name": "Tag",
+        "values": ["mega"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["azumarill", "litleo", "greedent", "lickitung", "lanturn", "cresselia", "miltank", "froslass", "hoopa", "munchlax", "abomasnow", "arctibax", "baxcalibur", "frigibax", "bellibolt", "charjabug", "zangoose"]
+    }, {
+        "filterType": "type",
+        "name": "Type",
+        "values": ["ground", "rock", "steel"]
+    }]
+}

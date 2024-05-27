@@ -24,7 +24,7 @@ require_once 'header.php'; ?>
 	<h2 class="center">Ultra Supporters</h2>
 
 	<div class="supporters flex center">
-		<div class="supporter">Mushromking</div>
+		<div class="supporter">Mushromqween</div>
 		<div class="supporter">traderfrog</div>
 		<div class="supporter">ShinyHunterBen</div>
 		<div class="supporter">ElnetoCC</div>
@@ -60,6 +60,8 @@ require_once 'header.php'; ?>
 		<div class="supporter">Kotak1002</div>
 		<div class="supporter">DrLambda</div>
 		<div class="supporter">crossing2safety</div>
+		<div class="supporter">ShadowRedbeard</div>
+		<div class="supporter">PeterPJPablo</div>
 	</div>
 
 	<h2 class="center">Master Supporters</h2>
@@ -240,6 +242,11 @@ require_once 'header.php'; ?>
 			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/evan.jpg" width="85" height="85" />
 			<div class="supporter"><a href="https://twitter.com/Evan71320" target="_blank">Evan777713</a></div>
 		</div>
+		<div class="supporter-container">
+			<img src="<?php echo $WEB_ROOT; ?>img/sponsors/flash.png" width="85" height="85" />
+			<div class="supporter"><a href="https://discord.flashforeveryone.gg/" target="_blank">Flash for Everyone</a></div>
+		</div>
+
 	</div>
 </div>
 

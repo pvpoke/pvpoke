@@ -10,6 +10,8 @@ RewriteCond %{SCRIPT_FILENAME} !-f
 # RewriteRule ^(.*)$ https://pvpoke.com/$1 [L,R=301]
 
 RewriteRule ^season-13/(.*)$ /$1 [R,L]
+RewriteRule ^season-15/(.*)$ /$1 [R,L]
+RewriteRule ^world-of-wonders/(.*)$ /$1 [R,L]
 
 Options -Indexes
 
@@ -20,6 +22,8 @@ RewriteRule battle/multi/([\d-]+)/([a-zA-Z0-9-]+)/([a-zA-Z_\d\.-]+)/([\d-]+)/([\
 RewriteRule battle/multi/([\d-]+)/([a-zA-Z0-9-]+)/([a-zA-Z_\d\.-]+)/([\d-]+)/([\da-zA-Z_-]+)/([a-z\d-]+)/([a-zA-Z_]+).*$ battle.php?mode=multi&cp=$1&cup=$2&p1=$3&s=$4&m1=$5&cms=$6&g1=$7 [L,QSA]
 RewriteRule battle/multi/([\d-]+)/([a-zA-Z0-9-]+)/([a-zA-Z_\d\.-]+)/([\d-]+)/([\da-zA-Z_-]+)/([a-z\d-]+).*$ battle.php?mode=multi&cp=$1&cup=$2&p1=$3&s=$4&m1=$5&cms=$6 [L,QSA]
 RewriteRule battle/multi/([\d-]+)/([a-zA-Z0-9-]+)/([a-zA-Z_\d\.-]+)/([\d-]+)/([a-z\d-]+).*$ battle.php?mode=multi&cp=$1&cup=$2&p1=$3&s=$4&cms=$5 [L,QSA]
+
+RewriteRule battle/multi.*$ battle.php?mode=multi [L,QSA]
 
 RewriteRule battle/matrix.*$ battle.php?mode=matrix [L,QSA]
 
@@ -77,6 +81,9 @@ RewriteRule settings.?$ settings.php [L,QSA]
 RewriteRule custom-rankings.?$ custom-rankings.php [L,QSA]
 
 RewriteRule articles/(.*)/$ articles/$1.php [L,QSA]
+
+RewriteRule rss/$ rss/feed.xml [L,QSA]
+
 
 # Redirect index.php to /
 

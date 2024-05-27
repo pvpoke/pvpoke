@@ -38,6 +38,7 @@ require_once '../header.php';
 				<option value="1500 gobattleleague">GO Battle League (Great)</option>
 				<option value="2500 gobattleleague">GO Battle League (Ultra)</option>
 				<option value="10000 gobattleleague">GO Battle League (Master)</option>
+				<option value="1500 jungle">Jungle Cup</option>
 				<option value="1500 all">Great League</option>
 				<option value="2500 all">Ultra League</option>
 				<option value="10000 all">Master League</option>
@@ -95,7 +96,12 @@ require_once '../header.php';
 </div>
 
 <div class="section">
-	<button class="battle-btn button">Battle</button>
+	<button class="battle-btn button">
+		<span class="btn-content-wrap">
+			<span class="btn-icon btn-icon-train"></span>
+			<span class="btn-label">Train</span>
+		</span>
+	</button>
 </div>
 
 <div class="section team-select">
@@ -140,17 +146,6 @@ require_once '../header.php';
 </div>
 
 <?php require '../modules/ads/body-728.php'; ?>
-
-<div class="section white updates">
-	<h3>What's New</h3>
-
-	<h4>v1.22.9 (June 10, 2021)</h4>
-	<ul>
-		<li>Charged Move minigame now charges on hold instead of rapid clicks/taps. Also displays damage percent.</li>
-		<li>The Training bot now avoids baiting if its best Charged Move doesn't threaten a shield. (e.g. Galarian Stunfisk players typically throw Earthquake against Azumarill rather than Rock Slide.)</li>
-	</ul>
-
-</div>
 
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>

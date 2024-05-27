@@ -1,0 +1,17 @@
+{
+	"name": "jungle",
+	"title": "Jungle Cup",
+	"include": [{
+		"filterType": "type",
+		"values": ["normal", "grass", "electric", "poison", "ground", "flying", "bug", "dark"]
+	}],
+	"exclude": [{
+		"filterType": "id",
+		"values": ["gligar", "stunfisk_galarian"]
+	}, {
+		"filterType": "tag",
+		"values": ["mega"]
+	}],
+	"partySize": 3,
+	"presetOnly": true
+}

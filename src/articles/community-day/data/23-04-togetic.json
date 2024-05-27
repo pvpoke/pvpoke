@@ -1,0 +1,66 @@
+{
+	"species": [
+		{
+			"speciesId": "togetic",
+			"baseSpeciesId": "togetic"
+		},
+		{
+			"speciesId": "togekiss",
+			"baseSpeciesId": "togekiss",
+			"default": true
+		}
+	],
+	"checklist": [
+		{
+			"title": "High IV Togekiss",
+			"speciesId": "togekiss",
+			"baseSpeciesId": "togetic",
+			"league": "master",
+			"cp": 10000,
+			"ivs": [50, 15, 15, 15],
+			"priority": 1,
+			"notes": "Recommended minimum IV's are 15/14/13. Togekiss may want different coverage depending on the format. Consider saving a second Togekiss with Flamethrower if you don't have one built already."
+		},
+		{
+			"title": "High Rank Togekiss",
+			"speciesId": "togekiss",
+			"baseSpeciesId": "togetic",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [28, 0, 15, 15],
+			"priority": 1,
+			"notes": "Togekiss may want different coverage depending on the format. Consider saving a second Togekiss with Flamethrower if you don't have one built already."
+		},
+		{
+			"title": "High Rank Togekiss",
+			"speciesId": "togekiss",
+			"baseSpeciesId": "togetic",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [17, 0, 14, 11],
+			"priority": 1,
+			"notes": "Togekiss may want different coverage depending on the format. Consider saving a second Togekiss with Flamethrower if you don't have one built already."
+		},
+		{
+			"title": "High Attack Togekiss",
+			"speciesId": "togekiss",
+			"baseSpeciesId": "togetic",
+			"league": "ultra",
+			"cp": 1500,
+			"ivs": [27.5, 10, 10, 9],
+			"priority": 2,
+			"notes": "164.5 Attack or higher deals more Charm damage to multiple targets including Trevenant, Cresselia, and Alolan Ninetales. This IV spread also wins CMP against Trevenant."
+		},
+		{
+			"title": "High Attack Togekiss",
+			"speciesId": "togekiss",
+			"baseSpeciesId": "togetic",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [16.5, 13, 11, 3],
+			"priority": 2,
+			"notes": "128.5 Attack or higher deals more Charm damage to multiple targets including Noctowl, Azumarill, Alolan Ninetales, Lanturn, and the mirror matchup. This IV spread also wins CMP against Trevenant."
+		}
+
+	]
+}

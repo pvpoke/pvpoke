@@ -64,6 +64,7 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".check.move-counts", toggleMoveCounts);
 				$("body").on("click", ".detail-section.similar-pokemon a", jumpToSimilarPokemon);
 				$("body").on("click", ".moveset.fast .move-detail-template", recalculateMoveCounts);
+				$("body").on("click", "button.ranking-compare", addPokemonToCompare);
 
 				pokeSearch.setBattle(battle);
 
@@ -216,7 +217,7 @@ var InterfaceMaster = (function () {
 
 				// Initialize csv data
 
-				csv = 'Pokemon,Score,Dex,Type 1,Type 2,Attack,Defense,Stamina,Stat Product,Level,Fast Move,Charged Move 1,Charged Move 2,Charged Move 1 Count,Charged Move 2 Count,Buddy Distance,Charged Move Cost\n';
+				csv = 'Pokemon,Score,Dex,Type 1,Type 2,Attack,Defense,Stamina,Stat Product,Level,CP,Fast Move,Charged Move 1,Charged Move 2,Charged Move 1 Count,Charged Move 2 Count,Buddy Distance,Charged Move Cost\n';
 
 
 				// Create an element for each ranked Pokemon
@@ -307,7 +308,7 @@ var InterfaceMaster = (function () {
 
 					// Is this the best way to add HTML content? I'm gonna go with no here. But does it work? Yes!
 
-					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"expand-label\"></div><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span><div class=\"moves\">"+moveNameStr+"</div></div><div class=\"rating-container\"><div class=\"rating\">"+r.score+"</span></div><div class=\"clear\"></div></div><div class=\"details\"></div>");
+					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"expand-label\"></div><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span><div class=\"moves\">"+moveNameStr+"</div></div><div class=\"rating-container\"><div class=\"rating score-rating\">"+r.score+"</span></div><div class=\"clear\"></div></div><div class=\"details\"></div>");
 
 					switch(sort){
 						case "statproduct":
@@ -349,7 +350,7 @@ var InterfaceMaster = (function () {
 						$el.find(".moves").prepend("<span class=\"cliffhanger-points\">"+points+ptStr+"</span>");
 					}
 
-					if(battle.getCup().name == "unity"){
+					if(battle.getCup().slots){
 						let slotNumber = 0;
 
 						for(var n = 0; n < battle.getCup().slots.length; n++){
@@ -396,19 +397,27 @@ var InterfaceMaster = (function () {
 
 
 
-					csv += pokemon.speciesName+','+r.score+','+pokemon.dex+','+pokemon.types[0]+','+pokemon.types[1]+','+(Math.round(pokemon.stats.atk*10)/10)+','+(Math.round(pokemon.stats.def*10)/10)+','+Math.round(pokemon.stats.hp)+','+Math.round(pokemon.stats.atk*pokemon.stats.def*pokemon.stats.hp)+','+pokemon.level+','+pokemon.fastMove.name+','+pokemon.chargedMoves[0].name+','+chargedMove2Name+','+chargedMove1Count+','+chargedMove2Count+','+pokemon.buddyDistance+','+pokemon.thirdMoveCost+'\n';
+					csv += pokemon.speciesName+','+r.score+','+pokemon.dex+','+pokemon.types[0]+','+pokemon.types[1]+','+(Math.round(pokemon.stats.atk*10)/10)+','+(Math.round(pokemon.stats.def*10)/10)+','+Math.round(pokemon.stats.hp)+','+Math.round(pokemon.stats.atk*pokemon.stats.def*pokemon.stats.hp)+','+pokemon.level+','+pokemon.cp+','+pokemon.fastMove.name+','+pokemon.chargedMoves[0].name+','+chargedMove2Name+','+chargedMove1Count+','+chargedMove2Count+','+pokemon.buddyDistance+','+pokemon.thirdMoveCost+'\n';
 				}
 
 				$(".loading").hide();
 				$(".rank").on("click", selectPokemon);
 
 				// Update download link with new data
-				var filename = battle.getCup().name + " Rankings.csv";
+				const cupName = battle.getCup().name;
+				const category = $(".category-select option:selected").val() || scenario.slug;
+				const cpString = `cp${battle.getCP()}`
+
+				const fileNameParts = [cpString,  cupName,  category];
+
+				// var filename = battle.getCup().name + " Rankings.csv";
 				var filedata = '';
 
 				if(context == "custom"){
-					filename = "Custom Rankings.csv";
+					fileNameParts.unshift('custom');
 				}
+
+				const filename = 		fileNameParts.concat( 'rankings.csv').filter(Boolean).join('_');
 
 				if (!csv.match(/^data:text\/csv/i)) {
 					filedata = [csv];
@@ -421,8 +430,8 @@ var InterfaceMaster = (function () {
 
 				// If search string exists, process it
 
-				if($(".poke-search").val() != ''){
-					$(".poke-search").trigger("keyup");
+				if($(".poke-search[context='ranking-search']").first().val() != ''){
+					$(".poke-search[context='ranking-search']").first().trigger("keyup");
 				}
 
 				if((! $(".check.xl").hasClass("on"))&&(context != "custom")){
@@ -527,22 +536,28 @@ var InterfaceMaster = (function () {
 					category = sort;
 				}
 
-				var url = webRoot+"rankings/"+cup+"/"+cp+"/"+category+"/";
+				var rankStr = "rankings/"+cup+"/"+cp+"/"+category+"/"
 
 				if(speciesId){
-					url += speciesId+"/";
+					rankStr += speciesId+"/";
 				}
+
+				var url = webRoot+rankStr;
 
 				var data = {cup: cup, cp: cp, cat: category, p: speciesId };
 
 				window.history.pushState(data, "Rankings", url);
 
 				// Send Google Analytics pageview
-
-				gtag('config', UA_ID, {page_location: (host+url), page_path: url});
 				gtag('event', 'Lookup', {
-				  'event_category' : 'Rankings',
-				  'event_label' : speciesId
+				  'category': 'Rankings',
+				  'speciesId' : speciesId
+				});
+
+				gtag('event', 'page_view', {
+				  page_title: speciesId + ' ' + document.title,
+				  page_location: (host+rankStr),
+				  pageview_type: 'virtual'
 				});
 			}
 
@@ -963,7 +978,7 @@ var InterfaceMaster = (function () {
 					// Add move counts
 					var moveCounts = Pokemon.calculateMoveCounts(pokemon.fastMove, chargedMoves[n]);
 
-					$moveDetails.find(".move-count span").html(moveCounts[0] + " - " + moveCounts[1] + " - " + moveCounts[2]);
+					$moveDetails.find(".move-count span").html(moveCounts[0] + " - " + moveCounts[1] + " - " + moveCounts[2] + " - " + moveCounts[3]);
 
 					// Highlight this move if it's in the recommended moveset
 
@@ -992,7 +1007,7 @@ var InterfaceMaster = (function () {
 					opponent.initialize(battle.getCP(), "gamemaster");
 					opponent.selectRecommendedMoveset(category);
 
-					var battleLink = host+"battle/"+battle.getCP(true)+"/"+pokemon.speciesId+"/"+opponent.speciesId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+pokeMoveStr+"/"+opponent.generateURLMoveStr()+"/";
+					var battleLink = host+"battle/"+battle.getCP(true)+"/"+pokemon.aliasId+"/"+opponent.aliasId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+pokeMoveStr+"/"+opponent.generateURLMoveStr()+"/";
 
 					// Append energy settings
 					battleLink += pokemon.stats.hp + "-" + opponent.stats.hp + "/";
@@ -1013,10 +1028,11 @@ var InterfaceMaster = (function () {
 
 					battleLink += "/";
 
-					var $item = $("<div class=\"rank " + opponent.types[0] + "\"><div class=\"name-container\"><span class=\"number\">#"+(n+1)+"</span><span class=\"name\">"+opponent.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star\">"+m.rating+"</span></div><a target=\"_blank\" href=\""+battleLink+"\"></a><div class=\"clear\"></div></div>");
-
+					var $item = $("<div class=\"rank " + opponent.types[0] + "\"><div class=\"name-container\"><span class=\"number\">#"+(n+1)+"</span><span class=\"name\">"+opponent.speciesName+"</span></div><div class=\"rating-container\"><a target=\"_blank\" href=\""+battleLink+"\" class=\"rating\"><span></span>"+m.rating+"<i></i></a><div class=\"clear\"></div></div>");
 					var color = battle.getRatingColor(m.rating);
-					$item.find(".rating").css("background-color", "rgba("+color[0]+","+color[1]+","+color[2]+",0.5)");
+
+					$item.find(".rating").addClass(battle.getRatingClass(m.rating));
+					$item.find(".rating").css("background", "rgb("+color[0]+","+color[1]+","+color[2]+")");
 
 					$details.find(".matchups").append($item);
 				}
@@ -1028,7 +1044,7 @@ var InterfaceMaster = (function () {
 					var opponent = new Pokemon(c.opponent, 1, battle);
 					opponent.initialize(battle.getCP(), "gamemaster");
 					opponent.selectRecommendedMoveset(category);
-					var battleLink = host+"battle/"+battle.getCP(true)+"/"+pokemon.speciesId+"/"+opponent.speciesId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+pokeMoveStr+"/"+opponent.generateURLMoveStr()+"/";
+					var battleLink = host+"battle/"+battle.getCP(true)+"/"+pokemon.aliasId+"/"+opponent.aliasId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+pokeMoveStr+"/"+opponent.generateURLMoveStr()+"/";
 
 					// Append energy settings
 					battleLink += pokemon.stats.hp + "-" + opponent.stats.hp + "/";
@@ -1047,9 +1063,11 @@ var InterfaceMaster = (function () {
 						battleLink += Math.min(opponent.fastMove.energyGain * (Math.floor((scenario.energy[1] * 500) / opponent.fastMove.cooldown)), 100);
 					}
 
-					var $item = $("<div class=\"rank " + opponent.types[0] + "\"><div class=\"name-container\"><span class=\"number\">#"+(n+1)+"</span><span class=\"name\">"+opponent.speciesName+"</span></div><div class=\"rating-container\"><div class=\"rating star loss\">"+c.rating+"</span></div><a target=\"_blank\" href=\""+battleLink+"\"></a><div class=\"clear\"></div></div>");
+					var $item = $("<div class=\"rank " + opponent.types[0] + "\"><div class=\"name-container\"><span class=\"number\">#"+(n+1)+"</span><span class=\"name\">"+opponent.speciesName+"</span></div><div class=\"rating-container\"><a target=\"_blank\" href=\""+battleLink+"\" class=\"rating\"><span></span>"+c.rating+"</span><i></i></a><div class=\"clear\"></div></div>");
 					var color = battle.getRatingColor(c.rating);
-					$item.find(".rating").css("background-color", "rgba("+color[0]+","+color[1]+","+color[2]+",0.5)");
+
+					$item.find(".rating").addClass(battle.getRatingClass(c.rating));
+					$item.find(".rating").css("background", "rgb("+color[0]+","+color[1]+","+color[2]+")");
 
 					$details.find(".counters").append($item);
 				}
@@ -1118,13 +1136,13 @@ var InterfaceMaster = (function () {
 					cup = "all";
 				}
 
-				var link = host + "rankings/"+cup+"/"+cp+"/"+category+"/"+pokemon.speciesId+"/";
+				var link = host + "rankings/"+cup+"/"+cp+"/"+category+"/"+pokemon.aliasId+"/";
 
 				$details.find(".share-link input").val(link);
 
 				// Add multi-battle link
 				if(context != "custom"){
-					var multiBattleLink = host+"battle/multi/"+battle.getCP(true)+"/"+cup+"/"+pokemon.speciesId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+pokeMoveStr+"/2-1/";
+					var multiBattleLink = host+"battle/multi/"+battle.getCP(true)+"/"+cup+"/"+pokemon.aliasId+"/"+scenario.shields[0]+""+scenario.shields[1]+"/"+pokeMoveStr+"/2-1/";
 
 					// Append energy settings
 					multiBattleLink += pokemon.stats.hp + "/";
@@ -1165,30 +1183,7 @@ var InterfaceMaster = (function () {
 
 				if((scores)&&(context != "custom")){
 					// Display rating hexagon
-
-					// This is really dumb but we're pulling the type color out of the background gradient
-					var bgArr = $rank.css("background").split("linear-gradient(");
-
-					if(bgArr.length < 2){
-						bgArr = $rank.css("background-image").split("linear-gradient(");
-					}
-
-					bgArr = bgArr[1].split(" 30%");
-					var bgStr = bgArr[0]
-
-					hexagon.init($details.find(".hexagon"), 80);
-	                hexagon.draw([
-						Math.max( (scores[0] - 30) / 70 , .05 ),
-						Math.max( (scores[2] - 30) / 70 , .05 ),
-						Math.max( (scores[3] - 30) / 70 , .05 ),
-						Math.max( (scores[1] - 30) / 70 , .05 ),
-						Math.max( (scores[5] - 30) / 70 , .05 ),
-						Math.max( (scores[4] - 30) / 70 , .05 ),
-					], bgStr);
-
-					for(var i = 0; i < scores.length; i++){
-						$details.find(".hexagon-container .value").eq(i).html(scores[i]);
-					}
+					drawRatingHexagon($rank, r);
 				} else{
 					$details.find(".detail-section.performance").remove();
 					$details.find(".detail-section.poke-stats").css("width", "100%");
@@ -1307,6 +1302,49 @@ var InterfaceMaster = (function () {
 					}, 50);
 				} else{
 					$details.find(".similar-pokemon").remove();
+				}
+			}
+
+			function drawRatingHexagon($rank, source, compare){
+				// This is really dumb but we're pulling the type color out of the background gradient
+				var bgArr = $rank.css("background").split("linear-gradient(");
+
+				if(bgArr.length < 2){
+					bgArr = $rank.css("background-image").split("linear-gradient(");
+				}
+
+				bgArr = bgArr[1].split(" 30%");
+				var bgStr = bgArr[0]
+
+				var $details = $rank.find(".details");
+				var scores = source.scores;
+
+				hexagon.init($details.find(".hexagon"), 80);
+                hexagon.draw([
+					Math.max( (scores[0] - 30) / 70 , .05 ),
+					Math.max( (scores[2] - 30) / 70 , .05 ),
+					Math.max( (scores[3] - 30) / 70 , .05 ),
+					Math.max( (scores[1] - 30) / 70 , .05 ),
+					Math.max( (scores[5] - 30) / 70 , .05 ),
+					Math.max( (scores[4] - 30) / 70 , .05 ),
+				], bgStr, false);
+
+				// Draw comparison scores
+				if(compare){
+					var compareStr = "rgba(0,0,0,.6)";
+
+					hexagon.draw([
+						Math.max( (compare.scores[0] - 30) / 70 , .05 ),
+						Math.max( (compare.scores[2] - 30) / 70 , .05 ),
+						Math.max( (compare.scores[3] - 30) / 70 , .05 ),
+						Math.max( (compare.scores[1] - 30) / 70 , .05 ),
+						Math.max( (compare.scores[5] - 30) / 70 , .05 ),
+						Math.max( (compare.scores[4] - 30) / 70 , .05 ),
+					], compareStr, true);
+				}
+
+				for(var i = 0; i < scores.length; i++){
+					$details.find(".hexagon-container .value").eq(i).html(scores[i]);
 				}
 			}
 
@@ -1486,6 +1524,64 @@ var InterfaceMaster = (function () {
 				// Display selected tab items
 				$rank.find(".detail-tab").hide();
 				$rank.find(".detail-tab[tab=\""+tab+"\"]").css("display", "flex");
+			}
+
+			// Select a Pokemon to compare an existing Pokemon's ranking data in the radar chart
+
+			function addPokemonToCompare(e){
+				var $rank = $(e.target).closest(".rank");
+
+				modalWindow("Select Pokemon", $(".poke.single").first());
+
+				pokeSelector = new PokeSelect($(".modal .poke"), 1);
+				pokeSelector.setContext("modalrankcompare");
+				pokeSelector.init(gm.data.pokemon, battle, data);
+				pokeSelector.removePokemonFromOptions([{speciesId: $rank.attr("data")}]);
+
+				$(".modal-content").append("<div class=\"center\"><div class=\"save-poke button\">Compare Pokemon</div></div>");
+				$(".modal .poke-search").focus();
+
+				// Add or save a Pokemon in the Pokemon list
+
+				$(".modal .save-poke").on("click", function(e){
+
+					// Make sure something's selected
+					if(! pokeSelector){
+						return false;
+					}
+
+					var pokemon = pokeSelector.getPokemon();
+
+					if(! pokemon){
+						return false;
+					}
+
+					var originalData = data.filter(r => r.speciesId == $rank.attr("data"))[0];
+					var compareData = data.filter(r => r.speciesId == pokemon.speciesId)[0];
+
+					drawRatingHexagon($rank, originalData, compareData);
+
+					$rank.find(".details .ranking-compare").html("Compare: " + pokemon.speciesName);
+					$rank.find(".details .ranking-compare").attr("class", "ranking-compare " + pokemon.types[0]);
+
+					// Add comparison numbers
+					for(var i = 0; i < 6; i++){
+						var diff = Math.round( (originalData.scores[i] - compareData.scores[i]) * 10 ) / 10;
+
+						if(diff >= 0){
+							diff = "+" + diff;
+						}
+
+						var color = battle.getRatingColor( 500 + (25 * diff));
+
+						$rank.find(".chart-label .comparison").eq(i).css("background", "rgb("+color[0]+","+color[1]+","+color[2]+")");
+						$rank.find(".chart-label .comparison").eq(i).html(diff);
+					}
+
+					$rank.find(".chart-label .comparison").show();
+
+					closeModalWindow();
+				});
 			}
 		};
 

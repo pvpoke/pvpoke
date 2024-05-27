@@ -1,0 +1,27 @@
+{
+    "name": "factionsultra",
+    "title": "Silph Factions (Ultra League)",
+    "include": [],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega"]
+    }, {
+        "filterType": "id",
+        "values": ["hawlucha"]
+    }],
+    "tierRules": {
+        "max": 17,
+        "floor": 1,
+        "tiers": [{
+            "points": 7,
+            "pokemon": ["cobalion", "swampert", "giratina_altered", "registeel", "stunfisk_galarian", "cresselia"]
+        }, {
+            "points": 5,
+            "pokemon": ["trevenant", "charizard", "steelix", "virizion", "ninetales_alolan", "jellicent", "walrein", "clefable", "tapu_fini"]
+        }, {
+            "points": 2,
+            "pokemon": ["talonflame", "deoxys_defense", "umbreon", "mandibuzz", "scrafty", "regirock", "dragonite", "kommo-o", "guzzlord", "nidoqueen", "dubwool", "sandslash_alolan", "pidgeot"]
+        }]
+    },
+    "allowSameSpecies": true
+}

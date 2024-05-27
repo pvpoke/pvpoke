@@ -1,0 +1,23 @@
+{
+	"name": "aurora",
+	"title": "Battle Frontier (Aurora)",
+	"include": [],
+	"exclude": [{
+        "filterType": "tag",
+        "values": ["mega"]
+    }, {
+    	"filterType": "type",
+    	"name": "Type",
+    	"values": ["poison","steel","fire"]
+    }, {
+    	"filterType": "moveType",
+    	"name": "Move Type",
+    	"values": ["poison","steel","fire"]
+    },{
+        "filterType": "move",
+        "values":["hidden_power_water"]
+    },{
+        "filterType": "id",
+        "values": ["carbink","chansey","articuno_galarian","zapdos_galarian","moltres_galarian","pachirisu"]
+    }]
+}

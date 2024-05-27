@@ -1,0 +1,21 @@
+{
+    "name": "primordial",
+    "title": "Battle Frontier (Primordial)",
+	"include": [{
+        "filterType": "type",
+        "values": ["dark","dragon","electric","ice","rock"]
+    },{
+        "filterType": "id",
+        "values": ["snorlax","munchlax","lickilicky","castform","milotic","arbok","sceptile","golisopod","togetic"]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega","shadow"]
+    }, {
+        "filterType": "id",
+        "values": ["ninetales_alolan", "raichu","obstagoon","walrein","umbreon","dewgong","regirock","lycanroc_midnight","crustle","dragalge","abomasnow","pachirisu","chansey","carbink","haxorus","meowscarada","beartic","lanturn","diancie","stunfisk","guzzlord","avalugg_hisuian","lanturnw","giratina_origin","lileep"]
+    }, {
+        "filterType": "type",
+        "values": ["steel","fighting"]
+    }]
+}

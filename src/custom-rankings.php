@@ -115,10 +115,12 @@ require_once 'header.php'; ?>
 				<div class="field-container">
 					<div class="check" value="legendary"><span></span> Legendary</div>
 					<div class="check" value="mythical"><span></span> Mythical</div>
+					<div class="check" value="ultrabeast"><span></span> Ultra Beast</div>
 					<div class="check" value="alolan"><span></span> Alolan</div>
 					<div class="check" value="galarian"><span></span> Galarian</div>
 					<div class="check" value="hisuian"><span></span> Hisuian</div>
 					<div class="check" value="regional"><span></span> Regional</div>
+					<div class="check" value="starter"><span></span> Starter</div>
 					<div class="check" value="shadow"><span></span> Shadow</div>
 					<div class="check" value="shadoweligible"><span></span> Shadow Eligible</div>
 					<div class="check" value="mega"><span></span> Mega</div>
@@ -162,6 +164,8 @@ require_once 'header.php'; ?>
 					<li><strong>Generation 6:</strong> 650-721</li>
 					<li><strong>Generation 7:</strong> 722-807</li>
 					<li><strong>Generation 8:</strong> 808-898</li>
+					<li><strong>Legends (Hisui):</strong> 899-905</li>
+					<li><strong>Generation 9:</strong> 906-1008</li>
 				</ul>
 				<div class="field-container">
 					<input class="start-range" placeholder="Start #" />
@@ -267,6 +271,7 @@ require_once 'header.php'; ?>
 	<h3>Pokemon List (<span class="pokemon-count">0</span>)</h3>
 	<p>This list below contains eligible Pokemon for this cup. Pokemon that don't meet certain stat requirements, such as low CP Pokemon, aren't included for ranking purposes.</p>
 	<textarea class="pokemon-list"></textarea>
+	<a href="#" class="toggle-pokemon-list">Show Pokemon ID's</a>
 </div>
 
 <div class="section white custom-rankings-meta-group">

@@ -67,17 +67,28 @@
 		</div>
 
 		<div class="advanced-section">
-			<a class="advanced" href="#">Advanced Stats/IVs <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+			<a class="advanced section-title" href="#">Edit/Check IVs <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 			<div class="fields">
 
 				<div class="ivs">
-					<h3>Level &amp; IV's</h3>
-					<input class="level" type="number" placeholder="Level" min="1" max="40" step=".5" />
-					<div class="ivs-group">
-						<input class="iv" iv="atk" type="number" placeholder="Atk" min="0" max="15" step="1" /><span>/</span>
-						<input class="iv" iv="def" type="number" placeholder="Def" min="0" max="15" step="1" /><span>/</span>
-						<input class="iv" iv="hp" type="number" placeholder="HP" min="0" max="15" step="1" />
+					<div class="flex">
+						<input class="level" type="number" placeholder="Level" min="1" max="40" step=".5" />
+						<div class="ivs-group">
+							<input class="iv" iv="atk" type="number" placeholder="Atk" min="0" max="15" step="1" /><span>/</span>
+							<input class="iv" iv="def" type="number" placeholder="Def" min="0" max="15" step="1" /><span>/</span>
+							<input class="iv" iv="hp" type="number" placeholder="HP" min="0" max="15" step="1" />
+						</div>
 					</div>
+
+					<div class="flex">
+						<label class="level">Level</label>
+						<div class="ivs-group labels">
+							<label class="iv">Atk</label><span>&nbsp;</span>
+							<label class="iv">Def</label><span>&nbsp;</span>
+							<label class="iv">HP</label>
+						</div>
+					</div>
+					<div class="iv-rank">Rank&nbsp;<span class="value"></span><span class="count"></span><span class="info-icon">i</span></div>
 				</div>
 				<div class="maximize-section">
 					<div class="check-group">
@@ -95,22 +106,6 @@
 					<div class="check auto-level on"><span></span>Auto level</div>
 					<button class="maximize-stats">Maximize</button>
 					<button class="restore-default">Default</button>
-				</div>
-				<div class="stat-modifiers">
-					<h3>Stat Modifiers (-4 to 4)</h3>
-					<input class="stat-mod" iv="atk" type="number" placeholder="Atk" min="-4" max="4" step="1" />
-					<input class="stat-mod" iv="def" type="number" placeholder="Def" min="-4" max="4" step="1" />
-				</div>
-
-				<div class="damage-adjustments">
-					<div class="adjustment attack">
-						<div class="value">x1</div>
-						<div class="label">damage dealt</div>
-					</div>
-					<div class="adjustment defense">
-						<div class="value">x1</div>
-						<div class="label">damage taken</div>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -154,6 +149,24 @@
 				</div>
 				<button class="add-fast-move">+ Move</button>
 				<button class="pull-from-timeline">Pull from timeline</button>
+
+				<div class="check switch-delay"><span></span>1 turn switch</div>
+
+				<div class="stat-modifiers">
+					<h3 class="section-title">Stat Modifiers (-4 to 4)</h3>
+					<input class="stat-mod" iv="atk" type="number" placeholder="Atk" min="-4" max="4" step="1" />
+					<input class="stat-mod" iv="def" type="number" placeholder="Def" min="-4" max="4" step="1" />
+				</div>
+				<div class="damage-adjustments">
+					<div class="adjustment attack">
+						<div class="value">x1</div>
+						<div class="label">damage dealt</div>
+					</div>
+					<div class="adjustment defense">
+						<div class="value">x1</div>
+						<div class="label">damage taken</div>
+					</div>
+				</div>
 				<h3 class="section-title">Baiting</h3>
 				<div class="form-group bait-picker">
 					<div class="option" value="0">Off</div>
@@ -242,5 +255,27 @@
 				<td>Multi-Select: Add or save changes to the current Pokemon. You can press Enter again to bring up a new Add Pokemon window.</td>
 			</tr>
 		</table>
+	</div>
+
+	<div class="iv-rank-details hide">
+		<p>Below are the overall stat rankings for this Pokemon's IVs out of <b class="count">4096</b> possible combinations.</p>
+		<div class="iv-rank-results">
+
+		</div>
+		<div class="iv-rank-result template hide">
+			<h3>Pokemon</h3>
+			<table class="stats-table iv-rankings" cellspacing="0">
+				<thead>
+					<tr>
+						<td><span class="name">CP</span></td>
+						<td><span class="name">Level</span></td>
+						<td><span class="name">IV Rank</span></td>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+
 	</div>
 </div>

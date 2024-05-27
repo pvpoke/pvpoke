@@ -6,14 +6,11 @@
 		"values": [387, 493]
 	}, {
 		"filterType": "id",
-		"values": ["sneasel_hisuian", "sneasler", "qwilfish_hisuian", "overqwil", "growlithe_hisuian", "arcanine_hisuian", "braviary_hisuian", "voltorb_hisuian", "electrode_hisuian"]
+		"values": ["sneasel_hisuian", "sneasel_hisuian_shadow", "sneasler", "sneasler_shadow", "qwilfish_hisuian", "overqwil", "growlithe_hisuian", "arcanine_hisuian", "braviary_hisuian", "voltorb_hisuian", "electrode_hisuian", "typhlosion_hisuian", "samurott_hisuian", "decidueye_hisuian"]
 	}],
 	"exclude": [{
 		"filterType": "tag",
 		"values": ["mega"]
-	}, {
-		"filterType": "id",
-		"values": ["bastiodon_xs"]
 	}],
 	"partySize": 3,
 	"presetOnly": true

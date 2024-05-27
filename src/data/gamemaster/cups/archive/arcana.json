@@ -1,0 +1,32 @@
+{
+    "name": "arcana",
+    "title": "Silph Factions (Arcana)",
+    "include": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["ghost", "grass", "psychic", "rock"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["pelipper", "gyarados", "scyther", "vespiquen", "honchkrow"],
+		"includeShadows": true
+    }],
+    "exclude": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["electric", "fairy", "ice", "normal"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["hawlucha"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["bastiodon", "probopass", "regirock", "trevenant", "sableye", "articuno_galarian", "tropius"]
+    }, {
+        "filterType": "tag",
+        "name": "Tag",
+        "values": ["mega"]
+    }],
+	"allowSameSpecies": true
+}

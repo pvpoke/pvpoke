@@ -1,0 +1,18 @@
+{
+    "name": "enchanted",
+    "title": "Battle Frontier (Enchanted)",
+	"include": [{
+        "filterType": "type",
+        "values": ["steel", "dragon", "fairy","dark","normal","ghost","psychic"]
+    },{
+        "filterType": "id",
+        "values": ["ampharos","ampharos_shadow","golisopod","articuno","articuno_shadow","muk","muk_shadow","zapdos","zapdos_shadow","regice","regice_shadow","sneasler","sneasler_shadow","blastoise","blastoise_shadow"]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega"]
+    }, {
+        "filterType": "id",
+        "values": ["stunfisk_galarian", "cobalion","registeel","zygarde_complete","giratina_altered","steelix","pidgeot","greedent","skarmory","empoleon"]
+    }]
+}

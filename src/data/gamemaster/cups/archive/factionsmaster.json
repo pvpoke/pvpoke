@@ -1,0 +1,36 @@
+{
+    "name": "factionsmaster",
+    "title": "Silph Factions (Master League)",
+    "include": [{
+        "filterType": "type",
+        "values": ["bug", "dark", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water"]
+    }, {
+        "filterType": "id",
+        "values": ["aggron_mega", "scizor_mega", "salamence_mega", "steelix_mega", "charizard_mega_x", "blastoise_mega", "slowbro_mega", "venusaur_mega", "alakazam_mega", "sceptile_mega", "blaziken_mega", "altaria_mega", "abomasnow_mega", "beedrill_mega", "pidgeot_mega", "kangaskhan_mega", "aerodactyl_mega", "ampharos_mega", "houndoom_mega", "manectric_mega", "absol_mega", "banette_mega", "lopunny_mega", "glalie_mega", "pinsir_mega"]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega"]
+    }, {
+        "filterType": "id",
+        "values": ["hawlucha"]
+    }],
+    "tierRules": {
+        "max": 8,
+        "floor": 0,
+        "tiers": [{
+            "points": 4,
+            "pokemon": ["mewtwo", "dialga", "zacian_hero", "solgaleo", "groudon", "aggron_mega", "scizor_mega", "salamence_mega"]
+        }, {
+            "points": 3,
+            "pokemon": ["lugia", "ho_oh", "kyogre", "giratina_origin", "giratina_altered", "meloetta_aria", "zarude", "steelix_mega"]
+        }, {
+            "points": 2,
+            "pokemon": ["zekrom", "xerneas", "yveltal", "melmetal", "palkia", "dragonite", "reshiram", "rayquaza", "charizard_mega_x", "blastoise_mega", "slowbro_mega"]
+        }, {
+            "points": 1,
+            "pokemon": ["landorus_therian", "landorus_incarnate", "genesect", "genesect_shock", "genesect_chill", "genesect_burn", "genesect_douse", "mew", "buzzwole", "florges", "kyurem", "venusaur_mega", "abomasnow_mega", "blaziken_mega", "altaria_mega", "alakazam_mega"]
+        }]
+    },
+    "allowSameSpecies": true
+}

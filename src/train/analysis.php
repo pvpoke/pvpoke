@@ -47,8 +47,8 @@ switch($cup){
 		$league = 'Hisui Cup';
 		break;
 
-	case "element":
-		$league = 'Element Cup';
+	case "elementremix":
+		$league = 'Element Cup Remix';
 		break;
 
 
@@ -131,7 +131,7 @@ require_once '../header.php';
 						</div>
 					</td>
 					<td class="link"><a href="#" target="_blank"></a></td>
-					<td class="team-score"><div class="score">509.3</div></td>
+					<td class="team-score"><div class="rating"></div></td>
 					<td class="individual-score">129.3%</td>
 					<td class="usage">1,024</td>
 				</tr>
@@ -210,7 +210,7 @@ require_once '../header.php';
 						</div>
 					</td>
 					<td class="link"><a href="#" target="_blank"></a></td>
-					<td class="team-score"><div class="score">509.3</div></td>
+					<td class="team-score"><div class="rating"></div></td>
 					<td class="usage">1,024</td>
 				</tr>
 			</thead>
@@ -237,6 +237,34 @@ require_once '../header.php';
 		<p>The regular rankings are generated using 1 vs 1 simulations between eligible Pokemon. The results are empirical and repeatable, but don't take into account team composition or full dynamic play like switching or failed/successful baits. It can provide immediate results for new Pokemon or move updates.</p>
 		<p>The Training Analysis data is recorded from fully played games from the Train feature. Team composition, player decisions, and dynamic play are all taken into account. It is able to provide a fuller picture than the simulated rankings. However, the data is not empirical. Performance and usage numbers are subject to the players who use the Train feature, how frequently they use particular Pokemon, and their performance with those Pokemon. Training Analysis also cannot provide immediate data for new Pokemon or move updates; a sufficient volume of battles must be recorded first.</p>
 	</div>
+</div>
+
+<div class="usage-modal hide">
+	<p><div class="usage-legend"></div><b class="pokemon-label"></b> usage on player and bot teams over 30 days.</p>
+	<div>Compare with:
+		<select class="usage-compare-select">
+			<option selected disabled>Select a Pokemon</option>
+		</select>
+	</div>
+	<div class="usage-container">
+		<div class="y-axis-container">
+			<div class="value">20%</div>
+			<div class="label">Usage on teams</div>
+			<div class="value">0%</div>
+		</div>
+
+		<div class="canvas-container">
+			<canvas canvas-id="0" class="usage-chart" width="400" height="300"></canvas>
+			<canvas canvas-id="1" class="usage-chart" width="400" height="300"></canvas>
+		</div>
+
+	</div>
+	<div class="x-axis-container">
+		<div class="value">Jan 1</div>
+		<div class="label">Time</div>
+		<div class="value">Jan 30</div>
+	</div>
+
 </div>
 
 <?php require_once '../modules/search-string-help.php'; ?>

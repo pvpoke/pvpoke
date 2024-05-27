@@ -1,23 +1,4 @@
 [{
-    "dex": 127,
-    "speciesName": "Pinsir (Mega)",
-    "speciesId": "pinsir_mega",
-    "baseStats": {
-        "atk": 305,
-        "def": 231,
-        "hp": 163
-    },
-    "types": ["bug", "flying"],
-    "fastMoves": ["BUG_BITE", "FURY_CUTTER", "ROCK_SMASH"],
-    "chargedMoves": ["CLOSE_COMBAT", "SUBMISSION", "VICE_GRIP", "X_SCISSOR", "SUPER_POWER"],
-    "defaultIVs": {
-        "cp1500": [13, 5, 10, 15],
-        "cp2500": [21.5, 10, 13, 12]
-    },
-    "tags": ["shadoweligible", "mega"],
-    "level25CP": 2640,
-    "eliteMoves": ["SUBMISSION"]
-}, {
     "dex": 150,
     "speciesName": "Mewtwo (Mega X)",
     "speciesId": "mewtwo_mega_x",
@@ -55,60 +36,6 @@
         "cp2500": [16, 7, 9, 11]
     },
     "eliteMoves": ["PSYSTRIKE", "SHADOW_BALL", "HYPER_BEAM"]
-}, {
-    "dex": 214,
-    "speciesName": "Heracross (Mega)",
-    "speciesId": "heracross_mega",
-    "baseStats": {
-        "atk": 334,
-        "def": 223,
-        "hp": 190
-    },
-    "types": ["bug", "fighting"],
-    "fastMoves": ["COUNTER", "STRUGGLE_BUG"],
-    "chargedMoves": ["CLOSE_COMBAT", "EARTHQUAKE", "MEGAHORN", "ROCK_BLAST"],
-    "tags": ["regional", "mega"],
-    "defaultIVs": {
-        "cp1500": [11.5, 5, 13, 6],
-        "cp2500": [19, 6, 15, 6]
-    }
-}, {
-    "dex": 248,
-    "speciesName": "Tyranitar (Mega)",
-    "speciesId": "tyranitar_mega",
-    "baseStats": {
-        "atk": 309,
-        "def": 276,
-        "hp": 225
-    },
-    "types": ["rock", "dark"],
-    "fastMoves": ["BITE", "IRON_TAIL", "SMACK_DOWN"],
-    "chargedMoves": ["CRUNCH", "FIRE_BLAST", "STONE_EDGE"],
-    "defaultIVs": {
-        "cp1500": [10, 14, 15, 7],
-        "cp2500": [17, 5, 7, 15]
-    },
-    "tags": ["shadoweligible", "mega"],
-    "level25CP": 3435,
-    "eliteMoves": ["SMACK_DOWN"]
-}, {
-    "dex": 302,
-    "speciesName": "Sableye (Mega)",
-    "speciesId": "sableye_mega",
-    "baseStats": {
-        "atk": 151,
-        "def": 216,
-        "hp": 137
-    },
-    "types": ["dark", "ghost"],
-    "fastMoves": ["FEINT_ATTACK", "SHADOW_CLAW"],
-    "chargedMoves": ["FOUL_PLAY", "POWER_GEM", "SHADOW_SNEAK"],
-    "defaultIVs": {
-        "cp1500": [29.5, 5, 8, 11],
-        "cp2500": [40, 15, 15, 15]
-    },
-    "level25CP": 1158,
-    "tags": ["shadoweligible", "mega"]
 }, {
     "dex": 303,
     "speciesName": "Mawile (Mega)",
@@ -197,42 +124,6 @@
     "level25CP": 3136,
     "tags": ["shadoweligible", "mega"],
     "eliteMoves": ["METEOR_MASH"]
-}, {
-    "dex": 384,
-    "speciesName": "Rayquaza (Mega)",
-    "speciesId": "rayquaza_mega",
-    "baseStats": {
-        "atk": 354,
-        "def": 197,
-        "hp": 212
-    },
-    "types": ["dragon", "flying"],
-    "fastMoves": ["AIR_SLASH", "DRAGON_TAIL"],
-    "chargedMoves": ["AERIAL_ACE", "ANCIENT_POWER", "OUTRAGE", "HURRICANE"],
-    "eliteMoves": ["HURRICANE"],
-    "tags": ["legendary", "mega"],
-    "defaultIVs": {
-        "cp1500": [11, 6, 5, 11],
-        "cp2500": [18, 7, 7, 15]
-    }
-}, {
-    "dex": 445,
-    "speciesName": "Garchomp (Mega)",
-    "speciesId": "garchomp_mega",
-    "baseStats": {
-        "atk": 339,
-        "def": 222,
-        "hp": 239
-    },
-    "types": ["dragon", "ground"],
-    "fastMoves": ["DRAGON_TAIL", "MUD_SHOT"],
-    "chargedMoves": ["EARTHQUAKE", "FIRE_BLAST", "OUTRAGE", "SAND_TOMB", "EARTH_POWER"],
-    "eliteMoves": ["EARTH_POWER"],
-    "defaultIVs": {
-        "cp1500": [10, 5, 14, 11],
-        "cp2500": [17, 5, 7, 10]
-    },
-    "tags": ["mega"]
 }, {
     "dex": 448,
     "speciesName": "Lucario (Mega)",

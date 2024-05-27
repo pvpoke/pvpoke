@@ -1,0 +1,27 @@
+{
+    "name": "factionsgreat",
+    "title": "Silph Factions (Great League)",
+    "include": [],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega"]
+    }, {
+        "filterType": "id",
+        "values": ["hawlucha"]
+    }],
+    "tierRules": {
+        "max": 19,
+        "floor": 1,
+        "tiers": [{
+            "points": 7,
+            "pokemon": ["altaria", "medicham", "stunfisk_galarian", "lanturn", "noctowl", "registeel"]
+        }, {
+            "points": 5,
+            "pokemon": ["azumarill", "ninetales_alolan", "bastiodon", "deoxys_defense", "dewgong", "lickitung", "sableye", "swampert", "toxapex", "umbreon"]
+        }, {
+            "points": 2,
+            "pokemon": ["abomasnow", "araquanid", "aurorus", "charizard", "cresselia", "cofagrigus", "diggersby", "drapion", "dunsparce", "froslass", "machamp", "mantine", "mandibuzz", "obstagoon", "pelipper", "pidgeot", "quagsire", "sandslash_alolan", "scrafty", "skarmory", "tapu_fini", "toxicroak", "trevenant", "venusaur", "walrein", "whiscash"]
+        }]
+    },
+    "allowSameSpecies": true
+}

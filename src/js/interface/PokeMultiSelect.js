@@ -99,7 +99,8 @@ function PokeMultiSelect(element){
 
 	// Open Pokemon select modal window to add or edit a Pokemon
 
-	this.openPokeSelect = function(index){
+	this.openPokeSelect = function(index, focusName){
+		focusName = typeof focusName !== 'undefined' ? focusName : true;
 
 		selectedIndex = index;
 
@@ -121,8 +122,9 @@ function PokeMultiSelect(element){
 				$(".modal-content").append("<div class=\"center\"><a href=\"#\" class=\"compare-poke\">Add & Compare</a></div>");
 			}
 
-
-			$(".modal .poke-search").focus();
+			if(focusName){
+				$(".modal .poke-search").focus();
+			}
 		} else{
 
 			// Edit existing Pokemon
@@ -327,7 +329,7 @@ function PokeMultiSelect(element){
 
 			var pokemon = pokemonList[i];
 
-			var $item = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\"><div class=\"name-container\"><span class=\"name\">"+pokemon.speciesName+"</span><span class=\"moves\"></span></div><div class=\"remove\"></div></div>");
+			var $item = $("<div class=\"rank button-highlight " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\"><div class=\"name-container\"><span class=\"name\">"+pokemon.speciesName+"</span><span class=\"moves\"></span></div><div class=\"remove\"></div></div>");
 
 			var moveList = [pokemon.fastMove];
 
@@ -568,7 +570,7 @@ function PokeMultiSelect(element){
 
 	this.setCP = function(cp){
 		// only show quick fill metas with same cp as selected
-		const leagueMap = {"littlegeneral": 500, "great": 1500, "ultra": 2500, "master": 10000}
+		const leagueMap = {"little": 500, "great": 1500, "ultra": 2500, "master": 10000}
 		$el.find(".quick-fill-select option").each(function(index, element) {
 			element = $(element);
 			// always show custom groups (from cookies) and create new group
@@ -788,10 +790,11 @@ function PokeMultiSelect(element){
 
 	// Click the add new Pokemon button
 
-	$el.find(".add-poke-btn").click(function(e){
+	$el.find(".add-poke-btn").click(function(e, focusName){
+		focusName = typeof focusName !== 'undefined' ? focusName : true;
 
 		if(pokemonList.length < maxPokemonCount){
-			self.openPokeSelect(-1);
+			self.openPokeSelect(-1, focusName);
 		}
 	});
 

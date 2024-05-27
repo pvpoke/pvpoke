@@ -1,0 +1,116 @@
+{
+	"species": [
+		{
+			"speciesId": "wooper",
+			"baseSpeciesId": "wooper"
+		},
+		{
+			"speciesId": "quagsire",
+			"baseSpeciesId": "wooper"
+		},
+		{
+			"speciesId": "wooper_paldean",
+			"baseSpeciesId": "wooper_paldean"
+		},
+		{
+			"speciesId": "clodsire",
+			"baseSpeciesId": "wooper_paldean",
+			"default": true
+		}
+	],
+	"checklist": [
+		{
+			"title": "High Rank Clodsire",
+			"speciesId": "clodsire",
+			"baseSpeciesId": "wooper_paldean",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [30.5, 0, 14, 13],
+			"priority": 1
+		},
+		{
+			"title": "High Rank Quagsire",
+			"speciesId": "quagsire",
+			"baseSpeciesId": "wooper",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [29, 0, 15, 14],
+			"priority": 1
+		},
+		{
+			"title": "High Rank Shadow Quagsire",
+			"speciesId": "quagsire",
+			"baseSpeciesId": "quagsire",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [29, 0, 15, 14],
+			"priority": 1
+		},
+		{
+			"title": "High IV Clodsire",
+			"speciesId": "clodsire",
+			"baseSpeciesId": "wooper_paldean",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [50, 15, 15, 15],
+			"priority": 2
+		},
+		{
+			"title": "High IV Quagsire",
+			"speciesId": "quagsire",
+			"baseSpeciesId": "wooper",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [50, 15, 15, 15],
+			"priority": 2
+		},
+		{
+			"title": "Little Cup Paldean Wooper",
+			"speciesId": "wooper_paldean",
+			"baseSpeciesId": "wooper_paldean",
+			"league": "special",
+			"cp": 500,
+			"ivs": [35.5, 0, 15, 15],
+			"priority": 2
+		},
+		{
+			"title": "Little Cup Wooper",
+			"speciesId": "wooper",
+			"baseSpeciesId": "wooper",
+			"league": "special",
+			"cp": 500,
+			"ivs": [35.5, 0, 15, 15],
+			"priority": 2
+		},
+		{
+			"title": "Slight Attack Clodsire",
+			"speciesId": "clodsire",
+			"baseSpeciesId": "wooper_paldean",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [30.5, 1, 15, 7],
+			"priority": 3,
+			"notes": "A Clodsire with slight Attack investment can win Charged Move ties against high rank Clodsire while retaining its performance in general matchups."
+		},
+		{
+			"title": "Mirror Slayer Clodsire",
+			"speciesId": "clodsire",
+			"baseSpeciesId": "wooper_paldean",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [28.5, 12, 7, 8],
+			"priority": 3,
+			"notes": "Clodsire guarantees a Mud Shot breakpoint against itself with 98.54 Attack or higher. This variant has a strong advantage against Poison Sting Clodsire, but sacrifices bulk in its general matchups. Outside of the mirror matchup, it wins Charged Move ties against Registeel, Steelix, and Lickitung."
+		},
+		{
+			"title": "Gligar Slayer Quagsire",
+			"speciesId": "quagsire",
+			"baseSpeciesId": "wooper",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [28.5, 7, 14, 3],
+			"priority": 3,
+			"notes": "Quagsire needs 113.3 Attack or higher to secure even shield matchups against most Shadow Gligar with its Charged Move damage. This spread also keeps at least 109.12 Defense to guarantee a Wing Attack bulkpoint against Shadow Gligar, and 110.5 Defense to gain a Counter bulkpoint against most Medicham."
+		}
+	]
+}

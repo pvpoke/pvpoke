@@ -957,21 +957,6 @@
 		"values": ["mega"]
 	}]
 }, {
-	"name": "littlejungle",
-	"title": "Little Jungle Cup",
-	"include": [{
-		"filterType": "type",
-		"values": ["normal", "grass", "electric", "poison", "ground", "flying", "bug", "dark"]
-	}],
-	"exclude": [{
-		"filterType": "id",
-		"values": ["shuckle", "shuckle_shadow", "smeargle", "genesect", "celebi", "hoopa", "hoopa_unbound", "aerodactyl_shadow", "obstagoon", "zarude", "genesect_douse", "genesect_burn"]
-	}, {
-		"filterType": "tag",
-		"values": ["legendary", "mega"]
-	}],
-	"partySize": 3
-}, {
 	"name": "lunar",
 	"title": "Lunar Cup",
 	"include": [{

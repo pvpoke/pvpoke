@@ -1,0 +1,47 @@
+{
+	"species": [
+		{
+			"speciesId": "axew",
+			"baseSpeciesId": "axew"
+		},
+		{
+			"speciesId": "fraxure",
+			"baseSpeciesId": "axew"
+		},
+		{
+			"speciesId": "haxorus",
+			"baseSpeciesId": "axew",
+			"default": true
+		}
+	],
+	"checklist": [
+		{
+			"title": "High IV Haxorus",
+			"speciesId": "haxorus",
+			"baseSpeciesId": "axew",
+			"league": "master",
+			"cp": 10000,
+			"ivs": [50, 15, 15, 15],
+			"priority": 1,
+			"notes": "Recommended minimum IV's are 15/14/13. 15 Attack is required to reach a Counter breakpoint against Origin Giratina and to avoid losing Charged Move ties against other Haxorus."
+		},
+		{
+			"title": "High Rank Haxorus",
+			"speciesId": "haxorus",
+			"baseSpeciesId": "axew",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [15.5, 0, 14, 13],
+			"priority": 1
+		},
+		{
+			"title": "High Rank Haxorus",
+			"speciesId": "haxorus",
+			"baseSpeciesId": "axew",
+			"league": "ultra",
+			"cp": 1500,
+			"ivs": [25.5, 1, 15, 15],
+			"priority": 1
+		}
+	]
+}

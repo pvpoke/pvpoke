@@ -25,7 +25,7 @@ var RankerMaster = (function () {
 
 
 			// Ranking scenarios, energy is turns of advantage
-			var scenarios = GameMaster.getInstance().data.rankingScenarios;
+			var scenarios;
 
 			var currentLeagueIndex = 0;
 			var currentScenarioIndex = 0;
@@ -47,6 +47,8 @@ var RankerMaster = (function () {
 				self.initPokemonList(battle.getCP());
 
 				currentScenarioIndex = 0;
+
+				scenarios = GameMaster.getInstance().data.rankingScenarios;
 
 				for(currentScenarioIndex = 0; currentScenarioIndex < scenarios.length; currentScenarioIndex++){
 					var r = self.rank(leagues[currentLeagueIndex], scenarios[currentScenarioIndex]);
@@ -123,6 +125,8 @@ var RankerMaster = (function () {
 
 				leagues = [cp];
 				allResults = [];
+
+				scenarios = GameMaster.getInstance().data.rankingScenarios;
 
 				for(var currentLeagueIndex = 0; currentLeagueIndex < leagues.length; currentLeagueIndex++){
 
@@ -459,6 +463,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if(cup.name == "single"){
+					iterations = 1;
+				}
+
 				if(cup.name == "halloween"){
 					iterations = 1;
 				}
@@ -484,6 +492,18 @@ var RankerMaster = (function () {
 				}
 
 				if(cup.name == "flying"){
+					iterations = 1;
+				}
+
+				if(cup.name == "littlecatch"){
+					iterations = 1;
+				}
+
+				if(cup.name == "catch"){
+					iterations = 1;
+				}
+
+				if(cup.name == "hisui"){
 					iterations = 1;
 				}
 
@@ -519,7 +539,11 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
-				if(cup.name == "river"){
+				if(cup.name == "mountain"){
+					iterations = 1;
+				}
+
+				if(cup.name == "fantasy" && battle.getCP() == 1500){
 					iterations = 1;
 				}
 
@@ -589,10 +613,16 @@ var RankerMaster = (function () {
 							}
 
 							var sc = matches[j].adjRating * weight;
-							var opScore = 1000 - matches[j].adjRating * weight;
+							var opScore = matches[j].adjOpRating * Math.pow(4, weight);
 
 							if(rankings[j].scores[n] / bestScore < .1 + (rankCutoffIncrease * n)){
 								weight = 0;
+							}
+
+							if(weight >= 2){
+								//opScore = opScore * Math.pow(2, weight)
+							} else{
+								//opScore = 0;
 							}
 
 							weights += weight;
@@ -634,13 +664,22 @@ var RankerMaster = (function () {
 
 					rankings[i].score = rankings[i].scores[rankings[i].scores.length-1];
 
+					// For chargers, factor in Fast Move pressure for ability to farm down, and maximum carryover energy after firing a Charged Move
+
+					if(scenario.slug == "chargers"){
+						var fastMoveDPT = ((pokemon.fastMove.power * pokemon.fastMove.stab * pokemon.shadowAtkMult) * (pokemon.stats.atk / 100)) / (pokemon.fastMove.cooldown / 500);
+						var maximumEnergyRemaining = 100 - Math.min.apply(Math, pokemon.activeChargedMoves.map(function(m) { return m.energy; }))
+
+						rankings[i].score *= Math.pow( Math.pow((maximumEnergyRemaining / 100), 1/2) * Math.pow((fastMoveDPT / 5), 1/6), 1/6);
+					}
+
 					delete rankings[i].scores;
 
 					// Set top matchups and counters
 
 					var matches = rankings[i].matches;
 
-					rankings[i].matches.sort((a,b) => (a.opScore > b.opScore) ? 1 : ((b.opScore > a.opScore) ? -1 : 0));
+					rankings[i].matches.sort((a,b) => (a.opScore > b.opScore) ? -1 : ((b.opScore > a.opScore) ? 1 : 0));
 
 					var matchupCount = Math.min(5, rankings[i].matches.length);
 					var keyMatchupsCount = 0;

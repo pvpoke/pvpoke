@@ -735,15 +735,15 @@ var BattlerMaster = (function () {
 				// Report the overall battle result
 
 				if(properties.featuredTeam !== null){
-					gtag('event', battleSummaryStr, {
-					  'event_category' : 'Training Battle',
-					  'event_label' : battleResult,
+					gtag('event', 'Training Battle', {
+					  'summary' : battleSummaryStr,
+					  'result' : battleResult,
 					  'featured_team': properties.featuredTeam.slug
 					});
 				} else{
-					gtag('event', battleSummaryStr, {
-					  'event_category' : 'Training Battle',
-					  'event_label' : battleResult
+					gtag('event', 'Training Battle', {
+					  'summary' : battleSummaryStr,
+  					  'result' : battleResult
 					});
 				}
 
@@ -751,6 +751,12 @@ var BattlerMaster = (function () {
 				// Gather team and Pokemon data
 				var teamStrs = [];
 				var teamScores = [];
+
+				var pokeObjs = [];
+				var teamObjs = [];
+				var cup = battle.getCup();
+				var eligiblePokemon = gm.generateFilteredPokemonList(battle, cup.include, cup.exclude);
+				var teamsValid = true;
 
 				for(var i = 0; i < players.length; i++){
 					var team = players[i].getTeam();
@@ -820,15 +826,40 @@ var BattlerMaster = (function () {
 						playerType = players[i].getAI().getLevel()+1;
 					}
 
+					// Check that all members of all teams are valid in the format
+					var teamValid = true;
+
+					for(var n = 0; n < team.length; n++){
+						var found = false;
+
+						for(var k = 0; k < eligiblePokemon.length; k++){
+							if(eligiblePokemon[k].speciesId == team[n].speciesId){
+								console.log(team[n].speciesId + " is eligible " + eligiblePokemon[k].speciesId);
+								found = true;
+							}
+						}
+
+						if(! found){
+							teamsValid = false;
+						}
+					}
+
 					var battleRating = Math.floor( (500 * ((maxScore - opponentScore) / maxScore)) + (500 * (score / maxScore)))
 
 					// Report team stats
 
-					gtag('event', battleSummaryStr, {
-					  'event_category' : 'Training Team',
-					  'event_label' : teamStrs[i],
-					  'value' : battleRating+'',
+					gtag('event', 'Training Team', {
+					  'summary' : battleSummaryStr,
+					  'team' : teamStrs[i],
+					  'value' : battleRating,
 					  'player_type': playerType,
+					});
+
+					teamObjs.push({
+						teamStr: teamStrs[i],
+						format: battle.getCup().name + " " + battle.getCP(),
+						playerType: playerType,
+						teamScore: battleRating
 					});
 
 					console.log(teamStrs[i]);
@@ -859,12 +890,15 @@ var BattlerMaster = (function () {
 						}
 
 						if(properties.mode == "tournament"){
-							gtag('event', battleSummaryStr, {
-								  'event_category' : 'Training Roster Pokemon',
-								  'event_label' : pokemon.canonicalId,
-								  'value' : battleRating+'',
+							gtag('event', 'Training Roster Pokemon', {
+								  'summary' : battleSummaryStr,
+								  'speciesId' : pokemon.canonicalId,
+								  'value' : battleRating,
 								  'player_type': playerType
 								});
+
+
+							battleSummaryStr
 						}
 
 						pokeStrArr.push(pokeStr);
@@ -877,14 +911,12 @@ var BattlerMaster = (function () {
 
 					// Report roster stats
 
-					gtag('event', battleSummaryStr, {
-					  'event_category' : 'Training Roster',
-					  'event_label' : rosterStr,
-					  'value' : battleRating+'',
+					gtag('event', 'Training Roster', {
+					  'summary' : battleSummaryStr,
+					  'roster' : rosterStr,
+					  'value' : battleRating,
 					  'player_type': playerType,
 					});
-
-					// Report individual Pokemon with team ratings
 
 					for(var n = 0; n < team.length; n++){
 						var pokemon = team[n];
@@ -906,9 +938,20 @@ var BattlerMaster = (function () {
 							}
 						}
 
-						gtag('event', battleSummaryStr, {
-						  'event_category' : 'Training Pokemon',
-						  'event_label' : pokeStr,
+						// Add to list of individual Pokemon db objects
+						pokeObjs.push({
+							pokemonId: pokeStr,
+							format: battle.getCup().name + " " + battle.getCP(),
+							teamPosition: n+1,
+							playerType: playerType,
+							teamScore: battleRating,
+							individualScore: pokemon.battleStats.score,
+							shields: pokemon.battleStats.shieldsUsed
+						});
+
+						gtag('event', 'Training Pokemon', {
+						  'summary' : battleSummaryStr,
+						  'pokemon' : pokeStr,
 						  'value' : pokemon.battleStats.score+'',
 						  'player_type': playerType,
 						  'team_position': n+1,
@@ -916,6 +959,27 @@ var BattlerMaster = (function () {
 						});
 
 					}
+				}
+
+				// Report final individual and team data to db
+
+				if(teamsValid && players[1].getAI().getLevel()+1 >= 3){
+					$.ajax({
+				        url: "../data/training/postTraining.php",
+				        method: "POST",
+				        data: {
+				            pokemon: pokeObjs,
+							teams: teamObjs
+				        },
+				        success: function(response) {
+							if(! response.result && response.error){
+								console.error(response.error);
+							}
+				        },
+				        error: function(error) {
+				            console.log(error);
+				        }
+				    });
 				}
 			}
 

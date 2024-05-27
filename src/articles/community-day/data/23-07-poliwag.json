@@ -1,0 +1,115 @@
+{
+	"species": [
+		{
+			"speciesId": "poliwag",
+			"baseSpeciesId": "poliwag"
+		},
+		{
+			"speciesId": "poliwhirl",
+			"baseSpeciesId": "poliwag"
+		},
+		{
+			"speciesId": "poliwrath",
+			"baseSpeciesId": "poliwag",
+			"default": true
+		},
+		{
+			"speciesId": "politoed",
+			"baseSpeciesId": "poliwag"
+		}
+	],
+	"checklist": [
+		{
+			"title": "High Rank Poliwrath",
+			"speciesId": "poliwrath",
+			"baseSpeciesId": "poliwag",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [22, 0, 14, 15],
+			"priority": 1,
+			"notes": "More defensive weighting (122 Defense or higher) may be preferable against Shadow Swampert and the mirror match."
+		},
+		{
+			"title": "High Rank Poliwrath",
+			"speciesId": "poliwrath",
+			"baseSpeciesId": "poliwag",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [44, 0, 14, 14],
+			"priority": 1
+		},
+		{
+			"title": "Shadow Poliwrath",
+			"speciesId": "poliwrath",
+			"baseSpeciesId": "poliwag",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [22, 0, 14, 15],
+			"priority": 1
+		},
+		{
+			"title": "Shadow Poliwrath",
+			"speciesId": "poliwrath",
+			"baseSpeciesId": "poliwag",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [44, 0, 14, 14],
+			"priority": 1
+		},
+		{
+			"title": "High Rank Politoed",
+			"speciesId": "politoed",
+			"baseSpeciesId": "poliwag",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [23.5, 0, 15, 11],
+			"priority": 2
+		},
+		{
+			"title": "High Rank Politoed",
+			"speciesId": "politoed",
+			"baseSpeciesId": "poliwag",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [48.5, 0, 15, 14],
+			"priority": 2
+		},
+		{
+			"title": "Shadow Politoed",
+			"speciesId": "politoed",
+			"baseSpeciesId": "poliwag",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [23.5, 0, 15, 11],
+			"priority": 2
+		},
+		{
+			"title": "Shadow Politoed",
+			"speciesId": "politoed",
+			"baseSpeciesId": "poliwag",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [48.5, 0, 15, 14],
+			"priority": 2
+		},
+		{
+			"title": "High Attack Poliwrath",
+			"speciesId": "poliwrath",
+			"baseSpeciesId": "poliwag",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [22, 5, 15, 4],
+			"priority": 2,
+			"notes": "This IV spread hits a mix of breakpoints and bulkpoints, favoring higher Defense. 115 Attack to 117 Attack helps secure breakpoints against Shadow Swampert, Lickitung, Registeel, Noctowl, and the mirror match. 122 Defense or higher helps secure bulkpoints against Shadow Swampert and the mirror match."
+		},
+		{
+			"title": "Return Poliwrath",
+			"speciesId": "poliwrath",
+			"baseSpeciesId": "poliwag",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [22, 0, 14, 15],
+			"priority": 3
+		}
+	]
+}

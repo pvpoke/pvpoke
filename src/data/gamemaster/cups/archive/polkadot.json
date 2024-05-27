@@ -1,0 +1,11 @@
+{
+    "name": "polkadot",
+    "title": "Silph Polkadot Cup",
+    "include": [{
+        "filterType": "id",
+        "name": "Species",
+        "values": ["beedrill", "venomoth", "heracross", "masquerain", "wormadam_sandy", "wormadam_plant", "vespiquen", "scolipede", "galvantula", "charjabug", "araquanid", "raichu", "nidoking", "golduck", "dewgong", "wailmer", "seviper", "sealeo", "bibarel", "serperior", "swoobat", "dedenne", "primarina", "arcanine", "rapidash", "rapidash_galarian", "vaporeon", "typhlosion", "girafarig", "sneasel_hisuian", "donphan", "blaziken", "manectric", "leafeon", "samurott", "zebstrika", "luxray", "emolga", "beartic", "quilladin", "chesnaught", "litleo", "pyroar", "sylveon", "oranguru", "xatu", "talonflame", "togekiss", "swanna", "clefable", "wigglytuff", "plusle", "minun", "florges", "aromatisse", "slurpuff", "raichu_alolan", "jumpluff", "granbull", "castform", "glalie", "roserade", "whimsicott", "arbok", "staraptor", "ledian", "scyther", "yanmega", "toucannon", "espeon", "glaceon", "golisopod", "flareon", "delphox", "heatmor", "zangoose", "emboar", "camerupt", "ampharos", "vikavolt", "jolteon", "bewear", "sandslash", "hippowdon", "pinsir", "kricketune", "lopunny", "linoone", "furret", "ursaluna", "wailord", "cherrim_sunny", "kecleon", "stoutland", "dustox", "braviary", "prinplup", "darmanitan_standard", "darmanitan_galarian_standard", "purugly"]
+    }],
+    "exclude": [],
+	"allowSameSpecies": true
+}

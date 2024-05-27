@@ -20,18 +20,6 @@
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["OUTRAGE", "EARTH_POWER"]
 }, {
-    "speciesId": "ursaluna",
-    "fastMove": "TACKLE",
-    "chargedMoves": ["THUNDER_PUNCH", "EARTH_POWER"]
-}, {
-    "speciesId": "chesnaught",
-    "fastMove": "VINE_WHIP",
-    "chargedMoves": ["FRENZY_PLANT", "SUPER_POWER"]
-}, {
-    "speciesId": "garchomp",
-    "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["OUTRAGE", "SAND_TOMB"]
-}, {
     "speciesId": "gyarados",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["AQUA_TAIL", "CRUNCH"]
@@ -40,9 +28,9 @@
     "fastMove": "WATERFALL",
     "chargedMoves": ["CRUNCH", "OUTRAGE"]
 }, {
-    "speciesId": "hydreigon",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["BRUTAL_SWING", "FLASH_CANNON"]
+    "speciesId": "haxorus",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["BREAKING_SWIPE", "NIGHT_SLASH"]
 }, {
     "speciesId": "machamp",
     "fastMove": "COUNTER",
@@ -60,12 +48,16 @@
     "fastMove": "BULLET_PUNCH",
     "chargedMoves": ["METEOR_MASH", "EARTHQUAKE"]
 }, {
-    "speciesId": "rhyperior",
-    "fastMove": "MUD_SLAP",
-    "chargedMoves": ["ROCK_WRECKER", "SURF"]
+    "speciesId": "primarina",
+    "fastMove": "CHARM",
+    "chargedMoves": ["DISARMING_VOICE", "PSYCHIC"]
+}, {
+    "speciesId": "primarina",
+    "fastMove": "WATERFALL",
+    "chargedMoves": ["DISARMING_VOICE", "PSYCHIC"]
 }, {
     "speciesId": "rhyperior",
-    "fastMove": "SMACK_DOWN",
+    "fastMove": "MUD_SLAP",
     "chargedMoves": ["ROCK_WRECKER", "SURF"]
 }, {
     "speciesId": "snorlax",
@@ -89,15 +81,43 @@
     "fastMove": "CHARM",
     "chargedMoves": ["ANCIENT_POWER", "FLAMETHROWER"]
 }, {
-    "speciesId": "walrein",
+    "speciesId": "ursaluna",
+    "fastMove": "TACKLE",
+    "chargedMoves": ["THUNDER_PUNCH", "HIGH_HORSEPOWER"]
+}, {
+    "speciesId": "ursaluna",
+    "fastMove": "TACKLE",
+    "chargedMoves": ["ICE_PUNCH", "HIGH_HORSEPOWER"]
+}, {
+    "speciesId": "annihilape",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["ICE_PUNCH", "SHADOW_BALL"]
+}, {
+    "speciesId": "annihilape",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["NIGHT_SLASH", "SHADOW_BALL"]
+}, {
+    "speciesId": "feraligatr",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"]
+}, {
+    "speciesId": "skeledirge",
+    "fastMove": "INCINERATE",
+    "chargedMoves": ["SHADOW_BALL", "DISARMING_VOICE"]
+}, {
+    "speciesId": "avalugg_hisuian",
     "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
+    "chargedMoves": ["ROCK_SLIDE", "ICY_WIND"]
 }, {
-    "speciesId": "primarina",
-    "fastMove": "CHARM",
-    "chargedMoves": ["MOONBLAST", "PSYCHIC"]
+    "speciesId": "golisopod",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["AERIAL_ACE", "LIQUIDATION"]
 }, {
-    "speciesId": "primarina",
-    "fastMove": "WATERFALL",
-    "chargedMoves": ["MOONBLAST", "PSYCHIC"]
+    "speciesId": "hippowdon",
+    "fastMove": "SAND_ATTACK",
+    "chargedMoves": ["WEATHER_BALL_ROCK", "EARTH_POWER"]
+}, {
+    "speciesId": "chesnaught",
+    "fastMove": "VINE_WHIP",
+    "chargedMoves": ["FRENZY_PLANT", "SUPER_POWER"]
 }]

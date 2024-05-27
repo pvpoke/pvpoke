@@ -4467,7 +4467,7 @@
 	    }
 	}, {
 	    "name": "Dragonite",
-	    "types": ["dragon"],
+	    "types": ["dragon", "flying"],
 	    "id": "dragonite",
 	    "stats": {
 	        "hp": 91,
@@ -4488,7 +4488,8 @@
 	        "spA": 45,
 	        "spD": 30,
 	        "spe": 20
-	    }
+	    },
+		"traits": ["ice_scales"]
 	}, {
 	    "name": "Frosmoth",
 	    "types": ["ice", "bug"],
@@ -4500,7 +4501,8 @@
 	        "spA": 125,
 	        "spD": 90,
 	        "spe": 65
-	    }
+	    },
+		"traits": ["ice_scales"]
 	}, {
 	    "name": "Snover",
 	    "types": ["grass", "ice"],
@@ -5268,6 +5270,104 @@
 			"teraType": "psychic",
 			"moveTypes": ["psychic", "grass", "bug"]
 		}
+	}, {
+	    "name": "Decidueye",
+	    "types": ["grass", "ghost"],
+	    "id": "decidueye",
+	    "stats": {
+	        "hp": 78,
+	        "atk": 107,
+	        "def": 75,
+	        "spA": 100,
+	        "spD": 100,
+	        "spe": 70
+	    },
+		"defaults": {
+			"teraType": "flying",
+			"moveTypes": ["grass", "ghost", "flying", "fighting"]
+		}
+	}, {
+	    "name": "Samurott",
+	    "types": ["water"],
+	    "id": "samurott",
+	    "stats": {
+	        "hp": 90,
+	        "atk": 108,
+	        "def": 80,
+	        "spA": 100,
+	        "spD": 65,
+	        "spe": 85
+	    },
+		"defaults": {
+			"teraType": "bug",
+			"moveTypes": ["water", "bug", "dark", "ground"]
+		}
+	}, {
+	    "name": "Typhlosion",
+	    "types": ["fire"],
+	    "id": "typhlosion",
+	    "stats": {
+	        "hp": 78,
+	        "atk": 84,
+	        "def": 78,
+	        "spA": 109,
+	        "spD": 85,
+	        "spe": 100
+	    },
+		"traits": ["flash_fire"],
+		"defaults": {
+			"teraType": "ghost",
+			"moveTypes": ["fire", "ghost", "fairy", "ground"],
+			"traits": ["flash_fire"]
+		}
+	}, {
+	    "name": "Inteleon",
+	    "types": ["water"],
+	    "id": "inteleon",
+	    "stats": {
+	        "hp": 70,
+	        "atk": 85,
+	        "def": 65,
+	        "spA": 125,
+	        "spD": 65,
+	        "spe": 120
+	    },
+		"defaults": {
+			"teraType": "ice",
+			"moveTypes": ["water", "ice", "dark"]
+		}
+	}, {
+	    "name": "Chesnaught",
+	    "types": ["grass", "fighting"],
+	    "id": "chesnaught",
+	    "stats": {
+	        "hp": 88,
+	        "atk": 107,
+	        "def": 122,
+	        "spA": 74,
+	        "spD": 75,
+	        "spe": 64
+	    },
+		"defaults": {
+			"teraType": "rock",
+			"moveTypes": ["grass", "fighting", "rock", "ground"]
+		}
+	}, {
+	    "name": "Delphox",
+	    "types": ["fire", "psychic"],
+	    "id": "delphox",
+	    "stats": {
+	        "hp": 75,
+	        "atk": 69,
+	        "def": 72,
+	        "spA": 114,
+	        "spD": 100,
+	        "spe": 104
+	    },
+		"defaults": {
+			"teraType": "fairy",
+			"moveTypes": ["fire", "psychic", "fairy"]
+		}
 	}],
 	"traits": [
 		{
@@ -5303,6 +5403,11 @@
 		{
 			"name": "Huge Power",
 			"id": "huge_power",
+			"type": "ability"
+		},
+		{
+			"name": "Ice Scales",
+			"id": "ice_scales",
 			"type": "ability"
 		},
 		{

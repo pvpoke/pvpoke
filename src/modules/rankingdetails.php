@@ -24,30 +24,37 @@
 	<div class="detail-tab" tab="stats">
 		<div class="detail-section performance float margin">
 			<div class="ranking-header">Performance</div>
+			<button class="ranking-compare">Compare</button>
 			<div class="hexagon-container">
 				<div class="chart-label">
 					<div class="value">0</div>
 					<div class="label">Lead</div>
+					<div class="comparison"></div>
 				</div>
 				<div class="chart-label">
 					<div class="value">0</div>
 					<div class="label">Closer</div>
+					<div class="comparison"></div>
 				</div>
 				<div class="chart-label">
 					<div class="value">0</div>
 					<div class="label">Switch</div>
+					<div class="comparison"></div>
 				</div>
 				<div class="chart-label">
 					<div class="value">0</div>
 					<div class="label">Charger</div>
+					<div class="comparison"></div>
 				</div>
 				<div class="chart-label">
 					<div class="value">0</div>
 					<div class="label">Attacker</div>
+					<div class="comparison"></div>
 				</div>
 				<div class="chart-label">
 					<div class="value">0</div>
 					<div class="label">Consistency</div>
+					<div class="comparison"></div>
 				</div>
 				<canvas class="hexagon"></canvas>
 			</div>
