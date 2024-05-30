@@ -391,6 +391,14 @@
         "exclude": []
     }],
     "formats": [{
+        "title": "Ultra Premier",
+        "cup": "premier",
+        "cp": 2500,
+        "meta": "premierultra",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
         "title": "P!P Championship Series",
         "cup": "great",
         "cp": 1500,
