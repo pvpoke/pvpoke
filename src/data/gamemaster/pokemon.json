@@ -33428,7 +33428,7 @@
     "tags": ["ultrabeast"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false
+    "released": true
 }, {
     "dex": 800,
     "speciesName": "Necrozma (Dawn Wings)",
@@ -33440,7 +33440,8 @@
     },
     "types": ["psychic", "ghost"],
 	"fastMoves": ["METAL_CLAW", "PSYCHO_CUT", "SHADOW_CLAW"],
-    "chargedMoves": ["DARK_PULSE", "FUTURE_SIGHT", "IRON_HEAD", "OUTRAGE"],
+    "chargedMoves": ["DARK_PULSE", "FUTURE_SIGHT", "IRON_HEAD", "OUTRAGE", "MOONGEIST_BEAM"],
+	"eliteMoves": ["MOONGEIST_BEAM"],
     "defaultIVs": {
         "cp500": [4.5, 15, 13, 15],
         "cp1500": [13.5, 6, 15, 6],
@@ -33449,7 +33450,7 @@
     "tags": ["ultrabeast"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false
+    "released": true
 }, {
     "dex": 800,
     "speciesName": "Necrozma (Dusk Mane)",
@@ -33461,7 +33462,8 @@
     },
     "types": ["psychic", "steel"],
 	"fastMoves": ["METAL_CLAW", "PSYCHO_CUT", "SHADOW_CLAW"],
-    "chargedMoves": ["DARK_PULSE", "FUTURE_SIGHT", "IRON_HEAD", "OUTRAGE"],
+    "chargedMoves": ["DARK_PULSE", "FUTURE_SIGHT", "IRON_HEAD", "OUTRAGE", "SUNSTEEL_STRIKE"],
+	"eliteMoves": ["SUNSTEEL_STRIKE"],
     "defaultIVs": {
         "cp500": [4.5, 15, 13, 15],
         "cp1500": [13.5, 6, 15, 6],
@@ -33470,7 +33472,7 @@
     "tags": ["ultrabeast"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false
+    "released": true
 }, {
     "dex": 800,
     "speciesName": "Necrozma (Ultra)",
@@ -33533,7 +33535,7 @@
 	"searchPriority": 2,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false
+    "released": true
 }, {
     "dex": 803,
     "speciesName": "Poipole",
