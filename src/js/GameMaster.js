@@ -933,8 +933,6 @@ var GameMaster = (function () {
 			} else if (battle.getCup().name === "factionsmaster") {
 				// big boy megas need taller height limit
 				minStats = 5000;
-			} else if (battle.getCup().name === "ufc-untapped-master") {
-				minStats = 4200;
 			}
 
 			if(! excludeByStatProduct){
