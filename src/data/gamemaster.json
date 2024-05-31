@@ -424,26 +424,10 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Master Premier Cup",
+        "title": "Ultra Premier Cup",
         "cup": "premier",
-        "cp": 10000,
-        "meta": "premiermaster",
-        "showCup": false,
-        "showFormat": false,
-        "showMeta": true
-    }, {
-        "title": "Catch Cup",
-        "cup": "catch",
-        "cp": 1500,
-        "meta": "catch",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Little Catch Cup",
-        "cup": "littlecatch",
-        "cp": 500,
-        "meta": "littlecatch",
+        "cp": 2500,
+        "meta": "premierultra",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -485,14 +469,6 @@
         "cup": "battlefrontiermaster",
         "cp": 10000,
         "meta": "battlefrontiermaster",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Devon Sovereign Cup",
-        "cup": "sovereign",
-        "cp": 1500,
-        "meta": "sovereign",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
