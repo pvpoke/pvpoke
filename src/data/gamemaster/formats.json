@@ -9,12 +9,30 @@
 		"showMeta": true
 	},
 	{
+		"title": "Summer Cup",
+		"cup": "summer",
+		"cp": 1500,
+		"meta": "summer",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
 		"title": "P!P Championship Series",
 		"cup": "great",
 		"cp": 1500,
 		"meta": "championshipseries",
 		"showCup": false,
 		"showFormat": false,
+		"showMeta": true
+	},
+	{
+		"title": "Devon Tundra Cup",
+		"cup": "tundra",
+		"cp": 1500,
+		"meta": "tundra",
+		"showCup": true,
+		"showFormat": true,
 		"showMeta": true
 	},
 	{
