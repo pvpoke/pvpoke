@@ -63,8 +63,8 @@ switch($cup){
 		$league = 'Electric Cup';
 		break;
 
-	case "jungle":
-		$league = 'Jungle Cup';
+	case "summer":
+		$league = 'Summer Cup';
 		break;
 
 	case "zodiac":
@@ -79,8 +79,12 @@ switch($cup){
 		$league = 'Devon Rainstorm Cup';
 		break;
 
-	case "genetic":
-		$league = 'Devon Genetic Cup';
+	case "tundra":
+		$league = 'Devon Tundra Cup';
+		break;
+
+	case "ufc-untapped-master":
+		$league = 'UFC Untapped (Master)';
 		break;
 
 	case "catch":

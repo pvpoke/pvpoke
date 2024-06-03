@@ -523,6 +523,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if(cup.name == "summer"){
+					iterations = 1;
+				}
+
 				if(cup.name == "little"){
 					iterations = 1;
 				}
