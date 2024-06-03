@@ -46,6 +46,15 @@
 		"showMeta": true
 	},
 	{
+		"title": "Summer Cup",
+		"cup": "summer",
+		"cp": 1500,
+		"meta": "summer",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
 		"title": "Battle Frontier (Enchanted)",
 		"cup": "enchanted",
 		"cp": 2500,
@@ -92,15 +101,6 @@
 		"showMeta": true
 	},
 	{
-        "title": "Devon Rainstorm Cup",
-        "cup": "rainstorm",
-        "cp": 1500,
-        "meta": "rainstorm",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    },
-	{
         "title": "Devon Genetic Cup",
         "cup": "genetic",
         "cp": 1500,
@@ -109,6 +109,24 @@
         "showFormat": true,
         "showMeta": true
     },
+	{
+		"title": "Devon Tundra Cup",
+		"cup": "tundra",
+		"cp": 1500,
+		"meta": "tundra",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "UFC Untapped (Master)",
+		"cup": "ufc-untapped-master",
+		"cp": 10000,
+		"meta": "ufc-untapped-master",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
 	{
 		"title": "Little",
 		"cup": "little",

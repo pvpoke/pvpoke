@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.31.9.2';
+$SITE_VERSION = '1.31.9.3';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -133,7 +133,7 @@ if(! isset($OG_IMAGE)){
 
 <link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/themes/sunflower/favicon.png">
 
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=185">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=186">
 
 <?php if(strpos($META_TITLE, 'Train') !== false): ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=21">
@@ -211,7 +211,7 @@ if(! isset($OG_IMAGE)){
 
 <body <?php if($_SETTINGS->colorblindMode == 1): ?>class="colorblind"<?php endif; ?>>
 
-	<?php  if(true): // Removing this but saving code for future use ?>
+	<?php  if(false): // Removing this but saving code for future use ?>
 		<?php if(strpos($_SERVER['REQUEST_URI'], 'shared-skies') == false): ?>
 			<div class="header-ticker">
 				<a href="https://pvpoke.com/shared-skies/rankings/">Preview next season</a>

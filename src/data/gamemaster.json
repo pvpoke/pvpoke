@@ -140,25 +140,6 @@
         "include": [],
         "exclude": []
     }, {
-        "name": "electric",
-        "title": "Electric Cup",
-        "include": [{
-            "filterType": "type",
-            "name": "Type",
-            "values": ["electric"]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "name": "Tag",
-            "values": ["mega"]
-        }, {
-            "filterType": "id",
-            "name": "Species",
-            "values": ["stunfisk", "charjabug", "vikavolt", "heliolisk"]
-        }],
-        "partySize": 3,
-        "presetOnly": true
-    }, {
         "name": "enchanted",
         "title": "Battle Frontier (Enchanted)",
         "include": [{
@@ -198,22 +179,6 @@
         "partySize": 3,
         "presetOnly": true
     }, {
-        "name": "jungle",
-        "title": "Jungle Cup",
-        "include": [{
-            "filterType": "type",
-            "values": ["normal", "grass", "electric", "poison", "ground", "flying", "bug", "dark"]
-        }],
-        "exclude": [{
-            "filterType": "id",
-            "values": ["gligar", "stunfisk_galarian"]
-        }, {
-            "filterType": "tag",
-            "values": ["mega"]
-        }],
-        "partySize": 3,
-        "presetOnly": true
-    }, {
         "name": "little",
         "title": "Little Cup",
         "include": [{
@@ -223,18 +188,6 @@
         "exclude": [{
             "filterType": "id",
             "values": ["shuckle", "smeargle"]
-        }],
-        "levelCap": 50
-    }, {
-        "name": "littlecatch",
-        "title": "Little Catch Cup",
-        "include": [],
-        "exclude": [{
-            "filterType": "id",
-            "values": ["articuno", "celebi", "ho_oh", "hoopa", "lugia", "moltres", "rayquaza", "regice", "regieleki", "regigigas", "shaymin", "shaymin_sky", "zapdos", "registeel", "cresselia", "guzzlord", "deoxys_defense", "mew", "tapu_fini", "regirock", "regice", "zygarde_complete", "zygarde", "victini", "raikou_shadow", "suicune_shadow", "entei_shadow", "gengar_shadow"]
-        }, {
-            "filterType": "tag",
-            "values": ["mega"]
         }],
         "levelCap": 50
     }, {
@@ -280,32 +233,6 @@
             "values": ["steel", "fighting"]
         }]
     }, {
-        "name": "rainstorm",
-        "title": "Devon Rainstorm Cup",
-        "include": [{
-            "filterType": "type",
-            "name": "Type",
-            "values": ["dark", "flying", "water"]
-        }, {
-            "filterType": "id",
-            "name": "Species",
-            "values": ["ho_oh_shadow", "lugia_shadow"]
-        }],
-        "exclude": [{
-            "filterType": "type",
-            "name": "Type",
-            "values": ["electric", "fairy", "fighting"]
-        }, {
-            "filterType": "id",
-            "name": "Species",
-            "values": ["obstagoon", "mantine", "toxapex", "whiscash", "skarmory", "ho_oh", "lugia", "celesteela", "pidgeot"]
-        }, {
-            "filterType": "tag",
-            "name": "Tag",
-            "values": ["mega"]
-        }],
-        "levelCap": 50
-    }, {
         "name": "remix",
         "title": "Remix",
         "include": [],
@@ -343,43 +270,6 @@
             "filterType": "type",
             "values": ["grass"]
         }]
-    }, {
-        "name": "sovereign",
-        "title": "Devon Sovereign Cup",
-        "include": [{
-            "filterType": "type",
-            "name": "Type",
-            "values": ["electric", "fairy", "ice", "normal", "psychic"]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "name": "Tag",
-            "values": ["mega"]
-        }, {
-            "filterType": "id",
-            "name": "Species",
-            "values": ["azumarill", "litleo", "greedent", "lickitung", "lanturn", "cresselia", "miltank", "froslass", "hoopa", "munchlax", "abomasnow", "arctibax", "baxcalibur", "frigibax", "bellibolt", "charjabug", "zangoose"]
-        }, {
-            "filterType": "type",
-            "name": "Type",
-            "values": ["ground", "rock", "steel"]
-        }]
-    }, {
-        "name": "spring",
-        "title": "Spring Cup",
-        "include": [{
-            "filterType": "type",
-            "values": ["water", "grass", "fairy"]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "values": ["mega"]
-        }, {
-            "filterType": "id",
-            "values": ["toxapex", "mantine"]
-        }],
-        "partySize": 3,
-        "presetOnly": true
     }, {
         "name": "summer",
         "title": "Summer Cup",
@@ -428,18 +318,42 @@
             "filterType": "id",
             "values": ["victini", "mew", "pidgeot_mega", "tyranitar_mega", "gengar_mega", "swampert_mega", "gardevoir_mega", "latios_mega", "latias_mega", "charizard_mega_y", "gyarados_mega", "groudon_primal", "kyogre_primal", "zygarde_complete", "rayquaza_mega", "garchomp_mega", "heracross_mega", "zygarde_10", "solgaleo", "aggron_mega", "dialga_origin", "palkia_origin", "xerneas", "steelix_mega", "groudon", "charizard_mega_x", "meloetta_aria", "salamence_mega", "scizor_mega", "landorus_therian", "lugia", "mewtwo_shadow", "giratina_altered", "palkia", "slowbro_mega", "mewtwo", "reshiram", "zekrom", "blaziken_mega", "kyurem", "dragonite", "ho_oh", "groudon_shadow", "zacian_hero", "dialga", "alakazam_mega", "blastoise_mega", "heatran", "ho_oh_shadow", "giratina_origin", "lugia_shadow", "aerodactyl_mega", "zarude", "dragonite_shadow", "melmetal", "kyogre", "kyogre_shadow", "venusaur_mega", "yveltal", "zapdos_galarian", "enamorus_incarnate", "buzzwole", "keldeo_ordinary", "landorus_incarnate", "nihilego", "ampharos_mega", "regirock", "regirock_shadow", "garchomp", "garchomp_shadow", "lunala", "diancie_mega", "pinsir_mega", "jirachi", "rayquaza", "zygarde", "sceptile_mega", "celebi", "necrozma", "necrozma_dawn_wings", "necrozma_dusk_mane", "marshadow"]
         }]
-    }, {
-        "name": "zodiac",
-        "title": "Zodiac",
-        "include": [{
-            "filterType": "id",
-            "name": "Species",
-            "values": ["starmie", "dragonite", "dragonite_shadow", "seaking", "muk_alolan", "muk_alolan_shadow", "mew", "cradily", "cradily_shadow", "kingdra", "kingdra_shadow", "bewear", "skuntank", "skuntank_shadow", "munchlax", "electivire", "electivire_shadow", "linoone_galarian", "sandslash", "sandslash_shadow", "cresselia", "alakazam", "alakazam_shadow", "armaldo", "armaldo_shadow", "zweilous", "ursaluna", "ursaluna_shadow", "castform", "gallade", "gallade_shadow", "malamar", "pangoro", "qwilfish_hisuian", "froslass", "froslass_shadow", "regice", "regice_shadow", "slowbro_galarian", "barbaracle", "donphan", "donphan_shadow", "girafarig", "girafarig_shadow", "perrserker", "staraptor", "staraptor_shadow", "sneasler", "sneasler_shadow", "snorlax", "snorlax_shadow", "farfetchd_galarian", "furret", "golduck", "golduck_shadow", "suicune", "suicune_shadow", "greedent", "excadrill", "excadrill_shadow", "jumpluff", "jumpluff_shadow", "roserade", "sceptile", "sceptile_shadow", "sealeo", "sealeo_shadow", "lapras", "lapras_shadow", "walrein", "walrein_shadow", "tentacruel", "tentacruel_shadow", "pinsir", "pinsir_shadow", "ariados", "electrode_hisuian", "rapidash", "cetitan"]
-        }],
-        "exclude": []
     }],
     "formats": [{
-        "title": "Ultra Premier",
+        "title": "Master League (Classic)",
+        "cup": "classic",
+        "cp": 10000,
+        "meta": "master",
+        "showCup": false,
+        "showFormat": true,
+        "showMeta": false,
+        "hideRankings": true
+    }, {
+        "title": "ML Overused",
+        "cup": "overused",
+        "cp": 10000,
+        "meta": "overused",
+        "showCup": false,
+        "showFormat": false,
+        "showMeta": true
+    }, {
+        "title": "Master League (Megas)",
+        "cup": "mega",
+        "cp": 10000,
+        "meta": "mastermega",
+        "showCup": false,
+        "showFormat": false,
+        "showMeta": true
+    }, {
+        "title": "P!P Championship Series",
+        "cup": "great",
+        "cp": 1500,
+        "meta": "championshipseries",
+        "showCup": false,
+        "showFormat": false,
+        "showMeta": true
+    }, {
+        "title": "Ultra Premier Cup",
         "cup": "premier",
         "cp": 2500,
         "meta": "premierultra",
@@ -455,12 +369,53 @@
         "showFormat": true,
         "showMeta": true
     }, {
-        "title": "P!P Championship Series",
-        "cup": "great",
+        "title": "Battle Frontier (Enchanted)",
+        "cup": "enchanted",
+        "cp": 2500,
+        "meta": "enchanted",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Battle Frontier (Primordial)",
+        "cup": "primordial",
         "cp": 1500,
-        "meta": "championshipseries",
-        "showCup": false,
-        "showFormat": false,
+        "meta": "primordial",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Battle Frontier (Serene)",
+        "cup": "serene",
+        "cp": 1500,
+        "meta": "serene",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Battle Frontier (Great)",
+        "cup": "battlefrontiergreat",
+        "cp": 1500,
+        "meta": "battlefrontiergreat",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": false,
+        "hideRankings": true
+    }, {
+        "title": "Battle Frontier (Master)",
+        "cup": "battlefrontiermaster",
+        "cp": 10000,
+        "meta": "battlefrontiermaster",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Devon Genetic Cup",
+        "cup": "genetic",
+        "cp": 1500,
+        "meta": "genetic",
+        "showCup": true,
+        "showFormat": true,
         "showMeta": true
     }, {
         "title": "Devon Tundra Cup",
@@ -478,6 +433,14 @@
         "showCup": true,
         "showFormat": true,
         "showMeta": true
+    }, {
+        "title": "Little",
+        "cup": "little",
+        "cp": 500,
+        "meta": "little",
+        "showCup": false,
+        "showFormat": false,
+        "showMeta": false
     }, {
         "title": "Custom",
         "cup": "custom",
