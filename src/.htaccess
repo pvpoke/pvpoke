@@ -12,6 +12,7 @@ RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteRule ^season-13/(.*)$ /$1 [R,L]
 RewriteRule ^season-15/(.*)$ /$1 [R,L]
 RewriteRule ^world-of-wonders/(.*)$ /$1 [R,L]
+RewriteRule ^shared-skies/(.*)$ /$1 [R,L]
 
 Options -Indexes
 
