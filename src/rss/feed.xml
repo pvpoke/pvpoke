@@ -3,6 +3,22 @@
 
 	<channel>
 		<item>
+			<title>Custom Ranking Fixes</title>
+			<description>
+				<![CDATA[I've updated the custom rankings tool with some fixes and features that significantly speed up the time it takes to generate results. Under the "Advanced" settings, there's a new option that excludes low-performing Pokemon (Pokemon which have an overall score of less than 70 in the open league rankings). Depending on the cup, this can reduce the number of simulations required by up to half. The tool is much faster in general now, especially for "open" style formats.]]>
+			</description>
+			<link>https://pvpoke.com/#news</link>
+			<pubDate>Tue, 04 Jun 2024 21:33:53 GMT</pubDate>
+		</item>
+		<item>
+			<title>Goodra Rankings</title>
+			<description>
+				<![CDATA[Goodra is getting Thunder Punch for its Community Day, expanding its coverage options. In terms of overall performance, Thunder Punch appears on par with Power Whip or Draco Meteor for Great League, while it has fewer targets in Ultra League. Which moveset you choose may depend on your team and personal preferences. Make sure to grab Thunder Punch Goodra this weekend just in case!]]>
+			</description>
+			<link>https://pvpoke.com/rankings/all/1500/overall/goodra/</link>
+			<pubDate>Tue, 04 Jun 2024 14:13:32 GMT</pubDate>
+		</item>
+		<item>
 			<title>Season of Shared Skies Updates</title>
 			<description>
 				<![CDATA[The main website is now updated with the move changes for Season of Shared Skies. This includes attack value changes and movepool additions. Good luck preparing and enjoy your battles!]]>
@@ -113,22 +129,6 @@
 			</description>
 			<link>https://pvpoke.com/train/analysis/</link>
 			<pubDate>Mon, 25 Mar 2024 16:11:04 GMT</pubDate>
-		</item>
-		<item>
-			<title>New Shadow Rankings</title>
-			<description>
-				<![CDATA[A batch of new Shadow Pokemon debut next week, including Shadow Groudon and Shadow Pidgeot! Groudon appears to be a slight downgrade as Precipice Blades hits hard but isn't quite as fast as Shadow Groudon would like. Not to mention, Groudon bows to the current top Ground type, Landorus!<br><br>Pidgeot is one of the sims' favorite heroes, and Shadow Pidgeot provides interesting new dynamics for this baiting bird. It seems to perform better with Aerial Ace over Feather Dance; lower bulk reduces the effectiveness of Feather Dance's Attack drops, and if you want to hit harder, you may as well hit harder! On the whole, Shadow Pidgeot is a sidegrade to the original and may work better depending on your playstyle.]]>
-			</description>
-			<link>https://pvpoke.com/rankings/all/1500/overall/pidgeot_shadow/</link>
-			<pubDate>Wed, 20 Mar 2024 13:47:10 GMT</pubDate>
-		</item>
-		<item>
-			<title>Ultra Premier Cup Rankings</title>
-			<description>
-				<![CDATA[Ultra Premier makes its long-awaited return in a few weeks! Old contenders like Empoleon and Gallade have new life, while new contenders like Feraligatr and Annihilape will add major twists to this fan favorite meta.<br><br>Without Giratina or Cresselia in the mix, Poliwrath becomes a major target. Look for Grass and Electric Pokemon like Venusaur, Ampharos, Galvantula, or Lanturn to keep it at bay. Electric in particular has anti-meta potential with the strong number of Water and Flying types available.<br><br>In the mix of them all, Dragon stands out as a defining type for the meta. Shadow Dragonite should remain the pick of choice while several underused options like Dragalge and Goodra could see increased play with the Aqua Tail buff. With Fairy and Steel options looking limited, double Dragon lines could come roaring back from the Ultra Premier of years past. Empoleon is not only one of the best Dragon partners, but also now one of the best Dragon counters with Steel Wing instead of Waterfall. Avoiding the aforementioned Poliwrath will be vital for its success. Good luck! ]]>
-			</description>
-			<link>https://pvpoke.com/rankings/premier/2500/overall/</link>
-			<pubDate>Sun, 17 Mar 2024 22:48:53 GMT</pubDate>
 		</item>
 
 		<title>PvPoke</title>

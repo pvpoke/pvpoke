@@ -302,11 +302,20 @@ function interfaceObject(){
 			cup.useDefaultMovesets = data.useDefaultMovesets;
 		}
 
-
 		if(cup.useDefaultMovesets){
 			$(".check.use-default-movesets").addClass("on");
 		} else{
 			$(".check.use-default-movesets").removeClass("on");
+		}
+
+		if(data.excludeLowPokemon !== undefined){
+			cup.excludeLowPokemon = data.excludeLowPokemon;
+		}
+
+		if(cup.excludeLowPokemon){
+			$(".check.exclude-low-pokemon").addClass("on");
+		} else{
+			$(".check.exclude-low-pokemon").removeClass("on");
 		}
 
 		// Set league
@@ -560,6 +569,10 @@ function interfaceObject(){
 			// Use default league movesets? If no moveset data exists, supply existing data
 			useDefaultMovesets = $(".check.use-default-movesets").hasClass("on");
 			cup.useDefaultMovesets = useDefaultMovesets ? 1 : 0;
+
+			// Exclude low-scoring Pokemon from the simulations
+			var excludeLowPokemon = $(".check.exclude-low-pokemon").hasClass("on");
+			cup.excludeLowPokemon = excludeLowPokemon ? 1 : 0;
 
 			if(! data && useDefaultMovesets){
 				var key = battle.getCup().name + "overall" + battle.getCP();

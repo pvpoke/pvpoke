@@ -30883,7 +30883,8 @@
         },
         "types": ["dragon", "none"],
         "fastMoves": ["WATER_GUN", "DRAGON_BREATH"],
-        "chargedMoves": ["DRACO_METEOR", "SLUDGE_WAVE", "MUDDY_WATER", "POWER_WHIP", "AQUA_TAIL"],
+        "chargedMoves": ["DRACO_METEOR", "SLUDGE_WAVE", "MUDDY_WATER", "POWER_WHIP", "AQUA_TAIL", "THUNDER_PUNCH"],
+        "eliteMoves": ["THUNDER_PUNCH"],
         "defaultIVs": {
             "cp500": [5.5, 4, 14, 14],
             "cp1500": [16, 4, 14, 7],

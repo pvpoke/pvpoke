@@ -51,6 +51,13 @@ require_once 'header.php'; ?>
 		</div>
 		<div class="flex-section">
 			<div>
+				<div class="exclude-low-pokemon check on"><span></span> Exclude Low-Performing Pokemon</div>
+				<p class="small">This setting excludes Pokemon which have a league overall score of less than 70 from the simulations. This significantly reduces the time it takes to generate results. Recommend disabling for small metas.</p>
+			</div>
+		</div>
+
+		<div class="flex-section">
+			<div>
 				<h3 class="section-title">Subject Energy<br>Advantage</h3>
 				<input type="number" class="subject-turns" index="0" placeholder="Turns" />
 			</div>

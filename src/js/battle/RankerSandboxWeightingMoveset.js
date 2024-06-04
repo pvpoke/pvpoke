@@ -48,7 +48,9 @@ var RankerMaster = (function () {
 
 				currentScenarioIndex = 0;
 
-				scenarios = GameMaster.getInstance().data.rankingScenarios;
+				if(! scenarios){
+					scenarios = GameMaster.getInstance().data.rankingScenarios;
+				}
 
 				for(currentScenarioIndex = 0; currentScenarioIndex < scenarios.length; currentScenarioIndex++){
 					var r = self.rank(leagues[currentLeagueIndex], scenarios[currentScenarioIndex]);
@@ -90,7 +92,22 @@ var RankerMaster = (function () {
 							targets.push(pokemonList[i]);
 						}
 					}
+				}
 
+				// For custom rankings, exclude Pokemon with a low league overall score
+				if(cup.excludeLowPokemon && gm.rankings["alloverall"+cp]){
+					console.log(pokemonList.length);
+					var lowPokemon = gm.rankings["alloverall"+cp].filter(ranking => ranking.score < 70);
+
+					for(var i = 0; i < lowPokemon.length; i++){
+						if((pokemonList.findIndex(r => r.speciesId == lowPokemon[i].speciesId) > -1)){
+							pokemonList.splice(pokemonList.findIndex(r => r.speciesId == lowPokemon[i].speciesId), 1);
+						}
+						if((targets.findIndex(r => r.speciesId == lowPokemon[i].speciesId) > -1)){
+							targets.splice(targets.findIndex(r => r.speciesId == lowPokemon[i].speciesId), 1);
+						}
+					}
+					console.log(pokemonList.length);
 				}
 
 				console.log("List generated in: " + (Date.now() - startTime) + "ms");
@@ -126,7 +143,9 @@ var RankerMaster = (function () {
 				leagues = [cp];
 				allResults = [];
 
-				scenarios = GameMaster.getInstance().data.rankingScenarios;
+				if(! scenarios){
+					scenarios = GameMaster.getInstance().data.rankingScenarios;
+				}
 
 				for(var currentLeagueIndex = 0; currentLeagueIndex < leagues.length; currentLeagueIndex++){
 
@@ -136,7 +155,6 @@ var RankerMaster = (function () {
 
 						// Only do 1 scenario for move generation
 						scenarios = scenarios.splice(0, 1);
-
 
 						for(currentScenarioIndex = 0; currentScenarioIndex < scenarios.length; currentScenarioIndex++){
 							rankingCombinations.push({league: leagues[currentLeagueIndex], scenario: scenarios[currentScenarioIndex]});
