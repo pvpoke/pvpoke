@@ -221,11 +221,17 @@ input.article-search{
 	background-image:url("../articles/article-assets/community-day/megas/scizor.png");
 }
 
-
 [mega="groudon"] .mega-image{
 	background-image:url("../articles/article-assets/community-day/megas/groudon.png");
 }
 
+[mega="garchomp"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/garchomp.png");
+}
+
+[mega="rayquaza"] .mega-image{
+	background-image:url("../articles/article-assets/community-day/megas/rayquaza.png");
+}
 
 /* FAQ styling */
 
@@ -1066,6 +1072,27 @@ input.article-search{
 		h4{
 			color:#2c6d4f;
 			border-bottom:1px solid #2c6d4f;
+		}
+	}
+
+	.faq-item{
+    	background: #ffffff;
+	}
+}
+
+.section.goomy{
+
+	background: #f6f7f0;
+	border:4px solid #423c68;
+
+	.article-header, .mega-section{
+		background: #423c68 !important;
+	}
+
+	.feature{
+		h4{
+			color:#423c68;
+			border-bottom:1px solid #423c68;
 		}
 	}
 

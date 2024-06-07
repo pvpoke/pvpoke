@@ -30381,7 +30381,7 @@
         "cp1500": [16, 4, 14, 7],
         "cp2500": [26, 7, 13, 14]
     },
-    "searchPriority": 5,
+    "searchPriority": 10,
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
     "released": true,
@@ -35133,7 +35133,7 @@
         "parent": "linoone_galarian"
     },
     "nicknames": ["goon"],
-    "searchPriority": 15
+    "searchPriority": 7
 }, {
     "dex": 863,
     "speciesName": "Perrserker",
