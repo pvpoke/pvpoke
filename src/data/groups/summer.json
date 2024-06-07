@@ -24,6 +24,10 @@
     "fastMove": "BULLET_SEED",
     "chargedMoves": ["POWER_WHIP", "THUNDER"]
 }, {
+    "speciesId": "vigoroth",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["BODY_SLAM", "ROCK_SLIDE"]
+}, {
     "speciesId": "jellicent",
     "fastMove": "HEX",
     "chargedMoves": ["SURF", "SHADOW_BALL"]

@@ -353,18 +353,18 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Ultra Premier Cup",
-        "cup": "premier",
-        "cp": 2500,
-        "meta": "premierultra",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Summer Cup",
         "cup": "summer",
         "cp": 1500,
         "meta": "summer",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Master Premier Cup",
+        "cup": "premier",
+        "cp": 10000,
+        "meta": "premiermaster",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -38885,6 +38885,7 @@
             "cp1500": [18, 5, 11, 12],
             "cp2500": [30, 4, 14, 6]
         },
+        "searchPriority": 3,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
