@@ -5,10 +5,6 @@
 }, {
     "speciesId": "annihilape",
     "fastMove": "COUNTER",
-    "chargedMoves": ["ICE_PUNCH", "SHADOW_BALL"]
-}, {
-    "speciesId": "annihilape",
-    "fastMove": "COUNTER",
     "chargedMoves": ["NIGHT_SLASH", "SHADOW_BALL"]
 }, {
     "speciesId": "azumarill",
@@ -31,13 +27,14 @@
     "fastMove": "PSYCHO_CUT",
     "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
 }, {
-    "speciesId": "cresselia",
-    "fastMove": "PSYCHO_CUT",
-    "chargedMoves": ["FUTURE_SIGHT", "GRASS_KNOT"]
-}, {
     "speciesId": "dewgong",
     "fastMove": "ICE_SHARD",
     "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
+}, {
+    "speciesId": "dragonair_shadow",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["BODY_SLAM", "AQUA_TAIL"],
+    "shadowType": "shadow"
 }, {
     "speciesId": "feraligatr",
     "fastMove": "SHADOW_CLAW",
@@ -76,18 +73,10 @@
     "fastMove": "COUNTER",
     "chargedMoves": ["ICE_PUNCH", "DYNAMIC_PUNCH"]
 }, {
-    "speciesId": "ninetales_alolan",
-    "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["WEATHER_BALL_ICE", "DAZZLING_GLEAM"]
-}, {
     "speciesId": "ninetales_alolan_shadow",
     "fastMove": "CHARM",
     "chargedMoves": ["WEATHER_BALL_ICE", "PSYSHOCK"],
     "shadowType": "shadow"
-}, {
-    "speciesId": "pelipper",
-    "fastMove": "WING_ATTACK",
-    "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
 }, {
     "speciesId": "poliwrath",
     "fastMove": "COUNTER",
@@ -107,7 +96,7 @@
     "chargedMoves": ["FOUL_PLAY", "RETURN"]
 }, {
     "speciesId": "sandslash_alolan_shadow",
-    "fastMove": "SHADOW_CLAW",
+    "fastMove": "POWDER_SNOW",
     "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"],
     "shadowType": "shadow"
 }, {
@@ -162,12 +151,29 @@
     "chargedMoves": ["MUD_BOMB", "SCALD"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "dragonair_shadow",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["BODY_SLAM", "AQUA_TAIL"],
-    "shadowType": "shadow"
-}, {
     "speciesId": "wigglytuff",
     "fastMove": "CHARM",
     "chargedMoves": ["ICY_WIND", "DISARMING_VOICE"]
+}, {
+    "speciesId": "feraligatr_shadow",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "quagsire",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["AQUA_TAIL", "STONE_EDGE"]
+}, {
+    "speciesId": "quagsire",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["AQUA_TAIL", "STONE_EDGE"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "pelipper",
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["WEATHER_BALL_WATER", "HURRICANE"]
+}, {
+    "speciesId": "lanturn",
+    "fastMove": "WATER_GUN",
+    "chargedMoves": ["SURF", "THUNDERBOLT"]
 }]
