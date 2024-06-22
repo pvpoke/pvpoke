@@ -169,6 +169,31 @@
         "league": 1500,
         "useDefaultMovesets": 1
     }, {
+        "name": "geneticremix",
+        "title": "Genetic Remix",
+        "include": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["fire", "ghost", "poison", "psychic", "rock", "water"]
+        }],
+        "exclude": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["electric", "ground", "normal", "steel"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["feraligatr", "poliwrath", "carbink", "greninja", "cresselia", "annihilape", "toxicroak", "aurorus", "deoxys_defense"]
+        }, {
+            "filterType": "tag",
+            "name": "Tag",
+            "values": ["mega"]
+        }],
+        "overrides": [],
+        "league": 1500,
+        "useDefaultMovesets": 1,
+        "excludeLowPokemon": 1
+    }, {
         "name": "gobattleleague",
         "title": "GO Battle League",
         "include": [],
@@ -353,14 +378,6 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Summer Cup",
-        "cup": "summer",
-        "cp": 1500,
-        "meta": "summer",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Master Premier Cup",
         "cup": "premier",
         "cp": 10000,
@@ -410,10 +427,10 @@
         "showFormat": true,
         "showMeta": true
     }, {
-        "title": "Devon Genetic Cup",
-        "cup": "genetic",
+        "title": "Devon Genetic Cup (Remix)",
+        "cup": "geneticremix",
         "cp": 1500,
-        "meta": "genetic",
+        "meta": "geneticremix",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
