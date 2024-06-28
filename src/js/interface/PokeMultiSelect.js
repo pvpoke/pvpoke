@@ -543,7 +543,8 @@ function PokeMultiSelect(element){
 
 					// Don't set stats to be NaN
 					if (Number.isNaN(level) || Number.isNaN(atk) || Number.isNaN(def) || Number.isNaN(hp)) {
-						alert("Line " + (i+1) + " has invalid stats: \"" + poke + "\".");
+						// Ignoring the alert here since 3rd party imports may not have IVs/Level
+						// alert("Line " + (i+1) + " has invalid stats: \"" + poke + "\".");
 					} else {
 						pokemon.setLevel(level);
 						pokemon.setIV("atk", atk);
