@@ -1,26 +1,20 @@
 {
     "name": "battlefrontiergreat",
     "title": "Battle Frontier (Great)",
-	"include": [],
-    "exclude": [{
-        "filterType": "tag",
-        "values": ["mega"]
-    },{
-        "filterType": "id",
-        "values": ["giratina_origin","heatran"]
-    }],
+    "include": [],
+    "exclude": [],
     "tierRules": {
-        "max": 17,
-        "floor": 1,
+        "max": 11,
+        "floor": 0,
         "tiers": [{
-            "points": 7,
-            "pokemon": ["azumarill", "carbink", "gligar", "lanturn", "lickitung","medicham", "registeel", "skarmory","annihilape", "whiscash"]
+            "points": 6,
+            "pokemon": ["annihilape", "azumarill", "carbink", "gligar", "lanturn", "lickitung", "registeel", "sableye_mega", "skarmory"]
         }, {
-            "points": 5,
-            "pokemon": ["bastiodon", "deoxys_defense", "dewgong", "mandibuzz", "ninetales_alolan", "poliwrath", "sableye", "sandslash_alolan", "serperior", "swampert", "talonflame", "toxapex", "umbreon", "vigoroth", "cresselia", "charjabug", "empoleon", "feraligatr", "mantine"]
+            "points": 4,
+            "pokemon": ["altaria", "bastiodon", "charjabug", "clodsire", "cresselia", "deoxys_defense", "dewgong", "feraligatr", "giratina_origin", "mandibuzz", "mantine", "medicham", "ninetales_alolan", "poliwrath", "quagsire", "sableye", "sandslash_alolan", "stunfisk_galarian", "swampert", "talonflame", "toxapex", "umbreon", "vigoroth", "whiscash", "wigglytuff"]
         }, {
-            "points": 2,
-            "pokemon": ["altaria", "charizard", "clefable", "clodsire", "diggersby", "dragonite", "dubwool", "froslass", "greedent", "jellicent", "pelipper", "pidgeot", "quagsire", "steelix", "stunfisk_galarian", "tapu_fini", "toxicroak", "venusaur", "wigglytuff", "gallade", "machamp"]
+            "points": 1,
+            "pokemon": ["altaria_mega", "charizard", "clefable", "diggersby", "dragonair", "dragonite", "empoleon", "froslass", "goodra", "greedent", "guzzlord", "heatran", "jellicent", "pelipper", "pidgeot", "serperior", "skeledirge", "steelix", "steelix_mega", "swampert_mega", "tapu_fini", "venusaur", "venusaur_mega"]
         }]
     },
     "allowSameSpecies": true

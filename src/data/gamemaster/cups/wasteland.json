@@ -1,0 +1,24 @@
+{
+    "name": "wasteland",
+    "title": "Wasteland Cup",
+    "include": [{
+        "filterType": "type",
+        "values": ["poison","ghost","steel","dark","psychic"]
+    },{
+        "filterType": "id",
+        "values": ["pangoro","ampharos","furret","gallade","ledian","staraptor","fearow","farfetchd_galarian","electrode"]
+    }],
+    "exclude": [{
+        "filterType": "type",
+        "values": ["ground","electric","fire","dragon","fighting"]
+    },{
+        "filterType": "id",
+        "values": ["registeel","bastiodon","probopass","weezing_galarian","sableye","skarmory","klefki","giratina_origin","mandibuzz","vullaby","bombirdier","moltres_galarian","golbat","umbreon","overqwil","empoleon","greninja","jellicent","drapion","sandslash_alolan","toxapex","grimer_alolan","honchkrow","murkrow","stunky","celesteela","tentacruel","raticate_alolan","forretress","grimer","genesect","mawile"]
+    },{
+        "filterType": "tag",
+        "values": ["mega","shadow"]
+    },{
+        "filterType": "move",
+        "values": ["counter"]
+    }]
+}

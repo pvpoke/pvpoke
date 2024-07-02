@@ -1,0 +1,21 @@
+{
+    "name": "polaris",
+    "title": "Polaris Cup",
+    "include": [{
+        "filterType": "type",
+        "values": ["bug","dark","ice", "electric"]
+    }, {
+        "filterType": "id",
+        "values": ["snorlax","tyrunt","cradily","samurott","snorlax_shadow","cradily_shadow"]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega"]
+    }, {
+        "filterType": "id",
+        "values": ["araquanid","cetoddle","dewgong","ninetales_alolan","arctibax","frigibax","baxcalibur","charjabug","sealeo","umbreon","obstagoon","lanturn","lanturnw","pachirisu","stunfisk","guzzlord","greninja","skuntank","pinsir"]
+    }, {
+        "filterType": "type",
+        "values": ["steel","fighting","fire","rock"]
+    }]
+}

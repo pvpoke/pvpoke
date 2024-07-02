@@ -99,16 +99,20 @@ switch($cup){
 		$league = 'Mega Master League';
 		break;
 
-	case "enchanted":
-		$league = 'Battle Frontier (Enchanted)';
+	case "polaris":
+		$league = 'Battle Frontier (Polaris)';
 		break;
 
-	case "primordial":
-		$league = 'Battle Frontier (Primordial)';
+	case "wasteland":
+		$league = 'Battle Frontier (Wasteland)';
 		break;
 
-	case "serene":
-		$league = 'Battle Frontier (Serene)';
+	case "battlefrontiergreat":
+		$league = 'Battle Frontier (Master)';
+		break;
+
+	case "battlefrontierultra":
+		$league = 'Battle Frontier (Master)';
 		break;
 
 	case "battlefrontiermaster":

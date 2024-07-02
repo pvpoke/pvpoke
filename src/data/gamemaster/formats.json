@@ -55,28 +55,19 @@
 		"showMeta": true
 	},
 	{
-		"title": "Battle Frontier (Enchanted)",
-		"cup": "enchanted",
-		"cp": 2500,
-		"meta": "enchanted",
+		"title": "Battle Frontier (Polaris)",
+		"cup": "polaris",
+		"cp": 1500,
+		"meta": "polaris",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
 	},
 	{
-        "title": "Battle Frontier (Primordial)",
+        "title": "Battle Frontier (Wasteland)",
         "cup": "primordial",
         "cp": 1500,
         "meta": "primordial",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    },
-	{
-        "title": "Battle Frontier (Serene)",
-        "cup": "serene",
-        "cp": 1500,
-        "meta": "serene",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -88,8 +79,16 @@
 		"meta": "battlefrontiergreat",
 		"showCup": true,
 		"showFormat": true,
-		"showMeta": false,
-		"hideRankings": true
+		"showMeta": true
+	},
+	{
+		"title": "Battle Frontier (Ultra)",
+		"cup": "battlefrontierultra",
+		"cp": 2500,
+		"meta": "battlefrontierultra",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
 	},
 	{
 		"title": "Battle Frontier (Master)",

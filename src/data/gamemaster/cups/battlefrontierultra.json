@@ -2,24 +2,22 @@
     "name": "battlefrontierultra",
     "title": "Battle Frontier (Ultra League)",
     "include": [],
-    "exclude": [{
-        "filterType": "tag",
-        "values": ["mega"]
-    }, {
-        "filterType": "id",
-        "values": ["zygarde_complete"]
-    }],
-	"restrictedPicks": 1,
-	"restrictedPokemon": ["cobalion", "cresselia", "giratina_altered", "registeel", "steelix", "swampert"],
+    "exclude": [],
     "tierRules": {
-        "max": 16,
+        "max": 11,
         "floor": 0,
         "tiers": [{
             "points": 6,
-            "pokemon": ["cobalion", "cresselia", "giratina_altered", "registeel", "steelix", "swampert"]
+            "pokemon": ["annihilape", "cresselia", "feraligatr", "giratina_altered", "registeel", "zygarde_complete"]
         }, {
-            "points": 5,
-            "pokemon": ["charizard", "clefable", "deoxys_defense", "greedent", "jellicent", "mandibuzz", "ninetales_alolan", "pidgeot", "sandslash_alolan", "stunfisk_galarian", "tapu_fini", "trevenant", "virizion", "walrein"]
+            "points": 4,
+            "pokemon": ["cobalion", "deoxys_defense", "greedent", "jellicent", "mandibuzz", "pidgeot", "poliwrath", "steelix", "swampert", "talonflame", "tapu_fini", "tentacruel", "virizion"]
+        }, {
+            "points": 2,
+            "pokemon": ["altaria_mega", "charizard", "clefable", "dragonite", "dubwool", "empoleon", "gliscor", "guzzlord", "lanturn", "ninetales_alolan", "regirock", "sandslash_alolan", "scrafty", "skarmory", "skeledirge", "steelix_mega", "stunfisk_galarian", "swampert_mega", "trevenant", "umbreon", "weezing_galarian"]
+        }, {
+            "points": 1,
+            "pokemon": ["ampharos", "aurorus", "blastoise", "buzzwole", "cofagrigus", "drapion", "gallade", "golisopod", "goodra", "greninja", "gyarados_mega", "medicham_mega", "mewtwo_armored", "nidoqueen", "obstagoon", "pelipper", "skuntank", "typhlosion", "walrein"]
         }]
     }
 }
