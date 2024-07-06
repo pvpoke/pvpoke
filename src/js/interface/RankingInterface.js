@@ -1387,6 +1387,14 @@ var InterfaceMaster = (function () {
 					if(pokemon.hasTag("mega") && partner.hasTag("mega")){
 						partner.partnerScore = 0;
 					}
+
+					// Exclude partners in point based metas which exceed the point limit
+					if(battle.getCup().tierRules){
+						var remainingPoints = battle.getCup().tierRules.max - gm.getPokemonTier(pokemon.speciesId, battle.getCup());
+						if(gm.getPokemonTier(partner.speciesId, battle.getCup()) > remainingPoints){
+							partner.partnerScore = 0;
+						}
+					}
 				}
 
 				metaGroup.sort((a,b) => (a.partnerScore > b.partnerScore) ? -1 : ((b.partnerScore > a.partnerScore) ? 1 : 0));

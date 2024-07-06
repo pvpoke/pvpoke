@@ -3777,6 +3777,7 @@
     },
     "level25CP": 1584,
     "tags": ["shadoweligible"],
+	"nicknames": ["wrath"],
     "eliteMoves": ["SUBMISSION", "COUNTER"],
     "searchPriority": 6,
     "buddyDistance": 3,
@@ -3806,6 +3807,7 @@
         "cp2500l40": [38.5, 14, 15, 12]
     },
     "tags": ["shadow"],
+	"nicknames": ["wrath"],
     "eliteMoves": ["SUBMISSION", "COUNTER"],
     "searchPriority": 6,
     "buddyDistance": 3,
@@ -9110,6 +9112,7 @@
         "cp2500": [35.5, 4, 9, 14]
     },
     "eliteMoves": ["WATER_GUN", "HYDRO_CANNON"],
+	"nicknames": ["gatr", "gator"],
     "buddyDistance": 3,
     "thirdMoveCost": 10000,
     "released": true,
@@ -9138,6 +9141,7 @@
         "cp2500": [35.5, 4, 9, 14]
     },
     "eliteMoves": ["WATER_GUN", "HYDRO_CANNON"],
+	"nicknames": ["gatr", "gator"],
     "buddyDistance": 3,
     "thirdMoveCost": 10000,
     "released": true,
@@ -16715,6 +16719,7 @@
         "cp1500": [27, 4, 14, 15],
         "cp2500": [50, 15, 15, 15]
     },
+	"nicknames": ["cash"],
     "searchPriority": 10,
     "buddyDistance": 1,
     "thirdMoveCost": 10000,
@@ -16742,6 +16747,7 @@
         "cp1500": [27, 4, 14, 15],
         "cp2500": [50, 15, 15, 15]
     },
+	"nicknames": ["cash"],
     "searchPriority": 10,
     "buddyDistance": 1,
     "thirdMoveCost": 10000,
@@ -18831,7 +18837,7 @@
     },
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false
+    "released": true
 }, {
     "dex": 385,
     "speciesName": "Jirachi",
@@ -22158,6 +22164,7 @@
     },
     "level25CP": 1993,
     "tags": ["shadoweligible"],
+	"nicknames": ["zone"],
     "searchPriority": 4,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
@@ -22184,6 +22191,7 @@
         "cp2500": [28, 9, 14, 15]
     },
     "tags": ["shadow"],
+	"nicknames": ["zone"],
     "searchPriority": 4,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
@@ -23134,6 +23142,7 @@
     "chargedMoves": ["DRACO_METEOR", "IRON_HEAD", "THUNDER", "ROAR_OF_TIME"],
     "legacyMoves": ["ROAR_OF_TIME"],
     "tags": ["legendary"],
+	"nicknames": ["dialgao"],
     "defaultIVs": {
         "cp500": [4.5, 15, 15, 13],
         "cp1500": [13.5, 5, 9, 14],
@@ -23178,6 +23187,7 @@
     "chargedMoves": ["DRACO_METEOR", "FIRE_BLAST", "HYDRO_PUMP", "AQUA_TAIL", "SPACIAL_REND"],
     "legacyMoves": ["SPACIAL_REND"],
     "tags": ["legendary"],
+	"nicknames": ["palkiao"],
     "defaultIVs": {
         "cp500": [4.5, 15, 13, 15],
         "cp1500": [13, 6, 14, 15],
@@ -30310,6 +30320,7 @@
         "cp2500": [50, 15, 15, 15],
         "cp1500l40": [40, 15, 15, 15]
     },
+	"nicknames": ["bink"],
     "searchPriority": 3,
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
@@ -33449,6 +33460,8 @@
         "cp2500": [22.5, 5, 15, 7]
     },
     "tags": ["ultrabeast"],
+	"searchPriority": 3,
+	"nicknames": ["dawn"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true
@@ -33471,6 +33484,8 @@
         "cp2500": [22.5, 5, 15, 7]
     },
     "tags": ["ultrabeast"],
+	"nicknames": ["dusk"],
+	"searchPriority": 3,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true
@@ -36638,6 +36653,7 @@
         "cp1500": [18.5, 4, 12, 11],
         "cp2500": [31.5, 5, 12, 11]
     },
+	"nicknames": ["dirge"],
     "buddyDistance": 3,
     "thirdMoveCost": 10000,
     "released": true,
@@ -38522,6 +38538,7 @@
         "cp1500": [17, 5, 15, 8],
         "cp2500": [28.5, 4, 15, 7]
     },
+	"nicknames": ["ape"],
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true,
