@@ -127,6 +127,10 @@ switch($cup){
 		$league = 'Evolution Cup';
 		break;
 
+	case "fantasy":
+		$league = 'Fantasy Cup';
+		break;
+
 	case "remix":
 		$league = $league . ' Remix';
 		break;

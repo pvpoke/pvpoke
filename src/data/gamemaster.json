@@ -155,6 +155,17 @@
             "values": ["stunfisk_galarian", "cobalion", "registeel", "zygarde_complete", "giratina_altered", "steelix", "pidgeot", "greedent", "skarmory", "empoleon"]
         }]
     }, {
+        "name": "fantasy",
+        "title": "Fantasy Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["steel", "dragon", "fairy"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }]
+    }, {
         "name": "genetic",
         "title": "Genetic",
         "include": [{
@@ -407,18 +418,18 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Master Premier Cup",
-        "cup": "premier",
-        "cp": 10000,
-        "meta": "premiermaster",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Great League Remix",
         "cup": "remix",
         "cp": 1500,
         "meta": "remix",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Fantasy Cup",
+        "cup": "fantasy",
+        "cp": 1500,
+        "meta": "fantasy",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
