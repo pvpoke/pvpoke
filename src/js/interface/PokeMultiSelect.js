@@ -1027,6 +1027,44 @@ function PokeMultiSelect(element){
 
 	$el.find(".default-iv-select").on("change", function(e){
 		settings.ivs = $el.find(".default-iv-select option:selected").val();
+
+		// Adjust IVs as needed
+		switch(settings.ivs){
+			case "overall":
+			case "atk":
+			case "def":
+			for(var i = 0; i < pokemonList.length; i++){
+				pokemonList[i].maximizeStat(settings.ivs);
+			}
+			break;
+
+			case "gamemaster":
+			for(var i = 0; i < pokemonList.length; i++){
+				pokemonList[i].levelCap = 50;
+				pokemonList[i].isCustom = false;
+				pokemonList[i].initialize(battle.getCP());
+				if(pokemonList[i].baitShields != 1){
+					pokemonList[i].isCustom = true;
+				}
+			}
+			break;
+
+			case "buddy":
+			for(var i = 0; i < pokemonList.length; i++){
+				pokemonList[i].levelCap = 51;
+				pokemonList[i].maximizeStat("overall");
+			}
+			break;
+		}
+
+		$el.find(".default-iv-select option").eq(0).prop("selected", "selected");
+
+		if(! showIVs){
+			showIVs = true;
+			$el.find(".check.show-ivs").addClass("on");
+		}
+
+		self.updateListDisplay();
 	});
 
 	// Change bait toggle

@@ -73,18 +73,6 @@ var RankerMaster = (function () {
 
 				for(var i = 0; i < team.length; i++){
 					teamRatings.push([]);
-
-					// Adjust IVs as needed
-					if((overrideSettings[0].ivs != "gamemaster")&&(overrideSettings[0].ivs != "original")){
-						team[i].levelCap = overrideSettings[0].levelCap;
-						team[i].maximizeStat(overrideSettings[0].ivs);
-					} else if((overrideSettings[0].ivs == "gamemaster")&&(team[i].isCustom)){
-						team[i].isCustom = false;
-						team[i].initialize(battle.getCP());
-						if(team[i].baitShields != 1){
-							team[i].isCustom = true;
-						}
-					}
 				}
 
 				rankings = [];

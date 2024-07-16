@@ -34,9 +34,6 @@
 				<button class="save-btn save-as hide">Save As</button>
 				<button class="delete-btn hide">Delete</button>
 			</div>
-
-			<h3 class="section-title">Search String</h3>
-			<button class="search-string-btn">Generate Search String</button>
 		</div>
 
 		<div class="options multi-battle-options">
@@ -60,13 +57,15 @@
 				<div class="option on" value="1">Selective</div>
 				<div class="option" value="2">On</div>
 			</div>
-			<h3 class="section-title">IV's</h3>
+			<h3 class="section-title">Apply to Group</h3>
 			<select class="default-iv-select">
-				<option value="original">Original IV's</option>
+
+				<option selected disabled value="">Select an option to apply</option>
 				<option value="gamemaster">Default IV's</option>
 				<option value="overall">Maximum stat product (Rank 1)</option>
 				<option value="atk">Maximum Attack</option>
 				<option value="def">Maximum Defense</option>
+				<option value="buddy">Best Buddy</option>
 			</select>
 			<select class="pokemon-level-cap-select" style="display:none;">
 				<option value="40">Default Level Cap (40)</option>
@@ -76,6 +75,9 @@
 			</select>
 			<div class="check show-ivs"><span></span>Show level &amp; IV's</div>
 		</div>
+
+		<h3 class="section-title">Search String</h3>
+		<button class="search-string-btn">Generate Search String</button>
 
 		<a href="#" class="clear-selection">Clear Selections</a>
 	</div>
