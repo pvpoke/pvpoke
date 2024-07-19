@@ -28099,8 +28099,9 @@
             "hp": 198
         },
         "types": ["electric", "none"],
-        "fastMoves": ["ACID", "SPARK"],
+        "fastMoves": ["ACID", "SPARK", "VOLT_SWITCH"],
         "chargedMoves": ["CRUNCH", "THUNDERBOLT", "ACID_SPRAY", "DRAGON_CLAW", "LIQUIDATION"],
+        "eliteMoves": ["VOLT_SWITCH"],
         "defaultIVs": {
             "cp500": [7, 4, 11, 12],
             "cp1500": [20, 8, 12, 15],
