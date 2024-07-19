@@ -23,6 +23,14 @@
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["OUTRAGE", "SAND_TOMB"]
 }, {
+    "speciesId": "necrozma_dawn_wings",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["DARK_PULSE", "MOONGEIST_BEAM"]
+}, {
+    "speciesId": "necrozma_dusk_mane",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["DARK_PULSE", "SUNSTEEL_STRIKE"]
+}, {
     "speciesId": "garchomp_mega",
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["EARTH_POWER", "SAND_TOMB"]
@@ -30,6 +38,10 @@
     "speciesId": "heracross_mega",
     "fastMove": "COUNTER",
     "chargedMoves": ["CLOSE_COMBAT", "ROCK_BLAST"]
+}, {
+    "speciesId": "lucario_mega",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["BLAZE_KICK", "SHADOW_BALL"]
 }, {
     "speciesId": "garchomp_mega",
     "fastMove": "MUD_SHOT",

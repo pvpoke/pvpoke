@@ -125,23 +125,6 @@
     "tags": ["shadoweligible", "mega"],
     "eliteMoves": ["METEOR_MASH"]
 }, {
-    "dex": 448,
-    "speciesName": "Lucario (Mega)",
-    "speciesId": "lucario_mega",
-    "baseStats": {
-        "atk": 310,
-        "def": 175,
-        "hp": 172
-    },
-    "types": ["fighting", "steel"],
-    "fastMoves": ["BULLET_PUNCH", "COUNTER"],
-    "chargedMoves": ["CLOSE_COMBAT", "FLASH_CANNON", "SHADOW_BALL", "POWER_UP_PUNCH", "AURA_SPHERE"],
-    "defaultIVs": {
-        "cp1500": [14.5, 7, 5, 13],
-        "cp2500": [23.5, 11, 9, 15]
-    },
-    "tags": ["mega"]
-}, {
     "dex": 475,
     "speciesName": "Gallade (Mega)",
     "speciesId": "gallade_mega",
