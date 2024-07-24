@@ -180,6 +180,19 @@
             "values": ["mega"]
         }]
     }, {
+        "name": "fossil",
+        "title": "Fossil Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["water", "rock", "steel"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }],
+        "partySize": 3,
+        "presetOnly": true
+    }, {
         "name": "genetic",
         "title": "Genetic",
         "include": [{
@@ -432,18 +445,18 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Great League Remix",
-        "cup": "remix",
-        "cp": 1500,
-        "meta": "remix",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Fantasy Cup",
         "cup": "fantasy",
         "cp": 1500,
         "meta": "fantasy",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Fossil Cup",
+        "cup": "fossil",
+        "cp": 1500,
+        "meta": "fossil",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
