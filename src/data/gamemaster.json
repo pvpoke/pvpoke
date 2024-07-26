@@ -22141,8 +22141,9 @@
             "hp": 172
         },
         "types": ["fighting", "steel"],
-        "fastMoves": ["BULLET_PUNCH", "COUNTER"],
+        "fastMoves": ["BULLET_PUNCH", "COUNTER", "FORCE_PALM"],
         "chargedMoves": ["CLOSE_COMBAT", "FLASH_CANNON", "SHADOW_BALL", "POWER_UP_PUNCH", "AURA_SPHERE", "BLAZE_KICK", "THUNDER_PUNCH"],
+        "eliteMoves": ["FORCE_PALM"],
         "defaultIVs": {
             "cp500": [7, 4, 13, 13],
             "cp1500": [20.5, 5, 14, 10],
@@ -22165,8 +22166,9 @@
             "hp": 172
         },
         "types": ["fighting", "steel"],
-        "fastMoves": ["BULLET_PUNCH", "COUNTER"],
+        "fastMoves": ["BULLET_PUNCH", "COUNTER", "FORCE_PALM"],
         "chargedMoves": ["CLOSE_COMBAT", "FLASH_CANNON", "SHADOW_BALL", "POWER_UP_PUNCH", "AURA_SPHERE", "BLAZE_KICK", "THUNDER_PUNCH"],
+        "eliteMoves": ["FORCE_PALM"],
         "defaultIVs": {
             "cp500": [14.5, 7, 5, 13],
             "cp1500": [14.5, 7, 5, 13],
