@@ -11,23 +11,14 @@
     "fastMove": "SMACK_DOWN",
     "chargedMoves": ["STONE_EDGE", "FLAMETHROWER"]
 }, {
-    "speciesId": "dragonair_shadow",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["BODY_SLAM", "AQUA_TAIL"],
-    "shadowType": "shadow"
-}, {
-    "speciesId": "dragonite_shadow",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["DRAGON_CLAW", "SUPER_POWER"],
-    "shadowType": "shadow"
-}, {
     "speciesId": "empoleon",
     "fastMove": "STEEL_WING",
     "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
 }, {
     "speciesId": "empoleon_shadow",
     "fastMove": "STEEL_WING",
-    "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
+    "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"],
+    "shadowType": "shadow"
 }, {
     "speciesId": "escavalier",
     "fastMove": "COUNTER",
@@ -50,27 +41,9 @@
     "chargedMoves": ["DRAGON_CLAW", "SCORCHING_SANDS"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "haxorus",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["BREAKING_SWIPE", "SURF"]
-}, {
     "speciesId": "lucario",
     "fastMove": "COUNTER",
     "chargedMoves": ["THUNDER_PUNCH", "SHADOW_BALL"]
-}, {
-    "speciesId": "lucario",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["BLAZE_KICK", "SHADOW_BALL"]
-}, {
-    "speciesId": "magnezone_shadow",
-    "fastMove": "VOLT_SWITCH",
-    "chargedMoves": ["WILD_CHARGE", "MIRROR_SHOT"],
-    "shadowType": "shadow"
-}, {
-    "speciesId": "mawile_shadow",
-    "fastMove": "FIRE_FANG",
-    "chargedMoves": ["POWER_UP_PUNCH", "PLAY_ROUGH"],
-    "shadowType": "shadow"
 }, {
     "speciesId": "registeel",
     "fastMove": "LOCK_ON",
@@ -104,4 +77,16 @@
     "speciesId": "weezing_galarian",
     "fastMove": "FAIRY_WIND",
     "chargedMoves": ["PLAY_ROUGH", "OVERHEAT"]
+}, {
+    "speciesId": "wigglytuff",
+    "fastMove": "CHARM",
+    "chargedMoves": ["ICY_WIND", "DISARMING_VOICE"]
+}, {
+    "speciesId": "giratina_origin",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["OMINOUS_WIND", "SHADOW_BALL"]
+}, {
+    "speciesId": "perrserker",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["CLOSE_COMBAT", "TRAILBLAZE"]
 }]
