@@ -37,15 +37,6 @@
 		"showMeta": true
 	},
 	{
-		"title": "Fantasy Cup",
-		"cup": "fantasy",
-		"cp": 1500,
-		"meta": "fantasy",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
 		"title": "Fossil Cup",
 		"cup": "fossil",
 		"cp": 1500,
@@ -113,24 +104,6 @@
 		"cup": "tundra",
 		"cp": 1500,
 		"meta": "tundra",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Devon (Championship Invitational)",
-		"cup": "devonchampionship",
-		"cp": 1500,
-		"meta": "devonchampionship",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "UFC Untapped (Master)",
-		"cup": "ufc-untapped-master",
-		"cp": 10000,
-		"meta": "ufc-untapped-master",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true

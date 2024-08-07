@@ -445,14 +445,6 @@
         "showFormat": false,
         "showMeta": true
     }, {
-        "title": "Fantasy Cup",
-        "cup": "fantasy",
-        "cp": 1500,
-        "meta": "fantasy",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Fossil Cup",
         "cup": "fossil",
         "cp": 1500,
@@ -513,22 +505,6 @@
         "cup": "tundra",
         "cp": 1500,
         "meta": "tundra",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Devon (Championship Invitational)",
-        "cup": "devonchampionship",
-        "cp": 1500,
-        "meta": "devonchampionship",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "UFC Untapped (Master)",
-        "cup": "ufc-untapped-master",
-        "cp": 10000,
-        "meta": "ufc-untapped-master",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -605,7 +581,7 @@
         "dexStart": 906,
         "dexEnd": 1008
     }],
-    "shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "venusaur_mega", "charmander", "charmeleon", "charizard", "charizard_mega_x", "charizard_mega_y", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "beedrill_mega", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "alakazam_mega", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "gyarados_mega", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "ampharos_mega", "bellossom", "politoed", "scizor", "scizor_mega", "houndour", "houndoom", "houndoom_mega", "larvitar", "pupitar", "tyranitar", "tyranitar_mega", "mudkip", "marshtomp", "swampert", "swampert_mega", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "gardevoir_mega", "trapinch", "vibrava", "flygon", "shuppet", "banette", "banette_mega", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "gallade_mega", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "sableye", "sableye_mega", "zapdos", "moltres", "delibird", "stantler", "absol", "bagon", "shelgon", "salamence", "salamence_mega", "snover", "abomasnow", "abomasnow_mega", "raikou", "vulpix", "ninetales", "exeggcute", "exeggutor", "omanyte", "omastar", "misdreavus", "mismagius", "carvanha", "sharpedo", "sharpedo_mega", "pinsir", "pinsir_mega", "mawile", "mawile_mega", "beldum", "metang", "metagross", "metagross_mega", "entei", "ekans", "arbok", "koffing", "weezing", "nidoran_female", "nidorina", "nidoran_male", "nidorino", "nidoqueen", "nidoking", "machop", "machoke", "machamp", "gligar", "gliscor", "shuckle", "stunky", "skuntank", "suicune", "pineco", "forretress", "mewtwo", "mewtwo_mega_x", "mewtwo_mega_y", "diglett", "dugtrio", "shellder", "cloyster", "slowpoke", "slowbro", "slowking", "aerodactyl", "skarmory", "teddiursa", "ursaring", "hoppip", "skiploom", "jumpluff", "wooper", "quagsire", "swinub", "piloswine", "mamoswine", "nosepass", "probopass", "aron", "lairon", "aggron", "spheal", "sealeo", "walrein", "lileep", "cradily", "anorith", "armaldo", "aipom", "ambipom", "skorupi", "drapion", "poochyena", "mightyena", "murkrow", "honchkrow", "electrike", "manectric", "snubbull", "granbull", "makuhita", "hariyama", "starly", "staravia", "staraptor", "tangela", "tangrowth", "horsea", "seadra", "kingdra", "ho_oh", "bidoof", "bibarel", "cacnea", "cacturne", "lugia", "voltorb", "electrode", "chikorita", "bayleef", "meganium", "cyndaquil", "quilava", "typhlosion", "totodile", "croconaw", "feraligatr", "whismur", "loudred", "exploud", "hippopotas", "hippowdon", "rattata_alolan", "raticate_alolan", "sandshrew_alolan", "sandslash_alolan", "exeggutor_alolan", "sudowoodo", "girafarig", "numel", "camerupt", "latias", "exeggutor_alolan", "marowak_alolan", "geodude", "graveler", "golem", "shinx", "luxio", "luxray", "purrloin", "liepard", "latios", "foongus", "amoonguss", "patrat", "watchog", "ducklett", "swanna", "ursaluna", "diglett_alolan", "dugtrio_alolan", "onix", "steelix", "natu", "xatu", "wailmer", "wailord", "golett", "golurk", "vulpix_alolan", "ninetales_alolan", "spoink", "grumpig", "blitzle", "zebstrika", "joltik", "galvantula", "registeel", "salamence_mega", "aggron_mega", "manectric_mega", "gardevoir_mega", "latios_mega", "latias_mega", "grimer_alolan", "muk_alolan", "phanpy", "donphan", "treecko", "grovyle", "sceptile", "sceptile_mega", "torchic", "combusken", "blaziken", "blaziken_mega", "drifloon", "drifblim", "regice", "regirock", "throh", "sawk", "geodude_alolan", "graveler_alolan", "golem_alolan", "ledyba", "ledian", "hitmontop", "glameow", "purugly", "gible", "gabite", "garchomp", "regigigas", "gastly", "haunter", "gengar", "rhyhorn", "rhydon", "rhyperior", "barboach", "whiscash", "cranidos", "rampardos", "shieldon", "bastiodon", "drilbur", "excadrill", "litwick", "lampent", "chandelure", "sneasel_hisuian", "sneasler", "kyogre", "corphish", "crawdaunt", "snorunt", "glalie", "froslass", "chimchar", "monferno", "infernape", "piplup", "prinplup", "empoleon", "croagunk", "toxicroak", "dwebble", "crustle", "ferroseed", "ferrothorn", "tentacool", "tentacruel", "groudon", "pidgey", "pidgeotto", "pidgeot", "darumaka", "darmanitan_standard", "gothita", "gothorita", "gothitelle", "solosis", "duosion", "reuniclus", "pidove", "tranquill", "unfezant"],
+    "shadowPokemon": ["bulbasaur", "ivysaur", "venusaur", "venusaur_mega", "charmander", "charmeleon", "charizard", "charizard_mega_x", "charizard_mega_y", "squirtle", "wartortle", "blastoise", "weedle", "kakuna", "beedrill", "beedrill_mega", "rattata", "raticate", "zubat", "golbat", "oddish", "gloom", "vileplume", "venonat", "venomoth", "meowth", "persian", "psyduck", "golduck", "growlithe", "arcanine", "poliwag", "poliwhirl", "poliwrath", "abra", "kadabra", "alakazam", "alakazam_mega", "grimer", "muk", "drowzee", "hypno", "cubone", "marowak", "hitmonchan", "scyther", "electabuzz", "magmar", "magikarp", "gyarados", "gyarados_mega", "lapras", "snorlax", "dratini", "dragonair", "dragonite", "crobat", "mareep", "flaaffy", "ampharos", "ampharos_mega", "bellossom", "politoed", "scizor", "scizor_mega", "houndour", "houndoom", "houndoom_mega", "larvitar", "pupitar", "tyranitar", "tyranitar_mega", "mudkip", "marshtomp", "swampert", "swampert_mega", "seedot", "nuzleaf", "shiftry", "ralts", "kirlia", "gardevoir", "gardevoir_mega", "trapinch", "vibrava", "flygon", "shuppet", "banette", "banette_mega", "duskull", "dusclops", "turtwig", "grotle", "torterra", "electivire", "magmortar", "gallade", "gallade_mega", "dusknoir", "magnemite", "magneton", "magnezone", "bellsprout", "weepinbell", "victreebel", "sandshrew", "sandslash", "porygon", "porygon2", "porygon_z", "wobbuffet", "meowth", "persian", "hitmonlee", "articuno", "sneasel", "weavile", "sableye", "sableye_mega", "zapdos", "moltres", "delibird", "stantler", "absol", "bagon", "shelgon", "salamence", "salamence_mega", "snover", "abomasnow", "abomasnow_mega", "raikou", "vulpix", "ninetales", "exeggcute", "exeggutor", "omanyte", "omastar", "misdreavus", "mismagius", "carvanha", "sharpedo", "sharpedo_mega", "pinsir", "pinsir_mega", "mawile", "mawile_mega", "beldum", "metang", "metagross", "metagross_mega", "entei", "ekans", "arbok", "koffing", "weezing", "nidoran_female", "nidorina", "nidoran_male", "nidorino", "nidoqueen", "nidoking", "machop", "machoke", "machamp", "gligar", "gliscor", "shuckle", "stunky", "skuntank", "suicune", "pineco", "forretress", "mewtwo", "mewtwo_mega_x", "mewtwo_mega_y", "diglett", "dugtrio", "shellder", "cloyster", "slowpoke", "slowbro", "slowking", "aerodactyl", "skarmory", "teddiursa", "ursaring", "hoppip", "skiploom", "jumpluff", "wooper", "quagsire", "swinub", "piloswine", "mamoswine", "nosepass", "probopass", "aron", "lairon", "aggron", "spheal", "sealeo", "walrein", "lileep", "cradily", "anorith", "armaldo", "aipom", "ambipom", "skorupi", "drapion", "poochyena", "mightyena", "murkrow", "honchkrow", "electrike", "manectric", "snubbull", "granbull", "makuhita", "hariyama", "starly", "staravia", "staraptor", "tangela", "tangrowth", "horsea", "seadra", "kingdra", "ho_oh", "bidoof", "bibarel", "cacnea", "cacturne", "lugia", "voltorb", "electrode", "chikorita", "bayleef", "meganium", "cyndaquil", "quilava", "typhlosion", "totodile", "croconaw", "feraligatr", "whismur", "loudred", "exploud", "hippopotas", "hippowdon", "rattata_alolan", "raticate_alolan", "sandshrew_alolan", "sandslash_alolan", "exeggutor_alolan", "sudowoodo", "girafarig", "numel", "camerupt", "latias", "exeggutor_alolan", "marowak_alolan", "geodude", "graveler", "golem", "shinx", "luxio", "luxray", "purrloin", "liepard", "latios", "foongus", "amoonguss", "patrat", "watchog", "ducklett", "swanna", "ursaluna", "diglett_alolan", "dugtrio_alolan", "onix", "steelix", "natu", "xatu", "wailmer", "wailord", "golett", "golurk", "vulpix_alolan", "ninetales_alolan", "spoink", "grumpig", "blitzle", "zebstrika", "joltik", "galvantula", "registeel", "salamence_mega", "aggron_mega", "manectric_mega", "gardevoir_mega", "latios_mega", "latias_mega", "grimer_alolan", "muk_alolan", "phanpy", "donphan", "treecko", "grovyle", "sceptile", "sceptile_mega", "torchic", "combusken", "blaziken", "blaziken_mega", "drifloon", "drifblim", "regice", "regirock", "throh", "sawk", "geodude_alolan", "graveler_alolan", "golem_alolan", "ledyba", "ledian", "hitmontop", "glameow", "purugly", "gible", "gabite", "garchomp", "regigigas", "gastly", "haunter", "gengar", "rhyhorn", "rhydon", "rhyperior", "barboach", "whiscash", "cranidos", "rampardos", "shieldon", "bastiodon", "drilbur", "excadrill", "litwick", "lampent", "chandelure", "sneasel_hisuian", "sneasler", "kyogre", "corphish", "crawdaunt", "snorunt", "glalie", "froslass", "chimchar", "monferno", "infernape", "piplup", "prinplup", "empoleon", "croagunk", "toxicroak", "dwebble", "crustle", "ferroseed", "ferrothorn", "tentacool", "tentacruel", "groudon", "pidgey", "pidgeotto", "pidgeot", "darumaka", "darmanitan_standard", "gothita", "gothorita", "gothitelle", "solosis", "duosion", "reuniclus", "pidove", "tranquill", "unfezant", "cresselia", "archen", "archeops", "tirtouga", "carracosta", "timburr", "gurdurr", "conkeldurr"],
     "pokemon": [{
         "dex": 1,
         "speciesName": "Bulbasaur",
@@ -23956,7 +23932,31 @@
         "types": ["psychic", "none"],
         "fastMoves": ["CONFUSION", "PSYCHO_CUT"],
         "chargedMoves": ["AURORA_BEAM", "FUTURE_SIGHT", "MOONBLAST", "GRASS_KNOT"],
-        "tags": ["legendary"],
+        "tags": ["legendary", "shadoweligible"],
+        "defaultIVs": {
+            "cp500": [6.5, 12, 12, 12],
+            "cp1500": [20, 4, 7, 13],
+            "cp2500": [35.5, 5, 14, 13]
+        },
+        "eliteMoves": ["GRASS_KNOT"],
+        "searchPriority": 32,
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": true,
+        "level25CP": 1756
+    }, {
+        "dex": 488,
+        "speciesName": "Cresselia (Shadow)",
+        "speciesId": "cresselia_shadow",
+        "baseStats": {
+            "atk": 152,
+            "def": 258,
+            "hp": 260
+        },
+        "types": ["psychic", "none"],
+        "fastMoves": ["CONFUSION", "PSYCHO_CUT"],
+        "chargedMoves": ["AURORA_BEAM", "FUTURE_SIGHT", "MOONBLAST", "GRASS_KNOT"],
+        "tags": ["legendary", "shadow"],
         "defaultIVs": {
             "cp500": [6.5, 12, 12, 12],
             "cp1500": [20, 4, 7, 13],
@@ -25730,7 +25730,34 @@
         "family": {
             "id": "FAMILY_TIMBURR",
             "evolutions": ["gurdurr"]
-        }
+        },
+        "level25CP": 750,
+        "tags": ["shadoweligible"]
+    }, {
+        "dex": 532,
+        "speciesId": "timburr_shadow",
+        "speciesName": "Timburr (Shadow)",
+        "baseStats": {
+            "atk": 134,
+            "def": 87,
+            "hp": 181
+        },
+        "types": ["fighting", "none"],
+        "fastMoves": ["LOW_KICK", "POUND"],
+        "chargedMoves": ["LOW_SWEEP", "BRICK_BREAK", "ROCK_TOMB"],
+        "defaultIVs": {
+            "cp500": [14.5, 6, 14, 8],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_TIMBURR",
+            "evolutions": ["gurdurr_shadow"]
+        },
+        "tags": ["shadow"]
     }, {
         "dex": 533,
         "speciesId": "gurdurr",
@@ -25755,7 +25782,35 @@
             "id": "FAMILY_TIMBURR",
             "parent": "timburr",
             "evolutions": ["conkeldurr"]
-        }
+        },
+        "level25CP": 1308,
+        "tags": ["shadoweligible"]
+    }, {
+        "dex": 533,
+        "speciesId": "gurdurr_shadow",
+        "speciesName": "Gurdurr (Shadow)",
+        "baseStats": {
+            "atk": 180,
+            "def": 134,
+            "hp": 198
+        },
+        "types": ["fighting", "none"],
+        "fastMoves": ["LOW_KICK", "POISON_JAB"],
+        "chargedMoves": ["LOW_SWEEP", "BRICK_BREAK", "STONE_EDGE"],
+        "defaultIVs": {
+            "cp500": [8.5, 9, 12, 15],
+            "cp1500": [25.5, 5, 14, 14],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_TIMBURR",
+            "parent": "timburr_shadow",
+            "evolutions": ["conkeldurr_shadow"]
+        },
+        "tags": ["shadow"]
     }, {
         "dex": 534,
         "speciesId": "conkeldurr",
@@ -25780,7 +25835,35 @@
         "family": {
             "id": "FAMILY_TIMBURR",
             "parent": "gurdurr"
-        }
+        },
+        "level25CP": 2080,
+        "tags": ["shadoweligible"]
+    }, {
+        "dex": 534,
+        "speciesId": "conkeldurr_shadow",
+        "speciesName": "Conkeldurr (Shadow)",
+        "baseStats": {
+            "atk": 243,
+            "def": 158,
+            "hp": 233
+        },
+        "types": ["fighting", "none"],
+        "fastMoves": ["COUNTER", "POISON_JAB"],
+        "chargedMoves": ["DYNAMIC_PUNCH", "FOCUS_BLAST", "STONE_EDGE", "BRUTAL_SWING"],
+        "eliteMoves": ["BRUTAL_SWING"],
+        "defaultIVs": {
+            "cp500": [5.5, 13, 15, 13],
+            "cp1500": [16.5, 5, 14, 11],
+            "cp2500": [27.5, 6, 12, 13]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_TIMBURR",
+            "parent": "gurdurr_shadow"
+        },
+        "tags": ["shadow"]
     }, {
         "dex": 535,
         "speciesId": "tympole",
@@ -26791,7 +26874,35 @@
         "family": {
             "id": "FAMILY_TIRTOUGA",
             "evolutions": ["carracosta"]
-        }
+        },
+        "level25CP": 866,
+        "tags": ["shadoweligible"]
+    }, {
+        "dex": 564,
+        "speciesId": "tirtouga_shadow",
+        "speciesName": "Tirtouga (Shadow)",
+        "baseStats": {
+            "atk": 134,
+            "def": 146,
+            "hp": 144
+        },
+        "types": ["water", "rock"],
+        "fastMoves": ["WATER_GUN", "BITE"],
+        "chargedMoves": ["SURF", "ANCIENT_POWER", "BODY_SLAM"],
+        "defaultIVs": {
+            "cp500": [13, 5, 8, 12],
+            "cp1500": [47, 4, 14, 14],
+            "cp2500": [50, 15, 15, 15],
+            "cp1500l40": [40, 15, 15, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_TIRTOUGA",
+            "evolutions": ["carracosta_shadow"]
+        },
+        "tags": ["shadow"]
     }, {
         "dex": 565,
         "speciesId": "carracosta",
@@ -26817,7 +26928,36 @@
         "family": {
             "id": "FAMILY_TIRTOUGA",
             "parent": "tirtouga"
-        }
+        },
+        "level25CP": 1608,
+        "tags": ["shadoweligible"]
+    }, {
+        "dex": 565,
+        "speciesId": "carracosta_shadow",
+        "speciesName": "Carracosta (Shadow)",
+        "baseStats": {
+            "atk": 192,
+            "def": 197,
+            "hp": 179
+        },
+        "types": ["water", "rock"],
+        "fastMoves": ["WATER_GUN", "ROCK_THROW"],
+        "chargedMoves": ["SURF", "ANCIENT_POWER", "BODY_SLAM", "LIQUIDATION"],
+        "defaultIVs": {
+            "cp500": [7, 10, 15, 15],
+            "cp1500": [21, 7, 12, 14],
+            "cp2500": [40.5, 4, 14, 14],
+            "cp2500l40": [38.5, 12, 13, 12]
+        },
+        "searchPriority": 2,
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_TIRTOUGA",
+            "parent": "tirtouga_shadow"
+        },
+        "tags": ["shadow"]
     }, {
         "dex": 566,
         "speciesId": "archen",
@@ -26841,7 +26981,34 @@
         "family": {
             "id": "FAMILY_ARCHEN",
             "evolutions": ["archeops"]
-        }
+        },
+        "level25CP": 1083,
+        "tags": ["shadoweligible"]
+    }, {
+        "dex": 566,
+        "speciesId": "archen_shadow",
+        "speciesName": "Archen (Shadow)",
+        "baseStats": {
+            "atk": 213,
+            "def": 89,
+            "hp": 146
+        },
+        "types": ["rock", "flying"],
+        "fastMoves": ["QUICK_ATTACK", "WING_ATTACK"],
+        "chargedMoves": ["DRAGON_CLAW", "ANCIENT_POWER", "CRUNCH"],
+        "defaultIVs": {
+            "cp500": [10, 4, 14, 14],
+            "cp1500": [31, 4, 14, 10],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_ARCHEN",
+            "evolutions": ["archeops_shadow"]
+        },
+        "tags": ["shadow"]
     }, {
         "dex": 567,
         "speciesId": "archeops",
@@ -26865,7 +27032,34 @@
         "family": {
             "id": "FAMILY_ARCHEN",
             "parent": "archen"
-        }
+        },
+        "level25CP": 2066,
+        "tags": ["shadoweligible"]
+    }, {
+        "dex": 567,
+        "speciesId": "archeops_shadow",
+        "speciesName": "Archeops (Shadow)",
+        "baseStats": {
+            "atk": 292,
+            "def": 139,
+            "hp": 181
+        },
+        "types": ["rock", "flying"],
+        "fastMoves": ["STEEL_WING", "WING_ATTACK"],
+        "chargedMoves": ["DRAGON_CLAW", "ANCIENT_POWER", "CRUNCH"],
+        "defaultIVs": {
+            "cp500": [5.5, 15, 14, 14],
+            "cp1500": [16.5, 4, 11, 15],
+            "cp2500": [27.5, 5, 15, 10]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_ARCHEN",
+            "parent": "archen_shadow"
+        },
+        "tags": ["shadow"]
     }, {
         "dex": 568,
         "speciesId": "trubbish",

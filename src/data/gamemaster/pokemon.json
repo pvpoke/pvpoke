@@ -21535,7 +21535,7 @@
     "types": ["fighting", "steel"],
     "fastMoves": ["BULLET_PUNCH", "COUNTER", "FORCE_PALM"],
     "chargedMoves": ["CLOSE_COMBAT", "FLASH_CANNON", "SHADOW_BALL", "POWER_UP_PUNCH", "AURA_SPHERE", "BLAZE_KICK", "THUNDER_PUNCH"],
-	"eliteMoves": ["FORCE_PALM"],
+    "eliteMoves": ["FORCE_PALM"],
     "defaultIVs": {
         "cp500": [7, 4, 13, 13],
         "cp1500": [20.5, 5, 14, 10],
@@ -21558,16 +21558,16 @@
         "hp": 172
     },
     "types": ["fighting", "steel"],
-	"fastMoves": ["BULLET_PUNCH", "COUNTER", "FORCE_PALM"],
+    "fastMoves": ["BULLET_PUNCH", "COUNTER", "FORCE_PALM"],
     "chargedMoves": ["CLOSE_COMBAT", "FLASH_CANNON", "SHADOW_BALL", "POWER_UP_PUNCH", "AURA_SPHERE", "BLAZE_KICK", "THUNDER_PUNCH"],
-	"eliteMoves": ["FORCE_PALM"],
+    "eliteMoves": ["FORCE_PALM"],
     "defaultIVs": {
-		"cp500": [14.5, 7, 5, 13],
+        "cp500": [14.5, 7, 5, 13],
         "cp1500": [14.5, 7, 5, 13],
         "cp2500": [23.5, 11, 9, 15]
     },
     "tags": ["mega"],
-	"buddyDistance": 5,
+    "buddyDistance": 5,
     "thirdMoveCost": 75000,
     "released": true,
     "family": {
@@ -23348,7 +23348,31 @@
     "types": ["psychic", "none"],
     "fastMoves": ["CONFUSION", "PSYCHO_CUT"],
     "chargedMoves": ["AURORA_BEAM", "FUTURE_SIGHT", "MOONBLAST", "GRASS_KNOT"],
-    "tags": ["legendary"],
+    "tags": ["legendary", "shadoweligible"],
+    "defaultIVs": {
+        "cp500": [6.5, 12, 12, 12],
+        "cp1500": [20, 4, 7, 13],
+        "cp2500": [35.5, 5, 14, 13]
+    },
+    "eliteMoves": ["GRASS_KNOT"],
+    "searchPriority": 32,
+    "buddyDistance": 20,
+    "thirdMoveCost": 100000,
+    "released": true,
+    "level25CP": 1756
+}, {
+    "dex": 488,
+    "speciesName": "Cresselia (Shadow)",
+    "speciesId": "cresselia_shadow",
+    "baseStats": {
+        "atk": 152,
+        "def": 258,
+        "hp": 260
+    },
+    "types": ["psychic", "none"],
+    "fastMoves": ["CONFUSION", "PSYCHO_CUT"],
+    "chargedMoves": ["AURORA_BEAM", "FUTURE_SIGHT", "MOONBLAST", "GRASS_KNOT"],
+    "tags": ["legendary", "shadow"],
     "defaultIVs": {
         "cp500": [6.5, 12, 12, 12],
         "cp1500": [20, 4, 7, 13],
@@ -25122,7 +25146,34 @@
     "family": {
         "id": "FAMILY_TIMBURR",
         "evolutions": ["gurdurr"]
-    }
+    },
+    "level25CP": 750,
+    "tags": ["shadoweligible"]
+}, {
+    "dex": 532,
+    "speciesId": "timburr_shadow",
+    "speciesName": "Timburr (Shadow)",
+    "baseStats": {
+        "atk": 134,
+        "def": 87,
+        "hp": 181
+    },
+    "types": ["fighting", "none"],
+    "fastMoves": ["LOW_KICK", "POUND"],
+    "chargedMoves": ["LOW_SWEEP", "BRICK_BREAK", "ROCK_TOMB"],
+    "defaultIVs": {
+        "cp500": [14.5, 6, 14, 8],
+        "cp1500": [50, 15, 15, 15],
+        "cp2500": [50, 15, 15, 15]
+    },
+    "buddyDistance": 5,
+    "thirdMoveCost": 75000,
+    "released": true,
+    "family": {
+        "id": "FAMILY_TIMBURR",
+        "evolutions": ["gurdurr_shadow"]
+    },
+    "tags": ["shadow"]
 }, {
     "dex": 533,
     "speciesId": "gurdurr",
@@ -25147,7 +25198,35 @@
         "id": "FAMILY_TIMBURR",
         "parent": "timburr",
         "evolutions": ["conkeldurr"]
-    }
+    },
+    "level25CP": 1308,
+    "tags": ["shadoweligible"]
+}, {
+    "dex": 533,
+    "speciesId": "gurdurr_shadow",
+    "speciesName": "Gurdurr (Shadow)",
+    "baseStats": {
+        "atk": 180,
+        "def": 134,
+        "hp": 198
+    },
+    "types": ["fighting", "none"],
+    "fastMoves": ["LOW_KICK", "POISON_JAB"],
+    "chargedMoves": ["LOW_SWEEP", "BRICK_BREAK", "STONE_EDGE"],
+    "defaultIVs": {
+        "cp500": [8.5, 9, 12, 15],
+        "cp1500": [25.5, 5, 14, 14],
+        "cp2500": [50, 15, 15, 15]
+    },
+    "buddyDistance": 5,
+    "thirdMoveCost": 75000,
+    "released": true,
+    "family": {
+        "id": "FAMILY_TIMBURR",
+        "parent": "timburr_shadow",
+        "evolutions": ["conkeldurr_shadow"]
+    },
+    "tags": ["shadow"]
 }, {
     "dex": 534,
     "speciesId": "conkeldurr",
@@ -25172,7 +25251,35 @@
     "family": {
         "id": "FAMILY_TIMBURR",
         "parent": "gurdurr"
-    }
+    },
+    "level25CP": 2080,
+    "tags": ["shadoweligible"]
+}, {
+    "dex": 534,
+    "speciesId": "conkeldurr_shadow",
+    "speciesName": "Conkeldurr (Shadow)",
+    "baseStats": {
+        "atk": 243,
+        "def": 158,
+        "hp": 233
+    },
+    "types": ["fighting", "none"],
+    "fastMoves": ["COUNTER", "POISON_JAB"],
+    "chargedMoves": ["DYNAMIC_PUNCH", "FOCUS_BLAST", "STONE_EDGE", "BRUTAL_SWING"],
+    "eliteMoves": ["BRUTAL_SWING"],
+    "defaultIVs": {
+        "cp500": [5.5, 13, 15, 13],
+        "cp1500": [16.5, 5, 14, 11],
+        "cp2500": [27.5, 6, 12, 13]
+    },
+    "buddyDistance": 5,
+    "thirdMoveCost": 75000,
+    "released": true,
+    "family": {
+        "id": "FAMILY_TIMBURR",
+        "parent": "gurdurr_shadow"
+    },
+    "tags": ["shadow"]
 }, {
     "dex": 535,
     "speciesId": "tympole",
@@ -26183,7 +26290,35 @@
     "family": {
         "id": "FAMILY_TIRTOUGA",
         "evolutions": ["carracosta"]
-    }
+    },
+    "level25CP": 866,
+    "tags": ["shadoweligible"]
+}, {
+    "dex": 564,
+    "speciesId": "tirtouga_shadow",
+    "speciesName": "Tirtouga (Shadow)",
+    "baseStats": {
+        "atk": 134,
+        "def": 146,
+        "hp": 144
+    },
+    "types": ["water", "rock"],
+    "fastMoves": ["WATER_GUN", "BITE"],
+    "chargedMoves": ["SURF", "ANCIENT_POWER", "BODY_SLAM"],
+    "defaultIVs": {
+        "cp500": [13, 5, 8, 12],
+        "cp1500": [47, 4, 14, 14],
+        "cp2500": [50, 15, 15, 15],
+        "cp1500l40": [40, 15, 15, 15]
+    },
+    "buddyDistance": 5,
+    "thirdMoveCost": 75000,
+    "released": true,
+    "family": {
+        "id": "FAMILY_TIRTOUGA",
+        "evolutions": ["carracosta_shadow"]
+    },
+    "tags": ["shadow"]
 }, {
     "dex": 565,
     "speciesId": "carracosta",
@@ -26209,7 +26344,36 @@
     "family": {
         "id": "FAMILY_TIRTOUGA",
         "parent": "tirtouga"
-    }
+    },
+    "level25CP": 1608,
+    "tags": ["shadoweligible"]
+}, {
+    "dex": 565,
+    "speciesId": "carracosta_shadow",
+    "speciesName": "Carracosta (Shadow)",
+    "baseStats": {
+        "atk": 192,
+        "def": 197,
+        "hp": 179
+    },
+    "types": ["water", "rock"],
+    "fastMoves": ["WATER_GUN", "ROCK_THROW"],
+    "chargedMoves": ["SURF", "ANCIENT_POWER", "BODY_SLAM", "LIQUIDATION"],
+    "defaultIVs": {
+        "cp500": [7, 10, 15, 15],
+        "cp1500": [21, 7, 12, 14],
+        "cp2500": [40.5, 4, 14, 14],
+        "cp2500l40": [38.5, 12, 13, 12]
+    },
+    "searchPriority": 2,
+    "buddyDistance": 5,
+    "thirdMoveCost": 75000,
+    "released": true,
+    "family": {
+        "id": "FAMILY_TIRTOUGA",
+        "parent": "tirtouga_shadow"
+    },
+    "tags": ["shadow"]
 }, {
     "dex": 566,
     "speciesId": "archen",
@@ -26233,7 +26397,34 @@
     "family": {
         "id": "FAMILY_ARCHEN",
         "evolutions": ["archeops"]
-    }
+    },
+    "level25CP": 1083,
+    "tags": ["shadoweligible"]
+}, {
+    "dex": 566,
+    "speciesId": "archen_shadow",
+    "speciesName": "Archen (Shadow)",
+    "baseStats": {
+        "atk": 213,
+        "def": 89,
+        "hp": 146
+    },
+    "types": ["rock", "flying"],
+    "fastMoves": ["QUICK_ATTACK", "WING_ATTACK"],
+    "chargedMoves": ["DRAGON_CLAW", "ANCIENT_POWER", "CRUNCH"],
+    "defaultIVs": {
+        "cp500": [10, 4, 14, 14],
+        "cp1500": [31, 4, 14, 10],
+        "cp2500": [50, 15, 15, 15]
+    },
+    "buddyDistance": 5,
+    "thirdMoveCost": 75000,
+    "released": true,
+    "family": {
+        "id": "FAMILY_ARCHEN",
+        "evolutions": ["archeops_shadow"]
+    },
+    "tags": ["shadow"]
 }, {
     "dex": 567,
     "speciesId": "archeops",
@@ -26257,7 +26448,34 @@
     "family": {
         "id": "FAMILY_ARCHEN",
         "parent": "archen"
-    }
+    },
+    "level25CP": 2066,
+    "tags": ["shadoweligible"]
+}, {
+    "dex": 567,
+    "speciesId": "archeops_shadow",
+    "speciesName": "Archeops (Shadow)",
+    "baseStats": {
+        "atk": 292,
+        "def": 139,
+        "hp": 181
+    },
+    "types": ["rock", "flying"],
+    "fastMoves": ["STEEL_WING", "WING_ATTACK"],
+    "chargedMoves": ["DRAGON_CLAW", "ANCIENT_POWER", "CRUNCH"],
+    "defaultIVs": {
+        "cp500": [5.5, 15, 14, 14],
+        "cp1500": [16.5, 4, 11, 15],
+        "cp2500": [27.5, 5, 15, 10]
+    },
+    "buddyDistance": 5,
+    "thirdMoveCost": 75000,
+    "released": true,
+    "family": {
+        "id": "FAMILY_ARCHEN",
+        "parent": "archen_shadow"
+    },
+    "tags": ["shadow"]
 }, {
     "dex": 568,
     "speciesId": "trubbish",
@@ -27533,7 +27751,7 @@
     "types": ["electric", "none"],
     "fastMoves": ["ACID", "SPARK", "VOLT_SWITCH"],
     "chargedMoves": ["CRUNCH", "THUNDERBOLT", "ACID_SPRAY", "DRAGON_CLAW", "LIQUIDATION"],
-	"eliteMoves": ["VOLT_SWITCH"],
+    "eliteMoves": ["VOLT_SWITCH"],
     "defaultIVs": {
         "cp500": [7, 4, 11, 12],
         "cp1500": [20, 8, 12, 15],
