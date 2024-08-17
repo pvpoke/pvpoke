@@ -727,8 +727,8 @@ function Battle(){
 
 		// Display sixty second marker after 60 seconds have passed
 
-		if((mode == "simulate")&&(matchupDisplayTime >= 60000)&&(! sixtySecondMarked)){
-			timeline.push(new TimelineEvent("switchAvailable", "Switch Available (60 seconds)", 0, time, turns));
+		if((mode == "simulate")&&(matchupDisplayTime >= 50000)&&(! sixtySecondMarked)){
+			timeline.push(new TimelineEvent("switchAvailable", "Switch Available (50 seconds)", 0, time, turns));
 			sixtySecondMarked = true;
 		}
 
