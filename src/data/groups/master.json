@@ -12,16 +12,12 @@
     "chargedMoves": ["DRAGON_CLAW", "SUPER_POWER"]
 }, {
     "speciesId": "excadrill",
-    "fastMove": "MUD_SHOT",
+    "fastMove": "MUD_SLAP",
     "chargedMoves": ["ROCK_SLIDE", "DRILL_RUN"]
 }, {
     "speciesId": "garchomp",
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["OUTRAGE", "EARTH_POWER"]
-}, {
-    "speciesId": "garchomp",
-    "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["OUTRAGE", "SAND_TOMB"]
 }, {
     "speciesId": "giratina_altered",
     "fastMove": "SHADOW_CLAW",
@@ -35,10 +31,6 @@
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["PRECIPICE_BLADES", "FIRE_PUNCH"]
 }, {
-    "speciesId": "gyarados",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["AQUA_TAIL", "CRUNCH"]
-}, {
     "speciesId": "ho_oh",
     "fastMove": "INCINERATE",
     "chargedMoves": ["EARTHQUAKE", "BRAVE_BIRD"]
@@ -47,17 +39,9 @@
     "fastMove": "WATERFALL",
     "chargedMoves": ["SURF", "ORIGIN_PULSE"]
 }, {
-    "speciesId": "kyogre",
-    "fastMove": "WATERFALL",
-    "chargedMoves": ["SURF", "THUNDER"]
-}, {
     "speciesId": "landorus_therian",
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["SANDSEAR_STORM", "STONE_EDGE"]
-}, {
-    "speciesId": "lugia",
-    "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["SKY_ATTACK", "AEROBLAST"]
 }, {
     "speciesId": "mamoswine",
     "fastMove": "POWDER_SNOW",
@@ -95,10 +79,6 @@
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["AQUA_TAIL", "SPACIAL_REND"]
 }, {
-    "speciesId": "rayquaza",
-    "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["BREAKING_SWIPE", "HURRICANE"]
-}, {
     "speciesId": "reshiram",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["FUSION_FLARE", "DRACO_METEOR"]
@@ -107,63 +87,35 @@
     "fastMove": "MUD_SLAP",
     "chargedMoves": ["BREAKING_SWIPE", "ROCK_WRECKER"]
 }, {
-    "speciesId": "snorlax",
-    "fastMove": "LICK",
-    "chargedMoves": ["BODY_SLAM", "EARTHQUAKE"]
-}, {
     "speciesId": "solgaleo",
     "fastMove": "FIRE_SPIN",
     "chargedMoves": ["PSYCHIC_FANGS", "IRON_HEAD"]
 }, {
-    "speciesId": "swampert",
-    "fastMove": "MUD_SHOT",
-    "chargedMoves": ["HYDRO_CANNON", "EARTHQUAKE"]
-}, {
-    "speciesId": "sylveon",
-    "fastMove": "CHARM",
-    "chargedMoves": ["MOONBLAST", "PSYSHOCK"]
-}, {
     "speciesId": "togekiss",
     "fastMove": "CHARM",
     "chargedMoves": ["ANCIENT_POWER", "AURA_SPHERE"]
-}, {
-    "speciesId": "ursaluna",
-    "fastMove": "TACKLE",
-    "chargedMoves": ["ICE_PUNCH", "HIGH_HORSEPOWER"]
 }, {
     "speciesId": "xerneas",
     "fastMove": "GEOMANCY",
     "chargedMoves": ["CLOSE_COMBAT", "MOONBLAST"]
 }, {
     "speciesId": "yveltal",
-    "fastMove": "SNARL",
-    "chargedMoves": ["DARK_PULSE", "FOCUS_BLAST"]
-}, {
-    "speciesId": "yveltal",
-    "fastMove": "SNARL",
-    "chargedMoves": ["DARK_PULSE", "OBLIVION_WING"]
+    "fastMove": "SUCKER_PUNCH",
+    "chargedMoves": ["OBLIVION_WING", "DARK_PULSE"]
 }, {
     "speciesId": "zacian_hero",
-    "fastMove": "SNARL",
-    "chargedMoves": ["CLOSE_COMBAT", "WILD_CHARGE"]
+    "fastMove": "QUICK_ATTACK",
+    "chargedMoves": ["CLOSE_COMBAT", "PLAY_ROUGH"]
 }, {
     "speciesId": "zarude",
     "fastMove": "VINE_WHIP",
     "chargedMoves": ["POWER_WHIP", "DARK_PULSE"]
 }, {
-    "speciesId": "zekrom",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["CRUNCH", "WILD_CHARGE"]
-}, {
     "speciesId": "zygarde_complete",
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["CRUNCH", "EARTHQUAKE"]
 }, {
-    "speciesId": "necrozma_dawn_wings",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["DARK_PULSE", "MOONGEIST_BEAM"]
-}, {
-    "speciesId": "necrozma_dusk_mane",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["DARK_PULSE", "SUNSTEEL_STRIKE"]
+    "speciesId": "florges",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["DISARMING_VOICE", "MOONBLAST"]
 }]
