@@ -102,7 +102,7 @@ var InterfaceMaster = (function () {
 				var headers = ["Move","Type","D"];
 
 				if(mode == "fast"){
-					headers.push("E", "T", "DPT", "EPT");
+					headers.push("E", "T", "DPT", "EPT", "DPT x EPT");
 				} else{
 					headers.push("E", "DPE", "Effects");
 				}
@@ -127,6 +127,7 @@ var InterfaceMaster = (function () {
 						obj.duration = move.cooldown / 500;
 						obj.dpt = Math.floor( (move.power / (move.cooldown / 500) ) * 100) / 100;
 						obj.ept = Math.floor( (move.energyGain / (move.cooldown / 500) ) * 100) / 100;
+						obj.product = Math.floor( (obj.dpt * obj.ept) * 100) / 100;
 					} else if(mode == "charged"){
 						obj.energy = move.energy;
 						obj.dpe = Math.floor( (move.power / move.energy) * 100) / 100;

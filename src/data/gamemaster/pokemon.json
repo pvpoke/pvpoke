@@ -8360,6 +8360,7 @@
         "cp1500": [17.5, 4, 15, 12],
         "cp2500": [29.5, 4, 7, 15]
     },
+	"searchPriority": 3,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true

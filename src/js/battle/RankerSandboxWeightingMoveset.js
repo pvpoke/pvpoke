@@ -17,7 +17,7 @@ var RankerMaster = (function () {
 			var battle = new Battle();
 			var rankingCombinations = [];
 
-			var moveSelectMode = "force";
+			var moveSelectMode = "auto";
 			var rankingData;
 			var allResults = []; // Array of all ranking results
 
