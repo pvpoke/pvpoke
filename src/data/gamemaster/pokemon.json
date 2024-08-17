@@ -22856,6 +22856,7 @@
     "tags": ["shadoweligible"],
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
+	"searchPriority": 4,
     "released": true,
     "family": {
         "id": "FAMILY_DUSKULL",
@@ -28247,7 +28248,7 @@
         "hp": 163
     },
     "types": ["fighting", "none"],
-    "fastMoves": ["LOW_KICK", "POISON_JAB"],
+    "fastMoves": ["LOW_KICK", "POISON_JAB", "FORCE_PALM"],
     "chargedMoves": ["BRICK_BREAK", "GRASS_KNOT", "STONE_EDGE", "BLAZE_KICK", "BRUTAL_SWING"],
     "defaultIVs": {
         "cp500": [7, 5, 9, 15],
