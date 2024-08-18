@@ -31556,7 +31556,8 @@
     "tags": ["starter"],
     "types": ["water", "fairy"],
     "fastMoves": ["CHARM", "WATERFALL"],
-    "chargedMoves": ["PSYCHIC", "HYDRO_PUMP", "MOONBLAST", "DISARMING_VOICE"],
+    "chargedMoves": ["PSYCHIC", "HYDRO_PUMP", "MOONBLAST", "DISARMING_VOICE", "HYDRO_CANNON"],
+	"eliteMoves": ["HYDRO_CANNON"],
     "defaultIVs": {
         "cp500": [6, 4, 11, 13],
         "cp1500": [17.5, 4, 14, 8],
