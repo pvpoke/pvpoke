@@ -108,7 +108,7 @@ var InterfaceMaster = (function () {
 				}
 
 				$(".section.updates").hide();
-
+				$(".header-ticker").hide();
 				$("#main h1").hide();
 				$("footer").hide();
 			}
@@ -121,7 +121,7 @@ var InterfaceMaster = (function () {
 				}
 
 				$(".section.updates").show();
-
+				$(".header-ticker").show();
 				$("#main h1").show();
 				$("footer").show();
 			}
