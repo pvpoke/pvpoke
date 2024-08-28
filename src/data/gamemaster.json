@@ -429,6 +429,15 @@
         "showFormat": false,
         "showMeta": true
     }, {
+        "title": "Master Premier",
+        "cup": "premier",
+        "cp": 10000,
+        "meta": "premiermaster",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true,
+        "hideRankings": true
+    }, {
         "title": "Master League (Megas)",
         "cup": "mega",
         "cp": 10000,
@@ -34622,7 +34631,7 @@
             "hp": 137
         },
         "types": ["fire", "none"],
-        "fastMoves": ["TACKLE", "EMBER"],
+        "fastMoves": ["TACKLE", "FIRE_SPIN"],
         "chargedMoves": ["FLAME_CHARGE", "FLAMETHROWER"],
         "defaultIVs": {
             "cp500": [17, 8, 13, 14],
@@ -34647,7 +34656,7 @@
             "hp": 163
         },
         "types": ["fire", "none"],
-        "fastMoves": ["TACKLE", "EMBER"],
+        "fastMoves": ["TACKLE", "FIRE_SPIN"],
         "chargedMoves": ["FLAME_CHARGE", "FLAMETHROWER"],
         "defaultIVs": {
             "cp500": [10.5, 4, 8, 13],
@@ -34673,7 +34682,7 @@
             "hp": 190
         },
         "types": ["fire", "none"],
-        "fastMoves": ["TACKLE", "EMBER"],
+        "fastMoves": ["TACKLE", "FIRE_SPIN"],
         "chargedMoves": ["FLAME_CHARGE", "FLAMETHROWER", "FOCUS_BLAST"],
         "defaultIVs": {
             "cp500": [6.5, 4, 7, 8],
@@ -36259,6 +36268,7 @@
             "cp1500": [17, 6, 14, 13],
             "cp2500": [29, 4, 14, 8]
         },
+        "tags": ["regional"],
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
