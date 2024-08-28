@@ -973,6 +973,11 @@ var GameMaster = (function () {
 						continue;
 					}
 
+					// Ban Shadows from Little Cup that can't reach a low enough level
+					if(battle.getCP() == 500 && pokemon.hasTag("shadow") && pokemon.level < 8){
+						continue;
+					}
+
 					// Process all filters
 					var allowed = false;
 					var includeIDFilter = false; // Flag to see if an ID filter should override other filters
