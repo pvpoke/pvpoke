@@ -32137,7 +32137,8 @@
         "tags": ["starter"],
         "types": ["water", "fairy"],
         "fastMoves": ["CHARM", "WATERFALL"],
-        "chargedMoves": ["PSYCHIC", "HYDRO_PUMP", "MOONBLAST", "DISARMING_VOICE"],
+        "chargedMoves": ["PSYCHIC", "HYDRO_PUMP", "MOONBLAST", "DISARMING_VOICE", "HYDRO_CANNON", "SPARKLING_ARIA"],
+        "eliteMoves": ["HYDRO_CANNON"],
         "defaultIVs": {
             "cp500": [6, 4, 11, 13],
             "cp1500": [17.5, 4, 14, 8],
@@ -42628,6 +42629,15 @@
         "energy": 0,
         "energyGain": 7,
         "cooldown": 1000,
+        "archetype": "General"
+    }, {
+        "moveId": "SPARKLING_ARIA",
+        "name": "Sparkling Aria",
+        "type": "water",
+        "power": 80,
+        "energy": 45,
+        "energyGain": 0,
+        "cooldown": 500,
         "archetype": "General"
     }, {
         "moveId": "SPIRIT_SHACKLE",
