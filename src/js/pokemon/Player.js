@@ -17,7 +17,7 @@ function Player(i, ai, b){
 
 	var shields = 2;
 	var switchTimer = 0;
-	var switchTime = 60000;
+	var switchTime = 50000;
 	var wins = 0;
 	var priority = i;
 
@@ -161,7 +161,7 @@ function Player(i, ai, b){
 
 	this.generateRoster = function(partySize, callback, customTeamPool){
 		customTeamPool = typeof customTeamPool !== 'undefined' ? customTeamPool : false;
-		
+
 		ai.generateRoster(partySize, callback, customTeamPool);
 	}
 

@@ -140,7 +140,7 @@ var RankerMaster = (function () {
 						moveset.chargedMoves.push(pokemon.chargedMoves[n]);
 					}
 
-					if((overrideSettings[1].ivs != "gamemaster")&&(overrideSettings[1].ivs != "original")){
+					/*if((overrideSettings[1].ivs != "gamemaster")&&(overrideSettings[1].ivs != "original")){
 						pokemon.levelCap = overrideSettings[1].levelCap;
 						pokemon.maximizeStat(overrideSettings[1].ivs);
 					} else if((overrideSettings[1].ivs == "gamemaster")&&(pokemon.isCustom)){
@@ -149,7 +149,7 @@ var RankerMaster = (function () {
 						if(pokemon.baitShields != 1){
 							pokemon.isCustom = true;
 						}
-					}
+					}*/
 
 					rankObj.moveset = moveset;
 
