@@ -41862,7 +41862,7 @@
         "abbreviation": "NSh",
         "type": "ghost",
         "power": 80,
-        "energy": 50,
+        "energy": 45,
         "energyGain": 0,
         "cooldown": 500,
         "archetype": "General"
@@ -41970,7 +41970,7 @@
         "cooldown": 500,
         "buffs": [0, 1],
         "buffTarget": "self",
-        "buffApplyChance": ".3",
+        "buffApplyChance": ".66",
         "archetype": "Boost"
     }, {
         "moveId": "PAYBACK",
@@ -42076,10 +42076,10 @@
         "name": "Power Gem",
         "type": "rock",
         "power": 85,
-        "energy": 55,
+        "energy": 50,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "High Energy"
+        "archetype": "General"
     }, {
         "moveId": "POWER_UP_PUNCH",
         "name": "Power-Up Punch",
@@ -42781,7 +42781,7 @@
         "energy": 45,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "Spam/Bait"
+        "archetype": "General"
     }, {
         "moveId": "SWIFT",
         "name": "Swift",
@@ -43202,7 +43202,7 @@
         "cooldown": 500,
         "buffs": [-1, 0],
         "buffTarget": "opponent",
-        "buffApplyChance": ".30",
+        "buffApplyChance": ".33",
         "archetype": "Debuff Nuke"
     }, {
         "moveId": "ZEN_HEADBUTT",
