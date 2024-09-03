@@ -103,11 +103,11 @@
     "moveId": "ASTONISH",
     "name": "Astonish",
     "type": "ghost",
-    "power": 9,
+    "power": 12,
     "energy": 0,
     "energyGain": 10,
     "cooldown": 1500,
-    "archetype": "General"
+    "archetype": "Multipurpose"
 }, {
     "moveId": "AURA_SPHERE",
     "name": "Aura Sphere",
@@ -183,7 +183,7 @@
     "moveId": "BODY_SLAM",
     "name": "Body Slam",
     "type": "normal",
-    "power": 60,
+    "power": 50,
     "energy": 35,
     "energyGain": 0,
     "cooldown": 500,
@@ -202,7 +202,7 @@
     "moveId": "BONE_CLUB",
     "name": "Bone Club",
     "type": "ground",
-    "power": 40,
+    "power": 55,
     "energy": 35,
     "energyGain": 0,
     "cooldown": 500,
@@ -251,11 +251,11 @@
     "name": "Brutal Swing",
     "abbreviation": "BrS",
     "type": "dark",
-    "power": 65,
-    "energy": 40,
+    "power": 55,
+    "energy": 35,
     "energyGain": 0,
     "cooldown": 500,
-    "archetype": "General"
+    "archetype": "Spam/Bait"
 }, {
     "moveId": "BRINE",
     "name": "Brine",
@@ -387,7 +387,7 @@
     "type": "fighting",
     "power": 8,
     "energy": 0,
-    "energyGain": 7,
+    "energyGain": 6,
     "cooldown": 1000,
     "archetype": "Multipurpose"
 }, {
@@ -481,7 +481,7 @@
     "name": "Dig",
     "abbreviation": "Dg",
     "type": "ground",
-    "power": 80,
+    "power": 70,
     "energy": 50,
     "energyGain": 0,
     "cooldown": 500,
@@ -762,7 +762,7 @@
     "moveId": "FAIRY_WIND",
     "name": "Fairy Wind",
     "type": "fairy",
-    "power": 3,
+    "power": 4,
     "energy": 0,
     "energyGain": 9,
     "cooldown": 1000,
@@ -784,7 +784,7 @@
     "moveId": "FIRE_SPIN",
     "name": "Fire Spin",
     "type": "fire",
-    "power": 10,
+    "power": 11,
     "energy": 0,
     "energyGain": 10,
     "cooldown": 1500,
@@ -948,7 +948,7 @@
     "moveId": "FUTURE_SIGHT",
     "name": "Future Sight",
     "type": "psychic",
-    "power": 120,
+    "power": 110,
     "energy": 65,
     "energyGain": 0,
     "cooldown": 500,
@@ -1397,7 +1397,7 @@
     "type": "fighting",
     "power": 5,
     "energy": 0,
-    "energyGain": 8,
+    "energyGain": 9,
     "cooldown": 1000,
     "archetype": "Fast Charge"
 }, {
@@ -1581,9 +1581,9 @@
     "type": "steel",
     "power": 5,
     "energy": 0,
-    "energyGain": 6,
+    "energyGain": 7,
     "cooldown": 1000,
-    "archetype": "Low Quality"
+    "archetype": "General"
 }, {
     "moveId": "METAL_SOUND",
     "name": "Metal Sound",
@@ -1699,9 +1699,9 @@
     "moveId": "MUD_SHOT",
     "name": "Mud Shot",
     "type": "ground",
-    "power": 3,
+    "power": 4,
     "energy": 0,
-    "energyGain": 9,
+    "energyGain": 8,
     "cooldown": 1000,
     "archetype": "Fast Charge"
 }, {
@@ -1709,11 +1709,11 @@
     "name": "Mud Slap",
     "abbreviation": "MSl",
     "type": "ground",
-    "power": 11,
+    "power": 12,
     "energy": 0,
-    "energyGain": 9,
+    "energyGain": 10,
     "cooldown": 1500,
-    "archetype": "Heavy Damage"
+    "archetype": "Multipurpose"
 }, {
     "moveId": "MYSTICAL_FIRE",
     "name": "Mystical Fire",
@@ -1743,11 +1743,11 @@
     "name": "Night Shade",
     "abbreviation": "NSh",
     "type": "ghost",
-    "power": 60,
-    "energy": 55,
+    "power": 80,
+    "energy": 50,
     "energyGain": 0,
     "cooldown": 500,
-    "archetype": "High Energy"
+    "archetype": "General"
 }, {
     "moveId": "NIGHT_SLASH",
     "name": "Night Slash",
@@ -1846,11 +1846,14 @@
     "name": "Parabolic Charge",
     "abbreviation": "PbC",
     "type": "electric",
-    "power": 65,
-    "energy": 55,
+    "power": 70,
+    "energy": 50,
     "energyGain": 0,
     "cooldown": 500,
-    "archetype": "High Energy"
+	"buffs": [0, 1],
+    "buffTarget": "self",
+    "buffApplyChance": ".3",
+    "archetype": "Boost"
 }, {
     "moveId": "PAYBACK",
     "name": "Payback",
@@ -1916,7 +1919,7 @@
     "name": "Poison Sting",
     "abbreviation": "PSt",
     "type": "poison",
-    "power": 3,
+    "power": 4,
     "energy": 0,
     "energyGain": 9,
     "cooldown": 1000,
@@ -1954,8 +1957,8 @@
     "moveId": "POWER_GEM",
     "name": "Power Gem",
     "type": "rock",
-    "power": 80,
-    "energy": 60,
+    "power": 85,
+    "energy": 55,
     "energyGain": 0,
     "cooldown": 500,
     "archetype": "High Energy"
@@ -2083,9 +2086,9 @@
     "type": "psychic",
     "power": 3,
     "energy": 0,
-    "energyGain": 2,
+    "energyGain": 4,
     "cooldown": 500,
-    "archetype": "Low Quality"
+    "archetype": "Fast Charge"
 }, {
     "moveId": "QUICK_ATTACK",
     "name": "Quick Attack",
@@ -2099,7 +2102,7 @@
     "moveId": "RAZOR_LEAF",
     "name": "Razor Leaf",
     "type": "grass",
-    "power": 10,
+    "power": 9,
     "energy": 0,
     "energyGain": 4,
     "cooldown": 1000,
@@ -2158,7 +2161,7 @@
     "moveId": "ROCK_SLIDE",
     "name": "Rock Slide",
     "type": "rock",
-    "power": 75,
+    "power": 65,
     "energy": 45,
     "energyGain": 0,
     "cooldown": 500,
@@ -2209,7 +2212,7 @@
     "name": "Rollout",
     "abbreviation": "RO",
     "type": "rock",
-    "power": 5,
+    "power": 8,
     "energy": 0,
     "energyGain": 13,
     "cooldown": 1500,
@@ -2376,7 +2379,7 @@
     "name": "Shadow Punch",
     "abbreviation": "ShP",
     "type": "ghost",
-    "power": 40,
+    "power": 55,
     "energy": 35,
     "energyGain": 0,
     "cooldown": 500,
@@ -2433,11 +2436,11 @@
     "moveId": "SKY_ATTACK",
     "name": "Sky Attack",
     "type": "flying",
-    "power": 75,
-    "energy": 50,
+    "power": 85,
+    "energy": 55,
     "energyGain": 0,
     "cooldown": 500,
-    "archetype": "General"
+    "archetype": "High Energy"
 }, {
     "moveId": "SLUDGE",
     "name": "Sludge",
@@ -2471,7 +2474,7 @@
     "moveId": "SMACK_DOWN",
     "name": "Smack Down",
     "type": "rock",
-    "power": 12,
+    "power": 11,
     "energy": 0,
     "energyGain": 8,
     "cooldown": 1500,
@@ -2568,7 +2571,7 @@
     "type": "steel",
     "power": 7,
     "energy": 0,
-    "energyGain": 7,
+    "energyGain": 6,
     "cooldown": 1000,
     "archetype": "General"
 }, {
@@ -2625,11 +2628,11 @@
     "name": "Sucker Punch",
     "abbreviation": "SkP",
     "type": "dark",
-    "power": 5,
+    "power": 8,
     "energy": 0,
     "energyGain": 7,
     "cooldown": 1000,
-    "archetype": "Fast Charge"
+    "archetype": "Multipurpose"
 }, {
     "moveId": "SUNSTEEL_STRIKE",
     "name": "Sunsteel Strike",
@@ -2656,8 +2659,8 @@
     "moveId": "SURF",
     "name": "Surf",
     "type": "water",
-    "power": 65,
-    "energy": 40,
+    "power": 75,
+    "energy": 45,
     "energyGain": 0,
     "cooldown": 500,
     "archetype": "Spam/Bait"
@@ -2667,7 +2670,7 @@
     "abbreviation": "Sw",
     "type": "normal",
     "power": 55,
-    "energy": 40,
+    "energy": 35,
     "energyGain": 0,
     "cooldown": 500,
     "archetype": "Spam/Bait"
@@ -2797,7 +2800,7 @@
     "abbreviation": "TBl",
     "type": "grass",
     "power": 65,
-    "energy": 50,
+    "energy": 45,
     "energyGain": 0,
     "cooldown": 500,
     "buffs": [1, 0],
@@ -3020,7 +3023,7 @@
     "type": "flying",
     "power": 5,
     "energy": 0,
-    "energyGain": 8,
+    "energyGain": 7,
     "cooldown": 1000,
     "archetype": "Fast Charge"
 }, {
@@ -3081,7 +3084,7 @@
     "cooldown": 500,
     "buffs": [-1, 0],
     "buffTarget": "opponent",
-    "buffApplyChance": ".66",
+    "buffApplyChance": ".30",
     "archetype": "Debuff Nuke"
 }, {
     "moveId": "ZEN_HEADBUTT",

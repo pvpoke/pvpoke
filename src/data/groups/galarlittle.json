@@ -1,0 +1,95 @@
+[{
+    "speciesId": "shuckle",
+    "fastMove": "ROCK_THROW",
+    "chargedMoves": ["STONE_EDGE", "ROCK_BLAST"]
+}, {
+    "speciesId": "bronzor",
+    "fastMove": "TACKLE",
+    "chargedMoves": ["PAYBACK", "HEAVY_SLAM"]
+}, {
+    "speciesId": "purrloin",
+    "fastMove": "SUCKER_PUNCH",
+    "chargedMoves": ["PLAY_ROUGH", "NIGHT_SLASH"]
+}, {
+    "speciesId": "mandibuzz",
+    "fastMove": "SNARL",
+    "chargedMoves": ["AERIAL_ACE", "DARK_PULSE"]
+}, {
+    "speciesId": "zigzagoon_galarian",
+    "fastMove": "TACKLE",
+    "chargedMoves": ["SWIFT", "DIG"]
+}, {
+    "speciesId": "barboach_shadow",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["AQUA_TAIL", "MUD_BOMB"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "whiscash",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["SCALD", "MUD_BOMB"]
+}, {
+    "speciesId": "drapion",
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["AQUA_TAIL", "CRUNCH"]
+}, {
+    "speciesId": "skorupi",
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["AQUA_TAIL", "CROSS_POISON"]
+}, {
+    "speciesId": "diggersby",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["FIRE_PUNCH", "SCORCHING_SANDS"]
+}, {
+    "speciesId": "pawniard",
+    "fastMove": "FURY_CUTTER",
+    "chargedMoves": ["IRON_HEAD", "NIGHT_SLASH"]
+}, {
+    "speciesId": "drifloon",
+    "fastMove": "ASTONISH",
+    "chargedMoves": ["ICY_WIND", "SHADOW_BALL"]
+}, {
+    "speciesId": "machoke_shadow",
+    "fastMove": "KARATE_CHOP",
+    "chargedMoves": ["CROSS_CHOP", "DYNAMIC_PUNCH"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "umbreon",
+    "fastMove": "SNARL",
+    "chargedMoves": ["LAST_RESORT", "FOUL_PLAY"]
+}, {
+    "speciesId": "scrafty",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["THUNDER_PUNCH", "FOUL_PLAY"]
+}, {
+    "speciesId": "inkay",
+    "fastMove": "PSYWAVE",
+    "chargedMoves": ["NIGHT_SLASH", "PSYBEAM"]
+}, {
+    "speciesId": "pangoro",
+    "fastMove": "KARATE_CHOP",
+    "chargedMoves": ["CLOSE_COMBAT", "NIGHT_SLASH"]
+}, {
+    "speciesId": "cottonee",
+    "fastMove": "CHARM",
+    "chargedMoves": ["ENERGY_BALL", "GRASS_KNOT"]
+}, {
+    "speciesId": "togetic",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["AERIAL_ACE", "ANCIENT_POWER"]
+}, {
+    "speciesId": "stunfisk_galarian",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["EARTHQUAKE", "ROCK_SLIDE"]
+}, {
+    "speciesId": "vullaby",
+    "fastMove": "FEINT_ATTACK",
+    "chargedMoves": ["BRAVE_BIRD", "FOUL_PLAY"]
+}, {
+    "speciesId": "wooper",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["MUD_BOMB", "BODY_SLAM"]
+}, {
+    "speciesId": "ninetales",
+    "fastMove": "FIRE_SPIN",
+    "chargedMoves": ["WEATHER_BALL_FIRE", "SCORCHING_SANDS"]
+}]
