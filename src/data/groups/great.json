@@ -19,6 +19,10 @@
     "fastMove": "FAIRY_WIND",
     "chargedMoves": ["MOONBLAST", "SWIFT"]
 }, {
+    "speciesId": "clodsire",
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["EARTHQUAKE", "STONE_EDGE"]
+}, {
     "speciesId": "cresselia",
     "fastMove": "PSYCHO_CUT",
     "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
@@ -26,11 +30,6 @@
     "speciesId": "dewgong",
     "fastMove": "ICE_SHARD",
     "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
-}, {
-    "speciesId": "dragonair_shadow",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["BODY_SLAM", "AQUA_TAIL"],
-    "shadowType": "shadow"
 }, {
     "speciesId": "drapion_shadow",
     "fastMove": "POISON_STING",
@@ -88,23 +87,10 @@
     "chargedMoves": ["SHADOW_BONE", "BONE_CLUB"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "ninetales_alolan_shadow",
-    "fastMove": "CHARM",
-    "chargedMoves": ["WEATHER_BALL_ICE", "PSYSHOCK"],
-    "shadowType": "shadow"
-}, {
-    "speciesId": "pangoro",
-    "fastMove": "KARATE_CHOP",
-    "chargedMoves": ["CLOSE_COMBAT", "NIGHT_SLASH"]
-}, {
     "speciesId": "quagsire",
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["AQUA_TAIL", "STONE_EDGE"],
     "shadowType": "shadow"
-}, {
-    "speciesId": "registeel",
-    "fastMove": "LOCK_ON",
-    "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
 }, {
     "speciesId": "sableye",
     "fastMove": "SHADOW_CLAW",
@@ -123,31 +109,28 @@
     "fastMove": "INCINERATE",
     "chargedMoves": ["FLY", "FLAME_CHARGE"]
 }, {
-    "speciesId": "trevenant",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["SEED_BOMB", "SHADOW_BALL"]
-}, {
-    "speciesId": "umbreon",
-    "fastMove": "SNARL",
-    "chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
-}, {
-    "speciesId": "venusaur",
-    "fastMove": "VINE_WHIP",
-    "chargedMoves": ["FRENZY_PLANT", "SLUDGE_BOMB"]
-}, {
-    "speciesId": "weezing_galarian",
-    "fastMove": "FAIRY_WIND",
-    "chargedMoves": ["PLAY_ROUGH", "BRUTAL_SWING"]
-}, {
-    "speciesId": "whimsicott",
-    "fastMove": "FAIRY_WIND",
-    "chargedMoves": ["SEED_BOMB", "MOONBLAST"]
-}, {
     "speciesId": "wigglytuff",
     "fastMove": "CHARM",
     "chargedMoves": ["ICY_WIND", "SWIFT"]
 }, {
-    "speciesId": "clodsire",
-    "fastMove": "POISON_STING",
-    "chargedMoves": ["EARTHQUAKE", "STONE_EDGE"]
+    "speciesId": "dunsparce",
+    "fastMove": "ROLLOUT",
+    "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
+}, {
+    "speciesId": "sableye",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["FOUL_PLAY", "POWER_GEM"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "serperior",
+    "fastMove": "VINE_WHIP",
+    "chargedMoves": ["FRENZY_PLANT", "AERIAL_ACE"]
+}, {
+    "speciesId": "chesnaught",
+    "fastMove": "VINE_WHIP",
+    "chargedMoves": ["FRENZY_PLANT", "SUPER_POWER"]
+}, {
+    "speciesId": "diggersby",
+    "fastMove": "QUICK_ATTACK",
+    "chargedMoves": ["FIRE_PUNCH", "SCORCHING_SANDS"]
 }]
