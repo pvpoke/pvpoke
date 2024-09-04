@@ -473,6 +473,38 @@
         "showFormat": false,
         "showMeta": true
     }, {
+        "title": "Battle Frontier (Great)",
+        "cup": "battlefrontiergreat",
+        "cp": 1500,
+        "meta": "battlefrontiergreat",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Battle Frontier (Ultra)",
+        "cup": "battlefrontierultra",
+        "cp": 2500,
+        "meta": "battlefrontierultra",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Battle Frontier (Master)",
+        "cup": "battlefrontiermaster",
+        "cp": 10000,
+        "meta": "battlefrontiermaster",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Devon Tundra Cup",
+        "cup": "tundra",
+        "cp": 1500,
+        "meta": "tundra",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
         "title": "Little",
         "cup": "little",
         "cp": 500,
