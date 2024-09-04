@@ -2368,7 +2368,7 @@
             "cp2500": [48, 4, 15, 10],
             "cp2500l40": [40, 15, 15, 15]
         },
-        "searchPriority": 2,
+        "searchPriority": 10,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -3153,7 +3153,6 @@
         "level25CP": 1183,
         "tags": ["shadoweligible"],
         "eliteMoves": ["OMINOUS_WIND"],
-        "searchPriority": 8,
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
         "released": true,
@@ -4672,7 +4671,7 @@
             "cp2500": [30, 4, 14, 14]
         },
         "eliteMoves": ["KARATE_CHOP", "STONE_EDGE", "SUBMISSION", "PAYBACK"],
-        "searchPriority": 10,
+        "searchPriority": 9,
         "level25CP": 1893,
         "tags": ["shadoweligible"],
         "buddyDistance": 3,
@@ -7177,7 +7176,7 @@
             "cp1500l40": [40, 15, 15, 15]
         },
         "eliteMoves": ["BODY_SLAM"],
-        "searchPriority": 2,
+        "searchPriority": 4,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -10836,7 +10835,7 @@
             "cp2500": [50, 15, 15, 15],
             "cp1500l40": [40, 4, 13, 14]
         },
-        "searchPriority": 5,
+        "searchPriority": 6,
         "level25CP": 958,
         "tags": ["shadoweligible"],
         "buddyDistance": 3,
@@ -11613,7 +11612,7 @@
             "cp1500": [37.5, 4, 15, 12],
             "cp2500": [50, 15, 15, 15]
         },
-        "searchPriority": 3,
+        "searchPriority": 5,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
@@ -14163,7 +14162,7 @@
         },
         "level25CP": 1841,
         "eliteMoves": ["HYDRO_CANNON"],
-        "searchPriority": 31,
+        "searchPriority": 7,
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
         "released": true,
@@ -15713,7 +15712,7 @@
         },
         "level25CP": 858,
         "tags": ["shadoweligible"],
-        "searchPriority": 10,
+        "searchPriority": 9,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true
@@ -16024,7 +16023,7 @@
             "cp2500": [50, 15, 15, 15],
             "cp1500l40": [40, 15, 15, 15]
         },
-        "searchPriority": 25,
+        "searchPriority": 2,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -21129,7 +21128,7 @@
             "cp2500l40": [40, 15, 15, 15]
         },
         "tags": ["regional"],
-        "searchPriority": 2,
+        "searchPriority": 9,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
@@ -22817,6 +22816,7 @@
             "cp2500l40": [40, 15, 15, 15]
         },
         "eliteMoves": ["BODY_SLAM"],
+        "searchPriority": 6,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -23427,7 +23427,7 @@
         "tags": ["shadoweligible"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "searchPriority": 4,
+        "searchPriority": 3,
         "released": true,
         "family": {
             "id": "FAMILY_DUSKULL",
@@ -23723,7 +23723,6 @@
             "cp1500": [13.5, 8, 11, 13],
             "cp2500": [23, 4, 8, 12]
         },
-        "searchPriority": 20,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -23747,6 +23746,7 @@
             "cp1500": [13.5, 5, 9, 14],
             "cp2500": [22.5, 5, 11, 12]
         },
+        "searchPriority": 20,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -23768,7 +23768,6 @@
             "cp1500": [14, 4, 5, 14],
             "cp2500": [23, 4, 15, 10]
         },
-        "searchPriority": 5,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -23792,6 +23791,7 @@
             "cp1500": [13, 6, 14, 15],
             "cp2500": [22, 5, 11, 15]
         },
+        "searchPriority": 5,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -23929,7 +23929,7 @@
             "cp2500": [35.5, 5, 14, 13]
         },
         "eliteMoves": ["GRASS_KNOT"],
-        "searchPriority": 32,
+        "searchPriority": 10,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true,
@@ -24521,7 +24521,7 @@
             "cp2500": [49.5, 12, 14, 13],
             "cp2500l40": [40, 15, 15, 15]
         },
-        "searchPriority": 4,
+        "searchPriority": 8,
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
         "released": true,
@@ -27951,7 +27951,7 @@
             "cp2500": [46.5, 13, 14, 15],
             "cp2500l40": [40, 15, 15, 15]
         },
-        "searchPriority": 10,
+        "searchPriority": 3,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -28922,6 +28922,7 @@
             "cp1500": [19.5, 5, 10, 15],
             "cp2500": [35, 4, 14, 11]
         },
+        "searchPriority": 6,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true,
@@ -29141,7 +29142,7 @@
             "cp1500": [27, 4, 10, 12],
             "cp2500": [50, 15, 15, 15]
         },
-        "searchPriority": 5,
+        "searchPriority": 10,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
         "released": true,
@@ -39425,6 +39426,7 @@
             "cp1500": [29, 4, 15, 14],
             "cp2500": [50, 15, 15, 15]
         },
+        "searchPriority": 10,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
