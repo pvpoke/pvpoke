@@ -29,6 +29,9 @@ body {
 .flex {
   display: flex;
 }
+.flex.space-between {
+  justify-content: space-between;
+}
 .flex.cols-3 > div {
   flex-basis: 33%;
 }
@@ -942,7 +945,7 @@ footer a.domz-link {
   font-size: 12px;
   text-decoration: underline;
   visibility: hidden;
-  padding-right: 50px;
+  padding-right: 20px;
 }
 .poke.multi .custom-options .check.show-move-counts {
   visibility: hidden;

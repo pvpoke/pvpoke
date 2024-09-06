@@ -125,6 +125,10 @@ body{
 .flex{
 	display:flex;
 
+	&.space-between{
+		justify-content: space-between;
+	}
+
 	&.cols-3 > div{
 		flex-basis:33%;
 	}
@@ -1190,7 +1194,7 @@ footer{
 				font-size: 12px;
 				text-decoration: underline;
 				visibility: hidden;
-				padding-right: 50px;
+				padding-right: 20px;
 			}
 
 			.check.show-move-counts{
