@@ -942,6 +942,16 @@ footer a.domz-link {
   font-size: 12px;
   text-decoration: underline;
   visibility: hidden;
+  padding-right: 50px;
+}
+.poke.multi .custom-options .check.show-move-counts {
+  visibility: hidden;
+  margin-top: 5px;
+  font-size: 12px;
+}
+.poke.multi .custom-options .check.show-move-counts span {
+  width: 12px;
+  height: 12px;
 }
 .poke.multi .custom-options .add-poke-btn {
   font-size: 14px;
@@ -988,6 +998,9 @@ footer a.domz-link {
   text-align: center;
   margin-right: 5px;
   padding-top: 2px;
+}
+.poke.multi .rankings-container .rank .name {
+  display: block;
 }
 .poke.multi .rankings-container .rank .moves {
   margin-left: 0;
@@ -2571,8 +2584,7 @@ a.download-csv {
   margin-right: 6px;
 }
 .rank .moves {
-  display: flex;
-  flex-wrap: wrap;
+  display: block;
   font-size: 12px;
 }
 .rank .moves .move {
@@ -2591,7 +2603,7 @@ a.download-csv {
 .rank .moves .count {
   display: none;
   margin-left: 5px;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.25);
   color: #fff;
   border-radius: 20px;
   min-width: 16px;
@@ -2601,7 +2613,6 @@ a.download-csv {
 }
 .rank .moves .count.fast {
   border-radius: 0;
-  background: rgba(0, 0, 0, 0.25);
 }
 .rank .cliffhanger-points {
   border: 1px solid;

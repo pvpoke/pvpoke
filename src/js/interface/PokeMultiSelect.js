@@ -35,6 +35,15 @@ function PokeMultiSelect(element){
 
 	var cliffhangerMode = false;
 
+	var showMoveCounts = false;
+
+	// Show move counts if previously set
+	if(window.localStorage.getItem("rankingsShowMoveCounts") == "true"){
+		$el.find(".check.show-move-counts").addClass("on");
+		$el.find(".rankings-container").toggleClass("show-move-counts");
+		showMoveCounts = true;
+	}
+
 	this.init = function(pokes, b){
 		pokemon = pokes;
 		battle = b;
@@ -342,7 +351,27 @@ function PokeMultiSelect(element){
 					$item.find(".moves").append(", ");
 				}
 
-				$item.find(".moves").append(moveList[n].displayName);
+				var moveNameStr = moveList[n].displayName;
+
+				if(moveList[n].energyGain > 0){
+					moveNameStr += "<span class=\"count fast\">"+(moveList[n].cooldown / 500)+"</span>";
+				} else{
+					var moveCounts = Pokemon.calculateMoveCounts(pokemon.fastMove, moveList[n]);
+					var moveCount = moveCounts[0];
+
+					if(moveCounts[0] > moveCounts[1]){
+						moveCount+="-";
+					}
+
+					if(moveCounts[2] < moveCounts[1] && moveCounts[1] == moveCounts[0]){
+						moveCount+=".";
+					}
+
+					moveNameStr += "<span class=\"count\">"+moveCount+"</span>";
+				}
+
+
+				$item.find(".moves").append(moveNameStr);
 			}
 
 
@@ -426,8 +455,10 @@ function PokeMultiSelect(element){
 		// Show or hide sort button
 		if(pokemonList.length > 0){
 			$el.find("a.custom-group-sort").css("visibility", "visible");
+			$el.find(".check.show-move-counts").css("visibility", "visible");
 		} else{
 			$el.find("a.custom-group-sort").css("visibility", "hidden");
+			$el.find(".check.show-move-counts").css("visibility", "hidden");
 		}
 
 		if(pokemonList.length >= maxPokemonCount){
@@ -579,8 +610,8 @@ function PokeMultiSelect(element){
 				element.show();
 				return;
 			}
-			var optionCP = leagueMap[element.attr("type")]
-			if (optionCP === cp) {
+			var optionCP = leagueMap[element.attr("type")];
+			if (optionCP == cp) {
 				element.show();
 			} else {
 				element.hide();
@@ -1059,6 +1090,11 @@ function PokeMultiSelect(element){
 
 		$el.find(".default-iv-select option").eq(0).prop("selected", "selected");
 
+		if(battle.getCup().name != "custom"){
+			$el.find(".cup-select").find("option[value=\"custom\"]").prop("selected", "selected");
+			$el.find(".cup-select").trigger("change");
+		}
+
 		if(! showIVs){
 			showIVs = true;
 			$el.find(".check.show-ivs").addClass("on");
@@ -1372,6 +1408,16 @@ function PokeMultiSelect(element){
 		$(".modal .team-string-text").val(searchString);
 		return searchString
 	}
+
+	// Toggle move count info
+
+	$el.find(".check.show-move-counts").click(function(e){
+		showMoveCounts = (! showMoveCounts);
+
+		$el.find(".rankings-container").toggleClass("show-move-counts");
+
+		window.localStorage.setItem("rankingsShowMoveCounts", showMoveCounts)
+	});
 
 	// Returns a region based on dex number
 

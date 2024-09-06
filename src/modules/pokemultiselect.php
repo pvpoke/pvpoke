@@ -10,7 +10,11 @@
 		<div class="custom-options">
 			<h3 class="section-title">Pokemon (<span class="poke-count">0</span> / <span class="poke-max-count">100</span>)</h3>
 			<p>Create or select a group of custom Pokemon below.</p>
-			<a class="custom-group-sort" href="#">Sort ...</a>
+			<div class="flex">
+				<a class="custom-group-sort" href="#">Sort ...</a>
+				<div class="check show-move-counts"><span></span>Move Counts</div>
+			</div>
+
 			<div class="rankings-container clear"></div>
 			<div class="team-warning ineligible">A Pokemon may have too low stats or be ineligible.</div>
 			<div class="team-warning labyrinth">Your Labyrinth Cup team can't share any typings.</div>

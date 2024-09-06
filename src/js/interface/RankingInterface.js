@@ -1413,7 +1413,7 @@ var InterfaceMaster = (function () {
 				$movesTab.find(".moveset.charged .move-detail-template:not(.hide)").each(function(index, value){
 					var chargedMove = gm.getMoveById($(this).attr("data"));
 					var moveCounts = Pokemon.calculateMoveCounts(fastMove, chargedMove);
-					$(this).find(".move-count span").html(moveCounts[0] + " - " + moveCounts[1] + " - " + moveCounts[2]);
+					$(this).find(".move-count span").html(moveCounts[0] + " - " + moveCounts[1] + " - " + moveCounts[2] + " - " + moveCounts[3]);
 				});
 
 				// Display this Fast Move as the selected move

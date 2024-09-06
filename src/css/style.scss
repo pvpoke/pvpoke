@@ -1190,6 +1190,18 @@ footer{
 				font-size: 12px;
 				text-decoration: underline;
 				visibility: hidden;
+				padding-right: 50px;
+			}
+
+			.check.show-move-counts{
+				visibility: hidden;
+				margin-top: 5px;
+				font-size: 12px;
+
+				span{
+					width: 12px;
+					height: 12px;
+				}
 			}
 
 			.add-poke-btn{
@@ -1246,6 +1258,10 @@ footer{
 				    text-align: center;
 				    margin-right: 5px;
 				    padding-top: 2px;
+				}
+
+				.name{
+					display: block;
 				}
 
 				.moves{
@@ -2884,8 +2900,7 @@ a.download-csv{
 
 
 	.moves{
-		display:flex;
-		flex-wrap: wrap;
+		display:block;
 		font-size:12px;
 
 		.move{
@@ -2906,7 +2921,7 @@ a.download-csv{
 		.count{
 			display:none;
 			margin-left:5px;
-			background:rgba(0,0,0,0.6);
+			background:rgba(0, 0, 0, 0.25);
 			color:#fff;
 			border-radius: 20px;
 			min-width: 16px;
@@ -2916,7 +2931,6 @@ a.download-csv{
 
 			&.fast{
 				border-radius: 0;
-				background:rgba(0,0,0,0.25);
 			}
 		}
 	}
