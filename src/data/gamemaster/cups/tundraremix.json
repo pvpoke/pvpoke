@@ -1,0 +1,27 @@
+{
+    "name": "tundraremix",
+    "title": "Devon Tundra Cup (Gymbreakers Remix)",
+    "include": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["bug", "dark", "ice", "normal", "poison"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["goodra", "politoed", "politoed_shadow", "tangrowth", "tangrowth_shadow", "relicanth", "gyarados", "gyarados_shadow", "scyther", "scyther_shadow", "vespiquen", "ninjask", "armaldo", "armaldo_shadow"]
+    }],
+    "exclude": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["electric", "fairy", "fire", "flying", "ground", "rock", "steel"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["obstagoon", "vigoroth", "toxicroak", "ursaring", "heracross", "buzzwole", "scrafty", "miltank", "lokix", "dubwool", "munchlax", "castform", "dunsparce", "araquanid", "toxapex", "arctibax", "oinkologne_female", "oinkologne_male", "greedent", "cetoddle", "malamar", "pangoro", "lickilicky", "oinkologne"]
+    }, {
+        "filterType": "tag",
+        "name": "Tag",
+        "values": ["mega"]
+    }],
+    "levelCap": 50
+}
