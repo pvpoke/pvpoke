@@ -1,22 +1,6 @@
 {
     "presets": [{
         "pokemon": [{
-            "speciesId": "bastiodon",
-            "fastMove": "SMACK_DOWN",
-            "chargedMoves": ["STONE_EDGE", "FLAMETHROWER"]
-        }, {
-            "speciesId": "victreebel_shadow",
-            "fastMove": "RAZOR_LEAF",
-            "chargedMoves": ["LEAF_BLADE", "ACID_SPRAY"],
-            "shadowType": "shadow"
-        }, {
-            "speciesId": "wigglytuff",
-            "fastMove": "CHARM",
-            "chargedMoves": ["ICY_WIND", "SWIFT"]
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
             "speciesId": "mandibuzz",
             "fastMove": "SNARL",
             "chargedMoves": ["DARK_PULSE", "AERIAL_ACE"]
@@ -296,22 +280,6 @@
         "weight": 1
     }, {
         "pokemon": [{
-            "speciesId": "machamp_shadow",
-            "fastMove": "KARATE_CHOP",
-            "chargedMoves": ["CROSS_CHOP", "STONE_EDGE"],
-            "shadowType": "shadow"
-        }, {
-            "speciesId": "cresselia",
-            "fastMove": "PSYCHO_CUT",
-            "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
-        }, {
-            "speciesId": "sandslash_alolan",
-            "fastMove": "POWDER_SNOW",
-            "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"]
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
             "speciesId": "cresselia",
             "fastMove": "PSYCHO_CUT",
             "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
@@ -353,6 +321,132 @@
             "speciesId": "mandibuzz",
             "fastMove": "SNARL",
             "chargedMoves": ["DARK_PULSE", "AERIAL_ACE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "sandslash_alolan",
+            "fastMove": "POWDER_SNOW",
+            "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "marowak_shadow",
+            "fastMove": "MUD_SLAP",
+            "chargedMoves": ["BONE_CLUB", "ROCK_SLIDE"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "gastrodon",
+            "fastMove": "MUD_SLAP",
+            "chargedMoves": ["BODY_SLAM", "EARTH_POWER"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "talonflame",
+            "fastMove": "INCINERATE",
+            "chargedMoves": ["FLY", "FLAME_CHARGE"]
+        }, {
+            "speciesId": "drapion_shadow",
+            "fastMove": "POISON_STING",
+            "chargedMoves": ["CRUNCH", "AQUA_TAIL"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "ferrothorn",
+            "fastMove": "BULLET_SEED",
+            "chargedMoves": ["POWER_WHIP", "THUNDER"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "malamar",
+            "fastMove": "PSYWAVE",
+            "chargedMoves": ["SUPER_POWER", "FOUL_PLAY"]
+        }, {
+            "speciesId": "clodsire",
+            "fastMove": "POISON_STING",
+            "chargedMoves": ["EARTHQUAKE", "STONE_EDGE"]
+        }, {
+            "speciesId": "feraligatr_shadow",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"],
+            "shadowType": "shadow"
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "malamar",
+            "fastMove": "PSYWAVE",
+            "chargedMoves": ["SUPER_POWER", "FOUL_PLAY"]
+        }, {
+            "speciesId": "clodsire",
+            "fastMove": "POISON_STING",
+            "chargedMoves": ["EARTHQUAKE", "STONE_EDGE"]
+        }, {
+            "speciesId": "dunsparce",
+            "fastMove": "ROLLOUT",
+            "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "malamar",
+            "fastMove": "PSYWAVE",
+            "chargedMoves": ["SUPER_POWER", "FOUL_PLAY"]
+        }, {
+            "speciesId": "feraligatr_shadow",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "toxapex",
+            "fastMove": "POISON_JAB",
+            "chargedMoves": ["BRINE", "SLUDGE_WAVE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "clodsire",
+            "fastMove": "POISON_STING",
+            "chargedMoves": ["EARTHQUAKE", "STONE_EDGE"]
+        }, {
+            "speciesId": "dewgong",
+            "fastMove": "ICE_SHARD",
+            "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
+        }, {
+            "speciesId": "dunsparce",
+            "fastMove": "ROLLOUT",
+            "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "ariados",
+            "fastMove": "POISON_STING",
+            "chargedMoves": ["LUNGE", "TRAILBLAZE"]
+        }, {
+            "speciesId": "dewgong",
+            "fastMove": "ICE_SHARD",
+            "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
+        }, {
+            "speciesId": "dunsparce",
+            "fastMove": "ROLLOUT",
+            "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "clodsire",
+            "fastMove": "POISON_STING",
+            "chargedMoves": ["EARTHQUAKE", "STONE_EDGE"]
+        }, {
+            "speciesId": "dewgong",
+            "fastMove": "ICE_SHARD",
+            "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
+        }, {
+            "speciesId": "feraligatr_shadow",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"],
+            "shadowType": "shadow"
         }],
         "weight": 1
     }]

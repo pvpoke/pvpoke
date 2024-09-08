@@ -53,6 +53,10 @@
     "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"],
     "shadowType": "shadow"
 }, {
+    "speciesId": "ferrothorn",
+    "fastMove": "BULLET_SEED",
+    "chargedMoves": ["POWER_WHIP", "THUNDER"]
+}, {
     "speciesId": "gastrodon",
     "fastMove": "MUD_SLAP",
     "chargedMoves": ["BODY_SLAM", "EARTH_POWER"]
@@ -60,6 +64,10 @@
     "speciesId": "goodra",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["AQUA_TAIL", "THUNDER_PUNCH"]
+}, {
+    "speciesId": "greninja",
+    "fastMove": "WATER_SHURIKEN",
+    "chargedMoves": ["HYDRO_CANNON", "NIGHT_SLASH"]
 }, {
     "speciesId": "guzzlord",
     "fastMove": "DRAGON_TAIL",
@@ -126,19 +134,19 @@
     "fastMove": "INCINERATE",
     "chargedMoves": ["FLY", "FLAME_CHARGE"]
 }, {
-    "speciesId": "wigglytuff",
-    "fastMove": "CHARM",
-    "chargedMoves": ["ICY_WIND", "SWIFT"]
-}, {
-    "speciesId": "ferrothorn",
-    "fastMove": "BULLET_SEED",
-    "chargedMoves": ["POWER_WHIP", "THUNDER"]
-}, {
     "speciesId": "toxapex",
     "fastMove": "POISON_JAB",
     "chargedMoves": ["BRINE", "SLUDGE_WAVE"]
 }, {
-    "speciesId": "greninja",
-    "fastMove": "WATER_SHURIKEN",
-    "chargedMoves": ["HYDRO_CANNON", "NIGHT_SLASH"]
+    "speciesId": "wigglytuff",
+    "fastMove": "CHARM",
+    "chargedMoves": ["ICY_WIND", "SWIFT"]
+}, {
+    "speciesId": "ariados",
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["LUNGE", "TRAILBLAZE"]
+}, {
+    "speciesId": "oranguru",
+    "fastMove": "CONFUSION",
+    "chargedMoves": ["BRUTAL_SWING", "TRAILBLAZE"]
 }]
