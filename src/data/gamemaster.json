@@ -313,6 +313,22 @@
             "values": ["steel", "fighting"]
         }]
     }, {
+        "name": "psychic",
+        "title": "Psychic Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["psychic"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["mew"]
+        }],
+        "partySize": 3,
+        "presetOnly": true
+    }, {
         "name": "remix",
         "title": "Remix",
         "include": [],
@@ -453,6 +469,14 @@
         "cup": "galar",
         "cp": 500,
         "meta": "galarlittle",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Psychic Cup",
+        "cup": "psychic",
+        "cp": 1500,
+        "meta": "psychic",
         "showCup": true,
         "showFormat": true,
         "showMeta": true

@@ -465,6 +465,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if(cup.name == "psychic"){
+					iterations = 1;
+				}
+
 				if(cup.name == "fossil"){
 					iterations = 1;
 				}

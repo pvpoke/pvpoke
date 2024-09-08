@@ -1,0 +1,55 @@
+[{
+    "speciesId": "bronzong",
+    "fastMove": "FEINT_ATTACK",
+    "chargedMoves": ["PAYBACK", "HEAVY_SLAM"]
+}, {
+    "speciesId": "bruxish",
+    "fastMove": "BITE",
+    "chargedMoves": ["PSYCHIC_FANGS", "AQUA_TAIL"]
+}, {
+    "speciesId": "claydol",
+    "fastMove": "MUD_SLAP",
+    "chargedMoves": ["SCORCHING_SANDS", "SHADOW_BALL"]
+}, {
+    "speciesId": "gardevoir_shadow",
+    "fastMove": "CHARM",
+    "chargedMoves": ["SHADOW_BALL", "TRIPLE_AXEL"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "malamar",
+    "fastMove": "PSYWAVE",
+    "chargedMoves": ["FOUL_PLAY", "HYPER_BEAM"]
+}, {
+    "speciesId": "raichu_alolan",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["WILD_CHARGE", "THUNDER_PUNCH"]
+}, {
+    "speciesId": "rapidash_galarian",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["MEGAHORN", "BODY_SLAM"]
+}, {
+    "speciesId": "slowbro_galarian",
+    "fastMove": "POISON_JAB",
+    "chargedMoves": ["BRUTAL_SWING", "SLUDGE_BOMB"]
+}, {
+    "speciesId": "victini",
+    "fastMove": "QUICK_ATTACK",
+    "chargedMoves": ["V_CREATE", "OVERHEAT"]
+}, {
+    "speciesId": "hoopa",
+    "fastMove": "ASTONISH",
+    "chargedMoves": ["SHADOW_BALL", "PSYCHIC"]
+}, {
+    "speciesId": "cresselia",
+    "fastMove": "PSYCHO_CUT",
+    "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
+}, {
+    "speciesId": "elgyem",
+    "fastMove": "ASTONISH",
+    "chargedMoves": ["DARK_PULSE", "PSYCHIC"]
+}, {
+    "speciesId": "girafarig",
+    "fastMove": "TACKLE",
+    "chargedMoves": ["PSYCHIC_FANGS", "TRAILBLAZE"],
+    "shadowType": "shadow"
+}]
