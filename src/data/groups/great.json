@@ -1,4 +1,8 @@
 [{
+    "speciesId": "ariados",
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["LUNGE", "TRAILBLAZE"]
+}, {
     "speciesId": "azumarill",
     "fastMove": "BUBBLE",
     "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
@@ -77,10 +81,6 @@
     "fastMove": "FAIRY_WIND",
     "chargedMoves": ["AERIAL_ACE", "ENERGY_BALL"]
 }, {
-    "speciesId": "lanturn",
-    "fastMove": "WATER_GUN",
-    "chargedMoves": ["SURF", "THUNDERBOLT"]
-}, {
     "speciesId": "lickilicky",
     "fastMove": "ROLLOUT",
     "chargedMoves": ["BODY_SLAM", "SHADOW_BALL"]
@@ -102,6 +102,10 @@
     "fastMove": "FIRE_SPIN",
     "chargedMoves": ["SHADOW_BONE", "BONE_CLUB"],
     "shadowType": "shadow"
+}, {
+    "speciesId": "oranguru",
+    "fastMove": "CONFUSION",
+    "chargedMoves": ["BRUTAL_SWING", "TRAILBLAZE"]
 }, {
     "speciesId": "quagsire",
     "fastMove": "MUD_SHOT",
@@ -142,11 +146,12 @@
     "fastMove": "CHARM",
     "chargedMoves": ["ICY_WIND", "SWIFT"]
 }, {
-    "speciesId": "ariados",
-    "fastMove": "POISON_STING",
-    "chargedMoves": ["LUNGE", "TRAILBLAZE"]
+    "speciesId": "abomasnow",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["ICY_WIND", "ENERGY_BALL"]
 }, {
-    "speciesId": "oranguru",
-    "fastMove": "CONFUSION",
-    "chargedMoves": ["BRUTAL_SWING", "TRAILBLAZE"]
+    "speciesId": "marowak_shadow",
+    "fastMove": "MUD_SLAP",
+    "chargedMoves": ["BONE_CLUB", "ROCK_SLIDE"],
+    "shadowType": "shadow"
 }]
