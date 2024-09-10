@@ -35285,7 +35285,7 @@
     },
     "types": ["psychic", "none"],
     "fastMoves": ["CONFUSION", "CHARM"],
-    "chargedMoves": ["PSYBEAM", "PSYCHIC", "DAZZLING_GLEAM"],
+    "chargedMoves": ["PSYSHOCK", "PSYCHIC", "DAZZLING_GLEAM"],
     "defaultIVs": {
         "cp500": [23, 5, 15, 7],
         "cp1500": [50, 15, 15, 15],
@@ -35309,7 +35309,7 @@
     },
     "types": ["psychic", "none"],
     "fastMoves": ["CONFUSION", "CHARM"],
-    "chargedMoves": ["PSYBEAM", "PSYCHIC", "DAZZLING_GLEAM"],
+    "chargedMoves": ["PSYSHOCK", "PSYCHIC", "DAZZLING_GLEAM"],
     "defaultIVs": {
         "cp500": [11.5, 5, 15, 10],
         "cp1500": [39, 4, 14, 14],
@@ -35334,7 +35334,7 @@
     },
     "types": ["psychic", "fairy"],
     "fastMoves": ["CONFUSION", "CHARM", "PSYCHO_CUT"],
-    "chargedMoves": ["PSYBEAM", "PSYCHIC", "DAZZLING_GLEAM", "POWER_WHIP"],
+    "chargedMoves": ["PSYSHOCK", "PSYCHIC", "DAZZLING_GLEAM", "POWER_WHIP"],
     "defaultIVs": {
         "cp500": [6.5, 7, 15, 15],
         "cp1500": [20, 4, 13, 7],
