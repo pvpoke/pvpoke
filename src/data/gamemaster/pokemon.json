@@ -1654,7 +1654,7 @@
         "cp2500": [48.5, 13, 13, 15],
         "cp2500l40": [40, 15, 15, 15]
     },
-    "searchPriority": 5,
+    "searchPriority": 2,
     "buddyDistance": 1,
     "thirdMoveCost": 10000,
     "released": true,
@@ -4813,14 +4813,15 @@
     },
     "types": ["fire", "none"],
     "fastMoves": ["EMBER", "FIRE_SPIN", "LOW_KICK", "INCINERATE"],
-    "chargedMoves": ["DRILL_RUN", "FIRE_BLAST", "HEAT_WAVE", "FLAME_CHARGE", "SCORCHING_SANDS"],
+    "chargedMoves": ["DRILL_RUN", "FIRE_BLAST", "HEAT_WAVE", "FLAME_CHARGE", "SCORCHING_SANDS", "WILD_CHARGE"],
     "defaultIVs": {
         "cp500": [7.5, 9, 15, 12],
         "cp1500": [22, 8, 15, 15],
         "cp2500": [46.5, 4, 10, 15],
         "cp2500l40": [40, 15, 15, 15]
     },
-    "eliteMoves": ["EMBER"],
+    "eliteMoves": ["EMBER", "WILD_CHARGE"],
+	"searchPriority": 5,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true,
@@ -4839,7 +4840,8 @@
     },
     "types": ["psychic", "fairy"],
     "fastMoves": ["LOW_KICK", "PSYCHO_CUT", "FAIRY_WIND"],
-    "chargedMoves": ["PLAY_ROUGH", "PSYCHIC", "BODY_SLAM", "MEGAHORN", "HIGH_HORSEPOWER"],
+    "chargedMoves": ["PLAY_ROUGH", "PSYCHIC", "BODY_SLAM", "MEGAHORN", "HIGH_HORSEPOWER", "WILD_CHARGE"],
+	"eliteMoves": ["WILD_CHARGE"],
     "defaultIVs": {
         "cp500": [7.5, 9, 15, 12],
         "cp1500": [22, 8, 15, 15],
