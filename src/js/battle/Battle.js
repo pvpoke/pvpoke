@@ -1884,16 +1884,7 @@ function Battle(){
 			}
 		}
 
-		// Don't bait if the opponent won't shield
-		if (poke.baitShields && opponent.shields > 0 && poke.activeChargedMoves.length > 1) {
-			var dpeRatio = (poke.activeChargedMoves[1].damage / poke.activeChargedMoves[1].energy) / (finalState.moves[0].damage / finalState.moves[0].energy);
 
-			if ((poke.energy >= poke.activeChargedMoves[1].energy)&&(dpeRatio > 1.5)) {
-				if(! self.wouldShield(poke, opponent, poke.activeChargedMoves[1]).value){
-					finalState.moves[0] = poke.activeChargedMoves[1];
-				}
-			}
-		}
 
 		// If pokemon needs boost, we cannot reorder and no moves both buff and debuff
 		if (!needsBoost) {
@@ -1965,9 +1956,19 @@ function Battle(){
 			}
 		}
 
+		// Don't bait if the opponent won't shield
+		if (poke.baitShields && opponent.shields > 0 && poke.activeChargedMoves.length > 1) {
+			var dpeRatio = (poke.activeChargedMoves[1].damage / poke.activeChargedMoves[1].energy) / (finalState.moves[0].damage / finalState.moves[0].energy);
+
+			if ((poke.energy >= poke.activeChargedMoves[1].energy)&&(dpeRatio > 1.5)) {
+				if(! self.wouldShield(poke, opponent, poke.activeChargedMoves[1]).value){
+					finalState.moves[0] = poke.activeChargedMoves[1];
+				}
+			}
+		}
+
 		// If move is self debuffing and doesn't KO, try to stack as much as you can
 		if (finalState.moves[0].selfDebuffing) {
-			//var targetEnergy = poke.energy + (Math.round( (100 - poke.energy) / poke.fastMove.energyGain) * poke.fastMove.energyGain);
 			targetEnergy = Math.floor(100 / finalState.moves[0].energy) * finalState.moves[0].energy;
 
 			if (poke.energy < targetEnergy) {
@@ -1978,8 +1979,8 @@ function Battle(){
 					return;
 				}
 			} else if(poke.baitShields && opponent.shields > 0 && poke.activeChargedMoves[0].energy - finalState.moves[0].energy <= 10 && ! poke.activeChargedMoves[0].selfDebuffing){
-				// Use the lower energy move if it's a boosting move or if the opponent would shield the bigger move
-				if(poke.activeChargedMoves[0].selfBuffing || self.wouldShield(poke, opponent, finalState.moves[0]).value){
+				// Use the lower energy move if it's a boosting move and if the opponent would shield the bigger move
+				if(poke.activeChargedMoves[0].selfBuffing && self.wouldShield(poke, opponent, finalState.moves[0]).value){
 					finalState.moves[0] = poke.activeChargedMoves[0];
 				}
 			}
@@ -2780,6 +2781,12 @@ function Battle(){
 			shieldWeight = 2;
 		}
 
+		// Lean on shields if more shields are available
+		if(defender.shields > 1 && postMoveHP <= cycleDamage * 1.5){
+			useShield = true;
+			shieldWeight = 2;
+		}
+
 		// Reset buffs to original
 		if (moveBuffs[0] > 0) {
 			attacker.statBuffs = [currentBuffs[0], currentBuffs[1]];
@@ -2796,7 +2803,7 @@ function Battle(){
 			if(attacker.energy + chargedMove.energy >= chargedMove.energy){
 				var chargedDamage = self.calculateDamage(attacker, defender, chargedMove);
 
-				if((chargedDamage >= defender.hp / 1.4)&&(fastDPT > 1.5)){
+				if((chargedDamage >= defender.hp / 1.2)&&(fastDPT > 1.5)){
 					useShield = true;
 					shieldWeight = 4
 				}
