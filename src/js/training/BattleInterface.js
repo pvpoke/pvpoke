@@ -282,11 +282,15 @@ var BattlerMaster = (function () {
 						$poke.find(".hp .bar").eq(1).attr("color", "green");
 					}
 
-					// If a switch has occured, update the Pokemon display and Charged Move buttons
-					if((activePokemon.length < i)||(activePokemon[i] != pokemon)){
+					var formChanged = response.animations.findIndex(a => a.type == "formchange" && a.actor == i) > -1;
+
+					// If a switch or form change has occured, update the Pokemon display and Charged Move buttons
+					if(activePokemon.length < i || activePokemon[i] != pokemon || formChanged){
 						$poke.find(".name").html(pokemon.speciesName);
 						$poke.find(".name").attr("class", "name " + pokemon.types[0]);
 						$poke.attr("cooldown", pokemon.fastMove.cooldown);
+
+
 
 						// Show both Pokemon at the start
 						if(response.turn == 1){

@@ -35860,28 +35860,9 @@
     "released": false
 }, {
     "dex": 877,
-    "speciesName": "Morpeko",
-    "speciesId": "morpeko",
-    "baseStats": {
-        "atk": 192,
-        "def": 121,
-        "hp": 151
-    },
-    "types": ["electric", "dark"],
-    "fastMoves": ["THUNDER_SHOCK", "BITE"],
-    "chargedMoves": ["CRUNCH", "PAYBACK", "THUNDERBOLT", "WILD_CHARGE"],
-    "defaultIVs": {
-        "cp500": [9.5, 5, 15, 14],
-        "cp1500": [29, 5, 15, 8],
-        "cp2500": [50, 15, 15, 15]
-    },
-    "buddyDistance": 3,
-    "thirdMoveCost": 50000,
-    "released": false
-}, {
-    "dex": 877,
     "speciesName": "Morpeko (Full Belly)",
     "speciesId": "morpeko_full_belly",
+	"originalFormId": "morpeko_full_belly",
     "baseStats": {
         "atk": 192,
         "def": 121,
@@ -35889,12 +35870,13 @@
     },
     "types": ["electric", "dark"],
     "fastMoves": ["THUNDER_SHOCK", "BITE"],
-    "chargedMoves": ["CRUNCH", "PAYBACK", "THUNDERBOLT", "WILD_CHARGE"],
+    "chargedMoves": ["CRUNCH", "PAYBACK", "THUNDERBOLT", "WILD_CHARGE", "AURA_WHEEL_ELECTRIC"],
     "defaultIVs": {
         "cp500": [9.5, 5, 15, 14],
         "cp1500": [29, 5, 15, 8],
         "cp2500": [50, 15, 15, 15]
     },
+	"searchPriority": 3,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": false
@@ -35902,6 +35884,7 @@
     "dex": 877,
     "speciesName": "Morpeko (Hangry)",
     "speciesId": "morpeko_hangry",
+	"originalFormId": "morpeko_full_belly",
     "baseStats": {
         "atk": 192,
         "def": 121,
@@ -35909,7 +35892,7 @@
     },
     "types": ["electric", "dark"],
     "fastMoves": ["THUNDER_SHOCK", "BITE"],
-    "chargedMoves": ["CRUNCH", "PAYBACK", "THUNDERBOLT", "WILD_CHARGE"],
+    "chargedMoves": ["CRUNCH", "PAYBACK", "THUNDERBOLT", "WILD_CHARGE", "AURA_WHEEL_DARK"],
     "defaultIVs": {
         "cp500": [9.5, 5, 15, 14],
         "cp1500": [29, 5, 15, 8],

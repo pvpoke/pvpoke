@@ -2698,9 +2698,9 @@ function Battle(){
 			energyValue = -move.energy;
 		}
 
-		if(! buffApplied){
-			timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, turns, [damage, energyValue, percentDamage]));
-		} else{
+		var timelineDescriptions = [damage, energyValue, percentDamage]
+
+		if(buffApplied){
 			var buffStr = "";
 
 			if(move.buffs[0] > 0){
@@ -2717,8 +2717,26 @@ function Battle(){
 				buffStr += move.buffs[1] + " Defense";
 			}
 
-			timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, turns, [damage, energyValue, percentDamage, buffStr]));
+			timelineDescriptions.push(buffStr);
 		}
+
+		// Apply form changes
+		if(move.formChange){
+			switch(move.formChange.type){
+				case "set":
+				attacker.changeForm(move.formChange.formId);
+				break;
+			}
+
+			timelineDescriptions.push("Form Change");
+			self.logDecision(turns, attacker, " has changed forms into " + attacker.activeFormId);
+
+			if(mode == "emulate"){
+				self.pushAnimation(attacker.index, "formchange", attacker.activeFormId);
+			}
+		}
+
+		timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, turns, timelineDescriptions));
 
 		// If a Pokemon has fainted, clear the action queue
 

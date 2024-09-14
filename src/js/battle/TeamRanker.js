@@ -332,6 +332,9 @@ var RankerMaster = (function () {
 							matchup.atkDifferential = pokemon.stats.atk - opponent.stats.atk;
 						}
 
+						pokemon.reset();
+						opponent.reset();
+
 						rankObj.matchups.push(matchup);
 					}
 
