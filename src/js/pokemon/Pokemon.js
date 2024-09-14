@@ -2283,19 +2283,9 @@ function Pokemon(id, i, b){
 		// Adjust base stats and CP if new form has different stats
 		if(this.baseStats != form.baseStats){
 			this.baseStats = { atk: form.baseStats.atk, def: form.baseStats.def, hp: form.baseStats.hp};
-
-			var isCustom = self.isCustom;
-			var level = self.levelCap;
-			var hp = self.hp;
-			self.cp = 100000;
-
-			while(self.cp > battle.getCP()){
-				self.setLevel(level, true);
-				level -= 0.5;
-			}
-
-			self.isCustom = isCustom; // Reset isCustom after adjusting CP
-			self.hp = hp;
+			this.stats.atk = this.cpm * (this.baseStats.atk+this.ivs.atk);
+			this.stats.def = this.cpm * (this.baseStats.def+this.ivs.def);
+			this.stats.hp = Math.max(Math.floor(this.cpm * (this.baseStats.hp+this.ivs.hp)), 10);
 		}
 
 		// Form specific functionality
