@@ -2278,6 +2278,7 @@ function Pokemon(id, i, b){
 		this.speciesName = form.speciesName;
 		this.activeFormId = formId;
 		this.types = [ form.types[0], form.types[1] ];
+		this.typeEffectiveness = getTypeEffectivenessArray(battle);
 
 		// Adjust base stats and CP if new form has different stats
 		if(this.baseStats != form.baseStats){

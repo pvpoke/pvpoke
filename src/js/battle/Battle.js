@@ -87,6 +87,10 @@ function Battle(){
 			poke.initialize(cp);
 		}
 
+		if(poke.activeFormId != poke.startFormId){
+			poke.reset();
+		}
+
 		poke.index = index;
 		pokemon[index] = poke;
 
