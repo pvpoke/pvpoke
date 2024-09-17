@@ -1,4 +1,8 @@
 [{
+    "speciesId": "abomasnow",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["ICY_WIND", "ENERGY_BALL"]
+}, {
     "speciesId": "ariados",
     "fastMove": "POISON_STING",
     "chargedMoves": ["LUNGE", "TRAILBLAZE"]
@@ -103,6 +107,11 @@
     "chargedMoves": ["SHADOW_BONE", "BONE_CLUB"],
     "shadowType": "shadow"
 }, {
+    "speciesId": "marowak_shadow",
+    "fastMove": "MUD_SLAP",
+    "chargedMoves": ["BONE_CLUB", "ROCK_SLIDE"],
+    "shadowType": "shadow"
+}, {
     "speciesId": "oranguru",
     "fastMove": "CONFUSION",
     "chargedMoves": ["BRUTAL_SWING", "TRAILBLAZE"]
@@ -146,12 +155,16 @@
     "fastMove": "CHARM",
     "chargedMoves": ["ICY_WIND", "SWIFT"]
 }, {
-    "speciesId": "abomasnow",
-    "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["ICY_WIND", "ENERGY_BALL"]
-}, {
-    "speciesId": "marowak_shadow",
-    "fastMove": "MUD_SLAP",
-    "chargedMoves": ["BONE_CLUB", "ROCK_SLIDE"],
+    "speciesId": "typhlosion_shadow",
+    "fastMove": "INCINERATE",
+    "chargedMoves": ["BLAST_BURN", "THUNDER_PUNCH"],
     "shadowType": "shadow"
+}, {
+    "speciesId": "arctibax",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["AVALANCHE", "DRAGON_CLAW"]
+}, {
+    "speciesId": "clodsire",
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["SLUDGE_BOMB", "EARTHQUAKE"]
 }]

@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0">
+<?xml version="1.0" encoding="utf-8"?><rss version="2.0">
 
-	<channel>
+	<channel><item><title>Galar Cup Rankings and Other Updates</title><description><![CDATA[I've posted initial rankings for Galar Cup! Bulky Pokemon like Mandibuzz, Diggersby, and Toxapex stand to form the core of the meta, but watch for old favorites like Charjabug, Lanturn, and Alolan Ninetales to make a return.<br><br>Elsewhere, I've tweaked energy values for Incinerate users in the Safe Switch scenario so they're better represented, and added a separate ranking entry for Sludge Bomb Clodsire. Like Lanturn in the past, Clodsire is central to the meta and its multiple viable movesets allow for different team building opportunities.]]></description><link>https://pvpoke.com/rankings/galar/1500/overall/</link><pubDate>Tue, 17 Sep 2024 16:03:26 GMT</pubDate></item>
 		<item>
 			<title>Rapidash Rankings</title>
 			<description>
@@ -122,14 +121,7 @@
 			<link>https://pvpoke.com/articles/community-day/24-06-goomy/</link>
 			<pubDate>Fri, 07 Jun 2024 22:18:59 GMT</pubDate>
 		</item>
-		<item>
-			<title>Custom Ranking Fixes</title>
-			<description>
-				<![CDATA[I've updated the custom rankings tool with some fixes and features that significantly speed up the time it takes to generate results. Under the "Advanced" settings, there's a new option that excludes low-performing Pokemon (Pokemon which have an overall score of less than 70 in the open league rankings). Depending on the cup, this can reduce the number of simulations required by up to half. The tool is much faster in general now, especially for "open" style formats.]]>
-			</description>
-			<link>https://pvpoke.com/#news</link>
-			<pubDate>Tue, 04 Jun 2024 21:33:53 GMT</pubDate>
-		</item>
+
 
 		<title>PvPoke</title>
 		<link>https://pvpoke.com/</link>

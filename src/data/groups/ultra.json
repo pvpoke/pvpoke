@@ -15,10 +15,6 @@
     "fastMove": "PSYCHO_CUT",
     "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
 }, {
-    "speciesId": "decidueye",
-    "fastMove": "ASTONISH",
-    "chargedMoves": ["FRENZY_PLANT", "SPIRIT_SHACKLE"]
-}, {
     "speciesId": "dragonite_shadow",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["DRAGON_CLAW", "SUPER_POWER"],
@@ -37,9 +33,10 @@
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"]
 }, {
-    "speciesId": "gastrodon",
-    "fastMove": "MUD_SLAP",
-    "chargedMoves": ["BODY_SLAM", "EARTH_POWER"]
+    "speciesId": "feraligatr_shadow",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"],
+    "shadowType": "shadow"
 }, {
     "speciesId": "giratina_altered",
     "fastMove": "DRAGON_BREATH",
@@ -65,11 +62,6 @@
     "fastMove": "ROLLOUT",
     "chargedMoves": ["BODY_SLAM", "SHADOW_BALL"]
 }, {
-    "speciesId": "machamp_shadow",
-    "fastMove": "KARATE_CHOP",
-    "chargedMoves": ["CROSS_CHOP", "STONE_EDGE"],
-    "shadowType": "shadow"
-}, {
     "speciesId": "mandibuzz",
     "fastMove": "SNARL",
     "chargedMoves": ["DARK_PULSE", "AERIAL_ACE"]
@@ -77,10 +69,6 @@
     "speciesId": "pangoro",
     "fastMove": "KARATE_CHOP",
     "chargedMoves": ["CLOSE_COMBAT", "NIGHT_SLASH"]
-}, {
-    "speciesId": "poliwrath",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["SCALD", "ICY_WIND"]
 }, {
     "speciesId": "registeel",
     "fastMove": "LOCK_ON",
@@ -106,10 +94,6 @@
     "fastMove": "POISON_JAB",
     "chargedMoves": ["SCALD", "BLIZZARD"]
 }, {
-    "speciesId": "trevenant",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["SEED_BOMB", "SHADOW_BALL"]
-}, {
     "speciesId": "venusaur",
     "fastMove": "VINE_WHIP",
     "chargedMoves": ["FRENZY_PLANT", "SLUDGE_BOMB"]
@@ -122,8 +106,20 @@
     "fastMove": "FAIRY_WIND",
     "chargedMoves": ["BRUTAL_SWING", "PLAY_ROUGH"]
 }, {
-    "speciesId": "feraligatr_shadow",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"],
+    "speciesId": "malamar",
+    "fastMove": "PSYWAVE",
+    "chargedMoves": ["SUPER_POWER", "FOUL_PLAY"]
+}, {
+    "speciesId": "moltres_galarian",
+    "fastMove": "SUCKER_PUNCH",
+    "chargedMoves": ["ANCIENT_POWER", "BRAVE_BIRD"]
+}, {
+    "speciesId": "typhlosion",
+    "fastMove": "INCINERATE",
+    "chargedMoves": ["BLAST_BURN", "THUNDER_PUNCH"]
+}, {
+    "speciesId": "golurk_shadow",
+    "fastMove": "MUD_SLAP",
+    "chargedMoves": ["SHADOW_PUNCH", "DYNAMIC_PUNCH"],
     "shadowType": "shadow"
 }]

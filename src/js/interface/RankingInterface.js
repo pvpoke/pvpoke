@@ -1015,7 +1015,12 @@ var InterfaceMaster = (function () {
 					if(scenario.energy[0] == 0){
 						battleLink += "0";
 					} else{
-						battleLink += Math.min(pokemon.fastMove.energyGain * (Math.floor((scenario.energy[0] * 500) / pokemon.fastMove.cooldown)), 100);
+						var fastMoveCount = Math.floor((scenario.energy[0] * 500) / pokemon.fastMove.cooldown);
+						if(fastMoveCount == 0){
+							fastMoveCount = 1;
+						}
+
+						battleLink += Math.min(pokemon.fastMove.energyGain * fastMoveCount, 100);
 					}
 
 					battleLink += "-";

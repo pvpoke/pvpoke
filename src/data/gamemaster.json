@@ -481,6 +481,14 @@
         "showFormat": true,
         "showMeta": true
     }, {
+        "title": "Galar Cup",
+        "cup": "galar",
+        "cp": 1500,
+        "meta": "galar",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
         "title": "Master League (Classic)",
         "cup": "classic",
         "cp": 10000,
@@ -9614,7 +9622,7 @@
             "cp2500": [34, 5, 11, 14]
         },
         "eliteMoves": ["BLAST_BURN"],
-        "searchPriority": 4,
+        "searchPriority": 6,
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
         "released": true,
@@ -35933,7 +35941,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_HATENNA",
             "evolutions": ["hattrem"]
@@ -35957,7 +35965,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_HATENNA",
             "parent": "hatenna",
@@ -35980,9 +35988,10 @@
             "cp1500": [20, 4, 13, 7],
             "cp2500": [35.5, 5, 12, 12]
         },
+        "searchPriority": 2,
         "buddyDistance": 5,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_HATENNA",
             "parent": "hattrem"
@@ -39508,6 +39517,33 @@
             "cp2500": [50, 15, 15, 15]
         },
         "searchPriority": 15,
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_WOOPER_PALDEAN",
+            "parent": "wooper_paldean"
+        }
+    }, {
+        "dex": 980,
+        "speciesName": "Clodsire",
+        "speciesId": "clodsiresb",
+        "aliasId": "clodsire",
+        "baseStats": {
+            "atk": 127,
+            "def": 151,
+            "hp": 277
+        },
+        "types": ["poison", "ground"],
+        "fastMoves": ["POISON_STING", "MUD_SHOT"],
+        "chargedMoves": ["SLUDGE_BOMB", "EARTHQUAKE", "STONE_EDGE", "ACID_SPRAY", "WATER_PULSE", "MEGAHORN"],
+        "eliteMoves": ["MEGAHORN"],
+        "defaultIVs": {
+            "cp500": [10, 5, 9, 5],
+            "cp1500": [29, 4, 15, 14],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "tags": ["duplicate", "duplicate1500"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,

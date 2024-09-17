@@ -297,13 +297,23 @@ var RankerMaster = (function () {
 							if(scenario.energy[0] == 0){
 								pokemon.startEnergy = 0;
 							} else{
-								pokemon.startEnergy = Math.min(pokemon.fastMove.energyGain * (Math.floor((scenario.energy[0] * 500) / pokemon.fastMove.cooldown)), 100);
+								var fastMoveCount = (Math.floor((scenario.energy[0] * 500) / pokemon.fastMove.cooldown));
+								if(fastMoveCount == 0){
+									fastMoveCount = 1;
+								}
+
+								pokemon.startEnergy = Math.min(pokemon.fastMove.energyGain * fastMoveCount, 100);
 							}
 
 							if(scenario.energy[1] == 0){
 								opponent.startEnergy = 0;
 							} else{
-								opponent.startEnergy = Math.min(opponent.fastMove.energyGain * (Math.floor((scenario.energy[1] * 500) / opponent.fastMove.cooldown)), 100);
+								var fastMoveCount = (Math.floor((scenario.energy[0] * 500) / pokemon.fastMove.cooldown));
+								if(fastMoveCount == 0){
+									fastMoveCount = 1;
+								}
+
+								opponent.startEnergy = Math.min(opponent.fastMove.energyGain * fastMoveCount, 100);
 							}
 
 							battle.simulate();
