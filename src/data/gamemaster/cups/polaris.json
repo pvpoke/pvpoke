@@ -3,19 +3,22 @@
     "title": "Polaris Cup",
     "include": [{
         "filterType": "type",
-        "values": ["bug","dark","ice", "electric"]
+        "values": ["bug","ice","dark","electric"]
     }, {
         "filterType": "id",
-        "values": ["snorlax","tyrunt","cradily","samurott","snorlax_shadow","cradily_shadow"]
+        "values": ["snorlax","tyrunt","cradily","samurott","snorlax_shadow","cradily_shadow","castform","greedent"]
     }],
     "exclude": [{
         "filterType": "tag",
         "values": ["mega"]
     }, {
         "filterType": "id",
-        "values": ["araquanid","cetoddle","dewgong","ninetales_alolan","arctibax","frigibax","baxcalibur","charjabug","sealeo","umbreon","obstagoon","lanturn","lanturnw","pachirisu","stunfisk","guzzlord","greninja","skuntank","pinsir"]
+        "values": ["araquanid","dewgong","ninetales_alolan","arctibax","frigibax","baxcalibur","ariados","malamar","charjabug","guzzlord","umbreon","obstagoon","lanturn","lanturnw","pachirisu","stunfisk","greninja","skuntank","pinsir"]
     }, {
         "filterType": "type",
         "values": ["steel","fighting","fire","rock"]
+    }, {
+        "filterType": "move",
+        "values": ["MUD_SLAP"]
     }]
 }

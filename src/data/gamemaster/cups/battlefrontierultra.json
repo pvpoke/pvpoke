@@ -2,22 +2,19 @@
     "name": "battlefrontierultra",
     "title": "Battle Frontier (Ultra League)",
     "include": [],
-    "exclude": [],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega"]
+    }],
     "tierRules": {
-        "max": 11,
+        "max": 3,
         "floor": 0,
         "tiers": [{
-            "points": 6,
-            "pokemon": ["annihilape", "cresselia", "feraligatr", "giratina_altered", "registeel", "zygarde_complete"]
-        }, {
-            "points": 4,
-            "pokemon": ["cobalion", "deoxys_defense", "greedent", "jellicent", "mandibuzz", "pidgeot", "poliwrath", "steelix", "swampert", "talonflame", "tapu_fini", "tentacruel", "virizion"]
-        }, {
             "points": 2,
-            "pokemon": ["altaria_mega", "charizard", "clefable", "dragonite", "dubwool", "empoleon", "gliscor", "guzzlord", "lanturn", "ninetales_alolan", "regirock", "sandslash_alolan", "scrafty", "skarmory", "skeledirge", "steelix_mega", "stunfisk_galarian", "swampert_mega", "trevenant", "umbreon", "weezing_galarian"]
+            "pokemon": ["zygarde_complete","feraligatr","cobalion","registeel","cresselia","giratina_altered","mandibuzz"]
         }, {
             "points": 1,
-            "pokemon": ["ampharos", "aurorus", "blastoise", "buzzwole", "cofagrigus", "drapion", "gallade", "golisopod", "goodra", "greninja", "gyarados_mega", "medicham_mega", "mewtwo_armored", "nidoqueen", "obstagoon", "pelipper", "skuntank", "typhlosion", "walrein"]
+            "pokemon": ["malamar","lickilicky","miltank","machamp","drapion","steelix","guzzlord","talonflame","tentacruel","weezing_galarian","gastrodon","drifblim","virizion","florges","regirock","poliwrath","sandslash_alolan","dragapult","moltres_galarian","dragonite","pangoro","umbreon","clefable"]
         }]
     }
 }

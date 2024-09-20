@@ -9,27 +9,31 @@
 }, {
     "speciesId": "sableye",
     "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["FOUL_PLAY", "RETURN"]
+    "chargedMoves": ["FOUL_PLAY", "POWER_GEM"]
+}, {
+    "speciesId": "sableye_shadow",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["FOUL_PLAY", "POWER_GEM"]
 }, {
     "speciesId": "cetitan",
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["BODY_SLAM", "AVALANCHE"]
 }, {
+    "speciesId": "cetoddle",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["BODY_SLAM", "AVALANCHE"]
+}, {
     "speciesId": "lapras",
     "fastMove": "ICE_SHARD",
-    "chargedMoves": ["SURF", "ICE_BEAM"]
+    "chargedMoves": ["SURF", "SKULL_BASH"]
 }, {
     "speciesId": "lapras_shadow",
     "fastMove": "ICE_SHARD",
-    "chargedMoves": ["SURF", "ICE_BEAM"]
+    "chargedMoves": ["SURF", "SKULL_BASH"]
 }, {
     "speciesId": "castform_snowy",
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["WEATHER_BALL_ICE", "ICE_BEAM"]
-}, {
-    "speciesId": "ariados",
-    "fastMove": "POISON_STING",
-    "chargedMoves": ["LUNGE", "MEGAHORN"]
 }, {
     "speciesId": "tyrunt",
     "fastMove": "DRAGON_TAIL",
@@ -55,10 +59,6 @@
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["AVALANCHE", "STONE_EDGE"]
 }, {
-    "speciesId": "mamoswine_shadow",
-    "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["AVALANCHE", "STONE_EDGE"]
-}, {
     "speciesId": "raichu",
     "fastMove": "VOLT_SWITCH",
     "chargedMoves": ["THUNDER_PUNCH", "WILD_CHARGE"]
@@ -66,18 +66,26 @@
     "speciesId": "regice",
     "fastMove": "LOCK_ON",
     "chargedMoves": ["BLIZZARD", "FOCUS_BLAST"]
+},{
+    "speciesId": "greedent",
+    "fastMove": "TACKLE",
+    "chargedMoves": ["BODY_SLAM", "TRAILBLAZE"]
 }, {
     "speciesId": "drapion",
     "fastMove": "POISON_STING",
     "chargedMoves": ["CRUNCH", "AQUA_TAIL"]
 }, {
+    "speciesId": "drapion_shadow",
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["CRUNCH", "AQUA_TAIL"]
+}, {
     "speciesId": "walrein",
     "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["ICICLE_SPEAR", "WATER_PULSE"]
+    "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
 }, {
     "speciesId": "walrein_shadow",
     "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["ICICLE_SPEAR", "WATER_PULSE"]
+    "chargedMoves": ["ICICLE_SPEAR", "EARTHQUAKE"]
 }, {
     "speciesId": "zweilous",
     "fastMove": "DRAGON_BREATH",
@@ -93,22 +101,26 @@
 }, {
     "speciesId": "dedenne",
     "fastMove": "THUNDER_SHOCK",
-    "chargedMoves": ["DISCHARGE", "PLAY_ROUGH"]
+    "chargedMoves": ["PARABOLIC_CHARGE", "PLAY_ROUGH"]
 }, {
     "speciesId": "beedrill_shadow",
     "fastMove": "POISON_JAB",
     "chargedMoves": ["X_SCISSOR", "DRILL_RUN"]
 }, {
-    "speciesId": "cradily",
-    "fastMove": "BULLET_SEED",
-    "chargedMoves": ["GRASS_KNOT", "ROCK_SLIDE"]
+    "speciesId": "sealeo",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["BODY_SLAM", "WATER_PULSE"]
+}, {
+    "speciesId": "sealeo_shadow",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["BODY_SLAM", "WATER_PULSE"]
 }, {
     "speciesId": "galvantula",
     "fastMove": "VOLT_SWITCH",
     "chargedMoves": ["LUNGE", "DISCHARGE"]
 }, {
     "speciesId": "lokix",
-    "fastMove": "COUNTER",
+    "fastMove": "SUCKER_PUNCH",
     "chargedMoves": ["X_SCISSOR", "DARK_PULSE"]
 }, {
     "speciesId": "mandibuzz",

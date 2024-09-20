@@ -1,14 +1,5 @@
 [
 	{
-		"title": "Little Galar Cup",
-		"cup": "galar",
-		"cp": 500,
-		"meta": "galarlittle",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
 		"title": "Psychic Cup",
 		"cup": "psychic",
 		"cp": 1500,
@@ -74,19 +65,29 @@
 		"showMeta": true
 	},
 	{
-		"title": "Battle Frontier (Great)",
-		"cup": "battlefrontiergreat",
+		"title": "Battle Frontier (Ultra)",
+		"cup": "battlefrontierultra",
+		"cp": 2500,
+		"meta": "ultra",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": false,
+		"hideRankings": true
+	},
+	{
+		"title": "Battle Frontier (Polaris)",
+		"cup": "polaris",
 		"cp": 1500,
-		"meta": "battlefrontiergreat",
+		"meta": "polaris",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
 	},
 	{
-		"title": "Battle Frontier (Ultra)",
-		"cup": "battlefrontierultra",
-		"cp": 2500,
-		"meta": "battlefrontierultra",
+		"title": "Battle Frontier (Wasteland)",
+		"cup": "wasteland",
+		"cp": 1500,
+		"meta": "wasteland",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true

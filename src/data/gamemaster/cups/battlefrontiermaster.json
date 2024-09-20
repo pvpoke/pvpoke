@@ -4,32 +4,38 @@
     "include": [],
     "exclude": [{
         "filterType": "id",
-        "values": ["groudon_primal", "kyogre_primal", "gyarados_mega", "rayquaza_mega"]
+        "values": ["groudon_primal", "kyogre_primal", "gyarados_mega", "rayquaza_mega", "gardevoir_mega", "tyranitar_mega"]
     }],
     "tierRules": {
-        "max": 8,
+        "max": 11,
         "floor": 0,
         "tiers": [{
+            "points": 9,
+            "pokemon": ["latios_mega"]
+        }, {
             "points": 8,
-            "pokemon": ["swampert_mega", "gardevoir_mega", "garchomp_mega", "salamence_mega", "tyranitar_mega", "latios_mega"]
+            "pokemon": ["swampert_mega", "garchomp_mega", "salamence_mega"]
+        }, {
+            "points": 7,
+            "pokemon": ["scizor_mega", "zygarde_complete"]
         }, {
             "points": 6,
-            "pokemon": ["scizor_mega", "charizard_mega_y", "latias_mega", "zygarde_complete", "necrozma_dawn_wings"]
+            "pokemon": ["charizard_mega_y", "necrozma_dusk_mane"]
         }, {
             "points": 5,
-            "pokemon": ["gengar_mega", "heracross_mega", "necrozma_dusk_mane"]
+            "pokemon": ["gengar_mega", "dialga_origin", "necrozma_dawn_wings", "solgaleo", "latias_mega", "palkia_origin"]
         }, {
             "points": 4,
-            "pokemon": ["zacian_hero", "solgaleo", "xerneas", "landorus_therian", "dialga_origin", "palkia_origin"]
+            "pokemon": ["zacian_hero", "xerneas", "landorus_therian", "aggron_mega", "dialga", "ho_oh", "heracross_mega"]
         }, {
             "points": 3,
-            "pokemon": ["giratina_origin", "giratina_altered", "kyogre",  "groudon", "mewtwo", "dialga", "ho_oh", "meloetta_aria", "aggron_mega", "steelix_mega"]
+            "pokemon": ["giratina_origin", "giratina_altered", "kyogre", "mewtwo", "meloetta_aria", "steelix_mega", "yveltal", "palkia", "dragapult", "rhyperior"]
         }, {
             "points": 2,
-            "pokemon": ["zekrom", "palkia", "slowbro_mega", "reshiram", "charizard_mega_x", "blastoise_mega", "zarude", "marshadow", "lugia"]
+            "pokemon": ["zekrom", "slowbro_mega", "reshiram", "charizard_mega_x", "blastoise_mega", "zarude", "marshadow", "lugia", "groudon", "lucario_mega", "kangaskhan_mega", "moltres_galarian"]
         }, {
             "points": 1,
-            "pokemon": ["genesect", "genesect_burn", "genesect_douse", "genesect_chill", "genesect_shock", "dragonite", "melmetal", "yveltal", "rayquaza", "kyurem","heatran","florges","mew","gyarados"]
+            "pokemon": ["genesect", "genesect_burn", "genesect_douse", "genesect_chill", "genesect_shock", "dragonite", "melmetal", "rayquaza", "kyurem", "heatran", "florges", "mew", "gyarados", "blaziken_mega", "enamorus_incarnate", "primarina"]
         }]
     }
 }
