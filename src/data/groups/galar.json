@@ -22,7 +22,11 @@
     "speciesId": "gastrodon",
     "fastMove": "MUD_SLAP",
     "chargedMoves": ["BODY_SLAM", "EARTH_POWER"]
-}, {
+},  {
+    "speciesId": "drifblim",
+    "fastMove": "ASTONISH",
+    "chargedMoves": ["ICY_WIND", "BODY_SLAM"]
+},  {
     "speciesId": "drapion_shadow",
     "fastMove": "POISON_STING",
     "chargedMoves": ["CRUNCH", "AQUA_TAIL"],
