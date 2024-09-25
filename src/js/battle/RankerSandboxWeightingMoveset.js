@@ -487,6 +487,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if(cup.name == "sunshine"){
+					iterations = 1;
+				}
+
 				if(cup.name == "element"){
 					iterations = 1;
 				}

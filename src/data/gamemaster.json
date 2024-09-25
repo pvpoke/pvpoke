@@ -384,6 +384,22 @@
             "values": ["mega"]
         }]
     }, {
+        "name": "sunshine",
+        "title": "Sunshine Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["normal", "fire", "ground", "grass"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["charizard"]
+        }],
+        "partySize": 3,
+        "presetOnly": true
+    }, {
         "name": "tundra",
         "title": "Tundra",
         "include": [{
@@ -471,18 +487,18 @@
         }]
     }],
     "formats": [{
-        "title": "Psychic Cup",
-        "cup": "psychic",
-        "cp": 1500,
-        "meta": "psychic",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Galar Cup",
         "cup": "galar",
         "cp": 1500,
         "meta": "galar",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Sunshine Cup",
+        "cup": "sunshine",
+        "cp": 1500,
+        "meta": "sunshine",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
