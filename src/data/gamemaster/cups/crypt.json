@@ -1,0 +1,33 @@
+{
+    "name": "crypt",
+    "title": "Devon Crypt Cup",
+    "restrictedPicks": 1,
+    "restrictedPokemon": ["lokix", "sableye", "sableye_shadow", "weezing_galarian", "marowak_alolan", "marowak_alolan_shadow", "runerigus", "lapras", "lapras_shadow", "jellicent", "jellicent_shadow", "vespiquen"],
+    "include": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["bug", "fairy", "ghost", "ground"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["ninjask", "yanma", "cacturne", "cacturne_shadow", "amoonguss", "amoonguss_shadow", "magmar", "magmar_shadow", "magmortar", "magmortar_shadow", "lapras", "lapras_shadow", "vespiquen", "marowak_alolan_shadow", "marowak_alolan", "jellicent_shadow", "jellicent"]
+    }],
+    "exclude": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["flying", "normal", "steel", "water", "fire"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["leavanny", "clodsire", "azumarill", "carbink", "whimsicott", "whiscash", "gastrodon", "quagsire", "swampert", "ninetales_alolan", "ninetales_alolan_shadow", "tapu_fini", "primarina"]
+    }, {
+        "filterType": "tag",
+        "name": "Tag",
+        "values": ["mega"]
+    }],
+    "overrides": [],
+    "league": 1500,
+    "useDefaultMovesets": 1,
+    "levelCap": 50,
+    "excludeLowPokemon": 1
+}
