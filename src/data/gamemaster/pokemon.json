@@ -6732,7 +6732,7 @@
         "cp2500": [48.5, 12, 14, 14],
         "cp2500l40": [40, 15, 15, 15]
     },
-    "tags": ["galarian"],
+    "tags": ["galarian", "shadoweligible"],
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "searchPriority": 2,
@@ -6741,7 +6741,8 @@
         "id": "FAMILY_KOFFING",
         "parent": "koffing"
     },
-    "nicknames": ["gweez"]
+    "nicknames": ["gweez"],
+    "level25CP": 1391
 }, {
     "dex": 110,
     "speciesName": "Weezing (Shadow)",
@@ -6768,6 +6769,34 @@
         "id": "FAMILY_KOFFING",
         "parent": "koffing_shadow"
     }
+}, {
+    "dex": 110,
+    "speciesName": "Weezing (Galarian) (Shadow)",
+    "speciesId": "weezing_galarian_shadow",
+    "baseStats": {
+        "atk": 174,
+        "def": 197,
+        "hp": 163
+    },
+    "types": ["poison", "fairy"],
+    "fastMoves": ["TACKLE", "FAIRY_WIND"],
+    "chargedMoves": ["SLUDGE", "HYPER_BEAM", "PLAY_ROUGH", "OVERHEAT", "BRUTAL_SWING"],
+    "defaultIVs": {
+        "cp500": [8.5, 4, 10, 6],
+        "cp1500": [24.5, 5, 13, 11],
+        "cp2500": [48.5, 12, 14, 14],
+        "cp2500l40": [40, 15, 15, 15]
+    },
+    "tags": ["galarian", "shadow"],
+    "buddyDistance": 3,
+    "thirdMoveCost": 50000,
+    "searchPriority": 2,
+    "released": true,
+    "family": {
+        "id": "FAMILY_KOFFING",
+        "parent": "koffing_shadow"
+    },
+    "nicknames": ["gweez"]
 }, {
     "dex": 111,
     "speciesName": "Rhyhorn",
