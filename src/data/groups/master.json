@@ -1,8 +1,4 @@
 [{
-    "speciesId": "dialga",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["IRON_HEAD", "DRACO_METEOR"]
-}, {
     "speciesId": "dialga_origin",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["ROAR_OF_TIME", "IRON_HEAD"]
@@ -15,9 +11,9 @@
     "fastMove": "MUD_SLAP",
     "chargedMoves": ["ROCK_SLIDE", "DRILL_RUN"]
 }, {
-    "speciesId": "garchomp",
-    "fastMove": "MUD_SHOT",
-    "chargedMoves": ["OUTRAGE", "EARTH_POWER"]
+    "speciesId": "florges",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["DISARMING_VOICE", "MOONBLAST"]
 }, {
     "speciesId": "giratina_altered",
     "fastMove": "SHADOW_CLAW",
@@ -59,10 +55,6 @@
     "fastMove": "PSYCHO_CUT",
     "chargedMoves": ["SHADOW_BALL", "PSYSTRIKE"]
 }, {
-    "speciesId": "mewtwo",
-    "fastMove": "PSYCHO_CUT",
-    "chargedMoves": ["FOCUS_BLAST", "PSYSTRIKE"]
-}, {
     "speciesId": "necrozma_dawn_wings",
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["DARK_PULSE", "MOONGEIST_BEAM"]
@@ -71,17 +63,9 @@
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["DARK_PULSE", "SUNSTEEL_STRIKE"]
 }, {
-    "speciesId": "palkia",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["AQUA_TAIL", "DRACO_METEOR"]
-}, {
     "speciesId": "palkia_origin",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["AQUA_TAIL", "SPACIAL_REND"]
-}, {
-    "speciesId": "reshiram",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["FUSION_FLARE", "DRACO_METEOR"]
 }, {
     "speciesId": "rhyperior",
     "fastMove": "MUD_SLAP",
@@ -115,7 +99,28 @@
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["CRUNCH", "EARTHQUAKE"]
 }, {
-    "speciesId": "florges",
-    "fastMove": "FAIRY_WIND",
-    "chargedMoves": ["DISARMING_VOICE", "MOONBLAST"]
+    "speciesId": "rhyperior_shadow",
+    "fastMove": "MUD_SLAP",
+    "chargedMoves": ["ROCK_WRECKER", "BREAKING_SWIPE"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "primarina",
+    "fastMove": "CHARM",
+    "chargedMoves": ["DISARMING_VOICE", "HYDRO_CANNON"]
+}, {
+    "speciesId": "primarina",
+    "fastMove": "WATERFALL",
+    "chargedMoves": ["DISARMING_VOICE", "HYDRO_CANNON"]
+}, {
+    "speciesId": "tapu_bulu",
+    "fastMove": "BULLET_SEED",
+    "chargedMoves": ["GRASS_KNOT", "NATURES_MADNESS"]
+}, {
+    "speciesId": "dialga",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["IRON_HEAD", "DRACO_METEOR"]
+}, {
+    "speciesId": "palkia",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["AQUA_TAIL", "DRACO_METEOR"]
 }]

@@ -3,6 +3,10 @@
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["ICY_WIND", "ENERGY_BALL"]
 }, {
+    "speciesId": "arctibax",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["AVALANCHE", "DRAGON_CLAW"]
+}, {
     "speciesId": "ariados",
     "fastMove": "POISON_STING",
     "chargedMoves": ["LUNGE", "TRAILBLAZE"]
@@ -22,6 +26,10 @@
     "speciesId": "clodsire",
     "fastMove": "POISON_STING",
     "chargedMoves": ["EARTHQUAKE", "STONE_EDGE"]
+}, {
+    "speciesId": "clodsire",
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["SLUDGE_BOMB", "EARTHQUAKE"]
 }, {
     "speciesId": "cresselia",
     "fastMove": "PSYCHO_CUT",
@@ -87,15 +95,18 @@
     "chargedMoves": ["SHADOW_BONE", "BONE_CLUB"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "marowak_shadow",
-    "fastMove": "MUD_SLAP",
-    "chargedMoves": ["BONE_CLUB", "ROCK_SLIDE"],
-    "shadowType": "shadow"
+    "speciesId": "moltres_galarian",
+    "fastMove": "SUCKER_PUNCH",
+    "chargedMoves": ["ANCIENT_POWER", "BRAVE_BIRD"]
 }, {
     "speciesId": "quagsire",
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["AQUA_TAIL", "STONE_EDGE"],
     "shadowType": "shadow"
+}, {
+    "speciesId": "sandslash_alolan",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["DRILL_RUN", "ICE_PUNCH"]
 }, {
     "speciesId": "sandslash_alolan_shadow",
     "fastMove": "POWDER_SNOW",
@@ -114,24 +125,12 @@
     "fastMove": "POISON_JAB",
     "chargedMoves": ["BRINE", "SLUDGE_WAVE"]
 }, {
-    "speciesId": "clodsire",
-    "fastMove": "POISON_STING",
-    "chargedMoves": ["SLUDGE_BOMB", "EARTHQUAKE"]
-}, {
-    "speciesId": "sandslash_alolan",
-    "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["DRILL_RUN", "ICE_PUNCH"]
-}, {
     "speciesId": "typhlosion_shadow",
     "fastMove": "INCINERATE",
     "chargedMoves": ["BLAST_BURN", "THUNDER_PUNCH"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "moltres_galarian",
-    "fastMove": "SUCKER_PUNCH",
-    "chargedMoves": ["ANCIENT_POWER", "BRAVE_BIRD"]
-}, {
-    "speciesId": "arctibax",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["AVALANCHE", "DRAGON_CLAW"]
+    "speciesId": "araquanid",
+    "fastMove": "BUG_BITE",
+    "chargedMoves": ["BUG_BUZZ", "BUBBLE_BEAM"]
 }]
