@@ -270,6 +270,19 @@
         "partySize": 3,
         "presetOnly": true
     }, {
+        "name": "halloween",
+        "title": "Halloween Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["poison", "ghost", "bug", "dark", "fairy"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }],
+        "partySize": 3,
+        "presetOnly": true
+    }, {
         "name": "little",
         "title": "Little Cup",
         "include": [{
@@ -527,6 +540,14 @@
         "cup": "sunshine",
         "cp": 1500,
         "meta": "sunshine",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Little Halloween Cup",
+        "cup": "halloween",
+        "cp": 500,
+        "meta": "halloweenlittle",
         "showCup": true,
         "showFormat": true,
         "showMeta": true

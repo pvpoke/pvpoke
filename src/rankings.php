@@ -127,8 +127,12 @@ switch($cup){
 		$league = 'Little Catch Cup';
 		break;
 
-	case "evolution":
-		$league = 'Evolution Cup';
+	case "halloween":
+		if($cp == "500"){
+			$league = 'Little Halloween Cup';
+		} else {
+			$league = 'Halloween Cup';
+		}
 		break;
 
 	case "fantasy":
