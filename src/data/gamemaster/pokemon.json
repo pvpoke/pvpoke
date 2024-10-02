@@ -18276,7 +18276,7 @@
     },
     "types": ["steel", "psychic"],
     "fastMoves": ["TAKE_DOWN"],
-    "chargedMoves": ["STRUGGLE"],
+    "chargedMoves": ["IRON_HEAD"],
     "defaultIVs": {
         "cp500": [20, 3, 15, 14],
         "cp1500": [50, 15, 15, 15],
@@ -18302,7 +18302,7 @@
     },
     "types": ["steel", "psychic"],
     "fastMoves": ["TAKE_DOWN"],
-    "chargedMoves": ["STRUGGLE"],
+    "chargedMoves": ["IRON_HEAD"],
     "defaultIVs": {
         "cp500": [20.5, 4, 7, 14],
         "cp1500": [50, 15, 15, 15],
@@ -35926,8 +35926,8 @@
         "hp": 151
     },
     "types": ["electric", "dark"],
-    "fastMoves": ["THUNDER_SHOCK", "BITE"],
-    "chargedMoves": ["CRUNCH", "PAYBACK", "THUNDERBOLT", "WILD_CHARGE", "AURA_WHEEL_ELECTRIC"],
+    "fastMoves": ["CHARGE_BEAM", "BITE"],
+    "chargedMoves": ["SEED_BOMB", "OUTRAGE", "AURA_WHEEL_ELECTRIC"],
     "defaultIVs": {
         "cp500": [9.5, 5, 15, 14],
         "cp1500": [29, 5, 15, 8],
@@ -35948,8 +35948,8 @@
         "hp": 151
     },
     "types": ["electric", "dark"],
-    "fastMoves": ["THUNDER_SHOCK", "BITE"],
-    "chargedMoves": ["CRUNCH", "PAYBACK", "THUNDERBOLT", "WILD_CHARGE", "AURA_WHEEL_DARK"],
+	"fastMoves": ["CHARGE_BEAM", "BITE"],
+    "chargedMoves": ["SEED_BOMB", "OUTRAGE", "AURA_WHEEL_DARK"],
     "defaultIVs": {
         "cp500": [9.5, 5, 15, 14],
         "cp1500": [29, 5, 15, 8],

@@ -2428,11 +2428,9 @@ var InterfaceMaster = (function () {
 
 					$tooltip.find(".details").append("<br>" + values[1] + " energy");
 
-					// Append stat boost string, if any
-					if(values.length == 4){
-						$tooltip.find(".details").append("<br>"+values[3]);
+					for(var i = 3; i < values.length; i++){
+						$tooltip.find(".details").append("<br>"+values[i]);
 					}
-
 				}
 
 				var width = $tooltip.width();

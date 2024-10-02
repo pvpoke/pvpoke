@@ -2707,11 +2707,17 @@ function Battle(){
 		if(buffApplied){
 			var buffStr = "";
 
-			if(move.buffs[0] > 0){
-				buffStr += "+";
-			}
+			if(move.buffs[0] != 0){
+				if(move.buffs[0] > 0){
+					buffStr += "+";
+				}
 
-			buffStr += move.buffs[0] + " Attack<br>";
+				buffStr += move.buffs[0] + " Attack";
+
+				if(move.buffs[1] != 0){
+					buffStr += "<br>";
+				}
+			}
 
 			if(move.buffs[1] > 0){
 				buffStr += "+";

@@ -123,11 +123,14 @@
     "name": "Aura Wheel",
     "abbreviation": "AuW",
     "type": "electric",
-    "power": 70,
+    "power": 100,
     "energy": 45,
     "energyGain": 0,
     "cooldown": 500,
-    "archetype": "Forme Change",
+    "archetype": "Boost",
+	"buffs": [1, 0],
+    "buffTarget": "self",
+    "buffApplyChance": "1",
 	"formChange": {
 		"type": "set",
 		"formId": "morpeko_hangry"
@@ -137,11 +140,14 @@
     "name": "Aura Wheel",
     "abbreviation": "AuW",
     "type": "dark",
-    "power": 70,
+    "power": 100,
     "energy": 45,
     "energyGain": 0,
     "cooldown": 500,
-    "archetype": "Forme Change",
+    "archetype": "Boost",
+	"buffs": [1, 0],
+    "buffTarget": "self",
+    "buffApplyChance": "1",
 	"formChange": {
 		"type": "set",
 		"formId": "morpeko_full_belly"
