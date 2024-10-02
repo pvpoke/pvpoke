@@ -828,12 +828,14 @@ function TrainingAI(l, p, b){
 		pokemon.startStatBuffs = [pokemon.statBuffs[0], pokemon.statBuffs[1]];
 		pokemon.startCooldown = pokemon.cooldown;
 		pokemon.startingShields = pokemon.shields;
+		pokemon.startFormId = pokemon.activeFormId;
 
 		opponent.startHp = opponent.hp;
 		opponent.startEnergy = opponent.energy;
 		opponent.startStatBuffs = [opponent.statBuffs[0], opponent.statBuffs[1]];
 		opponent.startCooldown = opponent.cooldown;
 		opponent.startingShields = opponent.shields;
+		opponent.startFormId = opponent.activeFormId;
 
 		// Preserve old Pokemon stats
 		var startStats = [

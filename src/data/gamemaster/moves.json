@@ -119,6 +119,34 @@
     "cooldown": 500,
     "archetype": "Nuke"
 }, {
+    "moveId": "AURA_WHEEL_ELECTRIC",
+    "name": "Aura Wheel",
+    "abbreviation": "AuW",
+    "type": "electric",
+    "power": 70,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Forme Change",
+	"formChange": {
+		"type": "set",
+		"formId": "morpeko_hangry"
+	}
+}, {
+    "moveId": "AURA_WHEEL_DARK",
+    "name": "Aura Wheel",
+    "abbreviation": "AuW",
+    "type": "dark",
+    "power": 70,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "Forme Change",
+	"formChange": {
+		"type": "set",
+		"formId": "morpeko_full_belly"
+	}
+}, {
     "moveId": "AURORA_BEAM",
     "name": "Aurora Beam",
     "type": "ice",

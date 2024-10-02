@@ -30093,8 +30093,9 @@
     }
 }, {
     "dex": 681,
-    "speciesName": "Aegislash",
-    "speciesId": "aegislash",
+    "speciesName": "Aegislash (Shield)",
+    "speciesId": "aegislash_shield",
+	"originalFormId": "aegislash_shield",
     "baseStats": {
         "atk": 97,
         "def": 291,
@@ -30108,6 +30109,32 @@
         "cp1500": [43, 5, 15, 13],
         "cp2500": [50, 15, 15, 15],
         "cp1500l40": [37.5, 13, 12, 14]
+    },
+	"searchPriority": 2,
+    "buddyDistance": 5,
+    "thirdMoveCost": 75000,
+    "released": false,
+    "family": {
+        "id": "FAMILY_HONEDGE",
+        "parent": "doublade"
+    }
+}, {
+    "dex": 681,
+    "speciesName": "Aegislash (Blade)",
+    "speciesId": "aegislash_blade",
+	"originalFormId": "aegislash_shield",
+    "baseStats": {
+        "atk": 291,
+        "def": 97,
+        "hp": 155
+    },
+    "types": ["steel", "ghost"],
+    "fastMoves": ["PSYCHO_CUT", "FURY_CUTTER"],
+    "chargedMoves": ["FLASH_CANNON", "GYRO_BALL", "SHADOW_BALL"],
+    "defaultIVs": {
+		"cp500": [7, 6, 14, 15],
+        "cp1500": [21, 6, 13, 10],
+        "cp2500": [39.5, 6, 12, 14]
     },
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
@@ -35890,28 +35917,9 @@
     "released": false
 }, {
     "dex": 877,
-    "speciesName": "Morpeko",
-    "speciesId": "morpeko",
-    "baseStats": {
-        "atk": 192,
-        "def": 121,
-        "hp": 151
-    },
-    "types": ["electric", "dark"],
-    "fastMoves": ["THUNDER_SHOCK", "BITE"],
-    "chargedMoves": ["CRUNCH", "PAYBACK", "THUNDERBOLT", "WILD_CHARGE"],
-    "defaultIVs": {
-        "cp500": [9.5, 5, 15, 14],
-        "cp1500": [29, 5, 15, 8],
-        "cp2500": [50, 15, 15, 15]
-    },
-    "buddyDistance": 3,
-    "thirdMoveCost": 50000,
-    "released": false
-}, {
-    "dex": 877,
     "speciesName": "Morpeko (Full Belly)",
     "speciesId": "morpeko_full_belly",
+	"originalFormId": "morpeko_full_belly",
     "baseStats": {
         "atk": 192,
         "def": 121,
@@ -35919,12 +35927,13 @@
     },
     "types": ["electric", "dark"],
     "fastMoves": ["THUNDER_SHOCK", "BITE"],
-    "chargedMoves": ["CRUNCH", "PAYBACK", "THUNDERBOLT", "WILD_CHARGE"],
+    "chargedMoves": ["CRUNCH", "PAYBACK", "THUNDERBOLT", "WILD_CHARGE", "AURA_WHEEL_ELECTRIC"],
     "defaultIVs": {
         "cp500": [9.5, 5, 15, 14],
         "cp1500": [29, 5, 15, 8],
         "cp2500": [50, 15, 15, 15]
     },
+	"searchPriority": 3,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": false
@@ -35932,6 +35941,7 @@
     "dex": 877,
     "speciesName": "Morpeko (Hangry)",
     "speciesId": "morpeko_hangry",
+	"originalFormId": "morpeko_full_belly",
     "baseStats": {
         "atk": 192,
         "def": 121,
@@ -35939,7 +35949,7 @@
     },
     "types": ["electric", "dark"],
     "fastMoves": ["THUNDER_SHOCK", "BITE"],
-    "chargedMoves": ["CRUNCH", "PAYBACK", "THUNDERBOLT", "WILD_CHARGE"],
+    "chargedMoves": ["CRUNCH", "PAYBACK", "THUNDERBOLT", "WILD_CHARGE", "AURA_WHEEL_DARK"],
     "defaultIVs": {
         "cp500": [9.5, 5, 15, 14],
         "cp1500": [29, 5, 15, 8],

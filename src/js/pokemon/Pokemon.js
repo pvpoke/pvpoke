@@ -27,6 +27,7 @@ function Pokemon(id, i, b){
 	this.dex = data.dex;
 	this.speciesId = id;
 	this.aliasId = this.speciesId;
+	this.activeFormId = this.speciesId;
 	this.canonicalId = id.replace("_xs","");
 	this.speciesName = data.speciesName;
 
@@ -47,6 +48,7 @@ function Pokemon(id, i, b){
 	this.startHp = 0;
 	this.startEnergy = 0;
 	this.startCooldown = 0;
+	this.startFormId = this.activeFormId;
 	this.level = 50;
 	this.levelCap = 50; // Variable level cap as determined by the battle settings
 	this.baseLevelCap = 50; // The default level cap as determined by the game master
@@ -886,8 +888,23 @@ function Pokemon(id, i, b){
 		}
 
 		// If the move wasn't found, add it to the movepool
-		if((! disallowCustomAddition)&&(! moveFound)){
-			self.addNewMove(id, arr, true, type, index);
+		if(! moveFound){
+			if(! disallowCustomAddition){
+				self.addNewMove(id, arr, true, type, index);
+			} else{
+				switch(type){
+					case "fast":
+						self.fastMove = gm.getMoveById(id);
+						self.initializeMove(self.fastMove);
+						break;
+
+					case "charged":
+						self.chargedMoves[index] = gm.getMoveById(id);
+						self.initializeMove(self.chargedMoves[index]);
+						break;
+				}
+			}
+
 		}
 	}
 
@@ -1774,6 +1791,11 @@ function Pokemon(id, i, b){
 		self.damageWindow = 0;
 		self.shields = self.startingShields;
 		self.statBuffs = [self.startStatBuffs[0], self.startStatBuffs[1]];
+
+		if(self.activeFormId != self.startFormId){
+			self.changeForm(self.startFormId);
+		}
+
 		self.resetMoves();
 	}
 
@@ -1784,6 +1806,7 @@ function Pokemon(id, i, b){
 		self.startEnergy = 0;
 		self.startCooldown = 0;
 		self.startStatBuffs = [0, 0];
+		self.startFormId = self.activeFormId;
 
 		self.reset();
 	}
@@ -2245,6 +2268,49 @@ function Pokemon(id, i, b){
 		}
 
 		return stage;
+	}
+
+	// Change the Pokemon's form during battle
+
+	this.changeForm = function(formId){
+		var form = gm.getPokemonById(formId);
+
+		this.speciesName = form.speciesName;
+		this.activeFormId = formId;
+		this.types = [ form.types[0], form.types[1] ];
+		this.typeEffectiveness = getTypeEffectivenessArray(battle);
+
+		// Adjust base stats and CP if new form has different stats
+		if(this.baseStats != form.baseStats){
+			this.baseStats = { atk: form.baseStats.atk, def: form.baseStats.def, hp: form.baseStats.hp};
+			this.stats.atk = this.cpm * (this.baseStats.atk+this.ivs.atk);
+			this.stats.def = this.cpm * (this.baseStats.def+this.ivs.def);
+			this.stats.hp = Math.max(Math.floor(this.cpm * (this.baseStats.hp+this.ivs.hp)), 10);
+		}
+
+		// Form specific functionality
+		switch(formId){
+			case "morpeko_full_belly":
+				self.replaceChargedMove("charged", "AURA_WHEEL_DARK", "AURA_WHEEL_ELECTRIC");
+			break;
+
+			case "morpeko_hangry":
+				self.replaceChargedMove("charged", "AURA_WHEEL_ELECTRIC", "AURA_WHEEL_DARK");
+			break;
+		}
+
+		self.resetMoves();
+	}
+
+	this.replaceChargedMove = function(moveType, oldMoveId, newMoveId){
+		if(moveType == "fast"){
+			self.selectMove(moveType, newMoveId, 0, true);
+		} else if(moveType == "charged"){
+			var moveIndex = self.chargedMoves.findIndex(m => m.moveId == oldMoveId);
+			if(moveIndex > -1){
+				self.selectMove(moveType, newMoveId, moveIndex, true);
+			}
+		}
 	}
 
 

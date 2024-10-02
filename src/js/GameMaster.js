@@ -716,6 +716,10 @@ var GameMaster = (function () {
 						}
 					}
 
+					if(m.formChange){
+						move.formChange = JSON.parse(JSON.stringify(m.formChange));
+					}
+
 					return;
 				}
 			});
@@ -731,22 +735,32 @@ var GameMaster = (function () {
 		// Get status effect string from a move
 
 		object.getStatusEffectString = function(move){
-			if (!move.buffs) {
+			if (!move.buffs && !move.formChange) {
 				return '';
 			}
-			var atk = object.getStatusEffectStatString(move.buffs[0], 'Atk');
-			var def = object.getStatusEffectStatString(move.buffs[1], 'Def');
-			var buffApplyChance = parseFloat(move.buffApplyChance)*100 + '%';
-			var buffTarget = move.buffTarget;
-			var stringArray = [buffApplyChance + " chance", atk, def, buffTarget];
 
-			if(move.buffTarget == "both"){
-				stringArray[3] = "self";
+			var stringArray = []
 
-				var atkOpp = object.getStatusEffectStatString(move.buffsOpponent[0], 'Atk');
-				var defOpp = object.getStatusEffectStatString(move.buffsOpponent[1], 'Def');
+			if(move.buffs){
+				var atk = object.getStatusEffectStatString(move.buffs[0], 'Atk');
+				var def = object.getStatusEffectStatString(move.buffs[1], 'Def');
 				var buffApplyChance = parseFloat(move.buffApplyChance)*100 + '%';
-				stringArray.push(buffApplyChance + " chance", atkOpp, defOpp, "opponent");
+				var buffTarget = move.buffTarget;
+				stringArray.push(buffApplyChance + " chance", atk, def, buffTarget);
+
+				if(move.buffTarget == "both"){
+					stringArray[3] = "self";
+
+					var atkOpp = object.getStatusEffectStatString(move.buffsOpponent[0], 'Atk');
+					var defOpp = object.getStatusEffectStatString(move.buffsOpponent[1], 'Def');
+					var buffApplyChance = parseFloat(move.buffApplyChance)*100 + '%';
+					stringArray.push(buffApplyChance + " chance", atkOpp, defOpp, "opponent");
+				}
+
+			}
+
+			if(move.formChange){
+				stringArray.push("Form change");
 			}
 
 			return "<div class=\"status-effect-description\">"+stringArray.join(' ')+"</div>";
