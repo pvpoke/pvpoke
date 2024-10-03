@@ -2731,19 +2731,18 @@ function Battle(){
 		}
 
 		// Apply form changes
-		if(move.formChange){
-			switch(move.formChange.type){
-				case "set":
-				attacker.changeForm(move.formChange.formId);
-				break;
+		if(attacker.formChange){
+			if(attacker.formChange.trigger == "charged_move" && move.energy > 0 && (attacker.formChange.moveId == "ANY" || attacker.formChange.moveId == move.moveId)){
+				attacker.changeForm();
+
+				timelineDescriptions.push("Form Change");
+				self.logDecision(turns, attacker, " has changed forms into " + attacker.activeFormId);
+
+				if(mode == "emulate"){
+					self.pushAnimation(attacker.index, "formchange", attacker.activeFormId);
+				}
 			}
 
-			timelineDescriptions.push("Form Change");
-			self.logDecision(turns, attacker, " has changed forms into " + attacker.activeFormId);
-
-			if(mode == "emulate"){
-				self.pushAnimation(attacker.index, "formchange", attacker.activeFormId);
-			}
 		}
 
 		timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, turns, timelineDescriptions));

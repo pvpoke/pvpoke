@@ -35933,6 +35933,13 @@
         "cp1500": [29, 5, 15, 8],
         "cp2500": [50, 15, 15, 15]
     },
+	"formChange": {
+		"type": "toggle",
+		"trigger": "charged_move",
+		"moveId": "ANY",
+		"defaultFormId": "morpeko_full_belly",
+		"alternativeFormId": "morpeko_hangry"
+	},
 	"searchPriority": 3,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,

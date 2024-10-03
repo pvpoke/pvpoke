@@ -130,11 +130,7 @@
     "archetype": "Boost",
 	"buffs": [1, 0],
     "buffTarget": "self",
-    "buffApplyChance": "1",
-	"formChange": {
-		"type": "set",
-		"formId": "morpeko_hangry"
-	}
+    "buffApplyChance": "1"
 }, {
     "moveId": "AURA_WHEEL_DARK",
     "name": "Aura Wheel",
@@ -147,11 +143,7 @@
     "archetype": "Boost",
 	"buffs": [1, 0],
     "buffTarget": "self",
-    "buffApplyChance": "1",
-	"formChange": {
-		"type": "set",
-		"formId": "morpeko_full_belly"
-	}
+    "buffApplyChance": "1"
 }, {
     "moveId": "AURORA_BEAM",
     "name": "Aurora Beam",

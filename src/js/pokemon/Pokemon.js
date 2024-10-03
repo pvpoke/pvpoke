@@ -71,6 +71,10 @@ function Pokemon(id, i, b){
 		this.family = data.family;
 	}
 
+	if(data.formChange){
+		this.formChange = data.formChange;
+	}
+
 	this.typeEffectiveness = getTypeEffectivenessArray(b);
 
 	this.fastMove = null;
@@ -2272,7 +2276,15 @@ function Pokemon(id, i, b){
 
 	// Change the Pokemon's form during battle
 
-	this.changeForm = function(formId){
+	this.changeForm = function(id){
+		id = typeof id !== 'undefined' ? id : null;
+
+		var formId = id;
+
+		if(this.formChange.type == "toggle"){
+			formId = this.activeFormId == this.formChange.defaultFormId ? this.formChange.alternativeFormId : this.formChange.defaultFormId;
+		}
+
 		var form = gm.getPokemonById(formId);
 
 		this.speciesName = form.speciesName;
