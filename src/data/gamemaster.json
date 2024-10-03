@@ -26266,8 +26266,9 @@
             "hp": 181
         },
         "types": ["bug", "grass"],
-        "fastMoves": ["RAZOR_LEAF", "BUG_BITE"],
+        "fastMoves": ["RAZOR_LEAF", "BUG_BITE", "SHADOW_CLAW"],
         "chargedMoves": ["LEAF_BLADE", "X_SCISSOR", "SILVER_WIND", "LEAF_STORM"],
+        "eliteMoves": ["SHADOW_CLAW"],
         "defaultIVs": {
             "cp500": [7.5, 5, 12, 5],
             "cp1500": [22, 4, 9, 11],
