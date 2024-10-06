@@ -35927,8 +35927,8 @@
         "hp": 151
     },
     "types": ["electric", "dark"],
-    "fastMoves": ["CHARGE_BEAM", "BITE"],
-    "chargedMoves": ["SEED_BOMB", "OUTRAGE", "AURA_WHEEL_ELECTRIC"],
+    "fastMoves": ["CHARGE_BEAM", "BITE", "THUNDER_SHOCK"],
+    "chargedMoves": ["SEED_BOMB", "OUTRAGE", "PSYCHIC_FANGS", "AURA_WHEEL_ELECTRIC"],
     "defaultIVs": {
         "cp500": [9.5, 5, 15, 14],
         "cp1500": [29, 5, 15, 8],
@@ -35956,8 +35956,8 @@
         "hp": 151
     },
     "types": ["electric", "dark"],
-	"fastMoves": ["CHARGE_BEAM", "BITE"],
-    "chargedMoves": ["SEED_BOMB", "OUTRAGE", "AURA_WHEEL_DARK"],
+	"fastMoves": ["CHARGE_BEAM", "BITE", "THUNDER_SHOCK"],
+    "chargedMoves": ["SEED_BOMB", "OUTRAGE", "PSYCHIC_FANGS",  "AURA_WHEEL_DARK"],
     "defaultIVs": {
         "cp500": [9.5, 5, 15, 14],
         "cp1500": [29, 5, 15, 8],
