@@ -199,25 +199,30 @@ var GameMaster = (function () {
 		object.updateShadowStatus = function(){
 
 			// First, clear all Shadow entries from the game master to start from a clean slate
-			for(var i = 0; i < object.data.pokemon.length; i++){
+			/*for(var i = 0; i < object.data.pokemon.length; i++){
 				var poke = object.data.pokemon[i];
 				if((poke)&&(poke.speciesId.indexOf("_shadow") > -1)){
 					console.log("Removed " + poke.speciesId);
 					object.data.pokemon.splice(i, 1);
 					i--;
 				}
-			}
+			}*/
 
 			var battle = new Battle();
 
 			$.each(object.data.pokemon, function(index, poke){
+				console.log(poke.speciesId);
 				if(poke.speciesId.indexOf("_shadow") > -1){
-					return false;
+					return;
 				}
 
 				var pokemon = new Pokemon(poke.speciesId, 0, battle);
 				var entry = object.getPokemonById(poke.speciesId);
 				battle.setNewPokemon(pokemon, 0, false);
+
+				if(pokemon.hasTag("shadoweligible")){
+					return;
+				}
 
 				// Remove Return and Frustration from legacy move list
 				if(entry.legacyMoves){
