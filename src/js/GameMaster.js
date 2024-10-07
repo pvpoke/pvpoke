@@ -983,7 +983,7 @@ var GameMaster = (function () {
 						continue;
 					}
 
-					if(pokemon.hasTag("duplicate1500") && battle.getCP() != 1500 && (battle.getCUp().name == "all" || battle.getCUp().name == "sunshine")){
+					if(pokemon.hasTag("duplicate1500") && battle.getCP() != 1500 && (battle.getCup().name == "all" || battle.getCup().name == "sunshine")){
 						continue;
 					}
 
