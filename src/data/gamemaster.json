@@ -382,7 +382,7 @@
         "include": [],
         "exclude": [{
             "filterType": "id",
-            "values": ["sandslash_alolan", "wigglytuff", "dewgong", "lickitung", "feraligatr", "lanturn", "azumarill", "skarmory", "vigoroth", "medicham", "whiscash", "altaria", "bastiodon", "cresselia", "stunfisk_galarian", "talonflame", "trevenant", "charjabug", "skeledirge", "annihilape"],
+            "values": ["azumarill", "talonflame", "wigglytuff", "clodsire", "quagsire", "feraligatr", "dunsparce", "dewgong", "sandslash_alolan", "toxapex", "malamar", "mandibuzz", "diggersby", "jumpluff", "ferrothorn", "drapion", "marowak", "gastrodon", "serperior", "greninja"],
             "leagues": [1500]
         }, {
             "filterType": "id",
@@ -530,14 +530,6 @@
         }]
     }],
     "formats": [{
-        "title": "Galar Cup",
-        "cup": "galar",
-        "cp": 1500,
-        "meta": "galar",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Sunshine Cup",
         "cup": "sunshine",
         "cp": 1500,
@@ -550,6 +542,22 @@
         "cup": "halloween",
         "cp": 500,
         "meta": "halloweenlittle",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Halloween Cup",
+        "cup": "halloween",
+        "cp": 1500,
+        "meta": "halloween",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Great League Remix",
+        "cup": "remix",
+        "cp": 1500,
+        "meta": "remix",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
