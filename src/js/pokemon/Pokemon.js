@@ -405,7 +405,7 @@ function Pokemon(id, i, b){
 
 		var floor = 0;
 
-		if(self.hasTag("legendary") || self.hasTag("ultrabeast")){
+		if((self.hasTag("legendary") || self.hasTag("ultrabeast")) && ! self.hasTag("wildlegendary")){
 			floor = 1;
 		}
 
