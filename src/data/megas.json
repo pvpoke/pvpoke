@@ -37,24 +37,6 @@
     },
     "eliteMoves": ["PSYSTRIKE", "SHADOW_BALL", "HYPER_BEAM"]
 }, {
-    "dex": 303,
-    "speciesName": "Mawile (Mega)",
-    "speciesId": "mawile_mega",
-    "baseStats": {
-        "atk": 188,
-        "def": 217,
-        "hp": 137
-    },
-    "types": ["steel", "fairy"],
-    "fastMoves": ["ASTONISH", "BITE", "FIRE_FANG", "ICE_FANG", "FAIRY_WIND"],
-    "chargedMoves": ["IRON_HEAD", "PLAY_ROUGH", "VICE_GRIP", "POWER_UP_PUNCH"],
-    "defaultIVs": {
-        "cp1500": [23.5, 6, 5, 15],
-        "cp2500": [40, 15, 15, 15]
-    },
-    "level25CP": 1446,
-    "tags": ["shadoweligible", "mega"]
-}, {
     "dex": 319,
     "speciesName": "Sharpedo (Mega)",
     "speciesId": "sharpedo_mega",
