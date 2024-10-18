@@ -788,6 +788,9 @@ footer a.domz-link {
   text-align: left;
   font-size: 14px;
 }
+.poke .options .show-ivs {
+  margin-bottom: 15px;
+}
 .poke .options .add-fast-move {
   border: 1px solid #000;
   outline: none;
@@ -1196,9 +1199,6 @@ footer a.domz-link {
 }
 .poke-select-container.matrix .poke.multi .multi-battle-options {
   display: none;
-}
-.poke-select-container.matrix .options .section-title {
-  margin-top: 0;
 }
 .poke-select-container.matrix .delete-list-confirm + .poke.multi {
   float: right;

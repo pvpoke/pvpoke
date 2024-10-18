@@ -27,15 +27,7 @@ var RankerMaster = (function () {
 			var shieldMode = 'single'; // single - sim specific shield scenarios, average - sim average of 0 and 1 shields each
 			var chargedMoveCountOverride = 2;
 			var shieldBaitOverrides = [true, true];
-			var overrideSettings = [{
-				shields: 1,
-				ivs: "original",
-				bait: 1
-			}, {
-				shields: 1,
-				ivs: "original",
-				bait: 1
-			}];
+			var overrideSettings = [getDefaultMultiBattleSettings(), getDefaultMultiBattleSettings()];
 
 			var useRecommendedMoves = true;
 
@@ -178,10 +170,10 @@ var RankerMaster = (function () {
 							opponent.selectRecommendedMoveset();
 						}
 
-						pokemon.baitShields = overrideSettings[1].bait;
+						self.applySettingsToPokemon(overrideSettings[1], pokemon);
 
 						if(context == "matrix" || context == "team-counters"){
-							opponent.baitShields = overrideSettings[0].bait;
+							self.applySettingsToPokemon(overrideSettings[0], opponent);
 						}
 
 						if(overrideSettings[1].bait != 1){
@@ -393,6 +385,22 @@ var RankerMaster = (function () {
 
 			this.applySettings = function(settings, index){
 				overrideSettings[index] = settings;
+			}
+
+			this.applySettingsToPokemon = function(settings, pokemon){
+				var defaultSettings = getDefaultMultiBattleSettings();
+
+				pokemon.baitShields = settings.bait;
+				pokemon.startHp = Math.floor(settings.startHp * pokemon.stats.hp);
+				pokemon.startEnergy = settings.startEnergy;
+				pokemon.startCooldown = settings.startCooldown;
+				pokemon.optimizeMoveTiming = settings.optimizeMoveTiming;
+				pokemon.startStatBuffs = settings.startStatBuffs;
+
+				if(settings.bait != defaultSettings.bait || settings.startCooldown != defaultSettings.startCooldown ||
+					settings.optimizeMoveTiming != defaultSettings.optimizeMoveTiming || settings.startStatBuffs != defaultSettings.startStatBuffs){
+					pokemon.isCustom = true;
+				}
 			}
 
 			// Set whether to use recommended movesets for threats

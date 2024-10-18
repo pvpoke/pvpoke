@@ -1003,6 +1003,10 @@ footer{
 			font-size:14px;
 		}
 
+		.show-ivs{
+			margin-bottom: 15px;
+		}
+
 		.add-fast-move{
 			border: 1px solid #000;
 		    outline: none;
@@ -1501,10 +1505,6 @@ footer{
 			.multi-battle-options{
 				display: none;
 			}
-		}
-
-		.options .section-title{
-			margin-top:0;
 		}
 
 		.delete-list-confirm + .poke.multi{

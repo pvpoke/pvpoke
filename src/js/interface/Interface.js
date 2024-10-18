@@ -1050,12 +1050,14 @@ var InterfaceMaster = (function () {
 				var poke = pokeSelectors[0].getPokemon();
 
 				if(poke){
-					ranker.applySettings({
-						shields: poke.startingShields,
-						ivs: "original",
-						bait: poke.baitShields,
-						levelCap: battle.getLevelCap()
-					}, 0);
+					var settings = getDefaultMultiBattleSettings();
+
+					settings.shields = poke.startingShields;
+					settings.ivs = "original";
+					settings.bait = poke.baitShields;
+					settings.levelCap = battle.getLevelCap();
+
+					ranker.applySettings(settings, 0);
 					team.push(poke);
 				} else{
 					return;
@@ -1132,8 +1134,8 @@ var InterfaceMaster = (function () {
 
 					// Append extra options
 
-					if( (poke.startHp != poke.stats.hp) || (poke.startEnergy != 0) ){
-						battleLink += poke.startHp +  "/" + poke.startEnergy + "/";
+					if( poke.startHp != poke.stats.hp || pokemon.startHp != pokemon.stats.hp || poke.startEnergy != 0 || pokemon.startEnergy != 0){
+						battleLink += poke.startHp + "-" + pokemon.startHp + "/" + poke.startEnergy + "-" + pokemon.startEnergy + "/";
 					}
 
 					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span></div><div class=\"rating-container\"><a class=\"rating\" target=\"_blank\" href=\""+battleLink+"\"><span></span>"+r.opRating+"<i></i></span></a><div class=\"clear\"></div></div><div class=\"details\"></div>");
@@ -1192,6 +1194,35 @@ var InterfaceMaster = (function () {
 					battleStr += "all/";
 				}
 
+				// Add Multi Battle options
+				var defaultSettings = getDefaultMultiBattleSettings();
+				var settings = multiSelectors[0].getSettings();
+				var options = [];
+
+				if(settings.startHp != defaultSettings.startHp){
+					options.push("hp=" + (settings.startHp * 100));
+				}
+
+				if(settings.startEnergy != defaultSettings.startEnergy){
+					options.push("energy=" + settings.startEnergy);
+				}
+
+				if(settings.startCooldown != defaultSettings.startEnergy){
+					options.push("cooldown=" + settings.startCooldown);
+				}
+
+				if(settings.startStatBuffs[0] != defaultSettings.startStatBuffs[0] || settings.startStatBuffs[1] != defaultSettings.startStatBuffs[1]){
+					options.push("stats=" + settings.startStatBuffs[0] + "," + settings.startStatBuffs[1]);
+				}
+
+				if(settings.optimizeMoveTiming != defaultSettings.optimizeMoveTiming){
+					options.push("timing=" + (settings.optimizeMoveTiming ? 1 : 0));
+				}
+
+				if(options.length > 0){
+					battleStr += "?" + options.join("&") + "/";
+				}
+
 
 				var link = host + battleStr;
 
@@ -1220,7 +1251,7 @@ var InterfaceMaster = (function () {
 
 				document.title = poke.speciesName + " Multi-Battle | PvPoke";
 
-				if(get){
+				if(get && get['p1']){
 					get = false;
 
 					return;
@@ -1333,6 +1364,8 @@ var InterfaceMaster = (function () {
 					var differenceMatchups = []; // Keep a separate array to sort matchup differences
 
 					for(var n = 0; n < r.matchups.length; n++){
+						var opponent = r.matchups[n].opponent;
+
 						r.matchups[n].difference = false; // Store whether or not this matchups is different or flipped from the base value
 						r.matchups[n].matchupIndex = n;
 
@@ -1456,9 +1489,16 @@ var InterfaceMaster = (function () {
 
 						var pokeStr = pokemon.generateURLPokeStr();
 						var moveStr = pokemon.generateURLMoveStr();
-						var opPokeStr = r.matchups[n].opponent.generateURLPokeStr();
-						var opMoveStr = r.matchups[n].opponent.generateURLMoveStr();
-						var battleLink = host+"battle/"+battle.getCP(true)+"/"+pokeStr+"/"+opPokeStr+"/"+pokemon.startingShields+""+r.matchups[n].opponent.startingShields+"/"+moveStr+"/"+opMoveStr+"/";
+						var opPokeStr = opponent.generateURLPokeStr();
+						var opMoveStr = opponent.generateURLMoveStr();
+						var battleLink = host+"battle/"+battle.getCP(true)+"/"+pokeStr+"/"+opPokeStr+"/"+pokemon.startingShields+""+opponent.startingShields+"/"+moveStr+"/"+opMoveStr+"/";
+
+
+						if( pokemon.startHp != pokemon.stats.hp || opponent.startHp != opponent.stats.hp || pokemon.startEnergy != 0 || opponent.startEnergy != 0){
+							battleLink += pokemon.startHp + "-" + opponent.startHp + "/" + pokemon.startEnergy + "-" + opponent.startEnergy + "/";
+						}
+
+
 						$cell.find("a").attr("href", battleLink);
 
 						$row.append($cell);
