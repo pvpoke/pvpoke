@@ -355,18 +355,16 @@ var InterfaceMaster = (function () {
 					shieldMode = "single";
 				}
 
+				var teamSettings = getDefaultMultiBattleSettings();
+				var opponentSettings = getDefaultMultiBattleSettings();
+
+				teamSettings.shields = opponentSettings.shields = shieldCount;
+				teamSettings.bait = opponentSettings.bait = baitShields;
+
 				var ranker = RankerMaster.getInstance();
 				ranker.setShieldMode(shieldMode);
-				ranker.applySettings({
-					shields: shieldCount,
-					ivs: "original",
-					bait: baitShields
-				}, 0);
-				ranker.applySettings({
-					shields: shieldCount,
-					ivs: "original",
-					bait: baitShields
-				}, 1);
+				ranker.applySettings(teamSettings, 0);
+				ranker.applySettings(opponentSettings, 1);
 
 				ranker.setRecommendMoveUsage(true);
 

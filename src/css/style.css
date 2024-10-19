@@ -777,12 +777,10 @@ footer a.domz-link {
 .poke .options .flex {
   justify-content: space-between;
 }
-.poke .options .check.switch-delay {
-  margin-top: 20px;
-}
 .poke .options .shield-baiting,
 .poke .options .show-ivs,
 .poke .options .optimize-timing,
+.poke .options .switch-delay,
 .poke .options .priority,
 .poke .options .negate-fast-moves {
   text-align: left;
@@ -973,6 +971,10 @@ footer a.domz-link {
 }
 .poke.multi .custom-options p {
   font-size: 12px;
+}
+.poke.multi .search-string-btn {
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
 .poke.multi .rankings-container {
   max-height: 410px;

@@ -990,13 +990,10 @@ footer{
 			justify-content: space-between;
 		}
 
-		.check.switch-delay{
-			margin-top: 20px;
-		}
-
 		.shield-baiting,
 		.show-ivs,
 		.optimize-timing,
+		.switch-delay,
 		.priority,
 		.negate-fast-moves{
 			text-align: left;
@@ -1230,6 +1227,11 @@ footer{
 			p{
 				font-size:12px;
 			}
+		}
+
+		.search-string-btn{
+			margin-top: 5px;
+			margin-bottom: 15px;
 		}
 
 		.rankings-container{

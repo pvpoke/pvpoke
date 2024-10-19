@@ -108,7 +108,7 @@ function PokeMultiSelect(element){
 
 		selectedIndex = index;
 
-		modalWindow("Select Pokemon", $el.find(".poke.single").first());
+		modalWindow("Select Pokemon", $(".hide .poke.single").first());
 
 		pokeSelector = new PokeSelect($(".modal .poke"), 1);
 		pokeSelector.setContext("modal"+context);
@@ -1189,6 +1189,30 @@ function PokeMultiSelect(element){
 		return settings;
 	}
 
+	// Set settings provided a setting object
+
+	this.setSettingsFromGet = function(obj){
+		// Map values to settings object
+
+		$el.find("input.start-hp").val(obj.startHp * 100);
+		$el.find("input.start-hp").trigger("change");
+
+		$el.find("input.start-energy").val(obj.startEnergy);
+		$el.find("input.start-energy").trigger("change");
+
+		$el.find("input.stat-mod").eq(0).val(obj.startStatBuffs[0]);
+		$el.find("input.stat-mod").eq(1).val(obj.startStatBuffs[1]);
+		$el.find("input.stat-mod").trigger("change");
+
+		if(obj.startCooldown == 1000){
+			$el.find(".check.switch-delay").trigger("click");
+		}
+
+		if(obj.optimizeMoveTiming == 0){
+			$el.find(".check.optimize-timing").trigger("click");
+		}
+	}
+
 	// Set the context for this multiselector
 
 	this.setContext = function(val){
@@ -1456,6 +1480,7 @@ function PokeMultiSelect(element){
 	$el.find(".check.switch-delay").on("click", function(e){
 		// Cooldown decreases at the start of the battle step, so a start value of 1000 will result in a 500 ms delay
 		settings.startCooldown = settings.startCooldown == 0 ? settings.startCooldown = 1000 : settings.startCooldown = 0;
+		console.log(settings.startCooldown);
 	});
 
 	// Turn move optimization on or off

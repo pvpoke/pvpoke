@@ -1740,6 +1740,8 @@ var InterfaceMaster = (function () {
 
 				settingGetParams = true;
 
+				var multiBattleSettings = getDefaultMultiBattleSettings();
+
 				// Cycle through parameters and set them
 
 				for(var key in get){
@@ -2032,6 +2034,29 @@ var InterfaceMaster = (function () {
 								}
 								break;
 
+							case "hp":
+								multiBattleSettings.startHp = parseInt(val) / 100;
+							break;
+
+							case "energy":
+								multiBattleSettings.startEnergy = parseInt(val);
+							break;
+
+							case "cooldown":
+								multiBattleSettings.startCooldown = parseInt(val);
+							break;
+
+							case "stats":
+								var arr = val.split(",");
+								if(arr.length == 2){
+									multiBattleSettings.startStatBuffs = [parseInt(arr[0]), parseInt(arr[1])];
+								}
+							break;
+
+							case "timing":
+								multiBattleSettings.optimizeMoveTiming = parseInt(val) == 1;
+							break;
+
 						}
 					}
 
@@ -2068,6 +2093,7 @@ var InterfaceMaster = (function () {
 				if(self.battleMode == "multi"){
 					isLoadingPreset = true;
 					updateMultiBattleMetas();
+					multiSelectors[0].setSettingsFromGet(multiBattleSettings);
 				}
 
 
