@@ -772,7 +772,8 @@ footer a.domz-link {
 .poke .options .start-hp,
 .poke .options .start-energy {
   margin: 5px 0;
-  max-width: 129px;
+  max-width: 120px;
+  max-height: 23px;
 }
 .poke .options .flex {
   justify-content: space-between;
@@ -801,6 +802,7 @@ footer a.domz-link {
   color: #fff;
 }
 .poke .options .label {
+  font-size: 14px;
   margin: 5px 5px 5px 0;
 }
 .poke .options.multi-battle-options {

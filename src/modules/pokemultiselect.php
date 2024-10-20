@@ -79,7 +79,7 @@
 					<div class="label">HP (%):</div><input class="start-hp" type="number" min="0" max="100" placeholder="Starting HP (%)" />
 				</div>
 				<div class="flex">
-					<div class="label">Energy:</div><input class="start-energy" type="number" min="0" max="100" placeholder="Starting Energy" />
+					<div class="label">Energy (Turns):</div><input class="start-energy" type="number" min="0" max="100" placeholder="Starting Energy" />
 				</div>
 
 				<h3 class="section-title">Baiting</h3>

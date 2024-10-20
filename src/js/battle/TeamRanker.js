@@ -291,7 +291,7 @@ var RankerMaster = (function () {
 						if(context == "matrix"){
 							pokemon.reset();
 							opponent.reset();
-							
+
 							var breakpoint = battle.calculateDamageByStats(pokemon, opponent, pokemon.getEffectiveStat(0), opponent.getEffectiveStat(1), opponent.typeEffectiveness[pokemon.fastMove.type], pokemon.fastMove);
 
 							var bulkpoint = battle.calculateDamageByStats(opponent, pokemon, opponent.getEffectiveStat(0), pokemon.getEffectiveStat(1), pokemon.typeEffectiveness[opponent.fastMove.type], opponent.fastMove);
@@ -393,9 +393,11 @@ var RankerMaster = (function () {
 			this.applySettingsToPokemon = function(settings, pokemon){
 				var defaultSettings = getDefaultMultiBattleSettings();
 
+				var fastMoveCount = Math.floor((settings.startEnergy * 500) / pokemon.fastMove.cooldown);
+
 				pokemon.baitShields = settings.bait;
 				pokemon.startHp = Math.floor(settings.startHp * pokemon.stats.hp);
-				pokemon.startEnergy = settings.startEnergy;
+				pokemon.startEnergy = Math.min(pokemon.fastMove.energyGain * fastMoveCount, 100);
 				pokemon.startCooldown = settings.startCooldown;
 				pokemon.optimizeMoveTiming = settings.optimizeMoveTiming;
 				pokemon.startStatBuffs = settings.startStatBuffs;
