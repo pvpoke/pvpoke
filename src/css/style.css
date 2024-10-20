@@ -576,6 +576,9 @@ footer a.domz-link {
 .poke .poke-stats .damage-adjustments .adjustment .value.debuff {
   color: #0158d0;
 }
+.poke .poke-stats .damage-adjustments .label {
+  font-size: 10px;
+}
 .poke .poke-stats .types {
   margin-bottom: 3px;
   text-align: center;
