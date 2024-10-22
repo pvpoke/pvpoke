@@ -79,16 +79,8 @@ switch($cup){
 		$league = 'devonchampionship';
 		break;
 
-	case "tundra":
-		$league = 'Devon Tundra Cup';
-		break;
-
-	case "tundraremix":
-		$league = 'Devon Tundra Cup Remix';
-		break;
-
-	case "ufc-untapped-master":
-		$league = 'UFC Untapped (Master)';
+	case "tundraremixv2":
+		$league = 'Devon Tundra Cup (Gymbreakers Remix V2)';
 		break;
 
 	case "catch":
