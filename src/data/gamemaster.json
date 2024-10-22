@@ -560,14 +560,6 @@
         }]
     }],
     "formats": [{
-        "title": "Sunshine Cup",
-        "cup": "sunshine",
-        "cp": 1500,
-        "meta": "sunshine",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Little Halloween Cup",
         "cup": "halloween",
         "cp": 500,
@@ -615,8 +607,7 @@
         "meta": "premiermaster",
         "showCup": true,
         "showFormat": true,
-        "showMeta": true,
-        "hideRankings": true
+        "showMeta": true
     }, {
         "title": "Master League (Megas)",
         "cup": "mega",
