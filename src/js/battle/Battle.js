@@ -263,7 +263,9 @@ function Battle(){
 
 		var bonusMultiplier = 1.3;
 
-		var attack = ((damage - 1) * defense) / (move.power * move.stab * effectiveness * attacker.shadowAtkMult * 0.5 * bonusMultiplier);
+		var attackStatMultiplier = attacker.getStatBuffMultiplier(0, true);
+
+		var attack = ((damage - 1) * defense) / (move.power * move.stab * effectiveness * attacker.shadowAtkMult * attackStatMultiplier * 0.5 * bonusMultiplier);
 
 		return attack;
 	}
@@ -274,9 +276,11 @@ function Battle(){
 
 		var bonusMultiplier = 1.3;
 
+		var defenseStatMultiplier = defender.getStatBuffMultiplier(1, true);
+
 		var defense =  (move.power * move.stab * effectiveness * 0.5 * bonusMultiplier * attack) / (damage);
 
-		defense = defense / defender.shadowDefMult;
+		defense = (defense * defenseStatMultiplier) / defender.shadowDefMult;
 
 		return defense;
 	}

@@ -553,19 +553,22 @@ function Pokemon(id, i, b){
 	// Given a defender, generate a list of Attack values that reach certain breakpoints
 
 	this.calculateBreakpoints = function(defender, move){
+		var attackStatMultiplier = self.getStatBuffMultiplier(0, true);
+		var defenseStatMultiplier = defender.getStatBuffMultiplier(1, true);
+
 		var effectiveness = defender.typeEffectiveness[move.type];
-		var minAttack = self.generateIVCombinations("atk", -1, 1)[0].atk * self.shadowAtkMult;
-		var maxAttack = self.generateIVCombinations("atk", 1, 1)[0].atk * self.shadowAtkMult;
+		var minAttack = self.generateIVCombinations("atk", -1, 1)[0].atk * self.shadowAtkMult * attackStatMultiplier;
+		var maxAttack = self.generateIVCombinations("atk", 1, 1)[0].atk * self.shadowAtkMult * attackStatMultiplier;
 		var maxDefense = defender.generateIVCombinations("def", 1, 1)[0].def;
 
-		var minDamage = battle.calculateDamageByStats(self, defender, minAttack, defender.stats.def * defender.shadowDefMult, effectiveness, move);
-		var maxDamage = battle.calculateDamageByStats(self, defender, maxAttack, defender.stats.def * defender.shadowDefMult, effectiveness, move);
+		var minDamage = battle.calculateDamageByStats(self, defender, minAttack, defender.stats.def * defender.shadowDefMult * defenseStatMultiplier, effectiveness, move);
+		var maxDamage = battle.calculateDamageByStats(self, defender, maxAttack, defender.stats.def * defender.shadowDefMult * defenseStatMultiplier, effectiveness, move);
 
 		var breakpoints = [];
 
 		for(var i = minDamage; i <= maxDamage; i++){
-			var breakpoint = battle.calculateBreakpoint(self, defender, i, defender.stats.def * defender.shadowDefMult, effectiveness, move);
-			var maxDefenseBreakpoint = battle.calculateBreakpoint(self, defender, i, maxDefense * defender.shadowDefMult, effectiveness, move);
+			var breakpoint = battle.calculateBreakpoint(self, defender, i, defender.stats.def * defender.shadowDefMult * defenseStatMultiplier, effectiveness, move);
+			var maxDefenseBreakpoint = battle.calculateBreakpoint(self, defender, i, maxDefense * defender.shadowDefMult * defenseStatMultiplier, effectiveness, move);
 
 			if(maxDefenseBreakpoint > maxAttack){
 				maxDefenseBreakpoint = -1;
@@ -584,17 +587,20 @@ function Pokemon(id, i, b){
 	// Given an attacker, generate a list of Defense values that reach certain bulkpoints
 
 	this.calculateBulkpoints = function(attacker, move){
+		var attackStatMultiplier = attacker.getStatBuffMultiplier(0, true);
+		var defenseStatMultiplier = self.getStatBuffMultiplier(1, true);
+
 		var effectiveness = self.typeEffectiveness[move.type];
-		var minDefense = self.generateIVCombinations("def", -1, 1)[0].def * self.shadowDefMult;
-		var maxDefense = self.generateIVCombinations("def", 1, 1)[0].def * self.shadowDefMult;
+		var minDefense = self.generateIVCombinations("def", -1, 1)[0].def * self.shadowDefMult * defenseStatMultiplier;
+		var maxDefense = self.generateIVCombinations("def", 1, 1)[0].def * self.shadowDefMult * defenseStatMultiplier;
 		var maxAttack = attacker.generateIVCombinations("atk", 1, 1)[0].atk * attacker.shadowAtkMult;
-		var minDamage = battle.calculateDamageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult, maxDefense, effectiveness, move);
-		var maxDamage = battle.calculateDamageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult, minDefense, effectiveness, move);
+		var minDamage = battle.calculateDamageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult * attackStatMultiplier, maxDefense, effectiveness, move);
+		var maxDamage = battle.calculateDamageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult * attackStatMultiplier, minDefense, effectiveness, move);
 		var breakpoints = [];
 
 		for(var i = minDamage; i <= maxDamage; i++){
-			var bulkpoint = battle.calculateBulkpoint(attacker, self, i, attacker.stats.atk * attacker.shadowAtkMult, effectiveness, move);
-			var maxAttackBulkpoint = battle.calculateBulkpoint(attacker, self, i, maxAttack  * attacker.shadowAtkMult, effectiveness, move);
+			var bulkpoint = battle.calculateBulkpoint(attacker, self, i, attacker.stats.atk * attacker.shadowAtkMult * attackStatMultiplier, effectiveness, move);
+			var maxAttackBulkpoint = battle.calculateBulkpoint(attacker, self, i, maxAttack  * attacker.shadowAtkMult * attackStatMultiplier, effectiveness, move);
 
 			if(maxAttackBulkpoint > maxDefense){
 				maxAttackBulkpoint = -1;
@@ -1947,19 +1953,7 @@ function Pokemon(id, i, b){
 	this.getEffectiveStat = function(index, useStartStatBuffs){
 		useStartStatBuffs = (typeof useStartStatBuffs !== 'undefined') ?  useStartStatBuffs : false
 
-		var buffDivisor = gm.data.settings.buffDivisor;
-		var sourceBuffs = self.statBuffs;
-		var multiplier;
-
-		if(useStartStatBuffs){
-			sourceBuffs = self.startStatBuffs;
-		}
-
-		if(sourceBuffs[index] > 0){
-			multiplier = (buffDivisor + sourceBuffs[index]) / buffDivisor;
-		} else{
-			multiplier = buffDivisor / (buffDivisor - sourceBuffs[index]);
-		}
+		var multiplier = self.getStatBuffMultiplier(index, useStartStatBuffs);
 
 		if(self.shadowType == "shadow"){
 			if(index == 0){
@@ -1976,6 +1970,25 @@ function Pokemon(id, i, b){
 		}
 
 		return false;
+	}
+
+	this.getStatBuffMultiplier = function(index, useStartStatBuffs){
+		useStartStatBuffs = (typeof useStartStatBuffs !== 'undefined') ?  useStartStatBuffs : false
+		var buffDivisor = gm.data.settings.buffDivisor;
+		var sourceBuffs = self.statBuffs;
+		var multiplier;
+
+		if(useStartStatBuffs){
+			sourceBuffs = self.startStatBuffs;
+		}
+
+		if(sourceBuffs[index] > 0){
+			multiplier = (buffDivisor + sourceBuffs[index]) / buffDivisor;
+		} else{
+			multiplier = buffDivisor / (buffDivisor - sourceBuffs[index]);
+		}
+
+		return multiplier;
 	}
 
 	// Return battle rating for this Pokemon
