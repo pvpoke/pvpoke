@@ -1549,7 +1549,7 @@ function PokeMultiSelect(element){
 			if(! defenseValue)
 				defenseValue = 0;
 
-			settings.startStatBuffs = [attackValue, defenseValue];
+			multiSettings.startStatBuffs = [attackValue, defenseValue];
 		}
 
 		var buffDivisor = gm.data.settings.buffDivisor;
