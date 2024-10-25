@@ -1085,7 +1085,7 @@ function PokeMultiSelect(element){
 	$el.find(".shield-picker .option").on("click", function(e){
 		var value = parseInt($(e.target).closest(".option").attr("value"));
 
-		settings.shields = value;
+		multiSettings.shields = value;
 	});
 
 	// Change IV settings
