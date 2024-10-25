@@ -1,0 +1,20 @@
+{
+    "name": "chaos",
+    "title": "Devon Chaos Cup",
+    "include": [{
+        "filterType": "id",
+        "name": "Species",
+        "values": ["giratina_origin", "malamar", "tentacruel", "tentacruel_shadow", "seaking", "gyarados", "gyarados_shadow", "zapdos", "zapdos_shadow", "milotic", "kingdra", "kingdra_shadow", "lapras", "lapras_shadow", "flygon", "flygon_shadow", "charizard", "charizard_shadow", "articuno", "articuno_shadow", "moltres", "moltres_shadow", "lugia", "lugia_shadow", "aurorus", "barbaracle", "tyrunt", "cradily", "cradily_shadow", "runerigus", "golisopod", "relicanth", "armaldo", "armaldo_shadow", "cloyster", "cloyster_shadow", "omastar", "omastar_shadow", "kabutops", "kabutops_shadow", "regirock", "regirock_shadow", "dusclops", "dusclops_shadow", "mew", "arctibax", "regice", "regice_shadow", "abomasnow", "abomasnow_shadow", "gliscor", "gliscor_shadow", "blastoise", "blastoise_shadow", "sceptile", "sceptile_shadow", "golduck", "golduck_shadow", "suicune", "suicune_shadow", "scyther", "scyther_shadow", "nidoqueen", "nidoqueen_shadow", "nidoking", "nidoking_shadow", "tangrowth", "tangrowth_shadow", "ninjask", "piloswine", "piloswine_shadow", "octillery", "dragapult", "samurott_hisuian", "arcanine_hisuian", "lileep", "lileep_shadow", "uxie", "mesprit", "azelf", "groudon_shadow", "kyogre_shadow", "heatran", "heatran_shadow", "archeops", "archeops_shadow", "cresselia", "cresselia_shadow", "jumpluff", "jumpluff_shadow", "nidorina", "nidorina_shadow"]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "name": "Tag",
+        "values": ["mega"]
+    }, {
+        "filterType": "tag",
+        "name": "Tag",
+        "values": []
+    }],
+    "levelCap": 50,
+    "includeLowStatProduct": true
+}
