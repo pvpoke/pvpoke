@@ -15,6 +15,7 @@
 
 			<div class="poke-search-container">
 				<input class="poke-search" context="ranking-search" type="text" placeholder="Search Pokemon" />
+				<div class="check select-all"><span></span>Select all</div>
 			</div>
 
 			<div class="pokebox-list rankings-container">

@@ -126,6 +126,10 @@ function PokeMultiSelect(element){
 				$(".modal-content").append("<div class=\"center\"><a href=\"#\" class=\"compare-poke\">Add & Compare</a></div>");
 			}
 
+			if(settings.pokeboxId != 0){
+				$(".modal-content").append("<div class=\"center\"><a href=\"#\" class=\"compare-pokebox\">Add & Compare<br>from Pokebox</a></div>");
+			}
+
 			if(focusName){
 				$(".modal .poke-search").focus();
 			}
@@ -299,6 +303,29 @@ function PokeMultiSelect(element){
 
 		});
 
+		// Add Pokemon and all matching Pokemon from Pokebox
+
+		$(".modal .compare-pokebox").on("click", function(e){
+			e.preventDefault();
+
+			// Make sure something's selected
+			if(! pokeSelector){
+				return false;
+			}
+
+			var pokemon = pokeSelector.getPokemon();
+
+			if(! pokemon){
+				return false;
+			}
+
+			pokemonList.push(pokemon);
+
+			// Add multiple IV spreads of the same Pokemon
+			pokebox.loadPokebox(false, self.addPokemonFromPokebox, pokemon.speciesId);
+
+		});
+
 
 		// Keyboard shortcuts for entering a Pokemon
 
@@ -311,6 +338,18 @@ function PokeMultiSelect(element){
 				$el.find(".add-poke-btn").focus();
 			}
 		});
+	}
+
+	this.addPokemonFromPokebox = function(box){
+		pokemonList = pokemonList.concat(box);
+
+		closeModalWindow();
+
+		showIVs = true;
+
+		$el.find(".check.show-ivs").addClass("on");
+
+		self.updateListDisplay();
 	}
 
 

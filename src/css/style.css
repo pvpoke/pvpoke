@@ -4320,6 +4320,14 @@ a.rating:hover:after {
   font-size: 12px;
   margin-bottom: 5px;
 }
+.modal .pokebox-import .poke-search-container {
+  margin-top: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+.modal .pokebox-import .poke-search-container .check {
+  margin-top: 0;
+}
 .modal .pokebox-import[select-mode=multi] .multi {
   display: block;
 }
@@ -4327,7 +4335,8 @@ a.rating:hover:after {
   display: none;
 }
 .modal a.compare-poke,
-.modal a.duplicate-poke {
+.modal a.duplicate-poke,
+.modal a.compare-pokebox {
   display: block;
   font-size: 14px;
   margin-top: 25px;

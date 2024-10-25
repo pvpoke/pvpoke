@@ -4864,6 +4864,16 @@ a.rating{
 			font-size:12px;
 			margin-bottom:5px;
 		}
+
+		.poke-search-container{
+			margin-top: 10px;
+			justify-content: space-between;
+			align-items: center;
+
+			.check{
+				margin-top: 0;
+			}
+		}
 	}
 
 	.pokebox-import[select-mode="multi"]{
@@ -4879,7 +4889,8 @@ a.rating{
 	}
 
 	a.compare-poke,
-	a.duplicate-poke{
+	a.duplicate-poke,
+	a.compare-pokebox{
 		display: block;
 		font-size: 14px;
 		margin-top:25px;

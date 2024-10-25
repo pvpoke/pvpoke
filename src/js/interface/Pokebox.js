@@ -17,7 +17,7 @@ function Pokebox(element, selector, selectMode, b){
 	$el.find("a.open-pokebox").click(openPokebox);
 	$el.find(".pokebox-import").attr("select-mode", selectMode);
 
-	this.loadPokebox = function(forceLoad){
+	this.loadPokebox = function(forceLoad, callback, speciesId){
 		// Fetch box data from Pokebattler
 		$(".modal .error").hide();
 
@@ -78,7 +78,17 @@ function Pokebox(element, selector, selectMode, b){
 
 					box.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
 
-					self.displayBox();
+					if(typeof callback == undefined){
+						self.displayBox();
+					} else{
+						if(typeof speciesId == undefined){
+							callback(box);
+						} else{
+							var selectedPokemon = box.filter(p => p.speciesId == speciesId);
+							callback(selectedPokemon);
+						}
+					}
+
 				},
 				error:function(){
 					$(".modal .rankings-container").html("");
@@ -112,7 +122,16 @@ function Pokebox(element, selector, selectMode, b){
 			};
 
 		} else{
-			self.displayBox();
+			if(typeof callback == undefined){
+				self.displayBox();
+			} else{
+				if(typeof speciesId == undefined){
+					callback(box);
+				} else{
+					var selectedPokemon = box.filter(p => p.speciesId == speciesId);
+					callback(selectedPokemon);
+				}
+			}
 		}
 	}
 
@@ -219,9 +238,14 @@ function Pokebox(element, selector, selectMode, b){
 			}
 		}
 
+		if(selectMode == "single"){
+			$(".modal .check.select-all").hide();
+		}
+
 		$(".modal .pokebox-list .rank").click(selectPokemon);
 		$(".modal .button.select").click(selectGroup);
 		$(".modal a.pokebox-refresh").click(refreshPokebox);
+		$(".modal .check.select-all").click(selectAll);
 	}
 
 	// Click the prompt to open the Pokebox
@@ -341,5 +365,14 @@ function Pokebox(element, selector, selectMode, b){
 				console.log(error);
 			}
 		});
+	}
+
+	function selectAll(e){
+		if($(".modal .check.select-all").hasClass("on")){
+			$(".modal .rank.selected:visible").trigger("click");
+		} else{
+			$(".modal .rank:not(.selected):visible").trigger("click");
+		}
+
 	}
 }
