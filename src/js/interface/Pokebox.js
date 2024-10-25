@@ -78,10 +78,10 @@ function Pokebox(element, selector, selectMode, b){
 
 					box.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
 
-					if(typeof callback == undefined){
+					if(callback == undefined){
 						self.displayBox();
 					} else{
-						if(typeof speciesId == undefined){
+						if(speciesId == undefined){
 							callback(box);
 						} else{
 							var selectedPokemon = box.filter(p => p.speciesId == speciesId);
