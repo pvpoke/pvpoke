@@ -87,6 +87,10 @@ switch($cup){
 		$league = 'Catch Cup';
 		break;
 
+	case "willpower":
+		$league = 'Willpower Cup';
+		break;
+
 	case "little":
 		$league = 'Little Cup';
 		break;
