@@ -3,12 +3,18 @@
 var pokeSearch = new function(){
 	var searchTimeout;
 	var searchStr = '';
+	var searchList = [];
 	var $target = null;
 	var battle;
 	var context;
 
 	this.setBattle = function(b){
 		battle = b;
+	}
+
+
+	this.getSearchList = function(){
+		return searchList;
 	}
 
 	$("body").on("keyup", ".poke-search[context='ranking-search'], .poke-search[context='alternative-search']", function(e){
@@ -112,7 +118,7 @@ var pokeSearch = new function(){
 	})
 
 	function submitSearchQuery(){
-		var list = GameMaster.getInstance().generatePokemonListFromSearchString(searchStr, battle);
+		searchList = GameMaster.getInstance().generatePokemonListFromSearchString(searchStr, battle);
 
 		if(context == "alternative-search"){
 			InterfaceMaster.getInstance().displayAlternatives(list);
@@ -122,7 +128,7 @@ var pokeSearch = new function(){
 		$target.siblings(".rankings-container").find("> .rank").each(function(index, value){
 			var id = $(this).attr("data");
 
-			if((list.indexOf(id) > -1)||(! id)){
+			if((searchList.indexOf(id) > -1)||(! id)){
 				$(this).show();
 			} else{
 				$(this).hide();

@@ -77,6 +77,10 @@ require_once 'header.php';
 			</tr>
 		</tbody></table>
 
+		<h3>Performance Mode</h3>
+		<div class="check performanceMode <?php if($_SETTINGS->performanceMode == 1) : ?>on<?php endif; ?>"><span></span> Performance mode</div>
+		<p>Improve CPU performance on the Rankings page. Enable this if you experience lag or freezes on your browser. This feature disabled the Suggested Teammates and Similar Pokemon lists in the ranking details.</p>
+
 		<h3>Gamemaster Version</h3>
 		<p>Select the current Pokemon and move values, either the default values or an alternative set.</p>
 		<?php

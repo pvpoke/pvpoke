@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.32.3.5';
+$SITE_VERSION = '1.32.4';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -48,10 +48,13 @@ if(isset($_COOKIE['settings'])){
 		$_SETTINGS->colorblindMode = 0;
 	}
 
+	if(! isset($_SETTINGS->performanceMode)){
+		$_SETTINGS->performanceMode = 0;
+	}
+
 	if(! isset($_SETTINGS->theme)){
 		$_SETTINGS->theme = 'default';
 	}
-
 
 	// Validate the gamemaster setting, only allow these options
 	$gamemasters = ["gamemaster", "gamemaster-mega", "gamemaster-paldea"];
@@ -70,7 +73,8 @@ if(isset($_COOKIE['settings'])){
 		'xls' => 1,
 		'rankingDetails' => 'one-page',
 		'hardMovesetLinks' => 0,
-		'colorblindMode' => 0
+		'colorblindMode' => 0,
+		'performanceMode' => 0
 	];
 }
 
@@ -175,6 +179,7 @@ if(! isset($OG_IMAGE)){
 			rankingDetails: "<?php echo htmlspecialchars($_SETTINGS->rankingDetails); ?>",
 			hardMovesetLinks: <?php echo intval($_SETTINGS->hardMovesetLinks); ?>,
 			colorblindMode: <?php echo intval($_SETTINGS->colorblindMode); ?>,
+			performanceMode: <?php echo intval($_SETTINGS->performanceMode); ?>,
 		};
 	<?php else: ?>
 
@@ -188,7 +193,8 @@ if(! isset($OG_IMAGE)){
 			xls: true,
 			rankingDetails: "one-page",
 			hardMovesetLinks: 0,
-			colorblindMode: 0
+			colorblindMode: 0,
+			performanceMode: 0
 		};
 
 	<?php endif; ?>
