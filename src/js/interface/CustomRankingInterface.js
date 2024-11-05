@@ -440,19 +440,6 @@ function interfaceObject(){
 		selectedFilterIndex = parseInt($el.attr("index"));
 
 		modalWindow("Remove Filter", $(".delete-filter-confirm"));
-	}
-
-	// Confirm whether or not to delete a filter
-
-	function deleteFilterConfirm(e){
-		var $el = $(e.target).closest(".filter");
-		var listIndex = $el.closest(".filters").attr("list-index");
-
-		selectedElement = $el;
-		selectedListIndex = listIndex;
-		selectedFilterIndex = parseInt($el.attr("index"));
-
-		modalWindow("Remove Filter", $(".delete-filter-confirm"));
 
 		$(".modal .yes").click(deleteSelectedFilter);
 	}
