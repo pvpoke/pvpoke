@@ -81,6 +81,7 @@ var InterfaceMaster = (function () {
 
 				var gm = GameMaster.getInstance();
 
+				clearInterval(rankingDisplayInterval);
 				$(".rankings-container").html('');
 				$(".loading").show();
 
