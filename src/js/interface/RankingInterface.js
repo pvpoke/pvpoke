@@ -236,8 +236,6 @@ var InterfaceMaster = (function () {
 					rankingDisplayIncrement = 5;
 				}
 
-				clearInterval(rankingDisplayInterval);
-
 				rankingDisplayInterval = setInterval(function(){
 					for(var index = i; index < rankings.length && index < i + rankingDisplayIncrement; index++){
 						self.displayRankingEntry(rankings[index], index);
