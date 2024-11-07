@@ -75,6 +75,11 @@
     "fastMove": "SUCKER_PUNCH",
     "chargedMoves": ["ANCIENT_POWER", "BRAVE_BIRD"]
 }, {
+    "speciesId": "nidoqueen",
+    "fastMove": "POISON_JAB",
+    "chargedMoves": ["POISON_FANG", "EARTH_POWER"],
+    "shadowType": "shadow"
+}, {
     "speciesId": "pangoro",
     "fastMove": "KARATE_CHOP",
     "chargedMoves": ["CLOSE_COMBAT", "NIGHT_SLASH"]
@@ -111,12 +116,15 @@
     "fastMove": "FAIRY_WIND",
     "chargedMoves": ["BRUTAL_SWING", "PLAY_ROUGH"]
 }, {
-    "speciesId": "nidoqueen",
-    "fastMove": "POISON_JAB",
-    "chargedMoves": ["POISON_FANG", "EARTH_POWER"],
-    "shadowType": "shadow"
-}, {
     "speciesId": "zygarde_complete",
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["CRUNCH", "EARTHQUAKE"]
+}, {
+    "speciesId": "primeape",
+    "fastMove": "KARATE_CHOP",
+    "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
+}, {
+    "speciesId": "annihilape",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
 }]

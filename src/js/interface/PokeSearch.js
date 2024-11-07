@@ -121,7 +121,7 @@ var pokeSearch = new function(){
 		searchList = GameMaster.getInstance().generatePokemonListFromSearchString(searchStr, battle);
 
 		if(context == "alternative-search"){
-			InterfaceMaster.getInstance().displayAlternatives(list);
+			InterfaceMaster.getInstance().displayAlternatives(searchList);
 			return;
 		}
 

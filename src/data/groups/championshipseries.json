@@ -7,10 +7,6 @@
     "fastMove": "BUG_BITE",
     "chargedMoves": ["BUG_BUZZ", "BUBBLE_BEAM"]
 }, {
-    "speciesId": "arctibax",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["AVALANCHE", "DRAGON_CLAW"]
-}, {
     "speciesId": "ariados",
     "fastMove": "POISON_STING",
     "chargedMoves": ["LUNGE", "TRAILBLAZE"]
@@ -99,6 +95,11 @@
     "chargedMoves": ["SHADOW_BONE", "BONE_CLUB"],
     "shadowType": "shadow"
 }, {
+    "speciesId": "marowak_shadow",
+    "fastMove": "MUD_SLAP",
+    "chargedMoves": ["BONE_CLUB", "ROCK_SLIDE"],
+    "shadowType": "shadow"
+}, {
     "speciesId": "moltres_galarian",
     "fastMove": "SUCKER_PUNCH",
     "chargedMoves": ["ANCIENT_POWER", "BRAVE_BIRD"]
@@ -107,6 +108,10 @@
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["AQUA_TAIL", "STONE_EDGE"],
     "shadowType": "shadow"
+}, {
+    "speciesId": "registeel",
+    "fastMove": "LOCK_ON",
+    "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
 }, {
     "speciesId": "sandslash_alolan",
     "fastMove": "POWDER_SNOW",
@@ -134,12 +139,11 @@
     "chargedMoves": ["BLAST_BURN", "THUNDER_PUNCH"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "marowak_shadow",
-    "fastMove": "MUD_SLAP",
-    "chargedMoves": ["BONE_CLUB", "ROCK_SLIDE"],
-    "shadowType": "shadow"
+    "speciesId": "primeape",
+    "fastMove": "KARATE_CHOP",
+    "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
 }, {
-    "speciesId": "registeel",
-    "fastMove": "LOCK_ON",
-    "chargedMoves": ["FOCUS_BLAST", "ZAP_CANNON"]
+    "speciesId": "annihilape",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
 }]
