@@ -1,0 +1,138 @@
+{
+	"species": [
+		{
+			"speciesId": "mankey",
+			"baseSpeciesId": "mankey"
+		},
+		{
+			"speciesId": "primeape",
+			"baseSpeciesId": "mankey"
+		},
+		{
+			"speciesId": "annihilape",
+			"baseSpeciesId": "mankey",
+			"default": true
+		}
+	],
+	"checklist": [
+		{
+			"title": "High Rank Annihilape",
+			"speciesId": "annihilape",
+			"baseSpeciesId": "mankey",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [17, 2, 15, 15],
+			"priority": 1
+		},
+		{
+			"title": "High Rank Annihilape",
+			"speciesId": "annihilape",
+			"baseSpeciesId": "mankey",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [28.5, 0, 15, 15],
+			"priority": 1
+		},
+		{
+			"title": "High IV Annihilape",
+			"speciesId": "annihilape",
+			"baseSpeciesId": "mankey",
+			"league": "master",
+			"cp": 10000,
+			"ivs": [50, 15, 15, 15],
+			"priority": 1
+		},
+		{
+			"title": "High Rank Primeape",
+			"speciesId": "primeape",
+			"baseSpeciesId": "mankey",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [24.5, 1, 15, 15],
+			"priority": 1
+		},
+		{
+			"title": "High Rank Primeape",
+			"speciesId": "primeape",
+			"baseSpeciesId": "mankey",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [50, 7, 15, 15],
+			"priority": 1
+		},
+		{
+			"title": "Shadow Annihilape",
+			"speciesId": "annihilape",
+			"baseSpeciesId": "mankey",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [17, 2, 15, 15],
+			"priority": 2
+		},
+		{
+			"title": "Shadow Annihilape",
+			"speciesId": "annihilape",
+			"baseSpeciesId": "mankey",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [28.5, 0, 15, 15],
+			"priority": 2
+		},
+		{
+			"title": "High Attack Annihilape",
+			"speciesId": "annihilape",
+			"baseSpeciesId": "mankey",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [17, 11, 10, 2],
+			"priority": 2,
+			"notes": "Annihilape with at least 126.2 Attack guarantees Counter breakpoints against Clodsire, Shadow Feraligatr, Mandibuzz, and more. More Attack helps it win CMP ties against other Annihilape, Feraligatr, and Ariados. Look to maintain 101 Defense to 103 Defense for most of Annihilape's relevant bulkpoints."
+		},
+		{
+			"title": "Shadow Primeape",
+			"speciesId": "primeape",
+			"baseSpeciesId": "mankey",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [24.5, 1, 15, 15],
+			"priority": 2
+		},
+		{
+			"title": "Shadow Primeape",
+			"speciesId": "primeape",
+			"baseSpeciesId": "mankey",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [50, 7, 15, 15],
+			"priority": 1
+		},
+		{
+			"title": "High Attack Primeape",
+			"speciesId": "primeape",
+			"baseSpeciesId": "mankey",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [23.5, 12, 12, 15],
+			"priority": 2,
+			"notes": "Primeape with at least 141.6 Attack guarantees Karate Chop breakpoints against Annihilape and Ariados. More Attack helps it win crucial CMP ties in the mirror matchup."
+		},
+		{
+			"title": "Little Cup Annihilape",
+			"speciesId": "annihilape",
+			"baseSpeciesId": "mankey",
+			"league": "special",
+			"cp": 500,
+			"ivs": [6, 0, 12, 14],
+			"priority": 3
+		},
+		{
+			"title": "Little Cup Primeape",
+			"speciesId": "primeape",
+			"baseSpeciesId": "mankey",
+			"league": "special",
+			"cp": 500,
+			"ivs": [8.5, 0, 12, 10],
+			"priority": 3
+		}
+	]
+}

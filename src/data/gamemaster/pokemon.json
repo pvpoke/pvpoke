@@ -3604,7 +3604,8 @@
         "evolutions": ["annihilape"]
     },
     "level25CP": 1385,
-    "tags": ["shadoweligible"]
+    "tags": ["shadoweligible"],
+	"searchPriority": 10
 }, {
     "dex": 57,
     "speciesName": "Primeape (Shadow)",
