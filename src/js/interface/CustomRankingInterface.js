@@ -263,10 +263,11 @@ function interfaceObject(){
 			gm.rankings[key] = data[0];
 
 			rankingInterface.displayRankingData(data[0]);
-
-			customMetaSelector.setPokemonList(rankingInterface.getMetaGroup());
 		}
+	}
 
+	this.setMetaGroup = function(group){
+		customMetaSelector.setPokemonList(group);
 	}
 
 	// Import settings and set up displayed filters to match new data

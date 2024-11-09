@@ -414,6 +414,19 @@
         "partySize": 3,
         "presetOnly": true
     }, {
+        "name": "retro",
+        "title": "Retro Cup",
+        "include": [],
+        "exclude": [{
+            "filterType": "type",
+            "values": ["dark", "fairy", "steel"]
+        }, {
+            "filterType": "tag",
+            "values": ["mega"]
+        }],
+        "partySize": 3,
+        "presetOnly": true
+    }, {
         "name": "serene",
         "title": "Battle Frontier (Serene)",
         "include": [{
@@ -623,6 +636,14 @@
         "cup": "willpower",
         "cp": 1500,
         "meta": "willpower",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Retro Cup",
+        "cup": "retro",
+        "cp": 1500,
+        "meta": "retro",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -32767,7 +32788,7 @@
         },
         "types": ["grass", "fighting"],
         "fastMoves": ["MAGICAL_LEAF", "PSYCHO_CUT"],
-        "chargedMoves": ["AURA_SPHERE", "ENERGY_BALL", "AERIAL_ACE", "NIGHT_SHADE"],
+        "chargedMoves": ["AURA_SPHERE", "ENERGY_BALL", "AERIAL_ACE", "NIGHT_SHADE", "TRAILBLAZE"],
         "defaultIVs": {
             "cp500": [6.5, 6, 13, 15],
             "cp1500": [20, 4, 5, 4],

@@ -476,6 +476,10 @@ var InterfaceMaster = (function () {
 				if((! $(".check.xl").hasClass("on"))&&(context != "custom")){
 					toggleXLPokemon();
 				}
+
+				if(context == "custom"){
+					customRankingInterface.setMetaGroup(metaGroup);
+				}
 			}
 
 			// Given JSON of get parameters, load these settings
