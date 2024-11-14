@@ -35535,7 +35535,7 @@
     },
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_TOXEL",
         "evolutions": ["toxtricity_amped", "toxtricity_low_key"]
@@ -35559,7 +35559,7 @@
     },
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_TOXEL",
         "parent": "toxel"
