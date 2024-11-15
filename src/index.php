@@ -45,12 +45,12 @@
 	</a>
 
 
-	<a href="<?php echo $WEB_ROOT; ?>contribute/" class="button">
+	<a href="<?php echo $WEB_ROOT; ?>contact/" class="button">
 		<span class="btn-content-wrap">
 			<span class="btn-icon btn-icon-heart"></span>
 			<span class="btn-label">
-				<h2>Contribute</h2>
-				<p>Check out the source code on Github or lend your support through Patreon.</p>
+				<h2>Contact</h2>
+				<p>Get in touch, report a technical issue, or lend your support through Patreon.</p>
 			</span>
 		</span>
 	</a>

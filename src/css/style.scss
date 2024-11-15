@@ -465,6 +465,42 @@ footer{
 				font-size: 24px;
 			}
 		}
+
+		&.discord{
+			background: #5567e3 !important;
+			color: #fff;
+
+			h2{
+				color: #fff;
+			}
+		}
+
+		&.github{
+			background: #fff !important;
+			color: #1f2328;
+
+			h2{
+				color: #1f2328;
+			}
+		}
+
+		&.twitch{
+			background: #9147ff !important;
+			color: #fff;
+
+			h2{
+				color: #fff;
+			}
+		}
+
+		&.patreon{
+			background: #f96854 !important;
+			color: #fff;
+
+			h2{
+				color: #fff;
+			}
+		}
 	}
 
 	h3{

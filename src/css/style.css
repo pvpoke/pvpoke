@@ -333,6 +333,34 @@ footer a.domz-link {
 .home a.button.tera-button h2 {
   font-size: 24px;
 }
+.home a.button.discord {
+  background: #5567e3 !important;
+  color: #fff;
+}
+.home a.button.discord h2 {
+  color: #fff;
+}
+.home a.button.github {
+  background: #fff !important;
+  color: #1f2328;
+}
+.home a.button.github h2 {
+  color: #1f2328;
+}
+.home a.button.twitch {
+  background: #9147ff !important;
+  color: #fff;
+}
+.home a.button.twitch h2 {
+  color: #fff;
+}
+.home a.button.patreon {
+  background: #f96854 !important;
+  color: #fff;
+}
+.home a.button.patreon h2 {
+  color: #fff;
+}
 .home h3 {
   margin-bottom: 10px;
 }

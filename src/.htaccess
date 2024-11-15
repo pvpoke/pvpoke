@@ -19,6 +19,8 @@ Options -Indexes
 
 RewriteRule ^unite(.*)$ https://unite.pvpoke.com [R=301,L]
 
+RewriteRule ^contribute(.*)$ https://pvpoke.com/contact [R=301,L]
+
 RewriteRule battle/multi/([\d-]+)/([a-zA-Z0-9-]+)/([a-zA-Z_\d\.-]+)/([\d-]+)/([\da-zA-Z_-]+)/([a-z\d-]+)/(\d+)/(\d+)/([a-zA-Z_]+).*$ battle.php?mode=multi&cp=$1&cup=$2&p1=$3&s=$4&m1=$5&cms=$6&h=$7&e=$8&g1=$9 [L,QSA]
 RewriteRule battle/multi/([\d-]+)/([a-zA-Z0-9-]+)/([a-zA-Z_\d\.-]+)/([\d-]+)/([\da-zA-Z_-]+)/([a-z\d-]+)/(\d+)/(\d+).*$ battle.php?mode=multi&cp=$1&cup=$2&p1=$3&s=$4&m1=$5&cms=$6&h=$7&e=$8 [L,QSA]
 RewriteRule battle/multi/([\d-]+)/([a-zA-Z0-9-]+)/([a-zA-Z_\d\.-]+)/([\d-]+)/([\da-zA-Z_-]+)/([a-z\d-]+)/([a-zA-Z_]+).*$ battle.php?mode=multi&cp=$1&cup=$2&p1=$3&s=$4&m1=$5&cms=$6&g1=$7 [L,QSA]
@@ -74,7 +76,7 @@ RewriteRule tera/([\da-zA-Z_-]+).*$ tera/index.php?p=$1 [L,QSA]
 RewriteRule moves/([a-zA-Z_]+).*$ moves.php?mode=$1 [L,QSA]
 RewriteRule moves.?$ moves.php [L,QSA]
 
-RewriteRule contribute.?$ contribute.php [L,QSA]
+RewriteRule contact.?$ contact.php [L,QSA]
 
 RewriteRule privacy.?$ privacy.php [L,QSA]
 

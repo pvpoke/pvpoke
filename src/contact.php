@@ -1,25 +1,36 @@
 <?php
-$META_TITLE='Contribute';
+$META_TITLE='Contact';
 
-$META_DESCRIPTION='Help support the site or check out the source code!';
+$META_DESCRIPTION='Get in touch, report a technical issue, or lend your support through Patreon!';
 
 require_once 'header.php'; ?>
 
-<h1>Contribute</h1>
+<h1>Contact</h1>
 <div class="section contribute home white">
-	<p>This project is run by and for Pokemon GO fans! Help support us so we can keep it running and develop new resources and features.</p>
+	<p>I'm Matt (aka KakunaMattata42, aka EmpoleonDynamite), the creator and developer of PvPoke! Please reach out if you have any questions or feedback about the site. I'm especially interested in supporting other Pokemon GO resources, grassroots tournaments, and charity events. Hit me up at the links below:</p>
 
-	<a href="https://github.com/pvpoke/pvpoke" class="button">
-		<h2 class="no-logo">Github</h2>
-		<p>View the source code, report issues, or make code contributions.</p>
+	<a href="https://discord.com/users/267712412864479233" target="_blank" class="button discord">
+		<h2 class="no-logo">Discord</h2>
+		<p>Get in touch for any personal or business inquiries.</p>
 	</a>
 
-	<p>Check out our Patreon page, where you can lend your support and receive some potential perks like a callout on the site and access to developer articles and updates.</p>
+	<a href="https://github.com/pvpoke/pvpoke" target="_blank" class="button github">
+		<h2 class="no-logo">Github</h2>
+		<p>Report technical issues, suggest site features, or collaborate on code contributions.</p>
+	</a>
 
-	<a href="https://www.patreon.com/user?u=16528512" class="button">
+	<a href="https://twitch.tv/empoleondynamite" target="_blank" class="button twitch">
+		<h2 class="no-logo">Twitch</h2>
+		<p>Catch my live streams on Pokemon GO updates (and lots of D&amp;D adventures).</p>
+	</a>
+
+	<a href="https://www.patreon.com/user?u=16528512" target="_blank" class="button patreon">
 		<h2 class="no-logo">Patreon</h2>
 		<p>Make a pledge to help support the site.</p>
 	</a>
+
+	<h2>Contributors</h2>
+	<p>Special thanks to everyone who has contributed to the project on Patreon! The website wouldn't be possible with this community and your support.</p>
 
 	<h2 class="center">Ultra Supporters</h2>
 

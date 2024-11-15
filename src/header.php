@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.32.5.8';
+$SITE_VERSION = '1.32.5.9';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -141,7 +141,7 @@ if(! isset($OG_IMAGE)){
 
 <link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/themes/sunflower/favicon.png">
 
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=194">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=195">
 
 <?php if(strpos($META_TITLE, 'Train') !== false): ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=21">
@@ -297,9 +297,8 @@ if(! isset($OG_IMAGE)){
 						<div class="submenu-wrap">
 							<a href="<?php echo $WEB_ROOT; ?>moves/">Moves</a>
 							<a href="<?php echo $WEB_ROOT; ?>articles/">Articles</a>
-							<a class="icon-heart" href="<?php echo $WEB_ROOT; ?>contribute/">Contribute</a>
 							<a href="<?php echo $WEB_ROOT; ?>settings/">Settings</a>
-							<a class="twitter" href="https://twitter.com/pvpoke" target="_blank">Twitter</a>
+							<a class="icon-heart" href="<?php echo $WEB_ROOT; ?>contact/">Contact</a>
 							<a class="tera" href="<?php echo $WEB_ROOT; ?>tera/">Tera Raid Counters</a>
 							<div class="latest-section mobile">
 								<h4>Latest <a href="<?php echo $WEB_ROOT; ?>#news"></a></h4>
