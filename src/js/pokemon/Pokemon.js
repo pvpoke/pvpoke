@@ -986,8 +986,6 @@ function Pokemon(id, i, b){
 
 		var fastMoves = [];
 		var chargedMoves = [];
-		var fastMoveUses = [];
-		var chargedMoveUses = [];
 		var targetArrs = [fastMoves, chargedMoves];
 		var sourceArrs = [self.fastMovePool, self.chargedMovePool];
 
@@ -998,17 +996,11 @@ function Pokemon(id, i, b){
 		}
 
 		// Sort charged moves by DPE
+		chargedMoves = chargedMoves.map((data) => {
+			let statChangeFactor = 0;
 
-		chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
-
-		var highestDPE = chargedMoves[0].dpe;
-
-		for(var i = 0; i < chargedMoves.length; i++){
-			var move = chargedMoves[i];
-			var statChangeFactor = 1;
-
-			// Calculate the magnitude of stat changes, factoring in stages and buff chance
 			if(move.buffs){
+				statChangeFactor = 1;
 				for(var n = 0; n < move.buffs.length; n++){
 					// Don't factor self defense drops for move usage
 					if((move.selfDebuffing)&&(n == 1)){
@@ -1033,77 +1025,47 @@ function Pokemon(id, i, b){
 				statChangeFactor =  1 + ((statChangeFactor - 1) * move.buffApplyChance);
 			}
 
-			// Calculate usage based on raw damage, efficiency, and speed
-			move.uses = (Math.pow(move.damage, 2) / Math.pow(move.energy, 4)) * Math.pow(statChangeFactor, 2);
-		}
+			return {
+				...data,
+				FACTOR: statChangeFactor, //don't need it for both moves? only the second charged move I would think
+				uses: ((data.damage / data.energy) / data.energy) //first move is pure DPE
+			};
+		}).sort((a, b) => { return b.VAL - a.VAL; });
+		const move_1 = chargedMoves[0]; chargedMoves.shift(); //-- one of our best two charged moves
 
-		chargedMoves.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
+		fastMoves = fastMoves.map((data) => {
+			const QA = 25000 / data.damage; //25000 damage should be enough to get a good avg
+			const QT = QA * data.cooldown;
+			const QE = QA * data.energyGain;
 
-		// For moves that have a strictly better preference, sharply reduce usage
-		total = chargedMoves[0].uses;
+			const Cdmg = move_1.damage;
+			const CA = QE / move_1.energy;
+			const CD = CA * Cdmg;
 
-		for(var i = 1; i < chargedMoves.length; i++){
-			for(var n = 0; n < i; n++){
-				if((chargedMoves[i].type == chargedMoves[n].type)&&(chargedMoves[i].energy >= chargedMoves[n].energy)&&(chargedMoves[i].dpe / chargedMoves[n].dpe < 1.3)){
-					chargedMoves[i].uses *= .5;
-					break;
-				}
-			}
+			return {
+				...data,
+				uses: (25000 + CD) / (QT + CA) //how long did it take to reach 25000 damage
+			};
+		}).sort((a, b) => { return b.uses - a.uses; });
 
-			total += chargedMoves[i].uses;
-		}
+		if (chargedMoves.length) {
+			const QA = 25000 / fastMoves[0].damage;
+			const QT = QA * fastMoves[0].cooldown;
+			const QE = QA * fastMoves[0].energyGain;
 
-		// Normalize move usage to total
-		for(var i = 0; i < chargedMoves.length; i++){
-			chargedMoves[i].uses = Math.round((chargedMoves[i].uses / total) * 100);
-		}
-
-		for(var i = 0; i < chargedMoves.length; i++){
-			chargedMoveUses.push({
-				moveId: chargedMoves[i].moveId,
-				uses: chargedMoves[i].uses * weightModifier
+			chargedMoves.sort((a, b) => { //--which moves gets us to 25000 damage the fastest / here we use the buff factor
+				return ((25000 + ((QE / b.energy) * b.damage)) / (QT + (QE / b.energy)) * (b.FACTOR * 1.5 || 1)) - ((25000 + ((QE / a.energy) * a.damage)) / (QT + (QE / a.energy)) * (a.FACTOR * 1.5 || 1));
 			});
+
+			const move_2 = chargedMoves[0];
+			chargedMoves = [move_1, move_2];
+		} else {
+			chargedMoves = [move_1];
 		}
-
-		chargedMoveUses.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
-
-
-		// Calculate TDO for each fast move and sort
-		var total = 0;
-
-		// Let's use Yawn as a baseline for comparison
-		var yawn = gm.getMoveById("YAWN");
-		yawn.damage = 1;
-
-		var baseline = self.calculateCycleDPT(yawn, chargedMoves[0]);
-
-		for(var i = 0; i < fastMoves.length; i++){
-			var move = fastMoves[i];
-			var ept = move.energyGain / (move.cooldown / 500);
-			var dpt = move.damage / (move.cooldown / 500);
-
-			move.uses = self.calculateCycleDPT(move, chargedMoves[0]);
-			move.uses = Math.max(move.uses - baseline, 0.1);
-			move.uses *= Math.pow(Math.pow(dpt*Math.pow(ept,4), 1/5), Math.max(highestDPE - 1, 1)); // Emphasize fast charging moves with access to powerful Charged Moves
-
-			total += move.uses;
-		}
-
-		// Normalize move usage to total
-		for(var i = 0; i < fastMoves.length; i++){
-			fastMoves[i].uses = Math.round((fastMoves[i].uses / total) * 100);
-
-			fastMoveUses.push({
-				moveId: fastMoves[i].moveId,
-				uses: fastMoves[i].uses * weightModifier
-			});
-		}
-
-		fastMoveUses.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
 
 		var results = {
-			fastMoves: fastMoveUses,
-			chargedMoves: chargedMoveUses
+			fastMoves: fastMoves,
+			chargedMoves: chargedMoves
 		};
 
 		return results;
