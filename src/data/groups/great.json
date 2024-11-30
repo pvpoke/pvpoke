@@ -52,6 +52,10 @@
     "chargedMoves": ["CRUNCH", "AQUA_TAIL"],
     "shadowType": "shadow"
 }, {
+    "speciesId": "drifblim",
+    "fastMove": "ASTONISH",
+    "chargedMoves": ["ICY_WIND", "SHADOW_BALL"]
+}, {
     "speciesId": "dunsparce",
     "fastMove": "ROLLOUT",
     "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
@@ -142,7 +146,7 @@
     "fastMove": "CHARM",
     "chargedMoves": ["ICY_WIND", "SWIFT"]
 }, {
-    "speciesId": "drifblim",
+    "speciesId": "corsola_galarian",
     "fastMove": "ASTONISH",
-    "chargedMoves": ["ICY_WIND", "SHADOW_BALL"]
+    "chargedMoves": ["NIGHT_SHADE", "POWER_GEM"]
 }]
