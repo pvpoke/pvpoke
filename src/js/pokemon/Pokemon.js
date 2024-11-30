@@ -2186,8 +2186,10 @@ function Pokemon(id, i, b){
 					factor = (cycleFastDamage / cycleDamage) + ((chargedMoves[0].damage / cycleDamage) * (chargedMoves[1].dpe / chargedMoves[0].dpe));
 
 					// If the difference in energy is small, improve the consistency score as players may play straight more often
-					if(chargedMoves[1].energy < chargedMoves[0].energy){
+					if(chargedMoves[1].energy < chargedMoves[0].energy && ! chargedMoves[0].selfBuffing){
 						factor += (1 - factor) * ((chargedMoves[1].energy-30) / (chargedMoves[0].energy-30)) * 0.5;
+					} else if(chargedMoves[1].energy < chargedMoves[0].energy && chargedMoves[0].selfBuffing){
+						factor += (1 - factor) * ((chargedMoves[1].energy-20) / (chargedMoves[0].energy-20)); // Players are more likely to spam self buffing moves than bait with non buffing moves
 					}
 				}
 

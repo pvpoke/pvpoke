@@ -35727,55 +35727,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
-    "released": false,
-    "family": {
-        "id": "FAMILY_SINISTEA",
-        "evolutions": ["polteageist"]
-    }
-}, {
-    "dex": 854,
-    "speciesName": "Sinistea (Antique)",
-    "speciesId": "sinistea_antique",
-    "baseStats": {
-        "atk": 134,
-        "def": 96,
-        "hp": 120
-    },
-    "types": ["ghost", "none"],
-    "fastMoves": ["ASTONISH", "SUCKER_PUNCH"],
-    "chargedMoves": ["SHADOW_BALL", "DARK_PULSE", "PSYCHIC"],
-    "defaultIVs": {
-        "cp500": [17, 5, 13, 9],
-        "cp1500": [50, 15, 15, 15],
-        "cp2500": [50, 15, 15, 15]
-    },
-    "buddyDistance": 3,
-    "thirdMoveCost": 50000,
-    "released": false,
-    "family": {
-        "id": "FAMILY_SINISTEA",
-        "evolutions": ["polteageist"]
-    }
-}, {
-    "dex": 854,
-    "speciesName": "Sinistea (Phony)",
-    "speciesId": "sinistea_phony",
-    "baseStats": {
-        "atk": 134,
-        "def": 96,
-        "hp": 120
-    },
-    "types": ["ghost", "none"],
-    "fastMoves": ["ASTONISH", "SUCKER_PUNCH"],
-    "chargedMoves": ["SHADOW_BALL", "DARK_PULSE", "PSYCHIC"],
-    "defaultIVs": {
-        "cp500": [17, 5, 13, 9],
-        "cp1500": [50, 15, 15, 15],
-        "cp2500": [50, 15, 15, 15]
-    },
-    "buddyDistance": 3,
-    "thirdMoveCost": 50000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_SINISTEA",
         "evolutions": ["polteageist"]
@@ -35799,55 +35751,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
-    "released": false,
-    "family": {
-        "id": "FAMILY_SINISTEA",
-        "parent": "sinistea"
-    }
-}, {
-    "dex": 855,
-    "speciesName": "Polteageist (Antique)",
-    "speciesId": "polteageist_antique",
-    "baseStats": {
-        "atk": 248,
-        "def": 189,
-        "hp": 155
-    },
-    "types": ["ghost", "none"],
-    "fastMoves": ["ASTONISH", "SUCKER_PUNCH", "HEX"],
-    "chargedMoves": ["SHADOW_BALL", "DARK_PULSE", "PSYCHIC"],
-    "defaultIVs": {
-        "cp500": [6, 12, 14, 14],
-        "cp1500": [18, 7, 13, 11],
-        "cp2500": [30.5, 5, 9, 14]
-    },
-    "buddyDistance": 3,
-    "thirdMoveCost": 50000,
-    "released": false,
-    "family": {
-        "id": "FAMILY_SINISTEA",
-        "parent": "sinistea"
-    }
-}, {
-    "dex": 855,
-    "speciesName": "Polteageist (Phony)",
-    "speciesId": "polteageist_phony",
-    "baseStats": {
-        "atk": 248,
-        "def": 189,
-        "hp": 155
-    },
-    "types": ["ghost", "none"],
-    "fastMoves": ["ASTONISH", "SUCKER_PUNCH", "HEX"],
-    "chargedMoves": ["SHADOW_BALL", "DARK_PULSE", "PSYCHIC"],
-    "defaultIVs": {
-        "cp500": [6, 12, 14, 14],
-        "cp1500": [18, 7, 13, 11],
-        "cp2500": [30.5, 5, 9, 14]
-    },
-    "buddyDistance": 3,
-    "thirdMoveCost": 50000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_SINISTEA",
         "parent": "sinistea"

@@ -706,6 +706,10 @@ var RankerMaster = (function () {
 						rankings[i].moveset.push(pokemon.chargedMoves[1].moveId);
 					}
 
+					if(pokemon.speciesId == "morpeko_full_belly"){
+						rankings[i].moveset[1] = "AURA_WHEEL_ELECTRIC";
+					}
+
 					rankings[i].score = rankings[i].scores[rankings[i].scores.length-1];
 
 					// For chargers, factor in Fast Move pressure for ability to farm down, and maximum carryover energy after firing a Charged Move
