@@ -979,7 +979,8 @@ var GameMaster = (function () {
 
 				if(stats >= minStats || battle.getCup().includeLowStatProduct ||
 				 ( battle.getCP() == 1500 &&
-				 (pokemon.hasTag("include1500") || pokemon.hasTag("mega") ))){
+				 pokemon.hasTag("include1500")) || ( battle.getCP() == 2500 &&
+				 pokemon.hasTag("include2500")) || pokemon.hasTag("mega") ){
 					// Today is the day
 					if(! pokemon.released){
 						continue;
