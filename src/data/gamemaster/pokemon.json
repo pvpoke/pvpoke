@@ -7361,8 +7361,8 @@
         "hp": 155
     },
     "types": ["water", "psychic"],
-    "fastMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "QUICK_ATTACK", "TACKLE", "WATER_GUN"],
-    "chargedMoves": ["HYDRO_PUMP", "ICE_BEAM", "POWER_GEM", "PSYBEAM", "PSYCHIC", "THUNDER"],
+    "fastMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "QUICK_ATTACK", "TACKLE", "WATER_GUN", "PSYWAVE"],
+    "chargedMoves": ["HYDRO_PUMP", "ICE_BEAM", "POWER_GEM", "PSYBEAM", "PSYCHIC", "THUNDER", "SURF"],
     "legacyMoves": ["QUICK_ATTACK"],
     "defaultIVs": {
         "cp500": [7, 13, 15, 15],
@@ -19900,7 +19900,7 @@
         "hp": 188
     },
     "types": ["normal", "water"],
-    "fastMoves": ["TAKE_DOWN", "WATER_GUN"],
+    "fastMoves": ["TAKE_DOWN", "WATER_GUN", "ROLLOUT"],
     "chargedMoves": ["HYPER_BEAM", "HYPER_FANG", "SURF"],
     "defaultIVs": {
         "cp500": [10.5, 4, 13, 8],
@@ -19926,7 +19926,7 @@
         "hp": 188
     },
     "types": ["normal", "water"],
-    "fastMoves": ["TAKE_DOWN", "WATER_GUN"],
+    "fastMoves": ["TAKE_DOWN", "WATER_GUN", "ROLLOUT"],
     "chargedMoves": ["HYPER_BEAM", "HYPER_FANG", "SURF"],
     "defaultIVs": {
         "cp500": [10.5, 4, 13, 8],
@@ -22838,7 +22838,7 @@
         "hp": 181
     },
     "types": ["ground", "flying"],
-    "fastMoves": ["FURY_CUTTER", "WING_ATTACK"],
+    "fastMoves": ["FURY_CUTTER", "WING_ATTACK", "SAND_ATTACK"],
     "chargedMoves": ["AERIAL_ACE", "EARTHQUAKE", "NIGHT_SLASH", "SAND_TOMB"],
     "defaultIVs": {
         "cp500": [7, 7, 11, 15],
@@ -22864,7 +22864,7 @@
         "hp": 181
     },
     "types": ["ground", "flying"],
-    "fastMoves": ["FURY_CUTTER", "WING_ATTACK"],
+    "fastMoves": ["FURY_CUTTER", "WING_ATTACK", "SAND_ATTACK"],
     "chargedMoves": ["AERIAL_ACE", "EARTHQUAKE", "NIGHT_SLASH", "SAND_TOMB"],
     "defaultIVs": {
         "cp500": [7, 7, 11, 15],
@@ -30894,7 +30894,7 @@
     },
     "types": ["poison", "dragon"],
     "fastMoves": ["WATER_GUN", "ACID", "DRAGON_TAIL"],
-    "chargedMoves": ["HYDRO_PUMP", "AQUA_TAIL", "OUTRAGE", "GUNK_SHOT"],
+    "chargedMoves": ["HYDRO_PUMP", "AQUA_TAIL", "OUTRAGE", "GUNK_SHOT", "FOCUS_BLAST"],
     "defaultIVs": {
         "cp500": [8, 5, 15, 8],
         "cp1500": [23.5, 5, 9, 15],

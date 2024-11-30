@@ -630,10 +630,10 @@
         "showMeta": true,
         "hideRankings": true
     }, {
-        "title": "Retro Cup",
-        "cup": "retro",
+        "title": "Fantasy Cup",
+        "cup": "fantasy",
         "cp": 1500,
-        "meta": "retro",
+        "meta": "fantasy",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -8147,8 +8147,8 @@
             "hp": 155
         },
         "types": ["water", "psychic"],
-        "fastMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "QUICK_ATTACK", "TACKLE", "WATER_GUN"],
-        "chargedMoves": ["HYDRO_PUMP", "ICE_BEAM", "POWER_GEM", "PSYBEAM", "PSYCHIC", "THUNDER"],
+        "fastMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "QUICK_ATTACK", "TACKLE", "WATER_GUN", "PSYWAVE"],
+        "chargedMoves": ["HYDRO_PUMP", "ICE_BEAM", "POWER_GEM", "PSYBEAM", "PSYCHIC", "THUNDER", "SURF"],
         "legacyMoves": ["QUICK_ATTACK"],
         "defaultIVs": {
             "cp500": [7, 13, 15, 15],
@@ -20686,7 +20686,7 @@
             "hp": 188
         },
         "types": ["normal", "water"],
-        "fastMoves": ["TAKE_DOWN", "WATER_GUN"],
+        "fastMoves": ["TAKE_DOWN", "WATER_GUN", "ROLLOUT"],
         "chargedMoves": ["HYPER_BEAM", "HYPER_FANG", "SURF"],
         "defaultIVs": {
             "cp500": [10.5, 4, 13, 8],
@@ -20712,7 +20712,7 @@
             "hp": 188
         },
         "types": ["normal", "water"],
-        "fastMoves": ["TAKE_DOWN", "WATER_GUN"],
+        "fastMoves": ["TAKE_DOWN", "WATER_GUN", "ROLLOUT"],
         "chargedMoves": ["HYPER_BEAM", "HYPER_FANG", "SURF"],
         "defaultIVs": {
             "cp500": [10.5, 4, 13, 8],
@@ -23624,7 +23624,7 @@
             "hp": 181
         },
         "types": ["ground", "flying"],
-        "fastMoves": ["FURY_CUTTER", "WING_ATTACK"],
+        "fastMoves": ["FURY_CUTTER", "WING_ATTACK", "SAND_ATTACK"],
         "chargedMoves": ["AERIAL_ACE", "EARTHQUAKE", "NIGHT_SLASH", "SAND_TOMB"],
         "defaultIVs": {
             "cp500": [7, 7, 11, 15],
@@ -23650,7 +23650,7 @@
             "hp": 181
         },
         "types": ["ground", "flying"],
-        "fastMoves": ["FURY_CUTTER", "WING_ATTACK"],
+        "fastMoves": ["FURY_CUTTER", "WING_ATTACK", "SAND_ATTACK"],
         "chargedMoves": ["AERIAL_ACE", "EARTHQUAKE", "NIGHT_SLASH", "SAND_TOMB"],
         "defaultIVs": {
             "cp500": [7, 7, 11, 15],
@@ -31680,7 +31680,7 @@
         },
         "types": ["poison", "dragon"],
         "fastMoves": ["WATER_GUN", "ACID", "DRAGON_TAIL"],
-        "chargedMoves": ["HYDRO_PUMP", "AQUA_TAIL", "OUTRAGE", "GUNK_SHOT"],
+        "chargedMoves": ["HYDRO_PUMP", "AQUA_TAIL", "OUTRAGE", "GUNK_SHOT", "FOCUS_BLAST"],
         "defaultIVs": {
             "cp500": [8, 5, 15, 8],
             "cp1500": [23.5, 5, 9, 15],
@@ -41346,11 +41346,14 @@
         "name": "Bulldoze",
         "abbreviation": "Bd",
         "type": "ground",
-        "power": 80,
-        "energy": 60,
+        "power": 45,
+        "energy": 40,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "High Energy"
+        "buffs": [0, -1],
+        "buffTarget": "opponent",
+        "buffApplyChance": ".3",
+        "archetype": "Debuff Spam/Bait"
     }, {
         "moveId": "BULLET_PUNCH",
         "name": "Bullet Punch",
@@ -41766,15 +41769,15 @@
         "type": "fire",
         "power": 8,
         "energy": 0,
-        "energyGain": 5,
+        "energyGain": 6,
         "cooldown": 1000,
-        "archetype": "Heavy Damage"
+        "archetype": "Multipurpose"
     }, {
         "moveId": "FIRE_PUNCH",
         "name": "Fire Punch",
         "abbreviation": "FiP",
         "type": "fire",
-        "power": 55,
+        "power": 60,
         "energy": 40,
         "energyGain": 0,
         "cooldown": 500,
@@ -42341,14 +42344,14 @@
         "type": "ice",
         "power": 8,
         "energy": 0,
-        "energyGain": 5,
+        "energyGain": 6,
         "cooldown": 1000,
-        "archetype": "Heavy Damage"
+        "archetype": "Multipurpose"
     }, {
         "moveId": "ICE_PUNCH",
         "name": "Ice Punch",
         "type": "ice",
-        "power": 55,
+        "power": 60,
         "energy": 40,
         "energyGain": 0,
         "cooldown": 500,
@@ -43563,6 +43566,7 @@
         "archetype": "General"
     }, {
         "moveId": "SPARKLING_ARIA",
+        "abbreviation": "SpA",
         "name": "Sparkling Aria",
         "type": "water",
         "power": 80,
@@ -43805,14 +43809,14 @@
         "type": "electric",
         "power": 8,
         "energy": 0,
-        "energyGain": 5,
+        "energyGain": 6,
         "cooldown": 1000,
-        "archetype": "Heavy Damage"
+        "archetype": "Multipurpose"
     }, {
         "moveId": "THUNDER_PUNCH",
         "name": "Thunder Punch",
         "type": "electric",
-        "power": 55,
+        "power": 60,
         "energy": 40,
         "energyGain": 0,
         "cooldown": 500,
@@ -43821,7 +43825,7 @@
         "moveId": "THUNDER_SHOCK",
         "name": "Thunder Shock",
         "type": "electric",
-        "power": 3,
+        "power": 4,
         "energy": 0,
         "energyGain": 9,
         "cooldown": 1000,
