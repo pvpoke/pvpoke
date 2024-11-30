@@ -7,25 +7,8 @@
     "fastMove": "BUBBLE",
     "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
 }, {
-    "speciesId": "bastiodon",
-    "fastMove": "SMACK_DOWN",
-    "chargedMoves": ["STONE_EDGE", "FLAMETHROWER"]
-}, {
-    "speciesId": "empoleon",
-    "fastMove": "STEEL_WING",
-    "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
-}, {
-    "speciesId": "empoleon_shadow",
-    "fastMove": "STEEL_WING",
-    "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"],
-    "shadowType": "shadow"
-}, {
-    "speciesId": "escavalier",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["DRILL_RUN", "ACID_SPRAY"]
-}, {
     "speciesId": "excadrill",
-    "fastMove": "MUD_SHOT",
+    "fastMove": "MUD_SLAP",
     "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
 }, {
     "speciesId": "ferrothorn",
@@ -41,9 +24,17 @@
     "chargedMoves": ["DRAGON_CLAW", "SCORCHING_SANDS"],
     "shadowType": "shadow"
 }, {
+    "speciesId": "giratina_origin",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["OMINOUS_WIND", "SHADOW_BALL"]
+}, {
     "speciesId": "lucario",
     "fastMove": "COUNTER",
     "chargedMoves": ["THUNDER_PUNCH", "SHADOW_BALL"]
+}, {
+    "speciesId": "perrserker",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["CLOSE_COMBAT", "TRAILBLAZE"]
 }, {
     "speciesId": "registeel",
     "fastMove": "LOCK_ON",
@@ -54,39 +45,36 @@
     "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "skarmory",
-    "fastMove": "STEEL_WING",
-    "chargedMoves": ["BRAVE_BIRD", "SKY_ATTACK"]
-}, {
-    "speciesId": "stunfisk_galarian",
-    "fastMove": "MUD_SHOT",
-    "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
-}, {
-    "speciesId": "tapu_fini",
-    "fastMove": "WATER_GUN",
-    "chargedMoves": ["SURF", "NATURES_MADNESS"]
-}, {
     "speciesId": "turtonator",
     "fastMove": "INCINERATE",
     "chargedMoves": ["DRAGON_PULSE", "OVERHEAT"]
 }, {
     "speciesId": "weezing_galarian",
     "fastMove": "FAIRY_WIND",
-    "chargedMoves": ["SLUDGE", "OVERHEAT"]
+    "chargedMoves": ["BRUTAL_SWING", "PLAY_ROUGH"]
 }, {
-    "speciesId": "weezing_galarian",
+    "speciesId": "weezing_galarian_shadow",
     "fastMove": "FAIRY_WIND",
-    "chargedMoves": ["PLAY_ROUGH", "OVERHEAT"]
+    "chargedMoves": ["SLUDGE", "OVERHEAT"],
+    "shadowType": "shadow"
 }, {
     "speciesId": "wigglytuff",
     "fastMove": "CHARM",
     "chargedMoves": ["ICY_WIND", "DISARMING_VOICE"]
 }, {
-    "speciesId": "giratina_origin",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["OMINOUS_WIND", "SHADOW_BALL"]
+    "speciesId": "whimsicott",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["SEED_BOMB", "MOONBLAST"]
 }, {
-    "speciesId": "perrserker",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["CLOSE_COMBAT", "TRAILBLAZE"]
+    "speciesId": "stunfisk_galarian",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+}, {
+    "speciesId": "dugtrio_alolan",
+    "fastMove": "MUD_SLAP",
+    "chargedMoves": ["MUD_BOMB", "IRON_HEAD"]
+}, {
+    "speciesId": "heatran",
+    "fastMove": "FIRE_SPIN",
+    "chargedMoves": ["MAGMA_STORM", "EARTH_POWER"]
 }]
