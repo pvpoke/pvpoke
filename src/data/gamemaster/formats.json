@@ -35,7 +35,11 @@
 		"meta": "fantasy",
 		"showCup": true,
 		"showFormat": true,
-		"showMeta": true
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Dragon-, Steel-, and Fairy-type Pokémon are eligible."
+		]
 	},
 	{
 		"title": "Master League (Megas)",

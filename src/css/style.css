@@ -3118,6 +3118,13 @@ a.download-csv {
   padding: 5px 8px;
   min-width: 100px;
 }
+.ranking-filters .ranking-filter .flex {
+  justify-content: space-between;
+}
+.ranking-filters .ranking-filter a.format-rules {
+  font-size: 12px;
+  display: none;
+}
 
 /* Detail tabs */
 .detail-tab-nav {

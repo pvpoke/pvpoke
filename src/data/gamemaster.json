@@ -636,7 +636,8 @@
         "meta": "fantasy",
         "showCup": true,
         "showFormat": true,
-        "showMeta": true
+        "showMeta": true,
+        "rules": ["Pok\u00e9mon must be at or below 1,500 CP to enter.", "Only Dragon-, Steel-, and Fairy-type Pok\u00e9mon are eligible."]
     }, {
         "title": "Master League (Megas)",
         "cup": "mega",

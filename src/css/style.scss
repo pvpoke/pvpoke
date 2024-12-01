@@ -3535,6 +3535,15 @@ a.download-csv{
 		    padding: 5px 8px;
 			min-width: 100px;
 		}
+
+		.flex{
+			justify-content: space-between;
+		}
+
+		a.format-rules{
+			font-size:12px;
+			display:none;
+		}
 	}
 }
 

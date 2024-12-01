@@ -799,6 +799,20 @@ var GameMaster = (function () {
 			return cup;
 		}
 
+		// Return a cup object given an id name
+
+		object.getFormat = function(cup, cp){
+			var format;
+
+			$.each(object.data.formats, function(index, f){
+				if(f.cup == cup && parseInt(f.cp) == cp){
+					format = f;
+				}
+			});
+
+			return format;
+		}
+
 		// Load and return ranking data JSON
 
 		object.loadRankingData = function(caller, category, league, cup){

@@ -85,6 +85,14 @@ var InterfaceMaster = (function () {
 				$(".rankings-container").html('');
 				$(".loading").show();
 
+				var format = gm.getFormat(cup, league);
+
+				if(format && format.rules){
+					$("a.format-rules").show();
+				} else{
+					$("a.format-rules").hide();
+				}
+
 				// Force 1500 if not general
 
 				if((cup == "premier")&&(league == 1500)){
@@ -1630,6 +1638,22 @@ var InterfaceMaster = (function () {
 					closeModalWindow();
 				});
 			}
+
+			// Open format rules modal
+
+			$("a.format-rules").click(function(e){
+				e.preventDefault();
+
+				var format = gm.getFormat(battle.getCup().name, battle.getCP());
+				var $modalContent = $("<ul></ul>");
+
+				for(var i = 0; i < format.rules.length; i++){
+					$modalContent.append("<li>" + format.rules[i] + "</li>");
+				}
+
+				modalWindow(format.title + " Rules", $modalContent);
+
+			});
 		};
 
         return object;
