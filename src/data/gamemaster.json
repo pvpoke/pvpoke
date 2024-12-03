@@ -8171,7 +8171,8 @@
         "family": {
             "id": "FAMILY_STARYU",
             "parent": "staryu"
-        }
+        },
+        "searchPriority": 3
     }, {
         "dex": 122,
         "speciesName": "Mr. Mime",
@@ -22910,7 +22911,7 @@
             "cp2500": [44, 6, 15, 13],
             "cp2500l40": [40, 15, 15, 15]
         },
-        "searchPriority": 9,
+        "searchPriority": 2,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -23539,7 +23540,7 @@
             "cp1500": [16.5, 5, 14, 13],
             "cp2500": [28, 4, 10, 12]
         },
-        "searchPriority": 8,
+        "searchPriority": 5,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true,
@@ -33539,7 +33540,8 @@
         "family": {
             "id": "FAMILY_MAREANIE",
             "parent": "mareanie"
-        }
+        },
+        "searchPriority": 9
     }, {
         "dex": 749,
         "speciesName": "Mudbray",
@@ -34577,7 +34579,8 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": true
+        "released": true,
+        "searchPriority": 6
     }, {
         "dex": 778,
         "speciesName": "Mimikyu",
@@ -37190,7 +37193,7 @@
             "alternativeFormId": "morpeko_hangry"
         },
         "tags": ["include2500"],
-        "searchPriority": 3,
+        "searchPriority": 4,
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
