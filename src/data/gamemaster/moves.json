@@ -343,12 +343,12 @@
     "abbreviation": "Bd",
     "type": "ground",
     "power": 45,
-    "energy": 40,
+    "energy": 45,
     "energyGain": 0,
     "cooldown": 500,
 	"buffs": [0, -1],
     "buffTarget": "opponent",
-    "buffApplyChance": ".3",
+    "buffApplyChance": ".5",
     "archetype": "Debuff Spam/Bait"
 }, {
     "moveId": "BULLET_PUNCH",
