@@ -7,6 +7,10 @@
     "fastMove": "BUBBLE",
     "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
 }, {
+    "speciesId": "dugtrio_alolan",
+    "fastMove": "MUD_SLAP",
+    "chargedMoves": ["MUD_BOMB", "IRON_HEAD"]
+}, {
     "speciesId": "excadrill",
     "fastMove": "MUD_SLAP",
     "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
@@ -29,7 +33,7 @@
     "chargedMoves": ["OMINOUS_WIND", "SHADOW_BALL"]
 }, {
     "speciesId": "lucario",
-    "fastMove": "COUNTER",
+    "fastMove": "FORCE_PALM",
     "chargedMoves": ["THUNDER_PUNCH", "SHADOW_BALL"]
 }, {
     "speciesId": "perrserker",
@@ -45,6 +49,10 @@
     "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"],
     "shadowType": "shadow"
 }, {
+    "speciesId": "stunfisk_galarian",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+}, {
     "speciesId": "turtonator",
     "fastMove": "INCINERATE",
     "chargedMoves": ["DRAGON_PULSE", "OVERHEAT"]
@@ -58,23 +66,23 @@
     "chargedMoves": ["SLUDGE", "OVERHEAT"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "wigglytuff",
-    "fastMove": "CHARM",
-    "chargedMoves": ["ICY_WIND", "DISARMING_VOICE"]
-}, {
     "speciesId": "whimsicott",
     "fastMove": "FAIRY_WIND",
     "chargedMoves": ["SEED_BOMB", "MOONBLAST"]
 }, {
-    "speciesId": "stunfisk_galarian",
-    "fastMove": "MUD_SHOT",
-    "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
+    "speciesId": "wigglytuff",
+    "fastMove": "CHARM",
+    "chargedMoves": ["ICY_WIND", "DISARMING_VOICE"]
 }, {
-    "speciesId": "dugtrio_alolan",
-    "fastMove": "MUD_SLAP",
-    "chargedMoves": ["MUD_BOMB", "IRON_HEAD"]
+    "speciesId": "skarmory",
+    "fastMove": "STEEL_WING",
+    "chargedMoves": ["BRAVE_BIRD", "SKY_ATTACK"]
 }, {
-    "speciesId": "heatran",
-    "fastMove": "FIRE_SPIN",
-    "chargedMoves": ["MAGMA_STORM", "EARTH_POWER"]
+    "speciesId": "empoleon",
+    "fastMove": "METAL_CLAW",
+    "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
+}, {
+    "speciesId": "escavalier",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["DRILL_RUN", "ACID_SPRAY"]
 }]

@@ -35,6 +35,10 @@
     "fastMove": "POISON_STING",
     "chargedMoves": ["SLUDGE_BOMB", "EARTHQUAKE"]
 }, {
+    "speciesId": "corsola_galarian",
+    "fastMove": "ASTONISH",
+    "chargedMoves": ["NIGHT_SHADE", "POWER_GEM"]
+}, {
     "speciesId": "cresselia",
     "fastMove": "PSYCHO_CUT",
     "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
@@ -89,11 +93,6 @@
     "fastMove": "ROLLOUT",
     "chargedMoves": ["BODY_SLAM", "SHADOW_BALL"]
 }, {
-    "speciesId": "machamp_shadow",
-    "fastMove": "KARATE_CHOP",
-    "chargedMoves": ["CROSS_CHOP", "STONE_EDGE"],
-    "shadowType": "shadow"
-}, {
     "speciesId": "malamar",
     "fastMove": "PSYWAVE",
     "chargedMoves": ["SUPER_POWER", "FOUL_PLAY"]
@@ -111,10 +110,6 @@
     "fastMove": "MUD_SLAP",
     "chargedMoves": ["BONE_CLUB", "ROCK_SLIDE"],
     "shadowType": "shadow"
-}, {
-    "speciesId": "pangoro",
-    "fastMove": "KARATE_CHOP",
-    "chargedMoves": ["CLOSE_COMBAT", "NIGHT_SLASH"]
 }, {
     "speciesId": "primeape",
     "fastMove": "KARATE_CHOP",
@@ -146,7 +141,7 @@
     "fastMove": "CHARM",
     "chargedMoves": ["ICY_WIND", "SWIFT"]
 }, {
-    "speciesId": "corsola_galarian",
-    "fastMove": "ASTONISH",
-    "chargedMoves": ["NIGHT_SHADE", "POWER_GEM"]
+    "speciesId": "bibarel",
+    "fastMove": "ROLLOUT",
+    "chargedMoves": ["SURF", "HYPER_FANG"]
 }]

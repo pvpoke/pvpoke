@@ -135,6 +135,14 @@ switch($cup){
 		$league = 'Psychic Cup';
 		break;
 
+	case "holiday":
+		if($cp == "500"){
+			$league = 'Little Holiday Cup';
+		} else {
+			$league = 'Holiday Cup';
+		}
+		break;
+
 	case "galar":
 		if($cp == "500"){
 			$league = 'Little Galar Cup';

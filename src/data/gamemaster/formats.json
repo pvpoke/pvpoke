@@ -42,6 +42,19 @@
 		]
 	},
 	{
+		"title": "Little Holiday Cup",
+		"cup": "holiday",
+		"cp": 500,
+		"meta": "holidaylittle",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 500 CP to enter.",
+			"Only Normal-, Grass-, Electric-, Ice-, Flying-, and Ghost-type Pokémon are eligible."
+		]
+	},
+	{
 		"title": "Master League (Megas)",
 		"cup": "mega",
 		"cp": 10000,

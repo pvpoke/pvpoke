@@ -1,0 +1,93 @@
+[{
+    "speciesId": "abomasnow",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"]
+}, {
+    "speciesId": "amaura",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["WEATHER_BALL_ICE", "ANCIENT_POWER"]
+}, {
+    "speciesId": "aurorus",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["WEATHER_BALL_ICE", "METEOR_BEAM"]
+}, {
+    "speciesId": "joltik",
+    "fastMove": "SUCKER_PUNCH",
+    "chargedMoves": ["DISCHARGE", "CROSS_POISON"]
+}, {
+    "speciesId": "chikorita",
+    "fastMove": "VINE_WHIP",
+    "chargedMoves": ["BODY_SLAM", "GRASS_KNOT"]
+}, {
+    "speciesId": "miltank",
+    "fastMove": "ROLLOUT",
+    "chargedMoves": ["BODY_SLAM", "ICE_BEAM"]
+}, {
+    "speciesId": "smeargle",
+    "fastMove": "INCINERATE",
+    "chargedMoves": ["FLYING_PRESS"]
+}, {
+    "speciesId": "litwick",
+    "fastMove": "EMBER",
+    "chargedMoves": ["MYSTICAL_FIRE", "FLAME_CHARGE"]
+}, {
+    "speciesId": "litwick_shadow",
+    "fastMove": "EMBER",
+    "chargedMoves": ["MYSTICAL_FIRE", "FLAME_CHARGE"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "mandibuzz",
+    "fastMove": "SNARL",
+    "chargedMoves": ["DARK_PULSE", "AERIAL_ACE"]
+}, {
+    "speciesId": "marowak_alolan",
+    "fastMove": "FIRE_SPIN",
+    "chargedMoves": ["SHADOW_BONE", "BONE_CLUB"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "ninetales_alolan",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["WEATHER_BALL_ICE", "DAZZLING_GLEAM"]
+}, {
+    "speciesId": "ninetales_alolan_shadow",
+    "fastMove": "CHARM",
+    "chargedMoves": ["WEATHER_BALL_ICE", "PSYSHOCK"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "pikachu_libre",
+    "fastMove": "THUNDER_SHOCK",
+    "chargedMoves": ["FLYING_PRESS", "THUNDER_PUNCH"]
+}, {
+    "speciesId": "sandslash_alolan",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"]
+}, {
+    "speciesId": "skeledirge",
+    "fastMove": "INCINERATE",
+    "chargedMoves": ["SHADOW_BALL", "DISARMING_VOICE"]
+}, {
+    "speciesId": "talonflame",
+    "fastMove": "INCINERATE",
+    "chargedMoves": ["FLY", "FLAME_CHARGE"]
+}, {
+    "speciesId": "vulpix_alolan",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["WEATHER_BALL_ICE", "DARK_PULSE"]
+}, {
+    "speciesId": "vulpix_alolan_shadow",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["WEATHER_BALL_ICE", "DARK_PULSE"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "diggersby",
+    "fastMove": "QUICK_ATTACK",
+    "chargedMoves": ["SCORCHING_SANDS", "FIRE_PUNCH"]
+}, {
+    "speciesId": "stunfisk",
+    "fastMove": "THUNDER_SHOCK",
+    "chargedMoves": ["MUD_BOMB", "DISCHARGE"]
+}, {
+    "speciesId": "annihilape",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["CLOSE_COMBAT", "RAGE_FIST"]
+}]
