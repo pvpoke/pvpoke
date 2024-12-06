@@ -6555,7 +6555,8 @@
     "family": {
         "id": "FAMILY_CUBONE",
         "parent": "cubone"
-    }
+    },
+	"nicknames": ["kwak"]
 }, {
     "dex": 105,
     "speciesName": "Marowak (Alolan)",
@@ -6576,7 +6577,7 @@
         "cp2500": [50, 15, 15, 15]
     },
     "level25CP": 1090,
-    "searchPriority": 6,
+    "searchPriority": 5,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true,
@@ -6604,7 +6605,7 @@
         "cp1500": [32, 5, 9, 15],
         "cp2500": [50, 15, 15, 15]
     },
-    "searchPriority": 8,
+    "searchPriority": 5,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true,
@@ -6637,7 +6638,9 @@
     "family": {
         "id": "FAMILY_CUBONE",
         "parent": "cubone_shadow"
-    }
+    },
+	"nicknames": ["kwak"],
+	"searchPriority": 6
 }, {
     "dex": 106,
     "speciesName": "Hitmonlee",
@@ -12399,7 +12402,7 @@
         "cp2500": [40, 4, 15, 13]
     },
     "eliteMoves": ["WATER_GUN"],
-    "searchPriority": 12,
+    "searchPriority": 4,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true,
@@ -12427,7 +12430,7 @@
         "cp2500": [40, 4, 15, 13]
     },
     "eliteMoves": ["WATER_GUN"],
-    "searchPriority": 12,
+    "searchPriority": 4,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true,
@@ -18935,7 +18938,7 @@
         "cp1500": [13.5, 6, 10, 9],
         "cp2500": [22.5, 5, 14, 7]
     },
-    "searchPriority": 10,
+    "searchPriority": 5,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true,
@@ -22039,7 +22042,7 @@
         "cp2500": [47, 5, 13, 11],
         "cp2500l40": [40, 15, 15, 15]
     },
-    "searchPriority": 4,
+    "searchPriority": 7,
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
     "released": true,
