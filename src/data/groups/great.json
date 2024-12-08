@@ -15,6 +15,10 @@
     "fastMove": "BUBBLE",
     "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
 }, {
+    "speciesId": "bibarel",
+    "fastMove": "ROLLOUT",
+    "chargedMoves": ["SURF", "HYPER_FANG"]
+}, {
     "speciesId": "carbink",
     "fastMove": "ROCK_THROW",
     "chargedMoves": ["POWER_GEM", "MOONBLAST"]
@@ -141,7 +145,7 @@
     "fastMove": "CHARM",
     "chargedMoves": ["ICY_WIND", "SWIFT"]
 }, {
-    "speciesId": "bibarel",
-    "fastMove": "ROLLOUT",
-    "chargedMoves": ["SURF", "HYPER_FANG"]
+    "speciesId": "stunfisk",
+    "fastMove": "THUNDER_SHOCK",
+    "chargedMoves": ["MUD_BOMB", "DISCHARGE"]
 }]
