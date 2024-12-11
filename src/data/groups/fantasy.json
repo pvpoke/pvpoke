@@ -11,6 +11,14 @@
     "fastMove": "MUD_SLAP",
     "chargedMoves": ["MUD_BOMB", "IRON_HEAD"]
 }, {
+    "speciesId": "empoleon",
+    "fastMove": "METAL_CLAW",
+    "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
+}, {
+    "speciesId": "escavalier",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["DRILL_RUN", "ACID_SPRAY"]
+}, {
     "speciesId": "excadrill",
     "fastMove": "MUD_SLAP",
     "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
@@ -49,6 +57,10 @@
     "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"],
     "shadowType": "shadow"
 }, {
+    "speciesId": "skarmory",
+    "fastMove": "STEEL_WING",
+    "chargedMoves": ["BRAVE_BIRD", "SKY_ATTACK"]
+}, {
     "speciesId": "stunfisk_galarian",
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["ROCK_SLIDE", "EARTHQUAKE"]
@@ -74,15 +86,11 @@
     "fastMove": "CHARM",
     "chargedMoves": ["ICY_WIND", "DISARMING_VOICE"]
 }, {
-    "speciesId": "skarmory",
-    "fastMove": "STEEL_WING",
-    "chargedMoves": ["BRAVE_BIRD", "SKY_ATTACK"]
+    "speciesId": "dragapult",
+    "fastMove": "ASTONISH",
+    "chargedMoves": ["BREAKING_SWIPE", "SHADOW_BALL"]
 }, {
-    "speciesId": "empoleon",
-    "fastMove": "METAL_CLAW",
-    "chargedMoves": ["HYDRO_CANNON", "DRILL_PECK"]
-}, {
-    "speciesId": "escavalier",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["DRILL_RUN", "ACID_SPRAY"]
+    "speciesId": "shiinotic",
+    "fastMove": "ASTONISH",
+    "chargedMoves": ["SEED_BOMB", "MOONBLAST"]
 }]
