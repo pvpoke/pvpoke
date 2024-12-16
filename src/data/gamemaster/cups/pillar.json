@@ -1,6 +1,6 @@
 {
     "name": "pillar",
-    "title": "Pillar",
+    "title": "Devon Pillar Cup",
     "include": [{
         "filterType": "id",
         "name": "Species",
@@ -8,9 +8,6 @@
     }],
     "exclude": [],
     "overrides": [],
-    "league": 1500,
-    "useDefaultMovesets": 1,
     "levelCap": 50,
-    "excludeLowPokemon": 0,
     "includeLowStatProduct": true
 }

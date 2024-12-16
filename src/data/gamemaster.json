@@ -346,7 +346,7 @@
         }]
     }, {
         "name": "pillar",
-        "title": "Pillar",
+        "title": "Devon Pillar Cup",
         "include": [{
             "filterType": "id",
             "name": "Species",
@@ -354,10 +354,7 @@
         }],
         "exclude": [],
         "overrides": [],
-        "league": 1500,
-        "useDefaultMovesets": 1,
         "levelCap": 50,
-        "excludeLowPokemon": 0,
         "includeLowStatProduct": true
     }, {
         "name": "polaris",
@@ -35146,7 +35143,6 @@
         "types": ["psychic", "ghost"],
         "fastMoves": ["METAL_CLAW", "PSYCHO_CUT", "SHADOW_CLAW"],
         "chargedMoves": ["DARK_PULSE", "FUTURE_SIGHT", "IRON_HEAD", "OUTRAGE", "MOONGEIST_BEAM"],
-        "eliteMoves": ["MOONGEIST_BEAM"],
         "defaultIVs": {
             "cp500": [4.5, 15, 13, 15],
             "cp1500": [13.5, 6, 15, 6],
@@ -35170,7 +35166,6 @@
         "types": ["psychic", "steel"],
         "fastMoves": ["METAL_CLAW", "PSYCHO_CUT", "SHADOW_CLAW"],
         "chargedMoves": ["DARK_PULSE", "FUTURE_SIGHT", "IRON_HEAD", "OUTRAGE", "SUNSTEEL_STRIKE"],
-        "eliteMoves": ["SUNSTEEL_STRIKE"],
         "defaultIVs": {
             "cp500": [4.5, 15, 13, 15],
             "cp1500": [13.5, 6, 15, 6],
