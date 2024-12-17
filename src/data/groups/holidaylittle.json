@@ -7,25 +7,25 @@
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["WEATHER_BALL_ICE", "ANCIENT_POWER"]
 }, {
+    "speciesId": "annihilape",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["CLOSE_COMBAT", "RAGE_FIST"]
+}, {
     "speciesId": "aurorus",
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["WEATHER_BALL_ICE", "METEOR_BEAM"]
-}, {
-    "speciesId": "joltik",
-    "fastMove": "SUCKER_PUNCH",
-    "chargedMoves": ["DISCHARGE", "CROSS_POISON"]
 }, {
     "speciesId": "chikorita",
     "fastMove": "VINE_WHIP",
     "chargedMoves": ["BODY_SLAM", "GRASS_KNOT"]
 }, {
-    "speciesId": "miltank",
-    "fastMove": "ROLLOUT",
-    "chargedMoves": ["BODY_SLAM", "ICE_BEAM"]
+    "speciesId": "diggersby",
+    "fastMove": "QUICK_ATTACK",
+    "chargedMoves": ["SCORCHING_SANDS", "FIRE_PUNCH"]
 }, {
-    "speciesId": "smeargle",
-    "fastMove": "INCINERATE",
-    "chargedMoves": ["FLYING_PRESS"]
+    "speciesId": "joltik",
+    "fastMove": "SUCKER_PUNCH",
+    "chargedMoves": ["DISCHARGE", "CROSS_POISON"]
 }, {
     "speciesId": "litwick",
     "fastMove": "EMBER",
@@ -44,6 +44,10 @@
     "fastMove": "FIRE_SPIN",
     "chargedMoves": ["SHADOW_BONE", "BONE_CLUB"],
     "shadowType": "shadow"
+}, {
+    "speciesId": "miltank",
+    "fastMove": "ROLLOUT",
+    "chargedMoves": ["BODY_SLAM", "ICE_BEAM"]
 }, {
     "speciesId": "ninetales_alolan",
     "fastMove": "POWDER_SNOW",
@@ -66,6 +70,10 @@
     "fastMove": "INCINERATE",
     "chargedMoves": ["SHADOW_BALL", "DISARMING_VOICE"]
 }, {
+    "speciesId": "stunfisk",
+    "fastMove": "THUNDER_SHOCK",
+    "chargedMoves": ["MUD_BOMB", "DISCHARGE"]
+}, {
     "speciesId": "talonflame",
     "fastMove": "INCINERATE",
     "chargedMoves": ["FLY", "FLAME_CHARGE"]
@@ -79,15 +87,19 @@
     "chargedMoves": ["WEATHER_BALL_ICE", "DARK_PULSE"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "diggersby",
+    "speciesId": "litleo",
+    "fastMove": "INCINERATE",
+    "chargedMoves": ["FLAME_CHARGE", "CRUNCH"]
+}, {
+    "speciesId": "fletchling",
     "fastMove": "QUICK_ATTACK",
-    "chargedMoves": ["SCORCHING_SANDS", "FIRE_PUNCH"]
+    "chargedMoves": ["SWIFT", "FLY"]
+}, {
+    "speciesId": "walrein",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["ICICLE_SPEAR", "WATER_PULSE"]
 }, {
     "speciesId": "stunfisk",
     "fastMove": "THUNDER_SHOCK",
     "chargedMoves": ["MUD_BOMB", "DISCHARGE"]
-}, {
-    "speciesId": "annihilape",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["CLOSE_COMBAT", "RAGE_FIST"]
 }]
