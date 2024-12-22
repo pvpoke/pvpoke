@@ -106,23 +106,4 @@
     "level25CP": 3136,
     "tags": ["shadoweligible", "mega"],
     "eliteMoves": ["METEOR_MASH"]
-}, {
-    "dex": 475,
-    "speciesName": "Gallade (Mega)",
-    "speciesId": "gallade_mega",
-    "baseStats": {
-        "atk": 326,
-        "def": 230,
-        "hp": 169
-    },
-    "types": ["psychic", "fighting"],
-    "fastMoves": ["CONFUSION", "LOW_KICK", "CHARM"],
-    "chargedMoves": ["CLOSE_COMBAT", "LEAF_BLADE", "PSYCHIC", "SYNCHRONOISE"],
-    "defaultIVs": {
-        "cp1500": [12, 6, 8, 15],
-        "cp2500": [20, 6, 10, 15]
-    },
-    "level25CP": 2867,
-    "tags": ["shadoweligible", "mega"],
-    "eliteMoves": ["SYNCHRONOISE"]
 }]

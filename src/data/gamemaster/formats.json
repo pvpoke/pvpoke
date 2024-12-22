@@ -29,19 +29,6 @@
 		"hideRankings": true
 	},
 	{
-		"title": "Fantasy Cup",
-		"cup": "fantasy",
-		"cp": 1500,
-		"meta": "fantasy",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Dragon-, Steel-, and Fairy-type Pokémon are eligible."
-		]
-	},
-	{
 		"title": "Little Holiday Cup",
 		"cup": "holiday",
 		"cp": 500,
@@ -51,7 +38,21 @@
 		"showMeta": true,
 		"rules": [
 			"Pokémon must be at or below 500 CP to enter.",
-			"Only Normal-, Grass-, Electric-, Ice-, Flying-, and Ghost-type Pokémon are eligible."
+			"Only Normal-, Grass-, Electric-, Ice-, Flying-, and Ghost-type Pokémon are eligible.",
+			"Smeargle is not allowed."
+		]
+	},
+	{
+		"title": "Color Cup",
+		"cup": "color",
+		"cp": 1500,
+		"meta": "color",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Fire-, Water-, Grass-, and Electric-type Pokémon are eligible."
 		]
 	},
 	{
