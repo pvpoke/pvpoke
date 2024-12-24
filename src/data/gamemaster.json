@@ -41850,6 +41850,19 @@
         "cooldown": 500,
         "archetype": "Nuke"
     }, {
+        "moveId": "FLOWER_TRICK",
+        "name": "Flower Trick",
+        "abbreviation": "FlT",
+        "type": "grass",
+        "power": 30,
+        "energy": 35,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [1, 0],
+        "buffTarget": "self",
+        "buffApplyChance": "1",
+        "archetype": "Boost"
+    }, {
         "moveId": "FLY",
         "name": "Fly",
         "abbreviation": "Fl",
