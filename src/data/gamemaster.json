@@ -35780,7 +35780,7 @@
         },
         "types": ["flying", "steel"],
         "fastMoves": ["STEEL_WING", "AIR_SLASH"],
-        "chargedMoves": ["DRILL_PECK", "BRAVE_BIRD", "IRON_HEAD"],
+        "chargedMoves": ["DRILL_PECK", "BRAVE_BIRD"],
         "defaultIVs": {
             "cp500": [8, 4, 6, 7],
             "cp1500": [23, 5, 8, 15],
