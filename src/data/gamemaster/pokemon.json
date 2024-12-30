@@ -37409,7 +37409,8 @@
     },
     "types": ["grass", "dark"],
     "fastMoves": ["LEAFAGE", "CHARM"],
-    "chargedMoves": ["GRASS_KNOT", "PLAY_ROUGH", "ENERGY_BALL", "NIGHT_SLASH"],
+    "chargedMoves": ["GRASS_KNOT", "PLAY_ROUGH", "ENERGY_BALL", "NIGHT_SLASH", "FRENZY_PLANT", "FLOWER_TRICK"],
+	"eliteMoves": ["FRENZY_PLANT"],
     "defaultIVs": {
         "cp500": [6.5, 13, 12, 14],
         "cp1500": [20, 4, 6, 15],
@@ -37930,7 +37931,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_FIDOUGH",
         "evolutions": ["dachsbun"]
@@ -37952,9 +37953,10 @@
         "cp1500": [27, 4, 14, 11],
         "cp2500": [50, 15, 15, 15]
     },
+	"searchPriority": 4,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_FIDOUGH",
         "parent": "fidough"

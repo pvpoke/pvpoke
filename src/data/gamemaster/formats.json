@@ -29,20 +29,6 @@
 		"hideRankings": true
 	},
 	{
-		"title": "Little Holiday Cup",
-		"cup": "holiday",
-		"cp": 500,
-		"meta": "holidaylittle",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 500 CP to enter.",
-			"Only Normal-, Grass-, Electric-, Ice-, Flying-, and Ghost-type Pokémon are eligible.",
-			"Smeargle is not allowed."
-		]
-	},
-	{
 		"title": "Color Cup",
 		"cup": "color",
 		"cp": 1500,
@@ -124,6 +110,15 @@
 		"cup": "tundraremixv2",
 		"cp": 1500,
 		"meta": "tundraremixv2",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Gymbreakers Invitational",
+		"cup": "gbinvitational",
+		"cp": 1500,
+		"meta": "gbinvitational",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
