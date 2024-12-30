@@ -97,6 +97,10 @@
     "fastMove": "SNARL",
     "chargedMoves": ["DARK_PULSE", "AERIAL_ACE"]
 }, {
+    "speciesId": "mandibuzz",
+    "fastMove": "AIR_SLASH",
+    "chargedMoves": ["DARK_PULSE", "AERIAL_ACE"]
+}, {
     "speciesId": "marowak_alolan_shadow",
     "fastMove": "FIRE_SPIN",
     "chargedMoves": ["SHADOW_BONE", "BONE_CLUB"],
@@ -141,6 +145,10 @@
     "fastMove": "VINE_WHIP",
     "chargedMoves": ["FRENZY_PLANT", "AERIAL_ACE"]
 }, {
+    "speciesId": "stunfisk",
+    "fastMove": "THUNDER_SHOCK",
+    "chargedMoves": ["MUD_BOMB", "DISCHARGE"]
+}, {
     "speciesId": "talonflame",
     "fastMove": "INCINERATE",
     "chargedMoves": ["FLY", "FLAME_CHARGE"]
@@ -154,11 +162,7 @@
     "chargedMoves": ["BLAST_BURN", "THUNDER_PUNCH"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "stunfisk",
-    "fastMove": "THUNDER_SHOCK",
-    "chargedMoves": ["MUD_BOMB", "DISCHARGE"]
-}, {
-    "speciesId": "mandibuzz",
-    "fastMove": "AIR_SLASH",
-    "chargedMoves": ["DARK_PULSE", "AERIAL_ACE"]
+    "speciesId": "dachsbun",
+    "fastMove": "CHARM",
+    "chargedMoves": ["PSYCHIC_FANGS", "BODY_SLAM"]
 }]

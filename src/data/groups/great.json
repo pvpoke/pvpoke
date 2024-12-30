@@ -133,6 +133,10 @@
     "fastMove": "VINE_WHIP",
     "chargedMoves": ["FRENZY_PLANT", "AERIAL_ACE"]
 }, {
+    "speciesId": "stunfisk",
+    "fastMove": "THUNDER_SHOCK",
+    "chargedMoves": ["MUD_BOMB", "DISCHARGE"]
+}, {
     "speciesId": "talonflame",
     "fastMove": "INCINERATE",
     "chargedMoves": ["FLY", "FLAME_CHARGE"]
@@ -145,7 +149,7 @@
     "fastMove": "CHARM",
     "chargedMoves": ["ICY_WIND", "SWIFT"]
 }, {
-    "speciesId": "stunfisk",
-    "fastMove": "THUNDER_SHOCK",
-    "chargedMoves": ["MUD_BOMB", "DISCHARGE"]
+    "speciesId": "dachsbun",
+    "fastMove": "CHARM",
+    "chargedMoves": ["PSYCHIC_FANGS", "BODY_SLAM"]
 }]
