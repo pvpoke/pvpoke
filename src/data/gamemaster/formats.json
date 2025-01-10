@@ -74,29 +74,28 @@
 		"showMeta": true
 	},
 	{
-		"title": "Battle Frontier (Ultra)",
-		"cup": "battlefrontierultra",
-		"cp": 2500,
-		"meta": "ultra",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": false,
-		"hideRankings": true
-	},
-	{
-		"title": "Battle Frontier (Polaris)",
-		"cup": "polaris",
+		"title": "Battle Frontier (Cascade)",
+		"cup": "cascade",
 		"cp": 1500,
-		"meta": "polaris",
+		"meta": "cascade",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
 	},
 	{
-		"title": "Battle Frontier (Wasteland)",
-		"cup": "wasteland",
+		"title": "Battle Frontier (Iridescent)",
+		"cup": "iridescent",
 		"cp": 1500,
-		"meta": "wasteland",
+		"meta": "iridescent",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true
+	},
+	{
+		"title": "Battle Frontier (Solstice)",
+		"cup": "solstice",
+		"cp": 2500,
+		"meta": "solstice",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true

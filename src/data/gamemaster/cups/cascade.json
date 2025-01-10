@@ -1,0 +1,18 @@
+{
+    "name": "cascade",
+    "title": "Cascade Cup",
+	"include": [{
+        "filterType": "type",
+        "values": ["dragon","ice","water","poison","psychic"]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega"]
+    }, {
+        "filterType": "type",
+        "values": ["fairy","fighting","steel"]
+    }, {
+        "filterType": "id",
+        "values": ["gastrodon","malamar","araquanid","clodsire","toxapex","lanturn","zweilous","hydreigon","guzzlord","cresselia","drapion","feraligatr","skuntank","muk_alolan","grimer_alolan","stunky","qwilfish_hisuian","overqwil","giratina_origin","suicune","zygarde","zygarde_10","amaura","aurorus","ariados"]
+    }]
+}

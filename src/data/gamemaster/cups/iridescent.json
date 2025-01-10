@@ -1,0 +1,24 @@
+{
+    "name": "iridescent",
+    "title": "Iridescent Cup",
+	"include": [{
+        "filterType": "type",
+        "values": ["bug","fairy","ghost","grass","ground"]
+    },{
+        "filterType": "id",
+        "values": ["whimsicott","slurpuff","girafarig"]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega","shadow"]
+    }, {
+        "filterType": "type",
+        "values": ["fire","poison","steel","flying","ice","dark"]
+    }, {
+        "filterType": "id",
+        "values": ["diggersby","buzzwole","carbink","annihilape","giratina_origin","gogoat","zygarde","corsola_galarian","azumarill","araquanid","golisopod"]
+    }, {
+        "filterType": "move",
+        "values": ["CHARM"]
+    }]
+}

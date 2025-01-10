@@ -246,7 +246,12 @@ var InterfaceMaster = (function () {
 
 				rankingDisplayInterval = setInterval(function(){
 					for(var index = i; index < rankings.length && index < i + rankingDisplayIncrement; index++){
-						self.displayRankingEntry(rankings[index], index);
+						try {
+							self.displayRankingEntry(rankings[index], index);
+						} catch{
+							console.error(rankings[index].speciesId + " could not be displayed");
+						}
+
 					}
 
 					i = index;

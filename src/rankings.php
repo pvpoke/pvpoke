@@ -100,15 +100,27 @@ switch($cup){
 		break;
 
 	case "battlefrontiergreat":
-		$league = 'Battle Frontier (Master)';
+		$league = 'Battle Frontier (Great)';
 		break;
 
 	case "battlefrontierultra":
-		$league = 'Battle Frontier (Master)';
+		$league = 'Battle Frontier (Ultra)';
 		break;
 
 	case "battlefrontiermaster":
 		$league = 'Battle Frontier (Master)';
+		break;
+
+	case "cascade":
+		$league = 'Battle Frontier (Cascade)';
+		break;
+
+	case "iridescent":
+		$league = 'Battle Frontier (Iridescent)';
+		break;
+
+	case "solstice":
+		$league = 'Battle Frontier (Solstice)';
 		break;
 
 	case "littlecatch":
