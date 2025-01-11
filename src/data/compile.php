@@ -16,7 +16,7 @@ $moves = json_decode(file_get_contents('gamemaster/moves.json'), true);
 $formats = json_decode(file_get_contents('gamemaster/formats.json'), true);
 //$cups = json_decode(file_get_contents('gamemaster/cups/archive/cups.json'), true);
 
-
+$base["timestamp"] = date("Y-m-d H:i:s", time());
 $base["pokemon"] = $pokemon;
 $base["moves"] = $moves;
 $base["formats"] = $formats;
