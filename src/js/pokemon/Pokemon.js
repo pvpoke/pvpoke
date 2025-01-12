@@ -409,7 +409,7 @@ function Pokemon(id, i, b){
 			floor = 1;
 		}
 
-		if((self.hasTag("legendary") || self.hasTag("ultrabeast")) && self.shadowType == "shadow"){
+		if((self.hasTag("legendary") || self.hasTag("ultrabeast")) && (self.shadowType == "shadow" || self.hasTag("shadow"))){
 			floor = 6;
 		}
 
