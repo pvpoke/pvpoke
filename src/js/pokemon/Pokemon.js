@@ -320,6 +320,13 @@ function Pokemon(id, i, b){
 		this.stats.atk = this.cpm * (this.baseStats.atk+this.ivs.atk);
 		this.stats.def = this.cpm * (this.baseStats.def+this.ivs.def);
 		this.stats.hp = Math.max(Math.floor(this.cpm * (this.baseStats.hp+this.ivs.hp)), 10);
+
+		// Set Shedinja hp to 10
+		
+		if (data.dex == 292) {
+			this.stats.hp = 10;
+		}
+		
 		this.hp = this.stats.hp;
 		this.startHp = this.hp;
 
