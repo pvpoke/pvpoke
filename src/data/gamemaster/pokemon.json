@@ -35330,8 +35330,8 @@
         "hp": 116
     },
     "types": ["flying", "none"],
-    "fastMoves": ["PECK", "AIR_SLASH"],
-    "chargedMoves": ["DRILL_PECK", "BRAVE_BIRD"],
+    "fastMoves": ["PECK", "AIR_SLASH", "SAND_ATTACK"],
+    "chargedMoves": ["DRILL_PECK", "PAYBACK"],
     "defaultIVs": {
         "cp500": [28.5, 7, 15, 15],
         "cp1500": [50, 15, 15, 15],
@@ -35354,8 +35354,8 @@
         "hp": 169
     },
     "types": ["flying", "none"],
-    "fastMoves": ["PECK", "AIR_SLASH"],
-    "chargedMoves": ["DRILL_PECK", "BRAVE_BIRD"],
+    "fastMoves": ["PECK", "AIR_SLASH", "SAND_ATTACK"],
+    "chargedMoves": ["DRILL_PECK", "PAYBACK"],
     "defaultIVs": {
         "cp500": [14.5, 4, 8, 10],
         "cp1500": [48.5, 14, 15, 14],
@@ -35380,8 +35380,8 @@
         "hp": 221
     },
     "types": ["flying", "steel"],
-    "fastMoves": ["STEEL_WING", "AIR_SLASH"],
-    "chargedMoves": ["DRILL_PECK", "BRAVE_BIRD"],
+    "fastMoves": ["STEEL_WING", "AIR_SLASH", "SAND_ATTACK"],
+    "chargedMoves": ["DRILL_PECK", "PAYBACK"],
     "defaultIVs": {
         "cp500": [8, 4, 6, 7],
         "cp1500": [23, 5, 8, 15],
