@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-01-16 04:55:26",
+    "timestamp": "2025-01-16 22:56:32",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -36246,7 +36246,7 @@
         },
         "types": ["flying", "none"],
         "fastMoves": ["PECK", "AIR_SLASH", "SAND_ATTACK"],
-        "chargedMoves": ["DRILL_PECK", "PAYBACK"],
+        "chargedMoves": ["SKY_ATTACK", "PAYBACK"],
         "defaultIVs": {
             "cp500": [28.5, 7, 15, 15],
             "cp1500": [50, 15, 15, 15],
@@ -36270,7 +36270,7 @@
         },
         "types": ["flying", "none"],
         "fastMoves": ["PECK", "AIR_SLASH", "SAND_ATTACK"],
-        "chargedMoves": ["DRILL_PECK", "PAYBACK"],
+        "chargedMoves": ["SKY_ATTACK", "PAYBACK"],
         "defaultIVs": {
             "cp500": [14.5, 4, 8, 10],
             "cp1500": [48.5, 14, 15, 14],
@@ -36296,7 +36296,8 @@
         },
         "types": ["flying", "steel"],
         "fastMoves": ["STEEL_WING", "AIR_SLASH", "SAND_ATTACK"],
-        "chargedMoves": ["DRILL_PECK", "PAYBACK"],
+        "chargedMoves": ["SKY_ATTACK", "PAYBACK", "IRON_HEAD"],
+        "eliteMoves": ["IRON_HEAD"],
         "defaultIVs": {
             "cp500": [8, 4, 6, 7],
             "cp1500": [23, 5, 8, 15],
