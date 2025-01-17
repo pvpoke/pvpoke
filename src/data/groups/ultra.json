@@ -50,6 +50,14 @@
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["DRAGON_CLAW", "SHADOW_SNEAK"]
 }, {
+    "speciesId": "gliscor",
+    "fastMove": "SAND_ATTACK",
+    "chargedMoves": ["AERIAL_ACE", "EARTHQUAKE"]
+}, {
+    "speciesId": "golisopod",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["AERIAL_ACE", "LIQUIDATION"]
+}, {
     "speciesId": "golurk_shadow",
     "fastMove": "MUD_SLAP",
     "chargedMoves": ["SHADOW_PUNCH", "DYNAMIC_PUNCH"],
@@ -87,6 +95,10 @@
     "speciesId": "pangoro",
     "fastMove": "KARATE_CHOP",
     "chargedMoves": ["CLOSE_COMBAT", "NIGHT_SLASH"]
+}, {
+    "speciesId": "poliwrath",
+    "fastMove": "COUNTER",
+    "chargedMoves": ["ICY_WIND", "SCALD"]
 }, {
     "speciesId": "primeape",
     "fastMove": "KARATE_CHOP",
@@ -132,15 +144,11 @@
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["BULLDOZE", "OUTRAGE"]
 }, {
-    "speciesId": "golisopod",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["AERIAL_ACE", "LIQUIDATION"]
-}, {
-    "speciesId": "poliwrath",
-    "fastMove": "COUNTER",
-    "chargedMoves": ["ICY_WIND", "SCALD"]
-}, {
-    "speciesId": "gliscor",
+    "speciesId": "corviknight",
     "fastMove": "SAND_ATTACK",
-    "chargedMoves": ["AERIAL_ACE", "EARTHQUAKE"]
+    "chargedMoves": ["SKY_ATTACK", "IRON_HEAD"]
+}, {
+    "speciesId": "corviknight",
+    "fastMove": "SAND_ATTACK",
+    "chargedMoves": ["SKY_ATTACK", "PAYBACK"]
 }]

@@ -43,6 +43,10 @@
     "fastMove": "PSYCHO_CUT",
     "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
 }, {
+    "speciesId": "dachsbun",
+    "fastMove": "CHARM",
+    "chargedMoves": ["PSYCHIC_FANGS", "BODY_SLAM"]
+}, {
     "speciesId": "dewgong",
     "fastMove": "ICE_SHARD",
     "chargedMoves": ["ICY_WIND", "DRILL_RUN"]
@@ -162,7 +166,11 @@
     "chargedMoves": ["BLAST_BURN", "THUNDER_PUNCH"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "dachsbun",
-    "fastMove": "CHARM",
-    "chargedMoves": ["PSYCHIC_FANGS", "BODY_SLAM"]
+    "speciesId": "corviknight",
+    "fastMove": "SAND_ATTACK",
+    "chargedMoves": ["SKY_ATTACK", "IRON_HEAD"]
+}, {
+    "speciesId": "corviknight",
+    "fastMove": "SAND_ATTACK",
+    "chargedMoves": ["SKY_ATTACK", "PAYBACK"]
 }]
