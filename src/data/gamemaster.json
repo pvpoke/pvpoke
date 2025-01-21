@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-01-20 03:37:14",
+    "timestamp": "2025-01-21 21:00:02",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -409,6 +409,31 @@
         }],
         "levelCap": 50
     }, {
+        "name": "littlejungle",
+        "title": "Little Jungle Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["normal", "grass", "electric", "poison", "ground", "flying", "bug", "dark"]
+        }],
+        "exclude": [{
+            "filterType": "id",
+            "values": ["shuckle", "shuckle_shadow", "smeargle", "gligar", "stunfisk_galarian", "genesect", "celebi", "hoopa", "hoopa_unbound", "aerodactyl_shadow", "zarude", "genesect_douse", "genesect_burn", "xerneas", "thundurus_therian", "yveltal", "meloetta_aria", "zacian", "zamazenta", "zacian_hero", "zamazenta_hero", "genesect_douse", "zarude", "hoopa_unbound", "genesect_shock", "tapu_koko", "tapu_lele", "tapu_bulu", "nihilego", "genesect_chill", "braviary_hisuian", "solgaleo", "lunala", "keldeo_ordinary", "avalugg_hisuian", "kyogre_primal", "groudon_primal", "kleavor", "guzzlord"]
+        }, {
+            "filterType": "tag",
+            "values": ["legendary", "mega"]
+        }],
+        "partySize": 3
+    }, {
+        "name": "love",
+        "title": "Love Cup",
+        "include": [{
+            "filterType": "id",
+            "includeShadows": 1,
+            "values": ["charmander", "charmander_shadow", "charmeleon", "charmeleon_shadow", "charizard", "charizard_shadow", "vileplume", "vileplume_shadow", "paras", "parasect", "krabby", "kingler", "voltorb", "electrode", "goldeen", "seaking", "jynx", "magmar", "magmar_shadow", "magikarp", "magikarp_shadow", "flareon", "ledyba", "ledian", "ariados", "yanma", "scizor", "scizor_shadow", "slugma", "magcargo", "octillery", "delibird", "porygon2", "porygon2_shadow", "magby", "torchic", "combusken", "blaziken", "wurmple", "medicham", "medicham_xl", "carvanha", "carvanha_shadow", "camerupt", "solrock", "corphish", "crawdaunt", "kricketot", "kricketune", "burmy_trash", "wormadam_trash", "magmortar", "magmortar_shadow", "porygon_z", "porygon_z_shadow", "rotom_wash", "tepig", "pignite", "emboar", "pansear", "simisear", "throh", "venipede", "scolipede", "krookodile", "darumaka", "darmanitan_standard", "dwebble", "crustle", "deerling", "accelgor", "pawniard", "bisharp", "braviary", "heatmor", "fennekin", "braixen", "delphox", "fletchling", "fletchinder", "talonflame", "clefairy", "clefable", "jigglypuff", "wigglytuff", "slowpoke", "slowpoke_shadow", "slowbro", "slowbro_shadow", "exeggcute", "exeggcute_shadow", "lickitung", "lickitung_xl", "happiny", "chansey", "mr.mime", "mimejr.", "porygon", "porygon_shadow", "cleffa", "igglybuff", "flaaffy", "flaaffy_shadow", "hoppip", "hoppip_shadow", "slowking", "slowking_shadow", "snubbull", "corsola", "smoochum", "miltank", "blissey", "whismur", "skitty", "milotic", "gorebyss", "luvdisc", "cherubi", "cherrim_sunny", "lickilicky", "audino", "alomomola", "scrafty", "castform_sunny", "mr_mime", "druddigon", "sylveon", "spritzee", "aromatisse", "musharna", "slowbro_galarian", "slowking_galarian", "slowpoke_galarian", "electrode_hisuian", "litten", "torracat", "incineroar", "lycanroc_midnight", "oricorio_baile", "oricorio_pau", "fomantis", "lurantis", "bewear", "stufful", "tyrantrum", "buzzwole"]
+        }],
+        "exclude": [],
+        "partySize": 3
+    }, {
         "name": "mega",
         "title": "All Pokemon",
         "include": [],
@@ -753,14 +778,14 @@
         "showMeta": true,
         "hideRankings": true
     }, {
-        "title": "Color Cup",
-        "cup": "color",
-        "cp": 1500,
-        "meta": "color",
+        "title": "Little Jungle Cup",
+        "cup": "littlejungle",
+        "cp": 500,
+        "meta": "littlejungle",
         "showCup": true,
         "showFormat": true,
         "showMeta": true,
-        "rules": ["Pok\u00e9mon must be at or below 1,500 CP to enter.", "Only Fire-, Water-, Grass-, and Electric-type Pok\u00e9mon are eligible."]
+        "rules": ["Pok\u00e9mon must be at or below 500 CP to enter.", "Only Normal-, Grass-, Electric-, Poison-, Ground-, Flying-, Bug-, and Dark-type Pok\u00e9mon are eligible.", "Gligar and Galarian Stunfisk are not allowed."]
     }, {
         "title": "Master League (Megas)",
         "cup": "mega",

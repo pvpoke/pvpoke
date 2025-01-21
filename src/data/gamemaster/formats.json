@@ -29,16 +29,17 @@
 		"hideRankings": true
 	},
 	{
-		"title": "Color Cup",
-		"cup": "color",
-		"cp": 1500,
-		"meta": "color",
+		"title": "Little Jungle Cup",
+		"cup": "littlejungle",
+		"cp": 500,
+		"meta": "littlejungle",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true,
 		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Fire-, Water-, Grass-, and Electric-type Pokémon are eligible."
+			"Pokémon must be at or below 500 CP to enter.",
+			"Only Normal-, Grass-, Electric-, Poison-, Ground-, Flying-, Bug-, and Dark-type Pokémon are eligible.",
+			"Gligar and Galarian Stunfisk are not allowed."
 		]
 	},
 	{
