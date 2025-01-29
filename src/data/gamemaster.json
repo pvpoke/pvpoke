@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-01-21 21:00:02",
+    "timestamp": "2025-01-29 21:58:48",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -374,6 +374,36 @@
         "partySize": 3,
         "presetOnly": true
     }, {
+        "name": "ingot",
+        "title": "Ingot",
+        "include": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["dark", "electric", "fighting", "fire", "poison", "steel"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["rotom_wash", "wormadam_sandy", "archen", "archeops", "qwilfish_hisuian", "arctibax", "tyrunt", "stunfisk_galarian", "toxapex", "tentacruel", "cloyster", "araquanid", "cradily", "amaura", "avalugg_hisuian", "armaldo", "lairon", "", "steelix", "nidoking", "nidoqueen", "piloswine", "ursaluna", "", "camerupt", "munchlax", "lileep"]
+        }],
+        "exclude": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["dragon", "ground", "rock", "water", "ghost", "fighting"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["gligar", "drapion", "vikavolt", "heliolisk", "morpeko_full_belly", "marowak_alolan", "grimer", "malamar", "salazzle", "nidorina", "qwilfish_hisuian", "pachirisu", "mandibuzz", "pangoro", "bellibolt"]
+        }, {
+            "filterType": "tag",
+            "name": "Tag",
+            "values": ["shadow", "mega"]
+        }],
+        "overrides": [],
+        "league": 1500,
+        "useDefaultMovesets": 1,
+        "levelCap": 50,
+        "includeLowStatProduct": true
+    }, {
         "name": "iridescent",
         "title": "Iridescent Cup",
         "include": [{
@@ -417,7 +447,7 @@
         }],
         "exclude": [{
             "filterType": "id",
-            "values": ["shuckle", "shuckle_shadow", "smeargle", "gligar", "stunfisk_galarian", "genesect", "celebi", "hoopa", "hoopa_unbound", "aerodactyl_shadow", "zarude", "genesect_douse", "genesect_burn", "xerneas", "thundurus_therian", "yveltal", "meloetta_aria", "zacian", "zamazenta", "zacian_hero", "zamazenta_hero", "genesect_douse", "zarude", "hoopa_unbound", "genesect_shock", "tapu_koko", "tapu_lele", "tapu_bulu", "nihilego", "genesect_chill", "braviary_hisuian", "solgaleo", "lunala", "keldeo_ordinary", "avalugg_hisuian", "kyogre_primal", "groudon_primal", "kleavor", "guzzlord"]
+            "values": ["shuckle", "shuckle_shadow", "smeargle", "genesect", "celebi", "hoopa", "hoopa_unbound", "aerodactyl_shadow", "zarude", "genesect_douse", "genesect_burn", "xerneas", "thundurus_therian", "yveltal", "meloetta_aria", "zacian", "zamazenta", "zacian_hero", "zamazenta_hero", "genesect_douse", "zarude", "hoopa_unbound", "genesect_shock", "tapu_koko", "tapu_lele", "tapu_bulu", "nihilego", "genesect_chill", "braviary_hisuian", "solgaleo", "lunala", "keldeo_ordinary", "avalugg_hisuian", "kyogre_primal", "groudon_primal", "kleavor", "guzzlord"]
         }, {
             "filterType": "tag",
             "values": ["legendary", "mega"]
@@ -839,6 +869,14 @@
         "cup": "pillar",
         "cp": 1500,
         "meta": "pillar",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Devon Ingot Cup",
+        "cup": "ingot",
+        "cp": 1500,
+        "meta": "ingot",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
