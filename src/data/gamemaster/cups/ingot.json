@@ -1,1 +1,31 @@
-{"name":"ingot","title":"Ingot","include":[{"filterType":"type","name":"Type","values":["dark","electric","fighting","fire","poison","steel"]},{"filterType":"id","name":"Species","values":["rotom_wash","wormadam_sandy","archen","archeops","qwilfish_hisuian","arctibax","tyrunt","stunfisk_galarian","toxapex","tentacruel","cloyster","araquanid","cradily","amaura","avalugg_hisuian","armaldo","lairon","","steelix","nidoking","nidoqueen","piloswine","ursaluna","","camerupt","munchlax","lileep"]}],"exclude":[{"filterType":"type","name":"Type","values":["dragon","ground","rock","water","ghost","fighting"]},{"filterType":"id","name":"Species","values":["gligar","drapion","vikavolt","heliolisk","morpeko_full_belly","marowak_alolan","grimer","malamar","salazzle","nidorina","qwilfish_hisuian","pachirisu","mandibuzz","pangoro","bellibolt"]},{"filterType":"tag","name":"Tag","values":["shadow","mega"]}],"overrides":[],"league":1500,"useDefaultMovesets":1,"levelCap":50,"includeLowStatProduct": true}
+{
+    "name": "ingot",
+    "title": "Ingot",
+    "include": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["dark", "electric", "fighting", "fire", "poison", "steel"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["rotom_wash", "wormadam_sandy", "archen", "archeops", "qwilfish_hisuian", "arctibax", "tyrunt", "stunfisk_galarian", "toxapex", "tentacruel", "cloyster", "araquanid", "cradily", "amaura", "avalugg_hisuian", "armaldo", "lairon", "", "steelix", "nidoking", "nidoqueen", "piloswine", "ursaluna", "", "camerupt", "munchlax", "lileep"]
+    }],
+    "exclude": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["dragon", "ground", "rock", "water", "ghost", "fighting"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["gligar", "drapion", "vikavolt", "heliolisk", "morpeko_full_belly", "marowak_alolan", "grimer", "malamar", "salazzle", "nidorina", "qwilfish_hisuian", "pachirisu", "mandibuzz", "pangoro", "bellibolt", "corviknight", "grafaiai"]
+    }, {
+        "filterType": "tag",
+        "name": "Tag",
+        "values": ["shadow", "mega"]
+    }],
+    "overrides": [],
+    "league": 1500,
+    "useDefaultMovesets": 1,
+    "levelCap": 50,
+    "includeLowStatProduct": true
+}
