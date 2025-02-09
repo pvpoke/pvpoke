@@ -28102,7 +28102,8 @@
     },
     "types": ["bug", "steel"],
     "fastMoves": ["COUNTER", "BUG_BITE"],
-    "chargedMoves": ["MEGAHORN", "ACID_SPRAY", "DRILL_RUN", "AERIAL_ACE"],
+    "chargedMoves": ["MEGAHORN", "ACID_SPRAY", "DRILL_RUN", "AERIAL_ACE", "RAZOR_SHELL"],
+	"eliteMoves": ["RAZOR_SHELL"],
     "defaultIVs": {
         "cp500": [6.5, 7, 13, 15],
         "cp1500": [19.5, 4, 11, 10],
@@ -28129,7 +28130,8 @@
     },
     "types": ["bug", "steel"],
     "fastMoves": ["COUNTER", "BUG_BITE"],
-    "chargedMoves": ["MEGAHORN", "ACID_SPRAY", "DRILL_RUN", "AERIAL_ACE"],
+	"chargedMoves": ["MEGAHORN", "ACID_SPRAY", "DRILL_RUN", "AERIAL_ACE", "RAZOR_SHELL"],
+	"eliteMoves": ["RAZOR_SHELL"],
     "defaultIVs": {
         "cp500": [6.5, 7, 13, 15],
         "cp1500": [19.5, 4, 11, 10],
@@ -29089,7 +29091,8 @@
     },
     "types": ["bug", "none"],
     "fastMoves": ["ACID", "INFESTATION", "WATER_SHURIKEN"],
-    "chargedMoves": ["BUG_BUZZ", "ACID_SPRAY", "SIGNAL_BEAM", "FOCUS_BLAST"],
+    "chargedMoves": ["BUG_BUZZ", "ACID_SPRAY", "SIGNAL_BEAM", "FOCUS_BLAST", "ENERGY_BALL"],
+	"eliteMoves": ["ENERGY_BALL"],
     "defaultIVs": {
         "cp500": [7.5, 6, 15, 15],
         "cp1500": [22.5, 6, 13, 15],
@@ -29116,7 +29119,8 @@
     },
     "types": ["bug", "none"],
     "fastMoves": ["ACID", "INFESTATION", "WATER_SHURIKEN"],
-    "chargedMoves": ["BUG_BUZZ", "ACID_SPRAY", "SIGNAL_BEAM", "FOCUS_BLAST"],
+	"chargedMoves": ["BUG_BUZZ", "ACID_SPRAY", "SIGNAL_BEAM", "FOCUS_BLAST", "ENERGY_BALL"],
+	"eliteMoves": ["ENERGY_BALL"],
     "defaultIVs": {
         "cp500": [7.5, 6, 15, 15],
         "cp1500": [22.5, 6, 13, 15],
@@ -30008,7 +30012,7 @@
         "hp": 245
     },
     "types": ["dragon", "ice"],
-    "fastMoves": ["DRAGON_BREATH", "STEEL_WING"],
+    "fastMoves": ["DRAGON_BREATH", "STEEL_WING", "ICE_FANG"],
     "chargedMoves": ["DRAGON_PULSE", "BLIZZARD", "ANCIENT_POWER", "FOCUS_BLAST"],
     "defaultIVs": {
         "cp500": [4, 13, 14, 14],
