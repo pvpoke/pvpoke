@@ -29,20 +29,6 @@
 		"hideRankings": true
 	},
 	{
-		"title": "Little Jungle Cup",
-		"cup": "littlejungle",
-		"cp": 500,
-		"meta": "littlejungle",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 500 CP to enter.",
-			"Only Normal-, Grass-, Electric-, Poison-, Ground-, Flying-, Bug-, and Dark-type Pokémon are eligible.",
-			"Gligar and Galarian Stunfisk are not allowed."
-		]
-	},
-	{
 		"title": "Love Cup",
 		"cup": "love",
 		"cp": 1500,

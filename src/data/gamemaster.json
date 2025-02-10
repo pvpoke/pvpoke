@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-02-09 04:10:13",
+    "timestamp": "2025-02-10 21:42:05",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -807,15 +807,6 @@
         "showFormat": false,
         "showMeta": true,
         "hideRankings": true
-    }, {
-        "title": "Little Jungle Cup",
-        "cup": "littlejungle",
-        "cp": 500,
-        "meta": "littlejungle",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true,
-        "rules": ["Pok\u00e9mon must be at or below 500 CP to enter.", "Only Normal-, Grass-, Electric-, Poison-, Ground-, Flying-, Bug-, and Dark-type Pok\u00e9mon are eligible.", "Gligar and Galarian Stunfisk are not allowed."]
     }, {
         "title": "Love Cup",
         "cup": "love",
@@ -35305,12 +35296,13 @@
         "chargedMoves": ["POWER_WHIP", "SHADOW_BALL", "HEAVY_SLAM"],
         "defaultIVs": {
             "cp500": [6.5, 6, 11, 10],
-            "cp1500": [19, 5, 14, 7],
+            "cp1500": [20, 1, 4, 4],
             "cp2500": [32.5, 5, 15, 11]
         },
+        "levelFloor": 20,
         "buddyDistance": 5,
         "thirdMoveCost": 50000,
-        "released": false
+        "released": true
     }, {
         "dex": 782,
         "speciesName": "Jangmo-o",

@@ -407,6 +407,10 @@ var GameMaster = (function () {
 					defaultIVs["cp1500"] = [22, 3, 13, 12];
 				}
 
+				if(pokemon.speciesId == "dhelmise"){
+					defaultIVs["cp1500"] = [20, 1, 4, 4];
+				}
+
 				if(pokemon.speciesId == "medicham"){
 					defaultIVs["cp1500"] = [49, 7, 15, 14];
 				}
