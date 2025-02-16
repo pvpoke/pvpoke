@@ -33,7 +33,7 @@ const InterfaceMaster = (function () {
 
 	return {
 		getInstance: () => {
-			instance ??= new InterfaceMaster();
+			instance = instance || new InterfaceMaster();
 			return instance;
 		}
 	}
