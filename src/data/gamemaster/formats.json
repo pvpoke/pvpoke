@@ -46,9 +46,13 @@
 		"cup": "mega",
 		"cp": 10000,
 		"meta": "mastermega",
-		"showCup": false,
-		"showFormat": false,
-		"showMeta": true
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"No CP limit.",
+			"Mega-Evolved Pokémon are allowed (one per team)."
+		]
 	},
 	{
 		"title": "P!P Championship Series",

@@ -104,6 +104,14 @@
     "fastMove": "CHARM",
     "chargedMoves": ["ANCIENT_POWER", "AURA_SPHERE"]
 }, {
+    "speciesId": "ursaluna",
+    "fastMove": "TACKLE",
+    "chargedMoves": ["ICE_PUNCH", "HIGH_HORSEPOWER"]
+}, {
+    "speciesId": "ursaluna",
+    "fastMove": "TACKLE",
+    "chargedMoves": ["SWIFT", "HIGH_HORSEPOWER"]
+}, {
     "speciesId": "xerneas",
     "fastMove": "GEOMANCY",
     "chargedMoves": ["CLOSE_COMBAT", "MOONBLAST"]
@@ -128,11 +136,7 @@
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["BULLDOZE", "OUTRAGE"]
 }, {
-    "speciesId": "ursaluna",
-    "fastMove": "TACKLE",
-    "chargedMoves": ["ICE_PUNCH", "HIGH_HORSEPOWER"]
-}, {
-    "speciesId": "ursaluna",
-    "fastMove": "TACKLE",
-    "chargedMoves": ["SWIFT", "HIGH_HORSEPOWER"]
+    "speciesId": "enamorus_incarnate",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["FLY", "DAZZLING_GLEAM"]
 }]

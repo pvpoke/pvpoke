@@ -29992,7 +29992,7 @@
     },
     "types": ["dragon", "ice"],
     "fastMoves": ["DRAGON_TAIL", "SHADOW_CLAW"],
-    "chargedMoves": ["IRON_HEAD", "BLIZZARD", "STONE_EDGE", "OUTRAGE"],
+    "chargedMoves": ["IRON_HEAD", "BLIZZARD", "STONE_EDGE", "OUTRAGE", "FUSION_BOLT"],
     "defaultIVs": {
         "cp500": [4, 13, 14, 14],
         "cp1500": [12, 4, 9, 13],
@@ -30013,7 +30013,7 @@
     },
     "types": ["dragon", "ice"],
     "fastMoves": ["DRAGON_BREATH", "STEEL_WING", "ICE_FANG"],
-    "chargedMoves": ["DRAGON_PULSE", "BLIZZARD", "ANCIENT_POWER", "FOCUS_BLAST"],
+    "chargedMoves": ["DRAGON_PULSE", "BLIZZARD", "ANCIENT_POWER", "FOCUS_BLAST", "FUSION_FLARE"],
     "defaultIVs": {
         "cp500": [4, 13, 14, 14],
         "cp1500": [12, 4, 9, 13],

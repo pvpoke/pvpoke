@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-02-10 21:42:05",
+    "timestamp": "2025-02-16 21:30:14",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -821,9 +821,10 @@
         "cup": "mega",
         "cp": 10000,
         "meta": "mastermega",
-        "showCup": false,
-        "showFormat": false,
-        "showMeta": true
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true,
+        "rules": ["No CP limit.", "Mega-Evolved Pok\u00e9mon are allowed (one per team)."]
     }, {
         "title": "P!P Championship Series",
         "cup": "great",
@@ -30964,7 +30965,7 @@
         },
         "types": ["dragon", "ice"],
         "fastMoves": ["DRAGON_TAIL", "SHADOW_CLAW"],
-        "chargedMoves": ["IRON_HEAD", "BLIZZARD", "STONE_EDGE", "OUTRAGE"],
+        "chargedMoves": ["IRON_HEAD", "BLIZZARD", "STONE_EDGE", "OUTRAGE", "FUSION_BOLT"],
         "defaultIVs": {
             "cp500": [4, 13, 14, 14],
             "cp1500": [12, 4, 9, 13],
@@ -30985,7 +30986,7 @@
         },
         "types": ["dragon", "ice"],
         "fastMoves": ["DRAGON_BREATH", "STEEL_WING", "ICE_FANG"],
-        "chargedMoves": ["DRAGON_PULSE", "BLIZZARD", "ANCIENT_POWER", "FOCUS_BLAST"],
+        "chargedMoves": ["DRAGON_PULSE", "BLIZZARD", "ANCIENT_POWER", "FOCUS_BLAST", "FUSION_FLARE"],
         "defaultIVs": {
             "cp500": [4, 13, 14, 14],
             "cp1500": [12, 4, 9, 13],
