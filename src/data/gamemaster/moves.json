@@ -932,6 +932,19 @@
     "cooldown": 500,
     "archetype": "General"
 }, {
+    "moveId": "FREEZE_SHOCK",
+    "name": "Freeze Shock",
+	"abbreviation": "FSh",
+    "type": "ice",
+    "power": 120,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": ".3",
+    "archetype": "Nuke"
+}, {
     "moveId": "FRENZY_PLANT",
     "name": "Frenzy Plant",
     "type": "grass",
@@ -1347,6 +1360,19 @@
     "energyGain": 0,
     "cooldown": 500,
     "archetype": "High Energy"
+}, {
+    "moveId": "ICE_BURN",
+    "name": "Ice Burn",
+	"abbreviation": "IBu",
+    "type": "ice",
+    "power": 120,
+    "energy": 60,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": ".3",
+    "archetype": "Nuke"
 }, {
     "moveId": "ICE_FANG",
     "name": "Ice Fang",
