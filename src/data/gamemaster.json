@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-02-16 21:30:14",
+    "timestamp": "2025-02-18 04:59:44",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -72,10 +72,10 @@
                 "pokemon": ["gallade_mega", "scizor_mega", "zygarde_complete"]
             }, {
                 "points": 6,
-                "pokemon": ["charizard_mega_y", "gengar_mega", "necrozma_dusk_mane", "palkia_origin"]
+                "pokemon": ["charizard_mega_y", "gengar_mega", "palkia_origin"]
             }, {
                 "points": 5,
-                "pokemon": ["dialga_origin", "latias_mega", "necrozma_dawn_wings", "rhyperior", "solgaleo", "steelix_mega"]
+                "pokemon": ["dialga_origin", "latias_mega", "necrozma_dawn_wings", "necrozma_dusk_mane", "rhyperior", "solgaleo", "steelix_mega"]
             }, {
                 "points": 4,
                 "pokemon": ["aggron_mega", "dialga", "heracross_mega", "ho_oh", "landorus_therian", "yveltal", "zacian_hero"]
@@ -35765,7 +35765,7 @@
         },
         "tags": ["ultrabeast"],
         "searchPriority": 3,
-        "nicknames": ["dawn"],
+        "nicknames": ["dawn", "dw"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -35787,8 +35787,8 @@
             "cp2500": [22.5, 5, 15, 7]
         },
         "tags": ["ultrabeast"],
-        "nicknames": ["dusk"],
-        "searchPriority": 3,
+        "nicknames": ["dusk", "dm"],
+        "searchPriority": 10,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true

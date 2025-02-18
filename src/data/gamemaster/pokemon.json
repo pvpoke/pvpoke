@@ -34792,7 +34792,7 @@
     },
     "tags": ["ultrabeast"],
     "searchPriority": 3,
-    "nicknames": ["dawn"],
+    "nicknames": ["dawn", "dw"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true
@@ -34814,8 +34814,8 @@
         "cp2500": [22.5, 5, 15, 7]
     },
     "tags": ["ultrabeast"],
-    "nicknames": ["dusk"],
-    "searchPriority": 3,
+    "nicknames": ["dusk", "dm"],
+    "searchPriority": 10,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true
