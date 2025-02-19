@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-02-18 15:07:27",
+    "timestamp": "2025-02-19 16:51:15",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -30975,7 +30975,7 @@
         "tags": ["legendary"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": true
     }, {
         "dex": 646,
         "speciesId": "kyurem_white",
@@ -30997,7 +30997,7 @@
         "tags": ["legendary"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": true
     }, {
         "dex": 647,
         "speciesId": "keldeo_ordinary",
@@ -42557,6 +42557,7 @@
     }, {
         "moveId": "FUSION_FLARE",
         "name": "Fusion Flare",
+        "abbreviation": "FuF",
         "type": "fire",
         "power": 90,
         "energy": 45,
