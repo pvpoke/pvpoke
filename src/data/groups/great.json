@@ -142,6 +142,10 @@
     "fastMove": "VINE_WHIP",
     "chargedMoves": ["FRENZY_PLANT", "AERIAL_ACE"]
 }, {
+    "speciesId": "steelix",
+    "fastMove": "THUNDER_FANG",
+    "chargedMoves": ["PSYCHIC_FANGS", "BREAKING_SWIPE"]
+}, {
     "speciesId": "stunfisk",
     "fastMove": "THUNDER_SHOCK",
     "chargedMoves": ["MUD_BOMB", "DISCHARGE"]
@@ -158,7 +162,11 @@
     "fastMove": "CHARM",
     "chargedMoves": ["ICY_WIND", "SWIFT"]
 }, {
-    "speciesId": "steelix",
-    "fastMove": "THUNDER_FANG",
-    "chargedMoves": ["PSYCHIC_FANGS", "BREAKING_SWIPE"]
+    "speciesId": "virizion",
+    "fastMove": "DOUBLE_KICK",
+    "chargedMoves": ["LEAF_BLADE", "SACRED_SWORD"]
+}, {
+    "speciesId": "cobalion",
+    "fastMove": "DOUBLE_KICK",
+    "chargedMoves": ["SACRED_SWORD", "STONE_EDGE"]
 }]
