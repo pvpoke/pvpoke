@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-02-19 16:51:15",
+    "timestamp": "2025-02-26 03:45:57",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -804,27 +804,8 @@
         "cp": 10000,
         "meta": "premiermaster",
         "showCup": true,
-        "showFormat": false,
-        "showMeta": true,
-        "hideRankings": true
-    }, {
-        "title": "Love Cup",
-        "cup": "love",
-        "cp": 1500,
-        "meta": "love",
-        "showCup": true,
         "showFormat": true,
-        "showMeta": true,
-        "rules": ["Pok\u00e9mon must be at or below 1500 CP to enter.", "Only red- or pink-colored Pok\u00e9mon are eligible."]
-    }, {
-        "title": "Master League (Megas)",
-        "cup": "mega",
-        "cp": 10000,
-        "meta": "mastermega",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true,
-        "rules": ["No CP limit.", "Mega-Evolved Pok\u00e9mon are allowed (one per team)."]
+        "showMeta": true
     }, {
         "title": "P!P Championship Series",
         "cup": "great",
