@@ -24,30 +24,7 @@
 		"cp": 10000,
 		"meta": "premiermaster",
 		"showCup": true,
-		"showFormat": false,
-		"showMeta": true,
-		"hideRankings": true
-	},
-	{
-		"title": "Love Cup",
-		"cup": "love",
-		"cp": 1500,
-		"meta": "love",
-		"showCup": true,
 		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 1500 CP to enter.",
-			"Only red- or pink-colored Pokémon are eligible."
-		]
-	},
-	{
-		"title": "Master League (Megas)",
-		"cup": "mega",
-		"cp": 10000,
-		"meta": "mastermega",
-		"showCup": false,
-		"showFormat": false,
 		"showMeta": true
 	},
 	{

@@ -29992,7 +29992,8 @@
     },
     "types": ["dragon", "ice"],
     "fastMoves": ["DRAGON_TAIL", "SHADOW_CLAW"],
-    "chargedMoves": ["IRON_HEAD", "BLIZZARD", "STONE_EDGE", "OUTRAGE"],
+    "chargedMoves": ["IRON_HEAD", "BLIZZARD", "STONE_EDGE", "OUTRAGE", "FUSION_BOLT", "FREEZE_SHOCK"],
+	"legacyMoves": ["FREEZE_SHOCK"],
     "defaultIVs": {
         "cp500": [4, 13, 14, 14],
         "cp1500": [12, 4, 9, 13],
@@ -30001,7 +30002,7 @@
     "tags": ["legendary"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false
+    "released": true
 }, {
     "dex": 646,
     "speciesId": "kyurem_white",
@@ -30013,7 +30014,8 @@
     },
     "types": ["dragon", "ice"],
     "fastMoves": ["DRAGON_BREATH", "STEEL_WING", "ICE_FANG"],
-    "chargedMoves": ["DRAGON_PULSE", "BLIZZARD", "ANCIENT_POWER", "FOCUS_BLAST"],
+    "chargedMoves": ["DRAGON_PULSE", "BLIZZARD", "ANCIENT_POWER", "FOCUS_BLAST", "FUSION_FLARE", "ICE_BURN"],
+	"legacyMoves": ["ICE_BURN"],
     "defaultIVs": {
         "cp500": [4, 13, 14, 14],
         "cp1500": [12, 4, 9, 13],
@@ -30022,7 +30024,7 @@
     "tags": ["legendary"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false
+    "released": true
 }, {
     "dex": 647,
     "speciesId": "keldeo_ordinary",
@@ -34792,7 +34794,7 @@
     },
     "tags": ["ultrabeast"],
     "searchPriority": 3,
-    "nicknames": ["dawn"],
+    "nicknames": ["dawn", "dw"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true
@@ -34814,8 +34816,8 @@
         "cp2500": [22.5, 5, 15, 7]
     },
     "tags": ["ultrabeast"],
-    "nicknames": ["dusk"],
-    "searchPriority": 3,
+    "nicknames": ["dusk", "dm"],
+    "searchPriority": 10,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true

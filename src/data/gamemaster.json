@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-02-10 21:42:05",
+    "timestamp": "2025-02-26 03:45:57",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -72,10 +72,10 @@
                 "pokemon": ["gallade_mega", "scizor_mega", "zygarde_complete"]
             }, {
                 "points": 6,
-                "pokemon": ["charizard_mega_y", "gengar_mega", "necrozma_dusk_mane", "palkia_origin"]
+                "pokemon": ["charizard_mega_y", "gengar_mega", "palkia_origin"]
             }, {
                 "points": 5,
-                "pokemon": ["dialga_origin", "latias_mega", "necrozma_dawn_wings", "rhyperior", "solgaleo", "steelix_mega"]
+                "pokemon": ["dialga_origin", "latias_mega", "necrozma_dawn_wings", "necrozma_dusk_mane", "rhyperior", "solgaleo", "steelix_mega"]
             }, {
                 "points": 4,
                 "pokemon": ["aggron_mega", "dialga", "heracross_mega", "ho_oh", "landorus_therian", "yveltal", "zacian_hero"]
@@ -804,25 +804,7 @@
         "cp": 10000,
         "meta": "premiermaster",
         "showCup": true,
-        "showFormat": false,
-        "showMeta": true,
-        "hideRankings": true
-    }, {
-        "title": "Love Cup",
-        "cup": "love",
-        "cp": 1500,
-        "meta": "love",
-        "showCup": true,
         "showFormat": true,
-        "showMeta": true,
-        "rules": ["Pok\u00e9mon must be at or below 1500 CP to enter.", "Only red- or pink-colored Pok\u00e9mon are eligible."]
-    }, {
-        "title": "Master League (Megas)",
-        "cup": "mega",
-        "cp": 10000,
-        "meta": "mastermega",
-        "showCup": false,
-        "showFormat": false,
         "showMeta": true
     }, {
         "title": "P!P Championship Series",
@@ -30964,7 +30946,8 @@
         },
         "types": ["dragon", "ice"],
         "fastMoves": ["DRAGON_TAIL", "SHADOW_CLAW"],
-        "chargedMoves": ["IRON_HEAD", "BLIZZARD", "STONE_EDGE", "OUTRAGE"],
+        "chargedMoves": ["IRON_HEAD", "BLIZZARD", "STONE_EDGE", "OUTRAGE", "FUSION_BOLT", "FREEZE_SHOCK"],
+        "legacyMoves": ["FREEZE_SHOCK"],
         "defaultIVs": {
             "cp500": [4, 13, 14, 14],
             "cp1500": [12, 4, 9, 13],
@@ -30973,7 +30956,7 @@
         "tags": ["legendary"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": true
     }, {
         "dex": 646,
         "speciesId": "kyurem_white",
@@ -30985,7 +30968,8 @@
         },
         "types": ["dragon", "ice"],
         "fastMoves": ["DRAGON_BREATH", "STEEL_WING", "ICE_FANG"],
-        "chargedMoves": ["DRAGON_PULSE", "BLIZZARD", "ANCIENT_POWER", "FOCUS_BLAST"],
+        "chargedMoves": ["DRAGON_PULSE", "BLIZZARD", "ANCIENT_POWER", "FOCUS_BLAST", "FUSION_FLARE", "ICE_BURN"],
+        "legacyMoves": ["ICE_BURN"],
         "defaultIVs": {
             "cp500": [4, 13, 14, 14],
             "cp1500": [12, 4, 9, 13],
@@ -30994,7 +30978,7 @@
         "tags": ["legendary"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": true
     }, {
         "dex": 647,
         "speciesId": "keldeo_ordinary",
@@ -35764,7 +35748,7 @@
         },
         "tags": ["ultrabeast"],
         "searchPriority": 3,
-        "nicknames": ["dawn"],
+        "nicknames": ["dawn", "dw"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -35786,8 +35770,8 @@
             "cp2500": [22.5, 5, 15, 7]
         },
         "tags": ["ultrabeast"],
-        "nicknames": ["dusk"],
-        "searchPriority": 3,
+        "nicknames": ["dusk", "dm"],
+        "searchPriority": 10,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true
@@ -42493,6 +42477,19 @@
         "cooldown": 500,
         "archetype": "General"
     }, {
+        "moveId": "FREEZE_SHOCK",
+        "name": "Freeze Shock",
+        "abbreviation": "FSh",
+        "type": "ice",
+        "power": 120,
+        "energy": 60,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [-1, 0],
+        "buffTarget": "opponent",
+        "buffApplyChance": ".3",
+        "archetype": "Nuke"
+    }, {
         "moveId": "FRENZY_PLANT",
         "name": "Frenzy Plant",
         "type": "grass",
@@ -42541,6 +42538,7 @@
     }, {
         "moveId": "FUSION_FLARE",
         "name": "Fusion Flare",
+        "abbreviation": "FuF",
         "type": "fire",
         "power": 90,
         "energy": 45,
@@ -42908,6 +42906,19 @@
         "energyGain": 0,
         "cooldown": 500,
         "archetype": "High Energy"
+    }, {
+        "moveId": "ICE_BURN",
+        "name": "Ice Burn",
+        "abbreviation": "IBu",
+        "type": "ice",
+        "power": 120,
+        "energy": 60,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [0, -1],
+        "buffTarget": "opponent",
+        "buffApplyChance": ".3",
+        "archetype": "Nuke"
     }, {
         "moveId": "ICE_FANG",
         "name": "Ice Fang",
