@@ -7889,8 +7889,8 @@
         "hp": 277
     },
     "types": ["water", "ice"],
-    "fastMoves": ["FROST_BREATH", "ICE_SHARD", "WATER_GUN"],
-    "chargedMoves": ["BLIZZARD", "DRAGON_PULSE", "HYDRO_PUMP", "ICE_BEAM", "SURF", "SKULL_BASH"],
+    "fastMoves": ["FROST_BREATH", "ICE_SHARD", "WATER_GUN", "PSYWAVE"],
+    "chargedMoves": ["BLIZZARD", "DRAGON_PULSE", "HYDRO_PUMP", "ICE_BEAM", "SURF", "SKULL_BASH", "SPARKLING_ARIA"],
     "defaultIVs": {
         "cp500": [7, 10, 14, 14],
         "cp1500": [21.5, 4, 10, 13],
@@ -18022,7 +18022,7 @@
         "hp": 190
     },
     "types": ["ice", "none"],
-    "fastMoves": ["FROST_BREATH", "ICE_SHARD"],
+    "fastMoves": ["FROST_BREATH", "ICE_SHARD", "ROLLOUT"],
     "chargedMoves": ["AVALANCHE", "GYRO_BALL", "SHADOW_BALL"],
     "defaultIVs": {
         "cp500": [9, 6, 9, 14],
@@ -18048,7 +18048,7 @@
         "hp": 190
     },
     "types": ["ice", "none"],
-    "fastMoves": ["FROST_BREATH", "ICE_SHARD"],
+    "fastMoves": ["FROST_BREATH", "ICE_SHARD", "ROLLOUT"],
     "chargedMoves": ["AVALANCHE", "GYRO_BALL", "SHADOW_BALL"],
     "defaultIVs": {
         "cp500": [6, 4, 13, 8],
@@ -18069,7 +18069,7 @@
         "hp": 190
     },
     "types": ["ice", "none"],
-    "fastMoves": ["FROST_BREATH", "ICE_SHARD"],
+    "fastMoves": ["FROST_BREATH", "ICE_SHARD", "ROLLOUT"],
     "chargedMoves": ["AVALANCHE", "GYRO_BALL", "SHADOW_BALL"],
     "defaultIVs": {
         "cp500": [9, 6, 9, 14],
@@ -32991,8 +32991,8 @@
         "hp": 155
     },
     "types": ["bug", "fairy"],
-    "fastMoves": ["FAIRY_WIND", "STRUGGLE_BUG"],
-    "chargedMoves": ["DAZZLING_GLEAM", "BUG_BUZZ", "DRAINING_KISS", "CHARM"],
+    "fastMoves": ["CHARM", "FAIRY_WIND", "STRUGGLE_BUG"],
+    "chargedMoves": ["DAZZLING_GLEAM", "BUG_BUZZ", "DRAINING_KISS"],
     "defaultIVs": {
         "cp500": [8.5, 6, 14, 11],
         "cp1500": [25.5, 5, 12, 12],
