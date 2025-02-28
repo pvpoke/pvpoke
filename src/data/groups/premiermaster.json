@@ -7,6 +7,10 @@
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["ROCK_SLIDE", "ICY_WIND"]
 }, {
+    "speciesId": "baxcalibur",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["AVALANCHE", "DRAGON_CLAW"]
+}, {
     "speciesId": "dragapult",
     "fastMove": "ASTONISH",
     "chargedMoves": ["BREAKING_SWIPE", "SHADOW_BALL"]
@@ -30,7 +34,7 @@
 }, {
     "speciesId": "florges",
     "fastMove": "FAIRY_WIND",
-    "chargedMoves": ["DISARMING_VOICE", "MOONBLAST"]
+    "chargedMoves": ["DISARMING_VOICE", "TRAILBLAZE"]
 }, {
     "speciesId": "garchomp",
     "fastMove": "MUD_SHOT",
@@ -38,7 +42,7 @@
 }, {
     "speciesId": "golisopod",
     "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["AERIAL_ACE", "LIQUIDATION"]
+    "chargedMoves": ["AERIAL_ACE", "AQUA_JET"]
 }, {
     "speciesId": "goodra",
     "fastMove": "DRAGON_BREATH",
@@ -62,7 +66,7 @@
 }, {
     "speciesId": "mamoswine",
     "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["AVALANCHE", "HIGH_HORSEPOWER"]
+    "chargedMoves": ["ICICLE_SPEAR", "HIGH_HORSEPOWER"]
 }, {
     "speciesId": "metagross",
     "fastMove": "BULLET_PUNCH",
@@ -80,9 +84,18 @@
     "fastMove": "MUD_SLAP",
     "chargedMoves": ["BREAKING_SWIPE", "ROCK_WRECKER"]
 }, {
+    "speciesId": "rhyperior_shadow",
+    "fastMove": "MUD_SLAP",
+    "chargedMoves": ["ROCK_WRECKER", "BREAKING_SWIPE"],
+    "shadowType": "shadow"
+}, {
     "speciesId": "skeledirge",
     "fastMove": "INCINERATE",
     "chargedMoves": ["SHADOW_BALL", "DISARMING_VOICE"]
+}, {
+    "speciesId": "snorlax",
+    "fastMove": "LICK",
+    "chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
 }, {
     "speciesId": "swampert",
     "fastMove": "MUD_SHOT",
@@ -90,27 +103,9 @@
 }, {
     "speciesId": "togekiss",
     "fastMove": "CHARM",
-    "chargedMoves": ["ANCIENT_POWER", "FLAMETHROWER"]
+    "chargedMoves": ["PSYSHOCK", "FLAMETHROWER"]
 }, {
     "speciesId": "ursaluna",
     "fastMove": "TACKLE",
     "chargedMoves": ["SWIFT", "HIGH_HORSEPOWER"]
-}, {
-    "speciesId": "rhyperior_shadow",
-    "fastMove": "MUD_SLAP",
-    "chargedMoves": ["ROCK_WRECKER", "BREAKING_SWIPE"],
-    "shadowType": "shadow"
-}, {
-    "speciesId": "snorlax",
-    "fastMove": "LICK",
-    "chargedMoves": ["BODY_SLAM", "SUPER_POWER"]
-}, {
-    "speciesId": "snorlax",
-    "fastMove": "LICK",
-    "chargedMoves": ["BODY_SLAM", "SUPER_POWER"],
-    "shadowType": "shadow"
-}, {
-    "speciesId": "baxcalibur",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["AVALANCHE", "DRAGON_CLAW"]
 }]
