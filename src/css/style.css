@@ -201,8 +201,8 @@ footer a.domz-link {
 #main {
   max-width: 800px;
   margin: auto;
-  padding: 60px 10px 10px 10px;
   border-radius: 12px;
+  padding: 90px 10px 10px 10px;
 }
 #main > h1 {
   margin: 0;
