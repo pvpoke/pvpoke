@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-02-26 03:45:57",
+    "timestamp": "2025-02-28 15:40:13",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -791,20 +791,12 @@
         "showMeta": false,
         "hideRankings": true
     }, {
-        "title": "ML Overused",
-        "cup": "overused",
-        "cp": 10000,
-        "meta": "overused",
-        "showCup": false,
-        "showFormat": false,
-        "showMeta": true
-    }, {
         "title": "Master Premier",
         "cup": "premier",
         "cp": 10000,
         "meta": "premiermaster",
         "showCup": true,
-        "showFormat": true,
+        "showFormat": false,
         "showMeta": true
     }, {
         "title": "P!P Championship Series",
@@ -813,70 +805,6 @@
         "meta": "championshipseries",
         "showCup": false,
         "showFormat": false,
-        "showMeta": true
-    }, {
-        "title": "Battle Frontier (Cascade)",
-        "cup": "cascade",
-        "cp": 1500,
-        "meta": "cascade",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Battle Frontier (Iridescent)",
-        "cup": "iridescent",
-        "cp": 1500,
-        "meta": "iridescent",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Battle Frontier (Solstice)",
-        "cup": "solstice",
-        "cp": 2500,
-        "meta": "solstice",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Battle Frontier (Master)",
-        "cup": "battlefrontiermaster",
-        "cp": 10000,
-        "meta": "battlefrontiermaster",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Devon Pillar Cup",
-        "cup": "pillar",
-        "cp": 1500,
-        "meta": "pillar",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Devon Ingot Cup",
-        "cup": "ingot",
-        "cp": 1500,
-        "meta": "ingot",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Devon Tundra Cup (Gymbreakers Remix V2)",
-        "cup": "tundraremixv2",
-        "cp": 1500,
-        "meta": "tundraremixv2",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Gymbreakers Invitational",
-        "cup": "gbinvitational",
-        "cp": 1500,
-        "meta": "gbinvitational",
-        "showCup": true,
-        "showFormat": true,
         "showMeta": true
     }, {
         "title": "Little",
@@ -1473,7 +1401,7 @@
             "hp": 188
         },
         "types": ["water", "none"],
-        "fastMoves": ["BITE", "WATER_GUN"],
+        "fastMoves": ["BITE", "WATER_GUN", "ROLLOUT"],
         "chargedMoves": ["FLASH_CANNON", "HYDRO_CANNON", "HYDRO_PUMP", "ICE_BEAM", "SKULL_BASH"],
         "tags": ["starter", "shadoweligible"],
         "defaultIVs": {
@@ -1501,7 +1429,7 @@
             "hp": 188
         },
         "types": ["water", "none"],
-        "fastMoves": ["BITE", "WATER_GUN"],
+        "fastMoves": ["BITE", "WATER_GUN", "ROLLOUT"],
         "chargedMoves": ["FLASH_CANNON", "HYDRO_CANNON", "HYDRO_PUMP", "ICE_BEAM", "SKULL_BASH"],
         "tags": ["starter", "shadoweligible", "mega"],
         "level25CP": 1000,
@@ -1528,7 +1456,7 @@
             "hp": 188
         },
         "types": ["water", "none"],
-        "fastMoves": ["BITE", "WATER_GUN"],
+        "fastMoves": ["BITE", "WATER_GUN", "ROLLOUT"],
         "chargedMoves": ["FLASH_CANNON", "HYDRO_CANNON", "HYDRO_PUMP", "ICE_BEAM", "SKULL_BASH"],
         "tags": ["starter", "shadow"],
         "defaultIVs": {
@@ -3945,7 +3873,7 @@
             "hp": 172
         },
         "types": ["bug", "poison"],
-        "fastMoves": ["BUG_BITE", "CONFUSION", "INFESTATION"],
+        "fastMoves": ["BUG_BITE", "CONFUSION", "INFESTATION", "PSYWAVE"],
         "chargedMoves": ["BUG_BUZZ", "POISON_FANG", "PSYCHIC", "SILVER_WIND"],
         "defaultIVs": {
             "cp500": [9, 5, 14, 12],
@@ -3972,7 +3900,7 @@
             "hp": 172
         },
         "types": ["bug", "poison"],
-        "fastMoves": ["BUG_BITE", "CONFUSION", "INFESTATION"],
+        "fastMoves": ["BUG_BITE", "CONFUSION", "INFESTATION", "PSYWAVE"],
         "chargedMoves": ["BUG_BUZZ", "POISON_FANG", "PSYCHIC", "SILVER_WIND"],
         "defaultIVs": {
             "cp500": [9, 5, 14, 12],
@@ -8818,8 +8746,8 @@
             "hp": 277
         },
         "types": ["water", "ice"],
-        "fastMoves": ["FROST_BREATH", "ICE_SHARD", "WATER_GUN"],
-        "chargedMoves": ["BLIZZARD", "DRAGON_PULSE", "HYDRO_PUMP", "ICE_BEAM", "SURF", "SKULL_BASH"],
+        "fastMoves": ["FROST_BREATH", "ICE_SHARD", "WATER_GUN", "PSYWAVE"],
+        "chargedMoves": ["BLIZZARD", "DRAGON_PULSE", "HYDRO_PUMP", "ICE_BEAM", "SURF", "SKULL_BASH", "SPARKLING_ARIA"],
         "defaultIVs": {
             "cp500": [7, 10, 14, 14],
             "cp1500": [21.5, 4, 10, 13],
@@ -10308,7 +10236,7 @@
         },
         "types": ["normal", "none"],
         "fastMoves": ["QUICK_ATTACK", "SUCKER_PUNCH"],
-        "chargedMoves": ["BRICK_BREAK", "DIG", "HYPER_BEAM"],
+        "chargedMoves": ["BRICK_BREAK", "DIG", "HYPER_BEAM", "SWIFT", "TRAILBLAZE"],
         "defaultIVs": {
             "cp500": [10.5, 6, 14, 15],
             "cp1500": [34.5, 5, 14, 11],
@@ -10767,7 +10695,7 @@
         },
         "types": ["fairy", "flying"],
         "fastMoves": ["FAIRY_WIND", "EXTRASENSORY", "HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "STEEL_WING", "ZEN_HEADBUTT"],
-        "chargedMoves": ["AERIAL_ACE", "ANCIENT_POWER", "DAZZLING_GLEAM", "DRAINING_KISS"],
+        "chargedMoves": ["AERIAL_ACE", "ANCIENT_POWER", "DAZZLING_GLEAM", "DRAINING_KISS", "PSYSHOCK"],
         "defaultIVs": {
             "cp500": [11, 5, 14, 14],
             "cp1500": [37, 4, 13, 12],
@@ -12959,7 +12887,7 @@
         },
         "types": ["ice", "ground"],
         "fastMoves": ["ICE_SHARD", "POWDER_SNOW"],
-        "chargedMoves": ["AVALANCHE", "BULLDOZE", "STONE_EDGE", "HIGH_HORSEPOWER"],
+        "chargedMoves": ["AVALANCHE", "BULLDOZE", "STONE_EDGE", "HIGH_HORSEPOWER", "ICICLE_SPEAR"],
         "defaultIVs": {
             "cp500": [8, 7, 14, 10],
             "cp1500": [24, 4, 12, 13],
@@ -12987,7 +12915,7 @@
         },
         "types": ["ice", "ground"],
         "fastMoves": ["ICE_SHARD", "POWDER_SNOW"],
-        "chargedMoves": ["AVALANCHE", "BULLDOZE", "STONE_EDGE", "HIGH_HORSEPOWER"],
+        "chargedMoves": ["AVALANCHE", "BULLDOZE", "STONE_EDGE", "HIGH_HORSEPOWER", "ICICLE_SPEAR"],
         "defaultIVs": {
             "cp500": [8, 7, 14, 10],
             "cp1500": [24, 4, 12, 13],
@@ -14729,7 +14657,7 @@
         },
         "types": ["water", "ground"],
         "fastMoves": ["MUD_SHOT", "WATER_GUN"],
-        "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "SURF", "HYDRO_CANNON", "MUDDY_WATER"],
+        "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "SURF", "HYDRO_CANNON", "MUDDY_WATER", "SLUDGE"],
         "tags": ["starter", "shadoweligible"],
         "defaultIVs": {
             "cp500": [6.5, 5, 14, 6],
@@ -14757,7 +14685,7 @@
         },
         "types": ["water", "ground"],
         "fastMoves": ["MUD_SHOT", "WATER_GUN"],
-        "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "SURF", "HYDRO_CANNON", "MUDDY_WATER"],
+        "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "SURF", "HYDRO_CANNON", "MUDDY_WATER", "SLUDGE"],
         "tags": ["starter", "shadoweligible", "mega"],
         "defaultIVs": {
             "cp500": [4.5, 6, 7, 13],
@@ -14780,7 +14708,7 @@
         },
         "types": ["water", "ground"],
         "fastMoves": ["MUD_SHOT", "WATER_GUN"],
-        "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "SURF", "HYDRO_CANNON", "MUDDY_WATER"],
+        "chargedMoves": ["EARTHQUAKE", "SLUDGE_WAVE", "SURF", "HYDRO_CANNON", "MUDDY_WATER", "SLUDGE"],
         "tags": ["starter", "shadow"],
         "defaultIVs": {
             "cp500": [6.5, 5, 14, 6],
@@ -14856,7 +14784,7 @@
             "hp": 172
         },
         "types": ["dark", "none"],
-        "fastMoves": ["BITE", "FIRE_FANG", "THUNDER_FANG", "ICE_FANG"],
+        "fastMoves": ["BITE", "FIRE_FANG", "THUNDER_FANG", "ICE_FANG", "SUCKER_PUNCH"],
         "chargedMoves": ["CRUNCH", "PLAY_ROUGH", "POISON_FANG"],
         "defaultIVs": {
             "cp500": [9.5, 7, 15, 13],
@@ -14882,7 +14810,7 @@
             "hp": 172
         },
         "types": ["dark", "none"],
-        "fastMoves": ["BITE", "FIRE_FANG", "THUNDER_FANG", "ICE_FANG"],
+        "fastMoves": ["BITE", "FIRE_FANG", "THUNDER_FANG", "ICE_FANG", "SUCKER_PUNCH"],
         "chargedMoves": ["CRUNCH", "PLAY_ROUGH", "POISON_FANG"],
         "defaultIVs": {
             "cp500": [9.5, 7, 15, 13],
@@ -14986,7 +14914,7 @@
         },
         "types": ["normal", "none"],
         "fastMoves": ["SHADOW_CLAW", "TACKLE", "SAND_ATTACK"],
-        "chargedMoves": ["DIG", "GRASS_KNOT", "THUNDER"],
+        "chargedMoves": ["DIG", "GRASS_KNOT", "THUNDER", "SWIFT", "TRAILBLAZE"],
         "defaultIVs": {
             "cp500": [11.5, 4, 9, 15],
             "cp1500": [39, 4, 15, 8],
@@ -16385,7 +16313,7 @@
         },
         "types": ["dark", "ghost"],
         "fastMoves": ["FEINT_ATTACK", "SHADOW_CLAW"],
-        "chargedMoves": ["FOUL_PLAY", "POWER_GEM", "SHADOW_SNEAK"],
+        "chargedMoves": ["FOUL_PLAY", "POWER_GEM", "SHADOW_SNEAK", "DAZZLING_GLEAM"],
         "defaultIVs": {
             "cp500": [13, 5, 13, 9],
             "cp1500": [45.5, 7, 15, 15],
@@ -17030,7 +16958,7 @@
         },
         "types": ["poison", "none"],
         "fastMoves": ["INFESTATION", "ROCK_SMASH", "MUD_SHOT"],
-        "chargedMoves": ["GUNK_SHOT", "ICE_BEAM", "SLUDGE_BOMB", "ACID_SPRAY"],
+        "chargedMoves": ["GUNK_SHOT", "ICE_BEAM", "SLUDGE_BOMB", "ACID_SPRAY", "SLUDGE"],
         "defaultIVs": {
             "cp500": [9.5, 6, 12, 15],
             "cp1500": [28.5, 6, 14, 11],
@@ -17155,7 +17083,7 @@
             "hp": 277
         },
         "types": ["water", "none"],
-        "fastMoves": ["SPLASH", "WATER_GUN"],
+        "fastMoves": ["SPLASH", "WATER_GUN", "ROLLOUT"],
         "chargedMoves": ["BODY_SLAM", "HEAVY_SLAM", "WATER_PULSE", "SCALD"],
         "defaultIVs": {
             "cp500": [13, 5, 12, 15],
@@ -17182,7 +17110,7 @@
             "hp": 277
         },
         "types": ["water", "none"],
-        "fastMoves": ["SPLASH", "WATER_GUN"],
+        "fastMoves": ["SPLASH", "WATER_GUN", "ROLLOUT"],
         "chargedMoves": ["BODY_SLAM", "HEAVY_SLAM", "WATER_PULSE", "SCALD"],
         "defaultIVs": {
             "cp500": [13, 5, 12, 15],
@@ -17208,7 +17136,7 @@
             "hp": 347
         },
         "types": ["water", "none"],
-        "fastMoves": ["WATER_GUN", "ZEN_HEADBUTT"],
+        "fastMoves": ["WATER_GUN", "ZEN_HEADBUTT", "ROLLOUT"],
         "chargedMoves": ["BLIZZARD", "HYPER_BEAM", "SURF", "SCALD"],
         "defaultIVs": {
             "cp500": [8.5, 4, 10, 8],
@@ -17235,7 +17163,7 @@
             "hp": 347
         },
         "types": ["water", "none"],
-        "fastMoves": ["WATER_GUN", "ZEN_HEADBUTT"],
+        "fastMoves": ["WATER_GUN", "ZEN_HEADBUTT", "ROLLOUT"],
         "chargedMoves": ["BLIZZARD", "HYPER_BEAM", "SURF", "SCALD"],
         "defaultIVs": {
             "cp500": [8.5, 4, 10, 8],
@@ -17437,8 +17365,8 @@
             "hp": 190
         },
         "types": ["psychic", "none"],
-        "fastMoves": ["CHARGE_BEAM", "EXTRASENSORY"],
-        "chargedMoves": ["MIRROR_COAT", "PSYCHIC", "SHADOW_BALL"],
+        "fastMoves": ["CHARGE_BEAM", "EXTRASENSORY", "PSYWAVE"],
+        "chargedMoves": ["MIRROR_COAT", "PSYCHIC", "SHADOW_BALL", "DYNAMIC_PUNCH"],
         "defaultIVs": {
             "cp500": [8, 5, 14, 12],
             "cp1500": [24, 4, 8, 14],
@@ -17464,8 +17392,8 @@
             "hp": 190
         },
         "types": ["psychic", "none"],
-        "fastMoves": ["CHARGE_BEAM", "EXTRASENSORY"],
-        "chargedMoves": ["MIRROR_COAT", "PSYCHIC", "SHADOW_BALL"],
+        "fastMoves": ["CHARGE_BEAM", "EXTRASENSORY", "PSYWAVE"],
+        "chargedMoves": ["MIRROR_COAT", "PSYCHIC", "SHADOW_BALL", "DYNAMIC_PUNCH"],
         "defaultIVs": {
             "cp500": [8, 5, 14, 12],
             "cp1500": [24, 4, 8, 14],
@@ -18247,7 +18175,7 @@
         },
         "types": ["rock", "grass"],
         "fastMoves": ["ACID", "INFESTATION", "BULLET_SEED"],
-        "chargedMoves": ["BULLDOZE", "GRASS_KNOT", "STONE_EDGE", "ROCK_SLIDE"],
+        "chargedMoves": ["BULLDOZE", "GRASS_KNOT", "STONE_EDGE", "ROCK_SLIDE", "ROCK_TOMB"],
         "defaultIVs": {
             "cp500": [8.5, 7, 15, 9],
             "cp1500": [26, 4, 10, 10],
@@ -18275,7 +18203,7 @@
         },
         "types": ["rock", "grass"],
         "fastMoves": ["ACID", "INFESTATION", "BULLET_SEED"],
-        "chargedMoves": ["BULLDOZE", "GRASS_KNOT", "STONE_EDGE", "ROCK_SLIDE"],
+        "chargedMoves": ["BULLDOZE", "GRASS_KNOT", "STONE_EDGE", "ROCK_SLIDE", "ROCK_TOMB"],
         "defaultIVs": {
             "cp500": [8.5, 7, 15, 9],
             "cp1500": [26, 4, 10, 10],
@@ -21197,7 +21125,7 @@
             "hp": 155
         },
         "types": ["grass", "poison"],
-        "fastMoves": ["POISON_JAB", "RAZOR_LEAF", "BULLET_SEED", "MAGICAL_LEAF"],
+        "fastMoves": ["POISON_JAB", "RAZOR_LEAF", "BULLET_SEED", "MAGICAL_LEAF", "POISON_STING"],
         "chargedMoves": ["DAZZLING_GLEAM", "GRASS_KNOT", "SLUDGE_BOMB", "SOLAR_BEAM", "WEATHER_BALL_FIRE", "LEAF_STORM"],
         "defaultIVs": {
             "cp500": [6.5, 6, 6, 12],
@@ -23751,7 +23679,7 @@
         },
         "types": ["fairy", "flying"],
         "fastMoves": ["AIR_SLASH", "CHARM", "HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER"],
-        "chargedMoves": ["AERIAL_ACE", "ANCIENT_POWER", "DAZZLING_GLEAM", "FLAMETHROWER", "AURA_SPHERE"],
+        "chargedMoves": ["AERIAL_ACE", "ANCIENT_POWER", "DAZZLING_GLEAM", "FLAMETHROWER", "AURA_SPHERE", "PSYSHOCK"],
         "eliteMoves": ["AURA_SPHERE"],
         "defaultIVs": {
             "cp500": [5.5, 15, 15, 12],
@@ -23903,7 +23831,7 @@
         },
         "types": ["ice", "ground"],
         "fastMoves": ["MUD_SLAP", "POWDER_SNOW"],
-        "chargedMoves": ["AVALANCHE", "BULLDOZE", "STONE_EDGE", "ANCIENT_POWER", "HIGH_HORSEPOWER"],
+        "chargedMoves": ["AVALANCHE", "BULLDOZE", "STONE_EDGE", "ANCIENT_POWER", "HIGH_HORSEPOWER", "ICICLE_SPEAR"],
         "defaultIVs": {
             "cp500": [5.5, 15, 14, 13],
             "cp1500": [16.5, 4, 15, 11],
@@ -23931,7 +23859,7 @@
         },
         "types": ["ice", "ground"],
         "fastMoves": ["MUD_SLAP", "POWDER_SNOW"],
-        "chargedMoves": ["AVALANCHE", "BULLDOZE", "STONE_EDGE", "ANCIENT_POWER", "HIGH_HORSEPOWER"],
+        "chargedMoves": ["AVALANCHE", "BULLDOZE", "STONE_EDGE", "ANCIENT_POWER", "HIGH_HORSEPOWER", "ICICLE_SPEAR"],
         "defaultIVs": {
             "cp500": [5.5, 15, 14, 13],
             "cp1500": [16.5, 4, 15, 11],
@@ -24140,7 +24068,7 @@
         },
         "types": ["ghost", "none"],
         "fastMoves": ["ASTONISH", "HEX"],
-        "chargedMoves": ["DARK_PULSE", "OMINOUS_WIND", "PSYCHIC", "SHADOW_BALL", "POLTERGEIST", "SHADOW_PUNCH"],
+        "chargedMoves": ["DARK_PULSE", "OMINOUS_WIND", "PSYCHIC", "SHADOW_BALL", "POLTERGEIST", "SHADOW_PUNCH", "DYNAMIC_PUNCH"],
         "eliteMoves": ["SHADOW_BALL"],
         "defaultIVs": {
             "cp500": [8, 6, 14, 8],
@@ -24169,7 +24097,7 @@
         },
         "types": ["ghost", "none"],
         "fastMoves": ["ASTONISH", "HEX"],
-        "chargedMoves": ["DARK_PULSE", "OMINOUS_WIND", "PSYCHIC", "SHADOW_BALL", "POLTERGEIST", "SHADOW_PUNCH"],
+        "chargedMoves": ["DARK_PULSE", "OMINOUS_WIND", "PSYCHIC", "SHADOW_BALL", "POLTERGEIST", "SHADOW_PUNCH", "DYNAMIC_PUNCH"],
         "eliteMoves": ["SHADOW_BALL"],
         "defaultIVs": {
             "cp500": [8, 6, 14, 8],
@@ -28709,7 +28637,7 @@
         },
         "types": ["psychic", "none"],
         "fastMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "ZEN_HEADBUTT"],
-        "chargedMoves": ["FUTURE_SIGHT", "SHADOW_BALL", "THUNDER"],
+        "chargedMoves": ["FUTURE_SIGHT", "SHADOW_BALL", "THUNDER", "PSYSHOCK"],
         "defaultIVs": {
             "cp500": [6.5, 5, 15, 10],
             "cp1500": [18.5, 8, 15, 15],
@@ -28735,7 +28663,7 @@
         },
         "types": ["psychic", "none"],
         "fastMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "ZEN_HEADBUTT"],
-        "chargedMoves": ["FUTURE_SIGHT", "SHADOW_BALL", "THUNDER"],
+        "chargedMoves": ["FUTURE_SIGHT", "SHADOW_BALL", "THUNDER", "PSYSHOCK"],
         "defaultIVs": {
             "cp500": [6.5, 5, 15, 10],
             "cp1500": [18.5, 8, 15, 15],
@@ -31774,7 +31702,7 @@
         },
         "types": ["fairy", "none"],
         "fastMoves": ["VINE_WHIP", "TACKLE", "RAZOR_LEAF", "FAIRY_WIND"],
-        "chargedMoves": ["MOONBLAST", "PETAL_BLIZZARD", "PSYCHIC", "DISARMING_VOICE"],
+        "chargedMoves": ["MOONBLAST", "PETAL_BLIZZARD", "PSYCHIC", "DISARMING_VOICE", "TRAILBLAZE"],
         "defaultIVs": {
             "cp500": [6, 7, 15, 4],
             "cp1500": [17, 6, 14, 12],
@@ -32312,7 +32240,7 @@
         },
         "types": ["poison", "dragon"],
         "fastMoves": ["WATER_GUN", "ACID", "DRAGON_TAIL"],
-        "chargedMoves": ["HYDRO_PUMP", "AQUA_TAIL", "OUTRAGE", "GUNK_SHOT", "FOCUS_BLAST"],
+        "chargedMoves": ["HYDRO_PUMP", "AQUA_TAIL", "OUTRAGE", "GUNK_SHOT", "FOCUS_BLAST", "SLUDGE_BOMB"],
         "defaultIVs": {
             "cp500": [8, 5, 15, 8],
             "cp1500": [23.5, 5, 9, 15],
@@ -33946,7 +33874,7 @@
         },
         "types": ["bug", "fairy"],
         "fastMoves": ["FAIRY_WIND", "STRUGGLE_BUG"],
-        "chargedMoves": ["DAZZLING_GLEAM", "BUG_BUZZ", "DRAINING_KISS"],
+        "chargedMoves": ["DAZZLING_GLEAM", "BUG_BUZZ", "DRAINING_KISS", "CHARM"],
         "defaultIVs": {
             "cp500": [8.5, 6, 14, 11],
             "cp1500": [25.5, 5, 12, 12],
@@ -35236,7 +35164,7 @@
         },
         "types": ["water", "psychic"],
         "fastMoves": ["WATER_GUN", "CONFUSION", "BITE"],
-        "chargedMoves": ["PSYCHIC_FANGS", "AQUA_TAIL", "CRUNCH"],
+        "chargedMoves": ["PSYCHIC_FANGS", "AQUA_TAIL", "CRUNCH", "PSYSHOCK"],
         "defaultIVs": {
             "cp500": [8, 5, 10, 11],
             "cp1500": [23.5, 4, 10, 14],
@@ -35257,7 +35185,7 @@
         },
         "types": ["normal", "dragon"],
         "fastMoves": ["DRAGON_BREATH", "EXTRASENSORY"],
-        "chargedMoves": ["OUTRAGE", "DRAGON_PULSE", "FLY"],
+        "chargedMoves": ["OUTRAGE", "DRAGON_PULSE", "FLY", "SWIFT"],
         "defaultIVs": {
             "cp500": [6.5, 7, 13, 11],
             "cp1500": [19, 4, 15, 10],
@@ -39707,7 +39635,7 @@
             "hp": 240
         },
         "types": ["electric", "none"],
-        "fastMoves": ["THUNDER_SHOCK", "WATER_GUN"],
+        "fastMoves": ["THUNDER_SHOCK", "WATER_GUN", "SUCKER_PUNCH"],
         "chargedMoves": ["PARABOLIC_CHARGE", "DISCHARGE", "ZAP_CANNON"],
         "defaultIVs": {
             "cp500": [7, 7, 15, 13],
@@ -40266,8 +40194,8 @@
             "hp": 172
         },
         "types": ["flying", "dark"],
-        "fastMoves": ["WING_ATTACK", "ROCK_THROW"],
-        "chargedMoves": ["PAYBACK", "AERIAL_ACE", "FLY"],
+        "fastMoves": ["WING_ATTACK", "ROCK_THROW", "SUCKER_PUNCH"],
+        "chargedMoves": ["PAYBACK", "AERIAL_ACE", "FLY", "ROCK_TOMB"],
         "defaultIVs": {
             "cp500": [7.5, 7, 13, 13],
             "cp1500": [22.5, 4, 10, 15],
@@ -41571,7 +41499,7 @@
         "abbreviation": "Acr",
         "type": "flying",
         "power": 110,
-        "energy": 60,
+        "energy": 55,
         "energyGain": 0,
         "cooldown": 500,
         "archetype": "General"
@@ -41600,11 +41528,14 @@
         "moveId": "AIR_CUTTER",
         "name": "Air Cutter",
         "type": "flying",
-        "power": 60,
-        "energy": 55,
+        "power": 80,
+        "energy": 50,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "High Energy"
+        "buffs": [2, 0],
+        "buffTarget": "self",
+        "buffApplyChance": ".125",
+        "archetype": "Boost"
     }, {
         "moveId": "AIR_SLASH",
         "name": "Air Slash",
@@ -41630,8 +41561,8 @@
         "moveId": "AQUA_JET",
         "name": "Aqua Jet",
         "type": "water",
-        "power": 45,
-        "energy": 45,
+        "power": 70,
+        "energy": 40,
         "energyGain": 0,
         "cooldown": 500,
         "archetype": "General"
@@ -42045,8 +41976,8 @@
         "moveId": "DAZZLING_GLEAM",
         "name": "Dazzling Gleam",
         "type": "fairy",
-        "power": 110,
-        "energy": 70,
+        "power": 90,
+        "energy": 55,
         "energyGain": 0,
         "cooldown": 500,
         "archetype": "Nuke"
@@ -42073,8 +42004,8 @@
         "moveId": "DISCHARGE",
         "name": "Discharge",
         "type": "electric",
-        "power": 65,
-        "energy": 45,
+        "power": 55,
+        "energy": 40,
         "energyGain": 0,
         "cooldown": 500,
         "archetype": "General"
@@ -42215,7 +42146,7 @@
         "abbreviation": "DyP",
         "type": "fighting",
         "power": 90,
-        "energy": 50,
+        "energy": 45,
         "energyGain": 0,
         "cooldown": 500,
         "archetype": "General"
@@ -42471,11 +42402,11 @@
         "name": "Foul Play",
         "abbreviation": "FoP",
         "type": "dark",
-        "power": 70,
-        "energy": 45,
+        "power": 60,
+        "energy": 40,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "General"
+        "archetype": "Spam/Bait"
     }, {
         "moveId": "FREEZE_SHOCK",
         "name": "Freeze Shock",
@@ -42662,9 +42593,9 @@
         "moveId": "HEX",
         "name": "Hex",
         "type": "ghost",
-        "power": 6,
+        "power": 7,
         "energy": 0,
-        "energyGain": 12,
+        "energyGain": 13,
         "cooldown": 1500,
         "archetype": "Fast Charge"
     }, {
@@ -43357,7 +43288,7 @@
         "name": "Night Shade",
         "abbreviation": "NSh",
         "type": "ghost",
-        "power": 80,
+        "power": 70,
         "energy": 45,
         "energyGain": 0,
         "cooldown": 500,
@@ -43679,7 +43610,7 @@
         "abbreviation": "Psh",
         "type": "psychic",
         "power": 70,
-        "energy": 45,
+        "energy": 40,
         "energyGain": 0,
         "cooldown": 500,
         "archetype": "General"
@@ -43816,14 +43747,14 @@
         "moveId": "ROCK_TOMB",
         "name": "Rock Tomb",
         "type": "rock",
-        "power": 70,
-        "energy": 60,
+        "power": 80,
+        "energy": 50,
         "energyGain": 0,
         "cooldown": 500,
         "buffs": [-1, 0],
         "buffTarget": "opponent",
         "buffApplyChance": "1",
-        "archetype": "High Energy Debuff"
+        "archetype": "Debuff"
     }, {
         "moveId": "ROCK_WRECKER",
         "name": "Rock Wrecker",
@@ -43838,7 +43769,7 @@
         "name": "Rollout",
         "abbreviation": "RO",
         "type": "rock",
-        "power": 8,
+        "power": 7,
         "energy": 0,
         "energyGain": 13,
         "cooldown": 1500,
@@ -44072,7 +44003,7 @@
         "name": "Sludge",
         "abbreviation": "Sl",
         "type": "poison",
-        "power": 50,
+        "power": 70,
         "energy": 40,
         "energyGain": 0,
         "cooldown": 500,
