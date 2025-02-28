@@ -2879,6 +2879,19 @@
     "energyGain": 0,
     "cooldown": 500,
     "archetype": "High Energy"
+},  {
+    "moveId": "TORCH_SONG",
+    "name": "Torch Song (Speculative)",
+    "abbreviation": "TSo",
+    "type": "fire",
+    "power": 70,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [1, 0],
+    "buffTarget": "self",
+    "buffApplyChance": "1",
+    "archetype": "Boost"
 }, {
     "moveId": "TRAILBLAZE",
     "name": "Trailblaze",

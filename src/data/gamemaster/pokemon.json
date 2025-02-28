@@ -6840,7 +6840,7 @@
         "hp": 163
     },
     "types": ["poison", "none"],
-    "fastMoves": ["ACID", "INFESTATION", "TACKLE"],
+    "fastMoves": ["ACID", "INFESTATION", "TACKLE", "ROLLOUT"],
     "chargedMoves": ["DARK_PULSE", "SHADOW_BALL", "SLUDGE_BOMB", "THUNDERBOLT"],
     "legacyMoves": ["ACID"],
     "defaultIVs": {
@@ -6925,7 +6925,7 @@
         "hp": 163
     },
     "types": ["poison", "none"],
-    "fastMoves": ["INFESTATION", "TACKLE"],
+    "fastMoves": ["INFESTATION", "TACKLE", "ROLLOUT"],
     "chargedMoves": ["DARK_PULSE", "SHADOW_BALL", "SLUDGE_BOMB", "THUNDERBOLT"],
     "defaultIVs": {
         "cp500": [8.5, 4, 10, 6],
@@ -15455,7 +15455,7 @@
     },
     "types": ["dark", "ghost"],
     "fastMoves": ["FEINT_ATTACK", "SHADOW_CLAW"],
-    "chargedMoves": ["FOUL_PLAY", "POWER_GEM", "SHADOW_SNEAK"],
+    "chargedMoves": ["FOUL_PLAY", "POWER_GEM", "SHADOW_SNEAK", "DAZZLING_GLEAM"],
     "defaultIVs": {
         "cp500": [10, 4, 9, 8],
         "cp1500": [29, 5, 10, 15],
@@ -15477,7 +15477,7 @@
     },
     "types": ["dark", "ghost"],
     "fastMoves": ["FEINT_ATTACK", "SHADOW_CLAW"],
-    "chargedMoves": ["FOUL_PLAY", "POWER_GEM", "SHADOW_SNEAK"],
+    "chargedMoves": ["FOUL_PLAY", "POWER_GEM", "SHADOW_SNEAK", "DAZZLING_GLEAM"],
     "defaultIVs": {
         "cp500": [13, 5, 13, 9],
         "cp1500": [45.5, 7, 15, 15],
