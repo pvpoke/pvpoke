@@ -14032,7 +14032,7 @@
     },
     "types": ["normal", "none"],
     "fastMoves": ["SHADOW_CLAW", "TACKLE", "SAND_ATTACK"],
-    "chargedMoves": ["DIG", "GRASS_KNOT", "THUNDER", "SWIFT", "TRAILBLAZE"],
+    "chargedMoves": ["DIG", "GRASS_KNOT", "THUNDER", "SWIFT"],
     "defaultIVs": {
         "cp500": [11.5, 4, 9, 15],
         "cp1500": [39, 4, 15, 8],

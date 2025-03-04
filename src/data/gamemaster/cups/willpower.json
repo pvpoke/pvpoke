@@ -8,6 +8,9 @@
 	"exclude": [{
 		"filterType": "tag",
 		"values": ["mega"]
+	}, {
+		"filterType": "id",
+		"values": ["gardevoir"]
 	}],
 	"partySize": 3
 }
