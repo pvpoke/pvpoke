@@ -35496,7 +35496,7 @@
     },
     "buddyDistance": 1,
     "thirdMoveCost": 10000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_NICKIT",
         "evolutions": ["thievul"]
@@ -35520,7 +35520,7 @@
     },
     "buddyDistance": 1,
     "thirdMoveCost": 10000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_NICKIT",
         "parent": "nickit"
@@ -37292,13 +37292,15 @@
     "fastMoves": ["ROCK_SMASH", "COUNTER"],
     "chargedMoves": ["BRICK_BREAK", "DYNAMIC_PUNCH", "CLOSE_COMBAT"],
     "defaultIVs": {
-        "cp500": [11, 7, 10, 15],
-        "cp1500": [36, 4, 13, 15],
+		"cp500": [10.5, 10, 14, 15],
+        "cp1500": [34.5, 10, 14, 10],
         "cp2500": [50, 15, 15, 15]
     },
+	"tags": ["legendary", "untradeable"],
+	"levelFloor": 15,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_KUBFU",
         "evolutions": ["urshifu", "urshifu"]
@@ -37316,10 +37318,12 @@
     "fastMoves": ["ROCK_SMASH", "COUNTER"],
     "chargedMoves": ["BRICK_BREAK", "DYNAMIC_PUNCH", "CLOSE_COMBAT"],
     "defaultIVs": {
-        "cp500": [5.5, 5, 8, 5],
-        "cp1500": [15, 7, 15, 14],
-        "cp2500": [25.5, 6, 12, 11]
+		"cp500": [5, 11, 15, 14],
+        "cp1500": [15, 10, 12, 10],
+        "cp2500": [24.5, 13, 13, 14]
     },
+	"tags": ["legendary", "untradeable"],
+	"levelFloor": 15,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": false,
@@ -37340,10 +37344,12 @@
     "fastMoves": ["ROCK_SMASH", "COUNTER", "WATERFALL"],
     "chargedMoves": ["BRICK_BREAK", "DYNAMIC_PUNCH", "CLOSE_COMBAT", "AQUA_JET"],
     "defaultIVs": {
-        "cp500": [5.5, 5, 8, 5],
-        "cp1500": [15, 7, 15, 14],
-        "cp2500": [25.5, 6, 12, 11]
+		"cp500": [5, 11, 15, 14],
+        "cp1500": [15, 10, 12, 10],
+        "cp2500": [24.5, 13, 13, 14]
     },
+	"tags": ["legendary", "untradeable"],
+	"levelFloor": 15,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": false,
@@ -37364,10 +37370,12 @@
     "fastMoves": ["ROCK_SMASH", "COUNTER", "SUCKER_PUNCH"],
     "chargedMoves": ["BRICK_BREAK", "DYNAMIC_PUNCH", "CLOSE_COMBAT", "PAYBACK"],
     "defaultIVs": {
-        "cp500": [5.5, 5, 8, 5],
-        "cp1500": [15, 7, 15, 14],
-        "cp2500": [25.5, 6, 12, 11]
+		"cp500": [5, 11, 15, 14],
+        "cp1500": [15, 10, 12, 10],
+        "cp2500": [24.5, 13, 13, 14]
     },
+	"tags": ["legendary", "untradeable"],
+	"levelFloor": 15,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": false,
