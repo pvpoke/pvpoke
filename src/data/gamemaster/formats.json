@@ -10,21 +10,12 @@
 		"hideRankings": true
 	},
 	{
-		"title": "ML Overused",
-		"cup": "overused",
-		"cp": 10000,
-		"meta": "overused",
-		"showCup": false,
-		"showFormat": false,
-		"showMeta": true
-	},
-	{
 		"title": "Master Premier",
 		"cup": "premier",
 		"cp": 10000,
 		"meta": "premiermaster",
 		"showCup": true,
-		"showFormat": true,
+		"showFormat": false,
 		"showMeta": true
 	},
 	{
@@ -34,78 +25,6 @@
 		"meta": "championshipseries",
 		"showCup": false,
 		"showFormat": false,
-		"showMeta": true
-	},
-	{
-		"title": "Battle Frontier (Cascade)",
-		"cup": "cascade",
-		"cp": 1500,
-		"meta": "cascade",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Battle Frontier (Iridescent)",
-		"cup": "iridescent",
-		"cp": 1500,
-		"meta": "iridescent",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Battle Frontier (Solstice)",
-		"cup": "solstice",
-		"cp": 2500,
-		"meta": "solstice",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Battle Frontier (Master)",
-		"cup": "battlefrontiermaster",
-		"cp": 10000,
-		"meta": "battlefrontiermaster",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Devon Pillar Cup",
-		"cup": "pillar",
-		"cp": 1500,
-		"meta": "pillar",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Devon Ingot Cup",
-		"cup": "ingot",
-		"cp": 1500,
-		"meta": "ingot",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Devon Tundra Cup (Gymbreakers Remix V2)",
-		"cup": "tundraremixv2",
-		"cp": 1500,
-		"meta": "tundraremixv2",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Gymbreakers Invitational",
-		"cup": "gbinvitational",
-		"cp": 1500,
-		"meta": "gbinvitational",
-		"showCup": true,
-		"showFormat": true,
 		"showMeta": true
 	},
 	{
