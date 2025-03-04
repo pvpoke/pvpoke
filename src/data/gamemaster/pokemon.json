@@ -528,6 +528,7 @@
         "cp2500": [46, 5, 15, 12],
         "cp2500l40": [40, 15, 15, 15]
     },
+	"searchPriority": 4,
     "level25CP": 1504,
     "eliteMoves": ["HYDRO_CANNON"],
     "buddyDistance": 3,
@@ -7875,7 +7876,7 @@
     "level25CP": 1616,
     "tags": ["shadoweligible"],
     "eliteMoves": ["ICE_SHARD", "DRAGON_PULSE", "ICE_BEAM"],
-    "searchPriority": 5,
+    "searchPriority": 8,
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
     "released": true
@@ -9360,6 +9361,7 @@
         "cp1500": [34.5, 5, 14, 11],
         "cp2500": [50, 15, 15, 15]
     },
+	"searchPriority": 3,
     "buddyDistance": 1,
     "thirdMoveCost": 10000,
     "released": true,
@@ -9666,7 +9668,7 @@
         "cp1500": [27, 5, 14, 12],
         "cp2500": [50, 15, 15, 15]
     },
-    "searchPriority": 8,
+    "searchPriority": 4,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true,
@@ -16491,6 +16493,7 @@
         "cp2500": [49.5, 4, 14, 14],
         "cp2500l40": [40, 15, 15, 15]
     },
+	"searchPriority": 4,
     "buddyDistance": 1,
     "thirdMoveCost": 10000,
     "released": true,
@@ -17785,6 +17788,7 @@
         "cp2500": [50, 15, 15, 15],
         "cp1500l40": [37, 12, 15, 15]
     },
+	"searchPriority": 7,
     "level25CP": 927,
     "tags": ["shadoweligible"],
     "buddyDistance": 3,
@@ -23198,7 +23202,7 @@
     "tags": ["shadoweligible"],
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
-    "searchPriority": 3,
+    "searchPriority": 6,
     "released": true,
     "family": {
         "id": "FAMILY_DUSKULL",
@@ -34794,7 +34798,7 @@
     },
     "tags": ["ultrabeast"],
     "searchPriority": 3,
-    "nicknames": ["dawn", "dw"],
+    "nicknames": ["dawn", "dw", "dawn wings"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true
@@ -34816,8 +34820,8 @@
         "cp2500": [22.5, 5, 15, 7]
     },
     "tags": ["ultrabeast"],
-    "nicknames": ["dusk", "dm"],
-    "searchPriority": 10,
+    "nicknames": ["dusk", "dm", "dusk mane"],
+    "searchPriority": 5,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true
