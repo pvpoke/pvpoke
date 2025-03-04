@@ -21,7 +21,7 @@
 }, {
     "speciesId": "florges",
     "fastMove": "FAIRY_WIND",
-    "chargedMoves": ["DISARMING_VOICE", "MOONBLAST"]
+    "chargedMoves": ["TRAILBLAZE", "MOONBLAST"]
 }, {
     "speciesId": "giratina_altered",
     "fastMove": "SHADOW_CLAW",
@@ -112,6 +112,10 @@
     "fastMove": "BULLET_SEED",
     "chargedMoves": ["GRASS_KNOT", "NATURES_MADNESS"]
 }, {
+    "speciesId": "tapu_lele",
+    "fastMove": "ASTONISH",
+    "chargedMoves": ["PSYSHOCK", "NATURES_MADNESS"]
+}, {
     "speciesId": "togekiss",
     "fastMove": "CHARM",
     "chargedMoves": ["ANCIENT_POWER", "AURA_SPHERE"]
@@ -147,8 +151,4 @@
     "speciesId": "zygarde_complete",
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["BULLDOZE", "OUTRAGE"]
-}, {
-    "speciesId": "tapu_lele",
-    "fastMove": "ASTONISH",
-    "chargedMoves": ["PSYSHOCK", "NATURES_MADNESS"]
 }]

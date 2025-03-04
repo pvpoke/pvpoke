@@ -1,12 +1,12 @@
 [{
     "speciesId": "annihilape",
     "fastMove": "COUNTER",
-    "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"],
+    "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"],
     "shadowType": "shadow"
 }, {
     "speciesId": "claydol",
     "fastMove": "MUD_SLAP",
-    "chargedMoves": ["ICE_BEAM", "SCORCHING_SANDS"]
+    "chargedMoves": ["ROCK_TOMB", "SCORCHING_SANDS"]
 }, {
     "speciesId": "cresselia",
     "fastMove": "PSYCHO_CUT",
@@ -59,6 +59,10 @@
     "fastMove": "SNARL",
     "chargedMoves": ["DARK_PULSE", "AERIAL_ACE"]
 }, {
+    "speciesId": "mandibuzz",
+    "fastMove": "AIR_SLASH",
+    "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
+}, {
     "speciesId": "moltres_galarian",
     "fastMove": "SUCKER_PUNCH",
     "chargedMoves": ["ANCIENT_POWER", "BRAVE_BIRD"]
@@ -104,7 +108,15 @@
     "fastMove": "QUICK_ATTACK",
     "chargedMoves": ["V_CREATE", "PSYCHIC"]
 }, {
-    "speciesId": "mandibuzz",
-    "fastMove": "AIR_SLASH",
-    "chargedMoves": ["DARK_PULSE", "AERIAL_ACE"]
+    "speciesId": "spiritomb",
+    "fastMove": "SUCKER_PUNCH",
+    "chargedMoves": ["ROCK_TOMB", "SHADOW_BALL"]
+}, {
+    "speciesId": "bombirdier",
+    "fastMove": "SUCKER_PUNCH",
+    "chargedMoves": ["FLY", "ROCK_TOMB"]
+}, {
+    "speciesId": "grumpig",
+    "fastMove": "PSYWAVE",
+    "chargedMoves": ["DYNAMIC_PUNCH", "SHADOW_BALL"]
 }]
