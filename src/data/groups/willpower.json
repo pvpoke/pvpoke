@@ -4,6 +4,10 @@
     "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"],
     "shadowType": "shadow"
 }, {
+    "speciesId": "bombirdier",
+    "fastMove": "SUCKER_PUNCH",
+    "chargedMoves": ["FLY", "ROCK_TOMB"]
+}, {
     "speciesId": "claydol",
     "fastMove": "MUD_SLAP",
     "chargedMoves": ["ROCK_TOMB", "SCORCHING_SANDS"]
@@ -33,6 +37,10 @@
     "speciesId": "greninja",
     "fastMove": "WATER_SHURIKEN",
     "chargedMoves": ["HYDRO_CANNON", "NIGHT_SLASH"]
+}, {
+    "speciesId": "grumpig",
+    "fastMove": "PSYWAVE",
+    "chargedMoves": ["DYNAMIC_PUNCH", "SHADOW_BALL"]
 }, {
     "speciesId": "guzzlord",
     "fastMove": "DRAGON_TAIL",
@@ -100,6 +108,10 @@
     "fastMove": "POISON_JAB",
     "chargedMoves": ["SCALD", "BRUTAL_SWING"]
 }, {
+    "speciesId": "spiritomb",
+    "fastMove": "SUCKER_PUNCH",
+    "chargedMoves": ["ROCK_TOMB", "SHADOW_BALL"]
+}, {
     "speciesId": "umbreon",
     "fastMove": "SNARL",
     "chargedMoves": ["FOUL_PLAY", "LAST_RESORT"]
@@ -108,15 +120,12 @@
     "fastMove": "QUICK_ATTACK",
     "chargedMoves": ["V_CREATE", "PSYCHIC"]
 }, {
-    "speciesId": "spiritomb",
-    "fastMove": "SUCKER_PUNCH",
-    "chargedMoves": ["ROCK_TOMB", "SHADOW_BALL"]
+    "speciesId": "sableye",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["FOUL_PLAY", "DAZZLING_GLEAM"]
 }, {
-    "speciesId": "bombirdier",
-    "fastMove": "SUCKER_PUNCH",
-    "chargedMoves": ["FLY", "ROCK_TOMB"]
-}, {
-    "speciesId": "grumpig",
-    "fastMove": "PSYWAVE",
-    "chargedMoves": ["DYNAMIC_PUNCH", "SHADOW_BALL"]
+    "speciesId": "sableye",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["FOUL_PLAY", "DAZZLING_GLEAM"],
+    "shadowType": "shadow"
 }]
