@@ -419,6 +419,10 @@ var GameMaster = (function () {
 					defaultIVs["cp1500"] = [20, 1, 1, 2];
 				}
 
+				if(pokemon.speciesId == "lokix"){
+					defaultIVs["cp2500"] = [47.5, 11, 15, 15];
+				}
+
 				entry.defaultIVs = defaultIVs;
 			});
 
