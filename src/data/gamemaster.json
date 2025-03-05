@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-03-04 22:15:07",
+    "timestamp": "2025-03-06 00:23:55",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -588,6 +588,21 @@
         "partySize": 3,
         "presetOnly": true
     }, {
+        "name": "scroll",
+        "title": "Scroll Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["water", "fighting", "dark"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["primarina"]
+        }],
+        "partySize": 3
+    }, {
         "name": "serene",
         "title": "Battle Frontier (Serene)",
         "include": [{
@@ -794,14 +809,6 @@
         "showMeta": false,
         "hideRankings": true
     }, {
-        "title": "ML Overused",
-        "cup": "overused",
-        "cp": 10000,
-        "meta": "overused",
-        "showCup": false,
-        "showFormat": false,
-        "showMeta": true
-    }, {
         "title": "Master Premier",
         "cup": "premier",
         "cp": 10000,
@@ -819,6 +826,15 @@
         "showFormat": true,
         "showMeta": true,
         "rules": ["Pok\u00e9mon must be at or below 1,500 CP to enter.", "Only Fighting-, Psychic-, and Dark-type Pok\u00e9mon will be eligible.", "The following Pokemon will not be allowed: Gardevoir"]
+    }, {
+        "title": "Scroll Cup",
+        "cup": "scroll",
+        "cp": 1500,
+        "meta": "scroll",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true,
+        "rules": ["Pok\u00e9mon must be at or below 1,500 CP to enter.", "Only Water-, Fighting-, and Dark-type Pok\u00e9mon will be eligible.", "The following Pokemon will not be allowed: Primarina"]
     }, {
         "title": "P!P Championship Series",
         "cup": "great",
@@ -856,14 +872,6 @@
         "cup": "battlefrontiermaster",
         "cp": 10000,
         "meta": "battlefrontiermaster",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Devon Pillar Cup",
-        "cup": "pillar",
-        "cp": 1500,
-        "meta": "pillar",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -44451,11 +44459,11 @@
         "archetype": "High Energy"
     }, {
         "moveId": "TORCH_SONG",
-        "name": "Torch Song (Speculative)",
+        "name": "Torch Song",
         "abbreviation": "TSo",
         "type": "fire",
         "power": 70,
-        "energy": 50,
+        "energy": 45,
         "energyGain": 0,
         "cooldown": 500,
         "buffs": [1, 0],

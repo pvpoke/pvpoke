@@ -1,0 +1,16 @@
+{
+	"name": "scroll",
+	"title": "Scroll Cup",
+	"include": [{
+		"filterType": "type",
+		"values": ["water", "fighting", "dark"]
+	}],
+	"exclude": [{
+		"filterType": "tag",
+		"values": ["mega"]
+	}, {
+		"filterType": "id",
+		"values": ["primarina"]
+	}],
+	"partySize": 3
+}

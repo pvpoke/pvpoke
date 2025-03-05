@@ -10,15 +10,6 @@
 		"hideRankings": true
 	},
 	{
-		"title": "ML Overused",
-		"cup": "overused",
-		"cp": 10000,
-		"meta": "overused",
-		"showCup": false,
-		"showFormat": false,
-		"showMeta": true
-	},
-	{
 		"title": "Master Premier",
 		"cup": "premier",
 		"cp": 10000,
@@ -40,6 +31,20 @@
 			"Pokémon must be at or below 1,500 CP to enter.",
 			"Only Fighting-, Psychic-, and Dark-type Pokémon will be eligible.",
 			"The following Pokemon will not be allowed: Gardevoir"
+		]
+	},
+	{
+		"title": "Scroll Cup",
+		"cup": "scroll",
+		"cp": 1500,
+		"meta": "scroll",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Water-, Fighting-, and Dark-type Pokémon will be eligible.",
+			"The following Pokemon will not be allowed: Primarina"
 		]
 	},
 	{
@@ -83,15 +88,6 @@
 		"cup": "battlefrontiermaster",
 		"cp": 10000,
 		"meta": "battlefrontiermaster",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Devon Pillar Cup",
-		"cup": "pillar",
-		"cp": 1500,
-		"meta": "pillar",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true
