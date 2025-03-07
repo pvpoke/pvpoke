@@ -1905,7 +1905,7 @@
         "cp2500": [48, 4, 15, 10],
         "cp2500l40": [40, 15, 15, 15]
     },
-    "searchPriority": 12,
+    "searchPriority": 9,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true,
@@ -15442,7 +15442,7 @@
     },
     "level25CP": 858,
     "tags": ["shadoweligible"],
-    "searchPriority": 9,
+    "searchPriority": 10,
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
     "released": true
