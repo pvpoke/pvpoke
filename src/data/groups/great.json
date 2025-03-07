@@ -24,17 +24,13 @@
     "fastMove": "ROLLOUT",
     "chargedMoves": ["HYDRO_CANNON", "SKULL_BASH"]
 }, {
+    "speciesId": "bombirdier",
+    "fastMove": "SUCKER_PUNCH",
+    "chargedMoves": ["FLY", "ROCK_TOMB"]
+}, {
     "speciesId": "carbink",
     "fastMove": "ROCK_THROW",
     "chargedMoves": ["POWER_GEM", "MOONBLAST"]
-}, {
-    "speciesId": "charjabug",
-    "fastMove": "VOLT_SWITCH",
-    "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
-}, {
-    "speciesId": "claydol",
-    "fastMove": "MUD_SLAP",
-    "chargedMoves": ["ROCK_TOMB", "SCORCHING_SANDS"]
 }, {
     "speciesId": "clodsire",
     "fastMove": "POISON_STING",
@@ -167,6 +163,14 @@
     "fastMove": "VINE_WHIP",
     "chargedMoves": ["FRENZY_PLANT", "AERIAL_ACE"]
 }, {
+    "speciesId": "skeledirge",
+    "fastMove": "INCINERATE",
+    "chargedMoves": ["TORCH_SONG", "SHADOW_BALL"]
+}, {
+    "speciesId": "spiritomb",
+    "fastMove": "SUCKER_PUNCH",
+    "chargedMoves": ["ROCK_TOMB", "SHADOW_BALL"]
+}, {
     "speciesId": "steelix",
     "fastMove": "THUNDER_FANG",
     "chargedMoves": ["PSYCHIC_FANGS", "BREAKING_SWIPE"]
@@ -190,12 +194,4 @@
     "speciesId": "wigglytuff",
     "fastMove": "CHARM",
     "chargedMoves": ["ICY_WIND", "SWIFT"]
-}, {
-    "speciesId": "bombirdier",
-    "fastMove": "SUCKER_PUNCH",
-    "chargedMoves": ["FLY", "ROCK_TOMB"]
-}, {
-    "speciesId": "spiritomb",
-    "fastMove": "SUCKER_PUNCH",
-    "chargedMoves": ["ROCK_TOMB", "SHADOW_BALL"]
 }]
