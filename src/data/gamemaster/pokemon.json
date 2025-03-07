@@ -12231,7 +12231,7 @@
         "cp1500": [27, 5, 9, 13],
         "cp2500": [50, 15, 15, 15]
     },
-    "searchPriority": 7,
+    "searchPriority": 3,
     "level25CP": 1267,
     "tags": ["shadoweligible"],
     "buddyDistance": 5,
@@ -37934,12 +37934,14 @@
     },
     "types": ["fire", "ghost"],
     "fastMoves": ["INCINERATE", "BITE"],
-    "chargedMoves": ["FLAMETHROWER", "DISARMING_VOICE", "CRUNCH", "SHADOW_BALL"],
+    "chargedMoves": ["FLAMETHROWER", "DISARMING_VOICE", "CRUNCH", "SHADOW_BALL", "BLAST_BURN", "TORCH_SONG"],
+	"eliteMoves": ["TORCH_SONG"],
     "defaultIVs": {
         "cp500": [6.5, 4, 4, 11],
         "cp1500": [18.5, 4, 12, 11],
         "cp2500": [31.5, 5, 12, 11]
     },
+	"searchPriority": 5,
     "nicknames": ["dirge"],
     "buddyDistance": 3,
     "thirdMoveCost": 10000,
