@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-03-07 15:30:50",
+    "timestamp": "2025-03-07 23:01:53",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -191,6 +191,35 @@
         }],
         "partySize": 3,
         "presetOnly": true
+    }, {
+        "name": "illusion",
+        "title": "illusionT",
+        "restrictedPicks": 1,
+        "restrictedPokemon": ["flygon", "grumpig", "slowbro_galarian", "dubwool", "goodra", "druddigon", "cresselia", "deoxys_defense", "baxcalibur", "kingdra", "bronzong", "drampa"],
+        "include": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["dragon", "grass", "normal", "psychic"]
+        }],
+        "exclude": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["dark", "fairy", "flying"]
+        }, {
+            "filterType": "tag",
+            "name": "Tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["medicham", "delphox", "turtonator", "wobbuffet", "zygarde", "zygarde_10", "grafaiai", "arctibax", "dragonair", "furret", "dragalge", "pyroar", "hakamo_o", "kommo_o", "litleo", "armarouge", "lickilicky", "lickitung", "abomasnow", "diggersby", "ursaring"]
+        }],
+        "overrides": [],
+        "league": 1500,
+        "useDefaultMovesets": 1,
+        "excludeLowPokemon": 0,
+        "levelCap": 50,
+        "includeLowStatProduct": true
     }, {
         "name": "ingot",
         "title": "Ingot",
@@ -446,6 +475,14 @@
         "cup": "ingot",
         "cp": 1500,
         "meta": "ingot",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Devon Illusion Cup",
+        "cup": "illusion",
+        "cp": 1500,
+        "meta": "illusion",
         "showCup": true,
         "showFormat": true,
         "showMeta": true

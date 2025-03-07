@@ -1,0 +1,30 @@
+{
+    "name": "illusion",
+    "title": "illusionT",
+    "restrictedPicks": 1,
+    "restrictedPokemon": ["flygon", "grumpig", "slowbro_galarian", "dubwool", "goodra", "druddigon", "cresselia", "deoxys_defense", "baxcalibur", "kingdra", "bronzong", "drampa"],
+    "include": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["dragon", "grass", "normal", "psychic"]
+    }],
+    "exclude": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["dark", "fairy", "flying"]
+    }, {
+        "filterType": "tag",
+        "name": "Tag",
+        "values": ["mega"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["medicham", "delphox", "turtonator", "wobbuffet", "zygarde", "zygarde_10", "grafaiai", "arctibax", "dragonair", "furret", "dragalge", "pyroar", "hakamo_o", "kommo_o", "litleo", "armarouge", "lickilicky", "lickitung", "abomasnow", "diggersby", "ursaring"]
+    }],
+    "overrides": [],
+    "league": 1500,
+    "useDefaultMovesets": 1,
+    "excludeLowPokemon": 0,
+    "levelCap": 50,
+    "includeLowStatProduct": true
+}
