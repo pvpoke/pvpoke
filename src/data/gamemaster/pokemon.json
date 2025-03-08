@@ -37935,7 +37935,7 @@
     "types": ["fire", "ghost"],
     "fastMoves": ["INCINERATE", "BITE"],
     "chargedMoves": ["FLAMETHROWER", "DISARMING_VOICE", "CRUNCH", "SHADOW_BALL", "BLAST_BURN", "TORCH_SONG"],
-	"eliteMoves": ["TORCH_SONG"],
+	"eliteMoves": ["BLAST_BURN"],
     "defaultIVs": {
         "cp500": [6.5, 4, 4, 11],
         "cp1500": [18.5, 4, 12, 11],
