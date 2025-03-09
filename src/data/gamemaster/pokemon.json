@@ -9410,7 +9410,7 @@
         "cp1500": [28, 4, 14, 12],
         "cp2500": [50, 15, 15, 15]
     },
-    "searchPriority": 3,
+    "searchPriority": 2,
     "buddyDistance": 1,
     "thirdMoveCost": 10000,
     "released": true,
@@ -17788,6 +17788,7 @@
         "cp2500": [50, 15, 15, 15],
         "cp1500l40": [37, 12, 15, 15]
     },
+	"nicknames": ["clops"],
 	"searchPriority": 7,
     "level25CP": 927,
     "tags": ["shadoweligible"],
@@ -23198,11 +23199,12 @@
         "cp2500": [48.5, 4, 14, 14],
         "cp2500l40": [40, 15, 15, 15]
     },
+	"nicknames": ["noir"],
     "level25CP": 1447,
     "tags": ["shadoweligible"],
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
-    "searchPriority": 6,
+    "searchPriority": 3,
     "released": true,
     "family": {
         "id": "FAMILY_DUSKULL",
