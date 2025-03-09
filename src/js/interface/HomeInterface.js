@@ -2,49 +2,39 @@
 * Interface functionality for move list and explorer
 */
 
-var InterfaceMaster = (function () {
-    var instance;
+const InterfaceMaster = (function () {
 
-    function createInstance() {
+	let instance;
 
+	class InterfaceMaster {
+		constructor() {
+			this.rss = RSS.getInstance();
+			this.gm = GameMaster.getInstance();
+			this.initUI();
+		}
 
-        var object = new interfaceObject();
-
-		function interfaceObject(){
-
-			var self = this;
-			var gm = GameMaster.getInstance();
-			var rss = RSS.getInstance();
-			var feed;
-
-			this.init = function(){
-			};
-
-			this.displayRSSFeed = function(xml){
-				feed = rss.feedToObjects(xml);
-
-				for(var i = 0; i < feed.length; i++){
-					var $html = rss.generateItemHTML(feed[i]);
-					$(".feed").append($html);
-				}
-			}
-
+		initUI() {
 			$("button.feed-expand").click(function(e){
 				$(".feed-container").toggleClass("expanded");
 				$(".feed").scrollTop(0);
 			});
-
 		}
 
-        return object;
-    }
+		displayRSSFeed(xml) {
+			const feed = this.rss.feedToObjects(xml);
+			
+			const $elements = feed.map(item => 
+				this.rss.generateItemHTML(item)
+			);
+			
+			$(".feed").append($elements);
+		}
+	}
 
-    return {
-        getInstance: function () {
-            if (!instance) {
-                instance = createInstance();
-            }
-            return instance;
-        }
-    };
+	return {
+		getInstance: () => {
+			instance = instance || new InterfaceMaster();
+			return instance;
+		}
+	}
 })();
