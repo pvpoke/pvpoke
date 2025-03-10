@@ -1,155 +1,168 @@
-function Player(i, ai, b){
-	// Properties
-	var self = this;
-
-	var index = i;
-	var ai = ai;
-	var battle = b;
-
-	if(ai !== false){
-		ai = new TrainingAI(ai, self, battle);
+class Player {
+	/**
+	 * Represents a player in a battle
+	 * @param {number} index 
+	 * @param {any} aiType 
+	 * @param {Battle} battle 
+	 */
+	constructor(index, aiType, battle) {
+		this.index = index;
+		this.battle = battle;
+		
+		// Initialize AI
+		this.ai = aiType !== false ? new TrainingAI(aiType, this, battle) : false;
+		
+		// Arrays for Pokemon
+		this.team = []; // Pokemon in the battle
+		this.roster = []; // Full 6 Pokemon team
+		
+		// Battle properties
+		this.shields = 2;
+		this.switchTimer = 0;
+		this.switchTime = 50000;
+		this.wins = 0;
+		this.priority = index;
 	}
 
-	var team = []; // Array of Pokemon in the battle
-	var roster = []; // Array of full 6 Pokemon on the team
+	reset() {
+		this.shields = 2;
+		this.switchTimer = 0;
 
-	// Battle properties
-
-	var shields = 2;
-	var switchTimer = 0;
-	var switchTime = 50000;
-	var wins = 0;
-	var priority = i;
-
-	// Reset player and all Pokemon on the roster
-
-	this.reset = function(){
-		shields = 2;
-		switchTimer = 0;
-
-		for(var i = 0; i < roster.length; i++){
-			roster[i].reset();
+		for (const pokemon of this.roster) {
+			pokemon.reset();
 		}
 	}
 
-	// Get current roster
-
-	this.getRoster = function(){
-		return roster;
+	getRoster() {
+		return this.roster;
 	}
 
-	// Set current roster
-
-	this.setRoster = function(val){
-		roster = val;
+	setRoster(val) {
+		this.roster = val;
 
 		// For team generation purposes, give each Pokemon 2 shields and fully reset
-		for(var i = 0; i < roster.length; i++){
-			roster[i].setShields(2);
-			roster[i].fullReset();
+		for (const pokemon of this.roster) {
+			pokemon.setShields(2);
+			pokemon.fullReset();
 		}
 	}
 
-	// Get current team
-
-	this.getTeam = function(){
-		return team;
+	getTeam() {
+		return this.team;
 	}
 
-	// Set current team
-
-	this.setTeam = function(val){
-		team = val;
+	setTeam(val) {
+		this.team = val;
 
 		// Reset battle stats
-
-		for(var i = 0; i < team.length; i++){
-			team[i].resetBattleStats();
+		for (const pokemon of this.team) {
+			pokemon.resetBattleStats();
 		}
 	}
 
-	// Get current number of shields
-
-	this.getShields = function(){
-		return shields;
+	/**
+	 * Returns the number of shields remaining
+	 * @returns {0|1|2}
+	 */
+	getShields() {
+		return this.shields;
 	}
 
-	// Use a shield if available, otherwise return false
-
-	this.useShield = function(){
-		if(shields > 0){
-			shields--;
+	/**
+	 * Attempts to use shield. Returns `true` if successful, otherwise returns `false`
+	 * @returns {boolean}
+	 */
+	useShield() {
+		if (this.shields > 0) {
+			this.shields--;
 			return true;
-		} else{
-			return false;
 		}
+		return false;
 	}
 
-	// Get current switch timer in milliseconds
-
-	this.getSwitchTimer = function(){
-		return switchTimer;
+	/**
+	 * Returns the current switch timer in milliseconds
+	 * @returns {number}
+	 */
+	getSwitchTimer() {
+		return this.switchTimer;
 	}
 
-	// Set the duration of the switch clock
-
-	this.setSwitchTime = function(val){
-		switchTime = val;
+	/**
+	 * 
+	 * @param {number} val 
+	 */
+	setSwitchTime(val) {
+		this.switchTime = val;
 	}
 
-	// Set the switch timer to its maximum value
-
-	this.startSwitchTimer = function(){
-		switchTimer = switchTime;
+	/**
+	 * Starts the switch timer
+	 */
+	startSwitchTimer() {
+		this.switchTimer = this.switchTime;
 	}
 
-	// Get current switch timer in milliseconds
-
-	this.decrementSwitchTimer = function(deltaTime){
+	decrementSwitchTimer(deltaTime) {
 		// Evaluate the matchup when the switch clock completes
-		var evaluateMatchup = false;
-		if((switchTimer <= deltaTime)&&(switchTimer > 0)){
+		let evaluateMatchup = false;
+		if ((this.switchTimer <= deltaTime) && (this.switchTimer > 0)) {
 			evaluateMatchup = true;
 		}
 
-		switchTimer = Math.max(switchTimer-deltaTime, 0);
+		this.switchTimer = Math.max(this.switchTimer - deltaTime, 0);
 
-		if((index == 1)&&(evaluateMatchup)){
-			ai.evaluateMatchup(battle.getTurns(), battle.getPokemon()[1], battle.getPokemon()[0], battle.getPlayers()[0]);
+		if ((this.index == 1) && evaluateMatchup) {
+			this.ai.evaluateMatchup(
+				this.battle.getTurns(),
+				this.battle.getPokemon()[1],
+				this.battle.getPokemon()[0],
+				this.battle.getPlayers()[0]
+			);
 		}
 	}
 
-	// Return the AI controlling this player
-
-	this.getAI = function(){
-		return ai;
+	/**
+	 * Return the AI controlling this player
+	 * @returns {TrainingAI}
+	 */
+	getAI() {
+		return this.ai;
 	}
 
-	// Return the player's index
-
-	this.getIndex = function(){
-		return index;
+	/**
+	 * Return the player's index
+	 * @returns {number}
+	 */
+	getIndex() {
+		return this.index;
 	}
 
-	// Return this player's priority
-
-	this.getPriority = function(){
-		return priority;
+	/**
+	 * Returns this priority of the player
+	 * @returns {number}
+	 */
+	getPriority() {
+		return this.priority;
 	}
 
-	// Set this player's priority
-
-	this.setPriority = function(val){
-		priority = val;
+	/**
+	 * Sets the priority of the player
+	 * @param {number} val
+	 */
+	setPriority(val) {
+		this.priority = val;
 	}
 
-	// Return the number of available Pokemon
+	/**
+	 * Returns the number of remaining Pokemon
+	 * @returns {number}
+	 */
+	getRemainingPokemon() {
+		let count = 0;
 
-	this.getRemainingPokemon = function(){
-		var count = 0;
-
-		for(var i = 0; i < team.length; i++){
-			if(team[i].hp > 0){
+		for (const pokemon of this.team) {
+			if (pokemon.hp > 0) {
 				count++;
 			}
 		}
@@ -157,22 +170,27 @@ function Player(i, ai, b){
 		return count;
 	}
 
-	// Generate a random roster for this player
-
-	this.generateRoster = function(partySize, callback, customTeamPool){
-		customTeamPool = typeof customTeamPool !== 'undefined' ? customTeamPool : false;
-
-		ai.generateRoster(partySize, callback, customTeamPool);
+	/**
+	 * Generate a random roster for this player
+	 * @param {number} partySize
+	 * @param {Function} callback
+	 * @param {boolean} [customTeamPool=false]
+	 */
+	generateRoster(partySize, callback, customTeamPool = false) {
+		this.ai.generateRoster(partySize, callback, customTeamPool);
 	}
 
-	// Generate a team of 3 with an established roster
-
-	this.generateTeam = function(opponentRoster, previousResult, previousTeams){
-		if(! previousResult){
-			ai.generateTeam(opponentRoster);
-		} else{
-			ai.generateTeam(opponentRoster, previousResult, previousTeams);
+	/**
+	 * Generate a team of 3 with an established roster
+	 * @param opponentRoster
+	 * @param {'win' | 'loss'} [previousResult]
+	 * @param previousTeams
+	 */
+	generateTeam(opponentRoster, previousResult, previousTeams) {
+		if (!previousResult) {
+			this.ai.generateTeam(opponentRoster);
+		} else {
+			this.ai.generateTeam(opponentRoster, previousResult, previousTeams);
 		}
-
 	}
 }
