@@ -37123,30 +37123,10 @@
     }
 }, {
     "dex": 888,
-    "speciesName": "Zacian",
-    "speciesId": "zacian",
-    "baseStats": {
-        "atk": 254,
-        "def": 236,
-        "hp": 192
-    },
-    "types": ["fairy", "steel"],
-    "fastMoves": ["METAL_CLAW", "SNARL", "QUICK_ATTACK", "FIRE_FANG"],
-    "chargedMoves": ["PLAY_ROUGH", "IRON_HEAD", "WILD_CHARGE", "CLOSE_COMBAT"],
-    "defaultIVs": {
-        "cp500": [5, 8, 15, 12],
-        "cp1500": [14, 9, 15, 15],
-        "cp2500": [23.5, 6, 15, 15]
-    },
-    "buddyDistance": 20,
-    "thirdMoveCost": 100000,
-    "released": false
-}, {
-    "dex": 888,
     "speciesName": "Zacian (Crowned Sword)",
     "speciesId": "zacian_crowned_sword",
     "baseStats": {
-        "atk": 332,
+        "atk": 295,
         "def": 240,
         "hp": 192
     },
@@ -37154,10 +37134,11 @@
     "fastMoves": ["METAL_CLAW", "SNARL", "QUICK_ATTACK", "FIRE_FANG"],
     "chargedMoves": ["PLAY_ROUGH", "IRON_HEAD", "WILD_CHARGE", "CLOSE_COMBAT"],
     "defaultIVs": {
-        "cp500": [4, 6, 15, 8],
-        "cp1500": [11, 5, 14, 10],
-        "cp2500": [18, 4, 15, 15]
+		"cp500": [4.5, 4, 6, 11],
+        "cp1500": [12.5, 4, 12, 8],
+        "cp2500": [20.5, 5, 11, 14]
     },
+	"tags": ["legendary"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": false
@@ -37185,41 +37166,22 @@
     "searchPriority": 5
 }, {
     "dex": 889,
-    "speciesName": "Zamazenta",
-    "speciesId": "zamazenta",
-    "baseStats": {
-        "atk": 254,
-        "def": 236,
-        "hp": 192
-    },
-    "types": ["fighting", "steel"],
-    "fastMoves": ["METAL_CLAW", "SNARL", "QUICK_ATTACK", "ICE_FANG"],
-    "chargedMoves": ["MOONBLAST", "IRON_HEAD", "CRUNCH", "CLOSE_COMBAT"],
-    "defaultIVs": {
-        "cp500": [5, 8, 15, 12],
-        "cp1500": [14, 9, 15, 15],
-        "cp2500": [23.5, 6, 15, 15]
-    },
-    "buddyDistance": 20,
-    "thirdMoveCost": 100000,
-    "released": false
-}, {
-    "dex": 889,
     "speciesName": "Zamazenta (Crowned Shield)",
     "speciesId": "zamazenta_crowned_shield",
     "baseStats": {
-        "atk": 250,
-        "def": 292,
+        "atk": 231,
+        "def": 282,
         "hp": 192
     },
     "types": ["fighting", "steel"],
     "fastMoves": ["METAL_CLAW", "SNARL", "QUICK_ATTACK", "ICE_FANG"],
     "chargedMoves": ["MOONBLAST", "IRON_HEAD", "CRUNCH", "CLOSE_COMBAT"],
     "defaultIVs": {
-        "cp500": [4.5, 13, 15, 15],
-        "cp1500": [13, 5, 15, 15],
-        "cp2500": [22, 4, 15, 11]
+		"cp500": [5, 10, 10, 15],
+        "cp1500": [14.5, 5, 11, 14],
+        "cp2500": [24, 4, 13, 15]
     },
+	"tags": ["legendary"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": false
