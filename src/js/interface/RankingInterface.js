@@ -1234,7 +1234,7 @@ var InterfaceMaster = (function () {
 					}
 				}
 
-				if((scores)&&(context != "custom")){
+				if(scores && category == "overall" && context != "custom"){
 					// Display rating hexagon
 					drawRatingHexagon($rank, r);
 				} else{

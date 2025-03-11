@@ -1259,19 +1259,19 @@ var GameMaster = (function () {
 								for(var k = 0; k < pokemon.fastMovePool.length; k++){
 									if((pokemon.fastMovePool[k].legacy == true)||(pokemon.fastMovePool[k].elite == true)){
 										valid = true;
-									} else if(param == "special") {
-										if ((pokemon.fastMovePool[k].moveId == "FRUSTRATION")||(pokemon.fastMovePool[k].moveId === "RETURN")) {
-											valid = true;
-										}
 									}
 								}
 
 								for(var k = 0; k < pokemon.chargedMovePool.length; k++){
 									if((pokemon.chargedMovePool[k].legacy == true)||(pokemon.chargedMovePool[k].elite == true)){
 										valid = true;
-									} else if(param == "special") {
-										if ((pokemon.chargedMovePool[k].moveId == "FRUSTRATION")||(pokemon.chargedMovePool[k].moveId === "RETURN")) {
+									}
+
+									if(pokemon.chargedMovePool[k].moveId == "FRUSTRATION"||pokemon.chargedMovePool[k].moveId === "RETURN") {
+										if(param == "special"){
 											valid = true;
+										} else if(param == "legacy"){
+											valid = false;
 										}
 									}
 								}

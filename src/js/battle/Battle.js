@@ -1219,7 +1219,7 @@ function Battle(){
 						var moveDamage = self.calculateDamage(poke, opponent, poke.activeChargedMoves[n]);
 
 						// If this move deals more damage than the other move, use it
-						if ((moveDamage > prevMoveDamage) && (prevMoveDamage < opponent.hp)){
+						if (moveDamage > prevMoveDamage){
 							maxDamageMoveIndex = poke.chargedMoves.indexOf(poke.activeChargedMoves[n]);
 							prevMoveDamage = moveDamage;
 						}
@@ -1236,12 +1236,12 @@ function Battle(){
 				// If no moves available, throw fast move
 				if (prevMoveDamage == -1) {
 					useChargedMove = false;
-					self.logDecision(turns, poke, " uses a fast move because it is has " + turnsToLive + " turn(s) before it is KO'd but has no energy.");
+					self.logDecision(turns, poke, " uses a fast move because it has " + turnsToLive + " turn(s) before it is KO'd but has no energy.");
 					return;
 				// Throw highest damage move
 				} else {
 
-					self.logDecision(turns, poke, " uses " + poke.chargedMoves[maxDamageMoveIndex].name + " because it is has " + turnsToLive + " turn(s) before it is KO'd.");
+					self.logDecision(turns, poke, " uses " + poke.chargedMoves[maxDamageMoveIndex].name + " because it has " + turnsToLive + " turn(s) before it is KO'd.");
 
 					action = new TimelineAction(
 						"charged",
