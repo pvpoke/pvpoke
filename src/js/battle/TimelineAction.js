@@ -1,17 +1,72 @@
-// An action set in Sandbox Mode to be interpreted by Battle.js into a TimelineEvent
+/**
+ * Type of TimelineAction
+ * @typedef {"fast" | "charged" | "wait" | 'switch'} TimelineActionType
+ */
 
-function TimelineAction(type, actor, turn, value, settings){
-	this.type = type;
-	this.actor = actor;
-	this.turn = turn;
-	this.value = value; // Index of charged move
-	this.settings = settings;
-	this.valid = false;
-	this.processed = false; // Whether this action has been processed yet or not
-	var self = this;
+/**
+ * An action set in Sandbox Mode to be interpreted by Battle.js into a TimelineEvent
+ */
 
-	this.typeToInt = function(){
-		switch(self.type){
+class TimelineAction {
+	/**
+	 * @type {TimelineActionType}
+	 */
+	type;
+
+	actor;
+
+	/**
+	 * @type {number}
+	 */
+	turn;
+
+	/**
+	 * Index of charged move to use
+	 * @type {number}
+	 */
+	value;
+
+	/**
+	 * @type {any}
+	 */
+
+	settings;
+
+	/**
+	 * @type {boolean}
+	 */
+	processed;
+
+	/**
+	 * Whether this action has been processed yet or not
+	 * @type {boolean}
+	 */
+	valid;
+
+	/**
+	 *
+	 * @param {TimelineActionType} type
+	 * @param actor
+	 * @param {number} turn
+	 * @param {number} value
+	 * @param {any} settings
+	 */
+	constructor(type, actor, turn, value, settings) {
+		this.type = type;
+		this.actor = actor;
+		this.turn = turn;
+		this.value = value;
+		this.settings = settings;
+		this.valid = false;
+		this.processed = false;
+	}
+
+	/**
+	 * Converts the type to an integer
+	 * @returns {0|1|2}
+	 */
+	typeToInt() {
+		switch (this.type) {
 			case "fast":
 			case "charged":
 				return 1;

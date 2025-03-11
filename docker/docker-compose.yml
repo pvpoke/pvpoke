@@ -7,6 +7,6 @@ services:
       context: ..
       dockerfile: docker/Dockerfile
     ports:
-      - 80:80
+      - "${PVPOKE_PORT:-80}:80" # Use port set in PVPOKE_PORT env variable, use port 80 as default
     volumes:
       - ../src:/var/www/html/pvpoke/src
