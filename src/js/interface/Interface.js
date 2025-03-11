@@ -1316,7 +1316,7 @@ var InterfaceMaster = (function () {
 				var csv = ','; // CSV data of all matchups
 				$(".matrix-table").html("");
 
-				var $row = $("<thead><tr><th></th></tr></thead>");
+				var $row = $("<thead><tr><th></th><th class=\"arrow\"></th></tr></thead>");
 
 				// Add matrix table headings for all Pokemon on the right side
 
@@ -1354,7 +1354,7 @@ var InterfaceMaster = (function () {
 
 					var average = 0;
 
-					$row = $("<tr><th class=\"name\">"+pokemon.speciesName+" <span>"+pokemon.generateMovesetStr()+"<br>" + pokemon.ivs.atk + "/" + pokemon.ivs.def + "/" + pokemon.ivs.hp + "</span></th></tr>");
+					$row = $("<tr><th class=\"number\">"+(i+1)+"</th><th class=\"name\">" + pokemon.speciesName+" <span>"+pokemon.generateMovesetStr()+"<br>" + pokemon.ivs.atk + "/" + pokemon.ivs.def + "/" + pokemon.ivs.hp + "</span></th></tr>");
 
 					var $differenceRow = $row.clone();
 					$differenceRow.append($("<td class=\"differences\"><div class=\"wins\"></div><div class=\"losses\"></div></td>"));

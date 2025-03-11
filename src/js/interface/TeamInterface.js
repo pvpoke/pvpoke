@@ -404,7 +404,7 @@ var InterfaceMaster = (function () {
 				$(".threats-table").html("");
 				$(".meta-table").html("");
 
-				var $row = $("<thead><tr><td></td></tr></thead>");
+				var $row = $("<thead><tr><td class=\"arrow\"></td></tr></thead>");
 
 				for(var n = 0; n < team.length; n++){
 					$row.find("tr").append("<td class=\"name-small\">"+team[n].speciesName+"</td>");
@@ -870,7 +870,7 @@ var InterfaceMaster = (function () {
 
 				$(".alternatives-table").html("");
 
-				var $row = $("<thead><tr><td></td></tr></thead>");
+				var $row = $("<thead><tr><td class=\"arrow\"></td></tr></thead>");
 
 				for(var n = 0; n < counterTeam.length; n++){
 					$row.find("tr").append("<td class=\"name-small\">"+counterTeam[n].speciesName+"</td>");

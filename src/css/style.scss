@@ -1299,6 +1299,13 @@ footer{
 					flex: 1;
 					padding: 5px;
 					font-size: 15px;
+
+					.number{
+						padding-right: 5px;
+					    font-size: 12px;
+					    font-weight: normal;
+					    opacity: 0.5;
+					}
 				}
 
 				span.cliffhanger-points{
@@ -2333,9 +2340,13 @@ select, input{
 		.difference-table{
 			width:100%;
 
-			th{
+			th:nth-of-type(2){
 				padding: 3px 6px;
 				width: 100px;
+			}
+
+			th.number{
+				padding-left: 5px;
 			}
 
 			td{
@@ -4266,6 +4277,26 @@ a.download-csv{
 			box-sizing: border-box;
 		}
 
+
+		&.matrix-table, &.meta-table, &.threats-table, &.alternatives-table{
+			th.arrow, thead td.arrow{
+				background-image:url('../img/matrix-arrow-header.png');
+				background-repeat: no-repeat;
+				background-position: right 4px bottom 4px;
+			}
+
+			th.name{
+				background-image:url('../img/matrix-arrow.png');
+				background-repeat: no-repeat;
+				background-position: right 4px center;
+				padding-right: 20px;
+			}
+
+			td.name-small{
+				padding-bottom:12px;
+			}
+		}
+
 		&.matrix-table{
 
 			a.rating{
@@ -4298,25 +4329,6 @@ a.download-csv{
 				span{
 					margin: 0 6px 0 0;
 				}
-			}
-		}
-
-		&.matrix-table, &.meta-table, &.threats-table, &.alternatives-table{
-			th:first-of-type, thead td:first-of-type{
-				background-image:url('../img/matrix-arrow-header.png');
-				background-repeat: no-repeat;
-				background-position: right 4px bottom 4px;
-			}
-
-			th.name{
-				background-image:url('../img/matrix-arrow.png');
-				background-repeat: no-repeat;
-				background-position: right 4px center;
-				padding-right: 20px;
-			}
-
-			td.name-small{
-				padding-bottom:12px;
 			}
 		}
 	}
@@ -4364,6 +4376,18 @@ a.download-csv{
 			&.galar{ color:#946000; }
 		}
 	}
+}
+
+.matrix-table th.number{
+	font-weight: normal;
+	font-size: 12px;
+	text-align: left;
+	color: rgb(181 181 181);
+	padding-right: 0;
+}
+
+.matrix-table th:nth-of-type(2){
+	left: 18px;
 }
 
 a.rating, .rating-container .rating, .summary .rating,
