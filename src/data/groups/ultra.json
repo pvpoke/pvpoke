@@ -23,10 +23,6 @@
     "fastMove": "SAND_ATTACK",
     "chargedMoves": ["SKY_ATTACK", "IRON_HEAD"]
 }, {
-    "speciesId": "corviknight",
-    "fastMove": "SAND_ATTACK",
-    "chargedMoves": ["SKY_ATTACK", "PAYBACK"]
-}, {
     "speciesId": "cresselia",
     "fastMove": "PSYCHO_CUT",
     "chargedMoves": ["GRASS_KNOT", "MOONBLAST"]
@@ -60,7 +56,7 @@
 }, {
     "speciesId": "forretress",
     "fastMove": "VOLT_SWITCH",
-    "chargedMoves": ["ROCK_TOMB", "MIRROR_SHOT"]
+    "chargedMoves": ["ROCK_TOMB", "EARTHQUAKE"]
 }, {
     "speciesId": "giratina_altered",
     "fastMove": "DRAGON_BREATH",
@@ -76,12 +72,7 @@
 }, {
     "speciesId": "golisopod",
     "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["AERIAL_ACE", "LIQUIDATION"]
-}, {
-    "speciesId": "golurk_shadow",
-    "fastMove": "MUD_SLAP",
-    "chargedMoves": ["SHADOW_PUNCH", "DYNAMIC_PUNCH"],
-    "shadowType": "shadow"
+    "chargedMoves": ["X_SCISSOR", "AQUA_JET"]
 }, {
     "speciesId": "greninja",
     "fastMove": "WATER_SHURIKEN",
@@ -175,4 +166,8 @@
     "speciesId": "zygarde_complete",
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["BULLDOZE", "OUTRAGE"]
+}, {
+    "speciesId": "steelix",
+    "fastMove": "THUNDER_FANG",
+    "chargedMoves": ["PSYCHIC_FANGS", "BREAKING_SWIPE"]
 }]
