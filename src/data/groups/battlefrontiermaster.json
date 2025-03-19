@@ -65,7 +65,7 @@
 }, {
     "speciesId": "gholdengo",
     "fastMove": "ASTONISH",
-    "chargedMoves": ["SHADOW_BALL", "FOCUS_BLAST"]
+    "chargedMoves": ["SHADOW_BALL", "DAZZLING_GLEAM"]
 }, {
     "speciesId": "palkia_origin",
     "fastMove": "DRAGON_BREATH",
@@ -107,6 +107,10 @@
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["CRUNCH", "EARTHQUAKE"]
 }, {
+    "speciesId": "zygarde_complete",
+    "fastMove": "DRAGON_TAIL",
+    "chargedMoves": ["BULLDOZE", "OUTRAGE"]
+}, {
     "speciesId": "abomasnow_mega",
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["WEATHER_BALL_ICE", "ENERGY_BALL"]
@@ -120,7 +124,7 @@
     "chargedMoves": ["BLAST_BURN", "DRAGON_CLAW"]
 }, {
     "speciesId": "blastoise_mega",
-    "fastMove": "WATER_GUN",
+    "fastMove": "ROLLOUT",
     "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"]
 }, {
     "speciesId": "gengar_mega",
@@ -145,7 +149,7 @@
 }, {
     "speciesId": "aggron_mega",
     "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["HEAVY_SLAM", "METEOR_BEAM"]
+    "chargedMoves": ["ROCK_TOMB", "METEOR_BEAM"]
 }, {
     "speciesId": "blaziken_mega",
     "fastMove": "FIRE_SPIN",
@@ -155,13 +159,17 @@
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["DARK_PULSE", "SUNSTEEL_STRIKE"]
 }, {
+    "speciesId": "necrozma_dusk_mane",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["IRON_HEAD", "OUTRAGE"]
+}, {
     "speciesId": "necrozma_dawn_wings",
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["DARK_PULSE", "MOONGEIST_BEAM"]
 }, {
     "speciesId": "melmetal",
     "fastMove": "THUNDER_SHOCK",
-    "chargedMoves": ["SUPER_POWER", "DOUBLE_IRON_BASH"]
+    "chargedMoves": ["THUNDERBOLT", "DOUBLE_IRON_BASH"]
 }, {
     "speciesId": "avalugg_hisuian",
     "fastMove": "POWDER_SNOW",
@@ -206,4 +214,24 @@
     "speciesId": "zapdos",
     "fastMove": "THUNDER_SHOCK",
     "chargedMoves": ["DRILL_PECK", "THUNDERBOLT"]
+}, {
+    "speciesId": "kyurem_black",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["FREEZE_SHOCK", "FUSION_BOLT"]
+}, {
+    "speciesId": "kyurem_black",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["OUTRAGE", "FUSION_BOLT"]
+}, {
+    "speciesId": "kyurem_white",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["ICE_BURN", "FUSION_FLARE"]
+}, {
+    "speciesId": "kyurem_white",
+    "fastMove": "ICE_FANG",
+    "chargedMoves": ["ICE_BURN", "FUSION_FLARE"]
+}, {
+    "speciesId": "meloetta_aria",
+    "fastMove": "QUICK_ATTACK",
+    "chargedMoves": ["PSYSHOCK", "DAZZLING_GLEAM"]
 }]

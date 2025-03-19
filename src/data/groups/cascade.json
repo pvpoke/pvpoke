@@ -21,19 +21,19 @@
 }, {
     "speciesId": "avalugg",
     "fastMove": "ICE_FANG",
-    "chargedMoves": ["AVALANCHE", "CRUNCH"]
+    "chargedMoves": ["ICY_WIND", "CRUNCH"]
 }, {
     "speciesId": "barbaracle",
     "fastMove": "FURY_CUTTER",
     "chargedMoves": ["CROSS_CHOP", "STONE_EDGE"]
 }, {
-    "speciesId": "bibarel_shadow",
-    "fastMove": "ROLLOUT",
-    "chargedMoves": ["SURF", "HYPER_FANG"]
-}, {
     "speciesId": "cetitan",
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["BODY_SLAM", "AVALANCHE"]
+}, {
+    "speciesId": "claydol",
+    "fastMove": "MUD_SLAP",
+    "chargedMoves": ["ROCK_TOMB","SHADOW_BALL"] 
 }, {
     "speciesId": "deoxys_defense",
     "fastMove": "COUNTER",
@@ -47,17 +47,21 @@
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["BODY_SLAM", "AQUA_TAIL"]
 }, {
-    "speciesId": "flygon_shadow",
-    "fastMove": "DRAGON_TAIL",
-    "chargedMoves": ["DRAGON_CLAW", "SCORCHING_SANDS"]
+    "speciesId": "drampa",
+    "fastMove": "DRAGON_BREATH",
+    "chargedMoves": ["FLY","SWIFT"]
 }, {
     "speciesId": "froslass",
-    "fastMove": "POWDER_SNOW",
+    "fastMove": "HEX",
     "chargedMoves": ["AVALANCHE", "SHADOW_BALL"]
 }, {
     "speciesId": "girafarig",
     "fastMove": "DOUBLE_KICK",
     "chargedMoves": ["PSYCHIC_FANGS", "TRAILBLAZE"]
+}, {
+    "speciesId": "glalie",
+    "fastMove": "ROLLOUT",
+    "chargedMoves": ["AVALANCHE","SHADOW_BALL"]
 }, {
     "speciesId": "golisopod",
     "fastMove": "SHADOW_CLAW",
@@ -78,18 +82,6 @@
     "speciesId": "hypno",
     "fastMove": "CONFUSION",
     "chargedMoves": ["THUNDER_PUNCH", "SHADOW_BALL"]
-}, {
-    "speciesId": "jellicent",
-    "fastMove": "HEX",
-    "chargedMoves": ["SURF", "SHADOW_BALL"]
-}, {
-    "speciesId": "latios_shadow",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["DRAGON_CLAW", "LUSTER_PURGE"]
-}, {
-    "speciesId": "lunatone",
-    "fastMove": "PSYWAVE",
-    "chargedMoves": ["ROCK_SLIDE", "MOONBLAST"]
 }, {
     "speciesId": "mew",
     "fastMove": "SHADOW_CLAW",
@@ -119,9 +111,17 @@
     "fastMove": "FURY_CUTTER",
     "chargedMoves": ["HYDRO_CANNON", "MEGAHORN"]
 }, {
+    "speciesId": "samurott_shadow",
+    "fastMove": "FURY_CUTTER",
+    "chargedMoves": ["HYDRO_CANNON", "MEGAHORN"]
+}, {
     "speciesId": "starmie",
     "fastMove": "PSYWAVE",
     "chargedMoves": ["SURF", "POWER_GEM"]
+}, {
+    "speciesId": "swalot",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["ICE_BEAM","SLUDGE"]
 }, {
     "speciesId": "uxie",
     "fastMove": "CONFUSION",

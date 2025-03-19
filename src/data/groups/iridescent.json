@@ -1,10 +1,6 @@
 [{
-    "speciesId": "armaldo",
-    "fastMove": "FURY_CUTTER",
-    "chargedMoves": ["CROSS_POISON", "ROCK_BLAST"]
-}, {
     "speciesId": "charjabug",
-    "fastMove": "VOLT_SWITCH",
+    "fastMove": "BUG_BITE",
     "chargedMoves": ["X_SCISSOR", "CRUNCH"]
 }, {
     "speciesId": "cofagrigus",
@@ -13,7 +9,7 @@
 }, {
     "speciesId": "cradily",
     "fastMove": "BULLET_SEED",
-    "chargedMoves": ["STONE_EDGE", "GRASS_KNOT"]
+    "chargedMoves": ["ROCK_TOMB", "GRASS_KNOT"]
 }, {
     "speciesId": "crustle",
     "fastMove": "FURY_CUTTER",
@@ -35,10 +31,6 @@
     "fastMove": "ASTONISH",
     "chargedMoves": ["BREAKING_SWIPE", "SHADOW_BALL"]
 }, {
-    "speciesId": "drakloak",
-    "fastMove": "ASTONISH",
-    "chargedMoves": ["SHADOW_BALL", "OUTRAGE"]
-}, {
     "speciesId": "dusknoir",
     "fastMove": "ASTONISH",
     "chargedMoves": ["SHADOW_PUNCH", "SHADOW_BALL"]
@@ -51,6 +43,10 @@
     "fastMove": "FAIRY_WIND",
     "chargedMoves": ["DISARMING_VOICE", "MOONBLAST"]
 }, {
+    "speciesId": "florges",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["TRAILBLAZE", "MOONBLAST"]
+}, {
     "speciesId": "galvantula",
     "fastMove": "VOLT_SWITCH",
     "chargedMoves": ["CROSS_POISON", "LUNGE"]
@@ -58,6 +54,10 @@
     "speciesId": "girafarig",
     "fastMove": "CONFUSION",
     "chargedMoves": ["PSYCHIC_FANGS", "TRAILBLAZE"]
+}, {
+    "speciesId": "gourgeist_super",
+    "fastMove": "HEX",
+    "chargedMoves": ["FOUL_PLAY","SHADOW_BALL"]
 }, {
     "speciesId": "grovyle",
     "fastMove": "QUICK_ATTACK",
@@ -83,10 +83,6 @@
     "fastMove": "FURY_CUTTER",
     "chargedMoves": ["LEAF_BLADE", "X_SCISSOR"]
 }, {
-    "speciesId": "maractus",
-    "fastMove": "POISON_JAB",
-    "chargedMoves": ["AERIAL_ACE", "PETAL_BLIZZARD"]
-}, {
     "speciesId": "meganium",
     "fastMove": "VINE_WHIP",
     "chargedMoves": ["FRENZY_PLANT", "EARTHQUAKE"]
@@ -102,6 +98,10 @@
     "speciesId": "pumpkaboo_super",
     "fastMove": "ASTONISH",
     "chargedMoves": ["FOUL_PLAY", "GRASS_KNOT"]
+}, {
+    "speciesId": "ribombee",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["BUG_BUZZ","DAZZLING_GLEAM"]
 }, {
     "speciesId": "runerigus",
     "fastMove": "SHADOW_CLAW",
@@ -123,21 +123,9 @@
     "fastMove": "FAIRY_WIND",
     "chargedMoves": ["FLAMETHROWER", "PLAY_ROUGH"]
 }, {
-    "speciesId": "tangrowth",
-    "fastMove": "VINE_WHIP",
-    "chargedMoves": ["ROCK_SLIDE", "SLUDGE_BOMB"]
-}, {
     "speciesId": "trevenant",
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["FOUL_PLAY", "SHADOW_BALL"]
-}, {
-    "speciesId": "ursaluna",
-    "fastMove": "TACKLE",
-    "chargedMoves": ["SWIFT", "FIRE_PUNCH"]
-}, {
-    "speciesId": "ursaluna",
-    "fastMove": "TACKLE",
-    "chargedMoves": ["SWIFT", "AERIAL_ACE"]
 }, {
     "speciesId": "vikavolt",
     "fastMove": "VOLT_SWITCH",

@@ -9,15 +9,11 @@
 }, {
     "speciesId": "avalugg",
     "fastMove": "ICE_FANG",
-    "chargedMoves": ["CRUNCH", "AVALANCHE"]
+    "chargedMoves": ["CRUNCH", "ICY_WIND"]
 }, {
     "speciesId": "avalugg_hisuian",
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["ROCK_SLIDE", "ICY_WIND"]
-}, {
-    "speciesId": "baxcalibur",
-    "fastMove": "DRAGON_BREATH",
-    "chargedMoves": ["DRAGON_CLAW", "AVALANCHE"]
 }, {
     "speciesId": "bewear",
     "fastMove": "SHADOW_CLAW",
@@ -42,6 +38,14 @@
     "speciesId": "dubwool",
     "fastMove": "DOUBLE_KICK",
     "chargedMoves": ["BODY_SLAM", "WILD_CHARGE"]
+}, {
+    "speciesId": "dubwool",
+    "fastMove": "DOUBLE_KICK",
+    "chargedMoves": ["BODY_SLAM", "PAYBACK"]
+}, {
+    "speciesId": "froslass",
+    "fastMove": "HEX",
+    "chargedMoves": ["AVALANCHE","SHADOW_BALL"]
 }, {
     "speciesId": "gallade",
     "fastMove": "PSYCHO_CUT",
@@ -77,7 +81,7 @@
 }, {
     "speciesId": "kangaskhan",
     "fastMove": "MUD_SLAP",
-    "chargedMoves": ["POWER_UP_PUNCH", "OUTRAGE"]
+    "chargedMoves": ["POWER_UP_PUNCH", "CRUNCH"]
 }, {
     "speciesId": "kyurem",
     "fastMove": "DRAGON_BREATH",
@@ -90,6 +94,10 @@
     "speciesId": "lunatone",
     "fastMove": "PSYWAVE",
     "chargedMoves": ["ROCK_SLIDE", "MOONBLAST"]
+}, {
+    "speciesId": "mew",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["PSYSHOCK","STONE_EDGE"]
 }, {
     "speciesId": "mewtwo_armored",
     "fastMove": "CONFUSION",
@@ -112,8 +120,12 @@
     "chargedMoves": ["BODY_SLAM", "TRAILBLAZE"]
 }, {
     "speciesId": "pidgeot",
-    "fastMove": "GUST",
-    "chargedMoves": ["FEATHER_DANCE", "BRAVE_BIRD"]
+    "fastMove": "WING_ATTACK",
+    "chargedMoves": ["AIR_CUTTER", "BRAVE_BIRD"]
+}, {
+    "speciesId": "piloswine_shadow",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["ICICLE_SPEAR","STONE_EDGE"]
 }, {
     "speciesId": "raichu_alolan",
     "fastMove": "THUNDER_SHOCK",
@@ -122,6 +134,10 @@
     "speciesId": "rapidash_galarian",
     "fastMove": "PSYCHO_CUT",
     "chargedMoves": ["BODY_SLAM", "WILD_CHARGE"]
+}, {
+    "speciesId": "rapidash_galarian",
+    "fastMove": "PSYCHO_CUT",
+    "chargedMoves": ["BODY_SLAM", "MEGAHORN"]
 }, {
     "speciesId": "regice",
     "fastMove": "LOCK_ON",
@@ -138,6 +154,10 @@
     "speciesId": "slowbro_galarian",
     "fastMove": "POISON_JAB",
     "chargedMoves": ["SURF", "BRUTAL_SWING"]
+}, {
+    "speciesId": "snorlax",
+    "fastMove": "LICK",
+    "chargedMoves": ["BODY_SLAM","SUPER_POWER"]
 }, {
     "speciesId": "solrock",
     "fastMove": "PSYWAVE",
@@ -161,7 +181,7 @@
 }, {
     "speciesId": "uxie",
     "fastMove": "CONFUSION",
-    "chargedMoves": ["SWIFT", "THUNDER"]
+    "chargedMoves": ["SWIFT", "FUTURE_SIGHT"]
 }, {
     "speciesId": "vikavolt",
     "fastMove": "VOLT_SWITCH",

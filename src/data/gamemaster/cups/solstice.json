@@ -6,13 +6,13 @@
         "values": ["bug","ice","normal","psychic"]
     },{
         "filterType": "id",
-        "values": ["gyarados","gyarados_mega","gyarados_shadow","hippowdon","hippowdon_shadow","muk","muk_shadow","nihilego","samurott","samurott_shadow","swampert", "swampert_mega","swampert_shadow"]
+        "values": ["gyarados","gyarados_mega","gyarados_shadow","hippowdon","hippowdon_shadow","muk","muk_shadow","nihilego","samurott","samurott_shadow","swampert", "swampert_mega","swampert_shadow","weezing","weezing_shadow"]
     }],
     "exclude": [{
         "filterType": "type",
         "values": ["fire","steel"]
     }, {
         "filterType": "id",
-        "values": ["aurorus","buzzwole","cresselia","golisopod","greedent","heracross","heracross_mega","leavanny","lickilicky","lokix","malamar","miltank","ninetales_alolan","oranguru","walrein"]
+        "values": ["aurorus","buzzwole","cresselia","golisopod","greedent","heracross","heracross_mega","leavanny","lickilicky","lokix","malamar","miltank","ninetales_alolan","oranguru","walrein","grumpig","lapras"]
     }]
 }
