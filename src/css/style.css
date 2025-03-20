@@ -3829,6 +3829,9 @@ a.download-csv {
 .article .rating-table.matrix-table .rating.average span {
   margin: 0 6px 0 0;
 }
+.article .rating-table.matrix-table th:first-of-type {
+  min-width: 18px;
+}
 .article .results-buttons {
   display: flex;
   justify-content: center;
