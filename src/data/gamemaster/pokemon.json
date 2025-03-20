@@ -29325,7 +29325,7 @@
         "cp1500": [19.5, 5, 10, 15],
         "cp2500": [35, 4, 14, 11]
     },
-    "searchPriority": 6,
+    "searchPriority": 3,
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
     "released": true,
@@ -33689,6 +33689,7 @@
         "cp1500": [17.5, 6, 13, 11],
         "cp2500": [29.5, 4, 10, 13]
     },
+	"searchPriority": 4,
     "buddyDistance": 1,
     "thirdMoveCost": 10000,
     "released": true,
@@ -40359,6 +40360,8 @@
         "cp1500": [15.5, 6, 12, 15],
         "cp2500": [25.5, 8, 15, 15]
     },
+	"searchPriority": 2,
+	"nicknames": ["golden"],
     "buddyDistance": 5,
     "thirdMoveCost": 10000,
     "released": true,

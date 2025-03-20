@@ -15,22 +15,11 @@
 		"cp": 10000,
 		"meta": "premiermaster",
 		"showCup": true,
-		"showFormat": false,
-		"showMeta": true,
-		"hideRankings": true
-	},
-	{
-		"title": "Willpower Cup",
-		"cup": "willpower",
-		"cp": 1500,
-		"meta": "willpower",
-		"showCup": true,
 		"showFormat": true,
 		"showMeta": true,
 		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Fighting-, Psychic-, and Dark-type Pokémon will be eligible.",
-			"The following Pokemon will not be allowed: Gardevoir"
+			"No CP limit.",
+			"Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible."
 		]
 	},
 	{

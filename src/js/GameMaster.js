@@ -965,7 +965,7 @@ var GameMaster = (function () {
 
 			// Gather all eligible Pokemon
 
-			var minStats = 3500; // You must be this tall to ride this ride
+			var minStats = 4900; // You must be this tall to ride this ride
 
 			if(battle.getCP() == 500){
 				minStats = 0;
@@ -973,9 +973,6 @@ var GameMaster = (function () {
 				minStats = 1370;
 			} else if(battle.getCP() == 2500){
 				minStats = 2800;
-			} else if (battle.getCup().name === "factionsmaster") {
-				// big boy megas need taller height limit
-				minStats = 5000;
 			}
 
 			if(! excludeByStatProduct){

@@ -42,7 +42,7 @@
 }, {
     "speciesId": "golisopod",
     "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["AERIAL_ACE", "AQUA_JET"]
+    "chargedMoves": ["X_SCISSOR", "AQUA_JET"]
 }, {
     "speciesId": "goodra",
     "fastMove": "DRAGON_BREATH",
@@ -91,7 +91,7 @@
 }, {
     "speciesId": "skeledirge",
     "fastMove": "INCINERATE",
-    "chargedMoves": ["SHADOW_BALL", "DISARMING_VOICE"]
+    "chargedMoves": ["SHADOW_BALL", "TORCH_SONG"]
 }, {
     "speciesId": "snorlax",
     "fastMove": "LICK",
@@ -108,4 +108,12 @@
     "speciesId": "ursaluna",
     "fastMove": "TACKLE",
     "chargedMoves": ["SWIFT", "HIGH_HORSEPOWER"]
+}, {
+    "speciesId": "chesnaught",
+    "fastMove": "VINE_WHIP",
+    "chargedMoves": ["FRENZY_PLANT", "SUPER_POWER"]
+}, {
+    "speciesId": "gholdengo",
+    "fastMove": "HEX",
+    "chargedMoves": ["SHADOW_BALL", "FOCUS_BLAST"]
 }]
