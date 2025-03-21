@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-03-20 16:02:35",
+    "timestamp": "2025-03-21 13:00:57",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -36682,7 +36682,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_SIZZLIPEDE",
             "evolutions": ["centiskorch"]
@@ -36706,7 +36706,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_SIZZLIPEDE",
             "parent": "sizzlipede"
