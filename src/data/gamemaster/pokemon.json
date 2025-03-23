@@ -17886,6 +17886,7 @@
     "types": ["dark", "none"],
     "fastMoves": ["PSYCHO_CUT", "SNARL"],
     "chargedMoves": ["DARK_PULSE", "MEGAHORN", "THUNDER", "PAYBACK", "BRUTAL_SWING"],
+	"eliteMoves": ["BRUTAL_SWING"],
     "defaultIVs": {
         "cp500": [7.5, 4, 14, 9],
         "cp1500": [22, 6, 12, 11],
@@ -17909,6 +17910,7 @@
     "types": ["dark", "none"],
     "fastMoves": ["PSYCHO_CUT", "SNARL"],
     "chargedMoves": ["DARK_PULSE", "MEGAHORN", "THUNDER", "PAYBACK", "BRUTAL_SWING"],
+	"eliteMoves": ["BRUTAL_SWING"],
     "defaultIVs": {
         "cp500": [6, 4, 9, 4],
         "cp1500": [16.5, 6, 12, 15],
