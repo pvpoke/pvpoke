@@ -24,6 +24,14 @@
     "fastMove": "ROCK_THROW",
     "chargedMoves": ["POWER_GEM", "MOONBLAST"]
 }, {
+    "speciesId": "charjabug",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
+}, {
+    "speciesId": "claydol",
+    "fastMove": "MUD_SLAP",
+    "chargedMoves": ["ROCK_TOMB", "ICE_BEAM"]
+}, {
     "speciesId": "clodsire",
     "fastMove": "POISON_STING",
     "chargedMoves": ["SLUDGE_BOMB", "EARTHQUAKE"]
@@ -65,6 +73,10 @@
     "fastMove": "HEX",
     "chargedMoves": ["ICE_PUNCH", "SHADOW_PUNCH"]
 }, {
+    "speciesId": "emolga",
+    "fastMove": "THUNDER_SHOCK",
+    "chargedMoves": ["ACROBATICS", "DISCHARGE"]
+}, {
     "speciesId": "feraligatr",
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"]
@@ -74,9 +86,21 @@
     "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"],
     "shadowType": "shadow"
 }, {
+    "speciesId": "forretress",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["ROCK_TOMB", "EARTHQUAKE"]
+}, {
+    "speciesId": "furret",
+    "fastMove": "SUCKER_PUNCH",
+    "chargedMoves": ["SWIFT", "TRAILBLAZE"]
+}, {
     "speciesId": "gastrodon",
     "fastMove": "MUD_SLAP",
     "chargedMoves": ["BODY_SLAM", "EARTH_POWER"]
+}, {
+    "speciesId": "golisopod",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["X_SCISSOR", "AQUA_JET"]
 }, {
     "speciesId": "grumpig",
     "fastMove": "PSYWAVE",
@@ -153,7 +177,8 @@
 }, {
     "speciesId": "steelix",
     "fastMove": "THUNDER_FANG",
-    "chargedMoves": ["PSYCHIC_FANGS", "BREAKING_SWIPE"]
+    "chargedMoves": ["PSYCHIC_FANGS", "BREAKING_SWIPE"],
+    "shadowType": "shadow"
 }, {
     "speciesId": "talonflame",
     "fastMove": "INCINERATE",
@@ -170,32 +195,4 @@
     "speciesId": "wigglytuff",
     "fastMove": "CHARM",
     "chargedMoves": ["ICY_WIND", "SWIFT"]
-}, {
-    "speciesId": "cradily",
-    "fastMove": "BULLET_SEED",
-    "chargedMoves": ["ROCK_TOMB", "GRASS_KNOT"]
-}, {
-    "speciesId": "claydol",
-    "fastMove": "MUD_SLAP",
-    "chargedMoves": ["ROCK_TOMB", "SCORCHING_SANDS"]
-}, {
-    "speciesId": "furret",
-    "fastMove": "SUCKER_PUNCH",
-    "chargedMoves": ["SWIFT", "TRAILBLAZE"]
-}, {
-    "speciesId": "charjabug",
-    "fastMove": "VOLT_SWITCH",
-    "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
-}, {
-    "speciesId": "golisopod",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["X_SCISSOR", "AQUA_JET"]
-}, {
-    "speciesId": "forretress",
-    "fastMove": "VOLT_SWITCH",
-    "chargedMoves": ["ROCK_TOMB", "EARTHQUAKE"]
-}, {
-    "speciesId": "emolga",
-    "fastMove": "THUNDER_SHOCK",
-    "chargedMoves": ["ACROBATICS", "DISCHARGE"]
 }]

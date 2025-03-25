@@ -16,9 +16,13 @@
     "fastMove": "BUBBLE",
     "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
 }, {
-    "speciesId": "bombirdier",
-    "fastMove": "SUCKER_PUNCH",
-    "chargedMoves": ["FLY", "ROCK_TOMB"]
+    "speciesId": "charjabug",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
+}, {
+    "speciesId": "claydol",
+    "fastMove": "MUD_SLAP",
+    "chargedMoves": ["ROCK_TOMB", "ICE_BEAM"]
 }, {
     "speciesId": "clodsire",
     "fastMove": "POISON_STING",
@@ -27,10 +31,6 @@
     "speciesId": "corsola_galarian",
     "fastMove": "ASTONISH",
     "chargedMoves": ["NIGHT_SHADE", "POWER_GEM"]
-}, {
-    "speciesId": "corviknight",
-    "fastMove": "SAND_ATTACK",
-    "chargedMoves": ["SKY_ATTACK", "IRON_HEAD"]
 }, {
     "speciesId": "dewgong",
     "fastMove": "ICE_SHARD",
@@ -49,13 +49,9 @@
     "fastMove": "ROLLOUT",
     "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
 }, {
-    "speciesId": "dusclops",
-    "fastMove": "HEX",
-    "chargedMoves": ["ICE_PUNCH", "SHADOW_PUNCH"]
-}, {
-    "speciesId": "dusknoir",
-    "fastMove": "ASTONISH",
-    "chargedMoves": ["DYNAMIC_PUNCH", "SHADOW_PUNCH"]
+    "speciesId": "emolga",
+    "fastMove": "THUNDER_SHOCK",
+    "chargedMoves": ["ACROBATICS", "DISCHARGE"]
 }, {
     "speciesId": "feraligatr",
     "fastMove": "SHADOW_CLAW",
@@ -66,9 +62,18 @@
     "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"],
     "shadowType": "shadow"
 }, {
+    "speciesId": "forretress_shadow",
+    "fastMove": "VOLT_SWITCH",
+    "chargedMoves": ["ROCK_TOMB", "EARTHQUAKE"],
+    "shadowType": "shadow"
+}, {
     "speciesId": "gastrodon",
     "fastMove": "MUD_SLAP",
     "chargedMoves": ["BODY_SLAM", "EARTH_POWER"]
+}, {
+    "speciesId": "golisopod",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["X_SCISSOR", "AQUA_JET"]
 }, {
     "speciesId": "goodra",
     "fastMove": "DRAGON_BREATH",
@@ -90,14 +95,14 @@
     "fastMove": "FAIRY_WIND",
     "chargedMoves": ["AERIAL_ACE", "ENERGY_BALL"]
 }, {
+    "speciesId": "jumpluff_shadow",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["AERIAL_ACE", "ACROBATICS"],
+    "shadowType": "shadow"
+}, {
     "speciesId": "lapras",
     "fastMove": "PSYWAVE",
     "chargedMoves": ["SPARKLING_ARIA", "ICE_BEAM"]
-}, {
-    "speciesId": "lapras_shadow",
-    "fastMove": "PSYWAVE",
-    "chargedMoves": ["SPARKLING_ARIA", "ICE_BEAM"],
-    "shadowType": "shadow"
 }, {
     "speciesId": "malamar",
     "fastMove": "PSYWAVE",
@@ -138,11 +143,6 @@
     "chargedMoves": ["FOUL_PLAY", "DAZZLING_GLEAM"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "sableye_shadow",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["FOUL_PLAY", "POWER_GEM"],
-    "shadowType": "shadow"
-}, {
     "speciesId": "sandslash_alolan",
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["DRILL_RUN", "ICE_PUNCH"]
@@ -160,9 +160,10 @@
     "fastMove": "INCINERATE",
     "chargedMoves": ["TORCH_SONG", "SHADOW_BALL"]
 }, {
-    "speciesId": "spiritomb",
-    "fastMove": "SUCKER_PUNCH",
-    "chargedMoves": ["ROCK_TOMB", "SHADOW_BALL"]
+    "speciesId": "steelix",
+    "fastMove": "THUNDER_FANG",
+    "chargedMoves": ["PSYCHIC_FANGS", "BREAKING_SWIPE"],
+    "shadowType": "shadow"
 }, {
     "speciesId": "talonflame",
     "fastMove": "INCINERATE",
@@ -176,30 +177,7 @@
     "fastMove": "FAIRY_WIND",
     "chargedMoves": ["SLUDGE", "BRUTAL_SWING"]
 }, {
-    "speciesId": "charjabug",
-    "fastMove": "VOLT_SWITCH",
-    "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
-}, {
-    "speciesId": "emolga",
-    "fastMove": "THUNDER_SHOCK",
-    "chargedMoves": ["ACROBATICS", "DISCHARGE"]
-}, {
-    "speciesId": "forretress_shadow",
-    "fastMove": "VOLT_SWITCH",
-    "chargedMoves": ["ROCK_TOMB", "EARTHQUAKE"],
-    "shadowType": "shadow"
-}, {
-    "speciesId": "steelix",
-    "fastMove": "THUNDER_FANG",
-    "chargedMoves": ["PSYCHIC_FANGS", "BREAKING_SWIPE"],
-    "shadowType": "shadow"
-}, {
-    "speciesId": "golisopod",
-    "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["X_SCISSOR", "AQUA_JET"]
-}, {
-    "speciesId": "jumpluff_shadow",
-    "fastMove": "FAIRY_WIND",
-    "chargedMoves": ["AERIAL_ACE", "ACROBATICS"],
-    "shadowType": "shadow"
+    "speciesId": "cradily",
+    "fastMove": "BULLET_SEED",
+    "chargedMoves": ["ROCK_TOMB", "GRASS_KNOT"]
 }]
