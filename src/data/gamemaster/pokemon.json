@@ -7720,6 +7720,70 @@
     "thirdMoveCost": 50000,
     "released": true
 }, {
+    "dex": 128,
+    "speciesName": "Tauros (Combat)",
+    "speciesId": "tauros_combat",
+    "baseStats": {
+        "atk": 210,
+        "def": 193,
+        "hp": 181
+    },
+    "types": ["fighting", "none"],
+    "fastMoves": ["TACKLE", "ZEN_HEADBUTT", "DOUBLE_KICK"],
+    "chargedMoves": ["EARTHQUAKE", "CLOSE_COMBAT", "IRON_HEAD", "TRAILBLAZE"],
+    "tags": ["regional", "paldean"],
+    "defaultIVs": {
+		"cp500": [6.5, 9, 15, 14],
+        "cp1500": [19.5, 5, 15, 11],
+        "cp2500": [35.5, 5, 10, 14]
+    },
+    "buddyDistance": 3,
+    "thirdMoveCost": 50000,
+    "released": false
+}, {
+    "dex": 128,
+    "speciesName": "Tauros (Aqua)",
+    "speciesId": "tauros_aqua",
+    "baseStats": {
+        "atk": 210,
+        "def": 193,
+        "hp": 181
+    },
+    "types": ["fighting", "water"],
+    "fastMoves": ["TACKLE", "ZEN_HEADBUTT", "DOUBLE_KICK"],
+    "chargedMoves": ["EARTHQUAKE", "AQUA_JET", "IRON_HEAD", "TRAILBLAZE"],
+    "tags": ["regional", "paldean"],
+    "defaultIVs": {
+		"cp500": [6.5, 9, 15, 14],
+        "cp1500": [19.5, 5, 15, 11],
+        "cp2500": [35.5, 5, 10, 14]
+    },
+	"searchPriority": 2,
+    "buddyDistance": 3,
+    "thirdMoveCost": 50000,
+    "released": false
+}, {
+    "dex": 128,
+    "speciesName": "Tauros (Blaze)",
+    "speciesId": "tauros_blaze",
+    "baseStats": {
+        "atk": 210,
+        "def": 193,
+        "hp": 181
+    },
+    "types": ["fighting", "fire"],
+    "fastMoves": ["TACKLE", "ZEN_HEADBUTT", "DOUBLE_KICK"],
+    "chargedMoves": ["EARTHQUAKE", "FLAME_CHARGE", "IRON_HEAD", "TRAILBLAZE"],
+    "tags": ["regional", "paldean"],
+    "defaultIVs": {
+		"cp500": [6.5, 9, 15, 14],
+        "cp1500": [19.5, 5, 15, 11],
+        "cp2500": [35.5, 5, 10, 14]
+    },
+    "buddyDistance": 3,
+    "thirdMoveCost": 50000,
+    "released": false
+}, {
     "dex": 129,
     "speciesName": "Magikarp",
     "speciesId": "magikarp",
