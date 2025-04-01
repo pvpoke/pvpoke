@@ -7734,9 +7734,10 @@
     "tags": ["regional", "paldean"],
     "defaultIVs": {
 		"cp500": [6.5, 9, 15, 14],
-        "cp1500": [19.5, 5, 15, 11],
+        "cp1500": [20, 4, 13, 5],
         "cp2500": [35.5, 5, 10, 14]
     },
+	"levelFloor": 20,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true
@@ -7755,9 +7756,10 @@
     "tags": ["regional", "paldean"],
     "defaultIVs": {
 		"cp500": [6.5, 9, 15, 14],
-        "cp1500": [19.5, 5, 15, 11],
+        "cp1500": [20, 4, 13, 5],
         "cp2500": [35.5, 5, 10, 14]
     },
+	"levelFloor": 20,
 	"searchPriority": 2,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
@@ -7777,9 +7779,10 @@
     "tags": ["regional", "paldean"],
     "defaultIVs": {
 		"cp500": [6.5, 9, 15, 14],
-        "cp1500": [19.5, 5, 15, 11],
+        "cp1500": [20, 4, 13, 5],
         "cp2500": [35.5, 5, 10, 14]
     },
+	"levelFloor": 20,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true
