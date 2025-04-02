@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-04-01 17:02:46",
+    "timestamp": "2025-04-02 02:01:36",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -358,6 +358,32 @@
             "values": ["aurorus", "buzzwole", "cresselia", "golisopod", "greedent", "heracross", "heracross_mega", "leavanny", "lickilicky", "lokix", "malamar", "miltank", "ninetales_alolan", "oranguru", "walrein", "grumpig", "lapras"]
         }]
     }, {
+        "name": "stygian",
+        "title": "Devon Stygian Cup",
+        "include": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["dark", "water", "dragon", "ice"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "name": "Tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "type",
+            "name": "Type",
+            "values": ["electric", "fairy", "rock"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["mandibuzz", "toxapex", "malamar", "azumarill", "feraligatr", "umbreon", "moltres_galarian", "gastrodon", "quagsire", "pangoro", "obstagoon", "scrafty", "poliwrath", "lapras"]
+        }],
+        "overrides": [],
+        "league": 1500,
+        "useDefaultMovesets": 1,
+        "levelCap": 50,
+        "includeLowStatProduct": true
+    }, {
         "name": "tundraremixv2",
         "title": "Devon Tundra Cup (Gymbreakers Remix V2)",
         "include": [{
@@ -462,18 +488,10 @@
         "showFormat": true,
         "showMeta": true
     }, {
-        "title": "Devon Ingot Cup",
-        "cup": "ingot",
+        "title": "Devon Stygian Cup",
+        "cup": "stygian",
         "cp": 1500,
-        "meta": "ingot",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Devon Illusion Cup",
-        "cup": "illusion",
-        "cp": 1500,
-        "meta": "illusion",
+        "meta": "stygian",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
