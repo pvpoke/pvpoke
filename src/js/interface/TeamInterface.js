@@ -288,6 +288,7 @@ var InterfaceMaster = (function () {
 				var allowShadows = $(".team-option .check.allow-shadows").hasClass("on");
 				var allowXL = $(".team-option .check.allow-xl").hasClass("on");
 				var baitShields = $(".team-option .check.shield-baiting").hasClass("on");
+				var showMovesets = $(".team-option .check.show-movesets").hasClass("on");
 
 				if(battle.getCup().name == "shadow"){
 					allowShadows = true;
@@ -483,8 +484,13 @@ var InterfaceMaster = (function () {
 					}
 
 					// Add results to threats table
+					// If showMovesets is toggled on, add the moveset under the threat's name
 
-					$row = $("<tr><th class=\"name\"><b>"+(count+1)+". "+pokemon.speciesName+"</b></th></tr>");
+					if(showMovesets){
+						$row = $("<tr><th class=\"name\"><b>"+(count+1)+". "+pokemon.speciesName+"</b><br><div class=\"moveset-label\">"+moveNameStr+"</div></tr>");
+					} else {
+						$row = $("<tr><th class=\"name\"><b>"+(count+1)+". "+pokemon.speciesName+"</b></tr>");
+					}
 
 					for(var n = 0; n < r.matchups.length; n++){
 						var $cell = $("<td><a class=\"rating\" href=\"#\" target=\"blank\"><span></span></a></td>");
