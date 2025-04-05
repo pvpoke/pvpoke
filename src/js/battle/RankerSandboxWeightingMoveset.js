@@ -523,6 +523,10 @@ var RankerMaster = (function () {
 					iterations = 1;
 				}
 
+				if(cup.name == "spring"){
+					iterations = 1;
+				}
+
 				if(cup.name == "factions"){
 					iterations = 1;
 				}

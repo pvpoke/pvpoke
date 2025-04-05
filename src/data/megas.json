@@ -71,23 +71,6 @@
         "cp2500": [28.5, 6, 11, 13]
     }
 }, {
-    "dex": 531,
-    "speciesId": "audino_mega",
-    "speciesName": "Audino (Mega)",
-    "baseStats": {
-        "atk": 147,
-        "def": 239,
-        "hp": 230
-    },
-    "types": ["normal", "fairy"],
-    "fastMoves": ["POUND", "ZEN_HEADBUTT"],
-    "chargedMoves": ["DISARMING_VOICE", "DAZZLING_GLEAM", "HYPER_BEAM"],
-    "defaultIVs": {
-        "cp1500": [22, 8, 12, 11],
-        "cp2500": [39.5, 14, 15, 14]
-    },
-    "tags": ["mega"]
-}, {
     "dex": 376,
     "speciesName": "Metagross (Mega)",
     "speciesId": "metagross_mega",

@@ -25906,13 +25906,36 @@
     },
     "types": ["normal", "none"],
     "fastMoves": ["POUND", "ZEN_HEADBUTT"],
-    "chargedMoves": ["DISARMING_VOICE", "DAZZLING_GLEAM", "HYPER_BEAM"],
+    "chargedMoves": ["DISARMING_VOICE", "DAZZLING_GLEAM", "HYPER_BEAM", "BODY_SLAM"],
+	"eliteMoves": ["BODY_SLAM"],
     "defaultIVs": {
         "cp500": [11.5, 4, 14, 9],
         "cp1500": [39, 4, 13, 12],
         "cp2500": [50, 15, 15, 15]
     },
     "buddyDistance": 3,
+    "thirdMoveCost": 50000,
+    "released": true
+}, {
+    "dex": 531,
+    "speciesId": "audino_mega",
+    "speciesName": "Audino (Mega)",
+    "baseStats": {
+        "atk": 147,
+        "def": 239,
+        "hp": 230
+    },
+    "types": ["normal", "fairy"],
+    "fastMoves": ["POUND", "ZEN_HEADBUTT"],
+	"chargedMoves": ["DISARMING_VOICE", "DAZZLING_GLEAM", "HYPER_BEAM", "BODY_SLAM"],
+	"eliteMoves": ["BODY_SLAM"],
+    "defaultIVs": {
+		"cp500": [7.5, 8, 12, 11],
+        "cp1500": [22, 8, 12, 11],
+        "cp2500": [39.5, 14, 15, 14]
+    },
+    "tags": ["mega"],
+	"buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true
 }, {

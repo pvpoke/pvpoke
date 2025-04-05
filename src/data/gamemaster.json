@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-04-02 02:01:36",
+    "timestamp": "2025-04-05 02:08:59",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -358,6 +358,22 @@
             "values": ["aurorus", "buzzwole", "cresselia", "golisopod", "greedent", "heracross", "heracross_mega", "leavanny", "lickilicky", "lokix", "malamar", "miltank", "ninetales_alolan", "oranguru", "walrein", "grumpig", "lapras"]
         }]
     }, {
+        "name": "spring",
+        "title": "Spring Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["water", "grass", "fairy"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["jumpluff", "roserade", "toxapex"]
+        }],
+        "partySize": 3,
+        "presetOnly": true
+    }, {
         "name": "stygian",
         "title": "Devon Stygian Cup",
         "include": [{
@@ -447,6 +463,15 @@
         "showFormat": true,
         "showMeta": true,
         "rules": ["No CP limit.", "Legendary Pok\u00e9mon, Mythical Pok\u00e9mon, and Ultra Beasts are not eligible."]
+    }, {
+        "title": "Spring Cup",
+        "cup": "spring",
+        "cp": 1500,
+        "meta": "spring",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true,
+        "rules": ["Pok\u00e9mon must be at or below 1,500 CP to enter.", "Only Water-, Grass-, and Fairy-type Pok\u00e9mon are eligible.", "The following Pok\u00e9mon will not be allowed: Jumpluff, Roserade, Toxapex"]
     }, {
         "title": "P!P Championship Series",
         "cup": "great",
@@ -26493,12 +26518,35 @@
         },
         "types": ["normal", "none"],
         "fastMoves": ["POUND", "ZEN_HEADBUTT"],
-        "chargedMoves": ["DISARMING_VOICE", "DAZZLING_GLEAM", "HYPER_BEAM"],
+        "chargedMoves": ["DISARMING_VOICE", "DAZZLING_GLEAM", "HYPER_BEAM", "BODY_SLAM"],
+        "eliteMoves": ["BODY_SLAM"],
         "defaultIVs": {
             "cp500": [11.5, 4, 14, 9],
             "cp1500": [39, 4, 13, 12],
             "cp2500": [50, 15, 15, 15]
         },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true
+    }, {
+        "dex": 531,
+        "speciesId": "audino_mega",
+        "speciesName": "Audino (Mega)",
+        "baseStats": {
+            "atk": 147,
+            "def": 239,
+            "hp": 230
+        },
+        "types": ["normal", "fairy"],
+        "fastMoves": ["POUND", "ZEN_HEADBUTT"],
+        "chargedMoves": ["DISARMING_VOICE", "DAZZLING_GLEAM", "HYPER_BEAM", "BODY_SLAM"],
+        "eliteMoves": ["BODY_SLAM"],
+        "defaultIVs": {
+            "cp500": [7.5, 8, 12, 11],
+            "cp1500": [22, 8, 12, 11],
+            "cp2500": [39.5, 14, 15, 14]
+        },
+        "tags": ["mega"],
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
         "released": true
