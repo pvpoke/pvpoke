@@ -7,14 +7,28 @@
 const Pokemon = (function() {
 	const cpms = [0.0939999967813491, 0.135137430784308, 0.166397869586944, 0.192650914456886, 0.215732470154762, 0.236572655026622, 0.255720049142837, 0.273530381100769, 0.290249884128570, 0.306057381335773, 0.321087598800659, 0.335445032295077, 0.349212676286697, 0.362457748778790, 0.375235587358474, 0.387592411085168, 0.399567276239395, 0.411193549517250, 0.422500014305114, 0.432926413410414, 0.443107545375824, 0.453059953871985, 0.462798386812210, 0.472336077786704, 0.481684952974319, 0.490855810259008, 0.499858438968658, 0.508701756943992, 0.517393946647644, 0.525942508771329, 0.534354329109191, 0.542635762230353, 0.550792694091796, 0.558830599438087, 0.566754519939422, 0.574569148039264, 0.582278907299041, 0.589887911977272, 0.597400009632110, 0.604823657502073, 0.612157285213470, 0.619404110566050, 0.626567125320434, 0.633649181622743, 0.640652954578399, 0.647580963301656, 0.654435634613037, 0.661219263506722, 0.667934000492096, 0.674581899290818, 0.681164920330047, 0.687684905887771, 0.694143652915954, 0.700542893277978, 0.706884205341339, 0.713169102333341, 0.719399094581604, 0.725575616972598, 0.731700003147125, 0.734741011137376, 0.737769484519958, 0.740785574597326, 0.743789434432983, 0.746781208702482, 0.749761044979095, 0.752729105305821, 0.755685508251190, 0.758630366519684, 0.761563837528228, 0.764486065255226, 0.767397165298461, 0.770297273971590, 0.773186504840850, 0.776064945942412, 0.778932750225067, 0.781790064808426, 0.784636974334716, 0.787473583646825, 0.790300011634826, 0.792803950958807, 0.795300006866455, 0.797803921486970, 0.800300002098083, 0.802803892322847, 0.805299997329711, 0.807803863460723, 0.810299992561340, 0.812803834895026, 0.815299987792968, 0.817803806620319, 0.820299983024597, 0.822803778631297, 0.825299978256225, 0.827803750922782, 0.830299973487854, 0.832803753381377, 0.835300028324127, 0.837803755931569, 0.840300023555755, 0.842803729034748, 0.845300018787384, 0.847803702398935, 0.850300014019012, 0.852803676019539, 0.855300009250640, 0.857803649892077, 0.860300004482269, 0.862803624012168, 0.865299999713897];
 
+	// Array of all types
+
+	function getAllTypes(){
+		return [
+			"Bug", "Dark", "Dragon",
+			"Electric", "Fairy", "Fighting",
+			"Fire", "Flying", "Ghost",
+			"Grass", "Ground", "Ice",
+			"Normal", "Poison", "Psychic",
+			"Rock", "Steel", "Water"
+		];
+	}
+
+
 	function Pokemon(id, i, b){
 
 		id = id.replace("_xl","");
 
-		var gm = GameMaster.getInstance();
-		var data = gm.getPokemonById(id);
-		var battle = b;
-		var self = this;
+		const gm = GameMaster.getInstance();
+		const data = gm.getPokemonById(id);
+		let battle = b;
+		const self = this;
 
 		// CP modifiers at each level
 
@@ -153,8 +167,8 @@ const Pokemon = (function() {
 
 		// Set battle moves
 
-		for(var i = 0; i < data.fastMoves.length; i++){
-			var move = gm.getMoveById(data.fastMoves[i]);
+		for(let i = 0; i < data.fastMoves.length; i++){
+			const move = gm.getMoveById(data.fastMoves[i]);
 
 			if(move){
 				move.legacy = (self.legacyMoves.indexOf(move.moveId) > -1);
@@ -176,8 +190,8 @@ const Pokemon = (function() {
 			}
 		}
 
-		for(var i = 0; i < data.chargedMoves.length; i++){
-			var move = gm.getMoveById(data.chargedMoves[i]);
+		for(let i = 0; i < data.chargedMoves.length; i++){
+			const move = gm.getMoveById(data.chargedMoves[i]);
 
 			if(move){
 				move.legacy = (self.legacyMoves.indexOf(move.moveId) > -1);
@@ -238,7 +252,7 @@ const Pokemon = (function() {
 				self.levelCap = b.getLevelCap();
 			}
 
-			var maxCP = 10000;
+			let maxCP = 10000;
 
 			if(battle){
 				maxCP = battle.getCP();
@@ -246,7 +260,7 @@ const Pokemon = (function() {
 
 			// Bandaid fix for scenarios where Pokemon who have shield baiting or stat boost settings are considered custom
 
-			var isDefault = false;
+			let isDefault = false;
 
 			if((this.level == 40)&&(this.ivs.atk == 0) && (this.ivs.def == 0) && (this.ivs.hp == 0) && (! self.autoLevel)){
 				isDefault = true;
@@ -259,8 +273,8 @@ const Pokemon = (function() {
 						// Scale Pokemon to selected CP
 						// If the Pokemon can't reach the CP limit without IV's, increment until it reaches the CP limit or 15/15/15
 
-						var targetCPM = 1;
-						var iv = -1;
+						let targetCPM = 1;
+						let iv = -1;
 
 						while((iv < 15) && (targetCPM > .7903)){
 							iv++;
@@ -282,7 +296,7 @@ const Pokemon = (function() {
 							self.ivs.atk = self.ivs.def = self.ivs.hp = 15;
 							self.setLevel(self.levelCap, false);
 						} else{
-							var combination = data.defaultIVs["cp"+maxCP];
+							let combination = data.defaultIVs["cp" + maxCP];
 
 							if((self.levelCap == 40)&&(data.defaultIVs["cp"+maxCP+"l40"])){
 								combination = data.defaultIVs["cp"+maxCP+"l40"];
@@ -290,7 +304,7 @@ const Pokemon = (function() {
 
 							// If a valid combination exists for this CP cap
 							if(combination){
-								var level = Math.min(self.levelCap, combination[0]);
+								const level = Math.min(self.levelCap, combination[0]);
 
 								if(combination){
 									self.ivs.atk = combination[1];
@@ -353,7 +367,7 @@ const Pokemon = (function() {
 		// Calculate and return the Pokemon's CP
 
 		this.calculateCP = function(cpm = self.cpm, atk = self.ivs.atk, def = self.ivs.def, hp = self.ivs.hp){
-			var cp = Math.floor(( (self.baseStats.atk+atk) * Math.pow(self.baseStats.def+def, 0.5) * Math.pow(self.baseStats.hp+hp, 0.5) * Math.pow(cpm, 2) ) / 10);
+			const cp = Math.floor(((self.baseStats.atk + atk) * Math.pow(self.baseStats.def + def, 0.5) * Math.pow(self.baseStats.hp + hp, 0.5) * Math.pow(cpm, 2)) / 10);
 
 			return cp;
 		}
@@ -375,7 +389,7 @@ const Pokemon = (function() {
 				this.setLevel(self.levelCap, false);
 			}
 
-			var index = this.level - 1;
+			const index = this.level - 1;
 			this.stats.atk = this.cpm * (this.baseStats.atk+this.ivs.atk);
 			this.stats.def = this.cpm * (this.baseStats.def+this.ivs.def);
 			this.stats.hp = Math.max(Math.floor(this.cpm * (this.baseStats.hp+this.ivs.hp)), 10);
@@ -390,22 +404,22 @@ const Pokemon = (function() {
 		// Generate an array of IV combinations sorted by stat
 
 		this.generateIVCombinations = function(sortStat, sortDirection, resultCount, filters, ivFloor) {
-			var targetCP = battle.getCP();
-			var level = self.levelCap;
-			var atkIV = 15;
-			var defIV = 15;
-			var hpIV = 15;
-			var calcCP = 0;
-			var overall = 0;
-			var bestStat = 0;
-			var cpm = 0;
-			var combinations = [];
+			const targetCP = battle.getCP();
+			let level = self.levelCap;
+			let atkIV = 15;
+			let defIV = 15;
+			let hpIV = 15;
+			let calcCP = 0;
+			let overall = 0;
+			let bestStat = 0;
+			let cpm = 0;
+			const combinations = [];
 
 			if(sortDirection == -1){
 				bestStat = 10000;
 			}
 
-			var floor = 0;
+			let floor = 0;
 
 			if((self.hasTag("legendary") || self.hasTag("ultrabeast")) && ! self.hasTag("wildlegendary")){
 				floor = 1;
@@ -481,7 +495,7 @@ const Pokemon = (function() {
 
 							}
 
-							var combination = {
+							const combination = {
 								level: level,
 								ivs: {
 									atk: atkIV,
@@ -495,7 +509,7 @@ const Pokemon = (function() {
 								cp: calcCP
 							};
 
-							var valid = true;
+							let valid = true;
 
 							// This whole jumble won't include combinations that don't beat our best or worst if we just want one result
 
@@ -518,7 +532,7 @@ const Pokemon = (function() {
 							// Check if a minimum value must be reached
 
 							if(filters){
-								for(var i = 0; i < filters.length; i++){
+								for(let i = 0; i < filters.length; i++){
 									if(combination[filters[i].stat] < filters[i].value){
 										valid = false;
 									}
@@ -545,8 +559,8 @@ const Pokemon = (function() {
 		// Return the rank number of this Pokemon's IV combination for a given stat
 
 		this.getIVRank = function(sortStat){
-			var combinations = this.generateIVCombinations(sortStat, 1, 4096);
-			var rank = combinations.findIndex((combo) => combo.ivs.atk == this.ivs.atk && combo.ivs.def == this.ivs.def && combo.ivs.hp == this.ivs.hp);
+			const combinations = this.generateIVCombinations(sortStat, 1, 4096);
+			let rank = combinations.findIndex((combo) => combo.ivs.atk == this.ivs.atk && combo.ivs.def == this.ivs.def && combo.ivs.hp == this.ivs.hp);
 			rank++;
 
 			return { rank: rank, count: combinations.length };
@@ -555,22 +569,22 @@ const Pokemon = (function() {
 		// Given a defender, generate a list of Attack values that reach certain breakpoints
 
 		this.calculateBreakpoints = function(defender, move){
-			var attackStatMultiplier = self.getStatBuffMultiplier(0, true);
-			var defenseStatMultiplier = defender.getStatBuffMultiplier(1, true);
+			const attackStatMultiplier = self.getStatBuffMultiplier(0, true);
+			const defenseStatMultiplier = defender.getStatBuffMultiplier(1, true);
 
-			var effectiveness = defender.typeEffectiveness[move.type];
-			var minAttack = self.generateIVCombinations("atk", -1, 1)[0].atk * self.shadowAtkMult * attackStatMultiplier;
-			var maxAttack = self.generateIVCombinations("atk", 1, 1)[0].atk * self.shadowAtkMult * attackStatMultiplier;
-			var maxDefense = defender.generateIVCombinations("def", 1, 1)[0].def;
+			const effectiveness = defender.typeEffectiveness[move.type];
+			const minAttack = self.generateIVCombinations("atk", -1, 1)[0].atk * self.shadowAtkMult * attackStatMultiplier;
+			const maxAttack = self.generateIVCombinations("atk", 1, 1)[0].atk * self.shadowAtkMult * attackStatMultiplier;
+			const maxDefense = defender.generateIVCombinations("def", 1, 1)[0].def;
 
-			var minDamage = battle.calculateDamageByStats(self, defender, minAttack, defender.stats.def * defender.shadowDefMult * defenseStatMultiplier, effectiveness, move);
-			var maxDamage = battle.calculateDamageByStats(self, defender, maxAttack, defender.stats.def * defender.shadowDefMult * defenseStatMultiplier, effectiveness, move);
+			const minDamage = battle.calculateDamageByStats(self, defender, minAttack, defender.stats.def * defender.shadowDefMult * defenseStatMultiplier, effectiveness, move);
+			const maxDamage = battle.calculateDamageByStats(self, defender, maxAttack, defender.stats.def * defender.shadowDefMult * defenseStatMultiplier, effectiveness, move);
 
-			var breakpoints = [];
+			const breakpoints = [];
 
-			for(var i = minDamage; i <= maxDamage; i++){
-				var breakpoint = battle.calculateBreakpoint(self, defender, i, defender.stats.def * defender.shadowDefMult * defenseStatMultiplier, effectiveness, move);
-				var maxDefenseBreakpoint = battle.calculateBreakpoint(self, defender, i, maxDefense * defender.shadowDefMult * defenseStatMultiplier, effectiveness, move);
+			for(let i = minDamage; i <= maxDamage; i++){
+				const breakpoint = battle.calculateBreakpoint(self, defender, i, defender.stats.def * defender.shadowDefMult * defenseStatMultiplier, effectiveness, move);
+				let maxDefenseBreakpoint = battle.calculateBreakpoint(self, defender, i, maxDefense * defender.shadowDefMult * defenseStatMultiplier, effectiveness, move);
 
 				if(maxDefenseBreakpoint > maxAttack){
 					maxDefenseBreakpoint = -1;
@@ -589,20 +603,20 @@ const Pokemon = (function() {
 		// Given an attacker, generate a list of Defense values that reach certain bulkpoints
 
 		this.calculateBulkpoints = function(attacker, move){
-			var attackStatMultiplier = attacker.getStatBuffMultiplier(0, true);
-			var defenseStatMultiplier = self.getStatBuffMultiplier(1, true);
+			const attackStatMultiplier = attacker.getStatBuffMultiplier(0, true);
+			const defenseStatMultiplier = self.getStatBuffMultiplier(1, true);
 
-			var effectiveness = self.typeEffectiveness[move.type];
-			var minDefense = self.generateIVCombinations("def", -1, 1)[0].def * self.shadowDefMult * defenseStatMultiplier;
-			var maxDefense = self.generateIVCombinations("def", 1, 1)[0].def * self.shadowDefMult * defenseStatMultiplier;
-			var maxAttack = attacker.generateIVCombinations("atk", 1, 1)[0].atk * attacker.shadowAtkMult;
-			var minDamage = battle.calculateDamageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult * attackStatMultiplier, maxDefense, effectiveness, move);
-			var maxDamage = battle.calculateDamageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult * attackStatMultiplier, minDefense, effectiveness, move);
-			var breakpoints = [];
+			const effectiveness = self.typeEffectiveness[move.type];
+			const minDefense = self.generateIVCombinations("def", -1, 1)[0].def * self.shadowDefMult * defenseStatMultiplier;
+			const maxDefense = self.generateIVCombinations("def", 1, 1)[0].def * self.shadowDefMult * defenseStatMultiplier;
+			const maxAttack = attacker.generateIVCombinations("atk", 1, 1)[0].atk * attacker.shadowAtkMult;
+			const minDamage = battle.calculateDamageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult * attackStatMultiplier, maxDefense, effectiveness, move);
+			const maxDamage = battle.calculateDamageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult * attackStatMultiplier, minDefense, effectiveness, move);
+			const breakpoints = [];
 
-			for(var i = minDamage; i <= maxDamage; i++){
-				var bulkpoint = battle.calculateBulkpoint(attacker, self, i, attacker.stats.atk * attacker.shadowAtkMult * attackStatMultiplier, effectiveness, move);
-				var maxAttackBulkpoint = battle.calculateBulkpoint(attacker, self, i, maxAttack  * attacker.shadowAtkMult * attackStatMultiplier, effectiveness, move);
+			for(let i = minDamage; i <= maxDamage; i++){
+				const bulkpoint = battle.calculateBulkpoint(attacker, self, i, attacker.stats.atk * attacker.shadowAtkMult * attackStatMultiplier, effectiveness, move);
+				let maxAttackBulkpoint = battle.calculateBulkpoint(attacker, self, i, maxAttack * attacker.shadowAtkMult * attackStatMultiplier, effectiveness, move);
 
 				if(maxAttackBulkpoint > maxDefense){
 					maxAttackBulkpoint = -1;
@@ -632,11 +646,11 @@ const Pokemon = (function() {
 		// Initialize moves and set their respective damage numbers
 
 		this.resetMoves = function(){
-			for(var i = 0; i < this.fastMovePool.length; i++){
+			for(let i = 0; i < this.fastMovePool.length; i++){
 				this.initializeMove(this.fastMovePool[i]);
 			}
 
-			for(var i = 0; i < this.chargedMovePool.length; i++){
+			for(let i = 0; i < this.chargedMovePool.length; i++){
 				this.initializeMove(this.chargedMovePool[i]);
 			}
 
@@ -646,7 +660,7 @@ const Pokemon = (function() {
 
 			if(this.chargedMoves.length > 0){
 
-				for(var i = 0; i < self.chargedMoves.length; i++){
+				for(let i = 0; i < self.chargedMoves.length; i++){
 
 					/*	Each chance buff move has an incrementing buff apply meter that will deterministically apply chance buffs
                     *	once this value crosses each whole number.
@@ -675,7 +689,7 @@ const Pokemon = (function() {
 					if((self.activeChargedMoves[1].energy == self.activeChargedMoves[0].energy)&&(! self.activeChargedMoves[1].selfDebuffing)){
 
 						if((self.activeChargedMoves[1].buffs)||(self.activeChargedMoves[1].damage > self.activeChargedMoves[0].damage)){
-							var move = self.activeChargedMoves[0];
+							let move = self.activeChargedMoves[0];
 							self.activeChargedMoves.splice(0, 1);
 							self.activeChargedMoves.push(move);
 						}
@@ -684,7 +698,7 @@ const Pokemon = (function() {
 					// If both moves cost the same energy and one has a guaranteed buff effect, prioritize the buffing move
 
 					if((self.activeChargedMoves[1].energy == self.activeChargedMoves[0].energy)&&(self.activeChargedMoves[0].buffs)&&(self.activeChargedMoves[1].buffs)&&(! self.activeChargedMoves[1].selfDebuffing)&&(self.activeChargedMoves[0].buffs)&&(self.activeChargedMoves[1].buffApplyChance > self.activeChargedMoves[0].buffApplyChance)){
-						var move = self.activeChargedMoves[0];
+						let move = self.activeChargedMoves[0];
 						self.activeChargedMoves.splice(0, 1);
 						self.activeChargedMoves.push(move);
 					}
@@ -708,7 +722,7 @@ const Pokemon = (function() {
 					if((self.activeChargedMoves[1].energy - self.activeChargedMoves[0].energy <= 10)&&(! self.activeChargedMoves[1].selfDebuffing)){
 
 						if((self.activeChargedMoves[1].selfBuffing)&&(self.activeChargedMoves[0].dpe - self.activeChargedMoves[1].dpe < .3)){
-							var move = self.activeChargedMoves[0];
+							const move = self.activeChargedMoves[0];
 							self.activeChargedMoves.splice(0, 1);
 							self.activeChargedMoves.push(move);
 						}
@@ -717,7 +731,7 @@ const Pokemon = (function() {
 					// If the cheaper move is a self debuffing move and the other move is a close non-debuffing move, prioritize the non-debuffing move
 
 					if((self.activeChargedMoves[1].energy - self.activeChargedMoves[0].energy <= 10)&&(self.activeChargedMoves[0].selfAttackDebuffing)&&(! self.activeChargedMoves[1].selfDebuffing)){
-						var move = self.activeChargedMoves[0];
+						const move = self.activeChargedMoves[0];
 						self.activeChargedMoves.splice(0, 1);
 						self.activeChargedMoves.push(move);
 					}
@@ -725,7 +739,7 @@ const Pokemon = (function() {
 					// If the cheaper move is a self debuffing move and the other move is a close non-debuffing move, prioritize the non-debuffing move if the self debuffing move cannot be stacked
 
 					if((self.activeChargedMoves[1].energy - self.activeChargedMoves[0].energy <= 10)&&(self.activeChargedMoves[0].selfDebuffing)&&(self.activeChargedMoves[0].energy > 50)&&(! self.activeChargedMoves[1].selfDebuffing)){
-						var move = self.activeChargedMoves[0];
+						const move = self.activeChargedMoves[0];
 						self.activeChargedMoves.splice(0, 1);
 						self.activeChargedMoves.push(move);
 					}
@@ -733,7 +747,7 @@ const Pokemon = (function() {
 					// If the second move is a close energy, self buffing move, prioritize it as the bait move
 
 					if(self.activeChargedMoves[1].energy - self.activeChargedMoves[0].energy <= 5 && self.activeChargedMoves[1].selfBuffing){
-						var move = self.activeChargedMoves[0];
+						const move = self.activeChargedMoves[0];
 						self.activeChargedMoves.splice(0, 1);
 						self.activeChargedMoves.push(move);
 					}
@@ -743,8 +757,8 @@ const Pokemon = (function() {
 				self.bestChargedMove = self.activeChargedMoves[0];
 				self.bestChargedMove.dpe = self.bestChargedMove.damage / self.bestChargedMove.energy;
 
-				for(var i = 0; i < self.activeChargedMoves.length; i++){
-					var move = self.activeChargedMoves[i];
+				for(let i = 0; i < self.activeChargedMoves.length; i++){
+					const move = self.activeChargedMoves[i];
 					move.dpe = move.damage / move.energy;
 
 					// Use moves that have higher DPE
@@ -781,7 +795,7 @@ const Pokemon = (function() {
 		// Set a moves stab and damage traits given an opponent
 
 		this.initializeMove = function(move){
-			var opponent = battle.getOpponent(self.index);
+			const opponent = battle.getOpponent(self.index);
 
 			move.stab = self.getStab(move);
 
@@ -799,7 +813,7 @@ const Pokemon = (function() {
 				// If move buffs attack, apply that
 
 				if(move.buffs){
-					var buffEffect = 0;
+					let buffEffect = 0;
 
 					if((move.buffTarget == "self")&&(move.buffs[0] > 0)){
 						buffEffect = move.buffs[0] * (80 / move.energy); // Factor in a rough number of times the move will be used in battle
@@ -807,7 +821,7 @@ const Pokemon = (function() {
 						buffEffect = Math.abs(move.buffs[1]) * (80 / move.energy);
 					}
 
-					var multiplier = 1;
+					let multiplier = 1;
 
 					if(buffEffect > 0){
 						multiplier = ( (gm.data.settings.buffDivisor +(buffEffect* move.buffApplyChance)) / gm.data.settings.buffDivisor);
@@ -828,8 +842,8 @@ const Pokemon = (function() {
 
 			count = typeof count !== 'undefined' ? count : 2;
 
-			var opponent = battle.getOpponent(self.index);
-			var usage = self.generateMoveUsage(opponent, 1);
+			const opponent = battle.getOpponent(self.index);
+			const usage = self.generateMoveUsage(opponent, 1);
 
 			self.selectMove("fast", usage.fastMoves[0].moveId);
 			self.selectMove("charged", usage.chargedMoves[0].moveId, 0);
@@ -844,15 +858,15 @@ const Pokemon = (function() {
 		// Given a type string, move id, and charged move index, set a specific move
 
 		this.selectMove = function(type, id, index, disallowCustomAddition){
-			var moveFound = false;
-			var arr = this.fastMovePool;
+			let moveFound = false;
+			let arr = this.fastMovePool;
 
 			if(type == "charged"){
 				arr = this.chargedMovePool;
 			}
 
-			var i = 0;
-			var move;
+			let i = 0;
+			let move;
 
 			if(index > self.chargedMoves.length){
 				index = self.chargedMoves.length;
@@ -883,7 +897,7 @@ const Pokemon = (function() {
 			// If identical charged moves are selected, select first available
 
 			if((type == "charged") && (this.chargedMoves.length > 1)){
-				var nonIndex = 0;
+				let nonIndex = 0;
 
 				if(index == 0){
 					nonIndex = 1;
@@ -925,7 +939,7 @@ const Pokemon = (function() {
 		this.selectRecommendedMoveset = function(category){
 			category = typeof category !== 'undefined' ? category : "overall";
 
-			var cupName = "all";
+			let cupName = "all";
 
 			if(battle.getCup()){
 				cupName = battle.getCup().name;
@@ -935,18 +949,18 @@ const Pokemon = (function() {
 				cupName = "all";
 			}
 
-			var key = cupName + category + battle.getCP();
+			const key = cupName + category + battle.getCP();
 
 			if(! gm.rankings[key]){
 				console.log("Ranking data not loaded yet");
 				return;
 			}
 
-			var rankings = gm.rankings[key];
-			var found = false;
+			const rankings = gm.rankings[key];
+			let found = false;
 
-			for(var i = 0; i < rankings.length; i++){
-				var r = rankings[i];
+			for(let i = 0; i < rankings.length; i++){
+				const r = rankings[i];
 
 				if(r.speciesId == self.speciesId){
 					self.selectMove("fast", r.moveset[0]);
@@ -986,15 +1000,15 @@ const Pokemon = (function() {
 
 			// Feed move pools into new arrays so they can be manipulated without affecting the originals
 
-			var fastMoves = [];
-			var chargedMoves = [];
-			var fastMoveUses = [];
-			var chargedMoveUses = [];
-			var targetArrs = [fastMoves, chargedMoves];
-			var sourceArrs = [self.fastMovePool, self.chargedMovePool];
+			const fastMoves = [];
+			const chargedMoves = [];
+			const fastMoveUses = [];
+			const chargedMoveUses = [];
+			const targetArrs = [fastMoves, chargedMoves];
+			const sourceArrs = [self.fastMovePool, self.chargedMovePool];
 
-			for(var i = 0; i < sourceArrs.length; i++){
-				for(var n = 0; n < sourceArrs[i].length; n++){
+			for(let i = 0; i < sourceArrs.length; i++){
+				for(let n = 0; n < sourceArrs[i].length; n++){
 					targetArrs[i].push(sourceArrs[i][n]);
 				}
 			}
@@ -1003,15 +1017,15 @@ const Pokemon = (function() {
 
 			chargedMoves.sort((a,b) => (a.dpe > b.dpe) ? -1 : ((b.dpe > a.dpe) ? 1 : 0));
 
-			var highestDPE = chargedMoves[0].dpe;
+			const highestDPE = chargedMoves[0].dpe;
 
-			for(var i = 0; i < chargedMoves.length; i++){
-				var move = chargedMoves[i];
-				var statChangeFactor = 1;
+			for(let i = 0; i < chargedMoves.length; i++){
+				const move = chargedMoves[i];
+				let statChangeFactor = 1;
 
 				// Calculate the magnitude of stat changes, factoring in stages and buff chance
 				if(move.buffs){
-					for(var n = 0; n < move.buffs.length; n++){
+					for(let n = 0; n < move.buffs.length; n++){
 						// Don't factor self defense drops for move usage
 						if((move.selfDebuffing)&&(n == 1)){
 							continue;
@@ -1044,8 +1058,8 @@ const Pokemon = (function() {
 			// For moves that have a strictly better preference, sharply reduce usage
 			total = chargedMoves[0].uses;
 
-			for(var i = 1; i < chargedMoves.length; i++){
-				for(var n = 0; n < i; n++){
+			for(let i = 1; i < chargedMoves.length; i++){
+				for(let n = 0; n < i; n++){
 					if((chargedMoves[i].type == chargedMoves[n].type)&&(chargedMoves[i].energy >= chargedMoves[n].energy)&&(chargedMoves[i].dpe / chargedMoves[n].dpe < 1.3)){
 						chargedMoves[i].uses *= .5;
 						break;
@@ -1056,11 +1070,11 @@ const Pokemon = (function() {
 			}
 
 			// Normalize move usage to total
-			for(var i = 0; i < chargedMoves.length; i++){
+			for(let i = 0; i < chargedMoves.length; i++){
 				chargedMoves[i].uses = Math.round((chargedMoves[i].uses / total) * 100);
 			}
 
-			for(var i = 0; i < chargedMoves.length; i++){
+			for(let i = 0; i < chargedMoves.length; i++){
 				chargedMoveUses.push({
 					moveId: chargedMoves[i].moveId,
 					uses: chargedMoves[i].uses * weightModifier
@@ -1071,18 +1085,18 @@ const Pokemon = (function() {
 
 
 			// Calculate TDO for each fast move and sort
-			var total = 0;
+			let total = 0;
 
 			// Let's use Yawn as a baseline for comparison
-			var yawn = gm.getMoveById("YAWN");
+			const yawn = gm.getMoveById("YAWN");
 			yawn.damage = 1;
 
-			var baseline = self.calculateCycleDPT(yawn, chargedMoves[0]);
+			const baseline = self.calculateCycleDPT(yawn, chargedMoves[0]);
 
-			for(var i = 0; i < fastMoves.length; i++){
-				var move = fastMoves[i];
-				var ept = move.energyGain / (move.cooldown / 500);
-				var dpt = move.damage / (move.cooldown / 500);
+			for(let i = 0; i < fastMoves.length; i++){
+				const move = fastMoves[i];
+				const ept = move.energyGain / (move.cooldown / 500);
+				const dpt = move.damage / (move.cooldown / 500);
 
 				move.uses = self.calculateCycleDPT(move, chargedMoves[0]);
 				move.uses = Math.max(move.uses - baseline, 0.1);
@@ -1092,7 +1106,7 @@ const Pokemon = (function() {
 			}
 
 			// Normalize move usage to total
-			for(var i = 0; i < fastMoves.length; i++){
+			for(let i = 0; i < fastMoves.length; i++){
 				fastMoves[i].uses = Math.round((fastMoves[i].uses / total) * 100);
 
 				fastMoveUses.push({
@@ -1103,7 +1117,7 @@ const Pokemon = (function() {
 
 			fastMoveUses.sort((a,b) => (a.uses > b.uses) ? -1 : ((b.uses > a.uses) ? 1 : 0));
 
-			var results = {
+			const results = {
 				fastMoves: fastMoveUses,
 				chargedMoves: chargedMoveUses
 			};
@@ -1114,7 +1128,7 @@ const Pokemon = (function() {
 		// Add new move to the supplied move pool, with a flag to automatically select the new move
 
 		this.addNewMove = function(id, movepool, selectNewMove, moveType, index){
-			var move = gm.getMoveById(id);
+			const move = gm.getMoveById(id);
 
 			if(! move){
 				return false;
@@ -1137,7 +1151,7 @@ const Pokemon = (function() {
 				self.selectMove(moveType, id, index, true)
 			}
 
-			var props = {
+			const props = {
 				moveType: moveType,
 				moveId: id
 			};
@@ -1152,7 +1166,7 @@ const Pokemon = (function() {
 		// Remove a specific move from the movepool (used for removing Frustration when Shadow type is changed)
 
 		this.removeMove = function(id){
-			for(var i = 0; i < self.chargedMovePool.length; i++){
+			for(let i = 0; i < self.chargedMovePool.length; i++){
 				if(self.chargedMovePool[i].moveId == id){
 					self.chargedMovePool.splice(i, 1);
 
@@ -1171,8 +1185,8 @@ const Pokemon = (function() {
 		// This function calculates TDO given moveset and opponent, used for move selection
 
 		this.calculateTDO = function(fastMove, chargedMove, opponent, final){
-			var opponentDPS = Math.floor(20 * (100 / this.stats.def));
-			var opponentDef = 100;
+			let opponentDPS = Math.floor(20 * (100 / this.stats.def));
+			let opponentDef = 100;
 
 			if(opponent){
 				opponentDPS = opponent.dps;
@@ -1180,17 +1194,17 @@ const Pokemon = (function() {
 			}
 
 			// Calculate multiple cycles to avoid issues with overflow energy
-			var cycleFastMoves = Math.ceil(chargedMove.energy / fastMove.energyGain);
-			var cycleTime = cycleFastMoves * (fastMove.cooldown / 1000);
-			var cycleDamage = (cycleFastMoves * fastMove.damage) + chargedMove.damage;
-			var cycleDPS = cycleDamage / cycleTime;
+			const cycleFastMoves = Math.ceil(chargedMove.energy / fastMove.energyGain);
+			const cycleTime = cycleFastMoves * (fastMove.cooldown / 1000);
+			const cycleDamage = (cycleFastMoves * fastMove.damage) + chargedMove.damage;
+			const cycleDPS = cycleDamage / cycleTime;
 
 			if(final){
 				this.dps = cycleDPS;
 			}
 
-			var timeToFaint = this.stats.hp / opponentDPS;
-			var tdo = cycleDPS * timeToFaint;
+			const timeToFaint = this.stats.hp / opponentDPS;
+			const tdo = cycleDPS * timeToFaint;
 
 			return tdo;
 		}
@@ -1199,10 +1213,10 @@ const Pokemon = (function() {
 
 		this.calculateCycleDPT = function(fastMove, chargedMove){
 			// Calculate multiple cycles to avoid issues with overflow energy
-			var cycleFastMoves = 150 / fastMove.energyGain;
-			var cycleTime = (cycleFastMoves * (fastMove.cooldown / 500)) + 1;
-			var cycleDamage = (cycleFastMoves * fastMove.damage) + (chargedMove.damage * ((150 / chargedMove.energy)-1)) + 1; // Emulate TDO with a shield
-			var cycleDPT = cycleDamage / cycleTime;
+			const cycleFastMoves = 150 / fastMove.energyGain;
+			const cycleTime = (cycleFastMoves * (fastMove.cooldown / 500)) + 1;
+			const cycleDamage = (cycleFastMoves * fastMove.damage) + (chargedMove.damage * ((150 / chargedMove.energy) - 1)) + 1; // Emulate TDO with a shield
+			const cycleDPT = cycleDamage / cycleTime;
 
 			return cycleDPT;
 		}
@@ -1210,8 +1224,8 @@ const Pokemon = (function() {
 		// This function generates a list of descriptive traits displayed on the rankings page
 
 		this.generateTraits = function(){
-			var cupName = "all";
-			var category = "overall";
+			let cupName = "all";
+			const category = "overall";
 
 			if(battle.getCup()){
 				cupName = battle.getCup().name;
@@ -1223,15 +1237,15 @@ const Pokemon = (function() {
 
 			// First, look up ranking data to use as a reference
 
-			var key = cupName + category + battle.getCP();
-			var rankings = gm.rankings[key];
-			var r = false;
-			var found = false;
+			const key = cupName + category + battle.getCP();
+			let rankings = gm.rankings[key];
+			let r = false;
+			const found = false;
 
 			if(gm.rankings[key]){
 				rankings = gm.rankings[key];
 
-				for(var i = 0; i < rankings.length; i++){
+				for(let i = 0; i < rankings.length; i++){
 					if(rankings[i].speciesId == self.speciesId){
 						r = rankings[i];
 					}
@@ -1239,13 +1253,13 @@ const Pokemon = (function() {
 			}
 
 			// Initialize lists of positive and negative traits
-			var pros = [];
-			var cons = [];
+			const pros = [];
+			const cons = [];
 
 			// Bulkiness
-			var bulk = self.stats.def * self.stats.hp * self.shadowDefMult;
-			var bulkScale = [12500,14000,17000,23000];
-			var bulkRating = 0;
+			const bulk = self.stats.def * self.stats.hp * self.shadowDefMult;
+			let bulkScale = [12500, 14000, 17000, 23000];
+			let bulkRating = 0;
 
 			if(battle.getCP() == 500){
 				bulkScale = [4000,6000,8000,12000];
@@ -1295,7 +1309,7 @@ const Pokemon = (function() {
 			}
 
 			// Charged Move activation speed
-			var activationSpeed = Math.ceil( (self.fastestChargedMove.energy * 2) / self.fastMove.energyGain ) * self.fastMove.cooldown * (1 / 1000); // Avg speed over two cycles to account for overflow energy
+			const activationSpeed = Math.ceil((self.fastestChargedMove.energy * 2) / self.fastMove.energyGain) * self.fastMove.cooldown * (1 / 1000); // Avg speed over two cycles to account for overflow energy
 
 			if(activationSpeed <= 12){
 				pros.push({
@@ -1324,12 +1338,12 @@ const Pokemon = (function() {
 			}
 
 			// Charged Move coverage
-			var types = getAllTypes();
-			var averagePower = 0;
-			var totalResistingTypes = 0;
-			var totalSuperEffectiveTypes = 0;
+			const types = getAllTypes();
+			let averagePower = 0;
+			let totalResistingTypes = 0;
+			let totalSuperEffectiveTypes = 0;
 
-			var targetDef = 120;
+			let targetDef = 120;
 			if(battle.getCP() == 500){
 				targetDef = 75;
 			} else if(battle.getCP() == 2500){
@@ -1338,14 +1352,14 @@ const Pokemon = (function() {
 				targetDef = 170;
 			}
 
-			for(var i = 0; i < types.length; i++){
-				var powerVSType = 0;
-				var bestEffectiveness = 0;
+			for(let i = 0; i < types.length; i++){
+				let powerVSType = 0;
+				let bestEffectiveness = 0;
 
-				for(var n = 0; n < self.chargedMoves.length; n++){
-					var effectiveness = battle.getEffectiveness(self.chargedMoves[n].type, [types[i].toLowerCase(), "none"]);
-					var effectivePower = ((self.chargedMoves[n].power * self.chargedMoves[n].stab * self.shadowAtkMult * effectiveness) * (self.stats.atk / targetDef));
-					var bestChargedMoveSpeed = Math.ceil(self.chargedMoves[n].energy / self.fastMove.energyGain) * (self.fastMove.cooldown / 500);
+				for(let n = 0; n < self.chargedMoves.length; n++){
+					const effectiveness = battle.getEffectiveness(self.chargedMoves[n].type, [types[i].toLowerCase(), "none"]);
+					let effectivePower = ((self.chargedMoves[n].power * self.chargedMoves[n].stab * self.shadowAtkMult * effectiveness) * (self.stats.atk / targetDef));
+					const bestChargedMoveSpeed = Math.ceil(self.chargedMoves[n].energy / self.fastMove.energyGain) * (self.fastMove.cooldown / 500);
 					effectivePower = effectivePower * (30 / bestChargedMoveSpeed);
 
 					if(effectivePower > powerVSType){
@@ -1368,7 +1382,7 @@ const Pokemon = (function() {
 
 			averagePower /= types.length;
 
-			var inflexible = false;
+			let inflexible = false;
 
 			if((totalResistingTypes == 0)&&(totalSuperEffectiveTypes >= 5)&&(averagePower >= 200)){
 				pros.push({
@@ -1404,7 +1418,7 @@ const Pokemon = (function() {
 
 			// Fast Move pressure
 
-			var effectiveDPT = ((self.fastMove.power * self.fastMove.stab * self.shadowAtkMult) * (self.stats.atk / targetDef)) / (self.fastMove.cooldown / 500);
+			const effectiveDPT = ((self.fastMove.power * self.fastMove.stab * self.shadowAtkMult) * (self.stats.atk / targetDef)) / (self.fastMove.cooldown / 500);
 
 			if(effectiveDPT >= 4){
 				pros.push({
@@ -1419,8 +1433,8 @@ const Pokemon = (function() {
 			}
 
 			// Charged Move/Shield Pressure
-			var effectivePower = ((self.bestChargedMove.power * self.bestChargedMove.stab * self.shadowAtkMult) * (self.stats.atk / targetDef));
-			var bestChargedMoveSpeed = Math.ceil(self.bestChargedMove.energy / self.fastMove.energyGain) * (self.fastMove.cooldown / 500);
+			let effectivePower = ((self.bestChargedMove.power * self.bestChargedMove.stab * self.shadowAtkMult) * (self.stats.atk / targetDef));
+			const bestChargedMoveSpeed = Math.ceil(self.bestChargedMove.energy / self.fastMove.energyGain) * (self.fastMove.cooldown / 500);
 			effectivePower = effectivePower * (30 / bestChargedMoveSpeed);
 
 			if(effectivePower >= 210){
@@ -1436,11 +1450,11 @@ const Pokemon = (function() {
 			}
 
 			// Defensive typing
-			var totalResistances = 0;
-			var totalWeaknesses = 0;
-			var doubleWeaknesses = 0;
+			let totalResistances = 0;
+			let totalWeaknesses = 0;
+			let doubleWeaknesses = 0;
 
-			for(var key in self.typeEffectiveness){
+			for(let key in self.typeEffectiveness){
 				if(self.typeEffectiveness[key] < 1){
 					totalResistances++;
 				} else if(self.typeEffectiveness[key] > 1){
@@ -1487,9 +1501,9 @@ const Pokemon = (function() {
 				});
 			}
 
-			var hasSelfDebuffingMove = false;
+			let hasSelfDebuffingMove = false;
 
-			for(var i = 0; i < self.chargedMoves.length; i++){
+			for(let i = 0; i < self.chargedMoves.length; i++){
 				if(self.chargedMoves[i].selfDebuffing){
 					hasSelfDebuffingMove = true;
 				}
@@ -1524,15 +1538,15 @@ const Pokemon = (function() {
 
 		this.generateSimilarPokemon = function(traits){
 
-			var pokemonList = gm.generateFilteredPokemonList(battle, battle.getCup().include, battle.getCup().exclude);
+			const pokemonList = gm.generateFilteredPokemonList(battle, battle.getCup().include, battle.getCup().exclude);
 
-			for(var i = 0; i < pokemonList.length; i++){
-				var pokemon = pokemonList[i];
+			for(let i = 0; i < pokemonList.length; i++){
+				const pokemon = pokemonList[i];
 				pokemon.selectRecommendedMoveset();
 
 				pokemon.similarityScore = 0;
 
-				var id = pokemon.speciesId.replace("_shadow","")
+				const id = pokemon.speciesId.replace("_shadow", "");
 
 				if(id.indexOf("_xs") > -1){
 					continue;
@@ -1548,10 +1562,10 @@ const Pokemon = (function() {
 					continue;
 				}
 
-				var similarityScore = 0; // Used to compare similarity between Pokemon
+				let similarityScore = 0; // Used to compare similarity between Pokemon
 
 				// Favor Pokemon with the same or similar types
-				for(var n = 0; n < pokemon.types.length; n++){
+				for(let n = 0; n < pokemon.types.length; n++){
 					if((self.types.indexOf(pokemon.types[n]) > -1)&&(pokemon.types[n] != "none")){
 						similarityScore += 400;
 					}
@@ -1565,8 +1579,8 @@ const Pokemon = (function() {
 					similarityScore += 50;
 				}
 
-				for(var n = 0; n < pokemon.chargedMoves.length; n++){
-					for(var j = 0; j < self.chargedMoves.length; j++){
+				for(let n = 0; n < pokemon.chargedMoves.length; n++){
+					for(let j = 0; j < self.chargedMoves.length; j++){
 						if(pokemon.chargedMoves[n].moveId == self.chargedMoves[j].moveId){
 							similarityScore += 200;
 						} else if(pokemon.chargedMoves[n].type == self.chargedMoves[j].moveId){
@@ -1582,8 +1596,8 @@ const Pokemon = (function() {
 
 				pokemon.traits = pokemon.generateTraits();
 
-				for(var n = 0; n < pokemon.traits.pros.length; n++){
-					for(var k = 0; k < traits.pros.length; k++){
+				for(let n = 0; n < pokemon.traits.pros.length; n++){
+					for(let k = 0; k < traits.pros.length; k++){
 						if(pokemon.traits.pros[n].trait == traits.pros[k].trait){
 							similarityScore += 100;
 
@@ -1608,8 +1622,8 @@ const Pokemon = (function() {
 					}
 				}
 
-				for(var n = 0; n < pokemon.traits.cons.length; n++){
-					for(var k = 0; k < traits.cons.length; k++){
+				for(let n = 0; n < pokemon.traits.cons.length; n++){
+					for(let k = 0; k < traits.cons.length; k++){
 						if(pokemon.traits.cons[n].trait == traits.cons[k].trait){
 							similarityScore += 50;
 						}
@@ -1643,7 +1657,7 @@ const Pokemon = (function() {
 				return false;
 			}
 
-			var level41CP = self.calculateCP(0.795300006866455, 15, 15, 15);
+			const level41CP = self.calculateCP(0.795300006866455, 15, 15, 15);
 
 			if(level41CP >= battle.getCP() + 150){
 				return false;
@@ -1660,7 +1674,7 @@ const Pokemon = (function() {
 				return true;
 			}
 
-			for(var i = 0; i < self.chargedMoves.length; i++){
+			for(let i = 0; i < self.chargedMoves.length; i++){
 				if(self.chargedMoves[i].moveId == moveId){
 					return true;
 				}
@@ -1674,13 +1688,13 @@ const Pokemon = (function() {
 		this.knowsMove = function(moveId){
 			moveId = moveId.toUpperCase();
 
-			for(var i = 0; i < self.fastMovePool.length; i++){
+			for(let i = 0; i < self.fastMovePool.length; i++){
 				if(self.fastMovePool[i].moveId == moveId){
 					return true;
 				}
 			}
 
-			for(var i = 0; i < self.chargedMovePool.length; i++){
+			for(let i = 0; i < self.chargedMovePool.length; i++){
 				if(self.chargedMovePool[i].moveId == moveId){
 					return true;
 				}
@@ -1693,7 +1707,7 @@ const Pokemon = (function() {
 
 		this.knowsMoveType = function(type){
 
-			for(var i = 0; i < self.fastMovePool.length; i++){
+			for(let i = 0; i < self.fastMovePool.length; i++){
 				if(self.fastMovePool[i].type == type){
 					if(self.fastMovePool[i].moveId.indexOf("HIDDEN_POWER") == -1){
 						return true;
@@ -1701,7 +1715,7 @@ const Pokemon = (function() {
 				}
 			}
 
-			for(var i = 0; i < self.chargedMovePool.length; i++){
+			for(let i = 0; i < self.chargedMovePool.length; i++){
 				if(self.chargedMovePool[i].type == type){
 					return true;
 				}
@@ -1718,7 +1732,7 @@ const Pokemon = (function() {
 				return self.fastMove;
 			}
 
-			for(var i = 0; i < self.chargedMoves.length; i++){
+			for(let i = 0; i < self.chargedMoves.length; i++){
 				if(self.chargedMoves[i].moveId == moveId){
 					return self.chargedMoves[i];
 				}
@@ -1730,9 +1744,9 @@ const Pokemon = (function() {
 		// Return whether or not this Pokemon has a move with buff or debuff effects
 
 		this.hasBuffMove = function(){
-			var hasBuffMove = false;
+			let hasBuffMove = false;
 
-			for(var i = 0; i < self.chargedMoves.length; i++){
+			for(let i = 0; i < self.chargedMoves.length; i++){
 				if((self.chargedMoves[i].buffs)&&(self.chargedMoves[i].buffApplyChance < 1)){
 					hasBuffMove = true;
 				}
@@ -1745,9 +1759,9 @@ const Pokemon = (function() {
 		// This is used for some battle/AI logic
 
 		this.getBoostMove = function(){
-			var boostMove = false;
+			let boostMove = false;
 
-			for(var i = 0; i < self.chargedMoves.length; i++){
+			for(let i = 0; i < self.chargedMoves.length; i++){
 				if((self.chargedMoves[i].buffs)&&(self.chargedMoves[i].buffApplyChance >= 0.5)&&(! self.chargedMoves[i].selfDebuffing)){
 					boostMove = self.chargedMoves[i];
 				}
@@ -1774,24 +1788,16 @@ const Pokemon = (function() {
 				return;
 			}
 
-			var arr = [];
+			const arr = [];
 
-			var allTypes = getAllTypes();
+			const allTypes = getAllTypes();
 
-			for(var n = 0; n < allTypes.length; n++){
+			for(let n = 0; n < allTypes.length; n++){
 				effectiveness = battle.getEffectiveness(allTypes[n], self.types);
 				arr[allTypes[n].toLowerCase()] = effectiveness;
 			}
 
 			return arr;
-		}
-
-		// Array of all types
-
-		function getAllTypes(){
-			var types = ["Bug","Dark","Dragon","Electric","Fairy","Fighting","Fire","Flying","Ghost","Grass","Ground","Ice","Normal","Poison","Psychic","Rock","Steel","Water"];
-
-			return types;
 		}
 
 		// Resets Pokemon prior to battle
@@ -1869,7 +1875,7 @@ const Pokemon = (function() {
 			initialize = typeof initialize !== 'undefined' ? initialize : true;
 
 			self.level = amount;
-			var index = ((amount-1) * 2);
+			const index = ((amount - 1) * 2);
 
 			self.cpm = cpms[index];
 
@@ -1908,7 +1914,7 @@ const Pokemon = (function() {
 			// Automatically adjust to league cap
 
 			if(self.autoLevel){
-				var level = self.levelCap;
+				let level = self.levelCap;
 				self.cp = 100000;
 
 				while(self.cp > battle.getCP()){
@@ -1939,9 +1945,9 @@ const Pokemon = (function() {
 
 		this.applyStatBuffs = function(buffs){
 
-			var maxBuffStages = gm.data.settings.maxBuffStages;
+			const maxBuffStages = gm.data.settings.maxBuffStages;
 
-			for(var i = 0; i < buffs.length; i++){
+			for(let i = 0; i < buffs.length; i++){
 				self.statBuffs[i] += buffs[i];
 
 				self.statBuffs[i] = Math.min(self.statBuffs[i], maxBuffStages);
@@ -1955,7 +1961,7 @@ const Pokemon = (function() {
 		this.getEffectiveStat = function(index, useStartStatBuffs){
 			useStartStatBuffs = (typeof useStartStatBuffs !== 'undefined') ?  useStartStatBuffs : false
 
-			var multiplier = self.getStatBuffMultiplier(index, useStartStatBuffs);
+			let multiplier = self.getStatBuffMultiplier(index, useStartStatBuffs);
 
 			if(self.shadowType == "shadow"){
 				if(index == 0){
@@ -1976,9 +1982,9 @@ const Pokemon = (function() {
 
 		this.getStatBuffMultiplier = function(index, useStartStatBuffs){
 			useStartStatBuffs = (typeof useStartStatBuffs !== 'undefined') ?  useStartStatBuffs : false
-			var buffDivisor = gm.data.settings.buffDivisor;
-			var sourceBuffs = self.statBuffs;
-			var multiplier;
+			const buffDivisor = gm.data.settings.buffDivisor;
+			let sourceBuffs = self.statBuffs;
+			let multiplier;
 
 			if(useStartStatBuffs){
 				sourceBuffs = self.startStatBuffs;
@@ -1996,7 +2002,7 @@ const Pokemon = (function() {
 		// Return battle rating for this Pokemon
 
 		this.getBattleRating = function(){
-			var opponent = battle.getOpponent(self.index);
+			const opponent = battle.getOpponent(self.index);
 
 			if(! opponent){
 				return 0;
@@ -2014,16 +2020,16 @@ const Pokemon = (function() {
 		// Output a string of numbers for URL building and recreating a Pokemon
 
 		this.generateURLPokeStr = function(context){
-			var pokeStr = self.aliasId;
+			let pokeStr = self.aliasId;
 
 			if((self.isCustom)||(self.startStatBuffs[0] != 0)||(self.startStatBuffs[1] != 0)){
-				var arr = [self.level];
+				const arr = [self.level];
 
 				arr.push(self.ivs.atk, self.ivs.def, self.ivs.hp, self.startStatBuffs[0]+gm.data.settings.maxBuffStages, self.startStatBuffs[1]+gm.data.settings.maxBuffStages, self.baitShields, self.optimizeMoveTiming ? 1 : 0);
 
 				// Stat buffs are increased by 4 so the URL doesn't have to deal with parsing negative numbers
 
-				var str = arr.join("-");
+				const str = arr.join("-");
 
 				pokeStr += "-" + str;
 			}
@@ -2051,11 +2057,11 @@ const Pokemon = (function() {
 		// Output a string of numbers for URL building and recreating a moveset
 
 		this.generateURLMoveStr = function(){
-			var moveStr = '';
+			let moveStr = '';
 
-			var fastMoveStr = self.fastMovePool.indexOf(self.fastMove);
-			var chargedMove1Str = self.chargedMovePool.indexOf(self.chargedMoves[0])+1;
-			var chargedMove2Str = self.chargedMovePool.indexOf(self.chargedMoves[1])+1;
+			let fastMoveStr = self.fastMovePool.indexOf(self.fastMove);
+			let chargedMove1Str = self.chargedMovePool.indexOf(self.chargedMoves[0]) + 1;
+			let chargedMove2Str = self.chargedMovePool.indexOf(self.chargedMoves[1]) + 1;
 
 			// Check for any custom moves;
 
@@ -2083,9 +2089,9 @@ const Pokemon = (function() {
 		// Output a string of the Pokemon's moveset abbreviation
 
 		this.generateMovesetStr = function(){
-			var moveAbbreviationStr = self.fastMove.abbreviation;
+			let moveAbbreviationStr = self.fastMove.abbreviation;
 
-			for(var i = 0; i < self.chargedMoves.length; i++){
+			for(let i = 0; i < self.chargedMoves.length; i++){
 				if(i == 0){
 					moveAbbreviationStr += "+" + self.chargedMoves[i].abbreviation;
 				} else{
@@ -2130,21 +2136,21 @@ const Pokemon = (function() {
 
 		this.calculateConsistency = function(){
 
-			var fastMove = self.fastMove;
-			var chargedMoves = self.chargedMoves;
-			var consistencyScore = 1;
+			const fastMove = self.fastMove;
+			const chargedMoves = self.chargedMoves;
+			let consistencyScore = 1;
 
 			// Reset move stats
 			fastMove.damage = fastMove.power * fastMove.stab;
 
-			for(var i = 0; i < chargedMoves.length; i++){
+			for(let i = 0; i < chargedMoves.length; i++){
 				chargedMoves[i].damage = chargedMoves[i].power * chargedMoves[i].stab;
 			}
 
 			// Only calculate with two Charged Moves
 			if(chargedMoves.length == 2){
 
-				var effectivenessScenarios = [
+				const effectivenessScenarios = [
 					[1, 1]
 				];
 
@@ -2156,7 +2162,7 @@ const Pokemon = (function() {
 				}
 
 				// Here we are looking at how depenendent each Pokemon is on baiting in scenarios where both moves are neutral, or one or the other is resisted
-				for(var n = 0; n < effectivenessScenarios.length; n++){
+				for(let n = 0; n < effectivenessScenarios.length; n++){
 					// Sort moves by name as a starting point
 					chargedMoves.sort((a,b) => (a.name > b.name) ? -1 : ((b.name > a.name) ? 1 : 0));
 
@@ -2173,9 +2179,9 @@ const Pokemon = (function() {
 					}
 
 					// Calculate how much fast move vs charged move damage this Pokemon puts out per cycle
-					var cycleFastMoves = Math.ceil(chargedMoves[0].energy / fastMove.energyGain);
-					var cycleFastDamage = fastMove.damage * cycleFastMoves;
-					var cycleDamage = cycleFastDamage + chargedMoves[0].damage;
+					const cycleFastMoves = Math.ceil(chargedMoves[0].energy / fastMove.energyGain);
+					let cycleFastDamage = fastMove.damage * cycleFastMoves;
+					const cycleDamage = cycleFastDamage + chargedMoves[0].damage;
 
 					if(fastMove.type == chargedMoves[0].type){
 						cycleFastDamage *= effectivenessScenarios[n][0];
@@ -2183,7 +2189,7 @@ const Pokemon = (function() {
 						cycleFastDamage *= effectivenessScenarios[n][1];
 					}
 
-					var factor = 1;
+					let factor = 1;
 					if((chargedMoves[0].energy > chargedMoves[1].energy)||( (chargedMoves[0].energy == chargedMoves[1].energy) && (chargedMoves[1].moveId == "ACID_SPRAY")||((chargedMoves[0].selfAttackDebuffing)&&(! chargedMoves[1].selfDebuffing)&&(chargedMoves[1].energy - chargedMoves[0].energy <= 10))||((chargedMoves[0].selfDebuffing)&&(chargedMoves[0].energy > 50)&&(! chargedMoves[1].selfDebuffing)&&(chargedMoves[1].energy - chargedMoves[0].energy <= 10)))){
 						factor = (cycleFastDamage / cycleDamage) + ((chargedMoves[0].damage / cycleDamage) * (chargedMoves[1].dpe / chargedMoves[0].dpe));
 
@@ -2196,16 +2202,16 @@ const Pokemon = (function() {
 					}
 
 					// Add a factor for chance buff moves, especially high chance moves
-					var buffChanceFactor = 0;
+					let buffChanceFactor = 0;
 
-					for(var i = 0; i < chargedMoves.length; i++){
+					for(let i = 0; i < chargedMoves.length; i++){
 
 						if(chargedMoves[i].buffs && chargedMoves[i].buffApplyChance < 1 && chargedMoves[i].buffApplyChance > .15){
-							var buffStages = Math.abs(chargedMoves[i].buffs[0]) + Math.abs(chargedMoves[i].buffs[1]);
-							var buffConsistency = 0.5 + Math.abs(0.5 - chargedMoves[i].buffApplyChance); // 50% is the most chaotic, 10% the least
+							const buffStages = Math.abs(chargedMoves[i].buffs[0]) + Math.abs(chargedMoves[i].buffs[1]);
+							const buffConsistency = 0.5 + Math.abs(0.5 - chargedMoves[i].buffApplyChance); // 50% is the most chaotic, 10% the least
 
 							// Roughly correlate buff strength to damage
-							var buffsAsDamage = chargedMoves[i].damage + (buffStages * 25 * (1 - buffConsistency));
+							const buffsAsDamage = chargedMoves[i].damage + (buffStages * 25 * (1 - buffConsistency));
 
 							buffChanceFactor += chargedMoves[i].damage / buffsAsDamage;
 						} else{
@@ -2253,9 +2259,9 @@ const Pokemon = (function() {
 		// Return the slot number for this Pokemon for Silph Season 3 Continentals
 
 		this.getSlot = function(cup){
-			var slotNumber = 0;
+			let slotNumber = 0;
 
-			for(var j = 0; j < cup.slots.length; j++){
+			for(let j = 0; j < cup.slots.length; j++){
 				if((cup.slots[j].pokemon.indexOf(self.speciesId) > -1)||(cup.slots[j].pokemon.indexOf(self.speciesId.replace("_shadow","")) > -1)){
 					slotNumber = j;
 					break;
@@ -2269,7 +2275,7 @@ const Pokemon = (function() {
 
 		this.getEvolutionStage = function(){
 			// Does not evolve and has no pre-evolution
-			var stage = 0;
+			let stage = 0;
 
 			if(this.family){
 				// Evolves and has no pre-evolution
@@ -2296,13 +2302,13 @@ const Pokemon = (function() {
 		this.changeForm = function(id){
 			id = typeof id !== 'undefined' ? id : null;
 
-			var formId = id;
+			let formId = id;
 
 			if(this.formChange.type == "toggle"){
 				formId = this.activeFormId == this.formChange.defaultFormId ? this.formChange.alternativeFormId : this.formChange.defaultFormId;
 			}
 
-			var form = gm.getPokemonById(formId);
+			const form = gm.getPokemonById(formId);
 
 			this.speciesName = form.speciesName;
 			this.activeFormId = formId;
@@ -2335,7 +2341,7 @@ const Pokemon = (function() {
 			if(moveType == "fast"){
 				self.selectMove(moveType, newMoveId, 0, true);
 			} else if(moveType == "charged"){
-				var moveIndex = self.chargedMoves.findIndex(m => m.moveId == oldMoveId);
+				const moveIndex = self.chargedMoves.findIndex(m => m.moveId == oldMoveId);
 				if(moveIndex > -1){
 					self.selectMove(moveType, newMoveId, moveIndex, true);
 				}
@@ -2345,22 +2351,22 @@ const Pokemon = (function() {
 
 	}
 
+	/* STATIC METHODS */
+	// Given Fast Move and Charged Move objects, calculate and return the move counts for 3 cycles
+	Pokemon.calculateMoveCounts = function(fastMove, chargedMove){
+		const counts = [];
+
+		counts.push( Math.ceil( (chargedMove.energy * 1) / fastMove.energyGain) );
+		counts.push( Math.ceil( (chargedMove.energy * 2) / fastMove.energyGain) - counts[0] );
+		counts.push( Math.ceil( (chargedMove.energy * 3) / fastMove.energyGain) - counts[0] - counts[1] );
+		counts.push( Math.ceil( (chargedMove.energy * 4) / fastMove.energyGain) - counts[0] - counts[1] - counts[2] );
+
+		return counts;
+
+	}
+
 	return Pokemon;
 })();
 
 
-/* STATIC METHODS */
 
-// Given Fast Move and Charged Move objects, calculate and return the move counts for 3 cycles
-
-Pokemon.calculateMoveCounts = function(fastMove, chargedMove){
-	var counts = [];
-
-	counts.push( Math.ceil( (chargedMove.energy * 1) / fastMove.energyGain) );
-	counts.push( Math.ceil( (chargedMove.energy * 2) / fastMove.energyGain) - counts[0] );
-	counts.push( Math.ceil( (chargedMove.energy * 3) / fastMove.energyGain) - counts[0] - counts[1] );
-	counts.push( Math.ceil( (chargedMove.energy * 4) / fastMove.energyGain) - counts[0] - counts[1] - counts[2] );
-
-	return counts;
-
-}
