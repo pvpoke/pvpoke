@@ -143,6 +143,9 @@ if(! isset($OG_IMAGE)){
 
 <link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=201">
 
+<!-- Prefetches Gamemaster for faster first-time load  -->
+<link rel="preload" href="<?php echo $WEB_ROOT; ?>data/gamemaster.min.json?v=<?php echo $SITE_VERSION; ?>" as="fetch" type="application/json">
+
 <?php if(strpos($META_TITLE, 'Train') !== false): ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=21">
 <?php endif; ?>
