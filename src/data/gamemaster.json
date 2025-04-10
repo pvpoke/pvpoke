@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-04-08 02:52:36",
+    "timestamp": "2025-04-10 16:06:28",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -12336,7 +12336,7 @@
         },
         "types": ["bug", "fighting"],
         "fastMoves": ["COUNTER", "STRUGGLE_BUG"],
-        "chargedMoves": ["CLOSE_COMBAT", "EARTHQUAKE", "MEGAHORN", "ROCK_BLAST"],
+        "chargedMoves": ["CLOSE_COMBAT", "EARTHQUAKE", "MEGAHORN", "ROCK_BLAST", "UPPER_HAND"],
         "tags": ["regional"],
         "defaultIVs": {
             "cp500": [6, 12, 12, 13],
@@ -12357,7 +12357,7 @@
         },
         "types": ["bug", "fighting"],
         "fastMoves": ["COUNTER", "STRUGGLE_BUG"],
-        "chargedMoves": ["CLOSE_COMBAT", "EARTHQUAKE", "MEGAHORN", "ROCK_BLAST"],
+        "chargedMoves": ["CLOSE_COMBAT", "EARTHQUAKE", "MEGAHORN", "ROCK_BLAST", "UPPER_HAND"],
         "tags": ["regional", "mega"],
         "defaultIVs": {
             "cp500": [4, 13, 13, 15],
@@ -15937,7 +15937,7 @@
         },
         "types": ["fighting", "none"],
         "fastMoves": ["BULLET_PUNCH", "COUNTER", "FORCE_PALM"],
-        "chargedMoves": ["CLOSE_COMBAT", "DYNAMIC_PUNCH", "HEAVY_SLAM", "SUPER_POWER"],
+        "chargedMoves": ["CLOSE_COMBAT", "DYNAMIC_PUNCH", "HEAVY_SLAM", "SUPER_POWER", "UPPER_HAND"],
         "defaultIVs": {
             "cp500": [6.5, 9, 15, 14],
             "cp1500": [19.5, 4, 14, 15],
@@ -15963,7 +15963,7 @@
         },
         "types": ["fighting", "none"],
         "fastMoves": ["BULLET_PUNCH", "COUNTER", "FORCE_PALM"],
-        "chargedMoves": ["CLOSE_COMBAT", "DYNAMIC_PUNCH", "HEAVY_SLAM", "SUPER_POWER"],
+        "chargedMoves": ["CLOSE_COMBAT", "DYNAMIC_PUNCH", "HEAVY_SLAM", "SUPER_POWER", "UPPER_HAND"],
         "defaultIVs": {
             "cp500": [6.5, 9, 15, 14],
             "cp1500": [19.5, 4, 14, 15],
@@ -27642,7 +27642,7 @@
         },
         "types": ["dark", "fighting"],
         "fastMoves": ["ROCK_SMASH", "FEINT_ATTACK"],
-        "chargedMoves": ["ACID_SPRAY", "BRICK_BREAK", "FOUL_PLAY", "THUNDER_PUNCH"],
+        "chargedMoves": ["ACID_SPRAY", "BRICK_BREAK", "FOUL_PLAY", "THUNDER_PUNCH", "UPPER_HAND"],
         "defaultIVs": {
             "cp500": [14, 5, 9, 14],
             "cp1500": [48, 13, 15, 15],
@@ -36255,7 +36255,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_GOSSIFLEUR",
             "evolutions": ["eldegoss"]
@@ -36279,7 +36279,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_GOSSIFLEUR",
             "parent": "gossifleur"
@@ -44245,6 +44245,18 @@
         "energyGain": 0,
         "cooldown": 500,
         "archetype": "General"
+    }, {
+        "moveId": "UPPER_HAND",
+        "name": "Upper Hand",
+        "type": "fighting",
+        "power": 70,
+        "energy": 40,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [0, -1],
+        "buffTarget": "opponent",
+        "buffApplyChance": ".3",
+        "archetype": "Debuff Spam/Bait"
     }, {
         "moveId": "V_CREATE",
         "name": "V-Create",

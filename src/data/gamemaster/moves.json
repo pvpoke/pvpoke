@@ -2967,6 +2967,18 @@
     "cooldown": 500,
     "archetype": "General"
 }, {
+    "moveId": "UPPER_HAND",
+    "name": "Upper Hand",
+    "type": "fighting",
+    "power": 70,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+	"buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": ".3",
+    "archetype": "Debuff Spam/Bait"
+}, {
     "moveId": "V_CREATE",
     "name": "V-Create",
     "type": "fire",
