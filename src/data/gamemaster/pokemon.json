@@ -15274,7 +15274,7 @@
     },
     "types": ["fighting", "none"],
     "fastMoves": ["ROCK_SMASH", "TACKLE"],
-    "chargedMoves": ["CROSS_CHOP", "HEAVY_SLAM", "LOW_SWEEP"],
+    "chargedMoves": ["CROSS_CHOP", "HEAVY_SLAM", "LOW_SWEEP", "UPPER_HAND"],
     "defaultIVs": {
         "cp500": [24, 5, 14, 10],
         "cp1500": [50, 15, 15, 15],
@@ -15300,7 +15300,7 @@
     },
     "types": ["fighting", "none"],
     "fastMoves": ["ROCK_SMASH", "TACKLE"],
-    "chargedMoves": ["CROSS_CHOP", "HEAVY_SLAM", "LOW_SWEEP"],
+    "chargedMoves": ["CROSS_CHOP", "HEAVY_SLAM", "LOW_SWEEP", "UPPER_HAND"],
     "defaultIVs": {
         "cp500": [24, 5, 14, 10],
         "cp1500": [50, 15, 15, 15],
@@ -27055,7 +27055,7 @@
     },
     "types": ["dark", "fighting"],
     "fastMoves": ["COUNTER", "SNARL"],
-    "chargedMoves": ["ACID_SPRAY", "POWER_UP_PUNCH", "FOUL_PLAY", "THUNDER_PUNCH"],
+    "chargedMoves": ["ACID_SPRAY", "POWER_UP_PUNCH", "FOUL_PLAY", "THUNDER_PUNCH", "UPPER_HAND"],
     "defaultIVs": {
         "cp500": [8.5, 5, 8, 8],
         "cp1500": [24.5, 4, 13, 14],
