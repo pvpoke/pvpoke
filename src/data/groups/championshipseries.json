@@ -28,9 +28,17 @@
     "fastMove": "POISON_STING",
     "chargedMoves": ["SLUDGE_BOMB", "EARTHQUAKE"]
 }, {
+    "speciesId": "clodsire",
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["EARTHQUAKE", "STONE_EDGE"]
+}, {
     "speciesId": "corsola_galarian",
     "fastMove": "ASTONISH",
     "chargedMoves": ["NIGHT_SHADE", "POWER_GEM"]
+}, {
+    "speciesId": "cradily",
+    "fastMove": "BULLET_SEED",
+    "chargedMoves": ["ROCK_TOMB", "GRASS_KNOT"]
 }, {
     "speciesId": "dewgong",
     "fastMove": "ICE_SHARD",
@@ -121,10 +129,6 @@
     "chargedMoves": ["BONE_CLUB", "ROCK_SLIDE"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "moltres_galarian",
-    "fastMove": "SUCKER_PUNCH",
-    "chargedMoves": ["ANCIENT_POWER", "BRAVE_BIRD"]
-}, {
     "speciesId": "morpeko_full_belly",
     "fastMove": "THUNDER_SHOCK",
     "chargedMoves": ["PSYCHIC_FANGS", "AURA_WHEEL_ELECTRIC"]
@@ -143,14 +147,18 @@
     "chargedMoves": ["FOUL_PLAY", "DAZZLING_GLEAM"],
     "shadowType": "shadow"
 }, {
+    "speciesId": "sableye_shadow",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["FOUL_PLAY", "POWER_GEM"],
+    "shadowType": "shadow"
+}, {
     "speciesId": "sandslash_alolan",
     "fastMove": "POWDER_SNOW",
     "chargedMoves": ["DRILL_RUN", "ICE_PUNCH"]
 }, {
-    "speciesId": "sandslash_alolan_shadow",
-    "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"],
-    "shadowType": "shadow"
+    "speciesId": "sandslash_alolan",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"]
 }, {
     "speciesId": "serperior",
     "fastMove": "VINE_WHIP",
@@ -160,11 +168,6 @@
     "fastMove": "INCINERATE",
     "chargedMoves": ["TORCH_SONG", "SHADOW_BALL"]
 }, {
-    "speciesId": "steelix",
-    "fastMove": "THUNDER_FANG",
-    "chargedMoves": ["PSYCHIC_FANGS", "BREAKING_SWIPE"],
-    "shadowType": "shadow"
-}, {
     "speciesId": "talonflame",
     "fastMove": "INCINERATE",
     "chargedMoves": ["FLY", "FLAME_CHARGE"]
@@ -173,11 +176,16 @@
     "fastMove": "POISON_JAB",
     "chargedMoves": ["BRINE", "SLUDGE_WAVE"]
 }, {
+    "speciesId": "typhlosion_shadow",
+    "fastMove": "INCINERATE",
+    "chargedMoves": ["BLAST_BURN", "THUNDER_PUNCH"],
+    "shadowType": "shadow"
+}, {
     "speciesId": "weezing_galarian",
     "fastMove": "FAIRY_WIND",
     "chargedMoves": ["SLUDGE", "BRUTAL_SWING"]
 }, {
-    "speciesId": "cradily",
-    "fastMove": "BULLET_SEED",
-    "chargedMoves": ["ROCK_TOMB", "GRASS_KNOT"]
+    "speciesId": "lapras",
+    "fastMove": "PSYWAVE",
+    "chargedMoves": ["SPARKLING_ARIA", "SKULL_BASH"]
 }]
