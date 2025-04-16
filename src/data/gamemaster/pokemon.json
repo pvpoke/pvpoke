@@ -19135,7 +19135,7 @@
         "cp1500": [13.5, 6, 10, 9],
         "cp2500": [22.5, 5, 14, 7]
     },
-    "searchPriority": 20,
+    "searchPriority": 4,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true,
@@ -19159,7 +19159,7 @@
         "cp1500": [9, 10, 15, 15],
         "cp2500": [15.5, 4, 13, 9]
     },
-    "searchPriority": 20,
+    "searchPriority": 1,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true
@@ -19182,7 +19182,7 @@
         "cp1500": [13.5, 7, 10, 7],
         "cp2500": [22, 9, 15, 9]
     },
-    "searchPriority": 20,
+    "searchPriority": 1,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true
@@ -23774,7 +23774,7 @@
         "cp1500": [16.5, 5, 14, 10],
         "cp2500": [27.5, 4, 11, 15]
     },
-    "searchPriority": 32,
+    "searchPriority": 7,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true,
@@ -31821,7 +31821,7 @@
         "cp1500": [16, 4, 14, 7],
         "cp2500": [26, 7, 13, 14]
     },
-    "searchPriority": 10,
+    "searchPriority": 6,
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
     "released": true,
@@ -36496,7 +36496,7 @@
         "parent": "linoone_galarian"
     },
     "nicknames": ["goon"],
-    "searchPriority": 7,
+    "searchPriority": 2,
     "level25CP": 1628,
     "tags": ["shadoweligible"]
 }, {
@@ -36526,7 +36526,7 @@
         "parent": "linoone_galarian_shadow"
     },
     "nicknames": ["goon"],
-    "searchPriority": 7,
+    "searchPriority": 1,
     "tags": ["shadow"]
 }, {
     "dex": 863,
@@ -39272,7 +39272,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 75000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_TINKATINK",
         "evolutions": ["tinkatuff"]
@@ -39296,7 +39296,7 @@
     },
     "buddyDistance": 3,
     "thirdMoveCost": 75000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_TINKATINK",
         "parent": "tinkatink",
@@ -39320,10 +39320,10 @@
         "cp2500": [50, 12, 14, 14],
         "cp2500l40": [40, 15, 15, 15]
     },
-	"searchPriority": 3,
+	"searchPriority": 8,
     "buddyDistance": 3,
     "thirdMoveCost": 75000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_TINKATINK",
         "parent": "tinkatuff"

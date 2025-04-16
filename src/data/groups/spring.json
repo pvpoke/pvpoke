@@ -16,6 +16,11 @@
     "fastMove": "BUG_BITE",
     "chargedMoves": ["BUG_BUZZ", "BUBBLE_BEAM"]
 }, {
+    "speciesId": "cacturne_shadow",
+    "fastMove": "SUCKER_PUNCH",
+    "chargedMoves": ["TRAILBLAZE", "DYNAMIC_PUNCH"],
+    "shadowType": "shadow"
+}, {
     "speciesId": "cradily",
     "fastMove": "BULLET_SEED",
     "chargedMoves": ["ROCK_TOMB", "GRASS_KNOT"]
@@ -43,6 +48,10 @@
     "speciesId": "klefki",
     "fastMove": "ASTONISH",
     "chargedMoves": ["FOUL_PLAY", "PLAY_ROUGH"]
+}, {
+    "speciesId": "lanturn",
+    "fastMove": "SPARK",
+    "chargedMoves": ["SURF", "THUNDERBOLT"]
 }, {
     "speciesId": "lapras",
     "fastMove": "PSYWAVE",
@@ -96,12 +105,7 @@
     "chargedMoves": ["SLUDGE", "OVERHEAT"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "lanturn",
-    "fastMove": "SPARK",
-    "chargedMoves": ["SURF", "THUNDERBOLT"]
-}, {
-    "speciesId": "cacturne_shadow",
-    "fastMove": "SUCKER_PUNCH",
-    "chargedMoves": ["TRAILBLAZE", "DYNAMIC_PUNCH"],
-    "shadowType": "shadow"
+    "speciesId": "tinkaton",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["PLAY_ROUGH", "HEAVY_SLAM"]
 }]

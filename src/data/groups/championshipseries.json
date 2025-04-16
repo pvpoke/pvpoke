@@ -112,6 +112,10 @@
     "fastMove": "PSYWAVE",
     "chargedMoves": ["SPARKLING_ARIA", "ICE_BEAM"]
 }, {
+    "speciesId": "lapras",
+    "fastMove": "PSYWAVE",
+    "chargedMoves": ["SPARKLING_ARIA", "SKULL_BASH"]
+}, {
     "speciesId": "malamar",
     "fastMove": "PSYWAVE",
     "chargedMoves": ["SUPER_POWER", "FOUL_PLAY"]
@@ -185,7 +189,7 @@
     "fastMove": "FAIRY_WIND",
     "chargedMoves": ["SLUDGE", "BRUTAL_SWING"]
 }, {
-    "speciesId": "lapras",
-    "fastMove": "PSYWAVE",
-    "chargedMoves": ["SPARKLING_ARIA", "SKULL_BASH"]
+    "speciesId": "tinkaton",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["PLAY_ROUGH", "HEAVY_SLAM"]
 }]
