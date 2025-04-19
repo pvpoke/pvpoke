@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-04-16 02:14:34",
+    "timestamp": "2025-04-19 18:09:25",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -300,7 +300,7 @@
         "include": [],
         "exclude": [{
             "filterType": "id",
-            "values": ["azumarill", "talonflame", "wigglytuff", "clodsire", "quagsire", "feraligatr", "dunsparce", "dewgong", "sandslash_alolan", "toxapex", "malamar", "mandibuzz", "diggersby", "jumpluff", "ferrothorn", "drapion", "marowak", "gastrodon", "serperior", "greninja"],
+            "values": ["blastoise", "wigglytuff", "marowak", "weezing_galarian", "lapras", "feraligatr", "azumarill", "jumpluff", "sableye", "cradily", "gastrodon", "drapion", "serperior", "mandibuzz", "talonflame", "malamar", "golisopod", "morpeko_full_belly", "annihilape", "clodsire"],
             "leagues": [1500]
         }, {
             "filterType": "id",
@@ -472,6 +472,15 @@
         "showFormat": true,
         "showMeta": true,
         "rules": ["Pok\u00e9mon must be at or below 1,500 CP to enter.", "Only Water-, Grass-, and Fairy-type Pok\u00e9mon are eligible.", "The following Pok\u00e9mon will not be allowed: Jumpluff, Roserade, Toxapex"]
+    }, {
+        "title": "Great League Remix",
+        "cup": "remix",
+        "cp": 1500,
+        "meta": "remix",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true,
+        "rules": ["Pok\u00e9mon must be at or below 1,500 CP to enter.", "The 20 Pok\u00e9mon that are most used by Trainers ranked Ace and above in the Great League are not eligible in the Great League Remix: Blastoise, Wigglytuff, Marowak, Galarian Weezing, Lapras, Feraligatr, Azumarill, Jumpluff, Sableye, Cradily, Gastrodon, Drapion, Serperior, Mandibuzz, Talonflame, Malamar, Golisopod, Morpeko, Annihilape, and Clodsire"]
     }, {
         "title": "P!P Championship Series",
         "cup": "great",

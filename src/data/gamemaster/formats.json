@@ -37,6 +37,19 @@
 		]
 	},
 	{
+		"title": "Great League Remix",
+		"cup": "remix",
+		"cp": 1500,
+		"meta": "remix",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"The 20 Pokémon that are most used by Trainers ranked Ace and above in the Great League are not eligible in the Great League Remix: Blastoise, Wigglytuff, Marowak, Galarian Weezing, Lapras, Feraligatr, Azumarill, Jumpluff, Sableye, Cradily, Gastrodon, Drapion, Serperior, Mandibuzz, Talonflame, Malamar, Golisopod, Morpeko, Annihilape, and Clodsire"
+		]
+	},
+	{
 		"title": "P!P Championship Series",
 		"cup": "great",
 		"cp": 1500,
