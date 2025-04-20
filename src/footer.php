@@ -5,6 +5,7 @@
 	<?php require 'modules/ads/nitro-sidebar-left-300.php'; ?>
 	<?php require 'modules/ads/nitro-sidebar-right.php'; ?>
 	<?php require 'modules/ads/nitro-sidebar-right-300.php'; ?>
+	<?php require 'modules/ads/nitro-desktop-anchor.php'; ?>
 	<?php require 'modules/ads/mobile-320.php'; ?>
 
 	<?php
