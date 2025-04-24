@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-04-19 18:09:25",
+    "timestamp": "2025-04-24 19:37:06",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -463,15 +463,6 @@
         "showFormat": true,
         "showMeta": true,
         "rules": ["No CP limit.", "Legendary Pok\u00e9mon, Mythical Pok\u00e9mon, and Ultra Beasts are not eligible."]
-    }, {
-        "title": "Spring Cup",
-        "cup": "spring",
-        "cp": 1500,
-        "meta": "spring",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true,
-        "rules": ["Pok\u00e9mon must be at or below 1,500 CP to enter.", "Only Water-, Grass-, and Fairy-type Pok\u00e9mon are eligible.", "The following Pok\u00e9mon will not be allowed: Jumpluff, Roserade, Toxapex"]
     }, {
         "title": "Great League Remix",
         "cup": "remix",
@@ -36531,7 +36522,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_APPLIN",
             "evolutions": ["flapple", "appletun"]
@@ -36556,7 +36547,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_APPLIN",
             "parent": "applin"
@@ -36581,7 +36572,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_APPLIN",
             "parent": "applin"
