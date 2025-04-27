@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-04-24 19:37:06",
+    "timestamp": "2025-04-27 23:06:50",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -28668,7 +28668,8 @@
         },
         "types": ["ice", "none"],
         "fastMoves": ["FROST_BREATH", "ASTONISH"],
-        "chargedMoves": ["BLIZZARD", "FLASH_CANNON", "SIGNAL_BEAM"],
+        "chargedMoves": ["BLIZZARD", "FLASH_CANNON", "SIGNAL_BEAM", "AVALANCHE"],
+        "eliteMoves": ["AVALANCHE"],
         "defaultIVs": {
             "cp500": [6.5, 13, 12, 15],
             "cp1500": [19.5, 5, 14, 14],

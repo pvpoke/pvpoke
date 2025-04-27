@@ -28056,7 +28056,8 @@
     },
     "types": ["ice", "none"],
     "fastMoves": ["FROST_BREATH", "ASTONISH"],
-    "chargedMoves": ["BLIZZARD", "FLASH_CANNON", "SIGNAL_BEAM"],
+    "chargedMoves": ["BLIZZARD", "FLASH_CANNON", "SIGNAL_BEAM", "AVALANCHE"],
+	"eliteMoves": ["AVALANCHE"],
     "defaultIVs": {
         "cp500": [6.5, 13, 12, 15],
         "cp1500": [19.5, 5, 14, 14],
