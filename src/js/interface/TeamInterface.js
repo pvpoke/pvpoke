@@ -721,9 +721,12 @@ var InterfaceMaster = (function () {
 					}
 				}
 
+				ranker.setRecommendMoveUsage(true);
+
 				// Set targets for custom alternatives
 				if(multiSelectors[2].getPokemonList().length > 0){
 					ranker.setTargets(multiSelectors[2].getPokemonList());
+					ranker.setRecommendMoveUsage(false);
 				}
 
 				$(".poke-search[context='alternative-search']").val('');

@@ -37,12 +37,13 @@
 	},
 	{
 		"title": "P!P Championship Series",
-		"cup": "great",
+		"cup": "all",
 		"cp": 1500,
 		"meta": "championshipseries",
-		"showCup": false,
-		"showFormat": false,
-		"showMeta": true
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"hideRankings": true
 	},
 	{
 		"title": "Battle Frontier (Cascade)",
