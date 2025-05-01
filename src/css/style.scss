@@ -89,18 +89,11 @@ $color-stat-debuff:#0158d0;
 	transform: $property;
 }
 
-@mixin gradient($light, $dark) {
+@mixin gradient($light, $dark){
 	background: $dark; /* Old browsers */
 	background: -moz-linear-gradient(top, $light 30%, $dark 99%) !important; /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, $light 30%, $dark 99%) !important; /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, $light 30%, $dark 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-}
-
-@mixin gradient-dual($light1, $dark1, $light2, $dark2){
-	background: $dark1; /* Old browsers */
-	background: -moz-linear-gradient(left, $dark1 0%, $light1 40%, $light2 60%, $dark2 100%) !important; /* FF3.6-15 */
-	background: -webkit-linear-gradient(left, $dark1 0%,$light1 40%, $light2 60%, $dark2 100%) !important; /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to right, $dark1 0%,$light1 40%, $light2 60%, $dark2 100%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: -webkit-linear-gradient(top, $light 30%,$dark 99%) !important; /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, $light 30%,$dark 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 /* STRUCTURE */
@@ -5010,50 +5003,25 @@ a.pokebattler{
 }
 
 /* TYPE COLORS */
-// Define all Pokémon types
-$pokemon-types: (
-	'bug': ($color-bug-dark, $color-bug-light),
-	'dark': ($color-dark-dark, $color-dark-light),
-	'dragon': ($color-dragon-dark, $color-dragon-light),
-	'electric': ($color-electric-dark, $color-electric-light),
-	'fairy': ($color-fairy-dark, $color-fairy-light),
-	'fighting': ($color-fighting-dark, $color-fighting-light),
-	'fire': ($color-fire-dark, $color-fire-light),
-	'flying': ($color-flying-dark, $color-flying-light),
-	'ghost': ($color-ghost-dark, $color-ghost-light),
-	'grass': ($color-grass-dark, $color-grass-light),
-	'ground': ($color-ground-dark, $color-ground-light),
-	'ice': ($color-ice-dark, $color-ice-light),
-	'normal': ($color-normal-dark, $color-normal-light),
-	'poison': ($color-poison-dark, $color-poison-light),
-	'psychic': ($color-psychic-dark, $color-psychic-light),
-	'rock': ($color-rock-dark, $color-rock-light),
-	'steel': ($color-steel-dark, $color-steel-light),
-	'water': ($color-water-dark, $color-water-light)
-);
 
-// Generate single type
-@each $type, $colors in $pokemon-types {
-	.#{$type} {
-		@include gradient(nth($colors, 1), nth($colors, 2));
-	}
-}
-
-// Generate dual type combinations
-@each $type1, $colors1 in $pokemon-types {
-	@each $type2, $colors2 in $pokemon-types {
-		@if $type1 != $type2 {
-			// Primary type with secondary type (using attributes)
-			[type-1="#{$type1}"][type-2="#{$type2}"]:not(.button-highlight) {
-				@include gradient-dual(
-					nth($colors1, 1), nth($colors1, 2),
-					nth($colors2, 1), nth($colors2, 2)
-				);
-				border-left-color: nth($colors1, 1);
-			}
-		}
-	}
-}
+.bug{ @include gradient($color-bug-dark, $color-bug-light); }
+.dark{ @include gradient($color-dark-dark, $color-dark-light); }
+.dragon{ @include gradient($color-dragon-dark, $color-dragon-light); }
+.electric{ @include gradient($color-electric-dark, $color-electric-light); }
+.fairy{ @include gradient($color-fairy-dark, $color-fairy-light); }
+.fighting{ @include gradient($color-fighting-dark, $color-fighting-light); }
+.fire{ @include gradient($color-fire-dark, $color-fire-light); }
+.flying{ @include gradient($color-flying-dark, $color-flying-light); }
+.ghost{ @include gradient($color-ghost-dark, $color-ghost-light); }
+.grass{ @include gradient($color-grass-dark, $color-grass-light); }
+.ground{ @include gradient($color-ground-dark, $color-ground-light); }
+.ice{ @include gradient($color-ice-dark, $color-ice-light); }
+.normal{ @include gradient($color-normal-dark, $color-normal-light); }
+.poison{ @include gradient($color-poison-dark, $color-poison-light); }
+.psychic{ @include gradient($color-psychic-dark, $color-psychic-light); }
+.rock{ @include gradient($color-rock-dark, $color-rock-light); }
+.steel{ @include gradient($color-steel-dark, $color-steel-light); }
+.water{ @include gradient($color-water-dark, $color-water-light); }
 
 .dark, .dragon, .ghost {
 	> .name-container{
