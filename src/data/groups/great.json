@@ -184,6 +184,10 @@
     "fastMove": "INCINERATE",
     "chargedMoves": ["FLY", "FLAME_CHARGE"]
 }, {
+    "speciesId": "tinkaton",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["PLAY_ROUGH", "BULLDOZE"]
+}, {
     "speciesId": "toxapex",
     "fastMove": "POISON_JAB",
     "chargedMoves": ["BRINE", "SLUDGE_WAVE"]
@@ -195,8 +199,4 @@
     "speciesId": "wigglytuff",
     "fastMove": "CHARM",
     "chargedMoves": ["ICY_WIND", "SWIFT"]
-}, {
-    "speciesId": "tinkaton",
-    "fastMove": "FAIRY_WIND",
-    "chargedMoves": ["PLAY_ROUGH", "HEAVY_SLAM"]
 }]

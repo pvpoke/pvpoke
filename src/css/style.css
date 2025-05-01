@@ -267,6 +267,10 @@ footer a.domz-link {
   display: block;
 }
 
+b {
+  font-weight: 700;
+}
+
 /* HOME PAGE STYLING */
 .home {
   margin-top: 0;

@@ -53,10 +53,6 @@
     "chargedMoves": ["CRUNCH", "AQUA_TAIL"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "dunsparce",
-    "fastMove": "ROLLOUT",
-    "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
-}, {
     "speciesId": "emolga",
     "fastMove": "THUNDER_SHOCK",
     "chargedMoves": ["ACROBATICS", "DISCHARGE"]
@@ -70,11 +66,6 @@
     "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "forretress_shadow",
-    "fastMove": "VOLT_SWITCH",
-    "chargedMoves": ["ROCK_TOMB", "EARTHQUAKE"],
-    "shadowType": "shadow"
-}, {
     "speciesId": "gastrodon",
     "fastMove": "MUD_SLAP",
     "chargedMoves": ["BODY_SLAM", "EARTH_POWER"]
@@ -86,10 +77,6 @@
     "speciesId": "goodra",
     "fastMove": "DRAGON_BREATH",
     "chargedMoves": ["AQUA_TAIL", "THUNDER_PUNCH"]
-}, {
-    "speciesId": "grumpig",
-    "fastMove": "PSYWAVE",
-    "chargedMoves": ["DYNAMIC_PUNCH", "SHADOW_BALL"]
 }, {
     "speciesId": "guzzlord",
     "fastMove": "DRAGON_TAIL",
@@ -141,11 +128,6 @@
     "fastMove": "KARATE_CHOP",
     "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
 }, {
-    "speciesId": "quagsire",
-    "fastMove": "MUD_SHOT",
-    "chargedMoves": ["AQUA_TAIL", "STONE_EDGE"],
-    "shadowType": "shadow"
-}, {
     "speciesId": "sableye_shadow",
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["FOUL_PLAY", "DAZZLING_GLEAM"],
@@ -168,17 +150,13 @@
     "fastMove": "VINE_WHIP",
     "chargedMoves": ["FRENZY_PLANT", "AERIAL_ACE"]
 }, {
-    "speciesId": "skeledirge",
-    "fastMove": "INCINERATE",
-    "chargedMoves": ["TORCH_SONG", "SHADOW_BALL"]
-}, {
     "speciesId": "talonflame",
     "fastMove": "INCINERATE",
     "chargedMoves": ["FLY", "FLAME_CHARGE"]
 }, {
-    "speciesId": "toxapex",
-    "fastMove": "POISON_JAB",
-    "chargedMoves": ["BRINE", "SLUDGE_WAVE"]
+    "speciesId": "tinkaton",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["PLAY_ROUGH", "BULLDOZE"]
 }, {
     "speciesId": "typhlosion_shadow",
     "fastMove": "INCINERATE",
@@ -189,7 +167,12 @@
     "fastMove": "FAIRY_WIND",
     "chargedMoves": ["SLUDGE", "BRUTAL_SWING"]
 }, {
-    "speciesId": "tinkaton",
-    "fastMove": "FAIRY_WIND",
-    "chargedMoves": ["PLAY_ROUGH", "HEAVY_SLAM"]
+    "speciesId": "stunfisk",
+    "fastMove": "THUNDER_SHOCK",
+    "chargedMoves": ["MUD_BOMB", "DISCHARGE"]
+}, {
+    "speciesId": "quagsire_shadow",
+    "fastMove": "MUD_SHOT",
+    "chargedMoves": ["AQUA_TAIL", "STONE_EDGE"],
+    "shadowType": "shadow"
 }]

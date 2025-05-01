@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-04-27 23:06:50",
+    "timestamp": "2025-04-30 02:35:18",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -474,12 +474,13 @@
         "rules": ["Pok\u00e9mon must be at or below 1,500 CP to enter.", "The 20 Pok\u00e9mon that are most used by Trainers ranked Ace and above in the Great League are not eligible in the Great League Remix: Blastoise, Wigglytuff, Marowak, Galarian Weezing, Lapras, Feraligatr, Azumarill, Jumpluff, Sableye, Cradily, Gastrodon, Drapion, Serperior, Mandibuzz, Talonflame, Malamar, Golisopod, Morpeko, Annihilape, and Clodsire"]
     }, {
         "title": "P!P Championship Series",
-        "cup": "great",
+        "cup": "all",
         "cp": 1500,
         "meta": "championshipseries",
-        "showCup": false,
-        "showFormat": false,
-        "showMeta": true
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true,
+        "hideRankings": true
     }, {
         "title": "Battle Frontier (Cascade)",
         "cup": "cascade",
