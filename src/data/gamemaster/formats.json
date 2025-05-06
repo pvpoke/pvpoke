@@ -46,34 +46,35 @@
 		"hideRankings": true
 	},
 	{
-		"title": "Battle Frontier (Cascade)",
-		"cup": "cascade",
-		"cp": 1500,
-		"meta": "cascade",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
+        "title": "Battle Tower (Tempo)",
+        "cup": "tempo",
+        "cp": 1500,
+        "meta": "tempo",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
 	},
 	{
-		"title": "Battle Frontier (Iridescent)",
-		"cup": "iridescent",
-		"cp": 1500,
-		"meta": "iridescent",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
+        "title": "Battle Tower (Wasteland)",
+        "cup": "wasteland",
+        "cp": 1500,
+        "meta": "wasteland",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
 	},
 	{
-		"title": "Battle Frontier (Solstice)",
-		"cup": "solstice",
+		"title": "Battle Tower (Ultra)",
+		"cup": "battlefrontierultra",
 		"cp": 2500,
-		"meta": "solstice",
+		"meta": "ultra",
 		"showCup": true,
 		"showFormat": true,
-		"showMeta": true
+		"showMeta": true,
+		"hideRankings": true
 	},
 	{
-		"title": "Battle Frontier (Master)",
+		"title": "Battle Tower (Master)",
 		"cup": "battlefrontiermaster",
 		"cp": 10000,
 		"meta": "battlefrontiermaster",
@@ -81,6 +82,15 @@
 		"showFormat": true,
 		"showMeta": true
 	},
+	{
+        "title": "Spice Bowl",
+        "cup": "spicebowl",
+        "cp": 1500,
+        "meta": "spicebowl",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    },
 	{
 		"title": "Devon Rivalry Cup",
 		"cup": "rivalry",

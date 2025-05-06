@@ -1,35 +1,17 @@
 {
     "name": "battlefrontiermaster",
-    "title": "Battle Frontier (Master League)",
+    "title": "Battle Tower (Master League)",
     "include": [],
     "exclude": [{
-        "filterType": "id",
-        "values": ["garchomp_mega", "gardevoir_mega", "groudon_primal", "gyarados_mega", "kyogre_primal", "latios_mega", "rayquaza_mega", "salamence_mega", "swampert_mega", "tyranitar_mega"]
+        "filterType": "tag",
+        "values": ["mega"]
     }],
     "tierRules": {
-        "max": 11,
+        "max": 2,
         "floor": 0,
         "tiers": [{
-            "points": 7,
-            "pokemon": ["gallade_mega","kyurem_black","kyurem_white","scizor_mega","zygarde_complete"]
-        }, {
-            "points": 6,
-            "pokemon": ["charizard_mega_y", "gengar_mega", "palkia_origin"]
-        }, {
-            "points": 5,
-            "pokemon": ["dialga_origin", "latias_mega", "necrozma_dawn_wings", "necrozma_dusk_mane", "rhyperior", "solgaleo", "steelix_mega"]
-        }, {
-            "points": 4,
-            "pokemon": ["aggron_mega", "blastoise_mega", "dialga", "heracross_mega", "ho_oh", "landorus_therian", "yveltal", "zacian_hero"]
-        }, {
-            "points": 3,
-            "pokemon": ["dragapult", "giratina_origin", "giratina_altered", "kyogre", "mewtwo", "meloetta_aria", "palkia", "primarina", "xerneas"]
-        }, {
-            "points": 2,
-            "pokemon": ["charizard_mega_x", "groudon", "heatran", "kangaskhan_mega", "lucario_mega", "lugia", "marshadow", "moltres_galarian", "reshiram", "slowbro_mega", "zarude", "zekrom"]
-        }, {
             "points": 1,
-            "pokemon": ["avalugg_hisuian", "blaziken_mega", "dragonite", "enamorus_incarnate", "florges", "genesect", "genesect_burn", "genesect_douse", "genesect_chill", "genesect_shock", "gyarados", "kyurem", "melmetal", "mew", "tapu_bulu", "tapu_lele"]
+            "pokemon": ["dialga_origin","kyurem_black","kyurem_white","necrozma_dawn_wings","necrozma_dusk_mane","palkia_origin","rhyperior","zacian_crowned_sword","zamazenta_crowned_shield","zygarde_complete"]
         }]
     }
 }

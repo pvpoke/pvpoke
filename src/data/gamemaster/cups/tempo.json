@@ -1,0 +1,24 @@
+{
+    "name": "tempo",
+    "title": "Tempo Cup",
+    "include": [{
+        "filterType": "move",
+        "values": ["water_shuriken","bullet_seed","geomancy","rollout","snarl","incinerate","volt_switch","double_kick","hex","infestation","present","bubble","charge_beam","astonish","extrasensory","fire_spin","force_palm","ice_shard","magical_leaf","mud_slap","confusion","gust","splash","yawn","air_slash","dragon_tail","hidden_power_bug","smack_down","struggle_bug","take_down","waterfall"]
+    }, {
+        "filterType": "id",
+        "values": ["chatot","minun","plusle","sylveon","vaporeon"]
+    }],
+    "exclude": [{
+        "filterType": "type",
+        "values": ["dark","dragon","fighting","ground","steel"]
+    }, {
+        "filterType": "tag",
+        "values": ["legendary","mythical","ultrabeast","mega"]
+    }, {
+        "filterType": "move",
+        "values": ["incinerate"]
+    }, {
+        "filterType": "id",
+        "values": ["aipom","anorith","araquanid","ariados","azumarill","bayleef","blastoise","boldore","cetitan","cetoddle","charjabug","chespin","chinchou","clauncher","clefable","comfey","corphish","corsola","corsola_galarian","corvisquire","cradily","cursola","deerling","dhelmise","dolliv","drifblim","drifloon","drowzee","dunsparce","duosion","dusclops","dusknoir","dwebble","elgyem","espeon","espurr","exeggcute","feraligatr","flaaffy","frillish","frogadier","froslass","gardevoir","gengar","geodude_alolan","gigalith","golem_alolan","","gothorita","grafaiai","graveler_alolan","greedent","grimer","grumpig","hatterene","hattrem","haunter","herdier","jellicent","jumpluff","kadabra","kangaskhan","koffing","krabby","lampent","lanturn","lapras","lickilicky","lileep","lombre","magmortar","mantyke","marowak_alolan","meganium","miltank","munna","ninetales","oinkologne","oinkologne_female","pachirisu","piplup","poliwhirl","porygon","prinplup","pumpkaboo_average","pumpkaboo_large","pumpkaboo_small","pumpkaboo_super","raichu","raichu_alolan","rampardos","roggenrola","roselia","roserade","rotom","rotom_frost","rotom_heat","rotom_mow","rotom_wash","rowlet","seel","shellos","simisear","skorupi","slowpoke","slowpoke_galarian","snover","solosis","spoink","spritzee","swadloon","swalot","tentacool","tranquill","tropius","typhlosion_hisuian","unown","vikavolt","wailmer","walrein","weepinbell","wobbuffet","wugtrio"]
+    }]
+}

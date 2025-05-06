@@ -1,0 +1,12 @@
+{
+	"name": "spicebowl",
+	"title": "Spice Bowl Cup",
+	"include": [],
+	"exclude": [{
+		"filterType": "tag",
+		"values": ["mega"]
+	}, {
+		"filterType": "id",
+		"values": ["jumpluff","clodsire","mandibuzz","malamar","lapras","corsola_galarian","tinkaton","sableye","dusknoir","feraligatr","corviknight","weezing_galarian","grumpig","diggersby","primeape","carbink","azumarill","pangoro","annihilape","gastrodon","jellicent","machoke","steelix","toxapex","morpeko_full_belly","golurk","bastiodon","tinkatuff","claydol","clefable","furret","stunfisk","togedemaru","golisopod","emolga","marowak","sandslash_alolan","quagsire","drapion","guzzlord","dachsbun","marowak_alolan","cradily","aurorus","medicham","machamp","swalot","spiritomb","runerigus","blastoise","ninetales_alolan","registeel","drifblim","serperior","wigglytuff","talonflame","umbreon","lickitung","dewgong","lickilicky","dunsparce","klefki","gogoat","chansey","skarmory","blissey","mudbray","mudsdale","skiddo"]
+	}]
+}

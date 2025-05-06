@@ -1,20 +1,26 @@
 {
     "name": "battlefrontierultra",
-    "title": "Battle Frontier (Ultra League)",
+    "title": "Battle Tower (Ultra League)",
     "include": [],
     "exclude": [{
         "filterType": "tag",
-        "values": ["mega"]
+        "values": ["legendary","mythical","ultrabeast"]
     }],
     "tierRules": {
-        "max": 3,
+        "max": 11,
         "floor": 0,
         "tiers": [{
+            "points": 7,
+            "pokemon": ["corviknight","cradily","feraligatr","gastrodon","lapras","mandibuzz","steelix","tinkaton"]
+        }, {
+            "points": 5,
+            "pokemon": ["drapion","dusknoir","grumpig","jellicent","malamar","swampert","talonflame","tentacruel","umbreon","weezing_galarian"]
+        }, {
             "points": 2,
-            "pokemon": ["zygarde_complete","feraligatr","cobalion","registeel","cresselia","giratina_altered","mandibuzz"]
+            "pokemon": ["ampharos","annihilape","blastoise","bombirdier","clefable","dragapult","drifblim","forretress","golisopod","golurk","lanturn","lickilicky","oranguru","pangoro","primeape","sandslash_alolan","skeledirge","skuntank","stunfisk"]
         }, {
             "points": 1,
-            "pokemon": ["malamar","lickilicky","miltank","machamp","drapion","steelix","guzzlord","talonflame","tentacruel","weezing_galarian","gastrodon","drifblim","virizion","florges","regirock","poliwrath","sandslash_alolan","dragapult","moltres_galarian","dragonite","pangoro","umbreon","clefable","annihilape","primeape"]
+            "pokemon": ["abomasnow","aurorus","charizard","cofagrigus","dragalge","dragonite","ferrothorn","florges","galvantula","gliscor","greninja","hippowdon","machamp","miltank","nidoqueen","ninetales_alolan","pidgeot","poliwrath","primarina","runerigus","serperior","skarmory","starmie","stunfisk_galarian","toxicroak","trevenant","typhlosion","venusaur","walrein"]
         }]
     }
 }
