@@ -95,6 +95,10 @@ require_once 'header.php';
 					<?php require 'modules/pokemultiselect.php'; ?>
 				</div>
 			</div>
+			<div class="team-option">
+				<h3>Show Threat Movesets</h3>
+				<div class="check show-movesets"><span></span>Show movesets of Pokemon in the threats table</div>
+			</div>
 		</div>
 	</div>
 </div>
