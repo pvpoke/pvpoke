@@ -338,8 +338,29 @@ var InterfaceMaster = (function () {
 				}
 
 				// Is this the best way to add HTML content? I'm gonna go with no here. But does it work? Yes!
+				var $el = $("<div class=\"rank typed-ranking " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\">" +
+					"<div class=\"expand-label\"></div>" +
+					"<div class=\"pokemon-info\">" +
+						"<div class=\"name-container\">" +
+							"<span class=\"number\">#"+(index+1)+"</span>" +
+							"<span class=\"name\">"+pokemon.speciesName+"</span>" +
+						"</div>" +
+						"<div class=\"type-container\"></div>" +
+						"<div class=\"moves\">"+moveNameStr+"</div>" +
+					"</div>" +
+					"<div class=\"rating-container\">" +
+						"<div class=\"rating score-rating\">"+r.score+"</div>" +
+						"<div class=\"clear\"></div>" +
+					"</div>" +
+					"<div class=\"details\"></div>");
 
-				var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"expand-label\"></div><div class=\"name-container\"><span class=\"number\">#"+(index+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span><div class=\"moves\">"+moveNameStr+"</div></div><div class=\"rating-container\"><div class=\"rating score-rating\">"+r.score+"</span></div><div class=\"clear\"></div></div><div class=\"details\"></div>");
+				for(var i = 0; i < pokemon.types.length; i++){
+
+					var typeStr = pokemon.types[i].charAt(0).toUpperCase() + pokemon.types[i].slice(1);
+					if(pokemon.types[i] != "none"){
+						$el.find(".type-container").append("<div class=\"type-info\">"+typeStr+"</div>");
+					}
+				}
 
 				var sort = $(".category-select option:selected").attr("sort");
 
