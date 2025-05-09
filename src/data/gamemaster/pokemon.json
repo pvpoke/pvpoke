@@ -528,7 +528,7 @@
         "cp2500": [46, 5, 15, 12],
         "cp2500l40": [40, 15, 15, 15]
     },
-	"searchPriority": 4,
+    "searchPriority": 4,
     "level25CP": 1504,
     "eliteMoves": ["HYDRO_CANNON"],
     "buddyDistance": 3,
@@ -7721,28 +7721,6 @@
     "released": true
 }, {
     "dex": 128,
-    "speciesName": "Tauros (Combat)",
-    "speciesId": "tauros_combat",
-    "baseStats": {
-        "atk": 210,
-        "def": 193,
-        "hp": 181
-    },
-    "types": ["fighting", "none"],
-    "fastMoves": ["TACKLE", "ZEN_HEADBUTT", "DOUBLE_KICK"],
-    "chargedMoves": ["EARTHQUAKE", "CLOSE_COMBAT", "IRON_HEAD", "TRAILBLAZE"],
-    "tags": ["regional", "paldean"],
-    "defaultIVs": {
-		"cp500": [6.5, 9, 15, 14],
-        "cp1500": [20, 4, 13, 5],
-        "cp2500": [35.5, 5, 10, 14]
-    },
-	"levelFloor": 20,
-    "buddyDistance": 3,
-    "thirdMoveCost": 50000,
-    "released": true
-}, {
-    "dex": 128,
     "speciesName": "Tauros (Aqua)",
     "speciesId": "tauros_aqua",
     "baseStats": {
@@ -7755,12 +7733,12 @@
     "chargedMoves": ["EARTHQUAKE", "AQUA_JET", "IRON_HEAD", "TRAILBLAZE"],
     "tags": ["regional", "paldean"],
     "defaultIVs": {
-		"cp500": [6.5, 9, 15, 14],
+        "cp500": [6.5, 9, 15, 14],
         "cp1500": [20, 4, 13, 5],
         "cp2500": [35.5, 5, 10, 14]
     },
-	"levelFloor": 20,
-	"searchPriority": 2,
+    "levelFloor": 20,
+    "searchPriority": 2,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true
@@ -7778,11 +7756,33 @@
     "chargedMoves": ["EARTHQUAKE", "FLAME_CHARGE", "IRON_HEAD", "TRAILBLAZE"],
     "tags": ["regional", "paldean"],
     "defaultIVs": {
-		"cp500": [6.5, 9, 15, 14],
+        "cp500": [6.5, 9, 15, 14],
         "cp1500": [20, 4, 13, 5],
         "cp2500": [35.5, 5, 10, 14]
     },
-	"levelFloor": 20,
+    "levelFloor": 20,
+    "buddyDistance": 3,
+    "thirdMoveCost": 50000,
+    "released": true
+}, {
+    "dex": 128,
+    "speciesName": "Tauros (Combat)",
+    "speciesId": "tauros_combat",
+    "baseStats": {
+        "atk": 210,
+        "def": 193,
+        "hp": 181
+    },
+    "types": ["fighting", "none"],
+    "fastMoves": ["TACKLE", "ZEN_HEADBUTT", "DOUBLE_KICK"],
+    "chargedMoves": ["EARTHQUAKE", "CLOSE_COMBAT", "IRON_HEAD", "TRAILBLAZE"],
+    "tags": ["regional", "paldean"],
+    "defaultIVs": {
+        "cp500": [6.5, 9, 15, 14],
+        "cp1500": [20, 4, 13, 5],
+        "cp2500": [35.5, 5, 10, 14]
+    },
+    "levelFloor": 20,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true
@@ -9428,7 +9428,7 @@
         "cp1500": [34.5, 5, 14, 11],
         "cp2500": [50, 15, 15, 15]
     },
-	"searchPriority": 3,
+    "searchPriority": 3,
     "buddyDistance": 1,
     "thirdMoveCost": 10000,
     "released": true,
@@ -11154,7 +11154,7 @@
     "tags": ["shadoweligible"],
     "family": {
         "id": "FAMILY_GIRAFARIG",
-        "evolutions": ["farigaraf"]
+        "evolutions": ["farigiraf"]
     }
 }, {
     "dex": 203,
@@ -11179,7 +11179,7 @@
     "tags": ["shadow"],
     "family": {
         "id": "FAMILY_GIRAFARIG",
-        "evolutions": ["farigaraf_shadow"]
+        "evolutions": ["farigiraf_shadow"]
     }
 }, {
     "dex": 204,
@@ -12471,7 +12471,7 @@
         "cp2500": [40, 4, 15, 13]
     },
     "eliteMoves": ["WATER_GUN"],
-    "searchPriority": 4,
+    "searchPriority": 2,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true,
@@ -12499,7 +12499,6 @@
         "cp2500": [40, 4, 15, 13]
     },
     "eliteMoves": ["WATER_GUN"],
-    "searchPriority": 4,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true,
@@ -14981,7 +14980,34 @@
     "family": {
         "id": "FAMILY_SLAKOTH",
         "evolutions": ["vigoroth"]
-    }
+    },
+    "level25CP": 554,
+    "tags": ["shadoweligible"]
+}, {
+    "dex": 287,
+    "speciesName": "Slakoth (Shadow)",
+    "speciesId": "slakoth_shadow",
+    "baseStats": {
+        "atk": 104,
+        "def": 92,
+        "hp": 155
+    },
+    "types": ["normal", "none"],
+    "fastMoves": ["YAWN"],
+    "chargedMoves": ["BODY_SLAM", "BRICK_BREAK", "NIGHT_SLASH"],
+    "defaultIVs": {
+        "cp500": [19.5, 4, 12, 14],
+        "cp1500": [50, 15, 15, 15],
+        "cp2500": [50, 15, 15, 15]
+    },
+    "buddyDistance": 5,
+    "thirdMoveCost": 75000,
+    "released": true,
+    "family": {
+        "id": "FAMILY_SLAKOTH",
+        "evolutions": ["vigoroth_shadow"]
+    },
+    "tags": ["shadow"]
 }, {
     "dex": 288,
     "speciesName": "Vigoroth",
@@ -15007,7 +15033,36 @@
         "id": "FAMILY_SLAKOTH",
         "parent": "slakoth",
         "evolutions": ["slaking"]
-    }
+    },
+    "level25CP": 1177,
+    "tags": ["shadoweligible"]
+}, {
+    "dex": 288,
+    "speciesName": "Vigoroth (Shadow)",
+    "speciesId": "vigoroth_shadow",
+    "baseStats": {
+        "atk": 159,
+        "def": 145,
+        "hp": 190
+    },
+    "types": ["normal", "none"],
+    "fastMoves": ["COUNTER", "SCRATCH"],
+    "chargedMoves": ["BODY_SLAM", "BRICK_BREAK", "BULLDOZE", "ROCK_SLIDE"],
+    "defaultIVs": {
+        "cp500": [9.5, 5, 14, 13],
+        "cp1500": [28.5, 6, 13, 12],
+        "cp2500": [50, 15, 15, 15]
+    },
+    "searchPriority": 4,
+    "buddyDistance": 5,
+    "thirdMoveCost": 75000,
+    "released": true,
+    "family": {
+        "id": "FAMILY_SLAKOTH",
+        "parent": "slakoth_shadow",
+        "evolutions": ["slaking_shadow"]
+    },
+    "tags": ["shadow"]
 }, {
     "dex": 289,
     "speciesName": "Slaking",
@@ -15032,7 +15087,35 @@
     "family": {
         "id": "FAMILY_SLAKOTH",
         "parent": "vigoroth"
-    }
+    },
+    "level25CP": 2809,
+    "tags": ["shadoweligible"]
+}, {
+    "dex": 289,
+    "speciesName": "Slaking (Shadow)",
+    "speciesId": "slaking_shadow",
+    "baseStats": {
+        "atk": 290,
+        "def": 166,
+        "hp": 284
+    },
+    "types": ["normal", "none"],
+    "fastMoves": ["YAWN"],
+    "chargedMoves": ["EARTHQUAKE", "HYPER_BEAM", "PLAY_ROUGH", "BODY_SLAM"],
+    "defaultIVs": {
+        "cp500": [4.5, 5, 11, 7],
+        "cp1500": [12.5, 5, 11, 9],
+        "cp2500": [21, 4, 11, 7]
+    },
+    "eliteMoves": ["BODY_SLAM"],
+    "buddyDistance": 5,
+    "thirdMoveCost": 75000,
+    "released": true,
+    "family": {
+        "id": "FAMILY_SLAKOTH",
+        "parent": "vigoroth_shadow"
+    },
+    "tags": ["shadow"]
 }, {
     "dex": 290,
     "speciesName": "Nincada",
@@ -16560,7 +16643,7 @@
         "cp2500": [49.5, 4, 14, 14],
         "cp2500l40": [40, 15, 15, 15]
     },
-	"searchPriority": 4,
+    "searchPriority": 4,
     "buddyDistance": 1,
     "thirdMoveCost": 10000,
     "released": true,
@@ -17855,8 +17938,8 @@
         "cp2500": [50, 15, 15, 15],
         "cp1500l40": [37, 12, 15, 15]
     },
-	"nicknames": ["clops"],
-	"searchPriority": 7,
+    "nicknames": ["clops"],
+    "searchPriority": 7,
     "level25CP": 927,
     "tags": ["shadoweligible"],
     "buddyDistance": 3,
@@ -17953,7 +18036,7 @@
     "types": ["dark", "none"],
     "fastMoves": ["PSYCHO_CUT", "SNARL"],
     "chargedMoves": ["DARK_PULSE", "MEGAHORN", "THUNDER", "PAYBACK", "BRUTAL_SWING"],
-	"eliteMoves": ["BRUTAL_SWING"],
+    "eliteMoves": ["BRUTAL_SWING"],
     "defaultIVs": {
         "cp500": [7.5, 4, 14, 9],
         "cp1500": [22, 6, 12, 11],
@@ -17977,7 +18060,7 @@
     "types": ["dark", "none"],
     "fastMoves": ["PSYCHO_CUT", "SNARL"],
     "chargedMoves": ["DARK_PULSE", "MEGAHORN", "THUNDER", "PAYBACK", "BRUTAL_SWING"],
-	"eliteMoves": ["BRUTAL_SWING"],
+    "eliteMoves": ["BRUTAL_SWING"],
     "defaultIVs": {
         "cp500": [6, 4, 9, 4],
         "cp1500": [16.5, 6, 12, 15],
@@ -23268,7 +23351,7 @@
         "cp2500": [48.5, 4, 14, 14],
         "cp2500l40": [40, 15, 15, 15]
     },
-	"nicknames": ["noir"],
+    "nicknames": ["noir"],
     "level25CP": 1447,
     "tags": ["shadoweligible"],
     "buddyDistance": 3,
@@ -23563,7 +23646,7 @@
     "types": ["steel", "dragon"],
     "fastMoves": ["DRAGON_BREATH", "METAL_CLAW"],
     "chargedMoves": ["DRACO_METEOR", "IRON_HEAD", "THUNDER"],
-    "tags": ["legendary"],
+    "tags": ["legendary", "shadoweligible"],
     "defaultIVs": {
         "cp500": [4.5, 14, 13, 15],
         "cp1500": [13.5, 8, 11, 13],
@@ -23571,7 +23654,8 @@
     },
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": true
+    "released": true,
+    "level25CP": 2551
 }, {
     "dex": 483,
     "speciesName": "Dialga (Origin)",
@@ -23593,6 +23677,27 @@
         "cp2500": [22.5, 5, 11, 12]
     },
     "searchPriority": 10,
+    "buddyDistance": 20,
+    "thirdMoveCost": 100000,
+    "released": true
+}, {
+    "dex": 483,
+    "speciesName": "Dialga (Shadow)",
+    "speciesId": "dialga_shadow",
+    "baseStats": {
+        "atk": 275,
+        "def": 211,
+        "hp": 205
+    },
+    "types": ["steel", "dragon"],
+    "fastMoves": ["DRAGON_BREATH", "METAL_CLAW"],
+    "chargedMoves": ["DRACO_METEOR", "IRON_HEAD", "THUNDER"],
+    "tags": ["legendary", "shadow"],
+    "defaultIVs": {
+        "cp500": [4.5, 14, 13, 15],
+        "cp1500": [13.5, 8, 11, 13],
+        "cp2500": [23, 4, 8, 12]
+    },
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true
@@ -25907,7 +26012,7 @@
     "types": ["normal", "none"],
     "fastMoves": ["POUND", "ZEN_HEADBUTT"],
     "chargedMoves": ["DISARMING_VOICE", "DAZZLING_GLEAM", "HYPER_BEAM", "BODY_SLAM"],
-	"eliteMoves": ["BODY_SLAM"],
+    "eliteMoves": ["BODY_SLAM"],
     "defaultIVs": {
         "cp500": [11.5, 4, 14, 9],
         "cp1500": [39, 4, 13, 12],
@@ -25927,15 +26032,15 @@
     },
     "types": ["normal", "fairy"],
     "fastMoves": ["POUND", "ZEN_HEADBUTT"],
-	"chargedMoves": ["DISARMING_VOICE", "DAZZLING_GLEAM", "HYPER_BEAM", "BODY_SLAM"],
-	"eliteMoves": ["BODY_SLAM"],
+    "chargedMoves": ["DISARMING_VOICE", "DAZZLING_GLEAM", "HYPER_BEAM", "BODY_SLAM"],
+    "eliteMoves": ["BODY_SLAM"],
     "defaultIVs": {
-		"cp500": [7.5, 8, 12, 11],
+        "cp500": [7.5, 8, 12, 11],
         "cp1500": [22, 8, 12, 11],
         "cp2500": [39.5, 14, 15, 14]
     },
     "tags": ["mega"],
-	"buddyDistance": 3,
+    "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true
 }, {
@@ -28057,7 +28162,7 @@
     "types": ["ice", "none"],
     "fastMoves": ["FROST_BREATH", "ASTONISH"],
     "chargedMoves": ["BLIZZARD", "FLASH_CANNON", "SIGNAL_BEAM", "AVALANCHE"],
-	"eliteMoves": ["AVALANCHE"],
+    "eliteMoves": ["AVALANCHE"],
     "defaultIVs": {
         "cp500": [6.5, 13, 12, 15],
         "cp1500": [19.5, 5, 14, 14],
@@ -28202,7 +28307,7 @@
     "types": ["bug", "steel"],
     "fastMoves": ["COUNTER", "BUG_BITE"],
     "chargedMoves": ["MEGAHORN", "ACID_SPRAY", "DRILL_RUN", "AERIAL_ACE", "RAZOR_SHELL"],
-	"eliteMoves": ["RAZOR_SHELL"],
+    "eliteMoves": ["RAZOR_SHELL"],
     "defaultIVs": {
         "cp500": [6.5, 7, 13, 15],
         "cp1500": [19.5, 4, 11, 10],
@@ -28229,8 +28334,8 @@
     },
     "types": ["bug", "steel"],
     "fastMoves": ["COUNTER", "BUG_BITE"],
-	"chargedMoves": ["MEGAHORN", "ACID_SPRAY", "DRILL_RUN", "AERIAL_ACE", "RAZOR_SHELL"],
-	"eliteMoves": ["RAZOR_SHELL"],
+    "chargedMoves": ["MEGAHORN", "ACID_SPRAY", "DRILL_RUN", "AERIAL_ACE", "RAZOR_SHELL"],
+    "eliteMoves": ["RAZOR_SHELL"],
     "defaultIVs": {
         "cp500": [6.5, 7, 13, 15],
         "cp1500": [19.5, 4, 11, 10],
@@ -29191,7 +29296,7 @@
     "types": ["bug", "none"],
     "fastMoves": ["ACID", "INFESTATION", "WATER_SHURIKEN"],
     "chargedMoves": ["BUG_BUZZ", "ACID_SPRAY", "SIGNAL_BEAM", "FOCUS_BLAST", "ENERGY_BALL"],
-	"eliteMoves": ["ENERGY_BALL"],
+    "eliteMoves": ["ENERGY_BALL"],
     "defaultIVs": {
         "cp500": [7.5, 6, 15, 15],
         "cp1500": [22.5, 6, 13, 15],
@@ -29218,8 +29323,8 @@
     },
     "types": ["bug", "none"],
     "fastMoves": ["ACID", "INFESTATION", "WATER_SHURIKEN"],
-	"chargedMoves": ["BUG_BUZZ", "ACID_SPRAY", "SIGNAL_BEAM", "FOCUS_BLAST", "ENERGY_BALL"],
-	"eliteMoves": ["ENERGY_BALL"],
+    "chargedMoves": ["BUG_BUZZ", "ACID_SPRAY", "SIGNAL_BEAM", "FOCUS_BLAST", "ENERGY_BALL"],
+    "eliteMoves": ["ENERGY_BALL"],
     "defaultIVs": {
         "cp500": [7.5, 6, 15, 15],
         "cp1500": [22.5, 6, 13, 15],
@@ -30092,7 +30197,7 @@
     "types": ["dragon", "ice"],
     "fastMoves": ["DRAGON_TAIL", "SHADOW_CLAW"],
     "chargedMoves": ["IRON_HEAD", "BLIZZARD", "STONE_EDGE", "OUTRAGE", "FUSION_BOLT", "FREEZE_SHOCK"],
-	"legacyMoves": ["FREEZE_SHOCK"],
+    "legacyMoves": ["FREEZE_SHOCK"],
     "defaultIVs": {
         "cp500": [4, 13, 14, 14],
         "cp1500": [12, 4, 9, 13],
@@ -30114,7 +30219,7 @@
     "types": ["dragon", "ice"],
     "fastMoves": ["DRAGON_BREATH", "STEEL_WING", "ICE_FANG"],
     "chargedMoves": ["DRAGON_PULSE", "BLIZZARD", "ANCIENT_POWER", "FOCUS_BLAST", "FUSION_FLARE", "ICE_BURN"],
-	"legacyMoves": ["ICE_BURN"],
+    "legacyMoves": ["ICE_BURN"],
     "defaultIVs": {
         "cp500": [4, 13, 14, 14],
         "cp1500": [12, 4, 9, 13],
@@ -31347,7 +31452,34 @@
     "family": {
         "id": "FAMILY_INKAY",
         "evolutions": ["malamar"]
-    }
+    },
+    "level25CP": 507,
+    "tags": ["shadoweligible"]
+}, {
+    "dex": 686,
+    "speciesName": "Inkay (Shadow)",
+    "speciesId": "inkay_shadow",
+    "baseStats": {
+        "atk": 98,
+        "def": 95,
+        "hp": 142
+    },
+    "types": ["dark", "psychic"],
+    "fastMoves": ["PECK", "TACKLE", "PSYWAVE"],
+    "chargedMoves": ["PSYBEAM", "NIGHT_SLASH"],
+    "defaultIVs": {
+        "cp500": [21.5, 4, 12, 11],
+        "cp1500": [50, 15, 15, 15],
+        "cp2500": [50, 15, 15, 15]
+    },
+    "buddyDistance": 3,
+    "thirdMoveCost": 50000,
+    "released": true,
+    "family": {
+        "id": "FAMILY_INKAY",
+        "evolutions": ["malamar_shadow"]
+    },
+    "tags": ["shadow"]
 }, {
     "dex": 687,
     "speciesName": "Malamar",
@@ -31373,7 +31505,36 @@
     "family": {
         "id": "FAMILY_INKAY",
         "parent": "inkay"
-    }
+    },
+    "level25CP": 1434,
+    "tags": ["shadoweligible"]
+}, {
+    "dex": 687,
+    "speciesName": "Malamar (Shadow)",
+    "speciesId": "malamar_shadow",
+    "baseStats": {
+        "atk": 177,
+        "def": 165,
+        "hp": 200
+    },
+    "types": ["dark", "psychic"],
+    "fastMoves": ["PECK", "PSYCHO_CUT", "PSYWAVE"],
+    "chargedMoves": ["PSYBEAM", "FOUL_PLAY", "SUPER_POWER", "HYPER_BEAM"],
+    "defaultIVs": {
+        "cp500": [8, 5, 14, 13],
+        "cp1500": [24, 4, 14, 9],
+        "cp2500": [50, 5, 14, 11],
+        "cp2500l40": [40, 15, 15, 15]
+    },
+    "searchPriority": 11,
+    "buddyDistance": 3,
+    "thirdMoveCost": 50000,
+    "released": true,
+    "family": {
+        "id": "FAMILY_INKAY",
+        "parent": "inkay_shadow"
+    },
+    "tags": ["shadow"]
 }, {
     "dex": 688,
     "speciesName": "Binacle",
@@ -31591,7 +31752,34 @@
     "family": {
         "id": "FAMILY_TYRUNT",
         "evolutions": ["tyrantrum"]
-    }
+    },
+    "level25CP": 960,
+    "tags": ["shadoweligible"]
+}, {
+    "dex": 696,
+    "speciesName": "Tyrunt (Shadow)",
+    "speciesId": "tyrunt_shadow",
+    "baseStats": {
+        "atk": 158,
+        "def": 123,
+        "hp": 151
+    },
+    "types": ["rock", "dragon"],
+    "fastMoves": ["DRAGON_TAIL", "TACKLE"],
+    "chargedMoves": ["STOMP", "ANCIENT_POWER", "DRAGON_CLAW"],
+    "defaultIVs": {
+        "cp500": [11.5, 5, 14, 12],
+        "cp1500": [39.5, 4, 12, 14],
+        "cp2500": [50, 15, 15, 15]
+    },
+    "buddyDistance": 5,
+    "thirdMoveCost": 75000,
+    "released": true,
+    "family": {
+        "id": "FAMILY_TYRUNT",
+        "evolutions": ["tyrantrum_shadow"]
+    },
+    "tags": ["shadow"]
 }, {
     "dex": 697,
     "speciesName": "Tyrantrum",
@@ -31615,7 +31803,34 @@
     "family": {
         "id": "FAMILY_TYRUNT",
         "parent": "tyrunt"
-    }
+    },
+    "level25CP": 1944,
+    "tags": ["shadoweligible"]
+}, {
+    "dex": 697,
+    "speciesName": "Tyrantrum (Shadow)",
+    "speciesId": "tyrantrum_shadow",
+    "baseStats": {
+        "atk": 227,
+        "def": 191,
+        "hp": 193
+    },
+    "types": ["rock", "dragon"],
+    "fastMoves": ["DRAGON_TAIL", "CHARM", "ROCK_THROW"],
+    "chargedMoves": ["CRUNCH", "STONE_EDGE", "OUTRAGE", "EARTHQUAKE", "METEOR_BEAM"],
+    "defaultIVs": {
+        "cp500": [6, 10, 15, 10],
+        "cp1500": [17.5, 6, 12, 15],
+        "cp2500": [30, 4, 12, 8]
+    },
+    "buddyDistance": 5,
+    "thirdMoveCost": 75000,
+    "released": true,
+    "family": {
+        "id": "FAMILY_TYRUNT",
+        "parent": "tyrunt_shadow"
+    },
+    "tags": ["shadow"]
 }, {
     "dex": 698,
     "speciesName": "Amaura",
@@ -31640,7 +31855,35 @@
     "family": {
         "id": "FAMILY_AMAURA",
         "evolutions": ["aurorus"]
-    }
+    },
+    "level25CP": 783,
+    "tags": ["shadoweligible"]
+}, {
+    "dex": 698,
+    "speciesName": "Amaura (Shadow)",
+    "speciesId": "amaura_shadow",
+    "baseStats": {
+        "atk": 124,
+        "def": 109,
+        "hp": 184
+    },
+    "types": ["rock", "ice"],
+    "fastMoves": ["POWDER_SNOW", "FROST_BREATH"],
+    "chargedMoves": ["WEATHER_BALL_ICE", "ANCIENT_POWER", "AURORA_BEAM", "THUNDERBOLT"],
+    "defaultIVs": {
+        "cp500": [14, 5, 15, 10],
+        "cp1500": [50, 12, 15, 12],
+        "cp2500": [50, 15, 15, 15],
+        "cp1500l40": [40, 15, 15, 15]
+    },
+    "buddyDistance": 5,
+    "thirdMoveCost": 75000,
+    "released": true,
+    "family": {
+        "id": "FAMILY_AMAURA",
+        "evolutions": ["aurorus_shadow"]
+    },
+    "tags": ["shadow"]
 }, {
     "dex": 699,
     "speciesName": "Aurorus",
@@ -31664,7 +31907,34 @@
     "family": {
         "id": "FAMILY_AMAURA",
         "parent": "amaura"
-    }
+    },
+    "level25CP": 1724,
+    "tags": ["shadoweligible"]
+}, {
+    "dex": 699,
+    "speciesName": "Aurorus (Shadow)",
+    "speciesId": "aurorus_shadow",
+    "baseStats": {
+        "atk": 186,
+        "def": 163,
+        "hp": 265
+    },
+    "types": ["rock", "ice"],
+    "fastMoves": ["POWDER_SNOW", "FROST_BREATH", "ROCK_THROW"],
+    "chargedMoves": ["WEATHER_BALL_ICE", "ANCIENT_POWER", "BLIZZARD", "THUNDERBOLT", "HYPER_BEAM", "METEOR_BEAM"],
+    "defaultIVs": {
+        "cp500": [7, 4, 5, 12],
+        "cp1500": [20, 5, 14, 8],
+        "cp2500": [36.5, 5, 12, 13]
+    },
+    "buddyDistance": 5,
+    "thirdMoveCost": 75000,
+    "released": true,
+    "family": {
+        "id": "FAMILY_AMAURA",
+        "parent": "amaura_shadow"
+    },
+    "tags": ["shadow"]
 }, {
     "dex": 700,
     "speciesName": "Sylveon",
@@ -33782,7 +34052,7 @@
         "cp1500": [17.5, 6, 13, 11],
         "cp2500": [29.5, 4, 10, 13]
     },
-	"searchPriority": 4,
+    "searchPriority": 4,
     "buddyDistance": 1,
     "thirdMoveCost": 10000,
     "released": true,
@@ -34429,7 +34699,7 @@
         "cp1500": [20, 1, 4, 4],
         "cp2500": [32.5, 5, 15, 11]
     },
-	"levelFloor": 20,
+    "levelFloor": 20,
     "buddyDistance": 5,
     "thirdMoveCost": 50000,
     "released": true
@@ -35488,8 +35758,8 @@
     },
     "types": ["flying", "steel"],
     "fastMoves": ["STEEL_WING", "AIR_SLASH", "SAND_ATTACK"],
-	"chargedMoves": ["SKY_ATTACK", "PAYBACK", "IRON_HEAD"],
-	"eliteMoves": ["IRON_HEAD"],
+    "chargedMoves": ["SKY_ATTACK", "PAYBACK", "IRON_HEAD"],
+    "eliteMoves": ["IRON_HEAD"],
     "defaultIVs": {
         "cp500": [8, 4, 6, 7],
         "cp1500": [23, 5, 8, 15],
@@ -37227,13 +37497,13 @@
     "types": ["fairy", "steel"],
     "fastMoves": ["METAL_CLAW", "AIR_SLASH"],
     "chargedMoves": ["PLAY_ROUGH", "CLOSE_COMBAT", "GIGA_IMPACT", "BEHEMOTH_BLADE"],
-	"legacyMoves": ["BEHEMOTH_BLADE"],
+    "legacyMoves": ["BEHEMOTH_BLADE"],
     "defaultIVs": {
-		"cp500": [4.5, 4, 6, 11],
+        "cp500": [4.5, 4, 6, 11],
         "cp1500": [12.5, 4, 12, 8],
         "cp2500": [20.5, 5, 11, 14]
     },
-	"tags": ["legendary"],
+    "tags": ["legendary"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": false
@@ -37271,13 +37541,13 @@
     "types": ["fighting", "steel"],
     "fastMoves": ["METAL_CLAW", "ICE_FANG"],
     "chargedMoves": ["MOONBLAST", "CLOSE_COMBAT", "GIGA_IMPACT", "BEHEMOTH_BASH"],
-	"legacyMoves": ["BEHEMOTH_BASH"],
+    "legacyMoves": ["BEHEMOTH_BASH"],
     "defaultIVs": {
-		"cp500": [5, 10, 10, 15],
+        "cp500": [5, 10, 10, 15],
         "cp1500": [14.5, 5, 11, 14],
         "cp2500": [24, 4, 13, 15]
     },
-	"tags": ["legendary"],
+    "tags": ["legendary"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": false
@@ -37356,12 +37626,12 @@
     "fastMoves": ["ROCK_SMASH", "COUNTER"],
     "chargedMoves": ["BRICK_BREAK", "DYNAMIC_PUNCH", "CLOSE_COMBAT"],
     "defaultIVs": {
-		"cp500": [10.5, 10, 14, 15],
+        "cp500": [10.5, 10, 14, 15],
         "cp1500": [34.5, 10, 14, 10],
         "cp2500": [50, 15, 15, 15]
     },
-	"tags": ["legendary", "untradeable"],
-	"levelFloor": 15,
+    "tags": ["legendary", "untradeable"],
+    "levelFloor": 15,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true,
@@ -37382,12 +37652,12 @@
     "fastMoves": ["ROCK_SMASH", "COUNTER"],
     "chargedMoves": ["BRICK_BREAK", "DYNAMIC_PUNCH", "CLOSE_COMBAT"],
     "defaultIVs": {
-		"cp500": [5, 11, 15, 14],
+        "cp500": [5, 11, 15, 14],
         "cp1500": [15, 10, 12, 10],
         "cp2500": [24.5, 13, 13, 14]
     },
-	"tags": ["legendary", "untradeable"],
-	"levelFloor": 15,
+    "tags": ["legendary", "untradeable"],
+    "levelFloor": 15,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": false,
@@ -37408,12 +37678,12 @@
     "fastMoves": ["ROCK_SMASH", "COUNTER", "WATERFALL"],
     "chargedMoves": ["BRICK_BREAK", "DYNAMIC_PUNCH", "CLOSE_COMBAT", "AQUA_JET"],
     "defaultIVs": {
-		"cp500": [5, 11, 15, 14],
+        "cp500": [5, 11, 15, 14],
         "cp1500": [15, 10, 12, 10],
         "cp2500": [24.5, 13, 13, 14]
     },
-	"tags": ["legendary", "untradeable"],
-	"levelFloor": 15,
+    "tags": ["legendary", "untradeable"],
+    "levelFloor": 15,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": false,
@@ -37434,12 +37704,12 @@
     "fastMoves": ["ROCK_SMASH", "COUNTER", "SUCKER_PUNCH"],
     "chargedMoves": ["BRICK_BREAK", "DYNAMIC_PUNCH", "CLOSE_COMBAT", "PAYBACK"],
     "defaultIVs": {
-		"cp500": [5, 11, 15, 14],
+        "cp500": [5, 11, 15, 14],
         "cp1500": [15, 10, 12, 10],
         "cp2500": [24.5, 13, 13, 14]
     },
-	"tags": ["legendary", "untradeable"],
-	"levelFloor": 15,
+    "tags": ["legendary", "untradeable"],
+    "levelFloor": 15,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": false,
@@ -37995,13 +38265,13 @@
     "types": ["fire", "ghost"],
     "fastMoves": ["INCINERATE", "BITE"],
     "chargedMoves": ["FLAMETHROWER", "DISARMING_VOICE", "CRUNCH", "SHADOW_BALL", "BLAST_BURN", "TORCH_SONG"],
-	"eliteMoves": ["BLAST_BURN"],
+    "eliteMoves": ["BLAST_BURN"],
     "defaultIVs": {
         "cp500": [6.5, 4, 4, 11],
         "cp1500": [18.5, 4, 12, 11],
         "cp2500": [31.5, 5, 12, 11]
     },
-	"searchPriority": 5,
+    "searchPriority": 5,
     "nicknames": ["dirge"],
     "buddyDistance": 3,
     "thirdMoveCost": 10000,
@@ -39321,7 +39591,7 @@
         "cp2500": [50, 12, 14, 14],
         "cp2500l40": [40, 15, 15, 15]
     },
-	"searchPriority": 8,
+    "searchPriority": 8,
     "buddyDistance": 3,
     "thirdMoveCost": 75000,
     "released": true,
@@ -40086,16 +40356,17 @@
         "hp": 225
     },
     "types": ["dark", "steel"],
-    "fastMoves": ["SNARL", "METAL_CLAW"],
-    "chargedMoves": ["DARK_PULSE", "IRON_HEAD", "X_SCISSOR", "FOCUS_BLAST"],
+    "fastMoves": ["SNARL", "METAL_CLAW", "METAL_SOUND"],
+    "chargedMoves": ["DARK_PULSE", "IRON_HEAD", "X_SCISSOR", "FOCUS_BLAST", "FOUL_PLAY"],
     "defaultIVs": {
         "cp500": [5.5, 5, 7, 5],
         "cp1500": [15, 7, 15, 13],
         "cp2500": [25.5, 5, 10, 14]
     },
+	"searchPriority": 3,
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_PAWNIARD",
         "parent": "bisharp"
@@ -40456,8 +40727,8 @@
         "cp1500": [15.5, 6, 12, 15],
         "cp2500": [25.5, 8, 15, 15]
     },
-	"searchPriority": 2,
-	"nicknames": ["golden"],
+    "searchPriority": 2,
+    "nicknames": ["golden"],
     "buddyDistance": 5,
     "thirdMoveCost": 10000,
     "released": true,
