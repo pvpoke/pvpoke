@@ -38586,7 +38586,8 @@
     },
     "types": ["electric", "fighting"],
     "fastMoves": ["SPARK", "CHARGE_BEAM", "LOW_KICK"],
-    "chargedMoves": ["THUNDERBOLT", "DISCHARGE", "WILD_CHARGE", "CLOSE_COMBAT", "THUNDER_PUNCH"],
+    "chargedMoves": ["THUNDERBOLT", "DISCHARGE", "WILD_CHARGE", "CLOSE_COMBAT", "THUNDER_PUNCH", "BRICK_BREAK"],
+	"eliteMoves": ["BRICK_BREAK"],
     "defaultIVs": {
         "cp500": [7, 5, 15, 15],
         "cp1500": [21, 4, 13, 13],
