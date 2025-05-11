@@ -352,13 +352,14 @@ var InterfaceMaster = (function () {
 						"<div class=\"rating score-rating\">"+r.score+"</div>" +
 						"<div class=\"clear\"></div>" +
 					"</div>" +
-					"<div class=\"details\"></div>");
+					"<div class=\"details\"></div>" +
+				"</div>");
 
 				for(var i = 0; i < pokemon.types.length; i++){
 
 					var typeStr = pokemon.types[i].charAt(0).toUpperCase() + pokemon.types[i].slice(1);
 					if(pokemon.types[i] != "none"){
-						$el.find(".type-container").append("<div class=\"type-info\">"+typeStr+"</div>");
+						$el.find(".type-container").append("<div class=\"type-info "+pokemon.types[i]+"\">"+typeStr+"</div>");
 					}
 				}
 
@@ -433,7 +434,7 @@ var InterfaceMaster = (function () {
 				// Determine XL category
 
 				if(pokemon.needsXLCandy()){
-					$el.find(".name").append("<span class=\"xl-info-icon\">XL</span>");
+					$el.attr("needs-xls", "true");
 				}
 
 				// For Prismatic Cup, show color category
@@ -505,10 +506,6 @@ var InterfaceMaster = (function () {
 
 				if($(".poke-search[context='ranking-search']").first().val() != ''){
 					$(".poke-search[context='ranking-search']").first().trigger("keyup");
-				}
-
-				if((! $(".check.xl").hasClass("on"))&&(context != "custom")){
-					toggleXLPokemon();
 				}
 
 				if(context == "custom"){
@@ -767,9 +764,7 @@ var InterfaceMaster = (function () {
 
 			function selectPokemon(e){
 
-				// Don't collapse when clicking links or the share button
-
-				if(! $(e.target).is(".rank, .rank > .rating-container, .rank > .rating-container *, .rank > .name-container, .rank > .name-container *, .rank > .expand-label")||($(e.target).is("a"))||($(e.target).is(".detail-section div, .detail-section span"))){
+				if($(e.target).parents(".details").length > 0 || $(e.target).is(".details")){
 					return;
 				}
 
@@ -1524,9 +1519,8 @@ var InterfaceMaster = (function () {
 			// Toggle XL Pokemon from the Rankings
 
 			function toggleXLPokemon(e){
-
 				$(".rankings-container > .rank").each(function(index, value){
-					if($(this).find(".xl-info-icon").length > 0){
+					if($(this).attr("needs-xls") == "true"){
 						$(this).toggleClass("hide");
 					}
 				});
