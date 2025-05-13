@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-05-10 18:51:10",
+    "timestamp": "2025-05-13 21:26:57",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -527,14 +527,14 @@
         "showMeta": true,
         "rules": ["No CP limit.", "Legendary Pok\u00e9mon, Mythical Pok\u00e9mon, and Ultra Beasts are not eligible."]
     }, {
-        "title": "Great League Remix",
-        "cup": "remix",
+        "title": "Retro Cup",
+        "cup": "retro",
         "cp": 1500,
-        "meta": "remix",
+        "meta": "retro",
         "showCup": true,
         "showFormat": true,
         "showMeta": true,
-        "rules": ["Pok\u00e9mon must be at or below 1,500 CP to enter.", "The 20 Pok\u00e9mon that are most used by Trainers ranked Ace and above in the Great League are not eligible in the Great League Remix: Blastoise, Wigglytuff, Marowak, Galarian Weezing, Lapras, Feraligatr, Azumarill, Jumpluff, Sableye, Cradily, Gastrodon, Drapion, Serperior, Mandibuzz, Talonflame, Malamar, Golisopod, Morpeko, Annihilape, and Clodsire"]
+        "rules": ["Pok\u00e9mon must be at or below 1,500 CP to enter.", "Dark-, Steel-, and Fairy-type Pok\u00e9mon are not eligible."]
     }, {
         "title": "P!P Championship Series",
         "cup": "all",
