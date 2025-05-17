@@ -621,7 +621,7 @@ function Pokemon(id, i, b){
 
 	this.getStab = function(move){
 		if((move.type == this.types[0]) || (move.type == this.types[1])){
-			return 1.2;
+			return 1.2000000476837158203125;
 		} else{
 			return 1;
 		}
