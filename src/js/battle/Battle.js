@@ -223,7 +223,7 @@ function Battle(){
 	this.calculateDamage = function(attacker, defender, move, charge){
 		charge = typeof charge !== 'undefined' ? charge : 1;
 
-		var bonusMultiplier = 1.3;
+		var bonusMultiplier = 1.2999999523162841796875;
 		var effectiveness = defender.typeEffectiveness[move.type];
 		var chargeMultiplier = charge; // The amount of charge for a Charged Move
 
@@ -297,7 +297,7 @@ function Battle(){
 			var traits = this.getTypeTraits(type);
 
 			if(traits.weaknesses.indexOf(moveType) > -1){
-				effectiveness *= 1.6;
+				effectiveness *= 1.60000002384185791015625;
 			} else if(traits.resistances.indexOf(moveType) > -1){
 				effectiveness *= .625;
 			} else if(traits.immunities.indexOf(moveType) > -1){
