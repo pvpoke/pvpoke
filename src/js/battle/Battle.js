@@ -250,7 +250,7 @@ function Battle(){
 
 	this.calculateDamageByStats = function(attacker, defender, attack, defense, effectiveness, move){
 
-		var bonusMultiplier = 1.3;
+		var bonusMultiplier = 1.2999999523162841796875;
 
 		var damage = Math.floor(move.power * move.stab * (attack/defense) * effectiveness * 0.5 * bonusMultiplier) + 1;
 
@@ -261,7 +261,7 @@ function Battle(){
 
 	this.calculateBreakpoint = function(attacker, defender, damage, defense, effectiveness, move){
 
-		var bonusMultiplier = 1.3;
+		var bonusMultiplier = 1.2999999523162841796875;
 
 		var attackStatMultiplier = attacker.getStatBuffMultiplier(0, true);
 
@@ -274,7 +274,7 @@ function Battle(){
 
 	this.calculateBulkpoint = function(attacker, defender, damage, attack, effectiveness, move){
 
-		var bonusMultiplier = 1.3;
+		var bonusMultiplier = 1.2999999523162841796875;
 
 		var defenseStatMultiplier = defender.getStatBuffMultiplier(1, true);
 
