@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-05-13 21:26:57",
+    "timestamp": "2025-05-17 04:41:27",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -38325,32 +38325,6 @@
         }
     }, {
         "dex": 892,
-        "speciesName": "Urshifu",
-        "speciesId": "urshifu",
-        "baseStats": {
-            "atk": 254,
-            "def": 177,
-            "hp": 225
-        },
-        "types": ["fighting", "none"],
-        "fastMoves": ["ROCK_SMASH", "COUNTER"],
-        "chargedMoves": ["BRICK_BREAK", "DYNAMIC_PUNCH", "CLOSE_COMBAT"],
-        "defaultIVs": {
-            "cp500": [5, 11, 15, 14],
-            "cp1500": [15, 10, 12, 10],
-            "cp2500": [24.5, 13, 13, 14]
-        },
-        "tags": ["legendary", "untradeable"],
-        "levelFloor": 15,
-        "buddyDistance": 20,
-        "thirdMoveCost": 100000,
-        "released": false,
-        "family": {
-            "id": "FAMILY_KUBFU",
-            "parent": "kubfu"
-        }
-    }, {
-        "dex": 892,
         "speciesName": "Urshifu (Rapid Strike)",
         "speciesId": "urshifu_rapid_strike",
         "baseStats": {
@@ -41794,8 +41768,8 @@
         "moveId": "BEHEMOTH_BASH",
         "name": "Behemoth Bash",
         "type": "steel",
-        "power": 80,
-        "energy": 45,
+        "power": 230,
+        "energy": 100,
         "energyGain": 0,
         "cooldown": 500,
         "archetype": "General"
@@ -41803,11 +41777,11 @@
         "moveId": "BEHEMOTH_BLADE",
         "name": "Behemoth Blade",
         "type": "steel",
-        "power": 100,
-        "energy": 55,
+        "power": 110,
+        "energy": 50,
         "energyGain": 0,
         "cooldown": 500,
-        "archetype": "High Energy"
+        "archetype": "Nuke"
     }, {
         "moveId": "BITE",
         "name": "Bite",
