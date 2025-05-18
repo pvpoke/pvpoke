@@ -170,8 +170,8 @@
     "moveId": "BEHEMOTH_BASH",
     "name": "Behemoth Bash",
     "type": "steel",
-    "power": 230,
-    "energy": 100,
+    "power": 80,
+    "energy": 45,
     "energyGain": 0,
     "cooldown": 500,
     "archetype": "General"
@@ -179,11 +179,11 @@
     "moveId": "BEHEMOTH_BLADE",
     "name": "Behemoth Blade",
     "type": "steel",
-    "power": 110,
-    "energy": 50,
+    "power": 100,
+    "energy": 55,
     "energyGain": 0,
     "cooldown": 500,
-    "archetype": "Nuke"
+    "archetype": "High Energy"
 }, {
     "moveId": "BITE",
     "name": "Bite",
