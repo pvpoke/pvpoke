@@ -2638,6 +2638,7 @@ a.download-csv {
 .rank .moves {
   display: block;
   font-size: 12px;
+  max-width: 300px;
 }
 .rank .moves .move {
   width: 16px;
