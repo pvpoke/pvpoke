@@ -1138,17 +1138,34 @@ var InterfaceMaster = (function () {
 						battleLink += poke.startHp + "-" + pokemon.startHp + "/" + poke.startEnergy + "-" + pokemon.startEnergy + "/";
 					}
 
-					var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"name-container\"><span class=\"number\">#"+(i+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span></div><div class=\"rating-container\"><a class=\"rating\" target=\"_blank\" href=\""+battleLink+"\"><span></span>"+r.opRating+"<i></i></span></a><div class=\"clear\"></div></div><div class=\"details\"></div>");
+					var $el = $(
+						"<div class=\"rank typed-ranking " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\">" +
+							"<div class=\"pokemon-info\">" +
+								"<div class=\"name-container\">" +
+									"<span class=\"number\">#"+(i+1)+"</span>" +
+									"<span class=\"name\">"+pokemon.speciesName+"</span>" +
+									"<div class=\"moves\">"+moveNameStr+"</div>" +
+								"</div>" +
+								"<div class=\"type-container\"></div>" +
+							"</div>" +
+							"<div class=\"rating-container\">" +
+								"<a class=\"rating\" target=\"_blank\" href=\""+battleLink+"\">" +
+									"<span></span>"+r.opRating+"<i></i></span>" +
+								"</a>" +
+								"<div class=\"clear\">" +
+							"</div>" +
+						"</div>");
 
 					var ratingColor = battle.getRatingColor(r.opRating);
 					var ratingClass = battle.getRatingClass(r.opRating);
 					$el.find(".rating").addClass(ratingClass);
 					$el.find(".rating").css("background", "rgb("+ratingColor[0]+","+ratingColor[1]+","+ratingColor[2]+")");
 
-					// Add moveset details if set
-
-					if(r.moveset){
-						$el.find(".name-container").append("<div class=\"moves\">"+moveNameStr+"</div>");
+					for(var n = 0; n < pokemon.types.length; n++){
+						var typeStr = pokemon.types[n].charAt(0).toUpperCase() + pokemon.types[n].slice(1);
+						if(pokemon.types[n] != "none"){
+							$el.find(".type-container").append("<div class=\"type-info "+pokemon.types[n]+"\">"+typeStr+"</div>");
+						}
 					}
 
 					$(".battle-results .rankings-container").append($el);

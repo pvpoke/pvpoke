@@ -245,8 +245,6 @@ require_once 'header.php';
 	<p class="small">Help provide usage data for the rankings at <a href="https://gobattlelog.com/pvpoke" target="_blank">gobattlelog.com</a>.</p>
 
 	<div class="ranking-checks flex">
-		<div class="check <?php if($_SETTINGS->xls): echo "on"; endif; ?> xl" style="margin-bottom:15px;"><span></span>Show XL Pokemon</div>
-
 		<div class="check move-counts" style="margin-bottom:15px;"><span></span>Show Move Counts</div>
 	</div>
 

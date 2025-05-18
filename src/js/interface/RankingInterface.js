@@ -338,8 +338,30 @@ var InterfaceMaster = (function () {
 				}
 
 				// Is this the best way to add HTML content? I'm gonna go with no here. But does it work? Yes!
+				var $el = $("<div class=\"rank typed-ranking " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\">" +
+					"<div class=\"expand-label\"></div>" +
+					"<div class=\"pokemon-info\">" +
+						"<div class=\"name-container\">" +
+							"<span class=\"number\">#"+(index+1)+"</span>" +
+							"<span class=\"name\">"+pokemon.speciesName+"</span>" +
+							"<div class=\"moves\">"+moveNameStr+"</div>" +
+						"</div>" +
+						"<div class=\"type-container\"></div>" +
+					"</div>" +
+					"<div class=\"rating-container\">" +
+						"<div class=\"rating score-rating\">"+r.score+"</div>" +
+						"<div class=\"clear\"></div>" +
+					"</div>" +
+					"<div class=\"details\"></div>" +
+				"</div>");
 
-				var $el = $("<div class=\"rank " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\"><div class=\"expand-label\"></div><div class=\"name-container\"><span class=\"number\">#"+(index+1)+"</span><span class=\"name\">"+pokemon.speciesName+"</span><div class=\"moves\">"+moveNameStr+"</div></div><div class=\"rating-container\"><div class=\"rating score-rating\">"+r.score+"</span></div><div class=\"clear\"></div></div><div class=\"details\"></div>");
+				for(var i = 0; i < pokemon.types.length; i++){
+
+					var typeStr = pokemon.types[i].charAt(0).toUpperCase() + pokemon.types[i].slice(1);
+					if(pokemon.types[i] != "none"){
+						$el.find(".type-container").append("<div class=\"type-info "+pokemon.types[i]+"\">"+typeStr+"</div>");
+					}
+				}
 
 				var sort = $(".category-select option:selected").attr("sort");
 
@@ -412,7 +434,7 @@ var InterfaceMaster = (function () {
 				// Determine XL category
 
 				if(pokemon.needsXLCandy()){
-					$el.find(".name").append("<span class=\"xl-info-icon\">XL</span>");
+					$el.attr("needs-xls", "true");
 				}
 
 				// For Prismatic Cup, show color category
@@ -484,10 +506,6 @@ var InterfaceMaster = (function () {
 
 				if($(".poke-search[context='ranking-search']").first().val() != ''){
 					$(".poke-search[context='ranking-search']").first().trigger("keyup");
-				}
-
-				if((! $(".check.xl").hasClass("on"))&&(context != "custom")){
-					toggleXLPokemon();
 				}
 
 				if(context == "custom"){
@@ -746,9 +764,7 @@ var InterfaceMaster = (function () {
 
 			function selectPokemon(e){
 
-				// Don't collapse when clicking links or the share button
-
-				if(! $(e.target).is(".rank, .rank > .rating-container, .rank > .rating-container *, .rank > .name-container, .rank > .name-container *, .rank > .expand-label")||($(e.target).is("a"))||($(e.target).is(".detail-section div, .detail-section span"))){
+				if($(e.target).parents(".details").length > 0 || $(e.target).is(".details")){
 					return;
 				}
 
@@ -1503,9 +1519,8 @@ var InterfaceMaster = (function () {
 			// Toggle XL Pokemon from the Rankings
 
 			function toggleXLPokemon(e){
-
 				$(".rankings-container > .rank").each(function(index, value){
-					if($(this).find(".xl-info-icon").length > 0){
+					if($(this).attr("needs-xls") == "true"){
 						$(this).toggleClass("hide");
 					}
 				});
