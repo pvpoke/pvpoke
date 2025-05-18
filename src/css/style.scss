@@ -2934,12 +2934,13 @@ a.download-csv{
 			float:right;
 			color:$color-ranking;
 			background-color: rgba(0,0,0,.6);
-			border-radius: 8px;
+			border-radius: 16px;
 			text-align: right;
-			padding: 5px 8px;
+			padding: 2px 6px;
+		    font-size: 15px;
 
 			&.score-rating{
-				width:60px !important;
+				width:55px !important;
 			}
 
 			span{
@@ -3535,6 +3536,7 @@ a.download-csv{
 			align-items: center;
 			margin-top: -3px;
 			margin-bottom: -3px;
+			min-width: 46.5%;
 		}
 
 		.type-container{

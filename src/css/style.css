@@ -2623,12 +2623,13 @@ a.download-csv {
   float: right;
   color: #fff6d4;
   background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 8px;
+  border-radius: 16px;
   text-align: right;
-  padding: 5px 8px;
+  padding: 2px 6px;
+  font-size: 15px;
 }
 .rank .rating-container .rating.score-rating {
-  width: 60px !important;
+  width: 55px !important;
 }
 .rank .rating-container .rating span {
   margin-left: 0;
@@ -3122,6 +3123,7 @@ a.download-csv {
   align-items: center;
   margin-top: -3px;
   margin-bottom: -3px;
+  min-width: 46.5%;
 }
 .rank.typed-ranking .pokemon-info .type-container {
   display: flex;
