@@ -3138,7 +3138,7 @@ a.download-csv {
   border: 1px solid #222;
   color: #111;
 }
-.rank.typed-ranking .pokemon-info .type-container .type-info.dark, .rank.typed-ranking .pokemon-info .type-container .type-info.flying, .rank.typed-ranking .pokemon-info .type-container .type-info.ghost {
+.rank.typed-ranking .pokemon-info .type-container .type-info.dark, .rank.typed-ranking .pokemon-info .type-container .type-info.dragon, .rank.typed-ranking .pokemon-info .type-container .type-info.ghost {
   color: #f9fdff;
 }
 .rank.typed-ranking .pokemon-info .moves {
