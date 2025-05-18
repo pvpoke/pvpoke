@@ -344,9 +344,9 @@ var InterfaceMaster = (function () {
 						"<div class=\"name-container\">" +
 							"<span class=\"number\">#"+(index+1)+"</span>" +
 							"<span class=\"name\">"+pokemon.speciesName+"</span>" +
+							"<div class=\"moves\">"+moveNameStr+"</div>" +
 						"</div>" +
 						"<div class=\"type-container\"></div>" +
-						"<div class=\"moves\">"+moveNameStr+"</div>" +
 					"</div>" +
 					"<div class=\"rating-container\">" +
 						"<div class=\"rating score-rating\">"+r.score+"</div>" +
