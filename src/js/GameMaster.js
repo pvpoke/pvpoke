@@ -14,6 +14,8 @@ var GameMaster = (function () {
 		object.loadedData = 0;
 		// maps battle cp to list all pokemon objects for that cp
 		object.allPokemon = {}
+		object.pokemonMap = {};
+		object.moveMap = {};
 
 		if(settings.gamemaster == "gamemaster-mega"){
 			$(".mega-warning").show();
@@ -64,6 +66,10 @@ var GameMaster = (function () {
 					}
 				}
 
+				// Initialize search maps
+				object.pokemonMap = new Map(object.data.pokemon.map(pokemon => [pokemon.speciesId, pokemon]));
+				object.moveMap = new Map(object.data.moves.map(move => [move.moveId, move]));
+
 				if(settings.gamemaster == "gamemaster"){
 					// Sort Pokemon alphabetically for searching
 					object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
@@ -109,6 +115,7 @@ var GameMaster = (function () {
 					return new Pokemon(p.speciesId, 0, battle);
 				})
 			}
+
 			return object.allPokemon[key]
 		}
 
@@ -116,17 +123,9 @@ var GameMaster = (function () {
 		// Return a Pokemon object given species ID
 
 		object.getPokemonById = function(id){
-			var pokemon;
-
 			id = id.replace("_xl", "");
 
-			$.each(object.data.pokemon, function(index, poke){
-
-				if(poke.speciesId == id){
-					pokemon = poke;
-					return;
-				}
-			});
+			var pokemon = object.pokemonMap.get(id);
 
 			return pokemon;
 		}
@@ -651,95 +650,91 @@ var GameMaster = (function () {
 		// Return a move object from the GameMaster file given move ID
 
 		object.getMoveById = function(id){
-			var move;
+			if(id == "none")
+				return;
 
-			$.each(object.data.moves, function(index, m){
+			var m = object.moveMap.get(id);
 
-				if(m.moveId == id){
+			if(m !== undefined){
 
-					// Generate move abbreviation
+				// Generate move abbreviation
 
-					var arr = m.moveId.split('_');
-					var abbreviation = '';
+				var arr = m.moveId.split('_');
+				var abbreviation = '';
 
-					if(m.abbreviation){
-						// Use predefined abbreviation if set
-						abbreviation = m.abbreviation;
-					} else{
-						// Make abbreviation from first character of each word
-						for(var i = 0; i < arr.length; i++){
-							abbreviation += arr[i].charAt(0);
-						}
+				if(m.abbreviation){
+					// Use predefined abbreviation if set
+					abbreviation = m.abbreviation;
+				} else{
+					// Make abbreviation from first character of each word
+					for(var i = 0; i < arr.length; i++){
+						abbreviation += arr[i].charAt(0);
 					}
-
-					var archetype = '';
-
-					if(m.archetype){
-						archetype = m.archetype;
-					}
-
-					move = {
-						moveId: m.moveId,
-						name: m.name,
-						displayName: m.name,
-						abbreviation: abbreviation,
-						archetype: archetype,
-						type: m.type,
-						power: m.power,
-						energy: m.energy,
-						energyGain: m.energyGain,
-						cooldown: m.cooldown,
-						selfDebuffing: false,
-						selfBuffing: false,
-						selfAttackDebuffing: false,
-						selfDefenseDebuffing: false,
-						legacy: false,
-						elite: false
-					};
-
-					if((move.moveId == "RETURN")||(move.moveId == "FRUSTRATION")){
-						move.legacy = true;
-						move.displayName = move.displayName + "<sup>†</sup>";
-					}
-
-					if(m.buffs){
-						move.buffs = m.buffs;
-						move.buffApplyChance = parseFloat(m.buffApplyChance);
-						move.buffTarget = m.buffTarget;
-
-						if(move.buffTarget == "both"){
-							move.buffsSelf = m.buffsSelf;
-							move.buffsOpponent = m.buffsOpponent;
-						}
-
-						if( move.buffTarget == "self" && move.buffApplyChance >= .5 && move.moveId != "DRAGON_ASCENT" && (move.buffs[0] < 0 || move.buffs[1] < 0 )){
-							move.selfDebuffing = true;
-
-							// Mark if move debuffs attack
-							if(move.buffs[0] < 0){
-								move.selfAttackDebuffing = true;
-							}
-
-							// Mark if move debuffs defense
-							if(move.buffs[1] < 0){
-								move.selfDefenseDebuffing = true;
-							}
-						}
-
-						if(move.buffApplyChance == 1 && (move.buffTarget == "opponent" || (move.buffTarget == "self" && (move.buffs[0] > 0 || move.buffs[1] > 0) || (move.buffTarget == "both" && (move.buffsSelf[0] > 0 || move.buffsSelf[1] > 0) )))){
-							move.selfBuffing = true;
-						}
-					}
-
-					if(m.formChange){
-						move.formChange = JSON.parse(JSON.stringify(m.formChange));
-					}
-
-					return;
 				}
-			});
 
-			if(!move && id != "none"){
+				var archetype = '';
+
+				if(m.archetype){
+					archetype = m.archetype;
+				}
+
+				move = {
+					moveId: m.moveId,
+					name: m.name,
+					displayName: m.name,
+					abbreviation: abbreviation,
+					archetype: archetype,
+					type: m.type,
+					power: m.power,
+					energy: m.energy,
+					energyGain: m.energyGain,
+					cooldown: m.cooldown,
+					selfDebuffing: false,
+					selfBuffing: false,
+					selfAttackDebuffing: false,
+					selfDefenseDebuffing: false,
+					legacy: false,
+					elite: false
+				};
+
+				if((move.moveId == "RETURN")||(move.moveId == "FRUSTRATION")){
+					move.legacy = true;
+					move.displayName = move.displayName + "<sup>†</sup>";
+				}
+
+				if(m.buffs){
+					move.buffs = m.buffs;
+					move.buffApplyChance = parseFloat(m.buffApplyChance);
+					move.buffTarget = m.buffTarget;
+
+					if(move.buffTarget == "both"){
+						move.buffsSelf = m.buffsSelf;
+						move.buffsOpponent = m.buffsOpponent;
+					}
+
+					if( move.buffTarget == "self" && move.buffApplyChance >= .5 && move.moveId != "DRAGON_ASCENT" && (move.buffs[0] < 0 || move.buffs[1] < 0 )){
+						move.selfDebuffing = true;
+
+						// Mark if move debuffs attack
+						if(move.buffs[0] < 0){
+							move.selfAttackDebuffing = true;
+						}
+
+						// Mark if move debuffs defense
+						if(move.buffs[1] < 0){
+							move.selfDefenseDebuffing = true;
+						}
+					}
+
+					if(move.buffApplyChance == 1 && (move.buffTarget == "opponent" || (move.buffTarget == "self" && (move.buffs[0] > 0 || move.buffs[1] > 0) || (move.buffTarget == "both" && (move.buffsSelf[0] > 0 || move.buffsSelf[1] > 0) )))){
+						move.selfBuffing = true;
+					}
+				}
+
+				if(m.formChange){
+					move.formChange = JSON.parse(JSON.stringify(m.formChange));
+				}
+			} else{
 				console.error(id + " missing");
 			}
 
