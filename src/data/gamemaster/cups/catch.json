@@ -4,7 +4,7 @@
 	"include": [],
 	"exclude": [{
 		"filterType": "id",
-		"values": ["deoxys_defense", "regirock", "regice", "mew", "victini", "genesect", "rayquaza", "zygarde", "latios", "latias", "raikou", "suicune", "entei", "celebi", "diancie", "regidrago", "regieleki", "ho_oh", "buzzwole", "drapion_shadow", "marowak_alolan_shadow", "lapras_shadow", "hitmontop_shadow", "meganium_shadow", "jumpluff_shadow", "steelix_shadow", "walrein_shadow", "poliwrath_shadow", "politoed_shadow", "sealeo_shadow", "guzzlord", "zapdos_shadow"]
+		"values": ["deoxys_defense", "regirock", "regice", "mew", "victini", "genesect", "rayquaza", "zygarde", "latios", "latias", "raikou", "suicune", "entei", "celebi", "diancie", "regidrago", "regieleki", "ho_oh", "buzzwole", "marowak_alolan_shadow", "lapras_shadow", "hitmontop_shadow", "meganium_shadow", "jumpluff_shadow", "steelix_shadow", "walrein_shadow", "poliwrath_shadow", "politoed_shadow", "sealeo_shadow", "guzzlord", "zapdos_shadow", "sableye_shadow", "feraligatr_shadow", "golurk_shadow", "quagsire_shadow", "diggersby_shadow", "zapdos_shadow", "bastiodon_shadow", "typhlosion_shadow", "registeel_shadow", "dusknoir_shadow", "dusclops_shadow"]
 	}, {
 		"filterType": "tag",
 		"values": ["mega"]

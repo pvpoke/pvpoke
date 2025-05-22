@@ -23,16 +23,16 @@
 		]
 	},
 	{
-		"title": "Retro Cup",
-		"cup": "retro",
+		"title": "Catch Cup",
+		"cup": "catch",
 		"cp": 1500,
-		"meta": "retro",
+		"meta": "catch",
 		"showCup": true,
 		"showFormat": true,
 		"showMeta": true,
 		"rules": [
 			"Pokémon must be at or below 1,500 CP to enter.",
-			"Dark-, Steel-, and Fairy-type Pokémon are not eligible."
+			"Only Pokémon caught during the Might and Mastery Season are eligible."
 		]
 	},
 	{
