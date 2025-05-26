@@ -448,7 +448,7 @@ function Battle(){
 						action.valid = false;
 					}
 
-					if((poke.hp < 1)&&(chargedMoveUsed)){
+					if(poke.hp < 1 && poke.faintSource == "charged"){
 						action.valid = false;
 					}
 					break;
@@ -748,8 +748,6 @@ function Battle(){
 
 		// If Pokemon can take action
 
-		chargedMoveUsed = false; // Flag so Pokemon only uses one Charged Move per round
-
 		if((poke.cooldown == 0)&&(! poke.hasActed)){
 			if((! sandbox)||((mode == "emulate")&&(players[poke.index].getAI() !== false)&&(poke.hp > 0))){
 				poke.hasActed = true;
@@ -985,7 +983,6 @@ function Battle(){
 
 					}
 
-					chargedMoveUsed = true;
 					roundChargedMoveUsed++;
 				}
 				break;

@@ -1808,6 +1808,7 @@ function Pokemon(id, i, b){
 		self.damageWindow = 0;
 		self.shields = self.startingShields;
 		self.statBuffs = [self.startStatBuffs[0], self.startStatBuffs[1]];
+		self.faintSource = '';
 
 		if(self.activeFormId != self.startFormId){
 			self.changeForm(self.startFormId);
