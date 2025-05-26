@@ -21,7 +21,6 @@ var pokeSearch = new function(){
 		searchStr = $(this).val().toLowerCase().trim();
 		context = $(this).attr("context");
 
-
 		$target = $(e.target).closest(".poke-search-container");
 
 		// Reset the timeout when a new key is typed. This prevents queries from being submitted too quickly and bogging things down on mobile.
@@ -76,6 +75,8 @@ var pokeSearch = new function(){
 		e.preventDefault();
 		modalWindow("Search Traits", $(".search-traits-selector"));
 
+		pokeSearch = e.target.parentElement.querySelector(".poke-search");
+
 		// Populate traits
 		var traits = GameMaster.getInstance().data.pokemonTraits;
 
@@ -89,7 +90,7 @@ var pokeSearch = new function(){
 
 		// Prefill with existing search query
 
-		var searchArr = $(".poke-search").val().split("&");
+		var searchArr = $(pokeSearch).val().split("&");
 
 		for(var i = 0; i < searchArr.length; i++){
 			$(".modal .traits > div[value=\""+searchArr[i]+"\"]").addClass("selected");
@@ -109,8 +110,8 @@ var pokeSearch = new function(){
 				searchArr.push($(this).attr("value"));
 			});
 
-			$(".poke-search").val(searchArr.join("&"));
-			$(".poke-search").trigger("keyup");
+			$(pokeSearch).val(searchArr.join("&"));
+			$(pokeSearch).trigger("keyup");
 
 			closeModalWindow();
 		});
