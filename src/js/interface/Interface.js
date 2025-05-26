@@ -2365,7 +2365,7 @@ var InterfaceMaster = (function () {
 				var move = subject.chargedMoves[moveIndex];
 				var effectiveness = target.typeEffectiveness[move.type];
 
-				displayDamage = battle.calculateDamageByStats(subject, target, subject.getEffectiveStat(0, true), target.getEffectiveStat(1, true), effectiveness, move);
+				displayDamage = DamageCalculator.damageByStats(subject, target, subject.getEffectiveStat(0, true), target.getEffectiveStat(1, true), effectiveness, move);
 
 				pokeSelectors[selectorIndex].animateDamage(displayDamage)
 			}

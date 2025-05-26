@@ -12,13 +12,12 @@
 	<div class="output"></div>
 </div>
 
+<?php require_once 'modules/scripts/battle-scripts.php'; ?>
+
 <script src="js/GameMaster.js?v=2"></script>
 <script src="js/pokemon/Pokemon.js?v=2"></script>
 <script src="js/interface/RankerInterface.js?v=2"></script>
-<script src="js/battle/TimelineEvent.js?v=2"></script>
-<script src="js/battle/TimelineAction.js?v=2"></script>
-<script src="js/battle/Battle.js?v=2"></script>
-<script src="js/battle/RankerSandboxWeightingMoveset.js"></script>
+<script src="js/battle/rankers/Ranker.js"></script>
 <script src="js/RankerMain.js"></script>
 
 <?php require_once 'footer.php'; ?>

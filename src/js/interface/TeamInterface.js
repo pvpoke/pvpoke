@@ -1104,7 +1104,7 @@ var InterfaceMaster = (function () {
 				for(var n = 0; n < allTypes.length; n++){
 
 					if(direction == "offense"){
-						var effectiveness = battle.getEffectiveness(subjectTypes[0], [allTypes[n]]);
+						var effectiveness = DamageCalculator.getEffectiveness(subjectTypes[0], [allTypes[n]]);
 
 						// Round to nearest thousandths to avoid Javascript floating point wonkiness
 
@@ -1112,7 +1112,7 @@ var InterfaceMaster = (function () {
 
 						arr.push(effectiveness);
 					} else if(direction == "defense"){
-						effectiveness = battle.getEffectiveness(allTypes[n], subjectTypes);
+						effectiveness = DamageCalculator.getEffectiveness(allTypes[n], subjectTypes);
 
 						// Round to nearest thousandths to avoid Javascript floating point wonkiness
 

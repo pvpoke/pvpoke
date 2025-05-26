@@ -218,218 +218,6 @@ function Battle(){
 		buffChanceModifier = value;
 	}
 
-	// Calculate damage given an attacker, defender, and move, requires move to be initialized first
-
-	this.calculateDamage = function(attacker, defender, move, charge){
-		charge = typeof charge !== 'undefined' ? charge : 1;
-
-		var bonusMultiplier = 1.2999999523162841796875;
-		var effectiveness = defender.typeEffectiveness[move.type];
-		var chargeMultiplier = charge; // The amount of charge for a Charged Move
-
-		// Fully charge moves in regular simulation or if the opponent is an AI
-		if((mode == "emulate")&&(players[attacker.index])){
-			if((move.energyGain > 0)||(players[attacker.index].getAI() !== false)){
-				chargeAmount = 1;
-			}
-
-			chargeMultiplier = chargeAmount;
-
-			// Protection to prevent 0 damage
-			if(chargeMultiplier == 0){
-				chargeMultiplier = 1;
-			}
-		}
-
-		var damage = Math.floor(move.power * move.stab * ( attacker.getEffectiveStat(0) / defender.getEffectiveStat(1)) * effectiveness * chargeMultiplier * 0.5 * bonusMultiplier) + 1;
-
-		return damage;
-	}
-
-	// Calculate damage given stats and effectiveness
-
-	this.calculateDamageByStats = function(attacker, defender, attack, defense, effectiveness, move){
-
-		var bonusMultiplier = 1.2999999523162841796875;
-
-		var damage = Math.floor(move.power * move.stab * (attack/defense) * effectiveness * 0.5 * bonusMultiplier) + 1;
-
-		return damage;
-	}
-
-	// Solve for Attack given the damage, defense, effectiveness, and move
-
-	this.calculateBreakpoint = function(attacker, defender, damage, defense, effectiveness, move){
-
-		var bonusMultiplier = 1.2999999523162841796875;
-
-		var attackStatMultiplier = attacker.getStatBuffMultiplier(0, true);
-
-		var attack = ((damage - 1) * defense) / (move.power * move.stab * effectiveness * attacker.shadowAtkMult * attackStatMultiplier * 0.5 * bonusMultiplier);
-
-		return attack;
-	}
-
-	// Solve for Defense given the damage, attack, effectiveness, and move
-
-	this.calculateBulkpoint = function(attacker, defender, damage, attack, effectiveness, move){
-
-		var bonusMultiplier = 1.2999999523162841796875;
-
-		var defenseStatMultiplier = defender.getStatBuffMultiplier(1, true);
-
-		var defense =  (move.power * move.stab * effectiveness * 0.5 * bonusMultiplier * attack) / (damage);
-
-		defense = (defense * defenseStatMultiplier) / defender.shadowDefMult;
-
-		return defense;
-	}
-
-	// Given a move type and array of defensive types, return the final type effectiveness multiplier
-
-	this.getEffectiveness = function(moveType, targetTypes){
-		var effectiveness = 1;
-
-		var moveType = moveType.toLowerCase();
-
-		for(var i = 0; i < targetTypes.length; i++){
-			var type = targetTypes[i].toLowerCase();
-			var traits = this.getTypeTraits(type);
-
-			if(traits.weaknesses.indexOf(moveType) > -1){
-				effectiveness *= 1.60000002384185791015625;
-			} else if(traits.resistances.indexOf(moveType) > -1){
-				effectiveness *= .625;
-			} else if(traits.immunities.indexOf(moveType) > -1){
-				effectiveness *= .390625;
-			}
-		}
-
-		return effectiveness;
-	}
-
-	// Helper function that returns an array of weaknesses, resistances, and immunities given defensive type
-
-	this.getTypeTraits = function(type){
-		var traits = {
-			weaknesses: [],
-			resistances: [],
-			immunities: []
-		};
-
-		switch(type){
-			case "normal":
-				traits = { resistances: [],
-				  weaknesses: ["fighting"],
-				  immunities: ["ghost"] };
-				break;
-
-			case "fighting":
-				traits = { resistances: ["rock", "bug", "dark"],
-				  weaknesses: ["flying", "psychic", "fairy"],
-				  immunities: [] };
-				break;
-
-			case "flying":
-				traits = { resistances: ["fighting", "bug", "grass"],
-				  weaknesses: ["rock", "electric", "ice"],
-				  immunities: ["ground"] };
-				break;
-
-			case "poison":
-				traits = { resistances: ["fighting", "poison", "bug", "fairy","grass"],
-				  weaknesses: ["ground", "psychic"],
-				  immunities: [] };
-				break;
-
-			case "ground":
-				traits = { resistances: ["poison", "rock"],
-				  weaknesses: ["water", "grass", "ice"],
-				  immunities: ["electric"] };
-				break;
-
-			case "rock":
-				traits = { resistances: ["normal", "flying", "poison", "fire"],
-				  weaknesses: ["fighting", "ground", "steel", "water", "grass"],
-				  immunities: [] };
-				break;
-
-			case "bug":
-				traits = { resistances: ["fighting", "ground", "grass"],
-				  weaknesses: ["flying", "rock", "fire"],
-				  immunities: [] };
-				break;
-
-			case "ghost":
-				traits = { resistances: ["poison", "bug"],
-				  weaknesses: ["ghost","dark"],
-				  immunities: ["normal", "fighting"] };
-				break;
-
-			case "steel":
-				traits = { resistances: ["normal", "flying", "rock", "bug", "steel", "grass", "psychic", "ice", "dragon", "fairy"],
-				  weaknesses: ["fighting", "ground", "fire"],
-				  immunities: ["poison"] };
-				break;
-
-			case "fire":
-				traits = { resistances: ["bug", "steel", "fire", "grass", "ice", "fairy"],
-				  weaknesses: ["ground", "rock", "water"],
-				  immunities: [] };
-				break;
-
-			case "water":
-				traits = { resistances: ["steel", "fire", "water", "ice"],
-				  weaknesses: ["grass", "electric"],
-				  immunities: [] };
-				break;
-
-			case "grass":
-				traits = { resistances: ["ground", "water", "grass", "electric"],
-				  weaknesses: ["flying", "poison", "bug", "fire", "ice"],
-				  immunities: [] };
-				break;
-
-			case "electric":
-				traits = { resistances: ["flying", "steel", "electric"],
-				  weaknesses: ["ground"],
-				  immunities: [] };
-				break;
-
-			case "psychic":
-				traits = { resistances: ["fighting", "psychic"],
-				  weaknesses: ["bug", "ghost", "dark"],
-				  immunities: [] };
-				break;
-
-			case "ice":
-				traits = { resistances: ["ice"],
-				  weaknesses: ["fighting", "fire", "steel", "rock"],
-				  immunities: [] };
-				break;
-
-			case "dragon":
-				traits = { resistances: ["fire", "water", "grass", "electric"],
-				  weaknesses: ["dragon", "ice", "fairy"],
-				  immunities: [] };
-				break;
-
-			case "dark":
-				traits = { resistances: ["ghost", "dark"],
-				  weaknesses: ["fighting", "fairy", "bug"],
-				  immunities: ["psychic"] };
-				break;
-
-			case "fairy":
-				traits = { resistances: ["fighting", "bug", "dark"],
-				  weaknesses: ["poison", "steel"],
-				  immunities: ["dragon"] };
-				break;
-		}
-
-		return traits;
-	}
-
 	// Reset all battle components and initiate the battle
 
 	this.start = function(){
@@ -1054,8 +842,8 @@ function Battle(){
 		var chargedMoveReady = [];
 		var winsCMP = poke.stats.atk >= opponent.stats.atk;
 
-		var fastDamage = self.calculateDamage(poke, opponent, poke.fastMove);
-		var oppFastDamage = self.calculateDamage(opponent, poke, opponent.fastMove);
+		var fastDamage = DamageCalculator.damage(poke, opponent, poke.fastMove);
+		var oppFastDamage = DamageCalculator.damage(opponent, poke, opponent.fastMove);
 		var hasNonDebuff = false;
 
 		// If no Charged Moves at all, return
@@ -1145,7 +933,7 @@ function Battle(){
 				for(var n = 0; n < opponent.activeChargedMoves.length; n++) {
 
 					if (currState.opEnergy >= opponent.activeChargedMoves[n].energy) {
-						var moveDamage = self.calculateDamage(opponent, poke, opponent.activeChargedMoves[n]);
+						var moveDamage = DamageCalculator.damage(opponent, poke, opponent.activeChargedMoves[n]);
 
 						if (moveDamage >= currState.hp) {
 							turnsToLive = Math.min(currState.turn, turnsToLive);
@@ -1216,7 +1004,7 @@ function Battle(){
 
 					// Find highest damage available move
 					if (chargedMoveReady[n] == 0) {
-						var moveDamage = self.calculateDamage(poke, opponent, poke.activeChargedMoves[n]);
+						var moveDamage = DamageCalculator.damage(poke, opponent, poke.activeChargedMoves[n]);
 
 						// If this move deals more damage than the other move, use it
 						if (moveDamage > prevMoveDamage){
@@ -1264,7 +1052,7 @@ function Battle(){
 				var moveIndex = poke.chargedMoves.indexOf(poke.activeChargedMoves[n]);
 
 				if(poke.energy >= move.energy){
-					var moveDamage = self.calculateDamage(poke, opponent, poke.activeChargedMoves[n]);
+					var moveDamage = DamageCalculator.damage(poke, opponent, poke.activeChargedMoves[n]);
 
 					// Don't throw self debuffing moves at this point, or if the opponent will faint from Fast Move damage
 					if(opponent.hp <= moveDamage && (! move.selfDebuffing) && (n == 0 || (n == 1 && ! poke.baitShields)) && opponent.hp > poke.fastMove.damage){
@@ -1348,7 +1136,7 @@ function Battle(){
 				// Don't optimize if we can KO with a Charged Move
 				if(opponent.shields == 0){
 					for(var n = 0; n < poke.activeChargedMoves.length; n++) {
-						poke.activeChargedMoves[n].damage = self.calculateDamage(poke, opponent, poke.activeChargedMoves[n]);
+						poke.activeChargedMoves[n].damage = DamageCalculator.damage(poke, opponent, poke.activeChargedMoves[n]);
 
 						if (poke.energy >= poke.activeChargedMoves[n].energy && poke.activeChargedMoves[n].damage >= opponent.hp) {
 
@@ -1364,7 +1152,7 @@ function Battle(){
 					var fastMovesInFastMove = Math.floor(poke.fastMove.cooldown / opponent.fastMove.cooldown); // How many Fast Moves can the opponent get in if we do an extra move?
 					var turnsFromMove = (fastMovesFromCharged * (opponent.fastMove.cooldown / 500)) + 1;
 
-					opponent.activeChargedMoves[n].damage = self.calculateDamage(opponent, poke, opponent.activeChargedMoves[n]);
+					opponent.activeChargedMoves[n].damage = DamageCalculator.damage(opponent, poke, opponent.activeChargedMoves[n]);
 
 					var moveDamage = opponent.activeChargedMoves[n].damage + (opponent.fastMove.damage * fastMovesInFastMove);
 
@@ -1396,7 +1184,7 @@ function Battle(){
 
 		// Evaluate if opponent can't be fainted in a limited number of cycles. If so, do a simpler move selection.
 
-		var bestChargedDamage = self.calculateDamage(poke, opponent, poke.bestChargedMove);
+		var bestChargedDamage = DamageCalculator.damage(poke, opponent, poke.bestChargedMove);
 		var bestCycleDamage = bestChargedDamage + (fastDamage * Math.ceil(poke.bestChargedMove.energy / poke.fastMove.energyGain));
 		var minimumCycleThreshold = 2;
 
@@ -1506,8 +1294,8 @@ function Battle(){
 				var currentStatBuffs = [poke.statBuffs[0], poke.statBuffs[1]];
 				poke.applyStatBuffs([currState.buffs, 0]);
 
-				var moveDamage = self.calculateDamage(poke, opponent, poke.activeChargedMoves[n]);
-				var fastSimulatedDamage = self.calculateDamage(poke, opponent, poke.fastMove);
+				var moveDamage = DamageCalculator.damage(poke, opponent, poke.activeChargedMoves[n]);
+				var fastSimulatedDamage = DamageCalculator.damage(poke, opponent, poke.fastMove);
 
 				// Remove stat changes from pokemon attack
 				poke.statBuffs = [currentStatBuffs[0], currentStatBuffs[1]];
@@ -1908,8 +1696,8 @@ function Battle(){
 			// If not baiting shields or shields are down and no moves debuff, throw most damaging move first
 			if (!poke.baitShields || (opponent.shields == 0 && debuffingMove == false)) {
 				finalState.moves.sort(function(a, b) {
-					var moveDamage1 = self.calculateDamage(poke, opponent, a);
-					var moveDamage2 = self.calculateDamage(poke, opponent, b);
+					var moveDamage1 = DamageCalculator.damage(poke, opponent, a);
+					var moveDamage2 = DamageCalculator.damage(poke, opponent, b);
 					return moveDamage2 - moveDamage1;
 				})
 			}
@@ -1979,7 +1767,7 @@ function Battle(){
 			targetEnergy = Math.floor(100 / finalState.moves[0].energy) * finalState.moves[0].energy;
 
 			if (poke.energy < targetEnergy) {
-				var moveDamage = self.calculateDamage(poke, opponent, finalState.moves[0]);
+				var moveDamage = DamageCalculator.damage(poke, opponent, finalState.moves[0]);
 				if ((opponent.hp > moveDamage || opponent.shields != 0) && (poke.hp > opponent.fastMove.damage * 2 || opponent.fastMove.cooldown - poke.fastMove.cooldown > 500)){
 					useChargedMove = false;
 					self.logDecision(turns, poke, " doesn't use " + finalState.moves[0].name + " because it wants to minimize time debuffed and it can stack the move " + Math.floor(100 / finalState.moves[0].energy) + " times");
@@ -2036,7 +1824,7 @@ function Battle(){
 		// Evaluate when to randomly use Charged Moves
 		for(var i = 0; i < poke.activeChargedMoves.length; i++){
 			if(poke.energy >= poke.activeChargedMoves[i].energy){
-				poke.activeChargedMoves[i].damage = self.calculateDamage(poke, opponent, poke.activeChargedMoves[i]);
+				poke.activeChargedMoves[i].damage = DamageCalculator.damage(poke, opponent, poke.activeChargedMoves[i]);
 				let chargedMoveWeight = Math.round(poke.energy / 4);
 				let damage = poke.activeChargedMoves[i].damage;
 
@@ -2328,7 +2116,7 @@ function Battle(){
 		charge = typeof charge !== 'undefined' ? charge : 1;
 
 		var type = "fast " + move.type;
-		var damage = self.calculateDamage(attacker, defender, move, charge);
+		var damage = DamageCalculator.damage(attacker, defender, move, charge);
 		move.damage = damage;
 
 		var displayTime = time;
@@ -2778,7 +2566,7 @@ function Battle(){
 		var useShield = false;
 		var shieldWeight = 1;
 		var noShieldWeight = 2; // Used for randomized shielding decisions
-		var damage = self.calculateDamage(attacker, defender, move);
+		var damage = DamageCalculator.damage(attacker, defender, move);
 		move.damage = damage;
 
 		var postMoveHP = defender.hp - damage; // How much HP will be left after the attack
@@ -2798,7 +2586,7 @@ function Battle(){
 			defender.applyStatBuffs(moveBuffs);
 		}
 
-		var fastDamage = self.calculateDamage(attacker, defender, attacker.fastMove);
+		var fastDamage = DamageCalculator.damage(attacker, defender, attacker.fastMove);
 
 		// Determine how much damage will be dealt per cycle to see if the defender will survive to shield the next cycle
 
@@ -2825,7 +2613,7 @@ function Battle(){
 			var chargedMove = attacker.chargedMoves[i];
 
 			if(attacker.energy + chargedMove.energy >= chargedMove.energy){
-				var chargedDamage = self.calculateDamage(attacker, defender, chargedMove);
+				var chargedDamage = DamageCalculator.damage(attacker, defender, chargedMove);
 
 				if((chargedDamage >= defender.hp / 1.4)&&(fastDPT > 1.5)){
 					useShield = true;
