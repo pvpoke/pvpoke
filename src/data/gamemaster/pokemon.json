@@ -2251,7 +2251,7 @@
         "hp": 191
     },
     "types": ["poison", "ground"],
-    "fastMoves": ["FURY_CUTTER", "IRON_TAIL", "POISON_JAB", "DOUBLE_KICK"],
+    "fastMoves": ["FURY_CUTTER", "IRON_TAIL", "POISON_JAB", "DOUBLE_KICK", "POISON_STING"],
     "chargedMoves": ["EARTHQUAKE", "MEGAHORN", "SLUDGE_WAVE", "EARTH_POWER", "SAND_TOMB"],
     "defaultIVs": {
         "cp500": [7.5, 5, 8, 12],
@@ -2279,7 +2279,7 @@
         "hp": 191
     },
     "types": ["poison", "ground"],
-    "fastMoves": ["FURY_CUTTER", "IRON_TAIL", "POISON_JAB", "DOUBLE_KICK"],
+    "fastMoves": ["FURY_CUTTER", "IRON_TAIL", "POISON_JAB", "DOUBLE_KICK", "POISON_STING"],
     "chargedMoves": ["EARTHQUAKE", "MEGAHORN", "SLUDGE_WAVE", "EARTH_POWER", "SAND_TOMB"],
     "defaultIVs": {
         "cp500": [7.5, 5, 8, 12],
