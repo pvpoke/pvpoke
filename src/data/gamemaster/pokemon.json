@@ -3303,7 +3303,7 @@
         "hp": 137
     },
     "types": ["steel", "none"],
-    "fastMoves": ["SCRATCH", "METAL_CLAW", "METAL_SOUND"],
+    "fastMoves": ["SCRATCH", "METAL_CLAW"],
     "chargedMoves": ["NIGHT_SLASH", "GYRO_BALL", "DIG", "TRAILBLAZE"],
     "tags": ["galarian"],
     "defaultIVs": {
@@ -36810,7 +36810,7 @@
         "hp": 172
     },
     "types": ["steel", "none"],
-    "fastMoves": ["METAL_CLAW", "SHADOW_CLAW"],
+    "fastMoves": ["METAL_CLAW", "SHADOW_CLAW", "METAL_SOUND"],
     "chargedMoves": ["IRON_HEAD", "CLOSE_COMBAT", "PLAY_ROUGH", "FOUL_PLAY", "TRAILBLAZE"],
     "defaultIVs": {
         "cp500": [8, 4, 12, 10],
