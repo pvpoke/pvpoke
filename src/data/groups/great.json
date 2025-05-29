@@ -8,10 +8,6 @@
     "chargedMoves": ["RAGE_FIST", "ICE_PUNCH"],
     "shadowType": "shadow"
 }, {
-    "speciesId": "ariados",
-    "fastMove": "POISON_STING",
-    "chargedMoves": ["LUNGE", "TRAILBLAZE"]
-}, {
     "speciesId": "azumarill",
     "fastMove": "BUBBLE",
     "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
@@ -19,14 +15,6 @@
     "speciesId": "blastoise",
     "fastMove": "ROLLOUT",
     "chargedMoves": ["HYDRO_CANNON", "SKULL_BASH"]
-}, {
-    "speciesId": "carbink",
-    "fastMove": "ROCK_THROW",
-    "chargedMoves": ["POWER_GEM", "MOONBLAST"]
-}, {
-    "speciesId": "charjabug",
-    "fastMove": "VOLT_SWITCH",
-    "chargedMoves": ["X_SCISSOR", "DISCHARGE"]
 }, {
     "speciesId": "claydol",
     "fastMove": "MUD_SLAP",
@@ -45,7 +33,7 @@
     "chargedMoves": ["SKY_ATTACK", "IRON_HEAD"]
 }, {
     "speciesId": "cradily",
-    "fastMove": "BULLET_SEED",
+    "fastMove": "ACID",
     "chargedMoves": ["ROCK_TOMB", "GRASS_KNOT"]
 }, {
     "speciesId": "dewgong",
@@ -64,10 +52,6 @@
     "speciesId": "dusclops",
     "fastMove": "HEX",
     "chargedMoves": ["ICE_PUNCH", "SHADOW_PUNCH"]
-}, {
-    "speciesId": "emolga",
-    "fastMove": "THUNDER_SHOCK",
-    "chargedMoves": ["ACROBATICS", "DISCHARGE"]
 }, {
     "speciesId": "feraligatr",
     "fastMove": "SHADOW_CLAW",
@@ -106,6 +90,11 @@
     "fastMove": "FAIRY_WIND",
     "chargedMoves": ["AERIAL_ACE", "ENERGY_BALL"]
 }, {
+    "speciesId": "jumpluff_shadow",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["AERIAL_ACE", "ACROBATICS"],
+    "shadowType": "shadow"
+}, {
     "speciesId": "lapras",
     "fastMove": "PSYWAVE",
     "chargedMoves": ["SPARKLING_ARIA", "ICE_BEAM"]
@@ -117,10 +106,6 @@
     "speciesId": "mandibuzz",
     "fastMove": "SNARL",
     "chargedMoves": ["DARK_PULSE", "AERIAL_ACE"]
-}, {
-    "speciesId": "mandibuzz",
-    "fastMove": "AIR_SLASH",
-    "chargedMoves": ["FOUL_PLAY", "AERIAL_ACE"]
 }, {
     "speciesId": "marowak_shadow",
     "fastMove": "MUD_SLAP",
@@ -144,6 +129,14 @@
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["FOUL_PLAY", "DAZZLING_GLEAM"],
     "shadowType": "shadow"
+}, {
+    "speciesId": "sandslash_alolan",
+    "fastMove": "POWDER_SNOW",
+    "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"]
+}, {
+    "speciesId": "sandslash_alolan",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"]
 }, {
     "speciesId": "serperior",
     "fastMove": "VINE_WHIP",
@@ -169,21 +162,41 @@
     "fastMove": "CHARM",
     "chargedMoves": ["ICY_WIND", "SWIFT"]
 }, {
-    "speciesId": "jumpluff_shadow",
-    "fastMove": "FAIRY_WIND",
-    "chargedMoves": ["AERIAL_ACE", "ACROBATICS"],
-    "shadowType": "shadow"
+    "speciesId": "golisopod",
+    "fastMove": "FURY_CUTTER",
+    "chargedMoves": ["X_SCISSOR", "AQUA_JET"]
 }, {
-    "speciesId": "sandslash_alolan",
-    "fastMove": "POWDER_SNOW",
-    "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"]
-}, {
-    "speciesId": "sandslash_alolan",
+    "speciesId": "sableye_shadow",
     "fastMove": "SHADOW_CLAW",
-    "chargedMoves": ["ICE_PUNCH", "DRILL_RUN"]
-}, {
-    "speciesId": "malamar_shadow",
-    "fastMove": "PSYWAVE",
-    "chargedMoves": ["FOUL_PLAY", "SUPER_POWER"],
+    "chargedMoves": ["FOUL_PLAY", "POWER_GEM"],
     "shadowType": "shadow"
+}, {
+    "speciesId": "forretress",
+    "fastMove": "BUG_BITE",
+    "chargedMoves": ["ROCK_TOMB", "EARTHQUAKE"]
+}, {
+    "speciesId": "samurott",
+    "fastMove": "FURY_CUTTER",
+    "chargedMoves": ["HYDRO_CANNON", "MEGAHORN"]
+}, {
+    "speciesId": "gligar_shadow",
+    "fastMove": "FURY_CUTTER",
+    "chargedMoves": ["AERIAL_ACE", "DIG"],
+    "shadowType": "shadow"
+}, {
+    "speciesId": "metang",
+    "fastMove": "FURY_CUTTER",
+    "chargedMoves": ["PSYSHOCK", "RETURN"]
+}, {
+    "speciesId": "araquanid",
+    "fastMove": "BUG_BITE",
+    "chargedMoves": ["WATER_PULSE", "BUBBLE_BEAM"]
+}, {
+    "speciesId": "dedenne",
+    "fastMove": "THUNDER_SHOCK",
+    "chargedMoves": ["PARABOLIC_CHARGE", "PLAY_ROUGH"]
+}, {
+    "speciesId": "moltres_galarian",
+    "fastMove": "SUCKER_PUNCH",
+    "chargedMoves": ["FLY", "BRAVE_BIRD"]
 }]

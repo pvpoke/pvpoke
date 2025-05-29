@@ -128,6 +128,10 @@
     "fastMove": "TACKLE",
     "chargedMoves": ["SWIFT", "HIGH_HORSEPOWER"]
 }, {
+    "speciesId": "urshifu_single_strike",
+    "fastMove": "SUCKER_PUNCH",
+    "chargedMoves": ["DYNAMIC_PUNCH", "PAYBACK"]
+}, {
     "speciesId": "xerneas",
     "fastMove": "GEOMANCY",
     "chargedMoves": ["CLOSE_COMBAT", "MOONBLAST"]
@@ -152,7 +156,15 @@
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["BULLDOZE", "OUTRAGE"]
 }, {
-    "speciesId": "urshifu_single_strike",
-    "fastMove": "SUCKER_PUNCH",
-    "chargedMoves": ["DYNAMIC_PUNCH", "PAYBACK"]
+    "speciesId": "lunala",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["SHADOW_BALL", "MOONBLAST"]
+}, {
+    "speciesId": "zacian_crowned_sword",
+    "fastMove": "METAL_CLAW",
+    "chargedMoves": ["CLOSE_COMBAT", "PLAY_ROUGH"]
+}, {
+    "speciesId": "zamazenta_crowned_shield",
+    "fastMove": "METAL_CLAW",
+    "chargedMoves": ["CLOSE_COMBAT", "BEHEMOTH_BASH"]
 }]

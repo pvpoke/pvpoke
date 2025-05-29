@@ -3303,7 +3303,7 @@
         "hp": 137
     },
     "types": ["steel", "none"],
-    "fastMoves": ["SCRATCH", "METAL_CLAW"],
+    "fastMoves": ["SCRATCH", "METAL_CLAW", "METAL_SOUND"],
     "chargedMoves": ["NIGHT_SLASH", "GYRO_BALL", "DIG", "TRAILBLAZE"],
     "tags": ["galarian"],
     "defaultIVs": {
@@ -37507,7 +37507,7 @@
     "tags": ["legendary"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false
+    "released": true
 }, {
     "dex": 888,
     "speciesName": "Zacian (Hero)",
@@ -37551,7 +37551,7 @@
     "tags": ["legendary"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false
+    "released": true
 }, {
     "dex": 889,
     "speciesName": "Zamazenta (Hero)",
