@@ -11304,7 +11304,7 @@
         "cp1500": [37.5, 4, 15, 12],
         "cp2500": [50, 15, 15, 15]
     },
-    "searchPriority": 12,
+    "searchPriority": 5,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true
@@ -11662,7 +11662,7 @@
         "cp2500": [30.5, 7, 13, 15]
     },
     "tags": ["shadow"],
-    "searchPriority": 6,
+    "searchPriority": 7,
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
     "released": true,
@@ -18771,6 +18771,7 @@
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
     "released": true,
+	"searchPriority": 5,
     "family": {
         "id": "FAMILY_BELDUM",
         "parent": "beldum",
@@ -19395,7 +19396,7 @@
         "cp2500": [50, 11, 13, 14],
         "cp2500l40": [40, 15, 15, 15]
     },
-    "searchPriority": 5,
+    "searchPriority": 3,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true,
@@ -21033,7 +21034,7 @@
         "cp2500l40": [40, 15, 15, 15]
     },
     "tags": ["regional"],
-    "searchPriority": 9,
+    "searchPriority": 7,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true
@@ -22332,7 +22333,7 @@
         "cp2500": [44, 6, 15, 13],
         "cp2500l40": [40, 15, 15, 15]
     },
-    "searchPriority": 2,
+    "searchPriority": 3,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true,
@@ -22361,7 +22362,6 @@
         "cp2500": [44, 6, 15, 13],
         "cp2500l40": [40, 15, 15, 15]
     },
-    "searchPriority": 9,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true,
@@ -32000,6 +32000,7 @@
         "cp1500": [30.5, 5, 14, 15],
         "cp2500": [50, 15, 15, 15]
     },
+	"searchPriority": 6,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true
@@ -33670,6 +33671,7 @@
         "cp1500": [33.5, 4, 15, 8],
         "cp2500": [50, 15, 15, 15]
     },
+	"searchPriority": 3,
     "buddyDistance": 3,
     "thirdMoveCost": 50000,
     "released": true,
@@ -34053,7 +34055,7 @@
         "cp1500": [17.5, 6, 13, 11],
         "cp2500": [29.5, 4, 10, 13]
     },
-    "searchPriority": 4,
+    "searchPriority": 8,
     "buddyDistance": 1,
     "thirdMoveCost": 10000,
     "released": true,
@@ -34967,6 +34969,7 @@
         "cp1500": [13.5, 6, 14, 12],
         "cp2500": [22.5, 7, 13, 13]
     },
+	"searchPriority": 3,
     "tags": ["legendary"],
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
@@ -39081,6 +39084,7 @@
         "cp1500": [21, 4, 11, 15],
         "cp2500": [40, 4, 12, 15]
     },
+	"searchPriority": 3,
     "buddyDistance": 1,
     "thirdMoveCost": 50000,
     "released": true,

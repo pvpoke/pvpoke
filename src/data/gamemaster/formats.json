@@ -14,25 +14,13 @@
 		"cup": "premier",
 		"cp": 10000,
 		"meta": "premiermaster",
-		"showCup": true,
-		"showFormat": true,
+		"showCup": false,
+		"showFormat": false,
 		"showMeta": true,
+		"hideRankings": true,
 		"rules": [
 			"No CP limit.",
 			"Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible."
-		]
-	},
-	{
-		"title": "Catch Cup",
-		"cup": "catch",
-		"cp": 1500,
-		"meta": "catch",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Pokémon caught during the Might and Mastery Season are eligible."
 		]
 	},
 	{
@@ -44,78 +32,6 @@
 		"showFormat": true,
 		"showMeta": true,
 		"hideRankings": true
-	},
-	{
-        "title": "Battle Tower (Tempo)",
-        "cup": "tempo",
-        "cp": 1500,
-        "meta": "tempo",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-	},
-	{
-        "title": "Battle Tower (Wasteland)",
-        "cup": "wasteland",
-        "cp": 1500,
-        "meta": "wasteland",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-	},
-	{
-		"title": "Battle Tower (Ultra)",
-		"cup": "battlefrontierultra",
-		"cp": 2500,
-		"meta": "ultra",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Battle Tower (Master)",
-		"cup": "battlefrontiermaster",
-		"cp": 10000,
-		"meta": "battlefrontiermaster",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-        "title": "Spice Bowl",
-        "cup": "spicebowl",
-        "cp": 1500,
-        "meta": "spicebowl",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    },
-	{
-		"title": "Devon Rivalry Cup",
-		"cup": "rivalry",
-		"cp": 1500,
-		"meta": "rivalry",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Devon Tundra Cup (Gymbreakers Remix V2)",
-		"cup": "tundraremixv2",
-		"cp": 1500,
-		"meta": "tundraremixv2",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
-	},
-	{
-		"title": "Gymbreakers Invitational Remix",
-		"cup": "gbinvitational",
-		"cp": 1500,
-		"meta": "gbinvitational",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true
 	},
 	{
 		"title": "Little",
