@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-05-22 16:48:56",
+    "timestamp": "2025-05-30 01:34:49",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -27953,7 +27953,8 @@
         "family": {
             "id": "FAMILY_YAMASK",
             "parent": "yamask"
-        }
+        },
+        "nicknames": ["coffin"]
     }, {
         "dex": 564,
         "speciesId": "tirtouga",
@@ -38190,7 +38191,7 @@
         "tags": ["legendary"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": true
     }, {
         "dex": 888,
         "speciesName": "Zacian (Hero)",
@@ -38234,7 +38235,7 @@
         "tags": ["legendary"],
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": true
     }, {
         "dex": 889,
         "speciesName": "Zamazenta (Hero)",
@@ -43135,6 +43136,7 @@
     }, {
         "moveId": "LEAFAGE",
         "name": "Leafage",
+        "abbreviation": "Lf",
         "type": "grass",
         "power": 6,
         "energy": 0,
