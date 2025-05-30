@@ -34064,6 +34064,31 @@
         "parent": "wimpod"
     }
 }, {
+    "dex": 768,
+    "speciesName": "Golisopod",
+    "speciesId": "golisopodsh",
+    "baseStats": {
+        "atk": 218,
+        "def": 226,
+        "hp": 181
+    },
+    "types": ["bug", "water"],
+    "fastMoves": ["FURY_CUTTER", "METAL_CLAW", "WATERFALL", "SHADOW_CLAW"],
+    "chargedMoves": ["X_SCISSOR", "AQUA_JET", "AERIAL_ACE", "LIQUIDATION", "RAZOR_SHELL"],
+    "defaultIVs": {
+        "cp500": [6, 8, 15, 10],
+        "cp1500": [17.5, 6, 13, 11],
+        "cp2500": [29.5, 4, 10, 13]
+    },
+	"tags": ["duplicate", "duplicate1500"],
+    "buddyDistance": 1,
+    "thirdMoveCost": 10000,
+    "released": true,
+    "family": {
+        "id": "FAMILY_WIMPOD",
+        "parent": "wimpod"
+    }
+}, {
     "dex": 769,
     "speciesName": "Sandygast",
     "speciesId": "sandygast",
