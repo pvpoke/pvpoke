@@ -1518,8 +1518,10 @@ var InterfaceMaster = (function () {
 				}
 
 				$(".poke-select-container .poke.multi .add-poke-btn").trigger("click", false);
-				$(".modal .poke-select option[value=\""+id+"\"]").prop("selected", "selected");
-				$(".modal .poke-select").trigger("change");
+
+				let pokeSelector = multiSelectors[0].getPokeSelector();
+				pokeSelector.setPokemon(id);
+
 				$("html, body").animate({ scrollTop: $(".poke.multi").offset().top }, 500);
 
 				// Use alias default moveset if it exists

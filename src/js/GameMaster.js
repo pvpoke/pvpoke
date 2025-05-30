@@ -15,6 +15,7 @@ var GameMaster = (function () {
 		// maps battle cp to list all pokemon objects for that cp
 		object.allPokemon = {}
 		object.pokemonMap = {};
+		object.pokeSelectList = [];
 		object.moveMap = {};
 
 		if(settings.gamemaster == "gamemaster-mega"){
@@ -74,6 +75,8 @@ var GameMaster = (function () {
 					// Sort Pokemon alphabetically for searching
 					object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
 
+					object.createPokeSelectList();
+
 					if(typeof InterfaceMaster !== 'undefined'){
 						InterfaceMaster.getInstance().init(object);
 					}
@@ -89,6 +92,8 @@ var GameMaster = (function () {
 						object.data.pokemon = object.data.pokemon.concat(data);
 						object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
 
+						object.createPokeSelectList();
+
 						InterfaceMaster.getInstance().init(object);
 					});
 				} else if(settings.gamemaster == "gamemaster-paldea"){
@@ -99,11 +104,26 @@ var GameMaster = (function () {
 						object.data.pokemon = object.data.pokemon.concat(data);
 						object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
 
+						object.createPokeSelectList();
+
 						InterfaceMaster.getInstance().init(object);
 					});
 				}
 			}
 		});
+
+		// Create data for Pokemon select dropdown list
+		object.createPokeSelectList = function() {
+			object.pokeSelectList = object.data.pokemon.map(pokemon => ({
+				speciesId: pokemon.speciesId,
+				speciesName: pokemon.speciesName.toLowerCase(),
+				displayName: pokemon.speciesName,
+				dex: pokemon.dex,
+				priority: pokemon.searchPriority || 1,
+				nicknames: pokemon.nicknames || null,
+				tags: pokemon.tags || null
+			}));
+		}
 
 		// function to help speed up searching by resuing Pokemon objects
 		// could likely be used in other instances where `new Pokemon` is called
