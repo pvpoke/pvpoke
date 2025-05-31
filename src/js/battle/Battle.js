@@ -333,7 +333,7 @@ function Battle(){
 					if((action.type == "switch")||((action.type != "switch")&&(poke.hp > 0)&&(opponent.hp > 0))){
 						if((action.type=="fast")&&(mode == "emulate")){
 							// Submit an animation to be played
-							self.pushAnimation(poke.index, "fast", pokemon[action.actor].fastMove.cooldown / 500);
+							self.pushAnimation(poke.index, "fast", pokemon[action.actor].turns);
 						}
 
 						var valid = true;
@@ -1083,10 +1083,10 @@ function Battle(){
 					} else if(defender.bestChargedMove && attacker.bestChargedMove){
 						// If the attacker has no shields, shield this attack if the defender's next move will knock out the attacker
 						var fastToNextCharged = Math.ceil( (defender.bestChargedMove.energy - defender.energy) / defender.fastMove.energyGain);
-						var turnsToNextCharged = fastToNextCharged * (defender.fastMove.cooldown / 500);
+						var turnsToNextCharged = fastToNextCharged * defender.fastMove.turns;
 						var cycleDamage = (fastToNextCharged * defender.fastMove.damage) + defender.bestChargedMove.damage;
 
-						var attackerTurnsToNextCharged = Math.ceil((attacker.activeChargedMoves[0].energy - attacker .energy) / attacker.fastMove.energyGain) * (attacker.fastMove.cooldown / 500);
+						var attackerTurnsToNextCharged = Math.ceil((attacker.activeChargedMoves[0].energy - attacker .energy) / attacker.fastMove.energyGain) * attacker.fastMove.turns;
 
 						if(attacker.stats.atk > defender.stats.atk){
 							attackerTurnsToNextCharged--;
@@ -1713,7 +1713,7 @@ function Battle(){
 
 		// Calculate turns away from fainting with Fast Moves
 
-		var fastMoveTurns = Math.ceil(target.hp / subject.fastMove.damage) * (subject.fastMove.cooldown / 500);
+		var fastMoveTurns = Math.ceil(target.hp / subject.fastMove.damage) * subject.fastMove.turns;
 		var fastestChargedMoveTurns = 100;
 
 		for(var i = 0; i < subject.chargedMoves.length; i++){
@@ -1727,9 +1727,9 @@ function Battle(){
 			}
 
 			if(sequenceDamage >= target.hp){
-				chargedMoveTurns = 1 + (fastMovesFromChargedMove * (subject.fastMove.cooldown / 500));
+				chargedMoveTurns = 1 + (fastMovesFromChargedMove * subject.fastMove.turns);
 			} else{
-				chargedMoveTurns = 1 + (fastMovesFromChargedMove * (subject.fastMove.cooldown / 500)) + (Math.ceil((target.hp-sequenceDamage) / subject.fastMove.damage) * (subject.fastMove.cooldown / 500));
+				chargedMoveTurns = 1 + (fastMovesFromChargedMove * subject.fastMove.turns) + (Math.ceil((target.hp-sequenceDamage) / subject.fastMove.damage) * subject.fastMove.turns);
 			}
 
 			if(chargedMoveTurns < fastestChargedMoveTurns){

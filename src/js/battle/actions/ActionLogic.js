@@ -6,7 +6,7 @@ class ActionLogic {
 	static decideAction(battle, poke, opponent){
 		let turns = battle.getTurns()
 		let action;
-		let chargedMoveReady = [];
+		let chargedMoveReady = []; // Array containing the indices of available charged attacks
 		let winsCMP = poke.stats.atk >= opponent.stats.atk;
 
 		let fastDamage = DamageCalculator.damage(poke, opponent, poke.fastMove);
@@ -31,13 +31,13 @@ class ActionLogic {
 			if (poke.energy >= poke.activeChargedMoves[n].energy) {
 				chargedMoveReady.push(0);
 			} else {
-				chargedMoveReady.push(Math.ceil((poke.activeChargedMoves[n].energy - poke.energy) / poke.fastMove.energyGain) * poke.fastMove.cooldown / 500);
+				chargedMoveReady.push(Math.ceil((poke.activeChargedMoves[n].energy - poke.energy) / poke.fastMove.energyGain) * poke.fastMove.turns);
 			}
 		}
 
 		let turnsToLive = Infinity;
 		let queue = [];
-		let moveTurns = poke.fastMove.cooldown / 500;
+		let moveTurns = poke.fastMove.turns;
 
 		// Check if opponent is in the middle of a fast move and adjust accordingly
 		// ELEMENTS OF STATE: POKEMON HP, OPPONENT ENERGY, CURRENT TURN, SHIELDS
@@ -71,11 +71,11 @@ class ActionLogic {
 
 			if(currState.hp > oppFastDamage){
 				if (winsCMP) {
-					if (currState.turn > poke.fastMove.cooldown / 500) {
+					if (currState.turn > poke.fastMove.turns) {
 						continue;
 					}
 				} else {
-					if (currState.turn > poke.fastMove.cooldown / 500 + 1) {
+					if (currState.turn > poke.fastMove.turns + 1) {
 						continue;
 					}
 				}
@@ -124,14 +124,14 @@ class ActionLogic {
 
 			// Check if a fast move faints, add results to queue
 			if (currState.hp - oppFastDamage <= 0) {
-				turnsToLive = Math.min(currState.turn + (opponent.fastMove.cooldown / 500), turnsToLive);
+				turnsToLive = Math.min(currState.turn + (opponent.fastMove.turns), turnsToLive);
 				break;
 			} else {
 				queue.unshift(
 					{
 						hp: currState.hp - oppFastDamage,
 						opEnergy: currState.opEnergy + opponent.fastMove.energyGain,
-						turn: currState.turn + opponent.fastMove.cooldown / 500,
+						turn: currState.turn + opponent.fastMove.turns,
 						shields: currState.shields
 					}
 				);
@@ -284,7 +284,7 @@ class ActionLogic {
 				}
 
 				// Don't optimize if we have fewer turns to live than we can throw Charged Moves
-				var turnsPlanned = (poke.fastMove.cooldown / 500) + Math.floor(poke.energy / poke.activeChargedMoves[0].energy);
+				var turnsPlanned = poke.fastMove.turns + Math.floor(poke.energy / poke.activeChargedMoves[0].energy);
 
 				if(poke.stats.atk < opponent.stats.atk){
 					turnsPlanned++;
@@ -313,7 +313,7 @@ class ActionLogic {
 				for(var n = 0; n < opponent.activeChargedMoves.length; n++) {
 					var fastMovesFromCharged = Math.ceil((opponent.activeChargedMoves[n].energy - opponent.energy) / opponent.fastMove.energyGain);
 					var fastMovesInFastMove = Math.floor(poke.fastMove.cooldown / opponent.fastMove.cooldown); // How many Fast Moves can the opponent get in if we do an extra move?
-					var turnsFromMove = (fastMovesFromCharged * (opponent.fastMove.cooldown / 500)) + 1;
+					var turnsFromMove = (fastMovesFromCharged * opponent.fastMove.turns) + 1;
 
 					opponent.activeChargedMoves[n].damage = DamageCalculator.damage(opponent, poke, opponent.activeChargedMoves[n]);
 
@@ -323,7 +323,7 @@ class ActionLogic {
 						moveDamage = 1 + (opponent.fastMove.damage * fastMovesInFastMove)
 					}
 
-					if (turnsFromMove <= (poke.fastMove.cooldown / 500) && moveDamage >= poke.hp) {
+					if (turnsFromMove <= poke.fastMove.turns && moveDamage >= poke.hp) {
 						optimizeTiming = false;
 						break;
 					}
@@ -441,7 +441,7 @@ class ActionLogic {
 				if (currState.energy >= poke.activeChargedMoves[n].energy) {
 					DPchargedMoveReady.push(0);
 				} else {
-					DPchargedMoveReady.push(Math.ceil((poke.activeChargedMoves[n].energy - currState.energy) / poke.fastMove.energyGain) * poke.fastMove.cooldown / 500);
+					DPchargedMoveReady.push(Math.ceil((poke.activeChargedMoves[n].energy - currState.energy) / poke.fastMove.energyGain) * poke.fastMove.turns);
 				}
 			}
 
@@ -473,9 +473,9 @@ class ActionLogic {
 				var i = 0;
 				var insertElement = true;
 				if (DPQueue.length == 0) {
-					DPQueue.unshift(new BattleState(currState.energy + poke.fastMove.energyGain * movesToFarmDown, 0, currState.turn + movesToFarmDown * poke.fastMove.cooldown / 500, currState.opponentShields, currState.moves, currState.buffs, currState.chance));
+					DPQueue.unshift(new BattleState(currState.energy + poke.fastMove.energyGain * movesToFarmDown, 0, currState.turn + movesToFarmDown * poke.fastMove.turns, currState.opponentShields, currState.moves, currState.buffs, currState.chance));
 				} else {
-					while (DPQueue[i].turn <= currState.turn + movesToFarmDown * poke.fastMove.cooldown / 500) {
+					while (DPQueue[i].turn <= currState.turn + movesToFarmDown * poke.fastMove.turns) {
 						if (DPQueue[i].hp < 0) {
 							insertElement = false;
 							break;
@@ -486,7 +486,7 @@ class ActionLogic {
 						}
 					}
 					if (insertElement) {
-						DPQueue.splice(i, 0, new BattleState(currState.energy + poke.fastMove.energyGain * movesToFarmDown, 0, currState.turn + movesToFarmDown * poke.fastMove.cooldown / 500, currState.opponentShields, currState.moves, currState.buffs, currState.chance));
+						DPQueue.splice(i, 0, new BattleState(currState.energy + poke.fastMove.energyGain * movesToFarmDown, 0, currState.turn + movesToFarmDown * poke.fastMove.turns, currState.opponentShields, currState.moves, currState.buffs, currState.chance));
 					}
 				}
 
@@ -619,12 +619,12 @@ class ActionLogic {
 					// If move will debuff attack, calculate values when you stack two of them then throw
 					if (poke.activeChargedMoves[n].selfDebuffing && poke.activeChargedMoves[n].buffs[0] < 0 && poke.activeChargedMoves[n].energy * 2 <= 100) {
 
-						var newTurn = Math.ceil((poke.activeChargedMoves[n].energy * 2 - currState.energy) / poke.fastMove.energyGain) * poke.fastMove.cooldown / 500;
-						newEnergy = Math.floor(newTurn / (poke.fastMove.cooldown / 500)) * poke.fastMove.energyGain + currState.energy - poke.activeChargedMoves[n].energy;
+						var newTurn = Math.ceil((poke.activeChargedMoves[n].energy * 2 - currState.energy) / poke.fastMove.energyGain) * poke.fastMove.turns;
+						newEnergy = Math.floor(newTurn / poke.fastMove.turns) * poke.fastMove.energyGain + currState.energy - poke.activeChargedMoves[n].energy;
 
 						if (newTurn != 0) {
 							// Calculate new health
-							newOppHealth = currState.oppHealth - fastSimulatedDamage * (newTurn / (poke.fastMove.cooldown / 500));
+							newOppHealth = currState.oppHealth - fastSimulatedDamage * (newTurn / poke.fastMove.turns);
 
 							// Calculate shield scenarios
 							if (currState.oppShields > 0) {
@@ -668,12 +668,12 @@ class ActionLogic {
 					}
 
 				} else {
-					var newEnergy = currState.energy - poke.activeChargedMoves[n].energy + poke.fastMove.energyGain * (DPchargedMoveReady[n] / (poke.fastMove.cooldown / 500));
-					var newOppHealth = currState.oppHealth - moveDamage - fastSimulatedDamage * (DPchargedMoveReady[n] / (poke.fastMove.cooldown / 500));
+					var newEnergy = currState.energy - poke.activeChargedMoves[n].energy + poke.fastMove.energyGain * (DPchargedMoveReady[n] / poke.fastMove.turns);
+					var newOppHealth = currState.oppHealth - moveDamage - fastSimulatedDamage * (DPchargedMoveReady[n] / poke.fastMove.turns);
 
 					// If shields are up, only apply fast move damage
 					if (currState.oppShields > 0) {
-						newOppHealth = currState.oppHealth - fastSimulatedDamage * (DPchargedMoveReady[n] / (poke.fastMove.cooldown / 500)) - 1;
+						newOppHealth = currState.oppHealth - fastSimulatedDamage * (DPchargedMoveReady[n] / poke.fastMove.turns) - 1;
 					}
 					var newTurn = currState.turn + DPchargedMoveReady[n] + 1;
 					var newShields = currState.oppShields;
@@ -715,11 +715,11 @@ class ActionLogic {
 					// If move will debuff attack, calculate values when you stack two of them then throw
 					if (poke.activeChargedMoves[n].selfDebuffing && poke.activeChargedMoves[n].buffs[0] < 0 && poke.activeChargedMoves[n].energy * 2 <= 100) {
 
-						newTurn = Math.ceil((poke.activeChargedMoves[n].energy * 2 - currState.energy) / poke.fastMove.energyGain) * poke.fastMove.cooldown / 500;
-						newEnergy = Math.floor(newTurn / (poke.fastMove.cooldown / 500)) * poke.fastMove.energyGain + currState.energy - poke.activeChargedMoves[n].energy;
+						newTurn = Math.ceil((poke.activeChargedMoves[n].energy * 2 - currState.energy) / poke.fastMove.energyGain) * poke.fastMove.turns;
+						newEnergy = Math.floor(newTurn / poke.fastMove.turns) * poke.fastMove.energyGain + currState.energy - poke.activeChargedMoves[n].energy;
 
 						// Calculate new health
-						newOppHealth = currState.oppHealth - fastSimulatedDamage * (newTurn / (poke.fastMove.cooldown / 500));
+						newOppHealth = currState.oppHealth - fastSimulatedDamage * (newTurn / poke.fastMove.turns);
 
 						// Calculate shield scenarios
 						if (currState.oppShields > 0) {
@@ -1129,7 +1129,7 @@ class ActionLogic {
 		}
 
 		// If the defender can't afford to let a charged move connect, block
-		var fastDPT = fastDamage / (attacker.fastMove.cooldown / 500);
+		var fastDPT = fastDamage / attacker.fastMove.turns;
 
 		for (var i = 0; i < attacker.chargedMoves.length; i++){
 			var chargedMove = attacker.chargedMoves[i];

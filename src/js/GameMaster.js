@@ -709,6 +709,7 @@ var GameMaster = (function () {
 					energy: m.energy,
 					energyGain: m.energyGain,
 					cooldown: m.cooldown,
+					turns: m.turns,
 					selfDebuffing: false,
 					selfBuffing: false,
 					selfAttackDebuffing: false,
