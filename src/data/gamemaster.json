@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-06-01 19:50:12",
+    "timestamp": "2025-06-01 22:00:40",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -140,6 +140,19 @@
         "title": "Custom",
         "include": [],
         "exclude": []
+    }, {
+        "name": "fossil",
+        "title": "Fossil Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["water", "rock", "steel"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }],
+        "partySize": 3,
+        "presetOnly": true
     }, {
         "name": "gbinvitational",
         "title": "Gymbreakers Invitational Remix",
@@ -375,22 +388,6 @@
             "values": ["jumpluff", "clodsire", "mandibuzz", "malamar", "lapras", "corsola_galarian", "tinkaton", "sableye", "dusknoir", "feraligatr", "corviknight", "weezing_galarian", "grumpig", "diggersby", "primeape", "carbink", "azumarill", "pangoro", "annihilape", "gastrodon", "jellicent", "machoke", "steelix", "toxapex", "morpeko_full_belly", "golurk", "bastiodon", "tinkatuff", "claydol", "clefable", "furret", "stunfisk", "togedemaru", "golisopod", "emolga", "marowak", "sandslash_alolan", "quagsire", "drapion", "guzzlord", "dachsbun", "marowak_alolan", "cradily", "aurorus", "medicham", "machamp", "swalot", "spiritomb", "runerigus", "blastoise", "ninetales_alolan", "registeel", "drifblim", "serperior", "wigglytuff", "talonflame", "umbreon", "lickitung", "dewgong", "lickilicky", "dunsparce", "klefki", "gogoat", "chansey", "skarmory", "blissey", "mudbray", "mudsdale", "skiddo"]
         }]
     }, {
-        "name": "spring",
-        "title": "Spring Cup",
-        "include": [{
-            "filterType": "type",
-            "values": ["water", "grass", "fairy"]
-        }],
-        "exclude": [{
-            "filterType": "tag",
-            "values": ["mega"]
-        }, {
-            "filterType": "id",
-            "values": ["jumpluff", "roserade", "toxapex"]
-        }],
-        "partySize": 3,
-        "presetOnly": true
-    }, {
         "name": "stygian",
         "title": "Devon Stygian Cup",
         "include": [{
@@ -416,6 +413,22 @@
         "useDefaultMovesets": 1,
         "levelCap": 50,
         "includeLowStatProduct": true
+    }, {
+        "name": "sunshine",
+        "title": "Sunshine Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["normal", "fire", "ground", "grass"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "id",
+            "values": ["charizard"]
+        }],
+        "partySize": 3,
+        "presetOnly": true
     }, {
         "name": "tempo",
         "title": "Tempo Cup",
@@ -509,6 +522,25 @@
         "partySize": 3
     }],
     "formats": [{
+        "title": "Sunshine Cup",
+        "cup": "sunshine",
+        "cp": 1500,
+        "meta": "sunshine",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true,
+        "rules": ["Pok\u00e9mon must be at or below 1,500 CP to enter.", "Only Normal-, Fire-, Grass-, and Ground-type Pok\u00e9mon are eligible.", "Charizard is not allowed."]
+    }, {
+        "title": "Fossil Cup",
+        "cup": "fossil",
+        "cp": 1500,
+        "meta": "fossil",
+        "showCup": false,
+        "showFormat": false,
+        "showMeta": false,
+        "hideRankings": true,
+        "rules": ["Pok\u00e9mon must be at or below 1,500 CP to enter.", "Only Water-, Rock-, and Steel-type Pok\u00e9mon are eligible.", "Charizard is not allowed."]
+    }, {
         "title": "Master League (Classic)",
         "cup": "classic",
         "cp": 10000,
