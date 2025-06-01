@@ -402,24 +402,30 @@ var GameMaster = (function () {
 
 				// Pokemon exceptions
 
-				if(pokemon.speciesId == "trevenant"){
-					defaultIVs["cp1500"] = [22, 3, 13, 12];
-				}
+				switch(pokemon.speciesId){
+					case "trevenant":
+						defaultIVs["cp1500"] = [22, 3, 13, 12];
+						break;
 
-				if(pokemon.speciesId == "dhelmise"){
-					defaultIVs["cp1500"] = [20, 1, 4, 4];
-				}
+					case "dhelmise":
+						defaultIVs["cp1500"] = [20, 1, 4, 4];
+						break;
 
-				if(pokemon.speciesId == "medicham"){
-					defaultIVs["cp1500"] = [49, 7, 15, 14];
-				}
+					case "medicham":
+						defaultIVs["cp1500"] = [49, 7, 15, 14];
+						break;
 
-				if(pokemon.speciesId == "typhlosion_hisuian"){
-					defaultIVs["cp1500"] = [20, 1, 1, 2];
-				}
+					case "typhlosion_hisuian":
+						defaultIVs["cp1500"] = [20, 1, 1, 2];
+						break;
 
-				if(pokemon.speciesId == "lokix"){
-					defaultIVs["cp2500"] = [47.5, 11, 15, 15];
+					case "lokix":
+						defaultIVs["cp2500"] = [47.5, 11, 15, 15];
+						break;
+
+					case "regidrago":
+						defaultIVs["cp1500"] = [20, 2, 4, 4];
+						break;
 				}
 
 				entry.defaultIVs = defaultIVs;

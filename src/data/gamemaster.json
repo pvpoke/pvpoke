@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-05-30 02:32:29",
+    "timestamp": "2025-06-01 19:50:12",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -38390,7 +38390,7 @@
         "chargedMoves": ["HYPER_BEAM", "OUTRAGE", "DRAGON_PULSE", "BREAKING_SWIPE"],
         "defaultIVs": {
             "cp500": [6.5, 4, 12, 11],
-            "cp1500": [1, 0, 0, 0],
+            "cp1500": [20, 2, 4, 4],
             "cp2500": [31.5, 6, 15, 13]
         },
         "tags": ["legendary"],
@@ -42046,6 +42046,16 @@
         "buffApplyChance": "0.1",
         "archetype": "Debuff"
     }, {
+        "moveId": "CRUSH_GRIP",
+        "name": "Crush Grip",
+        "abbreviation": "CrG",
+        "type": "normal",
+        "power": 110,
+        "energy": 50,
+        "energyGain": 0,
+        "cooldown": 500,
+        "archetype": "General"
+    }, {
         "moveId": "CUT",
         "name": "Cut",
         "abbreviation": "Cu",
@@ -42182,6 +42192,16 @@
         "energyGain": 0,
         "cooldown": 500,
         "archetype": "Spam/Bait"
+    }, {
+        "moveId": "DRAGON_Energy",
+        "name": "Dragon Energy",
+        "abbreviation": "DrE",
+        "type": "dragon",
+        "power": 100,
+        "energy": 45,
+        "energyGain": 0,
+        "cooldown": 500,
+        "archetype": "General"
     }, {
         "moveId": "DRAGON_PULSE",
         "name": "Dragon Pulse",
@@ -44418,6 +44438,19 @@
         "energyGain": 0,
         "cooldown": 500,
         "archetype": "High Energy"
+    }, {
+        "moveId": "THUNDER_CAGE",
+        "name": "Thunder Cage",
+        "abbreviation": "ThC",
+        "type": "electric",
+        "power": 60,
+        "energy": 40,
+        "energyGain": 0,
+        "cooldown": 500,
+        "buffs": [0, -1],
+        "buffTarget": "opponent",
+        "buffApplyChance": "1",
+        "archetype": "Debuff"
     }, {
         "moveId": "THUNDER_FANG",
         "name": "Thunder Fang",

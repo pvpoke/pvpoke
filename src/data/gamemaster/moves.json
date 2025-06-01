@@ -489,6 +489,16 @@
     "buffApplyChance": "0.1",
     "archetype": "Debuff"
 }, {
+    "moveId": "CRUSH_GRIP",
+    "name": "Crush Grip",
+    "abbreviation": "CrG",
+	"type": "normal",
+    "power": 110,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
+}, {
     "moveId": "CUT",
     "name": "Cut",
     "abbreviation": "Cu",
@@ -625,6 +635,16 @@
     "energyGain": 0,
     "cooldown": 500,
     "archetype": "Spam/Bait"
+}, {
+    "moveId": "DRAGON_Energy",
+    "name": "Dragon Energy",
+	"abbreviation": "DrE",
+    "type": "dragon",
+    "power": 100,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
 }, {
     "moveId": "DRAGON_PULSE",
     "name": "Dragon Pulse",
@@ -2861,6 +2881,19 @@
     "energyGain": 0,
     "cooldown": 500,
     "archetype": "High Energy"
+}, {
+    "moveId": "THUNDER_CAGE",
+    "name": "Thunder Cage",
+    "abbreviation": "ThC",
+    "type": "electric",
+    "power": 60,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+	"buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": "1",
+    "archetype": "Debuff"
 }, {
     "moveId": "THUNDER_FANG",
     "name": "Thunder Fang",
