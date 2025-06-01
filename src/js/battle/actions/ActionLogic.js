@@ -6,7 +6,7 @@ class ActionLogic {
 	static decideAction(battle, poke, opponent){
 		let turns = battle.getTurns()
 		let action;
-		let chargedMoveReady = []; // Array containing the indices of available charged attacks
+		let chargedMoveReady = []; // Array containing how many turns to reach active charged attacks
 		let winsCMP = poke.stats.atk >= opponent.stats.atk;
 
 		let fastDamage = DamageCalculator.damage(poke, opponent, poke.fastMove);
@@ -18,7 +18,7 @@ class ActionLogic {
 			return;
 		}
 
-		// If no charged move ready, always throw fast move or farm energy is on
+		// If no charged move ready or farm energy is on, always throw fast move
 		if (poke.energy < poke.fastestChargedMove.energy || poke.farmEnergy) {
 			return;
 		}
