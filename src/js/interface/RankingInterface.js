@@ -1170,6 +1170,9 @@ var InterfaceMaster = (function () {
 				var weaknessArr = effectivenessArr.filter(type => type.displayVal > 1);
 				var resistanceArr = effectivenessArr.filter(type => type.displayVal < 1);
 
+				weaknessArr.sort((a,b) => (a.val > b.val) ? -1 : ((b.val > a.val) ? 1 : 0));
+				resistanceArr.sort((a,b) => (a.val > b.val) ? 1 : ((b.val > a.val) ? -1 : 0));
+
 				for(var i = 0; i < weaknessArr.length; i++){
 					$details.find(".detail-section .weaknesses").append("<div class=\"type "+weaknessArr[i].type+"\"><div class=\"multiplier\">x"+weaknessArr[i].displayVal+"</div><div>"+weaknessArr[i].type+"</div></div>");
 				}
