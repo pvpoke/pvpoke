@@ -18,10 +18,9 @@
 		"cup": "fossil",
 		"cp": 1500,
 		"meta": "fossil",
-		"showCup": false,
-		"showFormat": false,
-		"showMeta": false,
-		"hideRankings": true,
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
 		"rules": [
 			"Pokémon must be at or below 1,500 CP to enter.",
 			"Only Water-, Rock-, and Steel-type Pokémon are eligible.",
