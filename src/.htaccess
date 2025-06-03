@@ -15,6 +15,7 @@ RewriteRule ^world-of-wonders/(.*)$ /$1 [R,L]
 RewriteRule ^shared-skies/(.*)$ /$1 [R,L]
 RewriteRule ^new-season/(.*)$ /$1 [R,L]
 RewriteRule ^might-and-mastery/(.*)$ /$1 [R,L]
+RewriteRule ^delightful-days/(.*)$ /$1 [R,L]
 
 Options -Indexes
 
