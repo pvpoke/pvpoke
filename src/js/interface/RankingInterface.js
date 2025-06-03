@@ -1159,25 +1159,26 @@ var InterfaceMaster = (function () {
 					if (pokemon.typeEffectiveness.hasOwnProperty(type)) {
 						effectivenessArr.push({
 	 					   type: type,
-	 					   val: pokemon.typeEffectiveness[type]
+	 					   val: pokemon.typeEffectiveness[type],
+						   displayVal: Math.floor(pokemon.typeEffectiveness[type] * 1000) / 1000
 	 				   });
 					}
 				}
 
-				effectivenessArr.sort((a,b) => (a.val > b.val) ? -1 : ((b.val > a.val) ? 1 : 0));
+				//effectivenessArr.sort((a,b) => (a.val > b.val) ? -1 : ((b.val > a.val) ? 1 : 0));
 
-				for(var i = 0; i < effectivenessArr.length; i++){
-					var num = Math.floor(effectivenessArr[i].val * 1000) / 1000;
-					if(effectivenessArr[i].val > 1){
-						$details.find(".detail-section .weaknesses").append("<div class=\"type "+effectivenessArr[i].type+"\"><div class=\"multiplier\">x"+num+"</div><div>"+effectivenessArr[i].type+"</div></div>");
-					}
+				var weaknessArr = effectivenessArr.filter(type => type.displayVal > 1);
+				var resistanceArr = effectivenessArr.filter(type => type.displayVal < 1);
+
+				weaknessArr.sort((a,b) => (a.val > b.val) ? -1 : ((b.val > a.val) ? 1 : 0));
+				resistanceArr.sort((a,b) => (a.val > b.val) ? 1 : ((b.val > a.val) ? -1 : 0));
+
+				for(var i = 0; i < weaknessArr.length; i++){
+					$details.find(".detail-section .weaknesses").append("<div class=\"type "+weaknessArr[i].type+"\"><div class=\"multiplier\">x"+weaknessArr[i].displayVal+"</div><div>"+weaknessArr[i].type+"</div></div>");
 				}
 
-				for(var i = effectivenessArr.length - 1; i >= 0; i--){
-					var num = Math.floor(effectivenessArr[i].val * 1000) / 1000;
-					if(effectivenessArr[i].val < 1){
-						$details.find(".detail-section .resistances").append("<div class=\"type "+effectivenessArr[i].type+"\"><div class=\"multiplier\">x"+num+"</div><div>"+effectivenessArr[i].type+"</div></div>");
-					}
+				for(var i = 0; i < resistanceArr.length; i++){
+					$details.find(".detail-section .resistances").append("<div class=\"type "+resistanceArr[i].type+"\"><div class=\"multiplier\">x"+resistanceArr[i].displayVal+"</div><div>"+resistanceArr[i].type+"</div></div>");
 				}
 
 				// Display Pokemon's stat ranges

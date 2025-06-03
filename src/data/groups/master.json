@@ -156,11 +156,15 @@
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["BULLDOZE", "OUTRAGE"]
 }, {
-    "speciesId": "zamazenta_crowned_shield",
-    "fastMove": "METAL_CLAW",
-    "chargedMoves": ["BEHEMOTH_BASH", "CLOSE_COMBAT"]
+    "speciesId": "lunala",
+    "fastMove": "SHADOW_CLAW",
+    "chargedMoves": ["SHADOW_BALL", "MOONBLAST"]
 }, {
     "speciesId": "zacian_crowned_sword",
     "fastMove": "METAL_CLAW",
-    "chargedMoves": ["BEHEMOTH_BLADE", "CLOSE_COMBAT"]
+    "chargedMoves": ["CLOSE_COMBAT", "BEHEMOTH_BLADE"]
+}, {
+    "speciesId": "zamazenta_crowned_shield",
+    "fastMove": "METAL_CLAW",
+    "chargedMoves": ["CLOSE_COMBAT", "BEHEMOTH_BASH"]
 }]

@@ -402,24 +402,30 @@ var GameMaster = (function () {
 
 				// Pokemon exceptions
 
-				if(pokemon.speciesId == "trevenant"){
-					defaultIVs["cp1500"] = [22, 3, 13, 12];
-				}
+				switch(pokemon.speciesId){
+					case "trevenant":
+						defaultIVs["cp1500"] = [22, 3, 13, 12];
+						break;
 
-				if(pokemon.speciesId == "dhelmise"){
-					defaultIVs["cp1500"] = [20, 1, 4, 4];
-				}
+					case "dhelmise":
+						defaultIVs["cp1500"] = [20, 1, 4, 4];
+						break;
 
-				if(pokemon.speciesId == "medicham"){
-					defaultIVs["cp1500"] = [49, 7, 15, 14];
-				}
+					case "medicham":
+						defaultIVs["cp1500"] = [49, 7, 15, 14];
+						break;
 
-				if(pokemon.speciesId == "typhlosion_hisuian"){
-					defaultIVs["cp1500"] = [20, 1, 1, 2];
-				}
+					case "typhlosion_hisuian":
+						defaultIVs["cp1500"] = [20, 1, 1, 2];
+						break;
 
-				if(pokemon.speciesId == "lokix"){
-					defaultIVs["cp2500"] = [47.5, 11, 15, 15];
+					case "lokix":
+						defaultIVs["cp2500"] = [47.5, 11, 15, 15];
+						break;
+
+					case "regidrago":
+						defaultIVs["cp1500"] = [20, 2, 4, 4];
+						break;
 				}
 
 				entry.defaultIVs = defaultIVs;
@@ -974,7 +980,7 @@ var GameMaster = (function () {
 				minStats = 0;
 			}
 
-			var bannedList = ["mewtwo","mewtwo_armored","giratina_altered","groudon","kyogre","palkia","dialga","cobalion","terrakion","virizion","regigigas","tornadus_therian","tornadus_therian_xl", "landorus_therian", "reshiram", "zekrom", "kyurem", "genesect_burn", "xerneas", "thundurus_therian", "yveltal", "meloetta_aria", "zacian", "zamazenta", "zacian_hero", "zamazenta_hero", "genesect_douse", "zarude", "hoopa_unbound", "genesect_shock", "tapu_koko", "tapu_lele", "tapu_bulu", "nihilego", "genesect_chill", "solgaleo", "lunala", "keldeo_ordinary", "kyogre_primal", "groudon_primal", "zygarde_complete", "enamorus_therian", "enamorus_incarnate", "dialga_origin", "palkia_origin", "necrozma", "necrozma_dawn_wings", "necrozma_dusk_mane", "marshadow", "kyurem_black", "kyurem_white"];
+			var bannedList = ["mewtwo","mewtwo_armored","giratina_altered","groudon","kyogre","palkia","dialga","cobalion","terrakion","virizion","regigigas","tornadus_therian","tornadus_therian_xl", "landorus_therian", "reshiram", "zekrom", "kyurem", "genesect_burn", "xerneas", "thundurus_therian", "yveltal", "meloetta_aria", "zacian", "zamazenta", "zacian_hero", "zamazenta_hero", "genesect_douse", "zarude", "hoopa_unbound", "genesect_shock", "tapu_koko", "tapu_lele", "tapu_bulu", "nihilego", "genesect_chill", "solgaleo", "lunala", "keldeo_ordinary", "kyogre_primal", "groudon_primal", "zygarde_complete", "enamorus_therian", "enamorus_incarnate", "dialga_origin", "palkia_origin", "necrozma", "necrozma_dawn_wings", "necrozma_dusk_mane", "marshadow", "kyurem_black", "kyurem_white", "zacian_crowned_sword", "zamazenta_crowned_shield"];
 
 			// Aggregate filters
 

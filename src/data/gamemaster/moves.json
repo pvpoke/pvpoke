@@ -5,9 +5,9 @@
     "type": "poison",
     "power": 6,
     "energy": 0,
-    "energyGain": 5,
+    "energyGain": 8,
     "cooldown": 1000,
-    "archetype": "Low Quality"
+    "archetype": "Multipurpose"
 }, {
     "moveId": "ACID_SPRAY",
     "name": "Acid Spray",
@@ -340,11 +340,11 @@
     "name": "Bug Bite",
     "abbreviation": "BBi",
     "type": "bug",
-    "power": 3,
+    "power": 4,
     "energy": 0,
     "energyGain": 3,
     "cooldown": 500,
-    "archetype": "General"
+    "archetype": "Multipurpose"
 }, {
     "moveId": "BUG_BUZZ",
     "name": "Bug Buzz",
@@ -375,11 +375,11 @@
     "moveId": "BULLET_PUNCH",
     "name": "Bullet Punch",
     "type": "steel",
-    "power": 6,
+    "power": 8,
     "energy": 0,
     "energyGain": 7,
     "cooldown": 1000,
-    "archetype": "General"
+    "archetype": "Multipurpose"
 }, {
     "moveId": "BULLET_SEED",
     "name": "Bullet Seed",
@@ -486,8 +486,18 @@
     "cooldown": 500,
     "buffs": [0, -1],
     "buffTarget": "opponent",
-    "buffApplyChance": "0.3",
+    "buffApplyChance": "0.1",
     "archetype": "Debuff"
+}, {
+    "moveId": "CRUSH_GRIP",
+    "name": "Crush Grip",
+    "abbreviation": "CrG",
+	"type": "normal",
+    "power": 110,
+    "energy": 50,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
 }, {
     "moveId": "CUT",
     "name": "Cut",
@@ -558,7 +568,7 @@
     "moveId": "DOOM_DESIRE",
     "name": "Doom Desire",
     "type": "steel",
-    "power": 75,
+    "power": 80,
     "energy": 40,
     "energyGain": 0,
     "cooldown": 500,
@@ -568,7 +578,7 @@
     "name": "Double Iron Bash",
 	"abbreviation": "DbI",
     "type": "steel",
-    "power": 50,
+    "power": 55,
     "energy": 35,
     "energyGain": 0,
     "cooldown": 500,
@@ -625,6 +635,16 @@
     "energyGain": 0,
     "cooldown": 500,
     "archetype": "Spam/Bait"
+}, {
+    "moveId": "DRAGON_Energy",
+    "name": "Dragon Energy",
+	"abbreviation": "DrE",
+    "type": "dragon",
+    "power": 100,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General"
 }, {
     "moveId": "DRAGON_PULSE",
     "name": "Dragon Pulse",
@@ -723,9 +743,9 @@
     "type": "fire",
     "power": 7,
     "energy": 0,
-    "energyGain": 6,
+    "energyGain": 7,
     "cooldown": 1000,
-    "archetype": "Heavy Damage"
+    "archetype": "Multipurpose"
 }, {
     "moveId": "ENERGY_BALL",
     "name": "Energy Ball",
@@ -996,11 +1016,11 @@
     "moveId": "FURY_CUTTER",
     "name": "Fury Cutter",
     "type": "bug",
-    "power": 2,
+    "power": 3,
     "energy": 0,
     "energyGain": 4,
     "cooldown": 500,
-    "archetype": "Fast Charge"
+    "archetype": "Multipurpose"
 }, {
     "moveId": "FUSION_BOLT",
     "name": "Fusion Bolt",
@@ -1680,7 +1700,7 @@
     "name": "Metal Sound",
 	"abbreviation": "MSo",
     "type": "steel",
-    "power": 3,
+    "power": 5,
     "energy": 0,
     "energyGain": 8,
     "cooldown": 1000,
@@ -1938,12 +1958,12 @@
     "abbreviation": "PbC",
     "type": "electric",
     "power": 70,
-    "energy": 50,
+    "energy": 45,
     "energyGain": 0,
     "cooldown": 500,
 	"buffs": [0, 1],
     "buffTarget": "self",
-    "buffApplyChance": ".66",
+    "buffApplyChance": "1",
     "archetype": "Boost"
 }, {
     "moveId": "PAYBACK",
@@ -2862,6 +2882,19 @@
     "cooldown": 500,
     "archetype": "High Energy"
 }, {
+    "moveId": "THUNDER_CAGE",
+    "name": "Thunder Cage",
+    "abbreviation": "ThC",
+    "type": "electric",
+    "power": 60,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+	"buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": "1",
+    "archetype": "Debuff"
+}, {
     "moveId": "THUNDER_FANG",
     "name": "Thunder Fang",
     "type": "electric",
@@ -3164,27 +3197,10 @@
     "energy": 45,
     "energyGain": 0,
     "cooldown": 500,
-    "archetype": "General"
-}, {
-    "moveId": "WRAP_GREEN",
-    "name": "Wrap Green",
-    "abbreviation": "WrG",
-    "type": "normal",
-    "power": 25,
-    "energy": 45,
-    "energyGain": 0,
-    "cooldown": 500,
-    "archetype": "General"
-}, {
-    "moveId": "WRAP_PINK",
-    "name": "Wrap Pink",
-    "abbreviation": "WrP",
-    "type": "normal",
-    "power": 25,
-    "energy": 45,
-    "energyGain": 0,
-    "cooldown": 500,
-    "archetype": "General"
+	"buffs": [0, -1],
+    "buffTarget": "opponent",
+    "buffApplyChance": "1",
+    "archetype": "Debuff"
 }, {
     "moveId": "X_SCISSOR",
     "name": "X-Scissor",

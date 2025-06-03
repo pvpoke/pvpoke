@@ -55,7 +55,7 @@
     "shadowType": "shadow"
 }, {
     "speciesId": "forretress",
-    "fastMove": "VOLT_SWITCH",
+    "fastMove": "BUG_BITE",
     "chargedMoves": ["ROCK_TOMB", "EARTHQUAKE"]
 }, {
     "speciesId": "giratina_altered",
@@ -67,7 +67,7 @@
     "chargedMoves": ["DRAGON_CLAW", "SHADOW_SNEAK"]
 }, {
     "speciesId": "gliscor",
-    "fastMove": "SAND_ATTACK",
+    "fastMove": "FURY_CUTTER",
     "chargedMoves": ["AERIAL_ACE", "EARTHQUAKE"]
 }, {
     "speciesId": "golisopod",
@@ -108,12 +108,11 @@
 }, {
     "speciesId": "moltres_galarian",
     "fastMove": "SUCKER_PUNCH",
-    "chargedMoves": ["ANCIENT_POWER", "BRAVE_BIRD"]
+    "chargedMoves": ["FLY", "BRAVE_BIRD"]
 }, {
     "speciesId": "nidoqueen",
-    "fastMove": "POISON_JAB",
-    "chargedMoves": ["POISON_FANG", "EARTH_POWER"],
-    "shadowType": "shadow"
+    "fastMove": "POISON_STING",
+    "chargedMoves": ["POISON_FANG", "EARTH_POWER"]
 }, {
     "speciesId": "pangoro",
     "fastMove": "KARATE_CHOP",
@@ -135,12 +134,16 @@
     "fastMove": "INCINERATE",
     "chargedMoves": ["TORCH_SONG", "SHADOW_BALL"]
 }, {
+    "speciesId": "steelix",
+    "fastMove": "THUNDER_FANG",
+    "chargedMoves": ["PSYCHIC_FANGS", "BREAKING_SWIPE"]
+}, {
     "speciesId": "talonflame",
     "fastMove": "INCINERATE",
     "chargedMoves": ["FLY", "FLAME_CHARGE"]
 }, {
     "speciesId": "tentacruel",
-    "fastMove": "POISON_JAB",
+    "fastMove": "ACID",
     "chargedMoves": ["SCALD", "BLIZZARD"]
 }, {
     "speciesId": "typhlosion",
@@ -167,7 +170,28 @@
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["BULLDOZE", "OUTRAGE"]
 }, {
-    "speciesId": "steelix",
-    "fastMove": "THUNDER_FANG",
-    "chargedMoves": ["PSYCHIC_FANGS", "BREAKING_SWIPE"]
+    "speciesId": "bellibolt",
+    "fastMove": "SUCKER_PUNCH",
+    "chargedMoves": ["PARABOLIC_CHARGE", "ZAP_CANNON"]
+}, {
+    "speciesId": "golisopod",
+    "fastMove": "FURY_CUTTER",
+    "chargedMoves": ["X_SCISSOR", "AQUA_JET"]
+}, {
+    "speciesId": "tinkaton",
+    "fastMove": "FAIRY_WIND",
+    "chargedMoves": ["PLAY_ROUGH", "BULLDOZE"]
+}, {
+    "speciesId": "cradily",
+    "fastMove": "ACID",
+    "chargedMoves": ["ROCK_TOMB", "GRASS_KNOT"]
+}, {
+    "speciesId": "samurott",
+    "fastMove": "FURY_CUTTER",
+    "chargedMoves": ["HYDRO_CANNON", "MEGAHORN"]
+}, {
+    "speciesId": "scizor_shadow",
+    "fastMove": "BULLET_PUNCH",
+    "chargedMoves": ["NIGHT_SLASH", "TRAILBLAZE"],
+    "shadowType": "shadow"
 }]
