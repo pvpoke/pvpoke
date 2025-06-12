@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-06-03 22:59:33",
+    "timestamp": "2025-06-12 02:14:31",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -36,6 +36,36 @@
             "filterType": "tag",
             "values": ["mega"]
         }]
+    }, {
+        "name": "ascension",
+        "title": "Devon Corp (Ascension Cup)",
+        "include": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["electric", "fire", "psychic"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["lapras", "starmie"]
+        }],
+        "exclude": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["dragon", "ghost", "ground", "rock", "steel", "water", "normal"]
+        }, {
+            "filterType": "tag",
+            "name": "Tag",
+            "values": ["shadow", "mega"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["bellibolt", "furret", "morpeko_full_belly", "dedenne", "malamar"]
+        }],
+        "overrides": [],
+        "league": 1500,
+        "useDefaultMovesets": 1,
+        "levelCap": 50,
+        "excludeLowPokemon": 1
     }, {
         "name": "battlefrontiergreat",
         "title": "Battle Frontier (Great)",
@@ -604,6 +634,14 @@
         "cup": "rivalry",
         "cp": 1500,
         "meta": "rivalry",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Devon Ascension Cup",
+        "cup": "ascension",
+        "cp": 1500,
+        "meta": "ascension",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
