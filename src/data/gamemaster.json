@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-06-12 02:14:31",
+    "timestamp": "2025-06-14 03:03:17",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -444,6 +444,17 @@
         "levelCap": 50,
         "includeLowStatProduct": true
     }, {
+        "name": "summer",
+        "title": "Summer Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["normal", "grass", "fire", "water", "electric", "bug"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }]
+    }, {
         "name": "sunshine",
         "title": "Sunshine Cup",
         "include": [{
@@ -552,15 +563,6 @@
         "partySize": 3
     }],
     "formats": [{
-        "title": "Sunshine Cup",
-        "cup": "sunshine",
-        "cp": 1500,
-        "meta": "sunshine",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true,
-        "rules": ["Pok\u00e9mon must be at or below 1,500 CP to enter.", "Only Normal-, Fire-, Grass-, and Ground-type Pok\u00e9mon are eligible.", "Charizard is not allowed."]
-    }, {
         "title": "Fossil Cup",
         "cup": "fossil",
         "cp": 1500,
@@ -569,6 +571,15 @@
         "showFormat": true,
         "showMeta": true,
         "rules": ["Pok\u00e9mon must be at or below 1,500 CP to enter.", "Only Water-, Rock-, and Steel-type Pok\u00e9mon are eligible.", "Charizard is not allowed."]
+    }, {
+        "title": "Summer Cup (Ultra League)",
+        "cup": "summer",
+        "cp": 2500,
+        "meta": "summerultra",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true,
+        "rules": ["Pok\u00e9mon must be at or below 2,500 CP to enter.", "Only Normal-, Fire-, Water-, Grass-, Electric-, and Bug-type Pok\u00e9mon are eligible."]
     }, {
         "title": "Master League (Classic)",
         "cup": "classic",
