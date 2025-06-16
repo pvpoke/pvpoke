@@ -265,6 +265,8 @@ var InterfaceMaster = (function () {
 
 			this.updateTeamResults = function(){
 
+				let startTime = performance.now();
+
 				var key = battle.getCup().name + "overall" + battle.getCP();
 
 				if(! gm.rankings[key]){
@@ -850,6 +852,10 @@ var InterfaceMaster = (function () {
 
 
 				runningResults = false;
+
+				let endTime = performance.now();
+
+				console.log("Execution time " + (endTime-startTime) + "ms");
 			}
 
 			// Display the list of alternative Pokemon given a list of searched Pokemon
@@ -1104,7 +1110,7 @@ var InterfaceMaster = (function () {
 				for(var n = 0; n < allTypes.length; n++){
 
 					if(direction == "offense"){
-						var effectiveness = battle.getEffectiveness(subjectTypes[0], [allTypes[n]]);
+						var effectiveness = DamageCalculator.getEffectiveness(subjectTypes[0], [allTypes[n]]);
 
 						// Round to nearest thousandths to avoid Javascript floating point wonkiness
 
@@ -1112,7 +1118,7 @@ var InterfaceMaster = (function () {
 
 						arr.push(effectiveness);
 					} else if(direction == "defense"){
-						effectiveness = battle.getEffectiveness(allTypes[n], subjectTypes);
+						effectiveness = DamageCalculator.getEffectiveness(allTypes[n], subjectTypes);
 
 						// Round to nearest thousandths to avoid Javascript floating point wonkiness
 
@@ -1518,8 +1524,10 @@ var InterfaceMaster = (function () {
 				}
 
 				$(".poke-select-container .poke.multi .add-poke-btn").trigger("click", false);
-				$(".modal .poke-select option[value=\""+id+"\"]").prop("selected", "selected");
-				$(".modal .poke-select").trigger("change");
+
+				let pokeSelector = multiSelectors[0].getPokeSelector();
+				pokeSelector.setPokemon(id);
+
 				$("html, body").animate({ scrollTop: $(".poke.multi").offset().top }, 500);
 
 				// Use alias default moveset if it exists

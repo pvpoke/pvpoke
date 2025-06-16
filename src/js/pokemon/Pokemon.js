@@ -322,11 +322,11 @@ function Pokemon(id, i, b){
 		this.stats.hp = Math.max(Math.floor(this.cpm * (this.baseStats.hp+this.ivs.hp)), 10);
 
 		// Set Shedinja hp to 10
-		
+
 		if (data.dex == 292) {
 			this.stats.hp = 10;
 		}
-		
+
 		this.hp = this.stats.hp;
 		this.startHp = this.hp;
 
@@ -568,14 +568,14 @@ function Pokemon(id, i, b){
 		var maxAttack = self.generateIVCombinations("atk", 1, 1)[0].atk * self.shadowAtkMult * attackStatMultiplier;
 		var maxDefense = defender.generateIVCombinations("def", 1, 1)[0].def;
 
-		var minDamage = battle.calculateDamageByStats(self, defender, minAttack, defender.stats.def * defender.shadowDefMult * defenseStatMultiplier, effectiveness, move);
-		var maxDamage = battle.calculateDamageByStats(self, defender, maxAttack, defender.stats.def * defender.shadowDefMult * defenseStatMultiplier, effectiveness, move);
+		var minDamage = DamageCalculator.damageByStats(self, defender, minAttack, defender.stats.def * defender.shadowDefMult * defenseStatMultiplier, effectiveness, move);
+		var maxDamage = DamageCalculator.damageByStats(self, defender, maxAttack, defender.stats.def * defender.shadowDefMult * defenseStatMultiplier, effectiveness, move);
 
 		var breakpoints = [];
 
 		for(var i = minDamage; i <= maxDamage; i++){
-			var breakpoint = battle.calculateBreakpoint(self, defender, i, defender.stats.def * defender.shadowDefMult * defenseStatMultiplier, effectiveness, move);
-			var maxDefenseBreakpoint = battle.calculateBreakpoint(self, defender, i, maxDefense * defender.shadowDefMult * defenseStatMultiplier, effectiveness, move);
+			var breakpoint = DamageCalculator.breakpoint(self, defender, i, defender.stats.def * defender.shadowDefMult * defenseStatMultiplier, effectiveness, move);
+			var maxDefenseBreakpoint = DamageCalculator.breakpoint(self, defender, i, maxDefense * defender.shadowDefMult * defenseStatMultiplier, effectiveness, move);
 
 			if(maxDefenseBreakpoint > maxAttack){
 				maxDefenseBreakpoint = -1;
@@ -601,13 +601,13 @@ function Pokemon(id, i, b){
 		var minDefense = self.generateIVCombinations("def", -1, 1)[0].def * self.shadowDefMult * defenseStatMultiplier;
 		var maxDefense = self.generateIVCombinations("def", 1, 1)[0].def * self.shadowDefMult * defenseStatMultiplier;
 		var maxAttack = attacker.generateIVCombinations("atk", 1, 1)[0].atk * attacker.shadowAtkMult;
-		var minDamage = battle.calculateDamageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult * attackStatMultiplier, maxDefense, effectiveness, move);
-		var maxDamage = battle.calculateDamageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult * attackStatMultiplier, minDefense, effectiveness, move);
+		var minDamage = DamageCalculator.damageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult * attackStatMultiplier, maxDefense, effectiveness, move);
+		var maxDamage = DamageCalculator.damageByStats(attacker, self, attacker.stats.atk * attacker.shadowAtkMult * attackStatMultiplier, minDefense, effectiveness, move);
 		var breakpoints = [];
 
 		for(var i = minDamage; i <= maxDamage; i++){
-			var bulkpoint = battle.calculateBulkpoint(attacker, self, i, attacker.stats.atk * attacker.shadowAtkMult * attackStatMultiplier, effectiveness, move);
-			var maxAttackBulkpoint = battle.calculateBulkpoint(attacker, self, i, maxAttack  * attacker.shadowAtkMult * attackStatMultiplier, effectiveness, move);
+			var bulkpoint = DamageCalculator.bulkpoint(attacker, self, i, attacker.stats.atk * attacker.shadowAtkMult * attackStatMultiplier, effectiveness, move);
+			var maxAttackBulkpoint = DamageCalculator.bulkpoint(attacker, self, i, maxAttack  * attacker.shadowAtkMult * attackStatMultiplier, effectiveness, move);
 
 			if(maxAttackBulkpoint > maxDefense){
 				maxAttackBulkpoint = -1;
@@ -628,7 +628,7 @@ function Pokemon(id, i, b){
 
 	this.getStab = function(move){
 		if((move.type == this.types[0]) || (move.type == this.types[1])){
-			return 1.2000000476837158203125;
+			return DamageMultiplier.STAB;
 		} else{
 			return 1;
 		}
@@ -791,7 +791,7 @@ function Pokemon(id, i, b){
 		move.stab = self.getStab(move);
 
 		if(opponent){
-			move.damage = battle.calculateDamage(self, opponent, move);
+			move.damage = DamageCalculator.damage(self, opponent, move);
 		} else{
 			move.damage = Math.floor(move.power * move.stab);
 		}
@@ -1348,7 +1348,7 @@ function Pokemon(id, i, b){
 			var bestEffectiveness = 0;
 
 			for(var n = 0; n < self.chargedMoves.length; n++){
-				var effectiveness = battle.getEffectiveness(self.chargedMoves[n].type, [types[i].toLowerCase(), "none"]);
+				var effectiveness = DamageCalculator.getEffectiveness(self.chargedMoves[n].type, [types[i].toLowerCase(), "none"]);
 				var effectivePower = ((self.chargedMoves[n].power * self.chargedMoves[n].stab * self.shadowAtkMult * effectiveness) * (self.stats.atk / targetDef));
 				var bestChargedMoveSpeed = Math.ceil(self.chargedMoves[n].energy / self.fastMove.energyGain) * (self.fastMove.cooldown / 500);
 				effectivePower = effectivePower * (30 / bestChargedMoveSpeed);
@@ -1784,7 +1784,7 @@ function Pokemon(id, i, b){
 		var allTypes = getAllTypes();
 
 		for(var n = 0; n < allTypes.length; n++){
-			effectiveness = battle.getEffectiveness(allTypes[n], self.types);
+			effectiveness = DamageCalculator.getEffectiveness(allTypes[n], self.types);
 			arr[allTypes[n].toLowerCase()] = effectiveness;
 		}
 
@@ -1808,6 +1808,7 @@ function Pokemon(id, i, b){
 		self.damageWindow = 0;
 		self.shields = self.startingShields;
 		self.statBuffs = [self.startStatBuffs[0], self.startStatBuffs[1]];
+		self.faintSource = '';
 
 		if(self.activeFormId != self.startFormId){
 			self.changeForm(self.startFormId);
@@ -2107,8 +2108,8 @@ function Pokemon(id, i, b){
 		self.shadowType = val;
 
 		if(self.shadowType == "shadow"){
-			self.shadowAtkMult = gm.data.settings.shadowAtkMult;
-			self.shadowDefMult = gm.data.settings.shadowDefMult;
+			self.shadowAtkMult = DamageMultiplier.SHADOW_ATK;
+			self.shadowDefMult = DamageMultiplier.SHADOW_DEF;
 
 			if(self.speciesName.indexOf("Shadow") == -1){
 				self.speciesName = self.speciesName + " (Shadow)";
