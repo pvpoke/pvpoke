@@ -1028,7 +1028,7 @@ function Battle(){
 		charge = typeof charge !== 'undefined' ? charge : 1;
 
 		var type = "fast " + move.type;
-		var damage = DamageCalculator.damage(attacker, defender, move, charge, mode);
+		var damage = DamageCalculator.damage(attacker, defender, move, charge, mode, players);
 		move.damage = damage;
 
 		var displayTime = time;

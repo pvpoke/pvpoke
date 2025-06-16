@@ -16,17 +16,16 @@ class DamageMultiplier{
 
 class DamageCalculator {
 	// Calculate damage given an attacker, defender, and move, requires move to be initialized first
-	static damage(attacker, defender, move, charge = 1, mode = "simulate"){
+	static damage(attacker, defender, move, charge = 1, mode = "simulate", players = []){
 		var effectiveness = defender.typeEffectiveness[move.type];
 		var chargeMultiplier = charge; // The amount of charge for a Charged Move
+
 
 		// Fully charge moves in regular simulation or if the opponent is an AI
 		if((mode == "emulate")&&(players[attacker.index])){
 			if((move.energyGain > 0)||(players[attacker.index].getAI() !== false)){
-				chargeAmount = 1;
+				chargeMultiplier = 1;
 			}
-
-			chargeMultiplier = chargeAmount;
 
 			// Protection to prevent 0 damage
 			if(chargeMultiplier == 0){
