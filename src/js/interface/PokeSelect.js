@@ -18,6 +18,7 @@ function PokeSelect(element, i){
 	var isCustom = false; // Whether or not the Pokemon has custom-set level, IVs, or traits
 	var context = "main";
 	var searchArr = []; // Array of searchable Pokemon sorted by priority
+	var optionData = []; // Array of Pokemon data sorted alphabetically for option display
 	var pokebox;
 	var searchTimeout;
 
@@ -31,43 +32,20 @@ function PokeSelect(element, i){
 		pokemon = pokes;
 		battle = b;
 
-		$.each(pokemon, function(n, poke){
+		$.each(gm.pokeSelectList, function(n, poke){
 
 			if(poke.tags && poke.tags.indexOf("duplicate") > -1 && context != "modaloverrides"){
 				return;
 			}
 
 			if(filterData){
-				if(filterData.filter(p => p.speciesId == poke.speciesId).length == 0){
+				if(! filterData.some(p => p.speciesId == poke.speciesId)){
 					return;
 				}
 			}
-
-			var priority = 1;
-
-			if(poke.searchPriority){
-				priority = poke.searchPriority;
-			}
-
-			var obj = {
-				speciesId: poke.speciesId,
-				speciesName: poke.speciesName.toLowerCase(),
-				dex: poke.dex,
-				priority: priority
-			};
-
-			if(poke.nicknames){
-				obj.nicknames = poke.nicknames;
-			}
-
 			// This array is searched for matching Pokemon
-			searchArr.push(obj);
-
-			var displayName = poke.speciesName;
-
-			var $option = $("<option value=\""+poke.speciesId+"\">"+displayName+"</option>");
-
-			$pokeSelect.append($option);
+			searchArr.push(poke);
+			optionData.push(poke);
 		});
 
 		$el.find(".check.auto-level").addClass("on");
@@ -632,6 +610,8 @@ function PokeSelect(element, i){
 		$el.find(".check.negate-fast-moves").addClass("on");
 		$el.find(".hp .bar.damage").hide();
 
+		self.updateOptions();
+
 		isCustom = false;
 
 		if(interface.resetSandbox){
@@ -654,6 +634,7 @@ function PokeSelect(element, i){
 		$el.find(".poke-stats").hide();
 		$el.find(".pokebox").show();
 		$pokeSelect.find("option").first().prop("selected", "selected");
+		self.updateOptions();
 
 		isCustom = false;
 	}
@@ -668,6 +649,8 @@ function PokeSelect(element, i){
 		// Clear current custom values
 
 		$el.find("input.level, input.iv, input.stat-mod, input.start-hp, input.start-energy").val("");
+
+		self.updateOptions();
 
 		$pokeSelect.find("option[value=\""+poke.speciesId+"\"]").prop("selected","selected");
 
@@ -722,11 +705,47 @@ function PokeSelect(element, i){
 
 	// Sets a selected Pokemon given an Id
 
-	this.setPokemon = function(id){
+	this.setPokemon = function(id, fromURL = false){
 		id = id.replace("_xl","");
 
+		selectedPokemon = new Pokemon(id, index, battle);
+
+		if(fromURL){
+			selectedPokemon.initialize(battle.getCP());
+		} else{
+			selectedPokemon.initialize(battle.getCP(), settings.defaultIVs);
+		}
+
+		selectedPokemon.selectRecommendedMoveset();
+
+		if($(".team-build").length == 0){
+			battle.setNewPokemon(selectedPokemon, index);
+		}
+
+		var value = parseInt($el.find(".shield-picker .option.on").attr("value"));
+
+		selectedPokemon.setShields(value);
+		selectedPokemon.autoLevel = true;
+
+		self.reset();
+
+		self.updateIVRank();
+
+		self.update();
+
+		if(interface.resetSelectedPokemon){
+			interface.resetSelectedPokemon();
+		}
+
+		// Set level and iv fields
+		$el.find("input.level").val(selectedPokemon.level);
+		$el.find("input.iv[iv='atk']").val(selectedPokemon.ivs.atk);
+		$el.find("input.iv[iv='def']").val(selectedPokemon.ivs.def);
+		$el.find("input.iv[iv='hp']").val(selectedPokemon.ivs.hp);
+
+		self.updateOptions();
+
 		$pokeSelect.find("option[value=\""+id+"\"]").prop("selected","selected");
-		$pokeSelect.trigger("change", true);
 	}
 
 	// Update battle reference object with new instance
@@ -777,52 +796,49 @@ function PokeSelect(element, i){
 		}
 	}
 
+	// Update dropdown options with a rolling window based on the selected Pokemon
+	this.updateOptions = function(){
+		let selectedIndex = 0;
+
+		if(selectedPokemon){
+			selectedIndex = optionData.findIndex(pokemon => pokemon.speciesId == selectedPokemon.speciesId);
+		}
+
+		// Display options immediately ahead of and behind the selected Pokemon
+		let totalToDisplay = 30;
+		let startIndex = Math.max(0, selectedIndex - Math.floor(totalToDisplay / 2));
+		let remainingDisplayCount = totalToDisplay - (selectedIndex - startIndex);
+		let stopIndex = Math.min(optionData?.length || 0, selectedIndex + remainingDisplayCount);
+
+		$pokeSelect.find("option").slice(1).remove();
+
+		// Add options to select element
+		for(var i = startIndex; i < stopIndex; i++){
+			let poke = optionData[i];
+			let $option = $("<option value=\""+poke.speciesId+"\">"+poke.displayName+"</option>");
+
+			$pokeSelect.append($option);
+		}
+
+		if(selectedPokemon){
+			$pokeSelect.find("option[value=\""+selectedPokemon.speciesId+"\"]").prop("selected", "selected");
+		} else{
+			$pokeSelect.find("option").first().prop("selected", "selected");
+		}
+	}
+
 	// Select different Pokemon
 
 	$pokeSelect.on("change", function(e, fromURL){
 		var id = $pokeSelect.find("option:selected").val();
-		selectedPokemon = new Pokemon(id, index, battle);
-
-		if(fromURL){
-			selectedPokemon.initialize(battle.getCP());
-		} else{
-			selectedPokemon.initialize(battle.getCP(), settings.defaultIVs);
-		}
-
-		selectedPokemon.selectRecommendedMoveset();
-
-		if($(".team-build").length == 0){
-			battle.setNewPokemon(selectedPokemon, index);
-		}
-
-		var value = parseInt($el.find(".shield-picker .option.on").attr("value"));
-
-		selectedPokemon.setShields(value);
-		selectedPokemon.autoLevel = true;
-
-		self.reset();
-
-		self.updateIVRank();
-
-		self.update();
-
-		if(interface.resetSelectedPokemon){
-			interface.resetSelectedPokemon();
-		}
-
-		// Set level and iv fields
-		$el.find("input.level").val(selectedPokemon.level);
-		$el.find("input.iv[iv='atk']").val(selectedPokemon.ivs.atk);
-		$el.find("input.iv[iv='def']").val(selectedPokemon.ivs.def);
-		$el.find("input.iv[iv='hp']").val(selectedPokemon.ivs.hp);
+		self.setPokemon(id, fromURL);
 	});
 
 	// Select different Pokemon form
 
 	$formSelect.on("change", function(e){
 		var id = $formSelect.find("option:selected").val();
-		$pokeSelect.find("option[value='"+id+"']").prop("selected", "selected");
-		$pokeSelect.trigger("change");
+		self.setPokemon(id);
 		$formSelect.blur();
 	});
 
@@ -956,21 +972,24 @@ function PokeSelect(element, i){
 
 		var searchStr = $el.find(".poke-search").val().toLowerCase().trim();
 
-		if(searchStr == '')
+		if(searchStr == ''){
 			return;
+		}
+
+		var idToSelect;
 
 		for(var i = 0; i < searchArr.length; i++){
 			var pokeName = searchArr[i].speciesName;
 
 			// Name search
 			if(pokeName.startsWith(searchStr)){
-				$pokeSelect.find("option[value=\""+searchArr[i].speciesId+"\"]").prop("selected", "selected");
+				idToSelect = searchArr[i].speciesId;
 				break;
 			}
 
 			// Dex search
 			if(searchArr[i].dex == searchStr){
-				$pokeSelect.find("option[value=\""+searchArr[i].speciesId+"\"]").prop("selected", "selected");
+				idToSelect = searchArr[i].speciesId;
 				break;
 			}
 
@@ -980,7 +999,7 @@ function PokeSelect(element, i){
 
 				for(var n = 0; n < searchArr[i].nicknames.length; n++){
 					if(searchArr[i].nicknames[n].startsWith(searchStr)){
-						$pokeSelect.find("option[value=\""+searchArr[i].speciesId+"\"]").prop("selected", "selected");
+						idToSelect = searchArr[i].speciesId;
 						nicknameMatched = true;
 						break;
 					}
@@ -994,45 +1013,14 @@ function PokeSelect(element, i){
 
 		}
 
-		var id = $pokeSelect.find("option:selected").val();
 		var idAlreadySelected = false;
 
-		if(selectedPokemon && (id == selectedPokemon.speciesId)){
+		if(selectedPokemon && (idToSelect == selectedPokemon.speciesId)){
 			idAlreadySelected = true;
 		}
 
-		if((id)&&(! idAlreadySelected)){
-
-			selectedPokemon = new Pokemon(id, index, battle);
-			selectedPokemon.initialize(battle.getCP(), settings.defaultIVs);
-
-			selectedPokemon.selectRecommendedMoveset();
-
-			if($(".team-build").length == 0){
-				battle.setNewPokemon(selectedPokemon, index);
-			}
-
-			var value = parseInt($el.find(".shield-picker .option.on").attr("value"));
-
-			selectedPokemon.setShields(value);
-			selectedPokemon.autoLevel = true;
-
-			self.reset();
-
-			self.updateIVRank();
-
-			self.update();
-
-			if(interface.resetSelectedPokemon){
-				interface.resetSelectedPokemon();
-			}
-
-
-			// Set level and iv fields
-			$el.find("input.level").val(selectedPokemon.level);
-			$el.find("input.iv[iv='atk']").val(selectedPokemon.ivs.atk);
-			$el.find("input.iv[iv='def']").val(selectedPokemon.ivs.def);
-			$el.find("input.iv[iv='hp']").val(selectedPokemon.ivs.hp);
+		if((idToSelect)&&(! idAlreadySelected)){
+			self.setPokemon(idToSelect);
 		}
 	}
 
@@ -1338,7 +1326,7 @@ function PokeSelect(element, i){
 		if(battle.getOpponent(selectedPokemon.index)){
 			var opponent = battle.getOpponent(selectedPokemon.index);
 			var effectiveness = opponent.typeEffectiveness[move.type];
-			displayDamage = battle.calculateDamageByStats(selectedPokemon, opponent, selectedPokemon.getEffectiveStat(0, true), opponent.getEffectiveStat(1, true), effectiveness, move);
+			displayDamage = DamageCalculator.damageByStats(selectedPokemon, opponent, selectedPokemon.getEffectiveStat(0, true), opponent.getEffectiveStat(1, true), effectiveness, move);
 		}
 
 		var dpe = Math.floor( (displayDamage / move.energy) * 100) / 100;
@@ -1410,10 +1398,10 @@ function PokeSelect(element, i){
 
 		self.clear();
 
-		var list = $pokeSelect.find("option").not(".hide");
-		var index = Math.floor(Math.random() * list.length);
+		let filteredPokemonList = gm.generateFilteredPokemonList(battle, battle.getCup().include, battle.getCup().exclude);
+		let index = Math.floor(Math.random() * filteredPokemonList.length);
 
-		self.setPokemon($(list).eq(index).val());
+		self.setPokemon(filteredPokemonList[index].speciesId);
 
 	});
 

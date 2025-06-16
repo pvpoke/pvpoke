@@ -1100,7 +1100,7 @@ function TrainingAI(l, p, b){
 		poke.resetMoves(true);
 
 		if(! action){
-			action = battle.decideAction(poke, opponent);
+			action = ActionLogic.decideAction(battle, poke, opponent);
 		}
 
 		return action;
@@ -1184,7 +1184,7 @@ function TrainingAI(l, p, b){
 
 		for(var i = 0; i < attacker.chargedMoves.length; i++){
 			if(estimatedEnergy >= attacker.chargedMoves[i].energy){
-				attacker.chargedMoves.damage = battle.calculateDamage(attacker, defender, attacker.chargedMoves[i], true);
+				attacker.chargedMoves.damage = DamageCalculator.damage(attacker, defender, attacker.chargedMoves[i], true);
 				moves.push(attacker.chargedMoves[i]);
 			}
 		}
@@ -1371,7 +1371,7 @@ function TrainingAI(l, p, b){
 				}
 			}
 
-			var damage = countMultiplier * battle.calculateDamage(attacker, defender, attacker.chargedMoves[i], true);
+			var damage = countMultiplier * DamageCalculator.damage(attacker, defender, attacker.chargedMoves[i], true);
 			totalDamage.push(damage);
 		}
 

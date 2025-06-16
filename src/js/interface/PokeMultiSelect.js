@@ -1271,6 +1271,11 @@ function PokeMultiSelect(element){
 		$el.find(".quick-fill-select").trigger("change");
 	}
 
+	// Return the single pokeselector
+	this.getPokeSelector = function(){
+		return pokeSelector;
+	}
+
 	// Open the search string generation window
 
 	$el.find(".search-string-btn").click(function(e){

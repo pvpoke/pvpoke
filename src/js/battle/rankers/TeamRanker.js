@@ -292,9 +292,9 @@ var RankerMaster = (function () {
 							pokemon.reset();
 							opponent.reset();
 
-							var breakpoint = battle.calculateDamageByStats(pokemon, opponent, pokemon.getEffectiveStat(0), opponent.getEffectiveStat(1), opponent.typeEffectiveness[pokemon.fastMove.type], pokemon.fastMove);
+							var breakpoint = DamageCalculator.damageByStats(pokemon, opponent, pokemon.getEffectiveStat(0), opponent.getEffectiveStat(1), opponent.typeEffectiveness[pokemon.fastMove.type], pokemon.fastMove);
 
-							var bulkpoint = battle.calculateDamageByStats(opponent, pokemon, opponent.getEffectiveStat(0), pokemon.getEffectiveStat(1), pokemon.typeEffectiveness[opponent.fastMove.type], opponent.fastMove);
+							var bulkpoint = DamageCalculator.damageByStats(opponent, pokemon, opponent.getEffectiveStat(0), pokemon.getEffectiveStat(1), pokemon.typeEffectiveness[opponent.fastMove.type], opponent.fastMove);
 
 							matchup.breakpoint = breakpoint; // Fast move breakpoint
 							matchup.bulkpoint = bulkpoint; // Fast move bulkpoint
@@ -304,22 +304,22 @@ var RankerMaster = (function () {
 							matchup.bulkpointCM2 = 0;
 
 							if(pokemon.chargedMoves.length > 0){
-								var breakpointCM1 = battle.calculateDamageByStats(pokemon, opponent, pokemon.getEffectiveStat(0), opponent.getEffectiveStat(1), opponent.typeEffectiveness[pokemon.chargedMoves[0].type], pokemon.chargedMoves[0]);
+								var breakpointCM1 = DamageCalculator.damageByStats(pokemon, opponent, pokemon.getEffectiveStat(0), opponent.getEffectiveStat(1), opponent.typeEffectiveness[pokemon.chargedMoves[0].type], pokemon.chargedMoves[0]);
 								matchup.breakpointCM1 = breakpointCM1;
 							}
 
 							if(pokemon.chargedMoves.length > 1){
-								var breakpointCM2 = battle.calculateDamageByStats(pokemon, opponent, pokemon.getEffectiveStat(0), opponent.getEffectiveStat(1), opponent.typeEffectiveness[pokemon.chargedMoves[1].type], pokemon.chargedMoves[1]);
+								var breakpointCM2 = DamageCalculator.damageByStats(pokemon, opponent, pokemon.getEffectiveStat(0), opponent.getEffectiveStat(1), opponent.typeEffectiveness[pokemon.chargedMoves[1].type], pokemon.chargedMoves[1]);
 								matchup.breakpointCM2 = breakpointCM2;
 							}
 
 							if(opponent.chargedMoves.length > 0){
-								var bulkpointCM1 = battle.calculateDamageByStats(opponent, pokemon, opponent.getEffectiveStat(0), pokemon.getEffectiveStat(1), pokemon.typeEffectiveness[opponent.chargedMoves[0].type], opponent.chargedMoves[0]);
+								var bulkpointCM1 = DamageCalculator.damageByStats(opponent, pokemon, opponent.getEffectiveStat(0), pokemon.getEffectiveStat(1), pokemon.typeEffectiveness[opponent.chargedMoves[0].type], opponent.chargedMoves[0]);
 								matchup.bulkpointCM1 = bulkpointCM1;
 							}
 
 							if(opponent.chargedMoves.length > 1){
-								var bulkpointCM2 = battle.calculateDamageByStats(opponent, pokemon, opponent.getEffectiveStat(0), pokemon.getEffectiveStat(1), pokemon.typeEffectiveness[opponent.chargedMoves[1].type], opponent.chargedMoves[1]);
+								var bulkpointCM2 = DamageCalculator.damageByStats(opponent, pokemon, opponent.getEffectiveStat(0), pokemon.getEffectiveStat(1), pokemon.typeEffectiveness[opponent.chargedMoves[1].type], opponent.chargedMoves[1]);
 								matchup.bulkpointCM2 = bulkpointCM2;
 							}
 

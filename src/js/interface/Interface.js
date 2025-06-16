@@ -726,7 +726,7 @@ var InterfaceMaster = (function () {
 					if(((eventType == "fast") || (eventType == "charged"))&&(turnsToChargedMove[event.actor] == 0)){
 						for(var n = 0; n < pokemon[event.actor].chargedMoves.length; n++){
 							if(energy[event.actor] >= pokemon[event.actor].chargedMoves[n].energy){
-								turnsToChargedMove[event.actor] = event.turn + (pokemon[event.actor].fastMove.cooldown / 500);
+								turnsToChargedMove[event.actor] = event.turn + pokemon[event.actor].fastMove.turns;
 							}
 						}
 					}
@@ -899,9 +899,9 @@ var InterfaceMaster = (function () {
 
 				for(i = 0; i < displayCycles; i++){
 					var $fastItem = $('<div class="item fast '+pokemon[0].fastMove.type+'"></div>');
-					$fastItem.css("flex", pokemon[0].fastMove.cooldown / 500 + "");
+					$fastItem.css("flex", pokemon[0].fastMove.turns + "");
 
-					for(var n = 0; n < pokemon[0].fastMove.cooldown / 500; n++){
+					for(var n = 0; n < pokemon[0].fastMove.turns; n++){
 						$fastItem.append('<div class="chunk"></div>')
 					}
 
@@ -939,8 +939,8 @@ var InterfaceMaster = (function () {
 
 				for(i = 0; i < opponentFastCount; i++){
 					$fastItem = $('<div class="item fast '+pokemon[1].fastMove.type+'"></div>');
-					$fastItem.css("flex", pokemon[1].fastMove.cooldown / 500 + "");
-					for(var n = 0; n < pokemon[1].fastMove.cooldown / 500; n++){
+					$fastItem.css("flex", pokemon[1].fastMove.turns + "");
+					for(var n = 0; n < pokemon[1].fastMove.turns; n++){
 						$fastItem.append('<div class="chunk"></div>')
 					}
 
@@ -2365,7 +2365,7 @@ var InterfaceMaster = (function () {
 				var move = subject.chargedMoves[moveIndex];
 				var effectiveness = target.typeEffectiveness[move.type];
 
-				displayDamage = battle.calculateDamageByStats(subject, target, subject.getEffectiveStat(0, true), target.getEffectiveStat(1, true), effectiveness, move);
+				displayDamage = DamageCalculator.damageByStats(subject, target, subject.getEffectiveStat(0, true), target.getEffectiveStat(1, true), effectiveness, move);
 
 				pokeSelectors[selectorIndex].animateDamage(displayDamage)
 			}
@@ -2409,10 +2409,12 @@ var InterfaceMaster = (function () {
 									pokeSelectors[i].setBattle(battle);
 								}
 
+								battle.setDebugMode(true);
 								battle.setDecisionMethod("default");
 								battle.setBuffChanceModifier(-1);
 								battle.simulate();
 								battle.debug();
+								battle.setDebugMode(false);
 								self.displayTimeline(battle, false, false, (settings.animateTimeline !== 0));
 							} else{
 
@@ -2921,9 +2923,9 @@ var InterfaceMaster = (function () {
 
 					if(move.energyGain > 0){
 						$(".modal .stat-energy span").html("+"+move.energyGain);
-						$(".modal .stat-duration span").html(move.cooldown / 500);
-						$(".modal .stat-dpt span").html(Math.round( (move.damage / (move.cooldown / 500)) * 100) / 100);
-						$(".modal .stat-ept span").html(Math.round( (move.energyGain / (move.cooldown / 500)) * 100) / 100);
+						$(".modal .stat-duration span").html(move.turns);
+						$(".modal .stat-dpt span").html(Math.round( (move.damage / move.turns) * 100) / 100);
+						$(".modal .stat-ept span").html(Math.round( (move.energyGain / move.turns) * 100) / 100);
 					} else{
 						$(".modal .stat-energy span").html("-"+move.energy);
 						$(".modal .stat-dpe span").html(Math.round( (move.damage / move.energy) * 100) / 100);
