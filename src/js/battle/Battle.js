@@ -66,6 +66,8 @@ function Battle(){
 		{hp: 0, energy: 0}
 	];
 
+	var debugMode = false;
+
 	// Buff parameters
 
 	var buffChanceModifier = -1; // -1 prevents buffs, 1 guarantees buffs
@@ -1825,6 +1827,9 @@ function Battle(){
 	// Add a decision to the debug log
 
 	this.logDecision = function(pokemon, string){
+		if(! debugMode)
+			return false;
+
 		decisionLog.push({
 			turn: turns,
 			pokemon: pokemon,
@@ -1833,7 +1838,7 @@ function Battle(){
 		});
 	}
 
-	// Output debug log to console
+	// Output debug log to console, debugMode must be set to true to collect logs
 
 	this.debug = function(){
 
@@ -1854,5 +1859,9 @@ function Battle(){
 
 	this.getTimeline = function(){
 		return timeline;
+	}
+
+	this.setDebugMode = function(value){
+		debugMode = value;
 	}
 };

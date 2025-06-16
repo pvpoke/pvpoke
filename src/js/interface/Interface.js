@@ -2409,10 +2409,12 @@ var InterfaceMaster = (function () {
 									pokeSelectors[i].setBattle(battle);
 								}
 
+								battle.setDebugMode(true);
 								battle.setDecisionMethod("default");
 								battle.setBuffChanceModifier(-1);
 								battle.simulate();
 								battle.debug();
+								battle.setDebugMode(false);
 								self.displayTimeline(battle, false, false, (settings.animateTimeline !== 0));
 							} else{
 
