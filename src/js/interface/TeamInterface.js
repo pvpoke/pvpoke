@@ -264,9 +264,6 @@ var InterfaceMaster = (function () {
 			// Update team info output
 
 			this.updateTeamResults = function(){
-
-				let startTime = performance.now();
-
 				var key = battle.getCup().name + "overall" + battle.getCP();
 
 				if(! gm.rankings[key]){
@@ -852,10 +849,6 @@ var InterfaceMaster = (function () {
 
 
 				runningResults = false;
-
-				let endTime = performance.now();
-
-				console.log("Execution time " + (endTime-startTime) + "ms");
 			}
 
 			// Display the list of alternative Pokemon given a list of searched Pokemon
