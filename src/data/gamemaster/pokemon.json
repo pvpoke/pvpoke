@@ -32731,14 +32731,17 @@
     "types": ["fire", "water"],
     "fastMoves": ["INCINERATE", "WATER_GUN", "TAKE_DOWN"],
     "chargedMoves": ["HYDRO_PUMP", "OVERHEAT", "EARTH_POWER", "SLUDGE_BOMB"],
-    "defaultIVs": {
-        "cp500": [5.5, 6, 4, 5],
-        "cp1500": [15, 5, 15, 13],
-        "cp2500": [25, 8, 15, 11]
+	"defaultIVs": {
+        "cp500": [5, 15, 15, 10],
+        "cp1500": [15, 10, 11, 10],
+        "cp2500": [24, 15, 15, 15]
     },
+	"tags": ["mythical", "untradeable"],
+	"searchPriority": 2,
+	"levelFloor": 15,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
-    "released": false
+    "released": true
 }, {
     "dex": 722,
     "speciesName": "Rowlet",
@@ -36087,7 +36090,7 @@
     },
     "buddyDistance": 1,
     "thirdMoveCost": 50000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_YAMPER",
         "evolutions": ["boltund"]
@@ -36111,7 +36114,7 @@
     },
     "buddyDistance": 1,
     "thirdMoveCost": 50000,
-    "released": false,
+    "released": true,
     "family": {
         "id": "FAMILY_YAMPER",
         "parent": "yamper"

@@ -1446,12 +1446,12 @@ function Pokemon(id, i, b){
 		var doubleWeaknesses = 0;
 
 		for(var key in self.typeEffectiveness){
-			if(self.typeEffectiveness[key] < 1){
+			if(self.typeEffectiveness[key] < .9){
 				totalResistances++;
-			} else if(self.typeEffectiveness[key] > 1){
+			} else if(self.typeEffectiveness[key] > 1.1){
 				totalWeaknesses++;
 
-				if(self.typeEffectiveness[key] > 1.6){
+				if(self.typeEffectiveness[key] > 2){
 					doubleWeaknesses++;
 				}
 			}

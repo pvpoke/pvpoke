@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-06-16 03:50:43",
+    "timestamp": "2025-06-18 02:42:38",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -168,6 +168,19 @@
         "title": "Custom",
         "include": [],
         "exclude": []
+    }, {
+        "name": "element",
+        "title": "Element Cup",
+        "include": [{
+            "filterType": "evolution",
+            "values": [1]
+        }, {
+            "filterType": "type",
+            "values": ["fire", "water", "grass"]
+        }],
+        "exclude": [],
+        "partySize": 3,
+        "presetOnly": true
     }, {
         "name": "fossil",
         "title": "Fossil Cup",
@@ -578,6 +591,15 @@
         "showFormat": true,
         "showMeta": true,
         "rules": ["Pok\u00e9mon must be at or below 2,500 CP to enter.", "Only Normal-, Fire-, Water-, Grass-, Electric-, and Bug-type Pok\u00e9mon are eligible."]
+    }, {
+        "title": "Little Element Cup",
+        "cup": "element",
+        "cp": 500,
+        "meta": "element",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true,
+        "rules": ["Pok\u00e9mon must be at or below 500 CP to enter.", "Only Fire-, Water-, and Grass-type Pok\u00e9mon are eligible.", "Only Pok\u00e9mon that are able to evolve and have not evolved even once will be eligible."]
     }, {
         "title": "Master League (Classic)",
         "cup": "classic",
@@ -33478,13 +33500,16 @@
         "fastMoves": ["INCINERATE", "WATER_GUN", "TAKE_DOWN"],
         "chargedMoves": ["HYDRO_PUMP", "OVERHEAT", "EARTH_POWER", "SLUDGE_BOMB"],
         "defaultIVs": {
-            "cp500": [5.5, 6, 4, 5],
-            "cp1500": [15, 5, 15, 13],
-            "cp2500": [25, 8, 15, 11]
+            "cp500": [5, 15, 15, 10],
+            "cp1500": [15, 10, 11, 10],
+            "cp2500": [24, 15, 15, 15]
         },
+        "tags": ["mythical", "untradeable"],
+        "searchPriority": 2,
+        "levelFloor": 15,
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": true
     }, {
         "dex": 722,
         "speciesName": "Rowlet",
@@ -36833,7 +36858,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_YAMPER",
             "evolutions": ["boltund"]
@@ -36857,7 +36882,7 @@
         },
         "buddyDistance": 1,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_YAMPER",
             "parent": "yamper"
