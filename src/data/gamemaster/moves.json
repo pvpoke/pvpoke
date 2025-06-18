@@ -448,6 +448,20 @@
     "archetype": "Heavy Damage",
     "turns": 3
 }, {
+    "moveId": "CLANGING_SCALES",
+    "name": "Clanging Scales",
+    "abbreviation": "ClS",
+    "type": "dragon",
+    "power": 120,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [0, -1],
+    "buffTarget": "self",
+    "buffApplyChance": "1",
+    "archetype": "General",
+    "turns": 1
+}, {
     "moveId": "CLOSE_COMBAT",
     "name": "Close Combat",
     "type": "fighting",
