@@ -435,10 +435,6 @@ var GameMaster = (function () {
 						defaultIVs["cp1500"] = [49, 7, 15, 14];
 						break;
 
-					case "typhlosion_hisuian":
-						defaultIVs["cp1500"] = [20, 1, 1, 2];
-						break;
-
 					case "lokix":
 						defaultIVs["cp2500"] = [47.5, 11, 15, 15];
 						break;

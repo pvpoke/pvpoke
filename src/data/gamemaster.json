@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-06-19 00:41:41",
+    "timestamp": "2025-06-19 17:10:09",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -9956,10 +9956,10 @@
         "tags": ["starter", "hisuian"],
         "defaultIVs": {
             "cp500": [6.5, 4, 9, 9],
-            "cp1500": [20, 1, 1, 2],
+            "cp1500": [18.5, 5, 11, 14],
             "cp2500": [31.5, 5, 12, 14]
         },
-        "levelFloor": 20,
+        "levelFloor": 15,
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
         "released": true,
@@ -35563,7 +35563,8 @@
         },
         "types": ["dragon", "fighting"],
         "fastMoves": ["POISON_JAB", "DRAGON_TAIL"],
-        "chargedMoves": ["DRAGON_CLAW", "CLOSE_COMBAT", "FLAMETHROWER", "BOOMBURST", "BRICK_BREAK"],
+        "chargedMoves": ["DRAGON_CLAW", "CLOSE_COMBAT", "FLAMETHROWER", "BOOMBURST", "BRICK_BREAK", "CLANGING_SCALES"],
+        "eliteMoves": ["CLANGING_SCALES"],
         "defaultIVs": {
             "cp500": [6, 5, 6, 4],
             "cp1500": [16.5, 6, 15, 14],
