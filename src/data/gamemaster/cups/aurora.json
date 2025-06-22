@@ -1,0 +1,21 @@
+{
+    "name": "aurora",
+    "title": "Aurora Cup",
+	"include": [],
+    "exclude": [{
+        "filterType": "tag",
+        "values": ["mega"]
+    }, {
+        "filterType": "type",
+        "values": ["fire","poison","steel"]
+    }, {
+        "filterType": "id",
+        "values": ["carbink","chansey","pachirisu","zapdos_galarian","moltres_galarian","articuno_galarian","jumpluff","araquanid","corsola_galarian","bellibolt","dedenne","morpeko_full_belly","wigglytuff"]
+    }, {
+        "filterType": "moveType",
+        "values": ["fire","poison","steel"]
+    }, {
+        "filterType": "move",
+        "values": ["HIDDEN_POWER_WATER"]
+    }]
+}

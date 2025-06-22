@@ -1,0 +1,24 @@
+{
+    "name": "onyx",
+    "title": "Onyx Cup",
+    "include": [{
+        "filterType": "type",
+        "values": ["normal","rock","fire","steel","water","ghost","dark","psychic","bug","ice","dragon","electric","poison"]
+    },{
+        "filterType": "id",
+        "values": ["onix"]
+    }],
+    "exclude": [{
+        "filterType": "type",
+        "values": ["ground","flying","fighting","grass","fairy"]
+    },{
+        "filterType": "id",
+        "values": ["registeel","bastiodon","pachirisu","araquanid","togedemaru","morpeko_full_belly","bellibolt","toxtricity","guzzlord","genesect","forretress","corsola_galarian","malamar","drapion","regidrago","melmetal","lanturn","toxapex","wormadam_trash","spinda","furret","spiritomb","jellicent","dubwool","dunsparce","kangaskhan"]
+    },{
+        "filterType": "tag",
+        "values": ["mega","shadow"]
+    },{
+        "filterType": "move",
+        "values": []
+    }]
+}

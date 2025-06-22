@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-06-22 02:44:54",
+    "timestamp": "2025-06-22 03:41:07",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -65,6 +65,26 @@
         "levelCap": 50,
         "excludeLowPokemon": 1
     }, {
+        "name": "aurora",
+        "title": "Aurora Cup",
+        "include": [],
+        "exclude": [{
+            "filterType": "tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "type",
+            "values": ["fire", "poison", "steel"]
+        }, {
+            "filterType": "id",
+            "values": ["carbink", "chansey", "pachirisu", "zapdos_galarian", "moltres_galarian", "articuno_galarian", "jumpluff", "araquanid", "corsola_galarian", "bellibolt", "dedenne", "morpeko_full_belly", "wigglytuff"]
+        }, {
+            "filterType": "moveType",
+            "values": ["fire", "poison", "steel"]
+        }, {
+            "filterType": "move",
+            "values": ["HIDDEN_POWER_WATER"]
+        }]
+    }, {
         "name": "battlefrontiergreat",
         "title": "Battle Frontier (Great)",
         "include": [],
@@ -86,45 +106,49 @@
         "allowSameSpecies": true
     }, {
         "name": "battlefrontiermaster",
-        "title": "Battle Tower (Master League)",
+        "title": "Battle Frontier (Master League)",
         "include": [],
         "exclude": [{
-            "filterType": "tag",
-            "values": ["mega"]
-        }],
-        "tierRules": {
-            "max": 2,
-            "floor": 0,
-            "tiers": [{
-                "points": 1,
-                "pokemon": ["dialga_origin", "kyurem_black", "kyurem_white", "necrozma_dawn_wings", "necrozma_dusk_mane", "palkia_origin", "rhyperior", "zacian_crowned_sword", "zamazenta_crowned_shield", "zygarde_complete"]
-            }]
-        }
-    }, {
-        "name": "battlefrontierultra",
-        "title": "Battle Tower (Ultra League)",
-        "include": [],
-        "exclude": [{
-            "filterType": "tag",
-            "values": ["legendary", "mythical", "ultrabeast"]
+            "filterType": "id",
+            "values": ["garchomp_mega", "gardevoir_mega", "groudon_primal", "gyarados_mega", "kyogre_primal", "latios_mega", "rayquaza_mega", "salamence_mega", "swampert_mega", "tyranitar_mega", "zacian_crowned_sword", "zamazenta_crowned_shield", "volcanion"]
         }],
         "tierRules": {
             "max": 11,
             "floor": 0,
             "tiers": [{
+                "points": 8,
+                "pokemon": ["scizor_mega", "zacian_crowned_sword", "zamazenta_crowned_shield"]
+            }, {
                 "points": 7,
-                "pokemon": ["corviknight", "cradily", "feraligatr", "gastrodon", "lapras", "mandibuzz", "steelix", "tinkaton"]
+                "pokemon": ["aggron_mega", "gallade_mega", "kyurem_black", "kyurem_white", "zygarde_complete"]
+            }, {
+                "points": 6,
+                "pokemon": ["charizard_mega_y", "eternatus", "gengar_mega"]
             }, {
                 "points": 5,
-                "pokemon": ["drapion", "dusknoir", "grumpig", "jellicent", "malamar", "swampert", "talonflame", "tentacruel", "umbreon", "weezing_galarian"]
+                "pokemon": ["blastoise_mega", "lunala", "necrozma_dusk_mane", "palkia_origin", "rhyperior"]
+            }, {
+                "points": 4,
+                "pokemon": ["dialga_origin", "heracross_mega", "ho_oh", "landorus_therian", "latias_mega", "meloetta_aria", "necrozma_dawn_wings", "solgaleo", "steelix_mega", "yveltal", "zacian_hero"]
+            }, {
+                "points": 3,
+                "pokemon": ["dialga", "giratina_altered", "kyogre", "lugia", "mewtwo", "moltres_galarian", "palkia", "urshifu_single_strike", "xerneas"]
             }, {
                 "points": 2,
-                "pokemon": ["ampharos", "annihilape", "blastoise", "bombirdier", "clefable", "dragapult", "drifblim", "forretress", "golisopod", "golurk", "lanturn", "lickilicky", "oranguru", "pangoro", "primeape", "sandslash_alolan", "skeledirge", "skuntank", "stunfisk"]
+                "pokemon": ["charizard_mega_x", "florges", "giratina_origin", "groudon", "heatran", "kangaskhan_mega", "keldeo_ordinary", "lucario_mega", "marshadow", "primarina", "reshiram", "slowbro_mega", "urshifu_rapid_strike", "zarude"]
             }, {
                 "points": 1,
-                "pokemon": ["abomasnow", "aurorus", "charizard", "cofagrigus", "dragalge", "dragonite", "ferrothorn", "florges", "galvantula", "gliscor", "greninja", "hippowdon", "machamp", "miltank", "nidoqueen", "ninetales_alolan", "pidgeot", "poliwrath", "primarina", "runerigus", "serperior", "skarmory", "starmie", "stunfisk_galarian", "toxicroak", "trevenant", "typhlosion", "venusaur", "walrein"]
+                "pokemon": ["blaziken_mega", "dragapult", "dragonite", "enamorus_incarnate", "genesect", "genesect_burn", "genesect_douse", "genesect_chill", "genesect_shock", "kingambit", "kyurem", "melmetal", "metagross", "mew", "tapu_lele", "volcanion", "zapdos_galarian", "zekrom"]
             }]
         }
+    }, {
+        "name": "battlefrontierultra",
+        "title": "Battle Frontier (Ultra League)",
+        "include": [],
+        "exclude": [{
+            "filterType": "id",
+            "values": []
+        }]
     }, {
         "name": "cascade",
         "title": "Cascade Cup",
@@ -335,6 +359,45 @@
             "values": ["shuckle", "smeargle"]
         }],
         "levelCap": 50
+    }, {
+        "name": "onyx",
+        "title": "Onyx Cup",
+        "include": [{
+            "filterType": "type",
+            "values": ["normal", "rock", "fire", "steel", "water", "ghost", "dark", "psychic", "bug", "ice", "dragon", "electric", "poison"]
+        }, {
+            "filterType": "id",
+            "values": ["onix"]
+        }],
+        "exclude": [{
+            "filterType": "type",
+            "values": ["ground", "flying", "fighting", "grass", "fairy"]
+        }, {
+            "filterType": "id",
+            "values": ["registeel", "bastiodon", "pachirisu", "araquanid", "togedemaru", "morpeko_full_belly", "bellibolt", "toxtricity", "guzzlord", "genesect", "forretress", "corsola_galarian", "malamar", "drapion", "regidrago", "melmetal", "lanturn", "toxapex", "wormadam_trash", "spinda", "furret", "spiritomb", "jellicent", "dubwool", "dunsparce", "kangaskhan"]
+        }, {
+            "filterType": "tag",
+            "values": ["mega", "shadow"]
+        }, {
+            "filterType": "move",
+            "values": []
+        }]
+    }, {
+        "name": "pillar2",
+        "title": "Pillar2",
+        "include": [{
+            "filterType": "id",
+            "name": "Species",
+            "values": ["quagsire", "quagsire_shadow", "emolga", "araquanid", "lokix", "golisopod", "ariados", "leavanny", "scizor", "beedrill", "malamar", "sableye", "raticate_alolan", "qwilfish_hisuian", "goodra", "arctibax", "altaria", "dragapult", "sneasler", "sneasel_hisuian", "mienshao", "spiritomb", "trevenant", "froslass", "jumpluff", "sceptile", "stunfisk", "runerigus", "gligar", "flygon", "gliscor", "sandslash", "regice", "walrein", "lapras", "sealeo", "aurorus", "lickilicky", "miltank", "ursaring", "noctowl", "pidgeot", "furfrou", "furret", "greedent", "zangoose", "bewear", "diggersby", "bibarel", "clodsire", "weezing_galarian", "drapion", "swalot", "nidoqueen", "nidoking", "cresselia", "rapidash_galarian", "victini", "regirock", "cradily", "lunatone", "solrock", "azumarill", "feraligatr", "castform_rainy", "qwilfish", "tapu_fini", "empoleon", "samurott", "pelipper", "politoed", "jellicent", "gyarados", "seaking", "poliwhirl", "starmie", "lokix_shadow", "golisopod_shadow", "ariados_shadow", "leavanny_shadow", "scizor_shadow", "beedrill_shadow", "malamar_shadow", "sableye_shadow", "raticate_alolan_shadow", "qwilfish_hisuian_shadow", "goodra_shadow", "arctibax_shadow", "altaria_shadow", "dragapult_shadow", "sneasler_shadow", "sneasel_hisuian_shadow", "mienshao_shadow", "rapidash_shadow", "spiritomb_shadow", "trevenant_shadow", "froslass_shadow", "jumpluff_shadow", "sceptile_shadow", "stunfisk_shadow", "runerigus_shadow", "gligar_shadow", "flygon_shadow", "gliscor_shadow", "sandslash_shadow", "regice_shadow", "walrein_shadow", "lapras_shadow", "sealeo_shadow", "aurorus_shadow", "lickilicky_shadow", "miltank_shadow", "ursaring_shadow", "noctowl_shadow", "pidgeot_shadow", "furfrou_shadow", "furret_shadow", "greedent_shadow", "zangoose_shadow", "bewear_shadow", "diggersby_shadow", "bibarel_shadow", "clodsire_shadow", "weezing_galarian_shadow", "drapion_shadow", "swalot_shadow", "nidoqueen_shadow", "nidoking_shadow", "cresselia_shadow", "rapidash_galarian_shadow", "victini_shadow", "regirock_shadow", "cradily_shadow", "lunatone_shadow", "solrock_shadow", "azumarill_shadow", "feraligatr_shadow", "castform_rainy_shadow", "qwilfish_shadow", "tapu_fini_shadow", "empoleon_shadow", "samurott_shadow", "pelipper_shadow", "politoed_shadow", "jellicent_shadow", "gyarados_shadow", "seaking_shadow", "poliwhirl_shadow", "starmie_shadow"]
+        }],
+        "exclude": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["bug", "dark", "dragon", "electric", "fairy", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "steel", "water", "none"]
+        }],
+        "league": 1500,
+        "useDefaultMovesets": 1,
+        "excludeLowPokemon": 1
     }, {
         "name": "premier",
         "title": "Premier Cup",
@@ -637,18 +700,18 @@
         "showMeta": true,
         "hideRankings": true
     }, {
-        "title": "Battle Tower (Tempo)",
-        "cup": "tempo",
+        "title": "Battle Tower (Aurora)",
+        "cup": "aurora",
         "cp": 1500,
-        "meta": "tempo",
+        "meta": "aurora",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
     }, {
-        "title": "Battle Tower (Wasteland)",
-        "cup": "wasteland",
+        "title": "Battle Tower (Onyx)",
+        "cup": "onyx",
         "cp": 1500,
-        "meta": "wasteland",
+        "meta": "onyx",
         "showCup": true,
         "showFormat": true,
         "showMeta": true
@@ -685,18 +748,10 @@
         "showFormat": true,
         "showMeta": true
     }, {
-        "title": "Devon Tundra Cup (Gymbreakers Remix V2)",
-        "cup": "tundraremixv2",
+        "title": "Gymbreakers Pillar Cup Remix",
+        "cup": "pillar2",
         "cp": 1500,
-        "meta": "tundraremixv2",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
-        "title": "Gymbreakers Invitational Remix",
-        "cup": "gbinvitational",
-        "cp": 1500,
-        "meta": "gbinvitational",
+        "meta": "pillar2",
         "showCup": true,
         "showFormat": true,
         "showMeta": true

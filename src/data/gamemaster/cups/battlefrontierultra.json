@@ -1,26 +1,9 @@
 {
     "name": "battlefrontierultra",
-    "title": "Battle Tower (Ultra League)",
+    "title": "Battle Frontier (Ultra League)",
     "include": [],
     "exclude": [{
-        "filterType": "tag",
-        "values": ["legendary","mythical","ultrabeast"]
-    }],
-    "tierRules": {
-        "max": 11,
-        "floor": 0,
-        "tiers": [{
-            "points": 7,
-            "pokemon": ["corviknight","cradily","feraligatr","gastrodon","lapras","mandibuzz","steelix","tinkaton"]
-        }, {
-            "points": 5,
-            "pokemon": ["drapion","dusknoir","grumpig","jellicent","malamar","swampert","talonflame","tentacruel","umbreon","weezing_galarian"]
-        }, {
-            "points": 2,
-            "pokemon": ["ampharos","annihilape","blastoise","bombirdier","clefable","dragapult","drifblim","forretress","golisopod","golurk","lanturn","lickilicky","oranguru","pangoro","primeape","sandslash_alolan","skeledirge","skuntank","stunfisk"]
-        }, {
-            "points": 1,
-            "pokemon": ["abomasnow","aurorus","charizard","cofagrigus","dragalge","dragonite","ferrothorn","florges","galvantula","gliscor","greninja","hippowdon","machamp","miltank","nidoqueen","ninetales_alolan","pidgeot","poliwrath","primarina","runerigus","serperior","skarmory","starmie","stunfisk_galarian","toxicroak","trevenant","typhlosion","venusaur","walrein"]
-        }]
-    }
+        "filterType": "id",
+        "values": []
+    }]
 }
