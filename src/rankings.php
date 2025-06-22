@@ -80,8 +80,8 @@ switch($cup){
 		$league = 'devonchampionship';
 		break;
 
-	case "tundraremixv2":
-		$league = 'Devon Tundra Cup (Gymbreakers Remix V2)';
+	case "pillar2":
+		$league = 'Gymbreakers Pillar Cup Remix';
 		break;
 
 	case "catch":
@@ -120,12 +120,12 @@ switch($cup){
 		$league = 'Battle Frontier (Master)';
 		break;
 
-	case "tempo":
-		$league = 'Battle Tower (Tempo)';
+	case "aurora":
+		$league = 'Battle Tower (Aurora)';
 		break;
 
-	case "wasteland":
-		$league = 'Battle Tower (Wasteland)';
+	case "onyx":
+		$league = 'Battle Tower (Onyx)';
 		break;
 
 	case "littlecatch":

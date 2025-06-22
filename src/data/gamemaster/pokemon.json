@@ -23828,7 +23828,8 @@
     },
     "types": ["normal", "none"],
     "fastMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "ZEN_HEADBUTT"],
-    "chargedMoves": ["GIGA_IMPACT", "FOCUS_BLAST", "THUNDER"],
+    "chargedMoves": ["GIGA_IMPACT", "FOCUS_BLAST", "THUNDER", "CRUSH_GRIP"],
+	"eliteMoves": ["CRUSH_GRIP"],
     "tags": ["legendary", "shadoweligible"],
     "defaultIVs": {
         "cp500": [4.5, 4, 13, 15],
@@ -23850,7 +23851,8 @@
     },
     "types": ["normal", "none"],
     "fastMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "ZEN_HEADBUTT"],
-    "chargedMoves": ["GIGA_IMPACT", "FOCUS_BLAST", "THUNDER"],
+	"chargedMoves": ["GIGA_IMPACT", "FOCUS_BLAST", "THUNDER", "CRUSH_GRIP"],
+	"eliteMoves": ["CRUSH_GRIP"],
     "tags": ["legendary", "shadow"],
     "defaultIVs": {
         "cp500": [4.5, 6, 14, 11],
@@ -37757,7 +37759,8 @@
     },
     "types": ["electric", "none"],
     "fastMoves": ["THUNDER_SHOCK", "LOCK_ON", "VOLT_SWITCH"],
-    "chargedMoves": ["ZAP_CANNON", "THUNDER", "HYPER_BEAM"],
+    "chargedMoves": ["ZAP_CANNON", "THUNDER", "HYPER_BEAM", "THUNDER_CAGE"],
+	"eliteMoves": ["THUNDER_CAGE"],
     "defaultIVs": {
         "cp500": [7, 6, 7, 5],
         "cp1500": [20, 5, 13, 6],
@@ -37778,8 +37781,9 @@
         "hp": 400
     },
     "types": ["dragon", "none"],
-    "fastMoves": ["BITE"],
-    "chargedMoves": ["HYPER_BEAM", "OUTRAGE", "DRAGON_PULSE", "BREAKING_SWIPE"],
+    "fastMoves": ["BITE", "DRAGON_BREATH"],
+    "chargedMoves": ["HYPER_BEAM", "OUTRAGE", "DRAGON_PULSE", "BREAKING_SWIPE", "DRAGON_ENERGY"],
+	"eliteMoves": ["DRAGON_BREATH", "DRAGON_ENERGY"],
     "defaultIVs": {
         "cp500": [6.5, 4, 12, 11],
         "cp1500": [20, 2, 4, 4],
