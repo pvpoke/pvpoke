@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-06-19 17:10:09",
+    "timestamp": "2025-06-22 02:44:54",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -150,6 +150,14 @@
             "filterType": "id",
             "values": ["deoxys_defense", "regirock", "regice", "mew", "victini", "genesect", "rayquaza", "zygarde", "latios", "latias", "raikou", "suicune", "entei", "celebi", "diancie", "regidrago", "regieleki", "ho_oh", "buzzwole", "marowak_alolan_shadow", "lapras_shadow", "hitmontop_shadow", "meganium_shadow", "jumpluff_shadow", "steelix_shadow", "walrein_shadow", "poliwrath_shadow", "politoed_shadow", "sealeo_shadow", "guzzlord", "zapdos_shadow", "sableye_shadow", "feraligatr_shadow", "golurk_shadow", "quagsire_shadow", "diggersby_shadow", "zapdos_shadow", "bastiodon_shadow", "typhlosion_shadow", "registeel_shadow", "dusknoir_shadow", "dusclops_shadow"]
         }, {
+            "filterType": "tag",
+            "values": ["mega"]
+        }]
+    }, {
+        "name": "championshipseries",
+        "title": "P!P Championship Series",
+        "include": [],
+        "exclude": [{
             "filterType": "tag",
             "values": ["mega"]
         }]
@@ -621,7 +629,7 @@
         "rules": ["No CP limit.", "Legendary Pok\u00e9mon, Mythical Pok\u00e9mon, and Ultra Beasts are not eligible."]
     }, {
         "title": "P!P Championship Series",
-        "cup": "all",
+        "cup": "championshipseries",
         "cp": 1500,
         "meta": "championshipseries",
         "showCup": true,
@@ -42428,7 +42436,7 @@
         "archetype": "Spam/Bait",
         "turns": 1
     }, {
-        "moveId": "DRAGON_Energy",
+        "moveId": "DRAGON_ENERGY",
         "name": "Dragon Energy",
         "abbreviation": "DrE",
         "type": "dragon",

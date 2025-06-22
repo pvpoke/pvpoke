@@ -1,0 +1,9 @@
+{
+	"name": "championshipseries",
+	"title": "P!P Championship Series",
+	"include": [],
+	"exclude": [{
+		"filterType": "tag",
+		"values": ["mega"]
+	}]
+}

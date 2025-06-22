@@ -1870,7 +1870,6 @@ var InterfaceMaster = (function () {
 								var arr = val.split('-');
 
 								// Search string for any custom moves to add
-
 								for(var i = 0; i < arr.length; i++){
 									if(arr[i].match('([A-Z_]+)')){
 										var move = gm.getMoveById(arr[i]);
@@ -1884,7 +1883,11 @@ var InterfaceMaster = (function () {
 
 
 								var fastMoveId = $(".poke").eq(index).find(".move-select.fast option").eq(parseInt(arr[0])).val();
-								poke.selectMove("fast", fastMoveId, 0);
+
+								if(fastMoveId){
+									poke.selectMove("fast", fastMoveId, 0);
+								}
+
 
 								for(var i = 1; i < arr.length; i++){
 									// Don't set this move if already set as a custom move
