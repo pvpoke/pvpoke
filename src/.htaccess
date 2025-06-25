@@ -95,3 +95,9 @@ RewriteRule rss/$ rss/feed.xml [L,QSA]
 
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(.*)index\.php($|\ |\?)
 RewriteRule ^ /%1 [R=301,L]
+
+# Disable pagespeed module
+
+<IfModule pagespeed_module>
+    ModPagespeed off
+</IfModule>
