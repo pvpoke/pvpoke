@@ -48,22 +48,6 @@
         "weight": 1
     }, {
         "pokemon": [{
-            "speciesId": "jellicent",
-            "fastMove": "HEX",
-            "chargedMoves": ["SURF", "SHADOW_BALL"]
-        }, {
-            "speciesId": "cradily",
-            "fastMove": "ACID",
-            "chargedMoves": ["ROCK_TOMB", "GRASS_KNOT"]
-        }, {
-            "speciesId": "victreebel_shadow",
-            "fastMove": "ACID",
-            "chargedMoves": ["LEAF_BLADE", "SLUDGE_BOMB"],
-            "shadowType": "shadow"
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
             "speciesId": "scizor_shadow",
             "fastMove": "BULLET_PUNCH",
             "chargedMoves": ["NIGHT_SLASH", "TRAILBLAZE"],
@@ -256,21 +240,6 @@
             "fastMove": "BUG_BITE",
             "chargedMoves": ["SAND_TOMB", "ROCK_TOMB"]
         }, {
-            "speciesId": "diggersby",
-            "fastMove": "QUICK_ATTACK",
-            "chargedMoves": ["FIRE_PUNCH", "SCORCHING_SANDS"]
-        }, {
-            "speciesId": "furret",
-            "fastMove": "SUCKER_PUNCH",
-            "chargedMoves": ["SWIFT", "TRAILBLAZE"]
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
-            "speciesId": "forretress",
-            "fastMove": "BUG_BITE",
-            "chargedMoves": ["SAND_TOMB", "ROCK_TOMB"]
-        }, {
             "speciesId": "sableye",
             "fastMove": "SHADOW_CLAW",
             "chargedMoves": ["FOUL_PLAY", "POWER_GEM"],
@@ -329,21 +298,6 @@
         "weight": 1
     }, {
         "pokemon": [{
-            "speciesId": "jellicent",
-            "fastMove": "HEX",
-            "chargedMoves": ["SURF", "SHADOW_BALL"]
-        }, {
-            "speciesId": "forretress",
-            "fastMove": "BUG_BITE",
-            "chargedMoves": ["SAND_TOMB", "ROCK_TOMB"]
-        }, {
-            "speciesId": "golisopod",
-            "fastMove": "SHADOW_CLAW",
-            "chargedMoves": ["X_SCISSOR", "AQUA_JET"]
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
             "speciesId": "jumpluff_shadow",
             "fastMove": "FAIRY_WIND",
             "chargedMoves": ["AERIAL_ACE", "ACROBATICS"],
@@ -376,21 +330,6 @@
         "weight": 1
     }, {
         "pokemon": [{
-            "speciesId": "azumarill",
-            "fastMove": "BUBBLE",
-            "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
-        }, {
-            "speciesId": "corsola_galarian",
-            "fastMove": "ASTONISH",
-            "chargedMoves": ["NIGHT_SHADE", "POWER_GEM"]
-        }, {
-            "speciesId": "skeledirge",
-            "fastMove": "INCINERATE",
-            "chargedMoves": ["TORCH_SONG", "SHADOW_BALL"]
-        }],
-        "weight": 1
-    }, {
-        "pokemon": [{
             "speciesId": "gligar_shadow",
             "fastMove": "FURY_CUTTER",
             "chargedMoves": ["AERIAL_ACE", "DIG"],
@@ -403,6 +342,211 @@
             "speciesId": "blastoise",
             "fastMove": "ROLLOUT",
             "chargedMoves": ["HYDRO_CANNON", "SKULL_BASH"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "moltres_galarian",
+            "fastMove": "SUCKER_PUNCH",
+            "chargedMoves": ["FLY", "BRAVE_BIRD"]
+        }, {
+            "speciesId": "dusclops",
+            "fastMove": "HEX",
+            "chargedMoves": ["ICE_PUNCH", "SHADOW_PUNCH"]
+        }, {
+            "speciesId": "drapion_shadow",
+            "fastMove": "POISON_STING",
+            "chargedMoves": ["CRUNCH", "AQUA_TAIL"],
+            "shadowType": "shadow"
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "gastrodon",
+            "fastMove": "MUD_SLAP",
+            "chargedMoves": ["BODY_SLAM", "EARTH_POWER"]
+        }, {
+            "speciesId": "dusclops_shadow",
+            "fastMove": "HEX",
+            "chargedMoves": ["ICE_PUNCH", "SHADOW_PUNCH"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "corsola_galarian",
+            "fastMove": "ASTONISH",
+            "chargedMoves": ["NIGHT_SHADE", "POWER_GEM"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "scizor_shadow",
+            "fastMove": "BULLET_PUNCH",
+            "chargedMoves": ["NIGHT_SLASH", "TRAILBLAZE"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "dusclops",
+            "fastMove": "HEX",
+            "chargedMoves": ["ICE_PUNCH", "SHADOW_PUNCH"]
+        }, {
+            "speciesId": "mandibuzz",
+            "fastMove": "SNARL",
+            "chargedMoves": ["DARK_PULSE", "AERIAL_ACE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "forretress",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["SAND_TOMB", "ROCK_TOMB"]
+        }, {
+            "speciesId": "drapion_shadow",
+            "fastMove": "POISON_STING",
+            "chargedMoves": ["CRUNCH", "AQUA_TAIL"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "jellicent",
+            "fastMove": "HEX",
+            "chargedMoves": ["SURF", "SHADOW_BALL"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "azumarill",
+            "fastMove": "BUBBLE",
+            "chargedMoves": ["ICE_BEAM", "PLAY_ROUGH"]
+        }, {
+            "speciesId": "primeape",
+            "fastMove": "KARATE_CHOP",
+            "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
+        }, {
+            "speciesId": "dusclops",
+            "fastMove": "HEX",
+            "chargedMoves": ["ICE_PUNCH", "SHADOW_PUNCH"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "diggersby",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["FIRE_PUNCH", "SCORCHING_SANDS"]
+        }, {
+            "speciesId": "dedenne",
+            "fastMove": "THUNDER_SHOCK",
+            "chargedMoves": ["PARABOLIC_CHARGE", "PLAY_ROUGH"]
+        }, {
+            "speciesId": "golisopod",
+            "fastMove": "FURY_CUTTER",
+            "chargedMoves": ["X_SCISSOR", "AQUA_JET"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "dusclops",
+            "fastMove": "HEX",
+            "chargedMoves": ["ICE_PUNCH", "SHADOW_PUNCH"]
+        }, {
+            "speciesId": "diggersby",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["FIRE_PUNCH", "SCORCHING_SANDS"]
+        }, {
+            "speciesId": "drapion_shadow",
+            "fastMove": "POISON_STING",
+            "chargedMoves": ["CRUNCH", "AQUA_TAIL"],
+            "shadowType": "shadow"
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "scizor_shadow",
+            "fastMove": "BULLET_PUNCH",
+            "chargedMoves": ["NIGHT_SLASH", "TRAILBLAZE"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "jellicent",
+            "fastMove": "HEX",
+            "chargedMoves": ["SURF", "SHADOW_BALL"]
+        }, {
+            "speciesId": "gligar_shadow",
+            "fastMove": "FURY_CUTTER",
+            "chargedMoves": ["AERIAL_ACE", "DIG"],
+            "shadowType": "shadow"
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "dedenne",
+            "fastMove": "THUNDER_SHOCK",
+            "chargedMoves": ["PARABOLIC_CHARGE", "PLAY_ROUGH"]
+        }, {
+            "speciesId": "diggersby",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["FIRE_PUNCH", "SCORCHING_SANDS"]
+        }, {
+            "speciesId": "feraligatr_shadow",
+            "fastMove": "SHADOW_CLAW",
+            "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"],
+            "shadowType": "shadow"
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "dedenne",
+            "fastMove": "THUNDER_SHOCK",
+            "chargedMoves": ["PARABOLIC_CHARGE", "PLAY_ROUGH"]
+        }, {
+            "speciesId": "dusclops",
+            "fastMove": "HEX",
+            "chargedMoves": ["ICE_PUNCH", "SHADOW_PUNCH"]
+        }, {
+            "speciesId": "gligar_shadow",
+            "fastMove": "FURY_CUTTER",
+            "chargedMoves": ["AERIAL_ACE", "DIG"],
+            "shadowType": "shadow"
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "dedenne",
+            "fastMove": "THUNDER_SHOCK",
+            "chargedMoves": ["PARABOLIC_CHARGE", "PLAY_ROUGH"]
+        }, {
+            "speciesId": "diggersby",
+            "fastMove": "QUICK_ATTACK",
+            "chargedMoves": ["FIRE_PUNCH", "SCORCHING_SANDS"]
+        }, {
+            "speciesId": "furret",
+            "fastMove": "SUCKER_PUNCH",
+            "chargedMoves": ["SWIFT", "TRAILBLAZE"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "dragalge",
+            "fastMove": "ACID",
+            "chargedMoves": ["AQUA_TAIL", "OUTRAGE"]
+        }, {
+            "speciesId": "jellicent",
+            "fastMove": "HEX",
+            "chargedMoves": ["SURF", "SHADOW_BALL"]
+        }, {
+            "speciesId": "primeape",
+            "fastMove": "KARATE_CHOP",
+            "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
+        }],
+        "weight": 1
+    }, {
+        "pokemon": [{
+            "speciesId": "dedenne",
+            "fastMove": "THUNDER_SHOCK",
+            "chargedMoves": ["PARABOLIC_CHARGE", "PLAY_ROUGH"]
+        }, {
+            "speciesId": "gligar_shadow",
+            "fastMove": "FURY_CUTTER",
+            "chargedMoves": ["AERIAL_ACE", "DIG"],
+            "shadowType": "shadow"
+        }, {
+            "speciesId": "araquanid",
+            "fastMove": "BUG_BITE",
+            "chargedMoves": ["WATER_PULSE", "BUBBLE_BEAM"]
         }],
         "weight": 1
     }]
