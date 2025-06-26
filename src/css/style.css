@@ -177,6 +177,19 @@ header .hamburger .meat {
   background: #554778;
 }
 
+.banner-link {
+  display: block;
+  padding: 10px;
+  border-radius: 8px;
+  background: #554778;
+  margin-bottom: 10px;
+  color: #f9fdff;
+  font-size: 14px;
+}
+.banner-link a {
+  color: #f9fdff;
+}
+
 footer {
   max-width: 800px;
   position: relative;
