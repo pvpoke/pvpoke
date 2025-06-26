@@ -5479,10 +5479,9 @@
         "hp": 190
     },
     "types": ["poison", "dark"],
-    "fastMoves": ["ACID", "BITE", "POISON_JAB"],
+    "fastMoves": ["BITE", "POISON_JAB"],
     "chargedMoves": ["CRUNCH", "GUNK_SHOT", "SLUDGE_BOMB"],
     "tags": ["alolan", "shadoweligible"],
-    "legacyMoves": ["ACID"],
     "defaultIVs": {
         "cp500": [14, 5, 13, 9],
         "cp1500": [49, 13, 13, 15],

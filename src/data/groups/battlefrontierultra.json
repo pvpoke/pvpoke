@@ -102,10 +102,6 @@
     "fastMove": "HEX",
     "chargedMoves": ["SURF", "SHADOW_BALL"]
 }, {
-    "speciesId": "lapras",
-    "fastMove": "PSYWAVE",
-    "chargedMoves": ["SPARKLING_ARIA", "ICE_BEAM"]
-}, {
     "speciesId": "lickilicky",
     "fastMove": "ROLLOUT",
     "chargedMoves": ["BODY_SLAM", "SHADOW_BALL"]
@@ -113,10 +109,6 @@
     "speciesId": "mandibuzz",
     "fastMove": "SNARL",
     "chargedMoves": ["DARK_PULSE", "AERIAL_ACE"]
-}, {
-    "speciesId": "moltres_galarian",
-    "fastMove": "SUCKER_PUNCH",
-    "chargedMoves": ["FLY", "BRAVE_BIRD"]
 }, {
     "speciesId": "nidoqueen",
     "fastMove": "POISON_STING",
@@ -133,14 +125,6 @@
     "speciesId": "poliwrath",
     "fastMove": "COUNTER",
     "chargedMoves": ["ICY_WIND", "SCALD"]
-}, {
-    "speciesId": "primeape",
-    "fastMove": "KARATE_CHOP",
-    "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
-}, {
-    "speciesId": "primeape_shadow",
-    "fastMove": "KARATE_CHOP",
-    "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
 }, {
     "speciesId": "registeel",
     "fastMove": "LOCK_ON",
@@ -174,14 +158,6 @@
     "fastMove": "VINE_WHIP",
     "chargedMoves": ["FRENZY_PLANT", "SLUDGE_BOMB"]
 }, {
-    "speciesId": "virizion",
-    "fastMove": "DOUBLE_KICK",
-    "chargedMoves": ["LEAF_BLADE", "SACRED_SWORD"]
-}, {
-    "speciesId": "weezing_galarian",
-    "fastMove": "FAIRY_WIND",
-    "chargedMoves": ["BRUTAL_SWING", "SLUDGE"]
-}, {
     "speciesId": "zygarde_complete",
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["CRUNCH", "EARTHQUAKE"]
@@ -190,14 +166,6 @@
     "fastMove": "DRAGON_TAIL",
     "chargedMoves": ["BULLDOZE", "OUTRAGE"]
 }, {
-    "speciesId": "bellibolt",
-    "fastMove": "SUCKER_PUNCH",
-    "chargedMoves": ["PARABOLIC_CHARGE", "ZAP_CANNON"]
-}, {
-    "speciesId": "bellibolt",
-    "fastMove": "THUNDER_SHOCK",
-    "chargedMoves": ["PARABOLIC_CHARGE", "ZAP_CANNON"]
-}, {
     "speciesId": "golisopod",
     "fastMove": "FURY_CUTTER",
     "chargedMoves": ["X_SCISSOR", "AQUA_JET"]
@@ -205,10 +173,6 @@
     "speciesId": "tinkaton",
     "fastMove": "FAIRY_WIND",
     "chargedMoves": ["PLAY_ROUGH", "BULLDOZE"]
-}, {
-    "speciesId": "cradily",
-    "fastMove": "ACID",
-    "chargedMoves": ["ROCK_TOMB", "GRASS_KNOT"]
 }, {
     "speciesId": "samurott",
     "fastMove": "FURY_CUTTER",

@@ -4,7 +4,7 @@
     "include": [],
     "exclude": [{
         "filterType": "id",
-        "values": ["garchomp_mega", "gardevoir_mega", "groudon_primal", "gyarados_mega", "kyogre_primal", "latios_mega", "rayquaza_mega", "salamence_mega", "swampert_mega", "tyranitar_mega","zacian_crowned_sword","zamazenta_crowned_shield","volcanion"]
+        "values": ["garchomp_mega", "gardevoir_mega", "groudon_primal", "gyarados_mega", "kyogre_primal", "latios_mega", "rayquaza_mega", "salamence_mega", "swampert_mega", "tyranitar_mega"]
     }],
     "tierRules": {
         "max": 11,

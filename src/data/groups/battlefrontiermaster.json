@@ -169,7 +169,7 @@
 }, {
     "speciesId": "melmetal",
     "fastMove": "THUNDER_SHOCK",
-    "chargedMoves": ["THUNDERBOLT", "DOUBLE_IRON_BASH"]
+    "chargedMoves": ["SUPER_POWER", "DOUBLE_IRON_BASH"]
 }, {
     "speciesId": "rhyperior",
     "fastMove": "MUD_SLAP",
@@ -230,4 +230,16 @@
     "speciesId": "groudon",
     "fastMove": "MUD_SHOT",
     "chargedMoves": ["PRECIPICE_BLADES","FIRE_PUNCH"]
+}, {
+    "speciesId": "zacian_crowned_sword",
+    "fastMove": "METAL_CLAW",
+    "chargedMoves": ["CLOSE_COMBAT","BEHEMOTH_BLADE"]
+}, {
+    "speciesId": "zamazenta_crowned_shield",
+    "fastMove": "METAL_CLAW",
+    "chargedMoves": ["CLOSE_COMBAT","BEHEMOTH_BASH"]
+}, {
+    "speciesId": "zamazenta_crowned_shield",
+    "fastMove": "ICE_FANG",
+    "chargedMoves": ["CLOSE_COMBAT","BEHEMOTH_BASH"]
 }]
