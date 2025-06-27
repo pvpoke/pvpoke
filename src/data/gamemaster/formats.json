@@ -41,6 +41,19 @@
 		]
 	},
 	{
+		"title": "Hisui Cup",
+		"cup": "hisui",
+		"cp": 1500,
+		"meta": "hisui",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Pokémon first discovered in the Hisui region or Pokémon with a Pokédex number from #387 to #493 will be allowed."
+		]
+	},
+	{
 		"title": "Master League (Classic)",
 		"cup": "classic",
 		"cp": 10000,
