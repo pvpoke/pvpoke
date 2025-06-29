@@ -122,8 +122,8 @@
 	<div class="detail-tab" tab="moves">
 		<div class="detail-section float margin">
 			<div class="ranking-header">Fast Moves</div>
-			<div class="ranking-header stat-toggle"><a class="show-move-stats" href="#">Show Stats</a></div>
-			<div class="moveset fast clear">
+			<!--<div class="ranking-header stat-toggle"><a class="show-move-stats" href="#">Show Stats</a></div>-->
+			<div class="moveset fast show-stats clear">
 				<div class="move-detail-template rank hide">
 					<div class="name-container flex">
 						<span class="name">Counter</span>
@@ -145,7 +145,7 @@
 		</div>
 		<div class="detail-section float">
 			<div class="ranking-header">Charged Moves</div>
-			<div class="moveset charged clear">
+			<div class="moveset charged show-stats clear">
 				<div class="move-detail-template rank hide">
 					<div class="name-container flex">
 						<span class="name">Counter</span>

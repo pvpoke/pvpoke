@@ -435,7 +435,9 @@ var InterfaceMaster = (function () {
 
 				if(pokemon.needsXLCandy()){
 					$el.attr("needs-xls", "true");
+					$el.find(".name").append("<span class=\"xl-info-icon\"></span>");
 				}
+
 
 				// For Prismatic Cup, show color category
 

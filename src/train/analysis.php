@@ -66,27 +66,15 @@ switch($cup){
 
 }
 
-$META_TITLE = $league . ' Training Analysis';
+$META_TITLE = $league . ' Top Performers';
 
 $META_DESCRIPTION = 'Search the top Pokemon, top movesets, and top teams teams measured from the site\'s simulated Training Battles.';
-
-if(isset($_GET['p'])){
-	// Put Pokemon names in the meta title
-
-	$name = ucwords(str_replace('_',' ', explode('-', htmlspecialchars($_GET['p']))[0]));
-
-	$META_TITLE = $name . ' ' . $league . ' PvP Rankings';
-
-	$META_DESCRIPTION = 'Explore key matchups, moves, and counters for ' . $name . ' in ' . $league . '.';
-
-	$CANONICAL = '/rankings/' . $cup . '/' . $cp . '/overall/' . htmlspecialchars($_GET['p']) . '/';
-}
 
 require_once '../header.php';
 
 ?>
 
-<h1>Training Analysis</h1>
+<h1>Top Performers</h1>
 <div class="section analysis-container white">
 
 	<select class="format-select">
@@ -95,65 +83,16 @@ require_once '../header.php';
 		<option value="10000" cup="all" level-cap="50">Master League</option>
 	</select>
 
+	<div class="ranking-categories mode-select">
+		<a href="<?php echo $WEB_ROOT; ?>train/">Train</a>
+		<a class="selected" href="<?php echo $WEB_ROOT; ?>train/analysis/">Top Performers</a>
+	</div>
+
 	<div class="date-updated">Last updated</div>
 
-	<h3>Top Performers</h3>
+	<h3>Teams</h3>
 
-	<p>Average performance for individual Pokemon and movesets used in PvPoke.com <a href="<?php echo $WEB_ROOT; ?>train/">Training Battles</a>. Data is sampled from both players and bots in the Elite and Champion difficulties. If a Pokemon or moveset isn't listed, it may not have a sufficient usage.</p>
-
-	<div class="poke-search-container">
-		<input class="poke-search" target="performers" type="text" placeholder="Search Pokemon" />
-		<a href="#" class="search-info">i</a>
-	</div>
-
-	<h2 class="loading">Loading data...</h2>
-
-	<div class="table-container">
-		<table class="train-table performers" cellspacing="0">
-			<thead>
-				<tr>
-					<td><a href="#" data="name">Pokemon</a></td>
-					<td></td>
-					<td><a href="#" class="selected" data="team">Team Rating</a></td>
-					<td><a href="#" data="individual">Individual<br>Rating</a></td>
-					<td><a href="#" data="usage">Usage</a></td>
-				</tr>
-				<!--Row html to clone-->
-				<tr class="hide">
-					<td class="poke-name">
-						<div class="sprite-container pokemon">
-							<div class="main-sprite"></div>
-							<div class="secondary-sprite"></div>
-						</div>
-						<div class="name-container">
-							<div class="name">Azumarill</div>
-							<div class="moves">Bubble, Ice Beam, Hydro Pump</div>
-						</div>
-					</td>
-					<td class="link"><a href="#" target="_blank"></a></td>
-					<td class="team-score"><div class="rating"></div></td>
-					<td class="individual-score">129.3%</td>
-					<td class="usage">1,024</td>
-				</tr>
-			</thead>
-			<tbody>
-			</tbody>
-		</table>
-	</div>
-
-	<a href="#" class="button download-csv performers">Export to CSV</a>
-
-	<p class="column-description"><b>Team Rating - </b> Similar to the Battle Rating metric in battle simulations, the Team Rating metric is a number between 0 and 1000 that measures the quality of wins and losses depending on how much HP remains on the opposing team. An average team rating above 500 means teams including that Pokemon win more often. An average team rating below 500 indicates underperformance, and that teams including that Pokemon may struggle.</p>
-
-	<p class="column-description"><b>Individual Rating - </b> The individual rating metric measures the damage output of a Pokemon in battle. 100% equals 1 Pokemon worth of damage. This metric also includes shields drawn by the Pokemon: 1 shield is treated as 50% of a Pokemon in Great League, and 40% of a Pokemon in Ultra and Master League. Pokemon with high average individual rating have strong damage output and shield pressure. However, high individual rating doesn't always correlate to success on a team.</p>
-
-	<p class="column-description"><b>Usage - </b> Usage by players and bots on teams of 3. A large sample size will yield higher confidence in the data. A <span class="low-volume">small sample size</span> may be the result of an individual player, and consequentially yield lower confidence in the data. The data is filtered by a minimum usage threshold.</p>
-
-	<?php require '../modules/ads/body-728.php'; ?>
-
-	<h3>Top Teams</h3>
-
-	<div>Average performance for teams used in PvPoke.com <a href="<?php echo $WEB_ROOT; ?>train/">Training Battles</a>. Data is sampled from both players and bots in the Elite and Champion difficulties.</div>
+	<p class="description">Below are the top performing teams from PvPoke.com Training Battles. Data is sampled from both players and bots in the Elite and Champion difficulties.</p>
 
 	<div class="poke-search-container">
 		<input class="poke-search" target="teams" type="text" placeholder="Search Pokemon" />
@@ -221,9 +160,65 @@ require_once '../header.php';
 
 	<a href="#" class="button download-csv teams">Export to CSV</a>
 
-	<p class="column-description"><b>Team Rating - </b> Similar to the Battle Rating metric in battle simulations, the Team Rating metric is a number between 0 and 1000 that measures the quality of wins and losses depending on how much HP remains on the opposing team. An average team rating above 500 means this team wins more often. An average team rating below 500 indicates underperformance.</p>
+	<p class="column-description description"><b>Team Rating - </b> Similar to the Battle Rating metric in battle simulations, the Team Rating metric is a number between 0 and 1000 that measures the quality of wins and losses depending on how much HP remains on the opposing team. An average team rating above 500 means this team wins more often. An average team rating below 500 indicates underperformance.</p>
 
 	<p class="column-description"><b>Usage - </b> Usage by players and bots. A large sample size will yield higher confidence in the data. A <span class="low-volume">small sample size</span> may be the result of an individual player, and consequentially yield lower confidence in the data. The data is filtered by a minimum usage threshold.</p>
+
+	<h3>Pokemon</h3>
+
+	<p class="description">Below are the top performing individual Pokemon from PvPoke.com Training Battles. Data is sampled from both players and bots in the Elite and Champion difficulties. If a Pokemon or moveset isn't listed, it may not have a sufficient data.</p>
+
+	<div class="poke-search-container">
+		<input class="poke-search" target="performers" type="text" placeholder="Search Pokemon" />
+		<a href="#" class="search-info">i</a>
+	</div>
+
+	<h2 class="loading">Loading data...</h2>
+
+	<div class="table-container">
+		<table class="train-table performers" cellspacing="0">
+			<thead>
+				<tr>
+					<td><a href="#" data="name">Pokemon</a></td>
+					<td></td>
+					<td><a href="#" class="selected" data="team">Team Rating</a></td>
+					<td><a href="#" data="individual">Individual<br>Rating</a></td>
+					<td><a href="#" data="usage">Usage</a></td>
+				</tr>
+				<!--Row html to clone-->
+				<tr class="hide">
+					<td class="poke-name">
+						<div class="sprite-container pokemon">
+							<div class="main-sprite"></div>
+							<div class="secondary-sprite"></div>
+						</div>
+						<div class="name-container">
+							<div class="name">Azumarill</div>
+							<div class="moves">Bubble, Ice Beam, Hydro Pump</div>
+						</div>
+					</td>
+					<td class="link"><a href="#" target="_blank"></a></td>
+					<td class="team-score"><div class="rating"></div></td>
+					<td class="individual-score">129.3%</td>
+					<td class="usage">1,024</td>
+				</tr>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+
+	<a href="#" class="button download-csv performers">Export to CSV</a>
+
+	<p class="column-description"><b>Team Rating - </b> Similar to the Battle Rating metric in battle simulations, the Team Rating metric is a number between 0 and 1000 that measures the quality of wins and losses depending on how much HP remains on the opposing team. An average team rating above 500 means teams including that Pokemon win more often. An average team rating below 500 indicates underperformance, and that teams including that Pokemon may struggle.</p>
+
+	<p class="column-description"><b>Individual Rating - </b> The individual rating metric measures the damage output of a Pokemon in battle. 100% equals 1 Pokemon worth of damage. This metric also includes shields drawn by the Pokemon: 1 shield is treated as 50% of a Pokemon in Great League, and 40% of a Pokemon in Ultra and Master League. Pokemon with high average individual rating have strong damage output and shield pressure. However, high individual rating doesn't always correlate to success on a team.</p>
+
+	<p class="column-description"><b>Usage - </b> Usage by players and bots on teams of 3. A large sample size will yield higher confidence in the data. A <span class="low-volume">small sample size</span> may be the result of an individual player, and consequentially yield lower confidence in the data. The data is filtered by a minimum usage threshold.</p>
+
+	<?php require '../modules/ads/body-728.php'; ?>
+
+
 </div>
 
 <div class="section about white">

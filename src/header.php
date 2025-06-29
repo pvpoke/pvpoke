@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.33.2.8';
+$SITE_VERSION = '1.33.3';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -141,7 +141,7 @@ if(! isset($OG_IMAGE)){
 
 <link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/themes/sunflower/favicon.png">
 
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=205">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=206">
 
 <?php if(strpos($META_TITLE, 'Train') !== false): ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=21">
@@ -152,7 +152,7 @@ if(! isset($OG_IMAGE)){
 <?php endif; ?>
 
 <?php if((isset($_SETTINGS->theme))&&($_SETTINGS->theme != "default")): ?>
-	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/themes/<?php echo $_SETTINGS->theme; ?>.css?v=28">
+	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/themes/<?php echo $_SETTINGS->theme; ?>.css?v=29">
 <?php endif; ?>
 
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>
@@ -248,66 +248,68 @@ if(! isset($OG_IMAGE)){
 				<div class="meat"></div>
 			</div>
 			<div class="menu">
-				<div class="parent-menu">
-					<a class="icon-battle <?php if(strpos($_SERVER['REQUEST_URI'], '/battle/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>battle/">
-						Battle<span></span>
-					</a>
-					<div class="submenu">
-						<div class="submenu-wrap">
-							<a class="nav-great" href="<?php echo $WEB_ROOT; ?>battle/">Single Battle</a>
-							<a class="nav-ultra" href="<?php echo $WEB_ROOT; ?>battle/multi/">Multi Battle</a>
-							<a class="nav-master" href="<?php echo $WEB_ROOT; ?>battle/matrix/">Matrix Battle</a>
-						</div>
-					</div>
-				</div>
-				<div class="parent-menu">
-					<a class="icon-rankings <?php if(strpos($_SERVER['REQUEST_URI'], '/rankings/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>rankings/">
-						Rankings <span></span>
-					</a>
-					<div class="submenu">
-						<div class="submenu-wrap">
-							<a class="nav-great" href="<?php echo $WEB_ROOT; ?>rankings/all/1500/overall/">Great League</a>
-							<a class="nav-ultra" href="<?php echo $WEB_ROOT; ?>rankings/all/2500/overall/">Ultra League</a>
-							<a class="nav-master" href="<?php echo $WEB_ROOT; ?>rankings/all/10000/overall/">Master League</a>
-							<a href="<?php echo $WEB_ROOT; ?>custom-rankings/">Custom Rankings</a>
-						</div>
-					</div>
-				</div>
-				<a class="icon-team <?php if(strpos($_SERVER['REQUEST_URI'], '/team-builder/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>team-builder/">Team Builder</a>
-				<div class="parent-menu">
-					<a class="icon-train <?php if(strpos($_SERVER['REQUEST_URI'], '/train/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>train/">
-						Train <span></span>
-					</a>
-					<div class="submenu">
-						<div class="submenu-wrap">
-							<a href="<?php echo $WEB_ROOT; ?>train/analysis/">Top Performers</a>
-						</div>
-					</div>
-				</div>
-				<div class="parent-menu more-parent-menu">
-					<a class="more desktop" href="#">
-						<div class="hamburger desktop">
-							<!--Because I'm too lazy to make a graphic-->
-							<div class="meat"></div>
-							<div class="meat"></div>
-							<div class="meat"></div>
-						</div>
-					</a>
-					<div class="submenu">
-						<div class="submenu-wrap">
-							<a href="<?php echo $WEB_ROOT; ?>moves/">Moves</a>
-							<a href="<?php echo $WEB_ROOT; ?>articles/">Articles</a>
-							<a href="<?php echo $WEB_ROOT; ?>settings/">Settings</a>
-							<a class="icon-heart" href="<?php echo $WEB_ROOT; ?>contact/">Contact</a>
-							<a class="tera" href="<?php echo $WEB_ROOT; ?>tera/">Tera Raid Counters</a>
-							<div class="latest-section mobile">
-								<h4>Latest <a href="<?php echo $WEB_ROOT; ?>#news"></a></h4>
-								<a class="latest-link" href="#"></a>
-								<div class="date"></div>
+				<div class="menu-content">
+					<div class="parent-menu">
+						<a class="icon-battle <?php if(strpos($_SERVER['REQUEST_URI'], '/battle/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>battle/">
+							Battle<span></span>
+						</a>
+						<div class="submenu">
+							<div class="submenu-wrap">
+								<a class="nav-great" href="<?php echo $WEB_ROOT; ?>battle/">Single Battle</a>
+								<a class="nav-ultra" href="<?php echo $WEB_ROOT; ?>battle/multi/">Multi Battle</a>
+								<a class="nav-master" href="<?php echo $WEB_ROOT; ?>battle/matrix/">Matrix Battle</a>
 							</div>
 						</div>
 					</div>
-					<div class="safe-mouse-space"></div>
+					<div class="parent-menu">
+						<a class="icon-rankings <?php if(strpos($_SERVER['REQUEST_URI'], '/rankings/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>rankings/">
+							Rankings <span></span>
+						</a>
+						<div class="submenu">
+							<div class="submenu-wrap">
+								<a class="nav-great" href="<?php echo $WEB_ROOT; ?>rankings/all/1500/overall/">Great League</a>
+								<a class="nav-ultra" href="<?php echo $WEB_ROOT; ?>rankings/all/2500/overall/">Ultra League</a>
+								<a class="nav-master" href="<?php echo $WEB_ROOT; ?>rankings/all/10000/overall/">Master League</a>
+								<a href="<?php echo $WEB_ROOT; ?>custom-rankings/">Custom Rankings</a>
+							</div>
+						</div>
+					</div>
+					<a class="icon-team <?php if(strpos($_SERVER['REQUEST_URI'], '/team-builder/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>team-builder/">Team Builder</a>
+					<div class="parent-menu">
+						<a class="icon-train <?php if(strpos($_SERVER['REQUEST_URI'], '/train/')): echo "selected"; endif; ?>" href="<?php echo $WEB_ROOT; ?>train/">
+							Train <span></span>
+						</a>
+						<div class="submenu">
+							<div class="submenu-wrap">
+								<a href="<?php echo $WEB_ROOT; ?>train/analysis/">Top Performers</a>
+							</div>
+						</div>
+					</div>
+					<div class="parent-menu more-parent-menu">
+						<a class="more desktop" href="#">
+							<div class="hamburger desktop">
+								<!--Because I'm too lazy to make a graphic-->
+								<div class="meat"></div>
+								<div class="meat"></div>
+								<div class="meat"></div>
+							</div>
+						</a>
+						<div class="submenu">
+							<div class="submenu-wrap">
+								<a href="<?php echo $WEB_ROOT; ?>moves/">Moves</a>
+								<a href="<?php echo $WEB_ROOT; ?>articles/">Articles</a>
+								<a href="<?php echo $WEB_ROOT; ?>settings/">Settings</a>
+								<a class="icon-heart" href="<?php echo $WEB_ROOT; ?>contact/">Contact</a>
+								<a class="tera" href="<?php echo $WEB_ROOT; ?>tera/">Tera Raid Counters</a>
+								<div class="latest-section mobile">
+									<h4>Latest <a href="<?php echo $WEB_ROOT; ?>#news"></a></h4>
+									<a class="latest-link" href="#"></a>
+									<div class="date"></div>
+								</div>
+							</div>
+						</div>
+						<div class="safe-mouse-space"></div>
+					</div>
 				</div>
 			</div>
 		</div>

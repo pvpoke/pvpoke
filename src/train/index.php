@@ -8,10 +8,14 @@ $META_DESCRIPTION = 'Select your team and practice battling against an AI.';
 require_once '../header.php';
 ?>
 <h1>Training Battle</h1>
-<div class="section home white">
-	<p>Select your team and options below to battle in a real-time simulation against a CPU opponent.</p>
+<div class="section white">
+	<div class="ranking-categories mode-select">
+		<a class="selected" href="<?php echo $WEB_ROOT; ?>train/">Train</a>
+		<a href="<?php echo $WEB_ROOT; ?>train/analysis/">Top Performers</a>
+	</div>
+	<div class="clear"></div>
+	<p class="description">Select your team and options below to battle in a real-time simulation against a CPU opponent.</p>
 	<p>This tool is a training and learning resource intended to supplement your in-game battles. Experiment with new lineups or practice in a pressure free environment against a difficulty of your choice!</p>
-	<p>Check out <a href="<?php echo $WEB_ROOT; ?>train/analysis/">Training Analysis</a> for rankings and data recorded from these Training Battles.</p>
 </div>
 
 <div class="hide">

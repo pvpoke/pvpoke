@@ -124,7 +124,7 @@ var InterfaceMaster = (function () {
 					// Determine XL category
 
 					if(pokemon.needsXLCandy()){
-						$el.find(".name").append("<span class=\"xl-info-icon\">XL</span>");
+						$el.find(".name").append("<span class=\"xl-info-icon\"></span>");
 					}
 				}
 

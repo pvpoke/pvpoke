@@ -56,6 +56,7 @@
 		$(".menu .parent-menu > a").on("click", function(e){
 			if($(e.target).is("span") && screen.width < 721){
 				e.preventDefault();
+				$(this).toggleClass("active");
 				$(this).next(".submenu").toggleClass("active");
 			}
 		});

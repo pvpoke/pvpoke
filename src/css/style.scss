@@ -168,9 +168,6 @@ header{
 
 	.menu{
 		padding:3px 0;
-		display:flex;
-		align-items: center;
-
 		a{
 			display:block;
 			margin-left:20px;
@@ -374,8 +371,12 @@ footer{
 		margin:1em 0;
 	}
 
-	p.small{
+	p{
 		font-size: 14px;
+	}
+
+	p.small{
+		font-size: 12px;
 	}
 
 	h2{
@@ -1579,6 +1580,10 @@ b{
 		.delete-list-confirm + .poke.multi{
 			float:right;
 		}
+	}
+
+	&.train .swap{
+		display: none;
 	}
 }
 
@@ -2932,15 +2937,16 @@ a.download-csv{
 
 	.xl-info-icon{
 		display: inline-block;
-	    margin-left: 15px;
-	    background: #000;
-	    border-radius: 4px;
-	    padding: 2px 6px;
-	    color: #fff;
+	    margin-left: 10px;
 	    opacity: .3;
-	    font-size: 12px;
 		position: relative;
-		top: -1px;
+		top: 3px;
+		width: 22px;
+		height: 18px;
+		background: url('../img/xl-icon-small.png');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: center;
 	}
 
 	.rating-container{
@@ -3858,6 +3864,10 @@ a.download-csv{
 
 			@include transition(background-color, 0s, ease-out, 0s);
 		}
+	}
+
+	&.training-mode-select{
+		margin-bottom: 15px;
 	}
 }
 
@@ -5233,9 +5243,11 @@ a.pokebattler{
 		    width: 100%;
 		    margin: 0 -10px;
 		    top: 37px;
+			height: calc(100% - 37px);
 			padding: 8px 8px;
     		box-sizing: border-box;
 			box-shadow: 0px 5px 5px rgba(0,0,0,0.4);
+			overflow-y: auto;
 			//top: 65px;
 
 			a{
@@ -5251,6 +5263,24 @@ a.pokebattler{
 				background-color: $color-blue-medium;
 
 				@include transition(background-color, 0s, ease-out, 0s);
+			}
+
+			.parent-menu a{
+				position:relative;
+
+				span{
+					width:20px;
+					height:10px;
+					background:url('../img/themes/sunflower/dropdown-triangle-large.png');
+					background-repeat: no-repeat;
+					background-position: center;
+					top: 2px;
+					@include transition(all, 0.125s, ease-out, 0s);
+				}
+
+				&.active span{
+					transform: rotate(180deg);
+				}
 			}
 
 			.icon-battle{
@@ -5704,6 +5734,10 @@ a.pokebattler{
 		margin-bottom:20px;
 	}
 
+	.format-select{
+		max-width: 143px;
+	}
+
 	.column-description{
 		font-size:12px;
 	}
@@ -6152,6 +6186,11 @@ a.feed-subscribe{
 	header .menu{
 		position:relative;
 
+		.menu-content{
+			display:flex;
+			align-items: center;
+		}
+
 		.more{
 			font-size:40px;
 			font-family:serif;
@@ -6199,7 +6238,7 @@ a.feed-subscribe{
 			}
 		}
 
-		& > a:hover, & > .parent-menu:hover > a{
+		& .menu-content > a:hover, & .menu-content > .parent-menu:hover > a{
 			background-color: $color-sky-blue;
 
 			@include transition(background-color, 0s, ease-out, 0s);
@@ -6317,6 +6356,10 @@ a.feed-subscribe{
 		span.usage-value{
 			width: 55px;
 		}
+	}
+
+	.analysis-container .format-select{
+		max-width: 100%;
 	}
 }
 

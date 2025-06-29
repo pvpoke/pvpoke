@@ -144,10 +144,6 @@ header{
 	.icon-contribute{
 		background-image:url('../../img/themes/sunflower/nav-heart-white.png');
 	}
-
-	.menu .parent-menu > a span{
-		background-image: url('../../img/themes/sunflower/dropdown-triangle-white.png');
-	}
 }
 h1{
 	color:$font-color;
@@ -430,9 +426,9 @@ a.toggle{
 		background:$color-blue-dark;
 	}
 
-	header .menu > a:hover, header .menu > a.selected,
-	header .menu > .parent-menu:hover > a, header .menu .parent-menu > a.selected,
+	header .menu-content > a:hover, header .menu-content > a.selected,
+	header .menu-content > .parent-menu:hover > a, header .menu-content .parent-menu > a.selected,
 	.ranking-categories a.selected, .ranking-categories a:hover{
-		background-color: $color-blue-dark;
+		background-color: $color-blue-dark !important;
 	}
 }
