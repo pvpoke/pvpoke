@@ -27610,6 +27610,30 @@
         "evolutions": ["zoroark"]
     }
 }, {
+    "dex": 570,
+    "speciesId": "zorua_hisuian",
+    "speciesName": "Zorua (Hisuian)",
+    "baseStats": {
+        "atk": 162,
+        "def": 79,
+        "hp": 111
+    },
+    "types": ["normal", "ghost"],
+    "fastMoves": ["SCRATCH", "SNARL"],
+    "chargedMoves": ["FOUL_PLAY", "SHADOW_BALL", "DARK_PULSE", "NIGHT_SHADE"],
+    "defaultIVs": {
+        "cp500": [15.5, 4, 15, 15],
+        "cp1500": [50, 15, 15, 15],
+        "cp2500": [50, 15, 15, 15]
+    },
+    "buddyDistance": 5,
+    "thirdMoveCost": 75000,
+    "released": false,
+    "family": {
+        "id": "FAMILY_ZORUA",
+        "evolutions": ["zoroark"]
+    }
+}, {
     "dex": 571,
     "speciesId": "zoroark",
     "speciesName": "Zoroark",
@@ -27630,6 +27654,31 @@
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
     "released": true,
+    "family": {
+        "id": "FAMILY_ZORUA",
+        "parent": "zorua"
+    }
+}, {
+    "dex": 571,
+    "speciesId": "zoroark_hisuian",
+    "speciesName": "Zoroark (Hisuian)",
+    "baseStats": {
+        "atk": 261,
+        "def": 128,
+        "hp": 146
+    },
+    "types": ["normal", "ghost"],
+    "fastMoves": ["SHADOW_CLAW", "SNARL"],
+    "chargedMoves": ["FOUL_PLAY", "SLUDGE_BOMB", "FLAMETHROWER", "SHADOW_BALL"],
+    "defaultIVs": {
+        "cp500": [7.5, 2, 11, 5],
+        "cp1500": [21, 5, 13, 14],
+        "cp2500": [40, 6, 15, 11]
+    },
+    "tags": ["hisuian"],
+    "buddyDistance": 5,
+    "thirdMoveCost": 75000,
+    "released": false,
     "family": {
         "id": "FAMILY_ZORUA",
         "parent": "zorua"
