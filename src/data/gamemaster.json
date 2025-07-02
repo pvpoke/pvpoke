@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-07-01 00:42:50",
+    "timestamp": "2025-07-02 20:45:20",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -273,7 +273,7 @@
             "values": [387, 493]
         }, {
             "filterType": "id",
-            "values": ["sneasel_hisuian", "sneasel_hisuian_shadow", "sneasler", "sneasler_shadow", "qwilfish_hisuian", "overqwil", "growlithe_hisuian", "arcanine_hisuian", "braviary_hisuian", "voltorb_hisuian", "electrode_hisuian", "typhlosion_hisuian", "samurott_hisuian", "decidueye_hisuian", "wyrdeer", "kleavor", "ursaluna"]
+            "values": ["sneasel_hisuian", "sneasel_hisuian_shadow", "sneasler", "sneasler_shadow", "qwilfish_hisuian", "overqwil", "growlithe_hisuian", "arcanine_hisuian", "braviary_hisuian", "voltorb_hisuian", "electrode_hisuian", "typhlosion_hisuian", "samurott_hisuian", "decidueye_hisuian", "wyrdeer", "kleavor", "ursaluna", "zoroark_hisuian"]
         }],
         "exclude": [{
             "filterType": "tag",
@@ -28466,6 +28466,30 @@
             "evolutions": ["zoroark"]
         }
     }, {
+        "dex": 570,
+        "speciesId": "zorua_hisuian",
+        "speciesName": "Zorua (Hisuian)",
+        "baseStats": {
+            "atk": 162,
+            "def": 79,
+            "hp": 111
+        },
+        "types": ["normal", "ghost"],
+        "fastMoves": ["SCRATCH", "SNARL"],
+        "chargedMoves": ["FOUL_PLAY", "SHADOW_BALL", "DARK_PULSE", "NIGHT_SHADE"],
+        "defaultIVs": {
+            "cp500": [15.5, 4, 15, 15],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": false,
+        "family": {
+            "id": "FAMILY_ZORUA",
+            "evolutions": ["zoroark"]
+        }
+    }, {
         "dex": 571,
         "speciesId": "zoroark",
         "speciesName": "Zoroark",
@@ -28490,6 +28514,32 @@
             "id": "FAMILY_ZORUA",
             "parent": "zorua"
         }
+    }, {
+        "dex": 571,
+        "speciesId": "zoroark_hisuian",
+        "speciesName": "Zoroark (Hisuian)",
+        "baseStats": {
+            "atk": 261,
+            "def": 128,
+            "hp": 146
+        },
+        "types": ["normal", "ghost"],
+        "fastMoves": ["SHADOW_CLAW", "SNARL"],
+        "chargedMoves": ["FOUL_PLAY", "SLUDGE_BOMB", "FLAMETHROWER", "SHADOW_BALL"],
+        "defaultIVs": {
+            "cp500": [7.5, 2, 11, 5],
+            "cp1500": [21, 5, 13, 14],
+            "cp2500": [40, 6, 15, 11]
+        },
+        "tags": ["hisuian"],
+        "buddyDistance": 5,
+        "thirdMoveCost": 75000,
+        "released": false,
+        "family": {
+            "id": "FAMILY_ZORUA",
+            "parent": "zorua"
+        },
+        "searchPriority": 2
     }, {
         "dex": 572,
         "speciesId": "minccino",

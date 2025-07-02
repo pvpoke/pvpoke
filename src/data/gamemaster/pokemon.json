@@ -27682,7 +27682,8 @@
     "family": {
         "id": "FAMILY_ZORUA",
         "parent": "zorua"
-    }
+    },
+	"searchPriority": 2
 }, {
     "dex": 572,
     "speciesId": "minccino",
