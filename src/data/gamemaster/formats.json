@@ -1,32 +1,5 @@
 [
 	{
-		"title": "Fossil Cup",
-		"cup": "fossil",
-		"cp": 1500,
-		"meta": "fossil",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Water-, Rock-, and Steel-type Pokémon are eligible.",
-			"Charizard is not allowed."
-		]
-	},
-	{
-		"title": "Summer Cup (Ultra League)",
-		"cup": "summer",
-		"cp": 2500,
-		"meta": "summerultra",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 2,500 CP to enter.",
-			"Only Normal-, Fire-, Water-, Grass-, Electric-, and Bug-type Pokémon are eligible."
-		]
-	},
-	{
 		"title": "Little Element Cup",
 		"cup": "element",
 		"cp": 500,
@@ -51,6 +24,49 @@
 		"rules": [
 			"Pokémon must be at or below 1,500 CP to enter.",
 			"Only Pokémon first discovered in the Hisui region or Pokémon with a Pokédex number from #387 to #493 will be allowed."
+		]
+	},
+	{
+		"title": "Sunshine Cup",
+		"cup": "sunshine",
+		"cp": 1500,
+		"meta": "sunshine",
+		"showCup": true,
+		"showFormat": true,
+		"showMeta": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Normal-, Fire-, Grass-, and Ground-type Pokémon are eligible.",
+			"Charizard is not allowed."
+		]
+	},
+	{
+		"title": "Fossil Cup",
+		"cup": "fossil",
+		"cp": 1500,
+		"meta": "fossil",
+		"showCup": false,
+		"showFormat": false,
+		"showMeta": false,
+		"hideRankings": true,
+		"rules": [
+			"Pokémon must be at or below 1,500 CP to enter.",
+			"Only Water-, Rock-, and Steel-type Pokémon are eligible.",
+			"Charizard is not allowed."
+		]
+	},
+	{
+		"title": "Summer Cup (Ultra League)",
+		"cup": "summer",
+		"cp": 2500,
+		"meta": "summerultra",
+		"showCup": false,
+		"showFormat": false,
+		"showMeta": false,
+		"hideRankings": true,
+		"rules": [
+			"Pokémon must be at or below 2,500 CP to enter.",
+			"Only Normal-, Fire-, Water-, Grass-, Electric-, and Bug-type Pokémon are eligible."
 		]
 	},
 	{
