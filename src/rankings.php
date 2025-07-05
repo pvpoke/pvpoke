@@ -77,7 +77,7 @@ switch($cup){
 		break;
 
 	case "devonchampionship":
-		$league = 'devonchampionship';
+		$league = 'Devon Championship';
 		break;
 
 	case "pillar2":

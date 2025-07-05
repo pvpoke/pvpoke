@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-07-04 00:32:47",
+    "timestamp": "2025-07-05 03:07:20",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -147,7 +147,7 @@
         "include": [],
         "exclude": [{
             "filterType": "id",
-            "values": ["bellibolt", "cradily", "virizion", "lapras", "moltres_galarian", "primeape", "weezing_galarian"]
+            "values": ["feraligatr", "bellibolt", "cradily", "virizion", "lapras", "tentacruel", "forretress", "dusknoir", "talonflame"]
         }]
     }, {
         "name": "cascade",
@@ -200,6 +200,32 @@
         "title": "Custom",
         "include": [],
         "exclude": []
+    }, {
+        "name": "devonchampionship",
+        "title": "Devon (Championship Invitational)",
+        "include": [{
+            "filterType": "type",
+            "name": "Type",
+            "values": ["electric", "ghost", "poison", "rock"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["feraligatr", "feraligatr_shadow", "golisopod", "typhlosion", "typhlosion_shadow", "leavanny"]
+        }],
+        "exclude": [{
+            "filterType": "tag",
+            "name": "Tag",
+            "values": ["mega"]
+        }, {
+            "filterType": "type",
+            "name": "Type",
+            "values": ["dark", "ground", "ice", "steel"]
+        }, {
+            "filterType": "id",
+            "name": "Species",
+            "values": ["boltund", "bellibolt", "dusknoir", "carbink", "golurk", "corsola_galarian", "hakamo_o", "dragonair"]
+        }],
+        "levelCap": 50
     }, {
         "name": "element",
         "title": "Element Cup",
@@ -768,18 +794,18 @@
         "showFormat": true,
         "showMeta": true
     }, {
-        "title": "Devon Rivalry Cup",
-        "cup": "rivalry",
-        "cp": 1500,
-        "meta": "rivalry",
-        "showCup": true,
-        "showFormat": true,
-        "showMeta": true
-    }, {
         "title": "Devon Ascension Cup",
         "cup": "ascension",
         "cp": 1500,
         "meta": "ascension",
+        "showCup": true,
+        "showFormat": true,
+        "showMeta": true
+    }, {
+        "title": "Devon (Championship Invitational S2)",
+        "cup": "devonchampionship",
+        "cp": 1500,
+        "meta": "devonchampionship",
         "showCup": true,
         "showFormat": true,
         "showMeta": true

@@ -1,0 +1,27 @@
+{
+    "name": "devonchampionship",
+    "title": "Devon (Championship Invitational)",
+    "include": [{
+        "filterType": "type",
+        "name": "Type",
+        "values": ["electric", "ghost", "poison", "rock"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["feraligatr", "feraligatr_shadow", "golisopod", "typhlosion", "typhlosion_shadow", "leavanny"]
+    }],
+    "exclude": [{
+        "filterType": "tag",
+        "name": "Tag",
+        "values": ["mega"]
+    }, {
+        "filterType": "type",
+        "name": "Type",
+        "values": ["dark", "ground", "ice", "steel"]
+    }, {
+        "filterType": "id",
+        "name": "Species",
+        "values": ["boltund", "bellibolt", "dusknoir", "carbink", "golurk", "corsola_galarian", "hakamo_o", "dragonair"]
+    }],
+    "levelCap": 50
+}
