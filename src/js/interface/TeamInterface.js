@@ -1406,6 +1406,7 @@ var InterfaceMaster = (function () {
 			function rateClick(e){
 				$(".rate-btn .btn-label").html("Generating...");
 				$(".section.error").hide();
+				$(".team-advanced").prev(".toggle").removeClass("active"); // Hide advanced options when generating results
 
 				// This is stupid but the visual updates won't execute until Javascript has completed the entire thread
 

@@ -1313,28 +1313,68 @@ function PokeSelect(element, i){
 
 	// Show move stats on hover
 
-	$el.on("mousemove", ".move-bar", function(e){
+	$el.on("mousemove", ".move-bar, .move-select", function(e){
+		let $target = $(e.target);
 
 		$tooltip.show();
 
 		$tooltip.attr("class","tooltip");
 
-		var index = $el.find(".move-bar").index($(e.target).closest(".move-bar"));
-		var move = selectedPokemon.chargedMoves[index];
-		var displayDamage = move.damage;
-		// If opponent exists, recalc damage using original stats
-		if(battle.getOpponent(selectedPokemon.index)){
-			var opponent = battle.getOpponent(selectedPokemon.index);
-			var effectiveness = opponent.typeEffectiveness[move.type];
-			displayDamage = DamageCalculator.damageByStats(selectedPokemon, opponent, selectedPokemon.getEffectiveStat(0, true), opponent.getEffectiveStat(1, true), effectiveness, move);
+		let move;
+		let moveType;
+
+		if($target.is(".move-bar")){
+			let index = $el.find(".move-bar").index($target);
+			move = selectedPokemon.chargedMoves[index];
+			moveType = "charged";
+		} else if($target.is(".move-select.charged")){
+			let index = $el.find(".move-select.charged").index($target);
+			move = selectedPokemon.chargedMoves[index];
+			moveType = "charged";
+		} else{
+			move = selectedPokemon.fastMove;
+			moveType = "fast";
 		}
 
-		var dpe = Math.floor( (displayDamage / move.energy) * 100) / 100;
-		var percent = Math.floor( (displayDamage / opponent.hp) * 1000) / 10;
+		let displayDamage = move.damage;
+		let percent = 0;
+		// If opponent exists, recalc damage using original stats
+		if(battle.getOpponent(selectedPokemon.index)){
+			let opponent = battle.getOpponent(selectedPokemon.index);
+			let effectiveness = opponent.typeEffectiveness[move.type];
+			displayDamage = DamageCalculator.damageByStats(selectedPokemon, opponent, selectedPokemon.getEffectiveStat(0, true), opponent.getEffectiveStat(1, true), effectiveness, move);
+			percent = Math.floor( (displayDamage / opponent.hp) * 1000) / 10;
+		}
 
+		// Update tooltip display
 		$tooltip.find(".name").html(move.name);
 		$tooltip.addClass(move.type);
-		$tooltip.find(".details").html(displayDamage + ' (' + percent + '%) <span class="label">dmg</span><br>' + move.energy + ' <span class="label">energy</span><br>' + dpe + ' <span class="label">dpe</span>');
+		let details = '';
+
+
+		switch(moveType){
+			case "fast":
+				let dpt = Math.floor( (displayDamage / move.turns) * 100) / 100;
+				let ept = Math.floor( (move.energyGain / move.turns) * 100) / 100;
+				let turnLabel = move.turns > 1 ? "turns" : "turn";
+
+				details = displayDamage + ' <span class="label">dmg</span> (' + dpt + ' <i>dpt</i>)<br>'
+					+ move.energyGain + ' <span class="label">energy</span> (' + ept + ' <i>ept</i>)<br>'
+					+ move.turns + ' <span class="label">' + turnLabel + '</span>';
+				break;
+
+			case "charged":
+				let dpe = Math.floor( (displayDamage / move.energy) * 100) / 100;
+				let moveCounts = Pokemon.calculateMoveCounts(selectedPokemon.fastMove, move);
+
+				details = displayDamage + ' (' + percent + '%) <span class="label">dmg</span><br>'
+				 	+ move.energy + ' <span class="label">energy</span><br>'
+					+ dpe + ' <span class="label">dpe</span><br>'
+					+ moveCounts.join("-") + ' <span class="label">counts</span>';
+				break;
+		}
+
+		$tooltip.find(".details").html(details);
 
 		var width = $tooltip.width();
 		var left = (e.pageX - $(".section").first().offset().left) + 25;
@@ -1354,7 +1394,7 @@ function PokeSelect(element, i){
 
 	// Hide tooltip when mousing over other elements
 
-	$el.find(".move-bar").mouseout(function(e){
+	$el.find(".move-bar, .move-select").mouseout(function(e){
 		$tooltip.hide();
 	});
 

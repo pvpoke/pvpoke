@@ -1482,6 +1482,7 @@ b{
 			text-align: center;
 			padding-top: 10px;
 			font-weight: bold;
+			pointer-events: none;
 		}
 
 		.bar, .bar-back{
@@ -1490,6 +1491,7 @@ b{
 			left: 0;
 			width: 100%;
 			height: 100%;
+			pointer-events: none;
 		}
 
 		.bar{
