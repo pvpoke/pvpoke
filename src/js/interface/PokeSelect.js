@@ -855,6 +855,8 @@ function PokeSelect(element, i){
 
 	$el.find(".move-select").on("change", function(e){
 
+		$tooltip.hide();
+
 		var moveId = $(this).find("option:selected").val();
 		var moveSlotIndex = $el.find(".move-select.charged").index($(this));
 
