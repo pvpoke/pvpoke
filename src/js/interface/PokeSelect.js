@@ -1336,6 +1336,11 @@ function PokeSelect(element, i){
 			moveType = "fast";
 		}
 
+		if(! move){
+			$tooltip.hide();
+			return false;
+		}
+
 		let displayDamage = move.damage;
 		let percent = 0;
 		// If opponent exists, recalc damage using original stats
@@ -1377,15 +1382,12 @@ function PokeSelect(element, i){
 		$tooltip.find(".details").html(details);
 
 		var width = $tooltip.width();
-		var left = (e.pageX - $(".section").first().offset().left) + 25;
-		var top = e.pageY - 20;
 
-		if( left > ($(".timeline-container").width() - width - 10) ){
-			left -= width;
-		}
+		var left = $target.position().left + $target.width() + 30;
+		var top = $target.position().top + 10;
 
-		if((left < 100)&&($(window).width() <= 480)){
-			left = e.pageX;
+		if($target.offset().left > $(window).width() / 2){
+			left = $target.position().left - width - 20;
 		}
 
 		$tooltip.css("left",left+"px");

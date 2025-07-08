@@ -459,6 +459,7 @@ b {
 }
 
 .poke {
+  position: relative;
   max-width: 200px;
 }
 .poke:nth-of-type(2) a.swap {

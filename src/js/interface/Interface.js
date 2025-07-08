@@ -92,7 +92,7 @@ var InterfaceMaster = (function () {
 				$(".continue-container .button").on("click", continueBattle);
 				$(".timeline-container").on("mousemove",".item",timelineEventHover);
 				$(".poke a.swap").on("click", swapSelectedPokemon);
-				$(".poke.single").on("mousemove",".move-bar",moveBarHover);
+				$(".poke.single").on("mousemove",".move-bar, .move-select.charged",moveBarHover);
 				$(".multi-battle-sort").on("click", sortMultiBattleResults);
 				$(".battle-results.matrix .ranking-categories a").on("click", selectMatrixMode);
 				$(".battle-results.matrix select.breakpoint-mode").on("change", selectMatrixBreakpointMode);
@@ -2364,7 +2364,18 @@ var InterfaceMaster = (function () {
 				var selectorIndex = (pokeIndex == 0) ? 1 : 0;
 				var subject = pokeSelectors[pokeIndex].getPokemon();
 				var target = pokeSelectors[selectorIndex].getPokemon();
-				var moveIndex = $(e.target).closest(".move-bars").find(".move-bar").index($(e.target).closest(".move-bar"));
+				var moveIndex = 0;
+
+				if(! target){
+					return false;
+				}
+
+				if($(e.target).is(".move-bar")){
+					moveIndex = $(e.target).parent().find(".move-bar").index($(e.target));
+				} else if($(e.target).is(".move-select.charged")){
+					moveIndex = $(e.target).parent().find(".move-select.charged").index($(e.target));
+				}
+
 				var move = subject.chargedMoves[moveIndex];
 				var effectiveness = target.typeEffectiveness[move.type];
 
