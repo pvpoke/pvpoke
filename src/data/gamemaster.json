@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-07-06 18:19:30",
+    "timestamp": "2025-07-09 03:57:00",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -27579,6 +27579,32 @@
             "cp2500": [43, 4, 14, 13],
             "cp2500l40": [39, 15, 15, 13]
         },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_PETILIL",
+            "parent": "petilil"
+        }
+    }, {
+        "dex": 549,
+        "speciesId": "lilligant_hisuian",
+        "speciesName": "Lilligant (Hisuian)",
+        "baseStats": {
+            "atk": 208,
+            "def": 159,
+            "hp": 172
+        },
+        "types": ["grass", "fighting"],
+        "fastMoves": ["MAGICAL_LEAF", "BULLET_SEED"],
+        "chargedMoves": ["PETAL_BLIZZARD", "CLOSE_COMBAT", "SOLAR_BEAM", "UPPER_HAND"],
+        "defaultIVs": {
+            "cp500": [7.5, 5, 12, 15],
+            "cp1500": [22.5, 4, 7, 15],
+            "cp2500": [44, 4, 15, 13],
+            "cp2500l40": [39.5, 14, 15, 15]
+        },
+        "tags": ["hisuian"],
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
         "released": true,
