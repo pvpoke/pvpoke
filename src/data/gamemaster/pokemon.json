@@ -27658,7 +27658,7 @@
     "released": true,
     "family": {
         "id": "FAMILY_ZORUA",
-        "evolutions": ["zoroark"]
+        "evolutions": ["zoroark_hisuian"]
     }
 }, {
     "dex": 571,
@@ -29683,7 +29683,8 @@
     "released": true,
     "family": {
         "id": "FAMILY_PAWNIARD",
-        "parent": "pawniard"
+        "parent": "pawniard",
+        "evolutions": ["kingambit"]
     }
 }, {
     "dex": 626,
