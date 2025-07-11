@@ -23482,7 +23482,7 @@
     },
     "buddyDistance": 5,
     "thirdMoveCost": 75000,
-    "released": false
+    "released": true
 }, {
     "dex": 479,
     "speciesName": "Rotom (Frost)",
@@ -31317,7 +31317,7 @@
         "hp": 128
     },
     "types": ["steel", "ghost"],
-    "fastMoves": ["TACKLE", "FURY_CUTTER"],
+    "fastMoves": ["TACKLE", "PSYCHO_CUT"],
     "chargedMoves": ["IRON_HEAD", "GYRO_BALL"],
     "defaultIVs": {
         "cp500": [14, 4, 6, 15],
@@ -31342,7 +31342,7 @@
         "hp": 153
     },
     "types": ["steel", "ghost"],
-    "fastMoves": ["PSYCHO_CUT", "FURY_CUTTER"],
+    "fastMoves": ["PSYCHO_CUT", "TACKLE"],
     "chargedMoves": ["IRON_HEAD", "GYRO_BALL"],
     "defaultIVs": {
         "cp500": [8, 5, 5, 8],
@@ -31369,7 +31369,7 @@
         "hp": 155
     },
     "types": ["steel", "ghost"],
-    "fastMoves": ["PSYCHO_CUT", "FURY_CUTTER"],
+    "fastMoves": ["PSYCHO_CUT", "AIR_SLASH"],
     "chargedMoves": ["FLASH_CANNON", "GYRO_BALL", "SHADOW_BALL"],
     "defaultIVs": {
         "cp500": [7, 6, 14, 15],
@@ -37695,7 +37695,7 @@
     },
     "types": ["poison", "dragon"],
     "fastMoves": ["DRAGON_TAIL", "POISON_JAB"],
-    "chargedMoves": ["CROSS_POISON", "DRAGON_PULSE", "FLAMETHROWER"],
+    "chargedMoves": ["SLUDGE_BOMB", "DRAGON_PULSE", "FLAMETHROWER", "HYPER_BEAM"],
     "defaultIVs": {
         "cp500": [4.5, 6, 10, 7],
         "cp1500": [12.5, 5, 9, 13],
@@ -37715,7 +37715,7 @@
     },
     "types": ["poison", "dragon"],
     "fastMoves": ["DRAGON_TAIL", "POISON_JAB"],
-    "chargedMoves": ["CROSS_POISON", "DRAGON_PULSE", "FLAMETHROWER", "HYPER_BEAM"],
+    "chargedMoves": ["SLUDGE_BOMB", "DRAGON_PULSE", "FLAMETHROWER", "HYPER_BEAM"],
     "defaultIVs": {
         "cp500": [2.5, 14, 15, 12],
         "cp1500": [6.5, 15, 15, 13],
@@ -37843,7 +37843,6 @@
         "cp2500": [36, 4, 11, 15]
     },
     "tags": ["legendary"],
-    "levelFloor": 20,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true
@@ -37866,7 +37865,6 @@
         "cp2500": [31.5, 6, 15, 13]
     },
     "tags": ["legendary"],
-    "levelFloor": 20,
     "buddyDistance": 20,
     "thirdMoveCost": 100000,
     "released": true

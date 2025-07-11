@@ -788,6 +788,17 @@
     "archetype": "General",
     "turns": 1
 }, {
+    "moveId": "DYNAMAX_CANNON",
+    "name": "Dynamax Cannon",
+    "abbreviation": "DyC",
+    "type": "dragon",
+    "power": 80,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "archetype": "General",
+    "turns": 1
+}, {
     "moveId": "DYNAMIC_PUNCH",
     "name": "Dynamic Punch",
     "abbreviation": "DyP",
