@@ -1500,7 +1500,7 @@ b{
 			bottom: -5%;
 
 			&:nth-child(3),
-			&:nth-child(4),
+			&:nth-child(4)
 			{
 				border-top: 2px solid #fff;
 				background:rgba(0,0,0,0.35) !important;
@@ -4829,7 +4829,6 @@ a.rating{
 		vertical-align: middle;
 		margin-top: 50px;
 		border-radius: 8px;
-		overflow:hidden;
 		margin-bottom: 75px;
 
 		.modal-header{
@@ -4838,6 +4837,8 @@ a.rating{
 			color: $color-off-white;
 			font-size:24px;
 			font-weight: bold;
+			border-top-left-radius: 8px;
+			border-top-right-radius: 8px;
 		}
 
 		.modal-close{
