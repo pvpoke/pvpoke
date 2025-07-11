@@ -1,19 +1,5 @@
 [
 	{
-		"title": "Little Element Cup",
-		"cup": "element",
-		"cp": 500,
-		"meta": "element",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 500 CP to enter.",
-			"Only Fire-, Water-, and Grass-type Pokémon are eligible.",
-			"Only Pokémon that are able to evolve and have not evolved even once will be eligible."
-		]
-	},
-	{
 		"title": "Hisui Cup",
 		"cup": "hisui",
 		"cp": 1500,

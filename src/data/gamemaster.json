@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-07-11 17:25:50",
+    "timestamp": "2025-07-11 19:33:40",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -392,7 +392,7 @@
                 },
                 {
                     "filterType": "id",
-                    "values": ["sneasel_hisuian", "sneasel_hisuian_shadow", "sneasler", "sneasler_shadow", "qwilfish_hisuian", "overqwil", "growlithe_hisuian", "arcanine_hisuian", "braviary_hisuian", "voltorb_hisuian", "electrode_hisuian", "typhlosion_hisuian", "samurott_hisuian", "decidueye_hisuian", "wyrdeer", "kleavor", "ursaluna", "zoroark_hisuian"]
+                    "values": ["sneasel_hisuian", "sneasel_hisuian_shadow", "sneasler", "sneasler_shadow", "qwilfish_hisuian", "overqwil", "growlithe_hisuian", "arcanine_hisuian", "braviary_hisuian", "voltorb_hisuian", "electrode_hisuian", "typhlosion_hisuian", "samurott_hisuian", "decidueye_hisuian", "wyrdeer", "kleavor", "ursaluna", "zoroark_hisuian", "lilligant_hisuian"]
                 }
             ],
             "exclude": [
@@ -911,16 +911,6 @@
         }
     ],
     "formats": [
-        {
-            "title": "Little Element Cup",
-            "cup": "element",
-            "cp": 500,
-            "meta": "element",
-            "showCup": true,
-            "showFormat": true,
-            "showMeta": true,
-            "rules": ["Pokémon must be at or below 500 CP to enter.", "Only Fire-,  Water-,  and Grass-type Pokémon are eligible.", "Only Pokémon that are able to evolve and have not evolved even once will be eligible."]
-        },
         {
             "title": "Hisui Cup",
             "cup": "hisui",
@@ -29891,7 +29881,7 @@
             "released": true,
             "family": {
                 "id": "FAMILY_ZORUA",
-                "evolutions": ["zoroark"]
+                "evolutions": ["zoroark_hisuian"]
             }
         },
         {
@@ -31996,7 +31986,8 @@
             "released": true,
             "family": {
                 "id": "FAMILY_PAWNIARD",
-                "parent": "pawniard"
+                "parent": "pawniard",
+                "evolutions": ["kingambit"]
             }
         },
         {
@@ -40501,7 +40492,6 @@
                 "cp2500": [36, 4, 11, 15]
             },
             "tags": ["legendary"],
-            "levelFloor": 20,
             "buddyDistance": 20,
             "thirdMoveCost": 100000,
             "released": true
@@ -40525,7 +40515,6 @@
                 "cp2500": [31.5, 6, 15, 13]
             },
             "tags": ["legendary"],
-            "levelFloor": 15,
             "buddyDistance": 20,
             "thirdMoveCost": 100000,
             "released": true
