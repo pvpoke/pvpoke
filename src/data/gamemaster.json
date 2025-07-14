@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-07-11 19:33:40",
+    "timestamp": "2025-07-14 02:58:10",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -190,7 +190,7 @@
             "exclude": [
                 {
                     "filterType": "id",
-                    "values": ["feraligatr", "bellibolt", "cradily", "virizion", "lapras", "tentacruel", "forretress", "dusknoir", "talonflame"]
+                    "values": ["moltres_galarian", "gastrodon", "feraligatr", "weezing_galarian", "bellibolt", "cradily", "blastoise", "primeape"]
                 }
             ]
         },
@@ -392,7 +392,7 @@
                 },
                 {
                     "filterType": "id",
-                    "values": ["sneasel_hisuian", "sneasel_hisuian_shadow", "sneasler", "sneasler_shadow", "qwilfish_hisuian", "overqwil", "growlithe_hisuian", "arcanine_hisuian", "braviary_hisuian", "voltorb_hisuian", "electrode_hisuian", "typhlosion_hisuian", "samurott_hisuian", "decidueye_hisuian", "wyrdeer", "kleavor", "ursaluna", "zoroark_hisuian", "lilligant_hisuian"]
+                    "values": ["sneasel_hisuian", "sneasel_hisuian_shadow", "sneasler", "sneasler_shadow", "qwilfish_hisuian", "overqwil", "growlithe_hisuian", "arcanine_hisuian", "braviary_hisuian", "voltorb_hisuian", "electrode_hisuian", "typhlosion_hisuian", "samurott_hisuian", "decidueye_hisuian", "wyrdeer", "kleavor", "ursaluna", "zoroark_hisuian", "lilligant_hisuian", "avalugg_hisuian"]
                 }
             ],
             "exclude": [
@@ -33770,7 +33770,7 @@
                 "hp": 155
             },
             "types": ["steel", "ghost"],
-            "fastMoves": ["PSYCHO_CUT", "FURY_CUTTER"],
+            "fastMoves": ["PSYCHO_CUT", "AIR_SLASH"],
             "chargedMoves": ["FLASH_CANNON", "GYRO_BALL", "SHADOW_BALL"],
             "defaultIVs": {
                 "cp500": [12.5, 4, 5, 12],
