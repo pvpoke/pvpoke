@@ -62,7 +62,9 @@ var RankerMaster = (function () {
 					}
 				}
 
-				callback(allResults);
+				if(callback){
+					callback(allResults);
+				}
 			}
 
 			this.initPokemonList = function(cp){
