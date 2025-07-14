@@ -333,7 +333,7 @@ function Pokemon(id, i, b){
 		this.cp = self.calculateCP();
 
 		// Throw error if invalid IV combination
-		if(this.cp > maxCP){
+		if(targetCP && this.cp > maxCP){
 			console.error(this.speciesId + " exceeds CP limit of " + maxCP);
 		}
 
