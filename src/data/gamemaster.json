@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-07-14 02:58:10",
+    "timestamp": "2025-07-14 16:50:35",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -42899,28 +42899,7 @@
         },
         {
             "dex": 978,
-            "speciesName": "Tatsugiri",
-            "speciesId": "tatsugiri",
-            "baseStats": {
-                "atk": 226,
-                "def": 166,
-                "hp": 169
-            },
-            "types": ["dragon", "water"],
-            "fastMoves": ["TAKE_DOWN", "WATER_GUN"],
-            "chargedMoves": ["OUTRAGE", "SURF", "HYDRO_PUMP", "MUDDY_WATER"],
-            "defaultIVs": {
-                "cp500": [7, 6, 7, 12],
-                "cp1500": [20.5, 4, 8, 13],
-                "cp2500": [37, 5, 14, 13]
-            },
-            "buddyDistance": 5,
-            "thirdMoveCost": 75000,
-            "released": false
-        },
-        {
-            "dex": 978,
-            "speciesName": "Tatsugiri_curly",
+            "speciesName": "Tatsugiri (Curly)",
             "speciesId": "tatsugiri_curly",
             "baseStats": {
                 "atk": 226,
@@ -42935,13 +42914,15 @@
                 "cp1500": [20.5, 4, 8, 13],
                 "cp2500": [37, 5, 14, 13]
             },
+            "levelFloor": 20,
+            "tags": ["regional"],
             "buddyDistance": 5,
             "thirdMoveCost": 75000,
-            "released": false
+            "released": true
         },
         {
             "dex": 978,
-            "speciesName": "Tatsugiri_droopy",
+            "speciesName": "Tatsugiri (Droopy)",
             "speciesId": "tatsugiri_droopy",
             "baseStats": {
                 "atk": 226,
@@ -42956,13 +42937,15 @@
                 "cp1500": [20.5, 4, 8, 13],
                 "cp2500": [37, 5, 14, 13]
             },
+            "levelFloor": 20,
+            "tags": ["regional"],
             "buddyDistance": 5,
             "thirdMoveCost": 75000,
-            "released": false
+            "released": true
         },
         {
             "dex": 978,
-            "speciesName": "Tatsugiri_stretchy",
+            "speciesName": "Tatsugiri (Stretchy)",
             "speciesId": "tatsugiri_stretchy",
             "baseStats": {
                 "atk": 226,
@@ -42977,9 +42960,11 @@
                 "cp1500": [20.5, 4, 8, 13],
                 "cp2500": [37, 5, 14, 13]
             },
+            "levelFloor": 20,
+            "tags": ["regional"],
             "buddyDistance": 5,
             "thirdMoveCost": 75000,
-            "released": false
+            "released": true
         },
         {
             "dex": 979,
