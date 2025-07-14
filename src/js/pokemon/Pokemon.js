@@ -246,11 +246,11 @@ function Pokemon(id, i, b){
 
 		var isDefault = false;
 
-		if((this.level == 40)&&(this.ivs.atk == 0) && (this.ivs.def == 0) && (this.ivs.hp == 0) && (! self.autoLevel)){
+		if(this.level == 40 && this.ivs.atk == 0 && this.ivs.def == 0 && this.ivs.hp == 0 && ! self.autoLevel){
 			isDefault = true;
 		}
 
-		if(((targetCP)&&(! self.isCustom))||((this.cp > maxCP)&&(isDefault))){
+		if((targetCP && ! self.isCustom) || (this.cp > maxCP && isDefault)){
 
 			switch(defaultMode){
 				case "scale":
@@ -331,6 +331,11 @@ function Pokemon(id, i, b){
 		this.startHp = this.hp;
 
 		this.cp = self.calculateCP();
+
+		// Throw error if invalid IV combination
+		if(this.cp > maxCP){
+			console.error(this.speciesId + " exceeds CP limit of " + maxCP);
+		}
 
 		if(this.cp < 10){
 			this.cp = 10;

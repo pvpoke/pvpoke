@@ -372,78 +372,8 @@ var GameMaster = (function () {
 		object.generateDefaultIVs = function(){
 
 			$.each(object.data.pokemon, function(index, poke){
-				var leagues = [500,1500,2500];
-				var battle = new Battle();
-
-				var pokemon = new Pokemon(poke.speciesId, 0, battle);
 				var entry = object.getPokemonById(poke.speciesId);
-				battle.setNewPokemon(pokemon, 0, false);
-
-				var defaultIVs = {
-					cp500: [],
-					cp1500: [],
-					cp2500: []
-				};
-
-				for(var i = 0; i < leagues.length; i++){
-					battle.setCP(leagues[i]);
-
-					pokemon.ivs.atk = pokemon.ivs.def = pokemon.ivs.hp = 15;
-					pokemon.setLevel(pokemon.levelCap, true);
-
-					var cp = pokemon.cp;
-					var level35cp = pokemon.calculateCP(0.76156384, 15, 15, 15);
-					var level40cp = pokemon.calculateCP(0.790300011634826, 15, 15, 15);
-					var level45cp = pokemon.calculateCP(0.815299987792968, 15, 15, 15);
-
-					if(cp > leagues[i]){
-						var combo = object.generateDefaultIVCombo(pokemon, pokemon.levelCap, leagues[i], level45cp);
-
-						if(combo){
-							defaultIVs["cp"+leagues[i]] = [combo.level, combo.ivs.atk, combo.ivs.def, combo.ivs.hp]
-
-							if(combo.level > 40){
-								if(level40cp > leagues[i]){
-									combo = object.generateDefaultIVCombo(pokemon, 40, leagues[i], level35cp);
-
-									defaultIVs["cp"+leagues[i] + "l40"] = [combo.level, combo.ivs.atk, combo.ivs.def, combo.ivs.hp];
-								} else{
-
-									defaultIVs["cp"+leagues[i] + "l40"] = [40, 15, 15, 15];
-								}
-							}
-						} else{
-							defaultIVs["cp"+leagues[i]] = [1, 0, 0, 0];
-						}
-					} else{
-						defaultIVs["cp"+leagues[i]] = [pokemon.levelCap, 15, 15, 15];
-					}
-				}
-
-				// Pokemon exceptions
-
-				switch(pokemon.speciesId){
-					case "trevenant":
-						defaultIVs["cp1500"] = [22, 3, 13, 12];
-						break;
-
-					case "dhelmise":
-						defaultIVs["cp1500"] = [20, 1, 4, 4];
-						break;
-
-					case "medicham":
-						defaultIVs["cp1500"] = [49, 7, 15, 14];
-						break;
-
-					case "lokix":
-						defaultIVs["cp2500"] = [47.5, 11, 15, 15];
-						break;
-
-					case "regidrago":
-						defaultIVs["cp1500"] = [20, 2, 4, 4];
-						break;
-				}
-
+				var defaultIVs = object.generateDefaultIVsByPokemon(poke);
 				entry.defaultIVs = defaultIVs;
 			});
 
@@ -456,16 +386,93 @@ var GameMaster = (function () {
 			console.log(json);
 		}
 
+		// Generate default IVs for a single Pokemon entry
+
+		object.generateDefaultIVsByPokemon = function(poke){
+			var leagues = [500,1500,2500];
+			var battle = new Battle();
+
+			var pokemon = new Pokemon(poke.speciesId, 0, battle);
+
+			battle.setNewPokemon(pokemon, 0, false);
+
+			var defaultIVs = {
+				cp500: [],
+				cp1500: [],
+				cp2500: []
+			};
+
+			for(var i = 0; i < leagues.length; i++){
+				battle.setCP(leagues[i]);
+
+				pokemon.ivs.atk = pokemon.ivs.def = pokemon.ivs.hp = 15;
+				pokemon.setLevel(pokemon.levelCap, true);
+
+				var cp = pokemon.cp;
+				var level35cp = pokemon.calculateCP(0.76156384, 15, 15, 15);
+				var level40cp = pokemon.calculateCP(0.790300011634826, 15, 15, 15);
+				var level45cp = pokemon.calculateCP(0.815299987792968, 15, 15, 15);
+
+				if(cp > leagues[i]){
+					var combo = object.generateDefaultIVCombo(pokemon, pokemon.levelCap, leagues[i], level45cp);
+
+					if(combo){
+						defaultIVs["cp"+leagues[i]] = [combo.level, combo.ivs.atk, combo.ivs.def, combo.ivs.hp]
+
+						if(combo.level > 40){
+							if(level40cp > leagues[i]){
+								combo = object.generateDefaultIVCombo(pokemon, 40, leagues[i], level35cp);
+
+								defaultIVs["cp"+leagues[i] + "l40"] = [combo.level, combo.ivs.atk, combo.ivs.def, combo.ivs.hp];
+							} else{
+
+								defaultIVs["cp"+leagues[i] + "l40"] = [40, 15, 15, 15];
+							}
+						}
+					} else{
+						defaultIVs["cp"+leagues[i]] = [1, 0, 0, 0];
+					}
+				} else{
+					defaultIVs["cp"+leagues[i]] = [pokemon.levelCap, 15, 15, 15];
+				}
+			}
+
+			// Pokemon exceptions
+
+			switch(pokemon.speciesId){
+				case "trevenant":
+					defaultIVs["cp1500"] = [22, 3, 13, 12];
+					break;
+
+				case "dhelmise":
+					defaultIVs["cp1500"] = [20, 1, 4, 4];
+					break;
+
+				case "medicham":
+					defaultIVs["cp1500"] = [49, 7, 15, 14];
+					break;
+
+				case "lokix":
+					defaultIVs["cp2500"] = [47.5, 11, 15, 15];
+					break;
+
+				case "regidrago":
+					defaultIVs["cp1500"] = [20, 2, 4, 4];
+					break;
+			}
+
+			return defaultIVs;
+		}
+
 		// Generate a singular default IV combo given league and level cap
 
 		object.generateDefaultIVCombo = function(pokemon, levelCap, league, nearCapCP){
 			var floor = 4;
-			var defaultIndex = 15;
+			var defaultIndex = 1;
 
 			// For Pokemon that max near the league cap, default to lucky IV's
 			if(nearCapCP < league){
 				floor = 12;
-				defaultIndex = 7;
 			}
 
 			if(pokemon.hasTag("legendary") && pokemon.hasTag("shadow")){
