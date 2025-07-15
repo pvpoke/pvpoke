@@ -58,7 +58,7 @@ var InterfaceMaster = (function () {
 				$("body").on("click", ".check", checkBox);
 				$("body").on("click", ".check.limited", toggleLimitedPokemon);
 				$("body").on("click", ".check.xl", toggleXLPokemon);
-				$("body").on("click", ".continentals .check", toggleContinentalsSlots);
+				$("body").on("click", ".continentals .check", toggleSlots);
 				$("body").on("click", ".detail-section .trait-info, .detail-section .traits > div", openTraitPopup);
 				$("body").on("click", ".detail-tab-nav a", toggleDetailTab);
 				$("body").on("click", ".detail-section a.show-move-stats", toggleMoveStats);
@@ -406,18 +406,19 @@ var InterfaceMaster = (function () {
 				}
 
 				if(battle.getCup().slots){
-					let slotNumber = 0;
+					let slotNumbers = [];
 
 					for(var n = 0; n < battle.getCup().slots.length; n++){
 						let slot = battle.getCup().slots[n];
 
 						if((slot.pokemon.indexOf(pokemon.speciesId) > -1)||(slot.pokemon.indexOf(pokemon.speciesId.replace("_shadow","")) > -1)){
-							slotNumber = n + 1;
-							break;
+							slotNumbers.push(n+1);
 						}
 					}
 
-					$el.attr("slot", slotNumber);
+					for(let i = 0; i < slotNumbers.length; i++){
+						$el.attr("slot"+slotNumbers[i], '');
+					}
 				}
 
 				$(".section.white > .rankings-container").append($el);
@@ -439,16 +440,14 @@ var InterfaceMaster = (function () {
 				}
 
 
-				// For Prismatic Cup, show color category
+				// For metas with species specific slots, show slot label
 
 				if(battle.getCup().slots){
-					var slots = battle.getCup().slots;
+					let includedSlots = pokemon.getSlotNumbers(battle.getCup());
 
-					for(var n = 0; n < slots.length; n++){
-						if((slots[n].pokemon.indexOf(pokemon.speciesId) > -1)||(slots[n].pokemon.indexOf(pokemon.speciesId.replace("_shadow",""))) > -1){
-							$el.find(".moves").prepend("<b>Slot " + (n+1) + ".</b>&nbsp;");
-							break;
-						}
+					if(includedSlots.length > 0){
+						let slotStr = "<b>Slot " + includedSlots.join(", ") + ".</b>&nbsp;";
+						$el.find(".moves").prepend(slotStr);
 					}
 				}
 
@@ -1529,10 +1528,15 @@ var InterfaceMaster = (function () {
 				});
 			}
 
-			// Show or hide Continentals slots
+			// Show or hide cup slots
 
-			function toggleContinentalsSlots(e){
+			function toggleSlots(e){
 				var selectedSlots = [];
+				var cup = battle.getCup();
+
+				if(! cup?.slots){
+					return;
+				}
 
 				$(".continentals .check").each(function(index, value){
 					if($(this).hasClass("on")){
@@ -1540,16 +1544,16 @@ var InterfaceMaster = (function () {
 					}
 				});
 
-				for(var i = 1; i < 7; i++){
-					if(selectedSlots.indexOf(i) > -1){
-						$(".rank[slot='"+i+"']").removeClass("hide");
-					} else{
-						$(".rank[slot='"+i+"']").addClass("hide");
-					}
-				}
-
 				if(selectedSlots.length == 0){
 					$(".rank").removeClass("hide");
+				} else if(selectedSlots.length > 0){
+					$(".rank").addClass("hide");
+
+					for(var i = 1; i <= cup.slots.length; i++){
+						if(selectedSlots.includes(i)){
+							$(".rank[slot"+i+"]").removeClass("hide");
+						}
+					}
 				}
 			}
 

@@ -682,26 +682,6 @@ var InterfaceMaster = (function () {
 					}
 				}
 
-				// For Season 2 continentals, exclude Pokemon in already occupied slots
-
-				if((battle.getCup().slots)&&(team.length < 6)){
-					// Add ineligible Pokemon to the exclusion list
-					var slots = battle.getCup().slots;
-
-					for(var i = 0; i < slots.length; i++){
-						for(var n = 0; n < team.length; n++){
-							if(slots[i].pokemon.indexOf(team[n].speciesId) > -1){
-								for(var j = 0; j < slots[i].pokemon.length; j++){
-									exclusionList.push(slots[i].pokemon[j]);
-									exclusionList.push(slots[i].pokemon[j]+"_shadow");
-								}
-
-								continue;
-							}
-						}
-					}
-				}
-
 				// If using a restricted Pokemon, exclude restricted list
 
 				if(battle.getCup().restrictedPokemon){
@@ -907,12 +887,24 @@ var InterfaceMaster = (function () {
 					}
 				}
 
-				// For Continentals, exclude slots that are already filled
+				// For slot metas, exclude slots that are already filled
 				var usedSlots = [];
 
 				if(battle.getCup().slots){
 					for(var n = 0; n < team.length; n++){
-						usedSlots.push(team[n].getSlot(battle.getCup()));
+						let slots = team[n].getSlotNumbers(battle.getCup(), false);
+
+						// Use slots in order
+						if(slots.length == 1){
+							usedSlots.push(slots[0]);
+						} else if(slots.length > 0){
+							for(let j = 0; j < slots.length; j++){
+								if(! usedSlots.includes(slots[j])){
+									usedSlots.push(slots[j]);
+									break;
+								}
+							}
+						}
 					}
 				}
 
@@ -964,9 +956,12 @@ var InterfaceMaster = (function () {
 						}
 					}
 
-					// For Continentals, exclude Pokemon of existing slots
+					// For slot metas, exclude Pokemon of used slots
 					if((battle.getCup().slots)&&(team.length < 6)){
-						if(usedSlots.indexOf(pokemon.getSlot(battle.getCup())) > -1){
+						let slots = pokemon.getSlotNumbers(battle.getCup(), false);
+
+						// If every slot this Pokemon could fill is used, exclude it
+						if(slots.every(slot => usedSlots.includes(slot))){
 							i++;
 							continue;
 						}
@@ -1022,21 +1017,17 @@ var InterfaceMaster = (function () {
 						$row.find("th.name").append("<div class=\"region-label "+tierName.toLowerCase()+"\">"+points+" "+pointsName+"</div>");
 					}
 
-					// Add slot label for Continentals
+					// Add slot label for slot metas
 					if(battle.getCup().slots){
 						var tierName = "";
 						var slot = 0;
 
-						var slots = battle.getCup().slots;
+						let slots = pokemon.getSlotNumbers(battle.getCup());
 
-						for(var j = 0; j < slots.length; j++){
-							if((slots[j].pokemon.indexOf(pokemon.speciesId) > -1)||(slots[j].pokemon.indexOf(pokemon.speciesId.replace("_shadow","")) > -1)){
-								slot = j+1;
-								break;
-							}
+						if(slots.length > 0){
+							$row.find("th.name").append("<div class=\"region-label\">Slot "+slots.join(", ")+"</div>");
 						}
-
-						$row.find("th.name").append("<div class=\"region-label\">Slot "+slot+"</div>");
+						
 					}
 
 					$(".alternatives-table tbody").append($row);

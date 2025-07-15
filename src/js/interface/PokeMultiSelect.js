@@ -418,7 +418,11 @@ function PokeMultiSelect(element){
 			}
 
 			if(battle.getCup().slots){
-				$item.find(".moves").prepend("(Slot " + (pokemon.getSlot(battle.getCup())+1) + ") ");
+				let includedSlots = pokemon.getSlotNumbers(battle.getCup());
+
+				if(includedSlots.length > 0){
+					$item.find(".moves").prepend("(Slot " + includedSlots.join(", ") + ") ");
+				}
 			}
 
 			// For Prismatic Cup, show color category
