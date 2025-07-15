@@ -128,6 +128,10 @@ switch($cup){
 		$league = 'Battle Tower (Onyx)';
 		break;
 
+	case "chrono":
+		$league = 'Zygarden Chrono Meta';
+		break;
+
 	case "littlecatch":
 		$league = 'Little Catch Cup';
 		break;
