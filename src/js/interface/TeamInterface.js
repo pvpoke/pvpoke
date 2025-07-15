@@ -45,6 +45,7 @@ var InterfaceMaster = (function () {
 				}
 
 				multiSelectors[0].setMaxPokemonCount(6);
+				multiSelectors[0].setContext("team");
 
 
 				$(".format-select").on("change", selectFormat);
@@ -1027,7 +1028,7 @@ var InterfaceMaster = (function () {
 						if(slots.length > 0){
 							$row.find("th.name").append("<div class=\"region-label\">Slot "+slots.join(", ")+"</div>");
 						}
-						
+
 					}
 
 					$(".alternatives-table tbody").append($row);

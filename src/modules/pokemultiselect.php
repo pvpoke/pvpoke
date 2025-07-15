@@ -27,11 +27,19 @@
 
 			<h3 class="section-title">Quick Fill</h3>
 			<select class="quick-fill-select">
-				<option value="new">New Custom Group</option>
-				<option value="littlegeneral" type="little" class="hide multi-battle">Little League Meta (General)</option>
-				<option value="great" type="great" class="multi-battle">Great League Meta</option>
-				<option value="ultra" type="ultra" class="hide multi-battle">Ultra League Meta</option>
-				<option value="master" type="master" class="hide multi-battle">Master League Meta</option>
+				<option value="new" selected>New Custom Group</option>
+				<optgroup label="Default">
+					<option value="great" type="great" class="multi-battle">Great League Meta</option>
+					<option value="ultra" type="ultra" class="multi-battle">Ultra League Meta</option>
+					<option value="master" type="master" class="multi-battle">Master League Meta</option>
+					<option value="littlegeneral" type="little" class="multi-battle">Little League Meta</option>
+					<option value="top50" type="top" class="multi-battle">Rankings Top 50</option>
+					<option value="top100" type="top" class="multi-battle">Rankings Top 100</option>
+				</optgroup>
+				<optgroup label="Cups">
+				</optgroup>
+				<optgroup label="Custom">
+				</optgroup>
 			</select>
 			<div class="flex quick-fill-buttons">
 				<button class="save-btn save-custom">Save</button>
