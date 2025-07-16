@@ -43,6 +43,10 @@ require_once 'header.php';
 				<div class="check allow-shadows"><span></span>Show Shadow Pokemon in results</div>
 			</div>
 			<div class="team-option">
+				<h3>Prioritize Meta</h3>
+				<div class="check on prioritize-meta"><span></span>Prioritize meta threats and alternatives</div>
+			</div>
+			<div class="team-option">
 				<h3>Recommend XL Pokemon</h3>
 				<div class="check allow-xl <?php if($_SETTINGS->xls): echo "on"; endif; ?>"><span></span>Show Pokemon above level 40 in threats and alternatives</div>
 			</div>

@@ -25,13 +25,14 @@ var RankerMaster = (function () {
 			var rankings = [];
 
 			var shieldMode = 'single'; // single - sim specific shield scenarios, average - sim average of 0 and 1 shields each
-			var chargedMoveCountOverride = 2;
-			var shieldBaitOverrides = [true, true];
 			var overrideSettings = [getDefaultMultiBattleSettings(), getDefaultMultiBattleSettings()];
 
 			var useRecommendedMoves = true;
+			var prioritizeMeta = true;
 
 			var csv = '';
+
+			var metaGroup = [];
 
 			this.context = "team-builder";
 
@@ -243,30 +244,28 @@ var RankerMaster = (function () {
 						if(avgPokeRating > 500){
 							alternativeScore = 500 + Math.pow(avgPokeRating - 500, .75);
 							alternativeScore = avgPokeRating;
-							score = avgPokeRating;
+							score = 500 + Math.pow(avgPokeRating - 500, .75);
 						} else{
 							score = avgPokeRating / 2;
 							alternativeScore = avgPokeRating / 2;
 						}
 
-						//score = avgPokeRating;
+						
+						// Factor in meta relevance
 
-						if((pokemon.overall)&&(pokemon.scores[5])){
-							var adjustment = ((pokemon.overall * 400) + (pokemon.scores[5] * 20)) / 42;
-							alternativeScore = ((adjustment * 2) + (alternativeScore * 1)) / 3;
+						if(context == "team-counters" || context == "team-alternatives"){
+							let isMetaFactor = 0.25;
 
-							if(score > 500){
-								score = ((adjustment * 5) + (score)) / 6;
-								//alternativeScore = ((adjustment * 4) + (alternativeScore * 1)) / 5;
-							} else{
-								//score = ((adjustment * 2) + (score)) / 3;
-								score = score * (adjustment / 1000);
-								//alternativeScore = ((adjustment * 1) + (alternativeScore * 4)) / 5;
+							if(score > 500 && prioritizeMeta){
+								if(metaGroup.some(poke => poke.speciesId.replace("_shadow", "") == pokemon.speciesId.replace("_shadow", ""))){
+									score += (1000 - score) * isMetaFactor;
+									alternativeScore += (1000 - alternativeScore) * isMetaFactor;
+								} else{
+									score -= (score - 500) * (1 - isMetaFactor);
+									alternativeScore -= (alternativeScore - 500) * (1 - isMetaFactor);
+								}
 							}
 
-							//score *= 34 * ( (Math.pow(pokemon.overall, 2) * Math.pow(pokemon.scores[5], 1/4)) / (Math.pow(100, 2) * Math.pow(100, 1/4)));
-						} else{
-							//score *= 10 * Math.pow(100, 1/4);
 						}
 
 						matchupScore += score;
@@ -337,6 +336,7 @@ var RankerMaster = (function () {
 					matchupScore = matchupScore / team.length;
 					matchupAltScore = matchupAltScore / team.length;
 
+
 					rankObj.rating = avg;
 					rankObj.opRating = opponentRating;
 					rankObj.score = matchupScore;
@@ -364,12 +364,6 @@ var RankerMaster = (function () {
 				battle.clearPokemon(); // Prevents associated Pokemon objects from being altered by future battles
 
 				return {rankings: rankings, teamRatings: teamRatings, csv: csv};
-			}
-
-			// Override charged move count with the provided value
-
-			this.setChargedMoveCount = function(value){
-				chargedMoveCountOverride = value;
 			}
 
 			// Set the targets to rank against
@@ -412,6 +406,16 @@ var RankerMaster = (function () {
 
 			this.setRecommendMoveUsage = function(val){
 				useRecommendedMoves = val;
+			}
+
+			// Set the meta group for determining which Pokemon are meta for factoring team builder threats and alternatives
+			this.setMetaGroup = function(group){
+				metaGroup = group;
+			}
+
+			// Set whether or not to prioritize meta Pokemon in the results
+			this.setPrioritizeMeta = function(val){
+				prioritizeMeta = val;
 			}
 
 		};

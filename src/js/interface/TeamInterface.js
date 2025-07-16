@@ -288,6 +288,7 @@ var InterfaceMaster = (function () {
 				var allowShadows = $(".team-option .check.allow-shadows").hasClass("on");
 				var allowXL = $(".team-option .check.allow-xl").hasClass("on");
 				var baitShields = $(".team-option .check.shield-baiting").hasClass("on");
+				var prioritizeMeta = $(".team-option .check.prioritize-meta").hasClass("on");
 
 				if(battle.getCup().name == "shadow"){
 					allowShadows = true;
@@ -365,6 +366,8 @@ var InterfaceMaster = (function () {
 				ranker.setShieldMode(shieldMode);
 				ranker.applySettings(teamSettings, 0);
 				ranker.applySettings(opponentSettings, 1);
+				ranker.setMetaGroup(metaGroup);
+				ranker.setPrioritizeMeta(prioritizeMeta);
 
 				ranker.setRecommendMoveUsage(true);
 
@@ -377,6 +380,7 @@ var InterfaceMaster = (function () {
 				var data = ranker.rank(team, battle.getCP(), battle.getCup(), [], "team-counters");
 				var counterRankings = data.rankings;
 				var teamRatings = data.teamRatings;
+
 				counterTeam = [];
 
 				// Clear targets so it will default to the normal format if the user changes settings
@@ -472,8 +476,8 @@ var InterfaceMaster = (function () {
 					var pokemon = r.pokemon;
 
 					// Display threat score
-					if(count < 20){
-						avgThreatScore += r.score;
+					if(count < 6){
+						avgThreatScore += r.rating;
 					}
 
 					// Push to counter team
@@ -517,7 +521,7 @@ var InterfaceMaster = (function () {
 				}
 
 				// Display average threat score
-				avgThreatScore = Math.round(avgThreatScore / 20);
+				avgThreatScore = Math.round(avgThreatScore / 6);
 				$(".threat-score").html(avgThreatScore);
 
 				// Build CSV results
@@ -711,7 +715,7 @@ var InterfaceMaster = (function () {
 
 				$(".poke-search[context='alternative-search']").val('');
 
-				altRankings = ranker.rank(counterTeam, battle.getCP(), battle.getCup(), exclusionList).rankings;
+				altRankings = ranker.rank(counterTeam, battle.getCP(), battle.getCup(), exclusionList, "team-alternatives").rankings;
 				altRankings.sort((a,b) => (a.matchupAltScore > b.matchupAltScore) ? -1 : ((b.matchupAltScore > a.matchupAltScore) ? 1 : 0));
 				self.displayAlternatives();
 
@@ -724,7 +728,7 @@ var InterfaceMaster = (function () {
 				$(".overview-section .notes div").hide();
 
 				// Coverage grade, take threat score
-				var threatGrade = self.calculateLetterGrade(1200 - avgThreatScore, 640);
+				var threatGrade = self.calculateLetterGrade(1200 - avgThreatScore, 680);
 
 				$(".overview-section.coverage .grade").html(threatGrade.letter);
 				$(".overview-section.coverage .grade").attr("grade", threatGrade.letter);

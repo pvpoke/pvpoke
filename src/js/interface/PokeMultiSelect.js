@@ -75,7 +75,6 @@ function PokeMultiSelect(element){
 				$meta.addClass("multi-battle");
 
 				$el.find(".quick-fill-select optgroup[label='Cups']").append($meta);
-				console.log(formats[i].title);
 			}
 		}
 
