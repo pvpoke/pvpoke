@@ -103,6 +103,20 @@
     "archetype": "General",
     "turns": 1
 }, {
+    "moveId": "AQUA_STEP",
+    "name": "Aqua Step",
+    "abbreviation": "ASt",
+    "type": "water",
+    "power": 55,
+    "energy": 40,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [1, 0],
+    "buffTarget": "self",
+    "buffApplyChance": "1",
+    "archetype": "Boost",
+    "turns": 1
+}, {
     "moveId": "AQUA_TAIL",
     "name": "Aqua Tail",
     "type": "water",
