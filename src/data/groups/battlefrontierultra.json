@@ -11,6 +11,18 @@
     "fastMove": "COUNTER",
     "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
 }, {
+    "speciesId": "bellibolt",
+    "fastMove": "SUCKER_PUNCH",
+    "chargedMoves": ["PARABOLIC_CHARGE","ZAP_CANNON"]
+}, {
+    "speciesId": "bellibolt",
+    "fastMove": "THUNDER_SHOCK",
+    "chargedMoves": ["PARABOLIC_CHARGE","ZAP_CANNON"]
+}, {
+    "speciesId": "blastoise",
+    "fastMove": "ROLLOUT",
+    "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"]
+}, {
     "speciesId": "clefable",
     "fastMove": "FAIRY_WIND",
     "chargedMoves": ["SWIFT", "MOONBLAST"]
@@ -22,6 +34,10 @@
     "speciesId": "corviknight",
     "fastMove": "SAND_ATTACK",
     "chargedMoves": ["SKY_ATTACK", "IRON_HEAD"]
+}, {
+    "speciesId": "cradily",
+    "fastMove": "ACID",
+    "chargedMoves": ["ROCK_TOMB", "GRASS_KNOT"]
 }, {
     "speciesId": "cresselia",
     "fastMove": "PSYCHO_CUT",
@@ -41,26 +57,10 @@
     "fastMove": "ASTONISH",
     "chargedMoves": ["SHADOW_BALL", "ICY_WIND"]
 }, {
-    "speciesId": "dusknoir",
-    "fastMove": "ASTONISH",
-    "chargedMoves": ["SHADOW_PUNCH", "DYNAMIC_PUNCH"]
-}, {
-    "speciesId": "dusknoir_shadow",
-    "fastMove": "ASTONISH",
-    "chargedMoves": ["SHADOW_PUNCH", "DYNAMIC_PUNCH"]
-}, {
     "speciesId": "feraligatr_shadow",
     "fastMove": "SHADOW_CLAW",
     "chargedMoves": ["HYDRO_CANNON", "ICE_BEAM"],
     "shadowType": "shadow"
-}, {
-    "speciesId": "forretress",
-    "fastMove": "BUG_BITE",
-    "chargedMoves": ["ROCK_TOMB","EARTHQUAKE"]
-}, {
-    "speciesId": "forretress",
-    "fastMove": "VOLT_SWITCH",
-    "chargedMoves": ["ROCK_TOMB","EARTHQUAKE"]
 }, {
     "speciesId": "giratina_altered",
     "fastMove": "DRAGON_BREATH",
@@ -102,14 +102,6 @@
     "fastMove": "HEX",
     "chargedMoves": ["SURF", "SHADOW_BALL"]
 }, {
-    "speciesId": "lapras",
-    "fastMove": "PSYWAVE",
-    "chargedMoves": ["SPARKLING_ARIA", "ICE_BEAM"]
-}, {
-    "speciesId": "lapras_shadow",
-    "fastMove": "PSYWAVE",
-    "chargedMoves": ["SPARKLING_ARIA", "ICE_BEAM"]
-}, {
     "speciesId": "lickilicky",
     "fastMove": "ROLLOUT",
     "chargedMoves": ["BODY_SLAM", "SHADOW_BALL"]
@@ -134,6 +126,14 @@
     "fastMove": "COUNTER",
     "chargedMoves": ["ICY_WIND", "SCALD"]
 }, {
+    "speciesId": "primeape",
+    "fastMove": "KARATE_CHOP",
+    "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
+}, {
+    "speciesId": "primeape_shadow",
+    "fastMove": "KARATE_CHOP",
+    "chargedMoves": ["RAGE_FIST", "CLOSE_COMBAT"]
+}, {
     "speciesId": "registeel",
     "fastMove": "LOCK_ON",
     "chargedMoves": ["ZAP_CANNON", "FOCUS_BLAST"]
@@ -154,14 +154,6 @@
     "speciesId": "steelix",
     "fastMove": "THUNDER_FANG",
     "chargedMoves": ["PSYCHIC_FANGS", "BREAKING_SWIPE"]
-}, {
-    "speciesId": "talonflame",
-    "fastMove": "INCINERATE",
-    "chargedMoves": ["FLY","FLAME_CHARGE"]
-}, {
-    "speciesId": "tentacruel",
-    "fastMove": "ACID",
-    "chargedMoves": ["SCALD", "BLIZZARD"]
 }, {
     "speciesId": "tinkaton",
     "fastMove": "FAIRY_WIND",
