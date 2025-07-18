@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-07-17 19:48:12",
+    "timestamp": "2025-07-18 19:09:38",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -41132,7 +41132,8 @@
             },
             "types": ["water", "fighting"],
             "fastMoves": ["WATER_GUN", "WING_ATTACK"],
-            "chargedMoves": ["AQUA_JET", "AERIAL_ACE", "LIQUIDATION", "CLOSE_COMBAT"],
+            "chargedMoves": ["AQUA_JET", "AERIAL_ACE", "LIQUIDATION", "CLOSE_COMBAT", "AQUA_STEP", "HYDRO_CANNON"],
+            "eliteMoves": ["HYDRO_CANNON"],
             "defaultIVs": {
                 "cp500": [6.5, 4, 10, 5],
                 "cp1500": [18, 7, 15, 14],
