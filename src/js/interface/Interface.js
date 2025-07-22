@@ -2514,7 +2514,7 @@ var InterfaceMaster = (function () {
 				$tooltip.addClass($(this).attr("class"));
 				$tooltip.find(".details").html('');
 
-				if((($(this).hasClass("fast")) || ($(this).hasClass("charged")))&&(! $(this).hasClass("tap"))){
+				if(($(this).hasClass("fast") || $(this).hasClass("charged"))&&(! $(this).hasClass("tap"))){
 
 					var values = $(this).attr("values").split(',');
 
@@ -2528,6 +2528,15 @@ var InterfaceMaster = (function () {
 					$tooltip.find(".details").append("<br>" + values[1] + " energy");
 
 					for(var i = 3; i < values.length; i++){
+						$tooltip.find(".details").append("<br>"+values[i]);
+					}
+				}
+
+				if($(this).hasClass("shield")){
+					let values = $(this).attr("values").split(',');
+
+					$tooltip.find(".details").html(values[0] + " blocked");
+					for(let i = 1; i < values.length; i++){
 						$tooltip.find(".details").append("<br>"+values[i]);
 					}
 				}

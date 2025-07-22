@@ -33,7 +33,31 @@ class DamageCalculator {
 			}
 		}
 
-		var damage = Math.floor(move.power * move.stab * ( attacker.getEffectiveStat(0) / defender.getEffectiveStat(1)) * effectiveness * chargeMultiplier * 0.5 * DamageMultiplier.BONUS) + 1;
+		let power = move.power;
+		let attackStat = attacker.getEffectiveStat(0);
+		let defenseStat = defender.getEffectiveStat(1);
+
+		// Form specific special cases
+		switch(attacker.activeFormId){
+			case "aegislash_shield":
+				// Calculate all Charged Attack damage using the Blade form's Attack stat
+				if(move.energy > 0){
+					attackStat = attacker.getFormStats("aegislash_blade").atk;
+				}
+				break;
+		}
+
+		var damage = Math.floor(power * move.stab * ( attackStat / defenseStat) * effectiveness * chargeMultiplier * 0.5 * DamageMultiplier.BONUS) + 1;
+
+		// Form specific special cases
+		switch(attacker.activeFormId){
+			case "aegislash_shield":
+				//
+				if(move.energyGain > 0){
+					damage = 1;
+				}
+				break;
+		}
 
 		return damage;
 	}
@@ -41,7 +65,22 @@ class DamageCalculator {
 	// Calculate damage given stats and effectiveness
 
 	static damageByStats(attacker, defender, attack, defense, effectiveness, move){
+		// For Pokemon which change forms before a charged attack, use the new form's attack stat
+		if(attacker.formChange && attacker.formChange.trigger == "activate_charged" && move.energy > 0){
+			attack = attacker.getFormStats(attacker.formChange.alternativeFormId).atk;
+		}
+
 		var damage = Math.floor(move.power * move.stab * (attack/defense) * effectiveness * 0.5 * DamageMultiplier.BONUS) + 1;
+
+		// Form specific special cases
+		switch(attacker.activeFormId){
+			case "aegislash_shield":
+				//
+				if(move.energyGain > 0){
+					damage = 1;
+				}
+				break;
+		}
 
 		return damage;
 	}

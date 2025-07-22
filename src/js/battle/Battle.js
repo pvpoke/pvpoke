@@ -89,7 +89,7 @@ function Battle(){
 			poke.initialize(cp);
 		}
 
-		if(poke.activeFormId != poke.startFormId){
+		if(poke.formChange && poke.activeFormId != poke.startFormId){
 			poke.reset();
 		}
 
@@ -1008,9 +1008,16 @@ function Battle(){
 						// Reset the outgoing Pokemon's buffs and debuffs
 						poke.statBuffs = [0,0];
 						poke.startStatBuffs = [0,0];
+
+						// Revert current Pokemon to original form
+						if(poke.formChange && poke.activeFormId != poke.originalFormId){
+							poke.startFormId = poke.originalFormId;
+							poke.changeForm(poke.originalFormId);
+						}
 					} else{
 						self.getOpponent(poke.index).cooldown = 500;
 					}
+
 					self.setNewPokemon(newPokemon, poke.index, false);
 
 					if(mode == "emulate"){
@@ -1026,6 +1033,23 @@ function Battle(){
 
 	this.useMove = function(attacker, defender, move, forceShields, forceBuff, charge){
 		charge = typeof charge !== 'undefined' ? charge : 1;
+
+		let attackerChangedForm = false;
+		let defenderChangedForm = false;
+
+		// Apply pre-attack form changes
+		if(attacker.formChange && attacker.formChange.trigger == "activate_charged" && attacker.activeFormId != attacker.formChange.alternativeFormId
+			&& move.energy > 0  && (attacker.formChange.moveId == "ANY" || attacker.formChange.moveId == move.moveId)){
+			attacker.changeForm(attacker.formChange.alternativeFormId);
+
+			self.logDecision(attacker, " has changed forms into " + attacker.activeFormId);
+
+			if(mode == "emulate"){
+				self.pushAnimation(attacker.index, "formchange", attacker.activeFormId);
+			}
+
+			attackerChangedForm = true;
+		}
 
 		var type = "fast " + move.type;
 		var damage = DamageCalculator.damage(attacker, defender, move, charge, mode, players);
@@ -1100,6 +1124,10 @@ function Battle(){
 					}
 				}
 
+				if(defender.activeFormId == "aegislash_shield" && damage * 2 < defender.hp){
+					useShield = false;
+				}
+
 				if(decisionMethod == "random"){
 					// For randomized battles, randomize shield usage
 					shieldWeight = shieldDecision.shieldWeight;
@@ -1147,10 +1175,28 @@ function Battle(){
 				if(useShield){
 					var damageBlocked = damage-1;
 
-					timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+8500, turns, [damageBlocked]));
+					let shieldTimelineDescriptions = [damageBlocked];
+
 					damage = 1;
 					defender.shields--;
 					roundShieldUsed = true;
+
+					// Apply form changes
+					if(defender.formChange && defender.formChange.trigger == "activate_shield" && defender.activeFormId != defender.formChange.alternativeFormId){
+						defender.changeForm(defender.formChange.alternativeFormId);
+
+						self.logDecision(defender, " has changed forms into " + defender.activeFormId);
+
+						if(mode == "emulate"){
+							self.pushAnimation(defender.index, "formchange", defender.activeFormId);
+						}
+
+						defenderChangedForm = true
+
+						shieldTimelineDescriptions.push("Form Change");
+					}
+
+					timeline.push(new TimelineEvent("shield", "Shield", defender.index, time+8500, turns, shieldTimelineDescriptions));
 
 					if(players.length > 0){
 						players[defender.index].useShield();
@@ -1251,8 +1297,6 @@ function Battle(){
 
 			self.pushAnimation(defender.index, "damage", effectiveness);
 		}
-
-		// Inflict damage
 
 		defender.hp = Math.max(0, defender.hp-damage);
 
@@ -1434,19 +1478,23 @@ function Battle(){
 			timelineDescriptions.push(buffStr);
 		}
 
-		// Apply form changes
-		if(attacker.formChange){
-			if(attacker.formChange.trigger == "charged_move" && move.energy > 0 && (attacker.formChange.moveId == "ANY" || attacker.formChange.moveId == move.moveId)){
-				attacker.changeForm();
+		// Apply post-attack form changes
+		if(attacker.formChange && attacker.formChange.trigger == "charged_move" && attacker.activeFormId != attacker.formChange.alternativeFormId
+			&& move.energy > 0 && (attacker.formChange.moveId == "ANY" || attacker.formChange.moveId == move.moveId)){
 
-				timelineDescriptions.push("Form Change");
-				self.logDecision(attacker, " has changed forms into " + attacker.activeFormId);
+			attacker.changeForm();
 
-				if(mode == "emulate"){
-					self.pushAnimation(attacker.index, "formchange", attacker.activeFormId);
-				}
+			self.logDecision(attacker, " has changed forms into " + attacker.activeFormId);
+
+			if(mode == "emulate"){
+				self.pushAnimation(attacker.index, "formchange", attacker.activeFormId);
 			}
 
+			attackerChangedForm = true;
+		}
+
+		if(attackerChangedForm){
+			timelineDescriptions.push("Form Change");
 		}
 
 		timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, turns, timelineDescriptions));

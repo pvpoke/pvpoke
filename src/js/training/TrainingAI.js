@@ -821,6 +821,26 @@ function TrainingAI(l, p, b){
 			minShields: 3
 		};
 
+		// Preserve old Pokemon stats
+		var startStats = [
+			{
+				shields: pokemon.startingShields,
+				hp: pokemon.hp,
+				energy: pokemon.energy,
+				cooldown: pokemon.cooldown,
+				index: pokemon.index,
+				formId: pokemon.activeFormId
+			},
+			{
+				shields: opponent.startingShields,
+				hp: opponent.hp,
+				energy: opponent.energy,
+				cooldown: opponent.cooldown,
+				index: opponent.index,
+				formId: opponent.activeFormId
+			}
+		];
+
 		// Preserve current HP, energy, and stat boosts which get reset during simulation
 		// Otherwise old values of startHp, startingShields, etc. may get used during the reset
 		pokemon.startHp = pokemon.hp;
@@ -837,23 +857,6 @@ function TrainingAI(l, p, b){
 		opponent.startingShields = opponent.shields;
 		opponent.startFormId = opponent.activeFormId;
 
-		// Preserve old Pokemon stats
-		var startStats = [
-			{
-				shields: pokemon.startingShields,
-				hp: pokemon.hp,
-				energy: pokemon.energy,
-				cooldown: pokemon.cooldown,
-				index: pokemon.index
-			},
-			{
-				shields: opponent.startingShields,
-				hp: opponent.hp,
-				energy: opponent.energy,
-				cooldown: opponent.cooldown,
-				index: opponent.index
-			}
-		];
 
 		switch(type){
 			case "BOTH_BAIT":
@@ -925,6 +928,7 @@ function TrainingAI(l, p, b){
 		opponent.startHp = startStats[1].hp;
 		opponent.startEnergy = startStats[1].energy;
 		opponent.startCooldown = startStats[1].cooldown;
+		
 
 		pokemon.reset();
 		opponent.reset();
@@ -932,6 +936,23 @@ function TrainingAI(l, p, b){
 		pokemon.farmEnergy = false;
 		opponent.index = startStats[1].index;
 		opponent.farmEnergy = false;
+
+		if(pokemon.formChange){
+			pokemon.startFormId = pokemon.originalFormId;
+
+			if(pokemon.activeFormId != startStats[0].formId){
+				pokemon.formChange(startStats[0].formId);
+			}
+		}
+
+		if(opponent.formChange){
+			opponent.startFormId = opponent.originalFormId;
+
+			if(opponent.activeFormId != startStats[1].formId){
+				opponent.formChange(startStats[1].formId);
+			}
+		}
+
 
 		return scenario;
 	}

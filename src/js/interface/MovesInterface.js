@@ -150,6 +150,10 @@ var InterfaceMaster = (function () {
 						valid = false;
 					}
 
+					if(move.moveId.indexOf("AEGISLASH_CHARGE") > -1){
+						valid = false;
+					}
+
 					if(valid){
 						data.push(obj);
 					}

@@ -954,6 +954,12 @@ class ActionLogic {
 			return;
 		}
 
+		// Build energy for Aegislash Shield to reduce time spent in Blade form
+		if(poke.activeFormId == "aegislash_shield" && poke.energy < 100 - (poke.fastMove.energyGain / 2)){
+			battle.logDecision(poke, " wants to gain as much energy as possible before changing form");
+			return;
+		}
+
 		action = new TimelineAction(
 			"charged",
 			poke.index,

@@ -48,7 +48,7 @@ function Pokemon(id, i, b){
 	this.startHp = 0;
 	this.startEnergy = 0;
 	this.startCooldown = 0;
-	this.startFormId = this.activeFormId;
+	this.originalFormId = this.activeFormId;
 	this.level = 50;
 	this.levelCap = 50; // Variable level cap as determined by the battle settings
 	this.baseLevelCap = 50; // The default level cap as determined by the game master
@@ -73,6 +73,11 @@ function Pokemon(id, i, b){
 
 	if(data.formChange){
 		this.formChange = data.formChange;
+	}
+
+	if(data.originalFormId){
+		this.originalFormId = data.originalFormId;
+		this.startFormId = data.originalFormId; // May differ for specific sims or training matchup evaluations
 	}
 
 	this.typeEffectiveness = getTypeEffectivenessArray(b);
@@ -362,8 +367,16 @@ function Pokemon(id, i, b){
 
 	// Calculate and return the Pokemon's CP
 
-	this.calculateCP = function(cpm = self.cpm, atk = self.ivs.atk, def = self.ivs.def, hp = self.ivs.hp){
-		var cp = Math.floor(( (self.baseStats.atk+atk) * Math.pow(self.baseStats.def+def, 0.5) * Math.pow(self.baseStats.hp+hp, 0.5) * Math.pow(cpm, 2) ) / 10);
+	this.calculateCP = function(cpm = self.cpm, atkIV = self.ivs.atk, defIV = self.ivs.def, hpIV = self.ivs.hp){
+		let cp = Math.floor(( (self.baseStats.atk+atkIV) * Math.pow(self.baseStats.def+defIV, 0.5) * Math.pow(self.baseStats.hp+hpIV, 0.5) * Math.pow(cpm, 2) ) / 10);
+
+		return cp;
+	}
+
+	// Calculate and return CP given CPM and base stats
+
+	this.calculateCPByBaseStats = function(cpm, atk, def, hp){
+		let cp = Math.floor(( (atk+self.ivs.atk) * Math.pow((def+self.ivs.def), 0.5) * Math.pow((hp+self.ivs.hp), 0.5) * Math.pow(cpm, 2) ) / 10);
 
 		return cp;
 	}
@@ -711,6 +724,14 @@ function Pokemon(id, i, b){
 						delete self.activeChargedMoves[0].buffTarget;
 						delete self.activeChargedMoves[0].selfDebuffing;
 					}
+				}
+
+				if(self.activeFormId == "aegislash_shield"){
+					self.activeChargedMoves.forEach(move => {
+						move.buffs = [0,0];
+						move.buffTarget = self;
+						move.selfDebuffing = true;
+					});
 				}
 
 				// If both moves cost similar energy and DPE and one has a buff effect, prioritize the buffing move
@@ -1815,7 +1836,7 @@ function Pokemon(id, i, b){
 		self.statBuffs = [self.startStatBuffs[0], self.startStatBuffs[1]];
 		self.faintSource = '';
 
-		if(self.activeFormId != self.startFormId){
+		if(self.formChange){
 			self.changeForm(self.startFormId);
 		}
 
@@ -1829,7 +1850,7 @@ function Pokemon(id, i, b){
 		self.startEnergy = 0;
 		self.startCooldown = 0;
 		self.startStatBuffs = [0, 0];
-		self.startFormId = self.activeFormId;
+		self.startFormId = self.originalFormId;
 
 		self.reset();
 	}
@@ -1880,9 +1901,7 @@ function Pokemon(id, i, b){
 		initialize = typeof initialize !== 'undefined' ? initialize : true;
 
 		self.level = amount;
-		var index = ((amount-1) * 2);
-
-		self.cpm = cpms[index];
+		self.cpm = self.getCPMByLevel(amount);
 
 		/*if(index % 1 == 0){
 			// Set CPM for whole levels
@@ -1900,6 +1919,11 @@ function Pokemon(id, i, b){
 			self.isCustom = true;
 			self.initialize(false);
 		}
+	}
+
+	this.getCPMByLevel = function(level){
+		let index = ((level - 1) * 2);
+		return cpms[index];
 	}
 
 	// Set this Pokemon's level cap
@@ -1963,7 +1987,7 @@ function Pokemon(id, i, b){
 
 	// Return effective stat after applying modifier, 0 - attack, 1 - defense
 
-	this.getEffectiveStat = function(index, useStartStatBuffs){
+	this.getEffectiveStat = function(index, useStartStatBuffs, attackContext){
 		useStartStatBuffs = (typeof useStartStatBuffs !== 'undefined') ?  useStartStatBuffs : false
 
 		var multiplier = self.getStatBuffMultiplier(index, useStartStatBuffs);
@@ -2327,32 +2351,94 @@ function Pokemon(id, i, b){
 		this.activeFormId = formId;
 		this.types = [ form.types[0], form.types[1] ];
 		this.typeEffectiveness = getTypeEffectivenessArray(battle);
-
+		
+		if(form?.formChange){
+			this.formChange = form.formChange;
+		}
+		
 		// Adjust base stats and CP if new form has different stats
-		if(this.baseStats != form.baseStats){
+		if(this.baseStats.atk != form.baseStats.atk || this.baseStats.def != form.baseStats.def || this.baseStats.hp != form.baseStats.hp){
+			let newStats = self.getFormStats(formId);
 			this.baseStats = { atk: form.baseStats.atk, def: form.baseStats.def, hp: form.baseStats.hp};
-			this.stats.atk = this.cpm * (this.baseStats.atk+this.ivs.atk);
-			this.stats.def = this.cpm * (this.baseStats.def+this.ivs.def);
-			this.stats.hp = Math.max(Math.floor(this.cpm * (this.baseStats.hp+this.ivs.hp)), 10);
+			this.stats.atk = newStats.atk;
+			this.stats.def = newStats.def;
+			//this.stats.hp = newStats.hp;
 		}
 
 		// Form specific functionality
 		switch(formId){
 			case "morpeko_full_belly":
-				self.replaceChargedMove("charged", "AURA_WHEEL_DARK", "AURA_WHEEL_ELECTRIC");
+				self.replaceMove("charged", "AURA_WHEEL_DARK", "AURA_WHEEL_ELECTRIC");
 			break;
 
 			case "morpeko_hangry":
-				self.replaceChargedMove("charged", "AURA_WHEEL_ELECTRIC", "AURA_WHEEL_DARK");
+				self.replaceMove("charged", "AURA_WHEEL_ELECTRIC", "AURA_WHEEL_DARK");
+			break;
+
+			case "aegislash_blade":
+				self.replaceMove("fast", "AEGISLASH_CHARGE_AIR_SLASH", "AIR_SLASH");
+				self.replaceMove("fast", "AEGISLASH_CHARGE_PSYCHO_CUT", "PSYCHO_CUT");
+			break;
+
+			case "aegislash_shield":
+				self.replaceMove("fast", "AIR_SLASH", "AEGISLASH_CHARGE_AIR_SLASH");
+				self.replaceMove("fast", "PSYCHO_CUT", "AEGISLASH_CHARGE_PSYCHO_CUT");
 			break;
 		}
 
 		self.resetMoves();
 	}
 
-	this.replaceChargedMove = function(moveType, oldMoveId, newMoveId){
+	// Obtain the active combat stats of this Pokemon in a different form
+
+	this.getFormStats = function(formId){
+		let newForm = gm.getPokemonById(formId);
+		let newCP = self.calculateCPByBaseStats(self.cpm, newForm.baseStats.atk, newForm.baseStats.def, newForm.baseStats.hp);
+		let cpmIndex = cpms.indexOf(self.cpm);
+		let battleCP = battle.getCP();
+
+		// This loop reduces the new form's effective level until it fits under the CP cap
+		/*while((! newStats || newCP > battleCP) && cpmIndex >= 0){
+			let newCPM = cpms[cpmIndex];
+			newCP = self.calculateCPByBaseStats(newCPM, newForm.baseStats.atk, newForm.baseStats.def, newForm.baseStats.hp);
+
+			newStats = {
+				atk: newCPM * (newForm.baseStats.atk + self.ivs.atk),
+				def: newCPM * (newForm.baseStats.def + self.ivs.def),
+				hp: Math.max(Math.floor(newCPM * (newForm.baseStats.hp+self.ivs.hp)), 10)
+			}
+
+			cpmIndex--;
+		}*/
+
+		// Form specific cases
+		switch(formId){
+			case "aegislash_blade":
+				if(battle.getCP() == 1500){
+					let newLevel = Math.round(self.level / 2);
+					cpmIndex = cpms.indexOf(self.getCPMByLevel(newLevel));
+					//cpmIndex = Math.round(cpmIndex / 2);
+				}
+				break;
+		}
+
+		let newCPM = cpms[cpmIndex];
+		let newStats = {
+			atk: newCPM * (newForm.baseStats.atk + self.ivs.atk),
+			def: newCPM * (newForm.baseStats.def + self.ivs.def),
+			hp: Math.max(Math.floor(newCPM * (newForm.baseStats.hp+self.ivs.hp)), 10)
+		}
+
+		//console.log(formId + " " + self.calculateCPByBaseStats(newCPM, newForm.baseStats.atk, newForm.baseStats.def, newForm.baseStats.hp));
+
+		return newStats;
+	}
+
+	this.replaceMove = function(moveType, oldMoveId, newMoveId){
 		if(moveType == "fast"){
-			self.selectMove(moveType, newMoveId, 0, true);
+			if(self.fastMove.moveId == oldMoveId){
+				self.selectMove(moveType, newMoveId, 0, true);
+			}
 		} else if(moveType == "charged"){
 			var moveIndex = self.chargedMoves.findIndex(m => m.moveId == oldMoveId);
 			if(moveIndex > -1){

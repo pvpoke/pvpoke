@@ -32563,7 +32563,7 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_HONEDGE",
             "evolutions": ["doublade"]
@@ -32589,18 +32589,18 @@
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_HONEDGE",
             "parent": "honedge",
-            "evolutions": ["aegislash"]
+            "evolutions": ["aegislash_shield"]
         }
     },
     {
         "dex": 681,
         "speciesName": "Aegislash (Blade)",
         "speciesId": "aegislash_blade",
-        "originalFormId": "aegislash_shield",
+        "originalFormId": "aegislash_blade",
         "baseStats": {
             "atk": 272,
             "def": 97,
@@ -32621,6 +32621,11 @@
         "family": {
             "id": "FAMILY_HONEDGE",
             "parent": "doublade"
+        },
+        "formChange": {
+            "type": "set",
+            "trigger": "activate_shield",
+            "alternativeFormId": "aegislash_shield"
         }
     },
     {
@@ -32634,7 +32639,7 @@
             "hp": 155
         },
         "types": ["steel", "ghost"],
-        "fastMoves": ["PSYCHO_CUT", "AIR_SLASH"],
+        "fastMoves": ["AEGISLASH_CHARGE_PSYCHO_CUT", "AEGISLASH_CHARGE_AIR_SLASH"],
         "chargedMoves": ["FLASH_CANNON", "GYRO_BALL", "SHADOW_BALL"],
         "defaultIVs": {
             "cp500": [12.5, 4, 15, 15],
@@ -32645,10 +32650,16 @@
         "searchPriority": 2,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_HONEDGE",
             "parent": "doublade"
+        },
+        "formChange": {
+            "type": "set",
+            "trigger": "activate_charged",
+            "moveId": "ANY",
+            "alternativeFormId": "aegislash_blade"
         }
     },
     {

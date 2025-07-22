@@ -1036,7 +1036,7 @@ var InterfaceMaster = (function () {
 					$moveDetails.find(".dpe .value").html( Math.round( ((chargedMoves[n].power * chargedMoves[n].stab * pokemon.shadowAtkMult) / chargedMoves[n].energy) * 100) / 100);
 					$moveDetails.attr("data", chargedMoves[n].moveId);
 
-					if(chargedMoves[n].buffs){
+					if(chargedMoves[n].buffs && chargedMoves[n].buffApplyChance){
 						$moveDetails.find(".move-effect").html(gm.getStatusEffectString(chargedMoves[n]));
 					}
 
