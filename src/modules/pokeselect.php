@@ -66,6 +66,11 @@
 			<h3 class="mega-cp">cp <span class="stat"></span></h3>
 		</div>
 
+		<div class="form-cp-container">
+			<h3 class="base-name section-title">Pokemon</h3>
+			<h3 class="form-cp">cp <span class="stat"></span></h3>
+		</div>
+
 		<div class="advanced-section">
 			<a class="advanced section-title" href="#">Edit/Check IVs <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 			<div class="fields">

@@ -2393,9 +2393,8 @@ function Pokemon(id, i, b){
 
 	this.getFormStats = function(formId){
 		let newForm = gm.getPokemonById(formId);
-		let newCP = self.calculateCPByBaseStats(self.cpm, newForm.baseStats.atk, newForm.baseStats.def, newForm.baseStats.hp);
+		let newLevel = self.level;
 		let cpmIndex = cpms.indexOf(self.cpm);
-		let battleCP = battle.getCP();
 
 		// This loop reduces the new form's effective level until it fits under the CP cap
 		/*while((! newStats || newCP > battleCP) && cpmIndex >= 0){
@@ -2415,13 +2414,13 @@ function Pokemon(id, i, b){
 		switch(formId){
 			case "aegislash_blade":
 				if(battle.getCP() == 1500){
-					let newLevel = Math.round(self.level * 0.5) + 1;
+					newLevel = Math.round(self.level * 0.5) + 1;
 					cpmIndex = cpms.indexOf(self.getCPMByLevel(newLevel));
 					//cpmIndex = Math.round(cpmIndex / 2);
 				}
 
 				if(battle.getCP() == 2500){
-					let newLevel = Math.round(self.level * 0.75);
+					newLevel = Math.round(self.level * 0.75);
 					cpmIndex = cpms.indexOf(self.getCPMByLevel(newLevel));
 				}
 				break;
@@ -2431,10 +2430,9 @@ function Pokemon(id, i, b){
 		let newStats = {
 			atk: newCPM * (newForm.baseStats.atk + self.ivs.atk),
 			def: newCPM * (newForm.baseStats.def + self.ivs.def),
-			hp: Math.max(Math.floor(newCPM * (newForm.baseStats.hp+self.ivs.hp)), 10)
+			hp: Math.max(Math.floor(newCPM * (newForm.baseStats.hp+self.ivs.hp)), 10),
+			level: newLevel
 		}
-
-		console.log(formId + " " + self.calculateCPByBaseStats(newCPM, newForm.baseStats.atk, newForm.baseStats.def, newForm.baseStats.hp));
 
 		return newStats;
 	}

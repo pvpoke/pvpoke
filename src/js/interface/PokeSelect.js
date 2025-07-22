@@ -310,6 +310,31 @@ function PokeSelect(element, i){
 				$el.find(".mega-cp-container").hide();
 			}
 
+			// Show alternate form CP for form changing Pokemon
+			$el.find(".form-cp-container").hide();
+
+			// We're going to implement this later (tm)
+
+			/*if(selectedPokemon.formChange){
+				let formId = selectedPokemon.formChange.alternativeFormId;
+				let newStats = selectedPokemon.getFormStats(formId);
+
+				if(newStats.atk != selectedPokemon.stats.atk || newStats.def != selectedPokemon.stats.def || newStats.hp != selectedPokemon.stats.hp){
+					var baseId = selectedPokemon.speciesId;
+
+					var newForm = new Pokemon(formId, index, battle);
+					newForm.initialize(false);
+					newForm.setIV("atk", selectedPokemon.ivs.atk);
+					newForm.setIV("def", selectedPokemon.ivs.def);
+					newForm.setIV("hp", selectedPokemon.ivs.hp);
+					newForm.setLevel(newStats.level);
+
+					$el.find(".form-cp-container .base-name").html(newForm.speciesName + " Forme");
+					$el.find(".form-cp-container .form-cp .stat").html(newForm.cp);
+					$el.find(".form-cp-container").show();
+				}
+			}*/
+
 			// List related forms
 			if(previousId != selectedPokemon.speciesId){
 				previousId = selectedPokemon.speciesId;

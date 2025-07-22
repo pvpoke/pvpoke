@@ -5,5 +5,8 @@
 	"exclude": [{
 		"filterType": "tag",
 		"values": ["mega"]
+	}, {
+		"filterType": "id",
+		"values": ["aegislash_blade", "aegislash_shield"]
 	}]
 }

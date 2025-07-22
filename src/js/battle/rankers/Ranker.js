@@ -716,6 +716,10 @@ var RankerMaster = (function () {
 						rankings[i].moveset[1] = "AURA_WHEEL_ELECTRIC";
 					}
 
+					if(pokemon.speciesId == "aegislash_shield"){
+						rankings[i].moveset[0] = "AEGISLASH_CHARGE_PSYCHO_CUT";
+					}
+
 					rankings[i].score = rankings[i].scores[rankings[i].scores.length-1];
 
 					// For chargers, factor in Fast Move pressure for ability to farm down, and maximum carryover energy after firing a Charged Move
