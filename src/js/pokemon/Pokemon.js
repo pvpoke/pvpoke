@@ -2415,7 +2415,7 @@ function Pokemon(id, i, b){
 		switch(formId){
 			case "aegislash_blade":
 				if(battle.getCP() == 1500){
-					let newLevel = Math.round(self.level * 0.5);
+					let newLevel = Math.round(self.level * 0.5) + 1;
 					cpmIndex = cpms.indexOf(self.getCPMByLevel(newLevel));
 					//cpmIndex = Math.round(cpmIndex / 2);
 				}
