@@ -1463,6 +1463,12 @@ function Battle(){
 			energyValue = -move.energy;
 		}
 
+		// Hard code override for Shield forme with custom move
+		if(attacker.activeFormId == "aegislash_shield" && move.energyGain > 0 && move.moveId.indexOf("AEGISLASH_CHARGE") == -1){
+			energyValue = 6;
+		}
+
+
 		var timelineDescriptions = [damage, energyValue, percentDamage]
 
 		if(buffApplied){
@@ -1511,7 +1517,6 @@ function Battle(){
 		}
 
 		timeline.push(new TimelineEvent(type, move.name, attacker.index, displayTime, turns, timelineDescriptions));
-
 		// If a Pokemon has fainted, clear the action queue
 
 		if(defender.hp <= 0){

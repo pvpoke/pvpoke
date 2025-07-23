@@ -79,6 +79,11 @@ function PokeSelect(element, i){
 			$el.find(".poke-stats .stat").removeClass("buff debuff");
 
 			// Display stat adjustments for damage dealt and taken
+			let originalStats = {
+				atk: selectedPokemon.cpm * (selectedPokemon.baseStats.atk + selectedPokemon.ivs.atk),
+				def: selectedPokemon.cpm * (selectedPokemon.baseStats.def + selectedPokemon.ivs.def),
+				hp: Math.max(Math.floor(selectedPokemon.cpm * (selectedPokemon.baseStats.hp + selectedPokemon.ivs.hp)), 10),
+			}
 
 			var effectiveAtk = selectedPokemon.getEffectiveStat(0);
 			var effectiveDef = selectedPokemon.getEffectiveStat(1);
@@ -91,20 +96,30 @@ function PokeSelect(element, i){
 
 			$el.find(".adjustment .value").removeClass("buff debuff");
 
+			// Show attack buff or debuff
 			if(adjustmentAtk > 1){
 				$el.find(".adjustment.attack .value").addClass("buff");
 			} else if(adjustmentAtk < 1){
 				$el.find(".adjustment.attack .value").addClass("debuff");
 			}
 
-
+			// Show defense buff or debuff
 			if(adjustmentDef < 1){
 				$el.find(".adjustment.defense .value").addClass("buff");
 			} else if(adjustmentDef > 1){
 				$el.find(".adjustment.defense .value").addClass("debuff");
 			}
 
-			var overall = Math.round((selectedPokemon.stats.hp * selectedPokemon.stats.atk * selectedPokemon.stats.def) / 1000);
+			// Show hp buff or debuff
+			if(selectedPokemon.stats.hp > originalStats.hp){
+				$el.find(".poke-stats .stamina .stat").addClass("buff");
+			} else if(selectedPokemon.stats.hp < originalStats.hp){
+				$el.find(".poke-stats .stamina .stat").addClass("debuff");
+			}
+
+
+
+			var overall = Math.round((originalStats.hp * originalStats.atk * originalStats.def) / 1000);
 			var effectiveOverall = Math.round((selectedPokemon.stats.hp * selectedPokemon.getEffectiveStat(0) * selectedPokemon.getEffectiveStat(1)) / 1000);
 
 			$el.find(".overall .stat").html(effectiveOverall);
@@ -1565,6 +1580,13 @@ function PokeSelect(element, i){
 			newForm.setIV("hp", selectedPokemon.ivs.hp);
 			newForm.setLevel(newLevel);
 
+			switch(formId){
+				case "aegislash_blade":
+					newForm.stats.hp = selectedPokemon.stats.hp;
+					newForm.hp = newForm.stats.hp;
+					break;
+			}
+			
 			newForm.selectMove("fast", selectedPokemon.fastMove.moveId);
 
 			// Must operate on the second Charged Attack first
