@@ -25,6 +25,7 @@ function PokeSelect(element, i){
 	var currentHP; // The currently animated HP
 	var currentEnergy; // The currently animated energy
 	var previousId = '';
+	var previousForms = []; // Stores previously accessed forms to retain their levels
 
 	var ivCombinationCount = 4096;
 
@@ -313,15 +314,22 @@ function PokeSelect(element, i){
 			// Show alternate form CP for form changing Pokemon
 			$el.find(".form-cp-container").hide();
 
-			// We're going to implement this later (tm)
-
-			/*if(selectedPokemon.formChange){
+			if(selectedPokemon.formChange){
 				let formId = selectedPokemon.formChange.alternativeFormId;
 				let newStats = selectedPokemon.getFormStats(formId);
 
-				if(newStats.atk != selectedPokemon.stats.atk || newStats.def != selectedPokemon.stats.def || newStats.hp != selectedPokemon.stats.hp){
-					var baseId = selectedPokemon.speciesId;
+				// Update existing form data to match the current level and iv's
+				previousForms.forEach(form => {
+					if(form.speciesId == selectedPokemon.speciesId){
+						form.setIV("atk", selectedPokemon.ivs.atk);
+						form.setIV("def", selectedPokemon.ivs.def);
+						form.setIV("hp", selectedPokemon.ivs.hp);
+						form.setLevel(selectedPokemon.level, false);
+						form.level = selectedPokemon.level;
+					}
+				});
 
+				if(newStats.atk != selectedPokemon.stats.atk || newStats.def != selectedPokemon.stats.def || newStats.hp != selectedPokemon.stats.hp){
 					var newForm = new Pokemon(formId, index, battle);
 					newForm.initialize(false);
 					newForm.setIV("atk", selectedPokemon.ivs.atk);
@@ -329,11 +337,20 @@ function PokeSelect(element, i){
 					newForm.setIV("hp", selectedPokemon.ivs.hp);
 					newForm.setLevel(newStats.level);
 
+					let previousFormData = previousForms.find(form => form.speciesId == formId);
+					if(previousFormData 
+						&& previousFormData.ivs.atk == newForm.ivs.atk
+						&& previousFormData.ivs.def == newForm.ivs.def
+						&& previousFormData.ivs.hp == newForm.ivs.hp){
+						newForm.setLevel(previousFormData.level);
+					}
+
 					$el.find(".form-cp-container .base-name").html(newForm.speciesName + " Forme");
 					$el.find(".form-cp-container .form-cp .stat").html(newForm.cp);
+					$el.find(".form-cp-container a.select-alternate-form").attr("level", newForm.level);
 					$el.find(".form-cp-container").show();
 				}
-			}*/
+			}
 
 			// List related forms
 			if(previousId != selectedPokemon.speciesId){
@@ -648,6 +665,7 @@ function PokeSelect(element, i){
 
 	this.clear = function(){
 		selectedPokemon = null;
+		previousForms = [];
 
 		$el.find("input.level").val('');
 		$el.find("input.iv").val('');
@@ -704,6 +722,11 @@ function PokeSelect(element, i){
 		$el.find("input.iv[iv='def']").val(selectedPokemon.ivs.def);
 		$el.find("input.iv[iv='hp']").val(selectedPokemon.ivs.hp);
 
+		// Preserve this form for later reference
+		if(selectedPokemon.formChange && ! previousForms.some(form => form.speciesId == selectedPokemon.speciesId)){
+			previousForms.push({...selectedPokemon});
+		}
+
 		self.updateIVRank();
 
 		self.update();
@@ -751,6 +774,13 @@ function PokeSelect(element, i){
 
 		selectedPokemon.setShields(value);
 		selectedPokemon.autoLevel = true;
+
+		previousForms = [];
+
+		// Preserve this form for later reference
+		if(selectedPokemon.formChange && ! previousForms.some(form => form.speciesId == selectedPokemon.speciesId)){
+			previousForms.push({...selectedPokemon});
+		}
 
 		self.reset();
 
@@ -1266,10 +1296,10 @@ function PokeSelect(element, i){
 	$el.find("input.iv").on("keyup change", function(e){
 
 		var value = parseFloat($(this).val());
+		var iv = $(this).attr("iv");
 
 		if((value >= 0) && (value <=15) && (value % 1 == 0)){
 			// Valid level
-			var iv = $(this).attr("iv");
 
 			selectedPokemon.setIV(iv, value);
 
@@ -1516,5 +1546,41 @@ function PokeSelect(element, i){
 		modalWindow("PvP IV Rankings", $el.find(".iv-rank-details"));
 
 		self.updateIVTableResults();
+	});
+
+	// Select the Pokemon's alternative form
+
+	$el.find("a.select-alternate-form").click(function(e){
+		e.preventDefault();
+
+		if(selectedPokemon.formChange){
+			let formId = selectedPokemon.formChange.alternativeFormId;
+			let newStats = selectedPokemon.getFormStats(formId);
+			let newForm = new Pokemon(formId, index, battle);
+			let newLevel = parseFloat($(e.target).closest("a").attr("level"))
+
+			newForm.initialize(true);
+			newForm.setIV("atk", selectedPokemon.ivs.atk);
+			newForm.setIV("def", selectedPokemon.ivs.def);
+			newForm.setIV("hp", selectedPokemon.ivs.hp);
+			newForm.setLevel(newLevel);
+
+			newForm.selectMove("fast", selectedPokemon.fastMove.moveId);
+
+			// Must operate on the second Charged Attack first
+			if(selectedPokemon.chargedMoves[1]){
+				newForm.selectMove("charged", selectedPokemon.chargedMoves[1].moveId, 1);
+			} else{
+				newForm.selectMove("charged", "none", 1);
+			}
+
+			if(selectedPokemon.chargedMoves[0]){
+				newForm.selectMove("charged", selectedPokemon.chargedMoves[0].moveId, 0);
+			} else{
+				newForm.selectMove("charged", "none", 0);
+			}
+
+			self.setSelectedPokemon(newForm);
+		}
 	});
 }

@@ -67,7 +67,7 @@
 		</div>
 
 		<div class="form-cp-container">
-			<h3 class="base-name section-title">Pokemon</h3>
+			<a href="#" class="select-alternate-form"><h3 class="base-name section-title">Pokemon</h3></a>
 			<h3 class="form-cp">cp <span class="stat"></span></h3>
 		</div>
 

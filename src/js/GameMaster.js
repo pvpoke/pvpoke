@@ -459,6 +459,12 @@ var GameMaster = (function () {
 				case "regidrago":
 					defaultIVs["cp1500"] = [20, 2, 4, 4];
 					break;
+
+				// Match Shield form's default IV's
+				case "aegislash_blade":
+					defaultIVs["cp1500"] = [22, 4, 14, 15];
+					defaultIVs["cp2500"] = [38, 15, 15, 15];
+					break;
 			}
 
 			return defaultIVs;

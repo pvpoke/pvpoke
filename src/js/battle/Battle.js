@@ -1275,7 +1275,15 @@ function Battle(){
 				attacker.battleStats.energyGained += Math.min(move.energyGain, 100 - attacker.energy);
 			}
 
-			attacker.energy += attacker.fastMove.energyGain;
+			let energyGain = attacker.fastMove.energyGain;
+
+			// Hard code to apply to custom moves
+			if(attacker.activeFormId == "aegislash_shield"){
+				energyGain = 6;
+			}
+
+
+			attacker.energy += energyGain;
 
 			if(attacker.energy > 100){
 				attacker.energy = 100;
@@ -1296,6 +1304,11 @@ function Battle(){
 			var effectiveness = defender.typeEffectiveness[move.type];
 
 			self.pushAnimation(defender.index, "damage", effectiveness);
+		}
+
+		// Hard code to apply to custom moves
+		if(attacker.activeFormId == "aegislash_shield" && move.energyGain > 0){
+			damage = 1;
 		}
 
 		defender.hp = Math.max(0, defender.hp-damage);

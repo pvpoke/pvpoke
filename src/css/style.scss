@@ -870,6 +870,12 @@ b{
 			.form-cp{
 				font-size:14px;
 			}
+
+			a.select-alternate-form{
+				margin:0;
+				text-decoration: underline;
+				color:$color-links;
+			}
 		}
 		
 		.advanced-section{

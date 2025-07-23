@@ -687,6 +687,12 @@ b {
 .poke .poke-stats .form-cp-container .form-cp {
   font-size: 14px;
 }
+.poke .poke-stats .mega-cp-container a.select-alternate-form,
+.poke .poke-stats .form-cp-container a.select-alternate-form {
+  margin: 0;
+  text-decoration: underline;
+  color: #003462;
+}
 .poke .poke-stats .advanced-section {
   margin-top: 15px;
 }

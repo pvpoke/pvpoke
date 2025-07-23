@@ -2395,43 +2395,56 @@ function Pokemon(id, i, b){
 		let newForm = gm.getPokemonById(formId);
 		let newLevel = self.level;
 		let cpmIndex = cpms.indexOf(self.cpm);
+		let battleCP = battle.getCP();
+
+		// Form specific cases
+		if(self.speciesId != formId){
+			switch(formId){
+				case "aegislash_blade":
+					if(battleCP == 1500){
+						newLevel = Math.round(self.level * 0.5) + 1;
+						cpmIndex = cpms.indexOf(self.getCPMByLevel(newLevel));
+					}
+
+					if(battleCP == 2500){
+						newLevel = Math.round(self.level * 0.75);
+						cpmIndex = cpms.indexOf(self.getCPMByLevel(newLevel));
+					}
+					break;
+
+				case "aegislash_shield":
+					if(battleCP == 1500){
+						newLevel = (self.level / 0.5) + 2;
+						cpmIndex = cpms.indexOf(self.getCPMByLevel(newLevel));
+					}
+
+					if(battleCP == 2500){
+						newLevel = Math.round(self.level / 0.75);
+						cpmIndex = cpms.indexOf(self.getCPMByLevel(newLevel));
+					}
+					break;
+			}
+		}
+
+		let newCPM = cpms[cpmIndex];
+		let newCP = self.cp;
+		let newStats;
 
 		// This loop reduces the new form's effective level until it fits under the CP cap
-		/*while((! newStats || newCP > battleCP) && cpmIndex >= 0){
-			let newCPM = cpms[cpmIndex];
+		while((! newStats || newCP > battleCP) && cpmIndex >= 0){
+			cpmIndex = cpms.indexOf(self.getCPMByLevel(newLevel));
+			newCPM = cpms[cpmIndex];
+
 			newCP = self.calculateCPByBaseStats(newCPM, newForm.baseStats.atk, newForm.baseStats.def, newForm.baseStats.hp);
 
 			newStats = {
 				atk: newCPM * (newForm.baseStats.atk + self.ivs.atk),
 				def: newCPM * (newForm.baseStats.def + self.ivs.def),
-				hp: Math.max(Math.floor(newCPM * (newForm.baseStats.hp+self.ivs.hp)), 10)
+				hp: Math.max(Math.floor(newCPM * (newForm.baseStats.hp+self.ivs.hp)), 10),
+				level: newLevel
 			}
 
-			cpmIndex--;
-		}*/
-
-		// Form specific cases
-		switch(formId){
-			case "aegislash_blade":
-				if(battle.getCP() == 1500){
-					newLevel = Math.round(self.level * 0.5) + 1;
-					cpmIndex = cpms.indexOf(self.getCPMByLevel(newLevel));
-					//cpmIndex = Math.round(cpmIndex / 2);
-				}
-
-				if(battle.getCP() == 2500){
-					newLevel = Math.round(self.level * 0.75);
-					cpmIndex = cpms.indexOf(self.getCPMByLevel(newLevel));
-				}
-				break;
-		}
-
-		let newCPM = cpms[cpmIndex];
-		let newStats = {
-			atk: newCPM * (newForm.baseStats.atk + self.ivs.atk),
-			def: newCPM * (newForm.baseStats.def + self.ivs.def),
-			hp: Math.max(Math.floor(newCPM * (newForm.baseStats.hp+self.ivs.hp)), 10),
-			level: newLevel
+			newLevel -= 0.5;
 		}
 
 		return newStats;
