@@ -1454,7 +1454,7 @@ function Pokemon(id, i, b){
 		var bestChargedMoveSpeed = Math.ceil(self.bestChargedMove.energy / self.fastMove.energyGain) * (self.fastMove.cooldown / 500);
 		effectivePower = effectivePower * (30 / bestChargedMoveSpeed);
 
-		if(effectivePower >= 210){
+		if(effectivePower >= 210 || self.speciesId == "aegislash_shield"){
 			pros.push({
 				trait: "Shield Pressure",
 				desc: "Pressures opponents to shield its strong or rapid attacks."
