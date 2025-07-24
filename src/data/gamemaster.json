@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-07-23 16:31:09",
+    "timestamp": "2025-07-24 20:49:32",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -40385,7 +40385,7 @@
             },
             "types": ["poison", "dragon"],
             "fastMoves": ["DRAGON_TAIL", "POISON_JAB"],
-            "chargedMoves": ["SLUDGE_BOMB", "DRAGON_PULSE", "FLAMETHROWER", "HYPER_BEAM"],
+            "chargedMoves": ["CROSS_POISON", "DRAGON_PULSE", "FLAMETHROWER", "HYPER_BEAM"],
             "defaultIVs": {
                 "cp500": [4.5, 4, 10, 11],
                 "cp1500": [12.5, 4, 14, 8],
@@ -40406,7 +40406,7 @@
             },
             "types": ["poison", "dragon"],
             "fastMoves": ["DRAGON_TAIL", "POISON_JAB"],
-            "chargedMoves": ["SLUDGE_BOMB", "DRAGON_PULSE", "FLAMETHROWER", "HYPER_BEAM"],
+            "chargedMoves": ["CROSS_POISON", "DRAGON_PULSE", "FLAMETHROWER", "HYPER_BEAM"],
             "defaultIVs": {
                 "cp500": [2.5, 15, 15, 14],
                 "cp1500": [7, 4, 4, 5],

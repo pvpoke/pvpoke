@@ -1172,6 +1172,10 @@ function Battle(){
 					}
 				}
 
+				if(mode == "emulate" && players[defender.index].getShields() == 0){
+					useShield = false;
+				}
+
 				if(useShield){
 					var damageBlocked = damage-1;
 

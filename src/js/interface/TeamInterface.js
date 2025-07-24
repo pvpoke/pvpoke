@@ -287,7 +287,7 @@ var InterfaceMaster = (function () {
 				var scorecardCount = parseInt($(".scorecard-length-select option:selected").val());
 				var allowShadows = $(".team-option .check.allow-shadows").hasClass("on");
 				var allowXL = $(".team-option .check.allow-xl").hasClass("on");
-				var baitShields = $(".team-option .check.shield-baiting").hasClass("on");
+				var baitShields = $(".team-option .check.shield-baiting").hasClass("on") ? 1 : 0;
 				var prioritizeMeta = $(".team-option .check.prioritize-meta").hasClass("on");
 
 				if(battle.getCup().name == "shadow"){
