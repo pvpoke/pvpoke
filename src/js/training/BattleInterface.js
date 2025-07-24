@@ -778,7 +778,16 @@ var BattlerMaster = (function () {
 						var pokeStr = pokemon.canonicalId + ' ' + pokemon.fastMove.abbreviation;
 						var chargedMoveAbbrevations = [];
 
+						// Validate move selection
+						if(pokemon.fastMove.isCustom){
+							teamsValid = false;
+						}
+
 						for(var k = 0; k < pokemon.chargedMoves.length; k++){
+							if(pokemon.chargedMoves[k].isCustom){
+								teamsValid = false;
+							}
+
 							chargedMoveAbbrevations.push(pokemon.chargedMoves[k].abbreviation);
 						}
 
@@ -830,15 +839,11 @@ var BattlerMaster = (function () {
 						playerType = players[i].getAI().getLevel()+1;
 					}
 
-					// Check that all members of all teams are valid in the format
-					var teamValid = true;
-
 					for(var n = 0; n < team.length; n++){
 						var found = false;
 
 						for(var k = 0; k < eligiblePokemon.length; k++){
 							if(eligiblePokemon[k].speciesId == team[n].speciesId){
-								console.log(team[n].speciesId + " is eligible " + eligiblePokemon[k].speciesId);
 								found = true;
 							}
 						}
@@ -966,6 +971,12 @@ var BattlerMaster = (function () {
 				}
 
 				// Report final individual and team data to db
+				let teamSelectMethod = InterfaceMaster.getInstance().getTeamSelectMethod();
+				if(teamSelectMethod == "custom" || teamSelectMethod == "manual"){
+					teamsValid = false;
+				}
+				
+				console.log("teams valid: " + teamsValid);
 
 				if(teamsValid && players[1].getAI().getLevel()+1 >= 3){
 					$.ajax({

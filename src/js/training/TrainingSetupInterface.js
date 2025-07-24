@@ -208,6 +208,12 @@ var InterfaceMaster = (function () {
 				roundNumber = val;
 			}
 
+			// Return selected team method
+
+			this.getTeamSelectMethod = function(){
+				return teamSelectMethod;
+			}
+
 			// Dispatch battle start to the MatchHandler with provided options
 
 			function startBattle(e){
