@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-07-24 20:49:32",
+    "timestamp": "2025-07-25 21:23:53",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -950,16 +950,6 @@
         }
     ],
     "formats": [
-        {
-            "title": "Sunshine Cup",
-            "cup": "sunshine",
-            "cp": 1500,
-            "meta": "sunshine",
-            "showCup": true,
-            "showFormat": true,
-            "showMeta": true,
-            "rules": ["Pokémon must be at or below 1, 500 CP to enter.", "Only Normal-,  Fire-,  Grass-,  and Ground-type Pokémon are eligible.", "Charizard is not allowed."]
-        },
         {
             "title": "Fossil Cup",
             "cup": "fossil",
@@ -11930,7 +11920,7 @@
                 "cp2500": [46, 5, 15, 15],
                 "cp2500l40": [40, 15, 15, 15]
             },
-            "searchPriority": 4,
+            "searchPriority": 2,
             "level25CP": 1494,
             "tags": ["shadoweligible"],
             "eliteMoves": ["EARTHQUAKE", "ICE_BEAM"],
@@ -11961,7 +11951,6 @@
                 "cp2500": [46, 5, 15, 15],
                 "cp2500l40": [40, 15, 15, 15]
             },
-            "searchPriority": 4,
             "tags": ["shadow"],
             "eliteMoves": ["EARTHQUAKE", "ICE_BEAM"],
             "buddyDistance": 3,
@@ -42178,7 +42167,7 @@
             },
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
-            "released": false,
+            "released": true,
             "family": {
                 "id": "FAMILY_TOEDSCOOL",
                 "evolutions": ["toedscruel"]
@@ -42204,11 +42193,12 @@
             },
             "buddyDistance": 3,
             "thirdMoveCost": 50000,
-            "released": false,
+            "released": true,
             "family": {
                 "id": "FAMILY_TOEDSCOOL",
                 "parent": "toedscool"
-            }
+            },
+            "searchPriority": 4
         },
         {
             "dex": 950,

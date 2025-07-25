@@ -1,19 +1,5 @@
 [
 	{
-		"title": "Sunshine Cup",
-		"cup": "sunshine",
-		"cp": 1500,
-		"meta": "sunshine",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 1,500 CP to enter.",
-			"Only Normal-, Fire-, Grass-, and Ground-type Pokémon are eligible.",
-			"Charizard is not allowed."
-		]
-	},
-	{
 		"title": "Fossil Cup",
 		"cup": "fossil",
 		"cp": 1500,

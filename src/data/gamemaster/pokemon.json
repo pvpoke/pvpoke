@@ -10758,7 +10758,7 @@
             "cp2500": [46, 5, 15, 15],
             "cp2500l40": [40, 15, 15, 15]
         },
-        "searchPriority": 4,
+        "searchPriority": 2,
         "level25CP": 1494,
         "tags": ["shadoweligible"],
         "eliteMoves": ["EARTHQUAKE", "ICE_BEAM"],
@@ -10789,7 +10789,6 @@
             "cp2500": [46, 5, 15, 15],
             "cp2500l40": [40, 15, 15, 15]
         },
-        "searchPriority": 4,
         "tags": ["shadow"],
         "eliteMoves": ["EARTHQUAKE", "ICE_BEAM"],
         "buddyDistance": 3,
@@ -41006,7 +41005,7 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_TOEDSCOOL",
             "evolutions": ["toedscruel"]
@@ -41032,11 +41031,12 @@
         },
         "buddyDistance": 3,
         "thirdMoveCost": 50000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_TOEDSCOOL",
             "parent": "toedscool"
-        }
+        },
+        "searchPriority": 4
     },
     {
         "dex": 950,
