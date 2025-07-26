@@ -2340,11 +2340,6 @@ function Pokemon(id, i, b){
 		id = typeof id !== 'undefined' ? id : null;
 
 		var formId = id;
-
-		if(this.formChange.type == "toggle"){
-			formId = this.activeFormId == this.formChange.defaultFormId ? this.formChange.alternativeFormId : this.formChange.defaultFormId;
-		}
-
 		var form = gm.getPokemonById(formId);
 
 		this.speciesName = form.speciesName;

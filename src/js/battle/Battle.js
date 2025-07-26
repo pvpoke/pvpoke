@@ -1505,7 +1505,7 @@ function Battle(){
 		if(attacker.formChange && attacker.formChange.trigger == "charged_move" && attacker.activeFormId != attacker.formChange.alternativeFormId
 			&& move.energy > 0 && (attacker.formChange.moveId == "ANY" || attacker.formChange.moveId == move.moveId)){
 
-			attacker.changeForm();
+			attacker.changeForm(attacker.formChange.alternativeFormId);
 
 			self.logDecision(attacker, " has changed forms into " + attacker.activeFormId);
 
