@@ -625,6 +625,15 @@ var InterfaceMaster = (function () {
 				  page_location: (host+rankStr),
 				  pageview_type: 'virtual'
 				});
+
+				// Set document title
+				let selectedFormat = gm.data.formats.find(format => format.cup == cup && format.cp == cp);
+
+				if(selectedFormat){
+					document.title = format.title + " Rankings | PvPoke";
+				} else{
+					document.title = "Rankings | PvPoke";
+				}
 			}
 
 			// Set a context so this interface can add or skip functionality

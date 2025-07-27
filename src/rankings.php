@@ -13,8 +13,6 @@ if(isset($_GET['cup'])){
 
 $CANONICAL = '/rankings/' . $cup . '/' . $cp . '/overall/';
 
-$league = 'Great League';
-
 switch($cp){
 	case "500":
 		$league = 'Little Cup';
@@ -35,144 +33,33 @@ switch($cp){
 	case "10000-40":
 		$league = 'Master League Classic';
 		break;
+
+	default:
+		$league = '';
+		break;
 }
 
-switch($cup){
 
-	case "premier":
-		$league = $league . ' Premier';
-		break;
+// Load format data to generate page title
+$formatFound = false;
 
-	case "premierclassic":
-		$league = 'Premier Classic';
-		break;
+if($cup != 'all'){
+	// Only load format data for non default cups
+	if(@$formatContent = file_get_contents('data/gamemaster/formats.json')){
+		$formats = json_decode($formatContent);
 
-	case "classic":
-		$league = 'Master League Classic';
-		break;
-
-	case "mega":
-		$league = 'Mega Master League';
-		break;
-
-	case "retro":
-		$league = 'Retro Cup';
-		break;
-
-	case "summer":
-		$league = 'Summer Cup';
-		break;
-
-
-	case "hisui":
-		$league = 'Hisui Cup';
-		break;
-
-	case "rivalry":
-		$league = 'Devon Ascension Cup';
-		break;
-
-	case "rivalry":
-		$league = 'Devon Rivalry Cup';
-		break;
-
-	case "devonchampionship":
-		$league = 'Devon Championship';
-		break;
-
-	case "pillar2":
-		$league = 'Gymbreakers Pillar Cup Remix';
-		break;
-
-	case "catch":
-		$league = 'Catch Cup';
-		break;
-
-	case "fossil":
-		$league = 'Fossil Cup';
-		break;
-
-	case "little":
-		$league = 'Little Cup';
-		break;
-
-	case "element":
-		$league = 'Element Cup';
-		break;
-
-	case "mega":
-		$league = 'Mega Master League';
-		break;
-
-	case "gbinvitational":
-		$league = 'Gymbreakers Invitational';
-		break;
-
-	case "battlefrontiergreat":
-		$league = 'Battle Frontier (Great)';
-		break;
-
-	case "battlefrontierultra":
-		$league = 'Battle Frontier (Ultra)';
-		break;
-
-	case "battlefrontiermaster":
-		$league = 'Battle Frontier (Master)';
-		break;
-
-	case "aurora":
-		$league = 'Battle Tower (Aurora)';
-		break;
-
-	case "onyx":
-		$league = 'Battle Tower (Onyx)';
-		break;
-
-	case "chrono":
-		$league = 'Zygarden Chrono Meta';
-		break;
-
-	case "littlecatch":
-		$league = 'Little Catch Cup';
-		break;
-
-	case "halloween":
-		if($cp == "500"){
-			$league = 'Little Halloween Cup';
-		} else {
-			$league = 'Halloween Cup';
+		foreach ( $formats as $format ) {
+			if ( $cup == $format->cup && $cp == $format->cp ) {
+				$league = $format->title;
+				$formatFound = true;
+				break;
+			}
 		}
-		break;
-
-	case "fantasy":
-		$league = 'Fantasy Cup';
-		break;
-
-	case "scroll":
-		$league = 'Scroll Cup';
-		break;
-
-	case "holiday":
-		if($cp == "500"){
-			$league = 'Little Holiday Cup';
-		} else {
-			$league = 'Holiday Cup';
-		}
-		break;
-
-	case "galar":
-		if($cp == "500"){
-			$league = 'Little Galar Cup';
-		} else {
-			$league = 'Galar Cup';
-		}
-		break;
-
-	case "remix":
-		$league = $league . ' Remix';
-		break;
-
+	}
+} else{
+	$formatFound = true;
 }
+
 
 $META_TITLE = $league . ' PvP Rankings';
 

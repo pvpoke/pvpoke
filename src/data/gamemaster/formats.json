@@ -133,10 +133,19 @@
 		"showMeta": true
 	},
 	{
-		"title": "Little",
+		"title": "Little Cup",
 		"cup": "little",
 		"cp": 500,
 		"meta": "little",
+		"showCup": false,
+		"showFormat": false,
+		"showMeta": false
+	},
+	{
+		"title": "Catch Cup",
+		"cup": "catch",
+		"cp": 1500,
+		"meta": "great",
 		"showCup": false,
 		"showFormat": false,
 		"showMeta": false
