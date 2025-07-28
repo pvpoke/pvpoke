@@ -55,7 +55,11 @@ RewriteRule team-builder/([a-zA-Z0-9-]+)/([\d-]+)/([a-zA-Z_\-0-9,\.]+).*$ team-b
 RewriteRule team-builder.?$ team-builder.php [L,QSA]
 
 RewriteRule train/analysis.?$ train/analysis.php [L,QSA]
-RewriteRule ^train/analysis/([a-zA-Z0-9-]+)/(\d+).*$ train/analysis.php?cup=$1&cp=$2 [L,QSA]
+RewriteRule ^train/analysis/([a-zA-Z0-9-]+)/(\d+)/.*$ train/analysis.php?cup=$1&cp=$2 [L,QSA]
+
+RewriteRule attack-cmp-chart.?$ attack-cmp-chart.php [L,QSA]
+RewriteRule ^attack-cmp-chart/([a-zA-Z0-9-]+)/(\d+).*$ attack-cmp-chart.php?cup=$1&cp=$2 [L,QSA]
+RewriteRule ^attack-cmp-chart/([a-zA-Z0-9-]+)/(\d+)/([a-zA-Z_]+).*$ attack-cmp-chart.php?cup=$1&cp=$2&p=$3 [L,QSA]
 
 RewriteRule train/editor.?$ train/editor.php [L,QSA]
 

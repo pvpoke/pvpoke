@@ -5525,6 +5525,56 @@ a.pokebattler {
   border-right-color: rgba(0, 0, 0, 0);
 }
 
+/* ATTACK CHART */
+.cmp-chart-container {
+  overflow-y: auto;
+  max-height: 800px;
+}
+.cmp-chart-container .cmp-chart {
+  border-collapse: collapse;
+}
+.cmp-chart-container .cmp-chart td.poke-name {
+  display: table-cell;
+  border-right: 1px solid rgba(0, 0, 0, 0.25);
+}
+.cmp-chart-container .cmp-chart th {
+  position: -webkit-sticky;
+  /* for Safari */
+  position: sticky;
+  left: 0;
+  top: 0;
+  background: #fcfcfc;
+  z-index: 1;
+}
+.cmp-chart-container .cmp-chart th:nth-of-type(1) {
+  text-align: left;
+}
+.cmp-chart-container .cmp-chart th:nth-of-type(2) {
+  text-align: center;
+}
+.cmp-chart-container .cmp-chart .cmp-item {
+  position: relative;
+  background: #000;
+  height: 18px;
+}
+.cmp-chart-container .cmp-chart .cmp-item .min, .cmp-chart-container .cmp-chart .cmp-item .max {
+  font-size: 14px;
+  line-height: 16px;
+  position: absolute;
+  width: 42px;
+}
+.cmp-chart-container .cmp-chart .cmp-item .min {
+  text-align: right;
+  left: -46px;
+}
+.cmp-chart-container .cmp-chart .cmp-item .max {
+  text-align: left;
+  right: -46px;
+}
+.cmp-chart-container .cmp-chart .cmp-item .bar {
+  background: #000;
+}
+
 /* RSS Feed */
 .feed-container {
   position: relative;

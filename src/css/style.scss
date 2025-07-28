@@ -6016,6 +6016,67 @@ a.pokebattler{
 	}
 }
 
+/* ATTACK CHART */
+
+.cmp-chart-container{
+	overflow-y: auto;
+	max-height: 800px;
+	
+	.cmp-chart{
+		border-collapse: collapse;
+
+		td.poke-name{
+			display: table-cell;
+			border-right: 1px solid rgba(0,0,0,0.25);
+		}
+
+		th{
+			position: -webkit-sticky; /* for Safari */
+			position: sticky;
+			left: 0;
+			top: 0;
+			background: #fcfcfc;
+			z-index: 1;
+
+			&:nth-of-type(1){
+				text-align: left;
+			}
+
+			&:nth-of-type(2){
+				text-align: center;
+			}
+		}
+
+		.cmp-item{
+			position: relative;
+			background: #000;
+			height: 18px;
+
+			.min,.max{
+				font-size: 14px;
+				line-height: 16px;
+				position: absolute;
+				width: 42px;
+			}
+
+			.min{
+				text-align: right;
+				left: -46px;
+			}
+			.max{
+				text-align: left;
+				right: -46px;
+			}
+
+			.bar{
+				background:#000;
+			}
+		}
+	}
+}
+
+
+
 /* RSS Feed */
 
 .feed-container{
