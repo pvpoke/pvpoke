@@ -15,6 +15,9 @@ let InterfaceMaster = (function () {
             let data = [];
 			let battle = new Battle();
             let multiSelector = new PokeMultiSelect($(".custom-rankings-meta-group .poke.multi"));
+			
+			// Control for selecting rows in the table
+			let selectedItem = null;
 
 			this.init = function(){
                 multiSelector.init(gm.data.pokemon, battle);
@@ -98,13 +101,20 @@ let InterfaceMaster = (function () {
                 });
 
                 // Sort data
-                data.sort((a,b) => (a.minAtk > b.minAtk) ? -1 : ((b.minAtk > a.minAtk) ? 1 : 0));
+				if(battle.getCP() == 10000){
+					data.sort((a,b) => (a.maxAtk > b.maxAtk) ? -1 : ((b.maxAtk > a.maxAtk) ? 1 : 0));
+				} else{
+					data.sort((a,b) => (a.minAtk > b.minAtk) ? -1 : ((b.minAtk > a.minAtk) ? 1 : 0));
+				}
+                
 
                 // Determine the x axis scale
                 const attackValues = data.flatMap(item => [item.minAtk, item.maxAtk]);
-                const chartMinAttack = Math.min.apply(null, attackValues) - 10;
-                const chartMaxAttack = Math.max.apply(null, attackValues) + 10;
+                const chartMinAttack = Math.min.apply(null, attackValues) - 15;
+                const chartMaxAttack = Math.max.apply(null, attackValues) + 15;
                 const chartWidth = chartMaxAttack - chartMinAttack;
+
+				console.log(chartMaxAttack);
 
                 data.forEach(item => {
                     const name = item.pokemon.speciesName.replace("(Shadow)", "");
@@ -113,20 +123,32 @@ let InterfaceMaster = (function () {
                     const $row = $(".train-table tr.hide").clone().removeClass("hide");
 
                     $row.find(".poke-name .name").html(name);
-                    $row.find(".min").html(displayMin);
-                    $row.find(".max").html(displayMax);
                     $row.attr("data", item.pokemon.speciesId);
 
-                    const barWidth = ((item.maxAtk - item.minAtk) / chartWidth) * 100;
-                    $row.find(".cmp-item").width(barWidth + "%");
+					if(window.innerWidth <= 600){
+						const barWidth = ( item.maxAtk / chartMaxAttack) * 50;
+						$row.find(".cmp-item").width(barWidth + "%");
 
-                    const position = ((item.minAtk - chartMinAttack) / chartWidth) * 100;
+						const colorRating = ( (item.maxAtk - chartMinAttack) / (chartMaxAttack - chartMinAttack)) * 1000;
+						const color = battle.getRatingColor(colorRating);
+						$row.find(".cmp-item").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
 
-                    $row.find(".cmp-item").css("left", position + "%");
+						$row.find(".min").html("");
+                    	$row.find(".max").html(displayMin + " - " + displayMax);
+					} else{
+						const barWidth = ((item.maxAtk - item.minAtk) / chartWidth) * 100;
+						$row.find(".cmp-item").width(barWidth + "%");
 
-                    const colorRating = (position / 100) * 1000;
-					const color = battle.getRatingColor(colorRating);
-					$row.find(".cmp-item").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
+                    	const position = ((item.minAtk - chartMinAttack) / chartWidth) * 100;
+						$row.find(".cmp-item").css("left", position + "%");
+
+						const colorRating = (position / 100) * 1000;
+						const color = battle.getRatingColor(colorRating);
+						$row.find(".cmp-item").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
+
+						$row.find(".min").html(displayMin);
+                    	$row.find(".max").html(displayMax);
+					}
 
                     $(".train-table tbody").append($row);
                 });
@@ -180,7 +202,6 @@ let InterfaceMaster = (function () {
 			this.pushHistoryState = function(cup, cp){
 
 				let url = webRoot+"attack-cmp-chart/"+cup+"/"+cp+"/";
-
 				let data = {cup: cup, cp: cp };
 
 				window.history.pushState(data, "Attack Stat (CMP) Chart", url);
@@ -192,6 +213,8 @@ let InterfaceMaster = (function () {
 			function selectFormat(e){
 				let cp = $(".format-select option:selected").val();
 				let cup = $(".format-select option:selected").attr("cup");
+
+				selectedItem = null;
 
 				battle.setCP(cp);
 				battle.setCup(cup);
@@ -311,6 +334,49 @@ let InterfaceMaster = (function () {
 				$(this).toggleClass("on");
 				$(this).trigger("stateChange");
 			}
+
+			// Highlight Pokemon which fall within the same Attack stat range given species Id
+			function highlightAttackRange(speciesId){
+				selectedItem = data.find(obj => obj.pokemon.speciesId == speciesId);
+
+				if(selectedItem){
+					// Filter list of Pokemon which have overlapping Attack stats
+					let filteredList = data.filter(obj => obj.minAtk <= selectedItem.maxAtk && selectedItem.minAtk <= obj.maxAtk);
+
+					$(".train-table tbody tr").removeClass("faded");
+
+					$(".train-table tbody tr").each(function(e){
+						let $row = $(this);
+						
+						if(! filteredList.find(obj => obj.pokemon.speciesId == $row.attr("data"))){
+							$row.addClass("faded");
+						}
+					});
+				}
+			}
+
+			// Row hover handler
+
+			$("body").on("click", function(e){
+
+				if($(".train-table tbody tr:hover").length > 0){
+					let $row = $(".train-table tbody tr:hover").first();
+					let speciesId = $row.attr("data");
+
+					if(speciesId && speciesId != selectedItem?.pokemon?.speciesId){
+						$(".train-table tbody tr").removeClass("selected");
+						$row.addClass("selected");
+						highlightAttackRange(speciesId);
+					} else{
+						$(".train-table tbody tr").removeClass("faded selected");
+						selectedItem = null;
+					}
+				} else{
+					$(".train-table tbody tr").removeClass("faded selected");
+					selectedItem = null;
+				}
+
+			});
 		};
 
         return object;

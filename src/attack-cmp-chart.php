@@ -58,7 +58,7 @@ require_once 'header.php';
 			<thead>
 				<tr>
 					<th class="poke-name"><a href="#" data="pokemon">Pokemon</a></th>
-					<th><a href="#" class="selected" data="attack">Attack Stat Range</a></th>
+					<th><a href="#" class="selected" data="attack">Attack Stat</a></th>
 				</tr>
 				<!--Row html to clone-->
 				<tr class="hide">

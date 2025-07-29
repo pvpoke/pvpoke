@@ -6027,7 +6027,12 @@ a.pokebattler{
 
 		td.poke-name{
 			display: table-cell;
-			border-right: 1px solid rgba(0,0,0,0.25);
+			border-right: 1px solid rgba(0,0,0,0.125);
+
+			.name{
+				@include transition(all, 0.25s, ease-out, 0s);
+				opacity: 1;
+			}
 		}
 
 		th{
@@ -6048,9 +6053,13 @@ a.pokebattler{
 		}
 
 		.cmp-item{
+			@include transition(all, 0.25s, ease-out, 0s);
+
 			position: relative;
 			background: #000;
 			height: 18px;
+			border: 2px solid rgba(0,0,0,0);
+			opacity: 1;
 
 			.min,.max{
 				font-size: 14px;
@@ -6061,21 +6070,53 @@ a.pokebattler{
 
 			.min{
 				text-align: right;
-				left: -46px;
+				left: -48px;
 			}
 			.max{
 				text-align: left;
-				right: -46px;
+				right: -48px;
+			}
+		}
+
+		tbody tr{
+			@include transition(all, 0.25s, ease-out, 0s);
+			cursor: pointer;
+			border-bottom: 1px solid rgba(0,0,0,0.125);
+
+ 			&:nth-child(2n){
+				background:none;
 			}
 
-			.bar{
-				background:#000;
+			&:hover, &.selected{
+				background: $color-sky-blue !important;
+			}
+
+			&.selected .cmp-item{
+				border: 2px solid rgba(0,0,0,1);
+				font-weight: bold;
+			}
+
+			&.faded{
+				.name, .cmp-item{
+					opacity: 0.25;
+				}
 			}
 		}
 	}
 }
 
+@media only screen and (max-width: 600px) {
+	.cmp-chart{
+		.min, .max{
+			width: 100px !important;
+			right: -105px !important;
+		}
+	}
 
+	.cmp-chart-container{
+		max-height: 600px;
+	}
+}
 
 /* RSS Feed */
 
