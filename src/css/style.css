@@ -5551,7 +5551,7 @@ a.pokebattler {
   left: 0;
   top: 0;
   background: #fcfcfc;
-  z-index: 1;
+  z-index: 20;
 }
 .cmp-chart-container .cmp-chart th:nth-of-type(1) {
   text-align: left;
@@ -5565,9 +5565,7 @@ a.pokebattler {
   -o-transition: all 0.25s ease-out 0s;
   transition: all 0.25s ease-out 0s;
   position: relative;
-  background: #000;
-  height: 18px;
-  border: 2px solid rgba(0, 0, 0, 0);
+  height: 22px;
   opacity: 1;
 }
 .cmp-chart-container .cmp-chart .cmp-item .min, .cmp-chart-container .cmp-chart .cmp-item .max {
@@ -5584,6 +5582,20 @@ a.pokebattler {
   text-align: left;
   right: -48px;
 }
+.cmp-chart-container .cmp-chart .cmp-item .bar, .cmp-chart-container .cmp-chart .cmp-item .subbar {
+  height: 22px;
+  position: absolute;
+  top: -2px;
+  min-width: 6px;
+}
+.cmp-chart-container .cmp-chart .cmp-item .bar {
+  width: 100%;
+  z-index: 0;
+  opacity: 0.4;
+}
+.cmp-chart-container .cmp-chart .cmp-item .subbar {
+  z-index: 10;
+}
 .cmp-chart-container .cmp-chart tbody tr {
   -webkit-transition: all 0.25s ease-out 0s;
   -moz-transition: all 0.25s ease-out 0s;
@@ -5599,17 +5611,24 @@ a.pokebattler {
   background: #c4def5 !important;
 }
 .cmp-chart-container .cmp-chart tbody tr.selected .cmp-item {
-  border: 2px solid black;
   font-weight: bold;
 }
+.cmp-chart-container .cmp-chart tbody tr.faded {
+  background: rgba(0, 0, 0, 0.15);
+}
 .cmp-chart-container .cmp-chart tbody tr.faded .name, .cmp-chart-container .cmp-chart tbody tr.faded .cmp-item {
-  opacity: 0.25;
+  opacity: 0.4;
 }
 
 @media only screen and (max-width: 600px) {
+  .cmp-chart .bar, .cmp-chart .subbar {
+    width: 0 !important;
+    display: none;
+  }
   .cmp-chart .min, .cmp-chart .max {
     width: 100px !important;
-    right: -105px !important;
+    position: initial !important;
+    padding-left: 10px;
   }
 
   .cmp-chart-container {

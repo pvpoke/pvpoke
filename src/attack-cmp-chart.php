@@ -57,14 +57,16 @@ require_once 'header.php';
 		<table class="train-table cmp-chart" cellspacing="0">
 			<thead>
 				<tr>
-					<th class="poke-name"><a href="#" data="pokemon">Pokemon</a></th>
-					<th><a href="#" class="selected" data="attack">Attack Stat</a></th>
+					<th class="sticky poke-name"><a href="#" data="pokemon">Pokemon</a></th>
+					<th><a href="#" class="sticky selected" data="attack">Attack Stat</a></th>
 				</tr>
 				<!--Row html to clone-->
 				<tr class="hide">
-					<td class="poke-name"><div class="name"></div></td>
+					<td class="sticky poke-name"><div class="name"></div></td>
 					<td class="attack-range">
 						<div class="cmp-item">
+							<div class="bar"></div>
+							<div class="subbar"></div>
 							<div class="min"></div>
 							<div class="max"></div>
 						</div>

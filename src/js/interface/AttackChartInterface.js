@@ -18,6 +18,8 @@ let InterfaceMaster = (function () {
 			
 			// Control for selecting rows in the table
 			let selectedItem = null;
+			let compareType = "typical";
+
 
 			this.init = function(){
                 multiSelector.init(gm.data.pokemon, battle);
@@ -81,21 +83,40 @@ let InterfaceMaster = (function () {
                 data = [];
 
                 pokemonList.forEach(pokemon => {
-                    let ivCombos = pokemon.generateIVCombinations("atk", 1, 4096);
+                    const ivCombos = pokemon.generateIVCombinations("overall", 1, 4096);
 
                     if(ivCombos.length == 0){
                         console.error("No IV combinations found for " + pokemon.speciesId);
                         return;
                     }
+					
+					// Determine attack value range for overall IV combos
+					const attackValues = ivCombos.map(combo => combo.atk);
 
-                    const minAtk = ivCombos[ivCombos.length - 1].atk;
-                    const maxAtk = ivCombos[0].atk;
+                    const minAtk = Math.min.apply(null, attackValues);
+                    const maxAtk = Math.max.apply(null, attackValues);
+
+					// Determine attack value range for top IV combos
+					let topIvComboCount = Math.round(ivCombos.length * .1); // Take Attack stat values of top 10% (Rank 409 or better)
+
+					// If the Pokemon needs to be high level to reach its best combo, take a narrower cut
+					if(ivCombos[0].cp < battle.getCP() - 20){
+						topIvComboCount = 16;
+					}
+
+					const topIvCombos = ivCombos.slice(0, topIvComboCount);
+					const topIvAttackValues = topIvCombos.map(combo => combo.atk);
+					const topIvMinAtk = Math.min.apply(null, topIvAttackValues);
+					const topIvMaxAtk = Math.max.apply(null, topIvAttackValues);
 
                     data.push(
                         {
                             pokemon: pokemon,
                             minAtk: minAtk,
-                            maxAtk: maxAtk
+                            maxAtk: maxAtk,
+							topIvMinAtk: topIvMinAtk,
+							topIvMaxAtk: topIvMaxAtk,
+							rank1Atk: ivCombos[0].atk
                         }
                     );
                 });
@@ -106,6 +127,8 @@ let InterfaceMaster = (function () {
 				} else{
 					data.sort((a,b) => (a.minAtk > b.minAtk) ? -1 : ((b.minAtk > a.minAtk) ? 1 : 0));
 				}
+
+				data.sort((a,b) => (a.topIvMinAtk > b.topIvMinAtk) ? -1 : ((b.topIvMinAtk > a.topIvMinAtk) ? 1 : 0));
                 
 
                 // Determine the x axis scale
@@ -113,8 +136,6 @@ let InterfaceMaster = (function () {
                 const chartMinAttack = Math.min.apply(null, attackValues) - 15;
                 const chartMaxAttack = Math.max.apply(null, attackValues) + 15;
                 const chartWidth = chartMaxAttack - chartMinAttack;
-
-				console.log(chartMaxAttack);
 
                 data.forEach(item => {
                     const name = item.pokemon.speciesName.replace("(Shadow)", "");
@@ -125,27 +146,31 @@ let InterfaceMaster = (function () {
                     $row.find(".poke-name .name").html(name);
                     $row.attr("data", item.pokemon.speciesId);
 
+					// Set bar color relative to scale
+					const colorRating = ( (item.topIvMinAtk - chartMinAttack) / (chartMaxAttack - chartMinAttack)) * 1000;
+					const color = battle.getRatingColor(colorRating);
+					$row.find(".cmp-item .bar, .cmp-item .subbar").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
+
 					if(window.innerWidth <= 600){
-						const barWidth = ( item.maxAtk / chartMaxAttack) * 50;
-						$row.find(".cmp-item").width(barWidth + "%");
-
-						const colorRating = ( (item.maxAtk - chartMinAttack) / (chartMaxAttack - chartMinAttack)) * 1000;
-						const color = battle.getRatingColor(colorRating);
-						$row.find(".cmp-item").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
-
+						// Display min and max values
 						$row.find(".min").html("");
                     	$row.find(".max").html(displayMin + " - " + displayMax);
 					} else{
+						// Set bar width relative to chart
 						const barWidth = ((item.maxAtk - item.minAtk) / chartWidth) * 100;
 						$row.find(".cmp-item").width(barWidth + "%");
 
+						const subsectionWidth = ((item.topIvMaxAtk - item.topIvMinAtk) / (item.maxAtk - item.minAtk)) * 100;
+						$row.find(".subbar").width(subsectionWidth + "%");
+
+						// Set bar position relative to chart
                     	const position = ((item.minAtk - chartMinAttack) / chartWidth) * 100;
 						$row.find(".cmp-item").css("left", position + "%");
 
-						const colorRating = (position / 100) * 1000;
-						const color = battle.getRatingColor(colorRating);
-						$row.find(".cmp-item").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
+						const subsectionPosition = ((item.topIvMinAtk - item.minAtk) / (item.maxAtk - item.minAtk)) * 100;
+						$row.find(".cmp-item .subbar").css("left", subsectionPosition + "%");
 
+						// Display min and max values
 						$row.find(".min").html(displayMin);
                     	$row.find(".max").html(displayMax);
 					}
@@ -341,7 +366,17 @@ let InterfaceMaster = (function () {
 
 				if(selectedItem){
 					// Filter list of Pokemon which have overlapping Attack stats
-					let filteredList = data.filter(obj => obj.minAtk <= selectedItem.maxAtk && selectedItem.minAtk <= obj.maxAtk);
+					let filteredList = data;
+
+					switch(compareType){
+						case "typical": // Compare typical Attack stat range
+							filteredList = data.filter(obj => obj.topIvMinAtk <= selectedItem.topIvMaxAtk && selectedItem.topIvMinAtk <= obj.topIvMaxAtk);
+							break;
+
+						default: // Compare full Attack stat range
+							filteredList = data.filter(obj => obj.minAtk <= selectedItem.maxAtk && selectedItem.minAtk <= obj.maxAtk);
+							break;
+					}
 
 					$(".train-table tbody tr").removeClass("faded");
 

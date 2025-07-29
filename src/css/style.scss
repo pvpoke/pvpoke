@@ -6041,7 +6041,7 @@ a.pokebattler{
 			left: 0;
 			top: 0;
 			background: #fcfcfc;
-			z-index: 1;
+			z-index: 20;
 
 			&:nth-of-type(1){
 				text-align: left;
@@ -6056,9 +6056,7 @@ a.pokebattler{
 			@include transition(all, 0.25s, ease-out, 0s);
 
 			position: relative;
-			background: #000;
-			height: 18px;
-			border: 2px solid rgba(0,0,0,0);
+			height: 22px;
 			opacity: 1;
 
 			.min,.max{
@@ -6076,6 +6074,23 @@ a.pokebattler{
 				text-align: left;
 				right: -48px;
 			}
+
+			.bar, .subbar{
+				height: 22px;
+				position:absolute;
+				top:-2px;
+				min-width: 6px;
+			}
+
+			.bar{
+				width: 100%;
+				z-index: 0;
+				opacity: 0.4;
+			}
+
+			.subbar{
+				z-index: 10;
+			}
 		}
 
 		tbody tr{
@@ -6092,13 +6107,14 @@ a.pokebattler{
 			}
 
 			&.selected .cmp-item{
-				border: 2px solid rgba(0,0,0,1);
 				font-weight: bold;
 			}
 
 			&.faded{
+				background: rgba(0, 0, 0, 0.15);
+
 				.name, .cmp-item{
-					opacity: 0.25;
+					opacity: 0.4;
 				}
 			}
 		}
@@ -6107,9 +6123,15 @@ a.pokebattler{
 
 @media only screen and (max-width: 600px) {
 	.cmp-chart{
+
+		.bar, .subbar{
+			width: 0 !important;
+			display: none;
+		}
 		.min, .max{
 			width: 100px !important;
-			right: -105px !important;
+			position: initial !important;
+			padding-left: 10px;
 		}
 	}
 
