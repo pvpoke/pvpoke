@@ -130,8 +130,9 @@ let InterfaceMaster = (function () {
                 
                 // Determine the x axis scale
                 const attackValues = data.flatMap(item => [item.minAtk, item.maxAtk]);
-                const chartMinAttack = Math.min.apply(null, attackValues) - 15;
-                const chartMaxAttack = Math.max.apply(null, attackValues) + 15;
+				const chartGutterSize = window.innerWidth <= 600 ? 0 : 15;
+                const chartMinAttack = Math.min.apply(null, attackValues) - chartGutterSize;
+                const chartMaxAttack = Math.max.apply(null, attackValues) + chartGutterSize;
                 const chartWidth = chartMaxAttack - chartMinAttack;
 
                 data.forEach((item, index) => {
@@ -147,29 +148,26 @@ let InterfaceMaster = (function () {
 					const colorRating = ( (item.topIvMinAtk - chartMinAttack) / (chartMaxAttack - chartMinAttack)) * 1000;
 					const color = battle.getRatingColor(colorRating);
 					$row.find(".cmp-item .bar, .cmp-item .subbar").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
+					
+					// Set bar width relative to chart
+					const barWidth = ((item.maxAtk - item.minAtk) / chartWidth) * 100;
+					const barPosition = ((item.minAtk - chartMinAttack) / chartWidth) * 100;
+					const subsectionWidth = ((item.topIvMaxAtk - item.topIvMinAtk) / (item.maxAtk - item.minAtk)) * 100;
+					const subsectionPosition = ((item.topIvMinAtk - item.minAtk) / (item.maxAtk - item.minAtk)) * 100;
+
+					// Display min and max values
+					$row.find(".min").html(displayMin);
+					$row.find(".max").html(displayMax);
 
 					if(window.innerWidth <= 600){
-						// Display min and max values
-						$row.find(".min").html("");
-                    	$row.find(".max").html("<span>"+displayMin+"</span><span>-</span><span>"+displayMax+"</span>");
+						$row.find(".cmp-item .subbar").width(barWidth + "%");					
+						$row.find(".cmp-item .subbar").css("left", barPosition + "%");
 					} else{
-						// Set bar width relative to chart
-						const barWidth = ((item.maxAtk - item.minAtk) / chartWidth) * 100;
 						$row.find(".cmp-item").width(barWidth + "%");
-
-						const subsectionWidth = ((item.topIvMaxAtk - item.topIvMinAtk) / (item.maxAtk - item.minAtk)) * 100;
-						$row.find(".subbar").width(subsectionWidth + "%");
-
-						// Set bar position relative to chart
-                    	const position = ((item.minAtk - chartMinAttack) / chartWidth) * 100;
-						$row.find(".cmp-item").css("left", position + "%");
-
-						const subsectionPosition = ((item.topIvMinAtk - item.minAtk) / (item.maxAtk - item.minAtk)) * 100;
+						$row.find(".cmp-item").css("left", barPosition + "%");	
+			
+						$row.find(".cmp-item .subbar").width(subsectionWidth + "%");					
 						$row.find(".cmp-item .subbar").css("left", subsectionPosition + "%");
-
-						// Display min and max values
-						$row.find(".min").html(displayMin);
-                    	$row.find(".max").html(displayMax);
 					}
 
                     $(".train-table tbody").append($row);

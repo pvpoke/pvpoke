@@ -5580,9 +5580,10 @@ a.pokebattler {
 }
 .cmp-chart-container .cmp-chart .cmp-item .min, .cmp-chart-container .cmp-chart .cmp-item .max {
   font-size: 14px;
-  line-height: 16px;
+  line-height: 22px;
   position: absolute;
   width: 42px;
+  z-index: 10;
 }
 .cmp-chart-container .cmp-chart .cmp-item .min {
   text-align: right;
@@ -5595,7 +5596,6 @@ a.pokebattler {
 .cmp-chart-container .cmp-chart .cmp-item .bar, .cmp-chart-container .cmp-chart .cmp-item .subbar {
   height: 22px;
   position: absolute;
-  top: -2px;
   min-width: 6px;
 }
 .cmp-chart-container .cmp-chart .cmp-item .bar {
@@ -5604,7 +5604,7 @@ a.pokebattler {
   opacity: 0.4;
 }
 .cmp-chart-container .cmp-chart .cmp-item .subbar {
-  z-index: 10;
+  z-index: 5;
 }
 .cmp-chart-container .cmp-chart tbody tr {
   -webkit-transition: all 0.25s ease-out 0s;
@@ -5636,36 +5636,29 @@ a.pokebattler {
 }
 
 @media only screen and (max-width: 600px) {
-  .cmp-chart td {
-    padding: 6px 2px;
-  }
-  .cmp-chart .bar {
-    width: 0 !important;
-    display: none;
-  }
-  .cmp-chart .min, .cmp-chart .max {
-    width: 100% !important;
-    display: flex;
-    position: initial !important;
-    padding-left: 10px;
-  }
-  .cmp-chart .min span, .cmp-chart .max span {
-    width: 42px;
-  }
-  .cmp-chart .min span:nth-of-type(2), .cmp-chart .max span:nth-of-type(2) {
-    width: 16px;
-    text-align: center;
-  }
-  .cmp-chart .min span:nth-of-type(3), .cmp-chart .max span:nth-of-type(3) {
-    text-align: right;
-  }
-  .cmp-chart .cmp-item {
-    padding-left: 5px;
-    height: 100% !important;
-  }
-
   .cmp-chart-container {
     max-height: 600px;
+  }
+  .cmp-chart-container .cmp-chart .subbar {
+    top: 0;
+  }
+  .cmp-chart-container .cmp-chart td {
+    padding: 6px 2px;
+  }
+  .cmp-chart-container .cmp-chart .cmp-item {
+    margin-bottom: 18px;
+  }
+  .cmp-chart-container .cmp-chart .cmp-item .min {
+    top: 10px;
+    text-align: left;
+    left: 3px;
+  }
+  .cmp-chart-container .cmp-chart .cmp-item .max {
+    top: 10px;
+    right: 0px;
+  }
+  .cmp-chart-container .cmp-chart .cmp-item, .cmp-chart-container .cmp-chart .bar, .cmp-chart-container .cmp-chart .subbar {
+    height: 10px !important;
   }
 }
 /* RSS Feed */

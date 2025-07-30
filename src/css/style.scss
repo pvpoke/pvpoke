@@ -6074,9 +6074,10 @@ a.pokebattler{
 
 			.min,.max{
 				font-size: 14px;
-				line-height: 16px;
+				line-height: 22px;
 				position: absolute;
 				width: 42px;
+				z-index: 10;
 			}
 
 			.min{
@@ -6091,7 +6092,6 @@ a.pokebattler{
 			.bar, .subbar{
 				height: 22px;
 				position:absolute;
-				top:-2px;
 				min-width: 6px;
 			}
 
@@ -6102,7 +6102,7 @@ a.pokebattler{
 			}
 
 			.subbar{
-				z-index: 10;
+				z-index: 5;
 			}
 		}
 
@@ -6140,43 +6140,39 @@ a.pokebattler{
 }
 
 @media only screen and (max-width: 600px) {
-	.cmp-chart{
-
-		td{
-			padding: 6px 2px;
-		}
-
-		.bar{
-			width: 0 !important;
-			display: none;
-		}
-		.min, .max{
-			width: 100% !important;
-			display: flex;
-			position: initial !important;
-			padding-left: 10px;
-
-			span{
-				width:42px;
-
-				&:nth-of-type(2){
-					width: 16px;
-					text-align: center;
-				}
-				&:nth-of-type(3){
-					text-align: right;
-				}
-			}
-		}
-
-		.cmp-item{
-			padding-left: 5px;
-			height: 100% !important;
-		}
-	}
-
 	.cmp-chart-container{
 		max-height: 600px;
+
+		.cmp-chart{
+
+			.subbar{
+				top: 0;
+			}
+
+			td{
+				padding: 6px 2px;
+			}
+
+			.cmp-item{
+				margin-bottom: 18px;
+
+				.min{
+					top: 10px;
+					text-align: left;
+					left: 3px;
+				}
+
+				.max{
+					top: 10px;
+					right: 0px;
+				}
+			}
+
+
+			.cmp-item, .bar, .subbar{
+				height: 10px !important
+			}
+		}
 	}
 }
 
