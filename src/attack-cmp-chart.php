@@ -46,10 +46,10 @@ require_once 'header.php';
 
 	<?php require_once 'modules/formatselect.php'; ?>
 
-	<p>When two Charged Moves occur on the same turn, the Pokemon with the highest Attack stat goes first. This is usually referred to as Charged Move Priority (CMP) or Charged Attack Priority (CAP). The chart below shows the minimum and maximum Attack stat values for each Pokemon. Click or hover to see which Pokemon fall within the same Attack range.</p>
+	<p class="mt-1">When two Charged Moves occur on the same turn, the Pokemon with the highest Attack stat goes first. The chart below shows Attack stat ranges for each Pokemon. Click to see which Pokemon overlap with one another.</p>
 
 	<div class="poke-search-container">
-		<input class="poke-search" target="teams" type="text" placeholder="Search Pokemon" />
+		<input class="poke-search" target="cmp-chart" type="text" placeholder="Search Pokemon" />
 		<a href="#" class="search-info">i</a>
 	</div>
 
@@ -57,7 +57,7 @@ require_once 'header.php';
 		<table class="train-table cmp-chart" cellspacing="0">
 			<thead>
 				<tr>
-					<th class="sticky poke-name"><a href="#" data="pokemon">Pokemon</a></th>
+					<th class="sticky poke-name"><a href="#" data="name">Pokemon</a></th>
 					<th><a href="#" class="sticky selected" data="attack">Attack Stat</a></th>
 				</tr>
 				<!--Row html to clone-->

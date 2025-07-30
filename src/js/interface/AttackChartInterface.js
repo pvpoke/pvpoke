@@ -19,6 +19,8 @@ let InterfaceMaster = (function () {
 			// Control for selecting rows in the table
 			let selectedItem = null;
 			let compareType = "typical";
+			let sort = "attack";
+			let sortDirection = 1;
 
 
 			this.init = function(){
@@ -43,6 +45,8 @@ let InterfaceMaster = (function () {
 					get = e.state;
 					self.loadGetData();
 				});
+
+				multiSelector.setUpdateCallback(self.displayRankingData);
 			};
 
 			// Grabs ranking data from the Game Master
@@ -74,7 +78,7 @@ let InterfaceMaster = (function () {
                 let multiselectorList = multiSelector.getPokemonList();
 
                 multiselectorList.forEach(pokemon => {
-                    if(! pokemonList.find(p => p.speciesId.replace("_shadow", "") == pokemon.speciesId.replace("_shadow", ""))){
+                    if(! pokemonList.find(p => p.aliasId.replace("_shadow", "") == pokemon.aliasId.replace("_shadow", ""))){
                         pokemonList.push(pokemon);
                     }
                 })
@@ -122,28 +126,21 @@ let InterfaceMaster = (function () {
                 });
 
                 // Sort data
-				if(battle.getCP() == 10000){
-					data.sort((a,b) => (a.maxAtk > b.maxAtk) ? -1 : ((b.maxAtk > a.maxAtk) ? 1 : 0));
-				} else{
-					data.sort((a,b) => (a.minAtk > b.minAtk) ? -1 : ((b.minAtk > a.minAtk) ? 1 : 0));
-				}
-
-				data.sort((a,b) => (a.topIvMinAtk > b.topIvMinAtk) ? -1 : ((b.topIvMinAtk > a.topIvMinAtk) ? 1 : 0));
+				self.sortData(sort, sortDirection);
                 
-
                 // Determine the x axis scale
                 const attackValues = data.flatMap(item => [item.minAtk, item.maxAtk]);
                 const chartMinAttack = Math.min.apply(null, attackValues) - 15;
                 const chartMaxAttack = Math.max.apply(null, attackValues) + 15;
                 const chartWidth = chartMaxAttack - chartMinAttack;
 
-                data.forEach(item => {
+                data.forEach((item, index) => {
                     const name = item.pokemon.speciesName.replace("(Shadow)", "");
                     const displayMin = Math.floor(item.minAtk * 10) / 10;
                     const displayMax = Math.floor(item.maxAtk * 10) / 10;
                     const $row = $(".train-table tr.hide").clone().removeClass("hide");
 
-                    $row.find(".poke-name .name").html(name);
+                    $row.find(".poke-name .name").html((index + 1) + ". " + name);
                     $row.attr("data", item.pokemon.speciesId);
 
 					// Set bar color relative to scale
@@ -177,6 +174,29 @@ let InterfaceMaster = (function () {
 
                     $(".train-table tbody").append($row);
                 });
+
+				// Filter table if search string is set
+
+				if($(".poke-search").first().val() != ''){
+					$(".poke-search").first().trigger("keyup");
+				}
+
+				// Set share link URL
+				let url = host+"attack-cmp-chart/"+battle.getCup().name+"/"+battle.getCP()+"/";
+				$(".share-link input").val(url);
+			}
+
+			// Sort data given a sort column
+			this.sortData = function(column, direction){
+				switch(column){
+					case "name":
+						data.sort((a,b) => (a.pokemon.speciesName > b.pokemon.speciesName) ? direction : ((b.pokemon.speciesName > a.pokemon.speciesName) ? -direction : 0));
+						break;
+
+					case "attack":
+						data.sort((a,b) => (a.topIvMinAtk > b.topIvMinAtk) ? -direction : ((b.topIvMinAtk > a.topIvMinAtk) ? direction : 0));
+						break;
+				}
 			}
 
 			// Given JSON of get parameters, load these settings
@@ -259,43 +279,22 @@ let InterfaceMaster = (function () {
 				e.preventDefault();
 
 				let $parent = $(e.target).closest("table");
-
 				$parent.find("thead a").removeClass("selected");
 
 				$(e.target).addClass("selected");
 
-				let targetData = data.performers;
-				let sortColumn = $(e.target).attr("data");
+				let selectedSort = $(e.target).attr("data");
 
-				if($parent.hasClass("teams")){
-					targetData = data.teams;
+				if(selectedSort != sort){
+					sort = selectedSort;
+					sortDirection = 1;
+				} else{
+					sortDirection = -sortDirection;
 				}
 
-				switch(sortColumn){
-					case "name":
-						targetData.sort((a,b) => (a.pokemon > b.pokemon) ? 1 : ((b.pokemon > a.pokemon) ? -1 : 0));
-						break;
+				self.sortData(sort, sortDirection)
 
-					case "lead":
-						targetData.sort((a,b) => (a.team > b.team) ? 1 : ((b.team > a.team) ? -1 : 0));
-						break;
-
-					case "individual":
-						targetData.sort((a,b) => (a.individualScore > b.individualScore) ? -1 : ((b.individualScore > a.individualScore) ? 1 : 0));
-						break;
-
-					case "team":
-						targetData.sort((a,b) => (a.teamScore > b.teamScore) ? -1 : ((b.teamScore > a.teamScore) ? 1 : 0));
-						break;
-
-					case "usage":
-						targetData.sort((a,b) => (a.games > b.games) ? -1 : ((b.games > a.games) ? 1 : 0));
-						break;
-				}
-
-				self.displayRankingData(data);
-
-				submitSearchQuery();
+				self.displayRankingData();
 			}
 
 			let searchTimeout;
@@ -315,42 +314,16 @@ let InterfaceMaster = (function () {
 			function submitSearchQuery(){
 				let list = GameMaster.getInstance().generatePokemonListFromSearchString(searchStr, battle);
 
-				if($target.hasClass("performers")){
+				// Search rows of cmp chart
+				$target.find("tbody tr").each(function(index, value){
+					let id = $(this).attr("data");
 
-					// Search rows of top performers
-					$target.find("tbody tr").each(function(index, value){
-						let id = $(this).attr("data");
-
-						if(list.indexOf(id) > -1){
-							$(this).show();
-						} else{
-							$(this).hide();
-						}
-					});
-
-				} else if($target.hasClass("teams")){
-
-					// Search makeups of team
-					$target.find("tbody tr").each(function(index, value){
-						let $row = $(this);
-						let found = 0;
-
-						$row.find(".pokemon").each(function(spriteIndex, spriteValue){
-							let id = $(this).attr("data");
-
-							if(list.indexOf(id) > -1){
-								found++;
-							}
-						});
-
-						if(found >= 3 || (! searchStr.includes("!")) && found > 0){
-							$row.show();
-						} else{
-							$row.hide();
-						}
-
-					});
-				}
+					if(list.includes(id)){
+						$(this).show();
+					} else{
+						$(this).hide();
+					}
+				});
 			}
 
 			// Turn checkboxes on and off

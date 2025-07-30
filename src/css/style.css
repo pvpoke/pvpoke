@@ -256,6 +256,9 @@ footer a.domz-link {
 .section p.small {
   font-size: 12px;
 }
+.section p.mt-1 {
+  margin-top: 1em;
+}
 .section h2 {
   font-size: 18px;
 }
@@ -5542,6 +5545,7 @@ a.pokebattler {
   -moz-transition: all 0.25s ease-out 0s;
   -o-transition: all 0.25s ease-out 0s;
   transition: all 0.25s ease-out 0s;
+  font-size: 14px;
   opacity: 1;
 }
 .cmp-chart-container .cmp-chart th {

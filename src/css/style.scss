@@ -379,6 +379,10 @@ footer{
 		font-size: 12px;
 	}
 
+	p.mt-1{
+		margin-top: 1em;
+	}
+
 	h2{
 		font-size:18px;
 	}
@@ -6031,6 +6035,7 @@ a.pokebattler{
 
 			.name{
 				@include transition(all, 0.25s, ease-out, 0s);
+				font-size: 14px;
 				opacity: 1;
 			}
 		}

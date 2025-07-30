@@ -31,6 +31,8 @@ function PokeMultiSelect(element){
 	var cliffhangerMode = false;
 
 	var showMoveCounts = false;
+	
+	let updateCallback; // A callback function which is run any time the Pokemon list is updated
 
 	// Show move counts if previously set
 	if(window.localStorage.getItem("rankingsShowMoveCounts") == "true"){
@@ -501,6 +503,10 @@ function PokeMultiSelect(element){
 		} else{
 			$el.find(".add-poke-btn").show();
 			$el.find(".pokebox").show();
+		}
+
+		if(typeof updateCallback === "function"){
+			updateCallback();
 		}
 
 	}
@@ -1295,6 +1301,13 @@ function PokeMultiSelect(element){
 	// Return the single pokeselector
 	this.getPokeSelector = function(){
 		return pokeSelector;
+	}
+
+	// Set the callback function for when the Pokemon list is updated
+	this.setUpdateCallback = function(callback){
+		if(typeof callback === "function"){
+			updateCallback = callback;
+		}
 	}
 
 	// Open the search string generation window
