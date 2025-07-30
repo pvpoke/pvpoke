@@ -6148,6 +6148,16 @@ a.pokebattler{
 			opacity: 0.3;
 		}
 	}
+
+	.legend-item{
+		border-radius: 8px;
+		padding: 4px 12px;
+		cursor: pointer;
+
+		&.selected, &:hover{
+			background: $color-sky-blue;
+		}
+	}
 }
 
 .check.cmp-compare-type{

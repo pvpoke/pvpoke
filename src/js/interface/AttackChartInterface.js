@@ -22,6 +22,8 @@ let InterfaceMaster = (function () {
 			let sort = "attack";
 			let sortDirection = 1;
 
+			let jumpToPoke = false;
+
 
 			this.init = function(){
                 multiSelector.init(gm.data.pokemon, battle);
@@ -58,6 +60,7 @@ let InterfaceMaster = (function () {
 			// Displays attack chart data for currently selected format
 
 			this.displayRankingData = function(){
+
 				// Load meta group
                 let metaKey = $(".format-select option:selected").attr("meta-group");
 
@@ -67,6 +70,7 @@ let InterfaceMaster = (function () {
                     return false;
                 } else if(multiSelector.getPokemonList().length == 0){
                     multiSelector.selectGroup(metaKey);
+					return false;
                 }
 
                 // Calculate results and display in table
@@ -77,11 +81,26 @@ let InterfaceMaster = (function () {
                 let pokemonList = [];
                 let multiselectorList = multiSelector.getPokemonList();
 
+				// If Pokemon selected in URL parameter isn't in the list, add it
+				if(jumpToPoke && ! multiselectorList.find(p => p.aliasId.replace("_shadow", "") == jumpToPoke)){
+					let newPokemon = new Pokemon(jumpToPoke, 0, battle);
+
+					if(newPokemon){
+						newPokemon.initialize(true);
+						multiselectorList.push(newPokemon);
+						multiSelector.setPokemonList(multiselectorList);
+						return; // multiSelector will trigger this method to rerun with the Pokemon added
+					} else{
+						console.error("Could not add " + jumpToPoke);
+						jumpToPoke = false;
+					}					
+				}
+
                 multiselectorList.forEach(pokemon => {
                     if(! pokemonList.find(p => p.aliasId.replace("_shadow", "") == pokemon.aliasId.replace("_shadow", ""))){
                         pokemonList.push(pokemon);
                     }
-                })
+                });
 
                 // Collect table data
                 data = [];
@@ -179,9 +198,31 @@ let InterfaceMaster = (function () {
 					$(".poke-search").first().trigger("keyup");
 				}
 
+				// Jump to Pokemon if selected
+				if(jumpToPoke){
+					$(".table-container").scrollTop(0);
+
+					// Scroll to element
+					let $row = $(".cmp-chart tr[data='"+jumpToPoke+"'], .cmp-chart tr[data='"+jumpToPoke+"_shadow']").first();
+
+					if($row.length > 0){
+						let elTop = $row.position().top;
+						let containerTop = $(".table-container").position().top;
+						let gotoTop = elTop - containerTop - 20;
+
+						$("html, body").animate({ scrollTop: 150}, 500);
+						$(".table-container").scrollTop(gotoTop);
+
+						$row.trigger("click");
+					}
+
+					jumpToPoke = false;
+				}	
+
 				// Set share link URL
 				let url = host+"attack-cmp-chart/"+battle.getCup().name+"/"+battle.getCP()+"/";
 				$(".share-link input").val(url);
+
 			}
 
 			// Sort data given a sort column
@@ -226,6 +267,10 @@ let InterfaceMaster = (function () {
 
 							case "cup":
 								cup = val;
+								break;
+
+							case "p":
+								jumpToPoke = val.replace("_shadow", "");
 								break;
 						}
 					}
@@ -329,14 +374,6 @@ let InterfaceMaster = (function () {
 			function checkBox(e){
 				$(this).toggleClass("on");
 				$(this).trigger("stateChange");
-
-				if($(this).hasClass("cmp-compare-type")){
-					compareType = $(this).hasClass("on") ? "full" : "typical";
-
-					if(selectedItem){
-						highlightAttackRange(selectedItem.pokemon.speciesId);
-					}
-				}
 			}
 
 			// Highlight Pokemon which fall within the same Attack stat range given species Id
@@ -369,16 +406,17 @@ let InterfaceMaster = (function () {
 				}
 			}
 
-			// Row hover handler
+			// Row click handler
 
 			$("body").on("click", function(e){
 				
-				if($(e.target).closest(".check").length > 0){
+				if($(e.target).closest(".legend-item").length > 0){
 					return;
 				}
 
-				if($(".train-table tbody tr:hover").length > 0){
-					let $row = $(".train-table tbody tr:hover").first();
+				let $row = $(e.target).closest(".train-table tr");
+
+				if($row.length > 0){
 					let speciesId = $row.attr("data");
 
 					if(speciesId && speciesId != selectedItem?.pokemon?.speciesId){
@@ -394,6 +432,19 @@ let InterfaceMaster = (function () {
 					selectedItem = null;
 				}
 
+			});
+
+			// Select a comparison type from the chart legend
+
+			$(".legend-item").click(function(e){
+				compareType = $(this).attr("data");
+
+				$(".legend-item").removeClass("selected");
+				$(this).addClass("selected");
+
+				if(selectedItem){
+					highlightAttackRange(selectedItem.pokemon.speciesId);
+				}
 			});
 		};
 

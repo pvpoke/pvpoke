@@ -5643,6 +5643,14 @@ a.pokebattler {
 .cmp-legend .legend-square.light {
   opacity: 0.3;
 }
+.cmp-legend .legend-item {
+  border-radius: 8px;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+.cmp-legend .legend-item.selected, .cmp-legend .legend-item:hover {
+  background: #c4def5;
+}
 
 .check.cmp-compare-type {
   margin: 0;

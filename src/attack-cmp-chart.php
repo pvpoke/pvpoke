@@ -46,14 +46,13 @@ require_once 'header.php';
 
 	<?php require_once 'modules/formatselect.php'; ?>
 
-	<p class="mt-1">When two Charged Moves occur on the same turn, the Pokemon with the highest Attack stat goes first. The chart below shows Attack stat ranges for each Pokemon. Click to see which Pokemon typically overlap.</p>
+	<p class="mt-1">When two Charged Moves occur on the same turn, the Pokemon with the highest Attack stat goes first. The chart below shows Attack stat ranges for each Pokemon. Click to see which Pokemon overlap.</p>
 
 	<div class="flex align-items-center gap-15" style="margin-bottom: 15px;">
 		<div class="poke-search-container">
 			<input class="poke-search" target="cmp-chart" type="text" placeholder="Search Pokemon" />
 			<a href="#" class="search-info">i</a>
 		</div>
-		<div class="check cmp-compare-type"><span></span>Compare full range</div>
 	</div>
 
 
@@ -82,12 +81,13 @@ require_once 'header.php';
 		</table>
 	</div>
 
-	<div class="cmp-legend flex gap-15 desktop">
-		<div class="flex align-items-center">
+	<div class="cmp-legend align-items-center flex gap-15 desktop">
+		<div>Compare with:</div>
+		<div class="legend-item flex align-items-center selected" data="typical">
 			<div class="legend-square"></div>
-			<div>Typical Attack range (with high rank IV's)</div>
+			<div>Typical Attack range (with PvP IV's)</div>
 		</div>
-		<div class="flex align-items-center">
+		<div class="legend-item flex align-items-center" data="full">
 			<div class="legend-square light"></div>
 			<div>Full Attack range</div>
 		</div>
@@ -106,7 +106,7 @@ require_once 'header.php';
 
 <div class="section white custom-rankings-meta-group">
 	<h3>Pokemon List</h3>
-	<p>Customize the list below to add or remove Pokemon from the chart. Note that links shared from this page only show the default list.</p>
+	<p>Customize the list below to add or remove Pokemon from the chart. Note that links shared from this page can only show the default list.</p>
 	<?php require 'modules/pokemultiselect.php'; ?>
 </div>
 
