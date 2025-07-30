@@ -627,10 +627,10 @@ var InterfaceMaster = (function () {
 				});
 
 				// Set document title
-				let selectedFormat = gm.data.formats.find(format => format.cup == cup && format.cp == cp);
+				let selectedFormat = gm.getFormat(cup, cp);
 
 				if(selectedFormat){
-					document.title = format.title + " Rankings | PvPoke";
+					document.title = selectedFormat.title + " Rankings | PvPoke";
 				} else{
 					document.title = "Rankings | PvPoke";
 				}
