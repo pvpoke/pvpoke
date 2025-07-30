@@ -117,13 +117,15 @@ require_once 'header.php';
 <div class="section about white">
 	<a class="toggle" href="#">About Charged Move Priority (CMP) <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content">
-		<p>This page offers another way to analyze the PvP meta to find Pokemon and teams that may work for you. Knowing what the data represents will help you make the most of it.</p>
-		<h2>Where does this data come from?</h2>
-		<p>Data is sampled from <a href="<?php echo $WEB_ROOT; ?>train/">Training Battles</a> people play against the site's bot. The sampled data is typically over a 7-day period. It includes Pokemon and team data as played by both players and the bot. While it doesn't directly represent battles from the game, it is a close approximation.</p>
-		<p>The data is sampled with a threshold of around 150 minimum games for Pokemon, and 20 games minimum for teams. Pokemon and teams near these thresholds are marked orange to highlight their small sample sizes. Pokemon or teams with small sample sizes are more prone to being outliers (whether overperforming or underperforming). Consider these data points with some healthy skepticism.</p>
-		<h3>How does this page differ from the regular rankings?</h3>
-		<p>The regular rankings are generated using 1 vs 1 simulations between eligible Pokemon. The results are empirical and repeatable, but don't take into account team composition or full dynamic play like switching or failed/successful baits. It can provide immediate results for new Pokemon or move updates.</p>
-		<p>The Training Analysis data is recorded from fully played games from the Train feature. Team composition, player decisions, and dynamic play are all taken into account. It is able to provide a fuller picture than the simulated rankings. However, the data is not empirical. Performance and usage numbers are subject to the players who use the Train feature, how frequently they use particular Pokemon, and their performance with those Pokemon. Training Analysis also cannot provide immediate data for new Pokemon or move updates; a sufficient volume of battles must be recorded first.</p>
+		<p>A Charged Move Priority (also called Charged Attack Priority) occurs when opposing Pokemon use a Charged Attack at the same time. Knowing when your Pokemon will win or lose CMP is valuable during competitive play.</p>
+		<h4>What determines CMP?</h4>
+		<p>The Pokemon with the higher Attack stat acts first during a CMP tie. A Pokemon's Attack stat is influenced by its base stat, level, and IV's. You can find your Pokemon's exact Attack stat by entering its IVs in the battle simulator. Attack stats displayed on the site are floored for readability, but note that the Attack stat uses its full decimal value to determine CMP.</p>
+		<p>If two Pokemon tie with identical Attack stats, the winner is determined at random.</p>
+		<p>Damage multipliers such as the Shadow bonus or stat buffs/debuffs have no effect on CMP.</p>
+		<p>Forme changing Pokemon whose base stats change during combat (such as Aegislash) will use their current forme's stats to resolve CMP ties.</p>
+		<h4>Why did I lose CMP when I should have won?</h4>
+		<p>First, beware of some situations which appear like CMP ties but actually aren't. Sometimes called "false CMP", this can occur because you are still locked in your Fast Attack animation when you press your Charged Attack. Be alert when different Fast Attack durations are in play, and if your opponent is practicing optimal move timing.</p>
+		<p>Second, technical issues such as lag or frame drops may cause you to miss a turn and fail to trigger CMP. This can occur more frequently when you attempt to fire a Charged Attack from a benched Pokemon after another of your Pokemon has fainted.</p>
 	</div>
 </div>
 
