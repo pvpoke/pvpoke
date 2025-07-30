@@ -46,19 +46,23 @@ require_once 'header.php';
 
 	<?php require_once 'modules/formatselect.php'; ?>
 
-	<p class="mt-1">When two Charged Moves occur on the same turn, the Pokemon with the highest Attack stat goes first. The chart below shows Attack stat ranges for each Pokemon. Click to see which Pokemon overlap with one another.</p>
+	<p class="mt-1">When two Charged Moves occur on the same turn, the Pokemon with the highest Attack stat goes first. The chart below shows Attack stat ranges for each Pokemon. Click to see which Pokemon overlap.</p>
 
-	<div class="poke-search-container">
-		<input class="poke-search" target="cmp-chart" type="text" placeholder="Search Pokemon" />
-		<a href="#" class="search-info">i</a>
+	<div class="flex align-items-center gap-15" style="margin-bottom: 15px;">
+		<div class="poke-search-container">
+			<input class="poke-search" target="cmp-chart" type="text" placeholder="Search Pokemon" />
+			<a href="#" class="search-info">i</a>
+		</div>
+		<div class="check cmp-compare-type"><span></span>Compare full range</div>
 	</div>
+
 
 	<div class="table-container cmp-chart-container">
 		<table class="train-table cmp-chart" cellspacing="0">
 			<thead>
 				<tr>
 					<th class="sticky poke-name"><a href="#" data="name">Pokemon</a></th>
-					<th><a href="#" class="sticky selected" data="attack">Attack Stat</a></th>
+					<th><a href="#" class="sticky selected" data="attack">Attack Stat Range</a></th>
 				</tr>
 				<!--Row html to clone-->
 				<tr class="hide">

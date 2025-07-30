@@ -32,6 +32,12 @@ body {
 .flex.space-between {
   justify-content: space-between;
 }
+.flex.align-items-center {
+  align-items: center;
+}
+.flex.gap-15 {
+  gap: 15px;
+}
 .flex.cols-3 > div {
   flex-basis: 33%;
 }
@@ -5624,15 +5630,38 @@ a.pokebattler {
   opacity: 0.4;
 }
 
+.check.cmp-compare-type {
+  margin: 0;
+  font-size: 14px;
+}
+
 @media only screen and (max-width: 600px) {
-  .cmp-chart .bar, .cmp-chart .subbar {
+  .cmp-chart td {
+    padding: 6px 2px;
+  }
+  .cmp-chart .bar {
     width: 0 !important;
     display: none;
   }
   .cmp-chart .min, .cmp-chart .max {
-    width: 100px !important;
+    width: 100% !important;
+    display: flex;
     position: initial !important;
     padding-left: 10px;
+  }
+  .cmp-chart .min span, .cmp-chart .max span {
+    width: 42px;
+  }
+  .cmp-chart .min span:nth-of-type(2), .cmp-chart .max span:nth-of-type(2) {
+    width: 16px;
+    text-align: center;
+  }
+  .cmp-chart .min span:nth-of-type(3), .cmp-chart .max span:nth-of-type(3) {
+    text-align: right;
+  }
+  .cmp-chart .cmp-item {
+    padding-left: 5px;
+    height: 100% !important;
   }
 
   .cmp-chart-container {

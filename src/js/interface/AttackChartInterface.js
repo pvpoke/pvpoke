@@ -151,7 +151,7 @@ let InterfaceMaster = (function () {
 					if(window.innerWidth <= 600){
 						// Display min and max values
 						$row.find(".min").html("");
-                    	$row.find(".max").html(displayMin + " - " + displayMax);
+                    	$row.find(".max").html("<span>"+displayMin+"</span><span>-</span><span>"+displayMax+"</span>");
 					} else{
 						// Set bar width relative to chart
 						const barWidth = ((item.maxAtk - item.minAtk) / chartWidth) * 100;
@@ -331,6 +331,14 @@ let InterfaceMaster = (function () {
 			function checkBox(e){
 				$(this).toggleClass("on");
 				$(this).trigger("stateChange");
+
+				if($(this).hasClass("cmp-compare-type")){
+					compareType = $(this).hasClass("on") ? "full" : "typical";
+
+					if(selectedItem){
+						highlightAttackRange(selectedItem.pokemon.speciesId);
+					}
+				}
 			}
 
 			// Highlight Pokemon which fall within the same Attack stat range given species Id
@@ -366,6 +374,10 @@ let InterfaceMaster = (function () {
 			// Row hover handler
 
 			$("body").on("click", function(e){
+				
+				if($(e.target).closest(".check").length > 0){
+					return;
+				}
 
 				if($(".train-table tbody tr:hover").length > 0){
 					let $row = $(".train-table tbody tr:hover").first();
