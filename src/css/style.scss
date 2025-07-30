@@ -6039,12 +6039,24 @@ a.pokebattler{
 
 		td.poke-name{
 			display: table-cell;
-			border-right: 1px solid rgba(0,0,0,0.125);
 
 			.name{
 				@include transition(all, 0.25s, ease-out, 0s);
 				font-size: 14px;
 				opacity: 1;
+			}
+		}
+
+		td.link{
+			border-right: 1px solid rgba(0, 0, 0, 0.125);
+			width: 26px;
+			display: table-cell;
+
+			a{
+				margin: 0;
+				width: 22px;
+				background-size: contain;
+				opacity: 0.34;
 			}
 		}
 

@@ -5544,7 +5544,6 @@ a.pokebattler {
 }
 .cmp-chart-container .cmp-chart td.poke-name {
   display: table-cell;
-  border-right: 1px solid rgba(0, 0, 0, 0.125);
 }
 .cmp-chart-container .cmp-chart td.poke-name .name {
   -webkit-transition: all 0.25s ease-out 0s;
@@ -5553,6 +5552,17 @@ a.pokebattler {
   transition: all 0.25s ease-out 0s;
   font-size: 14px;
   opacity: 1;
+}
+.cmp-chart-container .cmp-chart td.link {
+  border-right: 1px solid rgba(0, 0, 0, 0.125);
+  width: 26px;
+  display: table-cell;
+}
+.cmp-chart-container .cmp-chart td.link a {
+  margin: 0;
+  width: 22px;
+  background-size: contain;
+  opacity: 0.34;
 }
 .cmp-chart-container .cmp-chart th {
   position: -webkit-sticky;

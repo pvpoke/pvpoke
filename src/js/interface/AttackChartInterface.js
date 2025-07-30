@@ -24,6 +24,8 @@ let InterfaceMaster = (function () {
 
 			let jumpToPoke = false;
 
+			this.context = "attackchart"
+
 
 			this.init = function(){
                 multiSelector.init(gm.data.pokemon, battle);
@@ -155,13 +157,14 @@ let InterfaceMaster = (function () {
                 const chartWidth = chartMaxAttack - chartMinAttack;
 
                 data.forEach((item, index) => {
-                    const name = item.pokemon.speciesName.replace("(Shadow)", "");
+					const pokemon = item.pokemon;
+                    const name = pokemon.speciesName.replace("(Shadow)", "");
                     const displayMin = Math.floor(item.minAtk * 10) / 10;
                     const displayMax = Math.floor(item.maxAtk * 10) / 10;
                     const $row = $(".train-table tr.hide").clone().removeClass("hide");
 
                     $row.find(".poke-name .name").html((index + 1) + ". " + name);
-                    $row.attr("data", item.pokemon.speciesId);
+                    $row.attr("data", pokemon.speciesId);
 
 					// Set bar color relative to scale
 					const colorRating = ( (item.topIvMinAtk - chartMinAttack) / (chartMaxAttack - chartMinAttack)) * 1000;
@@ -177,6 +180,9 @@ let InterfaceMaster = (function () {
 					// Display min and max values
 					$row.find(".min").html(displayMin);
 					$row.find(".max").html(displayMax);
+
+					// Add ranking link
+					$row.find(".link a").attr("href", host+"rankings/" + battle.getCup().name + "/" + battle.getCP() + "/overall/" + pokemon.speciesId + "/");
 
 					if(window.innerWidth <= 600){
 						$row.find(".cmp-item .subbar").width(barWidth + "%");					

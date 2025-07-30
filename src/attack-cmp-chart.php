@@ -61,11 +61,13 @@ require_once 'header.php';
 			<thead>
 				<tr>
 					<th class="sticky poke-name"><a href="#" data="name">Pokemon</a></th>
+					<th></th>
 					<th><a href="#" class="sticky selected" data="attack">Attack Stat Range</a></th>
 				</tr>
 				<!--Row html to clone-->
 				<tr class="hide">
 					<td class="sticky poke-name"><div class="name"></div></td>
+					<td class="link"><a target="_blank" href="#"></a></td>
 					<td class="attack-range">
 						<div class="cmp-item">
 							<div class="bar"></div>
@@ -105,9 +107,11 @@ require_once 'header.php';
 <?php require 'modules/ads/body-728.php'; ?>
 
 <div class="section white custom-rankings-meta-group">
-	<h3>Pokemon List</h3>
-	<p>Customize the list below to add or remove Pokemon from the chart. Note that links shared from this page can only show the default list.</p>
-	<?php require 'modules/pokemultiselect.php'; ?>
+	<a class="toggle" href="#">Pokemon List <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+	<div class="toggle-content">
+		<p>Customize the list below to add or remove Pokemon from the chart. Note that links shared from this page can only show the default list.</p>
+		<?php require 'modules/pokemultiselect.php'; ?>
+	</div>
 </div>
 
 <div class="section about white">

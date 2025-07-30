@@ -677,11 +677,11 @@ var InterfaceMaster = (function () {
 				$(".rankings-container").scrollTop(0); // This is dumb but it works for reasons I do not understand
 
 				// Scroll to element
-				var elTop = $el.position().top;
+				var elTop = $el.position().top - 20;
 				var containerTop = $(".rankings-container").position().top;
-				var gotoTop = elTop - containerTop - 20;
+				var gotoTop = elTop - containerTop;
 
-				$("html, body").animate({ scrollTop: 350}, 500);
+				$("html, body").animate({ scrollTop: 260}, 500);
 				$(".rankings-container").scrollTop(gotoTop);
 
 				$el.trigger("click");
