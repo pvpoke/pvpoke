@@ -5627,7 +5627,21 @@ a.pokebattler {
   background: rgba(0, 0, 0, 0.15);
 }
 .cmp-chart-container .cmp-chart tbody tr.faded .name, .cmp-chart-container .cmp-chart tbody tr.faded .cmp-item {
-  opacity: 0.4;
+  opacity: 0.3;
+}
+
+.cmp-legend {
+  font-size: 14px;
+  margin-top: 10px;
+}
+.cmp-legend .legend-square {
+  width: 20px;
+  height: 20px;
+  background: #70379f;
+  margin-right: 5px;
+}
+.cmp-legend .legend-square.light {
+  opacity: 0.3;
 }
 
 .check.cmp-compare-type {

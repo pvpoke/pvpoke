@@ -46,7 +46,7 @@ require_once 'header.php';
 
 	<?php require_once 'modules/formatselect.php'; ?>
 
-	<p class="mt-1">When two Charged Moves occur on the same turn, the Pokemon with the highest Attack stat goes first. The chart below shows Attack stat ranges for each Pokemon. Click to see which Pokemon overlap.</p>
+	<p class="mt-1">When two Charged Moves occur on the same turn, the Pokemon with the highest Attack stat goes first. The chart below shows Attack stat ranges for each Pokemon. Click to see which Pokemon typically overlap.</p>
 
 	<div class="flex align-items-center gap-15" style="margin-bottom: 15px;">
 		<div class="poke-search-container">
@@ -82,6 +82,17 @@ require_once 'header.php';
 		</table>
 	</div>
 
+	<div class="cmp-legend flex gap-15 desktop">
+		<div class="flex align-items-center">
+			<div class="legend-square"></div>
+			<div>Typical Attack range (with high rank IV's)</div>
+		</div>
+		<div class="flex align-items-center">
+			<div class="legend-square light"></div>
+			<div>Full Attack range</div>
+		</div>
+	</div>
+
 	<div class="share-link-container">
 		<p>Share this chart:</p>
 		<div class="share-link">
@@ -100,7 +111,7 @@ require_once 'header.php';
 </div>
 
 <div class="section about white">
-	<a class="toggle" href="#">About Charged Move Priority <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+	<a class="toggle" href="#">About Charged Move Priority (CMP) <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content">
 		<p>This page offers another way to analyze the PvP meta to find Pokemon and teams that may work for you. Knowing what the data represents will help you make the most of it.</p>
 		<h2>Where does this data come from?</h2>

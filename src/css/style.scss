@@ -6127,9 +6127,25 @@ a.pokebattler{
 				background: rgba(0, 0, 0, 0.15);
 
 				.name, .cmp-item{
-					opacity: 0.4;
+					opacity: 0.3;
 				}
 			}
+		}
+	}
+}
+
+.cmp-legend{
+	font-size: 14px;
+	margin-top: 10px;
+
+	.legend-square{
+		width: 20px;
+		height: 20px;
+		background: rgb(112, 55, 159);
+		margin-right: 5px;
+
+		&.light{
+			opacity: 0.3;
 		}
 	}
 }

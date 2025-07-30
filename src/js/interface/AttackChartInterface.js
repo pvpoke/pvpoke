@@ -130,7 +130,7 @@ let InterfaceMaster = (function () {
                 
                 // Determine the x axis scale
                 const attackValues = data.flatMap(item => [item.minAtk, item.maxAtk]);
-				const chartGutterSize = window.innerWidth <= 600 ? 0 : 15;
+				const chartGutterSize = window.innerWidth <= 600 ? 0 : 8;
                 const chartMinAttack = Math.min.apply(null, attackValues) - chartGutterSize;
                 const chartMaxAttack = Math.max.apply(null, attackValues) + chartGutterSize;
                 const chartWidth = chartMaxAttack - chartMinAttack;
