@@ -104,8 +104,6 @@ require_once 'header.php';
 	</div>
 </div>
 
-<?php require 'modules/ads/body-728.php'; ?>
-
 <div class="section white custom-rankings-meta-group">
 	<a class="toggle" href="#">Pokemon List <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content">
