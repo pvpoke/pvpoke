@@ -109,7 +109,7 @@ require_once 'header.php';
 <div class="section white custom-rankings-meta-group">
 	<a class="toggle" href="#">Pokemon List <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content">
-		<p>Customize the list below to add or remove Pokemon from the chart. Note that links shared from this page can only show the default list.</p>
+		<p>Customize this list to add or remove Pokemon from the chart. Note that links shared from this page can only show the default list.</p>
 		<?php require 'modules/pokemultiselect.php'; ?>
 	</div>
 </div>
@@ -117,15 +117,15 @@ require_once 'header.php';
 <div class="section about white">
 	<a class="toggle" href="#">About Charged Move Priority (CMP) <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content">
-		<p>A Charged Move Priority (also called Charged Attack Priority) occurs when opposing Pokemon use a Charged Attack at the same time. Knowing when your Pokemon will win or lose CMP is valuable during competitive play.</p>
+		<p>Charged Move Priority (also called Charged Attack Priority) occurs when opposing Pokemon use a Charged Attack at the same time. Knowing when your Pokemon will win or lose CMP is valuable during competitive play.</p>
 		<h4>What determines CMP?</h4>
 		<p>The Pokemon with the higher Attack stat acts first during a CMP tie. A Pokemon's Attack stat is influenced by its base stat, level, and IV's. You can find your Pokemon's exact Attack stat by entering its IVs in the battle simulator. Attack stats displayed on the site are floored for readability, but note that the Attack stat uses its full decimal value to determine CMP.</p>
 		<p>If two Pokemon tie with identical Attack stats, the winner is determined at random.</p>
 		<p>Damage multipliers such as the Shadow bonus or stat buffs/debuffs have no effect on CMP.</p>
-		<p>Forme changing Pokemon whose base stats change during combat (such as Aegislash) will use their current forme's stats to resolve CMP ties.</p>
+		<p>Forme changing Pokemon whose base stats change during combat (such as Aegislash) use their current forme's stats to resolve CMP ties.</p>
 		<h4>Why did I lose CMP when I should have won?</h4>
 		<p>First, beware of some situations which appear like CMP ties but actually aren't. Sometimes called "false CMP", this can occur because you are still locked in your Fast Attack animation when you press your Charged Attack. Be alert when different Fast Attack durations are in play, and if your opponent is practicing optimal move timing.</p>
-		<p>Second, technical issues such as lag or frame drops may cause you to miss a turn and fail to trigger CMP. This can occur more frequently when you attempt to fire a Charged Attack from a benched Pokemon after another of your Pokemon has fainted.</p>
+		<p>Second, technical issues such as lag or frame drops may cause you to miss a turn and fail to trigger CMP. These can occur more frequently when you attempt to fire a Charged Attack from a benched Pokemon after another of your Pokemon has fainted.</p>
 	</div>
 </div>
 

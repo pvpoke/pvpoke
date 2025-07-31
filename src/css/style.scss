@@ -2553,6 +2553,22 @@ a.download-csv{
 	}
 }
 
+.detail-section.poke-stats{
+	position: relative;
+
+	a.ranking-cmp-link{
+		position: absolute;
+		top: 12px;
+		right: 5px;
+		border-radius: 8px;
+		border: 1px solid #000;
+		font-size: 12px;
+		z-index: 5;
+		padding: 1px 6px;
+		margin: 0;
+	}
+}
+
 .timeline{
 	border-top:1px dashed #000;
 	position:relative;

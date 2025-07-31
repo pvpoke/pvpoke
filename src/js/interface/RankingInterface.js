@@ -1238,9 +1238,16 @@ var InterfaceMaster = (function () {
 					$details.find(".multi-battle-link a").attr("href", multiBattleLink);
 					$details.find(".multi-battle-link a").html(pokemon.speciesName+" vs. " + cupName);
 					$details.find(".multi-battle-link .name").html(pokemon.speciesName+"'s");
+
+					// CMP chart link
+					
+					let cmpChartLink = host+"attack-cmp-chart/"+cup+"/"+battle.getCP()+"/"+pokemon.aliasId+"/";
+					$details.find(".ranking-cmp-link").html(pokemon.speciesName + " CMP Chart");
+					$details.find(".ranking-cmp-link").attr("href", cmpChartLink);
 				} else{
 					$details.find(".share-link").remove();
 					$details.find(".multi-battle-link").remove();
+					$details.find(".ranking-cmp-link").remove();
 				}
 
 				var scores;
