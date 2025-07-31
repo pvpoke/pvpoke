@@ -70,10 +70,18 @@ let InterfaceMaster = (function () {
                     runningResults = true;
                     gm.loadGroupData(self, metaKey, gm.data);
                     return false;
-                } else if(multiSelector.getPokemonList().length == 0){
+				}
+
+				if(multiSelector.getPokemonList().length == 0){
                     multiSelector.selectGroup(metaKey);
 					return false;
                 }
+
+				// Don't proceed until rankings have loaded (ranking load triggers display)
+				let rankingKey = battle.getCup().name + "overall" + battle.getCP();
+				if(! gm.rankings[rankingKey]){
+					return false;
+				}
 
                 // Calculate results and display in table
 
@@ -228,7 +236,7 @@ let InterfaceMaster = (function () {
 						}
 
 						jumpToPoke = false;
-					}	
+					}
 				}, 50);
 
 
