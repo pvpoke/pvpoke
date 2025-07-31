@@ -77,154 +77,160 @@ let InterfaceMaster = (function () {
 
                 // Calculate results and display in table
 
-				$(".train-table tbody").html('');
+				$(".train-table tbody").html('Loading...');
 
-                // Filter Pokemon list by unique species
-                let pokemonList = [];
-                let multiselectorList = multiSelector.getPokemonList();
+				// Set after timeout to free up main thread
+				setTimeout(function(){
+					// Filter Pokemon list by unique species
+					let pokemonList = [];
+					let multiselectorList = multiSelector.getPokemonList();
 
-				// If Pokemon selected in URL parameter isn't in the list, add it
-				if(jumpToPoke && ! multiselectorList.find(p => p.aliasId.replace("_shadow", "") == jumpToPoke)){
-					let newPokemon = new Pokemon(jumpToPoke, 0, battle);
+					// If Pokemon selected in URL parameter isn't in the list, add it
+					if(jumpToPoke && ! multiselectorList.find(p => p.aliasId.replace("_shadow", "") == jumpToPoke)){
+						let newPokemon = new Pokemon(jumpToPoke, 0, battle);
 
-					if(newPokemon){
-						newPokemon.initialize(true);
-						multiselectorList.push(newPokemon);
-						multiSelector.setPokemonList(multiselectorList);
-						return; // multiSelector will trigger this method to rerun with the Pokemon added
-					} else{
-						console.error("Could not add " + jumpToPoke);
+						if(newPokemon){
+							newPokemon.initialize(true);
+							multiselectorList.push(newPokemon);
+							multiSelector.setPokemonList(multiselectorList);
+							return; // multiSelector will trigger this method to rerun with the Pokemon added
+						} else{
+							console.error("Could not add " + jumpToPoke);
+							jumpToPoke = false;
+						}					
+					}
+
+					multiselectorList.forEach(pokemon => {
+						if(! pokemonList.find(p => p.aliasId.replace("_shadow", "") == pokemon.aliasId.replace("_shadow", ""))){
+							pokemonList.push(pokemon);
+						}
+					});
+
+					// Collect table data
+					data = [];
+
+					pokemonList.forEach(pokemon => {
+						const ivCombos = pokemon.generateIVCombinations("overall", 1, 4096);
+
+						if(ivCombos.length == 0){
+							console.error("No IV combinations found for " + pokemon.speciesId);
+							return;
+						}
+						
+						// Determine attack value range for overall IV combos
+						const attackValues = ivCombos.map(combo => combo.atk);
+
+						const minAtk = Math.min.apply(null, attackValues);
+						const maxAtk = Math.max.apply(null, attackValues);
+
+						// Determine attack value range for top IV combos
+						let topIvComboCount = Math.round(ivCombos.length * .1); // Take Attack stat values of top 10% (Rank 409 or better)
+
+						// If the Pokemon needs to be high level to reach its best combo, take a narrower cut
+						if(ivCombos[0].cp < battle.getCP() - 20){
+							topIvComboCount = 16;
+						}
+
+						const topIvCombos = ivCombos.slice(0, topIvComboCount);
+						const topIvAttackValues = topIvCombos.map(combo => combo.atk);
+						const topIvMinAtk = Math.min.apply(null, topIvAttackValues);
+						const topIvMaxAtk = Math.max.apply(null, topIvAttackValues);
+
+						data.push(
+							{
+								pokemon: pokemon,
+								minAtk: minAtk,
+								maxAtk: maxAtk,
+								topIvMinAtk: topIvMinAtk,
+								topIvMaxAtk: topIvMaxAtk,
+								rank1Atk: ivCombos[0].atk
+							}
+						);
+					});
+
+					// Sort data
+					self.sortData(sort, sortDirection);
+					
+					// Determine the x axis scale
+					const attackValues = data.flatMap(item => [item.minAtk, item.maxAtk]);
+					const maxAttackValue = Math.max.apply(null, attackValues);
+					const chartGutterSize = window.innerWidth <= 600 ? 0 : .055 * maxAttackValue;
+					const chartMinAttack = Math.min.apply(null, attackValues) - chartGutterSize;
+					const chartMaxAttack = Math.max.apply(null, attackValues) + chartGutterSize;
+					const chartWidth = chartMaxAttack - chartMinAttack;
+
+					$(".train-table tbody").html('');
+
+					data.forEach((item, index) => {
+						const pokemon = item.pokemon;
+						const name = pokemon.speciesName.replace("(Shadow)", "");
+						const displayMin = Math.floor(item.minAtk * 10) / 10;
+						const displayMax = Math.floor(item.maxAtk * 10) / 10;
+						const $row = $(".train-table tr.hide").clone().removeClass("hide");
+
+						$row.find(".poke-name .name").html((index + 1) + ". " + name);
+						$row.attr("data", pokemon.speciesId);
+
+						// Set bar color relative to scale
+						const colorRating = ( (item.topIvMinAtk - chartMinAttack) / (chartMaxAttack - chartMinAttack)) * 1000;
+						const color = battle.getRatingColor(colorRating);
+						$row.find(".cmp-item .bar, .cmp-item .subbar").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
+						
+						// Set bar width relative to chart
+						const barWidth = ((item.maxAtk - item.minAtk) / chartWidth) * 100;
+						const barPosition = ((item.minAtk - chartMinAttack) / chartWidth) * 100;
+						const subsectionWidth = ((item.topIvMaxAtk - item.topIvMinAtk) / (item.maxAtk - item.minAtk)) * 100;
+						const subsectionPosition = ((item.topIvMinAtk - item.minAtk) / (item.maxAtk - item.minAtk)) * 100;
+
+						// Display min and max values
+						$row.find(".min").html(displayMin);
+						$row.find(".max").html(displayMax);
+
+						// Add ranking link
+						$row.find(".link a").attr("href", host+"rankings/" + battle.getCup().name + "/" + battle.getCP() + "/overall/" + pokemon.speciesId + "/");
+
+						if(window.innerWidth <= 600){
+							$row.find(".cmp-item .subbar").width(barWidth + "%");					
+							$row.find(".cmp-item .subbar").css("left", barPosition + "%");
+						} else{
+							$row.find(".cmp-item").width(barWidth + "%");
+							$row.find(".cmp-item").css("left", barPosition + "%");	
+				
+							$row.find(".cmp-item .subbar").width(subsectionWidth + "%");					
+							$row.find(".cmp-item .subbar").css("left", subsectionPosition + "%");
+						}
+
+						$(".train-table tbody").append($row);
+					});
+
+					// Filter table if search string is set
+
+					if($(".poke-search").first().val() != ''){
+						$(".poke-search").first().trigger("keyup");
+					}
+
+					$(".table-container").scrollTop(0);
+
+					// Jump to Pokemon if selected
+					if(jumpToPoke){
+						// Scroll to element
+						let $row = $(".cmp-chart tr[data='"+jumpToPoke+"'], .cmp-chart tr[data='"+jumpToPoke+"_shadow']").first();
+
+						if($row.length > 0){
+							let elTop = $row.position().top;
+							let containerTop = $(".table-container").position().top;
+							let gotoTop = elTop - containerTop - 20;
+
+							$("html, body").animate({ scrollTop: 150}, 500);
+							$(".table-container").scrollTop(gotoTop);
+
+							$row.trigger("click");
+						}
+
 						jumpToPoke = false;
-					}					
-				}
+					}	
+				}, 50);
 
-                multiselectorList.forEach(pokemon => {
-                    if(! pokemonList.find(p => p.aliasId.replace("_shadow", "") == pokemon.aliasId.replace("_shadow", ""))){
-                        pokemonList.push(pokemon);
-                    }
-                });
-
-                // Collect table data
-                data = [];
-
-                pokemonList.forEach(pokemon => {
-                    const ivCombos = pokemon.generateIVCombinations("overall", 1, 4096);
-
-                    if(ivCombos.length == 0){
-                        console.error("No IV combinations found for " + pokemon.speciesId);
-                        return;
-                    }
-					
-					// Determine attack value range for overall IV combos
-					const attackValues = ivCombos.map(combo => combo.atk);
-
-                    const minAtk = Math.min.apply(null, attackValues);
-                    const maxAtk = Math.max.apply(null, attackValues);
-
-					// Determine attack value range for top IV combos
-					let topIvComboCount = Math.round(ivCombos.length * .1); // Take Attack stat values of top 10% (Rank 409 or better)
-
-					// If the Pokemon needs to be high level to reach its best combo, take a narrower cut
-					if(ivCombos[0].cp < battle.getCP() - 20){
-						topIvComboCount = 16;
-					}
-
-					const topIvCombos = ivCombos.slice(0, topIvComboCount);
-					const topIvAttackValues = topIvCombos.map(combo => combo.atk);
-					const topIvMinAtk = Math.min.apply(null, topIvAttackValues);
-					const topIvMaxAtk = Math.max.apply(null, topIvAttackValues);
-
-                    data.push(
-                        {
-                            pokemon: pokemon,
-                            minAtk: minAtk,
-                            maxAtk: maxAtk,
-							topIvMinAtk: topIvMinAtk,
-							topIvMaxAtk: topIvMaxAtk,
-							rank1Atk: ivCombos[0].atk
-                        }
-                    );
-                });
-
-                // Sort data
-				self.sortData(sort, sortDirection);
-                
-                // Determine the x axis scale
-                const attackValues = data.flatMap(item => [item.minAtk, item.maxAtk]);
-				const maxAttackValue = Math.max.apply(null, attackValues);
-				const chartGutterSize = window.innerWidth <= 600 ? 0 : .055 * maxAttackValue;
-                const chartMinAttack = Math.min.apply(null, attackValues) - chartGutterSize;
-                const chartMaxAttack = Math.max.apply(null, attackValues) + chartGutterSize;
-                const chartWidth = chartMaxAttack - chartMinAttack;
-
-                data.forEach((item, index) => {
-					const pokemon = item.pokemon;
-                    const name = pokemon.speciesName.replace("(Shadow)", "");
-                    const displayMin = Math.floor(item.minAtk * 10) / 10;
-                    const displayMax = Math.floor(item.maxAtk * 10) / 10;
-                    const $row = $(".train-table tr.hide").clone().removeClass("hide");
-
-                    $row.find(".poke-name .name").html((index + 1) + ". " + name);
-                    $row.attr("data", pokemon.speciesId);
-
-					// Set bar color relative to scale
-					const colorRating = ( (item.topIvMinAtk - chartMinAttack) / (chartMaxAttack - chartMinAttack)) * 1000;
-					const color = battle.getRatingColor(colorRating);
-					$row.find(".cmp-item .bar, .cmp-item .subbar").css("background-color", "rgb("+color[0]+","+color[1]+","+color[2]+")");
-					
-					// Set bar width relative to chart
-					const barWidth = ((item.maxAtk - item.minAtk) / chartWidth) * 100;
-					const barPosition = ((item.minAtk - chartMinAttack) / chartWidth) * 100;
-					const subsectionWidth = ((item.topIvMaxAtk - item.topIvMinAtk) / (item.maxAtk - item.minAtk)) * 100;
-					const subsectionPosition = ((item.topIvMinAtk - item.minAtk) / (item.maxAtk - item.minAtk)) * 100;
-
-					// Display min and max values
-					$row.find(".min").html(displayMin);
-					$row.find(".max").html(displayMax);
-
-					// Add ranking link
-					$row.find(".link a").attr("href", host+"rankings/" + battle.getCup().name + "/" + battle.getCP() + "/overall/" + pokemon.speciesId + "/");
-
-					if(window.innerWidth <= 600){
-						$row.find(".cmp-item .subbar").width(barWidth + "%");					
-						$row.find(".cmp-item .subbar").css("left", barPosition + "%");
-					} else{
-						$row.find(".cmp-item").width(barWidth + "%");
-						$row.find(".cmp-item").css("left", barPosition + "%");	
-			
-						$row.find(".cmp-item .subbar").width(subsectionWidth + "%");					
-						$row.find(".cmp-item .subbar").css("left", subsectionPosition + "%");
-					}
-
-                    $(".train-table tbody").append($row);
-                });
-
-				// Filter table if search string is set
-
-				if($(".poke-search").first().val() != ''){
-					$(".poke-search").first().trigger("keyup");
-				}
-
-				$(".table-container").scrollTop(0);
-
-				// Jump to Pokemon if selected
-				if(jumpToPoke){
-					// Scroll to element
-					let $row = $(".cmp-chart tr[data='"+jumpToPoke+"'], .cmp-chart tr[data='"+jumpToPoke+"_shadow']").first();
-
-					if($row.length > 0){
-						let elTop = $row.position().top;
-						let containerTop = $(".table-container").position().top;
-						let gotoTop = elTop - containerTop - 20;
-
-						$("html, body").animate({ scrollTop: 150}, 500);
-						$(".table-container").scrollTop(gotoTop);
-
-						$row.trigger("click");
-					}
-
-					jumpToPoke = false;
-				}	
 
 				// Set share link URL
 				let url = host+"attack-cmp-chart/"+battle.getCup().name+"/"+battle.getCP()+"/";
