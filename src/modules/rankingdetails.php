@@ -62,6 +62,7 @@
 		</div>
 		<div class="detail-section poke-stats float">
 			<div class="ranking-header">Stats</div>
+			<a target="_blank" class="button ranking-cmp-link" href="#">CMP Chart</a>
 			<div class="stat-details clear">
 				<div class="stat-row">
 					<div class="label">Attack</div>

@@ -348,7 +348,8 @@ a.toggle{
 .battle-results.matrix .table-container tbody th,
 .alternatives-table tbody th,
 .threats-table tbody th,
-.meta-table tbody th{
+.meta-table tbody th,
+.train-table tbody th{
 	background:#000;
 	color:#eee;
 }
@@ -419,6 +420,36 @@ a.toggle{
 
 .feed .news-item{
 	border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+.train-table td.link a{
+	background-image: url('../../img/eye-white.png');
+}
+
+.cmp-chart-container .cmp-chart{
+
+	td.link{
+		border-right: 1px solid rgba(255,255,255, 0.125);
+	}
+	
+	tbody tr{
+		border-bottom: 1px solid rgba(255,255,255,0.125);
+
+		&:hover, &.selected{
+			background: $color-blue-dark !important;
+		}
+
+		&.faded{
+			background: rgba(255, 255, 255, 0.15);
+		}
+	}
+}
+
+
+.cmp-legend .legend-item{
+	&.selected, &:hover{
+		background: $color-blue-dark;
+	}
 }
 
 @media only screen and (min-width: 721px){

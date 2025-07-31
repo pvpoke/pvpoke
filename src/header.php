@@ -296,6 +296,7 @@ if(! isset($OG_IMAGE)){
 						</a>
 						<div class="submenu">
 							<div class="submenu-wrap">
+								<a href="<?php echo $WEB_ROOT; ?>attack-cmp-chart/">CMP Chart</a>
 								<a href="<?php echo $WEB_ROOT; ?>moves/">Moves</a>
 								<a href="<?php echo $WEB_ROOT; ?>articles/">Articles</a>
 								<a href="<?php echo $WEB_ROOT; ?>settings/">Settings</a>

@@ -205,7 +205,7 @@ require_once 'header.php';
 					<div class="golden-combination"></div>
 				</div>
 
-				<h2 class="center">Charged Move Ties</h2>
+				<h2 class="center">Charged Move Priority</h2>
 
 				<div class="cmp-section">
 					<p>When two Charged Moves occur on the same turn, the Pokemon with the highest Attack stat goes first.</p>
@@ -220,6 +220,10 @@ require_once 'header.php';
 						<tbody class="output">
 						</tbody>
 					</table>
+
+					<div class="flex">
+						<a target="_blank" class="button battle-cmp-link" href="#">CMP Chart</a>
+					</div>
 				</div>
 
 				<h2 class="center">Battle Stats</h2>
@@ -387,7 +391,7 @@ require_once 'header.php';
 			<p class="battle">Explore battle results against this group of Pokemon.</p>
 			<p class="breakpoint">Explore move damage dealt to this group of Pokemon.</p>
 			<p class="bulkpoint">Explore move damage received from this group.</p>
-			<p class="attack">Explore Attack stat differential against this group of Pokemon to analyze Charged Move ties.</p>
+			<p class="attack">Explore Attack stat differential against this group of Pokemon to analyze <a href="<?php echo $WEB_ROOT; ?>attack-cmp-chart/all/1500/" target="_blank">Charged Move Priority</a>.</p>
 
 			<select class="breakpoint-mode">
 				<option value="fast">Fast Move</option>

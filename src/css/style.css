@@ -32,6 +32,12 @@ body {
 .flex.space-between {
   justify-content: space-between;
 }
+.flex.align-items-center {
+  align-items: center;
+}
+.flex.gap-15 {
+  gap: 15px;
+}
 .flex.cols-3 > div {
   flex-basis: 33%;
 }
@@ -255,6 +261,9 @@ footer a.domz-link {
 }
 .section p.small {
   font-size: 12px;
+}
+.section p.mt-1 {
+  margin-top: 1em;
 }
 .section h2 {
   font-size: 18px;
@@ -2206,6 +2215,21 @@ a.download-csv {
 .detail-section.performance .pokemon-compare-label {
   font-size: 12px;
   font-weight: bold;
+}
+
+.detail-section.poke-stats {
+  position: relative;
+}
+.detail-section.poke-stats a.ranking-cmp-link {
+  position: absolute;
+  top: 12px;
+  right: 5px;
+  border-radius: 8px;
+  border: 1px solid #000;
+  font-size: 12px;
+  z-index: 5;
+  padding: 1px 6px;
+  margin: 0;
 }
 
 .timeline {
@@ -5525,6 +5549,156 @@ a.pokebattler {
   border-right-color: rgba(0, 0, 0, 0);
 }
 
+/* ATTACK CHART */
+.cmp-chart-container {
+  overflow-y: auto;
+  max-height: 800px;
+}
+.cmp-chart-container .cmp-chart {
+  border-collapse: collapse;
+}
+.cmp-chart-container .cmp-chart td.poke-name {
+  display: table-cell;
+}
+.cmp-chart-container .cmp-chart td.poke-name .name {
+  -webkit-transition: all 0.25s ease-out 0s;
+  -moz-transition: all 0.25s ease-out 0s;
+  -o-transition: all 0.25s ease-out 0s;
+  transition: all 0.25s ease-out 0s;
+  font-size: 14px;
+  opacity: 1;
+}
+.cmp-chart-container .cmp-chart td.link {
+  border-right: 1px solid rgba(0, 0, 0, 0.125);
+  width: 26px;
+  display: table-cell;
+}
+.cmp-chart-container .cmp-chart td.link a {
+  margin: 0;
+  width: 22px;
+  background-size: contain;
+  opacity: 0.34;
+}
+.cmp-chart-container .cmp-chart th:nth-of-type(1) {
+  text-align: left;
+}
+.cmp-chart-container .cmp-chart th:nth-of-type(2) {
+  text-align: center;
+}
+.cmp-chart-container .cmp-chart .cmp-item {
+  -webkit-transition: all 0.25s ease-out 0s;
+  -moz-transition: all 0.25s ease-out 0s;
+  -o-transition: all 0.25s ease-out 0s;
+  transition: all 0.25s ease-out 0s;
+  position: relative;
+  height: 22px;
+  opacity: 1;
+}
+.cmp-chart-container .cmp-chart .cmp-item .min, .cmp-chart-container .cmp-chart .cmp-item .max {
+  font-size: 14px;
+  line-height: 22px;
+  position: absolute;
+  width: 42px;
+  z-index: 10;
+}
+.cmp-chart-container .cmp-chart .cmp-item .min {
+  text-align: right;
+  left: -48px;
+}
+.cmp-chart-container .cmp-chart .cmp-item .max {
+  text-align: left;
+  right: -48px;
+}
+.cmp-chart-container .cmp-chart .cmp-item .bar, .cmp-chart-container .cmp-chart .cmp-item .subbar {
+  height: 22px;
+  position: absolute;
+  min-width: 6px;
+}
+.cmp-chart-container .cmp-chart .cmp-item .bar {
+  width: 100%;
+  z-index: 0;
+  opacity: 0.4;
+}
+.cmp-chart-container .cmp-chart .cmp-item .subbar {
+  z-index: 5;
+}
+.cmp-chart-container .cmp-chart tbody tr {
+  -webkit-transition: all 0.25s ease-out 0s;
+  -moz-transition: all 0.25s ease-out 0s;
+  -o-transition: all 0.25s ease-out 0s;
+  transition: all 0.25s ease-out 0s;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+.cmp-chart-container .cmp-chart tbody tr:nth-child(2n) {
+  background: none;
+}
+.cmp-chart-container .cmp-chart tbody tr:hover, .cmp-chart-container .cmp-chart tbody tr.selected {
+  background: #c4def5 !important;
+}
+.cmp-chart-container .cmp-chart tbody tr.selected .cmp-item {
+  font-weight: bold;
+}
+.cmp-chart-container .cmp-chart tbody tr.faded {
+  background: rgba(0, 0, 0, 0.15);
+}
+.cmp-chart-container .cmp-chart tbody tr.faded .name, .cmp-chart-container .cmp-chart tbody tr.faded .cmp-item, .cmp-chart-container .cmp-chart tbody tr.faded td.link {
+  opacity: 0.3;
+}
+
+.cmp-legend {
+  font-size: 14px;
+  margin-top: 10px;
+}
+.cmp-legend .legend-square {
+  width: 20px;
+  height: 20px;
+  background: #70379f;
+  margin-right: 5px;
+}
+.cmp-legend .legend-square.light {
+  opacity: 0.3;
+}
+.cmp-legend .legend-item {
+  border-radius: 8px;
+  padding: 4px 12px;
+  cursor: pointer;
+}
+.cmp-legend .legend-item.selected, .cmp-legend .legend-item:hover {
+  background: #c4def5;
+}
+
+.check.cmp-compare-type {
+  margin: 0;
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 600px) {
+  .cmp-chart-container {
+    max-height: 600px;
+  }
+  .cmp-chart-container .cmp-chart .subbar {
+    top: 0;
+  }
+  .cmp-chart-container .cmp-chart td {
+    padding: 6px 2px;
+  }
+  .cmp-chart-container .cmp-chart .cmp-item {
+    margin-bottom: 18px;
+  }
+  .cmp-chart-container .cmp-chart .cmp-item .min {
+    top: 10px;
+    text-align: left;
+    left: 3px;
+  }
+  .cmp-chart-container .cmp-chart .cmp-item .max {
+    top: 10px;
+    right: 0px;
+  }
+  .cmp-chart-container .cmp-chart .cmp-item, .cmp-chart-container .cmp-chart .bar, .cmp-chart-container .cmp-chart .subbar {
+    height: 10px !important;
+  }
+}
 /* RSS Feed */
 .feed-container {
   position: relative;
