@@ -205,10 +205,10 @@ let InterfaceMaster = (function () {
 					$(".poke-search").first().trigger("keyup");
 				}
 
+				$(".table-container").scrollTop(0);
+
 				// Jump to Pokemon if selected
 				if(jumpToPoke){
-					$(".table-container").scrollTop(0);
-
 					// Scroll to element
 					let $row = $(".cmp-chart tr[data='"+jumpToPoke+"'], .cmp-chart tr[data='"+jumpToPoke+"_shadow']").first();
 
