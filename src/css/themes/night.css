@@ -317,7 +317,8 @@ a.toggle {
 .battle-results.matrix .table-container tbody th,
 .alternatives-table tbody th,
 .threats-table tbody th,
-.meta-table tbody th {
+.meta-table tbody th,
+.train-table tbody th {
   background: #000;
   color: #eee;
 }
@@ -384,6 +385,27 @@ a.toggle {
 
 .feed .news-item {
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.train-table td.link a {
+  background-image: url("../../img/eye-white.png");
+}
+
+.cmp-chart-container .cmp-chart td.link {
+  border-right: 1px solid rgba(255, 255, 255, 0.125);
+}
+.cmp-chart-container .cmp-chart tbody tr {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.125);
+}
+.cmp-chart-container .cmp-chart tbody tr:hover, .cmp-chart-container .cmp-chart tbody tr.selected {
+  background: #003462 !important;
+}
+.cmp-chart-container .cmp-chart tbody tr.faded {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.cmp-legend .legend-item.selected, .cmp-legend .legend-item:hover {
+  background: #003462;
 }
 
 @media only screen and (min-width: 721px) {

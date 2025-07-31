@@ -5564,15 +5564,6 @@ a.pokebattler {
   background-size: contain;
   opacity: 0.34;
 }
-.cmp-chart-container .cmp-chart th {
-  position: -webkit-sticky;
-  /* for Safari */
-  position: sticky;
-  left: 0;
-  top: 0;
-  background: #fcfcfc;
-  z-index: 20;
-}
 .cmp-chart-container .cmp-chart th:nth-of-type(1) {
   text-align: left;
 }
@@ -5636,7 +5627,7 @@ a.pokebattler {
 .cmp-chart-container .cmp-chart tbody tr.faded {
   background: rgba(0, 0, 0, 0.15);
 }
-.cmp-chart-container .cmp-chart tbody tr.faded .name, .cmp-chart-container .cmp-chart tbody tr.faded .cmp-item {
+.cmp-chart-container .cmp-chart tbody tr.faded .name, .cmp-chart-container .cmp-chart tbody tr.faded .cmp-item, .cmp-chart-container .cmp-chart tbody tr.faded td.link {
   opacity: 0.3;
 }
 

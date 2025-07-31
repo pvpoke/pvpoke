@@ -6061,13 +6061,6 @@ a.pokebattler{
 		}
 
 		th{
-			position: -webkit-sticky; /* for Safari */
-			position: sticky;
-			left: 0;
-			top: 0;
-			background: #fcfcfc;
-			z-index: 20;
-
 			&:nth-of-type(1){
 				text-align: left;
 			}
@@ -6138,7 +6131,7 @@ a.pokebattler{
 			&.faded{
 				background: rgba(0, 0, 0, 0.15);
 
-				.name, .cmp-item{
+				.name, .cmp-item, td.link{
 					opacity: 0.3;
 				}
 			}
