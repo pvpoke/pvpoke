@@ -34227,7 +34227,7 @@
             "cp2500": [33.5, 5, 14, 14]
         },
         "tags": ["starter"],
-        "levelFloor": 20,
+        "levelFloor": 15,
         "buddyDistance": 3,
         "thirdMoveCost": 10000,
         "released": true,
@@ -35499,6 +35499,7 @@
             "cp1500": [17.5, 4, 15, 13],
             "cp2500": [29, 5, 13, 15]
         },
+        "nicknames": ["pod"],
         "searchPriority": 8,
         "buddyDistance": 1,
         "thirdMoveCost": 10000,

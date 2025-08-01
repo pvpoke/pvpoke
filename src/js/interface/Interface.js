@@ -244,6 +244,10 @@ var InterfaceMaster = (function () {
 				doRandomBulk = typeof doRandomBulk !== 'undefined' ? doRandomBulk : false;
 				animate = typeof animate !== 'undefined' ? animate : true;
 
+				if(settings.performanceMode == 1){
+					animate = false;
+				}
+
 				var timeline = b.getTimeline();
 				var duration = b.getDuration()+1000;
 				var pokemon = b.getPokemon();

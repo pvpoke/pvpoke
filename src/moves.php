@@ -12,7 +12,7 @@ if(isset($_GET['mode'])){
 	}
 }
 
-$META_DESCRIPTION = 'Explore moves and movsets in Pokemon GO PvP.';
+$META_DESCRIPTION = 'Explore moves and movesets in Pokemon GO PvP.';
 
 require_once 'header.php';
 

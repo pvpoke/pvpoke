@@ -416,6 +416,9 @@ function interfaceObject(){
 		$filter.attr("index", filters.length-1);
 		$filter.attr("type", "type");
 		$(".filters").eq(listIndex).append($filter);
+
+		// Open the new filter
+		$(".filters .filter").last().find(".toggle").trigger("click");
 	}
 
 	// Change the type of a filter

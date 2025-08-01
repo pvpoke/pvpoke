@@ -299,8 +299,12 @@ var InterfaceMaster = (function () {
 						var pokemon = gm.data.pokemon[i];
 						var valid = true;
 
-						if(pokemon.shadow){
-							pokemon.chargedMoves.push("RETURN","FRUSTRATION");
+						if(pokemon?.tags?.includes("shadow")){
+							pokemon.chargedMoves.push("FRUSTRATION");
+						}
+
+						if(pokemon?.tags?.includes("shadoweligible")){
+							pokemon.chargedMoves.push("RETURN");
 						}
 
 						if((fastMoveId != '')&&(pokemon.fastMoves.indexOf(fastMoveId) == -1)){
