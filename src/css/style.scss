@@ -129,6 +129,14 @@ body{
 		justify-content: space-between;
 	}
 
+	&.align-items-center{
+		align-items: center;
+	}
+
+	&.gap-15{
+		gap: 15px;
+	}
+
 	&.cols-3 > div{
 		flex-basis:33%;
 	}
@@ -377,6 +385,10 @@ footer{
 
 	p.small{
 		font-size: 12px;
+	}
+
+	p.mt-1{
+		margin-top: 1em;
 	}
 
 	h2{
@@ -2538,6 +2550,22 @@ a.download-csv{
 	.pokemon-compare-label{
 		font-size: 12px;
 		font-weight: bold;
+	}
+}
+
+.detail-section.poke-stats{
+	position: relative;
+
+	a.ranking-cmp-link{
+		position: absolute;
+		top: 12px;
+		right: 5px;
+		border-radius: 8px;
+		border: 1px solid #000;
+		font-size: 12px;
+		z-index: 5;
+		padding: 1px 6px;
+		margin: 0;
 	}
 }
 
@@ -6012,6 +6040,185 @@ a.pokebattler{
 			border-bottom-color: rgba(0,0,0,0);
 			border-left-color: rgba(0,0,0,0);
 			border-right-color: rgba(0,0,0,0);
+		}
+	}
+}
+
+/* ATTACK CHART */
+
+.cmp-chart-container{
+	overflow-y: auto;
+	max-height: 800px;
+	
+	.cmp-chart{
+		border-collapse: collapse;
+
+		td.poke-name{
+			display: table-cell;
+
+			.name{
+				@include transition(all, 0.25s, ease-out, 0s);
+				font-size: 14px;
+				opacity: 1;
+			}
+		}
+
+		td.link{
+			border-right: 1px solid rgba(0, 0, 0, 0.125);
+			width: 26px;
+			display: table-cell;
+
+			a{
+				margin: 0;
+				width: 22px;
+				background-size: contain;
+				opacity: 0.34;
+			}
+		}
+
+		th{
+			&:nth-of-type(1){
+				text-align: left;
+			}
+
+			&:nth-of-type(2){
+				text-align: center;
+			}
+		}
+
+		.cmp-item{
+			@include transition(all, 0.25s, ease-out, 0s);
+
+			position: relative;
+			height: 22px;
+			opacity: 1;
+
+			.min,.max{
+				font-size: 14px;
+				line-height: 22px;
+				position: absolute;
+				width: 42px;
+				z-index: 10;
+			}
+
+			.min{
+				text-align: right;
+				left: -48px;
+			}
+			.max{
+				text-align: left;
+				right: -48px;
+			}
+
+			.bar, .subbar{
+				height: 22px;
+				position:absolute;
+				min-width: 6px;
+			}
+
+			.bar{
+				width: 100%;
+				z-index: 0;
+				opacity: 0.4;
+			}
+
+			.subbar{
+				z-index: 5;
+			}
+		}
+
+		tbody tr{
+			@include transition(all, 0.25s, ease-out, 0s);
+			cursor: pointer;
+			border-bottom: 1px solid rgba(0,0,0,0.125);
+
+ 			&:nth-child(2n){
+				background:none;
+			}
+
+			&:hover, &.selected{
+				background: $color-sky-blue !important;
+			}
+
+			&.selected .cmp-item{
+				font-weight: bold;
+			}
+
+			&.faded{
+				background: rgba(0, 0, 0, 0.15);
+
+				.name, .cmp-item, td.link{
+					opacity: 0.3;
+				}
+			}
+		}
+	}
+}
+
+.cmp-legend{
+	font-size: 14px;
+	margin-top: 10px;
+
+	.legend-square{
+		width: 20px;
+		height: 20px;
+		background: rgb(112, 55, 159);
+		margin-right: 5px;
+
+		&.light{
+			opacity: 0.3;
+		}
+	}
+
+	.legend-item{
+		border-radius: 8px;
+		padding: 4px 12px;
+		cursor: pointer;
+
+		&.selected, &:hover{
+			background: $color-sky-blue;
+		}
+	}
+}
+
+.check.cmp-compare-type{
+	margin: 0;
+	font-size: 14px;
+}
+
+@media only screen and (max-width: 600px) {
+	.cmp-chart-container{
+		max-height: 600px;
+
+		.cmp-chart{
+
+			.subbar{
+				top: 0;
+			}
+
+			td{
+				padding: 6px 2px;
+			}
+
+			.cmp-item{
+				margin-bottom: 18px;
+
+				.min{
+					top: 10px;
+					text-align: left;
+					left: 3px;
+				}
+
+				.max{
+					top: 10px;
+					right: 0px;
+				}
+			}
+
+
+			.cmp-item, .bar, .subbar{
+				height: 10px !important
+			}
 		}
 	}
 }

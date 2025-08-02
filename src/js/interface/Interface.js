@@ -112,7 +112,7 @@ var InterfaceMaster = (function () {
 
 				$("body").on("click", ".battle-details .rating-table a.rating", viewShieldBattle);
 				$("body").on("click", ".section.summary a.rating", viewBulkBattle);
-				$("body").on("click", ".breakpoints-section .button, .cmp-section .button", selectBreakpointIVs);
+				$("body").on("click", ".breakpoints-section .button, .cmp-section .ivs .button", selectBreakpointIVs);
 				$("body").on("change", "select.breakpoint-move", selectBreakpointMove);
 				$("body").on("change", "select.bulkpoint-move", selectBulkpointMove);
 
@@ -243,6 +243,10 @@ var InterfaceMaster = (function () {
 				bulkRatings = typeof bulkRatings !== 'undefined' ? bulkRatings : false;
 				doRandomBulk = typeof doRandomBulk !== 'undefined' ? doRandomBulk : false;
 				animate = typeof animate !== 'undefined' ? animate : true;
+
+				if(settings.performanceMode == 1){
+					animate = false;
+				}
 
 				var timeline = b.getTimeline();
 				var duration = b.getDuration()+1000;
@@ -817,6 +821,11 @@ var InterfaceMaster = (function () {
 					// Show blank if this Pokemon can't win CMP at all
 					$(".stats-table.cmp .output").append("<tr class=\"toggle\"><td>Can't win<br>CMP</td><td>Can't win<br>CMP</td><td>Can't win<br>CMP</td></tr>");
 				}
+
+				// CMP Chart link
+				let cmpChartLink = host+"attack-cmp-chart/"+battle.getCup().name+"/"+battle.getCP()+"/"+pokemon[0].aliasId+"/";
+				$(".battle-cmp-link").html(pokemon[0].speciesName + " CMP Chart");
+				$(".battle-cmp-link").attr("href", cmpChartLink);
 
 				// Display optimal move timing chart
 

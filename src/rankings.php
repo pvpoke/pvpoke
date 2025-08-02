@@ -43,7 +43,24 @@ switch($cp){
 // Load format data to generate page title
 $formatFound = false;
 
-if($cup != 'all'){
+switch($cup){
+	case "fossil":
+		$league = "Fossil Cup";
+		$formatFound = true;
+		break;
+	
+	case "summer":
+		$league = "Summer Cup (Ultra League)";
+		$formatFound = true;
+		break;
+
+	case "catch":
+		$league = "Catch Cup";
+		$formatFound = true;
+		break;
+}
+
+if($cup != 'all' && ! $formatFound){
 	// Only load format data for non default cups
 	if(@$formatContent = file_get_contents('data/gamemaster/formats.json')){
 		$formats = json_decode($formatContent);
@@ -56,8 +73,6 @@ if($cup != 'all'){
 			}
 		}
 	}
-} else{
-	$formatFound = true;
 }
 
 

@@ -1,5 +1,5 @@
 <?php require_once 'modules/config.php';
-$SITE_VERSION = '1.34.5';
+$SITE_VERSION = '1.35.1';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -141,7 +141,7 @@ if(! isset($OG_IMAGE)){
 
 <link id="favicon" rel="icon" href="<?php echo $WEB_ROOT; ?>img/themes/sunflower/favicon.png">
 
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=210">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=211">
 
 <?php if(strpos($META_TITLE, 'Train') !== false || strpos($META_TITLE, 'Performers') !== false): ?>
 	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/train.css?v=21">
@@ -152,7 +152,7 @@ if(! isset($OG_IMAGE)){
 <?php endif; ?>
 
 <?php if((isset($_SETTINGS->theme))&&($_SETTINGS->theme != "default")): ?>
-	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/themes/<?php echo $_SETTINGS->theme; ?>.css?v=29">
+	<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/themes/<?php echo $_SETTINGS->theme; ?>.css?v=30">
 <?php endif; ?>
 
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>
@@ -296,6 +296,7 @@ if(! isset($OG_IMAGE)){
 						</a>
 						<div class="submenu">
 							<div class="submenu-wrap">
+								<a href="<?php echo $WEB_ROOT; ?>attack-cmp-chart/">CMP Chart</a>
 								<a href="<?php echo $WEB_ROOT; ?>moves/">Moves</a>
 								<a href="<?php echo $WEB_ROOT; ?>articles/">Articles</a>
 								<a href="<?php echo $WEB_ROOT; ?>settings/">Settings</a>

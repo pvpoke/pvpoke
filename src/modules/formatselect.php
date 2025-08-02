@@ -10,9 +10,15 @@
 		for(var i = 0; i < formats.length; i++){
 			var showFormat = formats[i].showFormat;
 
-			if((interfaceMaster.context == "rankings")&&(formats[i].hideRankings)){
+			if(interfaceMaster.context == "rankings" && formats[i].hideRankings){
 				showFormat = false;
 			}
+
+			if(interfaceMaster.context == "attackchart" && 
+				(formats[i].hideRankings || formats[i].cup == "custom")){
+				showFormat = false;
+			}
+			
 
 			if(showFormat){
 				$format = $("<option>"+formats[i].title+"</option>");

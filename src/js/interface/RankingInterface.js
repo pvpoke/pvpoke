@@ -627,10 +627,10 @@ var InterfaceMaster = (function () {
 				});
 
 				// Set document title
-				let selectedFormat = gm.data.formats.find(format => format.cup == cup && format.cp == cp);
+				let selectedFormat = gm.getFormat(cup, cp);
 
 				if(selectedFormat){
-					document.title = format.title + " Rankings | PvPoke";
+					document.title = selectedFormat.title + " Rankings | PvPoke";
 				} else{
 					document.title = "Rankings | PvPoke";
 				}
@@ -677,11 +677,11 @@ var InterfaceMaster = (function () {
 				$(".rankings-container").scrollTop(0); // This is dumb but it works for reasons I do not understand
 
 				// Scroll to element
-				var elTop = $el.position().top;
+				var elTop = $el.position().top - 20;
 				var containerTop = $(".rankings-container").position().top;
-				var gotoTop = elTop - containerTop - 20;
+				var gotoTop = elTop - containerTop;
 
-				$("html, body").animate({ scrollTop: 350}, 500);
+				$("html, body").animate({ scrollTop: 260}, 500);
 				$(".rankings-container").scrollTop(gotoTop);
 
 				$el.trigger("click");
@@ -1238,9 +1238,16 @@ var InterfaceMaster = (function () {
 					$details.find(".multi-battle-link a").attr("href", multiBattleLink);
 					$details.find(".multi-battle-link a").html(pokemon.speciesName+" vs. " + cupName);
 					$details.find(".multi-battle-link .name").html(pokemon.speciesName+"'s");
+
+					// CMP chart link
+					
+					let cmpChartLink = host+"attack-cmp-chart/"+cup+"/"+battle.getCP()+"/"+pokemon.aliasId+"/";
+					$details.find(".ranking-cmp-link").html(pokemon.speciesName + " CMP Chart");
+					$details.find(".ranking-cmp-link").attr("href", cmpChartLink);
 				} else{
 					$details.find(".share-link").remove();
 					$details.find(".multi-battle-link").remove();
+					$details.find(".ranking-cmp-link").remove();
 				}
 
 				var scores;

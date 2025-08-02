@@ -1296,6 +1296,7 @@ function PokeSelect(element, i){
 
 		isCustom = true;
 		selectedPokemon.isCustom = true;
+		selectedPokemon.autoLevel = false; // Disable auto-leveling when the user overrides the Pokemon's level
 
 		self.updateIVRank();
 

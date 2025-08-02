@@ -924,20 +924,18 @@ var GameMaster = (function () {
 						returnData = rankingData;
 					}
 
-					if(caller.context != "team" && caller.context != "rankings"){
+					if(caller?.quickFillGroup){
 						caller.quickFillGroup(returnData);
-					} else{
+					} else if(caller?.displayRankingData){
 						caller.displayRankingData(returnData);
 					}
 				});
 			} else{
-
-				if(caller.context != "team" && caller.context != "rankings"){
+				if(caller?.quickFillGroup){
 					caller.quickFillGroup(object.groups[key]);
-				} else{
-					caller.displayRankingData(returnData);
+				} else if(caller?.displayRankingData){
+					caller.displayRankingData(object.groups[key]);
 				}
-
 			}
 		}
 
