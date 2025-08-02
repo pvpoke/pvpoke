@@ -1168,6 +1168,7 @@ var GameMaster = (function () {
 						// If data is available, force "best" moveset
 
 						if((rankingData)&&(overrides)){
+							let defaultWeight = battle.getCup().defaultWeight || 1;
 
 							// Find Pokemon in existing rankings
 							for(var n = 0; n < rankingData.length; n++){
@@ -1183,7 +1184,7 @@ var GameMaster = (function () {
 									pokemon.selectMove("fast", fastMoves[0].moveId);
 									pokemon.selectMove("charged", chargedMoves[0].moveId, 0);
 
-									pokemon.weightModifier = 1;
+									pokemon.weightModifier = defaultWeight;
 
 									if(chargedMoves.length > 1){
 										pokemon.selectMove("charged", chargedMoves[1].moveId, 1);

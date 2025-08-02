@@ -5,5 +5,7 @@
 	"exclude": [{
 		"filterType": "tag",
 		"values": ["mega"]
-	}]
+	}],
+	"defaultWeight": 0,
+	"filterTargets": true
 }

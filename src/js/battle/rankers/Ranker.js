@@ -78,21 +78,14 @@ var RankerMaster = (function () {
 
 				if(moveSelectMode == "auto"){
 					pokemonList = gm.generateFilteredPokemonList(battle, cup.include, cup.exclude);
-					targets = pokemonList;
+					targets = pokemonList.slice();
 				} else if(moveSelectMode == "force"){
 					pokemonList = gm.generateFilteredPokemonList(battle, cup.include, cup.exclude, rankingData, overrides);
-
 					// Filter targets from pokemonList
-					targets = [];
-
-					for(var i = 0; i < pokemonList.length; i++){
-						if(cup.filterTargets){
-							if(pokemonList[i].weightModifier > 1){
-								targets.push(pokemonList[i]);
-							}
-						} else{
-							targets.push(pokemonList[i]);
-						}
+					if(cup.filterTargets){
+						targets = pokemonList.filter(pokemon => pokemon.weightModifier > 0);
+					} else{
+						targets = pokemonList.slice()
 					}
 				}
 
@@ -235,7 +228,33 @@ var RankerMaster = (function () {
 
 						// If battle has already been simulated, skip
 
-						if(rankings[n] && pokemonList.length == targets.length){
+						// When shields are the same, A vs B is the same as B vs A, so take the existing result
+						if(shieldCounts[0]==shieldCounts[1] && scenario.energy[0] == scenario.energy[1]){
+							// Find opponent's ranking object
+							let oppRankObj = rankings.find(r => r.speciesId === opponent.speciesId);
+							
+							if(oppRankObj){
+
+								let matchup = oppRankObj.matches.find(m => m.opponent === pokemon.speciesId);
+								if(matchup){
+									rankObj.matches.push({
+										opponent: opponent.speciesId,
+										rating: matchup.opRating,
+										adjRating: matchup.adjOpRating,
+										opRating: matchup.rating,
+										adjOpRating: matchup.adjRating,
+										moveUsage: matchup.oppMoveUsage,
+										oppMoveUsage: matchup.moveUsage
+									});
+
+									avg += matchup.adjRating;
+
+									continue;
+								}
+							}
+						}
+
+						/*if(rankings[n] && pokemonList.length == targets.length){
 
 							// When shields are the same, A vs B is the same as B vs A, so take the existing result
 
@@ -255,8 +274,8 @@ var RankerMaster = (function () {
 
 								continue;
 							}
-						}
-
+						}*/
+						
 						totalBattles++;
 
 						// Set both Pokemon and auto select their moves
