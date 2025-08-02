@@ -43,35 +43,20 @@ switch($cp){
 // Load format data to generate page title
 $formatFound = false;
 
-switch($cup){
-	case "fossil":
-		$league = "Fossil Cup";
-		$formatFound = true;
-		break;
-	
-	case "summer":
-		$league = "Summer Cup (Ultra League)";
-		$formatFound = true;
-		break;
-
-	case "catch":
-		$league = "Catch Cup";
-		$formatFound = true;
-		break;
-}
-
 if($cup != 'all' && ! $formatFound){
 	// Only load format data for non default cups
-	if(@$formatContent = file_get_contents('data/gamemaster/formats.json')){
-		$formats = json_decode($formatContent);
+	require_once 'data/formats.php';
 
+	if(isset($formats) && is_array($formats)){
+		// Find the format that matches the cup and cp
 		foreach ( $formats as $format ) {
-			if ( $cup == $format->cup && $cp == $format->cp ) {
-				$league = $format->title;
+			if ( $cup == $format['cup'] && $cp == $format['cp'] ) {
+				$league = $format['title'];
 				$formatFound = true;
 				break;
 			}
 		}
+
 	}
 }
 
