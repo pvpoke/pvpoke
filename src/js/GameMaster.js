@@ -1166,8 +1166,12 @@ var GameMaster = (function () {
 						// If data is available, force "best" moveset
 
 						if((rankingData)&&(overrides)){
-							let defaultWeight = battle.getCup().defaultWeight || 1;
+							let defaultWeight = 1;
 
+							if(battle.getCup()?.defaultWeight !== undefined){
+								defaultWeight = battle.getCup().defaultWeight;
+							}
+							
 							// Find Pokemon in existing rankings
 							for(var n = 0; n < rankingData.length; n++){
 								if(pokemon.speciesId == rankingData[n].speciesId){
