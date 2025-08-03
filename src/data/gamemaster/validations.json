@@ -1,0 +1,25 @@
+[
+    {
+        "field": "gm_id",
+        "validations": [
+            {
+                "type": "required"
+            },
+            {
+                "type": "unique_id"
+            },
+            {
+                "type": "string_min_length",
+                "value": 3
+            },
+            {
+                "type": "string_max_length",
+                "value": 32
+            },
+            {
+                "type": "invalid_values",
+                "value": ["gamemaster"]
+            }
+        ]
+    }
+]

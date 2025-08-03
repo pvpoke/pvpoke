@@ -35,6 +35,9 @@ body {
 .flex.align-items-center {
   align-items: center;
 }
+.flex.align-items-start {
+  align-items: flex-start;
+}
 .flex.gap-15 {
   gap: 15px;
 }
@@ -1369,7 +1372,8 @@ select, input {
 .format-select,
 .slot-select,
 .mode-select,
-.category-select {
+.category-select,
+select.large {
   font-size: 18px;
   width: auto;
   background: none;
@@ -4526,6 +4530,11 @@ h2 {
   margin-bottom: 0;
 }
 
+h4.form-label {
+  margin: 0 0 5px 0;
+  font-size: 12px;
+}
+
 a.toggle {
   color: #003462;
   text-decoration: none;
@@ -6018,6 +6027,19 @@ a.feed-subscribe {
     max-width: 100%;
   }
 }
+/* GM EDITOR */
+#gm-editor .gm-editor-block {
+  max-width: 400px;
+  margin: 0 auto;
+}
+#gm-editor select.large,
+#gm-editor input.large {
+  width: 100%;
+  max-width: none;
+  margin-bottom: 1em;
+  font-size: 18px;
+}
+
 .colorblind a.rating.win, .colorblind .rating-container .rating.win, .colorblind .summary .rating.win, .colorblind .stats-table .rating.win, .colorblind .train-table .rating.win,
 .colorblind .battle-results.matrix .difference-table a.difference.win {
   background: #1A85FF;

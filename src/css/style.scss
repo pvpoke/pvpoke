@@ -133,6 +133,10 @@ body{
 		align-items: center;
 	}
 
+	&.align-items-start{
+		align-items: flex-start;
+	}
+
 	&.gap-15{
 		gap: 15px;
 	}
@@ -1698,7 +1702,8 @@ select, input{
 .format-select,
 .slot-select,
 .mode-select,
-.category-select{
+.category-select,
+select.large{
     font-size: 18px;
     width: auto;
     background: none;
@@ -5108,6 +5113,11 @@ h2{
 	margin-bottom:0;
 }
 
+h4.form-label{
+	margin: 0 0 5px 0;
+    font-size: 12px;
+}
+
 a.toggle{
 	color:$color-blue-dark;
 	text-decoration: none;
@@ -6578,6 +6588,22 @@ a.feed-subscribe{
 
 	.analysis-container .format-select{
 		max-width: 100%;
+	}
+}
+
+/* GM EDITOR */
+
+#gm-editor{
+	.gm-editor-block{
+		margin: 0 auto;
+	}
+
+	select.large,
+	input.large{
+		width: 100%;
+		max-width: none;
+		margin-bottom: 1em;
+		font-size: 18px;
 	}
 }
 

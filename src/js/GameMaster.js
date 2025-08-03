@@ -112,6 +112,54 @@ var GameMaster = (function () {
 			}
 		});
 
+		// Load the JSON of a specific gamemaster file into the object, default or custom
+		object.loadCustomGameMaster = function(id, callback){
+			console.log(id);
+			console.log("loading gamemaster");
+			let customData = {};
+
+			// By default, load the minified version
+			if(id == "gamemaster"){
+				// Load default gamemaster
+
+				$.ajax({
+					dataType: "json",
+					url: webRoot+"data/gamemaster.min.json?v="+siteVersion,
+					mimeType: "application/json",
+					error: function(request, error) {
+						console.log("Request: " + JSON.stringify(request));
+						console.log(error);
+					},
+					success: function( data ) {
+						customData = {
+							id: "custom_gamemaster",
+							title: "Custom Gamemaster",
+							dataType: "gamemaster",
+							pokemon: data.pokemon,
+							moves: data.moves
+						};
+
+						callback(customData);
+					}
+				});
+			} else{
+				// Load custom gamemaster from local storage
+				let content = window.localStorage.getItem(id);
+
+				try{
+					customData = JSON.parse(content);
+					callback(customData);
+				} catch(e){
+					console.error("Could not load custom gamemaster", e);
+				}
+			}
+		}
+
+		// Save a custom gamemaster object to local storage
+		object.saveCustomGameMaster = function(data){
+			window.localStorage.setItem(data.id, JSON.string(data));
+		}
+
 		// Create data for Pokemon select dropdown list
 		object.createPokeSelectList = function() {
 			object.pokeSelectList = object.data.pokemon.map(pokemon => ({
