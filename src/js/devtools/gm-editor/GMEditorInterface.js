@@ -15,15 +15,88 @@ var InterfaceMaster = (function () {
 
 
 			this.init = function(){
+                // Load data from local storage
+                var i = 0;
+
+                while(window.localStorage.key(i) !== null){
+                    let key = window.localStorage.key(i);
+                    
+                    // Catch invalid JSON
+                    try{
+                        let content = JSON.parse(window.localStorage.getItem(key));
+
+                        if(content?.dataType && content.dataType == "gamemaster" && content?.id && content?.title){
+                            $("#gm-select").append("<option value=\""+key+"\" type=\"custom\">"+content.title+"</option>");
+                        }
+                    } catch(e){
+                        // Not valid JSON
+                    }
+
+                    i++;
+                }
+
                 // Load the currently selected gamemaster
                 $("#gm-select option[value='"+settings.gamemaster+"']").attr("selected", "selected");
                 $("#gm-select").trigger("change");
 			}
 
             this.setGameMasterData = function(result){
-                data = result;
-                
-                self.updateExportCode();
+				let customData = {
+                    id: "",
+                    title: "",
+                    dataType: "gamemaster",
+                    pokemon: [],
+                    moves: []
+				};
+
+                // Map values of new data to current data
+                let valid = true;
+
+                if(result?.id){
+                    customData = result.id;
+                } else{
+                    valid = false;
+                }
+
+                if(result?.title){
+                    customData.title = result.title;
+                } else{
+                    valid = false;
+                }
+
+                if(result?.pokemon && result?.pokemon?.length > 0){
+                    customData.pokemon = result.pokemon;
+                } else{
+                    valid = false;
+                }
+
+                if(result?.moves && result?.moves?.length > 0){
+                    customData.moves = result.moves;
+                } else{
+                    valid = false;
+                }
+
+                if(valid){
+                    data = result;
+
+                    // Select dropdown option if ID exists
+                    $("#gm-select option[value='"+data.id+"']").prop("selected", "selected");
+
+                    let selectedGM = $("#gm-select option:selected").val();
+
+                    // Update buttons
+                    if(! selectedGM || selectedGM != data.id || selectedGM == "gamemaster"){
+                        $("#save-btn").hide();
+                        $("#edit-btn").hide();
+                    } else{
+                        $("#save-btn").show();
+                        $("#edit-btn").show();
+                    }
+                    
+                    self.updateExportCode();
+                } else{
+                    modalWindow("Data Error", $(".import-error").first());
+                }
             }
 
             this.updateExportCode = function(){
@@ -57,7 +130,14 @@ var InterfaceMaster = (function () {
             // Import text
 
             $(".custom-rankings-import textarea.import").on("change", function(e){
-                data = JSON.parse($(this).val());
+                try{
+                    let customData = JSON.parse($(this).val());
+                    self.setGameMasterData(customData);
+                } catch(e){
+                    console.error(e);
+                    modalWindow("Data Error", $(".import-error").first());
+                }
+                
             });
 
             // Open the save window
@@ -72,8 +152,10 @@ var InterfaceMaster = (function () {
             $("body").on("click", ".modal #save-new-modal-btn", function(e){
                 // Validate new entry
                 let title = $(".modal #gm_name").val();
-                let id = GMEditorUtils.StringToID(title);
+                let id = GMEditorUtils.StringToID(title, "gm_id");
                 let errors = GMEditorUtils.ValidateField("gm_id", id);
+
+                $(".modal #gm_name + .error-label").hide();
 
                 if(errors.length == 0){
                     data.title = title;
@@ -86,7 +168,8 @@ var InterfaceMaster = (function () {
                     // Navigate to edit page
                     window.location.href = $("a#save-new-btn").attr("href");
                 } else{
-
+                    $(".modal #gm_name + .error-label").show();
+                    $(".modal #gm_name + .error-label").html(errors.join(" "));
                 }
 
                 console.log(errors);

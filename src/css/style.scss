@@ -6596,6 +6596,7 @@ a.feed-subscribe{
 #gm-editor{
 	.gm-editor-block{
 		margin: 0 auto;
+		max-width: 400px;
 	}
 
 	select.large,
@@ -6605,6 +6606,14 @@ a.feed-subscribe{
 		margin-bottom: 1em;
 		font-size: 18px;
 	}
+}
+
+.error-label{
+	display: none;
+	margin: 5px 0 15px 0;
+    font-size: 12px;
+    line-height: 14px;
+	color: $color-fighting-light;
 }
 
 // Colorblind styling

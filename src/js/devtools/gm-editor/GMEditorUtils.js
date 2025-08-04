@@ -1,10 +1,13 @@
 class GMEditorUtils{
     // This method returns a Pokemon or Move ID given a string
-    static StringToID(string, capitalize = false){
+    static StringToID(string, fieldName){
+
         let id = string.toLowerCase().replace(/[^a-zA-Z]/g, "_");
-        if(capitalize){
-            id = string.toUpperCase();
+
+        switch(fieldName){
+
         }
+
         return id;
     }
 

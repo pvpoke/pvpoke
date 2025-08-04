@@ -157,7 +157,7 @@ var GameMaster = (function () {
 
 		// Save a custom gamemaster object to local storage
 		object.saveCustomGameMaster = function(data){
-			window.localStorage.setItem(data.id, JSON.string(data));
+			window.localStorage.setItem(data.id, JSON.stringify(data));
 		}
 
 		// Create data for Pokemon select dropdown list

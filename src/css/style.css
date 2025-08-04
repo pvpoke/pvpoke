@@ -6029,8 +6029,8 @@ a.feed-subscribe {
 }
 /* GM EDITOR */
 #gm-editor .gm-editor-block {
-  max-width: 400px;
   margin: 0 auto;
+  max-width: 400px;
 }
 #gm-editor select.large,
 #gm-editor input.large {
@@ -6038,6 +6038,14 @@ a.feed-subscribe {
   max-width: none;
   margin-bottom: 1em;
   font-size: 18px;
+}
+
+.error-label {
+  display: none;
+  margin: 5px 0 15px 0;
+  font-size: 12px;
+  line-height: 14px;
+  color: #e34448;
 }
 
 .colorblind a.rating.win, .colorblind .rating-container .rating.win, .colorblind .summary .rating.win, .colorblind .stats-table .rating.win, .colorblind .train-table .rating.win,

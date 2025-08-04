@@ -16,13 +16,13 @@ require_once '../header.php';
         <h3>Select a Gamemaster</h3>
 
         <select id="gm-select" class="gm-select large">
-            <option value="gamemaster" selected disabled>Default</option>
+            <option value="gamemaster">Default</option>
         </select>
 
         <div class="flex gap-15">
             <a id="save-new-btn" href="<?php echo $WEB_ROOT; ?>gm-editor/pokemon/" class="button">Save New</a>
-            <a id="save-btn" href="#" class="button">Save</a>
-            <a href="<?php echo $WEB_ROOT; ?>gm-editor/moves/" class="button">Edit</a>
+            <a id="save-btn" href="#" class="button" style="display: none">Save</a>
+            <a id="edit-btn" href="<?php echo $WEB_ROOT; ?>gm-editor/pokemon/" class="button" style="display: none">Edit</a>
         </div>
     </div>
 
@@ -31,7 +31,7 @@ require_once '../header.php';
 <div class="section white custom-rankings-import">
 	<h3>Import/Export Gamemaster</h3>
 
-	<p>Copy the text below to export your custom gamemaster or paste to overwrite it.</p>
+	<p>Copy the text below to export your custom gamemaster or paste to overwrite it. Only copy and paste code from a trusted source.</p>
 
 	<textarea class="import"></textarea>
 	<div class="copy">Copy</div>
@@ -65,10 +65,16 @@ require_once '../header.php';
 
 <div class="save-new-gm hide">
 	<input id="gm_name" name="gm_name" placeholder="Custom Gamemaster name" autocomplete="off" />
+    <div class="error-label"></div>
 	<p>This will save your custom gamemaster to local storage on your device. Gamemaster names must be unique.</p>
 	<div class="center">
 		<div id="save-new-modal-btn" class="button">Save & Edit</div>
 	</div>
+</div>
+
+
+<div class="import-error hide">
+	<p>There was an error importing the custom gamemaster. Ensure that the data is not malformed and contains valid Pokemon and move data.</p>
 </div>
 
 <?php require_once '../modules/scripts/battle-scripts.php'; ?>
