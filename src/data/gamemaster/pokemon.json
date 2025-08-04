@@ -38635,9 +38635,10 @@
             "cp2500": [50, 15, 15, 15],
             "cp500l40": [39.5, 12, 13, 15]
         },
+        "levelFloor": 20,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_SNOM",
             "evolutions": ["frosmoth"]
@@ -38660,9 +38661,10 @@
             "cp1500": [20.5, 4, 12, 12],
             "cp2500": [37.5, 4, 14, 14]
         },
+        "levelFloor": 20,
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false,
+        "released": true,
         "family": {
             "id": "FAMILY_SNOM",
             "parent": "snom"
