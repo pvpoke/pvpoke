@@ -55,13 +55,6 @@ if(isset($_COOKIE['settings'])){
 	if(! isset($_SETTINGS->theme)){
 		$_SETTINGS->theme = 'default';
 	}
-
-	// Validate the gamemaster setting, only allow these options
-	$gamemasters = ["gamemaster", "gamemaster-mega", "gamemaster-paldea"];
-
-	if(! in_array($_SETTINGS->gamemaster, $gamemasters)){
-		$_SETTINGS->gamemaster = "gamemaster";
-	}
 } else{
 	$_SETTINGS = (object) [
 		'defaultIVs' => "gamemaster",

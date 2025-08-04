@@ -13,6 +13,34 @@ var InterfaceMaster = (function () {
 			this.init = function(){
 				$("body").on("click", ".check", checkBox);
 				$(".save.button").click(saveSettings);
+
+
+                // Load custom gamemasters from local storage
+                var i = 0;
+
+                while(window.localStorage.key(i) !== null){
+                    let key = window.localStorage.key(i);
+                    
+                    // Catch invalid JSON
+                    try{
+                        let content = JSON.parse(window.localStorage.getItem(key));
+
+                        if(content?.dataType && content.dataType == "gamemaster" && content?.id && content?.title){
+
+							console.log(key);
+
+                            $("#gm-select").append("<option value=\""+key+"\">"+content.title+"</option>");
+
+							if(content.id == settings.gamemaster){
+								$("#gm-select option[value='"+settings.gamemaster+"']").prop("selected", "selected");
+							}
+                        }
+                    } catch(e){
+                        // Not valid JSON
+                    }
+
+                    i++;
+                }
 			};
 
 			// Given a name, save current list to a cookie

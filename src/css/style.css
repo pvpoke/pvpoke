@@ -6040,6 +6040,12 @@ a.feed-subscribe {
   font-size: 18px;
 }
 
+#gm-editor-pokemon a.gm-title,
+#gm-editor-moves a.gm-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .error-label {
   display: none;
   margin: 5px 0 15px 0;

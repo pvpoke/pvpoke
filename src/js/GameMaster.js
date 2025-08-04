@@ -22,11 +22,7 @@ var GameMaster = (function () {
 			$(".mega-warning").show();
 		}
 
-		var gmVersion = settings.gamemaster;
-
-		if((gmVersion == "gamemaster-mega")||(gmVersion == "gamemaster-paldea")){
-			gmVersion = "gamemaster";
-		}
+		var gmVersion = "gamemaster";
 
 		// By default, load the minified version
 		if((gmVersion == "gamemaster")&&(host.indexOf("localhost") == -1)){
@@ -108,6 +104,46 @@ var GameMaster = (function () {
 
 						InterfaceMaster.getInstance().init(object);
 					});
+				} else{
+					// Load custom gamemaster from local storage
+					let content = window.localStorage.getItem(settings.gamemaster);
+
+					try{
+						customData = JSON.parse(content);
+
+						if(customData?.id){
+							object.data.id = customData.id
+						}
+
+						if(customData?.title){
+							object.data.title = customData.title
+						}
+
+						if(customData?.pokemon){
+							object.data.pokemon = customData.pokemon
+						}
+
+						if(customData?.moves){
+							object.data.moves = customData.moves
+						}
+
+						// Initialize search maps
+						object.pokemonMap = new Map(object.data.pokemon.map(pokemon => [pokemon.speciesId, pokemon]));
+						object.moveMap = new Map(object.data.moves.map(move => [move.moveId, move]));
+
+						object.createPokeSelectList();
+
+						if(typeof InterfaceMaster !== 'undefined'){
+							InterfaceMaster.getInstance().init(object);
+						}
+
+						if(typeof customRankingInterface !== 'undefined'){
+							customRankingInterface.init(object);
+						}
+					} catch(e){
+						console.error("Could not load custom gamemaster", e);
+					}
+
 				}
 			}
 		});

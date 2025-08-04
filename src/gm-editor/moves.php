@@ -1,6 +1,6 @@
 <?php
 
-$META_TITLE = 'Gamemaster Editor | Moves';
+$META_TITLE = 'Moves | Gamemaster Editor';
 
 $META_DESCRIPTION = 'Customize moves or add new moves for your simulations.';
 
@@ -10,19 +10,23 @@ require_once '../header.php';
 
 <h1>Gamemaster Editor</h1>
 
-<?php if(! isset($_GET['p'])) : ?>
-    <!--All Pokemon table-->
-    <div class="section white" id="gm-editor-pokemon">
-        <?php require_once 'gm-editor-header.php'; ?>
-        <p class="mt-1">Customize moves or add new moves for your simulations.</p>
+<div class="section white" id="gm-editor-pokemon">
+    <div class="flex space-between align-items-start">
+        <a class="gm-title" href="<?php echo $WEB_ROOT; ?>gm-editor"></a>
+        <div class="ranking-categories mode-select">
+            <a href="<?php echo $WEB_ROOT; ?>gm-editor/pokemon/">Pokemon</a>
+            <a class="selected" href="<?php echo $WEB_ROOT; ?>gm-editor/moves/">Moves</a>
+        </div>
     </div>
-<?php else: ?>
-    <!--Edit individual Pokemon-->
-    <div class="section white" id="gm-editor-pokemon">
-        <?php require_once 'gm-editor-header.php'; ?>
+
+    <?php if(! isset($_GET['m'])) : ?>
+        <!--All Pokemon table-->
         <p class="mt-1">Customize moves or add new moves for your simulations.</p>
-    </div>
-<?php endif; ?>
+    <?php else: ?>
+        <!--Edit individual Pokemon-->
+        <p class="mt-1">Customize moves or add new moves for your simulations.</p>
+    <?php endif; ?>
+</div>
 
 
 <?php require_once '../modules/scripts/battle-scripts.php'; ?>
@@ -31,7 +35,7 @@ require_once '../header.php';
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/devtools/GMEditorInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/devtools/gm-editor/GMEditorInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/Main.js?v=<?php echo $SITE_VERSION; ?>"></script>
 
 <?php require_once '../footer.php'; ?>

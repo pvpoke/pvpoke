@@ -10,34 +10,13 @@ var InterfaceMaster = (function () {
 
 		function interfaceObject(){
             let gm = GameMaster.getInstance();
-            let data = {};
+            let data;
             let self = this;
 
 
 			this.init = function(){
-                // Load data from local storage
-                var i = 0;
-
-                while(window.localStorage.key(i) !== null){
-                    let key = window.localStorage.key(i);
-                    
-                    // Catch invalid JSON
-                    try{
-                        let content = JSON.parse(window.localStorage.getItem(key));
-
-                        if(content?.dataType && content.dataType == "gamemaster" && content?.id && content?.title){
-                            $("#gm-select").append("<option value=\""+key+"\">"+content.title+"</option>");
-                        }
-                    } catch(e){
-                        // Not valid JSON
-                    }
-
-                    i++;
-                }
-
-                // Load the currently selected gamemaster
-                $("#gm-select option[value='"+settings.gamemaster+"']").attr("selected", "selected");
-                $("#gm-select").trigger("change");
+                data = gm.data;
+                $("a.gm-title").html("&larr; " + data.title);
 			}
 
             this.setGameMasterData = function(result){
