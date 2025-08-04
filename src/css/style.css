@@ -6045,6 +6045,35 @@ a.feed-subscribe {
   font-size: 18px;
   font-weight: bold;
 }
+#gm-editor-pokemon .table-container,
+#gm-editor-moves .table-container {
+  overflow: auto;
+  max-height: 1000px;
+  position: relative;
+}
+#gm-editor-pokemon .table-container table,
+#gm-editor-moves .table-container table {
+  font-size: 12px;
+  min-width: 780px;
+}
+#gm-editor-pokemon .table-container table th, #gm-editor-pokemon .table-container table td,
+#gm-editor-moves .table-container table th,
+#gm-editor-moves .table-container table td {
+  padding: 10px;
+  text-align: left;
+}
+#gm-editor-pokemon .table-container table th,
+#gm-editor-moves .table-container table th {
+  position: sticky;
+  top: 0;
+  left: 0;
+  background: #f9fdff;
+}
+#gm-editor-pokemon .table-container table td[data=name],
+#gm-editor-moves .table-container table td[data=name] {
+  font-weight: bold;
+  font-size: 14px;
+}
 
 .error-label {
   display: none;

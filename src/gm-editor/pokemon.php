@@ -22,6 +22,34 @@ require_once '../header.php';
     <?php if(! isset($_GET['p'])) : ?>
         <!--All Pokemon table-->
         <p class="mt-1">Customize Pokemon or add new Pokemon for your simulations.</p>
+
+        <div class="table-container">
+            <table class="train-table" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th><a href="#" data="dex">Dex</a></th>
+                        <th><a href="#" data="name">Pokemon</a></th>
+                        <th>Fast Attacks</th>
+                        <th>Charged Attacks</th>
+                        <th>Tags</th>
+                        <th><a href="#" data="priority">Search<br>Priority</a></th>
+                        <th><a href="#" data="released">Released</a></th>
+                    </tr>
+                    <!--Row html to clone-->
+                    <tr class="hide">
+                        <td data="dex"></td>
+                        <td data="name"></td>
+                        <td data="fast"></td>
+                        <td data="charged"></td>
+                        <td data="tags"></td>
+                        <td data="priority"></td>
+                        <td data="released"></td>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
     <?php else: ?>
         <!--Edit individual Pokemon-->
         <p class="mt-1">Customize Pokemon or add new Pokemon for your simulations.</p>

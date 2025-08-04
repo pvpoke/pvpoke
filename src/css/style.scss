@@ -6614,6 +6614,34 @@ a.feed-subscribe{
 		font-size: 18px;
     	font-weight: bold;
 	}
+
+	.table-container{
+		overflow: auto;
+		max-height: 1000px;
+		position:relative;
+
+		table{
+			font-size: 12px;
+			min-width: 780px;
+
+			th, td{
+				padding: 10px;
+				text-align: left;
+			}
+			
+			th{
+				position:sticky;
+				top: 0;
+				left: 0;
+				background:$color-off-white;
+			}
+
+			td[data="name"]{
+				font-weight: bold;
+				font-size: 14px;
+			}
+		}
+	}
 }
 
 .error-label{

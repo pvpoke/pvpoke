@@ -17,79 +17,57 @@ var InterfaceMaster = (function () {
 			this.init = function(){
                 data = gm.data;
                 $("a.gm-title").html("&larr; " + data.title);
+
+                self.displayPokemonList();
 			}
 
-            this.setGameMasterData = function(result){
-				let customData = {
-                    id: "",
-                    title: "",
-                    dataType: "gamemaster",
-                    pokemon: [],
-                    moves: []
-				};
+            this.displayPokemonList = function(){
+                $(".train-table tbody").html("");
 
-                // Map values of new data to current data
-                let valid = true;
+                data.pokemon.forEach(pokemon => {
+                    let $row = $(".train-table tr.hide").first().clone().removeClass("hide");
+                    
+                    $row.find("td[data='dex']").html(pokemon.dex);
+                    $row.find("td[data='name']").html(pokemon.speciesName);
 
-                if(result?.id){
-                    customData = result.id;
-                } else{
-                    valid = false;
-                }
+                    let fastList = [];
+                    let chargedList = [];
 
-                if(result?.title){
-                    customData.title = result.title;
-                } else{
-                    valid = false;
-                }
+                    pokemon.fastMoves.forEach(move => {
+                        fastList.push(gm.getMoveById(move).name);
+                    });
 
-                if(result?.pokemon && result?.pokemon?.length > 0){
-                    customData.pokemon = result.pokemon;
-                } else{
-                    valid = false;
-                }
+                    pokemon.chargedMoves.forEach(move => {
+                        chargedList.push(gm.getMoveById(move).name);
+                    });
 
-                if(result?.moves && result?.moves?.length > 0){
-                    customData.moves = result.moves;
-                } else{
-                    valid = false;
-                }
+                    $row.find("td[data='fast']").html(fastList.join(", "));
+                    $row.find("td[data='charged']").html(chargedList.join(", "));
 
-                if(valid){
-                    data = result;
+                    if(pokemon.tags){
+                        $row.find("td[data='tags']").html(pokemon.tags.join(", "));
+                    }
 
-                    // Select dropdown option if ID exists
-                    $("#gm-select option[value='"+data.id+"']").prop("selected", "selected");
+                    if(pokemon.searchPriority){
+                        $row.find("td[data='priority']").html(pokemon.searchPriority);
+                    }
 
-                    let selectedGM = $("#gm-select option:selected").val();
-
-                    // Update buttons
-                    if(! selectedGM || selectedGM != data.id || selectedGM == "gamemaster"){
-                        $("#save-btn").hide();
-                        $("#edit-btn").hide();
+                    if(pokemon.released == true){
+                        $row.find("td[data='released']").html("Yes");
                     } else{
-                        $("#save-btn").show();
-                        $("#edit-btn").show();
+                        $row.find("td[data='released']").html("No");
                     }
                     
-                    self.updateExportCode();
-                } else{
-                    modalWindow("Data Error", $(".import-error").first());
-                }
+
+                    $(".train-table tbody").append($row);
+                });
             }
+
+
 
             this.updateExportCode = function(){
                 $("textarea.import").html(JSON.stringify(data));
             }
-
-            // Change the gamemaster select dropdown
-            $("#gm-select").on("change", function(e){
-                let id = $(this).find("option:selected").val();
-
-                // Set settings cookie here
-             
-                gm.loadCustomGameMaster(id, self.setGameMasterData);
-            });
 
             // Copy list text
 
