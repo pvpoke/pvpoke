@@ -23,14 +23,20 @@ require_once '../header.php';
         <!--All Pokemon table-->
         <p class="mt-1">Customize Pokemon or add new Pokemon for your simulations.</p>
 
+        <div class="poke-search-container">
+            <input class="poke-search" target="train-table" type="text" placeholder="Search Pokemon" />
+            <a href="#" class="search-info">i</a>
+        </div>
+
         <div class="table-container">
             <table class="train-table" cellspacing="0">
                 <thead>
                     <tr>
                         <th><a href="#" data="dex">Dex</a></th>
                         <th><a href="#" data="name">Pokemon</a></th>
-                        <th>Fast Attacks</th>
-                        <th>Charged Attacks</th>
+                        <th style="min-width: 100px;"></th>
+                        <th>Fast Moves</th>
+                        <th>Charged Moves</th>
                         <th>Tags</th>
                         <th><a href="#" data="priority">Search<br>Priority</a></th>
                         <th><a href="#" data="released">Released</a></th>
@@ -39,6 +45,11 @@ require_once '../header.php';
                     <tr class="hide">
                         <td data="dex"></td>
                         <td data="name"></td>
+                        <td class="controls">
+                            <a class="poke-edit" href="#" target="_blank">Edit</a>
+                            <a class="poke-copy" href="#">Copy</a>
+                            <a class="poke-delete" href="#">Delete</a>
+                        </td>
                         <td data="fast"></td>
                         <td data="charged"></td>
                         <td data="tags"></td>
@@ -56,7 +67,23 @@ require_once '../header.php';
     <?php endif; ?>
 </div>
 
+<div class="section white custom-rankings-import">
+	<h3>Import/Export All Pokemon</h3>
 
+	<p>Copy the text below to export all Pokemon data from your custom gamemaster or paste to overwrite it. Only copy and paste code from a trusted source.</p>
+
+	<textarea class="import"></textarea>
+	<div class="copy">Copy</div>
+</div>
+
+<div class="delete-poke-confirm hide">
+	<p>Delete the entry for <b><span class="name"></span></b>? It will no longer be available for simulations with this custom gamemaster.</p>
+
+	<div class="center flex">
+		<div class="button yes">Yes</div>
+		<div class="button no">No</div>
+	</div>
+</div>
 
 
 <?php require_once '../modules/scripts/battle-scripts.php'; ?>

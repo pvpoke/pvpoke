@@ -12,62 +12,259 @@ var InterfaceMaster = (function () {
             let gm = GameMaster.getInstance();
             let data;
             let self = this;
+            let battle = new Battle();
+
+            let sort = "attack";
+			let sortDirection = 1;
 
 
 			this.init = function(){
                 data = gm.data;
                 $("a.gm-title").html("&larr; " + data.title);
 
-                self.displayPokemonList();
+                if(! get){
+                    self.displayPokemonList();
+
+                    pokeSearch.setBattle(battle);
+                }
 			}
 
             this.displayPokemonList = function(){
-                $(".train-table tbody").html("");
+                // Perform after delay to free up main thread
+                setTimeout(function(){
+                     $(".train-table tbody").html("");
 
-                data.pokemon.forEach(pokemon => {
-                    let $row = $(".train-table tr.hide").first().clone().removeClass("hide");
-                    
-                    $row.find("td[data='dex']").html(pokemon.dex);
-                    $row.find("td[data='name']").html(pokemon.speciesName);
+                    data.pokemon.forEach(pokemon => {
+                        let $row = $(".train-table tr.hide").first().clone().removeClass("hide");
+                        
+                        $row.attr("data", pokemon.speciesId);
+                        $row.find("td[data='dex']").html(pokemon.dex);
+                        $row.find("td[data='name']").html(pokemon.speciesName);
 
-                    let fastList = [];
-                    let chargedList = [];
+                        let fastList = [];
+                        let chargedList = [];
 
-                    pokemon.fastMoves.forEach(move => {
-                        fastList.push(gm.getMoveById(move).name);
+                        pokemon.fastMoves.forEach(move => {
+                            let name = gm.getMoveById(move).name
+
+                            if(pokemon?.eliteMoves?.includes(move)){
+                                name += "*";
+                            }
+
+                            if(pokemon?.legacyMoves?.includes(move)){
+                                name += "†"
+                            }
+
+                            fastList.push(name);
+                        });
+
+                        pokemon.chargedMoves.forEach(move => {
+                            let name = gm.getMoveById(move).name
+
+                            if(pokemon?.eliteMoves?.includes(move)){
+                                name += "*";
+                            }
+
+                            if(pokemon?.legacyMoves?.includes(move)){
+                                name += "†"
+                            }
+
+                            chargedList.push(name);
+                        });
+
+                        $row.find("td[data='fast']").html(fastList.join(", "));
+                        $row.find("td[data='charged']").html(chargedList.join(", "));
+
+                        if(pokemon.tags){
+                            $row.find("td[data='tags']").html(pokemon.tags.join(", "));
+                        }
+
+                        if(pokemon.searchPriority){
+                            $row.find("td[data='priority']").html(pokemon.searchPriority);
+                        }
+
+                        if(pokemon.released == true){
+                            $row.find("td[data='released']").html("Yes");
+                        } else{
+                            $row.find("td[data='released']").html("No");
+                        }
+
+                        $row.find("a.poke-edit").attr("href", host+"gm-editor/pokemon/"+pokemon.speciesId+"/");
+                        
+
+                        $(".train-table tbody").append($row);
                     });
 
-                    pokemon.chargedMoves.forEach(move => {
-                        chargedList.push(gm.getMoveById(move).name);
-                    });
+                    self.updateExportCode();
+                }, 50);
 
-                    $row.find("td[data='fast']").html(fastList.join(", "));
-                    $row.find("td[data='charged']").html(chargedList.join(", "));
-
-                    if(pokemon.tags){
-                        $row.find("td[data='tags']").html(pokemon.tags.join(", "));
-                    }
-
-                    if(pokemon.searchPriority){
-                        $row.find("td[data='priority']").html(pokemon.searchPriority);
-                    }
-
-                    if(pokemon.released == true){
-                        $row.find("td[data='released']").html("Yes");
-                    } else{
-                        $row.find("td[data='released']").html("No");
-                    }
-                    
-
-                    $(".train-table tbody").append($row);
-                });
             }
 
 
 
             this.updateExportCode = function(){
-                $("textarea.import").html(JSON.stringify(data));
+                $("textarea.import").html(JSON.stringify(data.pokemon));
             }
+
+            // Search for a Pokemon
+			let searchTimeout;
+			let searchStr = '';
+			let $target = null;
+
+			$("body").on("keyup", ".poke-search", function(e){
+				searchStr = $(this).val().toLowerCase().trim();
+
+				$target = $(".train-table");
+
+				// Reset the timeout when a new key is typed. This prevents queries from being submitted too quickly and bogging things down on mobile.
+				window.clearTimeout(searchTimeout);
+				searchTimeout = window.setTimeout(submitSearchQuery, 200);
+			});
+
+			function submitSearchQuery(){
+				let list = GameMaster.getInstance().generatePokemonListFromSearchString(searchStr, battle);
+
+				// Search rows of cmp chart
+				$target.find("tbody tr").each(function(index, value){
+					let id = $(this).attr("data");
+
+					if(list.includes(id)){
+						$(this).show();
+					} else{
+						$(this).hide();
+					}
+				});
+			}
+
+			// Event handler for sorting table columns
+
+			$("thead a").on("click", function(e){
+
+				e.preventDefault();
+
+				let $parent = $(e.target).closest("table");
+				$parent.find("thead a").removeClass("selected");
+
+				$(e.target).addClass("selected");
+
+				let selectedSort = $(e.target).attr("data");
+
+				if(selectedSort != sort){
+					sort = selectedSort;
+					sortDirection = 1;
+				} else{
+					sortDirection = -sortDirection;
+				}
+
+				switch(sort){
+                    case "dex":
+                        data.pokemon.sort((a,b) => (a.dex > b.dex) ? sortDirection : ((b.dex > a.dex) ? -sortDirection : 0));
+                        break;
+
+                    case "name":
+                        data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? sortDirection : ((b.speciesName > a.speciesName) ? -sortDirection : 0));
+                        break;
+
+                    case "priority":
+                        data.pokemon.sort((a,b) => {
+                            let priorityA = a?.searchPriority ? a.searchPriority : 0;
+                            let priorityB = b?.searchPriority ? b.searchPriority : 0;
+
+                            if(priorityA > priorityB){
+                                return -sortDirection;
+                            } else if(priorityB > priorityA){
+                                return sortDirection;
+                            } else{
+                                return 0;
+                            }
+                        });
+                        break;
+
+                    case "released":
+                        data.pokemon.sort((a,b) => (a.released > b.released) ? -sortDirection : ((b.released > a.released) ? sortDirection : 0));
+                        break;
+                }
+
+				self.displayPokemonList();
+			});
+
+            // Duplicate a Pokemon entry
+
+            $("body").on("click", ".train-table a.poke-copy", function(e){
+                e.preventDefault();
+
+                let speciesId = $(this).closest("tr").attr("data");
+
+                if(speciesId){
+                    
+                    let pokemon = data.pokemon.find(p => p.speciesId == speciesId);
+
+                    if(pokemon){
+                        let pokemonIndex = data.pokemon.findIndex(p => p.speciesId == speciesId);
+                        let newPokemon = {...pokemon};
+
+                        let isUniqueId = false;
+                        let copyCount = 1;
+                        let newId;
+                        let newName;
+
+                        // Iterate on copy counts to find a unique ID (eg. charizard_copy_2)
+                        while(! isUniqueId){
+                            newId = newPokemon.speciesId + "_copy";
+                            newName = newPokemon.speciesName + " (Copy)";
+
+                            if(copyCount > 1){
+                                newId += "_" + copyCount;
+                                newName = newPokemon.speciesName + " (Copy " + copyCount + ")";
+                            }
+
+                            if(! data.pokemon.find(p => p.speciesId == newId)){
+                                isUniqueId = true;
+                            }
+
+                            copyCount++;
+                        }
+
+                        newPokemon.speciesId = newId;
+                        newPokemon.speciesName = newName;
+
+                        data.pokemon.splice(pokemonIndex+1, 0, newPokemon);
+
+                        self.displayPokemonList();
+
+                        if($(".poke-search").first().val() != ''){
+                            $(".poke-search").first().trigger("keyup");
+                        }
+                    }
+                }
+            });
+
+            // Delete a Pokemon entry
+
+            $("body").on("click", ".train-table a.poke-delete", function(e){
+                e.preventDefault();
+
+                let speciesId = $(this).closest("tr").attr("data");
+
+                if(speciesId){
+                    let pokemonIndex = data.pokemon.findIndex(p => p.speciesId == speciesId);
+                    let pokemon = data.pokemon.find(p => p.speciesId == speciesId);
+
+                    if(pokemon){
+                        modalWindow("Delete Pokemon", $(".delete-poke-confirm").first());
+                        $(".modal span.name").html(pokemon.speciesName);
+                        
+                        $(".modal .button.yes").click(function(e){
+                            
+                            closeModalWindow();
+
+                            data.pokemon.splice(pokemonIndex, 1);
+
+                            self.displayPokemonList();
+                        });
+                    }
+                }
+            });
 
             // Copy list text
 
@@ -89,19 +286,15 @@ var InterfaceMaster = (function () {
             $(".custom-rankings-import textarea.import").on("change", function(e){
                 try{
                     let customData = JSON.parse($(this).val());
-                    self.setGameMasterData(customData);
+                    if(customData.length > 0 && customData.every(p => p?.speciesId)){
+                        data.pokemon = customData;
+                        self.displayPokemonList();
+                    }
                 } catch(e){
                     console.error(e);
                     modalWindow("Data Error", $(".import-error").first());
                 }
                 
-            });
-
-            // Open the save window
-
-            $("#save-new-btn").click(function(e){
-                e.preventDefault();
-                modalWindow("Save New Gamemaster", $(".save-new-gm").eq(0));
             });
 
             // Save data to localstorage
