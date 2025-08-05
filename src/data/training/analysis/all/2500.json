@@ -1,146 +1,181 @@
 {
     "properties": {
-        "lastUpdated": "July 11, 2025",
-        "totalPerformers": 15660,
-        "totalTeams": 5220
+        "lastUpdated": "August 5,  2025",
+        "totalPerformers": 11904,
+        "totalTeams": 3968
     },
     "performers": [
         {
-            "pokemon": "bellibolt TS+PbC/ZC",
-            "individualScore": 149.88,
-            "teamScore": 556.09,
-            "games": 287
+            "pokemon": "tentacruel Ac+Bl/Sc",
+            "individualScore": 105.35,
+            "teamScore": 514.92,
+            "games": 213
         },
         {
             "pokemon": "bellibolt SkP+PbC/ZC",
-            "individualScore": 139.56,
-            "teamScore": 526.56,
-            "games": 650,
-            "usageTrend": [18.23, 13.36, 21.43, 14.16, 9.96, 7.89, 3.4, 3.85, 4.59, 10.33]
+            "individualScore": 131.67,
+            "teamScore": 509.67,
+            "games": 570,
+            "usageTrend": [6.74, 13.02, 20.35, 14.07, 7.71, 11.55, 18.75, 21.31, 17.47, 16.52]
         },
         {
-            "pokemon": "virizion DK+LB/SSw",
-            "individualScore": 122.59,
-            "teamScore": 494.68,
-            "games": 589,
-            "usageTrend": [14.22, 14.68, 13.39, 14.16, 13.49, 9.14, 8.3, 6.51, 9.35, 8.19]
-        },
-        {
-            "pokemon": "gastrodon MSl+BS/EP",
-            "individualScore": 122.49,
-            "teamScore": 493.9,
-            "games": 352
+            "pokemon": "steelix TF+BkS/PsF",
+            "individualScore": 117.99,
+            "teamScore": 502.44,
+            "games": 296
         },
         {
             "pokemon": "cobalion DK+SE/SSw",
-            "individualScore": 113.34,
-            "teamScore": 488.01,
-            "games": 331
+            "individualScore": 115.07,
+            "teamScore": 502.32,
+            "games": 335
         },
         {
-            "pokemon": "clefable FW+M/Sw",
-            "individualScore": 113.89,
-            "teamScore": 485.38,
-            "games": 295
+            "pokemon": "virizion DK+LB/SSw",
+            "individualScore": 125.82,
+            "teamScore": 502.19,
+            "games": 249
         },
         {
-            "pokemon": "talonflame I+Fl/FmC",
-            "individualScore": 117.96,
-            "teamScore": 482.8,
-            "games": 403
+            "pokemon": "bellibolt TS+PbC/ZC",
+            "individualScore": 121.46,
+            "teamScore": 501.23,
+            "games": 380,
+            "usageTrend": [4.7, 5.6, 11.69, 12.06, 13.44, 12.31, 6.25, 14.49, 12.1, 11.3]
         },
         {
-            "pokemon": "feraligatr SC+HC/IB",
-            "individualScore": 113.82,
-            "teamScore": 477.52,
-            "games": 462
+            "pokemon": "gastrodon MSl+BS/EP",
+            "individualScore": 126.01,
+            "teamScore": 500.01,
+            "games": 292
         },
         {
-            "pokemon": "giratina_altered SC+AP/DC",
-            "individualScore": 116.01,
-            "teamScore": 476.15,
-            "games": 377
-        },
-        {
-            "pokemon": "pangoro KC+CC/NS",
-            "individualScore": 125.87,
-            "teamScore": 476.04,
-            "games": 307
+            "pokemon": "lapras Psy+IB/SpA",
+            "individualScore": 110.98,
+            "teamScore": 492.75,
+            "games": 584,
+            "usageTrend": [3.45, 6.81, 16.08, 17.09, 20.7, 20.27, 17.08, 24.15, 20.16, 21.09]
         },
         {
             "pokemon": "feraligatr_shadow SC+HC/IB",
-            "individualScore": 100.25,
-            "teamScore": 472.96,
-            "games": 678,
-            "usageTrend": [11.84, 15.99, 12.5, 15.45, 12.24, 11.63, 11.49, 10.95, 10.03, 12.22]
+            "individualScore": 106.04,
+            "teamScore": 487,
+            "games": 379,
+            "usageTrend": [10.5, 11.44, 7.1, 5.28, 11.01, 9.09, 6.67, 10.51, 16.13, 6.09]
+        },
+        {
+            "pokemon": "cradily Ac+GK/RT",
+            "individualScore": 103.69,
+            "teamScore": 484.77,
+            "games": 331
+        },
+        {
+            "pokemon": "guzzlord DT+BrS/SlB",
+            "individualScore": 124.94,
+            "teamScore": 484.24,
+            "games": 320
+        },
+        {
+            "pokemon": "golisopod FC+AJ/XS",
+            "individualScore": 119.92,
+            "teamScore": 483.48,
+            "games": 330
+        },
+        {
+            "pokemon": "skeledirge I+SB/TSo",
+            "individualScore": 110.01,
+            "teamScore": 480.49,
+            "games": 268
+        },
+        {
+            "pokemon": "feraligatr SC+HC/IB",
+            "individualScore": 106.56,
+            "teamScore": 474.98,
+            "games": 441,
+            "usageTrend": [10.19, 11.19, 13.99, 12.81, 9.25, 8.52, 8.75, 10.8, 10.48, 9.13]
         },
         {
             "pokemon": "drapion_shadow PSt+AT/Cr",
-            "individualScore": 103.63,
-            "teamScore": 471.89,
-            "games": 809,
-            "usageTrend": [17.12, 14.78, 14.58, 18.24, 15.98, 16.48, 14.26, 12.13, 13.1, 15.49]
-        },
-        {
-            "pokemon": "malamar Psy+FoP/SP",
-            "individualScore": 133.46,
-            "teamScore": 470.97,
-            "games": 290
-        },
-        {
-            "pokemon": "lickilicky RO+BS/SB",
-            "individualScore": 108.8,
-            "teamScore": 468.11,
-            "games": 789,
-            "usageTrend": [13.88, 16.09, 13.24, 16.52, 19.29, 17.31, 15.96, 15.09, 15.82, 15.62]
-        },
-        {
-            "pokemon": "tentacruel PJ+Bl/Sc",
-            "individualScore": 103.36,
-            "teamScore": 461.22,
-            "games": 447
+            "individualScore": 105.5,
+            "teamScore": 467.96,
+            "games": 265
         }
     ],
     "teams": [
         {
-            "team": "bellibolt TS/PbC/ZC|cradily Ac/GK/RT|feraligatr_shadow SC/HC/IB",
-            "teamScore": 583.6,
-            "games": 40
+            "team": "weezing_galarian FW/BrS/Sl|lapras Psy/IB/SpA|typhlosion I/BB/TP",
+            "teamScore": 556.09,
+            "games": 23
+        },
+        {
+            "team": "gastrodon MSl/BS/EP|drifblim H/IW/SB|moltres_galarian SkP/BrB/Fl",
+            "teamScore": 549.61,
+            "games": 18
         },
         {
             "team": "zygarde_complete DT/Bd/O|steelix TF/Eq/PsF|tinkaton FW/Bd/PR",
-            "teamScore": 552.48,
-            "games": 56
+            "teamScore": 544.24,
+            "games": 62
         },
         {
-            "team": "moltres_galarian SkP/BrB/Fl|lokix SkP/TBl/XS|weezing_galarian FW/BrS/Sl",
-            "teamScore": 548.56,
-            "games": 32
+            "team": "greninja WSh/HC/NS|drapion PSt/Cr/SlB|florges FW/M/PlB",
+            "teamScore": 542.1,
+            "games": 29
         },
         {
-            "team": "pangoro KC/CC/NS|tentacruel Ac/Bl/Sc|weezing_galarian FW/BrS/PR",
-            "teamScore": 543.12,
-            "games": 34
+            "team": "regidrago DB/BkS/DrE|feraligatr_shadow SC/HC/IB|registeel LO/FB/ZC",
+            "teamScore": 533.9,
+            "games": 39
         },
         {
-            "team": "steelix TF/Eq/PsF|annihilape C/IP/RF|zygarde_complete DT/Bd/O",
-            "teamScore": 538.8,
+            "team": "dusknoir A/DyP/ShP|cobalion DK/SE/SSw|lapras Psy/SkB/SpA",
+            "teamScore": 526.43,
             "games": 30
         },
         {
-            "team": "dusknoir A/DyP/ShP|cradily BS/GK/RT|tentacruel PSt/Bl/Sc",
-            "teamScore": 530.33,
-            "games": 42
+            "team": "virizion DK/LB/SSw|ampharos VS/BrS/TBl|drapion_shadow PSt/AT/Cr",
+            "teamScore": 525,
+            "games": 23
         },
         {
             "team": "florges FW/M/TBl|lapras Psy/SkB/SpA|skeledirge I/SB/TSo",
-            "teamScore": 516.72,
-            "games": 54
+            "teamScore": 513.85,
+            "games": 20
         },
         {
             "team": "gastrodon MSl/BS/EP|lickilicky RO/BS/SB|virizion DK/LB/SSw",
-            "teamScore": 491.97,
-            "games": 135
+            "teamScore": 509.32,
+            "games": 19
+        },
+        {
+            "team": "feraligatr SC/HC/IB|bellibolt SkP/PbC/ZC|kommo_o DT/CC/ClS",
+            "teamScore": 504.72,
+            "games": 25
+        },
+        {
+            "team": "bellibolt TS/PbC/ZC|cradily Ac/GK/RT|feraligatr_shadow SC/HC/IB",
+            "teamScore": 497.57,
+            "games": 104
+        },
+        {
+            "team": "dusknoir A/DyP/ShP|bellibolt TS/PbC/ZC|lapras Psy/IB/SpA",
+            "teamScore": 494.87,
+            "games": 84
+        },
+        {
+            "team": "virizion DK/LB/SSw|bellibolt SkP/PbC/ZC|tentacruel Ac/Bl/Sc",
+            "teamScore": 494.64,
+            "games": 91
+        },
+        {
+            "team": "drifblim A/IW/SB|cobalion DK/SE/SSw|lickilicky RO/BS/SB",
+            "teamScore": 490.74,
+            "games": 27
+        },
+        {
+            "team": "mandibuzz Sn/AA/DP|feraligatr_shadow SC/HC/IB|gastrodon MSl/BS/EP",
+            "teamScore": 490.06,
+            "games": 16
         }
     ]
 }

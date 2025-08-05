@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-08-04 17:39:42",
+    "timestamp": "2025-08-05 22:56:14",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -44375,6 +44375,20 @@
             "cooldown": 1500,
             "archetype": "Heavy Damage",
             "turns": 3
+        },
+        {
+            "moveId": "CHILLING_WATER",
+            "name": "Chilling Water (Speculative)",
+            "type": "water",
+            "power": 60,
+            "energy": 45,
+            "energyGain": 0,
+            "cooldown": 500,
+            "buffs": [-1, 0],
+            "buffTarget": "opponent",
+            "buffApplyChance": "1",
+            "archetype": "Debuff",
+            "turns": 1
         },
         {
             "moveId": "CLANGING_SCALES",
