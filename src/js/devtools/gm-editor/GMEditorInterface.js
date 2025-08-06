@@ -140,7 +140,7 @@ var InterfaceMaster = (function () {
                 
             });
 
-            // Open the save window
+            // Open the save new window
 
             $("#save-new-btn").click(function(e){
                 e.preventDefault();
@@ -171,9 +171,16 @@ var InterfaceMaster = (function () {
                     $(".modal #gm_name + .error-label").show();
                     $(".modal #gm_name + .error-label").html(errors.join(" "));
                 }
+            });
 
-                console.log(errors);
+            // Save changes
 
+            $("#save-btn").click(function(e){
+                e.preventDefault();
+
+                gm.saveCustomGameMaster(data);
+
+                modalWindow("Data Saved", $(".save-new-gm").eq(0));
             });
 
 		};
