@@ -14,7 +14,7 @@ var InterfaceMaster = (function () {
             let self = this;
             let battle = new Battle();
 
-            let sort = "attack";
+            let sort = "";
 			let sortDirection = 1;
             let source; // Point to either the pokemon array or the moves array
             let sourceType;
@@ -33,12 +33,14 @@ var InterfaceMaster = (function () {
                         case "pokemon":
                             source = data.pokemon;
                             idKey = "speciesId";
+                            sort = "dex";
                             self.displayPokemonList();
                             break;
 
                         case "moves":
                             source = data.moves;
                             idKey = "moveId";
+                            sort = "name";
                             self.displayMoveList();
                             break;
                     }

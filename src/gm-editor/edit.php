@@ -64,7 +64,7 @@ require_once '../header.php';
                 <?php if($_GET['c'] == 'pokemon') : ?>
                     <thead>
                         <tr>
-                            <th><a href="#" data="dex">Dex</a></th>
+                            <th><a class="selected" href="#" data="dex">Dex</a></th>
                             <th><a href="#" data="name">Pokemon</a></th>
                             <th style="min-width: 100px;"></th>
                             <th>Fast Moves</th>
@@ -92,7 +92,7 @@ require_once '../header.php';
                 <?php elseif($_GET['c'] == 'moves'): ?>
                     <thead>
                         <tr>
-                            <th><a href="#" data="name">Move</a></th>
+                            <th><a class="selected" href="#" data="name">Move</a></th>
                             <th style="min-width: 100px;"></th>
                             <th><a href="#" data="type">Type</a></th>
                             <th><a href="#" data="power">Power</a></th>
