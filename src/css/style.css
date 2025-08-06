@@ -891,68 +891,6 @@ b {
 .poke .custom-ranking-options {
   display: none;
 }
-.poke .form-group {
-  border: 1px solid #888;
-  border-radius: 30px;
-  margin-bottom: 15px;
-  clear: both;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 10px;
-  overflow: hidden;
-}
-.poke .form-group .option {
-  text-align: left;
-  padding: 5px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 12px;
-  flex-grow: 1;
-  margin-top: 0;
-  border-left: 1px solid #999;
-  border-right: 1px solid #999;
-  background: #eee;
-  cursor: pointer;
-}
-.poke .form-group .option.on {
-  background: #ddd;
-  -moz-box-shadow: inset 0 0 10px #999;
-  -webkit-box-shadow: inset 0 0 10px #999;
-  box-shadow: inset 0 0 10px #999;
-}
-.poke .form-group .option.on div.icon {
-  opacity: 1;
-}
-.poke .form-group .option:first-of-type {
-  border-left: none;
-}
-.poke .form-group .option:last-of-type {
-  border-right: none;
-}
-.poke .form-group.shield-picker .option {
-  font-size: 14px;
-}
-.poke .form-group.shield-picker div.icon {
-  width: 20px;
-  height: 15px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  margin-right: 5px;
-  opacity: 0.25;
-}
-.poke .form-group.shield-picker .option:nth-of-type(1) div.icon {
-  background-image: url("../img/shield_none.png");
-}
-.poke .form-group.shield-picker .option:nth-of-type(2) div.icon {
-  background-image: url("../img/shield.png?v=2");
-}
-.poke .form-group.shield-picker .option:nth-of-type(3) div.icon {
-  background-image: url("../img/shield_two.png?v=2");
-  width: 25px;
-  height: 20px;
-}
 .poke a.random,
 .poke a.swap {
   font-size: 10px;
@@ -1138,6 +1076,69 @@ b {
   -moz-animation: BLINK_ANIMATION 2s infinite;
   -o-animation: BLINK_ANIMATION 2s infinite;
   animation: BLINK_ANIMATION 2s infinite;
+}
+
+.form-group {
+  border: 1px solid #888;
+  border-radius: 30px;
+  margin-bottom: 15px;
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  overflow: hidden;
+}
+.form-group .option {
+  text-align: left;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  flex-grow: 1;
+  margin-top: 0;
+  border-left: 1px solid #999;
+  border-right: 1px solid #999;
+  background: #eee;
+  cursor: pointer;
+}
+.form-group .option.on {
+  background: #ddd;
+  -moz-box-shadow: inset 0 0 10px #999;
+  -webkit-box-shadow: inset 0 0 10px #999;
+  box-shadow: inset 0 0 10px #999;
+}
+.form-group .option.on div.icon {
+  opacity: 1;
+}
+.form-group .option:first-of-type {
+  border-left: none;
+}
+.form-group .option:last-of-type {
+  border-right: none;
+}
+.form-group.shield-picker .option {
+  font-size: 14px;
+}
+.form-group.shield-picker div.icon {
+  width: 20px;
+  height: 15px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-right: 5px;
+  opacity: 0.25;
+}
+.form-group.shield-picker .option:nth-of-type(1) div.icon {
+  background-image: url("../img/shield_none.png");
+}
+.form-group.shield-picker .option:nth-of-type(2) div.icon {
+  background-image: url("../img/shield.png?v=2");
+}
+.form-group.shield-picker .option:nth-of-type(3) div.icon {
+  background-image: url("../img/shield_two.png?v=2");
+  width: 25px;
+  height: 20px;
 }
 
 .hp.bar-back {
@@ -6062,6 +6063,10 @@ a.feed-subscribe {
   padding: 10px;
   text-align: left;
 }
+#gm-editor-pokemon .table-container table tr.find,
+#gm-editor-moves .table-container table tr.find {
+  background: #c4def5 !important;
+}
 #gm-editor-pokemon .table-container table th,
 #gm-editor-moves .table-container table th {
   position: sticky;
@@ -6073,6 +6078,14 @@ a.feed-subscribe {
 #gm-editor-moves .table-container table td[data=name] {
   font-weight: bold;
   font-size: 14px;
+}
+#gm-editor-pokemon .poke-search-container .form-group,
+#gm-editor-moves .poke-search-container .form-group {
+  margin: 0 0 0 15px;
+}
+#gm-editor-pokemon .poke-search-container .form-group .option,
+#gm-editor-moves .poke-search-container .form-group .option {
+  padding: 5px 15px;
 }
 
 .error-label {

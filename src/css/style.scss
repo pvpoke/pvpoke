@@ -1124,82 +1124,6 @@ b{
 		display: none;
 	}
 
-	.form-group{
-		border: 1px solid #888;
-		border-radius: 30px;
-		margin-bottom:15px;
-		clear:both;
-		display:flex;
-		flex-wrap:wrap;
-		margin-top:10px;
-		overflow: hidden;
-
-		.option{
-			text-align: left;
-			padding: 5px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			font-size: 12px;
-			flex-grow: 1;
-			margin-top: 0;
-			border-left: 1px solid #999;
-			border-right: 1px solid #999;
-			background:#eee;
-			cursor: pointer;
-
-			&.on{
-				background: #ddd;
-				-moz-box-shadow:    inset 0 0 10px #999;
-			    -webkit-box-shadow: inset 0 0 10px #999;
-			    box-shadow:         inset 0 0 10px #999;
-
-				div.icon{
-					opacity: 1;
-				}
-			}
-
-			&:first-of-type{
-				border-left: none;
-			}
-
-			&:last-of-type{
-				border-right: none;
-			}
-		}
-
-
-		&.shield-picker{
-			.option{
-				font-size: 14px;
-			}
-
-			div.icon{
-				width: 20px;
-				height: 15px;
-				background-position: center center;
-				background-repeat: no-repeat;
-				background-size: contain;
-				margin-right: 5px;
-				opacity: 0.25;
-			}
-
-			.option:nth-of-type(1) div.icon{
-				background-image: url('../img/shield_none.png');
-			}
-
-			.option:nth-of-type(2) div.icon{
-				background-image: url('../img/shield.png?v=2');
-			}
-
-			.option:nth-of-type(3) div.icon{
-				background-image: url('../img/shield_two.png?v=2');
-				width: 25px;
-				height: 20px;
-			}
-		}
-	}
-
 	a.random,
 	a.swap{
 		font-size: 10px;
@@ -1428,6 +1352,82 @@ b{
 	      animation: BLINK_ANIMATION 2s infinite;
 	}
 
+}
+
+.form-group{
+	border: 1px solid #888;
+	border-radius: 30px;
+	margin-bottom:15px;
+	clear:both;
+	display:flex;
+	flex-wrap:wrap;
+	margin-top:10px;
+	overflow: hidden;
+
+	.option{
+		text-align: left;
+		padding: 5px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 12px;
+		flex-grow: 1;
+		margin-top: 0;
+		border-left: 1px solid #999;
+		border-right: 1px solid #999;
+		background:#eee;
+		cursor: pointer;
+
+		&.on{
+			background: #ddd;
+			-moz-box-shadow:    inset 0 0 10px #999;
+			-webkit-box-shadow: inset 0 0 10px #999;
+			box-shadow:         inset 0 0 10px #999;
+
+			div.icon{
+				opacity: 1;
+			}
+		}
+
+		&:first-of-type{
+			border-left: none;
+		}
+
+		&:last-of-type{
+			border-right: none;
+		}
+	}
+
+
+	&.shield-picker{
+		.option{
+			font-size: 14px;
+		}
+
+		div.icon{
+			width: 20px;
+			height: 15px;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			margin-right: 5px;
+			opacity: 0.25;
+		}
+
+		.option:nth-of-type(1) div.icon{
+			background-image: url('../img/shield_none.png');
+		}
+
+		.option:nth-of-type(2) div.icon{
+			background-image: url('../img/shield.png?v=2');
+		}
+
+		.option:nth-of-type(3) div.icon{
+			background-image: url('../img/shield_two.png?v=2');
+			width: 25px;
+			height: 20px;
+		}
+	}
 }
 
 .hp.bar-back{
@@ -6628,6 +6628,11 @@ a.feed-subscribe{
 				padding: 10px;
 				text-align: left;
 			}
+
+			
+			tr.find{
+				background: $color-sky-blue !important;
+			}
 			
 			th{
 				position:sticky;
@@ -6640,6 +6645,14 @@ a.feed-subscribe{
 				font-weight: bold;
 				font-size: 14px;
 			}
+		}
+	}
+
+	.poke-search-container .form-group{
+		margin: 0 0 0 15px;
+
+		.option{
+			padding: 5px 15px;
 		}
 	}
 }

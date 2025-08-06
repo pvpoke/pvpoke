@@ -100,8 +100,6 @@ var InterfaceMaster = (function () {
 
             }
 
-
-
             this.updateExportCode = function(){
                 $("textarea.import").html(JSON.stringify(data.pokemon));
             }
@@ -110,6 +108,7 @@ var InterfaceMaster = (function () {
 			let searchTimeout;
 			let searchStr = '';
 			let $target = null;
+            let searchMode = "filter";
 
 			$("body").on("keyup", ".poke-search", function(e){
 				searchStr = $(this).val().toLowerCase().trim();
@@ -123,18 +122,58 @@ var InterfaceMaster = (function () {
 
 			function submitSearchQuery(){
 				let list = GameMaster.getInstance().generatePokemonListFromSearchString(searchStr, battle);
+                
+                $target.find("tbody tr").removeClass("find");
+                $target.find("tbody tr").show();
 
-				// Search rows of cmp chart
-				$target.find("tbody tr").each(function(index, value){
-					let id = $(this).attr("data");
+                if(searchMode == "filter"){
+                    // Only show matching rows
+                    $target.find("tbody tr").each(function(index, value){
+                        let id = $(this).attr("data");
 
-					if(list.includes(id)){
-						$(this).show();
-					} else{
-						$(this).hide();
-					}
-				});
+                        if(list.includes(id)){
+                            $(this).show();
+                        } else{
+                            $(this).hide();
+                        }
+                    });
+                } else if(searchMode == "find" && list.length > 0){
+                    // Scroll to the first matching row
+                    let targetId = list[0];
+                    let $targetRow = $target.find("tbody tr[data='"+targetId+"']");
+
+                    if($targetRow.length > 0){
+                        $targetRow.addClass("find");
+
+                        let elTop = $targetRow.position().top;
+                        let containerTop = $(".table-container").position().top;
+                        let gotoTop = elTop - containerTop - 20;
+
+                        $(".table-container").scrollTop(gotoTop);
+                    }
+                }
+
 			}
+
+            // Event handler for selecting form group options
+            $(".form-group .option").click(function(e){
+                let val = $(this).attr("value");
+                let $parent = $(this).closest(".form-group");
+
+                $parent.find(".option").removeClass("on");
+                $(this).addClass("on");
+
+                switch($parent.attr("data")){
+                    case "search-mode":
+                        searchMode = val;
+
+                        if($(".poke-search").first().val() != ''){
+                            $(".poke-search").first().trigger("keyup");
+                        }
+                        break;
+                }
+
+            });
 
 			// Event handler for sorting table columns
 

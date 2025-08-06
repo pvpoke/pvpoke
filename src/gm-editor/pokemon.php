@@ -26,6 +26,11 @@ require_once '../header.php';
         <div class="poke-search-container">
             <input class="poke-search" target="train-table" type="text" placeholder="Search Pokemon" />
             <a href="#" class="search-info">i</a>
+
+            <div class="form-group" data="search-mode">
+                <div class="option on" value="filter">Filter</div>
+                <div class="option" value="find">Find</div>
+            </div>
         </div>
 
         <div class="table-container">
