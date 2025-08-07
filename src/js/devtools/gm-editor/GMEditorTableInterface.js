@@ -172,7 +172,8 @@ var InterfaceMaster = (function () {
             }
 
             this.updateExportCode = function(){
-                $("textarea.import").html(JSON.stringify(source));
+                $("textarea.import").blur();
+                $("textarea.import").val(JSON.stringify(source));
             }
 
             // Search for a Pokemon
@@ -434,13 +435,33 @@ var InterfaceMaster = (function () {
             $(".custom-rankings-import textarea.import").on("change", function(e){
                 try{
                     let customData = JSON.parse($(this).val());
-                    if(customData.length > 0 && customData.every(p => p?.speciesId)){
-                        data.pokemon = customData;
-                        self.displayPokemonList();
+
+                    switch(sourceType){
+                        case "pokemon":
+                            if(customData.length > 0 && customData.every(p => p?.speciesId)){
+                                source = customData;
+                                self.displayList();
+                            } else{
+                                modalWindow("Data Error", $(".import-error").first());
+                                self.updateExportCode();
+                            }
+                            break;
+
+                        case "moves":
+                            if(customData.length > 0 && customData.every(m => m?.moveId)){
+                                source = customData;
+                                self.displayList();
+                            } else{
+                                modalWindow("Data Error", $(".import-error").first());
+                                self.updateExportCode();
+                            }
+                            break;
                     }
+
                 } catch(e){
                     console.error(e);
                     modalWindow("Data Error", $(".import-error").first());
+                    self.updateExportCode();
                 }
                 
             });

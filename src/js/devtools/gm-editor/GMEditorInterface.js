@@ -100,7 +100,7 @@ var InterfaceMaster = (function () {
             }
 
             this.updateExportCode = function(){
-                $("textarea.import").html(JSON.stringify(data));
+                $("textarea.import").val(JSON.stringify(data));
             }
 
             // Change the gamemaster select dropdown

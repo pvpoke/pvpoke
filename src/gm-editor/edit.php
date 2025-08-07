@@ -141,6 +141,19 @@ require_once '../header.php';
 	</div>
 </div>
 
+<div class="import-error hide">
+	<p>There was an error importing the custom data. Ensure that the data is not malformed and contains valid Pokemon or move data.</p>
+</div>
+
+<?php
+if($category == 'pokemon'){
+    require_once '../modules/search-string-help.php';
+} else if($category == 'moves'){
+    require_once '../modules/search-string-help-moves.php';
+}
+
+?>
+
 
 <?php require_once '../modules/scripts/battle-scripts.php'; ?>
 
