@@ -192,7 +192,17 @@ var InterfaceMaster = (function () {
 			});
 
 			function submitSearchQuery(){
-				let list = GameMaster.getInstance().generatePokemonListFromSearchString(searchStr, battle);
+				let list = [];
+                
+                switch(sourceType){
+                    case "pokemon":
+                        list = gm.generatePokemonListFromSearchString(searchStr, battle);
+                        break;
+
+                    case "moves":
+                        list = gm.generateMoveListFromSearchString(searchStr);
+                        break;
+                }
                 
                 $target.find("tbody tr").removeClass("find");
                 $target.find("tbody tr").show();

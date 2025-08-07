@@ -1582,6 +1582,95 @@ var GameMaster = (function () {
 			return results;
 		}
 
+		// Generate a list of moves given a search string
+		object.generateMoveListFromSearchString = function(str){
+
+
+			// Break the search string up into queries
+			var queries = str.toLowerCase().split(/\s*,\s*/);
+
+			// don't bother searching if any of the terms are empty
+			// as all pokemon will be valid
+			if (str == "") {
+				return object.data.moves.map(m=> m.moveId)
+			}
+
+			var results = []; // Store an array of qualifying Move ID's
+
+			for(var i = 0; i < queries.length; i++){
+				var query = queries[i];
+
+				if(query == ""){
+					continue;
+				}
+
+				var params = query.split('&');
+
+				// iterate over existing pokemon instead of creating new objects
+				for(const moveData of object.data.moves){
+					const move = object.getMoveById(moveData.moveId);
+
+					var paramsMet = 0;
+
+					for(var j = 0; j < params.length; j++){
+						var param = params[j];
+						var isNot = false;
+						var valid = false;
+
+						if(param.length == 0){
+							if(params.length == 1){
+								paramsMet++;
+							}
+							continue;
+						}
+
+						if((param.charAt(0) == "!")&&(param.length > 1)){
+							isNot = true;
+							param = param.substr(1, param.length-1);
+						}
+
+						// Name search
+						let moveNameParts = move.name.split(" ");
+						if(moveNameParts.some(name => name.toLowerCase().startsWith(param))){
+							valid = true;
+						}
+
+						// Type search
+						if(move.type == param){
+							valid = true;
+						}
+
+						// Abbreviation search
+						if(move.abbreviation.toLowerCase() == param){
+							valid = true;
+						}
+
+						// Archetype
+						if(move.archetype.toLowerCase() == param){
+							valid = true;
+						}
+
+						// Category search
+						if(param == "fast" && move.energyGain > 0){
+							valid = true;
+						} else if(param == "charged" && move.energy > 0){
+							valid = true;
+						}
+
+						if(((valid)&&(!isNot))||((!valid)&&(isNot))){
+							paramsMet++;
+						}
+					}
+
+					if(paramsMet >= params.length){
+						results.push(move.moveId);
+					}
+				}
+			}
+
+			return results;
+		}
+
 		// Override a Pokemon's moveset to be used in the rankings
 
 		object.overrideMoveset = function(pokemon, league, cup, overrides){
