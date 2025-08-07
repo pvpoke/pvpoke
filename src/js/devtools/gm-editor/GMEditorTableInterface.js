@@ -19,6 +19,7 @@ var InterfaceMaster = (function () {
             let source; // Point to either the pokemon array or the moves array
             let sourceType;
             let idKey;
+            let nameKey;
 
 			this.init = function(){
                 data = gm.data;
@@ -33,6 +34,7 @@ var InterfaceMaster = (function () {
                         case "pokemon":
                             source = data.pokemon;
                             idKey = "speciesId";
+                            nameKey = "speciesName";
                             sort = "dex";
                             self.displayPokemonList();
                             break;
@@ -40,6 +42,7 @@ var InterfaceMaster = (function () {
                         case "moves":
                             source = data.moves;
                             idKey = "moveId";
+                            nameKey = "name";
                             sort = "name";
                             self.displayMoveList();
                             break;
@@ -47,8 +50,23 @@ var InterfaceMaster = (function () {
                 }
 			}
 
+            // Centralized function for displaying the corresponding list
+            this.displayList = function(){
+                switch(sourceType){
+                    case "pokemon":
+                        self.displayPokemonList();
+                        break;
+
+                    case "moves":
+                        self.displayMoveList();
+                        break;
+                }
+            }
+
             // Display table of all Pokemon
             this.displayPokemonList = function(){
+                gm.createSearchMaps();
+                
                 // Perform after delay to free up main thread
                 setTimeout(function(){
                      $(".train-table tbody").html("");
@@ -120,6 +138,8 @@ var InterfaceMaster = (function () {
 
             // Display table of all moves
             this.displayMoveList = function(){
+                gm.createSearchMaps();
+
                 // Perform after delay to free up main thread
                 setTimeout(function(){
                      $(".train-table tbody").html("");
@@ -303,31 +323,23 @@ var InterfaceMaster = (function () {
                         break;
                 }
 
-                switch(sourceType){
-                    case "pokemon":
-                        self.displayPokemonList();
-                        break;
-
-                    case "moves":
-                        self.displayMoveList();
-                        break;
-                }
+                self.displayList();
 			});
 
-            // Duplicate a Pokemon entry
+            // Duplicate a Pokemon or move entry
 
             $("body").on("click", ".train-table a.poke-copy", function(e){
                 e.preventDefault();
 
-                let speciesId = $(this).closest("tr").attr("data");
+                let selectedId = $(this).closest("tr").attr("data");
 
-                if(speciesId){
+                if(selectedId){
                     
-                    let pokemon = data.pokemon.find(p => p.speciesId == speciesId);
+                    let targetObj = source.find(obj => obj[idKey] == selectedId);
 
-                    if(pokemon){
-                        let pokemonIndex = data.pokemon.findIndex(p => p.speciesId == speciesId);
-                        let newPokemon = {...pokemon};
+                    if(targetObj){
+                        let targetIndex = source.findIndex(obj => obj[idKey] == selectedId);
+                        let copy = {...targetObj};
 
                         let isUniqueId = false;
                         let copyCount = 1;
@@ -336,27 +348,27 @@ var InterfaceMaster = (function () {
 
                         // Iterate on copy counts to find a unique ID (eg. charizard_copy_2)
                         while(! isUniqueId){
-                            newId = newPokemon.speciesId + "_copy";
-                            newName = newPokemon.speciesName + " (Copy)";
+                            newId = copy[idKey] + "_copy";
+                            newName = copy[nameKey] + " (Copy)";
 
                             if(copyCount > 1){
                                 newId += "_" + copyCount;
-                                newName = newPokemon.speciesName + " (Copy " + copyCount + ")";
+                                newName = copy[nameKey] + " (Copy " + copyCount + ")";
                             }
 
-                            if(! data.pokemon.find(p => p.speciesId == newId)){
+                            if(! source.find(obj => obj[idKey] == newId)){
                                 isUniqueId = true;
                             }
 
                             copyCount++;
                         }
 
-                        newPokemon.speciesId = newId;
-                        newPokemon.speciesName = newName;
+                        copy[idKey] = newId;
+                        copy[nameKey] = newName;
 
-                        data.pokemon.splice(pokemonIndex+1, 0, newPokemon);
+                        source.splice(targetIndex+1, 0, copy);
 
-                        self.displayPokemonList();
+                        self.displayList();
 
                         if($(".poke-search").first().val() != ''){
                             $(".poke-search").first().trigger("keyup");
@@ -365,28 +377,28 @@ var InterfaceMaster = (function () {
                 }
             });
 
-            // Delete a Pokemon entry
+            // Delete a Pokemon or move entry
 
             $("body").on("click", ".train-table a.poke-delete", function(e){
                 e.preventDefault();
 
-                let speciesId = $(this).closest("tr").attr("data");
+                let selectedId = $(this).closest("tr").attr("data");
 
-                if(speciesId){
-                    let pokemonIndex = data.pokemon.findIndex(p => p.speciesId == speciesId);
-                    let pokemon = data.pokemon.find(p => p.speciesId == speciesId);
+                if(selectedId){
+                    let targetIndex = source.findIndex(obj => obj[idKey] == selectedId);
+                    let targetObj = source.find(obj => obj[idKey] == selectedId);
 
-                    if(pokemon){
-                        modalWindow("Delete Pokemon", $(".delete-poke-confirm").first());
-                        $(".modal span.name").html(pokemon.speciesName);
+                    if(targetObj){
+                        modalWindow("Delete Entry", $(".delete-poke-confirm").first());
+                        $(".modal span.name").html(targetObj[nameKey]);
                         
                         $(".modal .button.yes").click(function(e){
                             
                             closeModalWindow();
 
-                            data.pokemon.splice(pokemonIndex, 1);
+                            source.splice(targetIndex, 1);
 
-                            self.displayPokemonList();
+                            self.displayList();
                         });
                     }
                 }

@@ -63,9 +63,7 @@ var GameMaster = (function () {
 					}
 				}
 
-				// Initialize search maps
-				object.pokemonMap = new Map(object.data.pokemon.map(pokemon => [pokemon.speciesId, pokemon]));
-				object.moveMap = new Map(object.data.moves.map(move => [move.moveId, move]));
+				object.createSearchMaps();
 
 				if(settings.gamemaster == "gamemaster"){
 					// Sort Pokemon alphabetically for searching
@@ -128,9 +126,7 @@ var GameMaster = (function () {
 						}
 
 						// Initialize search maps
-						object.pokemonMap = new Map(object.data.pokemon.map(pokemon => [pokemon.speciesId, pokemon]));
-						object.moveMap = new Map(object.data.moves.map(move => [move.moveId, move]));
-
+						object.createSearchMaps();
 						object.createPokeSelectList();
 
 						if(typeof InterfaceMaster !== 'undefined'){
@@ -194,6 +190,13 @@ var GameMaster = (function () {
 		// Save a custom gamemaster object to local storage
 		object.saveCustomGameMaster = function(data){
 			window.localStorage.setItem(data.id, JSON.stringify(data));
+		}
+
+		// Create indexed maps for Pokemon and move selection
+		object.createSearchMaps = function(){
+			// Initialize search maps
+			object.pokemonMap = new Map(object.data.pokemon.map(pokemon => [pokemon.speciesId, pokemon]));
+			object.moveMap = new Map(object.data.moves.map(move => [move.moveId, move]));
 		}
 
 		// Create data for Pokemon select dropdown list
