@@ -189,7 +189,15 @@ var GameMaster = (function () {
 
 		// Save a custom gamemaster object to local storage
 		object.saveCustomGameMaster = function(data){
-			window.localStorage.setItem(data.id, JSON.stringify(data));
+			let customData = {
+				id: data.id,
+				title: data.title,
+				dataType: "gamemaster",
+				pokemon: data.pokemon,
+				moves: data.moves
+			}
+
+			window.localStorage.setItem(customData.id, JSON.stringify(customData));
 		}
 
 		// Create indexed maps for Pokemon and move selection

@@ -1725,6 +1725,12 @@ select.large{
 
 	@include gradient($color-gold, $color-gold-dark);
 
+	&[disabled]{
+		@include gradient($color-normal-dark, $color-normal-dark);
+		border: 2px solid rgba(0,0,0,0.2);
+		pointer-events: none;
+	}
+
 	&.update-btn{
 		display:none;
 	}
@@ -6617,7 +6623,7 @@ a.feed-subscribe{
 
 	.table-container{
 		overflow: auto;
-		max-height: 1000px;
+		max-height: 800px;
 		position:relative;
 
 		table{

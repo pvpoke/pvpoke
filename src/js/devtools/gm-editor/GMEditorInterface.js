@@ -12,7 +12,7 @@ var InterfaceMaster = (function () {
             let gm = GameMaster.getInstance();
             let data = {};
             let self = this;
-
+            let lastSavedJSON; // JSON of the last saved data
 
 			this.init = function(){
                 // Load data from local storage
@@ -94,13 +94,28 @@ var InterfaceMaster = (function () {
                     }
                     
                     self.updateExportCode();
+                    self.updateLastSavedJSON();
                 } else{
                     modalWindow("Data Error", $(".import-error").first());
+                    self.updateExportCode();
                 }
             }
 
             this.updateExportCode = function(){
-                $("textarea.import").val(JSON.stringify(data));
+                let json = JSON.stringify(data);
+                $("textarea.import").val(json);
+
+                // Enable or disable save button
+                if(json != lastSavedJSON && data?.id && data?.id != "gamemaster"){
+                    $("#save-btn").removeAttr("disabled");
+                } else{
+                    $("#save-btn").attr("disabled", "disabled");
+                }
+            }
+
+            this.updateLastSavedJSON = function(){
+                lastSavedJSON = JSON.stringify(data);
+                $("#save-btn").attr("disabled", "disabled");
             }
 
             // Change the gamemaster select dropdown
@@ -110,6 +125,8 @@ var InterfaceMaster = (function () {
                 // Set settings cookie here
              
                 gm.loadCustomGameMaster(id, self.setGameMasterData);
+
+                self.updateLastSavedJSON();
             });
 
             // Copy list text
@@ -136,6 +153,7 @@ var InterfaceMaster = (function () {
                 } catch(e){
                     console.error(e);
                     modalWindow("Data Error", $(".import-error").first());
+                    self.updateExportCode();
                 }
                 
             });
@@ -147,7 +165,7 @@ var InterfaceMaster = (function () {
                 modalWindow("Save New Gamemaster", $(".save-new-gm").eq(0));
             });
 
-            // Save data to localstorage
+            // Save new data to localstorage
 
             $("body").on("click", ".modal #save-new-modal-btn", function(e){
                 // Validate new entry
@@ -178,9 +196,14 @@ var InterfaceMaster = (function () {
             $("#save-btn").click(function(e){
                 e.preventDefault();
 
-                gm.saveCustomGameMaster(data);
+                let errors = []; // Add validation here
 
-                modalWindow("Data Saved", $(".save-new-gm").eq(0));
+                if(errors.length == 0){
+                    gm.saveCustomGameMaster(data);
+                    modalWindow("Data Saved", $(".save-data").first());
+                } else{
+                    modalWindow("Error", $(".save-data-error").first());
+                }
             });
 
 		};

@@ -21,7 +21,7 @@ require_once '../header.php';
 
         <div class="flex gap-15">
             <a id="save-new-btn" href="<?php echo $WEB_ROOT; ?>gm-editor/pokemon/" class="button">Save New</a>
-            <a id="save-btn" href="#" class="button" style="display: none">Save</a>
+            <a id="save-btn" href="#" class="button" style="display: none" disabled>Save Changes</a>
             <a id="edit-btn" href="<?php echo $WEB_ROOT; ?>gm-editor/pokemon/" class="button" style="display: none">Edit</a>
         </div>
     </div>
@@ -72,9 +72,16 @@ require_once '../header.php';
 	</div>
 </div>
 
-
 <div class="import-error hide">
 	<p>There was an error importing the custom gamemaster. Ensure that the data is not malformed and contains valid Pokemon and move data.</p>
+</div>
+
+<div class="save-data hide">
+	<p>Data saved successfully.</p>
+</div>
+
+<div class="save-data-error hide">
+	<p>There was an error saving the data. Ensure that all entries are valid.</p>
 </div>
 
 <?php require_once '../modules/scripts/battle-scripts.php'; ?>

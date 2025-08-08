@@ -1402,6 +1402,18 @@ select.large {
   background: linear-gradient(to bottom, #ffcf01 30%, #f9a01b 99%) !important;
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
+.button[disabled] {
+  background: #909aa3;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #909aa3 30%, #909aa3 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #909aa3 30%, #909aa3 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #909aa3 30%, #909aa3 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  border: 2px solid rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
 .button.update-btn {
   display: none;
 }
@@ -6049,7 +6061,7 @@ a.feed-subscribe {
 #gm-editor-pokemon .table-container,
 #gm-editor-moves .table-container {
   overflow: auto;
-  max-height: 1000px;
+  max-height: 800px;
   position: relative;
 }
 #gm-editor-pokemon .table-container table,

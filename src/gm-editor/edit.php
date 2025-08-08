@@ -120,6 +120,10 @@ require_once '../header.php';
                 </tbody>
             </table>
         </div>
+
+        <div class="flex">
+            <div id="save-changes-btn" class="button" style="margin-top:25px;" disabled>Save Changes</div>
+        </div>
     <?php endif; ?>
 </div>
 
@@ -144,6 +148,15 @@ require_once '../header.php';
 <div class="import-error hide">
 	<p>There was an error importing the custom data. Ensure that the data is not malformed and contains valid Pokemon or move data.</p>
 </div>
+
+<div class="save-data hide">
+	<p>Data saved successfully.</p>
+</div>
+
+<div class="save-data-error hide">
+	<p>There was an error saving the data. Ensure that all entries are valid.</p>
+</div>
+
 
 <?php
 if($category == 'pokemon'){

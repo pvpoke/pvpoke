@@ -18,6 +18,7 @@ var InterfaceMaster = (function () {
 			let sortDirection = 1;
             let source; // Point to either the pokemon array or the moves array
             let sourceType;
+            let lastSavedJSON; // JSON of the last saved data
             let idKey;
             let nameKey;
 
@@ -48,6 +49,8 @@ var InterfaceMaster = (function () {
                             break;
                     }
                 }
+
+                lastSavedJSON = JSON.stringify(source);
 			}
 
             // Centralized function for displaying the corresponding list
@@ -172,8 +175,16 @@ var InterfaceMaster = (function () {
             }
 
             this.updateExportCode = function(){
+                let json = JSON.stringify(source);
                 $("textarea.import").blur();
-                $("textarea.import").val(JSON.stringify(source));
+                $("textarea.import").val(json);
+
+                // Enable or disable save button
+                if(json != lastSavedJSON){
+                    $("#save-changes-btn").removeAttr("disabled");
+                } else{
+                    $("#save-changes-btn").attr("disabled", "disabled");
+                }
             }
 
             // Search for a Pokemon
@@ -468,30 +479,17 @@ var InterfaceMaster = (function () {
 
             // Save data to localstorage
 
-            $("body").on("click", ".modal #save-new-modal-btn", function(e){
-                // Validate new entry
-                let title = $(".modal #gm_name").val();
-                let id = GMEditorUtils.StringToID(title, "gm_id");
-                let errors = GMEditorUtils.ValidateField("gm_id", id);
-
-                $(".modal #gm_name + .error-label").hide();
+            $("#save-changes-btn").click(function(e){
+                let errors = []; // Add validation here
 
                 if(errors.length == 0){
-                    data.title = title;
-                    data.id = id;
-
-                    self.updateExportCode();
-
                     gm.saveCustomGameMaster(data);
-                    
-                    // Navigate to edit page
-                    window.location.href = $("a#save-new-btn").attr("href");
-                } else{
-                    $(".modal #gm_name + .error-label").show();
-                    $(".modal #gm_name + .error-label").html(errors.join(" "));
-                }
+                    modalWindow("Data Saved", $(".save-data").first());
 
-                console.log(errors);
+                    lastSavedJSON = JSON.stringify(source);
+                } else{
+                    modalWindow("Error", $(".save-data-error").first());
+                }
 
             });
 
