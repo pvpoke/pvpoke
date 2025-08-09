@@ -909,7 +909,7 @@
         "level25CP": 1097,
         "tags": ["shadoweligible"],
         "eliteMoves": ["BUG_BITE", "DRILL_RUN"],
-        "searchPriority": 4,
+        "searchPriority": 3,
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
         "released": true,
@@ -965,7 +965,6 @@
         },
         "tags": ["shadow"],
         "eliteMoves": ["BUG_BITE", "DRILL_RUN"],
-        "searchPriority": 4,
         "buddyDistance": 1,
         "thirdMoveCost": 10000,
         "released": true,
@@ -7631,7 +7630,35 @@
         "family": {
             "id": "FAMILY_STARYU",
             "evolutions": ["starmie"]
-        }
+        },
+        "level25CP": 653,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 120,
+        "speciesName": "Staryu (Shadow)",
+        "speciesId": "staryu_shadow",
+        "baseStats": {
+            "atk": 137,
+            "def": 112,
+            "hp": 102
+        },
+        "types": ["water", "none"],
+        "fastMoves": ["TACKLE", "WATER_GUN"],
+        "chargedMoves": ["BUBBLE_BEAM", "POWER_GEM", "SWIFT"],
+        "defaultIVs": {
+            "cp500": [16.5, 4, 14, 13],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_STARYU",
+            "evolutions": ["starmie_shadow"]
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 121,
@@ -7660,7 +7687,38 @@
             "id": "FAMILY_STARYU",
             "parent": "staryu"
         },
-        "searchPriority": 3
+        "searchPriority": 3,
+        "level25CP": 1582,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 121,
+        "speciesName": "Starmie (Shadow)",
+        "speciesId": "starmie_shadow",
+        "baseStats": {
+            "atk": 210,
+            "def": 184,
+            "hp": 155
+        },
+        "types": ["water", "psychic"],
+        "fastMoves": ["HIDDEN_POWER_BUG", "HIDDEN_POWER_DARK", "HIDDEN_POWER_DRAGON", "HIDDEN_POWER_ELECTRIC", "HIDDEN_POWER_FIGHTING", "HIDDEN_POWER_FIRE", "HIDDEN_POWER_FLYING", "HIDDEN_POWER_GHOST", "HIDDEN_POWER_GRASS", "HIDDEN_POWER_GROUND", "HIDDEN_POWER_ICE", "HIDDEN_POWER_POISON", "HIDDEN_POWER_PSYCHIC", "HIDDEN_POWER_ROCK", "HIDDEN_POWER_STEEL", "HIDDEN_POWER_WATER", "TACKLE", "WATER_GUN", "PSYWAVE"],
+        "chargedMoves": ["HYDRO_PUMP", "ICE_BEAM", "POWER_GEM", "PSYBEAM", "PSYCHIC", "THUNDER", "SURF"],
+        "defaultIVs": {
+            "cp500": [7.5, 4, 10, 8],
+            "cp1500": [21.5, 5, 13, 13],
+            "cp2500": [41.5, 4, 14, 15],
+            "cp2500l40": [39, 12, 14, 14]
+        },
+        "eliteMoves": ["TACKLE"],
+        "buddyDistance": 3,
+        "thirdMoveCost": 50000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_STARYU",
+            "parent": "staryu_shadow"
+        },
+        "searchPriority": 3,
+        "tags": ["shadow"]
     },
     {
         "dex": 122,
@@ -24806,7 +24864,7 @@
         "fastMoves": ["DRAGON_BREATH", "SHADOW_CLAW"],
         "chargedMoves": ["ANCIENT_POWER", "DRAGON_CLAW", "SHADOW_SNEAK", "SHADOW_FORCE"],
         "eliteMoves": ["SHADOW_FORCE"],
-        "tags": ["legendary"],
+        "tags": ["legendary", "shadoweligible"],
         "defaultIVs": {
             "cp500": [5.5, 13, 14, 14],
             "cp1500": [16.5, 4, 14, 14],
@@ -24816,7 +24874,8 @@
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
         "released": true,
-        "nicknames": ["tina", "gira a", "tinaa", "tina a"]
+        "nicknames": ["tina", "gira a", "tinaa", "tina a"],
+        "level25CP": 2108
     },
     {
         "dex": 487,
@@ -24842,6 +24901,57 @@
         "thirdMoveCost": 100000,
         "released": true,
         "nicknames": ["tina", "gira o", "tinao", "tina o"]
+    },
+    {
+        "dex": 487,
+        "speciesName": "Giratina (Altered) (Shadow)",
+        "speciesId": "giratina_altered_shadow",
+        "baseStats": {
+            "atk": 187,
+            "def": 225,
+            "hp": 284
+        },
+        "types": ["ghost", "dragon"],
+        "fastMoves": ["DRAGON_BREATH", "SHADOW_CLAW"],
+        "chargedMoves": ["ANCIENT_POWER", "DRAGON_CLAW", "SHADOW_SNEAK", "SHADOW_FORCE"],
+        "eliteMoves": ["SHADOW_FORCE"],
+        "tags": ["legendary", "shadow"],
+        "defaultIVs": {
+            "cp500": [5.5, 13, 14, 14],
+            "cp1500": [16.5, 6, 8, 15],
+            "cp2500": [27, 7, 15, 14]
+        },
+        "searchPriority": 7,
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": true,
+        "nicknames": ["tina", "gira a", "tinaa", "tina a"]
+    },
+    {
+        "dex": 487,
+        "speciesName": "Giratina (Altered) (Shadow)",
+        "speciesId": "giratina_altered_shadow_b",
+        "aliasId": "giratina_altered_shadow",
+        "baseStats": {
+            "atk": 187,
+            "def": 225,
+            "hp": 284
+        },
+        "types": ["ghost", "dragon"],
+        "fastMoves": ["DRAGON_BREATH", "SHADOW_CLAW"],
+        "chargedMoves": ["ANCIENT_POWER", "DRAGON_CLAW", "SHADOW_SNEAK", "SHADOW_FORCE"],
+        "eliteMoves": ["SHADOW_FORCE"],
+        "tags": ["legendary", "shadow", "duplicate", "duplicate1500"],
+        "defaultIVs": {
+            "cp500": [5.5, 13, 14, 14],
+            "cp1500": [16.5, 6, 8, 15],
+            "cp2500": [27, 7, 15, 14]
+        },
+        "searchPriority": 7,
+        "buddyDistance": 20,
+        "thirdMoveCost": 100000,
+        "released": true,
+        "nicknames": ["tina", "gira a", "tinaa", "tina a"]
     },
     {
         "dex": 488,
@@ -32081,7 +32191,35 @@
         "family": {
             "id": "FAMILY_FLETCHLING",
             "evolutions": ["fletchinder"]
-        }
+        },
+        "level25CP": 428,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 661,
+        "speciesName": "Fletchling (Shadow)",
+        "speciesId": "fletchling_shadow",
+        "baseStats": {
+            "atk": 95,
+            "def": 80,
+            "hp": 128
+        },
+        "types": ["normal", "flying"],
+        "fastMoves": ["PECK", "QUICK_ATTACK"],
+        "chargedMoves": ["AERIAL_ACE", "HEAT_WAVE", "SWIFT", "FLY"],
+        "defaultIVs": {
+            "cp500": [24, 5, 15, 15],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_FLETCHLING",
+            "evolutions": ["fletchinder_shadow"]
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 662,
@@ -32108,7 +32246,37 @@
             "id": "FAMILY_FLETCHLING",
             "parent": "fletchling",
             "evolutions": ["talonflame"]
-        }
+        },
+        "level25CP": 852,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 662,
+        "speciesName": "Fletchinder (Shadow)",
+        "speciesId": "fletchinder_shadow",
+        "baseStats": {
+            "atk": 145,
+            "def": 110,
+            "hp": 158
+        },
+        "types": ["fire", "flying"],
+        "fastMoves": ["PECK", "EMBER", "STEEL_WING"],
+        "chargedMoves": ["AERIAL_ACE", "HEAT_WAVE", "FLAME_CHARGE", "FLY"],
+        "defaultIVs": {
+            "cp500": [13, 4, 11, 15],
+            "cp1500": [47.5, 4, 14, 15],
+            "cp2500": [50, 15, 15, 15],
+            "cp1500l40": [40, 15, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_FLETCHLING",
+            "parent": "fletchling_shadow",
+            "evolutions": ["talonflame_shadow"]
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 663,
@@ -32135,7 +32303,37 @@
         "family": {
             "id": "FAMILY_FLETCHLING",
             "parent": "fletchinder"
-        }
+        },
+        "level25CP": 1333,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 663,
+        "speciesName": "Talonflame (Shadow)",
+        "speciesId": "talonflame_shadow",
+        "baseStats": {
+            "atk": 176,
+            "def": 155,
+            "hp": 186
+        },
+        "types": ["fire", "flying"],
+        "fastMoves": ["PECK", "FIRE_SPIN", "STEEL_WING", "INCINERATE"],
+        "chargedMoves": ["BRAVE_BIRD", "FIRE_BLAST", "FLAME_CHARGE", "HURRICANE", "FLY"],
+        "eliteMoves": ["INCINERATE"],
+        "defaultIVs": {
+            "cp500": [8.5, 4, 15, 15],
+            "cp1500": [25.5, 4, 12, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "searchPriority": 15,
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_FLETCHLING",
+            "parent": "fletchinder_shadow"
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 664,
@@ -34420,7 +34618,35 @@
         "family": {
             "id": "FAMILY_PIKIPEK",
             "evolutions": ["trumbeak"]
-        }
+        },
+        "level25CP": 491,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 731,
+        "speciesName": "Pikipek (Shadow)",
+        "speciesId": "pikipek_shadow",
+        "baseStats": {
+            "atk": 136,
+            "def": 59,
+            "hp": 111
+        },
+        "types": ["normal", "flying"],
+        "fastMoves": ["PECK", "ROCK_SMASH"],
+        "chargedMoves": ["DRILL_PECK", "AERIAL_ACE", "SKY_ATTACK"],
+        "defaultIVs": {
+            "cp500": [21, 4, 13, 15],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_PIKIPEK",
+            "evolutions": ["trumbeak_shadow"]
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 732,
@@ -34447,7 +34673,37 @@
             "id": "FAMILY_PIKIPEK",
             "parent": "pikipek",
             "evolutions": ["toucannon"]
-        }
+        },
+        "level25CP": 857,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 732,
+        "speciesName": "Trumbeak (Shadow)",
+        "speciesId": "trumbeak_shadow",
+        "baseStats": {
+            "atk": 159,
+            "def": 100,
+            "hp": 146
+        },
+        "types": ["normal", "flying"],
+        "fastMoves": ["PECK", "ROCK_SMASH"],
+        "chargedMoves": ["DRILL_PECK", "ROCK_BLAST", "SKY_ATTACK"],
+        "defaultIVs": {
+            "cp500": [12.5, 5, 15, 15],
+            "cp1500": [46, 4, 15, 15],
+            "cp2500": [50, 15, 15, 15],
+            "cp1500l40": [40, 15, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_PIKIPEK",
+            "parent": "pikipek_shadow",
+            "evolutions": ["toucannon_shadow"]
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 733,
@@ -34472,7 +34728,35 @@
         "family": {
             "id": "FAMILY_PIKIPEK",
             "parent": "trumbeak"
-        }
+        },
+        "level25CP": 1649,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 733,
+        "speciesName": "Toucannon (Shadow)",
+        "speciesId": "toucannon_shadow",
+        "baseStats": {
+            "atk": 222,
+            "def": 146,
+            "hp": 190
+        },
+        "types": ["normal", "flying"],
+        "fastMoves": ["PECK", "ROCK_SMASH", "BULLET_SEED"],
+        "chargedMoves": ["DRILL_PECK", "ROCK_BLAST", "FLASH_CANNON"],
+        "defaultIVs": {
+            "cp500": [7, 4, 15, 14],
+            "cp1500": [20.5, 5, 14, 14],
+            "cp2500": [39, 4, 13, 13]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_PIKIPEK",
+            "parent": "trumbeak_shadow"
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 734,
@@ -34547,7 +34831,35 @@
         "family": {
             "id": "FAMILY_GRUBBIN",
             "evolutions": ["charjabug"]
-        }
+        },
+        "level25CP": 543,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 736,
+        "speciesName": "Grubbin (Shadow)",
+        "speciesId": "grubbin_shadow",
+        "baseStats": {
+            "atk": 115,
+            "def": 85,
+            "hp": 132
+        },
+        "types": ["bug", "none"],
+        "fastMoves": ["BUG_BITE", "SPARK"],
+        "chargedMoves": ["X_SCISSOR", "VICE_GRIP", "CRUNCH"],
+        "defaultIVs": {
+            "cp500": [19.5, 4, 14, 15],
+            "cp1500": [50, 15, 15, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_GRUBBIN",
+            "evolutions": ["charjabug_shadow"]
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 737,
@@ -34575,7 +34887,38 @@
             "id": "FAMILY_GRUBBIN",
             "parent": "grubbin",
             "evolutions": ["vikavolt"]
-        }
+        },
+        "level25CP": 1001,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 737,
+        "speciesName": "Charjabug (Shadow)",
+        "speciesId": "charjabug_shadow",
+        "baseStats": {
+            "atk": 145,
+            "def": 161,
+            "hp": 149
+        },
+        "types": ["bug", "electric"],
+        "fastMoves": ["BUG_BITE", "SPARK", "VOLT_SWITCH"],
+        "chargedMoves": ["X_SCISSOR", "DISCHARGE", "CRUNCH"],
+        "eliteMoves": ["VOLT_SWITCH"],
+        "defaultIVs": {
+            "cp500": [11, 5, 15, 15],
+            "cp1500": [36.5, 4, 14, 15],
+            "cp2500": [50, 15, 15, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "searchPriority": 12,
+        "released": true,
+        "family": {
+            "id": "FAMILY_GRUBBIN",
+            "parent": "grubbin_shadow",
+            "evolutions": ["vikavolt_shadow"]
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 738,
@@ -34601,7 +34944,36 @@
         "family": {
             "id": "FAMILY_GRUBBIN",
             "parent": "charjabug"
-        }
+        },
+        "level25CP": 1932,
+        "tags": ["shadoweligible"]
+    },
+    {
+        "dex": 738,
+        "speciesName": "Vikavolt (Shadow)",
+        "speciesId": "vikavolt_shadow",
+        "baseStats": {
+            "atk": 254,
+            "def": 158,
+            "hp": 184
+        },
+        "types": ["bug", "electric"],
+        "fastMoves": ["BUG_BITE", "SPARK", "MUD_SLAP", "VOLT_SWITCH"],
+        "chargedMoves": ["X_SCISSOR", "DISCHARGE", "CRUNCH", "FLY"],
+        "eliteMoves": ["VOLT_SWITCH"],
+        "defaultIVs": {
+            "cp500": [6, 8, 15, 14],
+            "cp1500": [17.5, 4, 15, 15],
+            "cp2500": [29.5, 4, 12, 15]
+        },
+        "buddyDistance": 1,
+        "thirdMoveCost": 10000,
+        "released": true,
+        "family": {
+            "id": "FAMILY_GRUBBIN",
+            "parent": "charjabug_shadow"
+        },
+        "tags": ["shadow"]
     },
     {
         "dex": 739,
@@ -39215,7 +39587,7 @@
         },
         "types": ["poison", "dragon"],
         "fastMoves": ["DRAGON_TAIL", "POISON_JAB"],
-        "chargedMoves": ["CROSS_POISON", "DRAGON_PULSE", "FLAMETHROWER", "HYPER_BEAM"],
+        "chargedMoves": ["CROSS_POISON", "FLAMETHROWER", "HYPER_BEAM"],
         "defaultIVs": {
             "cp500": [4.5, 4, 10, 11],
             "cp1500": [12.5, 4, 14, 8],
@@ -39236,7 +39608,7 @@
         },
         "types": ["poison", "dragon"],
         "fastMoves": ["DRAGON_TAIL", "POISON_JAB"],
-        "chargedMoves": ["CROSS_POISON", "DRAGON_PULSE", "FLAMETHROWER", "HYPER_BEAM"],
+        "chargedMoves": ["CROSS_POISON", "FLAMETHROWER", "HYPER_BEAM"],
         "defaultIVs": {
             "cp500": [2.5, 15, 15, 14],
             "cp1500": [7, 4, 4, 5],
@@ -40776,7 +41148,7 @@
             "cp1500": [21, 4, 15, 12],
             "cp2500": [39.5, 4, 15, 15]
         },
-        "searchPriority": 3,
+        "searchPriority": 5,
         "buddyDistance": 1,
         "thirdMoveCost": 50000,
         "released": true,
