@@ -6053,8 +6053,8 @@ a.feed-subscribe {
   font-size: 18px;
 }
 
-#gm-editor-pokemon a.gm-title,
-#gm-editor-moves a.gm-title {
+#gm-editor-pokemon .gm-title,
+#gm-editor-moves .gm-title {
   font-size: 18px;
   font-weight: bold;
 }
@@ -6099,6 +6099,52 @@ a.feed-subscribe {
 #gm-editor-pokemon .poke-search-container .form-group .option,
 #gm-editor-moves .poke-search-container .form-group .option {
   padding: 5px 15px;
+}
+#gm-editor-pokemon .gm-entry-section,
+#gm-editor-moves .gm-entry-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#gm-editor-pokemon .gm-entry-section h3,
+#gm-editor-moves .gm-entry-section h3 {
+  margin: 10px 0;
+}
+#gm-editor-pokemon .gm-entry-section .gm-entry-row,
+#gm-editor-moves .gm-entry-section .gm-entry-row {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+#gm-editor-pokemon .gm-entry-section .gm-entry-row .gm-field-wrapper,
+#gm-editor-moves .gm-entry-section .gm-entry-row .gm-field-wrapper {
+  flex: 1;
+  min-width: 150px;
+}
+#gm-editor-pokemon .gm-entry-section .gm-field-wrapper label,
+#gm-editor-moves .gm-entry-section .gm-field-wrapper label {
+  font-size: 12px;
+  margin-bottom: 2px;
+  font-weight: bold;
+  display: block;
+}
+#gm-editor-pokemon .gm-entry-section .gm-field-wrapper label:nth-of-type(n + 2),
+#gm-editor-moves .gm-entry-section .gm-field-wrapper label:nth-of-type(n + 2) {
+  margin-top: 10px;
+}
+#gm-editor-pokemon .gm-entry-section .gm-field-wrapper .description,
+#gm-editor-moves .gm-entry-section .gm-field-wrapper .description {
+  margin-top: 10px;
+  font-size: 12px;
+}
+#gm-editor-pokemon .gm-entry-section .gm-field-wrapper .form-group,
+#gm-editor-moves .gm-entry-section .gm-field-wrapper .form-group {
+  margin: 0;
+}
+#gm-editor-pokemon hr,
+#gm-editor-moves hr {
+  margin: 30px 0 20px 0;
 }
 
 .error-label {

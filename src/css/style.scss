@@ -6616,7 +6616,7 @@ a.feed-subscribe{
 
 #gm-editor-pokemon,
 #gm-editor-moves{
-	a.gm-title{
+	.gm-title{
 		font-size: 18px;
     	font-weight: bold;
 	}
@@ -6661,6 +6661,55 @@ a.feed-subscribe{
 		.option{
 			padding: 5px 15px;
 		}
+	}
+
+	.gm-entry-section{
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+
+		h3{
+			margin: 10px 0;
+		}
+
+		.gm-entry-row{
+			display: flex;
+			align-items: start;
+			gap: 10px;
+			flex-wrap: wrap;
+
+			.gm-field-wrapper{
+				flex: 1;
+				min-width: 150px;
+			}
+		}
+
+		.gm-field-wrapper{
+			label{
+				font-size: 12px;
+				margin-bottom: 2px;
+				font-weight: bold;
+				display: block;
+
+				&:nth-of-type(n + 2){
+					margin-top: 10px;
+				}
+			}
+
+			.description{
+				margin-top: 10px;
+    			font-size: 12px;
+			}
+
+			.form-group{
+				margin: 0;
+			}
+
+		}
+	}
+
+	hr{
+		margin: 30px 0 20px 0;
 	}
 }
 

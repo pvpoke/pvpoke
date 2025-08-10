@@ -14,14 +14,14 @@ $category = '';
 
 if(isset($_GET['c'])){
     if($_GET['c'] == 'pokemon'){
-        $META_TITLE = 'Pokemon | Gamemaster Editor';
+        $META_TITLE = 'All Pokemon | Gamemaster Editor';
         $META_DESCRIPTION = 'Customize Pokemon or add new Pokemon for your simulations.';
         $BODY = 'Customize Pokemon or add new Pokemon for your simulations.';
         $PLACEHOLDER = 'Search Pokemon';
         $EXPORT_TITLE = 'Import/Export All Pokemon';
         $category = 'pokemon';
     } else if($_GET['c'] == 'moves'){
-        $META_TITLE = 'Moves | Gamemaster Editor';
+        $META_TITLE = 'All Moves | Gamemaster Editor';
         $META_DESCRIPTION = 'Customize moves or add new moves for your simulations.';
         $BODY = 'Customize moves or add new moves for your simulations.';
         $PLACEHOLDER = 'Search Moves';

@@ -2,8 +2,17 @@
 
 $META_TITLE = 'Pokemon | Gamemaster Editor';
 
+if(isset($_GET['p'])){
+	// Put Pokemon names in the meta title
+
+	$name = ucwords(str_replace('_',' ', explode('-', htmlspecialchars($_GET['p']))[0]));
+
+	$META_TITLE = $name . ' | Gamemaster Editor';
+}
+
 $META_DESCRIPTION = 'Customize Pokemon or add new Pokemon for your simulations.';
 
+$CANONICAL = '/gm-editor/pokemon/';
 
 require_once '../header.php';
 ?>
@@ -12,70 +21,163 @@ require_once '../header.php';
 
 <div class="section white" id="gm-editor-pokemon">
     <div class="flex space-between align-items-start">
-        <a class="gm-title" href="<?php echo $WEB_ROOT; ?>gm-editor"></a>
+        <a class="gm-title" href="<?php echo $WEB_ROOT; ?>gm-editor/pokemon/">&larr; All Pokemon</a>
         <div class="ranking-categories mode-select">
             <a class="selected" href="<?php echo $WEB_ROOT; ?>gm-editor/pokemon/">Pokemon</a>
             <a href="<?php echo $WEB_ROOT; ?>gm-editor/moves/">Moves</a>
         </div>
     </div>
 
-    <?php if(! isset($_GET['p'])) : ?>
-        <!--All Pokemon table-->
-        <p class="mt-1">Customize Pokemon or add new Pokemon for your simulations.</p>
+    <?php if(isset($_GET['p'])) : ?>
+        <!--Edit individual Pokemon-->
+        <p class="mt-1">Add or edit a Pokemon entry.</p>
+        
+        <div class="gm-entry-section">
+            <h3>Name &amp; ID's</h3>
+            <div class="gm-entry-row">
+                <div class="gm-field-wrapper">
+                    <label class="required">Pokemon ID</label>
+                    <input id="species-id" name="species-id" type="text" placeholder="Enter Pokemon entry ID" />
 
-        <div class="poke-search-container">
-            <input class="poke-search" target="train-table" type="text" placeholder="Search Pokemon" />
-            <a href="#" class="search-info">i</a>
-
-            <div class="form-group" data="search-mode">
-                <div class="option on" value="filter">Filter</div>
-                <div class="option" value="find">Find</div>
+                    <label>Alias ID</label>
+                    <input id="alias-id" name="alias-id" type="text" placeholder="Enter alias ID" />
+                    <div class="description">Enter an alias if this entry is a duplicate of another entry (for the purposes of ranking multiple movesets).</div>
+                </div>
+                <div class="gm-field-wrapper">
+                    <label>Pokemon Name</label>
+                    <input id="species-name" name="species-name" type="text" placeholder="Enter Pokemon name" />
+                </div>
+                <div class="gm-field-wrapper">
+                    <label class="required">Pokedex Number</label>
+                    <input id="dex" name="dex" type="number" placeholder="Enter Pokedex number" />
+                </div>
             </div>
         </div>
 
-        <div class="table-container">
-            <table class="train-table" cellspacing="0">
-                <thead>
-                    <tr>
-                        <th><a href="#" data="dex">Dex</a></th>
-                        <th><a href="#" data="name">Pokemon</a></th>
-                        <th style="min-width: 100px;"></th>
-                        <th>Fast Moves</th>
-                        <th>Charged Moves</th>
-                        <th>Tags</th>
-                        <th><a href="#" data="priority">Search<br>Priority</a></th>
-                        <th><a href="#" data="released">Released</a></th>
-                    </tr>
-                    <!--Row html to clone-->
-                    <tr class="hide">
-                        <td data="dex"></td>
-                        <td data="name"></td>
-                        <td class="controls">
-                            <a class="poke-edit" href="#" target="_blank">Edit</a>
-                            <a class="poke-copy" href="#">Copy</a>
-                            <a class="poke-delete" href="#">Delete</a>
-                        </td>
-                        <td data="fast"></td>
-                        <td data="charged"></td>
-                        <td data="tags"></td>
-                        <td data="priority"></td>
-                        <td data="released"></td>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
+        <hr>
+
+        <div class="gm-entry-section">
+            <h3>Game Data</h3>
+            <div class="gm-entry-row">
+                <div class="gm-field-wrapper">
+                    <label class="required">Primary Type</label>
+                    <select id="primary-type" name="primary-type">
+                        <option value="" selected disabled>Select a type</option>
+                    </select>
+                </div>
+                <div class="gm-field-wrapper">
+                    <label>Secondary Type</label>
+                    <select id="secondary-type" name="secondary-type">
+                        <option value="" selected>Select a type</option>
+                    </select>
+                </div>
+            </div>
+            <div class="gm-entry-row">
+                <div class="gm-field-wrapper">
+                    <label>Base Attack</label>
+                    <input id="stats-atk" name="stats-atk" type="number" placeholder="Enter Base Attack stat" />
+                </div>
+                <div class="gm-field-wrapper">
+                    <label>Base Defense</label>
+                    <input id="stats-def" name="stats-def" type="number" placeholder="Enter Base Defense stat" />
+                </div>
+                <div class="gm-field-wrapper">
+                    <label>Base Stamina (HP)</label>
+                    <input id="stats-hp" name="stats-hp" type="number" placeholder="Enter Base Stamina (HP) stat" />
+                </div>
+            </div>
+
+            <div class="gm-entry-row">
+                <div class="gm-field-wrapper">
+                    <label>Default IV's</label>
+                    <input id="stats-atk" name="stats-atk" type="number" placeholder="Enter Base Attack stat" />
+
+                    <label>Level Floor</label>
+                    <input id="level-floor" name="level-floor" type="number" placeholder="Enter level floor for IV's" />
+                </div>
+            </div>
+
+            <div class="gm-entry-row">
+                <div class="gm-field-wrapper">
+                    <label class="required">Buddy Distance</label>
+                    <select id="buddy-distance" name="buddy-distance">
+                        <option value="" selected disabled>Select buddy distance</option>
+                        <option value="1">1km</option>
+                        <option value="3">3km</option>
+                        <option value="5">5km</option>
+                        <option value="20">20km</option>
+                    </select>
+                </div>
+                <div class="gm-field-wrapper">
+                    <label class="required">Third Move Cost</label>
+                    <select id="third-move-cost" name="third-move-cost">
+                        <option value="" selected disabled>Select third move cost</option>
+                        <option value="10000">10,000</option>
+                        <option value="50000">50,000</option>
+                        <option value="75000">75,000</option>
+                        <option value="100000">100,000</option>
+                    </select>
+                </div>
+            </div>
         </div>
-    <?php else: ?>
-        <!--Edit individual Pokemon-->
-        <p class="mt-1">Customize Pokemon or add new Pokemon for your simulations.</p>
+
+        <hr>
+
+        <div class="gm-entry-section">
+            <h3>Move Data</h3>
+            <div class="gm-field-wrapper">
+                <label class="required">Fast Move Pool</label>
+                <input id="species-id" name="species-id" type="text" placeholder="Enter Pokemon entry ID" />
+            </div>
+            <div class="gm-field-wrapper">
+                <label class="required">Charged Move Pool</label>
+                <input id="species-id" name="species-id" type="text" placeholder="Enter Pokemon entry ID" />
+            </div>
+            <div class="gm-field-wrapper">
+                <label>Elite TM Moves</label>
+                <input id="species-id" name="species-id" type="text" placeholder="Enter Pokemon entry ID" />
+                <div class="description">List any of the above moves which can't be learned via TM but can be learned via Elite TM.</div>
+            </div>
+            <div class="gm-field-wrapper">
+                <label>Legacy Moves</label>
+                <input id="species-id" name="species-id" type="text" placeholder="Enter Pokemon entry ID" />
+                <div class="description">List any of the above moves which can't be learned via TM or Elite TM.</div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="gm-entry-section">
+            <h3>Metadata</h3>
+            <div class="gm-entry-row">
+                <div class="gm-field-wrapper">
+                    <label>Tags</label>
+                    <input id="species-id" name="species-id" type="text" placeholder="Enter Pokemon entry ID" />
+                </div>
+                <div class="gm-field-wrapper">
+                    <label>Released</label>
+                    <div class="form-group" data="released">
+                        <div class="option on" value="yes">Yes</div>
+                        <div class="option" value="no">No</div>
+                    </div>
+                    <div class="description">Unreleased Pokemon do not appear in bulk simulation results (Multi-Battle, Team Builder, etc.).</div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="flex">
+            <div id="save-changes-btn" class="button" disabled>Save Changes</div>
+        </div>
+
     <?php endif; ?>
 </div>
 
 <div class="section white custom-rankings-import">
-	<h3>Import/Export All Pokemon</h3>
+	<h3>Import/Export Pokemon Entry</h3>
 
-	<p>Copy the text below to export all Pokemon data from your custom gamemaster or paste to overwrite it. Only copy and paste code from a trusted source.</p>
+	<p>Copy the text below to export this Pokemon entry or paste to overwrite it. Only copy and paste code from a trusted source.</p>
 
 	<textarea class="import"></textarea>
 	<div class="copy">Copy</div>

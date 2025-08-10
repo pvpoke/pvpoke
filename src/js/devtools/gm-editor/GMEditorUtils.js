@@ -53,7 +53,7 @@ class GMEditorUtils{
         return errors;
     }
 
-    // Validations - required, string min length, string max length, unique, number, number min, number max, integer, allowed values, invalid values
+    // Validations - required, string min length, string max length, unique, number, number min, number max, integer, allowed values, invalid values, regex
 }
 
 // Load validations

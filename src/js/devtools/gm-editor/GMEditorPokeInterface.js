@@ -20,7 +20,6 @@ var InterfaceMaster = (function () {
 
 			this.init = function(){
                 data = gm.data;
-                $("a.gm-title").html("&larr; " + data.title);
 
                 if(! get){
                     self.displayPokemonList();
