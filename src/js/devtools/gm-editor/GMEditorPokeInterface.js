@@ -14,93 +14,81 @@ var InterfaceMaster = (function () {
             let self = this;
             let battle = new Battle();
 
-            let sort = "attack";
-			let sortDirection = 1;
+            let selectedPokemon;
 
 
 			this.init = function(){
                 data = gm.data;
 
-                if(! get){
-                    self.displayPokemonList();
-
-                    pokeSearch.setBattle(battle);
+                if(get){
+                    self.loadGetData();
                 }
 			}
 
-            this.displayPokemonList = function(){
-                // Perform after delay to free up main thread
-                setTimeout(function(){
-                     $(".train-table tbody").html("");
+			// Given JSON of get parameters, load these settings
 
-                    data.pokemon.forEach(pokemon => {
-                        let $row = $(".train-table tr.hide").first().clone().removeClass("hide");
-                        
-                        $row.attr("data", pokemon.speciesId);
-                        $row.find("td[data='dex']").html(pokemon.dex);
-                        $row.find("td[data='name']").html(pokemon.speciesName);
+			this.loadGetData = function(){
 
-                        let fastList = [];
-                        let chargedList = [];
+				if(! get){
+					return false;
+				}
 
-                        pokemon.fastMoves.forEach(move => {
-                            let name = gm.getMoveById(move).name
+				// Cycle through parameters and set them
 
-                            if(pokemon?.eliteMoves?.includes(move)){
-                                name += "*";
-                            }
+				for(let key in get){
+					if(get.hasOwnProperty(key)){
 
-                            if(pokemon?.legacyMoves?.includes(move)){
-                                name += "†"
-                            }
+						let val = get[key];
 
-                            fastList.push(name);
-                        });
+						// Process each type of parameter
 
-                        pokemon.chargedMoves.forEach(move => {
-                            let name = gm.getMoveById(move).name
+						switch(key){
+							case "p":
+								selectedPokemon = gm.getPokemonById(val);
 
-                            if(pokemon?.eliteMoves?.includes(move)){
-                                name += "*";
-                            }
+                                if(selectedPokemon){
+                                    self.displaySelectedPokemon();
+                                    self.updateExportCode();
+                                }
+								break;
+						}
+					}
+				}
+			}
 
-                            if(pokemon?.legacyMoves?.includes(move)){
-                                name += "†"
-                            }
+            // Update all form fields with data from the selected Pokemon entry
 
-                            chargedList.push(name);
-                        });
+            this.displaySelectedPokemon = function(){
+                if(! selectedPokemon){
+                    return false;
+                }
 
-                        $row.find("td[data='fast']").html(fastList.join(", "));
-                        $row.find("td[data='charged']").html(chargedList.join(", "));
+                // Name & ID's
 
-                        if(pokemon.tags){
-                            $row.find("td[data='tags']").html(pokemon.tags.join(", "));
-                        }
+                $("#species-id").val(selectedPokemon.speciesId);
+                $("#species-name").val(selectedPokemon.speciesName);
+                $("#dex").val(selectedPokemon.dex);
 
-                        if(pokemon.searchPriority){
-                            $row.find("td[data='priority']").html(pokemon.searchPriority);
-                        }
+                if(selectedPokemon?.aliasId){
+                    $("#alias-id").val(selectedPokemon.aliasId);
+                }
 
-                        if(pokemon.released == true){
-                            $row.find("td[data='released']").html("Yes");
-                        } else{
-                            $row.find("td[data='released']").html("No");
-                        }
+                // Game data
+                $("#stats-atk").val(selectedPokemon.baseStats.atk);
+                $("#stats-def").val(selectedPokemon.baseStats.def);
+                $("#stats-hp").val(selectedPokemon.baseStats.hp);
 
-                        $row.find("a.poke-edit").attr("href", host+"gm-editor/pokemon/"+pokemon.speciesId+"/");
-                        
+                $("#buddy-distance option[value='"+selectedPokemon.buddyDistance+"']").prop("selected", "selected");
+                $("#third-move-cost option[value='"+selectedPokemon.thirdMoveCost+"']").prop("selected", "selected");
 
-                        $(".train-table tbody").append($row);
-                    });
-
-                    self.updateExportCode();
-                }, 50);
+                if(selectedPokemon?.levelFloor){
+                    $("#level-floor").val(selectedPokemon.levelFloor);
+                }
 
             }
 
             this.updateExportCode = function(){
-                $("textarea.import").html(JSON.stringify(data.pokemon));
+                $("textarea.import").html(JSON.stringify(selectedPokemon));
             }
 
             // Search for a Pokemon
