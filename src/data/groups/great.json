@@ -57,6 +57,11 @@
         "shadowType": "shadow"
     },
     {
+        "speciesId": "dunsparce",
+        "fastMove": "ROLLOUT",
+        "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
+    },
+    {
         "speciesId": "dusclops",
         "fastMove": "HEX",
         "chargedMoves": ["ICE_PUNCH", "SHADOW_PUNCH"]
@@ -105,6 +110,11 @@
         "chargedMoves": ["X_SCISSOR", "AQUA_JET"]
     },
     {
+        "speciesId": "greninja",
+        "fastMove": "WATER_SHURIKEN",
+        "chargedMoves": ["HYDRO_CANNON", "NIGHT_SLASH"]
+    },
+    {
         "speciesId": "jellicent",
         "fastMove": "HEX",
         "chargedMoves": ["SURF", "SHADOW_BALL"]
@@ -133,6 +143,11 @@
     {
         "speciesId": "mandibuzz",
         "fastMove": "SNARL",
+        "chargedMoves": ["DARK_PULSE", "AERIAL_ACE"]
+    },
+    {
+        "speciesId": "mandibuzz",
+        "fastMove": "AIR_SLASH",
         "chargedMoves": ["DARK_PULSE", "AERIAL_ACE"]
     },
     {
@@ -191,6 +206,11 @@
         "shadowType": "shadow"
     },
     {
+        "speciesId": "stunfisk",
+        "fastMove": "THUNDER_SHOCK",
+        "chargedMoves": ["MUD_BOMB", "DISCHARGE"]
+    },
+    {
         "speciesId": "swampert",
         "fastMove": "MUD_SHOT",
         "chargedMoves": ["HYDRO_CANNON", "SLUDGE"]
@@ -206,20 +226,15 @@
         "chargedMoves": ["PLAY_ROUGH", "BULLDOZE"]
     },
     {
-        "speciesId": "weezing_galarian",
-        "fastMove": "FAIRY_WIND",
-        "chargedMoves": ["SLUDGE", "BRUTAL_SWING"]
-    },
-    {
-        "speciesId": "mandibuzz",
-        "fastMove": "AIR_SLASH",
-        "chargedMoves": ["DARK_PULSE", "AERIAL_ACE"]
-    },
-    {
         "speciesId": "typhlosion_shadow",
         "fastMove": "INCINERATE",
         "chargedMoves": ["BLAST_BURN", "THUNDER_PUNCH"],
         "shadowType": "shadow"
+    },
+    {
+        "speciesId": "weezing_galarian",
+        "fastMove": "FAIRY_WIND",
+        "chargedMoves": ["SLUDGE", "BRUTAL_SWING"]
     },
     {
         "speciesId": "wigglytuff",
@@ -227,18 +242,15 @@
         "chargedMoves": ["ICY_WIND", "SWIFT"]
     },
     {
-        "speciesId": "dunsparce",
-        "fastMove": "ROLLOUT",
-        "chargedMoves": ["DRILL_RUN", "ROCK_SLIDE"]
+        "speciesId": "giratina_altered_shadow",
+        "fastMove": "DRAGON_BREATH",
+        "chargedMoves": ["DRAGON_CLAW", "ANCIENT_POWER"],
+        "shadowType": "shadow"
     },
     {
-        "speciesId": "greninja",
-        "fastMove": "WATER_SHURIKEN",
-        "chargedMoves": ["HYDRO_CANNON", "NIGHT_SLASH"]
-    },
-    {
-        "speciesId": "stunfisk",
-        "fastMove": "THUNDER_SHOCK",
-        "chargedMoves": ["MUD_BOMB", "DISCHARGE"]
+        "speciesId": "giratina_altered_shadow",
+        "fastMove": "SHADOW_CLAW",
+        "chargedMoves": ["DRAGON_CLAW", "SHADOW_SNEAK"],
+        "shadowType": "shadow"
     }
 ]

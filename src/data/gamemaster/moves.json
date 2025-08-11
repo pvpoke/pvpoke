@@ -484,6 +484,19 @@
     "archetype": "Heavy Damage",
     "turns": 3
 }, {
+    "moveId": "CHILLING_WATER",
+    "name": "Chilling Water (Speculative)",
+    "type": "water",
+    "power": 60,
+    "energy": 45,
+    "energyGain": 0,
+    "cooldown": 500,
+    "buffs": [-1, 0],
+    "buffTarget": "opponent",
+    "buffApplyChance": "1",
+    "archetype": "Debuff",
+    "turns": 1
+}, {
     "moveId": "CLANGING_SCALES",
     "name": "Clanging Scales",
     "abbreviation": "ClS",

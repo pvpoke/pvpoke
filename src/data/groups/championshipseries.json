@@ -105,6 +105,11 @@
         "chargedMoves": ["X_SCISSOR", "AQUA_JET"]
     },
     {
+        "speciesId": "greninja",
+        "fastMove": "WATER_SHURIKEN",
+        "chargedMoves": ["HYDRO_CANNON", "NIGHT_SLASH"]
+    },
+    {
         "speciesId": "jellicent",
         "fastMove": "HEX",
         "chargedMoves": ["SURF", "SHADOW_BALL"]
@@ -223,8 +228,8 @@
         "shadowType": "shadow"
     },
     {
-        "speciesId": "greninja",
-        "fastMove": "WATER_SHURIKEN",
-        "chargedMoves": ["HYDRO_CANNON", "NIGHT_SLASH"]
+        "speciesId": "cradily",
+        "fastMove": "BULLET_SEED",
+        "chargedMoves": ["ROCK_TOMB", "GRASS_KNOT"]
     }
 ]

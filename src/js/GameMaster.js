@@ -584,9 +584,19 @@ var GameMaster = (function () {
 
 			var combinations = pokemon.generateIVCombinations("overall", 1, 4096, null, floor);
 
-			// For untradable Pokemon, set the index to the 54th rank
+			// For untradable Pokemon, set the index to the 32nd rank
 			if(pokemon.hasTag("untradeable")){
 				defaultIndex = 31;
+			}
+
+			// For legendaries, set the index to the 300th rank
+			if(pokemon.hasTag("legendary")){
+				defaultIndex = 299;
+			}
+
+			// For shadow legendaries, set the index to the 250th rank
+			if(pokemon.hasTag("shadow") && pokemon.hasTag("legendary")){
+				defaultIndex = 249;
 			}
 
 			if(defaultIndex > combinations.length){
