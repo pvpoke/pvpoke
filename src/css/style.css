@@ -6105,6 +6105,8 @@ a.feed-subscribe {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  max-width: 400px;
+  margin: 0 auto;
 }
 #gm-editor-pokemon .gm-entry-section h3,
 #gm-editor-moves .gm-entry-section h3 {
@@ -6120,7 +6122,7 @@ a.feed-subscribe {
 #gm-editor-pokemon .gm-entry-section .gm-entry-row .gm-field-wrapper,
 #gm-editor-moves .gm-entry-section .gm-entry-row .gm-field-wrapper {
   flex: 1;
-  min-width: 150px;
+  min-width: 120px;
 }
 #gm-editor-pokemon .gm-entry-section .gm-field-wrapper label,
 #gm-editor-moves .gm-entry-section .gm-field-wrapper label {

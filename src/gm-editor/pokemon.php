@@ -38,14 +38,17 @@ require_once '../header.php';
                 <div class="gm-field-wrapper">
                     <label class="required">Pokemon ID</label>
                     <input id="species-id" name="species-id" type="text" placeholder="Enter Pokemon entry ID" autocomplete="off" />
-
-                    <label>Alias ID</label>
-                    <input id="alias-id" name="alias-id" type="text" placeholder="Enter alias ID" autocomplete="off" />
-                    <div class="description">Enter an alias if this entry is a duplicate of another entry (for the purposes of ranking multiple movesets).</div>
                 </div>
                 <div class="gm-field-wrapper">
                     <label>Pokemon Name</label>
                     <input id="species-name" name="species-name" type="text" placeholder="Enter Pokemon name" autocomplete="off" />
+                </div>
+            </div>
+            <div class="gm-entry-row">
+                <div class="gm-field-wrapper">
+                    <label>Alias ID</label>
+                    <input id="alias-id" name="alias-id" type="text" placeholder="Enter alias ID" autocomplete="off" />
+                    <div class="description">Enter an alias if this entry is a duplicate of another entry (for the purposes of ranking multiple movesets).</div>
                 </div>
                 <div class="gm-field-wrapper">
                     <label class="required">Pokedex Number</label>

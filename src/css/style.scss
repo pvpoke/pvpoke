@@ -6667,6 +6667,8 @@ a.feed-subscribe{
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
+		max-width: 400px;
+		margin: 0 auto;
 
 		h3{
 			margin: 10px 0;
@@ -6680,7 +6682,7 @@ a.feed-subscribe{
 
 			.gm-field-wrapper{
 				flex: 1;
-				min-width: 150px;
+				min-width: 120px;
 			}
 		}
 
