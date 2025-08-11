@@ -496,7 +496,7 @@ var GameMaster = (function () {
 
 			// For legendaries, set the index to the 300th rank
 			if(pokemon.hasTag("legendary")){
-				defaultIndex = 299;
+				defaultIndex = 31;
 			}
 
 			// For shadow legendaries, set the index to the 250th rank
