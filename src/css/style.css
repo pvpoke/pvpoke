@@ -708,73 +708,6 @@ b {
 .poke .poke-stats .advanced-section {
   margin-top: 15px;
 }
-.poke .poke-stats .advanced-section .fields {
-  display: none;
-}
-.poke .poke-stats .advanced-section .fields .ivs input {
-  display: block;
-  width: 27%;
-  max-width: 66px;
-  background: none;
-  border: none;
-  border-bottom: 1px solid #888;
-  border-radius: 0px;
-  height: 22px;
-  margin-bottom: 0;
-  -moz-appearance: textfield;
-  /* Firefox */
-}
-.poke .poke-stats .advanced-section .fields .ivs input::-webkit-outer-spin-button, .poke .poke-stats .advanced-section .fields .ivs input::-webkit-inner-spin-button {
-  /* display: none; <- Crashes Chrome on hover */
-  -webkit-appearance: none;
-  margin: 0;
-  /* <-- Apparently some margin are still there even though it's hidden */
-}
-.poke .poke-stats .advanced-section .fields .ivs input:focus {
-  outline: none;
-  border-bottom: 3px solid #ffcf01;
-}
-.poke .poke-stats .advanced-section .fields .ivs input + span {
-  margin-top: 10px;
-}
-.poke .poke-stats .advanced-section .fields input.level,
-.poke .poke-stats .advanced-section .fields label.level {
-  width: 25%;
-}
-.poke .poke-stats .advanced-section .fields label.iv {
-  width: 27%;
-  max-width: 66px;
-}
-.poke .poke-stats .advanced-section .fields label {
-  margin-top: 3px;
-  font-size: 12px;
-  font-weight: bold;
-  display: block;
-}
-.poke .poke-stats .advanced-section .fields .ivs-group {
-  width: 75%;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-}
-.poke .poke-stats .advanced-section .fields .ivs-group.labels {
-  align-items: start;
-}
-.poke .poke-stats .advanced-section .iv-rank {
-  border: 1px solid #111;
-  cursor: pointer;
-}
-.poke .poke-stats .advanced-section .iv-rank .info-icon {
-  color: rgba(255, 255, 255, 0.95);
-  border: 1px solid rgba(255, 255, 255, 0.95);
-  width: 14px;
-  height: 14px;
-  border-radius: 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  float: right;
-}
 .poke .poke-stats .advanced-section .maximize-section {
   border: 1px solid #888;
   border-radius: 8px;
@@ -1076,6 +1009,75 @@ b {
   -moz-animation: BLINK_ANIMATION 2s infinite;
   -o-animation: BLINK_ANIMATION 2s infinite;
   animation: BLINK_ANIMATION 2s infinite;
+}
+
+.fields {
+  display: none;
+}
+.fields .ivs input {
+  display: block;
+  width: 27%;
+  max-width: 66px;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #888;
+  border-radius: 0px;
+  height: 22px;
+  margin-bottom: 0;
+  -moz-appearance: textfield;
+  /* Firefox */
+}
+.fields .ivs input::-webkit-outer-spin-button, .fields .ivs input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */
+}
+.fields .ivs input:focus {
+  outline: none;
+  border-bottom: 3px solid #ffcf01;
+}
+.fields .ivs input + span {
+  margin-top: 10px;
+}
+.fields input.level,
+.fields label.level {
+  width: 25%;
+}
+.fields label.iv {
+  width: 27%;
+  max-width: 66px;
+}
+.fields label {
+  margin-top: 3px;
+  font-size: 12px;
+  font-weight: bold;
+  display: block;
+}
+.fields .ivs-group {
+  width: 75%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+.fields .ivs-group.labels {
+  align-items: start;
+}
+
+.iv-rank {
+  border: 1px solid #111;
+  cursor: pointer;
+}
+.iv-rank .info-icon {
+  color: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  width: 14px;
+  height: 14px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  float: right;
 }
 
 .form-group {
@@ -6147,6 +6149,33 @@ a.feed-subscribe {
 #gm-editor-pokemon hr,
 #gm-editor-moves hr {
   margin: 30px 0 20px 0;
+}
+#gm-editor-pokemon #default-iv-table,
+#gm-editor-moves #default-iv-table {
+  font-size: 14px;
+}
+#gm-editor-pokemon #default-iv-table th,
+#gm-editor-moves #default-iv-table th {
+  text-align: left;
+}
+#gm-editor-pokemon #default-iv-table th, #gm-editor-pokemon #default-iv-table td,
+#gm-editor-moves #default-iv-table th,
+#gm-editor-moves #default-iv-table td {
+  padding: 3px 8px;
+}
+#gm-editor-pokemon #default-iv-table .fields,
+#gm-editor-moves #default-iv-table .fields {
+  display: table-cell;
+  max-width: 100px;
+}
+#gm-editor-pokemon #default-iv-table .fields label,
+#gm-editor-moves #default-iv-table .fields label {
+  margin: 2px 0;
+}
+#gm-editor-pokemon button#generate-default-ivs,
+#gm-editor-moves button#generate-default-ivs {
+  margin-top: 17px;
+  float: right;
 }
 
 .error-label {

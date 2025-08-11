@@ -78,25 +78,57 @@ require_once '../header.php';
             <div class="gm-entry-row">
                 <div class="gm-field-wrapper">
                     <label>Base Attack</label>
-                    <input id="stats-atk" name="stats-atk" type="number" placeholder="Enter Base Attack stat" />
+                    <input id="stats-atk" name="stats-atk" data="atk" type="number" placeholder="Enter Base Attack stat" />
                 </div>
                 <div class="gm-field-wrapper">
                     <label>Base Defense</label>
-                    <input id="stats-def" name="stats-def" type="number" placeholder="Enter Base Defense stat" />
+                    <input id="stats-def" name="stats-def" data="def" type="number" placeholder="Enter Base Defense stat" />
                 </div>
                 <div class="gm-field-wrapper">
                     <label>Base Stamina (HP)</label>
-                    <input id="stats-hp" name="stats-hp" type="number" placeholder="Enter Base Stamina (HP) stat" />
+                    <input id="stats-hp" name="stats-hp" data="hp" type="number" placeholder="Enter Base Stamina (HP) stat" />
                 </div>
             </div>
 
+            <div class="gm-field-wrapper">
+                <table id="default-iv-table" class="train-table" cellspacing="0">
+                    <thead>
+                        <th>League</th>
+                        <th>Default Level &amp; IV's</th>
+                        <th class="desktop">Rank</th>
+                        <th class="desktop">CP</th>
+                        <tr class="hide">
+                            <td data="league">Great</td>
+                            <td class="fields">
+                                <div class="ivs">
+                                    <div class="flex align-items-center">
+                                        <input class="level" name="iv-level" data="0" type="number" placeholder="Level" min="1" max="40" step=".5" />
+                                        <div class="ivs-group">
+                                            <input class="iv" iv="atk" data="1" name="iv-atk" type="number" placeholder="Atk" min="0" max="15" step="1" /><span>/</span>
+                                            <input class="iv" iv="def" data="2" name="iv-def" type="number" placeholder="Def" min="0" max="15" step="1" /><span>/</span>
+                                            <input class="iv" iv="hp" data="3" name="iv-hp" type="number" placeholder="HP" min="0" max="15" step="1" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td class="desktop" data="rank">150</td>
+                            <td class="desktop" data="cp">1500</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+
+            
             <div class="gm-entry-row">
                 <div class="gm-field-wrapper">
-                    <label>Default IV's</label>
-                    <input id="stats-atk" name="stats-atk" type="number" placeholder="Enter Base Attack stat" />
-
                     <label>Level Floor</label>
                     <input id="level-floor" name="level-floor" type="number" placeholder="Enter level floor for IV's" />
+                    <div class="description">Default IV's won't fall below the level floor where possible.</div>
+                </div>
+                <div class="gm-field-wrapper">
+                    <button id="generate-default-ivs">Generate Default IV's</button>
                 </div>
             </div>
 

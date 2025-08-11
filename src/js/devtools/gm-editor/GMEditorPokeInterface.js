@@ -102,6 +102,69 @@ var InterfaceMaster = (function () {
                     $("#level-floor").val(selectedPokemon.levelFloor);
                 }
 
+                // Default IV table
+                $("#default-iv-table tbody").html("");
+
+                for(let ivKey in selectedPokemon.defaultIVs){
+                    let ivs = selectedPokemon.defaultIVs[ivKey];
+                    let $row = $("#default-iv-table tr.hide").clone().removeClass("hide");
+
+                    $row.attr("data", ivKey);
+                    $row.find("td[data='league']").html(ivKey);
+                    $row.find("input.level").val(ivs[0]);
+                    $row.find("input[iv='atk']").val(ivs[1]);
+                    $row.find("input[iv='def']").val(ivs[2]);
+                    $row.find("input[iv='hp']").val(ivs[3]);
+
+                    // Display Pokemon's rank and CP
+                    let b = new Battle();
+
+                    switch(ivKey){
+                        case "cp500":
+                            b.setCP(500);
+                            break;
+                        
+                        case "cp1500":
+                            b.setCP(1500);
+                            break;
+
+                        case "cp1500l40":
+                            b.setCP(1500);
+                            b.setLevelCap(40);
+                            break;
+
+                        case "cp2500":
+                            b.setCP(2500);
+                            break;
+
+                        case "cp2500l40":
+                            b.setCP(2500);
+                            b.setLevelCap(40);
+                            break;
+                    }
+
+                    let pokemon = new Pokemon(null, 0, b, selectedPokemon);
+                    pokemon.initialize(true);
+
+                    let combinations = pokemon.generateIVCombinations("overall", 1, 4096);
+                    let rank = combinations.findIndex((combo) => combo.ivs.atk == ivs[1] && combo.ivs.def == ivs[2] && combo.ivs.hp == ivs[3]);
+
+                    pokemon.setLevel(ivs[0]);
+                    pokemon.setIV("atk", ivs[1]);
+                    pokemon.setIV("def", ivs[2]);
+                    pokemon.setIV("hp", ivs[3]);
+
+                    if(rank > -1){
+                        $row.find("td[data='rank']").html(rank+1);
+                    } else{
+                        $row.find("td[data='rank']").html("???");
+                    }
+                    
+                    $row.find("td[data='cp']").html([pokemon.cp]);
+
+                    $("#default-iv-table tbody").append($row);
+                }
+
             }
 
             this.updateExportCode = function(){
@@ -179,6 +242,12 @@ var InterfaceMaster = (function () {
 
             });
 
+            // Generate new default IV's
+            $("button#generate-default-ivs").click(function(e){
+                selectedPokemon.defaultIVs = gm.generateDefaultIVsByPokemon(selectedPokemon);
+                self.displaySelectedPokemon();
+            });
+
             // Event handler for changing a select field
             $("#gm-editor-pokemon select").on("change", function(e){
                 let fieldName = $(this).attr("name");
@@ -203,6 +272,70 @@ var InterfaceMaster = (function () {
                 }
 
                 self.displaySelectedPokemon();
+                self.updateExportCode();
+            });
+
+            // Event handler for changing an input field
+            $("body").on("change", "#gm-editor-pokemon input", function(e){
+                let fieldName = $(this).attr("name");
+                let val = $(this).val();
+
+                switch(fieldName){
+                    case "species-id":
+                        selectedPokemon.speciesId = val;
+                        break;
+
+                    case "species-name":
+                        selectedPokemon.speciesName = val;
+                        break;
+
+                    case "alias-id":
+                        if(val != ""){
+                            selectedPokemon.aliasId = val;
+                        } else{
+                            delete selectedPokemon.aliasId;
+                        }
+                        break;
+
+                    case "dex":
+                        selectedPokemon.dex = parseInt(val);
+                        break;
+
+                    case "stats-atk":
+                    case "stats-def":
+                    case "stats-hp":
+                        let key = $(this).attr("data");
+                        selectedPokemon.baseStats[key] = parseInt(val);
+                        selectedPokemon.defaultIVs = gm.generateDefaultIVsByPokemon(selectedPokemon);
+                        break;
+
+                    case "level-floor":
+                        if(val != ""){
+                            selectedPokemon.levelFloor = parseInt(val);
+                        } else{
+                            delete selectedPokemon.levelFloor;
+                        }
+
+                        selectedPokemon.defaultIVs = gm.generateDefaultIVsByPokemon(selectedPokemon);
+                        break;
+
+                    case "iv-level":
+                    case "iv-atk":
+                    case "iv-def":
+                    case "iv-hp":
+                        let ivKey = $(this).closest("tr").attr("data");
+                        let index = parseInt($(this).attr("data"));
+                        console.log(index);
+
+                        if(ivKey && index !== null){
+                            selectedPokemon.defaultIVs[ivKey][index] = Math.floor(val * 2) / 2; // Ensure levels are at whole or half numbers
+                        }
+                        break;
+
+                }
+
+                self.displaySelectedPokemon();
+                self.updateExportCode();
             });
 
             // Copy list text

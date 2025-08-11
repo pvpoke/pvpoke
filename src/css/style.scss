@@ -897,84 +897,6 @@ b{
 		.advanced-section{
 			margin-top: 15px;
 
-			.fields{
-				display:none;
-
-				.ivs input{
-					display:block;
-					width:27%;
-					max-width:66px;
-					background:none;
-					border:none;
-					border-bottom:1px solid #888;
-					border-radius:0px;
-					height: 22px;
-					margin-bottom: 0;
-					-moz-appearance:textfield; /* Firefox */
-
-					&::-webkit-outer-spin-button,
-					&::-webkit-inner-spin-button {
-						/* display: none; <- Crashes Chrome on hover */
-						-webkit-appearance: none;
-						margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-					}
-
-					&:focus{
-						outline: none;
-						border-bottom: 3px solid $color-gold;
-					}
-
-					&+ span{
-						margin-top: 10px;
-					}
-				}
-
-				input.level,
-				label.level{
-					width:25%;
-				}
-
-				label.iv{
-					width: 27%;
-					max-width:66px;
-				}
-
-				label{
-					margin-top:3px;
-					font-size: 12px;
-					font-weight: bold;
-					display: block;
-				}
-
-				.ivs-group{
-					width:75%;
-					display: flex;
-					justify-content: end;
-					align-items: center;
-
-					&.labels{
-						align-items: start;
-					}
-				}
-			}
-
-			.iv-rank{
-				border:1px solid $color-off-black;
-				cursor:pointer;
-
-				.info-icon{
-					color: rgba(255,255,255,.95);
-					border: 1px solid rgba(255,255,255,.95);
-					width: 14px;
-					height: 14px;
-					border-radius: 14px;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					float: right;
-				}
-			}
-
 			.maximize-section{
 				border: 1px solid #888;
 			    border-radius: 8px;
@@ -1352,6 +1274,84 @@ b{
 	      animation: BLINK_ANIMATION 2s infinite;
 	}
 
+}
+
+.fields{
+	display:none;
+
+	.ivs input{
+		display:block;
+		width:27%;
+		max-width:66px;
+		background:none;
+		border:none;
+		border-bottom:1px solid #888;
+		border-radius:0px;
+		height: 22px;
+		margin-bottom: 0;
+		-moz-appearance:textfield; /* Firefox */
+
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			/* display: none; <- Crashes Chrome on hover */
+			-webkit-appearance: none;
+			margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+		}
+
+		&:focus{
+			outline: none;
+			border-bottom: 3px solid $color-gold;
+		}
+
+		&+ span{
+			margin-top: 10px;
+		}
+	}
+
+	input.level,
+	label.level{
+		width:25%;
+	}
+
+	label.iv{
+		width: 27%;
+		max-width:66px;
+	}
+
+	label{
+		margin-top:3px;
+		font-size: 12px;
+		font-weight: bold;
+		display: block;
+	}
+
+	.ivs-group{
+		width:75%;
+		display: flex;
+		justify-content: end;
+		align-items: center;
+
+		&.labels{
+			align-items: start;
+		}
+	}
+}
+
+.iv-rank{
+	border:1px solid $color-off-black;
+	cursor:pointer;
+
+	.info-icon{
+		color: rgba(255,255,255,.95);
+		border: 1px solid rgba(255,255,255,.95);
+		width: 14px;
+		height: 14px;
+		border-radius: 14px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		float: right;
+	}
 }
 
 .form-group{
@@ -6712,6 +6712,32 @@ a.feed-subscribe{
 
 	hr{
 		margin: 30px 0 20px 0;
+	}
+
+	#default-iv-table{
+		font-size: 14px;
+
+		th{
+			text-align: left;
+		}
+
+		th, td{
+			padding: 3px 8px;
+		}
+
+		.fields{
+			display: table-cell;
+			max-width: 100px;;
+
+			label{
+				margin: 2px 0;
+			}
+		}
+	}
+
+	button#generate-default-ivs{
+		margin-top: 17px;
+		float: right;
 	}
 }
 

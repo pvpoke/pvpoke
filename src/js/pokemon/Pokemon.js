@@ -4,14 +4,20 @@
 * The main Pokemon class used to represent individual Pokemon in battle
 */
 
-function Pokemon(id, i, b){
-
-	id = id.replace("_xl","");
-
+function Pokemon(id, i, b, d){
 	var gm = GameMaster.getInstance();
-	var data = gm.getPokemonById(id);
+	var data;
 	var battle = b;
 	var self = this;
+
+	// Initialize Pokemon by ID or by passed game data
+	if(id !== null){
+		id = id.replace("_xl","");
+		data = gm.getPokemonById(id);
+	} else if(d !== null){
+		id = d.speciesId;
+		data = d;
+	}
 
 	// CP modifiers at each level
 
