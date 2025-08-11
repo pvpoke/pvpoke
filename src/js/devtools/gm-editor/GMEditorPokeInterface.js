@@ -20,10 +20,22 @@ var InterfaceMaster = (function () {
 			this.init = function(){
                 data = gm.data;
 
+                self.fillFormOptions();
+
                 if(get){
                     self.loadGetData();
                 }
 			}
+
+            // Dynamically insert form field options
+
+            this.fillFormOptions = function(){
+                let allTypes = Pokemon.getAllTypes();
+
+                allTypes.forEach(type => {
+                    $("#primary-type, #secondary-type").append($("<option value='"+type.toLowerCase()+"'>"+type+"</option>"))
+                });
+            }
 
 			// Given JSON of get parameters, load these settings
 
@@ -80,6 +92,11 @@ var InterfaceMaster = (function () {
 
                 $("#buddy-distance option[value='"+selectedPokemon.buddyDistance+"']").prop("selected", "selected");
                 $("#third-move-cost option[value='"+selectedPokemon.thirdMoveCost+"']").prop("selected", "selected");
+
+                $("#primary-type option[value='"+selectedPokemon.types[0]+"']").prop("selected", "selected");
+                $("#secondary-type option[value='"+selectedPokemon.types[1]+"']").prop("selected", "selected");
+                $("#primary-type").attr("class", selectedPokemon.types[0]);
+                $("#secondary-type").attr("class", selectedPokemon.types[1]);
 
                 if(selectedPokemon?.levelFloor){
                     $("#level-floor").val(selectedPokemon.levelFloor);
@@ -162,134 +179,30 @@ var InterfaceMaster = (function () {
 
             });
 
-			// Event handler for sorting table columns
+            // Event handler for changing a select field
+            $("#gm-editor-pokemon select").on("change", function(e){
+                let fieldName = $(this).attr("name");
+                let val = $(this).val();
 
-			$("thead a").on("click", function(e){
-
-				e.preventDefault();
-
-				let $parent = $(e.target).closest("table");
-				$parent.find("thead a").removeClass("selected");
-
-				$(e.target).addClass("selected");
-
-				let selectedSort = $(e.target).attr("data");
-
-				if(selectedSort != sort){
-					sort = selectedSort;
-					sortDirection = 1;
-				} else{
-					sortDirection = -sortDirection;
-				}
-
-				switch(sort){
-                    case "dex":
-                        data.pokemon.sort((a,b) => (a.dex > b.dex) ? sortDirection : ((b.dex > a.dex) ? -sortDirection : 0));
+                switch(fieldName){
+                    case "primary-type":
+                        selectedPokemon.types[0] = val;
                         break;
 
-                    case "name":
-                        data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? sortDirection : ((b.speciesName > a.speciesName) ? -sortDirection : 0));
+                    case "secondary-type":
+                        selectedPokemon.types[1] = val;
                         break;
 
-                    case "priority":
-                        data.pokemon.sort((a,b) => {
-                            let priorityA = a?.searchPriority ? a.searchPriority : 0;
-                            let priorityB = b?.searchPriority ? b.searchPriority : 0;
-
-                            if(priorityA > priorityB){
-                                return -sortDirection;
-                            } else if(priorityB > priorityA){
-                                return sortDirection;
-                            } else{
-                                return 0;
-                            }
-                        });
+                    case "buddy-distance":
+                        selectedPokemon.buddyDistance = parseInt(val);
                         break;
 
-                    case "released":
-                        data.pokemon.sort((a,b) => (a.released > b.released) ? -sortDirection : ((b.released > a.released) ? sortDirection : 0));
+                    case "third-move-cost":
+                        selectedPokemon.thirdMoveCost = parseInt(val);
                         break;
                 }
 
-				self.displayPokemonList();
-			});
-
-            // Duplicate a Pokemon entry
-
-            $("body").on("click", ".train-table a.poke-copy", function(e){
-                e.preventDefault();
-
-                let speciesId = $(this).closest("tr").attr("data");
-
-                if(speciesId){
-                    
-                    let pokemon = data.pokemon.find(p => p.speciesId == speciesId);
-
-                    if(pokemon){
-                        let pokemonIndex = data.pokemon.findIndex(p => p.speciesId == speciesId);
-                        let newPokemon = {...pokemon};
-
-                        let isUniqueId = false;
-                        let copyCount = 1;
-                        let newId;
-                        let newName;
-
-                        // Iterate on copy counts to find a unique ID (eg. charizard_copy_2)
-                        while(! isUniqueId){
-                            newId = newPokemon.speciesId + "_copy";
-                            newName = newPokemon.speciesName + " (Copy)";
-
-                            if(copyCount > 1){
-                                newId += "_" + copyCount;
-                                newName = newPokemon.speciesName + " (Copy " + copyCount + ")";
-                            }
-
-                            if(! data.pokemon.find(p => p.speciesId == newId)){
-                                isUniqueId = true;
-                            }
-
-                            copyCount++;
-                        }
-
-                        newPokemon.speciesId = newId;
-                        newPokemon.speciesName = newName;
-
-                        data.pokemon.splice(pokemonIndex+1, 0, newPokemon);
-
-                        self.displayPokemonList();
-
-                        if($(".poke-search").first().val() != ''){
-                            $(".poke-search").first().trigger("keyup");
-                        }
-                    }
-                }
-            });
-
-            // Delete a Pokemon entry
-
-            $("body").on("click", ".train-table a.poke-delete", function(e){
-                e.preventDefault();
-
-                let speciesId = $(this).closest("tr").attr("data");
-
-                if(speciesId){
-                    let pokemonIndex = data.pokemon.findIndex(p => p.speciesId == speciesId);
-                    let pokemon = data.pokemon.find(p => p.speciesId == speciesId);
-
-                    if(pokemon){
-                        modalWindow("Delete Pokemon", $(".delete-poke-confirm").first());
-                        $(".modal span.name").html(pokemon.speciesName);
-                        
-                        $(".modal .button.yes").click(function(e){
-                            
-                            closeModalWindow();
-
-                            data.pokemon.splice(pokemonIndex, 1);
-
-                            self.displayPokemonList();
-                        });
-                    }
-                }
+                self.displaySelectedPokemon();
             });
 
             // Copy list text

@@ -1355,7 +1355,7 @@ function Pokemon(id, i, b){
 		}
 
 		// Charged Move coverage
-		var types = getAllTypes();
+		var types = Pokemon.getAllTypes();
 		var averagePower = 0;
 		var totalResistingTypes = 0;
 		var totalSuperEffectiveTypes = 0;
@@ -1807,7 +1807,7 @@ function Pokemon(id, i, b){
 
 		var arr = [];
 
-		var allTypes = getAllTypes();
+		var allTypes = Pokemon.getAllTypes();
 
 		for(var n = 0; n < allTypes.length; n++){
 			effectiveness = DamageCalculator.getEffectiveness(allTypes[n], self.types);
@@ -1815,14 +1815,6 @@ function Pokemon(id, i, b){
 		}
 
 		return arr;
-	}
-
-	// Array of all types
-
-	function getAllTypes(){
-		var types = ["Bug","Dark","Dragon","Electric","Fairy","Fighting","Fire","Flying","Ghost","Grass","Ground","Ice","Normal","Poison","Psychic","Rock","Steel","Water"];
-
-		return types;
 	}
 
 	// Resets Pokemon prior to battle
@@ -2475,4 +2467,12 @@ Pokemon.calculateMoveCounts = function(fastMove, chargedMove){
 
 	return counts;
 
+}
+
+// Return array of all Pokemon types
+
+Pokemon.getAllTypes = function(){
+	let types = ["Bug","Dark","Dragon","Electric","Fairy","Fighting","Fire","Flying","Ghost","Grass","Ground","Ice","Normal","Poison","Psychic","Rock","Steel","Water"];
+
+	return types;
 }
