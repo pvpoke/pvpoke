@@ -162,20 +162,41 @@ require_once '../header.php';
             <h3>Move Data</h3>
             <div class="gm-field-wrapper">
                 <label class="required">Fast Move Pool</label>
-                <input id="species-id" name="species-id" type="text" placeholder="Enter Pokemon entry ID" />
+                <div class="editable-list" data="fastMoves"></div>
+            </div>
+            <div class="gm-field-wrapper">
+                <select class="editable-list-selector field-mw" id="add-fast-move" name="add-fast-move">
+                    <option value="NONE" selected disabled>+ Add Fast Move</option>
+                </select>
             </div>
             <div class="gm-field-wrapper">
                 <label class="required">Charged Move Pool</label>
-                <input id="species-id" name="species-id" type="text" placeholder="Enter Pokemon entry ID" />
+                <div class="editable-list" data="chargedMoves"></div>
+            </div>
+            <div class="gm-field-wrapper">
+                <select class="editable-list-selector field-mw" id="add-charged-move" name="add-charged-move">
+                    <option value="NONE" selected disabled>+ Add Charged Move</option>
+                </select>
             </div>
             <div class="gm-field-wrapper">
                 <label>Elite TM Moves</label>
-                <input id="species-id" name="species-id" type="text" placeholder="Enter Pokemon entry ID" />
+                <div class="editable-list" data="eliteMoves"></div>
+
+            </div>
+            <div class="gm-field-wrapper">
+                <select class="editable-list-selector field-mw" id="add-elite-move" name="add-elite-move">
+                    <option value="NONE" selected disabled>+ Add Elite Move</option>
+                </select>
                 <div class="description">List any of the above moves which can't be learned via TM but can be learned via Elite TM.</div>
             </div>
             <div class="gm-field-wrapper">
                 <label>Legacy Moves</label>
-                <input id="species-id" name="species-id" type="text" placeholder="Enter Pokemon entry ID" />
+                <div class="editable-list-selector editable-list" data="legacyMoves"></div>
+            </div>
+            <div class="gm-field-wrapper">
+                <select class="editable-list-selector field-mw" id="add-legacy-move" name="add-legacy-move">
+                    <option value="NONE" selected disabled>+ Add Legacy Move</option>
+                </select>
                 <div class="description">List any of the above moves which can't be learned via TM or Elite TM.</div>
             </div>
         </div>
@@ -187,8 +208,13 @@ require_once '../header.php';
             <div class="gm-entry-row">
                 <div class="gm-field-wrapper">
                     <label>Tags</label>
-                    <input id="species-id" name="species-id" type="text" placeholder="Enter Pokemon entry ID" />
+                    <div class="editable-list" data="tags"></div>
+
+                    <select class="editable-list-selector field-mw" id="add-tag" name="add-tag">
+                        <option value="NONE" selected disabled>+ Add Tag</option>
+                    </select>
                 </div>
+                
                 <div class="gm-field-wrapper">
                     <label>Released</label>
                     <div class="form-group" data="released">

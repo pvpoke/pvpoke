@@ -20,7 +20,7 @@ var InterfaceMaster = (function () {
 			this.init = function(){
                 data = gm.data;
 
-                self.fillFormOptions();
+                self.fillAllFormOptions();
 
                 if(get){
                     self.loadGetData();
@@ -29,12 +29,33 @@ var InterfaceMaster = (function () {
 
             // Dynamically insert form field options
 
-            this.fillFormOptions = function(){
+            this.fillAllFormOptions = function(){
                 let allTypes = Pokemon.getAllTypes();
+                self.fillFormOptions($("#primary-type"), allTypes);
+                self.fillFormOptions($("#secondary-type"), allTypes);
+            }
 
-                allTypes.forEach(type => {
-                    $("#primary-type, #secondary-type").append($("<option value='"+type.toLowerCase()+"'>"+type+"</option>"))
+            // Fill the options for a single select element
+            this.fillFormOptions = function($el, options){
+                let fieldName = $el.attr("name");
+
+                options.forEach(option => {
+                    switch(fieldName){
+                        case "primary-type":
+                        case "secondary-type":
+                            $el.append($("<option value='"+option.toLowerCase()+"'>"+option+"</option>"))
+                            break;
+
+                        case "add-fast-move":
+                        case "add-charged-move":
+                        case "add-elite-move":
+                        case "add-legacy-move":
+                            $el.append($("<option value='"+option.moveId+"'>"+option.name+"</option>"))
+                            break;
+
+                    }
                 });
+
             }
 
 			// Given JSON of get parameters, load these settings
@@ -165,6 +186,89 @@ var InterfaceMaster = (function () {
                     $("#default-iv-table tbody").append($row);
                 }
 
+                // Move lists
+
+                self.displayEditableList($(".editable-list[data='fastMoves']"), selectedPokemon.fastMoves);
+                self.displayEditableList($(".editable-list[data='chargedMoves']"), selectedPokemon.chargedMoves);
+                self.displayEditableList($(".editable-list[data='eliteMoves']"), selectedPokemon.eliteMoves);
+                self.displayEditableList($(".editable-list[data='legacyMoves']"), selectedPokemon.legacyMoves);
+
+                // Filter and fill new move options
+                $(".editable-list-selector").each(function(){
+                    $(this).find("option:first-child").prop("selected", "selected");
+                    $(this).find("option:not(:first-child)").remove();
+                });
+
+                let fastOptions = data.moves.filter(move => move.energyGain > 0);
+                fastOptions = fastOptions.filter(move => ! selectedPokemon.fastMoves.includes(move.moveId)); // Exclude selected moves
+                self.fillFormOptions($("#add-fast-move"), fastOptions);
+
+                let chargedOptions = data.moves.filter(move => move.energy > 0);
+                chargedOptions = chargedOptions.filter(move => ! selectedPokemon.chargedMoves.includes(move.moveId)); // Exclude selected moves
+                self.fillFormOptions($("#add-charged-move"), chargedOptions);
+
+                let eliteOptions = []; // Add all current moves which are not elite moves
+                let legacyOptions = []; // Add all current moves which are not legacy moves
+                let currentMoves = [...selectedPokemon.fastMoves, ...selectedPokemon.chargedMoves];
+
+                currentMoves.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
+
+                currentMoves.forEach(move => {
+                    if(! selectedPokemon?.eliteMoves || ! selectedPokemon.eliteMoves.includes(move)){
+                        eliteOptions.push(gm.getMoveById(move));
+                    }
+
+                    if(! selectedPokemon?.legacyMoves || ! selectedPokemon.legacyMoves.includes(move)){
+                        legacyOptions.push(gm.getMoveById(move));
+                    }
+                })
+
+                self.fillFormOptions($("#add-elite-move"), eliteOptions);
+                self.fillFormOptions($("#add-legacy-move"), legacyOptions);
+
+                // Metadata
+                self.displayEditableList($(".editable-list[data='tags']"), selectedPokemon.tags);
+            }
+
+            // Given a base list element and data items, output HTML for an editable list
+
+            this.displayEditableList = function($el, listItems){
+                let dataType = $el.attr("data");
+                $el.html("");
+
+                switch(dataType){
+                    case "fastMoves":
+                    case "chargedMoves":
+                    case "legacyMoves":
+                    case "eliteMoves":
+                        if(typeof listItems !== "undefined"){
+                            listItems.forEach(id => {
+                                let move = gm.getMoveById(id);
+
+                                if(move){
+                                    let $item = $("<div></div>");
+                                    $item.html(move.name);
+                                    $item.addClass(move.type);
+                                    $item.attr("data", id);
+                                    $item.append("<span></span>");
+
+                                    $el.append($item);
+                                }
+                            });
+                        }
+                        break;
+
+                    case "tags":
+                        listItems.forEach(id => {
+                            let $item = $("<div></div>");
+                            $item.html(id);
+                            $item.attr("data", id);
+                            $item.append("<span></span>");
+
+                            $el.append($item);
+                        });
+                        break;
+                }
             }
 
             this.updateExportCode = function(){
@@ -269,6 +373,31 @@ var InterfaceMaster = (function () {
                     case "third-move-cost":
                         selectedPokemon.thirdMoveCost = parseInt(val);
                         break;
+
+                    case "add-fast-move":
+                        selectedPokemon.fastMoves.push(val);
+                        break;
+
+                    case "add-charged-move":
+                        selectedPokemon.chargedMoves.push(val);
+                        break;
+
+                    case "add-elite-move":
+                        if(selectedPokemon?.eliteMoves){
+                            selectedPokemon.eliteMoves.push(val);
+                        } else{
+                            selectedPokemon.eliteMoves = [val];
+                        }
+                        
+                        break; 
+
+                    case "add-legacy-move":
+                        if(selectedPokemon?.legacyMoves){
+                            selectedPokemon.legacyMoves.push(val);
+                        } else{
+                            selectedPokemon.legacyMoves = [val];
+                        }
+                        break; 
                 }
 
                 self.displaySelectedPokemon();
@@ -336,6 +465,32 @@ var InterfaceMaster = (function () {
 
                 self.displaySelectedPokemon();
                 self.updateExportCode();
+            });
+
+            // Event handler for deleting an item from an editable list
+            $("body").on("click", ".editable-list > div > span", function(e){
+                let id = $(this).closest("div").attr("data");
+                let key = $(this).closest(".editable-list").attr("data");
+
+                if(id && key && selectedPokemon.hasOwnProperty(key)){
+                    selectedPokemon[key] = selectedPokemon[key].filter(item => item != id);
+
+                    // Enforce one Fast Attack or one Charged Attack
+                    if(selectedPokemon[key].length == 0){
+                        switch(key){
+                            case "fastMoves":
+                                selectedPokemon.fastMoves = ["SPLASH"];
+                                break;
+
+                            case "chargedMoves":
+                                selectedPokemon.chargedMoves = ["STRUGGLE"];
+                                break;
+                        }
+                    }
+
+                    self.displaySelectedPokemon();
+                    self.updateExportCode();
+                }
             });
 
             // Copy list text

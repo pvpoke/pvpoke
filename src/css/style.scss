@@ -6707,6 +6707,14 @@ a.feed-subscribe{
 				margin: 0;
 			}
 
+			.field-mw{
+				max-width: 195px;
+			}
+
+			.editable-list-selector{
+				margin-bottom: 10px;
+			}
+
 		}
 	}
 
@@ -6747,6 +6755,43 @@ a.feed-subscribe{
     font-size: 12px;
     line-height: 14px;
 	color: $color-fighting-light;
+}
+
+.editable-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+	& > div{
+		position: relative;
+		background: #fff;
+		font-size: 12px;
+		padding: 5px 25px 5px 10px;
+		border: 1px solid #000;
+		border-radius: 30px;
+		box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+
+		& > span{
+			display: block;
+			position: absolute;
+			right: 5px;
+			top: 0;
+			padding: 5px;
+			cursor: pointer;
+			opacity: 0.5;
+
+			&:after{
+				content: "x";
+				font-size: 14px;
+				font-weight: bold;
+				line-height: 12px;
+			}
+
+			&:hover{
+				opacity: 1;
+			}
+		}
+	}
 }
 
 // Colorblind styling
