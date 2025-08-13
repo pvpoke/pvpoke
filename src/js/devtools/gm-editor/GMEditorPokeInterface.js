@@ -17,7 +17,6 @@ var InterfaceMaster = (function () {
             let selectedPokemon;
             let lastSavedJSON; // JSON of the last saved data
 
-
 			this.init = function(){
                 data = gm.data;
 
@@ -92,7 +91,6 @@ var InterfaceMaster = (function () {
                                 if(selectedPokemon){
                                     self.updateLastSavedJSON();
                                     self.displaySelectedPokemon();
-                                    self.updateExportCode();
                                 }
 								break;
 						}
@@ -254,6 +252,9 @@ var InterfaceMaster = (function () {
                 }
 
                 $("#search-priority").val(selectedPokemon.searchPriority);
+
+                self.updateExportCode();
+                self.validatePokemon();
             }
 
             // Given a base list element and data items, output HTML for an editable list
@@ -301,9 +302,34 @@ var InterfaceMaster = (function () {
                 }
             }
 
+            // Run validations on the full Pokemon entry
+            this.validatePokemon = function(){
+                let pokemonErrors = GMEditorUtils.ValidatePokemonEntry(selectedPokemon);
+
+                $("#gm-editor-pokemon .error-label").remove();
+
+                pokemonErrors.forEach(pokeError => {
+                    let $errorItem = $("<div class='error-label'></div>");
+                    let $field = $("#gm-editor-pokemon [name='"+pokeError.fieldName+"']").first();
+                    let fieldErrors = pokeError.errors;
+
+                    fieldErrors.forEach(fieldError => {
+                        $errorItem.append($("<div>"+fieldError+"</div>"));
+                    });
+
+                    $field.after($errorItem);
+                    $errorItem.show();
+                });
+
+                // Enable or disable save button
+                if(pokemonErrors.length > 0){
+                    $("#save-changes-btn").attr("disabled", "disabled");
+                }
+            }
+
             this.updateExportCode = function(){
                 let json = JSON.stringify(selectedPokemon)
-                $("textarea.import").html(json);
+                $("textarea.import").val(json);
 
                 // Enable or disable save button
                 if(json != lastSavedJSON && data?.id && data?.id != "gamemaster"){
@@ -376,7 +402,6 @@ var InterfaceMaster = (function () {
                     case "released":
                         selectedPokemon.released = val == "yes" ? true : false;
                         self.displaySelectedPokemon();
-                        self.updateExportCode();
                         break;
                 }
 
@@ -445,7 +470,6 @@ var InterfaceMaster = (function () {
                 }
 
                 self.displaySelectedPokemon();
-                self.updateExportCode();
             });
 
             // Submit an input field when pressing enter
@@ -530,7 +554,6 @@ var InterfaceMaster = (function () {
                 }
 
                 self.displaySelectedPokemon();
-                self.updateExportCode();
             });
 
             // Event handler for deleting an item from an editable list
@@ -559,7 +582,6 @@ var InterfaceMaster = (function () {
                     }
 
                     self.displaySelectedPokemon();
-                    self.updateExportCode();
                 }
             });
 
@@ -586,11 +608,12 @@ var InterfaceMaster = (function () {
                     if(customData && customData?.speciesId){
                         selectedPokemon = customData;
                         self.displaySelectedPokemon();
-                        self.updateExportCode();
                     }
                 } catch(e){
                     console.error(e);
                     modalWindow("Data Error", $(".import-error").first());
+                    selectedPokemon = JSON.parse(lastSavedJSON);
+                    self.displaySelectedPokemon();
                 }
                 
             });

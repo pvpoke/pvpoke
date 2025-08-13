@@ -2477,8 +2477,12 @@ Pokemon.calculateMoveCounts = function(fastMove, chargedMove){
 
 // Return array of all Pokemon types
 
-Pokemon.getAllTypes = function(){
+Pokemon.getAllTypes = function(lowerCase = false){
 	let types = ["Bug","Dark","Dragon","Electric","Fairy","Fighting","Fire","Flying","Ghost","Grass","Ground","Ice","Normal","Poison","Psychic","Rock","Steel","Water"];
+
+	if(lowerCase){
+		types = types.map(type => type.toLowerCase());
+	}
 
 	return types;
 }

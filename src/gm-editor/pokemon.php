@@ -37,17 +37,17 @@ require_once '../header.php';
             <div class="gm-entry-row">
                 <div class="gm-field-wrapper">
                     <label class="required">Pokemon ID</label>
-                    <input id="species-id" name="species-id" type="text" placeholder="Enter Pokemon entry ID" autocomplete="off" />
+                    <input id="species-id" name="species-id" type="text" placeholder="Enter Pokemon entry ID" autocomplete="off" maxlength="64" />
                 </div>
                 <div class="gm-field-wrapper">
                     <label>Pokemon Name</label>
-                    <input id="species-name" name="species-name" type="text" placeholder="Enter Pokemon name" autocomplete="off" />
+                    <input id="species-name" name="species-name" type="text" placeholder="Enter Pokemon name" autocomplete="off" maxlength="64" />
                 </div>
             </div>
             <div class="gm-entry-row">
                 <div class="gm-field-wrapper">
                     <label>Alias ID</label>
-                    <input id="alias-id" name="alias-id" type="text" placeholder="Enter alias ID" autocomplete="off" />
+                    <input id="alias-id" name="alias-id" type="text" placeholder="Enter alias ID" autocomplete="off" maxlength="64" />
                     <div class="description">Enter an alias if this entry is a duplicate of another entry (for the purposes of ranking multiple movesets).</div>
                 </div>
                 <div class="gm-field-wrapper">
@@ -258,6 +258,10 @@ require_once '../header.php';
 	<div class="copy">Copy</div>
 </div>
 
+<div class="import-error hide">
+	<p>There was an error importing the custom data. Ensure that the data is not malformed and contains valid Pokemon or move data.</p>
+</div>
+
 <div class="save-data hide">
 	<p>Data saved successfully.</p>
 </div>
@@ -273,6 +277,7 @@ require_once '../header.php';
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/devtools/gm-editor/GMEditorUtils.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/devtools/gm-editor/GMEditorPokeInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/Main.js?v=<?php echo $SITE_VERSION; ?>"></script>
 

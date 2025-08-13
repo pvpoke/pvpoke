@@ -18,7 +18,7 @@
                     },
                     {
                         "type": "string_max_length",
-                        "value": 32
+                        "value": 64
                     },
                     {
                         "type": "invalid_values",
@@ -32,8 +32,8 @@
         "objectType": "pokemon",
         "validations": [
             {
-                "field": "species_id",
-                "property": "id",
+                "field": "species-id",
+                "property": "speciesId",
                 "validations": [
                     {
                         "type": "required"
@@ -47,11 +47,72 @@
                     },
                     {
                         "type": "string_max_length",
-                        "value": 32
+                        "value": 64
+                    }
+                ]
+            },
+            {
+                "field": "species-name",
+                "property": "speciesName",
+                "validations": [
+                    {
+                        "type": "required"
                     },
                     {
-                        "type": "invalid_values",
-                        "value": ["gamemaster"]
+                        "type": "string_min_length",
+                        "value": 3
+                    },
+                    {
+                        "type": "string_max_length",
+                        "value": 64
+                    }
+                ]
+            },
+            {
+                "field": "alias-id",
+                "property": "aliasId",
+                "validations": [
+                    {
+                        "type": "existing_id"
+                    },
+                    {
+                        "type": "string_min_length",
+                        "value": 3
+                    },
+                    {
+                        "type": "string_max_length",
+                        "value": 64
+                    }
+                ]
+            },
+            {
+                "field": "dex",
+                "property": "dex",
+                "validations": [
+                    {
+                        "type": "required"
+                    },
+                    {
+                        "type": "number"
+                    },
+                    {
+                        "type": "number_min_value",
+                        "value": 1
+                    },
+                    {
+                        "type": "integer"
+                    }
+                ]
+            },
+            {
+                "field": "primary-type",
+                "property": "types",
+                "validations": [
+                    {
+                        "type": "required"
+                    },
+                    {
+                        "type": "types"
                     }
                 ]
             }
