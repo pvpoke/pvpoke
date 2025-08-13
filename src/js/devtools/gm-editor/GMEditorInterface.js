@@ -170,8 +170,8 @@ var InterfaceMaster = (function () {
             $("body").on("click", ".modal #save-new-modal-btn", function(e){
                 // Validate new entry
                 let title = $(".modal #gm_name").val();
-                let id = GMEditorUtils.StringToID(title, "gm_id");
-                let errors = GMEditorUtils.ValidateField("gm_id", id);
+                let id = GMEditorUtils.StringToID(title, "gm-id");
+                let errors = GMEditorUtils.ValidateField("gamemaster", "gm-id", id);
 
                 $(".modal #gm_name + .error-label").hide();
 

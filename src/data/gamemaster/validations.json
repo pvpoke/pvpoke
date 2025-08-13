@@ -1,25 +1,61 @@
 [
     {
-        "field": "gm_id",
+        "objectType": "gamemaster",
         "validations": [
             {
-                "type": "required"
-            },
+                "field": "gm-id",
+                "property": "id",
+                "validations": [
+                    {
+                        "type": "required"
+                    },
+                    {
+                        "type": "unique_id"
+                    },
+                    {
+                        "type": "string_min_length",
+                        "value": 3
+                    },
+                    {
+                        "type": "string_max_length",
+                        "value": 32
+                    },
+                    {
+                        "type": "invalid_values",
+                        "value": ["gamemaster"]
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "objectType": "pokemon",
+        "validations": [
             {
-                "type": "unique_id"
-            },
-            {
-                "type": "string_min_length",
-                "value": 3
-            },
-            {
-                "type": "string_max_length",
-                "value": 32
-            },
-            {
-                "type": "invalid_values",
-                "value": ["gamemaster"]
+                "field": "species_id",
+                "property": "id",
+                "validations": [
+                    {
+                        "type": "required"
+                    },
+                    {
+                        "type": "unique_id"
+                    },
+                    {
+                        "type": "string_min_length",
+                        "value": 3
+                    },
+                    {
+                        "type": "string_max_length",
+                        "value": 32
+                    },
+                    {
+                        "type": "invalid_values",
+                        "value": ["gamemaster"]
+                    }
+                ]
             }
         ]
     }
+
 ]

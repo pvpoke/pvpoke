@@ -55,6 +55,13 @@ require_once '../header.php';
                     <input id="dex" name="dex" type="number" placeholder="Enter Pokedex number" />
                 </div>
             </div>
+            <div class="gm-field-wrapper">
+                <label>Nicknames</label>
+                <div class="editable-list" data="nicknames"></div>
+            </div>
+            <div class="gm-field-wrapper flex gap-15">
+                <input class="editable-list-input field-mw" type="text" id="add-nickname" name="add-nickname" placeholder="+ Add Nickname (Press Enter)" />
+            </div>
         </div>
 
         <hr>
@@ -215,6 +222,12 @@ require_once '../header.php';
                 <select class="editable-list-selector field-mw" id="add-tag" name="add-tag">
                     <option value="NONE" selected disabled>+ Add Tag</option>
                 </select>
+            </div>
+
+            <div class="gm-field-wrapper">
+                <label>Search Priority</label>
+                <input id="search-priority" class="field-mw" name="search-priority" type="number" placeholder="Enter Search Priority" />
+                <div class="description">Selection order for Pokemon with similar names. Largest value is selected first.</div>
             </div>
             
             <div class="gm-field-wrapper">

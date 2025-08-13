@@ -13,9 +13,9 @@ class GMEditorUtils{
 
 
     // Validate a field given its value and validations
-    static ValidateField(fieldName, value){
+    static ValidateField(objectType, fieldName, value){
         let errors = [];
-        let validations = GMEditorValidations.find(v => v.field == fieldName)?.validations;
+        let validations = GMEditorValidations[objectType].find(v => v.field == fieldName || v.property == fieldName)?.validations;
 
         if(! validations || ! validations?.length){
             validations = [];
@@ -57,7 +57,7 @@ class GMEditorUtils{
 }
 
 // Load validations
-let GMEditorValidations = [];
+let GMEditorValidations = {};
 
 $.ajax({
     dataType: "json",
@@ -68,8 +68,16 @@ $.ajax({
         console.log(error);
     },
     success: function( data ) {
-        GMEditorValidations = data;
+
+        if(data && data.length > 0){
+            data.forEach(obj => {
+                let objectType = obj.objectType;
+
+                GMEditorValidations[objectType] = obj.validations;
+            });
+        }
 
         console.log("gamemaster validations loaded");
+        console.log(GMEditorValidations);
     }
 });

@@ -117,6 +117,8 @@ var InterfaceMaster = (function () {
                     $("#alias-id").val(selectedPokemon.aliasId);
                 }
 
+                self.displayEditableList($(".editable-list[data='nicknames']"), selectedPokemon.nicknames);
+
                 // Game data
                 $("#stats-atk").val(selectedPokemon.baseStats.atk);
                 $("#stats-def").val(selectedPokemon.baseStats.def);
@@ -242,6 +244,16 @@ var InterfaceMaster = (function () {
 
                 let tagOptions = data.pokemonTags.filter(tag => ! selectedPokemon?.tags?.includes(tag));
                 self.fillFormOptions($("#add-tag"), tagOptions);
+
+                $(".form-group[data='released'] .option").removeClass("on");
+
+                if(selectedPokemon.released){
+                    $(".form-group[data='released'] .option[value='yes']").addClass("on");
+                } else{
+                    $(".form-group[data='released'] .option[value='no']").addClass("on");
+                }
+
+                $("#search-priority").val(selectedPokemon.searchPriority);
             }
 
             // Given a base list element and data items, output HTML for an editable list
@@ -276,7 +288,7 @@ var InterfaceMaster = (function () {
                         }
                         break;
 
-                    case "tags":
+                    default:
                         listItems.forEach(id => {
                             let $item = $("<div></div>");
                             $item.html(id);
@@ -361,12 +373,10 @@ var InterfaceMaster = (function () {
                 $(this).addClass("on");
 
                 switch($parent.attr("data")){
-                    case "search-mode":
-                        searchMode = val;
-
-                        if($(".poke-search").first().val() != ''){
-                            $(".poke-search").first().trigger("keyup");
-                        }
+                    case "released":
+                        selectedPokemon.released = val == "yes" ? true : false;
+                        self.displaySelectedPokemon();
+                        self.updateExportCode();
                         break;
                 }
 
@@ -438,6 +448,13 @@ var InterfaceMaster = (function () {
                 self.updateExportCode();
             });
 
+            // Submit an input field when pressing enter
+            $("body").on("keypress", "#gm-editor-pokemon input", function(e){
+                if(e.which == 13){
+                    $(this).blur();
+                }
+            });
+
             // Event handler for changing an input field
             $("body").on("change", "#gm-editor-pokemon input", function(e){
                 let fieldName = $(this).attr("name");
@@ -492,6 +509,22 @@ var InterfaceMaster = (function () {
                         if(ivKey && index !== null){
                             selectedPokemon.defaultIVs[ivKey][index] = Math.floor(val * 2) / 2; // Ensure levels are at whole or half numbers
                         }
+                        break;
+
+                    case "add-nickname":
+                        if(val != ""){
+                            if(selectedPokemon?.nicknames){
+                                selectedPokemon.nicknames.push(val.toLowerCase());
+                            } else{
+                                selectedPokemon.nicknames = [val.toLowerCase()];
+                            }
+
+                            $(this).val("");
+                        }
+                        break;
+
+                    case "search-priority":
+                        selectedPokemon.searchPriority = parseInt(val);
                         break;
 
                 }
