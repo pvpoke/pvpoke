@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-08-11 17:21:06",
+    "timestamp": "2025-08-13 03:35:26",
     "settings": {
         "partySize": 3,
         "maxBuffStages": 4,
@@ -1091,7 +1091,7 @@
             "showMeta": false
         }
     ],
-    "pokemonTags": ["legendary", "mythical", "alolan", "galarian", "starter", "regional", "shadow", "shadoweligible", "untradeable", "mega", "xs", "hisuian", "ultrabeast"],
+    "pokemonTags": ["alolan", "duplicate", "duplicate1500", "galarian", "hisuian", "include1500", "include2500", "legendary", "mega", "mythical", "paldean", "regional", "shadow", "shadoweligible", "starter", "teambuilderexclude", "ultrabeast", "untradeable", "wildlegendary"],
     "pokemonTraits": {
         "pros": ["bulky", "extremely bulky", "spammy", "agile", "flexible", "dynamic", "fast move pressure", "shield pressure", "defensive", "momentum"],
         "cons": ["less bulky", "glass cannon", "slow", "clumsy", "inflexible", "low fast move pressure", "low shield pressure", "vulnerable", "volatile", "chaotic", "technical", "inconsistent"]

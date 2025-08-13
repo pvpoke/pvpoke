@@ -205,24 +205,25 @@ require_once '../header.php';
 
         <div class="gm-entry-section">
             <h3>Metadata</h3>
-            <div class="gm-entry-row">
-                <div class="gm-field-wrapper">
-                    <label>Tags</label>
-                    <div class="editable-list" data="tags"></div>
+            <div class="gm-field-wrapper">
+                <label>Tags</label>
+                <div class="editable-list" data="tags"></div>
+                <div class="description">Tags provide categorization for Pokemon as well as flags for Pokemon specific features (IV floors, bypassing the stat product filter, duplicating a ranking entry, etc.).</div>
+            </div>
 
-                    <select class="editable-list-selector field-mw" id="add-tag" name="add-tag">
-                        <option value="NONE" selected disabled>+ Add Tag</option>
-                    </select>
+            <div class="gm-field-wrapper">
+                <select class="editable-list-selector field-mw" id="add-tag" name="add-tag">
+                    <option value="NONE" selected disabled>+ Add Tag</option>
+                </select>
+            </div>
+            
+            <div class="gm-field-wrapper">
+                <label>Released</label>
+                <div class="form-group field-mw" data="released">
+                    <div class="option on" value="yes">Yes</div>
+                    <div class="option" value="no">No</div>
                 </div>
-                
-                <div class="gm-field-wrapper">
-                    <label>Released</label>
-                    <div class="form-group" data="released">
-                        <div class="option on" value="yes">Yes</div>
-                        <div class="option" value="no">No</div>
-                    </div>
-                    <div class="description">Unreleased Pokemon do not appear in bulk simulation results (Multi-Battle, Team Builder, etc.).</div>
-                </div>
+                <div class="description">Unreleased Pokemon do not appear in bulk simulation results (Multi-Battle, Team Builder, etc.).</div>
             </div>
         </div>
 
@@ -244,13 +245,12 @@ require_once '../header.php';
 	<div class="copy">Copy</div>
 </div>
 
-<div class="delete-poke-confirm hide">
-	<p>Delete the entry for <b><span class="name"></span></b>? It will no longer be available for simulations with this custom gamemaster.</p>
+<div class="save-data hide">
+	<p>Data saved successfully.</p>
+</div>
 
-	<div class="center flex">
-		<div class="button yes">Yes</div>
-		<div class="button no">No</div>
-	</div>
+<div class="save-data-error hide">
+	<p>There was an error saving the data. Ensure that all entries are valid.</p>
 </div>
 
 

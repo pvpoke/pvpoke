@@ -15,6 +15,7 @@ var InterfaceMaster = (function () {
             let battle = new Battle();
 
             let selectedPokemon;
+            let lastSavedJSON; // JSON of the last saved data
 
 
 			this.init = function(){
@@ -26,6 +27,11 @@ var InterfaceMaster = (function () {
                     self.loadGetData();
                 }
 			}
+
+            this.updateLastSavedJSON = function(){
+                lastSavedJSON = JSON.stringify(selectedPokemon);
+                $("#save-changes-btn").attr("disabled", "disabled");
+            }
 
             // Dynamically insert form field options
 
@@ -51,6 +57,10 @@ var InterfaceMaster = (function () {
                         case "add-elite-move":
                         case "add-legacy-move":
                             $el.append($("<option value='"+option.moveId+"'>"+option.name+"</option>"))
+                            break;
+
+                        case "add-tag":
+                            $el.append($("<option value='"+option+"'>"+option+"</option>"))
                             break;
 
                     }
@@ -80,6 +90,7 @@ var InterfaceMaster = (function () {
 								selectedPokemon = gm.getPokemonById(val);
 
                                 if(selectedPokemon){
+                                    self.updateLastSavedJSON();
                                     self.displaySelectedPokemon();
                                     self.updateExportCode();
                                 }
@@ -228,6 +239,9 @@ var InterfaceMaster = (function () {
 
                 // Metadata
                 self.displayEditableList($(".editable-list[data='tags']"), selectedPokemon.tags);
+
+                let tagOptions = data.pokemonTags.filter(tag => ! selectedPokemon?.tags?.includes(tag));
+                self.fillFormOptions($("#add-tag"), tagOptions);
             }
 
             // Given a base list element and data items, output HTML for an editable list
@@ -235,6 +249,10 @@ var InterfaceMaster = (function () {
             this.displayEditableList = function($el, listItems){
                 let dataType = $el.attr("data");
                 $el.html("");
+
+                if(! listItems || listItems?.length == 0){
+                    return;
+                }
 
                 switch(dataType){
                     case "fastMoves":
@@ -272,7 +290,15 @@ var InterfaceMaster = (function () {
             }
 
             this.updateExportCode = function(){
-                $("textarea.import").html(JSON.stringify(selectedPokemon));
+                let json = JSON.stringify(selectedPokemon)
+                $("textarea.import").html(json);
+
+                // Enable or disable save button
+                if(json != lastSavedJSON && data?.id && data?.id != "gamemaster"){
+                    $("#save-changes-btn").removeAttr("disabled");
+                } else{
+                    $("#save-changes-btn").attr("disabled", "disabled");
+                }
             }
 
             // Search for a Pokemon
@@ -397,7 +423,15 @@ var InterfaceMaster = (function () {
                         } else{
                             selectedPokemon.legacyMoves = [val];
                         }
-                        break; 
+                        break;
+
+                    case "add-tag":
+                        if(selectedPokemon?.tags){
+                            selectedPokemon.tags.push(val);
+                        } else{
+                            selectedPokemon.tags = [val];
+                        }
+                        break;
                 }
 
                 self.displaySelectedPokemon();
@@ -440,7 +474,7 @@ var InterfaceMaster = (function () {
 
                     case "level-floor":
                         if(val != ""){
-                            selectedPokemon.levelFloor = parseInt(val);
+                            selectedPokemon.levelFloor = Math.floor(val * 2) / 2;
                         } else{
                             delete selectedPokemon.levelFloor;
                         }
@@ -454,7 +488,6 @@ var InterfaceMaster = (function () {
                     case "iv-hp":
                         let ivKey = $(this).closest("tr").attr("data");
                         let index = parseInt($(this).attr("data"));
-                        console.log(index);
 
                         if(ivKey && index !== null){
                             selectedPokemon.defaultIVs[ivKey][index] = Math.floor(val * 2) / 2; // Ensure levels are at whole or half numbers
@@ -485,6 +518,10 @@ var InterfaceMaster = (function () {
                             case "chargedMoves":
                                 selectedPokemon.chargedMoves = ["STRUGGLE"];
                                 break;
+
+                            default:
+                                delete selectedPokemon[key];
+                                break;
                         }
                     }
 
@@ -513,9 +550,10 @@ var InterfaceMaster = (function () {
             $(".custom-rankings-import textarea.import").on("change", function(e){
                 try{
                     let customData = JSON.parse($(this).val());
-                    if(customData.length > 0 && customData.every(p => p?.speciesId)){
-                        data.pokemon = customData;
-                        self.displayPokemonList();
+                    if(customData && customData?.speciesId){
+                        selectedPokemon = customData;
+                        self.displaySelectedPokemon();
+                        self.updateExportCode();
                     }
                 } catch(e){
                     console.error(e);
@@ -526,30 +564,17 @@ var InterfaceMaster = (function () {
 
             // Save data to localstorage
 
-            $("body").on("click", ".modal #save-new-modal-btn", function(e){
-                // Validate new entry
-                let title = $(".modal #gm_name").val();
-                let id = GMEditorUtils.StringToID(title, "gm_id");
-                let errors = GMEditorUtils.ValidateField("gm_id", id);
-
-                $(".modal #gm_name + .error-label").hide();
+            $("#save-changes-btn").click(function(e){
+                let errors = []; // Add validation here
 
                 if(errors.length == 0){
-                    data.title = title;
-                    data.id = id;
-
-                    self.updateExportCode();
-
                     gm.saveCustomGameMaster(data);
-                    
-                    // Navigate to edit page
-                    window.location.href = $("a#save-new-btn").attr("href");
-                } else{
-                    $(".modal #gm_name + .error-label").show();
-                    $(".modal #gm_name + .error-label").html(errors.join(" "));
-                }
+                    modalWindow("Data Saved", $(".save-data").first());
 
-                console.log(errors);
+                    lastSavedJSON = JSON.stringify(selectedPokemon);
+                } else{
+                    modalWindow("Error", $(".save-data-error").first());
+                }
 
             });
 
