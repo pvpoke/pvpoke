@@ -152,10 +152,11 @@ var InterfaceMaster = (function () {
                                 $("#defender-stat-atk").val(selectedMove.buffsOpponent[0]);
                                 $("#defender-stat-def").val(selectedMove.buffsOpponent[1]);
                                 $(".stat-modifiers .gm-field-wrapper").show();
-                                break; 
+                                break;
 
                         }
                     } else{
+                        $("#move-effect option").first().prop("selected", "selected");
                         $(".move-effect-field").hide();
                     }
 
@@ -168,7 +169,7 @@ var InterfaceMaster = (function () {
                     $("#move-energy").val(selectedMove.energyGain);
                     $("#move-turns").val(selectedMove.turns);
 
-                    self.fillFormOptions($("#move-archetype"), gm.data.chargedMoveArchetypes);
+                    self.fillFormOptions($("#move-archetype"), gm.data.fastMoveArchetypes);
 
                     $(".charged-only").hide();
                     $(".move-effect-field").hide();
@@ -199,51 +200,6 @@ var InterfaceMaster = (function () {
 
                 GMEditorUtils.DisplayEditableList("learnset", pokemonWithMove);
                 self.fillFormOptions($("#add-learnset"), pokemonWithoutMove);
-            }
-
-            // Given a base list element and data items, output HTML for an editable list
-
-            this.displayEditableList = function($el, listItems){
-                let dataType = $el.attr("data");
-                $el.html("");
-
-                if(! listItems || listItems?.length == 0){
-                    return;
-                }
-
-                switch(dataType){
-                    case "fastMoves":
-                    case "chargedMoves":
-                    case "legacyMoves":
-                    case "eliteMoves":
-                        if(typeof listItems !== "undefined"){
-                            listItems.forEach(id => {
-                                let move = gm.getMoveById(id);
-
-                                if(move){
-                                    let $item = $("<div></div>");
-                                    $item.html(move.name);
-                                    $item.addClass(move.type);
-                                    $item.attr("data", id);
-                                    $item.append("<span></span>");
-
-                                    $el.append($item);
-                                }
-                            });
-                        }
-                        break;
-
-                    default:
-                        listItems.forEach(id => {
-                            let $item = $("<div></div>");
-                            $item.html(id);
-                            $item.attr("data", id);
-                            $item.append("<span></span>");
-
-                            $el.append($item);
-                        });
-                        break;
-                }
             }
 
             // Run validations on the full Pokemon entry
@@ -343,77 +299,100 @@ var InterfaceMaster = (function () {
                 $(this).addClass("on");
 
                 switch($parent.attr("data")){
-                    case "released":
-                        selectedMove.released = val == "yes" ? true : false;
-                        self.displayselectedMove();
+                    case "category":
+                        if(val == "fast"){
+                            selectedMove.energyGain = 1;
+                            selectedMove.energy = 0;
+                            delete selectedMove?.buffs;
+                            delete selectedMove?.buffApplyChance;
+                            delete selectedMove?.buffTarget;
+                            delete selectedMove?.buffsSelf;
+                            delete selectedMove?.buffsOpponent;
+                        } else if(val == "charged"){
+                            selectedMove.energyGain = 0;
+                            selectedMove.energy = 50;
+                            selectedMove.turns = 1;
+                            selectedMove.cooldown = 500;
+                        }
+
+                        selectedMove.archetype = gm.generateArchetypeByMove(selectedMove);
+
+                        self.displaySelectedMove();
                         break;
                 }
 
             });
 
-            // Generate new default IV's
-            $("button#generate-default-ivs").click(function(e){
-                selectedMove.defaultIVs = gm.generateDefaultIVsByPokemon(selectedMove);
-                self.displayselectedMove();
+            // Generate move archetype
+            $("button#generate-archetype").click(function(e){
+                selectedMove.archetype = gm.generateArchetypeByMove(selectedMove);
+                self.displaySelectedMove();
             });
 
             // Event handler for changing a select field
-            $("#gm-editor-pokemon select").on("change", function(e){
+            $("#gm-editor-moves select").on("change", function(e){
                 let fieldName = $(this).attr("name");
                 let val = $(this).val();
 
                 switch(fieldName){
-                    case "primary-type":
-                        selectedMove.types[0] = val;
+                    case "move-type":
+                        selectedMove.type = val;
                         break;
 
-                    case "secondary-type":
-                        selectedMove.types[1] = val;
+                    case "move-effect":
+
+                            switch(val){
+                                case "self":
+                                case "opponent":
+                                    selectedMove.buffTarget = val;
+                                    delete selectedMove?.buffsSelf;
+                                    delete selectedMove?.buffsOpponent;
+
+                                    if(! selectedMove?.buffs){
+                                        selectedMove.buffs = [0,0];
+                                    }
+
+                                    if(! selectedMove?.buffApplyChance){
+                                        selectedMove.buffApplyChance = 1;
+                                    }
+                                    break;
+
+                                case "both":
+                                    selectedMove.buffTarget = val;
+
+                                    if(! selectedMove?.buffsSelf || ! selectedMove?.buffsOpponent){
+                                        if(! selectedMove?.buffs){
+                                            selectedMove.buffs = [0,0];
+                                            selectedMove.buffsSelf = [0,0];
+                                            selectedMove.buffsOpponent = [0, 0];
+                                        } else{
+                                            selectedMove.buffsSelf = [...selectedMove.buffs];
+                                            selectedMove.buffsOpponent = [0, 0];
+                                        }
+                                    }
+
+                                    if(! selectedMove?.buffApplyChance){
+                                        selectedMove.buffApplyChance = 1;
+                                    }
+                                    break;
+
+                                case "none":
+                                    delete selectedMove?.buffs;
+                                    delete selectedMove?.buffApplyChance;
+                                    delete selectedMove?.buffTarget;
+                                    delete selectedMove?.buffsSelf;
+                                    delete selectedMove?.buffsOpponent;
+                                    break;
+
+                            }
                         break;
 
-                    case "buddy-distance":
-                        selectedMove.buddyDistance = parseInt(val);
-                        break;
-
-                    case "third-move-cost":
-                        selectedMove.thirdMoveCost = parseInt(val);
-                        break;
-
-                    case "add-fast-move":
-                        selectedMove.fastMoves.push(val);
-                        break;
-
-                    case "add-charged-move":
-                        selectedMove.chargedMoves.push(val);
-                        break;
-
-                    case "add-elite-move":
-                        if(selectedMove?.eliteMoves){
-                            selectedMove.eliteMoves.push(val);
-                        } else{
-                            selectedMove.eliteMoves = [val];
-                        }
-                        
-                        break; 
-
-                    case "add-legacy-move":
-                        if(selectedMove?.legacyMoves){
-                            selectedMove.legacyMoves.push(val);
-                        } else{
-                            selectedMove.legacyMoves = [val];
-                        }
-                        break;
-
-                    case "add-tag":
-                        if(selectedMove?.tags){
-                            selectedMove.tags.push(val);
-                        } else{
-                            selectedMove.tags = [val];
-                        }
+                    case "move-archetype":
+                        selectedMove.archetype = val;
                         break;
                 }
 
-                self.displayselectedMove();
+                self.displaySelectedMove();
             });
 
             // Submit an input field when pressing enter
@@ -424,80 +403,91 @@ var InterfaceMaster = (function () {
             });
 
             // Event handler for changing an input field
-            $("body").on("change", "#gm-editor-pokemon input", function(e){
+            $("body").on("change", "#gm-editor-moves input", function(e){
                 let fieldName = $(this).attr("name");
                 let val = $(this).val();
 
                 switch(fieldName){
-                    case "species-id":
-                        selectedMove.speciesId = val;
+                    case "move-id":
+                        selectedMove.moveId = val;
                         break;
 
-                    case "species-name":
-                        selectedMove.speciesName = val;
+                    case "move-name":
+                        selectedMove.name = val;
                         break;
 
-                    case "alias-id":
+                    case "abbreviation":
                         if(val != ""){
-                            selectedMove.aliasId = val;
+                            selectedMove.abbreviation = val;
                         } else{
-                            delete selectedMove.aliasId;
+                            delete selectedMove.abbreviation;
                         }
                         break;
 
-                    case "dex":
-                        selectedMove.dex = parseInt(val);
+                    case "move-power":
+                        selectedMove.power = parseInt(val);
                         break;
 
-                    case "stats-atk":
-                    case "stats-def":
-                    case "stats-hp":
-                        let key = $(this).attr("data");
-                        selectedMove.baseStats[key] = parseInt(val);
-                        selectedMove.defaultIVs = gm.generateDefaultIVsByPokemon(selectedMove);
-                        break;
-
-                    case "level-floor":
-                        if(val != ""){
-                            selectedMove.levelFloor = Math.floor(val * 2) / 2;
+                    case "move-energy":
+                        if(selectedMove.energy > 0){
+                            selectedMove.energy = Math.max(parseInt(val), 35);
                         } else{
-                            delete selectedMove.levelFloor;
-                        }
-
-                        selectedMove.defaultIVs = gm.generateDefaultIVsByPokemon(selectedMove);
-                        break;
-
-                    case "iv-level":
-                    case "iv-atk":
-                    case "iv-def":
-                    case "iv-hp":
-                        let ivKey = $(this).closest("tr").attr("data");
-                        let index = parseInt($(this).attr("data"));
-
-                        if(ivKey && index !== null){
-                            selectedMove.defaultIVs[ivKey][index] = Math.floor(val * 2) / 2; // Ensure levels are at whole or half numbers
+                            selectedMove.energyGain = Math.max(parseInt(val), 1);
                         }
                         break;
 
-                    case "add-nickname":
-                        if(val != ""){
-                            if(selectedMove?.nicknames){
-                                selectedMove.nicknames.push(val.toLowerCase());
-                            } else{
-                                selectedMove.nicknames = [val.toLowerCase()];
-                            }
+                    case "effect-apply-chance":
+                        let chance = parseFloat(val);
 
-                            $(this).val("");
+                        if(chance < 0){
+                            chance = 0;
+                        } else if (chance > 1){
+                            chance = 1;
+                        }
+
+                        selectedMove.buffApplyChance = parseFloat(val);
+                        break;
+
+                    case "attacker-stat-atk":
+                    case "attacker-stat-def":
+                    case "defender-stat-atk":
+                    case "defender-stat-def":
+                        let stage = parseInt(val);
+                        if(stage < -gm.data.settings.maxBuffStages){
+                            stage = -gm.data.settings.maxBuffStages;
+                        } else if(stage > gm.data.settings.maxBuffStages){
+                            stage = gm.data.settings.maxBuffStages;
+                        }
+
+                        let propertyName = "buffs";
+                        if(selectedMove.buffTarget == "both"){
+                            propertyName = fieldName.includes("attacker") ? "buffsSelf" : "buffsOpponent";
+                        }
+
+                        let arrayIndex = fieldName.includes("atk") ? 0 : 1;
+
+                        selectedMove[propertyName][arrayIndex] = stage;
+
+                        if(selectedMove.buffTarget == "both"){
+                            selectedMove.buffs = [...selectedMove.buffsSelf];
                         }
                         break;
 
-                    case "search-priority":
-                        selectedMove.searchPriority = parseInt(val);
-                        break;
+                    case "move-turns":
+                        let turns = parseInt(val);
 
+                        if(turns < 0){
+                            turns = 1;
+                        } else if (turns > 10){
+                            turns = 10;
+                        }
+
+                        selectedMove.turns = turns;
+                        selectedMove.cooldown = 500 * turns;
+                        break; 
                 }
 
-                self.displayselectedMove();
+                self.displaySelectedMove();
             });
 
             // Event handler for deleting an item from an editable list
@@ -525,7 +515,7 @@ var InterfaceMaster = (function () {
                         }
                     }
 
-                    self.displayselectedMove();
+                    self.displaySelectedMove();
                 }
             });
 
@@ -551,13 +541,13 @@ var InterfaceMaster = (function () {
                     let customData = JSON.parse($(this).val());
                     if(customData && customData?.speciesId){
                         selectedMove = customData;
-                        self.displayselectedMove();
+                        self.displaySelectedMove();
                     }
                 } catch(e){
                     console.error(e);
                     modalWindow("Data Error", $(".import-error").first());
                     selectedMove = JSON.parse(lastSavedJSON);
-                    self.displayselectedMove();
+                    self.displaySelectedMove();
                 }
                 
             });

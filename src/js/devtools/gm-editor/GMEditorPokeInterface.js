@@ -294,57 +294,6 @@ var InterfaceMaster = (function () {
                 }
             }
 
-            // Search for a Pokemon
-			let searchTimeout;
-			let searchStr = '';
-			let $target = null;
-            let searchMode = "filter";
-
-			$("body").on("keyup", ".poke-search", function(e){
-				searchStr = $(this).val().toLowerCase().trim();
-
-				$target = $(".train-table");
-
-				// Reset the timeout when a new key is typed. This prevents queries from being submitted too quickly and bogging things down on mobile.
-				window.clearTimeout(searchTimeout);
-				searchTimeout = window.setTimeout(submitSearchQuery, 200);
-			});
-
-			function submitSearchQuery(){
-				let list = GameMaster.getInstance().generatePokemonListFromSearchString(searchStr, battle);
-                
-                $target.find("tbody tr").removeClass("find");
-                $target.find("tbody tr").show();
-
-                if(searchMode == "filter"){
-                    // Only show matching rows
-                    $target.find("tbody tr").each(function(index, value){
-                        let id = $(this).attr("data");
-
-                        if(list.includes(id)){
-                            $(this).show();
-                        } else{
-                            $(this).hide();
-                        }
-                    });
-                } else if(searchMode == "find" && list.length > 0){
-                    // Scroll to the first matching row
-                    let targetId = list[0];
-                    let $targetRow = $target.find("tbody tr[data='"+targetId+"']");
-
-                    if($targetRow.length > 0){
-                        $targetRow.addClass("find");
-
-                        let elTop = $targetRow.position().top;
-                        let containerTop = $(".table-container").position().top;
-                        let gotoTop = elTop - containerTop - 20;
-
-                        $(".table-container").scrollTop(gotoTop);
-                    }
-                }
-
-			}
-
             // Event handler for selecting form group options
             $(".form-group .option").click(function(e){
                 let val = $(this).attr("value");

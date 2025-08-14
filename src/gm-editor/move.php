@@ -92,8 +92,8 @@ require_once '../header.php';
                     <label>Move Effect</label>
                     <select id="move-effect" name="move-effect" class="field-mw">
                         <option value="none">None</option>
-                        <option value="self">Attacker Stat Modifier</option>
-                        <option value="opponent">Defender Stat Modifier</option>
+                        <option value="self">Modify Attacker Stats</option>
+                        <option value="opponent">Modify Defender Stats</option>
                         <option value="both">Both</option>
                     </select>
                 </div>
@@ -115,6 +115,7 @@ require_once '../header.php';
                             <label class="iv">Atk</label>
                             <label class="iv">Def</label>
                         </div>
+                        <div class="description">Stage increase or descrease (-4 to 4)</div>
                     </div>
                 </div>
                 <div class="gm-field-wrapper">
@@ -128,6 +129,7 @@ require_once '../header.php';
                             <label class="iv">Atk</label>
                             <label class="iv">Def</label>
                         </div>
+                        <div class="description">Stage increase or descrease (-4 to 4)</div>
                     </div>
                 </div>
             </div>
@@ -139,9 +141,13 @@ require_once '../header.php';
             <h3>Metadata</h3>
             <div class="gm-field-wrapper">
                 <label class="required">Archetype</label>
-                <select id="move-archetype" name="move-archetype" class="field-mw">
-                    <option value="none" selected disabled>Select an archetype</option>
-                </select>
+                <div class="flex gap-15">
+                    <select id="move-archetype" name="move-archetype" class="field-mw">
+                        <option value="none" selected disabled>Select an archetype</option>
+                    </select>
+                    <button id="generate-archetype">Auto Select Archetype</button>
+                </div>
+
                 <div class="description">Only used as a description in the rankings.</div>
             </div>
         </div>
