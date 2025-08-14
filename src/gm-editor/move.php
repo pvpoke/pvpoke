@@ -2,8 +2,17 @@
 
 $META_TITLE = 'Moves | Gamemaster Editor';
 
+if(isset($_GET['m'])){
+	// Put Pokemon names in the meta title
+
+	$name = ucwords(str_replace('_',' ', explode('-', htmlspecialchars($_GET['m']))[0]));
+
+	$META_TITLE = $name . ' | Gamemaster Editor';
+}
+
 $META_DESCRIPTION = 'Customize moves or add new moves for your simulations.';
 
+$CANONICAL = '/gm-editor/moves/';
 
 require_once '../header.php';
 ?>
@@ -90,7 +99,7 @@ require_once '../header.php';
                 </div>
                 <div class="gm-field-wrapper move-effect-field">
                     <label>Effect Chance</label>
-                    <input id="effect-apply-chance" name="effect-apply-chance" type="number" placeholder="Enter move effect chance"/>
+                    <input id="effect-apply-chance" name="effect-apply-chance" type="number" placeholder="Enter move effect chance" min="0" max="1" step=".1" />
                     <div class="description">Decimal between 0 and 1 (1 = 100% chance).</div>
                 </div>
             </div>
@@ -131,20 +140,9 @@ require_once '../header.php';
             <div class="gm-field-wrapper">
                 <label class="required">Archetype</label>
                 <select id="move-archetype" name="move-archetype" class="field-mw">
-                    <option value="none" selected disabled>Select a type</option>
+                    <option value="none" selected disabled>Select an archetype</option>
                 </select>
-            </div>
-        </div>
-
-        <hr>
-
-        <div class="gm-entry-section">
-            <h3>Learnset</h3>
-            <div class="gm-field-wrapper">
-                <label class="required">Archetype</label>
-                <select id="move-archetype" name="move-archetype" class="field-mw">
-                    <option value="none" selected disabled>Select a type</option>
-                </select>
+                <div class="description">Only used as a description in the rankings.</div>
             </div>
         </div>
 
@@ -157,6 +155,44 @@ require_once '../header.php';
     <?php endif; ?>
 </div>
 
+<div class="section white" id="gm-editor-learnset">
+	<h3>Learnset</h3>
+
+	<p>Add this move to a Pokemon's move pool or remove it below.</p>
+
+	<div class="gm-entry-section">
+        <div class="gm-field-wrapper">
+            <div class="editable-list-selector editable-list" data="learnset"></div>
+        </div>
+        <div class="gm-field-wrapper">
+            <select class="editable-list-selector field-mw" id="add-learnset" name="add-learnset">
+                <option value="NONE" selected disabled>+ Add Move to Pokemon</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="section white custom-rankings-import">
+	<h3>Import/Export Move Entry</h3>
+
+	<p>Copy the text below to export this move entry or paste to overwrite it. Only copy and paste code from a trusted source.</p>
+
+	<textarea class="import"></textarea>
+	<div class="copy">Copy</div>
+</div>
+
+<div class="import-error hide">
+	<p>There was an error importing the custom data. Ensure that the data is not malformed and contains valid Pokemon or move data.</p>
+</div>
+
+<div class="save-data hide">
+	<p>Data saved successfully.</p>
+</div>
+
+<div class="save-data-error hide">
+	<p>There was an error saving the data. Ensure that all entries are valid.</p>
+</div>
+
 
 <?php require_once '../modules/scripts/battle-scripts.php'; ?>
 
@@ -164,7 +200,8 @@ require_once '../header.php';
 <script src="<?php echo $WEB_ROOT; ?>js/pokemon/Pokemon.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/PokeSearch.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/devtools/gm-editor/GMEditorInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/devtools/gm-editor/GMEditorUtils.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/devtools/gm-editor/GMEditorMoveInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/Main.js?v=<?php echo $SITE_VERSION; ?>"></script>
 
 <?php require_once '../footer.php'; ?>

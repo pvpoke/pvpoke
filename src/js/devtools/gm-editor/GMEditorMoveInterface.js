@@ -14,7 +14,7 @@ var InterfaceMaster = (function () {
             let self = this;
             let battle = new Battle();
 
-            let selectedPokemon;
+            let selectedMove;
             let lastSavedJSON; // JSON of the last saved data
 
 			this.init = function(){
@@ -28,7 +28,7 @@ var InterfaceMaster = (function () {
 			}
 
             this.updateLastSavedJSON = function(){
-                lastSavedJSON = JSON.stringify(selectedPokemon);
+                lastSavedJSON = JSON.stringify(selectedMove);
                 $("#save-changes-btn").attr("disabled", "disabled");
             }
 
@@ -36,8 +36,7 @@ var InterfaceMaster = (function () {
 
             this.fillAllFormOptions = function(){
                 let allTypes = Pokemon.getAllTypes();
-                self.fillFormOptions($("#primary-type"), allTypes);
-                self.fillFormOptions($("#secondary-type"), allTypes);
+                self.fillFormOptions($("#move-type"), allTypes);
             }
 
             // Fill the options for a single select element
@@ -46,19 +45,15 @@ var InterfaceMaster = (function () {
 
                 options.forEach(option => {
                     switch(fieldName){
-                        case "primary-type":
-                        case "secondary-type":
+                        case "move-type":
                             $el.append($("<option value='"+option.toLowerCase()+"'>"+option+"</option>"))
                             break;
 
-                        case "add-fast-move":
-                        case "add-charged-move":
-                        case "add-elite-move":
-                        case "add-legacy-move":
-                            $el.append($("<option value='"+option.moveId+"'>"+option.name+"</option>"))
+                        case "add-learnset":
+                            $el.append($("<option value='"+option.speciesId+"'>"+option.speciesName+"</option>"))
                             break;
 
-                        case "add-tag":
+                        default:
                             $el.append($("<option value='"+option+"'>"+option+"</option>"))
                             break;
 
@@ -85,12 +80,13 @@ var InterfaceMaster = (function () {
 						// Process each type of parameter
 
 						switch(key){
-							case "p":
-								selectedPokemon = gm.getPokemonById(val);
+							case "m":
+								selectedMove = gm.getMoveDataById(val);
 
-                                if(selectedPokemon){
+                                if(selectedMove){
                                     self.updateLastSavedJSON();
-                                    self.displaySelectedPokemon();
+                                    self.displaySelectedMove();
+                                    self.displayLearnset();
                                 }
 								break;
 						}
@@ -100,166 +96,159 @@ var InterfaceMaster = (function () {
 
             // Update all form fields with data from the selected Pokemon entry
 
-            this.displaySelectedPokemon = function(){
-                if(! selectedPokemon){
+            this.displaySelectedMove = function(){
+                if(! selectedMove){
                     return false;
                 }
 
                 // Name & ID's
 
-                $("#species-id").val(selectedPokemon.speciesId);
-                $("#species-name").val(selectedPokemon.speciesName);
-                $("#dex").val(selectedPokemon.dex);
-
-                if(selectedPokemon?.aliasId){
-                    $("#alias-id").val(selectedPokemon.aliasId);
-                }
-
-                GMEditorUtils.DisplayEditableList("nicknames", selectedPokemon.nicknames);
+                $("#move-id").val(selectedMove.moveId);
+                $("#move-name").val(selectedMove.name);
+                $("#abbreviation").val(selectedMove.abbreviation);
 
                 // Game data
-                $("#stats-atk").val(selectedPokemon.baseStats.atk);
-                $("#stats-def").val(selectedPokemon.baseStats.def);
-                $("#stats-hp").val(selectedPokemon.baseStats.hp);
 
-                $("#buddy-distance option[value='"+selectedPokemon.buddyDistance+"']").prop("selected", "selected");
-                $("#third-move-cost option[value='"+selectedPokemon.thirdMoveCost+"']").prop("selected", "selected");
+                $("#move-type option[value='"+selectedMove.type+"']").prop("selected", "selected");
+                $("#move-type").attr("class", selectedMove.type);
 
-                $("#primary-type option[value='"+selectedPokemon.types[0]+"']").prop("selected", "selected");
-                $("#secondary-type option[value='"+selectedPokemon.types[1]+"']").prop("selected", "selected");
-                $("#primary-type").attr("class", selectedPokemon.types[0]);
-                $("#secondary-type").attr("class", selectedPokemon.types[1]);
+                $("#move-power").val(selectedMove.power);
 
-                if(selectedPokemon?.levelFloor){
-                    $("#level-floor").val(selectedPokemon.levelFloor);
-                }
+                // Fast Move and Charged Move specific values
+                $(".form-group[data='category'] .option").removeClass("on");
+                $("#move-archetype").find("option:not(:first-child)").remove();
 
-                // Default IV table
-                $("#default-iv-table tbody").html("");
+                if(selectedMove.energy > 0){
+                    // Charged Move
+                    $(".form-group[data='category'] .option[value='charged']").addClass("on");
 
-                for(let ivKey in selectedPokemon.defaultIVs){
-                    let ivs = selectedPokemon.defaultIVs[ivKey];
-                    let $row = $("#default-iv-table tr.hide").clone().removeClass("hide");
+                    $("#move-energy").val(selectedMove.energy);
 
-                    $row.attr("data", ivKey);
-                    $row.find("td[data='league']").html(ivKey);
-                    $row.find("input.level").val(ivs[0]);
-                    $row.find("input[iv='atk']").val(ivs[1]);
-                    $row.find("input[iv='def']").val(ivs[2]);
-                    $row.find("input[iv='hp']").val(ivs[3]);
+                    self.fillFormOptions($("#move-archetype"), gm.data.chargedMoveArchetypes);
 
-                    // Display Pokemon's rank and CP
-                    let b = new Battle();
+                    if(selectedMove?.buffs){
+                        $("#move-effect option[value='"+selectedMove.buffTarget+"']").prop("selected", "selected");
+                        $("#effect-apply-chance").val(selectedMove.buffApplyChance);
+                        $(".move-effect-field").show();
 
-                    switch(ivKey){
-                        case "cp500":
-                            b.setCP(500);
-                            break;
-                        
-                        case "cp1500":
-                            b.setCP(1500);
-                            break;
+                        switch(selectedMove.buffTarget){
+                            case "self":
+                                $("#attacker-stat-atk").val(selectedMove.buffs[0]);
+                                $("#attacker-stat-def").val(selectedMove.buffs[1]);
+                                $(".stat-modifiers .gm-field-wrapper").eq(0).show();
+                                $(".stat-modifiers .gm-field-wrapper").eq(1).hide();
+                                break;
 
-                        case "cp1500l40":
-                            b.setCP(1500);
-                            b.setLevelCap(40);
-                            break;
+                            case "opponent":
+                                $("#defender-stat-atk").val(selectedMove.buffs[0]);
+                                $("#defender-stat-def").val(selectedMove.buffs[1]);
+                                $(".stat-modifiers .gm-field-wrapper").eq(1).show();
+                                $(".stat-modifiers .gm-field-wrapper").eq(0).hide();
+                                break; 
 
-                        case "cp2500":
-                            b.setCP(2500);
-                            break;
+                            case "both":
+                                $("#attacker-stat-atk").val(selectedMove.buffsSelf[0]);
+                                $("#attacker-stat-def").val(selectedMove.buffsSelf[1]);
+                                $("#defender-stat-atk").val(selectedMove.buffsOpponent[0]);
+                                $("#defender-stat-def").val(selectedMove.buffsOpponent[1]);
+                                $(".stat-modifiers .gm-field-wrapper").show();
+                                break; 
 
-                        case "cp2500l40":
-                            b.setCP(2500);
-                            b.setLevelCap(40);
-                            break;
-                    }
-
-                    let pokemon = new Pokemon(null, 0, b, selectedPokemon);
-                    pokemon.initialize(true);
-
-                    let combinations = pokemon.generateIVCombinations("overall", 1, 4096);
-                    let rank = combinations.findIndex((combo) => combo.ivs.atk == ivs[1] && combo.ivs.def == ivs[2] && combo.ivs.hp == ivs[3]);
-
-                    pokemon.setLevel(ivs[0]);
-                    pokemon.setIV("atk", ivs[1]);
-                    pokemon.setIV("def", ivs[2]);
-                    pokemon.setIV("hp", ivs[3]);
-
-                    if(rank > -1){
-                        $row.find("td[data='rank']").html(rank+1);
+                        }
                     } else{
-                        $row.find("td[data='rank']").html("???");
-                    }
-                    
-                    $row.find("td[data='cp']").html([pokemon.cp]);
-
-                    $("#default-iv-table tbody").append($row);
-                }
-
-                // Move lists
-
-                GMEditorUtils.DisplayEditableList("fastMoves", selectedPokemon.fastMoves);
-                GMEditorUtils.DisplayEditableList("chargedMoves", selectedPokemon.chargedMoves);
-                GMEditorUtils.DisplayEditableList("eliteMoves", selectedPokemon.eliteMoves);
-                GMEditorUtils.DisplayEditableList("legacyMoves", selectedPokemon.legacyMoves);
-
-                // Filter and fill new move options
-                $(".editable-list-selector").each(function(){
-                    $(this).find("option:first-child").prop("selected", "selected");
-                    $(this).find("option:not(:first-child)").remove();
-                });
-
-                let fastOptions = data.moves.filter(move => move.energyGain > 0);
-                fastOptions = fastOptions.filter(move => ! selectedPokemon.fastMoves.includes(move.moveId)); // Exclude selected moves
-                self.fillFormOptions($("#add-fast-move"), fastOptions);
-
-                let chargedOptions = data.moves.filter(move => move.energy > 0);
-                chargedOptions = chargedOptions.filter(move => ! selectedPokemon.chargedMoves.includes(move.moveId)); // Exclude selected moves
-                self.fillFormOptions($("#add-charged-move"), chargedOptions);
-
-                let eliteOptions = []; // Add all current moves which are not elite moves
-                let legacyOptions = []; // Add all current moves which are not legacy moves
-                let currentMoves = [...selectedPokemon.fastMoves, ...selectedPokemon.chargedMoves];
-
-                currentMoves.sort((a,b) => (a > b) ? 1 : ((b > a) ? -1 : 0));
-
-                currentMoves.forEach(move => {
-                    if(! selectedPokemon?.eliteMoves || ! selectedPokemon.eliteMoves.includes(move)){
-                        eliteOptions.push(gm.getMoveById(move));
+                        $(".move-effect-field").hide();
                     }
 
-                    if(! selectedPokemon?.legacyMoves || ! selectedPokemon.legacyMoves.includes(move)){
-                        legacyOptions.push(gm.getMoveById(move));
-                    }
-                })
-
-                self.fillFormOptions($("#add-elite-move"), eliteOptions);
-                self.fillFormOptions($("#add-legacy-move"), legacyOptions);
-
-                // Metadata
-                GMEditorUtils.DisplayEditableList("tags", selectedPokemon.tags);
-
-                let tagOptions = data.pokemonTags.filter(tag => ! selectedPokemon?.tags?.includes(tag));
-                self.fillFormOptions($("#add-tag"), tagOptions);
-
-                $(".form-group[data='released'] .option").removeClass("on");
-
-                if(selectedPokemon.released){
-                    $(".form-group[data='released'] .option[value='yes']").addClass("on");
+                    $(".fast-only").hide();
+                    $(".charged-only").show();
                 } else{
-                    $(".form-group[data='released'] .option[value='no']").addClass("on");
+                    // Fast Move
+                    $(".form-group[data='category'] .option[value='fast']").addClass("on");
+
+                    $("#move-energy").val(selectedMove.energyGain);
+                    $("#move-turns").val(selectedMove.turns);
+
+                    self.fillFormOptions($("#move-archetype"), gm.data.chargedMoveArchetypes);
+
+                    $(".charged-only").hide();
+                    $(".move-effect-field").hide();
+                    $(".fast-only").show();
                 }
 
-                $("#search-priority").val(selectedPokemon.searchPriority);
+                $("#move-archetype option[value='"+selectedMove.archetype+"']").prop("selected", "selected");
 
                 self.updateExportCode();
-                self.validatePokemon();
+                //self.validatePokemon();
+            }
+
+            self.displayLearnset = function(){
+                let pokemonWithMove = [];
+                let pokemonWithoutMove = [];
+
+                // Generate list of Pokemon which already have the move and Pokemon which don't
+                let pokemonList = data.pokemon.forEach(pokemon => {
+                    if(pokemon.fastMoves.includes(selectedMove.moveId) || pokemon.chargedMoves.includes(selectedMove.moveId)){
+                        pokemonWithMove.push(pokemon);
+                    } else{
+                        pokemonWithoutMove.push(pokemon);
+                    }
+                });
+
+                pokemonWithMove.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+                pokemonWithoutMove.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+
+                GMEditorUtils.DisplayEditableList("learnset", pokemonWithMove);
+                self.fillFormOptions($("#add-learnset"), pokemonWithoutMove);
+            }
+
+            // Given a base list element and data items, output HTML for an editable list
+
+            this.displayEditableList = function($el, listItems){
+                let dataType = $el.attr("data");
+                $el.html("");
+
+                if(! listItems || listItems?.length == 0){
+                    return;
+                }
+
+                switch(dataType){
+                    case "fastMoves":
+                    case "chargedMoves":
+                    case "legacyMoves":
+                    case "eliteMoves":
+                        if(typeof listItems !== "undefined"){
+                            listItems.forEach(id => {
+                                let move = gm.getMoveById(id);
+
+                                if(move){
+                                    let $item = $("<div></div>");
+                                    $item.html(move.name);
+                                    $item.addClass(move.type);
+                                    $item.attr("data", id);
+                                    $item.append("<span></span>");
+
+                                    $el.append($item);
+                                }
+                            });
+                        }
+                        break;
+
+                    default:
+                        listItems.forEach(id => {
+                            let $item = $("<div></div>");
+                            $item.html(id);
+                            $item.attr("data", id);
+                            $item.append("<span></span>");
+
+                            $el.append($item);
+                        });
+                        break;
+                }
             }
 
             // Run validations on the full Pokemon entry
             this.validatePokemon = function(){
-                let pokemonErrors = GMEditorUtils.ValidatePokemonEntry(selectedPokemon);
+                let pokemonErrors = GMEditorUtils.ValidatePokemonEntry(selectedMove);
 
                 $("#gm-editor-pokemon .error-label").remove();
 
@@ -283,7 +272,7 @@ var InterfaceMaster = (function () {
             }
 
             this.updateExportCode = function(){
-                let json = JSON.stringify(selectedPokemon)
+                let json = JSON.stringify(selectedMove)
                 $("textarea.import").val(json);
 
                 // Enable or disable save button
@@ -355,8 +344,8 @@ var InterfaceMaster = (function () {
 
                 switch($parent.attr("data")){
                     case "released":
-                        selectedPokemon.released = val == "yes" ? true : false;
-                        self.displaySelectedPokemon();
+                        selectedMove.released = val == "yes" ? true : false;
+                        self.displayselectedMove();
                         break;
                 }
 
@@ -364,8 +353,8 @@ var InterfaceMaster = (function () {
 
             // Generate new default IV's
             $("button#generate-default-ivs").click(function(e){
-                selectedPokemon.defaultIVs = gm.generateDefaultIVsByPokemon(selectedPokemon);
-                self.displaySelectedPokemon();
+                selectedMove.defaultIVs = gm.generateDefaultIVsByPokemon(selectedMove);
+                self.displayselectedMove();
             });
 
             // Event handler for changing a select field
@@ -375,56 +364,56 @@ var InterfaceMaster = (function () {
 
                 switch(fieldName){
                     case "primary-type":
-                        selectedPokemon.types[0] = val;
+                        selectedMove.types[0] = val;
                         break;
 
                     case "secondary-type":
-                        selectedPokemon.types[1] = val;
+                        selectedMove.types[1] = val;
                         break;
 
                     case "buddy-distance":
-                        selectedPokemon.buddyDistance = parseInt(val);
+                        selectedMove.buddyDistance = parseInt(val);
                         break;
 
                     case "third-move-cost":
-                        selectedPokemon.thirdMoveCost = parseInt(val);
+                        selectedMove.thirdMoveCost = parseInt(val);
                         break;
 
                     case "add-fast-move":
-                        selectedPokemon.fastMoves.push(val);
+                        selectedMove.fastMoves.push(val);
                         break;
 
                     case "add-charged-move":
-                        selectedPokemon.chargedMoves.push(val);
+                        selectedMove.chargedMoves.push(val);
                         break;
 
                     case "add-elite-move":
-                        if(selectedPokemon?.eliteMoves){
-                            selectedPokemon.eliteMoves.push(val);
+                        if(selectedMove?.eliteMoves){
+                            selectedMove.eliteMoves.push(val);
                         } else{
-                            selectedPokemon.eliteMoves = [val];
+                            selectedMove.eliteMoves = [val];
                         }
                         
                         break; 
 
                     case "add-legacy-move":
-                        if(selectedPokemon?.legacyMoves){
-                            selectedPokemon.legacyMoves.push(val);
+                        if(selectedMove?.legacyMoves){
+                            selectedMove.legacyMoves.push(val);
                         } else{
-                            selectedPokemon.legacyMoves = [val];
+                            selectedMove.legacyMoves = [val];
                         }
                         break;
 
                     case "add-tag":
-                        if(selectedPokemon?.tags){
-                            selectedPokemon.tags.push(val);
+                        if(selectedMove?.tags){
+                            selectedMove.tags.push(val);
                         } else{
-                            selectedPokemon.tags = [val];
+                            selectedMove.tags = [val];
                         }
                         break;
                 }
 
-                self.displaySelectedPokemon();
+                self.displayselectedMove();
             });
 
             // Submit an input field when pressing enter
@@ -441,41 +430,41 @@ var InterfaceMaster = (function () {
 
                 switch(fieldName){
                     case "species-id":
-                        selectedPokemon.speciesId = val;
+                        selectedMove.speciesId = val;
                         break;
 
                     case "species-name":
-                        selectedPokemon.speciesName = val;
+                        selectedMove.speciesName = val;
                         break;
 
                     case "alias-id":
                         if(val != ""){
-                            selectedPokemon.aliasId = val;
+                            selectedMove.aliasId = val;
                         } else{
-                            delete selectedPokemon.aliasId;
+                            delete selectedMove.aliasId;
                         }
                         break;
 
                     case "dex":
-                        selectedPokemon.dex = parseInt(val);
+                        selectedMove.dex = parseInt(val);
                         break;
 
                     case "stats-atk":
                     case "stats-def":
                     case "stats-hp":
                         let key = $(this).attr("data");
-                        selectedPokemon.baseStats[key] = parseInt(val);
-                        selectedPokemon.defaultIVs = gm.generateDefaultIVsByPokemon(selectedPokemon);
+                        selectedMove.baseStats[key] = parseInt(val);
+                        selectedMove.defaultIVs = gm.generateDefaultIVsByPokemon(selectedMove);
                         break;
 
                     case "level-floor":
                         if(val != ""){
-                            selectedPokemon.levelFloor = Math.floor(val * 2) / 2;
+                            selectedMove.levelFloor = Math.floor(val * 2) / 2;
                         } else{
-                            delete selectedPokemon.levelFloor;
+                            delete selectedMove.levelFloor;
                         }
 
-                        selectedPokemon.defaultIVs = gm.generateDefaultIVsByPokemon(selectedPokemon);
+                        selectedMove.defaultIVs = gm.generateDefaultIVsByPokemon(selectedMove);
                         break;
 
                     case "iv-level":
@@ -486,16 +475,16 @@ var InterfaceMaster = (function () {
                         let index = parseInt($(this).attr("data"));
 
                         if(ivKey && index !== null){
-                            selectedPokemon.defaultIVs[ivKey][index] = Math.floor(val * 2) / 2; // Ensure levels are at whole or half numbers
+                            selectedMove.defaultIVs[ivKey][index] = Math.floor(val * 2) / 2; // Ensure levels are at whole or half numbers
                         }
                         break;
 
                     case "add-nickname":
                         if(val != ""){
-                            if(selectedPokemon?.nicknames){
-                                selectedPokemon.nicknames.push(val.toLowerCase());
+                            if(selectedMove?.nicknames){
+                                selectedMove.nicknames.push(val.toLowerCase());
                             } else{
-                                selectedPokemon.nicknames = [val.toLowerCase()];
+                                selectedMove.nicknames = [val.toLowerCase()];
                             }
 
                             $(this).val("");
@@ -503,12 +492,12 @@ var InterfaceMaster = (function () {
                         break;
 
                     case "search-priority":
-                        selectedPokemon.searchPriority = parseInt(val);
+                        selectedMove.searchPriority = parseInt(val);
                         break;
 
                 }
 
-                self.displaySelectedPokemon();
+                self.displayselectedMove();
             });
 
             // Event handler for deleting an item from an editable list
@@ -516,27 +505,27 @@ var InterfaceMaster = (function () {
                 let id = $(this).closest("div").attr("data");
                 let key = $(this).closest(".editable-list").attr("data");
 
-                if(id && key && selectedPokemon.hasOwnProperty(key)){
-                    selectedPokemon[key] = selectedPokemon[key].filter(item => item != id);
+                if(id && key && selectedMove.hasOwnProperty(key)){
+                    selectedMove[key] = selectedMove[key].filter(item => item != id);
 
                     // Enforce one Fast Attack or one Charged Attack
-                    if(selectedPokemon[key].length == 0){
+                    if(selectedMove[key].length == 0){
                         switch(key){
                             case "fastMoves":
-                                selectedPokemon.fastMoves = ["SPLASH"];
+                                selectedMove.fastMoves = ["SPLASH"];
                                 break;
 
                             case "chargedMoves":
-                                selectedPokemon.chargedMoves = ["STRUGGLE"];
+                                selectedMove.chargedMoves = ["STRUGGLE"];
                                 break;
 
                             default:
-                                delete selectedPokemon[key];
+                                delete selectedMove[key];
                                 break;
                         }
                     }
 
-                    self.displaySelectedPokemon();
+                    self.displayselectedMove();
                 }
             });
 
@@ -561,14 +550,14 @@ var InterfaceMaster = (function () {
                 try{
                     let customData = JSON.parse($(this).val());
                     if(customData && customData?.speciesId){
-                        selectedPokemon = customData;
-                        self.displaySelectedPokemon();
+                        selectedMove = customData;
+                        self.displayselectedMove();
                     }
                 } catch(e){
                     console.error(e);
                     modalWindow("Data Error", $(".import-error").first());
-                    selectedPokemon = JSON.parse(lastSavedJSON);
-                    self.displaySelectedPokemon();
+                    selectedMove = JSON.parse(lastSavedJSON);
+                    self.displayselectedMove();
                 }
                 
             });
@@ -582,7 +571,7 @@ var InterfaceMaster = (function () {
                     gm.saveCustomGameMaster(data);
                     modalWindow("Data Saved", $(".save-data").first());
 
-                    lastSavedJSON = JSON.stringify(selectedPokemon);
+                    lastSavedJSON = JSON.stringify(selectedMove);
                 } else{
                     modalWindow("Error", $(".save-data-error").first());
                 }

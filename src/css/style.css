@@ -6056,54 +6056,65 @@ a.feed-subscribe {
 }
 
 #gm-editor-pokemon .gm-title,
-#gm-editor-moves .gm-title {
+#gm-editor-moves .gm-title,
+#gm-editor-learnset .gm-title {
   font-size: 18px;
   font-weight: bold;
 }
 #gm-editor-pokemon .table-container,
-#gm-editor-moves .table-container {
+#gm-editor-moves .table-container,
+#gm-editor-learnset .table-container {
   overflow: auto;
   max-height: 800px;
   position: relative;
 }
 #gm-editor-pokemon .table-container table,
-#gm-editor-moves .table-container table {
+#gm-editor-moves .table-container table,
+#gm-editor-learnset .table-container table {
   font-size: 12px;
   min-width: 900px;
 }
 #gm-editor-pokemon .table-container table th, #gm-editor-pokemon .table-container table td,
 #gm-editor-moves .table-container table th,
-#gm-editor-moves .table-container table td {
+#gm-editor-moves .table-container table td,
+#gm-editor-learnset .table-container table th,
+#gm-editor-learnset .table-container table td {
   padding: 10px;
   text-align: left;
 }
 #gm-editor-pokemon .table-container table tr.find,
-#gm-editor-moves .table-container table tr.find {
+#gm-editor-moves .table-container table tr.find,
+#gm-editor-learnset .table-container table tr.find {
   background: #c4def5 !important;
 }
 #gm-editor-pokemon .table-container table th,
-#gm-editor-moves .table-container table th {
+#gm-editor-moves .table-container table th,
+#gm-editor-learnset .table-container table th {
   position: sticky;
   top: 0;
   left: 0;
   background: #f9fdff;
 }
 #gm-editor-pokemon .table-container table td[data=name],
-#gm-editor-moves .table-container table td[data=name] {
+#gm-editor-moves .table-container table td[data=name],
+#gm-editor-learnset .table-container table td[data=name] {
   min-width: 180px;
   font-weight: bold;
   font-size: 14px;
 }
 #gm-editor-pokemon .poke-search-container .form-group,
-#gm-editor-moves .poke-search-container .form-group {
+#gm-editor-moves .poke-search-container .form-group,
+#gm-editor-learnset .poke-search-container .form-group {
   margin: 0 0 0 15px;
 }
 #gm-editor-pokemon .poke-search-container .form-group .option,
-#gm-editor-moves .poke-search-container .form-group .option {
+#gm-editor-moves .poke-search-container .form-group .option,
+#gm-editor-learnset .poke-search-container .form-group .option {
   padding: 5px 15px;
 }
 #gm-editor-pokemon .gm-entry-section,
-#gm-editor-moves .gm-entry-section {
+#gm-editor-moves .gm-entry-section,
+#gm-editor-learnset .gm-entry-section {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -6111,77 +6122,94 @@ a.feed-subscribe {
   margin: 0 auto;
 }
 #gm-editor-pokemon .gm-entry-section h3,
-#gm-editor-moves .gm-entry-section h3 {
+#gm-editor-moves .gm-entry-section h3,
+#gm-editor-learnset .gm-entry-section h3 {
   margin: 10px 0;
 }
 #gm-editor-pokemon .gm-entry-section .gm-entry-row,
-#gm-editor-moves .gm-entry-section .gm-entry-row {
+#gm-editor-moves .gm-entry-section .gm-entry-row,
+#gm-editor-learnset .gm-entry-section .gm-entry-row {
   display: flex;
   align-items: start;
   gap: 10px;
   flex-wrap: wrap;
 }
 #gm-editor-pokemon .gm-entry-section .gm-entry-row .gm-field-wrapper,
-#gm-editor-moves .gm-entry-section .gm-entry-row .gm-field-wrapper {
+#gm-editor-moves .gm-entry-section .gm-entry-row .gm-field-wrapper,
+#gm-editor-learnset .gm-entry-section .gm-entry-row .gm-field-wrapper {
   flex: 1;
   min-width: 120px;
 }
 #gm-editor-pokemon .gm-entry-section .gm-field-wrapper label,
-#gm-editor-moves .gm-entry-section .gm-field-wrapper label {
+#gm-editor-moves .gm-entry-section .gm-field-wrapper label,
+#gm-editor-learnset .gm-entry-section .gm-field-wrapper label {
   font-size: 12px;
   margin-bottom: 2px;
   font-weight: bold;
   display: block;
 }
 #gm-editor-pokemon .gm-entry-section .gm-field-wrapper label:nth-of-type(n + 2),
-#gm-editor-moves .gm-entry-section .gm-field-wrapper label:nth-of-type(n + 2) {
+#gm-editor-moves .gm-entry-section .gm-field-wrapper label:nth-of-type(n + 2),
+#gm-editor-learnset .gm-entry-section .gm-field-wrapper label:nth-of-type(n + 2) {
   margin-top: 10px;
 }
 #gm-editor-pokemon .gm-entry-section .gm-field-wrapper .description,
-#gm-editor-moves .gm-entry-section .gm-field-wrapper .description {
+#gm-editor-moves .gm-entry-section .gm-field-wrapper .description,
+#gm-editor-learnset .gm-entry-section .gm-field-wrapper .description {
   margin-top: 10px;
   font-size: 12px;
 }
 #gm-editor-pokemon .gm-entry-section .gm-field-wrapper .form-group,
-#gm-editor-moves .gm-entry-section .gm-field-wrapper .form-group {
+#gm-editor-moves .gm-entry-section .gm-field-wrapper .form-group,
+#gm-editor-learnset .gm-entry-section .gm-field-wrapper .form-group {
   margin: 0;
 }
 #gm-editor-pokemon .gm-entry-section .gm-field-wrapper .field-mw,
-#gm-editor-moves .gm-entry-section .gm-field-wrapper .field-mw {
+#gm-editor-moves .gm-entry-section .gm-field-wrapper .field-mw,
+#gm-editor-learnset .gm-entry-section .gm-field-wrapper .field-mw {
   max-width: 195px;
 }
 #gm-editor-pokemon .gm-entry-section .gm-field-wrapper .editable-list-selector,
-#gm-editor-moves .gm-entry-section .gm-field-wrapper .editable-list-selector {
+#gm-editor-moves .gm-entry-section .gm-field-wrapper .editable-list-selector,
+#gm-editor-learnset .gm-entry-section .gm-field-wrapper .editable-list-selector {
   margin-bottom: 10px;
 }
 #gm-editor-pokemon hr,
-#gm-editor-moves hr {
+#gm-editor-moves hr,
+#gm-editor-learnset hr {
   margin: 30px 0 20px 0;
 }
 #gm-editor-pokemon #default-iv-table,
-#gm-editor-moves #default-iv-table {
+#gm-editor-moves #default-iv-table,
+#gm-editor-learnset #default-iv-table {
   font-size: 14px;
 }
 #gm-editor-pokemon #default-iv-table th,
-#gm-editor-moves #default-iv-table th {
+#gm-editor-moves #default-iv-table th,
+#gm-editor-learnset #default-iv-table th {
   text-align: left;
 }
 #gm-editor-pokemon #default-iv-table th, #gm-editor-pokemon #default-iv-table td,
 #gm-editor-moves #default-iv-table th,
-#gm-editor-moves #default-iv-table td {
+#gm-editor-moves #default-iv-table td,
+#gm-editor-learnset #default-iv-table th,
+#gm-editor-learnset #default-iv-table td {
   padding: 3px 8px;
 }
 #gm-editor-pokemon #default-iv-table .fields,
-#gm-editor-moves #default-iv-table .fields {
+#gm-editor-moves #default-iv-table .fields,
+#gm-editor-learnset #default-iv-table .fields {
   display: table-cell;
   max-width: 100px;
 }
 #gm-editor-pokemon #default-iv-table .fields label,
-#gm-editor-moves #default-iv-table .fields label {
+#gm-editor-moves #default-iv-table .fields label,
+#gm-editor-learnset #default-iv-table .fields label {
   margin: 2px 0;
 }
 #gm-editor-pokemon button#generate-default-ivs,
-#gm-editor-moves button#generate-default-ivs {
+#gm-editor-moves button#generate-default-ivs,
+#gm-editor-learnset button#generate-default-ivs {
   margin-top: 17px;
   float: right;
 }
@@ -6191,6 +6219,14 @@ a.feed-subscribe {
 }
 #gm-editor-moves label.iv {
   margin: 2px 0 !important;
+}
+
+#gm-editor-learnset .gm-entry-section {
+  max-width: none;
+}
+#gm-editor-learnset #add-learnset {
+  display: block;
+  margin: 0 auto 10px auto;
 }
 
 .error-label {

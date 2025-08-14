@@ -33,6 +33,8 @@
         "pros": ["bulky", "extremely bulky", "spammy", "agile", "flexible", "dynamic", "fast move pressure", "shield pressure", "defensive", "momentum"],
         "cons": ["less bulky", "glass cannon", "slow", "clumsy", "inflexible", "low fast move pressure", "low shield pressure", "vulnerable", "volatile", "chaotic", "technical", "inconsistent"]
     },
+    "fastMoveArchetypes": ["Fast Charge", "General", "Heavy Damage", "Low Quality", "Multipurpose"],
+    "chargedMoveArchetypes": ["Boost", "Boost Nuke", "Boost Spam", "Debuff", "Debuff Nuke", "Debuff Spam", "General", "High Energy", "Nuke", "Self-Debuff", "Self-Debuff Nuke", "Self-Debuff Spam", "Spam/Bait"],
     "pokemonRegions": [{
         "string": "gen1",
         "name": "kanto",

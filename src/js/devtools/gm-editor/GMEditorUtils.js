@@ -115,6 +115,67 @@ class GMEditorUtils{
     }
 
     // Validations - required, string min length, string max length, unique, number, number min, number max, integer, allowed values, invalid values, regex
+
+
+    // Given a base list element and data items, output HTML for an editable list
+
+    static DisplayEditableList(dataType, listItems){
+        let $el = $(".editable-list[data='"+dataType+"']");
+        $el.html("");
+
+        if(! listItems || listItems?.length == 0){
+            return;
+        }
+
+        switch(dataType){
+            case "fastMoves":
+            case "chargedMoves":
+            case "legacyMoves":
+            case "eliteMoves":
+                if(typeof listItems !== "undefined"){
+                    listItems.forEach(id => {
+                        let move = GameMaster.getInstance().getMoveDataById(id);
+
+                        if(move){
+                            let $item = $("<div></div>");
+                            $item.html(move.name);
+                            $item.addClass(move.type);
+                            $item.attr("data", id);
+                            $item.append("<span></span>");
+
+                            $el.append($item);
+                        }
+                    });
+                }
+                break;
+
+            case "learnset":
+                if(typeof listItems !== "undefined"){
+                    listItems.forEach(pokemon => {
+                        let $item = $("<div></div>");
+                        $item.html(pokemon.speciesName);
+                        $item.addClass(pokemon.types[0]);
+                        $item.attr("data", pokemon.speciesId);
+                        $item.append("<span></span>");
+
+                        $el.append($item);
+                    });
+                }
+                break;
+
+            default:
+                listItems.forEach(id => {
+                    let $item = $("<div></div>");
+                    $item.html(id);
+                    $item.attr("data", id);
+                    $item.append("<span></span>");
+
+                    $el.append($item);
+                });
+                break;
+        }
+    }
+
 }
 
 // Load validations

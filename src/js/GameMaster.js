@@ -696,86 +696,7 @@ var GameMaster = (function () {
 			// List of legendaries and mythicals to be excluded from the level cap
 
 			$.each(object.data.moves, function(index, move){
-				var archetype = "General"; // Default archetype
-
-				// Charged Moves
-
-				if(move.energy > 0){
-					var dpe = move.power / move.energy;
-
-					// Categorize by energy
-					if((move.energy > 60)&&(dpe > 1.5)){
-						archetype = "Nuke";
-					} else if(move.energy > 50){
-						if(dpe > 1.75){
-							archetype = "Nuke";
-						} else{
-							archetype = "High Energy";
-						}
-
-					} else if(move.energy < 45){
-						archetype = "Spam/Bait"
-					}
-
-					var descriptor = "";
-
-					if(move.buffs){
-
-						if((move.buffTarget == "self")&&((move.buffs[0] > 0)||(move.buffs[1] > 0))){
-							descriptor = "Boost"
-						}
-
-						if((move.buffTarget == "self")&&((move.buffs[0] < 0)||(move.buffs[1] < 0))){
-							descriptor = "Self-Debuff"
-						}
-
-						if((move.buffTarget == "opponent")&&((move.buffs[0] < 0)||(move.buffs[1] < 0))){
-							descriptor = "Debuff"
-						}
-
-						if(descriptor != ""){
-							if(archetype == "General"){
-								archetype = descriptor;
-							} else if(archetype == "High Energy"){
-								archetype = archetype + " " + descriptor;
-							} else{
-								archetype = descriptor + " " + archetype;
-							}
-
-							if(archetype == "Self-Debuff Spam/Bait"){
-								archetype = "Self-Debuff Spam"
-							}
-						}
-					}
-
-					move.archetype = archetype;
-				}
-
-
-				// Fast Moves
-
-				if(move.energyGain > 0){
-					var dpt = move.power / (move.cooldown / 500)
-					var ept = move.energyGain / (move.cooldown / 500)
-
-					if((dpt >= 3.5) && (dpt > ept)){
-						archetype = "Heavy Damage"
-					}
-
-					if((ept >= 3.5) && (ept > dpt)){
-						archetype = "Fast Charge"
-					}
-
-					if( ((dpt >= 4) && (ept >= 3)) || ((dpt >= 3) && (ept >= 4)) ){
-						archetype = "Multipurpose"
-					}
-
-					if( ((dpt < 3) && (ept <= 3)) || ((dpt <= 3) && (ept < 3)) ){
-						archetype = "Low Quality"
-					}
-
-					move.archetype = archetype;
-				}
+				move.archetype = object.generateArchetypeByMove(move);
 			});
 
 			// Sort Pokemon by dex
@@ -785,6 +706,88 @@ var GameMaster = (function () {
 			var json = JSON.stringify(object.data);
 
 			console.log(json);
+		}
+
+		// Generate the archetype for a single move
+		object.generateArchetypeByMove = function(move){
+			var archetype = "General"; // Default archetype
+
+			// Charged Moves
+
+			if(move.energy > 0){
+				var dpe = move.power / move.energy;
+
+				// Categorize by energy
+				if((move.energy > 60)&&(dpe > 1.5)){
+					archetype = "Nuke";
+				} else if(move.energy > 50){
+					if(dpe > 1.75){
+						archetype = "Nuke";
+					} else{
+						archetype = "High Energy";
+					}
+
+				} else if(move.energy < 45){
+					archetype = "Spam/Bait"
+				}
+
+				var descriptor = "";
+
+				if(move.buffs){
+
+					if((move.buffTarget == "self")&&((move.buffs[0] > 0)||(move.buffs[1] > 0))){
+						descriptor = "Boost"
+					}
+
+					if((move.buffTarget == "self")&&((move.buffs[0] < 0)||(move.buffs[1] < 0))){
+						descriptor = "Self-Debuff"
+					}
+
+					if((move.buffTarget == "opponent")&&((move.buffs[0] < 0)||(move.buffs[1] < 0))){
+						descriptor = "Debuff"
+					}
+
+					if(descriptor != ""){
+						if(archetype == "General"){
+							archetype = descriptor;
+						} else if(archetype == "High Energy"){
+							archetype = archetype + " " + descriptor;
+						} else{
+							archetype = descriptor + " " + archetype;
+						}
+
+						archetype.replace(" Spam/Bait", "Spam");
+					}
+				}
+
+				return archetype;
+			}
+
+
+			// Fast Moves
+
+			if(move.energyGain > 0){
+				var dpt = move.power / (move.cooldown / 500)
+				var ept = move.energyGain / (move.cooldown / 500)
+
+				if((dpt >= 3.5) && (dpt > ept)){
+					archetype = "Heavy Damage"
+				}
+
+				if((ept >= 3.5) && (ept > dpt)){
+					archetype = "Fast Charge"
+				}
+
+				if( ((dpt >= 4) && (ept >= 3)) || ((dpt >= 3) && (ept >= 4)) ){
+					archetype = "Multipurpose"
+				}
+
+				if( ((dpt < 3) && (ept <= 3)) || ((dpt <= 3) && (ept < 3)) ){
+					archetype = "Low Quality"
+				}
+
+				return archetype;
+			}
 		}
 
 		// Return a move object from the GameMaster file given move ID
@@ -880,6 +883,22 @@ var GameMaster = (function () {
 			}
 
 			return move;
+		}
+
+		// Return a move object from the GameMaster file given move ID without any modification
+
+		object.getMoveDataById = function(id){
+			if(id == "none")
+				return;
+
+			let move = object.data.moves.find(move => move.moveId == id);
+
+			if(move){
+				return move;
+			} else{
+				console.error(id + " missing");
+				return false;
+			}
 		}
 
 

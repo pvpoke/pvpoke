@@ -6615,7 +6615,8 @@ a.feed-subscribe{
 }
 
 #gm-editor-pokemon,
-#gm-editor-moves{
+#gm-editor-moves,
+#gm-editor-learnset{
 	.gm-title{
 		font-size: 18px;
     	font-weight: bold;
@@ -6756,6 +6757,17 @@ a.feed-subscribe{
 
 	label.iv{
 		margin: 2px 0 !important;
+	}
+}
+
+#gm-editor-learnset{
+	.gm-entry-section{
+		max-width: none;
+	}
+
+	#add-learnset{
+		display: block;
+		margin: 0 auto 10px auto;
 	}
 }
 
