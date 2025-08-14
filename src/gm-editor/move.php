@@ -173,10 +173,17 @@ require_once '../header.php';
         <div class="gm-field-wrapper">
             <div class="editable-list-selector editable-list" data="learnset"></div>
         </div>
+    </div>
+    <div class="gm-entry-section">
+        <div class="gm-field-wrapper">
+            <label>Add Move to Pokemon</label>
+            <input class="poke-search field-mw" target="add-learnset" type="text" placeholder="Search Pokemon">
+        </div>
         <div class="gm-field-wrapper">
             <select class="editable-list-selector field-mw" id="add-learnset" name="add-learnset">
                 <option value="NONE" selected disabled>+ Add Move to Pokemon</option>
             </select>
+            <button id="learnset-confirm">+ Add</button>
         </div>
     </div>
 </div>
@@ -200,6 +207,10 @@ require_once '../header.php';
 
 <div class="save-data-error hide">
 	<p>There was an error saving the data. Ensure that all entries are valid.</p>
+</div>
+
+<div class="learnset-remove-error">
+	<p>Could not remove this move from <a class="edit-pokemon" href="#" target="_blank"><b><span class="name"></span></b></a> because it must have at least one move. See the Pokemon entry to make changes.</p>
 </div>
 
 

@@ -6224,12 +6224,19 @@ a.feed-subscribe {
   margin: 15px 0 0 0;
 }
 
-#gm-editor-learnset .gm-entry-section {
+#gm-editor-learnset .gm-entry-section:first-of-type {
   max-width: none;
 }
-#gm-editor-learnset #add-learnset {
+#gm-editor-learnset .gm-entry-section:last-of-type {
+  margin-top: 15px;
+  max-width: 195px;
+}
+#gm-editor-learnset h3:first-of-type {
+  margin-top: 0;
+}
+#gm-editor-learnset button#learnset-confirm {
+  margin-left: auto;
   display: block;
-  margin: 0 auto 10px auto;
 }
 
 .error-label {

@@ -1672,6 +1672,10 @@ var GameMaster = (function () {
 							valid = true;
 						}
 
+						if(move.name.toLowerCase().startsWith(param)){
+							valid = true;
+						}
+
 						// Type search
 						if(move.type == param){
 							valid = true;

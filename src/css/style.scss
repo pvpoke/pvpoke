@@ -6765,13 +6765,22 @@ a.feed-subscribe{
 }
 
 #gm-editor-learnset{
-	.gm-entry-section{
+	.gm-entry-section:first-of-type{
 		max-width: none;
 	}
 
-	#add-learnset{
-		display: block;
-		margin: 0 auto 10px auto;
+	.gm-entry-section:last-of-type{
+		margin-top: 15px;
+		max-width: 195px;
+	}
+
+	h3:first-of-type{
+		margin-top: 0;
+	}
+
+	button#learnset-confirm{
+		margin-left: auto;
+    	display: block;
 	}
 }
 

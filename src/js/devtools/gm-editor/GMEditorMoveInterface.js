@@ -16,6 +16,10 @@ var InterfaceMaster = (function () {
 
             let selectedMove;
             let lastSavedJSON; // JSON of the last saved data
+            let lastSavedLearnset; // JSON of the last saved learnset
+
+            let pokemonWithMove = [];
+            let pokemonWithoutMove = [];
 
 			this.init = function(){
                 data = gm.data;
@@ -24,6 +28,32 @@ var InterfaceMaster = (function () {
 
                 if(get){
                     self.loadGetData();
+                }
+
+                pokeSearch.setBattle(battle);
+
+                // Gather initial learnset
+                if(selectedMove){
+                    pokemonWithMove = [];
+                    pokemonWithoutMove = [];
+
+                    data.pokemon.forEach(pokemon => {
+                        if(pokemon.fastMoves.includes(selectedMove.moveId) || pokemon.chargedMoves.includes(selectedMove.moveId)){
+                            pokemonWithMove.push(pokemon);
+                        } else{
+                            pokemonWithoutMove.push(pokemon);
+                        }
+                    });
+
+                    pokemonWithMove.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+                    pokemonWithoutMove.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+
+                    lastSavedLearnset = JSON.stringify(
+                        pokemonWithMove.flatMap(pokemon => pokemon.speciesId)
+                    );
+
+                    submitSearchQuery();
+                    self.displayLearnset();
                 }
 			}
 
@@ -86,7 +116,6 @@ var InterfaceMaster = (function () {
                                 if(selectedMove){
                                     self.updateLastSavedJSON();
                                     self.displaySelectedMove();
-                                    self.displayLearnset();
                                 }
 								break;
 						}
@@ -192,23 +221,16 @@ var InterfaceMaster = (function () {
             }
 
             self.displayLearnset = function(){
-                let pokemonWithMove = [];
-                let pokemonWithoutMove = [];
-
-                // Generate list of Pokemon which already have the move and Pokemon which don't
-                let pokemonList = data.pokemon.forEach(pokemon => {
-                    if(pokemon.fastMoves.includes(selectedMove.moveId) || pokemon.chargedMoves.includes(selectedMove.moveId)){
-                        pokemonWithMove.push(pokemon);
-                    } else{
-                        pokemonWithoutMove.push(pokemon);
-                    }
-                });
-
-                pokemonWithMove.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
-                pokemonWithoutMove.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
-
                 GMEditorUtils.DisplayEditableList("learnset", pokemonWithMove);
-                self.fillFormOptions($("#add-learnset"), pokemonWithoutMove);
+
+                // Enable or disable save button
+                let json = JSON.stringify(
+                    pokemonWithMove.flatMap(pokemon => pokemon.speciesId)
+                );
+
+                if(json != lastSavedLearnset && data?.id && data?.id != "gamemaster"){
+                    $("#save-changes-btn").removeAttr("disabled");
+                }
             }
 
             // Run validations on the full Pokemon entry
@@ -251,13 +273,12 @@ var InterfaceMaster = (function () {
             // Search for a Pokemon
 			let searchTimeout;
 			let searchStr = '';
-			let $target = null;
-            let searchMode = "filter";
+			let $target = $("#add-learnset");
 
 			$("body").on("keyup", ".poke-search", function(e){
 				searchStr = $(this).val().toLowerCase().trim();
 
-				$target = $(".train-table");
+				
 
 				// Reset the timeout when a new key is typed. This prevents queries from being submitted too quickly and bogging things down on mobile.
 				window.clearTimeout(searchTimeout);
@@ -266,37 +287,42 @@ var InterfaceMaster = (function () {
 
 			function submitSearchQuery(){
 				let list = GameMaster.getInstance().generatePokemonListFromSearchString(searchStr, battle);
-                
-                $target.find("tbody tr").removeClass("find");
-                $target.find("tbody tr").show();
+                let optionData = pokemonWithoutMove.filter(pokemon => list.includes(pokemon.speciesId));
 
-                if(searchMode == "filter"){
-                    // Only show matching rows
-                    $target.find("tbody tr").each(function(index, value){
-                        let id = $(this).attr("data");
+                let selectedIndex = 0;
+                let selectedPokemon;
 
-                        if(list.includes(id)){
-                            $(this).show();
-                        } else{
-                            $(this).hide();
-                        }
-                    });
-                } else if(searchMode == "find" && list.length > 0){
-                    // Scroll to the first matching row
-                    let targetId = list[0];
-                    let $targetRow = $target.find("tbody tr[data='"+targetId+"']");
+                if(list.length > 0){
+                    selectedPokemon = optionData.find(pokemon => pokemon.speciesId == list[0]);
 
-                    if($targetRow.length > 0){
-                        $targetRow.addClass("find");
-
-                        let elTop = $targetRow.position().top;
-                        let containerTop = $(".table-container").position().top;
-                        let gotoTop = elTop - containerTop - 20;
-
-                        $(".table-container").scrollTop(gotoTop);
+                    if(selectedPokemon){
+                        selectedIndex = optionData.findIndex(pokemon => pokemon.speciesId == selectedPokemon.speciesId);
                     }
                 }
 
+                // Display options immediately ahead of and behind the selected Pokemon
+                let totalToDisplay = 30;
+                let startIndex = Math.max(0, selectedIndex - Math.floor(totalToDisplay / 2));
+                let remainingDisplayCount = totalToDisplay - (selectedIndex - startIndex);
+                let stopIndex = Math.min(optionData?.length || 0, selectedIndex + remainingDisplayCount);
+
+                $target.find("option").slice(1).remove();
+
+                // Add options to select element
+                for(var i = startIndex; i < stopIndex; i++){
+                    let poke = optionData[i];
+                    let $option = $("<option value=\""+poke.speciesId+"\">"+poke.speciesName+"</option>");
+
+                    $target.append($option);
+                }
+
+                if(selectedPokemon){
+                    $target.find("option[value=\""+selectedPokemon.speciesId+"\"]").prop("selected", "selected");
+                } else{
+                    $target.find("option").first().prop("selected", "selected");
+                }
+
+                $target.trigger("change");
 			}
 
             // Event handler for selecting form group options
@@ -339,7 +365,7 @@ var InterfaceMaster = (function () {
             });
 
             // Event handler for changing a select field
-            $("#gm-editor-moves select").on("change", function(e){
+            $("#gm-editor-moves select, #gm-editor-learnset select").on("change", function(e){
                 let fieldName = $(this).attr("name");
                 let val = $(this).val();
 
@@ -399,16 +425,54 @@ var InterfaceMaster = (function () {
                     case "move-archetype":
                         selectedMove.archetype = val;
                         break;
+
+                    case "add-learnset":
+                        let selectedPokemon = pokemonWithoutMove.find(pokemon => pokemon.speciesId == val);
+
+                        if(selectedPokemon){
+                            $("#add-learnset").attr("class", "editable-list-selector field-mw " + selectedPokemon.types[0]);
+                        } else{
+                            $("#add-learnset").attr("class", "editable-list-selector field-mw");
+                        }
+                        break;
                 }
 
-                self.displaySelectedMove();
+                if($(this).closest(".section.white").attr("id") == "gm-editor-moves"){
+                    self.displaySelectedMove();
+                }
             });
 
             // Submit an input field when pressing enter
-            $("body").on("keypress", "#gm-editor-pokemon input", function(e){
+            $("body").on("keypress", "#gm-editor-moves input, #gm-editor-learnset input", function(e){
                 if(e.which == 13){
-                    $(this).blur();
+
+                    if($(this).hasClass("poke-search")){
+                        $("#learnset-confirm").trigger("click");
+                    } else{
+                        $(this).blur();
+                    }
+                    
                 }
+            });
+
+            // Add a Pokemon to the learnset
+            $("#learnset-confirm").click(function(e){
+                let speciesId = $("#add-learnset option:selected").val();
+                let selectedPokemon = data.pokemon.find(pokemon => pokemon.speciesId == speciesId);
+
+                if(! selectedPokemon.fastMoves.includes(selectedMove.moveId) && ! selectedPokemon.chargedMoves.includes(selectedMove.moveId)){
+                    let movepool = selectedMove.energy > 0 ? selectedPokemon.chargedMoves : selectedPokemon.fastMoves;
+
+                    movepool.push(selectedMove.moveId);
+
+                    pokemonWithMove.push(selectedPokemon);
+                    pokemonWithoutMove = pokemonWithoutMove.filter(pokemon => pokemon.speciesId != speciesId);
+                }
+
+                $("#gm-editor-learnset .poke-search").val("");
+                $("#gm-editor-learnset .poke-search").trigger("keyup");
+
+                self.displayLearnset();
             });
 
             // Event handler for changing an input field
@@ -496,7 +560,9 @@ var InterfaceMaster = (function () {
                         break; 
                 }
 
-                self.displaySelectedMove();
+                if($(this).closest(".section.white").attr("id") == "gm-editor-moves"){
+                    self.displaySelectedMove();
+                }
             });
 
             // Event handler for deleting an item from an editable list
@@ -504,27 +570,35 @@ var InterfaceMaster = (function () {
                 let id = $(this).closest("div").attr("data");
                 let key = $(this).closest(".editable-list").attr("data");
 
-                if(id && key && selectedMove.hasOwnProperty(key)){
-                    selectedMove[key] = selectedMove[key].filter(item => item != id);
+                if(id && key){
+                    switch(key){
+                        case "learnset":
+                            // Remove move from selected Pokemon's movepool
+                            let selectedPokemon = data.pokemon.find(pokemon => pokemon.speciesId == id);
 
-                    // Enforce one Fast Attack or one Charged Attack
-                    if(selectedMove[key].length == 0){
-                        switch(key){
-                            case "fastMoves":
-                                selectedMove.fastMoves = ["SPLASH"];
-                                break;
+                            if(selectedPokemon){
+                                let movepool = selectedMove.energy > 0 ? selectedPokemon.chargedMoves : selectedPokemon.fastMoves;
 
-                            case "chargedMoves":
-                                selectedMove.chargedMoves = ["STRUGGLE"];
-                                break;
+                                if(movepool.length > 1){
+                                    if(selectedMove.energy > 0){
+                                        selectedPokemon.chargedMoves = movepool.filter(move => move != selectedMove.moveId);
+                                    } else{
+                                        selectedPokemon.fastMoves = movepool.filter(move => move != selectedMove.moveId);
+                                    }
 
-                            default:
-                                delete selectedMove[key];
-                                break;
-                        }
+                                    pokemonWithMove = pokemonWithMove.filter(pokemon => pokemon.speciesId != selectedPokemon.speciesId);
+                                    pokemonWithoutMove.push(selectedPokemon);
+                                    self.displayLearnset();
+                                } else{
+                                    modalWindow("Error", $(".learnset-remove-error"));
+
+                                    let pokeUrl = host + "gm-editor/pokemon/" + selectedPokemon.speciesId + "/";
+                                    $(".modal a.edit-pokemon").attr("href", pokeUrl);
+                                    $(".modal span.name").html(selectedPokemon.speciesName);
+                                }
+                            }
+                            break;
                     }
-
-                    self.displaySelectedMove();
                 }
             });
 
