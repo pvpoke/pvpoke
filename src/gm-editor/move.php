@@ -133,6 +133,9 @@ require_once '../header.php';
                     </div>
                 </div>
             </div>
+            <div class="gm-field-wrapper">
+                <p id="move-stat-label" class="small"></p>
+            </div>
         </div>
 
         <hr>

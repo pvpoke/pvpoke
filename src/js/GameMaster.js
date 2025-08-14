@@ -755,9 +755,9 @@ var GameMaster = (function () {
 						} else{
 							archetype = descriptor + " " + archetype;
 						}
-
-						archetype.replace(" Spam/Bait", "Spam");
 					}
+
+					archetype = archetype.replace(" Spam/Bait", " Spam");
 				}
 
 				return archetype;

@@ -160,6 +160,10 @@ var InterfaceMaster = (function () {
                         $(".move-effect-field").hide();
                     }
 
+                    let dpe = Math.round((selectedMove.power / selectedMove.energy) * 100) / 100;
+
+                    $("#move-stat-label").html("<b>DPE: </b> " + dpe);
+
                     $(".fast-only").hide();
                     $(".charged-only").show();
                 } else{
@@ -170,6 +174,11 @@ var InterfaceMaster = (function () {
                     $("#move-turns").val(selectedMove.turns);
 
                     self.fillFormOptions($("#move-archetype"), gm.data.fastMoveArchetypes);
+
+                    let dpt = Math.round((selectedMove.power / selectedMove.turns) * 100) / 100;
+                    let ept = Math.round((selectedMove.energyGain / selectedMove.turns) * 100) / 100;
+
+                    $("#move-stat-label").html("<b>DPT: </b> " + dpt + ", " + "<b>EPT: </b> " + ept + " ");
 
                     $(".charged-only").hide();
                     $(".move-effect-field").hide();
@@ -539,7 +548,7 @@ var InterfaceMaster = (function () {
             $(".custom-rankings-import textarea.import").on("change", function(e){
                 try{
                     let customData = JSON.parse($(this).val());
-                    if(customData && customData?.speciesId){
+                    if(customData && customData?.moveId){
                         selectedMove = customData;
                         self.displaySelectedMove();
                     }
