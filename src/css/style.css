@@ -6186,6 +6186,13 @@ a.feed-subscribe {
   float: right;
 }
 
+#gm-editor-moves .fields {
+  display: block;
+}
+#gm-editor-moves label.iv {
+  margin: 2px 0 !important;
+}
+
 .error-label {
   display: none;
   margin: 5px 0 15px 0;

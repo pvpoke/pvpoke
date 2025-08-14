@@ -10,7 +10,7 @@ require_once '../header.php';
 
 <h1>Gamemaster Editor</h1>
 
-<div class="section white" id="gm-editor-pokemon">
+<div class="section white" id="gm-editor-moves">
     <div class="flex space-between align-items-start">
         <a class="gm-title" href="<?php echo $WEB_ROOT; ?>gm-editor/moves/">&larr; All Moves</a>
         <div class="ranking-categories mode-select">
@@ -62,40 +62,96 @@ require_once '../header.php';
                         <div class="option" value="charged">Charged</div>
                     </div>
                 </div>
-                <div class="gm-entry-row">
-                    <div class="gm-field-wrapper">
-                        <label class="required">Base Power</label>
-                        <input id="move-power" name="move-power" step="1" type="number" placeholder="Enter base power" autocomplete="off" />
-                    </div>
-                    <div class="gm-field-wrapper">
-                        <label class="required">Energy</label>
-                        <input id="move-energy" name="move-energy" step="5" type="number" placeholder="Enter energy gain/cost" autocomplete="off" />
-                        <div class="description">A positive value for the move's energy gain or energy cost.</div>
-                    </div>
+            </div>
+            <div class="gm-entry-row">
+                <div class="gm-field-wrapper">
+                    <label class="required">Base Power</label>
+                    <input id="move-power" name="move-power" step="1" type="number" placeholder="Enter base power" />
                 </div>
-                <div class="gm-field-wrapper fast-only">
-                    <label class="required">Duration (Turns)</label>
-                    <input id="move-turns" name="move-turns" class="field-mw" step="1" type="number" placeholder="Enter move duration" autocomplete="off" />
+                <div class="gm-field-wrapper">
+                    <label class="required">Energy</label>
+                    <input id="move-energy" name="move-energy" step="5" type="number" placeholder="Enter energy gain/cost" />
+                    <div class="description">Positive value for the move's energy gain or energy cost.</div>
                 </div>
-                <div class="gm-entry-row">
-                    <div class="gm-field-wrapper">
-                        <label>Move Effect</label>
-                        <div class="form-group" data="move-effect">
-                            <div class="option" value="yes">Yes</div>
-                            <div class="option on" value="no">No</div>
+            </div>
+            <div class="gm-field-wrapper fast-only">
+                <label class="required">Duration (Turns)</label>
+                <input id="move-turns" name="move-turns" class="field-mw" step="1" type="number" placeholder="Enter move duration" />
+            </div>
+            <div class="gm-entry-row charged-only">
+                <div class="gm-field-wrapper">
+                    <label>Move Effect</label>
+                    <select id="move-effect" name="move-effect" class="field-mw">
+                        <option value="none">None</option>
+                        <option value="self">Attacker Stat Modifier</option>
+                        <option value="opponent">Defender Stat Modifier</option>
+                        <option value="both">Both</option>
+                    </select>
+                </div>
+                <div class="gm-field-wrapper move-effect-field">
+                    <label>Effect Chance</label>
+                    <input id="effect-apply-chance" name="effect-apply-chance" type="number" placeholder="Enter move effect chance"/>
+                    <div class="description">Decimal between 0 and 1 (1 = 100% chance).</div>
+                </div>
+            </div>
+            <div class="gm-entry-row move-effect-field stat-modifiers">
+                <div class="gm-field-wrapper">
+                    <label>Attacker Stat Modifiers</label>
+                    <div class="fields">
+                        <div class="ivs flex gap-15">
+                            <input id="attacker-stat-atk" name="attacker-stat-atk" type="number" placeholder="Atk" min="-4" max="4" step="1" />
+                            <input id="attacker-stat-def" name="attacker-stat-def" type="number" placeholder="Def" min="-4" max="4" step="1" />
+                        </div>
+                        <div class="flex gap-15">
+                            <label class="iv">Atk</label>
+                            <label class="iv">Def</label>
                         </div>
                     </div>
-                    <div class="gm-field-wrapper">
-                        <label>Effect Target</label>
-                        <select id="effect=target" name="effect-target" class="move-effect-field">
-                            <option value="" selected disabled>Select effect target</option>
-                            <option value="self">Attacker</option>
-                            <option value="opponent">Defender</option>
-                            <option value="both">Both</option>
-                        </select>
+                </div>
+                <div class="gm-field-wrapper">
+                    <label>Defender Stat Modifiers</label>
+                    <div class="fields">
+                        <div class="ivs flex gap-15">
+                            <input id="defender-stat-atk" name="defender-stat-atk" type="number" placeholder="Atk" min="-4" max="4" step="1" />
+                            <input id="defender-stat-def" name="defender-stat-def" type="number" placeholder="Def" min="-4" max="4" step="1" />
+                        </div>
+                        <div class="flex gap-15">
+                            <label class="iv">Atk</label>
+                            <label class="iv">Def</label>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <hr>
+
+        <div class="gm-entry-section">
+            <h3>Metadata</h3>
+            <div class="gm-field-wrapper">
+                <label class="required">Archetype</label>
+                <select id="move-archetype" name="move-archetype" class="field-mw">
+                    <option value="none" selected disabled>Select a type</option>
+                </select>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="gm-entry-section">
+            <h3>Learnset</h3>
+            <div class="gm-field-wrapper">
+                <label class="required">Archetype</label>
+                <select id="move-archetype" name="move-archetype" class="field-mw">
+                    <option value="none" selected disabled>Select a type</option>
+                </select>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="flex">
+            <div id="save-changes-btn" class="button" disabled>Save Changes</div>
         </div>
 
     <?php endif; ?>
