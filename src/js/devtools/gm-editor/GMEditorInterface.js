@@ -173,7 +173,17 @@ var InterfaceMaster = (function () {
             $(".custom-rankings-import textarea.import").on("change", function(e){
                 try{
                     let customData = JSON.parse($(this).val());
-                    self.setGameMasterData(customData);
+
+                    let errors = GMEditorUtils.ValidateGamemaster(customData);
+
+                    if(errors.length == 0){
+                        self.setGameMasterData(customData);
+                    } else{
+                        console.error(e);
+                        modalWindow("Data Error", $(".import-error").first());
+                        self.updateExportCode();
+                    }
+                    
                 } catch(e){
                     console.error(e);
                     modalWindow("Data Error", $(".import-error").first());
@@ -189,13 +199,29 @@ var InterfaceMaster = (function () {
                 modalWindow("Save New Gamemaster", $(".save-new-gm").eq(0));
             });
 
+            // Event handler for entering gm name
+
+            $("body").on("change", ".modal #gm_name", function(e){
+                // Sanitize title input
+                let title = $(this).val();
+                title = GMEditorUtils.RemoveSpecialCharacters(title);
+
+                console.log(title);
+
+                $(this).val(title);
+            });
+
             // Save new data to localstorage
 
             $("body").on("click", ".modal #save-new-modal-btn", function(e){
                 // Validate new entry
                 let title = $(".modal #gm_name").val();
                 let id = GMEditorUtils.StringToID(title, "gm-id");
-                let errors = GMEditorUtils.ValidateField("gamemaster", "gm-id", id);
+
+                data.title = title;
+                data.id = id;
+
+                let errors = GMEditorUtils.ValidateGamemaster(data);
 
                 $(".modal #gm_name + .error-label").hide();
 
@@ -230,7 +256,15 @@ var InterfaceMaster = (function () {
 
                 } else{
                     $(".modal #gm_name + .error-label").show();
-                    $(".modal #gm_name + .error-label").html(errors.join(" "));
+
+                    let errorText = [];
+
+                    errors.forEach(error => {
+                        errorText = [...errorText, ...error.errors];
+                    });
+
+                    $(".modal #gm_name + .error-label").html(errorText.join(" "));
+                    self.updateExportCode();
                 }
             });
 

@@ -522,8 +522,16 @@ var InterfaceMaster = (function () {
                     case "move-energy":
                         if(selectedMove.energy > 0){
                             selectedMove.energy = Math.max(parseInt(val), 35);
+
+                            if(selectedMove.energy > 100){
+                                selectedMove.energy = 100;
+                            }
                         } else{
                             selectedMove.energyGain = Math.max(parseInt(val), 1);
+
+                            if(selectedMove.energyGain > 100){
+                                selectedMove.energyGain = 100;
+                            }
                         }
                         break;
 

@@ -422,16 +422,16 @@ var InterfaceMaster = (function () {
 
                 switch(fieldName){
                     case "species-id":
-                        selectedPokemon.speciesId = val.toLowerCase();
+                        selectedPokemon.speciesId = GMEditorUtils.RemoveSpecialCharacters(val.toLowerCase());
                         break;
 
                     case "species-name":
-                        selectedPokemon.speciesName = val;
+                        selectedPokemon.speciesName = GMEditorUtils.RemoveSpecialCharacters(val);
                         break;
 
                     case "alias-id":
                         if(val != ""){
-                            selectedPokemon.aliasId = val.toLowerCase();
+                            selectedPokemon.aliasId = GMEditorUtils.RemoveSpecialCharacters(val.toLowerCase());
                         } else{
                             delete selectedPokemon.aliasId;
                         }

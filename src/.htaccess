@@ -63,10 +63,10 @@ RewriteRule attack-cmp-chart.?$ attack-cmp-chart.php [L,QSA]
 
 RewriteRule train/editor.?$ train/editor.php [L,QSA]
 
-RewriteRule ^gm-editor/pokemon/([a-zA-Z_]+).*$ gm-editor/pokemon.php?p=$1 [L,QSA]
+RewriteRule ^gm-editor/pokemon/([a-zA-Z0-9_]+).*$ gm-editor/pokemon.php?p=$1 [L,QSA]
 RewriteRule gm-editor/pokemon.?$ gm-editor/edit.php?c=pokemon [L,QSA]
 
-RewriteRule ^gm-editor/moves/([a-zA-Z_]+).*$ gm-editor/move.php?m=$1 [L,QSA]
+RewriteRule ^gm-editor/moves/([a-zA-Z0-9_]+).*$ gm-editor/move.php?m=$1 [L,QSA]
 RewriteRule gm-editor/moves.?$ gm-editor/edit.php?c=moves [L,QSA]
 
 RewriteCond %{REQUEST_FILENAME} !-f

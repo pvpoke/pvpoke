@@ -11,6 +11,30 @@ class GMEditorUtils{
         return id;
     }
 
+    static RemoveSpecialCharacters(string){
+        string = string.replace(/[^a-z0-9áéíóúñü \.\,\_\-\?\!\(\)\&%]/gim,"");
+        return string.trim();
+    }
+
+    // Validate a full gamemaster entry
+    static ValidateGamemaster(entry){
+        let fieldErrors = [];
+        let validations = GMEditorValidations.gamemaster;
+
+        validations.forEach(validation => {
+            let propertyErrors = GMEditorUtils.ValidateField("gamemaster", validation.property, entry[validation.property]);
+
+            if(propertyErrors.length > 0){
+                fieldErrors.push({
+                    fieldName: validation.field,
+                    errors: propertyErrors
+                });
+            }
+        });
+
+        return fieldErrors;
+    }
+
     // Validate a full Pokemon entry
     static ValidatePokemonEntry(entry){
         //let properties = ["speciesId", "speciesName", "aliasId", "dex", "nicknames", "baseStats", "types", "fastMoves", "chargedMoves", "eliteMoves", "legacyMoves", "defaultIVs", "buddyDistance", "thirdMoveCost", "released", "searchPriority", "tags"];
@@ -71,6 +95,7 @@ class GMEditorUtils{
 
             if(propertyErrors.length > 0){
                 fieldErrors.push({
+                    moveId: entry.moveId,
                     fieldName: validation.field,
                     errors: propertyErrors
                 });
@@ -170,6 +195,18 @@ class GMEditorUtils{
                     }
                     break;
 
+                case "existing_id":
+                    switch(fieldName){
+                        case "aliasId":
+                        case "alias-id":
+                            if(value !== "" && value !== undefined && value !== null &&
+                                gm.data.pokemon.filter(pokemon => pokemon?.speciesId?.toLowerCase() == value?.toLowerCase()).length == 0){
+                                errors.push("Field must match an existing ID.")
+                            }
+                            break;
+                    }
+                    break;
+
                 case "baseStats":
                     if(! value.hasOwnProperty("atk") || ! value.hasOwnProperty("def") || ! value.hasOwnProperty("hp")){
                         errors.push("All fields are required.")
@@ -193,6 +230,43 @@ class GMEditorUtils{
                 case "blacklist":
                     if(validation.value.includes(value)){
                         errors.push("Field is an invalid value.")
+                    }
+                    break;
+
+                case "regex":
+                    let regex = new RegExp(validation.value);
+                    if(! regex.test(value)){
+                        errors.push("Field has illegal characters or pattern.")
+                    }
+                    break;
+
+                case "all_pokemon":                   
+                    if(value?.forEach){
+                        value.forEach(pokemon => {
+                            let pokemonErrors = GMEditorUtils.ValidatePokemonEntry(pokemon);
+
+                            if(pokemonErrors.length > 0){
+                                errors.push(pokemon.speciesId + " is not a valid entry");
+                                console.error(pokemonErrors);
+                            }
+                        });
+                    } else{
+                        errors.push("Pokemon is not a valid array");
+                    }
+                    break;
+
+                case "all_moves":                   
+                    if(value?.forEach){
+                        value.forEach(move => {
+                            let moveErrors = GMEditorUtils.ValidateMoveEntry(move);
+
+                            if(moveErrors.length > 0){
+                                errors.push(move.moveId+ " is not a valid entry");
+                                console.error(moveErrors);
+                            }
+                        });
+                    } else{
+                        errors.push("Moves is not a valid array");
                     }
                     break;
             }
