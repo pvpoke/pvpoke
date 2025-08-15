@@ -157,13 +157,13 @@ class GMEditorUtils{
                     switch(fieldName){
                         case "speciesId":
                         case "species-id":
-                            if(gm.data.pokemon.filter(pokemon => pokemon.speciesId.toLowerCase() == value.toLowerCase()).length > 1){
+                            if(gm.data.pokemon.filter(pokemon => pokemon?.speciesId?.toLowerCase() == value?.toLowerCase()).length > 1){
                                 errors.push("This Pokemon ID already exists.")
                             }
                             break;
 
                         case "moveId":
-                            if(gm.data.moves.filter(move => move.moveId.toLowerCase() == value.toLowerCase()).length > 1){
+                            if(gm.data.moves.filter(move => move?.moveId?.toLowerCase() == value?.toLowerCase()).length > 1){
                                 errors.push("This Move ID already exists.")
                             }
                             break;

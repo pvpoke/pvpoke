@@ -76,7 +76,6 @@ var InterfaceMaster = (function () {
 				}
 
 				// Cycle through parameters and set them
-
 				for(let key in get){
 					if(get.hasOwnProperty(key)){
 
@@ -86,11 +85,40 @@ var InterfaceMaster = (function () {
 
 						switch(key){
 							case "p":
-								selectedPokemon = gm.getPokemonById(val);
+                                if(val == "new"){
+                                    selectedPokemon = {
+                                        speciesId: "",
+                                        speciesName: "",
+                                        dex: 1,
+                                        types: ["none", "none"],
+                                        baseStats: {
+                                            "atk": 10,
+                                            "def": 10,
+                                            "hp": 10
+                                        },
+                                        defaultIVs: {
+                                            cp500: [50, 15, 15, 15],
+                                            cp1500: [50, 15, 15, 15],
+                                            cp2500: [50, 15, 15, 15]
+                                        },
+                                        fastMoves: ["SPLASH"],
+                                        chargedMoves: ["STRUGGLE"],
+                                        buddyDistance: 1,
+                                        thirdMoveCost: 10000,
+                                        released: false
+                                    };
 
-                                if(selectedPokemon){
+                                    data.pokemon.push(selectedPokemon);
+
                                     self.updateLastSavedJSON();
                                     self.displaySelectedPokemon();
+                                } else{
+                                    selectedPokemon = gm.getPokemonById(val);
+
+                                    if(selectedPokemon){
+                                        self.updateLastSavedJSON();
+                                        self.displaySelectedPokemon();
+                                    }
                                 }
 								break;
 						}
@@ -371,6 +399,10 @@ var InterfaceMaster = (function () {
                             selectedPokemon.tags = [val];
                         }
                         break;
+                }
+
+                if($(this).hasClass("editable-list-selector")){
+                    $(this).blur();
                 }
 
                 self.displaySelectedPokemon();

@@ -10,6 +10,8 @@ $PLACEHOLDER = '';
 
 $EXPORT_TITLE = '';
 
+$NEW_BUTTON_TEXT = '';
+
 $category = '';
 
 if(isset($_GET['c'])){
@@ -19,6 +21,7 @@ if(isset($_GET['c'])){
         $BODY = 'Customize Pokemon or add new Pokemon for your simulations.';
         $PLACEHOLDER = 'Search Pokemon';
         $EXPORT_TITLE = 'Import/Export All Pokemon';
+        $NEW_BUTTON_TEXT = '+ New Pokemon';
         $category = 'pokemon';
     } else if($_GET['c'] == 'moves'){
         $META_TITLE = 'All Moves | Gamemaster Editor';
@@ -26,11 +29,20 @@ if(isset($_GET['c'])){
         $BODY = 'Customize moves or add new moves for your simulations.';
         $PLACEHOLDER = 'Search Moves';
         $EXPORT_TITLE = 'Import/Export All Moves';
+        $NEW_BUTTON_TEXT = '+ New Move';
         $category = 'moves';
     }
 }
 
 require_once '../header.php';
+
+if(isset($_GET['c'])){
+    if($_GET['c'] == 'pokemon'){
+        $NEW_BUTTON_LINK = $WEB_ROOT . 'gm-editor/pokemon/new/';
+    } else if($_GET['c'] == 'moves'){
+        $NEW_BUTTON_LINK = $WEB_ROOT . 'gm-editor/moves/new/';
+    }
+}
 ?>
 
 <h1>Gamemaster Editor</h1>
@@ -56,6 +68,8 @@ require_once '../header.php';
                 <div class="option on" value="filter">Filter</div>
                 <div class="option" value="find">Find</div>
             </div>
+
+            <a class="link-btn" href="<?php echo $NEW_BUTTON_LINK; ?>"><?php echo $NEW_BUTTON_TEXT; ?></a>
         </div>
         
         <div class="table-container">

@@ -189,6 +189,10 @@ var GameMaster = (function () {
 
 		// Save a custom gamemaster object to local storage
 		object.saveCustomGameMaster = function(data){
+
+			data.pokemon.sort((a,b) => (a.dex > b.dex) ? 1 : ((b.dex > a.dex) ? -1 : 0));
+			data.moves.sort((a,b) => (a.moveId > b.moveId) ? 1 : ((b.moveId > a.moveId) ? -1 : 0));
+
 			let customData = {
 				id: data.id,
 				title: data.title,
@@ -487,7 +491,7 @@ var GameMaster = (function () {
 			var leagues = [500,1500,2500];
 			var battle = new Battle();
 
-			var pokemon = new Pokemon(poke.speciesId, 0, battle);
+			var pokemon = new Pokemon(null, 0, battle, poke);
 
 			battle.setNewPokemon(pokemon, 0, false);
 

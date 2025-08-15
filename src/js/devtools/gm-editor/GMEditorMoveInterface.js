@@ -111,11 +111,29 @@ var InterfaceMaster = (function () {
 
 						switch(key){
 							case "m":
-								selectedMove = gm.getMoveDataById(val);
+                                if(val == "new"){
+                                    selectedMove = {
+                                        "moveId": "",
+                                        "name": "",
+                                        "type": "none",
+                                        "power": 1,
+                                        "energy": 0,
+                                        "energyGain": 1,
+                                        "turns": 1,
+                                        "cooldown": 500,
+                                        "archetype": "Low Quality"
+                                    };
 
-                                if(selectedMove){
+                                    data.moves.push(selectedMove);
                                     self.updateLastSavedJSON();
                                     self.displaySelectedMove();
+                                } else{
+                                    selectedMove = gm.getMoveDataById(val);
+
+                                    if(selectedMove){
+                                        self.updateLastSavedJSON();
+                                        self.displaySelectedMove();
+                                    }
                                 }
 								break;
 						}
@@ -306,7 +324,7 @@ var InterfaceMaster = (function () {
                 let remainingDisplayCount = totalToDisplay - (selectedIndex - startIndex);
                 let stopIndex = Math.min(optionData?.length || 0, selectedIndex + remainingDisplayCount);
 
-                $target.find("option").slice(1).remove();
+                $target.find("option").remove();
 
                 // Add options to select element
                 for(var i = startIndex; i < stopIndex; i++){
@@ -482,7 +500,7 @@ var InterfaceMaster = (function () {
 
                 switch(fieldName){
                     case "move-id":
-                        selectedMove.moveId = val;
+                        selectedMove.moveId = val.toUpperCase();
                         break;
 
                     case "move-name":

@@ -6748,6 +6748,23 @@ a.feed-subscribe{
 		margin-top: 17px;
 		float: right;
 	}
+
+	a.link-btn{
+		display: block;
+		margin-left: auto;
+		background: #fff;
+		border: 1px solid #000;
+		border-radius: 30px;
+		padding: 5px 15px;
+		text-decoration: none;
+		color: #000;
+		font-size: 12px;
+		box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+	}
+
+	.poke-search-container{
+		margin-bottom: 5px;
+	}
 }
 
 #gm-editor-moves{
