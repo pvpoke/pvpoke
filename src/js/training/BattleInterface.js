@@ -972,7 +972,7 @@ var BattlerMaster = (function () {
 
 				// Report final individual and team data to db
 				let teamSelectMethod = InterfaceMaster.getInstance().getTeamSelectMethod();
-				if(teamSelectMethod == "custom" || teamSelectMethod == "manual"){
+				if(teamSelectMethod == "custom" || teamSelectMethod == "manual" || settings.gamemaster != "gamemaster"){
 					teamsValid = false;
 				}
 				

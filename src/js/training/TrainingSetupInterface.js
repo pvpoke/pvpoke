@@ -117,7 +117,7 @@ var InterfaceMaster = (function () {
 
 			this.open = function(){
 				for(var i = 0; i < 3; i++){
-					$(".section:not('.mega-warning')").eq(i).show();
+					$(".section").eq(i).show();
 				}
 
 				$(".section.updates").show();

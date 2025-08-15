@@ -18,10 +18,6 @@ var GameMaster = (function () {
 		object.pokeSelectList = [];
 		object.moveMap = {};
 
-		if(settings.gamemaster == "gamemaster-mega"){
-			$(".mega-warning").show();
-		}
-
 		var gmVersion = "gamemaster";
 
 		// By default, load the minified version
@@ -78,30 +74,6 @@ var GameMaster = (function () {
 					if(typeof customRankingInterface !== 'undefined'){
 						customRankingInterface.init(object);
 					}
-				} else if(settings.gamemaster == "gamemaster-mega"){
-					// Load additional mega pokemon
-					$.getJSON( webRoot+"data/megas.json?v="+siteVersion, function( data ){
-
-						// Sort Pokemon alphabetically for searching
-						object.data.pokemon = object.data.pokemon.concat(data);
-						object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
-
-						object.createPokeSelectList();
-
-						InterfaceMaster.getInstance().init(object);
-					});
-				} else if(settings.gamemaster == "gamemaster-paldea"){
-					// Load additional mega pokemon
-					$.getJSON( webRoot+"data/paldea.json?v="+siteVersion, function( data ){
-
-						// Sort Pokemon alphabetically for searching
-						object.data.pokemon = object.data.pokemon.concat(data);
-						object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
-
-						object.createPokeSelectList();
-
-						InterfaceMaster.getInstance().init(object);
-					});
 				} else{
 					// Load custom gamemaster from local storage
 					let content = window.localStorage.getItem(settings.gamemaster);

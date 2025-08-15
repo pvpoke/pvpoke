@@ -191,7 +191,7 @@ class GMEditorUtils{
                     break;
 
                 case "blacklist":
-                    if(! validation.value.includes(value)){
+                    if(validation.value.includes(value)){
                         errors.push("Field is an invalid value.")
                     }
                     break;

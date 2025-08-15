@@ -311,6 +311,22 @@ header{
 	}
 }
 
+.custom-gm-banner{
+	background: #4b8f56;
+    padding: 3px 8px;
+    font-size: 12px;
+    color: #f9fdff;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    text-align: center;
+    position: relative;
+    top: -5px;
+
+	a{
+		color: $color-off-white;
+	}
+}
+
 footer{
 	max-width:800px;
 	position: relative;

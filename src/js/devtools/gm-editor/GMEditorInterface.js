@@ -13,6 +13,7 @@ var InterfaceMaster = (function () {
             let data = {};
             let self = this;
             let lastSavedJSON; // JSON of the last saved data
+            let initializing = true;
 
 			this.init = function(){
                 // Load data from local storage
@@ -38,6 +39,8 @@ var InterfaceMaster = (function () {
                 // Load the currently selected gamemaster
                 $("#gm-select option[value='"+settings.gamemaster+"']").attr("selected", "selected");
                 $("#gm-select").trigger("change");
+
+                initializing = false;
 			}
 
             this.setGameMasterData = function(result){
@@ -127,6 +130,27 @@ var InterfaceMaster = (function () {
                 gm.loadCustomGameMaster(id, self.setGameMasterData);
 
                 self.updateLastSavedJSON();
+
+                // Save settings to new gamemaster
+                if(! initializing){
+                    settings.gamemaster = id;
+
+                    $.ajax({
+
+                        url : host+'data/settingsCookie.php',
+                        type : 'POST',
+                        data : settings,
+                        dataType:'json',
+                        success : function(data) {
+                            console.log("Settings updated");
+                        },
+                        error : function(request,error)
+                        {
+                            console.log("Request: "+JSON.stringify(request));
+                            console.log(error);
+                        }
+                    });
+                }
             });
 
             // Copy list text
@@ -183,8 +207,27 @@ var InterfaceMaster = (function () {
 
                     gm.saveCustomGameMaster(data);
                     
-                    // Navigate to edit page
-                    window.location.href = $("a#save-new-btn").attr("href");
+
+                    // Save settings to new gamemaster
+                    settings.gamemaster = id;
+
+                    $.ajax({
+
+                        url : host+'data/settingsCookie.php',
+                        type : 'POST',
+                        data : settings,
+                        dataType:'json',
+                        success : function(data) {
+                            // Navigate to edit page
+                            window.location.href = $("a#save-new-btn").attr("href");
+                        },
+                        error : function(request,error)
+                        {
+                            console.log("Request: "+JSON.stringify(request));
+                            console.log(error);
+                        }
+                    });
+
                 } else{
                     $(".modal #gm_name + .error-label").show();
                     $(".modal #gm_name + .error-label").html(errors.join(" "));

@@ -18,6 +18,10 @@ if(isset($_COOKIE['settings'])){
 	// Fill in missing settings with defaults
 	if(! isset($_SETTINGS->gamemaster)){
 		$_SETTINGS->gamemaster = "gamemaster";
+	} else if($_SETTINGS->gamemaster == "gamemaster-paldea"){
+		$_SETTINGS->gamemaster = "gamemaster";
+	} else if($_SETTINGS->gamemaster == "gamemaster-mega"){
+		$_SETTINGS->gamemaster = "gamemaster";
 	}
 
 	if(! isset($_SETTINGS->pokeboxId)){
@@ -310,4 +314,8 @@ if(! isset($OG_IMAGE)){
 	</header>
 	<div class="main-wrap">
 		<div id="main">
-			<div class="hide mega-warning"><b>Stats for unreleased Mega Evolutions are speculative. Don't invest any resources until they're officially released.</b></div>
+			<?php if($_SETTINGS->gamemaster != "gamemaster"): ?>
+				<div class="custom-gm-banner">
+					A <a href="<?php echo $WEB_ROOT; ?>gm-editor/">custom gamemaster</a> is active. Simulation results may change.
+				</div>
+			<?php endif; ?>
