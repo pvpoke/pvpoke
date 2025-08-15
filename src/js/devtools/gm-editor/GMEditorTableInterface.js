@@ -446,25 +446,36 @@ var InterfaceMaster = (function () {
             $(".custom-rankings-import textarea.import").on("change", function(e){
                 try{
                     let customData = JSON.parse($(this).val());
+                    let errors = [];
 
                     switch(sourceType){
                         case "pokemon":
-                            if(customData.length > 0 && customData.every(p => p?.speciesId)){
+                            customData.forEach(entry => {
+                                errors = [...errors, ...GMEditorUtils.ValidatePokemonEntry(entry)];
+                            });
+
+                            if(errors.length == 0){
                                 source = customData;
                                 self.displayList();
                             } else{
                                 modalWindow("Data Error", $(".import-error").first());
                                 self.updateExportCode();
+                                console.error(errors);
                             }
                             break;
 
                         case "moves":
-                            if(customData.length > 0 && customData.every(m => m?.moveId)){
+                            customData.forEach(entry => {
+                                errors = [...errors, ...GMEditorUtils.ValidateMoveEntry(entry)];
+                            });
+
+                            if(errors.length == 0){
                                 source = customData;
                                 self.displayList();
                             } else{
                                 modalWindow("Data Error", $(".import-error").first());
                                 self.updateExportCode();
+                                console.error(errors);
                             }
                             break;
                     }

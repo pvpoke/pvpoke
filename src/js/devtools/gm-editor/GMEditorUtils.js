@@ -27,6 +27,7 @@ class GMEditorUtils{
 
             if(propertyErrors.length > 0){
                 fieldErrors.push({
+                    speciesId: entry.speciesId,
                     fieldName: validation.field,
                     errors: propertyErrors
                 });

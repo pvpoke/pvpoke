@@ -166,11 +166,8 @@
                 "property": "thirdMoveCost",
                 "validations": [
                     {
-                        "type": "required"
-                    },
-                    {
                         "type": "whitelist",
-                        "value": [10000, 50000, 75000, 100000]
+                        "value": [10000, 50000, 75000, 100000, false]
                     }
                 ]
             },
@@ -275,7 +272,7 @@
                     },
                     {
                         "type": "number_min_value",
-                        "value": 1
+                        "value": 0
                     }
                 ]
             }
