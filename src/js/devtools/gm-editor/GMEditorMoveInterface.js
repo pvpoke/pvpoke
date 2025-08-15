@@ -217,7 +217,7 @@ var InterfaceMaster = (function () {
                 $("#move-archetype option[value='"+selectedMove.archetype+"']").prop("selected", "selected");
 
                 self.updateExportCode();
-                //self.validatePokemon();
+                self.validateMove();
             }
 
             self.displayLearnset = function(){
@@ -234,15 +234,15 @@ var InterfaceMaster = (function () {
             }
 
             // Run validations on the full Pokemon entry
-            this.validatePokemon = function(){
-                let pokemonErrors = GMEditorUtils.ValidatePokemonEntry(selectedMove);
+            this.validateMove = function(){
+                let moveErrors = GMEditorUtils.ValidateMoveEntry(selectedMove);
 
-                $("#gm-editor-pokemon .error-label").remove();
+                $("#gm-editor-moves .error-label").remove();
 
-                pokemonErrors.forEach(pokeError => {
+                moveErrors.forEach(moveError => {
                     let $errorItem = $("<div class='error-label'></div>");
-                    let $field = $("#gm-editor-pokemon [name='"+pokeError.fieldName+"']").first();
-                    let fieldErrors = pokeError.errors;
+                    let $field = $("#gm-editor-moves [name='"+moveError.fieldName+"']").first();
+                    let fieldErrors = moveError.errors;
 
                     fieldErrors.forEach(fieldError => {
                         $errorItem.append($("<div>"+fieldError+"</div>"));
@@ -253,7 +253,7 @@ var InterfaceMaster = (function () {
                 });
 
                 // Enable or disable save button
-                if(pokemonErrors.length > 0){
+                if(moveErrors.length > 0){
                     $("#save-changes-btn").attr("disabled", "disabled");
                 }
             }

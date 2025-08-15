@@ -19,7 +19,54 @@ class GMEditorUtils{
         let validations = GMEditorValidations.pokemon;
 
         validations.forEach(validation => {
+            if(validation?.notBaseProperty){
+                return;
+
+            }
             let propertyErrors = GMEditorUtils.ValidateField("pokemon", validation.property, entry[validation.property]);
+
+            if(propertyErrors.length > 0){
+                fieldErrors.push({
+                    fieldName: validation.field,
+                    errors: propertyErrors
+                });
+            }
+        });
+
+        // Validate that the Pokemon can initialize in all leagues
+        let leagues = [500, 1500, 2500, 10000];
+        let battle = new Battle();
+
+        try{
+            leagues.forEach(cpLimit => {
+                battle.setCP(cpLimit);
+
+                let pokemon = new Pokemon(null, 0, battle, entry);
+                pokemon.initialize(true);
+
+                if(isNaN(pokemon.cp) || pokemon.cp > cpLimit){
+                    throw "Pokemon invalid CP: " + pokemon.cp;
+                }
+            });
+        } catch(e){
+            console.error("Could not initialize " + entry.speciesId);
+            console.error(e);
+            fieldErrors.push({
+                fieldName: "",
+                errors: ["Pokemon could not be initialized with current data."]
+            });
+        }
+
+        return fieldErrors;
+    }
+
+    // Validate a full move entry
+    static ValidateMoveEntry(entry){
+        let fieldErrors = [];
+        let validations = GMEditorValidations.move;
+
+        validations.forEach(validation => {
+            let propertyErrors = GMEditorUtils.ValidateField("move", validation.property, entry[validation.property]);
 
             if(propertyErrors.length > 0){
                 fieldErrors.push({
@@ -42,10 +89,12 @@ class GMEditorUtils{
             validations = [];
         }
 
+        let gm = GameMaster.getInstance();
+
         for(let validation of validations){
             switch(validation.type){
                 case "required":
-                    if(! value || value?.length == 0 || value == ""){
+                    if(value !== 0 && (! value || value?.length == 0 || value === "")){
                         errors.push("Field is required.");
                         return errors;
                     }
@@ -60,12 +109,6 @@ class GMEditorUtils{
                 case "string_max_length":
                     if(value?.length > validation.value){
                         errors.push("Field is too long (max " + validation.value + ").");
-                    }
-                    break;
-
-                case "invalid_values":
-                    if(validation?.value?.includes(value)){
-                        errors.push("Field is an invalid value.")
                     }
                     break;
 
@@ -94,7 +137,7 @@ class GMEditorUtils{
                     break;
 
                 case "type":
-                    if(! Pokemon.getAllTypes().includes(value)){
+                    if(! Pokemon.getAllTypes(true).includes(value)){
                         errors.push("Field must be a valid Pokemon type.")
                     }
                     break;
@@ -106,6 +149,49 @@ class GMEditorUtils{
                         errors.push("Pokemon must have valid types.")
                     } else if(! Pokemon.getAllTypes(true).includes(value[1]) && value[1] != "none"){
                         errors.push("Pokemon must have valid types.")
+                    }
+                    break;
+
+                case "unique_id":
+                    switch(fieldName){
+                        case "speciesId":
+                        case "species-id":
+                            if(gm.data.pokemon.filter(pokemon => pokemon.speciesId.toLowerCase() == value.toLowerCase()).length > 1){
+                                errors.push("This Pokemon ID already exists.")
+                            }
+                            break;
+
+                        case "moveId":
+                            if(gm.data.moves.filter(move => move.moveId.toLowerCase() == value.toLowerCase()).length > 1){
+                                errors.push("This Move ID already exists.")
+                            }
+                            break;
+                    }
+                    break;
+
+                case "baseStats":
+                    if(! value.hasOwnProperty("atk") || ! value.hasOwnProperty("def") || ! value.hasOwnProperty("hp")){
+                        errors.push("All fields are required.")
+                        break;
+                    }
+
+                    errors = [
+                        ...errors,
+                        ...GMEditorUtils.ValidateField("pokemon", "baseStat", value.atk),
+                        ...GMEditorUtils.ValidateField("pokemon", "baseStat", value.def),
+                        ...GMEditorUtils.ValidateField("pokemon", "baseStat", value.hp),
+                    ];
+                    break;
+
+                case "whitelist":
+                    if(! validation.value.includes(value)){
+                        errors.push("Field is not set to an allowed value.");
+                    }
+                    break;
+
+                case "blacklist":
+                    if(! validation.value.includes(value)){
+                        errors.push("Field is an invalid value.")
                     }
                     break;
             }

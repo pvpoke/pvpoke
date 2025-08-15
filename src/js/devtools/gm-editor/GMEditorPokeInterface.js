@@ -390,7 +390,7 @@ var InterfaceMaster = (function () {
 
                 switch(fieldName){
                     case "species-id":
-                        selectedPokemon.speciesId = val;
+                        selectedPokemon.speciesId = val.toLowerCase();
                         break;
 
                     case "species-name":
@@ -399,7 +399,7 @@ var InterfaceMaster = (function () {
 
                     case "alias-id":
                         if(val != ""){
-                            selectedPokemon.aliasId = val;
+                            selectedPokemon.aliasId = val.toLowerCase();
                         } else{
                             delete selectedPokemon.aliasId;
                         }
@@ -413,7 +413,13 @@ var InterfaceMaster = (function () {
                     case "stats-def":
                     case "stats-hp":
                         let key = $(this).attr("data");
-                        selectedPokemon.baseStats[key] = parseInt(val);
+                        let stat = parseInt(val);
+
+                        if(stat < 0){
+                            stat = 1;
+                        }
+
+                        selectedPokemon.baseStats[key] = stat;
                         selectedPokemon.defaultIVs = gm.generateDefaultIVsByPokemon(selectedPokemon);
                         break;
 

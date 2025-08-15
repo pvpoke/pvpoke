@@ -21,7 +21,7 @@
                         "value": 64
                     },
                     {
-                        "type": "invalid_values",
+                        "type": "blacklist",
                         "value": ["gamemaster"]
                     }
                 ]
@@ -115,8 +115,170 @@
                         "type": "types"
                     }
                 ]
+            },
+            {
+                "field": "stats-atk",
+                "property": "baseStats",
+                "validations": [
+                    {
+                        "type": "required"
+                    },
+                    {
+                        "type": "baseStats"
+                    }
+                ]
+            },
+            {
+                "field": "stats-atk",
+                "property": "baseStat",
+                "notBaseProperty": true,
+                "validations": [
+                    {
+                        "type": "required"
+                    },
+                    {
+                        "type": "number"
+                    },
+                    {
+                        "type": "number_min_value",
+                        "value": 1
+                    },
+                    {
+                        "type": "integer"
+                    }
+                ]
+            },
+            {
+                "field": "buddy-distance",
+                "property": "buddyDistance",
+                "validations": [
+                    {
+                        "type": "required"
+                    },
+                    {
+                        "type": "whitelist",
+                        "value": [1, 3, 5, 20]
+                    }
+                ]
+            },
+            {
+                "field": "third-move-cost",
+                "property": "thirdMoveCost",
+                "validations": [
+                    {
+                        "type": "required"
+                    },
+                    {
+                        "type": "whitelist",
+                        "value": [10000, 50000, 75000, 100000]
+                    }
+                ]
+            },
+            {
+                "field": "add-fast-move",
+                "property": "fastMoves",
+                "validations": [
+                    {
+                        "type": "required"
+                    }
+                ]
+            },
+            {
+                "field": "add-charged-move",
+                "property": "chargedMoves",
+                "validations": [
+                    {
+                        "type": "required"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "objectType": "move",
+        "validations": [
+            {
+                "field": "move-id",
+                "property": "moveId",
+                "validations": [
+                    {
+                        "type": "required"
+                    },
+                    {
+                        "type": "unique_id"
+                    },
+                    {
+                        "type": "string_min_length",
+                        "value": 3
+                    },
+                    {
+                        "type": "string_max_length",
+                        "value": 64
+                    }
+                ]
+            },
+            {
+                "field": "move-name",
+                "property": "name",
+                "validations": [
+                    {
+                        "type": "required"
+                    },
+                    {
+                        "type": "string_min_length",
+                        "value": 3
+                    },
+                    {
+                        "type": "string_max_length",
+                        "value": 64
+                    }
+                ]
+            },
+            {
+                "field": "abbreviation",
+                "property": "abbreviation",
+                "validations": [
+                    {
+                        "type": "string_min_length",
+                        "value": 1
+                    },
+                    {
+                        "type": "string_max_length",
+                        "value": 4
+                    }
+                ]
+            },
+            {
+                "field": "move-type",
+                "property": "type",
+                "validations": [
+                    {
+                        "type": "required"
+                    },
+                    {
+                        "type": "type"
+                    }
+                ]
+            },
+            {
+                "field": "move-power",
+                "property": "power",
+                "validations": [
+                    {
+                        "type": "required"
+                    },
+                    {
+                        "type": "number"
+                    },
+                    {
+                        "type": "integer"
+                    },
+                    {
+                        "type": "number_min_value",
+                        "value": 1
+                    }
+                ]
             }
         ]
     }
-
 ]
