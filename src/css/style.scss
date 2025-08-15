@@ -6646,6 +6646,15 @@ a.feed-subscribe{
 		table{
 			font-size: 12px;
 			min-width: 900px;
+			opacity: 1;
+
+			@include transition(opacity, 0.3s, ease-out, 0s);
+
+			&.loading{
+				opacity: 0.5;
+				cursor: wait;
+				pointer-events: none;
+			}
 
 			th, td{
 				padding: 10px;

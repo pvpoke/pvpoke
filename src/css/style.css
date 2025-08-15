@@ -6088,6 +6088,18 @@ a.feed-subscribe {
 #gm-editor-learnset .table-container table {
   font-size: 12px;
   min-width: 900px;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s ease-out 0s;
+  -moz-transition: opacity 0.3s ease-out 0s;
+  -o-transition: opacity 0.3s ease-out 0s;
+  transition: opacity 0.3s ease-out 0s;
+}
+#gm-editor-pokemon .table-container table.loading,
+#gm-editor-moves .table-container table.loading,
+#gm-editor-learnset .table-container table.loading {
+  opacity: 0.5;
+  cursor: wait;
+  pointer-events: none;
 }
 #gm-editor-pokemon .table-container table th, #gm-editor-pokemon .table-container table td,
 #gm-editor-moves .table-container table th,

@@ -64,10 +64,10 @@ if(isset($_GET['c'])){
             <input class="poke-search" target="train-table" type="text" placeholder="<?php echo $PLACEHOLDER; ?>" />
             <a href="#" class="search-info">i</a>
 
-            <div class="form-group" data="search-mode">
+            <!--<div class="form-group" data="search-mode">
                 <div class="option on" value="filter">Filter</div>
                 <div class="option" value="find">Find</div>
-            </div>
+            </div>-->
 
             <a class="link-btn" href="<?php echo $NEW_BUTTON_LINK; ?>"><?php echo $NEW_BUTTON_TEXT; ?></a>
         </div>

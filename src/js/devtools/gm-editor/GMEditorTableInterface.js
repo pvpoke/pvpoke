@@ -21,6 +21,11 @@ var InterfaceMaster = (function () {
             let lastSavedJSON; // JSON of the last saved data
             let idKey;
             let nameKey;
+            
+            // Table display
+            let page = 0;
+            let rowsPerPage = 200;
+            let searchResults = [];
 
 			this.init = function(){
                 data = gm.data;
@@ -72,9 +77,18 @@ var InterfaceMaster = (function () {
                 
                 // Perform after delay to free up main thread
                 setTimeout(function(){
-                     $(".train-table tbody").html("");
+                    $(".train-table tbody").html("");
 
-                    source.forEach(pokemon => {
+                    let offset = rowsPerPage * page;
+                    let rowsDisplayed = 0;
+
+                    for(let i = offset; rowsDisplayed < rowsPerPage && i < source.length; i++){
+                        let pokemon = source[i];
+
+                        if(searchResults?.length > 0 && ! searchResults.includes(pokemon.speciesId)){
+                            continue;
+                        }
+
                         let $row = $(".train-table tr.hide").first().clone().removeClass("hide");
                         
                         $row.attr("data", pokemon.speciesId);
@@ -131,9 +145,10 @@ var InterfaceMaster = (function () {
 
                         $row.find("a.poke-edit").attr("href", host+"gm-editor/pokemon/"+pokemon.speciesId+"/");
                         
-
                         $(".train-table tbody").append($row);
-                    });
+
+                        rowsDisplayed++;
+                    }
 
                     self.updateExportCode();
                 }, 50);
@@ -147,7 +162,16 @@ var InterfaceMaster = (function () {
                 setTimeout(function(){
                      $(".train-table tbody").html("");
 
-                    source.forEach(move => {
+                    let offset = rowsPerPage * page;
+                    let rowsDisplayed = 0;
+
+                    for(let i = offset; rowsDisplayed < rowsPerPage && i < source.length; i++){
+                        let move = source[i];
+
+                        if(searchResults?.length > 0 && ! searchResults.includes(move.moveId)){
+                            continue;
+                        }
+
                         let $row = $(".train-table tr.hide").first().clone().removeClass("hide");
                         
                         $row.attr("data", move.moveId);
@@ -166,9 +190,8 @@ var InterfaceMaster = (function () {
 
                         $row.find("a.poke-edit").attr("href", host+"gm-editor/moves/"+move.moveId+"/");
                         
-
                         $(".train-table tbody").append($row);
-                    });
+                    }
 
                     self.updateExportCode();
                 }, 50);
@@ -221,15 +244,9 @@ var InterfaceMaster = (function () {
 
                 if(searchMode == "filter"){
                     // Only show matching rows
-                    $target.find("tbody tr").each(function(index, value){
-                        let id = $(this).attr("data");
 
-                        if(list.includes(id)){
-                            $(this).show();
-                        } else{
-                            $(this).hide();
-                        }
-                    });
+                    searchResults = list;
+                    self.displayList();
                 } else if(searchMode == "find" && list.length > 0){
                     // Scroll to the first matching row
                     let targetId = list[0];
