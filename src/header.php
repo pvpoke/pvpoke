@@ -316,6 +316,6 @@ if(! isset($OG_IMAGE)){
 		<div id="main">
 			<?php if($_SETTINGS->gamemaster != "gamemaster"): ?>
 				<div class="custom-gm-banner">
-					A <a href="<?php echo $WEB_ROOT; ?>gm-editor/">custom gamemaster</a> is active. Simulation results may change.
+					A <a href="<?php echo $WEB_ROOT; ?>gm-editor/">custom gamemaster</a> is active. Simulations and content may change.
 				</div>
 			<?php endif; ?>

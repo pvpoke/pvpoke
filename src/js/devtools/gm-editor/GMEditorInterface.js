@@ -151,6 +151,12 @@ var InterfaceMaster = (function () {
                         }
                     });
                 }
+
+                if(id == "gamemaster"){
+                    $("#delete-gamemaster").hide();
+                } else{
+                    $("#delete-gamemaster").show();
+                }
             });
 
             // Copy list text
@@ -215,7 +221,7 @@ var InterfaceMaster = (function () {
 
             $("body").on("click", ".modal #save-new-modal-btn", function(e){
                 // Validate new entry
-                let title = $(".modal #gm_name").val();
+                let title = $(".modal input#gm_name").val();
                 let id = GMEditorUtils.StringToID(title, "gm-id");
 
                 data.title = title;
@@ -281,6 +287,24 @@ var InterfaceMaster = (function () {
                 } else{
                     modalWindow("Error", $(".save-data-error").first());
                 }
+            });
+
+            // Delete custom gamemaster
+
+            $("#delete-gamemaster").click(function(e){
+                modalWindow("Delete Gamemaster", $(".delete-gm-confirm").first());
+
+                $(".modal .name").html(data.title);
+
+                $(".modal .yes").click(function(e){
+                    window.localStorage.removeItem(data.id);
+
+                    // Revert to default gamemaster
+                    $("#gm-select option[value='gamemaster']").attr("selected", "selected");
+                    $("#gm-select").trigger("change");
+                    
+                    closeModalWindow();
+                });
             });
 
 		};

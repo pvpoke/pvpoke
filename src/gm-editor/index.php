@@ -15,9 +15,12 @@ require_once '../header.php';
     <div class="gm-editor-block">
         <h3>Select a Gamemaster</h3>
 
-        <select id="gm-select" class="gm-select large">
-            <option value="gamemaster">Default</option>
-        </select>
+        <div class="flex gap-15 align-items-center" style="margin-bottom: 15px;">
+            <select id="gm-select" class="gm-select large">
+                <option value="gamemaster">Default</option>
+            </select>
+            <div id="delete-gamemaster">X</div>
+        </div>
 
         <div class="flex gap-15">
             <a id="save-new-btn" href="<?php echo $WEB_ROOT; ?>gm-editor/pokemon/" class="button">Save New</a>
@@ -82,6 +85,15 @@ require_once '../header.php';
 
 <div class="save-data-error hide">
 	<p>There was an error saving the data. Ensure that all entries are valid.</p>
+</div>
+
+<div class="delete-gm-confirm hide">
+	<p>Delete <b><span class="name"></span></b>? This action can't be undone.</p>
+
+	<div class="center flex">
+		<div class="button yes">Yes</div>
+		<div class="button no">No</div>
+	</div>
 </div>
 
 <?php require_once '../modules/scripts/battle-scripts.php'; ?>

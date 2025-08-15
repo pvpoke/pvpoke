@@ -6625,8 +6625,14 @@ a.feed-subscribe{
 	input.large{
 		width: 100%;
 		max-width: none;
-		margin-bottom: 1em;
 		font-size: 18px;
+	}
+
+	#delete-gamemaster{
+		cursor: pointer;
+		color: #ff0000;
+		padding: 5px;
+		display: none;
 	}
 }
 

@@ -6066,8 +6066,13 @@ a.feed-subscribe {
 #gm-editor input.large {
   width: 100%;
   max-width: none;
-  margin-bottom: 1em;
   font-size: 18px;
+}
+#gm-editor #delete-gamemaster {
+  cursor: pointer;
+  color: #ff0000;
+  padding: 5px;
+  display: none;
 }
 
 #gm-editor-pokemon .gm-title,
