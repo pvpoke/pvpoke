@@ -40,6 +40,27 @@ require_once '../header.php';
 	<div class="copy">Copy</div>
 </div>
 
+
+<div id="gm-changelog" class="section white custom-rankings-import">
+	<a class="toggle" href="#">Changelog <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
+	<div class="toggle-content">
+
+        <div class="table-container">
+            <table class="train-table" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Changes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+</div>
+
 <div class="section white">
 	<a class="toggle" href="#">About Gamemaster Editor <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content">

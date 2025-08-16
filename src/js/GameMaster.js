@@ -40,6 +40,8 @@ var GameMaster = (function () {
 			success: function( data ) {
 				object.data = data;
 
+				object.originalData = {...object.data}; // Soft copy original data for custom gamemaster comparison
+
 				console.log("gamemaster loaded");
 
 				// Insert cup and format values into cup and format select dropdowns
@@ -79,8 +81,6 @@ var GameMaster = (function () {
 				} else{
 					// Load custom gamemaster from local storage
 					let content = window.localStorage.getItem(settings.gamemaster);
-
-					object.originalData = {...object.data}; // Soft copy original data for comparison
 
 					try{
 						customData = JSON.parse(content);

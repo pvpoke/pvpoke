@@ -98,6 +98,7 @@ var InterfaceMaster = (function () {
                     
                     self.updateExportCode();
                     self.updateLastSavedJSON();
+                    self.displayChangelog();
                 } else{
                     modalWindow("Data Error", $(".import-error").first());
                     self.updateExportCode();
@@ -124,6 +125,14 @@ var InterfaceMaster = (function () {
             // Generate and display changelog
 
             this.displayChangelog = function(){
+                $(".train-table tbody").html("");
+
+                let id = $("#gm-select option:selected").val();
+
+                if(id == "gamemaster"){
+                    return;
+                }
+
                 let changes = [];
                 let originalPokemon = gm.originalData.pokemon;
                 let originaMoves = gm.originalData.moves;
@@ -134,32 +143,9 @@ var InterfaceMaster = (function () {
 
                     if(oldPokemon){
                         // Compare overall values
-                        if(JSON.stringify(newPokemon) != JSON.stringify(oldPokemon)){
-                            // Identify individual changes
-                            let change = {
-                                type: "edit",
-                                id: newPokemon.speciesId,
-                                values: []
-                            };
-                            
-                            for(property in newPokemon){
-                                if(! oldPokemon.hasOwnProperty(property)){
-                                    change.values.push({
-                                        type: "addition",
-                                        property: property,
-                                        oldValue: "",
-                                        newValue: newPokemon[property]
-                                    })
-                                } else if(JSON.stringify(newPokemon[property]) != JSON.stringify(oldPokemon[property])){
-                                   change.values.push({
-                                        type: "edit",
-                                        property: property,
-                                        oldValue: JSON.stringify(oldPokemon[property]),
-                                        newValue: JSON.stringify(newPokemon[property])
-                                    });
-                                }
-                            }
+                        let change = self.getObjectChanges(oldPokemon, newPokemon, "speciesId");
 
+                        if(change){
                             changes.push(change);
                         }
                     } else{
@@ -171,7 +157,151 @@ var InterfaceMaster = (function () {
                     }
                 });
 
-                console.log(changes);
+                // Search for removals in new list
+                originalPokemon.forEach(oldPokemon => {
+                    let newPokemon = data.pokemon.find(p => p.speciesId == oldPokemon.speciesId);
+
+                    if(! newPokemon){
+                        changes.push({
+                            type: "deletion",
+                            id: oldPokemon.speciesId,
+                            values: []
+                        }); 
+                    }
+                });
+
+                // Compare custom Pokemon data with original
+                data.moves.forEach(newMove => {
+                    let oldMove = originaMoves.find(p => p.moveId == newMove.moveId);
+
+                    if(oldMove){
+                        // Compare overall values
+                        let change = self.getObjectChanges(oldMove, newMove, "moveId");
+
+                        if(change){
+                            changes.push(change);
+                        }
+                    } else{
+                        changes.push({
+                            type: "addition",
+                            id: newMove.moveId,
+                            values: []
+                        });
+                    }
+                });
+
+                // Search for removals in new list
+                originaMoves.forEach(oldMove => {
+                    let newMove = data.moves.find(p => p.moveId == oldMove.moveId);
+
+                    if(! newMove){
+                        changes.push({
+                            type: "deletion",
+                            id: oldMove.moveId,
+                            values: []
+                        }); 
+                    }
+                });
+
+                // Display changes in table
+
+                changes.forEach(change => {
+                    let $row = $("<tr class=\""+change.type+"\"><td class=\"change-id\"></td><td class=\"changes\"><td></tr>");
+
+                    let changeIdLabel = change.id;
+
+                    if(change.type == "addition"){
+                        changeIdLabel = "+ " + changeIdLabel;
+                    } else if(change.type == "deletion"){
+                        changeIdLabel = "- " + changeIdLabel;
+                    }
+
+                    $row.find(".change-id").html(changeIdLabel);
+
+                    change.values.forEach(valueChange => {
+                        let $changeLine = $("<div class=\"change-line " + valueChange.type + "\"></div>");
+
+                        if(valueChange.oldValue == ""){
+                            $changeLine.append(
+                                "<div class=\"change-id\">"+valueChange.property+"</div>" +
+                                "<div class=\"change-value\">"+valueChange.newValue+"</div>"
+                            );
+                        } else{
+                            $changeLine.append(
+                                "<div class=\"change-id\">"+valueChange.property+"</div>" +
+                                "<div class=\"change-value\">"+valueChange.oldValue+" &rarr; "+valueChange.newValue+"</div>"
+                            );
+                        }
+
+                        $row.find("td").eq(1).append($changeLine);
+                    });
+
+                    $(".train-table tbody").append($row);
+                });
+            }
+
+            // Given two objects, compare properties and return changes
+            this.getObjectChanges = function(oldObj, newObj, idKey){
+                let change = null;
+
+                if(JSON.stringify(newObj) != JSON.stringify(oldObj)){
+                    // Identify individual changes
+                    change = {
+                        type: "edit",
+                        id: newObj[idKey],
+                        values: []
+                    };
+                    
+                    for(property in newObj){
+                        if(! oldObj.hasOwnProperty(property)){
+                            change.values.push({
+                                type: "addition",
+                                property: property,
+                                oldValue: "",
+                                newValue: newObj[property]
+                            })
+                        } else if(JSON.stringify(newObj[property]) != JSON.stringify(oldObj[property])){
+                            if(Array.isArray(newObj[property])){
+                                // Identify new or removed values in an array
+                                let oldArray = oldObj[property];
+                                let newArray = newObj[property];
+                                let arrayChanges = [];
+
+                                let combinedArray = newObj[property].concat(oldObj[property]);
+                                for(value of combinedArray){
+                                    if(newArray.includes(value) && ! oldArray.includes(value)){
+                                        arrayChanges.push("+ " + value);
+                                    } else if(! newArray.includes(value) && oldArray.includes(value)){
+                                        arrayChanges.push("- " + value);
+                                    }
+                                }
+
+                                change.values.push({
+                                    type: "edit",
+                                    property: property,
+                                    oldValue: "",
+                                    newValue: arrayChanges.join(", ")
+                                });
+                            } else if(typeof newObj[property] == "object"){
+                                change.values.push({
+                                    type: "edit",
+                                    property: property,
+                                    oldValue: JSON.stringify(oldObj[property]),
+                                    newValue: JSON.stringify(newObj[property])
+                                });
+                            } else{
+                                change.values.push({
+                                    type: "edit",
+                                    property: property,
+                                    oldValue: oldObj[property],
+                                    newValue: newObj[property]
+                                });
+                            }
+                        }
+                    }
+                }
+
+                return change;
             }
 
             // Change the gamemaster select dropdown
@@ -179,7 +309,7 @@ var InterfaceMaster = (function () {
                 let id = $(this).find("option:selected").val();
 
                 // Set settings cookie here
-             
+                
                 gm.loadCustomGameMaster(id, self.setGameMasterData);
 
                 self.updateLastSavedJSON();
@@ -209,7 +339,6 @@ var InterfaceMaster = (function () {
                     $("#delete-gamemaster").hide();
                 } else{
                     $("#delete-gamemaster").show();
-                    self.displayChangelog();
                 }
             });
 
