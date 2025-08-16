@@ -121,6 +121,59 @@ var InterfaceMaster = (function () {
                 $("#save-btn").attr("disabled", "disabled");
             }
 
+            // Generate and display changelog
+
+            this.displayChangelog = function(){
+                let changes = [];
+                let originalPokemon = gm.originalData.pokemon;
+                let originaMoves = gm.originalData.moves;
+
+                // Compare custom Pokemon data with original
+                data.pokemon.forEach(newPokemon => {
+                    let oldPokemon = originalPokemon.find(p => p.speciesId == newPokemon.speciesId);
+
+                    if(oldPokemon){
+                        // Compare overall values
+                        if(JSON.stringify(newPokemon) != JSON.stringify(oldPokemon)){
+                            // Identify individual changes
+                            let change = {
+                                type: "edit",
+                                id: newPokemon.speciesId,
+                                values: []
+                            };
+                            
+                            for(property in newPokemon){
+                                if(! oldPokemon.hasOwnProperty(property)){
+                                    change.values.push({
+                                        type: "addition",
+                                        property: property,
+                                        oldValue: "",
+                                        newValue: newPokemon[property]
+                                    })
+                                } else if(JSON.stringify(newPokemon[property]) != JSON.stringify(oldPokemon[property])){
+                                   change.values.push({
+                                        type: "edit",
+                                        property: property,
+                                        oldValue: JSON.stringify(oldPokemon[property]),
+                                        newValue: JSON.stringify(newPokemon[property])
+                                    });
+                                }
+                            }
+
+                            changes.push(change);
+                        }
+                    } else{
+                        changes.push({
+                            type: "addition",
+                            id: newPokemon.speciesId,
+                            values: []
+                        });
+                    }
+                });
+
+                console.log(changes);
+            }
+
             // Change the gamemaster select dropdown
             $("#gm-select").on("change", function(e){
                 let id = $(this).find("option:selected").val();
@@ -156,6 +209,7 @@ var InterfaceMaster = (function () {
                     $("#delete-gamemaster").hide();
                 } else{
                     $("#delete-gamemaster").show();
+                    self.displayChangelog();
                 }
             });
 

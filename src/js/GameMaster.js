@@ -18,6 +18,8 @@ var GameMaster = (function () {
 		object.pokeSelectList = [];
 		object.moveMap = {};
 
+		object.originalData = {};
+
 		var gmVersion = "gamemaster";
 
 		// By default, load the minified version
@@ -77,6 +79,8 @@ var GameMaster = (function () {
 				} else{
 					// Load custom gamemaster from local storage
 					let content = window.localStorage.getItem(settings.gamemaster);
+
+					object.originalData = {...object.data}; // Soft copy original data for comparison
 
 					try{
 						customData = JSON.parse(content);
