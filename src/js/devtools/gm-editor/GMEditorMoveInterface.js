@@ -438,6 +438,8 @@ var InterfaceMaster = (function () {
                                     break;
 
                             }
+
+                            selectedMove.archetype = gm.generateArchetypeByMove(selectedMove);
                         break;
 
                     case "move-archetype":
@@ -476,16 +478,28 @@ var InterfaceMaster = (function () {
             // Add a Pokemon to the learnset
             $("#learnset-confirm").click(function(e){
                 let speciesId = $("#add-learnset option:selected").val();
-                let selectedPokemon = data.pokemon.find(pokemon => pokemon.speciesId == speciesId);
 
-                if(! selectedPokemon.fastMoves.includes(selectedMove.moveId) && ! selectedPokemon.chargedMoves.includes(selectedMove.moveId)){
-                    let movepool = selectedMove.energy > 0 ? selectedPokemon.chargedMoves : selectedPokemon.fastMoves;
+                // Automatically add the move to shadow and mega variants of the same Pokemon
+                let selectedPokemon = data.pokemon.filter(pokemon => 
+                    pokemon.speciesId == speciesId ||
+                    pokemon.speciesId == speciesId + "_shadow" ||
+                    pokemon.speciesId == speciesId + "_mega" ||
+                    pokemon.speciesId == speciesId + "_mega_x" ||
+                    pokemon.speciesId == speciesId + "_mega_y" ||
+                    pokemon.speciesId == speciesId + "_primal"
+                );
 
-                    movepool.push(selectedMove.moveId);
+                selectedPokemon.forEach(pokemon => {
+                    if(! pokemon.fastMoves.includes(selectedMove.moveId) && ! pokemon.chargedMoves.includes(selectedMove.moveId)){
+                        let movepool = selectedMove.energy > 0 ? pokemon.chargedMoves : pokemon.fastMoves;
 
-                    pokemonWithMove.push(selectedPokemon);
-                    pokemonWithoutMove = pokemonWithoutMove.filter(pokemon => pokemon.speciesId != speciesId);
-                }
+                        movepool.push(selectedMove.moveId);
+
+                        pokemonWithMove.push(pokemon);
+                        pokemonWithoutMove = pokemonWithoutMove.filter(poke => poke.speciesId != pokemon.speciesId);
+                    }
+                });
+
 
                 $("#gm-editor-learnset .poke-search").val("");
                 $("#gm-editor-learnset .poke-search").trigger("keyup");
@@ -517,6 +531,7 @@ var InterfaceMaster = (function () {
 
                     case "move-power":
                         selectedMove.power = parseInt(val);
+                        selectedMove.archetype = gm.generateArchetypeByMove(selectedMove);
                         break;
 
                     case "move-energy":
@@ -533,6 +548,8 @@ var InterfaceMaster = (function () {
                                 selectedMove.energyGain = 100;
                             }
                         }
+
+                        selectedMove.archetype = gm.generateArchetypeByMove(selectedMove);
                         break;
 
                     case "effect-apply-chance":
@@ -570,6 +587,8 @@ var InterfaceMaster = (function () {
                         if(selectedMove.buffTarget == "both"){
                             selectedMove.buffs = [...selectedMove.buffsSelf];
                         }
+
+                        selectedMove.archetype = gm.generateArchetypeByMove(selectedMove);
                         break;
 
                     case "move-turns":
@@ -583,6 +602,7 @@ var InterfaceMaster = (function () {
 
                         selectedMove.turns = turns;
                         selectedMove.cooldown = 500 * turns;
+                        selectedMove.archetype = gm.generateArchetypeByMove(selectedMove);
                         break; 
                 }
 
