@@ -239,6 +239,8 @@
 			<option selected disabled value="">Select a Move</option>
 		</select>
 
+		<p>You can customize moves in-depth with the <a href="<?php echo $WEB_ROOT; ?>gm-editor/">Gamemaster Editor.</a></p>
+
 		<div class="center flex">
 			<div class="button add-move">Add move</div>
 		</div>

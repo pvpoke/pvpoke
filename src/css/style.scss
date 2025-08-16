@@ -133,6 +133,10 @@ body{
 		align-items: center;
 	}
 
+	&.align-items-start{
+		align-items: flex-start;
+	}
+
 	&.gap-15{
 		gap: 15px;
 	}
@@ -301,6 +305,22 @@ header{
 	margin-bottom: 10px;
 	color: $color-off-white;
 	font-size: 14px;
+
+	a{
+		color: $color-off-white;
+	}
+}
+
+.custom-gm-banner{
+	background: #4b8f56;
+    padding: 3px 8px;
+    font-size: 12px;
+    color: #f9fdff;
+    border-radius: 8px;
+    margin-bottom: 5px;
+    text-align: center;
+    position: relative;
+    top: -5px;
 
 	a{
 		color: $color-off-white;
@@ -893,84 +913,6 @@ b{
 		.advanced-section{
 			margin-top: 15px;
 
-			.fields{
-				display:none;
-
-				.ivs input{
-					display:block;
-					width:27%;
-					max-width:66px;
-					background:none;
-					border:none;
-					border-bottom:1px solid #888;
-					border-radius:0px;
-					height: 22px;
-					margin-bottom: 0;
-					-moz-appearance:textfield; /* Firefox */
-
-					&::-webkit-outer-spin-button,
-					&::-webkit-inner-spin-button {
-						/* display: none; <- Crashes Chrome on hover */
-						-webkit-appearance: none;
-						margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-					}
-
-					&:focus{
-						outline: none;
-						border-bottom: 3px solid $color-gold;
-					}
-
-					&+ span{
-						margin-top: 10px;
-					}
-				}
-
-				input.level,
-				label.level{
-					width:25%;
-				}
-
-				label.iv{
-					width: 27%;
-					max-width:66px;
-				}
-
-				label{
-					margin-top:3px;
-					font-size: 12px;
-					font-weight: bold;
-					display: block;
-				}
-
-				.ivs-group{
-					width:75%;
-					display: flex;
-					justify-content: end;
-					align-items: center;
-
-					&.labels{
-						align-items: start;
-					}
-				}
-			}
-
-			.iv-rank{
-				border:1px solid $color-off-black;
-				cursor:pointer;
-
-				.info-icon{
-					color: rgba(255,255,255,.95);
-					border: 1px solid rgba(255,255,255,.95);
-					width: 14px;
-					height: 14px;
-					border-radius: 14px;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					float: right;
-				}
-			}
-
 			.maximize-section{
 				border: 1px solid #888;
 			    border-radius: 8px;
@@ -1118,82 +1060,6 @@ b{
 
 	.custom-ranking-options{
 		display: none;
-	}
-
-	.form-group{
-		border: 1px solid #888;
-		border-radius: 30px;
-		margin-bottom:15px;
-		clear:both;
-		display:flex;
-		flex-wrap:wrap;
-		margin-top:10px;
-		overflow: hidden;
-
-		.option{
-			text-align: left;
-			padding: 5px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			font-size: 12px;
-			flex-grow: 1;
-			margin-top: 0;
-			border-left: 1px solid #999;
-			border-right: 1px solid #999;
-			background:#eee;
-			cursor: pointer;
-
-			&.on{
-				background: #ddd;
-				-moz-box-shadow:    inset 0 0 10px #999;
-			    -webkit-box-shadow: inset 0 0 10px #999;
-			    box-shadow:         inset 0 0 10px #999;
-
-				div.icon{
-					opacity: 1;
-				}
-			}
-
-			&:first-of-type{
-				border-left: none;
-			}
-
-			&:last-of-type{
-				border-right: none;
-			}
-		}
-
-
-		&.shield-picker{
-			.option{
-				font-size: 14px;
-			}
-
-			div.icon{
-				width: 20px;
-				height: 15px;
-				background-position: center center;
-				background-repeat: no-repeat;
-				background-size: contain;
-				margin-right: 5px;
-				opacity: 0.25;
-			}
-
-			.option:nth-of-type(1) div.icon{
-				background-image: url('../img/shield_none.png');
-			}
-
-			.option:nth-of-type(2) div.icon{
-				background-image: url('../img/shield.png?v=2');
-			}
-
-			.option:nth-of-type(3) div.icon{
-				background-image: url('../img/shield_two.png?v=2');
-				width: 25px;
-				height: 20px;
-			}
-		}
 	}
 
 	a.random,
@@ -1424,6 +1290,160 @@ b{
 	      animation: BLINK_ANIMATION 2s infinite;
 	}
 
+}
+
+.fields{
+	display:none;
+
+	.ivs input{
+		display:block;
+		width:27%;
+		max-width:66px;
+		background:none;
+		border:none;
+		border-bottom:1px solid #888;
+		border-radius:0px;
+		height: 22px;
+		margin-bottom: 0;
+		-moz-appearance:textfield; /* Firefox */
+
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			/* display: none; <- Crashes Chrome on hover */
+			-webkit-appearance: none;
+			margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+		}
+
+		&:focus{
+			outline: none;
+			border-bottom: 3px solid $color-gold;
+		}
+
+		&+ span{
+			margin-top: 10px;
+		}
+	}
+
+	input.level,
+	label.level{
+		width:25%;
+	}
+
+	label.iv{
+		width: 27%;
+		max-width:66px;
+	}
+
+	label{
+		margin-top:3px;
+		font-size: 12px;
+		font-weight: bold;
+		display: block;
+	}
+
+	.ivs-group{
+		width:75%;
+		display: flex;
+		justify-content: end;
+		align-items: center;
+
+		&.labels{
+			align-items: start;
+		}
+	}
+}
+
+.iv-rank{
+	border:1px solid $color-off-black;
+	cursor:pointer;
+
+	.info-icon{
+		color: rgba(255,255,255,.95);
+		border: 1px solid rgba(255,255,255,.95);
+		width: 14px;
+		height: 14px;
+		border-radius: 14px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		float: right;
+	}
+}
+
+.form-group{
+	border: 1px solid #888;
+	border-radius: 30px;
+	margin-bottom:15px;
+	clear:both;
+	display:flex;
+	flex-wrap:wrap;
+	margin-top:10px;
+	overflow: hidden;
+
+	.option{
+		text-align: left;
+		padding: 5px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 12px;
+		flex-grow: 1;
+		margin-top: 0;
+		border-left: 1px solid #999;
+		border-right: 1px solid #999;
+		background:#eee;
+		cursor: pointer;
+
+		&.on{
+			background: #ddd;
+			-moz-box-shadow:    inset 0 0 10px #999;
+			-webkit-box-shadow: inset 0 0 10px #999;
+			box-shadow:         inset 0 0 10px #999;
+
+			div.icon{
+				opacity: 1;
+			}
+		}
+
+		&:first-of-type{
+			border-left: none;
+		}
+
+		&:last-of-type{
+			border-right: none;
+		}
+	}
+
+
+	&.shield-picker{
+		.option{
+			font-size: 14px;
+		}
+
+		div.icon{
+			width: 20px;
+			height: 15px;
+			background-position: center center;
+			background-repeat: no-repeat;
+			background-size: contain;
+			margin-right: 5px;
+			opacity: 0.25;
+		}
+
+		.option:nth-of-type(1) div.icon{
+			background-image: url('../img/shield_none.png');
+		}
+
+		.option:nth-of-type(2) div.icon{
+			background-image: url('../img/shield.png?v=2');
+		}
+
+		.option:nth-of-type(3) div.icon{
+			background-image: url('../img/shield_two.png?v=2');
+			width: 25px;
+			height: 20px;
+		}
+	}
 }
 
 .hp.bar-back{
@@ -1698,7 +1718,8 @@ select, input{
 .format-select,
 .slot-select,
 .mode-select,
-.category-select{
+.category-select,
+select.large{
     font-size: 18px;
     width: auto;
     background: none;
@@ -1719,6 +1740,12 @@ select, input{
 	color:#000;
 
 	@include gradient($color-gold, $color-gold-dark);
+
+	&[disabled]{
+		@include gradient($color-normal-dark, $color-normal-dark);
+		border: 2px solid rgba(0,0,0,0.2);
+		pointer-events: none;
+	}
 
 	&.update-btn{
 		display:none;
@@ -5108,6 +5135,11 @@ h2{
 	margin-bottom:0;
 }
 
+h4.form-label{
+	margin: 0 0 5px 0;
+    font-size: 12px;
+}
+
 a.toggle{
 	color:$color-blue-dark;
 	text-decoration: none;
@@ -6578,6 +6610,303 @@ a.feed-subscribe{
 
 	.analysis-container .format-select{
 		max-width: 100%;
+	}
+}
+
+/* GM EDITOR */
+
+#gm-editor{
+	.gm-editor-block{
+		margin: 0 auto;
+		max-width: 400px;
+	}
+
+	select.large,
+	input.large{
+		width: 100%;
+		max-width: none;
+		font-size: 18px;
+	}
+
+	#delete-gamemaster{
+		cursor: pointer;
+		color: #ff0000;
+		padding: 5px;
+		display: none;
+	}
+}
+
+#gm-changelog{
+	.table-container{
+		overflow: auto;
+		max-height: 800px;
+		position:relative;
+		font-size: 12px;
+
+		th {
+			text-align: left;
+		}
+
+		th, td{
+			padding: 3px 8px;
+		}
+
+		td.changes{
+			display: flex;
+			flex-direction: column;
+			gap: 5px;
+		}
+
+		.change-id{
+			min-width: 150px;
+			vertical-align: top;
+		}
+
+		.change-line{
+			display: flex;
+			gap: 10px;
+		}
+	}
+}
+
+#gm-editor-pokemon,
+#gm-editor-moves,
+#gm-editor-learnset{
+	.gm-title{
+		font-size: 18px;
+    	font-weight: bold;
+	}
+
+	.table-container{
+		overflow: auto;
+		max-height: 800px;
+		position:relative;
+
+		table{
+			font-size: 12px;
+			min-width: 900px;
+			opacity: 1;
+
+			@include transition(opacity, 0.3s, ease-out, 0s);
+
+			&.loading{
+				opacity: 0.5;
+				cursor: wait;
+				pointer-events: none;
+			}
+
+			th, td{
+				padding: 10px;
+				text-align: left;
+			}
+
+			
+			tr.find{
+				background: $color-sky-blue !important;
+			}
+			
+			th{
+				position:sticky;
+				top: 0;
+				left: 0;
+				background:$color-off-white;
+			}
+
+			td[data="name"]{
+				min-width: 180px;
+				font-weight: bold;
+				font-size: 14px;
+			}
+		}
+	}
+
+	.poke-search-container .form-group{
+		margin: 0 0 0 15px;
+
+		.option{
+			padding: 5px 15px;
+		}
+	}
+
+	.gm-entry-section{
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		max-width: 400px;
+		margin: 0 auto;
+
+		h3{
+			margin: 10px 0;
+		}
+
+		.gm-entry-row{
+			display: flex;
+			align-items: start;
+			gap: 10px;
+			flex-wrap: wrap;
+
+			.gm-field-wrapper{
+				flex: 1;
+				min-width: 120px;
+			}
+		}
+
+		.gm-field-wrapper{
+			label{
+				font-size: 12px;
+				margin-bottom: 2px;
+				font-weight: bold;
+				display: block;
+
+				&:nth-of-type(n + 2){
+					margin-top: 10px;
+				}
+			}
+
+			.description{
+				margin-top: 10px;
+    			font-size: 12px;
+			}
+
+			.form-group{
+				margin: 0;
+			}
+
+			.field-mw{
+				max-width: 195px;
+			}
+
+			.editable-list-selector{
+				margin-bottom: 10px;
+			}
+
+		}
+	}
+
+	hr{
+		margin: 30px 0 20px 0;
+	}
+
+	#default-iv-table{
+		font-size: 14px;
+
+		th{
+			text-align: left;
+		}
+
+		th, td{
+			padding: 3px 8px;
+		}
+
+		.fields{
+			display: table-cell;
+			max-width: 100px;;
+
+			label{
+				margin: 2px 0;
+			}
+		}
+	}
+
+	button#generate-default-ivs{
+		margin-top: 17px;
+		float: right;
+	}
+
+	a.link-btn{
+		display: block;
+		margin-left: auto;
+		background: #fff;
+		border: 1px solid #000;
+		border-radius: 30px;
+		padding: 5px 15px;
+		text-decoration: none;
+		color: #000;
+		font-size: 12px;
+		box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+	}
+
+	.poke-search-container{
+		margin-bottom: 5px;
+	}
+}
+
+#gm-editor-moves{
+	.fields{
+		display: block;
+	}
+
+	label.iv{
+		margin: 2px 0 !important;
+	}
+
+	#move-stat-label{
+		margin: 15px 0 0 0;
+	}
+}
+
+#gm-editor-learnset{
+	.gm-entry-section:first-of-type{
+		max-width: none;
+	}
+
+	.gm-entry-section:last-of-type{
+		margin-top: 15px;
+		max-width: 195px;
+	}
+
+	h3:first-of-type{
+		margin-top: 0;
+	}
+
+	button#learnset-confirm{
+		margin-left: auto;
+    	display: block;
+	}
+}
+
+.error-label{
+	display: none;
+	margin: 5px 0 15px 0;
+    font-size: 12px;
+    line-height: 14px;
+	color: $color-fighting-light;
+}
+
+.editable-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+
+	& > div{
+		position: relative;
+		background: #fff;
+		font-size: 12px;
+		padding: 5px 25px 5px 10px;
+		border: 1px solid #000;
+		border-radius: 30px;
+		box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+
+		& > span{
+			display: block;
+			position: absolute;
+			right: 5px;
+			top: 0;
+			padding: 5px;
+			cursor: pointer;
+			opacity: 0.5;
+
+			&:after{
+				content: "x";
+				font-size: 14px;
+				font-weight: bold;
+				line-height: 12px;
+			}
+
+			&:hover{
+				opacity: 1;
+			}
+		}
 	}
 }
 

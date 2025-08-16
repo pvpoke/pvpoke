@@ -89,7 +89,7 @@
     "buffs": [1, 0],
     "buffTarget": "self",
     "buffApplyChance": ".3",
-    "archetype": "Boost Spam/Bait",
+    "archetype": "Boost Spam",
     "turns": 1
 }, {
     "moveId": "AIR_SLASH",
@@ -341,7 +341,7 @@
     "buffs": [-1, 0],
     "buffTarget": "opponent",
     "buffApplyChance": ".5",
-    "archetype": "Debuff Spam/Bait",
+    "archetype": "Debuff Spam",
     "turns": 1
 }, {
     "moveId": "BRICK_BREAK",
@@ -355,7 +355,7 @@
     "buffs": [0, -1],
     "buffTarget": "opponent",
     "buffApplyChance": "1",
-    "archetype": "Debuff Spam/Bait",
+    "archetype": "Debuff Spam",
     "turns": 1
 }, {
     "moveId": "BRUTAL_SWING",
@@ -401,7 +401,7 @@
     "buffs": [-1, 0],
     "buffTarget": "opponent",
     "buffApplyChance": "1",
-    "archetype": "Debuff Spam/Bait",
+    "archetype": "Debuff Spam",
     "turns": 1
 }, {
     "moveId": "BUG_BITE",
@@ -426,7 +426,7 @@
     "buffs": [0, -1],
     "buffTarget": "opponent",
     "buffApplyChance": ".3",
-    "archetype": "High Energy Debuff",
+    "archetype": "Debuff",
     "turns": 1
 }, {
     "moveId": "BULLDOZE",
@@ -440,7 +440,7 @@
     "buffs": [0, -1],
     "buffTarget": "opponent",
     "buffApplyChance": ".5",
-    "archetype": "Debuff Spam/Bait",
+    "archetype": "Debuff Spam",
     "turns": 1
 }, {
     "moveId": "BULLET_PUNCH",
@@ -581,7 +581,7 @@
     "buffs": [2, 0],
     "buffTarget": "self",
     "buffApplyChance": ".125",
-    "archetype": "Boost Spam/Bait",
+    "archetype": "Boost Spam",
     "turns": 1
 }, {
     "moveId": "CRUNCH",
@@ -803,7 +803,7 @@
     "buffs": [0, 1],
     "buffTarget": "self",
     "buffApplyChance": "1",
-    "archetype": "Boost Spam/Bait",
+    "archetype": "Boost Spam",
     "turns": 1
 }, {
     "moveId": "DRAINING_KISS",
@@ -880,7 +880,7 @@
     "buffs": [0, -1],
     "buffTarget": "opponent",
     "buffApplyChance": ".1",
-    "archetype": "High Energy Debuff",
+    "archetype": "High Energy",
     "turns": 1
 }, {
     "moveId": "EMBER",
@@ -903,7 +903,7 @@
     "buffs": [0, -1],
     "buffTarget": "opponent",
     "buffApplyChance": ".1",
-    "archetype": "High Energy Debuff",
+    "archetype": "High Energy",
     "turns": 1
 }, {
     "moveId": "EXTRASENSORY",
@@ -938,7 +938,7 @@
     "buffs": [1, 0],
     "buffTarget": "self",
     "buffApplyChance": "1",
-    "archetype": "Boost Spam/Bait",
+    "archetype": "Boost Spam",
     "turns": 1
 }, {
     "moveId": "FIRE_BLAST",
@@ -1766,7 +1766,7 @@
     "buffs": [-2, 0],
     "buffTarget": "opponent",
     "buffApplyChance": ".5",
-    "archetype": "Debuff Spam/Bait",
+    "archetype": "Debuff Spam",
     "turns": 1
 }, {
     "moveId": "LEAF_STORM",
@@ -1996,7 +1996,7 @@
     "buffs": [-1, 0],
     "buffTarget": "opponent",
     "buffApplyChance": ".3",
-    "archetype": "Debuff Spam/Bait",
+    "archetype": "Debuff Spam",
     "turns": 1
 }, {
     "moveId": "MIST_BALL",
@@ -2057,7 +2057,7 @@
     "buffs": [-1, 0],
     "buffTarget": "opponent",
     "buffApplyChance": ".3",
-    "archetype": "Debuff Spam/Bait",
+    "archetype": "Debuff Spam",
     "turns": 2
 }, {
     "moveId": "MUD_SHOT",
@@ -2128,7 +2128,7 @@
     "buffs": [2, 0],
     "buffTarget": "self",
     "buffApplyChance": ".125",
-    "archetype": "Boost Spam/Bait",
+    "archetype": "Boost Spam",
     "turns": 1
 }, {
     "moveId": "OBLIVION_WING",
@@ -2155,7 +2155,7 @@
     "buffsOpponent": [0, -1],
     "buffTarget": "both",
     "buffApplyChance": "1",
-    "archetype": "Boost Spam/Bait",
+    "archetype": "Boost Spam",
     "turns": 1
 }, {
     "moveId": "OCTAZOOKA",
@@ -2286,7 +2286,7 @@
     "buffs": [0, -1],
     "buffTarget": "opponent",
     "buffApplyChance": "1",
-    "archetype": "Debuff Spam/Bait",
+    "archetype": "Debuff Spam",
     "turns": 1
 }, {
     "moveId": "POISON_JAB",
@@ -2362,7 +2362,7 @@
     "buffs": [1, 0],
     "buffTarget": "self",
     "buffApplyChance": "1",
-    "archetype": "Boost Spam/Bait",
+    "archetype": "Boost Spam",
     "turns": 1
 }, {
     "moveId": "POWER_WHIP",
@@ -2418,7 +2418,7 @@
     "buffs": [0, -1],
     "buffTarget": "opponent",
     "buffApplyChance": ".1",
-    "archetype": "High Energy Debuff",
+    "archetype": "High Energy",
     "turns": 1
 }, {
     "moveId": "PSYCHIC_FANGS",
@@ -2432,7 +2432,7 @@
     "buffs": [0, -1],
     "buffTarget": "opponent",
     "buffApplyChance": "1",
-    "archetype": "Debuff Spam/Bait",
+    "archetype": "Debuff Spam",
     "turns": 1
 }, {
     "moveId": "PSYCHO_BOOST",
@@ -2535,7 +2535,7 @@
     "buffs": [0, -1],
     "buffTarget": "opponent",
     "buffApplyChance": "0.5",
-    "archetype": "Spam/Bait Debuff",
+    "archetype": "Debuff Spam",
     "turns": 1
 }, {
     "moveId": "REST",
@@ -2690,7 +2690,7 @@
     "buffs": [0, -1],
     "buffTarget": "opponent",
     "buffApplyChance": "1",
-    "archetype": "Debuff Spam/Bait",
+    "archetype": "Debuff Spam",
     "turns": 1
 }, {
     "moveId": "SANDSEAR_STORM",
@@ -2718,7 +2718,7 @@
     "buffs": [-1, 0],
     "buffTarget": "opponent",
     "buffApplyChance": "0.3",
-    "archetype": "High Energy Debuff",
+    "archetype": "Debuff",
     "turns": 1
 }, {
     "moveId": "SCORCHING_SANDS",
@@ -2732,7 +2732,7 @@
     "buffs": [-1, 0],
     "buffTarget": "opponent",
     "buffApplyChance": "0.3",
-    "archetype": "High Energy Debuff",
+    "archetype": "Debuff",
     "turns": 1
 }, {
     "moveId": "SCRATCH",
@@ -2768,7 +2768,7 @@
     "buffs": [0, -2],
     "buffTarget": "opponent",
     "buffApplyChance": ".4",
-    "archetype": "Nuke Debuff",
+    "archetype": "Debuff Nuke",
     "turns": 1
 }, {
     "moveId": "SHADOW_BALL",
@@ -2848,7 +2848,7 @@
     "buffs": [-1, -1],
     "buffTarget": "opponent",
     "buffApplyChance": ".2",
-    "archetype": "High Energy Debuff",
+    "archetype": "High Energy",
     "turns": 1
 }, {
     "moveId": "SILVER_WIND",
@@ -2997,7 +2997,7 @@
     "buffs": [0, -1],
     "buffTarget": "opponent",
     "buffApplyChance": ".33",
-    "archetype": "Debuff Spam/Bait",
+    "archetype": "Debuff Spam",
     "turns": 1
 }, {
     "moveId": "SPLASH",
@@ -3378,7 +3378,7 @@
     "buffs": [0, -1],
     "buffTarget": "opponent",
     "buffApplyChance": ".3",
-    "archetype": "Debuff Spam/Bait",
+    "archetype": "Debuff Spam",
     "turns": 1
 }, {
     "moveId": "V_CREATE",

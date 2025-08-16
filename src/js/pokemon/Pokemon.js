@@ -4,14 +4,20 @@
 * The main Pokemon class used to represent individual Pokemon in battle
 */
 
-function Pokemon(id, i, b){
-
-	id = id.replace("_xl","");
-
+function Pokemon(id, i, b, d){
 	var gm = GameMaster.getInstance();
-	var data = gm.getPokemonById(id);
+	var data;
 	var battle = b;
 	var self = this;
+
+	// Initialize Pokemon by ID or by passed game data
+	if(id !== null){
+		id = id.replace("_xl","");
+		data = gm.getPokemonById(id);
+	} else if(d !== null){
+		id = d.speciesId;
+		data = d;
+	}
 
 	// CP modifiers at each level
 
@@ -179,6 +185,11 @@ function Pokemon(id, i, b){
 		}
 	}
 
+	// Safeguard for Pokemon with empty Fast Move pool
+	if(this.fastMovePool.length == 0){
+		this.fastMovePool.push(gm.getMoveById("SPLASH"));
+	}
+
 	for(var i = 0; i < data.chargedMoves.length; i++){
 		var move = gm.getMoveById(data.chargedMoves[i]);
 
@@ -200,6 +211,11 @@ function Pokemon(id, i, b){
 
 			this.chargedMovePool.push(move);
 		}
+	}
+
+	// Safeguard for Pokemon with empty Charged Move pool
+	if(this.chargedMovePool.length == 0){
+		this.chargedMovePool.push(gm.getMoveById("STRUGGLE"));
 	}
 
 
@@ -1355,7 +1371,7 @@ function Pokemon(id, i, b){
 		}
 
 		// Charged Move coverage
-		var types = getAllTypes();
+		var types = Pokemon.getAllTypes();
 		var averagePower = 0;
 		var totalResistingTypes = 0;
 		var totalSuperEffectiveTypes = 0;
@@ -1807,7 +1823,7 @@ function Pokemon(id, i, b){
 
 		var arr = [];
 
-		var allTypes = getAllTypes();
+		var allTypes = Pokemon.getAllTypes();
 
 		for(var n = 0; n < allTypes.length; n++){
 			effectiveness = DamageCalculator.getEffectiveness(allTypes[n], self.types);
@@ -1815,14 +1831,6 @@ function Pokemon(id, i, b){
 		}
 
 		return arr;
-	}
-
-	// Array of all types
-
-	function getAllTypes(){
-		var types = ["Bug","Dark","Dragon","Electric","Fairy","Fighting","Fire","Flying","Ghost","Grass","Ground","Ice","Normal","Poison","Psychic","Rock","Steel","Water"];
-
-		return types;
 	}
 
 	// Resets Pokemon prior to battle
@@ -2475,4 +2483,16 @@ Pokemon.calculateMoveCounts = function(fastMove, chargedMove){
 
 	return counts;
 
+}
+
+// Return array of all Pokemon types
+
+Pokemon.getAllTypes = function(lowerCase = false){
+	let types = ["Bug","Dark","Dragon","Electric","Fairy","Fighting","Fire","Flying","Ghost","Grass","Ground","Ice","Normal","Poison","Psychic","Rock","Steel","Water"];
+
+	if(lowerCase){
+		types = types.map(type => type.toLowerCase());
+	}
+
+	return types;
 }

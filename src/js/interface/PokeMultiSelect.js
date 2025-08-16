@@ -522,38 +522,41 @@ function PokeMultiSelect(element){
 			}
 
 			var pokemon = new Pokemon(data[i].speciesId, 1, battle);
-			pokemon.initialize(battle.getCP());
-			pokemon.selectMove("fast", data[i].fastMove);
 
-			for(var n = 0; n < 2; n++){
+			if(pokemon?.initialize){
+				pokemon.initialize(battle.getCP());
+				pokemon.selectMove("fast", data[i].fastMove);
 
-				if(n < data[i].chargedMoves.length){
-					pokemon.selectMove("charged", data[i].chargedMoves[n], n);
-				} else{
-					pokemon.selectMove("charged", "none", 0);
+				for(var n = 0; n < 2; n++){
+
+					if(n < data[i].chargedMoves.length){
+						pokemon.selectMove("charged", data[i].chargedMoves[n], n);
+					} else{
+						pokemon.selectMove("charged", "none", 0);
+					}
+
 				}
 
-			}
+				if(data[i].ivs){
+					pokemon.setIV("atk", data[i].ivs[0]);
+					pokemon.setIV("def", data[i].ivs[1]);
+					pokemon.setIV("hp", data[i].ivs[2]);
+				}
 
-			if(data[i].ivs){
-				pokemon.setIV("atk", data[i].ivs[0]);
-				pokemon.setIV("def", data[i].ivs[1]);
-				pokemon.setIV("hp", data[i].ivs[2]);
-			}
+				if(data[i].level){
+					pokemon.setLevel(data[i].level);
+				}
 
-			if(data[i].level){
-				pokemon.setLevel(data[i].level);
-			}
+				if(data[i].shadowType){
+					pokemon.setShadowType(data[i].shadowType);
+				}
 
-			if(data[i].shadowType){
-				pokemon.setShadowType(data[i].shadowType);
-			}
+				if(data[i].weight !== undefined){
+					pokemon.rankingWeight = data[i].weight;
+				}
 
-			if(data[i].weight !== undefined){
-				pokemon.rankingWeight = data[i].weight;
+				pokemonList.push(pokemon);
 			}
-
-			pokemonList.push(pokemon);
 		}
 
 		self.updateListDisplay();
@@ -579,7 +582,7 @@ function PokeMultiSelect(element){
 
 			var pokemon = new Pokemon(pokeSettings[0].toLowerCase(), 1, battle);
 
-			if(pokemon.initialize){
+			if(pokemon?.initialize){
 				pokemon.initialize(cp);
 				if(pokeSettings[1]){
 					pokemon.setShadowType(pokeSettings[1]);

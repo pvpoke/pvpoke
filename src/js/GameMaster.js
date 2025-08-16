@@ -18,15 +18,9 @@ var GameMaster = (function () {
 		object.pokeSelectList = [];
 		object.moveMap = {};
 
-		if(settings.gamemaster == "gamemaster-mega"){
-			$(".mega-warning").show();
-		}
+		object.originalData = {};
 
-		var gmVersion = settings.gamemaster;
-
-		if((gmVersion == "gamemaster-mega")||(gmVersion == "gamemaster-paldea")){
-			gmVersion = "gamemaster";
-		}
+		var gmVersion = "gamemaster";
 
 		// By default, load the minified version
 		if((gmVersion == "gamemaster")&&(host.indexOf("localhost") == -1)){
@@ -45,6 +39,8 @@ var GameMaster = (function () {
 			},
 			success: function( data ) {
 				object.data = data;
+
+				object.originalData = {...object.data}; // Soft copy original data for custom gamemaster comparison
 
 				console.log("gamemaster loaded");
 
@@ -67,9 +63,7 @@ var GameMaster = (function () {
 					}
 				}
 
-				// Initialize search maps
-				object.pokemonMap = new Map(object.data.pokemon.map(pokemon => [pokemon.speciesId, pokemon]));
-				object.moveMap = new Map(object.data.moves.map(move => [move.moveId, move]));
+				object.createSearchMaps();
 
 				if(settings.gamemaster == "gamemaster"){
 					// Sort Pokemon alphabetically for searching
@@ -84,33 +78,114 @@ var GameMaster = (function () {
 					if(typeof customRankingInterface !== 'undefined'){
 						customRankingInterface.init(object);
 					}
-				} else if(settings.gamemaster == "gamemaster-mega"){
-					// Load additional mega pokemon
-					$.getJSON( webRoot+"data/megas.json?v="+siteVersion, function( data ){
+				} else{
+					// Load custom gamemaster from local storage
+					let content = window.localStorage.getItem(settings.gamemaster);
 
-						// Sort Pokemon alphabetically for searching
-						object.data.pokemon = object.data.pokemon.concat(data);
-						object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+					try{
+						customData = JSON.parse(content);
 
+						if(customData?.id){
+							object.data.id = customData.id
+						}
+
+						if(customData?.title){
+							object.data.title = customData.title
+						}
+
+						if(customData?.pokemon){
+							object.data.pokemon = customData.pokemon
+						}
+
+						if(customData?.moves){
+							object.data.moves = customData.moves
+						}
+
+						// Initialize search maps
+						object.createSearchMaps();
 						object.createPokeSelectList();
 
-						InterfaceMaster.getInstance().init(object);
-					});
-				} else if(settings.gamemaster == "gamemaster-paldea"){
-					// Load additional mega pokemon
-					$.getJSON( webRoot+"data/paldea.json?v="+siteVersion, function( data ){
+						if(typeof InterfaceMaster !== 'undefined'){
+							InterfaceMaster.getInstance().init(object);
+						}
 
-						// Sort Pokemon alphabetically for searching
-						object.data.pokemon = object.data.pokemon.concat(data);
-						object.data.pokemon.sort((a,b) => (a.speciesName > b.speciesName) ? 1 : ((b.speciesName > a.speciesName) ? -1 : 0));
+						if(typeof customRankingInterface !== 'undefined'){
+							customRankingInterface.init(object);
+						}
+					} catch(e){
+						console.error("Could not load custom gamemaster", e);
+					}
 
-						object.createPokeSelectList();
-
-						InterfaceMaster.getInstance().init(object);
-					});
 				}
 			}
 		});
+
+		// Load the JSON of a specific gamemaster file into the object, default or custom
+		object.loadCustomGameMaster = function(id, callback){
+			console.log(id);
+			console.log("loading gamemaster");
+			let customData = {};
+
+			// By default, load the minified version
+			if(id == "gamemaster"){
+				// Load default gamemaster
+
+				$.ajax({
+					dataType: "json",
+					url: webRoot+"data/gamemaster.min.json?v="+siteVersion,
+					mimeType: "application/json",
+					error: function(request, error) {
+						console.log("Request: " + JSON.stringify(request));
+						console.log(error);
+					},
+					success: function( data ) {
+						customData = {
+							id: "custom_gamemaster",
+							title: "Custom Gamemaster",
+							dataType: "gamemaster",
+							pokemon: data.pokemon,
+							moves: data.moves
+						};
+
+						callback(customData);
+					}
+				});
+			} else{
+				// Load custom gamemaster from local storage
+				let content = window.localStorage.getItem(id);
+
+				try{
+					customData = JSON.parse(content);
+					callback(customData);
+				} catch(e){
+					console.error("Could not load custom gamemaster", e);
+				}
+			}
+		}
+
+		// Save a custom gamemaster object to local storage
+		object.saveCustomGameMaster = function(data){
+
+			data.pokemon.sort((a,b) => (a.dex > b.dex) ? 1 : ((b.dex > a.dex) ? -1 : 0));
+			data.moves.sort((a,b) => (a.moveId > b.moveId) ? 1 : ((b.moveId > a.moveId) ? -1 : 0));
+
+			let customData = {
+				id: data.id,
+				title: data.title,
+				dataType: "gamemaster",
+				pokemon: data.pokemon,
+				moves: data.moves
+			}
+
+			window.localStorage.setItem(customData.id, JSON.stringify(customData));
+		}
+
+		// Create indexed maps for Pokemon and move selection
+		object.createSearchMaps = function(){
+			// Initialize search maps
+			object.pokemonMap = new Map(object.data.pokemon.map(pokemon => [pokemon.speciesId, pokemon]));
+			object.moveMap = new Map(object.data.moves.map(move => [move.moveId, move]));
+		}
 
 		// Create data for Pokemon select dropdown list
 		object.createPokeSelectList = function() {
@@ -392,7 +467,7 @@ var GameMaster = (function () {
 			var leagues = [500,1500,2500];
 			var battle = new Battle();
 
-			var pokemon = new Pokemon(poke.speciesId, 0, battle);
+			var pokemon = new Pokemon(null, 0, battle, poke);
 
 			battle.setNewPokemon(pokemon, 0, false);
 
@@ -601,86 +676,7 @@ var GameMaster = (function () {
 			// List of legendaries and mythicals to be excluded from the level cap
 
 			$.each(object.data.moves, function(index, move){
-				var archetype = "General"; // Default archetype
-
-				// Charged Moves
-
-				if(move.energy > 0){
-					var dpe = move.power / move.energy;
-
-					// Categorize by energy
-					if((move.energy > 60)&&(dpe > 1.5)){
-						archetype = "Nuke";
-					} else if(move.energy > 50){
-						if(dpe > 1.75){
-							archetype = "Nuke";
-						} else{
-							archetype = "High Energy";
-						}
-
-					} else if(move.energy < 45){
-						archetype = "Spam/Bait"
-					}
-
-					var descriptor = "";
-
-					if(move.buffs){
-
-						if((move.buffTarget == "self")&&((move.buffs[0] > 0)||(move.buffs[1] > 0))){
-							descriptor = "Boost"
-						}
-
-						if((move.buffTarget == "self")&&((move.buffs[0] < 0)||(move.buffs[1] < 0))){
-							descriptor = "Self-Debuff"
-						}
-
-						if((move.buffTarget == "opponent")&&((move.buffs[0] < 0)||(move.buffs[1] < 0))){
-							descriptor = "Debuff"
-						}
-
-						if(descriptor != ""){
-							if(archetype == "General"){
-								archetype = descriptor;
-							} else if(archetype == "High Energy"){
-								archetype = archetype + " " + descriptor;
-							} else{
-								archetype = descriptor + " " + archetype;
-							}
-
-							if(archetype == "Self-Debuff Spam/Bait"){
-								archetype = "Self-Debuff Spam"
-							}
-						}
-					}
-
-					move.archetype = archetype;
-				}
-
-
-				// Fast Moves
-
-				if(move.energyGain > 0){
-					var dpt = move.power / (move.cooldown / 500)
-					var ept = move.energyGain / (move.cooldown / 500)
-
-					if((dpt >= 3.5) && (dpt > ept)){
-						archetype = "Heavy Damage"
-					}
-
-					if((ept >= 3.5) && (ept > dpt)){
-						archetype = "Fast Charge"
-					}
-
-					if( ((dpt >= 4) && (ept >= 3)) || ((dpt >= 3) && (ept >= 4)) ){
-						archetype = "Multipurpose"
-					}
-
-					if( ((dpt < 3) && (ept <= 3)) || ((dpt <= 3) && (ept < 3)) ){
-						archetype = "Low Quality"
-					}
-
-					move.archetype = archetype;
-				}
+				move.archetype = object.generateArchetypeByMove(move);
 			});
 
 			// Sort Pokemon by dex
@@ -690,6 +686,88 @@ var GameMaster = (function () {
 			var json = JSON.stringify(object.data);
 
 			console.log(json);
+		}
+
+		// Generate the archetype for a single move
+		object.generateArchetypeByMove = function(move){
+			var archetype = "General"; // Default archetype
+
+			// Charged Moves
+
+			if(move.energy > 0){
+				var dpe = move.power / move.energy;
+
+				// Categorize by energy
+				if((move.energy > 60)&&(dpe > 1.5)){
+					archetype = "Nuke";
+				} else if(move.energy > 50){
+					if(dpe > 1.75){
+						archetype = "Nuke";
+					} else{
+						archetype = "High Energy";
+					}
+
+				} else if(move.energy < 45){
+					archetype = "Spam/Bait"
+				}
+
+				var descriptor = "";
+
+				if(move.buffs){
+
+					if((move.buffTarget == "self")&&((move.buffs[0] > 0)||(move.buffs[1] > 0))){
+						descriptor = "Boost"
+					}
+
+					if((move.buffTarget == "self")&&((move.buffs[0] < 0)||(move.buffs[1] < 0))){
+						descriptor = "Self-Debuff"
+					}
+
+					if((move.buffTarget == "opponent")&&((move.buffs[0] < 0)||(move.buffs[1] < 0))){
+						descriptor = "Debuff"
+					}
+
+					if(descriptor != ""){
+						if(archetype == "General"){
+							archetype = descriptor;
+						} else if(archetype == "High Energy"){
+							archetype = archetype + " " + descriptor;
+						} else{
+							archetype = descriptor + " " + archetype;
+						}
+					}
+
+					archetype = archetype.replace(" Spam/Bait", " Spam");
+				}
+
+				return archetype;
+			}
+
+
+			// Fast Moves
+
+			if(move.energyGain > 0){
+				var dpt = move.power / (move.cooldown / 500)
+				var ept = move.energyGain / (move.cooldown / 500)
+
+				if((dpt >= 3.5) && (dpt > ept)){
+					archetype = "Heavy Damage"
+				}
+
+				if((ept >= 3.5) && (ept > dpt)){
+					archetype = "Fast Charge"
+				}
+
+				if( ((dpt >= 4) && (ept >= 3)) || ((dpt >= 3) && (ept >= 4)) ){
+					archetype = "Multipurpose"
+				}
+
+				if( ((dpt < 3) && (ept <= 3)) || ((dpt <= 3) && (ept < 3)) ){
+					archetype = "Low Quality"
+				}
+
+				return archetype;
+			}
 		}
 
 		// Return a move object from the GameMaster file given move ID
@@ -785,6 +863,22 @@ var GameMaster = (function () {
 			}
 
 			return move;
+		}
+
+		// Return a move object from the GameMaster file given move ID without any modification
+
+		object.getMoveDataById = function(id){
+			if(id == "none")
+				return;
+
+			let move = object.data.moves.find(move => move.moveId == id);
+
+			if(move){
+				return move;
+			} else{
+				console.error(id + " missing");
+				return false;
+			}
 		}
 
 
@@ -1502,6 +1596,99 @@ var GameMaster = (function () {
 			}
 
 			object.searchStringCache[searchKey] = results
+			return results;
+		}
+
+		// Generate a list of moves given a search string
+		object.generateMoveListFromSearchString = function(str){
+
+
+			// Break the search string up into queries
+			var queries = str.toLowerCase().split(/\s*,\s*/);
+
+			// don't bother searching if any of the terms are empty
+			// as all pokemon will be valid
+			if (str == "") {
+				return object.data.moves.map(m=> m.moveId)
+			}
+
+			var results = []; // Store an array of qualifying Move ID's
+
+			for(var i = 0; i < queries.length; i++){
+				var query = queries[i];
+
+				if(query == ""){
+					continue;
+				}
+
+				var params = query.split('&');
+
+				// iterate over existing pokemon instead of creating new objects
+				for(const moveData of object.data.moves){
+					const move = object.getMoveById(moveData.moveId);
+
+					var paramsMet = 0;
+
+					for(var j = 0; j < params.length; j++){
+						var param = params[j];
+						var isNot = false;
+						var valid = false;
+
+						if(param.length == 0){
+							if(params.length == 1){
+								paramsMet++;
+							}
+							continue;
+						}
+
+						if((param.charAt(0) == "!")&&(param.length > 1)){
+							isNot = true;
+							param = param.substr(1, param.length-1);
+						}
+
+						// Name search
+						let moveNameParts = move.name.split(" ");
+						if(moveNameParts.some(name => name.toLowerCase().startsWith(param))){
+							valid = true;
+						}
+
+						if(move.name.toLowerCase().startsWith(param)){
+							valid = true;
+						}
+
+						// Type search
+						if(move.type == param){
+							valid = true;
+						}
+
+						// Abbreviation search
+						if(move.abbreviation.toLowerCase() == param){
+							valid = true;
+						}
+
+						// Archetype
+						if(move.archetype.toLowerCase() == param){
+							valid = true;
+						}
+
+						// Category search
+						if(param == "fast" && move.energyGain > 0){
+							valid = true;
+						} else if(param == "charged" && move.energy > 0){
+							valid = true;
+						}
+
+						if(((valid)&&(!isNot))||((!valid)&&(isNot))){
+							paramsMet++;
+						}
+					}
+
+					if(paramsMet >= params.length){
+						results.push(move.moveId);
+					}
+				}
+			}
+
 			return results;
 		}
 
