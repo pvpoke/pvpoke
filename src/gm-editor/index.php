@@ -8,9 +8,10 @@ $META_DESCRIPTION = 'Customize Pokemon or Moves for your simulations.';
 require_once '../header.php';
 ?>
 
-<h1>Gamemaster Editor</h1>
+<h1>Gamemaster Editor [Beta]</h1>
 
 <div  id="gm-editor" class="section white custom-rankings-import">
+    <p>This feature allows you to customize Pokemon and moves in your simulations. It is for advanced users. Using this feature may alter or break the site's tools and simulations. If you encounter technical difficulties, you can revert to the default gamemaster below or from the <a href="<?php echo $WEB_ROOT; ?>settings/">Settings page</a>.</p>
 
     <div class="gm-editor-block">
         <h3>Select a Gamemaster</h3>
@@ -64,9 +65,8 @@ require_once '../header.php';
 <div class="section white">
 	<a class="toggle" href="#">About Gamemaster Editor <span class="arrow-down">&#9660;</span><span class="arrow-up">&#9650;</span></a>
 	<div class="toggle-content">
-        <p>This feature is for advanced users. Editing these values may alter or break the site simulations. If you encounter technical difficulties, you can revert to the default gamemaster from here or the <a href="<?php echo $WEB_ROOT; ?>settings/">Settings page</a>.</p>
         <p>"Gamemaster" refers to the dataset which governs all game parameters, such as Pokemon and move information. These pages allow you to directly edit the gamemaster code-free. By editing the gamemaster, you can preview new Pokemon, craft new moves, test move balance changes, and more.</p>
-        <p>Your edits will be saved to your browser's local storage. They will only be available to you on your device. You can share the export code above for others to use and edit your custom gamemaster. Only copy and paste code from a trusted source.</p>
+        <p>Your edits will be saved to your browser's local storage. They will only be available to you on your device. Links which you share from your browser while a custom gamemaster is active may not be compatible with other devices. You can share the export code above for others to use and edit your custom gamemaster. Only copy and paste code from a trusted source.</p>
         <h4>Affected Pages</h4>
         <p>Editing the gamemaster will affect information and simulations which are generated at runtime. These include:</p>
         <ul>

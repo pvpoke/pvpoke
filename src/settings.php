@@ -31,6 +31,21 @@ require_once 'header.php';
 			</select>
 		</div>
 
+		<h3>Gamemaster Version</h3>
+		<p>Select the current Pokemon and move values to use in simulations. You can create new gamemaster versions using the <a href="<?php echo $WEB_ROOT; ?>gm-editor/"><b>Gamemaster Editor</b>.</a></p>
+		<?php
+		$gamemaster = "gamemaster";
+
+		if(isset($_SETTINGS->gamemaster)){
+			$gamemaster = $_SETTINGS->gamemaster;
+		}
+		?>
+		<div>
+			<select class="input" id="gm-select">
+				<option value="gamemaster" <?php if($gamemaster == "gamemaster") : ?>selected<?php endif; ?>>Default</option>
+			</select>
+		</div>
+
 		<h3>Pokebox</h3>
 		<p>PvPoke integrates with <a target="_blank" href="https://www.pokebattler.com/" class="pokebattler">Pokebattler</a> so you can permanently store your Pokemon and import them anywhere on the site. Enter your Pokebattler account ID below to link your Pokebox:</p>
 		<input type="text" class="input" id="pokebox-id" <?php if(isset($_SETTINGS->pokeboxId)) : ?>value="<?php echo intval($_SETTINGS->pokeboxId); ?>"<?php endif; ?> />
@@ -79,21 +94,6 @@ require_once 'header.php';
 		<h3>Hard Moveset Links</h3>
 		<div class="check hard-moveset-links <?php if($_SETTINGS->hardMovesetLinks == 1) : ?>on<?php endif; ?>"><span></span> Bake move ID's into battle links</div>
 		<p>This setting is for article writing purposes. When active, movesets are hard coded into the URL so battle links are preserved during future moveset updates.</p>
-
-		<h3>Gamemaster Version</h3>
-		<p>Select the current Pokemon and move values, either the default values or an alternative set.</p>
-		<?php
-		$gamemaster = "gamemaster";
-
-		if(isset($_SETTINGS->gamemaster)){
-			$gamemaster = $_SETTINGS->gamemaster;
-		}
-		?>
-		<div>
-			<select class="input" id="gm-select">
-				<option value="gamemaster" <?php if($gamemaster == "gamemaster") : ?>selected<?php endif; ?>>Default</option>
-			</select>
-		</div>
 
 		<div class="save button">Save Settings</div>
 	</div>

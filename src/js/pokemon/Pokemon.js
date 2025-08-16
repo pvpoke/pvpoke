@@ -185,6 +185,11 @@ function Pokemon(id, i, b, d){
 		}
 	}
 
+	// Safeguard for Pokemon with empty Fast Move pool
+	if(this.fastMovePool.length == 0){
+		this.fastMovePool.push(gm.getMoveById("SPLASH"));
+	}
+
 	for(var i = 0; i < data.chargedMoves.length; i++){
 		var move = gm.getMoveById(data.chargedMoves[i]);
 
@@ -206,6 +211,11 @@ function Pokemon(id, i, b, d){
 
 			this.chargedMovePool.push(move);
 		}
+	}
+
+	// Safeguard for Pokemon with empty Charged Move pool
+	if(this.chargedMovePool.length == 0){
+		this.chargedMovePool.push(gm.getMoveById("STRUGGLE"));
 	}
 
 

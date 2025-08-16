@@ -45,7 +45,7 @@ if(isset($_GET['c'])){
 }
 ?>
 
-<h1>Gamemaster Editor</h1>
+<h1>Gamemaster Editor [Beta]</h1>
 
 <div class="section white" id="gm-editor-pokemon">
     <div class="flex space-between align-items-start">

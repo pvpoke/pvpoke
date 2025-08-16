@@ -17,7 +17,7 @@ $CANONICAL = '/gm-editor/moves/';
 require_once '../header.php';
 ?>
 
-<h1>Gamemaster Editor</h1>
+<h1>Gamemaster Editor [Beta]</h1>
 
 <div class="section white" id="gm-editor-moves">
     <div class="flex space-between align-items-start">
