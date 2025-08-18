@@ -34,28 +34,6 @@
     "archetype": "General",
     "turns": 1
 }, {
-    "moveId": "AEGISLASH_CHARGE_PSYCHO_CUT",
-    "name": "Psycho Cut",
-    "abbreviation": "PC",
-    "type": "psychic",
-    "power": 0,
-    "energy": 0,
-    "energyGain": 6,
-    "cooldown": 1000,
-    "archetype": "Low Quality",
-    "turns": 2
-}, {
-    "moveId": "AEGISLASH_CHARGE_AIR_SLASH",
-    "name": "Air Slash",
-    "abbreviation": "AS",
-    "type": "flying",
-    "power": 0,
-    "energy": 0,
-    "energyGain": 6,
-    "cooldown": 1500,
-    "archetype": "Low Quality",
-    "turns": 3
-}, {
     "moveId": "AERIAL_ACE",
     "name": "Aerial Ace",
     "type": "flying",
@@ -100,6 +78,17 @@
     "energyGain": 9,
     "cooldown": 1500,
     "archetype": "General",
+    "turns": 3
+}, {
+    "moveId": "AEGISLASH_CHARGE_AIR_SLASH",
+    "name": "Air Slash",
+    "abbreviation": "AS",
+    "type": "flying",
+    "power": 0,
+    "energy": 0,
+    "energyGain": 6,
+    "cooldown": 1500,
+    "archetype": "Low Quality",
     "turns": 3
 }, {
     "moveId": "ANCIENT_POWER",
@@ -2456,6 +2445,17 @@
     "energyGain": 9,
     "cooldown": 1000,
     "archetype": "Fast Charge",
+    "turns": 2
+}, {
+    "moveId": "AEGISLASH_CHARGE_PSYCHO_CUT",
+    "name": "Psycho Cut",
+    "abbreviation": "PC",
+    "type": "psychic",
+    "power": 0,
+    "energy": 0,
+    "energyGain": 6,
+    "cooldown": 1000,
+    "archetype": "Low Quality",
     "turns": 2
 }, {
     "moveId": "PSYSHOCK",

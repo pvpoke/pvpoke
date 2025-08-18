@@ -90,7 +90,12 @@ var InterfaceMaster = (function () {
                     // Update buttons
                     if(! selectedGM || selectedGM != data.id || selectedGM == "gamemaster"){
                         $("#save-btn").hide();
-                        $("#edit-btn").hide();
+
+                        if(host.includes("localhost")){
+                            $("#edit-btn").show();
+                        } else{
+                            $("#edit-btn").hide();
+                        }
                     } else{
                         $("#save-btn").show();
                         $("#edit-btn").show();
