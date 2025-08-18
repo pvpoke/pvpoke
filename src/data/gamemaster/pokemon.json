@@ -39617,7 +39617,7 @@
         },
         "types": ["poison", "dragon"],
         "fastMoves": ["DRAGON_TAIL", "POISON_JAB"],
-        "chargedMoves": ["CROSS_POISON", "FLAMETHROWER", "HYPER_BEAM", "DYNAMAX_CANNON"],
+        "chargedMoves": ["SLUDGE_BOMB", "FLAMETHROWER", "HYPER_BEAM", "DYNAMAX_CANNON"],
         "defaultIVs": {
             "cp500": [4, 10, 15, 14],
             "cp1500": [12, 12, 15, 14],
@@ -39641,7 +39641,7 @@
         },
         "types": ["poison", "dragon"],
         "fastMoves": ["DRAGON_TAIL", "POISON_JAB"],
-        "chargedMoves": ["CROSS_POISON", "FLAMETHROWER", "HYPER_BEAM"],
+        "chargedMoves": ["SLUDGE_BOMB", "FLAMETHROWER", "HYPER_BEAM"],
         "defaultIVs": {
             "cp500": [2.5, 15, 15, 14],
             "cp1500": [7, 4, 4, 5],
