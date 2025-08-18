@@ -25,6 +25,11 @@ var InterfaceMaster = (function () {
                 if(get){
                     self.loadGetData();
                 }
+
+                // Remove save and edit buttons when editing default
+                if(settings.gamemaster == "gamemaster"){
+                    $("#save-changes-btn").remove();
+                }
 			}
 
             this.updateLastSavedJSON = function(){

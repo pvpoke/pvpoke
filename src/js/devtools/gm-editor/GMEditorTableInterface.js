@@ -42,7 +42,6 @@ var InterfaceMaster = (function () {
                             idKey = "speciesId";
                             nameKey = "speciesName";
                             sort = "dex";
-                            self.displayPokemonList();
                             break;
 
                         case "moves":
@@ -50,9 +49,10 @@ var InterfaceMaster = (function () {
                             idKey = "moveId";
                             nameKey = "name";
                             sort = "name";
-                            self.displayMoveList();
                             break;
                     }
+
+                    self.displayList();
                 }
 
                 lastSavedJSON = JSON.stringify(source);
@@ -68,6 +68,14 @@ var InterfaceMaster = (function () {
                     case "moves":
                         self.displayMoveList();
                         break;
+                }
+
+                // Remove save and edit buttons when editing default
+                if(settings.gamemaster == "gamemaster"){
+                    console.log("remove");
+                    $(".poke-delete").remove();
+                    $(".poke-copy").remove();
+                    $("#save-changes-btn").remove();
                 }
             }
 

@@ -39,7 +39,6 @@ var GameMaster = (function () {
 			},
 			success: function( data ) {
 				object.data = data;
-
 				object.originalData = {...object.data}; // Soft copy original data for custom gamemaster comparison
 
 				console.log("gamemaster loaded");

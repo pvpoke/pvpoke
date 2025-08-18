@@ -55,6 +55,11 @@ var InterfaceMaster = (function () {
                     submitSearchQuery();
                     self.displayLearnset();
                 }
+
+                // Remove save and edit buttons when editing default
+                if(settings.gamemaster == "gamemaster"){
+                    $("#save-changes-btn").remove();
+                }
 			}
 
             this.updateLastSavedJSON = function(){
