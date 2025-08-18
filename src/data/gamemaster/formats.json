@@ -1,18 +1,5 @@
 [
 	{
-		"title": "Summer Cup (Ultra League)",
-		"cup": "summer",
-		"cp": 2500,
-		"meta": "summerultra",
-		"showCup": true,
-		"showFormat": true,
-		"showMeta": true,
-		"rules": [
-			"Pokémon must be at or below 2,500 CP to enter.",
-			"Only Normal-, Fire-, Water-, Grass-, Electric-, and Bug-type Pokémon are eligible."
-		]
-	},
-	{
 		"title": "Master League (Classic)",
 		"cup": "classic",
 		"cp": 10000,

@@ -3,21 +3,6 @@
 $formats = array (
   0 => 
   array (
-    'title' => 'Summer Cup (Ultra League)',
-    'cup' => 'summer',
-    'cp' => 2500,
-    'meta' => 'summerultra',
-    'showCup' => true,
-    'showFormat' => true,
-    'showMeta' => true,
-    'rules' => 
-    array (
-      0 => 'Pokémon must be at or below 2,500 CP to enter.',
-      1 => 'Only Normal-, Fire-, Water-, Grass-, Electric-, and Bug-type Pokémon are eligible.',
-    ),
-  ),
-  1 => 
-  array (
     'title' => 'Master League (Classic)',
     'cup' => 'classic',
     'cp' => 10000,
@@ -27,7 +12,7 @@ $formats = array (
     'showMeta' => false,
     'hideRankings' => true,
   ),
-  2 => 
+  1 => 
   array (
     'title' => 'Master Premier',
     'cup' => 'premier',
@@ -43,7 +28,7 @@ $formats = array (
       1 => 'Legendary Pokémon, Mythical Pokémon, and Ultra Beasts are not eligible.',
     ),
   ),
-  3 => 
+  2 => 
   array (
     'title' => 'P!P Championship Series',
     'cup' => 'championshipseries',
@@ -54,7 +39,7 @@ $formats = array (
     'showMeta' => true,
     'hideRankings' => true,
   ),
-  4 => 
+  3 => 
   array (
     'title' => 'Battle Frontier (Aurora)',
     'cup' => 'aurora',
@@ -64,7 +49,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  5 => 
+  4 => 
   array (
     'title' => 'Battle Frontier (Onyx)',
     'cup' => 'onyx',
@@ -74,7 +59,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  6 => 
+  5 => 
   array (
     'title' => 'Battle Frontier (Ultra)',
     'cup' => 'battlefrontierultra',
@@ -84,7 +69,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  7 => 
+  6 => 
   array (
     'title' => 'Battle Frontier (Master)',
     'cup' => 'battlefrontiermaster',
@@ -94,7 +79,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  8 => 
+  7 => 
   array (
     'title' => 'Devon Ascension Cup',
     'cup' => 'ascension',
@@ -104,7 +89,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  9 => 
+  8 => 
   array (
     'title' => 'Devon (Championship Invitational S2)',
     'cup' => 'devonchampionship',
@@ -114,7 +99,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  10 => 
+  9 => 
   array (
     'title' => 'Gymbreakers Pillar Cup Remix',
     'cup' => 'pillar2',
@@ -124,7 +109,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  11 => 
+  10 => 
   array (
     'title' => 'Zygarden Chrono Meta',
     'cup' => 'chrono',
@@ -134,7 +119,7 @@ $formats = array (
     'showFormat' => true,
     'showMeta' => true,
   ),
-  12 => 
+  11 => 
   array (
     'title' => 'Little Cup',
     'cup' => 'little',
@@ -144,7 +129,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  13 => 
+  12 => 
   array (
     'title' => 'Catch Cup',
     'cup' => 'catch',
@@ -154,7 +139,7 @@ $formats = array (
     'showFormat' => false,
     'showMeta' => false,
   ),
-  14 => 
+  13 => 
   array (
     'title' => 'Custom',
     'cup' => 'custom',

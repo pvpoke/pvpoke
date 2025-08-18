@@ -39617,7 +39617,7 @@
         },
         "types": ["poison", "dragon"],
         "fastMoves": ["DRAGON_TAIL", "POISON_JAB"],
-        "chargedMoves": ["CROSS_POISON", "FLAMETHROWER", "HYPER_BEAM"],
+        "chargedMoves": ["CROSS_POISON", "FLAMETHROWER", "HYPER_BEAM", "DYNAMAX_CANNON"],
         "defaultIVs": {
             "cp500": [4.5, 4, 10, 11],
             "cp1500": [12.5, 4, 14, 8],
@@ -39625,7 +39625,8 @@
         },
         "buddyDistance": 20,
         "thirdMoveCost": 100000,
-        "released": false
+        "released": true,
+        "levelFloor": 15
     },
     {
         "dex": 890,
