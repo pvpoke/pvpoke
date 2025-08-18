@@ -1,5 +1,5 @@
 {
-    "timestamp": "2025-08-18 15:52:45",
+    "timestamp": "2025-08-18 17:02:32",
     "id": "gamemaster",
     "title": "Default",
     "settings": {
@@ -40772,16 +40772,18 @@
             },
             "types": ["poison", "dragon"],
             "fastMoves": ["DRAGON_TAIL", "POISON_JAB"],
-            "chargedMoves": ["CROSS_POISON", "FLAMETHROWER", "HYPER_BEAM", "DYNAMAX_CANNON"],
+            "chargedMoves": ["SLUDGE_BOMB", "FLAMETHROWER", "HYPER_BEAM", "DYNAMAX_CANNON"],
             "defaultIVs": {
-                "cp500": [4.5, 4, 10, 11],
-                "cp1500": [12.5, 4, 14, 8],
-                "cp2500": [20.5, 5, 14, 15]
+                "cp500": [4, 10, 15, 14],
+                "cp1500": [12, 12, 15, 14],
+                "cp2500": [20, 14, 14, 11]
             },
             "buddyDistance": 20,
             "thirdMoveCost": 100000,
             "released": true,
-            "levelFloor": 15
+            "levelFloor": 15,
+            "tags": ["legendary", "untradeable"],
+            "searchPriority": 5
         },
         {
             "dex": 890,
@@ -40794,7 +40796,7 @@
             },
             "types": ["poison", "dragon"],
             "fastMoves": ["DRAGON_TAIL", "POISON_JAB"],
-            "chargedMoves": ["CROSS_POISON", "FLAMETHROWER", "HYPER_BEAM"],
+            "chargedMoves": ["SLUDGE_BOMB", "FLAMETHROWER", "HYPER_BEAM"],
             "defaultIVs": {
                 "cp500": [2.5, 15, 15, 14],
                 "cp1500": [7, 4, 4, 5],
