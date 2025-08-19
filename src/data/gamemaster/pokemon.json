@@ -39617,7 +39617,7 @@
         },
         "types": ["poison", "dragon"],
         "fastMoves": ["DRAGON_TAIL", "POISON_JAB"],
-        "chargedMoves": ["SLUDGE_BOMB", "FLAMETHROWER", "HYPER_BEAM", "DYNAMAX_CANNON"],
+        "chargedMoves": ["SLUDGE_BOMB", "FLAMETHROWER", "DYNAMAX_CANNON", "DRAGON_PULSE"],
         "defaultIVs": {
             "cp500": [4, 10, 15, 14],
             "cp1500": [12, 12, 15, 14],
@@ -39628,7 +39628,8 @@
         "released": true,
         "levelFloor": 15,
         "tags": ["legendary", "untradeable"],
-        "searchPriority": 5
+        "searchPriority": 5,
+        "eliteMoves": ["DYNAMAX_CANNON"]
     },
     {
         "dex": 890,
