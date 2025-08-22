@@ -1,0 +1,47 @@
+{
+	"species": [
+		{
+			"speciesId": "rookidee",
+			"baseSpeciesId": "rookidee"
+		},
+		{
+			"speciesId": "corvisquire",
+			"baseSpeciesId": "rookidee"
+		},
+		{
+			"speciesId": "corviknight",
+			"baseSpeciesId": "rookidee",
+			"default": true
+		}
+	],
+	"checklist": [
+		{
+			"title": "High Rank Corviknight",
+			"speciesId": "corviknight",
+			"baseSpeciesId": "rookidee",
+			"league": "great",
+			"cp": 1500,
+			"ivs": [23.5, 0, 13, 14],
+			"priority": 1,
+			"notes": "Higher Defense (132.2 or more) may be preferred as Corviknight has next to no Sand Attack breakpoints but numerous relevant bulkpoints."
+		},
+		{
+			"title": "High Rank Corviknight",
+			"speciesId": "corviknight",
+			"baseSpeciesId": "rookidee",
+			"league": "ultra",
+			"cp": 2500,
+			"ivs": [48.5, 0, 15, 15],
+			"priority": 1
+		},
+		{
+			"title": "Little Cup Corviknight",
+			"speciesId": "corviknight",
+			"baseSpeciesId": "rookidee",
+			"league": "special",
+			"cp": 500,
+			"ivs": [48.5, 0, 15, 15],
+			"priority": 3
+		}
+	]
+}
