@@ -244,27 +244,20 @@ var InterfaceMaster = (function () {
 					rankingDisplayIncrement = 5;
 				}
 
-				rankingDisplayInterval = setInterval(function(){
-					for(var index = i; index < rankings.length && index < i + rankingDisplayIncrement; index++){
-						try {
-							self.displayRankingEntry(rankings[index], index);
-						} catch{
-							console.error(rankings[index].speciesId + " could not be displayed");
-						}
+				// Mostra solo il primo elemento della lista rankings
+				try {
+					self.displayRankingEntry(rankings[0], 0);
+				} catch {
+					console.error(rankings[0].speciesId + " could not be displayed");
+				}
 
-					}
-
-					i = index;
-
-					if(i >= rankings.length){
-						clearInterval(rankingDisplayInterval);
-						self.completeRankingDisplay();
-					}
-				}, i);
+				// Poi chiama la funzione finale
+				self.completeRankingDisplay();
 			}
 
 			this.displayRankingEntry = function(r, index){
 				var pokemon = new Pokemon(r.speciesId, 0, battle);
+				console.log('showing pokemon:', pokemon)
 
 				pokemon.initialize(true);
 				pokemon.selectMove("fast", r.moveset[0]);
