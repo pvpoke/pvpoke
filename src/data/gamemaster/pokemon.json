@@ -42177,12 +42177,13 @@
         "chargedMoves": ["OUTRAGE", "SURF", "HYDRO_PUMP", "LIQUIDATION"],
         "defaultIVs": {
             "cp500": [6.5, 4, 10, 13],
-            "cp1500": [18.5, 6, 13, 14],
+            "cp1500": [20, 0, 2, 2],
             "cp2500": [32, 4, 14, 15]
         },
         "buddyDistance": 5,
         "thirdMoveCost": 75000,
-        "released": false
+        "released": true,
+        "levelFloor": 20
     },
     {
         "dex": 978,
