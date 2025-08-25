@@ -247,9 +247,10 @@ var InterfaceMaster = (function () {
 				// Mostra solo il primo elemento della lista rankings
 				try {
 					self.displayRankingEntry(rankings[0], 0);
-				} catch {
-					console.error(rankings[0].speciesId + " could not be displayed");
+				} catch (err) {
+					console.error(rankings[0].speciesId + " could not be displayed", err);
 				}
+
 
 				// Poi chiama la funzione finale
 				self.completeRankingDisplay();
@@ -330,22 +331,17 @@ var InterfaceMaster = (function () {
 					}
 				}
 
-				// Is this the best way to add HTML content? I'm gonna go with no here. But does it work? Yes!
 				var $el = $("<div class=\"rank typed-ranking " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\">" +
 					"<div class=\"expand-label\"></div>" +
 					"<div class=\"pokemon-info\">" +
 						"<div class=\"name-container\">" +
 							"<span class=\"number\">#"+(index+1)+"</span>" +
 							"<span class=\"name\">"+pokemon.speciesName+"</span>" +
-							"<div class=\"moves\">"+moveNameStr+"</div>" +
+							"<div class=\"quiz-move\"><b>Fast Move:</b> "+ pokemon.fastMove.name + "</div>" +
+							"<div class=\"quiz-move\"><b>Charged Move:</b> " + pokemon.chargedMoves[0].name + "</div>" +
 						"</div>" +
 						"<div class=\"type-container\"></div>" +
 					"</div>" +
-					"<div class=\"rating-container\">" +
-						"<div class=\"rating score-rating\">"+r.score+"</div>" +
-						"<div class=\"clear\"></div>" +
-					"</div>" +
-					"<div class=\"details\"></div>" +
 				"</div>");
 
 				for(var i = 0; i < pokemon.types.length; i++){

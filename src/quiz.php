@@ -97,14 +97,14 @@ require_once 'header.php';
 			<?php require 'modules/formatselect.php'; ?>
 		</div>
 	</div>
+
+	<h2 class="loading">Loading data...</h2>
+	<div class="rankings-container clear"></div>
 </div>
 
 <a href="#" class="button download-csv">Export to CSV</a>
 
 <?php require 'modules/ads/body-728.php'; ?>
-
-<?php require_once 'modules/search-string-help.php'; ?>
-<?php require_once 'modules/search-traits.php'; ?>
 
 <?php require_once 'modules/rankingdetails.php'; ?>
 
