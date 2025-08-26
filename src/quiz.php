@@ -97,10 +97,10 @@ require_once 'header.php';
 			<?php require 'modules/formatselect.php'; ?>
 		</div>
 		<div class="flex quiz-score">
-			<div>Score: </div>
-			<div>1</div>
+			<div style="padding-right: 4px"><b>Score: </b></div>
+			<div>0</div>
 			<div>/</div>
-			<div>3</div>
+			<div>0</div>
 		</div>
 	</div>
 

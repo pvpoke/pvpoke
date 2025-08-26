@@ -12,18 +12,15 @@ var InterfaceMaster = (function () {
 			var self = this;
 			var data;
 			var gm = GameMaster.getInstance();
-			var jumpToPoke = false;
 			var limitedPokemon = [];
 			var context = "rankings"; // Used for internal reference
 			var battle = new Battle();
-			var customRankingInterface;
-			var metaGroup = [];
-			var metaGroupData = [];
-			var csv = '';
-			var showMoveCounts = false;
-			var rankingDisplayInterval;
 			var numberAskedQuestions = 0;
 			var numberCorrectAnswers = 0;
+			var pokemon;
+			var rankings;
+			var chargedMove;
+			var fastMove;
 
 			// Show move counts if previously set
 			if(window.localStorage.getItem("rankingsShowMoveCounts") == "true"){
@@ -73,7 +70,6 @@ var InterfaceMaster = (function () {
 
 				var gm = GameMaster.getInstance();
 
-				clearInterval(rankingDisplayInterval);
 				$(".quiz-container").html('');
 				$(".loading").show();
 
@@ -147,6 +143,7 @@ var InterfaceMaster = (function () {
 
 				var gm = GameMaster.getInstance();
 
+				trials = 0;
 				data = rankings;
 				this.rankings = rankings;
 
@@ -249,7 +246,7 @@ var InterfaceMaster = (function () {
 
 				// Poi chiama la funzione finale
 				self.completeRankingDisplay();
-				self.numberAskedQuestions++
+				numberAskedQuestions++
 			}
 
 			this.displayRankingEntry = function(r, index){
@@ -281,7 +278,6 @@ var InterfaceMaster = (function () {
 				var $el = $("<div class=\"rank typed-ranking quiz " + pokemon.types[0] + "\" type-1=\""+pokemon.types[0]+"\" type-2=\""+pokemon.types[1]+"\" data=\""+pokemon.speciesId+"\">" +
 					"<div class=\"pokemon-info\">" +
 						"<div class=\"name-container\">" +
-							"<span class=\"number\">#"+(index+1)+"</span>" +
 							"<span class=\"name\">"+pokemon.speciesName+"</span>" +
 							"<div class=\"quiz-moves-container\">" +
 								"<div class=\"quiz-move\"><b>Fast Move:</b> "+ this.fastMove.name + "</div>" +
@@ -637,17 +633,30 @@ var InterfaceMaster = (function () {
 				self.pushHistoryState(cup, cp, category, null);
 			}
 
-			function checkAnswer(e) {
+			function checkAnswer() {
 				var quizAnswerInputValue = $(".quiz-answer-input option:selected").val();
-				var numberOfMoves = Pokemon.calculateMoveCounts(self.pokemon.fastMove, self.pokemon.chargedMoves[0]);
+				var numberOfMoves = Pokemon.calculateMoveCounts(self.fastMove, self.chargedMove);
 				console.log(numberOfMoves)
+				trials++
 				if(quizAnswerInputValue == numberOfMoves[0]){
 					console.log('Correct')
-					self.numberCorrectAnswers++
+					if(trials == 1){
+						numberCorrectAnswers++
+					}
+					updateScore()
 					self.displayRankingData(self.rankings)
 				} else {
 					console.log('Wrong')
 				}
+			}
+
+			function updateScore(){
+				// Select the quiz-score container
+				var $score = $(".quiz-score");
+
+				// Update the current score
+				$score.children().eq(1).text(numberCorrectAnswers);
+				$score.children().eq(3).text(numberAskedQuestions);
 			}
 
 			// Event handler for selecting ranking category
@@ -688,171 +697,7 @@ var InterfaceMaster = (function () {
 				$(this).trigger("stateChange");
 			}
 
-			// Toggle the limited Pokemon from the Rankings
-
-			function toggleLimitedPokemon(e){
-				for(var i = 0; i < limitedPokemon.length; i++){
-					$(".rank[data='"+limitedPokemon[i]+"']").toggleClass("hide");
-					$(".rank[data='"+limitedPokemon[i]+"_shadow']").toggleClass("hide");
-				}
-			}
-
-			// Show or hide cup slots
-
-			function toggleSlots(e){
-				var selectedSlots = [];
-				var cup = battle.getCup();
-
-				if(! cup?.slots){
-					return;
-				}
-
-				$(".continentals .check").each(function(index, value){
-					if($(this).hasClass("on")){
-						selectedSlots.push(parseInt($(this).attr("value")));
-					}
-				});
-
-				if(selectedSlots.length == 0){
-					$(".rank").removeClass("hide");
-				} else if(selectedSlots.length > 0){
-					$(".rank").addClass("hide");
-
-					for(var i = 1; i <= cup.slots.length; i++){
-						if(selectedSlots.includes(i)){
-							$(".rank[slot"+i+"]").removeClass("hide");
-						}
-					}
-				}
-			}
-
-			// Display trait details in the modal window
-
-			function openTraitPopup(e){
-				e.preventDefault();
-
-				var $rank = $(e.target).closest(".rank")
-				var $traits = $rank.find(".traits")
-
-				modalWindow("Traits", $(".trait-modal"));
-
-				$(".modal .name").first().html($rank.find(".name-container .name").first().html().replace("XL",""));
-
-				$traits.find("div").each(function(index, value){
-					$(".modal .traits").append("<div class=\""+$(this).attr("class")+"\"><div class=\"name\">"+$(this).html()+"</div><div class=\"desc\">"+$(this).attr("title")+"</div></div>");
-				});
-			}
-
-			// Jump to a Pokemon entry from the similar Pokemon section
-
-			function jumpToSimilarPokemon(e){
-				e.preventDefault();
-
-				self.jumpToPokemon($(e.target).attr("data"));
-			}
-
-			// Toggle move stats in the ranking details
-
-			function toggleMoveStats(e){
-				e.preventDefault();
-
-				var $rank = $(e.target).closest(".rank")
-				$(e.target).toggleClass("on");
-				$rank.find(".moveset").toggleClass("show-stats");
-			}
-
-			// Switch to a different detail tab
-
-			function toggleDetailTab(e){
-				e.preventDefault();
-
-				var $rank = $(e.target).closest(".rank")
-				var tab = $(e.target).closest("a").attr("tab");
-
-				// Display selected tab nav
-				$rank.find(".detail-tab-nav a").removeClass("active");
-				$(e.target).closest("a").addClass("active");
-
-				// Display selected tab items
-				$rank.find(".detail-tab").hide();
-				$rank.find(".detail-tab[tab=\""+tab+"\"]").css("display", "flex");
-			}
-
-			// Select a Pokemon to compare an existing Pokemon's ranking data in the radar chart
-
-			function addPokemonToCompare(e){
-				var $rank = $(e.target).closest(".rank");
-
-				modalWindow("Select Pokemon", $(".poke.single").first());
-
-				pokeSelector = new PokeSelect($(".modal .poke"), 1);
-				pokeSelector.setContext("modalrankcompare");
-				pokeSelector.init(gm.data.pokemon, battle, data);
-				pokeSelector.removePokemonFromOptions([{speciesId: $rank.attr("data")}]);
-
-				$(".modal-content").append("<div class=\"center\"><div class=\"save-poke button\">Compare Pokemon</div></div>");
-				$(".modal .poke-search").focus();
-
-				// Add or save a Pokemon in the Pokemon list
-
-				$(".modal .save-poke").on("click", function(e){
-
-					// Make sure something's selected
-					if(! pokeSelector){
-						return false;
-					}
-
-					var pokemon = pokeSelector.getPokemon();
-
-					if(! pokemon){
-						return false;
-					}
-
-					var originalData = data.filter(r => r.speciesId == $rank.attr("data"))[0];
-					var compareData = data.filter(r => r.speciesId == pokemon.speciesId)[0];
-
-					drawRatingHexagon($rank, originalData, compareData);
-
-					$rank.find(".details .ranking-compare").html("Compare: " + pokemon.speciesName);
-					$rank.find(".details .ranking-compare").attr("class", "ranking-compare " + pokemon.types[0]);
-
-					// Add comparison numbers
-					for(var i = 0; i < 6; i++){
-						var diff = Math.round( (originalData.scores[i] - compareData.scores[i]) * 10 ) / 10;
-
-						if(diff >= 0){
-							diff = "+" + diff;
-						}
-
-						var color = battle.getRatingColor( 500 + (25 * diff));
-
-						$rank.find(".chart-label .comparison").eq(i).css("background", "rgb("+color[0]+","+color[1]+","+color[2]+")");
-						$rank.find(".chart-label .comparison").eq(i).html(diff);
-					}
-
-					$rank.find(".chart-label .comparison").show();
-
-					closeModalWindow();
-				});
-			}
-
-			// Open format rules modal
-
-			$("a.format-rules").click(function(e){
-				e.preventDefault();
-
-				var format = gm.getFormat(battle.getCup().name, battle.getCP());
-				var $modalContent = $("<ul></ul>");
-
-				for(var i = 0; i < format.rules.length; i++){
-					$modalContent.append("<li>" + format.rules[i] + "</li>");
-				}
-
-				modalWindow(format.title + " Rules", $modalContent);
-
-			});
 		};
-
         return object;
     }
 
