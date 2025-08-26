@@ -23,6 +23,8 @@ var InterfaceMaster = (function () {
 			var fastMove;
 			var useOnlyReccomendedMoveset = true;
 
+			this.questionAnswers = {}
+
 			// Show useRecc toggle if previously set
 			if(window.localStorage.getItem("useOnlyReccomendedMoveset") == "false"){
 				$(".check.quiz-reccomended-moveset").removeClass("on");
@@ -242,8 +244,8 @@ var InterfaceMaster = (function () {
 					rankingDisplayIncrement = 5;
 				}
 
-				// FIXME 20 è hardcodato
-				this.quiz_ranking_index = Math.floor(Math.random() * 20);
+				// FIXME Valore è hardcodato
+				this.quiz_ranking_index = Math.floor(Math.random() * 40);
 				// Mostra solo il primo elemento della lista rankings
 				try {
 					self.displayRankingEntry(rankings[this.quiz_ranking_index], this.quiz_ranking_index);
@@ -654,16 +656,28 @@ var InterfaceMaster = (function () {
 				var numberOfMoves = Pokemon.calculateMoveCounts(self.fastMove, self.chargedMove);
 				console.log(numberOfMoves)
 				trials++
-				if(quizAnswerInputValue == numberOfMoves[0]){
-					console.log('Correct')
-					if(trials == 1){
-						numberCorrectAnswers++
-					}
-					updateScore()
-					self.displayRankingData(self.rankings)
-				} else {
-					console.log('Wrong')
+				result = quizAnswerInputValue == numberOfMoves[0]
+				if(result && trials == 1){
+					numberCorrectAnswers++
 				}
+
+				updateScore()
+				updateAnswersHistory(self.pokemon, fastMove, chargedMove, result)
+				
+				// Generate new question
+				if(result){
+					self.displayRankingData(self.rankings)
+				}
+			}
+
+			function updateAnswersHistory(pokemon, fastMove, chargedMove, result){
+				// Only at correct answers at first trial are considered corrected
+				if(trials > 1){
+					result = false
+				}
+				questionKey = pokemon.speciesId + '|' + fastMove.moveId + '|' + chargedMove.moveId
+				self.questionAnswers[questionKey] = result
+				console.log(self.questionAnswers)
 			}
 
 			function updateScore(){
